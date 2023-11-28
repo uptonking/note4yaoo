@@ -38,7 +38,7 @@ modified: 2022-08-14T16:26:48.558Z
   - Currently, the document tree of BlockyEditor supports collaborative editing using operation transforming(known as OT).
   - You can also use a CRDT library such as YJS and bind the data model to it.
 
-- BlockNote /14Star/MPL.v2/202208/ts
+- BlockNote /14Star/MPLv2/202208/ts
   - https://github.com/YousefED/BlockNote
   - https://blocknote-main.vercel.app/
   - A "Notion-style" block-based extensible text editor built on top of Prosemirror and Tiptap.

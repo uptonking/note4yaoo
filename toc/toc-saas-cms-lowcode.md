@@ -25,6 +25,16 @@ modified: 2023-01-20T21:59:47.792Z
 # lowcode-products
 - [AppMaster - The no-code platform for building web & mobile apps](https://appmaster.io/)
 # popular
+- strapi /57.5kStar/MIT+EE/202311/ts
+  - https://github.com/strapi/strapi
+  - https://strapi.io/
+  - the leading open-source headless CMS
+  - 核心功能是提供了通过ui操作实现rest api的功能
+    - 系统内容通过ui操作编写
+    - 系统前端strapi没有限制，strapi只提供了api
+  - The original purpose of the project was to help Bootstrap your API
+  - Now, Strapi is an open-source headless CMS that gives developers the freedom to choose their favorite tools and frameworks and allows editors to manage and distribute their content using their application's admin panel.
+
 - payloadcms /9.1kStar/MIT/202301/ts/slate
   - https://github.com/payloadcms/payload
   - https://payloadcms.com/
@@ -288,9 +298,9 @@ modified: 2023-01-20T21:59:47.792Z
   - https://www.staticcms.org/
   - A Git-based CMS for Static Site Generators
 
-- https://github.com/fiatjaf/coisas /201907/js/inactive
+- https://github.com/fiatjaf/coisas /317Star/MIT/201907/js/inactive
   - a headless CMS specifically designed to let you edit files hosted in a GitHub repository. 
-  - It is similar to Netlify CMS and Prose. 
+  - It is similar to Netlify CMS and Prose.
   - 依赖prosemirror、mobx
 
 - https://github.com/BuilderIO/builder /编辑器未开源
@@ -330,6 +340,14 @@ modified: 2023-01-20T21:59:47.792Z
   - a self-contained CMS (no database needed) written in Golang. 
   - It uses a JSON datastore with content saved in both json files and in memory.
   - You can download and upload a single binary backup file containing content, images, and templates as needed.
+
+- https://github.com/CromwellCMS/Cromwell /600Star/MIT/202308/ts
+  - https://cromwellcms.com/docs/overview/intro/#examples
+  - open source headless TypeScript CMS for creating lightning-fast websites with React and Next.js. 
+  - It has a powerful plugin/theming system while providing extensive Admin panel GUI for WordPress-like user experience. 
+  - Free full-featured online store and blog themes with multiple plugins.
+  - Integrated Database. SQLite, MySQL, MariaDB, PostgreSQL are supported to use.
+  - Use all power of Next.js, Nest.js, TypeORM, TypeGraphQL along with CMS API to build any type of website.
 # more
 - https://github.com/FactorJS/factor
   - Factor is an expressive & modular framework for JavaScript applications.

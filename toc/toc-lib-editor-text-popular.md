@@ -18,6 +18,7 @@ modified: 2022-11-08T19:04:00.289Z
   - draggable
   - layout-columns
   - search
+  - the-elm-architecture
 
 - 开源编辑器
   - 国内: wangEditor, editablejs/am-editor, textbus, vditor, ueditor
@@ -141,7 +142,7 @@ modified: 2022-11-08T19:04:00.289Z
   - https://quilljs.com/playground/
   - a modern WYSIWYG editor built for compatibility and extensibility
 
-- typewriter /308Star/MIT/202301/ts
+- typewriter /347Star/MIT/202311/ts
   - https://github.com/typewriter-editor/typewriter
   - A rich text editor based off of Quill.js and Ultradom, and using Svelte for UI.
   - 依赖 svelte、popperjs2、typewriter/delta

@@ -9,10 +9,7 @@ modified: 2022-08-18T16:57:46.405Z
 
 # guide
 
-- 编辑器可复用的模块
-  - 复制粘贴
-  - 工具条
-  - 评论
+- 编辑器可复用的模块: model/selection/view/commands
 
 - prosemirror-futuristic
   - 方向：collab、markdown、pivot-table、math/formula、media/embed、cms
@@ -22,17 +19,12 @@ modified: 2022-08-18T16:57:46.405Z
     - 尝试用atlassian editor重写outline，抽象出可替换编辑器的接口，考虑可替换的协作同步方案
     - react indexeddb， 编辑器数据频繁的更新可参考编辑器实时协作的更新
 
-- 💡 vanillajs-first
-  - tiptap/dante/wix, tui.editor.v3, stacks-editor(StackOverflow), bangle.dev
-  - guardian-prosemirror-elements/invisibles/noting
+- vanillajs-first
+  - tiptap/dante/wix, guardian, tui.editor.v3, stacks-editor, bangle.dev
   - milkdown(Typora), jcmnunes-bc-editor(md)
-  - start-editor, zeditor, emirror, NotionEditor(toy)
-
-- 💡 react-first
-  - remirror, @atlaskit/editor-core, yandex-yfm, syllepsis(字节)
-  - wax-prosemirror(coko), manuscript-editor, curvenote-editor(redux), czi/licit(word)
-  - rich-markdown-editor
-  - smartblock(202003), xen-editor，nib-edit(高级功能未开源如comment/collab)
+- react-first
+  - nytimes, remirror, @atlaskit/editor-core, yandex-yfm, syllepsis(字节)
+  - wax-prosemirror(coko), manuscript-editor, curvenote-editor(redux), rich-markdown-editor
 
 - more-prosemirror
   - pageboard/client(页面搭建), noteworthy(solidjs)
@@ -46,19 +38,22 @@ modified: 2022-08-18T16:57:46.405Z
   - A headless, framework-agnostic and extendable rich text editor, based on ProseMirror.
   - It’s headless and comes without any CSS. You are in full control over markup, styling and behaviour.
 
-- remirror /1.8kStar/MIT/202208/ts
-  - https://github.com/remirror/remirror
-  - https://remirror.io/
-  - [basic editor demo](https://remirror.vercel.app/?path=/story/editors-wysiwyg--basic)
-  - A React toolkit for building cross-platform text editors, based on ProseMirror.
-  - I18n support via lingui.
-  - Great support for mobile devices.
-  - Out-of-the-box editors, or create own by composing extensions.
-  - Collaborative editing with yjs or prosemirror-collab.
+- BlockNote /14Star/MPLv2/202208/ts/tiptap
+  - https://github.com/TypeCellOS/BlockNote
+  - https://www.blocknotejs.org/
+  - A "Notion-style" block-based extensible text editor built on top of Prosemirror and Tiptap.
+  - 支持跨block选择部分文字
+  - 支持拖拽block修改顺序，特别是支持将list item拖入拖出列表
+  - 支持斜杠菜单、悬浮菜单修改标题层级、多级列表、顺滑动画
+  - 支持协作
+  - 依赖tiptap.v2、tippyjs、styled-components
+  - core+react-slashMenu/toolbar
+  - bugs
+    - 复制粘贴多行文本
 
-- nytimes/react-prosemirror /43Star/apache2/202303/ts
+- nytimes-react-prosemirror /314Star/apache2/202311/ts
   - https://github.com/nytimes/react-prosemirror
-  - A fully featured library for safely integrating ProseMirror and React.
+  - A fully featured library for safely integrating ProseMirror and React
   - React separates updates into render and commit phases so that it can process updates in batches
   - [Announcing React ProseMirror_202303](https://discuss.prosemirror.net/t/announcing-react-prosemirror/5328)
   - [The Future of @nytimes/react-prosemirror_202309](https://discuss.prosemirror.net/t/the-future-of-nytimes-react-prosemirror/5855)
@@ -76,6 +71,23 @@ modified: 2022-08-18T16:57:46.405Z
     - The courses within focus on developing an understanding of how the three tools that the Oak collaborative rich text editor relies on, React, ProseMirror, and Redux, actually work.
     - [Build Your Own: ProseMirror View](https://nytimes.github.io/oak-byo-react-prosemirror-redux/post/build-your-own-pm-view/)
       - demonstrate how to build the core components of a ProseMirror view library.
+    - [Build Your Own: React, ProseMirror, and Redux : javascript](https://www.reddit.com/r/javascript/comments/10swhle/build_your_own_react_prosemirror_and_redux/)
+
+- remirror /1.8kStar/MIT/202208/ts
+  - https://github.com/remirror/remirror
+  - https://remirror.io/
+  - [basic editor demo](https://remirror.vercel.app/?path=/story/editors-wysiwyg--basic)
+  - A React toolkit for building cross-platform text editors, based on ProseMirror.
+  - I18n support via lingui.
+  - Great support for mobile devices.
+  - Out-of-the-box editors, or create own by composing extensions.
+  - Collaborative editing with yjs or prosemirror-collab.
+
+- prosemirror-adapter /65Star/MIT/202311/ts
+  - https://github.com/Saul-Mirone/prosemirror-adapter
+  - Universal adapter to create prosemirror nodeview from modern UI frameworks.
+  - 支持react/vue/lit/svelte
+  - not on the plan: no ui, no hotkeys, no schema
 
 - @atlaskit/editor-core /8Star/Apache2/202208/ts
   - https://bitbucket.org/atlassian/atlassian-frontend-mirror/src/master/editor/
@@ -92,19 +104,6 @@ modified: 2022-08-18T16:57:46.405Z
   - ref
     - https://github.com/TeemuKoivisto/prosemirror-track-changes-example
     - https://github.com/pioug/atlassian-frontend-mirror
-
-- BlockNote /14Star/MPL.v2/202208/ts
-  - https://github.com/TypeCellOS/BlockNote
-  - https://www.blocknotejs.org/
-  - A "Notion-style" block-based extensible text editor built on top of Prosemirror and Tiptap.
-  - 支持跨block选择部分文字
-  - 支持拖拽block修改顺序，特别是支持将list item拖入拖出列表
-  - 支持斜杠菜单、悬浮菜单修改标题层级、多级列表、顺滑动画
-  - 支持协作
-  - 依赖tiptap.v2、tippyjs、styled-components
-  - core+react-slashMenu/toolbar
-  - bugs
-    - 复制粘贴多行文本
 
 - notitap /39Star/MIT/202209/ts
   - https://github.com/sereneinserenade/notitap
@@ -130,21 +129,6 @@ modified: 2022-08-18T16:57:46.405Z
     - [example: Editor with Chart Plugin](https://nhn.github.io/tui.editor/latest/tutorial-example07-editor-with-chart-plugin)
     - https://github.com/QinHongZhe/hongzhe-tui.editor
 
-- bangle.dev-editor /527Star/MIT/202208/ts
-  - https://github.com/bangle-io/bangle-editor
-  - https://github.com/bangle-io/bangle.dev
-  - https://bangle.dev/docs/examples/markdown-editor
-  - https://app.bangle.io/
-  - 支持拖拽标题section，但不支持拖拽section内的段落
-  - 使用了浏览器文件系统api来支持打开本地文件
-  - Collection of higher level rich text editing tools. It powers the local only note taking app https://bangle.io
-  - Bangle is written in a framework agnostic way, we have support for React and I have plans to add Vue support
-  - bangle.io /909Star/AGPLv3/202310/ts/react
-    - https://github.com/bangle-io/bangle-io
-    - https://bangle.io/
-    - 提供了 indexed-db-storage-provider, fs
-    - A web only WYSIWYG note taking app that saves notes locally in markdown format
-
 - wax-prosemirror /9Star/MIT/202208/js/react
   - https://gitlab.coko.foundation/wax/wax-prosemirror
   - https://waxjs.net/docs/wax/
@@ -166,6 +150,36 @@ modified: 2022-08-18T16:57:46.405Z
     - Wax, a [Cabbage Tree Labs](https://www.cabbagetreelabs.org/) project
     - The Cabbage Tree Method and Book Sprints and led the development of open source software for publishing such as PubSweet, Editoria, Kotahi, PagedJS, Wax, BookType and many more
 
+- guardian-prosemirror-editor /2Star/MIT/202311/ts
+  - https://github.com/guardian/prosemirror-editor
+  - provide a re-usable ProseMirror editor for use across our tools
+  - it aims to replace Scribe-based rich text editors with a React-based prosemirror editor in: tagmanager/atom-workshop
+- guardian-prosemirror-elements /37Star/MIT/202311/ts
+  - https://github.com/guardian/prosemirror-elements
+  - This Prosemirror plugin adds the ability to add custom 'elements' to a document.
+  - 使用prosemirror编辑器作为NodeViews，嵌套多实例编辑器
+  - Prosemirror-elements provides a way of expressing an Element and its Fields in the UI framework of your choice, and we provide React bindings as a default.
+  - What is an Element?
+    - Modelling non-text content in Prosemirror can be tricky. 
+    - Elements contain user-defined Fields that can model many different kinds of content, including rich text fields and arbitrary data.
+    - Each Element is made up of Fields, which represent a data type – for example, text, rich text, or custom data types.
+  - [How prosemirror-elements works](https://github.com/guardian/prosemirror-elements/blob/main/docs/how-it-works.md)
+
+- bangle.dev-editor /527Star/MIT/202208/ts
+  - https://github.com/bangle-io/bangle-editor
+  - https://github.com/bangle-io/bangle.dev
+  - https://bangle.dev/docs/examples/markdown-editor
+  - https://app.bangle.io/
+  - 支持拖拽标题section，但不支持拖拽section内的段落
+  - 使用了浏览器文件系统api来支持打开本地文件
+  - Collection of higher level rich text editing tools. It powers the local only note taking app https://bangle.io
+  - Bangle is written in a framework agnostic way, we have support for React and I have plans to add Vue support
+  - bangle.io /909Star/AGPLv3/202310/ts/react
+    - https://github.com/bangle-io/bangle-io
+    - https://bangle.io/
+    - 提供了 indexed-db-storage-provider, fs
+    - A web only WYSIWYG note taking app that saves notes locally in markdown format
+
 - curvenote-editor /140Star/MIT/202208/ts
   - https://github.com/curvenote/editor
   - https://curvenote.github.io/editor/
@@ -186,16 +200,6 @@ modified: 2022-08-18T16:57:46.405Z
       - Schemas, types and utilities for Curvenote APIs and DTOs.
     - [Curvenote - scientific editor, explorable explanations & floating comments__202102](https://discuss.prosemirror.net/t/curvenote-scientific-editor-explorable-explanations-floating-comments/3503)
 
-- guardian-prosemirror-elements /21Star/MIT/202208/ts
-  - https://github.com/guardian/prosemirror-elements
-  - This Prosemirror plugin adds the ability to add custom 'elements' to a document.
-  - 使用prosemirror编辑器作为NodeViews，嵌套多实例编辑器
-  - Prosemirror-elements provides a way of expressing an Element and its Fields in the UI framework of your choice, and we provide React bindings as a default.
-  - What is an Element?
-    - Modelling non-text content in Prosemirror can be tricky. 
-    - Elements contain user-defined Fields that can model many different kinds of content, including rich text fields and arbitrary data.
-    - Each Element is made up of Fields, which represent a data type – for example, text, rich text, or custom data types.
-
 - yfm-editor /3Star/MIT/202211/ts/md-it
   - https://github.com/yandex-cloud/yfm-editor
   - https://preview.yandexcloud.dev/yfm-editor/
@@ -208,7 +212,7 @@ modified: 2022-08-18T16:57:46.405Z
 - Stacks-Editor /218Star/MIT/202208/ts
   - https://github.com/StackExchange/Stacks-Editor
   - https://editor.stackoverflow.design/
-  - Stacks-Editor is a combination rich text/markdown editor that powers Stack Overflow's post editing experience.
+  - a combination rich text/markdown editor that powers Stack Overflow's post editing experience.
   - 依赖prosemirror, hightlight.js、markdown-it、@lezer/markdown、stacks-ui，不依赖react
   - 全部基于es6 class，[new EditorView()](https://github.com/StackExchange/Stacks-Editor/blob/main/src/rich-text/editor.ts#L105)的过程非常标准，无封装
 
@@ -290,6 +294,10 @@ modified: 2022-08-18T16:57:46.405Z
     - Collaboration in Manuscripts.io 64 works at the project level — each project can contain several manuscripts — and collaborators can either be responsible for editing parts of the document or can simply comment by adding annotations to blocks or ranges of the manuscript.
     - Manuscripts.io 64 includes some innovations: figures that can be (re)generated dynamically by evaluating code in a hosted Jupyter kernel; built-in searching of online reference databases; configurable paragraph, section and inline styles, and output to multiple formats (DOCX, PDF, JATS XML, HTML, and others).
 
+- https://github.com/oschina/tide /202306/ts/react
+  - https://oschina.gitee.io/tide
+  - 开箱即用、扩展性强、支持 Markdown 语法、基础功能完善的 React 富文本编辑器
+
 - wode /3Star/MIT/202206/ts
   - https://github.com/wenerme/wode
   - https://wode.vercel.app/tiptap
@@ -335,11 +343,6 @@ modified: 2022-08-18T16:57:46.405Z
   - 基础 schema 是两个 doc 和 text, 这是 Prosemirror 默认的两个最大和最小可编辑 schema. 而设计 schema 的时候我使用的最小编辑单元是 textblock, 表现形式是一个 div 中包含着 text
   - 所有的元素都是使用 div 进行模拟, 而不是使用语义化的 p/ul/ol 等进行, 这是为了摆脱浏览器的限制, 如段落嵌套段落的时候, p 标签无法嵌套块级元素等.
   - 使用了 React 构建界面的有: Slash
-
-- prosemirror-adapter /12Star/MIT/202212/ts
-  - https://github.com/Saul-Mirone/prosemirror-adapter
-  - Universal adapter for ProseMirror to use it with modern UI frameworks. (React, Vue and more coming soon)
-  - something out of this scope will not be considered: no ui, no hotkeys, no schema
 
 - use-prosemirror /321Star/MIT/202201/ts
   - https://github.com/ponymessenger/use-prosemirror
@@ -407,7 +410,7 @@ modified: 2022-08-18T16:57:46.405Z
 - typist /8Star/MIT/202211/ts
   - https://github.com/Doist/typist
   - https://typist.doist.dev/
-  - Typist is the mighty Tiptap-based rich-text editor React component that powers Doist products
+  - Tiptap-based rich-text editor React component that powers Doist products
   - 提供了纯文本和富文本2种输入模式
   - Typist also supports a plain-text mode, and comes with HTML/Markdown serializers.
 
@@ -417,6 +420,10 @@ modified: 2022-08-18T16:57:46.405Z
   - An attempt to create a better rich text editor than virgool.io. Powered by Tiptap and ProseMirror
   - 实现了RTL国际化方向
   - 数据保存使用了 idb-keyval
+
+- https://github.com/fantasticit/magic-editor /202301/ts
+  - http://magic-editor.vercel.app/
+  - rich text editor built on top of Prosemirror and Tiptap
 
 - element-tiptap /825Star/MIT/202208/ts/vue/tiptap/inactive
   - https://github.com/Leecason/element-tiptap

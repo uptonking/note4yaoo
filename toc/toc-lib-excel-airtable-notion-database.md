@@ -204,12 +204,6 @@ modified: 2022-08-21T10:02:05.129Z
     - Excel/Google Sheets like UI for Firebase/Firestore. No more admin portals!
     - https://github.com/FiretableProject/firetable
 
-- S2 /1.1kStar/MIT/202302/ts
-  - https://github.com/antvis/S2
-  - https://s2.antv.antgroup.com/examples
-  - S2是多维交叉分析领域的表格解决方案，数据驱动视图，提供底层核心库、基础组件库、业务场景库
-  - 依赖 @antv/g-canvas、g-gesture、d3-interpolate
-
 - grist-core /5.3kStar/apache2/202311/ts/python
   - https://github.com/gristlabs/grist-core
   - https://support.getgrist.com/
@@ -232,6 +226,12 @@ modified: 2022-08-21T10:02:05.129Z
     - No specific access control.
     - No special server is needed for grist-static, it works straight from a CDN or any standard web server.
     - Grist spreadsheets by default store a lot of history in the `.grist` file. You can prune that history
+
+- S2 /1.1kStar/MIT/202302/ts
+  - https://github.com/antvis/S2
+  - https://s2.antv.antgroup.com/examples
+  - S2是多维交叉分析领域的表格解决方案，数据驱动视图，提供底层核心库、基础组件库、业务场景库
+  - 依赖 @antv/g-canvas、g-gesture、d3-interpolate
 
 - baserow /1.3kStar/MIT/202212/python/js/vue/多视图
   - https://github.com/bram2w/baserow

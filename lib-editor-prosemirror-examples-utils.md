@@ -21,7 +21,7 @@ modified: 2022-08-18T16:57:29.058Z
   - Modifier - A modifier function takes a `transaction` and returns a `transaction`.
   - Handler - A handler function takes the `editorView` and composes the modifier functions and `dispatches` them.
 
-- https://github.com/atlassian/prosemirror-utils
+- https://github.com/atlassian/prosemirror-utils /apache2/202307/ts
   - Utils library for ProseMirror
 
 - https://github.com/rexxars/react-prosemirror-document
@@ -143,10 +143,16 @@ modified: 2022-08-18T16:57:29.058Z
 - https://github.com/Holoon/ProseMirror.Model /c#
   - C# definitions of ProseMirror's content model, the data structures used to represent and work with documents.
 # utils/extensions
+- https://github.com/marekdedic/prosemirror-unified /202311/ts
+  - This package provides support for using the unified ecosystem of parsers and other packages (for example, remark, the markdown parser) in ProseMirror.
+  - Currently, there is only the prosemirror-remark package to support markdown parsing and serialization
+
 - https://github.com/ueberdosis/prosemirror-to-html
   - Takes ProseMirror JSON and outputs HTML. 基于php实现
 - https://github.com/enVolt/prosemirror-to-html
   - 基于js实现
+- https://github.com/mailbean/pm2html /202310/ts
+  - ProseMirror JSON to HTML
 
 - https://github.com/ueberdosis/html-to-prosemirror
   - Takes HTML and outputs ProseMirror compatible JSON. 基于php实现
@@ -211,8 +217,8 @@ modified: 2022-08-18T16:57:29.058Z
 - https://github.com/artcompiler/L123
   - A language for writing ProseMirror editors
 
-  - https://github.com/todorstoev/prosemirror-pagination
-    - Plugin for ProseMirror emulating A4 pages
+- https://github.com/todorstoev/prosemirror-pagination /202008/ts/inactive
+  - Plugin for ProseMirror emulating A4 pages
 
 - https://github.com/guardian/prosemirror-invisibles
   - https://guardian.github.io/prosemirror-invisibles/
@@ -228,7 +234,11 @@ modified: 2022-08-18T16:57:29.058Z
 
 - https://github.com/prowriting/beyondgrammar-prosemirror
   - Bring real-time spelling, grammar and style checking into your ProseMirror editor.
-  - You will need to register to get a API key first (FREE for Individuals)!
+  - You will need to register to get a API key first (FREE for Individuals)
+
+- https://github.com/amirhhashemi/tiptap-text-direction /202304/ts
+  - This extension automatically detects the direction of a configurable list of nodes and adds dir="ltr" or dir="rtl" to them.
+  - Why not dir="auto"? dir="auto" changes the text direction based on the element's content too
 
 - https://github.com/kongdivin/prosemirror-scroll2cursor
   - a prosemirror plugin. It makes sure the cursor is always visible and at the position that is comfortable for typing, not too low at the bottom or too high at the top.

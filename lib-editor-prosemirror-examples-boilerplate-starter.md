@@ -17,13 +17,10 @@ modified: 2022-09-05T03:41:15.727Z
   - https://stackblitz.com/fork/github/ocavue/prosemirror-playground
   - A super simple ProseMirror demo repository. I use this repo to test out new ideas and report bugs.
 
-
-
 - https://github.com/ueberdosis/tiptap/tree/main/packages/starter-kit
   - 官方提供了模版工具箱 `@tiptap/starter-kit` npm包
-  - https://github.com/syfxlin/tiptap-starter-kit
-    - /inactive
-    - 非官方套件，包含了常见的扩展集合，以及斜杠菜单，浮动菜单，Markdown解析、序列化等功能。
+  - https://github.com/syfxlin/tiptap-starter-kit /inactive
+    - 非官方套件，包含了常见的扩展，以及斜杠菜单，浮动菜单，Markdown解析、序列化等功能
 
 - https://github.com/mfoitzik/prosemirror-breakout-starter-kit
   - This is a ProseMirror starter kit that uses Webpack.

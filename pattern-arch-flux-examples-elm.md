@@ -439,6 +439,27 @@ modified: 2023-11-21T10:17:34.596Z
   - https://n1k0.github.io/elm-daterange-picker/
   - A date range picker written in Elm
   - [Stateful components in Elm | Allo-Media](https://www.allo-media.net/en/tech/elm/2019/07/16/stateful-components-in-elm.html)
+
+- https://github.com/uncover-co/elm-admin-alpha /202211/elm
+  - Elm based framework for building admin applications.
+  - ElmAdmin follows a somewhat similar strategy to ElmBook. A minimalistic API focusing on pragmatism and user customizations.
+
+- https://github.com/blokovi/ui-elm /201911/elm
+  - Dashboard made with [elm-bootstrap]
+- https://github.com/vipentti/elm-mdl-dashboard /201703/elm
+  - https://vipentti.github.io/elm-mdl-dashboard/
+  - Single Page Application Dashboard example using elm-mdl example
+  - https://github.com/debois/elm-mdl /201701/elm
+    - Elm-port of the Material Design Lite CSS/JS library
+- https://github.com/humio/elm-dashboard /201903/elm
+  - a library for creating dashboards that look nice and are easy to configure.
+- https://github.com/kutyel/elm-bulma-dashboard /202011/elm
+  - A playground with `elm-bulma`
+
+- https://github.com/peterszerzo/elm-cms /201703/elm
+  - Small and sturdy content management dashboard in Elm's trusted hands
+  - this library is not maintained. CMS' are pretty hard to abstract in a way that caters to the needs of a realistic UX and infrastructure needs
+  - therefore I am finding it unrealistic that I can pull it off with such a simple system
 # utils
 - https://github.com/Zaid-Ajaj/elmish-composition /202012/js/f#
   - This repository includes two projects: traditional and hybrid to compare the composition technique of an Elmish application.
@@ -466,6 +487,10 @@ modified: 2023-11-21T10:17:34.596Z
 
 - https://github.com/vkopytin/databinding/tree/master/src/examples/reflux-ts /202007/ts
   - [Implementing Model View Update Pattern in Typescript - CodeProject](https://www.codeproject.com/Articles/5274726/Implementing-Model-View-Update-Pattern-in-Typescri)
+
+- https://github.com/dtwrks/elm-book /MPLv2/202301/elm
+  - http://elm-book-in-elm-book.netlify.app/
+  - Rich documentation builder for Elm applications and packages. Inspired by Storybook and HexDocs.
 # elm-non-js
 - [elm architecture in rust. 43loc](https://gist.github.com/kuon/b81f6397f454f0254f7476563b1794c0)
 

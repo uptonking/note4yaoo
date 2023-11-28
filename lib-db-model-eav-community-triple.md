@@ -247,7 +247,7 @@ A custom frontend for a CMS is a good investment in UX. A CMS isn’t publicy vi
 - ## [Convert CMS pages into a EAV model · magento/magento2](https://github.com/magento/magento2/issues/17270)
 - We should convert the CMS pages into an EAV model, so fields like `title, URL key and content` can be overridden/translated on a per store basis. Doing so, also makes it possible to link multi-language content using "hreflang" and module developers can have more options to expand on CMS pages.
 
-- ## If you're familiar with #wordpress databases, you'll recognize the key-value (#EAV) structure. 
+- ## 🌰 If you're familiar with #wordpress databases, you'll recognize the key-value (#EAV) structure. 
 - https://twitter.com/LucasJohnston3/status/1610192301464100864
   - For Wordpress this structure allows flexibility in which data is stored for posts. That's why a post in WP can represent any sort of #data_entity. Admittedly with a performance penalty.
   - There is understandable criticism on the #eav_structure. 
@@ -457,7 +457,7 @@ A custom frontend for a CMS is a good investment in UX. A CMS isn’t publicy vi
 
 - 👉🏻 This is a pretty popular pattern known as Entity-Attribute-Value. 
   - It's used by many products where a) data model needs to be very flexible and allow new attributes without schema changes, or b) a typical entity has a large number of possible attributes that may or may not be set for all entities ("sparse" attributes). 
-  - WordPress uses this to store post metadata, Magento uses this to store product attributes and most of other data, Drupal uses a variation of this to store all the posts and other content you create… I have too much experience with this model to be surprised.
+  - 🌰 `WordPress` uses this to store post metadata, `Magento` uses this to store product attributes and most of other data, `Drupal` uses a variation of this to store all the posts and other content you create… I have too much experience with this model to be surprised.
 - Sounds like a great case for Postgres hstore (like OpenStreetMap does it)?
   - hstore querying is quite slow (and GIN indexes on hstores are pretty massive). 
   - I'd always go jsonb over hstores these days, but jsonb has the same indexing problem. 
@@ -481,7 +481,7 @@ A custom frontend for a CMS is a good investment in UX. A CMS isn’t publicy vi
   - So values in JSONB columns can be indexed nicely, but the statistics can be much worse than for non-JSONB columns, which can lead the query planner astray.
 - Postgres will let you create an index on an expression into the JSON column, so querying should still be very quick.
 
-- Or just create ad hoc tables with user fields. Quite often it's not that a customer has n different fields for n entities, but a few that apply to the majority (like internal ERP ids, classifcation etc.). Put them in a few tables, index them, join them. If you don't want to parse internal DB descriptors, create a set of "schema" tables to build queries from.
+- Or just create ad hoc tables with user fields. Quite often it's not that a customer has n different fields for n entities, but a few that apply to the majority (like internal ERP ids, classification etc.). Put them in a few tables, index them, join them. If you don't want to parse internal DB descriptors, create a set of "schema" tables to build queries from.
 
 - If they are using some sort of middleware orm, which they may well be because of their model, they are most likely using an EAV schema which, although flexible for writes, is horrendous for reads. The join plus pivot is a disaster on virtually any relational system.
 

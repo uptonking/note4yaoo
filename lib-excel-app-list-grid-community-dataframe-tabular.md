@@ -16,7 +16,21 @@ modified: 2023-11-14T06:31:35.103Z
 # discuss
 - ## 
 
-- ## 
+- ## @apachehudi brings the concept of 2 table types:
+- https://twitter.com/Dipankartnt/status/1729304456439767105
+  - ✅ Copy-on-Write (CoW)
+  - ✅ Merge-on-Read (MoR)
+  - Each of these table types has its trade-offs and allows users to deal between read and write latency. 
+  - [Table & Query Types | Apache Hudi](https://hudi.apache.org/docs/table_types/)
+- CoW:
+  - data is stored exclusively using columnar file formats such as #parquet
+  - every new update produces a new version of the base file by rewriting the file
+  - handled on the write-side
+  - higher write amplification (good for OLAP use cases)
+- MoR:
+  - data is stored using a combination of columnar (base) + row-based formats (log)
+  - the base columnar file stores the main data & the row-based log file stores the updates
+  - these updates are later compacted to produce new versions of columnar files (synchronous/async)
 
 - ## [Why isn’t there a decent file format for tabular data? | Hacker News_202205](https://news.ycombinator.com/item?id=31220841)
 - several high quality and well-developed formats

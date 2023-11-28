@@ -1,16 +1,17 @@
 ---
-title: lib-editor-prosemirror-examples-utils-markdown
-tags: [examples, markdown, prosemirror, toc, utils]
+title: lib-editor-prosemirror-examples-markdown
+tags: [examples, markdown, prosemirror, toc]
 created: 2022-11-08T21:14:34.789Z
-modified: 2022-11-08T21:14:54.399Z
+modified: 2023-11-28T14:42:16.738Z
 ---
 
-# lib-editor-prosemirror-examples-utils-markdown
+# lib-editor-prosemirror-examples-markdown
 
 # guide
 
 # markdown-editor
 - milkdown /7.5kStar/MIT/202306/ts/remark
+  - https://github.com/Milkdown/milkdown
   - https://github.com/Saul-Mirone/milkdown
   - https://milkdown.dev/
   - https://milkdown.dev/online-demo
@@ -56,6 +57,13 @@ modified: 2022-11-08T21:14:54.399Z
     - for the backend service
   - https://github.com/xiphoseer/padington-client 
     - for the HTML frontend
+
+- https://github.com/drl990114/MarkFlowy /202311/ts/remirror
+  - https://markflowy.vercel.app/
+  - Modern markdown editor application
+  - Built-in ChatGpt
+  - based on tauri and has a volume of less than 10MB and better performance.
+  - uses the remirror editor
 # markdown-apps
 - tiny-write /4Star/NALic/202208/ts/prosemirror/markdown-it/web版+桌面版
   - https://github.com/dennis84/tiny-write
@@ -74,6 +82,11 @@ modified: 2022-11-08T21:14:54.399Z
   - 提供了类似typora的行内实时编辑预览
   - editor依赖 remirror、unstated-next、codemirror.v6、mui5、floating-ui、markdown-it、mdast-util-from-markdown
   - A better way to write Markdown
+
+- https://github.com/alexwkleung/Iris /10Star/MIT/202310/ts/rust
+  - https://irisnotes.vercel.app/
+  - comfortable note-taking app powered by Markdown 
+  - 依赖prosemirror、codemirror6、electron、napi-rs
 
 - blank /23Star/MIT/202208/ts
   - https://github.com/FPurchess/blank

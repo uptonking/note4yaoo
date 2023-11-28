@@ -41,7 +41,7 @@ modified: 2021-05-06T09:39:53.522Z
     - largely functional and immutable architecture to implement complex behavior
 
 - who is using #prosemirror
-  - atlassian, nytimes, guardian...
+  - atlassian, nytimes, guardian
   - linear
   - 美团学城
 
@@ -72,8 +72,6 @@ modified: 2021-05-06T09:39:53.522Z
   - tiptap的drawing示例，可以在空svg元素上画路径
   - atlaskit-editor开源了自定义renderer可以参考
   - atlaskit-editor实现了layout多列插件和图片排版插件
-  - 
-
 # faq-not-yet
 
 > 参考 site:github.com/ottypes

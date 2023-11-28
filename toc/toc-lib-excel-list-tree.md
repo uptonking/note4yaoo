@@ -374,9 +374,10 @@ modified: 2022-08-21T10:02:41.845Z
 - https://github.com/WyattJia/Pomegranate /rust/archived
   - tiny skiplist based log-structured merge-tree written in Rust
 
-- https://github.com/tomfran/LSM-Tree /java
+- https://github.com/tomfran/LSM-Tree /202311/java
   - Log-Structured Merge Tree Java implementation
   - Sorted String Table (SSTable) is a collection of files modelling key-value pairs in sorted order by key. It is used as a persistent storage for the LSM tree.
+  - [Log-Structured Merge Tree overview | Medium](https://medium.com/@tomfran/log-structured-merge-tree-a79241c959e3)
 - https://github.com/ingaleniranjan365/lsmdb /java
   - Implementation of log-structured merge-trees to create a key-value store
   - Implement a generic key-value database in Java that fulfills /element/:id/timestamp/:timestamp

@@ -12,7 +12,17 @@ modified: 2022-11-08T10:34:34.820Z
 # work-xp
 - ## 
 
-- ## 
+- ## 我觉得每个工程师不管是上班还是自由职业都要努力找到自己的 “The one person framework”
+- https://twitter.com/vikingmute/status/1729316508156014893
+- 我现在最顺手的脚手架包含这些内容：
+  * 前端/后端最熟悉的框架
+  * 登陆（Email/手机/各种OAuth - 微信/Github/Google）
+  * 支付（国内整一个/出海整一个）
+  * Email 模版以及发送
+  * 验证码服务
+  * 静态文件上传和处理
+  * 用户权限管理
+  * 集成现代的部署流程（CI/CD）
 
 - ## 为什么在中国，程序员越做越担心被淘汰，从道理上讲，不应该是越做越值钱么？
 - https://twitter.com/Barret_China/status/1684505453634686977

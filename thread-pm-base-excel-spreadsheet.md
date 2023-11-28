@@ -15,7 +15,10 @@ modified: 2022-04-23T18:48:32.550Z
 # discuss
 - ## 
 
-- ## 
+- ## 经过很长一段时间以后，我发现 excel/sheets 比脑图啥的都好用...
+- https://twitter.com/lyricwai/status/1729375911844487218
+- 我也是这个习惯，脑图和笔记我都是用excel。
+- 我用excel手动做甘特图，简单、高效。
 
 - ## Here are some handy CHAR functions that you can use to add context to your #GoogleSheets
 - https://twitter.com/benlcollins/status/1724774908972921219

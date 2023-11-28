@@ -25,7 +25,8 @@ modified: 2021-04-27T09:19:37.711Z
 # discuss
 - ## 
 
-- ## 
+- ## TIL that css & nesting has worked in browsers since about March.
+- https://twitter.com/BenLesh/status/1729275259575058641
 
 - ## I'm working on a new post on CSS nesting, and I noticed that the use of the "&" symbol isn't needed anymore for selectors.
 - https://twitter.com/shadeed9/status/1721570978096877999

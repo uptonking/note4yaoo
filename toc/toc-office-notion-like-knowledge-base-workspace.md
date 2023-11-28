@@ -51,6 +51,7 @@ modified: 2022-06-03T21:34:54.893Z
   - 前端依赖 @douyinfe/semi-ui、excalidraw、tiptap2、docx、katex、markdown-it、nextjs、react-pdf、react-query3、tippy.js、yjs
   - 后端依赖 nestjs、typeorm、passport、mysql、yjs
   - Think 是一款开源知识管理工具。通过独立的知识库空间，结构化地组织在线协作文档，实现知识的积累与沉淀，促进知识的复用与流通。同时支持多人协作文档。
+  - https://github.com/fantasticit/magic-editor /202301/ts
 
 - logseq /15.9kStar/AGPLv3/202208/clojure/ts
   - https://github.com/logseq/logseq

@@ -1,8 +1,8 @@
 ---
 title: pm-office-notion-xp
-tags: [notion, office, pm, xp]
+tags: [notion-like, office, pm, xp]
 created: 2022-03-17T17:49:28.980Z
-modified: 2022-03-17T17:49:45.743Z
+modified: 2023-11-28T14:48:45.910Z
 ---
 
 # pm-office-notion-xp

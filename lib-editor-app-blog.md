@@ -192,7 +192,7 @@ width = 'this.parent.width - this.marginLeft - this.marginRight'
   - editorState, selection, normalize, operation
   - prosemirror, slate, lexical
 
-## [How to implement a web-based rich text editor in 2023?](https://letsken.com/michael/how-to-implement-a-web-based-rich-text-editor-in-2023)
+## 📝 [How to implement a web-based rich text editor in 2023?](https://letsken.com/michael/how-to-implement-a-web-based-rich-text-editor-in-2023)
 
 - Since 2011 I’ve been spending a great junk of my time taming web browsers to behave correctly and predictably when editing rich text
 - If you wanted to take control over how contentEditable behaves, you have to write your own code. 
@@ -235,7 +235,7 @@ width = 'this.parent.width - this.marginLeft - this.marginRight'
   - So I’m tempted now to build an easy to understand reference implementation of a complete text editor. It’d be based off my existing code for the Ken editor, but entirely framework agnostic, fast and future-proof. Instead of a higher level wrapper around ProseMirror (such as TipTap)
   - Another approach that’s tempting for me is to revive Substance.js, but remove the rendering part of the library and use Svelte instead. 
 
-### [How to implement a web-based rich text editor in 2023?](https://discuss.prosemirror.net/t/how-to-implement-a-web-based-rich-text-editor-in-2023/5271)
+## 👥 [How to implement a web-based rich text editor in 2023?](https://discuss.prosemirror.net/t/how-to-implement-a-web-based-rich-text-editor-in-2023/5271)
 
 - 
 - 

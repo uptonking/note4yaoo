@@ -23,6 +23,7 @@ modified: 2023-09-25T17:52:46.690Z
 - who is using #eav/triple
   - magento
   - wordpress
+  - drupal
   - php-cms
 
 - eav vs json

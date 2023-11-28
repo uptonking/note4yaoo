@@ -15,7 +15,26 @@ modified: 2023-08-01T08:59:45.360Z
 # discuss
 - ## 
 
-- ## 
+- ## 🧐 let's talk about CRDTs. It's been a while.
+- https://twitter.com/JungleSilicon/status/1729316660849627634
+- A simple model of time is a linear sequence, kind of like those number lines from math class. Each change increments by one.
+- it gives you a history of changes, which means you can rewind time. You can also query how things change *over time*.
+- 🤔 what if you go back in time and then make a change? 
+- Well, one way to handle this is just like the undo / redo stack. You can override any changes in the divergent timeline and force it into a linear sequence.
+- Another solution might be a less destructive path where you do a diff between 1 and the new change and apply that diff to the end. This way, every state that has occurred is preserved. This is cool, but we lose something too. We now no longer know that 4 came from 1.
+- Another way to represent this is to create a branch off 1. Now there are two timelines with the time 2. This has lost something too! You now don't know that the new 2 came *after* 3.
+  - Alright, so let's change the way we label these nodes, now, instead of them being labelled with their sequence in time, they're labelled with the order in which the change occurred. You can tally the sequence in time by adding the number of elements from the beginning.
+- 🤔 what if I want to merge that timeline back into the original one? 
+- Well, we can always do a diff between the two and then apply those changes to the end of 3.
+  - This is great, but we lose the causal relationship between the other timeline.
+- Another way to represent this is that a new node has been added to the original timeline that *points* to 4. Now we know where the change originally came from *and* we have the correct state.
+- 🤔 but how do I collaborate with others? 
+- Let's go back to basics.
+  - Imagine time as two linear sequences, one for each person. 
+  - The problem here is that neither timeline has any knowledge of the other persons changes.
+- One way to solve this is to allow changes to be parented off each others changes rather than just our own! These leads to needing changes to be able to have more than one parent.
+- Ok so the numbers you saw before, they're called global sequence numbers, you get the latest sequence number you've seen and add 1 to it. There's also local sequence numbers, they're the ones in green and blue. They are the number of changes an agent has made since the start.
+- There's also sequence numbers for fields or files, how many times has the position field been changed? What about the size field? These can be useful for rewinding time for a single field or file.
 
 - ## 💡 How to build social reacts using CRDTs
 - https://twitter.com/JungleSilicon/status/1676195595990732800

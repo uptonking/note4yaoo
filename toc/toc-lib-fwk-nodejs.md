@@ -240,4 +240,9 @@ modified: 2022-12-19T01:49:01.371Z
   - Breeze is a library that helps you manage data in rich client applications. 
   - If you store data in a database, query and save those data as complex object graphs, and share these graphs across multiple screens of your JavaScript client, Breeze is for you.
   - https://github.com/Breeze/breeze.server.node
+
+- https://github.com/dbos-inc/operon /202311/ts
+  - https://docs.dbos.dev/
+  - a Typescript framework built on the database that helps you develop transactional backend applications.
+  - It runs your Typescript functions as database transactions, guarantees they run "once and only once" for each request, and orchestrates them into workflows so reliable that if your server restarts
 # more

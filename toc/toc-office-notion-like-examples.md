@@ -1,11 +1,11 @@
 ---
-title: toc-office-notion-like-editor-examples
-tags: [block-editor, examples, notion]
+title: toc-office-notion-like-examples
+tags: [block-editor, examples, notion-like]
 created: 2022-06-03T21:57:31.178Z
-modified: 2022-06-03T22:07:23.308Z
+modified: 2023-11-28T14:48:45.911Z
 ---
 
-# toc-office-notion-like-editor-examples
+# toc-office-notion-like-examples
 
 # guide
 
@@ -143,6 +143,18 @@ modified: 2022-06-03T22:07:23.308Z
 - https://github.com/omarsalem7/notion
   - https://notion-editor.netlify.app/
   - a simple functionality for notion like h1, h2.
+
+- https://github.com/shreyasmanolkar/notion-browser-client /202308/ts
+  - https://www.notion-s.co/
+  - develop a comprehensive clone resembling the popular platform Notion.
+  - https://github.com/shreyasmanolkar/notion-api
+    - Notion Clone API built with TypeScript and MongoDB, using TDD
+
+- https://github.com/factly/scooter /202308/js
+  - https://scooter-storybook.pages.dev/
+  - a Notion like editor built on top of TipTap & Prosemirror
+  - https://github.com/factly/dega /go
+    - lightweight, scalable & high performant CMS written in Go & React
 # notion-block-structure-api/self-hosted
 - https://github.com/dragonman225/nast
   - A block-based intermediate representation for document-like content.
@@ -267,6 +279,10 @@ modified: 2022-06-03T22:07:23.308Z
 
 - https://github.com/wendelchinsamy/notion-clone-web
   - https://github.com/wendelchinsamy/notion-clone-api
+
+- https://github.com/huewilliams/notion-clone /202311/ts
+  - https://notion-clone-kappa.vercel.app/
+  - notion.so clone (React + ProseMirror)
 # notion-ecosystem
 - https://github.com/NotionX/react-notion-x
   - https://react-notion-x-demo.transitivebullsh.it/

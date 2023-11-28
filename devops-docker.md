@@ -71,7 +71,11 @@ docker stop containerId
 # discuss
 - ## 
 
-- ## 
+- ## 我用Docker的时候也遇到了很多坑，而且特别难调
+- https://twitter.com/PenngXiao/status/1729460664585080872
+  - 从某种程度上说这些容器技术好用、不出事儿的时候真好用，出了事儿真难定位。
+- 容器自身的 bug 确实很难定位解决，但没有容器更难规范和定位其他问题。
+- 不过从原理上，容器并没有降低任何问题的发生概率。容器仅仅解决了环境的复制成本
 
 - ## Lazydocker: 在终端可以使用图形化的方式来管理 docker 的一系列服务。
 - https://twitter.com/vikingmute/status/1656477474518347779

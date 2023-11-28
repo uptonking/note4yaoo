@@ -91,6 +91,14 @@ modified: 2022-10-04T23:32:30.824Z
     - merging real-time editing with forking/proposing/merging back. 
     - We managed to do it without CRDT though
 # collab-solutions
+- https://github.com/saranrapjs/prosemirror-v8-perf /202311/ts
+  - ProseMirror's support for collaborative editing requires an "authority server". 
+  - The reference implementation of an authority server stores the current document and steps in-memory, and uses functions exported by ProseMirror libraries to apply steps to a document. 
+  - This repo tries to evaluate alternatives to running an authority server in node. 
+  - This repo has a node.js and Go implementation of an HTTP endpoint that receives a ProseMirror document and array of steps, hydrates them using a specific ProseMirror schema, applies the steps to the document, and returns the results. 
+  - The benchmark scripts start each server, and send requests to them, collecting latency information.
+  - Results: 
+
 - https://gitlab.com/emergence-engineering/blog/-/tree/master/articles/prosemirror-sync-1
   - using a sync database ( PouchDB, but it works with firebase ) as a communication layer between client and server.
   - [Article / code about prosemirror collab & PouchDB](https://discuss.prosemirror.net/t/article-code-about-prosemirror-collab-pouchdb/3045)

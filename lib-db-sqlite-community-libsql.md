@@ -22,7 +22,9 @@ modified: 2023-10-28T17:31:26.535Z
 
 - ## 
 
-- ## 
+- ## Browser -- do you mean database server? libSQL in WAL mode compiles to #Wasm now. Lots of amazing stuff coming soon
+- https://twitter.com/sarna_dev/status/1729404441495814244
+  - and here it is: WAL in a browser
 
 - ## I used to think forking sqlite (e.g., @libsqlhq ) was crazy but I'm on board now. 
 - https://twitter.com/tantaman/status/1684917032096030722

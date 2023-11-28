@@ -204,3 +204,13 @@ alert(process.env.NODE_ENV)
 
 - ## Do you know webpack supports skipping the parsing of large files through the use of the `module.noParse` option?
 - https://twitter.com/rspack_dev/status/1719707638496125128
+
+- ## 💡 That's actually the reason why @rspack_dev and Turbopack both give up Native ESM(bundleless), 
+- https://twitter.com/rspack_dev/status/1729435649177235539
+  - It's not only bad for production scenarios but also bad for development scenarios.
+- [Bundling vs Native ESM - Why Turbopack? – Turbopack](https://turbo.build/pack/docs/why-turbopack#bundling-vs-native-esm)
+  - Frameworks like Vite use a technique where they don’t bundle application source code in development mode. Instead, they rely on the browser’s native ES Modules system. This approach results in incredibly responsive updates since they only have to transform a single file.
+  - We experimented with this approach, but ran into scaling issues with large applications made up of many modules. 
+  - A flood of cascading network requests in the browser lead to a relatively slow startup time. 
+  - For the browser, it’s faster if it can receive the code it needs in as few network requests as possible - even on a local server.
+  - That’s why we decided that, like webpack, we wanted Turbopack to bundle the code in the development server.

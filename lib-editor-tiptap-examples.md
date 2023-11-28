@@ -14,7 +14,7 @@ modified: 2023-02-05T19:03:27.730Z
   - https://tiptap.dev/experiments
   - [提供了类似块编辑器的drag示例](https://tiptap.dev/guide/node-views/examples)
 # popular
-- BlockNote /14Star/MPL.v2/202208/ts
+- BlockNote /14Star/MPLv2/202208/ts
   - https://github.com/YousefED/BlockNote
   - https://blocknote-main.vercel.app/
   - A "Notion-style" block-based extensible text editor built on top of Prosemirror and Tiptap.
@@ -35,6 +35,7 @@ modified: 2023-02-05T19:03:27.730Z
   - 前端依赖 @douyinfe/semi-ui、excalidraw、tiptap2、docx、katex、markdown-it、nextjs、react-pdf、react-query3、tippy.js、yjs
   - 后端依赖 nestjs、passport、typeorm、mysql、yjs
   - Think 是一款开源知识管理工具。通过独立的知识库空间，结构化地组织在线协作文档，实现知识的积累与沉淀，促进知识的复用与流通。同时支持多人协作文档。
+  - https://github.com/fantasticit/magic-editor /202301/ts
 
 - notesnook /2.8kStar/GPLv3/202209/js+ts/tiptap
   - https://github.com/streetwriters/notesnook
@@ -70,7 +71,7 @@ modified: 2023-02-05T19:03:27.730Z
   - 实现了RTL国际化方向
   - 数据保存使用了 idb-keyval
 
-- neeto-editor /10Star/MIT/202208/js/tiptap/提交多
+- neeto-editor /12Star/MIT/202311/js/tiptap/提交多
   - https://github.com/bigbinary/neeto-editor
   - https://neeto-editor.onrender.com/
   - [editor demo with addons](https://neeto-editor.onrender.com/?path=/docs/examples-customize-options-addons--addons)
@@ -200,7 +201,7 @@ modified: 2023-02-05T19:03:27.730Z
 - https://github.com/g-bastianelli/tiptap-react-notion
   - Quick example of how we can make a 'Notion like' editor with Tiptap and react
 # tiptap-utils
-- https://github.com/troop-dev/tiptap-react-render
+- https://github.com/troop-dev/tiptap-react-render /202306/ts
   - This library renders TipTap JSON payloads in React clients without embedding the editor.
   - We were inspired by Contentful's rich-text-react-renderer tool, so we built a similar one for TipTap payloads!
 
@@ -223,6 +224,10 @@ modified: 2023-02-05T19:03:27.730Z
 - https://github.com/n8b8dy/tiptap-spoiler
   - React extension (actually two extensions) for TipTap to add spoilers to the editor.
   - http://zetamen.github.io/ckeditor-spoiler/ /ckeditor4
+
+- https://github.com/amirhhashemi/tiptap-text-direction /202304/ts
+  - This extension automatically detects the direction of a configurable list of nodes and adds dir="ltr" or dir="rtl" to them.
+  - Why not dir="auto"? dir="auto" changes the text direction based on the element's content too
 
 - https://github.com/yaskevich/extension-marker
   - Tiptap extension for setting custom class of the inline node (mark)

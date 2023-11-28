@@ -28,7 +28,7 @@ modified: 2023-02-05T19:03:12.722Z
   - 不支持 selective undo
   - 未提供comment示例
 
-- who is using #slate
+- who is using #slatejs
   - pingcode slate-angular
   - taskade
   - 旧版语雀、旧版钉钉

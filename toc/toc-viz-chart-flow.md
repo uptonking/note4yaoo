@@ -250,6 +250,13 @@ modified: 2020-10-22T10:22:55.878Z
   - Directed graph layout for JavaScript
   - This project does not have a maintainer or active project members
 
+- https://github.com/tgdwyer/WebCola /1.9kStar/MIT/202307/ts/NoDeps
+  - http://marvl.infotech.monash.edu/webcola/
+  - an open-source JavaScript library for arranging your HTML5 documents and diagrams using constraint-based optimization techniques.
+  - The core layout is based on a complete rewrite in Javascript of the C++ libcola library.
+  - It works well with libraries like D3.js, svg.js, and Cytoscape.js. 
+  - Note: While D3 adaptor supports both D3 v3 and D3 v4, WebCoLa's interface is styled like D3 v3.
+
 - https://github.com/jacomyal/sigma.js /ts
   - https://www.sigmajs.org/
   - JavaScript library aimed at visualizing graphs of thousands of nodes and edges

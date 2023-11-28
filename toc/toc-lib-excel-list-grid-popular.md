@@ -30,6 +30,7 @@ modified: 2022-08-21T10:02:27.788Z
     - 单元格图片懒加载
   - 接入现有组件库
   - modular, extensible, customizable
+  - the-elm-architecture
 
 - collaborative-editing
   - 数据模型考虑 持久化(一般db-text/json/blob)、展示(json)、协作(llw/map/sequence)、衍生计算(如聚合)

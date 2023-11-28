@@ -238,7 +238,10 @@ In React I can use componentDidMount to also attach e.g. a good jQuery UI dialog
 # discuss
 - ## 
 
-- ## 
+- ## [Best way to split an App in user and Admin apps : elm_202309](https://www.reddit.com/r/elm/comments/16j9kvf/best_way_to_split_an_app_in_user_and_admin_apps/)
+  - I was thinking of either splitting the app into two: one for admin one for normal user or having a way to load dynamically the administrator bit on demand. Is there a standard way or tools to do so ?
+
+- There are other aspects to splitting too. Do you use the same or different routes for Admins and regular users? Is the whole app behind a login page, or just the admin content? Do you use a minifier? How big are you assets that you're concerned with?
 
 - ## [[Question] Is Elm a smart decision for a long term project in 2023? : elm_202308](https://www.reddit.com/r/elm/comments/164ipl0/question_is_elm_a_smart_decision_for_a_long_term/)
 - It’s bear market for Elm XD. Builders are still building:

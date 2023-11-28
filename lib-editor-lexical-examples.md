@@ -43,6 +43,10 @@ modified: 2022-05-15T18:37:27.994Z
 
 - https://github.com/juliankrispel/lexical-react-boilerplate
   - Boilerplate for lexical editor projects
+# lexical-based-editors
+- https://github.com/palerdot/react-slite /202305/ts/代码过于简单
+  - This react component provides a slack like rich text editing experience powered by slate.js
+  - Starting v0.2.0, react-slite is powered by lexical.
 # examples
 - https://github.com/lyove/lexical-vanilla-editor /js
   - An extensible web text-editor based on Lexical Vanilla Js

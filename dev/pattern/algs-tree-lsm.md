@@ -19,6 +19,16 @@ modified: 2023-04-20T08:05:44.256Z
   - 新的InfluxDB的存储引擎看起来和LSM树很像
 # blogs
 
+## 🌲☕️ [Log-Structured Merge Tree overview | Medium](https://medium.com/@tomfran/log-structured-merge-tree-a79241c959e3)
+
+- https://github.com/tomfran/LSM-Tree /202311/java
+  - Log-Structured Merge Tree Java implementation
+
+- I studied LSM trees at university and after encountering them twice in Designing Data-Intensive Applications and Database Internals I decided to implement something in Java.
+- The idea behind this project is not to provide the most efficient implementation ever, but to experiment with storing data on disk
+
+- There is a lot that could be done to improve the project, skip lists could be optimized further, bloom filters could be made more cache efficient, and proper crash recovery could be implemented.
+
 ## [LSM树由来、设计思想以及应用到HBase的索引 - yanghuahui - 博客园](https://www.cnblogs.com/yanghuahui/p/3483754.html)
 
 - 讲LSM树之前，需要提下三种基本的存储引擎，这样才能清楚LSM树的由来：

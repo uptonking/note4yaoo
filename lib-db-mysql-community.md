@@ -41,6 +41,14 @@ modified: 2022-06-13T03:00:06.041Z
 - 
 - 
 
+# discuss-mysql-v8
+- ## 
+
+- ## What makes MySQL 8.0 slower than 5.6 on the Insert Benchmark?
+- https://twitter.com/MarkCallaghanDB/status/1729189298849874001
+  * it isn't a few new hot spots
+  * it is new memory system stress distributed throughout the code (more misses, loads, stores for cache and TLB)
+  * much of the new overhead arrives in pre-GA 5.7 and pre-GA 8.0.
 # discuss
 - ## 
 

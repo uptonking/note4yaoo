@@ -129,6 +129,24 @@ modified: 2021-05-13T03:10:56.112Z
 - ref
   - [twitter: JetPack compose flutter ](https://twitter.com/search?q=JetPack%20compose%20flutter%20min_replies%3A1&src=typed_query&f=live)
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Flutter creator recently left Google and wrote this post
+- https://twitter.com/sebastienlorber/status/1729215062689157173
+- just to mention that Flutter is no longer using Skia they are using Impeller; much lighter and faster than Skia which will avoid the flicker issues that flutter had.
+  - I think Flutter web is still Skia.
+- But does Impeller make it more competitive compared to RN? Particularly on web?
+  - I don't see any chance for Flutter to compete with RN on the web which is very important. but on native it's way ahead of RN especially when it comes to performance and less fragmentation. But still there are other things to consider as well
+- flutter web is comparable to react if you're designing a pure app (not a typical long form text heavy website). It'll probably never be able to overcome this hurdle. Flutter on other platforms is already way ahead of RN except a few edge cases.
+
+- A "wasm based model" for the web is inevitable, but it's gonna take more than a few years for it to be something that's a common arch/delivery platform for web apps outside of domain specific apps that require high perf (i.e. figma, stackblitz, etc)
+- Why do you think it'll take a few years? Flutter is already doing it on latest (beta?) versions of Chrome/FF. The only major holdout will be Safari; which can be a few months to a few decades who knows lol
+  - Becoming a widespread common/default will take a while tho because the HTML/CSS/JS Web has had decades to nail speed, security and accessibility — a huge bar. Wasm Web will overcome this, but largely a function of time for standards & iteration
+
 - ## Kraken is an interesting take on cross-platform dev
 - https://twitter.com/youyuxi/status/1439310638451466243
   - it combines Flutter's rendering engine with a JS runtime that implements a subset of W3C specs - essentially allowing web frameworks to leverage Flutter's rendering performance

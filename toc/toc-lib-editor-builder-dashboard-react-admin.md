@@ -25,6 +25,10 @@ modified: 2023-02-17T21:48:01.840Z
   - designed as loosely coupled React components and hooks exposing reusable controller logic. It is very easy to replace any part of react-admin with your own
   - [Who is using #react-admin? · Issue](https://github.com/marmelab/react-admin/issues/4027)
   - [React-admin - Supported Data Provider Backends](https://marmelab.com/react-admin/DataProviderList.html)
+  - [Using React-Admin With Your Favorite UI Library](https://marmelab.com/blog/2023/11/28/using-react-admin-with-your-favorite-ui-library.html)
+    - React-admin relies on Material UI for its user interface by default. 
+    - However, you can use react-admin with any UI library
+    - This is made possible by the very architecture of react-admin, built over a headless package named ra-core.
 
 - https://github.com/BlackBoxVision/react-admin-extensions
   - Packages for improving your development workflow with react admin

@@ -1,8 +1,8 @@
 ---
 title: pm-office-notion-community
-tags: [community, notion]
+tags: [community, notion-like]
 created: 2022-11-25T10:08:57.343Z
-modified: 2023-03-29T17:23:37.126Z
+modified: 2023-11-28T14:48:45.910Z
 ---
 
 # pm-office-notion-community

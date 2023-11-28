@@ -12,20 +12,57 @@ modified: 2023-02-09T18:32:06.240Z
 - resources
   - https://github.com/quilljs/awesome-quill
 # popular
+- quill /37.5kStar/BSD/202311/ts
+  - https://github.com/quilljs/quill
+  - https://quilljs.com/
+  - https://quilljs.com/playground/
+  - a modern WYSIWYG editor built for compatibility and extensibility
+  - forks
+  - https://github.com/reedsy/quill /202308/ts
+    - We need to use our own forked version of the Delta class, which adds support for complex attributes (which we need for tracked changes).
+    - 依赖@reedsy/quill-delta、eventemitter3、parchment、rfdc
+    - https://github.com/reedsy/delta
+    - https://github.com/reedsy/parchment
+  - https://github.com/reedsy/rich-text
+    - Rich Text uses quill-delta on the back end.
+
+- typewriter /347Star/MIT/202311/ts
+  - https://github.com/typewriter-editor/typewriter
+  - A rich text editor based off of Quill.js and Ultradom, and using Svelte for UI.
+  - 依赖 svelte、popperjs2、typewriter/delta
+  - Built on the same data model as Quill.js, the Delta format, and using a tiny virtual DOM, Superfine, Typewriter aims to make custom rich text editors faster, easier, and more powerful
+
+- https://github.com/ludejun/quill-react-commercial /202311/ts/js
+  - https://ludejun.github.io/quill-react-commercial/
+  - 多功能的、可面向商业化的quill富文本编辑器
+  - Use the latest quill@2.0.0-dev.4. Implement using React Hooks
+
+- https://github.com/shenmaxg/quill-imitate-shimo /202110/ts
+  - 基于 quill 的富文本编辑器
+
+- https://github.com/hubertnare/strapi4-wysiwyg-replacement /202202/js
+  - change the default WYSIWYG to Quill Editor
+  - [How to change the default WYSIWYG in Strapi v4 to Quill Editor_202203](https://strapi.io/blog/how-to-change-the-default-wysiwy-to-quill-editor)
+
 - https://github.com/zenoamaro/react-quill /202208/ts/单文件
   - A Quill component for React.
-  - https://github.com/ha3158987/react-quill-editor-example /js
 
-- https://github.com/gtgalone/react-quilljs /202209/ts
+- https://github.com/gtgalone/react-quilljs /202209/ts/单文件
   - React Hook Wrapper for Quill, powerful rich text editor.
+
+- https://github.com/sciencenawaaz/Text-Editor /202309/js
+  - https://text-editor-roan.vercel.app/
+  - text editor using react-quill
+
 - https://github.com/lovelysystems/lovely-editor /202210/js
   - react component which lets you use multiple editors (e.g Quill) for a single document.
   - Each editor will create an isolated HTML markup of its part.
+  - https://github.com/ha3158987/react-quill-editor-example /202306/js
   - https://github.com/maxfahl/Quill-Edit-Multiple
 
 - https://github.com/tangien/quilljs-textarea /202202/js
   - https://tangien.github.io/quilljs-textarea/
-  - A simple extended helper for quilljs to transform textarea into text editor.
+  - A simple extended helper for quilljs to transform textarea into text editor
   - Works on both textarea and divs
   - Auto-initialize quilljs using data-quilljs selector
 
@@ -52,7 +89,12 @@ modified: 2023-02-09T18:32:06.240Z
   - quilljs v2.0.0-dev.3
   - 功能太少
 
-- https://github.com/tanvirraj/quill-notion-table-editor /js
+- https://github.com/dost/quilljs-table /201703/js
+  - Test lab for creating TABLE functionality in QuillJS using Containers.
+- https://github.com/unzld/quill-better-table-picker /202110/js
+  - An extension of the table module for Quill, with support for toolbar table picker.
+
+- https://github.com/tanvirraj/quill-notion-table-editor /202208/js
   - https://tanvirraj.github.io/quill-notion-table-editor/
   - a notion like menu and table editor based on quilljs
   - table功能简单，通过类似/菜单添加
@@ -67,44 +109,12 @@ modified: 2023-02-09T18:32:06.240Z
 - https://github.com/Kibo/filemanager-js /202201/ts/vue
   - The JavaScript filemanager for CKEditor, Quill, TinyMCE.
 
-- https://github.com/dost/quilljs-table /201703/js
-  - Test lab for creating TABLE functionality in QuillJS using Containers.
-- https://github.com/unzld/quill-better-table-picker /202110/js
-  - An extension of the table module for Quill, with support for toolbar table picker. 
-
-- https://github.com/quill-mention/quill-mention /202311/js
-  - https://quill-mention.com/
-  - a module to provide @mentions or #hashtag functionality for the Quill rich text editor.
-
 - https://github.com/BrenoFariasdaSilva/TextSync /202309/js/仅同步未处理冲突
   - A Real-Time Distributed-Text-Editor Application with ReactJS, NodeJS, MongoDB and WebSockets.
   - 依赖react、quill、socket.io、mongoose
 
 - https://github.com/isaacsokari/simple-docs /202104/ts
   - Lightweight Google Docs clone made using Quill editor, Socket.io, and MongoDB.
-
-- https://github.com/luanpanno/google-docs-clone /202105/ts
-  - Google Docs Clone with Node, React, Socket.io and Quill
-  - https://github.com/seifeldeen92/google-docs-texteditor-clone
-
-- https://github.com/bryanakitchen/google-docs-clone-server /202105/js
-  - uses Socket.io, Quill, and Mongoose to generate a text editor that will allow for simultaneous edits.
-  - https://github.com/bryanakitchen/google-docs-clone-front
-  - https://github.com/bryanakitchen/google-docs-clone /client+server
-
-- https://github.com/Bunty9/Google-docs-backend /202104/js
-  - Backend of the Google docs clone , based on socket.io , express and mongoDb
-  - https://github.com/Bunty9/Google-docs-frontend
-
-- https://github.com/ajCastiglione/google-docs-clone /202306/js
-  - https://google-docs-clone-mwd.netlify.app/
-  - Built to replicate the live document editing experience of Google docs.
-  - Saves every 2 seconds to instance based on URL ID
-  - https://github.com/ahzamir/google-docs-clone
-  - https://github.com/Nukealbert/google-doc-editor-clone
-  - https://github.com/WinnardArthur/google-docs-clone
-  - https://github.com/ramyatrouny/GoogleDocs-Clone
-  - https://github.com/ayushjha952/Google_docs_clone
 
 - https://github.com/LittleWhitechun/chouxiang-converter /202208/ts
   - React16 hooks + css in js + Quill + ts *抽象话翻译器，可以把中文翻译成emoji，支持单字替换，文字位置对应跳转，一件翻译等
@@ -116,47 +126,29 @@ modified: 2023-02-09T18:32:06.240Z
 
 - https://github.com/joeldarl/quill-cms /202101/ts/pug
   - A publishing CMS developed using NodeJS, TypeScript and MongoDB. 
+  - 不依赖quilljs，编辑器使用SimpleMDE
 
 - https://github.com/amamov/smart-editor-dev-playground /202107/ts
   - realtime collabo editor and rich editor demo - quill, draft-js, toast-ui
 # quill-based-editors
-- https://github.com/yashwason/sample-quilljs-implementation /js/inactive
-  - Sample of basic implementation of quilljs rich text editor and converting the outputted Deltas into html
-
 - https://github.com/imnapo/react-native-cn-quill /202306/ts
   - a rich-text editor for react-native. 
   - We've created this library on top of Quill Api.
 - https://github.com/LuudJanssen/react-native-webview-quill /201912/ts
   - Quill component for React Native built using `postMessage` communication and a WebView.
 
-- https://github.com/ludejun/quill-react-commercial /202311/ts/js
-  - https://ludejun.github.io/quill-react-commercial/
-  - 多功能的、可面向商业化的quill富文本编辑器
-  - Use the latest quill@2.0.0-dev.4. Implement using React Hooks
-- https://github.com/shenmaxg/quill-imitate-shimo /202110/ts
-  - 基于 quill 的富文本编辑器
-
-- typewriter /308Star/MIT/202301/ts
-  - https://github.com/typewriter-editor/typewriter
-  - A rich text editor based off of Quill.js and Ultradom, and using Svelte for UI.
-  - 依赖 svelte、popperjs2、typewriter/delta
-  - Built on the same data model as Quill.js, the Delta format, and using a tiny virtual DOM, Superfine, Typewriter aims to make custom rich text editors faster, easier, and more powerful
-
-- https://github.com/innovatorved/Markdown-Editor /202212/ts
-  - https://markdown-editor-six-mu.vercel.app/
-  - A simple Nextjs , Quill based markdown Editor
-
 - https://github.com/brsloan/warewoolf /202306/js
   - A minimalist novel-writing system/rich text editor designed to be usable without a mouse.
   - All-keyboard navigation designed for pleasant use without a mouse
   - 依赖quill.v1、docx、@electron/remote
 
+- https://github.com/innovatorved/Markdown-Editor /202212/ts
+  - https://markdown-editor-six-mu.vercel.app/
+  - A simple Nextjs , Quill based markdown Editor
+
 - https://github.com/ChrisMayor/D365RichTextEditor /202012/ts
   - Dynamics 365 Rich text editor for Unified Interface / Based on PowerApps component framework, React and quill
 
-- https://github.com/sciencenawaaz/Text-Editor /202309/js
-  - https://text-editor-roan.vercel.app/
-  - text editor using react-quill
 - https://github.com/TonyYu2015/GEditor /202309/js
   - https://g-editor-fawn.vercel.app/
   - rich-text base on Quill
@@ -174,6 +166,10 @@ modified: 2023-02-09T18:32:06.240Z
   - Rich text editor based on Quill
   - Built in vanilla JS, typescript support, so it can be used on React, Vue, Angular as well
 # plugins/modules
+- https://github.com/quill-mention/quill-mention /635Star/MIT/202311/js
+  - https://quill-mention.com/
+  - a module to provide @mentions or #hashtag functionality for the Quill rich text editor.
+
 - https://github.com/raphaelM-sudo/quill-emoji-mart-picker /202006/ts
   - https://quill-emoji-mart-picker.netlify.com/
   - Module and Blot for Quill.js that supports Emoji Mart Picker and Emoji Mart.
@@ -226,6 +222,8 @@ modified: 2023-02-09T18:32:06.240Z
   - Word count module for Quill.
   - Uses words-count to perform word counting in multiple languages and character sets.
 
+- https://github.com/rain0002009/quill-position-placeholder /201907/ts
+  - 一个Quill.js的插件，用来添加一个使用百分比高度的占位元素。
 - https://github.com/jspaine/quill-placeholder-module /201807/ts
   - https://codepen.io/jspaine/pen/MozyNp
   - Quill module for adding placeholders
@@ -380,6 +378,30 @@ modified: 2023-02-09T18:32:06.240Z
   - 依赖ckeditor5-react、react-quill，实现了可切换的版本
   - /v0.8/fields/html/package.json
 
+- https://github.com/luanpanno/google-docs-clone /202105/ts
+  - Google Docs Clone with Node, React, Socket.io and Quill
+  - https://github.com/seifeldeen92/google-docs-texteditor-clone
+  - https://github.com/Chondan/google-doc-clone
+
+- https://github.com/bryanakitchen/google-docs-clone-server /202105/js
+  - uses Socket.io, Quill, and Mongoose to generate a text editor that will allow for simultaneous edits.
+  - https://github.com/bryanakitchen/google-docs-clone-front
+  - https://github.com/bryanakitchen/google-docs-clone /client+server
+
+- https://github.com/Bunty9/Google-docs-backend /202104/js
+  - Backend of the Google docs clone , based on socket.io , express and mongoDb
+  - https://github.com/Bunty9/Google-docs-frontend
+
+- https://github.com/ajCastiglione/google-docs-clone /202306/js
+  - https://google-docs-clone-mwd.netlify.app/
+  - Built to replicate the live document editing experience of Google docs.
+  - Saves every 2 seconds to instance based on URL ID
+  - https://github.com/ahzamir/google-docs-clone
+  - https://github.com/Nukealbert/google-doc-editor-clone
+  - https://github.com/WinnardArthur/google-docs-clone
+  - https://github.com/ramyatrouny/GoogleDocs-Clone
+  - https://github.com/ayushjha952/Google_docs_clone
+
 - https://www.npmjs.com/package/@nocobase/client
   - 依赖react-quill.v1
 
@@ -428,6 +450,17 @@ modified: 2023-02-09T18:32:06.240Z
 
 - https://github.com/marchetti2/kanban-reactjs /202202/ts
   - Firebase Firestore/Auth, react-beautiful-dnd, Chakra-ui
+
+- https://github.com/LogicalAnt/live-doc /ts
+  - a small live editor using React-Quill editor and Socket.io
+
+- https://github.com/yangzongzhuan/RuoYi-Vue /202311/java/vue
+  - http://ruoyi.vip/
+  - 基于SpringBoot，Spring Security，JWT，Vue & Element 的前后端分离权限管理系统，同时提供了 Vue3 的版本
+  - https://github.com/yangzongzhuan/RuoYi-Vue-fast
+
+- https://github.com/omzeton/notnik /202202/ts/vue
+  - Notebook app (Vue - Quill - Express - MongoDB)
 # collab-ot
 - https://github.com/WindrunnerMax/Collab
   - 初探富文本之OT协同实例 sharedb+quill
@@ -443,8 +476,6 @@ modified: 2023-02-09T18:32:06.240Z
 - https://github.com/rohitrp/collaborative-editor-sharedb-quilljs /201806/js
   - a modified version of collaborative rich text editor using Quill and the rich-text OT type
   - In this demo, data is not persisted
-- https://github.com/LogicalAnt/live-doc /ts
-  - a small live editor using React-Quill editor and Socket.io
 
 - https://github.com/pedrosanta/quill-sharedb-cursors /201801/js
   - An attempt at multi cursors sync in a collaborative editing scenario using Quill, a ShareDB backend, and the reedsy/quill-cursors Quill module
@@ -571,6 +602,9 @@ modified: 2023-02-09T18:32:06.240Z
 - https://github.com/payz0/quill-base64-to-file-location /202104/js
   - Method untuk merubah base64 ke file upload dalam quill editor
 # non-js
+- https://github.com/volser/android-quill-delta /201809/java/kotlin
+  - A kotlin implementation of Delta format
+
 - https://github.com/singerdmx/flutter-quill /2.2kStar/MIT/202311/dart
   - a rich text editor and a Quill component for Flutter.
   - editor built for the modern Android, iOS, web and desktop platforms

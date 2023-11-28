@@ -38,7 +38,9 @@ modified: 2023-09-17T18:17:41.377Z
 
 - ## 
 
-- ## 
+- ## Interested in sorted maps? (Binary Search Trees, AVL Trees, RB Trees, B Trees, etc.)
+- https://twitter.com/eatonphil/status/1728890043438395712
+- 2-3 trees is all you need, saying as a long AVL follower.
 
 - ## Reading the Adaptive Radix Tree paper - Having the realisation that trie is such an underrated data structure. 
 - https://twitter.com/debasishg/status/1725966931830923489

@@ -113,7 +113,7 @@ modified: 2022-08-18T16:57:15.296Z
   - https://ureeka.biz/
     - Ureeka is the ultimate small business growth engine built by successful entrepreneurs who know the formula proven to drive growth.
 
-- mnote /1Star/MPL.v2/202208/ts/tauri/提交多
+- mnote /1Star/MPLv2/202208/ts/tauri/提交多
   - https://github.com/gfrancine/mnote
   - Mnote: a desktop app to write notes in more than just text
 
@@ -202,6 +202,10 @@ modified: 2022-08-18T16:57:15.296Z
 
 - https://github.com/Privoce/privoce-editor
   - This editor supports markdown, @ and #.
+
+- https://github.com/huewilliams/notion-clone /202311/ts
+  - https://notion-clone-kappa.vercel.app/
+  - notion.so clone (React + ProseMirror)
 # prose-cms
 - alternatives
   - outline
@@ -257,16 +261,22 @@ modified: 2022-08-18T16:57:15.296Z
   - ui基于svelte
   - Primo is a component-based CMS that makes it easy to build visually-editable static sites
 
+- https://github.com/fiatjaf/coisas /317Star/MIT/201907/js/inactive
+  - a headless CMS specifically designed to let you edit files hosted in a GitHub repository. 
+  - It is similar to Netlify CMS and Prose.
+  - 依赖prosemirror、mobx
+
 - https://github.com/statamic/cms /php
   - flat-first, Laravel + Git powered CMS 
 
-- https://github.com/erellsworth/overlord
+- https://github.com/erellsworth/overlord /nuxt
   - CMS built with Nuxt, Express, and Tiptap.
 
-- https://github.com/factly/dega /go
-  - lightweight, scalable & high performant CMS written in Go & React. 
-  - https://github.com/factly/scooter /js
-    - editor built on top of TipTap & Prosemirror.
+- https://github.com/factly/scooter /202308/js
+  - https://scooter-storybook.pages.dev/
+  - a Notion like editor built on top of TipTap & Prosemirror
+  - https://github.com/factly/dega /go
+    - lightweight, scalable & high performant CMS written in Go & React
 # more-prosemirror-examples
 - https://github.com/devmnj/react-editor-framework-examples
   - This is a set of Editor Example (React) with TinyMCE, RMirror, Draftjs, MuiEditor and Slatejs .

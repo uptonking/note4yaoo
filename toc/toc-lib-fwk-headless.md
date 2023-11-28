@@ -13,12 +13,13 @@ modified: 2021-05-24T16:55:40.481Z
 - 国内有很多快速开发框架如jeesite/jeecg，国外对应的是headless/cms框架
   - https://github.com/n370/awesome-headless-cms
 # popular
-- strapi /36.7kStar/MIT+EE/202105/js
+- strapi /57.5kStar/MIT+EE/202311/ts
   - https://github.com/strapi/strapi
+  - https://strapi.io/
+  - the leading open-source headless CMS
   - 核心功能是提供了通过ui操作实现rest api的功能
     - 系统内容通过ui操作编写
     - 系统前端strapi没有限制，strapi只提供了api
-  - Open source Node.js Headless CMS to easily 
   - The original purpose of the project was to help Bootstrap your API
   - Now, Strapi is an open-source headless CMS that gives developers the freedom to choose their favorite tools and frameworks and allows editors to manage and distribute their content using their application's admin panel.
 
