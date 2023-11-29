@@ -9,6 +9,8 @@ modified: 2023-03-21T09:03:05.361Z
 
 # guide
 
+- appstore
+  - 原来开发者不续费app会被下架
 # discuss-register
 - ## 
 

@@ -15,11 +15,26 @@ modified: 2023-10-26T18:47:22.664Z
 - ## 
 
 - ## 
-
+# discuss-change-schema
 - ## 
 
 - ## 
+
+- ## Problem: We need to rename a DB column, but we want to avoid a breaking change. Solution:
+- https://twitter.com/housecor/status/1729893167812555124
+  1. Add new column (Ticket 1)
+  2. Update all code to reference new column (Ticket 2)
+  3. Release. Now no code references the old column. 😀
+  4. Delete the old DB column (Ticket 3)
+- Don't forget migrating the data and updating any DB logic (sprocs, etc.) to reference the new column.
+- Expand and contract pattern
+- Or just use MongoDB
+
 # discuss-migration/upgrade
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 太久没做数据迁移都忘了要后建索引。
@@ -84,9 +99,6 @@ modified: 2023-10-26T18:47:22.664Z
   - 暂时没有，其他组件放容器都行。数据库我选择基于裸OS做。就是为了尽可能减少不必要的依赖，比如阿里云里对认证的额外依赖一样
 - 吹牛没问题，不对称对比加拉踩就没必要了。
 - 你这只是一家后端服务集群，人家是整个云服务供应商，两者不在一个水平上吧。其实阿里云真正的问题在于很多东西依赖于Java，它早就应该分散这种对单一语言的依赖的
-- 
-- 
-- 
 
 - ## Lukewarm(微温的; 不热烈的) take for database products - focus on winning new workloads, don't worry so much about migrations. 
 - https://twitter.com/MarkCallaghanDB/status/1724454882785304672

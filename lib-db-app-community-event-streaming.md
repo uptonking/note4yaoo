@@ -32,6 +32,31 @@ modified: 2023-10-27T07:02:42.391Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## At WarpStream, we’re betting on the future of data streaming being completely object storage based.
+- https://twitter.com/richardartoul/status/1729566466305913166
+  - [S3 Express is All You Need - WarpStream](https://www.warpstream.com/blog/s3-express-is-all-you-need)
+
+- ## I think there's a massive opportunity for a standardized cross-platform/language connectors API: 
+- https://twitter.com/gunnarmorling/status/1729519342008533238
+  - kinda like Kafka Connect, but in a separate process (side car, if you will), with #gRPC API. 
+  - Implement each connector once, then use bindings for Kafka, Pulsar, Flink, etc.
+- Thinking on this more.. I think KC just needs to be torn apart. Between the in-memory data model and the language-agnostic API you’re talking about. ‘tis the season to disaggregate.
+  - Yepp, 💯. Touched on this a while ago. But by now I think things should be taken a step further and such a connector runtime should be not tied to Kafka, or any other specific transport.
+- that is kinda like what we have been doing in @ApacheCamel and in particular with #camelk with the KameletBinding/Pipe API
+  - Ha, yeah. My memory on Camel details are fading; does it help with splitting up "partitions" across compute nodes? Say, I want to read from a Kafka cluster with 100 topics. Can I set up one Camel connector to split this into tasks running on ten machines, reading ten topics each?
+- Ha, yeah. My memory on Camel details are fading; does it help with splitting up "partitions" across compute nodes? Say, I want to read from a Kafka cluster with 100 topics. Can I set up one Camel connector to split this into tasks running on ten machines, reading ten topics each?
+
+- Why gRPC?
+  - Just an example, could be anything efficient cross-process really. What others would you have in mind?
+- I don't have any preference but I have been thinking a lot about this recently for cross-process or even cross-JVM communication. I see people using Kafka for that use case sometimes but it's super expensive.
+- rsocket seems also a great option, in particular the backpressure built-in capabilities
+
+- This is what @daprdev aims at
+
 - ## Extremely annoying fact: Kafka transactional producers and consumers do not offer read-your-writes consistency.
 - https://twitter.com/nikhilbenesch/status/1728874132161564986
 - The “original sin” is the fact that uncommitted transactions produce real records into the partition, so uncommitted transactions can block future transactional consumers indefinitely in order to preserve read committed isolation.

@@ -104,7 +104,9 @@ modified: 2023-09-17T17:37:19.913Z
 # discuss
 - ## 
 
-- ## 
+- ## Amazon has joined the shared-nothing relational databases club by introducing Amazon Aurora Limitless, 
+- https://twitter.com/denismagda/status/1729552540784586867
+  - a service capable of scaling write throughput and storage capacity beyond the limits of a single Aurora writer instance.
 
 - ## 把公司里的一个存算强耦合的 AP 系统尝试改造成存算分离，存和算之间用 RPC 通讯。发现改造完后性能不但没有损失太多，在某些场合还改进不少。
 - https://twitter.com/r0_ayanami/status/1728979172373193155

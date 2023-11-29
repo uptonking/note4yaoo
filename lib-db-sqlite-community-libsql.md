@@ -25,6 +25,13 @@ modified: 2023-10-28T17:31:26.535Z
 - ## Browser -- do you mean database server? libSQL in WAL mode compiles to #Wasm now. Lots of amazing stuff coming soon
 - https://twitter.com/sarna_dev/status/1729404441495814244
   - and here it is: WAL in a browser
+- what's the point of a "virtual" WAL? A write ahead log is only useful if its persisted. Or does this PR allow the user to save the WAL file wherever?
+  - "virtual" as in SQLite's "virtual file system", so you can bring your own implementation and persist the WAL frames however you wish. @tursodatabase 's replication and embedded replica layers are built upon virtual WAL
+
+- what storage engine in the browser? is this on opfs?
+  - In-memory by default, but it also supports OPFS
+
+- the log is the database.  sqlite-wasm 支持 WAL 后，应该可以做流式数据备份了。官方的 sqlite-wasm 还不支持 WAL
 
 - ## I used to think forking sqlite (e.g., @libsqlhq ) was crazy but I'm on board now. 
 - https://twitter.com/tantaman/status/1684917032096030722

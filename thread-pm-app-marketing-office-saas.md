@@ -24,6 +24,17 @@ modified: 2023-10-10T14:20:13.855Z
 - There is now a real opportunity for the "please don't change this software anymore" monetization model, simply because the pursuit of endless ROI drives business to force bloat onto the same piece of software. This has to stop, but under capitalism, it cannot stop.
   - This is the reason why FOSS alternatives are rightfully filling the gap, because SaaS is making software become worse over time.
 
+# discuss-b2b
+- ## 
+
+- ## You don't need a lot of customers to make good money if your customers are b2b.
+- https://twitter.com/AlexBelogubov/status/1729758035902427411
+- When did you start your journey and what triggered a b2b idea?
+  - I started my journey about 2 years ago. I have another project, EniTuSpeak, where the clients are B2C and the difference is huge. They don’t want to buy there even for $9. 
+  - Initially, I didn’t think about the idea specifically for b2b, it just happened that way.
+- How do you market to B2B? I feel like it's different than b2c
+  - I try to publish posts wherever possible (Reddit, Facebook, LinkedIn) and also add tools to AI catalogs.
+
 # discuss
 - ## 
 

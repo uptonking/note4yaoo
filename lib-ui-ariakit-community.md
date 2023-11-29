@@ -12,7 +12,10 @@ modified: 2023-06-22T05:33:12.658Z
 # discuss
 - ## 
 
-- ## 
+- ## New example: Navigation Menubar
+- https://twitter.com/diegohaz/status/1729471805637722297
+  - [Navigation Menubar - Ariakit](https://ariakit.org/examples/menubar-navigation)
+  - 演示提供了三角区域示例
 
 - ## I'm thinking of writing a guide on Ariakit to clarify the code style choices made in the code examples showcased on the site.
 - https://twitter.com/diegohaz/status/1685937027596926976

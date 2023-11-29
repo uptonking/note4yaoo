@@ -200,7 +200,18 @@ alert(process.env.NODE_ENV)
 
 - ## 
 
-- ## 
+- ## Do you know webpack can't guarantee the order of CSS chunks? 
+- https://twitter.com/rspack_dev/status/1722493364774568218
+  - Therefore, it's unwise to rely on the order of CSS chunks if your CSS depends on cross-module orders. 
+
+- ## You either die a startup, or scale enough to return to webpack.
+- https://twitter.com/ScriptedAlchemy/status/1729761667204915238
+- What are some features only possible in webpack?
+  - In webpack and rspack, it’s language agnostic. It compiles to any target. Its optimization phase produce’s smaller artifacts than others, except for closure compiler. Chunk and bundle split is most accurate and adaptable. You have a runtime to manage module loading, and allow you to orchestrate and interact with it. Hmr works consistently. It can cache builds. You can build things like build doctor
+
+- ## Surprisingly it is the persistent cache, fast prebundle of esbuild and the lazy compilation brought by esm that make Vite perform quickly, while the bundleless brought by esm actually slows down Vite. 
+- https://twitter.com/hardfist_1/status/1729677009989587120
+  - lazy compilation, persistent cache and fast bundle are the key, not bundleless.
 
 - ## Do you know webpack supports skipping the parsing of large files through the use of the `module.noParse` option?
 - https://twitter.com/rspack_dev/status/1719707638496125128

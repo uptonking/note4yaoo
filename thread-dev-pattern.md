@@ -7,7 +7,12 @@ modified: 2021-02-19T12:23:12.286Z
 
 # thread-dev-pattern
 
-# pieces
+# guide
+
+# discuss
+- ## 
+
+- ## 
 
 - ## 
 

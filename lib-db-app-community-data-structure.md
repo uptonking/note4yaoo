@@ -140,6 +140,18 @@ modified: 2023-09-17T18:17:41.377Z
 # discuss-tree-lsm
 - ## 
 
+- ## 
+
+- ## Any recent papers related to compaction in Log Structured Merge (LSM) or similar trees?
+- https://twitter.com/strlen/status/1723065927951110182
+  - An idea I am experimenting with: split the key space into ranges (can use range stats or helps if the application does it), enqueue the ranges, if the IO and/or run CPU load is low, pop a range of the queue, run full manual compaction (levels 0-6 in case of rocksdb) on that range.
+  - Allowing scheduling this at off peak hours. Do not start the process at all if the load is high at the start or the process. Simplest thing that could possibly work?
+
+- Another possibility is to separate new entries from updates to existing keys. If you can do this on the app level (if the app knows what is new and what is an update) you can use bulk load insertion for appends and batch a lot of updates together before doing compaction.
+
+- https://twitter.com/strlen/status/1729586441322168506
+  - FWIW, this is a pattern I've seen implemented successfully. Super useful with high-overwrite / high-deletion workloads (e.g. implementing queue-like patterns).
+
 - ## Revisiting Bloom Filter Efficiency in LSM Trees
 - https://twitter.com/debasishg/status/1726912592437035478
 - Almost all LSM based storage structures use bloom filters in front of their memtable structures to reduce IO overhead at least for the target keys not present in the underlying secondary storage. 

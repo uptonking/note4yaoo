@@ -14,6 +14,16 @@ modified: 2023-04-25T17:48:06.146Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Your job doesn't end when you deploy to production.
+- https://twitter.com/RaulJuncoV/status/1729870028806443352
+  - Logging
+  - Monitoring
+  - Alerting
+
 - ## http://sentry.io的session replay功能也太叼了叭！！
 - https://twitter.com/changwei1006/status/1726491004709327227
   - 发生错误时会自动录制用户的操作流程和鼠标轨迹，便于开发者分析错误原因。

@@ -15,7 +15,24 @@ modified: 2021-08-16T06:45:26.099Z
 
 - ## 
 
-- ## 
+- ## Farewell, orange highways. 
+- https://twitter.com/dbabbs/status/1729550577841877169
+  - Gray and blue now rule the cartography scene, as 6 of the top digital map providers all use a shade of gray or blue to represent highways.
+  - Just like UI design, cartography design trends seem to converge every few years.
+- Introduction of gray/blue highways in each map:
+  Google - 2023
+  Mapbox - 2023
+  HERE WeGo - 2021
+  Apple - 2021
+  Meta / FB - 2022
+  Uber - 2018
+- The remaining holdouts that have yet to converge: Waze, Bing/Azure, and Amazon AWS
+
+
+- our reasoning: orange/yellow highways pulled visual attention from full color place iconography we were adding and clashed with our new global landcover layer. our map is also heavily focused on pedestrian + social use cases.
+
+- To show you some different perspectives: Map providers in China 
+  - P1 百度地图(Baidu Map) P2 天地图(Tianditu) P3 Gaode(Amap) P4 Tencent(QQ), P5 Sogou, P6 Google (As control group)
 
 - ## 有没有友友知道这种图怎么做. 浅灰白背景上建筑立体凸起
 - https://twitter.com/Jackywine/status/1660121948381229063

@@ -8,7 +8,10 @@ modified: 2023-11-15T08:20:46.678Z
 # thread-dev-engineering-refactor
 
 # guide
-
+- refactor
+  - before adding a new feature
+  - before fixing a bug
+  - before doing an improvement
 # discuss-stars
 - ## 
 
@@ -19,6 +22,16 @@ modified: 2023-11-15T08:20:46.678Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 今天看到有人转发一个关于维护 Oracle database 💩山代码的文章
+- https://twitter.com/beihuo/status/1729624234585108518
+  - 我意外发现我从中学到了东西，那就是不要重构。
+  - 通过 flag 的方式将 bug 修好，或者将新功能塞进去，反而是正确的一种做法。重构这种系统，得不偿失。
+- 前提是巨量的自动化测试
+- 代码基数达到一定规模是没办法重构的，没有这个选项
+- 重构的前提是代码量要小、维护的人要少、重构要频繁和坚决；同时要坚信，任何具体的特定事情都不应该基于大规模的代码才能完成，也就是，不要写大程序。
 
 - ## 人人知道好代码长啥样，知道事后要重构对自己和团队的价值
 - https://twitter.com/tison1096/status/1724458303701618709
@@ -32,3 +45,22 @@ modified: 2023-11-15T08:20:46.678Z
 - 为什么开源项目才能比较自由的追求代码之美？因为只有纯种技术人员才能不计得失得追求完美啊。
 
 - 一个功能设计加实现需要一周，糊一个能用的功能可能一天二天，进度有了效率有了，至于后面花三周修bug成本就被均摊了，况且交付使用不一定触发bug。再放长点，三年做个产品，还没做完公司倒闭了，政策转向了等等…所以设计啊质量啊都会被降优先级。不过我始终觉得技术人应该理解但不该轻易妥协这种情况
+
+- ## I've wished that *ALL* of @nozzleio was written in TypeScript. 
+- https://twitter.com/tannerlinsley/status/1382435100449591296
+  - In true @getsentry style, expect a lengthy post-mortem(事后反思) about the imminent(即将发生的) transition/rewrite.
+- Please tell me how you attack this because there's a 200k+ line codebase I'd like to do this for
+  - First step is likely setting up tooling to let TS and JS files build and coexist.
+  - From there, it's about how you want to tackle converting files. I opted for hand-converting one at a time. Tried a couple different auto-migrate tools but wasn't impressed with the output.
+  - First file should probably be some tiny utils file, just so you know that TS is compiling anything at all and the app still loads.
+  - From there, pick a few key core files, convert, start writing types for critical data structures. Branch out from there.
+- I've read several of these "we migrated our whole codebase to TS" posts, and the common themes are usually:
+  - A few key folks driving the effort
+  - Get buy-in by socializing with other devs
+  - Long-term process
+  - Have to interop JS+TS
+  - Track progress over time
+- In my case, we have a typical Express CRUD server, plus about 20K lines of pure business logic.
+  - I set up `ts-node` for dev, and just call `tsc` to build for prod. 
+  - I have it outputting JS files in the original folders vs a separate build folder.
+  - [best practices for refactoring 60k LoC JS project to TS?](https://www.reddit.com/r/typescript/comments/j512sf/2020_best_practices_for_refactoring_60k_loc_js/g7q6hvw/)

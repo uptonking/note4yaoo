@@ -16,6 +16,9 @@ modified: 2023-02-05T19:03:12.723Z
 
 - more-slate
   - 建站编辑器应该参考gutenberg、wix
+
+- slate-fans
+  - https://github.com/williamstein
 # popular
 - plate /1.6kStar/MIT/202208/ts/block-style
   - https://github.com/udecode/plate
@@ -850,9 +853,16 @@ modified: 2023-02-05T19:03:12.723Z
   - Third generation of the editors I have written for my own use.
   - I needed a tool for myself, that's why I wrote Mawe with Python/GTK, and now with ElectronJS, Javascript and React.
 
-- https://github.com/sagemathinc/cocalc
+- https://github.com/sagemathinc/cocalc /1.1kStar/AGPLv3/202311/ts/python
+  - https://cocalc.com/
   - CoCalc is web-based software that enables collaboration in research, teaching, and scientific publishing.
   - It includes Jupyter Notebooks, Sage Worksheets, a LaTeX Editor and a Linux Terminal to help people work together in real time
+  - 基于slate实现了virtualized-render
+  - 后端依赖自定义express-session、passport
+  - 前端依赖antd5、dnd-kit、d3、react-redux
+  - It is also possible to run CoCalc on your own infrastructure.
+  - You can easily use CoCalc on your own computer for free by running a Docker image.
+  - [I ended up forking only the React part of Slate, and massively rewriting it to support virtualized windowing, so we can work with very large possibly complicated to render documents](https://news.ycombinator.com/item?id=28003677)
 
 - https://github.com/RealRong/Rendevoz
   - open-source knowledge management application built with React and TypeScript

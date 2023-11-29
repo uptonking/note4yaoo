@@ -116,7 +116,9 @@ modified: 2021-01-06T14:40:03.364Z
 # discuss
 - ## 
 
-- ## 
+- ## React Core PR: Upcoming `<Offscreen>` renamed to `<Activity>` .
+- https://twitter.com/sebastienlorber/status/1729890709749002410
+  - Pre-render next screen on hover/touchStart instead of waiting for touchEnd?
 
 - ## Classes combine state and behavior - just what you need for components.
 - https://twitter.com/justinfagnani/status/1728128464946098539

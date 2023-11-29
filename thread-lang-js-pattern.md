@@ -12,6 +12,19 @@ modified: 2023-11-10T08:05:12.852Z
 # discuss
 - ## 
 
+- ## 
+
+- ## if you are a TS fan, how would you describe something like JSON.parse where a string input goes in and literally anything could go out!
+- https://twitter.com/WebReflection/status/1729799525290668518
+- I think many people leave the problem to zod and other runtime checkers since TS itself doesn't cover the problem by design.
+- Use a schema validation lib like zod/valibot, or a user defined type guard (a very manual process but saves the heavy dependency).
+- you use any. Or a generic
+
+- ## Did you know there's a way to execute code in a function *after* the return?
+- https://twitter.com/daniguardio_la/status/1729573561524711543
+  - "Try, return, finally: a curious JavaScript pattern"
+  - [Try, return, finally: a curious JavaScript pattern | dio.la - Dani Guardiola's blog](https://dio.la/article/try-return-finally)
+
 - ## Did you know that JS modules are the fastest way to create a singleton in JavaScript?
 - https://twitter.com/browsermage/status/1718374661585547579
 - I alway create db.js/log.js and import to module i wanted to use. I dont create instance, just use module as singleton. I know not good for unit testing but dont forget you can mock modules too.

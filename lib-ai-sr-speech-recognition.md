@@ -49,8 +49,9 @@ modified: 2023-02-07T09:22:03.120Z
   - https://twitter.com/sanchitgandhi99/status/1719409022246220184
 
 - https://github.com/Vaibhavs10/insanely-fast-whisper
-  - TL;DR - Transcribe 150 minutes (2.5 hours) of audio in less than 98 seconds - with OpenAI's Whisper Large v3.
+  - TL; DR - Transcribe 150 minutes (2.5 hours) of audio in less than 98 seconds - with OpenAI's Whisper Large v3.
   - https://github.com/chenxwh/insanely-fast-whisper
+
 ## more-asr
 
 - https://github.com/wenet-e2e/wenet
@@ -77,7 +78,11 @@ modified: 2023-02-07T09:22:03.120Z
 # discuss
 - ## 
 
-- ## 
+- ## OpenAI 推出的开源免费 Whisper 在语音识别领域（ASR）可以说无出其右，
+- https://twitter.com/Barret_China/status/1729521472669151516
+  - 不过它有一个较大的局限性，就是无法进行说话人分类（Speaker diarization），尤其是在重叠语音检测（Overlapped speech detection）方面，Whisper 在训练过程中只识别了一个声音，同时将其他声音视为背景噪声。
+  - 社区有一个发展了多年的音频处理工具包，pyannote-audio，它具备非常强大的音频分析、处理、识别和分类能力，在多人同时讲话的时候，也可以很准确地区分说话者内容，只不过它的 ASR 能力还是比不过 Whisper。
+  - 有人想到结合两者的能力，并做了一个工程化的实践
 
 - ## 现在的视频翻译突然间火了，推友们，可以告诉我使用了什么技术吗？
 - https://twitter.com/lxfater/status/1718639301813215543

@@ -29,13 +29,16 @@ modified: 2021-01-08T17:13:43.392Z
 - [http中的put、delete等请求为什么不安全？](https://www.zhihu.com/question/38770182)
 - HTTP中那些method的真正区别只有那个单词拼写不一样。其他部分没有任何区别。
   - 各种Method的区别是语义上的。是为了让你的应用程序能够清晰简化的进行通信。对于HTTP本身来讲没有任何区别。当然安全性也没有任何区别。
-  - 当然也有可能是一些其他的客观因素。比如公司斥巨资买了一个防火墙，发现只能拦截过滤POST和GET请求。。。。。
+  - 当然也有可能是一些其他的客观因素。比如公司斥巨资买了一个防火墙，发现只能拦截过滤POST和GET请求。
 # discuss
 - ## 
 
 - ## 
 
-- ## 
+- ## I still see people using `<script type="text/javascript">` and `<link type="text/css">` all the time 
+- https://twitter.com/matthewcp/status/1729872010921328786
+  - Why are you doing this, it hasn't been necessary in like 10 years!
+- Lighthouse actually warns about this. Removing attribute will improve performance
 
 - ## script标签会不会阻塞html加载
 - https://twitter.com/wulianwen1/status/1724699387300069380

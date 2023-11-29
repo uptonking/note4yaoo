@@ -59,6 +59,9 @@ modified: 2022-11-07T10:25:12.034Z
   - [如何找到自己在知乎里发表的评论？](https://www.zhihu.com/question/19585656/answers/updated)
 
 - dogedoge 多吉搜索被知乎屏蔽了
+
+- [根据需求进行定向搜索，以下是常用的语法和规则（比如：找竞品调研，只找pdf「filetype:pdf」），参见图片的示例](https://twitter.com/xianlezheng/status/1729505482212008157)
+  - 查询子域名下的关键词（不包含www站点）： ssl -site:http://ilikejobs.com site:*.ilikejobs.com
 # 知乎/掘金/v2ex/链滴
 - 有时候评论的内容比回答的内容更有意思
 

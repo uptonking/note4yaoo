@@ -16,7 +16,10 @@ modified: 2021-07-28T19:22:07.339Z
 # discuss
 - ## 
 
-- ## 
+- ## How to add 500kb+ of JS to all pages? 
+- https://twitter.com/TkDodo/status/1729806516893389155
+  - Easy: Have an un-optimized PNG (3k pixels wide), inline it into an SVG with base64 encoding, then render it as a React Component (svgr), which will inline it into the shared JS bundle
+- Just use svg sprites instead of svgr and decrease it to 0
 
 - ## Rendering lots of SVGs in React Native (especially Android) is surprisingly terrible for performance. You're better off with PNGs
 - https://twitter.com/kadikraman/status/1720502412077580603

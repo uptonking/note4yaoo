@@ -28,4 +28,7 @@ modified: 2023-01-08T16:27:44.918Z
 # utils
 - https://github.com/kylebarron/arrow-js-ffi /rust
   - Zero-copy reading of Arrow data from WebAssembly
+
+- https://github.com/geoarrow/geoarrow-rs /202311/rust
+  - GeoArrow in Rust and WebAssembly with vectorized geometry operations
 # more

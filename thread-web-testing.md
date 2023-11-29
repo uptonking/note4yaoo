@@ -27,7 +27,23 @@ modified: 2021-08-28T11:49:05.730Z
 
 - ## 
 
-- ## 
+- ## 🆚️ Which type of automated test do you find most valuable?
+- https://twitter.com/housecor/status/1729516522786226192
+  - unit : integration : end2end = 0.31 : 0.29 : 0.4
+- My answer? End-to-end. Why? Because it's the only type of test that proves the system works.
+  - E2E tests are slower. 
+  - They can be hard to write in a reliable manner.
+  - They're often brittle due to data changes, network issues, environment churn, etc.
+  - But E2E tests are the only type of test that gives me complete confidence that the feature actually works.
+
+- Unit tests are more valuable for library authors to verify the full API
+  - For production applications E2E instead
+
+- Although it can be the slowest I think E2E tests provide the most comprehensive coverage. All three types are important, but if you make me pick I’ll go with E2E. Solutions like Cypress and Playwright have made the E2E journey more enjoyable nowadays.
+
+- If you have good end-to-end tests you don't need the rest.
+
+- e2e will kinda test both unit and integration. But you have to finish almost the whole system for this to implement. If you want to test while developing, unit and integration is better. But I would prefer e2e.
 
 - ## Found out today that `userEvent.type` is pretty slow because it types each char separately, causing a rerender every time 
 - https://twitter.com/tsirlucas/status/1718374050408333671

@@ -12,6 +12,15 @@ modified: 2023-05-07T18:35:50.897Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 学到两个读 arxiv PDF 论文的新技巧：
+- https://twitter.com/Barret_China/status/1729867231344144414
+  - 1）将域名中的 x 更换成 5，会跳转到 HTML 版本
+  - 2）将域名中的 v 更换成 w，会跳转到一个 AI Chat with PDF 版本
+
 - ## Live coding is hard to be perfect (I'm so good at typo), so why don't we automate it?
 - https://twitter.com/antfu7/status/1505236765447458817
   - Take the snapshots for the changes(clicks), and then play it! Saves as plain text so you can edit it afterward and even commit to git

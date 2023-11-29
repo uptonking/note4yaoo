@@ -84,6 +84,13 @@ modified: 2021-10-29T15:02:28.882Z
 # ideas
 - ## 
 
+- ## 
+
+- ## http://devv.ai 原本是我们团队内部使用的一个工具，方便我们更加快速地处理 coding 过程中的问题，以此来代替 Google / StackOverflow / 文档。
+- https://twitter.com/Tisoga/status/1729686270941778103
+- 非常棒的产品。做对了一件事：解决中文互联网在技术领域的信息质量问题。  这是很大的一件事。
+- 产品很棒。这种单一结果还是需要加强准确性/严谨性
+
 - ## 发现一个很不错的标注插件「Glasp」，
 - https://twitter.com/HiTw93/status/1645939789907075079
   - 可以在 Twitter、Youtube 、各种网页看到的内容标注和注释，并通过 AI 总结，还可同步 Kindle 上标注的内容。
