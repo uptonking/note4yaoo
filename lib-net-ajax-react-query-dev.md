@@ -138,7 +138,10 @@ modified: 2023-03-05T08:55:03.696Z
 
 - ## 
 
-- ## 
+- ## 🆚️ Let's talk about how data fetching happens in different meta-frameworks and what the trade-offs of those approaches are.
+- https://twitter.com/mhevery/status/1729973597702381602
+  - explaining in a video of 5min
+- Vue is also going for the multi-loader approach. But we have to write keys but you don't why? I know this is a minor inconvenience but SSR mechanics make devs do too much work!
 
 - ## 🔁 When the React teams says "waterfalls don't matter" and now people parrot it back, 
 - https://twitter.com/ryanflorence/status/1728516213448605901

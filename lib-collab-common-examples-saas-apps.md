@@ -128,9 +128,9 @@ modified: 2023-01-17T19:14:47.611Z
   - https://cocalc.com/
   - CoCalc is web-based software that enables collaboration in research, teaching, and scientific publishing.
   - It includes Jupyter Notebooks, Sage Worksheets, a LaTeX Editor and a Linux Terminal to help people work together in real time
-  - 基于slate实现了virtualized-render
-  - 后端依赖自定义express-session、passport
-  - 前端依赖antd5、dnd-kit、d3、react-redux
+  - 前端依赖antd5、dnd-kit、slate-core.v.90、d3、react-redux
+  - 后端依赖express-session、passport
+  - 基于slate-core实现了virtualized-render
   - It is also possible to run CoCalc on your own infrastructure.
   - You can easily use CoCalc on your own computer for free by running a Docker image.
 # collab-apps

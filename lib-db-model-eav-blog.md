@@ -9,7 +9,46 @@ modified: 2023-09-25T17:52:11.778Z
 
 # guide
 
+# blogs-eav-jsonb
+- [Replacing EAV with JSONB in PostgreSQL_201601](https://coussej.github.io/2016/01/14/Replacing-EAV-with-JSONB-in-PostgreSQL/)
 # blogs
+- [Entity-attribute-value model in relational databases. Should globals be emulated on tables? Part 1](https://community.intersystems.com/post/entity-attribute-value-model-relational-databases-should-globals-be-emulated-tables-part-1) 
+
+## [Three ways to model EAV schemas and many-to-many relationships_201511](https://www.googlecloudcommunity.com/gc/Modeling/Three-ways-to-model-EAV-schemas-and-many-to-many-relationships/m-p/562454)
+
+- The entity-attribute-value (EAV) schema is often encountered in business tools where the number of possible attributes for an entity is very large, but any given record only has data for a handful of them. 
+  - This schema is very flexible and allows for efficient storage of sparse data, but unfortunately is poorly suited for analytical queries. 
+  - In this article we demonstrate three options for modeling the schema in Looker so the attributes are available for effective querying. 
+- Many-to-many relationships can be imagined as a special case of the EAV schema where the join table has no value column – only the association between two entities is what matters. 
+  - The solutions offered here work equally well for many-to-many relationships; you will just have boolean values for the attributes instead of strings. See Option 3 for an example many-to-many dataset based on a product tagging system.
+
+- Option 1: Create a Fact Table
+- Option 2: Dynamic Joins
+- Option 3: Search a serialized list of tags (many-to-many associations only)
+
+## [Wordpress and the Curse of EAV | Antradar Blog_201407](http://www.antradar.com/blog-wordpress-and-the-curse-of-eav)
+
+- Wordpress is a memory hog and unless you have plenty of hardware resource, your Wordpress powered website will hit a performance wall the moment you start using it seriously.
+- Entity-Attribute-Value, or EAV, is a database layout. The strengths and shortcomings of EAV are directly linked to the extensibility and inability to achieve good performance of the Wordpress core and many of its extensions.
+
+- How does Wordpress use EAV?
+  - As if EAV's complexity and lack of data-type optimization weren't bad enough, Wordpress tops it by using EAV abusively and indiscriminately (read: poorly). The table that holds all the blog articles, "posts", also stores images, attachments as well as arbitrary record types from other plugins. 
+  - The woocommerce plugin, for example, saves a purchase order as a post!
+  - Using the same table for everything also causes severe performance penalty. For example, when someone is placing an online order, MySQL locks the "posts" table.
+
+- No, caching is not a solution
+  - Caching for these use case scenarios does not allow real-time information.
+
+- What are the alternatives?
+- Be specific with features. 
+  - Wordpress uses EAV because it tries to be everything, and it _can_ be everything but poorly. 
+  - When a system is built for a specific set of purposes, the data tables can be properly built and correlated (a process called normalization).
+- Split the tables. 
+  - If Wordpress must be used, which is often the case when we were consulted to just "optimize" a Wordpress site, we can still bring some senses to the over-generic "posts" table. 
+  - We rewire the plugins so that they use a different table. This strategy helps with table locking.
+- Use cEAV. 
+  - The performance issues of EAV is not unique to Wordpress. There are times when we have to allow user-defined data structure. 
+  - One example is faceted search on data records with arbitrary attributes. We developed a specialized engine - columnized EAV, or cEAV, to battle typical EAV problems.
 
 ## [Modelling dynamic attributes - Blueprints for the Entity-attribute-value model (EAV)](https://database-modelling.com/article/modelling-dynamic-attributes-blueprints-for-the-entity-attribute-value-model-eav)
 

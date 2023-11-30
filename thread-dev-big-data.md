@@ -18,7 +18,9 @@ modified: 2023-04-19T07:30:34.872Z
 # discuss
 - ## 
 
-- ## 
+- ## Voltron Data做了很多特别基础的活雷锋项目，像arrow, arrow flight, adbc, substrait之类的，都太基础了也没法在云上搞SaaS，
+- https://twitter.com/niyue/status/1730253887356186951
+  - 我一直没看懂他们怎么赚钱，现在出了一个GPU加速的引擎处理分析型和AI的计算负载，看起来是个直接和spark/presto竞争的分布式查询引擎，好像这个终于离养家糊口比较接近了
 
 - ## TIL about Apache paimon a new table format for batch and streaming
 - https://twitter.com/mim_djo/status/1726143809313198423

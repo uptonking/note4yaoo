@@ -216,7 +216,7 @@ alert(process.env.NODE_ENV)
 - ## Do you know webpack supports skipping the parsing of large files through the use of the `module.noParse` option?
 - https://twitter.com/rspack_dev/status/1719707638496125128
 
-- ## 💡 That's actually the reason why @rspack_dev and Turbopack both give up Native ESM(bundleless), 
+- ## 💡 That's actually the reason why @rspack_dev and Turbopack both give up Native ESM(bundleless), _20231128
 - https://twitter.com/rspack_dev/status/1729435649177235539
   - It's not only bad for production scenarios but also bad for development scenarios.
 - [Bundling vs Native ESM - Why Turbopack? – Turbopack](https://turbo.build/pack/docs/why-turbopack#bundling-vs-native-esm)
@@ -225,3 +225,10 @@ alert(process.env.NODE_ENV)
   - A flood of cascading network requests in the browser lead to a relatively slow startup time. 
   - For the browser, it’s faster if it can receive the code it needs in as few network requests as possible - even on a local server.
   - That’s why we decided that, like webpack, we wanted Turbopack to bundle the code in the development server.
+
+- I really really wanted bundleless to work. Such an attractively simple solution! We built @nextjs Live in part to test out this hypothesis. Everything was “browser native”, from ESM to the the runtime (WinterCG). Then we tested it with Vercel’s homepage. 30s+ load times.
+  - We even tried to “bundle the bundleless” as a tarball and do the unpacking in the browser to eliminate waterfalls. Still slow because it has to pack all the files. If we instead discover dependencies and pack them only… we’re back to bundling
+
+- https://twitter.com/devongovett/status/1730229238513520933
+  - Glad Parcel stayed on the bundling train this whole time. Seems like the lessons we learned 10 years ago with require.js are finally being re-learned.
+  - Another problem with native ESM is that it doesn’t tree-shake, so if you import a single thing from a module with a lot of exports (eg large component library), you could be downloading hundreds or thousands of unnecessary files. Recently made a tiny Vite test app which took 12 seconds to load in development due to that.

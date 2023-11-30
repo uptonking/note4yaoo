@@ -63,6 +63,19 @@ modified: 2023-09-25T17:56:50.116Z
   - Simply put, it lets you save and retrieve present and past string values of attributes that belong to entities identified by string IDs. 
   - Reaves is backed by Redis.
 
+- https://github.com/jazzband/django-eav2 /LGPLv3/202309/python/Django
+  - https://django-eav2.readthedocs.io/
+  - EAV storage for modern Django
+  - Data in EAV is stored as a 3-tuple (typically corresponding to three distinct tables): entity, attribute, value
+  - Entities in django-eav2 are your typical Django model instances.
+  - EAV is a trade-off between flexibility and complexity. 
+  - In some use-cases, JSONB (binary JSON data) datatype (Postgres 9.4+ and analogous in other RDMSs) can be used as an alternative to EAV.
+    - JSONB supports indexing, which amortizes performance trade-off. 
+    - It's important to keep in mind that JSONB is not RDMS-agnostic solution and has it's own problems, such as typing.
+  - [Django EAV 2 – Entity-Attribute-Value Storage for Django | Hacker News_201807](https://news.ycombinator.com/item?id=17628685)
+- https://github.com/powered-by-wq/vera /python/inactive
+  - Python/Django reference implementation of the ERAV data model
+
 - https://github.com/jacoscaz/quadstore /179Star/MIT/202308/ts
   - a LevelDB-backed RDF graph database / triplestore for JavaScript runtimes (browsers, Node.js, Deno, Bun, ...) written in TypeScript.
   - Implements the Sink, Source and Store RDF/JS interfaces for maximum interoperability with other RDF libraries
@@ -110,24 +123,13 @@ modified: 2023-09-25T17:56:50.116Z
   - Cars in EAV model are kept in a rational database (embedded H2). 
   - Attributes together with basic fields are also kept in a document database (embedded MongoDB) to support faster search operations.
 
-- https://github.com/jazzband/django-eav2 /LGPLv3/202309/python/Django
-  - https://django-eav2.readthedocs.io/
-  - EAV storage for modern Django
-  - Data in EAV is stored as a 3-tuple (typically corresponding to three distinct tables): entity, attribute, value
-  - Entities in django-eav2 are your typical Django model instances.
-  - EAV is a trade-off between flexibility and complexity. 
-  - In some use-cases, JSONB (binary JSON data) datatype (Postgres 9.4+ and analogous in other RDMSs) can be used as an alternative to EAV.
-    - JSONB supports indexing, which amortizes performance trade-off. 
-    - It's important to keep in mind that JSONB is not RDMS-agnostic solution and has it's own problems, such as typing.
-  - [Django EAV 2 – Entity-Attribute-Value Storage for Django | Hacker News_201807](https://news.ycombinator.com/item?id=17628685)
-- https://github.com/powered-by-wq/vera /python/inactive
-  - Python/Django reference implementation of the ERAV data model
-
 - https://github.com/ssledz/eav-model-pattern /201502/java/inactive
   - EAV is also known as object–attribute–value model, vertical database model and open schema.
 
 - https://github.com/zakyalvan/simple-java-eav /201506/java/inactive
   - Simple implementation of Entity Attribute Value (EAV) pattern written using Java
+- https://github.com/panzer2344/EAVexample /201903/java
+  - Simple example of work with EAV model databases.
 
 - https://github.com/zavyalovartem/mybatis-entity-attribute-value-test /java
   - Weekend test project to learn basics of MyBatis and EAV database model. Very incomplete and hacky example - work in progress
@@ -268,7 +270,7 @@ modified: 2023-09-25T17:56:50.116Z
   - V1: A Visual Query Language for Property Graphs
 # examples
 - https://github.com/metasoarous/tripl /python
-  - This one weird trick turns JSON documents into semantic graph databases!
+  - This one weird trick turns JSON documents into semantic graph databases
   - A data format for "all the things", inspired by Datomic and the Semantic Web
   - RDF is based on the Entity Attribute Value (EAV) data modelling pattern, in which facts about entities are stored as a set of (entity, attribute, value) triples
 
@@ -279,7 +281,9 @@ modified: 2023-09-25T17:56:50.116Z
   - A small entity attribute value application using a Go REST server and react front end.
   - Entity-attribute-value tables allow the dynamic creation of new data structures without need for any table migrations.
 
-- https://github.com/heroqu/book-liner /js
+- https://github.com/heroqu/book-liner /201710/js
   - Content addressable store for texts/books. 
   - Can split a book into a list of addressable lines/paragraphs.
+  - Redis is used as a backend for key-value store, which in turn is a backend for higher level triple store
+  - The main BookLiner app then using this triple store to store semantic info: the relations between book and it's parts: currently paragraphs.
 # more

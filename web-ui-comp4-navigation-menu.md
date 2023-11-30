@@ -15,7 +15,11 @@ modified: 2021-07-28T20:11:14.714Z
 
 - ## 
 
-- ## 
+- ## for a simple tab component, Which would you choose and why?
+- https://twitter.com/AdhamDannaway/status/1729884552896864453
+  - C is a common tabs pattern, making it more easily understood (Jakob's Law).
+  - A isn’t accessible to those with colour blindness, as it uses colour alone to show its selected.
+  - B looks like a primary button, making it more prominent than it needs to be. This could break the visual hierarchy of a page.
 
 - ## When tired of the basic sliders
 - https://twitter.com/zhenyary/status/1726597979333890337

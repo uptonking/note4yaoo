@@ -469,9 +469,13 @@ modified: 2023-02-05T19:03:12.723Z
   - https://limber-text-editor.vercel.app/
   - Rich Text Editor built on top of React and Slate.
 
-- https://github.com/tiddly-gittly/slate-write /202310/ts
+- https://github.com/tiddly-gittly/slate-write /32Star/MIT/202310/ts
+  - https://tiddly-gittly.github.io/slate-write/
   - WYSIWYG editor for TiddlyWiki. (WIP)
   - 一个用于 太微TiddlyWiki 的所见即所得编辑器
+  - [Demo of a new WYSIWYG editor: slate-write (unstable alpha stage) - Plugins - Talk TW_202203](https://talk.tiddlywiki.org/t/demo-of-a-new-wysiwyg-editor-slate-write-unstable-alpha-stage/2788)
+    - It is based on tw-react plugin, and use the powerful SlateJS editor and tons of keyboard shortcut plugins from udecode/plate
+    - And I write some transformers to convert wikitext from/to SlateJS state JSON on saving, every 1s.
 
 - https://github.com/ahmedosama7450/rich-slate
   - Opinionated rich text editor on top of slate (Under development)
@@ -558,7 +562,7 @@ modified: 2023-02-05T19:03:12.723Z
   - Most of the slate-react's components can be easily migrated by no code change.
 
 - deprecated
-  - https://github.com/roast-cms/french-press-editor
+  - https://github.com/roast-cms/french-press-editor /slate.v0.36
   - https://github.com/Canner/canner-slate-editor
   - https://github.com/chatterbugapp/chatterslate
   - https://github.com/nossas/slate-editor
@@ -855,14 +859,18 @@ modified: 2023-02-05T19:03:12.723Z
 
 - https://github.com/sagemathinc/cocalc /1.1kStar/AGPLv3/202311/ts/python
   - https://cocalc.com/
+  - https://github.com/sagemathinc/cocalc/tree/master/src/packages/frontend/editors/slate
   - CoCalc is web-based software that enables collaboration in research, teaching, and scientific publishing.
   - It includes Jupyter Notebooks, Sage Worksheets, a LaTeX Editor and a Linux Terminal to help people work together in real time
-  - 基于slate实现了virtualized-render
-  - 后端依赖自定义express-session、passport
-  - 前端依赖antd5、dnd-kit、d3、react-redux
+  - 前端依赖antd5、dnd-kit、slate-core.v.90、d3、react-redux
+  - 后端依赖express-session、passport
+  - 基于slate-core实现了virtualized-render, 魔改后的slate-react协议是MIT，EditableMarkdown协议是AGPLv3
+  - selectionToText的实现just directly using DOM API, not slatejs, so could run into a subtle problem e.g., due to windowing.
+    - we use it here usually for small snippets of visible text, so it tends to be OK
   - It is also possible to run CoCalc on your own infrastructure.
   - You can easily use CoCalc on your own computer for free by running a Docker image.
-  - [I ended up forking only the React part of Slate, and massively rewriting it to support virtualized windowing, so we can work with very large possibly complicated to render documents](https://news.ycombinator.com/item?id=28003677)
+  - [202107: I ended up forking only the React part of Slate, and massively rewriting it to support virtualized windowing, so we can work with very large possibly complicated to render documents](https://news.ycombinator.com/item?id=28003677)
+    - I have no plans to switch from Slate to Prosemirror. Getting virtualized windowing to work with Slate was quite difficult, but it's really table stakes for what I plan on doing longterm, and I don't even know where to begin to do virtualized windowing in Prosemirror.
 
 - https://github.com/RealRong/Rendevoz
   - open-source knowledge management application built with React and TypeScript

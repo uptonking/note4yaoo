@@ -12,11 +12,17 @@ modified: 2023-02-05T19:03:12.723Z
   - [changelog list](https://docs.slatejs.org/general/changelog)
 # changelog
 
-## v0.90.0_20230201
+## v
+
+## [v0.100.0__20231021](https://github.com/ianstormtaylor/slate/releases/tag/slate-react%400.100.0)
+
+- Add `onSelectionChange` and `onValueChange` in Slate React component
+
+## v0.90.0__20230201
 
 - Revert to using inline styles for default editor styles
 
-## v0.80.0_20220526
+## v0.80.0__20220526
 
 - update insertText logic when selection is not collapsed
 - Revert to previous position behavior around inline voids

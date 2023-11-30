@@ -12,7 +12,7 @@ modified: 2023-03-15T08:06:35.541Z
 # discuss
 - ## 
 
-- ## 
+- ## [Designing a SIMD Algorithm from Scratch_202311](https://mcyoung.xyz/2023/11/27/simd-base64/)
 
 - ## Hash maps and sets are must-to-know data structures for coding interviews.
 - https://twitter.com/Franc0Fernand0/status/1726224177219117468

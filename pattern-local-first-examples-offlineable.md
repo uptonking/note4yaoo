@@ -199,9 +199,13 @@ modified: 2023-11-17T10:12:06.357Z
 - https://github.com/cloudless-hq/atreyu /apache2/202309/js/svelte
   - https://atreyu.dev/docs/
   - Atreyu is an edge- and serviceworker first metaframework for personal, data centric web applications. 
+  - 依赖pouchdb
   - It supports real time data sync, offline usage and values minimal boilerplate with opt in to most features.
   - Falcor is used for state management, caching, batching and data sharing. 
-  - Svelte views are bound to a virtual data object with a js proxy based store implementation. 
+  - Svelte views are bound to a virtual data object with a js proxy based store implementation.
+  - ipfs as a local asset server and content adressable storage system, ipfs is not required for production sites and is not required to run in a p2p mode
+  - https://github.com/Netflix/falcor
+    - Falcor lets you represent all your remote data sources as a single domain model via a virtual JSON graph. You code the same way no matter where the data is, whether in memory on the client or over the network on the server.
 # local-first-examples
 - https://github.com/kndwin/jikan
   - https://jikan-murex.vercel.app/

@@ -403,7 +403,15 @@ modified: 2022-08-21T10:02:41.845Z
 
 - https://github.com/loro-dev/generic-btree /rust
   - a pure safe BTree that can be used to build your own special-purpose btree data structure
-  - mainly developed to optimize the performance of Loro CRDT’s components.
+  - mainly developed to optimize the performance of Loro CRDT’s components
+
+- https://github.com/eatonphil/btree-rs /202311/rust/单文件
+  - Fundementally a port of https://opendatastructures.org/ods-python/14_2_B_Trees.html to Rust.
+  - https://twitter.com/eatonphil/status/1729952588152398117
+    - Took two days off and on this time to get insert and lookup working (no delete).
+    - Deletion is where hell breaks loose.
+    - There's a much better builtin btree implementation for rust stdlib
+    - There is an excellent Berkeley grad course CS186 on DBMS along with assignments in Java to implement B tree based indexing, support ACID via Wal logging,  2 phase locking etc . Che
 # tree-like/nested
 - https://github.com/TheGuardianWolf/treepack
   - Pack tree nodes into a flat object and unpack them again!

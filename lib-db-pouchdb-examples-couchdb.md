@@ -974,13 +974,15 @@ modified: 2023-09-28T20:35:56.153Z
   - built on top of TiddlyWiki, a powerful, free, highly customizable and open-source personal wiki.
   - We took the best of it, it's powerful customization system, and mixed it with one of the best embedded databases available, PouchDb, to bring in the synchronization capabilities you need.
   - This TiddlyWiki-variant stores documents in the browser (pouchdb) and can sync to a couchdb-server.
-  - 
+
 - https://github.com/cloudless-hq/atreyu /js/svelte
   - https://atreyu.dev/docs/
   - an edge- and serviceworker first metaframework for personal, data centric web applications. 
+  - 依赖pouchdb
   - It supports real time data sync, offline usage and values minimal boilerplate with opt in to most features.
-  - Falcor is used for state management, caching, batching and data sharing. 
+  - Falcor is used for state management, caching, batching and data sharing.
   - Svelte views are bound to a virtual data object with a js proxy based store implementation
+  - ipfs as a local asset server and content adressable storage system, ipfs is not required for production sites and is not required to run in a p2p mode
 
 - https://github.com/Mo0812/MKNote /201905/js/vue
   - a note web app, which uses Markdown to render your notes.

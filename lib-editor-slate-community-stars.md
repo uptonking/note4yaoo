@@ -307,3 +307,17 @@ return (
 - Rendering is very fast, almost instantly, with or without react-window, and deserializeHugeText is also fast. But before rendering, loading it to slate is slow.
 
 - Interested to know everyones thoughts on a deferred rendering method (Such as described in this article on Twitter Lite)
+
+- ## 📝🏘️ [Slate – A completely customizable framework for building rich text editors | Hacker News_202107](https://news.ycombinator.com/item?id=28000086)
+- The recent changes to the API in 0.50 look good. The number of iteration passes really shows. Out of the available open source editor frameworks, 🆚️ Slate is probably most similar to Notion’s internal editor system. If I had to rebuild on a framework tomorrow, it’d be Slate or ProseMirror. Still if I used Slate it would be with the expectation that I’d end up owning an aging fork of a forgotten version at some point.
+- I've been using Slate heavily this year. I'm not a Slate developer, but I've read a lot of the source code, follow all the Github issues, etc., and I'm "owning an aging fork".
+  - I ended up forking only the React part of Slate, which is officially a plugin, and massively rewriting it to support virtualized windowing, so we can work with very large possibly complicated to render documents. I also added fairly generic realtime collaboration support. This is currently used in https://cocalc.com for WYSIWYG editing of Markdown documents. I also have plans to extend my use of Slate with windowing to Jupyter notebooks and other document types.
+  - I chose Slate over Prosemirror because the source code of Slate is Typescript written in a clear modern style, and I was able to start reading any part of it and understand it easily, whereas I find Prosemirror's core source code more difficult (this may just be a reflection of my shortcomings). I spent a lot of time initially just reading Slate PR's claiming to fix bugs, then integrating the PR's into my fork, often in a way that makes sense for my project, but likely wouldn't in general (I left helpful remarks on Github).
+  - I have no plans to switch from Slate to Prosemirror. Getting virtualized windowing to work with Slate was quite difficult, but it's really table stakes for what I plan on doing longterm, and I don't even know where to begin to do virtualized windowing in Prosemirror.
+
+- How does virtualization play with text search? Did you end up having to roll your own?
+  - Yes, I very much have to implement my own text search. There are many custom elements, so I would have to roll my own anyways at some point.
+
+- What features of Slate put it closest to Notion's editor compared to other frameworks besides the obvious one that Slate's view layer is built on top of React? Is it somehow that Slate is more suitable handling asynchronous data (e.g. server generated uuids for each block, recursively fetching content for each block and its children)?
+
+- Initially started with Quill, but Quill is really limited and for example can't support rich text inside tables, only simple text.

@@ -89,6 +89,19 @@ modified: 2023-11-14T16:20:25.792Z
 - https://github.com/felixhayashi/TW5-TiddlyMap /bsd/202302/js
   - a TiddlyWiki plugin that turns your favourite personal note taking software in a wiki-concept-map hybrid.
   - Vis.js is used for graph visualization and manipulation
+
+- https://github.com/tiddly-gittly/slate-write /32Star/MIT/202310/ts
+  - https://tiddly-gittly.github.io/slate-write/
+  - WYSIWYG editor for TiddlyWiki. (WIP)
+  - 一个用于 太微TiddlyWiki 的所见即所得编辑器
+  - [Demo of a new WYSIWYG editor: slate-write (unstable alpha stage) - Plugins - Talk TW_202203](https://talk.tiddlywiki.org/t/demo-of-a-new-wysiwyg-editor-slate-write-unstable-alpha-stage/2788)
+    - It is based on tw-react plugin, and use the powerful SlateJS editor and tons of keyboard shortcut plugins from udecode/plate
+    - And I write some transformers to convert wikitext from/to SlateJS state JSON on saving, every 1s.
+
+- https://github.com/tiddly-gittly/tw-react /202309/ts
+  - https://tiddly-gittly.github.io/tw-react/
+  - This is a dependency of slate-write WYSIWYG editor and flowtiwi-sidebar and many other dynamic widgets. 
+  - This plugin enable powerful data operation and UI operation of those plugins, thus become a prerequisite of those plugins
 # utils
 - https://github.com/jimpick/dat-tiddlywiki /201806/js
   - Multiwriter Dat + TiddlyWiki

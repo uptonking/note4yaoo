@@ -12,7 +12,10 @@ modified: 2021-04-27T09:19:37.711Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## iframe embeds are slowing down your site, and once Firefox 121 drops in December, every browser will support `<iframe loading="lazy">` . 
+- https://twitter.com/wesbos/status/1729909071799586869
+  - Easy perf wins
+- That's awesome! No need to write my own intersection observer iframe lazy loader anymore
 
 - ## URL Patterns is now a proper standard It's maintained by the WHATWG
 - https://mastodon.social/@tomayac@toot.cafe/111294689989406401

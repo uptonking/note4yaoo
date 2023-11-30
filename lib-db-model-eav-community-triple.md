@@ -12,7 +12,18 @@ modified: 2023-09-25T09:00:49.722Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## [Channel-aware custom fields · vendure-ecommerce/vendure_202010](https://github.com/vendure-ecommerce/vendure/issues/490)
+- I think part of this depends on the philosophy of Vendure as an e-commerce platform. Is it attempting to be more 'dev centric' or admin centric. I'm actually ok with it being more dev centric if that's how we want to go, @michaelbromley would need to make the end call there. That said if we go with dev configuration we just want to make sure it's the right DB structure..
+  - EAV
+  - jsonb fields
+  - default fields in primary product table, custom fields in channel specific tables
+  - all fields in same table, some columns are just null and we use a list of fields to determine what to select
+- Are facets going to become channel aware as well?
+
+- I've postposed it a couple of times simply because it is very technically challenging and will take a bit of time to solve well. In the simple case of things like string custom fields, there could be a number of ways to handle it well - jsonb columns for example.
+- The real issue comes with: localeString/localeText; relation types of custom fields. 
+  - Supporting these types in a channel-aware way implies significant extra complexity. Take the example of a relation. Currently, a relation custom field will just set up a regular TypeORM OneToMany or ManyToMany relation. To make this work across channels, we'd need to introduce an associative table that links customEntity -> channel -> targetEntity. This also then has implications for accessing custom field data - we'd need to somehow pass the channel id, and in the case or a relation, do an extra join.
+  - These issues must have a somewhat elegant solution, but I didn't dedicate the time to dig in and find what it is yet. Hence no ETA currently.
 
 - ## 💡 [The data model behind Notion's flexibility_202105](https://news.ycombinator.com/item?id=27200177)
 
@@ -457,7 +468,7 @@ A custom frontend for a CMS is a good investment in UX. A CMS isn’t publicy vi
 
 - 👉🏻 This is a pretty popular pattern known as Entity-Attribute-Value. 
   - It's used by many products where a) data model needs to be very flexible and allow new attributes without schema changes, or b) a typical entity has a large number of possible attributes that may or may not be set for all entities ("sparse" attributes). 
-  - 🌰 `WordPress` uses this to store post metadata, `Magento` uses this to store product attributes and most of other data, `Drupal` uses a variation of this to store all the posts and other content you create… I have too much experience with this model to be surprised.
+  - 🌰 `WordPress` uses this to store post metadata,  `Magento` uses this to store product attributes and most of other data,  `Drupal` uses a variation of this to store all the posts and other content you create… I have too much experience with this model to be surprised.
 - Sounds like a great case for Postgres hstore (like OpenStreetMap does it)?
   - hstore querying is quite slow (and GIN indexes on hstores are pretty massive). 
   - I'd always go jsonb over hstores these days, but jsonb has the same indexing problem. 

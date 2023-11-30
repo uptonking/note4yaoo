@@ -9,6 +9,13 @@ modified: 2023-04-23T13:30:54.152Z
 
 # guide
 
+# discuss-stars
+- ## 
+
+- ## I just realized that when you're debugging scrollbars, Firefox shows which elements are overflowing in the inspector. Nice
+- https://twitter.com/stefanjudis/status/1730179947820700032
+- I believe WebKit has it too. Unfortunately Chromium doesn't yet. Really would have come in handy when implementing scrollbar styling in the engine.
+
 # discuss
 - ## 
 

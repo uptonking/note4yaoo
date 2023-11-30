@@ -67,6 +67,7 @@ $$('[contenteditable]')
   - ui: zag/ark, ariakit, radix-ui, mantine
 
 - deep into lib/fwk 书籍原理与代码实践要分开
+  - 学习巩固: 代码 > 文档/论坛 > 社交媒体
   - src-code, issues, pr, forks, extensions/alternatives
   - storage, sync/partial, conflicts, concistency
   - 直接根据具体框架或产品搜索解决方案如airtable-database，不必拘泥于通用方案如event-sourcing/eav，在产品讨论中常有细节和ideas
@@ -193,6 +194,7 @@ $$('[contenteditable]')
   - 08-kappa-db, dolt-git
   - 09-event-sourcing, datalog, eav/triple
   - 10-event-sourcing, pouch, sqlite/postgresql
+  - 11-elmish-flux
 
 - why use es6 class
   - 运行时类型检查，instanceof
@@ -211,9 +213,11 @@ $$('[contenteditable]')
   - 离屏渲染, keep-alive
   - 分层渲染
 
-## 11
+## ing
 
 - not-yet
+  - elmesque-editor
+  - branching/versioned-doc
   - pouchdb + kappa-crdt + eav => pouchdb-crdt-eav
   - todo remove hashId在编辑器model中有什么作用
   - 处理初试
@@ -314,9 +318,13 @@ $$('[contenteditable]')
     - 2个编辑器同一页面协同的示例未完成
     - cursor光标位置经常对不上
   - [x] streaming infinite-list/tree
-# dev-11
+# dev-12
 
-## 111
+## 120
+
+## 1201
+
+# dev-11-elmish-flux
 
 ## 1109
 

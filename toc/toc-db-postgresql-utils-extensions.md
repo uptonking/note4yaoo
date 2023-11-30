@@ -15,6 +15,10 @@ modified: 2023-10-26T15:29:40.053Z
 
 - https://github.com/michaelpq/pg_plugins/tree/main/blackhole_am /c
   - This module is a PostgreSQL extension template
+
+- https://github.com/pgxman/pgxman /202311/go
+  - https://pgxman.com/
+  - pgxman is npm for Postgres extensions. 
 # plugins
 
 # utils

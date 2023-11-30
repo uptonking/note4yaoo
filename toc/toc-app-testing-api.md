@@ -87,8 +87,17 @@ modified: 2023-02-08T10:25:14.173Z
 - https://github.com/nolanlawson/fuite /js
   - a CLI tool for finding memory leaks in web apps.
 # web-testing
-- https://github.com/puppeteer/puppeteer
+- https://github.com/puppeteer/puppeteer /202311/ts
+  - https://pptr.dev/
   - Node.js API for Chrome
+
+- https://github.com/cloudflare/puppeteer /202308/ts
+  - https://developers.cloudflare.com/
+  - Puppeteer Core fork that works with Cloudflare Browser Workers
+  - https://twitter.com/Barret_China/status/1730047181028212992
+    - 1）首先在云端预热一批 Chrome/Chromium 会话窗口，有点类似 Serverless Function 的冷启动
+    - 2）每次发起 Puppeteer 任务的时候，会通过 API 从会话池中获取一个 ws 连接地址，这块工作在框架和工具层面做了完善的处理（网页上配置不了，需要走 CLI）
+    - 3）云端对回话窗口池进行自动伸缩容管理，同时也会对获取 ws 连接的任务做队列管理
 
 - https://github.com/microsoft/playwright
   - a framework for Web Testing and Automation. 

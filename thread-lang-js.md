@@ -18,7 +18,9 @@ Symbol('a') === Symbol('a'); //false
 
 - ## 
 
-- ## 
+- ## You can use 'as const' on a template literal to force TypeScript to infer it. 
+- https://twitter.com/ShuchangGuan/status/1730132183929479203
+  - Without the as const, it defaults to string. With it, it goes DEEP.
 
 - ## TIL: `structuredClone()` will clone only once a reference to the same object
 - https://twitter.com/oriSomething/status/1725144694059851866

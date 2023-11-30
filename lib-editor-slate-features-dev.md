@@ -107,6 +107,8 @@ modified: 2023-03-16T16:29:47.610Z
   - 可参考 ckeditor、prosemirror、tanstack-query/table
 
 - editor using canvas
+# virtualized-render
+
 # 顶部工具条 toolbar
 - 工具条比编辑器宽，编辑器左边会有空白
   - lexical，左右28，上8

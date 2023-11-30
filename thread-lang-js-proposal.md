@@ -14,8 +14,6 @@ modified: 2023-11-10T08:05:25.474Z
 
 - ## 
 
-- ## 
-
 - ## Almost 1 year ago I tried using WeakRef but had to abandon it because it caused bizarre bugs. 
 - https://twitter.com/gaforres/status/1723818760346259631
   - Wrote a bunch of regression tests while diagnosing but ultimately rolled it back.

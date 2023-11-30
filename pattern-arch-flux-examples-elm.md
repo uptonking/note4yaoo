@@ -19,9 +19,45 @@ modified: 2023-11-21T10:17:34.596Z
 - https://github.com/sporto/awesome-elm
   - useful Elm tutorials, libraries and software
 
+- https://github.com/sporto/elm-patterns
+  - http://sporto.github.io/elm-patterns/
+  - A collection of common patterns for Elm
+
 - https://github.com/dwyl/learn-elm-architecture-in-javascript /201903/js/inactive
   - Learn how to build web apps using the Elm Architecture in "vanilla" JavaScript (step-by-step TDD tutorial)
 
+- https://github.com/evancz/elm-architecture-tutorial /201912/elm
+  - How to create modular Elm code that scales nicely with your app
+- https://github.com/evancz/elm-sortable-table /201611/elm
+  - Sortable tables for whatever data you want to display
+- https://github.com/evancz/elm-todomvc
+  - TodoMVC app written in Elm, nice example for beginners.
+
+- https://github.com/rtfeldman/elm-spa-example /201911/elm
+  - Elm codebase containing real world examples that adheres to the RealWorld spec and API.
+
+- https://github.com/dmy/elm-realworld-example-app /202005/elm/inactive
+  - Elm RealWorld example application architected with the Effect pattern
+
+- https://github.com/krisajenkins/elm-exts /201809/elm
+  - A toolkit of useful extensions to the core Elm libraries.
+
+- https://github.com/ohanhi/elm-shared-state /BSD/201901/elm
+  - https://ohanhi.github.io/elm-shared-state/
+  - This repository serves as an example for organizing large Single-Page Applications (SPAs) in Elm 0.19. 
+  - It was previously called elm-taco and was renamed to be less witty and more to the point.
+- https://github.com/klemola/extending-tea /201703/elm
+  - Example of an extension to The Elm Architecture
+  - This repository is an implementation of TEA with modifications. The modifications stem from experience of a commercial real world Elm project.
+  - add `Context` parameter to init, update and view function signatures (where applicable)
+  - add `Maybe ContextUpdate` to the tuple returned by an update function (where applicable)
+
+- https://github.com/rogeriochaves/spades /201903/elm
+  - Spades is a framework for Elm that helps you quickly start a Single Page Application (SPA) ready to the real world, with an opinionated structure that allows your app to grow easily and well organized.
+  - Spades follows The Elm Architecture, this architecture basically dictates all the state flow within Elm, but still allows multiple organizations as your app grows.
+  - Spades then follows an organization with domain focus
+  - Another important thing in a real-world Elm app is a solution for parent-child communication, for that part, Spades uses the NoMap pattern
+# elm-like
 - https://github.com/ccorcos/elmish /201601/js/支持undo/示例多
   - A Javascript UI library inspired by Elm
   - This is functional programming pattern inspired by the Elm Architecture for building user interfaces.
@@ -396,30 +432,11 @@ modified: 2023-11-21T10:17:34.596Z
   - a minimal tutorial showing how to use F#, Fable and Elmish
   - [Write your own Excel in 100 lines of F# - Tomas Petricek](https://tomasp.net/blog/2018/write-your-own-excel/)
 # examples
-- https://github.com/evancz/elm-architecture-tutorial /201912/elm
-  - How to create modular Elm code that scales nicely with your app
-- https://github.com/evancz/elm-sortable-table /201611/elm
-  - Sortable tables for whatever data you want to display
-- https://github.com/evancz/elm-todomvc
-  - TodoMVC app written in Elm, nice example for beginners.
-
 - https://github.com/yelouafi/snabbdom-todomvc /201507/js
   - TodoMVC using snabbdom and Elm architecture
   - [React-less Virtual DOM with Snabbdom_201507](https://medium.com/@yelouafi/react-less-virtual-dom-with-snabbdom-functions-everywhere-53b672cb2fe3)
-
 - https://github.com/yelouafi/elm-examples-js /201511/js
   - examples for the article [Elm Architecture & Side Effects: example with Snabbdom/JSX_201511](https://medium.com/@yelouafi/elm-architecture-side-effect-examples-with-snabbdom-and-jsx-3732219d9995)
-
-- https://github.com/yelouafi/elm-arch-with-snabbdom /201601/js
-  - Elm architecture examples with JavaScript/JSX using
-  - Snabbdom-jsx: a tiny library for writing Snabbdom Virtual DOM using JSX syntax
-  - union-type: to represent Component Actions
-  - The repository contains some examples: counter/login
-
-- https://github.com/dmy/elm-realworld-example-app /202005/elm/inactive
-  - Elm RealWorld example application architected with the Effect pattern
-- https://github.com/rtfeldman/elm-spa-example /201911/elm
-  - Elm codebase containing real world examples that adheres to the RealWorld spec and API.
 
 - https://github.com/huytd/kanelm /201904/elm
   - Kanban board built with Elm
@@ -523,3 +540,5 @@ modified: 2023-11-21T10:17:34.596Z
 - https://github.com/mitchmindtree/elmesque /201512/rust
   - An attempt at porting Elm's incredibly useful, purely functional std graphics modules.
 # more
+- https://github.com/jah2488/elm-companies
+  - A list of companies using Elm in production
