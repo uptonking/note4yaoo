@@ -31,7 +31,9 @@ modified: 2021-03-10T11:38:16.053Z
 
 - ## 
 
-- ## 
+- ## mobbin 对创业公司和独立开发者针对太友好了，相当于你 8 美元一个月找了一批大厂高薪设计师。
+- https://twitter.com/huhuhang/status/1730407554344526264
+  - 例如你想给产品加一个 Checkout 页面，可以快速看到主流产品的 Checkout 页面是怎么设计的，然后可以站在巨人的肩膀上向自己想要的效果进行改动。
 
 - ## I design and code, so I used to browse dribble, and behance to take design inspiration, but now I use them very rarely, 
 - https://twitter.com/sidi_jeddou_dev/status/1720022709789237512

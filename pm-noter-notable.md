@@ -210,6 +210,60 @@ modified: 2023-11-28T14:48:45.910Z
   - 产品讨论，类似product-hunt
   - 打分评论，类似豆瓣电影与音乐
   - 论坛圈子，类似贴吧/reddit，支持一个url在不同板块重复讨论、多次讨论
+
+## pricing
+
+- [ckeditor](https://ckeditor.com/pricing/)
+  - free: GPLv2
+  - paid/talk
+  - ckbox/$50
+  - export2pdf/$30
+  - export2word/$40
+  - import1word/$40
+
+- [tinymce](https://www.tiny.cloud/pricing/)
+  - free: MIT, 1, 000 editor loads per month
+  - Essential/$80: 5, 000 editor loads per month, collab
+  - Professional/$150: 20, 000 editor loads per month, PowerPaste, ai
+  - Custom/talk: Unlimited editor loads, Self-hosted
+
+- [tiptap](https://tiptap.dev/pricing)
+  - free: MIT, Single developer, pro plugins, limited collab, forum support
+  - starter/$150: 8members, ai, more plugins
+  - business/$1000: Nmembers, sso
+  - enterprise/talk: On premises solution, Dedicated support engineer
+
+- [froala](https://cart.froala.com/)
+  - free: trial, Watermark
+  - Professional/$60: 1 Product, 3 Domains, no SaaS/Subscription
+  - Enterprise/$133: Unlimited Products, Unlimited Domains, SaaS/Subscription
+
+- [ag-grid](https://www.ag-grid.com/license-pricing/)
+  - free: MIT
+  - AG Grid Enterprise: $1000 Per Developer
+  - AG Charts Enterprise: $200 Per Developer
+  - Deployment License/$750: 单独售卖，每份
+
+- [handsontable](https://handsontable.com/pricing)
+  - free: for personal use only
+  - Commercial/talk
+
+- [jspreadsheet](https://jspreadsheet.com/pricing)
+  - Standard/$41: 1dev, 1app, no saas
+  - Enterprise/$166: 5dev, 2app, saas, limited-ext
+  - Ultimate/$291: 10dev, 3app, saas, ext
+  - Custom/talk: Ndev, Napp
+
+- [SpreadJS 表格控件](https://www.grapecity.com.cn/developer/spreadjs/price)
+  - 个人: 一年￥9800
+  - 团队授权 I 型: 4人, ￥29, 400
+  - 团队授权 II 型: 20人, ￥78, 400
+  - 项目部署: 每个域名￥22, 000，透视表部署额外￥13, 800
+  - SaaS部署/talk：包含 SpreadJS 的 SaaS 平台和服务。
+- [spreadjs](https://developer.mescius.com/spreadjs/pricing)
+  - paid/$1499: 每人每年
+  - Designer Component: $500
+  - Pivot Table Addon: $1000
 # faq
 - 如何不使用图床而将图片直接嵌入到笔记中
   - [MarkDown图片存储格式-Textbundle格式](https://zhuanlan.zhihu.com/p/368463926)

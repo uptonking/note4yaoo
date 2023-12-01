@@ -121,9 +121,6 @@ modified: 2023-09-28T20:35:56.153Z
   - A CouchApp is just a JavaScript and HTML5 app that can be served directly to the browser from CouchDB, without any other software in the stack
   - CouchDB is an HTTP server, capable of serving HTML directly to the browser. It is also a database designed from the ground up for horizontal scalability. 
 
-- https://github.com/koostudios/couchpress /83Star/MIT/201205/CoffeeScript
-  - lightweight and modular CMS built on NodeJS, Express and CouchDB
-
 - https://github.com/perfood/couch-auth /MIT/202309/ts
   - CouchAuth is a full-featured NodeJS/Express user authentication solution for APIs and Single Page Apps (SPA) using CouchDB or Cloudant.
   - This is a heavily modified SuperLogin, re-written in TypeScript and developed with Node 14/16 & CouchDB 3.
@@ -231,6 +228,24 @@ modified: 2023-09-28T20:35:56.153Z
 - https://github.com/jrawsthorne/couchbase-rs /1Star/NALic/202311/rust
   - Unofficial Reimplementation of Couchbase Server in Rust
 
+- https://github.com/khonsulabs/bonsaidb /918Star/MIT/202311/rust
+  - https://bonsaidb.io/
+  - A programmable document database inspired by `CouchDB` written in Rust.
+  - ACID-compliant, transactional storage of Collections
+  - Role-Based Access Control (RBAC)
+  - Local-only access, networked access via QUIC, or networked access via WebSockets
+  - [Introducing PliantDb](https://ecton.dev/introducing-pliantdb/)
+  - [Renamed from PliantDb to BonsaiDb_202107](https://github.com/khonsulabs/bonsaidb/commit/aa4e236ce4e527077b1842921fa98cc2a9f126af)
+  - [Branch support](https://github.com/khonsulabs/nebari/issues/29)
+    - For BonsaiDb we plan on supporting the replication logic at the BonsaiDb level, and we are hoping to support bi-directional replication with customizable conflict resolution. 
+    - This is a form of branching, because you can clone a database using replication, modify it, and then eventually replicate again in either direction.
+  - [Project Status_202301](https://github.com/khonsulabs/bonsaidb/issues/262)
+    - One serious thought I still have is whether Nebari should exist, or whether BonsaiDb should just use another database format. 
+    - BonsaiDb/CouchDB were designed with the idea of being able to embed extra information inside of the B+Tree structures. This is how the map/reduce is powered -- the reduced values can be stored directly in the B+Tree so that a reduce query doesn't need to visit all of the nodes in the tree to come up with an aggregate result. From what I could find, no other database engine that is written in Rust supports embedding extra information inside of the B+Tree structure itself, while it's a key-feature of Nebari.
+    - Nearly every other embedded database engine does not utilize a write-ahead log. In my testing, a write-ahead log is absolutely critical for insert performance. 
+  - https://github.com/khonsulabs/nebari /rust
+    - A pure Rust database implementation using an append-only B-Tree file format.
+
 - https://github.com/nlfiedler/mokuroku /apache2/202309/rust/rocksdb
   - Secondary indices for RocksDB in Rust.
   - designed to provide a secondary index on top of the RocksDB key/value store, similar to what PouchDB does for LevelDB.
@@ -277,6 +292,9 @@ modified: 2023-09-28T20:35:56.153Z
   - It supports several storage strategies and remote pushing and pulling strategies.
   - It works with CouchDB-style APIs and a lot more to come.
 
+- https://github.com/jacwright/restdb /201211/js
+  - A RESTful database: inspired by CouchDB, built with JavaScript, on Node.js, backed by leveldb
+
 - https://github.com/marten-de-vries/chairdb /python/inactive
   - A small CouchDB-compatible database with sync support
 
@@ -286,6 +304,8 @@ modified: 2023-09-28T20:35:56.153Z
   - https://github.com/fiatjaf/summuladb
     - A SummaDB that runs in the browser.
 
+- https://github.com/ondra-novak/sofadb /201903/cpp
+  - CouchDB inspired document database written in C++. In planning state
 - https://github.com/RipcordSoftware/AvanceDB /201810/cpp
   - An in-memory database based on the CouchDB REST API and containing the CouchDB Futon and Fauxton web sites
   - If you are currently using CouchDB and struggle with view build times, then AvanceDB should be a seamless replacement for your view workload.
@@ -423,6 +443,243 @@ modified: 2023-09-28T20:35:56.153Z
 - https://github.com/twilson63/vflow-pouchdb /201502/js
   - an abstraction around pouchDB's changes feed and it creates a simple api for interacting with the write stream system. 
   - It basically breaks it down into an event emitter.
+# examples
+- https://gitlab.com/emergence-engineering/blog/-/tree/master/articles/prosemirror-sync-1 /ts
+  - [Collaborative text editor with ProseMirror and a syncing database_202007](https://emergence-engineering.com/blog/prosemirror-sync-1)
+
+- https://github.com/shellyln/kanban-board-app /202101/ts/redux/inactive
+  - https://shellyln.github.io/knbn
+  - Kanban style task management board app
+  - 依赖redux、material-ui.v4、pouchdb-find、codemirror5、
+  - Calendar view
+  - Synchronize multiple device boards with CouchDB remote server
+  - Write kanban in Markdown syntax
+
+- https://github.com/roldaojr/ra-data-pouchdb /LGPLv3/202204/js/inactive
+  - PouchDB/CouchDB data provider for [react-admin](https://github.com/marmelab/react-admin)
+  - This data provider takes a PouchDB object as input, then creates a client-side data provider around it.
+  - Requires PouchDB-find plugin.
+  - working: pagination, sorting(requires secondary indexes)
+  - not working： filtering by column，full text search
+
+- https://github.com/marmelab/reactive-beers /201910/js
+  - an example application using CouchDB and PouchDB
+  - [CouchDB, The Open-Source Cloud Firestore Alternative? - DEV Community_201909](https://dev.to/juliendemangeon/couchdb-the-open-source-cloud-firestore-alternative-2gc0)
+
+- https://github.com/mradultiw/Wassup /202105/js
+  - a client-server based desktop chat application written in Javascript
+  - It has a central server and database which is used to connect clients together.
+  - Each client has it's own local database. 
+
+- https://github.com/starikan/pouchdb-viewer /202104/js
+  - Standalone PouchDB viewer powered by Electron and pouchdb-server
+
+- https://github.com/hadrysmateusz/writing-app /202202/ts
+  - Rich-text editor with full offline support and cloud-syncing as well as local file editing functionality. 
+  - Built with electron, react, couchdb, and aws-amplify.
+
+- https://github.com/tripott/paginate /201804/js
+  - React/Redux pagination. Performant express/couch api pagination strategies with allDocs and mango queries.
+
+- https://github.com/thomastoye/field-journal /ts/pouchdb
+  - https://field-journal.pages.dev/
+  - An experimental browser-based, offline-first, event-sourced dispatching, messaging, and incident tracking application.
+
+- https://github.com/kbrisso/file-base /202309/js/ts
+  - A database for managing your files using Electron and React.
+  - You can tag, add notes, organize, categorize, filter, search and quickly find your needed files with an easy-to-use application
+  - Filebase does not modify your existing files or directories 
+
+- https://github.com/pik-gane/vodle /202311/js
+  - Vodle will help groups make better decisions
+  - Its underlying algorithm is based on thorough science and makes sure that all participants get the exact same influence on the decision
+  - Built With Ionic Angular Typescript CouchDB Weblate
+
+- https://github.com/ErikVerheul/OneBacklog /202310/js
+  - A Vue SPA for maintaining multi team product backlogs using CouchDB
+
+- https://github.com/chaosprinz/webapp-boilerplate /201911/js
+  - Boilerplate for developing webapps based on react with express/socket.io-backend using couchdb
+- https://github.com/wandonye/openapi-express-couchdb /201909/js
+  - openapi express couchdb boilerplate
+- https://github.com/enfrte/couchdb-rest-api /201909/js
+  - example of a NodeJS ReST API connecting to a CouchDB database
+- https://github.com/EranGrin/couchDB-Node-Passport-Login /202003/js
+  - A user login and registration app using Node.js, Express, Passport, CouchDB
+
+- https://github.com/danobot/notorious /202102/ts
+  - https://danobot.github.io/notorious-landing
+  - Offline-first note taking application for desktop and the web
+  - Notorious backend is a CouchDB database and an optional web interface for accessing Notorious through a web browser.
+
+- https://github.com/Tunetown/Notes /202210/js
+  - https://notes.webertom.net/
+  - This is a Notes Taking App based purely on CouchDB and JavaScript
+
+- https://github.com/mehtaarn000/reactdrive /202211/js
+  - File storage system built with Reactjs, Expressjs, Nodejs, and CouchDB.
+
+- https://github.com/terichadbourne/offline-first-project-manager /201802/js
+  - Offline First project management tool, built as a Progressive Web App with PouchDB, CouchDB, and service workers
+
+- https://github.com/flysteur-dev/pager /202104/js
+  - Minimalist serverless RSS reader (PWA, React, CouchDB, Web worker, Offline persistance, Docker)
+- https://github.com/MalyanaSkyrim/docker-mern-app /201911/js
+  - Dockerize mern app, implement flux and implement offline-first pattern using pouchdb with couchdb
+
+- https://github.com/1-Platform/idea-hub /202201/ts
+  - a place to share ideas and innovations
+  - Load remote couchdb with design documents and default tag
+
+- https://github.com/FoxUSA/StoreDown /202207/js
+  - An inventory system that is hopefully simple enough 
+  - If you want to sync between multiple devices, you need to setup a CouchDB server.
+  - CouchDB Sync via PouchDB
+
+- https://github.com/jed1976/prototype_cms /202208/js
+  - Fun prototype CMS built with Node, CouchDB/PouchDB, RE: DOM and Tachyons.
+
+- https://github.com/ShabanGomaa/Chat /js
+  - a simple chat application using react
+
+- https://github.com/vrtmrz/obsidian-livesync /202311/ts
+  - Self-hosted LiveSync is a community-implemented synchronization plugin.
+  - A self-hosted or purchased CouchDB acts as the intermediate server
+  - You can use CouchDB or its compatibles like IBM Cloudant.
+  - Note: It has no compatibility with the official "Obsidian Sync".
+
+- https://github.com/oglimmer/linky /js
+  - A link management system - or maybe just a playground for reactjs, node 
+  - react-redux-form
+  - CouchDB backend via nano
+
+- https://github.com/genglefr/my-gallery /201804/js
+  - Image gallery, in sync thx to PouchDB and Couchbase Sync Gateway websocket
+  - a proof of concept for synching pouchdb - couchdb databases, using base64 images as documents. 
+  - Since 19/02/2018, the sync is done over websocket of sync gateway.
+
+- https://github.com/wonderwhy-er/offline-first-seed /201603/js
+  - Minimalistic JavaScript offline first application seed using PouchDB and ServiceWorker
+  - Uses Express/Node for server. Runs PouchDB both on server and client to allow working offline and sync when online Uses ServiceWorker to allow running page/app while offline Uses MaterializeCSS for styling
+
+- https://github.com/fasiha/gotanda-pouchdb-server /202011/ts
+  - A centralized Node.js server for your PouchDB-wielding local-first apps to sync to. Multiple users ok, multiple apps ok. Login with GitHub.
+  - This repo is intended to service apps that use PouchDB to store their data locally—web apps or mobile apps or wherever PouchDB is supported.
+
+- https://github.com/ibm-watson-data-lab/shopping-list-vanillajs-pouchdb /201802/js
+  - https://github.com/ibm-watson-data-lab/shopping-list-react-pouchdb /202004/js
+  - an Offline First demo Progressive Web App built using React and PouchDB
+  - PouchDB syncs its data with a remote IBM Cloudant database.
+  - PouchDB can synchronize with CouchDB and compatible servers.
+- https://github.com/ibm-watson-data-lab/shopping-list-preact-pouchdb /201808/js
+  - a reference implementation of an Offline First shopping list app, built as a Progressive Web App using Preact and PouchDB.
+
+- https://github.com/mohammadnazari110/pwa_offline_video_download /201905/js
+  - this is a sample PWA app for download video and store to indexedDB with pouchDB
+
+- https://github.com/ayastreb/money-tracker /202211/js
+  - https://moneytracker.cc/
+  - an open-source progressive web app that allows you to track your income and expenses.
+  - Data is stored locally on device in PouchDB database and can be synced to the cloud.
+- https://github.com/medic/cht-core
+  - The CHT Core Framework makes it faster to build responsive, offline-first digital health apps that equip health workers to provide better care in their communities.
+
+- https://github.com/duytq94/react-native-note-with-pouchdb /201910/js
+  - Making a simple note app with PouchDB in React Native
+
+- https://github.com/YuJiaHao/pouch-note-app /202206/js
+  - a practice with react pouchdb and couchdb
+- https://github.com/IvanAprea/react-client-couchdb 202206/ts
+  - sudo docker-compose -f docker-compose.dev.yml
+
+- https://github.com/NoteSelf/NoteSelf.github.io /202005/js/inactive
+  - https://noteself.org/
+  - built on top of TiddlyWiki, a powerful, free, highly customizable and open-source personal wiki.
+  - We took the best of it, it's powerful customization system, and mixed it with one of the best embedded databases available, PouchDb, to bring in the synchronization capabilities you need.
+  - This TiddlyWiki-variant stores documents in the browser (pouchdb) and can sync to a couchdb-server.
+
+- https://github.com/cloudless-hq/atreyu /js/svelte
+  - https://atreyu.dev/docs/
+  - an edge- and serviceworker first metaframework for personal, data centric web applications. 
+  - 依赖pouchdb
+  - It supports real time data sync, offline usage and values minimal boilerplate with opt in to most features.
+  - Falcor is used for state management, caching, batching and data sharing.
+  - Svelte views are bound to a virtual data object with a js proxy based store implementation
+  - ipfs as a local asset server and content adressable storage system, ipfs is not required for production sites and is not required to run in a p2p mode
+
+- https://github.com/Mo0812/MKNote /201905/js/vue
+  - a note web app, which uses Markdown to render your notes.
+  - verything works totally offline, all the data is stored on your browser and on your machine - no fancy backend
+  - Even if its offline you can sync your notes over multi instances by running your own CouchDB backend
+
+- https://github.com/patgoddard/codeMate /201404/js
+  - A code editor for online or offline use using the chromium or chrome browser. 
+  - It uses AceEditor, Pouchdb and an optional remote couchdb.
+
+- https://github.com/steve-1820/memex /ts/inactive
+  - This a POC on how a memex could potentially work.
+  - [Show HN: Open-Source Memex – Alternative Approach to Roam/Obsidian | Hacker News](https://news.ycombinator.com/item?id=24572449)
+    - This blog is a summary of a fun 1 month adventure I had with Knowledge Management Systems and building a POC
+    - The Electron app receives this data through an API and saves it down locally using PouchDB 
+
+- [Show HN: TinyMCE and PouchDB Text App | Hacker News](https://news.ycombinator.com/item?id=34860605)
+  - This simple text app uses an older version of TinyMCE and one of their older demos.
+  - I also use Bootstrap, jQuery
+  - It lets you create "Folders" (PouchDBs) to store and manage documents. You can CRUD and search for documents.
+  - You don't need a webserver to use it. Just load the index.html file from the textapp folder.
+
+- https://github.com/evrom/plop /201402/js
+  - A Blog CMS that uses PouchDB locally or remotely for storage.
+
+- https://github.com/FieldDB/FieldDB /202112/js/inactive
+  - an app written in 100% Javascript which runs entirely client side, backed by a NoSQL database 
+  - we are currently using CouchDB and its offline browser wrapper PouchDB alpha
+
+- https://github.com/mobiusdickus/nodejs-couchdb /202305/js
+  - Dockerized template for a Node.js API and CouchDB database, served through Node.js.
+
+- https://github.com/NinjaGrandpa/nodejs-couchdb-demo /202307/js
+  - A simple customer database built with CouchDB and NodeJs
+
+- https://github.com/maxlath/couch-init2 /202304/js
+  - An opiniated CouchDB databases initializer
+# examples-couch
+- https://github.com/koostudios/couchpress /83Star/MIT/201205/CoffeeScript
+  - lightweight and modular CMS built on NodeJS, Express and CouchDB
+
+- https://github.com/homerjam/ace-cms /201912/js
+  - Flexible, multi-site, headless CMS. 
+  - ACE takes it's name from the key parts of the stack - Angular, CouchDB and Express.
+
+- https://github.com/BigBlueHat/BlueInk /201612/js
+  - BlueInk is being rewritten into an Open Source CMS built on Apache CouchDB and Cloudant mostly as a CouchApp.
+
+- https://github.com/HusseinTaha/couchdb-node-cms /201506/js
+  - A micro CMS for couchdb and nodejs 
+  - This project use nodejs and couchdb to manage data from database using html templates.
+- https://github.com/markuso/kleks /201511/CoffeeScript
+  - http://markuso.github.io/kleks
+  - pure CouchDB based CMS written as a CouchApp using Kanso, Spine.js, CoffeeScript and Stylus. 
+  - Supports multi-site setup and Markdown authoring
+
+- https://github.com/luisgerhorst/ccms /201310/js
+  - Backend-free, client-side JavaScript and CouchDB based CMS.
+  - it doesn't require any custom backend (such as PHP, Ruby on Rails or node.js). This is possible by using CouchDB's HTTP API
+  - Another important feature is that the site dynamically loads required contents from the database using JavaScript. 
+
+- budibase /19.5kStar/GPLv3/202312/ts/svelte
+  - https://github.com/Budibase/budibase
+  - https://budibase.com/
+  - Low code platform for creating internal tools, workflows, and admin panels in minutes.
+  - 后端依赖koa、knex、pouchdb
+  - 前端依赖svelte
+  - unlike other platforms, with Budibase you can start from scratch and create business apps with no datasources
+  - Budibase integrates with a number of popular tools allowing you to build apps
+  - the Budibase API enables Budibase as a backend
+  - At Budibase we use CouchDB as the underlying technology of our internal Budibase DB.
+
+- https://github.com/bterkuile/cmtool /202209/ruby/js
+  - A rails 3.2+ CMS as engine for a CouchDB backend
 # server
 - https://github.com/infinity-arc/ts-express-pouchdb-server /202003/js
   - powerful API that can be run as a micro service to power progressive web applications.
@@ -807,6 +1064,9 @@ modified: 2023-09-28T20:35:56.153Z
 - https://github.com/onur1/couchilla /js
   - Use couchilla to bundle a CouchDB design document from a directory of JavaScript files.
   - [Bundle your CouchDB map/reduce functions with ease](https://ogu.nz/couchilla.html)
+
+- https://github.com/mhausenblas/ld-in-couch /201211/python
+  - This project enables you to store, process and query RDF-based Linked Data in Apache CouchDB.
 # test
 - https://github.com/GustavoLopez04/pouchdb /202211/js
   - The source repository for the getting started tutorial for PouchDB
@@ -820,206 +1080,6 @@ modified: 2023-09-28T20:35:56.153Z
 - https://github.com/gr2m/pouchdb-attachments-sync-test /js
   - https://gr2m.github.io/pouchdb-attachments-sync-test/
   - Current PouchDB downloads all attachments from all revisions when replicating from a remote repository, instead of smartly checking what attachments already exist locally
-# examples
-- https://gitlab.com/emergence-engineering/blog/-/tree/master/articles/prosemirror-sync-1 /ts
-  - [Collaborative text editor with ProseMirror and a syncing database_202007](https://emergence-engineering.com/blog/prosemirror-sync-1)
-
-- https://github.com/shellyln/kanban-board-app /202101/ts/redux/inactive
-  - https://shellyln.github.io/knbn
-  - Kanban style task management board app
-  - 依赖redux、material-ui.v4、pouchdb-find、codemirror5、
-  - Calendar view
-  - Synchronize multiple device boards with CouchDB remote server
-  - Write kanban in Markdown syntax
-
-- https://github.com/roldaojr/ra-data-pouchdb /LGPLv3/202204/js/inactive
-  - PouchDB/CouchDB data provider for [react-admin](https://github.com/marmelab/react-admin)
-  - This data provider takes a PouchDB object as input, then creates a client-side data provider around it.
-  - Requires PouchDB-find plugin.
-  - working: pagination, sorting(requires secondary indexes)
-  - not working： filtering by column，full text search
-
-- https://github.com/marmelab/reactive-beers /201910/js
-  - an example application using CouchDB and PouchDB
-  - [CouchDB, The Open-Source Cloud Firestore Alternative? - DEV Community_201909](https://dev.to/juliendemangeon/couchdb-the-open-source-cloud-firestore-alternative-2gc0)
-
-- https://github.com/mradultiw/Wassup /202105/js
-  - a client-server based desktop chat application written in Javascript
-  - It has a central server and database which is used to connect clients together.
-  - Each client has it's own local database. 
-
-- https://github.com/starikan/pouchdb-viewer /202104/js
-  - Standalone PouchDB viewer powered by Electron and pouchdb-server
-
-- https://github.com/hadrysmateusz/writing-app /202202/ts
-  - Rich-text editor with full offline support and cloud-syncing as well as local file editing functionality. 
-  - Built with electron, react, couchdb, and aws-amplify.
-
-- https://github.com/tripott/paginate /201804/js
-  - React/Redux pagination. Performant express/couch api pagination strategies with allDocs and mango queries.
-
-- https://github.com/thomastoye/field-journal /ts/pouchdb
-  - https://field-journal.pages.dev/
-  - An experimental browser-based, offline-first, event-sourced dispatching, messaging, and incident tracking application.
-
-- https://github.com/kbrisso/file-base /202309/js/ts
-  - A database for managing your files using Electron and React.
-  - You can tag, add notes, organize, categorize, filter, search and quickly find your needed files with an easy-to-use application
-  - Filebase does not modify your existing files or directories 
-
-- https://github.com/pik-gane/vodle /202311/js
-  - Vodle will help groups make better decisions
-  - Its underlying algorithm is based on thorough science and makes sure that all participants get the exact same influence on the decision
-  - Built With Ionic Angular Typescript CouchDB Weblate
-
-- https://github.com/ErikVerheul/OneBacklog /202310/js
-  - A Vue SPA for maintaining multi team product backlogs using CouchDB
-
-- https://github.com/chaosprinz/webapp-boilerplate /201911/js
-  - Boilerplate for developing webapps based on react with express/socket.io-backend using couchdb
-- https://github.com/wandonye/openapi-express-couchdb /201909/js
-  - openapi express couchdb boilerplate
-- https://github.com/enfrte/couchdb-rest-api /201909/js
-  - example of a NodeJS ReST API connecting to a CouchDB database
-- https://github.com/EranGrin/couchDB-Node-Passport-Login /202003/js
-  - A user login and registration app using Node.js, Express, Passport, CouchDB
-
-- https://github.com/danobot/notorious /202102/ts
-  - https://danobot.github.io/notorious-landing
-  - Offline-first note taking application for desktop and the web
-  - Notorious backend is a CouchDB database and an optional web interface for accessing Notorious through a web browser.
-
-- https://github.com/Tunetown/Notes /202210/js
-  - https://notes.webertom.net/
-  - This is a Notes Taking App based purely on CouchDB and JavaScript
-
-- https://github.com/mehtaarn000/reactdrive /202211/js
-  - File storage system built with Reactjs, Expressjs, Nodejs, and CouchDB.
-
-- https://github.com/terichadbourne/offline-first-project-manager /201802/js
-  - Offline First project management tool, built as a Progressive Web App with PouchDB, CouchDB, and service workers
-
-- https://github.com/flysteur-dev/pager /202104/js
-  - Minimalist serverless RSS reader (PWA, React, CouchDB, Web worker, Offline persistance, Docker)
-- https://github.com/MalyanaSkyrim/docker-mern-app /201911/js
-  - Dockerize mern app, implement flux and implement offline-first pattern using pouchdb with couchdb
-
-- https://github.com/1-Platform/idea-hub /202201/ts
-  - a place to share ideas and innovations
-  - Load remote couchdb with design documents and default tag
-
-- https://github.com/FoxUSA/StoreDown /202207/js
-  - An inventory system that is hopefully simple enough 
-  - If you want to sync between multiple devices, you need to setup a CouchDB server.
-  - CouchDB Sync via PouchDB
-
-- https://github.com/jed1976/prototype_cms /js
-  - Fun prototype CMS built with Node, CouchDB/PouchDB, RE: DOM and Tachyons.
-
-- https://github.com/ShabanGomaa/Chat /js
-  - a simple chat application using react
-
-- https://github.com/vrtmrz/obsidian-livesync /202311/ts
-  - Self-hosted LiveSync is a community-implemented synchronization plugin.
-  - A self-hosted or purchased CouchDB acts as the intermediate server
-  - You can use CouchDB or its compatibles like IBM Cloudant.
-  - Note: It has no compatibility with the official "Obsidian Sync".
-
-- https://github.com/oglimmer/linky /js
-  - A link management system - or maybe just a playground for reactjs, node 
-  - react-redux-form
-  - CouchDB backend via nano
-
-- https://github.com/genglefr/my-gallery /201804/js
-  - Image gallery, in sync thx to PouchDB and Couchbase Sync Gateway websocket
-  - a proof of concept for synching pouchdb - couchdb databases, using base64 images as documents. 
-  - Since 19/02/2018, the sync is done over websocket of sync gateway.
-
-- https://github.com/wonderwhy-er/offline-first-seed /201603/js
-  - Minimalistic JavaScript offline first application seed using PouchDB and ServiceWorker
-  - Uses Express/Node for server. Runs PouchDB both on server and client to allow working offline and sync when online Uses ServiceWorker to allow running page/app while offline Uses MaterializeCSS for styling
-
-- https://github.com/fasiha/gotanda-pouchdb-server /202011/ts
-  - A centralized Node.js server for your PouchDB-wielding local-first apps to sync to. Multiple users ok, multiple apps ok. Login with GitHub.
-  - This repo is intended to service apps that use PouchDB to store their data locally—web apps or mobile apps or wherever PouchDB is supported.
-
-- https://github.com/ibm-watson-data-lab/shopping-list-vanillajs-pouchdb /201802/js
-  - https://github.com/ibm-watson-data-lab/shopping-list-react-pouchdb /202004/js
-  - an Offline First demo Progressive Web App built using React and PouchDB
-  - PouchDB syncs its data with a remote IBM Cloudant database.
-  - PouchDB can synchronize with CouchDB and compatible servers.
-- https://github.com/ibm-watson-data-lab/shopping-list-preact-pouchdb /201808/js
-  - a reference implementation of an Offline First shopping list app, built as a Progressive Web App using Preact and PouchDB.
-
-- https://github.com/mohammadnazari110/pwa_offline_video_download /201905/js
-  - this is a sample PWA app for download video and store to indexedDB with pouchDB
-
-- https://github.com/ayastreb/money-tracker /202211/js
-  - https://moneytracker.cc/
-  - an open-source progressive web app that allows you to track your income and expenses.
-  - Data is stored locally on device in PouchDB database and can be synced to the cloud.
-- https://github.com/medic/cht-core
-  - The CHT Core Framework makes it faster to build responsive, offline-first digital health apps that equip health workers to provide better care in their communities.
-
-- https://github.com/duytq94/react-native-note-with-pouchdb /201910/js
-  - Making a simple note app with PouchDB in React Native
-
-- https://github.com/YuJiaHao/pouch-note-app /202206/js
-  - a practice with react pouchdb and couchdb
-- https://github.com/IvanAprea/react-client-couchdb 202206/ts
-  - sudo docker-compose -f docker-compose.dev.yml
-
-- https://github.com/NoteSelf/NoteSelf.github.io /202005/js/inactive
-  - https://noteself.org/
-  - built on top of TiddlyWiki, a powerful, free, highly customizable and open-source personal wiki.
-  - We took the best of it, it's powerful customization system, and mixed it with one of the best embedded databases available, PouchDb, to bring in the synchronization capabilities you need.
-  - This TiddlyWiki-variant stores documents in the browser (pouchdb) and can sync to a couchdb-server.
-
-- https://github.com/cloudless-hq/atreyu /js/svelte
-  - https://atreyu.dev/docs/
-  - an edge- and serviceworker first metaframework for personal, data centric web applications. 
-  - 依赖pouchdb
-  - It supports real time data sync, offline usage and values minimal boilerplate with opt in to most features.
-  - Falcor is used for state management, caching, batching and data sharing.
-  - Svelte views are bound to a virtual data object with a js proxy based store implementation
-  - ipfs as a local asset server and content adressable storage system, ipfs is not required for production sites and is not required to run in a p2p mode
-
-- https://github.com/Mo0812/MKNote /201905/js/vue
-  - a note web app, which uses Markdown to render your notes.
-  - verything works totally offline, all the data is stored on your browser and on your machine - no fancy backend
-  - Even if its offline you can sync your notes over multi instances by running your own CouchDB backend
-
-- https://github.com/patgoddard/codeMate /201404/js
-  - A code editor for online or offline use using the chromium or chrome browser. 
-  - It uses AceEditor, Pouchdb and an optional remote couchdb.
-
-- https://github.com/steve-1820/memex /ts/inactive
-  - This a POC on how a memex could potentially work.
-  - [Show HN: Open-Source Memex – Alternative Approach to Roam/Obsidian | Hacker News](https://news.ycombinator.com/item?id=24572449)
-    - This blog is a summary of a fun 1 month adventure I had with Knowledge Management Systems and building a POC
-    - The Electron app receives this data through an API and saves it down locally using PouchDB 
-
-- [Show HN: TinyMCE and PouchDB Text App | Hacker News](https://news.ycombinator.com/item?id=34860605)
-  - This simple text app uses an older version of TinyMCE and one of their older demos.
-  - I also use Bootstrap, jQuery
-  - It lets you create "Folders" (PouchDBs) to store and manage documents. You can CRUD and search for documents.
-  - You don't need a webserver to use it. Just load the index.html file from the textapp folder.
-
-- https://github.com/evrom/plop /201402/js
-  - A Blog CMS that uses PouchDB locally or remotely for storage.
-
-- https://github.com/FieldDB/FieldDB /202112/js/inactive
-  - an app written in 100% Javascript which runs entirely client side, backed by a NoSQL database 
-  - we are currently using CouchDB and its offline browser wrapper PouchDB alpha
-
-- https://github.com/mobiusdickus/nodejs-couchdb /202305/js
-  - Dockerized template for a Node.js API and CouchDB database, served through Node.js.
-
-- https://github.com/NinjaGrandpa/nodejs-couchdb-demo /202307/js
-  - A simple customer database built with CouchDB and NodeJs
-
-- https://github.com/maxlath/couch-init2 /202304/js
-  - An opiniated CouchDB databases initializer
 # more
 - https://github.com/KouchDB/replication-source-poc /202211/java
   - Demonstrates how to stand-up a Java Springboot service as a source for CouchDB replication

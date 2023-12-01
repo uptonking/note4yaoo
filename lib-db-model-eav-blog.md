@@ -10,9 +10,30 @@ modified: 2023-09-25T17:52:11.778Z
 # guide
 
 # blogs-eav-jsonb
-- [Replacing EAV with JSONB in PostgreSQL_201601](https://coussej.github.io/2016/01/14/Replacing-EAV-with-JSONB-in-PostgreSQL/)
+
+## 🆚️ [Comparing JSONB and EAV model for extensions - Evolveum Docs_202204](https://docs.evolveum.com/midpoint/projects/midscale/design/repo/repository-json-vs-eav/)
+
+- Structure for JSON is simple, single table tjson with (oid UUID PK, name VARCHAR, ext JSONB). Column name has a unique index and ext has a GIN index only by default. Other indexes are added as needed and mentioned during tests.
+- Structure for EAV model has a master table teav with (oid UUID PK, name VARCHAR) with unique index on the name. Detail table teav_ext_string contains (owner_oid FK, key VARCHAR, value VARCHAR). Extension table has PK(owner_oid, key, value), that is all columns, value could be omitted if uniqueness is not necessary. Because the PK covers all columns, it should be index-organized table in Oracle (PG doesn’t have this feature).
+
+- Conclusion
+- JSON with index takes less space than EAV+ext table with their indexes (4GB vs 7GB, not counting unique indexes on names). This may change when keys are normalized using "ext item catalog", but both JSON and EAV would benefit from it.
+- Performance wise they are trading blows, but JSON is ~2 times faster overall, depending on the mix of selects.
+
+## 🆚️ [Replacing EAV with JSONB in PostgreSQL_201601](https://coussej.github.io/2016/01/14/Replacing-EAV-with-JSONB-in-PostgreSQL/)
+
 # blogs
 - [Entity-attribute-value model in relational databases. Should globals be emulated on tables? Part 1](https://community.intersystems.com/post/entity-attribute-value-model-relational-databases-should-globals-be-emulated-tables-part-1) 
+
+- [Flattening an EAV model in SQL, the DRY way - dbt Community Forum_201907](https://discourse.getdbt.com/t/flattening-an-eav-model-in-sql-the-dry-way/486)
+
+## [How EAV Data Model helped us_201901](https://medium.com/@deepak.mallah/how-eav-data-model-helped-us-36c7c765d7e3)
+
+- EAV data model provides flexibility in such manner that you do not need to alter database tables to add/remove new product attributes.
+- In our case the product is a Doctor and primarily we had 2 major problem to address:
+  - Minimise or eliminate the altering of table completely
+  - And the attributes should have multilingual support
+- By using EAV we were able to handle almost 16 attributes of Doctor entity with just 4 columns where as in case of a Flat table there would have been 16 columns. And this number would have only kept increasing upon introduction of new attributes.
 
 ## [Three ways to model EAV schemas and many-to-many relationships_201511](https://www.googlecloudcommunity.com/gc/Modeling/Three-ways-to-model-EAV-schemas-and-many-to-many-relationships/m-p/562454)
 
@@ -141,8 +162,6 @@ modified: 2023-09-25T17:52:11.778Z
   - A product would be the top-level representation of a product
   - A SKU represents a single variant, so its model needs to hold information unique to that particular variant, such as price, inventory, etc.
 - Whilst the above takes care of the one-to-many relation between products and SKUs, it does leave out the topic of product attributes (like colour, size, etc). 
-
-## [How to store schema-less EAV (Entity-Attribute-Value) data using JSON and Hibernate](https://vladmihalcea.com/how-to-store-schema-less-eav-entity-attribute-value-data-using-json-and-hibernate/)
 
 ## [Storing user customisations and settings. How do you do it? - DEV Community_201811](https://dev.to/imthedeveloper/storing-user-customisations-and-settings-how-do-you-do-it-1017)
 
@@ -332,3 +351,5 @@ modified: 2023-09-25T17:52:11.778Z
 - [Entity-attribute-value model in relational databases. Should globals be emulated on tables? Part 1. - DEV Community](https://dev.to/intersystems/entity-attribute-value-model-in-relational-databases-should-globals-be-emulated-on-tables-part-1-2e49)
 
 - [The Anti-Pattern – EAV(il) Database Design ? – The Anti-Kyte](https://mikesmithers.wordpress.com/2013/12/22/the-anti-pattern-eavil-database-design/)
+
+- [How to store schema-less EAV (Entity-Attribute-Value) data using JSON and Hibernate](https://vladmihalcea.com/how-to-store-schema-less-eav-entity-attribute-value-data-using-json-and-hibernate/)

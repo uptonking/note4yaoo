@@ -44,13 +44,6 @@ modified: 2023-09-25T17:56:50.116Z
   - Each object that’s inserted is decomposed into a EAV triple of Entity (ID), Attribute (path in the object), and a Value. 
   - Each triple is stored with a Lamport Timestamp and treated as a Last Writer Wins Register (LWW). 
   - To support its tuple based storage system, TriplitDB uses Tuple Database as a generic querying interface and transaction manager.
-  - [An interactive intro to CRDTs | Hacker News_202310](https://news.ycombinator.com/item?id=37764581)
-    - We've built a auto-syncing database that uses CRDTs under the hood but never exposes them through the API. So if you want all of the benefits of CRDTs e.g. offline-first user experience, checkout our project, Triplit!
-    - why didn't/don't you build Triplit on cr-sqlite?
-      - We're aware of cr-sqlite and I've talked to the author, Matt, a few times. 
-      - Short answer: SQLite has serious shortcomings when it comes to reactivity and we think we can be as fast as SQLite for the application-type queries we aim to support. 
-      - The long answer would be about supporting all of features we don't need in SQLite and all of the quirks that come with it like having `null` as a primary key
-      - We also recently came up with a relational-style querying system without joins
 
 - https://github.com/comunica/comunica /379Star/MIT/202309/ts
   - https://comunica.dev/
@@ -109,6 +102,13 @@ modified: 2023-09-25T17:56:50.116Z
   - The HDT format, which the terminusdb-store layer format is based on
   - We are constantly developing terminusdb-store to make it a high quality succinct(简洁的) graph representation versioned datastorage layer. 
   - Starting with version 0.20.0, terminus-store uses a new storage format, which bundles all files into a single archive, and also supports value types. 
+
+- https://github.com/Genaker/nodejento /66Star/GPLv3/202202/js
+  - NodeJS implementation of the Magento 2 ORM and Microservice Framework components without using legacy PHP.
+  - NodeJento it is a NodeJs service that provides an additional API surface that makes product and category and any other data retrieval faster.
+  - Customers need to find what they’re looking for and they need to do it quickly. That’s why we developed NodeJento for Adobe Commerce.
+  - NodeJento is written in a highly scalable event-driven NodeJS/JavaScript. 
+  - This repo uses Sequelize library to connect to the Magento 2 database directly without invocation of the Magento 2 PHP framework, so we won’t have to write any MYSQL queries.
 # eav
 - https://github.com/smallhelm/entity-wharf-js /MIT/201412/js/inactive
   - Store data as entity attribute values in memory
@@ -146,6 +146,17 @@ modified: 2023-09-25T17:56:50.116Z
   - mapping database to EAV model as solution of data interoperability and portability between different Content Management Systems (CMS).
   - The mapping is based on an XML file that describes the implementation of the three components of the EAV model : Entity, Value and Attribute. 
   - In addition to database mapping, the API allows access to a CMS data directly from database with SQL queries.
+
+- https://github.com/powered-by-wq/vera /MIT/201709/python
+  - vera is the reference implementation of the Entity-Record-Attribute-Value (ERAV) data model. 
+  - ERAV is an extension to Entity-Attribute-Value (EAV) that adds support for maintaining multi-faceted provenance metadata for an entity
+  - optimized for storing and tracking changes to time series data as it is exchanged between disparate technical platforms (e.g. mobile devices, Excel spreadsheets, and third-party databases). 
+
+- https://github.com/bowbahdoe/eav /202204/rust
+  - I set up to doodle on translating the unmaintained clone https://github.com/Workiva/eva
+  - [Call for Help - Open Source Datom/EAV/Fact database in Rust. : rust_202204](https://www.reddit.com/r/rust/comments/tucjdm/call_for_help_open_source_datomeavfact_database/)
+
+- [SQLAlchemy EAV example](https://gist.github.com/grakic/5c8c274b1a75fba2fc3b3572d7de064b)
 # triplestore
 - https://github.com/Symatem/SymatemJS /202010/js/inactive
   - A graph database which combines triple-store, key-value-store and distributed version control

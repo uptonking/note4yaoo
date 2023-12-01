@@ -56,6 +56,7 @@ modified: 2023-04-07T03:10:46.225Z
   - It works recursively, so it will even detect if you modify a deep property like `obj.a.b[0].c = true`.
   - Uses the `Proxy` API.
 # blogs
+- [Cool Software | Benchmarking MobX-State-Tree Performance](https://coolsoftware.dev/blog/benchmarking-mobx-state-tree/)
 
 ## [Mobx 思想的实现原理，及与 Redux 对比 - 知乎](https://zhuanlan.zhihu.com/p/25585910)
 

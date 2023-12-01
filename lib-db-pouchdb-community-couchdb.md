@@ -12,7 +12,11 @@ modified: 2023-10-29T02:23:35.064Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 🤔💡 [Best practice for a multiuser CouchDB-based app? - Stack Overflow](https://stackoverflow.com/questions/16141158/best-practice-for-a-multiuser-couchdb-based-app)
+- The critical question is whether you want to expose CouchDB to the public or not.
+  - If you want to build your CMS as a classical 3-tier architecture where CouchDB is exclusively accessed from a privileged scripting layer, e.g. PHP, then I would recommend you to roll your own authorization system. This will give you better control over the authorization logic. Particularly, you can realize document based read access control (not available in the CouchDB security system).
+  - If instead you want to expose CouchDB to the public, things are different. You cannot actually write server side logic, so you will have to use CouchDB's built in authentication/authorization system. That limits you to read access controlled on a database level (not document level!). 
+  - CouchDB admins should not be equivalent to application admins as a CouchDB admin is rather comparable to a server admin in a traditional setting.
 
 - ## CouchDB is great but it is NOT made for the web. 
 - https://twitter.com/rxdbjs/status/1542161610940243968
@@ -185,6 +189,30 @@ modified: 2023-10-29T02:23:35.064Z
 - [Couchbase vs CouchDB NoSQL Systems: Difference Between Them](https://www.couchbase.com/comparing-couchbase-vs-couchdb/)
 - I think CouchBase seem to be perceived as CouchDB's 'enterprise' alternative. Which in a way seem to be true. Apart from lack of ability to attach files to records ( documents) and 'out-of-box' REST endpoints compared to CouchDB, CouchBase has sql like language i.e. N1QL (sometimes pronounced a Nickel, UPDATE renamed to SQL++ in Couchbase 7.0). This is one of the reason why I don't really like / recommend using the term 'NoSQL'. I personally like term 'Non-relational'.
 
+# discuss-couch-like
+- ## 
+
+- ## 
+
+- ## [Consider adding support for huge blobs · khonsulabs/bonsaidb_202203](https://github.com/khonsulabs/bonsaidb/issues/222)
+- BonsaiDb has a 4GB document size limit, which comes from Nebari's "chunk size" limit. More importantly, however, Nebari treats chunks as whole pieces of information that must be loaded completely in memory to be returned. The side effect is that while BonsaiDb has a 4GB document size limit, the practical limit is the available RAM. Even if Nebari's limit were increased, it would require so much RAM, it wouldn't be practical.
+  - MongoDB offers an easy abstraction that allows storing larger files in segments. 
+  - CouchDB supports an attachments API which allows associating one or more blobs of data with a document. 
+  - Both of these ideas seem like good starting points for considering how to enable handling of large blobs, including the ability to stream the blobs without loading the entire blob in to memory.
+  - 已实现
+
+- ## PliantDb looks great! Here's what I'd like to know:_20210624
+- https://discord.com/channels/578968877866811403/833332909808025610/857619903010701323
+  1. It's stated in many places that CouchDB inspired PliantDb, but compatability is not a goal. Does PliantDb have conflict resolution for when multiple databases sync with different updates, or is it just "Last update wins."?
+  2. The type name Schematic seems to be used for schemas. I believe that schematic and schemas are 2 different  things. Was this intentional?
+  3. The current version is not yet at 1.0, and messages are everywhere to not use it, yet. What features aren't yet implemented or trusted?
+
+- In CouchDB, the replication model supports two servers operating independently and resolving using a tree model 
+  - I personally have not had the need for this sort of functionality, and it makes implementation much harder. 
+  - So, I opted for a much simpler strategy but it's similar. The first writer will succeed, but just as in CouchDb, the revision ("_rev" in couch) is updated. 
+  - That means that the in-flight second writer will no longer be able to save, and will instead get a conflict error returned 
+  - For Schema and Schematic, Schema is a high level plan, in a way. You could use it to look up all the information needed, but it's not as efficient. I needed a word to describe an instance of that Schema but with other functionality such as looking up a view without needing to query every collection. When hunting for a name, I saw Schematic
+  - In terms of what's trusted: everything. I feel confident in this implementation because of the code coverage. It's not perfect, and I'm sure there are some bugs, but the biggest concern to me is storage formats.
 # discuss-couchdb-mvcc
 - ## 
 

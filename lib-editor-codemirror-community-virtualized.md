@@ -13,7 +13,8 @@ modified: 2023-11-30T06:56:24.809Z
   - fast render for mobile
 
 - cons
-  - in-page search
+  - in-page search 不能直接使用浏览器提供的能力
+  - scroll into view如锚点滚动需要自定义实现，因为可能不在可见范围
   - 影响现有的第三方组件，如scrollbar、(syntax)highlighting
 # discuss-stars
 - ## 

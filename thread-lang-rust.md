@@ -12,7 +12,9 @@ modified: 2023-10-06T16:26:57.557Z
 # discuss
 - ## 
 
-- ## 
+- ## Rust is mostly an uglier OCaml. Fight me.
+- https://twitter.com/basus/status/1730321811773014186
+- Rust uses typeclasses, ocaml uses higher order modules. They feel completely different IMO.
 
 - ## The three registers of Rust
 - https://twitter.com/greg_johnston/status/1727817195093209356

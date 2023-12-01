@@ -20,7 +20,10 @@ modified: 2023-09-17T17:38:11.187Z
 # discuss
 - ## 
 
-- ## 
+- ## Multi tenancy is paramount for vector indexes
+- https://twitter.com/Sirupsen/status/1730356136782549153
+  - With b-trees’ log(n) it doesn’t matter too much if you have one big table for all tenants
+  - For a vector index, the complexity is higher. Important to use the natural sharding keys when you can
 
 - ## 💡 Database Indexing Explained.
 - https://twitter.com/NikkiSiapno/status/1719352895169265797

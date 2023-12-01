@@ -137,7 +137,7 @@ modified: 2023-09-16T17:28:29.873Z
   - Nemo's data model aims at compatibility with RDF/SPARQL while preserving established logic programming conventions and features.
   - Rules: datalog dialect with support for existential rules (tuple-generating dependencies), stratified negation, and datatypes (including numeric comparison and arithmetic functions)
 
-- https://github.com/ekzhang/crepe /rust
+- https://github.com/ekzhang/crepe /417Star/MIT/202303/rust
   - Datalog compiler embedded in Rust as a procedural macro
   - a library that allows you to write declarative logic programs in Rust, with a Datalog-like syntax. 
   - It provides a procedural macro that generates efficient, safe code and interoperates seamlessly with Rust programs.

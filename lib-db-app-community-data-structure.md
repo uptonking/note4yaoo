@@ -140,7 +140,7 @@ modified: 2023-09-17T18:17:41.377Z
 # discuss-tree-lsm
 - ## 
 
-- ## 
+- ## [Write throughput differences in B-tree vs LSM-tree based databases? : databasedevelopment](https://www.reddit.com/r/databasedevelopment/comments/187cp1g/write_throughput_differences_in_btree_vs_lsmtree/)
 
 - ## Any recent papers related to compaction in Log Structured Merge (LSM) or similar trees?
 - https://twitter.com/strlen/status/1723065927951110182

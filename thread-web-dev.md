@@ -33,7 +33,9 @@ modified: 2021-01-08T17:13:43.392Z
 # discuss
 - ## 
 
-- ## 
+- ## 8 Essential Internet Protocols You Must Know
+- https://twitter.com/AmigosCode/status/1730204104838832135
+  - 协议示例动画
 
 - ## I still see people using `<script type="text/javascript">` and `<link type="text/css">` all the time 
 - https://twitter.com/matthewcp/status/1729872010921328786

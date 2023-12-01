@@ -206,7 +206,19 @@ modified: 2023-11-17T10:12:06.357Z
   - ipfs as a local asset server and content adressable storage system, ipfs is not required for production sites and is not required to run in a p2p mode
   - https://github.com/Netflix/falcor
     - Falcor lets you represent all your remote data sources as a single domain model via a virtual JSON graph. You code the same way no matter where the data is, whether in memory on the client or over the network on the server.
+
+- https://github.com/commune-os/weird /202309/rust/svelte
+  - https://weird-test.krivah.me/
+  - Local-first webpage generator
+  - common, backend and frontend are all part of an inactive legacy app (demo) that was cloud-first and made with Axum + Sycamore
+  - https://github.com/nate-sys/links-app-perseus /rust
 # local-first-examples
+- https://github.com/actualbudget/actual /MIT/202312/ts/js
+  - https://actualbudget.org/
+  - A local-first personal finance app
+  - it has a synchronization element so that all your changes can move between devices 
+  - https://github.com/actualbudget/actual-server /202312/js
+
 - https://github.com/kndwin/jikan
   - https://jikan-murex.vercel.app/
   - I've been using the T3 stack but below is my new option
@@ -230,8 +242,11 @@ modified: 2023-11-17T10:12:06.357Z
   - 支持点对点同步，测试时可用本地同步官网，api填写 https://hamsterbase.onrender.com，结尾无/
   - https://github.com/carytrivett
 
-- https://github.com/unigraph-dev/unigraph-dev
+- https://github.com/unigraph-dev/unigraph-dev /664Star/MIT/202306/ts
+  - https://unigraph.dev/
   - A local-first and universal knowledge graph, personal search engine, and workspace for your life.
+  - Your data is private and never leaves your computer. 
+  - Query or sync all of your data in JSON format using a variant of GraphQL.
 
 - https://github.com/digidem/mapeo-desktop
   - An offline map editing application for indigenous territory mapping in remote environments. 

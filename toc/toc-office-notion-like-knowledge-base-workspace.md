@@ -486,7 +486,7 @@ modified: 2022-06-03T21:34:54.893Z
   - a blog platform and alternative to Mirror
   - support favourite writers in seconds stream for readers by integrated with Superfluid instead of one-time payment.
 
-- https://github.com/unigraph-dev/unigraph-dev /
+- https://github.com/unigraph-dev/unigraph-dev /664Star/MIT/202306/ts
   - https://unigraph.dev/
   - A local-first and universal knowledge graph, personal search engine, and workspace for your life.
   - Your data is private and never leaves your computer. 

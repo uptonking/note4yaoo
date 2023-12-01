@@ -216,6 +216,11 @@ alert(process.env.NODE_ENV)
 - ## Do you know webpack supports skipping the parsing of large files through the use of the `module.noParse` option?
 - https://twitter.com/rspack_dev/status/1719707638496125128
 
+- ## There has been a recent trend where people see one incident of a slow Vite app and start dismissing the whole bundle-less dev setup as "bad".
+- https://twitter.com/youyuxi/status/1730537401217610234
+- Bundle-less is slower on each reload even with all the caching in the world.
+- I think it’s fair to say that the bundle-less approach is fast for smaller apps but slows down the more modules you add, and you have to pay this cost on every page load rather than only once up front. Bundlers have gotten a ton faster in the last few years, so I think people are just wondering whether it’s still the right trade-off.
+
 - ## 💡 That's actually the reason why @rspack_dev and Turbopack both give up Native ESM(bundleless), _20231128
 - https://twitter.com/rspack_dev/status/1729435649177235539
   - It's not only bad for production scenarios but also bad for development scenarios.

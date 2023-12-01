@@ -241,6 +241,10 @@ modified: 2023-01-01T13:24:35.994Z
 - https://github.com/meilisearch/meilisearch /202211/rust
   - fast search engine that fits effortlessly into your apps, websites, and workflow.
   - [Elasticsearch like alternative · Issue · mastodon/mastodon](https://github.com/mastodon/mastodon/issues/20743)
+  - https://github.com/meilisearch/arroy /MIT/202312/rust
+    - a Rust library with the interface of the Annoy Python library to search for vectors in space that are close to a given query vector.
+    - It is based on LMDB, a memory-mapped key-value store, so many processes may share the same data and atomically modify the vectors.
+    - There are some other libraries to do nearest neighbor search. However, most of them are memory-bound, and none use LMDB for their storage
 
 - https://github.com/paradedb/paradedb /AGPLv3/rust
   - https://paradedb.com/

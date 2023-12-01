@@ -237,14 +237,20 @@ modified: 2021-08-30T18:56:09.644Z
   - SQLite documentation helped shed some light on the SQL syntax and other crucial details such as their B-Tree implementation.
   - [LlamaDB: A simple SQL database written in Rust | Hacker News_201504](https://news.ycombinator.com/item?id=9395690)
 
-- https://github.com/khonsulabs/bonsaidb /MIT/rust
+- https://github.com/khonsulabs/bonsaidb /918Star/MIT/202311/rust
   - https://bonsaidb.io/
-  - A developer-friendly document database that grows with you
+  - A programmable document database inspired by `CouchDB` written in Rust.
   - ACID-compliant, transactional storage of Collections
   - Role-Based Access Control (RBAC)
   - Local-only access, networked access via QUIC, or networked access via WebSockets
+  - [Introducing PliantDb](https://ecton.dev/introducing-pliantdb/)
   - [Branch support](https://github.com/khonsulabs/nebari/issues/29)
-    - For BonsaiDb we plan on supporting the replication logic at the BonsaiDb level, and we are hoping to support bi-directional replication with customizable conflict resolution. This is a form of branching, because you can clone a database using replication, modify it, and then eventually replicate again in either direction.
+    - For BonsaiDb we plan on supporting the replication logic at the BonsaiDb level, and we are hoping to support bi-directional replication with customizable conflict resolution. 
+    - This is a form of branching, because you can clone a database using replication, modify it, and then eventually replicate again in either direction.
+  - [Project Status_202301](https://github.com/khonsulabs/bonsaidb/issues/262)
+    - One serious thought I still have is whether Nebari should exist, or whether BonsaiDb should just use another database format. 
+    - BonsaiDb/CouchDB were designed with the idea of being able to embed extra information inside of the B+Tree structures. This is how the map/reduce is powered -- the reduced values can be stored directly in the B+Tree so that a reduce query doesn't need to visit all of the nodes in the tree to come up with an aggregate result. From what I could find, no other database engine that is written in Rust supports embedding extra information inside of the B+Tree structure itself, while it's a key-feature of Nebari.
+    - Nearly every other embedded database engine does not utilize a write-ahead log. In my testing, a write-ahead log is absolutely critical for insert performance. 
   - https://github.com/khonsulabs/nebari /rust
     - A pure Rust database implementation using an append-only B-Tree file format.
     - This crate provides the Roots type, which is the transactional storage layer for BonsaiDb. It is loosely inspired by Couchstore.

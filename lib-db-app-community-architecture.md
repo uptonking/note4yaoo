@@ -104,6 +104,22 @@ modified: 2023-09-17T17:37:19.913Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🗳️ What's your favorite way to work with a database?
+- https://twitter.com/jamesqquick/status/1730592106517790752
+  - raw sql?
+  - ORM (prisma, drizzle, etc.)?
+  - custom product SDK?
+- In an application, ORM for sure. Anything else makes little sense.
+- I was was always fan of ORM. IMHO there just be a clear data/logic separation. Plus I wouldn't trust most of BE devs to secure raw queries properly. I also come from the world of Laravel and Eloquent is best data layer abstraction I've used.
+
+- Raw SQL for anything more than the simplest queries, otherwise a query builder.
+- Keep trying ORM approach and always come back to compiled raw SQL for anything even moderately complex (Personally enjoy Kysely). Still use query builder for simple requests. So much easier to iterate, adapt, and find help online with. Will sometimes re-factor into built queries
+- Query builder (personally node + knex). When the application/queries get too complicated for ORMs, you always resort to sql anyways
+
 - ## Amazon has joined the shared-nothing relational databases club by introducing Amazon Aurora Limitless, 
 - https://twitter.com/denismagda/status/1729552540784586867
   - a service capable of scaling write throughput and storage capacity beyond the limits of a single Aurora writer instance.

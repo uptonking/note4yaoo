@@ -448,14 +448,16 @@ modified: 2020-12-28T12:24:09.275Z
   - Lightweight task management and build tool.
   - 通过 pipeline 和 middleware 将开发过程抽象为相对固定的阶段和有限的操作，简化并统一了开发人员的日常构建与开发相关的工作。
 
-- budibase /17.3kStar/GPLv3/svelte
+- budibase /19.5kStar/GPLv3/202312/ts/svelte
   - https://github.com/Budibase/budibase
+  - https://budibase.com/
   - Low code platform for creating internal tools, workflows, and admin panels in minutes.
   - 后端依赖koa、knex、pouchdb
   - 前端依赖svelte
   - unlike other platforms, with Budibase you can start from scratch and create business apps with no datasources
   - Budibase integrates with a number of popular tools allowing you to build apps
   - the Budibase API enables Budibase as a backend
+  - At Budibase we use CouchDB as the underlying technology of our internal Budibase DB.
 
 - https://github.com/krn0x2/microflow
   - Microservice orchestration inspired by AWS Step functions and Apache Airflow

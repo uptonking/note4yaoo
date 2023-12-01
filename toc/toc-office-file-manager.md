@@ -211,6 +211,13 @@ modified: 2021-08-23T05:27:08.068Z
 - https://github.com/Merlin04/multipad
   - Notepad for the future - a swiss army knife file editor/viewer.
 # filesystem-utils
+- https://github.com/flystorage/flystorage /202312/ts
+  - a file storage abstraction for NodeJS and TypeScript
+  - Provide an async/await based API, promises all the way.
+  - Abstract over file permissions using "visibility".
+  - It's a generalised solution and will not implement feature only specific to one particular storage implementation.
+  - Implemented: local-file-system, AWS S3 (using the V3 SDK)
+
 - https://github.com/use-strict/file-system-access
   - File System Access API implementation (ponyfill) with pluggable storage adapters via IndexedDB, Cache API, in-memory etc.
 

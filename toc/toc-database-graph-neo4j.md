@@ -56,6 +56,13 @@ modified: 2022-11-03T04:49:42.587Z
     - P.S. It fell out of favor because the systems that used it tended to be monoliths that did too much to scale well. 
     - The "right way to do it," IMHO is to build a central stateful brain with it, kick all asynchronous work out to stateless worker microservices and read from active secondaries. 
     - If the brain's only job is to mutate state by applying business logic, you can scale quite far.
+
+- https://github.com/indradb/indradb /2kStar/MPLv2/202307/rust
+  - A graph database written in rust.
+  - IndraDB's original design was heavily inspired by TAO, facebook's graph datastore
+  - JSON-based properties tied to vertices and edges.
+  - Cross-language support via gRPC, or direct embedding as a library.
+  - Pluggable underlying datastores, with several built-in datastores. Postgresql and sled are available separately.
 # triplestore/rdf
 - https://github.com/enterlab/simplegraph /java
   - Simple in-memory Graph Database/Cache (Triplestore): learn how a Graph DB works (educational, learner)

@@ -255,8 +255,9 @@ A custom frontend for a CMS is a good investment in UX. A CMS isn’t publicy vi
 - who says Woocommerce and the standard Wordpress EAV structure doesn't scale? 
   - 800, 000 products searched & filtered in ~0.5s on a $40 Digital Ocean droplet with a little tweaking - by Dave Hilditch the SkyScanner.net DBA
 
-- ## [Convert CMS pages into a EAV model · magento/magento2](https://github.com/magento/magento2/issues/17270)
+- ## [Convert CMS pages into a EAV model · magento/magento2_201807](https://github.com/magento/magento2/issues/17270)
 - We should convert the CMS pages into an EAV model, so fields like `title, URL key and content` can be overridden/translated on a per store basis. Doing so, also makes it possible to link multi-language content using "hreflang" and module developers can have more options to expand on CMS pages.
+- GitHub is intended for bug reports, please use magento/community-features for other suggestions like improvements or feature requests.
 
 - ## 🌰 If you're familiar with #wordpress databases, you'll recognize the key-value (#EAV) structure. 
 - https://twitter.com/LucasJohnston3/status/1610192301464100864

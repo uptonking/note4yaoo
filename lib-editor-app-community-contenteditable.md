@@ -35,7 +35,7 @@ modified: 2023-06-16T02:53:00.115Z
 # discuss
 - ## 
 
-- ## 
+- ## [Rich text editors and rendering engines | Hacker News_202307](https://news.ycombinator.com/item?id=36600434)
 
 - ## [What are the cons of using a contentEditable div rather than a textarea? - Stack Overflow](https://stackoverflow.com/questions/5284193/what-are-the-cons-of-using-a-contenteditable-div-rather-than-a-textarea)
 - contenteditable="true". 

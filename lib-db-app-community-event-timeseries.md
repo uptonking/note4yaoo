@@ -40,7 +40,12 @@ modified: 2023-10-27T07:03:12.118Z
 # discuss
 - ## 
 
-- ## 
+- ## What does the twitterverse recommend for a managed time series database? _202312
+- https://twitter.com/apurva1618/status/1730353635027304614
+- I'm running Influx on a Raspberry Pi for collecting my solar system's data. Works very well
+  - just regular solar panels (10 kWp) and battery storage. The inverter exposes all kind of data which I query every 30 sec and put into Influx. Then I have a Grafana dashboard, so I e.g. know when it's good time to turn on heavy consumers, without having to buy energy from
+- What is your query patterns?  Don’t pick a database on hype and dreams.  Query patterns decide for you.
+- Grafana - why not just go to the industry default?
 
 - ## 🔥 [Timescale Announces New Database Cloud | Hacker News_202110](https://news.ycombinator.com/item?id=28761453)
 - 

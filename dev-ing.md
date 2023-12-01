@@ -67,7 +67,7 @@ $$('[contenteditable]')
   - ui: zag/ark, ariakit, radix-ui, mantine
 
 - deep into lib/fwk 书籍原理与代码实践要分开
-  - 学习巩固: 代码 > 文档/论坛 > 社交媒体
+  - 学习巩固: 实践练习 > 源码/示例 > 文档/论坛 > 社交媒体
   - src-code, issues, pr, forks, extensions/alternatives
   - storage, sync/partial, conflicts, concistency
   - 直接根据具体框架或产品搜索解决方案如airtable-database，不必拘泥于通用方案如event-sourcing/eav，在产品讨论中常有细节和ideas
