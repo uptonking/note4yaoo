@@ -282,6 +282,9 @@ modified: 2023-08-23T17:15:46.484Z
   - Run in the browser via ssb-browser-core
   - Work well with partial replication
   - The log used underneath ssb-db2 is different than that one in ssb-db, this means we need to scan over the old log and copy all messages onto the new log
+  - [How to defrag? · ssbc/ssb-db2_202201](https://github.com/ssbc/ssb-db2/issues/306)
+    - I've been thinking about getting back to implementing partial replication (finishing ssbc/ssb-replication-scheduler#5), and putting it in Manyverse.
+    - TL;DR how can we keep the sizes of log + indexes somewhat constant/stable as M new messages come in and M older messages get overwritten by zero bytes?
   - https://github.com/ssbc/ssb-db /js/flumedb团队
     - ssb-db provides tools for dealing with unforgeable append-only message feeds.
     - secret-stack plugin which provides storing of valid secure-scuttlebutt messages in an append-only log.
@@ -294,6 +297,10 @@ modified: 2023-08-23T17:15:46.484Z
     - Your feed key is stored in the browser together with the log, indexes and smaller images. 
     - Wasm is used for crypto and is around 90% the speed of the C implementation. 
     - A WebSocket is used to connect to pubs or rooms
+  - https://github.com/ssbc/ssb-replication-scheduler /LGPLv3/202305/js
+    - Plugin to trigger replication of feeds identified as friendly in the social graph
+    - 依赖ssb-db2
+    - [RequestManager for partial replication 已实现并合并](https://github.com/ssbc/ssb-replication-scheduler/pull/5)
 
 - https://github.com/orbitdb/ipfs-log /js
   - an immutable, operation-based CRDT for distributed systems. 

@@ -33,6 +33,12 @@ modified: 2021-01-08T17:13:43.392Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 8 Essential Internet Protocols You Must Know
 - https://twitter.com/AmigosCode/status/1730204104838832135
   - 协议示例动画
@@ -425,10 +431,6 @@ main {
   ✅ Maintainable (easier for fellow devs to read and understand)
   ✅ Testable (target for tests)
 - Also, this is why code reviews are so critical. Enforcing good semantic markup can’t be automated. It requires a human to consider the content and context.
-
-- ## Tip: number inputs have a `valueAsNumber` property, which allows you to quickly get their numeric value 
-- https://twitter.com/mgechev/status/1429662217318850560
-  - use `input.valueAsNumber` instead of `parseInt(input.value)`
 
 - ## Improve the performance of your apps by lazy-loading iframes
 - https://twitter.com/mgechev/status/1427125495292956675

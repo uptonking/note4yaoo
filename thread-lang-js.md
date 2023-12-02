@@ -64,14 +64,6 @@ c.a === c.b // true
 - is class inheritance more performant?
   - Class inheritance is just setting the prototype, i assume the perf issue here is changing the prototype halfway through an object's lifecycle (like setting __proto__!), because it means the JIT has to throw away its work and reoptimise for a completely new set of methods
 
-- ## [A Better Way to Work With Number and Date Inputs in JavaScript](https://www.builder.io/blog/numbers-and-dates)
-
-```JS
-const myInput = document.querySelector('input.my-input')
-const number = myInput.valueAsNumber
-
-const date = myDateInput.valueAsDate
-```
 
 - ## Here are 8 ways to simplify a fetch function.
 - https://twitter.com/housecor/status/1596944108794548224

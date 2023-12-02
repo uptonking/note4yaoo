@@ -64,6 +64,7 @@ modified: 2022-12-02T11:15:15.257Z
   - conflicts
   - extensions/plugins: 参考sqlite、pg
   - search: fts, fuzzy
+  - partial replication
   - auth: 权限控制的粒度，row/doc, column/property
   - arrow
 
@@ -130,6 +131,7 @@ modified: 2022-12-02T11:15:15.257Z
 - [v2.2.0_201405](https://pouchdb.com/2014/05/01/pouchdb-2.2.0.html)
   - ✨ secondary indexes, a.k.a. persistent map/reduce
   - `.changes()` API switched to an EventEmitter
+- v0.0_201006
 # changelog-couchdb
 - [Release Notes — Apache CouchDB® Documentation](https://docs.couchdb.org/en/stable/whatsnew/index.html)
 
@@ -147,4 +149,6 @@ modified: 2022-12-02T11:15:15.257Z
   - Faster implementation of pread_iolist().
   - Use O_APPEND to save lseeks.
   - Faster default view collation.
+- v0.0_2005
+  - first released in 2005 and later became an Apache Software Foundation project in 2008.
 # more

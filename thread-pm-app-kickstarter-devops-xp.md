@@ -134,9 +134,28 @@ modified: 2022-11-07T11:00:28.824Z
 # discuss
 - ## 
 
-- ## 
+- ## Dribbble is dead. Just look at the stats to confirm.  
+- https://twitter.com/craftworkdesign/status/1730932460639138284
+  - Dribbble: 34, 168 followers, 2K views on post; 
+  - X: 3, 810 followers, 84K views on post.  
+  - X is a new Dribbble.
+- What are you doing to maximize the outcome? Are you getting clients from here?
+  - We are still in process of gaining new customers increasing our audience here. Trying to find our way to be interesting, but still conversion is not that big.
+- The problem is that X is hard to browse and search for inspiration.
+  - The quantity of views depends on quantity of interactions on post, isn’t it?
+- Most of the Dribble is filled with passion projects.. looks good visually but has less to no practicality.. whereas on Twitter and LinkedIn people post work with insights, case studies, etc.
 
-- ## 
+- ## 分享一下如何识别低质客户避免公司浪费销售和交付的时间。
+- https://twitter.com/0xthefool/status/1724797569770078584
+- 敏感客户
+  - 一是钱少事多的客户，时间多的
+  - 二是表面光鲜的品牌，在你交付完成之后，会减少付款金额，会另一个团队的项目过来协商有条件的付款
+  - 对自己需求不明确的客户，你交付时总会变更需求或质疑，从而减少付款
+  - 态度傲慢的客户，总是指手画脚、不信任
+
+- https://twitter.com/0xthefool/status/1725719846774780073
+  - 我讨厌和无信也无智的人合作。有信者能惦记你的付出和信任，有智者能看到你持续给他带来的利益，两者的行为其实都是在可预测范围的，大家一起赚钱。
+  - 无信也无智者说白了就是不要脸且短视，即使背景好看大厂高P出来创业也走不远。
 
 - ## 不管做什么，最重要的是时间，一定要学会花钱买自己的时间。
 - https://twitter.com/9yearfish/status/1729895080851620193

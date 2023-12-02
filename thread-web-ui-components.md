@@ -83,18 +83,6 @@ if (type of props.children === string && noOtherExpensiveProps) {
 - ## Pouring over the details of other designers and doing some layout studies today. Grid is everything
 - https://twitter.com/souporserious/status/1416884764691161089
 
-- ## Forms tip!
-- https://twitter.com/stackblitz/status/1412414470681415682
-- Checkbox can be indeterminate, but you have to set that( `inputEl.intdeterminate = true` ) with JavaScript.
-- `autocomplete="one-time-code"` can help users auto-fill the auth code they've just received - they won't need to copy it from the SMS by hand!
-  - one-time-code requires an OS-level integration (eg works on Safari+Mac, but won't on Android)
-- The `<fieldset>` element – used for grouping relevant inputs & buttons – allows you to provide the `disabled` attribute if you want to disable these enclosed controls all at once.
-- Use `<datalist>` to enhance your forms with suggested values – not only for text inputs, but also numbers, ranges, emails, and even colors!
-- You *can* customize these native html validation messages that browsers display. Just use the `setCustomValidity` method! Super useful for working with pattern validation, or even just to say "Name is required"
-- Use the built-in `.validationMessage` property that allows you to get a native validation message (in your user's locale!), and display it in the UI the way you like it.
-- Working with date inputs use the `valueAsDate` property so you don't have to manually convert between "YYYY-MM-DD" string and a `Date` object.
-  - Useful for both getting, and settings the value!
-
 - ## What is the correct way to include a blank line
 - https://stackoverflow.com/questions/35315023
 - I use a `<hr>` because is the semantic tag to represent that kind of break.

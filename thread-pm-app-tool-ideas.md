@@ -81,3 +81,23 @@ modified: 2022-11-07T10:58:24.512Z
 - 付费问答或咨询
   - 提问免费，提问可发起奖励，回答者可领取奖励
   - 奖励型问题可设置回答部分可见、二次付费可见
+# discuss
+- ## 
+
+- ## 
+
+- ## 推荐一款语音识别 APP，Whisper Transcription，
+- https://twitter.com/Barret_China/status/1730988938641449287
+  - 这款软件基本属于对 Whisper 模型的本地套壳，附加了诸多体验优化和额外功能模块。看来在大模型时代只要肯动手，还是有很多机会的
+  - 软件大小只有 10Mb，要支持语音识别，需要从远端将大模型下载到本地，官方 Whisper 提供了 tiny/base/small/medium/large 等不同 size 的模型，需要 large 版本（~1.5Gb）才支持多语言，这个软件竟然所有版本都支持，看来是经过了一次微调。我试了下 tiny 版本，基本可用，large 版本下载太慢了，还没测试。
+- 这都能卖88，我搞了一个完全免费🆓的，看来我还是不太会做生意
+- 不是的，本来小模型（tiny，small，medium）就是支持多语言的。另外，还有一套只支持英语的模型，从tiny到medium，速度更快且精度更高
+  - 查了一下，是的，我记错了
+
+- ## Any good tool to collect and organize important links from the internet?
+- https://twitter.com/dobroslav_dev/status/1730985170138800213
+  - Features: Make collections, see automatic link preview, etc.
+- I recommend http://linkcollect.io 
+- I made https://linkace.org (open source, self hosted, php)
+- Use a Notion db
+- Google keep

@@ -86,6 +86,25 @@ modified: 2021-10-29T15:02:28.882Z
 
 - ## 
 
+- ## 为小猫设计的抓鱼游戏，平板上
+- https://twitter.com/bearbig/status/1730664693961028095
+- 我家猫一掌拍上去怕是屏幕不保
+
+- ## My little AI Girlfriend site just hit $500k ARR. 
+- https://twitter.com/enias/status/1729458928897912853
+  - Just 4 months ago, I dropped everything to go all in.
+- What do you charge a month?
+  - That's public information though 😅 Played with pricing a lot. 60-40 split between $15 and $35 per month.
+  - Biggest advice: Don't think too much about pricing. Just put it online. I found that changing 1 single word can boost your revenue by 20%. For me: "Deluxe" + "Selfie"
+- Did you use specialized datasets to make it more attractive than normal GPT speaking?
+  - OSS models already do that for ya.
+
+- ## 最会洗厕所的机器人
+- https://twitter.com/0xthefool/status/1730461133683978476
+- 天生自带流量
+- 一个机器人的成本和维护成本能给一个保洁员开两年工资的那种吗？
+- 家政的话大众点评阿姨79一次嘎嘎干净，一个月四次也才320
+
 - ## http://devv.ai 原本是我们团队内部使用的一个工具，方便我们更加快速地处理 coding 过程中的问题，以此来代替 Google / StackOverflow / 文档。
 - https://twitter.com/Tisoga/status/1729686270941778103
 - 非常棒的产品。做对了一件事：解决中文互联网在技术领域的信息质量问题。  这是很大的一件事。

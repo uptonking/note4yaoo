@@ -51,6 +51,34 @@ modified: 2021-07-28T20:11:24.350Z
 
 - ## 
 
+- ## I only just learned about `HTMLInputElement.valueAsNumber` and I'm baffled(困惑；难倒). Is this the Mandela effect or something
+- https://twitter.com/gaforres/status/1730658548764602636
+- `valueAsDate` also for date inputs. Not just getters either, but setters too!
+
+- ## Tip: number inputs have a `valueAsNumber` property, which allows you to quickly get their numeric value 
+- https://twitter.com/mgechev/status/1429662217318850560
+  - use `input.valueAsNumber` instead of `parseInt(input.value)`
+
+- ## 🌰 [A Better Way to Work With Number and Date Inputs in JavaScript](https://www.builder.io/blog/numbers-and-dates)
+
+```JS
+const myInput = document.querySelector('input.my-input')
+const number = myInput.valueAsNumber
+const date = myDateInput.valueAsDate
+```
+
+- ## Forms tip
+- https://twitter.com/stackblitz/status/1412414470681415682
+- Checkbox can be indeterminate, but you have to set that( `inputEl.intdeterminate = true` ) with JavaScript.
+- `autocomplete="one-time-code"` can help users auto-fill the auth code they've just received - they won't need to copy it from the SMS by hand!
+  - one-time-code requires an OS-level integration (eg works on Safari+Mac, but won't on Android)
+- The `<fieldset>` element – used for grouping relevant inputs & buttons – allows you to provide the `disabled` attribute if you want to disable these enclosed controls all at once.
+- Use `<datalist>` to enhance your forms with suggested values – not only for text inputs, but also numbers, ranges, emails, and even colors!
+- You *can* customize these native html validation messages that browsers display. Just use the `setCustomValidity` method! Super useful for working with pattern validation, or even just to say "Name is required"
+- Use the built-in `.validationMessage` property that allows you to get a native validation message (in your user's locale!), and display it in the UI the way you like it.
+- Working with date inputs use the `valueAsDate` property so you don't have to manually convert between "YYYY-MM-DD" string and a `Date` object.
+  - Useful for both getting, and settings the value!
+
 - ## How to use JavaScript's FormData to collect form fields without refs or state
 - https://twitter.com/ReactTraining/status/1716822590533353817
   - 1. Start by giving inputs names

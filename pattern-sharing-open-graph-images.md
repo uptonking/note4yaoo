@@ -56,7 +56,11 @@ modified: 2023-02-03T05:55:22.102Z
 # discuss
 - ## 
 
-- ## 
+- ## 昨天上线的自动生成 og image 功能使用了这个项目。
+- https://twitter.com/chloerei/status/1730854404461568313
+  - 通过把 chromium 依赖独立成一个服务，现在主应用不需要为了应对启动 chromium 预留很多内存。
+  - 把这个服务单独部署，还可以使用 fly 平台的自动休眠功能，闲时省钱了。
+  - https://github.com/chloerei/htmlrenderer /ruby
 
 - ## 在做软件的时候，经常遇到下面的需求：
 - https://twitter.com/beihuo/status/1727839272454262844

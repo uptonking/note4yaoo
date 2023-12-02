@@ -43,6 +43,14 @@ modified: 2022-11-03T04:14:11.987Z
   - https://github.com/sergeyksv/tungus
     - Mongoose driver for TingoDB
 
+- https://github.com/maxnowack/signaldb /73Star/MIT/202312/ts
+  - https://signaldb.js.org/
+  - a local JavaScript database with a MongoDB-like interface and TypeScript support, enabling optimistic UI with signal-based reactivity across multiple frameworks.
+  - It enables the storage of data through a JSON interface in various storage providers, including the widely-used localStorage.
+  - In theory, every signal library is supported. SignalDB currently have pre-build reactivity adapters for preact-singals/mobx/solidjs
+  - At the heart of SignalDB lies its advanced handling of collections and queries. Our in-memory data storage approach ensures blazing-fast query performance
+  - SignalDB plans to implement a cutting-edge data replication engine, drawing inspiration from established protocols like the RxDB replication protocol 
+
 - ZangoDB /1kStar/MIT/201710/js
   - https://github.com/erikolson186/zangodb
   - https://erikolson186.github.io/zangodb/

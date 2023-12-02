@@ -114,3 +114,20 @@ The url define which "globe" should be focused
 - Did you have to do anything special to support dragging out of the window? Or does the browser still fire drag events even though the pointer is outside the window?
   - pointer capture API!
 # more
+
+# discuss
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 多视图协同，理想的应用场景是云服务层级网络。
+- https://twitter.com/zqqcee/status/1730626349205950781
+  - 左上方是层级缩略图，大圆是AZ可用区，内部的小圆圈是POD，泛红表示内部有故障设备。左下方展示了AZ间的联系和某一AZ间所有POD联系的缩略图。右侧的大图是某一POD内设备的具体拓扑。
+  - 做的时候天真地以为能够帮运维人员快速定位故障设备，最后发现是一坨。
+- 每年都能看多一堆这样的设计、不培训个几个月都用不明白的那种, 培训时间比开发时间都长
+  - 还有些上了真实数据图就丑的一笔的
+- 校企项目，大伙拍脑袋想的方案，没有落地意义，最后被真实用户一句“给我加个列表吧，给我搞个树吧，这种图我们看不懂” 狠狠上了一课
+- 拿d3写的

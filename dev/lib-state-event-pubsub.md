@@ -39,8 +39,7 @@ modified: 2021-05-13T03:13:45.375Z
     - Because the Event loop fetches events from Event Queue and sends them to call stack one by one.
     - And Event Queue is FIFO (First-In-First-Out)
 
-- https://github.com/developit/mitt
-  - /5kStar/MIT/202007/ts
+- https://github.com/developit/mitt /9.7kStar/MIT/202307/ts
   - Tiny 200 byte functional event emitter/pubsub.
   - Mitt was made for the browser, but works in any JavaScript runtime
   - Functional: methods don't rely on this

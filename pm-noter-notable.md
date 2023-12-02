@@ -22,6 +22,7 @@ modified: 2023-11-28T14:48:45.910Z
   - local-first data storage with optional syncing
     - 兼容git的commits
   - office viewer
+  - whisper-editor
 
 - selling-point-knowledge-base
   - markdown support with git-like database
@@ -264,6 +265,18 @@ modified: 2023-11-28T14:48:45.910Z
   - paid/$1499: 每人每年
   - Designer Component: $500
   - Pivot Table Addon: $1000
+
+- [react-admin](https://marmelab.com/ra-enterprise/#pricing)
+  - free: MIT
+  - Team/135€: 2dev, pro-modules
+  - Business/270€: 10dev
+  - Corporate/540€: Ndev
+
+- [craft-cms](https://craftcms.com/pricing)
+  - free: self-hosted, 1dev
+  - pro: $59/year, self-hosted, team, Unlimited user accounts 
+  - cloud: $240/month, 3 environments, with 10GB asset storage each
+  - enterprise/talk
 # faq
 - 如何不使用图床而将图片直接嵌入到笔记中
   - [MarkDown图片存储格式-Textbundle格式](https://zhuanlan.zhihu.com/p/368463926)

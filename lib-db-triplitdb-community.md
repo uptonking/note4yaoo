@@ -80,7 +80,38 @@ modified: 2023-10-11T21:37:25.329Z
   - How do you handle conflicting changes from different users?
   - Are you polling the remote database too often?
 
-- ## [Some notes on local-first development | Hacker News_202309](https://news.ycombinator.com/item?id=37488034)
+- ## 🌰 [Some notes on local-first development | Hacker News_202309](https://news.ycombinator.com/item?id=37488034)
 - One common misconception with local-first, is that it's essentially local-only. 
   - But I believe the best experience is where the server and client are equally capable and only a partial set of data is stored on the client. The server still maintains authority but the client is always snappy(迅速的) when updated data or changing queries/views. 
   - We basically call this a full-stack database and we're building that at Triplit.
+
+- 1. What to do with stale user data? What happens if a user doesn't open the app for a year? How do you handle migrations?
+  - Just don't delete the old cases. Refuse to run sync if device is not on the latest schema version.
+  - I can take a DB dump from 2018, migrate it, and have the app run against master, without any manual fixes.
+- 2. What about data corruption? What happens if the user has a network interruption during a sync? How do you handle partial states?
+  - Run the sync in a transaction.
+- 3. What happens when you have merge conflicts during a sync? CRDT structures are not even close to enough for this.
+  - CRDTs are probably the best we have so far, but what you should do depends on the application. You may have to ask the user to pick one of the possible resolutions. "Keep version A, version B, or both?"
+- 4. What happens when the user has millions of items? How do you handle sync and storage for that?
+  - Every system has practical limits. Set a soft limit to warn people about pushing the app too far. Find out who your user with a million items is. Talk to them about their use cases. Figure out if you can improve the product, maybe offer a pro/higher-priced tier.
+- Mobiles are really bad with memory. iOS and Android have insane level of restrictions on how much memory an app can consume, and for good reason because most consumer mobile phones have 4-6 gbs of RAM.
+  - You don't load up your entire DB into memory on the backend either. 
+- You're asking very broad questions, and I know these are very simplistic answers - every product will be slightly different and face unique trade-offs.
+
+- Query-based sync to partially replicate is an absolute must. This was a key feature with Ditto: https://www.ditto.live
+- Query-based replication works when you know what the user probably wants to have in advance (e.g. a device in a warehouse needs records for that stock in that warehouse, not others). But that's still push.
+  - You still need pull on demand access when a user opens any random item where we don't know in advance what they probably want (e.g. a discussion board scenario).
+
+- Partial replication is a problem I haven't seen many people solving but it is definitely the next frontier in this space.
+
+- 🗣️ I am the developer of RxDB, a local-first javascript database, and I made multiple apps with it and worked with many people creating local first apps. The problems you describe are basically solved.
+- > What to do with stale user data?
+  - Version/Schema migration in RxDB (same for IndexedDB and watermelonDB) can be done in simple javascript functions.
+- > What about data corruption?
+  - Offline first apps are built on the premise that internet connections drop or do not exist at all. The replication protocols are build with exact that purpose so they do not have any problems with that
+- > What happens when you have merge conflicts during a sync?
+  - You are right, CRDTs are not the answer for most use cases. Therefore RxDB has custom conflict handlers, which are plain javascript functions. 
+- > What happens when the user has millions of items?
+  - There is a limit on how much you can store on a client device. If you need to store gigabytes of data, it will just not work. You are right at that point.
+- > How do you handle backups? How do you handle exports?
+  - live backups; json export/import  

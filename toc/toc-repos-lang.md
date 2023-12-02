@@ -124,6 +124,6 @@ modified: 2020-11-03T06:56:19.448Z
   - This storage format is meant to provide a foundation for building ACID-compliant databases.
   - Uses a write-ahead log for efficient, atomic, durable writes.
 
-- https://github.com/getditto/safer_ffi
+- https://github.com/getditto/safer_ffi /MIT/202311/rust
   - http://getditto.github.io/safer_ffi
   - a framework that helps you write foreign function interfaces (FFI) without polluting your Rust code with `unsafe { ... }` code blocks while making functions far easier to read and maintain.

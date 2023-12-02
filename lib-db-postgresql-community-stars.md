@@ -24,9 +24,12 @@ modified: 2023-10-26T19:17:54.537Z
 
 - ## 
 
-- ## 
-
-
+- ## Any tips on improving insertion speed to Postgres with the JDBC driver?
+- https://twitter.com/MichaelDrogalis/status/1730655983696048493
+- We’ve had the best luck with `UNNEST` for large inserts. Significantly faster for our workloads.
+- I optimized PostgreSQL write operations in the past. Initially, we used batch processing, but the performance improvement was not significant. However, after consulting the official documentation, we switched to the COPY mode, resulting in a significant performance boost.
+- addBatch is your friend.
+- COPY command
 
 - ## 🔍🔥 [Postgres full-text search: A search engine in a database (2021) | Hacker News_202207](https://news.ycombinator.com/item?id=32059566)
 - 

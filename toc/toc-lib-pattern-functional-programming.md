@@ -62,14 +62,22 @@ modified: 2023-07-26T11:23:38.282Z
 - https://github.com/cujojs/most /js/inactive
   - Monadic streams for reactive programming
 
-- https://github.com/ramda/ramda
-  - /19.7kStar/MIT/202010/js
+- https://github.com/ramda/ramda /19.7kStar/MIT/202010/js
   - Practical functional Javascript
-- https://github.com/getify/Functional-Light-JS
-  - Pragmatic, balanced FP in JavaScript.
-- https://github.com/gcanti/fp-ts
-  - /5kStar/MIT/202010/ts
+- https://github.com/gcanti/fp-ts /5kStar/MIT/202010/ts
   - Functional programming in TypeScript
+- https://github.com/Effect-TS/effect /3kStar/MIT/202312/ts
+  - https://www.effect.website/
+  - powerful TypeScript framework that provides a fully-fledged functional effect system with a rich standard library
+- https://github.com/getify/Functional-Light-JS /book
+  - Pragmatic, balanced FP in JavaScript.
+- https://github.com/remeda/remeda /3.5kStar/MIT/202311/ts
+  - The first "data-first" and "data-last" utility library designed especially for TypeScript.
+  - Functional programming is nice, and it makes the code more readable. However there are situations where you don't need "pipes", and you want to call just a single function.
+  - "data-first" approach is more natural and more programmer friendly for pick/omit
+  - "data-last" approach is helpful when writing data transformations aka pipes.
+- https://github.com/rayepps/radash /2.6kStar/MIT/202306/ts
+  - Functional utility library - modern, simple, typed, powerful
 - https://github.com/fluture-js/Fluture /202005/js/inactive
   - Fantasy Land compliant (monadic) alternative to Promises
   - Much like Promises, Futures represent the value arising from the success or failure of an asynchronous operation (I/O). 
@@ -273,6 +281,39 @@ modified: 2023-07-26T11:23:38.282Z
   - Declarative side-effects
   - a library for describing side-effects as plain data and providing composition utilities. 
   - This project aims to improve on similar libraries by not using generators.
+# fp-rust
+- https://github.com/milibopp/carboxyl /202006/rust/inactive
+  - a library for functional reactive programming in Rust, a functional and composable approach to handle events in interactive applications. 
+
+- https://github.com/JasonShin/fp-core.rs /201912/rust/inactive
+  - A library for functional programming in Rust
+
+- https://github.com/PacktPublishing/Hands-On-Functional-Programming-in-Rust /book
+  - [Hands-On Functional Programming in RUST | Packt](https://www.packtpub.com/product/hands-on-functional-programming-in-rust/9781788839358)
+# fp-java
+- https://github.com/resilience4j/resilience4j /apache2/202311/java
+  - a fault tolerance library designed for Java8 and functional programming
+  - provides higher-order functions (decorators) to enhance any functional interface, lambda expression or method reference with a Circuit Breaker, Rate Limiter, Retry or Bulkhead.
+  - You can stack more than one decorator on any functional interface, lambda expression or method reference. 
+  - The advantage is that you have the choice to select the decorators you need and nothing else.
+  - Resilience4j 2 requires Java 17.
+
+- https://github.com/vavr-io/vavr /MIT/202304/java
+  - an object-functional language extension to Java 8, which aims to reduce the lines of code and increase code quality.
+  - It provides persistent collections, functional abstractions for error handling, concurrent programming, pattern matching and much more.
+
+- https://github.com/functionaljava/functionaljava /BSD/202303/java
+  - http://www.functionaljava.org/
+  - open source library facilitating functional programming in Java. 
+  - The library implements numerous basic and advanced programming abstractions that assist composition oriented development
+  - The library is intended for use in production applications and is thoroughly tested using the technique of automated specification-based testing with ScalaCheck and Functional Java’s quickcheck module.
+
+- https://github.com/eclipse/eclipse-collections /EPL/202310/java
+  - a collections framework for Java with optimized data structures and a rich, functional and fluent API.
+
+- https://github.com/jOOQ/jOOL /apache2/202303/java
+  - some useful extensions to Java 8 lambdas
+  - It adds tuple support, function support, and a lot of additional functionality around sequential Streams. 
 # more-fp
 - https://github.com/paldepind/flyd
   - /1.5kStar/MIT/201809/js

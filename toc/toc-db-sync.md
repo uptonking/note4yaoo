@@ -67,7 +67,8 @@ modified: 2022-11-25T15:41:47.534Z
 
 ## [Different approaches to p2p data sync](https://status-im.github.io/bigbrother-specs/data_sync/p2p-data-sync-comparison.html)
 
-- https://github.com/status-im/bigbrother-specs/blob/master/data_sync/p2p-data-sync-comparison.md
+- [Different approaches to p2p data sync · status-im/bigbrother-specs_201903](https://github.com/status-im/bigbrother-specs/blob/master/data_sync/p2p-data-sync-comparison.md)
+  - 支持partial replication的有: Matrix, Swarm, Briar, Bramble
 
 - Briar Bramble
 - Matrix
@@ -348,6 +349,35 @@ modified: 2022-11-25T15:41:47.534Z
   - Sync data from one Postgres database to another (like pg_dump/pg_restore).
   - tables are transferred in parallel
   - sync partial tables, groups of tables, and related records
+# partial-sync/replication
+- https://github.com/pietgeursen/bamboo-rs /202108/rust
+  - Rust implementation of bamboo
+  - bamboo-rs aspires to be portable, fast and correct.
+  - Bamboo supports partial replication of logs, it is possible to request only a subset of a log while still being able to verify the data. 
+  - https://github.com/AljoschaMeyer/bamboo /blog
+    - A cryptographically secure, distributed, single-writer append-only log that supports transitive partial replication and local deletion of data.
+
+- https://github.com/arj03/ssb-partial-replication /202003/js
+  - A collection of functions useful for replicating a part of the log instead of everything. 
+  - This is superseeded by SSB secure partial replication.
+  - https://github.com/arj03/ssb-secure-partial-feed
+
+- https://github.com/ssbc/ssb-replication-scheduler /LGPLv3/202305/js
+  - Plugin to trigger replication of feeds identified as friendly in the social graph
+  - 依赖ssb-db2
+  - [RequestManager for partial replication 已实现并合并](https://github.com/ssbc/ssb-replication-scheduler/pull/5)
+
+- https://github.com/ryanpbrewster/jump-sync /202102/ts
+  - Partial incremental sync with "jump-ahead" support
+
+- https://github.com/itzdarsh/prepl /202209/python
+  - MongoDB partial replication with selective database/collection with the help of change stream.
+
+- https://github.com/cosmoss-jigu/hydralist /202011/cpp
+  - A Scalable In-Memory Index Using Asynchronous Updates and Partial Replication
+- https://github.com/epfl-labos/paris /202007/cpp/inactive
+  - Causally Consistent Transactions with Non-blocking Reads and Partial Replication
+  - PaRiS(Partially Replicated System) is the first transactional causally consistent system that supports partial replication and implements non-blocking parallel read operations. 
 # more
 - https://github.com/rethinkdb/rethinkdb /202211/cpp/python
   - The open-source database for the realtime web.
