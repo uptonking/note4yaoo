@@ -12,7 +12,11 @@ modified: 2022-08-30T19:04:37.774Z
 # discuss
 - ## 
 
-- ## 
+- ## 我用着 taskade.com 它这个，不卡，不知道它怎么做到的
+- https://t.me/xheldon_tech/3041
+- 这种大纲笔记为什么不直接用一个 PM 实例，要用多个，有什么特殊的吗
+- taskade.com 好像可以则脑图和大纲视图之间相互切换，多个 PM 实例是不是更容易兼容多种布局模式？
+- 可能是为了数据库储存结构吧
 
 - ## Data structure with ids
 - https://discuss.prosemirror.net/t/data-structure-with-ids/33

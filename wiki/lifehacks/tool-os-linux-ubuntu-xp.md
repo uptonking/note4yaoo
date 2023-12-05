@@ -136,6 +136,13 @@ modified: 2021-01-01T22:26:57.773Z
 
 ## nautilus
 
+- pros
+  - 批量rename、支持search-replace
+
+- cons
+  - 单位是十进制，不适合文件实际的字节数、网络文件的二进制、内存的二进制
+    - [nautilus - How to set Nemo as the default file manager in Ubuntu? - Ask Ubuntu](https://askubuntu.com/questions/1066752/how-to-set-nemo-as-the-default-file-manager-in-ubuntu/1173861#1173861)
+
 - https://github.com/costales/clipboard-to-file /202210/python
   - Paste Linux clipboard (text/image) into a file
 # wayland

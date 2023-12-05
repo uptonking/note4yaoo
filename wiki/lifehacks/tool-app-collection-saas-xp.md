@@ -170,6 +170,9 @@ modified: 2022-11-07T10:25:12.034Z
   - [sssoou.com](https://www.sssoou.com/)
   - [千帆搜索 - 资源超丰富的电报中文搜索引擎，需注册](https://tg.qianfan.app/)
 
+- https://github.com/Neet-Nestor/Telegram-Media-Downloader /202311/js
+  - A Tampermonkey script allowing you to download images and videos from Telegram web even if the group restricts downloading
+
 - [TG中文群 - TGCNG. COM](https://www.tgcng.com/)
   - 不建议随意搜索，从相关群或论坛的讨论信息能找到更准确的信息
   - [电报频道，群组，机器人列表](https://telegramchannels.me/zh)
@@ -189,6 +192,14 @@ modified: 2022-11-07T10:25:12.034Z
   - Telegram believes that having multiple teams that compete will be beneficial. 
   - if you look at the dependencies and code, WebZ is written in React/teact, WebK does not have any popular libraries (React, Vue, Angular, Svelte...) in the dependencies and in the source code is written in native js (ts)
   - I noticed that WebK is running way faster on my potato pc than WebZ, Z has more features tho
+# discord
+- https://github.com/bb010g/betterdiscordctl
+  - A manager for BetterDiscord on Linux.
+  - https://github.com/BetterDiscord/BetterDiscord
+  - https://betterdiscord.app/
+
+- [Use SOCKS5 proxy with Discord on Linux](https://gist.github.com/mzpqnxow/ca4b4ae0accf2d3b275537332ccbe86e)
+  - flatpak run com.discordapp. Discord --proxy-server="socks5://127.0.0.1:1080"
 # 邮箱注册
 - 不需要手机号的邮箱
   - mail.protonmail.com
@@ -323,3 +334,8 @@ modified: 2022-11-07T10:25:12.034Z
 - [中国执行信息公开网](http://zxgk.court.gov.cn/index.jsp)
 
 - [中国裁判文书网](https://wenshu.court.gov.cn/website/wenshu/181029CR4M5A62CH/index.html)
+# artman
+- https://www.boyfriendtv.com/
+  - 光头大叔
+- https://www.gv2.mom/
+  - 便利受

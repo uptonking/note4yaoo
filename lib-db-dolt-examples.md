@@ -109,7 +109,7 @@ modified: 2023-08-25T22:31:05.132Z
 - https://github.com/Berylsoft/LesserBase /rust/inactive
   - A version control system based on file system and document database, designed as content management system for wikis and knowledge bases.
 
-- https://github.com/neondatabase/neon /rust
+- https://github.com/neondatabase/neon /10.5kStar/apache2/202312/rust
   - https://neon.tech/
   - Neon is a serverless open-source alternative to AWS Aurora Postgres. 
   - It separates storage and compute and substitutes the PostgreSQL storage layer by redistributing data across a cluster of nodes.

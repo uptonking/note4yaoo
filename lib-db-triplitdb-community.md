@@ -56,7 +56,7 @@ modified: 2023-10-11T21:37:25.329Z
 
 - ## 
 
-- ## [An interactive intro to CRDTs | Hacker News_202310](https://news.ycombinator.com/item?id=37764581)
+- ## 👨🏻‍🏫 [An interactive intro to CRDTs | Hacker News_202310](https://news.ycombinator.com/item?id=37764581)
 - In practice, most apps will only need Last-Writer-Wins registers and not the more complicated sequence CRDT's that you find in Y.js and Automerge.
   - We've built a auto-syncing database that uses CRDTs under the hood but never exposes them through the API. So if you want all of the benefits of CRDTs e.g. offline-first user experience, checkout our project, Triplit!
 - 🤔 why didn't/don't you build Triplit on cr-sqlite?

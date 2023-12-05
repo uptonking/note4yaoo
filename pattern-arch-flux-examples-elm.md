@@ -264,7 +264,7 @@ modified: 2023-11-21T10:17:34.596Z
     - Effects need to be represented as objects.If you use a function to represent an effect, then it's impossible to test effects using a strict equality check
     - I designed this part of the API looking at Elm.
 
-- https://github.com/hydux/hydux /201902/ts/未实现undo
+- https://github.com/hydux/hydux /201902/ts
   - A light-weight Elm-like alternative for Redux ecosystem, inspired by Hyperapp and Elmish.
   - Elm Architecture, split your whole app with init, state, actions.
   - Elm-like side effect manager and subscribe API

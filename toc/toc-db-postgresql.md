@@ -36,6 +36,11 @@ modified: 2023-10-26T15:28:53.748Z
   - A Firebase like real time database based on Postgresql. 
   - Leverages the JSON data type and Listen/Notify constructs of postgresql.
   - Convert your postgresql database to a Realtime NoSql database accessible via REST APIs. Inspired from Firebase.
+
+- https://github.com/neondatabase/neon /10.5kStar/apache2/202312/rust
+  - https://neon.tech/
+  - Neon is a serverless open-source alternative to AWS Aurora Postgres. 
+  - It separates storage and compute and substitutes the PostgreSQL storage layer by redistributing data across a cluster of nodes.
 # pg-rewrite
 - pg-mem /1.6kStar/MIT/202310/ts
   - https://github.com/oguimbal/pg-mem

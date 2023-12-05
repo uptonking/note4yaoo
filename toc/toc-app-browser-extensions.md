@@ -176,13 +176,9 @@ modified: 2023-02-08T10:24:11.422Z
 - https://github.com/shanebell/JaSON /202104/ts/inactive
   - a Google Chrome extension for testing APIs and making HTTP network requests.
   - Automatically sends cookies from Chrome. This is extremely handy for APIs which require authentication.
-
 # extensions-manager
-
 - https://github.com/hankxdev/one-click-extensions-manager /js
   - a simple chrome extension to manage chrome extension
-
-
 # settings-sync
 - https://github.com/shanalikhan/code-settings-sync
   - Synchronize your Visual Studio Code Settings Across Multiple Machines using GitHub GIST
@@ -204,6 +200,24 @@ modified: 2023-02-08T10:24:11.422Z
   - https://twitter-search.transitivebullsh.it/
   - Instantly search across your entire Twitter history with a beautiful UI powered by Algolia.
   - Built using Algolia, Twitter API, and Vercel
+# downloader-media
+- tips
+  - 更多是针对具体网站的downloader
+
+- https://github.com/LeonardoCiaccio/GrabAnyMedia /202304/js
+  - https://grabanymedia.com/
+  - Browser extension for video / audio / streaming downloads
+
+- https://github.com/yangwk/m3u8-downloader /202212/js/inactive
+  - chrome插件，支持监控和下载：m3u8流媒体、视频、音频
+  - 纯chrome extensions api实现，没有依赖外部组件ffmpeg
+
+- https://github.com/tuhinpal/hls-downloader
+  - I noticed that there were fewer browser-based tools available for downloading video streams that use the HTTP Live Streaming (HLS) protocol, so I saw an opportunity to fill this gap
+
+- https://github.com/DoctorLai/VideoDownloadHelper
+  - On 31/Oct/2017, Google has reinstated the extension
+  - But you are still able to use the web version: https://weibomiaopai.com/download-video-parser.php
 # more-extensions
 - https://github.com/SanderRonde/CustomRightClickMenu
   - A browser extension to add links and run scripts/stylesheets all from your right-click menu

@@ -20,6 +20,7 @@ modified: 2021-07-20T13:50:23.433Z
     - 开放能力: extensions、scripts、marketplace
     - easy的api，simple的logic
   - 抽空在线体验，工作专注代码
+  - specification for pivot table
 
 - 技术方向js: 富文本编辑器，多维表格，协作; dnd，floating，state
 - 技术扩展js/py: 支持拖拽的页面编辑器/lowcode，Excel，图表

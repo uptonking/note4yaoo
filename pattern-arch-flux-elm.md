@@ -64,15 +64,17 @@ modified: 2023-11-18T09:48:30.897Z
   - [what is the difference between Elm and redux architecture : elm_201706](https://www.reddit.com/r/elm/comments/6jkt6c/what_is_the_difference_between_elm_and_redux/)
   - [Comparing Elm to React/Redux - DEV Community_201907](https://dev.to/rametta/comparing-elm-to-react-redux-2emo)
 # dev
-- 👉🏻 基于event实现undo的两种思路
+- 👉🏻 基于op/event实现undo的两种思路
   - 每个event的op同时保存inverse-op，每次undo时执行inverse-op
   - 每个event保存op，undo时从头开始计算一遍
-  - 缺点是异步op要特殊处理，可能部分要忽略
+  - 缺点是异步op要特殊处理，可能部分要忽略; 复杂度较高
+  - 优化方案是定期snapshot
 - 👉🏻 基于delta-state实现undo
   - 优点是数据量小，replay状态时无需考虑异步op/effects
+  - 缺点是多人协作时不方便撤销他人的中间op
 - 👉🏻 基于全量state实现undo
   - 优点是实现简单，replay状态时无需考虑异步op/effects
-  - 缺点是每次保存全量数据可能导致性能问题和空间浪费
+  - 缺点是每次保存全量数据可能导致性能问题和空间浪费，多人协作时不方便撤销他人的中间op
 # elm-dev
 
 # more

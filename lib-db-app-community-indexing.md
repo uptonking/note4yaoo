@@ -20,6 +20,15 @@ modified: 2023-09-17T17:38:11.187Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [2 phase indexing · crate/cratedb_202308](https://github.com/crate/crate/pull/14617)
+- The way we index documents is not changed, only split into 2 phases.
+  - Phase 1: Collect new columns and do a schema update. Don't create a Lucene document with source at this point.
+  - Phase 2: Index. Currently target references still might have unassigned OID since this is only a preparation step.
+
 - ## Multi tenancy is paramount for vector indexes
 - https://twitter.com/Sirupsen/status/1730356136782549153
   - With b-trees’ log(n) it doesn’t matter too much if you have one big table for all tenants

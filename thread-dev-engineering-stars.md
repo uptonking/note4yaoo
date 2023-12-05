@@ -11,6 +11,34 @@ modified: 2021-08-10T03:51:01.891Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Avoid Barrels (A barrel is a file that exports code from other files)
+- https://twitter.com/housecor/status/1730993597862780976
+- Barrel benefits:
+  - ✅ Shorter import paths
+  - ✅ Support importing many files via one import
+  - ✅ "Hide" modules - Only export some modules for the "public" interface
+- avoid barrels. Here's why:
+  - 可能导致循环依赖问题
+  - 🚫 Bloats the bundle. Inhibits tree shaking.
+  - 🚫 Increases memory usage.
+  - 🚫 Slows tooling (builds, tests, linting). Barrels create more modules to parse.
+  - 🚫 Slows code navigation ("Find all references" finds the barrel instead of the actual source).
+  - 🚫 Barrels shorten import paths and group related imports. Sounds nice, but it's an outdated benefit because I don't write imports anymore - my editor reliably auto-imports.
+
+- People often put each component in a folder to group the files, and use a barrel to shorten the import. Instead, I suggest eliminating the needless parent folder.
+
+- Thoughts on this for backend node apps? Still no to barrel files?
+  - aside from tree shaking which mostly makes sense in frontend stacks… the benefits are far greater.
+
+- Far too general, barrel files are useful in many scenarios including reducing circular dependencies. Tree shaking is totally OK, in every tool since about 5y
+  - How does it reduce circular dependencies? I've found quite the opposite. For example, two utils A and B being exported from a barrel. B needs A so it imports A from the barrel, thus importing itself...
+- Not sure, frameworks like NestJS advices against it precisely because of circular dependencies between modules. Same goes for TypeORM and a few others I've used.
+- it generated circular deps only if you use the barrel in the sub-modules, which is an anti-pattern
+
 - ## I told you barrel(桶) files were evil
 - https://twitter.com/_developit/status/1712906859877629983
   - Barrel files are files that only export other files and contain no code themselves. 
