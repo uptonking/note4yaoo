@@ -104,6 +104,12 @@ modified: 2021-08-30T18:56:18.632Z
   - Query Excel spreadsheets (.xlsx, .xls, .ods) using SQLite
   - allow working with spreadsheets from SQLite exposing them as virtual tables.
   - XLite is a SQLite extension written in Rust. 
+
+- https://github.com/nalgeon/codapi /apache2/202312/go
+  - https://codapi.org/
+  - Embeddable code playgrounds for education, documentation, and fun.
+  - Codapi is a platform for embedding interactive code snippets directly into your product documentation, online course, or blog post.
+  - Codapi manages sandboxes (isolated execution environments) and provides an API to execute code in these sandboxes. It also provides a JavaScript widget codapi-js for easier integration.
 # sqlite-viewer/manager
 - https://github.com/inukshuk/sqleton
   - Visualizes your SQLite database schema.

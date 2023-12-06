@@ -15,7 +15,10 @@ modified: 2023-04-16T10:02:58.738Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## Chat interfaces won't supersede GUIs for most purposes.
+- https://twitter.com/msimoni/status/1732439305530851679
+  - Clicking buttons/menus requires much less effort than entering text into a chat, esp. mobile.
+  - Voice input won't fly because people use computers in public/social situations, and don't want others to hear what they're doing.
 
 - ## 💡 Embeddings: What they are and why they matter
 - https://twitter.com/simonw/status/1716449601505657224

@@ -16,7 +16,12 @@ modified: 2022-12-19T01:59:01.628Z
 
 - ## 
 
-- ## 
+- ## ⏱️🤔 You might think that SQLite can't work as your production database because it doesn't support concurrent writes. 
+- https://twitter.com/fractaledmind/status/1732061486762147985
+  - Well, this is a myth. In today's post, I dig into the details and run a bunch of benchmarks. 
+  - 📝 [SQLite Myths: Linear writes don't scale_202312](https://fractaledmind.github.io/2023/12/05/sqlite-myths-linear-writes-do-not-scale/)
+  - It is also worth mentioning that any single slow write (e.g. creating an index on a large table) will slow down a write heavy app while it is running, so SQLite users need to be careful when they issue any slow write query. However, even a write heavy real-world application will have a mix of writes and reads. This benchmarking is very synthetic, as it constantly hits the server with POST requests. In a real-world application, even a write heavy one, the natural distribution of read requests and write requests, as well as the naturally stochastic distribution of requests from users, will allow SQLite to scale well and perhaps even look better than these benchmarks suggest.
+  - Moreover, I want to be clear that these benchmarks are testing a simple POST route.
 
 - ## [SQLite B-Tree Module | Hacker News_202204](https://news.ycombinator.com/item?id=30894913)
 - This has been shared without context but I guess the SQLite team is starting to modularize the btree code in order to facilitate work like SQLightning: https://github.com/LMDB/sqlightning

@@ -40,6 +40,17 @@ modified: 2023-01-09T15:41:17.179Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## fter tearing @Tan_Stack Router's internals to the ground and rebuilding them over the last few weeks, somehow my defer/Awaited promise streaming logic survived perfectly _20231206
+- https://twitter.com/tannerlinsley/status/1732155612962882012
+- is it possible to control the rendering of route components? With something like AnimatePresence?
+  - Haven’t tried, but theoretically yes.
+- Are actions and loaders running on the server side now? Or can we choose to run them on the server ?
+  - TSR has built-in loaders that *can* run on the server. But it does not have "actions".
+
 - ## Route-based dialogs are not great. But breadcrumbs are great ... btw...
 - https://twitter.com/kentcdodds/status/1679936799291084801
   - I've removed route-based dialogs from the Epic Stack in favor of full-page routes and breadcrumbs. 

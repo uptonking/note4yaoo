@@ -26,7 +26,7 @@ modified: 2023-09-13T14:28:01.426Z
 - Have you tried Erlang? It's basically designed around solving that problem. Many people use RabbitMQ to solve that problem and it's no coincidence that RabbitMQ is written in Erlang. Elixir is possibly a similar option (don't know, haven't tried it).
   - Erlang's raison d'etre is not message passing but fault tolerance. 
 
-- ## [Damn Cool Algorithms: Log structured storage (2009) | Hacker News_201705](https://news.ycombinator.com/item?id=14447727)
+- ## 🛋️ [Damn Cool Algorithms: Log structured storage (2009) | Hacker News_201705](https://news.ycombinator.com/item?id=14447727)
 - event sourcing seems like a very powerful pattern that I haven't seen wide adoption. The best documentation seems to be some MS dev library notes and a discussion from M Fowler.
 - 🤔 Are there any open source implementations of a database that uses event sourcing?
 - I built https://github.com/amark/gun after I was using MongoDB to event source data. The key piece for me was wanting to have Firebase-like realtime sync for my event sourcing.

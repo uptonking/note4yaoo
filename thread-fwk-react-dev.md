@@ -116,6 +116,20 @@ modified: 2021-01-06T14:40:03.364Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## til: switching from `useEffect` to emulating `useEffect` via `useState` fixes rendering artifacts (flashing). 
+- https://twitter.com/tantaman/status/1732140032729985512
+  - I think I always knew this but never ran into it so often before.
+  - 在业务端使用2个useState分别管理deps和stateVal，在deps变化后通过setStateVal更新数据值
+- I think what you are aiming for is a memo with cleanup, so something like this.
+  - Unfortunately that pattern has been reported to leak memory but I haven’t tested it myself.
+- There's also `useLayoutEffect`
+
 - ## React Core PR: Upcoming `<Offscreen>` renamed to `<Activity>` .
 - https://twitter.com/sebastienlorber/status/1729890709749002410
   - Pre-render next screen on hover/touchStart instead of waiting for touchEnd?

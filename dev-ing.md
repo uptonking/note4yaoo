@@ -115,7 +115,8 @@ $$('[contenteditable]')
 - techstacks-to
   - async/generator, stream, buffer, binary, scheduler, arrow
   - 样式片段也可在线尝试: codepen, w3schools.com 
-  
+  - separate storage compute example
+
 - cache/stream for web storage
   - 参考 tanstack-query, localforage
 

@@ -217,6 +217,16 @@ HMACSHA256(
   - 依赖json-server
   - Make a Full fake REST API, MakePOST, PUT, PATCH or DELETE requests, Fake Register and login based on role Api with jwt.
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Explaining JSON Web Token (JWT) with simple terms.
+- https://twitter.com/alexxubyte/status/1732077250626179578
+  - [Why is JWT popular? - YouTube](https://www.youtube.com/watch?v=P2CPd9ynFLg)
+
 - ## 原来JWT还可以使用私钥签名+公钥验证的方式发放，那其实可以用在第三方和serverless场景上了
 - https://twitter.com/Hooopo/status/1241664133201719296
 - 其实okta之类的IDaaS都是用的 OIDC + JWT公私钥方案
@@ -269,6 +279,7 @@ HMACSHA256(
   - Come check out token auth signed URLs. Useful if you need to revoke and work with multiple CDNs
   - Agreed; cookies have their place, but both JWTs and session IDs can be sent via multiple avenues (cookies, headers, request bodies, URLs, etc)
 - If you're building a normal frontend, you're often much better off using traditional sessions with the session cookie being httpOnly so JavaScript does not even have access to it.
+
 # ref
 - [Next.js 11 - JWT Authentication Tutorial with Example App](https://jasonwatmore.com/post/2021/08/04/next-js-11-jwt-authentication-tutorial-with-example-app)
 - [Next.js - Basic HTTP Authentication Tutorial with Example App](https://jasonwatmore.com/post/2021/08/29/next-js-basic-http-authentication-tutorial-with-example-app)

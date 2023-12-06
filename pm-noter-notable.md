@@ -73,6 +73,8 @@ modified: 2023-11-28T14:48:45.910Z
   - 基于场景预定义react组件接口，允许替换默认使用的各个组件
   - 因为允许替换，所以经常需要动态导入
 # features
+- inspirations
+  - 高频需求，网盘分享
 
 ## text-editing
 
