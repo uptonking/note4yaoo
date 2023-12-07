@@ -30,6 +30,7 @@ modified: 2023-01-22T19:52:59.120Z
 - https://github.com/shalior/express-ts-template /结构合理
   - Express.js template using TypeScript, Knex and Docker to head-start development.
   - fork of https://github.com/cdellacqua/express-knex-typescript-template
+  - https://github.com/shalior/express-mongo-ts
 
 - https://github.com/kurierjs/kurier
   - A TypeScript framework to create APIs following the 1.1 Spec of JSONAPI + the Operations proposal spec.

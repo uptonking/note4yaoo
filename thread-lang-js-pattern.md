@@ -12,7 +12,7 @@ modified: 2023-11-10T08:05:12.852Z
 # discuss
 - ## 
 
-- ## 
+- ## [No love for boolean parameters | TkDodo's blog](https://tkdodo.eu/blog/no-love-for-boolean-parameters)
 
 - ## if you are a TS fan, how would you describe something like JSON.parse where a string input goes in and literally anything could go out!
 - https://twitter.com/WebReflection/status/1729799525290668518

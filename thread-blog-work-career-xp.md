@@ -266,7 +266,9 @@ modified: 2022-11-08T10:34:34.820Z
 
 - ## 
 
-- ## 
+- ## 👾 It’s a truism that good programmers remove code. They’re creating order out of chaos by reducing redundancy. 
+- https://twitter.com/julianhyde/status/1732801654926483622
+  - If AI is generating lots of code, we’ll need more good programmers to compensate. With luck, AI will also help organize things.
 
 - ## 我真的不擅长管人，所以喜欢单干。
 - https://twitter.com/9yearfish/status/1730898211672584268

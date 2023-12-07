@@ -17,6 +17,8 @@ modified: 2021-09-30T07:44:05.964Z
 - markdown
 - rst
 - asciidoc
+
+- [Why OpenDoc failed, and then failed 3 more times?_202105](https://instadeq.com/blog/posts/why-opendoc-failed-and-then-failed-3-more-times/)
 # RTF: Rich Text Format
 
 ## [.rtf文件, .doc文件，和.docx有何异同？ - 知乎](https://www.zhihu.com/question/31945498/answers/updated)
@@ -41,5 +43,4 @@ modified: 2021-09-30T07:44:05.964Z
   - 如果将 DOCX 扩展名替换为 ZIP，则可以使用任何 zip 压缩软件轻松打开它并查看或更改 XML 文档。
   - DOCX和DOC相比，同样的文件体积更小，对复杂对象的处理也更好
   - Microsoft Word 2007之前的版本不支持打开阅读，在共享文件方面具有劣势，需要安装微软推出的Office兼容性补丁包
-
 # ref

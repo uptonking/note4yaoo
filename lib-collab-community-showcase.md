@@ -12,7 +12,27 @@ modified: 2023-05-21T15:46:35.896Z
 # discuss
 - ## 
 
-- ## 
+- ## 🕹️ @hello_reflect is the only multiplayer system that supports database-style interactive transactions.
+- https://twitter.com/aboodman/status/1732484354637709507
+  - People sometimes ask if they really need that though. Aren't CRDTs or json-patch enough?
+  - With a CRDT like Yjs, you could have each row be a map entry. The same approach could work with JSON-patch bases systems.
+  - When we were playing with early versions of this demo, I wanted to see a version where you could pick multiple cells (so that you could "draw" songs. But this doesn't work with the data model above, you'd need a different schema where each cell can be selected
+  - Note the problem here: With a map CRDT we need an entirely different schema if we change our business logic even slightly. The schema that works for selecting only one cell per row does not work for selecting multiple cells. And vice versa!
+- This isn't a problem in Reflect. We start out with a nice flexible schema, a map of enabled cells.
+  - We can even choose at runtime with a flag.
+  - All easy to implement on this basic schema in Reflect using transactions, but difficult or impossible with other systems.
+- So while you can do some things without transactions, when your project gets even a little interesting, you invariably need custom business logic. Where does that logic go? It can't go on the client, for the same reasons we can never rely solely on client-side validation.
+  - But it also can't go on the client because there are multiple clients running. A rule like "only one cell in this row can be selected" can't be implemented client-side – two clients could decide they got the only slot at the same time.
+  - 💡 Reflect's Transactional Conflict Resolution gives you an elegant way to implement any kind of custom business logic. Your mutators run twice – once on the client, optimistically, for responsiveness, but then again on the server to compute the authoritative result.
+
+- In an op-based CRDT, you can only send the discrete set of ops that are built into that CRDT. In TCR, you can implement any op you want using JavaScript. The core idea of linearization on an authoritative server is a pretty good general purpose sync system.
+  - The reason this generalization isn't possible in general in op-based CRDTs is that the system must converge.
+  - This implies that the ops on all clients must be (a) pure and (b) identical. But how could this be guaranteed in common programming environments?
+  - It can be done in specialized systems. @tanglesync is a very cool exploration of this idea using a rewindable wasm sandbox.
+  - @tantaman has also explored this here: https://vlcn.io/blog/crdt-substrate
+  - Another challenge with doing this as a pure CRDT is of course finalization. You can never know when the effect of an op is final because some earlier op can always be received.
+- I don't really see it as that similar to an op-based CRDT but I guess that's dependent on your point of reference! Other people say "isn't this similar to OT?". And I guess all of these are ideas are not that far apart in the big picture. But the details are why we give things different names
+  - The ability to provide your own mutators is a massive different in usability, making it feel like a completely different thing from a crdt from a dx pov.
 
 - ## We are studying @replicache 's awesome blog post at @taktile_org 's internal reading group. We built a somewhat similar linearized serverside reconciliation algorithm. 
 - https://twitter.com/tomlarkworthy/status/1727986810238697837

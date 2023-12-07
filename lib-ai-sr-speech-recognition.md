@@ -52,6 +52,11 @@ modified: 2023-02-07T09:22:03.120Z
   - TL; DR - Transcribe 150 minutes (2.5 hours) of audio in less than 98 seconds - with OpenAI's Whisper Large v3.
   - https://github.com/chenxwh/insanely-fast-whisper
 
+- https://github.com/chenxwh/insanely-fast-whisper /jupyter
+  - Incredibly fast Whisper-large-v3
+  - An opinionated CLI to transcribe Audio files w/ Whisper on-device! Powered by Transformers, Optimum & flash-attn
+  - TL; DR - Transcribe 150 minutes (2.5 hours) of audio in less than 98 seconds - with OpenAI's Whisper Large v3
+
 ## more-asr
 
 - https://github.com/wenet-e2e/wenet

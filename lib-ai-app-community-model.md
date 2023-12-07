@@ -16,7 +16,10 @@ modified: 2023-10-30T07:34:03.602Z
 
 - ## 
 
-- ## 
+- ## 国产188个大模型的excel文档： 北京69 上海22 杭州15 广东26个 江苏15个
+- https://twitter.com/FinanceYF5/status/1730912502312296935
+  - [国产大模型188个list - Feishu Docs](https://zw73xyquvv.feishu.cn/wiki/WXLmwBbYuiTobkkJ6Ojc2cxqnj0?sheet=2XjJlJ&table=tblS2Jv7isKtSODz&view=vewfCdOf0U)
+
 # discuss
 - ## 
 

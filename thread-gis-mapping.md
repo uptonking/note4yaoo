@@ -7,8 +7,20 @@ modified: 2021-05-25T08:41:02.257Z
 
 # thread-gis-mapping
 
-# discuss
+# guide
 
+# discuss-stars
+- ## 
+
+- ## [Improve accuracy of CJK glyphs with higher resolution TinySDF textures · maplibre/maplibre-gl-js](https://github.com/maplibre/maplibre-gl-js/issues/2990)
+- 以前能注意到部分国外的地图在展示 CJK 时会不清楚，今天在 Maplibre 的一个 issue 里看到了具体的解释
+- All text displayed in MapLibre GL, web or native, is rendered using Signed Distance Fields (SDFs). This means text can be smoothly rotated and rescaled between different sizes as a function of zoom level, and text halos - a common visual design for map labels - are computationally "free".
+- All text displayed in MapLibre GL, web or native, is rendered using Signed Distance Fields (SDFs). This means text can be smoothly rotated and rescaled between different sizes as a function of zoom level, and text halos - a common visual design for map labels - are computationally "free".
+- The conversion from . TTF to SDFs requires the choice of a specific font size for rasterization into a bitmap via FreeType. Early on in GL JS development this was determined to be a 24 point font as a compromise between text sharpness and SDF bitmap size. SDF bitmaps are then stored in ranges of 256 glyphs and served over HTTP
+- SDF 24 point font is good enough to render most Latin fonts with a small amount of rounding. The issue arises when rendering glyphs with more internal detail. These are common where CJK is used with "traditional" scripts - mainly Japan, Taiwan, Hong Kong and Macau. 
+- TinySDF skips over the FreeType pre-baking step by using the browser's Canvas API to draw text to a canvas, and then converts that canvas into an SDF. This reduces network requests for CJK glyphs to 0, but limits the display of CJK text to only the basic fonts built into the browser (Sans Serif for Gothic style, Serif for Ming/Song style)
+
+# discuss
 - ## 
 
 - ## 

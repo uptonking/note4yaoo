@@ -118,9 +118,21 @@ modified: 2021-01-06T14:40:03.364Z
 
 - ## 
 
-- ## 
+- ## I'm convinced that React's concurrent rendering model is fundamentally at odds with fine-grained reactivity/updates/rerendering.
+- https://twitter.com/tannerlinsley/status/1732474127712481371
+  - To get fine-grained subscriptions in react, you have to use an external store (literally anything that doesn't trigger rerenders out of the box) and wire up the subscriptions to where they are used in react, hopefully with something like selectors, proxies, signals or atoms. However, as soon as you move your state out of useState/useReducer, you will experience state tearing when you attempt to use concurrent rendering, especially with startTransition. This is because React can't "version" your state, create new fibers based on it, etc. So if fine-grained reactivity and subscriptions are important to your application or library, you kinda just have to swallow the bitter pill that you can't *really* support startTransition at the same time
 
-- ## 
+- 💡 I reached the same conclusion whenever I have data-heavy UIs that I need to optimize, and there's never a clean solution.even with something like MobX, you're forced to break down components more than you would have otherwise - this applies regardless of what you pick
+- If you had to choose, would you ditch concurrent rendering and start transition?
+  - i'm honestly not sure. I've aligned with the belief that there's always a perf ceiling with sync rendering, and that concurrent rendering more or less ignores that ceiling by keeping the UI responsive, + the awesome ability to show pending states while rendering expensive UI
+- True, but I don't think you have to totally ditch the "concurrent" part, just the startTransition part. You still get concurrent rendering albeit at the expense (or should I say "suspense") of *always* seeing a fallback .
+  - maybe. I think always seeing the fallback is fine if you can delay it so it's not a "flash of loading state", which is my main concern going this route
+  - by "delay" I mean, let it linger for ~300ms so it doesn't feel like it pointlessly popped in for 2 frames
+  - but the buy-in is huge and it hasn't proved its worth in practice that often. so I'm still on the fence
+
+- ## How often do you use startTransition?
+- https://twitter.com/tannerlinsley/status/1732796106029907992
+  - often: rarely: never: other = 0.05: 0.175: 0.46: 0.3
 
 - ## til: switching from `useEffect` to emulating `useEffect` via `useState` fixes rendering artifacts (flashing). 
 - https://twitter.com/tantaman/status/1732140032729985512

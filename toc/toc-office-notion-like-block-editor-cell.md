@@ -29,6 +29,7 @@ modified: 2022-08-14T16:26:48.558Z
 - blocky-editor /150Star/MIT/202208/ts
   - https://github.com/vincentdchan/blocky-editor
   - https://blocky-editor.dev/
+  - https://blocky-editor.dev/loro
   - 支持跨block选择部分文字
   - 不支持拖拽block修改顺序
   - 支持协作

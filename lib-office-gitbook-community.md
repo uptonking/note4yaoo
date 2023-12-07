@@ -12,7 +12,13 @@ modified: 2023-09-19T06:35:28.278Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## Why #OpenDoc failed, and then failed 3 more times?_202105
+- https://twitter.com/warianoguerra/status/1391757734236889088
+  - [Why OpenDoc failed, and then failed 3 more times?_202105](https://instadeq.com/blog/posts/why-opendoc-failed-and-then-failed-3-more-times/)
+- Summary of reasons found around the web and comparing them with other implementations of the same concept: 
+  * ActiveX
+  * KParts
+  * Bonobo
 
 - ## [Google Docs will now use canvas based rendering | Hacker News](https://news.ycombinator.com/item?id=27129858&p=2)
 - "Displaying documents" and "displaying editable documents" are two completely different beasts. The web browser has never dealt well with displaying editable documents, the closest standard that exists is contentEditable and pretty much everyone agrees that it sucks and is not fit for complex use cases.
@@ -181,6 +187,10 @@ modified: 2023-09-19T06:35:28.278Z
 
 # discuss-format
 - ## 
+
+- ## A dilemma posed by Humane Interface: might OpenDoc/OLE style compound documents ironically exacerbate the problems with apps?
+- https://twitter.com/geoffreylitt/status/1470759473371226114
+  - As with apps, each component  defines its own world. But unlike apps, you don’t even know when you’re switching worlds! “Modality with a vengeance”
 
 - ## 🪶📄⚖️ [What if OpenDocument used SQLite? (2014) | Hacker News_202309](https://news.ycombinator.com/item?id=37553574)
 

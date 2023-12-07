@@ -15,6 +15,8 @@ modified: 2023-11-21T10:17:34.596Z
 - resources
   - [The Elm Architecture · An Introduction to Elm](https://guide.elm-lang.org/architecture/)
   - [Elmish · F#](https://elmish.github.io/elmish/)
+  - [Introduction to Elm, v2](https://www.bilibili.com/video/BV1YP4y1H7yf)
+  - [Elm入门与实战视频课程](https://space.bilibili.com/1398859852/channel/seriesdetail?sid=430270)
 # popular
 - https://github.com/sporto/awesome-elm
   - useful Elm tutorials, libraries and software
@@ -186,6 +188,8 @@ modified: 2023-11-21T10:17:34.596Z
   - The Elm Architecture by Typescript implementation like Elmish.
 - https://github.com/jichang/elm-ts /202107/ts
   - Implement Elm architecture with TypeScript
+  - [Elm入门与实战视频课程](https://www.bilibili.com/list/1398859852?sid=430270)
+  - [Elm-ts框架之组件渲染](https://www.bilibili.com/video/BV1uy4y1m7in/)
 
 - https://github.com/blackChef/rce /201911/js
   - https://blackchef.github.io/rce/

@@ -216,6 +216,14 @@ modified: 2023-02-06T09:14:40.114Z
 # more
 - [AsyncAPI 2.0: Enabling the Event-Driven World_202105](https://tech.ebayinc.com/engineering/asyncapi-2-0-enabling-the-event-driven-world/)
   - Learn about how eBay is standardizing on and publishing AsyncAPI Specification 2.0-based contracts for event notifications.
+# discuss-http2
+- ## 
+
+- ## My favorite HTTP/2 feature is Connection Coalescing.
+- https://twitter.com/iamakulov/status/1731629685094920349
+  - In HTTP2, normally, a browser opens a new connection for every new domain it sees. (So if your site loads via www. but serves images from img., that’d be 2 connections.)
+  - Making domains use the same IP address and HTTPS certificate is an *implicit* way to enable connection coalescing; the control is on the browser’s side, and it’s not always great. (Plus sharing IPs is tricky.) But (TIL!) there’s also an *explicit* way.
+
 # discuss
 - ## 
 

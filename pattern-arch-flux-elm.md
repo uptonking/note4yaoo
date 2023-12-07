@@ -77,4 +77,21 @@ modified: 2023-11-18T09:48:30.897Z
   - 缺点是每次保存全量数据可能导致性能问题和空间浪费，多人协作时不方便撤销他人的中间op
 # elm-dev
 
+# [changelog-elm](https://elm-lang.org/news)
+
+- v0.19_201808
+  - 🚨 Removal of custom operators and native modules
+  - Smaller assets, faster builds
+- v0.18_201611
+  - New debugger with import/export
+- v0.17_201605
+  - Add subscriptions, remove signals
+- v0.14_201412
+  - Package manager, parallel builds, JSON
+- v0.3_201206
+  - Modules
+- v0.1_201204
+  - Elm was initially designed by Evan Czaplicki as his thesis in 2012
+  - The first release of Elm came with many examples and an online editor that made it easy to try out in a web browser
+  - The initial implementation of the Elm compiler targeted HTML, CSS, and JavaScript
 # more

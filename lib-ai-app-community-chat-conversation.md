@@ -59,7 +59,12 @@ modified: 2023-04-16T10:02:58.738Z
 
 - ## 
 
-- ## 
+- ## ChatGPT-Next-Web 这个项目太好用了，
+- https://twitter.com/_Xheldon/status/1731897455145263340
+  - 部署在软路由上，Docker+内网穿透+腾讯云 Nginx 转发（不是必须），给不会翻墙的亲友每人一个访问密码，太赞了！
+  - 我二开增加了腾讯云 log，简化了界面复杂配置，比我之前搞的微信小程序好用多了，早知道有这个就不折腾小程序了
+- 想问下你內网穿透用的什么方案，我用的 taikscale，给其他人用还得给他们装客户端
+  - tplink 路由器自带的，免费用
 
 - ## Anyone figured out the most useful format to feed documentation into a GPT Assistant yet?
 - https://twitter.com/simonw/status/1721714675182899509

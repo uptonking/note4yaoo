@@ -275,3 +275,13 @@ modified: 2022-11-11T11:04:29.007Z
   - 好看但不实用
   - a browser extension that stores links to your favorite sites in a more visually pleasing way than traditional bookmarks. 
   - Hop will try to find an icon for each link automatically, but you can use your own image if you prefer.
+# discuss
+- ## 
+
+- ## 
+
+- ## Tag 可以让内容分类有更高的自由度，但也很容易膨胀到冗余甚至失控，
+- https://twitter.com/houjoe1/status/1732608680305254613
+  - 不过，感觉 AI 的上帝视角可以在未来解决这个问题，帮助用户发现不用的 Tag、重复的 Tag、有更好的命名建议的 Tag，减少 Distraction
+  - 比如系统自动根据首字母将tag分类
+- 我 wishlist 里面就有 Readwise Reader 能够自动为我添加的文章打标。

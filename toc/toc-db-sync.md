@@ -378,6 +378,14 @@ modified: 2022-11-25T15:41:47.534Z
 - https://github.com/epfl-labos/paris /202007/cpp/inactive
   - Causally Consistent Transactions with Non-blocking Reads and Partial Replication
   - PaRiS(Partially Replicated System) is the first transactional causally consistent system that supports partial replication and implements non-blocking parallel read operations. 
+# raft
+- https://github.com/eatonphil/raft-rs /202312/rust
+  - Another minimal Raft implementation in Rust.
+  - you don't learn a concept well until you've implemented it a few times
+
+- https://github.com/eatonphil/goraft /202305/go
+  - A basic Raft implementation in Go.
+  - [Implementing the Raft distributed consensus protocol in Go](https://notes.eatonphil.com/2023-05-25-raft.html)
 # more
 - https://github.com/rethinkdb/rethinkdb /202211/cpp/python
   - The open-source database for the realtime web.

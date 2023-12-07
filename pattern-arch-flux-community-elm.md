@@ -72,8 +72,11 @@ modified: 2023-11-20T19:04:12.672Z
 
 - This is exactly the react/redux/flux architecture everyone is raving(极力夸赞) about.
 - Given all the benefits of Elm, 6 lines of boiler plate (one line added in model, 5 lines added in update) is a small price to pay. Especially considering the small amount of components (in contrast to React, not everything is a component).
-# discuss-elm-component
+# discuss-elm-component/reuse
 - ## 
+
+- ## [Elm reuse Guide - Where did it go? : elm](https://www.reddit.com/r/elm/comments/f37vom/elm_reuse_guide_where_did_it_go/)
+- The relevant information is in the Modules and Structure pages of the guide.
 
 - ## 🤔🤔 [Two ways to reuse views? Which do I choose?_201908](https://www.reddit.com/r/elm/comments/cqd93z/two_ways_to_reuse_views_which_do_i_choose/)
   - The first is to make it a mini elm app. I.e. `Model, Msg, init, view, update` . The caller then uses `Html.map, Cmd.map` and so on.
@@ -85,6 +88,8 @@ modified: 2023-11-20T19:04:12.672Z
 - The rule of thumb is to use the second approach if you can and if you cannot, switch to the first approach. 
   - The first one brings in way more complexity. I can have an entire module of small reusable views implemented with the second approach BUT, the first approach would mandate one module per component.
   - this second approach for views that have to have some state in them and use the first approach only as the last resort. This usually happens if I need side-effects in the update of the component.
+
+- I have been reusing views by using a type. and there is another similar ish alternative proposed in the discussion
 
 - ## [Does TEA mean single state at root? : elm_202112](https://www.reddit.com/r/elm/comments/ronzbo/does_tea_mean_single_state_at_root/)
 - Your knowledge of React is going to be a problem for learning TEA at least that's what I found. 

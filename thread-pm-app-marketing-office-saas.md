@@ -27,6 +27,17 @@ modified: 2023-10-10T14:20:13.855Z
 # discuss-b2b
 - ## 
 
+- ## 
+
+- ## 刚跟新产品之前一项非常大的潜在客户沟通完，客户模式变了，是对新产品没那么大兴趣了。如果这样，我可能要调整定价，调整策略了。
+- https://twitter.com/9yearfish/status/1732655368453734594
+- 敢去撩客户的我都很佩服
+  - to.b 没办法，正常 2C 也要跟客户沟通嘛
+- 你怎么找到这些客户呢？直接电话或者邮件跟人家约吗？
+  - 2B 小众行业，找现有客户，拉自己进他们圈子里的同行交流群就行了。
+- 果然每个Business都不一样。我到现在还没找到撩目标客户的方法。就算是我找到了对口做决策的人（比如技术领导），我们这个东西也太小，好像不值得人家跟我聊半个小时的。我现在的策略是考虑从使用者入手。让用的人先喜欢上我们然后向他们的老板推荐。不过也不太顺利。
+- UML 我确实用得少，不太懂这方面用户的需求和他们业务方面。 金额小的产品，企业决策周期也会很短。 能不能引导用户主动传播？ 类似 https://processon.com 免费用户可以生成 X 个文件，邀请后增加 X 个文件，付费用户无限制
+
 - ## You don't need a lot of customers to make good money if your customers are b2b.
 - https://twitter.com/AlexBelogubov/status/1729758035902427411
 - When did you start your journey and what triggered a b2b idea?
@@ -37,6 +48,16 @@ modified: 2023-10-10T14:20:13.855Z
 
 # discuss
 - ## 
+
+- ## 
+
+- ## https://gliffy.com 是我用过的最垃圾的画图软件。这种软件没有长进居然还能愉快的活着，兼职是画图软件界的耻辱。
+- https://twitter.com/PenngXiao/status/1731997485546287379
+  - 吐槽完了，但是人家的文档写得好，内容丰富实用。
+- 写一手好的文档是很困难的事情。这里说的不是文笔，而是逻辑思维能力、用户同理心、抽象能力。
+
+- ## GitLab's open core approach: everything ICs care about - open source, everything execs care about - proprietary
+- https://twitter.com/oleg008/status/1732458919455273070
 
 - ## 最近10年的一个主线是把广告做成优质内容，抖音和小红书都是
 - https://twitter.com/oran_ge/status/1731112033045905469

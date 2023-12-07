@@ -246,7 +246,7 @@ type Program = {
 - Elm does not have either null or undefined. Elm leverages the type system in case of missing values, with the types Maybe (called Option in other languages) and Result.
 
 - TypeScript does not support pattern matching. It can support "exhaustiveness" with switch statements under certain conditions
-- Elm's support pattern matching (with the case...of syntax). Elm's pattern matching always applies exhaustiveness.
+- Elm's support pattern matching (with the `case...of` syntax). Elm's pattern matching always applies exhaustiveness.
 
 - TypeScript doesn't support real immutable data structures. In JavaScript, mutability is the default
 - Elm's data is fully immutable, by design. Including also in all the dependencies.
@@ -263,7 +263,7 @@ type Program = {
 
 - There are lots of reasons to love The Elm Architecture:
   - It is easy to understand.
-  - Easy time-travel debugging, due to highly restricted state. (not a feature worth designing an architecture around)
+  - Easy time-travel debugging, due to highly restricted state. (not a feature worth designing an architecture around).
   - Designed around update commands and pure functions, which is great for testing.
 
 - And there are reasons to dislike The Elm Architecture:
@@ -319,11 +319,11 @@ type Program = {
 - https://twitter.com/tomkisw/status/1044893049090961409
 - Are you familiar with Rx and Cycle.js? That is the logical conclusion of events as the source of truth.
   - yup there’s technically no logical difference between generators with async semantics (redux-saga) and streams.
-- 👉🏻 the difference with cycle is there is no state other than the event streams and everything is then derived from that. Interestingly this was elms original approach but they have moved to the elm architecture as its simpler.
+- 👉🏻 the difference with cycle is there is no state other than the event streams and everything is then derived from that. 🧐 Interestingly this was elms original approach but they have moved to the elm architecture as its simpler.
 - I need to read it again. We've come to a similar realisation that declarative side-effects are not enough: you also need to be able to control and orchestrate their timing. Like in a typeahead where you want to debounce an input and cancel an inflight request.
   - You talking about event log being the source of truth rather than state is really helpful, I didn't think about it this way before and it gives me a lot of food for thoughts: so thank you
 
-## [On Endings: Why & How We Retired Elm at Culture Amp_202304](https://kevinyank.com/posts/on-endings-why-how-we-retired-elm-at-culture-amp/)
+## 🌰 [On Endings: Why & How We Retired Elm at Culture Amp_202304](https://kevinyank.com/posts/on-endings-why-how-we-retired-elm-at-culture-amp/)
 
 - Elm comes “batteries included” for building web apps, with virtual DOM rendering, managed state, effects, and subscriptions, and almost everything else you might need built in.
 
