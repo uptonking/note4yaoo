@@ -25,6 +25,7 @@ modified: 2023-09-12T09:34:51.108Z
     - crdt是通用的能实现最终一致性的数据结构，可将对crdt数据结构的crud操作用events记录，这样计算的state就是一致的
   - event sourcing模式是db无关的，不必执着于标准方案，存储、传输都可替换，可针对场景优化，如offline
   - 探索es pattern的最佳实现，然后总结 examples/kanban/framework
+  - es与crud结合的方案，参考cdc
 
 - tasks
   - model domain objects and events

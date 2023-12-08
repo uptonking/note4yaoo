@@ -56,6 +56,47 @@ modified: 2023-11-01T10:08:09.232Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## What should you do after publishing an event?
+- https://twitter.com/ProgressiveCod2/status/1733024610437009741
+  - There were two main angles to the discussion:
+  - Should we just forget about the event after sending it to the broker and continue processing other events?
+  - Or should we worry about getting a confirmation that the event reached its destination?
+  - The answer, of course, is a game of trade-offs.
+  - By the way, we were using Kafka for that project.
+- Kafka provided 3 options we could choose from:
+- [1] Fire and Forget
+  - we send a message to the broker and forget about it.
+  - Kafka is highly-available so there's a pretty solid chance that the messages would be delivered.
+  - But you can’t completely rule out lost messages.
+- [2] Synchronous Send
+  - Kafka does let you send messages synchronously. The Producer basically waits for an acknowledgment in the form of a Future object.
+  - If there is an issue, the Producer throws an exception.
+- [3] Asynchronous Send
+  - Producer sends a message to the broker and registers a callback function. It doesn’t wait and continues processing.
+  - The callback gets triggered when the Kafka Broker acknowledges the message or there's an error.
+- We evaluated what we wanted for a particular type of event based on the business scenario.
+- Asynchronous send is a mix of high performance and handling exceptions.
+  - It was ideal for business-critical events in a production scenario.
+- Synchronous Send sounds safe, but results in poor performance because it creates a blocking thread.
+  - We avoided this approach completely.
+- Fire and Forget is best for performance and throughput.
+  - This makes it suitable for cases where message delivery is not critical.
+  - We used it only for logging and some user-tracking events that weren’t super-important.
+
+- Fire and forget is a special case of asynchronous send approach where the producer doesn't care about the acknowledgment or error.
+
+- For a queue based message broadcasting system(say DB to client stream) fire and forget is how things work (For instance firestore) Any reason for that? Correct me if I’m wrong
+  - You are correct. There are lot of good reasons for using fire and forget:
+  - it's best for low latency and throughput
+  - loosely coupled
+  - generally more resilient
+
+- If messages aren't being consumed, you'll see lag and should have an alert on your Kafka lag
+
 - ## ❌ One JSON file per application log event. 
 - https://twitter.com/gunnarmorling/status/1727586416413077924
   - It's this kind of inefficiencies which make me think that our industry probably could do with 1/10th of the compute resources, when designing systems just a bit more carefully.

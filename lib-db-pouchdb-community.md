@@ -73,6 +73,9 @@ forever...
 
 - ## 
 
+- ## [Reduce replicated DB setup time · pouchdb/pouchdb_201505](https://github.com/pouchdb/pouchdb/issues/3836)
+- for now there is querying the live dataset, or trying to query partial local data with stale, otherwise this is just "speed up queries" which we already have
+
 - ## do local docs have revision trees?
 - https://app.slack.com/client/T49P1AZRT/C016TJAE7A4
 - They don’t have rev trees, but IIRC we increment their _rev so we know what’s older and what’s newer

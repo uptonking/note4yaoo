@@ -8,7 +8,17 @@ modified: 2022-11-29T20:41:25.566Z
 # lib-collab-community-sync
 
 # guide
-- sync-xp
+
+- 协作方案参考
+  - Liveblocks, synced-store, FluidFramework, gun, pouchdb
+  - automerge(2017), yjs(2015), sharedb(2013)
+
+- 成熟的解决方案一般都会设计和公开自己的同步协议
+  - database: mysql, pg, couchdb, rxdb
+  - framework: meteor-ddp, feathers-sync, gnu, realm/Atlas-Device-Sync
+  - editing: yjs-protocols, automerge-sync
+
+- sync-tips
   - 基于缓存实现sync有点类似于react-query
   - 参考vlcn
 
@@ -16,429 +26,66 @@ modified: 2022-11-29T20:41:25.566Z
   - client发送内容op/patch/changes, 发送时机，接收内容
   - server接收，发送内容
 
-- **partial/selective-sync**
-  - sync by table/collection/doc，可参考 pouchdb
-  - sync by versionNumber/timestamp
-  - 👉🏻 **query-based sync**: 取数基于query，query时可使用各种filter，可参考mongo-realm
-
-- 协作方案参考
-  - Liveblocks, synced-store, FluidFramework, gun, pouchdb
-  - automerge(2017), yjs(2015), sharedb(2013)
-
-- 成熟的解决方案一般都会设计和公开自己的同步协议
-  - database: couchdb, rxdb, 
-  - framework: meteor-ddp, feathers-sync, gnu, realm/Atlas-Device-Sync
-  - editing: yjs-protocols, automerge-sync
-
-- [Building an offline realtime sync engine references](https://gist.github.com/pesterhazy/3e039677f2e314cb77ffe3497ebca07b)
-  - figma, linear
-  - pouchdb, fluid, watermelonDB, Liveblocks
-
 - 考虑到客户端升级的问题
   - 同步前一定要检查一个version，参考indexeddb upgrade
   - logux支持客户端不同version
 
 - 支持offline的架构
   - 还可以考虑使用多级缓存，不一定全量数据库，类似react-query + indexeddb
-# linear-realtime-sync
+# sync-protocols
+- [Building an offline realtime sync engine references](https://gist.github.com/pesterhazy/3e039677f2e314cb77ffe3497ebca07b)
+  - figma, linear
+  - pouchdb, fluid, watermelonDB, Liveblocks
 
-## [cs-repeat: linear sync engine__202306](https://www.youtube.com/watch?v=Wo2m3jaJixU)
+- https://code.briarproject.org/briar/briar-spec/-/tree/master
+  - [Bramble Synchronisation Protocol, version 0](https://code.briarproject.org/briar/briar-spec/-/blob/master/protocols/BSP.md)
+    - BSP is an application layer data synchronisation protocol suitable for delay-tolerant networks.
+  - [A Quick Overview of the Protocol Stack](https://code.briarproject.org/briar/briar/-/wikis/A-Quick-Overview-of-the-Protocol-Stack)
+# blogs-sync
+- [MongoDB Realm: Device Sync Protocol](https://www.mongodb.com/docs/atlas/app-services/sync/details/protocol/)
+  - Atlas Device Sync uses a protocol to correctly and efficiently sync data changes in real time across multiple clients that each maintain their own local Realm files
+  - The Realm SDKs internally implement and manage the sync protocol, so for most applications you don't need to understand the sync protocol to use Device Sync
+  - Changesets are the base unit of the sync protocol.
+  - Synced realm clients send changesets to the Device Sync server whenever they perform a write operation. 
+  - The server sends each connected client the changesets for write operations executed by other clients.
+  - 👉🏻 The Device Sync server accepts changesets from any connected sync client (including changes in a synced MongoDB cluster) at any time and uses an **operational transformation** algorithm to serialize changes into a linear order and resolve conflicting changesets before sending them to connected clients.
 
-- 小结
-  - 先回顾linear sync engine的架构
-  - delta sync的实现细节: partial bootstrap
-  - 架构优化
-    - bootstrap is slow: lazy load model
-    - 分离 sync-server 和 graphql-api
-    - graphql-api oom: streaming rest api
-    - db bootstrap is slow: add mongodb as cache
-    - batch loader
+- [PostgreSQL: Documentation: 16: 55.4. Streaming Replication Protocol](https://www.postgresql.org/docs/current/protocol-replication.html)
+  - To initiate streaming replication, the frontend sends the `replication` parameter in the startup message.
+  - it tells the backend to go into physical replication walsender mode, wherein a small set of replication commands, shown below, can be issued instead of SQL statements.
+  - In either physical replication or logical replication walsender mode, only the simple query protocol can be used.
+  - [PostgreSQL: Documentation: 16: 55.5. Logical Streaming Replication Protocol](https://www.postgresql.org/docs/current/protocol-logical-replication.html)
 
-- benefits of sync
-  - performance
-  - realtime
-  - offline
-  - less notworking/persistence
-  - collab: undo/rebase
-  - less backend servers, local-first
+- [MySQL 8.0 Reference Manual :: 17 Replication](https://dev.mysql.com/doc/refman/8.0/en/replication.html)
+  - Replication enables data from one MySQL database server (known as a source) to be copied to one or more MySQL database servers (known as replicas). 
+  - Replication is asynchronous by default; 
+  - you can replicate all databases, selected databases, or even selected tables within a database.
+  - MySQL 8.0 supports different methods of replication. 
+    - The traditional method is based on replicating events from the source's binary log, and requires the log files and positions in them to be synchronized between source and replica. 
+    - The newer method based on global transaction identifiers (GTIDs) is transactional and therefore does not require working with log files
+  - [MySQL: Replication Protocol](https://dev.mysql.com/doc/dev/mysql-server/latest/page_protocol_replication.html)
+    - Replication uses binlogs to ship changes done on the master to the slave and can be written to Binlog File and sent over the network as Binlog Network Stream.
 
-- architecture
-  - object pool
-  - sync-engine builds object graph from object pool
-  - object graph reflects business models
-  - devs use object graph, not pool
-  - use mobx to tie ui to model object, ui auto rerender on model update
-- sync-engine not care where changes come from, processing local-change/network-change is the same
+## [RxDB replication protocol](https://rxdb.info/replication.html)
 
-- local models are in memory
-- when changes happen
-  - changes are packed into transaction
-  - tr is added to the tr queue
-  - tr is persisted on local disk, so works for offline page refreshing/replaying
-  - tr will be sent to backend
+- 支持websocket、graphql、couchdb、p2p
+- The RxDB replication protocol provides the ability to replicate the database state in realtime between the clients and the server.
+- The backend server does not have to be a RxDB instance; you can build a replication with any infrastructure. For example you can replicate with a custom GraphQL endpoint or a http server on top of a PostgreSQL database.
+- 👉🏻 RxDB resolves all conflicts on the client so it would call the conflict handler of the RxCollection and create a new document state D that can then be written to the master.
+- The default conflict handler will always drop the fork/client state and use the master/server state.
+  - This ensures that clients that are offline for a very long time, do not accidentally overwrite other peoples changes when they go online again. 
+  - You can specify a custom conflict handler by setting the property `conflictHandler` when calling addCollection().
+- It is not possible to do a multi-master replication, like with CouchDB. RxDB always assumes that the backend is the single source of truth.
 
-- view is a representation of object graph
-  - if object graph changes, views auto update
+## [Different approaches to p2p data sync](https://status-im.github.io/bigbrother-specs/data_sync/p2p-data-sync-comparison.html)
 
-- sync-engine goals
-  - faster dev/perf
-  - sync
-
-- usecase: a new user comes in
-  - user has no local data
-  - load data from backend
-  - clients receives and unpacks json blob
-  - client constructs model objects, and build object graph, flush to indexeddb
-  - clients load almost everything from server and save it locally
-- sync
-  - clients connect to sync server using websocket
-- transaction
-  - a client makes a change
-  - not store it local db immediately, for change has not been verified
-  - changes are optimistic ui, but not local db
-  - make change in memory, create a tr, send tr to server
-  - tr is persisted in local db
-  - if client goes from offline to online, all tr will be sent
-  - if server rejects tr, client will roll back changes
-  - tr queue 
-  - api will use sync actions to write to backend db table
-  - sync server will constantly fetch new sync actions table, and send to valid clients
-  - client receives realtime actions from sync server through websockets
-
-- if updated are sent multiple times, it works
-  - the second delete wont exec
-
-- linear reads from local db
-  - user may have more than local indexeddb, for multiple workspaces or multiple users
-  - local db has a hash version, for breaking changes
-  - local db contains tables for all model objects
-  - id is always key-path, always query by id of model-object
-  - value is json blob, contains data of model object, in `json0` format
-- there is metadata in tr table
-  - the last syncId
-  - sync action id is increasing
-  - client only cares id greater than itself
-- a dev changes a model property
-  - the model object is valid
-- for schema change, simply delete all the data that is part of the change
-  - if it's a big change, the user may wait longer
-  - the perf is good, but may be optimized
-
-- delta-sync(27:51)
-  - if we do a full bootstrap, we load all the data from server and then connects to websocket
-  - changes may happen between load and websocket
-  - **client will take the last syncId(like 3000) from local db, send it to the sync server**
-  - the sync server will send all server's changes like(3000-5000) to client, query server db, send big blob of data to client
-  - client receives sync updates, and do the rest
-
-- 🤔 delta sync may be heavy, if client comes back month later
-  - thousands of changes to each model object will be serialized as json and sent when client connects
-  - the server wants to be realtime
-  - whenever a new client connets, it will pause everybody else's updates and service
-  - if the clients has synced, server will continue reading sync actions to others
-  - the sync server is not involved in sending delta packets
-  - client requests delta sync to graphql api 
-- when a client connects, 
-  - client will load all data from backend as a full bootstrap, then connects to sync server using websocket
-  - client receives sync actions, but **queue them in memory before applying**, just keep adding to local queue
-  - while that happening, client makes another requests to graphql api with last syncId, 
-  - client receive from graphql api, apply to local db, then flush queue to local db, now client is realtime sync
-- this diagram is for the first year, but linear is growing
-
-- 🤔 bootstrap is taking a long time on the client
-  - if your org is big, the data is big
-- **partial bootstrap**
-  - comments are not shown until u navigate to screen
-  - client dynamically load model objects
-  - lazy collection
-    - 类似generator、从缓存读
-- if u know the collection is lazy, u can kick off hydration beforehand, or wait for the hydration to happen
-  - hydration means going to the local-db/network, u get a promise back, when promise fullfilled, u know everything is hydrated
-  - we get suspend boundaries, while hydrating, we render no fallback, just render nothing
-  - when hydration finishes, suspense will render the comments very quickly
-
-- optimize serialing mobx on those model object
-  - previously we observe all the model objects
-  - now we only observe model object when we access them, like finding model object by id, accessing collection
-
-- 🤔 the graph api is slow
-  - load most important model objects
-  - other model objects are delayed loading
-  - if lazy collection is not in local db, wait for promise
-
-- the graphql api is not slow, but crashing with oom
-  - we are running out of memory
-  - graphql is good for small op, but bad for huge op
-  - graphql needs to construct entire response in memory, it cannot stream anything, the response is a big blob having all data present
-  - linear workspace uncompressed might be something like 150mb, server has to keep it in memory
-- 👉🏻 introducing streaming rest api
-  - we add a new endpoint interally
-  - client will request to streaming api 
-  - streaming endpoint will make a streaming database connection to the database with the big query that contains everything for that user
-  - then it streams the response row by row from db to api, and sent to client, so memory consumption is low
-  - when client accepts, read data will be removed from memory
-
-- 🤔 full bootstrap is often, db suffers
-  - read from the replica, not main database
-  - the replica may be late/lag
-  - clients requests with last syncId
-- we add a new database as cache
-  - we tried google gcp bigtable, it turned out mongodb is faster
-  - we periodically save all the data in serialized format to mongo
-  - we take org by org(if enough changes), we take all the model objects for all the users, we serialize them and put them next to each other so that reads are fast
-  - instead of streaming from postgres, we stream from mongodb
-  - mongodb's data may be a bit older, but we have all the mechanisms for client to catch up with that data
-  - the data we write to mongodb contains the last syncId
-  - the streaming endpoints decides to go from mongo or postgres
-  - if no dump or too old, it will do it from postgres, and generate the dump at the same time
-
-- we move delta sync to streaming rest endpoint, that goes to postgres
-  - delta sync needs to be in realtime
-
-- streaming rest endpoint is a bit slow
-  - we add a batch loader
-  - we do a partial bootstrap when we load client's data, only the necessary data
-  - everything else is pushed to batch loader
-  - batch loader is a way to stream data in on demand from network
-  - instead of fetching from indexeddb, fetch from batch loader, it will load from indexeddb or streaming rest api
-  - batch loader will dedup requests
-
-- lazy-loaded Issue
-  - parent: `CachedPromise<Issue>`, if fullfilled, it will has value prop
-  - hydrate(): `Promise<Hydrated<Issue>>`, value is set after hydrated
-
-## [cs-repeat: linear sync__202002](https://www.youtube.com/watch?v=WxK11RsLqp4&t=2169s)
-
-- object graph
-  - 使用mobx进行state management, 自动更新view
-  - object graph支持object reference itself
-
-- object pool
-  - just normalize all your data structures into one pool
-  - there's one big array of all the objects that represent your entire dataset in your application
-- from this object pool, we are able to create this object graph, then pass this object graph to the views
-- there are 3 objects in the object pool, but there are 5 objects in the object graph
-- in the beginning, the object pool is empty
-  - somewhere stream data into the pool
-  - find team id in object pool, update user will update team, 在model层实现
-  - object pool里面的对象大多是扁平的
-  - object pool里面对象删除后，也会删除object graph对应的对象
-  - object pool里面的crud都会自动更新object graph，然后自动更新view
-
-- transaction queue
-  - view触发的changes先在前端执行，然后才发送到后端
-  - 如果后端accept change，因为前端已执行，就不返回数据信息
-  - 如果后端reject change，因为冲突、权限等原因，transaction持有旧数据，可以用来回滚，此时界面可能有闪烁
-- realtime sync更适合后端不拒绝的场景，这样回滚闪烁会较少
-  - 前端先乐观更新
-  - figma team实践出的结论也是这样的
-
-- backend to frontend
-  - backend has a queue of all the changes made to the database
-  - backend broadcast changes to clients
-  - 客户端的change会发送到后端，后端会发送给其他客户端
-
-- optimization： object store
-  - 在前端持久化数据
-  - every change from backend gets stored locally in the indexeddb
-  - clients reload/刷新时，不会从后端请求数据，而是在启动时先从本地idb构建object pool, 然后再连接到后端，后端再发来数据
-  - 如果离线时间过长，后端发来的数据就较多，此时前端已经展示数据了
-  - transactions也是这样，本地也持久化了所有transaction，刷新客户端时，会更新objects和transations
-- 支持offline mode，恢复在线后，本地持久化的transactions会被发送到后端
-
-- entire workflow(01:07:45)
-  - 启动时从local db创建object pool
-  - 根据decorator从object pool创建object graph, render view
-  - 更新issue时，通知object pool属性更新了, create transaction 发送到后端，后端发送给其他客户端进行同步更新object pool
-
-- 客户端更新数据很简单，类似setState(newData)，sync engine会处理同步、持久化、冲突等问题
-
-- discussions
-
-- 离线冲突的问题
-  - 默认last-write-win
-  - 更多是业务逻辑问题，而不是技术问题
-  - 在linear llw可以work，但在groupon的交易冲突时会提示用户选区版本
-
-- ## When we started work on @linear , we felt real-time sync was a core functionality we had to invest in from the get-go. 
-- https://twitter.com/artman/status/1558081796914483201
-  - It turns out sync was important, but not for the reasons we thought.
-- Our gut feeling was that real-time updates were required from a modern tool like Linear. Who wants to refresh to see the latest data? But how often do you find yourself in a situation where multiple people update data simultaneously in a project management tool?
-  - Not that often, it turned out. Aside from special cases where your team gets together to operate on data - like planning your next cycle - edits are made across the entire dataset, with the same data being touched at the same time relatively infrequently.
-  - 👉🏻 Don’t get me wrong, we still believe that real-time sync is essential, 
-  - but there are two more valuable things we got out of real-time sync that we did not appropriately anticipate: **App speed** and **Ship speed**.
-- Amen! Noticed the same while working on http://syncedstore.org and yjs; being forced to really separate the data layer for sync comes with many additional benefits (local first, pluggable storage, dev speed etc)
-
-- 👉🏻 The most straightforward way to implement real-time sync is to load the entire app state and then keep it up-to-date with real-time changes. 
-  - While we’ve had to add complexity to this simple initial implementation to support larger workspaces, the core tenant/tenet still holds.
-  - Clients have the vast majority of their workspace data stored locally. Hence page loads are all but eliminated. As a result, startup times are fast, filters work instantly, and there are no page loads.
-- So how well do you handle large workspaces now?  When I first talked about to you about the impl I always wondered what the design would end up being for large corps.
-  - We do handle them pretty well, at least from the realtime sync aspect. A few more major changes and then we can pretty well scale to any kind of company size while keeping sync active for the data you are usually interested in.
-- I’m curious to know if you are planning to modify the engine to improve the experience for large workspace, the current architecture of loading all data doesn’t seem to scale. Would loading only a subset of the data break the nice abstraction that the sync engine seems to give?
-  - 🤷🏻 no answer yet
-- How do startup times stay fast when loading the entire state to the client?
-  - We first load data that you’ll immediately need, and then selectively stream in data that your likely to access next. And results are stored, so only the first load will be a bit slower.
-- Noted, thank you. Do you store on localstorage, so the next full load will be faster? Or by first load do you just mean first request in the browser lifecycle?
-  - We store the users dataset in IndexDB, which is really the only viable option, yet is not very good for relational data.
-- 🤔 But what if the size of the data gets really large? Like the data from many years… Is still everything loaded into the local storage?
-  - No. When the dataset gets larger we selectively preload only the data your likely to access into the local database, and the dynamically load data that you access outside of this dataset.
-
-- But arguably even more essential and surprising was that real-time sync helped us ship new functionality much faster than regular architectures. How? By eliminating a vast swathe of complex and error-prone code.
-- 👉🏻 Sync automatically takes care of generating API calls, creating transactions, applying them on the backend, handling conflicts and errors, reverting erroneous changes, rebasing in-fight changes, and offline capabilities.
-  - To create a new feature as an engineer, you essentially render and modify local in-memory data structures to build new functionality. 
-  - All the complexity that comes with requests, conflicts, network errors and retries are handled by sync for free.
-- All UI code automatically re-renders when the data that they accessed updates. Whether the data changes come from the user or the network doesn't matter. So you get multi-player for free, too.
-- As you can imagine, reducing the number of layers engineers have to work on dramatically improves the speed at which we can ship new functionality. After experiencing this architecture at scale, I'm spoiled for life.
-- For a pretty old - but still relevant - talk on our sync engine, check out
-
-- Linear is great! What did you use specifically for sync and did you roll out all the reconciliation code yourself or did you leverage other tools?
-  - ws for sockets, and idb to make working with IndexDB a bit more pleasant, but other than that it’s a custom solution.
-
-- 🤔 How do you see this scaling down the road? You mentioned some modifications for larger workspaces. I suppose there are a lot of assumptions built on top of the current sync engine. If you need to radically update it in the future, wouldn't that force a huge client re-write?
-  - Data access in most places is already async and the sync client has three tiers of data: in memory, local database and network. Client code is agnostic to where the data is coming from. Was a a lot of work, but that’s really the scaling story.
-- Do you think it could work for an app with much more content, for example something like Notion or Confluence? Could be difficult to maintain a full copy of everything on every device, especially on smartphones. Same problem as hit monorepos  too big to be cloned.
-
-- It turns out that a sync engine is actually a much more general solution because of functional purity and managed effects. Essentially you move all the effects (async calls) into the sync engine service layer.
-
-- when will linear open source the react-query for sync?
-  - Haha there are also a lot of other options: replicache, http://convex.dev, http://clientdb.dev, a new one called aphrodite
-# discuss-partial-sync
 - [Different approaches to p2p data sync · status-im/bigbrother-specs_201903](https://github.com/status-im/bigbrother-specs/blob/master/data_sync/p2p-data-sync-comparison.md)
   - 支持partial replication的有: Matrix, Swarm, Briar, Bramble
 
-- ## 
-
-- ## 
-
-- ## [Priority Accumulator for partial and selective replication of entities · lifescapegame/bevy_replicon_202309](https://github.com/lifescapegame/bevy_replicon/issues/57)
-- We decided to implement it as part of [Rooms · lifescapegame/bevy_replicon](https://github.com/lifescapegame/bevy_replicon/issues/15)
-- 💡 The design we are considering assigns one room per entity. For this use-case you'd chunk the entities into rooms (as small as one or zero entities per room), then adjust which rooms each player is a member of.
-
-- ## [ElectricSQL and PowerSync are both tackling the very hard problem of partial replication.  | Hacker News](https://news.ycombinator.com/item?id=38492085)
-- The idea is to build a general solution which allows a traditional centralized db to bidirectionally sync only what's needed on the client side - while still supporting optimistic mutations (and all the consistency/conflict stuff that goes along with that).
-
-- ## [PowerSync - Show HN: Bi-directional sync between Postgres and SQLite | Hacker News](https://news.ycombinator.com/item?id=38473743)
-- PowerSync Service handles the complexities of dynamic partial replication of the database to different users. In our announcement blog post we wrote a bit more about the trade-offs and design considerations
-  - see section "A scalable dynamic partial replication system"
-
-- ## [IndexedDB chunkstore · attic-labs/noms](https://github.com/attic-labs/noms/issues/2602)
-- At the moment people use pouchdb and other things to enable offline first apps, but sync back to the server is less than stellar(杰出的) in terms of options, and couchbase is pretty tough to work with IMHO.
-  - And lastly i can use gopherjs and bind to the JS NOM OR to the golang noms.
-  - I guess you need to abstract a file system into a indexeddb, which is not a huge feat.
-
-- ## [Syncable: possible collaboration · dexie/Dexie.js](https://github.com/dexie/Dexie.js/issues/397)
-- What my library does is synchronize with the server every couple of minutes but the server is offline most of the time. 
-  - I use a timestamp to know what to synchronize and the data update is done automatically, the user does not have to define how to do the update.
-- Your use case seems similar to that of Dexie. Syncable - background sync that just happens when online without the user having to think about it. 
-  - With Dexie. Syncable, the user is just using Dexie in the same way as if the addons weren't present but Dexie. Syncable will continuously keep the database in sync with the server bidirectionally.
-
-- I want to implement partial data sending but I'm not sure I understood the concept correctly.
-  - clientIdentity is essential for the server to be able to buffer uncommitted changes
-
-- ## [Implementing Dexie. Syncable ISyncProtocol · dexie/Dexie.js](https://github.com/dexie/Dexie.js/issues/901)
-- As what I recall partial changes are put in an intermediate table named "uncommittedChanges".
-  - as I recall, the Dexie. Syncable framework should directly start another sync in case it was part partial so it continues to recieve data until partial is false. Then the framework should commit the uncommitted changes into the db.
-- I did implement partial also for server -> client
-  - Client sends the latest revision it got from the server. When using partial for server -> client, the server returns only a part of the array and the latest revision is the newest element in the partial array. Next time the client requests data with that revision, the changes are newly calculated. The server also tells the client that it was a partial data set so that the client can immediately request more data.
-
-- ## [Partially synced patterns · WordPress/gutenberg](https://github.com/WordPress/gutenberg/discussions/50456)
-- [The `wp:pattern` block](https://github.com/WordPress/gutenberg/issues/48458)
-
-- Partially synced mode is different. When a pattern that's partially synced is inserted, it retains a reference to the source pattern. The blocks within the pattern are locked so that they cannot be removed or reordered and new blocks cannot be inserted (this is called contentOnly locking). Only specific parts of the pattern considered 'content' can be edited (denoted by adding __experimentalRole: 'content' to a block's definition).
-
-- The concept of partial syncing could be considered as similar to the way a handlebars, mustache, or other templating system works.
-  - For partially synced patterns, I think it's also important that the data (the values of 'content' attributes) is kept separate from the template (the source pattern). This way, the data can be interpolated or injected into the pattern to produce the resulting HTML.
-
-- ## [[Sync] Allow for partial push · Nozbe/WatermelonDB](https://github.com/Nozbe/WatermelonDB/issues/206)
-- Three ideas come to mind, from simplest to hardest:
-- Just Sync Everything — like I suggested before. 
-  - I think in most cases there's just no harm in this, and only benefits.
-- Per-collection sync enable — currently ALL tables (except for magic localStorage table) are synced. 
-  - I think a lot of apps might have a need for tables for local stuff (needing more complex stuff than LocalStorage provides), so it's reasonable to add a parameter to synchronize() to point to which tables to sync / skip syncing. 
-  - This complicates your code, since you'd need to have two classes — one for synced orders, one for draft orders. 
-  - But I think you could easily manage it with subclassing (AbstractOrder extends Model; Order extends AbstractOrder; DraftOrder extends AbstractOrder — the first would have most of the common logic, and the other two would just have stuff like publish() etc.)
-- New sync status — currently there's created, updated, deleted (local changes waiting to be pushed) and synced (no local changes since pulled). 
-  - There could also be draft. 
-  - Your app would be responsible for managing such status — as this is much simpler on Watermelon's end and more versatile for apps with different needs. 
-  - Needless to say, records would be recognized by client as changed if draft, but would not be pushed until changed to created. 
-  - This seems doable, but further analysis is needed. And lots of tests if one was to implement it
-
-- ## [Initial Sync Download · Nozbe/WatermelonDB](https://github.com/Nozbe/WatermelonDB/issues/650)
-- My first idea was to limit the sync size to a number of versions (or timestamps as per the default implementation) so it chunked the data. 
-  - Once i tried this i quickly realised that i cannot guarantee how much data is between the 2 timestamps/versions as the data may or may not have been added to certain tables, therefore impossible to gauge.
-  - So the core of the problem is that there is a risk of passing too much data between a server and a device, so i decided it would be better to calculate the size of the data between 2 versions and store this in a table. version_from	version_to	size
-
-- ## [vlcn: Partial CRR Sync](https://vlcn.io/docs/networking/partial-crr-sync)
-- While it is possible to implement partial sync with the primitives available to you today, it is not advised and not supported. 
-  - In Q3/Q4 2023 we will be releasing primitives specifically intended to support partial sync, row level security, and large scale multi-tenant databases.
-
-# discuss-partial-sync-couchdb/mongodb
-- ## 
-
-- ## 
-
-- ## 
-
-- ## [Notes on CouchDB architecture | Kaggle](https://www.kaggle.com/code/residentmario/notes-on-couchdb-architecture)
-- CouchDB maintains sequence numbers for the purposes of replication. The sequence number is a tracker of state equivalence, less failures. Replication failures, when they occur, are simply logged. A replication is not considered complete until the keys that still need to be replicated are carried over. All of this also means, by the way, that partial replication is possible, and that you can have a database in an indeterminate intermediate state. So replications are not atomic. Fun times!
-
-- ## [Does CouchDB really keep a whole replication of the database on the client-side too? : CouchDB_202211](https://www.reddit.com/r/CouchDB/comments/yr7w3u/does_couchdb_really_keep_a_whole_replication_of/)
-- So you can do this kind of partial replication using filters (it's discussed with PouchDB here: https://pouchdb.com/api.html#filtered-replication ). The only real caveat to it is that deletes need to be handled either by the filter (always pass through _deleted entries) or by not wiping the fields used for the filter when deleting.
-  - There's not much in the way of what I'd call "cached" replication built in. Where you'd address a single interface that then checks local+remote and does the sync for you in the background to just keep what you need locally. Or cache eviction (e.g. purge documents locally only, that aren't needed). Those are more exercises for the reader/app developer.
-
-- [1.1. Technical Overview — Apache CouchDB® 3.3 Documentation](https://docs.couchdb.org/en/stable/intro/overview.html)
-  - Partial replicas can be created and maintained. Replication can be filtered by a JavaScript function, so that only particular documents or those meeting specific criteria are replicated. This can allow users to take subsets of a large shared database application offline for their own use, while maintaining normal interaction with the application and that subset of data.
-
-- ## [how to to do partial (descending)l sync? F.e. chat messages](https://github.com/pouchdb/pouchdb/issues/8221)
-  - Imagine I have chat app, and chat may have potentially million of messages in a room. What is a best practice to sync such a database to web browser? Is it possible to sync f.e. last 1000 messages, then if user scrolls, resync last 2000 messages?
-  - As I understand I can achieve this passing query_selector to replicate method, but the question is, will it resync items with sequence_number lower then last sync? I mean will it sync oldest messages after newer message was synced?
-
-- You can use filtered replication
-
-- ## 🤔 [I created PouchDB. After a year... | Hacker News_202009](https://news.ycombinator.com/item?id=24355263)
-- I created PouchDB. After a year or so I handed that project off to some great maintainers that made it much better as I had grown a little skeptical of the replication model and wanted to pursue some alternatives.
-- It’s been about 10 years, much longer than I thought it would take, but I have a young project that finally realizes the ideas I had back then.
-- 👉🏻 **Sometime after PouchDB was created I realized that it just wasn’t going to work to replicate a whole database to every client**. 
-  - In fact, even a view of the database wasn’t going to work, because the developer isn’t in a position to really understand the replication profile of every user on all of their devices, you need a model that has partial, or more accurately “selective” replication based on what the application accesses in real time.
-- I became convinced that the right primitives were already present in git: merkle trees. Unfortunately, git did a very poor job of surfacing those primitives for general use and I wasn’t having much luck finding the right approach myself.
-- Shortly after joining Protocol Labs I realized they had already figured this out in a project called IPLD. Not long after that, I started leading the IPLD project/team and then putting together my ideal database whenever I found a free moment.
-- It’s very young, lots of missing features, still working on some better data-structures for indexing, but **it is very much a database that replicates the way git does and approaches indexing over a primary store the way CouchDB does, but there’s a lot more too**.
-- With these primitives we can easily **nest databases inside of other databases** (and create unified indexes over them) and we can easily extend the data types in the database to user provided types. Using some of these features it already supports streams of binary data, databases in databases, and linking between pieces of data.
-
-- dagdb /133Star/MIT/202010/js/leveldb/git/inactive
-  - https://github.com/mikeal/dagdb
-  - DagDB is a portable and syncable database for the Web.
-  - It can run as a distributed database in Node.js, including using AWS services as a backend.
-
-- ## [CouchDB 2.1.0 | Hacker News](https://news.ycombinator.com/item?id=14950060)
-- If you are looking for something like CouchDB but only syncs partial subsets of the data you request (rather than the whole thing), try checking out gundb
-
-- ## [PouchDB, the JavaScript Database That Syncs | Hacker News_201612](https://news.ycombinator.com/item?id=13101870)
-- PouchDB's replication capability is interesting, but is there a way to make it lazy load to the local DB instead of doing everything up front? I hesitate to use it for a web project with 10+ MB of docs where it would otherwise be ideal.
-- You can provide a **server-side filter function** to replication and progressively filter partial replications until eventually everything gets replicated. At that point it becomes a question of architecture of your documents: how much is needed to replicate before a user may be productive?
-  - You can also explore **pouchdb-replication-stream** to build bundles that PouchDB can bootstrap from a little bit faster than a chatty replication.
-  - That said, I've found initial replications of large databases (one I've worked with this week is a 25+ MB CouchDB database full of photos) is quick enough (and mostly bandwidth constrained) that I haven't had much in the way of concern over it.
-
-- ## [Limit records synchronized in PouchDB/CouchDB - Stack Overflow](https://stackoverflow.com/questions/38834877/limit-records-synchronized-in-pouchdb-couchdb)
-- Yes you can, use filtered replication 
-
-- ## [Partial syncing in pouchdb/couchdb with a particular scenario - Stack Overflow](https://stackoverflow.com/questions/39536131/partial-syncing-in-pouchdb-couchdb-with-a-particular-scenario)
-- If you take a look at the PouchDB documentation, you should see the options.doc_ids. 
-  - This parameter let you setup a replication on certain document ids. 
-
-- ## [Everything You Know About MongoDB Is Wrong | Hacker News_202011](https://news.ycombinator.com/item?id=25216530)
-- The mongo I'm dealing with now scales by database. Each entity has between 20-100GB of data in its own database; we're adding entities continually. If I try to replicate for performance, I'll be replicating everything--there's no selective replication. If I shard, I'll be sharding within a collection, which is the equivalent of striped RAID--great if that's what you need. I don't. I need to shard at the database layer. I need my queries routed according to the database at which they're aimed, not by the sharding key. Can I? Not a chance in hell with any of the existing scaling mechanisms from Mongo. My current mongo VM is already the largest Azure offers. How do I add more RAM to that?
-
-- ## 🤔 [mongodb: Query Based sync support?](https://www.mongodb.com/community/forums/t/query-based-sync-support/5329/2)
-- MongoDB Realm currently(202006) only supports full sync.
-  - The team is considering how to architect more flexible sync options in future, but there isn’t a specific timeline for this yet
-
-- We are still(202103) a long way away from launching query-based sync 2.0 with a more flexible syncing API. 
-  - My suggestion would be to **use partition-based sync** and not wait as we will not have QBS production ready before the legacy realm cloud shuts down.
-
-- [The timing for supporting partial synchronization](https://www.mongodb.com/community/forums/t/the-timing-for-supporting-partial-synchronization/4116)
-  - Since it is uncertain when partial sync will be supported, we will move data from the partial sync realm to the full sync realm.
-# discuss-solutions
+- Briar Bramble
+- Matrix
+- Secure Scuttlebutt (SSB)
+# discuss-sync-solutions
 - ## 
 
 - ## 🚀 [Ditto: Real-time sync for apps even without the internet | Hacker News_202209](https://news.ycombinator.com/item?id=32934849)
@@ -452,7 +99,8 @@ modified: 2022-11-29T20:41:25.566Z
   - We use multihop ad hoc network connections! That’s the BIG thing that we add to the mix!
   - A) PouchDB, Couchbase, Firebase, Realm are all databases that can sync to a "master" node in the cloud.
   - B) AODV and BATMAN are really an ad-hoc mesh networking and routing protocol.
-  - Ditto is both A and B. You work with Ditto as a database on your mobile, IoT, web app with common database functions (querying, updating, deleting etc...) and we will sync the changes between edge and cloud devices. Most developers cannot sensibly use AODV and BATMAN to build robust collaborative applications, it's too hard. We abstract all of the routing, network resiliency, and replication away from you; just work with the database
+  - Ditto is both A and B. You work with Ditto as a database on your mobile, IoT, web app with common database functions (querying, updating, deleting etc...) and we will sync the changes between edge and cloud devices. 
+  - Most developers cannot sensibly use AODV and BATMAN to build robust collaborative applications, it's too hard. We abstract all of the routing, network resiliency, and replication away from you; just work with the database
 
 - 
 - 
@@ -471,7 +119,7 @@ modified: 2022-11-29T20:41:25.566Z
 - CouchDB seems like the closest solution, if you can design a conflict-free model. But I spent the last week getting into the details of actually operating a multi-user service, and I am now quite thoroughly spooked!
 - I've noticed that a lot of modern solutions to this problem assume that it's viable to read the entire data store from disk into memory on load (and, often, write the entire thing on save)—which I guess is a nice simplifying assumption… but quite limiting!
   - Microsoft sync framework (for all of its flaws) had so much of this solved 10+ years ago but because it’s such a complex problem, solving it generally like MSF did required a complex solution.
-- Happy to discuss my approach with @actualbudget :) Uses CRDT-based data that is stored in local sqlite that is query-able with normal sql queries. Seamlessly syncs in background. Uses hybrid local clocks & merkle tries to verify.
+- Happy to discuss my approach with @actualbudget. Uses CRDT-based data that is stored in local sqlite that is query-able with normal sql queries. Seamlessly syncs in background. Uses hybrid local clocks & merkle tries to verify.
   - Yeah, that's roughly the approach I'm using… but jeez, so much complexity—so painful.
 - There's definitely space for a this to be abstracted away. imho, the tradeoff of this complexity is a powerful model for features like undo. Worth it for me.
 - Founder of @FISSIONcodes here. We designed a file system on top of IPFS
@@ -522,7 +170,7 @@ modified: 2022-11-29T20:41:25.566Z
 - there's LiteFS which is like Litestream but better. Rather than async writing your sqlite db to some replica, LiteFS actually reads each *transaction* (each change) and stores them and replays them. This allows for cool things like rollbacks since LiteFS has all of history.
   - Now what's wild is how LiteFS pulls this off: they run a separate process that reads directly from the filesystem (using FUSE) to watch the sqlite db (sqlite dbs are just one giant file, remember!) for changes, then nabs them as they happen.
 - Q: If a sqlite database is normally stored in a file on the file system and browsers don't have file systems, how does sqlite-wasm store the db?
-  - A: 😱 local-storage and session-storage, ofc! pretty gnarly limitations: <5mb, strings only, etc
+  - A: local-storage and session-storage, ofc! pretty gnarly limitations: <5mb, strings only, etc
   - 💡 OPFS runs in a worker thread, so it doesn't block the main thread, which allows the UI to be more responsive.
   - opfs只支持worker的api: createSyncAccessHandle(), FileSystemSyncAccessHandle
 

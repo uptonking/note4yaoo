@@ -141,6 +141,8 @@ $$('[contenteditable]')
   - 使用hlc: idbsidesync, verdant, harika
   - 结合hlc+crdt: idbsidesync, evolu, rga-crdt
   - 结合hlc+db: piratedb, tinybase, kappa-db-stream, linvodb
+  - hypercore: partial-sync
+- event-sourcing
 
 - undo/redo与branching可拆分实现
   - undo与versioning/history基于persistent data structure

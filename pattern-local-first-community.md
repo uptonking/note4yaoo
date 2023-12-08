@@ -416,6 +416,9 @@ modified: 2023-09-13T20:24:41.516Z
 - I think Oracle APEX works on the same premise? Store locally in indexedDB and sync up when the connection is back on-line. No need for difficult programming, APEX does this out of the box .
   - Anyhow, a way to force this behaviour in APEX is to make every user interaction a write action on the DB. This way you either save locally or to the backend (but you don't have to worry about the sync between the two).
 
+- 🤔🛢️ Has anyone used ObjectBox in anger and can share their experience?
+  - I experimented with ObjectBox a bit, but I decided against using it because it isn't open source. The language wrappers are apache2 but the core library is only provided as a binary blob. I think this is bad because you can't inspect how it works, fix bugs, port it to new archs, integrate it fully into your build system, etc. Also, every cursor operation must call into their function entry points (as opposed to being inlined in your code for example).
+
 - ## How many records can you sort/filter/paginate in a web browser?
 - https://twitter.com/jamespearce/status/1605273072851886090
 - tinybase: Without breaking a sweat: 10, 000 word corpus for client-side autocomplete

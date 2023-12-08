@@ -11,7 +11,16 @@ modified: 2021-09-22T04:13:22.341Z
 
 - ## 
 
-- ## 
+- ## JS animations can do things CSS can't, like animate independent transform axes with spring animations. 
+- https://twitter.com/mattgperry/status/1733091360809304375
+  - The problem is they need JS to download first. 
+- In Framer, we inline a tiny script that can generate these spring keyframes and animate them on the GPU via WAAPI.
+  - When React hydrates, Framer Motion creates animations for each transform. These can all be interrupted independently by hover effects etc
+- We run the WAAPI animation for an extra frame that is meant to "paste over" the very heavy lifting that tends to happen in useEffect but this isn't always enough. So with v2 we carry on playing the WAAPI animation **and** create the independent JS animations. Why?
+  - WAAPI animations override any changes to style so this animation is completely smooth even during a busy hydration. 
+  - The key is, when we want to interrupt one of these transforms, only then do we cancel the WAAPI animation
+- Any tiny mismatch in timing is much less noticeable here as it's a point of user interaction where some (or all) values are being interrupted.
+  - Also by popping off the WAAPI animation to simply "reveal" the other transform animations we don't need any big changes in Motion
 
 - ## Did you know @Framer Motion isn't just a React animation library? 
 - https://twitter.com/mattgperry/status/1645797584999682058

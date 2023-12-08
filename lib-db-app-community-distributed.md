@@ -93,7 +93,13 @@ modified: 2023-10-26T19:04:00.318Z
 
 - ## 
 
-- ## 
+- ## DuckDB is great, but switching my code from single-node processing to distributed processing should be a no-brainer and invisible to me, like switching a flag. 
+- https://twitter.com/ananthdurai/status/1733040083056701865
+  - What to do with the current duckdb ecosystem to enable it? Is PySpark api support the answer for it?
+- Write everything in SQL and then use SQLGlot to auto-transpile to Spark if you ever need it.  If you can avoid it, I wouldn't recommend using the Pyspark API (in duckdb or spark) because you get locked into it https://
+
+- Check clickhouse-local.
+  - Apart from clickhouse, if you use compute engine agnostic storage format (e.g. delta) and compute engine agnostic transformations engine (e.g. dbt), migration should be as easy as swapping?
 
 - ## 6 Load Balancing ALGORITHMS you Must Know
 - https://twitter.com/AmigosCode/status/1725507946950344949

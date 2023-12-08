@@ -12,6 +12,28 @@ modified: 2023-09-13T14:37:51.659Z
 # blogs
 - [kappa architecture vs event sourcing](https://github.com/tschudin/ssb-icn2019-paper/issues/6)
 
+## 👨🏻‍🏫 microsoft-learn event sourcing
+
+- [Event Sourcing pattern - Azure Architecture Center | Microsoft Learn](https://learn.microsoft.com/en-us/azure/architecture/patterns/event-sourcing)
+- [Materialized View pattern - Azure Architecture Center | Microsoft Learn](https://learn.microsoft.com/en-us/azure/architecture/patterns/materialized-view)
+- [CQRS pattern - Azure Architecture Center | Microsoft Learn](https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs)
+
+- 📕 [Exploring CQRS and Event Sourcing_201207](https://learn.microsoft.com/en-us/previous-versions/msp-n-p/jj554200(v=pandp.10))
+  - The project is focused on building highly scalable, highly available and maintainable applications with the Command & Query Responsibility Segregation and the Event Sourcing patterns.
+
+- https://github.com/MicrosoftArchive/cqrs-journey /201207/csharp
+  - http://cqrsjourney.github.com/
+  - Microsoft patterns & pratices CQRS Journey sample application
+
+## [Implementing event sourcing using a relational database_202106](https://softwaremill.com/implementing-event-sourcing-using-a-relational-database/)
+
+- Event sourcing is a pattern in which a stream of events constitutes the primary source of truth in a system. These events capture facts — state changes that occur to the entities and aggregates in our system — and hence are immutable
+
+- This article is an extension of the "transactional event sourcing" mechanism I've written about before and presents step-by-step how to implement event sourcing using a relational database as well as event sourcing best practices
+
+- Snapshots are a special type of a projection, which store the entire reconstructed state of each stream (of a given type)
+- Instead of a snapshot, it might be easier to maintain a consistent projection, containing partial state data, especially as the events evolve. This is also the topic of the next section on migrations.
+
 ## [Picking the Event Store for Event Sourcing_202105](https://blog.jaykmr.com/picking-the-event-store-for-event-sourcing-988246a896bf)
 
 - In a relational database, event sourcing can be implemented with only two tables, 
@@ -27,7 +49,7 @@ modified: 2023-09-13T14:37:51.659Z
 - Spreadsheets can be kept clean, clear, extendable, by organizing them with ideas from Event Sourcing.
   - It is an architecture to clearly distinguish logic from input from presentation in a spreadsheet. 
 
-## 🌰 [Building offline-first web and mobile apps using event-sourcing_201907](https://flpvsk.com/blog/2019-07-20-offline-first-apps-event-sourcing/)
+## 🌰📝 [Building offline-first web and mobile apps using event-sourcing_201907](https://flpvsk.com/blog/2019-07-20-offline-first-apps-event-sourcing/)
 
 - 👥 discussion
 

@@ -247,6 +247,16 @@ git log -- path/to/folder
 - 每次合并远程分支后，会出现干扰性commit
   - merge branch main of github.com:user/repo
   - 使用git rebase解决
+
+## github-cli
+
+- 自动 sync 所有 fork
+
+```shell
+# https://twitter.com/tison1096/status/1732739063810334796
+gh repo list --fork --visibility public --json owner,name | jq -r 'map(.owner.login + "/" + .name) | .[]' | xargs -t -L1 gh repo sync
+```
+
 # java相关
 - maven编译
   - 编译异常后解决了继续上次编译： `mvn <args> -rf :pdi-ce`

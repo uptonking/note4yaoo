@@ -99,7 +99,11 @@ modified: 2023-11-10T07:30:17.500Z
 
 - ## 
 
-- ## 
+- ## 💡 Fast Buffer-to-String conversion in JavaScript with a Lookup Table
+- https://twitter.com/lemire/status/1732999134280314978
+  - When programming in a JavaScript environment such as Node.js, you might recover raw data from the network and need to convert the bytes into strings. In a system such as Node.js, you may represent such raw bytes using a Buffer instance.
+  - You can conveniently convert a Buffer instance into a JavaScript (mybuffer.toString()). But, maybe surprisingly, creating new strings can be a bottleneck. Thus a worthwhile optimization might be to try to recognize that your incoming bytes are one out of a list of known strings.
+  - [Fast Buffer-to-String conversion in JavaScript with a Lookup Table – Daniel Lemire's blog](https://lemire.me/blog/2023/12/08/fast-buffer-to-string-conversion-in-javascript-with-a-lookup-table/)
 
 - ## Has anyone written anything in depth outlining the mental model you should use when passing things between node and napi-rs, 
 - https://twitter.com/adamwathan/status/1615500615236616192

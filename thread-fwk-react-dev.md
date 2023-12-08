@@ -116,7 +116,13 @@ modified: 2021-01-06T14:40:03.364Z
 # discuss
 - ## 
 
-- ## 
+- ## 🆚️ I wished React would expose a primitive function for state branching. 
+- https://twitter.com/dai_shi/status/1732533198855537083
+  - At this point, there's a trade-off between uSES and useState/useEffect. 
+  - Zustand uses the former and Jotai uses the latter.
+  - Although, the trade-off is rather trivial. It's what I call "temporary tearing on mount". 
+  - I think I confused the discussion a little bit. For state branching, it's impossible for external stores in any case. For startTransition, it's a trade-off with external stores: a) de-opt, or b) tearing.
+  - [Why useSyncExternalStore Is Not Used in Jotai · Daishi Kato's blog](https://blog.axlight.com/posts/why-use-sync-external-store-is-not-used-in-jotai/)
 
 - ## I'm convinced that React's concurrent rendering model is fundamentally at odds with fine-grained reactivity/updates/rerendering.
 - https://twitter.com/tannerlinsley/status/1732474127712481371

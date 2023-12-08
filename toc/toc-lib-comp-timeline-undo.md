@@ -235,3 +235,5 @@ modified: 2023-11-24T18:41:26.906Z
   - 可用于构建动画编辑器、视频编辑器等。
   - 提供强解藕的运行器能力，可脱离编辑器独立运行。
   - 依赖interactjs、react-virtualized
+
+- [MyLens - One Timeline, Many Histories.](https://mylens.ai/)

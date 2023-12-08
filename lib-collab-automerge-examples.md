@@ -44,6 +44,7 @@ modified: 2023-09-01T10:18:14.842Z
 ## automerge-hypercore
 
 - https://github.com/extendedmind/peermerge /rust
+  - https://codeberg.org/convivialsoftware/peermerge
   - Peer protocol (hypercore or p2panda) + Automerge in Rust
 
 - https://github.com/Ruulul/automerge_hypercore_demos /js

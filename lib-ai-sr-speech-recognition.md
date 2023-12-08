@@ -89,6 +89,11 @@ modified: 2023-02-07T09:22:03.120Z
   - 社区有一个发展了多年的音频处理工具包，pyannote-audio，它具备非常强大的音频分析、处理、识别和分类能力，在多人同时讲话的时候，也可以很准确地区分说话者内容，只不过它的 ASR 能力还是比不过 Whisper。
   - 有人想到结合两者的能力，并做了一个工程化的实践
 
+- https://twitter.com/Barret_China/status/1733060966940922194
+  - OpenAI 开源的 Whisper 在语音识别和翻译的工作上几乎达到了商用效果，但仍然存在一些问题，例如不能区分多人说话，尤其是声音重叠部分
+  - Diart，https://github.com/juanmc2005/diart，是优化方案的一个代码实践，它构建在 pyannote-audio 模型之上，专为实时音频流（例如来自麦克风）而设计，能够以较强的性能实时地识别不同的说话人，效果非常不错。
+  - 可以试试 https://github.com/m-bain/whisperX 整合方案
+
 - ## 现在的视频翻译突然间火了，推友们，可以告诉我使用了什么技术吗？
 - https://twitter.com/lxfater/status/1718639301813215543
 - VideoReTalking：让视频中的人物的嘴型与输入的声音同步。

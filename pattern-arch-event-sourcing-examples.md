@@ -33,7 +33,7 @@ modified: 2023-09-12T09:37:22.608Z
   - Other implementations: DAO, Sequelize, Service
   - https://github.com/Judahh/sequelizePersistence
 
-- https://github.com/oskardudycz/EventSourcing.NodeJS /ts
+- https://github.com/oskardudycz/EventSourcing.NodeJS /MIT/ts
   - Examples and Tutorials of Event Sourcing in NodeJS
   - I already have samples of Event Versioning and Snapshots in my sample repo. 
   - [Introduction to Event Sourcing - Self Paced Kit_202203](https://event-driven.io/en/introduction_to_event_sourcing/)
@@ -51,6 +51,9 @@ modified: 2023-09-12T09:37:22.608Z
   - persist and access all relevant events within your domain, in an “immutable” store
   - subscribe to events that are committed to the store
   - Aggregate snapshots allow you to store the state of aggregate instances manually and/or at given version intervals. This allows for more efficient loading of aggregate instances with a large number of commits.
+
+- https://github.com/JamesKyburz/level-eventstore /apache2/202008/js/inactive
+  - eventstore implemented using leveldb-mount, leveldb and level-logs
 
 - https://github.com/reimagined/resolve /MIT/202212/ts/提供了很多示例
   - https://reimagined.github.io/resolve/
@@ -630,7 +633,7 @@ modified: 2023-09-12T09:37:22.608Z
 - https://github.com/nivinjoseph/n-domain /ts
   - Domain Driven Design and Event Sourcing based framework for business layer implementation.
 
-- https://github.com/cms-DQM/runregistry /js
+- https://github.com/cms-DQM/runregistry /202307/js
   - run registry is a full-stack javascript application. 
   - With a frontend built with React and a backend built with Node.js, it uses a PostgreSQL database instance running in CERN DB on demand and a redis microservice to handle the job queue for backend processing.
   - Run registry is designed using loosely-coupled microservices
@@ -674,7 +677,7 @@ modified: 2023-09-12T09:37:22.608Z
   - Recoil inspired the implementation of query model
   - Rxjs inspired the implementation of the event model
 
-- https://github.com/sebastianwessel/purista /ts
+- https://github.com/sebastianwessel/purista /apache2/202311/ts
   - A backend framework for keeping professional software development fast, efficient
   - This framework adapts and combines a wide range of different patters from domain driven design, cqrs, microservice, event sourcing and lambda functions.
   - It is built from the ground up in typescript and highly focuses on schema, and auto generation of types, input-output-validation, OpenApi documentation (swagger) and tracing via OpenTelemetry.
@@ -900,6 +903,9 @@ modified: 2023-09-12T09:37:22.608Z
 - https://github.com/khaosdoctor/event-sourcing-demo-app /vue
   - Demo application to demonstrate the power of the event sourcing architecture
 
+- https://github.com/power-cms/power-cms /201903/ts/inactive
+  - a Domain Driven, CQRS based CMS project in Microservices architecture, written for developers.
+
 - https://github.com/totollygeek/node-cqrs /ts
   - Demo code for my CQRS and Event Sourcing session for nodejs
 
@@ -915,9 +921,6 @@ modified: 2023-09-12T09:37:22.608Z
   - This project is used in production environments.
   - It works fine with multi-GB databases, and if you choose your queries and indexes well, you can have <1ms query times.
   - Multi-process behavior is not very worked out for the EventSourcingDB
-
-- https://github.com/power-cms/power-cms /ts/inactive
-  - a Domain Driven, CQRS based CMS project in Microservices architecture, written for developers.
 
 - https://github.com/dmfrey/event-store-demo /java
   - We recently finished work on a system in which we built an Event Source system. This application is a demo of the architecture we produced.
@@ -941,6 +944,10 @@ modified: 2023-09-12T09:37:22.608Z
   - Example application to document python eventsourcing library
 - https://github.com/Shaibujnr/kanban-ddd /python
   - Simple kanban project 
+
+- https://github.com/anytoe/EasyEventSourcing /201801/csharp
+  - https://www.event-sourcing.com/
+  - A Simple Event Sourcing Example Application
 # cdc/change-data-capture
 - https://github.com/fuchstim/horton /202308/ts/未完成
   - an unintrusive Change Data Capture library for postgreSQL databases

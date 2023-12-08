@@ -13,7 +13,27 @@ modified: 2021-07-27T16:35:20.057Z
 
 - ## 
 
-- ## 
+- ## [Wiki.js | Hacker News_202007](https://news.ycombinator.com/item?id=23904193)
+- Now, it is fair to complain that VisualEditor is difficult to get running on your own local Mediawiki instance, as it requires the suite of local node.js microservers (RestBase and Parsoid) that aren't part of the core PHP platform. That said, this is about to change! The upcoming Mediawiki 1.35 is supposed to move Parsoid into core PHP, and so VisualEditor is going to become a lot more default-accessible. : D
+
+- Mediawiki has some UX and RBAC challenges that makes it difficult to scale to large organizations.
+
+- Wikis also don't need (or indeed, even permit) cumbersome Git and PR-based workflows just to get changes into the "wiki". Better for it to be a single-page app that actually implements a wiki, than to provide a service that doesn't actually support wikis but has no qualms about throwing the word around anyway.
+
+- I tried DokuWiki at first (has flat file db which is cool). It's simpler, but I ended up going with MediaWiki which is more powerful, and aside from Wikipedia using it, I noticed most big wikis I use also use it
+  - MediaWiki lets you choose Sqlite as an option, so I have one big wiki/ folder sitting in my Dropbox folder symlinked into my iCloud folder and local fs
+  - The problem with most apps is that they just become append-only dumping grounds where your only organizational power is to, what, create yet another tag?
+  - My advice is to just look for the text files scattered around your computer and note-taking apps and move them into wiki pages. As you make progress, you will notice natural categories/namespaces emerging.
+- I did start similar things over 10 years ago. Where I am at these days is just text files ( markdown ) nested into folder structures. I've found this the most sustainable for quite a few years and it's been super useful. Main thing is, do whatever, as long as you find it easy to sustain.
+
+
+- My two biggest complaints about MediawWiki are 1. PHP, and 2. no well-supported way to opt-in to a different syntax like Markdown or AsciiDoc or pretty much anything that isn't MediaWiki-flavored wikitext.
+
+
+- 
+- 
+- 
+- 
 
 - ## 如何看待语雀付费策略？_20221026
 - https://www.zhihu.com/question/562238887

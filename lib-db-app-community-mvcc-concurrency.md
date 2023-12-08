@@ -21,7 +21,8 @@ modified: 2023-11-01T10:15:06.245Z
 
 - ## 
 
-- ## 
+- ## The diagram below explains what ACID means in the context of a database transaction.
+- https://twitter.com/alexxubyte/status/1732783270855876654
 
 - ## 🏘️ When Uber created their in-house database (known as Schemaless), they wanted high-availability writes.
 - https://twitter.com/ProgressiveCod2/status/1726136613468852376

@@ -97,8 +97,13 @@ modified: 2023-10-11T21:37:25.329Z
 - Mobiles are really bad with memory. iOS and Android have insane level of restrictions on how much memory an app can consume, and for good reason because most consumer mobile phones have 4-6 gbs of RAM.
   - You don't load up your entire DB into memory on the backend either. 
 - You're asking very broad questions, and I know these are very simplistic answers - every product will be slightly different and face unique trade-offs.
+- I think you misunderstand. My intention was not to say local-first is bad or impossible; it's not. We have been local-first at Notesnook since the beginning and it has been going alright so far.
+  - Just a few weeks back a user came to us after failing to migrate GBs of their data off of Evernote. This, of course, included attachments. In short, we had not considered someone syncing 80K items. To be clear, 80K is not a lot of items even for a local-first sync system, but you do have to optimize for it. 
+  - The solution consisted of extensively utilizing batching & parallelization on both the backend & the users' device.
+- The problem was about the phone fetching 80k new items from the server. If the phone just shows the item you're looking at, one at a time, and doesn't try to sync everything, there's no such problem.
+  - There's no restriction inherent to CRDTs/local-first around a partial sync. You are not required to sync everything.
 
-- Query-based sync to partially replicate is an absolute must. This was a key feature with Ditto: https://www.ditto.live
+- 💡 Query-based sync to partially replicate is an absolute must. This was a key feature with Ditto: https://www.ditto.live
 - Query-based replication works when you know what the user probably wants to have in advance (e.g. a device in a warehouse needs records for that stock in that warehouse, not others). But that's still push.
   - You still need pull on demand access when a user opens any random item where we don't know in advance what they probably want (e.g. a discussion board scenario).
 

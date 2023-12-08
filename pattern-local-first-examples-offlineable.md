@@ -285,14 +285,14 @@ modified: 2023-11-17T10:12:06.357Z
 
 - https://github.com/rocicorp/replicache /NonOpen
   - Realtime Sync for Any Backend Stack
-# exploring
+# p2p/distributed
 - https://github.com/drifting-in-space/plane /202212/rust
   - Plane is a container orchestrator for ambitious browser-based applications. 
   - Plane implements an architecture we call session backends.
   - Plane assigns a unique subdomain to each instance, through which it proxies HTTPS/WebSocket connections. When all inbound connections to a container are dropped, Plane shuts it down.
   - [Session Backends](https://driftingin.space/posts/session-lived-application-backends)
 
-- https://github.com/p2panda/aquadoggo /rust
+- https://github.com/p2panda/aquadoggo /AGPLv3/rust
   - https://p2panda.org/
   - aquadoggo is a reference node implementation for p2panda. 
   - It is a intended as a tool for making the design and build of local-first, collaborative p2p applications as simple as possible
@@ -306,6 +306,10 @@ modified: 2023-11-17T10:12:06.357Z
     - we could model many applications already with such simple CRDT. It is also possible to add your own or already existing CRDT frameworks on top of p2panda.
     - The basic data sync is based on an append only log. 
     - Check out our section on "Operations", this is the data type we've built on top of the append-only log structure for multi-writer and conflict free data editing
+
+- https://github.com/TryQuiet/quiet /clang/cpp/ts
+  - https://www.tryquiet.org/
+  - A private, p2p alternative to Slack and Discord built on Tor & IPFS
 # more
 - https://github.com/cwise89/react-detect-offline
   - Components that track offline and online state. Render certain content only when online (or only when offline).

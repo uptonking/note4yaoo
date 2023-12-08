@@ -12,6 +12,17 @@ modified: 2023-10-10T14:20:13.855Z
 # discuss-stars
 - ## 
 
+- ## In my experience, tech skills aren't enough to build a profitable product. You need Sales & Marketing skills. 
+- https://twitter.com/francoisz/status/1733056844443132169
+  - [Selling Open-Source Products Requires Sales & Marketing Skills](https://marmelab.com/blog/2023/12/08/open-source-profit-4.html)
+
+- ## 4 OSS models
+- https://twitter.com/oleg008/status/1732845879613165854
+  - open core
+  - cloud services
+  - open periphery(外围；边缘)
+  - source available
+
 - ## 在 CRUD Boy 很便宜的环境里，做本质上用来取代 CRUD Boy 的 Retool，肯定是不那么直观的。
 - https://twitter.com/CatChen/status/1717648929679114356
   - 美国公司进行 IT 采购时，往往会先看 Gartner Report 上这个领域的竞品都有什么，然后发 RFP。中国公司如果上不了行业报告，别人根本不会发 RFP 给你。

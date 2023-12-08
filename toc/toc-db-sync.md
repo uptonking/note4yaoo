@@ -29,58 +29,6 @@ modified: 2022-11-25T15:41:47.534Z
 
 - [Comparison of Offline Sync Protocols and Implementations](https://offlinefirst.org/sync/)
   - couchdb/realm/firebase
-# blogs-sync
-- [MongoDB Realm: Device Sync Protocol](https://www.mongodb.com/docs/atlas/app-services/sync/details/protocol/)
-  - Atlas Device Sync uses a protocol to correctly and efficiently sync data changes in real time across multiple clients that each maintain their own local Realm files
-  - The Realm SDKs internally implement and manage the sync protocol, so for most applications you don't need to understand the sync protocol to use Device Sync
-  - Changesets are the base unit of the sync protocol.
-  - Synced realm clients send changesets to the Device Sync server whenever they perform a write operation. 
-  - The server sends each connected client the changesets for write operations executed by other clients.
-  - 👉🏻 The Device Sync server accepts changesets from any connected sync client (including changes in a synced MongoDB cluster) at any time and uses an **operational transformation** algorithm to serialize changes into a linear order and resolve conflicting changesets before sending them to connected clients.
-
-- [PostgreSQL: Documentation: 16: 55.4. Streaming Replication Protocol](https://www.postgresql.org/docs/current/protocol-replication.html)
-  - To initiate streaming replication, the frontend sends the `replication` parameter in the startup message.
-  - it tells the backend to go into physical replication walsender mode, wherein a small set of replication commands, shown below, can be issued instead of SQL statements.
-  - In either physical replication or logical replication walsender mode, only the simple query protocol can be used.
-  - [PostgreSQL: Documentation: 16: 55.5. Logical Streaming Replication Protocol](https://www.postgresql.org/docs/current/protocol-logical-replication.html)
-
-- [MySQL :: MySQL 8.0 Reference Manual :: 17 Replication](https://dev.mysql.com/doc/refman/8.0/en/replication.html)
-  - Replication enables data from one MySQL database server (known as a source) to be copied to one or more MySQL database servers (known as replicas). 
-  - Replication is asynchronous by default; 
-  - you can replicate all databases, selected databases, or even selected tables within a database.
-  - MySQL 8.0 supports different methods of replication. 
-    - The traditional method is based on replicating events from the source's binary log, and requires the log files and positions in them to be synchronized between source and replica. 
-    - The newer method based on global transaction identifiers (GTIDs) is transactional and therefore does not require working with log files
-  - [MySQL: Replication Protocol](https://dev.mysql.com/doc/dev/mysql-server/latest/page_protocol_replication.html)
-    - Replication uses binlogs to ship changes done on the master to the slave and can be written to Binlog File and sent over the network as Binlog Network Stream.
-
-## [RxDB replication protocol](https://rxdb.info/replication.html)
-
-- 支持websocket、graphql、couchdb、p2p
-- The RxDB replication protocol provides the ability to replicate the database state in realtime between the clients and the server.
-- The backend server does not have to be a RxDB instance; you can build a replication with any infrastructure. For example you can replicate with a custom GraphQL endpoint or a http server on top of a PostgreSQL database.
-- 👉🏻 RxDB resolves all conflicts on the client so it would call the conflict handler of the RxCollection and create a new document state D that can then be written to the master.
-- The default conflict handler will always drop the fork/client state and use the master/server state.
-  - This ensures that clients that are offline for a very long time, do not accidentally overwrite other peoples changes when they go online again. 
-  - You can specify a custom conflict handler by setting the property `conflictHandler` when calling addCollection().
-- It is not possible to do a multi-master replication, like with CouchDB. RxDB always assumes that the backend is the single source of truth.
-
-## [Different approaches to p2p data sync](https://status-im.github.io/bigbrother-specs/data_sync/p2p-data-sync-comparison.html)
-
-- [Different approaches to p2p data sync · status-im/bigbrother-specs_201903](https://github.com/status-im/bigbrother-specs/blob/master/data_sync/p2p-data-sync-comparison.md)
-  - 支持partial replication的有: Matrix, Swarm, Briar, Bramble
-
-- Briar Bramble
-- Matrix
-- Secure Scuttlebutt (SSB) 
-# sync-protocols
-- https://code.briarproject.org/briar/briar-spec/-/tree/master
-  - [Bramble Synchronisation Protocol, version 0](https://code.briarproject.org/briar/briar-spec/-/blob/master/protocols/BSP.md)
-    - BSP is an application layer data synchronisation protocol suitable for delay-tolerant networks.
-  - [A Quick Overview of the Protocol Stack](https://code.briarproject.org/briar/briar/-/wikis/A-Quick-Overview-of-the-Protocol-Stack)
-
-- https://github.com/vaibhawvipul/minimal-raft /rust
-  - a minimalistic implementation of RAFT algorithm
 # collab/distributed
 - https://github.com/okdistribute/piratedb /js/inactive
   - A multiwriter peer-to-peer database with a last-writer-wins CRDT.
@@ -353,7 +301,8 @@ modified: 2022-11-25T15:41:47.534Z
 - https://github.com/pietgeursen/bamboo-rs /202108/rust
   - Rust implementation of bamboo
   - bamboo-rs aspires to be portable, fast and correct.
-  - Bamboo supports partial replication of logs, it is possible to request only a subset of a log while still being able to verify the data. 
+  - Bamboo supports partial replication of logs, it is possible to request only a subset of a log while still being able to verify the data.
+  - this log format can serve as a more efficient alternative to secure-scuttlebutt's linked lists or hypercore's merkle forests.
   - https://github.com/AljoschaMeyer/bamboo /blog
     - A cryptographically secure, distributed, single-writer append-only log that supports transitive partial replication and local deletion of data.
 
@@ -367,25 +316,44 @@ modified: 2022-11-25T15:41:47.534Z
   - 依赖ssb-db2
   - [RequestManager for partial replication 已实现并合并](https://github.com/ssbc/ssb-replication-scheduler/pull/5)
 
+- https://github.com/nichoth/eventual-gram-ssb-old /202102/js/inactive
+  - A social app designed for sharing photographs. Heavily influenced by patchwork, but with a UI designed for photos
+  - uses preact as the view layer
+  - The only thing left for easier onboarding was partial replication so I implemented the current version to see two browsers syncing like this
+  - I'm currently working on a better design for partial replication so this is mostly a tech demo.
+
 - https://github.com/ryanpbrewster/jump-sync /202102/ts
   - Partial incremental sync with "jump-ahead" support
 
 - https://github.com/itzdarsh/prepl /202209/python
   - MongoDB partial replication with selective database/collection with the help of change stream.
+  - [MongoDB & Partial Replication_202209](https://www.linkedin.com/pulse/mongodb-partial-replication-darshan-jayarama)
+    - MongoDB change stream allows you to replicate part of your data with the very minimal coding.
+    - it uses the change stream to replicate the data from source cluster to target cluster. If you’re using MongoDB 3.6 or later, change streams are already built in
+    - Apart from partial replication, change stream can also be used to create the triggers in which when a specified action is performed we can trigger the counter action as desired.
 
 - https://github.com/cosmoss-jigu/hydralist /202011/cpp
   - A Scalable In-Memory Index Using Asynchronous Updates and Partial Replication
 - https://github.com/epfl-labos/paris /202007/cpp/inactive
   - Causally Consistent Transactions with Non-blocking Reads and Partial Replication
   - PaRiS(Partially Replicated System) is the first transactional causally consistent system that supports partial replication and implements non-blocking parallel read operations. 
+
+- https://github.com/earthstar-project/earthstar /LGPLv3/ts
+  - Storage for private, distributed, offline-first applications.
+  - Earthstar is an offline-first key-value database which supports author versions.
+  - Earthstar is a key-value database. It has fewer guarantees than Kappa-db and more flexibility. You can hold any subset of the documents, sync them in any order, do partial sync, drop ones you don't want.
+  - [Comparison to GUN?](https://github.com/earthstar-project/earthstar/discussions/230)
+    - Designed to allow partial sync of the data, but not quite implemented yet_202101
 # raft
 - https://github.com/eatonphil/raft-rs /202312/rust
   - Another minimal Raft implementation in Rust.
   - you don't learn a concept well until you've implemented it a few times
-
 - https://github.com/eatonphil/goraft /202305/go
   - A basic Raft implementation in Go.
   - [Implementing the Raft distributed consensus protocol in Go](https://notes.eatonphil.com/2023-05-25-raft.html)
+
+- https://github.com/vaibhawvipul/minimal-raft /rust
+  - a minimalistic implementation of RAFT algorithm
 # more
 - https://github.com/rethinkdb/rethinkdb /202211/cpp/python
   - The open-source database for the realtime web.

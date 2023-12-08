@@ -273,6 +273,17 @@ modified: 2021-08-30T18:56:09.644Z
   - Mentat was designed for embedding, initially in an experimental Electron app 
   - Mentat uses partial indices, which are available in SQLite 3.8.0 and higher
 
+- https://github.com/objectbox/objectbox-java /4.3kStar/apache2/202311/java
+  - https://objectbox.io/
+  - Java and Android Database - fast and lightweight without any ORM
+  - ObjectBox is a NoSQL Java database designed for local data storage on resource-restricted devices, prioritizing offline-first functionality. 
+  - It is a smart and sustainable choice for local data persistence in Java and Kotlin applications.
+  - built-in support for object relations, allowing you to easily establish and manage relationships between objects.
+  - concise API that eliminates the need for complex SQL queries, saving you time and effort during development.
+  - [ObjectBox is not entirely FOSS](https://github.com/objectbox/objectbox-java/issues/1102)
+    - it isn't open source. The language wrappers are apache2 but the core library is only provided as a binary blob.
+    - ObjectBox bindings are open sourced under Apache 2.0; accessing the ObjectBox core is possible with a commercial licence that also includes support. The reason is that it is mainly big B2B IoT users that need access and support - and these customers allow us to maintain ObjectBox DB free to use for (almost) everyone else.
+
 - https://github.com/unum-cloud/ukv /cpp/modular
   - Modular Transactional NoSQL Database
   - choose either: RocksDB • LevelDB • UDisk • UMem 
