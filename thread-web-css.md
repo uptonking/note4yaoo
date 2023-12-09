@@ -21,7 +21,23 @@ modified: 2021-01-08T17:15:13.906Z
 - clipboard only fully supported by Safari
 - Typed OM & CSS Paint API only fully supported in Chrome
 - bitmaprenderer, feature policy, & web locks experimental
+# discuss-tailwind
+- ## 
+
+- ## Tailwind is one of my least favorite tools i've ever worked with. 
+- https://twitter.com/austin_malerba/status/1733259181384228967
+  - You can sense it right away because it requires additional devtime utilities to do even the most basic things.
+  - twmerge, autocomplete, syntax-highlighting, prettier, linting.
+  - With typescript-based styling approaches you get all of those things out of the box using robust pre-existing language features.
+  - complaint of the day: i just want to temporarily comment out some styles
+
+- I really do like building layouts with Tailwind. Things like spacing, breakpoints, flex and such. But for building actual components and fancy effects I have to go with just plain old CSS or CSS in JS.
+- This is what got me involved in @chakra_ui back in the day. I loved the tw design system/concepts but the idea of managing all that through className strings rather than props was and is still so absurd to me.
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## Today I learned about the media scripting feature. It's about detecting JS support via a CSS media query.

@@ -115,7 +115,9 @@ $$('[contenteditable]')
 - techstacks-to
   - async/generator, stream, buffer, binary, scheduler, arrow
   - 样式片段也可在线尝试: codepen, w3schools.com 
-  - separate storage compute example
+
+- separate storage compute example
+  - Lovefield uses a plug-in architecture for data stores. All data stores implement `lf.BackStore` interface so that query engine can be decoupled from actual storage technology.
 
 - cache/stream for web storage
   - 参考 tanstack-query, localforage

@@ -10,11 +10,11 @@ modified: 2022-08-21T10:02:27.788Z
 # focus
 
 - features
-  - multi views
-  - group/aggregate/**pivot**: tanstack-table(大量缓存)
   - **editable operations support**: logux/ospreadsheet/slate/typewriter
-  - _undo/redo+batch-undo_: 存反向op和存值2种方案，存值本身也是反向op
+  - group/aggregate/**pivot**: tanstack-table(大量缓存)
+  - multi views
   - _collaborative optional_: 作为插件，似乎将ospreadsheet的ot去掉就是llw了
+  - _undo/redo+batch-undo_: 存反向op和存值2种方案，存值本身也是反向op
   - _transaction_
   - end-user database: 用户自定义数据支持 graph/relational queries
   - formula: excel, google-sheet, powerbi

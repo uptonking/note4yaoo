@@ -238,7 +238,7 @@ modified: 2023-01-01T13:24:35.994Z
   - simple full text search module for node.js - backed by Redis
   - Version 1.0.0 is syntactically compatible with previous versions of reds (0.2.5).
 
-- https://github.com/meilisearch/meilisearch /202211/rust
+- https://github.com/meilisearch/meilisearch /40.2kStar/MIT/202312/rust
   - fast search engine that fits effortlessly into your apps, websites, and workflow.
   - [Elasticsearch like alternative · Issue · mastodon/mastodon](https://github.com/mastodon/mastodon/issues/20743)
   - https://github.com/meilisearch/arroy /MIT/202312/rust
@@ -255,7 +255,7 @@ modified: 2023-01-01T13:24:35.994Z
   - Write search queries in SQL with ACID transactions.
   - Scale to millions of rows with support for distributed search, high availability, backups, and point-in-time-recovery.
 
-- https://github.com/valeriansaliou/sonic /202210/rust
+- https://github.com/valeriansaliou/sonic /18.9kStar/MPLv2/202312/rust
   - lightweight & schema-less search backend. 
   - An alternative to Elasticsearch that runs on a few MBs of RAM.
 

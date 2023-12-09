@@ -10,10 +10,10 @@ modified: 2022-11-08T19:04:00.289Z
 # guide
 
 - features
-  - ActionText fullstack
   - collaborative
   - **block-style data model** for editor with one large contenteditable
   - virtualized
+  - ActionText fullstack
   - lazy-editor: easier for custom layout
   - draggable
   - layout-columns

@@ -50,7 +50,12 @@ modified: 2023-12-08T15:49:56.046Z
 
 - ## 
 
-- ## 
+- ## [Partially synced patterns · WordPress/gutenberg_202305](https://github.com/WordPress/gutenberg/discussions/50456)
+- Today, when you insert a pattern, the blocks from that pattern are completely decoupled and standalone. There's no way to tell that those blocks originated from a pattern, especially since they can be edited to no longer resemble the source pattern.
+  - Partially synced mode is different. When a pattern that's partially synced is inserted, it retains a reference to the source pattern. The blocks within the pattern are locked so that they cannot be removed or reordered and new blocks cannot be inserted (this is called contentOnly locking). Only specific parts of the pattern considered 'content' can be edited (denoted by adding __experimentalRole: 'content' to a block's definition).
+  - When the source pattern is updated, all instances of blocks that reference the source pattern are updated too (much like a reusable block), but the content values the user entered are retained. The best way to think of this is that the user can update the design of a pattern, but doesn't lose content that exists in templates and posts.
+- 👉🏻 The concept of partial syncing could be considered as similar to the way a handlebars, mustache, or other templating system works.
+  - For partially synced patterns, I think it's also important that the data (the values of 'content' attributes) is kept separate from the template (the source pattern). This way, the data can be interpolated or injected into the pattern to produce the resulting HTML.
 
 - ## [Priority Accumulator for partial and selective replication of entities · lifescapegame/bevy_replicon_202309](https://github.com/lifescapegame/bevy_replicon/issues/57)
 - We decided to implement it as part of [Rooms · lifescapegame/bevy_replicon](https://github.com/lifescapegame/bevy_replicon/issues/15)
@@ -59,7 +64,7 @@ modified: 2023-12-08T15:49:56.046Z
 - ## [ElectricSQL and PowerSync are both tackling the very hard problem of partial replication.  | Hacker News](https://news.ycombinator.com/item?id=38492085)
 - The idea is to build a general solution which allows a traditional centralized db to bidirectionally sync only what's needed on the client side - while still supporting optimistic mutations (and all the consistency/conflict stuff that goes along with that).
 
-- ## [PowerSync - Show HN: Bi-directional sync between Postgres and SQLite | Hacker News](https://news.ycombinator.com/item?id=38473743)
+- ## [PowerSync - Show HN: Bi-directional sync between Postgres and SQLite | Hacker News_202311](https://news.ycombinator.com/item?id=38473743)
 - PowerSync Service handles the complexities of dynamic partial replication of the database to different users. In our announcement blog post we wrote a bit more about the trade-offs and design considerations
   - see section "A scalable dynamic partial replication system"
 

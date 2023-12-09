@@ -1,11 +1,11 @@
 ---
-title: lib-db-sqlite-community-web
+title: lib-db-sqlite-community-web-wasm
 tags: [community, indexeddb, sqlite, storage, wasm]
 created: 2022-11-25T09:47:03.550Z
-modified: 2022-11-25T09:47:43.079Z
+modified: 2023-12-09T10:03:55.375Z
 ---
 
-# lib-db-sqlite-community-web
+# lib-db-sqlite-community-web-wasm
 
 # guide
 
@@ -21,7 +21,7 @@ modified: 2022-11-25T09:47:43.079Z
   - API 比较新，相关的文章比较少，记录下。希望你不要丢数据
   - 📝 [Web OPFS 数据持久化](https://gine.me/posts/70f8e931bc17426fb54127948bcf4a0e)
   - 跑去 sqlite 论坛发帖问了下，终于找到问题所在。因为我没有向用户请求数据持久化权限。如果你没有向用户请求持久化权限。数据还是会给你存储，但是浏览器可能会把数据清理掉。 
-  - 这一点很隐晦，MDN 只给了代码，在代码里面提了下，但是文档里面没怎么说。
+  - 这一点很隐晦，MDN只给了代码，在代码里面提了下，但是文档里面没怎么说。
   - 如何获取数据持久化权限呢？ `navigator.storage.persist()`
 
 - ## Feature table of all the possible ways of using a sqlite database in a JavaScript environment

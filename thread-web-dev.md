@@ -37,7 +37,12 @@ modified: 2021-01-08T17:13:43.392Z
 
 - ## 
 
-- ## 
+- ## I'm not sure any 100% spec-compliant programs for matching paths against ".gitignore" files exist, not even git probably. The problem:
+- https://twitter.com/fabiospampinato/status/1733170282196500755
+  1. Globs are meant to be case-insensitive.
+  2. A filesystem could be case-insensitive or not.
+  3. You could mount any filesystem at ~any path.
+  - So basically if you have "/path/to/some/random/file.js" each segment of it could be the mount point of a filesystem with a different case sensitivity than its parent, which presumably(据推测; 大概, 可能) is such a weird scenario that nobody is actually accounting for it
 
 - ## 8 Essential Internet Protocols You Must Know
 - https://twitter.com/AmigosCode/status/1730204104838832135

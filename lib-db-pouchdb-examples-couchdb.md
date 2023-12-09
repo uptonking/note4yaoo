@@ -220,6 +220,9 @@ modified: 2023-09-28T20:35:56.153Z
   - modular. This repository only implements the base document storage layer. Indexes, attachments and replicators are implemented as additional modules
   - The tradeoffs couchup has made in revision tree storage along with some other simple optimizations mean that couchup already has better write performance than CouchDB and the same consistency guarantees.
 
+- https://github.com/janl/jscouch /159Star/apache2/201202/js/作者团队
+  - An interactive CouchDB tutorial based on a partial re-implementation of CouchDB in JavaScript
+
 - https://github.com/garrensmith/couch_hack_week /202005/rust/foundationdb/inactive
   - An implementation of CouchDB using Rust and FoundationDB for Cloudant's hackweek.
   - The aim was to be able to read `/{db}/_all_docs`.
@@ -265,9 +268,6 @@ modified: 2023-09-28T20:35:56.153Z
   - It does not implement CouchDB's MVCC, Design Documents, attachments, MapReduce, "Mango" search or any other CouchDB feature.
   - It does however provide a "consistent" data store where the documents and secondary indexes are in lock-step. Documents are limited to 100KB in size.
   - Optionally, PostDB nodes can be run in readonly mode and configured to read data from PostgreSQL read replicas to scale out read performance.
-
-- https://github.com/janl/jscouch /159Star/apache2/201202/js/成员
-  - An interactive CouchDB tutorial based on a partial re-implementation of CouchDB in JavaScript
 
 - https://github.com/kowsik/memcouchd /201103/js
   - a pure JavaScript in-memory implementation of some aspects of CouchDB with a nodejs/connect Web front-end.

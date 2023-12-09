@@ -246,6 +246,15 @@ modified: 2022-11-25T15:41:47.534Z
   - Clients receive events about changes from the server which are automatically applied to a shared object (in-place)
   - The server takes care of syncing the state of all connected clients
 
+- https://github.com/syncthing/syncthing /MPLv2/202312/go
+  - https://forum.syncthing.net/
+  - Open Source Continuous File Synchronization. It synchronizes files between two or more computers. 
+  - We take every reasonable precaution to avoid corrupting the user's files.
+  - [Partially sync · syncthing/syncthing](https://github.com/syncthing/syncthing/issues/7349)
+    - There's ignore patterns: docs.syncthing.net/users/ignoring.html
+    - IMO there's a fundamental disagreement on how "partial sync" (or "selective sync") should work. for me, it should work exactly how you outlined it. 
+    - I guess better said: for anybody that has used dropbox selective sync OR resilio selective sync, I would dare say is really obvious that ignore patterns is NOT the solution to this problem
+
 - https://github.com/abrarsheikhsony/SFDC-change-data-capture
   - explains specifically for Change Data Capture (CDC)
   - https://github.com/abrarsheikhsony/SFDC-streaming-api-events

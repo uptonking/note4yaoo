@@ -233,7 +233,26 @@ modified: 2023-12-08T16:02:26.515Z
 # discuss
 - ## 
 
-- ## 
+- ## The last part of @linear that wasn’t already fully real-time - our document editor - is now real-time and collaborative._202312
+- https://twitter.com/artman/status/1733419868827828319
+- Initially, collaborative editing did not top our list of priorities. The reason was straightforward: issues within Linear seldom necessitated simultaneous collaborative writing.
+- However, as we started refining our project management capabilities, the need for collaborative editing became apparent. 👉🏻 Writing extensive product specifications is a collaborative endeavor, requiring multiple stakeholders to engage in editing documents in real-time.
+- This emerging need spurred us to implement collaborative editing across all views where editing of larger documents occurs, including issue descriptions.
+- This posed unique challenges and demanded specific engineering solutions. A notable feature of Linear is the absence of a distinct 'edit' mode in documents. When you access an issue, the document description is immediately editable.
+- This means we needed a system where live updates from other users are visible instantaneously when you navigate to an issue. However, establishing a collaborative editing session demands significant backend resources.
+- A backend service must maintain the document's state to synchronize changes across users. To optimize resource utilization, we developed a system that only initiates a full editing session when at least one user is actively editing the document, and another is viewing it.
+- 👉🏻 We piggy-back on top of our existing WebSocket connection that we use for regular sync and let the backend know whenever the client is looking or stopped looking at a document and whenever the document receives input focus.
+- This approach has resulted in a reduction of about 96% in the number of live editing sessions, compared to a scenario where a session would be initiated for every document view.
+- 👉🏻 The core of our real-time editing functionality is powered by Yjs, a CRDT framework. It enables the transmission of updates from clients to the backend via our existing WebSocket connections.
+- Given our distributed backend infrastructure, we had to ensure that updates from clients connected to different sync servers would also be synchronized across backend servers using PubSub.
+- All updates are also stored in Redis to enable new servers getting up to speed when joining an editing session. Additionally, the backend periodically saves changes to our database, ensuring that users outside the editing session receive updates through our sync protocol.
+- Live editing is an enhancement and there should be no data loss even in the hypothetical scenario of our live editing systems are experiencing a total outage.
+- Each client, regardless of whether they’re part of an editing session or not, operates as if they were the sole editor, periodically syncing changes to the server using our standard sync mechanism.
+- Instead sending the content of the entire document as we did before, we now only send changes in CRDT format to the sync backend. The backend can thus can receive updates from multiple clients and merge them into the existing document conflict-free.
+- This approach also allows clients to work offline and later merge their changes seamlessly into the server, preserving the integrity of concurrent live editing sessions that happened in the past.
+- Finally, we needed to address API users. Unlike client applications that send CRDT updates, API send the entire document content, which would effectively overwrite any changes made by lived editing users.
+- To circumvent this, we diff the document received via the API to the current version and compute the minimal necessary updates to achieve that state. For instance, adding a paragraph via the API results in appending a line rather than replacing the entire document.
+- These update will then seamlessly integrate with ongoing live editing sessions.
 
 - ## When we started work on @linear , we felt real-time sync was a core functionality we had to invest in from the get-go. _202208
 - https://twitter.com/artman/status/1558081796914483201

@@ -205,6 +205,9 @@ modified: 2022-11-25T15:50:48.226Z
   - Lazy: Nothing is loaded until it's requested. 
     - And since all querying is performed directly on the rock-solid SQLite database on a separate native thread, most queries resolve in an instant.
     - But unlike using SQLite directly, Watermelon is fully observable.
+  - [Disable 'rxjs' dependency_202204](https://github.com/Nozbe/WatermelonDB/issues/1301)
+    - rxjs is used by WatermelonDB internals in some places, hence this is not possible to remove it
+  - [[Question] More details on offline first?_202207](https://github.com/Nozbe/WatermelonDB/issues/1351)
   - [WatermelonDB, a database for React and React Native apps | Hacker News_201809](https://news.ycombinator.com/item?id=17950992)
   - [Adapters - WatermelonDB documentation](https://nozbe.github.io/WatermelonDB/Implementation/Adapters.html)
     - The idea for the Watermelon architecture is to be database-agnostic.
@@ -248,11 +251,16 @@ modified: 2022-11-25T15:50:48.226Z
 
 - lovefield /6.8kStar/Apache2/202005/js/inactive
   - https://github.com/google/lovefield
-  - Lovefield is a relational database for web apps. 
+  - Lovefield is a relational database for web apps.
   - Written in JavaScript, works cross-browser. 
   - 👉🏻 Provides SQL-like APIs that are fast, safe, and easy to use.
   - 不支持原版SQL，支持`todoDb.select().from(item).where(item.done.eq(false)).exec();` 类SQL方法
+  - Lovefield uses a plug-in architecture for data stores. All data stores implement `lf.BackStore` interface so that query engine can be decoupled from actual storage technology.
   - [Lovefield wraps IndexedDB objects in different classes](https://github.com/google/lovefield/blob/master/docs/dd/02_data_store.md)
+  - [Is lovefield good for big data storage of 3GB or so?_201611](https://groups.google.com/g/lovefield-users/c/ky60q5DCrs4)
+    - Unfortunately no. Lovefield currently has a (significant) limitation that all data is kept in an in-memory cache. 
+    - You could instead only store metadata about your blobs/arraybuffers in Lovefield, and place the actual files in some other persistent storage. This approach has already been used by some Lovefield clients
+
 - https://github.com/arthurhsu/lovefield-ts
   - [ブラウザで動くSQLite alternativesとしてのLovefield - console.lealog(); ](https://lealog.hateblo.jp/entry/2023/03/03/092649)
   - Lovefield Typescript port and modernization.

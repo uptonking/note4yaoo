@@ -19,6 +19,10 @@ modified: 2023-10-26T15:29:40.053Z
 - https://github.com/pgxman/pgxman /202311/go
   - https://pgxman.com/
   - pgxman is npm for Postgres extensions. 
+
+- https://github.com/pgq/pgq /sql/c
+  - Generic Queue for PostgreSQL
+  - PostgreSQL extension that provides generic, high-performance lockless queue with simple API based on SQL functions.
 # plugins
 
 # utils

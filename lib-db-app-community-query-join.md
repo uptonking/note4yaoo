@@ -20,7 +20,13 @@ modified: 2023-10-31T11:17:48.697Z
 
 - ## 
 
-- ## 
+- ## Colocated and interleaved tables are one of the performance optimization techniques available in some distributed SQL databases.
+- https://twitter.com/denismagda/status/1733187029997932891
+  - The tables can improve performance for JOINs by storing child and parent table records together on the same database node.
+  - [Colocated and Interleaved Tables in Distributed SQL Databases: Tradeoffs_202312](https://medium.com/@magda7817/colocated-and-interleaved-tables-in-distributed-sql-databases-tradeoffs-f2e7b1b9d68e)
+  - But as with any optimization technique, there are some tradeoffs:
+  1. Data and Load Skew - some nodes may start storing and processing more data than others.
+  2. The Best Parent Tradeoff - some tables are in many-to-many relationships with others, making it challenging to choose the best colocation strategy for them.
 
 - ## Prisma doesn’t JOIN (related records are fetched as separate requests from the DB) so I think it’d be slow at the edge anyways_202310
 - https://twitter.com/jitl/status/1719347464359026862
