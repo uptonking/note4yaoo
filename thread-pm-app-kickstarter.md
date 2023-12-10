@@ -84,7 +84,10 @@ modified: 2021-10-29T15:02:28.882Z
 # ideas
 - ## 
 
-- ## 
+- ## Chamjo —— App 截图收集
+- https://twitter.com/ftium4/status/1733530186405269792
+  - https://chamjo.design/
+  - 收集了 500 多张 App 截图，网站声称以亚洲 App 为主，但中国 App 很少，可能和网站作者是印度尼西亚人有关。
 
 - ## 为小猫设计的抓鱼游戏，平板上
 - https://twitter.com/bearbig/status/1730664693961028095

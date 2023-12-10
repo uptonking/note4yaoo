@@ -145,6 +145,23 @@ modified: 2023-09-17T17:41:51.689Z
 - There’s a difference between materialized views in Oracle and SQL Server though.
   - In Oracle it’s as you describe: a view stored on disk that is refreshed periodically to increase performance of slow running views.
   - In SQL Server, a materialized view is created when you add an index to the view. SQL Server will keep the MV current without having to schedule periodic refreshes.
+# discuss-pagination
+- ## 
+
+- ## [We switched to cursor-based pagination | Hacker News_202208](https://news.ycombinator.com/item?id=32495846)
+- This post is not about database cursors. It's about the style of pagination where you have a ?_next=xxx link to get to the next page, where the xxx bit encodes details about the last item on the current page such that the next page can show everything that comes after that record.
+  - This is also sometimes known as keyset pagination. 
+  - My favourite technical explanation of that is here: https://use-the-index-luke.com/no-offset
+- Sounds great on paper but my experience is that key-based indexing is broken on SOLR and likely other lucene engine DBs. If you are evaluating conditions on child objects inside a parent document, the child objects get split and stored as a separate document that is joined… and if that child document is in a different block/file on disk, then it won’t necessarily be inside the range being scanned, and so you will be missing some results that meet your logical criteria.
+  - Possibly just an implementation error in the BlockJoinParser but it did not occur with numeric pagination.
+  - In order to work with that, you need to “flatten” your json, like with the @JsonUnwrapped annotation, and some structures (like arrays) may become problematic and/or require significant lexical mapping of queries to the dataset.
+- parent-child in lucene is a hack. It only works when the children immediately follow the parent, and that never happens when it's in a different file because you updated the child. It's a minor miracle you didn't notice the error with numeric pagination.
+
+- There are ways to mitigate the (although not eliminate) the slowing down of offset/limit pagination in later pages. The technique is called a "deferred join" and it is most effective in MySQL. The basic idea is to paginate as little data as necessary, and then do a self-join to get the rest of the data for a single page.
+  - Cursor based pagination is wonderful, but sometimes you're stuck with offset/limit for whatever reason. Might as well make it fast.
+- To be clear, this technique (which it seems I independently discovered in 2015) mostly only works in MySQL because other databases usually have planners which are smart enough to not pull everything in eagerly.
+  - MySQL is fairly predictable, though, so when you understand that it wants to nested-loop join all your rows before evaluating predicates on the parent table, it's a predictable win to stop it doing that.
+  - The technique is still applicable even when you have no joins, because MySQL will materialize rows with every selected column before evaluating the unindexed portion of the predicate, and the order by.
 # discuss
 - ## 
 

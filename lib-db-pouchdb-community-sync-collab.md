@@ -14,7 +14,13 @@ modified: 2023-10-29T02:22:57.939Z
 
 - ## 
 
-- ## 
+- ## [Selective sync · janl/couchdb-next_201702](https://github.com/janl/couchdb-next/issues/14)
+- I wonder if replication via view vs _changes might something to consider here. I know we have some view based replication stuff on 1.6 but AFAIK that was basically just to only replicate things in a view. I'm thinking more along the lines of that we just follow the key order in a view and then clients can specify a view and any complex logic they want. Last 90 days for instance could be something like emit(doc.date, null) and then replicate using a start_seq of now() - 90 days
+
+- Anything that requires create view is fairly prohibitive imo, both in terms of performance of view generation and for the amount of work developers need to go through to get it working, there are quite a lot of replication improvements we can do via clever filtering already and they arent done because setting up a filter (and understanding the replication protocol enough to know what to do) is hard enough.
+  - We are moving away from views / map reduce in pouchdb in general so I would like to avoid them being further depended on in core functionality
+
+- That's fair. And in hindsight a view doesn't really give us a whole lot over a filter anyway. I'd agree with you that looking at improving filters would likely be the better approach.
 # discuss
 - ## 
 

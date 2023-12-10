@@ -139,7 +139,8 @@ modified: 2022-11-25T15:50:48.226Z
   - Realm is a mobile database that runs directly inside phones, tablets or wearables. 
   - This project hosts the JavaScript versions of Realm.
   - Currently we support React Native (JSC & Hermes on iOS & Android), Node.js and Electron (on Windows, MacOS and Linux).
-  - This is still using Realm Core(cpp), but exposed via JavaScript API
+  - This is still using Realm Core, but exposed via JavaScript API
+  - It's the same C++ core used in the other Realm SDKs that is wrapped in JavaScript. The same API as what has been available in the ReactNative SDK for a while.
   - https://github.com/realm/realm-core /202212/cpp
     - Core database component for the Realm Mobile Database SDKs
 

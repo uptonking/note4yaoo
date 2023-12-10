@@ -96,13 +96,14 @@ People should not try to turn WASM into a cult. Tech is meant to be used and lev
     - Node.js像Java一样也存在JIT预热？
 # blogs
 
+## [Compiling Javascript to wasm - Wasm Builders](https://www.wasm.builders/gunjan_0307/compiling-javascript-to-wasm-34lk)
 
-## [Compiling Javascript to wasm - Wasm Builders 🧱](https://www.wasm.builders/gunjan_0307/compiling-javascript-to-wasm-34lk)
 - Are there any good reason to use this approach? Because if you want to run JavaScript without a browser, you can just use NodeJS.
   - So one key reason would be security. Since WebAssembly uses a sandbox model, you can prevent a malicious or buggy JavaScript application from compromising the host. 
   - Other reasons might be performance and portability. Depending on the application, it might be faster to run the WebAssembly code directly (no Nodejs overhead). 
   - As for portability, you might run this same application anywhere without recompilation (server, client, edge, IoT, whatever).
 - For me, it was simply getting byte code off my JavaScript files, it's like dream comes true.
+
 ## [WebAssembly入门 - 知乎](https://zhuanlan.zhihu.com/p/278028242)
 
 - ASM.js 是 Mozilla 在 2013 年推出的，是 javaScript 的一个严格子集，可以作为C/C++等其他语言编译的目标语言，从而使得 js 引擎可以采用 AOT(Ahead Of Time) 的编译策略，也就是在运行前直接编译成机器码，因此运行速度会有一定的提升。

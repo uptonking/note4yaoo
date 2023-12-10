@@ -15,12 +15,12 @@ modified: 2023-12-08T15:49:56.046Z
   - ditto
   - scuttlebutt/ssb
   - hypercore
-  - ?: triplitdb, p/couchdb
+  - ?: triplitdb, p/couchdb, peerdb
 
 - **partial/selective-sync**
   - sync by table/collection/doc，可参考 pouchdb
   - sync by versionNumber/timestamp
-  - 👉🏻 **query-based sync**: 取数基于query，query时可使用各种filter，可参考mongo-realm
+  - 👉🏻 **query-based sync**: 取数基于query，query时可使用各种filter，可参考mongo-realm; 是否与具体业务紧密相关
 # blogs-sync-partial
 - [What is Data Replication? Examples, Types, and Use Cases | Redis](https://redis.com/blog/what-is-data-replication/)
   - Full Database Replication occurs when an entire primary database is replicated within every replica instance available. 
@@ -119,6 +119,30 @@ modified: 2023-12-08T15:49:56.046Z
 - While it is possible to implement partial sync with the primitives available to you today, it is not advised and not supported. 
   - In Q3/Q4 2023 we will be releasing primitives specifically intended to support partial sync, row level security, and large scale multi-tenant databases.
 
+# discuss-cdc
+- ## 
+
+- ## [Launch HN: PeerDB (YC S23) – Fast, Native ETL/ELT for Postgres | Hacker News_202307](https://news.ycombinator.com/item?id=36895220)
+- For the past 8 years, working at Microsoft on Postgres on Azure, and before that at Citus Data, I’ve worked closely with customers running Postgres at the heart of their data stack
+  - why not build a tool specialized for Postgres, making the lives of many Postgres users easier
+  - We started with two main use cases: Real-time Change Data Capture from Postgres and Real-time Streaming of query results from Postgres
+  - For CDC, we don’t use Debezium, rather handle replication more natively—reading the slot, replicating the changes, keeping state etc. We made this choice mainly for flexibility
+  - For usability - we provide a Postgres compatible SQL layer for data-movement
+  - 👉🏻 The types of data replication supported include CDC streaming replication and query-based batch replication. Workers do all of the heavy lifting, and have data store specific optimizations.
+- PeerDB replicate any DML (insert/update/delete) efficiently to the target data-store (incl BigQuery).
+
+- 🤔 Does PostgreSQL to PostgreSQL streaming using PeerDB have any benefit over just using Streaming Replication?
+  - Postgres Streaming replication is very robust and has been in Postgres since multiple 10s of years. Logical replication/decoding (that PeerDB uses) is more recent - introduced in the last decade. 
+  - However 👉🏻 streaming replication is harder to manage/setup and a bit restrictive - most cloud providers don't give access to WAL, so you cannot use streaming replication to replicate data across cloud providers.
+  - Sure you can use PeerDB for backing up data - using CDC based replication or query based replication and both of these are pretty fast with PeerDB. You can have cold backups (store data to s3, blob etc) or hot backups (another postgres database). However note that the replication is async and there is some lag (few 10s of seconds) on the target data-store. So if you are expecting 0 data-loss, this won't be the right approach for backups/HA. 
+  - With streaming replication, replication can be synchronous (synchronous_commit setting), which helps with 0 data-loss.
+
+- PeerDB should work or Aurora PostgreSQL. It should work for both log based (CDC) and query based replication. Log based because Aurora supports pgoutput plugin. Curious, are you leveraging CDC to move data to S3? or more query (batch) based?
+
+- Can this be used with Citus or Hydra?
+  - Both should be supported as target data-stores.
+  - As a source, PeerDB should likely work with any Postgres based databases (like Citus). Query based replication should work! Log based (CDC) replication could have a few quirks - i.e. the source database should support "pgoutput" format for change data capture. 
+  - As we evolve we do planning to enable a native data-movement experience for Postgres based (both extensions and postgres-compatible) databases!
 # discuss-hypercore
 - ## 
 
@@ -176,10 +200,15 @@ modified: 2023-12-08T15:49:56.046Z
 
 - You can use filtered replication
 
+- ## [Best practices for syncing large data sets_202103](https://www.mongodb.com/community/forums/t/best-practices-for-syncing-large-data-sets/99658)
+- I think our usecase is a good candidate for query-based sync, but unfortunately, that’s not quite ready. In the meantime, is there a workaround that will allow us to get all the benefits of sync while deciding which collections we want to remain on the device?
+- If some of the data does not need to be synced why wouldn’t you configure the read rules partitions that way that uneeded data will not be synced?
+  - My thoughts is that data that is not produced by the device will need to be accessed via internet… Does that works?
+
 - ## [Everything You Know About MongoDB Is Wrong | Hacker News_202011](https://news.ycombinator.com/item?id=25216530)
 - The mongo I'm dealing with now scales by database. Each entity has between 20-100GB of data in its own database; we're adding entities continually. If I try to replicate for performance, I'll be replicating everything--there's no selective replication. If I shard, I'll be sharding within a collection, which is the equivalent of striped RAID--great if that's what you need. I don't. I need to shard at the database layer. I need my queries routed according to the database at which they're aimed, not by the sharding key. Can I? Not a chance in hell with any of the existing scaling mechanisms from Mongo. My current mongo VM is already the largest Azure offers. How do I add more RAM to that?
 
-- ## 🍃 [mongodb: Query Based sync support?](https://www.mongodb.com/community/forums/t/query-based-sync-support/5329/2)
+- ## 🍃 [mongodb: Query Based sync support?_202006](https://www.mongodb.com/community/forums/t/query-based-sync-support/5329/2)
 - MongoDB Realm currently(202006) only supports full sync.
   - The team is considering how to architect more flexible sync options in future, but there isn’t a specific timeline for this yet
 
@@ -188,3 +217,6 @@ modified: 2023-12-08T15:49:56.046Z
 
 - [The timing for supporting partial synchronization_202005](https://www.mongodb.com/community/forums/t/the-timing-for-supporting-partial-synchronization/4116)
   - Since it is uncertain when partial sync will be supported, we will move data from the partial sync realm to the full sync realm.
+
+- [Question about Query-based Realm Sync_202007](https://www.mongodb.com/community/forums/t/question-about-query-based-realm-sync/6509)
+  - realm func

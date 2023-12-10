@@ -12,6 +12,7 @@ modified: 2022-12-02T11:15:15.257Z
 - pros
   - offlineable
   - CouchDB Replication Protocol
+  - Custom Conflict Handling
 
 - cons
   - 与couchdb耦合: data-model, database, sync protocol
@@ -34,6 +35,11 @@ modified: 2022-12-02T11:15:15.257Z
 - who is using #couchdb
   - npm
   - budibase
+
+- pouchdb-cons
+  - no: Multi Tab Support, Observable Queries, Schema Support, Custom Backend
+- watermelondb-cons
+  - no: Custom Conflict Handling
 
 - collab
   - 为db实现crdt的参考: piratedb, evolu/idbsidesync, triplitdb, indexeddb

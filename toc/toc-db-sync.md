@@ -131,14 +131,6 @@ modified: 2022-11-25T15:41:47.534Z
   - `Dexie.Syncable` is used for the synchronization. This module contains an implementation of the `ISyncProtocol`. 
   - It was primarily written to work with `sync-server` but should work with other servers which offer the same API.
 
-- https://github.com/viant/dbsync /go
-  - SQL based cross database cost effective synchronization
-  - data synchronization between various database and cloud vendor becomes more and more frequent task. 
-  - This project provides SQL based cross database vendor data synchronization for small and large(billions+ records) tables/views in a cost effective way.
-  - This is achieved by both determining the smallest changed dataset and by dividing transferable dataset in the partitioned/chunked segments. Both read and writes can be easily parallelized.
-  - Chunk synchronization uses ID based range to divide a dataset into a smaller segments. 
-  - Query based synchronization: In some cases view or actual SQL can be source for data sync, in that scenario SQL can be used as source.
-
 - https://github.com/leapfrogtechnology/sync-db /ts
   - Command line utility to synchronize and version control relational database objects across databases.
   - This utility uses Knex under the hood
@@ -302,10 +294,19 @@ modified: 2022-11-25T15:41:47.534Z
   - Keeping a list of data which still needs to be sent to the server.
   - Supplying the App with all data required to handle version conflicts when they occur.
 
-- https://github.com/ankane/pgsync /ruby
+- https://github.com/ankane/pgsync /202312/ruby
   - Sync data from one Postgres database to another (like pg_dump/pg_restore).
   - tables are transferred in parallel
   - sync partial tables, groups of tables, and related records
+
+- https://github.com/powersync-ja/powersync-web-sdk /ts
+  - This monorepo contains the packages for PowerSync's Web SDK.
+  - [I saw some mentions that the powersync is going to become fully open-source solution with self-hosting option. Do you have any ETA for that?_20231123](https://discord.com/channels/1138230179878154300/1138230180813479968/1177079452426051614)
+    - It will happen next year though.What I can say is that we are busy working on figuring it out, so if you ask me again in 1 month
+
+- https://github.com/vmware/node-replication /202212/rust/inactive
+  - An operation-log based approach for data replication.
+  - implement concurrent and replicated versions of (single-threaded) data structures by combining a set of different concurrency techniques: flat combining, operation logging, readers-writer locks, and partitioning.
 # partial-sync/replication
 - https://github.com/pietgeursen/bamboo-rs /202108/rust
   - Rust implementation of bamboo
@@ -334,6 +335,12 @@ modified: 2022-11-25T15:41:47.534Z
 - https://github.com/ryanpbrewster/jump-sync /202102/ts
   - Partial incremental sync with "jump-ahead" support
 
+- https://github.com/PeerDB-io/peerdb /1.3kStar/Elastic/202312/rust/go/ts
+  - https://peerdb.io/
+  - Postgres first ETL/ELT, enabling 10x faster data movement in and out of Postgres
+  - [Launch HN: PeerDB (YC S23) – Fast, Native ETL/ELT for Postgres | Hacker News_202307](https://news.ycombinator.com/item?id=36895220)
+    - support multiple features including log-based (CDC) / query based streaming, efficient syncing of tables with large (TOAST) columns, configurable batching and parallelism to prevent OOMs and crashes etc
+
 - https://github.com/itzdarsh/prepl /202209/python
   - MongoDB partial replication with selective database/collection with the help of change stream.
   - [MongoDB & Partial Replication_202209](https://www.linkedin.com/pulse/mongodb-partial-replication-darshan-jayarama)
@@ -353,6 +360,19 @@ modified: 2022-11-25T15:41:47.534Z
   - Earthstar is a key-value database. It has fewer guarantees than Kappa-db and more flexibility. You can hold any subset of the documents, sync them in any order, do partial sync, drop ones you don't want.
   - [Comparison to GUN?](https://github.com/earthstar-project/earthstar/discussions/230)
     - Designed to allow partial sync of the data, but not quite implemented yet_202101
+
+- https://github.com/willyrgf/pg-syncer /202011/go/inactive
+  - a query-based syncer between PostgreSQL databases.
+  - partialsync have not yet been implemented
+
+- https://github.com/viant/dbsync /202210/go/inactive
+  - SQL based cross database cost effective synchronization
+  - data synchronization between various database and cloud vendor becomes more and more frequent task. 
+  - This project provides SQL based cross database vendor data synchronization for small and large(billions+ records) tables/views in a cost effective way.
+  - This is achieved by both determining the smallest changed dataset and by dividing transferable dataset in the partitioned/chunked segments. Both read and writes can be easily parallelized.
+  - Chunk synchronization uses ID based range to divide a dataset into a smaller segments. 
+  - Query based synchronization: In some cases view or actual SQL can be source for data sync, in that scenario SQL can be used as source.
+  - Query based sync: In some cases view or actual SQL can be source for data sync, in that scenario SQL can be used as source.
 # raft
 - https://github.com/eatonphil/raft-rs /202312/rust
   - Another minimal Raft implementation in Rust.

@@ -10,9 +10,6 @@ modified: 2023-10-26T15:29:40.053Z
 # guide
 
 # popular
-- https://github.com/PeerDB-io/peerdb /rust/go
-  - a Postgres-first data-movement platform that makes moving data in and out of Postgres fast and simple. 
-
 - https://github.com/michaelpq/pg_plugins/tree/main/blackhole_am /c
   - This module is a PostgreSQL extension template
 
@@ -46,6 +43,12 @@ modified: 2023-10-26T15:29:40.053Z
 - https://github.com/paradedb/paradedb /AGPLv3/rust
   - https://paradedb.com/
   - an ElasticSearch alternative built on PostgreSQL, engineered for lightning-fast full text, similarity, and hybrid search.
+
+- https://github.com/toluaina/pgsync /202312/python
+  - https://pgsync.com/
+  - a middleware for syncing data from Postgres to Elasticsearch/OpenSearch effortlessly. 
+  - It allows you to keep Postgres as your source of truth and expose structured denormalized documents in Elasticsearch/OpenSearch.
+  - Simply describe your document structure or schema in JSON and PGSync will continuously capture changes in your data and load it into Elasticsearch/OpenSearch without writing any code. PGSync transforms your relational data into a structured document format.
 # query
 - https://github.com/tozd/node-reactive-postgres /202204/js/inactive
   - brings reactive (or live) queries to PostgreSQL.

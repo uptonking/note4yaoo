@@ -58,7 +58,16 @@ modified: 2023-11-01T10:08:09.232Z
 
 - ## 
 
-- ## 
+- ## It's eye opening to me how appending to a log file is seen is basically free, compared to other database operations. 
+- https://twitter.com/LewisCTech/status/1733576104773026192
+  - At least that's the impression I get reading papers and materials on the subject.
+- Appending is the most fundamental file operation.
+- There is definitely some "synergy"(协作, 相互作用) here between that being a fundamental file OP and event sourcing.
+  - That’s the original append-only @CouchDB architecture, with interleaved(交错) indexes etc.
+- I always figured that's what the Changes feed was.
+  - Changes is a view over the sparse sequence index. The actual append only file also included ID index, binary doc bodies, and  streamed attachment chunks.
+- Inserts are easy, updates are hard. It's the same problem with microservices and workflows. They point to inserts being viable and hand-wave away the problems with modifications
+  - But this is roughly why I designed my platform the way I did. To keep the advantages of append-only logs for modifications, you need deterministic consumers. This means no clocks and no race-conditions. The rest followed
 
 - ## What should you do after publishing an event?
 - https://twitter.com/ProgressiveCod2/status/1733024610437009741

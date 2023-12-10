@@ -65,4 +65,9 @@ modified: 2023-01-21T19:02:58.833Z
   - Embedded browser in VS Code
 # extensions
 
+## ext-git
+
+- https://github.com/MichaelCurrin/auto-commit-msg /ts
+  - A VS Code extension to generate a smart commit message based on file changes
+  - With the explosion of AI tools, you can find alternatives to this extension which use AI - see AI tools
 # more

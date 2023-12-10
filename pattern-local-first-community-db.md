@@ -93,6 +93,14 @@ modified: 2023-12-01T09:08:18.316Z
 - You can try Watermelon DB. It is local first disconnected framework. And it has a sync framework as well, but you have to create your own backend (using any DB) for syncing.
 - Watermelon has its limitations for an offline applicationFirst, if you really want to make use of the application completely offline, you will have to build a synchronizer like CRDT by hand and manage the request queues. With powersync all of this is managed by them, and with a simple code I can choose which information from the database I will sync for each user. In my first tests with WatermelonDB, synchronization proved to be unfeasible due to the amount of synchronized data. In short, Powersync has proven to be a wonderful tool that has allowed my company to move forward with offline services.
 
+- ## for @recall_wiki we are going with WatermelonDB.
+- https://twitter.com/paulrchds/status/1483416223425650691
+- I've had a great experience with CouchDB + PouchDB. I wonder what were the deciding factors in favor of WatermelonDB?
+  - IIRC, it was because I wanted to put some custom logic between the pouchdb and couchdb which didn't seem possible without reimplementing the syncing.
+  - yes indeed!
+
+- I had quite a few issues with the syncing from indexedDb and DynamoDb, it was in April last year so I am not sure if has improved by now. 
+
 - ## 🛢️ [WatermelonDB, a database for React and React Native apps | Hacker News_201809](https://news.ycombinator.com/item?id=17950992)
 - 🤔 Why not use SQLite directly instead of this extra layer?
   - SQLite gives you just the "data fetching" part. But if you're building a React/RN app, you probably also want everything to be automatically observable.
@@ -122,6 +130,11 @@ modified: 2023-12-01T09:08:18.316Z
   - It's possible, but Watermelon is specifically designed to be a local database, not meant to run on a server.
 
 - Sync is mostly there, but undocumented
+
+- https://news.ycombinator.com/item?id=28998272
+- IndexedDB is a _bad_ API, and making many small read/write operations on it is absurdly slow. This is one of the reasons why WatermelonDB on web only uses IDB as a dumb storage medium but actually 👉🏻 does all the database'y things in memory. You won't reasonably scale to gigabytes this way, but for most PWAs this is plenty enough and MUCH faster in practice. Certainly far faster than network.
+- I've used watermelondb and found it quite nice to use. I mainly chose it because it has observable queries. I can live without conflict resolution and transactions on the client side because it's an electron app. Having a sqlite backend (via the electron process) would overcome some of the shortcoming wrt to the in memory database (and still allow in memory via sqlite if speed is desired). I wrote a backend sync for it which was quite easy although I haven't fully implemented support for everything because I don't need it (notably deletes).
+- The problem is that Watermelon assumes a consistent view of the entire database, so you can't have multiple writers - at least not without synchronous notifications from IndexedDB (not a thing), leader election (cannot be made reliable), or some design sacrifices. To be reconsidered in the future...
 
 - ## [ObjectBox: Fast object-oriented database for Go | Hacker News_201811](https://news.ycombinator.com/item?id=18568029)
 - SQLite is a very nice embedded DB indeed. If you like SQL. ObjectBox enables you to work with Go structs and gives you additional performance.

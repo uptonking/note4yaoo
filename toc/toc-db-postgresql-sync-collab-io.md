@@ -10,7 +10,11 @@ modified: 2023-10-26T15:30:18.297Z
 # guide
 
 # sync
-
+- https://github.com/PeerDB-io/peerdb /1.3kStar/Elastic/202312/rust/go/ts
+  - https://peerdb.io/
+  - Postgres first ETL/ELT, enabling 10x faster data movement in and out of Postgres
+  - [Launch HN: PeerDB (YC S23) – Fast, Native ETL/ELT for Postgres | Hacker News_202307](https://news.ycombinator.com/item?id=36895220)
+    - support multiple features including log-based (CDC) / query based streaming, efficient syncing of tables with large (TOAST) columns, configurable batching and parallelism to prevent OOMs and crashes etc
 # collab
 
 # etl/import/export

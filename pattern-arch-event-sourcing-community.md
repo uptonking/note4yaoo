@@ -364,6 +364,21 @@ that commit position, thus providing "read your own writes" semantics.
 # discuss-cqrs
 - ## 
 
+- ## 
+
+- ## The Jakarta Data discussions have clarified for me that this notion of an “aggregate” does represent something totally real in document or hierarchical databases—a thing that doesn’t exist in relational data. 
+- https://twitter.com/1ovthafew/status/1733452432716267884
+  - Trying to shoehorn relational entities into “aggregates” is a mistake.
+- Not so sure. Aggregates (in DDD terms) are a notion of a domain model (e.g. Java objects), independent from a specific persistent representation. 
+  - They control/define access and transaction boundaries, both to ensure only valid state transitions of an aggregate and its parts are executed. 
+  - They can be mapped to different persistent representations, more easily to documents, slightly more involved to relations. Now whether this should be baked into as spec...
+
+- I think the thing you are missing in this DDD world is that the aggregate is defined for a specific bounded context which might not exist in a different one. Don't think of modeling to be something absolute or global. It's a valuable abstraction on top of ORM to manage complexity.
+
+- following DDD is a mistake, because it pushes you to design a system decoupled from the nature of the database you choose, everything needs to be coupled to it.
+  - No, that's not my view. My view is that the DDD notion of an "aggregate" not an intrinsic part of OOP, and I have spent 20 years of my life doing OOP without needing it. Rather, it's something extra and unnecessary that DDD glues onto the side of OOP.
+- "Aggregate" is unnatural in _both_ the relational model, _and_ in OO data modeling. It's very natural in document databases, however.
+
 - ## 7 reasons why an Event Broker is essential in Event-Driven Architecture
 - https://twitter.com/dunithd/status/1729046649983668276
 
@@ -400,7 +415,9 @@ that commit position, thus providing "read your own writes" semantics.
 # discuss
 - ## 
 
-- ## 
+- ## [Show HN: Bemi, enabling Event Sourcing for any database | Hacker News_202311](https://news.ycombinator.com/item?id=38164797)
+
+- [Show HN: Bemi – data versioning and time travel for PostgreSQL | Hacker News_202311](https://news.ycombinator.com/item?id=38305527)
 
 - ## 🔥 [EventStore: Open-Source, Functional Database with Complex Event Processing in JS | Hacker News_201811](https://news.ycombinator.com/item?id=18377219)
 - 

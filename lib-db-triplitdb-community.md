@@ -104,7 +104,7 @@ modified: 2023-10-11T21:37:25.329Z
   - There's no restriction inherent to CRDTs/local-first around a partial sync. You are not required to sync everything.
 
 - 💡 Query-based sync to partially replicate is an absolute must. This was a key feature with Ditto: https://www.ditto.live
-- Query-based replication works when you know what the user probably wants to have in advance (e.g. a device in a warehouse needs records for that stock in that warehouse, not others). But that's still push.
+- 👉🏻 Query-based replication works when you know what the user probably wants to have in advance (e.g. a device in a warehouse needs records for that stock in that warehouse, not others). But that's still push.
   - You still need pull on demand access when a user opens any random item where we don't know in advance what they probably want (e.g. a discussion board scenario).
 
 - Partial replication is a problem I haven't seen many people solving but it is definitely the next frontier in this space.

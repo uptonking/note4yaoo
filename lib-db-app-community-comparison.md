@@ -100,6 +100,9 @@ modified: 2023-09-17T17:46:07.620Z
 - 🤔🛋️ Honest question: why doesn't Couchdb receive any love on HN?
   - CouchDB needed to periodically run a gargage-collection-like operation. (If I remember correctly, records were not deleted, but instead hidden until you run the cleanup.) The problem was that the cleanup process was so unoptimized that CouchDB copied the entire database without the deleted records. In our case, the disk we had was about 90% occupied, so we couldn't run cleanup.
 
+- MongoDB has a similar sync to Realm, which seems a lot more capable than Couch sync.
+  - But only through their opaque sync service right?
+
 - Is there any documentation on the native schema used to store the documents. Is it sane enough that you could manually roll your own JSON1 queries in SQL to facilitate more relational join like features?
   - Some time ago, we wrote a blog post about it: https://blog.ferretdb.io/pjson-how-to-store-bson-in-jsonb/ A few details changed after that (for example, type information is not mixed with values anymore), but the general idea is the same. We probably need to document it better.
   - Yes, querying it with SQL should be possible.

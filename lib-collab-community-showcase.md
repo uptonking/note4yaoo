@@ -63,6 +63,10 @@ modified: 2023-05-21T15:46:35.896Z
   - PartyKit is extremely unopinionated. It's essentially lightweight javascript server, that launches fast and autoscales (I don't say this as as a bad thing, it's a useful primitive). Most people seem to run yjs in PartyKit, but you can also run automerge or even Replicache – my company's other project.
   - Reflect is entirely focused on providing the best possible multiplayer experience. We make a lot of choices up and down the stack to tightly integrate everything so that multiplayer just works and you can focus on building your app.
 
+- > One plus point compared to CRDTs is that you get to decide how you want to deal with conflicts yourself, with simple, sequential code. I'm not up to date with the latest in CRDT-land but I believe it can be complicated to add application specific conflict resolution if the built-in rules don't fit your needs.
+  - I agree wholeheartedly — we took the same approach for PowerSync with a server reconciliation architecture over CRDTs, which is also mentioned elsewhere in the comments here. For applications that have a central server, I think the simplicity of this kind of architecture is very appealing.
+- We had similar conclusions around the implementation of PowerSync (sync engine enabling offline-first applications). Instead of CRDTs we went with the architecture of a central server authority and a form of server reconciliation for consistency.
+
 - ## 🚀 Announcing Reflect – A new way to build multiplayer apps like Figma or Notion._202310
 - https://twitter.com/aboodman/status/1714682920495919520
   - Rather than CRDTs, Reflect syncs the way video games do.
