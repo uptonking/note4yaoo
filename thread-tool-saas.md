@@ -14,7 +14,15 @@ modified: 2023-05-07T18:35:50.897Z
 
 - ## 
 
-- ## 
+- ## 突然发现可以使用 Cloudflare 的 Redirect Rules 来做短链服务，天然使用 Cloudflare 自带的强大的 Analytics 功能！Cloudflare 太强了，哭死！
+- https://twitter.com/yetone/status/1734139420801187931
+- 但是免费版只有10个rules
+  - 已经比很多短链服务的免费版多了
+
+- 我感觉 Analytics 功能是要页面上内插的统计 JS 加载出来才会统计到的？
+  - 有道理唉，它没有 HTTP request 统计吗？
+- 据我所知，HTTP 请求统计好像不能精确到请求路径
+- 可以自己写 worker 实现 rules 然后也可以加统计到 D1
 
 - ## 学到两个读 arxiv PDF 论文的新技巧：
 - https://twitter.com/Barret_China/status/1729867231344144414

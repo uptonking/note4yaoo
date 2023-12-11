@@ -34,11 +34,11 @@ modified: 2022-11-11T10:46:41.519Z
   - Tabula is a tool for liberating data tables trapped inside PDF files
   - Tabula only works on text-based PDFs, not scanned documents
 # examples
-
 - https://github.com/xitanggg/open-resume /AGPLv3/202308/ts
   - https://open-resume.com/
   - powerful open-source resume builder and resume parser
   - 依赖@react-pdf/renderer、pdfjs、@reduxjs/toolkit
+
 ## viewer
 
 - https://github.com/rwv/lookscanned.io /ts/vue
@@ -79,6 +79,13 @@ modified: 2022-11-11T10:46:41.519Z
 # converters
 - https://github.com/yWorks/svg2pdf.js /MIT/202308/ts
   - A javascript-only SVG to PDF conversion utility that runs in the browser leveraging jsPDF.
+
+- https://github.com/VikParuchuri/marker /GPLv3/202312/python
+  - converts PDF, EPUB, and MOBI to markdown. 
+  - 依赖PyMuPDF/GPL、Nougat/cc、LayoutLMv3/cc
+  - It's 10x faster than nougat, more accurate on most documents, and has low hallucination risk.
+  - Converts most equations to latex
+  - Due to the licensing of the underlying models like layoutlmv3 and nougat, this is only suitable for noncommercial usage.
 
 - https://github.com/pdf2htmlEX/pdf2htmlEX /GPLv3
   - https://pdf2htmlex.github.io/pdf2htmlEX/

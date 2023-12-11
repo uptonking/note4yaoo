@@ -25,7 +25,14 @@ modified: 2023-10-30T07:34:03.602Z
 
 - ## 
 
-- ## 
+- ## LangChain开源了AnythingLLM：可以与任何内容聊天的私人 ChatGPT，应该就是他们自己文档系统用的那一套。
+- https://twitter.com/op7418/status/1733893368974073873
+  - An efficient, customizable, and open-source enterprise-ready document chatbot solution.
+  - https://github.com/Mintplex-Labs/anything-llm /MIT/js/python
+
+- 有没有详细说明？最大可以支撑多大的文档？
+  - 应该是不限大小的，拆开就好了
+- 说没说硬件需求？
 
 - ## 大模型的这些 benchmark 应该是全宇宙最没用的 benchmark 了吧？
 - https://twitter.com/yihong0618/status/1721401347533324688

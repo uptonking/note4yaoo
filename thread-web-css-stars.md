@@ -16,7 +16,9 @@ modified: 2021-07-25T12:49:10.410Z
 
 - ## 
 
-- ## 
+- ## Backdrop blurs are such a silent performance killer. 
+- https://twitter.com/austin_malerba/status/1733921016978583992
+  - If you notice weird artifacts and reduced framerate while scrolling, definitely look for backdrop blurs as a likely culprit. I've been bitten by this many times.
 
 - ##  `isolation: isolate` 在CSS中被用作创建新的堆叠上下文，特别适用于局部 z-index 控制。
 - https://twitter.com/lencx_/status/1719206813512704302

@@ -45,7 +45,12 @@ modified: 2021-07-29T20:37:05.228Z
 
 - ## 
 
-- ## 
+- ## you no longer need JavaScript to create an exclusive accordion!
+- https://twitter.com/bramus/status/1734128966313673079
+  - As of Chrome 120 you can give `<details>` elements a `name` value.
+  - Just like radio buttons, those with the same `name` will form a group, of which only one can be chosen at the same time.
+  - [Exclusive Accordion  |  CSS and UI  |  Chrome for Developers](https://developer.chrome.com/docs/css-ui/exclusive-accordion)
+  - we’re also looking into making it more easy for you to add animations `<details>`
 
 - ## Check out the `name` attribute inside `details` . 示例不work
 - https://twitter.com/jensimmons/status/1724885940416450810

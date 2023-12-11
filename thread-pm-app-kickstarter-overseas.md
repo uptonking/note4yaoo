@@ -9,8 +9,22 @@ modified: 2023-03-31T16:22:00.794Z
 
 # guide
 
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## 
 # discuss
 - ## 
+
+- ## 
+
+- ## 国内出海软件 top 20 排行榜来了
+- https://twitter.com/CoderJeffLee/status/1734030455417213015
+  - fotor, cutout, heygen, filmora, notta, hix, chatdoc
+- 数据从哪里来的？
+  - similarweb
 
 - ## 一直在研究国内出金境外，境外入金到国内还没试过。请问有好的方式把境外资金结汇到国内银行吗？我知道以下方式：
 - https://twitter.com/madawei2699/status/1720273295424241928

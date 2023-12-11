@@ -14,7 +14,13 @@ modified: 2023-10-31T11:17:48.697Z
 
 - ## 
 
-- ## 
+- ## 👨🏻‍🏫 How do SQL Joins Work? The diagram below shows how 4 types of SQL joins work
+- https://twitter.com/alexxubyte/status/1734245951009910881
+  - INNER JOIN
+  - LEFT JOIN
+  - RIGHT JOIN
+  - FULL OUTER JOIN
+
 # discuss
 - ## 
 

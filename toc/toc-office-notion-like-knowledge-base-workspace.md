@@ -412,6 +412,12 @@ modified: 2022-06-03T21:34:54.893Z
 - https://github.com/elastic/app-search-kb-demo /202005/js/inactive
   - A beautiful, modern customer support/knowledge base search experience for App Search using Search UI.
   - If you wish to test the full stack build locally, you have to boot all the required services (Elasticsearch, App Search)
+
+- https://github.com/MintterHypermedia/mintter /apache2/202312/ts/go
+  - https://mintter.com/
+  - a decentralized knowledge collaboration application for open communities powered by a knowledge graph.
+  - Powered by the Hypermedia protocol 自定义协议,
+  - Mintter supports the new Hypermedia Web Protocol. This open protocol supports secure identities, version control, semantic documents, multimedia, and groups/organizations.
 # vscode-powered
 - foam /12.5kStar/MIT/202208/ts/vscode
   - https://github.com/foambubble/foam

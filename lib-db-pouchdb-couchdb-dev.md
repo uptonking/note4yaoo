@@ -55,8 +55,8 @@ modified: 2022-12-02T11:15:15.257Z
 
 - roadmap
   - pouchdb + kappa-crdt + eav => pouchdb-crdt-eav
-  - alternative-backend: mysql/pg
   - kappa-architecture?
+  - alternative-backend: mysql/pg
   - attachment/针对图片视频的blob二进制存储数据库: 参考 mongodb-gridfs, pg-lo
 
 - database-features

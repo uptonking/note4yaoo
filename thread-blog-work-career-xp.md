@@ -274,7 +274,12 @@ modified: 2022-11-08T10:34:34.820Z
 # discuss
 - ## 
 
-- ## 
+- ## 最近看到别人挣钱，焦虑程度增加了。上周做了一个决定，打算振作起来，开始招人做点东西。
+- https://twitter.com/taresky/status/1734099884121477218
+  - 发现还是得从熟识的朋友里面找，因为这一行，信任远比技术重要。
+  - 另一件事，有个物理博士在读的朋友，打算给个小的交易模型让他去计算看看。即使是学习过程，也告知了付费意愿。等了一阵子，对方认为还是游戏好玩。我想大部分人应该是这样吧，“远还没有到比拼天分的地步”。
+  - 靠谱、可信，长期来看在任何领域都是正收益的事情
+- 一步步做呗，网上挣得多得信一半。
 
 - ## 👾 It’s a truism that good programmers remove code. They’re creating order out of chaos by reducing redundancy. 
 - https://twitter.com/julianhyde/status/1732801654926483622

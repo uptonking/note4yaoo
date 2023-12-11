@@ -35,6 +35,19 @@ modified: 2022-12-05T16:01:25.243Z
 
 - ## [[Feature] dolt-like versioning](https://github.com/duckdb/duckdb/discussions/3715)
 
+# discuss-stars
+- ## 
+
+- ## 
+# discuss-internals
+- ## 
+
+- ## Is there a writeup somewhere on @duckdb 's internal storage format(the actual on-disk structure)?
+- https://twitter.com/criccomini/status/1733950690106769425
+- DuckDB uses a columnar storage format split into rowgroup chunks of ~120K rows. Each rowgroup contains a zone map (min/max index) and is compressed separately
+  - [Pragmas - DuckDB](https://duckdb.org/docs/sql/pragmas#storage_info)
+- And vacuum delete was merged just yesterday 
+- [DuckDB -- table的存储格式 | Tangdh's Blog_202307](https://tangdh.life/posts/database/duckdb-file/)
 # discuss
 - ## 
 

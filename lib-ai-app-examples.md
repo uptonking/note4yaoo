@@ -53,6 +53,10 @@ modified: 2023-02-08T07:20:48.475Z
 - https://github.com/nicepkg/gpt-runner
   - Conversations with your files! Manage and run your AI presets!
 
+- https://github.com/Mintplex-Labs/anything-llm /MIT/js/python
+  - https://useanything.com/
+  - An efficient, customizable, and open-source enterprise-ready document chatbot solution.
+
 ## api
 
 - [https://www.steamship.com](https://www.steamship.com/)

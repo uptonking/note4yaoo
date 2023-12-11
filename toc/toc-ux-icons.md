@@ -145,6 +145,11 @@ modified: 2021-05-06T09:58:23.803Z
   - System UIcons is a collection of icons designed for products and systems in mind. 
   - Each icon is on a 21x21 grid.
   - Use the icons how you want, for free, and without any attribution.
+# brand-icons
+- https://github.com/pheralb/svgl /MIT/202312/ts/svelte
+  - https://svgl.vercel.app/
+  - most popular SaaS logos in SVG format, with lightning-fast search
+  - Built with @sveltejs & @tailwindcss
 # font icons
 - catalog
   - https://getbootstrap.com/docs/4.0/extend/icons/

@@ -61,17 +61,20 @@ modified: 2021-07-20T13:50:23.433Z
 - design-system
   - themeable; unstyled/headless; a11y/keyboard-ux
 - editor/WYSIWYG
+  - collaborative, block-style, virtualized-render
   - modular/extensible; collaborative; easy-pivotable
   - 👉🏻 prosemirror, tiptap, textbus, typewriter, slate, lexical; cms
   - block-editor with slash-menu/backlinks
   - pdf
 - excel/data-grid
+  - editing, group/pivot, multi-views
   - pivotable; collaborative; formulas
   - 👉🏻 tanstack-table, ag-grid, luckysheet/univer; nocodb
   - stream-updates/server-side-infinite-row-model
   - scripting/themeable/canvas/viztable/apache-arrow
   - ~~excel-like~~/~~headless~~
 - collab
+  - crdt, append-only-log, eav
   - 👉🏻 crdt, logux, yjs, rga, fluid-framework, hlc
 
 ## solutions: inter(re)active knowledge-base/wiki

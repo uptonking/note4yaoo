@@ -49,7 +49,8 @@ modified: 2021-07-28T20:11:24.350Z
 
 - ## 
 
-- ## 
+- ##  `<select>` 标签里面可以塞一个 `<hr>` 作为选项分割线，不过只支持比较新的 Safari 17+ 和 Chrome 119+
+- https://twitter.com/hal__lee/status/1734180106476900846
 
 - ## I only just learned about `HTMLInputElement.valueAsNumber` and I'm baffled(困惑；难倒). Is this the Mandela effect or something
 - https://twitter.com/gaforres/status/1730658548764602636

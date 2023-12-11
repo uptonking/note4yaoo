@@ -11,10 +11,11 @@ modified: 2022-04-05T10:08:25.947Z
 
 - requirements
   - **extensible-data-structure**
+  - 离线合并
+  - db-integration
   - undo/redo
   - sync protocol
   - 实时协作
-  - 离线合并
   - 冲突处理算法 + 网络通信
 
 - not-yet-基于crdt实现text文本协作的问题

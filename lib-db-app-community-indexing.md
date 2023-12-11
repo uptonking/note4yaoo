@@ -16,7 +16,19 @@ modified: 2023-09-17T17:38:11.187Z
 
 - ## 
 
-- ## 
+- ## How to find unused indexes
+- https://twitter.com/samokhvalov/status/1734044926755967163
+  - General algorithm of unused indexes cleanup
+  - Queries to analyze unused indexes
+- Why to clean up unused indexes
+  1. They occupy extra space on disk.
+  2. They slow down many write operations (INSERTs and non-HOT UPDATEs).
+  3. They "spam" caches (OS page cache, Postgres buffer pool) because index blocks are loaded there during write operations mentioned above.
+  4. Due to the same reasons, they "spam" WAL (thus, replication and backup systems need to handle more data).
+  5. Every index slows down the query planning 
+  6. Finally, if there is no plan caching (prepared statements are not used), each extra index increases chances to reach FP_LOCK_SLOTS_PER_BACKEND=16 relations (both tables and indexes) involved in query processing, which, under high QPS, increases chances of having LWLock:LockManager contention 
+
+- unused indexes are problematic in all database platforms, but caution if recursive SQL (eg optimizer, referential integrity, etc) implicitly use them. 
 # discuss
 - ## 
 

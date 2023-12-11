@@ -47,6 +47,31 @@ modified: 2020-12-29T17:52:48.584Z
 
 - ## 
 
+- ## 
+
+- ## 强烈推荐这篇文章：《深入探索：AI 驱动的 PDF 布局检测引擎源代码解析 [译]》
+- https://twitter.com/dotey/status/1734129116167729596
+  - 系统的分析了最近很火的 PDF 转 Markdown 开源程序 Marker 的工作原理，比我想象的要复杂不少，用了好几个开源库。
+  - https://github.com/VikParuchuri/marker
+  - [Inside Marker: A Guided Source Code Tour for an AI-powered PDF Layout Detection Engine_202312](https://journal.hexmos.com/marker-pdf-document-ai/)
+- Marker 主要通过以下六个阶段来工作：
+  1. 准备阶段： 利用 PyMuPDF 工具，可以把各种格式的文档转换成 PDF 文件。
+  2. 文本识别（OCR）： 使用 Tesseract 或 OCRMyPDF 进行文字识别；也可以选择用 PyMuPDF 进行基本的文字抓取。
+  3. 布局识别： 运用专门定制的 LayoutLMv3 模型 来识别文档中的表格、图表、标题、图说、页眉和页脚。
+  4. 列的检测和排序： 再用一个定制的 LayoutLMv3 模型来识别文档中的列，并按照正确的顺序（上到下，左到右）进行排列。
+  5. 公式/代码处理： 通过 Nougat 工具，把公式图片转换成对应的 latex 代码，并利用启发式方法准确识别和调整代码及表格内容。
+  6. 文本清理与优化： 使用定制的 T5ForTextClassification 模型进行文本清理，比如去掉不必要的空格和奇怪的字符，确保以一种保守且保留原意的方式进行优化。
+  - 借助这六个阶段，Marker 能够把任何文档转化为格式整洁的 Markdown 文件。
+
+- 这跟我的企业知识库产品的处理流程几乎一样，看来大家殊途同归，没有高效的解决办法，只能搞这种缝合怪
+
+- 试了下，效果也没这么好。
+  - markdown格式下表格的不能太复杂，比如colspan和\n字符的问题，还是html稍微好些。
+  - 识别pdf表格，Marker用的是Pymupdf，但是这个工具对表格的解析没有Camelot好。针对pdf表格里面的colspan，我没发现完美的解决方案，目前最好的是Camelot和Nougat
+- 针对表格，Camelot和Pymupdf都是识别表格成二维list，转pandas DataFrame，再用pandas built-in方法转为markdown表或者html表格，自然无法处理colspan的问题。
+
+- 用了呀，问题是这玩意也太慢了，在 macbook 上用 mps 也要十分钟左右
+
 - ## 一个冷知识： 有些pdf文件加了密码限制编辑操作（就是你可以看不能改）， 
 - https://twitter.com/syeerzy/status/1692413182202327198
   - 从pdf的文件格式标准来看，实际上“限制编辑”是不可能完成的， 因此这个功能其实是需要 “编辑软件” 和 “pdf文件” 串通一起完成，

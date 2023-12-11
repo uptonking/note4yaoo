@@ -16,7 +16,10 @@ modified: 2021-09-20T18:38:00.319Z
 
 - ## 
 
-- ## 
+- ## gRPC 竟然擅自把空数组变成了 undefined，减少数据传递，提供性能
+- https://twitter.com/ThaddeusJiang/status/1734034431285886990
+  - 实际上，为了节省 2 个字符增加了很多黑盒，造成 server 和 client 看到的数据不一样，极易产生 bug。
+- 这算feature，但感觉array的默认配置最好是true，但现在默认是false了
 
 - ## Forward Proxy vs Reverse Proxy
 - https://twitter.com/hackinarticles/status/1710756805037445619
