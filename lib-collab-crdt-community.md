@@ -20,7 +20,7 @@ modified: 2022-04-05T13:25:40.892Z
 
 - ## 
 
-- ## 🤔 The meaning of the term "CRDT" is really starting to drift.
+- ## 💡🤔 The meaning of the term "CRDT" is really starting to drift.
 - https://twitter.com/LewisCTech/status/1719807159217844603
   - Libraries like automerge and yjs are just *implementations* that happen to be a CRDT. 
   - But the idea of a CRDT itself is much older. I've seen "proto-CRDTs" described as far back as 4 decades.

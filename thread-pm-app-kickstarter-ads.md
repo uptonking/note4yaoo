@@ -16,7 +16,11 @@ modified: 2023-04-05T16:54:58.153Z
 
 - ## 
 
-- ## 
+- ## 英文区最大的 AI newsletter，也只有 100k 的订阅而已。 主广告价格是2000美金。
+- https://twitter.com/oran_ge/status/1734368446551642545
+  - 中文区的 AI 垂类，如果有 100k 订阅，一条对应是 2000 RMB 差不多。
+
+- 差不多也是中美人均GDP的差距
 
 - ## 没想到穿山甲的广告收益这么低，比微信低太多了。
 - https://twitter.com/LaurenceMister/status/1538478274635960320

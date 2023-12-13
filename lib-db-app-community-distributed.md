@@ -16,7 +16,15 @@ modified: 2023-10-26T19:04:00.318Z
 
 - ## 
 
-- ## 
+- ## 🌰 When Discord started partitioning their data, they ran into unexpected issues.
+- https://twitter.com/ProgressiveCod2/status/1734532331338342487
+  - The main reason was their partitioning strategy.
+  - In Discord's data model, every message belonged to a channel and was stored in a table known as Messages.
+  - The Messages table was partitioned based on Channel ID and Bucket. The Bucket is basically a static time window.
+  - This scheme had a serious implication: A Discord server with hundreds of thousands of members could potentially generate enough messages in a short period. This can overwhelm a partition in no time.
+  - With reads more expensive than writes in Cassandra, this arrangement led to hot partitions.
+  - How did Discord deal with this issue?
+  - [SDC#8 - Database Replication Under the Hood](https://newsletter.systemdesigncodex.com/p/database-replication-under-the-hood)
 
 - ## 🆚️ 如果今天还有人津津乐道什么分表分布式海量规模高并发，只能说明一件事：这哥们过去十年已经停止学习了，还活在上一个时代里。
 - https://twitter.com/GobeUncleWang/status/1725311478528721026

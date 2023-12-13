@@ -87,7 +87,13 @@ docker stop containerId
 
 - ## 
 
-- ## 
+- ## 查了一个月的性能问题，containerd 换成 docker 后好了，CNCF 出来赔钱
+- https://twitter.com/liumengxinfly/status/1734399431271944670
+- 啥问题 ？ docker 也用 containerd
+  - 猜测是 cpu cgroups 什么配置设置的不一样，等着其他同事去查了
+- 用nri查下oci spec？
+- 多runtime的咋办
+- 蹲个结论
 
 - ## 我用Docker的时候也遇到了很多坑，而且特别难调
 - https://twitter.com/PenngXiao/status/1729460664585080872

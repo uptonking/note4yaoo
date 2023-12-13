@@ -1,18 +1,19 @@
 ---
-title: lib-collab-community-websocket-webrtc
+title: lib-collab-websocket-community-webrtc
 tags: [collaboration, community, webrtc, websocket]
 created: 2022-10-11T08:56:11.457Z
-modified: 2022-10-11T09:03:07.297Z
+modified: 2023-12-12T08:45:31.670Z
 ---
 
-# lib-collab-community-websocket-webrtc
+# lib-collab-websocket-community-webrtc
 
 # guide
 
 - feathers框架为实时类应用而设计，代码量很少
 # discuss-stars
-- ## websocket一般会用在什么实际的场合？
-- https://www.zhihu.com/question/269060103/answer/2399818045
+- ## 
+
+- ## [websocket一般会用在什么实际的场合？](https://www.zhihu.com/question/269060103/answer/2399818045)
 1. websocket即时通信、社交订阅
 2. websocket多玩家游戏
 3. websocket协同编辑/编程
@@ -96,31 +97,19 @@ modified: 2022-10-11T09:03:07.297Z
 
 - ## 
 
-- ## 🌐️💡 [web端如何无感共享屏幕？ - 知乎](https://www.zhihu.com/question/565779619)
-- 如果单纯共享屏幕，那还不涉及协同问题，更加简单。
-- 一种是基于服务端，如果你很早以前接触过一个叫browsersync的工具，它主要是用作一些开发测试场景用的，如果想要用到生产，需要自己基于它做深度开发，不过好处是你不需要改当前网页的代码，靠服务器端注入脚步来同步两端界面。可以了解一下liveview这个项目，你可以把它理解为云渲染，所有状态存储在云端，浏览器只不过是界面的控制台输出
-- 第二种是基于浏览器的。这种途径，需要同时收集界面、鼠标、键盘输入等信息，管理起来复杂一点。也有多套方案，根据架构可借助服务端或者基于webRTC的点对点通信
-- 既然要无感，那么弹出权限询问显然就不是无感的，所以，我们不要直接调用视频录制，
-- 我们可以采用其他的办法对网页内容及其变化进行录制，方法有4：
-  - 1）问题里提到的html2canvas，按帧录制，不过可以做一个优化，是否发送流可提前进行对比，实际上，web的帧率是很低的，只有在一些动态效果的时候可能卡顿；
-  - 2）基于MutationObserver的DOM变化录制，也就是问题提到的rrweb，其实录制过程也挺耗性能，不过好在传输的数据量小；
-  - 3）基于全局状态管理器对状态变更进行录制，或者类似的状态录制方案；
-  - 4）对用于渲染页面的api数据进行录制，再配合DOM事件。
-- 本地录制后，就是如何将录制内容发送到远端，有2方法：
-  - 1）通过服务器中转；
-  - 2）通过webRTC传输。
-  - 服务器中转可用websocket，可以做一些策略来优化。
-- 最后是在远端播放录制内容，要么是基于stream来还原canvas，要么是不断在DOM上patch，让界面看上去是在不断的播放。其中有很多细节要处理，比如时间如何卡点，我是用requestAnimationFrame来收集每帧的变更，在每帧上进行逐一patch，如果顺利的话，基于requestAnimationFrame的是不会卡顿，但是DOM的性能堪忧，所以演变出合体方案。
-- 合体方案就是收集过程是基于DOM的变化，从而可以减少数据量，更快丢到服务端，然后在云端进行渲染，将渲染后的效果通过stream给到远端，放在canvas里面甚至视频里面播放。
+- ## 
 
-- 微软那个新产品clarity不就是网页回放么，就是前面几楼说的即时验算而不是录制视频。
+- ## 🆚️ Polling vs Webhooks
+- https://twitter.com/ProgressiveCod2/status/1734474112670822904
+  - In polling, a client repeatedly requests data from a server at predefined intervals.
+  - Webhooks are like having a built-in notification system. Data is pushed to you as soon as it’s available.
 
-- 服务器端server side rendering，然后记录用户所有输入，两边做状态同步，在服务器端录视频还是可以的
-- 云桌面那一套呗，服务端渲染网页，扔到客户的canvas显示，再接管用户输入，延迟够低也看不出区别，就是输入框之类的地方会很恶心
+- The choice depends on how realtime the client needs data. Webhooks have drawbacks too
+  - server needs to keep inventory of clients
+  - server should be resilient to network partitions 
+- Notification backed by scalable APIs could be another approach.
 
-- 类似需求：如何无感调用用户摄像头？怎么，想进局子？
-
-- ## 所以这个技术啊，还是要看天时。SSE很早就出来了，基本没人用。
+- ## 技术啊，还是要看天时。SSE很早就出来了，基本没人用。
 - https://twitter.com/NalaGinrut/status/1673676930036514816
   - 2015年那会儿我说在框架里实现一下，结果一帮年轻人都说现在是websocket的年头，于是就实现了websocket，而把SSE放到了todo里。
   - 这么多年过去了SSE又借着chatgpt steam死灰复燃了
@@ -169,7 +158,7 @@ modified: 2022-10-11T09:03:07.297Z
   - 各种组件配置的超时通常可能是60秒或30秒。所以过去一般保守设置为30秒。
   - 百度贴吧设为60秒也许是考察过链路的情况，也可能就是随手一设。具体要找开发人员问了。
 
-## [WebRTC和WebSocket有什么关系和区别？](https://www.zhihu.com/question/424264607)
+- ## 🆚️ [WebRTC和WebSocket有什么关系和区别？](https://www.zhihu.com/question/424264607)
 
 - 这两种技术本质上半毛钱关系都没有，除了它们都可以在web中用之外。
   - socket 和 rtc 有多大区别，这两种技术就有多大区别。
@@ -226,7 +215,7 @@ modified: 2022-10-11T09:03:07.297Z
   - 相比WebSocket、http消息，数据通道支持流量大、延迟低。
 - 单个对等连接中的多个数据通道底层共享一个流，所以只需一次offer、answer即可建立首个数据通道。之后再建立数据通道无需再次进行offer、answer交换。
 
-## [到底什么是WebRTC服务器，以及它是如何联接通话的](https://webrtc.org.cn/webrtc-server/)
+- ## [到底什么是WebRTC服务器，以及它是如何联接通话的](https://webrtc.org.cn/webrtc-server/)
 
 - WebRTC并不是真正意味着你不需要服务器来协商和联接通话。它只意味着，在多数情况中，你可以直接地在浏览器之间进行通信。
 - 要想让任何WebRTC服务正常的工作，你需要如下2个后端服务器

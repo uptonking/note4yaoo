@@ -56,9 +56,17 @@ modified: 2023-11-01T10:08:09.232Z
 # discuss
 - ## 
 
-- ## 
+- ## I'm looking for a durable (storage-backed) data structure that is a time-indexed log, 
+- https://twitter.com/dustingetz/status/1734337596115886146
+  - 20 transactions per second, the key is a time bucket and the value is a record. 
+  - The log must support efficient lookup by time-bucket as well as O(1) relative scan forward/backward for playback. 
+  - File system storage is fine as is rotating files every day if needed. Suggestions?
+- what you’re looking for is exactly what time series database does
+  - most popular is timescale db and influx db. if you’re familiar with running postgres, i’d say timescale since it runs on top of postgres.
 
-- ## It's eye opening to me how appending to a log file is seen is basically free, compared to other database operations. 
+- Apache KvRocks, Or just RocksDb if you don’t need replication
+
+- ## 💡 It's eye opening to me how appending to a log file is seen is basically free, compared to other database operations. 
 - https://twitter.com/LewisCTech/status/1733576104773026192
   - At least that's the impression I get reading papers and materials on the subject.
 - Appending is the most fundamental file operation.

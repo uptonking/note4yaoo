@@ -20,6 +20,8 @@ modified: 2022-12-06T16:16:00.262Z
   - The dataset from this benchmark was obtained from the actual traffic recording of one of the world's largest web analytics platforms. 
   - The dataset is available in CSV, TSV, JSONlines and Parquet formats
   - [Show HN: A benchmark for analytical databases (Snowflake, Druid, Redshift) | Hacker News_202207](https://news.ycombinator.com/item?id=32084571)
+  - forks
+  - https://github.com/hydradatabase/ClickBench
 # data
 
 # utils

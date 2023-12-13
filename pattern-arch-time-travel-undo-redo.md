@@ -91,7 +91,12 @@ modified: 2023-09-12T09:36:25.608Z
 
 - ## 
 
-- ## 
+- ## Converting file system changes into ops for a rewindable Obsidian.
+- https://twitter.com/JungleSilicon/status/1734394464289132751
+  - Obsidian autosaves as you make changes leading to semi-realtime updates.
+  - It also respects changes that other programs make, so if a *revert* button was added, Obsidian would update when you pressed it.
+  - It wouldn't work for concurrent updates but it gets you to *semi-collaborative* documents.
+  - The history is periodically saved to a file and can be recovered when re-opened. If the server is not running then on next open it can do a diff to create the ops.
 
 - ## [Build Your Own X | Hacker News](https://news.ycombinator.com/item?id=32157759)
 - One advice: for any of these topics take a tutorial directed at language X and implement the solution in language Y. This will prevent you from mindlessly copying the code and will force you to understand what you are doing.

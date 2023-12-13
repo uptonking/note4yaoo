@@ -12,7 +12,10 @@ modified: 2023-12-06T15:59:01.332Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## what type of system architecture does PouchDB use (Embedded, Shared-Disk, Shared-Everything, Shared-Memory, or Shared-Nothing)? _201912
+- https://groups.google.com/g/pouchdb/c/rj-9MX9mlGY
+- If you think only of the local database and the standalone application, it is an embedded database. 
+  - When you're doing replication, it's a shared-nothing, or multi-master architecture.
 
 - ## 🆚️ pouchdb vs triplitdb _20231202
 - https://discord.com/channels/1138467878623006720/1138467879113728033/1180309062169149461

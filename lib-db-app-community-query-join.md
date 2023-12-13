@@ -21,6 +21,9 @@ modified: 2023-10-31T11:17:48.697Z
   - RIGHT JOIN
   - FULL OUTER JOIN
 
+- https://twitter.com/alexxubyte/status/1734410242774167619
+  - I make stupid errors, many people notice them and point them out, enabling me to fix them quickly
+  - This is the updated version.
 # discuss
 - ## 
 

@@ -1016,6 +1016,9 @@ modified: 2023-09-28T20:35:56.153Z
 - https://github.com/crkn-rcdr/kivik /202108/ts
   - An opinionated library and command-line utility for configuration CouchDB endpoints, databases, and design documents.
   - Kivik's opinionated nature lies in its expectation of a directory structure where it will find all of the CouchDB configuration you'd like to test and deploy
+- https://github.com/go-kivik/kivik /202312/go
+  - Common interface to CouchDB or CouchDB-like databases for Go and GopherJS
+  - The kivik package must be used in conjunction with a database driver.
 
 - https://github.com/maxlath/blue-cot /202208/js
   - CouchDB library with a simple, functional-programing-friendly API, returning promises
@@ -1067,6 +1070,9 @@ modified: 2023-09-28T20:35:56.153Z
 
 - https://github.com/mhausenblas/ld-in-couch /201211/python
   - This project enables you to store, process and query RDF-based Linked Data in Apache CouchDB.
+
+- https://github.com/zetavg/Inventory/tree/main/packages/couchdb-public-server /js
+  - A simple HTTP server to serve content in CouchDB databases publicly
 # test
 - https://github.com/GustavoLopez04/pouchdb /202211/js
   - The source repository for the getting started tutorial for PouchDB

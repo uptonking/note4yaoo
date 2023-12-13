@@ -106,7 +106,12 @@ modified: 2023-03-30T13:31:09.049Z
 
 - ## 
 
-- ## 
+- ## ReflectNotes: We're officially profitable
+- https://twitter.com/reflectnotes/status/1734589109962932508
+  - 对于一个 3-5 人小公司，3500 个付费用户就可以盈利了，而且客户还都是投资人和 CEO
+  - Last year, we set a goal to become profitable by the end of 2023 – a milestone we have now successfully reached.
+  - Many startups rely on venture financing, pushing them into a "grow at all costs" model. We want to do things differently. Our aim is to grow sustainably and steady, building a useful product along the way.
+  - 👉🏻 We are semi-bootstrapped, and the investors we do have are looking for dividends(分红; 股利) rather than an exit. Again, this aligns incentives towards sustainable growth that will give Reflect true longevity. It ensures that both product quality and the company will continue to thrive. In other words, your notes are safe with us.
 
 - ## 我是2023年6月份开始做独立产品的，为此特意注册了一个公司接入支付功能。
 - https://twitter.com/chenbimo/status/1725898354213990467

@@ -12,6 +12,23 @@ modified: 2023-10-06T16:26:57.557Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Nowadays I have doubts about using Rust primarily for building cross-language bindings. 
+- https://twitter.com/Horusiath/status/1734385412800745686
+  - It's great language, but once you need to pass Rust-idiomatic API to C FFI (or WASM) things are no longer so smooth.
+  - The major advantage of Rust was that past alternatives were way worse.
+- Any good alternatives? 
+  - Recently Zig gets some attention and it seems to target this space. But I have too little experience to confirm yet.
+- I was really hoping for F# to take that space. But the only space F# is taking is in C# features.
+
+- Cross-language is by definition not smooth, but I tend to agree that C-like APIs are easier to integrate with. That said, the ecosystem for cross-language bindings with Rust is fairly extensive. I douby Zig would do much better here because you anyway need to build some wrappers.
+
+- Swift really shines in mixed native language projects
+  - Swift is a tri force! (imperative, functional, concurrent)
+
 - ## Rust is mostly an uglier OCaml. Fight me.
 - https://twitter.com/basus/status/1730321811773014186
 - Rust uses typeclasses, ocaml uses higher order modules. They feel completely different IMO.

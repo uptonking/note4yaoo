@@ -80,5 +80,10 @@ modified: 2023-11-23T18:01:59.304Z
 - https://github.com/surveyjs/survey-library /MIT/ts
   - https://surveyjs.io/form-library
   - Free JavaScript form builder library with integration for React, Angular, Vue, jQuery, and Knockout.
+
+- https://github.com/getodk/central-backend /apache2/202312/js
+  - https://docs.getodk.org/central-intro/
+  - the API server for ODK. It's built with Node.js and Postgres.
+  - https://github.com/getodk/central-frontend /js/vue
 # more
 

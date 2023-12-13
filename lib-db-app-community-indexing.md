@@ -13,10 +13,18 @@ modified: 2023-09-17T17:38:11.187Z
 - ## 
 
 - ## 
+# discuss
+- ## 
 
 - ## 
 
-- ## How to find unused indexes
+- ## 
+
+- ## 👨🏻‍🏫 How to find redundant indexes
+- https://twitter.com/samokhvalov/status/1734467240832201064
+  - Redundant indexes refer to multiple indexes on a table that serve the same purpose or where one index could satisfy the queries that all others do. 
+
+- ## 👨🏻‍🏫 How to find unused indexes
 - https://twitter.com/samokhvalov/status/1734044926755967163
   - General algorithm of unused indexes cleanup
   - Queries to analyze unused indexes
@@ -29,12 +37,6 @@ modified: 2023-09-17T17:38:11.187Z
   6. Finally, if there is no plan caching (prepared statements are not used), each extra index increases chances to reach FP_LOCK_SLOTS_PER_BACKEND=16 relations (both tables and indexes) involved in query processing, which, under high QPS, increases chances of having LWLock:LockManager contention 
 
 - unused indexes are problematic in all database platforms, but caution if recursive SQL (eg optimizer, referential integrity, etc) implicitly use them. 
-# discuss
-- ## 
-
-- ## 
-
-- ## 
 
 - ## [2 phase indexing · crate/cratedb_202308](https://github.com/crate/crate/pull/14617)
 - The way we index documents is not changed, only split into 2 phases.

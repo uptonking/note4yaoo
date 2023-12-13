@@ -12,7 +12,10 @@ modified: 2023-05-07T18:35:50.897Z
 # discuss
 - ## 
 
-- ## 
+- ## 微软 terminal 团队想给 windows 内置一款默认的 CLI 文本编辑器，跑来 github 上征询大家的意见，于是评论区各个编辑器又开始互掐。
+- https://twitter.com/skywind3000/status/1734401495691600346
+  - [Default CLI Editor - Feature Exploration! · microsoft/terminal](https://github.com/microsoft/terminal/discussions/16440)
+- 在windows上使用命令行的一般都是写程序的，写程序的一般都使用git，安装完git后可以使用git的git-bash，当然git也带了vim，所以就直接使用vim了。
 
 - ## 突然发现可以使用 Cloudflare 的 Redirect Rules 来做短链服务，天然使用 Cloudflare 自带的强大的 Analytics 功能！Cloudflare 太强了，哭死！
 - https://twitter.com/yetone/status/1734139420801187931

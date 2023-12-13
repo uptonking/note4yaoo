@@ -52,4 +52,8 @@ modified: 2020-12-12T19:01:56.749Z
   - http://www.webmin.com/
   - a web-based system administration tool for Unix-like servers, and services
   - it is possible to configure operating system internals, such as users, disk quotas, services or configuration files, as well as modify, and control open-source apps, such as BIND DNS Server, Apache HTTP Server, PHP, MySQL, and many more.
+# scheduler
+- https://github.com/Hexagon/croner /MIT/js/NoDeps
+  - Trigger functions or evaluate cron expressions in JavaScript or TypeScript. 
+  - No dependencies. Most features. Node. Deno. Bun. Browser.
 # more

@@ -94,7 +94,7 @@ modified: 2022-11-04T14:21:31.365Z
   - By default, the DB engine is configured to run over SSL. 
   - This database tracks changes to all entities in the auto-created column(on all tables) `stark_version`. With the help of this change tracking, synchronization mechanisms can be built later.
   - Interactive queries are supported due to the stateful nature of the API.
-  - [Stark-DB: SQLite-backed, change-tracking database available over HTTP | Hacker News](https://news.ycombinator.com/item?id=37862532)
+  - [Stark-DB: SQLite-backed, change-tracking database available over HTTP | Hacker News_202310](https://news.ycombinator.com/item?id=37862532)
     - Doesn't this lose the primary latency benefit of Sqlite by introducing a network connection?
     - This loses the advantage of SQLite, make it slower and more cumbersome to operate. 
 # more
