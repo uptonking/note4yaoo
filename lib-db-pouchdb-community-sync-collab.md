@@ -12,7 +12,18 @@ modified: 2023-10-29T02:22:57.939Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## [pouchDb + MongoDB_201809](https://github.com/pouchdb/pouchdb/issues/7466)
+  - how can I use the frontend in the pouchDb with synchronization, for my MongoDb backend database?
+
+- PouchDB won’t sync with Mongodb. You need to run CouchDB on the backend.
+
+- how the final solution looks is extremely tied to the rest of your app, but in general:
+- you wanna listen to the changes feed on the couchdb
+  - there are 2 ways to do this:
+  - read at a for example 5 minute interval, and store the last_seq that you read somewhere. Then on next read you need to start from the last checkpoint you read.
+  - read via a live changes feed. if you do this, you need to prepare for what happens if you need to read changes from the start. That means, you have to have a way to make sure you don't write everything to your MongoDB once again (so you dont get duplicate data)
+- On every change you need to decide what to do with it. Can you look up if something is already written? do you need to update it or do you need to write something new?
+- From experience, it's helpful to design this in a way that you can re-run the import and get the same results from the same data. If you have a production system with MongoDB data and you run the import from sequence number 0 again, what happens then?
 
 - ## [Selective sync · janl/couchdb-next_201702](https://github.com/janl/couchdb-next/issues/14)
 - I wonder if replication via view vs _changes might something to consider here. I know we have some view based replication stuff on 1.6 but AFAIK that was basically just to only replicate things in a view. I'm thinking more along the lines of that we just follow the key order in a view and then clients can specify a view and any complex logic they want. Last 90 days for instance could be something like emit(doc.date, null) and then replicate using a start_seq of now() - 90 days

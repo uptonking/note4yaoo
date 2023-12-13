@@ -374,6 +374,9 @@ modified: 2022-11-25T15:41:47.534Z
   - Query based synchronization: In some cases view or actual SQL can be source for data sync, in that scenario SQL can be used as source.
   - Query based sync: In some cases view or actual SQL can be source for data sync, in that scenario SQL can be used as source.
 # raft
+- https://github.com/datafuselabs/openraft /MIT/rust
+  - rust raft with improvements
+
 - https://github.com/eatonphil/raft-rs /202312/rust
   - Another minimal Raft implementation in Rust.
   - you don't learn a concept well until you've implemented it a few times

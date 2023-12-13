@@ -53,6 +53,29 @@ modified: 2020-12-21T07:46:20.408Z
 - With right: 0; bottom: 0, the margin is contained inside the positioned descendant; they will shrink the size of the element.
   - So what does this mean? It seems to me that `top: 0; right: 0; bottom: 0; left: 0` is probably the one to favor, as it's a little more predictable, unless you have a particular reason to use height or width instead.
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Basically every layout overflow bug ever boils down to some flex or grid child needing `min-width: 0` ; 
+- https://twitter.com/adamwathan/status/1734696245015494711
+- And basically every layout underflow bug ever boils down to some flex child needing `flex-shrink: 0` .
+- For those asking, it's likely because of `min-width` defaulting to `auto` .
+  - [Defensive CSS - Minimum Content Size In CSS Flexbox](https://defensivecss.dev/tip/flexbox-min-content-size/)
+
+- 📝 [An Interactive Guide to Flexbox in CSS](https://www.joshwcomeau.com/css/interactive-guide-to-flexbox/)
+  - After a few years of practice, I actually feel like setting `flex-shrink: 0` is the more straightforward/direct solution to this particular problem. Though,  `min-width` still has an important role to play in the Flexbox algorithm! 
+  - flex-shrink has a default value of 1, and we haven't removed it, so the search input should be able to shrink as much as it needs to! Why is it refusing to shrink?
+  - The Flexbox algorithm refuses to shrink a child below its minimum size. The content will overflow rather than shrink further, no matter how high we crank flex-shrink!
+  - Text inputs have a default minimum size of 170px-200px (it varies between browsers). That's the limitation we're running into above.
+  - In other cases, the limiting factor might be the element's content. For an element containing text, the minimum width is the length of the longest unbreakable string of characters.
+  - By setting min-width: 0px directly on the Flex child, we tell the Flexbox algorithm to overwrite the “built-in” minimum width. Because we've set it to 0px, the element can shrink as much as necessary.
+  - It's worth noting that the built-in minimum size does serve a purpose. It's meant to act as a guardrail, to prevent something even worse from happening. 比如min-width设为0后这个flex-item的内容会被相邻flex-item盖住部分
+
+- Yes please. Would love `min-height: 0` as well. My full-screen flex-based layouts are plagued(折磨, 烦扰) by this.
+
 - ## Do you ever not want `min-width/height: 0` to prevent Grid/Flex children from spilling out? 
 - https://twitter.com/souporserious/status/1427404212531458054
   - Seems like it should be in a reset. 

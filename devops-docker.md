@@ -95,6 +95,11 @@ docker stop containerId
 - 多runtime的咋办
 - 蹲个结论
 
+- https://twitter.com/liumengxinfly/status/1734877332538884361
+  - 同步下进度，和 seccomp 应该没关系，k8s 1.25 seccompDefault featureGate 是默认打开了，但是还要去 kubelet 开启才行，开启后确实性能会下降，但默认是不开启的。对比了 docker 和 containerd 环境生成的 state.json 几乎一模一样，对比了sysctl的系统参数也几乎一模一样，现在彻底迷茫中
+- 内核好像上了 4.x 之后，容器网络 netns 内的系统参数会有区别
+  - 一样的之前就是一批机器降k8s换docker
+
 - ## 我用Docker的时候也遇到了很多坑，而且特别难调
 - https://twitter.com/PenngXiao/status/1729460664585080872
   - 从某种程度上说这些容器技术好用、不出事儿的时候真好用，出了事儿真难定位。

@@ -14,6 +14,8 @@ modified: 2021-05-13T02:48:27.497Z
   - no vdom
 - lit-element特点
 
+- [lit/dev-docs/design/how-lit-html-works.md](https://github.com/lit/lit/blob/main/dev-docs/design/how-lit-html-works.md)
+
 - ## [How it Works](https://github.com/Polymer/lit-html/wiki/How-it-Works)
 - This is a deep-dive into how lit-html works, what makes it fast, how the code is organized, and what could be improved. 
 - lit-html is an HTML templating library. 
@@ -60,17 +62,24 @@ modified: 2021-05-13T02:48:27.497Z
   - I'm wondering how, since we don't pre-compile lit templates, are they still efficient? 
 - lit-html prepares templates the first time they're rendered, not every execution. 
   - The preparation step records where the expressions are in the DOM so that on the changing expressions are ever updated.
-
 # roadmap
-
 - [Reactive controller adapters for other frameworks](https://github.com/Polymer/lit-html/issues/1682)
   - We would like to enable a framework-agnostic subset of reactive controller to work across frameworks.
-
 # pieces
-
 - The primary drawback of lit-html to me is that it doesn't seem to work with Typescript as well as JSX does (specifically for custom component props)
   - This is the territory of linting/IDE plugins, as popularity picks up these things will come as well. But you're right today there is more for JSX.
   - I usually only create a web component for the view and then create functions that return a template for the components
+# discuss-vdom
+- ## 
+
+- ## 
+
+- ## 📝 [[design-doc] How lit-html works_202306](https://github.com/lit/lit/pull/3931/commits/7f4aad3b3cb03eb334536441c4a2957639fe0b3c)
+- Comparison to Virtual DOM
+- lit-html is comparable in many ways to virtual-DOM (VDOM) approaches, but it works without storing a separate representation of the DOM in memory, or computing DOM diffs like virtual-DOM libraries must do.
+- Where VDOMs work at the level of the DOM representation of a UI, lit-html works at the _value_ level.
+- lit-html UIs are values, like VDOM, but instead of each DOM node being represented as a single value, the DOM structure is represented by a reference to a template.
+- lit-html only tracks the tree of dynamic values (called `Parts` ) that is more sparse than the associated DOM tree, so traversing dynamic values when necessary is faster.
 
 # discuss
 
@@ -131,6 +140,5 @@ modified: 2021-05-13T02:48:27.497Z
   - It's just plain JS. 
 
 # ref
-
 - [The history of hyperHTML followed by lit-html](https://gist.github.com/WebReflection/ab43649d9e4a53ac900b5924c77a310e)
 - [Easy apps with hyperHTML — 1, wire/bind_201809](https://dev.to/pinguxx/easy-apps-with-hyperhtml-1-31cc)

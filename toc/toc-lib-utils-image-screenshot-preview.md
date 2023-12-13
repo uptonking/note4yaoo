@@ -192,8 +192,10 @@ modified: 2023-04-16T13:34:33.706Z
 # discuss
 - ## 
 
-- ## 
+- ## React tip: Use a custom hook to handle array states in your components 
+- https://twitter.com/_georgemoller/status/1734738304698884575
+  - 代码动画效果
 
-- ## ✨ How do you create the animations for that video? (demo source code)
+- ## 💫 How do you create the animations for that video? (demo source code)
 - https://twitter.com/elie2222/status/1708888899685433410
 - 👉🏻 Learn how to animate code (and more) using Apple Keynote by using magic move!

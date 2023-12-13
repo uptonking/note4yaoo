@@ -110,7 +110,6 @@ modified: 2023-02-05T18:50:53.563Z
 - https://github.com/victorteokw/seedgoose
   - Mongoose data seeding with smart id references tracking.
 
-
 - https://github.com/Svjard/nepata /ts
   - A rapid report framework around MongoDB allowing for the generation of materialized views in MongoDB against collections without an in-depth understanding of Mongo queries.
 - https://github.com/ilinieja/node-mongoose-materialized-views-example /ts
@@ -124,7 +123,10 @@ modified: 2023-02-05T18:50:53.563Z
   - What if I want to store the changes in the database? This plugin does not support 
 - https://github.com/nosuchip/mongoose-track /201806/js
   - Mongoose model change history tracking and storing into model's "history" field.
-# mongo
+# utils-mongo
+- https://github.com/vadimdemedes/mongorito /201807/js
+  - flexible MongoDB ODM for Node.js apps based on Redux.
+  - Each model instance has a separate Redux store, which ensures isolation between other models and easy extensibility.
 
 - https://github.com/maggregor/maggregor /ts
   - Simple data-layer that speeds up MongoDB queries

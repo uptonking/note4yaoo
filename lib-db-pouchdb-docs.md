@@ -217,7 +217,7 @@ function sync() {
 - Eventual conflicts
   - Imagine two PouchDB databases have both gone offline. The two separate users each make modifications to the same document, and then they come back online at a later time.
   - Both users committed changes to the same version of the document, and their local databases did not throw 409 errors. What happens then?
-  - By default, CouchDB will choose an arbitrary winner based on a deterministic algorithm, which means both users will see the same winner once they're back online. However, since the replication history is stored, you can always go back in time to resolve the conflict.
+  - 💡 By default, CouchDB will choose an arbitrary winner based on a deterministic algorithm, which means both users will see the same winner once they're back online. However, since the replication history is stored, you can always go back in time to resolve the conflict.
 - Revision hashes start with 1-, 2-, 3-, etc., which indicates their distance from the first, "root" revision. The root always starts with 1-
 - In fact, all databases in the network will see the exact same revision history – much like Git.
   - To fetch the losing revision, you simply get() it using the rev option

@@ -190,6 +190,13 @@ modified: 2023-09-28T20:35:56.153Z
 - https://github.com/serby/save /143Star/ISC/202209/js
   - A simple CRUD based persistence abstraction for storing objects to any backend data store. eg. Memory, MongoDB, Redis, CouchDB, Postgres, Punch Card etc.
 
+- https://github.com/paperhive/octonom /201802/ts
+  - General-purpose models and collections with multi-database support, written in TypeScript
+  - Collections are specific to the database you use (e.g. MongoCollection, CouchCollection)
+- https://github.com/genbliz/mocody /202303/ts/wip
+  - Implementation of single table design, and unified query access for MongoDB, CouchDB, and dynamoDB
+  - https://github.com/genbliz/mocody/tree/add-pouchdb
+
 - https://github.com/balazsgrill/tw-pouchdb-sync /202309/js
   - TiddlyWiki synchronizer plugin for CouchDB/PouchDB
 # couch-like
@@ -947,15 +954,25 @@ modified: 2023-09-28T20:35:56.153Z
 - https://github.com/NinjaGrandpa/nodejs-couchdb-demo /js
   - A simple customer database built with CouchDB and NodeJs
 
+- https://github.com/kidrecursive/mongoose-couch /201303/js
+  - Mongoose ODM for CouchDB
+- https://github.com/jfelsinger/couch-cushion /201506/js
+  - A Node.js ODM for Couchbase
+  - Documents in couch-cushion are represented as an instance of a model. Models are defined via a schema. The schema setup is loosely based off of that in mongoose.
+
+- https://github.com/couchbaselabs/node-ottoman /202310/ts
+  - https://ottomanjs.com/
+  - ODM built for Couchbase and Node.js.
+  - 依赖Ottoman, Couchbase SDK, Couchbase Server
+  - https://github.com/stoqey/sofa
+    - [I am working on an ORM based of couchbase and node-ottoman - Node.js SDK - Couchbase Forums](https://www.couchbase.com/forums/t/i-am-working-on-an-orm-based-of-couchbase-and-node-ottoman/31636)
+
 - https://github.com/minni-im/tape-recorder /202105/js
   - Thin ORM for CouchDB on top of Nano
 - https://github.com/Wemotive-POC/couchdb-orm /202201/js
   - 提供了example
 - https://github.com/jimpo/couch-monster /2012/js
   - CouchDB ORM for Node.js
-- https://github.com/paperhive/octonom /201802/ts
-  - General-purpose models and collections with multi-database support, written in TypeScript
-  - Collections are specific to the database you use (e.g. MongoCollection, CouchCollection)
 - https://github.com/EternalDeiwos/model /201711/js
   - PouchDB adapter for the json-document modelling framework
   - https://github.com/anvilresearch/json-document /201705/js
@@ -964,6 +981,10 @@ modified: 2023-09-28T20:35:56.153Z
 - https://github.com/ermouth/covercouch /201902/js
   - CoverCouch implements per-document r/w/d ACL for CouchDB. 
   - CoverCouch acts as proxy – original CouchDB REST API kept untouched, but all requests to Couch – r/w/d, _changes feed, _view, _update, _list or other fn call, replication – everything is filtered.
+- https://github.com/janl/per-doc-auth-for-couchdb /201706/js
+  - Docs have new property $access: ['user', 'role', …]
+  - R/W access to docs is matched against the http user & roles and the $access field
+  - Tech Demo: Do Not Use
 
 - https://github.com/ermouth/cloudwall /201903/js
   - A platform for developing, testing, building, deploying and running CouchDB hosted apps.
@@ -1073,6 +1094,23 @@ modified: 2023-09-28T20:35:56.153Z
 
 - https://github.com/zetavg/Inventory/tree/main/packages/couchdb-public-server /js
   - A simple HTTP server to serve content in CouchDB databases publicly
+
+- https://github.com/ilfrich/couchdb-to-mongodb /201907/js
+  - migrate CouchDB databases to MongoDB collections
+  - Since CouchDB and MongoDB are structured slightly different, the convention is to migrate each CouchDB database to a separate collection within a separate database.
+  - The migration tool will not migrate `_design` documents.
+  - https://github.com/jimishio/couchdb-to-mongodb /201704/shell
+- https://github.com/simagix/couch-to-mongo /202103/java
+  - Migrate data from CouchDB to MongoDB. 
+  - The algorithm is based on the fact that in CouchDB, documents are sorted by the document ID. 
+  - The application uses a thread to read data off CouchDB and kicks off multiple threads to save data to MongoDB.
+- https://github.com/Firkintun/slouch /201411/js
+  - A lazy, pull-only, continuous replication server from CouchDB to MongoDB
+
+- [mongo2couch.py](https://gist.github.com/Kailashcj/8b24b90356ccfcf2d1cc6558b785b9c5)
+  - /201906/python
+  - migrate documents from mongodb to apache couchdb database
+  - does not support the use case for 'documents with attachments'
 # test
 - https://github.com/GustavoLopez04/pouchdb /202211/js
   - The source repository for the getting started tutorial for PouchDB

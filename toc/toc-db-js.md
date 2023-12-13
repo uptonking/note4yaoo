@@ -334,9 +334,6 @@ modified: 2022-11-25T15:50:48.226Z
     - and the tree's structure is chunked using randomness derived from the tail of each hash. 
     - This produces a self-balancing and well sorted structure on-disc.
 
-- https://github.com/serby/save /143Star/ISC/202209/js
-  - A simple CRUD based persistence abstraction for storing objects to any backend data store. eg. Memory, MongoDB, Redis, CouchDB, Postgres, Punch Card etc.
-
 - https://codeberg.org/small-tech/jsdb /202311/js/NoDeps
   - A zero-dependency, transparent, in-memory, streaming write-on-update JavaScript database for the Small Web that persists to a JavaScript transaction log.
   - A small and simple data layer for basic persistence and querying.
@@ -481,6 +478,12 @@ modified: 2022-11-25T15:50:48.226Z
   - 提供了使用示例，包括minimongo、nedb、pouchdb
   - EventReduce only works with queries that have a predictable sort-order for any given documents. (you can make any query predicable by adding the primary key as last sort parameter)
   - [EventReduce: An algorithm to optimize database queries that run multiple times | Hacker News_202004](https://news.ycombinator.com/item?id=22888239)
+
+- https://github.com/serby/save /143Star/ISC/202209/js
+  - A simple CRUD based persistence abstraction for storing objects to any backend data store. eg. Memory, MongoDB, Redis, CouchDB, Postgres, Punch Card etc.
+  - save comes with a fully featured in memory engine which is super handy for testing your models. 
+  - https://github.com/serby/save-mongodb
+  - https://github.com/serby/save-memory
 # rewrite-db
 - https://github.com/ciochetta/learndb /24Star/202101/js/mongodb
   - my first attempt at creating my own database from scratch.

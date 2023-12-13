@@ -100,6 +100,16 @@ modified: 2021-08-30T18:56:09.644Z
   - A Node.js ORM for MySQL, SQLite, PostgreSQL, MongoDB, GitHub and serverless service like Deta, InspireCloud, CloudBase, LeanCloud.
   - 依赖think-model, think-mongo(think.js)
 
+- https://github.com/biggora/caminte /MIT/201805/js
+  - cross-db ORM for nodejs, providing common interface to access most popular database formats.
+  - mysql, sqlite3, riak, postgres, couchdb, mongodb, redis, neo4j, firebird, rethinkdb, tingodb
+  - [You support couchbase, not couchdb_201803](https://github.com/biggora/caminte/issues/181)
+  - [Getting Null Values from CouchDB (cloudant)](https://github.com/biggora/caminte/issues/134)
+    - I would recommend that if you are using cloudant or couch, just start from a scratch nodejs app, don't use any library for connection, as their is none that is well maintained and fully functional . All the best.
+- https://github.com/grimen/node-document /201311/js
+  - Minimalistic ODM for Node.js implementing the most fundamental operations (such as GET/SET/DEL) on different kinds of "document(-ish)" stores using one unified API. Switching database should be a matter of changing a line of code.
+  - To stick to this philosophy more advanced operations won't be supported in core, but node-document can be used along with any 3rd-party drivers.
+
 - https://github.com/balderdashy/waterline /202208/js/inactive
   - An adapter-based ORM for Node.js with support for mysql, mongo, postgres, mssql (SQL Server), and more
   - Waterline is a next-generation storage and retrieval engine, and the default ORM used in the Sails framework.
@@ -253,7 +263,7 @@ modified: 2021-08-30T18:56:09.644Z
     - Nearly every other embedded database engine does not utilize a write-ahead log. In my testing, a write-ahead log is absolutely critical for insert performance. 
   - https://github.com/khonsulabs/nebari /rust
     - A pure Rust database implementation using an append-only B-Tree file format.
-    - This crate provides the Roots type, which is the transactional storage layer for BonsaiDb. It is loosely inspired by Couchstore.
+    - This crate provides the Roots type, which is the transactional storage layer for BonsaiDb. It is loosely inspired by `Couchstore`.
     - This crate blocks the current thread when accessing the filesystem. If you are looking for an async-ready database, BonsaiDb is our vision of an async-aware database built atop Nebari.
     - Nebari exposes multiple levels of functionality. The lowest level functionality is the `TreeFile`. A `TreeFile` is a key-value store that uses an append-only file format for its implementation.
     - Using TreeFiles and a transaction log, Roots enables ACID-compliant, multi-tree transactions.
@@ -398,6 +408,10 @@ modified: 2021-08-30T18:56:09.644Z
   - multi-dimensional spatial database based on the bkd paper
   - bkd tree implementation using random-access storage
   - This module implements some of the bkd tree paper and is very fast. However, the memory usage can be high at times and some features of the paper, such as the grid bulk load algorithm, are not yet implemented.
+# nosql
+- https://github.com/eclipse/jnosql-databases /EPLv1
+  - https://www.jnosql.org/
+  - a Java framework that streamlines the integration of Java applications with NoSQL databases.
 # more-database
 - https://github.com/lealone/Lealone
   - /1.6kStar/Apache2+H2MPL2/202012/java

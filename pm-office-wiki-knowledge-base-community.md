@@ -7,8 +7,31 @@ modified: 2021-07-27T16:35:20.057Z
 
 # pm-office-wiki-knowledge-base-community
 
-# discuss
+# guide
 
+# bulletjournal
+- [Bullet Journal](https://bulletjournal.com/)
+  - Bullet Journal® (aka Bujo) is a mindfulness practice designed as a productivity system. 
+
+- https://github.com/bastianallgeier/bulletjournal /202112/js/inactive
+  - https://bastianallgeier.com/projects/bulletjournal
+  - This little HTML file is nothing more than a scratchpad for your weekly tasks and notes.
+
+- https://github.com/fulgor/bulletjournal.md /202003/python/inactive
+  - Python script to create a bullet journal in an plain textfile with Markdown formatting
+  - It is about the idea of using the concept of a bulletjournal in a plain textfile. The second idea is to use markdown-formatting. 
+
+- https://github.com/singerdmx/BulletJournal /202306/java/ts
+  - open source platform for notebook keeping, ledger management, task/project management
+
+- https://github.com/weekend-project-space/moon-note /202303/js/vue
+  - https://weekendproject.online/journal.html
+  - 数据全部存放再您的个人设备上，可以点击右上角导出，支持离线使用
+# discuss-bulletjournal
+- ## 
+
+- ## 
+# discuss
 - ## 
 
 - ## 
@@ -26,14 +49,7 @@ modified: 2021-07-27T16:35:20.057Z
   - My advice is to just look for the text files scattered around your computer and note-taking apps and move them into wiki pages. As you make progress, you will notice natural categories/namespaces emerging.
 - I did start similar things over 10 years ago. Where I am at these days is just text files ( markdown ) nested into folder structures. I've found this the most sustainable for quite a few years and it's been super useful. Main thing is, do whatever, as long as you find it easy to sustain.
 
-
 - My two biggest complaints about MediawWiki are 1. PHP, and 2. no well-supported way to opt-in to a different syntax like Markdown or AsciiDoc or pretty much anything that isn't MediaWiki-flavored wikitext.
-
-
-- 
-- 
-- 
-- 
 
 - ## 如何看待语雀付费策略？_20221026
 - https://www.zhihu.com/question/562238887

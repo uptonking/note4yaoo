@@ -90,6 +90,7 @@ modified: 2022-11-07T10:25:12.034Z
 
 - hn-like
   - https://lobste.rs/
+  - [Brian Lovin](https://brianlovin.com/)
 # twitter
 - search
   - 搜索关键词时，可加上'min_replies:1'的条件，筛选出被讨论过的质量更高的内容

@@ -53,6 +53,9 @@ modified: 2022-12-02T11:15:15.257Z
 - tips
   - couchdb fauxton http://127.0.0.1:5984/_utils/
 
+- local-first-db的案例
+  - 常用chat作为示例: scuttlebutt > manyverse/MPLv2, hypercore > keet/NonOpen, triplitdb > beeper, kappa > cabal/AGPLv3
+
 - roadmap
   - pouchdb + kappa-crdt + eav => pouchdb-crdt-eav
   - kappa-architecture?

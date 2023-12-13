@@ -64,10 +64,7 @@ modified: 2023-10-29T02:23:35.064Z
   - it is safe. A write to SQLite works or doesn't work, there is no in-between. 
   - it is how SQLite was intended to work. 
 
-- 
-- 
-
-- ## 🛢️ [Cloudant/IBM back off from FoundationDB based CouchDB rewrite | Hacker News_202203](https://news.ycombinator.com/item?id=30652281)
+- ## 🎯 [Cloudant/IBM back off from FoundationDB based CouchDB rewrite | Hacker News_202203](https://news.ycombinator.com/item?id=30652281)
 - [Important update on couchdb's foundationdb work-Apache Mail Archives](https://lists.apache.org/thread/9gby4nr209qc4dzf2hh6xqb0cn1439b7)
   - CouchDB embarked(开始；从事) on an attempt to build a next-generation version of CouchDB using the FoundationDB database engine as its new base.
   - The principal sponsors of this work, the Cloudant team at IBM, have informed us that, unfortunately, they will not be continuing to fund the development of this version and are refocusing their efforts on CouchDB 3.x.
@@ -379,6 +376,26 @@ modified: 2023-10-29T02:23:35.064Z
 - I had to make that distinction fairly early on wether PouchDB would be an edge client or a full node and I decided full node, tradeoffs either way but pros of being a full node:
   - Additional (p2p) use cases, honestly I dont use CouchDB much these days, I use express-pouchdb-server so I can embed pouchdb into my server easier than any other database, there is also pouchdb-server and p2p projects like Thali
   - CouchDB existed, sync is super hard, writing an edge client would have meant designing it myself, writing a couchdb clone meant I needed to make a lot less decisions about how it worked while being very confident it would work, The test suite runs the same tests against pouchdb/couchdb to ensure compatibility (and replication via each configuration)
+
+- ## 🎯 [CouchDB 4.0 + FoundationDB · pouchdb/pouchdb_202010](https://github.com/pouchdb/pouchdb/issues/8195)
+- Most of the changes in 4.x are around the implementation - the CouchDB API is mostly the same but with stronger consistency guarantees. For example, the _changes feed in CouchDB 4.x adheres to the old CouchDB 1.x semantics in that it is ordered and clients will not suffer rewinds if the server configuration changes.
+  - Bearing in mind 4.x is still a work in progress, it's probably too early to say whether there would be any breaking changes in the API other than what has already been flagged for deprecation in 3.xx, 
+  - but I wouldn't expect any changes to be required in PouchDB to stay compatible with replication and the core API.
+
+- Thanks for the reply, having a hard limit for attachments of 8 MB is really a hard sell and I really hope they don't do this. If this is truly the case couchDB 4.0 would not be a viable option for us.
+  - Just for clarification document size and attachment size are differentiated, so it appears like the hard limit of 8 MB does not apply to attachments, a lest for couchDB 3.0
+
+- why not use the filesystem instead of attachments? Storing binaries in databases has always been a bad idea.
+
+- I think for us the end to end solution and the same attachment API's that work both within PouchDB and CouchDB was pretty nice. 
+
+- My thoughts would be to get out of attachments as soon as possible. It's not a CouchDB problem. It's a binary-on-database problem. In any database you might attempt this, it's a bad idea. 
+  - Attachments would only lead to memory leaks, deep performance problem regarding indexes (binaries can't be indexed), overload, oversize, ... 
+  - Using the operating-filesystem it's always best, because a database would not be able to outperform the FileSystem API in terms of performance and speed.
+
+- That can be done as a plugin.. Store all images/so on/.. on local, and when doing replicating.to, write a plugin to handle all those uploads and get URL. That would be real hacky though, and can be easily be avoided by just using Cloudinary directly, and store the URL path on your doc.
+
+- let's try to remove this stale label)) also my 5 cents: while CouchDB/PouchDB obviously isn't a CDN, I found attachments to be still definitely useful in cases like user avatars or previews of large media files stored elsewhere. And CouchApps are built from attachments after all
 
 - ## 🎯 [CouchDB 3.0 | Hacker News_202002](https://news.ycombinator.com/item?id=22425834)
 - CouchDB is awesome, full stop. While it's missing some popularity from MongoDB and having wide adoption of things like mongoose in lots of open source CMS-type projects, it wins for the (i believe) unique take on map/reduce and writing custom javascript view functions that run on every document, letting you really customize the way you can query slice and access parts of your data...

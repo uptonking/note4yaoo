@@ -47,6 +47,8 @@ https://meeting.tencent.com/p/9606972663
 # dev-review
 
 ```shell
+flatpak run com.discordapp.Discord --proxy-server="socks5://127.0.0.1:1080"
+
 # delete all node_modules folders recursively
 find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +
 

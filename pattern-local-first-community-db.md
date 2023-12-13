@@ -9,8 +9,8 @@ modified: 2023-12-01T09:08:18.316Z
 
 # guide
 
-- local-first-db的案例常用chat作为示例
-  - scuttlebutt > manyverse, hypercore > keet, triplitdb > beeper, kappa > cabal
+- local-first-db的案例
+  - 常用chat作为示例: scuttlebutt > manyverse/MPLv2, hypercore > keet/NonOpen, triplitdb > beeper, kappa > cabal/AGPLv3
 
 - resources
   - https://github.com/pubkey/client-side-databases

@@ -77,7 +77,8 @@ modified: 2023-09-17T17:35:27.024Z
 
 - ## 
 
-- ## 
+- ## History of SQL: SQL -> Data Mart -> Materialized View -> OLAP Cube -> dbt tables -> One Big/Wide/Super Table -> Semantic Layer
+- https://twitter.com/sspaeti/status/1734610175020167334
 
 - ##  `SELECT *` can have many problems, but by far I think the worst is unpredictability. 
 - https://twitter.com/hnasr/status/1726602781815955467

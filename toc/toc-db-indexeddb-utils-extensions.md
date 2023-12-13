@@ -222,6 +222,11 @@ modified: 2022-11-04T14:22:17.373Z
 
 - https://github.com/Vissie2/dexie-2d-geospatial-index
   - A playground to test the performance of H3 geospatial indexing using Dexie.
+
+- https://github.com/anywhichway/lmdb-indexeddb /202304/js
+  - LMDB API wrapped around IndexedDB to make LMDB available in the browser.
+- https://github.com/anywhichway/realIndexedDB /202303/js
+  - IndexedDB for Node.js backed by LMDB (vs fakeIndexedDB which it in RAM only and just for testing)
 # json-key-value
 - https://github.com/TheGuardianWolf/treepack
   - Pack tree nodes into a flat object and unpack them again!

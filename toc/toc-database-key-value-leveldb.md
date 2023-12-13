@@ -98,8 +98,8 @@ modified: 2022-11-03T04:14:00.563Z
     - fast, memory-efficient database we developed for the OpenLDAP Project. 
     - With memory-mapped files, LMDB has the read performance of a pure in-memory database while retaining the persistence of standard disk-based databases.
 
-- https://github.com/alanshaw/pail /js
-  - DAG based key value store. 
+- https://github.com/alanshaw/pail /MIT/202309/js
+  - DAG based key value store.
   - Sharded DAG that minimises traversals and work to build shards.
   - 依赖@ipld/car~dag-cbor, sade, archy
 

@@ -81,6 +81,37 @@ modified: 2021-10-29T15:02:28.882Z
 - 
 - 
 
+# ideas-office
+- ## 
+
+- ## [HTML Macro for Confluence](https://marketplace.atlassian.com/apps/1221472/html-macro-for-confluence?hosting=cloud&tab=overview)
+- https://twitter.com/PenngXiao/status/1734893402746192047
+  - HTML Macro for Confluence is a flexible yet secure add-on which enables users to extend Confluence.
+  - Write custom HTML in Confluence pages
+  - Use CSS and Javascript to enhance looks and functionality
+  - Embed web pages, forms, slides & charts as Iframe
+  - 你要说这个没有技术含量，我还真信。本来Atlassian的Macro就是渲染一个iFrame，它啥也没做就是在里面再渲染一个iFrame。
+  - 当然了人家做成排名第一的iframe插件也不是白得的。文档写得好，产品设计上没有什么明显瑕疵。要是我做，想做成人家这个样子也不那么容易。
+
+- 话说做人家的生态还是好的，生态好，付费意愿也强
+
+- ## 一个Confluence产品创意。
+- https://twitter.com/PenngXiao/status/1734758929220219148
+  - Dictionary - 术语表。 每个公司都会有一大堆黑话，新人懵逼，老人慢慢的对这些术语表示什么也不一定有一致理解。
+  - 这个工具就是在Confluence的Space里面维护一个统一的术语表。
+  - 第一步，免费上线 1. 左侧栏加一个菜单； 2. 打开之后是一个支持增删查改的表单。
+  - 第二步，支持从内容生成和更新术语表。保持免费。 1. 用户输入术语，搜索所有相关文章； 2. 使用AI总结术语
+  - 第三步，支持在任何页面上自动给页面上的术语加链接。开始收费。
+  - 第四步，根据术语表，矫正页面上不更新和不合适的术语定义。
+  - 整个过程大概12-24个月，主要是积累客户。另外，在这个过程中观察用户行为，随时调整。
+
+- 什么公司和业务愿意为这种工具付费？毕竟每半年一年找个新人更新下文档也可以的
+
+- 最大的问题是，我观察了这个生态，似乎都是复杂软件赚钱而不好用。
+  - 第一，所有赚钱的软件都是好用的，即它相比没有这个软件所带来的便利性超过其价格。
+  - 如果你发现一个软件赚钱好不好用，参考第一条
+
+- 飞书文档有这个功能，称为企业百科。
 # ideas
 - ## 
 

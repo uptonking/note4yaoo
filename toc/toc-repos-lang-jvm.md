@@ -203,6 +203,9 @@ modified: 2021-05-14T15:05:02.456Z
   - source code for the Processing Development Environment (PDE)
   - Processing is a software sketchbook and a language for learning how to code within the context of the visual arts
 # debugging
+- https://github.com/palantir/palantir-java-format
+  - modern, lambda-friendly, 120 character Java formatter.
+
 - https://github.com/plast-lab/doop-mirror /java
   - https://bitbucket.org/yanniss/doop
   - Framework for Java Pointer and Taint Analysis (using P/Taint)
