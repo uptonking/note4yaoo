@@ -7,6 +7,62 @@ modified: 2020-12-08T13:29:35.248Z
 
 # note-fwk-web-blog
 
+# latest-framework
+
+## 📝 [Let’s learn how modern JavaScript frameworks work by building one | Read the Tea Leaves_202312](https://nolanlawson.com/2023/12/02/lets-learn-how-modern-javascript-frameworks-work-by-building-one/)
+
+- #️⃣ [perf: replace Svelte with vanilla JS · nolanlawson/emoji-picker-element](https://github.com/nolanlawson/emoji-picker-element/pull/381)
+
+- From my perspective, the post-React frameworks have all converged on the same foundational ideas:
+  - Using reactivity (e.g. signals) for DOM updates.
+  - Using cloned templates for DOM rendering.
+  - Using modern web APIs like `<template>` and `Proxy`, which make all of the above easier.
+
+- Reactivity
+- It’s often said that “React is not reactive”. 
+  - What this means is that React has a more pull-based rather than a push-based model.
+  - in the worst case, React assumes that your entire virtual DOM tree needs to be rebuilt from scratch, and the only way to prevent these updates is to implement React.memo (or in the old days, shouldComponentUpdate).
+- modern frameworks use a push-based reactive model. In this model, individual parts of the component tree subscribe to state updates and only update the DOM when the relevant state changes. 
+  - This prioritizes a “performant by default” design in exchange for some upfront bookkeeping cost (especially in terms of memory) to keep track of which parts of the state are tied to which parts of the UI.
+- Note that this technique is not necessarily incompatible with the virtual DOM approach: tools like Preact Signals and Million show that you can have a hybrid system. 
+
+- Cloning DOM trees
+- For a long time, the collective wisdom in JavaScript frameworks was that the fastest way to render the DOM is to create and mount each DOM node individually. In other words, you use APIs like `createElement`,         `setAttribute`, and `textContent` to build the DOM piece-by-piece
+- One alternative is to just shove a big ol’ HTML string into `innerHTML` and let the browser parse it for you
+  - This naïve approach has a big downside: if there is any dynamic content in your HTML (for instance, red instead of blue), then you would need to parse HTML strings over and over again.
+  - Plus, you are blowing away the DOM with every update, which would reset state such as the value of `<input>`s.
+  - using `innerHTML` also has security implications. 
+- At some point, though, folks figured out that parsing the HTML once and then calling `cloneNode(true)` on the whole thing is pretty fast
+- Here I’m using a `<template>` tag, which has the advantage of creating “inert” DOM. In other words, things like `<img> or <video autoplay>` don’t automatically start downloading anything.
+  - Tachometer reports that the cloning technique is about 50% faster in Chrome, 15% faster in Firefox, and 10% faster in Safari. 
+  - `<template>` is a new-ish browser API, not available in IE11, and originally designed for web components. Somewhat ironically, this technique is now used in a variety of JavaScript frameworks, regardless of whether they use web components or not.
+- There is one major challenge with this technique, which is how to efficiently update dynamic content without blowing away DOM state
+
+- Modern JavaScript APIs
+- When we build our toy example, we use const dom = html` <div>Hello ${ name }!</div> `
+  - Not all frameworks use this tool, but notable ones include Lit, HyperHTML, and ArrowJS. 
+  - Tagged template literals can make it much simpler to build ergonomic HTML templating APIs without needing a compiler.
+
+- Step 1: building reactivity /createEffect
+- Step 2: DOM rendering /html
+- Step 3: combining reactivity and DOM rendering
+
+- Personally I found this project very educational, which is partly why I did it in the first place. I was also looking to replace the current framework for my emoji picker component with a smaller, more custom-built solution. 
+- In the future, I think it would be neat if browser APIs were full-featured enough to make it even easier to build a custom framework. 
+  - For example, the DOM Part API proposal would take out a lot of the drudgery of the DOM parsing-and-replacement system we built above, while also opening the door to potential browser performance optimizations. 
+  -  I could also imagine (with some wild gesticulation) that an extension to Proxy could make it easier to build a full reactivity system without worrying about details like flushing, batching, or cycle detection.
+
+## 👥 [Learn how modern JavaScript frameworks work by building one | Hacker News_202312](https://news.ycombinator.com/item?id=38510209)
+
+- I like the article, but it gets some things subtly wrong.
+  - > To grossly oversimplify things: React assumes that your entire virtual DOM tree needs to be rebuilt from scratch, and the only way to prevent these updates is to implement useMemo
+  - Not quite, on a state update, it rebuilds the component that was updated and all of its children. Not the entire virtual DOM; old versions of Angular did this, but it was wasteful.
+  - useMemo doesn't prevent that, but React.memo can (useMemo has a different role; it lets you choose when to recompute or recreate a normal JavaScript object. But on its own it won't stop rerendering of child components!)
+- The reason why React isn't "push-only" isn't because it does that, it's because it sometimes buffers updates instead of always pushing them immediately.
+  - In fact, other frameworks like ~~Svelte also aren't "push-only" and hence not strictly reactive
+
+- I recently did this because none of them are exactly what I wanted. I really like the idea of reactive proxies and pushing changes. Things get trickier when you try to address mutable arrays and other scenarios.
+  - https://github.com/tomtheisen/mutraction /ts
 # web-framework-comparison
 
 ## [Why I Finally Chose React over Vue.js](https://javascript.plainenglish.io/why-i-finally-chose-react-over-vue-f090cb0e097a)
@@ -164,9 +220,7 @@ modified: 2020-12-08T13:29:35.248Z
 - 不同ui库的性能不好比较，库会更新，js-frameworks-benchmark也会更新
 - React and similar frameworks optimise performance by batching DOM updates in one big read-compute-write cycle. 
   - With web components that don't share centralised DOM manipulation code its hard to see how that would work, and this can be a big performance problem.
-
 # more-web-framework
-
 - lit-html is not a new framework, but simply a template library
   - lit-html has no component model, so by using it to implement WCs, you get a component model.
   - A template library is not in direct competition with Web Component base classes/frameworks(polymer, svelte, stencil, skate), but can be used by them. 
@@ -179,9 +233,7 @@ modified: 2020-12-08T13:29:35.248Z
   - When we (Polymer folks) think of a component model, we think of a lifecycle. 
     - Being notified when you boot up, when you're activated, when you're deactivated, and when the state you care about changes. 
     - React has that, Web Components have that, lit doesn't.
-
 # ref
-
 - [Vanilla JS Plugins](https://vanillajstoolkit.com/plugins/)
   - These are hand-selected plugins that I would actually use or have used on a project.
   - 大多数framework agnostic，质量高

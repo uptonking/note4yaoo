@@ -104,7 +104,17 @@ modified: 2023-03-30T13:31:09.049Z
 
 - ## 
 
-- ## 
+- ## 👾 http://devv.ai 达到了一个小小的里程碑，突破了 100 万次搜索
+- https://twitter.com/Tisoga/status/1734087347346850155
+  - http://devv.ai 专注在把「编程 + 搜索」这一件小事做好，以此来代替 Google / StackOverflow / 文档，帮助开发者创造价值。
+- 下一阶段会有几个非常核心的需求发布：
+  - 编辑框优化
+  - 更强大的模型
+  - 情景模式
+- 底层模型用的是什么？
+  - gpt-3.5 + finetuned code llama
+- 我觉得devv的一个核心价值是让用户用中文搜索，可以得到高质量的英文资料库的答案，并用llm生成中文的回复。这个体验对中国开发者是非常有用的。这应该是一个利基市场，但风险就是如何合规。
+- 点赞 一些文档旮旯里面的case都能很准确的找出来
 
 - ## ReflectNotes: We're officially profitable
 - https://twitter.com/reflectnotes/status/1734589109962932508

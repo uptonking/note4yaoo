@@ -912,7 +912,7 @@ modified: 2023-09-12T09:37:22.608Z
 - https://github.com/EternalDeiwos/panmnesia /201712/js
   - An action registry and redux-based aggregate store for a PouchDB-based event stream.
 
-- https://github.com/thomastoye/field-journal /ts/pouchdb
+- https://github.com/thomastoye/field-journal /202112/ts/pouchdb
   - https://field-journal.pages.dev/
   - An experimental browser-based, offline-first, event-sourced dispatching, messaging, and incident tracking application.
 

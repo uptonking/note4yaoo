@@ -17,6 +17,13 @@ modified: 2020-12-31T15:18:33.994Z
 # fwk-latstest
 - https://github.com/finos/perspective
   - Streaming pivot visualization via WebAssembly
+
+- https://github.com/hyper63/hyper /202312/ts
+  - https://hyper.io/
+  - A service framework leveraging ports and adapters architecture to scale on your terms
+  - Hyper is a multi-cloud, multi-language, service framework that enables best-of-breed cloud service utilization, from any cloud provider. 
+  - By providing a simple and extensible context-bound API for the Cloud, the hyper Service Framework decouples application services from the infrastructure that powers them
+  - Hyper organizations tame technical debt, by using Clean Cloud Architecture 
 # rust
 - https://github.com/tokio-rs/axum /13kStar/MIT/202311/rust
   - https://docs.rs/axum

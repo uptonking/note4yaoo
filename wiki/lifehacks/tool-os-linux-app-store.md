@@ -87,6 +87,8 @@ modified: 2023-06-22T07:22:04.591Z
   - https://appimage.org/
   - AppImageKit is a concrete implementation of the AppImage format, especially the tiny runtime that becomes part of each AppImage.
 # win-apps
+- winget作为包管理器，可实现类似package.json的清单配置，用于快速备份还原系统
+
 - https://github.com/marticliment/WingetUI /python
   - https://www.marticliment.com/wingetui/
   - The main goal of this project is to create an intuitive GUI for the most common CLI package managers for Windows 10 and Windows 11, such as Winget, Scoop, Chocolatey, Pip and Npm

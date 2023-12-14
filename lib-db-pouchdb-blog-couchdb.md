@@ -14,6 +14,48 @@ modified: 2023-10-07T17:30:26.998Z
   - [couchdb blog](https://blog.couchdb.org/)
 # blogs
 
+
+## [Understanding CouchDB Conflicts_201312](https://writing.jan.io/2013/12/19/understanding-couchdb-conflicts.html)
+
+## 📎 [Binary Data Attachments & Blobs: Handle w/ Couchbase Mobile_202006](https://www.couchbase.com/blog/store-sync-binary-data-attachments-blobs-couchbase-mobile/)
+
+- In addition to supporting the standard JSON data types, Couchbase Mobile also supports binary data that include images, audio, video, PDF files, etc. 
+  - A JSON document can be associated with one or more elements of binary data referred to as “attachments” or “blobs”. 
+  - The binary data can be synced between Couchbase Lite clients and the server via the Sync Gateway. 
+- In this post, we discuss how to create binary data attachments, how to retrieve and update them
+  - Everything in this post applies to a Couchbase Mobile 2.x based deployment.
+
+- Support for associating binary data with JSON documents within Couchbase Mobile has evolved over the years. 
+- In Couchbase Mobile 1.x, binary data was stored in the form of “attachments” within a top-level `_attachments` attribute. 
+- Couchbase Mobile introduced the `blob` data type for storing binary data. 
+- In most cases, the discrepancy(差异；不一致) between the representations across versions is seamlessly handled by Couchbase Mobile so end users don’t have to do anything special within their apps to deal with it. 
+- However, there are certain cases wherein app developers would have to take extra measures to deal with the discrepancy.
+
+- Workflow #1: Handling attachments created on Couchbase Lite
+  - A document can be associated with one or more attachments or blobs
+  - Sync Gateway is backward compatible with Couchbase Mobile 1.x. This implies that the Sync Gateway needs to be capable of processing binary data using the 1.x _ attachments style representation as well as the 2.x blob type
+  - The reason for this discrepancy is because the Sync Gateway only deals with 1.x style attachments.
+
+- Workflow #2: Handling of attachments created on Sync Gateway
+  - The attachment data that is created through the Sync Gateway REST endpoint is persisted in the Couchbase Server bucket and synced over to Couchbase Lite clients subject to the access control policies configured on the Sync Gateway.
+
+- 🤔 Where are attachments stored?
+  - On Couchbase Lite, attachments are stored in the Couchbase Lite database instance that contains the corresponding document. 
+    - It is stored separately from the document which contains the associated metadata that holds the reference to the attachment. 
+    - If the same attachment is shared by multiple documents, only a single instance of the attachment is stored in the database.
+  - On Couchbase Server, attachments are stored in the same Couchbase Server bucket as the corresponding document. 
+    - It is stored separately from the document which contains the associated metadata that holds the reference to the attachment. 
+    - If the same attachment is shared by multiple documents, only a single instance of the attachment is stored in the bucket.
+
+- What is the maximum size of an attachment?
+  - The maximum size of each attachment is 20MB. This follows from the limits on document sizes on Couchbase Server. 
+  - While Couchbase Lite itself allows attachments of size greater than 20MB and this is fine as long as the attachment is local-only and is guaranteed to never be synced to the server. 
+  - However, developers are cautioned from creating such large attachments as they will be rejected by the Sync Gateway.
+
+- Do attachments sync every time the associated JSON document changes?
+  - The replication protocol is optimized to only sync attachments when there are updates to them. 
+  - This implies that they are not pushed or pulled by Couchbase Lite clients even if there are updates to other data in the associated JSON documents.
+
 ## 🌰 [CouchDB, The Open-Source Cloud Firestore Alternative? - DEV Community_201909](https://dev.to/juliendemangeon/couchdb-the-open-source-cloud-firestore-alternative-2gc0)
 
 - There is no per-document rights, only per-DB.

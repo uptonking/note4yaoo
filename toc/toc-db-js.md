@@ -80,7 +80,7 @@ modified: 2022-11-25T15:50:48.226Z
     - It also possible to create your own custom storage adapters, so wherever you'd want to store your data
   - When you're using AceBase with an IndexedDB or LocalStorage backend, you might notice that if you change data in one open tab, those changes do not raise change events in other open tabs monitoring that same data.
   - AceBase is designed to run in a Node.js environment, as it (by default) requires the `fs` filesystem to store its data and indexes. 
-    - However, since v0.9.0 it is now also possible to use AceBase databases in the browser! 
+    - However, since v0.9.0 it is now also possible to use AceBase databases in the browser
   - When you're using AceBase with an IndexedDB or LocalStorage backend, you might notice that if you change data in one open tab, those changes do not raise change events in other open tabs
     - This is because IndexedDB or LocalStorage databases do not raise change events themselves
     - AceBase is now able to communicate with other tabs using the `BroadcastChannel` ,but disabled by default

@@ -12,6 +12,9 @@ modified: 2023-12-01T09:08:18.316Z
 - local-first-db的案例
   - 常用chat作为示例: scuttlebutt > manyverse/MPLv2, hypercore > keet/NonOpen, triplitdb > beeper, kappa > cabal/AGPLv3
 
+- local-first-db
+  - pouchdb, minimongo
+
 - resources
   - https://github.com/pubkey/client-side-databases
   - [In Search of a Local-First Database | Jared Forsyth.com_202004](https://jaredforsyth.com/posts/in-search-of-a-local-first-database/)

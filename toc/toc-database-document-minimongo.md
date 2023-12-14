@@ -29,6 +29,10 @@ modified: 2022-11-30T18:57:26.459Z
   - ReplicatingDb: Keeps two local databases in sync. Finds go only to master.
   - Minimongo is designed to work with a server that performs three-way merging of documents that are being upserted by multiple users.
   - Compared to RxDB, Minimongo has no concept of revisions or conflict handling, which might lead to undefined behavior when used with replication or in multiple browser tabs. Minimongo has no observable queries or changestream.
+  - HybridDb: Combines results from the local database with remote data.
+  - [in hybridDb, by default it fetch all fields from remoteDb and cache them. wish to change this behavior_201603](https://github.com/mWater/minimongo/issues/31)
+    - If I were to build in partial caching, it would mean that the current contents of the local database could not be trusted as they would be a hodgepodge of partial records from all previous partial queries.
+    - However, I believe that you can easily accomplish what you are trying to do: do a query with cacheFind false and then manually cache them yourself. Just call cache on the local database (yourdb.localDb) to cache the rows that you want to keep. Be sure to pass in the same selector that you used for the original query.
 - https://github.com/petehunt/minimongo-cache /201703/coffeescript
   - A forked version of Minimongo designed for a synchronous local cache for React apps. 
   - This is designed to replace Flux.

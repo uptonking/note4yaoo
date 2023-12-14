@@ -15,11 +15,11 @@ modified: 2022-12-02T11:15:15.257Z
   - Custom Conflict Handling
 
 - cons
-  - 与couchdb耦合: data-model, database, sync protocol
+  - 与couchdb耦合: data-model, sync protocol, database-features
     - 不必纠结于耦合度过高，sync protocol是公开的，可自行实现相关工具
   - pouchdb适合 one-db-per-user 的场景，跨user/db的搜索没有很好的解决方案
   - doc级别的权限管理没有最佳实践, Read access is on a per-database basis
-    - 本地创建用户的问题
+  - 本地创建用户时如何同步/合并数据
   - 数据初始化时可能处理超级大量数据的问题
   - 对二进制数据存储和同步的支持不够好，attachment的设计是针对image/html
   - 不支持transaction
@@ -52,15 +52,18 @@ modified: 2022-12-02T11:15:15.257Z
 
 - tips
   - couchdb fauxton http://127.0.0.1:5984/_utils/
+  - couchdb(erlang): 使用b+tree
 
 - local-first-db的案例
   - 常用chat作为示例: scuttlebutt > manyverse/MPLv2, hypercore > keet/NonOpen, triplitdb > beeper, kappa > cabal/AGPLv3
 
 - roadmap
-  - pouchdb + kappa-crdt + eav => pouchdb-crdt-eav
+  - pouchdb + kappa-crdt + eav => pouchdb-crdt-eav: 参考triplitdb
   - kappa-architecture?
+  - partial-replication: 参考hypercore
+  - sync: couchbase sync gateway alternative; 与minimongo+mongodb的方案比较
+  - attachment/针对图片视频的blob二进制存储数据库: 参考couchbase, mongodb-gridfs, pg-lo
   - alternative-backend: mysql/pg
-  - attachment/针对图片视频的blob二进制存储数据库: 参考 mongodb-gridfs, pg-lo
 
 - database-features
   - standards: postgresql, sqlite, clickhouse, duckdb
@@ -80,14 +83,12 @@ modified: 2022-12-02T11:15:15.257Z
 - [CouchDB Best Practices](https://jo.github.io/couchdb-best-practices/)
   - https://github.com/jo/couchdb-best-practices
   - Apache CouchDB™ is a database that uses JSON for documents, JavaScript for MapReduce indexes, and regular HTTP for its API.
-
 - pouchdb的同步协议参考 [CouchDB Replication Protocol](https://docs.couchdb.org/en/stable/replication/protocol.html)
 
 - community-pouchdb/couchdb
   - [Apache CouchDB Wiki - Confluence](https://cwiki.apache.org/confluence/display/COUCHDB/)
   - [Couchbase Forums](https://www.couchbase.com/forums/)
   - couchbase discord
-  - couchdb(erlang): 使用b+tree
   - [IBM Cloudant](https://www.ibm.com/cloud/cloudant)
 # draft
 - nonsyncable/local-only tables for config/temporary-data
@@ -97,9 +98,9 @@ modified: 2022-12-02T11:15:15.257Z
   - auth per-doc
 
 - binary-attachment
-  - video
   - 方案参考: sqlite-文本 + gridfs-文件
   - 实现类似mongodb-gridfs/pg-large-object/s3的系统，处理TB规模的文件，超大规模的文件建议自研方案
+  - video
   - fossil受到sqlite对blob支持为最大2G的限制
 
 - continue to rearchitect couchdb on top of foundationdb

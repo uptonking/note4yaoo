@@ -199,7 +199,7 @@ modified: 2023-11-17T10:12:06.357Z
   - full-fledged support for event-sourcing, guaranteeing eventual consistency
   - aql: full-fledged support for event-sourcing, guaranteeing eventual consistency
 
-- https://github.com/cloudless-hq/atreyu /apache2/202309/js/svelte
+- https://github.com/cloudless-hq/atreyu /apache2/202311/js/svelte
   - https://atreyu.dev/docs/
   - Atreyu is an edge- and serviceworker first metaframework for personal, data centric web applications. 
   - 依赖pouchdb

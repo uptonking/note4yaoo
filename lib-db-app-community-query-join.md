@@ -9,6 +9,8 @@ modified: 2023-10-31T11:17:48.697Z
 
 # guide
 
+# blogs-join
+- [Using Functional Dependency Analysis to improve Join performance | DoltHub Blog_202312](https://www.dolthub.com/blog/2023-12-13-functional-dependency-analysis/)
 # discuss-stars
 - ## 
 

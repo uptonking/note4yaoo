@@ -488,7 +488,7 @@ div {
 ## 0711
 
 - [为什么 Python（或 Ruby、Perl 等）没有取代 Bash 成为系统 Shell？ - 知乎](https://www.zhihu.com/question/20506693)
-  - bash 是基于 字符串的。这很适合作为 系统Shell
+  - bash 是基于字符串的。这很适合作为 系统Shell
   - 而 Python 是面向对象的，至少在 bash 设计的那个年代，不要说面向对象的系统shell了，就连面向对象都没有
   - 现在的确是由 Powershell 这样面向对象的 系统Shell，但是要注意 面向对象的shell 意味着大量的 原本shell内的原生函数要重新设计，就比如 grep 等等都是纯粹的面向字符串，在操作文本，而powershell中的where完全是面向对象的，是在操作类型，二进制的数据。如果想要把 python 作为系统的shell，就必须从头设计这些工具。
   - 的确 windows 是成功的设计了这些工具，这是因为长久以来windows的习惯都是，用二进制的代码、数据去相互调用、交互，比如他的那一坨dll。。而powershell的出现，只是提供了一个动态语言，借由.net, 能轻松的与.net程序或者是系统dll接口 交互。powershell本质上操作的是 二进制对象。

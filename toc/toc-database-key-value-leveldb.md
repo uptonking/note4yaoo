@@ -280,6 +280,9 @@ modified: 2022-11-03T04:14:00.563Z
 
 - https://github.com/laixintao/iredis /python
   - Interactive Redis: A Cli for Redis with AutoCompletion and Syntax Highlighting
+
+- https://github.com/kesla/mysqldown /201307/js
+  - An drop-in replacement for LevelDOWN that works in mysql
 # kv-based
 - https://github.com/nlfiedler/mokuroku /apache2/rust/202309
   - Secondary indices for RocksDB in Rust.

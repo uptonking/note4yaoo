@@ -12,7 +12,39 @@ modified: 2023-10-29T02:22:57.939Z
 # discuss-stars
 - ## 
 
-- ## [pouchDb + MongoDB_201809](https://github.com/pouchdb/pouchdb/issues/7466)
+- ## [Selective sync · janl/couchdb-next_201702](https://github.com/janl/couchdb-next/issues/14)
+- I wonder if replication via view vs _changes might something to consider here. I know we have some view based replication stuff on 1.6 but AFAIK that was basically just to only replicate things in a view. I'm thinking more along the lines of that we just follow the key order in a view and then clients can specify a view and any complex logic they want. Last 90 days for instance could be something like emit(doc.date, null) and then replicate using a start_seq of now() - 90 days
+
+- Anything that requires create view is fairly prohibitive imo, both in terms of performance of view generation and for the amount of work developers need to go through to get it working, there are quite a lot of replication improvements we can do via clever filtering already and they arent done because setting up a filter (and understanding the replication protocol enough to know what to do) is hard enough.
+  - We are moving away from views / map reduce in pouchdb in general so I would like to avoid them being further depended on in core functionality
+
+- That's fair. And in hindsight a view doesn't really give us a whole lot over a filter anyway. I'd agree with you that looking at improving filters would likely be the better approach.
+# discuss-sync-non-couch
+- ## 
+
+- ## [Support For Sync Between MyServer and CouchDb_201606](https://github.com/pouchdb/pouchdb/issues/5301)
+- PouchDB cant sync with MongoDB/MySQL/my current non-CouchDB database as backend needs to speak the CouchDB replication protocol.
+  - However there is a way to replicate the changes made in couchDb with mysql npmjs.com/package/couchdb-to-mysql
+  - My Question is; Is there a way to replicate the changes made in mysql to replicate within couchDb?
+
+- It isnt something that is or will be supported by pouchdb / couchdb in the short term, mysql has no concept of revisions, it will be possible to have PouchDB <-> CouchDB <-> My custom couch to mysql sync that handles business / revision logic <-> MySQL, and there may be some tools around to help you do that although unlikely to be generic as they are fundamentally different data models. Closing this out as its something that isnt going to be tracked by us, but feel free to continue discussing in here
+
+- Check out kesla/mysqldown although your mileage may vary because we've never tested it.
+  - https://github.com/kesla/mysqldown /201307/js
+    - An drop-in replacement for LevelDOWN that works in mysql
+
+- [pouchdb without couchdb / replication](https://github.com/pouchdb/pouchdb-server/issues/96)
+  - I'm going to close this; it is definitely not our roadmap. SQLite is an embedded database, hence makes perfect sense as an underlying backing store. 
+  - Postgres and MySQL backend doesn't make sense for various reasons including pouchdb.com/faq.html#sync_non_couchdb and also the fact that it doesn't solve the problem people really want to solve, which is that they want to use the SQL API to their favorite database and have PouchDB magically sync it, which is not possible due to CouchDB's revision semantics.
+
+- ## [Using PouchDB with MongoDB - Stack Overflow_201508](https://stackoverflow.com/questions/24384803/using-pouchdb-with-mongodb)
+- The short answer is: no, there's no way to get a PouchDB that you can just plug into your existing MongoDB database. You might want to try Meteor.js instead.
+  - The long answer is that CouchDB and MongoDB are not equivalent, and in particular CouchDB is designed from the bottom-up to be used for synchronization. There's a good write-up by Jan Lenhardt that explains how it works. Part of the magic of PouchDB/CouchDB sync comes from this design, which Mongo does not have.
+  - In fact, 👉🏻 even if PouchDB used Mongo as a backend (which is not outside of the realm of possibility; we already support Redis and Riak), you would not be able to use your existing database as-is, since PouchDB would need to reconstruct this revision-handling schema over Mongo. Hence you would have to rewrite your app to use the PouchDB/CouchDB API.
+
+- I saw the minimongo project. I didn't try it yet. As far as I understand it's the same minimongo that is used in the meteor project. The project description says that it has server sync over http. But it doesn't have persistence, indexes.
+
+- ## 🍃 [pouchDb + MongoDB_201809](https://github.com/pouchdb/pouchdb/issues/7466)
   - how can I use the frontend in the pouchDb with synchronization, for my MongoDb backend database?
 
 - PouchDB won’t sync with Mongodb. You need to run CouchDB on the backend.
@@ -24,14 +56,6 @@ modified: 2023-10-29T02:22:57.939Z
   - read via a live changes feed. if you do this, you need to prepare for what happens if you need to read changes from the start. That means, you have to have a way to make sure you don't write everything to your MongoDB once again (so you dont get duplicate data)
 - On every change you need to decide what to do with it. Can you look up if something is already written? do you need to update it or do you need to write something new?
 - From experience, it's helpful to design this in a way that you can re-run the import and get the same results from the same data. If you have a production system with MongoDB data and you run the import from sequence number 0 again, what happens then?
-
-- ## [Selective sync · janl/couchdb-next_201702](https://github.com/janl/couchdb-next/issues/14)
-- I wonder if replication via view vs _changes might something to consider here. I know we have some view based replication stuff on 1.6 but AFAIK that was basically just to only replicate things in a view. I'm thinking more along the lines of that we just follow the key order in a view and then clients can specify a view and any complex logic they want. Last 90 days for instance could be something like emit(doc.date, null) and then replicate using a start_seq of now() - 90 days
-
-- Anything that requires create view is fairly prohibitive imo, both in terms of performance of view generation and for the amount of work developers need to go through to get it working, there are quite a lot of replication improvements we can do via clever filtering already and they arent done because setting up a filter (and understanding the replication protocol enough to know what to do) is hard enough.
-  - We are moving away from views / map reduce in pouchdb in general so I would like to avoid them being further depended on in core functionality
-
-- That's fair. And in hindsight a view doesn't really give us a whole lot over a filter anyway. I'd agree with you that looking at improving filters would likely be the better approach.
 # discuss
 - ## 
 

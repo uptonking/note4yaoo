@@ -138,6 +138,7 @@ modified: 2021-01-01T22:26:57.773Z
 
 - pros
   - 批量rename、支持search-replace
+  - 支持快捷键: open in terminal
 
 - cons
   - 单位是十进制，不适合文件实际的字节数、网络文件的二进制、内存的二进制
@@ -145,6 +146,14 @@ modified: 2021-01-01T22:26:57.773Z
 
 - https://github.com/costales/clipboard-to-file /202210/python
   - Paste Linux clipboard (text/image) into a file
+
+- https://github.com/linuxmint/nemo /c
+  - file manager for the Cinnamon desktop environment.
+  - 尝试添加 open terminal here 快捷键失败
+  - 尝试改变右键菜单项的顺序、添加新菜单项到第一个
+  - https://github.com/smurphos/nemo_actions_and_cinnamon_scripts
+    - A collection of custom context menu items for the Nemo file manager
+  - https://github.com/linuxmint/nemo-extensions
 # wayland
 - ## 
 
