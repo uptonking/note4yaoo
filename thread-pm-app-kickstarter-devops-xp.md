@@ -164,6 +164,12 @@ modified: 2022-11-07T11:00:28.824Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 不会真有人信协作工具可以搞增长吧？我知道的几乎所有成功的公司早期都是糙快猛的，窗口期必须抓住，不然就死了。
+- https://twitter.com/TooooooBug/status/1735467061235843550
+  - 我经常说的，增长可以掩盖一切问题，协作工具能起一些作用的场景是当增长放缓甚至不再增长的时候，这时候如果管理和工具跟不上，可能就是崩盘。
+
 - ## Dribbble is dead. Just look at the stats to confirm.  
 - https://twitter.com/craftworkdesign/status/1730932460639138284
   - Dribbble: 34, 168 followers, 2K views on post; 

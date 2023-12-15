@@ -75,6 +75,11 @@ modified: 2020-12-19T18:22:27.577Z
   - Low Output Latency streaming HTML rewriter/parser with CSS-selector based API.
   - It is designed to modify HTML on the fly with minimal buffering. 
   - It can quickly handle very large documents, and operate in environments with limited memory resources.
+
+- https://github.com/decipad/safejs /202308/ts
+  - This repo intends to safely run JavaScript into a website using web workers. 
+  - It provides a controller class, with some defaults.
+  - [Secure Data Connections with SafeJS • Decipad's Blog_202308](https://www.decipad.com/blog/introducing-safejs-a-secure-way-to-integrate-data)
 # worker-examples
 - [Excel export web worker script](https://gist.github.com/damoresa/77b40cd393d1606ea10c92a4d802d32c)
 

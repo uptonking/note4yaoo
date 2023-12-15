@@ -18,7 +18,12 @@ modified: 2023-12-02T09:28:47.243Z
 # discuss
 - ## 
 
-- ## 
+- ## 🤔 How do you control the children tabindex?
+- https://twitter.com/devongovett/status/1735457449199419758
+  - We don’t! The toolbar keeps track of its last focused child and marshals(带领；引领) focus back to it when tabbing in from the outside. There's also a Tab key handler that moves focus out of the whole toolbar.
+- Have you noticed any drawbacks with that method compared to using roving tabindex?
+  - One more theoretical drawback would be if there was hardware that didn't send Tab key events but still used tabindex for navigation, we wouldn't know about this and the browser couldn't handle it for us. But we haven't encountered this situation yet. 
+  - We've used the same approach in our tables/grids to allow arbitrary focusable children for a few years now and haven't had any complaints.
 
 - ## Checking if an element has `visibility: hidden` with `checkVisibility()` , but not if the opacity is 0:
 - https://twitter.com/RogersKonnor/status/1732066220348735681

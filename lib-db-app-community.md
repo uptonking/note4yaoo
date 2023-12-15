@@ -18,9 +18,9 @@ modified: 2023-09-16T17:54:11.257Z
 - 
 
 - ## 🔥 [If All You Have Is a Database, Everything Looks Like a Nail(钉子) | Hacker News_202012](https://news.ycombinator.com/item?id=25330223)
-- 
-- 
-- 
+- I like the idea the author mentions of message queues in the database. It also sounds like it would be easier to separate if need be. I also like the idea of keeping everything in a single database as long as possible. Even if it turns out not to scale, it is a lot easier to figure out your business logic in that environment. Anything which avoids microservice madness and Kubernetes keenness as long as possible is very attractive to me.
+
+- Why do blobs cause transactional problems? Create the blob. GIve it an ID. Give it a path/URL. Do all that before going anywhere near the database, at which point the blob is all settled an immutable. Then, stick the tiny record into the database which identifies the blob. Done; the blob is now live, from the POV of the database consumers.
 
 - ## [Ask HN: Why are we so fragmented in databases options? | Hacker News_202210](https://news.ycombinator.com/item?id=33345464)
 - Relational databases have dominated since the 1980s. 

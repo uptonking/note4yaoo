@@ -172,6 +172,15 @@ modified: 2023-09-02T09:17:22.992Z
 - https://github.com/unjs/jiti /ts
   - Runtime Typescript and ESM support for Node.js
 # playground
+- https://github.com/nalgeon/codapi /apache2/202312/go
+  - https://codapi.org/
+  - Embeddable code playgrounds for education, documentation, and fun.
+  - Codapi is a platform for embedding interactive code snippets directly into your product documentation, online course, or blog post.
+  - Codapi manages sandboxes (isolated execution environments) and provides an API to execute code in these sandboxes. 
+  - It also provides a JavaScript widget codapi-js for easier integration.
+  - Custom sandboxes for any programming language, database, or software.
+  - Available as a cloud service and as a self-hosted version.
+
 - https://github.com/voronianski/esnextbin /201905/js
   - Prototype JavaScript apps in the browser with ES2015's latest features and importing modules directly from NPM.
 # more

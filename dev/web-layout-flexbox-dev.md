@@ -7,8 +7,15 @@ modified: 2020-12-21T07:46:20.408Z
 
 # web-layout-flexbox-dev
 
-# faq
+# guide
 
+# examples
+- Quick little prototype that animates a flex layout as you change configuration options for it
+  - https://twitter.com/argyleink/status/1735369407961153655
+  - https://codepen.io/argyleink/pen/rNPEOxM
+  - wrapping the style updates with `document.startViewTransition()`.
+  - i could write some custom view transition styles to make it stretch to the new position, but i was lazy.
+# faq
 - ## `margin: auto` vs `justify-content/align-items:center`
 
 ```CSS

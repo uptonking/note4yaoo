@@ -1293,6 +1293,9 @@ modified: 2022-08-21T10:02:27.788Z
   - http://tabula.technology/
   - Tabula is a tool for liberating data tables trapped inside PDF files
   - Tabula only works on text-based PDFs, not scanned documents
+
+- https://github.com/pgte/js-sparse-array /201812/js
+  - Sparse array implementation in JS with no dependencies
 # server
 - https://github.com/forensic-architecture/datasheet-server /202105/js/inactive
   - Turn spreadsheet data into a structured, dynamic API.

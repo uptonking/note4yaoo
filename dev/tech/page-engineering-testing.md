@@ -7,11 +7,12 @@ modified: 2023-02-08T10:24:55.231Z
 
 # page-engineering-testing
 
+# [How to test webhooks on localhost | Liveblocks Documentation](https://liveblocks.io/docs/guides/how-to-test-webhooks-on-localhost)
+- Testing webhooks on your local system can be difficult, but there are ways to make it possible using tools such as `localtunnel` and `ngrok`.
 # [How to mock data in React with a fake API](https://www.robinwieruch.de/react-mock-data)
-
 - react app starter
 
-``` JS
+```JS
 import * as React from 'react';
 
 import { getUsers, createUser, updateUser, deleteUser } from './api';
@@ -51,12 +52,10 @@ export default App;
   - What's missing is the handler which updates the mock data via our fake API and which refetches all mock data afterward for keeping the data in sync
 
 - we will implement a button to remove mock data and a handler which does the actual deletion of it
-
 # [JavaScript fake API with Mock Data](https://www.robinwieruch.de/javascript-fake-api)
-
 - ## JAVASCRIPT FAKE API
 
-``` JS
+```JS
 import { v4 as uuidv4 } from 'uuid';
 
 const idOne = uuidv4();
@@ -94,7 +93,7 @@ const doGetUsers = async () => {
 doGetUsers();
 ```
 
-``` JS
+```JS
 // longer promise version
 
 const getUsers = () =>
@@ -135,7 +134,7 @@ doGetUsers();
 
 - read a single item
 
-``` JS
+```JS
 const getUser = (id) =>
   new Promise((resolve, reject) => {
     const user = users[id];
@@ -165,7 +164,7 @@ doGetUsers('1');
 
 - create an item
 
-``` JS
+```JS
 const createUser = (data) =>
   new Promise((resolve, reject) => {
 
@@ -201,7 +200,7 @@ doCreateUser({ firstName: 'Tanner', lastName: 'Linsley' });
 
 - update an item
 
-``` JS
+```JS
 const updateUser = (id, data) =>
   new Promise((resolve, reject) => {
     if (!users[id]) {
@@ -231,7 +230,7 @@ doUpdateUser('1', { isDeveloper: false });
 
 - delete an item
 
-``` JS
+```JS
 const deleteUser = (id) =>
   new Promise((resolve, reject) => {
     const {
@@ -264,7 +263,6 @@ doDeleteUser('1');
 ```
 
 # [How to run a WebPageTest test_202012](https://nooshu.github.io/blog/2020/12/31/how-to-run-a-webpagetest-test/)
-
 - I’m going to examine all the individual settings from the homepage of WebPageTest (WPT). 
 - Simple testing tab
   - URL input field

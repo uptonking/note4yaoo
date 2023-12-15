@@ -12,9 +12,10 @@ modified: 2021-05-06T09:38:31.520Z
 - who is using #codemirror6
   - observable-notebook
 
-- 代码编辑器体验
+- dev-xp
   - 在github页面，每行代码的行号是确定的，不会显示软换行
     - 方便实现高亮搜索结果、查找引用
+  - 协作示例官方使用ot，社区有使用crdt如yjs
 
 - 区分codemirror是v5和v6的方法
   - 👉🏻 cm6的默认css，样式名小写

@@ -136,7 +136,7 @@ modified: 2021-08-10T03:51:01.891Z
 - Is there a feature flag tool you would recommend?
   - You probably don’t need one. I typically use an env var, the URL, the user that’s logged in, or a simple checkbox in an admin UI.
 
-- ## Business logic in JS. I think this makes sense.
+- ## reuse logic in JS. I think this makes sense.
 - https://twitter.com/tantaman/status/1687090113958797312
   - Business logic is less likely to change between platforms than your view
   - JS is the portable language

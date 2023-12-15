@@ -66,6 +66,9 @@ modified: 2021-05-14T15:04:42.225Z
 - https://github.com/liljenzin/confluent /cpp
   - Confluent sets and maps are sorted associative containers written in C++11.
   - [[1301.3388] Confluently Persistent Sets and Maps](https://arxiv.org/abs/1301.3388)
+
+- https://github.com/pgte/js-sparse-array /201812/js
+  - Sparse array implementation in JS with no dependencies
 # repos
 - https://github.com/tannerlinsley/react-table
 - https://github.com/bvaughn/react-window

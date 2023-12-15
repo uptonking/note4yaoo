@@ -28,7 +28,14 @@ modified: 2023-09-17T18:10:33.050Z
 # discuss
 - ## 
 
-- ## 
+- ## If you fix your Data, you have solved half of your problems. And using SQL Constraints is the perfect way to start.
+- https://twitter.com/RaulJuncoV/status/1735285206179860639
+  - PRIMARY Key Constraint
+  - FOREIGN Key Constraint
+  - UNIQUE Constraint
+  - CHECK Constraint
+  - NOT NULL Constraint
+  - DEFAULT Constraint: useful when you want to provide a default value instead of leaving it NULL.
 
 - ## DuckDB don't support RAM cache when querying Parquet files(to be fair none of the OSS engine support it), 
 - https://twitter.com/mim_djo/status/1725848821681541295

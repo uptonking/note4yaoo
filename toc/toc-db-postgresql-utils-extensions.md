@@ -17,6 +17,11 @@ modified: 2023-10-26T15:29:40.053Z
   - https://pgxman.com/
   - pgxman is npm for Postgres extensions. 
 
+- https://github.com/tembo-io/trunk /202312/rust
+  - https://pgt.dev/
+  - open source package manager and registry for PostgreSQL (Postgres) extensions
+  - Use the Trunk CLI (pg-trunk) to build, publish and install Postgres extensions of all kinds.
+
 - https://github.com/pgq/pgq /sql/c
   - Generic Queue for PostgreSQL
   - PostgreSQL extension that provides generic, high-performance lockless queue with simple API based on SQL functions.

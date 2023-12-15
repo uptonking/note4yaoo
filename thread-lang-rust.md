@@ -14,7 +14,9 @@ modified: 2023-10-06T16:26:57.557Z
 
 - ## 
 
-- ## 
+- ## DWARF and frame pointers. It's a must-read if you're puzzled by perf, DWARF, frame pointers, profiling, or sampling.
+- https://twitter.com/OnlyXuanwo/status/1735526268261847490
+  - [feat: Enable `rustflags = "-C force-frame-pointers=yes"` default for opendal release process · apache/incubator-opendal](https://github.com/apache/incubator-opendal/issues/3756)
 
 - ## Nowadays I have doubts about using Rust primarily for building cross-language bindings. 
 - https://twitter.com/Horusiath/status/1734385412800745686

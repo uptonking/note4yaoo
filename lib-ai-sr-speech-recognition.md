@@ -57,6 +57,9 @@ modified: 2023-02-07T09:22:03.120Z
   - An opinionated CLI to transcribe Audio files w/ Whisper on-device! Powered by Transformers, Optimum & flash-attn
   - TL; DR - Transcribe 150 minutes (2.5 hours) of audio in less than 98 seconds - with OpenAI's Whisper Large v3
 
+- https://github.com/kadirnar/whisper-plus /apache2/python
+  - Advancing Speech-to-Text Processing
+  - 实现了从 Youtube 下视频，对于下载完的视频，还提供了， openai 的 whisper v3 直接转录成文本的代码 
 ## more-asr
 
 - https://github.com/wenet-e2e/wenet

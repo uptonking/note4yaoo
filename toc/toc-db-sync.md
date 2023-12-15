@@ -374,6 +374,12 @@ modified: 2022-11-25T15:41:47.534Z
   - Query based synchronization: In some cases view or actual SQL can be source for data sync, in that scenario SQL can be used as source.
   - Query based sync: In some cases view or actual SQL can be source for data sync, in that scenario SQL can be used as source.
 # raft
+- https://github.com/pgte/skiff-algorithm /201410/js
+  - Raft implementation in Node.js
+  - Persists to LevelDB (or any database exposing a LevelDown interface).
+  - Exposes the cluster as a Levelup or Leveldown-compatible interface, with which you can extend using the Levelup plugins.
+  - Encodes messages using Msgpack
+
 - https://github.com/datafuselabs/openraft /MIT/rust
   - rust raft with improvements
 

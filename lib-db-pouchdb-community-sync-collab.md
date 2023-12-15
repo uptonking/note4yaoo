@@ -22,6 +22,22 @@ modified: 2023-10-29T02:22:57.939Z
 # discuss-sync-non-couch
 - ## 
 
+- ## 
+
+- ## [oracle support_201606](https://github.com/pouchdb/pouchdb/issues/5283)
+- Yep, you could write a custom adapter ala pouchdb-adapter-node-websql and using the node-websql custom API. However I doubt very much it would work since the adapter uses SQLite and not generic SQL, e.g. it even reads from the sqlite_master database which does not exist in Oracle.
+  - And in general: no, I don't think this is a good idea. I think most people who try to get MySQL/Postgres/Oracle/etc. working with PouchDB actually just want an easy and familiar way to query their database using SQL (since CouchDB views are so complicated by comparison). For that, you can just write a cron job to periodically dump CouchDB to a SQL database in whatever format you want, and then you have a nice queryable view on your data. Piece of cake! 
+
+- ## [Feature request: Redis adaptor_201401](https://github.com/pouchdb/pouchdb/issues/1242)
+- I suspect pouch as it is in the current iteration will only ever be able to sync with couchdb compatible servers, a 'high performace node.js cluster' would be possible with improvements to the leveldb implementation of pouchdb + pouchdb-server.
+  - I can see a lighter version of pouchdb that doesnt have support for being a full peer, or the opposite which doesnt require the server to be a full peer and can sync over redis / mysql etc, however that starts chipping(削下，凿下) at a lot of assumptions and implementation details of what pouchdb is, I think they would be best started as separate projects
+
+- The usage case for this is primarily for low-latency queries. The advantage of Redis is that it is a memory store, so data can be queried much faster, with much higher through-put. 
+  - To my knowledge LevelDB stores data on disk, so it is not likely to have performance benefits over a vanilla CouchDB server.
+  - I'm not suggesting that PouchDB sync with Redis, I am proposing that it could be used instead of LevelDB to persist the data of the PouchDB instance -- and that the same Redis instance can be shared across hundreds of Node workers.
+
+- As an aside, this sounds like a perfect candidate for a PouchDB plugin. I foresee lots of cool backend adapters being written for Pouch: Redis, S3, localStorage - why not? But I imagine the core will always be couch/websql/idb/leveldb
+
 - ## [Support For Sync Between MyServer and CouchDb_201606](https://github.com/pouchdb/pouchdb/issues/5301)
 - PouchDB cant sync with MongoDB/MySQL/my current non-CouchDB database as backend needs to speak the CouchDB replication protocol.
   - However there is a way to replicate the changes made in couchDb with mysql npmjs.com/package/couchdb-to-mysql
@@ -33,14 +49,26 @@ modified: 2023-10-29T02:22:57.939Z
   - https://github.com/kesla/mysqldown /201307/js
     - An drop-in replacement for LevelDOWN that works in mysql
 
-- [pouchdb without couchdb / replication](https://github.com/pouchdb/pouchdb-server/issues/96)
-  - I'm going to close this; it is definitely not our roadmap. SQLite is an embedded database, hence makes perfect sense as an underlying backing store. 
+- ## [pouchdb without couchdb / replication_201504](https://github.com/pouchdb/pouchdb-server/issues/96)
+
+- MongoDOWN/DynamoDOWN/etc. are neat, but you probably don't want them for a production server. 👉🏻 They're pretty inefficient due to everything being through the key-value LevelUP API. And yeah, as Dale said, you can't actually use those databases directly; you still have to use the Pouch API.
+  - If you want massive scaling, then you're in luck, because by design CouchDB/pouchdb-server can scale horizontally almost infinitely. Run out of capacity? Just spin up another instance and replicate to it. It's master-master, so you never have a single server being your bottleneck.
+- The LevelDOWN API assumes a basic key-value store, which is perfectly suited for LevelDB. But when you use such an API over MongoDB (i.e. MongoDOWN), it's not making the best use of Mongo's API because it's only using a tiny subset of it. It's basically ignoring the entire API and using the database as a simple Btree.
+  - To be clear: anybody who wants to use a *DOWN database with pouchdb-server is absolutely welcome to, but I have not found one that gives any real benefit over the built-in LevelDOWN engine, except MemDOWN for obvious reasons.
+
+- We've been using Couch/Pouch with provision(供应, 提供) couch per user, works well. Some issues with sync state, but mostly very solid. 
+  - And then in ExpressJS, you can mount Couchdb and get the data into Mongo via express. 
+  - That way, Couchdb and the Pouch clients are just there to keep the "truth" datastore data, mongodb in our case, replicating to clients. 
+  - So Couch/Pouch are sort of like a better version of AWS Cognito or a replicating datastore, but we use Mongo/Express to hold the data for real and permanently.
+
+- I'm going to close this; it is definitely not our roadmap. SQLite is an embedded database, hence makes perfect sense as an underlying backing store. 
   - Postgres and MySQL backend doesn't make sense for various reasons including pouchdb.com/faq.html#sync_non_couchdb and also the fact that it doesn't solve the problem people really want to solve, which is that they want to use the SQL API to their favorite database and have PouchDB magically sync it, which is not possible due to CouchDB's revision semantics.
 
 - ## [Using PouchDB with MongoDB - Stack Overflow_201508](https://stackoverflow.com/questions/24384803/using-pouchdb-with-mongodb)
 - The short answer is: no, there's no way to get a PouchDB that you can just plug into your existing MongoDB database. You might want to try Meteor.js instead.
   - The long answer is that CouchDB and MongoDB are not equivalent, and in particular CouchDB is designed from the bottom-up to be used for synchronization. There's a good write-up by Jan Lenhardt that explains how it works. Part of the magic of PouchDB/CouchDB sync comes from this design, which Mongo does not have.
   - In fact, 👉🏻 even if PouchDB used Mongo as a backend (which is not outside of the realm of possibility; we already support Redis and Riak), you would not be able to use your existing database as-is, since PouchDB would need to reconstruct this revision-handling schema over Mongo. Hence you would have to rewrite your app to use the PouchDB/CouchDB API.
+- Redis and Riak are "supported" in the sense that PouchDB can use them as a storage engine. It's only really interesting for academic reasons, though; you wouldn't want to actually use it in production, 👉🏻 because PouchDB is basically using them as dumb key-value stores, and you can't actually directly use those databases - instead you need to use PouchDB's abstraction over them. 
 
 - I saw the minimongo project. I didn't try it yet. As far as I understand it's the same minimongo that is used in the meteor project. The project description says that it has server sync over http. But it doesn't have persistence, indexes.
 

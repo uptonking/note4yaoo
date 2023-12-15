@@ -20,7 +20,14 @@ modified: 2023-09-17T17:35:27.024Z
 
 - ## 
 
-- ## 
+- ## Ever struggled to find if a database supports a particular SQL syntax? 
+- https://twitter.com/ohmypy/status/1735275704001196175
+  - Or maybe you wanted to compare two DB engines for certain SQL features?
+  - Then you might find the SQL Polyglot useful. Write a query and see it run in multiple DBMSs, in your browser!
+  - [SQL Polyglot](https://codapi.org/sql/)
+
+- Do you do any translation behind the scenes or is the query ran as-is in all of the selected engines?
+  - The query is ran as is, without any kind of preprocessing.
 
 - ## One thing I think a lot: what would replace SQL? 
 - https://twitter.com/mengxilu/status/1337968087618834432

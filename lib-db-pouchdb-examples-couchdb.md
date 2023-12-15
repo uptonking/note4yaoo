@@ -246,6 +246,8 @@ modified: 2023-09-28T20:35:56.153Z
 
 - https://github.com/balazsgrill/tw-pouchdb-sync /202309/js
   - TiddlyWiki synchronizer plugin for CouchDB/PouchDB
+  - https://github.com/OokTech/TW5-PouchDBAdaptor /201912/js
+    - syncer adaptor that stores tiddlers in a local pouchdb
 # couch-like
 - microcouch-js /3Star/apache2/202209/js
   - https://github.com/jo/microcouch-js
@@ -426,6 +428,26 @@ modified: 2023-09-28T20:35:56.153Z
 - https://github.com/redgeoff/couchdb-howler /201803/js
   - Use web sockets to subscribe to CouchDB global changes
 
+- https://github.com/yldio/pouch-websocket-sync /201606/js
+  - PouchDB live sync through websockets
+  - Sync several PouchDBs through websockets.
+  - Supports reconnection, negotiation and authentication.
+  - https://github.com/yldio/pouch-websocket-sync-example
+    - Example "Todo-MVC" application of using pouch-websocket-sync together with React and Redux, keeping local database in sync with remote.
+
+- https://github.com/pgte/pouch-stream-server /201511/js
+  - PouchDB stream server. Serves generic PouchDB object streams.
+  - Tested against PouchDB version 5.
+  - https://github.com/yldio/pouch-remote-stream
+    - Consume a remote PouchDB stream.
+  - https://github.com/yldio/pouch-stream-multi-sync
+    - Sync several PouchDBs through a stream.
+
+- https://github.com/yldio/pouch-clerk /201607/js
+  - PouchDB worker reacting to document changes.
+  - A clerk listens to changes in one or more PouchDB databases and react to document state changes.
+  - https://github.com/yldio/pouch-clerk-example-app
+
 - https://github.com/Aam-Digital/replication-backend /202310/ts
   - This backend service can be used to filter the replication between a PouchDB and a CouchDB instance based on permission rules. 
   - It does this by overriding some of CouchDB's endpoints where permissions are checked on the transmitted entities. 
@@ -460,6 +482,10 @@ modified: 2023-09-28T20:35:56.153Z
     - This preserves conflicts (which is awesome!), but it discards non-leafs for performance reasons.
   - Notice that all the revisions are kept, even the non-leafs. 
 
+
+- https://github.com/sagarb3/Sync-Service-Pouch /201901/js
+  - Sync Service Implemented on Top Of Pouch Db , (Mongo->Pouch->Indexeddb)
+
 - https://github.com/redgeoff/replicate-couchdb-cluster /201803/js
   - A fault-tolerant way to replicate an entire CouchDB cluster
 
@@ -475,6 +501,9 @@ modified: 2023-09-28T20:35:56.153Z
 - https://github.com/couchbase/sync_gateway /BSL/202312/go
   - https://www.couchbase.com/products/sync-gateway
   - Manages access and synchronization between Couchbase Lite and Couchbase Server
+
+- https://github.com/neoandray/pouchsync /202307/js
+  - Sync local pouch database with remote Mongo server and React snapshots
 # mobile-pc-utils
 - https://github.com/craftzdog/react-native-sqlite-2 /202211/ts
   - SQLite3 Native Plugin for React Native for Android, iOS, Windows and macOS.
@@ -670,6 +699,9 @@ modified: 2023-09-28T20:35:56.153Z
   - PouchDB can synchronize with CouchDB and compatible servers.
 - https://github.com/ibm-watson-data-lab/shopping-list-preact-pouchdb /201808/js
   - a reference implementation of an Offline First shopping list app, built as a Progressive Web App using Preact and PouchDB.
+
+- https://github.com/ronnix/pouchdb-couchdb-sync-example /201805/js
+  - PouchDB + CouchDB syncing example
 
 - https://github.com/couchbase-examples/couchbase-tutorials /202312/js
   - he content for the Couchbase Developer Tutorials
@@ -895,6 +927,7 @@ modified: 2023-09-28T20:35:56.153Z
 
 - https://github.com/puncoz-official/redux-pouchdb-middleware /202001/ts
   - redux middleware to sync data between redux with pouchdb and vice-versa.
+  - https://github.com/yldio/pouch-redux-middleware /201710/js
 - https://github.com/vicentedealencar/redux-pouchdb /201912/js
   - sync store state to pouchdb
   - The PouchDB database persists the state of chosen parts of the Redux store every time it changes.

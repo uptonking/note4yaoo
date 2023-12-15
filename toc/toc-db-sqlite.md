@@ -109,7 +109,10 @@ modified: 2021-08-30T18:56:18.632Z
   - https://codapi.org/
   - Embeddable code playgrounds for education, documentation, and fun.
   - Codapi is a platform for embedding interactive code snippets directly into your product documentation, online course, or blog post.
-  - Codapi manages sandboxes (isolated execution environments) and provides an API to execute code in these sandboxes. It also provides a JavaScript widget codapi-js for easier integration.
+  - Codapi manages sandboxes (isolated execution environments) and provides an API to execute code in these sandboxes. 
+  - It also provides a JavaScript widget codapi-js for easier integration.
+  - Custom sandboxes for any programming language, database, or software.
+  - Available as a cloud service and as a self-hosted version.
 # sqlite-viewer/manager
 - https://github.com/inukshuk/sqleton
   - Visualizes your SQLite database schema.

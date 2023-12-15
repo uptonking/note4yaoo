@@ -36,13 +36,20 @@ modified: 2022-11-06T15:45:36.913Z
   - It's designed for React/Redux/Flux apps. Inspired by Normalizr.
   - We can transform the whole Redux store, that can incude complex nested json objects, into a simple flat structure using Simplifr.
   - https://github.com/krispo/redux-json-tree
-
+# spec-format
 - https://github.com/CondeNast/atjson /ts
   - https://atjson.condenast.io/docs/getting-started
   - atjson is a living content format for annotating content
   - we need a format that can be rich, extensible, and portable. It is important that the content source provide little ambiguity about how a story should be displayed
   - A document has a content field and a list of annotations, each of which have a spatial offset in the document.
   - atjson came out of trying to build a text editor called Poetica
+
+- https://github.com/sanity-io/content-source-maps
+  - Content Source Maps is a standard representation to annotate fragments in a JSON document with metadata about its origin: the field, document, and dataset it originated from. 
+  - We do this with a separate document alongside the content that provides the metadata without changing the layout of the original document.
+  - Today Content Source Maps enables annotating JSON documents with “source” metadata, allowing end users to navigate directly to the source to edit it. 
+  - In the future, content source maps will also enable annotating JSON documents with arbitrary metadata for other use cases.
+  - Normalised JSON Path: A string representing the location of a value within a JSON document in a standardised format
 # json-editor/viewer
 - https://github.com/plantain-00/schema-based-json-editor
   - https://plantain-00.github.io/schema-based-json-editor/packages/react/demo/

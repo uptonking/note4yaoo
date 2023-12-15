@@ -18,12 +18,14 @@ modified: 2023-06-23T12:46:53.288Z
   - On top of accurate syntax highlighting powered by the same engine as VS Code, Expressive Code allows you to annotate code blocks using text markers, diff highlighting, code editor & terminal window frames, and more.
   - All annotations are based on a powerful plugin architecture 
 # collab
-- https://github.com/ekzhang/cm-collab /ts
+- https://github.com/ekzhang/rushlight /MIT/202306/ts
+  - https://github.com/ekzhang/cm-collab /ts
   - A tiny collaborative Markdown editor based on CodeMirror, communicating with a minimal server and database.
-  - Supports multiple real-time documents, with live cursors. Based on CodeMirror's **operational transformation** extension
-  - The backend is stateless and even avoids WebSockets by relying on HTTP/2.
-  - Unlike most toy examples, this application persists data and cleans up database memory. 
-  - Documents are stored in Postgres, and real-time changes are resolved over Redis, with compaction.
+  - Make collaborative code editors that run on your own infrastructure: just Redis and a database.
+  - Supports multiple real-time documents, with live cursors. 
+  - 👉🏻 Based on CodeMirror 6 and operational transformation, so all changes are resolved by server code.
+  - The backend is stateless, and you can bring your own transport; even a single HTTP handler is enough.
+  - Unlike most toy examples, Rushlight supports persistence in any durable database you choose. Real-time updates are replicated in-memory by Redis, with automatic log compaction.
 # extensions
 - https://github.com/val-town/codemirror-ts /ISC/ts
   - https://val-town.github.io/codemirror-ts/

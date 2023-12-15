@@ -12,6 +12,16 @@ modified: 2021-02-05T14:00:02.922Z
 # ux-examples
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Create responsive card with CSS and HTML including container queries 
+- https://twitter.com/davidm_ml/status/1735281266436579706
+  - https://github.com/atherosai/ui/tree/main/blog-preview-01
+
 - ## A gradient circular chart effect 
 - https://twitter.com/argyleink/status/1624575440382996480
 

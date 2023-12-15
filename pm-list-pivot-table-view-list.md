@@ -20,4 +20,6 @@ modified: 2022-12-16T01:51:52.564Z
 # examples-list
 - [Roadmap for Notesnook](https://notesnook.com/roadmap/)
   - 不显示工具条，顶部显示代表任务状态的图例
+
+- [list添加item的动画效果](https://twitter.com/dillionverma/status/1735630932655378544)
 # more-list

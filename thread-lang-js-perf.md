@@ -75,7 +75,12 @@ modified: 2023-11-10T08:05:19.107Z
 
 - ## 
 
-- ## 
+- ## 深拷贝 JSON.parse(JSON.stringify(obj1))
+- https://twitter.com/buaaxhm/status/1735484597159530650
+- v8对这种写法有特殊优化，只要识别到这种函数调用方式就会自动做深拷贝优化
+  - 很多老旧的library里面也是这样写的，新项目可能还在依赖旧版本的npm包，所以js引擎对这种旧写法也要做优化
+- 如果需要深拷贝，可以试试 structuredClone
+  - structuredClone 性能甚至只有通过 JSON 拷贝的三分之一
 
 - ## benchmarking JS parsers' napi speed.
 - https://twitter.com/hd_nvim/status/1726505034287030367
