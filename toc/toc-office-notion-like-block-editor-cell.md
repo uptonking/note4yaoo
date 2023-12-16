@@ -59,6 +59,16 @@ modified: 2022-08-14T16:26:48.558Z
   - 支持跨block选择部分文字
   - 支持拖拽block修改顺序，但不支持拖入拖出list item
 
+- https://github.com/Darginec05/Yopta-Editor /MIT/202310/ts
+  - https://yopta-editor.vercel.app/basic
+  - Notion-like editor with similar behaviour
+  - 几乎无依赖
+  - 支持跨block选择部分文字
+  - list不支持多级
+  - list item暂不支持拖出去
+  - Offline ready mode, 离线基于localStorage
+  - [plans for v2](https://yopage.co/blog/0zntIA46L4/5iK8VNiBI8)
+
 - https://github.com/djyde/plastic-editor
   - A block-based editor
   - https://github.com/relm-us/svelt-yjs
@@ -122,6 +132,11 @@ modified: 2022-08-14T16:26:48.558Z
   - 支持跨block选择部分文字
   - 不支持拖拽block修改顺序，但有上下箭头按钮
   - intuitive block based wysiwyg editor built with React and ProseMirror
+
+- https://github.com/pierre-lgb/slashwriter /NALic/202312/ts
+  - https://slashwriter.fly.dev/
+  - 依赖tiptap.v2、redux-toolkit、supabase、express、yjs、hocuspocus、mui5
+  - App for editing and sharing documents online, with a Notion-like block-based collaborative editor.
 
 - https://github.com/karpov-kir/canvas-block-editor /ts
   - A block based canvas text editor.

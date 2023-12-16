@@ -14,6 +14,11 @@ modified: 2023-02-08T10:24:11.422Z
   - 可考虑自定义实现，需要用户先提供一次身份和云存储位置(自建或第三方)，然后拉取数据
 # popular
 
+# browser-ext-devtools
+- https://github.com/DaniGuardiola/browser-namespace /ts
+  - Cross-browser support for the "browser" namespace in browser extensions. Fully typed.
+  - Some browsers use the `browser` API namespace, while others use `chrome`. This package unifies both and provides a fully typed API.
+  - In contrast with webextension-polyfill, which does a lot more, this package limits itself to providing a convenient, unified and fully typed namespace.
 # self-usage
 - [History Trends Unlimited](https://sites.google.com/view/history-trends-unlimited/home?authuser=0)
   - it is closed source. Copyright 2013-2022 Randy Lauen. All Rights Reserved.

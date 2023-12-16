@@ -15,6 +15,7 @@ modified: 2020-07-14T09:28:43.976Z
   - 很多测试api甚至自身都不是一致的，时快时慢
 
 - [7GUIs: A GUI Programming Benchmark](https://eugenkiss.github.io/7guis/)
+  - [The 7 Tasks](https://eugenkiss.github.io/7guis/tasks/)
   - 7GUIs defines seven tasks that represent typical challenges in GUI programming. 
   - In addition, 7GUIs provides a recommended set of evaluation dimensions.
   1. Counter
@@ -26,6 +27,7 @@ modified: 2020-07-14T09:28:43.976Z
   7. Spreadsheet Cells
   - ref
     - https://github.com/andrewgreenh/7guis (react实现，多使用class组件)
+    - https://twitter.com/arthurwuhoo/status/1470489178186170374
 # data-grid-table
 - https://github.com/handsontable/performance-lab
   - JavaScript performance tests for Handsontable

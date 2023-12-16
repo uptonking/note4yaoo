@@ -66,51 +66,14 @@ modified: 2021-07-11T08:31:00.660Z
 - [效率软件综合测评 知乎专栏](https://www.zhihu.com/column/c_1486707752840425473)
 
 - [【译】深度解析 Roam 数据结构 —— 为什么 Roam 远不只是一个笔记应用 - 知乎](https://zhuanlan.zhihu.com/p/355844756)
-# editor-meeting-psp-block-editor-20220704
-- 编辑器的模型包括renderTree和blockTree
-  - 目的是方便实现翻译及原文、database多视图
-
-- yjs使用并没太大问题，只是在大文件时序列化花费时间很长
-  - 自己脚本进行文本测试，在控制台测试到5-6万行，花费时间长
-  - 业务层在3000行左右就开始卡，因为数据是异步的
-
-- yjs提供了ydoc，也提供了sub-doc
-  - 但websocket不支持sub-doc
-
-- 同步改异步容易，异步改同步
-
-- 轻雀概念文档操作都是同步的，先在本地操作
-
-- psp的操作都是同步的，但底层实现可以是异步的
-  - 对于需要异步的，可以先在内存state处理，然后批量执行操作
-# editor-meeting-xheldon-20220629
-- 选crdt原因
-  - 本地协作，无需中心服务器
-
-- affine的亮点
-  - 任意组合block成group，支持转换视图
-  - 编辑器与白板结合
-  - local-first
-
-- 插件系统设计因素
-  - 编辑器插件
-  - 外部扩展
-
-- 编辑器插件的实现方式
-  - 将editor对象暴露出去
-    - slate
-    - ckeditor
-    - prosemirror ? 
-  - 缺点是不知道用户用了哪些api？
-  - 插件的另一种实现方式，类似浏览器的沙箱
-
-- xheldon公司产品插件使用了rxjs和webpack-tapable
 # trending-office-products
 
 ## office-doc-whiteboard
 
 - [Whimsical - Work Better, Faster, Together](https://whimsical.com/)
   - The hub for visual collaboration
+
+- [Fabrie 设计师的在线协作平台](https://www.fabrie.cn/home)
 
 ## Notion竞品分析
 

@@ -32,7 +32,10 @@ modified: 2021-01-08T17:14:34.841Z
 # discuss
 - ## 
 
-- ## 
+- ## Like mixing JS animations and WAAPI seems to have no performance impact *until* there's a WAAPI animation on the main thread.
+- https://twitter.com/mattgperry/status/1735665781784916216
+  - Reaffirms my belief in only running select animations via WAAPI and will be removing backgroundColor to start.
+  - I don't really understand why this would be happening but it's specifically when we pre-generate keyframes for a WAAPI animation for any of the values (so not a specific problem with backgroundColor or main thread animations). Good argument to support linear() where possible
 
 - ## morphing tip prototype with View Transitions
 - https://twitter.com/argyleink/status/1720550871300493541

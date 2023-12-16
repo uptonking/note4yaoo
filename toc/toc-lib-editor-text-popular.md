@@ -12,6 +12,7 @@ modified: 2022-11-08T19:04:00.289Z
 - features
   - collaborative
   - **block-style data model** for editor with one large contenteditable
+  - versioned documents: draft/publish
   - virtualized
   - ActionText fullstack
   - lazy-editor: easier for custom layout

@@ -8,7 +8,8 @@ modified: 2023-12-15T18:58:15.432Z
 # lib-saas-cms-community-comparison
 
 # guide
-
+- [w3techs: Usage Statistics and Market Share of Content Management Systems](https://w3techs.com/technologies/overview/content_management)
+  - WordPress, Wix, Squarespace, Joomla, Drupal, Adobe, PrestaShop, Webflow, TYPO3, Weebly, Gatsby, Hugo, Zendesk, Ghost, Odoo, MediaWiki, Gitbook, Jekyll, Salesforce
 # discuss-stars
 - ## 
 

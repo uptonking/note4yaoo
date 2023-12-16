@@ -28,6 +28,21 @@ modified: 2021-04-27T09:19:37.711Z
 # discuss
 - ## 
 
+- ## 
+
+- ## New JS API just dropped in Webkit Nightly for checking if an element is visible or not.
+- https://twitter.com/wesbos/status/1735685150594265147
+  - It covers a bunch of HTML + CSS methods for hiding an element, including the upcoming CSS content-visibility API
+  - Already in Firefox + Chrome.
+
+- does it check for visibility in the viewport or across the whole document?
+  - Across the document - if you want to know if it's in the viewport, you can use `IntersectionObserver`, or compare the `el.getBoundingClientRect()` values to the window `width/height`
+
+- ##  `field-sizing: content` makes a `<textarea>` automagically grow to fit what folks type in it
+- https://twitter.com/argyleink/status/1735692251228156232
+  - https://codepen.io/argyleink/pen/JjxQLoW
+  - try it with Canary, if that wasnt assumed, it's not shipped in Chrome yet, but that's what was announced today, intent to ship
+
 - ## TIL that css & nesting has worked in browsers since about March.
 - https://twitter.com/BenLesh/status/1729275259575058641
 

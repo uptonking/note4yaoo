@@ -12,6 +12,16 @@ modified: 2023-05-07T18:35:50.897Z
 # discuss
 - ## 
 
+- ## 
+
+- ## postman 竟然不是本地运行的？UI好慢好卡。有么有更好的替代品呀？
+- https://twitter.com/river_leaves/status/1735646281488580659
+- Insomnia
+
+- ## I don’t know why anyone would willingly add “ctl” to the end of their CLI tool’s name
+- https://twitter.com/jarredsumner/status/1735762522760978734
+- How about people adding "d" to the end of their daemon's name?
+
 - ## 微软 terminal 团队想给 windows 内置一款默认的 CLI 文本编辑器，跑来 github 上征询大家的意见，于是评论区各个编辑器又开始互掐。
 - https://twitter.com/skywind3000/status/1734401495691600346
   - [Default CLI Editor - Feature Exploration! · microsoft/terminal](https://github.com/microsoft/terminal/discussions/16440)

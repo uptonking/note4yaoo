@@ -18,6 +18,9 @@ modified: 2023-01-20T21:59:47.792Z
   - 流程自动化
   - notion-like
 
+- [w3techs: Usage Statistics and Market Share of Content Management Systems](https://w3techs.com/technologies/overview/content_management)
+  - WordPress, Wix, Squarespace, Joomla, Drupal, Adobe, PrestaShop, Webflow, TYPO3, Weebly, Gatsby, Hugo, Zendesk, Ghost, Odoo, MediaWiki, Gitbook, Jekyll, Salesforce
+
 - ref
   - https://github.com/postlight/awesome-cms
   - [Headless CMS - Top Content Management Systems | Jamstack](https://jamstack.org/headless-cms/)

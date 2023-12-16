@@ -35,7 +35,18 @@ modified: 2023-09-17T17:46:07.620Z
 # discuss
 - ## 
 
-- ## 
+- ## There's been a trend back to SQL databases in the latest set of database-y startups ( @neondatabase , @supabase , @tursodatabase , @PlanetScale , et. al).
+- https://twitter.com/elithrar/status/1735691896373096485
+  - Is the era of alternative NoSQL architectures (like DynamoDB, MongoDB or FaunaDB) over?
+  - One of the advantages of SQL-databases, especially using mature query languages (SQLite w/ @cloudflare D1 or Turso, Postgres w/ Neon+Supabase, MySQL w/ PlanetScale) is that there's a tremendous amount of tooling that "just works" (or takes very little adaptation).
+
+- many organizations are still adopting DynamoDB& and MongoDB, and even if the "NoSQL" hype of the 2010's has died down, those models can bring distinct performance and data modelling advs. ^ yes, Dynamo has a SQL-ish interface, but it's non-standard and simplified.
+  - This is especially true in the age of "edge" computing, where you want to get your compute *and* data closer to your users. 
+  - NoSQL architectures have tended to make this way easier to achieve in practice, especially if you're primarily building user-facing apps w/ OLTP use-cases.
+
+- Plenty of Postgres schemas have jsonb columns, and tools like Electric SQL sync between embedded SQLite DBs on the app side by way of CRDTs, not to mention other paradigms, like streaming, with various levels of integration... The landscape is more complex (and interesting) than it was during the summer of no-SQL.
+
+- Being able to store and query json inside sql has filled much of the needs nosql were solving.
 
 - ## I want a database where I can subscribe to a complex query, 
 - https://twitter.com/steveruizok/status/1719442425398038900
@@ -72,7 +83,20 @@ modified: 2023-09-17T17:46:07.620Z
 # discuss-mongo-like
 - ## 
 
-- ## 
+- ## When you think about the reasons people reached out for Mongo in 2010:
+- https://twitter.com/glcst/status/1735695103962894701
+  - It was dead simple.
+  - It allows you to scale to 100s of GB, even a whole TB.
+  - Fast forward to 2023: SQLite is easier than Mongo, and with the database-per-tenant pattern you can essentially emulate collections (each collection is a DB).
+  - You can rent a 10TB box (or more) from AWS and others and be done with it.
+  - Many use cases for NoSQL in specialized data processing. Not a lot in the center.
+
+- Mongo's main value add was being able to store JSON. Most RDBMSs now support JSON type. And mongo's distributed story is not very strong.
+
+- I 100% agree. Multi-tenant SQLite is the way to scale.
+
+- We're seeing similar trends w/ parallel filesystems.  Large NFS servers are now able to reach rates previously only attained by clustering storage servers and pci-e gen5 is just now becoming available!  Once 6 hits the market, the consolidation will intensify.
+  - also the RAM-size of newer nodes starts to get insanely large - while the caching capabilities of many networked/clustered filesystems just can't really make efficient use of this - at least not yet 
 
 - ## 🆚️🍃🐬 [Mongo (Atlas) vs. Planetscale for my simple SaaS?_202208](https://www.reddit.com/r/Database/comments/wh9rd1/mongo_atlas_vs_planetscale_for_my_simple_saas/)
 - Mongo:

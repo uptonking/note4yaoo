@@ -10,7 +10,13 @@ modified: 2021-09-24T06:50:31.330Z
 # discuss
 - ## 
 
-- ## React tip: when conditionally rendering component based on some string enum (like a role), use an object to map enum values to components.
+- ## 
+
+- ## The Factory Pattern in React simplifies component creation, here are two ways you can use it
+- https://twitter.com/_georgemoller/status/1736003638957420944
+  - switch-case; map
+
+- ## 💡 React tip: when conditionally rendering component based on some string enum (like a role), use an object to map enum values to components.
 - https://twitter.com/DavidKPiano/status/1564950527477252098
   - This can be cleaner than using conditional operators, and it keeps the logic organized & clear.
 - Honestly, I like to use objects instead of the switch statement, it's more clear and easy to add new options

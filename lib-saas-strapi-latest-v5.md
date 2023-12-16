@@ -11,7 +11,7 @@ modified: 2023-12-15T19:39:18.123Z
 
 # blogs
 
-### [Strapi V5 Features and Updates — Restack](https://www.restack.io/docs/strapi-knowledge-strapi-v5-overview)
+## [Strapi V5 Features and Updates — Restack](https://www.restack.io/docs/strapi-knowledge-strapi-v5-overview)
 
 - Plugin System: The new plugin system allows for easier customization and extension of Strapi's functionalities.
 - Database Layer: Enhanced database layer offers better performance and scalability.

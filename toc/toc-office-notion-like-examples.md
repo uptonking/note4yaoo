@@ -110,10 +110,6 @@ modified: 2023-11-28T14:48:45.911Z
   - 支持斜杠菜单、协作
   - 依赖tiptap2、yjs
 
-- https://github.com/ryuever/react-tapable-editor  /328Star/MIT/202010/ts
-  - A pluginable, intuitive medium/notion like rich text editor
-  - built on draft-js, and its plugin system is based on tapable which is famous as the engine of webpack.
-
 - https://github.com/ericyip/hexx /archived
   - https://hexx.vercel.app/
   - notion like block editor in react
@@ -129,8 +125,22 @@ modified: 2023-11-28T14:48:45.911Z
   - 所有的模块都以VUE组件的形式编写，可以灵活插拔。
   - 所有组件保存的数据，都以Json的形式存储在Vuex里供不同组件调用
 
+- https://github.com/shreyasmanolkar/notion-browser-client /202308/ts
+  - https://www.notion-s.co/
+  - develop a comprehensive clone resembling the popular platform Notion.
+  - https://github.com/shreyasmanolkar/notion-api /ts
+    - Notion Clone API built with TypeScript and MongoDB, using TDD
+
 - https://github.com/fouita/tailwind-editor
   - notion like tailwindcss editor built with svelte
+
+- https://github.com/ryuever/react-tapable-editor /328Star/MIT/202010/ts
+  - A pluginable, intuitive medium/notion like rich text editor
+  - built on draft-js, and its plugin system is based on tapable which is famous as the engine of webpack.
+
+- https://github.com/desyed/likho /202308/ts
+  - https://likho.site/
+  - AI powered, multi-tenant website builder with notion like WYSIWYG.
 
 - https://github.com/youking-lib/marktion
   - https://editor.marktion.io/
@@ -143,12 +153,6 @@ modified: 2023-11-28T14:48:45.911Z
 - https://github.com/omarsalem7/notion
   - https://notion-editor.netlify.app/
   - a simple functionality for notion like h1, h2.
-
-- https://github.com/shreyasmanolkar/notion-browser-client /202308/ts
-  - https://www.notion-s.co/
-  - develop a comprehensive clone resembling the popular platform Notion.
-  - https://github.com/shreyasmanolkar/notion-api
-    - Notion Clone API built with TypeScript and MongoDB, using TDD
 
 - https://github.com/factly/scooter /202308/js
   - https://scooter-storybook.pages.dev/
@@ -243,6 +247,10 @@ modified: 2023-11-28T14:48:45.911Z
   - 支持拖拽block修改顺序
   - 整体还原度非常高，包括page-tree
   - This website allows users to create pages, add notes to those pages, add to-do's, link to other pages and more!
+
+- https://github.com/AntonioErdeljac/notion-clone-tutorial /202310/ts
+  - https://note-taking-app-rose.vercel.app/
+  - Fullstack Notion Clone: Next.js 13, React, Convex, Tailwind | Full Course 2023
 
 - https://github.com/amjadbouhouch/notion-clone /仅前端
   - https://notion-clone-react.netlify.app/

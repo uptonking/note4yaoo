@@ -172,8 +172,10 @@ modified: 2023-02-05T19:03:27.730Z
   - As a first step only those text editing features are implemented
   - More new things (managing tables, embedding, etc.) are coming in the following releases.
 
-- https://github.com/pierre-lgb/slashwriter
-  - 依赖tiptap.v2、redux-toolkit、supabase、express、yjs
+- https://github.com/pierre-lgb/slashwriter /NALic/202312/ts
+  - https://slashwriter.fly.dev/
+  - 依赖tiptap.v2、redux-toolkit、supabase、express、yjs、hocuspocus、mui5
+  - App for editing and sharing documents online, with a Notion-like block-based collaborative editor.
 
 - https://github.com/bcc-code/bcc-live-transcriber
   - 依赖tiptap.v2、yjs、vue3
