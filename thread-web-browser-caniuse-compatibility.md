@@ -29,7 +29,17 @@ modified: 2021-07-29T11:15:44.100Z
 
 - ## 
 
-- ## 
+- ## Perhaps one of the most pleasant surprises of 2023 was Safari going all-in on PWA. 
+- https://twitter.com/dhh/status/1736081020393521620
+  - Add To Dock in macOS Sonoma and full support for web push notifications has made it a joy to use and develop PWAs. 
+  - Native still has a place, of course, but it's a smaller one than it was.
+
+- iOS and iPadOS 16.4 beta 1 is now available with:
+  • Web Push for Home Screen web apps 
+  • Focus support for Web Push
+  • Third-party browser support for Add to Home Screen
+  • Badging API 
+  • Manifest ID 
 
 - ## You can reduce the number of DOM elements and DOM operations _by a lot_ and speed things up as a result by highlighting things with the CSS Custom Highlight API
 - https://twitter.com/fabiospampinato/status/1653421306128334848

@@ -9,6 +9,21 @@ modified: 2023-12-15T16:51:56.101Z
 
 # guide
 
+- pros
+  - ?
+
+- cons
+  - 纯前端的plugin不方便直接预览
+
+- features
+  - ?
+
+- who is using #strapi
+  - VirtusLab
+
+- cms vs framework
+  - ?
+
 - resources
   - [Strapi Community Forum](https://forum.strapi.io/)
 # dev

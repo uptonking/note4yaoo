@@ -48,7 +48,18 @@ modified: 2023-12-08T15:49:56.046Z
 # discuss
 - ## 
 
-- ## 
+- ## Friends from one big startup recently had to rewrite everything (and they are not finished yet) from SPA to SSR because their users have massive datasets that don’t fit into a browser. 
+- https://twitter.com/evoluhq/status/1736087028087873947
+  - They literally can’t leverage client JavaScript. React Server Components are an excellent fit for them.
+  - Local-first for big companies makes sense only as some form of a client cache. Clients can’t store all data, only subsets. What @ElectricSQL does makes sense. Actually, it’s the only possible approach, I suppose.
+  - Evolu chose a different path because it’s not for big companies' data but for individual personal data.
+
+- ## One of the reasons React Server Components are inevitable, much like Thanos, is that UI is a function of data.
+- https://twitter.com/rauchg/status/1736074420635197924
+  - In a CSR/SPA world, you must be willing to ship all of the code, for all of the possible data, before rendering can begin. This is why you see so many spinners.
+
+- One thing I still don’t fully understand, is losing the benefit of an API that can be exposed to 3rd parties or used to build a mobile app down the road. Going back and doing this later can be challenging and costly. What’s the best way to handle with RSC?
+  - An API for third-party consumption is a specific product you need to shape and treat as such. It shouldn’t be a side effect of your frontend application. In fact, you want to take advantage of your frontend fetching data in the most optimal way possible!
 
 - ## [Partially synced patterns · WordPress/gutenberg_202305](https://github.com/WordPress/gutenberg/discussions/50456)
 - Today, when you insert a pattern, the blocks from that pattern are completely decoupled and standalone. There's no way to tell that those blocks originated from a pattern, especially since they can be edited to no longer resemble the source pattern.

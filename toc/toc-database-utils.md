@@ -82,6 +82,10 @@ modified: 2023-08-23T17:15:46.484Z
   - Similarly CockroachDB achieves replication on top of RocksDB, but here it is a pure P2P **streaming** database, with zero central management.
   - like all other low-level components of hypercore ecosystem it is a single-writer data structure. Multi-writer is a higher-level abstraction, hence the name multi-hyperbee.
 
+- https://github.com/hypercore-protocol/hypertrie /202202/js
+  - Distributed single writer key/value store
+  - Uses a rolling hash array mapped trie to index key/value data on top of a hypercore.
+
 - https://github.com/holepunchto/autobase
   - Autobase lets you write concise multiwriter data structures with Hypercore
   - https://github.com/lejeunerenard/autobase-event-bus

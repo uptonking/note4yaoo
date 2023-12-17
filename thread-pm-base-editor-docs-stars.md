@@ -12,7 +12,11 @@ modified: 2021-08-22T07:29:34.045Z
 # discuss
 - ## 
 
-- ## 
+- ## 使用@dotey分享的两步翻译法给这次重写编辑器作为一个结尾吧
+- https://twitter.com/beihuo/status/1736172903312613411
+  - 这次重构主要对使用流程进行了优化，将触发按钮从侧栏移至顶部工具栏，以提升用户体验。
+  - 侧边栏有了更大的空间，之后会放入一些新功能。同时，对侧边栏的后端逻辑进行了重新抽象，有效减少了代码量。
+  - 为了更好地满足书写格式的需求，从纯文本编辑器升级为富文本编辑器，并增加了对 Markdown 的导入和导出功能（目前仅给 GPT 用）。
 
 - ## Just build a small demo in Loro. It can record the entire edit history in a DAG, just like git, making playback and diff viewing easy.
 - https://twitter.com/zxch3n/status/1721898524403798457

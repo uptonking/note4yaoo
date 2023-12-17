@@ -131,6 +131,9 @@ modified: 2023-09-02T09:17:22.992Z
   - http://ryanseddon.github.io/react-frame-component/
   - allows you to encapsulate your entire React application or per component in an iFrame.
   - [Rendering to iFrames in React](https://medium.com/@ryanseddon/rendering-to-iframes-in-react-d1cb92274f86)
+
+- https://github.com/its-devtastic/framestack /202204/ts
+  - An iframe manager. Easily create, layout, animate, communicate with and clean up iframes.
 # browser-emulator
 - https://github.com/jvilk/BrowserFS
   - an in-browser filesystem that emulates the Node JS filesystem API and supports storing and retrieving files from various backends.

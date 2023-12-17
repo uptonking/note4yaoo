@@ -26,6 +26,9 @@ modified: 2023-10-31T11:17:48.697Z
 - https://twitter.com/alexxubyte/status/1734410242774167619
   - I make stupid errors, many people notice them and point them out, enabling me to fix them quickly
   - This is the updated version.
+
+- https://twitter.com/milan_milanovic/status/1736371310614270131
+  - What is the difference between inner, left, right, and full join?
 # discuss
 - ## 
 

@@ -16,7 +16,7 @@ modified: 2023-12-16T17:36:57.942Z
 
 - ## 
 
-- ## 🤔 [You don't need a CRDT to build a collaborative experience | Hacker News_202311](https://news.ycombinator.com/item?id=38289327)
+- ## 🤼🏻 [You don't need a CRDT to build a collaborative experience | Hacker News_202311](https://news.ycombinator.com/item?id=38289327)
 - jitl(notion-dev): I agree broadly with the article’s position but I think locks are more harmful than helpful. 
   - Instead just allow LWW overwrites. If users have contention and your sync & presence is fast, they’ll figure it out pretty quick, and at most lose 1-2 keystrokes, or one drag gesture, or one color pick.
   - 💡 Notion is “collaborative” and we don’t use a CRDT for text, it’s all last-write-wins decided by the server. However our LWW texts are individually small - one block/paragraph in size - and adding/moving/removing blocks is intention-preserving if not perfectly convergent.

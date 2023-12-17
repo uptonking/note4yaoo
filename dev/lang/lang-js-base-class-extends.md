@@ -13,11 +13,28 @@ modified: 2022-11-23T17:48:48.839Z
 - [Public class fields - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Public_class_fields)
   - Public fields are writable, enumerable, and configurable properties. 
   - As such, unlike their private counterparts, **they participate in ~~prototype~~ inheritance**.
-# examples
+# blogs
 
 # discuss
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## Here's what I love about using classes for data modeling:
+- https://twitter.com/kettanaito/status/1736125001638482039
+  1. Classes (in JavaScript) are, basically, objects with superpowers. 
+  2. Default value assignment is a matter of class property assignment. 
+  3. Because of no. 2, type inference is free.
+  4. Decorators can provide additional behaviors on properties, like making them transient or creating relationships.
+  5. Dependent properties can be represented via getter functions (that's the most native way to derive one property from another!).
+
+- classes have an actual type, so:
+  - You can use instanceof
+  - The type is visible when logging/inspecting
+- Downside IMO: Methods are unbound
 
 - ## Classes combine state and behavior - just what you need for components.
 - https://twitter.com/justinfagnani/status/1728128464946098539

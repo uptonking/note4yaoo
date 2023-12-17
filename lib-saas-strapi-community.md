@@ -31,7 +31,10 @@ modified: 2023-12-15T17:04:36.589Z
 
 - ## 
 
-- ## 
+- ## [What do you guys use for a backend? I've been considering Laravel but it seems like overkill for a simple project. : reactjs_202302](https://www.reddit.com/r/reactjs/comments/117qi4z/what_do_you_guys_use_for_a_backend_ive_been/)
+- You may be interested in AdonisJS. Very similar to Laravel (heavily inspired by it), has all the nice DB migration setup, etc and plays very well with React for the bits where you need it.
+
+- I suggest NestJS. I've been using it for the last two years at work and it includes most things you'd need. We use it because we can use the same language for frontend and backend and it's a pretty standard MVC framework with a lot of tools included and great structure.
 
 - ## [How to Build a Notion Clone with Strapi v4 and Next.js (Part 1 of 2) | Hacker News_202206](https://news.ycombinator.com/item?id=31825676)
 - Worked at a place that was doing this (creating a notion clone with some specific functionalities). 👉🏻 The hardest/most unstable part was getting a solid WYSIWYG editor experience with a bunch of different media handling. The backend part seemed fairly trivial in comparison, so I'm not sure why would this be used to showcase strapi.

@@ -17,7 +17,11 @@ modified: 2022-04-23T18:48:32.550Z
 
 - ## 
 
-- ## 
+- ## 尝试用 Gemini Pro Vision 来解决目前 RAG 的核心问题之一：OCR 转 Markdown（带表格）。
+- https://twitter.com/9hills/status/1736362451728494852
+  - 表格效果一般。
+- 我现在用的一个方法，Nougat或者marker先把markdown格式的表格抽取出来，再配合pdf2image把表格的图片喂给LLava然后让LLava 作为一个orc去修复Nougat当中的markdown的错误，但是还是很多时候会表格位置错误
+- 可能是中文的缘故？
 
 - ## 我现在完全并深刻理解很多日本传统企业DX转型为什么会失败了。​因为日企那一套管理和做事方法，根本就不适用于互联网软件行业。
 - https://twitter.com/lcayu/status/1731903269793116649

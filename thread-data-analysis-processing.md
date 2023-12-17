@@ -8,13 +8,20 @@ modified: 2021-05-13T16:12:47.773Z
 # thread-data-analysis-processing
 
 # guide
+
 # discuss
-
 - ## 
 
 - ## 
 
-- ## 
+- ## Volatility can be a big problem in Time Series forecasting!
+- https://twitter.com/daansan_ml/status/1736295237184897157
+  - volatility(波动的，不稳定的) is a statistical measure of the dispersion of data or variance around its mean over a certain period of time.
+  - In finance, it refers to how much the price changes between periods.
+  - Generally, at least in finance, there are periods of high volatility followed by periods of low volatility, and vice versa.
+  - High volatility makes forecasting hard. So it would be useful to model it.
+  - Luckily for us, we have the ARCH model, which stands for "AutoRegressive Conditional Heteroskedasticity".
+  - We can use ARCH models for predicting the variance (volatility), while we use ARIMA for the mean.
 
 - ## When you aggregate & simplify data, you often lose the signal & context needed to make sense of what you are seeing.
 - https://twitter.com/observablehq/status/1499412568330280962

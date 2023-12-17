@@ -11,9 +11,67 @@ modified: 2022-12-19T01:59:01.628Z
 - [高并发系统设计 40 问 | JAVA 架构师笔记](https://zq99299.github.io/note-architect/hc/)
 # race condition 竞态条件
 
-# discuss
+# discuss-stars
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [Alternative for synchronisation in multi threading in JAVA - Stack Overflow](https://stackoverflow.com/questions/51219679/alternative-for-synchronisation-in-multi-threading-in-java)
+- TL; DR You have overhead no matter what you do - just select the design and primitives that result in the smallest overhead for your particular use case.
+- There are lots of ways of doing asynchronous and parallel operations other than using that type of synchronization:
+  - Non-blocking I/O
+  - Promise/futures based async
+  - Event-driven async
+  - Using immutable data structures to minimize the amount of shared resources.
+  - There are, of course, a lot of types of locking and synchronization mechanisms available other than just the synchronized keywords, such as counting semaphores, reader-writer locks, etc.
+  - There are a lot of other types of concurrency as well, such as the actor model.
+
+# discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Java中synchronized锁和Lock锁在CPU层的实现，或者说在JVM层的实现是否是一致的？ - 知乎](https://www.zhihu.com/question/332327455)
+  - 一致指的是都是用CAS指令来判断是否可以获取锁，只不过synchronized底层封装了该指令，Lock锁显示调用了该指令并提供了更为灵便的操作方式？
+
+- 不能完全这么说，因为synchronized锁在jdk1.6之后优化为偏向锁，轻量级锁，重量级锁三种形态，CAS的使用是轻量级锁，重量级锁的实现和CAS还不是一回事。
+  - Synchronized是通过对象内部的一个叫做监视器锁（monitor，monitor在这个语境下一般翻译成管程）来实现的。但是监视器锁本质又是依赖于底层的操作系统的Mutex Lock来实现的。
+  - 而操作系统实现线程之间的切换这就需要从用户态转换到核心态，这个成本非常高，状态之间的转换需要相对比较长的时间，这就是为什么Synchronized效率低的原因。因此，这种依赖于操作系统Mutex Lock所实现的锁我们称之为“重量级锁”。
+  - JDK中对Synchronized做的种种优化，其核心都是为了减少这种重量级锁的使用。
+  - JDK1.6以后，为了减少获得锁和释放锁所带来的性能消耗，提高性能，引入了“轻量级锁”和“偏向锁”
+
+- synchronized 会被优化为不同级别的锁，其中的重量级锁会切换到内核态
+
+- synchronized是基于JVM中的Monitor锁实现的，Java1.5之前的synchronized锁性能较低，但是从Java1.6开始，对synchronized锁进行了大量的优化，引入可锁粗话、锁消除、偏向锁、轻量级锁、适应性自旋等技术来提升synchronized的性能。
+  - synchronized修饰方法时，不需要JVM编译出的字节码完成加锁操作，是一种隐式的实现方式；
+  - synchronized修饰代码块时，是通过编译出的字节码生成的monitorenter和monitorexit指令完成的，在字节码层面是一种显示的实现方式；
+
+- 大部分情况下，被添加synchronized锁的代码不会存在多线程竞争的情况，但是会出现同一个线程多次获取同一个synchronized锁的现象，这样很浪费性能，此时偏向锁应运而生
+
+- synchronized是JVM中提供的内置锁，使用内置锁无法很好地完成一些特定场景下的功能。例如，内置锁不支持响应中断、不支持超时、不支持以非阻塞的方式获取锁。
+  - 而lock锁是在JDK层面实现的一种比内置锁更灵活的锁，它能弥补synchronized内置锁的不足，他们都通过Java提供的接口来完成加锁和解锁操作。
+  - lock是一种显示锁。JDK提供的显示锁位于java.util.concurrent包下，也叫JUC显示锁。
+
+- ## This is a contrived example tailor made to demonstrate the limitations of synchronization with virtual threads, which have been thoroughly documented, including in JEP 444.
+- https://twitter.com/gunnarmorling/status/1736137081611583953
+  - This is literally the furthest thing from idiomatic synchronized code.
+- Yes, it is contrived, but the point is not that much this particular usage, but rather that this is something to be aware of when adopting virtual threads, in particular with 3rd party libs.
+
+- This one is interesting: this program completes with #Java platform threads, but dead-locks with virtual threads. The reason being that virtual threads are pinned (i.e. not releasing their carrier) in synchronized blocks, thus no carriers are available.
+
+- It isn't widely known but you should never use synchronized ever. The pinning problem using virtual threads is a symptom(症状; 征候，征兆) of this and is still being worked on. There is another cause of VT pinning, native stack pointers. This is even more insidious(隐伏的；潜在的).
+  - Interesting, why should one never use synchronized? Ignoring virtual threads, it may not be the most flexible means of thread coordination, but it surely works. 
+
+- Never use synchronized ever? That's way overstated. Synchronized should be used judiciously(有见地的；明智的). There's nothing wrong with the idiomatic use of synchronized in the following code. It's much more concise than using j.u.c primitives.
+
+- I'm reading the code on the monitor-support and jom- * branches of loom, and I found that if synchronized is adapted and a custom scheduler API is provided, this problem still exists in the case of mixing platform threads and virtual threads
+
+- Pinning 🧵 to CPU core is the way to go for low latency systems!
 
 - ## [没有vert.x之前java是如何解决高并发问题的？ - 知乎](https://www.zhihu.com/question/316926737/answers/updated)
 

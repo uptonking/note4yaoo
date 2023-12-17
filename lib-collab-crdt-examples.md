@@ -1042,7 +1042,7 @@ modified: 2022-04-05T10:08:25.947Z
   - Merge is semilattice.
   - Wiped data inside some Head stays tombstone to hold place.
 # crdt-db
-- https://github.com/AntidoteDB/antidote /erlang
+- https://github.com/AntidoteDB/antidote /202209/erlang/inactive
   - A planet scale, highly available, transactional database built on CRDT technology
   - [Antidote: CRDT-based distributed database | Hacker News_201712](https://news.ycombinator.com/item?id=15862895)
 # crdt-rust

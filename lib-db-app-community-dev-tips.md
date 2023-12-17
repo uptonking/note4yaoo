@@ -24,6 +24,39 @@ modified: 2023-11-07T16:47:11.499Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## What happens when a database crashes while its in a middle of a transaction sent from a backend server?
+- https://twitter.com/hnasr/status/1736064842883342482
+
+- So little context. But typically that transaction is either not committed, it might be rolled back or the transaction is logged and thus will be applied once it's back.
+- What if it is logged for later. does back end throws error in this case?
+  - Depends. Generally speaking it will return an error, otherwise it will lead to data inconsistencies. This is also where database transactions come in to help you counter these situations.
+
+- I worked with postgres a lot, this is how it plays out on postgres. 
+  - postgres tracks transaction numbers based on the latest reported transaction by the threads.. each thread when it gets a query, starts its journey picks up a transaction ID from the transaction manager.. that is its view of the world .. numbers that are greater than itself are ignored.. same with writes - depending on what was committed to the transaction manager and what was written to the WAL you will be able to get that back.. anything that was written but not committed will be lost because the data will exist physically on the disk but no transaction will recognize it because it wasn't committed.. on startup it generally will be able to handle and cleanup some of the transactions that were pending and periodically move the data from the WAL file to the base directories where the data should live..
+  - if you were doing some external two phase (to external dbs etc.) transactions..  those will still remain open even after restarting your db and will keep holding that transaction ID as open for that table.. if you dont clean it up, for a long time and your table is very busy.. you'll can reach wrap around - because transaction numbers go in a circle.. there are protections in place for this.. but the risk is if the number that is kept open and the current number running of the current transaction loops all the way, you could lose all your data on the table.. the data will still be there on your disk but because the transaction numbers have wrapped around it will look like the older data is future data and will not be read by the table..
+
+- Database uses wal, so restart time it clear it up. Response to the client would be timeout error. However in distributed database, it would be more interesting because follower node needs to clean up their wal as well.
+
+- Databases have Write Ahead Logs (WALs) which are used in logging transactions. Transactions are ACID, they complete totally or fail. So, I think the transaction will not complete but there will be a WAL entry for it if it's a write to the DB.
+
+- I think
+  - Server side: The server will receive a transaction timeout error and then will keep trying to connect to the db until the HTTP request times out.
+  - DB side: When the db comes back online it'll read the wal and rollback any uncommitted transactions.
+
+- short answer: When a DB crashes mid-transaction, the DBMS checks the transaction log on restart. It either rolls back uncommitted changes or rolls forward committed ones.
+
+- 2 things - transaction logs which helps undo the changes & rollback segments which stores the previous state of the data. When server restarts it will automatic recovery based on these and undo all the uncommited transactions.
+
+- This can depend on many factors:
+  - If high availability is set or not
+  - if backend waits for acknowledgement from db if the transaction is committed or not
+  - if the sequence of transactions is important or not
+  - app architecture
+
 - ## Data Engineering Anti patterns
 - https://twitter.com/Ubunta/status/1724771152860741748
   - Overkill: A data warehouse for tiny public datasets.

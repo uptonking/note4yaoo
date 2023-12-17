@@ -16,7 +16,15 @@ modified: 2021-09-05T13:20:14.519Z
 
 - ## 
 
-- ## 
+- ## skia & react-skia are awesome. but i don't think RN folks have realized that R3F runs on RN as native openGLES. 
+- https://twitter.com/0xca0a/status/1736131398262489179
+  - that demo, it would 1:1 run as it is, same code. and GL + three imo gives you a whole new world of possibilities. maybe i have to focus on this aspect more in 2024. 
+  - threejs has 15 years of accumulated constructs for 2d/3d, postpro, physics, controls, libs for just about anything. RN didn't use Threejs bc it required a web-view. not with R3F + expo-gl. mostly everything a Threejs app can do is possible on RN natively.
+
+- Would r3f run on both iOS and android through react native? Are there any production apps that are using this? Big fan of r3f for desktop btw!
+  - yes. it won't be webGL, it will be openGLES. i haven't seen too many production apps, i'm guessing this is because people just don't know?
+
+- It’s also because last time I trusted the RN community on their claims of performance (reanimated), I got burnt.
 
 - ## Skia in React Native is implemented as an imperative API for doing 2D canvas-like drawing operations with full support for filters, shaders, transforms etc. using the Skia graphics library.
 - https://twitter.com/chrfalch/status/1434880480650932232

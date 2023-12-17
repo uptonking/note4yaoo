@@ -229,7 +229,14 @@ modified: 2023-02-06T09:14:40.114Z
 
 - ## 
 
-- ## 
+- ## What made HTTP/1.1 so popular? It was launched in 1997. 
+- https://twitter.com/ProgressiveCod2/status/1736330988807152063
+  - Persistent Connections. The connection isn't closed immediately after the server sends the response to the client. The client can send additional requests over the same TCP connection.
+  - Pipelining. Pipelining allows multiple requests to be sent to the server without waiting for the corresponding response.
+  - But there are limits to the number of concurrent TCP connections.
+
+- the 3-way handshake is indeed a foundational aspect of TCP.
+  - With HTTP/3, they are going away from TCP to QUIC.
 
 - ## HTTP verbs: I agree there should be only GET and POST.
 - https://twitter.com/diegohaz/status/1717196146232246280

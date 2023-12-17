@@ -129,6 +129,11 @@ modified: 2021-05-25T09:41:29.066Z
   - uses adapters to connect to your database
     - 支持mongoose、sqlite、pg、redis、prisma、drizzle-orm、kysely
 
+- https://github.com/keycloak/keycloak /18.4kStar/apache2/202312/java
+  - https://www.keycloak.org/
+  - Open Source Identity and Access Management solution for modern Applications and Services.
+  - This repository contains the source code for the Keycloak Server, Java adapters and the JavaScript adapter.
+
 - https://github.com/casbin/node-casbin /ts
   - https://casbin.org/
   - An authorization library that supports access control models like ACL, RBAC, ABAC in Node.js and Browser
