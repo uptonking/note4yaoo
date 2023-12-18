@@ -10,12 +10,14 @@ modified: 2023-12-15T18:29:23.105Z
 # guide
 
 # roadmap
-
+- [Strapi Feedback & Roadmap](https://feedback.strapi.io/)
 # [changelog](https://strapi.io/changelog)
 
 ## v5
 
 ## v4.0.0_20211130
+
+- [Add new Blocks rich text editor (alpha) using slate_202309](https://github.com/strapi/strapi/pull/18166)
 
 - MongoDB Support dropped with V4
 

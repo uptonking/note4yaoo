@@ -12,7 +12,9 @@ modified: 2023-02-20T19:41:08.506Z
 # discuss
 - ## 
 
-- ## 
+- ## TIL Safari DevTools have a “Type Profiler”, which shows types the engine inferred for each JS variable 
+- https://twitter.com/iamakulov/status/1736702980374893040
+  - Not sure why or when this can be useful in practice, but looks like a cool gimmick!
 
 - ## Chrome 推出的 Record & Replay 的能力_202308
 - https://twitter.com/Barret_China/status/1692077606567625086

@@ -25,13 +25,6 @@ modified: 2023-09-25T09:00:49.722Z
   - Supporting these types in a channel-aware way implies significant extra complexity. Take the example of a relation. Currently, a relation custom field will just set up a regular TypeORM OneToMany or ManyToMany relation. To make this work across channels, we'd need to introduce an associative table that links customEntity -> channel -> targetEntity. This also then has implications for accessing custom field data - we'd need to somehow pass the channel id, and in the case or a relation, do an extra join.
   - These issues must have a somewhat elegant solution, but I didn't dedicate the time to dig in and find what it is yet. Hence no ETA currently.
 
-- ## 💡 [The data model behind Notion's flexibility_202105](https://news.ycombinator.com/item?id=27200177)
-
-- Salesforce and JIRA both did something similar: their underlying database schema is very generic, basically keys and values, allowing arbitrary logical schemas to be defined at runtime. Yet in both cases, they ended up not really taking advantage of this flexibility. The logical schema of both systems is a very ordinary relational schema that could have been implemented directly on the database, with much better performance. I wonder if the Notion developers made a serious attempt to build on top of a more conventional structured schema, and found it really was unworkable?
-- 👉🏻 I actually think Notion's data model is much more conventional than the data stores behind document editors like Google Docs or Figma. Blocks are "just" rows in Postgres.
-  - We **use JSON for properties for flexibility and for user-defined property schemas**.
-  - We could use an entity-attribute-value table as you describe for that, but such a table would complicate our caching techniques. It would also be enormous, but, it might be time for another think about that since we finished sharding.
-
 - ## Another really cool usecase for JSON is Triplestore/Entity-Attribute-Value (EAV) graph-like data
 - https://twitter.com/GavinRayDev/status/1528434390514159621
   - The performance difference between a regular table (entity, attribute, value), and JSON columns is obscene(大得惊人的；多得骇人听闻的; 不道德的 )
@@ -97,6 +90,16 @@ modified: 2023-09-25T09:00:49.722Z
 - This is correct: it's the standardization of the interface between blocks and things using them, which includes structure in the data being passed back and forth, and the structure of the interface itself (e.g. what operations are available).
   - We do want to promote the free exchange of structured data, and to have data captured and marked up according to some structure - we also want to promote the portability and easy-of-setup of UI components.
   - Our FAQ illustrates how we relate to and intend to use existing standards - https://blockprotocol.org/docs/faq - we'd be interested in any others you think worth building on.
+
+- ## 💡💡 [The data model behind Notion's flexibility | Hacker News_202105](https://news.ycombinator.com/item?id=27200177)
+
+- Salesforce and JIRA both did something similar: their underlying database schema is very generic, basically keys and values, allowing arbitrary logical schemas to be defined at runtime. 
+  - Yet in both cases, they ended up not really taking advantage of this flexibility. The logical schema of both systems is a very ordinary relational schema that could have been implemented directly on the database, with much better performance. 
+  - I wonder if the Notion developers made a serious attempt to build on top of a more conventional structured schema, and found it really was unworkable?
+- 👉🏻 jitl: I actually think Notion's data model is much more conventional than the data stores behind document editors like Google Docs or Figma. 
+  - Blocks are "just" rows in Postgres.
+  - We **use JSON for properties for flexibility and for user-defined property schemas**.
+  - We could use an `entity-attribute-value` table as you describe for that, but such a table would complicate our caching techniques. It would also be enormous(巨大的；极大的), but, it might be time for another think about that since we finished sharding.
 # discuss
 - ## 
 
@@ -267,7 +270,7 @@ A custom frontend for a CMS is a good investment in UX. A CMS isn’t publicy vi
 
 - ## 🤔 Has anyone in Laravel land integrated an EAV architecture into their app? If so, have any advice or gotchas to look out for?
 - https://twitter.com/MarkShust/status/1698317826564505970
-- 👉🏻  Please correct me if I’m wrong, but isn’t Notion’s database architecture basically just a giant EAV system?
+- 👉🏻 Please correct me if I’m wrong, but isn’t Notion’s database architecture basically just a giant EAV system?
 - I would look further, salesforce is designed on top of eav too.
 
 - I think, JSON column type wins over the EAV for attributes because of its simplicity and support on RDBMS level. MySQL allows to query and filter JSON fields very efficiently using indexes.

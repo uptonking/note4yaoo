@@ -96,11 +96,6 @@ modified: 2023-12-15T17:05:49.576Z
 
 - ## 
 
-
-- ## 快捷指令的编辑体验太屎了，难以想象做 20 行以上的指令有多痛苦。
-- https://twitter.com/acghnu/status/1726963155585417612
-- No code 所以并不会成为全部的未来
-
 - ## 🤔🎯 Should Payload move to @nextjs from Express?_20231027
 - https://twitter.com/payloadcms/status/1717643250201219245
 - Why associate your starter with a react only framework when you can be used with any front end?
@@ -147,3 +142,71 @@ modified: 2023-12-15T17:05:49.576Z
 - Webiny co-founder here. 
   - If you're looking for a system that's not developer dependant, we are just wrapping up several new features on the Page Builder side of our product, making it much more powerful and easier to use and in Q1/2023 
   - we'll be launching also the ability to build fully dynamic pages by combining our Page Builder with our Headless CMS. Happy to share more details if you're interested.
+
+- ## 🚀🆚️ [Payload (YC S22) – Headless CMS for Developers | Hacker News_202208](https://news.ycombinator.com/item?id=32665325)
+
+- Imagine you're going to build a new SaaS app. Would you think of building it on a headless CMS? Probably not.
+  - Rather, you'd build your backend on an app framework like Django, Laravel, etc., for good reasons: ownership over the backend, better access control, customizable auth patterns, etc. Typically, headless CMS are super limiting; 
+  - But, with app frameworks, you're often left to roll your own admin UI, and that takes time. Not to mention building CRUD UI gets old quick after you do it a few times.
+- That’s where a headless CMS could shine, because they instantly give you admin UI that non-technical teams can use to manage digital products. 
+  - That saves a ton of UI dev time— but without an extensible API, headless CMS's are far too limiting. 
+  - They're designed for marketing teams, which usually only need the generic basics: log in, create a draft, preview the draft, publish the content. Go back and update some pages. Define editor roles and localize content. If you need more than that, you'll soon be out of luck.
+- ✨ Payload is different because we treat developers as first-class citizens. We provide the best of both ends: a powerful and extensible API and a fully customizable admin UI out-of-the-box. All with a developer experience that we obsess over, because we want it ourselves.
+  - Payload is code-first, which allows us to get a lot of things right. 
+  - Since it uses your own Express server, you can open up your own endpoints alongside what Payload does
+- It might seem like a CMS is just a wrapper around a database with a nice UI to show different field types—but in reality, it's a lot more complex than that. 
+- Our business model is based on two things:
+  - Enterprise features like SSO, audit logs, publication workflows, and translation workflows. 
+  - Cloud hosting. 
+
+- Few things I really need in a CMS:
+  * allow me to create a localized content (you seem to have this covered).
+  * a good story for blobs (images, video, PDFs, etc).
+  * integrated full text search (I do not want to set up elastic search when using a headless CMS saas).
+  * fully spec'd API (when I have defined a content type, I need some API spec to be updated; openAPIv3 was good, GraphQL is better: so I can generate a client lib).
+  * some mechanism to know the API was updated (so I can show the "a new version is available, the version you run may no longer work in certain cases, please click here to use the newest version" message somewhere).
+  * a story on content blocks (say: text, image, text, quote, text, author card) vs embeddable content in text blocks (say: a text block with a way to embed images/etc into it); the latter is really hard to do right imho.
+
+- 🆚️ I'm curious about how you compare yourselves to Contentful?
+  - We are open source / MIT
+  - You can re-use Payload's auth layer in your own apps and with Contentful you can't
+  - Contentful has rigid RBAC, but Payload features function-based access control down to the field level
+  - Payload supports field conditional logic, meaning "check a checkbox, see more fields, uncheck it, extra fields disappear". This is huge. And is super hard to build right but it's very important for a good admin experience.
+  - Payload gives you a local Node API (note: not HTTP / REST / GraphQL.) Contentful does not. With Payload's local API, you can do lots of awesome things within hooks, access control, etc. - and even reuse it in your own endpoints. All of this is impossible with Contentful without going through their HTTP layer
+  - Payload lets you add your own admin UI views
+  - Payload has no usage limits
+  - Payload is code-first, Contentful is "point and click"
+
+- We have a Next.js website with a blog section that's powered by Sanity. Problem is, it's pretty finicky to install basic components that we like to use (which looks like Payload comes with out of the box) + communicating with Sanity via groq is clunky with Typescript (and possibly causing some SEO issues).
+
+- 🆚️ I'm constantly looking about for a new CMS system, either Strapi, Wordpress, etc, how does PayloadCMS compare to these?
+  - WP is a blogging platform from the early 2000's that still uses many of the same code conventions that it started with. It does have a REST API, and you can extend it with plugins to work as a headless CMS, but it's riddled with inefficiencies and is truly a great example of why most devs would not think to reach for a CMS if they were building a SaaS app. Can you build a SaaS app with WP? Sure. Should you? Absolutely not. WP is good for its plugins and themes, but for anything more robust, it falls apart.
+  - Strapi is a contender that is quite similar to Payload but they have a mixed focus on "GUI-based" logic and code-based logic. You design your content models with a GUI, and access control is highly limited to a typical RBAC pattern. Where in Payload, everything -starts with code-. You can version control your schema, because it's all just a config. Deploy to other environments (stage, prod, etc) with ease. Use and re-use functions across different collections. Even access control is handled beautifully with functions in Payload, and is significantly more powerful than RBAC.
+  - I'd say our killer feature though is the simplicity, yet robustness of our admin UI. We have many features that Strapi does not have - like field conditional logic (Check a checkbox field, see more fields. Uncheck checkbox, those fields go away). 
+  - Our admin UI is also completely extensible. You can create custom field types easily just by importing React components and passing them to a field config - then boom, your React component appears in the admin UI rather than the built-in component. It's intensely powerful.
+
+- This looks great! We use Strapi for our marketing site at https://articleasset.com and have been bitten by the lack of conditional logic before.
+
+- Directus certainly provides a lot of value out of the box. We're a bit more razor-focused on a code-first approach vs. Directus, as the content model is stored directly in the database rather than being defined in a version-controlled schema. And in Payload it's much easier to swap in your own React components / customize the admin UI. But we really respect the Directus team for sure!
+
+- Thanks to using MongoDB as a database layer, you will not lose your data if you rename fields. This is a huge benefit for NoSQL in general honestly and it is one of the reasons why we chose to move forward with Mongo initially. 
+
+- Drupal is obviously one of the longest-running content management systems available and they have done a much better job at keeping up with the moving target that is tech, when compared to Joomla / WP.
+  - Outside of being written in TypeScript with more modern conventions, the fact that Payload borders on an application framework is what would make someone choose it over something like Drupal.
+  - Feature-wise, this commonly means reusing Payload's auth in your own app(s), defining function-based access control rather than RBAC, swapping in React components into the admin UI, and more.
+  - But another HUGE reason is that when we built Payload, we tried to keep its own internal conventions as close as possible to just regular JS / TS. If you know JS, you know Payload. With Drupal and even WP to an extent, you need to know how _their_ conventions work. It's all very specific to the platform and the Payload team has always hated that. Devs don't want to learn CMS - they want to learn the underlying language, and Payload embraces that to its core.
+
+- Personal opinion: Even as someone who used and loved PHP for a decade, Drupal is just awful. It's overengineered and bloated and the documentation is pretty sparse, not to mention it's hard to scale up. Its admin and editor UX is decades being modern headless CMSes. It is extremely powerful, but seemingly built to handle the most extreme edge cases rather than the most common use cases, and a lot of the power is just confusing and unnecessary for your typical website.
+
+- How does this compare to KeystoneJS, another TypeScript CMS?
+  - I've been using keystone to run a small coffee roasting operation. The underlying concept (prisma + graphql + custom crud hooks + ootb ui) makes it incredible easily to model and build businesses processes.
+  - I've been using keystone to run a small coffee roasting operation. The underlying concept (prisma + graphql + custom crud hooks + ootb ui) makes it incredible easily to model and build businesses processes.
+
+- Similar to https://pocketbase.io ?
+  - Yep, but with a lot more admin-specific features like field conditional logic, block-based layout editors, customizable React components, localization, versions / diffs / drafts / preview / autosave, etc. Payload ships with way more than just a CRUD UI!
+
+- I know that a lot of web frameworks already have admin panels available either released by the main development team or by a 3rd party. What is the advantage of using Payload over those?
+- the main advantage of using Payload's Admin is that it can integrate directly with your auth as well as offer a richer editing experience beyond the normal CRUD that others provide.
+  - Field-based access control - This allows a developer to use code to write complex functions in order to regular access to a field. This can also reference the currently logged in user's permissions/fields etc.
+  - Conditional logic - Functions can be written to show/hide certain fields in the admin UI
+  - Dynamic field types - Complex layouts can be built with the Block and Array field types. This allows the ability to build out more of a "page builder" type input vs. simple CRUD.

@@ -374,6 +374,18 @@ modified: 2022-08-21T10:02:41.845Z
 - https://github.com/WyattJia/Pomegranate /rust/archived
   - tiny skiplist based log-structured merge-tree written in Rust
 
+- https://github.com/marvin-j97/lsm-tree /202312/rust
+  - A K. I. S. S. implementation of log-structured merge trees (LSM-trees/LSMTs) in Rust.
+  - This is the most feature-rich LSM-tree implementation in Rust
+  - Thread-safe BTreeMap-like API
+  - Block-based tables with LZ4 compression
+  - Block caching to keep hot data in memory
+  - Sharded journal for concurrent writes
+  - Atomic write batches
+  - Snapshots (MVCC)
+  - Automatic background compaction
+  - [I made a LSM-based KV storage engine in Rust, help me break it : databasedevelopment_202312](https://www.reddit.com/r/databasedevelopment/comments/18knodn/i_made_a_lsmbased_kv_storage_engine_in_rust_help/)
+
 - https://github.com/tomfran/LSM-Tree /202311/java
   - Log-Structured Merge Tree Java implementation
   - Sorted String Table (SSTable) is a collection of files modelling key-value pairs in sorted order by key. It is used as a persistent storage for the LSM tree.

@@ -93,10 +93,12 @@ modified: 2021-05-25T09:40:55.797Z
   - A generic JSON document store with sharing and synchronisation capabilities.
   - Backends: In-memory (development), PostgreSQL 9.5+ (production)
 
-- https://github.com/pocketbase/pocketbase /go/svelte
+- https://github.com/pocketbase/pocketbase /MIT/202312/go/svelte
+  - https://pocketbase.io/
   - PocketBase is an open source Go backend
   - embedded database (SQLite) with realtime subscriptions
   - built-in files and users management
+  - convenient Admin dashboard UI
 
 - https://github.com/easycrud/easycrud
   - https://easycrud.org/

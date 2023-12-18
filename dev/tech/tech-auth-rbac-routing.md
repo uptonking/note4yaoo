@@ -10,6 +10,12 @@ modified: 2022-01-06T17:30:03.280Z
 # guide
 
 # rbac-blogs
+
+## [了解HATEOAS - 知乎](https://zhuanlan.zhihu.com/p/96027191)
+
+- Web服务使用 HATEOAS。在资源的表达中包含了链接信息。客户端可以根据链接来发现可以执行的动作。
+  - 它所返回的响应里还包含了关联资源的路径，有点GraphQL的味道。(但不是一回事啊，只是在存在关联特性上有共同之处而已）。
+# rbac-blogs-react
 - 区分3种路由
   - RoutePrivate 未登录不可访问，登录后才可访问
   - RouteUnauthorizedOnly 未登录可访问，登录后不可访问，会自动跳转到指定路由

@@ -8,7 +8,7 @@ modified: 2022-08-21T10:19:58.756Z
 # lib-excel-tanstack-table-dev
 
 # guide
-- features
+- pros
   - 支持外部数据源 server side data model
   - headless/unstyled
   - framework-agnostic core
@@ -22,6 +22,9 @@ modified: 2022-08-21T10:19:58.756Z
   - accessible
   - 如何支持多个table，且每个table数据模型不同，还要支持typescript
   - 在某一种表格布局下的功能实现与优化，如flex/absolute
+
+- features
+  - popular and lots of examples
 
 - virtualized之后要检查功能
   - scroll to index

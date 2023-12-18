@@ -163,6 +163,44 @@ modified: 2023-03-07T04:43:58.713Z
   - Similarly, delete operations immediately turn their targets into tombstones, which are later "purged" once all sites have received the deletion. 
 - RGA is a very effective algorithm, but it doesn't make the logical leap of treating its data structure as an event log, even though that's what it is in practice. Traditionally, one would say that an RGA insert is applied and turned into data; but another way to look at it is that the insert operation is placed in the position of its intended output, then stripped of its metadata. ORDTs make this explicit.
 
+### 🧮 [Causal Trees | Hacker News_202312](https://news.ycombinator.com/item?id=38661580)
+
+- [Causal Trees](https://www.farley.ai/posts/causal)
+
+- https://github.com/sno6/causal
+  - https://causal-sno6.vercel.app/
+  - a CRDT implementation playground.
+
+- Another name for Causal Trees is "RGA" (Replicated Growable Array). They are ~identical algorithms that were published concurrently. E.g., Automerge uses RGA
+  - That is true, but I think the CT paper frames the algorithm in a much clearer way than the RGA paper does. It’s a pleasure to read.
+
+- How does the performance of Causal Trees compare to other CRDT implementations, especially in scenarios with a high frequency of concurrent updates? 
+  - In my experience, this depends a lot more on the implementation than the CRDT algorithm. If you implement Causal Trees directly (as a tree with one node per char), it will be tolerably fast but use a lot of memory + storage. If you instead group chars into "runs" of sequentially-inserted chars and only store one Causal Tree node per run, it should be quite efficient.
+  - For a different tree-based CRDT, I did a head-to-head comparison of implementations that use a node-per-char (Fugue Simple) vs runs (Fugue), with results in Section 5 of this paper
+- I don't have any experience with this, but the use of flat arrays (rather than unbalanced trees) in Yjs sped things up considerably according to this long and interesting blog post below.
+  - We can use a flat array to store everything, rather than an unbalanced tree. This makes everything smaller and faster for the computer to process
+- Thanks for linking my post. I really need to write a followup at some point - we’ve gotten another 2-10x speed up from when I ran those benchmarks, depending on how you measure it.
+  - I still stand by what I wrote in that blog post. Using lists rather than trees is still a good approach. And it’s super simple to implement too. You can have a working crdt in a few dozen lines of code.
+- > One problem seems to be one that Kleppmann points out in [2, end of section 4], when you press enter in the middle of a line, so that a line is split into two lines, you have to deal with that in a special way. Similarly with splitting/joining blocks.
+  - I was about to mention this problem. We ran into this with Google wave. The initial document model (based on an xml tree) used `<line>` tags for lines. We hit exactly this problem - if you press enter in the middle of a line while someone is concurrently editing that line, how does it handle those changes? The initial code had special split and join operations but nobody could figure out how to make split and join work correctly in an OT system.
+  - Wave was over a decade ago now. I don’t know if anyone has solved this problem - all the working systems that I know of bailed on(使…失望) this approach. It’s much easier if you just make newline characters be an item that can be inserted or deleted like any other character. And then make lines be a higher order concept.
+  - If you get this working (working = passing fuzz test suite), I’d love to hear about it. But the well trodden path of those who come before is to use newline characters instead.
+- Definitely interested in how you achieved another 2-10x over the btree approach
+- The btree works great, and has barely changed. I made it faster with two tricks:
+  - I made my own rope library (jumprope) using skip lists. Jumprope is about 2x faster than ropey on its own. And I have a wrapper around the skip list (called “JumpropeBuf” in code) which buffers a single incoming write before touching the skip list. This improves raw replay performance over ropey by 10-20x iirc.
+  - Text (“sequence”) CRDTs replicate a list / tree of fancy “crdt items” (items with origin left / origin right / etc). This special data structure needs to be available both to parse incoming edits and generate local edits. 👉🏻 Turns out that’s not the only way you can build systems like this. Diamond types now just stores the list of original edits. [(Edit X: insert “X” position 12, parent versions Y, Z), …]. Then we recompute just enough of the crdt structure on the fly when merging changes.
+  - This has a bunch of benefits - it makes it possible to prune old changes, it lowers memory usage (you can just stream writes to disk). The network and disk formats aren’t dependant on some weird crdt structure that might change next week. (Yjs? RGA? Fugue?). File size is also smaller.
+  - And the best bit: linear traces don’t need the btree step at all. Linear traces go as fast as the rope. Which - as I said above, is really really fast. Even when there are some concurrent edits and the btree is created, any time the document state converges on all peers we can discard all the crdt items we generated so far and start again. Btrees are O(log n). This change essentially keeps resetting n, which gives a constant size performance improvement.
+  - The downside is that the code to merge changes is more complex now. And it’s slower for super complex traces (think dozens of concurrent branches in git).
+
+- Why bother with CRDTs if you’re doing server-side synchronization? MMORPGs can handle synchronizing thousands of users without problem.
+  - CRDTs solve the problem of concurrent updates bij users. And offline edits from concurrent users
+
+- The one “downside” compared to regular databases is that CRDTs use optimistic concurrency. If you want transaction support, or want multiple writers to block each other, CRDTs are a bad fit. They move conflict resolution to the point when reads happen rather than make writers fetch and retry. Still fine for a lot of use cases though.
+
+- What does SoundCloud need CRDTs for?
+  - tl; Dr: time-series event storage via a LWW-element-set
+
 ### impl
 
 - https://github.com/inkandswitch/peritext /MIT/ts

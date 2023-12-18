@@ -215,7 +215,8 @@ modified: 2022-08-21T10:02:27.788Z
     - Owl is not dependant on any external build tool. Owl uses the standard xml parser that comes with every browser.
     - components in OWL are totally asynchronous. useful for lazy/dynamic loading
     - owl reactivity is done with a `Proxy`. once state prop changes, rendering is scheduled in the next microtask(promise)
-      - We like the way Vue did it, but it has a flaw: it is not really optional. 
+      - We like the way Vue did it, but it has a flaw: it is not really optional.
+      - 但spreadsheet并没有使用owl的reactivity
       - there certainly are situations where we need a state, which is not read-only, and not observed. For example, a spreadsheet
       - It may have a very large internal state, and it knows exactly when it needs to be rendered (basically, whenever the user performs some action). Then, observing its state is a net performance loss, both for the CPU and the memory.
   - [perfectly synchronising actual DOM update of components](https://github.com/odoo/owl/issues/845)

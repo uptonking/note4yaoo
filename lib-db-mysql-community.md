@@ -49,6 +49,20 @@ modified: 2022-06-13T03:00:06.041Z
   * it isn't a few new hot spots
   * it is new memory system stress distributed throughout the code (more misses, loads, stores for cache and TLB)
   * much of the new overhead arrives in pre-GA 5.7 and pre-GA 8.0.
+
+# discuss-latest
+- ## 
+
+- ## 
+
+- ## Introducing JavaScript support in MySQL_202312
+- https://twitter.com/OnlyXuanwo/status/1736439160402243750
+  - Enterprise Edition only
+  - Presented in Percona Live 2018. Finally, although it seems it's not OSS
+- I wish for this feature to be added to MySQL Community Edition. Shifting business logic to the front end is a trend, and the ideal future architecture would be front end plus service-oriented databases. This could mark MySQL's move towards service orientation.
+- I didn't experience the era when stored procedures were popular. Are they truly useful? It seems that today's frontend developers prefer to manage everything on their own.
+  - I don't like procedures either; they lack capabilities such as version control and canary releases that code has. I believe the front end simply desires a user-friendly SaaS database.
+
 # discuss
 - ## 
 

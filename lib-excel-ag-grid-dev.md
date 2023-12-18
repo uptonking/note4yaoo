@@ -8,13 +8,13 @@ modified: 2022-08-21T09:54:26.037Z
 # lib-excel-ag-grid-dev
 
 # guide
-- ag-grid-pros
+- pros
   - powerful features
   - 支持公式，Cell Expressions
   - 社区版开源，专业版也开源，但专业版的源码和社区版深度耦合
 
-- ag-grid-cons
-  - 可定制性有限，支持自定义renderer、filter等；
+- cons
+  - 可定制性有限，支持自定义renderer、filter等
     - 但不支持类似handsontable、prosemirror提供的全局功能拦截插件
 
 - ag-grid-playground

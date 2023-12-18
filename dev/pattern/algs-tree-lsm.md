@@ -17,6 +17,16 @@ modified: 2023-04-20T08:05:44.256Z
   - ClickHouse中的MergeTree也是LSM树的思想
   - Flink Table Store 目前采用了类似于 RocksDB 的通用合并策略
   - 新的InfluxDB的存储引擎看起来和LSM树很像
+
+
+- redis
+  - [Redis Internal Data Structure : Skiplist, sds/Simple Dynamic Strings, dictionary, adlist/Doubly Linked List, ](https://blog.wjin.org/archive.html)
+    - Skip List gets O(log n) time complexity on average. And it is easy to implement compared to AVL tree or Red-Black tree. So Redis uses it to implement ordered set.
+    - Redis provides SDS because it supports efficient functions to get the string length and append another string to the end without allocating memory each time.
+    - dictionary is implemented by means of hash table and there are two hash tables in dictionary to implement incremental rehashing.
+
+- resources
+  - [LSM-Tree 论文的中文翻译](https://github.com/tangwz/LSM-Tree-CN/blob/main/LSM-Tree-CN.md)
 # blogs
 
 ## 🌲☕️ [Log-Structured Merge Tree overview | Medium](https://medium.com/@tomfran/log-structured-merge-tree-a79241c959e3)

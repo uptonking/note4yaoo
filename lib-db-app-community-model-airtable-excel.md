@@ -75,9 +75,21 @@ modified: 2023-10-26T21:54:54.201Z
   - Baserow also looks good, but already appears to be open core and another single-vendor project.
 - Single-vendor open core (SVOC) can move quickly but it tends to degrade and disappoint over time. I would love to see a project of this sort that's actually trying to be truly community driven.
 
-- Undb handles reference for you, which is always most hard/difficult part to handle in most lowcode system, so it's not just a database frontend. It's like MS access when you link reference in the access ui, but undb can also handle lookup & rollup in browser
+- If you're looking for a performant no-code database, you might want to try Baserow. It's made to scale, and can handle 1M+ rows with 15+ fields. Disclaimer: I'm the founder of Baserow.
 
-- I'd be much more interested in a clean library that abstracts sqlite data access, but stores it in the same format. That way, I could implement the library in my frontend app to store data, and then use the sqlite files that can be exported to load into your Undb app to inspect them
+- could we call this product somehow differently? I don't feel it's database, it's database frontend or smth.
+  - You are right, it's not a database, so I call it undb
+  - It seems more along the lines of a "headless CMS", which is basically just extensible CRUD often with API endpoints; compare it to Strapi. This one looks finished enough to play around with at least.
+
+- in my opinion the most value undb provide is to handle the reference part which you always have to impl in code when you use traditional RDBMS. Also it provides typed api, real-time sub and user friendly views
+  - Undb handles reference for you, which is always most hard/difficult part to handle in most lowcode system, so it's not just a database frontend. It's like MS access when you link reference in the access ui, but undb can also handle lookup & rollup in browser
+
+- I've been in the midst of developing my own frontend (SPA/PWA) data storage solution, using IndexedDB (and the Dexie library), so I've been watching all of the recent announcements about the wasm-sqlite implementations and wondering if I should probably just switch over to that. If, for nothing else, for the exportable .sqlite file that would be available without having to do a custom "Database Export".
+  - 👉🏻 With that in mind, I'd be much more interested in a clean library that abstracts sqlite data access, but stores it in the same format. 
+  - That way, I could implement the library in my frontend app to store data, and then use the sqlite files that can be exported to load into your Undb app to inspect them (I'm thinking for, say, error debugging or whatever). Similar to how I might pull a client's db backup and load it into Microsoft's SSMS management app.
+
+- Undb doesn't support MySQL as I see. But it has the feature I'm missing in NocoDB: a Calendar View which funnily NocoDB promoted on their website but doesn't have
+  - Noco Founder here. We just managed to handle all date time and timezone issues which is quite complicated and made a release like a month ago. When we started, we could not have anticipated the difficulties surrounding timezone issues. So we will be getting to Calendar view soon.
 
 - ## ✨ [Show HN: NocoDB – Open-Source Airtable Alternative | Hacker News_202105](https://news.ycombinator.com/item?id=27303783)
 - 

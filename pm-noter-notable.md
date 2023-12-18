@@ -280,6 +280,20 @@ modified: 2023-11-28T14:48:45.910Z
   - pro: $59/year, self-hosted, team, Unlimited user accounts 
   - cloud: $240/month, 3 environments, with 10GB asset storage each
   - enterprise/talk
+
+- [Strapi](https://strapi.io/pricing-cloud)
+  - free: MIT
+  - pro/$99: 10dev, 100, 000 CMS Entries, Real-time logs
+  - team/$499: 20dev, 1, 000, 000 CMS Entries, Audit logs (7 days), Review Workflows
+  - Custom/talk: Ndev, SSO, Customer Success Manager
+
+- [Directus](https://directus.io/pricing/cloud)
+  - free: GPL/BSL
+  - pro/$99: 1million API Requests/Month, 5 GB db, Unlimited Users & Roles, Unlimited Collections & Fields
+  - enterprise/$599: Remote Database Access, SSO(Including LDAP & SAML)
+
+- [wordpress](https://wordpress.com/pricing/)
+- [wix](https://www.wix.com/premium-purchase-plan/dynamo)
 # faq
 - 如何不使用图床而将图片直接嵌入到笔记中
   - [MarkDown图片存储格式-Textbundle格式](https://zhuanlan.zhihu.com/p/368463926)

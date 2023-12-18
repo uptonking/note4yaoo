@@ -10,15 +10,6 @@ modified: 2023-02-05T19:03:12.722Z
 > A completely customizable framework for building rich text editors.
 
 # guide
-- features
-  - First-class plugins
-  - Schema-less core
-  - Nested document model
-  - Parallel to the DOM
-  - Intuitive commands
-  - Collaboration-ready data model
-  - Clear "core" boundaries
-
 - pros
   - easy to start
   - transfrom/operation 默认异步batch
@@ -28,13 +19,23 @@ modified: 2023-02-05T19:03:12.722Z
   - 不支持 selective undo
   - 未提供comment示例
 
+- features
+  - First-class plugins
+  - Schema-less core
+  - Nested document model
+  - Parallel to the DOM
+  - Intuitive commands
+  - Collaboration-ready data model
+  - Clear "core" boundaries
+
 - who is using #slatejs
   - pingcode slate-angular
-  - taskade
+  - taskade, gitbook
+  - strapi-rich-text-editor
+  - payloadcms
   - 旧版语雀、旧版钉钉
   - wangEditor
   - tinymce collab
-  - payloadcms
   - react-page
 
 - resources

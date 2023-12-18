@@ -9,6 +9,17 @@ modified: 2023-12-15T17:04:17.775Z
 
 # guide
 
+- pros
+  - code-first
+  - field conditional logic
+
+- cons
+  - ~~mongodb only~~, support mysql/pg now
+  - VC-backed
+
+- features
+  - code-first
+
 - roadmap
   - multi tenancy 多租户
   - 快速复制一张表结构，然后导入数据

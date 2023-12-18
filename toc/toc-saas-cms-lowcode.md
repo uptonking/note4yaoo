@@ -68,13 +68,16 @@ modified: 2023-01-20T21:59:47.792Z
 - https://github.com/NouanceLabs/payload-dashboard-analytics
   - A plugin for Payload CMS to connect analytics data to your Payload dashboard.
 
-- directus /19.5kStar/GPLv3/202301/ts/vue
+- directus /19.5kStar/GPLv3>BSL/202301/ts/vue
   - https://github.com/directus/directus
   - https://directus.io/
   - Directus is a real-time API and App dashboard for managing SQL database content.
   - REST & GraphQL API. Instantly layers a blazingly fast Node.js API on top of any SQL database.
   - 后端依赖express、knex、async
   - 前端依赖vue3、tinymce5、p-queue、apexcharts
+  - [Change license to BSL-1.1_202304](https://github.com/directus/directus/pull/18330)
+    - Non-production use of Directus is still completely free for everyone
+    - Code released under this new license converts to GPLv3 (OSS) after 3 years
   - [Running Locally | Directus Docs](https://docs.directus.io/contributing/running-locally.html)
     - pnpm --dir api cli bootstrap 
     - 注意在.env中配置初始用户名密码
@@ -286,16 +289,15 @@ modified: 2023-01-20T21:59:47.792Z
     - https://jansmolders86.github.io/gh-cms-starter-template/
     - A starter template for a website managed with GH-CMS
 # cms
-- netlify-cms /16kStar/MIT/202204/js
+- netlify/decap-cms /16kStar/MIT/202204/js
   - https://github.com/netlify/netlify-cms
+  - https://github.com/decaporg/decap-cms /js
+  - https://decapcms.org/
   - A Git-based CMS for Static Site Generators
   - 依赖redux、react-dnd、immutable3、react15
   - 核心功能是提供了通过ui操作执行读写github的能力、文件编辑器、自动构建和发布
     - 文件内容可保存在本地或github
     - 文件内容的样式主题由dev控制
-- https://github.com/decaporg/decap-cms /js
-  - https://decapcms.org/
-  - A Git-based CMS for Static Site Generators
 
 - https://github.com/StaticJsCMS/static-cms
   - https://www.staticcms.org/

@@ -22,6 +22,12 @@ modified: 2023-10-26T15:29:40.053Z
   - open source package manager and registry for PostgreSQL (Postgres) extensions
   - Use the Trunk CLI (pg-trunk) to build, publish and install Postgres extensions of all kinds.
 
+- https://github.com/graphile/worker /MIT/202312/ts
+  - http://worker.graphile.org/
+  - High performance Node.js/PostgreSQL job queue 
+  - allows you to run jobs (e.g. sending emails, performing calculations, generating PDFs, etc) "in the background" so that your HTTP response/application code is not held up. 
+  - Can be used with any PostgreSQL-backed application. Pairs beautifully with PostGraphile or PostgREST.
+
 - https://github.com/pgq/pgq /sql/c
   - Generic Queue for PostgreSQL
   - PostgreSQL extension that provides generic, high-performance lockless queue with simple API based on SQL functions.
@@ -80,4 +86,9 @@ modified: 2023-10-26T15:29:40.053Z
   - PostgreSQL 是一个足够完美的数据库内核，但它需要更多工具与系统的配合才能成为一个足够好的数据库服务（RDS），而 Pigsty 帮助 PostgreSQL 完成这一步飞跃
   - Pigsty 支持的数据库版本覆盖 PostgreSQL 12 ～ 16，可以运行于 EL/Debian/Ubuntu 以及兼容操作系统发行版中。 除了数据库内核与大量开箱即用的扩展插件以外，Pigsty更是提供了数据库服务所需的完整运行时基础设施，与本地沙箱/生产环境/IaaS全自动部署方案。
   - Pigsty 提供了 Docker 模块与大量开箱即用的 Compose 模板。您可以使用 Pigsty 管理的高可用 PostgreSQL （以及 Redis 与 MinIO ）作为后端存储，以无状态的模式一键拉起这些软件： Gitlab、Gitea、Wiki.js、NocoDB、Odoo、Jira、Confluence、Habour、Mastodon、Discourse、KeyCloak 等等。
+
+- https://github.com/graphile/migrate /MIT/202212/ts
+  - Opinionated SQL-powered productive roll-forward migration tool for PostgreSQL.
+  - roll-forward only — maintaining rollbacks is a chore, and in 10 years of API development I've never ran one in production
+  - fully functional — sending SQL commands directly to PostgreSQL means you can use all of PostgreSQL's features
 # more

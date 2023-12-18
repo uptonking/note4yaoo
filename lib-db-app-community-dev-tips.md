@@ -26,7 +26,17 @@ modified: 2023-11-07T16:47:11.499Z
 
 - ## 
 
-- ## 
+- ## These are the 8 design rules you must learn to break.
+- https://twitter.com/deisbel/status/1736437854459273278
+  1- You can have some data redundancy and denormalization to make queries faster.
+  2- You can have some nullable columns instead of having extra tables and joins.
+  3- You can miss some unique keys instead of defining all of them.
+  4- You can ignore some indexes instead of defining all of them.
+  5- You can have simple String columns containing a list of comma-separated values instead of extra tables, indexes, and relations.
+  6- You can use a simple String column to store serialized JSON objects instead of having extra tables and columns.
+  7- You can add hard-coded data manually or through a simple script instead of creating a UI to manage them.
+  8- You can enforce the business rules at the DB layer instead of doing it on the Business or Application layer.
+- Do not get obsessed with the perfect model; start breaking the rules and making smart decisions on demand.
 
 - ## What happens when a database crashes while its in a middle of a transaction sent from a backend server?
 - https://twitter.com/hnasr/status/1736064842883342482

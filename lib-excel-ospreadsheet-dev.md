@@ -9,12 +9,6 @@ modified: 2023-06-07T22:37:07.042Z
 
 # guide
 
-- features
-  - license LGPLv3
-  - 支持公式formula
-  - 支持图表，基于chart.js.v2
-  - 支持批量删除rows，但未暴露transaction
-
 - pros
   - 架构清晰可扩展
   - 支持协作，基于ot
@@ -26,6 +20,12 @@ modified: 2023-06-07T22:37:07.042Z
   - 不支持外部数据源
   - undo和collab的插件不够解耦
   - 透视表和图表功能弱于luckysheet
+
+- features
+  - license LGPLv3
+  - 支持公式formula
+  - 支持图表，基于chart.js.v2
+  - 支持批量删除rows，但未暴露transaction
 
 - tips
 # dev

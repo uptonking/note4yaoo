@@ -67,7 +67,7 @@ modified: 2023-08-29T10:13:31.070Z
 
 - Snapshots do have the advantage of not having to know anything about the data. Tracking changes necessarily needs to define a way to describe how things may change. Perhaps another take on the issue is that changing data should be structured to be more snapshot friendly?
 
-- >Git is line-oriented and has no notion of semantic diffs and semantic merges. This makes it a raw tool when working with, ironically, source code.
+- > Git is line-oriented and has no notion of semantic diffs and semantic merges. This makes it a raw tool when working with, ironically, source code.
   - Git is a content addressable snapshot system, with bolted on code to make it retrospectively appear to be a line-oriented system. It's worse than you thought.
 - It's not worse. Snapshots are exactly what you want if you would like to have format-aware diff/merge or to experiment with alternate algorithms. But it's easier to complain about git and throw out pie-in-the-sky ideas about "modernizing our tools" than to try the actually-existing AST-based diff/merge tools and realize it's 100x more complex for no workflow gain.
 
@@ -77,7 +77,7 @@ modified: 2023-08-29T10:13:31.070Z
 
 - I’m not qualified to go into specifics but I hate it. All version control needs to do is pull, push and branch. Version on branch is newer? You need to pull down before you can check in. Instead what we get is over complicated nonsense with commits and stashes, rebases and heads, reparenting etc. I get it you don’t want to store your code on your local machine but that’s what backups are for, that’s not what the version control system should be doing.
 
-- I like the patch-based approach of Pijul and Darcs: rearranging patches seems less fragile than rebasing snapshots.
+- 🆚️ I like the patch-based approach of Pijul and Darcs: rearranging patches seems less fragile than rebasing snapshots.
   - Pijul works quite differently from Darcs: the primary datastructure in Darcs is indeed a list of patches, and the main operation is rearrangement.
   - Pijul is instead a CRDT, meaning that independent patches can be applied in any order without changing the result, which makes rearrangement unnecessary, and the system much faster.
 

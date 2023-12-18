@@ -247,6 +247,11 @@ modified: 2022-08-21T10:02:05.129Z
   - Uses popular frameworks and tools like Django, Vue.js and PostgreSQL.
   - Baserow is not completely open source, there are features they reserve for premium users (like kanban view).
 
+- https://github.com/mathesar-foundation/mathesar /2kStar/GPLv3/202312/python/svelte
+  - https://mathesar.org/
+  - open source tool that provides a spreadsheet-like interface to a PostgreSQL database.
+  - You can use Mathesar to build data models, enter data, and even build reports. 
+
 - irelia /18Star/apache2/202211/ts/python
   - https://github.com/IreliaTable/irelia
   - https://ireliatable.github.io/irelia-web/

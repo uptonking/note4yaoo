@@ -28,7 +28,19 @@ modified: 2023-10-26T19:03:22.063Z
 
 - ## 
 
-- ## 
+- ## [Marmot: Multi-writer distributed SQLite based on NATS | Hacker News_202312](https://news.ycombinator.com/item?id=38600743)
+- If you're interested in this, here are some related projects that all take slightly different approaches:
+  - `LiteSync` directly competes with Marmot and supports DDL sync, but is closed source commercial (similar to SQLite EE): https://litesync.io
+  - `dqlite` is Canonical's distributed SQLite that depends on c-raft and kernel-level async I/O: https://dqlite.io
+  - `cr-sqlite` is a Rust-based loadable extension that adds CRDT changeset generation and reconciliation to SQLite
+- Slightly related but not really (no multi writer, no C-level SQLite API or other restrictions):
+  - `comdb2` : (Bloombergs multi-homed RDBMS using SQLite as the frontend)
+  - `rqlite` : RDBMS with HTTP API and SQLite as the storage engine, used for replication and strong consistency (does not scale writes)
+  - `litestream/LiteFS` : disaster recovery replication
+  - `liteserver` : active read-only replication (predecessor of LiteSync)
+- Also Expensify's Bedrock, which powers their widely-circulated "Scaling SQLite to 4M QPS" article
+- Don't forget Turso's libsql which uses a local node+reconciliation
+- SQLSync: collaborative offline-first wrapper around SQLite
 
 - ## Has anyone built something like a distributed (write-back) page cache that sits above S3? 
 - https://twitter.com/criccomini/status/1721918972604682362

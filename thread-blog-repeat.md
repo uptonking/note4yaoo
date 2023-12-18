@@ -7,8 +7,10 @@ modified: 2021-02-09T19:25:17.381Z
 
 # thread-blog-repeat
 
-# build-your-own
+# editor
 
+- [The data model behind Notion's flexibility | Hacker News_202105](https://news.ycombinator.com/item?id=27200177)
+# build-your-own
 - [精读《手写 JSON Parser》](https://zhuanlan.zhihu.com/p/107344979)
   - 更加推荐单文件的[json-parser-for-vscode](https://github.com/microsoft/vscode/blob/main/src/vs/base/common/json.ts)
 

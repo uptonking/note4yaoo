@@ -80,6 +80,83 @@ modified: 2023-12-15T19:30:23.094Z
   - Intelligent enterprise-grade reference architecture for JavaScript, featuring OpenAI integration, Azure Developer CLI template and Playwright tests.
   - This repository contains the reference architecture and components for building enterprise-grade modern composable frontends (or micro-frontends) and cloud-native applications. 
   - It is a collection of best practices, architecture patterns, and functional components that can be used to build and deploy modern JavaScript applications to Azure.
+
+- https://github.com/strapi/strapi-plugin-open-ai /202311/js
+  - The official plugin that allows you to create Open AI completion from a prompt
+  - https://github.com/AsyncWeb/strapi-chatgpt /js
+  - https://github.com/thirdrocktechno/strapi-plugin-chatgpt /js
+  - https://github.com/strabot/strabot-docs /NonOpen
+- https://github.com/malgamves/strapi-open-ai-text-generation /202301/js
+  - A Strapi Custom Field to generate text content with Open AI Text generation API
+
+- https://github.com/PaulBratslavsky/strapi-plugin-open-ai-embeddings /202308/js
+  - Plugin is designed to bridge the gap between your Strapi-managed content and your OpenAI chatbot.
+- https://github.com/perzeuss/strapi-plugin-embeddings /202307/ts
+  - A Strapi plugin for embedding support, utilizing Chroma as the database for embeddings. Use strapi as your CMS for Embeddings!
+
+- https://github.com/Kcepriu/telegram-bot-strapi /202308/ts
+  - Plugin Strapi for sending messages to a Telegram bot.
+
+- https://github.com/am2222/strapi-plugin-postgis /202305/js
+  - https://am2222.github.io/strapi-plugin-postgis/
+  - Add native postgis support to strapi.
+  - Since Strapi does not support native database formats, I convert requests before they being sent to the querybuilder and convert all the geometry objects to the geojson.
+- https://github.com/notum-cz/strapi-plugin-location /ts
+  - This plugin allows users to create location inputs and store latitude and longitude values as geometry types in a PostGIS database. 
+  - It also provides functionality to filter items based on their location.
+  - This plugin requires a PostgreSQL database with the PostGIS extension enabled
+
+- https://github.com/meilisearch/strapi-plugin-meilisearch /202312/js
+  - A strapi plugin to add your collections to Meilisearch
+  - Add your Strapi content-types into a Meilisearch instance. The plugin listens to modifications made on your content-types and updates Meilisearch accordingly.
+
+- https://github.com/geeky-biz/strapi-plugin-elasticsearch /202310/js
+  - A plugin to enable integrating Elasticsearch with Strapi CMS.
+  - https://github.com/geeky-biz/strapi-integrate-elasticsearch /js
+
+- https://github.com/trieb-work/strapi-neon-tech-db-branches /202307/ts
+  - Strapi plugin to connect the neon.tech Postgres database using the neon API
+
+- https://github.com/ddlogical/uploads-duplicator /202312/js
+  - This plugin allows you to seamlessly synchronize your Strapi CMS uploads folder with Google Drive. 
+  - It utilizes OAuth for secure authorization and provides a straightforward way to automate the backup and storage of your media assets.
+
+- https://github.com/strapi-community/strapi-provider-upload-google-cloud-storage /js
+  - Google Cloud Storage Upload Provider for Strapi
+
+- https://github.com/jakeFeldman/strapi-provider-upload-azure-storage /202311/ts
+  - Strapi Provider Upload Azure Storage
+  - Plugin enabling image uploading to azure storage from strapi.
+
+- https://github.com/zoomoid/strapi-provider-upload-aws-s3-advanced /202212/ts
+  - extend the S3 Upload Provider to support path prefixes inside a bucket
+
+- https://github.com/hezzze/strapi-provider-upload-oss /202310/js
+  - A provider for strapi server to upload file to Aliyun OSS
+  - https://github.com/yclgkd/strapi-provider-upload-tencent-cloud-storage /ts
+
+- https://github.com/krishnakairi/strapi-provider-upload-github /202009/js
+  - Github/Github-Pages provider for Strapi CMS file upload.
+
+- https://github.com/manishkatyan/strapi-stripe /202307/js
+  - Stripe Plugin for Strapi CMS
+
+- https://github.com/ComfortablyCoding/strapi-plugin-website-builder /202311/js
+  - A plugin for Strapi that provides the ability to trigger website builds manually, periodically or through model events.
+
+- https://github.com/strapi-community/strapi-plugin-redis /202303/js
+  - Plugin used to centralize management of Redis connections in Strapi
+
+- https://github.com/bass3l/strapi-provider-email-smtp /202204/js
+  - A third-party SMTP email provider for Strapi, tested with Gmail SMTP.
+
+- https://github.com/artcoded-net/strapi-plugin-github-projects /202305/js
+  - This plugin allows to automatically generate "Projects" from public Github repositories, meant to be then exposed via a public API, e.g. to be shown on a front-end application with the aim to showcase a developer's portfolio. 
+  - It is meant mostly for educational purposes, being built step by step in the "Strapi Complete Course" by Artcoded, so it's not tested in production.
+  - https://github.com/minhtran241/strapi-plugin-github-projects
+
+- https://github.com/Sur-un-nuage/strapi-plugin-expo-notifications /202312/js
+  - plugin that allows a Strapi user to send notifications via the Expo API directly from the Strapi admin panel. 
 # plugins
 - https://github.com/offset-dev/strapi-calendar /202311/js
   - Visualize your Strapi content in month, week or daily view
@@ -135,7 +212,7 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/EsGeh/strapi-plugin-sghp-nav /202310/ts
   - Plugin for Strapi to create, edit and retrieve website navigation structure.
   - Strapi conformant REST API to fetch hierarchical menu data
-  - Import / Export of navigation structure via strapis native command line tools
+  - Import/Export of navigation structure via strapis native command line tools
 
 - https://github.com/remidej/strapi-plugin-todo /202312/js
   - This plugin adds a todo list next to your content in Strapi. 
@@ -625,85 +702,6 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/mattmilburn/strapi-plugin-do-not-delete /202311/js
   - A plugin for Strapi CMS that protects certain entries from being deleted.
   - Use various comparators to match against protection rules.
-
-## integrations-ext
-
-- https://github.com/strapi/strapi-plugin-open-ai /202311/js
-  - The official plugin that allows you to create Open AI completion from a prompt
-  - https://github.com/AsyncWeb/strapi-chatgpt /js
-  - https://github.com/thirdrocktechno/strapi-plugin-chatgpt /js
-  - https://github.com/strabot/strabot-docs /NonOpen
-- https://github.com/malgamves/strapi-open-ai-text-generation /202301/js
-  - A Strapi Custom Field to generate text content with Open AI Text generation API
-
-- https://github.com/PaulBratslavsky/strapi-plugin-open-ai-embeddings /202308/js
-  - Plugin is designed to bridge the gap between your Strapi-managed content and your OpenAI chatbot.
-- https://github.com/perzeuss/strapi-plugin-embeddings /202307/ts
-  - A Strapi plugin for embedding support, utilizing Chroma as the database for embeddings. Use strapi as your CMS for Embeddings!
-
-- https://github.com/Kcepriu/telegram-bot-strapi /202308/ts
-  - Plugin Strapi for sending messages to a Telegram bot.
-
-- https://github.com/am2222/strapi-plugin-postgis /202305/js
-  - https://am2222.github.io/strapi-plugin-postgis/
-  - Add native postgis support to strapi.
-  - Since Strapi does not support native database formats, I convert requests before they being sent to the querybuilder and convert all the geometry objects to the geojson.
-- https://github.com/notum-cz/strapi-plugin-location /ts
-  - This plugin allows users to create location inputs and store latitude and longitude values as geometry types in a PostGIS database. 
-  - It also provides functionality to filter items based on their location.
-  - This plugin requires a PostgreSQL database with the PostGIS extension enabled
-
-- https://github.com/meilisearch/strapi-plugin-meilisearch /202312/js
-  - A strapi plugin to add your collections to Meilisearch
-  - Add your Strapi content-types into a Meilisearch instance. The plugin listens to modifications made on your content-types and updates Meilisearch accordingly.
-
-- https://github.com/geeky-biz/strapi-plugin-elasticsearch /202310/js
-  - A plugin to enable integrating Elasticsearch with Strapi CMS.
-  - https://github.com/geeky-biz/strapi-integrate-elasticsearch /js
-
-- https://github.com/trieb-work/strapi-neon-tech-db-branches /202307/ts
-  - Strapi plugin to connect the neon.tech Postgres database using the neon API
-
-- https://github.com/ddlogical/uploads-duplicator /202312/js
-  - This plugin allows you to seamlessly synchronize your Strapi CMS uploads folder with Google Drive. 
-  - It utilizes OAuth for secure authorization and provides a straightforward way to automate the backup and storage of your media assets.
-
-- https://github.com/strapi-community/strapi-provider-upload-google-cloud-storage /js
-  - Google Cloud Storage Upload Provider for Strapi
-
-- https://github.com/jakeFeldman/strapi-provider-upload-azure-storage /202311/ts
-  - Strapi Provider Upload Azure Storage
-  - Plugin enabling image uploading to azure storage from strapi.
-
-- https://github.com/zoomoid/strapi-provider-upload-aws-s3-advanced /202212/ts
-  - extend the S3 Upload Provider to support path prefixes inside a bucket
-
-- https://github.com/hezzze/strapi-provider-upload-oss /202310/js
-  - A provider for strapi server to upload file to Aliyun OSS
-  - https://github.com/yclgkd/strapi-provider-upload-tencent-cloud-storage /ts
-
-- https://github.com/krishnakairi/strapi-provider-upload-github /202009/js
-  - Github/Github-Pages provider for Strapi CMS file upload.
-
-- https://github.com/manishkatyan/strapi-stripe /202307/js
-  - Stripe Plugin for Strapi CMS
-
-- https://github.com/ComfortablyCoding/strapi-plugin-website-builder /202311/js
-  - A plugin for Strapi that provides the ability to trigger website builds manually, periodically or through model events.
-
-- https://github.com/strapi-community/strapi-plugin-redis /202303/js
-  - Plugin used to centralize management of Redis connections in Strapi
-
-- https://github.com/bass3l/strapi-provider-email-smtp /202204/js
-  - A third-party SMTP email provider for Strapi, tested with Gmail SMTP.
-
-- https://github.com/artcoded-net/strapi-plugin-github-projects /202305/js
-  - This plugin allows to automatically generate "Projects" from public Github repositories, meant to be then exposed via a public API, e.g. to be shown on a front-end application with the aim to showcase a developer's portfolio. 
-  - It is meant mostly for educational purposes, being built step by step in the "Strapi Complete Course" by Artcoded, so it's not tested in production.
-  - https://github.com/minhtran241/strapi-plugin-github-projects
-
-- https://github.com/Sur-un-nuage/strapi-plugin-expo-notifications /202312/js
-  - plugin that allows a Strapi user to send notifications via the Expo API directly from the Strapi admin panel. 
 
 ## utils-ext
 

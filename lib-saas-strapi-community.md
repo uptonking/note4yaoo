@@ -14,7 +14,37 @@ modified: 2023-12-15T17:04:36.589Z
 
 - ## 
 
-- ## 
+- ## 📝 [Q3, 2023 — Better Rich Text Editor | Content Editing XP | Strapi](https://feedback.strapi.io/customization/p/q3-2023-better-rich-text-editor)
+
+- [Change Strapi's Default WYSIWYG to a more feature rich Editor_202202](https://github.com/strapi/strapi/issues/12440)
+
+- The current and previous (v3) WYSIWYG editor are more so basic markdown editors
+  - Our current editor only supports the bare minimums in terms of markdown support (eg no tables, ect) and support for things like inline youtube video previews, ect are a bit more complex to handle properly.
+  - There is already community options in both v3 and v4 such as CKEditor 5, React MD, Toast UI, and Editor.js I do think we should ship something more feature complete then forcing everyone to install one of the community options.
+  - If anything we could also make it easier to swap out our editor by standardizing methods to build new editors into the Strapi interface.
+
+- 202309: It's Aurélien from Strapi, we released an alpha version today (v14) with a new field type called Blocks. It's based on Slate and provides the same capabilities as any rich-text editor. In the beta, we plan to support links, markdown, keyboard shortcuts (Notion-like), and an expanded view.
+  - we made an heavily benchmark. We are currently hesitating between Lexical and Slate. Any recommendation/suggestion?
+
+- I'm looking to swap out my EditorJS editor for a different implementation (the undo/redo just isn't robust enough) and was waiting until this feature appeared to start working on it. Now that Strapi has settled on Slate, I was looking to start working on customising the editor for my own needs, adding additional tools, etc.
+
+- [CMS Recommendations - Customisable Rich Text : nextjs_202309](https://www.reddit.com/r/nextjs/comments/16b5yaz/cms_recommendations_customisable_rich_text/)
+- I’m Pierre, co-founder and CEO of Strapi. FYI, we are currently replacing the default editor with Slate.js
+  - Even more importantly, you pointed out the most important item of the discussion (which is actually not about the tool you will ended up using): how much control do you want to give to editors?
+  - In a traditional CMS, you would typically give editors the ability to edit HTML. This gives them a ton of control. But, with power comes responsibilities. Editors might change colors, paddings, margins, etc. This often makes designers quite upset
+  - The concept of Headless CMSs was born not only because companies need to manage content on multiple platforms, but because the way to create a website completely changed over the past few years. 
+  - In 2023, "templates" are made with modern frontend frameworks, such as React, Next.js, Vue, Nuxt.js, etc. The common denominator(分母) between these frameworks is the component. 
+  - Components are these little blocks you can reuse in multiple places. You can give them props. They are great because they are reusable, while consistent (which is not the case of copy-pasted HTML).
+  - In my opinion, the role of Headless CMSs is to make these props dynamic; to give non-technical people the ability to edit the content of these props.
+  - By choosing a Headless CMS, do make sure you can leverage these components. They should not necessarily be managed within the rich text editor (which should be a field like any other). In Strapi, we introduced the concept of Dynamic Zones and Components to handle this. You can for example create a "Button" component, which has a "label" (type: "text") and a "theme" (type: "select"), and reuse this component in different Dynamic Zones. 
+- Overall we've been pretty happy with Strapi with the exception of the default editor.
+  - The custom plugins made it easy to change the default editor to CKEditor instead.
+  - But at the same time one certain plugin is also causing us a lot headaches. The biggest problem is that CKEditor version 1 and version 2 are very different
+  - So now we have about 300 articles, but stuck without an easy way to upgrade the editor. This is pretty much causing all of our problems.
+  - Dynamic zones are quite neat, and we do use it in a few places. But it doesn't work that well for our use case with rich text articles cause the editors want to keep putting content inbetween rich text so you'd have something like: rich text -> CTA -> rich text -> Twitter embedd -> Rich text -> Another CTA
+  - This gets almost just as difficult to read as embedding html everywhere, which is what we currently do.
+  - Dynamic field is something I also looked into, which I think could work OK. The problem is that they want to add html blocks in the most arbitrary and random places. Sometimes right after the first paragraph, sometimes in the middle, the end. Sometimes there are 10+ html tags in a single Article. They don't have a fixed position. This arbitrary positioning makes it seem like dynamic zone won't work very well. Or maybe I'm missing something ?
+  - Anyways, I tried using dynamic zones and it seems to be working pretty well. Seems like getting the most out of Strapi is better than replacing it.
 
 - ## 🍃 [MongoDB support in Strapi: Past, Present & Future_202106](https://strapi.io/blog/mongo-db-support-in-strapi-past-present-and-future)
 - Since 2017 and Strapi Alpha, we have always supported SQL databases such as MySQL, PostgreSQL, SQLite, MariaDB, and the document database MongoDB.
@@ -24,6 +54,27 @@ modified: 2023-12-15T17:04:36.589Z
   - For the beta and stable release of the Strapi v4, Strapi won't support MongoDB natively, and no connector will be available (yet).
 
 - [MongoDB compatibility delayed on v4 - Discussions - Strapi Community Forum](https://forum.strapi.io/t/mongodb-compatibility-delayed-on-v4/4549)
+# discuss-features
+- ## 
+
+- ## [[feat]: feature flags_202312](https://github.com/strapi/strapi/pull/18871)
+  - Introduces a new configuration file: features.(j|t)s. By integrating this configuration into our strapi.config, we gain the ability to determine whether to include the content-releases plugin in our application based on an environment variable. This could be used by any new feature we develop. It's also passed to the admin configuration so future flags can be checked
+
+# discuss-issues-done
+- ## 
+
+- ## [Can't install strapi - Questions and Answers - Strapi Community Forum](https://forum.strapi.io/t/cant-install-strapi/33500)
+- TypeError: Cannot read properties of undefined (reading 'addBreadcrumb')
+
+
+```shell
+# cd to your project and
+npm install --legacy-peer-deps
+npm run develop
+
+```
+
+- 
 # discuss
 - ## 
 

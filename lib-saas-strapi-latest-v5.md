@@ -42,12 +42,22 @@ modified: 2023-12-15T19:39:18.123Z
 - V5 Content Engine requires some breaking changes to the API, It is also the opportunity to simplify the API Response format following user feedbacks.
   - The main point of this RFC is to propose a simplified and v5 compatible format while offering a smoother migration path with a legacy format.
 
-- Use the internal documentId as the only identifier the ContentAPI knows about.
-- Introduce a simplified format
+- Use the internal `documentId` as the only identifier the ContentAPI knows about.
+- introduction of a new version of the API response format that flattens the structure
+  - No more `data.attributes` , id/title/relation作为直接属性
+- Metadata are added information that you can’t work with directly through the main content API endpoints & don’t work the same way as simple attributes that you can select/filter/orderBy
 # discuss-v5
 - ## 
 
-- ## 
+- ## we are currently heavily focused on the development of Strapi v5_20231118
+- https://discord.com/channels/811989166782021633/811989167357689918/1175206357339734137
+  - we will effectively be heavily slowing down on v4 feature development will largely focus on v4 stability for the remainder of 2023
+  - Our timeline for Strapi v5 stable will be around the end of Q1/beginning of Q2 2024 with several weeks of Alpha/Beta testing
+- 
+- 
+- 
+- 
+- 
 
 - ## [Notice: Community PR Change Freeze for 2023 Holidays & v5_202310](https://github.com/strapi/strapi/issues/18618)
 - As the year is winding down and with the holidays coming up we will be placing a community pull request change freeze into effect until March 2024.
