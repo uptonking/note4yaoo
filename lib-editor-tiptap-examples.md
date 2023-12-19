@@ -47,6 +47,11 @@ modified: 2023-02-05T19:03:27.730Z
   - 服务端数据同步代码未找到
   - [A fully open-source and end-to-end encrypted note taking alternative to Evernote | Hacker News_202209](https://news.ycombinator.com/item?id=32708019)
 
+- https://github.com/docs-plus/docs.plus /MIT/202311/js
+  - http://docs.plus/
+  - a real-time community collaboration platform
+  - 依赖tiptap、hocuspocus/yjs、next、react-query、zustand
+
 - https://github.com/chenyuncai/tiptap-track-change-demo /vue
   - https://track-change.onrender.com/
   - [Implement new track changes in current document, just lice office review mode](https://discuss.prosemirror.net/t/implement-new-track-changes-in-current-document-just-lice-office-review-mode/4890)

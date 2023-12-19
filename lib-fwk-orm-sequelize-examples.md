@@ -18,7 +18,7 @@ modified: 2023-02-05T18:50:32.900Z
   - 模版参考: react-admin
   - [Multitenancy using multiple databases using knex](https://vincit.github.io/objection.js/recipes/multitenancy-using-multiple-databases.html)
 # popular
-- https://github.com/masb0ymas/expresso-sequelize /提交多/功能丰富
+- https://github.com/masb0ymas/expresso-sequelize /MIT/202310/ts/提交多/功能丰富
   - Sequelize ORM v6.x + Sequelize TypeScript v2.x
   - Handlebars for templating HTML
   - Using Module Alias for simplify the require/import paths
@@ -29,10 +29,6 @@ modified: 2023-02-05T18:50:32.900Z
   - https://github.com/masb0ymas/expresso-gateway
     - Api Gateway with Express TypeScript
 
-- https://github.com/Varun-Hegde/Conduit_NodeJS /202105/js
-  - Express and NodeJS based backend implementation of the RealWorld API Spec.
-  - MySQL + Sequelize
-
 - https://github.com/bissbr01/Command-project-management /ts
   - A Scrum Management App for teams
   - 依赖reduxjs-toolkit、mantine、dnd-kit、formik
@@ -42,7 +38,7 @@ modified: 2023-02-05T18:50:32.900Z
     - 依赖sequelize6
     - A containerized REST API for the Command project managment app.
 
-- https://github.com/ruyd/automated-express-backend
+- https://github.com/ruyd/automated-express-backend /202306/ts
   - NodeJS Express Starter for backends and microservices
   - Auto CRUD API Routes for Models
   - Auto SwaggerUI Admin
@@ -50,11 +46,24 @@ modified: 2023-02-05T18:50:32.900Z
   - Database Migrations with umzug
   - JWT Security RS256
   - 数据库依赖docker
-  - 仅支持第3方登录，未提供注册
-  - https://github.com/ruyd/fullstack-monorepo
+  - https://github.com/ruyd/fullstack-monorepo /202306/ts/提交多
     - Fullstack Canvas Drawing App and TypeScript Starter Template
-    - React, Redux, React Query,Material UI
-    - Sequelize,Postgres,auth0
+    - React, Redux, React Query, Material UI
+    - Sequelize, Postgres, auth0
+    - 支持注册新用户、admin界面
+    - http://localhost:3000/admin/settings
+
+- https://github.com/cirosantilli/node-express-sequelize-nextjs-realworld-example-app /202208/ts/be+fe
+  - Node.js + Express.js + Sequelize + SQLite/PostgreSQL + Next.js fullstack static/SSG/ISG Example Realworld App
+  - https://github.com/cirosantilli/node-express-sequelize-realworld-example-app /202106/js
+
+- https://github.com/TonyMckes/conduit-realworld-example-app /202303/js/be+fe
+  - created to demonstrate a fully fledged fullstack application built with React / Express.js / Sequelize / PostgreSQL including CRUD operations, authentication, routing, pagination, and more.
+- https://github.com/chojs23/realword-express-sequelize /202303/js
+  - sequelize ^6.26.0
+- https://github.com/Varun-Hegde/Conduit_NodeJS /202105/js
+  - Express and NodeJS based backend implementation of the RealWorld API Spec.
+  - MySQL + Sequelize
 
 - https://github.com/MyungWanPark/shopping-mall-backend /ts
   - https://github.com/MyungWanPark/shopping-mall-frontend

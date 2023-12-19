@@ -12,6 +12,15 @@ modified: 2023-02-20T19:41:08.506Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## In Chrome/Firefox, when debugging memory leaks, you can click a “Collect Garbage” button to run a garbage collector. 
+- https://twitter.com/iamakulov/status/1737065367657382118
+  - (In Chrome, you do it in DevTools→Memory; in Firefox, in about:memory.)
+  - I spent *a year* thinking Safari doesn’t have such button. It’s in the console
+
 - ## TIL Safari DevTools have a “Type Profiler”, which shows types the engine inferred for each JS variable 
 - https://twitter.com/iamakulov/status/1736702980374893040
   - Not sure why or when this can be useful in practice, but looks like a cool gimmick!

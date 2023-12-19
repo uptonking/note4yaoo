@@ -14,7 +14,10 @@ modified: 2023-11-27T15:55:06.815Z
 
 - ## 
 
-- ## 
+- ## [Enhancement: Provide a way to track changes in editor · KillerCodeMonkey/ngx-quill_201909](https://github.com/KillerCodeMonkey/ngx-quill/issues/524)
+- just listen to the output you want: onContentChanged, onEditorChanged or just grab the editor instance in the onEditorCreated output and call getContent
+
+- [Quill Diff codepen](https://codepen.io/percipient24/pen/eEBOjG)
 # discuss
 - ## 
 

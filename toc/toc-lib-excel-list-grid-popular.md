@@ -296,7 +296,7 @@ modified: 2022-08-21T10:02:27.788Z
 
 - sleekgrid /25Star/MIT/202304/ts/NoDeps/vanillajs
   - https://github.com/serenity-is/sleekgrid
-  - https://serenity-is.github.io/sleekgrid/
+  - https://serenity-is.github.io/sleekgrid/examples/classic/example06-editing-with-undo
   - a complete rewrite of the original SlickGrid in TypeScript with ES6 modules
   - 未实现分页
   - 支持插件
@@ -324,8 +324,26 @@ modified: 2022-08-21T10:02:27.788Z
       - renderRows，使用了_rowsCache，里面缓存了dom对象
       - 创建rowNode使用document.createElement
     - 有的cb会先this.invalidate，再rerender
-  - https://github.com/ghiscoding/slickgrid-universal
-    - a monorepo which includes all Editors, Filters, Extensions, Services and is Framework Agnostic to take full advantage of SlickGrid core lib
+
+- SlickGrid /1.7kStar/MIT/202312/ts/功能丰富
+  - https://github.com/6pac/SlickGrid
+  - https://github.com/6pac/SlickGrid/wiki/Examples
+  - https://slickgrid.net/
+  - http://6pac.github.io/SlickGrid/examples/example4-model.html
+  - 基于div实现，每行对应的dom元素存在
+  - A lightning fast JavaScript grid/spreadsheet
+  - 依赖sortablejs
+  - added Plugins: RowDetail, CellMenu, ContextMenu, GridMenu, CustomTooltip, GridState
+  - removed jQuery requirement in v4
+  - in v5(202312) migrating to TypeScript (we kept IIFE and added ES6/ESM build targets) 
+  - https://github.com/mleibman/SlickGrid
+    - /archived/6.7kStar
+- https://github.com/ghiscoding/slickgrid-universal /MIT/202312/ts
+  - https://ghiscoding.github.io/slickgrid-universal/
+  - a monorepo which includes all Editors, Filters, Extensions, Services and is Framework Agnostic to take full advantage of SlickGrid core lib
+  - 依赖sortablejs、moment-mini、un-flatten-tree、flatpickr
+  - https://github.com/ghiscoding/slickgrid-react /ts
+  - https://github.com/ghiscoding/slickgrid-universal-webpack-demo /ts
 
 - Simple-DataTables /1.1kStar/LGPLv3/202304/ts
   - https://github.com/fiduswriter/Simple-DataTables
@@ -350,8 +368,8 @@ modified: 2022-08-21T10:02:27.788Z
   - Based on Vanilla-DataTables, but written in ES2018.
   - Using diffDOM for updating the DOM
   - 依赖dayjs、diff-dom
-  - https://github.com/Mobius1/Vanilla-DataTables
-    - /js/MIT/inactive
+  - https://github.com/Mobius1/Vanilla-DataTables /201809/js/MIT/inactive
+    - no longer maintained
   - https://github.com/fiduswriter/diffDOM /LGPLv3/ts
     - Gets all modifications, insertions and removals between two DOM fragments.
     - relocations of DOM nodes are preferred over remove-insert operations.
@@ -388,7 +406,7 @@ modified: 2022-08-21T10:02:27.788Z
     - However, with `dataSource`, TOAST UI Grid can be configured to host remote data as well.
     - Usually when sending a request to a remote server, Pagination is required. 
 
-- gridjs /MIT/3.3kStar/202202/ts
+- gridjs /MIT/3.3kStar/202202/ts/preact
   - https://github.com/grid-js/gridjs
   - https://gridjs.io/
   - 基于display-table实现，使用class类风格
@@ -807,14 +825,6 @@ modified: 2022-08-21T10:02:27.788Z
 
 ## div-more
 
-- SlickGrid /MIT/1.3kStar/202007/js/jquery
-  - https://github.com/6pac/SlickGrid
-  - http://6pac.github.io/SlickGrid/examples/example4-model.html
-  - 基于div实现，每行对应的dom元素存在
-  - a JS client-side grid control, based on jQuery and jQueryUI and compatible with Bootstrap.
-  - SlickGrid 4.x drops jQuery requirement
-  - https://github.com/mleibman/SlickGrid
-    - /archived/6.7kStar
 - revogrid /2.5kStar/MIT/202310/ts/web-comp/stencil
   - https://github.com/revolist/revogrid
   - https://revolist.github.io/revogrid
@@ -905,9 +915,10 @@ modified: 2022-08-21T10:02:27.788Z
   - Cheetah Grid is a high performance JavaScript data table component that works on canvas
   - 只能选择表格最外层容器div元素，canvas元素无法直接通过拾取工具选中
 
-- rowsncolumns-grid /MIT/29Star/202105/ts/react/inactive
+- rowsncolumns-grid /558Star/MIT/202105/ts/react/inactive
   - https://github.com/rowsncolumns/grid
   - https://rowsncolumns.app/
+  - https://www.rowsncolumns.app/demo
   - https://rowsncolumns.github.io/grid
   - Declarative Canvas Grid.
   - 示例非常丰富
@@ -990,21 +1001,24 @@ modified: 2022-08-21T10:02:27.788Z
     - If you want to fully integrate it with your software while maintaining the OSS license, then your only option is to use v6.2.2 - the last one released under the MIT license.
   - forks
     - https://github.com/swsvindland/opentable /202201/js/inactive
-    - https://github.com/rathbone-labs/jacksontable /inactive
+    - https://github.com/rathbone-labs/jacksontable /201907/js/inactive
+    - https://github.com/lbobylev/jacksontable
     - https://github.com/pingyuanChen/handsontable /inactive
   - repos
     - https://github.com/warpech/walkontable /MIT/201304/js
       - This is a playground for next table view engine that will enable virtual rendering in Handsontable.
       - This project is currently not maintained in this repo, but as part of Handsontable
-      - [Refactor Walkontable Selection rendering module](https://github.com/handsontable/handsontable/pull/10265)
+      - [Refactor Walkontable Selection rendering module_202304](https://github.com/handsontable/handsontable/pull/10265)
         - The PR refactors and extends the Walkontable Selection rendering module for the ability to highlight the table's headers. The work presented here will be the basis for the navigation in headers
 
-- jspreadsheet-ce /6.4kStar/MIT/202305/js
+- jspreadsheet-ce /6.4kStar/MIT/202305/js/单文件
   - https://github.com/jspreadsheet/ce
   - https://github.com/paulhodel/jexcel
   - https://bossanova.uk/jspreadsheet/v4
+  - https://bossanova.uk/jspreadsheet/v4/examples/spreadsheet-formulas
   - Vanilla JavaScript data grid plugin to create amazing web-based interactive HTML tables, and spreadsheets compatible data grid with other spreadsheet software
   - 基于table标签实现
+  - jQuery is not required anymore.
 - https://github.com/sorryljt/react-jexcel
   - 基于jspreadsheet v4版本，封装的React 版本的轻量级Excel插件
 
@@ -1234,10 +1248,12 @@ modified: 2022-08-21T10:02:27.788Z
     - Phase 3. Evaluation
   - [Hyperformula support for ag grid](https://github.com/handsontable/hyperformula/discussions/817)
     - The only supported integration of HyperFormula with a spreadsheet solution with an advanced scope of features is with the Handsontable.
+
 - https://github.com/formulajs/formulajs /500Star/MIT/202310/js
   - https://formulajs.info/
   - JavaScript implementation of most Microsoft Excel formula functions
   - originally forked from @handsontable/formulajs version 2.0.2 (released in January 2020). There is no regression, only fixes and new functions since the fork.
+  - 依赖jstat、bessel(fn)
   - forks
   - https://github.com/handsontable/formula.js /MIT/202001/js
   - https://github.com/davidpolberger/formulajs /201801/js
@@ -1248,6 +1264,14 @@ modified: 2022-08-21T10:02:27.788Z
   - TypeScript/javascript spreadsheet parser, with formulas.
   - This is largely a re-write of Handsontable's https://github.com/handsontable/ruleJS, and https://github.com/sutoiku/formula.js/.
   - The parser was derived from Handsontable's, and many of the formulas were created with FormulaJS's formulas as a reference point.
+
+- https://github.com/ironcalc/IronCalc /MIT/202312/rust/canvas
+  - https://www.ironcalc.com/
+  - https://playground.ironcalc.com/
+  - IronCalc is a spreadsheet engine and ecosystem
+  - Excel compatible
+  - https://github.com/ironcalc/web-skin
+    - React frontend for IronCalc
 
 - https://github.com/hoplon/javelin /clojure
   - Spreadsheet-like dataflow programming in ClojureScript.

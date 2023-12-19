@@ -25,7 +25,15 @@ modified: 2021-08-28T11:49:05.730Z
 # discuss
 - ## 
 
-- ## 
+- ## Is there a good utility for testing a project against multiple versions of its npm dependencies?
+- https://twitter.com/justinfagnani/status/1736795878823014603
+  - I know how to do this manually, but I want something more automatic. I should work locally, and so that I could import the package to vary under its default name.
+  - I say local just because GitHub CI and others have matrix features that don't work locally.
+  - Usually I want to test against multiple versions of a single package, like a bunch of typescript versions or rollup versions. I haven't had a need for a full matrix yet.
+
+- @thoughtbot has something like this in Ruby land called "appraisal"
+
+- Ember try is potentially generic enough
 
 - ## 🆚️ Which type of automated test do you find most valuable?
 - https://twitter.com/housecor/status/1729516522786226192

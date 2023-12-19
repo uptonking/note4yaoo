@@ -9,8 +9,7 @@ modified: 2023-10-27T15:39:10.466Z
 
 # popular
 
-- https://github.com/alibaba/easyexcel
-  - /17.1kStar/Apache2/202009
+- https://github.com/alibaba/easyexcel /30kStar/apache2/202312/java
   - 简单且能避免OOM的java处理Excel工具
 - https://github.com/mikedehaan/poi-test
   - Apache POI performance test application

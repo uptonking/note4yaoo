@@ -31,6 +31,10 @@ modified: 2022-08-21T10:38:26.289Z
 - [Quadratic - The data spreadsheet with AI, Python, and SQL](https://www.quadratichq.com/)
 
 - [Tinysheet](https://tinysheet.com/)
+
+
+- [IronCalc](https://www.ironcalc.com/)
+  - IronCalc is a spreadsheet engine and ecosystem. 
 # more
 - [11 Excel Alternatives & Competitors 2023 (Features & Pricing) | ClickUp](https://clickup.com/blog/excel-alternatives/)
 

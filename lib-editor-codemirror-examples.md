@@ -34,7 +34,8 @@ modified: 2023-06-23T12:46:53.288Z
   - Autocomplete 
   - Diagnostics (lints, in CodeMirror's terminology)
 # utils
-
+- https://github.com/PuruVJ/neocodemirror /202311/ts
+  - Aims to provide Codemirror 6 as an easy to use codemirror action.
 # examples
 
 # more

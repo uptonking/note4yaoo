@@ -12,6 +12,38 @@ modified: 2023-05-21T15:44:39.196Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Show HN: rowsncolumns React Spreadsheet 2 | Hacker News_202311](https://news.ycombinator.com/item?id=38390714)
+- Curious: since you are rendering everything via canvas, how do you do accessibility?
+  - For screen readers, we are planning to add table element with plain text content, with aria regions.
+  - We offer support for keyboard shortcuts and navigation, and our platform is natively compatible with both light and dark modes.
+  - We also provide the option for developers to customise themes, ensuring optimal accessibility for users with low/tunnel vision.
+
+- What about rendering it to SVG instead of canvas, with a buffer area around and let the scroll take care of itself?
+  - SVG or HTML adds a lot of DOM nodes when you are displaying lot of textual content.
+  - Personally I found canvas easier to work with, scroll performance was better, less browser bugs, drawing was cheaper and scales for large content (using virtualisation or multiple canvas layers)
+
+- How do you test or plan on testing performance to prevent regressions? I’ve yet to crack this nut in a way that makes me happy.
+  - The Spreadsheet is powered by ReactJS and Konva.
+  - React and Konva provides a Profiler and Devtools to measure performance and to prevent any un-necessary re-renders.
+  - We also measure the Canvas FPS to make sure rendering is at max 60fps. The bottleneck we have identified is with scrolling large amounts of text, especially in large 42 inch 4K monitors, where FPS limits to 55-60fps. We do have some workaround planned for large monitors, by splitting the canvas into 4 layers.
+  - In terms of regression, we use Cypress for most e2e testing, but the test cases are small as of now.
+
+- Is it able to handle tables with 1, 000, 000+ rows?
+  - Spreadsheet uses virtualisation to display data, ie only data viewable in a Row x Column viewport is displayed. This improves rendering performance.
+- Data performance can be improved by 
+  1. Lazy loading data or Infinite scrolling. We have a built-in async hook that does this. 
+  2. Only save pointers to data that is being displayed. So if you have 1M rows, on the JavaScript side, you only load 100 rows in memory and when user scrolls, you can replace this rows with new data. This will make the browser happy. 
+  3. Streaming data from the server similar to google sheets.
+  - But to answer your question, we have a Max row limit of 1_048_576 and max column limit of 16_384
+
+- I can't think of a single reason someone would pay $299 for "Non-commercial use" license to a library
+
 - ## 🪟 [Tinysheet | Hacker News_202110](https://news.ycombinator.com/item?id=28967514)
 - Where is the data for this stored? 
   - It appears to be stored in the url. As you update the cells there's an encoded # variable that, when removed, wipes the table.
@@ -19,9 +51,7 @@ modified: 2023-05-21T15:44:39.196Z
 - But... URLs have a char length limit
   - And this has a cell limit. Perfectly aligned.
 
-
 - I spent several minutes trying to figure out how to add columns or rows, but it turns out you can't. It's a 'tiny sheet', after all.
-
 
 - 
 - 

@@ -443,7 +443,7 @@ modified: 2023-09-12T09:37:22.608Z
 
 - https://github.com/Actyx/Actyx /apache2/202311/rust/ts
   - https://developer.actyx.com/
-  - Actyx is a decentralized event database, streaming and processing engine that allows you to easily build local-first cooperative apps.
+  - a decentralized event database, streaming and processing engine that allows you to easily build local-first cooperative apps.
   - durable event stream storage in peer-to-peer network using libp2p and ipfs-embed
   - tag-based and time-based indexing of events
   - full-fledged support for event-sourcing, guaranteeing eventual consistency

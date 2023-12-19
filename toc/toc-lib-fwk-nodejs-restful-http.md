@@ -239,11 +239,19 @@ modified: 2022-12-19T01:51:01.389Z
   - compose function from the @hattip/compose package can be used to compose multiple handlers into a single one, creating a simple but powerful middleware system.
 
 - https://github.com/honojs/hono /ts/NoDeps
+  - https://hono.dev/
   - a small, simple, and ultrafast web framework for the Edges. 
   - It works on any JavaScript runtime: Cloudflare Workers, Fastly Compute@Edge, Deno, Bun, Vercel, Lagon, AWS Lambda, Lambda@Edge, and Node.js.
   - The router RegExpRouter is really fast. Not using linear loops. 
   - Hono has zero dependencies and uses only the Web Standard API.
   - Hono has built-in middleware, custom middleware, and third-party middleware. 
+
+- https://github.com/unjs/h3 /MIT/202312/ts
+  - minimal h(ttp) framework built for high performance and portability.
+  - Works perfectly in Serverless, Workers, and Node.js
+  - Native promise support
+  - Super fast route matching using unjs/radix3
+  - Compatibility layer with node/connect/express middleware
 
 - https://github.com/unjs/nitro /ts
   - https://nitro.unjs.io/

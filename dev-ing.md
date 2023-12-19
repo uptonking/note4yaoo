@@ -66,7 +66,8 @@ $$('[contenteditable]')
   - 事项--截止日期(0730+休整)--重要性(hml/s1-s3)
   - apps-wiki-knowledge-base--0904
   - dashboard/webapp-template--0901
-  - ui: zag/ark, ariakit, radix-ui, mantine
+  - ui: ariakit, zag/ark, radix-ui, mantine
+  - apps: cms+crdt
 
 - deep into lib/fwk 书籍原理与代码实践要分开
   - 学习巩固: 实践练习 > 源码/示例 > 文档/论坛 > 社交媒体

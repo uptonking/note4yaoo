@@ -18,6 +18,8 @@ modified: 2020-07-17T10:54:16.341Z
   - Latin Modern Mono (serif, monospace)
   - TeX Gyre Cursor can be used as a replacement for Courier
     - https://www.1001fonts.com/monospaced+serif-fonts.html
+# tools
+- [Unstyle / Remove Unicode Font Styling](https://yaytext.com/unstyle/)
 # fonts
 - free
   - catalog

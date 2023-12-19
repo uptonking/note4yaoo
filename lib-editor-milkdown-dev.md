@@ -8,11 +8,11 @@ modified: 2021-07-11T15:08:26.481Z
 # lib-editor-milkdown-dev
 
 # guide
-- milkdown-pros
+- pros
   - prosemirror和remark的生态都很丰富
   - 支持自定义markdown语法并给出了示例，可以自定义解析过程
 
-- milkdown-cons
+- cons
   - 没有实现较复杂的组件，如直接缩放的图片，全部基于html标签toDOM/parseDOM实现
   - 过于强调remark的配置会破坏编辑器插件的设计，remark不应该作为和编辑器插件平级的一级配置，一级配置应该是编辑器的主要features如slash菜单、markdown；remark应该作为markdown的二级配置
 

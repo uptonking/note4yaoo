@@ -9,7 +9,7 @@ modified: 2023-05-14T04:30:34.915Z
 
 # guide
 
-- features
+- pros
   - 实时通信+冲突处理
     - collaborative using crdt 
     - realtime/reactive using webSocket client/server framework
@@ -24,6 +24,9 @@ modified: 2023-05-14T04:30:34.915Z
 - cons
   - 案例少
   - 更新数据的逻辑未设计成plugin的形式，若启用同步则会同步到server，若关闭同步则仅本地执行
+
+- features
+  - ?
 
 - logux vs crdt-for-mortals
   - 实现了**支持多人协作的undo，先undo旧的再按时间戳执行**

@@ -16,6 +16,11 @@ modified: 2022-11-01T01:05:07.873Z
   - esbuild, wmr
 
 - dev-server
+# popular
+- https://github.com/google/zx /apache2/202309/ts
+  - https://google.github.io/zx/
+  - A tool for writing better scripts
+  - The zx package provides useful wrappers around `child_process`, escapes arguments and gives sensible defaults.
 # frontend-compiler
 
 # dynamic-import

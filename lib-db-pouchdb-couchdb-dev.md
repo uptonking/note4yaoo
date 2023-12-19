@@ -162,4 +162,7 @@ modified: 2022-12-02T11:15:15.257Z
   - Faster default view collation.
 - v0.0_2005
   - first released in 2005 and later became an Apache Software Foundation project in 2008.
+# changelog-couchbase
+- [Couchbase adopts BSL 1.1 with release of source code to Couchbase Server 7__202103](https://www.couchbase.com/blog/couchbase-adopts-bsl-license/)
+  - Couchbase is changing our source code license from Apache 2.0 to the Business Source License version 1.1 (BSL 1.1). 
 # more

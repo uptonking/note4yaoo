@@ -29,13 +29,13 @@ modified: 2023-02-05T19:03:12.722Z
   - Clear "core" boundaries
 
 - who is using #slatejs
+  - tinymce collab
   - pingcode slate-angular
   - taskade, gitbook
   - strapi-rich-text-editor
   - payloadcms
   - 旧版语雀、旧版钉钉
   - wangEditor
-  - tinymce collab
   - react-page
 
 - resources

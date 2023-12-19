@@ -328,13 +328,18 @@ modified: 2022-11-08T19:04:00.289Z
   - https://github.com/substance/substance
   - JavaScript library for web-based content editing
 
-- https://github.com/nytimes/ice /201402/js/NoDeps/inactive
+- https://github.com/nytimes/ice /GPLv3/201402/js/NoDeps/inactive
   - https://nytimes.github.io/ice/demo/
   - Ice is a track changes implementation, built in javascript, for anything that is `contenteditable` on the web. 
+  - 提供了集成tinymce.v3的示例
   - Conceived(想出；构思) by the CMS Group at The New York Times, ice is powering the editor used for writing articles in the newsroom.
   - [Online Contract Editor problem](https://github.com/nytimes/ice/issues/146)
     - as someone who has contributed quite a bit to this library in the past, I feel obliged to tell you that this library is quite out of date and in many ways unfixable due to the way it is structured as browsers are changing those parts that this library touches all the time.
     - I would recommend going with an editing library that maintains its own model of the content - such as ProseMirror or CKEditor 5 and build tracked changes on top of that.
+  - [Help Wanted - Looking for maintainers_201603](https://github.com/nytimes/ice/issues/126)
+    - CKEditor tracked changes plugin was built on top of ICE
+  - forks
+  - https://github.com/concordnow/ice /202110/js
 # collab
 - https://github.com/microsoft/FluidExamples/tree/main/collaborative-text-area
   - an example to demonstrate building a collaborative text area in React using the SharedString

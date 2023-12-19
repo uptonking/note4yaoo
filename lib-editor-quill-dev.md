@@ -22,6 +22,7 @@ modified: 2023-02-09T18:23:23.288Z
 - who is using #quilljs
   - 石墨文档
   - slab, Reedsy
+  - ERPNext
   - [vaadin rich-text-editor is built with Quill](https://vaadin.com/docs/latest/components/rich-text-editor)
   - Grammarly Editor
 # dev

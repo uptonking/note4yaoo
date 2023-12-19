@@ -9,7 +9,7 @@ modified: 2022-04-05T10:10:59.826Z
 
 # guide
 
-- features
+- pros
   - common data types
   - undo/redo
   - versions/revision-history
@@ -19,6 +19,12 @@ modified: 2022-04-05T10:10:59.826Z
   - network-agnostic
   - bindings for editors/apps
   - persistence
+
+- cons
+  - ?
+
+- features
+  - ?
 
 - 实现协作要考虑到切换冲突处理算法, 如slate-yjs/automerge/sharedb
 

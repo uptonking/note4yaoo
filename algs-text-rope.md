@@ -1,15 +1,15 @@
 ---
-title: lib-editor-base-rope
-tags: [data-structure, editor, rope]
+title: algs-text-rope
+tags: [data-structure, editor, rope, string, text]
 created: 2023-01-12T11:32:47.117Z
-modified: 2023-01-12T11:33:28.084Z
+modified: 2023-12-19T19:28:51.206Z
 ---
 
-# lib-editor-base-rope
+# algs-text-rope
 
 # guide
 
-- 没必要执着于rope针对crdt的实现
+- 没必要执着于rope结合crdt的实现
   - rope操作文本的api基本类似于字符串ot操作
   - 参考字符串ot如何与crdt实现binding可以很容易实现rope与crdt的binding
 

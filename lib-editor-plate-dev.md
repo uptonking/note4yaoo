@@ -18,7 +18,6 @@ modified: 2023-02-05T19:03:12.721Z
   - All plugins accept extensible options 
     - if you need to fork a plugin, all its functions are exported.
   - TypeScript types
-
-
 # codebase
 - plate的code block是自研实现，语法高亮基于 prismjs
+# more

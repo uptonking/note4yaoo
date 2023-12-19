@@ -9,6 +9,16 @@ modified: 2023-09-01T10:16:03.555Z
 
 # guide
 
+- pros
+  - rust/js/binding
+  - team-work
+
+- cons
+  - ?
+
+- features
+  - ?
+
 - [Automerge CRDT Sync Protocol](https://automerge.org/docs/how-it-works/sync/)
 # not-yet
 

@@ -12,7 +12,11 @@ modified: 2023-09-17T17:38:11.187Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## I'm surprised to realize that neither Postgres or SQLite support indexing OVERLAPS/BETWEEN queries for non-numerical ranges. 
+- https://twitter.com/ccorcos/status/1736870370140131512
+  - The GiST / R*Tree indexes only work on numbers. Dates, I believe, are converted into numerical values
+  - Someone, please prove me wrong
+
 # discuss
 - ## 
 

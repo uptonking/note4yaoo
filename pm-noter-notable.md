@@ -40,6 +40,7 @@ modified: 2023-11-28T14:48:45.910Z
   - pdf chat
   - split-table
   - ActionText
+  - cms+crdt
 
 - 难点
   - 对于嵌入到note中的本地媒体资源如图片、视频、音频，如何解析、存储、渲染更好
@@ -291,6 +292,12 @@ modified: 2023-11-28T14:48:45.910Z
   - free: GPL/BSL
   - pro/$99: 1million API Requests/Month, 5 GB db, Unlimited Users & Roles, Unlimited Collections & Fields
   - enterprise/$599: Remote Database Access, SSO(Including LDAP & SAML)
+
+- [react-admin](https://marmelab.com/ra-enterprise/#pricing)
+  - free: MIT
+  - team/$135: 2dev, Private modules
+  - business/$270: 10dev
+  - Corporate/$540: Ndev
 
 - [wordpress](https://wordpress.com/pricing/)
 - [wix](https://www.wix.com/premium-purchase-plan/dynamo)

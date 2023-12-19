@@ -425,12 +425,13 @@ modified: 2023-12-15T19:30:23.094Z
 
 ## features-ext
 
-- https://github.com/notum-cz/strapi-plugin-content-versioning /202312/js
+- https://github.com/notum-cz/strapi-plugin-content-versioning /117Star/MIT/202312/js
   - This plugin enables content versioning in Strapi
   - Enables you to have multiple draft versions
   - Keeps a history of all changes, providing the ability to time travel (revert back to previous versions).
   - Gives you the ability to have different published and draft data
   - Does not work well with GraphQL
+  - [Advanced Strapi Enhancement: Notum's Open-Source Plugins_202312](https://strapi.io/blog/elevating-strapi-notum-s-journey-in-creating-three-open-source-plugins)
 
 - https://github.com/PenguinOfWar/strapi-plugin-paper-trail /202310/js
   - Accountability and content versioning for strapi v4+
@@ -847,6 +848,9 @@ modified: 2023-12-15T19:30:23.094Z
   - NextJS or React
   - SQLite or MariaDB
 
+- https://github.com/il4b/strapi-postgres-pgadmin-boilerplate /202304/ts
+  - This open-source boilerplate provides a minimal setup to start a project using Strapi 4, PostgreSQL, and pgAdmin4 with Docker Compose.
+
 - https://github.com/letanure/strapi-boilerplate /202311/ts
   - mostly update deps
 
@@ -871,9 +875,6 @@ modified: 2023-12-15T19:30:23.094Z
   - Building Modern CMS Driven Web Applications with Next.js and Strapi
   - [Modern CMS Driven Web Applications with Strapi and Next 13 | egghead.io](https://egghead.io/courses/modern-cms-driven-web-applications-with-strapi-and-next-13-e923dbd8)
 
-- https://github.com/ghoshnirmalya/product-hunt-clone-using-strapi-react-next-docker /202310/提交多
-  - 后端js/前端ts
-
 - https://github.com/hubertnare/notion-clone-strapi-backend /202205/js
   - https://github.com/hubertnare/notion-clone-strapi-frontend /nextjs
   - https://github.com/mariesta/mariesta-notion-strapi-nextjs /202109/js
@@ -882,8 +883,23 @@ modified: 2023-12-15T19:30:23.094Z
   - https://tweethub.vercel.app/
   - twitter clone
 
+- https://github.com/JungRama/strapi-ecommerce-cms /202312/ts
+  - Starter ecommerce Integration for NextJS and Strapi
+
+- https://github.com/GabrielLeandroBS/avion /202311/ts
+  - Project frontend for e-commerce using Strapi for CMS headless and Stripe for payment integration.
+
+- https://github.com/psparsa/AlphaGallery /202310/ts
+  - A minimal image uploading website built with Next.js and Starpi, styled with Tailwind CSS and tested with Jest/RTL.
+
 - https://github.com/emanuelefavero/strapi-markdown-blog /202303/ts
   - This is a blog starter project that uses the Strapi Rich Text Data Type and react-markdown
+
+- https://github.com/anshu4sharma/blog /202306/ts
+  - Next js blog created using tailwind css typescript and strapi
+
+- https://github.com/Marktawa/blog-strapi /202308/ts
+  - Blog website using Strapi for the backend and Next.js for the frontend
 
 - https://github.com/Tammibriggs/strapi-book-app /202208/js
   - Repo for the article on Build a Book App With Infinite Scrolling and Meilisearch Strapi Plugin in React written on Strapi blog
@@ -970,9 +986,6 @@ modified: 2023-12-15T19:30:23.094Z
 
 - https://github.com/frankdev0428/node-express-strapi /202310/js
   - Strapi comes with a full featured Command Line Interface
-
-- https://github.com/il4b/strapi-postgres-pgadmin-boilerplate /202304/ts
-  - This open-source boilerplate provides a minimal setup to start a project using Strapi 4, PostgreSQL, and pgAdmin4 with Docker Compose.
 
 - https://github.com/HNTQ/strapi-dynamic-zone /202301/js
   - This a is a partial solution to handle dynamic zone in components. but there is a lot of work to do to make it work in all cases and properly.

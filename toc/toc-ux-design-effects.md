@@ -20,6 +20,9 @@ modified: 2022-11-16T16:07:48.527Z
   - https://www.kirilv.com/canvas-confetti/
   - 彩带碎屑
 
+- https://github.com/PuruVJ/neoconfetti /202312/ts
+  - Confetti explosion across all frameworks 
+
 - https://github.com/gokcan/react-shimmer
   - Async loading, performant Image component for React.js
   - 图片占位符，闪光动画

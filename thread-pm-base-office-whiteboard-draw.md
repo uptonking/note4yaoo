@@ -21,6 +21,14 @@ modified: 2023-05-30T21:36:55.391Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## We've shipped follow mode
+- https://twitter.com/excalidraw/status/1737130730587603053
+  - 适合画板类应用，当一个人操作时，另一个人的可见区域和focus跟随主要操作人
+
 - ## 请考究派同学帮忙解释一下这个现象——为啥用户放着正规的图不用，喜欢手写风格。这个值得做成一个收费的特性吗？
 - https://twitter.com/PenngXiao/status/1735204643138134241
 - 不想为了几个像素的对齐，来回折腾。

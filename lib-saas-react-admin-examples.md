@@ -1,15 +1,17 @@
 ---
-title: toc-lib-editor-builder-dashboard-react-admin
-tags: [crud, dashboard, lowcode, react-admin]
+title: lib-saas-react-admin-examples
+tags: [crud, dashboard, examples, react-admin, toc]
 created: 2023-02-17T21:47:40.266Z
-modified: 2023-02-17T21:48:01.840Z
+modified: 2023-12-19T17:31:23.259Z
 ---
 
-# toc-lib-editor-builder-dashboard-react-admin
+# lib-saas-react-admin-examples
 
 # guide
 
-# react-admin
+- resources
+  - [Ecosystem - Documentation](https://marmelab.com/react-admin/Ecosystem.html)
+# popular
 - react-admin /21.1kStar/MIT/202212/ts
   - https://github.com/marmelab/react-admin
   - https://marmelab.com/react-admin/Demos.html
@@ -19,11 +21,10 @@ modified: 2023-02-17T21:48:01.840Z
   - [demo Music Player 黑色主题](https://demo.navidrome.org/app/)
   - A frontend Framework for building data-driven applications on top of REST/GraphQL APIs, React and Material Design.
   - core依赖react-query.v3、react-hook-form
-  - 默认帐号是 login/password
   - Backend Agnostic: Connects to any API (REST or GraphQL)
-  - React-admin uses an adapter approach, with a concept called Data Providers.
+  - uses an adapter approach, with a concept called Data Providers.
   - designed as loosely coupled React components and hooks exposing reusable controller logic. It is very easy to replace any part of react-admin with your own
-  - [Who is using #react-admin? · Issue](https://github.com/marmelab/react-admin/issues/4027)
+  - 各demo示例对应的帐号密码在各demo源码根目录 login/password
   - [React-admin - Supported Data Provider Backends](https://marmelab.com/react-admin/DataProviderList.html)
   - [Using React-Admin With Your Favorite UI Library](https://marmelab.com/blog/2023/11/28/using-react-admin-with-your-favorite-ui-library.html)
     - React-admin relies on Material UI for its user interface by default. 
@@ -38,8 +39,10 @@ modified: 2023-02-17T21:48:01.840Z
   - React Admin DataProvider with support for micro-services architecture.
 - https://github.com/BlackBoxVision/ra-data-jsonapi-microservices
   - React Admin provider with support for microservices with JSON API Spec
+
 - https://github.com/BigBasket/ra-components /js
   - Opensource components for react-admin.
+
 - https://github.com/ValentinnDimitroff/ra-compact-ui /js
   - Enhanced components for popular framework react-admin.
 

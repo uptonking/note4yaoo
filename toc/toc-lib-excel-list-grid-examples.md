@@ -229,5 +229,7 @@ modified: 2022-08-21T10:03:52.222Z
     - Handsontable.js. That library has some major design flaws. Handsontable only takes simple 'number' or 'string' value for each cell
 # more
 - https://github.com/EqualTo-Software/SureSheet /202311/ts
+  - https://docs.equalto.com/
+  - lets you create and share spreadsheets using cool URIs.
   - We created this product to show what you can build with EqualTo Sheets, our "Spreadsheets as a service for developers" platform.
   - Note that to deploy EqualTo SureSheet, you'll need a (freely available) EqualTo Sheets license key.

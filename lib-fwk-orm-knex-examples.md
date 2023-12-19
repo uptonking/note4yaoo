@@ -45,6 +45,19 @@ modified: 2023-01-22T19:52:59.120Z
 
 - https://github.com/victor-vieira21/knex-mongoose-sequelize-lucid
   - 4个orm示例
+
+- bookshelf /6.3kStar/MIT/202007/js/inactive
+  - https://github.com/bookshelf/bookshelf
+  - Bookshelf is a JavaScript ORM for Node.js, built on the Knex SQL query builder. 
+  - It features both Promise-based and traditional callback interfaces, 
+  - It is designed to work with PostgreSQL, MySQL, and SQLite3.
+  - Bookshelf aims to provide a simple library for common tasks when querying databases in JavaScript, and forming relations between these objects, taking a lot of ideas from the Data Mapper Pattern.
+  - https://github.com/seegno/bookshelf-json-columns
+    - Parse JSON columns with Bookshelf.js
+  - https://github.com/tanem/express-bookshelf-realworld-example-app /202210/js
+    - An Express and Bookshelf based backend implementation of the RealWorld API Spec.
+
+
 # starter-boilerplate
 - https://github.com/gabsrethink/nodejs-knex-authentication
   - Authentication API using NodeJS with TypeScript and Knex
@@ -68,6 +81,16 @@ modified: 2023-01-22T19:52:59.120Z
   - 依赖awilix(IoC)
 - https://github.com/mstickel/jokes-system
   - TypeDI, Actuator
+
+- https://github.com/kenyipp/realworld-nodejs-example-app /202304/ts
+  - scalable RealWorld app implemented with TypeScript, Node.js, AWS Lambda, and tested with high-quality unit and integration tests
+  - Express + Knex
+- https://github.com/gothinkster/koa-knex-realworld-example /201910/js
+  - Example Node. Js (Koa.js + Knex) codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the RealWorld spec and API.
+- https://github.com/avanelli/fastify-realworld-example-app /202303/js
+  - Fastify + Knex.js - Realworld Example App
+
+
 
 - https://github.com/bilalsha/api-skelton
   - Skelton for creating api using express, typescript, eslint, prettier, jest, knex, objection, sqlite

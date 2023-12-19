@@ -16,6 +16,15 @@ modified: 2023-12-18T12:43:20.532Z
 - ## 
 
 - ## 
+# discuss-auth
+- ## 
+
+- ## how does single sign-on (sso) work
+- https://twitter.com/milan_milanovic/status/1737027285549490434
+  - Single sign-on (SSO) is an authentication process that allows a user to access multiple applications with a single login. 
+  - This is accomplished using a central authentication server that stores the user's credentials and verifies them for each application.
+  - Some common types of SSO are: SAML-based SSO, OAuth 2.0, OpenID Connect
+
 # discuss
 - ## 
 

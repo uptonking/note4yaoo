@@ -12,8 +12,8 @@ modified: 2022-08-21T10:15:01.987Z
 # discuss
 - ## 
 
-- ## [Representing and Editing JSON with Spreadsheets (2018) | Hacker News_201910](https://news.ycombinator.com/item?id=21109798)
-- I made a Google spreadsheet add-on [1] that contains 3 built-in options for converting nested JSON to tabular format.
+- ## 🧮 [Representing and Editing JSON with Spreadsheets (2018) | Hacker News_201910](https://news.ycombinator.com/item?id=21109798)
+- I made a Google spreadsheet add-on that contains 3 built-in options for converting nested JSON to tabular format.
   - Method 1: drills into nested json objects and arrays and returns the key names as headers, key values as rows. In cases with multiple nested values, they get returned into multiple columns, differentiated by a number, e.g. orders > products > 1, orders > products > 2.
   - Method 2: same as above but returns all nested data into a single column, e.g. a single column named orders > products. This can break the association between JSON elements, but is more convenient for certain types of analysis.
   - Method 3: concatenates all the elements of each nested object into a single cell, separated with pipes.

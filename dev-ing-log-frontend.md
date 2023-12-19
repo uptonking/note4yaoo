@@ -619,40 +619,34 @@ parseInt("0xf", 10) === 0; //true. This is supposed to be 15
 
 - ##  `element.innerHTML` vs `node.innerText`
 
-  - innerText retrieves and sets the content of the tag as plain text, 
+- `innerText` retrieves and sets the content of the tag as plain text, 
+  - `whereas` innerHTML retrieves and sets the content in HTML format.
+  - This only applies when SETTING a value. When you're GETTING the value HTML tags are simply stripped and you get the plain text.
 
-    - whereas innerHTML retrieves and sets the content in HTML format.
-    - This only applies when SETTING a value. When you're GETTING the value HTML tags are simply stripped and you get the plain text.
+- element.innerHTML只去除标签，换行会打印出来
+  - Sets or gets the HTML syntax describing the element's descendants
 
-  - element.innerHTML只去除标签，换行会打印出来
+- node.innerText会去除换行和首尾空格
+  - Sets or gets the text between the start and end tags of the object
+  - innerText gives you a style-aware, representation of the text that tries to match what's rendered in by the browser this means:
+    - innerText applies text-transform and white-space rules
+    - innerText trims white space between lines and adds line breaks between items
+    - innerText will not return text for invisible items
+    - innerText will return textContent for elements that are never rendered like `<style />`
 
-    - Sets or gets the HTML syntax describing the element's descendants
+- node.textContent 👍🏻
+  - Gets or sets the text content of a node and its descendants.
+  - Is not aware of styling and will therefore return content hidden by CSS
+  - **Does not trigger a reflow** (therefore more performant)
 
-  - node.innerText会去除换行和首尾空格
+- node.value
+  - This one depends on the element that you've targeted.
+  - For the above example, `x` returns an HTMLDivElement object, which does not have a `value` property defined.
+  - Input tags, for example, do define a `value` property, which refers to the "current value in the control".
+  - for certain input types the returned value might not match the value the user has entered. For example, if the user enters a non-numeric value into an `<input type="number">` , the returned value might be an empty string instead.
 
-    - Sets or gets the text between the start and end tags of the object
-    - innerText gives you a style-aware, representation of the text that tries to match what's rendered in by the browser this means:
-      - innerText applies text-transform and white-space rules
-      - innerText trims white space between lines and adds line breaks between items
-      - innerText will not return text for invisible items
-      - innerText will return textContent for elements that are never rendered like `<style />`
-
-  - node.textContent
-
-    - Gets or sets the text content of a node and its descendants.
-    - Is not aware of styling and will therefore return content hidden by CSS
-    - **Does not trigger a reflow** (therefore more performant)
-
-  - node.value
-
-    - This one depends on the element that you've targeted.
-    - For the above example, `x` returns an HTMLDivElement object, which does not have a `value` property defined.
-    - Input tags, for example, do define a `value` property, which refers to the "current value in the control".
-    - for certain input types the returned value might not match the value the user has entered. For example, if the user enters a non-numeric value into an `<input type="number">` , the returned value might be an empty string instead.
-
-  - ref
-
-    - [Difference between innerText, innerHTML, and childNodes[].value?](https://stackoverflow.com/questions/19030742/difference-between-innertext-innerhtml-and-childnodes-value)
+- ref
+  - [Difference between innerText, innerHTML, and childNodes[].value?](https://stackoverflow.com/questions/19030742/difference-between-innertext-innerhtml-and-childnodes-value)
 
 - ## tree-shaking
   -  we can help terser by using the `/*#__PURE__*/` annotation

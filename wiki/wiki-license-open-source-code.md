@@ -32,6 +32,23 @@ modified: 2021-09-14T18:58:58.275Z
   - “Copyleft”通常被译作“著佐权”，即通过许可证的形式，补足、辅佐著作权（Copyright）不足的版权授权，相当于一种权利与义务的契约
 # non-commercial
 
+## BSL/Business Source License
+
+- ref
+  - [Business Source License 1.1 | MariaDB](https://mariadb.com/bsl11/)
+
+- who is using #BSL-lic
+  - outline wiki
+  - Directus cms
+  - couchbase
+  - surrealdb
+  - CockroachDB
+  - HashiCorp consul: data center aware solution to connect and configure applications across dynamic, distributed infrastructure
+  - kurtosis: Kurtosis shines when creating, working with, and destroying self-contained distributed application environments.
+
+- [What Software License is Better - BSL, Source Available or Open Core?](https://devm.io/open-source/software-licenses-bsl-open-core)
+  - The Business Source License was introduced by Michael Widenious (Monty) in 2013 and was initially used by MariaDB Corporation for some of the company’s software and not MariaDB Server itself.
+
 ## [Polyform Licenses](https://polyformproject.org/licenses/)
 
 - SPDX支持

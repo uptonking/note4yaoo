@@ -72,6 +72,7 @@ modified: 2023-11-16T15:00:11.503Z
 
 - https://github.com/cirosantilli/node-express-sequelize-nextjs-realworld-example-app /202208/ts/be+fe
   - Node.js + Express.js + Sequelize + SQLite/PostgreSQL + Next.js fullstack static/SSG/ISG Example Realworld App
+  - https://github.com/cirosantilli/node-express-sequelize-realworld-example-app /202106/js
 
 - https://github.com/TonyMckes/conduit-realworld-example-app /202303/js/be+fe
   - created to demonstrate a fully fledged fullstack application built with React / Express.js / Sequelize / PostgreSQL including CRUD operations, authentication, routing, pagination, and more.
@@ -123,6 +124,9 @@ modified: 2023-11-16T15:00:11.503Z
 
 - https://github.com/DataDog/flask-realworld-example-app /202311/python
   - Exemplary real world JSON API built with Flask
+
+- https://github.com/kenyipp/realworld-python-example-app /202306/python
+  - scalable RealWorld app implemented with Python, Flask, AWS Lambda, and tested with high-quality unit and integration tests
 
 - https://github.com/err0r500/go-realworld-clean /201808/go
   - a clean architecture implementation of the realworldapp

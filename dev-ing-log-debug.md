@@ -16,7 +16,7 @@ modified: 2023-06-14T00:53:15.226Z
 ## list item前的黑点大小不一致，黑点基于 `::before` 伪元素实现
 
 - 因为before伪元素的父元素的font-family会影响伪元素的渲染，字体不同时渲染出的黑点大小不一致
-  - 还要考虑基于`::marker`实现的伪元素的默认样式
+  - 还需考虑基于`::marker`实现的伪元素的默认样式
 
 - inline元素设置margin-top/bottom不会生效，可转换为inline-block
 
