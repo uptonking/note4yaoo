@@ -31,7 +31,7 @@ modified: 2023-12-19T17:31:23.259Z
     - However, you can use react-admin with any UI library
     - This is made possible by the very architecture of react-admin, built over a headless package named ra-core.
 
-- https://github.com/BlackBoxVision/react-admin-extensions
+- https://github.com/BlackBoxVision/react-admin-extensions /MIT/202307/ts
   - Packages for improving your development workflow with react admin
   - 已提供: rbac, layout
   - wip: search
@@ -40,28 +40,39 @@ modified: 2023-12-19T17:31:23.259Z
 - https://github.com/BlackBoxVision/ra-data-jsonapi-microservices
   - React Admin provider with support for microservices with JSON API Spec
 
-- https://github.com/BigBasket/ra-components /js
+- https://github.com/BigBasket/ra-components /MIT/202305/js
   - Opensource components for react-admin.
 
-- https://github.com/ValentinnDimitroff/ra-compact-ui /js
+- https://github.com/ValentinnDimitroff/ra-compact-ui /202308/js
   - Enhanced components for popular framework react-admin.
 
-- https://github.com/NathanAdhitya/express-mongoose-ra-json-server /7Star/MIT/202209/ts
+- https://github.com/marmelab/ra-example-kanban /202311/ts
+  - https://marmelab.com/ra-example-kanban/
+  - Example of a Kanban board built with React Admin
+
+- https://github.com/marmelab/ra-strapi-demo /202210/前端ts/后端js
+  - [Building a B2B app with Strapi and React-Admin_202211](https://marmelab.com/blog/2022/11/28/building-a-crud-app-with-strapi-and-react-admin.html)
+
+- https://github.com/NathanAdhitya/express-mongoose-ra-json-server /7Star/MIT/202307/ts
   - creates express.js routes from a mongoose model for ra-data-json-server
   - https://github.com/NathanAdhitya/express-mongoose-ra-json-server-demo
 
-- https://github.com/raphiniert-com/ra-data-postgrest /75Star/MIT/202211/ts
+- https://github.com/raphiniert-com/ra-data-postgrest /75Star/MIT/202310/ts
   - PostgREST Data Provider for react-admin
   - react admin client for postgREST
 
 - https://github.com/lalalilo/express-crud-router /113Star/MIT/202201/ts/无db
+  - https://github.com/nicgirault/express-crud-router
   - Expose resource CRUD routes for Express & Sequelize. 
   - Compatible with React Admin Simple Rest Data Provider. 
   - The lib is ORM agnostic
   - https://github.com/lalalilo/express-crud-router-sequelize-v6-connector
 
-- https://github.com/marmelab/ra-sqlite-dataprovider
+- https://github.com/marmelab/ra-sqlite-dataprovider /202110/js
   - here is a POC to generate a react-admin administration not relying on an API but directly on a SQLite database hosted on a static server (in this case the Github pages server).
+
+- https://github.com/marmelab/ra-data-google-sheets /202010/js
+  - A data provider for react-admin, based on Google Sheets
 
 - https://github.com/josx/ra-data-feathers /js
   - Feathers data provider for react-admin. A feathers rest client for react-admin
@@ -73,7 +84,7 @@ modified: 2023-12-19T17:31:23.259Z
 - https://github.com/prowebdev119/react-admin
   - Open sourced and maintained by marmelab.
 
-- https://github.com/marmelab/ra-in-memory-jwt
+- https://github.com/marmelab/ra-in-memory-jwt /202006/js
   - Manage React-admin authentication with jwt in memory, not in local storage
   - [The Ultimate Guide to handling JWTs on frontend clients (GraphQL)](https://hasura.io/blog/best-practices-of-using-jwt-with-graphql/)
 

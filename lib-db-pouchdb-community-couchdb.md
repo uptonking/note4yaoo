@@ -543,7 +543,7 @@ modified: 2023-10-29T02:23:35.064Z
 
 - Trying to use CouchDB's versioning system seems like depending on a very leaky abstraction. That you can see it's versioning is a side-effect of how it behaves; not a feature it is providing. If you need versioned records, you are likely better off identifying your versioning requirements and building to those than trying to piggyback off of something else poorly suited.
 
-- ## [What the HTTP is CouchApp | Hacker News_201008](https://news.ycombinator.com/item?id=1569664)
+- ## 🏘️ [What the HTTP is CouchApp | Hacker News_201008](https://news.ycombinator.com/item?id=1569664)
 - CouchDB is really fun. There is a native Javascript driver and the protocol is RESTful (HTTP GET, PUT, DELETE).
   - Compare the the closest NoSQL alternative, MongoDB. I say close because they are both document stores (fancy key/value) with indexing and map/reduce.
 - MongoDB is very lean and blazing fast. But there isn't anything close to an HTTP layer in Mongo. It speaks in a binary JSON protocol. The format, commands, and driver, while well done, are a whole new set of rules to learn. Plus a Ruby middleware to talk HTTP.

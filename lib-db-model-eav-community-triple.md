@@ -12,6 +12,31 @@ modified: 2023-09-25T09:00:49.722Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## [How to design a product table for many kinds of product where each product has many parameters - Stack Overflow](https://stackoverflow.com/questions/695752/how-to-design-a-product-table-for-many-kinds-of-product-where-each-product-has-m)
+- You have at least these five options for modeling the type hierarchy you describe:
+  - Single Table Inheritance: one table for all Product types, with enough columns to store all attributes of all types. This means a lot of columns, most of which are NULL on any given row.
+  - Class Table Inheritance: one table for Products, storing attributes common to all product types. Then one table per product type, storing attributes specific to that product type.
+  - Concrete Table Inheritance: no table for common Products attributes. Instead, one table per product type, storing both common product attributes, and product-specific attributes.
+  - Serialized LOB: One table for Products, storing attributes common to all product types. One extra column stores a `BLOB` of semi-structured data, in XML, YAML, JSON, or some other format. This BLOB allows you to store the attributes specific to each product type. You can use fancy Design Patterns to describe this, such as Facade and Memento. But regardless you have a blob of attributes that can't be easily queried within SQL; you have to fetch the whole blob back to the application and sort it out there.
+  - Entity-Attribute-Value: One table for Products, and one table that pivots attributes to rows, instead of columns. EAV is not a valid design with respect to the relational paradigm, but many people use it anyway. This is the "Properties Pattern" mentioned by another answer. 
+
+- Here are some of the disadvantages of EAV:
+  - No way to make a column mandatory (equivalent of NOT NULL).
+  - No way to use SQL data types to validate entries.
+  - No way to ensure that attribute names are spelled consistently.
+  - No way to put a foreign key on the values of any given attribute, e.g. for a lookup table.
+  - Fetching results in a conventional tabular layout is complex and expensive, because to get attributes from multiple rows you need to do `JOIN` for each attribute.
+- The degree of flexibility EAV gives you requires sacrifices in other areas, probably making your code as complex (or worse) than it would have been to solve the original problem in a more conventional way.
+  - And in most cases, it's unnecessary to have that degree of flexibility. 
+  - I'd use EAV only if every row must be permitted to potentially have a distinct set of attributes. When you have a finite set of product types, EAV is overkill. Class Table Inheritance would be my first choice.
+
+- The more I see people using JSON as a solution for the "many custom attributes" problem, the less I like that solution. 
+  - It makes queries too complex, even when using special JSON functions to support them. 
+  - It takes a lot more storage space to store JSON documents, versus storing in normal rows and columns.
+- What it comes down to is that you have to choose one of the solutions based on which is the least bad for your app. 
+
 - ## [Channel-aware custom fields · vendure-ecommerce/vendure_202010](https://github.com/vendure-ecommerce/vendure/issues/490)
 - I think part of this depends on the philosophy of Vendure as an e-commerce platform. Is it attempting to be more 'dev centric' or admin centric. I'm actually ok with it being more dev centric if that's how we want to go, @michaelbromley would need to make the end call there. That said if we go with dev configuration we just want to make sure it's the right DB structure..
   - EAV
@@ -105,13 +130,26 @@ modified: 2023-09-25T09:00:49.722Z
 
 - ## 
 
-- ## 
+- ## [Is JSONB + Postgres still a viable way of storing varying attributes? : rails_202302](https://www.reddit.com/r/rails/comments/10x3x0d/is_jsonb_postgres_still_a_viable_way_of_storing/)
+- Postgres JSONB has not ceased to be a best practice for adding schema-less data to records in a relational database.
+  - In your spreadsheet scenario, it sounds like you'll have one database record for each row in the spreadsheet, and you are delaying the assignment of attribute type. In other words, the type, e.g. text, currency, integer, of the value in a spreadsheet column is not known until run time. If that is the case, there are several ways to coerce the values to be a specific type at run time. There are a lot of gems that do type coercion, or you could leverage the Rails attribute API. I apologize for not being more specific, but I'm not sure if type coercion is what you're looking for.
+
+- Postgres jsonb columns will probably get you most of what you need, and even scale fairly well if you keep a few things in mind and plan ahead. They're pretty efficient and queryable these days. I believe you can even use GIN indexes on data within the columns. The main downsides are a lack of column types (and therefore all the activerecord inference and other niceties) and needing to put a little more effort into setting defaults/checking if attributes exist. You can also use serializers to instantiate structs or even actual class objects for well-defined data, so that you're not constantly diging around through the JSON attributes.
+- I'd also highly recommend taking a look at the EAV (Entity Attribute Value) design pattern. I can't say whether it'd serve you better than JSON for your requirements here, but it's a great approach to "lots of dynamic/optional attributes" for records.
+
+- pg and jsonb work great. don't store dictionaries of data in the columns, do the normal DB stuff when it makes sense and it goes pretty smoothly.
+  - There are some nice guardrail type gems that would make a lot of sense when you can use them - typing and data structure definition mostly.
+
+- In my opinion JSONB is one of the many (or most) awesome aspects of Postgres.
+  - u/demillir suggested the EAV (Entity Attribute Value) design pattern and I would avoid it like the plague.
+  - JSONB is fast, easy to cache, and can expand or contract as needed - you'll just need some organization, discipline, and a ton of checks in your code as to whether or not an attribute exists.
+  - The query syntax for JSONB syntax is a little weird, but once you get used to it it's pretty awesome - just make sure queries that need sums, totals, etc. are still in structured fields.
 
 - ## this is why I believe postgres' jsonb types were a mistake. 
 - https://twitter.com/meijer_s/status/1720368213899297235
 - JSONB is the perfect solution for unstructured data. It removes 80% of the use-cases for Mongo.
   - But the query syntax for Mongo is so much better than the json queries of postgres. Also, I love Mongo features like storing javascript functions, TTL indexes, aggregation pipelines, and change streams.
--  I tend to use jsonb for stuff I don't have common access patterns for, then refactor as I discover what columns I really need. For most of those other features, I use Postgres triggers and pg_cron. They have somewhat worse DX, but they're more powerful primitives and they're easier to version control.
+- I tend to use jsonb for stuff I don't have common access patterns for, then refactor as I discover what columns I really need. For most of those other features, I use Postgres triggers and pg_cron. They have somewhat worse DX, but they're more powerful primitives and they're easier to version control.
 - You shouldn't be querying into json generally. The point is that json blobs + indexed columns = mongo - one layer of abstraction.
   - Performance reasons. You never want to have to index on a json field. You can use queries for transformation, and indeed you use json over text for transformation and validation reasons.
 - Performance is fine. JSONB can be indexed and it’s fast. MartenDB is a document database for .net using PostgreSQL and it’s fast. Performance is not a reason.

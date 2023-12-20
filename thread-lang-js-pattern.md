@@ -12,6 +12,21 @@ modified: 2023-11-10T08:05:12.852Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Has anyone heard of a technique where you cache a value only until the current event loop tasks finish?
+- https://twitter.com/SCooperDev/status/1737200221459734681
+  - So the first time a value is read, cache the result and set up a micro task to clear the cache value. Then all reads during the current execution share that value.
+  - Seems to be an effective way to avoid layout thrashing without having to refactor code so that the read of a Dom value is only performed once. 
+  - So even within a loop, which modifies a Dom element, we don't cause the browser to relayout. 
+  - Assumes read value is independent though.
+
+- I've done this a fair bit on different projects. It's effective but can bite you in the ass if you assume that there will be a reset for every loop. Loop -> loop -> reset -> reset will happen to you sooner or later.
+
+- Yeah, I  think that's my main concern. The browser will be recalculating for a reason and at some point the cache might be outdated even within a single task execution. Refactoring is probably the right choice...
+
 - ## [No love for boolean parameters | TkDodo's blog](https://tkdodo.eu/blog/no-love-for-boolean-parameters)
 
 - ## if you are a TS fan, how would you describe something like JSON.parse where a string input goes in and literally anything could go out!

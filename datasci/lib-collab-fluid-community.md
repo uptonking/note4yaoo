@@ -54,7 +54,7 @@ modified: 2023-02-11T11:07:43.781Z
   - Second, it's not immediately obvious why rich text editing requires more complex conflict resolution. 
   - Third, it's not obvious why solving the RTE problem doesn't immediately lend itself to other problems 
 
-- ## [Hypercore protocol: a distributed (P2P) append-only log | Hacker News](https://news.ycombinator.com/item?id=25407193)
+- ## [Hypercore protocol: a distributed (P2P) append-only log | Hacker News_202012](https://news.ycombinator.com/item?id=25407193)
 - This is coming up twice today, but I’m interested in using a P2P append only log as a total order broadcast for use with (my day job) Fluid Framework.
 - Decentralizing the broadcast would make Fluid more aligned with the Ink and Switch essays about offline first.
 

@@ -66,8 +66,11 @@ modified: 2023-09-25T17:56:50.116Z
     - JSONB supports indexing, which amortizes performance trade-off. 
     - It's important to keep in mind that JSONB is not RDMS-agnostic solution and has it's own problems, such as typing.
   - [Django EAV 2 – Entity-Attribute-Value Storage for Django | Hacker News_201807](https://news.ycombinator.com/item?id=17628685)
-- https://github.com/powered-by-wq/vera /python/inactive
-  - Python/Django reference implementation of the ERAV data model
+
+- https://github.com/powered-by-wq/vera /MIT/201709/python
+  - vera is the reference implementation of the Entity-Record-Attribute-Value (ERAV) data model. 
+  - ERAV is an extension to Entity-Attribute-Value (EAV) that adds support for maintaining multi-faceted provenance metadata for an entity
+  - optimized for storing and tracking changes to time series data as it is exchanged between disparate technical platforms (e.g. mobile devices, Excel spreadsheets, and third-party databases). 
 
 - https://github.com/jacoscaz/quadstore /179Star/MIT/202308/ts
   - a LevelDB-backed RDF graph database / triplestore for JavaScript runtimes (browsers, Node.js, Deno, Bun, ...) written in TypeScript.
@@ -146,11 +149,6 @@ modified: 2023-09-25T17:56:50.116Z
   - mapping database to EAV model as solution of data interoperability and portability between different Content Management Systems (CMS).
   - The mapping is based on an XML file that describes the implementation of the three components of the EAV model : Entity, Value and Attribute. 
   - In addition to database mapping, the API allows access to a CMS data directly from database with SQL queries.
-
-- https://github.com/powered-by-wq/vera /MIT/201709/python
-  - vera is the reference implementation of the Entity-Record-Attribute-Value (ERAV) data model. 
-  - ERAV is an extension to Entity-Attribute-Value (EAV) that adds support for maintaining multi-faceted provenance metadata for an entity
-  - optimized for storing and tracking changes to time series data as it is exchanged between disparate technical platforms (e.g. mobile devices, Excel spreadsheets, and third-party databases). 
 
 - https://github.com/bowbahdoe/eav /202204/rust
   - I set up to doodle on translating the unmaintained clone https://github.com/Workiva/eva

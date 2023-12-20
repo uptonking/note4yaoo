@@ -49,3 +49,4 @@ modified: 2023-04-13T03:32:04.013Z
     - Spotting issues is IMO harder when reading code than when writing it.
     - You want perfect code, not code that the average dev would write.
 # more
+- [GitHub Contributions Chart Generator](https://github-contributions.vercel.app/)

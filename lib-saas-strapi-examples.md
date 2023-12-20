@@ -9,11 +9,13 @@ modified: 2023-12-15T19:30:23.094Z
 
 # guide
 
+- fans-strapi
+  - https://github.com/ComfortablyCoding/strapi-plugin-io
+  - https://github.com/VirtusLab-Open-Source/strapi-plugin-reactions
 # popular
 - https://github.com/strapi-community/awesome-strapi
   - A curated list of awesome things related to Strapi
   - https://github.com/strapi/design-system
-  - https://github.com/strapi-community/strapi-tool-deployify
 
 - https://github.com/strapi/strapi-examples /202311
   - List of examples using Strapi
@@ -47,6 +49,9 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/liveblocks/strapi-demo /202310/ts
   - Strapi + Liveblocks demo
 # integrations
+- https://github.com/ONLYOFFICE/onlyoffice-strapi /MIT/202211/js
+  - The app which enables the users to edit office documents from Strapi using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to Strapi
+
 - https://github.com/marmelab/ra-strapi-demo /202210/前端ts/后端js
   - [Building a B2B app with Strapi and React-Admin_202211](https://marmelab.com/blog/2022/11/28/building-a-crud-app-with-strapi-and-react-admin.html)
 
@@ -144,9 +149,6 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/ComfortablyCoding/strapi-plugin-website-builder /202311/js
   - A plugin for Strapi that provides the ability to trigger website builds manually, periodically or through model events.
 
-- https://github.com/strapi-community/strapi-plugin-redis /202303/js
-  - Plugin used to centralize management of Redis connections in Strapi
-
 - https://github.com/bass3l/strapi-provider-email-smtp /202204/js
   - A third-party SMTP email provider for Strapi, tested with Gmail SMTP.
 
@@ -240,6 +242,10 @@ modified: 2023-12-15T19:30:23.094Z
   - Integrates CKEditor 5 into your Strapi project as a fully customizable custom field. (Unofficial integration)
   - Strapi v4.4.0+
   - https://github.com/rajatdangat/strapi-plugin-ckeditor5 /202111/js
+- https://github.com/nominedisorder/ckeditor5-build-strapi-wysiwyg-with-style /202307/js
+  - Enhanced build of CKEditor 5 to replace default Strapi WYSIWYG editor.
+  - Automatically upload Inserted images to Strapi Media Library (thanks to ckeditor5-strapi-upload-plugin)
+  - Access Strapi Media Library directly from the editor toolbar
 - https://github.com/Roslovets-Inc/strapi-plugin-ckeditor5 /202303/js/v3
   - Replace default Strapi markdown WYSIWYG editor with enhanced build of HTML CKEditor 5.
   - Automatic translation of UI into selected in Strapi language (Strapi v3)
@@ -368,6 +374,8 @@ modified: 2023-12-15T19:30:23.094Z
 
 - https://github.com/strapi-community/strapi-plugin-local-image-sharp /202307/js
   - Dynamically resize, format and optimize images based on url modifiers.
+  - Convert any uploaded images with local provider using sharp modifier. 
+  - No extra configuration needed, the modifiers will be applied based on the url.
 
 - https://github.com/marlokessler/strapi-plugin-image-optimizer /202307/ts
   - Optimize your images for desktop, tablet and mobile and different image formats.
@@ -433,14 +441,16 @@ modified: 2023-12-15T19:30:23.094Z
   - Does not work well with GraphQL
   - [Advanced Strapi Enhancement: Notum's Open-Source Plugins_202312](https://strapi.io/blog/elevating-strapi-notum-s-journey-in-creating-three-open-source-plugins)
 
+- https://github.com/strapi-community/strapi-plugin-audit /MIT/202208/js
+  - Audit Log plugin for Strapi v4
+  - One of this package's co-maintainers is an employee of Strapi, maintained in the free time 
+
 - https://github.com/PenguinOfWar/strapi-plugin-paper-trail /202310/js
   - Accountability and content versioning for strapi v4+
   - Automatic revision history and auditing with support for all major strapi content types including relations, media, components, and dynamic zones via the admin panel.
   - Roll-back capabilities with the option to select specific fields to restore via the admin panel.
   - Tracks revision history by both admins and users.
   - Internationalization (i18n) plugin support.
-  - https://github.com/JoeriDamme/strapi-plugin-revisions /202008/js/v3
-    - Add revision history of collection types to Strapi.
 
 - https://github.com/Marje3PSUT/strapi-plugin-audit-log-marje3 /202309/js
   - A plugin that logs all user interactions, fully-equipped with permissions and settings.
@@ -485,8 +495,9 @@ modified: 2023-12-15T19:30:23.094Z
   - Uses fuzzysort under the hood: Simple, quick and easy. No need to worry about setting up an instance for a complex search engine.
   - https://github.com/farzher/fuzzysort /202211/js
 
-- https://github.com/strapi-community/strapi-plugin-search /202310/ts
+- https://github.com/strapi-community/strapi-plugin-search /MIT/202310/ts
   - A Strapi CMS plugin that provides search engine agnostic sync support
+  - Coming soon
 
 - https://github.com/strapi/strapi-plugin-seo /202311/js
   - The official plugin to make your Strapi content SEO friendly
@@ -505,14 +516,18 @@ modified: 2023-12-15T19:30:23.094Z
   - A plugin for Strapi Headless CMS that provides the ability to add notes to entity records.
   - a notes section will be added to the `informations` sections of the edit view for all content types.
 
-- https://github.com/10Life/strapi-plugin-advanced-cache-manager /202312/js
-  - This plugin allows Strapi users to invalidate the cache according to the cache time defined in the plugin options. Besides, it also provides a way for users to clear AWS CDN cache.
-
-- https://github.com/strapi-community/strapi-plugin-rest-cache /202310/js
+- https://github.com/strapi-community/strapi-plugin-rest-cache /105Star/MIT/202310/js
   - https://strapi-community.github.io/strapi-plugin-rest-cache/
   - This plugin provide a way to cache HTTP requests in order to improve performance. 
   - It's get inspired by varnish cache which is a popular caching solution.
-  - The cache content is stored by a provider, which can be either an in-memory provider, a redis connection, a file system, or any other custom provider. You can set a strategy to tell what to cache and how much time responses should be cached. The cache will be invalidated when the related Content-Type is updated, so you never have to worry about stale data.
+  - The cache content is stored by a provider, which can be either an `in-memory` provider, a `redis` connection, a `filesystem`, or any other custom provider. 
+  - You can set a strategy to tell what to cache and how much time responses should be cached. The cache will be invalidated when the related Content-Type is updated, so you never have to worry about stale data.
+
+- https://github.com/strapi-community/strapi-plugin-redis /202303/js
+  - Plugin used to centralize management of Redis connections in Strapi
+
+- https://github.com/10Life/strapi-plugin-advanced-cache-manager /202312/js
+  - This plugin allows Strapi users to invalidate the cache according to the cache time defined in the plugin options. Besides, it also provides a way for users to clear AWS CDN cache.
 
 - https://github.com/VirtusLab-Open-Source/strapi-plugin-comments /202310/ts
   - A plugin for Strapi Headless CMS that provides end to end comments feature with their moderation panel, bad words filtering, abuse reporting and much more.
@@ -549,6 +564,11 @@ modified: 2023-12-15T19:30:23.094Z
   - Allows you to publish to multiple instances (Prod, Preview, etc.); 
   - Adds a publishing component to override Strapi's state management, useful with CRON in particular (no obligation to use); 
 
+- https://github.com/phantomstudios/strapi-plugin-github-publish /202211/js
+  - This is a plugin for Strapi headless CMS. It lets you trigger a GitHub Action workflow when the site is ready to be published.
+- https://github.com/everythinginjs/strapi-plugin-update-static-content /202306/js
+  - An Strapi plugin for rebuilding and deploying your static website via Github Actions.
+
 - https://github.com/webbio/strapi-plugin-scheduler /202308/ts
   - Strapi Plugin to schedule publish and depublish actions for any collection type.
   - Schedule when you want to publish your content
@@ -559,11 +579,6 @@ modified: 2023-12-15T19:30:23.094Z
 
 - https://github.com/excl-networks/strapi-plugin-redcron /202311/js
   - A drop in replacement for the Strapi cron plugin that uses Redlock to prevent multiple instances of Strapi from running the same cron job at the same time.
-
-- https://github.com/phantomstudios/strapi-plugin-github-publish /202211/js
-  - This is a plugin for Strapi headless CMS. It lets you trigger a GitHub Action workflow when the site is ready to be published.
-- https://github.com/everythinginjs/strapi-plugin-update-static-content /202306/js
-  - An Strapi plugin for rebuilding and deploying your static website via Github Actions.
 
 - https://github.com/Fekide/strapi-plugin-translate /202311/js
   - https://market.strapi.io/plugins/strapi-plugin-translate
@@ -644,9 +659,14 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/BretCameron/strapi-plugin-public-permissions /202309/ts
   - A plugin to automate the creation of public permissions for your chosen API content types and plugins.
 
+- https://github.com/gravitybv/strapi-plugin-permissions /202307/js
+  - Permissions plugin for Strapi v4 - Permissions by config file
+  - https://github.com/PaulBratslavsky/strapi-example-user-permissions-policy /wip
+
 - https://github.com/PaulRichez/strapi4-plugin-route-permission /202310/js
   - Strapi4 plugin server route permission
   - A plugin for Strapi that provides the ability to config roles on server route for generate permissions.
+
 - https://github.com/andreciornavei/strapi-plugin-route-permission /202205/js
   - This plugin implements a simple way to seed strapi permission::users-permissions table from routes configuration. 
   - It means that you can define your routes permissions direcly on yours routes.json files.
@@ -654,10 +674,6 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/strapi-community/strapi-plugin-protected-populate /202311/js
   - The purpose of this plugin is to have a easy way to protect your get endpoints from getting to much information out of them. I made this plugin since I got sick and tired of writing complex policies to do this exact thing.
   - Protected your Get request populates and fields
-
-- https://github.com/gravitybv/strapi-plugin-permissions /202307/js
-  - Permissions plugin for Strapi v4 - Permissions by config file
-  - https://github.com/PaulBratslavsky/strapi-example-user-permissions-policy /wip
 
 - https://github.com/eigengrau-ch/strapi-plugin-cookie-manager /202309/js
   - Manage categorized cookies directly within the Strapi CMS admin panel at one place and use the predefined plugin API to provide GDPR consent cookies.
@@ -709,6 +725,10 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/ShahriarKh/strapi-content-type-explorer /202307/js
   - plugin that visualizes your content types and their relationships like an ERD (Entity Relationship Diagram).
 
+- https://github.com/node-vision/strapi-plugin-entity-relationship-chart /202310/js
+  - Strapi Plugin displays Entity Relationship Diagram of all models, fields and relations.
+  - this plugin was tested with stable Strapi - 4.0.6
+
 - https://github.com/TonyDeplanque/strapi-plugin-migrations /202309/js
   - If you want to initialize or update automatically your data in Strapi for all of your environments, this plugin is made for you.
 
@@ -749,13 +769,10 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/ComfortablyCoding/strapi-plugin-io /MIT/202311/js
   - https://strapi-plugin-io.netlify.app/
   - A plugin for Strapi CMS that provides the ability for Socket IO integration
+
 - https://github.com/larsonnn/strapio /202201/js
   - Socket. IO Implementation for Strapi
   - module for working with socket.io with predefined rules. StrapIO will look at Role permission on each action. StrapIO is looking for all roles which have access to the given contenttype and action type.
-
-- https://github.com/node-vision/strapi-plugin-entity-relationship-chart /202310/js
-  - Strapi Plugin displays Entity Relationship Diagram of all models, fields and relations.
-  - this plugin was tested with stable Strapi - 4.0.6
 
 - https://github.com/Four-Lights-NL/strapi-plugin-deepcopy /202312/ts
   - A strapi plugin providing a deep copy functionality for nested entities.
@@ -827,20 +844,26 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/alexdevmotion/strapi-faker /202008/js
   - Fill your strapi models with faker.js
 # starter
-- https://github.com/tldr-devops/startpack
-  - Selfhosted tech starter pack for development of new project or startup
-  - This is a basic setup of services for faster startup development. You can run it via docker-compose or docker swarm.
+- https://github.com/strapi-community/strapi-tool-dockerize /202311/js
+  - Easy add support for docker to your strapi project
+  - https://github.com/strapi-community/strapi-tool-deployify
+    - Easily deploy a Strapi Project to cloud platforms 
+    - Automatic - Creating apps, databases, setting up env variables
 
 - https://github.com/naskio/docker-strapi /202312/shell
   - Docker image for strapi version 4 
-  - https://github.com/strapi/strapi-docker /202208/js/v3
+  - https://github.com/strapi/strapi-docker /202208/js/v3/inactive
 
-- https://github.com/strapi-community/strapi-tool-dockerize /202311/js
-  - Easy add support for docker to your strapi project
+- https://github.com/tldr-devops/startpack /yml
+  - Selfhosted tech starter pack for development of new project or startup
+  - This is a basic setup of services for faster startup development. You can run it via docker-compose or docker swarm.
 
 - https://github.com/ExFabrica/strapi-plugin-awesome-help /202309/js
   - This plugin enable creation of contextual helps for your Strapi documents
   - [A Strapi V4 plugin from scratch to production | by exFabrica | Medium](https://medium.com/@exfabrica/a-strapi-v4-plugin-from-scratch-to-production-a6deeaf553de)
+
+- https://github.com/strapi/strapi-next-14-dashboard-demo /202311/ts
+  - Next 14 and Strapi Dashboard Example.
 
 - https://github.com/the-unknown/strapi4-react-boilerplate /202212/shell
   - This boilerplate will setup Docker container with React and Strapi 4. 
@@ -867,9 +890,6 @@ modified: 2023-12-15T19:30:23.094Z
   - https://turbostrapi.vercel.app/
   - The Strapi & Next.js Monorepo Starter
   - combining the powers of Strapi, Next.js, and Turborepo in a monorepo setup
-
-- https://github.com/ONLYOFFICE/onlyoffice-strapi /MIT/202211/js
-  - The app which enables the users to edit office documents from Strapi using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to Strapi
 
 - https://github.com/malgamves/modern-cms-apps-course-v2 /202306/js
   - Building Modern CMS Driven Web Applications with Next.js and Strapi
@@ -949,7 +969,7 @@ modified: 2023-12-15T19:30:23.094Z
   - POST stories. GET features.
   - https://github.com/EOS-uiux-Solutions/strapi
 
-## clients
+## clients-mobile/pc
 
 - https://github.com/shahednasser/strapi-react-native /202202/js
   - Code for Create a Notes App with Strapi and React Native

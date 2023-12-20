@@ -20,6 +20,18 @@ modified: 2023-03-18T17:53:25.909Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 为什么没有Proxifier的开源替代品？
+- https://twitter.com/mnixry/status/1737033830953795624
+- 这玩意全套可以商用的源码售价目前在15000左右
+- 最烦proxy，直接路由分流不好么？
+  - 有的情况下需要按进程分流
+- 网关按ip分流，结合域名分流。最简单.proxy十分头大
+- 不好做，没怎么见过开源社区研究 LSP/WFP，开源社区好像都在折腾 tuntap
+
 - ## 各家网站对 IP 的封禁策略都不一样，大陆用户真的很头疼。
 - https://twitter.com/LaiskyCai/status/1723152619739476078
   - 有的网站必须挂 warp 才行，比如 openai、strip 等。

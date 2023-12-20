@@ -11,6 +11,42 @@ modified: 2023-09-07T15:58:27.967Z
 
 - forums
   - [ipfs hypercore - Search / Twitter](https://twitter.com/search?q=ipfs%20hypercore&f=live)
+# discuss-stars
+- ## 
+
+- ## [Hypercore Protocol: Peer-to-peer data sharing | Hacker News_202205](https://news.ycombinator.com/item?id=31384268)
+- The issue I have with hypercore is that it's neither fully mutable, nor multiwriter.
+  - As far as I know, you can't fully have both(Because of the tombstone problem and source of truth issues), but either one individually can be implemented.
+  - True deletion, or multiwriter within one DB would have been nice to have.
+  - Other than that, it looks to be a great thing. 
+  - I think it is more practical than IPFS at the moment because IPFS lacks any top level concept of feeds or collections, just one giant DAG with random access.
+- The are working on multi-writer for Hypercore 10! https://github.com/hypercore-protocol/autobase
+
+- ## 💡 [Merklizing the key/value store for fun and profit | Hacker News_202306](https://news.ycombinator.com/item?id=36265429)
+- What’s worth mentioning is that IPFS is built on top of a data model named IPLD.
+  - If you are planning on doing your own experiments with Merkle tree and such, I can strongly recommend using IPLD as well. The IPLD project has standard libraries for a bunch of programming languages.
+  - The advantage of using IPLD is that you can use regular IPFS tooling to inspect the data and make backups/restores. Regardless of your desire to share the data over IPFS.
+
+- Wouldn't it be simpler to use a trie over the hashes instead? It seems to me like it would have the properties desired here. I think the parent/child rule described here might actually result in some kind of trie.
+  - The difference is that a trie over the hashes doesn't preserve lexicographical key ordering or support range queries, which are typically expected from key/value stores. But you're right - if you just need get / set / delete, you could just do that!
+
+- I read this with great interest. Sometimes technologies come around that make me seriously wonder if I should embrace them or continue on the path I’ve already designed.
+  - They include: CRDTs, PouchDB, hypercore, etc.
+  - What I currently have is my own, PHP-based implementation of essentially a history of “collaborative documents that evolve through time” — with each document having one machine as a source of truth
+- I think that 🤼🏻 syncing and CRDTs (y.js and automerge) can be excellent for collaborating on documents, but not so great for chatrooms and smart contracts/crypto where order of operations matters. 
+  - For those, you can implement optimistic interface updates but when conflicts (rarely) arise, your interface may roll back changes it displayed. This is especially true after a netsplit(网络断裂).
+  - I thought about using PouchDB but the thing is that CouchDB is an extra process people have to run and we want our stuff to run anywhere Wordpress does. Ditto for hypercore. These are great technologies, but it seems what we have is great for fhe very reason tht it’s in PHP - still the most widely supported commodity hosting environment in the world by far. 
+- 👉🏻 Automerge and y.js are absolutely great for collaboration on blocks of text or structured documents (or anything that can be modelled as such). 
+  - They are purely for conflict resolution, so if you don't have conflicts, or your use case manages to make the impact of conflicts negligible, don't bother with them. 
+  - They are very easy to implement if you do need them - the barrier most people face is understanding them enough to decide if and how to use them. Just keep it simple.
+- 👉🏻 Hypercore is a p2p solution for synchronising streams of data. It can be used raw, for streaming updates, or you can use the abstractions over it to keep filesystems or databases in sync. 
+  - There's a significant difference between the decision about hypercore vs CRDTs - hypercore can potentially remove the need for you to maintain and operate a specific server, allowing all clients to be servers. This also reduces the dependency of the user on infrastructure - your servers, the Internet, a friendly government, etc. If that might be useful to you or your users, it's worth considering. 
+  - Unlike PouchDB, it's a low level abstraction that can open up really new ways of thinking about shared information. PouchDB by contrast is 'just' a p2p syncing database. 
+  - Also important: hypercore doesn't require its own process - you can roll it into your code directly, or have it in a separate process if you want.
+  - Of all the things you mentioned, I'd say that hypercore is the only one worth diving into regardless of whether you seem to need it. You'll be a better systems designer and engineer once you understand it, and will have an expanded landscape of possibility when you can leverage it.
+
+- Question:since doing this requires hashing your entire tree, what are the implications of doing this hashing operation on possibly millions of entries (which I'm estimating is the scale at which comparing linearly really start being noticably slow)?
+  - The merkle tree is persisted, and updating it is only log(n). You only have to "hash 2n elements" once, and then incrementally maintain it. It's negligible overhead for free log(n) diffing.
 # discuss-collab
 - ## 
 
@@ -45,15 +81,6 @@ modified: 2023-09-07T15:58:27.967Z
   - The performance issues that come along with running OrbitDB/IPFS on a machine, let alone a mobile device, are still significant unfortunately. Adding Electron on top of what is already a heavy-weight application is probably going to make people's devices go brrrrr all the time. Not only that, but I would argue that for instant communication this stack might not be the best idea in terms of performance in first place.
   - Besides, the way IPFS has been (and still keeps) changing their dozens of libraries doesn't make development particularly smooth either. OrbitDB is always behind the latest IPFS version due to all these changes that are being introduced. 
   - The integration with Tor is another thing that will likely be a time drain for developers, as other people here already pointed out, and that will lead to even more performance issues down the line.
-
-- ## [Merklizing the key/value store for fun and profit | Hacker News_202306](https://news.ycombinator.com/item?id=36265429)
-- I think that syncing and CRDTs (y.js and automerge) can be excellent for collaborating on documents, but not so great for chatrooms and smart contracts / crypto where order of operations matters. For those, you can implement optimistic interface updates but when conflicts (rarely) arise, your interface may roll back changes it displayed. This is especially true after a netsplit.
-  - I thought about using PouchDB but the thing is that CouchDB is an extra process people have to run and we want our stuff to run anywhere Wordpress does. Ditto for hypercore.
-- Automerge and y.js are absolutely great for collaboration on blocks of text or structured documents (or anything that can be modelled as such). They are purely for conflict resolution, so if you don't have conflicts, or your use case manages to make the impact of conflicts negligible, don't bother with them. They are very easy to implement if you do need them - the barrier most people face is understanding them enough to decide if and how to use them. Just keep it simple.
-- Hypercore is a p2p solution for synchronising streams of data. It can be used raw, for streaming updates, or you can use the abstractions over it to keep filesystems or databases in sync. 
-  - There's a significant difference between the decision about hypercore vs CRDTs - hypercore can potentially remove the need for you to maintain and operate a specific server, allowing all clients to be servers. This also reduces the dependency of the user on infrastructure - your servers, the Internet, a friendly government, etc. If that might be useful to you or your users, it's worth considering. Unlike PouchDB, it's a low level abstraction that can open up really new ways of thinking about shared information. PouchDB by contrast is 'just' a p2p syncing database. 
-  - Also important: hypercore doesn't require its own process - you can roll it into your code directly, or have it in a separate process if you want.
-  - Of all the things you mentioned, I'd say that hypercore is the only one worth diving into regardless of whether you seem to need it. You'll be a better systems designer and engineer once you understand it, and will have an expanded landscape of possibility when you can leverage it.
 
 - ## I am struggling to get libp2p to holepunch out of the box in the first place so it seems few massive steps are skipped here! 
 - https://twitter.com/ArNazeh/status/1584522803449323520
@@ -268,6 +295,46 @@ modified: 2023-09-07T15:58:27.967Z
 - P2P content blossoms(兴盛) at creative edge, while Solid content offers fair authenticity.
 # discuss
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [A Hypercore P2P innovation could bring more privacy to IPFS | Hacker News_202201](https://news.ycombinator.com/item?id=30072543)
+- Hypercore (Dat) doesn't use content hashes, it uses ed25519 public keys (which work more like IPNS—the data they refer to can be changed). 
+  - The discovery hash is a hash of the public key, which isn't sent to the peer as part of the request, it's looked up on the data provider's side using the discovery hash. 
+  - If the provider doesn't already know the public key then it can't negotiate a successful connection since all subsequent messages are supposed to be encrypted with that key.
+- If the public key (or IPFS content ID) were sent to the peer as part of the request then one could learn the content IDs for "interesting" discovery hashes simply by pretending to have the content, announcing the discovery hash to the network, and waiting for peers to show up and request the data by its content ID. At that point you could request the full content from other peers using the content ID.
+- One could perhaps employ the Hypercore/Dat protocol for IPFS using the content ID for encryption instead of a public key, but it would be critical to avoid revealing the content ID itself as part of the request. Only the discovery hash can be sent to the peer. It might be safer to negotiate a session key with something like SRP, with the content ID as the "password".
+
+- Hypercore/DAT is a really nice bit of tech for anyone who hasn't seen it. It's the basis for Beaker Browser. Or at least an older version is.
+
+- I implemented a slightly different method for my prototype multimedia chat application (text/images/audio/video) over IPFS. I used an envelope format for permissioned encrypted content
+
+- ## 🕹️ [Hypercore protocol: a distributed (P2P) append-only log | Hacker News_202012](https://news.ycombinator.com/item?id=25407193)
+- The hyper* world seems to be very fragmented right now. 
+  - There is the dat project, which started 2013 and shares files between computers p2p. 
+  - In may 2020 the dat protocol was renamed to the hypercore protocol and dat "will continue as the collective of teams and projects that have evolved from the original Dat CLI project.". 
+  - The tech looks pretty cool, but the vast amount of different projects makes it difficult to grasp. 
+
+- Quick question: it's a distributed log, how do you establish consensus to keep its entries ordered? If it's not ordered, then it's a set, not a log. Still cool, but not as impressive.
+  - Only one person using one device is allowed to add to the log. Each entry contains the hash of the entry before it (including that entry's field where it contains the previous hash, etc.). If you add entries that have a conflicting ordering, you're assumed to be a bad actor and get blocked by the network.
+  - If you want to have multiple devices or multiple people editing the same data, you need to give them all a separate log and use some kind of CRDT system to combine them
+- So, there's no consensus because writes are coming from a single process. I must say, I'm a little bit disappointed : that's not the world-changing algorithm I was hoping for.
+  - They're working on it, with a rather elegant solution: https://www.datprotocol.com/deps/0008-multiwriter/
+
+- It's pretty nice to see that there are now several P2P techs.
+  - This one seems pretty good, but unless you have a single client and unless the protocol is defined to do a single thing and do it well, I can't see it thrive.
+  - For example bittorrent is a good tech because it only does one thing and users can understand it. Same for IPFS. Softwares like limewire or kazaa thrived because they were simple enough to use. Same goes for protocols.
+- In my view, decentralization requires:
+  * a client that runs on user's hardware
+  * a p2p database and filesystem, with this kind of append-only log and verification, that runs on the client
+  * server can still accelerate access access time
+- The only problem is being able to attract users and compete with popular platforms. If such a protocol+software can attract users who want a "privacy-aware" alternative to platforms like facebook, I could see it work.
+
+- A related thing I'd love to see take off is companies offering log-based interactions instead of HTTP APIs only. Some apps are such a poor fit for HTTP that you end up with a convoluted mess of web-hooks as soon as some elements of async appear. Obviously, these web-hook contraptions are always home-grown and offer nothing near what you get with a proper log system.
+
+- Has anyone used this enough to share perf characteristics? This is coming up twice today, but I’m interested in using a P2P append only log as a total order broadcast for use with (my day job) Fluid Framework. Decentralizing the broadcast would make Fluid more aligned with the Ink and Switch essays about offline first.
 
 - ## We're happy to announce that NLnet will be funding Hyper Hyper Space development in the near future
 - https://twitter.com/The_lolness/status/1496088630808485890

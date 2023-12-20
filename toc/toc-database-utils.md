@@ -86,7 +86,7 @@ modified: 2023-08-23T17:15:46.484Z
   - Distributed single writer key/value store
   - Uses a rolling hash array mapped trie to index key/value data on top of a hypercore.
 
-- https://github.com/holepunchto/autobase
+- https://github.com/holepunchto/autobase /MIT/202305/js
   - Autobase lets you write concise multiwriter data structures with Hypercore
   - https://github.com/lejeunerenard/autobase-event-bus
 
