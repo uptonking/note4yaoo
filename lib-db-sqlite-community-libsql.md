@@ -20,7 +20,13 @@ modified: 2023-10-28T17:31:26.535Z
 
 - ## 
 
-- ## 
+- ## 🔀 Here's the same ergonomic libSQL fast local reads with transparent remote writes in JavaScript. 
+- https://twitter.com/penberg/status/1737459047392006517
+  - You write your application like you'd be using a local database, but get your writes delegate to a remote server (where they're durable and replicated).
+- how do you resolve write conflicts in turso? Or do you try to avoid them altogether?
+  - There’s always a single writer at a primary server so no conflicts
+  - Writes are not async in the model we have. 
+  - They're always going to one and same primary server, which means there are no concurrent updates that would happen during a network partition.
 
 - ## Browser -- do you mean database server? libSQL in WAL mode compiles to #Wasm now. Lots of amazing stuff coming soon
 - https://twitter.com/sarna_dev/status/1729404441495814244

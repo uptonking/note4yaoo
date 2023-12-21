@@ -74,6 +74,13 @@ modified: 2023-12-19T17:31:23.259Z
 - https://github.com/marmelab/ra-data-google-sheets /202010/js
   - A data provider for react-admin, based on Google Sheets
 
+- https://github.com/roldaojr/ra-data-pouchdb /LGPLv3/202204/js/inactive
+  - PouchDB/CouchDB data provider for [react-admin](https://github.com/marmelab/react-admin)
+  - This data provider takes a PouchDB object as input, then creates a client-side data provider around it.
+  - Requires PouchDB-find plugin.
+  - working: pagination, sorting(requires secondary indexes)
+  - not working： filtering by column，full text search
+
 - https://github.com/josx/ra-data-feathers /js
   - Feathers data provider for react-admin. A feathers rest client for react-admin
   - https://github.com/kfern/feathers-aor-test-integration

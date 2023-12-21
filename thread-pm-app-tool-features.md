@@ -11,6 +11,15 @@ modified: 2021-10-29T15:05:07.897Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Spatial browser prototypes are always fun to make, but I am still not convinced
+- https://twitter.com/raunofreiberg/status/1737541893028741498
+- overlapping windows a mistake, actually
+- I think the main problem is browser content being too small whenever you zoom out.
+
 - ## 互联网拼车服务真不错，没想到一个月 8 块钱也能用上富家子弟专享的 UU 加速器……
 - https://twitter.com/xxm459259/status/1647513870012141570
   - 合租通知的群

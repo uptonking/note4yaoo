@@ -38,8 +38,7 @@ modified: 2022-08-21T10:19:58.756Z
 
 - alternatives & ideas
   - luckysheet/univer
-  - ag-grid
-  - handsontable
+  - ag-grid, handsontable
   - tinybase
   - mobile
 # dev-pivot-views

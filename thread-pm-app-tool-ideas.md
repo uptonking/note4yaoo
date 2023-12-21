@@ -21,22 +21,41 @@ modified: 2022-11-07T10:58:24.512Z
     - list-pin
     - 复制列表/表格数据
     - 表格行列数统计
-  - 数据整理
-    - 各级统计局
-    - 国外统计局
-    - 权威公开数据
+
+- 大而全的产品如google/notion使用方便，但特定场景的解决方案仍然有生存空间
+  - linear，挑战jira
+  - zendesk，客户帮助平台
+  - roadmap/feedback, canny
+# datable/数据整理
+- 政府数据
+  - 各级统计局
+  - 国外统计局
+
+- 经典数据集
+  - 权威公开数据
+
+- 各大公司技术博客
+
+- 中科院PubScholar公益学术平台
 
 - color-mode-converter
   - rgb-hsl-hsv/b-contrast
-# social-media-sharing
+# sharing
+- 规避版权问题的内容讨论平台
+  - 科技分享，类似hacker-news
+  - 产品讨论，类似product-hunt
+  - 打分评论，类似豆瓣电影与音乐
+  - 论坛圈子，类似贴吧/reddit，支持一个url在不同板块重复讨论、多次讨论
+
 - 分享设备的dock栏
 
 - 分享有设计感的网站、主页
-# extensions
+# integrations
 - doscord message saver
   - [Discord Notebook](https://chrome.google.com/webstore/detail/discord-notebook/jeeilfacglnffgflhgmciaegglekjlod?hl=en)
   - the extension will save your messages locally in your browser storage.
-  - 因为discord前端升级而不可用了
+  - 因为discord前端升级而不可用了，要等待作者更新
+  - 可参考 betterdiscord 的 favorite media 插件
 # saas
 
 # tools/productivity

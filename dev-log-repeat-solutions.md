@@ -63,7 +63,7 @@ modified: 2021-07-20T13:50:23.433Z
 - 💎 editor/WYSIWYG
   - collaborative, block-style, virtualized-render
   - modular/extensible; collaborative; easy-pivotable
-  - 👉🏻 prosemirror, tiptap, quill/typewriter, slate, lexical, textbus; cms
+  - 👉🏻 prosemirror/tiptap, quill/typewriter, slate, lexical; cms
   - block-editor with slash-menu/backlinks
   - pdf
 - 💎 excel/data-grid
@@ -74,9 +74,8 @@ modified: 2021-07-20T13:50:23.433Z
   - scripting/themeable/canvas/viztable/apache-arrow
   - ~~excel-like~~/~~headless~~
 - 💎 collab
-  - crdt, append-only-log, eav
   - crdt: logux, automerge, yjs, rga, fluid-framework, hlc
-  - log-based: p/couchdb, kappa-db
+  - log-based: p/couchdb, kappa-db, event-sourcing
   - eav: triplitdb
 
 ## solutions: inter(re)active knowledge-base/wiki

@@ -10,15 +10,15 @@ modified: 2021-09-20T18:01:39.932Z
 # regular-topics
 
 - prosemirror slate
-  - typewriter
+  - quill typewriter
   - lexical
 
 - luckysheet/univer ag-grid
   - tanstack-table
   - handsontable
 
-- yjs fluid-framework
-  - automerge
+- automerge yjs
+  - fluid-framework
 
 - forums
   - https://cnodejs.org
@@ -59,8 +59,6 @@ modified: 2021-09-20T18:01:39.932Z
 - [curvenote(MIT) blog](https://curvenote.com/blog)
 
 - [ag-grid(MIT) blog](https://blog.ag-grid.com/)
-
-
 # product
 - [tiptap(MIT) blog](https://tiptap.dev/blog)
 - [tinymce(LGPL) blog](https://www.tiny.cloud/blog/category/engineering/)

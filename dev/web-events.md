@@ -427,7 +427,7 @@ function getOffsetX(event) {
 
 - window.outerWidth是整个浏览器窗口的大小，包括标题栏、状态栏、developer窗口
 - window.innerWidth和innerHeight是DOM视口的大小，包括内容、滚动条、边框，不包括developer窗口的宽度
-  - 会导致handsontable的滚动条显示不出来  
+  - 会导致handsontable的滚动条显示不出来
 - document.documentElement.clientWidth：不包括滚动条，但包括边框
 - document.body.clientHeight：不包括整个文档的滚动条，也不包括 `<html>` 元素的边框，也不包括 `<body>` 的边框和滚动条
 - `documentElement` 是文档根元素，就是 `<html>` 标签，body就是 `<body>` 标签了，这两种方式兼容性较好，可以一直兼容到IE6

@@ -14,6 +14,24 @@ modified: 2023-07-19T10:48:24.003Z
 
 - ## 
 
+- ## 
+
+- ## MySQL perf folks: I have a column that is TEXT, and my queries to find items where that field is null are dog slow (like 30s).
+- https://twitter.com/wesbos/status/1737568828022800426
+  - How do I speed this up? 
+  1. I can't add an index, because there is no length
+  2. I can't use varchar because the contents are larger than 16383
+- wow lots of good replies! A summary:
+  1. Use partial indexes - which wont index the entire text, but will tell  me if it's null quickly [using prisma not supported]
+  2. use fulltext index - will index longer text with a bunch of added search features [hit annoying issue]
+  3. Add a boolean column + hook on item update. annoying, but fast. 
+
+- Here I am! If you only need to check for null/not null, you could add a functional index on that expression. Then you don't have to maintain a second column or change your queries. You can even add that as a part of a compound index, to make it more selective.
+  - looks like Prisma doesn't support it - gonna go with the boolean approach
+- If Prisma supports generated columns you could do that as well. That way you don't have to maintain state, the database will do it
+
+- You can use a generated column that is stored. It will auto update itself anytime you change the text column.
+
 - ## TIL: In SQL, looking for "all rows without a specific value" will not include rows containing NULL 
 - https://twitter.com/damienalexandre/status/1732391868132913226
   - That's really unexpected behavior on all engines: #mysql, #postgresql...

@@ -66,7 +66,6 @@ modified: 2023-12-15T17:04:36.589Z
 - ## [Can't install strapi - Questions and Answers - Strapi Community Forum](https://forum.strapi.io/t/cant-install-strapi/33500)
 - TypeError: Cannot read properties of undefined (reading 'addBreadcrumb')
 
-
 ```shell
 # cd to your project and
 npm install --legacy-peer-deps
@@ -75,12 +74,16 @@ npm run develop
 ```
 
 - 
+
 # discuss
 - ## 
 
 - ## 
 
-- ## 
+- ## [Can Strapi be used as a no/low-code solution for backend? : Strapi_202204](https://www.reddit.com/r/Strapi/comments/ubbdqx/can_strapi_be_used_as_a_nolowcode_solution_for/)
+- Yes. Strapi provides you CRUD endpoints for every entity from the box. There is zero code to create entities. You can create it using admin panel
+
+- You can generate page layouts with dynamic zones.
 
 - ## [What do you guys use for a backend? I've been considering Laravel but it seems like overkill for a simple project. : reactjs_202302](https://www.reddit.com/r/reactjs/comments/117qi4z/what_do_you_guys_use_for_a_backend_ive_been/)
 - You may be interested in AdonisJS. Very similar to Laravel (heavily inspired by it), has all the nice DB migration setup, etc and plays very well with React for the bits where you need it.

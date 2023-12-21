@@ -12,6 +12,18 @@ modified: 2023-04-12T08:40:44.109Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## There are several ways to upload files, like
+- https://twitter.com/ReactAdmin/status/1737770310496075923
+  - Sending files as Base64 string
+  - Using multipart/form-data
+  - Sending files to a third party service e.g. CDN, etc.
+- [React-admin - Data Fetching](https://marmelab.com/react-admin/DataProviders.html#handling-file-uploads)
+  - The Handling File Uploads section of our doc has example code for all 3.
+
 - ## It's such a shame that WebRTC didn't get wider adoption in fields other than audio/video conferencing.
 - https://twitter.com/Horusiath/status/1712091176487293222
   - But tbh. it's its own fault - it's overcomplicated on many fronts and basically designed to drive you into a corner and repent at some point.

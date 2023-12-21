@@ -31,17 +31,12 @@ modified: 2023-11-12T06:25:03.307Z
 
 - https://github.com/FancyGrid/awesome-grid
   - A curated list of grid(table) libraries and resources that developers may find useful.
-
-- https://github.com/hughfenghen/spreadsheet-demo
-  - 电子表格从调研到demo的杂乱记录
-  - SpreadJS时间较长，基本上对标Excel，功能比Hot丰富。比如对公式（Hot 处于alpha版，不支持自定义）、分组（Hot不支持）、图表（Hot需要继承第三方图表）的支持。
 # excel
-- https://github.com/dataspread/dataspread-web
+- https://github.com/dataspread/dataspread-web /202105/后端java/js/inactive
   - http://dataspread.github.io/
   - DataSpread is a spreadsheet-database hybrid system, with a spreadsheet frontend, and a database backend. 
   - Thus, DataSpread inherits the flexibility and ease-of-use of spreadsheets, as well as the scalability and power of databases.
   - A flexible hybrid data model to represent spreadsheet data within a database
-  - 后端 java
   - 前端依赖 handsontable.v6
 
 - https://github.com/dataspread/spreadsheet-benchmark

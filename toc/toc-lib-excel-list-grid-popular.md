@@ -106,6 +106,13 @@ modified: 2022-08-21T10:02:27.788Z
   - x-spreadsheet/wolf: class类和函数式都有
   - cheetah-grid(ts): 基于class类继承
 # list-grid-div
+- tanstack-table /MIT/11.6kStar/202202/ts
+  - https://github.com/tannerlinsley/react-table
+  - https://react-table.tanstack.com/
+  - Hooks for building fast and extendable tables and datagrids for React
+  - React Table is a headless utility, which means it doesn't supply any actual UI elements.
+  - https://github.com/tannerlinsley/react-virtual
+
 - ag-grid /MIT/6.4kStar/202202/ts/NoDeps
   - https://github.com/ag-grid/ag-grid
   - https://www.ag-grid.com/example/
@@ -122,12 +129,18 @@ modified: 2022-08-21T10:02:27.788Z
   - [Why is the minified bundle so large?](https://github.com/ag-grid/ag-grid/issues/1459)
     - Main reason IMO: the grids has no dependencies
 
-- tanstack-table /MIT/11.6kStar/202202/ts
-  - https://github.com/tannerlinsley/react-table
-  - https://react-table.tanstack.com/
-  - Hooks for building fast and extendable tables and datagrids for React
-  - React Table is a headless utility, which means it doesn't supply any actual UI elements.
-  - https://github.com/tannerlinsley/react-virtual
+- handsontable v6.2.2 /13.8kStar/MIT~Paid/201903/js
+  - https://github.com/handsontable/handsontable
+  - https://handsontable.com/
+  - 基于table标签实现
+  - 依赖numbro, moment, pikaday
+  - a JS HTML5 data grid with spreadsheet look & feel
+  - free for all non-commercial purposes since 7.0
+  - 不支持协作
+  - 支持undo，[Q: Possible to combine multiple actions into single undo/redo step?](https://github.com/handsontable/handsontable/issues/7324)
+  - [Handsontable drops open source for a non-commercial license_201903](https://github.com/handsontable/handsontable/issues/5831)
+    - https://github.com/handsontable/handsontable/releases/tag/7.0.0
+    - [Handsontable v7 and later versions are fully commercial so it really depends on your case](https://twitter.com/handsontable/status/1164198101726433282)
 
 - luckysheet /4.5kStar/MIT/202202/js/vanillajs
   - https://github.com/dream-num/Luckysheet
@@ -986,31 +999,6 @@ modified: 2022-08-21T10:02:27.788Z
   - https://observablehq.com/@analyzer2004/svgtable
   - An SVG Table with sticky rows, columns and many other features.
 # list-grid-table-tr-td
-- handsontable v6.2.2 /13.8kStar/MIT~Paid/202007/js
-  - https://github.com/handsontable/handsontable
-  - https://handsontable.com/
-  - 基于table标签实现
-  - 依赖numbro, moment, pikaday
-  - a JS HTML5 data grid with spreadsheet look & feel.
-  - free for all non-commercial purposes since 7.0
-  - 不支持协作
-  - 支持undo，[Q: Possible to combine multiple actions into single undo/redo step?](https://github.com/handsontable/handsontable/issues/7324)
-  - [Handsontable drops open source for a non-commercial license_201903](https://github.com/handsontable/handsontable/issues/5831)
-    - https://github.com/handsontable/handsontable/releases/tag/7.0.0
-    - [Handsontable v7 and later versions are fully commercial so it really depends on your case](https://twitter.com/handsontable/status/1164198101726433282). 
-    - If you want to fully integrate it with your software while maintaining the OSS license, then your only option is to use v6.2.2 - the last one released under the MIT license.
-  - forks
-    - https://github.com/swsvindland/opentable /202201/js/inactive
-    - https://github.com/rathbone-labs/jacksontable /201907/js/inactive
-    - https://github.com/lbobylev/jacksontable
-    - https://github.com/pingyuanChen/handsontable /inactive
-  - repos
-    - https://github.com/warpech/walkontable /MIT/201304/js
-      - This is a playground for next table view engine that will enable virtual rendering in Handsontable.
-      - This project is currently not maintained in this repo, but as part of Handsontable
-      - [Refactor Walkontable Selection rendering module_202304](https://github.com/handsontable/handsontable/pull/10265)
-        - The PR refactors and extends the Walkontable Selection rendering module for the ability to highlight the table's headers. The work presented here will be the basis for the navigation in headers
-
 - jspreadsheet-ce /6.4kStar/MIT/202305/js/单文件
   - https://github.com/jspreadsheet/ce
   - https://github.com/paulhodel/jexcel

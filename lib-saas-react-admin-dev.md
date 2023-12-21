@@ -47,6 +47,6 @@ modified: 2023-12-19T17:29:35.708Z
   - Material UI v5
   - React-router v6
 
-- v[3.0.0_201911](https://marmelab.com/blog/2019/11/20/react-admin-3-0.html)
+- [v3.0.0_201911](https://marmelab.com/blog/2019/11/20/react-admin-3-0.html)
   - we embraced modern React practices - including Hooks
 # more

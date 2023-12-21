@@ -26,6 +26,7 @@ modified: 2022-11-06T16:47:43.444Z
   - Update JSON documents using delta patches.
   - JSON-Patch (RFC6902) is a standard format that allows you to update a JSON document by sending the changes rather than the whole document.
   - JSON Patch plays well with the HTTP PATCH verb (method) and REST style programming.
+  - https://github.com/warpech/fast-json-patch-typescript-demo
 
 - https://github.com/typewriter-editor/json-patch
   - Immutable JSON Patch implementation based on RFC 6902 which adds operational transformation (OT) and last-writer-wins (LWW) support for syncing between client and server. 

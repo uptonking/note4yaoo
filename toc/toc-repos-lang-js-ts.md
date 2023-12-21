@@ -392,6 +392,13 @@ modified: 2021-05-14T15:04:55.849Z
   - platform for data monitoring and observability
   - written in pure react and go.
   - Datav is forked from @grafana, but changed a lot
+# ts
+- https://github.com/colinhacks/zod /MIT/202312/ts
+  - https://zod.dev/
+  - TypeScript-first schema validation with static type inference
+
+- https://github.com/narutosstudent/Zod-from-scratch /202312/ts
+  - Building zod from scratch to deepen my TypeScript knowledge.
 # ts-repos
 - https://github.com/julianshapiro/velocity
   - Accelerated JavaScript animation.

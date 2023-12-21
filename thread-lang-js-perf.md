@@ -73,7 +73,8 @@ modified: 2023-11-10T08:05:19.107Z
 
 - ## 
 
-- ## 
+- ## when you pay attention to memory usage in javascript (TL; DR: be careful with overusing spread operators)
+- https://twitter.com/vcapretz/status/1737575234247561465
 
 - ## 深拷贝 JSON.parse(JSON.stringify(obj1))
 - https://twitter.com/buaaxhm/status/1735484597159530650

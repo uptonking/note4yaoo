@@ -146,7 +146,7 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/manishkatyan/strapi-stripe /202307/js
   - Stripe Plugin for Strapi CMS
 
-- https://github.com/ComfortablyCoding/strapi-plugin-website-builder /202311/js
+- https://github.com/ComfortablyCoding/strapi-plugin-website-builder /MIT/202311/js
   - A plugin for Strapi that provides the ability to trigger website builds manually, periodically or through model events.
 
 - https://github.com/bass3l/strapi-provider-email-smtp /202204/js

@@ -15,7 +15,7 @@ modified: 2022-05-24T17:53:08.400Z
 https://meeting.tencent.com/p/9606972663
 #腾讯会议：960-697-2663
 
-# dev-features
+# dev-summary
 - dev-starter
   - css: open-props, glass-ui, 渐变字体
   - patterns: react, typescript
@@ -126,10 +126,10 @@ $$('[contenteditable]')
   - 参考 tanstack-query, localforage
 
 - 🤔 支持切换内存和异步数据源的示例
-  - tanstack-table server-side row model
+  - tanstack-table external data; ag-grid server-side row model
   - abstract-level, localforage
   - tupledb, tinybase
-  - tiddlywiki
+  - tiddlywiki, react-admin
   - falcor
 
 - collab-sync, partial-sync

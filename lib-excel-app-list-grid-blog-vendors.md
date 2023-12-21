@@ -251,7 +251,7 @@ ctx.fillText('中', 0, 0)
 
 - I’m curious how incremental updates fit into this? 
   - That's what I wonder about too. I imagine that a slow calculation would be fine if done once when the data is first loaded into the system. Once the results are in memory, any new data should only affect smallish subsets of cells.
-  - This is the approach our product Grist (https://www.getgrist.com) takes for its calculation engine. Keeping track of dependencies slows it down for the initial load, but beyond that, it only needs to calculate what's needed, so most updates are fast. Even though the engine literally evaluates user-defined Python code for every cell.
+  - 💡 This is the approach our product Grist (https://www.getgrist.com) takes for its calculation engine. Keeping track of dependencies slows it down for the initial load, but beyond that, it only needs to calculate what's needed, so most updates are fast. Even though the engine literally evaluates user-defined Python code for every cell.
 
 - 🎮 Looks very similar to ECS-style data storage used in video games. Have you looked at using opaque index-based IDs instead of references?
   - I've implemented ECS many times but I still have a hard time to see what you're referring to. What are the similarities?

@@ -7,13 +7,14 @@ modified: 2022-08-21T09:57:36.123Z
 
 # lib-excel-handsontable-docs
 
-# summary
+# guide
 
+# overview
 - rowHeights/colWidths能够设置各行/各列的高度/宽度的默认值，也是最小值
 - stretchH能使表格充满容器宽度，且各列水平均分
 
 - handsontable大小尺寸
-  - Handsontable by default fills its nearest parent element which has a defined `width` , `height` and the CSS `overflow` property set to `hidden` .
+  - Handsontable by default fills its nearest parent element which has a defined `width` ,  `height` and the CSS `overflow` property set to `hidden` .
     - Having that, you can expand your Handsontable to the window’s dimension and use the native scrollbars to navigate through the grid.
   - If you provide height only and decide to leave the width indefinite, then the spreadsheet will expand to the window’s full width (or any parent element with defined dimensions and `overflow: hidden` )
   - If you set only the table’s width, it won’t render properly until you use the `preventOverflow` option. 
@@ -58,14 +59,7 @@ modified: 2022-08-21T09:57:36.123Z
 
 - Currently the best way to style Handsontable is to use custom renderers.
 - Links/click events from custom renderers not working 
-
-# resources
-
-- docs
-  - https://handsontable.com/docs
-
 # Known limitations
-
 - It uses several dependencies
   - Our team follows the "proudly found elsewhere" principle which encourages us to make use of the great work done by other developers. 
   - numbro.js (handles numeric data)
@@ -78,10 +72,8 @@ modified: 2022-08-21T09:57:36.123Z
   - [cell is focusing, when focus in another input (modal)](https://github.com/handsontable/handsontable/issues/401)
   - [Issues with scrolling in a parent element](https://github.com/handsontable/handsontable/issues/3119)
   - [Fixing more columns than visible in the viewport breaks scrolling](https://github.com/handsontable/handsontable/issues/4259)
-  - [Rewrite custom borders to use SVGs insead of DIVs](https://github.com/handsontable/handsontable/issues/6467)
-
-# pieces
-
+  - [Rewrite custom borders to use SVGs instead of DIVs](https://github.com/handsontable/handsontable/issues/6467)
+# dev
 - handsontable分离了cell value的显示displaying和修改altering，renderer负责displaying，editor负责altering。
   - renderer是function，接受实际值，返回html
   - editor较复杂，是class，负责处理输入及数据验证
@@ -157,7 +149,7 @@ modified: 2022-08-21T09:57:36.123Z
 
 - 内置9种cellTypes
 
-``` 
+```
 text for Handsontable.cellTypes.text
 numeric for Handsontable.cellTypes.numeric
 checkbox for Handsontable.cellTypes.checkbox
@@ -189,7 +181,7 @@ handsontable for Handsontable.cellTypes.handsontable
 
 - handsontable基本用法
 
-``` js
+```js
 var container1 = document.getElementById('example1'),
   settings1 = {
     data: data1
@@ -240,69 +232,4 @@ hot1.render();
   - copy&paste **暂不支持** 样式，只支持字符串
   - checkbox copy之后是true
   - linux 不能使用ctrl多选
-
-# changelog
-
-- 7.0.0-20190306
-  - Starting with version 7.0.0, there is only one Handsontable, as Handsontable Pro has been merged with Handsontable Community Edition.
-  - Handsontable is now "source-available" instead of "open source". 
-  - **The MIT license has been replaced with custom, free for non-commercial license**.
-  - Removed the deprecated selectCellByProp method
-  - Added the possibility to declare the table’s width/height using relative values (%, vh, vw, rem, em).
-    - https://github.com/handsontable/handsontable/issues/5749
-  - Added the beforeTrimRows and beforeUntrimRows
-  - Refactored the following classes to ES6 
-    - BaseEditor
-    - AutocompleteEditor
-    - HandsontableEditor
-    - SelectEditor
-    - TextEditor
-    - Walkontable -> Event
-    - EditorManager
-    - MultiMap
-    - TableView
-    - DataMap
-- 6.2.2-20181219
-  - Updated babel to 7.x
-  - Corrected the CSS property assignment to zero from 0 to '0'
-- 6.2.0-20181114
-  - Added the Korean, Latvian language support
-  - Updated the TypeScript definition file for ColumnSorting, MultiColumnSorting, beforeColumnMove
-  - Refactored the columnSorting plugin to be reusable with the multiColumnSorting plugin
-  - Refactored the multiColumnSorting plugin to use the columnSorting plugin
-- 6.1.0-20181017
-  - Moved the fixedRowsBottom functionality to Handsontable CE
-  - Introduced a new functionality to the Copy/Paste plugin. From version 6.1.0, it supports the text/html data type alongside text/plain
-- 6.0.0-20180927
-  - This release contains changes to the ColumnSorting plugin exclusively
-  - refactored and rewrote parts of the ColumnSorting plugin in order for it to work seamlessly with the new MultiColumnSorting plugin
-  - Added a new plugin - MultiColumnSorting
-  - Added a possibility to disable the action of sorting by clicking on the headers, using the headerAction option
-- 5.0.0-20180711
-  - Refactored the Custom Borders plugin
-    - added new methods such as getBorders, setBorders and clearBorders
-  - Added an ability to disable Byte Order Mark (BOM) while exporting table to the CSV file. 
-- 4.0.0-20180613
-  - Changed the default values for the following configuration options
-    - autoInsertRow (was: true, is: false)
-    - autoWrapCol (was: false, is: true)
-    - autoWrapRow (was: false, is: true)
-  - Updated our number-handling dependency, Numbro to the latest version
-- 3.0.0-20180516
-  - Column Sorting plugin is over the first stage of refactoring
-- 2.0.0-20180411
-  - Rewritten the Search and Custom Borders plugins to ES6.
-  - Added the beforeContextMenuShow hook, triggered within the Context Menu plugin
-  - Added extra parameters for the beforeFilter and afterFilter hooks
-  - The corresponding Handsontable CE version is 2.0.0.
-- 1.18.0-20180314
-  - Removed the mobile editor from the repository. After this version, a standard editor will be used when using mobile devices
-  - Added a cellProperties argument for the beforeValueRender hook.
-- 1.14.0-20170912
-  - Since version 1.14.0, it is required to pass a valid Handsontable Pro license key in the settings object under the licenseKey property
-  - The corresponding Handsontable CE version is 0.34.2.
-- 1.11.0-beta1-20170517
-  - Migration from Traceur to Babel. We're now using Babel to transpile our code.
-- 1.0.0-20160120
-  - Backward incompatible change 
-  - Prevent displaying the dropdown header buttons in higher levels of headers (for example, when using the nested headers plugin).
+# more

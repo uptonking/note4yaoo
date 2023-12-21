@@ -63,9 +63,10 @@ modified: 2022-08-21T10:37:01.349Z
   - Data Grid component with Mantine UI and react-table v8.
   - 样式非常友好
 
-- https://github.com/bgrins/data-ui-tests
+- https://github.com/bgrins/data-ui-tests /202303/js
   - https://bgrins.github.io/data-ui-tests/
   - benchmarks with vanilla-table/handsontable, revo-grid
+
 - https://github.com/ganeshmani/react-ag-data-grid
   - https://react-ag-data-grid.vercel.app/
   - Using ag-grid-react in React: Guide and Alternatives

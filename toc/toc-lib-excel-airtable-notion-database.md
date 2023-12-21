@@ -149,7 +149,7 @@ modified: 2022-08-21T10:02:05.129Z
   - https://github.com/nocobase/nocobase
   - https://www.nocobase.com/
   - [源码安装](https://docs-cn.nocobase.com/welcome/getting-started/installation/git-clone)
-  - 易扩展的开源无代码开发平台。
+  - 易扩展的开源无代码开发平台
   - NocoBase is a scalability-first, open-source no-code/low-code development platform.
   - 后端依赖 koa、sequelize.v6
   - 前端依赖 umi、antd、g2plot、ahooks、dnd-kit、formily、marked、react-iframe、react-quill、react-router5
@@ -165,7 +165,7 @@ modified: 2022-08-21T10:02:05.129Z
   - Everything is a plugin, all new features can be implemented by developing and installing plugins
   - [change license of plugins-AGPLv3_20230111, v0.8.1 > v0.9.0](https://github.com/nocobase/nocobase/pull/1350)
 
-- focalboard /10.3kStar/src-AGPL & bin-MIT/202203/ts/go
+- focalboard /10.3kStar/src-AGPL & bin-MIT/202203/ts/go/squirrel-sql-builder
   - https://github.com/mattermost/focalboard
   - https://www.focalboard.com/
   - 前端webapp依赖 @reduxjs/toolkit、@tippyjs/react、draft-js、@fullcalendar/react、imagemin-svgo、marked、moment、nanoevents、react-dnd.v14、react-hot-keys、react-intl、react-router-dom.v5
@@ -208,7 +208,8 @@ modified: 2022-08-21T10:02:05.129Z
   - https://github.com/gristlabs/grist-core
   - https://support.getgrist.com/
   - 表格不支持视图切换，支持各种widgets，类似dashboard
-  - 前端依赖backbone、knockout、bootstrap3、jquery、ace-builds、exceljs
+  - 前端依赖backbone-model/events、knockout-observable、jquery、bootstrap3、ace-builds、exceljs
+  - 后端依赖typeorm、express、grain-rpc
   - Grist is a modern relational spreadsheet. 
   - It combines the flexibility of a spreadsheet with the robustness of a database to organize your data and make you more productive.
   - Columns work like they do in databases.
@@ -226,6 +227,7 @@ modified: 2022-08-21T10:02:05.129Z
     - No specific access control.
     - No special server is needed for grist-static, it works straight from a CDN or any standard web server.
     - Grist spreadsheets by default store a lot of history in the `.grist` file. You can prune that history
+  - https://github.com/gristlabs/grist-ee
 
 - S2 /1.1kStar/MIT/202302/ts
   - https://github.com/antvis/S2
@@ -281,6 +283,10 @@ modified: 2022-08-21T10:02:05.129Z
   - https://notion-kanboard-mukul.netlify.app/
   - 暂不支持表格视图
 # notion-database-like
+- https://github.com/qwtel/sqlite-viewer-vscode /202304/ts/vscode
+  - A quick and easy SQLite viewer for VSCode, inspired by DBBrowser for SQLite and Airtable.
+  - [SQLite Viewer Web App](https://sqliteviewer.app/) /未开源
+
 - https://github.com/NotionX/react-notion-x
   - https://react-notion-x-demo.transitivebullsh.it/
   - Fast and accurate React renderer for Notion. TS batteries included.
@@ -340,9 +346,6 @@ modified: 2022-08-21T10:02:05.129Z
   - The front end uses a Gatsby static Jamstack client for dead easy customization and deployment.
   - The back end is a set of Serverless functions for making DDL calls to PostgreSQL and configuring Hasura GraphQL server.
   - The PostgreSQL database schemas can be accessed directly with psql for data import/export and integrations with other tools.
-
-- https://github.com/qwtel/sqlite-viewer-vscode
-  - A quick and easy SQLite viewer for VSCode, inspired by DBBrowser for SQLite and Airtable.
 
 - https://github.com/seatable/seatable /未开源
   - SeaTable is a spreadsheet/database like Airtable.

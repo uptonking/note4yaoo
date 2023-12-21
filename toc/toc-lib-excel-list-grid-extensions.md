@@ -34,19 +34,6 @@ modified: 2022-08-21T10:03:57.063Z
 - https://github.com/orgenic/orgenic-ui
   - create strong user interfaces with high quality web components.
   - 依赖stencil、tabulator-tables.v4
-# handsontable-extensions
-- https://github.com/laomu1988/handsontable /201910/js
-  - 在线表格编辑，可编辑公式、添加Object对象
-- https://github.com/handsontable/performance-lab
-  - JavaScript performance tests for Handsontable
-- https://github.com/hand-dot/table2md
-  - Convert from Excel-like table to markdown table.
-- https://github.com/orestisrodriguez/handsontable-multi-select
-  - Editor for handsontable that allows multiple select cells. Based on jshjohnson/Choices
-- https://github.com/WranglHQ/handsontable_vs_reactdatagrid
-  - a website to compare the performance of two excel-type React spreadsheet components: react-data-grid and handsontable
-- https://github.com/burnash/dataimport
-  - Simple JavaScript CSV Importer
 # excel-utils
 - https://github.com/dominictarr/excel-stream
   - A stream that converts excel spreadsheets into JSON object arrays.

@@ -139,6 +139,28 @@ modified: 2022-11-29T20:41:25.566Z
 
 - ## 
 
+- ## 
+
+- ## 💡 Hashes in version control systems have some great properties.
+- https://twitter.com/JungleSilicon/status/1737692594459824504
+- This is especially true if you persist a history, then rather than sending sequence numbers you can just send the hashes of the parent node(s). 
+  - This can work for both totally ordered/flattened histories and causal graphs.
+- You've probably seen @unisonweb , right? Content-addressed code?
+
+- what if the content is very large?
+  - The content? Or the number of changes? Systems like git use hashes for commits and can handle reasonably large file sizes.
+  - If you’re worried about storing all of those hashes - you can push the hashes to the protocol layer and not store them internally (there are tricks necessary if you don’t want to recompute the hashes for everything).
+  - Other version control systems like perforce are better at handling very large file sizes than git. I haven’t looked too deeply into why. (Specifically binary files & media content - in game dev it was the vcs of choice for a long time, not sure if it’s still the case)
+
+- ## Because there are no pre built solutions everyone's forced to roll their own sync engine!
+- https://twitter.com/LewisCTech/status/1737707633572986981
+- Yeah, I find it surprising how often I talk to companies that have built their own sync with a very simple conflict model and find they don’t need much more. Last-write-wins on fine-grained document state is often good enough in practice!
+- Conflict resolution / business logic is the real killer. (That’s part of why I like replicache’s approach; you’ve got more control over what constitutes a conflict and how conflicts etc are handled)
+
+- https://twitter.com/steveruizok/status/1737591179682730481
+- We built our own sync engine for tldraw. (I really didn’t want to, but we’re one of the few apps where we needed that last step of perf / control) 
+- I’m happy to pay it, as multiplayer is a big part of the tldraw story and will continue to be. I also looove our sync system and am happy that we’ll be providing something with as close a fit as possible to our core product when we inevitably sell/license it to tldraw user-devs.
+
 - ## It's astonishing to me how difficult it (still) is to design a syncable local-first data model.
 - https://twitter.com/andy_matuschak/status/1393620663257100288?s=12
   - I keep thinking I've found a decent way, then realizing its flaws

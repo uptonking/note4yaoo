@@ -34,7 +34,10 @@ modified: 2022-12-24T07:31:48.493Z
 
 - ## 
 
-- ## 
+- ## Wasm actually delivered a cross-platform and cross-architecture bytecode, a legitimate technical feat, 
+- https://twitter.com/paulgb/status/1737601018198732947
+  - and the best thing we can find to do with it is deploy code on x86-64 Linux instances in us-east-1.
+  - I kid, but I’m excited for our new Wasm overlords to save us from the OCI ecosystem
 
 - ## 用 WebAssembly 做 Faas 和 JavaScript 相比很大的问题是服务商应该没有源代码的。
 - https://twitter.com/fuxiaohei/status/1698143547193786694

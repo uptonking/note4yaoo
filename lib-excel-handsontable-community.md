@@ -1,18 +1,19 @@
 ---
-title: lib-excel-handsontable-dev
-tags: [handsontable, lib]
-created: 2020-08-06T05:37:04.641Z
-modified: 2022-08-21T09:57:32.451Z
+title: lib-excel-handsontable-community
+tags: [community, data-grid, handsontable]
+created: 2023-12-21T20:07:08.898Z
+modified: 2023-12-21T20:07:29.584Z
 ---
 
-# lib-excel-handsontable-dev
+# lib-excel-handsontable-community
 
-# pieces
+# guide
 
-# table vs div
+# discuss-stars
+- ## 
 
+- ## 
 # discuss
-
 - ## 
 
 - ## 

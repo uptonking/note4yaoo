@@ -347,6 +347,11 @@ modified: 2023-01-01T13:24:35.994Z
 - https://github.com/varianter/handbook
   - https://handbook.variant.no/
   - 依赖mdx2, instantsearch.js, algoliasearch, swr
+
+- https://github.com/tinper-acs/ac-search-panel /202303/js
+  - https://tinper-acs.github.io/ac-search-panel/
+  - 查询面板 SearchPanel
+  - 基于 bee-search-panel 进一步封装，主要将表单元素样式封装进组件内部
 # search-solutions
 - pagefind /677Star/MIT/202301/rust
   - https://github.com/CloudCannon/pagefind

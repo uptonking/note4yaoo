@@ -380,10 +380,6 @@ modified: 2022-10-23T14:57:23.473Z
   - #0F9D58
 - Excel Logo Color
   - #1D6F42
-- handsontable-blue
-  - #039be5
-- linaria-red 洋红
-  - #f15f79
 
 - https://github.com/keeev/brandcolors /201507
   - Brandcolors (LESS & Sass Variables) for all known brands like Facebook, Twitter, Kickstarter and many more.

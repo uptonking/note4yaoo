@@ -34,7 +34,7 @@ modified: 2023-11-28T14:48:45.910Z
   - office editor
   - encrypted elements: 有权限的用户或有密码的用户才可看到的数据
   - 文章段落查重，也可用于论文查重、评论查重
-  - 场景
+  - 视频笔记
     - 针对视频的笔记，如历史片/纪录片
     - 针对视频的搜索
   - pdf chat
@@ -269,6 +269,13 @@ modified: 2023-11-28T14:48:45.910Z
   - paid/$1499: 每人每年
   - Designer Component: $500
   - Pivot Table Addon: $1000
+
+- [outline wiki](https://www.getoutline.com/pricing)
+  - free: BSL
+  - vip1/$10: 10dev
+  - vip2/$80: 100dev
+  - vip3/$250: 200dev
+  - vipN/talk
 
 - [react-admin](https://marmelab.com/ra-enterprise/#pricing)
   - free: MIT

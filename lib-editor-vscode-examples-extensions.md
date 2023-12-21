@@ -56,7 +56,7 @@ modified: 2023-01-21T19:02:58.833Z
 # popular
 - https://github.com/bebo-dot-dev/jjs-vscode-toolbar
   - A VSCode toolbar and context menu extension
-  - Modifies the VSCode toolbar and context menu to include a few useful commands 
+  - Modifies the VSCode toolbar and context menu to include a few useful commands
 # utils
 
 # vscode-browser
@@ -64,6 +64,12 @@ modified: 2023-01-21T19:02:58.833Z
 - https://github.com/antfu/vscode-browse-lite /ts
   - Embedded browser in VS Code
 # extensions
+
+## ext-office
+
+- https://github.com/janisdd/vscode-edit-csv /MIT/202310/ts
+  - vs code extension to edit csv files with an excel like table ui
+  - If you don't have vs code to hand, you can use the online version at https://edit-csv.net
 
 ## ext-git
 

@@ -22,7 +22,7 @@ modified: 2023-10-30T14:22:08.767Z
     - an Excel plugin that is based on TACO framework
     - In TACO-Lens, users can visually inspect formula graphs
 
-- https://github.com/dataspread/dataspread-web /java
+- https://github.com/dataspread/dataspread-web /后端java/js
   - http://dataspread.github.io/
   - a spreadsheet-database hybrid system, with a spreadsheet frontend, and a database backend
   - DataSpread v0.1 is built using PostgreSQL and ZKSpreadsheet

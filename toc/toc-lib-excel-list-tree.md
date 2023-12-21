@@ -230,6 +230,10 @@ modified: 2022-08-21T10:02:41.845Z
   - https://dgreene1.github.io/react-accessible-treeview
   - A react component that implements the treeview pattern as described by the WAI-ARIA Authoring Practices.
   - Highly customizable through the use of the render prop and prop getter patterns.
+
+- https://github.com/tinper-acs/ref-tree-table /202312/js
+  - 单选多选的树表参照
+  - https://github.com/tinper-acs/ref-tree
 # tree-crud-operations
 - https://github.com/TheGuardianWolf/treepack
   - Pack tree nodes into a flat object and unpack them again!

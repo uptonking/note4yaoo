@@ -16,13 +16,16 @@ modified: 2022-08-21T10:19:58.757Z
   - Ensure prop getter utilities and column decorators can and will generate stable callbacks and values
 # changelog
 
-## v8.0.0-20220627
+## v8.0.0_20220627
 
 - https://github.com/TanStack/table/releases/tag/v8.0.0
 - https://github.com/TanStack/table/releases/tag/v8.0.0-alpha.0
   - 20220126
 
-## v7
+- rewritten in typescript
+- framework-agnostic
+
+## v7.0.0_20200311
 
 - ref
   - https://github.com/tannerlinsley/react-table/blob/master/CHANGELOG.md

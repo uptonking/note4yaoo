@@ -203,9 +203,7 @@ modified: 2021-05-23T16:34:42.918Z
   - Cons: there are almost none, except that this approach requires more time and system design skills
   - Pros: maximum flexibility, ability to control the grid with a single component, adjust separators, background, nested icons and more.
 
-# Why You Will Never Give Up Spreadsheets
-
-- [Why You Will Never Give Up Spreadsheets_2016](https://handsontable.com/blog/articles/2016/7/why-you-will-never-give-up-spreadsheets)
+# [Why You Will Never Give Up Spreadsheets_2016](https://handsontable.com/blog/articles/2016/7/why-you-will-never-give-up-spreadsheets)
 
 - The Positives
   - As the tools we use to create spreadsheets evolved, they have added features that allow for more than simply working with numbers and text. 

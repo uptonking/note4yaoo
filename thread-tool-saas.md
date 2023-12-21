@@ -14,7 +14,13 @@ modified: 2023-05-07T18:35:50.897Z
 
 - ## 
 
-- ## 
+- ## [What is the best Canny alternative ? : selfhosted_202203](https://www.reddit.com/r/selfhosted/comments/tcdhmb/what_is_the_best_canny_alternative/)
+- I have no idea what Canny's selling points are to be honest.
+- Astuto claims to be similar to Canny: https://github.com/riggraz/astuto
+- Chatwoot is nice and has basically the whole customer conversation journey included: https://github.com/chatwoot/chatwoot
+- Zammad goes into the direction of helpdesk conversations: https://zammad.org/screenshots
+- Helpy is similar: https://helpy.io/
+- Fider is rather about feature voting: https://github.com/getfider/fider#fider
 
 - ## postman 竟然不是本地运行的？UI好慢好卡。有么有更好的替代品呀？
 - https://twitter.com/river_leaves/status/1735646281488580659
