@@ -280,7 +280,10 @@ modified: 2023-10-29T02:23:35.064Z
 # discuss-couchdb
 - ## 
 
-- ## 
+- ## [CouchDB in multi-tenant environment_201006](https://user.couchdb.apache.narkive.com/Ht2wAdNw/couchdb-in-multi-tenant-environment)
+  - I am evaluating CouchDB to be used in multi-tenant environment and would like to know if there are ways to have design documents from one database to be used by a another database.
+
+- Currently this is not supported. CouchDB strives hard to avoid dependencies between databases. I think you'll have a more robust system in the long run if you keep a copy of the application in each client's database.
 
 - ## [Show HN: Open-source obsidian.md sync server | Hacker News_202308](https://news.ycombinator.com/item?id=37247767)
 - MongoDB was gaining a lot of traction, and I think because of that many people overlooked CouchDB.

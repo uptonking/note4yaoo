@@ -126,7 +126,9 @@ modified: 2023-06-03T14:43:26.987Z
 
 - ## 
 
-- ## 
+- ## Been pretty silent for a while. That's because `useQuery(...)` , while a great dev experience, has scaling problems.
+- https://twitter.com/tantaman/status/1737903783496032671
+  - So I'm scaling `useQuery` style hooks to 60fps response time when working with millions of items and keeping those queries up to date as data changes.
 
 - ## [Yjs simple provider](https://github.com/vlcn-io/cr-sqlite/pull/120)
   - Adds a yjs provider that persists to crsqlite and syncs through crsqlite.

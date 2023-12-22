@@ -26,6 +26,16 @@ modified: 2021-10-14T05:03:19.234Z
   - This means that everybody ends up applying the changes in the same order, so convergence is trivial.
 # blogs
 
+## [Manuscripts | Living Pixel](https://livingpixel.io/work/manuscripts)
+
+- From 2019-2022 I was one of the principal engineers on Manuscripts.io, a platform for authoring, editing, and submitting scientific publications on the web. 
+  - I contributed code primarily impacting the rich-text editing experience within the browser, as well as solutions for data synchronization and conflict resolution. 
+- The editing experience in Manuscripts was based on ProseMirror, and data were serialized and stored in a local PouchDB database. 
+  - The collaborative (possibly offline) editing experience was provided by a syncing protocol which required a git-like merge resolution system that was understandable by non-programmers. 
+  - Later we built a change-tracking system on top of that.
+- The project has been retired by Atypon, but the main repository is available on GitLab.
+  - https://gitlab.com/mpapp-public/manuscripts-frontend
+
 ## 🌰 [Collaborative text editor with ProseMirror and a syncing database_202007](https://emergence-engineering.com/blog/prosemirror-sync-1)
 
 - [blog src code](https://gitlab.com/emergence-engineering/blog/-/tree/master/articles/prosemirror-sync-1)

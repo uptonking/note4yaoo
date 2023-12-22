@@ -14,7 +14,6 @@ modified: 2023-10-07T17:30:26.998Z
   - [couchdb blog](https://blog.couchdb.org/)
 # blogs
 
-
 ## [Understanding CouchDB Conflicts_201312](https://writing.jan.io/2013/12/19/understanding-couchdb-conflicts.html)
 
 ## 📎 [Binary Data Attachments & Blobs: Handle w/ Couchbase Mobile_202006](https://www.couchbase.com/blog/store-sync-binary-data-attachments-blobs-couchbase-mobile/)
@@ -316,6 +315,17 @@ modified: 2023-10-07T17:30:26.998Z
 
 - We realized that we needed a more general framework that would allow product developers to declaratively define data subscriptions. 
   - A natural choice for this interface was to use GraphQL, which would allow the system to automatically fetch and keep the data live-updated. We decided to build it in-house and call it LiveGraph.
+# blogs-couchdb-user
+
+## [Creating a Multiple User App with PouchDB & CouchDB_201801](https://www.joshmorony.com/creating-a-multiple-user-app-with-pouchdb-couchdb/)
+
+01. Create your own API
+02. Use a single database
+03. Create a database for each user
+
+## [Solving "one database per user" in CouchDB/IrisCouch/Cloudant_201704](https://gist.github.com/nolanlawson/9676093)
+
+- the CouchDB docker image now has a built-in `couch-per-user` support, making this much easier to implement
 # blogs-couchdb
 
 ## [10 Common Misconceptions about Apache CouchDB - Speaker Deck_201311](https://speakerdeck.com/wohali/10-common-misconceptions-about-apache-couchdb)

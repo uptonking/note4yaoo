@@ -178,7 +178,7 @@ modified: 2023-08-15T16:49:24.915Z
 
 - Documenso
   - /202305
-  - Documenso is a digital signing platform and DocuSign alternative.
+  - Documenso is a digital signing platform and DocuSign alternative
 
 - Papermark
   - /202309

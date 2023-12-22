@@ -131,6 +131,7 @@ $$('[contenteditable]')
   - tupledb, tinybase
   - tiddlywiki, react-admin
   - falcor
+  - service worker
 
 - collab-sync, partial-sync
   - string-crdt: ? list-crdt

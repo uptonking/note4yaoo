@@ -12,6 +12,56 @@ modified: 2023-10-29T02:22:57.939Z
 # discuss-stars
 - ## 
 
+- ## [Why the CHT uses CouchDB - Product - Community Health Toolkit_202208](https://forum.communityhealthtoolkit.org/t/why-the-cht-uses-couchdb/2113)
+- A lot has changed in the CHT since it launched over 10 years ago. However one thing that has remained the same is the use of CouchDB as the primary database. While there are many database options available each with different strengths and weaknesses, CouchDB meets many of the requirements for the CHT.
+
+- 🌹 Benefits of CouchDB
+- Offline first applications
+  - One of the main advantages of CouchDB is it provides a robust master-to-master replication protocol out of the box
+  - This works seamlessly with PouchDB
+- Schemaless
+  - The CHT has always been highly configurable, particularly with the structure of the data being collected.
+- Clustering
+  - CouchDB natively supports clustering to balance the load over multiple machines. While the CHT doesn’t yet support database clustering 
+- APIs
+  - Virtually anything is possible with their extensive list of APIs, and using REST means there are a wide range of tools to make scripting and integration easy.
+
+- 🐛 Downsides of CouchDB
+- Filtered replication
+  - CHWs should only see a portion of the data on the server database. This is for two reasons; the phone can’t physically store as much data as the server, and for privacy reasons the user should only be able to access the information required for their job. 
+  - To accomplish this the CHT filters the replication to just a specific list of document IDs. Unfortunately this doesn’t perform well at scale. 
+  - The reason is quite technical but essentially every user has to skip over all the documents uploaded by other users to get to just the data they should sync. 
+  - As filtered replication makes up the majority of requests to the server this is a significant limitation. 
+  - Incremental improvements have been made to improve how filtering is done but more improvements are now needed to reach the increasing scale of CHT deployments.
+- Data queries
+  - The other main limitation is it’s very difficult to do certain queries on CouchDB, for example for bespoke investigations or data dashboards. 
+  - To mitigate this it is recommended to sync the data to a data warehouse which better supports these sorts of queries.
+- Views are slow to build
+  - CouchDB uses map/reduce views which are indexed by executing a function on every document in the database and caching the result, which makes them quick and easy to query. 
+  - However if a new view is created, or an existing view is updated with a new index function, then the cache needs to be updated for every document in the database, which can take a very long time. 
+  - This limitation is mitigated in the CHT by querying by ID when possible, by reusing views in preference to creating new ones, and by implementing view warming on upgrade so the reindexing can happen without any downtime.
+- The future
+  - In the near term the CHT will a) support clustering, b) be upgrade to use the latest version of CouchDB, and c) undergo investigation to further improve the filtered replication algorithm that is currently limiting scale. 
+  - Additionally work is ongoing to develop a data pipeline product which will sync data to PostgreSQL for easy to develop and efficient to execute queries. 
+  - These changes will help mitigate the two downsides listed above.
+- Further in the future it’s quite possible the CHT will be modified to use a different database altogether. This would be a large project requiring a significant amount of code changes and have inherent risks, but this will be weighed against the benefits it would bring.
+
+- Which would be a good way to sync data between couchDB and a data warehouse like big query without the postgresql instance ?
+  - Actually we are ingesting data to bigquery from postgresql views and matviews in a daily basis, but we get often our ingestions tasks refused by the postgresql server ‘too many connexion for user’ even if we dont use any paralelisme , I mean, we ingest data from one view, once finished we ingest from another one, one by one
+- Getting data out of couchdb is reasonably straightforward using the changes API. This then needs to be directed to your data warehouse. The next generation version of this for the CHT → PG is cht-sync which should be reasonably easy to modify for whatever data store you want.
+
+- ## [PouchDB differential sync speed very slow_201812](https://github.com/pouchdb/pouchdb/issues/7578) 
+- CouchDB replication is pretty chatty yeah, though there were some serious improvements in the 1. X -> 2. X upgrade.
+  - If you were sideloading the data i'd expect it to be chatty (see protocol)
+- The reality about using PouchDB is that most applications can take shortcuts, that we avoid for the general replication case, that aims to be a working thing for all kinds of use cases. For example if you're only loading data one way, or if you have a large initial load, you can make an `allDocs` request and then write the first checkpoint manually.
+
+- ## [RFC: ideas for replication performance improvements · pouchdb/pouchdb_201703](https://github.com/pouchdb/pouchdb/issues/6316)
+- CouchDB 2 only slightly improves perf over CouchDB 1, because _bulk_get is actually only used in cases of conflicts now (edit: also attachments and non-gen-1 docs, thanks @willholley), since we use _all_docs whenever possible. In my test set of npm skimdb docs, the vast majority of docs can be fetched with _all_docs rather than _bulk_get.
+- H2 does not seem to improve much over HTTP1, because we're not extremely chatty and we're not hitting 6-parallel-requests-per-origin limits or other standard H1 problems.
+- conclusion: So overall, I don't see HTTP/2 as a magic pill that's going to fix all our performance problems (sadly). No doubt it removes the overhead of HTTP headers, connection latency, etc., but to really get good replication perf I think we need to overhaul the replication algorithm itself.
+
+- I also think we could make a new replication protocol that is vastly less chatty, its still just a thought and havent fleshed it out, unlikely to do so until idb-next is done but briefly outlined it 
+
 - ## [Selective sync · janl/couchdb-next_201702](https://github.com/janl/couchdb-next/issues/14)
 - I wonder if replication via view vs _changes might something to consider here. I know we have some view based replication stuff on 1.6 but AFAIK that was basically just to only replicate things in a view. I'm thinking more along the lines of that we just follow the key order in a view and then clients can specify a view and any complex logic they want. Last 90 days for instance could be something like emit(doc.date, null) and then replicate using a start_seq of now() - 90 days
 
@@ -145,8 +195,22 @@ modified: 2023-10-29T02:22:57.939Z
 - CouchDB and PouchDB have no idea how to merge a conflict, if two copies are edited prior to syncing, one version it marked as the 'winner' and the other as a conflict version. As the developer you can then either chose to dispose of conflicts or have your own way of merging them.
 - This is actually a perfect use case for CRDTs such as Automerge and Yjs, I actually built a proof of concept combining Yjs with PouchDB to handle the conflicting edits
 
-- ## [Distributed offline editing with couch/pouchdb - Yjs Community](https://discuss.yjs.dev/t/distributed-offline-editing-with-couch-pouchdb/340)
+- ## 💡 [Distributed offline editing with couch/pouchdb - Yjs Community_202101](https://discuss.yjs.dev/t/distributed-offline-editing-with-couch-pouchdb/340)
   - Has anyone experimented with using Yjs with pouchdb as both the datastore and communication channel?
+
+- I’m starting to try to build a PouchDB provider and plug-in for Yjs. My plan is that a Y.doc will manage the whole Pouch document and be included in it as a binary attachment. Then have a top level Y. Map that is also exported to json at save time to build the pouch document, this can then be queried and indexed by the standard pouchdb api. So the user doesn’t ever change the pouch document directly, only the Y.doc, and with that we can get conflict free merges in PouchDB.
+  - When fetching a document from pouch we will also fetch all conflicting versions and will merge the Y.docs. Then we watch the pouchdb change feed and continue to merge in changes as they arrive.
+  - This method obviously only merges whole document versions, great for offline editing but not real-time where vectors are better. 
+  - It seems a combination of this with the websocket or webrtc provider for real-time collaboration would work well. 
+  - PouchDB revision keys are deterministic hashes of the document and so if you combine a PouchDB provider with a websocket provider to merge in update vectors, the resulting document will have the same revision number, fully sidestepping(回避问题) the PouchDB/Couchdb sync (also important for the normal pouchdb sync). 
+  - We would probably want to ‘pause’ or slow down the save to PouchDB while using a realtime collaborative provider to stop too many full document syncs in the background.
+  - I’m also considering having an option for a pre-save extractor function, this would allow you to extract additional data (say from the y-prosemirror doc Y. XmlFragment) and add it to the main pouch json doc for indexing and searching.
+- This plan should work well when you have a document open but the area where I have a question is when documents are not open. PouchDB will continue to sync in the background (when the app is open), and we can easily watch the change feed for new version conflicts of unopened documents. When using this with Prosemirror do we need to have the document open in Prosemirror (and have access to a browser DOM) when doing a merge or can we just naively merge the Y.docs? Would this cause a problem with the Prosemirror schema?
+
+- Regarding schema conflicts: When you load an invalid document with y-prosemirror, (e.g. it has two headlines instead of one that is specified in the schema), then y-prosemirror will automatically correct the Yjs document. This will happen automatically (usually by removing the invalid node).
+
+- I’m making good progress, I have a simple version running (using TipTap v2 so I need to check if I can show it yet) that works with open “foreground” documents with both realtime and offline (conflicting) edits. The next job is to have a background conflict manager to handle merging conflicting edits without them being actively open at the time (for example when you go back online after editing multiple documents).
+  - As I said before, this works well, but when you have multiple people actively working on a document at once people should probably use the Websocket or WebRTC provider as it will be more efficient and has awareness support (which I don’t think should be built into a PouchDB provider).
 
 - I recommend to mark transactions as remote when the update was created remotely. This is useful meta-information.
 

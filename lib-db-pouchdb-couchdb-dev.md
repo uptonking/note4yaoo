@@ -19,6 +19,8 @@ modified: 2022-12-02T11:15:15.257Z
     - 不必纠结于耦合度过高，sync protocol是公开的，可自行实现相关工具
   - pouchdb适合 one-db-per-user 的场景，跨user/db的搜索没有很好的解决方案
   - doc级别的权限管理没有最佳实践, Read access is on a per-database basis
+  - filtered replication待改进, 过滤计算scale困难
+  - pouchdb对实时协作的支持不如websocket，不支持awareness
   - 不支持与非couchdb的数据库同步，但可参考event-sourcing自己实现
   - 本地创建用户时如何同步/合并数据
   - 数据初始化时可能处理超级大量数据的问题
@@ -32,7 +34,7 @@ modified: 2022-12-02T11:15:15.257Z
   - storage adapter: levelup, indexeddb
 
 - who is using #pouchdb
-  - ?
+  - CHT/Community Health Toolkit
 - who is using #couchdb
   - npm
   - budibase

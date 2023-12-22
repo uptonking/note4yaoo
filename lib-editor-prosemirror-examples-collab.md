@@ -99,10 +99,10 @@ modified: 2022-10-04T23:32:30.824Z
   - The benchmark scripts start each server, and send requests to them, collecting latency information.
   - Results: 
 
-- https://gitlab.com/emergence-engineering/blog/-/tree/master/articles/prosemirror-sync-1
+- https://gitlab.com/emergence-engineering/blog/-/tree/master/articles/prosemirror-sync-1 /202101/ts
   - using a sync database ( PouchDB, but it works with firebase ) as a communication layer between client and server.
-  - [Article / code about prosemirror collab & PouchDB](https://discuss.prosemirror.net/t/article-code-about-prosemirror-collab-pouchdb/3045)
-  - [Collaborative text editor with ProseMirror and a syncing database](https://emergence-engineering.com/blog/prosemirror-sync-1_202007)
+  - [Article / code about prosemirror collab & PouchDB_202007](https://discuss.prosemirror.net/t/article-code-about-prosemirror-collab-pouchdb/3045)
+  - [Collaborative text editor with ProseMirror and a syncing database_202007](https://emergence-engineering.com/blog/prosemirror-sync-1)
 
 - https://gitlab.com/mpapp-public/manuscripts-sync
   - https://gitlab.com/mpapp-public/library-sync
