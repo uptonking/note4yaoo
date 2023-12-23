@@ -17,6 +17,9 @@ modified: 2022-08-21T09:54:26.037Z
   - 可定制性有限，支持自定义renderer、filter等
     - 但不支持类似handsontable、prosemirror提供的全局功能拦截插件
 
+- features
+  - 支持RangeSelection
+
 - ag-grid-playground
   - resizable
   - ag-charts to observable-plot

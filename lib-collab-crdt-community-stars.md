@@ -97,6 +97,24 @@ modified: 2022-04-05T10:09:51.343Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## OT & CRDTs (with history) are great for most data types, but don't really make sense for supporting arbitrary binary file formats (as there are *so many*). 
+- https://twitter.com/JungleSilicon/status/1738332065777738092
+  - The diffs between them end up *huge* and aren't realistic to store in a causal tree. 
+  - How would you approach this?
+- Some ideas come to mind:
+  - Lower resolution snapshots for binary files (e.g. git or checkpoints).
+  - Try to crowdsource transformers for each binary file type that can convert the binary file formats into diffs which are better suited to a history of changes.
+  - Store the *version history* of binary files but ignore their values, only store the latest value for them.
+
+- Multi-value registers don't solve any of this? This thread is about the sheer amount of data necessary if you want a history of binary files.
+  - Causal tree's often use multi-value registers.
+
+- You could use a rolling hash like bup
+
+- Content addressing, versioning, and partial sync
+
 - ## Slapping(~on添加) a CRDT on something isn't enough to make a truly collaborative or offline friendly app. 
 - https://twitter.com/c_pick/status/1716827138253529578
   - CRDTs can make your app consistent, but consistently wrong if you're not preserving user intent. This is nowhere near a solved problem yet, the general case might never be solved!

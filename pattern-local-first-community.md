@@ -68,7 +68,12 @@ modified: 2023-09-13T20:24:41.516Z
 
 - ## 
 
-- ## 
+- ## The state of the offline-first ecosystem is incredibly depressing._202312
+- https://twitter.com/oofdere/status/1735090979647160471
+  - Closed source tools: Replicache, Ditto, etc.
+- "Open source" tools: There *are* open-source client-side databases with sync support, but they're locked into a closed/shared source sync ecosystem. Examples are MongoDB Realm, which doesn't sync without Atlas, and Couchbase Lite, which doesn't sync without Sync Gateway.
+- CouchDB and co.: So much wasted potential here. There used to be so many ways to sync with CouchDB on the client: Couchbase Lite used to support it, IBM had an open source sync layer for it, PouchDB still supports it but good luck even importing it in a modern Vite+TS app.
+- RxDB: This shit deserves its own category. Like, come on, charging for SQLite and IndexedDB? Really? 
 
 - ## Provide a better user experience by making your app offline-first:
 - https://twitter.com/dannymoerkerke/status/1719285753677512849

@@ -76,6 +76,9 @@ modified: 2023-09-01T10:18:14.842Z
   - Autowiki is a local-first app: you own all the data you put into it, and your data never leaves your own machine unless you want it to.
   - Autowiki uses automerge under the hood to resolve edit conflicts automatically.
 
+# sync
+
+- https://github.com/DImuthuUpe/automerge-java-sync-server /
 # utils
 
 # more

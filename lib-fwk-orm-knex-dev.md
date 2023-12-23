@@ -23,6 +23,7 @@ modified: 2023-01-22T19:52:21.676Z
   - strapi
   - directus
   - nocodb
+  - budibase
 
 - feathers.v5通过schema+resolver的抽象，通过knex+mongoose支持rdbms和nosql
 # dev

@@ -9,6 +9,9 @@ modified: 2023-12-15T17:50:41.213Z
 
 # guide
 
+- fans-tiddlywiki
+  - https://github.com/abesamma/TW5-editions
+  - https://github.com/danielo515/tiddlypouch
 # popular
 - TiddlyWiki5 /7.5kStar/BSD/202311/js
   - https://github.com/Jermolene/TiddlyWiki5
@@ -45,6 +48,10 @@ modified: 2023-12-15T17:50:41.213Z
   - helps you capture, organize and share knowledge better with TiddlyWiki5.
   - offline-ready
   - This webpage runs on Gatsby, Reactjs, TailwindCSS and Material-UI.
+  - 依赖gatsby2、material-ui.v4
+  - https://github.com/abesamma/Maarfapad /202002/js
+    - Maarfapad was my attempt at learning Expressjs back in 2016 while building a CRUD app to handle TiddlyWiki html files. 
+    - retired in favor of another project of mine Oneplaybook
 
 - https://github.com/OokTech/TW5-Bob /202311/js
   - A plugin that makes tiddlywiki a multi-user wiki on node
@@ -65,16 +72,36 @@ modified: 2023-12-15T17:50:41.213Z
   - Tiddlyhost is a free hosting platform that offers the ability to save your Feather Wiki directly instead of needing to download a copy!
   - [Feather Wiki: app for creating personal non-linear notebooks, databases, wikis | Hacker News_202205](https://news.ycombinator.com/item?id=31474062)
 
-- https://github.com/NoteSelf/NoteSelf.github.io /202005/js/inactive
+- https://github.com/NoteSelf/NoteSelf.github.io /119Star/BSD/202005/js/inactive
   - https://noteself.org/
+  - https://NoteSelf.github.io
   - built on top of TiddlyWiki, a powerful, free, highly customizable and open-source personal wiki.
+  - 依赖tiddlywiki5、tw-pouchdb
   - We took the best of it, it's powerful customization system, and mixed it with one of the best embedded databases available, PouchDb, to bring in the synchronization capabilities you need.
   - This TiddlyWiki-variant stores documents in the browser (pouchdb) and can sync to a couchdb-server.
-# themes
-- https://codeberg.org/valpackett/tiddlypwa /ts
+- https://github.com/danielo515/tiddlypouch /202005/js
+  - tiddlypouch plugin for tiddlywiki. 
+  - This plugin adds a layer between pouchdb and tiddlywiki to store tiddlers as documents on a pouchdb database. 
+  - This plugin is a key and core part of the NoteSelf project.
+  - 依赖 https://github.com/danielo515/tw5-pouchdb /202001/js
+
+- https://codeberg.org/valpackett/tiddlypwa /BSD/202310/ts
   - https://tiddly.packett.cool/
   - TiddlyPWA turns TiddlyWiki into an offline-first Progressive Web App with encrypted local persistent storage and efficient synchronization with a server that can easily be hosted for free.
+  - [Introducing TiddlyPWA: putting TiddlyWiki on modern web app steroids_202307](https://val.packett.cool/blog/tiddlypwa/)
+    - There has actually been one good attempt at bringing this kind of sync to TiddlyWiki: NoteSelf, which integrated PouchDB for storage. 
+    - I liked the sound of it, but in practice it wasn’t up to my standards. It’s a heavyweight modification of TiddlyWiki that doesn’t keep up with latest core updates, PouchDB/CouchDB feel a bit heavy themselves, there’s no encryption, and the offline support is just “run it from your hard drive”.
+    - The server was initially written with SQLite as it is now, but when Deno KV was announced I got excited and rewrote it to use KV,
   - [TiddlyPWA: putting TiddlyWiki on modern web app steroids | Hacker News_202307](https://news.ycombinator.com/item?id=36885753)
+
+- https://github.com/balazsgrill/tw-pouchdb-sync /202309/js
+  - TiddlyWiki synchronizer plugin for CouchDB/PouchDB
+  - https://github.com/OokTech/TW5-PouchDBAdaptor /201912/js
+    - syncer adaptor that stores tiddlers in a local pouchdb
+
+- https://github.com/ThaddeusJiang/Projectify /202206/js
+  - https://thaddeusjiang.github.io/Projectify/
+  - a project management app for TiddlyWiki, inspired by products like Todoist and Basecamp.
 # examples
 
 # plugins
@@ -102,6 +129,11 @@ modified: 2023-12-15T17:50:41.213Z
   - https://tiddly-gittly.github.io/tw-react/
   - This is a dependency of slate-write WYSIWYG editor and flowtiwi-sidebar and many other dynamic widgets. 
   - This plugin enable powerful data operation and UI operation of those plugins, thus become a prerequisite of those plugins
+
+- https://github.com/danielo515/TW5-contextPlugin /202307/js
+  - http://contextplugin.tiddlyspot.com/
+  - A plugin to allow preview with word highlight within searches but not limited to that. 
+  - Actually this widget looks for a word inside a tiddler and shows the result with the searched word highlighted with some of its context.
 # utils
 - https://github.com/jimpick/dat-tiddlywiki /201806/js
   - Multiwriter Dat + TiddlyWiki
@@ -110,6 +142,9 @@ modified: 2023-12-15T17:50:41.213Z
 - https://github.com/ssg/ourobs /html
   - an experiment about a self-hosted, fully decentralized social platform
   - ourobs stores everything in the URL, so, you can share your content by sharing the URL with others. 
+
+- https://github.com/abesamma/giscus-for-tiddlywiki-demo /202302/js
+  - Demo of a commenting system for TiddlyWiki powered by Github discussions via Giscus app
 # usecase-examples
 - https://ramirosalas.com/
 # more

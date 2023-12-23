@@ -45,6 +45,11 @@ modified: 2023-11-16T15:00:11.503Z
   - https://react-typescript-hooks-realworld.vercel.app/
   - React FC + Immer + Redux + Hooks + axios + Testing Library
 
+- https://github.com/adr1enbe4udou1n/react-ts-realworld-example-app /202312/ts
+  - https://github.com/adr1enbe4udou1n/nestjs-realworld-example-app
+  - 依赖react-query.v5、openapi-typescript-fetch、use-local-storage-state
+  - https://github.com/likui628/react-realworld-example-app
+
 - https://github.com/gothinkster/web-components-realworld-example-app /201705/js/archived
   - Exemplary real world application built with Vanilla JS Web Components
 - https://github.com/mits-gossau/event-driven-web-components-realworld-example-app /202303/js

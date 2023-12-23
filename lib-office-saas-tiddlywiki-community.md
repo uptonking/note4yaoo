@@ -12,6 +12,23 @@ modified: 2023-12-15T17:50:49.509Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [TW 5.2.0 + CouchDB ?_202111](https://groups.google.com/g/TiddlyWiki/c/jKYp7GIm1o8)
+- I have been following the TW project for years and I am still very surprised that the community continues to actively support super strange, inconvenient and limited ways of saving and synchronizing – but at the same time all developments using normal technologies on which synchronization could be easy, seamless and safe, such as CouchDB, are not supported in official release and abandoned by community.
+  - Especially considering the new data storage format in JSON, with which synchronization with object databases has never been easier. It's even easier than maintaining the current server solution on files, which in principle cannot work offline, unlike a solution based on IndexedDB+PouchDB→CouchDB or IndexedDB→Mongo/Postgres.
+  - I have used PouchDB adapter from NoteSelf, but it's outdated and contains a lot of bugs. Other solutions were outdated even earlier.
+
+- I was quite keen(热心的) on noteself, had it set up and everything but then after the takeover, Couch DB moved past my tolerance for banging my head against software and it killed it for me.  I suspect that was true for others.
+
+- I think there were a few reasons that I didn't personally take CouchDB further in TiddlyWiki 5:
+  * TiddlyWiki's internal store needs to offer a synchronous API, but CouchDB offers only async APIs. That means there would always be a requirement for a sync process between TWs synchronous DB and the CouchDB API, which means that TW still has to handle synchronisation
+  * The difficulties of setting up and running a server of my own
+  * The lack of CouchDB online services
+- I was delighted to see Danielo's work with NoteSelf, and it deservedly attracted a lot of interest. It demonstrated that CouchDB can be retrofitted onto TW5 just like any other database with an async API.
+
 - ## [TiddlyPWA: putting TiddlyWiki on modern web app steroids | Hacker News_202307](https://news.ycombinator.com/item?id=36885753)
 - Tiddlywiki was great because it was a single file, the whole point of tiddlywiki was being a single self-modifying html file. No app needed.
 

@@ -18,6 +18,7 @@ modified: 2022-08-21T10:19:58.756Z
 - cons
   - 编辑功能支持不多，ag-grid也是
   - react组件会过多rerender
+  - selection仅实现了RowSelection，单元格级别的选区未实现
   - focus-management
   - accessible
   - 如何支持多个table，且每个table数据模型不同，还要支持typescript

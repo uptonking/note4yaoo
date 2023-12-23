@@ -97,9 +97,6 @@ function sync() {
 }
 ```
 
-- 
-- 
-
 ## [pouch databases](https://pouchdb.com/guides/databases.html)
 
 - PouchDB databases come in two flavors: local and remote.
@@ -184,9 +181,9 @@ function sync() {
   - Writes to the second database, however, will not propagate back to the master database.
 
 - Live replication (or "continuous" replication) is a separate mode where changes are propagated between the two databases as the changes occur. 
-  - In other words, normal replication happens once, whereas live replication happens in real time.
+  - 💡 In other words, normal replication happens once, whereas live replication happens in real time.
 - However, there is one gotcha with live replication: what if the user goes offline? In those cases, an error will be thrown and replication will stop.
-  - You can allow PouchDB to automatically handle this error, and retry until the connection is re-established, by using the retry option
+  - You can allow PouchDB to automatically handle this error, and retry until the connection is re-established, by using the `retry` option
 
 - The replicate API supports canceling
 

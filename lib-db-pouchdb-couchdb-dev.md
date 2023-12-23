@@ -19,9 +19,10 @@ modified: 2022-12-02T11:15:15.257Z
     - 不必纠结于耦合度过高，sync protocol是公开的，可自行实现相关工具
   - pouchdb适合 one-db-per-user 的场景，跨user/db的搜索没有很好的解决方案
   - doc级别的权限管理没有最佳实践, Read access is on a per-database basis
+  - 同步协议非常chatty，性能不适合实时协作
   - filtered replication待改进, 过滤计算scale困难
-  - pouchdb对实时协作的支持不如websocket，不支持awareness
   - 不支持与非couchdb的数据库同步，但可参考event-sourcing自己实现
+  - pouchdb擅长同步，但对实时协作的支持不如websocket，不支持awareness
   - 本地创建用户时如何同步/合并数据
   - 数据初始化时可能处理超级大量数据的问题
   - 对二进制数据存储和同步的支持不够好，attachment的设计是针对image/html
@@ -31,7 +32,10 @@ modified: 2022-12-02T11:15:15.257Z
   - Unlike most other databases, whenever you update a document in PouchDB or CouchDB, you must present the entire document along with its current revision marker.
 
 - features
+  - sync between db
+  - http and rest
   - storage adapter: levelup, indexeddb
+  - pouchdb擅长离线编辑再同步的场景，而不是高性能的实时协作
 
 - who is using #pouchdb
   - CHT/Community Health Toolkit
@@ -64,7 +68,7 @@ modified: 2022-12-02T11:15:15.257Z
   - pouchdb + kappa-crdt + eav => pouchdb-crdt-eav: 参考triplitdb
   - kappa-architecture?
   - partial-replication: 参考hypercore
-  - sync: couchbase sync gateway alternative; 与minimongo+mongodb的方案比较; 可参考event-sourcing自己实现
+  - sync: couchbase sync gateway; 与minimongo+mongodb的方案比较; 可参考event-sourcing自己实现
   - attachment/针对图片视频的blob二进制存储数据库: 参考couchbase, mongodb-gridfs, pg-lo
   - alternative-backend: mysql/pg
 
