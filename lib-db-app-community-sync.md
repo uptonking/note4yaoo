@@ -57,7 +57,7 @@ modified: 2023-09-17T17:35:53.774Z
 
 - ## [Ask HN: What's the state of P2P database sync? | Hacker News_202001](https://news.ycombinator.com/item?id=21960366)
 - We've created a peer to peer database at https://www.ditto.live . It runs on servers, WASM, and mobile all with a shared code base. Each row in the database is a robust CRDT that can sync deltas (or diffs) very efficiently.
-- I‘ve found researching CRDTs (Conflict-free Replicated Data-Types) very enlightening. It‘s what a lot of databases use these days for multi-master replication. 
+- I‘ve found researching CRDTs (Conflict-free Replicated Data-Types) very enlightening. It‘s what a lot of databases use these days for multi-master replication.
 
 - ## [Kb: A minimalist hacker-oriented knowledge base manager | Hacker News_202009](https://news.ycombinator.com/item?id=24506280)
 - For me this kind of tool needs to provide a way to sync between devices to be useful, and ideally be available on mobile. As it's using sqlite3 to store documents, it's probably not trivial to sync with something like Dropbox.

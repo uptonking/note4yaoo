@@ -106,6 +106,9 @@ modified: 2021-01-01T22:26:57.773Z
 
 - 更建议使用系统自带search和spotlight，操作更编辑无覆盖，无需重复索引
 
+- menulibre在flathub中名字为menu editor，可在系统菜单中修改和添加自定义app图标
+  - main menu更好用
+
 - https://github.com/cerebroapp/cerebro /MIT/js/支持plugins/electron
   - https://www.cerebroapp.com/
   - an open-source launcher to improve your productivity and efficiency

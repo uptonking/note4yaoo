@@ -13,6 +13,14 @@ modified: 2023-12-15T18:02:24.488Z
   - [DuckDB WASM Playground](https://sekuel.com/playground/)
     - Run SQL queries directly in your desktop or mobile browser.
 # popular
+- https://github.com/uwdata/mosaic /413Star/BSD/202311/js
+  - https://uwdata.github.io/mosaic/
+  - An Extensible Framework for Linking Databases and Interactive Views
+  - Visualize, select, and filter datasets with millions or billions of records.
+  - Mosaic pushes computation to DuckDB, both server-side and in your browser via WebAssembly.
+  - Build data-driven web apps, or interact with data directly in Jupyter notebooks.
+  - The key idea is to have interface components "publish" their data needs as declarative queries that can be managed, optimized, and cross-filtered by a coordinator that proxies access to DuckDB.
+
 - tad /2.5kStar/MIT/202212/ts/duckdb/SlickGrid
   - https://github.com/antonycourtney/tad
   - Tad desktop application enables you to quickly view and explore tabular data in several of the most popular tabular data file formats: CSV, Parquet, and SQLite and DuckDb database files. 

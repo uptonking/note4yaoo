@@ -91,7 +91,7 @@ modified: 2023-01-20T21:59:47.792Z
     - You have to set SERVE_APP=true in your .env file in order to run the api in dev mode with the build app.
     - 最终发现配置server_app后要访问的是服务端:8055/admin，而不是前端:8080/admin
 
-- vrite /1kStar/AGPLv3/202307/ts
+- vrite /1kStar/AGPLv3/202310/ts
   - https://github.com/vriteio/vrite
   - https://vrite.io/
   - https://editor.vrite.io/

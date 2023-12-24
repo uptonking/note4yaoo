@@ -958,12 +958,13 @@ modified: 2023-02-05T19:03:12.723Z
   - A collaborating editor based on Slate and Yjs
   - 不依赖slate-yjs
 
-- https://github.com/itoumlilt/crdt-md-editor /202209/ts/slate/PouchDB
+- https://github.com/itoumlilt/crdt-md-editor /202209/ts/slate/未实现功能/仅模版代码
   - https://github.com/concordant/c-markdown-editor
   - React Typescript CRDT based Collaborative Markdown Editor
   - 依赖slate.v0.59、tippyjs，依赖少
   - 代码中未找到协同代码
     - 参考同作者项目 https://github.com/itoumlilt/CRDT-Spreasheet
+    - https://gitlab.inria.fr/concordant/software/c-slate-collaborative-markdown-editor /未实现
   - This app aims to show a collaborative text editing application using two eventual consitency backends: revision-based and CRDT-based.
   - This demo shows that with a revision based approach, the user loses updates, either if updates are executed concurrently online, or if multiple users edit the document offline. 
   - With the CRDT-based backend, update convergence is available out-of-the-box.

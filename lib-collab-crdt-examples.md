@@ -379,7 +379,7 @@ modified: 2022-04-05T10:08:25.947Z
     - The basic data sync is based on an append only log. 
     - Check out our section on "Operations", this is the data type we've built on top of the append-only log structure for multi-writer and conflict free data editing
 
-- https://github.com/KyleAMathews/trpc-crdt /MIT/ts
+- https://github.com/KyleAMathews/trpc-crdt /MIT/202312/ts
   - tRPC integrations for CRDTs: CRDT-native RPC calls
   - the goal is to support all CRDT implementations, including yjs/automerge/jazz
   - [Announcing trpc-crdt _202311](https://bricolage.io/announcing-trpc-crdt/)
@@ -601,7 +601,7 @@ modified: 2022-04-05T10:08:25.947Z
   - rga使用tree+doubly-linked-list+vector-clock
 - https://github.com/orbitdb/crdts
   - 提供的都是简单类型
-- https://github.com/dominictarr/crdt
+- https://github.com/dominictarr/crdt /MIT/201403/js
   - Commutative Replicated Data Types for easy collaborative/distributed systems.
   - 提供了简单和复杂多个示例
   - https://github.com/adelriosantiago/easy-crdt
@@ -947,7 +947,7 @@ modified: 2022-04-05T10:08:25.947Z
 
 - https://github.com/codesandbox/crdt-tree /ts
   - A highly-available move operation for replicated trees and distributed filesystems
-  - https://github.com/maidsafe/crdt_tree /rust
+  - https://github.com/maidsafe/crdt_tree /BSD/202210/rust
 # crdt-table/spreadsheet/excel
 - https://github.com/Horusiath/crdt-table /5Star/GPLv3/202309/js
   - This is proof of concept for Conflict-free Replicated Data Type representing 2-dimensional table

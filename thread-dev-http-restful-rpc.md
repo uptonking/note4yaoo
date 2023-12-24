@@ -14,7 +14,21 @@ modified: 2021-09-20T18:38:00.319Z
 # discuss
 - ## 
 
-- ## 
+- ## gRPC is gaining popularity for service-to-service communication. Here's why:
+- https://twitter.com/sahnlam/status/1738787868414550072
+  - Speed - gRPC is built on HTTP/2 and Protobufs for maximum throughput and minimal latency. Much faster than JSON over HTTP.
+  - Efficiency - The compact Protobuf binary format means smaller payloads than JSON. Less data sent = better performance.
+  - Type Safety - Protobufs are strongly typed, eliminating many bugs.
+  - Polyglot - Write services in many popular languages, the IDL works across them all.
+  - Streaming - gRPC supports bidirectional streaming for real-time data transmission.
+  - Great Ecosystem - Tons of tools exist for code gen, load balancing, monitoring, and more.
+- gRPC has some drawbacks:
+  - More Complex - Defining Protobuf schemas and setting up gRPC can have a learning curve.
+  - Not Human Readable - Protobufs are binary, so not as easy to troubleshoot as JSON. Tools like grpcurl a little bit.
+  - Limited Browser Support - gRPC works best for backend microservices, not front-end apps.
+- For most backend use cases, gRPC delivers an efficient, robust and high-performance communication framework perfect for modern microservices.
+
+- Another drawback: Scaling requires proxy servers to support grpc as well
 
 - ## gRPC 竟然擅自把空数组变成了 undefined，减少数据传递，提供性能
 - https://twitter.com/ThaddeusJiang/status/1734034431285886990

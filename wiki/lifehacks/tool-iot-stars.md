@@ -328,6 +328,8 @@ GPS丨Glonass丨BeiDou丨Galileo
 
 ## hp omen 8 plus
 
+- 注意f11是开关触摸板，通过快捷键关闭触摸板后可能恢复不了(20231224)，解决方法是通过键盘打开settings设置面板，找到touchpad，手动再次打开，摸索了很久
+
 ### specs
 
 处理器 第十二代 英特尔® 酷睿™ i9-12900HX 处理器（16 核心，24 线程，采用 Turbo Boost 技术约可达 5.0 GHz） 

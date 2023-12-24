@@ -12,6 +12,23 @@ modified: 2023-10-29T02:22:57.939Z
 # discuss-stars
 - ## 
 
+- ## [First class conflict handling · apache/couchdb_201808](https://github.com/apache/couchdb/issues/1507)
+- tldr
+  - rev-tree -> rev-graph (more git like)
+- As a bit of background, our current revision model is a standard tree. 
+  - The biggest issue we've seen customers have with using CouchDB "normally" is when they have a work load that generates conflicts with regularity. This ends up creating revision trees with many thousands of revisions with no general bound on growth of the tree. Eventually a single document can take many seconds to minutes to update as the tree has to be read from disk, updated, and then written back to disk. 
+  - The only effective solution to this currently is to have an operator manually purge revisions from the document.
+- The best solution I've come across to this issue would be to change our revision model to be a graph. Then instead of resolving conflicts by deleting a revision, the conflict is resolved by making an update that references two or more revisions. In this way a customer that generates a large number of conflicts can easily resolve the situation during their normal conflict resolution process. 
+  - While this approach is fairly straight forward in theory, the difficult part is how we'd want to handle backwards compatibility with replication. So far I could see having a replicator that could translate new revision graphs to old revision trees by "undoing" merge changes and created the equivalent of the old "deleted revision" logic. However, I don't see a way that we could go from the old format back to the graph (ie, think about replicating a new style graph doc through an old CouchDB version back to a new graph doc and end up with the same doc).
+- I finally had time to read the automerge JSON CRDT paper. It is certainly very promising, but not production ready yet. The algorithm doesn’t account for a few unbounded lists happening. And it currently skips of required tombstone removal.
+  - The biggest caveat so far is that it requires all replicas to eventually converge towards the same state. While that might be a good enough limitation for many cases, it is less general than what CouchDB supports today. The authors promise continued work and we should keep watching this closely.
+
+- ## [Automerge: A JSON-like data structure (a CRDT) that can be modified concurrently_202202](https://news.ycombinator.com/item?id=30412550)
+- I think CouchDB/PouchDB do this similarly, the winner is deterministic though?
+  - CouchDB and PouchDB have no idea how to merge a conflict, if two copies are edited prior to syncing, one version it marked as the 'winner' and the other as a conflict version. 
+  - As the developer you can then either chose to dispose(丢掉; 处理) of conflicts or have your own way of merging them.
+  - This is actually a perfect use case for CRDTs such as Automerge and Yjs, I actually built a proof of concept combining Yjs with PouchDB to handle the conflicting edits
+
 - ## [Why the CHT uses CouchDB - Product - Community Health Toolkit_202208](https://forum.communityhealthtoolkit.org/t/why-the-cht-uses-couchdb/2113)
 - A lot has changed in the CHT since it launched over 10 years ago. However one thing that has remained the same is the use of CouchDB as the primary database. While there are many database options available each with different strengths and weaknesses, CouchDB meets many of the requirements for the CHT.
 

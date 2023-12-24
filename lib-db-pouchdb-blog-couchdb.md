@@ -305,7 +305,13 @@ modified: 2023-10-07T17:30:26.998Z
 - I wouldnt write couchbase-lite off entirely, sync is extremely hard and with Pouch we are still struggling with slow replications and bugs with binary objects. 
   - The couchbase-lite devs have been contributing to PouchDB and couchbase-lite, PouchDB and CouchDB should all interoperatate in a p2p environment, if they dont then its a bug
 # blogs-sync/collab
-- [Use JSON Patch to Resolve Conflicts for CouchDB_202009](https://neighbourhood.ie/blog/2020/09/15/use-json-patch-to-resolve-conflicts/)
+
+## [Data Sync using Sync Gateway | Couchbase Docs](https://docs.couchbase.com/couchbase-lite/current/c/replication.html)
+
+- Couchbase Mobile uses a replication protocol based on WebSockets for replication.
+- Couchbase Lite’s replication protocol is incompatible with CouchDB-based databases. 
+
+## [Use JSON Patch to Resolve Conflicts for CouchDB_202009](https://neighbourhood.ie/blog/2020/09/15/use-json-patch-to-resolve-conflicts/)
 
 ## [figma: LiveGraph: real-time data fetching at Figma | Figma Blog_202110](https://www.figma.com/blog/livegraph-real-time-data-fetching-at-figma/)
 
@@ -431,3 +437,5 @@ modified: 2023-10-07T17:30:26.998Z
 
 - [Building Multi-platform apps with React, Cordova, CouchDB/PouchDB, . NET, Kubernetes and Azure_202012](https://blog.adaptabi.com/building-multi-platform-apps-with-react-cordova-couchdb-pouchdb-net-kubernetes-and-azure-9c1a946ccc36)
   - [Part 1 — The Database. How to build a real time data sync, multi platform app with CouchDB and PouchDB_202012](https://blog.adaptabi.com/part-1-the-database-b7c575864407)
+
+- [How Deep Can You Sync_201902](https://roywillemse.medium.com/how-deep-can-you-sync-1-b33ca92a79af)

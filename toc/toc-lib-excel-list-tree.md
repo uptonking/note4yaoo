@@ -370,6 +370,15 @@ modified: 2022-08-21T10:02:41.845Z
 - https://github.com/gutobortolozzo/node-lsm /js/inactive
   - a log-structured-merge-tree, implemented in node.js
 
+- https://github.com/skyzh/mini-lsm /apache2/202312/rust
+  - https://skyzh.github.io/mini-lsm/
+  - Build a simple key-value storage engine in a week
+  - Log-structured merge tree is a data structure to maintain key-value pairs.
+  - This data structure is widely used in distributed database systems like TiDB and CockroachDB as their underlying storage engine. 
+  - RocksDB, based on LevelDB, is an implementation of LSM-Tree storage engine.
+  - For RB-Tree and B-Tree, all data operations are in-place. That is to say, when you update the value corresponding to the key, the value will be overwritten at its original memory or disk space. 
+  - But in an LSM Tree, all write operations, i.e., insertions, updates, deletions, are performed in somewhere else. These operations will be batched into SST (sorted string table) files and be written to the disk. Once written to the disk, the file will not be changed. These operations are applied lazily on disk with a special task called compaction. The compaction job will merge multiple SST files and remove unused data.
+
 - https://github.com/Pr65/minilsm /rust
   - A simple, single threaded LSM tree implementation
 - https://github.com/kaimast/lsm-rs /rust

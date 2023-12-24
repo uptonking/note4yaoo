@@ -17,7 +17,7 @@ modified: 2022-11-25T16:17:17.100Z
   - Command line utility to synchronize and version control relational database objects across databases.
   - 支持sqlite、postgresql
 
-- https://github.com/db-migrate/node-db-migrate
+- https://github.com/db-migrate/node-db-migrate /MIT/202309/js
   - Database migration framework for node
 
 - https://github.com/sastraxi/pgsh /js

@@ -78,7 +78,8 @@ modified: 2023-09-01T10:18:14.842Z
 
 # sync
 
-- https://github.com/DImuthuUpe/automerge-java-sync-server /
+- https://github.com/DImuthuUpe/automerge-java-sync-server /apache2/202312/java
+  - Java Spring Boot Sync Server For Automerge
 # utils
 
 # more

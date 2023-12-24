@@ -150,7 +150,7 @@ modified: 2023-09-19T06:35:28.278Z
 
 - Something like reStructuredText (.rst) is a similar alternative, but I think that if you're irritated by the limits of Markdown then rST isn't going to be any better. If you really want good formatting options, then LaTeX is the best I can think of at the moment.
 
-- ## 💡 [mdBook – A utility to create modern online books from Markdown files | Hacker News_202004](https://news.ycombinator.com/item?id=22854272)
+- ## 🚀 [mdBook – A utility to create modern online books from Markdown files | Hacker News_202004](https://news.ycombinator.com/item?id=22854272)
 - One of the things I love about it is that the toolchain for building and using it is just the Rust standard toolchain, which means no crazy dependency hell to manage. 
   - By comparison I’ve found Jekyll to be a long-term annoyance to keep up-to-date, I’m probably using it wrong. I know.
 

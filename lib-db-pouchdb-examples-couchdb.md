@@ -126,6 +126,25 @@ modified: 2023-09-28T20:35:56.153Z
   - https://github.com/demon24ru/PouchDB-server-test-proxy
     - pouchdb proxy with JWT authentication
 
+- https://github.com/mmalecki/crdt-couchdb /MIT/201308/js
+  - A subclass of `crdt` lib which sources data from CouchDB and updates them in real-time. 
+  - It supports pre-fetching of views and filtering of changes with CouchDB filters (using changes).
+  - https://github.com/dominictarr/crdt /MIT/201403/js
+    - Commutative Replicated Data Types for easy collaborative/distributed systems.
+    - 提供了简单和复杂多个示例
+
+- delta-pouch /184Star/apache2/201706/js
+  - https://github.com/redgeoff/delta-pouch
+  - Conflict-free collaborative editing for PouchDB
+  - A PouchDB plugin for partial updates that uses the **every-doc-is-a-delta** storage pattern. 
+  - You can use delta pouch to enable conflict-free collaborative editing of the same docs.
+  - Delta pouch stores every change as a doc.
+  - [Question: a helpful link describing the "every-doc-is-a-delta storage pattern"?](https://github.com/redgeoff/delta-pouch/issues/53)
+    - Sounds like "every-doc-is-a-delta" is another way of saying "log database". Is that right?
+    - I would look up anything related to "Event Sourcing" which perhaps is a superset of this idea. Basically, the idea is that you save the events that happen in your system and then compile those into views.
+  - forks
+    - https://github.com/Brainsway-Cloud/delta-pouch
+
 - https://github.com/couchapp/couchapp /201808/python2
   - https://couchapp.readthedocs.io/en/latest/intro/what-is-couchapp.html
   - Utilities to make standalone CouchDB application development simple
@@ -155,18 +174,6 @@ modified: 2023-09-28T20:35:56.153Z
   - https://github.com/thaibault/clientnode /ts
     - The main goal of this plugin is providing an generic interface logic like controller for calling instance methods or getting property values of an object orientated designed plugin. 
     - A set of reusable logic elements for building gui components is integrated as well.
-
-- delta-pouch /184Star/apache2/201706/js
-  - https://github.com/redgeoff/delta-pouch
-  - Conflict-free collaborative editing for PouchDB
-  - A PouchDB plugin for partial updates that uses the **every-doc-is-a-delta** storage pattern. 
-  - You can use delta pouch to enable conflict-free collaborative editing of the same docs.
-  - Delta pouch stores every change as a doc.
-  - [Question: a helpful link describing the "every-doc-is-a-delta storage pattern"?](https://github.com/redgeoff/delta-pouch/issues/53)
-    - Sounds like "every-doc-is-a-delta" is another way of saying "log database". Is that right?
-    - I would look up anything related to "Event Sourcing" which perhaps is a superset of this idea. Basically, the idea is that you save the events that happen in your system and then compile those into views.
-  - forks
-    - https://github.com/Brainsway-Cloud/delta-pouch
 
 - https://github.com/IconCMO/pouch-datalog /js/inactive
   - Datomic-like Datalog queries for PouchDB
@@ -275,9 +282,12 @@ modified: 2023-09-28T20:35:56.153Z
   - Build your own modern CouchDB with Rust
   - I want "real time" replication to IndexedDB, which is unpleasant with regular CouchDB. The unpleasantness is mainly due to the revision mechanism, which is fairly Erlang specific. Revisions hashes are calculated using Erlang data structures and md5, both which are not native in browsers. Of course it is possible to achieve the revision calculation with some extra libraries. Still, I think it will be a fun challenge to implement a modern CouchDB variant
 
-- https://github.com/jrawsthorne/couchbase-rs /1Star/NALic/202312/rust/提交多
+- https://github.com/jrawsthorne/couchbase-rs /1Star/NALic/202309/rust/提交多
   - Unofficial Reimplementation of Couchbase Server in Rust
-  - https://github.com/krsanty02/couchbase /java
+  - https://github.com/jrawsthorne/libcouchbase-rs /202106/rust
+    - Play around with the Couchbase protocol in Rust
+    - Currently, every second, this inserts a document, gets that document, asserts it is equal, deletes it, gets again and asserts it's None
+  - https://github.com/krsanty02/couchbase /java/1commit
 
 - https://github.com/khonsulabs/bonsaidb /918Star/MIT/202311/rust
   - https://bonsaidb.io/
@@ -294,6 +304,9 @@ modified: 2023-09-28T20:35:56.153Z
     - One serious thought I still have is whether Nebari should exist, or whether BonsaiDb should just use another database format. 
     - BonsaiDb/CouchDB were designed with the idea of being able to embed extra information inside of the B+Tree structures. This is how the map/reduce is powered -- the reduced values can be stored directly in the B+Tree so that a reduce query doesn't need to visit all of the nodes in the tree to come up with an aggregate result. From what I could find, no other database engine that is written in Rust supports embedding extra information inside of the B+Tree structure itself, while it's a key-feature of Nebari.
     - Nearly every other embedded database engine does not utilize a write-ahead log. In my testing, a write-ahead log is absolutely critical for insert performance. 
+  - [Refactor Views to utilize Nebari's B-Tree_202110](https://github.com/khonsulabs/bonsaidb/issues/76)
+    - With our approach to storage in Sled, there was no actual tree to latch onto for the reduce/re-reduce functionality. 
+    - The net effect of this change for the histogram example is that the internal tree would be responsible for reducing the samples, allowing for fewer calculations for any given query.
   - https://github.com/khonsulabs/nebari /rust
     - A pure Rust database implementation using an append-only B-Tree file format.
 
@@ -371,7 +384,15 @@ modified: 2023-09-28T20:35:56.153Z
   - Stores all data as a series of deltas, which allows for smooth collaborative experiences even in frequently offline scenarios.
   - I have decided to suspend development of DeltaDB for the following reasons:
     - last-write-wins policy is nice when starting a new project as it is automatic, but other conflict resolution policies that force the user to manually resolve the conflict, like CouchDB’s revision protocol, have become more of the standard in the offline-first world.
-    - Building a DB that scales and is Building a DB that scales and is distributed over many nodes, takes a lot of work. 
+    - Building a DB that scales and is Building a DB that scales and is distributed over many nodes, takes a lot of work.
+
+- https://github.com/couchbase/couchstore /BSL/202312/c/cpp
+  - couchbase storage file library
+  - Couchstore is a low-level KV library that has a couple of unique features that we needed when building couchbase.
+  - append-only (doesn't change stuff from the past).
+  - indexed by change (and allows iteration since a particular change).
+  - The file format is relatively simple 
+  - Currently this library can only be built as part of Couchbase Server due to dependencies on the Couchbase Platform Library and Couchbase Server CMake project
 # sync/collab
 - resources
   - [(Alpha) PouchDB integration for Yjs](https://gist.github.com/samwillis/1465da23194d1ad480a5548458864077)
@@ -396,6 +417,7 @@ modified: 2023-09-28T20:35:56.153Z
   - Database is a simplified wrapper of a PouchDB that allows getting and putting documents.
   - 📕 [AutoCouch: a JSON CRDT framework_202004](https://www.researchgate.net/publication/340954717_AutoCouch_a_JSON_CRDT_framework)
     - AutoCouch is a JSON framework combining the benefits of the Automerge CRDT library and CouchDB
+  - [AutoCouch: A JSON CRDT Framework — Pascal Grosch - YouTube_202004](https://www.youtube.com/watch?v=D2_irGwRpjc)
   - https://github.com/WoelkiM/Polly_React_Example_AutoCouch
     - an example for a React app using AutoMerge
   - https://github.com/automerge/hypermerge /201911/ts/基于log实现crdt的思路
@@ -511,6 +533,20 @@ modified: 2023-09-28T20:35:56.153Z
 - https://github.com/redgeoff/pouchdb-persist /201410/js
   - pouchdb-persist was created when there were no similar options in pouchdb. 
   - Instead, use the live replication settings in pouchdb.
+
+- https://github.com/Stwissel/couchdb-replication-graph /202312/js
+  - Visualizing replication of CouchDB
+
+- https://github.com/iriscouch/follow /apache2/201709/js
+  - Very stable, very reliable, NodeJS CouchDB _changes follower
+  - This looks much like the request API
+
+- https://github.com/dominictarr/level-couch-sync /201509/js
+  - Replicate couchdb data into leveldb in real time with follow. Must be used with sublevel.
+
+- https://github.com/dominictarr/couch-sync /201111/js
+  - this is like following a view
+  - couch-sync requests a view, then listens on the _changes feed, pipeing the results through the map function so that you have always upto date view data, in memory
 # client-mobile-pc
 - https://github.com/craftzdog/react-native-sqlite-2 /202211/ts
   - SQLite3 Native Plugin for React Native for Android, iOS, Windows and macOS.
@@ -1349,6 +1385,11 @@ modified: 2023-09-28T20:35:56.153Z
 - https://github.com/timo-reymann/poc-couchdb-view-reduce /202211/shell
   - Proof of Concept to utilize CouchDB view reduce
   - reduce is not used in Fauxton, but by default in API calls
+
+- https://github.com/dominictarr/pull-couch /201601/js
+  - Parse the rows out of a couchdb views query without parsing it as one large json object. 
+  - instead split based on the format couchdb happens to use (delimited by \r) and then parse each line with JSON.parse. 
+  - This is much faster than parsing everything with a streaming parser (if implemented in js), such as JSONStream
 
 - https://github.com/mikerhodes/couchdbgin /202311/js
   - (Incomplete) Exercise in creating an inverted index using JSON paths and values within CouchDB

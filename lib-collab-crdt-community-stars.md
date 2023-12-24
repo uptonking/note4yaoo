@@ -76,7 +76,7 @@ modified: 2022-04-05T10:09:51.343Z
 - I've found that many of the modern JavaScript UI libraries play very well with event sourcing, IMHO. 
   - React and Vue.js in particular work very well when combined with Redux/Vuex and a CRDT database. 
   - Both of those stores are essentially event sources themselves, where the actions and mutators are separated and the data store itself is updated only in one place. 
-- What CRDT databases do you use in this sort of application?
+- 🤔 What CRDT databases do you use in this sort of application?
   - Currently leveraging CouchDB and it's incremental map-reduce to handle the "CRDT" merging of an event stream. 
   - Technically I'm not using a CRDT library or DB, but it's surprisingly easy to implement the core "commutative operations" of CRDT's via a modified deep-merge versioning algorithm.
   - Works pretty well as I can deploy 20, 000+ user interactions on an embedded CouchDB instance with steady performance.
@@ -129,9 +129,37 @@ modified: 2022-04-05T10:09:51.343Z
 
 - ## 
 
-- ## 
+- ## [What Is JSON Patch? | Hacker News_202205](https://news.ycombinator.com/item?id=31301627)
 
-- ## 
+- 🌰 Last year I experimented with an app architecture that used CouchDB/PouchDB for for synchronising data for a single user, multi device app. Then using Yjs to merge the conflicting edits - it worked incredible well. If I had the time, I would love to build a Yjs/CRDT native CouchDB like database that could use the Yjs state vectors as a wire protocol for syncing…
+  - This is the very rough code behind the PouchDB/Yjs datastore. Effectively each Pouch/Couch document is actually "managed" by Yjs, all changes/operations via it. It then saves the binary Yjs blob as an attachment on the Pouch document with the current Yjs state exported as JSON for the main Pouch document. This gives you all the indexing/search you get with Pouch/Couch but with automatic merging of conflicting edits.
+  - 🧐 **Ultimately though I don't think PouchDB is a good platform for this**, building something that is native Yjs would be much better. If anyone is interested I would love to hear from them though!
+- I'm also interested in following updates to your approach here. Something that stands out immediately to me is that reliance on binary attachments. 
+  - 👉🏻 In my own CouchDB ecosystem work binary attachments have turned out to be just about the worst part of the ecosystem. 
+  - PouchDB stores them pretty reliably, but every other CouchDB ecosystem database (Couchbase, Cloudant) including different versions of CouchDB itself (1.x is different from 2.x is different from 3.x in all sorts of ways) all have very different behavior when synchronizing attachments, the allowed size of attachments, the allowed types of attachments, the allowed characters in attachment names, and 😩 in general the sync protocol itself is prone(易于做某事；有做某事的倾向) to failures/timeouts with large attachments that are tough to work around because the break in the middle of replications. 
+  - The number of times I've had to delete an attachment that PouchDB stored just fine to get a sync operation to complete with another server has been way too many already.
+  - I've had to build bespoke(定制的) attachment sync tools because I haven't been able to rely on attachments working in the CouchDB ecosystem.
+  - I've been thinking that I need to replace the CouchDB ecosystem as a whole. PouchDB is great, but the flux(一系列的变化；持续的变化) I've seen in the Apache CouchDB project and the issues I've had with the managed service providers especially Cloudant after IBM makes it really hard to recommend the ecosystem. Overall it seems unhealthy/in-decline, which is sad when the core sync infrastructure seems so nice to work with when it works
+
+- ## [Conflict-Free Replicated Data Types (CRDT) | Hacker News_202204](https://news.ycombinator.com/item?id=30983770)
+- CRDTs are pretty rad. They’ve been rad for years, and a lot of work has been done around them. Usually people find that there are simpler/better ways to get the job done. I think they’re better left as an implementation detail at this point.
+- > Usually people find that there are simpler/better ways to get the job done.
+  - CRDTs can do one magic trick no other technology solutions can do: They can let users collaboratively edit without needing a centralized server. And this works between users, between devices or between processes.
+  - Its just, most of the time that doesn't matter. Servers are cheap, and big companies frankly seem to love it when we're dependent on their infrastructure.
+  - I want CRDTs for more "personal computing". I want my data to be shared between my devices seamlessly. 
+- You can always have an intermediary server with CRDTs is you want. They're just another peer on the network.
+  - Yeah I'm aware - I got the impression from your comment you were advocating for a more pure P2P approach (not necessarily CRDT related).
+- > Usually people find that there are simpler/better ways to get the job done.
+- Here's all the ways I know for dealing with write conflicts in a distributed systems:
+  - Last write wins, AKA I'm going to pretend I've solved the problem and just randomly lose data
+  - Record all versions of the data, pick an arbitrary winner, store a revision, and surface it to the user if there's a conflict (the CouchDB strategy, I don't know anything else using this)
+  - Model your data so it's append only (events, maybe) then merge just becomes a set union of all the different nodes
+  - So including CRDTs, that's my general taxonomy of solutions to this problem. Are there more?
+- CRDTs don’t quite fit in this list, as these are all valid merge strategies that a CRDT can use. The fundamental idea of a CRDT is that all of these schemes have something in common: They’re based on iteratively merging a bunch of versions together with a merge operator that fulfills a few basic properties Associativity/Commutativity/Idempotency/Closure. As long as your merge operator has all of these properties, you get the strong eventual consistency result that makes CRDTs a useful abstraction
+- That part is clear to me. What's not immediately obvious is that the DT in a CRDT can be entire database. Certainly the focus seems to be on individual data structures within a data store.
+- Slightly pedantic(学究式的；书呆子气的), but I think you'll actually find that all of these are CRDTs. If you read "Conflict-free Replicated Data Types: An Overview", it refers to both last write wins and "record all versions of the data" as CRDTs in 2.1.1. My understanding is that "CRDT" really just means that you've defined how you're going to resolve conflicts consistently (see criteria in s2.2 of the paper above).
+  - Yeah it had occurred to me that what I'm doing was just a GSet write large. In my mind a CRDT was always a single record, not a collection of them - still not convinced that doesn't change it.
+  - But if CRDTs really are a kind of a meta-language for resolving conflicts in a sane way - whether the CRDT is a single record or a whole data store - that's a nice thought. The CouchDB CRDT could be defined.
 
 - ## 💡 I'm basically only interested in 3 CRDTs - g-sets, multi-value registers, and OR-maps whose values are multi-value registers. 
 - https://twitter.com/LewisCTech/status/1715268425629716784

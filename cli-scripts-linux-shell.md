@@ -18,6 +18,12 @@ modified: 2023-01-07T15:58:14.300Z
 sudo netstat -tunlp|grep 8000
 sudo lsof -i:8000
  
+# 运行程序后关闭命令行终端 https://askubuntu.com/questions/429969
+# "&> /dev/null &" redirects the output of nohup such that you do not have logs
+# 通过自定义系统菜单可回避此问题
+nohup firefox &> /dev/null &
+# https://stackoverflow.com/questions/72538095/nohup-with-nested-quotes-and-subshell
+nohup bash -c 'echo "some text $(aws ... | tail -1)" >> myFile.txt' &
 
 # base64解码
 echo aHR0cHM6Ly9tYXMudG8vQG9jYXZ1ZQo= | base64 -d
@@ -291,10 +297,7 @@ yaoohpu18
 
 - lscpu
 - lsblk
-
-
 # discuss
-
 - ## 
 
 - ## 
@@ -304,4 +307,3 @@ yaoohpu18
 - ## If I have no idea what's occupying a specific port, I run this command. It gives me a PID so I can kill the process.
 - https://twitter.com/alex35mil/status/1725091399337480413
   - https://github.com/alex35mil/dotfiles/blob/47f4cfb5f4c165f5d84e2e42cb57db61e4bd32da/home/.config/shell/shortcuts.sh#L146-L170
-

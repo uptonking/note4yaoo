@@ -15,7 +15,7 @@ modified: 2022-04-05T10:10:08.537Z
 - cons
   - 不方便外部数据接入，因为字符的id在外部系统修改合并时会丢失
   - ot算法的转换方法更标准化更普及，crdt的实现依赖元数据而导致原理和实现不一致
-  - 如何处理二进制数据
+  - 如何处理二进制数据能减少数据体积和提升数据同步性能
 
 - 协作方案参考
   - Liveblocks, synced-store, FluidFramework, gundb, pouchdb

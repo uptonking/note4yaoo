@@ -30,6 +30,7 @@ modified: 2023-11-28T14:48:45.910Z
     - text files works well with existing tooling
     - 备选方案参考git，将文本与git工具绑定
     - sync: 本地文件自动生成delta
+  - mdbook/gitbook
   - open folder as site
   - office editor
   - encrypted elements: 有权限的用户或有密码的用户才可看到的数据

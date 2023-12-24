@@ -19,7 +19,7 @@ modified: 2022-12-02T11:15:15.257Z
     - 不必纠结于耦合度过高，sync protocol是公开的，可自行实现相关工具
   - pouchdb适合 one-db-per-user 的场景，跨user/db的搜索没有很好的解决方案
   - doc级别的权限管理没有最佳实践, Read access is on a per-database basis
-  - 同步协议非常chatty，性能不适合实时协作
+  - 同步协议非常chatty，不适合实时协作，改进方案可参考bonsaidb
   - filtered replication待改进, 过滤计算scale困难
   - 不支持与非couchdb的数据库同步，但可参考event-sourcing自己实现
   - pouchdb擅长同步，但对实时协作的支持不如websocket，不支持awareness
@@ -49,6 +49,7 @@ modified: 2022-12-02T11:15:15.257Z
   - no: Custom Conflict Handling
 
 - collab
+  - couchdb和crdt集成的思路，couchdb作为event-sourcing的数据源，基于此计算数据视图
   - 为db实现crdt的参考: piratedb, evolu/idbsidesync, triplitdb, indexeddb
   - 不必执着于寻找indexeddb的实现，很多时候只是作为一种持久化的方式
 
@@ -60,6 +61,7 @@ modified: 2022-12-02T11:15:15.257Z
 - tips
   - couchdb fauxton http://127.0.0.1:5984/_utils/
   - couchdb(erlang): 使用b+tree
+  - couchdb更专注于tp，对于重分析类查询可参考主流olap解决方法，传统关系型数据库也是这么做的，将数据导入ap数据库再分析
 
 - local-first-db的案例
   - 常用chat作为示例: scuttlebutt > manyverse/MPLv2, hypercore > keet/NonOpen, triplitdb > beeper, kappa > cabal/AGPLv3
@@ -97,6 +99,7 @@ modified: 2022-12-02T11:15:15.257Z
   - [Couchbase Forums](https://www.couchbase.com/forums/)
   - couchbase discord
   - [IBM Cloudant](https://www.ibm.com/cloud/cloudant)
+  - [couchdb-user-archive - Google Groups](https://groups.google.com/g/couchdb-user-archive)
 # draft
 - nonsyncable/local-only tables for config/temporary-data
   - local documents解决了此问题

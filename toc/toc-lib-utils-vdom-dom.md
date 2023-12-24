@@ -89,6 +89,10 @@ modified: 2023-11-23T09:56:33.507Z
 - https://github.com/Matt-Esch/virtual-dom /10.8kStar/MIT/201604/js
   - A JavaScript DOM model supporting element creation, diff computation and patch operations for efficient re-rendering
   - 用例: reflex
+  - https://github.com/Raynos/vdom-thunk /201506/js
+    - A thunk optimization for virtual-dom
+    - Use Thunk when you want to avoid re-rendering subtrees.
+    - Thunk will only re-evaluate the subtree if the arguments you pass to it change. This means you should use an immutable data structure (like observ-struct)
 
 - https://github.com/jorgebucaran/superfine /1.6kStar/MIT/202104/js/hyperapp作者
   - a minimal view layer for building web interfaces. 

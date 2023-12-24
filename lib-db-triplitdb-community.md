@@ -68,7 +68,13 @@ modified: 2023-10-11T21:37:25.329Z
 # discuss
 - ## 
 
-- ## 
+- ## What I want from my sync engine:
+- https://twitter.com/kylemathews/status/1738805645284118857
+  - local writes land locally
+  - writes elsewhere in the system are replicated in real-time to clients
+  - each client has a database of synced data that it can query anyway it wants
+- 100% agree. We're building @triplit_dev with this mod. Hard parts are handling conflicts and authorization which we've opted for Last-Writer-Wins on the property level of an entity and authorization enforced by server
+  - Getting the engine to sync is also only one piece of the puzzle. Having good hooks into the state of sync is also import to surface in the UI about being online/offline, pending changes, which items in the UI are optimistic rather than confirmed by server, etc
 
 - ## Ever wonder what it would take to make your app feel faster? Let’s speed-run optimizing a typical web app so we can see how challenging it actually is. 
 - https://twitter.com/matthew_linkous/status/1724501205701783899

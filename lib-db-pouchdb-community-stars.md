@@ -12,6 +12,25 @@ modified: 2023-12-06T15:59:01.332Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ##  I want pouchdb to replicate ‘as-needed’, AKA to use pouchdb as a ‘read-through cache’. _20231024
+- https://couchdb.slack.com/archives/C016TJAE7A4/p1698079241868579?thread_ts=1698040668.376679&cid=C016TJAE7A4
+  - Although full replication works like a charm, it’s a heavy requirement for mobile network users.
+  - My initial thought was that I would observe what documents I query, then create a replication per query. This would ensure I always query my local DB, and I can use the changes API as a hook to re-query the local DB. This keeps source of truth nice-and-easy and I let pouchDB handle all the work. 
+  - As a slight alternative, I could maintain a single replication per app, and cancel/restart it given each query, and that single replication contains all the documents of-interest to the current app state
+  - I currently have full replication to the app’s local DB. I am trying to cut down on network bandwidth for mobile users. The database is large (for indexeddb).
+
+- could you use the http adapter while the initial replication runs so your app talks to your server CouchDB and then swap to the indexeddb adapter when the replication is done?
+  - that is some clever secret sauce, let me toy with that. It still doesn’t cut down on “I am replicating stuff this user may not yet need”
+
+- If you can somehow determine the update seq of your server db after which you want all docs on the client, you can initiate the initial replication since that update seq.
+  - If the changes are not contiguous, you could also create a view on the server side that returns a list of doc ids for the client to use as a doc_ids filter for the initial replication.
+  - Finally you could use a filter function on the server, but that comes with a bunch of caveats, so avoid for now 
+- it would be really, really cool if filtered replication (not with the functions) would accept a range of keys instead of a list of document ids like `{ startKey: 'foo_', endKey: 'bar_123'}`.
+  - you could do that with a mango filter. that is not as bad as a JS filter, but also not as good as the query-a-view option
+  - it’s not a mango query. just a filter function that is expressed as a mango selector
+
 - ## what type of system architecture does PouchDB use (Embedded, Shared-Disk, Shared-Everything, Shared-Memory, or Shared-Nothing)? _201912
 - https://groups.google.com/g/pouchdb/c/rj-9MX9mlGY
 - If you think only of the local database and the standalone application, it is an embedded database. 
@@ -58,7 +77,12 @@ modified: 2023-12-06T15:59:01.332Z
 
 - ## 
 
-- ## 
+- ## do local docs have revision trees?
+- https://couchdb.slack.com/archives/C016TJAE7A4/p1697613422859539
+  - i can't see why they would need them
+  - couch docs show all local docs with rev 0-1
+  - pouch code shows local revs being incremented in idb and leveldown adapters from idb
+- They don’t have rev trees, but IIRC we increment their _rev so we know what’s older and what’s newer
 
 - ## [Store incremental data for views · pouchdb/pouchdb_201208](https://github.com/pouchdb/pouchdb/issues/99)
 
@@ -89,11 +113,6 @@ modified: 2023-12-06T15:59:01.332Z
   - serving as a content-addressed oracle for smart-contract execution 
   - games!
 
-- Are the indexes local-only or also synced? For integration in non-JS codebases, is there a spec to interoperate?
-  - The indexes use the same block store as the database, so when you activate replication, they also sync to @Web3Storage , but I think this will be optional, as you’d rather rebuild than copy when you’re on a slow connection.
-  - Another option I’ll be adding soon is the ability to serialize the current state as a single car file so that you can embed it in your app for instant preload
-  - As far as a spec, not yet. I plan to swap out some of the core data structures with more nuanced implementations, at which point that will be front of mind.
-
 - 🆚️ How does it differ from Pouch?
   - One of the stand-out use cases for this is adding features to Web3 style link in profile pages. Because if you’re deploying HTML that has its content hash in a block chain somewhere, and the html contains the root hash of your database. Merkle!
 
@@ -101,7 +120,7 @@ modified: 2023-12-06T15:59:01.332Z
 - 🌰 Last year I experimented with an app architecture that used CouchDB/PouchDB for for synchronising data for a single user, multi device app. Then using Yjs to merge the conflicting edits - it worked incredible well. If I had the time, I would love to build a Yjs/CRDT native CouchDB like database that could use the Yjs state vectors as a wire protocol for syncing…
   - This is the very rough code behind the PouchDB/Yjs datastore. Effectively each Pouch/Couch document is actually "managed" by Yjs, all changes/operations via it. It then saves the binary Yjs blob as an attachment on the Pouch document with the current Yjs state exported as JSON for the main Pouch document. This gives you all the indexing/search you get with Pouch/Couch but with automatic merging of conflicting edits.
   - 🧐 **Ultimately though I don't think PouchDB is a good platform for this**, building something that is native Yjs would be much better. If anyone is interested I would love to hear from them though!
-- Something that stands out immediately to me is that reliance on binary attachments. 
+- I'm also interested in following updates to your approach here. Something that stands out immediately to me is that reliance on binary attachments. 
   - 👉🏻 In my own CouchDB ecosystem work binary attachments have turned out to be just about the worst part of the ecosystem. 
   - PouchDB stores them pretty reliably, but every other CouchDB ecosystem database (Couchbase, Cloudant) including different versions of CouchDB itself (1.x is different from 2.x is different from 3.x in all sorts of ways) all have very different behavior when synchronizing attachments, the allowed size of attachments, the allowed types of attachments, the allowed characters in attachment names, and 😩 in general the sync protocol itself is prone(易于做某事；有做某事的倾向) to failures/timeouts with large attachments that are tough to work around because the break in the middle of replications. 
   - The number of times I've had to delete an attachment that PouchDB stored just fine to get a sync operation to complete with another server has been way too many already.

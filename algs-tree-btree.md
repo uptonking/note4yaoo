@@ -13,6 +13,8 @@ modified: 2023-09-17T18:17:41.377Z
   - postgresql
   - sqlite
   - foundationdb
+  - loro-crdt
+  - bonsaidb/nebari
 
 - who is using #b+tree
   - mongodb

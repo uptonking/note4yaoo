@@ -39,6 +39,12 @@ modified: 2023-11-03T17:43:01.518Z
     - h is the web app that serves most of the https://hypothes.is/ website, including the web annotations API 
     - The Hypothesis client is a browser-based annotator that is a client for h's API.
 
+- https://github.com/out-of-cheese-error/gooseberry /MIT/202208/rust
+  - A command line utility to generate a knowledge base from Hypothesis annotations
+  - made with asciinema, svg-term-cli, and svgembed
+  - Gooseberry provides a command-line interface for Hypothesis (a tool to annotate the web) and lets you generate a knowledge-base wiki without you having to actually type your knowledge out.
+  - Gooseberry combines the ease of annotation offered by Hypothesis, bulk tagging and organization support in the command line, and a customizable plaintext wiki with HandleBars templating.
+
 ## anno-server
 
 - https://github.com/jankaszel/simple-annotation-server /MIT/202007/js/inactive

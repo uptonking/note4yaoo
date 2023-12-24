@@ -136,6 +136,12 @@ modified: 2022-06-03T21:34:54.893Z
   - local-first knowledge integration platform optimized for automation (including caching and indexing of content) as well as enabling neural network machine learning integrations.
   - SQLite is the central data storage medium, rather than a collection of markdown documents.
   - Instead of users manually curating a knowledge graph, data is organized automatically by timestamp.
+
+- https://github.com/out-of-cheese-error/gooseberry /MIT/202208/rust
+  - A command line utility to generate a knowledge base from Hypothesis annotations
+  - made with asciinema, svg-term-cli, and svgembed
+  - Gooseberry provides a command-line interface for Hypothesis (a tool to annotate the web) and lets you generate a knowledge-base wiki without you having to actually type your knowledge out.
+  - Gooseberry combines the ease of annotation offered by Hypothesis, bulk tagging and organization support in the command line, and a customizable plaintext wiki with HandleBars templating.
 # confluence-like
 - MrDoc /2.1kStar/GPLv3/202208/js/python/Django/仅网页版
   - https://github.com/zmister2016/MrDoc
@@ -416,7 +422,7 @@ modified: 2022-06-03T21:34:54.893Z
 - https://github.com/MintterHypermedia/mintter /apache2/202312/ts/go
   - https://mintter.com/
   - a decentralized knowledge collaboration application for open communities powered by a knowledge graph.
-  - Powered by the Hypermedia protocol 自定义协议,
+  - Powered by the Hypermedia protocol 自定义协议, 
   - Mintter supports the new Hypermedia Web Protocol. This open protocol supports secure identities, version control, semantic documents, multimedia, and groups/organizations.
 # vscode-powered
 - foam /12.5kStar/MIT/202208/ts/vscode

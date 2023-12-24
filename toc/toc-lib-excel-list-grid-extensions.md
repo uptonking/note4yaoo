@@ -35,9 +35,10 @@ modified: 2022-08-21T10:03:57.063Z
   - create strong user interfaces with high quality web components.
   - 依赖stencil、tabulator-tables.v4
 # excel-utils
-- https://github.com/dominictarr/excel-stream
+- https://github.com/dominictarr/excel-stream /201507/js
   - A stream that converts excel spreadsheets into JSON object arrays.
   - excel isn't really a streamable format. 
+  - 依赖csv-stream、JSONStream、j
   - But it's easy to work with streams because everything is a stream. This writes to a tmp file, then pipes it through the unfortunately named j then into csv-stream
 
 - https://github.com/patrik-csak/BB26

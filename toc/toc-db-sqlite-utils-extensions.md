@@ -19,7 +19,14 @@ modified: 2022-11-04T14:20:37.172Z
 
 - https://github.com/nalgeon/sqlean /3.1kStar/MIT/202311/c
   - https://github.com/nalgeon/sqlean/blob/main/docs/stats.md
-  - There are a lot of SQLite extensions out there, but they are incomplete, inconsistent and scattered across the internet. sqlean brings them together, neatly packaged into domain modules, documented, tested
+  - There are a lot of SQLite extensions out there, but they are incomplete, inconsistent and scattered across the internet. 
+  - sqlean brings them together, neatly packaged into domain modules, documented, tested
+  - The goal is to create a well-thought set of domain modules with a convenient API. A kind of standard library for SQLite.
+
+- https://github.com/nalgeon/sqlpkg
+  - https://sqlpkg.org/
+  - The (unofficial) SQLite package registry
+  - The registry contains only package metadata (specs). Package binaries and sources are located elsewhere (usually in the package developer's repositories).
 
 - https://github.com/wekan/minio-metadata /202304/js
   - Transfer files from MongoDB GridFS to Minio file server, and MongoDB text to SQLite
