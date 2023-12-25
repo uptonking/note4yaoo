@@ -357,13 +357,19 @@ modified: 2021-01-04T17:26:43.784Z
 - JPedal PDF library /11Star/LGPL/202009
   - https://github.com/Lonzak/JPedal
   - a fork of the last official [JPedal PDF library] 
+
 - PDFrenderer  /162Star/LGPLv2/201912
   - https://github.com/katjas/PDFrenderer
   - It uses an improved version of JPedal's JBig2 decoder API.
+
 - MuPDF /295Star/AGPLv3/202009/c
   - https://github.com/ArtifexSoftware/mupdf
   - https://github.com/muennich/mupdf
   - written in C, providing Java JNI
+- https://github.com/andytango/mupdf-js /AGPLv3/202209/ts/c
+  - another Webassembly PDF renderer for node and the browser
+  - This is a port of MuPDF to javascript and webassembly
+
 - OpenViewerFX  /LGPL/
   - https://github.com/qwertme/OpenViewerFX
   - now part of JDeli

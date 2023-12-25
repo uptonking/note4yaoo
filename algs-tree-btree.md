@@ -35,6 +35,9 @@ modified: 2023-09-17T18:17:41.377Z
   - [B-Tree Visualization](https://www.cs.usfca.edu/~galles/visualization/BTree.html)
 # dev
 
+# blogs
+
+- [How does B-tree make your queries fast?_202311](https://blog.allegro.tech/2023/11/how-does-btree-make-your-queries-fast.html)
 # more
 - Hackreels 这个动画效果真不错
   - https://twitter.com/Hooopo/status/1736743804810768784

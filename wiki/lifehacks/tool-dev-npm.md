@@ -13,22 +13,18 @@ modified: 2020-12-08T14:05:52.048Z
   - 不支持 pnpm workspaces
 
 - tips
-  - [npmjs.com displays per-version download counts](https://github.blog/changelog/2021-01-27-npmjs-com-displays-per-version-download-counts/)
-  - [npmgraph - enter npm module name to see the dependency graph](https://npmgraph.js.org/)
-
-- [most depended upon packages](https://www.npmjs.com/browse/depended)
-  - lodash, core-js, moment, debug, uuid
-  - fs-extra, glob, chalk, commander, yargs, inquirer, minimist, colors, chokidar
-  - axios, express, request, node-fetch, async, bluebird, body-parser, isomorphic-fetch
-  - react, vue, classnames, rxjs, jquery, redux
-  - typescript, webpack, dotenv, @babel/runtime, jest, socket.io, redis
-  - styled-components, 
-  - ramda, deepmerge, date-fns
-  - marked
 
 - proxy
   - [常用网络问题库的url，部分地址失效待检查](https://github.com/cnpm/binary-mirror-config/blob/master/package.json)
-# usage
+# not-yet
+- [[QUESTION] xxx is not a valid npm option](https://github.com/npm/cli/issues/5852)
+  - node.js 18 comes with npm v9, which disallows 3rd party configs and breaks our pipeline. A new pr for upgrading is recommended. 
+  - [Cannot set store-dir in NPM v9](https://github.com/pnpm/pnpm/issues/5621)
+    - `echo 'store-dir=/some/path/.pnpm-store' >> /usr/local/etc/npmrc`
+
+- [npx doesn't work when in child workspace](https://github.com/npm/cli/issues/2826)
+  - npm exec -w website -- docusaurus
+# faq
 - [[BUG] ^7.20.3 no longer resolves local package first on install (workspaces)](https://github.com/npm/cli/issues/3637)
   - you can update your package.json files directly. The format is `"<package_name>": "*"` where the version number is `"*"`. If you do this, npm will recognize it as a local dependency
 
@@ -44,42 +40,8 @@ modified: 2020-12-08T14:05:52.048Z
 
 - [How to specify an npm workspace as a dependency - Stack Overflow](https://stackoverflow.com/questions/72851445/how-to-specify-an-npm-workspace-as-a-dependency)
   - "@project/another-package": "file:another-package"
-  - Dependency from another workspace package is referenced using file: prefix.
+  - Dependency from another workspace package is referenced using `file:` prefix.
 
-## not-yet
-
-# changelog
-- ref
-  - [v9 Changelog | npm Docs](https://docs.npmjs.com/cli/v9/using-npm/changelog)
-
-- v9.4.0_20230126
-  - Isolated mode RFC 终于得到了实现。
-  - 在设置 install-strategy=linked 后，npm 也会像 pnpm 一样，只对显式声明的依赖通过链接的形式挂到 node_modules 下，而不再对所有依赖做无脑 flat
-
-- v9.0.0-pre.0_2022-09-08
-  - changes the default value of `install-links` to true
-
-- v8.3.0_2021-12-09
-  - introduces overrides
-# common-pkg
-- typesync
-  - Install missing TypeScript typings for dependencies in your package.json
-# roadmap
-- [Today(20201119)'s npm OpenRFC recap](https://twitter.com/ruyadorno/status/1329164549140996100)
-  - Workspaces noHoist option
-  - Configurable cli default-command
-  - Registry dependency specifier
-- private-npm-registry
-  - https://github.com/verdaccio/verdaccio
-# bugs
-- [[QUESTION] xxx is not a valid npm option](https://github.com/npm/cli/issues/5852)
-  - node.js 18 comes with npm v9, which disallows 3rd party configs and breaks our pipeline. A new pr for upgrading is recommended. 
-- [Cannot set store-dir in NPM v9](https://github.com/pnpm/pnpm/issues/5621)
-  - `echo 'store-dir=/some/path/.pnpm-store' >> /usr/local/etc/npmrc`
-
-- [npx doesn't work when in child workspace](https://github.com/npm/cli/issues/2826)
-  - npm exec -w website -- docusaurus
-# faq
 - 如何执行某个workspace子包的package.json中预定义的命令
   - (~~暂不支持~~)现已支持
   - [[BUG] npm 7 workspace package script execution](https://github.com/npm/cli/issues/1904)
@@ -87,7 +49,7 @@ modified: 2020-12-08T14:05:52.048Z
 
 - 是否支持将root目录也作为一个代表workspace的package
   - 暂不支持
-  - [package-lock` not generating properly when using "." as a workspace](https://github.com/npm/cli/issues/2233)
+  - [package-lock not generating properly when using "." as a workspace](https://github.com/npm/cli/issues/2233)
     - 临时方案：手动在顶层node_modules创建根项目的symlink
     - I had a chat with the @npm/cli team yesterday and the conclusion is that 
       - this is not something we want to just quickly patch 
@@ -98,7 +60,7 @@ modified: 2020-12-08T14:05:52.048Z
   - 控制台不停打印npm run dev，然后陷入死循环
 
 - [如何在本地调试npm包](https://github.com/allenGKC/Blog/issues/13)
-  - 示例： 在 my-project 项目中测试本地的 allen-npm-util 包
+  - 示例： 在 my-project 项目中测试本地的 test-npm-util 包
 
 ```
 
@@ -126,16 +88,31 @@ npm unlink
 
 ```
 
-# package.json
+# npm-cli
+- `npm install`; 
+  - `install-links`: When set true,  `file: protocol` dependencies that exist outside of the project root will be packed and installed as regular dependencies instead of creating a symlink. This option has no effect on workspaces.
+
+- `npm run-script <command> [--silent] [-- <args>...]`; 
+  - This runs an arbitrary command from a package's "scripts" object.
+  - The `env` script is a special built-in command that can be used to list environment variables that will be available to the script at runtime.
+  - In addition to the shell's pre-existing PATH, npm run adds `node_modules/.bin` to the PATH provided to scripts. 
+    - Any binaries provided by locally-installed dependencies can be used without the `node_modules/.bin` prefix.
+  - Scripts are run from the root of the module, regardless of what your current working directory is when you call `npm run`. 
+    - If you want your script to use different behavior based on what subdirectory you're in, you can use the `INIT_CWD` environment variable, which holds the full path you were in when you ran `npm run`.
+  - "scripts": { "test": "node test/test.js" }
+    - If I change directory to /dir1/dir2 and execute `npm test`
+    - and the script I wrote on test property is executed properly without the use of ./ 
+  - We can reference the root directory of the project through the environment variable `INIT_CWD` that npm set for us!
+# package.json-config
 - 关于main-module
   - 测试使用的是main
   - ide跳转使用的时main
+  - webpack先检查module，再检查main
+  - babel-cli只是转译，并不关心从哪里import
   - 解决方案
     - 若main指向src，则可直接测试/跳转，方便了开发
     - 若main指向dist，必须先build，再测试/跳转
     - 将编译后的文件放在相同目录，只发布js，开发时用ts
-  - webpack先检查module，再检查main
-  - babel-cli只是转译，并不关心从哪里import
 
 - main
   - The `main` field is a module ID that is the primary entry point to your program. 
@@ -150,23 +127,22 @@ npm unlink
   - The `module` field is not an official npm feature but a common convention among bundlers to designate how to import an ESM version of our library.
   - The `module` property should point to a script that utilizes ES2015 module syntax but no other syntax features that aren't yet supported by browsers or node. 
   - This enables webpack to parse the module syntax itself, allowing for lighter bundles via tree shaking if users are only consuming certain parts of the library.
-# npm-cli
-- `npm run-script <command> [--silent] [-- <args>...]`
-  - This runs an arbitrary command from a package's "scripts" object.
-  - The `env` script is a special built-in command that can be used to list environment variables that will be available to the script at runtime.
-  - In addition to the shell's pre-existing PATH, npm run adds `node_modules/.bin` to the PATH provided to scripts. 
-    - Any binaries provided by locally-installed dependencies can be used without the `node_modules/.bin` prefix.
-  - Scripts are run from the root of the module, regardless of what your current working directory is when you call `npm run`. 
-    - If you want your script to use different behavior based on what subdirectory you're in, you can use the `INIT_CWD` environment variable, which holds the full path you were in when you ran `npm run`.
-  - "scripts": {
-    - "test": "node test/test.js"
-    - If I change directory to /dir1/dir2 and execute `npm test`
-    - and the script I wrote on test property is executed properly without the use of ./ 
-  - We can reference the root directory of the project through the environment variable `INIT_CWD` that npm set for us!
 # npm-utils
+- [npmjs.com displays per-version download counts](https://github.blog/changelog/2021-01-27-npmjs-com-displays-per-version-download-counts/)
+
+- [npmgraph - enter npm module name to see the dependency graph](https://npmgraph.js.org/)
+
 - https://github.com/plantain-00/clean-scripts
   - A CLI tool to make scripts in package.json clean.
   - 支持任务依赖
+
+- typesync
+  - Install missing TypeScript typings for dependencies in your package.json
+
+- syncpack
+
+- private-npm-registry
+  - https://github.com/verdaccio/verdaccio
 # workspaces
 - ref
   - [docs: workspaces](https://docs.npmjs.com/cli/v7/using-npm/workspaces)
@@ -199,9 +175,7 @@ npm unlink
 - pnpm has built-in support for monorepos (a.k.a. multi-package repositories, multi-project repositories, or monolithic repositories). 
   - You can create a workspace to unite multiple projects inside a single repository.
   - A workspace must have a pnpm-workspace.yaml file in its root.
-
-## lerna
-
+# lerna
 - 优点
   - 安装依赖时自动link
     - workspace也可以实现，扁平化依赖减少重复下载和体积
@@ -222,39 +196,18 @@ npm unlink
   - 非父子结构文件夹时难以共享babel配置
   - apply `nohoist` to all modules that contain native code (ios & android code)
 
-- Ah I'd very  much encourage you to move from having lerna manage the monorepo to having yarn workspaces do it. 
+- Ah I'd very much encourage you to move from having lerna manage the monorepo to having yarn workspaces do it. 
   - You can still use all the other lerna helpers, but yarn handles the inter-package links way better. 
   - I almost never have to delete node_modules any more.
 
-- I'm using Lerna  currently, but the way its change detection works results in lots of unnecessary publishes.
-# npm-blog
-- ## [Presenting v7.0.0 of the npm CLI](https://github.blog/2020-10-13-presenting-v7-0-0-of-the-npm-cli/)
-- npm 7 comes with some long-awaited and requested features including:
-  - Workspaces
-  - package-lock v2 and support for yarn.lock
-  - Automatically installing peer dependencies
-- The internals of npm have been significantly refactored for separating concerns. 
-  - the inspection and management of the node_modules tree has been moved to the module Arborist
-- Breaking changes in npm 7.0.0 include:
-  - Automatically installing peer dependencies 
-  - `npx` has been completely rewritten to use the `npm exec` command
-  - npm uses the `package.exports` field making it no longer possible to require() npm’s internal modules.
-- ## [npm v7 Series - Introduction](https://blog.npmjs.org/post/617484925547986944/npm-v7-series-introduction)
-- Vision
-  - Reduce noise that is not actionable.
-    - We’ve gone through the entire project from the data management to the presentation layers, stripping output that doesn’t provide worthwhile information.
-  - Manage your packages for you.
-  - Strict separation of concerns. 
-    - npm CLI itself is becoming strictly the user-interface layer, 
-    - and we’ve moved out all complex tree management and registry interactions to @npmcli/arborist, pacote, and the various libnpm* modules.
-  - Be as fast as possible while behaving correctly.
-# ref
+- I'm using Lerna currently, but the way its change detection works results in lots of unnecessary publishes.
+# more
 - [npm v7 Series - Beta Release!](https://blog.npmjs.org/post/626173315965468672/npm-v7-series-beta-release-and-semver-major)
 - [Simplify your monorepo with npm 7 workspaces](https://dev.to/limal/simplify-your-monorepo-with-npm-7-workspaces-5gmj)
   - The most common reason to set up a monorepo is to streamline work within a dev team that maintains multiple apps that are using a shared piece of code, for example a common User Interface library.
   - Just remember that npm has a different philosophy than yarn. 
     - For example you cannot run a script inside a workspace from the monorepo's root folder.
-- [pounchdb Remove Lerna](https://github.com/pouchdb/pouchdb/issues/5545)
+- [pounchdb Remove Lerna_201608](https://github.com/pouchdb/pouchdb/issues/5545)
   - we can remove our Lerna dependency and vastly speed up our build times by avoiding lerna bootstrap.
   - We already don't use Lerna for building (because lerna run is slow due to running multiple processes, so I wrote one big top-level build script) 
   - or for publishing (because I didn't take enough time to grok the Lerna docs on this, we're not using version: independent, and I found a bash loop with npm publish to be simpler)
@@ -280,9 +233,9 @@ npm unlink
   - I like this idea but wonder if it can be easily extended to use yarn workspaces to do the linking for you
 - [The highs and lows of using Lerna to manage your JavaScript projects_201709](https://hackernoon.com/the-highs-and-lows-of-using-lerna-to-manage-your-javascript-projects-ff5c5cd82a99)
   - Why it can be annoying
-    - If you have a lot of dependencies in each application, bootstrapping can take a very long time.
-    - Tests take a long time to run and lose syntax highlighting.
-    - Ways of working with one gigantic repo.
+  - If you have a lot of dependencies in each application, bootstrapping can take a very long time.
+  - Tests take a long time to run and lose syntax highlighting.
+  - Ways of working with one gigantic repo.
 - [Why you should switch from Lerna to Nx_201909](https://blog.nrwl.io/why-you-should-switch-from-lerna-to-nx-463bcaf6821)
   - Babel, Angular, React, Jest and many other open source projects switched to using monorepos. Many of them use Lerna
   - We built Nx based on our experience of working at Google. I like to think of it as the Webpack of monorepo tools.

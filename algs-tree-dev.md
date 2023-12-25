@@ -14,6 +14,10 @@ modified: 2023-04-20T08:05:25.098Z
 # blogs
 
 - [线段树（segment tree)、区间树(interval tree) - 知乎](https://zhuanlan.zhihu.com/p/105368572)
+
+- [Hash Array Mapped Trie（HAMT）简介 - 雪球球 - 博客园](https://www.cnblogs.com/xueqiuqiu/articles/8648853.html)
+  - Hash Table 和 List 的一个区别在于 Hash Table 当中保存的元素是散列和稀疏的，不像 List 那样从下标 0 一直排列到 n。
+  - 只要把 List 当中下标必须连续的限制条件去掉，Vector Trie 本身就变成了一种相对传统 Array 更好的容器
 # more
 
 # discuss

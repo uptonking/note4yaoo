@@ -197,9 +197,75 @@ modified: 2023-10-29T02:23:35.064Z
 
 # discuss-bonsaidb
 - dev-xp
-  - couchdb/couchstore/replication/protocol
+  - couchdb/couchstore/replication/protocol/lsm
 
 - ## 
+
+- ## What's the status of sediment + nebari looking like? I've been interested to see how it performs_202312
+- https://discord.com/channels/578968877866811403/833332909808025610/1188641694300786789
+- From my memory, I got a bit frustrated realizing there was no easy way forward to keep backwards compatibility between old nebari and new nebari. Once I realized how much work was going to be required to finish it up, I decided I should instead focus on getting a BonsaiDb update out the door.
+  - After shipping the BonsaiDb update, I really wanted to use it. That ended up evolving into another take on Gooey which I just released the first alpha of. I'm currently a bit more interested in continuing to try to build something with BonsaiDb + Gooey for the near future.
+  - But, never fear, I have been craving dusting off the project and finishing it up. I haven't lost interest, I'm just a crazy person who is tackling too much for his own good!
+
+- Another thing: any plans for eventual/near real-time durability? Fsync'ing after every write is not needed for every workload; this may actually affect okayWAL too, haven't checked. JammDB has the same problem of me not being able to turn off aggressive fsyncing.
+  - In short, I'm primarily only interested in ACID compliant workloads. If PostgreSQL can't keep up with your hypothetical workload, then the databases I'm building won't be able to either.
+  - With that being said, there's one workflow where I do plan on supporting "delayed" fsyncing: BonsaiDb's views. The view updaters never need to wait for an fsync. The data is still being written in isoliation inside of a transaction, but once it's written, since the views are dynamically generated, it's ok for data loss to occur. I don't remember having a specific plan on how to still occasionally fsync without blocking for fsync.
+  - 👉🏻 OkayWAL/Sediment are designed to batch fsync operations so that many transactions happen per fsync. This helps get the actual data ingestion rate closer to the actual write speed of the disk.
+- I would have to benchmark that because you are still doing synchronous flushes that way. Having a way to turn that off and adding a Nebari::flush or OkayWal::flush would allow the user to determine when to flush, which seems quite important for a low level building block like that. That's one reason I couldn't consider okayWAL
+  - I would welcome comparisons in benchmarks. From my best ability to benchmark PostgreSQL's write performance, OkayWAL is very close in performance. (in the situations I've observed it, ymmv) 
+  - Unless your workload is purely single threaded -- in a single threaded environment, you're right, everything is sequential.
+- Have you compared with RocksDB as well? 
+  - Yes, sediment's benchmark suite had rocksdb in it for a long time until it broke my ci 
+- That's for an ACID workload though right? Not a bulk loading or high insertion workload? Cause 2ms is too slow for either. I mean like timeseries data; 10/50/100k+ inserts per second, but low consistency requirements 
+  - Adding a caching frontend that does periodic commits solves that in a way without adding a need for a more complex storage layer
+  - In fact, I'd argue that architecture will lead to a more optimal IO load because instead of streaming 100 writes to the same key to disk with eventual consistency, it would only update the key once every time its threshold of time or number of changes was met.
+  - This is how the BonsaiDB Key-Value store is designed today, and it's how it gets close to redis's performance. From my profiling results, the main issue preventing it from meeting Redis's performance is that tokio-tungstenite doesn't offer an API for getting the socket messages without copying the data new to vec's -- not database related, purely networking related.
+
+- ## I just released v0.5.5 of Nebari, which removes one more block for me releasing an update to BonsaiDb_202302
+- https://discord.com/channels/578968877866811403/833332909808025610/1079789837122535535
+  - Last fall, after seeing the wall of tasks left to complete to finish up the storage rewrite, I thought about trying to get a new release of BonsaiDb without the storage rewrite going.
+  - In my state of burnout at the time, this ended up being just one more blow -- I wasn't getting any good information, and each time I tried, I had to wait an hour for it to fail.
+  - main has a lot of breaking changes that are geared up for the BonsaiDb storage revamp. So I back-ported the change atop v0.5.4 to create an update without any breaking changes that addresses this issue.
+
+- ## Whats the state of bonsai? I really like the idea of bonsai with the schema written in rust and would like to contribute?_202302
+- https://discord.com/channels/578968877866811403/833332909808025610/1071088384602284132
+- It's usable in its current form, but a bit slow to write transactions. In terms of development, I've been working on rewriting the storage layer, and haven't been using it in projects until very recently, so the high-level BonsaiDb crate really hasn't seen much improvement in the past few months. 
+- So sediment is currently what you are focusing on?
+  - Yes, although I'm about ready to integrate it into Nebari
+- you doing that on the sediment branch of Nebari?
+  - Maybe? I've rewritten sediment since I last started integrating it, and I haven't had a chance to see how bad the branch is in its current state. I think I kept the API fairly similar, so I think I can salvage the work I've already done
+- Ah I see, what else do you need done on sediment before your ready to integrate?
+  - The main missing feature is rollback on the main data store when a power outage or crash occurs.
+- commit log is already implemented I assume> I mean i see it here but is it complete? also where will tests be written?
+  - Yes, and pretty thoroughly tested although I want to throw a fuzzer at the whole thing soon. The tests are all written in the repository
+- The format is designed to allow me to write to multiple files, then queue up all the fsync operations for the files that were touched. In the event of a crash or power outage, it could happen at any point (before write, mid-write, mid-sync, post sync) on any file being updated.
+  - Since the index file could be fully synced yet some stratum wasn't fully synced, we need to be able to roll back to the previous header if we detect that the last commit wasn't fully written. That's why the other copy of the header(s) exists.
+
+- 🐛 Ugh, this is the second day I've been trying to look at Nebari's Sediment branch, and I'm realizing how much I changed in Sediment's architecture. It really might be better to redo most of the Sediment integration than use this branch afterall.
+
+- ## BonsaiDb really could be built atop any key-value store that supports ACID transactions. In that other pull request I linked, that isn't true anymore -- I'm fully leveraging my specific key-value store Nebari. _202301
+- https://discord.com/channels/578968877866811403/833332909808025610/1064590847292747837
+  - But even then, the truly low-level bits are hidden in Nebari.
+  - 🎯 My goal with the rewrite of how Nebari works (Sediment/OkayWAL) is to end up with something that's documented well enough that anyone else could dive into it. I don't feel like any one particular thing I'm doing is that complex, and I feel like with some good documentation guiding how it all fits together, almost anyone could understand how it all works.
+  - One other thing that I wanted to mention is that the new storage rewrite will alleviate the need to periodically compact your database -- Nebari currently is implemented using an append-only file format. If you're not doing much updates or deletes, there won't be as much junk data being accumulated, but there will still be some extra space that can be reclaimed by compacting the database.
+
+- That's awesome, I was already starting to think ahead about compactions and what to do about that. Actually, I hadn't considered this but compaction doesn't happen in memory does it? Like it's not loading the entire DB to memory? (as I'm saying this it seems increasingly unlikely that this is the case - it wouldn't make sense for large databases just the same as it doesn't make sense for a database on limited hardware)
+  - Nope, compaction is handled by Nebari and streams the data intelligently with very minimal ram required.
+- Even when you run out of space... you can manually remove the view files inside of the database safely while it's shut down. They'll just rebuild when needed again.
+
+- ## 🎯 [Project Status_202301](https://github.com/khonsulabs/bonsaidb/issues/262)
+- It is still in active development, but it's definitely had its progress slowed. There is a pending file format redesign that I plan on offering at least migration tools
+  - July 2022: I wrote an overview of my goals of Sediment, a storage layer I am planning on sitting below Nebari, which BonsaiDb uses for the underlying database implementation.
+  - August 2022: I get Sediment to the point of benchmarking, I went and did the same benchmark against PostgreSQL and discovered that PostgreSQL outperformed them all. Why? It turns out Write-ahead logging is the fastest way to get incoming writes to disk.
+  - September 2022: I wrote my own WAL implementation, inspired in-part by sharded-log. What I found shocked me -- PostgreSQLs much simpler single-writer-at-a-time WAL design outperformed my implementation and sharded-log significantly, even with a large number of threads all competing to write at the same time. I scrapped the blog post and began rewriting my implementation to be inspired by PostgreSQL instead.
+  - October 2022: I finished my rewrite of OkayWAL, and I saw the mountain of work ahead of me to get everything tied back together. I was a bit burned out, and I needed a break.
+  - December 2022: I've begun a rewrite of Sediment due to changing some of my goals now that there is a WAL in front of the storage layer. It's still early in development.
+- One serious thought I still have is whether Nebari should exist, or whether BonsaiDb should just use another database format. 
+- There are two main arguments for pursuing my new format are:
+  - BonsaiDb/CouchDB were designed with the idea of being able to embed extra information inside of the B+Tree structures. This is how the map/reduce is powered -- the reduced values can be stored directly in the B+Tree so that a reduce query doesn't need to visit all of the nodes in the tree to come up with an aggregate result. From what I could find, no other database engine that is written in Rust supports embedding extra information inside of the B+Tree structure itself, while it's a key-feature of Nebari.
+  - Nearly every other embedded database engine does not utilize a write-ahead log. In my testing, a write-ahead log is absolutely critical for insert performance. A developer can always use a write-ahead log manually in front of the database, but having it built-in seems like a very valuable feature.
+- That annotated B+ Tree is a really neat innovation, certainly not something I'd stumbled onto before.
+- The new format I'm designing will have some increased memory usage to keep track of various on-disk state, but it should still be able to be used comfortably in a low-memory environment.
 
 - ## do you recommend a way to monitor the changes in bonsaidb database ?_202207
 - https://discord.com/channels/578968877866811403/833332909808025610/994152982457364511
@@ -374,6 +440,22 @@ modified: 2023-10-29T02:23:35.064Z
   - Tracking changes in binary files (which cannot be merged in any reasonably generic fashion) is a fundamentally different issue than tracking changes in text, particularly source code. Git is designed to do the latter. While you can use it to track changes in binaries, merging doesn't make sense anymore, and hashing/scanning big binary files for changes is significantly slower. (A bunch of images generally won't matter, but I wouldn't use it to track, say, video, or large database dumps.)
 # discuss-couchdb
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Backend Storage Engine, Storage formats used in Couchbase Server 6.x _202011](https://www.couchbase.com/forums/t/backend-storage-engine-storage-formats-used-in-couchbase-server-6-x/28290)
+- What is the current back end storage engine used in Couchbase Server 6.x enterprise edition? Is it CouchDB based CouchStore or Magma?
+  - Current back end storage engine in Couchbase Server 6.x is CouchStore.
+- What is the current file storage format used by the storage engine?
+  - Storage format is B+ Tree.
+- What is the compaction strategy used to compact the Couchbase buckets?
+  - Compaction strategy is %fragmentation based (hence depends on the write activity of your workload).
+- What is the index storage format for Global Secondary Indexes in memory and on disk? I understand its Nitro based skip list in memory. What does it look like on disk for data greater than memory scenarios?
+  - Index storage engine is Plasma which is based on skip list in memory. Recommendation is to have at least 20% of your index size available as memory.
 
 - ## [CouchDB in multi-tenant environment_201006](https://user.couchdb.apache.narkive.com/Ht2wAdNw/couchdb-in-multi-tenant-environment)
   - I am evaluating CouchDB to be used in multi-tenant environment and would like to know if there are ways to have design documents from one database to be used by a another database.

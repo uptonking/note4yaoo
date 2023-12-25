@@ -55,7 +55,14 @@ modified: 2023-10-27T07:04:15.549Z
 
 - ## 
 
-- ## 
+- ## Something that I love about software is that there are usually different legitimately good ways to solve a problem, and they will have different tradeoffs.
+- https://twitter.com/aboodman/status/1739030881921368270
+  - JSON, protobuf, and csv are an example. Neither is “better”, just better (and worse) at different things.
+  - Turn one knob and readability goes up, but interop and efficiency go down. Turn another knob and interop/perf goes up but you can’t read it anymore.
+  - I often have a hard time choosing a “favorite”.
+
+- Surprisingly, json parsing is faster than protobufs.
+  - Larger payload size, hence the tradeoff
 
 - ## 🔥 [Database character sets and collations explained – why utf8 is not UTF-8 | Hacker News_202201](https://news.ycombinator.com/item?id=29793916)
 - 

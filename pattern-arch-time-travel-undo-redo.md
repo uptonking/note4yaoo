@@ -12,13 +12,13 @@ modified: 2023-09-12T09:36:25.608Z
   - 同类产品，如git
   - 编辑器，如vscode、ckeditor、ospreadsheet
   - 数据库，如dolt、mongodb-doc-ver
-# examples
+# dev
 
 # blogs
 
 - [Making Data Structures Persistent_1986](http://www.cs.cmu.edu/~sleator/papers/Persistence.htm)
 
-## [History Data Structures](https://gist.github.com/CMCDragonkai/d266a3055735545447439f0fa662a0e1)
+## 💡 [History Data Structures](https://gist.github.com/CMCDragonkai/d266a3055735545447439f0fa662a0e1)
 
 - For stateful applications, there are 5 different ways of managing the history of state:
   - No History - Living in the moment. - Examples: Any stateful application that doesn't discards all previous states upon mutation.

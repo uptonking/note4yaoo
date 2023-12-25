@@ -10,6 +10,22 @@ modified: 2022-12-04T16:34:29.342Z
 # guide
 
 # products
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [What is the best Canny alternative ? : selfhosted_202203](https://www.reddit.com/r/selfhosted/comments/tcdhmb/what_is_the_best_canny_alternative/)
+- I have no idea what Canny's selling points are to be honest.
+- Astuto claims to be similar to Canny: https://github.com/riggraz/astuto
+- Chatwoot is nice and has basically the whole customer conversation journey included: https://github.com/chatwoot/chatwoot
+- Zammad goes into the direction of helpdesk conversations: https://zammad.org/screenshots
+- Helpy is similar: https://helpy.io/
+- Fider is rather about feature voting: https://github.com/getfider/fider#fider
+
 - ## [linktree: 六小时开发的工具，竟然值13亿美元？全球网红都爱 - 知乎](https://zhuanlan.zhihu.com/p/534781260)
 
 - 案例

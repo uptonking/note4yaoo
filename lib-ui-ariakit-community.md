@@ -12,6 +12,17 @@ modified: 2023-06-22T05:33:12.658Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## New example: Combobox with tabs
+- https://twitter.com/diegohaz/status/1738615278701892062
+  - It combines Combobox and Tab components to create an accessible combobox widget, where options are organized into tabs.
+
+- Very cool! How flexible it is to use a controlled content-editable element (a rich-text editor framework) instead of an input/textarea? Considering to integrate it in SlateJS.
+  - It should be flexible enough, but it does require some effort from the developer. In the early days of Ariakit, I experimented with Lexical.js and made it work. The API has seen some improvements since then
+
 - ## New example: Navigation Menubar
 - https://twitter.com/diegohaz/status/1729471805637722297
   - [Navigation Menubar - Ariakit](https://ariakit.org/examples/menubar-navigation)

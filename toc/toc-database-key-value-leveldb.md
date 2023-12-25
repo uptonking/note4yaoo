@@ -323,6 +323,11 @@ modified: 2022-11-03T04:14:00.563Z
   - This library implements a multi-register conflict strategy, so each key may map to more than one value. To merge multiple values into a single value, point at more than one ancestor id.
   - This library is useful for **kappa architectures** with missing or out of order log entries, or where calculating a topological ordering would be expensive
   - This library does not store values itself, only the IDs to look up values. This way you can use an append-only log to store your primary values without duplicating data.
+# key-value-benchmark
+- https://github.com/couchbaselabs/ForestDB-Benchmark /201706/cpp
+  - a benchmark program for embedded key-value storage engines, based on a sophisticated workload generation which is more realistic than performing a bunch of read/write operations. 
+  - It generates key-value store operations using the APIs of Couchstore, which is the current storage engine of Couchbase Server. 
+  - We currently provide API-wrappers for ForestDB, LevelDB, RocksDB, and WiredTiger.
 # more-key-value
 - https://github.com/pgte/alfred /201109/js
   - Alfred is a fast in-process key-value store for node.js.

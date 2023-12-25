@@ -16,6 +16,24 @@ modified: 2023-05-30T21:36:55.391Z
   - WebGL
   - Tiling
   - While the essay concluded that the most efficient way to render things was using WebGL, the benchmark also showed that DOM+React was not that bad (3~4x slower than Raw WebGL)—small products and personal projects may not need the burden of WebGL.
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 有朋友问我Miro好在什么地方。
+- https://twitter.com/PenngXiao/status/1739195961199800601
+  - Miro有一个非常难用的地方，比如Table只难看有点不可思议。除此之外，完全没有一个地方支持Markdown也有点令人费解。
+  - 除此之外，Miro的每个细节都完美的符合我的预期。
+- 这样的产品单独说它好很难解释，就拿BoardOS做个对比，我用了几分钟发现的几个细节差距（不称为问题）：
+  1. Sticky note里面的换行
+  2. 触摸板移动无限画布不符合直觉
+  3. 缩放速度太快、太敏感
+  4. Mindmap选中之后不能独立缩放
+  - BoardOS是一个非常优秀的产品，以上完全可能是我习惯了Miro之后的不适，并非产品的问题。
+
 # discuss
 - ## 
 

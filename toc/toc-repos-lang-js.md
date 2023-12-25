@@ -7,8 +7,18 @@ modified: 2021-05-14T15:04:42.225Z
 
 # toc-repos-lang-js
 
-# js-utils
+# guide
 
+- [most depended upon packages](https://www.npmjs.com/browse/depended)
+  - lodash, core-js, moment, debug, uuid
+  - fs-extra, glob, chalk, commander, yargs, inquirer, minimist, colors, chokidar
+  - axios, express, request, node-fetch, async, bluebird, body-parser, isomorphic-fetch
+  - react, vue, classnames, rxjs, jquery, redux
+  - typescript, webpack, dotenv, @babel/runtime, jest, socket.io, redis
+  - styled-components, 
+  - ramda, deepmerge, date-fns
+  - marked
+# js-utils
 - https://github.com/pull-stream/pull-stream /js
   - https://pull-stream.github.io/
   - pull streams work great for "object" streams as well as streams of raw text or binary data.

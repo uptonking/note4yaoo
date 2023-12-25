@@ -12,15 +12,15 @@ modified: 2023-05-07T18:35:50.897Z
 # discuss
 - ## 
 
-- ## 
-
-- ## [What is the best Canny alternative ? : selfhosted_202203](https://www.reddit.com/r/selfhosted/comments/tcdhmb/what_is_the_best_canny_alternative/)
-- I have no idea what Canny's selling points are to be honest.
-- Astuto claims to be similar to Canny: https://github.com/riggraz/astuto
-- Chatwoot is nice and has basically the whole customer conversation journey included: https://github.com/chatwoot/chatwoot
-- Zammad goes into the direction of helpdesk conversations: https://zammad.org/screenshots
-- Helpy is similar: https://helpy.io/
-- Fider is rather about feature voting: https://github.com/getfider/fider#fider
+- ## 发现「云闪付」App 最近新推出了个「一键查卡」的 beta 功能，
+- https://twitter.com/luoleiorg/status/1738951627686789464
+  - 支持看你有没有在国内近 496 家银行开过哪些卡，银联官方渠道，应该还算靠谱。大概用途可以查自己以前遗漏的卡，或者看有没有人冒充开卡？
+- 这个只能查到带银联标的卡，非银联单标卡查不到
+  - 美国运通也能查到
+- 亲测查不到单币visa卡
+- 支付宝也有，但是根本查不了
+- 这并不是最近出的，有几年了
+- 很早之前就有了，之前查过，需要等短信通知结果
 
 - ## postman 竟然不是本地运行的？UI好慢好卡。有么有更好的替代品呀？
 - https://twitter.com/river_leaves/status/1735646281488580659

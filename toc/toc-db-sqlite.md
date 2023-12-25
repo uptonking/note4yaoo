@@ -157,7 +157,7 @@ modified: 2021-08-30T18:56:18.632Z
     - Synchronization is one-way only (changes made on the master will overwrite changes made on slaves). Slave databases are kept read-only to prevent accidental writes from application code.
     - watchdb replication is eventually consistent by design, so it's AP in CAP. If you need strong consistency (at the expense of performance and required changes to application code), take a look at rqlite.
 
-- https://github.com/rusqlite/rusqlite /rust
+- https://github.com/rusqlite/rusqlite /MIT/202312/rust
   - an ergonomic wrapper for using SQLite from Rust.
   - Historically, the API was based on the one from rust-postgres. However, the two have diverged in many ways, and no compatibility between the two is intended.
 

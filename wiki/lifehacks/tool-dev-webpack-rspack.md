@@ -1,11 +1,11 @@
 ---
-title: tool-dev-webpack
-tags: [devtools, engineering, tool, webpack]
+title: tool-dev-webpack-rspack
+tags: [devtools, engineering, rspack, toolchain, webpack]
 created: 2020-11-20T19:29:35.880Z
-modified: 2020-12-08T14:05:41.408Z
+modified: 2023-12-25T19:32:32.910Z
 ---
 
-# tool-dev-webpack
+# tool-dev-webpack-rspack
 
 # guide
 
@@ -29,20 +29,6 @@ modified: 2020-12-08T14:05:41.408Z
   - 可查看源码 WebpackOptionsDefaulter.js
   - if your Webpack target is `node`, it looks at the `module` and `main` for entry. Otherwise, it goes to the `browser`, then `module`, then `main`.
   - 技巧：module可指向源码，main指向转义后的es5代码
-# webpack-internals
-- [手写一个webpack，看看AST怎么用](https://juejin.cn/post/6930877602840182791)
-  - webpack最基本的功能其实是将JS的高级模块化语句，import和require之类的转换为浏览器能认识的普通函数调用语句。
-  - 要进行语言代码的转换，我们需要对代码进行解析。常用的解析手段是AST，也就是将代码转换为抽象语法树。
-  - AST是一个描述代码结构的树形数据结构，代码可以转换为AST，AST也可以转换为代码。
-  - babel可以将代码转换为AST，但是webpack官方并没有使用babel，而是基于acorn自己实现了一个JavascriptParser。
-- [webpack核心模块tapable源码解析 - 掘金](https://juejin.cn/post/6946094725703139358)
-  - tapable的源码的抽象程度比较高，直接扎进去反而会让人云里雾里的，所以本文会从最简单的SyncHook和发布订阅模式入手
-  - tapable的各种Hook其实都是基于发布订阅模式。
-- [webpack核心模块tapable用法解析 - 掘金](https://juejin.cn/post/6939794845053485093)
-  - webpack plugin高度依赖tapable这个库
-  - tapable并没有具体的业务逻辑，是一个专门用来实现事件订阅或者他自己称为hook(钩子)的工具库，其根本原理还是发布订阅模式，但是他实现了多种形式的发布订阅模式，还包含了多种形式的流程控制。
-  - 这些Hook主要有同步(Sync)和异步(Async)两种，同时还提供了阻断(Bail)，瀑布(Waterfall)，循环(Loop)等流程控制，对于异步流程还提供了并行(Parallel)和串行(Series)两种控制方式。
-  - tapable其核心原理还是事件的发布订阅模式，他使用tap来注册事件，使用call来触发事件。
 # Module Federation
 - [Module Federation原理剖析](https://zhuanlan.zhihu.com/p/296233114)
   - https://github.com/efoxTeam/emp
@@ -152,36 +138,7 @@ modified: 2020-12-08T14:05:41.408Z
   - https://github.com/flegall/monopack
     - A JavaScript bundler for node.js monorepo-codebased applications.
   - https://github.com/lucasgdb/monorepo-react-node-postgres-ts
-# dev-error
-- ## [Webpack: Bundle.js - Uncaught ReferenceError: process is not defined - Stack Overflow](https://stackoverflow.com/questions/41359504/webpack-bundle-js-uncaught-referenceerror-process-is-not-defined)
-
-```JS
-// webpack.config.js
-const webpack = require('webpack')
-const dotenv = require('dotenv')
-
-// this will update the process.env with environment variables in .env file
-dotenv.config();
-
-module.exports = {
-  //...
-  plugins: [
-    // ...
-    new webpack.DefinePlugin({
-      'process.env': JSON.stringify(process.env)
-    })
-    // ...
-  ]
-  //...
-}
-
-// Access environment variables in your source code:
-alert(process.env.NODE_ENV)
-```
-
-- ## [WARNING in DefinePlugin Conflicting values for 'process.env. NODE_ENV'](https://github.com/nrwl/nx/issues/7924)
-- Turns out Webpack's mode parameter sets process.env. NODE_ENV via DefinePlugin [0]. So, if you use both mode: 'development' and an instance of DefinePlugin, process.env. NODE_ENV can get set with conflicting values...
-# ref
+# more
 - [webpack: Choosing a Development Tool](https://webpack.js.org/guides/development/ )
 - [Cutting our webpack build times in half_201905](https://www.cargurus.dev/Cutting-our-webpack-build-time-in-half/)
   - We use yarn workspaces, and whats known as a mono-repo. 
@@ -195,45 +152,4 @@ alert(process.env.NODE_ENV)
 - [Webpack vs webpack-dev-server vs webpack-dev-middleware vs webpack-hot-middleware](https://stackoverflow.com/questions/42294827/webpack-vs-webpack-dev-server-vs-webpack-dev-middleware-vs-webpack-hot-middlewar)
 
 - [How does the CodeSandbox browser-side webpack work? ](https://developpaper.com/how-does-the-codesandbox-browser-side-webpack-work-part-one/)
-# discuss
-- ## 
 
-- ## 
-
-- ## Do you know webpack can't guarantee the order of CSS chunks? 
-- https://twitter.com/rspack_dev/status/1722493364774568218
-  - Therefore, it's unwise to rely on the order of CSS chunks if your CSS depends on cross-module orders. 
-
-- ## You either die a startup, or scale enough to return to webpack.
-- https://twitter.com/ScriptedAlchemy/status/1729761667204915238
-- What are some features only possible in webpack?
-  - In webpack and rspack, it’s language agnostic. It compiles to any target. Its optimization phase produce’s smaller artifacts than others, except for closure compiler. Chunk and bundle split is most accurate and adaptable. You have a runtime to manage module loading, and allow you to orchestrate and interact with it. Hmr works consistently. It can cache builds. You can build things like build doctor
-
-- ## Surprisingly it is the persistent cache, fast prebundle of esbuild and the lazy compilation brought by esm that make Vite perform quickly, while the bundleless brought by esm actually slows down Vite. 
-- https://twitter.com/hardfist_1/status/1729677009989587120
-  - lazy compilation, persistent cache and fast bundle are the key, not bundleless.
-
-- ## Do you know webpack supports skipping the parsing of large files through the use of the `module.noParse` option?
-- https://twitter.com/rspack_dev/status/1719707638496125128
-
-- ## There has been a recent trend where people see one incident of a slow Vite app and start dismissing the whole bundle-less dev setup as "bad".
-- https://twitter.com/youyuxi/status/1730537401217610234
-- Bundle-less is slower on each reload even with all the caching in the world.
-- I think it’s fair to say that the bundle-less approach is fast for smaller apps but slows down the more modules you add, and you have to pay this cost on every page load rather than only once up front. Bundlers have gotten a ton faster in the last few years, so I think people are just wondering whether it’s still the right trade-off.
-
-- ## 💡 That's actually the reason why @rspack_dev and Turbopack both give up Native ESM(bundleless), _20231128
-- https://twitter.com/rspack_dev/status/1729435649177235539
-  - It's not only bad for production scenarios but also bad for development scenarios.
-- [Bundling vs Native ESM - Why Turbopack? – Turbopack](https://turbo.build/pack/docs/why-turbopack#bundling-vs-native-esm)
-  - Frameworks like Vite use a technique where they don’t bundle application source code in development mode. Instead, they rely on the browser’s native ES Modules system. This approach results in incredibly responsive updates since they only have to transform a single file.
-  - We experimented with this approach, but ran into scaling issues with large applications made up of many modules. 
-  - A flood of cascading network requests in the browser lead to a relatively slow startup time. 
-  - For the browser, it’s faster if it can receive the code it needs in as few network requests as possible - even on a local server.
-  - That’s why we decided that, like webpack, we wanted Turbopack to bundle the code in the development server.
-
-- I really really wanted bundleless to work. Such an attractively simple solution! We built @nextjs Live in part to test out this hypothesis. Everything was “browser native”, from ESM to the the runtime (WinterCG). Then we tested it with Vercel’s homepage. 30s+ load times.
-  - We even tried to “bundle the bundleless” as a tarball and do the unpacking in the browser to eliminate waterfalls. Still slow because it has to pack all the files. If we instead discover dependencies and pack them only… we’re back to bundling
-
-- https://twitter.com/devongovett/status/1730229238513520933
-  - Glad Parcel stayed on the bundling train this whole time. Seems like the lessons we learned 10 years ago with require.js are finally being re-learned.
-  - Another problem with native ESM is that it doesn’t tree-shake, so if you import a single thing from a module with a lot of exports (eg large component library), you could be downloading hundreds or thousands of unnecessary files. Recently made a tiny Vite test app which took 12 seconds to load in development due to that.

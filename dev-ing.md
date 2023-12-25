@@ -331,8 +331,13 @@ $$('[contenteditable]')
 
 ## 120
 
-## 1201
+## 1225
 
+- [javascript - Detect the Enter key in a text input field - Stack Overflow](https://stackoverflow.com/questions/7060750/detect-the-enter-key-in-a-text-input-field)
+  - text input `input` event 按Enter键不会触发input事件，所以监听输入框的Enter键要用keydown/keyup
+  - The input event is fired every time the `value` of the element changes. 
+  - This is unlike the change event, which only fires when the value is committed, such as by pressing the enter key or selecting a value from a list of options. 
+  - Note that the input event is not fired when JavaScript changes an element's value programmatically.
 # dev-11-elmish-flux
 
 ## 1109

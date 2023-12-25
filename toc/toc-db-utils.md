@@ -79,6 +79,12 @@ modified: 2022-11-06T11:21:27.612Z
 
 - https://github.com/datacosmos-br/cloudbeaver
   - Cloud Database Manager - Community Edition.
+
+- https://github.com/nlfiedler/fastcdc-rs /MIT/202310/rust
+  - FastCDC implementation in Rust
+  - FastCDC: a Fast and Efficient Content-Defined Chunking Approach for Data Deduplication
+  - This crate contains multiple implementations of the "FastCDC" content defined chunking algorithm originally described in 2016, and later enhanced in 2020, by Wen Xia, et al. 
+  - A critical aspect of its behavior is that it returns exactly the same results for the same input.
 # db-cache
 - https://github.com/CyCraft/magnetar
   - Magnetar is a state management library.

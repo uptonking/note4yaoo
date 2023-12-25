@@ -10,13 +10,8 @@ modified: 2023-12-19T19:28:51.206Z
 # guide
 
 - 没必要执着于rope结合crdt的实现
-  - rope操作文本的api基本类似于字符串ot操作
-  - 参考字符串ot如何与crdt实现binding可以很容易实现rope与crdt的binding
-
-- https://github.com/JokerLHF/piece-table
-  - ts 版实现 mini piece-table
-- https://github.com/PsychoLlama/piece-table.rs
-  - A tiny piece table implementation in Rust
+  - rope操作文本的api基本类似于字符串op操作
+  - 参考字符串op如何与crdt实现binding可以很容易实现rope与crdt的binding
 
 - [Rope理论与实践 for Java String](https://web.archive.org/web/20160306020543/https://www.ibm.com/developerworks/cn/java/j-ropes/)
 # rope-impl
@@ -29,9 +24,8 @@ modified: 2023-12-19T19:28:51.206Z
 - https://github.com/huntwj/rope-ts /ts
   - implementation of the Rope data type
 
-- https://github.com/Conaclos/cow-list /ts
+- https://github.com/Conaclos/cow-list /apache2/202206/ts/提供了rope实现的示例
   - Cow List provides a Copy-On-Write iterable list that supports logarithmic searches.
-    - **提供了rope实现的示例**
   - It provides also a mutable iterable List with versioning capabilities.
   - Cow List naively supports lengthy values (objects with a length property). 
     - This makes Cow List a perfect fit to implement a `rope`.
@@ -123,6 +117,11 @@ modified: 2023-12-19T19:28:51.206Z
 - https://github.com/cfcs/ocaml-xi-rope
   - The aim of this library is to implement a (immutable) "rope" data structure based on the one used in xi-editor
   - Xi's rope type is a CRDT (based on WOOT) permitting decentralized collaborative editing without vector clocks.
+# text/string-data-structure
+- https://github.com/JokerLHF/piece-table
+  - ts 版实现 mini piece-table
+- https://github.com/PsychoLlama/piece-table.rs
+  - A tiny piece table implementation in Rust
 # blogs
 
 ## blogs-vendors

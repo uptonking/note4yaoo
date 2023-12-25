@@ -12,7 +12,15 @@ modified: 2021-01-06T14:40:11.360Z
 # discuss
 - ## 
 
-- ## 
+- ## Very interesting to see the battle between react-merge-refs (my package) and merge-refs
+- https://twitter.com/theKashey/status/1739045763857199194
+  - I ask @reactjs , could you please add an official utility for this? It can't be implemented perfectly by third-party.
+  - [Non referentially stable refs cause multiple updates](https://github.com/gregberge/react-merge-refs/issues/5)
+- There are a lot of different versions of this pattern. Almost every project came with something similar:
+  - react-hooks.org/docs/use-fork-ref
+  - mitchellhamilton/apply-ref
+  - theKashey/use-callback-ref
+  - mui-org/material-ui@9bd4277/packages/material-ui/src/utils/useForkRef.js
 
 - ## Not enough people, me included, understand how suspense works
 - https://twitter.com/TkDodo/status/1727806048910651628
@@ -300,7 +308,7 @@ useEffect(() => {
 
 - What are your issues exactly with unserializable data in this case?
   - Specifically: Replay's codebase is 80% a copy-paste of the FF DevTools. 
-  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,                                                    `ValueFront`,                                                    `Pause`, etc. 
+  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,                                                     `ValueFront`,                                                     `Pause`, etc. 
   - We currently parse JSON and instantiate those classes, _then_ put them into Redux.
   - The Replay codebase started with very legacy Redux patterns (hand-written reducers, etc), and no Redux DevTools integration. When I added the DevTools setup, that began to choke on the class instances. So, I had to sanitize those out from being sent to the DevTools.
   - I've been modernizing our reducers to RTK's `createSlice`, which uses Immer. Immer recursively freezes all values by default. Unfortunately, those `SomeFront` instances are mutable, and _do_ get updated later. This now causes "can't update read-only field X" errors
