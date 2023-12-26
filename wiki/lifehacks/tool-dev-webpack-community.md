@@ -12,6 +12,18 @@ modified: 2023-12-25T19:29:47.236Z
 # discuss-stars
 - ## 
 
+- ## [What is the difference between `main` and `module` vs `exports` in package.json? - Stack Overflow](https://stackoverflow.com/questions/68572936/what-is-the-difference-between-main-and-module-vs-exports-in-package-json)
+- "exports" field superseded the "module" field. 
+  - "module" itself has never been an official standard but it became so widespread that at some point it was a de facto standard.
+  - Note that the "module" field is still being used by TypeScript if tsconfig's moduleResolution is set to node
+- The "main" field is supported in all versions of Node.js, but its capabilities are limited: it only defines the main entry point of the package.
+- The "exports" provides a modern alternative to "main" allowing multiple entry points to be defined, conditional entry resolution support between environments, and preventing any other entry points besides those defined in "exports"
+
+# discuss-rspack-not-yet
+- ## 
+
+- ## 
+
 - ## 
 # discuss-rspack
 - ## 
@@ -20,7 +32,14 @@ modified: 2023-12-25T19:29:47.236Z
 
 - ## 
 
-- ## 
+- ## [rspack 4.0 版本新模块解析 styled-components 报错](https://github.com/web-infra-dev/rspack/issues/4770)
+- Module resolution has to go from `"module": "./dist/styled-components.esm.js"` , then to `browser's "./dist/styled-components.esm.js": "./dist/styled-components.browser.esm.js"` part in order for things to get resolved correctly.
+  - oxc_resolver is currently not doing the second part
+  - I'll try and patch it tomorrow. ✅
+
+- ## [NormalModuleReplacementPlugin is not a constructor_202306](https://github.com/web-infra-dev/rspack/issues/3522)
+  - [fix(rspack): add fileReplacements support_merged✅_202308](https://github.com/nrwl/nx-labs/pull/231)
+
 # discuss
 - ## 
 

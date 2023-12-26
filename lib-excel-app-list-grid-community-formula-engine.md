@@ -21,7 +21,7 @@ modified: 2023-11-12T16:48:11.308Z
 - 
 - 
 
-- ## 👥🪟📕 [Efficient and Compact Spreadsheet Formula Graphs | Hacker News_202302](https://news.ycombinator.com/item?id=34800138)
+- ## 👥📈📕 [Efficient and Compact Spreadsheet Formula Graphs | Hacker News_202302](https://news.ycombinator.com/item?id=34800138)
 - cool! The authors exploit the fact that neighboring cells often have similar formulas to compress the evaluation graph.
 - This seems odd to me. This is basically just ways of finding database-esque tables in spreadsheets to then leverage for vector/matrix operations.
   - It is a non-problem for anyone who really cares about performance as they've probably already realised they can just use a database some efficiently programmed transformations.
@@ -150,5 +150,5 @@ modified: 2023-11-12T16:48:11.308Z
 
 - Every time I read about reactive patterns, I hope that some data dependency or cells like behavior is included, and every time it's just some thin wrapper around basic pub/sub.
 
-- ## 🌰🪟 [A spreadsheet in fewer than 30 lines of JavaScript, no library used | Hacker News_201311](https://news.ycombinator.com/item?id=6725387)
+- ## 🌰📈 [A spreadsheet in fewer than 30 lines of JavaScript, no library used | Hacker News_201311](https://news.ycombinator.com/item?id=6725387)
 - http://jsfiddle.net/ondras/hYfN3/

@@ -51,7 +51,7 @@ modified: 2022-08-21T10:15:06.225Z
 - https://twitter.com/tmcw/status/1599893497850757121
 - Curious, what’s the end product/interface where you want to consume this?
 
-- ## 🪟🔥 [Excel as a database | Hacker News_201304](https://news.ycombinator.com/item?id=5515290)
+- ## 📈🔥 [Excel as a database | Hacker News_201304](https://news.ycombinator.com/item?id=5515290)
 - 
 - 
 - 

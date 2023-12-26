@@ -8,7 +8,12 @@ modified: 2023-12-25T19:32:32.910Z
 # tool-dev-webpack-rspack
 
 # guide
-
+- 推迟迁移到rspack的原因
+  - 难以迁移lib打包用到的第三方plugin
+  - 难以迁移lib打包用到的第三方loader，如fonts/svg/img
+# rspack-dev-xp
+- Rsbuild 应用不能使用 Rspack 的 devServer 配置项。你可以通过 Rsbuild 的 dev 和 server 配置 Server 的行为
+# webpack-dev-xp
 - 仅支持webpack v4的项目
   - ckeditor 5
   - atlaskit editor
@@ -152,4 +157,3 @@ modified: 2023-12-25T19:32:32.910Z
 - [Webpack vs webpack-dev-server vs webpack-dev-middleware vs webpack-hot-middleware](https://stackoverflow.com/questions/42294827/webpack-vs-webpack-dev-server-vs-webpack-dev-middleware-vs-webpack-hot-middlewar)
 
 - [How does the CodeSandbox browser-side webpack work? ](https://developpaper.com/how-does-the-codesandbox-browser-side-webpack-work-part-one/)
-

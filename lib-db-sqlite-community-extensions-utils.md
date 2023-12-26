@@ -16,7 +16,7 @@ modified: 2023-10-26T22:12:54.831Z
 
 - ## 
 
-- ## 🪟 Introducing sqlite-xsv - a SQLite extension for quickly querying CSVs!
+- ## 📈 Introducing sqlite-xsv - a SQLite extension for quickly querying CSVs!
 - https://twitter.com/agarcia_me/status/1613688022079508480
   - Custom delimiters, quotes, column names and types
   - written in Rust, with sqlite-loadable!
@@ -29,7 +29,7 @@ modified: 2023-10-26T22:12:54.831Z
 - For *analytical* queries 
   - directly on CSVs (ex GROUP BYs and ORDER BYs), both sqlite-xsv and sqlite in general fall short compared to new-age tools like @DuckDB , DataFusion, and clickhouse.
 
-- ## 🪟 [Xlite: Query Excel and Open Document spreadsheets as SQLite virtual tables | Hacker News](https://news.ycombinator.com/item?id=31874767)
+- ## 📈 [Xlite: Query Excel and Open Document spreadsheets as SQLite virtual tables | Hacker News](https://news.ycombinator.com/item?id=31874767)
 - Sqlite does not allow table valued functions to return results with varying schemas. The schema must be defined once up front and then cannot change.
   - That forum post is a request I made to them to allow dynamic columns but they don't seem interested so far.
 

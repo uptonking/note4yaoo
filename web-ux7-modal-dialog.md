@@ -15,6 +15,10 @@ modified: 2021-07-29T20:37:39.797Z
   - router-based dialog
 
 - [popper > floating-ui motivation](https://floating-ui.com/docs/motivation)
+# blogs-modal/dialog
+- [Better interfaces for dialogue ](https://thesephist.notion.site/Better-interfaces-for-dialogue-4c20a2faf16f47a5a12e090d16c99353)
+  - https://twitter.com/thesephist/status/1739616441182081530
+  - I've been sketching out ideas for a chat interface to language models that treat branching/multiple timelines as a first-class concept and try to make heavily branch-y threads navigable.
 # discuss
 - ## The Floating UI components package will largely will consist of composable effects that have a similar API to the positioning middleware. 
 - https://twitter.com/atomiksdev/status/1484837373217480706

@@ -45,7 +45,7 @@ modified: 2023-12-24T10:49:01.941Z
 
 - ## 
 
-- ## 🚀 fireproof.storage Light up your data!
+- ## 🚀 fireproof.storage Light up your data!_202303
 - https://twitter.com/jchris/status/1633113469179314179
   - check out my new project, a real-time database that runs in any page, with indexes, event feeds, automatic replication, and cryptographic verifiability. 
 - It either took me two weeks to write this JSON database, or 14 years.

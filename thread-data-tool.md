@@ -7,13 +7,18 @@ modified: 2021-08-09T07:24:45.113Z
 
 # thread-data-tool
 
+# guide
+
 # discuss
-
 - ## 
 
 - ## 
 
-- ## 
+- ## 分享一个在线 Markdown 格式转换工具
+- https://twitter.com/geekbb/status/1739423022816305449
+  - 分享一个在线 Markdown 格式转换工具，可以在 Excel 或 WPS 编辑好表格，然后直接粘贴到网页即可转换成 Markdown 格式表格。
+  - 也可从CSV、JSON、SQL、HTML输入。
+  - 网站还有一批非常不错的在线工具，如文本文件合并、文件批量重命名工具等，好工具网站值得收藏
 
 - ## I love delta, a CLI tool that makes git diffs pretty and useful.
 - https://twitter.com/cpojer/status/1520538000882487296

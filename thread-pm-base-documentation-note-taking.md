@@ -89,7 +89,15 @@ modified: 2021-08-16T06:56:53.061Z
 # discuss
 - ## 
 
-- ## 
+- ## @_pastelsky built the app of my dreams: https://tsdocs.dev. it's basically docs​.rs for TypeScript.
+- https://twitter.com/galstar/status/1734919519921955147
+- There are https://paka.dev and https://jsdocs.io too
+-  A couple of differences –
+   1. TSdocs finds types even when the package may not be written in Typescript e.g. d3
+   2. You can also browse types that aren’t directly exported by the package. e.g try @sentry/browser
+
+- Coming from the world of Java, I have learned that JavaDocs tell you nothing by telling you everything. And _because_ JavaDocs are so easy to generate from the type information, devs don't bother to write readmes. I hope these tools won't make it happen in the JS world.
+- I wasn't familiar with Rust documentation, so had a look at some packages in http://crates.io. Nice! You've got both readmes _and_ JavaDoc style information. So you may be right in that you can have both!
 
 - ## There's a new breed of note-taking apps in town. These apps help to better visualize your ideas, notes, and thoughts.
 - https://twitter.com/FrancescoD_Ales/status/1719731096634687952

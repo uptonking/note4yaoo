@@ -12,7 +12,16 @@ modified: 2022-11-08T10:34:34.820Z
 # work-xp
 - ## 
 
-- ## 一种很不成熟的做事方式是：遇到困难死扛，直到 deadline 前一刻才说遇到困难了做不了。 
+- ## 
+
+- ## > a single person cannot build a web search engine from scratch
+- https://twitter.com/eatonphil/status/1739678111199814127
+- > I cannot
+  - The creator of QEMU, QuickJS, and JSLinux is further evidence of this lesson https://bellard.org
+
+- people that are this dismissive of what a single person can achieve are just incapable of doing it themselves and project that on everyone else
+
+  - ## 一种很不成熟的做事方式是：遇到困难死扛，直到 deadline 前一刻才说遇到困难了做不了。 
 - https://twitter.com/geekplux/status/1737848301142360411
   - 这种一般要不是学生刚毕业，要不是之前在摸鱼啥都没干怕被看出来……都很不靠谱。
   - 成熟的做法是任何 blocker 应该第一时间让队友和领导知道，这样能更快解决或调整优先级。

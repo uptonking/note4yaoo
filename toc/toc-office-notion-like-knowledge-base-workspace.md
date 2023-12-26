@@ -227,8 +227,9 @@ modified: 2022-06-03T21:34:54.893Z
   - https://thinktool.io/
   - https://thinktool.io/demo
   - Novel fusion of hierarchical and graph-based approaches to taking notes, based on ideas from Roam Research, TheBrain and others.
-  - https://github.com/c2d7fa/nextool
-    - GTD-oriented task manager with support for nested tasks and a focus on finding actionable tasks.
+- https://github.com/c2d7fa/nextool /AGPLv3/202206/ts
+  - https://nextool.app/
+  - GTD-oriented task manager with support for nested tasks and a focus on finding actionable tasks.
 
 - https://github.com/documize/community /go/emberjs
   - https://docs.documize.com/

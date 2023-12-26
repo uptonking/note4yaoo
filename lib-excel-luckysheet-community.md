@@ -138,7 +138,7 @@ modified: 2022-08-21T09:57:42.969Z
 - 1) QUERY
 - 2) SPARKLINE
 
-- ## 🚀🪟 [Luckysheet, an open-source spreadsheet | Hacker News_202007](https://news.ycombinator.com/item?id=23994619)
+- ## 🚀📈 [Luckysheet, an open-source spreadsheet | Hacker News_202007](https://news.ycombinator.com/item?id=23994619)
 - One reason I prefer Apple Numbers to Excel is that in Numbers you arrange tables on a canvas. 
   - The tables can refer to each other. 
   - I think it makes it easier to work with, for example, an input table and an output table because they are separate entities and not just different ranges on the same grid. 

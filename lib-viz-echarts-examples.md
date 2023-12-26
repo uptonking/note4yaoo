@@ -29,6 +29,21 @@ modified: 2023-02-05T19:08:03.320Z
   - 基于Echarts的可视化数据大屏设计器（包含设计、预览、分享等全部流程）
   - 依赖antd-pro、redux、lucky-canvas(抽奖)、echarts、html2canvas、nprogress、react-dnd
 
+- lightdash /2kStar/MIT/202301/ts/dbt
+  - https://github.com/lightdash/lightdash
+  - https://lightdash.com/
+  - https://demo.lightdash.com/
+  - [Setup Development Environment](https://github.com/lightdash/lightdash/blob/main/.github/CONTRIBUTING.md#setup-development-environment-without-docker)
+  - open-source BI (Looker alternative) for teams that move fast.
+  - 后端依赖 express、knex、pg、passport、puppeteer
+  - 前端依赖 blueprintjs、echarts、jspdf、react-ace、react-beautiful-dnd、uiw/react-md-editor、casl
+  - 主要功能模块
+    - workspace
+    - dashboard
+    - charts/query
+    - 用户与权限
+  - 后端graphql只用来获取dbt元数据
+
 - https://github.com/ecomfe/vue-echarts
   - https://vue-echarts.dev/
   - Apache ECharts component for Vue.js.
@@ -81,9 +96,7 @@ modified: 2023-02-05T19:08:03.320Z
   - 工程化、layout 设计、权限和 i18n、API 管理
   - 依赖antd5、huxy-admin
   - https://github.com/ahyiru/huxy-admin
-
-## dashboard/admin
-
+# dashboard/admin
 - https://github.com/sunburst89757/react-admin
   - https://github.com/sunburst89757/react-admin-backend
   - http://47.98.204.143:3000/login

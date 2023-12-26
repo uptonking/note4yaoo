@@ -11,7 +11,7 @@ modified: 2023-10-28T09:04:42.521Z
 
 # blogs
 
-# 🪟 [Conflict-free Replicated Spread Sheets_202310](https://www.bartoszsypytkowski.com/crdt-tables/)
+# 📈 [Conflict-free Replicated Spread Sheets_202310](https://www.bartoszsypytkowski.com/crdt-tables/)
 
 - [R-Tree: algorithm for efficient indexing of spatial data_202204](https://www.bartoszsypytkowski.com/r-tree/)
 

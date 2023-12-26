@@ -16,7 +16,7 @@ modified: 2022-08-21T10:14:58.104Z
 - [Canvas 渲染优化策略](https://juejin.cn/post/6924171842483650574)
 # blogs
 
-## 🪟🌰🌲 [Building a High Performance Spreadsheet in the Browser_202306](https://wraptext.equals.com/high-performance-spreadsheets-in-the-browser/)
+## 📈🌰🌲 [Building a High Performance Spreadsheet in the Browser_202306](https://wraptext.equals.com/high-performance-spreadsheets-in-the-browser/)
 
 - Before getting to the problem though—let's clarify what we mean by Formats.
   - The word might conjure up colours, bold text, etc
@@ -57,7 +57,7 @@ modified: 2022-08-21T10:14:58.104Z
 
 - Every system has limits; at some point, I'm sure we'll have to replace this one too. But based on our projections, it should serve us long enough to scale into the millions of rows of data that we're targeting for the next generation of the app.
 
-## 🪟🌲 [We built a spreadsheet engine from scratch. Here’s what we learned. | GRID_202206](https://medium.grid.is/we-built-a-spreadsheet-engine-from-scratch-heres-what-we-learned-e4800ab9edf1)
+## 📈🌲 [We built a spreadsheet engine from scratch. Here’s what we learned. | GRID_202206](https://medium.grid.is/we-built-a-spreadsheet-engine-from-scratch-heres-what-we-learned-e4800ab9edf1)
 
 - we’d need a lightning-fast spreadsheet engine, compatible with Excel and Google Sheets and capable of running entirely in the browser
 

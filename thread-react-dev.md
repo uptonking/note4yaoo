@@ -12,6 +12,16 @@ modified: 2021-01-06T14:40:11.360Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Avoid mixing business logic with your React components.
+- https://twitter.com/_georgemoller/status/1739644203867464091
+  - Instead create abstraction layers that communicate with them.
+  - 提供了动画示例
+- Makes a lot of sense. This design is more maintainable and instead of fetch I usually use SWR or React Query for further scalability as it provides faster fetching, caching and other features out of the box.
+
 - ## Very interesting to see the battle between react-merge-refs (my package) and merge-refs
 - https://twitter.com/theKashey/status/1739045763857199194
   - I ask @reactjs , could you please add an official utility for this? It can't be implemented perfectly by third-party.
@@ -308,7 +318,7 @@ useEffect(() => {
 
 - What are your issues exactly with unserializable data in this case?
   - Specifically: Replay's codebase is 80% a copy-paste of the FF DevTools. 
-  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,                                                     `ValueFront`,                                                     `Pause`, etc. 
+  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,                                                      `ValueFront`,                                                      `Pause`, etc. 
   - We currently parse JSON and instantiate those classes, _then_ put them into Redux.
   - The Replay codebase started with very legacy Redux patterns (hand-written reducers, etc), and no Redux DevTools integration. When I added the DevTools setup, that began to choke on the class instances. So, I had to sanitize those out from being sent to the DevTools.
   - I've been modernizing our reducers to RTK's `createSlice`, which uses Immer. Immer recursively freezes all values by default. Unfortunately, those `SomeFront` instances are mutable, and _do_ get updated later. This now causes "can't update read-only field X" errors

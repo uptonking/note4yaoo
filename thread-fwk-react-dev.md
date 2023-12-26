@@ -113,7 +113,24 @@ modified: 2021-01-06T14:40:03.364Z
 - We’ve started following this approach for new components in our internal library, and it’s definitely a fine balance when trying to ensure people don’t deviate from the branding guidelines. But I can confidently say it helps us solve more problems than it introduces
 - This is a huge topic of mine. I've been promoting this along with React Context to get super clean APIs.
 
+# discuss-svelte
+- ## 
+
+- ## 
+
+- ## Svelte 5 question: Can you imperatively modify a deep object, triggering only a single update? 
+- https://twitter.com/PaoloRicciuti/status/1739646665546494392
+  - Much like batching multiple updates into a single transaction?
+- It's already batched, inspect shows 2 logs by design but the UI will still be updated once
+  - yep. inspect works by intercepting the assignment — that way, if you use debugger or console.trace it will lead you to the line of code that caused the update (which wouldn't be possible if we used effects for inspecting)
+- Good to know. How about $effect, will it be triggered once or twice?
+  - Only once
+
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 🆚️ I wished React would expose a primitive function for state branching. 

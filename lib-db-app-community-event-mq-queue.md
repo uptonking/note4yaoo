@@ -18,7 +18,11 @@ modified: 2023-12-09T12:32:50.692Z
 # discuss
 - ## 
 
-- ## 
+- ## Just curious, why no one has used Redis streams to build a queue system? 
+- https://twitter.com/AmanVirk1/status/1739538111485358269
+  - Especially with Consumer groups, it seems to be a great solution.
+- Symfony has it well implemented 
+- I do. Quite simple to implement.
 
 - ## Seeing several #Postgres-based queue implementations lately, 
 - https://twitter.com/gunnarmorling/status/1733245970341646742

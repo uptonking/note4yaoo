@@ -44,7 +44,7 @@ modified: 2023-05-21T15:44:39.196Z
 
 - I can't think of a single reason someone would pay $299 for "Non-commercial use" license to a library
 
-- ## 🪟 [Tinysheet | Hacker News_202110](https://news.ycombinator.com/item?id=28967514)
+- ## 📈 [Tinysheet | Hacker News_202110](https://news.ycombinator.com/item?id=28967514)
 - Where is the data for this stored? 
   - It appears to be stored in the url. As you update the cells there's an encoded # variable that, when removed, wipes the table.
 - And if you put the URL into a URL shortener, you can (ab)use it as cloud storage for your spreadsheet.
@@ -61,7 +61,7 @@ modified: 2023-05-21T15:44:39.196Z
 
 - The universal language and portability of a spreadsheet is really hard to beat.
 
-- ## 🪟 [Show HN: DataSheetGrid, an Airtable-like React component | Hacker News_202311](https://news.ycombinator.com/item?id=38228788)
+- ## 📈 [Show HN: DataSheetGrid, an Airtable-like React component | Hacker News_202311](https://news.ycombinator.com/item?id=38228788)
 - Two things I ran into:
   - Doesn't have column resizing built in (not a deal breaker for my use)
   - I wanted to disable the "select row or column by clicking in header or gutter" functionality. 
