@@ -49,6 +49,12 @@ modified: 2023-10-26T18:14:17.038Z
 
 ## 👥🔥 [Reddit’s database has two tables (2012) | Hacker News_202208](https://news.ycombinator.com/item?id=32407873)
 
+# discuss-key-value
+
+## [Build a BLAZINGLY FAST key-value store with Rust for Riak_202302](https://www.tunglevo.com/note/build-a-blazingly-fast-key-value-store-with-rust/)
+
+- Nice overview on implementing #Bitcask (originally, the storage engine of Riak)
+- In this blog series, I’ll be sharing my experience implementing Bitcask in Rust and discussing some of the techniques I used to make it goes blazingly fast. 
 # blogs-aws-s3
 
 ## [S3 as the universal infrastructure backend_202310](https://medium.com/innovationendeavors/s3-as-the-universal-infrastructure-backend-a104a8cc6991)

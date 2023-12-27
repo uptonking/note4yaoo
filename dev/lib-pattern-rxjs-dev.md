@@ -61,6 +61,9 @@ modified: 2021-05-13T04:02:49.797Z
 - ## With asynchronous code, you can either have simple code, or you can have correct code, you can't really have both. Sorry.
 - https://twitter.com/BenLesh/status/1739696843213189569
   - Please don't use this as an excuse to chain 8 RxJS operators back-to-back. Stop it. Don't do that.
+- With async await I find it pretty simple and clean, what is the problem?
+  - I think Ben meant to say the "correct" (and complex) cases of error handling and potential retry that should be thought of at every "await". A big try/catch will lose the source of error whereas writing a lot try-catch is going to be ugly.
+- We do non-blocking, async ACID all the way to SNAPSHOT with better (with much less latency variance) delivery promises than any other existing framework. Async code is complex due to concurrency, unidirectional consistent streaming fixes that.
 
 - ## Pedantically(卖弄学问地), React component is effectively a specialized Subject, in RxJS terms. 
 - https://twitter.com/BenLesh/status/1009957226956480512

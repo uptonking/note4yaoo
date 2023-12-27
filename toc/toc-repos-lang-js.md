@@ -390,7 +390,11 @@ modified: 2021-05-14T15:04:42.225Z
 - https://github.com/OptimalBits/node_acl /201805/js/inactive
   - This module provides a minimalistic ACL implementation inspired by Zend_ACL.
   - When you develop a web site or application you will soon notice that sessions are not enough to protect all the available resources. Avoiding that malicious users access other users content proves a much more complicated task than anticipated. ACL can solve this problem in a flexible and elegant way.
-  - Create roles and assign roles to users. 
+  - Create roles and assign roles to users.
+
+- https://gitee.com/weolar_admin/mininodejs20 /GPL/202312/cpp
+  - 基于quickjs、nodejs14实现的山寨版nodejs
+  - 使用quickjs替换v8后的精简nodejs。编译出的二进制文件相比原版，体积大幅减少，冷启动速度大幅提升。
 # more
 - https://github.com/liljenzin/confluent /cpp
   - Confluent sets and maps are sorted associative containers written in C++11.

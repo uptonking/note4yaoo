@@ -72,6 +72,9 @@ modified: 2023-02-08T10:46:26.912Z
 - [Bring back `sort:indexed` for code searches](https://github.com/orgs/community/discussions/52932)
   - NA
 # github-search
+- not-yet
+  - 搜索名称为folder11的文件夹
+
 - search-pr
   - is:unmerged
 

@@ -328,7 +328,13 @@ GPS丨Glonass丨BeiDou丨Galileo
 
 ## hp omen 8 plus
 
-- 注意f11是开关触摸板，通过快捷键关闭触摸板后可能恢复不了(20231224)，解决方法是通过键盘打开settings设置面板，找到touchpad，手动再次打开，摸索了很久
+- [惠普暗影精灵笔记本电脑 - 17-ck1008TX 产品规格](https://support.hp.com/cn-zh/product/details/omen-17.3-inch-gaming-laptop-pc-17-ck1000/model/2100997924?sku=6J0W0PA)
+  - [OMEN 17.3 英寸游戏专用笔记本电脑 17-ck1000 系列规格 | HP®客户支持](https://support.hp.com/cn-zh/document/ish_6340553-6390440-16)
+
+### usage-xp
+
+- 注意f11快捷键是开关触摸板功能，通过快捷键关闭触摸板后可能恢复不了(20231224)，解决方法是通过键盘打开settings设置面板，找到touchpad，手动再次打开，摸索了很久
+- calculator key有时会导致数字键锁定，可切换到windows系统解锁数字键
 
 ### specs
 

@@ -92,6 +92,42 @@ modified: 2023-12-12T08:45:31.670Z
 - ws有很多缺点，传数据不是标准的，因为不是标准的，中间件看不到你做了什么，waf无法正常检测，cc 入侵防不胜防
 - 数据处理太随意，无法准确负载均衡，可能a机器累死了b机器在围观
 - 状态恢复需要更多的确认措施，否则存在安全风险
+# discuss-sse
+- ## 
+
+- ## 
+
+- ## 有在实际项目中用过 SSE(Server Sent Events) 的吗。有啥坑没
+- https://twitter.com/_a_wing/status/1739901379953787028
+
+- iOS 不支持
+  - 和你的想法一样，但最后iOS还是用了web sockets
+
+- 原生 event source 没法用，比如 不能带 headers 、浏览器上只支持 GET，找个第三方的就行
+- 手机上浏览器切后台秒断
+- 早知道，还是轮询
+
+- 其实你用 fetch+ReadableStream 持续拉一路 http 也是一样的效果。 2015年底用到现在了，现在连Safari和FireFox都有
+  - ReadableStream 毕竟是新出来的东西。
+- SSE 断线了的可以自动重连，可以接着接着之前段的地方续传。当然 fetch + ReadableStream 也可以自己实现这一套机制就是了。
+
+- 前端调包，相比 ws 少写一点代码，，后端如果要做分布式，路由会比较麻烦，
+  - 和 ws 一样后端都带状态，需要有 user session 和 node 路由机制，用 redis channel 去实现比较简单。
+
+- 没啥坑，如果是前面有个nginx，需要注意下有设置一个header，具体记不清了。不然前端收不到。
+
+- 唯一一坑，如果发现似乎被 buffer/cache 住了一批值，检查一路上的所有反代（包括 cloudflare，如果用了的话）的配置
+- 有一个坑， ，有网关的情况下记得看看网关配置是否开启了对 SSE 的支持，不然又得排查半天
+
+- uber 有一篇介绍他们在后台使用sse的博客，还有具体的代码，可以参考一下
+
+- ## 技术啊，还是要看天时。SSE很早就出来了，基本没人用。
+- https://twitter.com/NalaGinrut/status/1673676930036514816
+  - 2015年那会儿我说在框架里实现一下，结果一帮年轻人都说现在是websocket的年头，于是就实现了websocket，而把SSE放到了todo里。
+  - 这么多年过去了SSE又借着chatgpt steam死灰复燃了
+- 是啊，现在能成为 ChatGPT/LLM 等的基础技术或软件都会再起飞
+- 还是有不少公司业务在用 SSE 的，电商 feeds, sku 多的场景都挺适合的
+
 # discuss
 - ## 
 
@@ -108,13 +144,6 @@ modified: 2023-12-12T08:45:31.670Z
   - server needs to keep inventory of clients
   - server should be resilient to network partitions 
 - Notification backed by scalable APIs could be another approach.
-
-- ## 技术啊，还是要看天时。SSE很早就出来了，基本没人用。
-- https://twitter.com/NalaGinrut/status/1673676930036514816
-  - 2015年那会儿我说在框架里实现一下，结果一帮年轻人都说现在是websocket的年头，于是就实现了websocket，而把SSE放到了todo里。
-  - 这么多年过去了SSE又借着chatgpt steam死灰复燃了
-- 是啊，现在能成为 ChatGPT/LLM 等的基础技术或软件都会再起飞
-- 还是有不少公司业务在用 SSE 的，电商 feeds, sku 多的场景都挺适合的
 
 - ## [在多媒体通信中，信令服务器和流媒体服务器各充当什么角色？各自的主要功能是什么？ - 知乎](https://www.zhihu.com/question/281716536)
 - 信令是协调通信的过程。为了使WebRTC应用程序能够建立一个“通话”，其客户需要交换以下信息：

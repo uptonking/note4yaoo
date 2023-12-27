@@ -22,6 +22,13 @@ modified: 2023-01-02T10:30:19.459Z
   - 👉🏻 Users of desktop apps don't expect them to stop working after install! On top of that, updating desktop apps is nowhere near as simple as changing the source of your website.
 - It's just extra work as well keeping up with a moving target. We've shipped Electron apps that don't require any maintenance and work for new customers years later.
 
+# discuss-bundler/compiler
+- ## 
+
+- ## 
+
+- ## [Electron community reinvented electron-builder/etc. as electron-forge. How to package Quasar w/ electron-forge?_202309](https://github.com/quasarframework/quasar/discussions/16380)
+- electron-forge uses the electron-packager under the hood. It seems to be a convenience/configuration package.
 # discuss
 - ## 
 

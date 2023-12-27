@@ -14,7 +14,9 @@ modified: 2023-12-11T10:12:09.159Z
 
 - ## 
 
-- ## 
+- ## [shell - Make `rm` move to trash - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/42757/make-rm-move-to-trash)
+- The previous answers mention commands `trash-cli` and `rmtrash` . Neither of those are found by default on Ubuntu 18.04, but the command `gio` is. 
+
 # discuss
 - ## 
 

@@ -483,3 +483,13 @@ function getOffsetX(event) {
 - bubbles by default is false
 - Unlike "native" events, which are fired by the browser and invoke event handlers asynchronously via the event loop,  `dispatchEvent()` invokes event handlers synchronously. 
   - All applicable event handlers are called and return before `dispatchEvent()` returns.
+# discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## The video shows how @NotionHQ handles window resize on their webapp: they wait until the window resize stops to recalculate the space every section needs.
+- https://twitter.com/hhg2288/status/1740053002076279155
+  - Do you think this UX is better than letting every element fluid inside the window?
