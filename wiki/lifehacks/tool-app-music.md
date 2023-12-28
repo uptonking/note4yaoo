@@ -11,10 +11,6 @@ modified: 2021-10-02T09:02:51.676Z
 
 ## music-app
 
-- 安卓vlc无法播放ubuntu系统Videos文件夹的软链接文件夹(链接到win下Videos文件夹)的问题
-  - 修改ubuntu下minidlna的配置 /etc/minidlna.conf 
-  - 将软链接文件夹直接加入配置文件 media_dir=V, /media/yaoo/win10/Users/jinya/Videos
-
 - music论坛
   - cdbao.net
   - mixrnb 关停

@@ -215,6 +215,31 @@ flatpak run com.discordapp.Discord --proxy-server="socks5://127.0.0.1:1080"
 - unsplash镜像战
   - https://unsplash.dogedoge.com/
 # video/tv
+
+## player
+
+## stream
+
+- minidlna的web信息页不能用localhost访问，要直接用ip，如 http://192.168.0.100:8200
+
+- 安卓vlc无法播放ubuntu系统Videos文件夹的软链接文件夹(链接到win下Videos文件夹)的问题
+  - 修改ubuntu下minidlna的配置 /etc/minidlna.conf 
+  - 将软链接文件夹直接加入配置文件 media_dir=V, /media/yaoo/win10/Users/jinya/Videos
+
+- [[SOLVED] Minidlna Can't find my files](https://ubuntuforums.org/showthread.php?t=2388675)
+  - Try forcing it to rescan the directories.
+  - This deletes any stale index files in /var/cache/minidlna/ then forces a rescan ("-R") of the directories. Running with the "-d" switch will display the results of the scan on the terminal. 
+  - You'll see the various files flash by on the screen along with large blocks of XML content. When you no longer see either of those, hold down Ctrl and hit C to terminate the process. Then start the daemon using "sudo service minidlna start".
+
+```shell
+sudo service minidlna stop
+sudo rm -rf /var/cache/minidlna/*
+sudo minidlnad -R -d
+sudo service minidlna start
+```
+
+## resources
+
 - 资源搜索
   - 搜索资源前先确定资源准确或替代品，豆瓣 doulist 名著 电影
   - 可直接查找资源典型名称，参考字幕组的命名规则

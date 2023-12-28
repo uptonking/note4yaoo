@@ -329,7 +329,12 @@ $$('[contenteditable]')
   - [x] streaming infinite-list/tree
 # dev-12
 
-## 120
+## 122
+
+## 1228
+
+- [ERR_UNKNOWN_FILE_EXTENSION since Node.js 18.19.0 (works fine with 18.18.2) · Issue #2094 · TypeStrong/ts-node](https://github.com/TypeStrong/ts-node/issues/2094)
+  - Make sure you have `"type": "module"` in package.json or rename the file to `file.mts`
 
 ## 1225
 

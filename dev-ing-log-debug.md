@@ -13,6 +13,15 @@ modified: 2023-06-14T00:53:15.226Z
 
 ## 
 
+## 
+
+## react-starter-rspack自动部署到github-pages
+
+- 不要执着于旧项目模版，github actions/workflow/token/pages支持的部署方式已有很大变化
+  - 最新的部署不需要token
+- 反复理解官方文档和官方示例，修改尝试
+- yaml的语法检查
+
 ## list item前的黑点大小不一致，黑点基于 `::before` 伪元素实现
 
 - 因为before伪元素的父元素的font-family会影响伪元素的渲染，字体不同时渲染出的黑点大小不一致

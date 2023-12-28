@@ -11,8 +11,13 @@ modified: 2023-12-26T19:11:22.389Z
 - 推迟迁移到rspack的原因
   - 难以迁移lib打包用到的第三方plugin
   - 难以迁移lib打包用到的第三方loader，如fonts/svg/img
-  - node内置模块打包到浏览器环境下fallback库的实现不够成熟
-  - 对客户端开发环境的支持，如electron/react-native
+  - lang-js
+    - json ✅
+  - env
+    - node内置模块打包到浏览器环境下fallback库的实现不够成熟
+    - 对客户端开发环境的支持，如electron/react-native
+  - monorepo
+    - rspack不支持tsconfig.extends
   - to-test: dynamic import, hot reloading
 
 - tips
