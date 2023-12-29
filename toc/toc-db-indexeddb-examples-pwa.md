@@ -110,9 +110,9 @@ modified: 2022-11-14T15:12:02.783Z
   - a2hs: An example set up to show how Add to home screen (A2HS) works.
   - js13kpwa: A list of A-Frame entries submitted to the js13kGames 2017 competition, used as an example for the MDN articles about Progressive Web Apps.
 
-- https://github.com/MicrosoftEdge/Demos/tree/main/pwamp
+- https://github.com/MicrosoftEdge/Demos/tree/main/pwamp /MIT/202305/js
   - https://microsoftedge.github.io/Demos/pwamp/
-  - a web audio player demo application. 
+  - a web audio player demo application.
   - It is an installable web app (PWA) specifically made to demonstrate desktop-integration features.
 # pwa-starter
 - https://github.com/preactjs/preact-cli

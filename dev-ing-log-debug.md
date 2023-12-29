@@ -20,6 +20,7 @@ modified: 2023-06-14T00:53:15.226Z
 - 不要执着于旧项目模版，github actions/workflow/token/pages支持的部署方式已有很大变化
   - 最新的部署不需要token
 - 反复理解官方文档和官方示例，修改尝试
+- 官方文档更新过快，marketplace里面很多action都失效了
 - yaml的语法检查
 
 ## list item前的黑点大小不一致，黑点基于 `::before` 伪元素实现

@@ -246,6 +246,10 @@ modified: 2021-01-04T17:26:43.784Z
 - https://github.com/koreader/koreader /lua
   - http://koreader.rocks/
   - An ebook reader application supporting PDF, DjVu, EPUB, FB2 and many more formats, running on Cervantes, Kindle, Kobo, PocketBook and Android devices
+
+- https://github.com/Cimbali/pympress /GPLv2/202312/python
+  - https://cimbali.github.io/pympress/
+  - Pympress is a simple yet powerful PDF reader designed for dual-screen presentations
 # utils
 - https://github.com/YuHuaOu/electron-print
   - 支持直接传PDF、图片的资源地址(将资源地址传到桌面端打印程序的接口中)，完成打印。electron、PDF、PNG

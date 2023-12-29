@@ -9,6 +9,14 @@ modified: 2023-04-12T08:40:44.109Z
 
 # guide
 
+# plex/stremio
+- comparison
+  - [Compare Media Servers · Protektor-Desura/Archon Wiki](https://github.com/Protektor-Desura/Archon/wiki/Compare-Media-Servers)
+  - [Universal Media Server | Comparison of Media Servers](https://www.universalmediaserver.com/comparison/)
+  - [Top 13 Awesome Video Players for Linux [2023]](https://itsfoss.com/video-players-linux/)
+
+- [Is plex or stremio better to use : RealDebrid_202307](https://www.reddit.com/r/RealDebrid/comments/14s6phb/is_plex_or_stremio_better_to_use/)
+  - Most modern smart TVs have access to plex (some preloaded)
 # discuss
 - ## 
 

@@ -159,6 +159,48 @@ modified: 2023-04-04T22:35:59.255Z
 - https://github.com/hughfenghen/WebAV /MIT/ts
   - 使用纯Web技术构建的音视频工具，计划包含创建、编辑、导出功能，可应用于直播、教程录制、视频剪辑等产品中。
   - Chrome 94 开放了 WebCodecs API，意味着 JS 也能处理音视频了。在此之前，前端开发在会在有限的场景使用 ffmpeg.js，经过简单地测试解码和重编码视频发现，WebCodecs 性能是 ffmpeg.js 的 20 倍。
+
+- https://github.com/UniversalMediaServer/UniversalMediaServer /2.1kStar/GPLv2/202312/java
+  - https://www.universalmediaserver.com/
+  - A DLNA, UPnP and HTTP(S) Media Server
+  - It is capable of sharing video, audio and images between most modern devices. 
+  - It was originally based on PS3 Media Server by shagrath, in order to ensure greater stability and file-compatibility.
+  - [Universal Media Server | Comparison of Media Servers](https://www.universalmediaserver.com/comparison/)
+
+- https://github.com/gerbera/gerbera /GPLv2/202312/cpp
+  - https://gerbera.io/
+  - UPnP Media Server for 2023: Stream your digital media through your home network and consume it on all kinds of UPnP supporting devices 
+
+- https://github.com/smplayer-dev/smplayer /GPLv2/202312/cpp
+  - https://smplayer.info/
+  - Free Media Player for Windows, Linux and Mac OS with YouTube support
+  - SMPlayer can't play media files on its own. It runs a multimedia engine to play the media. 
+    - Until now SMPlayer has been using exclusively **MPlayer** as multimedia engine. 
+    - But now it's possible to use **mpv** as well.
+    - mpv is based on MPlayer and provides new features and bug fixes.
+    - MPlayer is a command-line application, it doesn't have menus or buttons. 
+  - Initial support for Wayland from v21_202101
+  - [SMPlayer with support for MPV is now available | The SMPlayer Blog_201411](https://blog.smplayer.info/smplayer-with-support-for-mpv-is-now-available/)
+  - [SMPlayer Dock Playlist to the right](https://sourceforge.net/p/smplayer/bugs/823/)
+    - It's possible to dock the playlist to the right, just drag the playlist window.
+
+- https://github.com/KDE/haruna /202312/cpp/qt/kde
+  - https://invent.kde.org/multimedia/haruna
+  - https://apps.kde.org/haruna/
+  - Open source video player built with Qt/QML and libmpv
+
+- https://github.com/MicrosoftEdge/Demos/tree/main/pwamp /MIT/202305/js
+  - https://microsoftedge.github.io/Demos/pwamp/
+  - a web audio player demo application.
+  - It is an installable web app (PWA) specifically made to demonstrate desktop-integration features.
+
+- https://github.com/flameddd/OtterPlayer /202304/js
+  - https://flameddd.github.io/OtterPlayer
+  - an web base video player for local video file
+
+- https://github.com/MDXZ-delti/video-player /GPLv3/202312/js
+  - Player for local videos with light/dark theme, keyboard shortcuts, progress retrieval and more
+  - Works offline
 # more
 - https://github.com/zspecza/common-tags
   - Useful template literal tags for dealing with strings in ES2015+

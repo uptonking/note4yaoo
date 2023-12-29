@@ -21,5 +21,7 @@ modified: 2022-08-24T16:00:05.049Z
 
 ## blogs-deprecated/invalid
 
+- [Implementing CI/CD pipeline with GitHub Actions, and GitHub Pages in a React app. - DEV Community_202308](https://dev.to/efkumah/implementing-cicd-pipeline-with-github-actions-and-github-pages-in-a-react-app-ij9)
+
 - [使用 Github Actions 部署react-app 到 Github Pages_202202](https://segmentfault.com/a/1190000041449997)
 - [使用GitHub Actions自动部署React项目到Github Pages上](https://juejin.cn/post/6844904169514467335)

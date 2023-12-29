@@ -16,11 +16,12 @@ modified: 2023-09-13T20:24:13.701Z
   - 首次数据拉取和计算需要较长时间
   - 全局搜索在本地难以实现
 
-- 支持offline的架构
+- offline的架构设计
   - 还可以考虑使用多级缓存，不一定全量数据库，类似react-query + indexeddb
+  - 可参考传统离线视频/plex的方案
 
 - 浏览器存储层原理
-  - 业务代码appCode > indexeddb > leveldb/sqlite > os-fs
+  - 业务代码appCode > indexeddb > leveldb/sqlite  > os-fs
   - 业务代码appCode > sqlite-opfs > os-fs
 
 - 对indexeddb/外部存储的取舍

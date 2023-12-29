@@ -40,6 +40,13 @@ modified: 2023-06-22T07:22:04.591Z
 
 ## flatpak
 
+### flatpak-utils
+
+- https://github.com/flattool/warehouse /202312/python
+  - a versatile toolbox for managing flatpak user data, viewing flatpak app info, and batch managing installed flatpaks.
+
+### blogs
+
 - [Flatpak is not the future (2021) | Hacker News](https://news.ycombinator.com/item?id=37210397)
 
 - [Graphical front-end to manage apps](https://github.com/flatpak/flatpak/issues/859)

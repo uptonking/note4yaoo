@@ -205,7 +205,11 @@ modified: 2023-02-08T10:24:11.422Z
   - https://twitter-search.transitivebullsh.it/
   - Instantly search across your entire Twitter history with a beautiful UI powered by Algolia.
   - Built using Algolia, Twitter API, and Vercel
-# downloader-media
+# media-player
+- [Video Player for Local Files](https://chromewebstore.google.com/detail/video-player-for-local-fi/kfcfjmdnmmokdhndbpfcachlkliggggc)
+  - web video player for local files.
+  - It works completely offline. In addition to using the mouse, it supports many useful keyboard shortcuts
+# media-download
 - tips
   - 更多是针对具体网站的downloader
 

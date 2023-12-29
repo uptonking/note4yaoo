@@ -226,16 +226,21 @@ flatpak run com.discordapp.Discord --proxy-server="socks5://127.0.0.1:1080"
   - 修改ubuntu下minidlna的配置 /etc/minidlna.conf 
   - 将软链接文件夹直接加入配置文件 media_dir=V, /media/yaoo/win10/Users/jinya/Videos
 
+- [networking - Minidlna Directory Issues - Ask Ubuntu](https://askubuntu.com/questions/331877/minidlna-directory-issues)
+  - minidlna cannot delete old files so it fails. I'm having the same problem. Delete the old Art_cache folder and try again.
+
 - [[SOLVED] Minidlna Can't find my files](https://ubuntuforums.org/showthread.php?t=2388675)
   - Try forcing it to rescan the directories.
   - This deletes any stale index files in /var/cache/minidlna/ then forces a rescan ("-R") of the directories. Running with the "-d" switch will display the results of the scan on the terminal. 
   - You'll see the various files flash by on the screen along with large blocks of XML content. When you no longer see either of those, hold down Ctrl and hit C to terminate the process. Then start the daemon using "sudo service minidlna start".
 
 ```shell
-sudo service minidlna stop
+sudo systemctl stop minidlna
 sudo rm -rf /var/cache/minidlna/*
+# -R      Forces a full rescan of the media files. First it will remove all cached data and database. Any bookmarks will be lost.
+# -d      Activate debug mode (do not daemonize).
 sudo minidlnad -R -d
-sudo service minidlna start
+sudo systemctl start minidlna 
 ```
 
 ## resources

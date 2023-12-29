@@ -109,6 +109,10 @@ modified: 2021-01-01T22:26:57.773Z
 - menulibre在flathub中名字为menu editor，可在系统菜单中修改和添加自定义app图标
   - main menu更好用
 
+- ubuntu的all apps支持自定义顺序
+  - 方法1: 使用第三方自定义gnome shell extension Overview Feature Pack
+  - 方法2: flathub apps - pin
+
 - https://github.com/cerebroapp/cerebro /MIT/js/支持plugins/electron
   - https://www.cerebroapp.com/
   - an open-source launcher to improve your productivity and efficiency
