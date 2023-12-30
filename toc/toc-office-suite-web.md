@@ -11,6 +11,9 @@ modified: 2023-03-09T13:47:07.317Z
 
 - office-online
   - [Zoho Writer](https://www.zoho.com/writer/)
+
+- resources
+  - [List of office suites - Wikipedia](https://en.wikipedia.org/wiki/List_of_office_suites)
 # office-popular
 - onlyoffice-sdkjs /190Star/AGPLv3/202302/js
   - https://github.com/ONLYOFFICE/sdkjs

@@ -309,6 +309,11 @@ modified: 2023-11-28T14:48:45.910Z
 
 - [wordpress](https://wordpress.com/pricing/)
 - [wix](https://www.wix.com/premium-purchase-plan/dynamo)
+
+- [Polaris Office: What are Basic, Smart, Pro, AI and AI-Plus accounts?](https://polarisofficehelp.zendesk.com/hc/en-us/articles/4408969904783-What-are-Basic-Smart-Pro-AI-and-AI-Plus-accounts-)
+- [OfficeSuite OfficeSuite: Pricing of our Office Software](https://www.officesuite.com/en/plans/home)
+
+- [Filmora - Compare All Plans](https://filmora.wondershare.com/shop/buy/buy-video-editor-us-pb.html)
 # faq
 - 如何不使用图床而将图片直接嵌入到笔记中
   - [MarkDown图片存储格式-Textbundle格式](https://zhuanlan.zhihu.com/p/368463926)
