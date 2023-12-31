@@ -15,7 +15,9 @@ modified: 2022-04-23T18:48:32.550Z
 # discuss
 - ## 
 
-- ## 
+- ## How do computers execute math expressions?
+- https://twitter.com/Franc0Fernand0/status/1741387317263122677
+  - But prefix and postfix notations are better because they don't need brackets or rules about which comes first.
 
 - ## 尝试用 Gemini Pro Vision 来解决目前 RAG 的核心问题之一：OCR 转 Markdown（带表格）。
 - https://twitter.com/9hills/status/1736362451728494852

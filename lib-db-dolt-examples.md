@@ -379,7 +379,7 @@ modified: 2023-08-25T22:31:05.132Z
   - Persistent data structures for JavaScript
   - https://github.com/functional-data-structure/finger-tree
 
-- https://github.com/simonlast/node-persist /js
+- https://github.com/simonlast/node-persist /MIT/202312/js
   - easy persistent data structures in Node.js
   - Node-persist doesn't use a database. Instead, JSON documents are stored in the file system for persistence. 
   - Node-persist uses the HTML5 localStorage API, so it's easy to learn.
@@ -406,9 +406,15 @@ modified: 2023-08-25T22:31:05.132Z
   - This crate supports no_std.
   - We support serialization through serde
 
-- https://github.com/victorcolombo/prust /rust
+- https://github.com/victorcolombo/prust /MIT/202308/rust/1commit
   - a collection of immutable and persistent data structures, inspired by the standard libraries found in Haskell, OCaml, Closure and Okasaki's Purely Functional Data Structures book.
   - Prust's data structures are inherently thread-safe
+
+- https://github.com/taye/purse-rs /201708/rust
+  - Persistent data structures in rust
+- https://github.com/reem/adamantium /201411/rust
+  - Functional, Persistent Data Structures in Rust
+  - Currently Implemented: Cons-List; Size-Balanced Binary-Search-Tree
 
 - https://github.com/tobgu/pyrsistent /python
   - a number of persistent collections (by some referred to as functional data structures). 
@@ -422,4 +428,19 @@ modified: 2023-08-25T22:31:05.132Z
   - a Go clone of Clojure's persistent data structures.
   - The list provided here is a singly-linked list and is very trivial to implement.
   - The implementation of persistent vector and hash map and based on a series of excellent blog posts as well as the Clojure source code
+
+- https://github.com/jsam/structdb /BSD/202308/rust
+  - Persistent data structures using RocksDB
+  - Write-Ahead Log
+  - Read snapshots
+  - Sliding window
+# text
+- https://github.com/marijnh/rope-sequence /MIT/202305/js/prosemirror
+  - This module implements a single data type, RopeSequence, which is a persistent sequence type implemented as a loosely-balanced rope. 
+  - It supports appending, prepending, and slicing without doing a full copy. 
+  - Random access is somewhat more expensive than in an array (logarithmic, with some overhead), but should still be relatively fast.
+
+- https://github.com/mdunsmuir/persistent_rope /201608/rust
+  - A rope data structure with persistence in Rust. 
+  - I'm writing this mostly as practice (though I do intend to use it for another hobby project) and make no claims about performance, correctness, or code quality. Yet.
 # more

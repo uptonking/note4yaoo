@@ -15,6 +15,14 @@ modified: 2023-08-01T08:59:45.360Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## How to compress causal graphs to tiny sizes.
+- https://twitter.com/JungleSilicon/status/1740062478560903395
+- These tricks were used by @josephgentle in diamond types.
+
 - ## 🧐 let's talk about CRDTs. It's been a while.
 - https://twitter.com/JungleSilicon/status/1729316660849627634
 - A simple model of time is a linear sequence, kind of like those number lines from math class. Each change increments by one.

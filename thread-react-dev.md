@@ -14,7 +14,17 @@ modified: 2021-01-06T14:40:11.360Z
 
 - ## 
 
-- ## 
+- ## 🤔 Am I going crazy or is this a legit way to avoid hydration errors? 
+- https://twitter.com/TkDodo/status/1741068994981826947
+  - Basically abusing `useSyncExternalStore` to safely read server snapshots on the server and on the first client render, and then falling back to the client snapshot.
+  - The good thing is that on client side transitions, the client snapshot will be read immediately.
+
+- I’m glad you like this pattern but which part of this feels like a hack to you? Preventing hydration mismatches is exactly what the `getServerSnapshot` argument is designed for
+  - The hacky part is imo subscribing to "nothing". There is no external store here and nothing to sync. 
+
+- Yeah that’s how React Aria’s `useIsSSR` hook works
+
+- UseSyncExternalStore is a criminalky underused hook, that solves so many SSR issues.
 
 - ## Avoid mixing business logic with your React components.
 - https://twitter.com/_georgemoller/status/1739644203867464091
@@ -318,7 +328,7 @@ useEffect(() => {
 
 - What are your issues exactly with unserializable data in this case?
   - Specifically: Replay's codebase is 80% a copy-paste of the FF DevTools. 
-  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,                                                      `ValueFront`,                                                      `Pause`, etc. 
+  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,                                                        `ValueFront`,                                                        `Pause`, etc. 
   - We currently parse JSON and instantiate those classes, _then_ put them into Redux.
   - The Replay codebase started with very legacy Redux patterns (hand-written reducers, etc), and no Redux DevTools integration. When I added the DevTools setup, that began to choke on the class instances. So, I had to sanitize those out from being sent to the DevTools.
   - I've been modernizing our reducers to RTK's `createSlice`, which uses Immer. Immer recursively freezes all values by default. Unfortunately, those `SomeFront` instances are mutable, and _do_ get updated later. This now causes "can't update read-only field X" errors

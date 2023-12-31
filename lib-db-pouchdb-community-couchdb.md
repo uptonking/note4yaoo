@@ -380,6 +380,78 @@ modified: 2023-10-29T02:23:35.064Z
 
 - A significant amount of functionality is already implemented, enough to use it in a project with a minimal feature set. I still need a little more functionality to fully replace Redis in Cosmic Verge, but I'm very close to updating Cosmic Verge to using PliantDB.
   - That being said, there's a lot of things I still want to do with PliantDB. The biggest unwritten feature is clustering support -- the ability to run multiple PliantDB servers as if they're one server, and the load is shared between them. But, there's a lot of small features too, some which are already in the Issues list on GitHub, others that are still in my head.
+# discuss-couch-internals
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🧮🌲📕 [How the append-only btree works (2010) | Hacker News_202312](https://news.ycombinator.com/item?id=38805383)
+- The immutable b+tree is a great idea, except it generates a tremendous amount of garbage pages. Every update of a record generates several new pages along the path of the tree.
+  - There are two additional techniques to make immutable b+tree practical. 
+  - One is to reclaim(恢复或收回) stale unreachable pages after the transactions using them have closed. 
+  - Two is to use a pair of oscillating(波动，动摇，犹豫) fixed location meta pages.
+  - A page is active if it’s in the latest snapshot or it is in use by an open transition; otherwise, it’s unreadable and can be reclaimed. When a transaction closes, it hands its list of in-use pages to the reclaimer. The reclaimer tracks these pages. When no other open transactions hold on to a page, it can be reclaimed.
+  - The most frequently updated page in the tree is the meta page. Every write transaction updates it. This creates a lot of garbage pages. The second technique addresses this problem.
+
+- The Hitchhiker Tree addresses the write amplification at the cost of making lookups and scans slightly more expensive, by keeping a small array of "pending writes" in every non-leaf node. The entire thing is still immutable, but instead of writing a new leaf node + path from root to that leaf, in the majority of cases we only write a new root. When there is no space left in the array, all the pending values get pushed one level down at the same time, so the write amplification is amortized.
+  - This idea dates to at least 1996
+- I believe the Bw-tree does the same thing, caching new updates in the intermediate branch nodes and only pushing the updates in batch down to the lower layers when running out of room at the branch node. These are the newer wave of algorithms to address the write amplification.
+
+- Yes, CoW trees have tremendous write magnification. This is well-known. The fix is to amortize(分期偿还) this cost by writing transactions as a log and then doing a b-tree update operation for numerous accumulated transactions. Think of ZFS and it's ZIL (ZFS Intent Log). That's exactly what the ZIL is: a CoW tree write magnification amortization mechanism.
+- > Does ZFS support transactional reading and writing?
+  - I don't know that I understand your question. ZFS supports POSIX transactional semantics, which is not ACID, though ZFS's design could support ACID.
+- > Is that just the traditional transaction log + btree update approach most databases used?
+  - Basically, yes. The idea is to write a sequential log of a) data blocks, b) metadata operations (e.g., renames) to support fast crash recovery. During normal operation ZFS keeps in-memory data structures up to date but delays writing new tree transactions so as to amortize write magnification. 
+- Thanks for the explanation. Basically ZFS maintains a ZIL based in-memory tree for the recent updates and a on-disk btree for the complete updates, minus the recent updates in ZIL. That's consistent with most database transaction log implementation. Some newer approach adds a Bloom filter to do fast decision between looking in the in-memory tree or in the on-disk btree.
+
+- This description reminds me of a document I read about how ZFS is implemented. In particular, how snapshots work in ZFS, and what happens when you delete a snapshot.
+  - It's a very similar idea. Traditional Unix-ish filesystems, with inodes and indirect nodes are a lot like b-trees, but ones where the indices are block numbers and where you can only append indices, trim, or replace indices. The ZIL (ZFS intent log) is a mechanism for amortizing the write magnification of copy on write trees. 
+
+- I am immediately nerd-sniped by this. Is there any code out there you know of I can see? The dual meta-data pages sounds precisely like double-buffering (from graphics; my domain of expertise). I am also drawn to append-only-like and persistent data-structures.
+  - LMDB works like this. The MDB_env struct keeps pointers to both meta pages
+  - LMDB is the poster child of COW btree implementation. That paper is a good find. Thanks.
+
+- IIRC, this is how 🛋️ CouchDB was implemented. The benefit is that it was resilient to crash without needing a write-ahead log. The downside was that it required running background compaction of the B+tree regularly.
+  - LMDB works the same way. But it also stores a second data structure on disk listing all free blocks. Writes preferentially(优先的；给予优先的) take free blocks when they’re available. The result is it doesn’t need any special compaction step. It sort of automatically compacts constantly.
+
+- 🌲🌲 Naively thinking here, how about a 2 immutable b+tree setup:
+  - The "hot" tree is the WAL: All the data is there and copies are generated.
+  - The "cold" tree is behind: In the background move from WAL and at the same time compact it.
+- That's how the traditional transaction log + btree approach work. The append-only btree removes the need for a separate transaction log.
+  - I think you could view the append-only B-tree as a deamortized version of the traditional update-in-place B-tree + WAL. 
+  - It's true that it eliminates the problem of maintaining a separate WAL, but only by trading it for an arguably harder problem: compacting the B-tree. It's easy and cheap to truncate the WAL; it's difficult and expensive to compact the B-tree. 
+  - I guess LMDB solves this problem by only updating at page-level granularity so it can reuse entire pages without compaction, although I haven't studied its design in much detail.
+
+- 📕 LMDB was derived from this project, as mentioned in its copyright notice section.
+  - Importantly, the LMDB API allows append mode, and it is very fast.
+
+- The difference is that persistent data structures allow you to traverse the history of the data structure to find past versions. By contrast I only allowed you to see the current version, returning a new version of the root any time you made a modification. As a result, the memory associated with the old version could be freed once nothing would want to access it again. And any version that you had could still be manipulated.
+
+- Append-only structures are not efficient enough for general use. You're paying a steep price for creating a snapshot of the data for every single operation.
+  - I saw this when I was playing with Scala's immutable and mutable data structures - written by the same team - ages ago. The immutable structures were much slower for common operations.
+  - The fastest databases tend to use undo logs to re-construct snapshots when they are needed
+- You can build real useful systems on them. For example, Gmail used to be implemented on top of GFS as two append-only files per user: the zlog and the index. 
+  - Gmail's now built on top of Spanner so uses a log-structured merge tree. Still append-only files but a bit different. Files aren't per user but per some arbitrary key range boundary; no more btree; multiple layers with the top ones getting compacted more frequently; etc.
+- It's worth noting that 🌰 Google's internal scale-out filesystem is append-only (for various distributed systems and operational reasons), so you end up with append-only data structures proliferating in that ecosystem. That does not necessarily mean that the append-only data structures were chosen for any technical merit other than ability to be implemented on the append-only filesystem.
+- Good point. It's also worth noting that raw flash also is generally treated as roughly append-only for wear leveling. "General-purpose" may be in the eye of the beholder, but I'd say these append-only data structures are useful in at least two significant environments.
+- What you described is called event sourcing
+
+- The biggest cost to copy-on-write data structures is write magnification. Adding a log to amortize that cost helps a lot. That's what the ZFS intent log does. Any CoW b-tree scheme can benefit from that approach.
+- The benefits of CoW data structures are tremendous:
+  - easy to reason about
+  - easy to multi-thread for reading
+  - O(1) snashopts (and clones)
+- The downsides of CoW data structures are mainly:
+  - the need to amortize write magnification
+  - difficulty in multi-threading writes
+
+- 🤼🏻 A mutable approach requires a write ahead log meaning you have to copy the data twice on every write which seems worse.
+  - It is: two writes for write ahead log vs. log-n (tree-height) writes for CoW
+
+- One thing that's not explicitly mentioned: append-only trees necessarily lack parent pointers.
+  - This means that your "iterator" can't be a lightweight type, it has to contain an array of parent nodes to visit (again) later.
 # discuss-couchdb-mvcc
 - ## 
 
@@ -414,8 +486,6 @@ modified: 2023-10-29T02:23:35.064Z
 
 - ## 
 
-- ## 
-
 - ## [Is there a git implementation that runs on top of couchdb? - Stack Overflow](https://stackoverflow.com/questions/6115519/is-there-a-git-implementation-that-runs-on-top-of-couchdb)
 - If you mean an implementation where the data of a Git repository is stored in a database rather than in filesystem, then there is some work done by Shawn Pearce in JGit to achieve this
 
@@ -438,7 +508,7 @@ modified: 2023-10-29T02:23:35.064Z
 - 🤔 Can Git be made to handle binary files as nicely as Dropbox does? Dropbox is also smart with how it tracks changes to files. Every time you make a change, Dropbox only transfers the piece of the file that changed (also known as block-level or delta sync), making it easy to work with big files like Photoshop or Powerpoint documents.
   - First off, the "block-level" sync is exactly what rsync is for. You'll probably have better results using that. You could track a list of local file paths in git, but sync the binaries themselves with rsync. (They complement each other well.)
   - Tracking changes in binary files (which cannot be merged in any reasonably generic fashion) is a fundamentally different issue than tracking changes in text, particularly source code. Git is designed to do the latter. While you can use it to track changes in binaries, merging doesn't make sense anymore, and hashing/scanning big binary files for changes is significantly slower. (A bunch of images generally won't matter, but I wouldn't use it to track, say, video, or large database dumps.)
-# discuss-couchdb
+# discuss-couch
 - ## 
 
 - ## 

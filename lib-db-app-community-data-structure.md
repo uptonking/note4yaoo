@@ -218,6 +218,92 @@ modified: 2023-09-17T18:17:41.377Z
   - I don't remember the exact benchmark results but there was no conclusive case to use them instead of the red-black trees in Scala's TreeMaps.
 
 - Obvious in retrospect, but I just realized that if you use prolly trees for your DB indices, you can run queries against any historical state of your DB (by simply not GC'ing old data). And in fact, @DoltHub supports that
+
+- ## 🧮🌲📕 [How the append-only btree works (2010) | Hacker News_202312](https://news.ycombinator.com/item?id=38805383)
+- The immutable b+tree is a great idea, except it generates a tremendous amount of garbage pages. Every update of a record generates several new pages along the path of the tree.
+  - There are two additional techniques to make immutable b+tree practical. 
+  - One is to reclaim(恢复或收回) stale unreachable pages after the transactions using them have closed. 
+  - Two is to use a pair of oscillating(波动，动摇，犹豫) fixed location meta pages.
+  - A page is active if it’s in the latest snapshot or it is in use by an open transition; otherwise, it’s unreadable and can be reclaimed. When a transaction closes, it hands its list of in-use pages to the reclaimer. The reclaimer tracks these pages. When no other open transactions hold on to a page, it can be reclaimed.
+  - The most frequently updated page in the tree is the meta page. Every write transaction updates it. This creates a lot of garbage pages. The second technique addresses this problem.
+
+- The Hitchhiker Tree addresses the write amplification at the cost of making lookups and scans slightly more expensive, by keeping a small array of "pending writes" in every non-leaf node. The entire thing is still immutable, but instead of writing a new leaf node + path from root to that leaf, in the majority of cases we only write a new root. When there is no space left in the array, all the pending values get pushed one level down at the same time, so the write amplification is amortized.
+  - This idea dates to at least 1996
+- I believe the Bw-tree does the same thing, caching new updates in the intermediate branch nodes and only pushing the updates in batch down to the lower layers when running out of room at the branch node. These are the newer wave of algorithms to address the write amplification.
+
+- Yes, CoW trees have tremendous write magnification. This is well-known. The fix is to amortize(分期偿还) this cost by writing transactions as a log and then doing a b-tree update operation for numerous accumulated transactions. Think of ZFS and it's ZIL (ZFS Intent Log). That's exactly what the ZIL is: a CoW tree write magnification amortization mechanism.
+- > Does ZFS support transactional reading and writing?
+  - I don't know that I understand your question. ZFS supports POSIX transactional semantics, which is not ACID, though ZFS's design could support ACID.
+- > Is that just the traditional transaction log + btree update approach most databases used?
+  - Basically, yes. The idea is to write a sequential log of a) data blocks, b) metadata operations (e.g., renames) to support fast crash recovery. During normal operation ZFS keeps in-memory data structures up to date but delays writing new tree transactions so as to amortize write magnification. On unclean shutdown ZFS checks that all transactions recorded in the ZIL have been written to the tree or else it will do it by a) rewinding the ZFS state to the newest fully-written transaction, b) loading the contents of the ZIL from that point forward.
+  - Because the ZIL was designed at a time when fast flash devices were expensive, it's really a separate thing from the rest of the tree. If one were to start over one might integrate the ZIL with the rest of the system more tightly so as to further minimize write magnification (e.g., data blocks written to the ZIL need not be re-written to the tree).
+- Thanks for the explanation. Basically ZFS maintains a ZIL based in-memory tree for the recent updates and a on-disk btree for the complete updates, minus the recent updates in ZIL. That's consistent with most database transaction log implementation. Some newer approach adds a Bloom filter to do fast decision between looking in the in-memory tree or in the on-disk btree.
+
+- This description reminds me of a document I read about how ZFS is implemented. In particular, how snapshots work in ZFS, and what happens when you delete a snapshot.
+  - It's a very similar idea. Traditional Unix-ish filesystems, with inodes and indirect nodes are a lot like b-trees, but ones where the indices are block numbers and where you can only append indices, trim, or replace indices. The ZIL (ZFS intent log) is a mechanism for amortizing the write magnification of copy on write trees. 
+
+- FFS. The fix for absolutely bonkers CoW costs is to stop buying in to this idiotic notion that “immutability is easier to reason about”. If you’re having difficulty reasoning about how to deal with major performance issues then your position is not easier to reason about. Full stop.
+  - It is easy to reason about the performance issues of CoW, and it's easy enough to reason about how to work around those issues. Ease of reasoning is a big deal when you're dealing with hundreds of millions of lines of code, as some of us do. Cognitive load is a big deal in today's world. It's why we're migrating from C to memory-safe languages.
+
+- I am immediately nerd-sniped by this. Is there any code out there you know of I can see? The dual meta-data pages sounds precisely like double-buffering (from graphics; my domain of expertise). I am also drawn to append-only-like and persistent data-structures.
+  - LMDB works like this. The MDB_env struct keeps pointers to both meta pages
+  - LMDB is the poster child of COW btree implementation. That paper is a good find. Thanks.
+
+- IIRC, this is how CouchDB was implemented. The benefit is that it was resilient to crash without needing a write-ahead log. The downside was that it required running background compaction of the B+tree regularly.
+  - LMDB works the same way. But it also stores a second data structure on disk listing all free blocks. Writes preferentially(优先的；给予优先的) take free blocks when they’re available. The result is it doesn’t need any special compaction step. It sort of automatically compacts constantly.
+
+- 🌲🌲 Naively thinking here, how about a 2 immutable b+tree setup:
+  - The "hot" tree is the WAL: All the data is there and copies are generated.
+  - The "cold" tree is behind: In the background move from WAL and at the same time compact it.
+- That's how the traditional transaction log + btree approach work. The append-only btree removes the need for a separate transaction log.
+  - I think you could view the append-only B-tree as a deamortized version of the traditional update-in-place B-tree + WAL. 
+  - It's true that it eliminates the problem of maintaining a separate WAL, but only by trading it for an arguably harder problem: compacting the B-tree. It's easy and cheap to truncate the WAL; it's difficult and expensive to compact the B-tree. 
+  - I guess LMDB solves this problem by only updating at page-level granularity so it can reuse entire pages without compaction, although I haven't studied its design in much detail.
+- If by compacting you meant cleaning up the garbage pages, while the WAL+btree is simpler in truncating the WAL, the append-only btree is pretty easy. It's just doing upkeep on the free-page list.
+  - If by compacting the tree you meant compacting the space left over by the users deleting the records, it's about the same amount of work between the two approaches. The WAL+btree case needs to merge the near empty pages and copy the remaining records while the append-only btree case needs to allocate new pages to merge in the near empty pages and fix up the parent path which can be done as a batching garbage collection phase.
+  - There're only three places to pay attention: 1. any page touched by a transaction (read/write) is added to the in-use list. 2. When a transaction closes, removes its touched pages from the in-use list by decrementing their in-use counters. 3. When a write transaction commits, adds all the old overwritten pages to a pending-delete list. Periodically check the pending-delete list against the in-use list and any page not in use is moved to the deleted-queue. When the deleted-queue reaches a large enough batch, create a new free-page to contain the pointers of the deleted pages from the queue. Chain up to the existing free-page list in the meta page by storing the pointer to the existing head of list in the new free-page. Append the new free-page to the db file. Update the new free-page as the new head of the free-page list in the meta page. That's it.
+
+- Of course, this implies a single-writer design (not necessarily a bad thing!).
+  - Actually immutable btree has a single writer in general since there’s no translation log and the meta page pointing to one latest tree root. Even if two write transactions updating different parts of the tree, they both need to update the same meta page, causing a contention(争论; 争辩; 争执). This is one downside (or upside depending on your need since single writer simplifies things a lot and great for sequential writes).
+
+- 📕 LMDB was derived from this project, as mentioned in its copyright notice section.
+  - Importantly, the LMDB API allows append mode, and it is very fast.
+
+- One of the advantages of this kind of architecture is that if one reader is reading the old tree while it is replaced, it just works. Databases are really good at having multiple versions of the same data structure be accessible at the same time.
+  - I hand rolled some similar data structures in higher order languages when I couldn't find any Python packages that gave me the same capability. But I couldn't figure out what a good name would be for, say, a dictionary that could have multiple concurrent versions. So I never went anything where with that.
+
+- The difference is that persistent data structures allow you to traverse the history of the data structure to find past versions. By contrast I only allowed you to see the current version, returning a new version of the root any time you made a modification. As a result, the memory associated with the old version could be freed once nothing would want to access it again. And any version that you had could still be manipulated.
+
+- Append-only structures are not efficient enough for general use. You're paying a steep price for creating a snapshot of the data for every single operation.
+  - I saw this when I was playing with Scala's immutable and mutable data structures - written by the same team - ages ago. The immutable structures were much slower for common operations.
+  - The fastest databases tend to use undo logs to re-construct snapshots when they are needed
+- You can build real useful systems on them. For example, Gmail used to be implemented on top of GFS as two append-only files per user: the zlog and the index. 
+  - Gmail's now built on top of Spanner so uses a log-structured merge tree. Still append-only files but a bit different. Files aren't per user but per some arbitrary key range boundary; no more btree; multiple layers with the top ones getting compacted more frequently; etc.
+- It's worth noting that 🌰 Google's internal scale-out filesystem is append-only (for various distributed systems and operational reasons), so you end up with append-only data structures proliferating in that ecosystem. That does not necessarily mean that the append-only data structures were chosen for any technical merit other than ability to be implemented on the append-only filesystem.
+- Good point. It's also worth noting that raw flash also is generally treated as roughly append-only for wear leveling. "General-purpose" may be in the eye of the beholder, but I'd say these append-only data structures are useful in at least two significant environments.
+- What you described is called event sourcing
+- Scala's immutable data structures, and especially the way they are used idiomatically and most obviously, have a lot of performance issues that are much bigger than the basic cost of persistent data structures. Namely, most commonly I will see developers default to pipelining strict operations like myList.map(...).filter(...).flatMap(...).collect(...).take(2) which forces/materializes the whole collection in memory for every operation. Better would be to first transform the list into a lazy view or iterator with myList.view or myList.iterator, and then do the pipeline.
+  - They also lack the ability to perform multiple updates in a batch, except for some very limited cases. Other implementations like Clojure's support "transients" where you get access to mutate the data structure over and over again (as well as do reads), and then freeze the structure in place as a new persistent collection. JavaScript libraries like immer allow for the same thing. 
+  - Scala's collections don't generally support this except in the form of "builders" which don't support reads and also don't support all the write access patterns (such as updating a vector at a specific index, or removing a key from a map/set, etc).
+
+- The biggest cost to copy-on-write data structures is write magnification. Adding a log to amortize that cost helps a lot. That's what the ZFS intent log does. Any CoW b-tree scheme can benefit from that approach.
+- The benefits of CoW data structures are tremendous:
+  - easy to reason about
+  - easy to multi-thread for reading
+  - O(1) snashopts (and clones)
+- The downsides of CoW data structures are mainly:
+  - the need to amortize write magnification
+  - difficulty in multi-threading writes
+
+- 🤼🏻 A mutable approach requires a write ahead log meaning you have to copy the data twice on every write which seems worse.
+  - It is: two writes for write ahead log vs. log-n (tree-height) writes for CoW
+
+- One thing that's not explicitly mentioned: append-only trees necessarily lack parent pointers.
+  - This means that your "iterator" can't be a lightweight type, it has to contain an array of parent nodes to visit (again) later.
+
+- In such a system, how does a reader find the root node? I'd be concerned about a) readers seeing a partial write to disk (or page buffer) during an update or b) a crash while the writer writes to disk. Datomic's architecture is similar to this, but uses many write-once "segments" (which could be files in EFS or S3, or rows in DynamoDB or other stores).
+  - The pointer to the root tree node is stored in the last committed metadata page. A read transaction starts with the reading of the metadata page. Reaching the partial written pages is impossible as the writer has not committed the latest metadata page yet. The transaction is committed when the latest metadata page is written as the last step.
+- There’s a “canonical” pointer to the root node which is updated atomically on every append. For an in-memory database, a CAS is adequate. Persistent stores ultimately need some kind of file-level locking. If you look at the Apache Iceberg spec, you get a good idea of how this works: The only “mutability” in that universe is the root table pointer in the catalog
 # discuss
 - ## 
 

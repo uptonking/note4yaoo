@@ -13,6 +13,22 @@ modified: 2023-11-10T08:05:19.107Z
 - ## 
 
 - ## 
+# discuss-ts-perf
+- ## 
+
+- ## 
+
+- ## You can do some really amazing things with typescript, but seems like beyond the basic types it gets pretty slow. 
+- https://twitter.com/devongovett/status/1741014840494473433
+  - Spent hours coming up with a way to auto infer style variants but might have to rip it out because it slows down autocomplete so much. Any TS optimization tips?
+- TypeScript is the only piece of coding stack that could benefit from a Rust rewrite but nobody wants to do it
+- I don't understand why the TS team won't just focus on perf instead of new features. It's crazy we have to work around the type system for perf reasons.
+  - Please read this comparison carefully [Benchmark TypeScript Parsers: Demystify Rust Tooling Performance_202311](https://medium.com/@hchan_nvim/benchmark-typescript-parsers-demystify-rust-tooling-performance-025ebfd391a3)
+  - From what I can see, the typescript team does have a strong focus on performance. Outside of complicated recursive types the performance is generally very good. I'm starting to investigate memorization to help with complicated types, but there is no silver bullet.
+
+- Besides use interfaces over types when composing types, you should profile it and see what is causing the slowdowns. You can use the —generateTrace and @typescript/analyze-trace to see what are the slowest ops the typechecker is stuck on.
+
+- TS isn't really designed around performant inferred types, unfortunately. Any time you get into complex derived / mapped / conditional types, it tends to bog down rather quickly. The solutions almost invariably end up at "define your types AOT"
 # discuss-array/map
 - ## 
 

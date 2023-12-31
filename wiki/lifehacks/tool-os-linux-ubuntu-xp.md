@@ -161,6 +161,15 @@ modified: 2021-01-01T22:26:57.773Z
   - https://github.com/smurphos/nemo_actions_and_cinnamon_scripts
     - A collection of custom context menu items for the Nemo file manager
   - https://github.com/linuxmint/nemo-extensions
+
+## cleaner
+
+- [Useful GUI Tools to Free Up Space on Ubuntu and Linux Mint](https://www.tecmint.com/free-disk-space-ubuntu-linux-mint/)
+  1. Stacer
+  2. Ubuntu Cleaner
+  3. BleachBit
+  4. Sweeper
+  5. rmLint
 # wayland
 - ## 
 

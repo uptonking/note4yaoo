@@ -104,4 +104,12 @@ modified: 2023-10-29T02:09:26.414Z
 
 - Part I: Simple KV Store
 - Part II: Mini Relational DB
+# sql
+
+## 🔍🦀 [A SQL query compiler from scratch in Rust (step by step): Part one, the query plan representation_202312](https://andres.senac.es/posts/query-compiler-part-one/)
+
+- https://github.com/asenac/rust-sql-playground /202307/rust
+  - a SQL query compiler written in Rust mainly for learning and blogging purposes.
+  - There is no SQL parser yet and its overall functionality is very limited, although the logical optimizer is getting real.
+  - JsonSerializer utility can be used to dump the query plan in JSON format that can be rendered with any of the utilities in tools folder, using different graph rendering libraries.
 # more

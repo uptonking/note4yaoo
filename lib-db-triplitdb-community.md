@@ -68,6 +68,20 @@ modified: 2023-10-11T21:37:25.329Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🚀 [Show HN: Triplit – The Full-Stack Database | Hacker News_202312](https://news.ycombinator.com/item?id=38805423)
+- Triplit is designed to make building collaborative and local-first web apps a lot simpler.
+  - It works by running an instance of TriplitDB both in your client-side app and also on the server then efficiently syncs any queries you run on the client in real-time from the server over WebSockets. 
+  - And because you have a complete database instant on the client, it works completely offline. 
+  - Handling collaboration is a lot easier with Triplit because each entity you store gets split into its individual properties so 🔀 conflicts that may occur when multiple users are editing concurrently are solved granularly **on a per-attribute basis** rather than the entire JSON document.
+  - We're in the process of building out a Firebase-like service (in private beta currently) but in the meantime you run the entire Triplit stack locally with our CLI.
+
+- Looks promising, this would be awesome for flutter.
+  - We're focusing on JS environments first but this is not the first time we've heard this...
+
 - ## What I want from my sync engine:
 - https://twitter.com/kylemathews/status/1738805645284118857
   - local writes land locally

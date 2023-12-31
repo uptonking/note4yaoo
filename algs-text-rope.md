@@ -34,7 +34,7 @@ modified: 2023-12-19T19:28:51.206Z
     - The data structure combines a search tree and a rope.
     - For now, Cow List uses a partially persistent AVL tree.
 
-- https://github.com/marijnh/rope-sequence /MIT/js
+- https://github.com/marijnh/rope-sequence /MIT/202305/js/prosemirror
   - This module implements a single data type, RopeSequence, which is a persistent sequence type implemented as a loosely-balanced rope. 
   - It supports appending, prepending, and slicing without doing a full copy. 
   - Random access is somewhat more expensive than in an array (logarithmic, with some overhead), but should still be relatively fast.

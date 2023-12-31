@@ -14,6 +14,17 @@ modified: 2021-09-20T18:38:00.319Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🤼🏻 protobuf's strength lies in its interface definition language, which makes communication between components owned by different teams easy, but it wasn't designed for performance
+- https://twitter.com/eatonphil/status/1740057705124139069
+- I'm working on a Go package, which will provide simple building blocks for fast zero-alloc marshaling and unmarshaling of protobuf messages with arbitrary nesting and complexity. This package will be used in @VictoriaMetrics source code initially.
+- Protobuf is jack-of-all-trades. It doesn't have to be the fastest. Also one place where it really shines is schema evolution and how tolerant it is for backward-/forward-compatibility.
+- At Google they use arenas for allocating protobufs to avoid overhead, but this isn't in any of the gRPC libraries. I do prefer the pb IDL to flatbuffers/capnp, but the overhead from allocations is like 99.99% of our profiles, and we even use better codegen: vtprotobuf
+- This is where https://capnproto.org shines
+
 - ## gRPC is gaining popularity for service-to-service communication. Here's why:
 - https://twitter.com/sahnlam/status/1738787868414550072
   - Speed - gRPC is built on HTTP/2 and Protobufs for maximum throughput and minimal latency. Much faster than JSON over HTTP.

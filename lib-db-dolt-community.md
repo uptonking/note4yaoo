@@ -18,7 +18,16 @@ modified: 2023-08-25T21:17:11.979Z
 
 - ## 
 
-- ## 
+- ## 🧮 I never looked too closely at the changes Dolt made to the prolly tree chunking algorithm. 
+- https://twitter.com/aboodman/status/1740086730504667608
+  - It's very beautiful. Not sure who exactly on the team is responsible for this change but 10/10, no notes, ::chefs kiss::
+- I never thought hard about what the distribution of chunk sizes would look like with the rolling hash in Noms. I think I assumed that because the average size would be 4KB, that would mean the distribution would be normal.
+  - Rafael noticed this near the end of our work on Noms and had some ideas, I'm not sure if he'd have come up with this.
+- The Dolt fix is very elegant  – you define up front the distribution you want as a function – say a normal distribution with 1 std dev centered at 4KB.
+  - You then scan through the dataset from start to end. At each entry, determine the probability of a chunk split by consulting the distribution.
+- This means that the trees will naturally tend to synchronize and there will be a lot of structural sharing, just like the original Noms algorithm. But you'll get a nice pretty normal distribution of chunks. And bonus: you can even *tune* the distribution to whatever you want.
+
+- @AndyArt58355407 worked on this for about a year. The new format helped us get to OLTP performance.
 
 - ## [Dolt is like if Git and MySQL had a baby._201912](https://www.reddit.com/r/programming/comments/ec5jez/getting_to_one_9_of_correctness_for_our/)
 - Two big use cases:

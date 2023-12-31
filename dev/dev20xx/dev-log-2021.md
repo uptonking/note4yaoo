@@ -1,8 +1,8 @@
 ---
 title: dev-log-2021
-tags: [dev-log, dev-xp, stage-2021]
+tags: [dev-log, dev-xp, stage-2021, yearly]
 created: 2022-05-24T17:56:10.721Z
-modified: 2022-10-21T21:06:37.812Z
+modified: 2023-12-31T14:14:59.111Z
 ---
 
 # dev-log-2021

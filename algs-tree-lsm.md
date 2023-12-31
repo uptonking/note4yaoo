@@ -86,6 +86,9 @@ modified: 2023-04-20T08:05:44.256Z
 ## [Tokutek White Paper: A Comparison of Log-Structured Merge (LSM) and Fractal Tree Indexing_201408](http://highscalability.com/blog/2014/8/6/tokutek-white-paper-a-comparison-of-log-structured-merge-lsm.html)
 
 # more-lsm
+
+- [Key-Value Separation in LSM Storage Engines_202312](https://www.skyzh.dev/blog/2023-12-31-lsm-kv-separation-overview/)
+
 - [LSM树详解 - 知乎](https://zhuanlan.zhihu.com/p/181498475)
 - [万字详解常用存储结构：B+树、B-Link树、LSM树一网打尽](https://dbaplus.cn/news-141-4980-1.html)
 - [聊一聊B+树、LSM树与TDengine存储引擎的关系 - TDengine | 涛思数据](https://www.taosdata.com/techtalk/14688.html)
