@@ -9,7 +9,7 @@ modified: 2022-11-07T10:58:24.512Z
 
 # guide
 
-- 产品的入口形态比较
+- 产品的入口形式
   - 浏览器，需要用户培养习惯，优点是方便跨端
   - 系统级组件如spotlight，优点是与系统是深度集成、操作方便，缺点是通用性不强
 
@@ -31,6 +31,10 @@ modified: 2022-11-07T10:58:24.512Z
   - 各级统计局
   - 国外统计局
 
+- public dataset
+  - 统计年鉴
+  - 中国裁判文书网
+
 - 经典数据集
   - 权威公开数据
 
@@ -38,8 +42,8 @@ modified: 2022-11-07T10:58:24.512Z
 
 - 中科院PubScholar公益学术平台
 
-- color-mode-converter
-  - rgb-hsl-hsv/b-contrast
+- 数据整理
+  - [2023各平台年终报告](https://www.yuque.com/paidaxin/dkopg8/gqpfgysdw0wiqwmh)
 # sharing
 - 规避版权问题的内容讨论平台
   - 科技分享，类似hacker-news
@@ -62,6 +66,9 @@ modified: 2022-11-07T10:58:24.512Z
 - office许可过期
   - https://github.com/infohost/infohost.github.io/blob/main/office-license-is-not-genuine.html
   - https://htmlpreview.github.io/?
+
+- color-mode-converter
+  - rgb-hsl-hsv/b-contrast
 
 ## markdown-formatter
 
@@ -102,10 +109,6 @@ modified: 2022-11-07T10:58:24.512Z
   - 奖励型问题可设置回答部分可见、二次付费可见
 
 - ActionText
-
-- public dataset
-  - 统计年鉴
-  - 中国裁判文书网
 # discuss
 - ## 
 

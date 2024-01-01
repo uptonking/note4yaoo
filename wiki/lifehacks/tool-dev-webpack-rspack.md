@@ -108,7 +108,8 @@ modified: 2023-12-25T19:32:32.910Z
 
 - https://github.com/Quramy/lerna-yarn-workspaces-example
   - /ts/基于tsc
-  - https://github.com/Quramy/npm-ts-workspaces-example
+- https://github.com/Quramy/npm-ts-workspaces-example
+  - Monorepos example project using npm workspaces and TypeScript project references
 - https://github.com/carlosnakane/monorepo-react-webpack
   - /ts/基于tsc
   - configure a monorepo for a modular React App and use webpack to generate a single chunk for each package and lazy load them.

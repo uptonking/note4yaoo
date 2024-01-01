@@ -17,10 +17,33 @@ modified: 2023-10-26T15:02:47.068Z
 - ## 
 
 - ## 
-# discuss
+# discuss-redis
 - ## 
 
 - ## 
+
+- ## 
+
+- ## Redis is fast for in-memory data storage. 
+- https://twitter.com/sahnlam/status/1741705354227163316
+  - Its speed has made it popular for caching, session storage, and real-time analytics. But what gives Redis its blazing speed? 
+- RAM-Based Storage
+  - At its core, Redis primarily uses main memory for storing data. Accessing data from RAM is orders of magnitude faster than from disk. This is a major reason for Redis's speed.
+  - However, RAM is volatile. To persist data, Redis supports disk snapshots and append-only file logging. This combines RAM's performance with disk's permanence.
+  - There is a tradeoff though - recovery from disk is slow. 
+- IO Multiplexing & Single-threaded Read/Write
+  - Redis uses an event-driven, single-threaded model for its core operations. A main event loop handles all client requests and data operations sequentially. 
+  - This single-threaded execution avoids context switching and synchronization overhead typical of multi-threaded systems.
+  - Redis uses non-blocking I/O to handle multiple connections asynchronously. This allows it to support many client connections with very low overhead
+- Efficient Data Structures
+  - Redis supports various optimized data structures, from linked lists, zip lists, and skip lists to sets, hashes, and sorted sets, among others. Each is carefully designed for specific use cases for quick and efficient data access.
+
+- Threads same as the CPU cores. I believe vertex does something similar.
+# discuss
+- ## 
+
+- ## [What is the best key-value store for Rust 2021 : rust_202201](https://www.reddit.com/r/rust/comments/s1cgof/what_is_the_best_keyvalue_store_for_rust_2021/)
+- Depends on what you want to do. If you're solely in memory, use the std lib HashMap. That'll be plenty fast.
 
 - ## 🔥 [What's the big deal about embedded key-value databases? | Hacker News_202208](https://news.ycombinator.com/item?id=32566851)
 - 

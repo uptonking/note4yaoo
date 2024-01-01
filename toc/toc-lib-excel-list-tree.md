@@ -437,6 +437,13 @@ modified: 2022-08-21T10:02:41.845Z
     - Deletion is where hell breaks loose.
     - There's a much better builtin btree implementation for rust stdlib
     - There is an excellent Berkeley grad course CS186 on DBMS along with assignments in Java to implement B tree based indexing, support ACID via Wal logging,  2 phase locking etc . Che
+
+- https://github.com/nimrodshn/btree /202110/rust
+  - A persistent B+Tree (clustered index) implementation in Rust.
+  - [Writing a storage engine in Rust: Writing a persistent BTree (Part 1) | by Nimrod Shneor | Medium_202103](https://nimrodshn.medium.com/writing-a-storage-engine-in-rust-writing-a-persistent-btree-part-1-916b6f3e2934)
+
+- https://github.com/indutny/node-index /201111/CoffeeScript
+  - a implementation of a append-only B+ Tree fully written in coffee-script.
 # tree-like/nested
 - https://github.com/TheGuardianWolf/treepack
   - Pack tree nodes into a flat object and unpack them again!

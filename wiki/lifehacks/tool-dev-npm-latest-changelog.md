@@ -34,13 +34,13 @@ modified: 2023-12-25T10:38:05.986Z
 
 - require nodejs v14.17.0 || v16.13.0 || v18.0.0
 
-- Our goal with this major release was to standardize appropriate defaults and clean up legacy configurations where possible. 
+- Our goal with this major release was to standardize appropriate defaults and clean up legacy configurations where possible.
 
+- use v3 lockfiles by default
 - `install-links` config defaults to "true"
   - `npm link` should override `--install-links`.
 - deprecate boolean install flags in favor of `--install-strategy`.
   - add `--install-strategy=hoisted|nested|shallow`, deprecate --global-style, --legacy-bundling
-- use v3 lockfiles by default
 - `npm access` subcommands have been renamed
 - npm will no longer attempt to modify ownership of files it creates
 

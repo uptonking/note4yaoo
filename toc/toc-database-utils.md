@@ -43,7 +43,7 @@ modified: 2023-08-23T17:15:46.484Z
     - For ongoing work to support the latest version 10 of hypercore see the v10 branch.
   - It uses `async-std` for async IO, and `snow` for the Noise handshake.
 
-- https://github.com/holepunchto/hyperbee /js
+- https://github.com/holepunchto/hyperbee /MIT/202311/js
   - https://docs.holepunch.to/building-blocks/hyperbee
   - An append-only B-tree running on a Hypercore. 
   - It provides a key/value-store API, atomic batch insertions, and creating sorted iterators.
@@ -460,7 +460,7 @@ modified: 2023-08-23T17:15:46.484Z
     - A JSDF file is just es6 module 
     - When you load in a JSDB table, JSDB will, by default, compact the JSDF file.
 
-- https://github.com/khonsulabs/nebari /rust
+- https://github.com/khonsulabs/nebari /MIT/202312/rust
   - A pure Rust database implementation using an append-only B-Tree file format.
   - This crate provides the Roots type, which is the transactional storage layer for BonsaiDb. 
   - It is loosely inspired by Couchstore.

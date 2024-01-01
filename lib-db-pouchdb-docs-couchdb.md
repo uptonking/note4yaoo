@@ -541,8 +541,10 @@ modified: 2023-11-07T10:22:34.529Z
 - 
 - 
 
-# [The CouchBase Database File Format_201805](https://github.com/couchbase/couchstore/wiki/Format)
+# ⚖️ [The CouchBase Database File Format_201805](https://github.com/couchbase/couchstore/wiki/Format)
 - [The CouchBase Database File Format_201211](https://github.com/couchbaselabs/couchstore/wiki/Format)
+
+- https://github.com/couchbase/couchstore/blob/master/file_format.md
 
 - This is the current database file format used by Couchbase Server 2.0. 
   - It's similar, but not identical, to the format used by Apache CouchDB 1.2. 

@@ -37,7 +37,12 @@ modified: 2021-03-31T06:50:19.936Z
 # discuss
 - ## 
 
-- ## 
+- ## 我使用 Caddy 做本地开发，经常载入页面需要好几秒。让 ChatGPT 帮我 debug 了一下，发现是 namelookup 花时间最多，在 hosts 文件中加了后面两行解决了
+- https://twitter.com/beihuo/status/1741600998035165639
+- Caddy很方便，跑起来配置少写好多
+- 看起来是 mDNS 问题，其实是不很建议用 .local 的。
+- babel.local ?
+  - *.local 我用来做本地用。这个产品叫 babel 
 
 - ## Recently I noticed that chrome sent some DNS requests bypassing my router (which is my system's DNS server), 
 - https://twitter.com/baffin_lee/status/1726239447937950182

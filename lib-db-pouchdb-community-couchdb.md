@@ -27,7 +27,7 @@ modified: 2023-10-29T02:23:35.064Z
   - If instead you want to expose CouchDB to the public, things are different. You cannot actually write server side logic, so you will have to use CouchDB's built in authentication/authorization system. That limits you to read access controlled on a database level (not document level!). 
   - CouchDB admins should not be equivalent to application admins as a CouchDB admin is rather comparable to a server admin in a traditional setting.
 
-- ## CouchDB is great but it is NOT made for the web. 
+- ## CouchDB is great but it is NOT made for the web. _202206
 - https://twitter.com/rxdbjs/status/1542161610940243968
   - The replication protocol is way to slow to be used in anything more then a prototype. It is made for server-server sync, not server-client.
   - this is the first thing clients tell me when they try out the CouchDB replication in their production app. I use CouchDB myself on the backend and it is great especially when you work with microservices and you need to share data between them
@@ -161,6 +161,17 @@ modified: 2023-10-29T02:23:35.064Z
   - But Ids can be used creatively for filtering or sorting prod-{yyyy-mm-dd}-iphone13, if that's your use case, you should forget about the id length. Id length matters mostly for disk usage in indexes.
 
 - con: Please correct me if i'm wrong, but i think the syncing feature makes it impossible to validate and/or process data from clients on the server side.
+
+- ## 🛋️ [The database I wish I had | Lobsters_202008](https://lobste.rs/s/m9vkg4/database_i_wish_i_had)
+- Well, I took the author at their word: “Being immutable means that only new information is added, no in-place update ever happens, and nothing is ever deleted.”
+  - What you’re describing is what I’d call append-only or log-based. That’s how CouchDB’s and Couchbase Server’s databases work. It has the downside of lots of write amplification, since all the live data gets rewritten every time you compact.
+  - On devices with limited storage, append-only has the worse problem that you can’t free up any storage unless you have enough free space to copy all the live data first. Which basically means it’s dangerous to fill up more than half of your storage, unless you carefully keep track of how much live data you have. 
+- In fact, git itself implements this internally with “packfiles”, which is an internal binary format to represent diffs efficiently regarding storage. However every bit of data is still there, the “compaction” is transparent to the user.
+  - Having snapshots is an possibility, but this would be better if left to the application to do, if the database could expose the snapshot and build more data on top of it, and let the application delete old data when convenient.
+
+- The sync protocol, and conflict handling, are IMHO a lot more interesting problems than the implementation of the local DB. 
+  - Take a look at Dat and Scuttlebutt … neither is perfect, but they have interesting designs. (And they make good use of append-only data structures at the sharing/protocol level.)
+  - For a lower level approach to syncing, the CouchDB replication protocol, at a very high level, is a decent design. We still use the same architecture in Couchbase Lite, although the details of the protocol are completely different because sending zillions of HTTP requests is too expensive.
 
 - ## 🆚️ [CouchDB vs. MongoDB | Hacker News_201706](https://news.ycombinator.com/item?id=14564248)
 - The article is strangely outdated on the CouchDB side
@@ -385,7 +396,12 @@ modified: 2023-10-29T02:23:35.064Z
 
 - ## 
 
-- ## 
+- ## [Why does CouchDB use an append-only B+ tree and not a HAMT - Stack Overflow](https://stackoverflow.com/questions/20816698/why-does-couchdb-use-an-append-only-b-tree-and-not-a-hamt)
+- B-trees are used because they are a well-understood algorithm that achieves "ideal" sorted-order read-cost. Because keys are sorted, moving to the next or previous key is very cheap.
+- HAMTs or other hash storage, stores keys in random order. Keys are retrieved by their exact value, and there is no efficient way to find to the next or previous key.
+- Log Structured Merge (LSM) is a different approach to sorted order storage which achieves more optimal write-efficiency, by trading off some read efficiency.
+  - However, LSM is more of a "family" of algorithms than a specific algorithm like a B-tree. Their usage is growing in popularity, but it is hindered by the lack of a de-facto optimal LSM design. 
+  - LevelDB/RocksDB is one of the more practical LSM implementations, but it is far from optimal.
 
 - ## 🧮🌲📕 [How the append-only btree works (2010) | Hacker News_202312](https://news.ycombinator.com/item?id=38805383)
 - The immutable b+tree is a great idea, except it generates a tremendous amount of garbage pages. Every update of a record generates several new pages along the path of the tree.
@@ -515,7 +531,14 @@ modified: 2023-10-29T02:23:35.064Z
 
 - ## 
 
-- ## 
+- ## [PostgREST: Providing HTML Content Using Htmx | Hacker News_202312](https://news.ycombinator.com/item?id=38687997)
+- While cool as a proof of concept and kudos for execution, this looks like a nightmare to maintain for any non-trivial webapp.
+
+- Is this kind of functionality / coding pattern used in new or modern applications?
+  - Couchdb, a (json) document database, whose api is http-based, had built-in list and detail methods that allowed you to respond with any type of format you could generate within their javascript interpreter. In other words, no need for a server as the client can directly hit the database and get html and/or json back.
+  - 🚨 After v1 they stopped working on that front as it makes for nightmare maintenance work.
+  - I think many here remember the good old days of php or asp files having sql statemts mixed with html all in a single file. This doesn't look very different.
+- It’s far from modern, Oracle had this over 25 years ago.
 
 - ## [Backend Storage Engine, Storage formats used in Couchbase Server 6.x _202011](https://www.couchbase.com/forums/t/backend-storage-engine-storage-formats-used-in-couchbase-server-6-x/28290)
 - What is the current back end storage engine used in Couchbase Server 6.x enterprise edition? Is it CouchDB based CouchStore or Magma?
@@ -645,7 +668,7 @@ modified: 2023-10-29T02:23:35.064Z
 
 - That can be done as a plugin.. Store all images/so on/.. on local, and when doing replicating.to, write a plugin to handle all those uploads and get URL. That would be real hacky though, and can be easily be avoided by just using Cloudinary directly, and store the URL path on your doc.
 
-- let's try to remove this stale label)) also my 5 cents: while CouchDB/PouchDB obviously isn't a CDN, I found attachments to be still definitely useful in cases like user avatars or previews of large media files stored elsewhere. And CouchApps are built from attachments after all
+- let's try to remove this stale label. also my 5 cents: while CouchDB/PouchDB obviously isn't a CDN, I found attachments to be still definitely useful in cases like user avatars or previews of large media files stored elsewhere. And CouchApps are built from attachments after all
 
 - ## 🎯 [CouchDB 3.0 | Hacker News_202002](https://news.ycombinator.com/item?id=22425834)
 - CouchDB is awesome, full stop. While it's missing some popularity from MongoDB and having wide adoption of things like mongoose in lots of open source CMS-type projects, it wins for the (i believe) unique take on map/reduce and writing custom javascript view functions that run on every document, letting you really customize the way you can query slice and access parts of your data...

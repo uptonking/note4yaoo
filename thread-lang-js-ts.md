@@ -14,7 +14,16 @@ modified: 2021-01-28T14:34:20.579Z
 
 - ## 
 
-- ## 
+- ## TypeScript tip: use undefined explicitly instead of making a property optional
+- https://twitter.com/DavidKPiano/status/1741829750333587629
+  - Why? It's too easy to forget to specify a property, especially in large codebases or refactors. 
+  - You can make it optional later.
+- [optional vs. undefined | TkDodo's blog](https://tkdodo.eu/blog/optional-vs-undefined)
+  - Required, but potentially undefined does not have the same intent as optional. 
+  - Try to be explicit with your type declarations and get some help from TypeScript by opting into new features like exactOptionalPropertyTypes.
+
+- I use a similar technique: Make it required first, then lean on the compiler to assure I’ve updated all the relevant call sites. Then I can make it optional.
+- `string | null` might be a more explicit than `undefined` in that case.
 
 - ## Here's a quick thread on a super useful type helper you've probably never heard of (nope, not even advanced folks).
 - https://twitter.com/mattpocockuk/status/1622730173446557697

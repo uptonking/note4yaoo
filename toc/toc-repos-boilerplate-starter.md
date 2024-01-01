@@ -42,8 +42,25 @@ modified: 2022-11-28T17:41:37.209Z
     - The Server can connect with a variety of database types: mongo, nedb, and sqlite.
 # utils
 
-# more-starter
+# monorepo
 
+- https://github.com/NiGhTTraX/ts-monorepo /MIT/202309/ts
+  - Template project for setting up a TypeScript monorepo
+  - The main focus of this repo is making the Go to definition feature in IDEs work without any surprises
+  - The secondary focus is to remove surprises when publishing packages.
+  - This repo uses pnpm, but should work fine with any of the following: yarn workspaces, npm 7 workspaces
+
+- https://github.com/wixplosives/sample-monorepo /202308/ts
+  - Sample monorepo setup with npm workspaces and typescript project references
+  - npm start - to see the client running in dev-mode (non-minified; with source-maps)
+  - npm run start:server - to see server running (with SSR; client is minified with source-maps)
+- https://github.com/Quramy/npm-ts-workspaces-example
+  - Monorepos example project using npm workspaces and TypeScript project references
+# more-starter
 - https://github.com/mwolfhoffman/node-jwt-sqlite-typescript-starter /js/inactive
   - Boilerplate for Node + TypeScript MVPs with JWT and SQLite.
   - 未使用orm
+
+- https://github.com/harvic3/nodetskeleton /202312/ts
+  - a Clean Architecture based OOP Template Project for NodeJs using TypeScript to implement with any web server framework or even any user interface.
+  - 未集成orm

@@ -207,6 +207,17 @@ modified: 2023-11-01T10:08:09.232Z
   - couchdb uses a single file for each db, which means the write ahead log _is_ the storage. The atomicity is guaranteed by saying that the latest root is the valid root. If writes are interrupted, everything since the last root is invalid and discarded upon restart. A simple design that just works, although it tends to be wasteful and requires frequent compactions
   - lmdb uses copy on write to make sure space is properly used, and atomicity is provided by sharing only the strict minimal pieces of information, so small in fact atomicity is guaranteed by the os.
 
+- ## 🛋️ [The database I wish I had | Lobsters_202008](https://lobste.rs/s/m9vkg4/database_i_wish_i_had)
+- Well, I took the author at their word: “Being immutable means that only new information is added, no in-place update ever happens, and nothing is ever deleted.”
+  - What you’re describing is what I’d call append-only or log-based. That’s how CouchDB’s and Couchbase Server’s databases work. It has the downside of lots of write amplification, since all the live data gets rewritten every time you compact.
+  - On devices with limited storage, append-only has the worse problem that you can’t free up any storage unless you have enough free space to copy all the live data first. Which basically means it’s dangerous to fill up more than half of your storage, unless you carefully keep track of how much live data you have. 
+- In fact, git itself implements this internally with “packfiles”, which is an internal binary format to represent diffs efficiently regarding storage. However every bit of data is still there, the “compaction” is transparent to the user.
+  - Having snapshots is an possibility, but this would be better if left to the application to do, if the database could expose the snapshot and build more data on top of it, and let the application delete old data when convenient.
+
+- The sync protocol, and conflict handling, are IMHO a lot more interesting problems than the implementation of the local DB. 
+  - Take a look at Dat and Scuttlebutt … neither is perfect, but they have interesting designs. (And they make good use of append-only data structures at the sharing/protocol level.)
+  - For a lower level approach to syncing, the CouchDB replication protocol, at a very high level, is a decent design. We still use the same architecture in Couchbase Lite, although the details of the protocol are completely different because sending zillions of HTTP requests is too expensive.
+
 - ## [The database I wish I had](https://www.reddit.com/r/programming/comments/ijwz5b/the_database_i_wish_i_had/)
 - technically PouchDB is also append-only, but its history tracking isn't as elaborate as git.
   - PouchDB's _rev field is a common pitfall for new people when starting with it.

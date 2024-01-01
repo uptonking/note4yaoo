@@ -110,9 +110,6 @@ modified: 2022-12-19T01:49:56.367Z
   - Template app by NestJs and React
   - Authorization by JWT
 
-- https://github.com/NiGhTTraX/ts-monorepo
-  - Template project for setting up a TypeScript monorepo
-
 - https://github.com/nathanielhall/mern-starter-app
   - Fullstack starter app using React, NestJS, PostgreSQL (not MERN)
   - NestJSTypeScriptPrisma

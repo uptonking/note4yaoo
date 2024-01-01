@@ -17,7 +17,7 @@ modified: 2023-04-20T08:05:44.256Z
   - ClickHouse中的MergeTree也是LSM树的思想
   - Flink Table Store 目前采用了类似于 RocksDB 的通用合并策略
   - 新的InfluxDB的存储引擎看起来和LSM树很像
-
+  - couchbase-magma
 
 - redis
   - [Redis Internal Data Structure : Skiplist, sds/Simple Dynamic Strings, dictionary, adlist/Doubly Linked List, ](https://blog.wjin.org/archive.html)
@@ -85,8 +85,11 @@ modified: 2023-04-20T08:05:44.256Z
 
 ## [Tokutek White Paper: A Comparison of Log-Structured Merge (LSM) and Fractal Tree Indexing_201408](http://highscalability.com/blog/2014/8/6/tokutek-white-paper-a-comparison-of-log-structured-merge-lsm.html)
 
+- CouchDB uses a modified B+ tree.
+- We've learned a lot fascinating details over the years about the use of Log-structured merge-trees in Cassandra, HBase and LevelDB. 
+- What may not be so familiar is Tokutek's Fractal Tree Indexing technology that is supposed to be even better than B+ trees and LSMs.
+  - The paper starts with an explanation of write amplification, read amplification, and space amplification, the metrics that will be used to compare B trees, FT indexes, and LSMs.
 # more-lsm
-
 - [Key-Value Separation in LSM Storage Engines_202312](https://www.skyzh.dev/blog/2023-12-31-lsm-kv-separation-overview/)
 
 - [LSM树详解 - 知乎](https://zhuanlan.zhihu.com/p/181498475)

@@ -95,6 +95,24 @@ modified: 2023-09-16T17:27:42.089Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [SQL + M4 = Composable SQL | Hacker News_202212](https://news.ycombinator.com/item?id=34159699)
+- I've been using dbt for achieving the same goals and it's honestly been a bliss(愉悦感; 极乐; 欣喜). Macros, packages, cross referencing views, unit tests, documentation generation, snapshotting.
+  - And I don't even swear as much at jinja as I thought I would.
+  - dbt allows macros to resolve arguments at "evaluation" time by nesting queries (for example, get a list of DISTINCT values so that they can be then used as column names), which is really useful. I have a particularly nasty database schema (thanks, wordpress) to deal with, and I now have plenty of macros that do the dirty stuff for me.
+
+- dbt's biggest strength is that you can incrementally expand it to fill the gaps in your existing solution: some source data quality tests here, a few automatic history-of-changes tables powered by dbt snapshot there, and with enough context you can then create push-button documentation and data-lineage graphs, which tends to be a lot more documentation than most companies' BI teams maintain natively.
+  - The downsides that I have found so far (subjectively) have been basically that it's wholely geared for batch operations, it seems to expect to export to only one data warehouse and thus lacks a "many-to-many" data-mesh-like mode, and it wasn't easy to hack the documentation page to describe things like "the ETL process that populates this table". Also, it does not seem to have a way to define or create source tables if they do not exist (so it will not black-start a project for you, it's really only for existing data), and if your code is already checked in to SSDT you might have to move some code around.
+
+- The big problem with macro approaches is that when you get to nontrivial sizes, they get impossible to troubleshoot. You get an error from the SQL engine but that's an on expanded macro. If you've availed yourself of "composability", it's a deep tower of macros, and you typically can't easily tell from the error location and message on the expanded SQL which macro is the cause of the problem. It can become really difficult to maintain.
+  - Good approaches here have some form of higher level validation and error messages, such that by the time the SQL engine gets your query, it runs well almost all the time.
+- You get this problem with any sufficiently tall sandwich of abstractions. SQLAlchemy has a query builder, the DSL is easily directly translatable to actual SQL statements in your head. But since you have the full power of Python at your disposal, it gets quite convenient to abstract away some of the boilerplate. And then some of the common parameters. And then some more stuff, just for good measure.
+
+- M4 is a nightmare in many respects, in my experience at least. I worked with it on a project and it was the biggest source of issues. It is hard to debug, doesn't handle I8N, convoluted rules, everything is a macro.
+
 - ## [Show HN: Instant API – Build type-safe web APIs with JavaScript | Hacker News_202310](https://news.ycombinator.com/item?id=38021461)
 - 
 - 

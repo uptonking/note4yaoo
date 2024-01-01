@@ -16,7 +16,10 @@ modified: 2022-12-04T16:34:29.342Z
 
 - ## 
 
-- ## 
+- ## 2023 各平台年终报告录屏收集
+- https://twitter.com/ftium4/status/1741478119339667636
+  - 收集了 50 多个互联网产品的年终总结录屏，作者 派大鑫 也收集过 2022 年的年终报告。
+  - [2023各平台年终报告](https://www.yuque.com/paidaxin/dkopg8/gqpfgysdw0wiqwmh)
 
 - ## [What is the best Canny alternative ? : selfhosted_202203](https://www.reddit.com/r/selfhosted/comments/tcdhmb/what_is_the_best_canny_alternative/)
 - I have no idea what Canny's selling points are to be honest.

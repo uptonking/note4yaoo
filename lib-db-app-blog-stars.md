@@ -114,8 +114,8 @@ modified: 2023-09-16T17:49:28.532Z
 
 - it’s pretty clear that such systems maintain different versions of data with identifier like rev_no or version_no etc & when data is queried, the latest version is returned.
 - Typically traditional database systems use locking when multiple readers & writes access some resource. 
-- 
-- 
+
+- MVCC systems also use B-Tree internally. But it does not do in place B-Tree update as random write is very costly and less efficient in any kind of disk. Instead it takes append only approach like LSM tree systems. Each & every time some data is updated, a copy of the original leaf node is created and appended to the end of the file.
 
 ## 👥🔥 [Basic Data Structures and Algorithms in the Linux Kernel | Hacker News_201311](https://news.ycombinator.com/item?id=6787836)
 
