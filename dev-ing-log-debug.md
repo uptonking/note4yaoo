@@ -47,6 +47,8 @@ modified: 2023-06-14T00:53:15.226Z
 - 先在控制台调通，再修改launch.json
 
 - 原因是 --experimental-loader 误写成了 --loader
+  - nodejs v12 renamed from --loader to --experimental-loader.
+  - This flag is discouraged and may be removed in a future version of Node.js. Please use `--import` with register() instead.
 
 ## 更新logux后ts-node server无法运行
 

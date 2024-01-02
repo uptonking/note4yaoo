@@ -17,6 +17,22 @@ modified: 2022-06-13T03:00:06.041Z
 - ## 
 
 - ## 
+# discuss-myrocks
+- ## 
+
+- ## 
+
+- ## [你觉得MyRocks怎么样？ - 知乎](https://www.zhihu.com/question/271844793)
+- MyRocks是MySQL的一个分支；MySQL的默认引擎是innodb，用rocksdb替换innodb就分支为MySocks。
+  - innodb读性能远大于rocksdb；但是rocksdb的优点是写更快、存储空间占用更小（紧凑存储）。
+  - innodb的B+树，在分裂时，会造成至少50%的空间浪费
+  - rocksdb的SST可以将空间浪费控制在10%以下。
+  - RocksDB 占用更少的存储空间，还具备更高的压缩效率，非常适合大数据量的业务。
+  - RocksDB 采用追加的方式记录 DML 操作，将随机写变为顺序写；非常适合用在批量插入和更新频繁的业务场景
+  - RocksDB 中的每一条记录都有一个 sequence number，这个 sequence number 存储在记录的 key 中。sequence number 是实现事务处理的关键，同时也是 MVCC的基础
+  - MyRocks 目前只支持一种锁类型：排他锁（X锁），并且所有的锁信息都保存在内存中。在 RR 隔离界别下只在主键上实现 gap 锁。
+  - RR没有解决幻读，因为MyRocks只实现了主键的gap-lock，没有实现辅助索引的gap-lock。事务的条件语句中如果含有辅助索引，那么将出现幻读问题。
+
 # discuss-vendors
 - ## 
 

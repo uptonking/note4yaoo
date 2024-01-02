@@ -1,11 +1,11 @@
 ---
-title: tool-dev-webpack-rewrite
-tags: [rewrite, webpack]
+title: lang-js-webpack-rewrite
+tags: [rewrite, toolchain, webpack]
 created: 2023-12-25T19:26:52.486Z
-modified: 2023-12-25T19:27:14.853Z
+modified: 2024-01-02T07:53:06.355Z
 ---
 
-# tool-dev-webpack-rewrite
+# lang-js-webpack-rewrite
 
 # guide
 

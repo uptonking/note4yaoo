@@ -1,11 +1,11 @@
 ---
-title: tool-dev-webpack-dev-error
+title: lang-js-webpack-dev-error
 tags: [error, rspack, toolchain, webpack]
 created: 2023-12-25T19:31:27.612Z
-modified: 2023-12-25T19:31:54.929Z
+modified: 2024-01-02T07:52:35.676Z
 ---
 
-# tool-dev-webpack-dev-error
+# lang-js-webpack-dev-error
 
 # guide
 

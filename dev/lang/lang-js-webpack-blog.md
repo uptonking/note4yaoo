@@ -1,11 +1,11 @@
 ---
-title: tool-dev-webpack-blog
-tags: [blog, toolchain, webpack]
+title: lang-js-webpack-blog
+tags: [blog, devtools, lang-js, toolchain, webpack]
 created: 2023-12-25T19:26:09.951Z
-modified: 2023-12-25T19:26:49.313Z
+modified: 2024-01-02T07:51:39.131Z
 ---
 
-# tool-dev-webpack-blog
+# lang-js-webpack-blog
 
 # guide
 

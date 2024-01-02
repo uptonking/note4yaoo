@@ -42,6 +42,9 @@ modified: 2023-02-27T19:07:31.111Z
 - 如何去掉event-emitter
   - 难点在需要在最外层容器触发内层的 keydown/mousedown
 
+- virtualized
+  - 同一个table，支持切换fixed-height和dynamic-height，场景是切换收起全文
+
 - 将选区变化的逻辑移出react
   - 选区逻辑本身就在slate，只是视图层需要显示单元格选区，似乎无法将单元格选区加入editor.selection
 

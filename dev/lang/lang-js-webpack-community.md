@@ -1,11 +1,11 @@
 ---
-title: tool-dev-webpack-community
-tags: [community, rspack, toolchain, webpack]
+title: lang-js-webpack-community
+tags: [community, lang-js, rspack, toolchain, webpack]
 created: 2023-12-25T19:29:33.445Z
-modified: 2023-12-25T19:29:47.236Z
+modified: 2024-01-02T07:52:13.141Z
 ---
 
-# tool-dev-webpack-community
+# lang-js-webpack-community
 
 # guide
 
@@ -24,13 +24,16 @@ modified: 2023-12-25T19:29:47.236Z
 
 - ## 
 
-- ## 
+- ## [No ESM export when compiled to ESM](https://github.com/web-infra-dev/rspack/issues/5138)
+  - I can confirm that version fixes the module output but now I'm getting this panic in another library:
+
 # discuss-rspack
 - ## 
 
 - ## 
 
-- ## 
+- ## [[Bug Report]: output.library.type = 'module' not outputting ESM correctly](https://github.com/web-infra-dev/rspack/issues/2293)
+- it works with the new version when enabling `experiments.outputModule = true`
 
 - ## [rspack 4.0 版本新模块解析 styled-components 报错](https://github.com/web-infra-dev/rspack/issues/4770)
 - Module resolution has to go from `"module": "./dist/styled-components.esm.js"` , then to `browser's "./dist/styled-components.esm.js": "./dist/styled-components.browser.esm.js"` part in order for things to get resolved correctly.

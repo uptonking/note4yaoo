@@ -14,12 +14,38 @@ modified: 2022-12-31T20:13:33.307Z
 - [Node.js Previous Releases with dates](https://nodejs.org/en/download/releases/)
 # changelog
 
+## v22.0.0_20240
+
+- ### v21.0.0_20231017
+  - [Node.js 21 is now available! | Node.js](https://nodejs.org/en/blog/announcements/v21-release-announce)
+
+- ESM: `--experimental-default-type` flag to flip module defaults
+  - Input that is already explicitly defined as ES modules or CommonJS, such as by a package.json "type" field or .mjs/.cjs file extension or the --input-type flag, is unaffected. 
+  - extensionless files are interpreted as WebAssembly if `--experimental-wasm-modules` is passed
+- Module customization hook `globalPreload` removed; use `register` and `initialize` instead
+  - use `register` to send data from the application thread to the customization hooks, and the `initialize` hook to establish a communications channel between the threads.
+- Stable fetch/WebStreams
+  - Both modules were marked as stable
+  - This impacts WebStreams, FormData, Headers, Request, Response, and fetch.
+- A experimental browser-compatible WebSocket implementation arises with this release
+  - `--experimental-websocket`.
+- Add `flush` option to `fs.writeFile` function
+  - When writing to files, it is possible that data is not immediately flushed to permanent storage. This allows subsequent read operations to see stale data.
+  - forces the data to be flushed at the end of a successful write operation.
+- introduced the global `navigator` object, enhancing web interoperability. 
+  - Now, developers can access hardware concurrency information through `navigator.hardwareConcurrency`
+- Support for globs in the Node.js test runner
+- updates of the V8 JavaScript engine to 11.8, which is part of Chromium 118
+
 ## v20.0.0_20230418
 
 - v20.0.0_2023-04-18
+  - [Node.js 20 is now available! | Node.js](https://nodejs.org/en/blog/announcements/v20-release-announce)
   - Experimental Permission Model
     - Restrict access to the filesystem/child_process/worker_threads/native-addons
-  - `import.meta.resolve` now returns synchronously
+  - Custom ESM loader hooks nearing stable
+    - Custom ES module lifecycle hooks supplied via loaders (--experimental-loader=./foo.mjs) now run in a dedicated thread, isolated from the main thread
+    - In alignment with browser behavior, `import.meta.resolve()` now returns synchronously
   - Stable Test Runner
   - Experimental SEA/Single Executable Apps
   - V8 JavaScript engine updated to 11.3
@@ -34,8 +60,16 @@ modified: 2022-12-31T20:13:33.307Z
   - ✨ Includes `npm@9.4.0` adding a new option for installations similar to pnpm/yarn
 
 - v19.0.0_2022-10-18
+  - [Node.js 19 is now available! | Node.js](https://nodejs.org/en/blog/announcements/v19-release-announce)
+  - `node --watch` support for running in ‘watch’ mode
+  - Node.js has removed the `--experimental-specifier-resolution` flag. Its functionality can now be achieved via custom loaders.
+  - The WebCrypto API is now stable 
   - The `node:test` module supports mocking during testing via a top-level `mock` object.
-  - Highlights include the update of the V8 JavaScript engine to 10.7, HTTP(s)/1.1 KeepAlive enabled by default, and ESM Resolution adjusts.
+  - Starting with this release, Node.js sets `keepAlive` to true by default
+    - The default keep-alive duration is 5 seconds.
+    - Node.js HTTP server will now automatically disconnect idle clients (which are using HTTP Keep-Alive to reuse the connection) when close() is invoked.
+  - V8 engine is updated to version 10.7, which is part of Chromium 107. This version includes a new feature to the JavaScript API: `Intl.NumberFormat`.
+  - Node.js 19 ships with npm@8.19.2
 
 ## v18.0.0_20220418
 

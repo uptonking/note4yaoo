@@ -1,11 +1,11 @@
 ---
-title: tool-dev-webpack-dev-multi-env
+title: lang-js-webpack-dev-multi-env
 tags: [bundler, toolchain, webpack]
 created: 2023-12-25T19:39:38.656Z
-modified: 2023-12-25T19:40:09.843Z
+modified: 2024-01-02T07:53:38.401Z
 ---
 
-# tool-dev-webpack-dev-multi-env
+# lang-js-webpack-dev-multi-env
 
 # guide
 

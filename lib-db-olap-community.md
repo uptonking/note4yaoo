@@ -9,6 +9,16 @@ modified: 2023-12-15T18:01:43.992Z
 
 # guide
 
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## The One Billion Row Challenge
+- https://twitter.com/gunnarmorling/status/1741839724933751238
+  - How fast can YOU aggregate 1B rows using modern #Java? Grab your threads, flex your SIMD, and kick off 2024 true coder style by joining this friendly little competition
+  - Submissions must be written in #Java (see FAQ: https://github.com/gunnarmorling/1brc#faq), so JNI won't work as you'd need some C glue code. But there might be more modern alternatives which may let you do what you're after
+
 # discuss
 - ## 
 

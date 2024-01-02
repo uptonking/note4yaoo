@@ -1,11 +1,11 @@
 ---
-title: tool-dev-npm-latest-changelog
-tags: [changelog, npm]
+title: lang-js-npm-latest-changelog
+tags: [changelog, lang-js, npm]
 created: 2023-12-25T10:37:52.547Z
-modified: 2023-12-25T10:38:05.986Z
+modified: 2024-01-02T07:50:05.847Z
 ---
 
-# tool-dev-npm-latest-changelog
+# lang-js-npm-latest-changelog
 
 # guide
 
@@ -47,6 +47,11 @@ modified: 2023-12-25T10:38:05.986Z
 - v9.4.0_20230126
   - Isolated mode RFC 终于得到了实现。
   - 在设置 `install-strategy=linked` 后，npm 也会像 pnpm 一样，只对显式声明的依赖通过链接的形式挂到 node_modules 下，而不再对所有依赖做无脑 flat
+
+- [`v9.x` FAQ · npm/cli](https://github.com/npm/cli/issues/5844)
+  - npm@9 changed the default value of install-links from false to true.
+  - This means that npm will now attempt to install directories by default instead of symlinking them.
+  - Note that workspaces will always be symlinked, so the latest workspaces changes will always be reflected in your package.
 
 ## v8.0.0_20211007
 

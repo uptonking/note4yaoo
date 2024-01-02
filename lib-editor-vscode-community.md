@@ -78,7 +78,7 @@ modified: 2023-01-21T18:53:04.519Z
 - 为什么大家做 Cloud IDE 的时候都会基于 VSCode/类 VSCode 这一套体系？
   - 因为 VS Code 丰富的生态（Monaco Editor、LSP、DAP 和插件生态）。
 
-- ## [如何评价阿里 & 蚂蚁自研 IDE 研发框架 OpenSumi？ - 知乎](https://www.zhihu.com/question/519740662)
+- ## 🆚️ [如何评价阿里 & 蚂蚁自研 IDE 研发框架 OpenSumi？ - 知乎](https://www.zhihu.com/question/519740662)
 - 对比一下OpenSumi和Theia，最近都用过。
   - 一样的应用场景：给公司做IDE定制。
   - 一样的技术栈：依赖注入，react。
@@ -86,7 +86,6 @@ modified: 2023-01-21T18:53:04.519Z
   - 都可以扩展/插件/模块。
   - 都可以发布页面端和桌面端。
   - UI都和vscode一样，但是细节没有vscode好看流畅。
-
 - OpenSumi多了一个web worker模式，可以纯前端运行。这个比较有吸引力。
 
 - 如果你需要定制IDE的话，我建议是：尽量写vscode插件(vscode写插件真是太爽了)。然后把插件集成到OpenSumi或者Theia。当然了，兼容性需要踩很多坑。

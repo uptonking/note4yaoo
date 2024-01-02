@@ -29,10 +29,24 @@ prettier --config ./.prettierrc.js --write '**/*.{js,jsx,ts,tsx,json}' --ignore-
 prettier --loglevel debug --config ./.prettierrc.js --write '**/*.*' --ignore-path=./.prettierignore --ignore-unknown
 ```
 
+- file
+
+```shell
+# remove files
+rimraf --glob ./**/*.tsbuildinfo
+```
+
 - changelog
 
 ```shell
 conventional-changelog -p angular -i CHANGELOG.md -s -r 0
+```
+
+# typescript
+
+```shell
+# show merged compilerOptions
+tsc --showconfig
 ```
 
 # git相关

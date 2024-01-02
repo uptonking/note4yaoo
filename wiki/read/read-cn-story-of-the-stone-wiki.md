@@ -36,6 +36,7 @@ modified: 2020-12-08T14:45:31.008Z
 
 - glossary(霍译本; 杨译本)
   - 红楼梦 The Story of the Stone; A Dream of Red Mansions
+  - 悼红轩 Nostalgia Studio; Mourning-the-Red Studio
   - 大观园 Prospect Garden; Grand View Garden
   - 怡红院 House of Green Delights; Happy Red Court
   - 蘅芜院 All-spice Court; Alpinia Park
@@ -43,7 +44,9 @@ modified: 2020-12-08T14:45:31.008Z
   - 秋爽斋 Autumn Studio; Studio of Autumn Freshness
   - 稻香村 Sweet-rice Village; Paddy-Sweet Cottage
   - 栊翠庵 Green Bower Hermitage; Green Lattice Nunnery
-  - 悼红轩 Nostalgia Studio; Mourning-the-Red Studio
+  - 绛云轩
+  - 梨香苑 Pear Tree Court; Pear Fragrance Court
+  - 梦坡斋 Su Dong-po Rooms; Mengpo Studio
 # 红楼梦 庚辰本 目录
 
 第一回 甄士隐梦幻识通灵 贾雨村风尘怀闺秀

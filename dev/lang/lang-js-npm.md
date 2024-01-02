@@ -1,22 +1,28 @@
 ---
-title: tool-dev-npm
-tags: [devtools, npm, tool]
+title: lang-js-npm
+tags: [devtools, lang-js, npm, package-manager]
 created: 2020-11-18T10:18:22.406Z
-modified: 2020-12-08T14:05:52.048Z
+modified: 2024-01-02T07:49:41.237Z
 ---
 
-# tool-dev-npm
+# lang-js-npm
 
 # guide
 
 - cons
-  - 不支持 pnpm workspaces
+  - 未实现 pnpm workspaces protocol
+  - 批量执行某个命令如build时，若涉及的仓库存在依赖关系，由于npm未实现按依赖顺序编译，可能执行失败或输出的文件是旧逻辑
 
 - tips
 
 - proxy
   - [常用网络问题库的url，部分地址失效待检查](https://github.com/cnpm/binary-mirror-config/blob/master/package.json)
 # not-yet
+- [[BUG] workspace scripts should be run in topological order by default · Issue · npm/cli](https://github.com/npm/cli/issues/4139)
+  - A workaround here is to order your packages in the `workspaces` property of the top level `package.json` in the desired order of script execution.
+  - [feat(workspaces): add `--topological-order` flag](https://github.com/npm/statusboard/issues/517)
+    - 这个issue一直未开始处理
+
 - [[QUESTION] xxx is not a valid npm option](https://github.com/npm/cli/issues/5852)
   - node.js 18 comes with npm v9, which disallows 3rd party configs and breaks our pipeline. A new pr for upgrading is recommended. 
   - [Cannot set store-dir in NPM v9](https://github.com/pnpm/pnpm/issues/5621)
