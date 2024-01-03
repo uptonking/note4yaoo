@@ -226,7 +226,6 @@ ctx.fillText('中', 0, 0)
 
 - Causal doesn’t smoothly support 1 billion cells yet, but we feel confident in our ability to iterate our way there. 
 
-
 - discussions
 
 - 
@@ -259,8 +258,25 @@ ctx.fillText('中', 0, 0)
 - I'm pretty sure this is better addressed with SQL.
   - We spent a fair amount of time trying to get this executing fast on SQL. However, with spreadsheets you recursively compute a lot of values. You can do this in SQL with recursive CTEs, but it’s slow, they’re not optimized for this. They also of course won’t do smart caching and dependency management for the cache. Fundamentally, it’s possible, but then we’d need to start hacking on a DB engine to make it work as a sheet. We concluded it’s better to continue on our existing engine.
 # blogs-excel
-- [Excel workbook layout and the performance of reading data with Power Query in Power BI_202311](https://blog.crossjoin.co.uk/2023/11/12/excel-workbook-layout-and-the-performance-of-reading-data-with-power-query-in-power-bi/)
-  - Excel workbooks are one of the slowest data sources you can use with Power Query in Excel or Power BI. 
+
+## [Excel workbook layout and the performance of reading data with Power Query in Power BI_202311](https://blog.crossjoin.co.uk/2023/11/12/excel-workbook-layout-and-the-performance-of-reading-data-with-power-query-in-power-bi/)
+
+- Excel workbooks are one of the slowest data sources you can use with Power Query in Excel or Power BI. 
   - So: reading a small amount of data from a table on a worksheet with a large amount of other data on it is very slow.
   - What can we learn from this? Well, if you can influence the structure and layout of the Excel workbooks you are using as a data source – and that’s a big if, because in most cases you can’t – and you only need to read some of the data from them, you should put the tables of data you are using as a source on separate worksheets and not on the same worksheet as any other large ranges or tables of data.
+# blogs-airtable-like
+
+## [Building a modular software toolkit | The Airtable Engineering Blog | Medium_202102](https://medium.com/airtable-eng/building-a-modular-software-toolkit-ce4efd06e75c)
+
+- At Airtable, we’re building a toolkit that anybody can use to build their own software.
+  - You can combine the many different building blocks provided in Airtable to create software that is truly tailored to your needs, rather than having to force your workflows into a one-size-fits-all solution that only vaguely applies to your problem.
+  - Our toolkit-style approach brings significant benefits both for our customers and for our product development process
+
+- Modularity as a lever
+  - By building a flexible and modular set of building blocks, we can develop features that are highly leveraged. When we add a new building block to the toolkit, it can interact with every other existing building block
+  - For example, take rich text formatting. Airtable currently provides over two dozen field types, from basic ones like text, number, and single select fields, to more advanced ones like formula, linked record
+- Modularity’s costs
+  - This means that each feature in Airtable is akin to a public API that other features can depend on. 
+  - As we design new features or improve existing ones, we must think very critically about the interface that each feature exposes
+- Addressing these challenges at Airtable
 # more

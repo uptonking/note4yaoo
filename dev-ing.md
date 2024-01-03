@@ -332,4 +332,7 @@ $$('[contenteditable]')
 
 ## 010
 
-## 0101
+## 0103
+
+- [How to specify registry while doing npm install with git remote url? - Stack Overflow](https://stackoverflow.com/questions/35622933/how-to-specify-registry-while-doing-npm-install-with-git-remote-url)
+  - npm install http://git.repo.url --registry=https://registry.npmjs.org

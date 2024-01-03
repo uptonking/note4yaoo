@@ -101,5 +101,19 @@ modified: 2022-08-21T10:14:58.104Z
   - Group and aggregate: Building into our engine capabilities to transform row-level data. Traditional spreadsheets tackle this use-case mainly through pivot tables, but with GRID’s separation of presentation from the data and logic in the spreadsheet, we see opportunities to build this into the spreadsheet itself
   - Compatibility mode: Our Excel-first approach has served us well, but the Google Sheets audience is also important to us, and currently we don’t offer them quite the same level of compatibility as Excel users. We plan to solve this by making our engine aware of which software a model originated in and simply doing “the right thing” for each.
   - Our own functions: We already have a set of functions in our engine that are specific to GRID, yet none have been exposed externally.many opportunities on that front have to do with the unique nature of GRID’s engine running as a part of a web document. Our — currently experimental — canvas element (see it in action here) will also come with a set of unique functions that will allow spreadsheet users to dynamically draw and make graphical representations they’ve up until now never even dreamt of.
+
+## [Fastest Way to Read Excel in Python | Haki Benita_202401](https://hakibenita.com/fast-excel-python)
+
+- What are we Testing?
+  - Speed
+  - Types
+  - Correctness
+- So which one should you use? it depends... 
+- There are a few additional considerations other than speed when choosing a library for working with Excel files in Python
+- Write capability: 
+  - we benchmarked ways to read Excel, but sometimes it's necessary to produce Excel files as well. 
+  - Some of the libraries we benchmarked does not support writing. 
+- Additional formats: A system may require loading and producing files in other formats other than Excel. 
+  - Some libraries, such as pandas and Tablib support a variety of additional formats, while calamine and openpyxl only support Excel.
 # more
 - [自研一个excel应用，需要支持哪些基本功能?](https://juejin.cn/post/6921257011560742919)

@@ -21,5 +21,8 @@ modified: 2022-08-21T10:17:31.595Z
   - 黑帕云 多维表格
   - https://www.zhihu.com/people/canglang/posts
 # excel-teams
+- [The Airtable Engineering Blog – Medium](https://medium.com/airtable-eng)
+  - [Migrating Airtable to MySQL 8.0_202206](https://medium.com/airtable-eng/migrating-airtable-to-mysql-8-0-809f0398a493)
+
 - [GRID — the future of numbers](https://medium.grid.is/)
 # more

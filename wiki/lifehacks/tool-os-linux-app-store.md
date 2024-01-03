@@ -93,6 +93,11 @@ modified: 2023-06-22T07:22:04.591Z
 - https://github.com/AppImage/AppImageKit
   - https://appimage.org/
   - AppImageKit is a concrete implementation of the AppImage format, especially the tiny runtime that becomes part of each AppImage.
+
+# linux-package-manager
+
+## apt
+- [Synaptic Package Manager - Home](https://www.nongnu.org/synaptic/)
 # win-apps
 - winget作为包管理器，可实现类似package.json的清单配置，用于快速备份还原系统
 

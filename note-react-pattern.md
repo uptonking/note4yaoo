@@ -110,6 +110,14 @@ funcMap["a"]("HELLO!"); // Logs "Hello!" to the console
   - SpiderMonkey (FireFox) seems to be consistently favouring object property lookup (not surprising as that is a core mechanism in JavaScript that needs to be performant).
   - However somewhere around size > 1000 things get less predictable with V8 (Chromium). Perhaps putting getObjectSwitch on the hot code path may give it the full Turbofan treatment at some point in time.
 
+## [I often prefer to use a Record over a switch statement](https://twitter.com/housecor/status/1742531006744195329)
+
+- It's safer. With a switch, I have to do extra work to assure it's exhaustive. With a Record, if I forget to handle a case, it won't compile.
+
+- 100%. I generally find using maps or dictionaries to retrieve values is cleaner and more intuitive than `if` or `switch` statements. Especially when there isn't much logic associated with it. Also, this approach would scale better if the records were moved to a DB.
+
+- I often introduce this as a convention for any projects I contribute to. Another pro: It incentivizes devs to break down their code into separate layers of constants and logic, versus what I often see which are large god switch statements with constants + logic jumbled together.
+
 ## [Replace Conditional With Map Refactoring](https://blog.rstankov.com/replace-conditional-with-map-refactoring/)
 
 - This is one of my favorite refactorings. It helps to group logic, making code easier to read and extend.
@@ -264,7 +272,7 @@ const AppWithProviders = () => (
 
 - ## 🤼🏻 [Avoid Provider wrapping hell in React.](https://twitter.com/_georgemoller/status/1736915583856165154)
 - This seems like a useless abstraction. You typically never need to touch that nest so adding all of that extra code to achieve the same result seems pointless. What am I missing?
-  - Agree and instead if there is a lot of providers maybe the better solution is to make it into groups like UIGroupProvider that's include UI related provider like `ThemeProvider`,  `LocaleProvider`
+  - Agree and instead if there is a lot of providers maybe the better solution is to make it into groups like UIGroupProvider that's include UI related provider like `ThemeProvider`,   `LocaleProvider`
 
 - By doing this you are increasing lines of code, complexity and bug surface area and reducing readability and plus if you are using typescript, there will be lots of extra things to handle compare to original one.
 

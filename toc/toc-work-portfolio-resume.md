@@ -133,3 +133,8 @@ modified: 2021-01-09T16:56:35.339Z
 - dark
   - https://github.com/MalikSabirov/linear-app-clone
   - https://github.com/linearesdiego/DarkLanding
+# css
+- https://github.com/atherosai/ui/tree/main/profile-cards-04
+  - Create responsive profile card using HTML, CSS and fluid typography
+  - https://twitter.com/davidm_ml/status/1742465428260073849
+# more

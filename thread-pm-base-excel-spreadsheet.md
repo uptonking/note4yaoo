@@ -15,6 +15,15 @@ modified: 2022-04-23T18:48:32.550Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 第一次用Google表格的Apps Script，用来做自动化任务很方便。
+- https://twitter.com/wong2_x/status/1742388411481342134
+  - 比如我用下面这段代码每小时自动把一个Youtube视频的观看量等数据收集到一个表格里。
+  - 而且ChatGPT很适合写这种代码，基本一次就对了。
+
 - ## How do computers execute math expressions?
 - https://twitter.com/Franc0Fernand0/status/1741387317263122677
   - But prefix and postfix notations are better because they don't need brackets or rules about which comes first.

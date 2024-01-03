@@ -350,9 +350,9 @@ modified: 2023-08-25T22:31:05.132Z
   - an immutable RDF graph database written in Clojure and built on W3C standards. 
   - The Fluree system natively supports JSON and JSON-LD and can leverage or enforce any RDF ontology
 # utils
-- https://github.com/VladislavPixel/persi-library /ts
+- https://github.com/VladislavPixel/persi-library /ISC/202211/ts
   - Library of persistent data structures with support for change history and versioning.
-  - https://github.com/VladislavPixel/library-persi /js
+  - https://github.com/VladislavPixel/library-persi /202211/js
 
 - https://github.com/PistonDevelopers/history_tree /rust
   - A persistent history tree for undo/redo
@@ -375,14 +375,14 @@ modified: 2023-08-25T22:31:05.132Z
   - https://github.com/Yomguithereal/baobab-react
     - React integration for Baobab.
 
-- https://github.com/functional-data-structure/persistent /js
-  - Persistent data structures for JavaScript
-  - https://github.com/functional-data-structure/finger-tree
-
-- https://github.com/simonlast/node-persist /MIT/202312/js
+- https://github.com/simonlast/node-persist /MIT/202312/js/似乎不是典型实现
   - easy persistent data structures in Node.js
   - Node-persist doesn't use a database. Instead, JSON documents are stored in the file system for persistence. 
   - Node-persist uses the HTML5 localStorage API, so it's easy to learn.
+
+- https://github.com/functional-data-structure/persistent /AGPLv3/202103/js
+  - Persistent data structures for JavaScript
+  - https://github.com/functional-data-structure/finger-tree
 
 - https://github.com/cthulhu-bot/temporal-collections /js
   - a library implementing collections of persistent data structures.

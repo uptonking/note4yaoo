@@ -18,28 +18,11 @@ modified: 2023-01-23T11:24:14.630Z
   - [Airtable👍🏻 vs Monday](https://www.airtable.com/lp/compare/airtable-vs-monday)
     - sync data, custom data model, custom ui, more free records limit
 # discuss
-- ## [APITable: open-source Airtable alternative | Hacker News_202212](https://news.ycombinator.com/item?id=34127804&ref=upstract.com)
-- online demo: https://gitpod.io/#https://github.com/apitable/apitable
-  - admin@apitable.com / Apitable2022
+- ## 
 
-- I see some serious red flags on their homepage:
-  - "Partners" just seem to be logo-hijacking potential hosting platforms (not actual partnerships)
-  - The testimonials use fake names + stock art
-- for baserow
-  - it’s only open-core: loads of important features locked behind subscription pricing, 
-  - You will not lose any features by self-hosting. Quite the opposite, some enterprise features like SSO are only possible for self-hosted instances. Source: I work for Baserow.
+- ## 
 
-- Is there an ongoing trend of sketchy "OSS" product offerings using this same website layout and similar fake quotes from users? I feel like I'm seeing this a lot recently.
-
-- Initial commit was in August and there are only 5 contributors, yet it's calling itself the "the best Airtable alternative" and filled their side with all kind of fancy screenshots? 
-  - Unless they ported the whole project from a previous project, there would be no way to barf out a high quality competition in such a short time with such a small team.
-  - Without the screenshots and partner-claims I would think they are just overly enthusiastic. But the whole highly professional sales vibes for such a fresh project makes it just untrustable.
-
-- It’s also AGPL licensed but has incompatibly-licensed dependencies.
-
-- Is'nt there some joke that every month a new startup tries to reinvent pivot tables?
-
-- Airtable was so cool when I tried it years ago but it was insufferably slow. Just unusable as are many web apps these days unfortunately
+- ## 
 
 - ## Alternative for Notion
 - https://www.reddit.com/r/selfhosted/comments/qhm1v2/alternative_for_notion/
@@ -47,6 +30,7 @@ modified: 2023-01-23T11:24:14.630Z
   - Gallery view like notion via book note
   - tables nt databases, but over notion, tables in trilium support embedding of images directly
   - What it does not have
+
     - notion like database sorting of tables
     - notion like filters for tables
     - notion like backlinks again not sure about this
@@ -148,5 +132,6 @@ modified: 2023-01-23T11:24:14.630Z
   - Is speedy and fast, not an electron bloatware.
   - No data hostage - allows you to edit your locally saved markdown notes write from the web app.
   - Has powerful vs-code like command palettes and keyboard shortcuts.
+
 # more
 - [How to Connect a React App to a Notion Database](https://dev.to/alexeagleson/how-to-connect-a-react-app-to-a-notion-database-51mc)

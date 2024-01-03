@@ -9,12 +9,22 @@ modified: 2022-12-04T16:34:29.342Z
 
 # guide
 
+# products-office
+- ## 
+
+- ## 
+
+- ## [Show HN: Fotion, user feedback tool that uses Notion databases as it's back end | Hacker News_202311](https://news.ycombinator.com/item?id=38285466)
+
+- ## [NotionApps – Convert Notion databases into beautiful apps in minutes | Hacker News_202303](https://news.ycombinator.com/item?id=35300072)
+
 # products
 - ## 
 
 - ## 
 
-- ## 
+- ## [unavatar, the ultimate avatar service that offers everything you need to easily retrieve user avatars](https://unavatar.io/#/)
+  - The service seamlessly incorporates into your current applications or websites with ease
 
 - ## 2023 各平台年终报告录屏收集
 - https://twitter.com/ftium4/status/1741478119339667636

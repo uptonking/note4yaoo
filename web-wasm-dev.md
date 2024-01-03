@@ -12,6 +12,19 @@ modified: 2021-01-01T20:10:51.125Z
 - tips
   - 前端开发后端化(Nodejs)，后端开发前端化(WebAssembly)都是比较明确的趋势，未来前后端开发将进一步融合。
   - cpp性能好但开发复杂，rust取代web还要看发展
+# wasi
+
+## docs
+
+- [WASIX - Docs](https://wasix.org/docs)
+
+- [WASI stands for WebAssembly System Interface.](https://github.com/bytecodealliance/wasmtime/blob/main/docs/WASI-intro.md)
+  - It's an API designed by the Wasmtime project that provides access to several operating-system-like features, including files and filesystems, Berkeley sockets, clocks, and random numbers, that we'll be proposing for standardization.
+  - It's designed to be independent of browsers, so it doesn't depend on Web APIs or JS, and isn't limited by the need to be compatible with JS.
+  - How can I run programs that use WASI?
+    - Currently the options are Wasmtime and the browser polyfill, though we intend WASI to be implementable in many wasm VMs.
+
+- [WASI Document Guide](https://github.com/bytecodealliance/wasmtime/blob/main/docs/WASI-documents.md)
 # faq
 
 ## [Why WASM is not the future of Babylon.js__202108](https://babylonjs.medium.com/why-wasm-is-not-the-future-of-babylon-js-5832b09c9b10)

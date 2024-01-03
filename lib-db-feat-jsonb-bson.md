@@ -69,6 +69,27 @@ modified: 2024-01-01T04:12:09.000Z
 # discuss-bson-binary
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🛋️ [Fleece: A super-fast, compact, JSON-equivalent binary data format | Hacker News_202312](https://news.ycombinator.com/item?id=38544728)
+
+- https://github.com/couchbase/fleece /303Star/apache2/202312/cpp
+  - A super-fast, compact, JSON-equivalent binary data format
+  - Its data model is a superset of JSON, adding support for binary values.
+  - Very fast to read: No parsing is needed, and the data can be navigated and read without any heap allocation
+  - Appendable: Fleece is what's known as a persistent data structure. 
+
+- I went down the rabbit hole of trying to find the best binary JSON-ish format a couple of years ago, it's very interesting to compare their different design choices. Having read the specification, this looks to be a fresh and minimalist take on a binary format, which is great.
+  - In general, it seems CBOR won the standardisation and support battle while also being one of the more complex and ambiguous (in terms of the number of ways to encode something) formats. 
+  - I think MessagePack is nicer, though I still wish UBJSON caught on.
+
+- How does it compare to: https://msgpack.org/index.html ?
+  - It seems to be maybe a bit less compact in terms of absolute number of bytes, but faster to parse. 
+  - That is, parsing is just one-pass validation, and then data can be read directly from the buffer without an intermediate structure, with random access. 
+  - It also has a notion of "pointer" so you can introduce sharing (a smart-ish encoder might use that to reuse common keys or strings, making the result smaller).
+
 - ## [Amazon open-sources Ion – a binary and text interchangable, typed JSON-superset | Hacker News_201604](https://news.ycombinator.com/item?id=11546098)
 - A big problem with Avro, BSON, and many other "binary JSON" formats is that they're not isomorphic(同形的, 同态的) with JSON, they have a bunch of additional stuff added on. There's Avro documents that don't have direct JSON equivalents. Which means that when a human needs to read the data, you have to transform it into some third format.
   - It's a core feature of Ion that the text and binary representations are isomorphic. You can take any Ion binary document and pretty-print it as an Ion text document that is exactly equivalent. You can edit that document and send it into your application, which will be guaranteed to be able to read it. Or you can take your hand-authored text data and transcode it into binary, and know that any Ion application can handle it without any extra effort.

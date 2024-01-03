@@ -26,9 +26,21 @@ modified: 2021-01-21T17:52:13.333Z
 
 - ## 
 
-- ## 
+- ## Five terms I avoid when naming things:
+- https://twitter.com/housecor/status/1742197661837476018
+  01. data
+  02. info
+  03. item
+  04. object
+  05. entity
+- I settled to referencing DOM elements with a $ prefix, after tying various things for years, El suffix being one. I think it’s easier to read, it’s faster to type, and better for having good IDE suggestions quickly (one keystroke and it already suggests DOM elements only).
+  - Seems like a $ would make it too easy to confuse with jQuery objects and other libraries that prepend with that character.
 
-- ## Realised I make modules/structs/objects much smaller than they need to be in side projects. 
+- I avoid “manager” in names (occasionally it makes sense). Manager objects tend to do way too much. Too many responsibilities.
+
+- user and userEntity might be valuable, where user exists in your domain model, and userEntity exists in your persistence model. Otherwise, you end up having to use fully qualified names, or aliases to differentiate between them.
+
+- ## 🏘️🤼🏻 Realised I make modules/structs/objects much smaller than they need to be in side projects. 
 - https://twitter.com/LewisCTech/status/1736887803236282672
   - I think it's in overreaction to all the "legacy code" I've worked with that goes too far in the opposite direction, and this is my brains way of trying to cope with Abstraction Deficiency.
 - With time I noticed that all goes into a single global structure; the main reason is that in the beginning its easy to split roles and responsibilities.
@@ -87,10 +99,10 @@ modified: 2021-01-21T17:52:13.333Z
   - Update: Added picocss.
 
 - My preferred development order has always been:
-  01.        Structure for everything: HTML, content, ARIA, some JS
-  02.        Style a component: CSS, interaction states, transitions/animations
-  03.        Then make the component functional with JavaScript
-  04.        Repeat steps 2 and 3 for each component.
+  01.         Structure for everything: HTML, content, ARIA, some JS
+  02.         Style a component: CSS, interaction states, transitions/animations
+  03.         Then make the component functional with JavaScript
+  04.         Repeat steps 2 and 3 for each component.
 
 - ## uid 不需要可读性，如果需要可读性可以添加一个新的 id 属性。
 - https://twitter.com/ThaddeusJiang/status/1694915724354142678

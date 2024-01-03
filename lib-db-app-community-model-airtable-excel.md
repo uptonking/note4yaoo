@@ -31,7 +31,8 @@ modified: 2023-10-26T21:54:54.201Z
 - ## 
 
 - ## 🔥 [Show HN: Plato – Airtable for your SQL database | Hacker News_202303](https://news.ycombinator.com/item?id=35070488)
-- 
+- [Plato | Build flexible internal tools](https://www.plato.io/)
+
 - 
 - 
 
@@ -59,12 +60,40 @@ modified: 2023-10-26T21:54:54.201Z
   - Think of it like a mutable resizable dataframe. 
   - It's the core data structure of an efficient, scalable, maintainable Excel document
 
-- ## ✨ [Grist – Open core alternative to Airtable and Google Sheets | Hacker News_202202](https://news.ycombinator.com/item?id=30392227)
+- ## 📈 [APITable: open-source Airtable alternative | Hacker News_202212](https://news.ycombinator.com/item?id=34127804&ref=upstract.com)
+- online demo: https://gitpod.io/#https://github.com/apitable/apitable
+  - admin@apitable.com / Apitable2022
+
+- I see some serious red flags on their homepage:
+  - "Partners" just seem to be logo-hijacking potential hosting platforms (not actual partnerships)
+  - The testimonials use fake names + stock art
+- for baserow
+  - it’s only open-core: loads of important features locked behind subscription pricing, 
+  - You will not lose any features by self-hosting. Quite the opposite, some enterprise features like SSO are only possible for self-hosted instances. Source: I work for Baserow.
+
+- Is there an ongoing trend of sketchy "OSS" product offerings using this same website layout and similar fake quotes from users? I feel like I'm seeing this a lot recently.
+
+- Initial commit was in August and there are only 5 contributors, yet it's calling itself the "the best Airtable alternative" and filled their side with all kind of fancy screenshots? 
+  - Unless they ported the whole project from a previous project, there would be no way to barf out a high quality competition in such a short time with such a small team.
+  - Without the screenshots and partner-claims I would think they are just overly enthusiastic. But the whole highly professional sales vibes for such a fresh project makes it just untrustable.
+
+- It’s also AGPL licensed but has incompatibly-licensed dependencies.
+
+- Is'nt there some joke that every month a new startup tries to reinvent pivot tables?
+
+- Airtable was so cool when I tried it years ago but it was insufferably slow. Just unusable as are many web apps these days unfortunately
+
+- ## 📈✨ [Grist – Open core alternative to Airtable and Google Sheets | Hacker News_202202](https://news.ycombinator.com/item?id=30392227)
 - 
 - 
 - 
 
-- ## ✨ [Baserow.io – Self-hosted Airtable alternative | Hacker News_202103](https://news.ycombinator.com/item?id=26448985)
+- ## 📈 [Rowy: Open-source Airtable alternative on Google Cloud | Hacker News_202110](https://news.ycombinator.com/item?id=28758598)
+- 
+- 
+- 
+
+- ## 📈✨ [Baserow.io – Self-hosted Airtable alternative | Hacker News_202103](https://news.ycombinator.com/item?id=26448985)
 - Airtable and the like strike me as a database tool for dummies who want 'anyone change anything anytime', which is just a recipe for no one knowing who the hell is changing what and when anymore.
 
 - I like notion because it’s a hybrid of wiki, table/database, calendar, kanban. You can do a lot more than just tables.
@@ -91,13 +120,18 @@ modified: 2023-10-26T21:54:54.201Z
 - Undb doesn't support MySQL as I see. But it has the feature I'm missing in NocoDB: a Calendar View which funnily NocoDB promoted on their website but doesn't have
   - Noco Founder here. We just managed to handle all date time and timezone issues which is quite complicated and made a release like a month ago. When we started, we could not have anticipated the difficulties surrounding timezone issues. So we will be getting to Calendar view soon.
 
-- ## ✨ [Show HN: NocoDB – Open-Source Airtable Alternative | Hacker News_202105](https://news.ycombinator.com/item?id=27303783)
+- ## 📈✨ [Show HN: NocoDB – Open-Source Airtable Alternative | Hacker News_202105](https://news.ycombinator.com/item?id=27303783)
 - 
 - 
 - 
 
 - ## [Ask HN: How Airtable / Notion's Database is implemented? | Hacker News](https://news.ycombinator.com/item?id=36475866)
-- There are some open source competitors to Airtable and Notion that can provide good insight.
+- There are some open source competitors to Airtable and Notion that can provide good insight. like nocodb
+
+- ## [Microsoft announces Lists, a new Airtable-like app | Hacker News_202005](https://news.ycombinator.com/item?id=23236364)
+- 
+- 
+- 
 
 - ## [Wildcard: Spreadsheet-Driven Customization of Web Applications | Hacker News_202002](https://news.ycombinator.com/item?id=22439141)
 - Wow, I absolutely love this concept.
@@ -170,7 +204,7 @@ modified: 2023-10-26T21:54:54.201Z
 - 
 - 
 
-- ## 🚀🔥 [Show HN: Airtable, a real-time spreadsheet-database hybrid | Hacker News_201409](https://news.ycombinator.com/item?id=8373914)
+- ## 📈🚀🔥 [Show HN: Airtable, a real-time spreadsheet-database hybrid | Hacker News_201409](https://news.ycombinator.com/item?id=8373914)
 - Airtable is fantastic. My only wish is that they formalize a “Airtable open format specification”. 
   - At the moment, in spite of all its shortcomings, an excel file is far more portable than an Airtable doc. 
   - We need the Airtable data structure to become an open standard.

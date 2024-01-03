@@ -228,8 +228,12 @@ modified: 2023-11-17T10:12:06.357Z
     - https://twitter.com/kndwindev/status/1675367708437692416
     - @DrizzleOrm - typesafety with relational queries
 
-- https://github.com/crutchcorn/offline-first-react-app
+- https://github.com/crutchcorn/offline-first-react-app /202401/ts
   - a proof-of-concept for an offline-first React app that interacts with a server.
+  - An offline first React app with the ability to manually diff stale data from offline clients
+  - A server that uses a simple JSON file as a database
+  - A "diff" view that encourages the user to select the new data when the server updates while the app is offline
+  - 依赖 Redux Toolkit 2.0, TanStack Query 5
 
 - hamsterbase /158Star/MIT/202211/ts/仅开源sdk
   - https://github.com/hamsterbase/hamsterbase

@@ -27,7 +27,7 @@ modified: 2023-08-23T17:15:46.484Z
     - v10 adds support for truncate and many other things
   - [Proposal integrate Query able append only log](https://github.com/holepunchto/hypercore/issues/312)
     - this data structure is called fleece, allows you to exchange less data and keep it query able while streaming 
-    - it's the core of couchbase the fastest most complet database implementation that exists by the way using a lot of nice stuff. 
+    - it's the core of 🛋️ couchbase the fastest most complet database implementation that exists by the way using a lot of nice stuff. 
   - [Add custom storage](https://github.com/holepunchto/hypercore/pull/294)
     - This is a proof-of-concept to see whether Hypercore could support alternative storage to random-access-storage.
     - In 10, we have intermediaries for everything (ie a BlockStore stores the blocks), so can be abstracted easily now, if RAF is too low level for the usecase.
