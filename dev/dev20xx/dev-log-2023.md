@@ -8,7 +8,19 @@ modified: 2023-12-31T14:08:16.162Z
 # dev-log-2023
 
 # dev-xp
-
+- log2023 编辑器、表格、协作、cms
+  - 01-linvo-search, tinybase-sync-hlc-wip
+  - 02-typewriter-quill, tanstack-table, slate-table
+  - 03-crdt-rga, slate-yjs, slate-editor
+  - 04-slate-editor-toolbar, dnd-kit
+  - 05-tanstack-table-database, rtk-query
+  - 06-ospreadsheet2watarble
+  - 07-mdx-styling, QTWebkitEngine
+  - 08-kappa-db, dolt-git
+  - 09-event-sourcing, datalog, eav/triple
+  - 10-event-sourcing, pouch, sqlite/postgresql
+  - 11-elmish-flux
+  - 12-strapi
 # dev-12-strapi-rspack
 
 ## 1228

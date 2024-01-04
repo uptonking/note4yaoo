@@ -16,7 +16,8 @@ modified: 2023-12-24T10:49:01.941Z
 
 - ## 
 
-- ## 
+- ## [new test harness for the executable feature spec](https://github.com/fireproof-storage/fireproof/issues/55)
+  - 
 
 - ## 💡🤔 The meaning of the term "CRDT" is really starting to drift.
 - https://twitter.com/LewisCTech/status/1719807159217844603
@@ -43,7 +44,28 @@ modified: 2023-12-24T10:49:01.941Z
 
 - ## 
 
-- ## 
+- ## 🛋️ As someone coming from databases like HCL Notes/Domino or CouchDB, Fireproof looks pretty familiar and powerful. _202312
+- https://discord.com/channels/1142273421674303619/1142286889588629604/1191037240873320568
+  - All three have concepts of changes feeds that can be leveraged to incrementally update external indexes. 
+  - What I don't find in the Fireproof docs is how deletions get reported in the changes callback. We need those to remove entries from the external index.
+  - And I am curious what indexers you have in mind for persistent views of data, e.g. to keep b-trees with selected doc data persistent on disk and to have flexible queries for fast index-optimized filtering/sorting. 
+  - We could mirror Fireproof doc data in Sqlite for that and use SQL for queries, but maybe you found another package/approach, something with a query planner that picks indexes if needed/available. 
+  - The database.query method seems to run the JS function on each DB document, which probably is too slow for large amounts of docs (e.g. when syncing a whole CRM system to the client).
+- there is a config flag to persist the indexes so they are incremental on page reload, I haven't been documenting the fine-grained config b/c I hope to normalize it before we move out of beta. You can try the `persistIndexes` option, which should add incrementalism 
+  - currently we tombstone for deletes, and there are a couple of loose ends as the underlying CRDT is adding more advanced delete support, which we'll be able to use in our index manager
+  - Your idea of using SQLite as a specialized index is a great one for folks who are happy to take on that dependency. 
+  - My goal with Fireproof will be to hone(使更锋利) the implementation to a simple as possible, so the incremental indexes won't be going away, but for something with a query planner you will likely want an add-on
+
+- Oh, didn't know that the indexes have a persistIndex option. That's already a good start to have fast data lookups in an app. I thought the current implementation was rebuilding the index on every app load.  Is there also a method to delete a stored index afterwards? Then I could create them on demand (e.g. when a user resorts a grid), track when they are last used and do an auto-cleanup for indexes not used for some time.
+  - Regarding deletion handling, Notes/Domino keeps so called deletion stubs in the database for some time (e.g. 3 months) so that replicating clients know that something got deleted and needs to be deleted on client side as well. A deletion stub just contains the document id and a date. After that period, deletion stubs get purged and docs coming in from clients would actually reappear on the server side during replication, but IBM (or HCL who bought the product years ago) added a DB option to prevent replicating too old data.
+  - Would be great if there was a compact option for Fireproof so that deleting content eventually removes it from the database or at least just keeps a tombstone without more data in the DB (for privacy reason and to reduce the DB size). But I know nothing (yet) about the CRDT you are using.  So not sure this is possible.
+
+- Stoked to have Lotus folks in the room! Currently compaction preserves all data, but we aren’t religious(宗教的，虔诚的) about that
+
+- CouchDB should have focussed on the embedded use case, instead of warping the project into a clustered solution. SQLite is great as a foundation for clustered solutions, and CouchDB was also. What we did at Couchbase to scale it makes sense but the core project should have stayed with its roots, IMHO.
+  - 🏘️ I think of Fireproof databases as a "unit of collaboration" so maybe you'd have one database for each collaborative doc, whiteboard, chat room, chess game, etc. And then another per-user database to track the collaborative groups of interest for that user. That's how the more complex apps I've built with it are arranged.
+  - As far as filtered replication, you could have a cloud function subscribe to server database A and write a subset of records to server database B. The leaf nodes holding the document bodies get their own CIDs, so "all it would take" is implementing a unified storage mode, and you'd get deduplication across server database records despite different filters. In this case, server database B would contain pointers to a subset of records from server database A, and the user would replicate server database B. (The default encryption mode breaks the deduplication, but running it in clear mode is a step in that direction for now.)
+  - My stress testing has been in the multi-writer scenario, to ensure blocks are never communicated that aren't yet available. The slow path is finding lowest common ancestor in the CRDT, so workloads that involve multi-writer concurrency are most challenging. For single writer workloads, or workloads that are paused when the merge backlog grows, the big-O is comparable to other databases.
 
 - ## 🚀 fireproof.storage Light up your data!_202303
 - https://twitter.com/jchris/status/1633113469179314179

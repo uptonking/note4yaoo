@@ -201,10 +201,6 @@ modified: 2021-05-14T15:04:15.333Z
   - 前端：使用 typescript + React
   - 后端：使用 Rust
 # im-instant-messaging-chat
-- https://github.com/mastodon/mastodon
-  - Your self-hosted, globally interconnected microblogging community
-  - 依赖ruby
-
 - tailchat /401Star/apache2/202302/ts
   - https://github.com/msgbyte/tailchat
   - Alternative application of discord and slack. 
@@ -373,6 +369,12 @@ modified: 2021-05-14T15:04:15.333Z
   - https://rallly.co/
   - an open-source scheduling and collaboration tool designed to make organizing events and meetings easier
   - Built with Next.js, Prisma, tRPC & TailwindCSS
+# activitypub
+- https://github.com/superseriousbusiness/gotosocial /AGPLv3/202401/go
+  - https://docs.gotosocial.org/
+  - Fast, fun, small ActivityPub server
+  - an ActivityPub social network server, written in Golang.
+  - you can keep in touch with your friends, post, read, and share images and articles. 
 # more-forum
 - https://github.com/geekeren/GuangGuForum
   - 过早客论坛微信小程序

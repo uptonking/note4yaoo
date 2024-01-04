@@ -231,13 +231,14 @@ modified: 2020-10-22T10:22:55.878Z
   - An extensible text-to-diagrams library that works in both browser and node.js
   - Heavily inspired by Mermaid.js and PlantUML.
 # node-graph
-- https://github.com/awslabs/diagram-maker
+- https://github.com/awslabs/diagram-maker /apache2/202304/ts/NoDeps/archived
   - https://awslabs.github.io/diagram-maker
   - https://awslabs.github.io/diagram-maker/explore/demos.html
   - framework-agnostic
   - 基于svg实现，没有canvas
   - 提供了layout、circular、theming等多种示例
   - A library to display an interactive editor for any graph-like data.
+  - 可选依赖dagre
 - https://github.com/reaviz/reaflow /202311/ts
   - Node-based Visualizations for React
   - REAFLOW is a modular diagram engine for build static or interactive editors. 

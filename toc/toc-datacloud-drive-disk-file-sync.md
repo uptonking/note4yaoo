@@ -270,6 +270,17 @@ modified: 2022-09-10T02:26:52.062Z
     - Current behavior: Entire file must be pulled back to process one column
     - [Amazon S3 Select supports only the SELECT SQL command.](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-glacier-select-sql-reference-select.html)
   - CloudServer is useful for Developers, either to run as part of a continuos integration test environment to emulate the AWS S3 service locally or as an abstraction layer
+
+- https://github.com/juicedata/juicefs /apache2/202401/go
+  - https://juicefs.com/
+  - a distributed POSIX file system built on top of Redis and S3.
+  - The data, stored via JuiceFS, will be persisted in Object Storage (e.g. Amazon S3), and the corresponding metadata can be persisted in various compatible database engines such as Redis, MySQL, and TiKV based on the scenarios and requirements.
+  - Supported Object Storage: s3, minio, Ceph RGW, Redis, Local disk
+
+- https://github.com/s3fs-fuse/s3fs-fuse /GPLv2/202312/cpp
+  - FUSE-based file system backed by Amazon S3
+  - s3fs allows Linux, macOS, and FreeBSD to mount an S3 bucket via FUSE(Filesystem in Userspace).
+  - s3fs makes you operate files and directories in S3 bucket like a local file system.
 # local-network
 - https://github.com/localsend/localsend /dart
   - https://localsend.org/

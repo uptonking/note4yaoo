@@ -1,15 +1,17 @@
 ---
-title: lib-db-pouchdb-docs-couchdb
+title: lib-db-pouch-couch-docs
 tags: [couchdb, docs, pouchdb]
 created: 2023-11-07T10:22:22.504Z
-modified: 2023-11-07T10:22:34.529Z
+modified: 2024-01-04T06:53:48.837Z
 ---
 
-# lib-db-pouchdb-docs-couchdb
+# lib-db-pouch-couch-docs
 
 # guide
 
 - resources
+  - [CouchDB Frequently Asked Questions](https://cwiki.apache.org/confluence/display/COUCHDB/Frequently+Asked+Questions)
+  - [CouchDB Wiki - Confluence](https://cwiki.apache.org/confluence/display/COUCHDB/)
   - [Fauxton Visual Guide: 提供了admin界面使用说明、faq](https://couchdb.apache.org/fauxton-visual-guide/index.html#answers)
 # [docs-couchdb](https://docs.couchdb.org/en/stable/)
 - features-couchdb

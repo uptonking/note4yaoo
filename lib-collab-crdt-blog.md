@@ -16,6 +16,8 @@ modified: 2022-10-13T08:00:21.260Z
 - the beginning of a survey of CRDT techniques and how to apply them to collaborative apps.
   - This post gives a gentle definition of op-based and state-based CRDTs and outlines my goals for the survey.
   - Part 2 of my CRDT survey blog series is out! This post covers "semantic techniques": deciding what a collaborative should do for users, independent of implementation details like op-based vs state-based.
+# [Making CRDTs 98% More Efficient | jakelazaroff.com_202310](https://jakelazaroff.com/words/making-crdts-98-percent-more-efficient/)
+
 # 📝 [An Interactive Intro to CRDTs | jakelazaroff.com_202310](https://jakelazaroff.com/words/an-interactive-intro-to-crdts/)
 - A register is a CRDT that holds a single value. 
     - There are a couple kinds of registers, but the simplest is the Last Write Wins Register (or LWW Register).
@@ -141,7 +143,6 @@ modified: 2022-10-13T08:00:21.260Z
 # [如何设计 CRDT 算法](https://www.zxch3n.com/crdt-intro/design-crdt/)
 - 以 Op-based CRDT 的思路设计 Last-write-wins Set(LWWSet)
 # [数据库系统小报：CRDT初探](https://zhuanlan.zhihu.com/p/510797688)
-
 
 # crdt: state-based/CvRDTs vs operation-based/
 - [Two kinds of CRDTs · CRDTs: Part 8](https://lars.hupel.info/topics/crdt/08-outlook/)

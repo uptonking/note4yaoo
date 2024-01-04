@@ -55,6 +55,23 @@ forever...
   - PouchDB is supposed to be backend independent, so the backend may be CouchDB (or indexedDB) and the users should not have to worry about the difference, introducing this would break that assumption.
   - I would like to see alternative apis that do support things like transactions, but it would be too big a change from what PouchDB already does
 
+# discuss-db-per-user
+- ## 
+
+- ## 
+
+- ## [CouchDB and PouchDB with database per user - Wappler General / How To - Wappler Community_202307](https://community.wappler.io/t/couchdb-and-pouchdb-with-database-per-user/51245)
+- If we have a SaaS app with multiple clients/accounts, is there a way to limit what is synced to only data related to the client(s)? Hopefully there is, or could be, a connection to Security Providers to limit what is synced. I wouldn’t want someone to access the database outside of the application interface and see every other client’s data.
+
+- You could have multiple CouchDB databases with different sets of data to be synced.
+  - You can even have a primary relational database that copies a subset of data to the CouchDB to be synced with the clients.
+  - Separate database per client is not supported as you can’t sync it with one central database.
+
+- Where was Couchbase Mobile/Lite when we pushed for this? Seems like it recently introduced scopes and collections that would help with multi-tenant data seperation.
+
+- With CouchDB there is a possibility to have a database per user. Actually working with CouchDB is different as databases are very lightweight and you can have a lot of them on a single server.
+
+- It seems, at least conceptually, that couchDB will function in a multi-tenant SaaS app. However, if there were some examples of this kind of scenario in Wappler, it would be easier to comprehend the integration and encourage user adoption of the technology.
 # discuss-auth
 - ## 
 

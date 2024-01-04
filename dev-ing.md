@@ -185,26 +185,8 @@ $$('[contenteditable]')
   - 将编辑器的计算密集部分的数据模型不使用普通json对象，而直接用类似数据库模型的设计
   - 为了性能，尽量不要直接读写持久化数据源，要使用缓存object pool
 
-- log2022 数据同步、冲突处理、本地存储
-  - 07-focalboard-views
-  - 08-block-editor, tiny-write
-  - 09-prosemirror-examples
-  - 10-prosemirror-collab, otjs
-  - 11-crdt-hlc, idb-sync
-  - 12-nedb, linvodb
-
 - log2023 编辑器、表格、协作、cms
-  - 01-linvo-search, tinybase-sync-hlc-wip
-  - 02-typewriter-quill, tanstack-table, slate-table
-  - 03-crdt-rga, slate-yjs, slate-editor
-  - 04-slate-editor-toolbar, dnd-kit
-  - 05-tanstack-table-database, rtk-query
-  - 06-ospreadsheet2watarble
-  - 07-mdx-styling, QTWebkitEngine
-  - 08-kappa-db, dolt-git
-  - 09-event-sourcing, datalog, eav/triple
-  - 10-event-sourcing, pouch, sqlite/postgresql
-  - 11-elmish-flux
+  - 01-pouchdb
 
 - why use es6 class
   - 运行时类型检查，instanceof
@@ -332,7 +314,12 @@ $$('[contenteditable]')
 
 ## 010
 
+## 0104
+
+- [Project must list all files or use an 'include' pattern - Stack Overflow](https://stackoverflow.com/questions/60029058/project-must-list-all-files-or-use-an-include-pattern)
+  - In my case I was building a monorepo and referencing one of the packages into another package.
+  - All I had to do was remove `composite: true` from tsconfig.json and it worked.
 ## 0103
 
 - [How to specify registry while doing npm install with git remote url? - Stack Overflow](https://stackoverflow.com/questions/35622933/how-to-specify-registry-while-doing-npm-install-with-git-remote-url)
-  - npm install http://git.repo.url --registry=https://registry.npmjs.org
+  - `npm install pkg11 --registry=https://registry.npmjs.org`

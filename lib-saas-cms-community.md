@@ -15,6 +15,15 @@ modified: 2023-12-15T18:55:05.385Z
 - ## 
 
 - ## 
+# discuss-lowcode
+- ## 
+
+- ## 
+
+- ## [Release Wappler open source (frameworks and builder) - Feature Request - Wappler Community_202306](https://community.wappler.io/t/release-wappler-open-source-frameworks-and-builder/50468)
+- open sourcing Wappler could facilitate greater transparency and trust.
+  - Noodl app are already on their way
+
 # discuss
 - ## 
 

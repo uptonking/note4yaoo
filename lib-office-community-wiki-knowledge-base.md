@@ -106,13 +106,7 @@ modified: 2023-09-21T17:32:15.618Z
   - Look at the rise of ClickUp for example in such a crowded space as project management. 
   - I don't think its too farfetched to one day see a new entrant offering as a key selling point that their api is just a big interoperable graph that you can easily plug your company into...and that's not just GraphQL.
 
-- JSON-LD is the reason ActivityPub hasn’t taken off even more. It’s just such a pain to deal with variables that could be URLs or entire object trees. Especially for strongly typed languages, it’s a nightmare.
-
 - Every time I get to work with JSON-LD (and json-schema and so on) I keep asking myself: how is this better than XML? (I am convinced it isn't).
-
-- 
-- 
-- 
 
 - ## [Show HN: BookStack – An open source wiki platform and alternative to Confluence | Hacker News_202201](https://news.ycombinator.com/item?id=29851834)
 - I remember considering BookStack while looking for a (surprise) replacement for Confluence.

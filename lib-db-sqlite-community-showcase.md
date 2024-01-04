@@ -12,6 +12,42 @@ modified: 2023-05-21T14:54:15.817Z
 # discuss
 - ## 
 
+- ## 🪶🌰 [Bluesky migrates to single-tenant SQLite | Hacker News_202311](https://news.ycombinator.com/item?id=38171322)
+- I'm not opposed to this setup at all and it does have its place. But we are running away from schema-per-tenant setup at warp speed at work. There are so many issues if you don't invest in it properly and I don't think many are prepared when they initially have the idea.
+  - The funny thing is that about a decade ago, the app was born on a SQLite per tenant setup, then it moved to schema per tenant on Postgres, now it's finally moving to a single schema with RLS. So, the exact opposite progression.
+
+- Interesting... I like the strategy of having each user be 1:1 with a DB. What would be done for data that needs to be aggregated across users though?
+  - To summarise the relevant details, the "AppView" service is responsible for the sorts of queries that aggregate across users, and that has its own database setup - I think postgres but I'm not 100% sure on that.
+- You're right, as usual. AppView is on a Postgres cluster with read replicas doing timeline generation (and other things) on-demand. We're in the process of moving it toward a beefy ScyllaDB cluster designed around a fanout-on-write system.
+  - The v1 backend system was optimized for rapid development and served us well. 
+  - The v2 backend will be somewhat less flexible (no joins!) but is designed for much higher scale.
+
+- Can someone that knows more about bluesky explain what data is stored in sqlite and not? Because i assume it isnt messages etc between users.
+  - It's all your posts and replies as a user. While they currently host the only* PDS themselves, the end goal is for every end user to have their own PDS. Inrupt/SOLID calls this concept a "pod".
+
+- This seems like a very misleading title, the Bluesky PDS is the meant-for-selfhosting thing they distribute, not the bluesky service as experienced and used by most of its users.
+- AFAIK there's only one version of the software so "the service" runs the same thing that you self-host. SQLite seems like it will simplify the single-user case though.
+  - That's right. This is the same code Bluesky is running on our new PDS hosts. It's all open source.
+  - The main motivation in moving from a big central Postgres cluster to single tenant SQLite databases is to make hosting users much more efficient, inexpensive, and operationally simpler.
+  - But it's also part of the plan to run regional PDS hosts near users, increasing performance by decreasing end-to-end latency.
+  - The most experimental part of this setup is using Litestream to replicate these many SQLite databases (there are almost 2 million user repositories) to cloud storage. But we're not relying on this alone, we're also going to maintain standard SQLite ".backup" snapshots as well.
+
+- I am curious, does the HN folks know if bluesky is more active than nostr or the mastodon network?
+  - Less active than Mastodon, I'd assume more active than Nostr.
+  - But the interesting thing for me isn't activity — it's the people on there.
+  - Of the cohort who had >100k followers on Twitter, I think more of them post regularly on Bluesky than post on Mastodon. Bluesky definitely has a more cohesive feel, especially because there's currently just one instance & mod team.
+- My bet is regardless of any initial good intentions, since BlueSky is a company, market pressures will inevitably force them into dark patterns like we see on every other commercial social network (going back to the early days of the companies, Facebook, Twitter, and even Google looked really good early on until all were corrupted by profit motive). My belief is that the profit motive is necessarily at odds with free communication.
+  - To me, the ActivityPub network (Mastodon and friends) is relatively unique in the social media space in having no direct commercial pressures (the protocol is developed by W3C) and therefore being inoculated against the causes for these dark patterns.
+
+- Why not use Postgres with RBAC (Row Based Access Control).
+  - simpler db client
+  - simpler cloud architecture
+  - simpler resource management
+  - simpler partial backups/restore
+  - simpler compliance with law enforcement
+  - partitioning might be easier
+  - maybe simpler billing for storage ("just" size of DB)
+
 - ## 🔥 [Show HN: WarcDB: Web crawl data as SQLite databases | Hacker News_202206](https://news.ycombinator.com/item?id=31799147)
 - 
 - 

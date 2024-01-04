@@ -14,7 +14,7 @@ modified: 2023-12-06T15:59:01.332Z
 
 - ## 
 
-- ##  I want pouchdb to replicate ‘as-needed’, AKA to use pouchdb as a ‘read-through cache’. _20231024
+- ## I want pouchdb to replicate ‘as-needed’, AKA to use pouchdb as a ‘read-through cache’. _20231024
 - https://couchdb.slack.com/archives/C016TJAE7A4/p1698079241868579?thread_ts=1698040668.376679&cid=C016TJAE7A4
   - Although full replication works like a charm, it’s a heavy requirement for mobile network users.
   - My initial thought was that I would observe what documents I query, then create a replication per query. This would ensure I always query my local DB, and I can use the changes API as a hook to re-query the local DB. This keeps source of truth nice-and-easy and I let pouchDB handle all the work. 
@@ -72,6 +72,19 @@ modified: 2023-12-06T15:59:01.332Z
   - When talking about ordering by time, both in the context of LWW and insertions in lists, we are talking about **vector clock time**, not necessarily device time (or though that is taken into account as well).
 - LWW is a tradeoff. You'll be better off selling it as an automated-resolution option on top of manual resolution, instead of an innovation over manual resolution. (MV registers are a CRDT as well!)
 - Adam from Realm. Our approach differs in building off our object database. We couple this with low-latency sync that only transmits changes and deterministic conflict resolution, making collaborative experiences really easy to build
+# discuss-large-data
+- ## 
+
+- ## [Most performant way of range querying large PouchDB datasets - Stack Overflow](https://stackoverflow.com/questions/35023293/most-performant-way-of-range-querying-large-pouchdb-datasets)
+- Which is the most performant on the two, or is there a smarter way of creating the indices? Or is there a different approach without using PouchDB at all?
+  - Approach 1 - Multiple databases, one index
+  - Approach 2 - One database, multiple indices
+
+- Answering my own question as I found a solution, not using PouchDB but using YDN-DB. 
+  - Using Approach 1 above with multiple databases and one indexed column (of type integer timestamp), I've reached very good performance.
+  - Both writing and reading ~5000 rows takes about 300 ms. My tests showed that this approach is about 3x faster than using a compound index (Approach 2).
+
+- nlawson(201601): As the primary author of PouchDB secondary indexes (and of pouchdb-find), I can concur(同意) that the implementation is much slower than YDN-DB/Dexie/etc. For query-heavy applications, I wouldn't recommend PouchDB secondary queries at all (at least until we make it faster
 # discuss
 - ## 
 

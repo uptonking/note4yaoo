@@ -111,7 +111,7 @@ modified: 2022-11-25T15:41:47.534Z
     - the client provides elegant conflict handling and events for reacting to changes from the server.
   - Persistence options are provided based on the following currently supported databases:
     - In memory, MySQL, PostgreSQL, CouchDB
-  - [What makes synceddb a good offline-first database?](https://github.com/paldepind/synceddb/issues/47)
+  - 🤔 [What makes synceddb a good offline-first database?_201801](https://github.com/paldepind/synceddb/issues/47)
     - One of the distinguishing features of SyncedDB is that it attempts to be a very lightweight wrapper around IndexedDB. 
     - It's essentially IndexedDB + migrations + promises + syncing.
 

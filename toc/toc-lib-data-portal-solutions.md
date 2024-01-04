@@ -28,6 +28,10 @@ modified: 2021-01-01T16:02:50.598Z
   - An Open Data Catalog built on Drupal 8
   - [Comparing DKAN and CKAN](https://dkan.readthedocs.io/en/latest/introduction/dkan-ckan.html)
 
+- https://github.com/awslabs/open-data-registry /apache2/python
+  - https://registry.opendata.aws/
+  - A repository of publicly available datasets that are available for access from AWS resources
+
 - https://github.com/simonw/datasette  /python
   - https://datasette.io/
   - https://global-power-plants.datasettes.com/global-power-plants/global-power-plants

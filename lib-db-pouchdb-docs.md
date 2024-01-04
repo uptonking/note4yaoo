@@ -11,10 +11,6 @@ modified: 2023-10-10T21:37:19.382Z
 
 - resources-pouch
   - [pouchdb FAQ](https://pouchdb.com/faq.html)
-
-- resources-couch
-  - [CouchDB Frequently Asked Questions](https://cwiki.apache.org/confluence/display/COUCHDB/Frequently+Asked+Questions)
-  - [CouchDB Wiki - Confluence](https://cwiki.apache.org/confluence/display/COUCHDB/)
 # faq
 
 ## Can PouchDB sync with MongoDB/MySQL/my current non-CouchDB database?

@@ -9,6 +9,13 @@ modified: 2023-12-31T14:15:11.730Z
 
 # dev-xp
 
+- log2022 数据同步、冲突处理、本地存储
+  - 07-focalboard-views
+  - 08-block-editor, tiny-write
+  - 09-prosemirror-examples
+  - 10-prosemirror-collab, otjs
+  - 11-crdt-hlc, idb-sync
+  - 12-nedb, linvodb
 # dev-12-nedb-linvodb
 
 ## 1231
@@ -5155,7 +5162,6 @@ function createHook(initialValue: string) {
   }
 }
 ```
-
 
 ## 0208
 

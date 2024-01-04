@@ -17,6 +17,9 @@ modified: 2022-11-07T10:25:12.034Z
   - 暂停浏览较长时间后，平台recsys推荐流的信息更有效
   - 长时间高频率浏览时，个人的follow关注流信息更有效
 
+- tips
+  - 详细的领域知识很多都在pdf中，而不是零散的blog，可直接搜索 关键词+.pdf
+
 - https://github.com/iamadamdev/bypass-paywalls-chrome
   - help bypass paywalls for selected sites.
   - Bypass the following sites' paywalls: bloomberg, fortune, glassdoor, medium, national geographic, quora, vanity fair, vulture
@@ -45,7 +48,8 @@ modified: 2022-11-07T10:25:12.034Z
   - prosemirror
   - [TiddlyWiki: Talk TW - Community discussion forum about TiddlyWiki](https://talk.tiddlywiki.org/)
 # search-google
-- [Tips for efficiently Googling. Search by:](https://twitter.com/addyosmani/status/1444195449095737346)
+- [Tips for efficiently Googling. Search by:](https://twitter.com/addyosmani/status/1444195449095737346)74570622/does-mastodon-has-advance-search)
+  - This is not possible (intentionally / by design).
   - Exact match > `"javascript modules"`
   - Scope to site > `site:github.com js`
   - After a date > `javascript after:2021`
@@ -56,15 +60,15 @@ modified: 2022-11-07T10:25:12.034Z
 
 - 实测 `after:2020` 的搜索结果都是2021年的，after:2021当前年份就显示搜索结果为空了
 
-- [知乎怎么查看自己评论过的问题？](https://www.zhihu.com/question/35126639/answers/updated)
-  - [如何找到自己在知乎里发表的评论？](https://www.zhihu.com/question/19585656/answers/updated)
-
-- dogedoge 多吉搜索被知乎屏蔽了
-
 - [根据需求进行定向搜索，以下是常用的语法和规则（比如：找竞品调研，只找pdf「filetype:pdf」），参见图片的示例](https://twitter.com/xianlezheng/status/1729505482212008157)
   - 查询子域名下的关键词（不包含www站点）： ssl -site:http://ilikejobs.com site:*.ilikejobs.com
 # 知乎/掘金/v2ex/链滴
 - 有时候评论的内容比回答的内容更有意思
+
+- [知乎怎么查看自己评论过的问题？](https://www.zhihu.com/question/35126639/answers/updated)
+  - [如何找到自己在知乎里发表的评论？](https://www.zhihu.com/question/19585656/answers/updated)
+
+- dogedoge 多吉搜索被知乎屏蔽了
 
 - [知乎违规记录](https://www.zhihu.com/community/reported)
 
@@ -75,10 +79,7 @@ modified: 2022-11-07T10:25:12.034Z
 # 数据库/pingcap
 - [TiDB 社区](https://asktug.com/)
 - [TiDB Internals](https://internals.tidb.io/)
-# reddit
-
 # hacker-news
-
 - usage-xp
   - 有时网站无法登录或内容无法显示，可能不是网络原因而是服务器宕机了，可在twitter社交平台搜索 `hacker news down` 按时间倒序判断最新状态
 
@@ -91,6 +92,18 @@ modified: 2022-11-07T10:25:12.034Z
 - hn-like
   - https://lobste.rs/
   - [Brian Lovin](https://brianlovin.com/)
+
+- [Lobsters vs Hacker News vs Other Similar Platforms_202310](https://medium.com/@saverio3107/lobsters-vs-hacker-news-vs-other-similar-platforms-6db5b5778dc2)
+  - Lobsters and Hacker News are both platforms that serve as a communal space for sharing and discussing various topics. 
+  - Lobsters: Primarily technology-focused with a community centered around link aggregation and discussion​.
+  - Hacker News: Focuses on computer science, entrepreneurship, and broader topics. It’s a social news website developed by Y Combinator​.
+  - Community: Both platforms have community-based structures, but Lobsters is noted for its transparent moderation and focus on technical subjects only, as opposed to Hacker News which also allows political discussions​.
+  - Commenting System: Both platforms have built-in commenting systems, but Lobsters has tags and transparent moderation which might contribute to better organization​.
+  - Lobsters: Open Source platform developed by Joshua Stein, it’s more lightweight and has a clean design​.
+  - Hacker News: Developed by Y Combinator, it’s a free platform but not open source​.
+
+## reddit
+
 # twitter
 - search
   - 搜索关键词时，可加上'min_replies:1'的条件，筛选出被讨论过的质量更高的内容
@@ -166,6 +179,11 @@ modified: 2022-11-07T10:25:12.034Z
 - [Does mastodon has advance search](https://stackoverflow.com/questions/74570622/does-mastodon-has-advance-search)
   - This is not possible (intentionally / by design).
   - Mastodon supports full-text search when ElasticSearch is available. Mastodon’s full-text search allows logged in users to find results from their own statuses, their mentions, their favourites, and their bookmarks. It deliberately does not allow searching for arbitrary strings in the entire database.
+
+## bluesky
+
+- [Bluesky](https://bsky.app/)
+- [AT Protocol](https://atproto.com/guides/overview)
 # telegram
 - 资源搜索
   - [Meow. TG-做最懂你的TG搜索](https://meow.tg/)
@@ -218,7 +236,13 @@ flatpak run com.discordapp.Discord --proxy-server="socks5://127.0.0.1:1080"
 
 ## player
 
+- cross-platform
+  - vlc
+  - smplayer
+
 ## stream
+
+- [Universal Media Server](https://www.universalmediaserver.com/)
 
 - minidlna的web信息页不能用localhost访问，要直接用ip，如 http://192.168.0.100:8200
 

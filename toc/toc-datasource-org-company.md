@@ -25,6 +25,7 @@ modified: 2020-11-11T13:15:43.417Z
 - amazon aws open data
   - https://registry.opendata.aws/
   - https://github.com/awslabs/open-data-registry
+  - A repository of publicly available datasets that are available for access from AWS resources
   - https://registry.opendata.aws/usage-examples/
   - https://aws.amazon.com/blogs/aws/tag/public-data-sets/
   - [A public data lake for COVID-19 research and development](https://aws.amazon.com/covid-19-data-lake/)

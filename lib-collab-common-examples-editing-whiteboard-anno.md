@@ -90,6 +90,13 @@ modified: 2022-11-07T17:36:22.236Z
   - https://github.com/boardsite-io/boardsite
   - https://boardsite.io/
   - a productivity app for taking notes, annotating documents and collaborating with friends on any device with a browser.
+
+- https://github.com/cachapa/crdt_draw /apache2/202309/dart
+  - https://draw.cachapa.net/
+  - A collaborative real-time local-first global canvas.
+  - This project is a demonstration of the family of the Dart-native libraries based on crdt and the WebSocket-based synchronization layer crdt_sync.
+  - The project is composed of a Flutter-based client optimized for the web, and a simple server that acts as a central orchestrator.
+  - https://github.com/cachapa/crdt_sync /dart
 # collab-editing
 - https://github.com/convergencelabs/html-text-collab-ext
   - A set of utilities that enhances a normal HTML `<textarea>` element with collaborative editing capabilities. 
