@@ -149,12 +149,15 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/ComfortablyCoding/strapi-plugin-website-builder /MIT/202311/js
   - A plugin for Strapi that provides the ability to trigger website builds manually, periodically or through model events.
 
+- https://github.com/taskworld/strapi-plugin-github-action-dispatch /202311/ts
+  - This plugin provides a web ui to trigger a Github workflow run from strapi's admin panel as well as a list of the latest run status and results.
+
 - https://github.com/bass3l/strapi-provider-email-smtp /202204/js
   - A third-party SMTP email provider for Strapi, tested with Gmail SMTP.
 
 - https://github.com/artcoded-net/strapi-plugin-github-projects /202305/js
   - This plugin allows to automatically generate "Projects" from public Github repositories, meant to be then exposed via a public API, e.g. to be shown on a front-end application with the aim to showcase a developer's portfolio. 
-  - It is meant mostly for educational purposes, being built step by step in the "Strapi Complete Course" by Artcoded, so it's not tested in production.
+  - It is meant mostly for educational purposes, being built step by step in the "Strapi Complete Course" 
   - https://github.com/minhtran241/strapi-plugin-github-projects
 
 - https://github.com/Sur-un-nuage/strapi-plugin-expo-notifications /202312/js
@@ -258,6 +261,8 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/melishev/strapi-plugin-react-editorjs /202209/js
   - Plugin for Strapi Headless CMS, hiding the standard WYSIWYG editor on Editor.js
   - This is the Strapi v4 version of this plugin
+- https://github.com/GregorSondermeier/strapi-plugin-editorjs /202212/js
+  - A Strapi v4 compatible plugin that provides a custom field for Editor.js rich text content
 
 - https://github.com/fagbokforlaget/strapi-plugin-wysiwyg-toastui /202201/js
   - This plugin replaces strapi wysiwyg draft editor with toastui editor.
@@ -432,6 +437,9 @@ modified: 2023-12-15T19:30:23.094Z
   - This plugin allows you to create and update multiple entries from .xls or .xlsx file
 
 ## features-ext
+
+- https://github.com/obafunmiso-olufemi/strapi-plugin-review-workflow /202401/ts/wip
+  - workflow
 
 - https://github.com/notum-cz/strapi-plugin-content-versioning /117Star/MIT/202312/js
   - This plugin enables content versioning in Strapi
@@ -689,6 +697,10 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/arjusmoon860/strapi-google-auth /202310/js
   - GoogleAuth helps you to easily create google authentication available for your users. 
   - It uses the official `google-auth` library to execute the actions. You can get it working in under 2 minutes in your application.
+
+- https://github.com/mancku/Strapi-custom-sendEmailConfirmation-workflow /202210/js
+  - Re-doing the register method with almost a copy-paste to be able to call your own sendConfirmationEmail method that can be (again) almost a copy-paste but getting the URL from the environment
+  - [How to configure email confirmation redirection URL dynamically?_202210](https://forum.strapi.io/t/how-to-configure-email-confirmation-redirection-url-dynamically/22671)
 
 - https://github.com/vaxr/strapi-provider-email-mock /202305/js
   - A simple in-memory mock mail provider for strapi.io

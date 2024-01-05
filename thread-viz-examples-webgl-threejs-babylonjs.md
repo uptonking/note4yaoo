@@ -12,6 +12,15 @@ modified: 2021-08-07T16:44:32.377Z
   - https://my-room-in-3d.vercel.app/
   - 依赖three、gsap
   - 房间的电视机在播放，电脑在操作，非常逼真
+# discuss-threejs
+- ## 
+
+- ## 
+
+- ## to discover that something was made with pmndrs libraries, fiber in this case, still gives me thrills. whoever did this site is a beast.
+- https://twitter.com/0xca0a/status/1743029701520642318
+  - [KidSuper World - landing.love](https://www.landing.love/sites/kidsuper/)
+
 # discuss
 - ## 
 

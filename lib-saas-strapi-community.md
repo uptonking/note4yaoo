@@ -14,6 +14,11 @@ modified: 2023-12-15T17:04:36.589Z
 
 - ## 
 
+- ## 
+
+- ## [Can I use strapi free in my self-hosted server? - General - Strapi Community Forum_202304](https://forum.strapi.io/t/can-i-use-strapi-free-in-my-self-hosted-server/27666)
+- The only restrictions on the free version is that audit-logs and Review Workflows are not available
+
 - ## 📝 [Q3, 2023 — Better Rich Text Editor | Content Editing XP | Strapi](https://feedback.strapi.io/customization/p/q3-2023-better-rich-text-editor)
 
 - [Change Strapi's Default WYSIWYG to a more feature rich Editor_202202](https://github.com/strapi/strapi/issues/12440)
@@ -70,15 +75,34 @@ modified: 2023-12-15T17:04:36.589Z
 # cd to your project and
 npm install --legacy-peer-deps
 npm run develop
-
 ```
 
-- 
+# discuss-dev-xp
+- ## 
 
+- ## [Inconsistency between responses gotten from the REST API and the Entity service API_202401](https://forum.strapi.io/t/inconsistency-between-responses-gotten-from-the-rest-api-and-the-entity-service-api/34975)
+- strapi-plugin-transformer plugin was what I was going to recommend. Another approach you can use, is to write a transformer function to flatten the response.
+
+- Yes, the transform plugin is the way to go. 
+  - But I’ve recently learned that it’s all a joke. 
+  - You see, core controllers invoke the transformResponse function which iterates over the service response and produces this highly impractical data/meta/attributes structure. This takes time. Then, the middleware offered by the transform plugin iterates again over that transformed response and flattens it. Which takes time again. 
+  - A performant way would be to disable that transformResponse function alltogether, or at least the part that wraps all non-id field within attributes. Maybe patch-package could be used for that.
 # discuss
 - ## 
 
 - ## 
+
+- ## [Strapi isn't just a CMS right? Is it not also a fully fledged backend web framework (like Django)? - Discussions - Strapi Community Forum_202207](https://forum.strapi.io/t/strapi-isnt-just-a-cms-right-is-it-not-also-a-fully-fledged-backend-web-framework-like-django/20324)
+  - Strapi advertises themselves as a CMS, but I feel it’s much more than that. It feels like a backend web framework like Django. We can create our own APIs with routes & controllers. This means we can create custom endpoint URLs, and custom logic to handle each request. We can query whatever data we need from our database too.
+
+- Django and strapi Both are Backend frameworks, though the big difference here is that Django has more batteries included.
+  - In django you can render views and pass data to the “frontend” if you like to call it.
+
+- Based on my experience with Strapi and Django, Strapi has a much more customizable “admin site” than Django, and Django allows you to customize your models more than Strapi. Setting up models in Django is done in code where in Strapi we do it directly in the UI.
+
+- It doesn’t offer a lot of backend capabilities like creating custom APIs with routes and controllers and handling requests with custom logic. 
+  - I guess the reason it’s mainly marketed as a CMS is that’s designed to be user-friendly and flexible for content management, making it accessible for ppl with varying levels of backend experience.
+  - When it comes to CMS platforms, my personal favorite has always been WordPress. Its intuitive interface and a plethora of fantastic templates to choose from make it a go-to for many users. 
 
 - ## [Can Strapi be used as a no/low-code solution for backend? : Strapi_202204](https://www.reddit.com/r/Strapi/comments/ubbdqx/can_strapi_be_used_as_a_nolowcode_solution_for/)
 - Yes. Strapi provides you CRUD endpoints for every entity from the box. There is zero code to create entities. You can create it using admin panel

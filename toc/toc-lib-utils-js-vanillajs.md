@@ -201,6 +201,12 @@ modified: 2023-04-04T22:35:59.255Z
 - https://github.com/MDXZ-delti/video-player /GPLv3/202312/js
   - Player for local videos with light/dark theme, keyboard shortcuts, progress retrieval and more
   - Works offline
+
+- https://github.com/binbat/live777 /MPLv2/202401/rust/js
+  - A very simple, high performance, edge WebRTC SFU
+  - Live777 is an SFU server for real-time video streaming for the WHIP/WHEP as first protocol.
+  - Live777 media server is used with Gstreamer, FFmpeg, OBS Studio, VLC, WebRTC and other clients to provide the ability to receive and distribute streams, and is a typical publishing (pushing) and subscription (playing) server model.
+  - Live777 supports the conversion of audio and video protocols widely used in the Internet, such as RTP to WHIP or WHEP and other protocols.
 # more
 - https://github.com/zspecza/common-tags
   - Useful template literal tags for dealing with strings in ES2015+

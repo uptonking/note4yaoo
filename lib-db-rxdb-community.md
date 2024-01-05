@@ -15,9 +15,46 @@ modified: 2023-10-08T10:54:57.575Z
 - ## 
 
 - ## 
-# discuss
+# discuss-sync/collab
 - ## 
 
+- ## 
+
+- ## hello everyone, is premium memory can sync with couchdb ?_202303
+- https://discord.com/channels/969553741705539624/1059149217718861935/1089138975538675722
+- Since v13, all storages are able to replicate with a CouchDB endpoint. They only use the RxDB replication protocol, not the couchdb protocol. But it is compatible with a CouchDB endpoint.
+  - The memory storage is NOT premium, you can use it for free.
+
+- ## Hello, does RxDB provide crdt out of the box, or should I use the RxDDcrdtPlugin. _202303
+- https://discord.com/channels/969553741705539624/994606235141800047/1090892342191468654
+  - Additionally, I tested it with the vue example, using couchdb for replication, and I did some conflict changes, but the problem is solved and there is no crdt code inside.
+- CRDT are not in the core package, you need to use the crdt plugin for that.
+  - RxDB has a conflict resolution by itself, you do not need crdts for that, but you might benefit from using crdts. 
+
+- ## Did you also consider of pushing assumed master hash to the server instead of the full document? _202308
+- https://discord.com/channels/969553741705539624/1050381589399470160/1143498532217688085
+  - That would save the amount of data transferred to the server.
+  - It could be something like stable stringified md5 hash which server would compare with it's own state
+
+- Yes, I know. That is why couchdb has the hash of the data inside of the revision and pouchdb only does a revision check
+  - I had ideas to let the user strip whatever is not required from the assumed master state
+  - and then only store stuff like the revision or a hash
+  - but most users would never use this
+  - and for those who it is important to save the bandwidth, can strip the additional data in the pull/push handlers
+
+- ## I've realised that all documents in the replication collection has the same revision value, is that intentional?
+- https://discord.com/channels/969553741705539624/1050381589399470160/1143816861427978320
+  - And also, for the assumed masters
+
+- there is no problem in this. Also normal documents can have same revision strings for different document ids
+  - RxDB does not use a hash as revision (like couchdb does) for performance reasons
+
+- ## what is the easiest way to sync RxDB to cloud or local server?_202312
+- https://discord.com/channels/969553741705539624/994606235141800047/1185755090557091961
+- I think using a couchdb server is the easiest to setup
+  - or the websocket remote storage with rxdb on the server and on the client
+
+# discuss
 - ## 
 
 - ## 

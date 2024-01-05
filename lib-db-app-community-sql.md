@@ -62,8 +62,28 @@ modified: 2023-09-17T17:35:27.024Z
 - **My biggest gripe with SQL is the lack of composability**. When writing complex code, I can easily pull out functions. When complex writing SQL, I end up with a giant unmaintainable blob. I hope whatever solution you find addresses this!
 - @perplexity_ai ‘s birdsql. Query in natural language (English), GPT figures out the sql. Hot take: natural language is the best query language.
 
-# discuss-sql-cons
+# discuss-sql-against
 - ## 
+
+- ## 
+
+- ## 
+
+- ## Some people dislike SQL. But I think there are two completely separate reasons. 
+- https://twitter.com/eatonphil/status/1742933165130559602
+  - (Ignore a third which is just that "declarative languages are weird".)
+  1. It's not static/safe enough for app code.
+  2. But it's also not even dynamic (or succinct) enough for interactive querying.
+  - Most people I see commenting about SQL are focused on the first point.
+  - That said, for interactive queries, being too dynamic can be a problem too. SQLite's syntax is TOO flexible for my liking. Too often it lets me write a nonsense query and returns confusing results.
+
+- Not sure if I understood the second point. I think for me the point that makes me like a lot MongoDB is that Atlas Compass has that interactive Aggregation tab that show  the data that you will receive from the aggregation while you are editing the query. Wish had that for SQL
+
+- I like SQL for one-shot analysis queries but really don't like embedding SQL in whichever language I'm using for app building. 
+
+- As a full language SQL lacks composability.
+  - As a syntax, it's hard to generate. What would a JSON or S Expression querying language look like? no more ORMs
+  - Still, I think in SQL. I can't conceive of using RDBMS without it. Someone can, not me.
 
 - ## [A Short Story About SQL’s Biggest Rival | Hacker News_202010](https://news.ycombinator.com/item?id=24730713)
 - 

@@ -14,6 +14,12 @@ modified: 2023-09-07T15:58:27.967Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 🎯 Is the Holepunch team still planning to open source Keet at some point? _202310
+- https://discord.com/channels/985129863348371516/985894366910509127/1159496428301865042
+- Yes, it's planned for the next year
+
 - ## [Hypercore Protocol: Peer-to-peer data sharing | Hacker News_202205](https://news.ycombinator.com/item?id=31384268)
 - The issue I have with hypercore is that it's neither fully mutable, nor multiwriter.
   - As far as I know, you can't fully have both(Because of the tombstone problem and source of truth issues), but either one individually can be implemented.

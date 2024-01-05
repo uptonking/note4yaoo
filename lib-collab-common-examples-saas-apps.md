@@ -133,6 +133,14 @@ modified: 2023-01-17T19:14:47.611Z
   - 基于slate-core实现了virtualized-render
   - It is also possible to run CoCalc on your own infrastructure.
   - You can easily use CoCalc on your own computer for free by running a Docker image.
+
+- https://github.com/colyseus/colyseus /MIT/202401/ts
+  - https://colyseus.io/
+  - Multiplayer Framework for Node.js
+  - Colyseus is an Authoritative Multiplayer Framework for Node.js, with clients available for the Web, Unity3d, Defold, Haxe, and Cocos
+  - The project focuses on providing synchronizable data structures for realtime and turn-based games, matchmaking, and ease of usage both on the server-side and client-side.
+  - WebSocket-based communication
+  - Automatic state synchronization from server-to-client (delta compressed)
 # collab-apps
 - https://github.com/configu/configu
   - A generic standard for managing and collaborating software configurations 

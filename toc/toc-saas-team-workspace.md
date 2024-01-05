@@ -52,10 +52,18 @@ modified: 2023-02-07T17:38:05.336Z
   - Task comments and activity
   - One of the primary goals of Taskcafe is to provide a project management tool that I personally enjoy using
 
-- https://github.com/ferdium/ferdium-app
+- https://github.com/ferdium/ferdium-app /2.2kStar/apache2/202401/ts
   - https://ferdium.org/
+  - All your services in one place, built by the community
+  - Hard-fork of Franz, adding awesome features and removing unwanted ones.
+  - 依赖electron-window-state、immutable-js.v4、mobx-react、sqlite3、@adonisjs/ace/auth/lucid
   - a desktop app that helps you organize how you use your favourite apps by combining them into one application. 
-  - It is based on Franz - a software already used by thousands of people - with the difference that Ferdium gives you many additional features and doesn't restrict its usage! 
+  - It is based on Franz - a software already used by thousands of people - with the difference that Ferdium gives you many additional features and doesn't restrict its usage
+  - Ferdium is compatible with your existing Franz account, so you can continue right where you left off
+
+- https://github.com/meetfranz/franz /4.4kStar/apachew/202308/js
+  - https://meetfranz.com/
+  - free messaging app for services like WhatsApp, Slack, Messenger and many more
 # microsoft-teams/org
 - https://github.com/xiweicheng/tms /MIT/202309/js/java
   - TMS是基于频道模式的团队沟通协作+轻量级任务看板，支持mardown、富文本、在线表格和思维导图的团队博文wiki，i18n国际化翻译管理的响应式web开源团队协作系统。
@@ -445,29 +453,28 @@ modified: 2023-02-07T17:38:05.336Z
   - use your browser like a pro. Manage tabs, bookmarks, your browser history, perform all sorts of actions and more with a simple command interface
   - Get it now for Chrome and for Firefox
 
-- https://github.com/ferdium/ferdium-app /apache2/ts
-  - https://ferdium.org/
-  - All your services in one place, built by the community
-  - Hard-fork of Franz, adding awesome features and removing unwanted ones.
-  - 依赖electron-window-state、immutable-js.v4、mobx-react、sqlite3、@adonisjs/ace/auth/lucid
-
-- https://github.com/meetfranz/franz /js
-  - https://meetfranz.com/
-  - free messaging app for Slack, Telegram and more
-
-- https://github.com/getstation/desktop-app /ts
+- https://github.com/getstation/desktop-app /1.2kStar/apache2/202312/ts
   - https://getstation.com/
   - One app to rule them all
   - open-source smart browser for busy people. 
   - 依赖graphql、apollo-client/link、immutable-js.v3、electron-chrome-extension、redux、rxjs
 
-- https://github.com/wavebox/waveboxapp /js
+- https://github.com/wavebox/waveboxapp /1.3kStar/MPLv2/js/open2close
   - https://wavebox.io/
   - Browser for Work
   - Wavebox gives you customizable toolbars, sleeping tabs, cookie containers and multiple profile
   - Wavebox 10, a complete **fork of Chromium** launched in 2019, but if you're looking for the Electron based Wavebox Classic, there's an archive of the code here
+  - [Introducing Wavebox 10_201911](https://github.com/wavebox/waveboxapp/issues/1133)
+  - [Wavebox 10 source](https://github.com/wavebox/waveboxapp/issues/1132)
+    - we've decided not to open source the new version of Wavebox
+    - I have switched to singlebox.app, which is IMO the best open source alternative out there.
 
-- https://github.com/sonnyp/Tangram
+- https://github.com/webcatalog/webcatalog-legacy /MPLv2/202203/js/archived
+  - WebCatalog - Turn Websites into Desktop Apps.
+  - WebCatalog app's development has been moved to a closed source code base.
+  - Legacy code of the core that powers WebCatalog, Singlebox, Clovery and Skywhale.
+
+- https://github.com/sonnyp/Tangram /GPLv2/202304/js
   - https://apps.gnome.org/app/re.sonny.Tangram/
   - Browser for your pinned tabs
   - Tangram is a new kind of browser. It is designed to organize and run your Web applications. Each tab is persistent and independent.

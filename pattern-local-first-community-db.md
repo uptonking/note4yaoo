@@ -21,7 +21,11 @@ modified: 2023-12-01T09:08:18.316Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## Almost everything needed to build a real-time, multiplayer, #LocalFirst, offline enabled database is actually just "incremental view maintenance"...
+- https://twitter.com/samwillis/status/1743193008164458588
+  - Partial sync to users device ✔️
+  - User permission changes ✔️
+  - Reactive UI queries ✔️
 
 - ## [What makes synceddb a good offline-first database?_201801](https://github.com/paldepind/synceddb/issues/47)
 - One of the distinguishing features of SyncedDB is that it attempts to be a very lightweight wrapper around IndexedDB. 

@@ -133,6 +133,22 @@ modified: 2021-01-06T14:40:03.364Z
 
 - ## 
 
+- ## in today "reactivity" experiment it just occurred to me the effect -> dispose pattern is almost guaranteed to memory-leak.
+- https://twitter.com/WebReflection/status/1742999383782658471
+  - `const dispose = effect(() => stuff(element))` ; 
+  - if you hold that `dispose` the `element` reference cannot ever be collected.
+  - `WeakRef` here comes handy
+- how to do that?
+  - const wr = new WeakRef(element); 
+  - const dispose = effect(() => stuff(wr.deref())); 
+  - now you can relate that element as WeakMap key and attach that dispose to it, or use a FinalizationRegistry to auto-dispose on elements / DOM trash
+- all effect libraries work on DOM parent elements and, if atomic to those elements, one must be careful by not trapping the element itself in the effect or the effect makes the element never collected.
+  - basic use case? conditional render(This || That, node)
+
+- I'm not sure I'm seeing a scenario where this can happen, just holding a reference to the "dispose" function itself seems pretty rare to me, I'd imagine almost always one would rely on auto-disposal. Some reactivity libraries don't even return a dispose function for effects.
+
+- JS has finally become C
+
 - ## 🆚️ I wished React would expose a primitive function for state branching. 
 - https://twitter.com/dai_shi/status/1732533198855537083
   - At this point, there's a trade-off between uSES and useState/useEffect. 

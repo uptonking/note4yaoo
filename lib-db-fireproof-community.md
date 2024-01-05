@@ -56,7 +56,7 @@ modified: 2023-12-24T10:49:01.941Z
   - Your idea of using SQLite as a specialized index is a great one for folks who are happy to take on that dependency. 
   - My goal with Fireproof will be to hone(使更锋利) the implementation to a simple as possible, so the incremental indexes won't be going away, but for something with a query planner you will likely want an add-on
 
-- Oh, didn't know that the indexes have a persistIndex option. That's already a good start to have fast data lookups in an app. I thought the current implementation was rebuilding the index on every app load.  Is there also a method to delete a stored index afterwards? Then I could create them on demand (e.g. when a user resorts a grid), track when they are last used and do an auto-cleanup for indexes not used for some time.
+- Oh, didn't know that the indexes have a persistIndex option. That's already a good start to have fast data lookups in an app. I thought the current implementation was rebuilding the index on every app load. Is there also a method to delete a stored index afterwards? Then I could create them on demand (e.g. when a user resorts a grid), track when they are last used and do an auto-cleanup for indexes not used for some time.
   - Regarding deletion handling, Notes/Domino keeps so called deletion stubs in the database for some time (e.g. 3 months) so that replicating clients know that something got deleted and needs to be deleted on client side as well. A deletion stub just contains the document id and a date. After that period, deletion stubs get purged and docs coming in from clients would actually reappear on the server side during replication, but IBM (or HCL who bought the product years ago) added a DB option to prevent replicating too old data.
   - Would be great if there was a compact option for Fireproof so that deleting content eventually removes it from the database or at least just keeps a tombstone without more data in the DB (for privacy reason and to reduce the DB size). But I know nothing (yet) about the CRDT you are using.  So not sure this is possible.
 
@@ -66,6 +66,25 @@ modified: 2023-12-24T10:49:01.941Z
   - 🏘️ I think of Fireproof databases as a "unit of collaboration" so maybe you'd have one database for each collaborative doc, whiteboard, chat room, chess game, etc. And then another per-user database to track the collaborative groups of interest for that user. That's how the more complex apps I've built with it are arranged.
   - As far as filtered replication, you could have a cloud function subscribe to server database A and write a subset of records to server database B. The leaf nodes holding the document bodies get their own CIDs, so "all it would take" is implementing a unified storage mode, and you'd get deduplication across server database records despite different filters. In this case, server database B would contain pointers to a subset of records from server database A, and the user would replicate server database B. (The default encryption mode breaks the deduplication, but running it in clear mode is a step in that direction for now.)
   - My stress testing has been in the multi-writer scenario, to ensure blocks are never communicated that aren't yet available. The slow path is finding lowest common ancestor in the CRDT, so workloads that involve multi-writer concurrency are most challenging. For single writer workloads, or workloads that are paused when the merge backlog grows, the big-O is comparable to other databases.
+- pouchdb style filtered replication would totally work as described above. You would need to prepare a replica to sync from, instead of filtering on the sync stream. this is because replication points to database snapshot CIDs, so you need to compute the snapshot before you can sync it
+  - as far as sparse downloading, the _files feature automatically uploads files, but only downloads them on demand
+  - for a gaming application, I would have multiple databases, each for its own sync channel. eg a database that is the list of available levels or worlds. Then for each world, a database that syncs on demand with the world assets. 
+
+- Ok, but that means that for each user/data selection we need to prepare the same data on server side, duplicating the data. How do we handle incoming edits this way? Collect edits on server side from those small databases into the main one?
+  - for each collaborative context, you'd have a database that's shared with those users. So in the game model above, if you had 5 players in a world together, that's one database
+  - there are some intriguing possibilities that come from running a global indexer across all databases in the cloud, but those require disabling end-to-end encryption
+  - or at least sharing the key with the indexer
+
+- Our use case is a CRM database with 250.000 documents (Domino database). Years of emails from different customers, project plans, activities, appointments etc., some with file attachments. Not each user needs to have everything available locally of course.
+  - that makes sense, if the data starts out in a big shared repository then you'd want to think about it like that
+  - you might have to shard it by customer and then maybe also year, depending on what is a good way to precompute a syncable set. are your selection formulas materializable as a finite set of tags or are they completely dynamic?
+- They are dynamic, e.g. created after 2023-01-01 or modified since 2023-01-06 
+- the fireproof core database goal is to be leaner and cleaner over time, so subset sync probably turns into a cloud add-on. in your case are the selection formulas also implementing security policy, or just optimizing based on interest?
+  - Only on interest. Every user could change them on their own, working like filtered replication in CouchDB. 
+  - So the solution for CouchDB and probably for Fireproof is one database per user or role on the server side with preselected data.
+- in Couchbase Mobile we did a cloud filter index thing called channels. this also has a degree of access control, not just interest filtering. I'm not sure I want to go this far for Fireproof, but its an interesting model
+  - that channels thing could implement what you describe, by using a sync function that understands your access control schema
+  - if we did a channels filter thing, technically it would look like a wrapper around the fireproof you see today. so the end user would see the filtered remote as a normal database, and the predicates would be applied in the cloud for hydrating it. In the long run those cloud copies can be more like indexes instead of replicas, which will cut down on the storage duplication
 
 - ## 🚀 fireproof.storage Light up your data!_202303
 - https://twitter.com/jchris/status/1633113469179314179

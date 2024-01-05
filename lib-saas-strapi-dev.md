@@ -32,7 +32,7 @@ modified: 2023-12-15T16:51:56.101Z
   - GraphQL or REST: Consume the API using REST or GraphQL
 
 - features-enterprise
-  - 
+  - The only restrictions on the free version is that audit-logs and Review Workflows are not available
 
 - who is using #strapi
   - luban-h5
@@ -43,6 +43,7 @@ modified: 2023-12-15T16:51:56.101Z
 
 - resources
   - [Strapi Community Forum](https://forum.strapi.io/)
+  - [Directus vs. Strapi – Comparison Headless CMS — Restack](https://www.restack.io/docs/directus-vs-strapi)
 # dev
 
 # codebase

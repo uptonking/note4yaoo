@@ -14,6 +14,10 @@ modified: 2023-10-26T18:14:17.038Z
 
 ## [Designing a Distributed SQL Engine: Challenges & Decisions | OceanBase_202304](https://en.oceanbase.com/blog/2596985600)
 
+## [TiKV - Building a Large-scale Distributed Storage System Based on Raft_202005](https://tikv.org/blog/building-distributed-storage-system-on-raft/)
+
+- A great overview of different sharding strategies, their trade offs and the design choices for TiKV.
+
 ## [当 TiDB 遇上 Jepsen | PingCAP](https://cn.pingcap.com/blog/tidb-jepsen/)
 
 - Jepsen 是由 Kyle Kingsbury 采用函数式编程语言 Clojure 编写的验证分布式系统一致性的测试框架，作者使用它对许多著名的分布式系统（etcd, cockroachdb...）进行了“攻击”（一致性验证）

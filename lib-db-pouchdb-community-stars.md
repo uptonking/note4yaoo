@@ -12,7 +12,16 @@ modified: 2023-12-06T15:59:01.332Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 🔁 Another question: how would you implement "undo" using RxDB? 
+- https://discord.com/channels/969553741705539624/1148193932744867890
+  - E.g. a user performs an action which triggers query/queries. Then they click an "undo" button, which should revert the changes from those queries
+- I do not think this is rxdb specific. The thing is that between the original action and the undo, another user might have updated the documents.
+  - ou could somehow remember all changes and their post-write _revision value. Then on undo you can check all documents and then undo them if the revision is still the same (=not changed by another user)
+  - Just for info, Cross-document transactions are not possible in rxdb, that is intentional.
+
+- 🧐 Changes themself are not stored in rxdb. This was the case with pouchdb/couchdb but it is too much of a performance burden for a client side database. Only the latest state of a document is stored.
+  - You can access the revision value from the metadata of a RxDocument like doc.toJSON(true)._rev
+  - Did you have a look at the CRDT plugin? This stores all operations of a document in a crdt-list. You could modify that to flag each crdt-operation and "revert" it by removing the operation from each document. 
 
 - ## I want pouchdb to replicate ‘as-needed’, AKA to use pouchdb as a ‘read-through cache’. _20231024
 - https://couchdb.slack.com/archives/C016TJAE7A4/p1698079241868579?thread_ts=1698040668.376679&cid=C016TJAE7A4

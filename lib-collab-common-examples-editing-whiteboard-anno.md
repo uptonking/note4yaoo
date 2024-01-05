@@ -77,7 +77,7 @@ modified: 2022-11-07T17:36:22.236Z
   - https://grida.co/
   - Skia based performant live design collaboration & workspace app - redesigned for both designers and developers
 
-- https://github.com/cloud-annotations/cloud-annotations
+- https://github.com/cloud-annotations/cloud-annotations /202106/ts/jupyter/inactive
   - collaborative open source image annotation tool for teams and individuals.
 
 - https://github.com/UniversalDataTool/universal-data-tool

@@ -14,7 +14,11 @@ modified: 2023-10-26T17:12:59.665Z
 
 - ## 
 
-- ## 
+- ## 我感觉 Supabase 是一个从 niche market 进入市场，然后不断拓展的很好例子。
+- https://twitter.com/mingwb/status/1743084511708246285
+  - 最开始主打的是通过 RLS 让客户端直连数据库，以及 Realtime 和 Auth；然后开始做主流的后端开发生态，集成 Deno，做数据库连接池，做 database branching。传统数据库服务商想反向提供 Supabase 的能力就没那么容易了。
+  - 数据库服务商很难做是因为基因不同吧。Supabase 依靠个人开发者起家的，整个公司的决策和运转都依赖这个。目前看到的新兴的数据库服务商（特别是分布式数据库...）依靠的是有钱的大企业，和中小企业和个人开发者完全不一样。
+
 # discuss
 - ## 
 
@@ -72,7 +76,6 @@ modified: 2023-10-26T17:12:59.665Z
 - 
 - 
 - 
-
 
 - ## 🔥 [BayesDB - a Bayesian database table | Hacker News_201312](https://news.ycombinator.com/item?id=6864339)
 - 

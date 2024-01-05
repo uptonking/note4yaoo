@@ -18,6 +18,43 @@ modified: 2023-10-26T15:01:36.462Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Show HN: CursusDB – A new scalable distributed document oriented database in go | Hacker News_202401](https://news.ycombinator.com/item?id=38869393)
+- For new products I always recommend the same thing: name your competitors and use cases. Compare them in a table; don't make the user think. Who should and should not use your product? Being in-memory and distributed, I imagine your competitors include Ignite and Hazelcast?
+- Also write a blog post titled "YourProduct vs alt1 vs alt2 vs alt3 etc" 'cause "alt1 vs alt2 vs alt3" is what I'm searching
+- You have competitors whether you like it or not -- unless you don't care for users, either. A sibling commenter asked "Why not just use Couchbase?" If your answer is "figure it out yourself; I already wrote documentation" you are shooting yourself in the foot. Documentation is not marketing. Marketing means helping potential users understand why they should use your product rather than something similar.
+- Hazelcast seems like Redis. CursusDB is more like MongoDB I'd say in comparison.
+
+- Interesting product. I'm reading through the source and... Woah... it is all in one single file with zero unit tests.
+  - this seems like a very odd choice for organizing a database codebase. Some of the methods like cluster. HandleClientConnection() are crazy long for loop + if/else + switch + goto
+  - I know that you've said this is just kind of in your best interests codebase, but if I was planning on making any sort of dependencies on this project, I'd probably shy away from it because it seems like unmanageable spaghetti.
+- It's not even 3, 000 lines. That's not a lot of spaghetti.
+  - The lack of tests though...
+
+- Just want to add this bit so I've recently finished node's transaction persistence. Mind you I've actually tested power outages at my own house. Don't wanna get into too much details about that lol!!
+
+- CouchDB is distributed by nature as well. So why use this over CouchDB.
+  - CouchDB's design to me personally is not that great. 
+    - I don't like the replicated design or the query language. 
+    - To boot(再者, 此外) I don't like complexities. I try to avoid them when designing something complex. CursusDB core code is under 6k lines because of that reason. 
+    - I also wanted to create something I want to use. Simple. Setting up a secure, reliable and powerful database shouldn't be complex and I made certain of that when designing CursusDB. 
+    - CursusDB's query language as well is very simplified yet powerful because of my complexities ideology.
+
+- why wouldn't I just use Couchbase? It is proven and has a community around it.
+  - I don't like MongoDB or Couchbase. I dislike their query languages and designs in general. I built the DB for my own liking and use cases. 
+  - If others like it that's great, if not it doesn't hurt me. 
+  - I made it open source to follow the process and I'm not looking for any profit or gain for doing any of it. I'd like honest opinions obviously but that's all. Eventually if people really like the DB and it requires ALL my time then I'll try to expand on the cloud offering because I am mighty passionate about the project and want to see it being used as much as possible and easily as possible!
+
+- Seems like you could do the same with rqlite, since SQLite supports JSON.
+  - I just didn't want to go the route of SQLite + a layer. SQLite as well is not encrypted by default. 
+- rqlite: Their github mentions encryption but it's only node to node using TLS not much else. https://rqlite.io/docs/guides/security/
+  - With rqlite all traffic between the nodes can be encrypted, as can be the HTTP API. Yes, the data at rest is not, but there are many ways to protect that. One way would be to use an encrypted file system, perhaps.
+  - Encrypted data-at-rest is a valid request, but what use cases would it address?
+- I never liked the idea of having any database storing my data in a way which can be seen in plain sight regardless of permissions and so forth. Servers get broken into very often and protecting the data within the files is important to me.
+
 - ## 🔥 [Writing a document database from scratch in Go: Lucene-like filters and indexes | Hacker News_202203](https://news.ycombinator.com/item?id=30835444)
 - 
 - 
@@ -43,43 +80,3 @@ modified: 2023-10-26T15:01:36.462Z
 - 
 - 
 - 
-
-# discuss-jsonb
-- ## 
-
-- ## 
-
-- ## 
-
-- ## [Jsonb: Stories about performance | Hacker News_201712](https://news.ycombinator.com/item?id=15993768)
-- 
-- 
-- 
-
-- ## 💡 [Using PostgreSQL’s JSONB for NoSQL (2019) [video] | Hacker News_202109](https://news.ycombinator.com/item?id=28406334)
-- I find this approach incredibly useful if any parts of your data don't have a uniform schema.
-  - The one thing you need to look out for is developers putting stuff into JSON that belongs into proper columns. The Postgres JSON support is very powerful, but plain old relational queries are faster and often much easier to write.
-  - Also for leftovers when scraping website data. Trendy SPAs usually have JSON endpoints, so I usually use some ID column, maybe timestamp column (to ease incremental syncing later on), some primary content columns, and the whole scraped JSON object is put into a data JSONB column in case some of it is needed in the future. :) Works amazingly.
-
-- I have created an app with such a hybrid approach as the part if the model was very dynamic. The idea was that I would slowly migrate the stable bits to proper columns, but in practice that never happened. Partly also because it is not really broken, and the performance is actually quite good. You can add partial indexes etc to improve where needed.
-  - But writing analytycal queries is definitely more complicated so the cost of not having a "normal" data model adds up over time. To allow business analysts to work with the data I endend up creating a a bunch of views om the data without JSONB fields as a quick fix. So though the approach worked, I am not sure I would do it again.
-
-- I'm using the JSON mostly for parts that really have no fixed schema, e.g. fields that vary by customer. The alternative would be something like EAV, and JSON columns are far superior here.
-  - Performance is perfectly reasonable with JSON, but there are many more ways to make it slow if you're not careful. Postgres has to read the entire JSON content even if you only access a small part of it, that alone can kill performance if your JSON blobs are large. The lack of true statistics can also be an issue with JSON columns. They're still easily fast enough for many purposes, they just have a few more caveats than plain columns you should be aware of.
-- There's some other aspects that are not that intuitive, but also not a big deal once you know them. For example you can use a jsonb_path_ops GIN index to speed up queries for arbitrary keys and values inside your JSONB column
-- What you did, in fact, was creating read models specific to use case. This is completely normal and allows one to optimize for different users: app's schema can be different than the one for analytics.
-
-- I noticed a lot of people noting that they enjoy use some hybrid of JSON w/ their SQL. I do the same thing and I think this is an incredibly productive way to manage fast-changing things.
-  - One trick I learned along the way is to **apply gzip to your JSON columns**. For us, we got over 70% reduction in column size and query performance actually increased. I presume because it is faster to read fewer IO blocks than more, esp when doing table scans (which you shouldnt but they happen).
-  - The only caveat with this is if you want to query against something in the JSON, but I think this is where the balancing act comes into play regarding what is in (compressed) JSON and what is in a column.
-- In Postgres you would generally use JSONB columns, those are stored as TOASTs and are automatically compressed. That compression isn't very good, but there is some work on adding other compression algorithms there.
-  - PostgreSQL 14 will add lz4 compression for toast data. But if i remember correctly the first ~700 bytes are always stored inline and only the rest is compressed. But i could be wrong on this.
-
-- The performance of JSONB is also surprisingly great. I played around with around 1M rows of data for a project using JSONB, and compared to traditional SQL, the complex queries were 500-800ms slower, which was totally reasonable for the use case.
-
-- Been doing this for years now and it has proven itself to he a great solution. We use a hybrid approach: traditional columns in addition plus an entity/content type JSONB column.
-- JSON blob + columns is the recommended approach for handling semi-structured data in ClickHouse. It's easy to add columns on the fly, since you just give the expression to haul out the data using a DEFAULT clause. ClickHouse applies it automatically on older blocks without rewriting them. For new blocks it materializes the data as rows are inserted.
-
-- Had a great win this last week with JSONB. Basically I needed an aggregated materialized view for performance but still have access to the non-aggregated row data. Think aggregate by account ID but the query may access any given month of data for that account. It’s cheating a bit to use a non-relational structure, but the correlated subqueries I had to use before were 20x slower.
-
-- PostgreSQL 14 is currently in beta and adds JSON subscripting

@@ -34,6 +34,7 @@ modified: 2022-04-05T10:08:25.947Z
   - 将git自动生成的.git文件夹改为自定义database，将snapshot改为crdt-changes，似乎可以实现支持时间旅行和协作合并的新工具
 
 - tips
+  - 协作类产品的重点仍然是符合业务需求的内容和数据，在现有系统中支持协作
   - 不必执着于hlc的使用案例，可对成熟案例在业务逻辑不变的情况下将其他clock替换成hlc
 
 - resources
@@ -299,6 +300,15 @@ modified: 2022-04-05T10:08:25.947Z
   - [automerge backend](https://github.com/partykit/partykit/issues/97)
   - PartyKit is extremely unopinionated. It's essentially lightweight javascript server, that launches fast and autoscales 
   - Most people seem to run yjs in PartyKit, but you can also run automerge or even Replicache
+
+- https://github.com/drifting-in-space/driftdb /MIT/rust/ts
+  - https://driftdb.com/
+  - A real-time data backend for browser-based applications.
+  - core Rust driftdb implementation.
+  - [Show HN: DriftDB – an open source WebSocket backend for real-time apps | Hacker News_202302](https://news.ycombinator.com/item?id=34639728)
+    - how are conflicts handled?
+    - As far as the server itself is concerned, it’s just a broadcast channel with replay and compaction capabilities, so it’s not directly concerned with conflict resolution. You could use it as a broadcast channel for CRDTs if you wanted to.
+    - The useSharedState react hook is more opinionated, it uses last-write-wins semantics in the case of a conflict. The useSharedReducer hook’s behavior on conflict is up to the reducer provided.
 
 - https://github.com/supabase/pg_crdt /rust
   - pg_crdt is an experimental extension adding support for conflict-free replicated data types (CRDTs) in Postgres.
@@ -765,7 +775,7 @@ modified: 2022-04-05T10:08:25.947Z
   - https://github.com/coast-team/dotted-logootsplit /MPL/ts
     - a delta-based version of LogootSplit with smaller metadata. We provide both op-based and delta-based synchronizations.
 
-- https://github.com/ritzyed/ritzy /201509/js/inactive
+- https://github.com/ritzyed/ritzy /899Star/apache2/201509/js/inactive
   - https://github.com/ritzyed/ritzy-demo
   - Ritzy editor is a rich text, real-time character-by-character collaborative embeddable browser-based editor.
   - 依赖react、swarm.v0.3
@@ -773,6 +783,18 @@ modified: 2022-04-05T10:08:25.947Z
   - It shuns(避免) use of the `contentEditable` attribute in favor of a custom editor surface and layout engine, exactly like the approach implemented by Google Docs.
   - Ritzy is built with real-time collaborative editing support from the ground up, underlying mechanism for this is a **causal tree CRDT**.
   - Unlike Google Docs, Ritzy does not (currently) support complex page-based layout needed to build a word processor.
+  - [Ritzy – A collaborative web-based rich text editor | Hacker News_201508](https://news.ycombinator.com/item?id=10104821)
+  - [Ritzy Design](https://github.com/ritzyed/ritzy/blob/master/docs/DESIGN.adoc)
+    - Ritzy uses operation-based CRDT, specifically a causal tree, to implement the concurrency control required for real-time character-by-character collaborative editing
+    - Just like OT, CRDTs allow changes to happen in different orders on each instance, but the final editor state to converge.
+    - with causal trees, every character has a unique id made up of a Lamport timestamp and some other information.
+    - Currently, the supported operations are insert, remove, and setAttributes
+    - The heavy lifting of the operation-based CRDT is done by Swarm.js
+    - Ritzy implements a custom surface and layout engine like Google Docs
+    - The document model is only ever modified through explicit application action 
+    - The downside is that having a custom editor surface unmanaged by the browser requires significant complexity to do things the browser would normally provide for free, such as: cursor motion, positioning, a11y, touch/mobile
+    - Ritzy uses the Facebook flux pattern — all state changes are made by the EditorStore
+    - Ritzy prefers using Opentype.js to obtain the required text metrics from the underlying font
 
 - https://github.com/conclave-team/conclave /202106/js/lseq/inactive
   - https://conclave-team.github.io/conclave-site/

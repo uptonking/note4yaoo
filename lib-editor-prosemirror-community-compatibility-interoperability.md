@@ -12,6 +12,19 @@ modified: 2022-11-14T20:12:58.259Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## If there is a common and sane standard of Blocks inside Markdown - many systems will be interoperable. _202310
+- https://discord.com/channels/1050770647564943402/1051327545288704130/1161333191135735921
+  - GitHub is big, way bigger than Obsidian. So the way they do it - will likely set the standard.
+  - I can't see what GitHub is going to do.
+  - The way examples presented at https://blockprotocol.org/hub makes me think the readability was not among the goals. It is simply too verbose.
+  - If GitHub just slaps JSON with full property names there - everyone including Obsidian would have to follow. This will work in some ways, but will be sub-optimal in others. 
+
+- RIP GitHub Blocks experiment. I really hope they'll give the Block Protocol another chance as it becomes more mature!
+
 - ## Hooking into other content-editables
 - https://discuss.prosemirror.net/t/hooking-into-other-content-editables/4893
   - I am looking for creating a browser extension that checks for grammar in real-time (similar to Grammarly extension). That requires to draw rectangles on a virtual layer and keeping them up-to-date, which is basically handled in vanilla JS. 

@@ -9,7 +9,6 @@ modified: 2024-01-04T06:55:12.542Z
 
 # guide
 
-
 # discuss-couch-internals
 - ## 
 
@@ -87,6 +86,16 @@ modified: 2024-01-04T06:55:12.542Z
 
 - One thing that's not explicitly mentioned: append-only trees necessarily lack parent pointers.
   - This means that your "iterator" can't be a lightweight type, it has to contain an array of parent nodes to visit (again) later.
+# discuss-couchbase
+- ## 
+
+- ## 
+
+- ## Can someone tell me if Views (the old CouchDB style) are still supported in Sync Gateway 3.0 and/or 3.1? _202309
+- https://discord.com/channels/915294689681362954/1022095605184602152/1151262213722611933
+  - I know they were "deprecated" in 2.8, but have they been removed completely now? 
+
+- 👉🏻 They are deprecated but not yet removed.
 # discuss-couchdb-mvcc
 - ## 
 

@@ -76,6 +76,7 @@ git checkout c5f567 -- file1/to/restore file2/to/restore
 
 ```shell
 # commit后又修改了，但不想添加记录
+# if the restart button in jenkin doesn't work, just the git commit --amend --no-edit trick and force push it again
 git add .
 git commit --amend --no-edit
 # 修改最新commit描述信息

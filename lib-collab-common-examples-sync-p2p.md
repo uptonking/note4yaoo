@@ -31,7 +31,7 @@ modified: 2023-01-17T19:13:01.845Z
     - Using better-sqlite3 for synchronous writes also meant that writes block reads for the whole server, which is convenient from an abstract standpoint but also bad from a scaling and adaptability standpoint.
     - Another thing that would block multi-node scaling is server order (unless I did something like LiteStream and only allowed one writer node, but that kind of feels too rigid when I've already got CRDTs in use...).
 
-- https://github.com/drifting-in-space/driftdb /ts/rust
+- https://github.com/drifting-in-space/driftdb /MIT/rust/ts
   - https://driftdb.com/
   - A real-time data backend for browser-based applications.
   - core Rust driftdb implementation.

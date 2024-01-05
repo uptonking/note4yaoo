@@ -24,15 +24,28 @@ modified: 2021-01-21T17:52:13.333Z
 # discuss
 - ## 
 
-- ## 
+- ## 研发资源是真的特别特别昂贵的。 工作里我这十年干的最多的事儿，就是反对技术团队自己造轮子。 传统行业 99% 的场景不配自己造
+- https://twitter.com/iamshaynez/status/1743177430377042090
+- 有时候单纯把轮子组装起来也很贵
+  - 还很异构; 最惨是有现成的，一天上线，然后搞明白比重写时间还长
+
+- 哈哈哈自研过轮子的也觉得这事情绝大多数公司不配也不需要…
+
+- 我支持造轮子，但是只限于自己用，把自己造的轮子藏在看不见的地方。我反对造轮子给别人用，尤其是框架轮子。你何德何能，写个框架让别人往里面塞代码。
+
+- 这里可能有个悖论, 自己造轮子 研发成本高, 不自己造轮子 显不出技术“高明”, 结果是 996 劣质轮子 遍地都是…
+
+01. 大概率没有开源的好
+02. 造轮子就要维护一个轮子迭代维保团队
+03. 迭代维保团队和其他团队无限的撕逼
 
 - ## Five terms I avoid when naming things:
 - https://twitter.com/housecor/status/1742197661837476018
-  01. data
-  02. info
-  03. item
-  04. object
-  05. entity
+  01.   data
+  02.   info
+  03.   item
+  04.   object
+  05.   entity
 - I settled to referencing DOM elements with a $ prefix, after tying various things for years, El suffix being one. I think it’s easier to read, it’s faster to type, and better for having good IDE suggestions quickly (one keystroke and it already suggests DOM elements only).
   - Seems like a $ would make it too easy to confuse with jQuery objects and other libraries that prepend with that character.
 

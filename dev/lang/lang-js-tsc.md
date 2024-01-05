@@ -17,6 +17,9 @@ tsc --listFiles
 
 ```
 
+- Triple-slash references instruct the compiler to include additional files in the compilation process.
+  - Similar to a `/// <reference path="..." />` directive, which serves as a declaration of dependency, a `/// <reference types="..." />` directive declares a dependency on a package.
+  - `/// <reference lib="..." />` allows a file to explicitly include an existing built-in lib file, like `lib="es2015"`.
 # not-yet
 - 🐛 monorepo中，./app1项目执行tsc -p tsconfig.json -w 会转义输出 ./packages/lib1 的代码到dist
   - 变通方案是使用自定义打包工具webpack

@@ -13,7 +13,17 @@ modified: 2023-12-09T10:03:55.375Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 💡 Would anyone believe me if I said I can get IndexedDB to read and write faster than a fully in-memory SQLite DB in the browser?
+- https://twitter.com/tantaman/status/1743031911092564338
+- that is pretty hard to believe... Are you treating IDB entries like nodes in a btree or something like that?
+  - Yeah. Each value is a page and key the range of keys in that page.
+- That's cool. Does it make writes faster too?
+
+- cause SQLite is a wasm port with Structured Cloning right? IndexedDB is butt slow tho, have to do major custom batch/throttling and cache/buffering to hide it.
+  - Yeah the wasm bridge is hell expensive. For idb, I ended up reading and writing pages of objects to a given key and that key represents the range of keys in the page.
+  - This is way faster than any option provided by the idb api. Of course it creates a bunch of complexity.
+- Similar to how @FireproofStorge uses it
+- Yeah, I do the same, 😫=why can't we just have good native APis
 
 - ## 🌰 eidos 用 sqlite-wasm 做存储，到目前为止丢了两次数据，
 - https://twitter.com/mayneyao/status/1720141066240991347
