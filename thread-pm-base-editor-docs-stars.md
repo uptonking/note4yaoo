@@ -12,6 +12,19 @@ modified: 2021-08-22T07:29:34.045Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 🌰📝 今日HackerNews 上的最热贴： 《9 years of Apple text editor solo dev - 独立开发 Apple 文本编辑器的九年》
+- https://twitter.com/vikingmute/status/1743447079257858454
+  - [9 years of Apple text editor solo dev | Hacker News_202401](https://news.ycombinator.com/item?id=38866170)
+  - 作者在九年前受 iA writer 的启发，开始开发一款更极简的文本编辑器  Paper，开发过程中这漫长的九年中的点点滴滴，非常详尽
+  * 技术选型
+  * 应用架构以及调试
+  * 付费特性以及收费策略
+  * 文本编辑器的难点
+
+- 这个产品付费用过，编辑体验很好，后来因为没有文件夹体系，就放弃了。
+
 - ## 使用@dotey分享的两步翻译法给这次重写编辑器作为一个结尾吧
 - https://twitter.com/beihuo/status/1736172903312613411
   - 这次重构主要对使用流程进行了优化，将触发按钮从侧栏移至顶部工具栏，以提升用户体验。

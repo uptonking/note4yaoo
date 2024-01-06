@@ -34,6 +34,19 @@ modified: 2023-12-01T09:08:18.316Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## with local-first your front end code is interfacing with the DB. The sync layer handles permissions.
+- https://twitter.com/tantaman/status/1743309463837102188
+- Dbs still lack some abstractions. RLS is half the battle. Other pieces:
+  - supporting live migrations / migrations without downtime 
+  - supporting old clients that never upgrade to be compatible with a new schema
+- With Electric, migrations go via the replication stream so clients all move forward as they sync. Obviously there are considerations at the app layer with that, but it makes things simpler. Only have additive migration for now, but that should change.
+
+- I'd like to see someone explore a db that has a record of all schemas that have ever been applied to it. Where a client that queries it can provide their schema version in the query and the DB can project results back down to that schema.
+
 - ## 👥 [Accidental database programming | Hacker News_202312](https://news.ycombinator.com/item?id=38489307)
 - With SQLsync he’s made a way for frontend developers to query and update a remote database as if it was completely located right in the browser. Because it basically is. The power of WASM makes it possible to ship a whole SQLite database to the browser. The magic is in how it syncs from multiple clients with a clever but simple reactive algorithm.
 

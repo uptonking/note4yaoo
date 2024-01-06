@@ -24,6 +24,19 @@ modified: 2023-12-15T18:55:05.385Z
 - open sourcing Wappler could facilitate greater transparency and trust.
   - Noodl app are already on their way
 
+# discuss-saas-platform
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Reviving Sandstorm | Hacker News_202002](https://news.ycombinator.com/item?id=22231922)
+- If the failure of Sandstorm has shown one thing, it's that people will not maintain forks of software if the layer you're integrating with is too complex.
+  - I'd much prefer if Sandstorm just shipped with an IdP and contributed OIDC implementations to downstream projects.
+
+- For those who dont know what it is: Single Sing On with an App Store.
+- Sandstorm is also an extremely security-oriented way of running packaged apps. It uses an advanced sandbox that has defeated many kernel zero-day vulnerabilities. It utilizes the Cap'n Proto serialization + RPC protocol, another security-oriented project of Kenton.
 # discuss
 - ## 
 

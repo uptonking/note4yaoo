@@ -230,12 +230,15 @@ modified: 2022-11-08T19:04:00.289Z
   - Ace is developed as the primary editor for Cloud9 IDE
     - AWS Cloud9: A cloud IDE for writing, running, and debugging code
 
-- overleaf /10.5kStar/AGPLv3/202211/js/latex/ace
+- overleaf /10.5kStar/AGPLv3/202211/js/latex/ace>codemirror
   - https://github.com/overleaf/overleaf
   - https://github.com/overleaf/overleaf/wiki
+  - https://github.com/overleaf/overleaf/tree/main/services/web/frontend/js/features/source-editor
   - A web-based collaborative LaTeX editor
-  - 编辑器依赖ace
+  - source-editor支持codemirror6、ace
   - https://github.com/overleaf/ace /Ajax.org Cloud9 Editor
+  - [Compile Error and PDF Download Notifications](https://github.com/overleaf/overleaf/issues/1031)
+    - migrate from ACE to CodeMirror 6. Yes, the CM6 work will be coming to CE soon._202206
 
 - trix /18kStar/MIT/202311/js
   - https://github.com/basecamp/trix

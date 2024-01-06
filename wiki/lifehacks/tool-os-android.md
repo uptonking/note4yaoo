@@ -99,7 +99,7 @@ modified: 2020-12-22T12:42:09.830Z
 - https://github.com/dessalines/jerboa /AGPLv3/202312/kotlin
   - An Android client for Lemmy, a federated reddit alternative
   - a native-android client for Lemmy, built using the native Android Toolkit, Jetpack Compose, Retrofit
-  - https://github.com/LemmyNet/lemmy /rust
+  - https://github.com/LemmyNet/lemmy /AGPLv3/rust
     - Lemmy is similar to sites like Reddit, Lobste.rs, or Hacker News
 # android-mod/crack
 - resources

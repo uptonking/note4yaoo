@@ -314,7 +314,7 @@ modified: 2023-11-17T10:12:06.357Z
     - The basic data sync is based on an append only log. 
     - Check out our section on "Operations", this is the data type we've built on top of the append-only log structure for multi-writer and conflict free data editing
 
-- https://github.com/TryQuiet/quiet /clang/cpp/ts
+- https://github.com/TryQuiet/quiet /GPLv3/clang/cpp/ts
   - https://www.tryquiet.org/
   - A private, p2p alternative to Slack and Discord built on Tor & IPFS
 # more

@@ -37,7 +37,26 @@ modified: 2023-10-27T07:03:12.118Z
 - 
 - 
 
+# discuss-influxdb
+- ## 
+
+- ## 
+
+- ## [Influxdb made the switch from Go to Rust | Hacker News_202310](https://news.ycombinator.com/item?id=37725778)
+- The issue is that InfluxDB is an infrastructure product. Changing the core impacts the way users interact with the product. If Figma decided to change their backend, it could be transparent to users.
+  - Opinions could be different if first they implemented a complete compatibility layer, Flux included, prior to making the migration.
+
+- I love InfluxDB 1.x and the TICK stack. They abandoned a beautiful piece of software to chase shiny things with 2.x... sad to see them do it again.
+
+- Can someone explain what's the InfluxData's market? Or how they make/plan to make money? If we speak about metrics, Prometheus just win.
+  - Metrics is certainly one use case that people pay us for. With v3, we expect that real-time analytics and some more data warehousing types of use cases will become interesting. We always envisioned InfluxDB as a store for observational data of all kinds, not just metrics.
+  - InfluxDB v3 is built to handle this kind of data. It's a columnar database, using object storage and Parquet files for persistence.
+- Prometheus is not just the db itself, it’s the ecosystem around it. You’ve got service-discovery, alertmanager and basically every application in existence having a /metrics endpoint and some pre-made Grafana dashboard.
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## What does the twitterverse recommend for a managed time series database? _202312

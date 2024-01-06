@@ -12,6 +12,18 @@ modified: 2023-02-03T16:12:13.346Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 这确实是目前 BlockSuite 最大的困扰之一, 跨 block 操作
+- https://twitter.com/ewind1994/status/1743439055411708058
+  - 最初，我将 BlockSuite 设计为在每个 block 里嵌入独立的富文本组件（即独立的 contenteditable）。这样再复杂的复杂 block 嵌套结构都能简单地用标准的前端框架渲染出来，只是其中的富文本部分走独立的 inline editor 而已。这种 inline editor 也特别简单， @flrande 刚来实习几周就搞定了
+  - 这样开发效率非常高，但就会遇到横跨多个 block 时原生选区的问题。🐛 BlockSuite 沿用至今的方式是手动基于拖拽起止位置算选区，这样问题很多，其他编辑器都没有这么做。但我一段时间内都认为这属于框架的差异化亮点，现在看来这是个误区。
+  - 但演化中我们逐渐发现，BlockSuite 真正的亮点并不是走单个 contenteditable 还是多个这种层面的实现细节，而是「能这么做」背后的本源：这种模式使得所有子 editor 的状态都全权由一份中心化的 CRDT 文档管理。换言之，以前做编辑器时围绕 editor 设计状态与数据生命周期的架构被推翻了。
+  - 这使得 BlockSuite 允许你把传统上的一个大单体 editor 随便切分掉，只要各个组件都连到同一份 CRDT 数据层上就能即插即用。为此我们进一步支持了一种叫 fragment 的组件，这种组件能在 editor 外面独立存在。
+  - 现在看来，单个还是多个 contenteditable 其实并不那么重要，学其他编辑器换回去也问题不大。且这也只是一个局部改造，已经设计好的 API 都能继续沿用。
+
 - ## 传统上基于文件的文档同步粒度很粗，容易产生冲突。AFFiNE 则是将一篇文档的 block tree 编码到类似 protobuf 的 CRDT binary 格式，在多人协作时分发各自的 patch 来驱动状态更新。
 - https://twitter.com/ewind1994/status/1717050757546168667
   - 你可以认为 AFFiNE 的 workspace 就是 clone 到你本地的特殊格式 git 仓库，自带字符粒度的冲突解决。

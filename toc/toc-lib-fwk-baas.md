@@ -24,12 +24,19 @@ modified: 2021-05-25T09:40:55.797Z
   - Auto-generated APIs
   - Dashboard
 
+- https://github.com/parse-community/parse-server /20.5kStar/apache2/202401/js
+  - https://parseplatform.org/
+  - Parse Server is an open source backend that can be deployed to any infrastructure that can run Node.js. 
+  - Parse Server works with the Express web application framework. 
+  - It can be added to existing web applications, or run by itself.
+  - MongoDB or PostgreSQL(with PostGIS 2.2.0 or higher)
+
 - appwrite /27.4kStar/BSD/202211/ts/php
   - https://github.com/appwrite/appwrite
   - https://appwrite.io/
   - Appwrite is an end-to-end backend server for Web, Mobile, Native, or Backend apps packaged as a set of Docker microservices. 
 
-- https://github.com/javascriptdb/jsdb-server /js
+- https://github.com/javascriptdb/jsdb-server /SSPL/202211/js
   - https://javascriptdb.com/
   - The open source firebase alternative that uses SQLite.
   - Arrays and Objects operations read and write into your database. Magic.
@@ -37,9 +44,6 @@ modified: 2021-05-25T09:40:55.797Z
     - When you use .filter to search over an array, we are not using indexes. 
   - https://github.com/javascriptdb/jsdb-sdk
   - https://github.com/javascriptdb/jsdb-react
-
-- https://github.com/parse-community/parse-server
-  - Parse Server works with the Express web application framework.
 
 - https://github.com/eugeneware/firedup /201306/js/inactive
   - A node.js implementation of firebase based on leveldb/levelup.
@@ -63,6 +67,13 @@ modified: 2021-05-25T09:40:55.797Z
 
 - https://github.com/TheHadiAhmadi/minibase /202211/js
   - minimal (and slow) firebase alternative
+
+- https://github.com/soketi/soketi /AGPL3/202310/ts
+  - https://soketi.app/
+  - Next-gen, Pusher-compatible, open-source WebSockets server
+  - built on top of uWebSockets.js - a C application ported to Node.js
+  - soketi implements the Pusher Protocol v7. Therefore, any Pusher-maintained or compatible client can connect to it
+  - Soketi is capable to hold thousands of active connections with high traffic on less than 1 GB and 1 CPU in the cloud
 
 - https://github.com/endpointservices/mps3 /ts
   - Infraless Database over any s3 storage API.
@@ -92,6 +103,7 @@ modified: 2021-05-25T09:40:55.797Z
   - http://docs.kinto-storage.org/
   - A generic JSON document store with sharing and synchronisation capabilities.
   - Backends: In-memory (development), PostgreSQL 9.5+ (production)
+  - [Kinto by Mozilla – An open-source Parse alternative | Hacker News_201601](https://news.ycombinator.com/item?id=10994736)
 
 - https://github.com/pocketbase/pocketbase /MIT/202312/go/svelte
   - https://pocketbase.io/

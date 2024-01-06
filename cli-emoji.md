@@ -21,6 +21,11 @@ modified: 2021-11-19T06:53:19.649Z
 - emoji-resources
   - https://www.emojiall.com/en/all-emojis
   - [EmojiDB](https://emojidb.org/)
+  - [Emoji cheat sheet for GitHub, Basecamp, Slack & more](https://www.webfx.com/tools/emoji-cheat-sheet/)
+  - [Unicode Full Emoji List](https://unicode.org/emoji/charts/full-emoji-list.html)
+
+- https://github.com/ikatyang/emoji-cheat-sheet
+  - A markdown version emoji cheat sheet
 
 ### face
 
@@ -429,7 +434,8 @@ modified: 2021-11-19T06:53:19.649Z
   - 戒指
 - 🌁
   - 有雾
-- 
+- 🕋
+  - 天房
 - 
 - 
 - 

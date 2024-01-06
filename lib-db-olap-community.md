@@ -24,9 +24,35 @@ modified: 2023-12-15T18:01:43.992Z
 
 - ## 
 
-- ## 
+- ## 🧊 [The Rise and Fall of the OLAP Cube | Hacker News_202001](https://news.ycombinator.com/item?id=22189178)
+- The columnar database engines are powerful enough to answer the ad-hoc questions so you often don't need to materialize the summary data somewhere else or use BI tools such as Tableau that fetch the data into their server and let you run queries on their platform.
+  - ELT solutions such as Airflow and DBT let you materialize the data on your database with (incremental) materialized views similar to the way how OLAP Cubes work but inside your database and only using SQL. That way, you won't get stuck to vendor-lock issues (looking at you, Tableau and Looker), instead manage the ELT workflow easily using these open-source tools.
+  - These tools target the analysts/data engineers, not the business users though. Your data team needs to model your data, manage the ETL workflow and adopt a BI tool for you. 
 
-- ## [The Rise and Fall of the OLAP Cube (2020) | Hacker News_202107](https://news.ycombinator.com/item?id=27736713)
+- The nice thing of an OLAP cube is the UI and how business users can easily drag and drop items to explore data (standard reports are best created automatically and don't need an OLAP layout/setup).
+  - If the UI (Tableau, Excel Power Pivot) is the same, then yes, OLAP cubes are a thing of the past. Otherwise not.
+
+- I think the article is a bit simplistic.
+  - It's true that _often_ OLAP cubes are not needed. That's simply because the amount of data and the latency requirements are _often_ not too demanding.
+  - Also, materialized views don't solve the major issue with OLAP cubes: the need of maintaining data pipelines.
+  - I wonder if a solution to this problem could come from a different way of caching result sets: new queries that would produce a subset of a previously cached result could be run against the cached result itself. Of course this opens up a new set of problems, cache invalidation etc..
+
+- Airbnb uses Druid which is essentially an OLAP cube.
+- 🌰 Druid is a column store geared towards OLAP workloads, which seems to support the article's point. It does not store its data in a "cube" layout as far as I can tell, just by time and individual columns.
+
+- Columnar databases and OLAP cubes are both designed for OLAP workloads. They are simply different architectures. Therefore, it is impossible to argue that 'OLAP is dead' — it cannot be dead, because OLAP is simply a type of database usage.
+- OLAP Cubes = A feature built into SQL Server, that includes has its own dialect of SQL called MDX. OLAP Cubes are decreasing in popularity because you can achieve the same results through other means and less effort.
+
+- The author don't know today‘s OLAP。 Look Tabular Modeling in SQL Server Analysis Services（Power BI） in-memory column-oriented analytics engine.
+
+- While this article accurately captures the issues with traditional OLAP Cubes, it failed to recognize the latest development in this domain.
+  - Projects like Apache Kylin, and its commercial version Kyligence, leverage modern computer architectures such as columnar storage, distributed processing, and AI optimization to build cubes over 100s of billions rows of data that covers 100s of dimensions. The performance result is unprecedented in either traditional OLAP cubes or today's MPP data warehouses. That's why the world's largest banks, retailers, insurance companies, and manufactures are turning to Kylin/Kyligence for the most challenging analytical problems.
+  - Not to mention the rich semantic layer that modern OLAP cube technology provides, which greatly simplifies analytics architecture in the enterprises.
+  - And, comparing columnar stores to OLAP cubes is like comparing apples to oranges. The former is a storage format and the latter is an analytical pattern. Modern OLAP cube technology like Kylin/Kyligence stores cubes in columnar stores anyway.
+
+- An OLAP cube may be materialized from a column store, but a column store isn't an OLAP cube.
+
+- ## 🧊 [The Rise and Fall of the OLAP Cube (2020) | Hacker News_202107](https://news.ycombinator.com/item?id=27736713)
 - Modern data warehouses don't need to build cubes for performance reasons. 
   - Low latency data warehouses like ClickHouse or Druid can aggregate directly off source data. 
   - The biggest driver for modeling is allowing non-coders to access data and perform their own analyses. 
@@ -36,7 +62,7 @@ modified: 2023-12-15T18:01:43.992Z
   1. GROUP BY multiple fields (your dimensions), or
   2. partition/shuffle/reduceByKey
   - and materializing/caching the result of this query for later reuse, you are rolling your own OLAP Cube with whatever data processing ecosystem you have on hands.
-  - The technology itself has clear use cases and incredible business value on a daily basis, only implementation details differ depending on surroinding ecosystem
+  - The technology itself has clear use cases and incredible business value on a daily basis, only implementation details differ depending on surrounding ecosystem
 
 - I'm a bit opinionated on data modelling, so a couple points.
 1. "OLAP Cubes" arguably belong to Microsoft and refer to SQL Server cubes that require MDX queries. It's a solution given to us by Microsoft that comes with well understood features.

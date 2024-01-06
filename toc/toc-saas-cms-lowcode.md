@@ -9,6 +9,9 @@ modified: 2023-01-20T21:59:47.792Z
 
 # guide
 
+- cms-pm
+  - 考虑以calendar/timeline/project/chat为核心，而不是editor
+
 - cms-dev
   - cms业务架构一般分为 服务端、管理端、展示端
   - 管理端交互的核心通常是编辑器
@@ -19,7 +22,7 @@ modified: 2023-01-20T21:59:47.792Z
   - notion-like
 
 - [w3techs: Usage Statistics and Market Share of Content Management Systems](https://w3techs.com/technologies/overview/content_management)
-  - WordPress, Wix, Squarespace, Joomla, Drupal, Adobe, PrestaShop, Webflow, TYPO3, Weebly, Gatsby, Hugo, Zendesk, Ghost, Odoo, MediaWiki, Gitbook, Jekyll, Salesforce
+  - WordPress, Wix, Squarespace, Joomla, Drupal, Adobe, PrestaShop, Webflow, TYPO3, Weebly, Gatsby, Hugo, Zendesk, Ghost, 🔥 Odoo, 🔥 MediaWiki, Gitbook, Jekyll, Salesforce
 
 - ref
   - https://github.com/postlight/awesome-cms

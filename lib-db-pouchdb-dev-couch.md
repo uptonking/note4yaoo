@@ -116,6 +116,9 @@ modified: 2024-01-04T06:53:04.003Z
 
 - sqlite [Database File Format](https://www.sqlite.org/fileformat2.html)
   - 导出或直接兼容 sqlite格式
+
+- couchapp
+  - reimplement with wasm
 # dev
 
 # changelog-pouchdb

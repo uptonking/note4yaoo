@@ -9,7 +9,17 @@ modified: 2024-01-04T01:28:58.097Z
 
 # guide
 
+- chat-products
+  - discord: 侧重语音/gaming
+  - slack: 侧重企服/工作流, 类似有teams/mattermost
+  - telegram: 侧重私人与短信，但已逐渐偏离短信
 # discuss-stars
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 
 
 - ## [Support ActivityPub for GitLab (&11247) · Epics · GitLab_202308](https://gitlab.com/groups/gitlab-org/-/epics/11247)
@@ -27,9 +37,86 @@ modified: 2024-01-04T01:28:58.097Z
 # discuss
 - ## 
 
+- ## [Rocket.chat leverages the Matrix protocol for interoperable communications | Hacker News_202205](https://news.ycombinator.com/item?id=31535034)
+
+- ## [Telegram: 700M users and Premium | Hacker News_202206](https://news.ycombinator.com/item?id=31802245)
+- Telegram blows my mind. Say what you want about their security; 
+  - they have the absolute best UX of any (primarily 1-on-1) messaging app, bar none.
+  - And it’s lots of small features and details such as built in translation for messages in a foreign language, all the smooth animations, quick look and summaries of channels with aggregated links media etc, a super fast and responsive UI etc. 
+  - And their stickers are actually ridiculously fun to play with (I used to not be into that, telegram converted me).
+
+- Many people are asking what are in Telegram that aren’t anywhere else?
+  - It offers you to simply share an alphanumeric handle and you can connect with anyone in the world. I can do a voice chat or normal chat really quickly and easily. It is the only famous truly Instant Messenger there is. And I can do it without sharing my name (unlike FB), email address, or phone number (unlike WApp).
+  - The video quality in chats is really high. In Android, only Google Duo came close.
+  - ONLY chat app in market with an excellent desktop app for Linux. Also Windows.
+  - I love their non-SJW-everything approach to allowed stickers. 
+  - UI/UX is excellent. Really love chat themes and how I can edit them. Many components are customizable. Chat bubble colors, radii of rounded corners, etc.
+  - I like the fine-grained control over notifications from different chats (groups and persons).
+  - I like the lack of E2EE. I just like logging in and having access to all my chats. I don't have to be with the same device to be on the same chat.
+  - The simple yet effective image editor is nice. So is the text formatting with no fuss.
+  - I often use the auto image resize feature to downscale images.
+  - It is so seamless. It has replaced email when I want to transfer small files to my own devices.
+  - I am a selectively social person. It's good that even with 700 mn people, not many people are in it. The people with whom I don't want to interact more aren’t yet in Telegram. That's an appeal to me.
+  - Developing bots is a bliss. So easy and effective.
+
+- Telegram chats are encrypted to and from the server, they're not E2E encrypted, they do not claim to be by default. They do offer E2E chats you can opt into, and there has not been a single example of an E2E message being cracked.
+
+- Telegram doesn't encrypt any more than Discord: through https. Telegram offers a 1:1 e2e encryption option, but few use it, because it does not propagate to other devices.
+
+- Telegram now is more akin to Discord and Twitter with bots, channels and public groups. It's been some time Telegram has moved from personal chatting app as WhatsApp.
+  - The problem is just that Telegram still advertises itself, and people expect it to be a messaging app.
+
+- ## [Zulip 4.0: Threaded open source team chat | Hacker News_202105](https://news.ycombinator.com/item?id=27149123)
+- I was skeptical about Zulip when I first tried it. What is it supposed to be? A chat? A forum? Why is the UI so ugly?
+  - But after using it a while I now really dislike Slack et al, both in professional teams and for open source communities.
+  - Zulip can give you the best of both worlds. It's a regular chat. But the threading model also encourages long-form, more forum or email like discussions.
+  - Threads are easily discoverable and it's trivial to catch up on all the relevant discussions that you missed, while skipping everything that doesn't concern you.
+  - The only downside is the very subpar UX when compared to Discord or even Slack.
+
+- ## [Gitter is open source | Hacker News_201707](https://news.ycombinator.com/item?id=14694283)
+- Gitter is a great idea in theory. In practice it's just been a place for my questions to go unanswered.
+
+- While I applaud the initiative of Gitlab to opensource Gitter I think the target audience for self hosting is rather small. I think alternatives like Zulip or Mattermost are probably better suited for most organizations.
+
+- Asking users to run mongo, es, neo4j, and redis is a tall order. Mattermost just needs (AFAIK) a relational database.
+  - Gitter is not intended to be a replacement for Mattermost, Slack or other team collaboration tools. We see Gitter as a community instead.
+  - we use neo4j for suggesting rooms.
+# discuss-slack/discord/telegram
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [Slack Is Going Public at a $16B Valuation | Hacker News_201906](https://news.ycombinator.com/item?id=20228689)
+- Their product-vision was clear, their execution focused on what mattered... and they didn't need to bend or break laws to succeed.
+  - Advertising companies like Facebook make their revenue by selling to advertisers, not individuals- they are emphatically a B2B company.
+
+- Discord has essentially the same app but better voice/call support and other various features. But they seem focused on the gamer market.
+
+- I think Discord is more a replacement of IRC than Slack could ever be.
+  - Slack is enterprise and workflow-oriented, Discord is community oriented.
+
+- ## [Discord vs Telegram vs Slack vs others : podcasting_202310](https://www.reddit.com/r/podcasting/comments/171cczn/discord_vs_telegram_vs_slack_vs_others/)
+- Discord and it’s not even close. Hardly anyone in the US uses telegram (may not apply to you) and slack is something by people associate with business.
+
+- I'll be completely honest, it all depends on your audience. 
+  - People between the ages of 18-25 prefer discord. 
+  - Older audiences prefer telegram. It all depends on how savvy your users are with tech.
+  - you want to use the platform your audience is already using. 
+
+- I prefer Slack over Discord generally speaking, but it lacks the ability to do any sort of moderation, which should disqualify it from community-building platforms. 
+
+- Discord, hands down. Beyond the great options for chat (linking Patreon/membership tiers to certain channels/roles, searchable, threads within channels, etc), there are watch party stages and voice/video chats. Tons of bots to handle basic moderation, event reminders, polls, etc
+
+- ## [Discord Vs Slack Vs Telegram : discordapp_201808](https://www.reddit.com/r/discordapp/comments/98wvrb/discord_vs_slack_vs_telegram/)
+- discord's marketing/ui are more geared toward gamers, which might drive companies away from it. 
+  - personally, i think discord is the better of the two being completely free and having more features. 
+  - i haven't used telegram.
+
+- Slack is generally the de-facto "business" chat platform. 
+  - It looks and feels very similar to Discord, as Discord was seemingly heavily inspired by Slack. 
+  - Telegram is... okay, but certainly not something I can recommend for a company
 # discuss-mastodon
 - ## 
 

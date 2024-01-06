@@ -40,6 +40,9 @@ modified: 2022-06-04T00:44:30.749Z
   - Presets
     - Check out @dnd-kit/sortable
 
+- who is using #dnd-kit
+  - cocalc
+
 - examples
   - 官方示例要点 server
     - droppable - collision detection algorithm 切换内置的冲突检测算法

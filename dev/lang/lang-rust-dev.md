@@ -18,7 +18,7 @@ modified: 2022-11-11T06:57:09.670Z
 
 - who is using #rust
   - 国内: tikv
-  - .
+  - db:influxdb
 # rust-resources
 - [24 days from node.js to Rust](https://candle.dev/blog/javascript-to-rust/javascript-to-rust-day-1-rustup/)
   - https://github.com/Mercateo/rust-for-node-developers

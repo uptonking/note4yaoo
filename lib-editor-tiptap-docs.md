@@ -15,6 +15,7 @@ modified: 2023-02-05T19:03:27.730Z
   - https://tiptap.dev/
   - A headless, framework-agnostic and extendable rich text editor, based on ProseMirror.
   - It’s headless and comes without any CSS. You are in full control over markup, styling and behaviour.
+  - [Launch HN: Tiptap (YC S23) – Toolkit for developing collaborative editors | Hacker News_202308](https://news.ycombinator.com/item?id=36957204)
 # docs
 
 ## quickstart-minimal

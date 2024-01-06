@@ -82,3 +82,24 @@ modified: 2023-09-01T10:13:59.044Z
 - ## is there an accompanying paper to describe the CRDT behind ‘micromerge’ or is ‘A Conflict-Free Replicated JSON Datatype’ the closest?
 - https://automerge.slack.com/archives/C61RJCN9J/p1683034175607929
 - There isn't really a good paper describing this, sorry. Micromerge/Automerge differ from the JSON CRDT paper in terms of the deletion semantics: the paper implements deletion as recursive clearing, which leads to the weird behaviour shown in Fig. 6. Micromerge/Automerge instead implement deletion as removing the reference to the deleted object, which means that any concurrent changes to the deleted object are simply discarded.
+
+- ## 🆚️ [Automerge: a new foundation for collaboration software [video] | Hacker News_202112](https://news.ycombinator.com/item?id=29501465)
+- Main takeaways from toying with both Yjs and Automerge
+u1. Extremely difficult to build backend in other programming languages than Nodejs
+  - You will cry looking at source code C-binding, FFI, etc, https://github.com/yjs/y-crdt/blob/main/yffi/src/lib.rs
+  - you weren't kidding - the rust port is total trash.
+  - The internals are still very hot and in a state of flux, as we 1st decided to go with porting the Yjs, then leave cleaning and optimizations for 2nd step after we have something, that's compatible with existing Yjs behavior.
+2. Both communities are great.
+3. Watch out implementations of underline libraries. Trace lib0 libraries usage and internals in Yjs for example;JavaScript engines use UTF-16 encoding. Golang (my main backend language) is using UTF-8 ... reimplementing Yjs code in Golang with algorithms and optimization and futher scaling might become impossible for small startups.
+4. Rich editing similar to Google Doc is very very complicated subject with lot of landmines
+5. There's ProseMirror editor for collaborative editing. However you might not like its internals compare to Slatejs 
+
+- > You will cry looking at source code https://github.com/yjs/y-crdt/blob/main/yffi/src/lib.rs
+  - Am I missing something? You linked a file that is inherently going to be "un-Rusty" because it's meant to be an FFI shim for _non-Rust_ languages to use through a common C API that this file exposes.
+
+- MeteorJS solved this 12 years ago...but good to see more thoughts being put into this.
+  - It did not at all. It solved the problem of how to reflect a source of truth (the server) in somewhat real-time on the client through subscriptions. Also made some attempt to have edits that were persisted to client-side mini-mongo pushed to the server but this was best effort at most.
+  - CRDTs are on a completely different level. They provide deterministic conflict resolution strategies through either/or causal and physical timestamps to ensure it's always safe to persist a write locally and later sync it with the server or not even have a server and sync directly which other peers.
+- the local mini-mongo is acting a local-state and the JSON/JS all the way is solving the marshalling/ORM issue. I understand it is a centralized way of dealing with this, however, it was operating on the same problem space. Furthermore, automerge can be used as the server, which bring it closer to what Meteor did. I was hinting at the overlap in the problem space, but I should have phrased it better. Anyway, I'm keep to try automerge.
+
+- The key feature of automerge is that it's decentralized like git. Two people could work asynchronously and only occasionally merge their results.

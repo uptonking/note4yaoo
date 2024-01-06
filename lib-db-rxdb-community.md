@@ -106,6 +106,19 @@ modified: 2023-10-08T10:54:57.575Z
 
 - ## 🔥 [Rxdb: A reactive database where you can subscribe to the result of a query | Hacker News_201910](https://news.ycombinator.com/item?id=21353020)
 
+- I have been developing something that provides this functionality for PostgreSQL: https://github.com/supabase/realtime /Elixir
+  - It's very similar to Debezium (mentioned in another comment), but it's built with Phoenix (elixir), so great for listening via websockets.
+  - Basically the Phoenix server listens to PostgreSQL's replication functionality and converts the byte stream into JSON which it then broadcasts over websockets. This is great since you can scale the Phoenix servers without any additional load on your DB. Also it doesn't require wal2json (a Postgres extension). 
+  - The beauty of listening to the replication functionality is that you can make changes to your database from anywhere - your api, directly in the DB, via a console etc - and you will still receive the changes via Phoenix.
+- There is a big difference between the changestream of many SQL and noSQL databases, and what RxDB does. Having a stream of changes is useful but not the whole solution. 
+  - RxDB is capable of using single document changes of a stream and recalculate the new results of an existing query. This saves you not only much IO performance but makes developing much easier
+  - It is implemented with something called QueryChangeDetection 
+  - This is based on meteors oplog-observe-driver
+  - So basically when a change-event comes, RxDB does not run the query against the database again, but instead uses the old results together with the event to calculate the new results.
+
+- If you want a change-stream out of your regular MySQL or PostgreSQL database systems, check out Debezium: https://debezium.io/
+  - It basically registers itself as a fake replica server so that it can get updates from the master (like binlog in case of MySQL) and then it forwards those updates to Kafka. The possibilities are endless what you can do with those updates as Kafka consumers.
+
 - Having client state just be a replica of server state solves so many problems I don't understand why the concept never caught on. Pouchdb/couchdb are still the only ones doing it afaik. Instead we have a bajillion layers of CRUD all in slightly different protocols just to do the same read or write to the database.
   - When your data is public and immutable, this approach is very pleasant. The client becomes just another caching layer and worst case it's presenting a historical version of the truth. You can even extend this across tabs with things like local storage. This breaks down quickly once you have data that could become private or mutate rather than append.
 - The "one db per user" model for private data made using other features like views etc more difficult when you have to upgrade, edit, remove them.
@@ -119,10 +132,15 @@ modified: 2023-10-08T10:54:57.575Z
 
 - Data security is a huge issue, Facebook.com has very specific whitelisted access patterns encoded as CRUD endpoints. 
 
+- General question about reacting to database events: It seems like when responding to DB events it would be easy to accidentally create an infinite loop. Is that an issue with this pattern, or is it easy to avoid? Do any of these data subscription tools have safeguards in place to prevent this?
+  - This is where command and query (with subscribe) must be neatly separated. An event A launches an updates of the DB, that launches the query part to react, then stop. There is the risk of having an infinite loop, if the event A is launched by the query part, which is very related to the behavior of your app.
+
 - Meteor do this since inception with MongoDB on server and MiniMongo in client.
   - Yes, mongodb and meteor and minimongo do something similar but with much more restrictions on what you can do.
   - RxDB does exactly one thing which is being a client side database. You are not tied to a specific ecosystem or backend database.
 - Yeah, with RxDB, we are tied with RxJS, PouchDB and CouchDB.
+
+- I have made something similar trying to match more the concept of a materialized view, but just on the client instead of inside the database: https://github.com/tozd/node-reactive-postgres
 
 - ## [RxDB – Local JavaScript-Database | Hacker News_201701](https://news.ycombinator.com/item?id=13507367)
 - Before I started creating RxDB, I used pouchdb, minimongo, gunJS and lokiDB and had just too many things to handle by myself. RxDB is an approach to create a database which is easier to use and does not create discussing-point when using it in a big team.

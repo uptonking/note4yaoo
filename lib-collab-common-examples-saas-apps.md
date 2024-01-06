@@ -109,9 +109,6 @@ modified: 2023-01-17T19:14:47.611Z
 - https://github.com/MicroHealthLLC/mSuite /ruby/vue
   - Real Time Collaboration Made Simple for concept maps, kanban, documents and spreadsheets.
 
-- https://github.com/RocketChat/Rocket.Chat
-  - fully customizable communications platform developed in JavaScript for organizations with high standards of data protection.
-  - We are a MERN based application enabling real-time conversations
 - https://github.com/bigbluebutton/bigbluebutton
   - open source web conferencing system.
   - supports real-time sharing of audio, video, slides (with whiteboard controls), chat, and the screen. 
@@ -124,7 +121,7 @@ modified: 2023-01-17T19:14:47.611Z
 - https://github.com/atharmohammad/Code-N-Collab /202110/js/inactive
   - a Collaborative Website for developers and competitive coders who likes to code and discuss about topics , problems or issues
 
-- https://github.com/sagemathinc/cocalc /1.1kStar/AGPLv3/202311/ts/python
+- https://github.com/sagemathinc/cocalc /1.1kStar/AGPL3+NonCommercial/202311/ts/python
   - https://cocalc.com/
   - CoCalc is web-based software that enables collaboration in research, teaching, and scientific publishing.
   - It includes Jupyter Notebooks, Sage Worksheets, a LaTeX Editor and a Linux Terminal to help people work together in real time
@@ -133,14 +130,38 @@ modified: 2023-01-17T19:14:47.611Z
   - 基于slate-core实现了virtualized-render
   - It is also possible to run CoCalc on your own infrastructure.
   - You can easily use CoCalc on your own computer for free by running a Docker image.
+  - https://github.com/sagemathinc/cocalc/tree/master/src/packages/sync /ts
+    - [Collaborative Editing › CoCalc Blog_201810](https://blog.cocalc.com/2018/10/11/collaborative-editing.html)
+    - This is an implementation of realtime synchronization. 
+    - It has been used heavily in production on https://CoCalc.com for over 5 years. 
+    - This is a Javascript library that helps provide collaborative multiuser editing for text files, Jupyter notebooks, and much more.
+    - In particular, does this use CRDT or OT?
+    - No. This is a realtime sync algorithm for document editing that does not use the same algorithm as literally all the other realtime sync projects. I made up with a different -- vastly simpler -- algorithm, inspired a little by "differential sync" and lot by how distributed databases work
+    - This approach works for any document with a notion of "diff" and "patch".
+    - I've used it heavily for everything from plain text, to Jupyter notebook, to WYSIWYG markdown editing (on top of Slate).
+    - The algorithm itself is ridiculously easy to understand.Each user contributes a stream of patches to a big ordered list. The definition of the current state of the document is the result of applying all the patches in order on a "best effort" basis.
+  - [CoCalc deteriorates formatting for tab widget_202205](https://github.com/sagemathinc/cocalc/issues/5899)
+    - Solving that problem required creating a new library, which is a Python wrapper around a new Rust implementation of yjs, and that's all necessary since the backend Jupyter server is written in Python instead of Javascript. 
+    - In CoCalc, the backend server is written in Javascript, so only one implementation of RTC is required.
+    - The entire algorithmic approach and data structures used in JupyterLab's RTC implementation are completely different than what's used in CoCalc. There are significant pro's and con's to each approach.
 
 - https://github.com/colyseus/colyseus /MIT/202401/ts
   - https://colyseus.io/
-  - Multiplayer Framework for Node.js
-  - Colyseus is an Authoritative Multiplayer Framework for Node.js, with clients available for the Web, Unity3d, Defold, Haxe, and Cocos
+  - an Authoritative Multiplayer Framework for Node.js, with clients available for the Web, Unity3d, Defold, Haxe, and Cocos
   - The project focuses on providing synchronizable data structures for realtime and turn-based games, matchmaking, and ease of usage both on the server-side and client-side.
   - WebSocket-based communication
   - Automatic state synchronization from server-to-client (delta compressed)
+
+- https://github.com/clockworklabs/SpacetimeDB /3.4kStar/BSL(AGPLv3)/202401/rust/game
+  - https://spacetimedb.com/
+  - You can think of SpacetimeDB as both a database and server combined into one.
+  - It is a relational database system that lets you upload your application logic directly into the database by way of fancy stored procedures called "modules."
+  - Instead of deploying a web or game server that sits in between your clients and your database, your clients connect directly to the database and execute your application logic inside the database itself. 
+  - You can write all of your permission and authorization logic right inside your module just as you would in a normal server.
+  - This means that you can write your entire application in a single language, Rust, and deploy it as a single binary. 
+  - the entire backend of our MMORPG BitCraft Online is just a SpacetimeDB module. 
+  - SpacetimeDB is optimized for maximum speed and minimum latency rather than batch processing or OLAP workloads. It is designed to be used for real-time applications like games, chat, and collaboration tools.
+  - This speed and latency is achieved by 🧐 holding all of application state in memory, while persisting the data in a write-ahead-log (WAL) which is used to recover application state.
 # collab-apps
 - https://github.com/configu/configu
   - A generic standard for managing and collaborating software configurations 
@@ -203,7 +224,8 @@ modified: 2023-01-17T19:14:47.611Z
   - People who have never build a multiplayer game, should probably use a library like socket.io instead, since there are way more examples/tutorial available.
   - Socket.io and geckos.io use a similar API. The switch from socket.io to geckos.io should be easy.
 
-- https://github.com/deepstreamIO/deepstream.io
+- https://github.com/deepstreamIO/deepstream.io /MIT/202310/ts
+  - https://deepstreamio.github.io/
   - open source server inspired by concepts behind financial trading technology. 
   - It allows clients and backend services to sync data, send messages and make rpcs at very high speed and scale.
 # utils

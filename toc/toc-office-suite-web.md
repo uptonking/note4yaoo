@@ -43,7 +43,8 @@ modified: 2023-03-09T13:47:07.317Z
   - https://github.com/ONLYOFFICE/core /cpp
     - Server core components which are a part of ONLYOFFICE Document Server
 
-- cryptpad /4.3kStar/AGPLv3/202301/js
+- cryptpad /4.3kStar/AGPLv3/202301/js/onlyoffice
+  - https://github.com/cryptpad/cryptpad
   - https://github.com/xwiki-labs/cryptpad
   - https://cryptpad.org/
   - CryptPad is a collaboration suite that is end-to-end-encrypted and open-source.

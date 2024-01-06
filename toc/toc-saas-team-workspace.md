@@ -498,6 +498,11 @@ modified: 2023-02-07T17:38:05.336Z
 - https://github.com/todomd/todo.md
   - The TODO.md format is based on GFM - GitHub Flavored Markdown - Task Lists.
   - Tasks in TODO.md can be visualized using Kanban Board where sections become columns on the board.
+# sandbox
+- https://github.com/sandstorm-io/sandstorm /apache2/202308/js/cpp
+  - https://sandstorm.io/
+  - a self-hostable web productivity suite. 
+  - It's implemented as a security-hardened web app package manager.
 # more
 - https://github.com/avisek-official/simple-notes /ts
   - https://next-simple-notes.vercel.app/

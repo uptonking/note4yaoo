@@ -8,7 +8,11 @@ modified: 2023-01-17T19:13:01.845Z
 # lib-collab-common-examples-sync-p2p
 
 # guide
-- 考虑到客户端升级的问题
+
+- tips
+  - collab/sync/realtime
+
+- 考虑客户端升级的问题
   - 同步前一定要检查一个version，参考indexeddb upgrade
   - 参考sqlite+http-range的部分下载示例(sql.js-httpvfs)
 # sync-solutions
@@ -156,11 +160,23 @@ modified: 2023-01-17T19:13:01.845Z
   - Mutability is implemented using CRDTs. Identities and data authentication are cryptographic.
   - Objects and their references form an immutable DAG, a fact that is used for data replication in HHS p2p mesh.
 
-- https://github.com/feathersjs-ecosystem/feathers-sync
+- https://github.com/feathersjs-ecosystem/feathers-sync /MIT/202305/js
   - Synchronize service events between Feathers application instances
   - When running multiple instances of your Feathers application (e.g. on several Heroku Dynos), service events (created, updated, patched, removed and any custom defined events) do not get propagated to other instances.
   - feathers-sync uses a messaging mechanism to propagate all events to all application instances. 
   - It currently supports redis, amqp/RabbitMQ
+
+- https://github.com/deepstreamIO/deepstream.io /MIT/202310/ts
+  - https://deepstreamio.github.io/
+  - open source server inspired by concepts behind financial trading technology. 
+  - It allows clients and backend services to sync data, send messages and make rpcs at very high speed and scale.
+
+- https://github.com/soketi/soketi /AGPL3/202310/ts
+  - https://soketi.app/
+  - Next-gen, Pusher-compatible, open-source WebSockets server
+  - built on top of uWebSockets.js - a C application ported to Node.js
+  - soketi implements the Pusher Protocol v7. Therefore, any Pusher-maintained or compatible client can connect to it
+  - Soketi is capable to hold thousands of active connections with high traffic on less than 1 GB and 1 CPU in the cloud
 
 - https://github.com/yomorun/presencejs
   - a JavaScript library that allows you to build real-time web applications . 

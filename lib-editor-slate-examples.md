@@ -857,7 +857,7 @@ modified: 2023-02-05T19:03:12.723Z
   - Third generation of the editors I have written for my own use.
   - I needed a tool for myself, that's why I wrote Mawe with Python/GTK, and now with ElectronJS, Javascript and React.
 
-- https://github.com/sagemathinc/cocalc /1.1kStar/AGPLv3/202311/ts/python
+- https://github.com/sagemathinc/cocalc /1.1kStar/AGPL3+NonCommercial/202311/ts/python
   - https://cocalc.com/
   - https://github.com/sagemathinc/cocalc/tree/master/src/packages/frontend/editors/slate
   - CoCalc is web-based software that enables collaboration in research, teaching, and scientific publishing.
@@ -871,6 +871,16 @@ modified: 2023-02-05T19:03:12.723Z
   - You can easily use CoCalc on your own computer for free by running a Docker image.
   - [202107: I ended up forking only the React part of Slate, and massively rewriting it to support virtualized windowing, so we can work with very large possibly complicated to render documents](https://news.ycombinator.com/item?id=28003677)
     - I have no plans to switch from Slate to Prosemirror. Getting virtualized windowing to work with Slate was quite difficult, but it's really table stakes for what I plan on doing longterm, and I don't even know where to begin to do virtualized windowing in Prosemirror.
+  - https://github.com/sagemathinc/cocalc/tree/master/src/packages/sync /ts
+    - [Collaborative Editing › CoCalc Blog_201810](https://blog.cocalc.com/2018/10/11/collaborative-editing.html)
+    - This is an implementation of realtime synchronization. 
+    - It has been used heavily in production on https://CoCalc.com for over 5 years. 
+    - This is a Javascript library that helps provide collaborative multiuser editing for text files, Jupyter notebooks, and much more.
+    - In particular, does this use CRDT or OT?
+    - No. This is a realtime sync algorithm for document editing that does not use the same algorithm as literally all the other realtime sync projects. I made up with a different -- vastly simpler -- algorithm, inspired a little by "differential sync" and lot by how distributed databases work
+    - This approach works for any document with a notion of "diff" and "patch".
+    - I've used it heavily for everything from plain text, to Jupyter notebook, to WYSIWYG markdown editing (on top of Slate).
+    - The algorithm itself is ridiculously easy to understand.Each user contributes a stream of patches to a big ordered list. The definition of the current state of the document is the result of applying all the patches in order on a "best effort" basis.
 
 - https://github.com/RealRong/Rendevoz
   - open-source knowledge management application built with React and TypeScript

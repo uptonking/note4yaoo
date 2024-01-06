@@ -44,7 +44,7 @@ modified: 2022-04-05T10:11:40.379Z
   - You will cry looking at source code C-binding, FFI, etc, https://github.com/yjs/y-crdt/blob/main/yffi/src/lib.rs
   - you weren't kidding - the rust port is total trash.
   - The internals are still very hot and in a state of flux, as we 1st decided to go with porting the Yjs, then leave cleaning and optimizations for 2nd step after we have something, that's compatible with existing Yjs behavior.
-1. Both communities are great.
-2. Watch out implementations of underline libraries. Trace lib0 libraries usage and internals in Yjs for example;JavaScript engines use UTF-16 encoding. Golang (my main backend language) is using UTF-8 ... reimplementing Yjs code in Golang with algorithms and optimization and futher scaling might become impossible for small startups.
-3. Rich editing similar to Google Doc is very very complicated subject with lot of landmines
-4. There's ProseMirror editor for collaborative editing. However you might not like its internals compare to Slatejs 
+2. Both communities are great.
+3. Watch out implementations of underline libraries. Trace lib0 libraries usage and internals in Yjs for example;JavaScript engines use UTF-16 encoding. Golang (my main backend language) is using UTF-8 ... reimplementing Yjs code in Golang with algorithms and optimization and futher scaling might become impossible for small startups.
+4. Rich editing similar to Google Doc is very very complicated subject with lot of landmines
+5. There's ProseMirror editor for collaborative editing. However you might not like its internals compare to Slatejs 

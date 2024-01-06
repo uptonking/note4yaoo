@@ -343,6 +343,7 @@ modified: 2023-02-05T19:03:27.730Z
   - editor包不依赖solid-js
   - Built-in Kanban dashboard for managing content production and delivery; 
   - Versitile API and Extension System for customizing your experience and delivering content to any frontend; 
+  - [Show HN: An open-source, collaborative, WYSIWYG Markdown editor | Hacker News_202306](https://news.ycombinator.com/item?id=36446045)
 
 - alinea /654Star/MIT/202301/ts
   - https://github.com/alineacms/alinea

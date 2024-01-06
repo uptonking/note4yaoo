@@ -8,8 +8,10 @@ modified: 2021-05-14T15:04:15.333Z
 # toc-saas-im-message-forum
 
 # guide
-- forum的核心也是ugc内容，所以和blog功能相似度高
-- 商城app-store类产品的开发和imdb类似，偏向搜索
+
+- tips
+  - forum的核心也是ugc内容，所以和blog功能相似度高
+  - 商城app-store类产品的开发和imdb类似，偏向搜索
 
 - 论坛选型参考
   - 尽量选择开源产品，方便自定义
@@ -17,18 +19,17 @@ modified: 2021-05-14T15:04:15.333Z
     - 开源论坛可直接copy数据库，不存在此问题
     - 付费产品如vanilla forum可导出mysql dump
 
-- [Telegram导出](https://twitter.com/Benbinbin_fun/status/1572137020004401153)
-  - Telegram 很多方面都比微信优胜，单是支持导出数据（包括 chat 和自己创建的 channel）这一点就有足够的优势了
-  - 而且导出的格式可以选择 HTML 或 JSON，HTML 格式方便普通用户直接用浏览器打开查看，而支持导出为 JSON 格式，则考虑到二次开发的便利性，足够良心
-  - 但是之前的无故封号事件还是太伤害我对电报的信任了
-# forum-for-dev
-- slack
-- gitter
-- spectrum
-- discord
-- discourse
-  - http://www.discourse.org/
+- forum-open
+  - spectrum
+  - discord
+  - discourse
 
+- chat-open
+  - slack
+  - mattermost
+  - Zulip
+  - gitter
+# forum-for-dev
 - https://github.com/42wim/matterbridge /202212/go
   - bridge between mattermost, IRC, gitter, xmpp, slack, discord, telegram, rocketchat, twitch, ssh-chat, zulip, whatsapp, keybase, matrix, microsoft teams, nextcloud, mumble, vk and more with REST API
   - Mattermost isn't required to run matterbridge
@@ -188,6 +189,11 @@ modified: 2021-05-14T15:04:15.333Z
   - https://github.com/Qiming-Liu/ThinkMoreForum-Backen d /java
     - Forum backend build with Spring Boot, JWT, Prometheus.
 # forum-non-nodejs
+- https://github.com/LemmyNet/lemmy /AGPLv3/rust
+  - https://join-lemmy.org/
+  - Lemmy is similar to sites like Reddit, Lobste.rs, or Hacker News
+  - anyone can easily run a server, and all these servers are federated (think email), and connected to the same universe, called the Fediverse.
+
 - https://github.com/dakshit050/AskAnything
   - a social discussion platform Developed for college/school students to solve their doubts online
 
@@ -200,10 +206,22 @@ modified: 2021-05-14T15:04:15.333Z
 - https://github.com/carbon-bond/carbonbond
   - 前端：使用 typescript + React
   - 后端：使用 Rust
+# customer-support
+- https://github.com/laudspeaker/laudspeaker /AGPLv3/202401/ts
+  - https://laudspeaker.com/
+  - Open Source Cross Channel Customer Messaging Platform that you can self host. 
+  - alternative to Braze / Iterable / One Signal / Customer Io
+
+- https://github.com/fonoster/fonoster /MIT/202312/ts
+  - https://fonoster.com/
+  - open-source alternative to Twilio
 # im-instant-messaging-chat
-- tailchat /401Star/apache2/202302/ts
+- tailchat /401Star/apache2/202312/ts
   - https://github.com/msgbyte/tailchat
-  - Alternative application of discord and slack. 
+  - https://tailchat.msgbyte.com/
+  - 不仅仅是另一个 Slack, Discord, Rocket. Chat....
+  - 目前现有的 IM 应用都仅仅把目光局限在聊天本身，而 IM 天然作为一个多人协作方式，在我看来应当能够承担更多的职责，将外部的应用以 IM 为转发方式形成自己独特的工作流。
+  - Tailchat 这样的一个从底层设计之初就为了拓展而存在的即时通讯应用。通过 Tailchat 的插件系统，开发者可以很轻松的将喜欢的应用以一种非常自然的方式作为 Tailchat 的一部分
   - 后端依赖@socket.io/admin-ui、ejs、mongoose、moleculer-minio、redlock(redis)、moleculer微服务
   - 前端依赖zustand、antd、ahooks、use-gesture、immer、react-dnd、react-virtuoso
   - 前端微内核架构+后端微服务架构，Tailchat 已经为集群化部署做好了准备。
@@ -213,16 +231,68 @@ modified: 2021-05-14T15:04:15.333Z
     - 插件系统
     - 开放平台
 
-- Linen /1.2kStar/AGPLv3/202302/ts/discord-like
+- Linen /1.2kStar/AGPLv3/202311/ts/discord-like
   - https://github.com/Linen-dev/linen.dev
   - https://www.linen.dev/
   - Linen is a Google-searchable community chat tool. 
   - 依赖headlessui、tanstack-query、nextjs、swr、prisma、express、zod
   - Linen was built as an alternative to closed tools like Slack and Discord.
 
-- https://github.com/laudspeaker/laudspeaker
-  - Open Source Cross Channel Customer Messaging Platform that you can self host. 
-  - alternative to Braze / Iterable / One Signal / Customer Io
+- https://github.com/Privoce/vocechat-web
+  - Private Hosted IM and Social Channels, Easy Integration to Your Site or App
+  - VoceChat is a superlight Rust powered chat App, API and SDK that prioritizes private hosting
+  - 依赖react、redux-toolkit、plate、tui-editor、localforage
+  - [Will the server be open source?](https://github.com/Privoce/vocechat-web/issues/19)
+    - rust写的 会开源 但是还没准备好
+
+- https://github.com/zulip/zulip /apache2/python
+  - https://zulip.com/
+  - open-source team collaboration tool with unique topic-based threading that combines the best of email and chat to make remote work productive and delightful.
+  - Zulip is the only modern team chat app that is designed for both live and asynchronous conversations.
+
+- https://github.com/RocketChat/Rocket.Chat /MIT+EE/ts/meteor
+  - https://rocket.chat/
+  - fully customizable communications platform developed in JavaScript for organizations with high standards of data protection.
+  - We are a MERN based application enabling real-time conversations
+
+- https://github.com/satorijs/satori
+  - The Universal Messenger Protocol
+  - QQ Guild、Feishu、telegram、discord
+
+- https://github.com/juravlevdima/PERN-chat
+  - Chat made with PERN Stack & Socket. IO
+  - React | React Router | Redux Toolkit
+  - Real-time chat using web-sockets
+
+- https://gitlab.com/gitterHQ/webapp /MIT/202302/js/archived/gitlab
+  - https://gitter.im/
+  - a community for software developers. 
+  - This codebase even covers a lot of the mobile and desktop applications which embed a web frame.
+  - [Gitter is open source | Hacker News_201707](https://news.ycombinator.com/item?id=14694283)
+
+- https://github.com/TryQuiet/quiet /GPLv3/clang/cpp/ts
+  - https://www.tryquiet.org/
+  - A private, p2p alternative to Slack and Discord built on Tor & IPFS
+
+- https://github.com/meetfranz/franz /4.4kStar/apachew/202308/js
+  - https://meetfranz.com/
+  - free messaging app for services like WhatsApp, Slack, Messenger and many more
+
+- https://github.com/sdelements/lets-chat /MIT/201708/js/inactive
+  - Self-hosted chat app for small teams
+
+- https://github.com/penghuwan/online-chat-app /201908/js
+  - 一个在线聊天室，实现了登陆注册功能和聊天功能，
+  - 实时通信部分基于Socket.io实现，后端采用Koa框架组织业务逻辑，前端采用React编写，同时用Webpack作为打包工具
+
+## chatbot
+
+- https://github.com/baptisteArno/typebot.io
+  - https://typebot.io/
+  - Typebot is an open-source alternative to Landbot. 
+  - a conversational form builder that you can self-host.
+  - builder依赖slate-react、tanstack-table
+  - It allows you to create conversational apps/forms (Lead qualification, Product launch, User onboarding, Customer support), embed them anywhere on your web/mobile apps, and collect results in real-time.
 
 - koishi /2kStar/MIT/202303/ts
   - https://github.com/koishijs/koishi
@@ -232,38 +302,6 @@ modified: 2021-05-14T15:04:15.333Z
   - 支持 QQ，Telegram，Discord，飞书等主流聊天平台，支持多账户和跨平台数据互通
   - 提供在线插件市场，即使没有任何编程基础，也能轻松在控制台中下载安装插件
   - 依赖satorijs、minato(db-driver)、cordis(aop)
-
-- https://github.com/satorijs/satori
-  - The Universal Messenger Protocol
-  - QQ Guild、Feishu、telegram、discord
-
-- https://github.com/baptisteArno/typebot.io
-  - https://typebot.io/
-  - Typebot is an open-source alternative to Landbot. 
-  - a conversational form builder that you can self-host.
-  - builder依赖slate-react、tanstack-table
-  - It allows you to create conversational apps/forms (Lead qualification, Product launch, User onboarding, Customer support), embed them anywhere on your web/mobile apps, and collect results in real-time.
-
-- https://github.com/juravlevdima/PERN-chat
-  - Chat made with PERN Stack & Socket. IO
-  - React | React Router | Redux Toolkit
-  - Real-time chat using web-sockets
-
-- https://github.com/Privoce/vocechat-web
-  - Private Hosted IM and Social Channels, Easy Integration to Your Site or App
-  - VoceChat is a superlight Rust powered chat App, API and SDK that prioritizes private hosting
-  - 依赖react、redux-toolkit、plate、tui-editor、localforage
-  - [Will the server be open source?](https://github.com/Privoce/vocechat-web/issues/19)
-    - rust写的 会开源 但是还没准备好
-
-- https://github.com/fonoster/fonoster
-  - open-source alternative to Twilio
-
-- https://github.com/penghuwan/online-chat-app
-  - 一个在线聊天室，实现了登陆注册功能和聊天功能，
-  - 实时通信部分基于Socket.io实现，后端采用Koa框架组织业务逻辑，前端采用React编写，同时用Webpack作为打包工具
-
-## chatbot
 
 - https://github.com/mckaywrigley/chatbot-ui
   - https://www.chatbotui.com/

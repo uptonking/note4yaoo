@@ -26,9 +26,9 @@ modified: 2021-07-20T13:50:23.433Z
 - 技术扩展js/py: 支持拖拽的页面编辑器/lowcode，Excel，图表
 - 技术产品: cms, excel
 - 技术可选1: 画板，图形编辑器, pdf
-- 技术可选2: olap，bi，数据库，大数据工程
+- 技术可选2: olap，bi，数据库，大数据系统
 - 技术可选3: vscode，可参考架构 extensions、capabilities
-- 技术可选4: 业务型数据库，如dolt, SirixDB, git-like-db
+- 技术可选4: 侧重版本控制的数据库，如dolt, SirixDB, git-like-db
 - 玩具尝试1: git+crdt+table+branch/version
 
 - 🚀 产品落地
@@ -69,7 +69,7 @@ modified: 2021-07-20T13:50:23.433Z
 - 💎 excel/data-grid
   - editing, group/pivot, multi-views
   - pivotable; collaborative; formulas
-  - 👉🏻 tanstack-table, ag-grid, handsontable, luckysheet/univer, ospreadsheet; nocodb
+  - 👉🏻 tanstack-table, ag-grid, handsontable, luckysheet/univer, ospreadsheet; undb/nocodb
   - stream-updates/server-side-infinite-row-model
   - scripting/themeable/canvas/viztable/apache-arrow
   - ~~excel-like~~/~~headless~~

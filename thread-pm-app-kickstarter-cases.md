@@ -9,6 +9,9 @@ modified: 2023-03-30T13:31:09.049Z
 
 # guide
 
+- resources
+  - [凯凯刘 独立开发变现周刊](https://www.zhihu.com/column/c_98462514)
+    - [让小产品的变现更简单 - ezindie.com](https://www.ezindie.com/)
 # discuss-stars
 - ## 我在前几天发了条帖子说（新人）独立开发选择笔（日）记、记账、Todo主流三件套之一等于加速死亡。
 - https://twitter.com/bestlacklock/status/1689934612737429504

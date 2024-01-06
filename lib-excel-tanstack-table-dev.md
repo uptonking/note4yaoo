@@ -14,6 +14,7 @@ modified: 2022-08-21T10:19:58.756Z
   - framework-agnostic core
   - 支持virtualize
   - 支持常见操作 filter/sort/group/pagination
+  - 提供了header表头相关的数据结构和操作
 
 - cons
   - 编辑功能支持不多，ag-grid也是

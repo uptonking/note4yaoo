@@ -16,6 +16,9 @@ modified: 2023-01-20T00:18:44.282Z
   - lowcode integration
   - 流程自动化
 
+- tips
+  - 不必执着于框架与crdt集成的标准方案，crdt的数据层参考示例有很多，本身与框架无关
+
 - ref
   - https://feathersjs.com/ecosystem/?sort=lastPublish
   - https://github.com/feathersjs/awesome-feathersjs
@@ -59,6 +62,7 @@ modified: 2023-01-20T00:18:44.282Z
   - A FeathersJS standard CRUD adapter wrapping localForage to simplify storage in IndexedDB, and LocalStorage.
   - https://github.com/feathersjs-offline/simple-example
     - An example client and server showcasing FeathersJS offline-first realtime support for own-data and own-net protocols as described in the docs here.
+    - https://github.com/feathersjs-offline/owndata-ownnet /202112/js/inactive
 
 - https://github.com/kalisio/feathers-distributed
   - Distribute your Feathers services as microservices
@@ -177,8 +181,6 @@ modified: 2023-01-20T00:18:44.282Z
 - https://github.com/lwhiteley/feathers-alive-ready
   - a plugin to add health check endpoints to a feathersjs application
 
-
-
 - https://github.com/feathersjs-ecosystem/feathers-reactive
   - Reactive API extensions for Feathers services
   - adds a watch() method to services. The returned object implements all service methods as RxJS v6 observables that automatically update on real-time events.
@@ -203,8 +205,6 @@ modified: 2023-01-20T00:18:44.282Z
 
 - https://github.com/deniapps/nextfeathers
   - nextJS + feathersJS = Perfect Javascript Full-Stack!
-
-
 # more
 - https://github.com/AshotN/adminjs-feathers
   - Adapter for AdminJS to use FeathersJS services
