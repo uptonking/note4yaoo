@@ -8,12 +8,12 @@ modified: 2024-01-04T06:37:06.419Z
 # lib-db-pouch-couch-dev
 
 # guide
+
+# dev
 - [CouchDB Best Practices](https://jo.github.io/couchdb-best-practices/)
   - https://github.com/jo/couchdb-best-practices
   - Apache CouchDB™ is a database that uses JSON for documents, JavaScript for MapReduce indexes, and regular HTTP for its API.
 - pouchdb的同步协议参考 [CouchDB Replication Protocol](https://docs.couchdb.org/en/stable/replication/protocol.html)
-# dev
-
 # changelog-couchdb
 - [Release Notes — Apache CouchDB® Documentation](https://docs.couchdb.org/en/stable/whatsnew/index.html)
 

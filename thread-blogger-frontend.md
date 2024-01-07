@@ -106,6 +106,10 @@ modified: 2021-02-09T19:27:01.319Z
 - 神说要有光
   - 前端/编译器，高德
   - https://www.zhihu.com/people/di-xu-guang-50/pins
+
+- swyx/Shawn Wang
+  - https://www.swyx.io/ideas
+  - https://github.com/swyxio
 # dev-frontend
 - 许两会 react入门教程
   - https://github.com/beforegolive

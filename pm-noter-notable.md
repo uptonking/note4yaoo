@@ -144,6 +144,10 @@ modified: 2023-11-28T14:48:45.910Z
   - 移动本地文件时，自动更新其他文件中引用的链接
   - 图床
 
+- IIIF-spec + anno
+  - 处理comment、高亮
+  - 效果参考mirador
+
 ## search
 
 - search-in-page

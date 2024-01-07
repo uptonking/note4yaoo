@@ -149,6 +149,12 @@ modified: 2021-08-30T18:56:18.632Z
 
 - https://github.com/rqlite/rqlite /go
   - distributed relational database built on SQLite
+  - How is it different than dqlite?
+    - dqlite is library, written in C. rqlite is a standalone application -- it's a full RDBMS (albeit a relatively simple one). rqlite has everything you need to read and write data, and backup, maintain, and monitor the database itself.
+  - How is it different than Litestream?
+    - Litestream adds reliability to a system using SQLite by periodically backing-up the SQLite database to something like AWS S3. If you lose the node running your SQLite database, you must restore it from your backup.
+    - Litestream does this in a very elegant way, and doesn't change how applications interact with SQLite. 
+    - rqlite, in contrast, adds reliability and high-availability via clustering. 
   - [Rqlite: The lightweight, distributed relational database built on SQLite | Hacker News_202101](https://news.ycombinator.com/item?id=25871605)
   - https://github.com/rqlite/rqlite-js
     - promise based client library for rqlite

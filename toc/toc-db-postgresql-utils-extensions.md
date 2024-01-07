@@ -77,6 +77,12 @@ modified: 2023-10-26T15:29:40.053Z
   - OxideDB is a translation layer that works as a MongoDB database server while using PostgreSQL's JSON capabilities as the underlying data store.
   - if your use-case leverages MongoDB as a distributed database, then unfortunately this project might not be for you. At least right now supporting multi-sharding and scale-out deployments is not part of the roadmap.
   - heavily inspired by FerretDB. The main difference is that there is no intention to support any database other than PostgreSQL (FerretDB is also supporting Tigris) and it's written in Rust, as opposed to Go.
+# pref
+- https://github.com/le0pard/pgtune /1.9kStar/MIT/202401/js
+  - https://pgtune.leopard.in.ua/
+  - Tuning PostgreSQL config by your hardware. 
+  - Based on original pgtune. Illustration by Kate.
+  - https://github.com/gregs1104/pgtune /python/inactive
 # devops
 - https://github.com/Vonng/pigsty /202312/python/plpgsql
   - https://pigsty.cc/

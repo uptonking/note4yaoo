@@ -12,9 +12,12 @@ modified: 2023-12-15T16:51:56.101Z
 - pros
   - MIT and features-rich
   - plugin system
+  - 支持audit历史记录表
 
 - cons
   - 与已有数据库集成不方便
+  - 不支持多种第三方登录
+  - 提供的rbac功能需要内置10张表，难以迁移离开
   - It doesn't namespace its admin table
   - 纯前端的plugin不方便直接预览
 

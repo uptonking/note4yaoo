@@ -176,6 +176,12 @@ modified: 2023-03-16T16:29:47.610Z
 - 搜索时能够搜索emoji
 
 - CSS Custom Highlight API
+# comment
+- demo
+  - mirador
+
+- IIIF-spec + anno
+  - 处理comment、高亮
 # collab
 - cursor
   - 鼠标图标支持显示头像或实时视频截图

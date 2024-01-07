@@ -8,7 +8,11 @@ modified: 2023-12-15T17:59:59.688Z
 # lib-db-olap-blog
 
 # guide
-
+- https://github.com/kangkaisen/olap-performance
+  - https://perf.bcmeng.com/
+  - 《OLAP 数据库性能优化指南》
+  - 2025年将是我进入数据库领域的第十年，希望把自己十年内关于性能优化的经验总结分享下
+  - 我和我的团队从零打造了 StarRocks 向量化执行器，CBO 优化器，Pipeline 并发引擎，打造出了一个全球领先的数据库查询引擎，希望把 StarRocks 性能优化的工程经验分享下
 # blogs
 
 ## [Glaredb Storage Format_202309](https://datamonkeysite.com/2023/09/24/glaredb-storage-format/)

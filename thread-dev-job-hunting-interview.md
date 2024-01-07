@@ -1,11 +1,11 @@
 ---
-title: thread-dev-job-hunting
-tags: [job-hunting, thread]
+title: thread-dev-job-hunting-interview
+tags: [interview, job-hunting, thread]
 created: 2023-04-25T17:57:04.669Z
-modified: 2023-04-25T17:57:27.061Z
+modified: 2024-01-07T15:00:50.079Z
 ---
 
-# thread-dev-job-hunting
+# thread-dev-job-hunting-interview
 
 # guide
 
@@ -24,6 +24,26 @@ modified: 2023-04-25T17:57:27.061Z
   - 搞在线文档的一般都是先搞了自己的 IM，可能是不想泄露数据? 更方便和自己的  IM 打通?
 
 - 最近在知乎经常看到类似 node 凉了的帖子，但是之前面 wxg 的时候好像视频直播带货那边 node 服务端用的挺多的。国内太多博客喜欢搞标题党了，deno 出来的时候说 node 💊，bun 出来的时候说 node 💊，tauri 出来的时候说 electron  💊，oxlint 正式发布的时候说 ESLint 💊
+# discuss-boss/hr
+- ## 
+
+- ## 
+
+- ## 
+# discuss-algorithm
+- ## 
+
+- ## 
+
+- ## If you want to become good at solving recursion problems, learn these 6 templates:
+- https://twitter.com/Franc0Fernand0/status/1743912605909918083
+- 1. Iteration
+- 2. Subproblems
+- 3. Selection 
+- 4. Ordering
+- 5. Divide & Conquer
+- 6. Depth First Search
+
 # discuss
 - ## 
 

@@ -87,7 +87,15 @@ modified: 2023-11-10T08:05:19.107Z
 # discuss
 - ## 
 
-- ## 
+- ## For JS runtimes/engines, a lot of performance optimizations look like
+- https://twitter.com/jarredsumner/status/1743982090100908068
+  - if you want to loop over all the properties in an object quickly, first you have to check if it’s an object and then if it’s observable that you can loop over the properties (Proxy trap for getOwnPropertyNames) 
+  - And if it is not observable, maybe you can do a fast path
+  - Is there only indexed properties (numbers)? Looping over an array as a string means converting every property from an integer to a string first. You probably don’t want that. So first you have to check 
+  - The number of edgecases to worry about balloon as you add more specialized optimizations 
+  - I would say runtime I/O APIs have different challenges, more about wiring up system calls together in a developer-friendly way + cross-platform + error handling
+
+- The fun part (security problems and bugs) come from being incorrect in that assumption it isn't observable. Proxy has done this to a lot of things.
 
 - ## when you pay attention to memory usage in javascript (TL; DR: be careful with overusing spread operators)
 - https://twitter.com/vcapretz/status/1737575234247561465

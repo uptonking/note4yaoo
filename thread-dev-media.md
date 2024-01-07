@@ -17,6 +17,13 @@ modified: 2023-04-12T08:40:44.109Z
 
 - [Is plex or stremio better to use : RealDebrid_202307](https://www.reddit.com/r/RealDebrid/comments/14s6phb/is_plex_or_stremio_better_to_use/)
   - Most modern smart TVs have access to plex (some preloaded)
+# discuss-image
+- ## 
+
+- ## Fully client-side OCR and Content Search + Autocomplete for Mirador 3.
+- https://twitter.com/jbaiter_/status/1686452012009799690
+  - Shoutout to the WASM builds of #SQLite (https://github.com/sql-js/sql.js) and #Tesseract (https://github.com/naptha/tesseract.js) that make this possible *and* quite performant.
+
 # discuss
 - ## 
 

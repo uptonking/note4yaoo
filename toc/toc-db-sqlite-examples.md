@@ -81,6 +81,13 @@ modified: 2022-06-03T22:07:49.519Z
   - SQLighter is a database explorer born for SQLite that helps you design and deploy your application database in minutes. 
   - SQLighter is built in Typescript using Next.js with a React frontend and Node backend. 
   - 依赖mui5、nextjs、react-dnd、sql.js、swr、express、knex
+# powered-by-sqlite
+- denokv /320Star/MIT/202312/rust/ts/sqlite
+  - https://github.com/denoland/denokv
+  - https://deno.com/kv
+  - A self-hosted backend for Deno KV, the JavaScript first key-value database
+  - Deno KV can be used with the built-in single instance database in the CLI, useful for testing and development, with a hosted and scalable backend on Deno Deploy, or with this self-hostable Deno KV backend.
+  - built on top of the robust SQLite database, and uses non-blocking IO to ensure excellent performance even in the face of hundreds of concurrent connections.
 # crud-rest-api
 - https://github.com/machelslack/api-with-sqlite
   - node express api using a sqlite in memory database

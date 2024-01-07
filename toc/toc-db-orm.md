@@ -207,16 +207,7 @@ modified: 2021-08-30T18:56:09.644Z
 
 - https://github.com/upper/db /202208/go
   - Data access layer for PostgreSQL, CockroachDB, MySQL, SQLite and MongoDB with ORM-like features
-# json based database
-- SirDB /493Star/AGPLv3/202012/js
-  - https://github.com/c9fe/sirdb
-  - A simple database on the file system.
-  - JSON files organised into subdirectories for each table.
-  - ServeData is a powerful yet simple server for SirDB 
-    - with baked-in schemas, users, groups, permissions, authentication, authorization and payments.
-  - text-based. 
-    - Everything is a JSON file, including the database meta information.
-  - is around 500 lines of code and 6.6Kb gzipped.
+
 # db-non-js
 - https://github.com/pingcap/talent-plan /使用rust实现db
   - https://tidb.net/talent-plan
@@ -337,7 +328,7 @@ modified: 2021-08-30T18:56:09.644Z
   - Historically, libmdbx is a deeply revised and extended descendant of the amazing Lightning Memory-Mapped Database. libmdbx inherits all benefits from LMDB, but resolves some issues and adds a set of improvements.
 
 - https://github.com/hoytech/quadrable /cpp
-  - Quadrable is an authenticated multi-version database that can efficiently sync itself with remote instances. 
+  - an authenticated multi-version database that can efficiently sync itself with remote instances. 
   - It is implemented as a sparse binary merkle tree with compact partial-tree proofs. 
   - Many different versions of the database can exist at the same time. Deriving one version from another doesn't require copying the database. Instead, all of the data that is common between the versions is shared. This copy-on-write behaviour allows very inexpensive database snapshots and checkpoints.
   - applications can synchronise with remote instances. Conflict-handling is flexible, and can work by either cloning one side or by merging the states together (like a CRDT)

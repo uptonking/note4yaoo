@@ -423,6 +423,12 @@ modified: 2023-01-01T13:24:35.994Z
 # code-search
 - https://github.com/bytefish/ElasticsearchCodeSearch /csharp
   - This repository is an Elasticsearch experiment to see how to build a code search engine.
+# vector-db
+- https://github.com/Stevenic/vectra /200Star/MIT/202312/ts
+  - Vectra is a local vector database for Node.js with features similar to Pinecone or Qdrant but built using local files. 
+  - Each Vectra index is a folder on disk. There's an index.json file in the folder that contains all the vectors for the index along with any indexed metadata.
+  - When queryng Vectra you'll be able to use the same subset of Mongo DB query operators that Pinecone supports and the results will be returned sorted by simularity
+  - Keep in mind that your entire Vectra index is loaded into memory
 # more-search
 - https://github.com/algolia/docsearch
   - The easiest way to add search to your documentation

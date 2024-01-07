@@ -15,7 +15,20 @@ modified: 2023-12-15T18:58:15.432Z
 
 - ## 
 
-- ## 
+- ## 🆚️ I recently migrated PPResume's API server from strapi to payload
+- https://twitter.com/xiaohanyu1988/status/1743954693821493676
+  - It is a hard decision and cost me almost a month for the migration. Here's why.
+- Strapi's pain points: 
+  - 1) it does not allow one user to have multiple authentication providers, which is a very almost a deal breaker if you want to allow users to sign in via multiple social providers (googlo/facebook etc).
+  - 2) Strapi's TypeScript is poor, the core modules (services/controllers etc) have a very tiny type annotations and often you need to console.log() in order to see which methods are available if you want to do some customizations.
+  - 3) Strapi's DB migration is still experimental. And the common to initialize a DB is to click via GUI (and GUI will generate some code for you).
+  - 4) Strapi provide a builtin RBAC system, which also has its own pros and cons. The cons here is, it is tightly coupled with strapi, and it by default generate around 10+ tables just for strapi RBAC. If strapi's RBAC don't fit you case, it is very hard to get rid of it.
+- @payloadcms provides: 
+  - 1) very flexible access control (in global/collection/field level), which makes it very easy to plug in your own auth system, 
+  - 2) native TypeScript, DX is fun and easy, 
+  - 3) declarative model and DB migration.
+  - Last but not least, @payloadcms generated only 3 builtin tables, which makes the DB very clean and tidy, while strapi by default generated 20+ tables in your DB, no matter whether you need it or not. 
+
 # discuss-strapi
 - ## 
 
@@ -75,9 +88,7 @@ modified: 2023-12-15T18:58:15.432Z
 - Directus is brilliant. It's just an overlay over your SQL, so you don't need to migrate at all, all you need to do is tell it which fields are relations.
   - And if you ever do decide to move on, you can just delete the tables Directus adds, and your data is pure again.
 
-
 - Strapi uses both SQL and NoSQL databases(NoSQL removed after v4), it's not SQL database-minded, and it's very slow compared to Directus. But on the other hand, it's more simple. Also, there are no field-level permissions, and If you need it, you have to code it. I just mentioned some issues. Of course, Strapi has many, many features and benefits.
-
 
 - 
 - 

@@ -207,6 +207,11 @@ modified: 2023-04-04T22:35:59.255Z
   - Live777 is an SFU server for real-time video streaming for the WHIP/WHEP as first protocol.
   - Live777 media server is used with Gstreamer, FFmpeg, OBS Studio, VLC, WebRTC and other clients to provide the ability to receive and distribute streams, and is a typical publishing (pushing) and subscription (playing) server model.
   - Live777 supports the conversion of audio and video protocols widely used in the Internet, such as RTP to WHIP or WHEP and other protocols.
+
+- https://github.com/slatejack/rc-bullets-ts
+  - https://github.com/zerosoul/rc-bullets
+  - https://zerosoul.github.io/rc-bullets/
+  - 基于CSS3 Animation，使用React构建的弹幕组件
 # more
 - https://github.com/zspecza/common-tags
   - Useful template literal tags for dealing with strings in ES2015+

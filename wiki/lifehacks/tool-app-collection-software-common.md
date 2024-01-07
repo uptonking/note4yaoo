@@ -157,6 +157,9 @@ modified: 2022-11-07T10:26:22.510Z
 # calendar
 - https://github.com/lwlsw/Chinese-Lunar-Calendar-ics
   - 现成的中国农历ics文件 2015-2100
+
+- https://github.com/lanceliao/china-holiday-calender
+  - 中国节假日、调休、补班日历，ICS格式，可供IPhone、Google Calendar、Outlook等客户端订阅，包含节假日API
 # toolkit
 - browser
   - chrome

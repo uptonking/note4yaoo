@@ -17,6 +17,7 @@ modified: 2023-12-01T09:08:18.316Z
 
 - resources
   - https://github.com/pubkey/client-side-databases
+  - [Alternatives - ElectricSQL](https://electric-sql.com/docs/reference/alternatives)
   - [In Search of a Local-First Database | Jared Forsyth.com_202004](https://jaredforsyth.com/posts/in-search-of-a-local-first-database/)
 # discuss-stars
 - ## 
@@ -36,7 +37,13 @@ modified: 2023-12-01T09:08:18.316Z
 
 - ## 
 
-- ## 
+- ## [What is the best DB for offline-first? : reactnative_202309](https://www.reddit.com/r/reactnative/comments/16f42gz/what_is_the_best_db_for_offlinefirst/)
+- Realm is open sourced? My understanding it was closed and to use it you need to pay for MongoDB. Is this not the case?
+  - Yeah, both are open source, mongo and realm SDKs. What you pay for is the hosting service, MongoDB Atlas.
+
+- I use realm, its convenient but I encountered a couple of issues:
+  - It does not have cascading delete unless you use embedded objects
+  - The change listeners have a limitation. Lets say you have a deeply nested object and you add a listener to it. It can only detect a change upto 3rd level of nesting if I recall correctly. I had upto 6 levels and it didn't work. You can however, use workarounds for it. So if you don't have deeply nested objects and don't need cascading delete, realm is a good option
 
 - ## with local-first your front end code is interfacing with the DB. The sync layer handles permissions.
 - https://twitter.com/tantaman/status/1743309463837102188

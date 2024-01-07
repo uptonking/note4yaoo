@@ -11,7 +11,7 @@ modified: 2022-11-25T15:50:48.226Z
 
 - db-features
   - sync/collab/local-first
-  - 最好支持切换存储层
+  - storage-adapter: 支持切换存储层
   - db for excel
   - db for markdown
 
@@ -37,18 +37,6 @@ modified: 2022-11-25T15:50:48.226Z
     - a Postgres SQL syntax parser. 基于nearley、moo实现
     - This parser does not support (yet) PL/pgSQL.
 
-- skdb /61Star/NonCommercial/202306/ts/wasm/似乎未开源
-  - https://github.com/SkipLabs/skdb
-  - The SQL database that tells you when your query results changed
-  - SKDB is a general-purpose SQL database that lets you subscribe to changes to your queries. 
-  - Through a new construction called "virtual views", you can ask the database to keep a particular view up-to-date at all times
-  - SKDB can also process ephemeral streams of data which can be used to receive alerts or to compute real-time analytics.
-  - SKDB is inspired by SQLite and supports the same subset of SQL (including transactions). 
-  - What sets it apart is that it is also highly concurrent. 
-    - SKDB supports processing complex queries from multiple simultaneous readers/writers without stalling other database users.
-  - https://github.com/SkipLabs/skdb_minimal
-    - minimal example using skdb in a browser
-
 - supabase /41.1kStar/apache2/202211/ts
   - https://github.com/supabase/supabase
   - https://supabase.com/
@@ -70,7 +58,84 @@ modified: 2022-11-25T15:50:48.226Z
     - it is a CouchDB-style abstraction layer over other databases. By default, 
     - PouchDB ships with the IndexedDB adapter for the browser, and a LevelDB adapter in Node.js.
 
-- acebase /279Star/MIT/202212/ts
+- rxdb /17.6kStar/Apache2/202206/ts
+  - https://github.com/pubkey/rxdb
+  - https://rxdb.info/
+  - 依赖rxjs7
+  - A fast, offline-first, reactive database for JavaScript Applications
+  - 未实现Full Text Search，但第三方支持
+  - a NoSQL-database for JavaScript Applications like Websites, hybrid Apps, Electron-Apps and NodeJs. 
+  - 👉🏻 RxDB is not a self contained database. 
+    - It is a wrapper around another database that implements the `RxStorage` interface. 
+    - At the moment you can either use `PouchDB` or `Dexie.js` or `LokiJS` as underlaying storage. 
+    - Each of them respectively has it's own adapters that can be swapped out, depending on your needs. 
+    - For example you can use and IndexedDB based storage in the browser, and an SQLite storage in your hybrid app
+  - [Add RxDB CRDT Plugin_202210](https://github.com/pubkey/rxdb/pull/4087)
+  - [crdt plugin](https://github.com/pubkey/rxdb/blob/master/docs-src/crdt.md)
+    - with crdt, all document writes are represented as CRDT operations in plain JSON. 
+    - The CRDT **operations are stored together with the document** and each time a conflict arises, the CRDT conflict handler will automatically merge the operations in a deterministic way.
+  - [backlog should be implemented in the future](https://github.com/pubkey/rxdb/blob/master/orga/BACKLOG.md)
+
+- nedb /13.1kStar/MIT/201602/js
+  - https://github.com/louischatriot/nedb
+  - Embedded persistent or in memory database for Node.js, nw.js, Electron and browsers, 100% JavaScript, no binary dependency. 
+  - API is a subset of MongoDB's and it's plenty fast.
+    - One datastore is the equivalent of a MongoDB collection
+  - A copy of the whole database is kept in memory. This is not much on the expected kind of datasets (20MB for 10, 000 2KB documents).
+  - You can use NeDB as an in-memory only datastore or as a persistent datastore. 
+
+- WatermelonDB /9.6kStar/MIT/202310/js+flow
+  - https://github.com/Nozbe/WatermelonDB
+  - https://nozbe.github.io/WatermelonDB/
+  - Reactive & asynchronous database for powerful React and React Native apps
+  - 依赖sqlite、simdjson、lokijs、rxjs7
+  - Relational. Built on rock-solid SQLite foundation
+  - Framework-agnostic. Use JS API to plug into other UI frameworks
+  - Reactive. (Optional) RxJS API
+  - Lazy: Nothing is loaded until it's requested. 
+    - And since all querying is performed directly on the rock-solid SQLite database on a separate native thread, most queries resolve in an instant.
+    - But unlike using SQLite directly, Watermelon is fully observable.
+  - [Disable 'rxjs' dependency_202204](https://github.com/Nozbe/WatermelonDB/issues/1301)
+    - rxjs is used by WatermelonDB internals in some places, hence this is not possible to remove it
+  - [[Question] More details on offline first?_202207](https://github.com/Nozbe/WatermelonDB/issues/1351)
+  - [WatermelonDB, a database for React and React Native apps | Hacker News_201809](https://news.ycombinator.com/item?id=17950992)
+  - [Adapters - WatermelonDB documentation](https://nozbe.github.io/WatermelonDB/Implementation/Adapters.html)
+    - The idea for the Watermelon architecture is to be database-agnostic.
+    - Collection/Model/Query is the reactive layer
+    - DatabaseAdapter is the imperative layer
+    - SQLiteAdapter is an adapter for React Native, based on SQLite
+    - LokiJSAdapter is an adapter for the web, based around LokiJS
+  - [Sync - WatermelonDB documentation](https://nozbe.github.io/WatermelonDB/Advanced/Sync.html)
+    - Note that Watermelon is only a local database — you need to bring your own backend.
+    - You can build your own custom sync engine using synchronization primitives
+    - You can use the sync engine(built-in sync adapter) Watermelon provides out of the box, and you only need to provide two API endpoints on your backend that conform to Watermelon sync protocol
+    - `synchronize(dbName, pullChanges, pushChanges)` 在客户端调用
+    - "Turbo Login" syncing can only be used for the initial (login) sync, not for incremental syncs.
+    - WatermelonDB has been designed with the assumption that there is no difference between Local IDs (IDs of records and their relations in a WatermelonDB database) and Remote IDs (IDs on the backend server). 
+    - So a local app can create new records, generating their IDs, and the backend server will use this ID as the true ID.
+    - sync could only send changed fields and server could automatically always just apply those changed fields to the server version (since that's what per-column client-wins resolver will do anyway)
+  - [Sync implementation - WatermelonDB documentation](https://nozbe.github.io/WatermelonDB/Implementation/SyncImpl.html)
+    - master/replica - server is the source of truth, client has a full copy and syncs back to server (no peer-to-peer syncs)
+    - 👉🏻 two phase sync: first pull remote changes to local app, then push local changes to server
+    - client resolves conflicts
+    - content-based, not time-based conflict resolution
+    - eventual consistency (client and server are consistent at the moment of successful pull if no local changes need to be pushed)
+    - conflicts are resolved using per-column client-wins strategy: in conflict, server version is taken except for any column that was changed locally since last sync.
+    - sync is performed for the entire database at once, not per-collection
+    - non-blocking: local database writes (but not reads) are only momentarily locked when writing data but user can safely make new changes throughout the process
+
+- warehouse /188Star/MIT/202309/ts/hexo
+  - https://github.com/hexojs/warehouse
+  - https://hexojs.github.io/warehouse/
+  - A JSON database with Models, Schemas, and a flexible querying interface.
+  - It powers the wildly successful static site generator Hexo.
+  - 依赖jsonparse、bluebird、graceful-fs
+  - the major performance overhead of Hexo is not reading or writing db.json, but processing the cross-refs, e.g. finding posts with a tag or tags of a post.
+  - [Why does hexo use this database implementation?](https://github.com/hexojs/warehouse/issues/13)
+    - One idea I can think of is that you can index all the assets and get access to it for use synchronously
+    - nedb doesn't have schemas
+
+- acebase /279Star/MIT/202310/ts
   - https://github.com/appy-one/acebase
   - A fast, low memory, transactional, index & query enabled NoSQL database engine and server for node.js and browser with realtime data change notifications.
   - 👉🏻 Inspired by (and largely compatible with) the Firebase realtime database, with additional functionality and less data sharding/duplication.
@@ -91,6 +156,49 @@ modified: 2022-11-25T15:50:48.226Z
     - 依赖socket.io、express
   - https://github.com/appy-one/acebase-client
     - 依赖socket.io
+- https://github.com/paradis-A/lendb-server /MIT/202202/ts/inactive
+  - a wrapper around another database called Acebase that acts like a client. 
+  - Think of Parse-server and Acebase have baby. Hello world!.
+  - LenDB Server is a real-time database alternative to Firebase but instead of listening and receive the updated row/node, Stored objects in LenDB Server upon changes it auto propagates the changes on your live data. 
+  - With LenDB Browser Client, LenDB is designed for reactive front-end frameworks like Svelte. etc.
+  - https://github.com/paradis-A/lendb-client
+
+- LokiJS /6.3kStar/MIT/202203/js/inactive
+  - https://github.com/techfort/LokiJS
+  - javascript embeddable/in-memory database
+  - The super fast in-memory javascript document oriented database.
+  - Its purpose is to store javascript objects as documents in a nosql fashion and retrieve them with a similar mechanism. 
+  - Runs in node (including cordova/phonegap and node-webkit), nativescript and the browser.
+  - [LokiJS – Lightweight JavaScript in-memory database | Hacker News_201411](https://news.ycombinator.com/item?id=8557386)
+- https://github.com/LokiJS-Forge/LokiDB /202008/ts/inactive
+  - a document oriented feature-rich in-memory database written in TypeScript
+  - LokiDB is the official successor of LokiJS.
+  - 完全自己实现了 full-text-search
+  - [How is LokiDB the official successor of LokiJS?](https://github.com/LokiJS-Forge/LokiDB/issues/190)
+    - I tried my best converting it to TypeScript and improving it.
+    - But I don't really use LokiDB (web technology in general) very much
+
+- lovefield /6.8kStar/Apache2/202005/js/inactive
+  - https://github.com/google/lovefield
+  - Lovefield is a relational database for web apps.
+  - Written in JavaScript, works cross-browser. 
+  - 👉🏻 Provides SQL-like APIs that are fast, safe, and easy to use.
+  - 不支持原版SQL，支持`todoDb.select().from(item).where(item.done.eq(false)).exec();` 类SQL方法
+  - Lovefield uses a plug-in architecture for data stores. All data stores implement `lf.BackStore` interface so that query engine can be decoupled from actual storage technology.
+  - [Lovefield wraps IndexedDB objects in different classes](https://github.com/google/lovefield/blob/master/docs/dd/02_data_store.md)
+  - [Is lovefield good for big data storage of 3GB or so?_201611](https://groups.google.com/g/lovefield-users/c/ky60q5DCrs4)
+    - Unfortunately no. Lovefield currently has a (significant) limitation that all data is kept in an in-memory cache. 
+    - You could instead only store metadata about your blobs/arraybuffers in Lovefield, and place the actual files in some other persistent storage. This approach has already been used by some Lovefield clients
+- https://github.com/arthurhsu/lovefield-ts
+  - [ブラウザで動くSQLite alternativesとしてのLovefield - console.lealog(); ](https://lealog.hateblo.jp/entry/2023/03/03/092649)
+  - Lovefield Typescript port and modernization.
+  - All namespaces are flattened
+  - no Static schema: it was designed for use with Closure compiler.
+- https://github.com/ReactiveDB/core /MIT/ts
+  - 一个 Reactive 风格的前端 ORM。基于 Lovefield 与 RxJS。
+  - https://github.com/teambition/ReactiveDB /201707/ts/inactive
+    - Reactive ORM for Lovefield
+    - 一个 Reactive 风格的前端 ORM。基于 Lovefield 与 RxJS
 
 - Nano-SQL /773Star/MIT/201911/ts/inactive/未实现同步
   - https://github.com/only-cliches/Nano-SQL
@@ -144,6 +252,18 @@ modified: 2022-11-25T15:50:48.226Z
   - https://github.com/realm/realm-core /202212/cpp
     - Core database component for the Realm Mobile Database SDKs
 
+- skdb /61Star/NonCommercial/202306/ts/wasm/似乎未开源
+  - https://github.com/SkipLabs/skdb
+  - The SQL database that tells you when your query results changed
+  - SKDB is a general-purpose SQL database that lets you subscribe to changes to your queries. 
+  - Through a new construction called "virtual views", you can ask the database to keep a particular view up-to-date at all times
+  - SKDB can also process ephemeral streams of data which can be used to receive alerts or to compute real-time analytics.
+  - SKDB is inspired by SQLite and supports the same subset of SQL (including transactions). 
+  - What sets it apart is that it is also highly concurrent. 
+    - SKDB supports processing complex queries from multiple simultaneous readers/writers without stalling other database users.
+  - https://github.com/SkipLabs/skdb_minimal
+    - minimal example using skdb in a browser
+
 - blinkdb /59Star/MIT/202211/ts
   - https://github.com/blinkdb-js/blinkdb
   - https://blinkdb.io/
@@ -151,32 +271,6 @@ modified: 2022-11-25T15:50:48.226Z
   - An in-memory JS database optimized for large scale storage on the frontend.
   - Filter, sort, and implement pagination directly within BlinkDB.
   - It uses the same techniques & data structures as existing databases in order to speed up the retrieval of items, resulting in incredible performance
-
-- rxdb /17.6kStar/Apache2/202206/ts
-  - https://github.com/pubkey/rxdb
-  - https://rxdb.info/
-  - 依赖rxjs7
-  - A fast, offline-first, reactive database for JavaScript Applications
-  - 未实现Full Text Search，但第三方支持
-  - a NoSQL-database for JavaScript Applications like Websites, hybrid Apps, Electron-Apps and NodeJs. 
-  - 👉🏻 RxDB is not a self contained database. 
-    - It is a wrapper around another database that implements the `RxStorage` interface. 
-    - At the moment you can either use `PouchDB` or `Dexie.js` or `LokiJS` as underlaying storage. 
-    - Each of them respectively has it's own adapters that can be swapped out, depending on your needs. 
-    - For example you can use and IndexedDB based storage in the browser, and an SQLite storage in your hybrid app
-  - [Add RxDB CRDT Plugin_202210](https://github.com/pubkey/rxdb/pull/4087)
-  - [crdt plugin](https://github.com/pubkey/rxdb/blob/master/docs-src/crdt.md)
-    - with crdt, all document writes are represented as CRDT operations in plain JSON. 
-    - The CRDT **operations are stored together with the document** and each time a conflict arises, the CRDT conflict handler will automatically merge the operations in a deterministic way.
-  - [backlog should be implemented in the future](https://github.com/pubkey/rxdb/blob/master/orga/BACKLOG.md)
-
-- nedb /13.1kStar/MIT/201602/js
-  - https://github.com/louischatriot/nedb
-  - Embedded persistent or in memory database for Node.js, nw.js, Electron and browsers, 100% JavaScript, no binary dependency. 
-  - API is a subset of MongoDB's and it's plenty fast.
-    - One datastore is the equivalent of a MongoDB collection
-  - A copy of the whole database is kept in memory. This is not much on the expected kind of datasets (20MB for 10, 000 2KB documents).
-  - You can use NeDB as an in-memory only datastore or as a persistent datastore. 
 
 - alasql /6kStar/MIT/202211/js/bi
   - https://github.com/AlaSQL/alasql
@@ -195,85 +289,7 @@ modified: 2022-11-25T15:50:48.226Z
   - WIP: Satya is a distributed database using Apache Arrow as a Storage format and aims to support both OTLP(transaction processing) and OLAP(analytical processing) workloads. 
   - 依赖 duckdb-wasm、apache-arrow
 
-- WatermelonDB /9.6kStar/MIT/202310/js+flow
-  - https://github.com/Nozbe/WatermelonDB
-  - https://nozbe.github.io/WatermelonDB/
-  - Reactive & asynchronous database for powerful React and React Native apps
-  - 依赖sqlite、simdjson、lokijs、rxjs7
-  - Relational. Built on rock-solid SQLite foundation
-  - Framework-agnostic. Use JS API to plug into other UI frameworks
-  - Reactive. (Optional) RxJS API
-  - Lazy: Nothing is loaded until it's requested. 
-    - And since all querying is performed directly on the rock-solid SQLite database on a separate native thread, most queries resolve in an instant.
-    - But unlike using SQLite directly, Watermelon is fully observable.
-  - [Disable 'rxjs' dependency_202204](https://github.com/Nozbe/WatermelonDB/issues/1301)
-    - rxjs is used by WatermelonDB internals in some places, hence this is not possible to remove it
-  - [[Question] More details on offline first?_202207](https://github.com/Nozbe/WatermelonDB/issues/1351)
-  - [WatermelonDB, a database for React and React Native apps | Hacker News_201809](https://news.ycombinator.com/item?id=17950992)
-  - [Adapters - WatermelonDB documentation](https://nozbe.github.io/WatermelonDB/Implementation/Adapters.html)
-    - The idea for the Watermelon architecture is to be database-agnostic.
-    - Collection/Model/Query is the reactive layer
-    - DatabaseAdapter is the imperative layer
-    - SQLiteAdapter is an adapter for React Native, based on SQLite
-    - LokiJSAdapter is an adapter for the web, based around LokiJS
-  - [Sync - WatermelonDB documentation](https://nozbe.github.io/WatermelonDB/Advanced/Sync.html)
-    - Note that Watermelon is only a local database — you need to bring your own backend.
-    - You can build your own custom sync engine using synchronization primitives
-    - You can use the sync engine(built-in sync adapter) Watermelon provides out of the box, and you only need to provide two API endpoints on your backend that conform to Watermelon sync protocol
-    - `synchronize(dbName, pullChanges, pushChanges)` 在客户端调用
-    - "Turbo Login" syncing can only be used for the initial (login) sync, not for incremental syncs.
-    - WatermelonDB has been designed with the assumption that there is no difference between Local IDs (IDs of records and their relations in a WatermelonDB database) and Remote IDs (IDs on the backend server). 
-    - So a local app can create new records, generating their IDs, and the backend server will use this ID as the true ID.
-    - sync could only send changed fields and server could automatically always just apply those changed fields to the server version (since that's what per-column client-wins resolver will do anyway)
-  - [Sync implementation - WatermelonDB documentation](https://nozbe.github.io/WatermelonDB/Implementation/SyncImpl.html)
-    - master/replica - server is the source of truth, client has a full copy and syncs back to server (no peer-to-peer syncs)
-    - 👉🏻 two phase sync: first pull remote changes to local app, then push local changes to server
-    - client resolves conflicts
-    - content-based, not time-based conflict resolution
-    - eventual consistency (client and server are consistent at the moment of successful pull if no local changes need to be pushed)
-    - conflicts are resolved using per-column client-wins strategy: in conflict, server version is taken except for any column that was changed locally since last sync.
-    - sync is performed for the entire database at once, not per-collection
-    - non-blocking: local database writes (but not reads) are only momentarily locked when writing data but user can safely make new changes throughout the process
-
-- LokiJS /6.3kStar/MIT/202203/js/inactive
-  - https://github.com/techfort/LokiJS
-  - javascript embeddable/in-memory database
-  - The super fast in-memory javascript document oriented database.
-  - Its purpose is to store javascript objects as documents in a nosql fashion and retrieve them with a similar mechanism. 
-  - Runs in node (including cordova/phonegap and node-webkit), nativescript and the browser.
-  - [LokiJS – Lightweight JavaScript in-memory database | Hacker News_201411](https://news.ycombinator.com/item?id=8557386)
-- https://github.com/LokiJS-Forge/LokiDB /202008/ts/inactive
-  - a document oriented feature-rich in-memory database written in TypeScript
-  - LokiDB is the official successor of LokiJS.
-  - 完全自己实现了 full-text-search
-  - [How is LokiDB the official successor of LokiJS?](https://github.com/LokiJS-Forge/LokiDB/issues/190)
-    - I tried my best converting it to TypeScript and improving it.
-    - But I don't really use LokiDB (web technology in general) very much. 
-
-- lovefield /6.8kStar/Apache2/202005/js/inactive
-  - https://github.com/google/lovefield
-  - Lovefield is a relational database for web apps.
-  - Written in JavaScript, works cross-browser. 
-  - 👉🏻 Provides SQL-like APIs that are fast, safe, and easy to use.
-  - 不支持原版SQL，支持`todoDb.select().from(item).where(item.done.eq(false)).exec();` 类SQL方法
-  - Lovefield uses a plug-in architecture for data stores. All data stores implement `lf.BackStore` interface so that query engine can be decoupled from actual storage technology.
-  - [Lovefield wraps IndexedDB objects in different classes](https://github.com/google/lovefield/blob/master/docs/dd/02_data_store.md)
-  - [Is lovefield good for big data storage of 3GB or so?_201611](https://groups.google.com/g/lovefield-users/c/ky60q5DCrs4)
-    - Unfortunately no. Lovefield currently has a (significant) limitation that all data is kept in an in-memory cache. 
-    - You could instead only store metadata about your blobs/arraybuffers in Lovefield, and place the actual files in some other persistent storage. This approach has already been used by some Lovefield clients
-
-- https://github.com/arthurhsu/lovefield-ts
-  - [ブラウザで動くSQLite alternativesとしてのLovefield - console.lealog(); ](https://lealog.hateblo.jp/entry/2023/03/03/092649)
-  - Lovefield Typescript port and modernization.
-  - All namespaces are flattened
-  - no Static schema: it was designed for use with Closure compiler.
-- https://github.com/ReactiveDB/core /MIT/ts
-  - 一个 Reactive 风格的前端 ORM。基于 Lovefield 与 RxJS。
-  - https://github.com/teambition/ReactiveDB /201707/ts/inactive
-    - Reactive ORM for Lovefield
-    - 一个 Reactive 风格的前端 ORM。基于 Lovefield 与 RxJS
-
-- https://github.com/robtweed/glsdb /202209/js
+- https://github.com/robtweed/glsdb /202401/js
   - Global Storage Database Abstraction for Node.js
   - glsdb is a Node.js/JavaScript abstraction of Global Storage Databases. 
   - With glsdb, a Global Storage Database is abstracted as JavaScript Objects that represent database nodes and provide properties and methods for accessing and navigating between database nodes.
@@ -318,13 +334,13 @@ modified: 2022-11-25T15:50:48.226Z
     - However, instead of being the source of truth, these **tables are generated (or materialized) from the log data**, providing a view of the log data in a new or optimized context. 
     - These are called materialized views.
 
-- https://github.com/lideming/btrdb /ts
+- https://github.com/lideming/btrdb /MIT/202302/ts/inactive
   - a NoSQL database engine with B-tree Copy-on-Write mechanism inspired by btrfs.
   - https://github.com/lideming/btrdb/tree/main/btrdbfs
     - btrdbfs is a project to run filesystem on btrdb using FUSE.
     - btrdbfs implements FUSE filesystem using Node.js with the binding fuse-native.
 
-- https://github.com/mikeal/CADB /js/inactive
+- https://github.com/mikeal/CADB /202011/js/inactive
   - Experimental single file content addressed database.
   - "Content address" means that data is keyed by a hash digest.
   - CADB is a single file database for storing content addressed block data. 
@@ -369,15 +385,6 @@ modified: 2022-11-25T15:50:48.226Z
   - used-by
     - json-server
 
-- https://github.com/hexojs/warehouse /188Star/MIT/202309/ts/hexo
-  - https://hexojs.github.io/warehouse/
-  - A JSON database with Models, Schemas, and a flexible querying interface. 
-  - It powers the wildly successful static site generator Hexo.
-  - the major performance overhead of Hexo is not reading or writing db.json, but processing the cross-refs, e.g. finding posts with a tag or tags of a post.
-  - [Why does hexo use this database implementation?](https://github.com/hexojs/warehouse/issues/13)
-    - One idea I can think of is that you can index all the assets and get access to it for use synchronously
-    - nedb doesn't have schemas
-
 - https://github.com/sius/fakerdb /202005/js
   - Generate an unlimited stream of JSON schema instances using json-schema-faker, faker, chance and insert the data into a supported database, e.g.: nedb, mongodb, postgres, mssql.
 
@@ -392,6 +399,16 @@ modified: 2022-11-25T15:50:48.226Z
 
 - https://github.com/fwd/database /202210/js
   - SQL-like JSON Database
+
+- SirDB /493Star/AGPLv3/202012/js
+  - https://github.com/c9fe/sirdb
+  - A simple database on the file system.
+  - JSON files organised into subdirectories for each table.
+  - ServeData is a powerful yet simple server for SirDB 
+    - with baked-in schemas, users, groups, permissions, authentication, authorization and payments.
+  - text-based. 
+    - Everything is a JSON file, including the database meta information.
+  - is around 500 lines of code and 6.6Kb gzipped.
 
 - https://github.com/Belphemur/node-json-db
   - A simple "database" that use JSON file for NodeJS
@@ -422,7 +439,7 @@ modified: 2022-11-25T15:50:48.226Z
   - originally as a fork of OrbitDB
   - It’s built on top of Libp2p (and works with IPFS) supporting encryption, sharding and discoverability (searching).
   - Permissioned content based sharding
-- https://github.com/dappkit/aviondb
+- https://github.com/dappkit/aviondb /MIT/202010/ts
   - A Distributed, MongoDB-like Database
   - AvionDB uses OrbitDB stores to model MongoDB-like Databases.
 - https://github.com/cypsela/sailplane-web /js
@@ -449,7 +466,8 @@ modified: 2022-11-25T15:50:48.226Z
   - [Assassin - An open source, free database for killing slow webpages - DEV Community](https://dev.to/ender_minyard/assassin-an-open-source-free-database-for-killing-slow-webpages-3fip)
 
 - https://github.com/mafintosh/hyperdb /201808/js
-  - Distributed scalable database.
+  - Distributed scalable database. a scalable peer-to-peer key-value database.
+  - A HyperDB is fundamentally a set of hypercores
 - https://github.com/beakerbrowser/webdb /201807/js
   - A database that reads and writes records on dat:// websites.
 
@@ -490,7 +508,7 @@ modified: 2022-11-25T15:50:48.226Z
   - I will not be doing a SQL database, instead, I will follow his steps but try to create a document database, like MongoDB
   - [LearnDB: Learn how to build a database | Hacker News_201811](https://news.ycombinator.com/item?id=18557260)
 
-- https://github.com/weinberg/SQLToy /js/sql-db/NoDeps
+- https://github.com/weinberg/SQLToy /202112/js/sql-db/NoDeps
   - https://github.com/weinberg/SQLToy/wiki
   - SQLToy is an in-memory SQL database written in Javascript. 
   - It is under 500 lines of code and has zero dependencies.
@@ -499,7 +517,6 @@ modified: 2022-11-25T15:50:48.226Z
 - https://github.com/codemix/ts-sql /ts/inactive
   - a SQL database implemented purely in TypeScript type annotations.
   - [Show HN: A SQL database implemented purely in TypeScript type annotations | Hacker News_202009](https://news.ycombinator.com/item?id=24615185)
-
+# more-db-js
 - https://github.com/leoafarias/neardb /ts/inactive
   - Simple document db made for infinitely scalable globally distributed reads.
-# more-db-js

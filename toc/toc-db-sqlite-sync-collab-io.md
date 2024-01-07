@@ -78,10 +78,13 @@ modified: 2022-11-04T14:21:31.365Z
 - https://github.com/tantaman/Strut
   - collaborative editing and offline support, powered by vlcn.io
 
-- https://github.com/mycelial/mycelite /rust
+- https://github.com/mycelial/mycelite /apache2/202309/rust
   - https://mycelial.com/
-  - Mycelite is a SQLite extension that allows you to synchronize changes from one instance of SQLite to another
+  - a SQLite extension that allows you to synchronize changes from one instance of SQLite to another
+  - Mycelite is a VFS extension, which acts as a proxy for the OS filesystem.
   - Currently, it only supports one-way synchronization, but eventually, it will support two-way synchronization.
+  - Currently, WAL-enabled databases are not supported.
+
 # etl/export/import
 - https://github.com/fitnr/sqlite-json /js
   - Convert Sqlite3 tables to JSON

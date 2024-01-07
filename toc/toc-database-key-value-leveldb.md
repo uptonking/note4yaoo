@@ -17,6 +17,13 @@ modified: 2022-11-03T04:14:00.563Z
   - https://github.com/Level/awesome
   - [LSM-Tree 论文的中文翻译](https://github.com/tangwz/LSM-Tree-CN/blob/main/LSM-Tree-CN.md)
 # db-key-value
+- denokv /320Star/MIT/202312/rust/ts/sqlite
+  - https://github.com/denoland/denokv
+  - https://deno.com/kv
+  - A self-hosted backend for Deno KV, the JavaScript first key-value database
+  - Deno KV can be used with the built-in single instance database in the CLI, useful for testing and development, with a hosted and scalable backend on Deno Deploy, or with this self-hostable Deno KV backend.
+  - built on top of the robust SQLite database, and uses non-blocking IO to ensure excellent performance even in the face of hundreds of concurrent connections.
+
 - snap-db /58Star/MIT/202001/ts/NoDeps/Nano-SQL
   - https://github.com/only-cliches/snap-db
   - Simple & Robust LSM Powered Javascript key-value store

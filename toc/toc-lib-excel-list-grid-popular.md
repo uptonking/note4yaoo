@@ -555,6 +555,20 @@ modified: 2022-08-21T10:02:27.788Z
   - S2是多维交叉分析领域的表格解决方案，数据驱动视图，提供底层核心库、基础组件库、业务场景库
   - 依赖 @antv/g-canvas、g-gesture、d3-interpolate
 
+- https://github.com/VisActor/VTable /MIT/202401/ts
+  - https://visactor.io/vtable
+  - VTable is not just a high-performance multidimensional data analysis table, but also a grid artist that creates art between rows and columns
+  - based on visual rendering engine VRender.
+  - Provides flexible and powerful graphic capabilities, seamlessly integrating with charts of VChart.
+  - [VTable: 免费，开源，基于Canvas 的 百万数据秒级渲染前端表格组件库 - 知乎_202310](https://zhuanlan.zhihu.com/p/660261038)
+  - https://github.com/VisActor/VRender
+    - Rich in features: customizable animations, element composition, narrative arrangement, suitable for various visualization scenarios
+    - provides a plugin system for unrestricted expansion.
+    - seamless transition between 2D/3D effects with the same configuration.
+  - https://github.com/VisActor/VChart
+    - cross-platform charting library, but also an expressive data storyteller.
+    - It wraps the charting logic based on visual grammar library VGrammar and the component encapsulation based on visual rendering engine VRender
+
 - https://github.com/UgnisSoftware/react-spreadsheet-import /ts
   - https://ugnissoftware.github.io/react-spreadsheet-import
   - Import flow for Excel (.xlsx) and CSV file with automated column matching and validation.

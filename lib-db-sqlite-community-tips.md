@@ -40,9 +40,14 @@ modified: 2023-10-28T13:38:46.522Z
 - 
 
 - ## [I'm all-in on server-side SQLite | Hacker News_202205](https://news.ycombinator.com/item?id=31318708)
-- 
-- 
-- 
+- 🆚️ In which scenario would you use litestream vs rqlite?
+- rqlite author here. The way I think about it is that both systems add reliability to SQLite, but in addition rqlite also offers high-availability.
+  - Another important difference is that Litestream does not require you to change how your application interacts with the SQLite database, but rqlite does.
+  - It's important to understand that rqlite's goal is not to replicate SQLite per-se. Its primary goal is to be the world's "easiest to operate, highly-available, distributed relational database". It's trivial to deploy, and very simple to run. As part of meeting that goal of simplicity it uses SQLite as its database engine.
+- Litestream author here. I agree with Philip. Litestream relaxes some guarantees about durability and availability in order to make it simpler from an operational perspective. 
+  - I would say the the two projects generally don't have overlap in the applications they would be used for. 
+  - If your application is ok with the relaxed guarantees of Litestream, it's probably what you want. 
+  - If you need stronger guarantees, then use rqlite.
 
 # discuss-sqlite-rust
 - ## 

@@ -14,7 +14,9 @@ modified: 2023-10-08T10:54:57.575Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## [Transactions + Nested Subdocuments - Yjs Community_202301](https://discuss.yjs.dev/t/transactions-nested-subdocuments/1602)
+- RxDB is an offline-first database that does not support transactions and instead offers revisions and conflict handling. Not sure if the points made there also apply to YJS, at least in a general sense.
+
 # discuss-sync/collab
 - ## 
 

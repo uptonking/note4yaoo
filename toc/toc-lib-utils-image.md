@@ -143,7 +143,7 @@ modified: 2023-04-04T22:39:45.442Z
 ## annotation/labelling
 
 - mirador /400Star/Apache2/202105/js
-  - https://github.com/ProjectMirador/mirador
+  - https://github.com/projectmirador/mirador
   - https://projectmirador.org/
   - https://mirador-dev.netlify.app/__tests__/integration/mirador/
   - web based, multi-window image viewing platform with the ability to zoom, display, compare and annotate
@@ -208,6 +208,11 @@ modified: 2023-04-04T22:39:45.442Z
 # ocr
 - https://github.com/naptha/tesseract.js /js
   - a javascript library that gets words in almost any language out of images.
+
+- https://github.com/jbaiter/ocr-parser /MIT/202309/ts
+  - This library provides a simple interface to parse OCR data from a stream, buffer or string. 
+  - It does not rely on any DOM APIs and can therefore be used in contexts where there is no built-in support for XML parsing, most notably in Web Workers and Service Workers.
+  - Currently the library supports hOCR and ALTO OCR markup.
 # more
 - https://github.com/ascorbic/unpic-img
   - This library uses unpic to detect the image CDN, and then uses the CDN's URL API to resize and format images. 

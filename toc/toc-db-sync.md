@@ -40,7 +40,7 @@ modified: 2022-11-25T15:41:47.534Z
   - OrbitDB is a serverless, distributed, peer-to-peer database. 
   - OrbitDB uses IPFS as its data storage and IPFS Pubsub to automatically sync databases with peers. 
   - It's an eventually consistent database that uses CRDTs for conflict-free database merges making OrbitDB an excellent choice for decentralized apps (dApps), blockchain applications and local-first web applications.
-- https://github.com/dappkit/aviondb
+- https://github.com/dappkit/aviondb /MIT/202010/ts
   - A Distributed, MongoDB-like Database
   - AvionDB uses OrbitDB stores to model MongoDB-like Databases.
 
@@ -88,7 +88,7 @@ modified: 2022-11-25T15:41:47.534Z
   - https://github.com/bkniffler/debe
   - 依赖automerge(delta)
   - offline-first Javascript datastore for browsers, node, electron and react-native with focus on performance and simplicity. 
-  - Please note, Debe is currently not supporting relations, and probably never really will.
+  - Debe is currently not supporting relations, and probably never really will.
   - Includes support for concurrent multi-master/client database replication via plugin.
   - Rich querying using SQL-alike syntax
   - Automatic conflict resolution (CRDT)
@@ -283,7 +283,7 @@ modified: 2022-11-25T15:41:47.534Z
   - Nango continuously syncs data from any API endpoint (that returns JSON) to your database.
   - Nango has built-in support for OAuth through our sister project Pizzly
 
-- https://github.com/urish/firebase-server
+- https://github.com/urish/firebase-server /201910/ts/archived
   - Firebase Web Socket Protocol Server. Useful for emulating the Firebase server in tests.
   - As of May 2019 there are officially supported emulators for many Firebase services, removing the need for a third-party solution like firebase-server.
 
@@ -392,6 +392,9 @@ modified: 2022-11-25T15:41:47.534Z
 
 - https://github.com/vaibhawvipul/minimal-raft /rust
   - a minimalistic implementation of RAFT algorithm
+
+- https://github.com/andreev-io/little-raft /MIT/202209/rust/inactive
+  - The lightest distributed consensus library. Run your own replicated state machine
 # more
 - https://github.com/rethinkdb/rethinkdb /202211/cpp/python
   - The open-source database for the realtime web.

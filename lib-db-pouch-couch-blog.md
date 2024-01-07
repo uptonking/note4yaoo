@@ -118,6 +118,8 @@ modified: 2024-01-04T06:34:57.448Z
   - Second, CouchDB works hand-in-hand with ZFS’s block level compression. ZFS can compress blocks of data as they are being written out to the disk. However, it only does it for new blocks and not retroactively. Now, the awesome part, CouchDB on compaction writes out a brand new database file which can utilize the new gzip compression settings on ZFS. This means you can try out different gzip compression settings just by compacting your CouchDB.
 # blogs-couchdb
 
+## [CouchDB style sync and conflict resolution on Postgres with Hasura_202004](https://hasura.io/blog/couchdb-style-conflict-resolution-rxdb-hasura/)
+
 ## [10 Common Misconceptions about Apache CouchDB - Speaker Deck_201311](https://speakerdeck.com/wohali/10-common-misconceptions-about-apache-couchdb)
 
 ### [Another 10 Common Misconceptions about Apache CouchDB - Speaker Deck_201809](https://speakerdeck.com/wohali/another-10-common-misconceptions-about-apache-couchdb)

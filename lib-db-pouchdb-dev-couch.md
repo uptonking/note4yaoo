@@ -76,7 +76,12 @@ modified: 2024-01-04T06:53:04.003Z
 
 - database-features
   - standards: postgresql, sqlite, clickhouse, duckdb
-  - persistence
+  - crdt for conflicts resolution
+  - version-history: undo/redo
+  - partial-replication
+  - auth/permission: 权限控制的粒度，row/doc, column/property
+  - offline persistence
+  - integrations/apps: excel, notes
   - indexing
   - query planner
   - query engine: sql or not?
@@ -85,8 +90,6 @@ modified: 2024-01-04T06:53:04.003Z
   - conflicts
   - extensions/plugins: 参考sqlite、pg
   - search: fts, fuzzy
-  - partial replication
-  - auth: 权限控制的粒度，row/doc, column/property
   - arrow
 
 - community-pouchdb/couchdb
