@@ -66,6 +66,10 @@ modified: 2020-12-20T08:23:22.808Z
   - for analytics, we self-hosted a plausible instance to avoid sharing your customer's data with third-party companies
   - https://github.com/plausible/analytics
     - 基于elixir
+# css-examples
+- https://github.com/atherosai/ui/tree/main/form-controls-01
+  - https://twitter.com/davidm_ml/status/1744305846358552848
+  - Create comment section using HTML, CSS and JavaScript
 # more-repos-commnet
 - more
   - 基于gitter.im的聊天系统

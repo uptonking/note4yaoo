@@ -11,9 +11,15 @@ modified: 2023-10-26T16:45:47.318Z
 
 # discuss-stars
 - ## 
-
-- ## 
 # discuss
+- ## 飞总发了一篇《2023年，中国对PostgreSQL的贡献≈0》所以我刚才翻阅了 OSSRank 收录的 188个 PostgreSQL 生态开源项目。
+- https://twitter.com/GobeUncleWang/status/1744190341438472279
+- 中国公司作为主导者或主要参与者的项目只有四个，分别是：
+  - Pigsty：我@北京
+  - duckdb_fdw：alitrack@杭州
+  - zhparser：amutu@深圳
+  - pg_roaringbitmap：陈华军@苏宁
+
 - ## 
 
 - ## 

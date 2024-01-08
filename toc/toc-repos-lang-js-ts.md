@@ -426,3 +426,24 @@ modified: 2021-05-14T15:04:55.849Z
   - React UI animation made easy
 - https://github.com/owid/owid-grapher
   - This is the project we use at University of Oxford to create embeddable visualizations for Our World in Data.
+# js-to-ts
+- resources
+  - [Migrate/convert JavaScript to TypeScript cheatsheet](https://gist.github.com/jakub-g/e6e52a28b59b3140d5f53e378937426c)
+
+- https://github.com/airbnb/ts-migrate /202310/ts
+  - A tool to help migrate JavaScript code quickly and conveniently to TypeScript
+  - There will be lots of `// @ts-expect-error`, and any that will need to be fixed over time. 
+  - In general, it is a lot nicer than starting from scratch.
+  - ts-migrate is designed as a set of plugins so that it can be pretty customizable for different use-cases.
+
+- https://github.com/gregjacobs/js-to-ts-converter /202203/ts
+  - Small utility to fix common js->ts issues in order to assist in migrating a codebase
+  - Adds property declarations to ES6 classes
+  - Any function calls that provide fewer arguments than the declared parameters in the function will cause the remaining parameters to be marked as optional for that function.
+
+- https://github.com/tsuggate/Typifier /202006/ts
+  - A desktop app for converting JavaScript files to Typescript. 
+  - Most types are set to 'any'. 
+
+- more-migrate-utils
+  - https://github.com/Bartmr/convert-js-to-ts

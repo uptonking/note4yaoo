@@ -16,6 +16,7 @@ modified: 2023-02-05T19:03:12.723Z
 
 - more-slate
   - 建站编辑器应该参考gutenberg、wix
+  - search: mern + slate
 
 - slate-fans
   - https://github.com/williamstein
@@ -847,12 +848,12 @@ modified: 2023-02-05T19:03:12.723Z
   - Postulate is an all-in-one tool for collecting and publishing your knowledge.
   - Built on Next.js and MongoDB.
 
-- https://github.com/inthelamp/book-reviewer
+- https://github.com/inthelamp/book-reviewer /202111/js
   - a learning project to obtain knowledge and skills about the MERN stack
   - Redux, Redux Thunk, axios, Slate, Lodash
   - Sign-in with JWT token
 
-- https://github.com/mkoskim/mawejs /js
+- https://github.com/mkoskim/mawejs /MIT/202401/js
   - Mawe writer's editor with ElectronJS, React and NodeJS. 
   - Third generation of the editors I have written for my own use.
   - I needed a tool for myself, that's why I wrote Mawe with Python/GTK, and now with ElectronJS, Javascript and React.
@@ -922,6 +923,10 @@ modified: 2023-02-05T19:03:12.723Z
 - https://github.com/JoogleDocs/JoogleDocs /202303/ts
   - Source code of the JoogleDocs application.
   - This is a T3 Stack project bootstrapped with create-t3-app
+
+- https://github.com/srijeetpatil/bloggr /202110/js
+  - a blog web app created with MERN stack
+  - uses Slate JS for editing
 # collab
 - https://github.com/yomorun/react-cursor-chat /slate无关/仅参考
   - React Component helps bring Figma's Cursor Chat to your web applications
@@ -1000,6 +1005,9 @@ modified: 2023-02-05T19:03:12.723Z
 
 - https://github.com/anantraghuvanshi/SyncSlate /202309/ts
   - fe + be
+
+- https://github.com/Fronsto/Note-Taking-App /202207/ts
+  - minimalistic webapp designed for fast collaborative note taking, created with Javascript/Typescript, Reactjs, Nodejs, Socket.io and runs on a GraphQL Server.
 
 ## slate-ot
 

@@ -47,6 +47,14 @@ modified: 2023-10-26T15:28:53.748Z
   - Aquameta is organized into seven PostgreSQL extensions, that each corresponds to a layer or tool in a typical web stack. 
   - The database schema contains ~60 tables, ~50 views and ~90 stored procedures that together make a minimalist, fairly unopinionated web stack that should be familiar to most web developers, except that it's all in the database
   - A thin Golang daemon handles the connection to the database and runs a web server.
+
+- https://github.com/omnigres/omnigres /apache2/202401/c
+  - https://docs.omnigres.org/
+  - Omnigres makes Postgres a developer-first application platform. 
+  - Running application logic inside or next to the database instance
+
+- https://github.com/tembo-io/tembo /pgLic/202401/rust
+  - Tembo aims to improve the experience developers have with deploying, managing, and scaling Postgres
 # pg-rewrite
 - pg-mem /1.6kStar/MIT/202310/ts
   - https://github.com/oguimbal/pg-mem

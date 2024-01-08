@@ -29,6 +29,7 @@ modified: 2022-11-08T19:04:00.289Z
   - https://github.com/JefMari/awesome-wysiwyg
   - https://github.com/xjh22222228/awesome-web-editor
   - [Rich Text Editors](https://gist.github.com/stormwild/044e184f8ef9bf3062a1ca950d6c0569)
+  - [Text Editor - OSSRank](https://ossrank.com/cat/4-text-editor)
 # known-text-editor
 - prosemirror /6kStar/MIT/202208/ts
   - https://github.com/ProseMirror/prosemirrorp

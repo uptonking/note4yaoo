@@ -14,6 +14,18 @@ modified: 2022-11-08T10:34:34.820Z
 
 - ## 
 
+- ## 新部门短短几日要学习研究的知识多到爆炸，什么polars、duckdb、virtualColumn、columnar、btree、query engine、arrow、parquet
+- https://twitter.com/fkysly/status/1744316110462476339
+- 留个言，依稀记得快十年前你在某技术群（可能是 USTC LUG）里说在阿里前端实习都要掌握 MVVM 双向绑定依赖注入什么的好多名词，给作为潜水小白的我很深的印象。那个时候我 jQuery 都不太会用，觉得能进阿里那都得多厉害啊我肯定进不去
+  - 时过境迁，感觉这些其实关系也不大吧 
+- 我觉得其实只要上过大学本科的，愿意进来的，其实教一教差不太多。而且大厂也只是万千一条路，没啥意思，给公司打工罢了。
+
+- ## 爱学习是好的，但要聚焦用得上的知识。
+- https://twitter.com/im2gua/status/1744157300900950182
+  - 从我的经历来看，很多的知识是应景的、赶时髦的，也就是“不跟上就会掉队”的焦虑感趋势的。
+  - 所以很多知识学了是用不上的，而且是一辈子都用不上。社会也并不会总是把你放在时代潮头。
+  - 多关注近期用得上的知识，不要焦虑，比每年都学好几样然后来年又忘好几样强得多。
+
 - ## > a single person cannot build a web search engine from scratch
 - https://twitter.com/eatonphil/status/1739678111199814127
 - > I cannot

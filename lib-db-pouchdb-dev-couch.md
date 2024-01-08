@@ -79,6 +79,7 @@ modified: 2024-01-04T06:53:04.003Z
   - crdt for conflicts resolution
   - version-history: undo/redo
   - partial-replication
+  - sync-protocol
   - auth/permission: 权限控制的粒度，row/doc, column/property
   - offline persistence
   - integrations/apps: excel, notes

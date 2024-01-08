@@ -11,6 +11,7 @@ modified: 2023-02-09T18:32:06.240Z
 
 - resources
   - https://github.com/quilljs/awesome-quill
+  - search: mern + quill
 # popular
 - quill /37.5kStar/BSD/202311/ts
   - https://github.com/quilljs/quill
@@ -35,7 +36,8 @@ modified: 2023-02-09T18:32:06.240Z
 - https://github.com/ludejun/quill-react-commercial /202311/ts/js
   - https://ludejun.github.io/quill-react-commercial/
   - 多功能的、可面向商业化的quill富文本编辑器
-  - Use the latest quill@2.0.0-dev.4. Implement using React Hooks
+  - Use the latest quill@2.0.0-dev.4. 
+  - Implement using React Hooks
 
 - https://github.com/shenmaxg/quill-imitate-shimo /202110/ts
   - 基于 quill 的富文本编辑器
@@ -109,9 +111,23 @@ modified: 2023-02-09T18:32:06.240Z
 - https://github.com/Kibo/filemanager-js /202201/ts/vue
   - The JavaScript filemanager for CKEditor, Quill, TinyMCE.
 
-- https://github.com/BrenoFariasdaSilva/TextSync /202309/js/仅同步未处理冲突
+- https://github.com/BrenoFariasdaSilva/TextSync /CC0/202309/js/仅同步未处理冲突
   - A Real-Time Distributed-Text-Editor Application with ReactJS, NodeJS, MongoDB and WebSockets.
   - 依赖react、quill、socket.io、mongoose
+
+- https://github.com/gentabazi2/simulQ /MIT/202312/ts
+  - Real-time collaborative editing system with MERN
+  - Its purpose is to serve as a reference project on how a real-time collaborative editing system should be developed.
+  - Documents: Rich text editor used: Quill.
+- https://github.com/promise-dash/Blogspot /202308/js
+  - A Full Stack Blog App with all the CRUD functionality and user authentication. 
+  - Built with Next 13, React, Tailwind, Nodejs and MongoDb.
+  - https://github.com/Priyanshu88/MERN-Blog /202307/js
+
+- https://github.com/Heisdalu/Dracora /202309/ts
+  - https://dracora.vercel.app/
+  - an admin dashboard with drag-and-drop capabilities, pagination, a text editor, as well as line, bar, and other entertaining charts.
+  - 依赖Firebase、React-quill、Next.js、React-beautiful-dnd
 
 - https://github.com/isaacsokari/simple-docs /202104/ts
   - Lightweight Google Docs clone made using Quill editor, Socket.io, and MongoDB.
@@ -153,6 +169,12 @@ modified: 2023-02-09T18:32:06.240Z
   - https://g-editor-fawn.vercel.app/
   - rich-text base on Quill
 
+- https://github.com/fgilde/MudExRichTextEditor /GPLv3/202401/js
+  - Quill based RichEditor component for MudBlazor
+  - easily consume Quill combining in a MudBlazor project Features with MudBlazor Theme Support.
+  - Exports editor contents in Text, HTML, and Quill’s native Delta format
+  - https://github.com/Spillgebees/Blazor.RichTextEditor
+
 - https://github.com/NodeBB/nodebb-plugin-composer-quill /202311/js
   - WYSIWYG composer for NodeBB based off of Quill
   - This composer saves its data in a unique format that is only compatible with Quill. If you switch to Quill, any posts made with Quill cannot be migrated back to Markdow
@@ -174,6 +196,12 @@ modified: 2023-02-09T18:32:06.240Z
   - https://quill-emoji-mart-picker.netlify.com/
   - Module and Blot for Quill.js that supports Emoji Mart Picker and Emoji Mart.
   - converts unicode emojis, emoticons and emoji names into emoji images from Apple, Google, Twitter, EmojiOne, Facebook Messenger or Facebook.
+
+- https://github.com/benoitlahoz/quill-emoji-parser /MIT/202401/ts
+  - https://benoitlahoz.github.io/quill-emoji-parser/
+  - Checks for emojis shortcuts during typing and pasting and replace them by their visual counterpart.
+  - inspired by quill-magic-url 
+  - Default map is taken from Smile2Emoji
 
 - https://github.com/contentco/quill-emoji /202111/js
   - Module extension for Quill.js that handles emojis in the toolbar.
@@ -372,6 +400,13 @@ modified: 2023-02-09T18:32:06.240Z
   - A website creator for React.
   - 依赖dnd-kit、react-quill、react-reveal、bootstrap5
 
+- https://github.com/devat-youtuber/MERN-Typescript-Blogdev /202207/ts
+  - MERN Stack Build a blog app using MERN + Typescript + Redux + Bootstrap 5 + ReactQuill + Socket.io + Twilio
+- https://github.com/RyanPPitts/React-Blog-Editor /202001/js
+  - Blog built with the MERN stack, Quill Editor Tool & MongoDB
+- https://github.com/weilyuwang/react-quill-blog /202103/js
+  - A quill editor with custom media files upload functionalities, integrated with AWS S3.
+
 - https://github.com/folkloreinc/panneau-js/tree/v0.8
   - https://folkloreinc.github.io/panneau-js/storybook/index.html
   - React components to build forms and administration panels
@@ -382,6 +417,8 @@ modified: 2023-02-09T18:32:06.240Z
   - Google Docs Clone with Node, React, Socket.io and Quill
   - https://github.com/seifeldeen92/google-docs-texteditor-clone
   - https://github.com/Chondan/google-doc-clone
+  - https://github.com/Khusheel26/Google-docs-clone
+  - https://github.com/Danitilahun/SmallGoogleDocClone
 
 - https://github.com/bryanakitchen/google-docs-clone-server /202105/js
   - uses Socket.io, Quill, and Mongoose to generate a text editor that will allow for simultaneous edits.
@@ -401,6 +438,14 @@ modified: 2023-02-09T18:32:06.240Z
   - https://github.com/WinnardArthur/google-docs-clone
   - https://github.com/ramyatrouny/GoogleDocs-Clone
   - https://github.com/ayushjha952/Google_docs_clone
+
+- https://github.com/Braysen/EvernoteClone /202011/js
+  - Build a Evernote Clone with REACT JS
+  - https://github.com/Wellers0n/evernote-clone /202001/js
+
+- https://github.com/westhyun/all-notes-app /202307/ts
+  - https://all-notes-app.vercel.app/
+  - Redux-toolkit, react-quill, LocalStorage
 
 - https://www.npmjs.com/package/@nocobase/client
   - 依赖react-quill.v1
@@ -432,7 +477,6 @@ modified: 2023-02-09T18:32:06.240Z
 - https://github.com/bridgerbrown/daynotes /202311/ts
   - https://daynotes-ebon.vercel.app/
   - A calendar-based note taking platform that uses web sockets for seamless synchronization between browser tabs.
-  - save notes made with the Quill.js text editor to a MongoDB database. 
   - save notes made with the Quill.js text editor to a MongoDB database. 
 
 - https://github.com/rrecalo/ONote /202311/ts
@@ -545,6 +589,10 @@ modified: 2023-02-09T18:32:06.240Z
   - https://github.com/mweidner037/firebase-rich-text-editor
     - 依赖quill.v1
 # delta
+- https://github.com/mbb10324/quill-json-converter /apache2/202312/js
+  - https://mbb10324.github.io/quill-json-converter/
+  - Convert a quill editor to a quill delta, and vice-versa
+
 - https://github.com/joelcolucci/node-quill-converter /202001/js
   - Convert HTML to a Quill Delta or a Quill Delta to HTML
 
@@ -602,6 +650,9 @@ modified: 2023-02-09T18:32:06.240Z
 - https://github.com/payz0/quill-base64-to-file-location /202104/js
   - Method untuk merubah base64 ke file upload dalam quill editor
 # non-js
+- https://github.com/plato-messaging/quill-delta /apache2/202312/java
+  - A java implementation of QuillJS delta
+
 - https://github.com/volser/android-quill-delta /201809/java/kotlin
   - A kotlin implementation of Delta format
 

@@ -7,8 +7,11 @@ modified: 2022-11-04T14:22:17.373Z
 
 # toc-db-indexeddb-utils-extensions
 
-# popular
+# guide
 
+- benchmark
+  - [IDB read/write benchmark (separate write transactions)](https://gist.github.com/nolanlawson/d2883c948ab5f3d7a25cff74ab3a9b51)
+# popular
 - https://github.com/fkworld/indexeddb-benchmark
   - simple indexeddb benchmark website
   - 测试内容

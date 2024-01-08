@@ -9,6 +9,17 @@ modified: 2022-06-13T02:59:28.865Z
 
 # guide
 
+- pros
+  - open and popular
+
+- cons
+  - lack of reactive layer
+  - lack of sync/replication/collaboration
+  - sql is unfriendly to app layer
+
+- features
+  - database
+
 - who is using #sqlite
   - cloudflare-d1
 

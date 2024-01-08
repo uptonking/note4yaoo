@@ -30,6 +30,8 @@ modified: 2024-01-07T05:09:14.413Z
   - This is also why Replicache is so fast while being backed by idb. 
   - We don’t use idb as a kv store itself. It only stores pages of our custom b tree.
 
+- SQLite is unfortunately too slow in the browser to be used as a reactive database.
+
 - ## 🕹️✨ @hello_reflect is the only multiplayer system that supports database-style interactive transactions.
 - https://twitter.com/aboodman/status/1732484354637709507
   - People sometimes ask if they really need that though. Aren't CRDTs or json-patch enough?

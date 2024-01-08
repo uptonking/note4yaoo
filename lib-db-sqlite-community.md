@@ -32,6 +32,16 @@ modified: 2021-08-30T17:33:46.086Z
   - For notions cache we have a row count limit, but need to carefully schedule our delete & LRU time stamp update transactions for low read & update IO times to avoid degrading app performance
 - SQLite doesn’t have this kind of hard limit. You can limit max pages, but you’ll need at most 2x the page limit of the DB to VACUUM, and WAL things may go over too
 - Yup, mostly to enforce the ttl so you don't have to do it manually. Otherwise `CREATE TABLE kv (key TEXT PRIMARY KEY, value ANY)` is just fine
+# discuss-performance
+- ## 
+
+- ## 
+
+- ## SQLite is unfortunately too slow in the browser to be used as a reactive database.
+- https://twitter.com/swyx/status/1743857432206643589
+  - [In-Memory SQLite Perf / Matt | Observable](https://observablehq.com/@tantaman/in-memory-sqlite-perf)
+  - Without adding a complicated layer on top which essentially becomes a second database itself. After pat leave I’ll turn this draft into something presentable
+
 # discuss
 - ## 
 

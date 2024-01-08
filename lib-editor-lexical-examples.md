@@ -54,6 +54,18 @@ modified: 2022-05-15T18:37:27.994Z
 - https://github.com/konstantinmuenster/lexical-rich-text-react-demo  
   - [How To Build A Text Editor With Lexical and React](https://konstantin.digital/blog/how-to-build-a-text-editor-with-lexical-and-react)
 
+- https://github.com/mahmedyoutube/lexical-editor-tutorial /202304/js
+  - [Complete lexical editor tutorial in React and MUI (Material Ui library) from scratch - Part 5 - YouTube](https://www.youtube.com/watch?v=qTKDn_CflH8)
+
+- https://github.com/vnugent/lexical-examples /202309/ts
+  - https://lexical-examples.vercel.app/
+  - While I find the framework a bit easier to work with than Slate.js, it still requires a lot of bolierplate to implement a basic plain text editor. 
+  - This repo contains a few "recipes" that I may need in future projects.
+
+- https://github.com/wingedrasengan927/medium-ai /MIT/202305/ts
+  - https://medium-ai.vercel.app/
+  - open-source, AI-powered text editor inspired by medium.com
+
 - https://github.com/calcom/cal.com
   - https://github.com/calcom/ui
   - open-source Calendly alternative.

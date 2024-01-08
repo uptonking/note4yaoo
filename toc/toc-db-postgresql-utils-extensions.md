@@ -50,10 +50,25 @@ modified: 2023-10-26T15:29:40.053Z
 - https://github.com/zknill/sqledge /202308/go
   - SQLedge uses Postgres logical replication to stream the changes in a source Postgres database to a SQLite database that can run on the edge. 
   - [SQLedge: Replicate Postgres to SQLite on the Edge | Hacker News_202308](https://news.ycombinator.com/item?id=37063238)
+
+- https://github.com/ChenHuajun/pg_roaringbitmap /apache2/202310/c
+  - Roaringbitmap是一种高效的Bitmap压缩算法，目前已被广泛应用在各种语言和各种大数据平台上。
+  - 本插件将Roaringbitmap功能集成到Greenplum数据库中，将Roaringbitmap作为一种数据类型提供原生的数据库函数、操作符、聚合等功能支持。
+  - Bitmap位计算非常适合大数据基数计算，常用于去重、标签筛选、时间序列等计算中。
+
+- https://github.com/orioledb/orioledb /PGLic/202401/c
+  - a new storage engine for PostgreSQL, bringing a modern approach to database capacity, capabilities and performance to pg
+  - OrioleDB consists of an extension, building on the innovative table access method framework and other standard Postgres extension interfaces.
+  - OrioleDB implements the concepts of undo log and page-mergins, eliminating the need for dedicated garbage collection processes.
+  - Designed to be distributed. OrioleDB implements a row-level write-ahead log with support for parallel apply. This log architecture is optimized for raft consensus-based replication allowing the implementation of active-active multimaster.
 # search
 - https://github.com/paradedb/paradedb /AGPLv3/rust
   - https://paradedb.com/
   - an ElasticSearch alternative built on PostgreSQL, engineered for lightning-fast full text, similarity, and hybrid search.
+
+- https://github.com/amutu/zhparser /PostgreSQLLic(MIT)/202401/c
+  - a PostgreSQL extension for full-text search of Chinese language
+  - It implements a Chinese language parser base on the Simple Chinese Word Segmentation(SCWS).
 
 - https://github.com/toluaina/pgsync /202312/python
   - https://pgsync.com/
@@ -72,6 +87,9 @@ modified: 2023-10-26T15:29:40.053Z
 - https://github.com/aarroyoc/postgresql-prolog /202310/prolog
   - A Prolog library to connect to PostgreSQL databases
   - [PostgreSQL-Prolog: A Prolog library to connect to PostgreSQL databases | Hacker News_202109](https://news.ycombinator.com/item?id=28660202)
+
+- https://github.com/alitrack/duckdb_fdw /MIT/202312/cpp
+  - a foreign data wrapper (FDW) to connect PostgreSQL to DuckDB database file
 # json/mongo
 - https://github.com/fcoury/oxide /apache2/202210/rust
   - OxideDB is a translation layer that works as a MongoDB database server while using PostgreSQL's JSON capabilities as the underlying data store.
@@ -84,7 +102,7 @@ modified: 2023-10-26T15:29:40.053Z
   - Based on original pgtune. Illustration by Kate.
   - https://github.com/gregs1104/pgtune /python/inactive
 # devops
-- https://github.com/Vonng/pigsty /202312/python/plpgsql
+- https://github.com/Vonng/pigsty /2.2kStar/AGPLv3/202401/plpgsql
   - https://pigsty.cc/
   - A battery-included, local-first, open-source PostgreSQL RDS alternative.
   - 开箱即用的RDS：从内核到RDS发行版，在 EL7-9 下提供 12-16 版本的生产级 PostgreSQL 数据库服务

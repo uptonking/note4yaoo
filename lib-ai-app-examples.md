@@ -77,6 +77,25 @@ modified: 2023-02-08T07:20:48.475Z
 
 - https://github.com/LAION-AI/Open-Assistant
   - OpenAssistant is a chat-based assistant that understands tasks, can interact with third-party systems, and retrieve information dynamically to do so.
+
+## chat-excel
+
+- https://github.com/weijunext/smart-excel-ai /MIT/202312/ts
+  - https://smartexcel.cc/
+  - Generate the Excel formulas you need in seconds using ChatGPT
+  - https://twitter.com/weijunext/status/1744225202228089173
+    - 这是一个足够简单（调用ChatGPT的API）却又功能俱全（有登录和支付）的demo级产品。
+    - 前后端：Next.js+Tailwind+Prisma
+    - 登录：Next-Auth
+    - 支付：Lemon Squeezy
+    - 部署：Vercel
+
+## chat-pdf
+
+- https://github.com/williamcaseylucas/quill-pdf-chat /202401/ts
+  - 依赖prisma, shadcn-ui, react-pdf, AWS S3 buckets
+  - https://github.com/khaledmk20/quill
+    - Quill redefines PDF interaction with intelligent conversations.
 # coding-copilot
 - https://github.com/TabbyML/tabby
   - https://tabbyml.github.io/tabby

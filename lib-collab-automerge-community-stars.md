@@ -28,6 +28,21 @@ modified: 2023-09-01T10:17:33.439Z
 - Maybe I am overlooking something, but "If a document is just a flat sequence, hitting enter in the middle of a paragraph just means inserting a '\n' element into that sequence." means we can not express tree structures. I can not imagine WYSIWYG without at least an anchor which has to be split as well.
 
 - there is new development going on: next month, @geoffreylitt and @sliminality will be kicking off a research project to figure out the best way of handling rich text in CRDTs such as Automerge, with the support of the @inkandswitch research lab. 
+# discuss-sync
+- ## 
+
+- ## 
+
+- ## 🔁 it should not download the entire doc2 rather the changes from last know position. Some thing like git pull. Is that something we can do in automerge?
+- https://automerge.slack.com/archives/C61RJCM9S/p1702742583333909
+- The sync protocol in Automerge will do exactly this, pretty much exactly as git does but more efficiently in many cases
+  - It's an implementation of this idea
+  - [Using Bloom filters to efficiently synchronise hash graphs — Martin Kleppmann’s blog_202012](https://martin.kleppmann.com/2020/12/02/bloom-filter-hash-graph-sync.html)
+- Can you help me to find out where does Automerge implement it? Specifically in the Java layer
+  - The Java library is a wrapper around the rust library, the implementation in the rust library is here: https://github.com/automerge/automerge/blob/main/rust/automerge/src/sync.rs
+- I have a half finished kotlin port which I can clean up and we can take a look at it that's of interest?
+  - It uses coroutines heavily though so probably only useful for Android
+
 # discuss
 - ## 
 

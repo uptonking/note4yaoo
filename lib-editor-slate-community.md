@@ -7,9 +7,20 @@ modified: 2023-02-05T19:03:12.722Z
 
 # lib-editor-slate-community
 
+# guide
+
 # discuss
+- ## 
 
 - ## 
+
+- ## 
+
+- ## Is there an efficient way of getting the path of an element inside the element component itself?
+- https://slate-js.slack.com/archives/C1RH7AXSS/p1703968430668249
+- `ReactEditor.findPath` (or Plate's findNodePath wrapper) should be as efficient as reasonably necessary. 
+  - The resulting path array isn't memo'd, so bear that in mind if you're using it in hooks that have deps arrays. 
+  - If you're using it inside a callback, I recommend calling it there rather than outside
 
 - ## render code in text
 - https://twitter.com/jitl/status/1649507571386949645

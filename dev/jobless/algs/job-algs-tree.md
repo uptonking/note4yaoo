@@ -146,7 +146,9 @@ Tree |Height|Depth|Level
 ## B-Tree
 
 - [B树的引入，为什么会有B树，以设计磁盘文件系统的索引为例](https://www.bilibili.com/video/BV1mY4y1W7pS/)
+  - 为了解决超大数据量时，树的深度变多会增加io次数的问题
 - [B树的查找，B+树的引入](https://www.bilibili.com/video/BV1yB4y1v7Jy/)
+  - 为了解决b树非叶子节点存储数据后，查找时磁盘io次数很多的问题，非叶子节点不存数据后只保存指针
 
 - B-树是一种非二叉的查找树
 - 一棵 m 阶的B-树

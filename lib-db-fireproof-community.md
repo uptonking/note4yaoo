@@ -39,6 +39,17 @@ modified: 2023-12-24T10:49:01.941Z
 - 🤔 why do u choose ipfs instead of hypercore ?
   - If hypercore can shuffle binary blobs, then they work the same for Fireproof.  I started with IPFS because of the IPLD data structures, which are the center of interesting research for immutability. But that stuff is independent of the actual transport.
   - The content addressable trees and CRDTs that come from @mikeal , @_alanshaw and friends are at the forefront of the industry. I saw my opportunity to package that fundamental advancement for the masses.
+# discuss-author
+- ## 
+
+- ## 
+
+- ## 
+
+- ## I just merged a big refactor, this splits the loader and connectors into a blockstore package that can be used for any offline database, not just Fireproof. 
+- https://discord.com/channels/1142273421674303619/1142285854375686145/1193360293695324221
+  - this can be used a self-hosted IPFS to run IPLD apps in the browser
+
 # discuss
 - ## 
 
