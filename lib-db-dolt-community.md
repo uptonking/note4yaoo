@@ -510,7 +510,7 @@ modified: 2023-08-25T21:17:11.979Z
 - ## 💡 We are using Noms heavily inside @replicache and it's overall pretty good._20200401
 - https://twitter.com/pvh/status/1245202163384500224
   - There are some *really* sharp API edges, but it's a powerful tool.
-- Are there any good articles comparing/contrasting Noms and Dat?
+- 🆚️ Are there any good articles comparing/contrasting Noms and Dat?
   - Not that I know of, but they are pretty wildly different at this point. 
   - Noms doesn't include any networking component at all -- if you can find some way to get two Noms nodes to talk to each other they can sync, but how they do that is out of scope for Noms itself.
   - And dat doesn't expose any sort of structured data model at all - it's about syncing files around p2p and forking/branching them.

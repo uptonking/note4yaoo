@@ -139,6 +139,8 @@ modified: 2023-09-28T20:35:56.153Z
     - I would look up anything related to "Event Sourcing" which perhaps is a superset of this idea. Basically, the idea is that you save the events that happen in your system and then compile those into views.
   - forks
   - https://github.com/Brainsway-Cloud/delta-pouch /201802
+  - [Doesn't play nice with Pouch Find](https://github.com/redgeoff/delta-pouch/issues/175)
+    - https://github.com/funblaster22/delta-pouch-find/tree/bulkGet
 
 - https://github.com/couchapp/couchapp /201808/python2
   - https://couchapp.readthedocs.io/en/latest/intro/what-is-couchapp.html

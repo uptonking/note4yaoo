@@ -7,7 +7,43 @@ modified: 2021-08-30T19:30:56.453Z
 
 # toc-data-seeding-examples
 
+# guide
+
 # data from popular projects
+- [MongoDB Atlas: Load Sample Data](https://www.mongodb.com/docs/atlas/sample-data/)
+  - Sample AirBnB Listings Dataset
+    - Contains details on AirBnB listings.
+  - Sample Analytics Dataset
+    - Contains training data for a mock financial services application.
+  - Sample Geospatial Dataset
+    - Contains shipwreck data.
+  - Sample Guides Dataset
+    - Contains planet data.
+  - Sample Mflix Dataset
+    - Contains movie data.
+  - Sample Restaurants Dataset
+    - Contains restaurant data.
+  - Sample Supply Store Dataset
+    - Contains data from a mock office supply store.
+  - Sample Training Dataset
+    - Contains MongoDB training services dataset.
+  - Sample Weather Dataset
+    - Contains detailed weather reports.
+
+- [Postgres sample data - Neon Docs](https://neon.tech/docs/import/import-sample-data)
+  - Titanic passenger data
+  - Netflix data
+    - A dataset containing information about movies and tv shows on Netflix.
+  - Chinook database
+    - A sample database for a digital media store, including tables for artists, albums, media tracks, invoices, customers, and more.
+  - Pagila database
+    - Sample data for a fictional DVD rental store. Pagila includes tables for films, actors, film categories, stores, customers, payments, and more.
+  - Lego database 乐高积木
+  - Employees database
+  - Wikipedia vector embeddings
+    - An OpenAI example dataset containing pre-computed vector embeddings for 25000 Wikipedia articles. 
+  - Postgres air
+    - An OpenAI example dataset containing pre-computed vector embeddings for 25000 Wikipedia articles. 
 
 - https://github.com/apache-superset/examples-data
   - This repo holds/serves the small data files that `superset load_examples` uses to load the example data into user databases.
@@ -27,26 +63,6 @@ modified: 2021-08-30T19:30:56.453Z
 - https://github.com/railmapgen/rmg-palette
   - https://railmapgen.github.io/rmg-palette
   - list of colours used in the city's public transportation system.
-
-- [MongoDB Atlas: Load Sample Data](https://www.mongodb.com/docs/atlas/sample-data/)
-Sample AirBnB Listings Dataset
-Contains details on AirBnB listings.
-Sample Analytics Dataset
-Contains training data for a mock financial services application.
-Sample Geospatial Dataset
-Contains shipwreck data.
-Sample Guides Dataset
-Contains planet data.
-Sample Mflix Dataset
-Contains movie data.
-Sample Restaurants Dataset
-Contains restaurant data.
-Sample Supply Store Dataset
-Contains data from a mock office supply store.
-Sample Training Dataset
-Contains MongoDB training services dataset.
-Sample Weather Dataset
-Contains detailed weather reports.
 
 - https://github.com/ipinfo/sample-database
   - IPinfo database and API sample repository

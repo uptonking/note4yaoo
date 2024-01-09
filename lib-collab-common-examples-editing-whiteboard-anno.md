@@ -25,8 +25,10 @@ modified: 2022-11-07T17:36:22.236Z
 - https://github.com/spacedeck/spacedeck-open
   - a web based, real time, collaborative whiteboard application with rich media support
 
-- https://github.com/cracker0dks/whiteboard
-  - NodeJS collaborative Whiteboard/Sketchboard which can easily be customized
+- https://github.com/cracker0dks/whiteboard /MIT/202311/js
+  - a lightweight NodeJS collaborative Whiteboard/Sketchboard which can easily be customized
+  - Shows remote user cursors while drawing
+  - Undo/Redo function for each user
 
 - https://github.com/toger5/TheBoard
   - collaborative Whiteboard powered by the [matrix] protocol and infrastructure.
@@ -103,6 +105,11 @@ modified: 2022-11-07T17:36:22.236Z
   - The enhanced `<textarea>` is able to render the cursor and selection of other collaborators.
   - This library has no dependency on Convergence.
   - 只依赖textarea-caret，不依赖其他
+
+- https://github.com/munshkr/flok /GPLv3/202401/ts
+  - https://flok.cc/
+  - Web-based P2P collaborative editor for live coding sounds and images
+  - Similar to Etherpad, but focused on code evaluation for livecoding.
 
 - https://github.com/josephg/statecraft /ISC/201911/ts/inactive
   - Statecraft is a protocol and set of tools for interacting with data that changes over time. 

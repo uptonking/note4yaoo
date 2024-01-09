@@ -73,6 +73,16 @@ modified: 2022-11-03T04:49:42.587Z
   - a ultra high-performance graph database supporting Blueprints and RDF/SPARQL APIs
   - It supports up to 50 Billion edges on a single machine. 
   - It powers the Wikimedia Foundation's Wikidata Query Service.
+
+- https://github.com/atomicdata-dev/atomic-server /587Star/MIT/202401/rust/ts
+  - https://atomicserver.eu/
+  - a lightweight, yet powerful CMS / Graph Database
+  - powered by actix-web and sled database
+  - Documents, collaborative, rich text, similar to Google Docs / Notion.
+  - Tables, with strict schema validation, keyboard support, copy / paste support. Similar to Airtable.
+  - Event-sourced versioning / history powered by Atomic Commits
+  - Synchronization using websockets
+  - Full-text search with fuzzy search and various operators, often <3ms responses. Powered by tantivy.
 # graph-utils
 - https://github.com/unum-cloud/networkxum /python
   - https://unum.am/storage

@@ -61,6 +61,11 @@ modified: 2021-01-13T19:30:59.508Z
   - 依赖react-dnd、daisyui
   - Canvas based drawing board, including free drawing, eraser, text, select, layer, undo, redo, clear, save, drag
 
+- https://github.com/mirayatech/NinjaSketch /202401/ts
+  - https://ninja-sketch.vercel.app/
+  - Excalidraw clone built with React and TypeScript.
+  - Rough.js is used for the sketchy, hand-drawn style.
+
 - roughViz /MIT/5.4kStar/202006
   - https://github.com/jwilber/roughViz
   - https://github.com/rough-stuff/rough

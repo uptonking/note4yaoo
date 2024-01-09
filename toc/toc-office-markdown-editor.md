@@ -153,5 +153,11 @@ modified: 2022-11-09T11:53:13.093Z
   - The flexible TypeScript Markdown editor that powers https://octo.app
   - 依赖codemirror6、lezer、solidjs
   - ui部分代码少
+# examples
+- https://github.com/joshnuss/hypersonic /202401/js/svelte
+  - https://hypersonic.wiki/
+  - A multi-player markdown editor and wiki
+  - https://twitter.com/joshnuss/status/1744412987862007968
+    - PWA-ready, Self-hostable
 # more-markdown-editor
 - vscode-monaco-editor

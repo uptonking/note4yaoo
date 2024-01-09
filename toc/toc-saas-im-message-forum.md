@@ -29,20 +29,29 @@ modified: 2021-05-14T15:04:15.333Z
   - mattermost
   - Zulip
   - gitter
+  - telegram的client都是开源的, webK/webA
 # forum-for-dev
 - https://github.com/42wim/matterbridge /202212/go
   - bridge between mattermost, IRC, gitter, xmpp, slack, discord, telegram, rocketchat, twitch, ssh-chat, zulip, whatsapp, keybase, matrix, microsoft teams, nextcloud, mumble, vk and more with REST API
   - Mattermost isn't required to run matterbridge
 
-- https://github.com/discourse/discourse
-  - 依赖ruby、emberjs、postgresql、redis
+- https://github.com/discourse/discourse /GPLv2/202401/ruby/js
+  - 依赖emberjs、postgresql、redis
   - discussion platform built for the next decade of the Internet.
-- https://github.com/withspectrum/spectrum /archived
+- https://github.com/withspectrum/spectrum /js/archived
   - 依赖express、graphql、apollo、draft-js、redux、rethinkdb
   - Spectrum aims to be the best platform to build any kind of community online by combining the best of forums and real-time chat apps.
+  - RethinkDB: Data storage
 
-- https://github.com/NodeBB/NodeBB /js
+- https://github.com/NodeBB/NodeBB /GPLv3/202401/js
   - Node.js based forum software built for the modern web
+  - powered by Node.js and supports either Redis, MongoDB, or a PostgreSQL database
+  - It utilizes web sockets for instant interactions and real-time notifications
+
+- https://github.com/apache/incubator-answer /apache2/202401/go/ts
+  - https://answer.apache.org/
+  - A Q&A platform software for teams at any scales. 
+  - Plugins: redis/es/algolia
 
 - ddd-forum /1.8kStar/ISC/202306/ts/hacker-news
   - https://github.com/stemmlerjs/ddd-forum
@@ -95,7 +104,7 @@ modified: 2021-05-14T15:04:15.333Z
   - 基于嵌入式数据库 NeDB, 即插即用
   - 未使用任何组件库 / 样式库 / 动画库
 
-- https://github.com/amirfakhrullah/bloqdown
+- https://github.com/amirfakhrullah/bloqdown /BSD/202304/ts
   - Simple Markdown Forum/Blog site using Next.js, NextAuth, TypeScript, tRPC, Prisma and PlanetScale
   - 风格类似github
   - Creating fully typesafe APIs using tRPC
@@ -197,7 +206,7 @@ modified: 2021-05-14T15:04:15.333Z
 - https://github.com/dakshit050/AskAnything
   - a social discussion platform Developed for college/school students to solve their doubts online
 
-- https://github.com/debiki/talkyard
+- https://github.com/debiki/talkyard /AGPLv3/202310/scala
   - A structured discussions platform — brings together the main features from StackOverflow, Slack, Discourse, Reddit/HackerNews, and Disqus blog comments.
   - Client: React.js, TypeScript, Webdriver.io.
   - Server: Scala and Play Framework. OpenResty, some Lua. React.js in Java's Nashorn Javascript engine.
@@ -242,10 +251,10 @@ modified: 2021-05-14T15:04:15.333Z
   - Private Hosted IM and Social Channels, Easy Integration to Your Site or App
   - VoceChat is a superlight Rust powered chat App, API and SDK that prioritizes private hosting
   - 依赖react、redux-toolkit、plate、tui-editor、localforage
-  - [Will the server be open source?](https://github.com/Privoce/vocechat-web/issues/19)
-    - rust写的 会开源 但是还没准备好
+  - https://github.com/Privoce/vocechat-server-rust /202303/rust/inactive
+    - superlight rust written social server.
 
-- https://github.com/zulip/zulip /apache2/python
+- https://github.com/zulip/zulip /apache2/202401/python/django
   - https://zulip.com/
   - open-source team collaboration tool with unique topic-based threading that combines the best of email and chat to make remote work productive and delightful.
   - Zulip is the only modern team chat app that is designed for both live and asynchronous conversations.
@@ -284,6 +293,11 @@ modified: 2021-05-14T15:04:15.333Z
 - https://github.com/penghuwan/online-chat-app /201908/js
   - 一个在线聊天室，实现了登陆注册功能和聊天功能，
   - 实时通信部分基于Socket.io实现，后端采用Koa框架组织业务逻辑，前端采用React编写，同时用Webpack作为打包工具
+
+- https://github.com/adrianhajdin/project_chat_application /202009/js
+  - In this tutorial we are going to build and deploy a real time chat application. 
+  - Covered topics: React.js, Node.js, Express.js, and Socket.io.
+  - https://github.com/adrianhajdin/chat_application
 
 ## chatbot
 
@@ -392,12 +406,17 @@ modified: 2021-05-14T15:04:15.333Z
 - https://github.com/cloudflare/wildebeest /ts
   - Wildebeest is an ActivityPub and Mastodon-compatible server whose goal is to allow anyone to operate their Fediverse server and identity on their domain without needing to keep infrastructure, with minimal setup and maintenance, and running in minutes.
   - Wildebeest runs on top Cloudflare's Supercloud, uses Workers, Pages, Durable Objects, Queues, the D1 database to store metadata and configurations, Zero Trust Access to handle auth
+
+## activitypub
+
+- https://github.com/superseriousbusiness/gotosocial /AGPLv3/202401/go
+  - https://docs.gotosocial.org/
+  - Fast, fun, small ActivityPub server
+  - an ActivityPub social network server, written in Golang.
+  - you can keep in touch with your friends, post, read, and share images and articles.
 # notification
 - https://github.com/novuhq/novu
   - The open-source notification infrastructure for products. 
-  - Add a notification center for your React, Vue and Angular apps rocket
-
-- https://github.com/novuhq/novu
   - Novu provides a unified API that makes it simple to send notifications through multiple channels, including In-App, Push, Email, SMS, and Chat. 
   - With Novu, you can create custom workflows and define conditions for each channel, ensuring that your notifications are delivered in the most effective way possible.
   - Single API for all messaging providers (In-App, Email, SMS, Push, Chat)
@@ -407,13 +426,7 @@ modified: 2021-05-14T15:04:15.333Z
   - https://rallly.co/
   - an open-source scheduling and collaboration tool designed to make organizing events and meetings easier
   - Built with Next.js, Prisma, tRPC & TailwindCSS
-# activitypub
-- https://github.com/superseriousbusiness/gotosocial /AGPLv3/202401/go
-  - https://docs.gotosocial.org/
-  - Fast, fun, small ActivityPub server
-  - an ActivityPub social network server, written in Golang.
-  - you can keep in touch with your friends, post, read, and share images and articles. 
-# more-forum
+
 - https://github.com/geekeren/GuangGuForum
   - 过早客论坛微信小程序
   - 技术设计初衷：尽量在无任何后端代理完成所有功能，降低后期维护复杂度和运营成本，直接在小程序端拉取并解析网站的HTML，转成json数据，渲染小程序界面
@@ -432,3 +445,4 @@ modified: 2021-05-14T15:04:15.333Z
 - https://github.com/weissthorn/weiss
   - Modern, Minimalistic Discussion Software
   - 依赖rethinkdb
+# more

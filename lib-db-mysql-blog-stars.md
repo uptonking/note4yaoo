@@ -13,6 +13,8 @@ modified: 2023-10-26T18:16:18.134Z
 
 # blogs-internals
 
+## [MySQL isolation levels and how they work_202401](https://planetscale.com/blog/mysql-isolation-levels-and-how-they-work)
+
 ## [MySQL索引数据结构红黑树，Hash，B+树详解 - 博客园](https://www.cnblogs.com/yufeng218/p/12465694.html)
 
 - 索引是帮助MySQL高效获取数据的排好序的数据结构；

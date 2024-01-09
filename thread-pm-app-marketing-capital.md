@@ -81,7 +81,15 @@ modified: 2023-10-14T12:11:39.039Z
 
 - ## 
 
-- ## 
+- ## 💰 Atlassian 在插件市场上的收入2.3亿美元。比上一年增长13%。相对于它自己的产品增长偏慢。
+- https://twitter.com/PenngXiao/status/1744679194226024743
+  - Marketplace总收入7亿美元，供应商收入4.7亿美元。
+  - 财报中没有透露具体的App数量，只说是thousands。如果是几万的话一般会说tends of thousands。我们假设是一万个App。平均下来每个App是4.7万美元。
+  - 这里面当然会有很强的马太效应。如果说头部1000个产品拿走90%的收入，我不会感到惊讶。那么这些产品平均每年40万美元收入。
+  - 我的产品目前每年大概3万美元。我再翻十倍就可以进入头部了
+
+- 历年财报在此
+  - [Atlassian - Financials - Annual reports](https://investors.atlassian.com/financials/annual-reports/default.aspx)
 
 - ## TikTok的电商业务在印尼遭到强制关停之后用了60天绝境翻盘的过程真是跌宕起伏，
 - https://twitter.com/foxshuo/status/1734941409172680924

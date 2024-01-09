@@ -17,6 +17,23 @@ modified: 2023-10-26T19:17:54.537Z
 - ## 
 
 - ## 
+# discuss-performance
+- ## 
+
+- ## 
+
+- ## Interesting perf problem with Postgres 9. 
+- https://twitter.com/MarkCallaghanDB/status/1744385306475040911
+  * table has a PK and 3 secondary indexes
+  * inserts at one end - in ascending PK order
+  * deletes from other end - find/delete N rows with smallest  value for PK col
+  - Problem is that query planner takes ~100ms per `DELETE` .
+  - So the planner is doing a lot more work than it needs to, something I have experienced with MySQL a few times. Although with MySQL I can use hints to reduce that waste. For my problem here, I will do some tests to see if more frequent ANALYZE helps.
+- My case here is from PG 9, I try to test versions in order so it will be a few days before I see how this behaves with PG 16. But `get_actual_variable_range` is still there in modern PG.
+  - A workaround is to delete more rows per `DELETE` statement so that the planner overhead is amortized over more rows. But in this case, by design I can't do that.
+- That's true. But get_actual_variable_range has been enhanced several times since. Always with the aim of avoiding various pathological cases (possibly including this one). 
+- I have seen this cause problems many times... saw a situation some years ago where planning with a cold cache took 20 minute and the query executed in milliseconds 
+
 # discuss
 - ## 
 

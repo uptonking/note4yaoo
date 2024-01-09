@@ -48,7 +48,7 @@ modified: 2021-05-25T09:40:55.797Z
 - https://github.com/eugeneware/firedup /201306/js/inactive
   - A node.js implementation of firebase based on leveldb/levelup.
 
-- kuzzle /1.3kStar/apache2/202211/js
+- kuzzle /1.3kStar/apache2/202312/js
   - https://github.com/kuzzleio/kuzzle
   - https://kuzzle.io/
   - Kuzzle is a generic backend offering the basic building blocks common to every application.

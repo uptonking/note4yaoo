@@ -10,9 +10,15 @@ modified: 2022-12-31T18:05:42.830Z
 # guide
 
 # discuss-stars
-- ## [nosql - How does `Leveldb` compare with `Redis` or Riak or Tokyo Tyrant? - Stack Overflow](https://stackoverflow.com/questions/6101402/how-does-leveldb-compare-with-redis-or-riak-or-tokyo-tyrant)
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [How does `Leveldb` compare with `Redis` or Riak or Tokyo Tyrant? - Stack Overflow](https://stackoverflow.com/questions/6101402/how-does-leveldb-compare-with-redis-or-riak-or-tokyo-tyrant)
 - Redis is a server, while Leveldb is "a library that implements a fast persistent key-value store". 
-  - Therefor, with Redis, you have to poll the server. 
+  - Therefore, with Redis, you have to poll the server. 
   - With Leveldb, the database is stored on disk, making it a lot slower than Redis, which is stored in memory.
 - Leveldb is only offers key/store. 
   - Redis has this as well, but also has a lot more functions and features
@@ -21,6 +27,12 @@ modified: 2022-12-31T18:05:42.830Z
 
 - Badger is designed to store data on disk (like RocksDB or LevelDB), while Redis is an in-memory storage which can't store data sets larger than memory.
   - You can store Redis on disk too. Not that you gain anything from doing so as persistence can be better achieved by clustering and I've never ran into issues where memory was a limiting factor, even with millions of records in Redis.
+# discuss-rocksdb
+- ## 
+
+- ## 
+
+- ## 
 # discuss
 - ## 
 

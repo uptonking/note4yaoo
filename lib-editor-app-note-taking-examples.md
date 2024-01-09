@@ -342,7 +342,7 @@ modified: 2023-02-05T18:05:44.122Z
   - markdown notes reader & editor Progressive Web Application that works offline and supports syncing with arbitrary git repository right inside your browser
   - https://github.com/0xGG/vscode-crossnote
 
-- codimd /8kStar/AGPLv3/202208/js/inactive
+- codimd /8kStar/AGPLv3/202401/js
   - https://github.com/hackmdio/codimd
   - Realtime collaborative markdown notes on all platforms.
   - HackMD helps developers write better documents and build active communities with open collaboration

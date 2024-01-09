@@ -237,6 +237,7 @@ modified: 2022-11-25T15:41:47.534Z
   - Every change of this state is synced via the sync method
   - Clients receive events about changes from the server which are automatically applied to a shared object (in-place)
   - The server takes care of syncing the state of all connected clients
+  - https://github.com/janmonschke/diffsync /MIT/201505/js
 
 - https://github.com/syncthing/syncthing /MPLv2/202312/go
   - https://forum.syncthing.net/
@@ -395,6 +396,10 @@ modified: 2022-11-25T15:41:47.534Z
 
 - https://github.com/andreev-io/little-raft /MIT/202209/rust/inactive
   - The lightest distributed consensus library. Run your own replicated state machine
+
+- https://github.com/hashicorp/raft /MPLv2/202401/go
+  - Golang implementation of the Raft consensus protocol
+  - a Go library that manages a replicated log and can be used with an FSM to manage replicated state machines. It is a library for providing consensus.
 # more
 - https://github.com/rethinkdb/rethinkdb /202211/cpp/python
   - The open-source database for the realtime web.

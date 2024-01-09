@@ -34,6 +34,20 @@ modified: 2022-11-04T14:20:37.172Z
     - To make MongoDB Server database size smaller (like from 800 GB tIo 10 GB), store files elsewhere, and have files visible in upcoming version of WeKan.
     - Meteor WeKan will continue using MongoDB for text data. Files can be stored outside of MongoDB.
     - Upcoming WeKan will use SQLite database for text data. Files are stored outside of SQLite.
+
+# http
+
+- https://github.com/proofrock/sqliterg /apache2/202312/go/rust
+  - https://docs.sqliterg.dev/
+  - a server-side application that, applied to one or more SQLite files, allows to perform SQL queries and statements on them via REST (or better, JSON over HTTP).
+  - a rewrite in Rust of ws4sqlite
+
+- https://github.com/gc-victor/query /MIT/202401/rust
+  - Query is a Rust server for your remote SQLite databases with a CLI and API to manage them
+  - You can use Query as an isolated service or you can use it as a service with a proxy to your App. 
+  - https://github.com/gc-victor/query-studio
+    - https://query-studio.fly.dev/
+    - helps you explore and manipulate your remote SQLite databases.
 # extensions
 - https://github.com/asg017/sqlite-loadable-rs
   - A framework for writing fast and performant SQLite extensions in Rust

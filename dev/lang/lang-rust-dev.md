@@ -36,6 +36,12 @@ modified: 2022-11-11T06:57:09.670Z
 - [Rust Language Cheat Sheet](https://cheats.rs/)
 
 - [This Week in Rust](https://this-week-in-rust.org/)
+
+- https://github.com/KaiserY/trpl-zh-cn
+  - https://kaisery.github.io/trpl-zh-cn/
+  - Rust程序设计语言（2021 edition）简体中文版
+  - 对照源码位置：https://github.com/rust-lang/book/tree/main/src
+  - 由 mdbook-typst-pdf 生成
 # changelog
 - [Generators are dead, long live coroutines, generators are back | Inside Rust Blog_202310](https://blog.rust-lang.org/inside-rust/2023/10/23/coroutines.html)
 # rust-env

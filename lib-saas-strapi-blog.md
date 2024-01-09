@@ -11,6 +11,25 @@ modified: 2023-12-15T16:52:28.937Z
 
 # blogs
 
+## 🎯 [Bye 2023, Hello 2024! A year in review_202401](https://strapi.io/blog/bye-2023-hello-2024-a-year-in-review)
+
+- improvements
+  - Data Transfer
+  - Review Workflows
+  - Custom Roles became free: Role-based Access Control, including Custom Roles, became 100% free.
+  - TypeScript
+  - Bulk Publish: Publish multiple entries at the same time.
+  - Rich Text Editor: Easy to use rich text editor.
+  - v5: We also made significant progress on Strapi v5
+
+- We have one objective for 2024: To make the Editing and Deployment Experience seamless.
+
+- By splitting the frontend and the CMS, the Editing Experience is not as great as it could be. 
+  - Editors (and certainly developers) miss live previews, inline editing, etc. We will fix that. 
+  - 2024 will be dedicated to unifying the frontend and the CMS, to offer a fantastic Editing Experience.
+- Strapi. v5 will be live by the end of Q2, with solid updates: 
+  - full TypeScript support, the ability to have a draft version of an already published entry, Vite instead of Webpack, simpler API format (bye "data.attributes"), and more
+
 ## [Important Things to Keep in Mind Before Migrating to Strapi_202211](https://maddevs.io/blog/things-to-keep-in-mind-before-migrating-to-strapi/)
 
 - What disadvantages does Strapi have for our case project?

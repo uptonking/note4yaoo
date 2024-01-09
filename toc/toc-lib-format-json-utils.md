@@ -119,6 +119,15 @@ modified: 2022-11-06T15:45:36.913Z
   - const past = { ...future, ...present.undo }
   - const future = { ...past, ...present.do }
   - The patch hold two properties, the do and the undo. Both are simple objects, ready to be merged with the current object
+
+- https://github.com/sueddeutsche/json-sync /201803/js
+  - Enables real-time collaborative editing of arbitrary JSON objects
+  - Client and Server are syncing with the Differential Synchronization algorithm
+  - The client fetches the initial state of the data and enters a sync-room via WebSockets
+  - Every change of this state is synced via the sync method
+  - Clients receive events about changes from the server which are automatically applied to a shared object (in-place)
+  - The server takes care of syncing the state of all connected clients
+  - https://github.com/janmonschke/diffsync /MIT/201505/js
 # merge
 - https://github.com/avian2/jsonmerge /python
   - merge a series of JSON documents into a single one

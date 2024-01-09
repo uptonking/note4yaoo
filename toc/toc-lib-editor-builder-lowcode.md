@@ -466,10 +466,10 @@ modified: 2020-12-28T12:24:09.275Z
   - an Airflow inspired data platform with additional data mesh capability to automate, schedule and design data pipelines and workflows.
   - Written in Golang and compiled to machine code to achieve extreme performance with a low memory and CPU footprint.
 
-- https://github.com/jitsucom/jitsu /go
-  - open source high-performance data collection service.
-  - Capture events your application generates and stream to Data Warehouse; 
-  - Pull data from APIs and save it to Data Warehouse
+- https://github.com/jitsucom/jitsu /MIT/202401/ts
+  - a tool for collecting event data from your websites, apps and stream them to your data warehouse or other services. 
+  - It is a self-hosted, open-source alternative to Segment.
+  - Jitsu is based on Bulker(golang), an open-source data warehouse ingestion engine. Bulker can be used as a standalone tool
 
 - https://github.com/cptn-io/el-cptn /java
   - an open source platform that helps develop and deploy integrations and data pipelines quickly and easily.
@@ -478,6 +478,15 @@ modified: 2020-12-28T12:24:09.275Z
     - Destination: 存放/写入数据的目的地，对接各种数据库和线上存储
     - Transformation: 转化数据的 code block
     - Pipeline: 将以上组合起来的工作流
+# json-builder
+- https://github.com/redgeoff/mson /apache2/202401/js
+  - The MSON compiler allows you to generate apps from JSON
+  - MSON supports validation, inheritance, composition, pub/sub, access control, templating and various other features.
+  - MSON is particularly useful in software that generates other software, e.g. a form builder. This is because MSON is just JSON, so it is easy to consume, modify and store.
+  - MSON is framework agnostic, but the default `mson-react` rendering layer uses React and Material-UI to generate a UI. 
+  - The rendering layer is pluggable and can be written to support any framework and UI library.
+  - The MSON library can also be used without any UI dependecies, which makes it great for things like data validation in both the front and back ends.
+  - https://github.com/redgeoff/mson-react
 # more-lowcode
 - corteza /go/vue
   - https://github.com/cortezaproject/corteza

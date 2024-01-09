@@ -17,6 +17,25 @@ modified: 2023-03-18T17:53:25.909Z
   - github加速
   - Stack Overflow 加速
   - npm加速
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## 🆚️ Forward Proxy vs Reverse Proxy
+- https://twitter.com/sahnlam/status/1744600844195205473
+- A forward proxy (or just proxy) is a server that sits between user devices and the internet. A forward proxy is commonly used for:
+  - Protecting client privacy and anonymity
+  - Avoiding browsing restrictions
+  - Blocking access to certain content
+- A reverse proxy is a server that accepts requests from clients, forwards them to backend web servers, and returns the responses to the clients. The clients interact with the reverse proxy as if it was the origin server. Reverse proxies are good for:
+  - Protecting backend servers from direct exposure to clients
+  - Load balancing requests across multiple backend servers
+  - Caching static content closer to clients for faster delivery
+  - Terminating SSL connections and offloading encryption/decryption tasks from the backend servers
+- The key difference is that a forward proxy acts on behalf of clients, while a reverse proxy acts on behalf of servers. 
+  - Forward proxies handle outbound requests to external servers, while reverse proxies handle inbound requests coming from clients.
+
 # discuss
 - ## 
 

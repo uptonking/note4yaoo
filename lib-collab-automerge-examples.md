@@ -51,9 +51,9 @@ modified: 2023-09-01T10:18:14.842Z
   - local_sync_textareas
 # automerge-v1
 - https://github.com/automerge/hypermerge /MIT/ts/archived
-  - Hypermerge is deprecated. 
   - Hypermerge is a Node.js library for building p2p collaborative applications without any server infrastructure. 
   - It combines Automerge, a CRDT, with hypercore, a distributed append-only log.
+  - Hypermerge is deprecated. 
   - Hypermerge is a distributed document store. It draws inspiration from databases like CouchDB and PouchDB
   - hypermerge document is built up by applying a series of changes generated on different clients. 
     - Every time you open a hypermerge document, the system replays all the logs of changes from every client to recreate the document state. 

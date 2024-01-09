@@ -987,6 +987,11 @@ modified: 2023-09-12T09:37:22.608Z
 - https://github.com/toverux/expresse
   - A better module for working with Server-Sent Events in Express
 
+- https://github.com/MatthewWid/better-sse /MIT/202309/ts
+  - simple, dependency-less, spec-compliant server-side events implementation for Node
+  - Compatible with all popular Node HTTP frameworks (http, Express, Koa, Fastify, etc.)
+  - Channels allow you to broadcast events to many clients at once.
+
 - https://github.com/triblondon/node-sse-pubsub
   - Server sent events for NodeJS
   - A simple NodeJS module to generate Server-Sent-Events streams with a publish/subscribe interface and simple integration with either Node's built in HTTP library or any framework that exposes it, eg. ExpressJS.

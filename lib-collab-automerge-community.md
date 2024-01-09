@@ -40,8 +40,21 @@ modified: 2023-09-01T10:13:59.044Z
   - I am absolutely ready to move off hypercore as storage if you have the gumption to propose an alternative
 - The nice thing about IPFS is that because it's content addressed, you don't need a lot of the metadata hypercores include, so for static content I think it would make a ton of sense. There are substantial privacy downsides if you advertise all your content to the world though.
 
-- ## We run automerge over hypercore + hyperswarm and call it hypermerge. Works reasonably well.
+- ## We run automerge over hypercore + hyperswarm and call it hypermerge. Works reasonably well._202004
 - https://twitter.com/pvh/status/1246144720474005505
+
+
+
+- A good CRDT avoids unnecessary conflicts and surfaces inescapable ones.
+  - In the case of ambiguous values in automerge, we provide a multi-value register in _conflicts, and select a stand-in value arbitrarily as a default resolution (because programming is hard when every piece of data in your system can be a multivalue.)
+- Interesting. Having an arbitrary stand in is something I want to think about
+  - It is unprincipled, but pragmatic, and let me tell you, a whole lot easier to write against. Take a look at Pushpin which is our reference implementation of a production-quality CRDT-based client application.
+
+
+- The author of the JSON CRDT paper ( @martinkl ) is the author of automerge, and the differences are because we tried writing against the original implementation and found the UX wasn't ideal, so we made some changes
+- 
+- 
+- 
 
 - ## I'm exploring ways to put docs synced by hypermerge into a query layer to give "realtime" updates of views into my data.  (give me all the docs that contain these words/tags)
 - https://twitter.com/pvh/status/1259375354952572928
@@ -56,7 +69,7 @@ modified: 2023-09-01T10:13:59.044Z
   - The hard parts, roughly, were deciding what the names should be and keeping track of all the network connections and file handles. 
   - We used a private set intersection algorithm for deciding the list of mutual feeds to synchronize.
 
-- ## hypermerge used to provide a p2p gateway for automerge but was forsaken because it uses an outdated automerge version
+- ## hypermerge used to provide a p2p gateway for automerge but was forsaken(抛弃，放弃) because it uses an outdated automerge version _202308
 - https://automerge.slack.com/archives/C61RJCM9S/p1687580301244489
   - I also noticed that it had a couple shortcomings, wondering if those would be solved with the current versions of both libraries.
 - I'd be interested in seeing an automerge-repo-network-hyperswarm but I don't have any current plans to implement it. I'm not sure exactly how it would work but having written a few takes on it with hypermerge, I'm sure it's doable.
@@ -89,10 +102,10 @@ u1. Extremely difficult to build backend in other programming languages than Nod
   - You will cry looking at source code C-binding, FFI, etc, https://github.com/yjs/y-crdt/blob/main/yffi/src/lib.rs
   - you weren't kidding - the rust port is total trash.
   - The internals are still very hot and in a state of flux, as we 1st decided to go with porting the Yjs, then leave cleaning and optimizations for 2nd step after we have something, that's compatible with existing Yjs behavior.
-2. Both communities are great.
-3. Watch out implementations of underline libraries. Trace lib0 libraries usage and internals in Yjs for example;JavaScript engines use UTF-16 encoding. Golang (my main backend language) is using UTF-8 ... reimplementing Yjs code in Golang with algorithms and optimization and futher scaling might become impossible for small startups.
-4. Rich editing similar to Google Doc is very very complicated subject with lot of landmines
-5. There's ProseMirror editor for collaborative editing. However you might not like its internals compare to Slatejs 
+1. Both communities are great.
+2. Watch out implementations of underline libraries. Trace lib0 libraries usage and internals in Yjs for example;JavaScript engines use UTF-16 encoding. Golang (my main backend language) is using UTF-8 ... reimplementing Yjs code in Golang with algorithms and optimization and futher scaling might become impossible for small startups.
+3. Rich editing similar to Google Doc is very very complicated subject with lot of landmines
+4. There's ProseMirror editor for collaborative editing. However you might not like its internals compare to Slatejs 
 
 - > You will cry looking at source code https://github.com/yjs/y-crdt/blob/main/yffi/src/lib.rs
   - Am I missing something? You linked a file that is inherently going to be "un-Rusty" because it's meant to be an FFI shim for _non-Rust_ languages to use through a common C API that this file exposes.

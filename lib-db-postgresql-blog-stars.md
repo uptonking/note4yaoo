@@ -11,6 +11,10 @@ modified: 2023-10-26T18:11:42.676Z
 
 # blogs
 
+# blogs-distributed
+
+## [An Overview of Distributed PostgreSQL Architectures | Crunchy Data Blog_202401](https://www.crunchydata.com/blog/an-overview-of-distributed-postgresql-architectures)
+
 # blogs-internals
 
 ## [Writing a storage engine for Postgres: an in-memory Table Access Method_202311](https://notes.eatonphil.com/2023-11-01-postgres-table-access-methods.html)

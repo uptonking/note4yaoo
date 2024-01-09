@@ -165,7 +165,11 @@ modified: 2023-09-17T17:41:51.689Z
 # discuss
 - ## 
 
-- ## 
+- ## 🌰 When we first began building RisingWave, we used Calcite. 
+- https://twitter.com/YingjunWu/status/1744470668937461987
+  - But it turned out to be unsuitable, in terms of compatability, flexibility, and several other reasons. 
+  - Now we are using our home-made optimizer to optimize streaming queries.
+  - I recommend starting with Calcite - it will bring you to 50/100 points. But to reach 100 points, you will have to craft your own optimizers.
 
 - ## How does TiDB execute a query?
 - https://twitter.com/sunbains/status/1744048698710171953

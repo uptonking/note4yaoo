@@ -19,4 +19,16 @@ modified: 2023-08-28T06:08:27.303Z
   - .
 # dev
 
+# resources
+
+- ebooks
+  - https://github.com/0voice/Introduction-to-Golang
+
+- https://github.com/chai2010/advanced-go-programming-book
+  - https://chai2010.cn/advanced-go-programming-book/
+  - 《Go语言高级编程》开源图书
+
+- https://github.com/golang-china/gopl-zh
+  - https://golang-china.github.io/gopl-zh
+  - Go语言圣经中文版
 # more

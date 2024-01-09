@@ -36,6 +36,7 @@ modified: 2022-04-05T10:08:25.947Z
 - tips
   - 协作类产品的重点仍然是符合业务需求的内容和数据，在现有系统中支持协作
   - 不必执着于hlc的使用案例，可对成熟案例在业务逻辑不变的情况下将其他clock替换成hlc
+  - 可直接搜索集成方案, crdt+orm/mern/cms
 
 - resources
   - [Comparison of CRDT Libraries - hyoo/automerge/yjs](https://github.com/hyoo-ru/crowd.hyoo.ru?tab=readme-ov-file#comparison-of-crdt-libraries)
@@ -796,7 +797,7 @@ modified: 2022-04-05T10:08:25.947Z
     - Ritzy uses the Facebook flux pattern — all state changes are made by the EditorStore
     - Ritzy prefers using Opentype.js to obtain the required text metrics from the underlying font
 
-- https://github.com/conclave-team/conclave /202106/js/lseq/inactive
+- https://github.com/conclave-team/conclave /MIT/202106/js/lseq/inactive
   - https://conclave-team.github.io/conclave-site/
   - CRDT and WebRTC based real-time, peer-to-peer, collaborative text editor
   - 示例使用simplemde、rxjs、peerjs

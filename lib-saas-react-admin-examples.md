@@ -115,6 +115,15 @@ modified: 2023-12-19T17:31:23.259Z
 - https://github.com/LoicMahieu/react-admin-git-provider
   - Gitlab data provider for React Admin
 
+- fast-crud /512Star/MIT/202311/ts/vue
+  - https://github.com/fast-crud/fast-crud
+  - http://fast-crud.docmirror.cn/
+  - 面向配置的crud开发框架，快速开发crud功能，可作为低代码平台的基础框架
+  - 可以直接使用示例中的fs-admin，特点是简单
+  - 也可以采用其他的admin开源项目，然后集成fast-crud
+  - 基于目前市面上开源的高星admin项目fork，集成fast-crud，Antdv 3x 、Element-Plus 、NaiveUI 三选一
+    - https://github.com/fast-crud/fs-admin-antdv /vue
+
 - api-more
   - https://github.com/FusionWorks/react-admin-nestjsx-crud-dataprovider /nestjs
   - https://github.com/panter/ra-data-prisma /GraphQL

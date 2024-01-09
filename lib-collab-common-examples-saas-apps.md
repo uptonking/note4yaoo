@@ -75,6 +75,11 @@ modified: 2023-01-17T19:14:47.611Z
   - 后台管理界面使用 Ant Design Pro
   - 支持多人协作文档（使用 Quill 富文本编辑器）
 
+- https://github.com/DeepNotesApp/DeepNotes /AGPLv3/202312/ts/vue
+  - https://deepnotes.app/
+  - End-to-end encrypted visual note-taking tool with deep page navigation.
+  - 依赖vue、Quasar、yjs、tiptap、keydb、redis
+
 - https://github.com/adarshaacharya/MentorLabs /ts
   - MentorLabs is a a WebRTC based video conferencing app.
   - 前端依赖 redux/toolkit
@@ -200,7 +205,8 @@ modified: 2023-01-17T19:14:47.611Z
   - A social media React web app for musicians to connect and collaborate. 
   - Built with NextJS, ReactJS, Supabase
 
-- https://github.com/docs-plus/docs.plus
+- https://github.com/docs-plus/docs.plus /MIT/202311/ts
+  - https://docs.plus/
   - real-time collaborative tool that enables communities to share and organize knowledge in a hierarchical manner
 
 - https://github.com/Slatebox/slatebox
@@ -211,6 +217,11 @@ modified: 2023-01-17T19:14:47.611Z
   - https://mobti.me/
   - A real-time, collaborative mob(无秩序的民众) programming timer. 
   - 统一的时钟
+
+- https://github.com/FujitsuLaboratories/cattaz /MIT/202104/js
+  - Realtime collaborative tool which can run custom applications in a Wiki page
+  - Wiki using Markdown with realtime preview and operational transformation
+  - Custom applications run in preview pane E.g. Kanban useace (ja)
 # realtime-room
 - https://github.com/Poujhit/Chatzilla
   - Chat Room Application made using React/Typescript and NodeJs-Web sockets.

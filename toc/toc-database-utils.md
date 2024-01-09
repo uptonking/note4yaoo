@@ -10,7 +10,8 @@ modified: 2023-08-23T17:15:46.484Z
 # guide
 
 - log-based-db
-  - flume/ssb/hyperbee
+  - kappa-db > hypercore/hyperbee
+  - flumedb > ssb
   - event-sourcing
 # hypercore
 - https://github.com/holepunchto/hypercore /MIT/js
@@ -195,7 +196,10 @@ modified: 2023-08-23T17:15:46.484Z
   - A peer-to-peer database built on hypercores and kappa-core@experimental.
   - Index a set of hypercores efficiently into materialized-view style secondary indexes
   - Is developed for Sonar which adds full-text search, binary assets, an HTTP API, a CLI and a UI.
-  - Internally, the database uses unordered-materialized-kv to have a shared notion of the latest versions of a record.
+  - Internally, the database uses `unordered-materialized-kv` to have a shared notion of the latest versions of a record.
+
+- https://github.com/m4gpi/kappa-db-exercises /201906/js
+  - Answers for KappaDB workshops
 
 - https://github.com/arso-project/sonar /GPLv3/js/ts
   - https://sonar.arso.xyz/
@@ -259,13 +263,43 @@ modified: 2023-08-23T17:15:46.484Z
 - [kappa architecture vs event sourcing](https://github.com/tschudin/ssb-icn2019-paper/issues/6)
 
 - [Kappa Architecture - A big data engineering approach](https://pradeepl.com/blog/kappa-architecture/)
+# flumedb
+- https://github.com/flumedb/bench-flumelog /201905/js
+  - a simple benchmark of flumedb log implementations.
+  - append as many items as can be added in 10 seconds, then stream all items, then read out those items randomly.
+  - for each phase, record the number of items per second, and the mb/second.
+
+- https://github.com/flumedb/flumedb /MIT/202006/js/inactive
+  - A modular database made for moving logs with streams.
+  - ✨ Flume is a modular database comprised of an Append Only Log and Streaming Views on that log. 
+  - This makes a star shaped pipeline - or rather, there is a pipeline from the log to each view, but the log is part of every pipeline.
+
+- https://github.com/sunrise-choir/flumedb-rs /LGPLv3/202201/rust/inactive
+  - a re-write of the JavaScript flumedb into Rust with a new architecture for better performance and flexibility.
+  - main source of truth is an append-only write-only log: which provides durable storage
+  - secondary derived truths are views on the log: which focus on answering queries about the data
+  - In flume, each view remembers a version number, and if the version number changes, it just rebuilds the view. This means view code can be easily updated, or new views added. It just rebuilds the view on startup.
+
+- https://github.com/flumedb/flumeview-query /MIT/202006/js
+  - A flumeview with map-filter-reduce queries
+
+- https://github.com/ssbc/margaret /go
+  - a flume-like persisted append-only log implementation
+  - Margaret outputs data according to the offset2 format, which is inspired by (but significantly differs from) flumelog-offset
+# ssb
+- https://gitlab.com/tangle-js/tangle-graph /202304/js
+  - A module which allows you to build a simple graph, and provides simple helper methods for modifying an querying that graph.
+  - this is expected to be used with DAGs (directed acyclic graphs), but there is currently no internal check built to guarantee this
+  - https://github.com/ssbc/ssb-tangle
+    - a collection of tools for processing thread-like tangles in scuttlebutt. 
+    - This pattern is a way to causally order messages, which is hard in a p2p system, because there is no central source of truth
 # append-only-log
 - resources
   - [History Data Structures](https://gist.github.com/CMCDragonkai/d266a3055735545447439f0fa662a0e1)
 
 - https://github.com/ssbc/async-append-only-log /js
   - A new append-only-log for SSB purposes
-  - This module is heavily inspired by flumelog-aligned-offset. It is an attempt to implement the same concept but in a simpler fashion
+  - This module is heavily inspired by `flumelog-aligned-offset`. It is an attempt to implement the same concept but in a simpler fashion
   - A log consists of a number of blocks, that contain a number of records. A record is simply it's length, as a 16-bit unsigned integer, followed by the data bytes. 
   - This module is not compatible with flume without a wrapper around stream as it uses the same terminology as JITDB and ssb-db2 of using offset for the byte position of a record instead of seq.
 - https://github.com/ssbc/jitdb /js
@@ -335,16 +369,6 @@ modified: 2023-08-23T17:15:46.484Z
     - extends the unordered-materialized-kv api with independent sessions that can open() and close() sets of keys
   - https://github.com/peermaps/unordered-materialized-kv-live
 
-- https://github.com/flumedb/flumedb /MIT/202006/js/inactive
-  - A modular database made for moving logs with streams.
-  - ✨ Flume is a modular database comprised of an Append Only Log and Streaming Views on that log. 
-  - This makes a star shaped pipeline - or rather, there is a pipeline from the log to each view, but the log is part of every pipeline.
-  - https://github.com/sunrise-choir/flumedb-rs
-    - a re-write of the JavaScript flumedb into Rust with a new architecture for better performance and flexibility.
-    - main source of truth is an append-only write-only log: which provides durable storage
-    - secondary derived truths are views on the log: which focus on answering queries about the data
-    - In flume, each view remembers a version number, and if the version number changes, it just rebuilds the view. This means view code can be easily updated, or new views added. It just rebuilds the view on startup.
-
 - https://github.com/Shaance/rust-simple-log-append-db /rust
   - Simple db using append only log file. 
   - This runs in a single thread
@@ -354,10 +378,6 @@ modified: 2023-08-23T17:15:46.484Z
 - https://github.com/rozbb/ct-merkle /rust
   - an implementation of the append-only log described in the Certificate Transparency specification (RFC 6962). 
   - The log is a Merkle tree, and its leaves are the items it contains.
-
-- https://github.com/ssbc/margaret /go
-  - a flume-like persisted append-only log implementation
-  - Margaret outputs data according to the offset2 format, which is inspired by (but significantly differs from) flumelog-offset
 
 - https://github.com/embano1/memlog /apache2/go
   - A Kafka log inspired in-memory and append-only data structure
@@ -446,7 +466,7 @@ modified: 2023-08-23T17:15:46.484Z
 
 ## log-database
 
-- https://github.com/mvayngrib/logbase /js/inactive
+- https://github.com/mvayngrib/logbase /201605/js/inactive
   - Append-only log and log-based database
 
 - https://codeberg.org/small-tech/jsdb /202311/js/NoDeps
@@ -585,4 +605,8 @@ modified: 2023-08-23T17:15:46.484Z
 
 - https://github.com/ilikepi63/turnip-rs /rust
   - Leaderless, streaming platform based on materialized views
+
+# ipfs
+- https://github.com/peer-base/peer-base /MIT/201908/js
+  - Build real-time collaborative DApps on top of IPFS
 # more

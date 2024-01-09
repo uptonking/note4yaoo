@@ -49,7 +49,6 @@ modified: 2022-08-21T10:36:31.021Z
 
 - ToolJet /17.1kStar/AGPLv3/202301/前端js+后端ts
   - https://github.com/ToolJet/ToolJet
-  - https://tooljet.com/
   - low-code framework to build and deploy internal tools
   - ToolJet's drag and drop frontend builder allows you to build complicated responsive frontends within minutes
 

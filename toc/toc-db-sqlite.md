@@ -182,6 +182,7 @@ modified: 2021-08-30T18:56:18.632Z
   - Litestream is a standalone disaster recovery tool for SQLite. 
   - It runs as a background process and safely replicates changes incrementally to another file or S3. 
   - Litestream only communicates with SQLite through the SQLite API so it will not corrupt your database.
+  - https://github.com/fly-apps/superfly
 # sqlite-rewrite
 - https://github.com/joaoh82/rust_sqlite /1kStar/MIT/202207/rust/inactive/代码量不大
   - a simple embedded database modeled off SQLite, but developed with Rust. 

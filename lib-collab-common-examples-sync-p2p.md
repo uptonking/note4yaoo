@@ -11,6 +11,7 @@ modified: 2023-01-17T19:13:01.845Z
 
 - tips
   - collab/sync/realtime
+  - 主流框架或cms大多支持websocket通信
 
 - 考虑客户端升级的问题
   - 同步前一定要检查一个version，参考indexeddb upgrade
@@ -35,11 +36,6 @@ modified: 2023-01-17T19:13:01.845Z
     - Using better-sqlite3 for synchronous writes also meant that writes block reads for the whole server, which is convenient from an abstract standpoint but also bad from a scaling and adaptability standpoint.
     - Another thing that would block multi-node scaling is server order (unless I did something like LiteStream and only allowed one writer node, but that kind of feels too rigid when I've already got CRDTs in use...).
 
-- https://github.com/drifting-in-space/driftdb /MIT/rust/ts
-  - https://driftdb.com/
-  - A real-time data backend for browser-based applications.
-  - core Rust driftdb implementation.
-
 - https://github.com/webstudio-is/immerhin /ts
   - Send patches around to keep the system in sync.
   - The core idea is to use immer-patches to keep the UI in sync between client and server, multiple clients, or multiple windows.
@@ -51,6 +47,11 @@ modified: 2023-01-17T19:13:01.845Z
   - **Resolve conflicts (not implemented yet)**
   - [Patches | Immer](https://immerjs.github.io/immer/patches/)
     - The generated patches are similar (but not the same) to the RFC-6902 JSON patch standard, except that the path property is an array, rather than a string. 
+
+- https://github.com/drifting-in-space/driftdb /MIT/rust/ts
+  - https://driftdb.com/
+  - A real-time data backend for browser-based applications.
+  - core Rust driftdb implementation.
 
 - https://github.com/gardencmp/jazz /MIT/202311/ts
   - https://jazz.tools/
@@ -67,6 +68,22 @@ modified: 2023-01-17T19:13:01.845Z
   - eg: End-to-end encrypted todo list using Automerge
   - Why use a central relay service?
     - The main reason is to exchange data asynchronously.
+
+- https://github.com/deepstreamIO/deepstream.io /MIT/202310/ts
+  - https://deepstreamio.github.io/
+  - open source server inspired by concepts behind financial trading technology. 
+  - It allows clients and backend services to sync data, send messages and make rpcs at very high speed and scale.
+  - Deepstream and Socket.io actually both use engine.io for browser communication
+  - [Show HN: Deepstream.io – open-source real-time server with pub/sub and data sync | Hacker News_201602](https://news.ycombinator.com/item?id=11071916)
+  - What is the algorithm used for JSON synchronization? Operational Transformation, CRDT, diff/patch?
+    - Currently if a conflict occurs it’s reported back to the client that triggered it and its up to it to resolve it. We are currently working on configurable merge strategies on a per record level
+    - for most use cases, newest update wins is sufficient if it can be done on a fine granular basis (one property of an object/document). It's what web applications have been doing for forever and being a 'realtime' framework doesn't change this if your use case isn't something like google docs.
+  - Is this similar to firebase
+    - Yes, but there are a number of core differences
+    - Deepstream.io is a free open source server, not a PaaS offering
+    - Deepstream offers pub-sub, request-response and web-rtc call management in addition to data-sync
+    - Firebase’s data-sync approach is based on one large chunk of JSON data that allows you to observe and manipulate sub-paths. Deepstream does the same, but breaks the data down into individual units, called records
+    - Deepstream uses a functional permissioning model, allowing you to interface with other systems (data-bases / active directory) for user-management, as opposed to firebase’ configuration based permissioning approach
 
 - https://github.com/peers/peerjs /202303/ts
   - PeerJS provides a complete, configurable, and easy-to-use peer-to-peer API built on top of WebRTC, supporting both data channels and media streams.
@@ -87,7 +104,8 @@ modified: 2023-01-17T19:13:01.845Z
 - https://github.com/ar-nelson/osmosis-js /202103/ts
   - An in-process JSON database with automatic peer-to-peer background synchronization between devices on a local network. Keep your apps in sync without a cloud!
   - 传输层使用jsonrpc
-  - Osmosis synchronization is automatic, encrypted, and relatively safe from conflicts. Updates are modeled with a JSON CRDT.
+  - Osmosis synchronization is automatic, encrypted, and relatively safe from conflicts. 
+  - Updates are modeled with a JSON CRDT.
   - Osmosis uses two kinds of sockets: broadcast UDP sockets that send heartbeat packets, and unicast TCP sockets that send Monocypher-encrypted, zstandard-compressed JSON-RPC messages.
 
 - https://github.com/JacobJaffe/event-system-prototype
@@ -126,7 +144,7 @@ modified: 2023-01-17T19:13:01.845Z
   - Nango continuously syncs data from any API endpoint (that returns JSON) to your database.
   - Nango has built-in support for OAuth through our sister project Pizzly
 
-- https://github.com/primus/primus /202301/js
+- https://github.com/primus/primus /MIT/202311/js
   - Primus, the creator god of the transformers & an abstraction layer for real-time to prevent module lock-in.
   - There are a lot of real-time frameworks available for Node.js and they all have different opinions on how real-time should be done. 
   - Primus provides a common low level interface to communicate in real-time using various real-time frameworks.
@@ -166,18 +184,6 @@ modified: 2023-01-17T19:13:01.845Z
   - feathers-sync uses a messaging mechanism to propagate all events to all application instances. 
   - It currently supports redis, amqp/RabbitMQ
 
-- https://github.com/deepstreamIO/deepstream.io /MIT/202310/ts
-  - https://deepstreamio.github.io/
-  - open source server inspired by concepts behind financial trading technology. 
-  - It allows clients and backend services to sync data, send messages and make rpcs at very high speed and scale.
-
-- https://github.com/soketi/soketi /AGPL3/202310/ts
-  - https://soketi.app/
-  - Next-gen, Pusher-compatible, open-source WebSockets server
-  - built on top of uWebSockets.js - a C application ported to Node.js
-  - soketi implements the Pusher Protocol v7. Therefore, any Pusher-maintained or compatible client can connect to it
-  - Soketi is capable to hold thousands of active connections with high traffic on less than 1 GB and 1 CPU in the cloud
-
 - https://github.com/yomorun/presencejs
   - a JavaScript library that allows you to build real-time web applications . 
   - The server is built on top of YoMo(go)
@@ -205,6 +211,19 @@ modified: 2023-01-17T19:13:01.845Z
     - Your feed key is stored in the browser together with the log, indexes and smaller images. 
     - Wasm is used for crypto and is around 90% the speed of the C implementation. 
     - A WebSocket is used to connect to pubs or rooms
+
+- https://github.com/BetterTyped/hyper-fetch /apache2/202310/ts
+  - https://hyperfetch.bettertyped.com/
+  - fetching and realtime data-exchange framework meticulously crafted to prioritize simplicity and efficiency.
+  - Next-generation features streamlines architecture creation, grants access to the request lifecycle
+
+- https://github.com/cefjoeii/mern-crud /MIT/202311/js
+  - A simple records system using MongoDB, Express.js, React.js, and Node.js with real-time Create, Read, Update, and Delete operations using Socket.io.
+  - Semantic UI React was used for the UI in the front-end.
+
+- https://github.com/realtimecms/realtime-cms /BSD/202001/js
+  - Core project for realtime cms - server-side framework for real-time applications
+  - https://github.com/realtimecms/users-service
 # sync-json
 - https://github.com/zettant/realtime-object-sync
   - server and client libraries for realtime JSON object synchronization.
@@ -248,7 +267,15 @@ modified: 2023-01-17T19:13:01.845Z
 # sync-state
 
 # websocket
-- https://github.com/Rolands-Laucis/Socio /ts
+
+- https://github.com/soketi/soketi /AGPL3/202310/ts
+  - https://soketi.app/
+  - Next-gen, Pusher-compatible, open-source WebSockets server
+  - built on top of uWebSockets.js - a C application ported to Node.js
+  - soketi implements the Pusher Protocol v7. Therefore, any Pusher-maintained or compatible client can connect to it
+  - Soketi is capable to hold thousands of active connections with high traffic on less than 1 GB and 1 CPU in the cloud
+
+- https://github.com/Rolands-Laucis/Socio /MIT/202312/ts
   - A WebSocket based realtime duplex Front-End and Back-End syncing API paradigm framework
   - This lets you write SQL in your frontend code, that automagically refreshes on all clients when a resource is changed on any (optionally) connected DB. 
   - Additionally, create any generic JS variables on your server to be realtime synced across all clients using "Server Props".

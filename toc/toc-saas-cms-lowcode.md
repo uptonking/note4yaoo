@@ -208,7 +208,7 @@ modified: 2023-01-20T21:59:47.792Z
   - state management & mutations with React Query
   - Out-of-the-box support for live/real-time applications
 
-- https://github.com/atomicdata-dev/atomic-server /587Star/MIT/202311/rust/ts
+- https://github.com/atomicdata-dev/atomic-server /587Star/MIT/202401/rust/ts
   - https://atomicserver.eu/
   - a lightweight, yet powerful CMS / Graph Database
   - powered by actix-web and sled database

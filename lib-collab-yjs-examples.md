@@ -97,6 +97,7 @@ modified: 2022-09-21T15:47:41.340Z
   - allows you to build real-time collaborate features with a fully end-to-end type-safe api.
   - Inspired by trpc, Built with yjs
   - @pluv/io, @pluv/client, @pluv/crdt-yjs and @pluv/react all require yjs as a peer dependency.
+  - https://github.com/pluv-io/pluv-example
 
 - https://github.com/JonnysCode/y-solid
   - An experimental Solid protocol provider for Yjs

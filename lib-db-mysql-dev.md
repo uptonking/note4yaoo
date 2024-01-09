@@ -9,6 +9,8 @@ modified: 2020-12-18T04:59:39.602Z
 
 # guide
 - who is using #mysql
+  - facebook myrocks
+  - github
   - uber(from pg to mysql)
 # dev
 
