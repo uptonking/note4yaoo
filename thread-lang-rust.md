@@ -12,7 +12,9 @@ modified: 2023-10-06T16:26:57.557Z
 # discuss
 - ## 
 
-- ## 
+- ## My 5 year prediction: we'll realize it was a mistake to write all of our high-level tools in a language built around systems-level memory safety (Rust)
+- https://twitter.com/jlongster/status/1745094749717954705
+  - The language itself is good but the entire semantics are built around something we don’t need and slow down development
 
 - ## DWARF and frame pointers. It's a must-read if you're puzzled by perf, DWARF, frame pointers, profiling, or sampling.
 - https://twitter.com/OnlyXuanwo/status/1735526268261847490

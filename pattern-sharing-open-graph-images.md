@@ -26,6 +26,12 @@ modified: 2023-02-03T05:55:22.102Z
   - Iframely takes your URL and returns its metadata. If supported on the URL, we'll add HTML of rich media embeds.
   - This package includes specific domain parsers for most popular publishers. 
 
+- https://github.com/fabian-hiller/og-img /MPLv2/202401/ts
+  - Generate dynamic Open Graph images for your website
+  - This is a framework agnostic package for generating Open Graph images using `Satori` and `resvg`. 
+  - Built using Web APIs, this package can be executed with Node.js and on the edge. 
+  - The difference to `@vercel/og` is that this package loads the WebAssembly module needed to convert SVG to PNG lazily at runtime and provides a framework agnostic workaround for defining the content of the image using `satori-html`.
+
 ## utils
 
 - https://github.com/jshemas/openGraphScraper /ts

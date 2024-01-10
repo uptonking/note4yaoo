@@ -14,7 +14,16 @@ modified: 2023-10-11T21:37:25.329Z
 
 - ## 
 
-- ## 
+- ## why we need fullstack, syncing databases
+- https://twitter.com/matthew_linkous/status/1744906002368024585
+  - whether it's useFetcher, useSWR, React Query, Apollo, etc you'll eventually run into cache invalidation problem
+- You’re just trading off one problem for another. How do you sync a large Notion workspace with 2000 employees concurrently working? Caching might be a better solution in that case…
+  - Partial replication! With automatic invalidation and optimistic updates...
+- Haha. Sounds like caching to me
+- Because it is! Just better than a plain document or normalized cache because it can actually understand evaluate the queries you're trying to cache
+
+- has triplit implemented partial replication?
+  - Yep! Data is sent over the network only as needed from queries and subscriptions on the client
 
 - ## We’ve been spending a lot of time thinking about the best way to expose and implement relational querying in Triplit.
 - https://twitter.com/triplit_dev/status/1707509447789043760

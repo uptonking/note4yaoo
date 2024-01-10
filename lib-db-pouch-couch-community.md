@@ -155,9 +155,29 @@ modified: 2024-01-04T06:55:12.542Z
 # discuss-couch
 - ## 
 
-- ## 
+- ## 💾 We are running CouchDB on CentOS Stream 8, failed for backup.  
+- https://couchdb.slack.com/archives/C49LEE7NW/p1704833259714149
+  - We are backing up the database directories according to https://docs.couchdb.org/en/stable/maintenance/backups.html#database-backups .  
+  - We can restore the database on the same server, but if we try to restore it using on a CouchDB 3.3.1 docker container (https://hub.docker.com/_/couchdb), we get errors like internal_server_error : No DB shards could be opened.
 
-- ## 
+- did you backup and restore the `_dbs.couch` file also? when restoring, couchdb needs to be stopped. was it? Did you restore files with correct ownership/permissions and to the same path?
+  - backup by replicating is far safer
+  - oh, and make sure the erlang node name is the same before and after
+
+- How do I check/change the "erlang node name"?
+  - it's in the `vm.args` config file (as `-name <name goes here>`)
+  - The vm.args file is how one provides configuration for the Erlang VM itself
+- That was it!  Thanks
+
+- ## We've just had a node in a 3 node couch cluster run out of space. 
+- https://couchdb.slack.com/archives/C49LEE7NW/p1704813745172809
+  - It looks like it was running a compaction on 2 shards at the same time and unfortunately run out of space before either completed.
+  - Is it safe to delete the .compact.data and .compact.meta files to recover the node for now?
+  - Do we need to split some of the shards to reduce the amount of data used when compacting in the future?
+
+- yes it is safe to delete the .compact files
+  - that can help, yes, depending on where you are shard-size wise. But also explore increasing disk size as a fallback
+  - note that shard splitting like compaction needs 2xshard_size+some_spare to finish
 
 - ## [PostgREST: Providing HTML Content Using Htmx | Hacker News_202312](https://news.ycombinator.com/item?id=38687997)
 - While cool as a proof of concept and kudos for execution, this looks like a nightmare to maintain for any non-trivial webapp.

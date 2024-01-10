@@ -312,13 +312,19 @@ $$('[contenteditable]')
   - [x] streaming infinite-list/tree
 # dev-01
 
-## 010
+## 011
+
+## 0110
+
+- [Module not found: Can't resolve '@swc/helpers/src/_class_private_field_init.mjs' using NextUI with Next.js 13 - Stack Overflow](https://stackoverflow.com/questions/76083438/module-not-found-cant-resolve-swc-helpers-src-class-private-field-init-mjs)
+  - npm install @swc/helpers
 
 ## 0104
 
 - [Project must list all files or use an 'include' pattern - Stack Overflow](https://stackoverflow.com/questions/60029058/project-must-list-all-files-or-use-an-include-pattern)
   - In my case I was building a monorepo and referencing one of the packages into another package.
   - All I had to do was remove `composite: true` from tsconfig.json and it worked.
+
 ## 0103
 
 - [How to specify registry while doing npm install with git remote url? - Stack Overflow](https://stackoverflow.com/questions/35622933/how-to-specify-registry-while-doing-npm-install-with-git-remote-url)

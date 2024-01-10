@@ -13,6 +13,15 @@ modified: 2023-10-26T18:16:18.134Z
 
 # blogs-internals
 
+## [Writing a minimal in-memory storage engine for MySQL/MariaDB_202401](https://notes.eatonphil.com/2024-01-09-minimal-in-memory-storage-engine-for-mysql.html)
+
+- https://github.com/eatonphil/mariadb/tree/11.4/storage/memem
+  - minimal storage engine. It stores data in memory.
+
+- how to build a minimal in-memory storage engine, which I'll walk through in this post. 218 lines of C++.
+  - It supports CREATE, DROP, INSERT, and SELECT for tables that only have INTEGER fields. 
+  - It is explicitly not thread-safe because I didn't have time to understand MariaDB's lock primitives.
+
 ## [MySQL isolation levels and how they work_202401](https://planetscale.com/blog/mysql-isolation-levels-and-how-they-work)
 
 ## [MySQL索引数据结构红黑树，Hash，B+树详解 - 博客园](https://www.cnblogs.com/yufeng218/p/12465694.html)

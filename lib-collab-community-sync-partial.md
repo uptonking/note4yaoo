@@ -15,7 +15,9 @@ modified: 2023-12-08T15:49:56.046Z
   - ditto
   - scuttlebutt/ssb
   - hypercore
-  - ?: triplitdb, p/couchdb, peerdb
+  - triplitdb
+  - filter: p/couchdb
+  - ?: peerdb
 
 - **partial/selective-sync**
   - sync by table/collection/doc，可参考 pouchdb
@@ -34,7 +36,16 @@ modified: 2023-12-08T15:49:56.046Z
 - ## 
 
 - ## 🆚️ [Difference between Partial Replication and Sharding? - Stack Overflow](https://stackoverflow.com/questions/14136633/difference-between-partial-replication-and-sharding)
-- Sharding is a method of horizontal partitioning of a table. It doesn't related to replication. 
+- Partial replication is an interesting way, in which you distribute the data with replication from a master to slaves, each contains a portion of the data. 
+  - Eventually you get an array of smaller DBs, read only, each contains a portion of the data. 
+  - Reads can very well be distributed and parallelized.
+  - writes are still clogged, in 1 big fat lazy master database, tasks as buffer management, locking, thread locks/semaphores, and recovery tasks - are the real bottleneck of the OLTP, they make writes impossible to scale
+- Sharding is where data appears only once, within an array of DBs. 
+  - Each database is the complete owner of the data, data is read from there, data is written to there. 
+  - This way, reads and writes are distributed and parallelized. Real scale-out can be achieved.
+  - Sharding is a mess to handle, to maintain, it's hard as hell
+
+- 💡 Sharding is a method of horizontal partitioning of a table. It doesn't related to replication. 
 - Traditionally an RDBMS server located in the center of system with star like topology. That's why it becomes:
   - the single point of failure
   - the performance bottleneck of the system
@@ -44,7 +55,6 @@ modified: 2023-12-08T15:49:56.046Z
   - migrate to a NoSQL solution
 - Sharding allows you to scale out database to many servers by splitting the data among them. However sharding is a trade-off. It limits you in data joining/intersecting/etc.
 - You still have issue #1 if you use sharding. So it's a good practice to replicate sharded nodes.
-
 # discuss
 - ## 
 

@@ -13,6 +13,15 @@ modified: 2020-07-14T11:51:59.253Z
   - [React JS Best Practices From The New Docs](https://sebastiancarlos.com/react-js-best-practices-from-the-new-docs-1c65570e785d)
   - [use-context-selector demystified](https://dev.to/romaintrotard/use-context-selector-demystified-4f8e)
     - https://codesandbox.io/s/own-implem-27kv6
+# [Why useSyncExternalStore Is Not Used in Jotai · Daishi Kato's blog_202310](https://blog.axlight.com/posts/why-use-sync-external-store-is-not-used-in-jotai/)
+- React 18 introduces `useSyncExternalStore` hook. This is a solution for external stores to avoid tearing. 
+  - Jotai is technically an external store and suffers from tearing. 
+  - However, useSyncExternalStore isn’t a silver bullet. It’s not named as useExternalStore. As I understand, the “Sync” part basically means it’s incompatible with “time slicing” and it’s also referred as “de-opt”.
+
+- why Jotai uses useState(useReducer)
+  - With the userland solution, it can tear for a short period of time, and then it will be consistent afterwards.
+  - Jotai supports Suspense and Concurrent rendering, specifically the use of useTransition. 
+  - Jotai is modeled after useState and we expect useTransition to behave likewise. This is more important than temporary tearing.
 # [来深入了解下 requestIdleCallback 呗 ？](https://juejin.cn/post/7033959714794766372)
 - 预加载js/图片、预渲染
 - 数据的分析和上报
@@ -373,7 +382,7 @@ function useDebounce(callback, delay) {
 - why don't we use `useState` instead? 
   - We don't want to use `useState` because we don't need to trigger a component re-render when we update to the latest value. 
   - In fact, in our case if we tried, we'd trigger an infinite loop (go ahead, try it).
-- because we don't need or want a re-render when we update the `callback` to the latest value, it means we also don't need to (and really shouldn't) include it in a dependency array for `useEffect`,          `useCallback`, or in our case `useMemo`.
+- because we don't need or want a re-render when we update the `callback` to the latest value, it means we also don't need to (and really shouldn't) include it in a dependency array for `useEffect`,               `useCallback`, or in our case `useMemo`.
 - It's really important that you follow the `eslint-plugin-react-hooks/exhaustive-deps` rule and always include all dependencies. 
   - But you should skip the `current` value of a ref. 
   - This is because updating a ref doesn't trigger a re-render anyway, so React can't call the effect callback or update memoized values when the ref is updated. 

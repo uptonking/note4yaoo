@@ -507,7 +507,7 @@ modified: 2023-09-28T20:35:56.153Z
   - Scalable replication and change listening for CouchDB
   - Spiegel was designed to provide scalable replication and change listening for Quizster, a photo-based feedback and submission system.
 
-- https://github.com/pouchdb-community/pouchdb-replication-stream /202307/js
+- https://github.com/pouchdb-community/pouchdb-replication-stream /apache2/202307/js
   - Replicate PouchDB/CouchDB databases with Node.js-style streams
   - you can replicate two databases by just attaching the streams together
 - https://github.com/pouchdb-community/pouchdb-load /201607/js
@@ -945,6 +945,10 @@ modified: 2023-09-28T20:35:56.153Z
   - Budibase integrates with a number of popular tools allowing you to build apps
   - the Budibase API enables Budibase as a backend
   - At Budibase we use CouchDB as the underlying technology of our internal Budibase DB.
+  - Budibase uses CouchDB to store:
+    - Metadata about your apps and deployment
+    - Data stored when using Budibase's in-built tables
+    - Audit logs
 
 - https://github.com/bterkuile/cmtool /202209/ruby/js
   - A rails 3.2+ CMS as engine for a CouchDB backend
