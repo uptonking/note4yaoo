@@ -1,11 +1,11 @@
 ---
-title: thread-pm-base-presentation-ppt
-tags: [pm, ppt, presentation, thread]
+title: thread-pm-base-office-ppt-pdf
+tags: [office, pdf, pm, ppt, presentation, thread]
 created: 2021-04-19T14:51:21.033Z
-modified: 2021-08-16T06:59:32.581Z
+modified: 2024-01-11T15:57:32.182Z
 ---
 
-# thread-pm-base-presentation-ppt
+# thread-pm-base-office-ppt-pdf
 
 # guide
 
@@ -16,6 +16,27 @@ modified: 2021-08-16T06:59:32.581Z
 - products
   - design-to-code
   - code-to-design
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## 
+# discuss-pdf
+- ## 
+
+- ## 我想要写一个 HTML 转图片/PDF 的微服务，底层是 chrome，开源。是否已经有同类项目？
+- https://twitter.com/chloerei/status/1724724703317934102
+  - 我可能没说清楚背景，我有个应用已经在用chrome生成图片了，但是把 chrome 打包进主应用里让镜像大了几百M，我想把调用chrome API这个部分独立成服务。
+  - 类似的项目有 vercel/og。类似的服务有 htmlcsstoimage。
+
+- ## 很多人都在问简单简历 http://easycv.cn 下载的 PDF 文件为什么效果那么好？
+- https://twitter.com/vikingmute/status/1711188708316336252
+- 如果你使用的 React 技术栈，使用 React PDF 肯定是没错的，可以直接使用各种 css 属性，同时完美实现渲染/下载等功能
+  - 甚至还可以配合 React PDF Tailwind，使用 Tailwind.css 来写 PDF 的模版，这个是基于 React PDF 的。
+  - 通过这两个，就可以实现比较完美的 PDF 样式展示和布局了。
+
+- 我会用jspdf去构建一两页的PDF
 # discuss
 - ## 
 

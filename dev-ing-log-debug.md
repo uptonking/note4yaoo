@@ -13,7 +13,11 @@ modified: 2023-06-14T00:53:15.226Z
 
 ## 
 
-## 
+## monorepo多包项目的bundle
+
+- 若打包各包默认的 dist/index.js， 会产生大量的重复代码
+- 若使用tsc编译多包，tsc无法输出单文件且没有transpile-only
+- 临时方案，使用rspack编译各包源码，通过 resolve.alias 直接编译src/index.ts，而不是 dist/index.js，注意要同时支持browser和node
 
 ## react-starter-rspack自动部署到github-pages
 

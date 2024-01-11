@@ -9,6 +9,10 @@ modified: 2024-01-02T08:59:51.343Z
 
 # guide
 
+- tsc-monorepo
+  - 不能bundle输出单文件
+  - tsc没有 transpile- only 的选项
+  - tsc不开启project-references时，会转译所有子包，输出的子文件层级很深
 # dev-xp
 
 ```shell

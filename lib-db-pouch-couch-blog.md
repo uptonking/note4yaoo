@@ -118,6 +118,14 @@ modified: 2024-01-04T06:34:57.448Z
   - Second, CouchDB works hand-in-hand with ZFS’s block level compression. ZFS can compress blocks of data as they are being written out to the disk. However, it only does it for new blocks and not retroactively. Now, the awesome part, CouchDB on compaction writes out a brand new database file which can utilize the new gzip compression settings on ZFS. This means you can try out different gzip compression settings just by compacting your CouchDB.
 # blogs-couchdb
 
+## [Query in Apache CouchDB: Clouseau - DEV Community_202111](https://dev.to/yenyih/query-in-apache-couchdb-clouseau-41ll)
+
+- In previous articles, we have talk about how to query with CouchDB Views and Mango Query. Both methods are working very well and able to cover a lot of use cases. Why Clouseau?
+  - You are still able to build your own search engine from scratch with Mango and Views. 
+  - However it is very tough and you have to put a lot of resources to build a good search engine, ton of work like text preprocessing, tokenization, algorithm, ranking and etc...
+- Start from CouchDB v3, CouchDB can build and query full-text search indexes using an external Java service that embeds Apache Lucene. 
+  - If you have been already familiar with Elasticsearch, then it is very easy for you to catch up with CouchDB + Clouseau as they are using the same Lucene Syntax.
+
 ## [CouchDB style sync and conflict resolution on Postgres with Hasura_202004](https://hasura.io/blog/couchdb-style-conflict-resolution-rxdb-hasura/)
 
 ## [10 Common Misconceptions about Apache CouchDB - Speaker Deck_201311](https://speakerdeck.com/wohali/10-common-misconceptions-about-apache-couchdb)

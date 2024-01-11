@@ -101,6 +101,20 @@ modified: 2023-10-26T19:04:00.318Z
 
 - ## 
 
+- ## 
+
+- ## The purpose of distributed systems has changed drastically over the last 2 decades.
+- https://twitter.com/YingjunWu/status/1745213563755749806
+  - When MapReduce first emerged, the need for dist. systems was to get better perf - single node wasn't powerful enough.  
+  - But now, in the cloud era, we we can easily rent machines with big DRAM from AWS. Yet, people still need distributed systems, but primarily for high availability.
+  - I bet more and more data systems will be optimized for scaling up, not scaling out. Examples include RisingWave, DuckDB, Neon, and many others.
+
+- But it's trickier to manage in terms of autoscaling? Assume at peak time we need say 100 cores, but only for 1-2 hours, and for the rest of the day we need say 20 cores. We would need to use different machine types through the day which is not well automated scenario now.
+  - That's a very good point. Yes, right now we still need a multi-node cluster in this case, as migrating terabytes of states from one machine to another is always a pain.
+  - The idea of 'S3 as a primary storage, ' as adopted in many modern systems, can mitigate the problem. To scale up (let's say we just have one single machine), we only need to create a new machine and allow the new machine to load the entire states from S3. But unfortunately, at the moment (atm), S3 is not fast enough and loading data is still quite slow.
+  - I'm keeping a close eye on S3 Express. If AWS really delivers low-latency S3 at low cost, then it may address the problem nicely.
+- Great insights! In my personal opinion, scaling out could be still relevant and important for certain customers who anticipate explosive growth in data usages and want to position for the future (a few years out) in choosing DB vendors..
+
 - ## DuckDB is great, but switching my code from single-node processing to distributed processing should be a no-brainer and invisible to me, like switching a flag. 
 - https://twitter.com/ananthdurai/status/1733040083056701865
   - What to do with the current duckdb ecosystem to enable it? Is PySpark api support the answer for it?

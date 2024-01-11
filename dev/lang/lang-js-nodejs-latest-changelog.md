@@ -80,6 +80,9 @@ modified: 2022-12-31T20:13:33.307Z
 - experimental JSON Import Assertions
 - server.headersTimeout/requestTimeout
 
+- v18.3.0
+  - fetch
+
 - v17.5.0
   - importing a JSON file is possible using Import Assertions
     - `node --experimental-json-modules ./your-file.js`.

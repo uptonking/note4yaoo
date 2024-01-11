@@ -79,7 +79,10 @@ modified: 2023-10-11T21:37:25.329Z
 
 - ## 
 
-- ## 
+- ## A sneak preview of a simpler way to define relationships between collections in Triplit
+- https://twitter.com/matthew_linkous/status/1745203037210030565
+  - The key reason we can make this so nice and concise is actually our direct support for Sets as attributes (look at 'postIds'). 
+  - In SQL world, you'd need an extra table like `user_posts` and a three-way join to make this relation possible
 
 - ## 🚀 [Show HN: Triplit – The Full-Stack Database | Hacker News_202312](https://news.ycombinator.com/item?id=38805423)
 - Triplit is designed to make building collaborative and local-first web apps a lot simpler.

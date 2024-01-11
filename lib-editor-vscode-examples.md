@@ -31,7 +31,7 @@ modified: 2023-01-21T18:58:29.846Z
 # apps
 
 # vscode-web
-- https://github.com/Felx-B/vscode-web /js
+- https://github.com/Felx-B/vscode-web /MIT/202311/js
   - This project is aimed to build a web version of VSCode, this is not a fork, simply a web compilation of the VSCode project.
   - Microsoft recently open sourced VSCode web compilation, so I simplified the build process to use the official compilation (no more tweak needed).
 # vscode-server
@@ -43,6 +43,14 @@ modified: 2023-01-21T18:58:29.846Z
 - https://github.com/gitpod-io/openvscode-server
   - This project provides a version of VS Code that runs a server on a remote machine and allows access through a modern web browser. 
   - It's based on the very same architecture used by Gitpod or GitHub Codespaces at scale.
+
+- https://github.com/cdr/code-server /MIT/202401/ts
+  - https://coder.com/
+  - Run VS Code on any machine anywhere and access it in the browser
+  - Use cloud servers to speed up tests, compilations, downloads, and more
+  - Requirements: Linux machine with WebSockets enabled, 1 GB RAM, and 2 vCPUs
+  - https://github.com/coder/coder /AGPLv3
+    - Provision remote development environments via Terraform
 # vscode-collab
 - https://github.com/sekassel-research/vscode-collab-plugin /ts
   - Collaborative editing plugin for VSCode/code-server/fulib.org Projects

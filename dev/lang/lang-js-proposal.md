@@ -113,25 +113,41 @@ modified: 2020-07-07T08:10:16.774Z
 - https://github.com/tc39/proposal-json-superset
   - A proposal to extend ECMA-262 syntax into a superset of JSON.
 
-## es2020
+## [es2020](https://github.com/daumann/ECMAScript-new-features-list/blob/main/ES2020. MD)
 
-- bigint
 - dynamic import: `import()`
+- bigint
 - optional chaining: `?.`
 - Nullish Coalescing Operator: `??`解决`||`无法处理空字符串/0这类falsy value的问题
-- Promise allSettled
-- String matchAll
-- globalThis: to provide a standard way of accessing the global this value across environments.
+- Promise.allSettled
+- String.matchAll
+- `globalThis`: to provide a standard way of accessing the global this value across environments.
 - import.meta
 - for..in order: loop over the properties of an object in the order in which they were defined
 
-## es2021
+## [es2021](https://github.com/daumann/ECMAScript-new-features-list/blob/main/ES2021. MD)
 
 - String.prototype.replaceAll
 - Logical Assignment Operators (&&= ||= ??=)
 - Numeric Separators (1_000)
 - Promise.any & AggregateError
 - WeakRefs & FinalizationRegistry
+
+## [es2022](https://github.com/daumann/ECMAScript-new-features-list/blob/main/ES2022. MD)
+
+- .at() method on built-in indexables
+- Object.hasOwn
+- RegExp Match Indices
+- Top-level await
+- Class field declarations
+- Ergonomic brand checks for private fields
+
+## [es2023](https://github.com/daumann/ECMAScript-new-features-list/blob/main/ES2023. MD)
+
+- array.findLast
+- Hashbang Grammar #!/usr/bin/env node
+- Use symbols in WeakMap/WeakSet/WeakRef collections and registries
+- Change Array by copy: .toSorted, .toSpliced
 
 ## esX-deprecated
 

@@ -21,9 +21,13 @@ modified: 2021-05-14T15:03:38.010Z
   - service worker 中监听 fetch 事件当然是可以拦截脚本的请求的，不信你可以试试
   - 包括esm加载时的请求都可以被拦截
 # vscode-powered
-- https://github.com/cdr/code-server
+- https://github.com/cdr/code-server /MIT/202401/ts
   - https://coder.com/
-  - Run VS Code on any machine anywhere and access it in the browser.
+  - Run VS Code on any machine anywhere and access it in the browser
+  - Use cloud servers to speed up tests, compilations, downloads, and more
+  - Requirements: Linux machine with WebSockets enabled, 1 GB RAM, and 2 vCPUs
+  - https://github.com/coder/coder /AGPLv3
+    - Provision remote development environments via Terraform
 
 ## CodePen
 

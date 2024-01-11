@@ -314,6 +314,28 @@ $$('[contenteditable]')
 
 ## 011
 
+## 0111
+
+- [babel plugin 的 loose 模式是什么](https://github.com/fengzilong/pso/issues/7)
+  - 开启：会生成更贴近 ES5 风格的代码
+  - 关闭：会生成尽可能严格遵循 ES next 语法的代码
+  - 优点：代码更易读，在一些浏览器上可能兼容性更好，运行更快
+  - 缺点：当你想切换回 native ES 语法时，这个过程可能会出现不兼容的情况，因为你的代码使用了编译后的不严格的代码，存在风险
+  - 所以大部分情况下，不建议开启 loose 模式
+
+- [详解利用webpack的splitChunk拆分打包文件 - 掘金](https://juejin.cn/post/7101555050194927624)
+  - splitChunks的配置项都是作用于cacheGroup上的，也就是cacheGroups缓存组可以继承和覆盖来自 splitChunks.* 的任何选项
+
+- [webpack 拆包：关于 splitChunks 的几个重点属性解析 - 掘金](https://juejin.cn/post/7118953143475372039)
+  - 对于异步导入，splitChunks 分离出 chunks 形成单独文件来重用，而对于同步导入的相同模块没有处理，这就是 chunks: 'async' 的默认行为
+  - initial 与 async 的区别：同步导入的模块也会被选中分离出来。
+  - 在 initial 设置下，就算导入的是同一个模块，但是同步导入和异步导入是不能复用的。
+  - 把 chunks 设置为 all，不管是同步导入还是异步导入，m3.js 都分离并重用了。
+
+- [webpack and yarn magic against duplicates in bundles](https://www.developerway.com/posts/webpack-and-yarn-magic-against-duplicates-in-bundles)
+  - https://github.com/atlassian-labs/webpack-deduplication-plugin
+  - NormalModuleReplacementPlugin — it gives the ability to replace one file with another file during build time based on a regular expression
+
 ## 0110
 
 - [Module not found: Can't resolve '@swc/helpers/src/_class_private_field_init.mjs' using NextUI with Next.js 13 - Stack Overflow](https://stackoverflow.com/questions/76083438/module-not-found-cant-resolve-swc-helpers-src-class-private-field-init-mjs)

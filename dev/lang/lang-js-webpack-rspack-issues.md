@@ -14,7 +14,8 @@ modified: 2024-01-03T16:14:25.702Z
 
 - ## 
 
-- ## 
+- ## [support webpack5 new library type 'module' · webpack-contrib/webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer/discussions/587)
+- 未实现
 
 - ## [HookWebpackError: HMR is not implemented for module chunk format yet [webpack 5] · Issue #17636 · webpack/webpack](https://github.com/webpack/webpack/issues/17636)
 - 202312: It is still under development and in our roadmap, sorry for delay, we have an issue for full compatibility ES modules

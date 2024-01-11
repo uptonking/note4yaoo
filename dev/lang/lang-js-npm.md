@@ -142,6 +142,13 @@ npm unlink
   - A CLI tool to make scripts in package.json clean.
   - 支持任务依赖
 
+- https://github.com/ranyitz/qnm /202309/ts
+  - cli utility for querying the node_modules directory
+  - Current solutions like running `npm list` are slow and produce a lot of irrelevant output. 
+  - It supports both npm and yarn and allows you to quickly identify the versions of the modules you are interested in.
+  - Explain why a package was installed
+  - Supports monorepos
+
 - typesync
   - Install missing TypeScript typings for dependencies in your package.json
 
