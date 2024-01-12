@@ -200,6 +200,11 @@ modified: 2023-09-28T20:35:56.153Z
 - https://github.com/olafura/PouchFlux /201508/js
   - Flux with PouchDB
 
+- https://github.com/colinskow/pouchdb-live-find /201705/js
+  - Live PouchDB queries that update automatically as changes come in
+  - LiveFind allows you to effortlessly keep your U. I. synchronized with a subset of your data in an efficient way. It is designed to perfectly complement `flux` and `redux` type architectures.
+  - LiveFind uses `pouchdb-find` to provide initial query results, and then checks every change after that to see if it matches your selector. You are informed every time a change adds, updates, or removes an item from your query.
+
 - https://github.com/serby/save /143Star/ISC/202209/js
   - A simple CRUD based persistence abstraction for storing objects to any backend data store. eg. Memory, MongoDB, Redis, CouchDB, Postgres, Punch Card etc.
 
@@ -210,15 +215,6 @@ modified: 2023-09-28T20:35:56.153Z
   - Implementation of single table design, and unified query access for MongoDB, CouchDB, and dynamoDB
   - https://github.com/genbliz/mocody/tree/add-pouchdb
 
-- https://github.com/Agrejus/db-framework-plugin-pouchdb /202311/ts
-  - https://github.com/Agrejus/db-framework /202311/ts
-  - Db Framework is a TypeScript first ORM designed to wrap existing database frameworks such as PouchDB to augment its functionality.
-  - Inspired by . NET's Entity Framework, Db Framework operates the same way and tries to keep method names as close as possible.
-  - Install a db provider: pouchdb, memory, localStorage.
-  - https://github.com/Agrejus/db-framework-plugin-memory
-  - https://github.com/Agrejus/pouchdb-entity-fabric /202209/ts
-    - PouchDB ORM modeled after .net's Entity Framework
-
 - https://github.com/KorbinianKuhn/pouchoose /202101/ts
   - Mongoose-like API for PouchDB.
   - Heavily work in progress
@@ -228,6 +224,15 @@ modified: 2023-09-28T20:35:56.153Z
 - https://github.com/jfelsinger/couch-cushion /201506/js
   - A Node.js ODM for Couchbase
   - Documents in couch-cushion are represented as an instance of a model. Models are defined via a schema. The schema setup is loosely based off of that in mongoose.
+
+- https://github.com/Agrejus/db-framework-plugin-pouchdb /202311/ts
+  - https://github.com/Agrejus/db-framework /202311/ts
+  - Db Framework is a TypeScript first ORM designed to wrap existing database frameworks such as PouchDB to augment its functionality.
+  - Inspired by . NET's Entity Framework, Db Framework operates the same way and tries to keep method names as close as possible.
+  - Install a db provider: pouchdb, memory, localStorage.
+  - https://github.com/Agrejus/db-framework-plugin-memory
+  - https://github.com/Agrejus/pouchdb-entity-fabric /202209/ts
+    - PouchDB ORM modeled after .net's Entity Framework
 
 - https://github.com/thaibault/couchdb-web-node-plugin /202311/ts
   - A database server, model instance conflict handler, rest api, authentication, session management, schema validator and model relation guarantee for webNode.
@@ -485,6 +490,7 @@ modified: 2023-09-28T20:35:56.153Z
   - Supports reconnection, negotiation and authentication.
   - https://github.com/yldio/pouch-websocket-sync-example
     - Example "Todo-MVC" application of using pouch-websocket-sync together with React and Redux, keeping local database in sync with remote.
+  - [Building realtime collaborative offline-first apps | YLD Blog_201511](https://www.yld.io/blog/building-realtime-collaborative-offline-first-apps/)
 
 - https://github.com/pgte/pouch-stream-server /201511/js
   - PouchDB stream server. Serves generic PouchDB object streams.
@@ -1066,7 +1072,8 @@ modified: 2023-09-28T20:35:56.153Z
   - The underlying tokenization/stemming/stopword engine is Lunr, which is optimized for English text, using a variant of the Porter stemmer. 
   - This is a local plugin, so it is not designed to work against CouchDB/Cloudant/etc. 
   - If you'd like to search against the server, use the CouchDB Lucene plugin, Cloudant's search indexes, or something similar.
-  - https://github.com/mochi-cards/pouchdb-quick-search
+  - https://github.com/mochi-cards/pouchdb-quick-search /202310/js
+    - Update lunr to 2.x
 
 - https://github.com/onyxcodes/dbmanager-ui /202208/ts
   - UI for managing PouchDB databases through DBManager interface layer
@@ -1301,6 +1308,9 @@ modified: 2023-09-28T20:35:56.153Z
   - Using fastify's auto directory scan for auto page addition
   - Account creation, activation, modification and deletion.
 
+- https://github.com/UXtemple/jwt-couchdb /201604/js
+  - JWT endpoint to authenticate users and create JSON Web Tokens out of the CouchDB's session API
+
 - https://github.com/ermouth/cloudwall /201903/js
   - A platform for developing, testing, building, deploying and running CouchDB hosted apps.
 
@@ -1313,6 +1323,12 @@ modified: 2023-09-28T20:35:56.153Z
 
 - https://github.com/ICTatRTI/couchdb-conflict-manager /202202/js
   - A pluggable UI (web component) for managing conflicts in a CouchDB Database.
+
+- https://github.com/nodejitsu/txn /201412/js
+  - Process and update CouchDB data in atomic, all-or-nothing transactions
+  - a library to load, modify, and commit Javascript objects in atomic, all-or-nothing operations. 
+  - It comes from internal Iris Couch tooling, inspired by Google App Engine transactions.
+  - Txn guarantees that data modifications either commit completely, or roll back completely (MVCC). 
 
 - https://github.com/glynnbird/couchmigrate
   - CouchDB command-line design document migration tool
@@ -1385,7 +1401,7 @@ modified: 2023-09-28T20:35:56.153Z
   - Changemate is a change notification service and framework. 
   - At present it only supports responding to the _changes feed of a couch database, but will be expanded in time to support other change notification formats.
 
-- https://github.com/rnewson/couchdb-lucene /java
+- https://github.com/rnewson/couchdb-lucene /apache2/202202/java/archived
   - Enables full-text searching of CouchDB documents using Lucene
 
 - https://github.com/MalekovAzat/CouchDbStressTesting /python/ts
@@ -1472,6 +1488,9 @@ modified: 2023-09-28T20:35:56.153Z
   - command-line utility to calculate the difference between two Cloudant/CouchDB datbases.
   - https://github.com/glynnbird/couchdeconflict
     - Command-line utility to remove conflicts from CouchDB/Cloudant documents
+
+- https://github.com/glynnbird/docstream /201405/js
+  - Node.js utility to turn CouchDB's _all_docs stream in to stream of plain documents
 
 - https://github.com/gr2m/couchdb-excel-import /201501/js
   - imports Excel files (*.xls, *.xlsx) into CouchDB documents, and transforms the sheets into JSON.

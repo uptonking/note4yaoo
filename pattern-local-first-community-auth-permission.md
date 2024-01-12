@@ -19,6 +19,28 @@ modified: 2023-12-18T12:43:20.532Z
 # discuss-auth
 - ## 
 
+- ## 
+
+- ## How can you safely store passwords in a database?
+- https://twitter.com/Franc0Fernand0/status/1745730683236917747
+  - Storing passwords in plain text is a bad idea. Anyone with internal access to the database can see and grab them.
+  - A standard solution to protect against such attacks is using a salt.
+  - A salt is a random unique string that is added to each password during the hashing process.
+
+- Here is the process used to store and validate the password using salt:
+  1. The salt is stored in plain text in the database, ensuring that the hash result is unique to each password.
+  2. The passwords are stored in the database, hashing them with the salt.
+  3. A client enters its password.
+  4. The system reads the salt from the database.
+  5. The system combines the salt with the password and hashes it.
+  6. The system compares the computed hash values with the ones stored in the database. If they are equal, the password is valid.
+- Note how the salt is uniquely associated with each user's password.
+- By storing the salt in the database, the system can always retrieve the correct salt to hash the password during login.
+  - This approach ensures that even if two users have the same password, their hash values will be different due to the unique salts.
+
+- Please use slow salted hash (PBKDF, Argon2, Bcrypt). Using simple hash may be not good enough. And when some older DB versions are using MD5, it's done for.
+  - MD5 is not secure for password hashing due to its vulnerability to brute-force attacks and hash collisions.
+
 - ## how does single sign-on (sso) work
 - https://twitter.com/milan_milanovic/status/1737027285549490434
   - Single sign-on (SSO) is an authentication process that allows a user to access multiple applications with a single login. 

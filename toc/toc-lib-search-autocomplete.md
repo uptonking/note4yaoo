@@ -51,6 +51,14 @@ modified: 2023-01-01T13:24:35.994Z
   - Jhaystack allows you to search through not just values but also objects and arrays, dates, regex
   - Jhaystack allows you to create full-text indexes using an index strategy. 
   - Full-text indexes can be used not just for full-text search but also for search filters in queries which works great for larger data sets.
+
+- https://github.com/jameslittle230/stork /apache2/202307/rust/ts
+  - fast web search, made for static sites.
+  - Stork is built with Rust, and the Javascript library uses WebAssembly behind the scenes.
+  - [I'm winding down my work with Stork_202306](https://github.com/jameslittle230/stork/discussions/360)
+    - Tinysearch and PageFind are, philosophically, the most similar alternatives to Stork. 
+    - Lunr, Fuse.js, and Minisearch are similar, but are Javascript-only (no WASM). 
+    - Meilisearch, EdgeSearch, and Tantivy are all server-hosted search engines written in Rust. 
 # search-js
 - flexsearch /9.4kStar/apache2/202210/js
   - https://github.com/nextapps-de/flexsearch
@@ -84,8 +92,16 @@ modified: 2023-01-01T13:24:35.994Z
   - For web applications with all their data already sitting in the client, it makes sense to be able to search that data on the client too. 
   - It saves adding extra, compacted services on the server. 
   - A local search index will be quicker, there is no network overhead, and will remain available and usable even without a network connection.
-- https://github.com/MihaiValentin/lunr-languages
-  - Lunr Languages is a Lunr addon that helps you search in documents written in the following languages, 支持中文
+  - [Still maintained?](https://github.com/olivernn/lunr.js/issues/504)
+    - lunr is meant for browser use and as such it's very small in size compared to Lyra Search
+  - https://github.com/MihaiValentin/lunr-languages
+    - Lunr Languages is a Lunr addon that helps you search in documents written in the following languages, 支持中文
+  - https://github.com/olivernn/lunr.rs /201710/rust
+    - A Lunr backend implemented in Rust.
+    - The current implementation is able to generate an index that is readable and searchable by lunr.js, but that is about it. 
+    - Currently there is no pipeline and no ability to associate metadata with a token.
+  - forks
+  - https://github.com/CrazyFork/lunr.js
 
 - elasticlunr.js /1.9kStar/MIT/201904/js
   - https://github.com/weixsong/elasticlunr.js
@@ -94,7 +110,7 @@ modified: 2023-01-01T13:24:35.994Z
   - Elasticlunr.js provides Query-Time boosting, field search, more rational scoring/ranking methodology
   - Elasticlunr.js is a bit like Solr, but much smaller 
 
-- js-search /2.1kStar/MIT/202007/js/NoDeps/lunr/inactive
+- js-search /2.1kStar/MIT/202003/js/NoDeps/lunr/inactive
   - https://github.com/bvaughn/js-search
   - Js Search began as a lightweight implementation of Lunr JS, offering runtime performance improvements and a smaller file size. 
   - It has since expanded to include a rich feature set- supporting stemming, stop-words, and TF-IDF ranking.
@@ -116,6 +132,7 @@ modified: 2023-01-01T13:24:35.994Z
   - **Created to perform fast search on json dataset (up to 100K items)**.
   - working on backend and frontend
   - If native full text search is not enough then you can integrate with external full text search, like minisearch/lunr.js
+  - Facet filtering and sorting: Filter and order results by various facets.
   - pagination
   - https://github.com/unplatform-io/instantsearch-itemsjs-adapter
   - https://github.com/unplatform-io/clientside-instantsearch-demo

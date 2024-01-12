@@ -15,6 +15,19 @@ modified: 2024-01-04T06:55:00.085Z
 - ## 
 
 - ## 
+# discuss-sync
+- ## 
+
+- ## 
+
+- ## is offline sync still working with a clustered setup? 
+- https://couchdb.slack.com/archives/C49LEE7NW/p1704937572870599
+  - Or is offline sync and http replication separate things?
+
+- When you setup a cluster, data will be synced across clustered node automatically, based on the replicas and shards configured for the databases.
+  - And, you may use replication to manually sync your data with other couchdb cluster (or single node setup). 
+  - Replication protocol is being used by other databases like [PouchDB] to sync CouchDB database on your Browser's IndexedDB (internally used by PouchDB).  
+  - Using replication you can also sync only limited (selected through query) documents, instead of full database.
 # discuss
 - ## 
 

@@ -71,7 +71,7 @@ modified: 2022-12-31T18:05:42.830Z
 - ## [Decide on naming of modules · Level/abstract-level](https://github.com/Level/abstract-level/issues/6)
 - With abstract-level, there is no "down" or "up" anymore. For example, memdown does not have to be wrapped with levelup. This means level-mem could just do module.exports = require('memdown') to export (largely) the same functionality as before.
 
-- ## [LevelUp, LevelDown, LevelDB_201811](https://blog.elsdoerfer.name/2018/11/10/levelup-leveldown-leveldb/)
+- ## 🆚️ [LevelUp, LevelDown, LevelDB_201811](https://blog.elsdoerfer.name/2018/11/10/levelup-leveldown-leveldb/)
 - This ecosystem is super confusing. Here is the low-down:
   - LevelDB is a (K/V-Store) database
   - leveldown is a NodeJS binding.

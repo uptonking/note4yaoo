@@ -97,7 +97,12 @@ modified: 2023-12-06T15:59:01.332Z
 # discuss
 - ## 
 
-- ## 
+- ## [Idea: in-memory cache of doc ids for better performance_201405](https://github.com/pouchdb/pouchdb/issues/2227)
+- Cookies don't work how you think they do.
+  - More generally while I think a cache layer could be a very good idea see lru-cache for a good example of something we could use, I'd be hesitant to optimize for low document counts, a persistent database will ALWAYS be slower then an in memory one, that is the price you pay for being able to pull the plug after doing something and knowing that it's saved.
+  - Back to using a cache layer, that might be doable for leveldb but with http and to a lesser extent idb and websql you're going to start having to worry about the datastore changing out from under the cache
+
+- I think the conclusion is that this is a bad idea. For localstorage-down I'd like to move to a more robust copy-on-write btree, and for everything else users can try the memory adapter as a replicating cache, which was at least reported by one user to give small performance gains.
 
 - ## do local docs have revision trees?
 - https://couchdb.slack.com/archives/C016TJAE7A4/p1697613422859539

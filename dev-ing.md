@@ -314,6 +314,15 @@ $$('[contenteditable]')
 
 ## 011
 
+## 0112
+
+- [Instead change the require of index.js, to a dynamic import() which is available in all CommonJS modules - Stack Overflow](https://stackoverflow.com/questions/70541068/instead-change-the-require-of-index-js-to-a-dynamic-import-which-is-available)
+  - const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args)); 
+
+- [How to use dynamic import from a dependency in Node.js? - Stack Overflow](https://stackoverflow.com/questions/71432755/how-to-use-dynamic-import-from-a-dependency-in-node-js)
+  - await import("my-plugin")	
+  - await import("/parent/node_modules/my-plugin/dist/index.js")	
+
 ## 0111
 
 - [babel plugin 的 loose 模式是什么](https://github.com/fengzilong/pso/issues/7)

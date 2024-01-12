@@ -80,3 +80,21 @@ modified: 2022-12-16T01:52:33.729Z
 # maybe
 - copy column data
 # more
+
+# discuss-table
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [UI considerations for designing large data tables | Hacker News_202401](https://news.ycombinator.com/item?id=38942439)
+- ag-grid is pretty great at all of this. 
+  - we're using it to infinite scroll / sort / filter a table with 3.2M rows of data and it 'just works'
+  - 3.2M rows are not loading into the browser at once, only about 10k. The page size is configurable. The frontend and backend have a contract to agree on how this works, so as the user scrolls (and frontend needs another page) it asks the backend for more. The frontend will keep up to N pages (also configurable) cached in the client. 
+- This is exactly what AG Grid Server Side Row Model is designed for. 
+
+- Wish HTML tables supported basic grid features like column pinning. Sadly you have to resort to bypassing table and instead use divs.

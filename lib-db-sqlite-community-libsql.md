@@ -18,7 +18,11 @@ modified: 2023-10-28T17:31:26.535Z
 # discuss
 - ## 
 
-- ## 
+- ## What cipher do folks expect from encryption at rest in SQLite? 
+- https://twitter.com/penberg/status/1745747106285985889
+  - @sarna_dev is integrating SQLite3MultipleCiphers into libSQL and there's many to choose from. 
+  - We now have enabled AES-256 in CFB mode, but I see the proprietary SQLite extension uses AES-256 in OFB mode with HMAC
+- Pluggable ciphers
 
 - ## 🔀 Here's the same ergonomic libSQL fast local reads with transparent remote writes in JavaScript. 
 - https://twitter.com/penberg/status/1737459047392006517

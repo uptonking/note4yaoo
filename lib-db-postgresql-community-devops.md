@@ -56,7 +56,11 @@ modified: 2023-10-26T19:18:19.584Z
 
 - ## 
 
-- ## 
+- ## TIL, as a Postgres superuser, you can run: `SET ROLE other_user;` Then, start working as that user.
+- https://twitter.com/winsletts/status/1745504268973695371
+- You can also use `\c user=other_user`
+
+- `psql -U your_username -t -c "SELECT datname FROM pg_database WHERE datname NOT IN ($EXCLUDEDBS)"`
 
 - ## 🔥 [Recovering a PostgreSQL database after a hard drive failure | Hacker News_202112](https://news.ycombinator.com/item?id=29744815)
 - 

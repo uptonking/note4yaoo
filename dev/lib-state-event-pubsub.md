@@ -11,16 +11,12 @@ modified: 2021-05-13T03:13:45.375Z
 
 - 监听事件的执行顺序如何控制
   - node默认使用队列形式的链表
-
 # guide
-
 - who is using #pubsub
   - redux
   - Vue2.x依赖收集与通知
   - nodejs eventemitter
-
 # EventEmitter
-
 - 优点
   - 可用来替换包含多个callback的场景
   - 可扩展性更强
@@ -70,8 +66,15 @@ modified: 2021-05-13T03:13:45.375Z
 
 - more-event-emitter-impl
   - https://github.com/facebookarchive/emitter /js
+# discuss
+- ## 
 
-# pieces
+- ## 
+
+- ## TIL the browser event system is basically a built-in pubsub system.
+- https://twitter.com/ralex1993/status/1745790936808837331
+  - [Patterns for Reactivity with Modern Vanilla JavaScript – Frontend Masters Boost](https://frontendmasters.com/blog/vanilla-javascript-reactivity/#pubsub-pattern-publish-subscriber)
+- `EventTarget` in Node.js has some omissions(省略、删除、遗漏) (e.g. no bubbling and sinking, which is sad if you’re trying to build your own DOM library on top of it), but is nonetheless API-compatible and performant
 
 - ## [When should I use EventEmitter?](https://stackoverflow.com/questions/38881170/when-should-i-use-eventemitter)
 - Whenever it makes sense for code to SUBSCRIBE to something rather than get a callback from something. 
@@ -79,7 +82,7 @@ modified: 2021-05-13T03:13:45.375Z
 - For example, let's say you are creating a ticketing system. 
 - The common way to handle things might be like this:
 
-``` JS
+```JS
 function addTicket(ticket, callback) {
   insertTicketIntoDatabase(ticket, function(err) {
     if (err)
@@ -93,7 +96,7 @@ function addTicket(ticket, callback) {
 - But now, someone has decided that when a ticket is inserted into the database, you should email the user to let them know. 
 - That's fine, you can add it to the callback:
 
-``` JS
+```JS
 function addTicket(ticket, callback) {
   insertTicketIntoDatabase(ticket, function(err) {
     if (err)
@@ -108,7 +111,7 @@ function addTicket(ticket, callback) {
 - Over time, there could be any number of things that should happen when a ticket is inserted. 
 - So let's change it around a bit:
 
-``` JS
+```JS
 function addTicket(ticket, callback) {
   insertTicketIntoDatabase(ticket, function(err) {
     if (err)
@@ -123,7 +126,7 @@ function addTicket(ticket, callback) {
 - We no longer need to wait on all these functions to complete before we notify the user interface. 
 - And elsewhere in your code, you can add these functions easily:
 
-``` JS
+```JS
 TicketEvent.on('inserted', function(ticket) {
   emailUser(ticket);
 });
@@ -135,7 +138,7 @@ TicketEvent.on('inserted', function(ticket) {
 
 - ## code-snippet: EventEmitter vs callback
 
-``` JS
+```JS
 let events = require("events");
 let util = require("util");
 let eventEmitter = new events.EventEmitter();
@@ -200,7 +203,7 @@ student_lenny.score('scored', 95);
   - 可以封装一个方法，方法中执行emitter.on，来模拟在一个事件处理函数中触发另一个事件处理函数
 - 还可以在emitterA的事件处理函数中直接调emitterB.emit('evtName')
 
-``` JS
+```JS
 var events = require('events');
 
 //create a container that can listen
@@ -238,9 +241,7 @@ setInterval(function() {
   - You could initialize it at server-start, and perhaps use some middleware on each request to subscribe to (or "attach") that global emitter. 
   - Just remember that an EventEmitter is a sole-source thing though, not Publish-Subscribe. 
   - For that you would need some extra stuff or find a library, or even use redis. 
-
 # ref
-
 - [Why use Node.js EventEmitter instead of just a plain function?](https://stackoverflow.com/questions/39305354/why-use-node-js-eventemitter-instead-of-just-a-plain-function)
   - another code snippet for EventEmitter vs callback
 - [Let’s Create a Lightweight Native Event Bus in JavaScript](https://css-tricks.com/lets-create-a-lightweight-native-event-bus-in-javascript/)

@@ -65,6 +65,16 @@ modified: 2023-11-07T16:49:03.314Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Images get loaded differently than JavaScript. 
+- https://twitter.com/RogersKonnor/status/1745704080163369407
+  - They generally have better compression, don't need to be evaluated by the V8 engine, multi-threaded loading, native lazy loading, etc...  
+  - Comparing JS bytes to binary bytes is not the same.
+- You can still compare certainly. Shoddy internet/ low bandwidth are common enough thanks to mobile. Just have to be accurate in reason for comparison, yes.
+
 - ## [Is it worth sticking to mongodb with GridFS or should I just use MySQL? : node_201705](https://www.reddit.com/r/node/comments/6bzf1d/is_it_worth_sticking_to_mongodb_with_gridfs_or/)
 - 
 - 

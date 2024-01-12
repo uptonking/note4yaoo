@@ -13,6 +13,19 @@ modified: 2023-04-07T04:09:30.491Z
 
 # blogs
 
+## [Patterns for Reactivity with Modern Vanilla JavaScript_202308](https://frontendmasters.com/blog/vanilla-javascript-reactivity/)
+
+- Reactivity Patterns are Core to Web Development
+- PubSub Pattern (Publish Subscriber)
+  - Custom Events: Native Browser API for PubSub
+  - Class Instance Custom Events: Subclassing EventTarget
+- Observer Pattern
+- Reactive Object Properties with Proxies
+- Reactive Systems
+  - Observables (Pattern of Rx.js)
+  - “Signals” (Pattern of SolidJS)
+  - “Observable-ish” Values (Frontend Masters)
+
 ## [可恶，signal 太简单撑不起 fre3 - 知乎](https://zhuanlan.zhihu.com/p/657166455)
 
 ## [从 Signals 看响应式状态管理 - 掘金](https://juejin.cn/post/7148001367947214856)

@@ -15,7 +15,7 @@ modified: 2020-12-20T16:01:15.556Z
 - 闭包
   - 私有变量可以放置外部拿到，但class对象的私有属性外部也可以拿到
 # reactivity
-- [Patterns for Reactivity with Modern Vanilla JavaScript](https://frontendmasters.com/blog/vanilla-javascript-reactivity/)
+- [Patterns for Reactivity with Modern Vanilla JavaScript_202308](https://frontendmasters.com/blog/vanilla-javascript-reactivity/)
   - https://twitter.com/1Marc/status/1693672383360508261
 
 - [A Reactive Framework in 40 Lines](https://www.ctnicholas.dev/articles/reactive-framework-in-40-lines)

@@ -24,7 +24,27 @@ modified: 2023-11-07T16:47:11.499Z
 # discuss
 - ## 
 
-- ## 
+- ## Ten “false” things you will hear about Databases: (unordered)
+- https://twitter.com/thegeeknarrator/status/1740500651233194192
+  1) SQL databases don’t scale.
+  2) Consistency in ACID == Consistency in CAP
+  3) Availability in CAP refers to “High Availability” 
+  4) NoSQL databases don’t use B-Trees
+  5) All databases use Write Ahead Logging.
+  6) Full table scans are always bad. 
+  7) Data Modelling is not related to query performance.
+  8) Horizontally scalable databases can support unlimited concurrency.
+  9) Indexing has no side effects. 
+  10) Databases can only run on expensive hardware. 
+
+- I have a question about WAL. Which databases doesn’t use WAL and guarantee consistency of its on-disk data?
+  - LMDB does not use a WAL but uses Append only BTrees. 
+  - VictoriaMetrics also does not have a WAL but they tradeoff durability in failure scenarios. 
+  - Since it is time series data it is ok to lose data worth 1sec in rare scenarios. 
+  - I am not entirely sure but I have heard CouchDB also uses Append only Btrees? But please confirm.
+- My point is that - there is no way you can guarantee ACID - if you end up doing more than two calls into FS. There is no way. You need to first write your intent (either in separate file or in per-node log of a tree in B-epsilon tree) somewhere.
+  - More than one call, I meant to say. One single call to insert a node into B+ Tree can lead to split of a leaf node - which will be more than one call into different logical offsets of that B+ Tree file on the file system. So, you describe your split in WAL first, and then do whatever the number of FS calls to carry out that split. Now without WAL, how do you ensure integrity of your B+Tree structure on disk?
+  - Even when we say - LMDB or some other type of DBs don’t use WAL on single file, but they still write their intent somewhere — in nodes. So, in a way, this is still kind of WAL records being distributed, instead of being appended to a single WAL file.
 
 - ## These are the 8 design rules you must learn to break.
 - https://twitter.com/deisbel/status/1736437854459273278

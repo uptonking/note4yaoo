@@ -44,7 +44,9 @@ modified: 2023-12-24T10:49:01.941Z
 
 - ## 
 
-- ## 
+- ## We extracted the core storage functionality from Fireproof so now anyone with an immutable content addressed IPFS workload can use the replication capabilities._20240107
+- https://twitter.com/jchris/status/1745489065322094599
+  - New blockstore module in 0.16! Any JavaScript #IFPS code that uses the `Blockstore` interface can swap in Fireproof's multi-writer encrypted CRDT and get CAR transactions, auto-compaction, and cloud connectors including AWS, PartyKit, and Netlify
 
 - ## I just merged a big refactor, this splits the loader and connectors into a blockstore package that can be used for any offline database, not just Fireproof. 
 - https://discord.com/channels/1142273421674303619/1142285854375686145/1193360293695324221

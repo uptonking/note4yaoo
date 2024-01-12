@@ -243,6 +243,8 @@ function sync() {
 
 ## [Mango queries](https://pouchdb.com/guides/mango-queries.html)
 
+- [Learn you pouchdb-find](https://nolanlawson.github.io/pouchdb-find/)
+
 - Mango queries, also known as `pouchdb-find` or the `find()` API, are a structured query API that allows you to build secondary indexes beyond the built-in `allDocs()` and `changes()` indexes.
 - The Mango query language is a DSL inspired by MongoDB, which allows you to define an index that is then used for querying. 
 

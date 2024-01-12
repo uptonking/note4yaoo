@@ -14,17 +14,17 @@ modified: 2022-12-31T20:13:33.307Z
 - [Node.js Previous Releases with dates](https://nodejs.org/en/download/releases/)
 # changelog
 
-## v22.0.0_20240
+## v22.0.0_202404
 
 - ### v21.0.0_20231017
   - [Node.js 21 is now available! | Node.js](https://nodejs.org/en/blog/announcements/v21-release-announce)
 
 - ESM: `--experimental-default-type` flag to flip module defaults
-  - Input that is already explicitly defined as ES modules or CommonJS, such as by a package.json "type" field or .mjs/.cjs file extension or the --input-type flag, is unaffected. 
+  - Input that is already explicitly defined as ES modules or CommonJS, such as by a package.json "type" field or `.mjs/.cjs` file extension or the --input-type flag, is unaffected. 
   - extensionless files are interpreted as WebAssembly if `--experimental-wasm-modules` is passed
 - Module customization hook `globalPreload` removed; use `register` and `initialize` instead
   - use `register` to send data from the application thread to the customization hooks, and the `initialize` hook to establish a communications channel between the threads.
-- Stable fetch/WebStreams
+- Stable `fetch/WebStreams`.
   - Both modules were marked as stable
   - This impacts WebStreams, FormData, Headers, Request, Response, and fetch.
 - A experimental browser-compatible WebSocket implementation arises with this release
@@ -39,12 +39,21 @@ modified: 2022-12-31T20:13:33.307Z
 
 ## v20.0.0_20230418
 
+- [v20.11.0_2024-01-09](https://nodejs.org/en/blog/release/v20.11.0)
+  - esm: add `import.meta.dirname` and `import.meta.filename`.
+    - https://twitter.com/meijer_s/status/1745727753964462431
+    - IMO `import.meta.url` is sufficient, but might as well use `filename` and `dirname` if they exist.
+    - `import.meta.url` is sufficient, `import.meta.filename` is convenient. Not all abstractions are bad
+    - No more `path.dirname(fileURLToPath(import.meta.url))`;
+  - fs: add c++ fast path for writeFileSync utf8
+  - stream: use Array for Readable buffer
+
 - v20.0.0_2023-04-18
   - [Node.js 20 is now available! | Node.js](https://nodejs.org/en/blog/announcements/v20-release-announce)
   - Experimental Permission Model
     - Restrict access to the filesystem/child_process/worker_threads/native-addons
   - Custom ESM loader hooks nearing stable
-    - Custom ES module lifecycle hooks supplied via loaders (--experimental-loader=./foo.mjs) now run in a dedicated thread, isolated from the main thread
+    - Custom ES module lifecycle hooks supplied via loaders (`--experimental-loader=./foo.mjs`) now run in a dedicated thread, isolated from the main thread
     - In alignment with browser behavior, `import.meta.resolve()` now returns synchronously
   - Stable Test Runner
   - Experimental SEA/Single Executable Apps
@@ -79,9 +88,6 @@ modified: 2022-12-31T20:13:33.307Z
 - global Blob, BroadcastChannel
 - experimental JSON Import Assertions
 - server.headersTimeout/requestTimeout
-
-- v18.3.0
-  - fetch
 
 - v17.5.0
   - importing a JSON file is possible using Import Assertions

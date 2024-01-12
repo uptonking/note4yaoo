@@ -16,7 +16,15 @@ modified: 2022-12-19T01:59:37.634Z
 
 - ## 
 
-- ## 
+- ## 🆚️ What's the difference between a Binary Mutex and a Semaphore?
+- https://twitter.com/RaulJuncoV/status/1745817381358747810
+- A mutex (short for mutual exclusion) is like a lock that safeguards shared resources.
+  - It ensures that only one thread or process can access the resource at any given time.
+  - A mutex is typically binary, with two states: locked or unlocked. It's a simple on-off switch.
+
+- A semaphore doesn't enforce mutual exclusion by itself.
+  - But allows us to limit the number of threads/processes accessing the resource at the same time.
+  - A semaphore has a non-negative count, representing the number of available units or resources.
 
 - ##  what if JS had a simple way to share structured data across Worker (without postMessage)?
 - https://twitter.com/jarredsumner/status/1719259259840684417
