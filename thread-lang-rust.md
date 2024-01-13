@@ -12,6 +12,25 @@ modified: 2023-10-06T16:26:57.557Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## I wonder if someone has written a "Rust for C programmers" blog post to highlight the semantic differences between the two languages...
+- https://twitter.com/penberg/status/1746107695533281535
+
+- [Rust for Embedded C Programmers - OpenTitan Documentation](https://opentitan.org/book/doc/rust_for_c_devs.html)
+
+- For example, it took me a really long time to adjust to the fact that in Rust objects move in memory by default and you need to use Pin to keep them put. 
+  - This is still sometimes counterintuitive to me when integrating with lower level things like `io_uring`. 
+  - With C, once you `malloc()` an object, it's going to be at a fixed location allowing you to just pass a pointer to it. 
+  - However, in Rust, the default behavior is the opposite, which leads to interesting bugs if you're not careful.
+- Another thing that keeps biting me is mutability. 
+  - In C, everything is mutable by default but in Rust you really are building with immutability by default. 
+  - And usually, the way to make something mutable is to use interior mutability with something like `RefCell`.
+  - I often make the mistake of passing a mut reference around only to eventually discover that it's pretty much impossible to evolve the code because the borrow checker starts to complain as soon as there's a possibility of multiple code paths mutating the same thing.
+- Zig is certainly more natural language to integrate with the OS and libc interfaces. But Zig also has many of the same issues as C with memory safety and resource leaks, which makes Rust so attractive. 
+
 - ## My 5 year prediction: we'll realize it was a mistake to write all of our high-level tools in a language built around systems-level memory safety (Rust)
 - https://twitter.com/jlongster/status/1745094749717954705
   - The language itself is good but the entire semantics are built around something we don’t need and slow down development
@@ -72,8 +91,4 @@ modified: 2023-10-06T16:26:57.557Z
 - https://twitter.com/DasSurma/status/1712005157611774056
 - One that hasn’t been mentioned is that it borrows some ideas from functional languages (sum types, monads, etc.) which makes it more elegant for AST manipulation. Same reason compiler devs love OCaml.
 
-- 
-
 - I think it actually wasn’t Rust. It was esbuild showing the way. SWC existed years before but didn’t really catch on until later. It wasn’t end to end (no bundler). ESBuild showed how fast native tools could be and others had to follow to keep up.
-
-- 

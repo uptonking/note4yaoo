@@ -32,7 +32,7 @@ modified: 2022-08-21T10:39:10.445Z
     - previous commit id: 904dd6c27973e161c2f41a07a4ca1cfa8067598b
     - https://github.com/Talend/ui/tree/904dd6c27973e161c2f41a07a4ca1cfa8067598b
 
-- https://github.com/linz/step-ag-grid
+- https://github.com/linz/step-ag-grid /202312/ts
   - https://linz.github.io/step-ag-grid/
   - Reusable ag-grid component for LINZ
   - ag-grid-community based grid with custom popover components implemented using a modified react-menu.
@@ -53,6 +53,9 @@ modified: 2022-08-21T10:39:10.445Z
   - https://svl-fe.github.io/pro-components/components/conditions
   - 杭州薮猫科技中后台业务组件库业务组件库，包含了大量的第三方组件库
   - 依赖 antd.v4、ag-grid、rc-virtual-list
+
+- https://github.com/LakhveerChahal/ag-grid-plus-workspace /202401/ts
+  - ag-grid based angular package providing extra features built on top of ag-grid community edition to unlock some paid enterprise features
 
 - GoodDataUI Pivot Table /53Star/Free4NonCommercial/ts/202104/inactive
   - https://github.com/gooddata/gooddata-react-components/tree/develop/src/components/core/pivotTable
@@ -255,6 +258,9 @@ modified: 2022-08-21T10:39:10.445Z
 - https://github.com/ag-grid/ag-grid-server-side-nodejs-example
   - A reference implementation showing how to perform server-side operations using ag-Grid with node.js and MySQL.
   - https://github.com/eogra7/ag-grid-server-side-nodejs-example
+# utils
+- https://github.com/ilikejames/ag-grid-column-builder /202307/ts
+  - A typesafe builder for creating column definitions in ag-grid.
 # more
 - https://github.com/terrestris/react-geo
   - https://terrestris.github.io/react-geo/

@@ -47,7 +47,7 @@ modified: 2022-11-03T04:14:11.987Z
   - https://signaldb.js.org/
   - a local JavaScript database with a MongoDB-like interface and TypeScript support, enabling optimistic UI with signal-based reactivity across multiple frameworks.
   - It enables the storage of data through a JSON interface in various storage providers, including the widely-used localStorage.
-  - In theory, every signal library is supported. SignalDB currently have pre-build reactivity adapters for preact-singals/mobx/solidjs
+  - In theory, every signal library is supported. SignalDB currently have pre-build reactivity ✨ adapters for preact-singals/mobx/solidjs
   - At the heart of SignalDB lies its advanced handling of collections and queries. Our in-memory data storage approach ensures blazing-fast query performance
   - SignalDB plans to implement a cutting-edge data replication engine, drawing inspiration from established protocols like the RxDB replication protocol 
 
@@ -163,6 +163,11 @@ modified: 2022-11-03T04:14:11.987Z
   - open source NoSQL database that runs on top of a RDBMS. 
   - turns your RDBMS into a MongoDB-compatible server, supporting the MongoDB query API and MongoDB's replication, but storing your data into a reliable and trusted ACID database. 
   - ToroDB currently supports PostgreSQL as a backend, but others will be added in the future.
+
+- https://github.com/renebigot/reactive-db-js /202012/js
+  - in memory reactive database with a MongoDB like query syntax.
+  - reactive : You can subscribe/unsubscribe to any collection, so if documents are created, updated, or removed, you'll be notified.
+  - reactive-db-js is not performance optimised. It's goal is to provide an easy way to store and query with a notification mecanism. It may be slow with lots of datas stored
 # db-document-json
 - https://github.com/Alex-Werner/SBTree /MIT/202310/js
   - https://alex-werner.github.io/SBTree/

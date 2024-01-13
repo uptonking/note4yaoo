@@ -350,6 +350,9 @@ modified: 2023-02-05T19:03:12.723Z
 - https://github.com/froala/wysiwyg-editor-node-sdk
   - Node. JS SDK to ease the integration of Froala WYSIWYG Editor on server side.
 
+- https://github.com/payloadcms/payload/tree/main/packages/richtext-slate
+  - Slate Rich Text Editor for Payload.
+
 - oak /4Star/MIT/202208/js/提交多/page-builder
   - https://github.com/p3ol/oak
   - 整体上是一个可切换文本编辑器的页面编辑器
@@ -357,6 +360,18 @@ modified: 2023-02-05T19:03:12.723Z
   - Modern, lightweight & modulable page builder
   - @poool/oak-addon-richtext-field: WYSIWYG text field using Slate
   - @poool/oak-addon-richtext-field-prosemirror: WYSIWYG text field using ProseMirror
+
+- https://github.com/hygraph/rich-text /MIT/201312/ts
+  - A set of companion packages for Hygraph's Rich Text Field
+  - rich-text-html-renderer: Framework agnostic Rich Text renderer.
+  - rich-text-react-renderer: Out of the box Rich Text renderer for React; 
+  - html-to-slate-ast: HTML to Slate AST converter for the Hygraph's RichTextAST format.
+  - https://github.com/hygraph/gatsby-source-graphcms /202207/js/inactive
+    - The official Gatsby source plugin for GraphCMS projects
+
+- https://github.com/datocms/structured-text /202401/ts
+  - Monorepo with Typescript libraries for handling and rendering DatoCMS Structured Text documents.
+  - helpers to convert Structured Text dast to Slate structures.
 
 - dmeditor /14Star/GPL/202306/ts
   - https://github.com/dmeditor/dmeditor
@@ -397,7 +412,7 @@ modified: 2023-02-05T19:03:12.723Z
   - a WYSIWYG editor for markdown that conforms to the CommonMark specification
   - 依赖markdown-it、slate、semantic-ui-react
 
-- https://github.com/bipboy/rich-slate-editor
+- https://github.com/bipboy/rich-slate-editor /202305/ts
   - A small react implementation of a text editor based on Slate and Baseweb(css-in-js)
 
 - https://github.com/pietrop/slate-transcript-editor /202110/js
@@ -630,7 +645,7 @@ modified: 2023-02-05T19:03:12.723Z
 - https://github.com/hanford/remark-slate /115Star/MIT/202211/ts
   - Transform the contents of a slate 0.50+ editor into markdown and back again.
 
-- https://github.com/accordproject/markdown-transform
+- https://github.com/accordproject/markdown-transform /202311/js
   - A transformation and parsing framework for converting markdown content to HTML, Slate (for rich-text editing) and other structured document object models (DOMs).
   - 提供了很多子包，本身类似于remark
 
@@ -646,7 +661,7 @@ modified: 2023-02-05T19:03:12.723Z
 
 ## table
 
-- https://github.com/nlulic/slate-table /202311/ts
+- https://github.com/nlulic/slate-table /MIT/202312/ts
   - https://slate-table.org/
   - utilities for flexible and straightforward table editing in your Slate editor
   - Easily add, merge, split cells, and insert rows or columns for more flexibility. 

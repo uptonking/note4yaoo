@@ -153,8 +153,11 @@ modified: 2022-08-18T16:57:15.296Z
   - 整体上是一个可切换文本编辑器的页面编辑器
   - 页面从上到下由块构成，内容文字默认不可编辑，需要点击悬浮编辑按钮
   - Modern, lightweight & modulable page builder
+  - @oakjs/addon-remirror: WYSIWYG text field for the React renderer using Remirror
+  - @oakjs/addon-ckeditor5-react: WYSIWYG text field for the React renderer using CKEditor 5
   - @poool/oak-addon-richtext-field: WYSIWYG text field using Slate
   - @poool/oak-addon-richtext-field-prosemirror: WYSIWYG text field using ProseMirror
+  - @oakjs/strapi-plugin: A plugin to add a custom Oak field to Strapi
 
 - wix-tiptap-editor /260Star/MIT/202008/ts
   - https://github.com/wix/ricos
@@ -368,3 +371,5 @@ modified: 2022-08-18T16:57:15.296Z
 - https://github.com/gracious-tech/stello
   - A new way to send newsletters 
   - 依赖tiptap.v2
+
+- https://github.com/live-change/live-change-services /202312/js

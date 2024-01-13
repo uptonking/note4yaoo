@@ -63,6 +63,9 @@ modified: 2022-08-21T10:37:01.349Z
   - Data Grid component with Mantine UI and react-table v8.
   - 样式非常友好
 
+- https://github.com/proofgeist/mantine-tanstack-table /202311/ts
+  - opinionated table component with default styling for Mantine 7 and TanStack Table 8
+
 - https://github.com/bgrins/data-ui-tests /202303/js
   - https://bgrins.github.io/data-ui-tests/
   - benchmarks with vanilla-table/handsontable, revo-grid
@@ -186,6 +189,9 @@ modified: 2022-08-21T10:37:01.349Z
   - example of handling Tabular Data with Advanced Filters, Sorting and Optimizations in React
   - 不依赖tanstack-table，但展示了数据处理方法
   - 依赖tanstack-query、zustand、mui5
+
+- https://github.com/otaku-oss/unstyled-table /202311/ts
+  - unstyled react table component built on top of @tanstack/react-table v8.
 
 - https://github.com/paalamugan/excel-sheet-react-table /js
   - https://paalamugan.github.io/excel-sheet-react-table/

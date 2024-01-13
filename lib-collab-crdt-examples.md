@@ -1077,11 +1077,11 @@ modified: 2022-04-05T10:08:25.947Z
   - [diamond-types/INTERNALS](https://github.com/josephg/diamond-types/blob/master/INTERNALS.md)
   - [Question: some question about 《5000x faster CRDTs: An Adventure in Optimization》](https://github.com/josephg/diamond-types/discussions/9)
     - RGA conceptually forms a tree. My contribution is that we can represent that tree using a list.
-    - Yjs uses a different CRDT algorithm than RGA. (It uses YATA). 
+    - Yjs uses a different CRDT algorithm than RGA. (It uses YATA)
     - `left` in YATA is semantically equivalent to the `parent` field in Yjs. 
     - Yjs has no `seq` field. RGA has no `right` field.
 
-- https://github.com/RhizomeDB/rs-rhizome /MIT/rust
+- https://github.com/RhizomeDB/rs-rhizome /MIT/202308/rust/inactive
   - https://fission.codes/ecosystem/rhizomedb/
   - an in-development database for use in building local-first applications over a content addressable store, like IPFS.
   - RhizomeDB employs our PomoDB protocol to execute a local-first edge database for querying decentralized data. 

@@ -88,6 +88,8 @@ modified: 2022-06-03T22:06:16.249Z
 - https://github.com/creately/rxdata /202106/ts/inactive
   - RxData is a schemaless reactive document database for web browsers. 
   - It is inspired by rxdb but uses localForage instead of pouchdb to store data.
+  - 依赖rxjs.v6、mingo、localforage
+  - https://github.com/creately/rxdata-persistence
 - https://github.com/UltimatePro-Grammer/websystem /202205/js
   - a fully functioning operating system built in pure Javascript, HTML and CSS.
   - Files are Saved Locally Through IndexedDB/WebSQL (localForage)

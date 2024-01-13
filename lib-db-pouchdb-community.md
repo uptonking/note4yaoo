@@ -40,6 +40,22 @@ forever...
   - If you are making frequent changes to a document, you will want to upsert instead. I.e. you keep trying to PUT, catching 409s and repeating the GET/PUT as necessary.
   - Once thing you should know about this, though, is that if you are generating a new document for every keystroke, your history is going to grow very quickly unless you turn on auto-compaction. And auto-compaction will slow down your database, 💡 so as an alternative, you may just want to **use `setInterval` to occasionally update, rather than updating for every single keystroke**.
 
+- ## [LevelUP Proposal_201401](https://github.com/pouchdb/pouchdb/issues/1250)
+- theres work to experiment using a level based backend 
+
+- @yathit You're right that we need transactions, and luckily LevelUP does have the concept of a transaction: db.batch. And thanks to #1261, we can now have transactions in our current LevelDB implementation.
+
+- ## 🛋️ [Single Node CouchDB, Multi Doc Transaction - Stack Overflow](https://stackoverflow.com/questions/41337268/single-node-couchdb-multi-doc-transaction)
+- CouchDB dev here. This is not transactional, and it’s by design, even on a single node. 
+  - The reason is that we don’t want to have any APIs in CouchDB that break when you go from a single node installation to a cluster installation. 
+  - In a cluster, it is much harder to guarantee a multi-doc transaction, so CouchDB doesn’t even attempt it.
+
+- [Transaction-like update of two documents using CouchDB - Stack Overflow](https://stackoverflow.com/questions/29491618/transaction-like-update-of-two-documents-using-couchdb)
+  - In short, there are none (by design). 
+  - However, you can ask CouchDB to check that all the documents in your `_bulk_docs` request pass all your validation functions. If even one fails, none of the documents are written. You can select this mode by including `"all_or_nothing":true` in your request.
+  - Handle the revision validation in an own validate_doc_update function by comparing oldDoc._rev and newDoc._rev.
+  - Attention!!! The answer is valid for CouchDB v1 only. CouchDB v2 is ignoring the "all_or_nothing" property.
+
 - ## 🔀 [Transaction control feature request_201311](https://github.com/pouchdb/pouchdb/issues/1013)
   - Since Pouch can use a single thread and the underlying database supports transaction control I think it might be feasible.
 
@@ -52,7 +68,7 @@ forever...
 
 - ## 🔀 [Transaction control_201310](https://github.com/pouchdb/pouchdb/issues/954)
 - Couchdb doesn't support transactions and it's architecture prevents this. but I assume there's no reason pouchdb can't support them. Though there are workarounds it would be amazing if pouch could support them.
-  - PouchDB is supposed to be backend independent, so the backend may be CouchDB (or indexedDB) and the users should not have to worry about the difference, introducing this would break that assumption.
+  - 👉🏻 PouchDB is supposed to be backend independent, so the backend may be CouchDB (or indexedDB) and the users should not have to worry about the difference, introducing this would break that assumption.
   - I would like to see alternative apis that do support things like transactions, but it would be too big a change from what PouchDB already does
 
 # discuss-db-per-user

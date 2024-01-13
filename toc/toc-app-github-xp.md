@@ -72,6 +72,9 @@ modified: 2023-02-08T10:46:26.912Z
 - [Bring back `sort:indexed` for code searches](https://github.com/orgs/community/discussions/52932)
   - NA
 # github-search
+- tips
+  - [Github search cheatsheet from official docs.](https://gist.github.com/bonniss/4f0de4f599708c5268134225dda003e0)
+
 - not-yet
   - 搜索名称为folder11的文件夹
 

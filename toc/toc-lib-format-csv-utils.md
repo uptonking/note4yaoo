@@ -49,6 +49,10 @@ modified: 2022-11-06T15:46:05.676Z
 - https://github.com/react-csv/react-csv /js
   - https://react-csv.github.io/react-csv/
   - React components to build CSV files on the fly basing on Array/literal object of data
+
+- https://github.com/dumbmatter/csv-sql-live /202206/js
+  - http://dumbmatter.com/csv-sql-live/
+  - Run SQL queries on CSV files in your web browser
 # parser-generator
 - https://github.com/C2FO/fast-csv
   - library for parsing and formatting CSVs or any other delimited value file in node.

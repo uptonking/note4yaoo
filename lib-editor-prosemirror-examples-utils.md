@@ -77,6 +77,10 @@ modified: 2022-08-18T16:57:29.058Z
 - https://github.com/BlueMona/prosemirror-react-renderer /201710/ts
   - An alternative to ProseMirror's DOMSerializer that converts documents into React elements instead of DOM fragments.
 # table
+- https://github.com/skiff-org/prosemirror-tables /MIT/202308/js/fork
+  - This module defines a schema extension to support tables with rowspan/colspan support, a custom selection class for cell selections in such a table, a plugin to manage such selections and enforce invariants on such tables, and a number of commands to work with tables.
+  - https://github.com/medistream-team/prosemirror-tables /ts
+
 - prosemirror-datagrid /3Star/MIT/202109/ts
   - https://github.com/hedgerwang/prosemirror-datagrid
   - https://hedgerwang.github.io/prosemirror-datagrid/dist/demo.html
@@ -146,6 +150,7 @@ modified: 2022-08-18T16:57:29.058Z
 - https://github.com/marekdedic/prosemirror-unified /202311/ts
   - This package provides support for using the unified ecosystem of parsers and other packages (for example, remark, the markdown parser) in ProseMirror.
   - Currently, there is only the prosemirror-remark package to support markdown parsing and serialization
+  - https://github.com/marekdedic/prosemirror-remark
 
 - https://github.com/ueberdosis/prosemirror-to-html
   - Takes ProseMirror JSON and outputs HTML. 基于php实现
@@ -201,6 +206,8 @@ modified: 2022-08-18T16:57:29.058Z
 
 - https://github.com/curvenote/prosemirror-docx
   - Export a prosemirror document to a Microsoft Word file, using docx.
+  - https://github.com/dxc111/prosemirror-docx
+    - Export a prosemirror document to a Microsoft Word file, using docx.
   - https://github.com/dolanmiu/docx
     - Easily generate .docx files with JS/TS with a nice declarative API. 
     - Works for Node and on the Browser.

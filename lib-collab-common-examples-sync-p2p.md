@@ -224,6 +224,12 @@ modified: 2023-01-17T19:13:01.845Z
 - https://github.com/realtimecms/realtime-cms /BSD/202001/js
   - Core project for realtime cms - server-side framework for real-time applications
   - https://github.com/realtimecms/users-service
+
+- https://github.com/peer/db /apache2/202311/go
+  - https://gitlab.com/peerdb/peerdb
+  - A collaborative database
+  - PeerDB requires an ElasticSearch instance. ElasticSearch instance needs to have an index with documents in PeerDB schema and configured with PeerDB mapping.
+  - Power of PeerDB Search comes from having data in ElasticSearch index organized into documents in PeerDB schema.
 # sync-json
 - https://github.com/zettant/realtime-object-sync
   - server and client libraries for realtime JSON object synchronization.

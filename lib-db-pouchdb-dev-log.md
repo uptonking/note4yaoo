@@ -19,6 +19,7 @@ modified: 2023-11-08T17:07:50.967Z
 
 # dev-to
 
+- 将browser的nextTick实现迁移到queueMicroTask
 # dev-later
 
 # dev-maybe

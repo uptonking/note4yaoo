@@ -155,10 +155,10 @@ modified: 2022-08-18T16:57:46.405Z
     - Wax, a [Cabbage Tree Labs](https://www.cabbagetreelabs.org/) project
     - The Cabbage Tree Method and Book Sprints and led the development of open source software for publishing such as PubSweet, Editoria, Kotahi, PagedJS, Wax, BookType and many more
 
-- guardian-prosemirror-editor /2Star/MIT/202311/ts
+- guardian-prosemirror-editor /2Star/MIT/202311/ts/react
   - https://github.com/guardian/prosemirror-editor
   - provide a re-usable ProseMirror editor for use across our tools
-  - it aims to replace Scribe-based rich text editors with a React-based prosemirror editor in: tagmanager/atom-workshop
+  - it aims to replace Scribe-based rich text editors with a React-based prosemirror editor in: tagmanager,atom-workshop
 - guardian-prosemirror-elements /37Star/MIT/202311/ts
   - https://github.com/guardian/prosemirror-elements
   - This Prosemirror plugin adds the ability to add custom 'elements' to a document.

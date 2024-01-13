@@ -91,6 +91,10 @@ modified: 2023-01-20T00:18:44.282Z
 
 - https://github.com/swina/feathersjs-webpush-notifications
   - [WebPush Notifications with Feathersjs_201902](https://swina.github.io/2019/02/webpush-notifications-with-feathersjs/)
+
+- https://github.com/eddyystop/feathers-live-query /201610/js
+  - Live query. Mirror part of a DB on the client.
+  - The clients communicate with the server using socket.io websockets. 
 # api
 - https://github.com/adaptable/feathers-template
   - Adaptable.io template for deploying an autoscaling, Serverless Feathers API. 

@@ -40,6 +40,11 @@ modified: 2022-02-23T18:59:51.587Z
   - Mapbox for map display
   - Supports most sports apps such as nike strava...
   - If you don't want to make the data public, you can choose strava's fuzzy processing, or private repositories.
+
+- https://github.com/janmonschke/gpx-editor /202111/ts
+  - A simple GPX viewer and editor
+
+
 # utils for gpx/fit
 - https://github.com/sports-alliance/sports-lib
   - Sports Lib tries to achieve a common domain model and lib for sport activity formats such as GPX, TCX, FIT and other popular formats.

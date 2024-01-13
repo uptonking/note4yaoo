@@ -317,6 +317,13 @@ modified: 2023-11-17T10:12:06.357Z
 - https://github.com/TryQuiet/quiet /GPLv3/clang/cpp/ts
   - https://www.tryquiet.org/
   - A private, p2p alternative to Slack and Discord built on Tor & IPFS
+# auth/encryption
+
+- https://github.com/cyphercider/e2ee-appkit /202312/ts
+  - Client and server-side utilities for building end-to-end encrypted apps.
+  - End-to-end encryption allows a user to store data on a remote system without the remote system being able to access the data.
+
+
 # more
 - https://github.com/cwise89/react-detect-offline
   - Components that track offline and online state. Render certain content only when online (or only when offline).

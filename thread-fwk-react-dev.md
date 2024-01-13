@@ -129,9 +129,30 @@ modified: 2021-01-06T14:40:03.364Z
 # discuss
 - ## 
 
-- ## 
+- ## Every single react app that has ever existed has used a server. 
+- https://twitter.com/rickhanlonii/status/1745817397766828047
+  - It’s just a question of whether that server is serving a static bundle created at build time or a dynamic one created at runtime. 
+  - RSCs are the same way. They can run at build time or runtime. So whatever server you’re already using today, you can continue to use with RSC. You don’t need to add a server, or do dynamic server rendering.
+  - For the static RSC use case, think of it like webpack chunking (which is what splits your bundle up based on entrypoints). Now, allow chunking to actually render your app and create bundles based on the actual rendered output.
 
-- ## 
+- I think the difference is that with the RSC model we end up doing more compute on servers instead of users devices. And to be honest with clients getting more and more powerful the idea that we are removing compute from them feels a bit counter-intuitive
+  - What I mean is that the compute still has to happen... we've just moved it at build time
+
+- Though the server that JUST hosts some static files (i.e a CDN) is different than a server that is used to fetch data or results of SSR from. When the term server is used, most take it as the latter.
+  - Yeah and RSC means both, that’s the confusion
+
+- No, I developed an Android app with React within a web-view, bundling all the files within the app without the need for a server.
+  - `window.open("data:text/plain;charset=utf-8,const%20root%20%3D%20ReactDOM.createRoot%28document.getElementById%28%27root%27%29%29%3B%0D%0Aroot.render%28%3Ch1%3EHello%2C%20world%21%3C%2Fh1%3E%29%3B")`
+
+- ## React Server Components does not require a server (and never has). 
+- https://twitter.com/dan_abramov2/status/1745795274977493317
+  - i get that this is confusing but i’m at loss what to do. people keep repeating that it does and speak about it as if it were a true fact. can someone spread the word pls?
+  - RSC *does not* require a server. by default it runs at the build time. you can think of the “server” part as serving a similar purpose to webpack loaders or build scripts — but packaged into components.
+  - you can build a SPA-like RSC-first app without a server, you just "drop down" to Client components for data fetching and do it with react-query or similar — same as before
+  - basically any SPA is a valid RSC app with one server component
+
+- next version of @codehike_ will be a lot more flexible thanks to build-time RSCs
+  - maybe if more static site generators (docusaurus, nextra) supported RSC people would start associating RSC with build-time
 
 - ## in today "reactivity" experiment it just occurred to me the effect -> dispose pattern is almost guaranteed to memory-leak.
 - https://twitter.com/WebReflection/status/1742999383782658471

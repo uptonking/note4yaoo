@@ -28,6 +28,18 @@ modified: 2024-01-04T06:55:00.085Z
   - And, you may use replication to manually sync your data with other couchdb cluster (or single node setup). 
   - Replication protocol is being used by other databases like [PouchDB] to sync CouchDB database on your Browser's IndexedDB (internally used by PouchDB).  
   - Using replication you can also sync only limited (selected through query) documents, instead of full database.
+
+- 🔁 Replication and sync are the same thing. CouchDB doesn’t care if it is server to server, server to client, or cluster node to cluster node. It is all internally compatible.
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
 # discuss
 - ## 
 

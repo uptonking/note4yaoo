@@ -41,6 +41,12 @@ modified: 2022-11-03T04:49:42.587Z
   - No object-relational mapping (ORM) or active record pattern, just plain data objects.
   - No coupling with network protocol, handle requests from anywhere.
 
+- https://github.com/usegraffy/graffy /MIT/202310/js
+  - https://graffy.org/
+  - Live queries for graph-shaped data
+  - Graffy supports complex, expressive live queries - with multiple levels of resource expansion and pagination - based on a novel application of set theory and CRDTs.
+  - Graffy was inspired by (and borrows from) Facebook's GraphQL and Netflix's Falcor. Compared to GraphQL, Graffy offers a more familiar data model, true live queries and more efficient caching. Compared to Falcor, it provides cursor-based pagination and real-time subscriptions.
+
 - https://github.com/apache/incubator-hugegraph /java
   - A graph database that supports more than 100+ billion data, high performance and scalability (Include OLTP Engine & REST-API & Backends)
   - Billions of vertices and edges can be easily stored into and queried from HugeGraph due to its excellent OLTP ability. 

@@ -28,6 +28,44 @@ modified: 2022-04-05T10:10:22.091Z
 - local-first + realtime协作的示例
   - https://github.com/gongojs/project
   - https://github.com/a-type/lo-fi
+# 🔀🌵 [GitHub Next | Realtime GitHub - Multiplayer collaboration for your whole repo](https://githubnext.com/projects/rtgh/)
+- At GitHub Next we’ve been exploring this question for some time: 
+  - In the Collaborative Workspaces concept design, we imagined cloud workspaces that integrate different modes of development (ideation, design, coding, etc.) into a single interface, and provide realtime multiplayer collaboration in all these modes. 
+  - And in the GitHub Blocks prototype, we made the GitHub repository page customizable, with interactive blocks to tailor it to your team’s development process.
+
+- With Realtime GitHub, you can share a link (“meet me in this branch!”) and instantly edit repository files together with your team. 
+  - It’s still GitHub, so you can still work asynchronously—pull changes from another branch and merge your changes back when you’re ready.
+- While our north star is the fully-integrated cloud environments envisioned in Collaborative Workspaces, we know that we can’t replicate the features of a modern development environment overnight. 
+  - But we want to build something that we can use for real work, in order to learn and improve our prototype. 
+  - So we’ve focused so far on workflows involving editing rich-text documents: taking meeting notes, drafting site copy, writing design documents, and so on.
+- Realtime GitHub provides a rich-text editor like Google Docs, built on the excellent ProseMirror and Tiptap projects. 
+  - Documents are stored as JSON files in your project's GitHub repo—so they can be edited on a branch and included in PRs, searched along with other files, backed up, or used in other ways.
+- Realtime GitHub is collaborative like Google Docs, providing realtime multiplayer editing, cursor and selection presence, and threaded comments (with emoji reactions, a critical feature 😻!)
+  - But it also supports GitHub-style async collaboration: a branch in your repository becomes a distinct "room" for multiplayer collaboration; you can work privately or with others, and merge it back to the main branch when you're ready.
+
+- There are many approaches to collaborative editing, of which CRDTs are perhaps the best known, with well-engineered implementations like Yjs and Automerge available off the shelf. 
+- For Realtime GitHub we've taken a different direction. 
+- The vision we're working toward, of fully-integrated cloud environments for development, comes with some unusual requirements:
+  - we want to provide asynchronous as well as realtime collaboration
+  - users collaborate on an entire codebase
+  - we want to support many different types of collaborative artifacts
+  - we want to support straightforward integration with external tools (e.g. build systems, or AI assistants) as participants in a collaboration
+- 🌵 Our approach takes inspiration from Git, as well as from the ProseMirror collaborative editing design, Replicache, Irmin, and others. 
+  - The main idea is to think of each client as a Git clone, communicating local changes by pulling, rebasing, and pushing them to the server.
+- In more detail:
+  - the state of a branch is represented by a commit with a corresponding hash (just as in ordinary Git), and 🧐 the server maintains the authoritative current hash for the branch.
+  - clients are notified when the server's branch hash changes, and pull the changes.
+  - when a client makes a change, it applies it locally, then submits the change to the server, along with the most recent branch hash the client has (which may no longer match the server's hash).
+- Git object graphs have some nice properties: Different Git objects (commits, trees, and blobs) have different hashes (with high probability), so hashes can be used as pointers. 
+  - Git trees are a kind of hash tree, where a change anywhere in the tree produces a different hash for the root. 
+  - And they are a kind of persistent data structure, where updating the tree produces a new tree with pointers into the old tree to the parts that haven't changed.
+- Since our approach is just a way of using Git, it's straightforward to implement branching and merging for async collaboration; and it's straightforward to expose a branch via the filesystem to integrate external tools.
+- One way Realtime GitHub diverges from Git is how it does merges and rebases: Git knows about states of a codebase, but not the changes that get it from one state to another. 
+  - When you merge or rebase one branch onto another, Git compares the states of the branches and their common ancestor and reconstructs changes using diff3, which works line-by-line and doesn't consider the syntax or semantics of the file.
+  - For ProseMirror documents, which are stored as JSON, this isn't a good approach—it works at too coarse a grain for realtime edits (e.g. edits to different parts of the same line produce a conflict), and can produce invalid JSON at the syntactic or semantic levels.
+- Realtime GitHub uses two strategies:
+  - for fine-grained realtime changes, clients write a ProseMirror transaction, which produces a new Git state on the server, and also sends the transaction to other clients to apply to their local state (rebasing local changes if needed).
+  - (not implemented yet) for coarse-grained changes (e.g. merging one branch into another), we do a Git-style three-way merge on the JSON structure of the document, producing a semantically valid document. Conflicts are marked as special document nodes, which are displayed in the editor UI for manual resolution.
 # [figma: How Figma’s multiplayer technology works__201910](https://www.figma.com/blog/how-figmas-multiplayer-technology-works/)
 
 # [figma: LiveGraph: real-time data fetching at Figma | Figma Blog_202110](https://www.figma.com/blog/livegraph-real-time-data-fetching-at-figma/)

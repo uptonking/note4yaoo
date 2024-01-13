@@ -61,6 +61,13 @@ modified: 2023-10-26T15:29:40.053Z
   - OrioleDB consists of an extension, building on the innovative table access method framework and other standard Postgres extension interfaces.
   - OrioleDB implements the concepts of undo log and page-mergins, eliminating the need for dedicated garbage collection processes.
   - Designed to be distributed. OrioleDB implements a row-level write-ahead log with support for parallel apply. This log architecture is optimized for raft consensus-based replication allowing the implementation of active-active multimaster.
+
+- https://github.com/sraoss/pg_ivm /202309/c
+  - IVM (Incremental View Maintenance) implementation as a PostgreSQL extension
+  - pg_ivm provides a kind of immediate maintenance, in which materialized views are updated immediately in AFTER triggers when a base table is modified.
+  - [Status of IVM within Postgres · sraoss/pg_ivm](https://github.com/sraoss/pg_ivm/issues/57)
+    - 202306: We hope this patch would be accepted in PostgreSQL 17 even in a limited form. In order to make this progress, we need more discussion in the community.
+  - https://github.com/sraoss/pgsql-ivm
 # search
 - https://github.com/paradedb/paradedb /AGPLv3/rust
   - https://paradedb.com/
@@ -76,13 +83,15 @@ modified: 2023-10-26T15:29:40.053Z
   - It allows you to keep Postgres as your source of truth and expose structured denormalized documents in Elasticsearch/OpenSearch.
   - Simply describe your document structure or schema in JSON and PGSync will continuously capture changes in your data and load it into Elasticsearch/OpenSearch without writing any code. PGSync transforms your relational data into a structured document format.
 # query
-- https://github.com/tozd/node-reactive-postgres /202204/js/inactive
+- https://github.com/tozd/node-reactive-postgres /BSD/202204/js/inactive
   - brings reactive (or live) queries to PostgreSQL.
   - I have made something similar trying to match more the concept of a materialized view, but just on the client instead of inside the database
   - You can take an arbitrary SELECT query, using multiple joins, data transformations, and even custom functions, and besides the initial set of results also get real-time updates about any changes to those results. 
   - For every reactive query, a `TEMPORARY TABLE` is created in the database which serves as cache for query results.
   - Triggers are added to all query sources for the query, so that when any of sources change, this package is notified using LISTEN/NOTIFY that a source has changed
   - Because this package uses temporary tables, consider increasing `temp_buffers` PostgreSQL configuration so that there is more space for temporary tables in memory.
+  - [Use ideas from Incremental View Maintenance to know what has changed_201901](https://github.com/tozd/node-reactive-postgres/issues/7)
+    - 
 
 - https://github.com/aarroyoc/postgresql-prolog /202310/prolog
   - A Prolog library to connect to PostgreSQL databases

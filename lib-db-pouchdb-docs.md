@@ -132,7 +132,7 @@ function sync() {
 - Bulk operations tend to be faster than individual operations, because they can be combined into a single transaction (in a local IndexedDB/WebSQL) or a single HTTP request (in a remote CouchDB).
   - Neither bulkDocs() nor allDocs() constitutes a transaction in the traditional sense. That means that, if a single put() fails, you should not assume that the others will fail.
 
-> By design, CouchDB and PouchDB do not support transactions. A document is the smallest unit of operations.
+> 🧐 By design, CouchDB and PouchDB do not support transactions. A document is the smallest unit of operations.
 
 - when you read from allDocs(), the documents are returned sorted by order of `_id`. 
   - This makes the `_id` a very powerful field that you can use for more than just uniquely identifying your documents.

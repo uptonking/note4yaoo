@@ -189,6 +189,7 @@ modified: 2023-04-04T22:35:59.255Z
   - https://apps.kde.org/haruna/
   - Open source video player built with Qt/QML and libmpv
 
+## video-js
 - https://github.com/MicrosoftEdge/Demos/tree/main/pwamp /MIT/202305/js
   - https://microsoftedge.github.io/Demos/pwamp/
   - a web audio player demo application.
@@ -201,6 +202,10 @@ modified: 2023-04-04T22:35:59.255Z
 - https://github.com/MDXZ-delti/video-player /GPLv3/202312/js
   - Player for local videos with light/dark theme, keyboard shortcuts, progress retrieval and more
   - Works offline
+
+
+- https://github.com/kaltura/playkit-js /202401/ts
+  - an opinionated JavaScript library to enable seamless video playback across browsers and platforms with support for advanced streaming formats.
 
 - https://github.com/binbat/live777 /MPLv2/202401/rust/js
   - A very simple, high performance, edge WebRTC SFU

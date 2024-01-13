@@ -17,8 +17,9 @@ modified: 2021-07-20T13:50:23.433Z
     - model, view, dataflow
     - src-code, issues, pr, forks, extensions, most-commented-issues
     - roadmap, open-issues, alternatives
-    - 开放能力: extensions、scripts、marketplace
+    - 开放能力: extensions,scripts,marketplace
     - easy的api，simple的logic
+    - pref: 索引、缓存、分库分表、读写分离
   - 抽空在线体验，工作专注代码
   - specification for pivot table
 
@@ -30,7 +31,7 @@ modified: 2021-07-20T13:50:23.433Z
 - 技术可选3: vscode，可参考架构 extensions、capabilities
 - 技术可选4: 侧重版本控制的数据库，如dolt, SirixDB, git-like-db
 - 玩具尝试1: git+crdt+table+branch/version
-- tech: 虚拟渲染、分支版本、协作; crdt处理冲突、历史版本、partial-replication
+- tech: 虚拟渲染、分支版本、协作; crdt历史版本、partial-replica、ivm
 
 - 🚀 产品落地
   - 表格类内容创作与管理

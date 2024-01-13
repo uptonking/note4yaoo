@@ -23,13 +23,22 @@ modified: 2023-01-18T17:04:25.234Z
   - If two clients change the same document, whichever client syncs to the server first wins, and the second one gets an “conflict event” when it tries to sync. A particularly clever client imeplementation could use a `json-crdt` to encode the data, and thereby automatically handle merge conflicts without developer or user intervention 🤔 but I haven’t seen anyone try that yet.
   - remoteStorage occupies an interesting place in my mind. On the one hand, it’s an 8 year old project that still receives active maintenance, which is a pretty big achievement in and of itself. On the other hand, its simplicity means that it’s lacking a lot of features that people have come to expect from modern web applications. Overall, given that it’s still actively being developed, it could very well gain some of those features and become a strong solution for building modern local-first apps in the future.
 # popular
-- remotestorage.js /2.2kStar/MIT/202211/ts
+- remotestorage.js /2.2kStar/MIT/202311/ts
   - https://github.com/remotestorage/remotestorage.js
   - https://remotestoragejs.readthedocs.io/
   - https://remotestorage.io/
   - a JavaScript library for storing user data locally in the browser, as well as connecting to remoteStorage servers and syncing data across devices and applications.
   - It is also capable of connecting and syncing data with a person's Dropbox or Google Drive account (optional).
   - The first prototype of rs.js was written in November 2010. The library is well-tested and actively maintained.
+
+- https://github.com/FrigadeHQ/remote-storage /186Star/MIT/202401/ts
+  - https://remote.storage/
+  - a simple library that combines the localStorage API with a remote server to persist data across browsers and devices.
+  - Simple API (same as localStorage)
+  - Open source server and client
+  - How is remoteStorage different from localStorage?
+    - localStorage is a browser API that allows you to store data in the browser. The data is stored locally on the user's device and is not shared across devices or browsers. 
+    - remoteStorage is a library that combines the localStorage API with a remote server to persist data across browsers and devices.
 
 - https://github.com/remotestorage/myfavoritedrinks
   - https://myfavoritedrinks.remotestorage.io/

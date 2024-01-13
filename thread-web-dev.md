@@ -35,7 +35,9 @@ modified: 2021-01-08T17:13:43.392Z
 
 - ## 
 
-- ## 
+- ## 昨天在为 Django 项目添加 Telegram 登录时，遇到了一个神奇的前端问题，花了足足一天半的时间进行调试
+- https://twitter.com/Ehco1996/status/1746077907972403670
+  - 大部分浏览器会默认打开`noopener`，需要配置特定的header才能让popup页面访问到opener
 
 - ## I'm not sure any 100% spec-compliant programs for matching paths against ".gitignore" files exist, not even git probably. The problem:
 - https://twitter.com/fabiospampinato/status/1733170282196500755

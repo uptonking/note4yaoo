@@ -86,7 +86,7 @@ modified: 2020-07-14T11:03:53.196Z
     - It's very different from module state libs such as zustand and effector.
     - There has been a huge demand on it, so we implemented an experimental feature (merged).
 
-- tanstack-store /90Star/MIT/202309/ts
+- tanstack-store /164Star/MIT/202401/ts
   - https://github.com/TanStack/store
   - https://tanstack.com/store
   - a framework agnostic data store that ships with framework specific adapters for major frameworks like React, Solid, Vue and Svelte.

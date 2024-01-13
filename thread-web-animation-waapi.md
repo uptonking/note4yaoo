@@ -7,7 +7,24 @@ modified: 2021-09-22T04:13:22.341Z
 
 # thread-web-animation-waapi
 
+# guide
+
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## This test file demonstrates a pre-generated `keyframe` animation performing (literally) 100x slower in Chrome when it runs concurrently to another WAAPI animation or one running via `requestAnimationFrame` .
+- https://twitter.com/mattgperry/status/1746173512669073680
+  - [Pre-generated keyframes performance issues in Chrome](https://gist.github.com/mattgperry/454158ed97d5abeb3f4ed511264cbb64)
+  - By JS animation I mean one that calculates a new value every rAF like GSAP. Adding a WAAPI animation on `opacity` was fine. But then adding a WAAPI animation on `background-color` with precalculated Keyframes triggered the poor performance. 
+  - But then turning off either the JS animation or the opacity WAAPI animation made things normal again. 
+  - the performance returns to normal when you remove either the `requestAnimationFrame` animation OR the second `WAAPI` animation. But when both are running performance tanks.
+
 # discuss
+- ## 
+
+- ## 
 
 - ## 
 

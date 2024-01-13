@@ -67,6 +67,12 @@ modified: 2023-12-21T20:06:13.700Z
 
 - https://github.com/WranglHQ/handsontable_vs_reactdatagrid
   - a website to compare the performance of two excel-type React spreadsheet components: react-data-grid and handsontable
+
+- https://github.com/project-kit/handsontable-select2 /201905/ts
+  - Handsontable editor and cell based on select2
+  - 依赖select2, jquery
+  - https://github.com/TheGr8Nik/Handsontable-key-value-select /201907/ts
+    - defines a Key-Value selector and a relative Renderer. The code is an extension for base Select editor and Renderer.
 # utils
 - https://github.com/Yinger/ts-excel-compare /202009/ts
   - https://yinger.github.io/ts-excel-compare/

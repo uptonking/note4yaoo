@@ -78,8 +78,10 @@ modified: 2024-01-04T06:53:04.003Z
   - standards: postgresql, sqlite, clickhouse, duckdb
   - crdt for conflicts resolution
   - version-history: undo/redo
-  - partial-replication
-  - sync-protocol
+  - partial-replication/selective-sync
+  - ivm: incremental view maintenance
+  - reactive-query: dexie, tinybase
+  - sync-protocol: websocket
   - auth/permission: 权限控制的粒度，row/doc, column/property
   - offline persistence
   - integrations/apps: excel, notes
@@ -124,9 +126,8 @@ modified: 2024-01-04T06:53:04.003Z
 - couchapp
   - reimplement with wasm
 # dev
-
+- > By design, CouchDB and PouchDB do not support transactions. A document is the smallest unit of operations.
 # changelog-pouchdb
-
 - [v8.0.0_202212](https://pouchdb.com/2022/12/14/pouchdb-8.0.0.html)
   - ✨ Embracing modern ES6 + JS syntax
   - PouchDB now has `activeTasks` like couchdb

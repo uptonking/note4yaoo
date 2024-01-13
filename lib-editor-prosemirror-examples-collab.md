@@ -61,6 +61,13 @@ modified: 2022-10-04T23:32:30.824Z
   - Collaborative editor
   - 依赖 react、material-ui、remark-rehype、yjs、prosemirror、hightlight.js
 
+- https://github.com/stepwisehq/prosemirror-collab-commit /202308/ts
+  - Commit-based collaborative editing plugin for ProseMirror.
+  - This solves two key problems with `prosemirror-collab` through server-side rebasing without the use of CRDTs:
+    - Throughput: 200 active clients per 1s of commit delay is feasible depending on backend implementation and edit characteristics.
+    - Fairness: Users with high latencies will not have their edits blocked by users with low latencies. This will greatly smooth the collab experience on documents with high levels of concurrent edits.
+  - [ProseMirror Collab Performance | Blog_202307](https://stepwisehq.com/blog/2023-07-25-prosemirror-collab-performance/)
+
 - https://github.com/dmonad/Yed /js
   - A collaborative editor built with ProseMirror - demo
 
@@ -75,7 +82,8 @@ modified: 2022-10-04T23:32:30.824Z
   - [Upwelling: Combining real-time collaboration with version control for writers](https://www.inkandswitch.com/upwelling/)
   - 依赖@atjson/document、@atjson/renderer-react、prosemirror
 
-- https://gitlab.com/peer/doc /js
+- https://gitlab.com/peer/doc /AGPLv3/202110/js/vue
+  - https://github.com/peer/doc
   - [PeerDoc – Scaling real-time text editing](https://mitar.tnode.com/post/peerdoc-scaling-real-time-text-editing/)
   - PeerDoc is a collaborative real-time rich-text editor with undo/redo, cursor tracking, inline comments, permissions/sharing control over documents, a change history. 
   - 依赖meteor、vuetify、prosemirror
@@ -90,6 +98,7 @@ modified: 2022-10-04T23:32:30.824Z
   - https://twitter.com/mitar_m/status/1465439429867286536
     - merging real-time editing with forking/proposing/merging back. 
     - We managed to do it without CRDT though
+  - https://github.com/peer/db
 # collab-solutions
 - https://github.com/saranrapjs/prosemirror-v8-perf /202311/ts
   - ProseMirror's support for collaborative editing requires an "authority server". 

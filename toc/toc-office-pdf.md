@@ -317,6 +317,16 @@ modified: 2021-01-04T17:26:43.784Z
   - Write and cite, research and re-search, and never get lost in Databyss. Welcome to your new word processor.
   - Drag highlighted and/or annotated PDF files into any Page. Databyss will extract all your margin notes and highlighted passages so you can easily edit and search them.
 
+- https://github.com/agentcooper/react-pdf-highlighter /MIT/202307/ts
+  - https://agentcooper.github.io/react-pdf-highlighter
+  - a React library that provides annotation experience for PDF documents on web.
+  - built on top of PDF.js by Mozilla. 
+  - Text and rectangular highlights are supported. 
+  - Highlight data format is independent of the viewport, making it suitable for saving on the server.
+  - `react-pdf` and react-pdfjs only provide React wrappers for PDF.js and do not have built-in annotation functionality.
+  - `pdfjs-annotate` does not provide text highlights out of the box.
+  - https://github.com/velvetfs/v-pdf-highlighter
+
 - https://github.com/SpiderStrategies/pdf-officegen /js
   - A NPM module that accepts one or more PDF files and converts them into pptx/docs
   - This module is the successor of pdf-powerpoint

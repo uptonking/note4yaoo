@@ -37,6 +37,9 @@ modified: 2023-12-15T18:02:24.488Z
   - https://shell.duckdb.org/
   - DuckDB-Wasm brings DuckDB to every browser thanks to WebAssembly.
   - Duckdb-Wasm speaks Arrow fluently, reads Parquet, CSV and JSON files backed by Filesystem APIs or HTTP requests
+
+- https://github.com/cwida/ivm-extension /MIT/202309/cpp
+  - Incremental View Maintenance support for DuckDB
 # examples
 
 # utils

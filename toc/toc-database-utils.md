@@ -258,6 +258,12 @@ modified: 2023-08-23T17:15:46.484Z
 - https://github.com/hkwi/osara /python
   - micro-framework on top of kafka / kappa architecture
 
+- https://github.com/cabal-club/cabal-core /AGPLv3/202310/js
+  - Core database and replication for cabal.
+  - 依赖kappa-core.v7、level-mem、kappa-view-level、hyperswarm、noise-protocol
+  - https://github.com/cabal-club/cabal-desktop /202112/js
+    - Desktop client for Cabal, the p2p/decentralized/local-first chat platform
+
 - [Kappa Architecture - Where Everything Is A Stream · java-design-patterns](https://github.com/iluwatar/java-design-patterns/issues/892)
 
 - [kappa architecture vs event sourcing](https://github.com/tschudin/ssb-icn2019-paper/issues/6)
@@ -605,7 +611,6 @@ modified: 2023-08-23T17:15:46.484Z
 
 - https://github.com/ilikepi63/turnip-rs /rust
   - Leaderless, streaming platform based on materialized views
-
 # ipfs
 - https://github.com/peer-base/peer-base /MIT/201908/js
   - Build real-time collaborative DApps on top of IPFS

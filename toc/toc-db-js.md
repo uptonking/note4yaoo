@@ -490,7 +490,7 @@ modified: 2022-11-25T15:50:48.226Z
   - A test is a Clojure program which uses the Jepsen library to set up a distributed system, run a bunch of operations against that system, and verify that the history of those operations makes sense. 
   - Jepsen has been used to verify everything from eventually-consistent commutative databases to linearizable coordination systems to distributed task schedulers
 # db-js-utils
-- https://github.com/pubkey/event-reduce /202212/ts
+- https://github.com/pubkey/event-reduce /MIT/202401/ts
   - https://pubkey.github.io/event-reduce/
   - An algorithm to optimize database queries that run multiple times
   - 提供了使用示例，包括minimongo、nedb、pouchdb
