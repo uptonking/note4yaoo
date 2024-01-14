@@ -96,7 +96,13 @@ modified: 2023-06-03T14:43:26.987Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 🌰📝 A user hacked together a proof of concept for rich text merging in vulcan / cr-sqlite._202303
+- https://discord.com/channels/989870439897653248/1084822114302967909/1084822114302967909
+- Thats really cool! Do they use a seperate text-crdt encoded into a column, or have they built one in sqlite?
+  - I haven't read the code yet but -- https://github.com/mweidner037/vlcn-rich-text/blob/master/src/todomvc/TodoList.tsx
+- Seems like they generate a sort of fractional index position for each char, and order by on it. So the text itself is a crr table with char and position columns. Very interesting.
+- this is probably worth implementing as the first sequence crdt. So simple
+  - Space is a concern of course. But it looks like you don't need to keep delete records and maybe we can assign short ids to participants in a document
 
 - ## [investigate sequence/text crdts](https://github.com/vlcn-io/cr-sqlite/issues/65)
 - If we don't target WASM I think adding diamond types will be easy.
@@ -120,8 +126,16 @@ modified: 2023-06-03T14:43:26.987Z
 
 - I think we can implement a variant of Fugue [1] that stores multiple chars per row. (Untested)
 
-- Closing this as I think enough research has been done and I'm ready to start implementing 
+- Closing this as I think enough research has been done and I'm ready to start implementing
+
+- ## [Reactivity / Live Queries / Subscriptions / Database Observation · vlcn-io/cr-sqlite](https://github.com/vlcn-io/cr-sqlite/discussions/309)
+- The SQLite bindings I currently provide to React re-run a query if/when any table that the query used changes. This is regardless of what columns the query happened to use. This works pretty well until there are > 50 live queries.
+  - The GRDB approach seems to avoid these pitfalls.
+  - For the reactive components of Vulcan I think following the same path as GRDB, maybe even porting their implementation of observability to Rust so we can compile to WASM for use in the browser, is the right medium term path.
+
 # discuss
+- ## 
+
 - ## 
 
 - ## 

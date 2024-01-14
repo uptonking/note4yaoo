@@ -102,6 +102,13 @@ modified: 2023-12-15T17:50:41.213Z
 - https://github.com/ThaddeusJiang/Projectify /202206/js
   - https://thaddeusjiang.github.io/Projectify/
   - a project management app for TiddlyWiki, inspired by products like Todoist and Basecamp.
+# sync
+
+- https://github.com/qiushihe/tiddlywiki-remote-filesystem-syncadaptor /202201/ts
+  - A `syncadaptor` module for TiddlyWiki to synchronize tiddlers with remote filesystem (i.e. AWS S3).
+
+- https://github.com/fiatjaf/tiddlywiki-remotestorage /201810/js
+  - a syncadaptor plugin that saves tiddlers on custom remoteStorage directories
 # examples
 
 # plugins
@@ -145,6 +152,9 @@ modified: 2023-12-15T17:50:41.213Z
 
 - https://github.com/abesamma/giscus-for-tiddlywiki-demo /202302/js
   - Demo of a commenting system for TiddlyWiki powered by Github discussions via Giscus app
+
+- https://github.com/Arlen22/TW5-storage-plugin /202002/ts
+  - I have a working prototype for the client-side data folders. 
 # usecase-examples
 - https://ramirosalas.com/
 # more

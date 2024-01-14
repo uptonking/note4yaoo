@@ -539,6 +539,7 @@ modified: 2023-12-15T19:30:23.094Z
 
 - https://github.com/VirtusLab-Open-Source/strapi-plugin-comments /202310/ts
   - A plugin for Strapi Headless CMS that provides end to end comments feature with their moderation panel, bad words filtering, abuse reporting and much more.
+  - [New Community Plugin: Content Moderation_202202](https://strapi.io/blog/new-community-plugin-content-moderation)
 
 - https://github.com/luisguve/strapi-plugin-comment-manager /202208/js
   - Enable and manage comments for your content very easily

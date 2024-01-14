@@ -24,11 +24,15 @@ modified: 2023-09-28T20:35:56.153Z
   - https://github.com/gr2m/couchdb-excel-import
   - https://github.com/craftzdog/pouchdb-react-native-demo
   - https://github.com/ryanramage/couch2elastic4sync
+  - https://news.ycombinator.com/threads?id=realPubkey
 
 - resources
   - [Pouchdb Plugins and External Projects](https://pouchdb.com/external.html)
   - [Couchbase Open Source Projects](https://developer.couchbase.com/open-source-projects/)
 # popular
+- [Sheets in PouchDB | SheetJS Community Edition](https://docs.sheetjs.com/docs/demos/data/pouchdb#complete-example)
+  - This demo uses PouchDB and SheetJS to export database snapshots to spreadsheets and import bulk data from workbooks.
+
 - https://github.com/pubkey/client-side-databases
   - https://pubkey.github.io/client-side-databases/database-comparison/index.html
   - I have implemented the exact same chat application with different database technologies.

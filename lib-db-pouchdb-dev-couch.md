@@ -30,6 +30,7 @@ modified: 2024-01-04T06:53:04.003Z
   - js引擎基于firefox的SpiderMonkey
   - 不方便在服务端进行数据处理etl
   - Unlike most other databases, whenever you update a document in PouchDB or CouchDB, you must present the entire document along with its current revision marker.
+  - The problem with couchdb is that it does one request per document which makes the protocol slow for browser based applications also it has no http2 support
 
 - features
   - sync between db
@@ -94,6 +95,7 @@ modified: 2024-01-04T06:53:04.003Z
   - extensions/plugins: 参考sqlite、pg
   - search: fts, fuzzy
   - arrow
+  - end-to-end encryption
 
 - community-pouchdb/couchdb
   - [Apache CouchDB Wiki - Confluence](https://cwiki.apache.org/confluence/display/COUCHDB/)

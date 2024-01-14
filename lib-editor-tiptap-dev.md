@@ -26,3 +26,5 @@ modified: 2023-02-05T19:03:27.730Z
   - [General block dragging feature](https://github.com/ueberdosis/tiptap/issues/323)
   - https://tiptap.dev/guide/node-views/examples#drag-handles
 # faq-not-yet
+
+# more

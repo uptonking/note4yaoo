@@ -39,6 +39,8 @@ modified: 2023-01-18T17:04:25.234Z
   - How is remoteStorage different from localStorage?
     - localStorage is a browser API that allows you to store data in the browser. The data is stored locally on the user's device and is not shared across devices or browsers. 
     - remoteStorage is a library that combines the localStorage API with a remote server to persist data across browsers and devices.
+  - The server is built with Nest.js with a disk-persisted Redis Database. It can be deployed in a few minutes using Docker.
+  - [Show HN: RemoteStorage – sync localStorage across devices and browsers | Hacker News_202401](https://news.ycombinator.com/item?id=38972358)
 
 - https://github.com/remotestorage/myfavoritedrinks
   - https://myfavoritedrinks.remotestorage.io/

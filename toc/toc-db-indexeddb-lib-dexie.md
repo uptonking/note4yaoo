@@ -39,6 +39,14 @@ modified: 2022-11-25T17:19:08.656Z
   - 依赖react-admin
   - 更好的参考 ra-data-localForage
 
+- https://gitlab.com/onezoomin/bygonz/bygonz /AGPLv3/202207/ts
+  - Client-First Change Synchronisation, History Aggregation, and Conflict Management
+  - Extends Dexie with modification History
+  - Synchronizes modifications via Dgraph, Syncronizes state via modification log
+  - [bygonz is a local-first library that implements CRDT atomic attribute logs via Dexie middleware_202211](https://talk.fission.codes/t/onezoomin-ztax-bygonz-fundability-exploration/3640)
+    - i have successful proof of concept implementations using, dgraph, git, wnfs, and most recently ipfs as “backends”.
+    - @boris started calling bygonz a db that uses wnfs, but i actually prefer to think of it as a lib that facilitates a local-first data synchronization pattern
+
 - https://github.com/subshell/data-repositories
   - This is a wrapper around Dexie, which itself is already a wrapper around IndexedDB. 
   - This wrapper allows to create repository classes, similar as you might be used to from Java and Spring Data.

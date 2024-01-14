@@ -115,12 +115,12 @@ modified: 2023-02-05T19:03:27.730Z
 
 - gitlab-editor /3916Star/MIT/202208/js/vue2/tiptap2
   - https://gitlab.com/gitlab-org/gitlab/-/tree/master/app/assets/javascripts/content_editor
-  - [WYSIWYG editor toolkit architecture proposal__2021](https://gitlab.com/gitlab-org/gitlab/-/issues/273238)
+  - [WYSIWYG editor toolkit architecture proposal__202010](https://gitlab.com/gitlab-org/gitlab/-/issues/273238)
     - implementing support for all of md flavors is an unnecessary cost.
     - Solution 1: Traceability or file diffs
     - Solution 2: Relying on the Markdown preview endpoint
-  - ref
-    - https://github.com/gitlabhq/gitlabhq/tree/master/app/assets/javascripts/content_editor
+  - https://github.com/gitlabhq/gitlabhq/tree/master/app/assets/javascripts/content_editor
+  - [Research and evaluate editor options against UX and technical requirements · GitLab.org / GitLab_202007](https://gitlab.com/gitlab-org/gitlab/-/issues/231725)
 # tiptap-editors
 - dante3 /1.7kStar/MIT/202208/js
   - https://github.com/michelson/Dante

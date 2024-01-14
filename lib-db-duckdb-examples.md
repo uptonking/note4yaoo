@@ -41,7 +41,12 @@ modified: 2023-12-15T18:02:24.488Z
 - https://github.com/cwida/ivm-extension /MIT/202309/cpp
   - Incremental View Maintenance support for DuckDB
 # examples
-
+- https://github.com/holdenmatt/duckdb-wasm-kit /202311/ts
+  - Hooks and utilities to make it easier to use duckdb-wasm in React apps.
 # utils
 
 # more
+
+- [Duckbook.ai - SQL + AI in your browser](https://www.duckbook.ai/)
+  - Duckbook is an AI-powered SQL notebook that runs in your browser.
+  - Notion-like SQL notebook built on Tiptap, DuckDB, and GPT-4

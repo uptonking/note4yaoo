@@ -17,6 +17,12 @@ modified: 2020-12-19T13:04:40.865Z
   - The Next.js like React framework for better User & Developer experience!
   - Vitext (Vite + Next) is a lightning fast SSG/SSR tool that lets you develop better and quicker front-end apps.
 
+
+- https://github.com/vikejs/vike /MIT/202401/ts
+  - https://vike.dev/
+  - Like Next.js / Nuxt but as do-one-thing-do-it-well Vite plugin.
+  - The vite-plugin-ssr project has been renamed Vike
+
 - https://github.com/sanyuan0704/island.js
   - Vite & MDX powered static site generator. Base on islands architecture
   - [如何看待最近正式发布的 Web 全栈框架 Fresh? - 知乎](https://zhuanlan.zhihu.com/p/556336887)

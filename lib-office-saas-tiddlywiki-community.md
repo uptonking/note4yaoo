@@ -14,7 +14,26 @@ modified: 2023-12-15T17:50:49.509Z
 
 - ## 
 
-- ## 
+- ## [Taking Node Server to the next level_201911](https://groups.google.com/g/TiddlyWiki/c/BtmLkx1mwtU)
+  - I have a radical proposal which would take data folders to the next level. What if instead of the file system adapter we would write a new adapter to use a database. We could use PouchDB, but I would vote for something much more widespread like SQLite.
+
+- A while ago I made a syncer that used sqlite and from that I wouldn't suggest a relational database, SQL seems like it would be almost perfect for storing tiddlers but I immediately ran into problems with the database schema because aside from text, title, tags, created, type and modified you have on way of knowing what fields are going to be used so everything else just gets thrown into an otherfields column and you lose the desirable features of a relational database.
+  - I found pouchdb to work much better because you can have arbitrary structures in the documents and implement the tiddlywiki filters pretty exactly in calls to `allDocs` and as a document store it can store single file wikis without any trouble at all.
+  - I have been considering skipping pouchdb and just using leveldb directly on the back-end but I don't know if the performance improvements are worth the extra hassle.
+  - Also in pouchdb you just make a new database for each wiki and never run into problems of scale except in the most extreme cases. I have had pouchdb databases that were close to a gig without any real performance hit, I think that wikis anywhere near that size are going to be rare.
+  - I have looked into other nosql databases and none of them look like they would be any better than pouchdb or using leveldb with some basic namespaced storage setup.
+  - also in my experience database maintenance is much easier in pouchdb and leveldb than in MySQL/MariaDB. You don't have the same problems of having database files taking up 100gigs when you only have 4 gigs of data that changes often. I am sure that problem can be solved by having an experienced database maintenance person, but I think that with one of the nosql databases you could skip that completely.
+
+- The problem with solutions like PouchDb is that there are no turn-key installations. You have to pretty much do everything yourself down to the bare metal.
+  - SQL, on the other hand, is supported almost everywhere.
+  - The workaround re fields is to specify the fields you want in advance. Rebuild the database when you need to add fields.
+  - Or to have a dozen fields with generic names in the database, but then map them with a configuration file.
+  - Mostly, I'm saying that a solution that is for everyone needs to based on technology that's commonly available.
+- The benefit of PouchDB is that it can be installed using NPM, or packaged into something like BobEXE without having to do a system-wide installation. For a local installation PouchDB is much easier to set up than MySQL/MariaDb
+
+- There have been quite a few experimental syncadaptors over the years. Some of them come back from a simple GitHub search
+  - Another syncadaptor that I'd love to see is one that stores tiddlers in an online Google Sheet. Done right, one would be able to seamlessly switch between editing the same data within TiddlyWiki and via the Google Sheet user interface.
+  - Another interesting sync adaptor would be one that retrieved and stored tiddlers via the Wordpress API. The attraction is that WordPress hosting is highly commoditised, being readily available and cheap. It should be possible to store tiddlers as “Pages”, and to inherit WordPress’s very smooth handling for media and attachments.
 
 - ## [TW 5.2.0 + CouchDB ?_202111](https://groups.google.com/g/TiddlyWiki/c/jKYp7GIm1o8)
 - I have been following the TW project for years and I am still very surprised that the community continues to actively support super strange, inconvenient and limited ways of saving and synchronizing – but at the same time all developments using normal technologies on which synchronization could be easy, seamless and safe, such as CouchDB, are not supported in official release and abandoned by community.

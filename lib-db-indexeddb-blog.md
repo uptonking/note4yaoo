@@ -9,6 +9,37 @@ modified: 2022-06-13T02:57:07.648Z
 
 # guide
 
+# ⚡️📈 [IndexedDB Timings - IndexedDB is slow. There are some tricks to get around this_202401](https://observablehq.com/@tantaman/indexeddb-timings)
+- General Tricks: A main source of overhead for IDB is that of starting and ending a transaction so the first optimization is to batch operations into transactions.
+
+- Read Tricks
+  - Reading a single item from IDB at once is slow. Instead, we can read entires ranges or all items for a given store.
+  - Even range reads can be slow. We can speed this further by storing pages, rather than individual objects, in IDB
+
+- Write Tricks
+  - Use Relaxed Durability so the write doesn't have to be synced to disk before IDB returns
+  - Same as read trick 2: store a page of items against a single key.
+
+- This notebook explores reading and writing pages of objects rather than individual objects. 
+  - In other words, we'll store N objects against a single key. 
+  - If we want a specific object, we'll load the page that contains it and pluck(摘, 采; 取) it from that page.
+- Similar to how SQLite atop IndexedDB functions which has been explored by the following two projects: AbsurdSQL, WA-SQLite
+- But, in our case, we can do even better. SQLite backed by IndexedDB requires:
+  - Crossing the JS -> WASM bridge
+  - Serializing JS values as SQLite values
+  - Finally writing to IndexedDB but via asyncify and after acquiring a weblock
+- Using IndexedDB directly from JS and directly storing pages of native JS objects is presumably much faster than even what SQLite can do.
+- We want full memory speed with the ability to persist to disk lazily (or eagerly) rather than requiring every transaction to fsync. 
+
+- Tested below are various ways of organizing writes to indexed DB and comparing that perf against an in-memory SQLite DB.
+  - These benchmarks are to discover if the page idea provides enough perf gains to warrant more in-depth research
+- Write Conclusions
+  - idbPaged is 20x faster than an in-memory SQLite DB that doesn't even persist!
+  - Warrants further exploration of perf with: Secondary indices
+  - how slow is SQLite once persistence is tacked on?
+
+- Read Benchmarks
+  - How fast are reads when we chunk things into pages? Does it perform better than an indexeddb range scan?
 # [Speeding up IndexedDB reads and writes_202108](https://nolanlawson.com/2021/08/22/speeding-up-indexeddb-reads-and-writes/)
 - in this post, I’d like to show how raw IndexedDB performance can be improved using a few tricks that are available as of IndexedDB v2 and v3:
   - Pagination (v2)
@@ -135,7 +166,7 @@ modified: 2022-06-13T02:57:07.648Z
 - Pretty much all database engines have to deal with that, the usual answer is to allow transaction merging of some sort. Many relational databases will write to the log and commit multiple transactions in a single fsync(), RavenDB will do explicit transaction merging in order to batch writes to disk.
 - However, for pretty much every database out there with durability guarantees, the worst thing you can do is write a lot of data one transaction at a time. Server databases still benefit from being able to amortize multiple operations across different requests, but a client side database is effectively forced to do serial work with no chance for optimization.
 - From the client perspective, the only viable option here is to batch writes to get better performance. Then again, if you are working on the client side, you are either responding to a user action (in which case you have plenty of time to commit) or running in the background, which means that you have the ability to batch.
-# [The pain and anguish of using IndexedDB: problems, bugs and oddities_202211](https://gist.github.com/pesterhazy/4de96193af89a6dd5ce682ce2adff49a)
+# 🐛 [The pain and anguish of using IndexedDB: problems, bugs and oddities_202211](https://gist.github.com/pesterhazy/4de96193af89a6dd5ce682ce2adff49a)
 - This gist lists challenges you run into when building offline-first applications based on IndexedDB, including open-source libraries like Firebase, pouchdb and AWS amplify 
 
 - State deleted after 7 days of inactivity (Safari)
@@ -249,7 +280,7 @@ modified: 2022-06-13T02:57:07.648Z
 - The backing store implementation is built on top of two storage systems:
   - Blobs, managed by the Blob system, are stored as individual files in a per-origin directory. Blobs are specifically designed for storing large amounts of data.
   - LevelDB is a key-value store optimized for small keys (10s-100s of bytes) and fairly small values (10s-1000s of bytes). Chrome creates a per-origin LevelDB database that holds the data for all the origin's IndexedDB databases. The LevelDB database also holds references to the Blobs stored in the Blob system.
-# [How the browsers store IndexedDB data_201210](https://www.aaron-powell.com/posts/2012-10-05-indexeddb-storage/)
+# 🌐️ [How the browsers store IndexedDB data_201210](https://www.aaron-powell.com/posts/2012-10-05-indexeddb-storage/)
 - At the time of writing the IndexedDB implementation of WebKit, and by extension Chrome, is still prefixed
   - leveldb
 

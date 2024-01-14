@@ -216,7 +216,9 @@ modified: 2022-11-07T10:25:12.034Z
 - https://github.com/bb010g/betterdiscordctl
   - A manager for BetterDiscord on Linux.
   - https://github.com/BetterDiscord/BetterDiscord
-  - https://betterdiscord.app/
+    - https://betterdiscord.app/
+  - https://github.com/mwittrien/BetterDiscordAddons
+    - A series of plugins and themes for BetterDiscord.
 
 - [Use SOCKS5 proxy with Discord on Linux](https://gist.github.com/mzpqnxow/ca4b4ae0accf2d3b275537332ccbe86e)
 
@@ -353,6 +355,14 @@ sudo systemctl start minidlna
   - Rixcloud/喵帕斯/Blinkload/速蛙云/世外桃源等等一系列已经跑路的机场告诉我们，机场的尽头就是跑路。
   - 本跑路名单未记录但实际已跑路的机场还有很多，改头换面重复收割韭菜的也有。
 
+- 机场free
+  - https://ikuuu.club/
+    - 免费版: 50G/月, 签到随机赠送流量, 大部分节点限速50M(6MB/s)
+    - 12￥/月: 300G/月
+    - 连续三个月未使用的会被删号处理
+    - 免费节点一直在被墙，没有可用性保障，会尽力维护
+    - 每天 00:00-13:00 为无人值守时间，免费节点如果用不了就是被墙了，属正常情况
+
 - 机场gfw
   - [VPS虚拟主机测评_IDC主机测评](https://shuziren.github.io/ssrvps/)
   - [FlowerCloud - 产品套餐](https://huacloud.dev/product.html)
@@ -374,7 +384,6 @@ sudo systemctl start minidlna
     - 开业时间：2022.04；老板肉身：海外(确定)
   - [KuLi云-IEPL](https://cyuuu.co)
     - 180￥/年: 200G/月
-  - https://ikuuu.club/
 
 - 一元机场
   - https://github.com/yiyuanjichang/dizhi

@@ -41,6 +41,21 @@ modified: 2022-10-04T23:32:30.824Z
 - https://github.com/TeemuKoivisto/prosemirror-react-typescript-example/tree/master/packages/api-collab
   - an example collaboration server based on prosemirror-collab
 # collab-examples
+- https://github.com/stepwisehq/prosemirror-collab-commit /MIT/202308/ts
+  - Commit-based collaborative editing plugin for ProseMirror.
+  - This solves two key problems with `prosemirror-collab` through server-side rebasing without the use of CRDTs:
+    - Throughput: 200 active clients per 1s of commit delay is feasible depending on backend implementation and edit characteristics.
+    - Fairness: Users with high latencies will not have their edits blocked by users with low latencies. This will greatly smooth the collab experience on documents with high levels of concurrent edits.
+  - [ProseMirror Collab Performance | Blog_202307](https://stepwisehq.com/blog/2023-07-25-prosemirror-collab-performance/)
+  - https://news.ycombinator.com/item?id=36959889
+    - A commit-based collab plugin that's far more performant under heavily active client loads than stock. I'm a fan of YJS, but not a fan of state-based CRDT layer on top of ProseMirror for my use cases
+    - I also translated the core ProseMirror projects of model, transform, and test-builder to C#
+    - I spent quite a bit of time as an FTE building out a robust-ish and efficient Yjs backend POC. 
+    - At the end of it all my personal takeaways were:
+    * State-based CRDT isn't great when you want a central authority in the mix anyway and are fundamentally trying to work with operations
+    * The exchange rate between ProseMirror's currency, steps, and some other replication strategies building blocks is too high
+    * ProseMirror should add the concept of range-relocation to its mappings; this is a bit of an aside but it would help retain user intent when reconciling concurrent edits involved in block relocations
+
 - https://github.com/TeemuKoivisto/prosemirror-track-changes-example
   - https://teemukoivisto.github.io/prosemirror-track-changes-example/
   - simple track-changes example with prosemirror-changeset
@@ -60,13 +75,6 @@ modified: 2022-10-04T23:32:30.824Z
 - https://github.com/dxos/editor  /1Star/AGPLv3/202101/js/archived
   - Collaborative editor
   - 依赖 react、material-ui、remark-rehype、yjs、prosemirror、hightlight.js
-
-- https://github.com/stepwisehq/prosemirror-collab-commit /202308/ts
-  - Commit-based collaborative editing plugin for ProseMirror.
-  - This solves two key problems with `prosemirror-collab` through server-side rebasing without the use of CRDTs:
-    - Throughput: 200 active clients per 1s of commit delay is feasible depending on backend implementation and edit characteristics.
-    - Fairness: Users with high latencies will not have their edits blocked by users with low latencies. This will greatly smooth the collab experience on documents with high levels of concurrent edits.
-  - [ProseMirror Collab Performance | Blog_202307](https://stepwisehq.com/blog/2023-07-25-prosemirror-collab-performance/)
 
 - https://github.com/dmonad/Yed /js
   - A collaborative editor built with ProseMirror - demo

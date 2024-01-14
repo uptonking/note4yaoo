@@ -84,6 +84,64 @@ modified: 2023-10-11T21:37:25.329Z
   - The key reason we can make this so nice and concise is actually our direct support for Sets as attributes (look at 'postIds'). 
   - In SQL world, you'd need an extra table like `user_posts` and a three-way join to make this relation possible
 
+- ## 🚀 [Triplit: Open-source DB that syncs data between server and browser in real-time | Hacker News_202401](https://news.ycombinator.com/item?id=38977516)
+- I use pouchdb/couchdb right now and I think my biggest issue at the moment is the amount of time it takes to sync up the app when you open it. It's possible to load the app straight from local data, but then it might be out of sync which could be jarring/confusing for the user.
+  - Is this named after a triple store (e.g EAV) like in datomic? If so this is looking very close to my dream database.
+- 🛋️ The problem with couchdb is that it does one request per document which makes the protocol slow for browser based applications also it has no http2 support. 
+  - Also storing the full rev tree of the documents is what makes pouchdb slow. 
+  - 👉🏻 This is why RxDB moved away from pouchdb/couchdb to a replication which works on bulk operation and resolves conflicts directly when they happen, not afterwards.
+- Yes great catch! One of the inspirations for Triplit's name is exactly from our use of a triple store under the hood. Datomic also has been a major influence in how we've designed the internals of Triplit
+
+- How does this handle multi-user conflicting updates, e.g. OT, CRDT?
+  - I believe individual fields are last-writer-wins. Fancier CRDTs like text/lists are not directly supported, but I found that you can layer them on top
+- Yep exactly. We also include a Set CRDT you can add to any entity.
+
+- Ideally, your app would be server-rendered on the first load, instead of first loading all data, and then filling a SPA from that.
+  - We're working on exactly this. You can already do this with Triplit but it's challenging to make an out of the box solution because each framework passes context/data different from server to client differently. There's a cool project called [Vike](https://github.com/vikejs/vike) that generalizes this pattern across SSR'd UI frameworks
+
+- This looks super useful for anything requiring optimistic updates, but how do you get data from triplit into another db? Perhaps for analytics or audit purposes.
+  - With something like electric-sql you can just use one of the many Postgres tools, and other local-first options like https://ably.com/livesync have database adaptors for replication. I think this is an important requirement whenever you build your own database
+- Currently, You can accomplish this by pulling from Triplit with either a JS client that just subscribes to each collection or with the REST API but we're currently working on a way to define custom "triggers" on your Triplit Server so you could directly push into any other database as you'd like
+- Is “triggers” a change-data-capture like thingy? Having an easy to connect to CDC stream seems like a great feature to offer. Is your trigger concept like DynamoDB Stream + triggers?
+  - Yes that's pretty much what we're going for. I'm less familiar with DynamoDB Streams but we're taking inspiration from Postgres triggers
+- I recommend having a pre-built integration that dumps all changes to the database in a Debezium CDC compatible format. Not sure how you'd normalize Triplit changes into Debezium updates, but something to think about. Debezium CDC format lets you pipe changes from one DB into a stream system like Kafka, and then out of Kafka into another DB on the other end. It's handy.
+  - For example, the original method for connecting Postgres to Materialize.com was using a Debezium stream
+
+- Are there any examples showing how to use Sqlite? I'm developing a notes app and will be using sqlite's full text search extension a lot
+  - Triplit is pretty opinionated about how things get stored so it doesn't work with existing SQLite schemas. We support basic `like` operators for searching but are definitely interested in supporting full text search. 
+  - If you want to try that out, we use Sqlite in our server implementation so you can see an example there
+
+- Is the underlying db using wasm SQLite in the browser? 
+  - Triplit can basically bind to any storage capable of providing ordered key values so we have bindings for SQLite but in the browser you're best of doing either in-memory or IndexedDB (both of which are built-in)
+- Regarding similar projects there are a few you can find on https://localfirstweb.dev/, but Triplit stands out in a few ways: 
+  - Support for an authoritative server 
+  - Provides an optional hosted cloud service 
+  - Relational querying without SQL 
+  - Partial replication (this is a big one)
+  - Typescript schemas and type hinting in queries in return types
+
+- If I already have an app that uses firebase, do you have some migration guidlines? Perhaps a tutorial for migration? That would help.
+  - We don't have any written docs
+- I just switched from firebase realtime to pouchdb. I was getting concerned about firebase "local first" not really working how I expected and pouch fit the bill nicely. I like the idea of field level sync and wonder if triplit would be faster than pouch.
+
+- Why would I use this over POST and server side update db or websockets?
+  - I’d suggest Triplit if you want to make a rich web app similar to Notion. 
+  - Under the hood this thing is doing POST and websocket subscriptions. 
+  - You can skip all the manual work to wire up optimistic updates, subscription, local storage, pending transaction queue by adopting someone else’s implementation. 
+  - Also after doing it enough times, adding a POST endpoint per record type in your app to create/read/update/delete that type gets old.
+- if you're building a highly interactive app (especially on mobile), you can't wait for network after each action before showing feedback to the user.
+  - Triplit does this all for you automatically with the mental model that your database queries automatically update when any data changes happen even if you're offline. Triplit takes care of reconciling this whether the request succeeds on the server and with concurrent changes from other users.
+- I don't 100% know in the case of triplit, but pouchdb does what you describe for "free" (i.e. you don't need to code it). firebase uses a websocket, pouch uses (I believe) long polling.
+
+- How would this compare to RxDB?
+  - RxDB is just provides clientside querying and a sync protocol. 
+  - Triplit is full stack in that it's designed to run on both client and server and will "just work" out of the box for end to end syncing, querying, and persisting data. Triplit supports relational querying.
+
+- how does this compare to https://electric-sql.com/
+- https://news.ycombinator.com/item?id=38977049
+  - I think our goals are pretty similar but Triplit offers more flexible storage options (Durable Objects, IndexedDB, SQLite), deeper Typescript integration, and is probably a good deal simpler to operate--we are closer to Firebase/Firestore in that regard. 
+  - ElectricSQL instead builds on the robustness of Postgres and SQLite.
+
 - ## 🚀 [Show HN: Triplit – The Full-Stack Database | Hacker News_202312](https://news.ycombinator.com/item?id=38805423)
 - Triplit is designed to make building collaborative and local-first web apps a lot simpler.
   - It works by running an instance of TriplitDB both in your client-side app and also on the server then efficiently syncs any queries you run on the client in real-time from the server over WebSockets. 
@@ -92,7 +150,7 @@ modified: 2023-10-11T21:37:25.329Z
   - We're in the process of building out a Firebase-like service (in private beta currently) but in the meantime you run the entire Triplit stack locally with our CLI.
 
 - Looks promising, this would be awesome for flutter.
-  - We're focusing on JS environments first but this is not the first time we've heard this...
+  - We're focusing on JS environments first but this is not the first time we've heard this
 
 - ## What I want from my sync engine:
 - https://twitter.com/kylemathews/status/1738805645284118857
