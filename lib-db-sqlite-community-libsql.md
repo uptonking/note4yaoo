@@ -18,6 +18,26 @@ modified: 2023-10-28T17:31:26.535Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🪶 SQLite takes multitenancy to the next level. 
+- https://twitter.com/sarna_dev/status/1735673953396338999
+  - Just tested @tursodatabase 's libsql-server hosting 100k databases, querying them all in a loop. It used 1.6GiB of RAM.
+- Are you going to have managed schema updates too then? :) Or will we have to manage 100k partial updates (due to some of them failing) manually?
+  - The scenario tested here is "database per user", so there's no common schema to coordinate - each user can store whatever they wish in the db
+- 💡 Coordinating schema changes is indeed something I would love to do and we have some ideas how to do that. No ETA for that yet though
+  - (1) leverage SQLite ATTACH and have a template database storing the schema (suggested by @sarna_dev ) 
+  - (2) record the schema delta history and apply it incrementally to the individual databases.
+
+- 🤔 How does one handle high availability when the database is SQLite? That's fairly impressive, but I wonder how easy it would be to auto-manage for customers with backup/restore, database upgrades and rollbacks, etc. What protocol is used over the wire to talk to the database?
+  - Turso speaks over HTTP or websockets, 
+  - as for availability, we have replicas and regular backups for disaster recovery
+- Do I currently understand that libSQL can do regular file-based SQLite where the application directly loads the database file, but can then be adapted to use the same SQLite database file through your server and one of the above wire protocols, giving the best of both worlds?
+  - Yessir, our drivers generally let you pick if you want to use a local file or a remote connection, and the app code stays the same
+  - 👆🏻 pouchdb也这样
+
 - ## What cipher do folks expect from encryption at rest in SQLite? 
 - https://twitter.com/penberg/status/1745747106285985889
   - @sarna_dev is integrating SQLite3MultipleCiphers into libSQL and there's many to choose from. 

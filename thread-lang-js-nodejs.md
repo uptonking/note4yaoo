@@ -18,7 +18,8 @@ modified: 2023-11-10T07:10:19.089Z
 
 - ## 
 
-- ## 
+- ## 之前一直没太理解AsyncLocalStorage的作用，终于弄了一个好懂的例子了
+- https://twitter.com/wulianwen1/status/1746723329359438024
 
 - ## what globals from the browser are missing in Node.js that you want to have?
 - https://twitter.com/jasnell/status/1376618110099226626

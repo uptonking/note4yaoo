@@ -98,7 +98,7 @@ modified: 2023-06-03T14:43:26.987Z
 
 - ## 🌰📝 A user hacked together a proof of concept for rich text merging in vulcan / cr-sqlite._202303
 - https://discord.com/channels/989870439897653248/1084822114302967909/1084822114302967909
-- Thats really cool! Do they use a seperate text-crdt encoded into a column, or have they built one in sqlite?
+- Thats really cool! Do they use a separate text-crdt encoded into a column, or have they built one in sqlite?
   - I haven't read the code yet but -- https://github.com/mweidner037/vlcn-rich-text/blob/master/src/todomvc/TodoList.tsx
 - Seems like they generate a sort of fractional index position for each char, and order by on it. So the text itself is a crr table with char and position columns. Very interesting.
 - this is probably worth implementing as the first sequence crdt. So simple
@@ -138,7 +138,19 @@ modified: 2023-06-03T14:43:26.987Z
 
 - ## 
 
-- ## 
+- ## 🔁 A browser extension has many different execution contexts (content/site, background) that don't have access to the same apis and permissions.
+- https://discord.com/channels/989870439897653248/1195787026499371158/1195787028726566953
+  - Any idea how could I sync a db relying only on `postMessage` like capabilities?
+  - I'm working on a chrome extension that augments specific sites. 
+  - It relies on mutation observers, event logging etc.
+  - I'm trying to sync the data store I inject on the site context to the background context. So I can use another "admin" page to debug and implement the augmentation.
+  - In you work with CRstore, did you have to do syncs that didn't rely on a server ? And only browser side.
+
+- By default, if you don’t specify remote pull & push, CRStore would only sync locally between tabs via `BroadcastChannel`.
+  - Also `pull` & `push` are just functions, so you can put any sync logic you want there (it doesn’t have to be with an actual remote)
+  - Also by using the `subscribe` and `update` primitives, you can roll out a completely custom sync solution that will interop nicely with all the CRStore features
+
+- you could post the sync message over a message channel following a similar setup to cr-sqlite-basic-setup
 
 - ## Been pretty silent for a while. That's because `useQuery(...)` , while a great dev experience, has scaling problems.
 - https://twitter.com/tantaman/status/1737903783496032671

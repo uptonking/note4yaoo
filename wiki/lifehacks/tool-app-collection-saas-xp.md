@@ -213,19 +213,23 @@ modified: 2022-11-07T10:25:12.034Z
   - if you look at the dependencies and code, WebZ is written in React/teact, WebK does not have any popular libraries (React, Vue, Angular, Svelte...) in the dependencies and in the source code is written in native js (ts)
   - I noticed that WebK is running way faster on my potato pc than WebZ, Z has more features tho
 # discord
+- [Use SOCKS5 proxy with Discord on Linux](https://gist.github.com/mzpqnxow/ca4b4ae0accf2d3b275537332ccbe86e)
+
+```shell
+flatpak run com.discordapp.Discord --proxy-server="socks5://127.0.0.1:1080"
+
+# PersonalPins收藏中心，包含信息原始数据和完整元信息
+~/.var/app/com.discordapp.Discord/config/BetterDiscord/plugins/PersonalPins.config.json
+```
+
+## BetterDiscord
+
 - https://github.com/bb010g/betterdiscordctl
   - A manager for BetterDiscord on Linux.
   - https://github.com/BetterDiscord/BetterDiscord
     - https://betterdiscord.app/
   - https://github.com/mwittrien/BetterDiscordAddons
     - A series of plugins and themes for BetterDiscord.
-
-- [Use SOCKS5 proxy with Discord on Linux](https://gist.github.com/mzpqnxow/ca4b4ae0accf2d3b275537332ccbe86e)
-
-```shell
-flatpak run com.discordapp.Discord --proxy-server="socks5://127.0.0.1:1080"
-```
-
 # 邮箱注册
 - 不需要手机号的邮箱
   - mail.protonmail.com

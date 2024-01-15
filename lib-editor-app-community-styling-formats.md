@@ -12,6 +12,16 @@ modified: 2023-11-01T12:33:20.763Z
 # discuss-formats-comments
 - ## 
 
+- ## 
+
+- ## The representation of comments in rich text Delta is awkward, 
+- https://twitter.com/zxch3n/status/1746451105188569188
+  - because multiple styles cannot be merged like bold/link. 
+  - Which solution do you prefer? commentsArray vs userIdKeyCommentsVals
+- Any specific reason you don't wish to create nested props?
+  - The behavior will be consistent across all different rich text types. It's based on delta
+  - the delta format currently is the most compatible format to describe the doc state and the changes
+
 - ## 浏览器已经支持通过 JavaScript 对内容进行高亮操作了，从此网页上可以告别使用 mark/span 作为搜索高亮标签了。
 - https://twitter.com/Barret_China/status/1719891344259485792
   - 1）定义一个 ::highlight 的 CSS 样式，当前仅支持 background 和 color

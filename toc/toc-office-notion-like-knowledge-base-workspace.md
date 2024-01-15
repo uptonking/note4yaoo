@@ -142,6 +142,14 @@ modified: 2022-06-03T21:34:54.893Z
   - made with asciinema, svg-term-cli, and svgembed
   - Gooseberry provides a command-line interface for Hypothesis (a tool to annotate the web) and lets you generate a knowledge-base wiki without you having to actually type your knowledge out.
   - Gooseberry combines the ease of annotation offered by Hypothesis, bulk tagging and organization support in the command line, and a customizable plaintext wiki with HandleBars templating.
+
+- https://github.com/skiff-org/skiff-apps /925Star/NCSA/202312/ts
+  - https://skiff.com/
+  - a privacy-first, end-to-end encrypted workspace with Mail, Calendar, Pages, and Drive product
+  - This monorepo contains all Skiff apps, libraries, and more
+  - 编辑器依赖prosemirror
+  - [Not open-source](https://github.com/skiff-org/skiff-apps/issues/94)
+    - This project is advertised as open-source despite that CC BY-NC-SA is clearly not an open-source license
 # confluence-like
 - MrDoc /2.1kStar/GPLv3/202208/js/python/Django/仅网页版
   - https://github.com/zmister2016/MrDoc
@@ -311,9 +319,14 @@ modified: 2022-06-03T21:34:54.893Z
   - If your browser doesn't support local file system APIs, you'll still be able to open individual local files or import JSON file 
   - Since mdSilo Web app is running completely within the browser, some experiences will naturally be more constrained
 
-- https://github.com/benweet/stackedit /apache2/js/vue
+- https://github.com/benweet/stackedit /21kStar/apache2/js/vue
   - https://stackedit.io/
   - Full-featured, open-source Markdown editor based on PageDown, the Markdown library used by Stack Overflow and the other Stack Exchange sites.
+  - Scroll Sync feature accurately binds the scrollbars of the editor panel and the preview panel 
+  - StackEdit can sync your files with Google Drive, Dropbox and GitHub
+  - 🛋️ We have CouchDB workspace provider since v5.7.
+  - [Self hosted StackEdit that operates on local files?](https://github.com/benweet/stackedit/issues/192)
+    - The new Native File System proposal looks to be a good fit for this request.
 - https://github.com/josephernest/writing /202208/js
   - a lightweight distraction-free text editor, in the browser (Markdown and LaTeX supported).
   - no server needed, you can run it offline

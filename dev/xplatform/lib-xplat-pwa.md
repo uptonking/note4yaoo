@@ -78,7 +78,9 @@ modified: 2022-11-11T03:09:56.491Z
 
 - ## 
 
-- ## 
+- ## What Progressive Web Apps Can Do Today is a *great* demo of all the stuff possible right now in a web browser, no native app BS needed
+- https://mastodon.social/@migurski/111757339283733242
+  - [What PWA Can Do Today](https://whatpwacando.today/)
 
 - ## 有哪些使用 PWA 的 app ？
 - https://www.zhihu.com/question/59108831/answers/updated

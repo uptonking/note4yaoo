@@ -19,7 +19,9 @@ modified: 2023-12-18T12:43:20.532Z
 # discuss-auth
 - ## 
 
-- ## 
+- ## OpenID Connect, aka OIDC, has basically nothing to do with the original OpenID protocol beyond the name, right?
+- https://mastodon.social/@simon@simonwillison.net/111756954285861590
+- it's basically a hybrid of OAuth 2.0 (token exchange protocol, client authentication) and OpenID (claim names; only used to establish identity but not to give an access token)
 
 - ## How can you safely store passwords in a database?
 - https://twitter.com/Franc0Fernand0/status/1745730683236917747

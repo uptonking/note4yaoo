@@ -118,6 +118,8 @@ modified: 2024-01-04T06:34:57.448Z
   - Second, CouchDB works hand-in-hand with ZFS’s block level compression. ZFS can compress blocks of data as they are being written out to the disk. However, it only does it for new blocks and not retroactively. Now, the awesome part, CouchDB on compaction writes out a brand new database file which can utilize the new gzip compression settings on ZFS. This means you can try out different gzip compression settings just by compacting your CouchDB.
 # blogs-couchdb
 
+## [CouchDB, The Open-Source Cloud Firestore Alternative?_201909](https://marmelab.com/blog/2019/09/25/couchdb_pouchdb_serious_firebase_alternative.html)
+
 ## [Query in Apache CouchDB: Clouseau - DEV Community_202111](https://dev.to/yenyih/query-in-apache-couchdb-clouseau-41ll)
 
 - In previous articles, we have talk about how to query with CouchDB Views and Mango Query. Both methods are working very well and able to cover a lot of use cases. Why Clouseau?

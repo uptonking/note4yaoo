@@ -96,22 +96,22 @@ modified: 2023-10-11T21:37:25.329Z
   - I believe individual fields are last-writer-wins. Fancier CRDTs like text/lists are not directly supported, but I found that you can layer them on top
 - Yep exactly. We also include a Set CRDT you can add to any entity.
 
-- Ideally, your app would be server-rendered on the first load, instead of first loading all data, and then filling a SPA from that.
+- 🐛 Ideally, your app would be server-rendered on the first load, instead of first loading all data, and then filling a SPA from that.
   - We're working on exactly this. You can already do this with Triplit but it's challenging to make an out of the box solution because each framework passes context/data different from server to client differently. There's a cool project called [Vike](https://github.com/vikejs/vike) that generalizes this pattern across SSR'd UI frameworks
 
 - This looks super useful for anything requiring optimistic updates, but how do you get data from triplit into another db? Perhaps for analytics or audit purposes.
   - With something like electric-sql you can just use one of the many Postgres tools, and other local-first options like https://ably.com/livesync have database adaptors for replication. I think this is an important requirement whenever you build your own database
 - Currently, You can accomplish this by pulling from Triplit with either a JS client that just subscribes to each collection or with the REST API but we're currently working on a way to define custom "triggers" on your Triplit Server so you could directly push into any other database as you'd like
-- Is “triggers” a change-data-capture like thingy? Having an easy to connect to CDC stream seems like a great feature to offer. Is your trigger concept like DynamoDB Stream + triggers?
+- 🔁 Is “triggers” a change-data-capture like thingy? Having an easy to connect to CDC stream seems like a great feature to offer. Is your trigger concept like DynamoDB Stream + triggers?
   - Yes that's pretty much what we're going for. I'm less familiar with DynamoDB Streams but we're taking inspiration from Postgres triggers
 - I recommend having a pre-built integration that dumps all changes to the database in a Debezium CDC compatible format. Not sure how you'd normalize Triplit changes into Debezium updates, but something to think about. Debezium CDC format lets you pipe changes from one DB into a stream system like Kafka, and then out of Kafka into another DB on the other end. It's handy.
   - For example, the original method for connecting Postgres to Materialize.com was using a Debezium stream
 
-- Are there any examples showing how to use Sqlite? I'm developing a notes app and will be using sqlite's full text search extension a lot
+- 🪶 Are there any examples showing how to use Sqlite? I'm developing a notes app and will be using sqlite's full text search extension a lot
   - Triplit is pretty opinionated about how things get stored so it doesn't work with existing SQLite schemas. We support basic `like` operators for searching but are definitely interested in supporting full text search. 
   - If you want to try that out, we use Sqlite in our server implementation so you can see an example there
 
-- Is the underlying db using wasm SQLite in the browser? 
+- 🪶 Is the underlying db using wasm SQLite in the browser? 
   - Triplit can basically bind to any storage capable of providing ordered key values so we have bindings for SQLite but in the browser you're best of doing either in-memory or IndexedDB (both of which are built-in)
 - Regarding similar projects there are a few you can find on https://localfirstweb.dev/, but Triplit stands out in a few ways: 
   - Support for an authoritative server 
@@ -120,7 +120,7 @@ modified: 2023-10-11T21:37:25.329Z
   - Partial replication (this is a big one)
   - Typescript schemas and type hinting in queries in return types
 
-- If I already have an app that uses firebase, do you have some migration guidlines? Perhaps a tutorial for migration? That would help.
+- If I already have an app that uses firebase, do you have some migration guidelines? Perhaps a tutorial for migration? That would help.
   - We don't have any written docs
 - I just switched from firebase realtime to pouchdb. I was getting concerned about firebase "local first" not really working how I expected and pouch fit the bill nicely. I like the idea of field level sync and wonder if triplit would be faster than pouch.
 

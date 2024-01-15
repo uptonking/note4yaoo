@@ -154,7 +154,14 @@ modified: 2023-10-29T02:22:57.939Z
 # discuss
 - ## 
 
-- ## 
+- ## [Syncing PouchDB offline to PostgreSQL - Stack Overflow](https://stackoverflow.com/questions/38371590/syncing-pouchdb-offline-to-postgresql)
+- Short answer: You can't. It's impossible. Give up. You need CouchDB.
+- Long answer: You have two options:
+  - you can implement a custom replicator for PouchDB (it is just a PouchDB plugin -- that can get complicated, but not necessarily --, see the default Pouch-Couch replicator source code)
+  - you can set up a backend service that acts as a proxy between PouchDB and Postgres, that will basically require you to understand and implement the CouchDB replication protocol, i.e., you'll need a server with a bunch of HTTP endpoints that return exactly what the PouchDB replicator expects.
+
+- Another possibility (which may or may not work with your use case, depending on how your data is structured):
+  - You can move some of your data (just what needs to sync to the browser) to CouchDB, but give Postgres access to it through the Foreign Data Wrappers feature in Postgres, so that you don't need to convert your entire app to putting everything in CouchDB, and you don't lose the benefits of a relational database.
 
 - ## [Make `_rev` generation deterministic (similar to CouchDB)_201512](https://github.com/pouchdb/pouchdb/issues/4642)
   - PouchDB currently generates _rev values using a uuid. This presents problems when, for instance, an application has conflict resolution logic which might run on different devices concurrently (because they would both resolve the conflict but, in doing so, generate a new one).

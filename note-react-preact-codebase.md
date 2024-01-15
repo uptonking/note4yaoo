@@ -9,6 +9,13 @@ modified: 2021-06-20T13:25:39.488Z
 
 # guide
 
+# examples
+
+- https://github.com/zouhir/preact-phiber /201704/js
+  - https://preact-phiber.netlify.com/
+  - 3kb alternative to React Fiber with the same API
+  - Preact Phiber allows you to render components in streamable chunks so that a component, its children, its aunts and uncles, its first, second cousins, and its maternal grandparents can load asynchronously.
+
 # codebase-blog
 
 ## [从Preact中了解React组件和hooks基本原理_荒山_201909](https://juejin.cn/post/6844903861434449933)

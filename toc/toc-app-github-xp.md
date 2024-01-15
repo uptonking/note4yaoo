@@ -67,6 +67,12 @@ modified: 2023-02-08T10:46:26.912Z
     - /inactive
 - repo项目名支持中文名，url中部分path支持中文名
 
+- GitHub 的这个 Used by 不能按 star 排序，导致我没法好奇到底哪些项目在用这个包
+  - https://twitter.com/0xhyoban/status/1746737169220383227
+  - https://izon.vercel.app/
+  - https://github.com/nvuillam/github-dependents-info /202401/python
+  - https://github.com/github-tooling/ghtopdep /202212/python/inactive
+
 ## unavailable
 
 - [Bring back `sort:indexed` for code searches](https://github.com/orgs/community/discussions/52932)
@@ -216,6 +222,9 @@ modified: 2023-02-08T10:46:26.912Z
 
 - https://github.com/dwyl/hits-nodejs
   - to see how many people have viewed your GitHub Repository
+
+- https://github.com/amplemarket/github-repo-size-public
+  - display repository size on GitHub
 # github-theming
 - https://github.com/imfunniee/gitfolio
   - https://imfunniee.github.io/gitfolio/

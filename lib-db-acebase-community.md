@@ -11,8 +11,12 @@ modified: 2024-01-07T12:45:24.749Z
 
 # dev
 
-# discuss-stars
+# examples
 
+- https://github.com/coorise/swyger /202308/js
+  - a boilerplate made for you to get started with Server and Client Side.
+  - 依赖acebase
+# discuss-stars
 - ## 
 
 - ## 🔀 [Use more than one CPU_202111](https://github.com/appy-one/acebase/issues/49)

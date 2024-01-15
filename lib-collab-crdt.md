@@ -17,6 +17,7 @@ modified: 2022-04-05T10:10:08.537Z
   - ot算法的转换方法更标准化更普及，crdt的实现依赖元数据而导致实现灵活多变，很容易出现不一致
   - 如何处理二进制数据能减少数据体积和提升数据同步性能
   - crdt的程序数据、算法都在用户本地，用户反馈的问题难以调试
+  - 难以支持的操作: file-rename, reparent, bulk-replace
 
 - 协作方案参考
   - Liveblocks, synced-store, FluidFramework, gundb, pouchdb

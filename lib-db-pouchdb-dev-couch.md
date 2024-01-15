@@ -24,7 +24,7 @@ modified: 2024-01-04T06:53:04.003Z
   - 不支持与非couchdb的数据库同步，但可参考event-sourcing自己实现
   - pouchdb擅长同步，但对实时协作的支持不如websocket，不支持awareness
   - 本地创建用户时如何同步/合并数据
-  - 数据初始化时可能处理超级大量数据的问题
+  - 初始化时处理超级大量数据很慢的问题
   - 对二进制数据存储和同步的支持不够好，attachment的设计是针对image/html
   - 不支持transaction
   - js引擎基于firefox的SpiderMonkey
@@ -82,6 +82,7 @@ modified: 2024-01-04T06:53:04.003Z
   - partial-replication/selective-sync
   - ivm: incremental view maintenance
   - reactive-query: dexie, tinybase
+  - db-per-user: pouchdb, sqlite
   - sync-protocol: websocket
   - auth/permission: 权限控制的粒度，row/doc, column/property
   - offline persistence
@@ -121,6 +122,9 @@ modified: 2024-01-04T06:53:04.003Z
 - plugins
   - math/statistics
   - gis
+
+- usecase
+  - bookmark/tags
 
 - sqlite [Database File Format](https://www.sqlite.org/fileformat2.html)
   - 导出或直接兼容 sqlite格式

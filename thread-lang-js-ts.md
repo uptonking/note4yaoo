@@ -9,9 +9,19 @@ modified: 2021-01-28T14:34:20.579Z
 
 # guide
 
-# discuss
+# discuss-examples
 - ## 
 
+- ## 🌰 Here's how to get a fully type-safe fetch function in just a few lines
+- https://twitter.com/mattpocockuk/status/1746857014255403499
+- shouldn't you, like, pass in a zod schema instead, and get the output type from that? otherwise it's just kinda hopes & dreams bc there's no verification that the response actually matches what the type says
+  - See my library `zod-fetch`
+
+- Or you share these types in your backend and... oops we've invented `trpc`
+
+- I use this typed API client (with zod validations) almost everywhere. 
+  - [Fully typed API client with zod and fetch](https://gist.github.com/jordienr/3127f4186d520e57d3e77fa784058366)
+# discuss
 - ## 
 
 - ## TypeScript tip: use undefined explicitly instead of making a property optional

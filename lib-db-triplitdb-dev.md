@@ -9,8 +9,32 @@ modified: 2023-10-11T21:37:11.168Z
 
 # guide
 
+- triplit-pros
+  - triplit supports relational-style querying system without joins
+  - no schema, flexible data for triple store
+  - supports flexible storage adapter including sqlite
+  - Partial replication (this is a big one)
+  - Support for an authoritative server 
+  - Provides an optional hosted cloud service 
+  - Relational querying without SQL 
+  - Typescript schemas and type hinting in queries in return types
+
+- triplit-cons
+  - js only, no implementation for other language
+
+- sqlite-pros
+  - popular with ecosystem
+  - sql is supported everywhere
+  - support full text search
+
+- sqlite-cons
+  - sqlite has no builtin support for reactivity
+  - sqlite has too many feathers u may not need
+  - for web, sqlite is slow for multiple layers of abstraction
+
 - resources
   - [why we need a full-stack database - Lofi Meetup #7_202308](https://www.youtube.com/watch?v=SEB-hF1F-UU&list=PLTbD2QA-VMnXFsLbuPGz1H-Najv9MD2-H&t=1471s)
+  - [Taking Node Server to the next level - pouchdb vs sql_201911](https://groups.google.com/g/TiddlyWiki/c/BtmLkx1mwtU)
 # dev
 
 # examples

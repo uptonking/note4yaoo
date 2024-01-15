@@ -309,6 +309,15 @@ modified: 2023-09-28T20:35:56.153Z
   - We took the best of it, it's powerful customization system, and mixed it with one of the best embedded databases available, PouchDb, to bring in the synchronization capabilities you need.
   - This TiddlyWiki-variant stores documents in the browser (pouchdb) and can sync to a couchdb-server.
 
+- https://github.com/benweet/stackedit /21kStar/apache2/js/vue
+  - https://stackedit.io/
+  - Full-featured, open-source Markdown editor based on PageDown, the Markdown library used by Stack Overflow and the other Stack Exchange sites.
+  - Scroll Sync feature accurately binds the scrollbars of the editor panel and the preview panel 
+  - StackEdit can sync your files with Google Drive, Dropbox and GitHub
+  - 🛋️ We have CouchDB workspace provider since v5.7.
+  - [Self hosted StackEdit that operates on local files?](https://github.com/benweet/stackedit/issues/192)
+    - The new Native File System proposal looks to be a good fit for this request.
+
 - https://github.com/j3k0/supercouch /202207/ts
   - CouchDB extension to store stateful data in Redis from your view function
   - Write CouchDB views to Redis with Sorted Sets.
@@ -359,6 +368,10 @@ modified: 2023-09-28T20:35:56.153Z
   - a framework agnostic data store that ships with framework specific adapters for major frameworks like React, Solid, Vue and Svelte.
   - primarily used for state management internally for most framework agnostic TanStack libraries. 
   - It can also be used as a standalone library for any framework or application.
+
+- https://github.com/pouchdb/pouchdb-fauxton /201703/js
+  - Fork/modification of couchdb-fauxton designed for pouchdb-server and express-pouchdb
+  - https://github.com/pouchdb/pouchdb-fauxton-base /201508/js
 # couch-like
 - microcouch-js /3Star/apache2/202209/js
   - https://github.com/jo/microcouch-js
@@ -682,6 +695,10 @@ modified: 2023-09-28T20:35:56.153Z
   - It does this by overriding some of CouchDB's endpoints where permissions are checked on the transmitted entities. 
   - The permission rules are defined through CASL.
   - This system is Node.js application built with the NestJS framework.
+
+- https://github.com/RipcordSoftware/replication-monitor /201702/python
+  - A GTK+ desktop app which can create, monitor and delete AvanceDB, PouchDB, CouchDB or Cloudant replication jobs
+  - Runs on Linux/Gnome but can be persuaded to run on Windows or OSX.
 # client-mobile-pc
 - https://github.com/craftzdog/react-native-sqlite-2 /202211/ts
   - SQLite3 Native Plugin for React Native for Android, iOS, Windows and macOS.
@@ -734,7 +751,7 @@ modified: 2023-09-28T20:35:56.153Z
 # starter
 - https://github.com/eingress/docker-pouchdb-server
   - a drop-in replacement for CouchDB, using PouchDB and Node.js
-- https://github.com/CliffCrerar/poucdb-server-docker-image /js
+- https://github.com/CliffCrerar/poucdb-server-docker-image /202008/js
   - Create a couchdb like pouchdb server docker image with a fauxton console
 
 - https://github.com/MalyanaSkyrim/docker-mern-app /201911/js
@@ -803,9 +820,6 @@ modified: 2023-09-28T20:35:56.153Z
   - Requires PouchDB-find plugin.
   - working: pagination, sorting(requires secondary indexes)
   - not working： filtering by column，full text search
-
-- https://github.com/jed1976/prototype_cms /202208/js
-  - Fun prototype CMS built with Node, CouchDB/PouchDB, RE: DOM and Tachyons.
 
 - https://github.com/ibm-watson-data-lab/shopping-list-vanillajs-pouchdb /201802/js
   - https://github.com/ibm-watson-data-lab/shopping-list-react-pouchdb /202004/js
@@ -1003,9 +1017,6 @@ modified: 2023-09-28T20:35:56.153Z
   - This is a searchable car dataset with 40, 000+ entries 
   - There is a link to a react app that utilizes the data along with PouchDb to create a browser based database with indexing.
 
-- https://github.com/evrom/plop /201402/js
-  - A Blog CMS that uses PouchDB locally or remotely for storage.
-
 - https://github.com/flysteur-dev/pager /202104/js
   - Minimalist serverless RSS reader (PWA, React, CouchDB, Web worker, Offline persistance, Docker)
 
@@ -1015,7 +1026,18 @@ modified: 2023-09-28T20:35:56.153Z
 
 - https://github.com/seb835/proptodo-multi /201707/ts
   - A multi-user to-do list, using couchdb, pouchdb, ionic, and superlogin
+
+- https://github.com/pouchdb/npm-browser /201506/js
+  - an offline-first HTML5 app that replicates most of NPM into your browser.
+  - Yes, if you wait long enough, it will actually store all of NPM's metadata locally. You can then search it offline.
+  - We're not suggesting that storing nearly 1GB in your user's browser is a good idea. The point is to demonstrate that browsers are capable enough today to handle that load.
+  - Since even the skim DB is a huge database (as of this writing, the .couch file is ~600MB), we needed some tricks in order to get the app to perform speedily and efficiently.
+    - filter-pouch/transform-pouch is used to filter incoming documents and trim away unneeded data before storing it in the local database
+    - pouchdb-load were used so that the initial replication doesn't take an inordinate amount of time.
 # examples-couch
+- https://github.com/jed1976/prototype_cms /202208/js
+  - Fun prototype CMS built with Node, CouchDB/PouchDB, RE: DOM and Tachyons.
+
 - https://github.com/koostudios/couchpress /83Star/MIT/201205/CoffeeScript
   - lightweight and modular CMS built on NodeJS, Express and CouchDB
 
@@ -1026,6 +1048,9 @@ modified: 2023-09-28T20:35:56.153Z
 - https://github.com/HusseinTaha/couchdb-node-cms /201506/js
   - A micro CMS for couchdb and nodejs 
   - This project use nodejs and couchdb to manage data from database using html templates.
+
+- https://github.com/evrom/plop /201402/js
+  - A Blog CMS that uses PouchDB locally or remotely for storage.
 
 - https://github.com/BigBlueHat/BlueInk /201612/js
   - BlueInk is being rewritten into an Open Source CMS built on Apache CouchDB and Cloudant mostly as a CouchApp.
@@ -1326,9 +1351,6 @@ modified: 2023-09-28T20:35:56.153Z
 - https://github.com/KlausTrainer/couch_image_resizer /201209/js
   - a simple web service that can serve CouchDB document attachments and, if the attachment is an image, is able to resize it using the convert program that is part of the ImageMagick tool suite. 
   - Resized images are held in an in-memory LRU cache, whose configurable size is 128 megabytes by default.
-
-- https://github.com/pouchdb/pouchdb-fauxton /201703/js
-  - Fork/modification of couchdb-fauxton designed for pouchdb-server and express-pouchdb
 # couchdb-utils
 - https://github.com/oreilly/couchdb-guide
   - https://guide.couchdb.org/
@@ -1505,6 +1527,7 @@ modified: 2023-09-28T20:35:56.153Z
 
 - https://github.com/rnewson/couchdb-lucene /apache2/202202/java/archived
   - Enables full-text searching of CouchDB documents using Lucene
+  - Java 1.8 is required
 
 - https://github.com/MalekovAzat/CouchDbStressTesting /python/ts
   - CouchDb synchronization stress testing

@@ -44,6 +44,9 @@ modified: 2022-12-02T11:16:05.028Z
 - Also when CRDTs are used, it is no longer allowed to do non-CRDT writes to the document properties.
 # blogs-rxdb
 - [Internal of RXDB: Plugins, Storages Adapters - DEV Community_202303](https://dev.to/dhrn/internal-of-rxdb-plugins-storages-adapters-3bi3)
+- RXDB follows a modular architecture
+  - Core Layer: This layer provides the basic functionality of RXDB, such as document CRUD operations and query execution.
+  - Plugin Layer: Plugins are building blocks that helps to extend the functionality of RXDB. They can be used to provide encryption, sync, and validation features, among others. This layer is responsible for the communication between RXDB and the underlying database system. Currently, RXDB supports multiple adapters, including PouchDB, MongoDB, and SQLite.
 
 ## [Alternatives for realtime offline-first JavaScript applications](https://rxdb.info/alternatives.html)
 

@@ -102,7 +102,10 @@ modified: 2023-09-17T17:35:27.024Z
 # discuss
 - ## 
 
-- ## 
+- ## 一直热衷于分布式、程序性能、缓存这些时髦内容，然而往往 SQL 都写不清楚，基本的 SQL 优化常识都没有
+- https://twitter.com/im2gua/status/1746688523061920203
+- 所以我们一般不允许程序员去碰数据库，涉及到数据存取的都是特定几个人来写，其他人提交申请。
+- 现在越来越多的业务逻辑都是在app层面, 数据库就是纯粹存个数据, 非常容易scale up
 
 - ## History of SQL: SQL -> Data Mart -> Materialized View -> OLAP Cube -> dbt tables -> One Big/Wide/Super Table -> Semantic Layer
 - https://twitter.com/sspaeti/status/1734610175020167334

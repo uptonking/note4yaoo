@@ -14,10 +14,10 @@ modified: 2023-12-15T17:50:49.509Z
 
 - ## 
 
-- ## [Taking Node Server to the next level_201911](https://groups.google.com/g/TiddlyWiki/c/BtmLkx1mwtU)
+- ## 💡 [Taking Node Server to the next level_201911](https://groups.google.com/g/TiddlyWiki/c/BtmLkx1mwtU)
   - I have a radical proposal which would take data folders to the next level. What if instead of the file system adapter we would write a new adapter to use a database. We could use PouchDB, but I would vote for something much more widespread like SQLite.
 
-- A while ago I made a syncer that used sqlite and from that I wouldn't suggest a relational database, SQL seems like it would be almost perfect for storing tiddlers but I immediately ran into problems with the database schema because aside from text, title, tags, created, type and modified you have on way of knowing what fields are going to be used so everything else just gets thrown into an otherfields column and you lose the desirable features of a relational database.
+- 🆚️ A while ago I made a syncer that used sqlite and from that I wouldn't suggest a relational database, SQL seems like it would be almost perfect for storing tiddlers but I immediately ran into problems with the database schema because aside from text, title, tags, created, type and modified you have on way of knowing what fields are going to be used so everything else just gets thrown into an otherfields column and you lose the desirable features of a relational database.
   - I found pouchdb to work much better because you can have arbitrary structures in the documents and implement the tiddlywiki filters pretty exactly in calls to `allDocs` and as a document store it can store single file wikis without any trouble at all.
   - I have been considering skipping pouchdb and just using leveldb directly on the back-end but I don't know if the performance improvements are worth the extra hassle.
   - Also in pouchdb you just make a new database for each wiki and never run into problems of scale except in the most extreme cases. I have had pouchdb databases that were close to a gig without any real performance hit, I think that wikis anywhere near that size are going to be rare.
@@ -35,7 +35,7 @@ modified: 2023-12-15T17:50:49.509Z
   - Another syncadaptor that I'd love to see is one that stores tiddlers in an online Google Sheet. Done right, one would be able to seamlessly switch between editing the same data within TiddlyWiki and via the Google Sheet user interface.
   - Another interesting sync adaptor would be one that retrieved and stored tiddlers via the Wordpress API. The attraction is that WordPress hosting is highly commoditised, being readily available and cheap. It should be possible to store tiddlers as “Pages”, and to inherit WordPress’s very smooth handling for media and attachments.
 
-- ## [TW 5.2.0 + CouchDB ?_202111](https://groups.google.com/g/TiddlyWiki/c/jKYp7GIm1o8)
+- ## 🛋️ [TW 5.2.0 + CouchDB ?_202111](https://groups.google.com/g/TiddlyWiki/c/jKYp7GIm1o8)
 - I have been following the TW project for years and I am still very surprised that the community continues to actively support super strange, inconvenient and limited ways of saving and synchronizing – but at the same time all developments using normal technologies on which synchronization could be easy, seamless and safe, such as CouchDB, are not supported in official release and abandoned by community.
   - Especially considering the new data storage format in JSON, with which synchronization with object databases has never been easier. It's even easier than maintaining the current server solution on files, which in principle cannot work offline, unlike a solution based on IndexedDB+PouchDB→CouchDB or IndexedDB→Mongo/Postgres.
   - I have used PouchDB adapter from NoteSelf, but it's outdated and contains a lot of bugs. Other solutions were outdated even earlier.

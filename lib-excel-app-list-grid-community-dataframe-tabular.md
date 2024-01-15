@@ -19,6 +19,12 @@ modified: 2023-11-14T06:31:35.103Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Comparison of Data Lake Table Formats | Dremio Blog_202204](https://www.dremio.com/blog/comparison-of-data-lake-table-formats-apache-iceberg-apache-hudi-and-delta-lake/)
+
 - ## @apachehudi brings the concept of 2 table types:
 - https://twitter.com/Dipankartnt/status/1729304456439767105
   - ✅ Copy-on-Write (CoW)

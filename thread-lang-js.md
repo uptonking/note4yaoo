@@ -16,7 +16,8 @@ Symbol('a') === Symbol('a'); //false
 # discuss
 - ## 
 
-- ## 
+- ## Dunno who needs to be reminded of this apart from me, but don't use `console.log()` in a loader hook, or streams, or threads
+- https://twitter.com/bengl/status/1745810715993158005
 
 - ## You can use 'as const' on a template literal to force TypeScript to infer it. 
 - https://twitter.com/ShuchangGuan/status/1730132183929479203
@@ -63,7 +64,6 @@ c.a === c.b // true
 - for me it’s Object.create
 - is class inheritance more performant?
   - Class inheritance is just setting the prototype, i assume the perf issue here is changing the prototype halfway through an object's lifecycle (like setting __proto__!), because it means the JIT has to throw away its work and reoptimise for a completely new set of methods
-
 
 - ## Here are 8 ways to simplify a fetch function.
 - https://twitter.com/housecor/status/1596944108794548224

@@ -152,8 +152,124 @@ modified: 2024-01-04T06:55:12.542Z
 - 🤔 Can Git be made to handle binary files as nicely as Dropbox does? Dropbox is also smart with how it tracks changes to files. Every time you make a change, Dropbox only transfers the piece of the file that changed (also known as block-level or delta sync), making it easy to work with big files like Photoshop or Powerpoint documents.
   - First off, the "block-level" sync is exactly what rsync is for. You'll probably have better results using that. You could track a list of local file paths in git, but sync the binaries themselves with rsync. (They complement each other well.)
   - Tracking changes in binary files (which cannot be merged in any reasonably generic fashion) is a fundamentally different issue than tracking changes in text, particularly source code. Git is designed to do the latter. While you can use it to track changes in binaries, merging doesn't make sense anymore, and hashing/scanning big binary files for changes is significantly slower. (A bunch of images generally won't matter, but I wouldn't use it to track, say, video, or large database dumps.)
+# discuss-couch-big-data
+- ## 
+
+- ## [CouchDB vs HBase - Stack Overflow](https://stackoverflow.com/questions/3847849/couchdb-vs-hbase)
+- they share many similarities:
+  - Schema-free data-model
+  - Map-Reduce as processing model (as opposed to SQL)
+  - Distributed design
+- However, the details of how each of those points are implemented are quite different, and share very little similarities.
+- Schema-Free Data-Model:
+  - CouchDB is a document store, allowing you to store any document in JSON format.
+  - HBase is a column-oriented store, where you store column values and are able to group those values into a row.
+- Map-Reduce:
+  - CouchDB has a built-in mechanism called "views" that allows you to define embedded map-reduce jobs. These "views" generate a "table" containing the output of the map-reduce job, which you can then use just as you would a normal table. Similar to materialized views in relational databases.
+  - HBase does not have a built-in map-reduce mechanism. Rather, you are able to hook up HBase with Hadoop to perform the Map-Reduce jobs. What you do with the result is independent of HBase, you can import the data or move to another database.
+- Distributed Design: 
+  - CouchDB uses a peer-to-peer design for distributing data.
+  - HBase uses master nodes that dictate where columns and rows are written.
+
+- ## 🆚️🍃🦣 [What are the key differences to do map/reduce work on MongoDB using Hadoop map/reduce vs built-in map/reduce of Mongo?_201202](https://stackoverflow.com/questions/9287585/hadoop-map-reduce-vs-built-in-map-reduce)
+- My answer is based on knowledge and experience of Hadoop MR and learning of Mongo DB MR.
+  - Hadoop's MR can be written in Java, while MongoDB's is in JavaScript.
+  - Hadoop's MR is capable of utilizing all cores, while MongoDB's is single threaded.
+  - Hadoop MR will not be collocated with the data, while Mongo DB's will be collocated.
+  - There are higher level frameworks like Pig, Hive, Cascading built on top of the Hadoop MR engine.
+
+- As of MongoDB 2.4 MapReduce jobs are no longer single threaded.
+
+- Hadoop MR can work with any data source that you could access from java. Not just HDFS.
+
+- ## [hadoop - Incremental MapReduce implementations (other than CouchDB, preferably) - Stack Overflow](https://stackoverflow.com/questions/17179557/incremental-mapreduce-implementations-other-than-couchdb-preferably)
+- The first thing that comes to mind for me is still Hive, as it now has features such as materialized views, which could hold your aggregates and get selectively invalidated if the underlying data changers.
+
+- ## [How couchdb 1.6 inherently take advantage of Map reduce when it is Single Server Database - Stack Overflow](https://stackoverflow.com/questions/37364458/how-couchdb-1-6-inherently-take-advantage-of-map-reduce-when-it-is-single-server)
+- The historical use of "MapReduce" as described by Google in this paper using that stylized term, and implemented in Hadoop also using that same styling implies parallel processing over a dataset that may be too large for a single machine to handle.
+  - But that's not how CouchDB 1.x works. View index "map" and "reduce" processing happens not just on single machine, but even on a single thread! As dch (a longtime contributor to the core CouchDB project) explains
+  - The issue is that eventually, something has to operate in serial to build the B~tree in such a way that range queries across the indexed view are efficient. … It does seem totally wacko the first time you realise that the highly parallelisable map-reduce algorithm is being operated sequentially, wat!
+- So: what benefit does map/reduce bring to single-server CouchDB? Why were CouchDB 1.x view indexes built around it?
+  - The benefit is that the two functions that a developer can provide for each index "map", and optionally "reduce", form very simple building blocks that are easy to reason about, at least after your indexes are designed.
+- what's the advantage to the CouchDB way? 
+  - Well, in the SQL case this query could be slow if you don't have an index on the supervisor column. 
+  - In the CouchDB case, you can't really make an unoptimized query by accident — you always have to figure out a custom view first!
+
+- So don't think of CouchDB view so much as being "MapReduce" (in the stylized sense) but just as providing efficiently-accessible storage for the results of running [].map(…).reduce(…) across a set of data. 
+  - Because the "map" function is applied to only a document at once, the total set of data can be bigger than fits in memory at once. 
+  - Because the "reduce" function is limited in its size, it further encourages efficient processing of a large set of data into an efficiently-accessed index.
+
+- Maybe the bigger advantage is that, in systems like Couchbase and CouchDB 2.x, the "parallel friendliness" of the map/reduce idea may come into play more. So then if you have designed an app to work in CouchDB 1.x it may then scale in the newer version without further intervention on your part.
+
+- ## [Incremental MapReduce with Hadoop and HBase - Stack Overflow_201306](https://stackoverflow.com/questions/17304174/incremental-mapreduce-with-hadoop-and-hbase)
+- In Both Hadoop/HBase and CouchDB use MapReduce as their main method of query. 
+  - However, there is a significant difference: CouchDB does that incrementally, using views, indexing every new data that is added to the database, while Hadoop (from all the examples I saw), is typically used to perform full queries on entire data-sets. 
+  - What I'm missing is the ability to use Hadoop MapReduce to build, and mainly, maintain indexes, such as CouchDB's views. 
+  - I saw some examples of how MapReduce can be used for creating an initial index, but nothing about incremental updates.
+
+- I believe the main challenge here is to run the indexing job only on rows that changed since a given timestamp (the time of the last indexing job). This would make these jobs run for a short amount of time, allowing them to run frequently, keeping the index relatively up-to-date.
+
+- One way could be to use Timestamp as the rowkey. This will allow you to work on rows based on some given time. Since i'm talking about rowkey based on TS, use hashing to avoid hotspotting.
+
+- ## 🦣🆚️ [Difference between MapReduce of data store like couchdb and that of Hadoop? - Stack Overflow](https://stackoverflow.com/questions/10571034/difference-between-mapreduce-of-data-store-like-couchdb-and-that-of-hadoop)
+  - Recently on a webinar by Couchbase, they said that Hadoop be used for processing large log file and Couchbase for presenting it to the application layer. They claimed that the map and reduce of Couchbase and Hadoop was different and suitable for the respective use case mentioned.
+
+- the main difference in the fact that couchbase uses incremental map/reduce and won't scan all the data set one you need to update or remove the items. 
+  - another difference is the magnitude of "large". if you need to process hundreds of gigabytes of logs once then the couchbase isn't the best choice.
+
+- Couchbase is one of many NoSQL data storage applications. Data is stored in Key / Value pairs, with the keys indexed for quick retrieval.
+  - Conversely data in hadoop is not indexed (other than the file name), and pulling a specific value from a file in HDFS is much slower, possibly involving scanning of many files.
+- You would typically use something like Hadoop mapreduce to process large files, and update / populate a NoSQL store (such as Couchbase).
+  - Using a NoSQL datastore for processing large amounts of data will most probably be less efficient than using MapReduce to do the same job. 
+  - But the NoSQL datastore will be able to service a web layer considerably more efficiently than a MapReduce job (which can take 10's of seconds to initialize, and minutes / hours to run).
+
+- Doing a full table scan on a large NoSQL table is slower than M/R the equivalent data in HDFS. 
+
+- ## 🦣 [Processing data in couchdb with hadoop + mapreduce - Stack Overflow_201207](https://stackoverflow.com/questions/11566736/processing-data-in-couchdb-with-hadoop-mapreduce)
+- I have a very very large quantity of data in CouchDB, but I have very recently found out how crippled the mapreduce functions in couch are (no chaining).
+  - So I had this idea of running map reduce queries from the CouchDB database using Hadoop, and hopefully storing the final result in another CouchDB database?
+  - Is this too crazy? I know I can set up Hbase to do this, but I do not want to migrate my data from CouchDB to Hbase. And I love couch as a data store.
+
+- The MapReduce functions in CouchDB are constrained to simplify caching of the results. Rather than having to search for views that are impacted by a change, views were designed to be self-contained.
+  - This means that if you have complex MapReduce code, you can use a tool like CouchApp to embed functions within a MapReduce function. 
+
+- Apparently CouchDB is supposed to be able to stream data to Hadoop via Sqoop, but I didn't see any other information than that link. 
+  - Worst case, you can write your own input reader to read from CouchDB, or export your data regularly and throw it onto HDFS and run it from there.
+
+- ## 🤔 [Ask HN: To everybody who uses MapReduce: what problems do you solve? | Hacker News_201311](https://news.ycombinator.com/item?id=6706545)
+- 👉🏻 It's worth noting that CouchDB is using map-reduce to define materialized views. 
+  - Whereas normally MR parallelization is used to scale out, in this case it's used instead to allow incremental updates for the materialized views, which is to say incremental updates for arbitrarily defined indexes! 
+  - By contrast SQL databases allow incremental updates only for indexes whose definition is well understood by the database engine. I found this to be pretty clever.
+- I've been using CouchDB (and now BigCouch) for about four years and it's both clever and useful. 
+  - We're storing engineering documents (as attachments) and using map/reduce (CouchDB views) to segment the documents by the metadata stored in the fields. 
+  - The only downside is that adding a view with trillions of rows can take quite a while.
+
 # discuss-couch
 - ## 
+
+- ## 
+
+- ## 💡 [On moving from CouchDB to Riak | Hacker News_201103](https://news.ycombinator.com/item?id=2297155)
+- There are several reasons for CouchDB's use of a single, strictly append-only file, but the b-tree is not one of them.
+  - In fact, it's one of CouchDB's most clever tricks to store a b-tree in an append-only fashion (it's far more common to update in place).
+- Two reasons CouchDB is strictly append only.
+  - 1) Safety: By never overwriting data, it avoids a whole class of data corruption issues that plague update-in-place schemes.
+  - 2) Performance: Writing at the end of the file allocates new blocks, leading to lower fragmentation and less seeking than an update-in-place scheme.
+- "durability" does not mean "the file is...never left in an odd state". The right word there is "consistent". CouchDB provides both (In fact it provides all four ACID properties, but the scope of a transaction is constrained to a single document update).
+- Finally, I should point out that using a single file, as opposed to a series of append-only files (like Berkeley JE, for example) is just a pragmatic choice. Nothing in principle would prevent a JE style approach, it's just a lot of (quite hard) work to do well.
+
+- The main two reasons that CouchDB doesn't use multiple files per database are system limits and increased complexity.
+  - CouchDB has a bit of an alternative design in that it accepts that people might be running a large number of databases on a single node. I don't remember the exact numbers but I think we've heard of deploys using 10-100K (small) db's on a single node.
+  - As to complexity, with a single file, there's no magical fsync dance to coordinate when committing data to disk. Its not unpossible, its just more complex.
+  - Its not out of the question that CouchDB will move to using multiple files per database, but as its open source, the biggest road block so far is that no one's needed it badly enough to implement it.
+
+- ## [Failing with MongoDB | Hacker News_201111](https://news.ycombinator.com/item?id=3200683)
+- Mongo's data model contributes to it's popularity. A document store with indexes on document fields is very convenient for several types of applications.
+- It's interesting that couchdb gets little love, but it has document storage by index, easy enough to install, copy on write so has no global lock, sharding with bigcouch, and all client access is entirely REST
+  - It isnt packaged and marketed as cleanly. It takes hunting and learning on your own to get good with couch, and map reduce is no where as easy to get started with as mongo queries (although the addition of unql may improve things next year).
+- I think couchdb tries to be all things to all people rather than just focusing on being a great data store. 
+  - It's a database like mongo, it's a mobile database like sqlite, you can use it to host apps with couchapp, you can use it as a map-reduce cluster like hadoop, etc. I would rather have just a solid no-sql database that solves that problem. 
+  - I like couch better than mongo for the reasons I mentioned, but I know couch also has problems and still haven't found a good third option.
 
 - ## 💾 We are running CouchDB on CentOS Stream 8, failed for backup.  
 - https://couchdb.slack.com/archives/C49LEE7NW/p1704833259714149
@@ -226,11 +342,6 @@ modified: 2024-01-04T06:55:12.542Z
 
 - [CouchDB in the wild_201812](https://cwiki.apache.org/confluence/display/COUCHDB/CouchDB+in+the+wild)
   - Software & Websites
-
-- ## 🤔 [Ask HN: To everybody who uses MapReduce: what problems do you solve? | Hacker News_201311](https://news.ycombinator.com/item?id=6706545)
-- 👉🏻 It's worth noting that CouchDB is using map-reduce to define materialized views. Whereas normally MR parallelization is used to scale out, in this case it's used instead to allow incremental updates for the materialized views, which is to say incremental updates for arbitrarily defined indexes! 
-  - By contrast SQL databases allow incremental updates only for indexes whose definition is well understood by the database engine. I found this to be pretty clever.
-- I've been using CouchDB (and now BigCouch) for about four years and it's both clever and useful. We're storing engineering documents (as attachments) and using map/reduce (CouchDB views) to segment the documents by the metadata stored in the fields. The only downside is that adding a view with trillions of rows can take quite a while.
 
 - ## [We have a problem with promises | Hacker News_201505](https://news.ycombinator.com/item?id=9564076)
 - as I mention in the article, ES7 async/await should help fix that

@@ -71,7 +71,8 @@ $$('[contenteditable]')
   - apps: cms+crdt
 
 - deep into lib/fwk 书籍原理与代码实践要分开
-  - 学习巩固: 实践练习 > 源码/示例 > 文档/论坛 > 社交媒体
+  - 学习巩固: 实践练习 > 源码/示例 > 文档/论坛 > 社交分享
+  - 不要从一个想法开始，而是从一个真正的问题开始
   - src-code, issues, pr, forks, extensions/alternatives
   - storage, sync/partial, conflicts, concistency
   - 直接根据具体框架或产品搜索解决方案如airtable-database，不必拘泥于通用方案如event-sourcing/eav，在产品讨论中常有细节和ideas
@@ -108,6 +109,7 @@ $$('[contenteditable]')
   - crsqlite, hypermerge: crdt + db
   - triplitdb: crdt + tupledb + eav
   - fireproof: ipld, live-sync, replication, branching-prolly-tree
+  - tinybase: reactive
   - kappa + lsm => kdtree/r-tree
   - 基于oplog的研发方向, 架构设计时考虑放在数据库层解决还是应用层解决
     - 实现db，还是sourcing based framework

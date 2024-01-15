@@ -28,18 +28,7 @@ modified: 2021-05-13T03:46:35.666Z
   - Seriously though, I think that’s how it should be. Preact is really just a thin layer on top of the DOM. Building actual components takes a lot of code, no matter the framework.
   - But also that’s not entirely true. Our components have a lot of overlapping pieces. One component may look large on bundlephobia, but most of the big pieces are shared between many different components, so it evens out in real apps.
 # discuss-architecture
-
-- ## [async rendering · Pull Request_202112](https://github.com/preactjs/preact/pull/3386)
-- https://github.com/matrix-marketing/preact
-  - [Preact Async Rendering: Solution to Initial Render Blocking - DEV Community](https://dev.to/cagdas_ucar/preact-async-rendering-51p2)
-- The only problem I have is that Google page speed insights keep telling me that our sites have too much blocking time. 
-  - The solution is of course async rendering. It's not a new concept. 
-  - It's similar to React Fiber but the implementation is quite different. 
-- preact async rendering is exactly what's supposed to help with that. I've been using it in production with great success.
-
-
-
-- ## [react-three-fiber on Preact? (discussion)](https://github.com/preactjs/preact/issues/2538)
+- ## 💡 [react-three-fiber on Preact? (discussion)](https://github.com/preactjs/preact/issues/2538)
 - 202209: Preact always had a reconciler internally, but we don't expose it as it's closely married to the DOM. There are no current plans to change that, which means react-three-fiber is not supported.
 
 - https://twitter.com/Cody_J_Bennett/status/1632674026408558592
@@ -49,7 +38,13 @@ modified: 2021-05-13T03:46:35.666Z
   - Crucially the point of the triangle demo isn't to demo "performance", it's to show that there's separate scheduling for high priority and low priority updates, and that we can "rebase" the low priority reconciliation on top of a high priority update. 
   - It's nothing Preact would be able to do anyway without implementing a double buffer like in Fiber (and then resuming — which we are still missing).
 
-
+- ## [async rendering 一直未合并pr· Pull Request_202112](https://github.com/preactjs/preact/pull/3386)
+- https://github.com/matrix-marketing/preact
+  - [Preact Async Rendering: Solution to Initial Render Blocking - DEV Community](https://dev.to/cagdas_ucar/preact-async-rendering-51p2)
+- The only problem I have is that Google page speed insights keep telling me that our sites have too much blocking time. 
+  - The solution is of course async rendering. It's not a new concept. 
+  - It's similar to React Fiber but the implementation is quite different. 
+- preact async rendering is exactly what's supposed to help with that. I've been using it in production with great success.
 
 - [Asynchronous rendering pipeline based on microtask](https://github.com/preactjs/preact/issues/3127)
 
@@ -89,6 +84,46 @@ modified: 2021-05-13T03:46:35.666Z
   - it's actually not that strange when you think about how JS engines optimize code. JIT optimizes for consistency, and abstractions are able to capitalize on that in a way direct imperative code generally can't.
 - all framework should be faster than bare metal js, bc they schedule. base op perf plays a small role in how fast an app is. first thing that makes apps slow is read/write order → layout thrashing, diffing updates → too many changes, virtualisation → breaching 15ms/frame.
   - that brings us to the high probability that all bare metal js apps are sub-optimal bc if they weren't they'd have a framework wrapped or written around it. there's nothing in js that helps w/ scheduling, and the complexity, if not well abstracted, creeps into the entire codebase.
+# discuss-🆚️-preact-react
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Anyone using Preact in prod? : reactjs_202301](https://www.reddit.com/r/reactjs/comments/10o661t/anyone_using_preact_in_prod/)
+- TLDR: Steer clear of preact. Try Next or Remix.
+  - Almost all issues we encounter upgrading dependencies are related to Preact, because even if the thing runs first time, good chance half of your unit tests will fail.
+  - I can’t count the number of times my tests have been flaky because I have preact and react in the same project (because react is listed as a peer dependency of something), and webpack has got its panties in a bunch because it’s not sure how to render something.
+  - React Testing Library is at version what, 12? The preact counterpart is v2. Using preact you miss out on features like Suspense that you now have to implement manually.
+
+- Exactly the same experience, I ended up spending a couple of days and moved everything into React.
+
+- do not use a library/framework similar react just because it has better performance. React is fast enough, just focus on architecture/detail design instead
+
+- Fullcalendar uses preact by default, and I use it in a project in prod. But that's about it.
+
+- ## [Preact vs. React: A Quick Comparison | HackerNoon_202202](https://hackernoon.com/major-differences-between-preact-and-react-which-one-should-you-use)
+- Preact is a JavaScript library, considered the lightweight 3kb alternative of React with the same modern API and ECMA Script support.
+
+- Preact-pros
+  - Lightweight
+  - Compatible: preact/compat to offer 100% compatibility
+- Preact-cons
+  - Hooks are stored separately in Preact and need to be imported differently
+  - No Synthetic Event Handling: Preact is based on browser API and doesn’t support synthetic event handling
+  - Use of additional library: With Preact, it is necessary to use additional libraries like preact/compat, preact/test-utils, etc., to bring connectivity between Preact and React-based npm packages. This makes the project large and slow.
+
+- React-pros
+  - One-way Data flow
+  - Large Community
+  - Reusable Components
+- React-cons
+  - View-centric Library
+
+- ## [Will Preact stay API compatible with React 16?_201911](https://github.com/preactjs/preact-compat/issues/432)
+- we added all of those in Preact X. We even ship with a rough implementation for `Suspense`
+
 # discuss
 - ## 
 
