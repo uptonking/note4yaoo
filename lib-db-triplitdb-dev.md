@@ -29,7 +29,8 @@ modified: 2023-10-11T21:37:11.168Z
 
 - sqlite-cons
   - sqlite has no builtin support for reactivity
-  - sqlite has too many feathers u may not need
+  - sqlite-wasm is hard to bundle
+  - sqlite has too many feathers u might not need
   - for web, sqlite is slow for multiple layers of abstraction
 
 - resources

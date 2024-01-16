@@ -290,7 +290,7 @@ modified: 2022-04-05T10:08:25.947Z
   - 依赖subleveldown、unordered-materialized-kv、randombytes
   - 测试用例使用kappa-core、memdb、random-access-memory
 
-- https://github.com/partykit/partykit /ts
+- https://github.com/partykit/partykit /MIT/202401/ts
   - https://partykit.io/
   - partykit is an SDK designed for creating real-time collaborative applications.
   - The fundamental components of a partykit application are the server and the client. 
@@ -298,9 +298,9 @@ modified: 2022-04-05T10:08:25.947Z
     - The client connects to this server and listens for these events.
   - First-class integrations with popular collaboration frameworks and libraries. Y.js, automerge, replicache, they all Just Work
   - `y-partykit` is an addon library for partykit designed to host backends for Yjs
-  - [automerge backend](https://github.com/partykit/partykit/issues/97)
   - PartyKit is extremely unopinionated. It's essentially lightweight javascript server, that launches fast and autoscales 
   - Most people seem to run yjs in PartyKit, but you can also run automerge or even Replicache
+  - [automerge backend](https://github.com/partykit/partykit/issues/97)
 
 - https://github.com/drifting-in-space/driftdb /MIT/rust/ts
   - https://driftdb.com/

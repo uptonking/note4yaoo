@@ -34,9 +34,7 @@ modified: 2022-11-04T14:20:37.172Z
     - To make MongoDB Server database size smaller (like from 800 GB tIo 10 GB), store files elsewhere, and have files visible in upcoming version of WeKan.
     - Meteor WeKan will continue using MongoDB for text data. Files can be stored outside of MongoDB.
     - Upcoming WeKan will use SQLite database for text data. Files are stored outside of SQLite.
-
 # http
-
 - https://github.com/proofrock/sqliterg /apache2/202312/go/rust
   - https://docs.sqliterg.dev/
   - a server-side application that, applied to one or more SQLite files, allows to perform SQL queries and statements on them via REST (or better, JSON over HTTP).
@@ -195,8 +193,6 @@ modified: 2022-11-04T14:20:37.172Z
 # binary/attachment
 - https://gist.github.com/jacobian/5000515 /python
   - Benchmarking MongoDB's GridFS vs PostgreSQL's LargeObjects
-# mobile
-
 # gis
 - https://github.com/ngageoint/geopackage-js
   - http://ngageoint.github.io/geopackage-viewer-js/

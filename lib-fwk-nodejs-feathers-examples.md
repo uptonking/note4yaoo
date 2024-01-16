@@ -95,6 +95,17 @@ modified: 2023-01-20T00:18:44.282Z
 - https://github.com/eddyystop/feathers-live-query /201610/js
   - Live query. Mirror part of a DB on the client.
   - The clients communicate with the server using socket.io websockets. 
+
+- https://github.com/dmccuskey/feathers-gui /202306/ts/vue/v5不支持
+  - https://feathersgui.dev/
+  - A FireStore-like interface for Feathersjs servers
+  - A record editor for Feathersjs-wrapped databases. 
+  - It can be run locally or used online.
+  - I've been using Feathersjs for several years and this is a tool I created to view and edit my data records during development.
+  - All configuration info is stored locally in localStorage
+
+
+
 # api
 - https://github.com/adaptable/feathers-template
   - Adaptable.io template for deploying an autoscaling, Serverless Feathers API. 

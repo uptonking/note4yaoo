@@ -90,7 +90,12 @@ npm run develop
 # discuss
 - ## 
 
-- ## 
+- ## ⚖️ @strapijs and so #Strapi Cloud will become SOC2 compliant! We just achieved 99%_202401
+- https://twitter.com/laurie_jim/status/1746903974442406057
+  - YI Strapi Cloud manages for your, the server (up time, scaling, etc), a database, a CDN and backups. All in one
+- ⚖️ [What is SOC 2? A Beginners Guide to Compliance | Secureframe](https://secureframe.com/hub/soc-2/what-is-soc-2)
+  - SOC 2 is a security framework that specifies how organizations should protect customer data from unauthorized access, security incidents, and other vulnerabilities. 
+  - There are a variety of standards and certifications that SaaS companies can achieve to prove their commitment to information security. One of the most well-regarded is the SOC report — and when it comes to customer data, the SOC 2.
 
 - ## [Strapi isn't just a CMS right? Is it not also a fully fledged backend web framework (like Django)? - Discussions - Strapi Community Forum_202207](https://forum.strapi.io/t/strapi-isnt-just-a-cms-right-is-it-not-also-a-fully-fledged-backend-web-framework-like-django/20324)
   - Strapi advertises themselves as a CMS, but I feel it’s much more than that. It feels like a backend web framework like Django. We can create our own APIs with routes & controllers. This means we can create custom endpoint URLs, and custom logic to handle each request. We can query whatever data we need from our database too.

@@ -44,7 +44,11 @@ https://meeting.tencent.com/p/9606972663
   - https://ckeditor.com/docs/ckeditor5/latest/examples/builds-custom/full-featured-editor.html
   - more-editor
     - https://demo.grammarly.com/
+
 # dev-review
+- 解释代码
+  - https://denigma.app/#demo
+  - https://code-mentor.ai/
 
 ```shell
 flatpak run com.discordapp.Discord --proxy-server="socks5://127.0.0.1:1080"
@@ -315,6 +319,22 @@ $$('[contenteditable]')
 # dev-01
 
 ## 011
+
+## 0116
+
+- [shell中冒号 : 用途说明 - nowgood - 博客园](https://www.cnblogs.com/nowgood/p/shellmaohao.html)
+  - 在Linux系统中，冒号(:)常用来做路径的分隔符（PATH），数据字段的分隔符（/etc/passwd）等。
+  - 其实，冒号(:)在Bash中也是一个内建命令，它啥也不做，是个空命令、只起到占一个位置的作用
+  - No effect; the command does nothing beyond expanding arguments and performing any specified redirections. A zero exit code is returned.
+  - 没有想好或完成相应的代码，这时就可以用: 来做占位符
+  - 单行注释 : your comment # your comment
+  - 清空文件file的内容 : >file
+  - 默认参数 : ${VAR:=DEFAULT}
+
+- [bash - Explanation of colon operator in `: ${foo=value}` - Stack Overflow](https://stackoverflow.com/questions/7444504/explanation-of-colon-operator-in-foo-value)
+  - it also returns the assigned value
+  - if you simply executed `${SOMETHING='value'}`, then your shell would try to invoke the command value. This might or might not do something unwanted; 
+  - the no-op :, which evaluates its argument and then throws it away, rather than executing it. 
 
 ## 0112
 

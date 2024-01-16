@@ -244,9 +244,15 @@ I’m surprised there is not much CRDT literature/projects for dealing with rich
 
 - ## 
 
-- ## 
+- ## 🐛 [How to make Peritext agnostic to the underlying plain text CRDT_202211](https://github.com/inkandswitch/peritext/issues/31)
+  - In the current implementation, Peritext needs a special behavior to fix an issue related to tombstones
+  - It requires the plain text CRDT to insert text after the tombstone with a special property to make the span expansion behavior intuitive
 
-- ## ✨ [CRDT-richtext: Rust implementation of Peritext and Fugue | Hacker News_202305](https://news.ycombinator.com/item?id=35988046)
+- I've implemented this idea, but its integration turns out to be too complicated to be practical.
+
+- 🐛 Unfortunately, this issue makes Peritext as it stands unsuitable for use in diamond types. I'd also love a workable answer to this problem.
+
+- ## 🚀 [CRDT-richtext: Rust implementation of Peritext and Fugue | Hacker News_202305](https://news.ycombinator.com/item?id=35988046)
 - I'm happy to see even further performance improvements towards rich-text CRDTs but at this point, I think the barrier to adoption isn't speed or compactness but instead integration with existing backends and databases.
   - I have a hunch that we're reinventing the wheel by creating new B-Tree implementations in Rust when we could be figuring out how to make an existing database do the hard work of storing and retrieving characters in the correct order. 
   - I know Martin Kleppmann has looked at Datalog being a potential solution to this problem but until we have a good full-stack solution to collaborative text editing, I don't think we'll see major adoption of these CRDT solutions.
@@ -266,7 +272,7 @@ I’m surprised there is not much CRDT literature/projects for dealing with rich
   - **Peritext does not yet have support for block types.**
 - So, although the most common use of Yjs is for collaborative rich text editing, it can be used for many other things such as 2D/3D drawing or even gaming.
 
-- ## ✨ Peritext: a CRDT for rich text collab
+- ## 🚀 Peritext: a CRDT for rich text collab
 - https://twitter.com/geoffreylitt/status/1463244227412824066
 - It's a data structure for async collaborative editing of rich text documents. 
 - I believe the tools we use to collaborate can deeply shape the outcomes.

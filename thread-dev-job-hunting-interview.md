@@ -44,6 +44,16 @@ modified: 2024-01-07T15:00:50.079Z
 - 5. Divide & Conquer
 - 6. Depth First Search
 
+# discuss-mobile
+- ## 
+
+- ## 
+
+- ## 看了很多简历，基本都是30岁左右的。很奇怪的是，大家在苹果生态工作了那么多年，竟然都不会苹果推了四五年的 SwiftUI 
+- https://twitter.com/waylybaye/status/1747081374715318456
+  - 大部分都是 Flutter，React Native/uniapp 其次。看来很多公司真的养不起或者不想养原生开发团队……
+- 做调研和写side project用。但是公司项目不会用，因为最低支持版本。
+
 # discuss
 - ## 
 

@@ -113,7 +113,7 @@ modified: 2022-06-03T22:07:49.519Z
 
 - https://github.com/alexdevero/bookshelf-react-express-sqlite-app
   - App for collecting books built with React, Express and SQLite.
-# electron
+# client-electron
 - https://github.com/spenserblack/favlist.vue
   - Edit tables/lists with a SQLite backend and JSON imports/exports
   - Manage lists with dynamic columns backed by a SQLite database.
@@ -139,6 +139,10 @@ modified: 2022-06-03T22:07:49.519Z
 - https://github.com/vazra/electron-react-ts-rxdb-realm-sqlite
   - Demo of Native Databases with Electron and ReactJS. Realm, SQLite and RxDB ( with LevelDB/IndexedDB/InMemory adapters)
   - The electron & react part is bootstraped with electron-webpack-typescript-react boilerplate
+# client-mobile
+- https://github.com/OP-Engineering/op-sqlite /MIT/202401/c
+  - next-next gen SQLite library for react-native
+  - Memory consumption is minimised as much as possible since all the data is shared via `HostObjects`, meaning large queries can be run in few mbs.
 # apps
 
 # utils

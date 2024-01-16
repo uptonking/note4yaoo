@@ -109,6 +109,8 @@ modified: 2022-11-07T10:58:24.512Z
   - 奖励型问题可设置回答部分可见、二次付费可见
 
 - ActionText
+
+- 如果你做独立开发，没任何用户感知和判断力，建议多逛逛这个subreddit，https://reddit.com/r/SideProject/
 # discuss
 - ## 
 

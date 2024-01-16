@@ -21,7 +21,33 @@ modified: 2024-01-06T15:37:08.031Z
 # discuss
 - ## 
 
-- ## 
+- ## 💡 There's an alternative approach to rich-text formatting, keeping the formatting outside of the text
+- https://discord.com/channels/1069799218614640721/1168069498918670336/1193907169708494898
+  - Instead of embedding style information within the text, one would have a "stylesheet"* outside of the text that maps from relative positions to style information. Unlike HTML/CSS (and Peritext, Markdown, etc), where text is marked up for styling inline, the text would be plain and decoupled from its formatting. 
+  - When formatting a text, the editor would only operate on the stylesheet (a specialized CRDT?), assigning styles to the current relative positions (start, end) in the text. To render the formatted text, editors/viewers would apply the stylesheet to the plain text.
+  - One can think of it as a more basic CSS where instead of selectors you have pairs of relative positions ([start, end]) for spans of text and their formatting data (strong, italic, size, color, link, etc).
+  - Some benefits: Separation of concerns. Text is pure text, less overhead. Ability to disregard formatting and load only plain text. Possibility of a specialized CRDT for stylesheets, with optimizations?
+  - Possible drawbacks: Requires efficient and dependable relative positions. Higher memory/storage? More difficult to implement for editors/viewers?
+
+- I think so you just described `Peritext`, styles are applied based on boundaries (like start and end)  and mostly decoupled from the text document except for the relative position (CRDT Semantic ID.) 
+  - This is how the initial implementation of Loro stored this boundaries (called annotations in the diagram):
+- you can develop a rich text algorithm using relative positions. 
+  - Peritext fundamentally depends on them. However, it requires specific attention in scenarios involving tombstones. As a result, it's not completely detached from the base plain text CRDT algorithms. Peritext also supports storing the formatting outside the text.
+  - 🧐 Loro has adopted a new rich text algorithm that meets the testing requirements outlined in the Peritext paper. It's compatible with the Replayable Event Graph and doesn't incur extra costs (in terms of memory, storage, or computing power) when styles aren't used. When styles are present, it supports all the behaviors of plain text. 
+  - Could you share why you'd prefer to store styles separately? I'd like to explore how to design the API to better address these needs.
+- I see that you have explored what I described, so that answered my question. Nice! Too bad it didn't work out.
+  - My motivation for separating markers from plain text is that, like Ink&Switch, I'd like to use it for more than just formatting. Linking is my main use case (links are not formatting, as I see it).
+  - I'm inspired by Ted Nelson's Xanadu (上都), again inspired by Vannevar Bush's Memex, where a link is much more powerful and expressive than the simple "jump link" we're used to from the web. 
+  - In more powerful hypertext systems, a link is not just a one-way link embedded in the document, but a two-way link between positions/spans on both sides, stored as a separate entity outside the document, forming a graph.
+
+- Giving it some more thought, I think I'm conflating two phases – editing and viewing.
+  - I may not have a need to store formatting/marks outside the text anyway. I'd only need a relative position API. It would be nice to get a set of all marks in a text, with relative positions of each span
+- I understand your objective. In this scenario, an API for Relative Position is probably sufficient, and the impact of tombstones can likely be ignored. The same result could be achieved through the built-in style API, which might simplify rendering. Additionally, it also allows for the export of bidirectional links
+  - Using Relative Position to represent styles also supports time travel capability, as these positions adjust with content changes. Removing style information from a Snapshot can be challenging, but the size occupied by these styles is generally small
+- For the storage format, I suggest saving snapshots at longer intervals, and saving a separate incremental update every few keystrokes
+
+- you're looking for an API that can squash updates, similar to the behavior of Git's squash merge
+  - Since our current design is already capable of computing the Diff from version A to B (by checking out from version A to version B, you obtain the events that occurred during this transition.), we only need to convert the Diff into updates to achieve a squash-like behavior. This isn't difficult to support, and we can include this feature in the future. For now, this functionality can also be implemented in application code (but it may be too complicated)
 
 - ## [Loro: Reimagine state management with CRDTs | Hacker News_202311](https://news.ycombinator.com/item?id=38248900)
 - The demo code for Loro looks very easy to use, I love how they infer a CRDT from an example plain JS object. I’ve played with a Zod schema <-> Yjs CRDT translator and found it kinda annoying to maintain. 

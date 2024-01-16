@@ -53,6 +53,21 @@ modified: 2023-09-07T15:58:27.967Z
 
 - Question:since doing this requires hashing your entire tree, what are the implications of doing this hashing operation on possibly millions of entries (which I'm estimating is the scale at which comparing linearly really start being noticably slow)?
   - The merkle tree is persisted, and updating it is only log(n). You only have to "hash 2n elements" once, and then incrementally maintain it. It's negligible overhead for free log(n) diffing.
+# discuss-keet
+- ## 
+
+- ## When will Keet be fully open sourced?_202312
+- https://discord.com/channels/985129863348371516/985129863348371519/1186957837767823370
+- I think it's in February... Or something like that.
+
+- how does keet compare to discord and teamspeak with regard to latency and audio quality?
+  - for calls? Its better imo.
+- Keet is better than Signal too for calls. Udx is the transport layer I believe
+  - https://github.com/holepunchto/libudx
+
+- https://discord.com/channels/985129863348371516/985894366910509127/1159496428301865042
+  - Is the Holepunch team still planning to open source Keet at some point?_202310
+  - Yes, it's planned for the next year
 # discuss-collab
 - ## 
 

@@ -12,6 +12,8 @@ modified: 2023-11-08T17:07:50.967Z
 - features
   - version history
   - branching
+  - partial
+  - ivm
   - search
   - aggregation/cube/bi
   - dataflow: git uses dag not tree
@@ -19,12 +21,25 @@ modified: 2023-11-08T17:07:50.967Z
 
 # dev-to
 
-- 将browser的nextTick实现迁移到queueMicroTask
+## migrate
+
+- 将browser/node的nextTick实现迁移到queueMicroTask
+- 将pouchdb-fetch的实现迁移到js标准api和自定义精简实现
 # dev-later
 
 # dev-maybe
 
-# faq
+# build/bundling
+- 各子包打包时使用external，由用户在使用时打包
+
+- 打包体积过大
+  - 重复readable-stream 3000x2
+    - sublevel-pouchdb固定在了 v1.1.14
+    - levelup.v4依赖 v3.4.0
+  - 待迁移node-fetch+fetch-cookie 6000, 通过重构`pouchdb-fetch`包
+  - ✅ 重复 levelup
+    - 顶层node-polyfill的levelup.v0.1覆盖了pouch-like下的2个子包v4导致打包重复，将顶层去掉后就只打包1次了
+# done
 
 ## pouchdb初始化的问题，fauxton管理页面和示例页面eg1必须在同一浏览器打开后才能初始化？
 
@@ -41,4 +56,7 @@ modified: 2023-11-08T17:07:50.967Z
 - 💡 解决方法
   - 初始化pdb时需要传入用户名密码，类似典型的数据库连接url
   - `new PouchDB('http://user:pass@localhost:5984/testdb');`
-# done
+# more
+- 依赖 process.env 的包
+  - pouchdb-mapreduce
+  - pouchdb-utils

@@ -89,12 +89,19 @@ Function('str', 'console.log(str, aaa)')('aaa:');
 - 这里选择了 Figma 曾经的方案 - Duktape
   - Duktape是一个嵌入式Javascript引擎，专注于可移植性和低空间占用。
   - 易于集成到C/C++项目中：将duktape.c, duktape.h，和duk_config.h添加到的构建项目中，然后使用Duktape API实现 C 代码与 Ecmascript 函数的双向调用。
-# discuss-iframe
-- https://github.com/niutech/x-frame-bypass /js
-  - https://niutech.github.io/x-frame-bypass/
-  - Web Component extending IFrame to bypass X-Frame-Options: deny/sameorigin
-  - X-Frame-Bypass is using a CORS proxy to allow this
+# discuss-codesandbox-inc
+- ## 
 
+- ## 
+
+- ## 
+
+- ## I don't really understand this upcoming @codesandbox pricing/plans updates _20240116
+- https://twitter.com/tomlienard/status/1747267455767150641
+  - Sandboxes runs in the browser, they're not using any cloud RAM/CPU resources (these are Devboxes), why limit them to 20?
+
+- I want to like CodeSandbox because I know how hard they’re working and innovating. But this change might require me to move away from them, and I’m not happy about that
+# discuss-iframe
 - ## 
 
 - ## 
@@ -121,12 +128,8 @@ Function('str', 'console.log(str, aaa)')('aaa:');
   - `https://www.google.com/webhp?igu=1` this url works
   - it's Google itself leaves the hole. I don't say it's a Loophole, just maybe Google think it's necessary under some circumstances.
 
-- f you want to embed Google into an iframe you can do what sudopeople suggested in a comment above and use a Google custom search link like the following. 
+- If you want to embed Google into an iframe you can do what sudopeople suggested in a comment above and use a Google custom search link like the following. 
   - `<iframe id="if1" width="100%" height="254" style="visibility:visible" src="http://www.google.com/custom?q=&btnG=Search"></iframe>`
-
-- 
-- 
-- 
 
 - ## [how to resolve iframe cross domain issue - Stack Overflow](https://stackoverflow.com/questions/40866219/how-to-resolve-iframe-cross-domain-issue)
   - I'm making web page that has to show another domain's web page.

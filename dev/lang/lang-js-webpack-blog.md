@@ -9,6 +9,11 @@ modified: 2024-01-02T07:51:39.131Z
 
 # guide
 
+# blogs-rspack
+
+## [Webpack Chunk Graph 策略_202401](https://github.com/orgs/web-infra-dev/discussions/16)
+
+- [Webpack Chunk Graph Algorithm_英文版](https://github.com/orgs/web-infra-dev/discussions/15)
 # blogs
 
 ## [Recipes on how to create a library that supports both browser and Node.js - DEV Community_202002](https://dev.to/riversun/recipes-on-how-to-create-a-library-that-supports-both-browser-and-node-js-201m)

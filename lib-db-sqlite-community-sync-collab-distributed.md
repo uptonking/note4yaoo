@@ -13,9 +13,24 @@ modified: 2023-10-26T19:03:22.063Z
 - ## 
 
 - ## 
-# discuss-sqlite-sync
+# discuss-SQLSync
 - ## 
 
+- ## 
+
+- ## 💡 [snapshot replication system_202401](https://github.com/orbitinghail/sqlsync/issues/45)
+- A more efficient replication system that only tracks page indexes rather than page contents in the log. 
+  - The insight is that clients only need to fast forward to the latest snapshot. 
+  - This can be computed by comparing the client and server versions and unioning all page changes in-between them. 
+  - Then just serve pages from the current snapshot.
+  - Note, that if concurrent writes are desired in this model, this does require some kind of actual snapshot functionality on the send side. To this extent, I've been researching copy-on-write systems to understand various ways to build this in a performant way.
+
+- ## Is SQLSync compatible with https://turso.tech/libsql ?_202401
+- https://discord.com/channels/1149205110262595634/1149205111885799436/1195800771871121458
+- Not currently, but I suspect it wouldn't be too hard to do. 
+  - Are there other features from libsql that you'd like to use along with SQLSync?
+
+# discuss-sqlite-sync
 - ## 
 
 - ## 🔥 [LiteSync – Easy synchronization of SQLite databases | Hacker News_202301](https://news.ycombinator.com/item?id=34265261)

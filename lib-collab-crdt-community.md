@@ -18,7 +18,11 @@ modified: 2022-04-05T13:25:40.892Z
 
 - ## 
 
-- ## 
+- ## There are arguments to be made for both types or conflict resolutions, Add-wins and Delete-wins. 
+- https://discord.com/channels/933657521581858818/933657523049885698/1196458454592794665
+  - We've discussed making conflict-resolution semantics configurable, but we're not pushing on that in the short term. 
+  - We'd recommend the soft deletion because it ensures no data loss. 
+  - We'd be more keen to first work on providing the developer the ability to GC deleted rows after a stability point where we know no more concurrent operations might arrive. 
 
 - ## 💡🤔 The meaning of the term "CRDT" is really starting to drift.
 - https://twitter.com/LewisCTech/status/1719807159217844603

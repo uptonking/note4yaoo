@@ -108,6 +108,11 @@ modified: 2023-09-02T09:17:22.992Z
   - https://whyframe.dev/
   - enables rendering any UI framework markup within an iframe, including Svelte, Vue, Solid, Preact, and React. 
 
+- https://github.com/niutech/x-frame-bypass /js
+  - https://niutech.github.io/x-frame-bypass/
+  - Web Component extending IFrame to bypass X-Frame-Options: deny/sameorigin
+  - X-Frame-Bypass is using a CORS proxy to allow this
+
 - https://github.com/robbestad/react-iframe /ts
   - Simple React component for including an iframed page.
 

@@ -11,12 +11,25 @@ modified: 2021-09-20T18:38:00.319Z
 
 - solutions
   - [Arrow Flight RPC — Apache Arrow](https://arrow.apache.org/docs/format/Flight.html)
-# discuss
+# discuss-protobuf
 - ## 
 
-- ## 
+- ## 🆚️ Is there anyone here who is using Protocol Buffers as the format of their Kafka records? 
+- https://twitter.com/gunnarmorling/status/1747197582244200913
+  - How has your experience been, and what made you pick protobuf over Avro?
+- Protobuf is VERY popular in my experience, likely exceeding avro. Personally, I'm all for Avro and msgpack. Both provide better runtime adaptability without as much code generation.
 
-- ## 
+- Avro without schema registry is terrible in terms of backwards compatibility. Protobuf is much better/easier in this. Also, with protobuf, one can easily employ nice partial deserialization tricks 
+
+- Avro needs the encoding schema to deserialise, so with Kafka that implies the use of a schema registry. I’m sure it’s better now, but CSR used to be a massive point of friction. +1 for protobuf and @bufbuild
+
+- We use pb for its compatibility guarantee and multiple language support."Everyone uses schema registry" is simply not true for us because we hesitate to adopt it to avoid introducing another point of failure. (also it brings local testability issue IMO)
+- How do you exchange schemas between producers and consumers?
+  - Just git
+
+- We use Protobuf for sending app events to Kafka and on the downstream use Spark 3.4 which now has support for parsing protobuf messages using descriptor files. We also keep the protobuf schema on Confluent schema registry. Upwards of 500M+ events per day.
+
+- We use protobufs for Kafka (we didn't use Avro in this project). We don't share schema, instead we use protos in a way that respects its clear rules to backward compat. We also have lots of gRPC around so it's natural/easier to use the same serialization (some shared serdes etc)
 
 - ## 🤼🏻 protobuf's strength lies in its interface definition language, which makes communication between components owned by different teams easy, but it wasn't designed for performance
 - https://twitter.com/eatonphil/status/1740057705124139069
@@ -24,6 +37,13 @@ modified: 2021-09-20T18:38:00.319Z
 - Protobuf is jack-of-all-trades. It doesn't have to be the fastest. Also one place where it really shines is schema evolution and how tolerant it is for backward-/forward-compatibility.
 - At Google they use arenas for allocating protobufs to avoid overhead, but this isn't in any of the gRPC libraries. I do prefer the pb IDL to flatbuffers/capnp, but the overhead from allocations is like 99.99% of our profiles, and we even use better codegen: vtprotobuf
 - This is where https://capnproto.org shines
+
+# discuss
+- ## 
+
+- ## 
+
+- ## 
 
 - ## gRPC is gaining popularity for service-to-service communication. Here's why:
 - https://twitter.com/sahnlam/status/1738787868414550072

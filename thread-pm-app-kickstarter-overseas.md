@@ -178,7 +178,9 @@ SecretOps:
 # discuss-payment-overseas
 - ## 
 
-- ## 
+- ## 很多朋友都有开户香港汇丰或者其他境外银行的需求，昨天我亲自操作了一番，并且写了一篇较为详细的攻略。
+- https://twitter.com/austinit/status/1747125889446645975
+  - [2024年1月15日开户香港汇丰(HSBC HK)与中银香港(BocHK)记录与攻略 - 驭风笔记](https://yufengbiji.com/posts/open-the-HSBC-HongKong-account-in-Jan15-2024)
 
 - ## 这笔订单是用户通过 Stripe + 支付宝的方式支付的，严格来说不算海外订单。但我的流程走通了，还是值得撒个花的
 - https://twitter.com/tualatrix/status/1739660206542667816

@@ -9,6 +9,28 @@ modified: 2021-07-27T16:35:20.057Z
 
 # guide
 
+# Memex
+- [Vannevar Bush - The Memex](https://lemelson.mit.edu/resources/vannevar-bush)
+
+
+- [The Secret History of Hypertext - The Atlantic](https://www.theatlantic.com/technology/archive/2014/05/in-search-of-the-proto-memex/371385/)
+
+- [Memex Explained: Everything You Need to Know - History-Computer](https://history-computer.com/memex-guide/)
+  - The Memex was a conceptual system created by Vannevar Bush for storing data and retrieving it in an easy and organized manner. 
+  - The system was to provide easy access to the large amount of knowledge that was already recorded. 
+  - Building on the technology of his time, Bush described a new kind of device which was a sort of mechanized file and library system. He called it a “memex.” The word memex came from combining portions of the words (mem)ory and (ex)tender. 
+  - Even though Memex was never actually built, the concept was used as a guideline in the process of creating our modern-day internet. 
+
+# Xanadu
+- [Project Xanadu](https://xanadu.com.au/ted/XU/XuPageKeio.html)
+  - Project Xanadu is the name for Ted Nelson's hypertext work since 1960. 
+  - We foresaw world-wide hypertext, clearly and specifically, even in the sixties when almost nobody could imagine hypertext
+  - We long ago foresaw the problems of one-way links, links that break (no guaranteed long-term publishing), no way to publish comments, no version management, no rights management.  All these were built into the Xanadu design.
+- Xanadu is a specific structure which we want everyone to understand, both as an abstraction and as an answer to what is still wrong with the Web.
+- Xanadu is a specific structure which we want everyone to understand, both as an abstraction and as an answer to what is still wrong with the Web.
+  - Lotus Notes, created by Ray Ozzie
+  - HyperWave(tm), created by Hermann Maurer
+  - MicroCosm(tm), created by Wendy Hall
 # bulletjournal
 - [Bullet Journal](https://bulletjournal.com/)
   - Bullet Journal® (aka Bujo) is a mindfulness practice designed as a productivity system. 
