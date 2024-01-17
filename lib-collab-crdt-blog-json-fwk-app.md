@@ -113,7 +113,9 @@ modified: 2023-10-28T12:54:25.048Z
 - With most applications, allowing users to set arbitrary JSON is not actually desirable. We can somewhat mitigate these problems by allowing the application developers to define a fixed schema ahead of time and validating all operations through this
 # blogs-crdt-apps
 
-## [Designing Data Structures for Collaborative Apps - Matthew Weidner](https://mattweidner.com/2022/02/10/collaborative-data-design.html)
+## [Designing Data Structures for Collaborative Apps - Matthew Weidner_202202](https://mattweidner.com/2022/02/10/collaborative-data-design.html)
+
+> I’ve put many of the ideas from this post into practice in a library, Collabs
 
 - A good starting point is to design an ordinary (non-CRDT) data model, using ordinary objects, collections, etc., then convert it to a CRDT version. 
   - So variables become Registers, objects become CRDT Objects, lists become List CRDTs, sets become Unique Sets or Add-Wins Sets, etc

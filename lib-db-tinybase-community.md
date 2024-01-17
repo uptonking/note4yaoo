@@ -21,6 +21,7 @@ modified: 2023-04-21T11:42:46.575Z
   - sql.js
   - datascript
 # dev
+- [Closing The Gap Between Your Users And Their Data using tinybase_202211](https://tripleodeon.com/2022/11/closing-the-gap-between-your-users-and-their-data)
 
 ## [lofi-meeting-tinybase_20230725](https://www.youtube.com/watch?v=sshvBCK5NDs&t=1140s)
 

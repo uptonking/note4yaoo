@@ -91,7 +91,10 @@ modified: 2023-09-17T17:36:36.118Z
 # discuss
 - ## 
 
-- ## 
+- ## 看 OrioleDB 的博客，早些年磁盘 IOPS 是瓶颈，数据库的算法和数据结构都是围绕降低 IOPS 设计的，不太考虑 CPU，
+- https://twitter.com/liumengxinfly/status/1747577046883287331
+  - 现在 IOPS 上来了之前的很多设计就不合理了，又要回来优化 CPU 的利用率，降低各种锁的开销
+  - [Rethinking buffer mapping for modern hardware architectures_202301](https://www.orioledata.com/blog/buffer-management/)
 
 - ## Direct IO can easily be misunderstood: Is it required for database durability?
 - https://twitter.com/jorandirkgreef/status/1724950847035941074

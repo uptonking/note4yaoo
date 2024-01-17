@@ -11,8 +11,9 @@ modified: 2024-01-02T07:53:22.956Z
 - 推迟迁移到rspack的原因
   - 难以迁移lib打包用到的第三方plugin
   - 难以迁移lib打包用到的第三方loader，如fonts/svg/img
-  - node内置模块打包到浏览器环境下fallback库的实现不够成熟
+  - 难以打包包含二进制的包，如leveldown
   - 对客户端开发环境的支持，如electron/react-native
+  - ✅ node内置模块打包到浏览器环境下fallback库的实现不够成熟
 
 - [Bundler的设计取舍 · web-infra-dev · Discussion](https://github.com/orgs/web-infra-dev/discussions/4)
   - Vite 在大型项目中的性能表现不够理想，一方面一些业务首屏有几千个模块，因此带来几千个网络请求

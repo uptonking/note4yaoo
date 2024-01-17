@@ -12,6 +12,26 @@ modified: 2022-11-08T10:34:34.820Z
 # work-xp
 - ## 
 
+- ## 
+
+- ## jlongster: Where have I been? A short reflection on 2023.
+- https://twitter.com/jlongster/status/1747486287307645348
+  - I did a lot less in 2023, which allowed me to focus more.
+  - To sum up: "Sure, I could sacrifice something here. I could get up earlier, I could exercise less. But any sacrifice means I’m reducing my presence with either my job or family. Maybe you can do it, but I’m out."
+
+- [Where have I been?](https://jlongster.com/where-have-i-been?x)
+- 2023 was the year of “deceleration” for me and is the first year I finally found a satisfying balance and focus.
+- Over last year I started realizing how overcommitted I was.
+- You might be wondering where I have been, and I’ve been quietly focusing on my family and job, and rarely using social media, checking discord, replying to emails, etc.
+- Doing this made me realize just how overcommitted I was.
+  - I feel like I had space to finally process life: to think about things going on around me, and to actually come to conclusions about what I thought about it. 
+  - To take the time to discuss it with people and grow relationships.
+- Last spring I became Tech Lead for the Design Systems team at Stripe. 
+  - The technical problems my team faces are incredibly hard, and on top of that I really wanted to work on learning how to grow relationships on a team and help everyone do their best work. To do this I really need to focus.
+- In my personal world, I have a wife, 3 kids, and friends. Keeping up with these relationships trumps everything else.
+- The biggest reality that hit me is that once you have a job and kids, you really don’t have much time for anything else. 
+- Sure, I could sacrifice something here. I could get up earlier, I could exercise less. But any sacrifice means I’m reducing my presence with either my job or family. Maybe you can do it, but I’m out.
+
 - ## [互联网技术大师速成班](https://mp.weixin.qq.com/s/8ZffsCgchv8LH5ujv0lRGQ)
 - 第一步：先进大厂
 - 第二步：要公开的鄙视工程技术, 技术要为业务服务

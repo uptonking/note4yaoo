@@ -84,14 +84,14 @@ modified: 2022-12-31T20:13:33.307Z
 
 - ✨ Global `fetch` enable by default, inspired by node-fetch
 - Core `test` runner module to write the unit tests and report results in Test Anything Protocol (TAP) format. 
+- experimental JSON Import Assertions
 - experimental Web Streams API
 - global Blob, BroadcastChannel
-- experimental JSON Import Assertions
 - server.headersTimeout/requestTimeout
 
 - v17.5.0
   - importing a JSON file is possible using Import Assertions
-    - `node --experimental-json-modules ./your-file.js`.
+    - `node --experimental-json-modules ./your-file.json`.
     - [Import Assertions - Chrome Platform Status, from v91](https://chromestatus.com/feature/5765269513306112)
 
 ## v16.0.0_20210420

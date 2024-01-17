@@ -15,6 +15,9 @@ modified: 2021-07-29T20:37:39.797Z
   - router-based dialog
 
 - [popper > floating-ui motivation](https://floating-ui.com/docs/motivation)
+
+- resources
+  - [HTMLElement API: popover | Can I use](https://caniuse.com/mdn-api_htmlelement_popover)
 # blogs-modal/dialog
 - [Better interfaces for dialogue ](https://thesephist.notion.site/Better-interfaces-for-dialogue-4c20a2faf16f47a5a12e090d16c99353)
   - https://twitter.com/thesephist/status/1739616441182081530

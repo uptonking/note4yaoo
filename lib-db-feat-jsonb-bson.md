@@ -10,7 +10,7 @@ modified: 2024-01-01T04:12:09.000Z
 # guide
 
 - tips
-  - pg-jsonb和sqlite-jsonb的实现细节是不同的, bson提供了格式说明
+  - pg-jsonb和sqlite-jsonb的实现细节是不同的, bson提供了格式规范
 # dev
 
 # blogs
@@ -56,7 +56,12 @@ modified: 2024-01-01T04:12:09.000Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 🐘🍃 PostgresBSON - a new experimental extension that introduces BSON support to Postgres. 
+- https://twitter.com/denismagda/status/1747319594870542489
+  - The data format that originated in MongoDB is now being added to the #1 database.
+- How is BSON different from the built-in json/jsonb datatypes?
+  * BSON allows the representation of data types that are not part of the JSON spec (date/time, BinData, etc.).
+  * As compact as protobuf - less time and resources spent on serialization/deserialization.
 
 - ## 🛋️🌰 [Binary JSON format on-disk or in-memory - Couchbase Server - Couchbase Forums_202209](https://www.couchbase.com/forums/t/binary-json-format-on-disk-or-in-memory/34436)
   - I am working on a research project comparing several document-oriented databases. MongoDB has BSON, ArangoDB has VelocyPack, Postgresql has Jsonb, … 

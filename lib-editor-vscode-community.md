@@ -14,7 +14,13 @@ modified: 2023-01-21T18:53:04.519Z
 
 - ## 
 
-- ## 
+- ## 又读了一遍 matklad 的这篇文章，感觉很有意思： 为什么 LSP 成功了？
+- https://twitter.com/roifex/status/1747340928090877966
+  - 因为微软成功把 GitHub，VScode，TypeScript，LSP，webdev，RemoteDev 牢牢绑定在了一起；其中核心是 TS 和 VScode
+- 但我觉得JetBrain的语义分析和IDE功能做的明显比vscode好，而TS的性能是真的不行。所以长远来看，vscode的LSP只是一种穷人的IDE，最后估计还是JetBrain会赢。
+  - 只需要做到功能相近就足以让大家选 vsc 了，而且 JB 现在还没搞定远程编辑的问题…
+- Fleet 的远程开发体验特别好。高延迟下效果比idea好很多，而且plugin不需额外开发就支持远程
+- WebStorm next 重写了 Typescript engine。
 
 - ## 💡 Most sandboxes in CodeSandbox are stored in a Postgres database.
 - https://twitter.com/CompuIves/status/1667148424389566465

@@ -36,6 +36,7 @@ modified: 2023-11-17T10:12:06.357Z
   - https://github.com/tinyplex/tinybase
   - https://tinybase.org/
   - TinyBase is a smart new way to structure your local app data
+  - 支持browser/node, react-native待测试
   - 基于自定义TinyQL(类似SQL)实现查询
   - 基于checkpoint实现undo
   - 基于hlc crdt实现冲突处理
@@ -286,12 +287,18 @@ modified: 2023-11-17T10:12:06.357Z
 - https://github.com/aerogear/offix /archived
   - GraphQL Offline Client and Server
   - NOTE: GraphQL ecosystem evolved since creation of offix. If you are planning to start new project with offline support please consider react-query
-# collab
+# sync/collab
 - https://github.com/YousefED/Matrix-CRDT
   - Use Matrix as a backend for local-first applications with the Matrix-CRDT Yjs provider.
 
 - https://github.com/rocicorp/replicache /NonOpen
   - Realtime Sync for Any Backend Stack
+
+- https://github.com/sockethub/sockethub /369Star/LGPLv3/202401/ts
+  - http://sockethub.org/
+  - Sockethub is a translation layer for web applications to communicate with other protocols and services that are traditionally either inaccessible or impractical to use from in-browser JavaScript.
+  - Using `ActivityStream` (AS) objects to pass messages to and from the web app, Sockethub acts as a smart proxy server/agent, which can maintain state, and connect to sockets, endpoints, and networks 
+  - Originally inspired as a sister project to RemoteStorage
 # p2p/distributed
 - https://github.com/drifting-in-space/plane /202212/rust
   - Plane is a container orchestrator for ambitious browser-based applications. 
@@ -318,12 +325,9 @@ modified: 2023-11-17T10:12:06.357Z
   - https://www.tryquiet.org/
   - A private, p2p alternative to Slack and Discord built on Tor & IPFS
 # auth/encryption
-
 - https://github.com/cyphercider/e2ee-appkit /202312/ts
   - Client and server-side utilities for building end-to-end encrypted apps.
   - End-to-end encryption allows a user to store data on a remote system without the remote system being able to access the data.
-
-
 # more
 - https://github.com/cwise89/react-detect-offline
   - Components that track offline and online state. Render certain content only when online (or only when offline).

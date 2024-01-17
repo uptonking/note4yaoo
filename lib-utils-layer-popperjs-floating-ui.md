@@ -13,8 +13,6 @@ modified: 2022-06-04T00:44:40.955Z
   - 浮层元素 visible
   - 浮层元素 anchored to reference element
 
-- resources
-
 - 官方提供了很多示例
   - popover
   - tooltip
@@ -25,6 +23,9 @@ modified: 2022-06-04T00:44:40.955Z
   - autocomplete/combobox
   - emoji-picker
   - safe-polygon: 二级菜单支持三角形安全区
+
+- resources
+  - [HTMLElement API: popover | Can I use](https://caniuse.com/mdn-api_htmlelement_popover)
 # blogs
 
 ## [Everything I Know About Positioning Poppers (Tooltips, Popovers, Dropdowns) in UIs by popperjs-author_202004](https://dev.to/atomiks/everything-i-know-about-positioning-poppers-tooltips-popovers-dropdowns-in-uis-3nkl)

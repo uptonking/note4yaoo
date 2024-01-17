@@ -129,6 +129,15 @@ modified: 2021-01-06T14:40:03.364Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Why do I think @reactjs has no "signals".
+- https://twitter.com/evoluhq/status/1747599724000018630
+  - From Backbone times, we know that events or streams are not always the right abstraction for business and UI logic. Maintaining, debugging, and reasoning about events and streams is hard. Good to avoid if possible. There are situations where we need that, but in such a situation, we need a full-fledged library that should not be UI-related only.
+  - If you really need to do something without rerendering, you can use useRef. It can be passed through React Context if you wish
+
 - ## Every single react app that has ever existed has used a server. 
 - https://twitter.com/rickhanlonii/status/1745817397766828047
   - It’s just a question of whether that server is serving a static bundle created at build time or a dynamic one created at runtime. 

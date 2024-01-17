@@ -34,6 +34,8 @@ modified: 2023-09-13T20:30:20.011Z
 - https://github.com/BasixKOR/awesome-activitypub
   - ActivityPub is W3C standard, decentralized social networking protocol.
 
+- The ActivityPub protocol is a decentralized social networking protocol based upon the ActivityStreams 2.0 data format.
+
 ## Block Protocol
 
 - https://github.com/blockprotocol/blockprotocol
@@ -101,10 +103,12 @@ modified: 2023-09-13T20:30:20.011Z
   - At the heart of m-ld is a decentralised protocol for distributing live information among clones. 
   - Using m-ld, every instance of an app has read-write access to the shared information via its local clone, with zero network latency. 
     - Changes to the information are propagated to all other app instances, so they are all eventually consistent.
-  - https://github.com/m-ld/m-ld-spec
-    - m-ld is a decentralised live information sharing component with a JSON-based API.
+
+- https://github.com/m-ld/m-ld-spec
+  - m-ld is a decentralised live information sharing component with a JSON-based API.
 - https://github.com/m-ld/m-ld-js
   - the code of the Javascript engine for m-ld, for node.js, modern browsers and other Javascript platforms
+
 - https://github.com/m-ld/m-ld-todomvc-vanillajs /js
   - Collaborative TodoMVC with Modern (ES6+), Vanilla JavaScript and m-ld
   - This is a vanilla Javascript implementation of TodoMVC, with collaboration enabled using m-ld

@@ -94,7 +94,11 @@ Function('str', 'console.log(str, aaa)')('aaa:');
 
 - ## 
 
-- ## 
+- ## Are there any good sandboxes for Rails apps that let you also run docker containers?
+- https://twitter.com/RogersKonnor/status/1747415376768487822
+  - Why docker containers (more specifically docker-compose)? Because I use it to start a MinIO container to be able to simulate direct uploads locally.
+- You could accomplish that with Codespaces for sure. Everyone gets a free amount of Codespaces usage every month, so this would be available to everyone with a GitHub account.
+- gitpod can handle docker/rails pretty easily
 
 - ## I don't really understand this upcoming @codesandbox pricing/plans updates _20240116
 - https://twitter.com/tomlienard/status/1747267455767150641

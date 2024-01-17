@@ -77,12 +77,14 @@ modified: 2021-04-30T20:14:17.669Z
   - Minimalistic javascript presentation-library. 
   - Zero dependencies. 
   - Can be used in combination with frameworks like Bootstrap, Materialize, Vue etc.
-
 # markdown-slide
-
 - https://github.com/gnab/remark /MIT/202306/js
   - http://remarkjs.com/
   - A simple, in-browser, markdown-driven slideshow tool 
 # examples
-
+- https://github.com/tantaman/strut /AGPLv3/202312/ts
+  - http://strut.io/
+  - An Impress.js and Bespoke.js Presentation Editor
+  - 依赖lexical、vlcn、remark.v10、react-draggable
+  - The original project is ancient (2011/2013) and dated. It is now coming back with a facelift, collaborative editing
 # more

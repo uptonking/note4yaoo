@@ -163,7 +163,7 @@ modified: 2023-03-11T15:37:59.134Z
   - It combines a G-Set for adding with another for removing; the latter is colloquially known as the tombstone set. 
   - To avoid anomalies, removing an element is allowed only if the source observes that the element is in the set.
 
-## [Some notes on Local-First Development_202309](https://bricolage.io/some-notes-on-local-first-development/)
+## 📝 [Some notes on Local-First Development_202309](https://bricolage.io/some-notes-on-local-first-development/)
 
 - I see “local-first” as shifting reads and writes to an embedded database in each client via“sync engines” that facilitate data exchange between clients and servers. 
   - Applications like Figma and Linear pioneered this approach, but it’s becoming increasingly easy to do. 

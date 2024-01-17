@@ -21,6 +21,10 @@ modified: 2023-11-08T17:07:50.967Z
 
 # dev-to
 
+## testing
+
+- remove `import-sync`
+
 ## migrate
 
 - 将browser/node的nextTick实现迁移到queueMicroTask

@@ -13,6 +13,12 @@ modified: 2023-10-26T18:16:18.134Z
 
 # blogs-internals
 
+## [MySQL 8.0: New Lock free, scalable WAL design_201806](https://dev.mysql.com/blog-archive/mysql-8-0-new-lock-free-scalable-wal-design/)
+
+- https://twitter.com/CroxxMr/status/1747535545499328862
+  - WAL 的 writer 并发高每个 writer 写的数据量小的时候，fsync 之后 notify writer 的开销可能比 fsync 要高且 jitter 不稳定（看 workload），如果 fsync 和 notify 在一个线程会导致下一个 batch 攒的批更大，形成负反馈。
+  - MySQL 8.0 的 WAL 把 fsync 和 notify 拆成了两个线程。
+
 ## [Writing a minimal in-memory storage engine for MySQL/MariaDB_202401](https://notes.eatonphil.com/2024-01-09-minimal-in-memory-storage-engine-for-mysql.html)
 
 - https://github.com/eatonphil/mariadb/tree/11.4/storage/memem

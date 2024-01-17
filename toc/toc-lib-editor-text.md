@@ -77,6 +77,13 @@ modified: 2021-07-27T15:12:39.959Z
 
 - https://github.com/juliankrispel/zettel
   - Javascript framework for writing rich text applications
+
+- https://github.com/joaomelo/textorama /202301/js/vue
+  - https://github.com/joaomelo/textorama
+  - a web editor that works with plain text files in your local system
+  - 依赖codemirror.v6、vue.v3、vuestic-ui
+  - The content is in your disk in a universal open format, and the browser ensures the editor only accesses the files you permit
+  - Support for the markdown syntax. It is still portable plain text but visually enriched
 # markdown-editor
 - web-editor-markdown /90Star/MIT/202211/ts
   - https://github.com/Ben-love-zy/web-editor-markdown

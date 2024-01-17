@@ -44,7 +44,6 @@ https://meeting.tencent.com/p/9606972663
   - https://ckeditor.com/docs/ckeditor5/latest/examples/builds-custom/full-featured-editor.html
   - more-editor
     - https://demo.grammarly.com/
-
 # dev-review
 - 解释代码
   - https://denigma.app/#demo
@@ -319,6 +318,39 @@ $$('[contenteditable]')
 # dev-01
 
 ## 011
+
+## 0117
+
+- [ERR_IMPORT_ASSERTION_TYPE_MISSING for import of json file - Stack Overflow](https://stackoverflow.com/questions/70106880/err-import-assertion-type-missing-for-import-of-json-file)
+
+```JS
+import { createRequire } from 'node:module';
+const require = createRequire(
+  import.meta.url);
+
+const countryTable = require('./data/countries.json');
+```
+
+- [Error: require() of ES modules is not supported when importing node-fetch - Stack Overflow](https://stackoverflow.com/questions/69041454/error-require-of-es-modules-is-not-supported-when-importing-node-fetch)
+
+```typescript
+import { RequestInfo, RequestInit, Response } from 'node-fetch'
+
+const _importDynamic = new Function('modulePath', 'return import(modulePath)')
+
+export const nodeFetch = async function (url: URL | RequestInfo, init?: RequestInit): Promise<Response> {
+  const { default: fetch } = await _importDynamic('node-fetch')
+  return fetch(url, init)
+}
+```
+
+- [How do I use “require” and ESM “import” in the same project? - Stack Overflow](https://stackoverflow.com/questions/71884616/how-do-i-use-require-and-esm-import-in-the-same-project)
+
+```JS
+import Module from "node:module";
+const require = Module.createRequire(
+  import.meta.url);
+```
 
 ## 0116
 

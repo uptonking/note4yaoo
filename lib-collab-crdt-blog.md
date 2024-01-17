@@ -18,6 +18,18 @@ modified: 2022-10-13T08:00:21.260Z
   - Part 2 of my CRDT survey blog series is out! This post covers "semantic techniques": deciding what a collaborative should do for users, independent of implementation details like op-based vs state-based.
 # [Making CRDTs 98% More Efficient | jakelazaroff.com_202310](https://jakelazaroff.com/words/making-crdts-98-percent-more-efficient/)
 
+# 📝 [A Gentle Introduction to CRDTs – vlcn.io](https://vlcn.io/blog/intro-to-crdts)
+
+- Last Write - What Can Go Wrong?
+  - Error 1: Forgetting to Update the Loser's Timestamp
+  - Error 2: Forgetting & Inconsistent Tie Breaking
+  - Error 3: Clock Pushing when Proxying Changes, A向中间代理B请求12点后的changes，B向C请求11点后的
+  - Error 4: Trusting System Time
+
+- The simplest logical clock implementation is simply to keep an integer in your process that you increment for every event. 
+  - Each event gets timestamped with this counter.
+  - To totally order events within your process, order by that timestamp. 
+  - To scale this up to many cores, use an atomic integer that you can compare-and-swap.
 # 📝 [An Interactive Intro to CRDTs | jakelazaroff.com_202310](https://jakelazaroff.com/words/an-interactive-intro-to-crdts/)
 - A register is a CRDT that holds a single value. 
     - There are a couple kinds of registers, but the simplest is the Last Write Wins Register (or LWW Register).

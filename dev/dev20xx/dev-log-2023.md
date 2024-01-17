@@ -1889,7 +1889,7 @@ it('Testing insertDocumentWithIndex', async () => {
 ## 0105
 
 - [Import '.json' extension in ES6 Node.js throws an error](https://stackoverflow.com/questions/60205891/import-json-extension-in-es6-node-js-throws-an-error)
-- `node --experimental-json-modules ./your-file.js`
+- `node --experimental-json-modules ./your-file.json`
 
 ```JS
 import packageFile from "../../package.json"

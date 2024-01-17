@@ -99,6 +99,18 @@ forever...
 - So there’s some thing called design-docs & filters in couchdb.
   - So based on the role of user you can select which documents to sync…
 
+# discuss-devops
+- ## 
+
+- ## [PouchDB in Nextjs throws error](https://github.com/pouchdb/pouchdb/issues/8754)
+- the `leveldown` version doesn't support Apple Silicon.
+  - If anyone can share a minimal reproduction of the issue, it would probably help if someone is looking to fix it.
+
+- Try using pouchdb-browser instead.
+
+- ## [No native build was found in electron · Level/leveldown](https://github.com/Level/leveldown/issues/725)
+- Fix found add externals: ['level'] and make sure that level under dependencies, not devDependencies
+
 # discuss
 - ## 
 

@@ -201,7 +201,7 @@ modified: 2022-04-05T10:08:25.947Z
 - https://github.com/streamich/json-joy/tree/master/src/json-crdt
   - json-crdt中提供了rga、lww-object
   - [Block-wise RGA algorithm implementation for json-joy_202305](https://jsonjoy.com/blog/performant-rga-list-crdt-algorithm)
-  - [Benchmarking json-joy against Automerge v2 and Y-libraries_202305](https://jsonjoy.com/blog/list-crdt-benchmarks)
+  - 🆚️ [Benchmarking json-joy against Automerge v2 and Y-libraries_202305](https://jsonjoy.com/blog/list-crdt-benchmarks)
   - [Fuzz Testing RGA CRDT_202306](https://jsonjoy.com/blog/fuzz-testing-rga-crdt)
     - using fuzz testing you can make sure your collaborative editing algorithms are 100% correct
 

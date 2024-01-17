@@ -69,9 +69,12 @@ modified: 2023-06-19T12:34:49.156Z
   - That would solve the problem I was trying to avoid: increasing the length of the url. Thanks! Would you be interested in implementing it?
 
 # blogs
-- [Excalidraw: Building Excalidraw's P2P Collaboration Feature_202003](https://blog.excalidraw.com/building-excalidraw-p2p-collaboration-feature/)
-  - 协作编辑同一个shape时，协作算法并未特殊处理，可能会有数据丢失，但versionNonce保证了最终一致
-  - We did not want to store anything server-side. Therefore, we opted for a pseudo-P2P model, where a central server relays end-to-end encrypted messages to all the peers in the room, but does no centralized coordination.
+
+## 🔀 [Excalidraw: Building Excalidraw's P2P Collaboration Feature_202003](https://blog.excalidraw.com/building-excalidraw-p2p-collaboration-feature/)
+
+- 协作编辑同一个shape时，协作算法并未特殊处理，可能会有数据丢失，但versionNonce保证了最终一致
+
+- We did not want to store anything server-side. Therefore, we opted for a pseudo-P2P model, where a central server relays end-to-end encrypted messages to all the peers in the room, but does no centralized coordination.
   - our encrypted messages can be passed between the client and the server back to other clients as `ArrayBuffer`, so we don’t need to convert them to other data structures at any point in the transit.
   - when elements were added, we adopted an architecture of merging states when we receive them. 
     - local client A looks at all the ExcalidrawElement.ids it has locally, and all of the incoming ExcalidrawElement.ids, and creates a new ExcalidrawElement array containing the union of both the local and incoming set.
@@ -89,8 +92,9 @@ modified: 2023-06-19T12:34:49.156Z
   - One problem we haven’t solved yet is implementing multiplayer undo/redo. 
     - Our hack around this was to clear the undo/redo stack whenever you receive an update from a new peer.
 
-- [Excalidraw: End-to-End Encryption in the Browser_202003](https://blog.excalidraw.com/end-to-end-encryption/)
-  - Web Cryptography APIs are now widely available to all the browsers that let us implement this. 
+## 🔒 [Excalidraw: End-to-End Encryption in the Browser_202003](https://blog.excalidraw.com/end-to-end-encryption/)
+
+- Web Cryptography APIs are now widely available to all the browsers that let us implement this. 
   - That said, the APIs to deal with encryption, keys and binary data are not the most straightforward
 
-- [Excalidraw: Deprecating Excalidraw Electron in favor of the Web version_202012](https://blog.excalidraw.com/deprecating-excalidraw-electron/)
+## [Excalidraw: Deprecating Excalidraw Electron in favor of the Web version_202012](https://blog.excalidraw.com/deprecating-excalidraw-electron/)
