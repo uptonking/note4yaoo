@@ -30,6 +30,8 @@ modified: 2023-12-21T20:06:13.700Z
     - https://github.com/lbobylev/jacksontable
     - https://github.com/dreamsavior/mitontable /2commits
     - https://github.com/janisdd/handsontable /202304/v6/ts-d/fork for https://github.com/janisdd/vscode-edit-csv
+    - https://github.com/nzzdev/handsontable /v6/fix-excel-copy-paste
+      - used by Q-editor
     - https://github.com/KonstantinMilovanovDSR/handsontable /202210/v6/fix
     - https://github.com/rayzeller/handsontable /202209/v6/Auto row size
     - https://github.com/sylcdev/handsontable /202207/v6/3fix
@@ -49,6 +51,9 @@ modified: 2023-12-21T20:06:13.700Z
     - This project is currently not maintained in this repo, but as part of Handsontable
     - [Refactor Walkontable Selection rendering module_202304](https://github.com/handsontable/handsontable/pull/10265)
       - The PR refactors and extends the Walkontable Selection rendering module for the ability to highlight the table's headers. The work presented here will be the basis for the navigation in headers
+
+- https://github.com/moregorenine/handsontable-example /202110/ts
+  - handsontable 6.2.2 MIT version example
 
 - https://github.com/laomu1988/handsontable /201910/js/inactive
   - https://laomu1988.github.io/handsontable/
@@ -73,11 +78,31 @@ modified: 2023-12-21T20:06:13.700Z
   - 依赖select2, jquery
   - https://github.com/TheGr8Nik/Handsontable-key-value-select /201907/ts
     - defines a Key-Value selector and a relative Renderer. The code is an extension for base Select editor and Renderer.
+
+- https://github.com/plusone-masaki/csv-plus /202310/ts/vue3
+  - CSV editor that gives you a great experience with simple operations.
+  - 依赖hot.v6、electron、vuedraggable
+
+
+- https://github.com/implerhq/impler.io /MIT/202401/ts
+  - https://impler.io/
+  - Open source CSV & Excel file Import Experience
+  - Built With Nestjs Typescript Nx Pnpm
+  - 依赖handsontable.v13
+
+
+- https://github.com/DTStack/dt-react-component /202312/ts
+  - https://dtstack.github.io/dt-react-component/
+  - React UI component library based on antd package
+  - 依赖handsontable.v6
 # utils
 - https://github.com/Yinger/ts-excel-compare /202009/ts
   - https://yinger.github.io/ts-excel-compare/
   - Diff Tool to Compare Two Excel Spreadsheet Files 
   - 依赖handsontable、sheetjs、daff、antd
+
+- https://github.com/21epub/xlsx /201908/js
+  - xlsx table data module
 
 - https://github.com/orestisrodriguez/handsontable-multi-select /202007/js/v7
   - Editor for handsontable that allows multiple select cells. Based on jshjohnson/Choices
@@ -98,10 +123,17 @@ modified: 2023-12-21T20:06:13.700Z
   - A refreshing JavaScript Datepicker — lightweight, no dependencies, modular CSS
   - No dependencies (but plays well with Moment.js)
   - https://github.com/Pikaday/Pikaday /202109/js/inactive
+
+- https://github.com/shuttlethread/hodf /202009/js/v7
+  - A wrapper around handsontable spreadsheet for collecting data.frame objects with a dynamic number of columns / rows.
 # examples
 - https://github.com/hughfenghen/spreadsheet-demo /202003/js
   - 电子表格从调研到demo的杂乱记录 Handsontable vs SpreadJS
   - SpreadJS时间较长，基本上对标Excel，功能比Hot丰富。比如对公式（Hot 处于alpha版，不支持自定义）、分组（Hot不支持）、图表（Hot需要继承第三方图表）的支持。
+
+- https://github.com/xuehongyanL/SetLite /MIT/201901/js
+  - lightweight electron app for data processing & visualization
+  - 依赖handsontable.v6、katex
 
 - https://github.com/ONSdigital/dp-table-builder-ui /202207/js
   - react component ui for table builder
@@ -120,8 +152,44 @@ modified: 2023-12-21T20:06:13.700Z
   - DataSpread is a spreadsheet-database hybrid system, with a spreadsheet frontend, and a database backend. 
   - Thus, DataSpread inherits the flexibility and ease-of-use of spreadsheets, as well as the scalability and power of databases.
   - A flexible hybrid data model to represent spreadsheet data within a database
-  - 前端依赖 handsontable.v6
+  - 前端依赖handsontable.v6
+
+- https://github.com/apogeejs/apogeejs-admin /202112/js
+  - http://www.apogeejs.com/
+  - Apogee is a tool for quick coding tasks, like munging data or prototyping an algorithm
+  - a javascript programming environment for iterative programming
+  - inspired by the spreadsheet and notebooks
+  - The Apogee web application runs completely in the browser
+  - 依赖handsontable.v6
+
+- https://github.com/prose/prose /BSD/202401/js
+  - http://prose.io/
+  - It's a web-based interface for managing content on GitHub. 
+  - Use it to create, edit, and delete files, and save your changes directly to GitHub.
+  - 依赖backbone.v1、codemirror5、handsontable.v0.23
+
+- https://github.com/unep-grid/mapx /GPLv3/202311/js
+  - https://app.mapx.org/
+  - an online platform for managing geospatial data on natural resources, developed by UNEP/GRID-Geneva
+  - 依赖handsontable.v6
+
+- https://github.com/statsim/app /202012/js/vue
+  - open-source web application for statistical simulations and bayesian inference.
+  - Made with VueJS and WebPPL
+
+- https://github.com/qcif/data-curator /MIT/202111/js/vue
+  - a simple desktop data editor to help describe, validate and share usable open data.
+  - 依赖rxjs、vue2、xlsx、handsontable.v3
+
+- https://github.com/OpenDataRepository/data-publisher /202401/php/js
+  - aims to create a simple tool for publishing data to the web.
+
+
 # integrations
 - https://gitlab.com/thanhhuu09/superset-handsontable-plugin /202308/ts/v13
   - This is the Superset Handsontable Plugin Superset Chart Plugin.
+
+- https://github.com/kintone-samples/kintone-spreadsheet /202401/ts
+  - You can view and edit the kintone list screen with the look of a spreadsheet like Excel.
+  - 依赖handsontable.v6、kintone-ui-component
 # more

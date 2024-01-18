@@ -168,15 +168,13 @@ modified: 2023-06-19T12:33:38.006Z
 - Using a different origin for tldraw’s beta. 
   - I didn’t appreciate that idb is contained within each origin, so we spent time trying to shuffle data when we closed the beta. **It should have been http://tldraw.com/beta rather than http://beta.tldraw.com**.
 - Nothing wrong with wasting time ofc, but these are places where time traveler Steve would have made different decisions
-- 
-- 
-- 
-- 
 
 # discuss
 - ## 
 
-- ## 
+- ## the tldraw dot com source code is now available on our public repo. _20240118
+- https://twitter.com/steveruizok/status/1747677160230269200
+  - If you’ve ever wondered how the share feature or our multiplayer sync works, take a look!
 
 - ## This refactor switches most of our hit testing from DOM based (with listeners on every element) to pure js. 
 - https://twitter.com/steveruizok/status/1683609271194329088

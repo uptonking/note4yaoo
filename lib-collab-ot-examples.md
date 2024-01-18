@@ -61,6 +61,9 @@ modified: 2022-10-02T20:51:30.444Z
   - Realtime model synchronization engine for Node.js
   - By leveraging ShareDB, multiple users can interact with the same data in realtime via Operational Transformation
   - ShareDB also supports PubSub across multiple servers for horizontal scaling. 
+- https://github.com/goodow/realtime-store /201503/java
+  - Google Docs–style collaboration via the use of operational transforms
+  - Credits: sharedb for implementation and documents of database api.
 
 - https://github.com/Progyan1997/Operational-Transformation
   - http://operational-transformation.github.io/

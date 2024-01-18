@@ -131,6 +131,16 @@ modified: 2020-12-09T09:30:24.694Z
   - https://github.com/tabixio/tabix
   - http://dash.tabix.io/
   - simple business intelligence application and sql editor tool for Clickhouse.
+  - 依赖antv/s2、monaco-editor、antd4、mobx-react、react-virtualized、handsontable.v6
+  - https://github.com/rizalgowandy/tabix
+
+- https://github.com/nzzdev/Q-editor /MIT/202308/js
+  - https://editor.q.tools/
+  - editor for the Q Toolbox. 
+  - 依赖handsontable.v6、hapi
+  - https://github.com/nzzdev/Q-server /202305/js
+    - Q is a system that lets journalists create visual elements for stories. It is developed by NZZ Editorial Tech and NZZ Visuals and used in the NZZ newsroom. 
+    - 依赖hapi、puppeteer
 
 - countly /4.7kStar/AGPLv3/202101/js
   - https://github.com/Countly/countly-server

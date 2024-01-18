@@ -25,7 +25,7 @@ modified: 2023-02-07T17:38:05.336Z
   - https://docs.growi.org/en/guide/
   - https://demo.growi.org/
   - Team collaboration software using markdown
-  - 依赖 express、mongoose、es、redis、swr
+  - 依赖 express、mongoose、es、redis、swr、handsontable.v6
   - Simultaneously edit with multiple people by HackMD(CodiMD) integration
   - Create hierarchical pages with markdown
   - Slack/Mattermost, IFTTT Integration

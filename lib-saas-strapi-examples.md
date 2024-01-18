@@ -54,6 +54,11 @@ modified: 2023-12-15T19:30:23.094Z
 
 - https://github.com/marmelab/ra-strapi-demo /202210/前端ts/后端js
   - [Building a B2B app with Strapi and React-Admin_202211](https://marmelab.com/blog/2022/11/28/building-a-crud-app-with-strapi-and-react-admin.html)
+  - 依赖strapi.v3、knex、pg、ra-strapi-rest、react-admin.v4
+
+- https://github.com/marmelab/strapi-beerdex /202103/js
+  - StrapiJS Example Application For Beer Management
+  - [Building A Web Application In 15 Minutes Using StrapiJS And NextJS_202006](https://marmelab.com/blog/2020/06/18/build-an-application-in-fiften-minutes-using-strapijs.html)
 
 - https://github.com/nazirov91/ra-strapi-rest /MIT/202304/ts
   - React Admin data provider for Strapi.js
@@ -954,10 +959,6 @@ modified: 2023-12-15T19:30:23.094Z
 
 - https://github.com/sandiprb/strapi-forum /202011/js
   - Strapi CMS based forum
-
-- https://github.com/marmelab/strapi-beerdex /202103/js
-  - StrapiJS Example Application For Beer Management
-  - [Building A Web Application In 15 Minutes Using StrapiJS And NextJS_202006](https://marmelab.com/blog/2020/06/18/build-an-application-in-fiften-minutes-using-strapijs.html)
 
 - https://github.com/jurkian/react-bank /202107/ts/inactive
   - Banking app built in React, Redux, TypeScript, Node, Strapi.v3

@@ -31,6 +31,7 @@ modified: 2024-01-04T06:53:04.003Z
   - 不方便在服务端进行数据处理etl
   - Unlike most other databases, whenever you update a document in PouchDB or CouchDB, you must present the entire document along with its current revision marker.
   - The problem with couchdb is that it does one request per document which makes the protocol slow for browser based applications also it has no http2 support
+  - 针对大量数据的查询或全文搜索很难在client实现，需要一种在client选择计算发生在客户端还是服务端的逻辑
 
 - features
   - sync between db
@@ -44,10 +45,10 @@ modified: 2024-01-04T06:53:04.003Z
   - npm
   - budibase
 
-- pouchdb-cons
-  - no: Multi Tab Support, Observable Queries, Schema Support, Custom Backend
 - watermelondb-cons
   - no: Custom Conflict Handling
+- pouchdb-cons
+  - no: Multi Tab Support, Observable Queries, Schema Support, Custom Backend
 
 - collab
   - couchdb和crdt集成的思路，couchdb作为event-sourcing的数据源，基于此计算数据视图

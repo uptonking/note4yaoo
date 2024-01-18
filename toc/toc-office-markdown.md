@@ -138,6 +138,9 @@ modified: 2021-01-04T17:26:25.032Z
 - https://github.com/motifland/markprompt
   - Markprompt is a platform for building GPT-powered prompts. 
   - It scans Markdown, Markdoc and MDX files in your GitHub repo and creates embeddings that you can use to create a prompt
+
+- https://github.com/rhiokim/haroopad /201606/js
+  - Haroopad is a markdown enabled document processor for creating web-friendly documents.
 # more-md
 - https://github.com/mgmeyers/obsidian-kanban /ts
   - https://publish.obsidian.md/kanban/

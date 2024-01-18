@@ -311,11 +311,12 @@ modified: 2021-01-04T17:26:43.784Z
 - https://github.com/surveyjs/survey-pdf
   - Supplementary component to the SurveyJS Form Library to download surveys as PDF files and generate editable PDF forms.
 # office
-- databyss /39Star/AGPLv3/202208/js
+- databyss /39Star/AGPLv3/202312/js
   - https://github.com/databyss-org/databyss
   - https://databyss.org/
   - Write and cite, research and re-search, and never get lost in Databyss. Welcome to your new word processor.
   - Drag highlighted and/or annotated PDF files into any Page. Databyss will extract all your margin notes and highlighted passages so you can easily edit and search them.
+  - 依赖pouchdb
 
 - https://github.com/agentcooper/react-pdf-highlighter /MIT/202307/ts
   - https://agentcooper.github.io/react-pdf-highlighter

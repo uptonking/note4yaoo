@@ -77,6 +77,10 @@ modified: 2023-06-22T07:22:04.591Z
   - https://github.com/prateekmedia/appimagepool
     - modern AppImageHub Client, powered by flutter.
 
+- https://appimage.github.io/apps/
+  - https://github.com/AppImage/appimage.github.io
+  - Given an URL to an AppImage, the GitHub action in this project inspects the AppImage and puts it into a community-maintained catalog
+
 - https://github.com/TheAssassin/AppImageLauncher
   - https://github.com/TheAssassin/AppImageLauncher/wiki
   - AppImageLauncher is a novel and unique solution of integrating with the system. It intercepts all attempts to open an AppImage to provide its integration features.
@@ -93,10 +97,10 @@ modified: 2023-06-22T07:22:04.591Z
 - https://github.com/AppImage/AppImageKit
   - https://appimage.org/
   - AppImageKit is a concrete implementation of the AppImage format, especially the tiny runtime that becomes part of each AppImage.
-
 # linux-package-manager
 
 ## apt
+
 - [Synaptic Package Manager - Home](https://www.nongnu.org/synaptic/)
 # win-apps
 - winget作为包管理器，可实现类似package.json的清单配置，用于快速备份还原系统

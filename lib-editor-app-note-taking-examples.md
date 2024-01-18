@@ -124,6 +124,8 @@ modified: 2023-02-05T18:05:44.122Z
   - https://github.com/BoostIO/BoostNote-App
   - https://boostnote.io/
   - a document driven project management tool that maximizes remote DevOps team velocity.
+  - [v0.9.0_202008](https://github.com/BoostIO/BoostNote-App/pull/595)
+    - Implement converting pouchdb based storage to file system based storage
 
 - Serenity Notes /不支持web
   - https://github.com/SerenityNotes/Serenity
@@ -355,6 +357,8 @@ modified: 2023-02-05T18:05:44.122Z
 - https://github.com/FoxUSA/OpenNote /201802/js/inactive
   - built to be an open web-based alternative to Microsoft OneNote(T) and EverNote.
   - OpenNote is a progressive web application(PWA)/HTML5 offline app, web based text editor/note taking software
+  - 依赖angular.v1、pouchdb、jquery
+  - This project has received the kiss of death. That is, I myself don't use it anymore. I have switched to using a text editor with markdown support, Git, and Syncthing for my journaling/note taking.
 
 - https://github.com/gsantner/markor /apache2/java
   - a TextEditor for Android.

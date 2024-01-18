@@ -11,6 +11,13 @@ modified: 2023-04-15T08:19:14.117Z
 
 # popular
 
+- https://github.com/jupyter-widgets-contrib/ipysheet /MIT/202401/python/ts
+  - Jupyter handsontable integration
+  - Due to Handsontable licensing changes ipysheet is stuck witch the outdated Handsontable version 6.2.2 (open-source). We recommend not using ipysheet anymore. 
+  - We suggest an alternative like ipydatagrid.
+  - https://github.com/bloomberg/ipydatagrid
+
+
 # jupyter-js
 
 - https://github.com/ElixirNote/elixirnote
@@ -31,8 +38,9 @@ modified: 2023-04-15T08:19:14.117Z
   - Version 2.x of BeakerX improves on the original solution architecture by providing independent modules that end-users can install to better tune the platform.
   - The kernel is originally derived from lappsgrid, but has been rewritten in Java and refactored and expanded.
 
-- https://github.com/bloomberg/ipydatagrid
+- https://github.com/bloomberg/ipydatagrid /BSD/202401/ts/python
   - Fast Datagrid widget for the Jupyter Notebook and JupyterLab
+  - 依赖@lumino/datagrid、d3-scale、vega-format/expression
   - [I see some cons using Web Workers like it is done in ipysheet](https://github.com/bloomberg/ipydatagrid/issues/3)
 # examples
 - https://github.com/sspaeti-com/practical-data-engineering

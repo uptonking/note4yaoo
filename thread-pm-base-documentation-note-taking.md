@@ -74,6 +74,21 @@ modified: 2021-08-16T06:56:53.061Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## I think a spatial alternative to Notion where the blocks are laid out in a customisable Bento pattern would be pretty useful.
+- https://twitter.com/JungleSilicon/status/1747707553419821374
+  - Gives a degree of spatial flexibility without going full free-form like tldraw.
+
+- I wish...notion extended their view flexibility from databases to page content. 
+  - One of the reasons databases are popular is because you can have views. 
+  - I wish they had views for page blocks (for example, see different toggles in grid) or switch to linear document.
+
+- Transno had some interesting ideas in this area: https://transno.com 
+  - And some interesting ideas here: https://essay.app (reordering and indentation), https://writereason.app (mapping), https://speare.com (stacks)
+
 - ## @_pastelsky built the app of my dreams: https://tsdocs.dev. it's basically docs​.rs for TypeScript.
 - https://twitter.com/galstar/status/1734919519921955147
 - There are https://paka.dev and https://jsdocs.io too

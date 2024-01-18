@@ -21,6 +21,8 @@ modified: 2020-11-17T13:38:19.107Z
   - Grida is a platform that will automatically transform your Figma design to developer-friendly code for Web & Mobile apps.
   - studio is built upon skia graphics library
   - studio's surface is built on react
+  - https://github.com/gridaco/grida/tree/main/editor
+    - 依赖rxdb.v10、pouchdb-idb、rxjs、recoil、firebase、mui.v5
   - https://github.com/gridaco/design-server
   - https://github.com/gridaco/nothing
     - everything drawable graphics engine. Built for Grida

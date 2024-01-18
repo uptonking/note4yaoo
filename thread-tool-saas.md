@@ -12,6 +12,19 @@ modified: 2023-05-07T18:35:50.897Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 最近想给一些网站的数据做个第三方看板，没找到什么合适的方案 主要是起个DB/服务太重
+- https://twitter.com/fuergaosi/status/1747674668407153049
+  - 整了一套 Notion + Grafana + N8N 的 Nocode 玩法（后两者我家里部署的都有现成的，也有免费的公有云方案）
+  - 用 Notion  Database 做 DB 
+  - 用 Grafana 做看板
+  - 用 N8n 抓取数据, 抓低频数据非常方便
+
+- 我用的CloudFlare定时脚本抓数据，存到GreptimeCloud，用 Grafana Cloud 做展示，全白嫖
+
 - ## 发现「云闪付」App 最近新推出了个「一键查卡」的 beta 功能，
 - https://twitter.com/luoleiorg/status/1738951627686789464
   - 支持看你有没有在国内近 496 家银行开过哪些卡，银联官方渠道，应该还算靠谱。大概用途可以查自己以前遗漏的卡，或者看有没有人冒充开卡？

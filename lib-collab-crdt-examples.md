@@ -510,9 +510,9 @@ modified: 2022-04-05T10:08:25.947Z
   - Collaborative text editor using Logoot CRDT algorithm. 
   - Adds an informal versioning scheme based on state vectors to ensure casual ordering of operations is maintained.
 
-- https://github.com/Martinn1996/Fonto-CRDT
+- https://github.com/Martinn1996/Fonto-CRDT /202104/js
   - Bachelor Project: CRDT for Fonto
-  - Our CRDT is based on a logoot
+  - Our CRDT is based on a logoot + quill
 
 - https://github.com/coast-team/dotted-logootsplit /MPL/ts
   - Most of the CRDT embeds metadata in order to avoid conflicting edits. The challenge is to keep these metadata as small as possible.
@@ -922,7 +922,7 @@ modified: 2022-04-05T10:08:25.947Z
   - [yjs-minimal.ts](https://gist.github.com/josephg/dcb1bce2ceb0f0b50ffcac0245a55907)
   - [yjs_testcase.ts](https://gist.github.com/josephg/88c006724435a61afaec5ff3f1bacd87)
 
-- https://github.com/kindone/text-versioncontrol
+- https://github.com/kindone/text-versioncontrol /202208/ts
   - provides version and concurrency control for text editing based on OT(Operational Transformation) and CRDT(Conflict-free Replicated Data Type) ideas
   - Text-VersionControl utilizes Quill's Delta representation in JSON. 
   - Text-VersionControl borrows Quill Delta's representation and many of its method names but does not behave the same in a few cases.

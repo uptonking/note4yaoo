@@ -16,7 +16,7 @@ modified: 2022-11-09T10:00:04.044Z
   - 移动端HTML文档（富文本）编辑器，支持图文混排、引用、大标题、无序列表，字体颜色、加粗、斜体
   - SpEditor is a HTML5 rich text editor in smartphone browsers, and it's extends Editor.
 
-- https://github.com/amjadbouhouch/markup
+- https://github.com/amjadbouhouch/markup /202210/ts
   - https://mark-up.netlify.app/
   - mobile first markdow editor for web & desktop with tiptap plugins and more
 

@@ -12,6 +12,11 @@ modified: 2021-05-19T08:32:28.120Z
 - ref
   - https://www.npmtrends.com/primrose-vs-carota-vs-@creately/carota
 # popular
+- https://github.com/WaiSiuKei/neditor /MIT/202308/ts
+  - https://waisiukei.github.io/neditor/
+  - rich text editor aimed at running in Canvas.
+  - 在事件模型和 DOM 模型都准备好之后，移植 ProseMirror 就非常容易了。
+
 - onlyoffice-sdkjs /190Star/AGPLv3/202302/js
   - https://github.com/ONLYOFFICE/sdkjs
   - https://personal.onlyoffice.com/

@@ -15,6 +15,7 @@ modified: 2021-05-14T14:33:52.786Z
   - collaborative editing
   - markdown text with extensions
   - table designer
+  - 类似notion-database支持多视图的page支持多视图，摘要版、完整版、卡片版
 
 - block-style editor
   - 内容视觉上为block，默认互不影响

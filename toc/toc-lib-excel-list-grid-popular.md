@@ -549,6 +549,15 @@ modified: 2022-08-21T10:02:27.788Z
   - lazy loading
   - keyboard navigation for cells and rows
 
+- https://github.com/jupyterlab/lumino /ts/PhosphorJS/jupyter
+  - https://lumino.readthedocs.io/en/latest/examples.html
+  - a set of JavaScript packages, written in TypeScript, that provide a rich toolkit of widgets, layouts, events, and data structures. 
+  - 提供了3个经典示例: accordion、data-grid with merged-cell、dock-panel
+  - These enable developers to construct extensible high-performance desktop-like web applications, such as JupyterLab. 
+  - Lumino was formerly known as PhosphorJS.
+  - https://github.com/jupyterlab/lumino/tree/main/packages/datagrid
+    - 表格自研，用在 https://github.com/bloomberg/ipydatagrid
+
 - S2 /1.1kStar/MIT/202302/ts
   - https://github.com/antvis/S2
   - https://s2.antv.antgroup.com/examples

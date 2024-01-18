@@ -87,12 +87,12 @@ modified: 2023-03-09T13:47:07.317Z
 - https://github.com/mnt-ltd/moredoc /go
   - moredoc，魔豆文库，基于golang开发的类似百度文库的开源文库系统，dochub文库的重构版本。
 
-- https://github.com/j-berman/hush-docs
+- https://github.com/j-berman/hush-docs /MIT/202102/js
   - https://hushdocs.com/
   - offline-first, private Google Docs alternative.
   - using IndexedDB/Dexie.js
   - Docs stay in sync using CRDTs (Automerge)
-  - 依赖userbase-js
+  - 依赖userbase-js、automerge.v0.14、dexie.v3、jquery、quill、workbox
   - https://github.com/smallbets/userbase /js
     - Userbase is the easiest way to add user accounts and user data persistence to your static site.
     - All Userbase features are accessible through a very simple **JavaScript SDK**, directly from the browser. No backend necessary. 类似Authing
@@ -119,4 +119,16 @@ modified: 2023-03-09T13:47:07.317Z
   - WebODF is a JavaScript library that makes it easy to add Open Document Format (ODF) support to your website
   - It uses HTML and CSS to display ODF documents.
   - compiled by using the Closure Compiler.
+# google-docs-like
+- https://github.com/RivaanRanawat/flutter-google-docs-clone /202209/flutter/cpp
+  - Responsive Google Docs Clone Tutorial Source Code developed using Flutter & Nodejs.
+  - A completely Responsive Instagram App- Works on Android, iOS & Web!
+  - https://github.com/funwithflutter/google-docs-clone-flutter
+
+- https://github.com/benawad/mini-google-docs-clone /201905/ts
+  - react, 编辑器无依赖
+  - [Mini Google Docs Clone in React](https://www.youtube.com/playlist?list=PLN3n1USn4xllb05dQVmRbVtGP2aM4seVq)
+
+- https://github.com/MartsTech/google-docs-clone /202206/ts
+  - Google Docs Clone created with Next. JS, Firebase, Tailwind CSS
 # more-office

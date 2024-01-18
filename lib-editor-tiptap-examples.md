@@ -121,6 +121,10 @@ modified: 2023-02-05T19:03:27.730Z
     - Solution 2: Relying on the Markdown preview endpoint
   - https://github.com/gitlabhq/gitlabhq/tree/master/app/assets/javascripts/content_editor
   - [Research and evaluate editor options against UX and technical requirements · GitLab.org / GitLab_202007](https://gitlab.com/gitlab-org/gitlab/-/issues/231725)
+
+- https://github.com/amjadbouhouch/markup /202210/ts
+  - https://mark-up.netlify.app/
+  - mobile first markdow editor for web & desktop with tiptap plugins and more
 # tiptap-editors
 - dante3 /1.7kStar/MIT/202208/js
   - https://github.com/michelson/Dante

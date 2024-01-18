@@ -36,9 +36,17 @@ modified: 2024-01-04T14:40:00.048Z
 # reactivity
 
 # bundling
-- node平台的打包涉及到leveldown二进制，webpack/rspack难以正确打包
+- tree-shaking
+  - pouchdb原仓库使用rollup打包各子包，各子包全部external，使得最后由用户将各子包打包在一起
+  - 各子包有的包含browser环境依赖，需要替换部分源文件为 ./src/*-browser.ts，对此使用打包脚本统一替换最方便，由用户将各子包打包在一起反而不方便
 
-- 测试时使用的PouchDB实例在 `tests/integration/utils.js` 中替换了 utils/ajax
+- browser平台
+
+- node平台
+  - 打包涉及到leveldown二进制，webpack/rspack难以正确打包
+
+- 测试时
+  - 使用的PouchDB实例在 `tests/integration/utils.js` 中替换了 utils/ajax
 # test
 - 默认执行node平台的测试
   - node bin/build-modules.js

@@ -119,6 +119,14 @@ modified: 2022-12-19T01:51:01.389Z
   - 基于目前市面上开源的高星admin项目fork，集成fast-crud，Antdv 3x 、Element-Plus 、NaiveUI 三选一
     - https://github.com/fast-crud/fs-admin-antdv /vue
 
+- https://github.com/idurar/mern-admin /MIT/202311/js
+  - https://www.idurarapp.com/demo-mern-admin/
+  - MERN Stack Antd Admin Dashboard CRUD Auth
+  - App Built on top of this Starter project IDURAR ERP/CRM
+  - https://github.com/idurar/idurar-erp-crm /FairCode/202401/js
+    - ERP / CRM | Node.js React.js
+    - Alternative to SalesForce | Node Js React AntD MERN
+
 - adminjs /6.2kStar/MIT/202211/ts/仅参考db设计
   - https://github.com/SoftwareBrothers/adminjs
   - https://adminjs-demo.herokuapp.com/

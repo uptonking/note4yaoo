@@ -221,7 +221,41 @@ HMACSHA256(
 
 - ## 
 
-- ## 
+- ## 👨🏻‍🏫💡 What’s the difference between Session-based authentication and JWTs?
+- https://twitter.com/ProgressiveCod2/status/1747885840544755981
+- Session-Based Authentication
+  - In this approach, you store the session information in a database or session store and give a session ID to the user.
+  - For the user, it’s similar to just getting the Ticket ID of their flight. All other details are stored in the airline’s database.
+  - The user makes a login request and the frontend app sends the request to the backend server
+  - The backend creates a session using a secret key and stores the data in session storage
+  - Then, the server sends a cookie back to the client with the unique session ID
+  - The user makes a new request to view another page and the browser sends the session id along with it.
+  - The server verifies the user using this ID.
+
+- JWT-based Authentication
+  - In the JWT-based approach, you don’t store the session information in the session store.
+  - The entire information is available within the token. It’s like getting the flight ticket along with all the details available on the ticket but encrypted.
+  - The user makes a login request and it goes to the backend server
+  - The backend server verifies the credentials and issues a JWT. The JWT is signed using a private key. No session storage is involved.
+  - The JWT is passed to the browser using a cookie. For every subsequent request, the browser sends the cookie with the JWT
+  - The server verifies the JWT using the secret private key and extracts the user info.
+
+- What’s the better approach -  Session or JWTs?
+- jwt-pros
+  - No separate storage
+  - Easier to scale the client and server
+- jwt-cons
+  - Invalidating a JWT is not easy. With session, you can simply delete them from the session store.
+  - The data in the JWT can become stale
+  - The JWTs aren’t exactly small when it comes to size
+
+- JWT can also help in avoiding Single point of failure(SPF) as the verification code can be an sdk Integrated in clients rather than multiple clients depending on a central storage.
+
+- Not to forget that JWT tokens expire after a set expiry time 
+  - So an additional overhead to issue a new JWT token 
+  - From the client side it creates an overhead to refresh token after that expiry period. Generally it’s around 1 hour. So client will make 1 additional call every hour to get refreshed tokens
+
+- In my perspective, JWTs are good for complex applications where scalability is a prime factor. Maintaining a separate storage for session ids is a headache there. But for simpler applications, JWT adds more payload for every request.
 
 - ## Explaining JSON Web Token (JWT) with simple terms.
 - https://twitter.com/alexxubyte/status/1732077250626179578

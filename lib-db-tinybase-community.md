@@ -9,6 +9,16 @@ modified: 2023-04-21T11:42:46.575Z
 
 # guide
 
+- pros
+  - reactive data store for local‑first apps
+  - Easily sync your data to browser storage, IndexedDB, SQLite, CRDTs, PartyKit, ElectricSQL
+
+- cons
+  - 未采用插件式架构
+
+- features
+  - ?
+
 - 变更树的计算方法比较
   - tinybase直接diff两颗hlc-tree，能准确计算出最小变更树
     - Adding Merkel hashing to the tree would be slower but would allow the negotiation to bail out (or identify tree diffs) much sooner.

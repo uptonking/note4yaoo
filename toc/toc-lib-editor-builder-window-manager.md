@@ -59,6 +59,8 @@ modified: 2021-01-08T11:48:16.590Z
   - 提供了3个经典示例: accordion、data-grid with merged-cell、dock-panel
   - These enable developers to construct extensible high-performance desktop-like web applications, such as JupyterLab. 
   - Lumino was formerly known as PhosphorJS.
+  - https://github.com/jupyterlab/lumino/tree/main/packages/datagrid
+    - 表格自研
 
 - https://github.com/node-projects/dock-spawn-ts
   - https://node-projects.github.io/dock-spawn-ts/

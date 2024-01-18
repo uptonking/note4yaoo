@@ -103,7 +103,6 @@ modified: 2023-12-15T17:50:41.213Z
   - https://thaddeusjiang.github.io/Projectify/
   - a project management app for TiddlyWiki, inspired by products like Todoist and Basecamp.
 # sync
-
 - https://github.com/qiushihe/tiddlywiki-remote-filesystem-syncadaptor /202201/ts
   - A `syncadaptor` module for TiddlyWiki to synchronize tiddlers with remote filesystem (i.e. AWS S3).
 

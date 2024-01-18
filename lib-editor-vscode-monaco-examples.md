@@ -22,9 +22,10 @@ modified: 2023-01-21T18:57:47.811Z
 - 
 
 # apps
-
+- https://github.com/SamsungInternet/web-code /201910/js
+  - A text editor for the web based around monaco
+  - deprecated: I've recently started using cdr/code-server which is a full VS Code instance which now runs on Android. The same way this does.
 # collab
-
 - https://github.com/Kshitiz1403/Collaborative-IDE
   - Run code in your browser and start collaborating with peers. 
   - User project files are stored & managed using Azure File Storage. A file share is mounted on a linux machine using the SMB protocol.

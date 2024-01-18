@@ -33,6 +33,7 @@ modified: 2023-12-15T16:51:56.101Z
   - i18n: create, manage and distribute localized content in different languages, called "locales"
   - Role Based Access Control: Create an unlimited number of custom roles and permissions for admin and end users.
   - GraphQL or REST: Consume the API using REST or GraphQL
+  - [Internationalization - Strapi Features](https://strapi.io/features/internationalization)
 
 - features-enterprise
   - The only restrictions on the free version is that audit-logs and Review Workflows are not available

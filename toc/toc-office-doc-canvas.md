@@ -24,10 +24,14 @@ modified: 2021-05-19T08:33:14.171Z
   - Online image editor lets you create, edit images using HTML5 technologies
   - Key features: layers, filters, HTML5, open source, Photoshop alternative.
 
+- https://github.com/pixa-pics/pixa-pics.github.io
+  - https://pixa.pics/
+  - an all-in-one pixel art editor and NFT laboratory designed for users of all ages and skill levels. 
+  - The application provides an accessible and secure way for individuals to create, store, and share pixel art while preserving their anonymity and utilizing cutting-edge blockchain technology.
+
 - https://github.com/eKoopmans/html2pdf.js
   - Client-side HTML-to-PDF rendering using pure JS.
   - html2pdf.js converts any webpage or element into a printable PDF entirely client-side using html2canvas and jsPDF.
-
 # canvas-examples
 
 # more

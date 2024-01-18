@@ -373,6 +373,11 @@ modified: 2023-01-01T13:24:35.994Z
   - 查询面板 SearchPanel
   - 基于 bee-search-panel 进一步封装，主要将表单元素样式封装进组件内部
 # search-solutions
+- https://github.com/duolingo/metasearch /apache2/202311/ts
+  - Metasearch is a tool for searching many other tools in parallel
+  - Search aggregator for Slack, Google Docs, GitHub, and more
+  - 支持 Google Drive docs, spreadsheets; Confluence pages; Figma files, projects, and teams; 
+
 - pagefind /677Star/MIT/202301/rust
   - https://github.com/CloudCannon/pagefind
   - https://pagefind.app/

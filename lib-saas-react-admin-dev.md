@@ -40,13 +40,15 @@ modified: 2023-12-19T17:29:35.708Z
 
 # changelog
 
-- [v4.0.0_202204](https://marmelab.com/blog/2022/04/13/react-admin-v4.html)
-  - v4 focuses on modernizing the inner workings of the library
+## [v4.0.0_202204](https://marmelab.com/blog/2022/04/13/react-admin-v4.html)
+
+- v4 focuses on modernizing the inner workings of the library
   - As this release was mostly an internal refactoring, for the most part, the API and the user interface remain the same as in v3.
   - Some major dependencies were swapped (`react-query` instead of `redux`,  `react-hook-form` instead of `react-final-form`).
   - Material UI v5
   - React-router v6
 
-- [v3.0.0_201911](https://marmelab.com/blog/2019/11/20/react-admin-3-0.html)
-  - we embraced modern React practices - including Hooks
+## [v3.0.0_201911](https://marmelab.com/blog/2019/11/20/react-admin-3-0.html)
+
+- we embraced modern React practices - including Hooks
 # more

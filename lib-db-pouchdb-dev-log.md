@@ -45,6 +45,11 @@ modified: 2023-11-08T17:07:50.967Z
     - 顶层node-polyfill的levelup.v0.1覆盖了pouch-like下的2个子包v4导致打包重复，将顶层去掉后就只打包1次了
 # done
 
+## bundling pouchdb-find: Resolve error: Can't resolve 'pouchdb-abstract-mapreduce'
+
+- 原因是 import pouchdb-abstract-mapreduce 发生在内层文件夹
+  - rspack的`resolve.alias`只替换顶层
+
 ## pouchdb初始化的问题，fauxton管理页面和示例页面eg1必须在同一浏览器打开后才能初始化？
 
 - related

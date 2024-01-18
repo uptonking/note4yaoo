@@ -32,7 +32,7 @@ modified: 2023-01-20T00:18:44.282Z
   - A Feathers real-time chat application
   - initialize an SQLite database in the feathers-chat.sqlite file.
 
-- https://github.com/josx/ra-data-feathers /js
+- https://github.com/josx/ra-data-feathers /202202/js/inactive
   - Feathers data provider for react-admin. 
   - A feathers rest client for react-admin
   - https://github.com/kfern/feathers-aor-test-integration

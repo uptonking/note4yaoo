@@ -12,6 +12,7 @@ modified: 2023-02-09T18:32:06.240Z
 - resources
   - https://github.com/quilljs/awesome-quill
   - search: mern + quill
+  - 很多dashboard也包含quill
 # popular
 - quill /37.5kStar/BSD/202311/ts
   - https://github.com/quilljs/quill
@@ -50,7 +51,10 @@ modified: 2023-02-09T18:32:06.240Z
   - [How to change the default WYSIWYG in Strapi v4 to Quill Editor_202203](https://strapi.io/blog/how-to-change-the-default-wysiwy-to-quill-editor)
 
 - https://github.com/zenoamaro/react-quill /202208/ts/单文件
+  - https://zenoamaro.github.io/react-quill/
+  - https://codepen.io/alexkrolick/pen/xgyOXQ
   - A Quill component for React.
+  - [React-Quill Custom Format w/Parchment Demo](https://gist.github.com/alexkrolick/8ec0de512c97b363c02a38db60623c29)
 
 - https://github.com/gtgalone/react-quilljs /202209/ts/单文件
   - React Hook Wrapper for Quill, powerful rich text editor.
@@ -166,6 +170,10 @@ modified: 2023-02-09T18:32:06.240Z
   - https://github.com/netless-io/flat-server
     - Node.js server for the Agora Flat open source classroom.
 
+- https://github.com/sjustintaylor/text-editor /202012/js
+  - client + server
+  - 依赖quill.v1、react-ace、pouchdb
+
 - https://github.com/vtejuf/quill-pagination /202308/js
   - A CKEditor-like style component
   - Applicable version: Quill v1.3.7
@@ -211,7 +219,7 @@ modified: 2023-02-09T18:32:06.240Z
 - https://github.com/domilin/media-quill /202011/ts
   - Rich text editor based on Quill
   - Built in vanilla JS, typescript support, so it can be used on React, Vue, Angular as well
-# mobile
+# client-mobile
 - https://github.com/imnapo/react-native-cn-quill /202306/ts
   - a rich-text editor for react-native. 
   - We've created this library on top of Quill Api.
@@ -220,6 +228,17 @@ modified: 2023-02-09T18:32:06.240Z
 
 - https://github.com/YipitBeijing/RN-edison-editor /202305/ts
   - react-native quill rich-text-editor
+# client-pc
+- https://github.com/abahmed/Deer /MIT/202002/js
+  - beautiful note taking app, built on Electron and React
+  - 依赖react-quill、redux、immutable.v4、pouchdb、electron-store、mui.v4
+  - https://github.com/FilippoSecchi/Deer
+    - Added italian language
+
+- https://github.com/azure06/clips /202212/ts/vue
+  - A universal clipboard app
+  - Clips powered by Google Drive synchronize your clipboard with multiple devices, and allows you to quickly search throw your clipboard history.
+  - 依赖rxdb.v9、quill、vue2
 # plugins/modules
 - https://github.com/quill-mention/quill-mention /635Star/MIT/202311/js
   - https://quill-mention.com/
@@ -447,11 +466,56 @@ modified: 2023-02-09T18:32:06.240Z
 - https://github.com/weilyuwang/react-quill-blog /202103/js
   - A quill editor with custom media files upload functionalities, integrated with AWS S3.
 
+- https://github.com/j-berman/hush-docs /MIT/202102/js
+  - https://hushdocs.com/
+  - offline-first, private Google Docs alternative.
+  - using IndexedDB/Dexie.js
+  - Docs stay in sync using CRDTs (Automerge)
+  - 依赖userbase-js、automerge.v0.14、dexie.v3、jquery、quill、workbox
+  - https://github.com/smallbets/userbase /js
+    - Userbase is the easiest way to add user accounts and user data persistence to your static site.
+
+- https://github.com/mushfiqweb/mybl-cms /202311/ts/仅前端/样式友好
+  - MyBL CMS React Template
+  - 依赖redux-toolkit、tanstack-table、fullcalendar、apexcharts、quill
+
 - https://github.com/folkloreinc/panneau-js/tree/v0.8
   - https://folkloreinc.github.io/panneau-js/storybook/index.html
   - React components to build forms and administration panels
   - 依赖ckeditor5-react、react-quill，实现了可切换的版本
   - /v0.8/fields/html/package.json
+
+- https://github.com/origami-cms/cms /201902/ts/inactive
+  - http://www.origami.so/
+  - flexible and open-source CMS built for Node.js
+  - built on Node.js and Express with flexibility as it's primary value.
+  - Use any database, any templating language
+  - admin依赖lit-html
+
+- https://github.com/vapid/vapid /MIT/202103/js/archived
+  - https://github.com/vapid/vapid
+  - simple content management system built on the idea that you can create a custom dashboard without ever leaving the HTML.
+  - 依赖 ace、jquery、quill、turbolinks、koa、sequelize.v5
+
+- https://github.com/klaudsol/klaudsol-cms /202308/js
+  - a Headless and Serverless CMS
+  - alternative to WordPress and Strapi
+  - Deploys seamlessly to AWS Amplify Hosting + AWS Aurora Serverless
+  - 依赖coreui、next、quill、redux
+
+- https://github.com/webpoint-solutions-llc/easy-blog-cms /202309/ts
+  - The API is designed to be consumed by any client, be it a web application (React, Vue, Angular)
+  - 前端依赖tanstack-query、quill、localforage
+  - 后端依赖nestjs
+
+- https://github.com/LargeNFT/large-nft /202401/ts
+  - decentralized CMS for Ethereum & IPFS that runs offline-first in the browser.
+  - Publish content as a collection of Ethereum NFTs.
+  - 依赖ethers、framework7、ipfs、level-js.v6、inversify、memfs、pouchdb、quill、workbox
+
+- https://github.com/WebDevSimplified/google-docs-clone /202104/js
+  - 最简单的示例，几乎单文件
+  - 依赖quill, react
 
 - https://github.com/luanpanno/google-docs-clone /202105/ts
   - Google Docs Clone with Node, React, Socket.io and Quill
@@ -459,6 +523,7 @@ modified: 2023-02-09T18:32:06.240Z
   - https://github.com/Chondan/google-doc-clone
   - https://github.com/Khusheel26/Google-docs-clone
   - https://github.com/Danitilahun/SmallGoogleDocClone
+  - https://github.com/klublin/google-docs-clone /202212/js/4milestones
 
 - https://github.com/bryanakitchen/google-docs-clone-server /202105/js
   - uses Socket.io, Quill, and Mongoose to generate a text editor that will allow for simultaneous edits.
@@ -548,8 +613,13 @@ modified: 2023-02-09T18:32:06.240Z
 
 - https://github.com/Kibo/filemanager-js /202201/ts/vue
   - JavaScript filemanager for CKEditor4, Quill, TinyMCE5.
+
+- https://github.com/joduplessis/weekday /202309/js
+  - https://weekday.work/
+  - Weekday is a messaging-first collaboration platform that gives your team superpowers. 
+  - 依赖pouchdb、react-quill、redux、rxjs、graphql、apollo
 # collab-ot
-- https://github.com/WindrunnerMax/Collab
+- https://github.com/WindrunnerMax/Collab /202308/ts
   - 初探富文本之OT协同实例 sharedb+quill
   - 初探富文本之CRDT协同实例 yjs+quill
 
@@ -583,6 +653,10 @@ modified: 2023-02-09T18:32:06.240Z
   - 后台管理界面使用 Ant Design Pro
   - 支持多人协作文档（使用 Quill 富文本编辑器）
 # collab-crdt
+- https://github.com/WindrunnerMax/Collab /202308/ts
+  - 初探富文本之OT协同实例 sharedb+quill
+  - 初探富文本之CRDT协同实例 yjs+quill
+
 - https://github.com/jaredly/local-first/tree/master/packages/text-crdt
   - This algorithm is largely based on RGA, with support for rich-text formatting added, along with a number of optimizations.
   - integrate with Quill.
@@ -606,6 +680,10 @@ modified: 2023-02-09T18:32:06.240Z
     - 多人光标待改进
   - https://github.com/PHedkvist/crdt-server
 
+- https://github.com/pedrogao/co-editor /202212/ts/vue
+  - 协同 markdown 编辑器
+  - 还未开发完成，目前仅仅是一个 demo
+
 - https://github.com/yjs/y-quill /202205/js
   - https://demos.yjs.dev/quill/quill.html
   - This binding maps a Y. Text to a Quill instance. 
@@ -616,13 +694,14 @@ modified: 2023-02-09T18:32:06.240Z
 - https://github.com/ethanryan/textedit-app /201807/js
   - Collaborative text editing app, built with React, Express, Quill, and Yjs.
 
-- https://github.com/peer-base/peer-pad /201907/js
+- https://github.com/peer-base/peer-pad /MIT/201907/js
   - Online editor providing collaborative editing in really real-time using CRDTs and IPFS.
-  - 依赖codemirror5、quill.v1、remark.v10
+  - 依赖codemirror5、quill.v1、remark.v10、delta-crdts
+  - https://github.com/peer-base/js-delta-crdts /201910/js
 
 - https://github.com/widmogrod/js-crdt /ts/201711
   - explore applications of data structure called CRDT in context of real time collaboration 
-  - https://github.com/widmogrod/notepad-app
+  - https://github.com/widmogrod/notepad-app /201710/ts
     - Collaborative notepad app (demo).
     - 依赖quill
 
@@ -631,6 +710,14 @@ modified: 2023-02-09T18:32:06.240Z
   - 依赖position-strings，不依赖quill
   - https://github.com/mweidner037/firebase-rich-text-editor
     - 依赖quill.v1
+
+- https://github.com/jeremysamuel13/cse356-google-docs /202211/ts
+  - client + server + elasticsearch
+- https://github.com/kazijamal/collaborative-doc-editor /202301/ts/yjs
+  - A collaborative document editor similar to Google Docs capable of handling 3000 requests per second with a 95th percentile latency of 30ms
+
+- https://github.com/Glissen/StarDocs2 /202212/ts/yjs
+  - client + server
 # delta
 - https://github.com/vincentdchan/delta-es /202311/ts
   - a forked version to quill-delta

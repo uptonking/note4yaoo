@@ -80,6 +80,7 @@ $$('[contenteditable]')
   - storage, sync/partial, conflicts, concistency
   - 直接根据具体框架或产品搜索解决方案如airtable-database，不必拘泥于通用方案如event-sourcing/eav，在产品讨论中常有细节和ideas
   - 解决方案在npm也可以搜到，且更准确; 多关注包管理器上的最新的包
+  - github package.json 也能搜索示例
   - 拆分核心内容和周边功能
     - split git-src and issues/pr/wiki, split txt/docx/xlsx and api
     - 将更多精力投入 core content 的创作，以及格式兼容、平台兼容、产品集成

@@ -9,7 +9,9 @@ modified: 2023-10-11T21:37:11.168Z
 
 # guide
 
-- triplit-pros
+- pros
+  - full-stack, syncing database that runs on both server and client
+  - Pluggable storage providers like SQLite, IndexedDB, LevelDB, Memory, etc
   - triplit supports relational-style querying system without joins
   - no schema, flexible data for triple store
   - supports flexible storage adapter including sqlite
@@ -19,8 +21,18 @@ modified: 2023-10-11T21:37:11.168Z
   - Relational querying without SQL 
   - Typescript schemas and type hinting in queries in return types
 
-- triplit-cons
+- cons
   - js only, no implementation for other language
+  - 未采用插件式架构
+
+- features
+  - Real-time sync with incremental updates and conflict resolution at the property level
+  - Offline-mode with automatic reconnection and consistency guarantees
+  - Rollback and retry management on failed updates
+  - Collaboration/Multiplayer powered by CRDTs
+  - Authorization that's enforced on the server for both read and writes
+  - Fully open-source
+  - TriplitDB - Designed to run in any JS environment (browser, node, deno, React Native, etc) and provide expressive, fast, and live updating queries while maintaining consistency with many writers over a network.
 
 - sqlite-pros
   - popular with ecosystem

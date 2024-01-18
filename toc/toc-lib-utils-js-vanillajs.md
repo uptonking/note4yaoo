@@ -190,6 +190,7 @@ modified: 2023-04-04T22:35:59.255Z
   - Open source video player built with Qt/QML and libmpv
 
 ## video-js
+
 - https://github.com/MicrosoftEdge/Demos/tree/main/pwamp /MIT/202305/js
   - https://microsoftedge.github.io/Demos/pwamp/
   - a web audio player demo application.
@@ -202,7 +203,6 @@ modified: 2023-04-04T22:35:59.255Z
 - https://github.com/MDXZ-delti/video-player /GPLv3/202312/js
   - Player for local videos with light/dark theme, keyboard shortcuts, progress retrieval and more
   - Works offline
-
 
 - https://github.com/kaltura/playkit-js /202401/ts
   - an opinionated JavaScript library to enable seamless video playback across browsers and platforms with support for advanced streaming formats.
@@ -217,6 +217,18 @@ modified: 2023-04-04T22:35:59.255Z
   - https://github.com/zerosoul/rc-bullets
   - https://zerosoul.github.io/rc-bullets/
   - 基于CSS3 Animation，使用React构建的弹幕组件
+
+## video-editor/generator
+
+- https://github.com/ayuanlmo/lmo-data-visualization /apache2/202306/js/ts
+  - 一款开源可视化数据制作工具。 
+  - 根据提供的模板，将各种业务数据转换为视频动画，使数据更加形象、生动。
+  - 依赖element-ui.v2、handsontable.v12
+  - 合成需要ffmpeg支持
+  - 设置音量大小
+  - 视频清晰度配置(最高支持4K)
+  - 动画时间配置
+  - 保存为自定义模板
 # more
 - https://github.com/zspecza/common-tags
   - Useful template literal tags for dealing with strings in ES2015+

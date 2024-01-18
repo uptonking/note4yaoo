@@ -8,7 +8,14 @@ modified: 2023-12-24T10:49:01.941Z
 # lib-db-fireproof-community
 
 # guide
+- pros
+  - embedded live database for the web
 
+- cons
+  - 未采用插件式架构
+
+- features
+  - Install the Fireproof module into your browser or server app code and sync using remixable open-source adapters
 # blogs
 - [Why Verifiable CRDTs Are the Future of Web Data_201309](https://fireproof.storage/posts/why-verifiable-crdts-are-the-future-of-web-data/)
 # discuss-stars
