@@ -75,6 +75,7 @@ modified: 2024-01-04T06:53:04.003Z
   - sync: couchbase sync gateway; 与minimongo+mongodb的方案比较; 可参考event-sourcing自己实现
   - attachment/针对图片视频的blob二进制存储数据库: 参考couchbase, mongodb-gridfs, pg-lo
   - alternative-backend: mysql/pg
+  - 优化in-memory的版本
 
 - database-features
   - standards: postgresql, sqlite, clickhouse, duckdb

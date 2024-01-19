@@ -81,7 +81,8 @@ modified: 2023-09-19T07:26:04.103Z
   - https://standardebooks.org/
   - A collection of tools Standard Ebooks uses to produce its ebooks, including basic setup of ebooks, text processing, and build tools.
 
-- https://github.com/troyeguo/koodo-reader /12kStar/AGPLv3/202309/ts
+- https://github.com/koodo-reader/koodo-reader /12kStar/AGPLv3/202401/ts
+  - https://github.com/troyeguo/koodo-reader /renamed
   - https://koodo.960960.xyz/
   - A modern ebook manager and reader with sync and backup capacities for Windows, macOS, Linux and Web
   - Save your data to Dropbox or Webdav

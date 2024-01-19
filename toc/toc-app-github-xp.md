@@ -8,55 +8,29 @@ modified: 2023-02-08T10:46:26.912Z
 # toc-app-github-xp
 
 # guide
-
-# github-mirror
 - tips
-  - 先尝试修改dns，或将 git://github.com 前缀替换成 https://github.com/
-
-- [Gitee 极速下载，每日同步一次。](https://gitee.com/mirrors)
-  - https://gitee.com/organizations/mirrors/projects
-
-- github-mirrors
-  - https://hub.nuaa.cf/
-
-- git-only
-  - https://github.zhlh6.cn/
-    - git clone git@git.zhlh6.cn:tinyplex/tinybase.git
-  - https://gitclone.com/
-
-- git-download
-  - https://gh.api.99988866.xyz/
-  - https://ghproxy.com/
-  - http://toolwa.com/github/
-
-- dead?
-  - https://hub.fastgit.xyz/
-
-- questions
-  - search github 镜像 一月内
-  - [Github国内镜像网站，解决Github访问的神器 - 知乎](https://zhuanlan.zhihu.com/p/360677731)
-
-- [Using a socks proxy with git for the http transport - Stack Overflow](https://stackoverflow.com/questions/15227130/using-a-socks-proxy-with-git-for-the-http-transport)
-  - ALL_PROXY=socks5://127.0.0.1:1080 git clone https://github.com/some/one.git
-  - If you also want the host name to be resolved using the proxy, use thuzhf's solution below, which uses socks5h instead of socks5
-# improvements
-- github-release
-  - app store
-  - pkg store
-
-- features
-  - navigation within issue answers with shortcut J
-  - sort repos of an organization by stars
-  - toggle github repo and github page
-  - go to npm package page
-
-- file-manager
-  - 文件列表的日期，高亮最近日期
+  - 下载慢先尝试修改dns，或将 git://github.com/ 前缀替换成 https://github.com/
 # git-usage
 - 统计仓库人员贡献比例
   - git shortlog -sn
     - 统计每人commit次数
 # github-usage
+- preview html
+  - https://github.com/htmlpreview/htmlpreview.github.com
+  - https://htmlpreview.github.io/?https://github.com/Futur3Sn0w/materialyou/blob/main/index.html
+  - It is a client-side solution using a CORS proxy to fetch assets.
+  - 对于那些没有将repo作为github pages托管网站的，可加上前缀直接在浏览器查看网页内容，而不是查看源码
+
+- 排行榜
+  - [GitHub-Chinese-Top-Charts](https://github.com/kon9chunkit/GitHub-Chinese-Top-Charts)
+  - [Github User Ranking 中国和全球用户排名](https://github.com/jaywcjlove/github-rank)
+  - [GitHub star ranking for users, organizations and repositories](https://github.com/k0kubun/gitstar-ranking)
+    - https://gitstar-ranking.com/
+
+- license
+  - 先检查确保只存在一个文件，其名称中包含license单词，可以是license.txt/md，不能是wiki-license.md
+  - 若要给没有license文件的repo添加license，直接本地上传一个即可
+  - 若要给已有license文件的repo修改license，修改后可能github显示不出来，可以先删除再上传新的
 
 ## nice-to-have
 
@@ -73,105 +47,140 @@ modified: 2023-02-08T10:46:26.912Z
   - https://github.com/nvuillam/github-dependents-info /202401/python
   - https://github.com/github-tooling/ghtopdep /202212/python/inactive
 
-## unavailable
+- github-release
+  - app store
+  - pkg store
+
+- features
+  - navigation within issue answers with shortcut J
+  - sort repos of an organization by stars
+  - toggle github repo and github page
+  - go to npm package page
+
+- file-manager
+  - 文件列表的日期，高亮最近日期
+
+## unsupported
 
 - [Bring back `sort:indexed` for code searches](https://github.com/orgs/community/discussions/52932)
   - NA
-# github-search
-- tips
-  - [Github search cheatsheet from official docs.](https://gist.github.com/bonniss/4f0de4f599708c5268134225dda003e0)
+# 🔍 search
+- [Github search cheatsheet from official docs](https://gist.github.com/bonniss/4f0de4f599708c5268134225dda003e0)
 
-- not-yet
-  - 搜索名称为folder11的文件夹
+## not-yet
 
-- search-pr
-  - is:unmerged
+- 搜索名称为folder11的文件夹
 
-- search-code
-  - NOT is:fork 排除fork
+## search-issues/pr
 
-- search-repos
-  - 搜索时变通的方法
-    - 在github直接搜索导入库的代码 import from react，再限制语言如js
-    - 或者搜索独特关键词 data-mdc-auto-init 的代码，而不是repositories
-    - 对于最新的库或版本，直接搜索import是最准确的方式
-  - 搜索代码的变通方式 filename:
-    - ~~可作为查找dependents被依赖被使用项目的一种变通方式~~
-    - react-table filename:package.json
-      - 此时搜索的是 Code，而不是 Repositories
-      - 新版搜索要将filename改为path
-    - 甚至可以搜索同时包含多个依赖的仓库
-      - https://github.com/search?q=%22next-mdx-enhanced%22+%22%40tailwindcss%2Ftypography%22+filename%3Apackage.json&type=Code
-  - 搜索条件使用日期 pushed:>=2021-11-11
-    - react created:<2011-01-01 
-    - editor pushed:>=2013-03-06 fork:only 
-  - 搜索指定日期范围内仓库
-    - react-table in:name language:javascript  pushed:2020-10-01..2020-12-05 fork:only
-    - Hooks for building fast and extendable tables and datagrids for React in:description language:javascript  pushed:2020-10-01..2020-12-05 fork:only
-  - 搜索js或ts的项目 language:javascript language:typescript
-    - `https://github.com/search?o=desc&q=data+grid+language%3Ajavascript+language%3Atypescript&s=updated&type=Repositories`
-    - `https://api.github.com/search/repositories?q=angular+language:javascript+language:typescript&per_page=5&page=1`
-  - 搜索一个organization的仓库，可使用 `user/org:orgName` ，注意冒号后无空格
-    - https://github.com/search?o=desc&q=user%3A+pentaho&s=stars&type=Repositories
-  - 搜索org，可用`type:org`
-    - `https://github.com/search?q=design+type%3Aorg&type=users`
-    - 既可以搜索出repositories，也可以搜索出org类型的users
-  - 搜索自己评论过的issues `commenter:uptonking type:issue`
-    - https://github.com/search?o=desc&q=commenter%3Auptonking+type%3Aissue&s=updated&type=Issues
-  - 按标签或主题搜索
-    - topics
-    - awesome类型的repositories
-  - 搜索收藏最多的仓库，可使用 `stars:>1` ，然后再排序
-    - most starred
-      - https://github.com/search?q=stars%3A%3E100&s=stars&type=Repositories
-    - most forked
-      - https://github.com/search?o=desc&q=stars:%3E1&s=forks&type=Repositories
+- is:unmerged
+
+- 对于更名后的repo，issues中的auto linking仍然连接到更名前repo的url，可以在hovercard中提示
+
+- 搜索自己评论过的issues `commenter:uptonking type:issue`; 
+  - https://github.com/search?o=desc&q=commenter%3Auptonking+type%3Aissue&s=updated&type=Issues
 
 - search-issues/discussions
   - 搜索仓库时指定语言后，当下搜索结果中的issues也是指定语言的
 
-- fork
-  - 可利用高级搜索，搜索fork仓库中最新被fork的 `fork:only`
-  - 查找一个仓库最活跃的fork仓库
-    - https://github.com/techgaun/active-forks
-      - https://techgaun.github.io/active-forks/index.html
-    - https://github.com/useful-forks/useful-forks.github.io
-      - https://useful-forks.github.io/
+## search-code
 
-- preview html
-  - https://github.com/htmlpreview/htmlpreview.github.com
-  - https://htmlpreview.github.io/?https://github.com/Futur3Sn0w/materialyou/blob/main/index.html
-  - It is a client-side solution using a CORS proxy to fetch assets.
-  - 对于那些没有将repo作为github pages托管网站的，可加上前缀直接在浏览器查看网页内容，而不是查看源码
+- resources
+  - [Understanding GitHub Code Search syntax - GitHub Docs](https://docs.github.com/en/search-github/github-code-search/understanding-github-code-search-syntax)
 
-- issues
-  - 对于更名后的repo，issues中的auto linking仍然连接到更名前repo的url，可以在hovercard中提示
+- A bare term with no qualifiers will match either the content of a file or the file's path.
+  - Searching for multiple terms separated by whitespace is the equivalent to the search `hello AND world`.
+  - Other boolean operations, such as `hello OR world`, are also supported.
 
-- tips
+- To search for an exact string, including whitespace, you can surround the string in quotes. You can also use quoted strings in qualifiers
+  - `"sparse index" path:git language:"protocol buffers"`
+- to find the exact string name = "tensorflow", use `"name = \"tensorflow\""`
 
-- 排行榜
-  - [GitHub-Chinese-Top-Charts](https://github.com/kon9chunkit/GitHub-Chinese-Top-Charts)
-  - [Github User Ranking 中国和全球用户排名](https://github.com/jaywcjlove/github-rank)
-  - [GitHub star ranking for users, organizations and repositories](https://github.com/k0kubun/gitstar-ranking)
-    - https://gitstar-ranking.com/
+- `NOT is:fork` 排除fork
 
-- license
-  - 先检查确保只存在一个文件，其名称中包含license单词，可以是license.txt/md，不能是wiki-license.md
-  - 若要给没有license文件的repo添加license，直接本地上传一个即可
-  - 若要给已有license文件的repo修改license，修改后可能github显示不出来，可以先删除再上传新的
+- To search within a set of repositories, you can combine multiple repo: qualifiers with the boolean operator OR
+  - `repo:github-linguist/linguist OR repo:tree-sitter/tree-sitter`
 
-- github.com site proxy
-  - https://hub.fastgit.xyz
+- To narrow down to a specific languages, use `language:ruby OR language:cpp OR language:csharp`
 
-- github proxy(解决下载慢的问题)
-  - http://g.widyun.com/
-  - https://d.serctl.com/
-- github mirror
-  - https://github.wuyanzheshui.workers.dev/
+- Path qualifier
+  - `path: qualifier` will match files containing the term anywhere in their file path. 
+  - `path:unit_tests` 可搜索文件名和文件夹名
+- To match only a specific filename (and not part of the path), use `path:/(^|\/)README\.md$/`
+- You can also use some limited glob expressions in the path: qualifier.
+  - `path:src/*.js` : search for JavaScript files within a `src` directory
+  - By default, glob expressions are not anchored to the start of the path, so the above expression would still match a path like `app/src/main.js`. 
+  - But if you prefix the expression with `/`, it will anchor to the start. For example: `path:/src/*.js`
 
-- ref
-  - [Automated Data Scraping with Github Actions](https://www.swyx.io/github-scraping/)
-    - https://github.com/sw-yx/gh-action-data-scraping
+- All parts of a search, such as search terms, exact strings, regular expressions, qualifiers, parentheses, and the boolean keywords AND, OR, and NOT, must be separated from one another with spaces. 
+  - The one exception is that items inside parentheses `( )`, don't need to be separated from the parentheses.
+
+## search-repos
+
+- resources
+  - [Searching for repositories - GitHub Docs](https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories)
+
+- Search is not case sensitive.
+
+- If your search query contains whitespace, you will need to surround it with quotation marks.
+  - `react NOT "hello world"` matches repositories with the word "react" but not the words "hello world."
+  - `build label:"bug fix"` matches issues with the word "build" that have the label "bug fix."
+
+- `in:repoName/desc/topics/readme`; 
+  - When you omit this qualifier, only the repository name, description, and topics are searched.
+
+- 搜索时的变通方法
+  - 在github直接搜索导入库的代码 import from react，再限制语言如js
+  - 搜索独特关键词 data-mdc-auto-init 的代码，而不是repositories
+  - 对于最新的库或版本，直接搜索import是最准确的方式
+
+- 搜索代码的变通方式 filename
+  - ~~可作为查找dependents被依赖被使用项目的一种变通方式~~
+  - react-table filename:package.json
+    - 此时搜索的是 Code，而不是 Repositories
+    - 新版搜索要将filename改为path
+  - 甚至可以搜索同时包含多个依赖的仓库
+    - https://github.com/search?q=%22next-mdx-enhanced%22+%22%40tailwindcss%2Ftypography%22+filename%3Apackage.json&type=Code
+
+- 搜索条件使用日期 pushed:>=2021-11-11
+  - editor created:<2011-01-01 
+  - editor pushed:>=2013-03-06 fork:only 
+- 搜索指定日期范围内仓库
+  - react-table in:name language:javascript  pushed:2020-10-01..2020-12-05 fork:only
+  - Hooks for building fast and extendable tables and datagrids for React in:description language:javascript  pushed:2020-10-01..2020-12-05 fork:only
+
+- To exclude all results that are matched by a qualifier, prefix the search qualifier with a hyphen `-`.
+  - `mentions:uptonking -org:github`
+
+- 搜索js或ts的项目 language:javascript language:typescript
+  - `https://github.com/search?o=desc&q=data+grid+language%3Ajavascript+language%3Atypescript&s=updated&type=Repositories`
+  - `https://api.github.com/search/repositories?q=angular+language:javascript+language:typescript&per_page=5&page=1`
+
+- 搜索一个organization的仓库，可使用 `user/org:orgName` ，注意冒号后无空格
+  - https://github.com/search?o=desc&q=user%3A+pentaho&s=stars&type=Repositories
+- 搜索org，可用`type:org`
+  - `https://github.com/search?q=design+type%3Aorg&type=users`
+  - 既可以搜索出repositories，也可以搜索出org类型的users
+
+- 按标签或主题搜索
+  - topics
+  - awesome类型的repositories
+
+- 搜索收藏最多的仓库，可使用 `stars:>1` ，然后再排序
+  - most starred/forked
+
+## search-forks
+
+- To include forks in the search results, you will need to add `fork:true` or `fork:only`
+
+- 查找一个仓库最活跃的fork仓库
+  - https://github.com/techgaun/active-forks
+    - https://techgaun.github.io/active-forks/index.html
+  - https://github.com/useful-forks/useful-forks.github.io
+    - https://useful-forks.github.io/
+# github-actions
+- [Automated Data Scraping with Github Actions](https://www.swyx.io/github-scraping/)
+  - https://github.com/sw-yx/gh-action-data-scraping
 # github-utils-repos-pkg-npm
 - 查看依赖某个package的所有包
   - https://www.npmjs.com/browse/depended/redux
@@ -198,7 +207,38 @@ modified: 2023-02-08T10:46:26.912Z
 
 - https://github.com/IonicaBizau/git-stats
   - Local git statistics including GitHub-like contributions calendars.
-# github-proxy
+# github-mirrors/proxy
+- [Gitee极速下载，每日同步一次](https://gitee.com/mirrors)
+  - https://gitee.com/organizations/mirrors/projects
+
+- github-mirrors
+  - https://hub.nuaa.cf/
+  - https://github.wuyanzheshui.workers.dev/
+
+- git-only
+  - https://github.zhlh6.cn/
+    - git clone git@git.zhlh6.cn:tinyplex/tinybase.git
+  - https://gitclone.com/
+- github proxy(解决下载慢的问题)
+  - http://g.widyun.com/
+  - https://d.serctl.com/
+
+- git-download
+  - https://gh.api.99988866.xyz/
+  - https://ghproxy.com/
+  - http://toolwa.com/github/
+
+- dead?
+  - https://hub.fastgit.xyz/
+
+- questions
+  - google-search github 镜像 一月内
+  - [Github国内镜像网站，解决Github访问的神器 - 知乎](https://zhuanlan.zhihu.com/p/360677731)
+
+- [Using a socks proxy with git for the http transport - Stack Overflow](https://stackoverflow.com/questions/15227130/using-a-socks-proxy-with-git-for-the-http-transport)
+  - ALL_PROXY=socks5://127.0.0.1:1080 git clone https://github.com/some/one.git
+  - If you also want the host name to be resolved using the proxy, use thuzhf's solution below, which uses socks5h instead of socks5
+
 - https://github.com/521xueweihan/GitHub520
   - https://raw.hellogithub.com/hosts 服务器续费了3年到2024.12
 - https://github.com/ineo6/hosts

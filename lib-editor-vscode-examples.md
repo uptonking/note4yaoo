@@ -10,19 +10,41 @@ modified: 2023-01-21T18:58:29.846Z
 # guide
 
 # popular
-- https://github.com/DTStack/molecule
+- https://github.com/DTStack/molecule /811Star/MIT/202312/ts
   - https://dtstack.github.io/molecule/
-  - a lightweight Web IDE UI framework which is built with React.js and inspired by the VSCode. 
-  - We have designed the Extension APIs similar to the VSCode
-  - [The Molecule Roadmap 2022](https://github.com/DTStack/molecule/discussions/680)
+  - https://dtstack.github.io/molecule-examples/
+  - 受 VSCode 启发，使用 React.js 构建的 Web IDE UI 框架
+  - 我们设计了类似 VSCode 的扩展（Extension)机制，可以帮助我们使用 React 组件快速完成对 Workbench 的自定义
+  - 内置 React 版本的 Visual Studio Code Workbench UI
+  - 内置 Monaco Editor Command Palette、Keybinding等模块，并支持扩展
+  - 内置一个简单的 Settings 模块，支持在线编辑修改以及扩展
+  - 内置默认的 Explorer, Search 等组件，并支持扩展
+  - ⚖️ [vscode插件市场支持](https://github.com/DTStack/molecule/issues/879)
+    - 有没有什么方法可以比较方便的移植vscode的插件，或者考虑后面的版本中增加对vscode插件进行支持
+    - 并没有，考虑到大部分的 vscode 的插件增强的是 vscode 所实现的功能。其相关逻辑强依赖于 vscode。所以针对大部分的 vscode 插件无法做到方便的移植。
+    - 而针对除此之外的小部分 vscode 插件，诸如 icons，themes 倒是可以参考 文档
+  - [我们开源了一个轻量的 Web IDE UI 框架 - Molecule - V2EX_202112](https://www.v2ex.com/t/823289)
+    - 与其他开源的 Web IDE 的区别？
+    - 🧐 Molecule 只是一个单纯的 Web IDE UI 交互框架，不涉及例如文件系统、版本管理、 LSP、DAP、Terminal 等更复杂的 IDE 功能，需要开发者自己手动实现
+    - React.js 应用无缝接入, 基于 React.js 的组件库，更好的 UI 自定义能力
+    - 基本兼容了 VS Code 上千种 ColorTheme 扩展
+    - 有类似交互场景的 Web 应用，如果搞不懂 VS Code 可以试试这个，比较简单一些
+    - 和 jupyter lab 比如何？我还是比较期待 jupyter lab 演化出的 IDE 的扩展，像 jupyterlab-lsp 之类的
 
-- https://github.com/opensumi/core /ts
+- https://github.com/opensumi/core /2.7kStar/MIT/202401/ts
   - https://opensumi.com/
-  - A framework helps you quickly build Cloud or Desktop IDE products.
+  - 一款帮助你快速搭建 CloudIDE 及 桌面端 IDE 产品的底层框架
   - 提供了一个强大的插件生态系统，兼容 VS Code 的插件系统，支持 LSP/DAP 等主流协议，我们也有着自己的 OpenSumi API 用于进一步拓展 IDE 界面及能力
   - 不提供针对特定端的以下能力
     - Desktop IDE 场景下的窗口管理
     - Cloud IDE 场景下的容器/虚拟机管理
+  - CodeBlitz主要在读、写、运行和提交等方面进行了探索，与带有容器的标准版本进行了对标。
+  - [如何评价阿里 & 蚂蚁自研 IDE 研发框架 OpenSumi？ - 知乎](https://www.zhihu.com/question/519740662)
+    - 高性能、高定制性的双端（Web 及 Electron）IDE 研发的框架
+    - 设计之初就是要兼容 VS Code 插件生态，我们计划每三个月时间去完成一次 VS Code 插件 API 的适配工作
+  - [极速版 IDE 框架 CodeBlitz 开源啦！ - 知乎_202309](https://zhuanlan.zhihu.com/p/656515617)
+    - 在OpenSumi的基础上对文件系统、通信系统、插件机制等模块进行扩展，以更好地适用于没有容器、本地客户端环境的纯浏览器环境
+    - CodeBlitz提供了一种只需使用浏览器即可体验IDE的场景。与github.dev和vscode.dev不同的是，CodeBlitz是一个框架，通过OpenSumi模块和插件的方式，可以为上层产品量身定制符合其业务场景的WebIDE。
 
 - https://github.com/VSCodium/vscodium
   - binary releases of VS Code without MS branding/telemetry/licensing

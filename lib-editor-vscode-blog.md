@@ -12,7 +12,7 @@ modified: 2023-08-19T16:37:13.736Z
 # architecture
 - [从 VSCode 看大型 IDE 技术架构 - 知乎](https://zhuanlan.zhihu.com/p/96041706)
 
-- [hullis 博客系列](https://github.com/hullis/blog/issues?q=is%3Aissue)
+- [hullis 博客系列](https://github.com/wzhudev/blog/issues?q=is%3Aissue)
   - [vscode 源码解析 - 依赖注入 · hullis/blog](https://github.com/hullis/blog/issues/25)
   - [vscode 源码解析 - 插件系统](https://github.com/hullis/blog/issues/37)
 # extensions/插件系统

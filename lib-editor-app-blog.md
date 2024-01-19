@@ -429,7 +429,7 @@ width = 'this.parent.width - this.marginLeft - this.marginRight'
 
 - This is an instruction booklet that shows you how to build a text editor in C.
 
-## [Hecto: Build your own text editor in Rust](https://www.flenker.blog/hecto/)
+## [Hecto: Build your own text editor in Rust_201911](https://www.flenker.blog/hecto/)
 
 - This is a series of blog posts that shows you how to build a text editor in Rust. 
   - It’s a re-implementation of kilo in Rust

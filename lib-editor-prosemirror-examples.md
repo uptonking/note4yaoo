@@ -86,7 +86,7 @@ modified: 2022-08-18T16:57:46.405Z
     - https://prosekit.dev/
     - Framework agnostic and headless rich text editor based on ProseMirror
     - why not keep developing remirror?
-      - I’ll continue maintaining Remirror. The api change is just too big that I cannot base on the Remirror codebase.
+    - I’ll continue maintaining Remirror. The api change is just too big that I cannot base on the Remirror codebase.
 
 - prosemirror-adapter /65Star/MIT/202311/ts
   - https://github.com/Saul-Mirone/prosemirror-adapter
@@ -158,7 +158,7 @@ modified: 2022-08-18T16:57:46.405Z
 - guardian-prosemirror-editor /2Star/MIT/202311/ts/react
   - https://github.com/guardian/prosemirror-editor
   - provide a re-usable ProseMirror editor for use across our tools
-  - it aims to replace Scribe-based rich text editors with a React-based prosemirror editor in: tagmanager,atom-workshop
+  - it aims to replace Scribe-based rich text editors with a React-based prosemirror editor in: tagmanager, atom-workshop
 - guardian-prosemirror-elements /37Star/MIT/202311/ts
   - https://github.com/guardian/prosemirror-elements
   - This Prosemirror plugin adds the ability to add custom 'elements' to a document.

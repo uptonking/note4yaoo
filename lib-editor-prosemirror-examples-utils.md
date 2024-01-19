@@ -208,7 +208,7 @@ modified: 2022-08-18T16:57:29.058Z
   - Export a prosemirror document to a Microsoft Word file, using docx.
   - https://github.com/dxc111/prosemirror-docx
     - Export a prosemirror document to a Microsoft Word file, using docx.
-  - https://github.com/dolanmiu/docx
+  - https://github.com/dolanmiu/docx /MIT/202401/ts
     - Easily generate .docx files with JS/TS with a nice declarative API. 
     - Works for Node and on the Browser.
 

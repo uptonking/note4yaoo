@@ -218,6 +218,12 @@ modified: 2022-08-21T10:02:05.129Z
   - Full Python syntax is supported, and the standard library.
   - `grist-core` has what you need to run a powerful spreadsheet hosting server. 
   - And to show Grist spreadsheets on a website without any special back-end support, your options include `grist-static`.
+  - [Offline first support_202212](https://github.com/gristlabs/grist-core/issues/380)
+    - we tried Grist as a conventional SaaS app, and that is when we started accumulating users.
+    - Grist has two levels. There's a "home" database, which keeps track of users/sites/workspaces/documents, and that uses postgresql/sqlite via `typeorm`. Then, each individual document has its own database, which is sqlite accessed directly via `node-sqlite3`.
+  - [How to make snapshots work on self-hosted ?_202211](https://github.com/gristlabs/grist-core/issues/359)
+    - we don't have an implementation of snapshots that works directly on a plain file system, so snapshots don't do anything useful in grist-core. 
+    - For our SaaS, we have an implementation for managing document versions in AWS S3. Grist Enterprise includes that implementation
   - [Grist is a modern, relational spreadsheet | Hacker News_202311](https://news.ycombinator.com/item?id=38080951)
   - https://github.com/gristlabs/grist-static
     - https://gristlabs.github.io/grist-static/
@@ -228,6 +234,7 @@ modified: 2022-08-21T10:02:05.129Z
     - No special server is needed for grist-static, it works straight from a CDN or any standard web server.
     - Grist spreadsheets by default store a lot of history in the `.grist` file. You can prune that history
   - https://github.com/gristlabs/grist-ee
+    - The source code for self-managed Grist Enterprise.
 
 - S2 /1.1kStar/MIT/202302/ts
   - https://github.com/antvis/S2

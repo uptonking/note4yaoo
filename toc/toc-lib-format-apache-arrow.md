@@ -17,6 +17,12 @@ modified: 2023-01-08T16:27:44.918Z
   - multi-threaded, hybrid-streaming DataFrame library in Rust | Python | Node.js
   - If you have data that does not fit into memory, polars lazy is able to process your query (or parts of your query) in a streaming fashion
   - In the TPCH benchmarks polars is orders of magnitudes faster than pandas, dask, modin and vaex on full queries (including IO).
+
+- https://github.com/devinjdangelo/DataWeb /apache2/202401/rust
+  - Virtual Data Integration Powered by Apache Arrow
+  - DataWeb enables virtual integration of siloed data systems with minimal central coordination. 
+  - DataWeb is designed for organizations which cannot effectively integrate all of their data in a single central data system (i.e. Data Warehouse, Data Lake, ...)
+  - A Relay is a node in the DataWeb that has its own independent set of logical data models. Each Relay is connected to physical data sources and remote logical data sources (i.e. other Relays in the Web).
 # examples
 - https://github.com/vega/vega-loader-arrow
   - This package extends Vega's set of data format parsers to support the type "arrow" in Vega version 5.0 and higher.

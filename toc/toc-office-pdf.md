@@ -98,9 +98,11 @@ modified: 2021-01-04T17:26:43.784Z
   - The library fragments the content, reads your CSS print declarations and presents a paginated preview in your browser that you can save as PDF.
 # pdf-editor
 - https://github.com/luke-browning/pdf-web-edit /ts/c#/ng
-  - a web-based application for manipulating PDF files. It's main purpose is to pre-process documents before they are imported into a Document Management System (DMS) such as Paperless (-ng and -ngx) or stored in a directory based strucutre.
+  - a web-based application for manipulating PDF files. 
+  - It's main purpose is to pre-process documents before they are imported into a Document Management System (DMS) such as Paperless (-ng and -ngx) or stored in a directory based structure.
 
-- https://github.com/jichang/unionpdf /ts
+- https://github.com/jichang/unionpdf /MIT/202401/ts
+  - https://jichang.github.io/unionpdf/
   - A universal pdf rendering/editing library
   - model, engine, react
 
@@ -139,9 +141,10 @@ modified: 2021-01-04T17:26:43.784Z
 - https://github.com/rkusa/pdfjs /202309/js
   - A Portable Document Format (PDF) generation library targeting both the server- and client-side.
 
-- https://github.com/carboneio/carbone /js
+- https://github.com/carboneio/carbone /CCL/202305/js
+  - https://carbone.io/
   - simple report generator, from JSON to pdf, xslx, docx, odt...
-  - Powerful report generator in any format PDF, DOCX, XLSX, ODT, PPTX, ODS, XML, CSV using templates and your JSON data as input !
+  - Powerful report generator in any format PDF, DOCX, XLSX, ODT, PPTX, ODS, XML, CSV using templates and your JSON data as input
 
 - https://github.com/betterwrite/pdfeasy /ts
   - JavaScript Client/Server Side PDF-Generator based in PDFKit

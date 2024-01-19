@@ -15,6 +15,11 @@ modified: 2023-01-21T18:57:47.811Z
   - Monaco Editor is the code editor that powers VS Code.
   - supports Edge, Chrome, Firefox, Safari and Opera. 
   - The Monaco editor is not supported in mobile browsers or mobile web frameworks.
+
+- https://github.com/judge0/ide /MIT/202312/js
+  - https://ide.judge0.com/
+  - free and open-source online code editor that allows you to write and execute code from a rich set of languages. 
+  - Judge0 IDE is using Judge0 for executing user's source code.
 # extensions
 
 # monaco-based

@@ -164,6 +164,16 @@ modified: 2023-12-08T15:49:56.046Z
   - Both should be supported as target data-stores.
   - As a source, PeerDB should likely work with any Postgres based databases (like Citus). Query based replication should work! Log based (CDC) replication could have a few quirks - i.e. the source database should support "pgoutput" format for change data capture. 
   - As we evolve we do planning to enable a native data-movement experience for Postgres based (both extensions and postgres-compatible) databases!
+# discuss-json
+- ## 
+
+- ## On-demand JSON: A better way to parse documents?
+- https://twitter.com/lemire/status/1748361177359425556
+  - Ingesting JSON documents can be a performance bottleneck. 
+  - A popular parsing strategy consists in converting the input text into a tree-based data structure—sometimes called a Document Object Model or DOM. 
+  - We designed and implemented a novel JSON parsing interface—called On-Demand—that appears to the programmer like a conventional DOM-based approach
+  - However, the underlying implementation is a pointer iterating through the content, only materializing the results (objects, arrays, strings, numbers) lazily. 
+
 # discuss-hypercore
 - ## 
 

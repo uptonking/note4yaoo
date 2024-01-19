@@ -533,6 +533,10 @@ modified: 2023-09-28T20:35:56.153Z
   - https://github.com/fiatjaf/summuladb
     - A SummaDB that runs in the browser.
 
+- https://github.com/dragos-constantin-stoica/gocouch /201709/go
+  - CouchDB implementation in Go. 
+  - The main target platform is for mobile devices.
+
 - https://github.com/ondra-novak/sofadb /201903/cpp
   - CouchDB inspired document database written in C++. In planning state
 - https://github.com/RipcordSoftware/AvanceDB /201810/cpp
@@ -889,6 +893,10 @@ modified: 2023-09-28T20:35:56.153Z
   - client + server
   - 依赖quill.v1、react-ace、pouchdb
 
+- https://github.com/glynnbird/md /201908/js
+  - Offline-first, PouchDB-powered, Markdown word processor app.
+  - This web app can function quite happily, saving its data to your local web browser. 
+
 - https://github.com/sherylynn/pdf-sync /201912/js
   - add sync to pdf.js
   - 依赖pouchdb-server
@@ -898,7 +906,7 @@ modified: 2023-09-28T20:35:56.153Z
   - reference manager with features including PDF reading/annotating, Markdown/Excalidraw note-taking, project/note linking, and more
   - In the year of 2023, I received many useful suggestions, and the beta version of the Research Helper had accomplished its goal, there will be no feature updates in the future. 
   - The new version, Sophosia, will be the version with continuous support and updates. 
-    - The new version removes the PouchDB database, all data is text-centric.
+    - The new version removes the `PouchDB` database, all data is text-centric.
     - The new version uses Tauri instead of Electron.
   - https://github.com/sophosia/sophosia
     - 依赖 pinia、vue、citation-js、excalidraw、quasar、tauri、cytoscape、golden-layout、konva、pdfjs、vditor
@@ -1796,8 +1804,10 @@ modified: 2023-09-28T20:35:56.153Z
   - Demonstrates how to stand-up a Java Springboot service as a source for CouchDB replication
   - CouchDB mock replication source Proof Of Concept.
 
-- https://github.com/oknosoft/metadata.js /201903/js/inactive
+- https://github.com/oknosoft/metadata.js /202312/js
+  - https://github.com/oknosoft/metadata.js/tree/develop
   - Library for building offline-first browser-based applications 
+  - Metadata.js is a JavaScript implementation of 1C: Enterprise Platform object model. Its goal is to emulate the most popular classes of 1C: Enterprise API, while running in the browser or in Node.js
   - To manage data on the browser side, Pouchdb and AlaSQL are used
   - Couchdb was chosen as the main server data storage
   - Supported the ability to connect data adapters to 1C and other ORM, SQL and NoSQL servers

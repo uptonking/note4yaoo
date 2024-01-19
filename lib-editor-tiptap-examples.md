@@ -60,7 +60,8 @@ modified: 2023-02-05T19:03:27.730Z
 - https://github.com/johnpuddephatt/gutentap
   - https://gutentap.letsdance.agency/
   - Tiptap based block editor
-  - a UI for Tiptap, inspired by the Wordpress editor, Gutenberg. It uses a static floating toolbar as well as slash commands for inserting new blocks.
+  - a UI for Tiptap, inspired by the Wordpress editor, Gutenberg. 
+  - It uses a static floating toolbar as well as slash commands for inserting new blocks.
 
 - novel /7.3kStar/MIT/202309/ts
   - https://github.com/steven-tey/novel
@@ -159,7 +160,7 @@ modified: 2023-02-05T19:03:27.730Z
   - WYSIWYG rich-text editor using tiptap and Element UI for Vue2 (tiptap2 and Vue3 is in alpha)
   - new version2 support Vue3, use tiptap2 and Element Plus
 
-- https://github.com/lobbylabs/lobby-editor
+- https://github.com/lobbylabs/lobby-editor /MIT/202309/ts
   - https://lobby-editor-demo.vercel.app/
   - extendable rich text editor for Vercel's Next React framework, based on ProseMirror, built using TipTap. 
   - This project grew out of our internal usage at Lobby
@@ -175,8 +176,8 @@ modified: 2023-02-05T19:03:27.730Z
   - http://tip-tap-element.vercel.app/
   - WYSIWYG editing experience that can hook into Ruby on Rails ActionText backend. 
 
-- @sensenet/editor-react
-  - https://github.com/SenseNet/sn-client
+- https://github.com/SenseNet/sn-client
+  - @sensenet/editor-react
   - Text editor library behind rich text editor is changed to tiptap@2.0
   - As a first step only those text editing features are implemented
   - More new things (managing tables, embedding, etc.) are coming in the following releases.
@@ -192,8 +193,8 @@ modified: 2023-02-05T19:03:27.730Z
   - The idea is to offer a simplistic keyboard only transcriber app with real time streaming and support for insterting bible verses.
 
 - https://github.com/iojanis/Lity
-  - 依赖tiptap.v2、yjs、vue3
   - Graph-based document editor with collaborative features
+  - 依赖tiptap.v2、yjs、vue3
   - Create nodes by mouse, keyboard shortcuts or using markup (like @ and soon #)
 
 - https://github.com/Young6118/dudu-editor
@@ -211,7 +212,7 @@ modified: 2023-02-05T19:03:27.730Z
 
 - https://github.com/g-bastianelli/tiptap-react-notion
   - Quick example of how we can make a 'Notion like' editor with Tiptap and react
-# tiptap-utils
+# utils
 - https://github.com/troop-dev/tiptap-react-render /202306/ts
   - This library renders TipTap JSON payloads in React clients without embedding the editor.
   - We were inspired by Contentful's rich-text-react-renderer tool, so we built a similar one for TipTap payloads!
@@ -283,7 +284,7 @@ modified: 2023-02-05T19:03:27.730Z
     - there's currently a hard requirement for ActiveStorage
 
 - https://github.com/decidim/decidim
-  - Decidim is a participatory democracy framework, written in Ruby on Rails, originally developed for the Barcelona City government online and offline participation website
+  - a participatory democracy framework, written in Ruby on Rails, originally developed for the Barcelona City government online and offline participation website
   - [To Trix or not to Trix · Discussion](https://github.com/decidim/decidim/discussions/7585)
 
 - [Thoughts on Action Text](https://www.reddit.com/r/rails/comments/rt2qvo/thoughts_on_action_text/)
@@ -335,6 +336,10 @@ modified: 2023-02-05T19:03:27.730Z
 
 - https://t.co/cSLL2bvRp6
   - using @tailwindcss @tiptap_editor @vuejs & @nuxt_js
+
+- https://github.com/yesmore/inke /apache2/202311/ts
+  - https://inke.app/
+  - 一个所见即所得的Markdown笔记本，支持AI辅助写作和多人协作，支持自部署，使用IndexedDB存储笔记。
 # cms-like
 - vrite /1kStar/AGPLv3/202307/ts
   - https://github.com/vriteio/vrite
@@ -368,12 +373,6 @@ modified: 2023-02-05T19:03:27.730Z
 - https://github.com/verbb/vizy /php
   - A flexible visual editor for Craft CMS
   - 依赖tiptap2、vue3、tippy.js、codemirror-editor-vue
-# fans-tiptap
-- https://github.com/xiaohanyu
-  - Spent another two days to write a recursive descent evaluation to convert 
-@tiptap_editor
- 's JSON format to TeX snippet
-
 # more
 - https://github.com/ujw0712/editor-and-pdf
   - 依赖 vue3、jspdf, html2canvas、@tiptap/extension-collaboration, yjs, @hocuspocus/provider
@@ -405,3 +404,6 @@ modified: 2023-02-05T19:03:27.730Z
 - https://github.com/nanmenyu/inking
   - inking是个人开发的开源桌面码字软件，面向的群体主要是网文写手，包含写作（核心）和阅读（附带）两大模块
   - 内置关系图、灵感备忘、时间线、地图、webview等辅助模块
+
+- https://github.com/xiaohanyu
+  - Spent another two days to write a recursive descent evaluation to convert @tiptap_editor 's JSON format to TeX snippet

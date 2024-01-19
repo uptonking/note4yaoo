@@ -60,11 +60,18 @@ modified: 2023-02-07T09:22:03.120Z
 - https://github.com/kadirnar/whisper-plus /apache2/python
   - Advancing Speech-to-Text Processing
   - 实现了从 Youtube 下视频，对于下载完的视频，还提供了， openai 的 whisper v3 直接转录成文本的代码 
+
 ## more-asr
 
 - https://github.com/wenet-e2e/wenet
   - Production Ready End-to-End Speech Recognition Toolkit
 # text-to-speech
+- https://github.com/collabora/WhisperSpeech /MIT/202401/jupyter
+  - https://collabora.github.io/WhisperSpeech/
+  - Open Source text-to-speech system built by inverting Whisper.
+  - Previously known as spear-tts-pytorch.
+  - Currently the models are trained on the English LibreLight dataset. In the next release we want to target multiple languages (Whisper and EnCodec are both multilanguage).
+
 - https://github.com/PaddlePaddle/PaddleSpeech
   - PaddleSpeech 是基于飞桨 PaddlePaddle 的语音方向的开源模型库
   - 目前服务集成的语音任务有： asr (语音识别)、tts (语音合成)、cls (音频分类)、vector (声纹识别)以及 text (文本处理)

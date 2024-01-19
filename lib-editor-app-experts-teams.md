@@ -34,6 +34,10 @@ modified: 2022-08-21T10:16:52.004Z
   - editablejs, 自绘光标
   - https://github.com/big-camel
 
+- 胡文召 /univer
+  - [slate 架构与设计分析](https://github.com/wzhudev/blog/issues/36)
+  - [vscode 源码解析](https://github.com/wzhudev/blog/issues/29)
+
 - 王福朋 /slate-wangEditor
   - https://juejin.cn/user/1714893868765373
   - https://www.zhihu.com/people/wangfupeng1988

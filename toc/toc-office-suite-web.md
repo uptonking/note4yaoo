@@ -14,6 +14,8 @@ modified: 2023-03-09T13:47:07.317Z
 
 - resources
   - [List of office suites - Wikipedia](https://en.wikipedia.org/wiki/List_of_office_suites)
+  - [精读《WOPI协议》 - 掘金](https://juejin.cn/post/7105322391597187103)
+    - WOPI是微软基于REST API的协议，定义了一组Http操作，使客户端能够访问和改变服务器存储的文件。
 # office-popular
 - onlyoffice-sdkjs /190Star/AGPLv3/202302/js
   - https://github.com/ONLYOFFICE/sdkjs
@@ -71,7 +73,8 @@ modified: 2023-03-09T13:47:07.317Z
   - [LibreOffice for Android and iOS](https://www.libreoffice.org/download/android-and-ios/)
     - doesn’t currently offer an Android or iOS version of LibreOffice, there is a LibreOffice-based product in app stores from Collabora
 
-- https://github.com/CollaboraOnline/online /1kStar/MPLv2/LibreOffice
+- CollaboraOnline /1kStar/MPLv2/202401/js/cpp/LibreOffice
+  - https://github.com/CollaboraOnline/online
   - https://www.collaboraoffice.com/
   - Collabora Online is a collaborative online office suite based on LibreOffice
   - This is also the source for the Collabora Office apps for iOS and Android.
@@ -98,6 +101,14 @@ modified: 2023-03-09T13:47:07.317Z
     - All Userbase features are accessible through a very simple **JavaScript SDK**, directly from the browser. No backend necessary. 类似Authing
     - 100% open source, MIT licensed. You can host it yourself 
 # office-inactive
+- https://github.com/Darth-Ness/Ink /202210/js/实现简单
+  - https://darth-ness.github.io/Ink/
+  - The online, static word processor.
+
+- https://github.com/evergreenx/Wordium-Docs /202310/js
+  - https://wordium-docs.vercel.app/
+  - a word processor application that provides for input, editing, formatting, and output of text, with some additional features.
+
 - https://github.com/airbornio/airborn /AGPLv3/202105/js
   - https://www.airborn.io/
   - Airborn is a service that lets you create and store documents in the browser using Open Web Apps.
@@ -106,10 +117,40 @@ modified: 2023-03-09T13:47:07.317Z
   - https://github.com/airbornio/firetext
     - A web-based word processor. 
 
-- https://github.com/Graphite-Docs/graphite /js
+- https://github.com/Graphite-Docs/graphite /201908/js
   - Encrypted, secure, user-owned productivity suite
 # office-viewer
-- https://github.com/webodf/ViewerJS /agpl/js/inactive
+- https://github.com/cweijan/vscode-office /MIT/202401/js
+  - 让VSCode支持预览PDF, Excel和Word等格式, 并增加markdown所见即所得编辑器
+  - 支持预览xlsx, docx, svg, pdf, zip等格式, 后来才增加markdown编辑器
+  - 该扩展在vscode内集成Vditor
+
+- https://github.com/501351981/vue-office /MIT/202401/js/vue
+  - https://501351981.github.io/vue-office/examples/docs/
+  - 支持word(.docx)、excel(.xlsx)、pdf等各类型office文件预览的vue组件集合，提供一站式office文件预览方案
+  - 支持vue2和3，也支持React等非Vue框架
+  - 依赖docx-preview、pdfjs、exceljs、x-data-spreadsheet
+  - [非Vue框架文件预览 | vue-office](https://501351981.github.io/vue-office/examples/docs/guide/js-preview.html)
+    - 为了在非Vue的框架中进行Office文件预览，增加了通过js进行预览的方式。
+
+- https://github.com/react-office-viewer/react-office-viewer /MIT/202301/js
+  - Temporary support 'pdf, xls, xlsx, docx'.
+  - 依赖handsontable, mammoth, xlsx, pdfjs-dist
+
+- https://github.com/kekingcn/kkFileView /9.4kStar/apache2/202312/java
+  - https://kkview.cn/
+  - 文件文档在线预览解决方案，基本支持主流办公文档的在线预览，如doc, docx, xls, xlsx, ppt, pptx, pdf, txt, zip, rar, 图片, 视频, 音频等等
+  - 使用spring boot开发，预览服务搭建部署非常简便
+  - 支持普通http/https文件下载url、http/https文件下载流url、ftp下载url等多种预览源
+  - 提供Docker镜像发行包，方便在容器环境部署
+  - 抽象预览服务接口，方便二次开发，非常方便添加其他类型文件预览支持
+  - https://github.com/gaoxingzaq/kkFileView
+    - 修改版
+- https://github.com/YiJiuSmile/kkFileViewOfficeEdit /201903/java/inactive
+  - 文件在线预览及OFFICE(word, excel, ppt)的在线编辑
+  - 对kkFileView进行了二次开发，整合了openOffice进来，项目体积更大了！但使用和配置更简单，只需要配置redis即可
+
+- https://github.com/webodf/ViewerJS /agpl/201504/js/inactive
   - https://viewerjs.org/
   - the easiest way to use presentations, spreadsheets, PDF's and other documents on your website or blog without any external dependencies
   - WebODF makes it easy to add Open Document Format (ODF) support to your website and to your mobile or desktop applications. 
@@ -131,4 +172,38 @@ modified: 2023-03-09T13:47:07.317Z
 
 - https://github.com/MartsTech/google-docs-clone /202206/ts
   - Google Docs Clone created with Next. JS, Firebase, Tailwind CSS
+# utils
+- https://github.com/OfficeDev/script-lab /MIT/202311/ts
+  - https://script-lab.azureedge.net/
+  - Create, run and share your code directly from Office
+  - Experiment with the Office JavaScript API without ever leaving Excel, Outlook, Word, or PowerPoint
+# office-solutions
+- https://github.com/documenso/documenso /AGPLv3/ts
+  - https://documenso.com/
+  - Signing documents digitally is fast, easy and should be best practice for every document signed worldwide. 
+  - This is technically quite easy today, but it also introduces a new party to every signature: The signing tool providers. 
+  - Documenso aims to be the world's most trusted document signing tool. 
+
+- https://github.com/docusealco/docuseal /AGPLv3/ts
+  - https://www.docuseal.co/
+  - Open source DocuSign alternative. Create, fill, and sign digital documents
+
+- https://github.com/PDFTron/pdftron-sign-app /paid/202305/js
+  - Sign and request signatures on PDFs, MS Office documents
+  - demonstrates building a signing application where users can request signatures on the documents by placing fields, sign documents, review signed documents using PDFTron PDF SDK.
+# protocol/sync/WOPI
+- https://github.com/mikeebowen/node-wopi-server /MIT/202310/ts
+  - A WOPI Server written with Node.js
+  - This is a sample implementation of the WOPI Protocol written with in TypeScript with Node.js.
+  - This is not a complete implementation, but is meant to be a example
+  - This server can be validated with the WOPI Validator Core or will work as a live WOPI Server if the computer running the WOPI Server is part of an active directory domain with a server running Office Online Server.
+
+- https://github.com/coatsy/wopi-node /MIT/201706/ts
+  - Sample WOPI Host implementation in node.js
+  - This repository contains an application that integrates with Office Online for viewing/editing Office documents.
+
+- https://github.com/cs3org/wopiserver /apache2/202401/python
+  - vendor-neutral application gateway compatible with the WOPI specifications
+  - This service is part of the ScienceMesh Interoperability Platform (IOP) and implements a vendor-neutral application gateway compatible with the Web-application Open Platform Interface (WOPI) specifications.
+  - It enables ScienceMesh EFSS storages to integrate Office Online platforms including Microsoft Office Online and Collabora Online.
 # more-office

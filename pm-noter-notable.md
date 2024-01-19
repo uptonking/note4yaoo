@@ -223,6 +223,9 @@ modified: 2023-11-28T14:48:45.910Z
   - 打分评论，类似豆瓣电影与音乐
   - 论坛圈子，类似贴吧/reddit，支持一个url在不同板块重复讨论、多次讨论
 
+- office开放集成
+  - 支持wopi协议集成
+
 ## pricing
 
 - [ckeditor](https://ckeditor.com/pricing/)

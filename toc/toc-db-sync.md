@@ -400,6 +400,10 @@ modified: 2022-11-25T15:41:47.534Z
 - https://github.com/hashicorp/raft /MPLv2/202401/go
   - Golang implementation of the Raft consensus protocol
   - a Go library that manages a replicated log and can be used with an FSM to manage replicated state machines. It is a library for providing consensus.
+
+- https://github.com/drmingdrmer/one_file_raft /202401/rust/单文件
+  - This is a concise, demonstrative implementation of the Raft consensus algorithm contained within a single Rust file, approximately 300 lines in length.
+  - 288行了, 要实现joint有点不够了
 # more
 - https://github.com/rethinkdb/rethinkdb /202211/cpp/python
   - The open-source database for the realtime web.

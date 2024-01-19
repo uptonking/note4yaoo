@@ -43,7 +43,8 @@ modified: 2023-08-17T08:28:11.799Z
   - [Work with workbooks using the Excel JavaScript API](https://learn.microsoft.com/en-us/office/dev/add-ins/excel/excel-add-ins-workbooks)
   - [Excel. Workbook class](https://learn.microsoft.com/en-us/javascript/api/excel/excel.workbook?view=excel-js-preview)
 
-- https://github.com/OfficeDev/script-lab
+- https://github.com/OfficeDev/script-lab /MIT/202311/ts
+  - https://script-lab.azureedge.net/
   - Create, run and share your code directly from Office
   - Experiment with the Office JavaScript API without ever leaving Excel, Outlook, Word, or PowerPoint
 

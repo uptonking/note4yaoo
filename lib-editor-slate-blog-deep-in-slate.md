@@ -38,7 +38,7 @@ modified: 2023-02-22T19:54:25.348Z
   - Promise.then 是微任务，所以 slate 这里多次执行的 apply ，会将其中的 Promise.then 放到队列中，当同步任务执行完，在 DOM 重新渲染之前执行其中的 onChange 事件。
 - onChange 会在 react 组件 (opens new window)中更改 state 的 Hook (opens new window)，并且触发 Context.Provider (opens new window)的值的改变，从而更新组件。
 
-# [slate 架构与设计分析 · hullis/blog](https://github.com/hullis/blog/issues/36)
+# [slate 架构与设计分析 · hullis/blog](https://github.com/wzhudev/blog/issues/36)
 - [slate架构设计分析 - 知乎](https://zhuanlan.zhihu.com/p/262209236)
 
 - slate 数据模型（model）的设计

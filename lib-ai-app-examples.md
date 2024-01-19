@@ -46,6 +46,11 @@ modified: 2023-02-08T07:20:48.475Z
 
 ## gpt-apps
 
+- https://github.com/n4ze3m/dialoqbase /MIT/202401/ts
+  - https://dialoqbase.n4ze3m.com/
+  - open-source application designed to facilitate the creation of custom chatbots using a personalized knowledge base
+  - open-source application designed to facilitate the creation of custom chatbots using a personalized knowledge base
+
 - 写了个基于 ChatGPT 的 AI 维权律师，根据事实和诉求帮当事人生成起诉书。
   - https://twitter.com/imyuanx/status/1641715695762436098
   - https://github.com/imyuanx/ai-lawyer

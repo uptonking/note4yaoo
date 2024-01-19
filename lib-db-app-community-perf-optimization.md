@@ -32,7 +32,15 @@ modified: 2023-10-26T19:00:02.186Z
 
 - ## 
 
-- ## 
+- ## you can delete old data very efficiently if you partition your table by time ranges and drop one of them.
+- https://twitter.com/tobias_petry/status/1748340608849072602
+  - [Delete Old Rows with Partitions - Database Tip](https://sqlfordevs.com/partition-delete-old-rows)
+- Can this be applied to previously created tables?  A clients MySQL database has grown so large there isn't enough disk space to run OPTIMIZE TABLE after deleting table records.  This seems like a good trick to free up disk space.
+  - You would have to create a new table and insert the rows there again.
+- Have any tricks to free up disk space on a MySQL 5.6.3 database when the host doesn't have enough disk space to run OPTIMIZE TABLE?
+
+- What would you use to maintain the partitions, events, or external cron?
+  - I would use a cron
 
 - ## ⚡️ 公司搞优化，讨论如何优化 SQL 和业务。我实在忍不住，跟他们说，先做读写分离，之后把能迁走的表都迁走。
 - https://twitter.com/yfractal/status/1745979462615982578

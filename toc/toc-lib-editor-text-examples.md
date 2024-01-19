@@ -70,7 +70,7 @@ modified: 2022-11-08T19:03:33.865Z
   - Calcutext is a web app where you can do calculations with your written text.
   - Write any math operations, as available in `mathjs`, as a series of written lines to make notes and do calculations
 # apps
-- https://github.com/Novout/betterwrite /ts/vue
+- https://github.com/Novout/betterwrite /apache2/202308/ts/vue
   - A Open Source Word Processor
   - 依赖milkdown、vue
   - Offline First
@@ -94,6 +94,10 @@ modified: 2022-11-08T19:03:33.865Z
     - To save changes, all you have to do is sending a request to your API for persistence. In my case, I store the content in a Postgres database.
     - I kept things really simple for the first few websites I built with this approach. No caching, no permission management, no post scheduling. The admin can do anything and by hitting save, changes are live.
     - 注意git version可能丢失
+# paged
+- https://github.com/adrian-kriegel/goma /202103/ts
+  - React based word processor for paged content
+  - stylesheet for Paged.js used for paginating your document
 # utils
 - https://github.com/DenverCoder1/unicode-formatter
   - https://unicode-formatter.demolab.com/

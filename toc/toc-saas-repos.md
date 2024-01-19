@@ -9,16 +9,6 @@ modified: 2022-02-12T23:36:22.503Z
 
 # guide
 
-# office-apps
-- https://github.com/documenso/documenso /AGPLv3/ts
-  - https://documenso.com/
-  - Signing documents digitally is fast, easy and should be best practice for every document signed worldwide. 
-  - This is technically quite easy today, but it also introduces a new party to every signature: The signing tool providers. 
-  - Documenso aims to be the world's most trusted document signing tool. 
-
-- https://github.com/docusealco/docuseal /AGPLv3/ts
-  - https://www.docuseal.co/
-  - Open source DocuSign alternative. Create, fill, and sign digital documents
 # saas-apps
 - https://github.com/timeoffthescheduler/server /js
   - Server Side Implementation of TimeOff TS, A Scheduler
