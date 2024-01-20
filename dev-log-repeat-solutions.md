@@ -89,6 +89,7 @@ modified: 2021-07-20T13:50:23.433Z
   - directus      (AGPL/knex+vue3+tinymce5)
 - ✨ airtable-like(data-mgmt)
   - 👉🏻 nocodb     (AGPL/knex+nuxt3)
+  - 👉🏻 ethercalc     (MIT/nodejs)
   - apitable      (AGPL/spring-mybatis+canvas)
   - focalboard    (AGPL/go+react-dnd)
   - undb          (AGPL/nestjs+mikro-orm+dnd-kit/table)

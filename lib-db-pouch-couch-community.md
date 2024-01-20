@@ -249,6 +249,23 @@ modified: 2024-01-04T06:55:12.542Z
 
 - ## 
 
+- ## 
+
+- ## I'm looking into the best way to support key constraints in a document. 
+- https://couchdb.slack.com/archives/C49LEE7NW/p1705632812084529
+  - Mainly my use case is a user can have a 'pin', this can change at any time (or not exist at all), but must be unique for all users.
+  - My current idea is to create a new document called 'pins', where each pin is then the ID, and the value the user it is associated to. I would add an index to the value, so this document can serve as a lookup on both key and value.
+  - For reading users, I would create a view which maps the pins and users together.
+  - For writing a user, I would like to post a user document, which includes the pin field, then in designer document, extract this field, check for uniqueness, and if unique, update user and pin document atomically.
+  - Does this sound like an ok idea? I'm not actually sure if it's possible to write to a different document from within a designer document.
+
+- Design documents can't typically directly update or modify other documents.
+  - The update functions in a design document are designed to operate on the document to which they are attached. They can make changes to the document itself, but they can't directly modify other documents.
+  - So i guess you would need to handle this operation at the application level.
+- the comment about update functions is inaccurate fyi. an update handler is something you define in a design document, you then deliberately POST/PUT to the new update handler path so that your handler logic is applied before couchdb attempts the write operation (common use case is to add a timestamp).
+
+- Nothing has changed in this regard since 2014.
+
 - ## 💡 [On moving from CouchDB to Riak | Hacker News_201103](https://news.ycombinator.com/item?id=2297155)
 - There are several reasons for CouchDB's use of a single, strictly append-only file, but the b-tree is not one of them.
   - In fact, it's one of CouchDB's most clever tricks to store a b-tree in an append-only fashion (it's far more common to update in place).

@@ -11,6 +11,24 @@ modified: 2024-01-04T06:34:57.448Z
 
 - resources
   - [couchdb blog](https://blog.couchdb.org/)
+# blogs-vendors
+
+## [Budibase Cloud January 9th Incident _202401](https://budibase.com/blog/updates/2024/2024-01-09-incident/)
+
+- On January 9th, a subset of Budibase Cloud customers were unable to log in
+  - We were able to trace this problem back to data corruption in our production database, and resolved the problem by rolling our database back to a known-good snapshot.
+
+- Budibase Cloud is backed by a database called CouchDB, which we run across 3 servers (or “nodes”). 
+  - We do this so that if one of these nodes were to go down or have problems, nobody would notice because we still have 2 other nodes available
+- We noticed at the start of this year that one of our CouchDB nodes had been configured differently to the other 2. All of the nodes in the cluster should be identical, any divergence in their configuration introduces uncertainty.
+  - We decided that the easiest way to do this would be to add a new node to the cluster, then turn down the outlier one. 
+  - We use an “Infrastructure as Code” approach at Budibase, so we have automated processes for adding a new node to our CouchDB cluster.
+  - The mistake we made in our automated process for adding nodes was to add the new node to our load balancer before it had fully synchronised.
+
+- By 15:39 UTC we were restored, but running on a single CouchDB node.
+  - By 15:49 UTC our cluster was fully restored to the 13:33 UTC snapshot and Budibase Cloud was operational again.
+
+- The Budibase code should not be lazily creating databases the way that it does. This is technical debt we have carried with us from the days that Budibase was a desktop app
 # blogs-couch-internals
 
 ## 📕 [ForestDB - Boosting Compaction in B-Tree Based Key-Value Store by Exploiting Parallel Reads in Flash SSDs_202104](https://www.researchgate.net/publication/350825598_Boosting_Compaction_in_B-Tree_Based_Key-Value_Store_by_Exploiting_Parallel_Reads_in_Flash_SSDs)
@@ -117,6 +135,13 @@ modified: 2024-01-04T06:34:57.448Z
   - First off, unlike PostgreSQL or MySQL, CouchDB can be snapshot while in production without any flushing or locking trickery since it uses an append only B-Tree storage approach. That alone makes it a compelling database choice on ZFS/BTRFS.
   - Second, CouchDB works hand-in-hand with ZFS’s block level compression. ZFS can compress blocks of data as they are being written out to the disk. However, it only does it for new blocks and not retroactively. Now, the awesome part, CouchDB on compaction writes out a brand new database file which can utilize the new gzip compression settings on ZFS. This means you can try out different gzip compression settings just by compacting your CouchDB.
 # blogs-couchdb
+
+## [CouchDB: challenges of building an offline-first mobile application | Vohid Karimov）_201910](https://vovopap.com/2019/10/22/couchdb-challenges-building-offline-first-mobile-application.html)
+
+- am I going to have 30 CouchDB databases if I have 30 tables?
+  - Not really, as it turns out. It made sense to apply the following steps for each type of relationship in my SQL schema
+
+- CouchDB is designed with scaling in mind. You can have several CouchDB instances spread across many servers constantly in sync with each other
 
 ## [CouchDB, The Open-Source Cloud Firestore Alternative?_201909](https://marmelab.com/blog/2019/09/25/couchdb_pouchdb_serious_firebase_alternative.html)
 

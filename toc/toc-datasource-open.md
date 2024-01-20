@@ -18,7 +18,7 @@ modified: 2020-11-11T13:22:28.098Z
   - https://alpercinar.com/open-cell-id/
   - OpenCelliD is the world's largest open database of cell towers with a license CC BY-SA 4.0
   - Data has full world coverage and freely available for download
-  - This tabular data[1] has ~40 million rows and 6 columns in it but only 3 columns (latitude, longitude, and type) are used in this visualization.
+  - This tabular data has ~40 million rows and 6 columns in it but only 3 columns (latitude, longitude, and type) are used in this visualization.
 
 - NVD: NATIONAL VULNERABILITY DATABASE
   - https://nvd.nist.gov/
@@ -26,7 +26,7 @@ modified: 2020-11-11T13:22:28.098Z
   - json
 - https://github.com/olbat/nvdcve
   - JSON files describing vulnerabilities from the NVD and CVE® dictionaries
-
+# gis
 - ArcGIS Open Data
   - https://hub.arcgis.com/search
 # organization

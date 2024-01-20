@@ -140,7 +140,7 @@ modified: 2023-09-28T20:35:56.153Z
   - A PouchDB plugin for partial updates that uses the **every-doc-is-a-delta** storage pattern. 
   - You can use delta pouch to enable conflict-free collaborative editing of the same docs.
   - Delta pouch stores every change as a doc.
-  - [Question: a helpful link describing the "every-doc-is-a-delta storage pattern"?](https://github.com/redgeoff/delta-pouch/issues/53)
+  - [a helpful link describing the "every-doc-is-a-delta storage pattern"?](https://github.com/redgeoff/delta-pouch/issues/53)
     - Sounds like "every-doc-is-a-delta" is another way of saying "log database". Is that right?
     - I would look up anything related to "Event Sourcing" which perhaps is a superset of this idea. Basically, the idea is that you save the events that happen in your system and then compile those into views.
   - forks
@@ -810,6 +810,11 @@ modified: 2023-09-28T20:35:56.153Z
   - SSE (server send events) BE (back end) - using pouchDB - connected to two different clients (one regular html/js and one react app) sending data from DB via SSE to client in near real time
   - You can see the event sources in the browser dev tools by going to the network tab, finding the network request, and clicking event sources, and every 4ms a new request is made, but the database only updates every 1 second, so you only see a change in the value every 1 second.
   - https://github.com/BrianARuff/SSE_CRA_Client /js
+
+- https://github.com/palmettoflow/vanilla-ice /201602/js
+  - Single Page Application Stack built on community driven open source projects.
+  - virtual-dom (view), hyperscript (markup), page.js (router)
+  - pouchdb (data service), eventemitter2
 # examples
 - https://github.com/nolanlawson/pouchdb-getting-started-todo /201408/js
   - A complete version of the "Getting Started" PouchDB todo app
@@ -1120,6 +1125,9 @@ modified: 2023-09-28T20:35:56.153Z
   - Opensource version of Nomie 6
   - Open Source Life Tracker / Mood Tracker / Data Journal
   - Since Closing down nomie, I wanted to provide it as an open source project.
+
+- https://github.com/qcif/data-curator /202111/js/vue
+  - a simple desktop data editor to help describe, validate and share usable open data.
 # examples-couch
 - https://github.com/jed1976/prototype_cms /202208/js
   - Fun prototype CMS built with Node, CouchDB/PouchDB, RE: DOM and Tachyons.
@@ -1322,7 +1330,7 @@ modified: 2023-09-28T20:35:56.153Z
   - Fast PouchDB view index rebuild
 
 - https://github.com/endyjasmi/feathers-pouchdb /201707/js
-  - Create a PouchDB service for FeatherJS.
+  - Create a PouchDB service for FeatherJS
   - Currently this plugin DOES NOT fully support pagination because of the way CouchDB Mango Query is designed to make use map reduce index. The skip and limit does work though, just not the total attribute though.
   - https://github.com/nickdex/feathers-pouchdb /201903/js
   - https://github.com/rdewolff/feathers-nano /201812/js
@@ -1729,6 +1737,9 @@ modified: 2023-09-28T20:35:56.153Z
 - https://github.com/glynnbird/docstream /201405/js
   - Node.js utility to turn CouchDB's _all_docs stream in to stream of plain documents
 
+- https://github.com/timbophillips/xlsx-to-couchdb /201905/ts
+  - command line app for simple upload of Excel or Open Office spreadsheet to a CouchDB or PouchDB database
+  - Ideally suited to simple spreadsheets with row 1 as keys and each subsequent row as a document of values.
 - https://github.com/gr2m/couchdb-excel-import /201501/js
   - imports Excel files (*.xls, *.xlsx) into CouchDB documents, and transforms the sheets into JSON.
 

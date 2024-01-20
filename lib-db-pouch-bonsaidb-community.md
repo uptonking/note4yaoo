@@ -42,6 +42,17 @@ modified: 2024-01-04T06:36:06.762Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Nebari is still on my "old" data model which requires two fsyncs per transaction. _202401
+- https://discord.com/channels/578968877866811403/833332909808025610/1197197774509314078
+  - It'll scream when I eventually get it onto the new storage system. (I've been feeling the itch to dust this off, so I'm hopeful I'll get back to it sometime this year)
+
+- Is compression implemented or planned for sediment/nebari?
+  - I wasn't originally planning it for Sediment, since to me it's a bit of a low-level building block type library. And Nebari was designed around the idea of a vault which is given the opportunitty to perform any operations on all blocks stored and loaded from the database. This is how BonsaiDb implements compression and encryption in Nebari.
+
 - ## What's the status of sediment + nebari looking like? I've been interested to see how it performs_202312
 - https://discord.com/channels/578968877866811403/833332909808025610/1188641694300786789
 - From my memory, I got a bit frustrated realizing there was no easy way forward to keep backwards compatibility between old nebari and new nebari. Once I realized how much work was going to be required to finish it up, I decided I should instead focus on getting a BonsaiDb update out the door.

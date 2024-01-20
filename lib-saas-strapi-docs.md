@@ -9,6 +9,8 @@ modified: 2023-12-15T16:52:36.718Z
 
 # guide
 
+- resources
+  - [Strapi 中文文档](https://www.strapi.cn/)
 # docs
 - strapi /57.5kStar/MIT+EE/202311/ts
   - https://github.com/strapi/strapi

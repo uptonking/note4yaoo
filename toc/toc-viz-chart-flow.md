@@ -291,9 +291,11 @@ modified: 2020-10-22T10:22:55.878Z
 - https://github.com/iVis-at-Bilkent/cytoscape.js-fcose
   - a faster version of our earlier compound spring embedder algorithm named CoSE, implemented as a Cytoscape.js extension
 
-- https://github.com/cytoscape/cytoscape.js /js
-  - Cytoscape.js is a fully featured graph theory library. 
+- https://github.com/cytoscape/cytoscape.js /MIT/202401/js
+  - https://js.cytoscape.org/demos/tokyo-railways/
+  - a fully featured graph theory library. 
   - Cytoscape.js contains a graph theory model and an optional renderer to display interactive graphs. 
+  - Created at the University of Toronto and published in Oxford Bioinformatics (2016, 2023).
 
 - https://github.com/mapbox/potpack /js
   - https://mapbox.github.io/potpack/

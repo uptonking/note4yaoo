@@ -343,7 +343,8 @@ modified: 2020-12-28T12:24:09.275Z
   - https://github.com/illacloud/illa-builder
   - https://www.illacloud.com/
   - https://fast-try.illacloud.com/
-  - ILLA is a robust open source low-code platform for developers to build internal tools. 
+  - 一个强大的开源低代码平台
+  - 本地部署： 支持Docker和k8s 
   - 实时协作： 我们可以一起实时创建内容
   - https://github.com/illacloud/builder-backend /go
 
@@ -355,6 +356,9 @@ modified: 2020-12-28T12:24:09.275Z
   - The Open Source Retool Alternative
   - An all-in-one IDE to create internal or customer-facing apps.
   - A place to create, build and share building blocks of web applications.
+- https://github.com/lowcoder-org/lowcoder /AGPLv3/202401/java/ts
+  - Lowcoder continues from the abandoned Openblocks project
+  - The Open Source Retool, Tooljet and Appsmith Alternative
 
 - https://github.com/polterguy/magic
   - a Low-Code CRUD generator with machine learning and artificial intelligence allowing you to generate most of your code 100% automatically.

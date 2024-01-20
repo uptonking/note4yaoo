@@ -17,7 +17,7 @@ modified: 2021-09-14T18:58:58.275Z
   - GPL/LGPL
   - MPL
 
-- ref
+- resources
   - https://www.ruanyifeng.com/blog/2011/05/how_to_choose_free_software_licenses.html
   - https://tldrlegal.com/
   - https://choosealicense.com/licenses/
@@ -26,6 +26,7 @@ modified: 2021-09-14T18:58:58.275Z
   - [Open Source License Usage_202008](https://solutionshub.epam.com/blog/post/examining-open-source-license-usage)
     - custom/32.7%, apache/27.8%, mit/26.3%, gpl/4.8%, agpl/1.40%, mpl/1.37%, others/3.4%
   - [Open Source License Compliance](https://fossa.com/blog/tag/open-source-license-compliance/)
+  - [OSI Approved Licenses](https://opensource.org/licenses/)
 
 - Copyright”指软件的版权和其它一切权利归软件作者所私有，用户只有使用权，没有其它如复制、重新修改发布等权利。
 - 而“Copyleft”的特点是仅有版权归原作者所有，其他一切权利可以与任何人共享。
@@ -120,6 +121,15 @@ modified: 2021-09-14T18:58:58.275Z
 - 如果你修改了代码，需要再被修改的文件中说明。
 - 在延伸的代码中（修改和有源代码衍生的代码中）需要带有原来代码中的协议，商标，专利声明和其他原来作者规定需要包含的说明。
 - 如果再发布的产品中包含一个Notice文件，则在Notice文件中需要带有Apache Licence。你可以在Notice中增加自己的许可，但不可以表现为对Apache Licence构成更改。
+# Artistic
+- ref
+  - [Artistic License 2.0 – Open Source Initiative](https://opensource.org/license/artistic-2-0/)
+  - [Open Source Licenses Demystified | Toptal®](https://www.toptal.com/open-source/developers-guide-to-open-source-licenses)
+
+- The Artistic License, in its current version 2.0, is a permissive open-source license with no copyleft similar to the MIT license.
+- The main difference between the MIT license and the Artistic License is that the latter requires that any modification made to the code must be clearly stated.
+- This license is almost exclusively used in the Perl community.
+- The current Artistic License 2.0 is compatible with GPL: you can mix Artistic-Licensed code into GPL software.
 # MulanPSL - 2.0
 - ref
   - https://opensource.org/licenses/MulanPSL-2.0

@@ -110,7 +110,9 @@ modified: 2022-01-05T14:36:28.057Z
 
 - ## 
 
-- ## 
+- ## 🔡🎯 Want to read the entire code of Zustand v5-alpha? Here you go!
+- https://twitter.com/dai_shi/status/1748635607402967154
+  - One file
 
 - ## We have three state management libraries at Poimandres. What's in common is they prefer simpler APIs
 - https://twitter.com/dai_shi/status/1681514924173037569

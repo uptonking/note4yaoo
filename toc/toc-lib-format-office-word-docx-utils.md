@@ -43,12 +43,23 @@ modified: 2023-01-09T11:03:32.533Z
   - https://volodymyrbaydalka.github.io/docxjs/
   - render/convert DOCX document into HTML document with keeping HTML semantic as much as possible
 # parser-generator
+- https://github.com/harshankur/officeParser /MIT/202401/js
+  - Node.js library to parse text out of any office file. 
+  - Currently supports docx, pptx, xlsx and odt, odp, ods..
+
 - https://github.com/Ziv-Barber/officegen /MIT/202103/js
   - Standalone Office Open XML files (Microsoft Office 2007 and later) generator for Word (docx), PowerPoint (pptx) and Excell (xlsx) in javascript. 
   - The output is a stream.
   - officegen should work on any environment that supports Node.js including Linux, OSX and Windows. 
   - officegen also supporting PowerPoint native charts objects with embedded data.
+
+- https://github.com/gharibi/JsObjExporter /202201/js
+  - https://gharibi.github.io/JsObjExporter/examples/example.html
+  - A little JavaScript plugin to generate PDF, XLS, CSV and DOC from JavaScript Object or DOM element only from the frontend
 # converter
+- https://github.com/Goran-Vukadinovic/xlsx2docx /202308/js
+  - From .xls cell value into .doc files
+
 - https://github.com/mwilliamson/mammoth.js /BSD/202307/js
   - designed to convert .docx documents, such as those created by Microsoft Word, Google Docs and LibreOffice, and convert them to HTML.
   - aims to produce simple and clean HTML by using semantic information in the document, and ignoring other details

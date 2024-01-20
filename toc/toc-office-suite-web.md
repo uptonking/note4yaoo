@@ -133,9 +133,18 @@ modified: 2023-03-09T13:47:07.317Z
   - [非Vue框架文件预览 | vue-office](https://501351981.github.io/vue-office/examples/docs/guide/js-preview.html)
     - 为了在非Vue的框架中进行Office文件预览，增加了通过js进行预览的方式。
 
+- https://github.com/Jarrettluo/all-docs /MIT/202401/js/vue
+  - https://jiaruiblog.com/all-docs-page/
+  - "All Docs" is a tool that enables online previewing, storage, and sharing of documents such as Word, Excel, PowerPoint, PDF, and images 
+  - It supports full-text search for all document information. 
+  - 开发了一个用于存储ppt、word、png等文档的，支持私有部属的知识库的检索。
+  - 后端技术：SpringBoot + MongoDB + ES
+  - https://github.com/Jarrettluo/all-docs-vue
+    - 前端技术：Vue + axios
+
 - https://github.com/react-office-viewer/react-office-viewer /MIT/202301/js
   - Temporary support 'pdf, xls, xlsx, docx'.
-  - 依赖handsontable, mammoth, xlsx, pdfjs-dist
+  - 依赖handsontable.v12, mammoth, xlsx, pdfjs-dist
 
 - https://github.com/kekingcn/kkFileView /9.4kStar/apache2/202312/java
   - https://kkview.cn/
@@ -172,6 +181,71 @@ modified: 2023-03-09T13:47:07.317Z
 
 - https://github.com/MartsTech/google-docs-clone /202206/ts
   - Google Docs Clone created with Next. JS, Firebase, Tailwind CSS
+
+- https://github.com/tanwarAalok/google-sheet-clone /202309/js
+  - https://google-sheet-clone.netlify.app/
+  - A google sheets clone developed using Vanilla Javascript
+  - more
+  - https://github.com/Prakhar-FF13/GoogleSheetClone /202307
+  - https://github.com/Yashkanekar/excel-vanilla-js
+  - https://github.com/Raj-Stark/Google-Sheet-2.0
+  - https://github.com/noobCode-69/ExcelClone
+  - https://github.com/PrinceAttri/sheets-clone
+# EtherCalc/SocialCalc
+- https://github.com/otetard/ownpad /AGPLv3/202401/js
+  - a Nextcloud application that allows to create and open Etherpad and Ethercalc documents.
+  - This application requires to have access to an instance of Etherpad and/or Ethercalc to work properly.
+  - Note that the documents are only stored with your Etherpad/Ethercalc service provider; no copy is kept on Nextcloud
+
+- ethercalc /2.9kStar/Artistic/202012/js/inactive
+  - https://github.com/audreyt/ethercalc
+  - https://ethercalc.net/
+  - EtherCalc is a web spreadsheet
+  - Node.js port of Multi-user SocialCalc
+  - 依赖xlsx、jquery-ui、jszip
+  - Your data is saved on the web, and people can edit the same document at the same time. 
+  - [EtherCalc: Open-source web spreadsheet | Hacker News_201408](https://news.ycombinator.com/item?id=8129281)
+  - [how to start?](https://github.com/audreyt/ethercalc/issues/524)
+  - forks
+  - https://github.com/Tuanshu/ethercalc /202312/
+    - post to ethercalc ok
+  - https://github.com/davidbwaikato/cbh-ethercalc /202111/js
+    - Cell Block HTML fork of Ethercal to support rich HTML representation along with text analysis in a spreadsheet
+- https://github.com/eddyparkinson/cellmaster /201611/js
+  - forked from ethercalc
+  - https://news.ycombinator.com/item?id=19022357
+    - It is hard to makes formulas fast enough with JS.
+    - The main speed problems with ethercalc are loading the data from the server and calculating the formulas. I did strip down the code to remove these problems to make web apps work.
+
+- https://github.com/sallakarppinen/ethercalc-client /201804/js
+  - simple API client for Ethercalc collaborative spreadsheets.
+
+- https://github.com/ethersheet-collective/EtherSheet /BSD/201704/js
+  - Online spreadsheet collaboration in real time using node.js. 
+  - Similar to etherpad-lite but its a spreadsheet!
+  - Ethersheet is only supported on GNU/Linux and MySQL as of right now. It's possible that it will work on Windows or with PostgreSQL or some other database, but we haven't tested 
+  - [Ethersheet – An open-source collaborative spreadsheet | Hacker News_201410](https://news.ycombinator.com/item?id=8450234)
+    - Like ethercalc, you can use any URL, even non-secret ones
+    - It doesn't support drag to enter ranges in formulas
+    - Arrow keys don't move the selection
+  - forks
+  - https://github.com/Stackato-Apps/EtherSheet /201604/js
+- https://github.com/luigser/Ethersheet2 /201907/js
+  - collaborative, realtime open source spreadsheet
+
+- https://github.com/DanBricklin/socialcalc /Artistic/201007/js
+  - SocialCalc for Socialtext
+  - Dan Bricklin co-authored VisiCalc, the first spreadsheet program for the masses.
+  - forks
+  - https://github.com/marcelklehr/socialcalc /201808/js
+    - in-browser spreadsheet editor with support for real-time collaboration. 
+    - This version is based on the version used in EtherCalc.
+  - https://github.com/Lynnmn/socialcalc /201903/js
+    - 可以进行通用编辑电子表格, 但不与excel互通
+    - 可以读取远程文件列表, 载入远程文件
+    - 可以保存文件到本地, 从本地载入文件
+  - https://github.com/seballot/socialcalc /201906/js
+    - Fix cell width when merged cell
 # utils
 - https://github.com/OfficeDev/script-lab /MIT/202311/ts
   - https://script-lab.azureedge.net/

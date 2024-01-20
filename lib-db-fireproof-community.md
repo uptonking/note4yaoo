@@ -64,6 +64,17 @@ modified: 2023-12-24T10:49:01.941Z
 
 - ## 
 
+- ## 
+
+- ## Question: this server file for the Netlify connection ends up being deployed to Deno just to map cars to Netlify's blob store?
+- https://discord.com/channels/1142273421674303619/1142273422131466282/1197618903505973348
+- the meta side of it also implements the CRDT logic by tracking parents
+- the netlify connector is currently polling based. 
+  - I haven't figured out how to make the writes emit events to the reader edge functions. Assuming there can be more than one edge fun per database at a time
+  - partykit makes that easy by only having one runtime instance per party room 
+- for any of the polling based connectors (netlify, aws) you can theoretically just "add webrtc or websocket" to trigger the poll on event
+  - ive also done webrtc as a data channel before (complete p2p) but if I work that angle again it'll be with Socket Supply on mobile
+
 - ## 🛋️ As someone coming from databases like HCL Notes/Domino or CouchDB, Fireproof looks pretty familiar and powerful. _202312
 - https://discord.com/channels/1142273421674303619/1142286889588629604/1191037240873320568
   - All three have concepts of changes feeds that can be leveraged to incrementally update external indexes. 

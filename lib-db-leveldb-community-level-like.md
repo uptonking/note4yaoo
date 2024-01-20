@@ -27,6 +27,18 @@ modified: 2022-12-31T18:05:42.830Z
 
 - Badger is designed to store data on disk (like RocksDB or LevelDB), while Redis is an in-memory storage which can't store data sets larger than memory.
   - You can store Redis on disk too. Not that you gain anything from doing so as persistence can be better achieved by clustering and I've never ran into issues where memory was a limiting factor, even with millions of records in Redis.
+# discuss-foundationdb
+- ## 
+
+- ## 
+
+- ## [How FoundationDB works and why it works (2021) | Hacker News_202309](https://news.ycombinator.com/item?id=37552085)
+- 
+- 
+- 
+- 
+- 
+
 # discuss-rocksdb
 - ## 
 

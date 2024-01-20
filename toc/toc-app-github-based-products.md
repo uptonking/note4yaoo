@@ -31,7 +31,7 @@ modified: 2023-04-13T03:32:04.013Z
     - https://githubocto.github.io/flat-demo-covid-dashboard/
     - This uses a Flat Action to fetch data about COVID-19 and display it in a dashboard. 
 
-## 🗑️ [GitHub Blocks](https://blocks.githubnext.com/)
+## ⚠️ [GitHub Blocks](https://blocks.githubnext.com/)
 
 - The Blocks technical preview ended on 202312. Learn more about why Blocks is being sunset.
 

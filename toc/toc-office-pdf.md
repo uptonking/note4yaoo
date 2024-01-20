@@ -138,7 +138,7 @@ modified: 2021-01-04T17:26:43.784Z
 - https://github.com/GoDinRyu/editor.md-electron /js
   - 基于Editor.md的markdown编辑客户端，支持docx转化md，导出到pdf文档。
 # generator
-- https://github.com/rkusa/pdfjs /202309/js
+- https://github.com/rkusa/pdfjs /MIT/202312/js
   - A Portable Document Format (PDF) generation library targeting both the server- and client-side.
 
 - https://github.com/carboneio/carbone /CCL/202305/js

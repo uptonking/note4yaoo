@@ -73,6 +73,17 @@ modified: 2023-10-28T13:38:46.522Z
 
 - ## 
 
+- ## 
+
+- ## When should you pick SQLite as your production database?
+- https://twitter.com/penberg/status/1748649917428453524
+  - tl; dr, if you don't have high write throughput requirements or are already sharding your data, SQLite may be a good choice as a production database.
+  - Right now, SQLite is finding its way to modern application stacks through things like Turso, LiteFS, and Cloudflare D1.
+  - One of the apparent benefits of SQLite is that while it's lightweight, it's very fast. You can reasonably expect 100k queries per second (QPS) per database on a small machine, and SQLite scales to millions of QPS
+  - 🐛 However, there is a gotcha: SQLite uses a single-writer model, limiting it to about 50k writes per second. 
+  - Now, there are ongoing work from SQLite folks to address this with things like `BEGIN CONCURR ENT` and hctree, but in terms of write performance, the limit is there. 
+  - Of course, many applications can work around this by sharding the data (e.g., with a database per tenant model), but it's not for all apps.
+
 - ## 🤔 [Why you should probably be using SQLite | Hacker News_202310](https://news.ycombinator.com/item?id=38036921)
 - 
 - 

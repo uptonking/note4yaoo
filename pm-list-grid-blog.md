@@ -9,7 +9,21 @@ modified: 2021-05-23T16:34:32.755Z
 
 # guide
 
-# [React Data Grid vs. React Data Table vs. React Grid](https://blog.ag-grid.com/react-data-grid-vs-react-data-table-vs-react-grid/)
+# blogs
+
+## [Diffing and patching tabular data _201308](https://okfnlabs.org/blog/2013/08/08/diffing-and-patching-data.html)
+
+- I’ve tried two methods to build revision control with all this:
+  - Modifying fossil, a distributed revision control system with beautifully compact and hackable source code, to use tabular diffs and merges natively. The result is ssfossil (“spreadsheet fossil”) in the Coopy toolbox.
+  - Using custom diff and merge drivers with git, to achieve a similar result. 
+- Until making more radical changes to the SCM, it definitely makes sense to store tables in a text format. Formats I’ve experimented with are:
+  - CSV. Simple, globally understood. But just a table.
+  - CSVS. I made this up. It is an extension to CSV with multiple tables, an unambiguous spot for column names, and a place for table names. 
+  - Sqlitext, pronounced “Sqlite Text”. I made this up. This is a text dump of an Sqlite database, with consistent ordering of rows. 
+  - SocialCalc. A text format for representing spreadsheets used by SocialCalc and inherited by Audrey Tang’s http://ethercalc.org. Stores table formatting and other good stuff.
+
+## [React Data Grid vs. React Data Table vs. React Grid](https://blog.ag-grid.com/react-data-grid-vs-react-data-table-vs-react-grid/)
+
 - When describing components in English, we might use the terms "Data Grid", "Data Table", "Table" and "Grid" interchangeably. 
 - When describing web components, the words can often be confused because of their overlap with existing web technology terms.
   - Grid provides functionality for page layout vs.

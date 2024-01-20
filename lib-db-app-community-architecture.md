@@ -101,6 +101,52 @@ modified: 2023-09-17T17:37:19.913Z
 - 技术上根本没有障碍。JS可以做几乎任何事，但是很多事情会被浏览器给拦下来。
   - 比如你用js不借助file控件直接读写一个本地文件你觉得可能吗？如果真的可以后台直接操作，那当你打开某个网页时，你的所有电脑信息都可以被拷贝走
   - 但凡有点经验的开发都知道，所有放到前端的东西都是不安全的。
+# discuss-db-per-user
+- ## 
+
+- ## 
+
+- ## [Apple built iCloud to store billions of databases | Hacker News_202401](https://news.ycombinator.com/item?id=39028672)
+- I leveraged FoundationDB and RecordLayer to build a transactional catalog system for all our data services at a previous company, and it was honestly just an amazing piece of software. 
+  - Adding gRPC into the mix for the serving layer felt so natural since schemas / records are defined using Protobuf with RecordLayer.
+  - 🐛 The only real downside is that the onramp for running FoundationDB at scale is quite a bit higher than a traditional distributed database.
+
+- Given that FoundationDB is built on top of SQLite, I wonder if that team is eyeing the HCTree engine for it.
+  - It's still in experimental mode but provides literally 10x improvement on read/writes to SQLite.
+- They have built their own storage engine named Redwood, which has some very FoundationDB-specific optimizations (like prefix compression). 
+
+
+- How would you handle schema migrations in a system like this?
+  - It depends on the layer, some of the layers might be able to take advantage of how the data is persisted. For example, if you use avro/protobuf, the decoder will handle it for you. If that's not the case, you would have to implement the migration by yourself.
+
+- CouchDB implements a DB per user approach. Personally, I've found it much easier to use than an SQL DB for web apps
+- 
+- 
+- 
+- 
+- 
+
+- ## 🔥 [Database of Databases | Hacker News_202009](https://news.ycombinator.com/item?id=24494403)
+- 
+- 
+- 
+
+- 🔥 [Database of Databases | Hacker News](https://news.ycombinator.com/item?id=37314622)
+
+- ## 🔥 [The magic of small databases | Hacker News_202301](https://news.ycombinator.com/item?id=34558054)
+- 
+- 
+- 
+
+- ## 🔥 [Millions of Tiny Databases [pdf] | Hacker News_202002](https://news.ycombinator.com/item?id=22329256)
+- 
+- 
+
+- ## 🔥 [Millions of Tiny Databases | Hacker News_202003](https://news.ycombinator.com/item?id=22481612)
+- 
+- 
+- 
+
 # discuss
 - ## 
 
@@ -163,9 +209,6 @@ modified: 2023-09-17T17:37:19.913Z
 - Haven’t studied Oracle RAC before, but the 128 TB hard limit is a pain for Aurora.
   - Aurora has limitations for sure but most workloads don’t need a lot and secondly you can add more clusters. But RAC I believe scales to multiple PBs.
 - The storage capacity is not a problem for those who run on Aurora. The last time I checked it was possible to scale beyond 60 TB. The inability to scale write workloads across zones and regions is what shared-storage architecture doesn’t deal with. That’s why Amazon turns to DynamoDB to scale both reads & writes. But that should change soon once Amazon introduces a distributed shared-nothing version of Aurora
-- 
-- 
-- 
 
 - ## what is the reason in your mind that none of the database vendors are able to crack the moat(城壕；护城河) of Oracle and RAC, in a meaningful way?  I am curious to hear your thoughts.
 - https://twitter.com/sv_techie/status/1723777534406332517
@@ -264,27 +307,6 @@ modified: 2023-09-17T17:37:19.913Z
 - SQL is... clunky, but it's still a wonderful way of working with data, compared to hand-rolling imperative loops or functional transforms.
 
 - ## 🔥 [We are splitting our database into Main and CI | Hacker News_202207](https://news.ycombinator.com/item?id=31956871)
-- 
-- 
-- 
-
-- ## 🔥 [Database of Databases | Hacker News_202009](https://news.ycombinator.com/item?id=24494403)
-- 
-- 
-- 
-
-- 🔥 [Database of Databases | Hacker News](https://news.ycombinator.com/item?id=37314622)
-
-- ## 🔥 [The magic of small databases | Hacker News_202301](https://news.ycombinator.com/item?id=34558054)
-- 
-- 
-- 
-
-- ## 🔥 [Millions of Tiny Databases [pdf] | Hacker News_202002](https://news.ycombinator.com/item?id=22329256)
-- 
-- 
-
-- ## 🔥 [Millions of Tiny Databases | Hacker News_202003](https://news.ycombinator.com/item?id=22481612)
 - 
 - 
 - 

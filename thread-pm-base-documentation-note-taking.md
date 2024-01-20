@@ -76,7 +76,12 @@ modified: 2021-08-16T06:56:53.061Z
 
 - ## 
 
-- ## 
+- ## 用了两年的 Logseq 后，神奇的发现我好像不怎么使用双链了。
+- https://twitter.com/henices/status/1748365491633049904
+  - Journal 的好处是可以随时输入一个较为完整的文字片段，心智负担很小。
+  - 但如果要真正对某个主题有较为深刻的理解，需要将零碎片段的完整逻辑和前后关系串连起来。真正可以实现这个目标的是写文章，而不是依靠双向链接。
+  - 只要写文章的时候，你需要的所有内容都在同一个地方，具体的是用使用标签，还是文件夹都不是重要。
+  - 知识体系的构建是通过不断学习和自我迭代来实现，边界的延伸则可以跟随着自己的好奇心，学习真的是一件很有趣的事情。
 
 - ## I think a spatial alternative to Notion where the blocks are laid out in a customisable Bento pattern would be pretty useful.
 - https://twitter.com/JungleSilicon/status/1747707553419821374

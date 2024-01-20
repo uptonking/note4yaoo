@@ -32,7 +32,6 @@ modified: 2022-08-21T10:38:26.289Z
 
 - [Tinysheet](https://tinysheet.com/)
 
-
 - [IronCalc](https://www.ironcalc.com/)
   - IronCalc is a spreadsheet engine and ecosystem. 
 # more

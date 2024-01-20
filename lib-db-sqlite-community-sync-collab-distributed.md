@@ -98,12 +98,25 @@ modified: 2023-10-26T19:03:22.063Z
 
 - I've read about couchdb every few years, and people in the last ~5 years were complaining about an awkward query syntax, slow embedded JS engine (IIRC), client-side complexity of the document data model and effort to maintain.
 
-- ## 🔥 [mvSQLite: Turning SQLite into a Distributed Database | Hacker News_202208](https://news.ycombinator.com/item?id=32539360)
+- ## 🔥 mvSQLite: [Turning SQLite into a Distributed Database | Hacker News_202208](https://news.ycombinator.com/item?id=32539360)
   - [Turning SQLite into a distributed database_202208](https://su3.io/posts/mvsqlite)
 
-- 
-- 
-- 
+- This is exactly what the engineers behind FoundationDB (FDB) wanted when they open sourced. 
+  - For those who don't know, FDB provides a transactional (and distributed) ordered key-value store with a somewhat simple but very powerful API.
+  - Their vision was to build the hardest parts of building a database, such as transactions, fault-tolerance, high-availability, elastic scaling, etc. 
+  - This would free users to build higher-level (Layers) APIs/libraries on top.
+
+- This project (mvSQLite) appears to have found a way around the 5s transaction limit as well as the size, so that's really promising. 
+- A simple workaround is to store “bulk data” in an external system like blob storage and reference that from the DB.
+
+- 🆚️ What makes this special compared to rqlite or dqlite?
+  - rqlite author here.rqlite doesn't implement its own consensus system either. It uses the same Raft consensus code that powers Hashicorp Consul. I don't see how this is any different, in principle, than using Foundation DB's consensus system.
+- rqlite's readme seems to indicate that it uses Consul only for service discovery, and runs Raft internally?
+  - I think the most important difference here is rqlite runs its "data plane" on a single consensus group/state machine while mvsqlite relies on FDB's distributed transaction system (well at the bottom there's a Paxos but it is only used for metadata coordination). Both approaches have advantages and disadvantages though.
+- Correct. What I meant by the reference to Consul is that rqlite uses the Raft implementation at its center and repurposes for use by rqlite. I can make that clearer.
+- IIRC rqlite replicates commands, dqlite replicates WAL frames, mvsqlite intercepts file system calls because it's a VFS implementation.
+
+- ## mvSQLite: [Show HN: Distributed SQLite on FoundationDB | Hacker News_202207](https://news.ycombinator.com/item?id=32269287)
 
 - ## 💡🔥 [Cross-Database Queries in SQLite | Hacker News_202102](https://news.ycombinator.com/item?id=26217754)
 - 

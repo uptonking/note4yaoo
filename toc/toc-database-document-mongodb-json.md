@@ -108,7 +108,7 @@ modified: 2022-11-03T04:14:11.987Z
   - forks
     - https://github.com/pdepip/yunodb
 
-- https://github.com/FoundationDB/fdb-document-layer /201909/cpp/python
+- https://github.com/FoundationDB/fdb-document-layer /apache2/201909/cpp/python
   - [Known Differences | FoundationDB Document Layer](https://foundationdb.github.io/fdb-document-layer/known-differences.html)
   - A document data model on FoundationDB, implementing MongoDB® wire protocol
   - implements a subset of the MongoDB® API (v 3.0.0) with some differences. 

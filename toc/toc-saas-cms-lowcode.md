@@ -356,6 +356,10 @@ modified: 2023-01-20T21:59:47.792Z
   - Free full-featured online store and blog themes with multiple plugins.
   - Integrated Database. SQLite, MySQL, MariaDB, PostgreSQL are supported to use.
   - Use all power of Next.js, Nest.js, TypeORM, TypeGraphQL along with CMS API to build any type of website.
+
+- https://github.com/DominateAi/Dominate-AI /202312/js
+  - open source CRM for Tech Founders
+  - 依赖MongoDB、ag-grid-react、xlsx
 # more
 - https://github.com/FactorJS/factor
   - Factor is an expressive & modular framework for JavaScript applications.

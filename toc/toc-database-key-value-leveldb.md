@@ -114,10 +114,16 @@ modified: 2022-11-03T04:14:00.563Z
   - Decentralized key-value store running on IPFS
   - DKV offers a simple interface for storing key/value pairs. Values can include links to other values recursively, giving you the ability to create complex graphs that de-duplicate commonly linked data.
 
-- https://github.com/cberner/redb /2.3kStar/MIT/202311/rust
+- https://github.com/cberner/redb /2.3kStar/MIT/202311/rust/lmdb
   - https://www.redb.org/
   - simple, portable, high-performance, ACID, embedded key-value store.
-  - written in pure Rust and is loosely inspired by lmdb. Data is stored in a collection of copy-on-write B-trees. 
+  - written in pure Rust and is loosely inspired by lmdb. 
+  - Data is stored in a collection of copy-on-write B-trees. 
+  - Zero-copy, thread-safe,  `BTreeMap` based API
+  - Fully ACID-compliant transactions
+  - MVCC support for concurrent readers & writer, without blocking
+  - Crash-safe by default
+  - Savepoints and rollbacks
 # leveldb-like
 - https://github.com/Level/bench
   - Benchmark `abstract-level` databases. 
@@ -215,6 +221,14 @@ modified: 2022-11-03T04:14:00.563Z
 - https://github.com/burhanxz/Distributed-KV /java
   - 根据LSM论文，并结合CPP已有的实现，利用Java实现了LSM架构；
   - 综合Dubbo等框架的特点，实现了简洁的RPC框架。
+# foundationdb-powered
+- https://github.com/FoundationDB/fdb-record-layer /apache2/202401/java
+  - The Record Layer is a Java API providing a record-oriented store on top of FoundationDB, (very) roughly equivalent to a simple relational database
+  - Records are defined and stored in terms of protobuf messages.
+  - The Record Layer supports a variety of different index types including value indexes (the kind provided by most databases), rank indexes, and aggregate indexes.
+  - Queries - The Record Layer does not provide a query language, however it provides query APIs with the ability to scan, filter, and sort across one or more record types, and a query planner capable of automatic selection of indexes.
+  - The Record Layer provides the ability to support many discrete record store instances, all with a shared (and evolving) schema. 
+    - For example, rather than modeling a single database in which to store all users' data, each user can be given their own record store, perhaps sharded across different FDB cluster instances.
 # redis-like
 - https://github.com/seppo0010/rsedis /1.7kStar/bsd/202011/rust
   - Redis re-implemented in Rust. To learn Rust.

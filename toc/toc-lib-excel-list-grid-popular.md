@@ -91,6 +91,7 @@ modified: 2022-08-21T10:02:27.788Z
 - 开源表格
   - 国内: luckysheet
   - 国外: ag-grid, tanstack-table, handsontable, o-spreadsheet, tui.grid, sleekgrid, simple-datatables
+  - ethercalc
   - tinybase
 
 - src-list-grid
@@ -569,7 +570,7 @@ modified: 2022-08-21T10:02:27.788Z
   - VTable is not just a high-performance multidimensional data analysis table, but also a grid artist that creates art between rows and columns
   - based on visual rendering engine VRender.
   - Provides flexible and powerful graphic capabilities, seamlessly integrating with charts of VChart.
-  - [VTable: 免费，开源，基于Canvas 的 百万数据秒级渲染前端表格组件库 - 知乎_202310](https://zhuanlan.zhihu.com/p/660261038)
+  - [VTable: 免费，开源，基于 Canvas 的百万数据秒级渲染前端表格组件库 - 知乎_202310](https://zhuanlan.zhihu.com/p/660261038)
   - https://github.com/VisActor/VRender
     - Rich in features: customizable animations, element composition, narrative arrangement, suitable for various visualization scenarios
     - provides a plugin system for unrestricted expansion.
@@ -688,11 +689,19 @@ modified: 2022-08-21T10:02:27.788Z
   - Use SQL syntax in formulas
   - Sync data via Remote Storage
 
-- https://github.com/audreyt/ethercalc /Artistic/202012/js/inactive
+- ethercalc /2.9kStar/Artistic/202012/js/inactive
+  - https://github.com/audreyt/ethercalc
   - https://ethercalc.net/
+  - EtherCalc is a web spreadsheet
   - Node.js port of Multi-user SocialCalc
   - 依赖xlsx、jquery-ui、jszip
-  - Your data is saved on the web, and people can edit the same document at the same time. Everybody's changes are instantly reflected on all screens.
+  - Your data is saved on the web, and people can edit the same document at the same time. 
+  - [EtherCalc: Open-source web spreadsheet | Hacker News_201408](https://news.ycombinator.com/item?id=8129281)
+  - forks
+  - https://github.com/Tuanshu/ethercalc /202312/
+    - post to ethercalc ok
+  - https://github.com/davidbwaikato/cbh-ethercalc /202111/js
+    - Cell Block HTML fork of Ethercal to support rich HTML representation along with text analysis in a spreadsheet
 # async/concurrency/worker
 - https://github.com/Magnithor/CanvasTable /202201/ts/inactive
   - https://magni.strumpur.net/CanvasTable/
@@ -877,6 +886,7 @@ modified: 2022-08-21T10:02:27.788Z
   - supports any value: texts, numbers, floats, and formulae. Ex: "=A1+8"
   - cells update in cascade, circular reference protection
   - localStorage persistence
+  - [Tinysheet | Hacker News_202110](https://news.ycombinator.com/item?id=28967514)
 
 - recline /2kStar/MIT/202008/js
   - https://github.com/datopian/recline
@@ -906,6 +916,9 @@ modified: 2022-08-21T10:02:27.788Z
     - [类似石墨文档多人编辑同一个文档是否可以锁定某个区域单元格](https://github.com/myliang/x-spreadsheet/issues/121)
       - 表格对于协同编辑没有什么意义，暂时不会考虑类似功能
     - [Load Json Data Or Excel Data](https://github.com/myliang/x-spreadsheet/issues/55)
+  - [Show HN: X-spreadsheet – A JavaScript canvas spreadsheet for web | Hacker News_201901](https://news.ycombinator.com/item?id=19017270)
+    - It is hard to makes formulas fast enough with JS.
+    - The main speed problems with ethercalc are loading the data from the server and calculating the formulas. I did strip down the code to remove these problems to make web apps work.
 
 - glide-data-grid /836Star/MIT/202202/ts/react-heavy
   - https://github.com/glideapps/glide-data-grid
@@ -1332,10 +1345,30 @@ modified: 2022-08-21T10:02:27.788Z
 
 - https://github.com/pgte/js-sparse-array /201812/js
   - Sparse array implementation in JS with no dependencies
+
+- https://github.com/handsontable/spreadsheet-viewer /NonOpen
+  - A 30-day trial license is available
+
+- https://github.com/vkaswin/google-sheets /202312/ts
+  - https://vkaswin.github.io/google-sheets/
+  - Built a Google Sheet Clone Using React.js, Node.js, Express.js, MongoDB, and Tailwind
+
+- https://github.com/tanwarAalok/google-sheet-clone /202309/js
+  - https://google-sheet-clone.netlify.app/
+  - A google sheets clone developed using Vanilla Javascript
+  - more
+  - https://github.com/Prakhar-FF13/GoogleSheetClone /202307
+  - https://github.com/nidhiG30/Sheets-Clone /202307
+  - https://github.com/Yashkanekar/excel-vanilla-js
+  - https://github.com/Raj-Stark/Google-Sheet-2.0
+  - https://github.com/noobCode-69/ExcelClone
+  - https://github.com/PrinceAttri/sheets-clone
 # server
-- https://github.com/forensic-architecture/datasheet-server /202105/js/inactive
+- https://github.com/forensic-architecture/datasheet-server /MIT/202105/js/inactive
   - Turn spreadsheet data into a structured, dynamic API.
   - Extensible architecture. Currently supports Google Sheet as a source and a REST-like query language, but structured modularly with an intention to support other sources and query languages.
+  - [Topic/xlsx_202004](https://github.com/forensic-architecture/datasheet-server/pull/50)
+    - adds support for using a local XLSX file as a source
 
 - https://github.com/ExcQL/ExcQL /js
   - A web application transforming excel spreadsheets into SQL scripts
@@ -1343,11 +1376,28 @@ modified: 2022-08-21T10:02:27.788Z
 - https://github.com/jupemara/spreadsheet-sql /ts
   - Getting Google spreadsheet data by using like SQL.
 
+- https://github.com/mP1/walkingkooka-spreadsheet /apache2/202401/java
+  - A web based spreadsheet application.
+  - https://github.com/mP1/walkingkooka-spreadsheet-react /202310/js
+    - web client with little if any spreadsheet logic.
+    - 依赖mui.v5
+  - https://github.com/mP1/walkingkooka-spreadsheet-server
+    - A technology agnostic server abstraction for walkingkooka-spreadsheet.
+    - It includes a router and some handlers for spreadsheet services.
+    - Currently communication between the browser and the server follows a browser client and Http server paradigm
+    - The switch to offline mode means the React application simply replaces the Jetty servlet container, rather than using the browser's fetch object to communicate via http to a Jetty server, the request is serialized and posted to a webworker. The webworker hosts the same java server code translated to javascript.
+
 - https://github.com/Roffelchen/spreadsheet-crdt
   - npx y-websocket-server
 
-- https://github.com/handsontable/spreadsheet-viewer /NonOpen
-  - A 30-day trial license is available
+- https://github.com/gucorpling/gitdox
+
+- https://github.com/gucorpling/gitdox /apache2/202401/python/js
+  - https://gucorpling.org/gitdox/
+  - GitDox is an online editor for version controlled collaborative XML and spreadsheet editing used for linguistic corpus annotation.
+  - The editor interface is based on CodeMirror. GitHub is used as a remote backend, and SQLite is used for local storage.
+  - GitDox is used by Coptic SCRIPTORIUM as an xml editor/transcription tool for Coptic texts
+
 # css-table/grid
 - https://codepen.io/scottjehl/pen/abJrPOP
   - A CSS-only responsive table with fixed column & row headers, inside a layout, with scroll snapping!

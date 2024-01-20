@@ -33,20 +33,47 @@ modified: 2023-01-09T11:04:13.958Z
   - a library to generate docx/pptx documents from a docx/pptx template.
   - Functionality can be added with the following paid modules
 
-- SheetJS js-xlsx Community Ed. /33.4kStar/apache2/202208/ts/大多功能在pro版
+- SheetJS/xlsx /33.4kStar/apache2/202209/ts/v0.18/大多功能在pro版
   - https://git.sheetjs.com/SheetJS/sheetjs
   - https://github.com/SheetJS/sheetjs
   - https://oss.sheetjs.com/
   - https://sheetjs.com/pro/
   - [sheetjs data model: csf](https://docs.sheetjs.com/docs/csf/)
-  - 依赖cfb(Compound File Binary File Format extractor), ssf  
+  - 依赖cfb(Compound File Binary File Format extractor)、ssf
   - 常作为excel读写的工具库，而不用来渲染，官网示例上传excel可渲染成canvas或td
   - 无依赖，自己实现了办公类文档的各种解析器 js-word、js-ppt、ssf、js-cfb
   - pro: edit/image/chart
   - SheetJS presents a simple JS interface that works with "Array of Arrays" and "Array of JS Objects".
-  - https://github.com/mgcrea/node-xlsx /ts
-    - NodeJS excel file parser & builder
-    - Relies on SheetJS xlsx module to parse/build excel sheets
+  - forks
+  - https://github.com/gitbrent/xlsx-js-style /202204/ts
+    - Current version of sheetjs used: 0.18.5
+    - This project is a fork of SheetJS/sheetjs combined with code from sheetjs-style (by ShanaMaid) and sheetjs-style-v2 (by Raul Gonzalez).
+    - https://github.com/Sariyya/xlsx-js-style /202312
+  - https://github.com/ShanaMaid/sheetjs-style /202106/js
+    - support set cell style for sheetjs
+    - API is the same as sheetjs!
+    - https://github.com/rona354/sheetjs-style-roy /202208
+  - https://github.com/Sariyya/xlsx-js-style /202312/js
+  - https://github.com/Favro/sheetjs /202309
+    - NUMBERS read/write threaded comments
+- https://github.com/mgcrea/node-xlsx /ts
+  - NodeJS excel file parser & builder
+  - Relies on SheetJS xlsx module to parse/build excel sheets
+
+- js-xlsx/xlsx-style /201706/js/inactive
+  - https://github.com/protobi/js-xlsx
+  - a fork of the original SheetJS/sheetjs
+  - extended to enable cell formats to be read from and written to .xlsx workbooks.
+  - The intent is to provide a temporary means of using these features in practice, and ultimately to merge this into the primary project.
+  - forks
+  - https://github.com/iroot/sheetjs /202012/js
+    - Manual merge branch 'protobi/master' into style
+  - https://github.com/JimZhu6/js-xlsx /202312/js
+    - 修复了找不到'./cptable'及其他引用问题
+  - https://github.com/DmitriySlabodchikov/js-xlsx /202309
+  - https://github.com/JonathanDn/js-xlsx-formula-and-rtl /202308/js
+- https://github.com/protobi/workbook /201602/js
+  - Wrapper for js-xlsx providing convenient way to accumulate sheets, rows, styles
 
 - exceljs /11.7kStar/MIT/202305/js
   - https://github.com/exceljs/exceljs
@@ -58,6 +85,12 @@ modified: 2023-01-09T11:04:13.958Z
   - 本来是想给exceljs提PR的，但是发现exceljs快2年没人维护了
   - xlsx，是sheetjs出的，这个功能最广，支持读取xls格式。但是这个库其实是个社区版，阉割了加解密功能
   - [推荐一个新的excel处理库，支持xlsx文件的解密功能](https://cnodejs.org/topic/647e911256d983d3ff9d9cfa)
+
+- https://github.com/Siemienik/XToolset /MIT/202311/ts
+  - https://siemienik.com/docs/xlsx-renderer/
+  - spreadsheet tools
+  - XLSX-Renderer: Export data to Ecma-376 .XLSX Excel files based on template; generating Excel files with minimum code
+  - XLSX-Import: Importing data from xlsx as simple as possible and map into configured data model
 
 - https://github.com/dtjohnson/xlsx-populate /202003/js
   - Excel XLSX parser/generator written in JavaScript with Node.js and browser support, jQuery/d3-style method chaining, encryption, and a focus on keeping existing workbook features and styles in tact.
@@ -86,6 +119,14 @@ modified: 2023-01-09T11:04:13.958Z
 
 - https://github.com/Neovici/nullxlsx
   - Minimal JavaScript library to create XLSX spreadsheet and ZIP archive files.
+
+
+- https://github.com/MathNya/umya-spreadsheet /MIT/202401/rust
+  - rust library for reading and writing spreadsheet files
+  - https://github.com/informationsea/xlsxwriter-rs /202304/rust/inactive
+
+- https://github.com/protobi/msexcel-builder /202301/js
+  - A simple and fast library to create MS Office Excel(>2007) xlsx files(Compatible with the OpenOffice document format).
 
 - https://github.com/optilude/xlsx-template /ts
   - A NodeJS module to generate Excel files in .xlsx format from a template created with Excel itself
@@ -151,10 +192,6 @@ modified: 2023-01-09T11:04:13.958Z
   - formulas implements an interpreter for Excel formulas, which parses and compile Excel formulas expressions.
   - it compiles Excel workbooks to python and executes without using the Excel COM server. Hence, Excel is not needed.
 # template
-- https://github.com/Siemienik/XToolset /ts
-  - Export data to Ecma-376 . XLSX Excel files based on template
-  - Import data from Workbooks / Worksheets Excel files
-
 - https://github.com/plantain-00/js-excel-template
   - A js excel template used in browser or nodejs environment.
   - Generate Excel based on Excel template
@@ -191,16 +228,6 @@ modified: 2023-01-09T11:04:13.958Z
   - convert table or spreadsheet data into an image
   - `node-canvas` module is peer-dependency
 # excel-utils
-- https://github.com/protobi/msexcel-builder /202301/js
-  - A simple and fast library to create MS Office Excel(>2007) xlsx files(Compatible with the OpenOffice document format).
-
-- https://github.com/protobi/js-xlsx /202008/js/inactive
-  - a fork of the original SheetJS/sheetjs
-  - extended to enable cell formats to be read from and written to .xlsx workbooks. 
-  - The intent is to provide a temporary means of using these features in practice, and ultimately to merge this into the primary project.
-  - https://github.com/protobi/workbook /201602/js
-    - Wrapper for js-xlsx providing convenient way to accumulate sheets, rows, styles
-
 - https://github.com/hxj9102/table2excel
   - text and image save to excel
 # excel-db

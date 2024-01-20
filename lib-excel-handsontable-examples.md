@@ -83,18 +83,23 @@ modified: 2023-12-21T20:06:13.700Z
   - CSV editor that gives you a great experience with simple operations.
   - 依赖hot.v6、electron、vuedraggable
 
-
 - https://github.com/implerhq/impler.io /MIT/202401/ts
   - https://impler.io/
   - Open source CSV & Excel file Import Experience
   - Built With Nestjs Typescript Nx Pnpm
   - 依赖handsontable.v13
 
-
 - https://github.com/DTStack/dt-react-component /202312/ts
   - https://dtstack.github.io/dt-react-component/
   - React UI component library based on antd package
   - 依赖handsontable.v6
+
+- https://gitee.com/bomwu/xlsx2handson /202205/js/inactive
+  - 一个将XLSX文件转换为Handsontable配置的工具, 可参考dist/index.html
+  - 依赖Luckyexcel
+
+- https://github.com/zayscue/websheets /MIT/201811/js
+  - a test for importing an excel sheet into a web page using react.js, react dropzone, sheet.js, and handsontable
 # utils
 - https://github.com/Yinger/ts-excel-compare /202009/ts
   - https://yinger.github.io/ts-excel-compare/
@@ -114,10 +119,6 @@ modified: 2023-12-21T20:06:13.700Z
 
 - https://github.com/burnash/dataimport
   - Simple JavaScript CSV Importer
-
-- https://gitee.com/bomwu/xlsx2handson /202205/js/inactive
-  - 一个将XLSX文件转换为Handsontable配置的工具, 可参考dist/index.html
-  - 依赖Luckyexcel
 
 - https://github.com/handsontable/pikaday /202312/js/NoDeps
   - A refreshing JavaScript Datepicker — lightweight, no dependencies, modular CSS
@@ -183,8 +184,6 @@ modified: 2023-12-21T20:06:13.700Z
 
 - https://github.com/OpenDataRepository/data-publisher /202401/php/js
   - aims to create a simple tool for publishing data to the web.
-
-
 # integrations
 - https://gitlab.com/thanhhuu09/superset-handsontable-plugin /202308/ts/v13
   - This is the Superset Handsontable Plugin Superset Chart Plugin.

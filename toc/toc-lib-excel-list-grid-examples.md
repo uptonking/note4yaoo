@@ -162,9 +162,6 @@ modified: 2022-08-21T10:03:52.222Z
   - jamovi is a free statistics package, which is designed to be familiar to users of SPSS. 
   - It provides a spreadsheet editor, and a range of statistical analyses. 
   - jamovi can provide R syntax for each analysis that is run, and additional analyses for jamovi can be developed using the R language.
-- https://github.com/ethersheet-collective/EtherSheet
-  - Online spreadsheet collaboration in real time using node.js. 
-  - Similar to etherpad-lite but its a spreadsheet!
 
 - https://github.com/PranjaliPatil14/CRUDOperationsWithAgGrid
   - client side Crate, Read, Update, Delete operations on react data grid using AgGrid library.

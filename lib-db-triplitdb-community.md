@@ -77,7 +77,33 @@ modified: 2023-10-11T21:37:25.329Z
 # discuss
 - ## 
 
-- ## 
+- ## 🗑️ is it possible to delete a database?
+- https://discord.com/channels/1138467878623006720/1138467879113728033/1197135462607888465
+- If you're running locally and using the SQLite adapter, you can just delete the SQLite files. 
+  - If you're running on Triplit Cloud, you can delete the database from the Dashboard.
+
+- https://discord.com/channels/1138467878623006720/1138467879113728033/1197351110285991947
+- You are correct, that schema modifying methods on the database only effect the underlying schema definitions but doesn't delete the underlying data like you would expect with a SQL `drop table ...` . 
+  - Instead you can/must query the entities in that collection and delete in that transaction to achieve what you're going for
+  - I can see how those methods are confusing. We might be better off with refactor
+
+- `client.db.clear()` should do what you want (it also removes schemas as well iirc)
+  - The caveat is that it's a local-only operation so it won't cause deletes to sync to the server or other connected clients
+
+- If you want to delete just from the client you can do it in a transaction
+
+```JS
+await client.transact(async (tx) => {
+  for (const name of collectionsArray) {
+    console.log("dropping collection", name);
+    const entitiesToDelete = await client.fetch(client.query(name));
+    for (const entityId of entitiesToDelete.keys()) {
+      await client.delete(name, entityId);
+    }
+    await tx.dropCollection({ name });
+  }
+});
+```
 
 - ## A sneak preview of a simpler way to define relationships between collections in Triplit
 - https://twitter.com/matthew_linkous/status/1745203037210030565

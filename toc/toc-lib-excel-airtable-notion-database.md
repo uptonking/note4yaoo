@@ -60,21 +60,20 @@ modified: 2022-08-21T10:02:05.129Z
   - https://notionate.linyo.ws/
   - React components that uses the Notion API to display the Notion's database and page.
 
-- undb /20Star/AGPLv3/202304/ts
+- undb /20Star/AGPLv3/202304/ts/参考前端后端
   - https://github.com/undb-xyz/undb
   - https://www.undb.xyz/
   - https://docs.undb.xyz/
   - Private first, unified, self-hosted no code database.
-  - 前端依赖 undb, dnd-kit、tanstack-table, redux-toolkit, emotion, @loadable/component, jotai, react-hook-form, trpc
-    - 可在redux-devtools中查看数据结构
+  - Open-source Airtable alternative
+  - 前端依赖 tanstack-table、dnd-kit、redux-toolkit、emotion、@loadable/component、jotai、react-hook-form、trpc
   - 后端依赖 nestjs、mikro-orm、trpc、undb
+  - 可在redux-devtools中查看数据结构
   - [feature/frontend next_20230503(v0.3), 前端迁移到svelte](https://github.com/undb-xyz/undb/pull/908)
     - 41fa03d9bfbc9b5072266ad94c9532ccdcf25a68
 - https://github.com/baastronaut/baastronaut /ts
-  - Open-source Airtable alternative
-  - 依赖 nestjs、reactgrid、@mui/x-data-grid、mantine.v6、next
 
-- nocodb /33kStar/AGPLv3/202212/ts/vue/重后端/多视图
+- nocodb /33kStar/AGPLv3/202212/ts/vue/参考后端/多视图
   - https://github.com/nocodb/nocodb
   - https://nocodb.com/
   - [Development Setup](https://docs.nocodb.com/engineering/development-setup/)
@@ -96,7 +95,7 @@ modified: 2022-08-21T10:02:05.129Z
   - API: REST and graphql
   - [NocoDB – Turn your SQL database into a Nocode platform | Hacker News_202111](https://news.ycombinator.com/item?id=29176436)
 
-- locokit /47Star/MIT/202301/ts
+- locokit /47Star/MIT/202301/ts/参考后端
   - https://github.com/locokit/locokit
   - https://locokit.io/
   - LocoKit is an AirTable alternative, providing database management as a spreadsheet and an app builder.
@@ -111,39 +110,6 @@ modified: 2022-08-21T10:02:05.129Z
     - Processes/Workflows with a webhook mechanism
   - [[roadmap] API over SQL / Nuxt 3 / Feathers 5 / Pinia](https://github.com/locokit/locokit/issues/151)
     - 正在迁移到nuxt3+pinia(vue store)+feathers5
-
-- apitable /2.3kStar/AGPLv3/202301/ts/java/维格表团队
-  - https://github.com/apitable/apitable
-  - https://apitable.com/
-  - [开发者指南](https://github.com/apitable/apitable/blob/develop/docs/readme/zh-CN/docs/contribute/developer-guide.md)
-  - API-oriented low-code platform for building collaborative apps and better than all other Airtable open-source alternatives
-  - 后端依赖 spring-boot、mybatis、easyexcel、grpc、protobuf、nestjs
-  - 前端依赖 antd、ahooks、redux、exceljs、konva、markdown-it、react-quill、react-dnd、slate
-  - 主要功能模块
-    - 基于canvas渲染的表格ui
-    - 实时协作
-    - 数据库本地架构：变更集/操作/动作/快照等
-    - 跨表关联
-    - 自动生成api，一键式API面板
-    - 表单
-    - 强大的行/列权限
-    - Shareable and embeddable page
-  - APITable 将提供一个数据表查询语言(DQL)来查询您的数据库电子表格内容。
-  - Realtime collaboration allows multiple users to edit together in real time, or simultaneously with the Operational Transformation (OT) Algorithm.
-  - 7 View Types: Grid View (Datasheet) / Gallery View / Mindmap View / Kanban View / Full-Feature Gantt View / Calendar View
-  - [APITable: open-source Airtable alternative | Hacker News_202212](https://news.ycombinator.com/item?id=34127804&ref=upstract.com)
-  - super-fast database-spreadsheet interface in `<canvas>` Rendering Engine.
-  - Database native architecture: Changeset / Operation / Action / Snapshot and so on.
-  - Full-stack API access, from Data to Metadata.
-  - One-direction / Bi-direction Table Link and Infinite Cross Links
-  - Embed-friendly: Share your datasheet table or folder. Embed them by copying and pasting HTML scripts.
-  - Community-friendly programming languages and framework, TypeScript (NextJS + NestJS) and Java (Spring Boot)
-  - APITable will provides a Datasheet Query Language (DQL) to query your database-spreadsheet contents.
-  - 落地页glassmorphism风格
-  - [apitable 和 vika.cn 是有啥关系吗？怎么两个产品看起来一模一样？](https://discord.com/channels/1016320471010115666/1062551587718959224/1062555700246618193)
-    - APITable is the open-source and community version of Vika.
-    - Vika is a SaaS distribution for China mainland built on APITable open-source core
-  - [chore: update BSL license by mr-kelly](https://github.com/apitable/apitable/pull/1428)
 
 - nocobase /3.7kStar/apache2/202212/ts/国内
   - https://github.com/nocobase/nocobase
@@ -236,6 +202,39 @@ modified: 2022-08-21T10:02:05.129Z
   - https://github.com/gristlabs/grist-ee
     - The source code for self-managed Grist Enterprise.
 
+- apitable /2.3kStar/AGPLv3/202301/ts/java/维格表团队
+  - https://github.com/apitable/apitable
+  - https://apitable.com/
+  - [开发者指南](https://github.com/apitable/apitable/blob/develop/docs/readme/zh-CN/docs/contribute/developer-guide.md)
+  - API-oriented low-code platform for building collaborative apps and better than all other Airtable open-source alternatives
+  - 后端依赖 spring-boot、mybatis、easyexcel、grpc、protobuf、nestjs
+  - 前端依赖 antd、ahooks、redux、exceljs、konva、markdown-it、react-quill、react-dnd、slate
+  - 主要功能模块
+    - 基于canvas渲染的表格ui
+    - 实时协作
+    - 数据库本地架构：变更集/操作/动作/快照等
+    - 跨表关联
+    - 自动生成api，一键式API面板
+    - 表单
+    - 强大的行/列权限
+    - Shareable and embeddable page
+  - APITable 将提供一个数据表查询语言(DQL)来查询您的数据库电子表格内容。
+  - Realtime collaboration allows multiple users to edit together in real time, or simultaneously with the Operational Transformation (OT) Algorithm.
+  - 7 View Types: Grid View (Datasheet) / Gallery View / Mindmap View / Kanban View / Full-Feature Gantt View / Calendar View
+  - [APITable: open-source Airtable alternative | Hacker News_202212](https://news.ycombinator.com/item?id=34127804&ref=upstract.com)
+  - super-fast database-spreadsheet interface in `<canvas>` Rendering Engine.
+  - Database native architecture: Changeset / Operation / Action / Snapshot and so on.
+  - Full-stack API access, from Data to Metadata.
+  - One-direction / Bi-direction Table Link and Infinite Cross Links
+  - Embed-friendly: Share your datasheet table or folder. Embed them by copying and pasting HTML scripts.
+  - Community-friendly programming languages and framework, TypeScript (NextJS + NestJS) and Java (Spring Boot)
+  - APITable will provides a Datasheet Query Language (DQL) to query your database-spreadsheet contents.
+  - 落地页glassmorphism风格
+  - [apitable 和 vika.cn 是有啥关系吗？怎么两个产品看起来一模一样？](https://discord.com/channels/1016320471010115666/1062551587718959224/1062555700246618193)
+    - APITable is the open-source and community version of Vika.
+    - Vika is a SaaS distribution for China mainland built on APITable open-source core
+  - [chore: update BSL license by mr-kelly](https://github.com/apitable/apitable/pull/1428)
+
 - S2 /1.1kStar/MIT/202302/ts
   - https://github.com/antvis/S2
   - https://s2.antv.antgroup.com/examples
@@ -256,7 +255,8 @@ modified: 2022-08-21T10:02:05.129Z
   - Uses popular frameworks and tools like Django, Vue.js and PostgreSQL.
   - Baserow is not completely open source, there are features they reserve for premium users (like kanban view).
 
-- https://github.com/mathesar-foundation/mathesar /2kStar/GPLv3/202312/python/svelte
+- mathesar /2kStar/GPLv3/202312/python/svelte
+  - https://github.com/mathesar-foundation/mathesar
   - https://mathesar.org/
   - open source tool that provides a spreadsheet-like interface to a PostgreSQL database.
   - You can use Mathesar to build data models, enter data, and even build reports. 

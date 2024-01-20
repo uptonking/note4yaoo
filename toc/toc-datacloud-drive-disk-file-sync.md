@@ -120,7 +120,7 @@ modified: 2022-09-10T02:26:52.062Z
   - https://github.com/internxt/drive-mobile
     - Current react-native-reanimated fails with Android using RN 0.64
 
-- https://github.com/frappe/drive /python/vue
+- https://github.com/frappe/drive /AGPLv3/202401/python/vue
   - easy to use, document sharing and management solution
   - 依赖werkzeug
   - Upload and store files across multiple platforms.

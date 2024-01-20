@@ -784,14 +784,6 @@ modified: 2023-12-15T19:30:23.094Z
   - It supports only string with RegExp pattern, email, richtext, integer, decimal, date, media(videos, images, audios, files), boolean enumeration, password, UID, relation, json fields of your content types.
   - It creates content in draft if the content type has draft & publish option
 
-- https://github.com/ComfortablyCoding/strapi-plugin-io /MIT/202311/js
-  - https://strapi-plugin-io.netlify.app/
-  - A plugin for Strapi CMS that provides the ability for Socket IO integration
-
-- https://github.com/larsonnn/strapio /202201/js
-  - Socket. IO Implementation for Strapi
-  - module for working with socket.io with predefined rules. StrapIO will look at Role permission on each action. StrapIO is looking for all roles which have access to the given contenttype and action type.
-
 - https://github.com/Four-Lights-NL/strapi-plugin-deepcopy /202312/ts
   - A strapi plugin providing a deep copy functionality for nested entities.
   - The default behaviour in Strapi is to create a shallow copy when duplicating an entity. This means that any relations are lost and have to be duplicated separately and connected manually to the newly created entities.
@@ -909,6 +901,8 @@ modified: 2023-12-15T19:30:23.094Z
   - The Strapi & Next.js Monorepo Starter
   - combining the powers of Strapi, Next.js, and Turborepo in a monorepo setup
 
+
+
 - https://github.com/malgamves/modern-cms-apps-course-v2 /202306/js
   - Building Modern CMS Driven Web Applications with Next.js and Strapi
   - [Modern CMS Driven Web Applications with Strapi and Next 13 | egghead.io](https://egghead.io/courses/modern-cms-driven-web-applications-with-strapi-and-next-13-e923dbd8)
@@ -947,10 +941,6 @@ modified: 2023-12-15T19:30:23.094Z
   - https://canopas.com/resources
   - Feature-Rich blogs platform built with strapi and next.js
 
-- https://github.com/divofred/strapi-chat-app /202205/js
-  - Complete Strapified chat application
-  - strapi v4 + nextjs
-
 - https://github.com/ElektronPlus/school-website /202210/ts/v4
   - https://dev.elektronplus.pl/
   - Accessible and extremely user-friendly website template for schools in Poland, built on fun and modern stack.
@@ -982,9 +972,39 @@ modified: 2023-12-15T19:30:23.094Z
   - https://userstory.site/
   - POST stories. GET features.
   - https://github.com/EOS-uiux-Solutions/strapi
+# realtime/collab
+- https://github.com/ComfortablyCoding/strapi-plugin-io /MIT/202312/js
+  - https://strapi-plugin-io.netlify.app/
+  - A plugin for Strapi CMS that provides the ability for Socket IO integration
 
-## clients-mobile/pc
+- https://github.com/larsonnn/strapio /202201/js/inactive
+  - Socket. IO Implementation for Strapi
+  - module for working with socket.io with predefined rules. StrapIO will look at Role permission on each action. StrapIO is looking for all roles which have access to the given contenttype and action type.
+  - https://github.com/genjudev/strapio-example-project /202109/js
 
+- https://github.com/jenniferokafor/collaborative-code-editor /202306/ts
+  - client依赖codemirror.v6、@uiw/react-codemirror
+
+- https://github.com/frontcodelover/iloveshare /202208/js
+  - Just an webapp like dev.to. but in french language only Users can be connected and add articles, tags, pictures.
+
+- https://github.com/ashish-adhikaree/VetGhat /202303/ts
+  - a simple social media app that provides means to connect to your loved ones.
+
+
+- https://github.com/misstarn/chatstrapi /202310/js
+  - 使用strapi+socketio作为chatapp的后端
+
+- https://github.com/divofred/strapi-chat-app /202205/js
+  - Complete Strapified chat application
+  - strapi v4 + nextjs
+  - [Building a Real-time Chat Application Using Strapi, Next, Socket.io, and PostgreSQL_202206](https://strapi.io/blog/real-time-chat-application-using-strapi-next-socket-io-and-postgre-sql)
+
+- https://github.com/i1d9/strapi-bids-frontend /202206/js/vue
+  - Bid/Auction Application made with strapi, socket-io-client and bootstrap 5
+  - https://github.com/i1d9/strapi-bids-backend
+  - [Creating a Real-Time Bidding App Using Strapi v4, Vue and Socket IO_202208](https://strapi.io/blog/how-to-create-a-real-time-bidding-app-using-strapi-v4-vue-and-socket-io)
+# clients-mobile/pc
 - https://github.com/shahednasser/strapi-react-native /202202/js
   - Code for Create a Notes App with Strapi and React Native
 # utils

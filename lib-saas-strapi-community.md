@@ -90,6 +90,12 @@ npm run develop
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
 - ## ⚖️ @strapijs and so #Strapi Cloud will become SOC2 compliant! We just achieved 99%_202401
 - https://twitter.com/laurie_jim/status/1746903974442406057
   - YI Strapi Cloud manages for your, the server (up time, scaling, etc), a database, a CDN and backups. All in one
@@ -166,3 +172,8 @@ npm run develop
 
 - Plone is really heavy duty in comparison to Strapi. Plone is what you use if you want a CMS for an enterprise. Strapi is what you use if you want a very lightweight CMS and you find even something like wordpress too heavy.
   - I did a year of Plone development for an employer and hated it with a passion. It feels like Java implemented in Python.
+
+- ## [如何评价Strapi? - 知乎](https://www.zhihu.com/question/305040758/answers/updated)
+- 
+- 
+- 

@@ -192,6 +192,13 @@ modified: 2020-12-09T09:30:24.694Z
 - https://github.com/mlcraft-io/mlcraft
   - a low-code metrics layer and a modern open-source alternative to Looker.
   - Cube.js is used as a primary query layer and makes it suitable for handling trillions of data points.
+
+- https://github.com/centeractive/koia /MIT/202311/ts/angular
+  - https://www.koia.io/
+  - an angular-based, a privacy-focused open-source web application for visualizing and analyzing table-like data structures
+  - It offers a modern and minimalistic approach for creating flat tables, pivot-tables, summaries, relationship graphs and charts while having total control over your data.
+  - Data is loaded from files (CSV, Excel or JSON) to the browser's IndexedDB or a local CouchDB through Koia itself
+  - It is recommended to use CouchDB 3.n since the data scenes in Koia will be lost when the browser cache is emptied when using the IndexedDB.
 # examples
 - https://github.com/amcharts/covid-charts
   - A collection of JS-based data visualization tools and data for depicting spread of the COVID-19

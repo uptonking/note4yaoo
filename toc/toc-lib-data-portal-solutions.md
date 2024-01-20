@@ -47,11 +47,11 @@ modified: 2021-01-01T16:02:50.598Z
     - My breakthrough was the realization that any text data packaged as a SQLite database could be deployed to inexpensive serverless hosting. And binary data too
     - For sites that are running in CKAN using the datastore plugin on CSV/tabular resources, there is essentially a sql endpoint to make queries against that data. There are also automated conversions of that data to csv/json/xml. In my experience though, there's not a lot of activity around those apis -- people tend to just download the data.
 
-- datopian-portaljs /2kStar/MIT/202202/js/inactive
+- datopian-portaljs /2kStar/MIT/202401/ts
   - https://github.com/datopian/portaljs
   - https://portaljs.org/
   - a framework for rapidly building rich data portal frontends using a modern frontend approach.
-  - 依赖material-ui.v4, mui-x-data-grid, react-plotly.js, nextjs
+  - 依赖ag-grid、tanstack-table、xlsx、material-ui.v4, mui-x-data-grid, react-plotly.js, nextjs
   - built in Javascript and React on top of the popular Next.js framework. 
   - portal assumes a "decoupled" approach where the frontend is a separate service from the backend and interacts with backend(s) via an API. 
   - It can be used with any backend and has out of the box support for CKAN.

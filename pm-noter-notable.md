@@ -226,6 +226,10 @@ modified: 2023-11-28T14:48:45.910Z
 - office开放集成
   - 支持wopi协议集成
 
+- core免费，plugin收费
+  - 类似vscode扩展市场
+  - 非热门产品的特性插件是否该付费，参考nocodb，只将某些数据源收费，如oracledb
+
 ## pricing
 
 - [ckeditor](https://ckeditor.com/pricing/)
@@ -268,6 +272,10 @@ modified: 2023-11-28T14:48:45.910Z
   - Enterprise/$166: 5dev, 2app, saas, limited-ext
   - Ultimate/$291: 10dev, 3app, saas, ext
   - Custom/talk: Ndev, Napp
+
+- [sheetjs](https://sheetjs.com/pro/)
+  - free: apache2
+  - pro: $250/yr, basic, Image, Chart, Edit
 
 - [SpreadJS 表格控件](https://www.grapecity.com.cn/developer/spreadjs/price)
   - 个人: 一年￥9800
