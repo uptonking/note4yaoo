@@ -158,9 +158,9 @@ modified: 2022-08-14T16:26:48.558Z
 - mt-block-editor /2Star/paid/ts/202208/提交多
   - https://github.com/movabletype/mt-block-editor
   - https://movabletype.github.io/mt-block-editor/
-  - 依赖react、react-dnd、react-shadow、i18next，与具体编辑器无关
+  - 依赖react-dnd、react-shadow、i18next，与具体编辑器无关
   - 示例使用的是 tinymce.v6
-  - 不支持跨block选择部分文字
+  - 不支持跨block选择部分文字，偶尔也支持，体验很不流畅
   - 支持拖拽block修改顺序
   - 可自定义block的block editor
   - https://github.com/movabletype/mt-plugin-MTBlockEditor

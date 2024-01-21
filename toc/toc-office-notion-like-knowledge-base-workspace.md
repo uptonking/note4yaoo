@@ -16,7 +16,7 @@ modified: 2022-06-03T21:34:54.893Z
   - 偏代码的格式可考虑 rdf/json-ld
 
 - resources
-  - search: knowledge-base/workspace/wiki
+  - search: knowledge-base/workspace/wiki/Personal Information Manager (PIM)
   - self-contained, in the browser
 # notion-like-workspace
 - siyuan /6.6kStar/AGPLv3/202208/ts/go/支持协作

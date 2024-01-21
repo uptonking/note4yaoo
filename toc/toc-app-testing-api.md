@@ -84,8 +84,11 @@ modified: 2023-02-08T10:25:14.173Z
 - https://github.com/sirupsen/napkin-math /rust/go
   - Techniques and numbers for estimating system's performance from first-principles
 
-- https://github.com/nolanlawson/fuite /js
+- https://github.com/nolanlawson/fuite /202401/js
   - a CLI tool for finding memory leaks in web apps.
+  - fuite launches Chrome using Puppeteer, loads a web page, and runs a scenario against it. 
+  - It runs the scenario some number of iterations (7 by default) and looks for objects that leaked 7 times (or 14 times, or 28 times). 
+  - This might sound like a strange approach, but it's useful for cutting through the noise in memory analysis.
 # web-testing
 - https://github.com/puppeteer/puppeteer /202311/ts
   - https://pptr.dev/

@@ -385,6 +385,13 @@ modified: 2022-11-25T15:50:48.226Z
   - used-by
     - json-server
 
+- https://github.com/datopian/markdowndb /MIT/202401/ts/sqlite
+  - https://markdowndb.com/
+  - JS library to turn markdown files into structured queryable database (SQL-based and simple JSON). 
+  - It helps you build rich markdown-powered sites easily
+  - Parses your markdown files to extract structured data (frontmatter, tags etc) and creates an index in a local `SQLite` database
+  - Provides a lightweight javascript API for querying the database and importing files into your application
+
 - https://github.com/sius/fakerdb /202005/js
   - Generate an unlimited stream of JSON schema instances using json-schema-faker, faker, chance and insert the data into a supported database, e.g.: nedb, mongodb, postgres, mssql.
 

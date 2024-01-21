@@ -159,6 +159,25 @@ modified: 2023-09-28T20:35:56.153Z
     - This preserves conflicts (which is awesome!), but it discards non-leafs for performance reasons.
   - Notice that all the revisions are kept, even the non-leafs. 
 
+- https://github.com/vrtmrz/filesystem-livesync /MIT/202303/ts
+  - The synchronization daemon between filesystem and CouchDB compatible with Self-hosted livesync.
+  - The project has been integrated into LiveSync Bridge, and will be no longer maintained. 
+  - 依赖pouchdb、chokidar、transform-pouch
+  - https://github.com/vrtmrz/livesync-bridge
+    - This is a custom replicator between Self-hosted LiveSync remote vaults and storage. The Unified Version of filesystem-livesync and livesync-classroom.
+    - [Introducing LiveSync-Bridge: Simplifying and Extending Our Synchronization Daemon_202312](https://github.com/vrtmrz/filesystem-livesync/issues/11)
+      - LiveSync-Bridge can replicate different remote databases like LiveSync-classroom, but using no local cache. 
+      - And can replicate remote databases to the filesystem like filesystem-livesync.
+  - https://github.com/vrtmrz/obsidian-livesync /2.8kStar/MIT/202401/ts
+    - 社区实现的在线同步插件
+    - 注意: 本插件与官方的 "Obsidian Sync" 服务不兼容。
+    - 接近实时的多设备双向同步
+    - 可使用 CouchDB 以及兼容的服务，如 IBM Cloudant
+    - 支持端到端加密
+    - 插件同步 (Beta)
+    - 从 obsidian-livesync-webclip 接收 WebClip (本功能不适用端到端加密)
+    - 请勿与其他同步解决方案（包括 iCloud、Obsidian Sync）一起使用。在启用此插件之前，请确保禁用所有其他同步方法以避免内容损坏或重复。
+
 - https://github.com/couchapp/couchapp /201808/python2
   - https://couchapp.readthedocs.io/en/latest/intro/what-is-couchapp.html
   - Utilities to make standalone CouchDB application development simple
@@ -231,12 +250,14 @@ modified: 2023-09-28T20:35:56.153Z
 - https://github.com/olafura/PouchFlux /201508/js
   - Flux with PouchDB
 
-- https://github.com/colinskow/pouchdb-live-find /201705/js
+- https://github.com/colinskow/pouchdb-live-find /MIT/201705/js
   - Live PouchDB queries that update automatically as changes come in
   - LiveFind allows you to effortlessly keep your U. I. synchronized with a subset of your data in an efficient way. It is designed to perfectly complement `flux` and `redux` type architectures.
   - LiveFind uses `pouchdb-find` to provide initial query results, and then checks every change after that to see if it matches your selector. You are informed every time a change adds, updates, or removes an item from your query.
   - https://github.com/BananaAcid/pouchdb-live-find--next /202209/js
     - added skip param
+  - https://github.com/chrispahm/pouchdb-live-find
+    - switch to rollup
 
 - https://github.com/garbados/pouchdb-paginators /apache2/202311/js
   - A plugin that adds to PouchDB methods like .paginateAllDocs() which return paginators over results. 
@@ -621,6 +642,9 @@ modified: 2023-09-28T20:35:56.153Z
 
 - https://github.com/CoMfUcIoS/socket.io-pouch /201811/js
   - PouchDB and CouchDB over WebSockets, using Socket.io
+  - Adapter plugin that proxies all PouchDB API calls to another PouchDB running on the server in Node.js.
+  - Adapter plugin that proxies all PouchDB API calls to another PouchDB running on the server in Node.js.
+  - This adapter passes the full PouchDB test suite. It requires PouchDB 5.0.0+.
 - https://github.com/redgeoff/couchdb-howler /201803/js
   - Use web sockets to subscribe to CouchDB global changes
 
@@ -921,7 +945,8 @@ modified: 2023-09-28T20:35:56.153Z
   - https://databyss.org/
   - Write and cite, research and re-search, and never get lost in Databyss. Welcome to your new word processor.
   - Drag highlighted and/or annotated PDF files into any Page. Databyss will extract all your margin notes and highlighted passages so you can easily edit and search them.
-  - 依赖pouchdb
+  - 依赖mui.v4、pouchdb、slate.v0.58、draft-js、tanstack-query
+  - 后端依赖mongoose、express
 
 - https://github.com/YuJiaHao/pouch-note-app /202206/js
   - a practice with react pouchdb and couchdb
@@ -1016,12 +1041,6 @@ modified: 2023-09-28T20:35:56.153Z
   - An inventory system that is hopefully simple enough 
   - If you want to sync between multiple devices, you need to setup a CouchDB server.
   - CouchDB Sync via PouchDB
-
-- https://github.com/vrtmrz/obsidian-livesync /202311/ts
-  - Self-hosted LiveSync is a community-implemented synchronization plugin.
-  - A self-hosted or purchased CouchDB acts as the intermediate server
-  - You can use CouchDB or its compatibles like IBM Cloudant.
-  - Note: It has no compatibility with the official "Obsidian Sync".
 
 - https://github.com/oglimmer/linky /202104/js
   - A link management system - or maybe just a playground for reactjs, node 
@@ -1389,7 +1408,7 @@ modified: 2023-09-28T20:35:56.153Z
 
 - https://github.com/snowyu/pouchdb-transform.js /202210/ts
   - PouchDB Advanced Transform Library
-  - This plugin is modified from transform-pouch to enhance it's ability
+  - This plugin is modified from `transform-pouch` to enhance it's ability
 - https://github.com/pouchdb-community/transform-pouch /202108/js
   - PouchDB plugin for modifying documents before and after storage in the database.
   - Apply a transform function to documents before and after they are stored in the database. 
@@ -1736,6 +1755,9 @@ modified: 2023-09-28T20:35:56.153Z
 
 - https://github.com/glynnbird/docstream /201405/js
   - Node.js utility to turn CouchDB's _all_docs stream in to stream of plain documents
+
+- https://github.com/vrtmrz/file2couch /202312/ts
+  - Upload Files to CouchDB as attachments.
 
 - https://github.com/timbophillips/xlsx-to-couchdb /201905/ts
   - command line app for simple upload of Excel or Open Office spreadsheet to a CouchDB or PouchDB database

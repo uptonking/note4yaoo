@@ -34,8 +34,8 @@ modified: 2023-02-03T05:55:22.102Z
 
 ## utils
 
-- https://github.com/jshemas/openGraphScraper /ts
-  - Node.js scraper service for Open Graph Info and More!
+- https://github.com/jshemas/openGraphScraper /MIT/202310/ts
+  - Node.js scraper service for Open Graph Info and More
   - A simple node module(with TypeScript declarations) for scraping Open Graph and Twitter Card info off a site.
   - doesn't support browser usage
 

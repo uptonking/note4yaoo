@@ -133,6 +133,13 @@ modified: 2021-08-30T18:56:18.632Z
 - https://github.com/pawelsalawa/sqlitestudio /202309/c
   - multi-platform SQLite database manager written in C++, with use of Qt framework
 # powered-by-sqlite
+- https://github.com/datopian/markdowndb /MIT/202401/ts/sqlite
+  - https://markdowndb.com/
+  - JS library to turn markdown files into structured queryable database (SQL-based and simple JSON). 
+  - It helps you build rich markdown-powered sites easily
+  - Parses your markdown files to extract structured data (frontmatter, tags etc) and creates an index in a local `SQLite` database
+  - Provides a lightweight javascript API for querying the database and importing files into your application
+
 - https://github.com/dpapathanasiou/simple-graph /sql
   - This is a simple graph database in SQLite, inspired by "SQLite as a document database"
   - The schema consists of just two structures: Nodes(json) and Edges({id:json})

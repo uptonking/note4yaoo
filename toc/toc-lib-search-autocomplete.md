@@ -407,10 +407,10 @@ modified: 2023-01-01T13:24:35.994Z
 - https://github.com/doriandrn/rxdb-search /202101/ts
   - Search plugin for RxDB based on search-index
 
-- https://github.com/scambier/obsidian-omnisearch
+- https://github.com/scambier/obsidian-omnisearch /GPLv3/202401/ts/svelte
   - A search engine that "just works" for Obsidian. 
   - Includes OCR and PDF indexing. Images OCR and PDF indexing are only available on desktop
-  - it uses the excellent MiniSearch library.
+  - it uses the excellent `MiniSearch` library.
   - Automatic document scoring using the BM25 algorithm
   - Note: support of Chinese, Japanese, Korean, etc. depends on https://github.com/aidenlx/cm-chs-patch
 

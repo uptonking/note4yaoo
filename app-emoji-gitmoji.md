@@ -1,34 +1,32 @@
 ---
-title: cli-emoji
-tags: [emoji]
+title: app-emoji-gitmoji
+tags: [app, emoji, gitmoji, writing]
 created: 2021-11-19T06:53:12.105Z
-modified: 2021-11-19T06:53:19.649Z
+modified: 2024-01-21T07:46:00.256Z
 ---
 
-# cli-emoji
+# app-emoji-gitmoji
 
-# 文本书写相关
-
-## emoji
+# guide
 
 - cons
   - 缺少中文相关表情，如抱拳感谢
 
 - git相关emoji
-  - https://gitmoji.dev/
   - [Git-emoji 中文版](https://www.thisfaner.com/o/git-emoji/)
 
 - emoji-resources
-  - https://www.emojiall.com/en/all-emojis
   - [EmojiDB](https://emojidb.org/)
+  - https://www.emojiall.com/en/all-emojis
   - [Emoji cheat sheet for GitHub, Basecamp, Slack & more](https://www.webfx.com/tools/emoji-cheat-sheet/)
   - [Unicode Full Emoji List](https://unicode.org/emoji/charts/full-emoji-list.html)
 
+- https://github.com/carloscuesta/gitmoji
+  - https://gitmoji.dev/
+  - emoji guide for your commit messages
 - https://github.com/ikatyang/emoji-cheat-sheet
   - A markdown version emoji cheat sheet
-
-### face
-
+# face
 - 🙃 🥲
   - ime 呵呵 倒脸
   - upside-down face
@@ -75,7 +73,7 @@ modified: 2021-11-19T06:53:19.649Z
   - 小丑
 - 🤑
   - 给钱/势利
-
+# common
 - ⭐️ 🌟 ✨ 💫 🌠
   - 星 星光 繁星 小行星 流星
 - ✨ ⚡️
@@ -96,9 +94,7 @@ modified: 2021-11-19T06:53:19.649Z
   - 心心相印 舞动之心
 - 💟 ❤️‍🔥
   - 心田 热心
-
-### dev
-
+# dev
 - ⛏ 🛠 ⚒️ 🔧 ⚙️ 🧰
   - 工具 工具箱
 - 📣 🎺
@@ -196,12 +192,12 @@ modified: 2021-11-19T06:53:19.649Z
   - 日历
 - ⏳
   - 计时
-- ⏰ 🕛 ⌚️ 🕰️
-  - 闹钟 时钟 表 壁炉钟
+- ⏰ 🕛 🕒  ⌚️ 🕰️ 
+  - 闹钟 时钟 三点  表 壁炉钟
 - 📊
   - 报表 分析报告
-- 📈 📉 ↗️ ↘️
-  - 涨 跌 右上 右下
+- 📈 📉    ↗️  ↘️
+  - 涨 跌  右上 右下
 - ⚖️
   - 天平 称
 
@@ -442,8 +438,7 @@ modified: 2021-11-19T06:53:19.649Z
 - 
 - 
 
-### hands/fingers
-
+# hands/fingers
 - 👌🏻
   - 好的
 - ✌🏻️
@@ -502,8 +497,7 @@ modified: 2021-11-19T06:53:19.649Z
 - 
 - 
 
-### coding/git
-
+# coding/git
 - 🐛
   - :bug:
   - 修复 bug
@@ -686,34 +680,13 @@ modified: 2021-11-19T06:53:19.649Z
 
 - ref
   - [git commit emoji 表情常用项整理](https://blog.csdn.net/qq_35956041/article/details/108604552)
-
-### doc
-
-- 喇叭 loudspeaker
-
-### common
-
-- ❤
-  - 爱心
-  - :heart: 
-  - red heart
-- 裂开
-  - :broken_heart:
-- 💬
-  - 聊天气泡
-  - :speech_balloon:
-  - speech balloon
-- 🌹
-  - 玫瑰花
-  - :rose: 
-- 🕒
-  - 三点整
-  - :clock3: 
-  - three o’clock
+# documentation
+- 📣
+  - 喇叭
+# more
 - 🇨🇳
   - :cn:
   - flag: China
 - 🇺🇸
   - :us:
   - flag: United States
-# more

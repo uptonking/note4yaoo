@@ -45,8 +45,19 @@ modified: 2022-11-11T11:04:29.007Z
   - Browser extension to curate, annotate, and discuss the most valuable content and ideas on the web
   - Its name and functionalities are heavily inspired by Vannevar Bush's vision of a Memex.
 
-- https://github.com/zotero/zotero
+- https://github.com/zotero/zotero /8.6kStar/AGPLv3/202401/js
+  - https://www.zotero.org/
   - a free, easy-to-use tool to help you collect, organize, cite, and share your research sources.
+  - Zotero is built on Firefox and depends on many other exceptional open-source projects:
+    - [ace](https://ace.c9.io/)
+    - Monaco Editor
+    - ProseMirror
+    - pdf.js
+    - katex
+    - Citation Style Language
+    - epub.js
+  - https://github.com/windingwind/zotero-better-notes /AGPLv3/202401/ts
+    - Everything about note management. All in Zotero.
 # web-clipper
 - maoxian-web-clipper /596Star/MIT/202209/js
   - https://github.com/mika-cn/maoxian-web-clipper

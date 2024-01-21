@@ -71,7 +71,6 @@ modified: 2023-02-05T18:05:44.122Z
   - Deprecated in favor of Notable
 - https://github.com/fabiospampinato/electron-about
   - Simple standalone about window for Electron.
-
 - notable-agpl
   - https://github.com/Maxwin-z/notable
   - https://github.com/nicholasbailey/freenotable
@@ -119,6 +118,22 @@ modified: 2023-02-05T18:05:44.122Z
     - 不支持web
     - Joplin server has no ability to view/edit notes from the server with a web client.
     - https://github.com/joplin-vieweb/joplin-vieweb
+
+- https://github.com/zotero/zotero /8.6kStar/AGPLv3/202401/js
+  - https://www.zotero.org/
+  - a free, easy-to-use tool to help you collect, organize, cite, and share your research sources.
+  - Zotero is built on Firefox and depends on many other exceptional open-source projects:
+    - [ace](https://ace.c9.io/)
+    - Monaco Editor
+    - ProseMirror
+    - pdf.js
+    - katex
+    - Citation Style Language
+    - epub.js
+  - https://github.com/windingwind/zotero-better-notes /AGPLv3/202401/ts
+    - 📝 Everything about note management. All in Zotero.
+    - a plugin for Zotero.
+    - Keep in sync with your Markdown files. Two-way, automatically
 
 - BoostNote /3.1kStar/GPLv3/202209/ts/inactive
   - https://github.com/BoostIO/BoostNote-App
@@ -317,6 +332,92 @@ modified: 2023-02-05T18:05:44.122Z
 
 - OFFLINE-NOTE
   - https://chrome.google.com/webstore/detail/offline-note/naobhcifpdffdokgdboppeldefdnooic
+# obsidian
+- obsidian dataview /5.8kStar/MIT/202312/ts
+  - https://github.com/blacksmithgu/obsidian-dataview
+  - https://blacksmithgu.github.io/obsidian-dataview/
+  - A high-performance data index and query language over Markdown files, for obsidian
+  - Treat your Obsidian Vault as a database which you can query from. 
+  - Provides a JavaScript API and pipeline-based query language for filtering, sorting, and extracting data from Markdown pages.
+  - **Dataview generates data from your vault by pulling information from Markdown frontmatter and Inline fields**.
+  - Markdown frontmatter is arbitrary YAML enclosed by `---` at the top of a markdown document which can store metadata about that document.
+  - Inline fields are a Dataview feature which allow you to write metadata directly inline in your markdown document via `Key:: Value` syntax.
+  - [Obsidian Dataview: Turn Obsidian Vault into a database you can query from | Hacker News_202205](https://news.ycombinator.com/item?id=31407781)
+  - https://github.com/obsidianmd/obsidian-releases
+    - Obsidian is not open source software and this repo DOES NOT contain the source code of Obsidian. 
+    - However, if you wish to contribute to Obsidian, you can easily do so with our extensive plugin system.
+  - https://github.com/blacksmithgu/datacore /MIT
+    - Datacore is a work-in-progress re-imagining of Dataview with a focus on 2-10x better query and rendering performance, as well as fully interactible views.
+    - Datacore is fundamentally the same thing as dataview - an index over Markdown files that supports live-updating views and metadata. 
+    - However, Datacore focuses on substantial index changes for performance, as well as a new sleek UI which completely replaces traditional Dataview queries. 
+    - Datacore supports all query operations that Dataview does, with some extra functionality.
+    - WYSIWYG Views: Datacore queries now use a responsive table view and can be manipulated with a table editor much more akin to what you would see in places like Notion and Airtable.
+    - Live Editing: Values inside of table views can now be edited; task views include more nuanced rendering of metadata like due date and more operations for manipulating tasks directly.
+    - Live Editing: Values inside of table views can now be edited; task views include more nuanced rendering of metadata like due date and more operations for manipulating tasks directly.
+  - https://github.com/RafaelGB/obsidian-db-folder
+    - Obsidian Plugin to Allow Notion like database based on folders
+
+- https://github.com/mgmeyers/obsidian-kanban /GPLv3/202309/ts
+  - https://publish.obsidian.md/kanban/
+  - Create markdown-backed Kanban boards in Obsidian.
+
+- https://github.com/obsidian-tasks-group/obsidian-tasks /MIT/202401/ts
+  - https://publish.obsidian.md/tasks/
+  - Task management for the Obsidian knowledge base.
+  - Track tasks across your entire vault. Query them and mark them as done wherever you want. 
+  - Supports due dates, recurring tasks (repetition), done dates, sub-set of checklist items, and filtering.
+
+
+- https://github.com/scambier/obsidian-omnisearch /GPLv3/202401/ts/svelte
+  - A search engine that "just works" for Obsidian. 
+  - Includes OCR and PDF indexing. Images OCR and PDF indexing are only available on desktop
+  - it uses the excellent `MiniSearch` library.
+  - Automatic document scoring using the BM25 algorithm
+  - Note: support of Chinese, Japanese, Korean, etc. depends on https://github.com/aidenlx/cm-chs-patch
+
+- https://github.com/vrtmrz/obsidian-livesync /2.8kStar/MIT/202401/ts
+  - 社区实现的在线同步插件
+  - 注意: 本插件与官方的 "Obsidian Sync" 服务不兼容。
+  - 接近实时的多设备双向同步
+  - 可使用 CouchDB 以及兼容的服务，如 IBM Cloudant
+  - 支持端到端加密
+  - 插件同步 (Beta)
+  - 从 obsidian-livesync-webclip 接收 WebClip (本功能不适用端到端加密)
+  - 请勿与其他同步解决方案（包括 iCloud、Obsidian Sync）一起使用。在启用此插件之前，请确保禁用所有其他同步方法以避免内容损坏或重复。
+  - [Obsidian 各种同步方式体验](https://irithys.com/obsidian-sync-exp/)
+    - 我使用中认为体验最好的同步方式，但是缺点是不能当做备份使用。所以 Webdav 同步方案依然存在一定的价值
+  - https://github.com/kkbt0/obcsapi-go /MIT/202401/go/vue
+    - 基于 WebDAV，S3 存储或 CouchDb 的后端 API ，Obsidian 笔记的 API
+    - 可借助 Obsidian 插件 Remotely-Save 插件，或者 Self-hosted LiveSync (ex:Obsidian-livesync) 插件 CouchDb 方式，保存消息到 Obsidian 库
+    - 一个简易图床，附带命令行上传工具
+
+- https://github.com/remotely-save/remotely-save /apache2/202401/ts
+  - Yet another unofficial Obsidian plugin allowing users to synchronize notes between local device and the cloud service. 
+  - Supports S3, Dropbox, OneDrive, webdav.
+  - Vaults can be synced across mobile and desktop devices with the cloud service as the "broker".
+  - End-to-end encryption supported.
+  - Scheduled auto sync supported. 
+  - Sync Algorithm open for discussion.
+  - No Conflict resolution. No content-diff-and-patch algorithm. All files and folders are compared using their local and remote "last modified time" and those with later "last modified time" wins.
+  - [Is this project abandoned?_202304](https://github.com/remotely-save/remotely-save/issues/280)
+    - Admittedly I was too busy and too lazy to update the plugin in the past few years
+    - livesync and obsidian-git doesn't meet my needs because the first one needs a db server and the second one is too complicated for non-tech. 
+  - [被 Remotely Save 劝退：：木木木木木](https://immmmm.com/off-remotely-save/)
+    - 同步机制没有 “文件保存触发同步” 不够 “丝滑”；
+    - 定时同步时有一串（8 条）通知条，同步后笔记还会 “闪烁”（重载）一下，不够 “无感”；
+    - 同步冲突以文件的最后时间为准，而非 “局部增量” 同步，若多端在 “定时同步” 时间间隔内对同一文件进行操作，那就直接错乱
+
+- https://github.com/denolehov/obsidian-git /MIT/202401/ts
+  - Plugin that allows you to back up your Obsidian.md vault to a remote Git repository (e.g. private repo on GitHub).
+  - Automatic vault backup every X minutes
+  - Pull changes from remote repository on Obsidian startup
+
+- https://github.com/acheong08/obi-sync /GPLv2/202312/go
+  - Reverse engineering of the native Obsidian sync and publish server
+  - The plugin is broken on obsidian >= 1.4.11. This is intentional by the official ObsidianMD team. They have made clear their dissatisfaction with this project. 
+  - We are in the early stages of designing an alternative plugin that does not make use of existing code by ObsidianMD team.
+  - [Show HN: Open-source obsidian.md sync server | Hacker News_202308](https://news.ycombinator.com/item?id=37247767)
+    - Obsidian is a small company, we're not VC backed (100% user-supported), so the Sync pricing helps us stay in business and keep the lights on. 
 # note-utils
 - graph /7Star/MIT/202210/ts
   - https://github.com/graphcentral/graph

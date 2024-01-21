@@ -63,6 +63,9 @@ modified: 2022-11-07T10:58:24.512Z
 # saas
 
 # tools/productivity
+
+- obsidian open source version
+
 - office许可过期
   - https://github.com/infohost/infohost.github.io/blob/main/office-license-is-not-genuine.html
   - https://htmlpreview.github.io/?

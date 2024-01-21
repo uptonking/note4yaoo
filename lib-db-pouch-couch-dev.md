@@ -14,6 +14,18 @@ modified: 2024-01-04T06:37:06.419Z
   - https://github.com/jo/couchdb-best-practices
   - Apache CouchDB™ is a database that uses JSON for documents, JavaScript for MapReduce indexes, and regular HTTP for its API.
 - pouchdb的同步协议参考 [CouchDB Replication Protocol](https://docs.couchdb.org/en/stable/replication/protocol.html)
+# devops
+
+## config
+
+- All paths are specified relative to the CouchDB installation directory: `/opt/couchdb` recommended on UNIX-like systems,  `C:\CouchDB` recommended on Windows systems, and a combination of two directories on macOS: `Applications/Apache CouchDB.app/Contents/Resources/couchdbx-core/etc` for the `default.ini` and `default.d` directories, and one of `/Users/<your-user>/Library/Application Support/CouchDB2/etc/couchdb` or `/Users/<your-user>/Library/Preferences/couchdb2-local.ini` for the `local.ini` and `local.d` directories.
+
+```shell
+# 
+/opt/couchdb/etc/local.ini
+
+```
+
 # changelog-couchdb
 - [Release Notes — Apache CouchDB® Documentation](https://docs.couchdb.org/en/stable/whatsnew/index.html)
 

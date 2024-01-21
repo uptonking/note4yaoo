@@ -85,6 +85,19 @@ modified: 2022-11-29T20:41:25.566Z
 - Briar Bramble
 - Matrix
 - Secure Scuttlebutt (SSB)
+# discuss-external-sync
+- ## 
+
+- ## 
+
+- ## [Joplin/Obsidian笔记软件同步问题：如何在不能装网盘客户端的电脑上同步？ - 知乎](https://www.zhihu.com/question/471377032)
+- 方案一： 官网Sync服务
+- 方案二：Remotely方案
+  - Remotely 是一款 Obsidian 第三方插件，你可以在插件中配置使用DropBox/OneDrive / WebDAV/S3/OSS/COS 等网盘及云存储服务来使用，常见是使用OneDrive或者阿里、腾讯的云存储做中转；WebDAV 的支持上，国内坚果云暂时是不支持的。 
+  - 使用Remotely需要配置第三方的中转，现在功能还在完善中，还不能同步Ob的插件和主题，因些同步文件后，插件和主题要自己在第二台设备上安装
+- 方案三：Rsync的方案
+  - 基于开源的Rsync方案，可以实现Win/Mac/Linux与移动端的文件增量同步功能，需依赖同一局域网中的SSH协议进行文件传输
+
 # discuss-stars
 - ## 
 

@@ -38,6 +38,11 @@ modified: 2022-08-21T10:16:52.004Z
   - [slate 架构与设计分析](https://github.com/wzhudev/blog/issues/36)
   - [vscode 源码解析](https://github.com/wzhudev/blog/issues/29)
 
+- Ran Luo /MarkText
+  - https://github.com/Jocs
+  - [Univer 文档排版设计初探 - 知乎](https://zhuanlan.zhihu.com/p/677626409)
+  - [Univer 文档架构及模块设计 - 知乎](https://zhuanlan.zhihu.com/p/677606548)
+
 - 王福朋 /slate-wangEditor
   - https://juejin.cn/user/1714893868765373
   - https://www.zhihu.com/people/wangfupeng1988

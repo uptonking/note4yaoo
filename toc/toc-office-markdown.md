@@ -9,7 +9,7 @@ modified: 2021-01-04T17:26:25.032Z
 
 # guide
 
-# examples
+# popular
 - https://github.com/marktext/marktext /42.5kStar/MIT/202308/js/vue
   - https://www.marktext.cc/
   - simple and elegant markdown editor, available for Linux, macOS and Windows.
@@ -41,6 +41,12 @@ modified: 2021-01-04T17:26:25.032Z
     - The logic that parses the tag syntax is generated from a `peg.js` grammar.
   - **Markdoc has its own dedicated rendering architecture rather than relying on markdown-it to generate its output**. 
     - Developing an independent rendering system was necessary in order to handle Markdoc's custom tags and support multiple output formats.
+
+- https://github.com/jackyzha0/quartz /MIT/202401/ts
+  - https://quartz.jzhao.xyz/
+  - a fast, batteries-included static-site generator that transforms Markdown content into fully functional websites
+  - Quartz is a set of tools that helps you publish your digital garden and notes as a website for free. 
+  - Quartz v4 features a from-the-ground rewrite focusing on end-user extensibility and ease-of-use.
 # md-parser-generator
 - markdown-it /10.4kStar/MIT/202009
   - https://github.com/markdown-it/markdown-it
@@ -77,9 +83,11 @@ modified: 2021-01-04T17:26:25.032Z
     - https://swiperjs.com/
     - Most modern mobile touch slider with hardware accelerated transitions
 # md-database
-- https://github.com/datopian/markdowndb /ts
-  - a javascript library for treating markdown files as a database
-  - Parses your markdown files to extract structured data (frontmatter, tags etc) and creates an index in a local SQLite database
+- https://github.com/datopian/markdowndb /MIT/202401/ts/sqlite
+  - https://markdowndb.com/
+  - JS library to turn markdown files into structured queryable database (SQL-based and simple JSON). 
+  - It helps you build rich markdown-powered sites easily
+  - Parses your markdown files to extract structured data (frontmatter, tags etc) and creates an index in a local `SQLite` database
   - Provides a lightweight javascript API for querying the database and importing files into your application
 
 - https://github.com/lukesrw/md-database /202109/ts
@@ -90,6 +98,12 @@ modified: 2021-01-04T17:26:25.032Z
   - Markdown-backed database with queries, user-defined actions, validators, variable expansion, and reporters in JavaScript
   - gg is a CLI to import, query, act on, and report on local Markdown files with support for user-defined JavaScript extensions.
   - gg supports a subset of Markdown for parsing: headers, paragraphs (the "type-inferred values"), and un-nested bullet lists 
+
+- https://github.com/daeh/zotero-markdb-connect /MIT/202401/ts
+  - Zotero plugin that links your Markdown database to Zotero. 
+  - Jump directly from Zotero Items to connected Markdown files.
+  - Supports various Markdown databases, including Obsidian, logseq, and Zettlr
+  - Supports various Markdown databases, including Obsidian, logseq, and Zettlr
 # tools
 - monotome /151Star/AGPLv3/202208/js
   - https://github.com/cblgh/monotome
@@ -142,7 +156,7 @@ modified: 2021-01-04T17:26:25.032Z
 - https://github.com/rhiokim/haroopad /201606/js
   - Haroopad is a markdown enabled document processor for creating web-friendly documents.
 # more-md
-- https://github.com/mgmeyers/obsidian-kanban /ts
+- https://github.com/mgmeyers/obsidian-kanban /GPLv3/202309/ts
   - https://publish.obsidian.md/kanban/
   - Create markdown-backed Kanban boards in Obsidian.
 

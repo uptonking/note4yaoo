@@ -312,19 +312,6 @@ modified: 2021-05-06T09:58:23.803Z
 # logos
 - [FreeLogo.me – Free SVG Logo Templates](https://freelogo.me/)
   - SVG Logo placeholders you can download and use with no restrictions for free.
-# emoji
-- https://github.com/twitter/twemoji
-  - https://twemoji.twitter.com/
-  - /11.8kStar/CC-BY 4.0/202010
-  - The Twemoji library offers support for 3304 emojis.
-
-- https://github.com/nolanlawson/emoji-picker-element /js
-  - https://nolanlawson.github.io/emoji-picker-element/
-  - lightweight emoji picker, distributed as a web component.
-  - Supports Emoji v15.0 (depending on OS) and custom emoji
-  - Uses IndexedDB, so it consumes far less memory than other emoji pickers
-  - Renders native emoji by default, with support for custom fonts
-  - Framework and bundler not required, just add a `<script>` tag and use it
 # ref
 - https://github.com/fontello/fontello
   - This tool lets you combine icon webfonts
