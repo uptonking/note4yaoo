@@ -85,4 +85,9 @@ modified: 2023-10-26T15:28:53.748Z
 
 ## pg-like
 
+# mysql-powered
+
+- https://github.com/wesql/wescale /apache2/202401/go
+  - a database proxy that cares about your application, the development experience, and supports OnlineDDL.
+  - fork自vitess的，但改造了它的架构，并且为它支持了读写分离、Read After Write Consistency、透明Failover等功能
 # more

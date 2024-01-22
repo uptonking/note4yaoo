@@ -232,6 +232,11 @@ modified: 2021-08-23T05:27:08.068Z
   - 目标是同时兼顾性能、功能，核心部分完全 Rust 实现，减少外部依赖以避免性能瓶颈和体验劣化。
   - 要不要看看 #OpenDAL，顺手支持一把更多存储服务？
     - OpenDAL 是一个 rust lib，提供了各种存储服务的访问能力。没有直接提供这些功能，不过本质上就是一堆 seek & read 操作，是可以实现的
+
+- https://github.com/codecyou/FileManager /202308/python
+  - 文件管理/文件去重/文件备份/文件同步/查找相似图片/查找相似视频/本地以图搜图/比对文本文件内容/拷贝目录结构/视频合并/视频裁剪/找出损坏的视频/提取音频/音频格式转换/批量重命名/搜索文件/文本编码转换/CRLF与LF转换
+  - 所有操作都有日志，方便追溯和还原。涉及程序配置内容修改的操作会有权限验证。
+  - 所有的文件删除、文件更新操作进行防呆保护，最大限度保证数据安全
 # web-storage
 - https://github.com/ncisrc/cookies-storage
   - It's like localStorage or sessionStorage but with cookies.

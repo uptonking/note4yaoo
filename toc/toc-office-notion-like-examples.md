@@ -125,11 +125,21 @@ modified: 2023-11-28T14:48:45.911Z
   - 所有的模块都以VUE组件的形式编写，可以灵活插拔。
   - 所有组件保存的数据，都以Json的形式存储在Vuex里供不同组件调用
 
-- https://github.com/shreyasmanolkar/notion-browser-client /202308/ts
+- https://github.com/shreyasmanolkar/notion-browser-client /MIT/202308/ts
   - https://www.notion-s.co/
   - develop a comprehensive clone resembling the popular platform Notion.
+  - 依赖tiptap、reduxjs/toolkit、firebase
   - https://github.com/shreyasmanolkar/notion-api /ts
     - Notion Clone API built with TypeScript and MongoDB, using TDD
+    - 依赖mongodb、express
+  - [Building Notion Clone: Part 1 — Planning the Architecture | by Shreyas manolkar | Medium _202307](https://medium.com/@shreyasmanolkar123/building-notion-clone-part-1-planning-the-architecture-f50342e58019)
+  - [Building Notion Clone: Part 2 — Crafting the Front-end Experience | by Shreyas manolkar | Medium _202307](https://medium.com/@shreyasmanolkar123/building-notion-clone-part-2-crafting-the-front-end-experience-cb194c1d132c)
+
+- https://github.com/Mabloq/mabloq-notion /apache2/202304/ts
+  - An implementation of the popular Workspace App: Notion.
+  - 依赖 nestjs、mongoose、passport、rxjs
+  - [Minimalist Notion Implementation: Part 1-Everything Is a Block_202203](https://medium.com/@arcilamatt/minimalist-notion-implementation-part-1-everything-is-a-block-debda338b61a)
+
 
 - https://github.com/fouita/tailwind-editor
   - notion like tailwindcss editor built with svelte
@@ -173,6 +183,8 @@ modified: 2023-11-28T14:48:45.911Z
 - https://github.com/justjake/monorepo/tree/main/packages/notion-api
   - The missing companion library for the official Notion public API.
 
+
+
 - https://github.com/onedebos/notion-api-server-demo
   - This NodeJS application demonstrates how to read and write data to your Notion Workspace using the new Notion APIs.
 
@@ -189,10 +201,7 @@ modified: 2023-11-28T14:48:45.911Z
 - https://github.com/brenogcota/simple-notion-api-clone
   - a simple Notion API clone, made with Typescript, Express, Prisma ORM
 
-- https://github.com/Mabloq/mabloq-notion
-  - An implementation of the popular Workspace App: Notion.
-  - 依赖 nestjs、mongoose、passport、rxjs
-  - [Minimalist Notion Implementation: Part 1-Everything Is a Block_202203](https://medium.com/@arcilamatt/minimalist-notion-implementation-part-1-everything-is-a-block-debda338b61a)
+
 
 - notionapi /1.7kStar/BSD/202208/go
   - https://github.com/kjk/notionapi

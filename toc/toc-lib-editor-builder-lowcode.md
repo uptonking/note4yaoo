@@ -503,4 +503,4 @@ modified: 2020-12-28T12:24:09.275Z
   - provides a spreadsheet-like interface to a PostgreSQL database.
   - directly operates on PostgreSQL databases
   - You can use to build data models, enter data, and even build reports
-  - [Show HN: Visual DB – Airtable alternative for your own database | Hacker News](https://news.ycombinator.com/item?id=37223019)
+  - [Show HN: Visual DB – Airtable alternative for your own database | Hacker News _202308](https://news.ycombinator.com/item?id=37223019)

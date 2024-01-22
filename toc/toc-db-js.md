@@ -252,9 +252,11 @@ modified: 2022-11-25T15:50:48.226Z
   - https://github.com/realm/realm-core /202212/cpp
     - Core database component for the Realm Mobile Database SDKs
 
-- skdb /61Star/NonCommercial/202306/ts/wasm/似乎未开源
+- skdb /61Star/NonCommercial/202401/ts/skew/wasm
   - https://github.com/SkipLabs/skdb
-  - The SQL database that tells you when your query results changed
+  - https://www.skdb.io/
+  - an embedded SQL database that stays in sync.
+  - Built from the ground up and open source, it runs in the browser or the backend.
   - SKDB is a general-purpose SQL database that lets you subscribe to changes to your queries. 
   - Through a new construction called "virtual views", you can ask the database to keep a particular view up-to-date at all times
   - SKDB can also process ephemeral streams of data which can be used to receive alerts or to compute real-time analytics.

@@ -92,7 +92,10 @@ Function('str', 'console.log(str, aaa)')('aaa:');
 # discuss-codesandbox-inc
 - ## 
 
-- ## 
+- ## my course platform has a custom sandbox (built using Sandpack) that automatically persists any edits to my database, and restores them when the lesson is revisited.
+- https://twitter.com/JoshWComeau/status/1749075678379626683
+  - I just saw that the DB contains 285, 000 saved snippets, over 1GB of code!
+  - originally, saved edits were stored in localStorage. Migrated to this solution maybe a year ago, since people noticed that their work wasn't following them from device to device.
 
 - ## Are there any good sandboxes for Rails apps that let you also run docker containers?
 - https://twitter.com/RogersKonnor/status/1747415376768487822

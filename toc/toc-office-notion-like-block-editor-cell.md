@@ -69,9 +69,11 @@ modified: 2022-08-14T16:26:48.558Z
   - Offline ready mode, 离线基于localStorage
   - [plans for v2](https://yopage.co/blog/0zntIA46L4/5iK8VNiBI8)
 
-- https://github.com/djyde/plastic-editor
+- https://github.com/djyde/plastic-editor /202103/ts/svelte
   - A block-based editor
   - https://github.com/relm-us/svelt-yjs
+  - https://github.com/fengkx/plastic-editor-react
+    - Plastic Editor implentation with React.js
 
 - tiny-write /4Star/NALic/202208/ts/prosemirror/markdown-it/web版+桌面版
   - https://github.com/dennis84/tiny-write
@@ -140,10 +142,6 @@ modified: 2022-08-14T16:26:48.558Z
 
 - https://github.com/karpov-kir/canvas-block-editor /ts
   - A block based canvas text editor.
-
-- https://github.com/fengkx/plastic-editor-react
-  - Plastic Editor implentation with React.js
-  - https://github.com/djyde/plastic-editor /svelte
 
 - MoEditor /2Star/NALic/202208/ts
   - https://github.com/spaced-all/MoEditor

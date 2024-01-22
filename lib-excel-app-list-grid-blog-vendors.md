@@ -266,7 +266,87 @@ ctx.fillText('中', 0, 0)
   - What can we learn from this? Well, if you can influence the structure and layout of the Excel workbooks you are using as a data source – and that’s a big if, because in most cases you can’t – and you only need to read some of the data from them, you should put the tables of data you are using as a source on separate worksheets and not on the same worksheet as any other large ranges or tables of data.
 # blogs-airtable-like
 
-## [Building a modular software toolkit | The Airtable Engineering Blog | Medium_202102](https://medium.com/airtable-eng/building-a-modular-software-toolkit-ce4efd06e75c)
+## 📈🛢️ [mondayDB architecture _202307](https://medium.com/@liranbrimer/nice-to-meet-you-mondaydb-architecture-6d201b41e660)
+
+- [Why Monday.com decided to build its new database instead of buying one | TechCrunch _202310](https://techcrunch.com/2023/10/22/monday-mondaydb-new-database/)
+
+- mondayDB is the new in-house data engine we crafted at monday.com.
+  - We refer to ourselves as a Work OS (Operating System) because we equip our users with a platform they can customize and extend, creating a tailored system to manage and automate any aspect of their work.
+  - The key building block of our platform is the “board”. This is basically a very rich table to manage any kind of data — from tasks and projects through deals, marketing campaigns
+  - Each board has columns, which can contain a range of things from basics like text, numbers, or dates to more complex types like a person, team, tag, or even files and formulas. 
+  - We offer over 40 types of columns, and our users enjoy the freedom to filter, sort, or aggregate just about any column combination
+
+- when a user landed on their board, we threw all the board data right into the client (usually a web browser running on a desktop computer).
+  - but this approach had obvious limitations. First and foremost, the client is limited in its resources.
+- Something clearly had to change. So we decided to move everything to the server side, allowing the client to receive only a subset of items in pages as they scrolled. It was easier for the client but not so trivial for the backend.
+
+- we explored many of them, including traditional RDBMS databases with partitions (think MySQL instance per account with a dedicated table per board), ElasticSearch, analytical databases like Apache Pinot, ClickHouse or Apache Druid, and a wide range of NoSQLs like CockroachDB, Couchbase, and more.
+  - Eventually, we found that none of these options completely met our requirements. 
+  - The reasons varied from our data being mutable, our requirement for numerous tables, not knowing in advance what users would want to filter, and many more.
+
+- Concept #1: Columnar storage
+  - In a traditional RDBMS such as MySQL, the row is king, and all the row data is stored together on a disk as an atomic unit.
+  - While this setup works smoothly when accessing all the data from that row, it’s less efficient when carrying out operations like filtering a specific column. 
+  - This is because you’d need to pull all the table’s data unless you had prepared a column index in advance (which is something we can’t do without prior knowledge of the schema or queries).
+  - A columnar database, on the other hand, slices the data vertically by column. What this essentially means is that the values of each column’s cells get stored together on the disk as an atomic unit.
+  - An immediate downside that stands out is that we would have needed to store more data for the columnar store, as the item ID had to be repeated for each cell value. 
+  - However, this issue is considerably less problematic when we realize that the data is highly compressible, especially when the column displays low cardinality, meaning we have limited repeating values.
+  - the advantages are massive.we’d only need to fetch a mere fraction of the actual data involved in the filter. Furthermore, as many of our columns are quite sparse, even if the Board is extensive, the data you’d need to retrieve and process could be relatively small.
+  - Lastly, the columnar structure opens up tons of optimization opportunities.
+
+- Concept #2: Lambda architecture
+  - we store all the column’s cells together as a single atomic data unit. It implies we can’t fetch or update a single cell separately. 
+  - let’s face it, constantly fetching and re-writing an entire column for each single cell update is not only impractical
+  - Lambda architecture to the rescue. Not to be confused with AWS lambda functions, it was invented by the big data industry to enable you to pre-calculate in advance query results on your data offline. This means queries are executed fast in runtime. 
+  - The main advantage is that it still serves fresh data recently ingested after the last offline pre-calculation has occurred.
+  - We divide our system into three components:
+  - Speed layer — contains only recently changed data
+  - Batch layer — contains all the past historical data
+  - Serving layer — serves queries by merging the speed and batch layers’ data in runtime
+  - data flows from speed to batch layer. This is handled by a scheduled offline job flushing the data, and building the metadata and other heavy pre-calculations along the way.
+  - we utilize Redis as our speed layer storage, and Cassandra as our batch layer storage. 
+  - Both of those storages are treated as a straightforward key-value store, where the key corresponds to the column id and the value is the column’s cells data.
+  - I mentioned that we store the entire column data on a disk as a single data unit. The truth is, we break down large columns into smaller partitions. This aligns with best practices for Cassandra, our batch layer storage, to avoid oversized partitions. 
+
+- Concept #3: Separate storage from compute
+  - The bottom line is we want our architecture to be elastic. 
+  - When we need more computational power (CPU) for heavier queries or during peak hours, we want to scale up processing servers. 
+  - And similarly, we want to be able to scale our storage layer to meet our data capacity demands, separated from any data processing considerations.
+  - Our architecture offers precisely that. Our batch layer is our storage layer and can be scaled independent of our servers engaged in executing query logic, and those servers also scale independently.
+  - The beauty of that approach is that we don’t need to re-execute the query on every page the client requests. Plus, the client can skip by specific offset without having to go over all the items below that offset 
+  - this approach isn’t without its drawbacks. For instance, how would the user know how to render the page to simulate a lengthy scrollbar? Or figure out what offset to skip when they scroll quickly? And how could they update the view with live mutations by others since the last snapshot? Those are excellent questions (+1 to myself), but they really deserve their own blog post.
+
+- What’s next?
+  - It’s a long journey as every component of the system needs to adapt to handle only subsets of the data using pagination, rather than having all data readily available to the client. We’ve implemented it for boards, but we have many other components such as our mobile apps, API, views, dashboards, and docs. 
+  - Furthermore, we now need a more intelligent client that can function in hybrid mode. 
+- there’s substantial room for improvement and lots of optimizations yet to be implemented. 
+  - To name a few, we have many in-process executions we can parallelize, and we could considerably benefit from adding pre-calculations to generate metadata, indexes, and optimization structures like Bloom filter, among others.
+
+- we have dozens of different column types, each one with its unique filter, sort, and aggregation logic. 
+  - It’s all JavaScript, encapsulated in a shared package between our client and backend so it can run in hybrid mode. 
+  - Accordingly, our engine is also JavaScript all the way down. 
+  - We chose this direction to streamline our efforts, even though it’s no secret that JavaScript may not be the optimal choice for a high-performance system.
+
+### 👥 [MondayDB: A new in-house data engine from monday.com | Hacker News_202310](https://news.ycombinator.com/item?id=37818562)
+
+- > Unlimited tables
+  - If you ever find yourself in a position where you need a database table per instance of an abstraction, you've almost certainly failed to model the domain appropriately.
+
+- AirTable developed their own DB, but their case may be justified. I listened to an interview with a founder once - very thoughtful and reasonable. They fully understood what they were getting into.
+  - Not sure why they needed own DB. Fibery.io has similar domain and we built everything on Postgres. Works like a charm and you even don't have Airtable bases connectivity problem. We have schema-per-customer and table-per-entity-type model, performance is quite good.
+
+- don't tell them about SQLite! It's the secret sauce behind Grist (I am a founder), and we are sort of competitors. Wouldn't want Monday.com knowing about our competitive advantage!
+
+- Honestly, the end result was a lot worse than I expected. Using Redis & Cassandra as 1 db, when your requirements where unlimited tables, fast filter/sort, etc. Literally the worst of all worlds imaginable.
+  - Imagine maintaining that (2 separate distributed async-by-default, no transactions/indexes, limited-types, etc etc clusters).
+- A lot of the architectural decisions, from a high-level, make sense: compute and storage are separated, redis and cassandra are used instead of reinventing those. It's a bit OLAP and a bit OLTP in that users might make a few point updates to things here and there OLTP but then the filtering and aggregating and showing all sorts of views and such is clearly in the analytics domain hence OLAP and the use of a columnar setup.
+
+- Postgres / MySQL with a table per board (or one giant partitioned table with a JSONb column) would have been totally fine, as would have one SQLite database per customer that you can load the initial page of and then ship the whole thing to the client for richer interactivity.
+
+- Article shows that Cassandra is slow to retrieve data, so they added Redis as a cache to fetch recent events from there.
+  - It is now planet scale! Proper database design and indexes be damned!
+
+## 📈 [Building a modular software toolkit | The Airtable Engineering Blog | Medium_202102](https://medium.com/airtable-eng/building-a-modular-software-toolkit-ce4efd06e75c)
 
 - At Airtable, we’re building a toolkit that anybody can use to build their own software.
   - You can combine the many different building blocks provided in Airtable to create software that is truly tailored to your needs, rather than having to force your workflows into a one-size-fits-all solution that only vaguely applies to your problem.
@@ -279,4 +359,12 @@ ctx.fillText('中', 0, 0)
   - This means that each feature in Airtable is akin to a public API that other features can depend on. 
   - As we design new features or improve existing ones, we must think very critically about the interface that each feature exposes
 - Addressing these challenges at Airtable
+
+## [The data model behind Notion's flexibility_202105](https://www.notion.so/blog/data-model-behind-notion)
+
+- 
+- 
+- 
+- 
+
 # more

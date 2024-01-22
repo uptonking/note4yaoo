@@ -57,7 +57,17 @@ modified: 2023-04-16T10:02:58.738Z
 # discuss
 - ## 
 
-- ## 
+- ## [Vanna.ai: Chat with your SQL database | Hacker News_202401](https://news.ycombinator.com/item?id=38992601)
+- All these products that pitch about using AI to find insights from your data always end up looking pretty in demos and fall short in reality. 
+  - This is not because the product is bad, but because there is enormous amount of nuance in DB/Tables that becomes difficult to manage. 
+- I couldn’t agree more. I’ve hooked up things to my DB with AI in an attempt to “talk” to it but the results have been lackluster. Sure it’s impressive when it does get things right but I found myself spending a bunch of time adding to the prompt to explain how the data is organized.
+
+- We did something similar for our reporting service which is based duckdb. Overall it works great, though we've ran into a few things:
+  * Even with low temperature, GPT-4 sometimes deviates from examples or schema. For example, sometimes it forgets to check one or another field...
+  * Our service hosts generic data, but customers ask to generate reports using their domain language (give me top 10 colors... what's a color?). So we need to teach customers to nudge the report generator a bit towards generic terms
+  * Debugging LLM prompts is just tricky... Customers can confuse the model pretty easily. We ended up exposing the "explained" generated query back to give some visibility of what's been used for the report
+- Our primary issue is that our DB is a dynamic Entity-Attribute-Value schema, even quite a bit denormalized at that. The model has to remember to do subqueries to retrieve "attributes" based on what's needed for the query and then combine them correctly.
+  - NLQ is a somewhat new feature for us, so we don't have a great library to pull from for RAG. Experimenting, I found that having a few-shot examples with some CoT (showing examples of chaining attributes retrieval) sprinkled around did help a lot.
 
 - ## ChatGPT-Next-Web 这个项目太好用了，
 - https://twitter.com/_Xheldon/status/1731897455145263340

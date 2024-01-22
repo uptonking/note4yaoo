@@ -32,6 +32,7 @@ modified: 2024-01-04T06:53:04.003Z
   - Unlike most other databases, whenever you update a document in PouchDB or CouchDB, you must present the entire document along with its current revision marker.
   - The problem with couchdb is that it does one request per document which makes the protocol slow for browser based applications also it has no http2 support
   - 针对大量数据的查询或全文搜索很难在client实现，需要一种在client选择计算发生在客户端还是服务端的逻辑
+  - ❓ 如何防止本地数据被恶意篡改，然后恶意op同步到服务端
 
 - features
   - sync between db
@@ -73,6 +74,7 @@ modified: 2024-01-04T06:53:04.003Z
   - kappa-architecture?
   - partial-replication: 参考hypercore
   - sync: couchbase sync gateway; 与minimongo+mongodb的方案比较; 可参考event-sourcing自己实现
+  - eav: notion-data-model
   - attachment/针对图片视频的blob二进制存储数据库: 参考couchbase, mongodb-gridfs, pg-lo
   - alternative-backend: mysql/pg
   - 优化in-memory的版本

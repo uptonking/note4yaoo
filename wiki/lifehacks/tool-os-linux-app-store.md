@@ -117,6 +117,13 @@ modified: 2023-06-22T07:22:04.591Z
 # discuss
 - ## 
 
+- ## 
+
+- ## If you're going to offer an offline-capable Linux app then no-one wants to use Snap. AppImage or Flatpak is the way.
+- https://news.ycombinator.com/item?id=38905605
+  - It doesn't work on various distributions, 
+  - lots of people disable it because of various issues like it being much slower to start, it can only connect to one backend at a time (which is Canonical's proprietary one) unlike Flatpak, and generally the Linux community has settled on Flatpak and AppImage as the preferred universal packaging formats.
+
 - ## [nautilus - How to set Nemo as the default file manager in Ubuntu? - Ask Ubuntu](https://askubuntu.com/questions/1066752/how-to-set-nemo-as-the-default-file-manager-in-ubuntu/1173861#1173861)
 
 - ## [How to add flatpak & snap app icon to desktop?](https://www.reddit.com/r/pop_os/comments/wa3p50/how_to_add_flatpak_snap_app_icon_to_dekstop/)

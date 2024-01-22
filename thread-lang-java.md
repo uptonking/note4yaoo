@@ -12,6 +12,16 @@ modified: 2023-12-15T19:40:39.912Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 我对技术的追求就是打死也不用 Java。
+- https://twitter.com/syeerzy/status/1748545447919018119
+  - 曾经我也这么想，直到遇见一个土豪甲方说必须用Java…
+- 甲方说的对，好多场景，成本和应用要求限定了只能用java。
+  - 不是，因为对Java他们已经构建了一套完整的自动化发布部署安全审核等的工具和流程，其他技术栈并不方便接进去
+
 - ## Is there any multi-threaded #Java compiler? 
 - https://twitter.com/gunnarmorling/status/1747000299447848964
   - `javac` is single-threaded AFAIK, what about others? 

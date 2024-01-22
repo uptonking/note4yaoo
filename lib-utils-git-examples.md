@@ -85,8 +85,9 @@ modified: 2023-08-29T10:12:22.345Z
   - Fossil SCM delta compression in JavaScript
   - The cool thing about it is that plain text inputs generate plain text deltas (binary inputs, of course, may generate binary deltas).
 
-- https://github.com/martinvonz/jj /rust
+- https://github.com/martinvonz/jj /4.3kStar/apache2/202401/rust
   - https://martinvonz.github.io/jj
+  - https://martinvonz.github.io/jj/
   - [Other related work](https://martinvonz.github.io/jj/v0.9.0/related-work.html)
   - A Git-compatible DVCS that is both simple and powerful
   - It combines features from Git (data model, speed), Mercurial (anonymous branching, simple CLI free from "the index", revsets, powerful history-rewriting), and Pijul/Darcs (first-class conflicts), with features not found in most of them

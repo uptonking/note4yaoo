@@ -375,7 +375,19 @@ modified: 2023-08-23T17:15:46.484Z
     - extends the unordered-materialized-kv api with independent sessions that can open() and close() sets of keys
   - https://github.com/peermaps/unordered-materialized-kv-live
 
-- https://github.com/Shaance/rust-simple-log-append-db /rust
+- https://github.com/LAC-Tech/interlog /202401/rust
+  - A distributed, local first log.
+  - Direct I/O append only file, with 'working index' that maps ID's to log offsets
+  - Work at libc level (rustix), so you can follow man pages.
+  - Planned Features
+    - Append events to log
+    - Event ID is composite of origin replica ID and log position
+    - No interpreter or query language - recompile to change validation functions
+  - https://twitter.com/LewisCTech/status/1749180968571961675
+    - Working on a distributed log from the ground up, using direct IO. 
+    - Very local first and event sourcing inspired.
+
+- https://github.com/Shaance/rust-simple-log-append-db /202209/rust/inactive
   - Simple db using append only log file. 
   - This runs in a single thread
   - Implemented for learning purpose

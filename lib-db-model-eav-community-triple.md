@@ -82,7 +82,7 @@ modified: 2023-09-25T09:00:49.722Z
   - There have been various forays into Semantic Web technologies. Previously people have done things like parse the infoboxes on Wikipedia pages and then import that into a triple store.
   - It seems that now the Wikimedia Foundation is finally interested in moving in this direction. But the software isn't there yet, certainly not at the scale Wikipedia needs.
 
-- ## [The Block Protocol | Hacker News_202201](https://news.ycombinator.com/item?id=30103401)
+- ## ⚖️ [The Block Protocol | Hacker News_202201](https://news.ycombinator.com/item?id=30103401)
 
 - The Block Protocol is building on a pretty large history of similar ideas, but none have really succeeded. Joel's interest in this project is some cause for hope as is the embrace of existing standards like react, webcomponents, and HTML.
 - Historically, OpenDoc is pretty relevant. So is OLE. More recently Notion, Coda, Microsoft Loop, Anytype.io, etc lean on the same concepts to allow you to break documents into independent & reassemble-able components. 
@@ -116,7 +116,7 @@ modified: 2023-09-25T09:00:49.722Z
   - We do want to promote the free exchange of structured data, and to have data captured and marked up according to some structure - we also want to promote the portability and easy-of-setup of UI components.
   - Our FAQ illustrates how we relate to and intend to use existing standards - https://blockprotocol.org/docs/faq - we'd be interested in any others you think worth building on.
 
-- ## 💡💡 [The data model behind Notion's flexibility | Hacker News_202105](https://news.ycombinator.com/item?id=27200177)
+- ## 📈💡 [The data model behind Notion's flexibility | Hacker News_202105](https://news.ycombinator.com/item?id=27200177)
 
 - Salesforce and JIRA both did something similar: their underlying database schema is very generic, basically keys and values, allowing arbitrary logical schemas to be defined at runtime. 
   - Yet in both cases, they ended up not really taking advantage of this flexibility. The logical schema of both systems is a very ordinary relational schema that could have been implemented directly on the database, with much better performance. 
@@ -128,7 +128,13 @@ modified: 2023-09-25T09:00:49.722Z
 # discuss
 - ## 
 
-- ## 
+- ## [How to represent EAV in CSV? - Stack Overflow](https://stackoverflow.com/questions/28226088/how-to-represent-eav-in-csv)
+- It isn't a particularly good way of organizing data. It has some superficial advantages, but it ends up making for complex queries
+- Validating EAV data becomes really hard. How do you ensure that when the 'type' of an entity is 'apple', the 'size' is either 'small' or 'large'
+  - You can do all that with a (single) EAV table, but it gets messy.
+- 
+- 
+- 
 
 - ## [Is JSONB + Postgres still a viable way of storing varying attributes? : rails_202302](https://www.reddit.com/r/rails/comments/10x3x0d/is_jsonb_postgres_still_a_viable_way_of_storing/)
 - Postgres JSONB has not ceased to be a best practice for adding schema-less data to records in a relational database.

@@ -45,6 +45,13 @@ modified: 2021-01-01T20:17:05.116Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Use columns property to split your article into responsive columns
+- https://twitter.com/davidm_ml/status/1749446208966303811
+
 - ## 💡 One of the easiest ways to improve your layouts is to use intentional spacing
 - https://twitter.com/ridd_design/status/1718322324561334331
   - ❌ Avoid equidistant(等距的) spacing

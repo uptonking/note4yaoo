@@ -32,6 +32,17 @@ modified: 2023-12-01T09:08:18.316Z
 - One of the distinguishing features of SyncedDB is that it attempts to be a very lightweight wrapper around IndexedDB. 
   - It's essentially IndexedDB + migrations + promises + syncing.
 
+# discuss-skdb
+- ## 
+
+- ## 
+
+- ## 
+
+- ## @JulienVerlaguet has started @skiplabs to work on SKDB, a reactive DB built from the ground up (like, literally, they have their own sklang programming language). 
+- https://twitter.com/joygao/status/1749228059360960569
+  - A lot of companies and OS projects have built subset/variation of this (us at Figma included!), however seeing this being tackled from the ground up is quite refreshing.
+
 # discuss
 - ## 
 

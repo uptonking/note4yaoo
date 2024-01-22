@@ -102,6 +102,15 @@ modified: 2023-09-17T17:35:27.024Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Exploring the history of SQL 
+- https://twitter.com/sspaeti/status/1749447691946340677
+  - SQL's journey has been groundbreaking since its 1970s inception as SEQUEL to today's advanced Natural Language Queries.
+  - What's your favorite SQL evolution with all these different SQL flavors today?
+
 - ## 一直热衷于分布式、程序性能、缓存这些时髦内容，然而往往 SQL 都写不清楚，基本的 SQL 优化常识都没有
 - https://twitter.com/im2gua/status/1746688523061920203
 - 所以我们一般不允许程序员去碰数据库，涉及到数据存取的都是特定几个人来写，其他人提交申请。

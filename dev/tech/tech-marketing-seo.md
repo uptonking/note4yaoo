@@ -45,7 +45,27 @@ modified: 2020-12-20T12:36:17.694Z
 # discuss-seo
 - ## 
 
-- ## 
+- ## 较基础的 SEO ，包括网站标题、描述、OG 卡片等元数据、整体结构的优化、
+- https://twitter.com/xqliu/status/1748895482276127064
+  - 其实一点不难，是典型的 low hanging fruit ，建议及早意识到快速并进行优化。
+  - 推荐两个用于搜索引擎优化的Chrome扩展程序
+  - Site checker
+  - https://quickcreator.io 的 AI 内容创作工具
+
+- 一些简单的优化原则（新手角度）
+1. 重点是要理解 google 或者其他搜索引擎的爬虫怎么阅读咱们的页面，是和人类有区别的
+2. 一个页面最好只有一个 H1 标签，且能完整概括或者描述本页的内容
+3. H2 > H3 > H4 这类，逐步细化，像一棵树一样
+4. 图片都增加 alt 属性
+5. 如果能在页面上增加一些有使用价值的小工具，对跳出率留存率会有帮助，google 应该页能增加页面权重
+
+- 一些简单的优化原则(2)
+1. 适当增加多媒体，对SEO 和用户都好，比如 youtube 视频，据说 google 会增加有 youtube 视频的页面的权重（未确认）
+2. 开始可以调研长尾关键词，而不是热门关键词。
+3. SEO 的整个过程：调研 -> 计划 -> 实施 -> 回顾并继续进入到调研，进入下一轮闭环
+- 推荐 http://semrush.com 工具来进行 SEO 调研
+
+- SEO 是个过程，需要不断地调研、优化、监控、不是一个一成不变的结果，在不同的阶段，方式方法和结果也会有所差异，我在研究
 
 - ## Build "alternative" pages as marketing. They rank easily and bring high quality traffic.
 - https://twitter.com/Timb03/status/1711563242697535773

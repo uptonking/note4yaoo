@@ -133,7 +133,34 @@ modified: 2023-12-12T08:45:31.670Z
 
 - ## 
 
-- ## 
+- ## 🆚️ You can use two ways to let web apps talk to each other: polling and webhooks.
+- https://twitter.com/Franc0Fernand0/status/1748620224767701040
+- In API Polling, your app continuously requests updates to the email-sending server to know if the mail has been sent. 
+- this method is simple and easy to use, it does have  some drawbacks:
+  - It requires a lot of resources
+  - It doesn't give real-time updates
+  - The 3rd party service service talks to your app directly, which makes it less secure.
+
+- Webhooks, on the other hand, work like a callback or a direct phone call informing your app of new updates. 
+- This push-based approach has many advantages:
+  - Ensure real-time data updates
+  - Reduce the number of API calls and resources you use
+  - Guarantee better scalability and system decoupling
+
+- there are also some things to think about when setting up Webhooks.
+  - First, it is necessary to set up a clear API endpoint to send updates from outside services.
+  - Second, it is important to set up security measures for webhook requests and failure handling measures for when the webhook doesn't get an answer
+
+- Over the years, I've seen webhooks become dominant while integrating with 3rd party APIs.
+
+- One failure-handling measure in webhook is using a message broker like RabbitMQ to ensure that updates are delivered again until your server acknowledges them.
+
+- How do you deal with webhook failure?
+  - You can implement a retry policy for failed delivery but limit the number of retries to prevent endless attempts. 
+  - As a fallback strategy, you can consider an alternative communication channel.
+
+- How do we implement robust failure handling in both Webhook and Polling scenarios?
+  - Retry strategies are at the base of failure handling in both cases. With polling, you can consider adaptive polling to adjust the frequency based on the system load.
 
 - ## 🆚️ Polling vs Webhooks
 - https://twitter.com/ProgressiveCod2/status/1734474112670822904

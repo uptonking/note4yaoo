@@ -91,7 +91,11 @@ modified: 2022-08-21T10:02:05.129Z
   - 可在redux-devtools中查看数据结构
   - [feature/frontend next_20230503(v0.3), 前端迁移到svelte](https://github.com/undb-xyz/undb/pull/908)
     - 41fa03d9bfbc9b5072266ad94c9532ccdcf25a68
-- https://github.com/baastronaut/baastronaut /ts
+
+- https://github.com/baastronaut/baastronaut /202304/ts
+  - open-source Airtable alternative built on PostgREST
+  - [Show HN: Baastronaut – open-source Airtable alternative built on PostgREST | Hacker News_202303](https://news.ycombinator.com/item?id=35356736)
+  - 依赖nestjs、typeorm、mantine.v6、mobx、nextjs
 
 - nocodb /33kStar/AGPLv3/202212/ts/vue/参考后端/多视图
   - https://github.com/nocodb/nocodb

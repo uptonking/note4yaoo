@@ -30,6 +30,81 @@ modified: 2023-10-26T21:54:54.201Z
 
 - ## 
 
+- ## [Microsoft announces Lists, a new Airtable-like app | Hacker News_202005](https://news.ycombinator.com/item?id=23236364)
+- It's just something with lots of Microsoft's latest software that annoys me. They all feel behind, laggy and lacking features in comparison to their competitor.
+  - Slack > Teams
+  - Trello > Planner
+  - PowerBi > Tableau, Looker, Mode
+
+- ## [Grist is a modern, relational spreadsheet | Hacker News _202311](https://news.ycombinator.com/item?id=38080951)
+- it's kinda annoying when people call something spreadsheet, when it's really just a richful WYSIWYG-interface for a relational database. Not that it's bad to have a good Database-Interface, but the flawed communication will make a poor impression with those who really want a real excel-like spreadsheet, and then got something else. This will probably more harmful than beneficial in the long run.
+  - The motivation for calling Grist a spreadsheet is that it has formulas, and cell values get updated automatically when something they depend on gets updated
+
+- ## [Show HN: Visual DB – Airtable alternative for your own database | Hacker News _202308](https://news.ycombinator.com/item?id=37223019)
+- I've been wanting to build something like this myself, due to the sheer lack of alternatives. Other purported "airtable clones" often lack filtering and grouping, the essence of Airtable.
+  - Right, others such as NocoDB, Baserow, Plato and Mathesar don’t support grouping. Even Google Tables has only one level of grouping.
+
+- ## [Rows 2.0: The easiest way to use data on a spreadsheet | Hacker News _202303](https://news.ycombinator.com/item?id=35002720)
+- Calling it a spreadsheet and making it look and work like a spreadsheet is a bad idea, because now you're competing against Excel.
+
+- ## [Rows.com – Spreadsheet that supports external API integration and collaboration | Hacker News _202111](https://news.ycombinator.com/item?id=29171490)
+- rows.com seems more focused on external integrations; 
+  - Grist has API but is more focused on powerful formulas and layouts for working within the data.
+
+- ## [Show HN: I made an app that consolidated 18 apps (doc, sheet, form, site, chat…) | Hacker News_202401](https://news.ycombinator.com/item?id=38901504)
+- Single biggest thing you need to nail down fast: the data model. It is extremely hard to shift as things grow, and without careful thought, it’ll turn into a horrifying miasma of JSONB columns, duplicated data, orphaned rows, and garbage performance.
+  - Customers are going to store surprisingly large items in Docs, where you’d be tempted to inline them instead of offloading to S3 et al.
+  - Chat practically needs to be its own DB. Discord runs on Scylla, Slack runs on Vitess over MySQL. The needs of chat access are wildly different from other types of storage.
+  - If you’re doing any kind of active-active, have a plan for how to move off of that, because it does not scale (at least, not without breath-takingly expensive hardware).
+
+- Single biggest technical thing, anyway. IMO, the single biggest thing is focus and clarity in their communication. If people without a working mental model of software development can’t instantly understand the tangible problem it solves in their existing business process, they won’t even scroll past the break, let alone pay for it
+  - The second biggest problem is having an interface design team that makes all of those disparate apps consistent enough to be more usable than individual solutions.
+  - The fact that nearly no popular user-facing applications are developer-managed FOSS (as opposed to Firefox/blender/signal/et al which are managed by a company that hires professional designers) despite being free, tells you everything you need to know about dev-driven UI/UX. 
+  - Nailed the real important part, the product marketing
+
+- He's most likely using SQLite per account, because that's the easiest way to have an offline DB and sync it, which will most likely scale perfectly fine with appropriate indexes as long as you are careful about the feature set.
+  - That introduces a new problem when it syncs to others in the same workspace, if it’s large.
+- Nice thing about SQLite is you can “clone” the repository by copying a single file. And in cases where you need incremental sync, you can use an SQLite of diff’s as a single packfile (similar to git).
+  - Things like cr-SQLite also have a lot of potential to make single SQLite per client a lot more viable. But I’m interested to see what you think the problems are? Have you found a solution or alternative?
+
+- No one cares about that. Export to open document format or microsoft. You are living in a bubble of “hackers”. You are not your average user. Case in point of “engineers are not product people”
+
+- If your selling point is consolidating apps, you absolutely have to get the data model right, else you don't solve the problem. Just because you don't go in and sell it that way, doesn't mean it's not important as hell. The very reason it's hard to get apps to interoperate is that each one has it's own data model. If they used one giant data model... it wouldn't be a problem.
+
+- Notion might have written something about their journey in this regard?
+  - They have, yes, but they also mention learning that skipping building indices during a DB copy (doing so instead after the new instance is built) is much faster, which is pretty basic RDBMS knowledge. It’s great to be learning, and even better to be sharing that knowledge, but it gives me pause about accepting much of what they’ve written as expertise.
+  - IME, many SaaS companies have eschewed the idea of having any DB experts, and this inevitably leads to pain down the road.
+
+- As a business user it's not clear how I would use it, and why I would care.
+  - A good comparison against your front page would be against monday.com or Asana who start with use-cases and practical application. 
+
+- I built something similar many years back.
+  - I should have found a handful of customers who needed tight integration among these use cases and let their needs drive the implementation.
+  - Why? There are already plenty of applications that do the same functions. (MS Office, Google Drive, ect, ect.) These applications are mature, and well-understood by the whole market.
+
+- I personally prefer apps that do one thing well. I don't like "super" apps that does everything. I like separate tools, and not a Swiss army knife.
+
+- One of the most important features to get right for tools like this is collaborative editing. It's incredibly difficult to get this right (live preview, conflict resolution, history management, etc), especially given how the vast majority of users are non-technical folks (which aren't used to tools like git). 
+  - I actually think this hyper-granular realtime collaboration like in Google docs is slightly overrated.
+  - All I’m saying is this CRDT craze isn’t always necessary or even appropriate for many products. It adds a lot of technical complexity, especially for a small shop.
+- 🔀 jitl/notion: Realtime collab apps tend to kill their competitors without realtime collab. 
+  - See Figma: slightly worse UX and performance compared to Sketch, easily killed Sketch. 
+  - How did Notion penetrate the competitive docs/wiki market? Much more collaborative than the incumbent Confluence (now confluence is iterating on realtime collab to remain relevant).
+  - Realtime is becoming table stakes in any online collab system. I think code is the exception, not the rule, because it’s 100x more brittle(容易损坏的；不安全的) than prose or pixels that need to convey approximate meaning to humans.
+  - You can implement realtime without using CRDT/OT, Notion is paragraph-by-paragraph last write wins, no fancy algo, but mostly good enough to remain competitive.
+
+- > I actually think this hyper-granular realtime collaboration like in Google docs is slightly overrated.
+  - I have to disagree. It's absolutely necessary for a lot of workflows, especially when people are collaborating on a doc in real time during a meeting (super super common), or when you've got 10 reviewers of a doc all leaving their feedback in comments, and comments responding to comments, over the course of the same hour.
+  - The model of clean commits works well for code. It doesn't work well at all for business team documents that are in-progress.
+
+- I would love to know a little more about your tech stack and architecture?
+  - It's on GCP and 99% "serverless" with TypeScript + React frontend. Flutter for mobile apps and Electron for desktop apps (planning to switch the desktop apps to Flutter too once their desktop frameworks are more stable)
+  - I thought about doing CRDT in the beginning, but because not every block type is text, I simplified the implementation to last write wins. Note that every paragraph is a block, so it's not like the entire page is overwritten. CRDT is still doable though.
+  - There are real-time text cursors and block selections, but I intentionally did not implement Figma-style floating cursors that people may expect in certain modules. I thought it looks cool but doesn't offer much value, especially when you can already see what other people selected.
+- Interesting you say that because I've always felt like a big drawback of Google Docs is the inability to see the floating cursor. It doesn't feel as immersive as, say, Figma editing. However, I'm just one person and my opinion doesn't speak for them all! It'd be interesting to see an A/B test with this sort of functionality.
+
+- 替代品: google-docs-suite; microsoft-teams; zoho; 飞书
+
 - ## 🔥 [Show HN: Plato – Airtable for your SQL database | Hacker News_202303](https://news.ycombinator.com/item?id=35070488)
 - [Plato | Build flexible internal tools](https://www.plato.io/)
 
@@ -157,7 +232,7 @@ modified: 2023-10-26T21:54:54.201Z
 
 - Seems like you'd want to look into eavt databases for a universal schema, Datomic has a lot of resources explaining it's schema
 
-- ## [subset: Excel 2.0 – Is there a better visual data model than a grid of cells? | Hacker News_202203](https://news.ycombinator.com/item?id=30868696)
+- ## ✨ [subset: Excel 2.0 – Is there a better visual data model than a grid of cells? | Hacker News_202203](https://news.ycombinator.com/item?id=30868696)
 - UltOrg is roughly "spreadsheets re-built atop the RDBMS datamodel". The UI supports nested joins, aggregations, filtering, for both display and data update.
 
 - Airtable really ought to be killing Excel, but the SaaS model combined with a stupidly low artificial row count limit (over 50000 rows is listed as "contact us for pricing") means that it will never achieve penetration into weird and wonderful use cases like Excel has.

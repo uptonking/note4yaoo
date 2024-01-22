@@ -292,6 +292,13 @@ modified: 2023-01-01T13:24:35.994Z
   - a GTK3 UI in Rust that was written early and isn't functional.
   - an interactive python shell, bibl-shell.py, with convenient types and methods for working with your database:
 
+- https://github.com/slackhq/kaldb /MIT/202401/java/仅搜索不修改
+  - a cloud-native search and analytics engine for log, trace, and audit data
+  - designed to be easy to operate, cost-effective, and scale to petabytes of data.
+  - Non-Goals
+    - Document mutability - records are expected to be append only.
+    - Additional storage engines other than Lucene.
+
 - https://github.com/zinclabs/zinc /202211/go
   - a search engine that does full text indexing
   - lightweight alternative to elasticsearch that requires minimal resources, written in Go.
