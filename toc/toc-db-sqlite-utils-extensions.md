@@ -23,7 +23,7 @@ modified: 2022-11-04T14:20:37.172Z
   - sqlean brings them together, neatly packaged into domain modules, documented, tested
   - The goal is to create a well-thought set of domain modules with a convenient API. A kind of standard library for SQLite.
 
-- https://github.com/nalgeon/sqlpkg
+- https://github.com/nalgeon/sqlpkg /NonOpen
   - https://sqlpkg.org/
   - The (unofficial) SQLite package registry
   - The registry contains only package metadata (specs). Package binaries and sources are located elsewhere (usually in the package developer's repositories).

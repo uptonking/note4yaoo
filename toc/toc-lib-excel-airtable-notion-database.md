@@ -22,7 +22,9 @@ modified: 2022-08-21T10:02:05.129Z
   - platform, baas, cms, workflow, airtable-like
   - 流程自动化
 
-- [A More Human Approach To Databases](https://ccorcos.github.io/filing-cabinets/)
+- resources
+  - https://github.com/topics/notion-database
+  - [A More Human Approach To Databases](https://ccorcos.github.io/filing-cabinets/)
   - Notion 工程师 Chet 以警察信息管理系统为例，用普通人能理解的大白话，从文件、文件夹、文件柜逐步介绍关系型数据库的构成和实现原理
   - [Maybe some misunderstanding of how SQL DB indexes work?](https://github.com/ccorcos/tuple-database/issues/11)
 # popular
@@ -347,7 +349,7 @@ modified: 2022-08-21T10:02:05.129Z
   - 暂时未将项目全部开源
   - 已开源的项目大多是go写的玩具
 
-- https://github.com/souvikinator/notion-to-md
+- https://github.com/souvikinator/notion-to-md /MIT/202307/ts
   - Convert notion pages, block and list of blocks to markdown (supports nesting) using notion-sdk-js
 # table-like
 - https://github.com/vikadata/vika.js

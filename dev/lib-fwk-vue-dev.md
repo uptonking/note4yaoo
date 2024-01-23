@@ -24,6 +24,14 @@ modified: 2021-01-04T19:34:22.729Z
 - Pinia 就是一个实现了上述需求的状态管理库，由 Vue 核心团队维护，对 Vue 2 和 Vue 3 都可用。
   - 现有用户可能对 Vuex 更熟悉，它是 Vue 之前的官方状态管理库。
   - 由于 Pinia 在生态系统中能够承担相同的职责且能做得更好，因此 Vuex 现在处于维护模式。它仍然可以工作，但不再接受新的功能。对于新的应用，建议使用 Pinia。
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## [Is there a library like Preact for React, but for Vue? : vuejs](https://www.reddit.com/r/vuejs/comments/pp4o1s/is_there_a_library_like_preact_for_react_but_for/)
+- Not a direct comparison but this exists: https://github.com/vuejs/petite-vue
+
 # discuss
 - ## 
 

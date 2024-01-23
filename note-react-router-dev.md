@@ -42,7 +42,11 @@ modified: 2023-01-09T15:41:17.179Z
 
 - ## 
 
-- ## 
+- ## File-based routing is great for defining convention and boundaries. It forces you to pre-split functionality and think hierarchically.
+- https://twitter.com/tannerlinsley/status/1749511216345833763
+  - It's severely limited however for actually defining how routes are matched because there's only so much you can unpack from a string (in a type safe way too) to handle highly dynamic conditions. I have yet to see a file-based routing solution really  lean into search params for matching and I believe this is part of the equation. 
+
+- That's why PHP MVC Framework evolved from constraints raw .php files directory structure.
 
 - ## fter tearing @Tan_Stack Router's internals to the ground and rebuilding them over the last few weeks, somehow my defer/Awaited promise streaming logic survived perfectly _20231206
 - https://twitter.com/tannerlinsley/status/1732155612962882012

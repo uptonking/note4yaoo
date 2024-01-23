@@ -178,6 +178,13 @@ SecretOps:
 # discuss-payment-overseas
 - ## 
 
+- ## 
+
+- ## 为什么支付是接入的Lemonsqueezy ，而不是Stripe ?
+- https://twitter.com/augusdinc/status/1749465227421433945
+- lemomn 接入成本更低，而且配套的比较好用，比如邮件营销相关。lemon 甚至可以替代 gumord 。 而且风控没有stripe严格。
+- Stripe 大陆地区无法注册
+
 - ## 很多朋友都有开户香港汇丰或者其他境外银行的需求，昨天我亲自操作了一番，并且写了一篇较为详细的攻略。
 - https://twitter.com/austinit/status/1747125889446645975
   - [2024年1月15日开户香港汇丰(HSBC HK)与中银香港(BocHK)记录与攻略 - 驭风笔记](https://yufengbiji.com/posts/open-the-HSBC-HongKong-account-in-Jan15-2024)

@@ -47,9 +47,13 @@ modified: 2023-01-21T18:58:29.846Z
     - CodeBlitz提供了一种只需使用浏览器即可体验IDE的场景。与github.dev和vscode.dev不同的是，CodeBlitz是一个框架，通过OpenSumi模块和插件的方式，可以为上层产品量身定制符合其业务场景的WebIDE。
 
 - https://github.com/VSCodium/vscodium
+  - https://vscodium.com/
   - binary releases of VS Code without MS branding/telemetry/licensing
+  - the Open VSX Registry is the pre-set extension gallery in VSCodium. Using the extension view in VSCodium will therefore by default use it.
   - [Run vscodium in browser](https://github.com/VSCodium/vscodium/discussions/1469)
     - is there a definitive answer for a web version of vscodium?
+  - [Switching between marketplaces](https://github.com/VSCodium/vscodium/issues/519)
+    - If it helps anyone, there's a AUR (Archlinux User Repository) that adds the VSCode marketplace to VSCodium. 
 # apps
 
 # vscode-web

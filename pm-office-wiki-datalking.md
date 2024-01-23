@@ -51,7 +51,7 @@ modified: 2021-08-07T19:58:20.142Z
   - 支持actions自动更新引用文本块或数据
   - 支持sponsor、paid-only-access
   - 支持references by; contributors
-# 总体设计(核心5大功能)
+# 总体设计(核心功能)
 - 主页/工作台/最近动态 dashboard
 - 知识库/文库集合/仓库/批量操作 wiki lib
 - 知识管理/知识空间/文件夹集合/管理空间 spaces

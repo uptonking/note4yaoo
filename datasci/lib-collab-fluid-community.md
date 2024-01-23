@@ -32,7 +32,8 @@ modified: 2023-02-11T11:07:43.781Z
 # discuss
 - ## 
 
-- ## 
+- ## [Microsoft Loop brings back Google Wave? | Hacker News _202111](https://news.ycombinator.com/item?id=29082706)
+- Fluid is based on CRDTs under the hood (or possibly the CRDT predecessor OT like Wave was), but Fluid believes writing CRDTs is hard (it is), especially writing them that obey the math laws CRDTs are supposed to, and then getting that to perform well (including and especially things like catch-up/replay) is also hard, so yes the actual programming interface Fluid presents is high level "distributed data structures" though the wire format is closer to CRDTs with some cheats from assumed knowledge of the data structures (things like sending the latest contents of a list for catch-up rather than replaying the entire CRDT chain for that list)
 
 - ## [Building a BFT JSON CRDT | Hacker News](https://news.ycombinator.com/item?id=33694568)
 - It's the Byzantine Fault Tolerant part of this that is particularly innovative and based on Kleppmanns most recent work. I believe it solves the issue of either malicious actors in the networks modifying others transactions, spoofing them, or the messages being modified by third parties ("outside" the network) who have MITM the connection. These are really great problems to solve.

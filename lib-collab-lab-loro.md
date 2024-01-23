@@ -11,8 +11,21 @@ modified: 2024-01-06T15:37:08.031Z
 
 # dev
 
-# discuss-stars
+# blogs
 
+## [Introduction to Loro's Rich Text CRDT – Loro_202401](https://www.loro.dev/blog/loro-richtext)
+
+- This article presents the rich text CRDT algorithm implemented in Loro, complying with Peritext's criteria for seamless rich text collaboration. 
+  - Furthermore, it can be built on top of any List CRDT algorithms and turn them into rich text CRDTs.
+- Above is an online demo of Loro's rich text CRDT, built with Quill. 
+  - After the replay, you can simulate real-time collaboration and concurrent editing while offline. 
+  - You can also drag on the history view to replay the editing history.
+- Loro is based on the Replayable Event Graph (REG) algorithm proposed by Seph Gentle, but this algorithm cannot integrate the original version of Peritext. 
+  - This motivates us to create a new rich text algorithm. 
+  - It is independent of the specific List CRDTs, thus working nicely with REG, and is developed on top of them to establish a rich text CRDT.
+- Reconstructing history might seem time-consuming, but REG can backtrack only some. When merging updates from remote sources, it only needs to replay operations parallel to the remote update, reconstructing the local CRDTs to calculate the diff after applying remote operations to the current document.
+  - The REG algorithm excels with its fast local update speeds and eliminate concerns about tombstone collection in CRDTs.
+# discuss-stars
 - ## 
 
 - ## 

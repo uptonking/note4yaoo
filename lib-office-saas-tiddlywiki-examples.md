@@ -34,6 +34,7 @@ modified: 2023-12-15T17:50:41.213Z
   - 太微的NodeJS版本有无缝的自动保存体验，这是利用 SyncAdaptor 技术（而不是 Saver ）带来的的优势，太记对 NodeJS wiki 有更好的支持，而 TD 主要支持 HTML 版单文件 WIKI，各有优势
 
 - https://github.com/jokroese/tiddlyroam /202005/html/inactive
+  - https://tiddlyroam.org/
   - TiddlyRoam is a TiddlyWiki with bi-directional links and graph maps.
   - The project aims to provide a free and open source alternative to the popular Roam.
 
@@ -140,6 +141,10 @@ modified: 2023-12-15T17:50:41.213Z
   - http://contextplugin.tiddlyspot.com/
   - A plugin to allow preview with word highlight within searches but not limited to that. 
   - Actually this widget looks for a word inside a tiddler and shows the result with the searched word highlighted with some of its context.
+
+- https://github.com/EvanBalster/TiddlyWikiFormula /MIT/202012/js
+  - A TiddlyWiki plugin for functional formulas, combining the power of Excel and Google Sheets with TiddlyWiki's processing idioms.
+  - [Formula: Spreadsheet-like mathematics for TiddlyWiki_201712](https://groups.google.com/g/tiddlywiki/c/bfInUWhAtzo)
 # utils
 - https://github.com/jimpick/dat-tiddlywiki /201806/js
   - Multiwriter Dat + TiddlyWiki

@@ -119,22 +119,6 @@ modified: 2023-02-05T18:05:44.122Z
     - Joplin server has no ability to view/edit notes from the server with a web client.
     - https://github.com/joplin-vieweb/joplin-vieweb
 
-- https://github.com/zotero/zotero /8.6kStar/AGPLv3/202401/js
-  - https://www.zotero.org/
-  - a free, easy-to-use tool to help you collect, organize, cite, and share your research sources.
-  - Zotero is built on Firefox and depends on many other exceptional open-source projects:
-    - [ace](https://ace.c9.io/)
-    - Monaco Editor
-    - ProseMirror
-    - pdf.js
-    - katex
-    - Citation Style Language
-    - epub.js
-  - https://github.com/windingwind/zotero-better-notes /AGPLv3/202401/ts
-    - 📝 Everything about note management. All in Zotero.
-    - a plugin for Zotero.
-    - Keep in sync with your Markdown files. Two-way, automatically
-
 - BoostNote /3.1kStar/GPLv3/202209/ts/inactive
   - https://github.com/BoostIO/BoostNote-App
   - https://boostnote.io/
@@ -367,6 +351,11 @@ modified: 2023-02-05T18:05:44.122Z
   - Track tasks across your entire vault. Query them and mark them as done wherever you want. 
   - Supports due dates, recurring tasks (repetition), done dates, sub-set of checklist items, and filtering.
 
+- https://github.com/trey-wallis/obsidian-dataloom /MPLv2/202401/ts
+  - https://dataloom.xyz/
+  - DataLoom is an Obsidian.md plugin for desktop and mobile. 
+  - It allows you to create databases similar to Notion.so.
+  - Inspired by Excel spreadsheets and Notion.so.
 
 - https://github.com/scambier/obsidian-omnisearch /GPLv3/202401/ts/svelte
   - A search engine that "just works" for Obsidian. 
@@ -418,6 +407,26 @@ modified: 2023-02-05T18:05:44.122Z
   - We are in the early stages of designing an alternative plugin that does not make use of existing code by ObsidianMD team.
   - [Show HN: Open-source obsidian.md sync server | Hacker News_202308](https://news.ycombinator.com/item?id=37247767)
     - Obsidian is a small company, we're not VC backed (100% user-supported), so the Sync pricing helps us stay in business and keep the lights on. 
+# zotero
+- https://github.com/zotero/zotero /8.6kStar/AGPLv3/202401/js
+  - https://www.zotero.org/
+  - a free, easy-to-use tool to help you collect, organize, cite, and share your research sources.
+  - Zotero is built on Firefox and depends on many other exceptional open-source projects:
+    - [ace](https://ace.c9.io/)
+    - Monaco Editor
+    - ProseMirror
+    - pdf.js
+    - katex
+    - Citation Style Language
+    - epub.js
+  - https://github.com/windingwind/zotero-better-notes /AGPLv3/202401/ts
+    - 📝 Everything about note management. All in Zotero.
+    - a plugin for Zotero.
+    - Keep in sync with your Markdown files. Two-way, automatically
+
+- https://github.com/dvanoni/notero /MIT/202401/ts
+  - a Zotero plugin for syncing items and notes into Notion. 
+  - The Notero plugin watches for Zotero items being added to or modified within any collections that you specify in the Notero preferences. 
 # note-utils
 - graph /7Star/MIT/202210/ts
   - https://github.com/graphcentral/graph

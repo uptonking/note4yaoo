@@ -15,6 +15,12 @@ modified: 2023-12-15T18:55:05.385Z
 - ## 
 
 - ## 
+# discuss-directus
+- ## 
+
+- ## [Extension Marketplace](https://github.com/directus/directus/discussions/2820)
+- 202305: This feature request has received over 15 votes from the community. This means we'll move this feature request to the Under Review state
+
 # discuss-lowcode
 - ## 
 

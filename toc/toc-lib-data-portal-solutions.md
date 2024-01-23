@@ -31,6 +31,8 @@ modified: 2021-01-01T16:02:50.598Z
 - https://github.com/awslabs/open-data-registry /apache2/python
   - https://registry.opendata.aws/
   - A repository of publicly available datasets that are available for access from AWS resources
+  - https://github.com/awslabs/open-data-registry-browser
+    - a simple, web-based visualization of the data in registry
 
 - https://github.com/simonw/datasette  /python
   - https://datasette.io/

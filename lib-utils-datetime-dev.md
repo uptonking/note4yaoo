@@ -15,7 +15,8 @@ modified: 2023-10-13T16:44:29.825Z
 
 - ## 
 
-- ## 
+- ## I'm in the middle of replacing date-fns with temporal-polyfill.
+- https://twitter.com/evoluhq/status/1749545877545378011
 
 - ## 🌰 Just built a mini video generator and shipped it to Vercel in less than 100 minutes!
 - https://twitter.com/JNYBGR/status/1715035990446723101

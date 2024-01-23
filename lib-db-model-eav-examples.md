@@ -45,16 +45,22 @@ modified: 2023-09-25T17:56:50.116Z
   - Each triple is stored with a Lamport Timestamp and treated as a Last Writer Wins Register (LWW). 
   - To support its tuple based storage system, TriplitDB uses Tuple Database as a generic querying interface and transaction manager.
 
+- https://github.com/adriano-di-giovanni/reaves /MIT/201811/js/inactive
+  - a Javascript implementation of the Entity-Attribute-Value model and the event sourcing pattern for Node.js.
+  - Simply put, it lets you save and retrieve present and past string values of attributes that belong to entities identified by string IDs. 
+  - Reaves is backed by Redis.
+
+- https://github.com/smallhelm/entity-wharf-js /MIT/201412/js/inactive
+  - Store data as entity attribute values in memory
+  - All data stored in Wharf is organized uniformly as eav
+  - designed to be used as a state management solution for applications that need to be performant for quickly mutating state over many different types of entities with similar characteristics.
+  - If performance isn't this crucial then check out DataScript which provides immutability, versioning, undo/redo, and a powerful datalog query engine.
+
 - https://github.com/comunica/comunica /379Star/MIT/202309/ts
   - https://comunica.dev/
   - A knowledge graph querying framework
   - Flexible SPARQL and GraphQL over decentralized RDF on the Web.
   - The default query engine that exposes most standard features is SPARQL
-
-- https://github.com/adriano-di-giovanni/reaves /MIT/201811/js/inactive
-  - a Javascript implementation of the Entity-Attribute-Value model and the event sourcing pattern for Node.js.
-  - Simply put, it lets you save and retrieve present and past string values of attributes that belong to entities identified by string IDs. 
-  - Reaves is backed by Redis.
 
 - https://github.com/jazzband/django-eav2 /LGPLv3/202309/python/Django
   - https://django-eav2.readthedocs.io/
@@ -72,21 +78,13 @@ modified: 2023-09-25T17:56:50.116Z
   - ERAV is an extension to Entity-Attribute-Value (EAV) that adds support for maintaining multi-faceted provenance metadata for an entity
   - optimized for storing and tracking changes to time series data as it is exchanged between disparate technical platforms (e.g. mobile devices, Excel spreadsheets, and third-party databases). 
 
-- https://github.com/jacoscaz/quadstore /179Star/MIT/202308/ts
-  - a LevelDB-backed RDF graph database / triplestore for JavaScript runtimes (browsers, Node.js, Deno, Bun, ...) written in TypeScript.
+- https://github.com/jacoscaz/quadstore /179Star/MIT/202401/ts
+  - a LevelDB-backed RDF graph database/triplestore for JavaScript runtimes (browsers, Node.js, Deno, Bun, ...) written in TypeScript.
   - Implements the Sink, Source and Store RDF/JS interfaces for maximum interoperability with other RDF libraries
   - Supports SPARQL queries via quadstore-comunica, a tailored configuration and distribution of the Comunica querying framework
   - Natively capable of querying across named graphs
   - quadstore can work with any storage backend that implements the AbstractLevel interface. 
   - Except for those related to the RDF/JS stream interfaces, quadstore's API is promise-based and all methods return objects that include both the actual query results and the relevant metadata.
-
-- https://github.com/EmmanuelOga/NeonTetra /js
-  - A simple proof of concept of storing content on TerminusDB for a CMS-like system.
-  - The demo requires a local instance of TerminusDB
-  - Generate documents (HTML, PDF, etc) from templates stored in a graph database.
-    - The templates should be able to reference data from the same database.
-  - TerminusDB also includes a git-like storage system that allows "branching" the data!
-  - WOQL has machine readable specification, based in OWL. WOQL queries are RDF graphs!
 
 - https://github.com/rubensworks/rdf-stores.js /MIT/ts
   - A TypeScript/JavaScript implementation of the RDF/JS store interface with support for quoted triples.
@@ -97,6 +95,14 @@ modified: 2023-09-25T17:56:50.116Z
   - Quoted triples support (RDF-star / RDF 1.2)
   - Implements the RDF/JS Store and RDF/JS DatasetCore interfaces
 
+- https://github.com/EmmanuelOga/NeonTetra /js
+  - A simple proof of concept of storing content on TerminusDB for a CMS-like system.
+  - The demo requires a local instance of TerminusDB
+  - Generate documents (HTML, PDF, etc) from templates stored in a graph database.
+    - The templates should be able to reference data from the same database.
+  - TerminusDB also includes a git-like storage system that allows "branching" the data!
+  - WOQL has machine readable specification, based in OWL. WOQL queries are RDF graphs!
+
 - https://github.com/terminusdb/terminusdb-store /341Star/apache2/202309/rust
   - a tokio-enabled data store for triple data
   - This library implements a way to store triple data - data that consists of a subject, predicate and an object, where object can either be some value, or a node
@@ -106,20 +112,21 @@ modified: 2023-09-25T17:56:50.116Z
   - We are constantly developing terminusdb-store to make it a high quality succinct(简洁的) graph representation versioned datastorage layer. 
   - Starting with version 0.20.0, terminus-store uses a new storage format, which bundles all files into a single archive, and also supports value types. 
 
-- https://github.com/Genaker/nodejento /66Star/GPLv3/202202/js
+- https://github.com/Genaker/nodejento /66Star/GPLv3/202202/js/inactive
   - NodeJS implementation of the Magento 2 ORM and Microservice Framework components without using legacy PHP.
   - NodeJento it is a NodeJs service that provides an additional API surface that makes product and category and any other data retrieval faster.
   - Customers need to find what they’re looking for and they need to do it quickly. That’s why we developed NodeJento for Adobe Commerce.
   - NodeJento is written in a highly scalable event-driven NodeJS/JavaScript. 
   - This repo uses Sequelize library to connect to the Magento 2 database directly without invocation of the Magento 2 PHP framework, so we won’t have to write any MYSQL queries.
+  - A Sequelize model is an abstraction that represents a table in your Magento 2, 1 database
 # eav
-- https://github.com/smallhelm/entity-wharf-js /MIT/201412/js/inactive
-  - Store data as entity attribute values in memory
-  - All data stored in Wharf is organized uniformly as eav
-  - designed to be used as a state management solution for applications that need to be performant for quickly mutating state over many different types of entities with similar characteristics.
-
-- https://github.com/madnl/eav-store /js/inactive
+- https://github.com/madnl/eav-store /201805/js/inactive
   - Entity-Attribute-Value store
+
+- https://github.com/leduyhoang1994/typeorm-eav /202008/ts
+  - TypeORM EAV model
+  - https://www.npmjs.com/package/mi-eav /202008/js
+    - Create eav model base on sequelize
 
 - https://github.com/dst/cars /201610/js/java/inactive
   - Entity-attribute-value (EAV) model implementation based on car. 
@@ -152,7 +159,7 @@ modified: 2023-09-25T17:56:50.116Z
 
 - https://github.com/bowbahdoe/eav /202204/rust
   - I set up to doodle on translating the unmaintained clone https://github.com/Workiva/eva
-  - [Call for Help - Open Source Datom/EAV/Fact database in Rust. : rust_202204](https://www.reddit.com/r/rust/comments/tucjdm/call_for_help_open_source_datomeavfact_database/)
+  - [Open Source Datom/EAV/Fact database in Rust. : rust_202204](https://www.reddit.com/r/rust/comments/tucjdm/call_for_help_open_source_datomeavfact_database/)
 
 - [SQLAlchemy EAV example](https://gist.github.com/grakic/5c8c274b1a75fba2fc3b3572d7de064b)
 # triplestore
@@ -232,6 +239,22 @@ modified: 2023-09-25T17:56:50.116Z
 - https://github.com/w3c/EasierRDF /python
   - This repository is for experimental/exploratory work on making RDF easier to use, with the goal of making it easy enough for most developers.
   - [Property Graphs](https://github.com/w3c/EasierRDF/issues/45)
+
+## semantic
+
+- https://github.com/apache/jena /apache2/202401/java
+  - https://jena.apache.org/
+  - a Java framework for writing Semantic Web applications.
+  - Apache Jena Fuseki is a SPARQL server. It can run as an operating system service, as a Java web application (WAR file), and as a standalone server.
+
+- https://github.com/assemblee-virtuelle/semapps /apache2/202401/js
+  - https://semapps.org/
+  - a semantic web toolbox, allowing to create applications compliant with most major semantic web specifications: LDP, SPARQL, ActivityPub, WAC, WebID.
+  - We provide tools on several layers: Middleware, Triple store, Frontend
+  - We use the Moleculer micro-service framework to help create modular backends.
+  - We are providing many components to ease the development of web applications based on the React-Admin framework.
+  - https://www.npmjs.com/package/@semapps/triplestore
+    - We have customized the Jena Fuseki triplestore to make it compliant with the WAC (WebACL) standards.
 # graph-db
 - https://github.com/levelgraph/levelgraph /MIT/202108/js/inactive
   - LevelGraph is a Graph Database, built on the uber-fast key-value store LevelDB through the powerful LevelUp library. 
@@ -252,6 +275,10 @@ modified: 2023-09-25T17:56:50.116Z
   - open source software you can use to manage data, create visualizations and build apps on RDF Knowledge Graphs.
   - We started the project with the intention to use it for Linked Data publishing, but gradually realized that we've built a multi-purpose data-driven platform.
   - [LinkedDataHub: The Knowledge Graph Notebook | Hacker News](https://news.ycombinator.com/item?id=31852352)
+
+- https://github.com/damaera/mongr /MIT/201505/js
+  - graph database built on the document-stored MongoDB and its for Node.js. 
+  - Mongr using subj-pred-obj triplestores for storing graph data.
 # property-graph
 - https://github.com/fictiveworks/mementus /js
   - In-memory property graphs with composable query pipelines
@@ -286,7 +313,7 @@ modified: 2023-09-25T17:56:50.116Z
 - https://github.com/innogames/serveradmin /python
   - Serveradmin is central server database management system of InnoGames.
 
-- https://github.com/nickapopolis/go-entity-attribute-value /go/js/inactive
+- https://github.com/nickapopolis/go-entity-attribute-value /201703/go/js/inactive
   - A small entity attribute value application using a Go REST server and react front end.
   - Entity-attribute-value tables allow the dynamic creation of new data structures without need for any table migrations.
 
@@ -296,3 +323,9 @@ modified: 2023-09-25T17:56:50.116Z
   - Redis is used as a backend for key-value store, which in turn is a backend for higher level triple store
   - The main BookLiner app then using this triple store to store semantic info: the relations between book and it's parts: currently paragraphs.
 # more
+- https://github.com/graphile-contrib/pg-dynamic-attributes /MIT/202107/ts
+  - This plugin enhances a PostGraphile schema with the ability to order by and filter by "dynamic attributes." 
+  - For the purpose of this plugin "dynamic attributes" are stored into records in a related table and aren't known at schema build time.
+  - Add support for getting, filtering by and ordering by "dynamic" attributes - that is attributes that are determined by EAV-like entries in a related table at runtime rather than known at schema build time.
+  - https://www.graphile.org/postgraphile/introduction/
+    - PostGraphile (formerly PostGraphQL) builds a powerful, extensible and performant GraphQL API from a PostgreSQL schema in seconds

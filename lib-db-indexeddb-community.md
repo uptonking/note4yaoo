@@ -37,7 +37,11 @@ modified: 2022-06-13T02:56:51.029Z
 # discuss
 - ## 
 
-- ## 
+- ## I really can't wait for IndexedDBv3 to come out. V2 is just so damn slow and file storage API is just not widely support enough to use yet
+- https://twitter.com/matthew_linkous/status/1749521680198705269
+- How will v3 improve performance?
+  - Durability hints should allow writes be a lot faster with "relaxed" mode
+  - Which actually seems to be already launched everywhere except on Firefox
 
 - ## 如果把 IndexedDB 当成一个 KV 缓存，如何实现过期一个月自动清除呢？ 有什么思路吗？
 - https://twitter.com/hamsterbase/status/1679479640753340418

@@ -14,6 +14,18 @@ modified: 2021-09-20T18:38:00.319Z
 # discuss-protobuf
 - ## 
 
+- ## 
+
+- ## 遇到一个 Protocol Buffers in JS 的坑：.proto float 会导致 JS number 精度丢失。
+- https://twitter.com/ThaddeusJiang/status/1749662021535289653
+- 类型系统：
+  - DB: Float
+  - JS: number
+  - proto: float
+- 两种解决方案：
+  1. proto: float -> string 以字符串作为交换格式
+  2. proto: float -> double 依然以浮点数为交换格式，只是增加浮点数精度
+
 - ## 🆚️ Is there anyone here who is using Protocol Buffers as the format of their Kafka records? 
 - https://twitter.com/gunnarmorling/status/1747197582244200913
   - How has your experience been, and what made you pick protobuf over Avro?

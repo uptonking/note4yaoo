@@ -99,6 +99,8 @@ modified: 2023-01-17T19:14:47.611Z
 - https://github.com/growthbook/growthbook
   - Open Source Feature Flagging and A/B Testing
   - SDKs for React, Javascript, PHP, Ruby, Python, Go, and Kotlin (Android) with more coming soon
+- https://github.com/marcellothiry/feature-flags
+  - This is the complementary repository for our video series Implementing Feature Flags from Scratch
 
 - https://github.com/hedgedoc/hedgedoc
   - HedgeDoc (formerly known as CodiMD) is an open-source, web-based, self-hosted, collaborative markdown editor.

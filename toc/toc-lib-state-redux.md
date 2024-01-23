@@ -207,6 +207,9 @@ modified: 2020-11-02T19:13:04.103Z
 # redux-repos
 - https://github.com/rematch/rematch
   - Rematch is Redux best practices without the boilerplate.
+  - [Differences between Rematch and Redux Toolkit (rtk)](https://github.com/rematch/rematch/issues/735)
+    - No support for Remote-Redux-Devtools was a deal-breaker for me
+
 - https://github.com/dvajs/dva
   - React and redux based, lightweight and elm-style framework.
 

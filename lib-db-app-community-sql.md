@@ -104,7 +104,10 @@ modified: 2023-09-17T17:35:27.024Z
 
 - ## 
 
-- ## 
+- ## [The Unreasonable Effectiveness of SQL - The Couchbase Blog_201904](https://www.couchbase.com/blog/unreasonable-effectiveness-of-sql/)
+- SQL has inspired query language design for non-relational databases: SQL for object databases, SQL for object-relational, SQL for XML, SQL for spatial, SQL for search, SQL for JSON, SQL for timeseries, SQL for streams and so on.  Every BI tool interacts with the data using variety of SQL.
+- every popular NoSQL databases have a variation of SQL: N1QL in Couchbase, CQL in Cassandra, ElasticSearch SQL in Elastic.
+- Now, there are more SQL projects in NOSQL databases than SQL databases.
 
 - ## Exploring the history of SQL 
 - https://twitter.com/sspaeti/status/1749447691946340677

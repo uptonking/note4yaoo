@@ -186,7 +186,7 @@ modified: 2021-08-30T18:56:09.644Z
   - General-purpose models and collections with multi-database support, written in TypeScript
   - Collections are specific to the database you use (e.g. MongoCollection, CouchCollection)
 # orm-alternatives
-- https://gitlab.com/dmfay/massive-js /js
+- https://gitlab.com/dmfay/massive-js /BSD/202302/js/deprecated
   - a data mapper for Node.js that goes all in on PostgreSQL, and embraces the power and flexibility of SQL itself and of the relational metaphor
   - Massive is not an object-relational mapper (ORM)! It doesn't use models, it doesn't track state
   - https://gitlab.com/monstrous/monstrous /js

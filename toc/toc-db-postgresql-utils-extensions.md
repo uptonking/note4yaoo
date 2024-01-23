@@ -13,14 +13,18 @@ modified: 2023-10-26T15:29:40.053Z
 - https://github.com/michaelpq/pg_plugins/tree/main/blackhole_am /c
   - This module is a PostgreSQL extension template
 
-- https://github.com/pgxman/pgxman /202311/go
-  - https://pgxman.com/
-  - pgxman is npm for Postgres extensions. 
+- https://github.com/supabase/dbdev /apache2/202401/ts/rust
+  - https://database.dev/
+  - a package manager for Postgres trusted language extensions (TLE).
 
 - https://github.com/tembo-io/trunk /202312/rust
   - https://pgt.dev/
   - open source package manager and registry for PostgreSQL (Postgres) extensions
   - Use the Trunk CLI (pg-trunk) to build, publish and install Postgres extensions of all kinds.
+
+- https://github.com/pgxman/pgxman /202311/go
+  - https://pgxman.com/
+  - pgxman is npm for Postgres extensions. 
 
 - https://github.com/graphile/worker /MIT/202312/ts
   - http://worker.graphile.org/

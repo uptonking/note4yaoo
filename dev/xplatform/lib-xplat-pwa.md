@@ -53,6 +53,7 @@ modified: 2022-11-11T03:09:56.491Z
   - [Appscope](https://appsco.pe/)
     - https://appsco.pe/toplist
   - [zero data app](https://0data.app/glance/)
+  - [Store.app - Explore Modern Web Apps & PWAs](https://store.app/)
 # pwa-sites
 - MConverter - File Converter: AVIF, JXL, WebP
   - https://mconverter.eu/

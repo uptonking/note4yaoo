@@ -1064,7 +1064,25 @@ modified: 2022-04-05T10:08:25.947Z
   - Merge result is independent of merge order (except auth units).
   - Merge is semilattice.
   - Wiped data inside some Head stays tombstone to hold place.
+
+- https://github.com/josephg/causal-graph /202311/ts
+  - Simple run-length encoding causal graph library in javascript for operation based CRDTs
+  - This is a helper library for operation based CRDTs and similar projects which need to track a causal graph (a graph of changes over time) in a compact and simple way.
+  - This project exposes a type (CausalGraph) which stores a run-length encoded DAG (join semi-lattice) of entries
 # crdt-db
+- https://github.com/josephg/imsyncing /202311/ts
+  - simple local first database built on top of CRDTs currently written in typescript.
+  - 依赖ministreamiterator、solid-js(ui)、polka(web-server)
+  - I'm doing this as a fun hobby project - Why typescript? Because I can personally prototype faster in TS than any other language. If imsyncing survives long enough, I'll end up rewriting it in rust or zig
+  - I dream of a "cloud of personal computing". I have a whole lot of devices, but I'm furious how difficult it is to move data from one computer (or phone) to another.
+  - Imsyncing is part of my answer to this problem. The idea is that a lot of personal data / information can live in little documents in imsyncing and get synced to all the devices on the network which care about that particular data.
+  - The basic idea is that each device can run an imsyncing node which syncs with other devices on the network/internet.
+  - The database stores a flat set of documents. Each document is named with a random globally unique name
+  - each doc has an (immutable) type field specifying what type of document it is. (Eg post, midiDeviceStatus, imageGallery, etc). This is sort of like a mime-type.
+  - each doc's data is a tree of CRDT objects. At the time of writing I only have support for registers and maps, but the plan is to add support for counters, sequences, text, and all the other goodies that a good CRDT library supports.
+  - it is not optimized for a giant data set.
+  - Everything gets persisted locally to disk. when changes happen, we rate limit saves to disk every 200ms or so.
+
 - https://github.com/AntidoteDB/antidote /202209/erlang/inactive
   - A planet scale, highly available, transactional database built on CRDT technology
   - [Antidote: CRDT-based distributed database | Hacker News_201712](https://news.ycombinator.com/item?id=15862895)

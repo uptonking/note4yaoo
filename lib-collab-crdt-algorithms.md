@@ -804,8 +804,19 @@ ba => v5
   - automerge uses a transaction log (and has in-memory caches for perf)
 - Your approach seems to resemble RGASplit which I believe is bases for
 
-- ## [CRDT: Fractional Indexing_202211](https://news.ycombinator.com/item?id=33764449)
+- ## 🧮🔀 [CRDT: Fractional Indexing _202211](https://news.ycombinator.com/item?id=33764449)
+- To me the other algorithms described in the list are more novel and interesting:
+  - crdt-tree-based-indexing/ - for when precise order is critical, like paragraphs in a document. This algorithm is almost like storing adjacency information like a linked list, but is more convergent. 
+  - crdt-mutable-tree-hierarchy/ - for tree-shaped data, like blocks in a Notion page that should have exactly one parent, but allow concurrent re-parenting operations
+  - log-spaced-snapshots/ - log space snapshots, for choosing what fidelity of historical information to store. For context, many CRDTs for rich text or sequences store unbounded history so that any edit made at any time can be merged into the sequence. For long-lived documents, this could be impractical to sync to all clients or keep in "hot" memory. Instead, we can decide to compact historical data and move it to cold storage, imposing a time boundary on what writes the system can accept on the hot path. The log-spaced snapshots algorithm here could be used to decide what should be kept "hot", and how to tune the cold storage.
+
+- do you have thoughts on the CRDT vs OT debate? 
 - I’m not the GP, but OT is pretty annoying to implement. There are so many cases that it’s quite difficult to formally prove an OT correct. 
   - On the other hand, a large subset of CRDTs can be implemented in Datalog and if you do that you can’t possibly end up with an invalid CRDT.
 
-- This is basically the idea behind Logoot [Weis_2009] that was improved by LSeq [Nédelec_2013] and later extended to the first block-wise sequence CRDT: LogootSplit [André_2013]. LogootSplit was recently improved as Dotted LogootSplit [1] [Elvinger_2021].
+- This is basically the idea behind Logoot [Weis_2009] that was improved by LSeq [Nédelec_2013] and later extended to the first block-wise sequence CRDT: LogootSplit [André_2013]. LogootSplit was recently improved as Dotted LogootSplit(MPLv2/201907) [Elvinger_2021].
+
+- Is this the same as LSeq except rather than using bytes one is basically using digits in a floating point representation (given this is JS where most things are floats)?
+
+- Doesn't this end up being effectively a binary heap, with a maximum tree depth of 23 (floating point mantissa precision)? I imagine there must be a rebalancing operation required every so often, possibly more frequently for pathological insertion orders.
+  - > Fractional positions should be represented using arbitrary-precision decimals so that they don't run out of precision. Floating-point numbers are insufficient.

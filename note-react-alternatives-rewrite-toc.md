@@ -28,6 +28,9 @@ modified: 2021-09-20T20:12:38.499Z
 - https://github.com/manasb-uoe/didact
   - Typed version of didact
   - this repository refactors the code into separate files of TypeScript code and adds more features: useEffect, userMemo, useRef
+
+- https://github.com/sophiebits/react-dom-mini /MIT/201910/js
+  - React DOM Mini is a toy renderer that I built as part of my React Conf 2019 talk, "Building a Custom React Renderer".
 # react-alternatives
 - https://github.com/LuSuguru/fake-react /75Star/202007/ts
   - 基于React 16.8.6 的源码并使用 TypeScript 仿写的 React, 实现了90%的功能

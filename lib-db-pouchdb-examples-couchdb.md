@@ -419,6 +419,9 @@ modified: 2023-09-28T20:35:56.153Z
 - https://github.com/pouchdb/pouchdb-fauxton /201703/js
   - Fork/modification of couchdb-fauxton designed for pouchdb-server and express-pouchdb
   - https://github.com/pouchdb/pouchdb-fauxton-base /201508/js
+
+- https://github.com/npm/npm-registry-couchapp /ISC/202003/js/archived
+  - couchapp bits of registry.npmjs.org
 # couch-like
 - microcouch-js /3Star/apache2/202209/js
   - https://github.com/jo/microcouch-js

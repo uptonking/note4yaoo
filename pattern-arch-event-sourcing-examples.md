@@ -45,6 +45,11 @@ modified: 2023-09-12T09:37:22.608Z
   - this module adds support for both views and materialized views to Sequelize, as well as properly exporting typescript declarations.
   - All the original Sequelize methods and options still work with this module
 
+- https://github.com/adriano-di-giovanni/reaves /MIT/201811/js/inactive
+  - a Javascript implementation of the Entity-Attribute-Value model and the event sourcing pattern for Node.js.
+  - Simply put, it lets you save and retrieve present and past string values of attributes that belong to entities identified by string IDs. 
+  - Reaves is backed by Redis.
+
 - https://github.com/Skalar/ddes /ts
   - https://ddes.io/docs/
   - TypeScript framework that facilitates Event Sourcing and CQRS using distributed cloud services.

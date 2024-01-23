@@ -128,6 +128,16 @@ modified: 2023-09-25T09:00:49.722Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Can someone kindly clarify what is the meaning of this default value ARRAY[]::character varying[]::character varying(255)[] : PostgreSQL _202201](https://www.reddit.com/r/PostgreSQL/comments/rus64y/can_someone_kindly_clarify_what_is_the_meaning_of/)
+- What you're proposing is EAV design and it is known to have a poor performance at larger scale. Hstore or array or jsonb is often better.
+
+- The normalized form of this design is not an example of EAV. The value in every row is still the same type of thing - a tag. There is no “attribute column”, just entity and values.
+  - If you go further and want to support long values for tags, with multiple words, and get rid of duplicated long values, and reduce risks of typos and other errors, you'll naturally want to create the 3rd table. Hence EAV.
+
 - ## [How to represent EAV in CSV? - Stack Overflow](https://stackoverflow.com/questions/28226088/how-to-represent-eav-in-csv)
 - It isn't a particularly good way of organizing data. It has some superficial advantages, but it ends up making for complex queries
 - Validating EAV data becomes really hard. How do you ensure that when the 'type' of an entity is 'apple', the 'size' is either 'small' or 'large'

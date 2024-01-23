@@ -33,3 +33,161 @@ modified: 2023-06-07T14:19:18.719Z
   - Ecommerce website built with t3-stack (typescript, prisma, trpc, next.js)
   - E-Commerce website with Prisma PlanetScale db, optimistic updates with React Query, rating system, persistent cart, algolia search, categories, in stock indicator, infinite scroll and order tracking
   - Custom db with orders connected to Stripe
+# plugins/packages-marketplace
+- 可参考
+  - 包管理器: npm, rust-crate, docker, flathub, appimage
+  - 插件扩展: vscode-extensions-marketplace, opensumi, chrome-store, jetbrains, Ulauncher
+  - marketplace: atlassian, mattermost, airtable, zoho, directus
+  - app-store: unhosted/0data, Store.app
+  - 其他: strapi-plugins, better-discord
+  - 可考虑基于npm发布插件，参考Cerebro-launcher
+  - 可考虑ckan
+
+- 收集聚合类
+  - [Discord Servers - Public Server Listing](https://discordservers.com/)
+
+- https://github.com/eclipse/openvsx /1kStar/EPLv2/202312/java/ts
+  - https://open-vsx.org/
+  - https://ecdtools.eclipse.org/adopters/
+  - Open VSX is a vendor-neutral open-source alternative to the Visual Studio Marketplace.
+  - It provides a server application that manages VS Code extensions in a database, a web application similar to the VS Code Marketplace, and a command-line tool for publishing extensions similar to vsce.
+  - 前端依赖mui.v5、markdown-it、react-infinite-scroller
+  - 后端依赖spring-boot、ehcache
+  - 未实现依赖的依赖dependents
+  - https://github.com/EclipseFdn/open-vsx.org
+    - This repository contains the source of open-vsx.org, the public instance of Eclipse Open VSX. 
+    - Most of the code is maintained in eclipse/openvsx, while here you'll find only adaptations specific to the public instance.
+
+## npm-registry
+
+- https://github.com/verdaccio/verdaccio /15.6kStar/MIT/202401/ts
+  - https://www.verdaccio.org/
+  - Verdaccio is a simple, zero-config-required local private npm registry. 
+  - Verdaccio comes out of the box with its own tiny database, and the ability to proxy other registries (eg. npmjs.org), caching the downloaded modules along the way
+  - 后端依赖express，采用插件式架构，支持express/fastify
+  - 前端依赖redux、mui.v5、rematch、marked、react-markdown、JSONStream
+  - 🔜 使用openvsx的前端替换
+  - File system storage plugin for verdaccio
+  - A memory based storage plugin.
+  - AWS S3/minio storage plugin for Verdaccio
+  - [Release v6.0.0-beta.1 _202401](https://github.com/verdaccio/verdaccio/releases/tag/v6.0.0-beta.1)
+    - node > v16
+    - using new plugin loader
+    - replace deprecated `request` dependency by `got`.
+    - experiment: accept async tarball_url_redirect function
+    - refactor auth class 
+  - https://github.com/sgrandner/my-local-npm-registry-with-verdaccio
+
+- https://github.com/RightCapitalHQ/verdaccio-package-diff
+  - A package diff plugin for Verdaccio
+  - This will display the file differences between the two versions.
+
+- https://github.com/cnpm/cnpmweb /202401/ts
+  - https://npmmirror.com/
+  - A missing UI for custom registry.
+  - 支持任意 npm registry
+  - 基于 Next.js 纯静态部署
+  - cnpmweb 是独立的前端应用，npmmirror 提供一个新的制品库界面，可在 config.js 中定义自定义 registry 地址。
+  - https://github.com/cnpm/cnpmcore /500Star/MIT/202401/ts
+    - Private NPM Registry for Enterprise
+    - Reimplementation based on cnpmjs.org with TypeScript.
+    - 本项目的外部服务依赖有：MySQL 数据服务、Redis 缓存服务。
+    - 基于 PaaS 基础设置实现各种 adapter 真实适配实现，cnpmcore 会内置一种实现，企业自定义的 cnpmcore 应该自行基于自身的 PaaS 环境实现自己的 infra module。
+    - 目前只支持 HTTP 协议的 Controller，代码在 app/port/controller 目录下。 基于类继承的模式来实现
+    - 依赖 @eggjs/tegg.v3、elasticsearch、mysql2
+
+- https://github.com/taskforcesh/nandu /AGPLv3/202212/ts/inactive
+  - a new open source NPM registry compatible with Npm, Yarn and Pnpm.
+  - built from scratch 
+  - Compatible with scalable technologies such as S3 and PostreSQL so you can scale your registry to meet your needs.
+  - Compatible with scalable technologies such as S3 and PostreSQL so you can scale your registry to meet your needs.
+  - Nandu is secured by default, focusing on user, team and organization management, enabling corporate use cases where user access management is important 
+  - The registry is both a package metadata store, for which you can use any SQL-based database (including SQLlite), as well as a package store that is based on file storage. 
+  - The package store can be anything capable of storing files but currently, we are shipping support for local files as well as S3, but it is quite easy to add other file storage by implementing a simple interface if needed.
+
+- https://github.com/topheman/npm-registry-browser /MIT/202104/js
+  - https://topheman.github.io/npm-registry-browser/
+  - Browse the npm registry with an SPA made in React, with full dev workflow.
+  - 依赖mui.v4、downshift、recompose、react-markdown
+
+- https://github.com/react-native-community/directory /MIT/202401/ts
+  - https://reactnative.directory/
+  - A searchable and filterable directory of React Native libraries.
+  - How do I add a library? Add it at the end of react-native-libraries.json file (we use the order in that file for "Recently added" sort option).
+  - 依赖nextjs、react-native-web
+  - 只展示包列表，每个包没有单独的详情页
+
+- https://github.com/openupm/openupm /1.4kStar/BSD/202401/js
+  - https://openupm.com/
+  - Open Source Unity Package Registry
+  - Many UPM packages use NuGet packages as embedded DLLs. This practice can become troublesome when two packages include the same DLL or different versions of one NuGet package. 
+  - UnityNuGet is a project that provides a service to bundle NuGet packages into the UPM format
+  - https://github.com/openupm/openupm-cli
+    - a command-line interface for maintaining UPM registries.
+    - 依赖commander、libnpmsearch、pkginfo
+    - The command-line tool to maintain the Unity manifest file for 3rd-party upm registries, offering a similar but lighter experience like npm or yarn for Node.js.
+    - The tool is designed to work with the OpenUPM registry, but can also work with any upm registries, including the official Unity registry.
+    - The command-line tool installs the 3rd-party registry as a scoped registry and maintains the Packages/manifest.json file when adding/removing packages. If the manifest file is modified, the Unity Package Manager will detect the changes and try to resolve the package dependencies.
+    - Notice: the command-line tool does not directly install/uninstall package tarballs, at least for now.
+  - https://github.com/openupm/verdaccio-storage-proxy /BSD/202210/ts
+    - A verdaccio storage proxy to decouple database, search, packument, and tarball accesses.
+  - https://github.com/openupm/openupm-next /BSD/202401/ts/vue
+    - Codebase for OpenUPM website and services
+    - 依赖aws-sdk、fastify、vuepress
+    - 软件包搜索在vuepress的markdown和vue组件中实现
+
+- https://github.com/Ulauncher/ext.ulauncher.io /202211/js
+  - https://ext.ulauncher.io/
+  - Ulauncher Extensions Website
+  - built using JS and React library (with CRA)
+  - https://github.com/Ulauncher/ext-api.ulauncher.io
+    - Backend for ext.ulauncher.io
+    - This API server is written in Python using bottle, boto3 libraries
+
+- https://github.com/logseq/marketplace /MIT/202401/js
+  - A centralized packages manager for Logseq marketplace plugins.
+  - How to submit your plugin?
+  - Make a Github Pull Request
+
+- https://github.com/denosaurs/crux.land /MIT/202205/ts
+  - a free registry service meant for hosting small (≤ 20kB) single deno scripts.
+  - crux.land runs on deno deploy and requires the deployctl cli for local development.
+
+## package-manager
+
+- https://gitlab.com/fdroid/fdroidserver /AGPLv3/202401/python
+  - a suite of tools to publish and work with collections of Android apps (APK files) and other kinds of packages
+  - It is used to maintain the https://f-droid.org/packages
+  - https://gitlab.com/fdroid/fdroiddata
+    - Metadata for all the apps of the F-Droid main repository.
+
+- https://gitlab.com/theopenstore/openstore-web /GPLv3/202401/vue
+  - https://open-store.io/
+  - The official Ubuntu Touch app store
+  - https://gitlab.com/theopenstore/openstore-api /GPLv3/202401/ts
+    - Api for the OpenStore.
+    - 依赖express、mongoose、elasticsearch、node-gettext、passport
+  - https://gitlab.com/theopenstore/openstore-app /qml/cpp
+
+- https://github.com/flatpak/flat-manager /MIT/202401/rust/python
+  - flat-manager serves and maintains a Flatpak repository. 
+  - You point it at an ostree repository and it will allow Flatpak clients to install apps from the repository over HTTP. 
+  - it has an HTTP API that lets you upload new builds and manage the repository.
+  - The server is written in Rust, so you need to have Rust and Cargo installed. 
+  - PostgreSQL is used for the database
+  - You also need ostree
+  - flat-manager contains a Python-based client that can be used to talk to the server. 
+
+- https://github.com/AppImage/appimage.github.io /未实现单独搜索
+  - https://appimage.github.io/apps/
+  - Given an URL to an AppImage, the GitHub action in this project inspects the AppImage and puts it into a community-maintained catalog
+
+- https://github.com/pkgxdev/ossapp /apache2/202401/ts/svelte
+  - https://pkgx.app/
+  - https://pkgx.dev/pkgs/
+  - The App Store for Open Source
+  - ossapp is a Svelte Electron app
+  - ossapp is the graphical app complement to pkgx.
+  - Under the hood ossapp installs and manages your packages with pkgx
+  - pkgx is a core contributor to the tea protocol
+# more

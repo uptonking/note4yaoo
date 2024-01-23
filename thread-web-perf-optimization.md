@@ -9,10 +9,56 @@ modified: 2021-02-26T16:42:06.878Z
 
 # guide
 
+# discuss-css-pref
+- ## 
+
+- ## 
+
+- ## 
+
+- ## In this little benchmark rendering 16k squares using the DOM goes at 10fps, and rendering 1M squares using raw WebGL goes at 120fps.
+- https://twitter.com/fabiospampinato/status/1749500897300730165
+- Are the squares absolutely positioned? Are you virtualizing only the squares in the viewport?
+  - It's this demo here: https://benchmarks.slaylines.io/dom.html
+  - The squares seem absolutely positioned and moved by changing the CSS transform matrix.
+- Wondering if the transform is creating compositor layers
+  - It doesn't look like it.
+  - Layerize is the process of deciding what needs to be on what layer.
+- Profile it and see where most of the work happens
+  - Mostly style recalculations. Only the transform style on each element changed. I don't know this stuff seems hyper slow to me. Does this computer really need 35ms to understand that 8k elements have been moved? Probably not.
+- The problem is most likely compositing because your rectangles are overlaying each other.
+
+- its spending all its time in recalculate style which suggests you're cpu bound and not using the gpu for rendering.  A css `transform: translate` should be competitive with webgl
+  - This benchmark uses `transform: translate` already: https://benchmarks.slaylines.io/dom.html
+  - Somehow updating the x coordinate for each of those N squares causes the browser to spend a huge amount of time recalculating styles 
+
+- You don’t even need to go to WebGL plain 2D context HTML canvas is sufficient for drawing responsive animated graphics. This is why you don’t render force-directed networks in SVG if they’re of any real size.
+
+- Yes with enormous effort a faster DOM that handles this scenario is probably possible. But no one is motivated to work on that because they already invented a way to push 1 million rectangles in a web browser. There is no real use case for this and it requires ‘enormous’ effort
+  - This is why we have WebGL for these edge cases.
+
+- I need to fork this and test out raw SVG vs DOM. Even with svg.js it is faster than DOM which implies there might still be some optimization to be made in DOM.
+  - https://github.com/robbiespeed/canvas-engines-comparison
+  - The fork was a bit quick so there's probably a better way to do the css animation version that might actually improve perf.
+
+- For this use case, absolutely. And probably in general. But this is not a realistic performance test. I worked on the WebGL renderer at Figma and we frequently found optimizations that would speed up e.g. 10k rectangles, but would not help real user files.
+  - Yeah try blend ordered rects each with drop shadows and blurs.   The general cases are much harder to optimize even in WebGL.  And especially without framebuffer fetch exposed or a way to avoid ping pong rendering.
+
+- The question is if you can re-implement all what the DOM does that is needed to regular site requirements in 120fps (keyboard support, layouts, a11y)
+
+- Dom elements are not vertices. They weren't designed for that work they will never be that fast. You never see more than 1k els on screen at once "practically" It's the CSSOM, not the DOM that's the problem. They can't compete with triangle if they have no coordinate system.
+
+- I've seen this "benchmark" and I think it is relatively useless in representing "real world" scenarios. Also DOM is largely limited by the fact that each square supports the full CSS spec, and could contain an entire website.
 # discuss
 - ## 
 
 - ## 
+
+- ## It hasn't been necessary to remove event listeners to prevent memory leaks for about 10 years, unless you are somehow holding on a reference to the DOM element the listener is registered on
+- https://twitter.com/Shenqingchuan/status/1749722057540358169
+  - 他的意思应该是不需要主动去removeEventListener，因为随着元素被销毁，eventHandler也会自动被garbage collector回收，但除了一种情况，那就是eventHandler里引用了这个元素，这样就导致循环依赖，eventHandler没法自动回收了，这种情况下就需要主动removeEventListener，打破循环依赖。
+- 一般对 document、window 这样的肯定是需要的，毕竟 addEventlistener 一般都写在组件 created 这样的生命周期里，如果不 remove，确实可能在这些全局对象上保持多个 listener
+- 要手动销毁，前公司调差内存泄漏时这个是主要原因之一
 
 - ## browser javascript profiling is no longer confined to chrome devtools on your local machine
 - https://twitter.com/bentlegen/status/1719891903317934374
@@ -47,15 +93,15 @@ modified: 2021-02-26T16:42:06.878Z
 
 - ## How to optimize style recalculations
 - https://twitter.com/fabiospampinato/status/1652326018613379074
-1.    Open chrome://tracing
-2.    Record
-3.    Manual settings -> turn on "blink.debug"
-4.    Record
-5.    Interact with the page
-6.    Select everything
-7.    Click "Slices"
-8.    Click "SelectorStats"
-9.    Spot overly-broad selectors
+01.     Open chrome://tracing
+02.     Record
+03.     Manual settings -> turn on "blink.debug"
+04.     Record
+05.     Interact with the page
+06.     Select everything
+07.     Click "Slices"
+08.     Click "SelectorStats"
+09.     Spot overly-broad selectors
 10. Make them more specific
 
 - A bit easier in MS Edge, just turn on ‘advanced rendering instrumentation’ in the performance tab, and then the ‘selector stats’ tab will appear when you inspect a style recalc
