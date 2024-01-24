@@ -130,6 +130,15 @@ modified: 2023-08-29T10:12:22.345Z
   - Corylus is a graphical user interface for Git. 
   - It aims to offer much of the power and flexibility of Git without having to remember CLI commands.
 # git-server
+- github-alternatives
+  - ruby: gitlab
+  - go: gitea, gogs
+  - java: onedev
+  - Git comes with a CGI script called GitWeb
+
+- https://github.com/ianchanning/awesome-github-alternatives
+  - a list of alternatives to GitHub, that by default offer Git management in some way.
+
 - https://github.com/gogs/gogs /MIT/go
   - https://gogs.io/
   - aims to build a simple, stable and extensible self-hosted Git service that can be set up in the most painless way. 
@@ -140,6 +149,26 @@ modified: 2023-08-29T10:12:22.345Z
 - https://github.com/go-gitea/gitea /MIT/go
   - https://about.gitea.com/
   - Painless self-hosted all-in-one software development service, including Git hosting, code review, team collaboration, package registry and CI/CD
+  - a fork of Gogs
+
+- https://github.com/theonedev/onedev /MIT/202401/java
+  - https://onedev.io/
+  - Self-hosted Git Server with CI/CD and Kanban
+  - We develop OneDev at https://code.onedev.io/ for sake of dogfooding. 
+
+- https://codeberg.org/forgejo/forgejo /go
+  - https://forgejo.org/
+  - Forgejo was created in 2022 because we think that the project should be owned by an independent community.
+  - A painless, self-hosted Git service
+
+- https://github.com/clehner/git-ssb
+  - https://scuttlebot.io/apis/community/git-ssb.html
+  - social coding on secure-scuttlebutt
+
+- https://app.radicle.xyz/seeds/seed.radicle.xyz /rust
+  - https://radicle.xyz/
+  - Radicle is a sovereign peer-to-peer network for code collaboration, built on top of Git.
+  - Radicle is local-first, providing always-available functionality even without internet access.
 # apps
 - https://github.com/creationix/wheaty /201512/js
   - JS-Git based application hosting platform

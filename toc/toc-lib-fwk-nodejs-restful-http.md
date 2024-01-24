@@ -80,6 +80,14 @@ modified: 2022-12-19T01:51:01.389Z
   - DDD/Clean Architecture inspired boilerplate for Node web APIs
   - Modules are the building pieces of an application built with this boilerplate. You can either encapsulate an integration or a feature using a module 
   - Both the boot and stopping processes are defined as a sequence of lifecycle events.
+
+- https://github.com/hiteshchoudhary/apihub /MIT/202401/js
+  - https://freeapi.app/
+  - Your own API Hub to learn and master API interaction.
+  - We are trying to build a single source API hub that can be used to learn api handling in any programming language.
+  - our API hub offers custom endpoints that provide a hands-on experience in handling API responses.
+  - our API hub also provides advanced APIs to challenge and stretch your skills.
+  - Our open-source project is currently hosted on a remote server, where we are forced to reset the entire server, including the file system and MongoDB database, every 2 hours to avoid incurring additional costs.
 # crud/admin
 - api-server-nodejs /178Star/MIT/202212/ts
   - https://github.com/app-generator/api-server-nodejs

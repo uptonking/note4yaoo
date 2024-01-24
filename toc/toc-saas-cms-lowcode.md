@@ -182,6 +182,7 @@ modified: 2023-01-20T21:59:47.792Z
 - https://github.com/twentyhq/twenty /AGPLv3/ts
   - https://twenty.com/
   - We are building an Open Source CRM designed to be: enjoyable to use, easily extendable, and perfectly in-sync with your data.
+  - a modern alternative to Salesforce
   - 后端依赖nestjs、prisma、graphql、apollo/server
   - 前端依赖recoil、blocknote、chakra-ui、afterframe(raf)
 
@@ -360,6 +361,13 @@ modified: 2023-01-20T21:59:47.792Z
 - https://github.com/DominateAi/Dominate-AI /202312/js
   - open source CRM for Tech Founders
   - 依赖MongoDB、ag-grid-react、xlsx
+# blogging
+- https://github.com/getgridea/gridea /MIT/202302/ts/vue
+  - https://open.gridea.dev/
+  - 一个静态博客写作客户端
+  - 你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步
+  - [Gridea - Build your digital garden, Make writing the best way to talk](https://gridea.dev/)
+    - 开源了客户端
 # more
 - https://github.com/FactorJS/factor
   - Factor is an expressive & modular framework for JavaScript applications.

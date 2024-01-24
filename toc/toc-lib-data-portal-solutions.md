@@ -22,11 +22,29 @@ modified: 2021-01-01T16:02:50.598Z
     - [巴西政府数据网站](https://dados.gov.br/)
     - [Research Data Repository of the University of Porto](https://ckan-rdm.up.pt/)
     - [自治体オープンデータのCKANへようこそ](https://ckan.open-governmentdata.org/dataset)
+    - [EDaWaX: Choosing CKAN for managing research data_202104](https://ckan.org/blog/edawax)
 
 - DKAN /320Star/GPLv2/202301/php/js
   - https://github.com/GetDKAN/dkan
   - An Open Data Catalog built on Drupal 8
   - [Comparing DKAN and CKAN](https://dkan.readthedocs.io/en/latest/introduction/dkan-ckan.html)
+
+- datopian-portaljs /2kStar/MIT/202401/ts
+  - https://github.com/datopian/portaljs
+  - https://portaljs.org/
+  - a framework for rapidly building rich data portal frontends using a modern frontend approach.
+  - 依赖ag-grid、tanstack-table、xlsx、material-ui.v4, mui-x-data-grid, react-plotly.js, nextjs
+  - built in Javascript and React on top of the popular Next.js framework. 
+  - portal assumes a "decoupled" approach where the frontend is a separate service from the backend and interacts with backend(s) via an API. 
+  - It can be used with any backend and has out of the box support for CKAN.
+  - Portal.js used to be Recline(JS)
+  - https://www.datopian.com/solutions/open-data-portals
+    - 🚧 Our team is proud to be led by the creator of CKAN
+- https://github.com/datopian/frontend-v2
+  - Data Portal frontend. Designed for CKAN but usable anywhere. 
+  - Microservice architecture so you can run and customize it standalone and connect to your backend of choice. 
+  - https://github.com/datopian/playbook
+  - https://github.com/keitaroinc/ckanext-visualize
 
 - https://github.com/awslabs/open-data-registry /apache2/python
   - https://registry.opendata.aws/
@@ -34,7 +52,7 @@ modified: 2021-01-01T16:02:50.598Z
   - https://github.com/awslabs/open-data-registry-browser
     - a simple, web-based visualization of the data in registry
 
-- https://github.com/simonw/datasette  /python
+- https://github.com/simonw/datasette /python
   - https://datasette.io/
   - https://global-power-plants.datasettes.com/global-power-plants/global-power-plants
   - 不依赖flask和django
@@ -49,22 +67,7 @@ modified: 2021-01-01T16:02:50.598Z
     - My breakthrough was the realization that any text data packaged as a SQLite database could be deployed to inexpensive serverless hosting. And binary data too
     - For sites that are running in CKAN using the datastore plugin on CSV/tabular resources, there is essentially a sql endpoint to make queries against that data. There are also automated conversions of that data to csv/json/xml. In my experience though, there's not a lot of activity around those apis -- people tend to just download the data.
 
-- datopian-portaljs /2kStar/MIT/202401/ts
-  - https://github.com/datopian/portaljs
-  - https://portaljs.org/
-  - a framework for rapidly building rich data portal frontends using a modern frontend approach.
-  - 依赖ag-grid、tanstack-table、xlsx、material-ui.v4, mui-x-data-grid, react-plotly.js, nextjs
-  - built in Javascript and React on top of the popular Next.js framework. 
-  - portal assumes a "decoupled" approach where the frontend is a separate service from the backend and interacts with backend(s) via an API. 
-  - It can be used with any backend and has out of the box support for CKAN.
-  - Portal.js used to be Recline(JS)
-- https://github.com/datopian/frontend-v2
-  - Data Portal frontend. Designed for CKAN but usable anywhere. 
-  - Microservice architecture so you can run and customize it standalone and connect to your backend of choice. 
-  - https://github.com/datopian/playbook
-  - https://github.com/keitaroinc/ckanext-visualize
-
-- Dataverse /570Star/Apache2/202012/java
+- dataverse /826Star/apache2/202401/java
   - https://github.com/IQSS/dataverse
   - http://dataverse.org/
   - sharing, finding, citing, and preserving research data
@@ -73,6 +76,18 @@ modified: 2021-01-01T16:02:50.598Z
     - [复旦大学社会科学 Dataverse](https://dvn.fudan.edu.cn/dataverse.xhtml)
     - [Harvard Dataverse](https://dataverse.harvard.edu/)
     - [Australian Data Archive](https://ada.edu.au/popular-data/)
+
+- https://github.com/DSpace/DSpace /816Star/BSD/202401/java
+  - https://wiki.lyrasis.org/display/DSDOC7x/
+  - The DSpace digital asset management system that powers your Institutional Repository
+  - DSpace consists of both a Java-based backend and an Angular-based frontend.
+  - Backend (this codebase) provides a REST API, along with other machine-based interfaces (e.g. OAI-PMH, SWORD, etc)
+  - Frontend (https://github.com/DSpace/dspace-angular/) is the User Interface built on the REST API
+  - Prior versions of DSpace (v6.x and below) used two different UIs (XMLUI and JSPUI). Those UIs are no longer supported in v7 (and above).
+  - https://github.com/DSpace/RestContract
+    - new DSpace REST API Contract beginning with version 7.0
+    - At the ROOT of the API a HAL document lists all the primary endpoints allowing full discovery of the API.
+    - all terms used are meant to reference RESTful terminology and/or terminology borrowed from Spring Data REST.
 
 - https://github.com/magda-io/magda /apache2/202301/ts/js/scala
   - https://magda.io/

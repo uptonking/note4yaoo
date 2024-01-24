@@ -72,7 +72,7 @@ modified: 2023-04-04T22:39:45.442Z
 - https://github.com/fengyuanchen/cropperjs /js
   - JavaScript image cropper.
 # iiif-spec
-- https://github.com/UniversalViewer/universalviewer
+- https://github.com/UniversalViewer/universalviewer /MIT/202311/ts
   - http://universalviewer.io/
   - http://universalviewer.io/examples/#?c=&m=&s=&cv=&manifest=https%3A%2F%2Fedsilv.github.io%2Fbiiif-workshop%2Fcollection%2Findex.json
   - a community-developed open source project on a mission to help you share your content with the world

@@ -221,6 +221,11 @@ modified: 2022-11-03T04:14:00.563Z
 - https://github.com/burhanxz/Distributed-KV /java
   - 根据LSM论文，并结合CPP已有的实现，利用Java实现了LSM架构；
   - 综合Dubbo等框架的特点，实现了简洁的RPC框架。
+# rocksdb-like
+- https://github.com/speedb-io/speedb /apache2/202401/cpp
+  - https://www.speedb.io/
+  - A RocksDB compliant high performance scalable embedded key-value store
+  - Speedb is a 100% RocksDB compatible, drop-in library, focused on high performance, optimized for modern storage hardware and scale, on-premise and in the cloud. 
 # foundationdb-powered
 - https://github.com/FoundationDB/fdb-record-layer /apache2/202401/java
   - The Record Layer is a Java API providing a record-oriented store on top of FoundationDB, (very) roughly equivalent to a simple relational database

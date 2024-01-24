@@ -57,6 +57,10 @@ modified: 2022-08-18T16:57:46.405Z
   - React separates updates into render and commit phases so that it can process updates in batches
   - [Announcing React ProseMirror_202303](https://discuss.prosemirror.net/t/announcing-react-prosemirror/5328)
   - [The Future of @nytimes/react-prosemirror_202309](https://discuss.prosemirror.net/t/the-future-of-nytimes-react-prosemirror/5855)
+    - For the past several months, I’ve been hard at work on a very different approach to integrate React and ProseMirror. 
+    - The summary is this: the new approach completely replaces ProseMirror’s DOM management system with one built in React. 
+    - We’re still using `prosemirror-view` for everything outside of change detection and DOM updates, which means we are exposing exactly the same API. 
+    - In fact, I’ve ported over most of the unit tests from prosemirror-view to ensure that behavior matches the default library.
   - ProseMirror View library renders ProseMirror documents in a single-phase update. 
   - The first phase of a React update should be free of side effects, which requires that updates to the ProseMirror View happen in the second phase.
     - during the first phase, React components actually have access to a different (newer) version of the EditorState than the one in the Editorview. 

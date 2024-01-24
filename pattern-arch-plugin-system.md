@@ -524,6 +524,13 @@ class Plugins {
 
 - ## 
 
+- ## [Have you guys ever thought about creating a marketplace for plugins and themes? - General - Discourse Meta_202201](https://meta.discourse.org/t/have-you-guys-ever-thought-about-creating-a-marketplace-for-plugins-and-themes/216010)
+- The model most used here is bespoke plugins and themes for pay and open source plugins that give the developer credibility (and skill development). 
+  - Sometimes a plugin that is developed for a particular client will be released as own source.
+  - Those looking for help can post in #marketplace. It’s rarely done, but you can also offer services at #marketplace.
+- You can just “sell” people a deploy key to a private Github repo?
+  - too much hassle granting and revoking access and managing payments means you need to charge high prices and cant sell in volume/market to larger audiences.
+
 - ## What’s an open source JavaScript project with a really good extension/plugin architecture?
 - https://twitter.com/steveruizok/status/1672926467393564673
 - Nobody wants it to be true but it’s webpack. Tapable is such a powerful library. You can expose so much power.

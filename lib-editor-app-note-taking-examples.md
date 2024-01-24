@@ -340,6 +340,10 @@ modified: 2023-02-05T18:05:44.122Z
     - Live Editing: Values inside of table views can now be edited; task views include more nuanced rendering of metadata like due date and more operations for manipulating tasks directly.
   - https://github.com/RafaelGB/obsidian-db-folder
     - Obsidian Plugin to Allow Notion like database based on folders
+  - https://github.com/s-blu/obsidian_dataview_example_vault /202311
+    - https://s-blu.github.io/obsidian_dataview_example_vault/
+    - A example vault to collect and showcase various dataview queries
+    - the vault is deployed as a mkdocs page: Online Version of the Obsidian Example Vault
 
 - https://github.com/mgmeyers/obsidian-kanban /GPLv3/202309/ts
   - https://publish.obsidian.md/kanban/

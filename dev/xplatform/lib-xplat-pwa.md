@@ -48,6 +48,7 @@ modified: 2022-11-11T03:09:56.491Z
 
 - 国内案例
   - [微博 移动版](https://m.weibo.cn/)
+  - [小红书 - 你的生活指南](https://www.xiaohongshu.com/explore)
 
 - PWA应用商店
   - [Appscope](https://appsco.pe/)

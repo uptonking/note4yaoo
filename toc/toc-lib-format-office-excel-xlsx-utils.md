@@ -44,6 +44,7 @@ modified: 2023-01-09T11:04:13.958Z
   - 无依赖，自己实现了办公类文档的各种解析器 js-word、js-ppt、ssf、js-cfb
   - pro: edit/image/chart
   - SheetJS presents a simple JS interface that works with "Array of Arrays" and "Array of JS Objects".
+  - 源码托管在团队的gitea上
   - forks
   - https://github.com/gitbrent/xlsx-js-style /202204/ts
     - Current version of sheetjs used: 0.18.5
@@ -89,7 +90,7 @@ modified: 2023-01-09T11:04:13.958Z
 - https://github.com/Siemienik/XToolset /MIT/202311/ts
   - https://siemienik.com/docs/xlsx-renderer/
   - spreadsheet tools
-  - XLSX-Renderer: Export data to Ecma-376 .XLSX Excel files based on template; generating Excel files with minimum code
+  - XLSX-Renderer: Export data to Ecma-376 . XLSX Excel files based on template; generating Excel files with minimum code
   - XLSX-Import: Importing data from xlsx as simple as possible and map into configured data model
 
 - https://github.com/dtjohnson/xlsx-populate /202003/js
@@ -119,7 +120,6 @@ modified: 2023-01-09T11:04:13.958Z
 
 - https://github.com/Neovici/nullxlsx
   - Minimal JavaScript library to create XLSX spreadsheet and ZIP archive files.
-
 
 - https://github.com/MathNya/umya-spreadsheet /MIT/202401/rust
   - rust library for reading and writing spreadsheet files

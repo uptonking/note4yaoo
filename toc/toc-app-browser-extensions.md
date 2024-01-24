@@ -12,6 +12,9 @@ modified: 2023-02-08T10:24:11.422Z
 - extension的settings同步
   - 可考虑用浏览器提供的api如chrome-sync，检测浏览器账户而自动拉取数据
   - 可考虑自定义实现，需要用户先提供一次身份和云存储位置(自建或第三方)，然后拉取数据
+
+- resources
+  - [Extension Development and ToolKit - WebExtension. ORG](https://webextension.org/)
 # popular
 
 # browser-ext-devtools

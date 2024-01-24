@@ -173,7 +173,7 @@ modified: 2022-11-14T15:12:02.783Z
   - 依赖 lit + vaadin-router + shoelace
   - The PWABuilder pwa-starter is our opinionated, best practices, production tested starter that we use to build all of our PWAs, including PWABuilder itself!
   - Has a Service Worker system using Workbox
-# pwa-without-idb
+# more-pwa
 - https://github.com/TalAter/UpUp /201812/js
   - Easily create sites that work offline as well as online
   - https://github.com/TalAter/gotham_imperial_hotel

@@ -33,6 +33,8 @@ modified: 2020-11-11T13:15:43.417Z
   - https://registry.opendata.aws/usage-examples/
   - https://aws.amazon.com/blogs/aws/tag/public-data-sets/
   - [A public data lake for COVID-19 research and development](https://aws.amazon.com/covid-19-data-lake/)
+
+- [Our Data | FiveThirtyEight](https://data.fivethirtyeight.com/)
 # us
 - [US CDC - Centers for Disease Control and Prevention](https://data.cdc.gov/browse)
 # cn

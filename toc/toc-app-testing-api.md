@@ -10,7 +10,9 @@ modified: 2023-02-08T10:25:14.173Z
 # guide
 
 # postman-like
-- https://github.com/hoppscotch/hoppscotch /MIT/ts/vue
+- https://github.com/hoppscotch/hoppscotch /MIT/202401/ts/vue
+  - https://hoppscotch.io/
+  - Open Source API Development Ecosystem
   - Install as a PWA on your device.
   - Offline support
   - WebSocket: Establish full-duplex communication channels over a single TCP connection.

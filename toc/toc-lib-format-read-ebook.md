@@ -73,7 +73,7 @@ modified: 2023-09-19T07:26:04.103Z
   - https://calibre-ebook.com/
   - an e-book manager. It can view, convert, edit and catalog e-books in all of the major e-book formats. 
 
-- https://github.com/janeczku/calibre-web /GPLv3/python/js
+- https://github.com/janeczku/calibre-web /GPLv3/202401/python/js
   - a web app that offers a clean and intuitive interface for browsing, reading, and downloading eBooks using a valid Calibre database
   - This software is a fork of calibreserver
 

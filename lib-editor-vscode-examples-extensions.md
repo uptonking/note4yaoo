@@ -39,7 +39,8 @@ modified: 2023-01-21T19:02:58.833Z
   - you can use a `CustomEditor` for binary formats such as images, but it also means that your extension is responsible for a lot more, including implementing save and backing.
 - [Your First Extension](https://code.visualstudio.com/api/get-started/your-first-extension)
 # open-ext
-- https://github.com/eclipse/openvsx /1kStar/EPLv2/202312/java/ts
+- openvsx /1kStar/EPLv2/202312/java/ts/参考前端
+  - https://github.com/eclipse/openvsx
   - https://open-vsx.org/
   - https://ecdtools.eclipse.org/adopters/
   - Open VSX is a vendor-neutral open-source alternative to the Visual Studio Marketplace.

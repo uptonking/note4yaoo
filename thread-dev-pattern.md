@@ -16,7 +16,12 @@ modified: 2021-02-19T12:23:12.286Z
 
 - ## 
 
-- ## 
+- ## Mastering the sliding window method is a competitive edge in coding interviews.
+- https://twitter.com/Franc0Fernand0/status/1750079118803165429
+  - A sliding window is a subarray that moves from left to right through an array.
+  - The window is defined by two pointers representing its left and right bound. The window size can be fixed or variable.
+  - For fixed size, the idea is to calculate some information about the elements in the window efficiently.
+  - For variable size, the idea is to find the best one that fits a particular constraint efficiently.
 
 - ## 每次写正则表达式都很麻烦，生怕欠考虑漏掉各种条件，让 ChatGPT 来写就很合适，感觉它拯救了我的好心情
 - https://twitter.com/Benbinbin_fun/status/1640717103501312001

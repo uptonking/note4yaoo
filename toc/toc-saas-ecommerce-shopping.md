@@ -35,18 +35,24 @@ modified: 2023-06-07T14:19:18.719Z
   - Custom db with orders connected to Stripe
 # plugins/packages-marketplace
 - 可参考
-  - 包管理器: npm, rust-crate, docker, flathub, appimage
+  - 包管理器: npm, rust-crate, docker, flathub, appimage, greasy-scripts
   - 插件扩展: vscode-extensions-marketplace, opensumi, chrome-store, jetbrains, Ulauncher
   - marketplace: atlassian, mattermost, airtable, zoho, directus
-  - app-store: unhosted/0data, Store.app
-  - 其他: strapi-plugins, better-discord
+  - app-store: unhosted/0data, Store.app, Electron
+  - 其他: strapi-plugins, better-discord, observable-notebook-import
   - 可考虑基于npm发布插件，参考Cerebro-launcher
-  - 可考虑ckan
+  - 可考虑类似ckan，但版本管理功能弱
+  - search: made-with, product-hunt
 
 - 收集聚合类
+  - ui组件、数据、表格
+  - [Botpress Hub: Integrations, Skills, Channels](https://botpress.com/hub)
   - [Discord Servers - Public Server Listing](https://discordservers.com/)
+  - [Storybook Component Encyclopedia](https://storybook.js.org/showcase)
+    - The Component Encyclopedia is built with Hygraph cms(NonOpen)
 
-- https://github.com/eclipse/openvsx /1kStar/EPLv2/202312/java/ts
+- openvsx /1kStar/EPLv2/202312/java/ts/参考前端
+  - https://github.com/eclipse/openvsx
   - https://open-vsx.org/
   - https://ecdtools.eclipse.org/adopters/
   - Open VSX is a vendor-neutral open-source alternative to the Visual Studio Marketplace.
@@ -58,14 +64,17 @@ modified: 2023-06-07T14:19:18.719Z
     - This repository contains the source of open-vsx.org, the public instance of Eclipse Open VSX. 
     - Most of the code is maintained in eclipse/openvsx, while here you'll find only adaptations specific to the public instance.
 
-## npm-registry
+## npm-registry(支持版本历史)
 
-- https://github.com/verdaccio/verdaccio /15.6kStar/MIT/202401/ts
+- verdaccio /15.6kStar/MIT/202401/ts
+  - https://github.com/verdaccio/verdaccio
   - https://www.verdaccio.org/
+  - https://verdaccio.org/dev/plugins-search/
   - Verdaccio is a simple, zero-config-required local private npm registry. 
-  - Verdaccio comes out of the box with its own tiny database, and the ability to proxy other registries (eg. npmjs.org), caching the downloaded modules along the way
   - 后端依赖express，采用插件式架构，支持express/fastify
   - 前端依赖redux、mui.v5、rematch、marked、react-markdown、JSONStream
+  - 支持显示包的历史版本和各版本信息，和npm前端几乎类似
+  - Verdaccio comes out of the box with its own tiny database, and the ability to proxy other registries (eg. npmjs.org), caching the downloaded modules along the way
   - 🔜 使用openvsx的前端替换
   - File system storage plugin for verdaccio
   - A memory based storage plugin.
@@ -77,7 +86,10 @@ modified: 2023-06-07T14:19:18.719Z
     - experiment: accept async tarball_url_redirect function
     - refactor auth class 
   - https://github.com/sgrandner/my-local-npm-registry-with-verdaccio
-
+  - examples-private-registry
+    - https://npm.patrocinium.com/
+    - https://npm.bsimo.fr/
+    - https://npm.claimh.com/
 - https://github.com/RightCapitalHQ/verdaccio-package-diff
   - A package diff plugin for Verdaccio
   - This will display the file differences between the two versions.
@@ -110,14 +122,8 @@ modified: 2023-06-07T14:19:18.719Z
   - Browse the npm registry with an SPA made in React, with full dev workflow.
   - 依赖mui.v4、downshift、recompose、react-markdown
 
-- https://github.com/react-native-community/directory /MIT/202401/ts
-  - https://reactnative.directory/
-  - A searchable and filterable directory of React Native libraries.
-  - How do I add a library? Add it at the end of react-native-libraries.json file (we use the order in that file for "Recently added" sort option).
-  - 依赖nextjs、react-native-web
-  - 只展示包列表，每个包没有单独的详情页
-
-- https://github.com/openupm/openupm /1.4kStar/BSD/202401/js
+- openupm /1.4kStar/BSD/202401/js/参考后端
+  - https://github.com/openupm/openupm
   - https://openupm.com/
   - Open Source Unity Package Registry
   - Many UPM packages use NuGet packages as embedded DLLs. This practice can become troublesome when two packages include the same DLL or different versions of one NuGet package. 
@@ -136,24 +142,55 @@ modified: 2023-06-07T14:19:18.719Z
     - 依赖aws-sdk、fastify、vuepress
     - 软件包搜索在vuepress的markdown和vue组件中实现
 
+- OpenUserJS.org /GPLv3/789Star/202401/js
+  - https://github.com/OpenUserJS/OpenUserJS.org
+  - https://openuserjs.org/
+  - The home of Free and Open Source Software (FOSS) user scripts. 
+  - Built using Node.js and other web familiar technologies.
+  - 依赖mongodb
+  - 无法访问旧版本的脚本
+  - [Is there a way to view previous versions of scripts hosted there? | Discussions | OpenUserJS_202307](https://openuserjs.org/discuss/Is_there_a_way_to_view_previous_versions_of_scripts_hosted_there)
+    - OUJS is a Presentational Userscript Repository only. So no. 
+    - Use GitHub if you want full SCM functionality at this time.
+- https://github.com/JasonBarnabe/greasyfork /202401/ruby
+  - https://greasyfork.org
+  - online repository of user scripts and user styles.
+
+- https://github.com/denosaurs/crux.land /MIT/202205/ts
+  - a free registry service meant for hosting small (≤ 20kB) single deno scripts.
+  - crux.land runs on deno deploy and requires the deployctl cli for local development.
+
+## marketplace
+
 - https://github.com/Ulauncher/ext.ulauncher.io /202211/js
   - https://ext.ulauncher.io/
   - Ulauncher Extensions Website
   - built using JS and React library (with CRA)
-  - https://github.com/Ulauncher/ext-api.ulauncher.io
+  - https://github.com/Ulauncher/ext-api.ulauncher.io /python
     - Backend for ext.ulauncher.io
     - This API server is written in Python using bottle, boto3 libraries
+
+- https://github.com/AppImage/appimage.github.io /未实现单独搜索
+  - https://appimage.github.io/apps/
+  - Given an URL to an AppImage, the GitHub action in this project inspects the AppImage and puts it into a community-maintained catalog
+
+- https://github.com/botpress/botpress /MIT/202401/ts
+  - https://botpress.com/
+  - The open-source hub to build & deploy GPT/LLM Agents
+  - https://botpress.com/hub
+    - integrate with hundreds of applications and automate workflows with pre-built templates
 
 - https://github.com/logseq/marketplace /MIT/202401/js
   - A centralized packages manager for Logseq marketplace plugins.
   - How to submit your plugin?
   - Make a Github Pull Request
 
-- https://github.com/denosaurs/crux.land /MIT/202205/ts
-  - a free registry service meant for hosting small (≤ 20kB) single deno scripts.
-  - crux.land runs on deno deploy and requires the deployctl cli for local development.
-
 ## package-manager
+
+- https://github.com/0dataapp/0data
+  - https://0data.app/glance
+  - Zero Data App - Own your data, all of it.
+  - 未实现详情页
 
 - https://gitlab.com/fdroid/fdroidserver /AGPLv3/202401/python
   - a suite of tools to publish and work with collections of Android apps (APK files) and other kinds of packages
@@ -178,9 +215,80 @@ modified: 2023-06-07T14:19:18.719Z
   - You also need ostree
   - flat-manager contains a Python-based client that can be used to talk to the server. 
 
-- https://github.com/AppImage/appimage.github.io /未实现单独搜索
-  - https://appimage.github.io/apps/
-  - Given an URL to an AppImage, the GitHub action in this project inspects the AppImage and puts it into a community-maintained catalog
+- https://github.com/artifacthub/hub /apache2/go/ts
+  - https://artifacthub.io/
+  - a web-based application that enables finding, installing, and publishing packages and configurations for CNCF projects.
+
+## showcase(不支持版本历史)
+
+- https://github.com/MarsX-dev/devhunt /MIT/202401/ts/Supabase/nextjs
+  - https://devhunt.org/
+  - A launching platform for dev tools
+  - we use GitHub pull requests for listings and user logins for genuine voting.
+  - Create a Supabase Project and make sure to save the database password.
+  - For a complete list of all available social login methods, consult the Supabase Social Login documentation
+
+- https://github.com/rupali-codes/LinksHub /MIT/202401/ts
+  - https://linkshub.dev/
+  - LinksHub is a Hub of Links For Developers By Developers. 
+  - 依赖daisyui、nextjs、typewriter-effect
+  - aims to provide developers with access to a wide range of free resources and tools that they can use in their work.
+  - contribute by creating a PULL REQUEST 
+
+- https://github.com/electron/apps /MIT/202310/js
+  - https://www.electronjs.org/apps
+  - A collection of apps built on Electron
+  - 没有详情页
+
+- https://github.com/expojs/made-with-react /202001/js/过于简单
+  - https://madewithreact.com/
+  - a collection of websites and applications using the React or React Native JavaScript library.
+  - https://madewithreactjs.com/ /未开源
+  - [1655+ React Sites | Best Websites Made With React](https://bestofreact.com/)
+  - [Made With React Native](https://madewithreactnative.com/)
+
+- https://github.com/react-native-community/directory /MIT/202401/ts
+  - https://reactnative.directory/
+  - A searchable and filterable directory of React Native libraries.
+  - How do I add a library? Add it at the end of react-native-libraries.json file (we use the order in that file for "Recently added" sort option).
+  - 依赖nextjs、react-native-web
+  - 只展示包列表，每个包没有单独的详情页
+
+- https://github.com/ant-design/scaffold-market /MIT/202310/js
+  - http://scaffold.ant.design/
+  - scaffold market for single page application
+  - 依赖antd.v3、dva、react-disqus-comments、react
+
+- https://github.com/torch2424/made-with-webassembly /MIT/202212/js
+  - https://madewithwebassembly.com/
+  - A showcase of awesome production applications, side projects, and use cases made with WebAssembly 
+
+- https://github.com/2KAbhishek/projects /GPLv3/202310/js
+  - https://2kabhishek.github.io/projects
+  - Showcase All Your Projects
+
+- https://github.com/Reinforz/Nishan /MIT/202110/ts
+  - https://nishan-docs.netlify.app/
+  - An ecosystem of packages for notion written in typescript.
+  - 模仿npm
+
+- https://github.com/419Labs/starknet-ecosystem.com /apache2/202401/ts
+  - https://www.starknet-ecosystem.com/
+  - Starknet Ecosystem Dashboard
+  - To update your project you have to do the same thing than for adding. Edit the data/ecosystem.ts file and create a dedicated Pull Request
+
+## more-app-store
+
+- https://github.com/pawelmalak/snippet-box /MIT/202110/ts
+  - a simple self-hosted app for organizing your code snippets. 
+  - It allows you to easily create, edit, browse and manage your snippets in various languages.
+  - Sequelize ORM + SQLite
+  - for search, multiple filters can be used at once: `card lang:typescript tags:react,editor` is a valid query
+
+- https://github.com/mattermost/mattermost-marketplace /apache2/202312/go
+  - https://mattermost.com/marketplace/
+  - The stateless HTTP service backing the Mattermost marketplace.
+  - It is meant to be queried by the Mattermost server to enable plugin discovery by System Admins.
 
 - https://github.com/pkgxdev/ossapp /apache2/202401/ts/svelte
   - https://pkgx.app/
@@ -190,4 +298,6 @@ modified: 2023-06-07T14:19:18.719Z
   - ossapp is the graphical app complement to pkgx.
   - Under the hood ossapp installs and manages your packages with pkgx
   - pkgx is a core contributor to the tea protocol
+
+- [useHooks – The React Hooks Library](https://usehooks.com/)
 # more

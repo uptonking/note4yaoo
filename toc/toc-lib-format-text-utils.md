@@ -63,6 +63,16 @@ modified: 2023-09-01T03:56:10.056Z
   - GumTree is a syntax-aware diff tool. 
   - It improves text-based diff tools in two important ways
   - We already deal with a wide range of languages: C, Java, JavaScript, Python, R, Ruby
+
+- https://github.com/praneshr/react-diff-viewer /MIT/202007/ts
+  - https://praneshravi.in/react-diff-viewer/
+  - simple and beautiful text diff viewer component made with jsdiff and React.
+  - Inspired from Github diff viewer, it includes features like split view, inline view, word diff, line highlight and more. It is highly customizable and it supports almost all languages.
+
+- https://github.com/kpdecker/jsdiff /7.4kStar/BSD/202401/js
+  - http://incaseofstairs.com/jsdiff/
+  - A JavaScript text differencing implementation
+  - Based on the algorithm proposed in "An O(ND) Difference Algorithm and its Variations" (Myers, 1986).
 # command-line
 - https://github.com/Textualize/rich /python3.7+
   - https://rich.readthedocs.io/en/latest/

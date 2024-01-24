@@ -40,7 +40,10 @@ modified: 2023-01-09T15:41:17.179Z
 # discuss
 - ## 
 
-- ## 
+- ## I don’t understand why the JavaScript community is obsessed with file based routing. It’s not needed and you can clearly see the complexity it creates in every real world implementation.
+- https://twitter.com/zeeg/status/1749869213089714558
+  - Having a route be in a single file is fine, controlling routing and inheritance based on that files location is the complexity.
+  - it’s good for simple apps, especially content based stuff.
 
 - ## File-based routing is great for defining convention and boundaries. It forces you to pre-split functionality and think hierarchically.
 - https://twitter.com/tannerlinsley/status/1749511216345833763

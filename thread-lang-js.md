@@ -16,6 +16,17 @@ Symbol('a') === Symbol('a'); //false
 # discuss
 - ## 
 
+- ## 
+
+- ## how we see strings: v8 vs js
+- https://twitter.com/hd_nvim/status/1749922260478263740
+  - [Exploring V8's strings: implementation and optimizations | iliazeus](https://iliazeus.github.io/articles/js-string-optimizations-en/)
+
+- rust vs c
+  - CString 表示了一个在内存布局上与 C API 兼容的字符串（中间不能有 0 且以 0 结尾）。
+  - OsString 用来接收和提供平台 API 兼容的字符串，比如 Windows 的 Unicode 会以 wchar 表示。OsString 在内存布局上并不与平台 API 兼容，它只是通过特殊编码，提供了一个可以向 Rust String 和真正的平台字符串廉价转换的容器。OsString 可以保证与平台字符串无损地互转，而转换到 Rust String 由于 UTF-8 合法性的问题可能会有损。
+  - 而 PathBuf 其实就是 OsString 的封装，XxxStr 则是 owned 类型的 borrowed 版本。上述类型均不要求 UTF-8 合法。
+
 - ## Dunno who needs to be reminded of this apart from me, but don't use `console.log()` in a loader hook, or streams, or threads
 - https://twitter.com/bengl/status/1745810715993158005
 

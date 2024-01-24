@@ -487,6 +487,14 @@ modified: 2023-11-16T15:00:11.503Z
 - https://github.com/Veri5ied/slack-ui-clone /202012/js
   - React, Vanilla CSS, Material UI Icons, Reach Router and Firestore Slack Clone
 # apps-api
+- https://github.com/hiteshchoudhary/apihub /MIT/202401/js
+  - https://freeapi.app/
+  - Your own API Hub to learn and master API interaction.
+  - We are trying to build a single source API hub that can be used to learn api handling in any programming language.
+  - our API hub offers custom endpoints that provide a hands-on experience in handling API responses.
+  - our API hub also provides advanced APIs to challenge and stretch your skills.
+  - Our open-source project is currently hosted on a remote server, where we are forced to reset the entire server, including the file system and MongoDB database, every 2 hours to avoid incurring additional costs.
+
 - https://github.com/1FarZ1/Task-Manager-NodeJs /202310/js
   - A Complete Task Manager Built Using NodeJs, Express, MongoDb, VanillaJs
 
