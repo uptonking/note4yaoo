@@ -274,3 +274,13 @@ modified: 2023-02-08T10:46:26.912Z
 - https://github.com/devhubapp/devhub /ts
   - TweetDeck for GitHub - Filter Issues, Activities & Notifications 
   - Web, Mobile & Desktop with 99% code sharing between them
+# discuss-xp-github
+- ## 
+
+- ## 
+
+- ## 今天知道了 github 有个用 https 的 443 端口使用 ssh 协议的服务 http://ssh.github.com。
+- https://twitter.com/_a_wing/status/1750177058872054083
+  - 这样就可以在被禁了 22 端口的情况下继续用 ssh 协议来传输代码了
+- 我第一次用这个端口是因为机场被SSH爆破，然后机场主一声不吭把所有路线的22端口全给关了，被迫查了资料才知道原来还有这个端口解了燃眉之急把代码推上去
+- 嗯，而且这个域名 22 和 443 都能走

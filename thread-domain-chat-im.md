@@ -22,18 +22,118 @@ modified: 2024-01-04T01:28:58.097Z
 
 - ## 
 
+- ## 🌐️ [Why isn't Bluesky a peer-to-peer network? | Paul's Dev Notes _202401](https://www.pfrazee.com/blog/why-not-p2p)
+- The indie hacker spirit was strong in the NodeJS & Web community in 2014. There was a brief surge of interest in CouchDB and the potential for CouchApps. WebRTC had just stabilized and was being fiddled with.
+- A couple of things then happened all at once:
+  - Distributed systems theory became more mainstream
+  - Bitcoin showed that novel protocols could make waves
+  - DJB's NaCl became widely available, and, with it, more compact public keys
+- This led to the formation of IPFS, Secure Scuttlebutt, Dat and WebTorrent at all roughly the same time.
+
+- The BitTorrent variants
+  - BitTorrent uses a Merkle Tree to represent datasets. 
+  - This means that a torrent represents one static collection of files. 
+  - Each project looked to replace the Merkle Tree with a new data structure which would still benefit from shared hosting and strong authentication while adding support for more dynamic data.
+
+- IPFS: the Merkle DAG
+  - IPFS still focused on content-hashes, but essentially broke each chunk of data into its own torrent that could be cross-referenced by the hash. 
+  - A public key or DNS name could point to a hash to support dynamism. 
+  - It used a DHT to look up and connect machines.
+
+- SSB: the append-only log
+  - SSB used an append-only log which was modeled as a signed linked list. 
+  - Back references were content-hashes, making the HEAD a rolling hash. 
+  - It used a gossip model to distribute data and "pubs" to connect peers.
+
+- Dat: the merkle log
+  - Dat also used a signed append-only log, but it used a merkle tree to reference nodes rather than a linked list. 
+  - This gave a nice performance benefit over SSB, since it was able to verify signed heads against partial datasets using the tree structure. 
+  - It used a DHT to look up and connect machines.
+
+- My personal timeline
+  - I joined the scene in 2014 by the good graces of Dominic Tarr, who allowed me to join him as the first application developer for SSB.
+  - in 2016 I paired Electron with the Dat protocol and declared it a "peer-to-peer web browser."  I then stuffed in APIs for reading and writing the p2p files and started pitching it as the Beaker browser.
+  - in 2017 Beaker supported the ability to "fork" p2p websites, so an indie social network called Rotonde briefly emerged on it where you created accounts by forking existing user sites.
+  - in 2018-2020, The Beaker team experimented heavily with baked-in APIs for interacting with user data on the Dat network. This included an indexer in the browser which would create computed views from user data.
+  - in 2021, Discouraged with the outcomes thus far — for reasons I'll explain shortly — I embarked on the another social networking project CTZN which I livestreamed. I began experimenting with hybrid p2p & server models.
+  - in 2022, I joined Bluesky with a pocket full of dreams and a huge backlog of failed projects learnings.
+
+- What went right
+  - P2P makes some things extraordinarily easy. Beaker browser demoed one-click website creation and the ability to fork other people's sites. 
+  - You could write entire applications as SPAs that would simply read & write files instead of relying on a server.
+  - The data structures built by each protocol evolved significantly. There were some very innovative improvements in each technology.
+
+- What went wrong
+  - The pure p2p model suffered from an introductions problem (how do two users meet for the first time?) and so reliable delivery of events such as replies or likes was never solved. 
+  - It didn't take long to hit data-scales that an individual device couldn't manage.
+  - We never solved multi-device synchronization in a way that preserved the convenience of the technology. Same for key backup/sync.
+  - DHTs were not reliable or performant. We were way too optimistic about device discovery and NAT traversal.
+  - Doing everything on the user device opened new and difficult questions about resource management. When is it safe to clear cached data? How many connections can we keep open? How much CPU and RAM can our daemon eat before people notice? Mobile was a non-starter.
+
+- By 2022, a number of us in the community had begun to re-examine our original premises from 2014. We generally agreed that device-hosted network software was simply infeasible, but we still saw a lot of potential in the data structures we had been using.
+- Hosting agility
+  - The general benefit from p2p we looked at preserving was hosting agility. 
+  - Host-based addressing (the Web's traditional model) means that data published under a server's name becomes immovable from that server. 
+  - Redirects may be suitable for an individual page, but large datasets will cross-reference records extensively and those references cannot be reliably migrated every time a user wants to move to a new server.
+- Cryptographic structures
+  - User data is encoded in a cryptographic structure called a Merkle Search Tree which was chosen for optimal proof sizes. This is a direct carry-over from our peer-to-peer work, and is what drives hosting agility.
+  - In protocol terminology, we call this structure a "repository."
+  - The repositories are designed to be highly cacheable and efficient to replicate.
+  - A downside of this model is that the entirety of the repository is meant to be broadcast publicly. Selectively-shared data will require a separate channel within the protocol.
+
+- Host discovery
+  - Once we moved to the PDS model, the requirements for looking up hosts from cryptographic identifiers got less intense. 
+- Aggregation data modeling
+  - The data model we refined through the p2p era was an aggregation-based indexes. Users would subscribe to each others' datasets and ingest them into local indexes. Those local indexes could then be queried to provide a view of the application state.
+  - This works well because it preserves the fact that each user's own dataset is an isolated space.
+  - This model also benefits from eventually-consistent convergence. 
+  - With Bluesky, the major difference from our p2p work was deciding that these aggregations would happen via large services (the AppViews) rather than on each user's own infra (their PDS or their device). This makes it possible to provide the high-scale networking that people expect from social experiences.
+- Not quite P2P, not quite Federation
+  - We ended up calling the AT Protocol a "federated" network because we couldn't think of a more appropriate term
+- You can see why we settled on the name AT Protocol. In the technical sense, AT — Authenticated Transfer — references the use of the cryptographic structures, data which is inherently authenticated. 
+
 - ## [Support ActivityPub for GitLab (&11247) · Epics · GitLab_202308](https://gitlab.com/groups/gitlab-org/-/epics/11247)
   - The goal of those documents is to provide an implementation path for adding fediverse capabilities to Gitlab.
   - Among the push for decentralization of the web, several projects tried different protocols with different ideals behind their reasoning (some examples : Secure Scuttlebutt or ssb for short, Dat, IPFS, Solid). 
-  - But one gained traction recently : what is known as ActivityPu
+  - But one gained traction recently : what is known as ActivityPub
 
-- ## [FAQ | AT Protocol - Why not use ActivityPub?](https://atproto.com/guides/faq)
+- ## [FAQ | AT Protocol - Why not use ActivityPub for bluesky?](https://atproto.com/guides/faq)
 - 🐛 Account portability is the major reason why we chose to build a separate protocol. 
   - We consider portability to be crucial because it protects users from sudden bans, server shutdowns, and policy disagreements. 
   - Our solution for portability requires both signed data repositories and DIDs, neither of which are easy to retrofit into ActivityPub. 
   - The migration tools for ActivityPub are comparatively limited; they require the original server to provide a redirect and cannot migrate the user's previous data.
 - 🐛 Other smaller differences include: a different viewpoint about how schemas should be handled, a preference for domain usernames over AP’s double-@ email usernames, and the goal of having large scale search and discovery (rather than the hashtag style of discovery that ActivityPub favors).
 
+- ## [Why not RDF in the AT Protocol? | Paul's Dev Notes](https://www.pfrazee.com/blog/why-not-rdf)
+- There is a problem of semantic and schematic agreement.
+  - Semantic: what names(属性名或路径) do we use to identify the types of data.
+  - Schematic: how do we model the data — or more simply, what fields do we expect and how do we expect them to be defined?
+
+- RDF was invented to solve these kinds of problems. 
+  - You can see it used in ActivityPub, DIDs, Verifiable Credentials, SOLID, and a variety of other protocols designed for multi-vendor environments.
+- RDF uses an elegant model of graph triples. Everything gets distilled down into nodes and edges between those nodes.
+  - However, because these definitions are per-field, there are some additional work that's necessary to establish the schema in the full "document" sense. 
+  - If it is important that pfrazee.com output both schemas.com/name and schemas.com/job, then you need to use additional systems inside RDF such as SHACL.
+- RDF is notorious(臭名昭着的) for having a bad developer experience. While it is conceptually elegant, the heavy use of URIs inside the data model clutters(使乱成一团; 杂乱) a lot of the code.
+  - it can be verbose and difficult to understand. JSON-LD and Turtle are two examples of this. 
+
+- I think it's fair to say that you can model two separate systems correctly without preplanning thanks to the generality of RDF. However, very few systems natively use a graph model and programmers are not often familiar with it. The closest mainstream technology might be GraphQL.
+  - I looked very closely at RDF during the AT Proto's initial design phase. One of the initial drafts for our schema system was based on RDF.
+  - My belief is that a highly opinionated language (akin to Turtle or JSON-LD) which drops some of the features of RDF in favor of a more concise language could actually be effective. 
+  - I ran out of time while exploring this option
+
+- I believe that a document-oriented model is more intuitive for software engineers. 
+  - The request/response bodies of HTTP and RPC systems are documents. 
+  - Moreover, ATProto's data model is fundamentally a document store. 
+  - Therefore, a document-oriented model seemed to be the best choice.
+
+- The second draft of our schema system used JSON-schema, which did not solve any semantic concerns but does solve all of the schematic ones.
+  - To solve the semantic element, we introduced the notion of a namespaced identifier (NSID) which is simply a form of reverse-DNS.
+
+- We eventually conceptualized our target as a kind of "d.ts for ATProto" — that is, a type declaration language for all of the interfaces and data-types on the protocol.
+
+- Using namespaced IDs is somewhat pointless if you can simply define all the schemas in the core protocol spec and call it a day.
+- the other significant point of evolvability (that's in practice now) is the RPC methods. New ones can be defined, returning new schemas, and so on.
 # discuss
 - ## 
 
@@ -147,6 +247,10 @@ modified: 2024-01-04T01:28:58.097Z
   - Performance. The performance cost of the protocol is a top priority and it’s something that was ignored with AP. They are designing it around the idea that low power hardware should be able to run an implementation of the protocol. AP is very… chatty, and it costs a lot to keep servers in sync with the federation.
 
 # discuss-bluesky/threads
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

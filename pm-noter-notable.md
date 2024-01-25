@@ -22,7 +22,7 @@ modified: 2023-11-28T14:48:45.910Z
   - local-first data storage with optional syncing
     - 兼容git的commits
   - office viewer
-  - whisper-editor
+  - github修改文档要提pr很繁琐; 可协作的workspace可直接改或用审阅修订模式
 
 - selling-point-knowledge-base
   - markdown support with git-like database
@@ -44,6 +44,7 @@ modified: 2023-11-28T14:48:45.910Z
   - cms+crdt
   - integrations
     - jupyter-notebook
+    - whisper-editor
 
 - 难点
   - 对于嵌入到note中的本地媒体资源如图片、视频、音频，如何解析、存储、渲染更好
@@ -67,11 +68,10 @@ modified: 2023-11-28T14:48:45.910Z
     - 类似observable-notebook的上下结构可减少页面reflow
   - dev-tools, instead of wrapper like react-ag-grid，需要大量时间，可跨平台
 
-- editor
-  - copy as markdown link
-  - core-text-mode，整体页面突出文字，淡化链接样式
-  - statistics-in-editor
-    - 自动统计链接点击次数、图片分享次数、page或问题的访问次数
+- interactive-doc
+  - wysiwyg + codesandbox 编辑类
+  - wysiwyg + code-editor 展示类
+  - wysiwyg + table 展示类
 
 - headless/unstyled design
   - 基于场景预定义react组件接口，允许替换默认使用的各个组件
@@ -147,6 +147,12 @@ modified: 2023-11-28T14:48:45.910Z
 - IIIF-spec + anno
   - 处理comment、高亮
   - 效果参考mirador
+
+- editor
+  - copy as markdown link
+  - core-text-mode，整体页面突出文字，淡化链接样式
+  - statistics-in-editor
+    - 自动统计链接点击次数、图片分享次数、page或问题的访问次数
 
 ## search
 

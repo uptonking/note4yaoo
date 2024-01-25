@@ -24,6 +24,12 @@ modified: 2023-10-28T09:00:45.811Z
 
 - ## 
 
+- ## 
+
+- ## BlueSky uses standoff markup to represent rich text. They call them facets
+- https://twitter.com/jessmartin/status/1750543829868916797
+  - [Why RichText facets in Bluesky | Paul's Dev Notes _202401](https://www.pfrazee.com/blog/why-facets)
+
 - ## The representation of comments in rich text Delta is awkward, because multiple styles cannot be merged like bold/link. Which solution do you prefer?
 - https://twitter.com/zxch3n/status/1719578599517556748
 

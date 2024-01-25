@@ -11,14 +11,14 @@ modified: 2021-07-20T13:50:23.433Z
 # guide
 
 - tips
-  - rendering(~~web~~) may be the future.
+  - paas (~~rendering/web~~) may be the future.
   - 涉猎saas解决方案，积累方案、算法、库、框架、业务模版
   - 深入一个项目
     - 前端分析model/view/dataflow，后端分析数据库设计和优化
     - src-code, issues, pr, forks, extensions, most-commented-issues
     - roadmap, open-issues, alternatives
-    - 开放能力: extensions,scripts,marketplace
-    - easy的api，simple的logic
+    - 开放能力: extensions, scripts, marketplace
+    - easy api, simple logic
     - pref: 索引、缓存、分库分表、读写分离
   - 抽空在线体验，工作专注代码
   - specification for pivot table
@@ -26,26 +26,25 @@ modified: 2021-07-20T13:50:23.433Z
 - 技术方向js: 富文本编辑器，多维表格，协作; dnd，floating，state
 - 技术扩展js/py: 支持拖拽的页面编辑器/lowcode，Excel，图表
 - 技术产品: cms, excel
-- 技术可选1: 画板，图形编辑器, pdf
+- 技术可选1: 画板, pdf，图形编辑器
 - 技术可选2: olap，bi，数据库，大数据系统
 - 技术可选3: vscode，可参考架构 extensions、capabilities
 - 技术可选4: 侧重版本控制的数据库，如dolt, SirixDB, git-like-db
 - 玩具尝试1: git+crdt+table+branch/version
-- tech: 虚拟渲染、分支版本、协作; crdt历史版本、partial-replica、ivm
+- roadmap: 虚拟渲染、分支版本、协作; crdt历史版本、partial-replica、ivm
 
 - 🚀 产品落地
-  - 表格类内容创作与管理
+  - 表格类cms, 内容创作与管理
   - 运营数据仪表板
   - sharing table/data pieces/snippets
-  - 个人数据管理，开放api，允许其他app获取
+  - 个人数据管理，开放api，允许其他app获取，参考ckan
   - tags
 
 - 生态与集成
   - office365，从 word/excel 复制粘贴的表格，如果其中有合并的单元格，也能支持正常展示
-  - jupyter-notebook
-  - observable-notebook
+  - jupyter-notebook, observable-notebook
 
-- enterprise-marketplace
+- marketplace
   - browser-extensions
   - figma
   - table-capture/shot
@@ -65,13 +64,13 @@ modified: 2021-07-20T13:50:23.433Z
 - 💎 editor/WYSIWYG
   - collaborative, block-style, virtualized-render
   - modular/extensible; collaborative; easy-pivotable
-  - 👉🏻 prosemirror/tiptap, quill/typewriter, slate, lexical; cms
+  - 📌 prosemirror/tiptap, quill/typewriter, slate/wang, lexical, etherpad ; cms/outline
   - block-editor with slash-menu/backlinks
   - pdf
 - 💎 excel/data-grid
   - editing, group/pivot, multi-views
   - pivotable; collaborative; formulas
-  - 👉🏻 tanstack-table, ag-grid, handsontable, luckysheet/univer, ospreadsheet; undb/nocodb
+  - 📌 tanstack-table, ag-grid, handsontable, luckysheet/univer, ospreadsheet ; undb/nocodb/ethercalc
   - stream-updates/server-side-infinite-row-model
   - scripting/themeable/canvas/viztable/apache-arrow
   - ~~excel-like~~/~~headless~~
@@ -83,13 +82,15 @@ modified: 2021-07-20T13:50:23.433Z
 ## solutions: inter(re)active knowledge-base/wiki
 
 - ✨ cms(content-mgmt)
+  - 👉🏻 outline (apache2/sequelize+prosemirror)
+  - 👉🏻 strapi      (MIT/knex+slate)
   - 👉🏻 payloadcms  (MIT/mongoose+slate)
-  - 👉🏻 outline    (apache2/sequelize+prosemirror)
   - 👉🏻 nocobase(apache2/sequelize+umi)
   - directus      (AGPL/knex+vue3+tinymce5)
 - ✨ airtable-like(data-mgmt)
   - 👉🏻 nocodb     (AGPL/knex+nuxt3)
-  - 👉🏻 ethercalc     (MIT/nodejs)
+  - 👉🏻 ethercalc   (MIT/nodejs+redis)
+  - ckan
   - apitable      (AGPL/spring-mybatis+canvas)
   - focalboard    (AGPL/go+react-dnd)
   - undb          (AGPL/nestjs+mikro-orm+dnd-kit/table)

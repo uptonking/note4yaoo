@@ -286,6 +286,8 @@ modified: 2023-01-17T19:13:01.845Z
   - This lets you write SQL in your frontend code, that automagically refreshes on all clients when a resource is changed on any (optionally) connected DB. 
   - Additionally, create any generic JS variables on your server to be realtime synced across all clients using "Server Props".
   - Agnostic of framework, build tool, server lib and SQL database.
+# decentralized/p2p
+
 # more
 - https://github.com/owojcikiewicz/realtime-sync
   - enables collaborative editing of HTML inputs in real-time across multiple websites and clients.

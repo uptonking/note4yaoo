@@ -24,6 +24,29 @@ modified: 2023-11-07T16:47:11.499Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 数据库表字段命名的时候，请一定要用 snake_case 千万不要用 CamelCase/camelCase。踩了个大坑
+- https://twitter.com/mayneyao/status/1749974517123002680
+  - [数据库表字段命名踩坑](https://eidos.ink/eidos/185b322fca39472da1e16f9509897003)
+  - 只看结论版：数据库表字段命名的时候，请一定要用 snake_case 千万不要用 CamelCase/camelCase
+
+- 我正在构建 Eidos，一个完全运行在浏览器环境的本地版 Notion。
+- 在选择工具时候有了很多限制，比如类似 prisma 这种为 nodejs 设计的 ORM 工具，不太方便在浏览器中跑起来。
+  - ORM 基本都是给后端准备的，对于 eidos 这种把后端跑在浏览器 worker 里面的场景，估计都没有能适配的
+  - 因此最开始技术选型是不使用 ORM，自己写 sql 维护表结构。在 eidos 中，分为 2 种类型的表，eidos__ 开头是 meta 表，就是程序运行的关键，还有一种是用户建立的多维表，tb_ 开头。
+- 数据库表很难在一次性就设计完美，经验老道的程序员可以未雨绸缪，但是我显然不在此列。随着业务的发展，添加新字段是在所难免的。
+- 基本上每种后端语言都会有对应的 ORM 工具，简化数据库操作和变更。ORM 通常也提供 migration 能力
+- eidos 没有使用 ORM，因此这部分依然是自己实现的。
+  - 原理也很简单，新建一个 draft 的数据库，把新的 sql schema 重放一遍，然后对比新旧数据库表的差异，做增删和变更。这个方案轻量且实用。
+- 一般来说在设计表时，基本都会带上简单的审计字段。created/updated at/by 这种。但是我一开始没有添加这些字段。刚好最近有需求了，于是打算如法炮制，直接加上这些字段。
+- 但是这个时候 migrator 工作失败了。 报错如下：Cannot add a column with non-constant default
+  - 坑点来了。 pgsql-ast-parser 生成的 sql 会把字段名全部转化为小写。
+
 - ## Ten “false” things you will hear about Databases: (unordered)
 - https://twitter.com/thegeeknarrator/status/1740500651233194192
   1) SQL databases don’t scale.

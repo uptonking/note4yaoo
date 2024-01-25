@@ -124,6 +124,12 @@ modified: 2022-11-03T04:14:00.563Z
   - MVCC support for concurrent readers & writer, without blocking
   - Crash-safe by default
   - Savepoints and rollbacks
+
+- https://github.com/ether/ueberDB /apache2/202401/ts
+  - UeberDB turns every database into a simple key value store by providing a layer of abstraction between your software and your database.
+  - UeberDB does bulk writing ergo reduces the overhead of database transactions.
+  - Reads are cached and writes are done in a bulk. This can be turned off.
+  - 支持 couchdb/Mongo/Elasticsearch/MySQL/pg/sqlite/redis
 # leveldb-like
 - https://github.com/Level/bench
   - Benchmark `abstract-level` databases. 
@@ -194,6 +200,9 @@ modified: 2022-11-03T04:14:00.563Z
 - https://github.com/skyzh/mini-lsm /rust
   - https://skyzh.github.io/mini-lsm/
   - Build a simple key-value storage engine in a week!
+  - Week 1: Mini-LSM
+  - Week 2: Compaction and Persistence
+  - Week 3: Multi-Version Concurrency Control
   - Log-structured merge tree is a data structure to maintain key-value pairs. 
   - This data structure is widely used in distributed database systems like TiDB and CockroachDB as their underlying storage engine. 
   - RocksDB, based on LevelDB, is an implementation of LSM-Tree storage engine.

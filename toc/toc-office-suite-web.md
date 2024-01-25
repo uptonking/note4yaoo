@@ -202,27 +202,37 @@ modified: 2023-03-09T13:47:07.317Z
   - https://ethercalc.net/
   - EtherCalc is a web spreadsheet
   - Node.js port of Multi-user SocialCalc
-  - 依赖xlsx、jquery-ui、jszip
+  - 依赖socialcalc、livescript、xlsx、csv-parse、zappajs(node-fwk)、redis、jquery-ui、jszip
   - Your data is saved on the web, and people can edit the same document at the same time. 
   - [EtherCalc: Open-source web spreadsheet | Hacker News_201408](https://news.ycombinator.com/item?id=8129281)
   - [how to start?](https://github.com/audreyt/ethercalc/issues/524)
+  - [redis and persistent data](https://github.com/audreyt/ethercalc/issues/556)
+    - Ethercalc loads the entire sheet into memory - and as far as I know it stays in memory until the server side of ethercalc is stopped.
+    - Every individual change to the sheet is sent to the server and the server sends it to redis. 
+    - Also, from time to time the entire sheet is recalculated on the server and sent to redis.
+    - You want a "backup" and "restore" of redis. 
+  - [MySQL instead of Redis](https://github.com/audreyt/ethercalc/issues/5)
+    - currently we only use Redis. 
+  - [Where are my files](https://github.com/audreyt/ethercalc/issues/587)
+    - It seems that exporting to CSV/ODS/Excel/HTML is not lossless (export to CSV and HTML will lose formulas; export to ODS/Excel seems to lose colors).
   - forks
-  - https://github.com/Tuanshu/ethercalc /202312/
+  - https://github.com/Tuanshu/ethercalc /202312/仅修改测试
     - post to ethercalc ok
   - https://github.com/davidbwaikato/cbh-ethercalc /202111/js
     - Cell Block HTML fork of Ethercal to support rich HTML representation along with text analysis in a spreadsheet
+  - https://github.com/feryandi/EtherCalc-Data-Collection /201708
+    - 支持mysql, forked from v0.20161220.1
+  - https://github.com/doc22940/ethercalc.tools /201911
+
 - https://github.com/eddyparkinson/cellmaster /201611/js
   - forked from ethercalc
   - https://news.ycombinator.com/item?id=19022357
     - It is hard to makes formulas fast enough with JS.
     - The main speed problems with ethercalc are loading the data from the server and calculating the formulas. I did strip down the code to remove these problems to make web apps work.
 
-- https://github.com/sallakarppinen/ethercalc-client /201804/js
-  - simple API client for Ethercalc collaborative spreadsheets.
-
 - https://github.com/ethersheet-collective/EtherSheet /BSD/201704/js
   - Online spreadsheet collaboration in real time using node.js. 
-  - Similar to etherpad-lite but its a spreadsheet!
+  - Similar to etherpad-lite but its a spreadsheet
   - Ethersheet is only supported on GNU/Linux and MySQL as of right now. It's possible that it will work on Windows or with PostgreSQL or some other database, but we haven't tested 
   - [Ethersheet – An open-source collaborative spreadsheet | Hacker News_201410](https://news.ycombinator.com/item?id=8450234)
     - Like ethercalc, you can use any URL, even non-secret ones
@@ -238,14 +248,64 @@ modified: 2023-03-09T13:47:07.317Z
   - Dan Bricklin co-authored VisiCalc, the first spreadsheet program for the masses.
   - forks
   - https://github.com/marcelklehr/socialcalc /201808/js
-    - in-browser spreadsheet editor with support for real-time collaboration. 
-    - This version is based on the version used in EtherCalc.
+    - in-browser spreadsheet editor with support for real-time collaboration
+    - 🎯 This version is based on the version used in EtherCalc.
+  - https://github.com/seballot/socialcalc /201906/js
+    - Adds nunjucks template engine
+    - Adds style button directly in editor toolbox
+    - Handle editor resize
+  - https://github.com/audreyt/socialcalc /201109/js
+    - Multiplayer SocialCalc with WebSocket, ethercalc的前期
   - https://github.com/Lynnmn/socialcalc /201903/js
     - 可以进行通用编辑电子表格, 但不与excel互通
     - 可以读取远程文件列表, 载入远程文件
     - 可以保存文件到本地, 从本地载入文件
   - https://github.com/seballot/socialcalc /201906/js
     - Fix cell width when merged cell
+
+- https://github.com/marcelklehr/ot-socialcalc /201611/js
+  - Operational transformation for socialcalc commands (shareJS compatible)
+  - This is a shareJS-compatible OT type. It defines Operations that relate to socialcalc's spreadsheet commands and can be serialized, applied on a socialcalc snapshot and, of course, transformed against each other.
+
+## examples-ethercalc
+
+- https://github.com/sallakarppinen/ethercalc-client /201804/js
+  - simple API client for Ethercalc collaborative spreadsheets.
+
+- https://github.com/hivejs/hive-editor-spreadsheet-socialcalc /201605/js
+  - This is an editor package bringing Ethercalc's SocialCalc to hive.js.
+  - https://github.com/hivejs/hive /GPLv3/201608/js
+    - https://github.com/hivejs/hive-core /GPLv2
+    - http://hivejs.org/
+    - Hive.js is a real-time collaboration platform. 
+    - It supports multiple document types and editors, features unopinionated authentication and authorization
+  - https://github.com/hivejs/hive-editor-text-codemirror
+  - https://github.com/hivejs/hive-editor-html-ckeditor
+  - https://github.com/hivejs/hive-editor-text-textarea
+  - https://github.com/hivejs/hive-editor-richtext-quill
+  - https://github.com/hivejs/hive-plugin-presence
+
+- https://github.com/SheetJS/js-harb /201712/js
+  - Plaintext spreadsheet (DIF / CSV / TSV / DBF / SocialCalc) parser
+  - this has been merged into js-xlsx
+  - forks
+  - https://github.com/quilt-js/js-harb
+    - forked from tokyootakumode/js-harb
+  - https://github.com/tokyootakumode/js-harb
+    - Designed to provide support for j. Pure-JS cleanroom implementation.
+
+- https://github.com/cestastanford/grandtour /apache2/202401/js
+  - [The Grand Tour Project](https://grandtour.stanford.edu/)
+  - This is the codebase for the Grand Tour Explorer web project.
+  - 依赖angular.v7、angular-ui、ckeditor.v4、d3.v3、ejs、mongoose、mongoose
+
+- https://github.com/selvan/calc-engine /201704/js
+  - Virtual calc/excel engine that runs in mobile (React native), web browser(Javascript) and server (Nodejs)
+  - 示例代码没找到
+  - https://github.com/selvan/wordprocessor-engine /201702/js
+    - Virtual wordprocessor engine 
+  - https://github.com/selvan/calendar-engine /201807/js
+    - Create custom calendars
 # utils
 - https://github.com/OfficeDev/script-lab /MIT/202311/ts
   - https://script-lab.azureedge.net/

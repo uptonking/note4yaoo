@@ -16,7 +16,10 @@ modified: 2021-02-05T14:00:02.922Z
 
 - ## 
 
-- ## 
+- ## Create this horizontal scrolling widget using HTML, CSS and JavaScript
+- https://twitter.com/davidm_ml/status/1750466235463004343
+  - https://github.com/atherosai/ui/tree/main/scrolling-04
+  - That would be looking cool in the mobile
 
 - ## Create responsive card with CSS and HTML including container queries 
 - https://twitter.com/davidm_ml/status/1735281266436579706

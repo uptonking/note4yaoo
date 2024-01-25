@@ -1390,14 +1390,18 @@ modified: 2022-08-21T10:02:27.788Z
 - https://github.com/Roffelchen/spreadsheet-crdt
   - npx y-websocket-server
 
-- https://github.com/gucorpling/gitdox
-
 - https://github.com/gucorpling/gitdox /apache2/202401/python/js
   - https://gucorpling.org/gitdox/
   - GitDox is an online editor for version controlled collaborative XML and spreadsheet editing used for linguistic corpus annotation.
-  - The editor interface is based on CodeMirror. GitHub is used as a remote backend, and SQLite is used for local storage.
+  - The editor interface is based on CodeMirror. 
+  - GitHub is used as a remote backend, and SQLite is used for local storage.
   - GitDox is used by Coptic SCRIPTORIUM as an xml editor/transcription tool for Coptic texts
-
+  - Save data locally and directly to GitHub
+  - One collaborative version per file: no forks, branches or conflicts possible
+  - XML syntax highlighting and auto complete using CodeMirror
+  - Realtime collaborative spreadsheet editing with EtherCalc
+  - In XML mode, the GitDox editor lets you use a browser based XML editor to enter annotated text in any annotation scheme
+  - You can use the spreadsheet mode to annotate tokens of running text, in a one token per line format
 # css-table/grid
 - https://codepen.io/scottjehl/pen/abJrPOP
   - A CSS-only responsive table with fixed column & row headers, inside a layout, with scroll snapping!

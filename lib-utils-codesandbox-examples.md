@@ -191,6 +191,34 @@ modified: 2023-09-02T09:17:22.992Z
 
 - https://github.com/voronianski/esnextbin /201905/js
   - Prototype JavaScript apps in the browser with ES2015's latest features and importing modules directly from NPM.
+# codesandbox-like
+- https://github.com/rajatmaheshwari2512/codefiddle /202308/ts
+  - This project is a take on how a site like CodeSandbox could be built.
+  - 依赖antd.v5、@monaco-editor/react、xterm、zustand、express、directory-tree
+  - The basic layout provides a VS Code experience, wherein a user can navigate between his available files from the file manager. 
+  - Integrated with this is also an iframe providing realtime feedback to changes you may make in your project. 
+  - [Made an online code editor, like CodeSandbox. Think VS Code in the browser : node_202304](https://www.reddit.com/r/node/comments/12ceajg/made_an_online_code_editor_like_codesandbox_think/)
+    - I've made an online code editor from scratch
+    - It uses xterm.js to give a shell to the user on the frontend, and monaco editor for editing your files, and I generate the folder structure recursively. 
+    - I've used Zustand for global state management
+    - I tried to get it as close to VS Code as possible, and there's a bunch of stuff still left to do
+# nodebox/webcontainer
+- https://github.com/Sandpack/nodebox-runtime
+  - https://sandpack.codesandbox.io/docs/advanced-usage/nodebox
+  - [Docs don't explain how to self host a Nodebox instance?](https://github.com/Sandpack/nodebox-runtime/issues/48)
+
+- browsix /3.1kStar/MIT/201904/ts/inactive
+  - https://github.com/plasma-umass/browsix
+  - Browsix is a Unix-like operating system for the browser.
+  - outdated. requires node 6 (latest is node 19)
+  - Browsix uses `BrowserFS` for its filesystem
+  - Browsix makes core Unix features available to web applications (including pipes, processes, signals, sockets, and a shared file system) and extends JavaScript runtimes for C, C++, Go, and Node.js programs so they can run in a Unix-like environment within the browser. 
+  - Browsix also provides a POSIX-like shell that makes it easy to compose applications together for parallel data processing via pipes.
+  - Browsix enables you to compose the in-browser part of your web applications out of processes. 
+    - This process model is implemented on top of existing browser APIs, like web workers, so it works in all modern browsers.
+  - forks
+    - https://github.com/milahu/browsix
+    - https://github.com/SamGinzburg/browsix
 # more
 - https://github.com/BrowserBox/BrowserBox /AGPLv3/js
   - https://dosyago.com/

@@ -37,6 +37,6 @@ modified: 2023-12-21T20:07:29.584Z
   - Unfortunately that's not how business works. 
 
 - ## 🚀 [Handsontable - Excel-like table editor in HTML & jQuery | Hacker News_201206](https://news.ycombinator.com/item?id=4162808)
-- There is also Dan Bricklin's socialcalc https://github.com/DanBricklin/socialcalc which has some relatively active forks including audreyt's ethercalc https://github.com/audreyt/ethercalc
+- There is also Dan Bricklin's socialcalc https://github.com/DanBricklin/socialcalc which has some relatively active forks including audreyt's ethercalc
   - For just viewing and editing spreadsheets without social features, you can ignore the servers included, the javascript widget works just fine by itself.
   - Dan Bricklin co-authored VisiCalc, the first spreadsheet program for the masses.

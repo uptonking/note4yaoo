@@ -122,6 +122,12 @@ modified: 2022-11-08T19:04:00.289Z
   - https://etherpad.org/
   - Etherpad is a real-time collaborative editor scalable to thousands of simultaneous real time users. 
   - It provides full data export capabilities, and runs on your server, under your control.
+  - 前端依赖jquery
+  - https://github.com/ether/pad/tree/master/infrastructure/ace /201211/archived
+    - Etherpad (this version) has been superseded by Etherpad Lite
+    - ACE2 is EtherPad's editor, a content-editable-based rich text editor
+    - It supports collaborative editing using operation transforms (easysync2), undo/redo, copy/paste.
+    - The name "ACE2" is because this is a rewrite of aiba's original content-editable AppJet Code Editor.
 
 - taleweaver(织书) /71Star/MIT/202007/ts
   - https://github.com/yuzhenmi/taleweaver
@@ -230,6 +236,7 @@ modified: 2022-11-08T19:04:00.289Z
   - Our goal is to create a browser based editor that matches and extends the features, usability and performance of existing native editors such as TextMate, Vim or Eclipse
   - Ace is developed as the primary editor for Cloud9 IDE
     - AWS Cloud9: A cloud IDE for writing, running, and debugging code
+  - [Ace – an embeddable code editor | Hacker News_201811](https://news.ycombinator.com/item?id=18360779)
 
 - overleaf /10.5kStar/AGPLv3/202211/js/latex/ace>codemirror
   - https://github.com/overleaf/overleaf

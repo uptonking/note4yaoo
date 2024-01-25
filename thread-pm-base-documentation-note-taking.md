@@ -331,9 +331,9 @@ modified: 2021-08-16T06:56:53.061Z
 
 - ## How are the best Storybooks organized? We surveyed 60 teams to find out.
 - https://twitter.com/storybookjs/status/1488919138001207299
-  - 📑 Use docs pages for intro, usage guides & design tokens
-  - 🍱 Use folders to group components and make navigation easier
-  - ✍️ Write stories to show what a component does
+  - Use docs pages for intro, usage guides & design tokens
+  - Use folders to group components and make navigation easier
+  - Write stories to show what a component does
 
 - ## We now had five opponents in the competition: @RoamResearch , @obsdmd , @logseq , @craftdocsapp , and @rem_note .
 - https://twitter.com/rcvd_io/status/1485256388888641541

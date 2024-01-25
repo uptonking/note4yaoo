@@ -160,7 +160,7 @@ modified: 2022-12-19T01:49:01.371Z
     - 另外最重要的，目前还没有好的ts支持，前后端自动类型安全上暂时还是白瞎。
   - 结论是：不痛不痒，额外好处不大。
 
-- https://github.com/adonisjs/core
+- https://github.com/adonisjs/core /laravel-like
   - Fullstack MVC framework for Node.js
   - It takes care of much of the Web development hassles, offering you a clean and stable API to build Web apps and micro services.
   - node版本的laravel，laravel中让人喜欢的orm的Eloquent，在adonisjs中叫lucid，比laravel的代码量还少
@@ -168,6 +168,11 @@ modified: 2022-12-19T01:49:01.371Z
   - adonisjs默认返回json格式，使用视图模版就是ssr的方式
   - 非常opinionated，rest api和orm都是自己实现，不支持typeorm和prisma
   - 使用ace自定义cli，而不是npm scripts
+  - [Announcing AdonisJS v6 _20240124](https://adonisjs.com/blog/adonisjs-v6-announcement)
+    - The work for v6 started with the goal of moving to ESM and improving the IoC container to be simple and have fewer responsibilities.
+    - Type-safe routes and controllers binding
+    - more Framework agnostic packages: Japa/edge/vinejs
+    - we move from `PascalCase` to `snake_case` for naming files and folders.
 - https://github.com/varaljs/varal
   - 在node上实现Laravel的编程思想与代码风格
 

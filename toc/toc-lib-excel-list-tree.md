@@ -373,6 +373,9 @@ modified: 2022-08-21T10:02:41.845Z
 - https://github.com/skyzh/mini-lsm /apache2/202312/rust
   - https://skyzh.github.io/mini-lsm/
   - Build a simple key-value storage engine in a week
+  - Week 1: Mini-LSM
+  - Week 2: Compaction and Persistence
+  - Week 3: Multi-Version Concurrency Control
   - Log-structured merge tree is a data structure to maintain key-value pairs.
   - This data structure is widely used in distributed database systems like TiDB and CockroachDB as their underlying storage engine. 
   - RocksDB, based on LevelDB, is an implementation of LSM-Tree storage engine.

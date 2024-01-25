@@ -215,6 +215,10 @@ modified: 2021-05-14T15:04:15.333Z
 - https://github.com/carbon-bond/carbonbond
   - 前端：使用 typescript + React
   - 后端：使用 Rust
+
+- https://gitlab.com/tildes/tildes /AGPLv3/202306/python/jinja
+  - https://tildes.net/
+  - a non-profit community site
 # customer-support
 - https://github.com/laudspeaker/laudspeaker /AGPLv3/202401/ts
   - https://laudspeaker.com/
@@ -406,8 +410,11 @@ modified: 2021-05-14T15:04:15.333Z
 - https://github.com/cloudflare/wildebeest /ts
   - Wildebeest is an ActivityPub and Mastodon-compatible server whose goal is to allow anyone to operate their Fediverse server and identity on their domain without needing to keep infrastructure, with minimal setup and maintenance, and running in minutes.
   - Wildebeest runs on top Cloudflare's Supercloud, uses Workers, Pages, Durable Objects, Queues, the D1 database to store metadata and configurations, Zero Trust Access to handle auth
-
-## activitypub
+# activitypub
+- https://github.com/evanp/onepage.pub /apache2/202401/js
+  - robust ActivityPub server in one page
+  - it's a demonstration of how to build an ActivityPub server, with most of the important parts implemented
+  - it's also a platform for testing and experimentation with new client apps and new server features.
 
 - https://github.com/superseriousbusiness/gotosocial /AGPLv3/202401/go
   - https://docs.gotosocial.org/

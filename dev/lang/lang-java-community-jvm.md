@@ -16,7 +16,9 @@ modified: 2023-08-28T04:37:45.327Z
 
 - ## 
 
-- ## 
+- ## 这个 execute jvm bytecode in hardware 的效果不是很好，我在想原因是不是在于 C1 Compiler 没做啥优化
+- https://twitter.com/roifex/status/1750471145302941900
+- 我觉得应该是有这部分原因但是大头应该还是无法获取足够多的元数据，JVM是典型的堆栈虚拟机，JIT非常依赖运行时的元数据，如果直接让硬件来执行的话很多元数据没办法获得所以效率就下去了
 
 - ## [为什么Kafka或者是pulsar等消息队列可以在JVM上有很好的性能，但数据库却不行？ - 知乎](https://www.zhihu.com/question/628014827)
 - 这完全是一个时代的问题。

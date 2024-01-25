@@ -23,7 +23,7 @@ modified: 2023-12-15T18:01:18.391Z
   - Databases should make it easy to delete stale data, whether to save on storage costs or for compliance reasons.
   - Read about how you can use TTL (time-to-live) clauses in ClickHouse to delete, reset, or compress old data that’s no longer necessary.
 # more
-
+- [ClickHouse and The One Billion Row Challenge _202401](https://clickhouse.com/blog/clickhouse-one-billion-row-challenge?utm_source=twitter&utm_medium=social&utm_campaign=blog)
 # discuss
 - ## 
 

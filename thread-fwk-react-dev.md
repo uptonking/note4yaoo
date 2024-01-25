@@ -131,7 +131,11 @@ modified: 2021-01-06T14:40:03.364Z
 
 - ## 
 
-- ## 
+- ## remix: Replicate the whole database to indexedDB and get instant search
+- https://twitter.com/ryanflorence/status/1750265435248116137
+  - go build something crazy now please
+- Know what, you could now make a demo using any local-first technilogy, y.js/dxos/automerge or anything else and say again that remix is the perfect case for local-first and no one will complain
+- User-data and read-only belongs in IndexedDB. Background sync it. Nobody else is going to touch it. Effectively risk free.
 
 - ## Why do I think @reactjs has no "signals".
 - https://twitter.com/evoluhq/status/1747599724000018630

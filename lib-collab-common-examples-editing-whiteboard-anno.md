@@ -111,6 +111,17 @@ modified: 2022-11-07T17:36:22.236Z
   - Web-based P2P collaborative editor for live coding sounds and images
   - Similar to Etherpad, but focused on code evaluation for livecoding.
 
+- https://github.com/hivejs/hive /GPLv3/201608/js
+  - https://github.com/hivejs/hive-core /GPLv2
+  - http://hivejs.org/
+  - Hive.js is a real-time collaboration platform. 
+  - It supports multiple document types and editors, features unopinionated authentication and authorization
+  - https://github.com/hivejs/hive-editor-text-codemirror
+  - https://github.com/hivejs/hive-editor-html-ckeditor
+  - https://github.com/hivejs/hive-editor-text-textarea
+  - https://github.com/hivejs/hive-editor-richtext-quill
+  - https://github.com/hivejs/hive-plugin-presence
+
 - https://github.com/josephg/statecraft /ISC/201911/ts/inactive
   - Statecraft is a protocol and set of tools for interacting with data that changes over time. 
   - It is the spiritual successor to Sharedb.

@@ -169,6 +169,17 @@ modified: 2023-01-17T19:14:47.611Z
   - the entire backend of our MMORPG BitCraft Online is just a SpacetimeDB module. 
   - SpacetimeDB is optimized for maximum speed and minimum latency rather than batch processing or OLAP workloads. It is designed to be used for real-time applications like games, chat, and collaboration tools.
   - This speed and latency is achieved by 🧐 holding all of application state in memory, while persisting the data in a write-ahead-log (WAL) which is used to recover application state.
+
+- https://github.com/hivejs/hive /GPLv3/201608/js
+  - https://github.com/hivejs/hive-core /GPLv2
+  - http://hivejs.org/
+  - Hive.js is a real-time collaboration platform. 
+  - It supports multiple document types and editors, features unopinionated authentication and authorization
+  - https://github.com/hivejs/hive-editor-text-codemirror
+  - https://github.com/hivejs/hive-editor-html-ckeditor
+  - https://github.com/hivejs/hive-editor-text-textarea
+  - https://github.com/hivejs/hive-editor-richtext-quill
+  - https://github.com/hivejs/hive-plugin-presence
 # collab-apps
 - https://github.com/configu/configu
   - A generic standard for managing and collaborating software configurations 

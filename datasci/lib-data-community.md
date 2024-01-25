@@ -50,7 +50,7 @@ modified: 2021-05-13T16:11:33.402Z
   - Platforms such as DSpace and CKAN, that can be installed in an institutional server instead of relying on external storage provided by contracted services are appropriate for this. 
 - CKAN may have an advantage over the remaining alternatives, as several governmental institutions are already converging to this platform for data publishing.
 
-- ## 📑 The state of data analysis _201906
+- ## 📌 The state of data analysis _201906
 - https://www.reddit.com/r/javascript/comments/bvqy9l/the_state_of_data_analysis/
 - ### Python and R are awesome for data science
 - The pandas package for Python offers a data structure called DataFrame that provides a comprehensive API for manipulating data. 
