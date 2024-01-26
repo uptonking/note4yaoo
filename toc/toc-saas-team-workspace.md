@@ -503,6 +503,21 @@ modified: 2023-02-07T17:38:05.336Z
   - https://sandstorm.io/
   - a self-hostable web productivity suite. 
   - It's implemented as a security-hardened web app package manager.
+# scheduler-task
+- https://github.com/whyour/qinglong /apache2/202401/ts
+  - 支持 Python3、JavaScript、Shell、Typescript 的定时任务管理平台
+  - 依赖express、nedb、multer、sequelize、ip2region
+  - 支持多种脚本语言（python3、javaScript、shell、typescript）
+  - 支持在线管理脚本、环境变量、配置文件
+  - 支持在线查看任务日志
+  - 支持手机端操作
+# meetings
+- https://github.com/rustdesk/rustdesk /AGPLv3/202401/rust/dart
+  - https://rustdesk.com/
+  - Yet another remote desktop software, written in Rust. 
+  - Works out of the box, no configuration required. 
+  - You have full control of your data, with no concerns about security. 
+  - You can use our rendezvous/relay server, set up your own, or write your own rendezvous/relay server.
 # more
 - https://github.com/avisek-official/simple-notes /ts
   - https://next-simple-notes.vercel.app/

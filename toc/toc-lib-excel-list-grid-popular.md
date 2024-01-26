@@ -1325,7 +1325,7 @@ modified: 2022-08-21T10:02:27.788Z
   - 依赖quill.v1、jsbarcode、qrcode
   - https://github.com/jobsta/reportbro-lib
 
-- jsreport /1.1kStar/LGPLv3/202305/js
+- jsreport /1.1kStar/LGPLv3/202401/js
   - https://github.com/jsreport/jsreport
   - https://jsreport.net/
   - a reporting server letting developers define reports using javascript templating engines like handlebars. 

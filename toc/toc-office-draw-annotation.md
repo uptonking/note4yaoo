@@ -23,6 +23,12 @@ modified: 2023-11-03T17:43:01.518Z
   - The goal is to help developers of annotation tools create their applications without having to reinvent the wheel, while applying a standards-driven approach based on the W3C’s Web Annotation data model, in order to facilitate an ecosystem of interoperable annotation tools 
   - [Web Annotation Protocol Server](https://github.com/apache/incubator-annotator/issues/70)
 
+- https://github.com/kba/anno-common /MIT/202105/js/inactive
+  - https://kba.github.io/anno
+  - This monorepo contains packages that provide the building blocks for annotation software implementing the Web Annotation Data Model and Web Annotation Protocol.
+  - A store provides persistent storage of annotations. A store exposes methods that reflect the Web Annotation Protocol and the extensions implemented of this framework.
+  - The store-mongolike module implements most of the store interface for document databases, such as mongodb or NeDB.
+
 - https://github.com/goodmansasha/annotation-model /js
   - https://goodmansasha.github.io/annotation-model/
   - Javascript implementation of the W3C Web Annotation Data Model, useful for Web Extensions and serializing references to specific resources on a HTML page

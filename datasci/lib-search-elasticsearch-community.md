@@ -22,7 +22,15 @@ modified: 2023-01-02T08:49:39.114Z
 # discuss
 - ## 
 
-- ## 
+- ## My first project as an engineer was benchmarking ElasticSearch versus Lucene versus Lucene on HBase for streaming ingestion and data availability (back in 2013). 
+- https://twitter.com/JohnKutay/status/1750695024449458406
+  - To this day ElasticSearch is still the winner
+- Why do you think elastic is a winner?
+  - Scalable inverted index, JSON object model, fast indexing. You can easily translate SQL to their DSL.
+
+- I believe elasticsearch is great for natural language search but a pretty poor technology for logs, which is what most people use it for. I don't think it has entirely figured out how to decouple ingest and search and be cloud native
+  - maybe we can change your mind [Serve more with Serverless | Elastic Blog](https://www.elastic.co/blog/elastic-serverless-architecture)
+- SOLR* not raw lucene files.
 
 - ## 💡 搜索功能实现不便宜，一篇短文介绍几种方案的成本对比(成本从低到高排序)：
 - https://twitter.com/zhdsuperman/status/1663791183565570050

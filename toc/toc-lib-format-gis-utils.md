@@ -13,6 +13,14 @@ modified: 2022-11-06T15:48:09.723Z
 
 # examples
 
+# converter
+- https://github.com/planetlabs/gpq /apache2/202401/go/js
+  - https://planetlabs.github.io/gpq/
+  - Utility for working with GeoParquet
+  - Convert `GeoJSON` to `GeoParquet` and vice versa without leaving your browser.
+  - gpq utility is built as a WebAssembly binary. 
+  - Non-geographic CRS information is not preserved when converting GeoParquet to GeoJSON.
+  - Feature identifiers in GeoJSON are not written to GeoParquet columns. This may change soon.
 # parser-generator
 
 # extension-superset

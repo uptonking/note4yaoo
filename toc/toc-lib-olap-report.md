@@ -7,16 +7,17 @@ modified: 2020-09-25T08:29:40.588Z
 
 # toc-lib-olap-report
 
-# olap-js
+# guide
 
 - 
-# popular
 
-- https://github.com/jsreport/jsreport
-  - /747Star/LGPLv3/202010
-  - jsreport is a reporting server which lets developers define reports using javascript templating engines (like jsrender or handlebars). 
-  - It supports various report output formats like html, pdf, excel and others. 
-  - It also includes advanced reporting features like user management, REST API, scheduling, designer or sending emails.
+# popular
+- jsreport /1.1kStar/LGPLv3/202305/js
+  - https://github.com/jsreport/jsreport
+  - https://jsreport.net/
+  - jsreport is a reporting server letting developers define reports using javascript templating engines like handlebars. 
+  - It supports various report output formats like html, pdf, excel, docx, and others. 
+  - It also includes advanced reporting features like user management, REST API, scheduling, designer, or sending emails.
 
 - RDP报表工具
   - http://rdp.cuafoo.cn/
@@ -34,14 +35,10 @@ modified: 2020-09-25T08:29:40.588Z
   - https://github.com/TIBCOSoftware/jaspersoft-studio-ce
   - As of version 5.5.0, Jaspersoft Studio will be the official design client for JasperReports. 
   - iReport will remain as a supported product in maintenance-only mode until December 31, 2015
-
 # java-charting
-
 - https://github.com/jfree/jfreechart-fx
   - JFreeChart-FX is an extension for JFreeChart that allows JFreeChart to be used in JavaFX applications.
   - It’s canvas-based and therefore a different approach to the scene-based charts that come with JavaFX.
-
 # misc
-
 - eclipse brit
   - https://www.eclipse.org/birt/

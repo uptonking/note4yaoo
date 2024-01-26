@@ -175,10 +175,6 @@ modified: 2022-12-19T01:51:01.389Z
 - https://github.com/pratiksh404/adminetic /202309/php/js
   - https://pratikdai404.gitbook.io/adminetic/
   - Admin starter kit with user, role and permission, activity, settings and preference management along with CRUD, ACL, BREAD Permission, Repo Pattern, SuperAdmin Generator
-# auth
-- https://github.com/rajeshpillai/node-jwt-step-by-step /202005/js
-  - A simple express jwt server with vanilla javascript client for testing
-  - backend + frontend
 # web-framework
 - https://github.com/plantain-00/protocol-first-design-demo
   - API 协议优先，相关数据只需要相对集中地、相对方便地定义一次，其它信息由此派生或生成出来

@@ -15,10 +15,11 @@ modified: 2022-11-25T15:50:48.226Z
   - db for excel
   - db for markdown
 
-- js-db-popular
-  - lowdb, rxdb, pouchdb, nedb, loki, Watermelon, lovefield
+- js-db
+  - popular: lowdb, rxdb, gundb, pouchdb, nedb, dexie, Watermelon, loki, lovefield, tinybase, acebase
+  - examples: tinybase
 
-- ref
+- resources
   - [Offline-First Database Options for Web Applications in 2020](https://joshuatz.com/posts/2020/offline-first-database-options-for-web-applications-in-2020/)
 # db-js
 - pg-mem /1.6kStar/MIT/202310/ts
@@ -36,18 +37,6 @@ modified: 2022-11-25T15:50:48.226Z
   - https://github.com/oguimbal/pgsql-ast-parser
     - a Postgres SQL syntax parser. 基于nearley、moo实现
     - This parser does not support (yet) PL/pgSQL.
-
-- supabase /41.1kStar/apache2/202211/ts
-  - https://github.com/supabase/supabase
-  - https://supabase.com/
-  - an open source Firebase alternative.
-  - Hosted Postgres Database
-    - PostgREST is a web server that turns your PostgreSQL database directly into a RESTful API
-  - Realtime subscriptions
-    - Realtime is an Elixir server that allows you to listen to PostgreSQL inserts, updates, and deletes using websockets. 
-  - Authentication and authorization
-  - Auto-generated APIs
-  - Dashboard
 
 - pouchdb /15.4kStar/apache2/202211/js
   - https://github.com/pouchdb/pouchdb
@@ -151,7 +140,10 @@ modified: 2022-11-25T15:50:48.226Z
     - AceBase is now able to communicate with other tabs using the `BroadcastChannel` ,but disabled by default
   - [Protocol for other languages · appy-one/acebase](https://github.com/appy-one/acebase/discussions/79)
   - https://github.com/appy-one/acebase-core
-    - rxjs dependency is optional and only needed when using methods that require them
+    - Core functionality for AceBase, no need to install manually. See acebase-client and acebase-server
+    - some source files have a browser-specific counterpart
+    - rxjs is an optional dependency that only needs installing when any of AceBase's observe methods are used.
+    -  If for some reason rxjs is not available (eg in test suite), we can provide a shim. 
   - https://github.com/appy-one/acebase-server
     - 依赖socket.io、express
   - https://github.com/appy-one/acebase-client
@@ -274,7 +266,7 @@ modified: 2022-11-25T15:50:48.226Z
   - Filter, sort, and implement pagination directly within BlinkDB.
   - It uses the same techniques & data structures as existing databases in order to speed up the retrieval of items, resulting in incredible performance
 
-- alasql /6kStar/MIT/202211/js/bi
+- alasql /6kStar/MIT/202401/js/bi
   - https://github.com/AlaSQL/alasql
   - an open source SQL database for JavaScript with a strong focus on query speed and data source flexibility for both relational data and schemaless data. 
   - It works in the web browser, Node.js, and mobile apps.
@@ -419,7 +411,7 @@ modified: 2022-11-25T15:50:48.226Z
     - Everything is a JSON file, including the database meta information.
   - is around 500 lines of code and 6.6Kb gzipped.
 
-- https://github.com/Belphemur/node-json-db
+- https://github.com/Belphemur/node-json-db /MIT/202401/ts
   - A simple "database" that use JSON file for NodeJS
   - Every method are now asynchronous
 

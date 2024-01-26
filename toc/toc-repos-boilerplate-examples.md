@@ -73,6 +73,21 @@ modified: 2023-11-16T15:00:11.503Z
 - https://github.com/Coding-Dodo/owl-realworld-app /202112/js
   - OWL RealWorld App Implementation. This application make use of Odoo Web Library as a standalone JavaScript project
 
+- https://github.com/moleculerjs/moleculer-realworld-example-app /MIT/201711/js
+  - RealWorld example app with Moleculer microservices framework
+
+- https://github.com/randyscotsmithey/feathers-realworld-example-app /MIT/201902/js/inactive
+  - Feathers implementation for RealWorld example app
+  - 依赖feathersjs-nedb、mongoose
+  - https://github.com/cirosantilli/feathers-realworld-example-app
+    - port from MongoDB to sequelize
+
+- https://github.com/maruakinu/couchbase-springboot-realworld-example-app /202305/java
+  - a backend project using springboot that uses Couchbase for its Database.
+- https://github.com/mgroves/realworld-aspnet-couchbase /MIT/202311/csharp
+  - Conduit implementation: ASP. NET Core + Couchbase
+  - [How to Build Real World Web Applications with Couchbase_202308](https://www.couchbase.com/blog/build-real-world-web-apps-couchbase/)
+
 ### api-realworld
 
 - https://github.com/cirosantilli/node-express-sequelize-nextjs-realworld-example-app /202208/ts/be+fe
@@ -85,6 +100,12 @@ modified: 2023-11-16T15:00:11.503Z
 - https://github.com/skopekreep/typescript-node-express-realworld-example-app /202007/ts
   - Rewrite of JS-based node-express RealWorld backend app using Typescript
   - 依赖express-jwt、jsonwebtoken、mongoose、passport
+  - https://github.com/RaoofJM/nodejs-typescript-realworld-backend /202306/ts
+    - RealWorld Example of a NodeJS Rest API using TypeScript, MongoDB, Redis and Docker
+
+- https://github.com/winterrrrrff/realWorld-server /202212/js
+  - server-side of realWorld project using Express.js and MongoDB
+  - https://github.com/Raywire/node-express-realworld-conduit /202101/js
 
 - https://github.com/Varun-Hegde/Conduit_NodeJS /202105/js
   - Express and NodeJS based backend implementation of the RealWorld API Spec.

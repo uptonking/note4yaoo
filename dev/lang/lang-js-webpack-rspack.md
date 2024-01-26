@@ -32,4 +32,9 @@ modified: 2024-01-02T07:53:22.956Z
 
 - Uncaught SyntaxError: Cannot use 'import.meta' outside a module
   - 定位到原因是 `outputModule: true`， 而不是 `newTreeshaking: true`
+# changelog
+
+## v2023
+
+- [feat: electron support _202306](https://github.com/web-infra-dev/rspack/pull/3414)
 # more

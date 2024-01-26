@@ -29,14 +29,14 @@ modified: 2023-11-23T09:56:33.507Z
     - `elm.addEventListener(name, listener, false)` 直接操作dom
     - Snabbdom allows swapping event handlers between renders. This happens without actually touching the event handlers attached to the DOM
   - [Support custom elements 已支持](https://github.com/snabbdom/snabbdom/issues/141)
-  - https://github.com/ged-odoo/blockdom
-    - Owl framework 1.x is based on a fork of snabbdom
-    - version 2 is not ready yet, but will be based on blockdom.
-    - It features blocks, supports fragments, manage synthetic event handlers and more.
   - [Isomorphic snabbdom](https://github.com/snabbdom/snabbdom/issues/86)
     - I have put together a little starter kit that does SSR with snabbdom-to-html
+- https://github.com/ged-odoo/blockdom
+  - Owl framework 1.x is based on a fork of snabbdom
+  - version 2 is not ready yet, but will be based on blockdom.
+  - It features blocks, supports fragments, manage synthetic event handlers and more.
 
-- https://github.com/livoras/simple-virtual-dom /js
+- https://github.com/livoras/simple-virtual-dom /MIT/202003/js
   - Simple virtual-dom algorithm. It has only ~500 lines of code
   - [如何理解虚拟DOM](https://www.zhihu.com/question/29504639/answer/73607810)
   - [深度剖析：如何实现一个 Virtual DOM 算法](https://github.com/livoras/blog/issues/13)
@@ -89,15 +89,34 @@ modified: 2023-11-23T09:56:33.507Z
 - https://github.com/Matt-Esch/virtual-dom /10.8kStar/MIT/201604/js
   - A JavaScript DOM model supporting element creation, diff computation and patch operations for efficient re-rendering
   - 用例: reflex
+  - forks
+  - https://github.com/MilanConrad/virtual-dom-diff-printing /202307/js
+    - Included pretty diff printing
+  - https://github.com/Sota-Watanabe/virtual-dom /202111/js
+    - Add comment
+  - https://github.com/imtaotao/virtual-dom /201808/js
+    - feat: add createElement and vnode
+  - https://github.com/pupperjs/virtual-dom /202206/js
+    - virtual DOM now accepts attributes for comments (for using hooks)
+  - https://github.com/CrazyEggInc/virtual-dom /202109/js
+    - Refactor apply-properties.js to synchronize it with vdom-serialized
+  - https://github.com/QuisPic/virtual-dom-ae /202010/js
+    - Added Thunk.
   - https://github.com/Raynos/vdom-thunk /201506/js
     - A thunk optimization for virtual-dom
     - Use Thunk when you want to avoid re-rendering subtrees.
     - Thunk will only re-evaluate the subtree if the arguments you pass to it change. This means you should use an immutable data structure (like observ-struct)
 
-- https://github.com/jorgebucaran/superfine /1.6kStar/MIT/202104/js/hyperapp作者
+- superfine /1.6kStar/MIT/202104/js/hyperapp作者
+  - https://github.com/jorgebucaran/superfine
   - a minimal view layer for building web interfaces. 
   - we use the `h()` and `text()` functions to create a lightweight representation of the DOM (or virtual DOM for short), and `patch()` to actually render the DOM.
   - Superfine won't re-create the entire DOM every time we use patch(). By comparing the old and new virtual DOM we are able to change only the parts of the DOM that need to change instead of rendering everything from scratch.
+  - who is using #superfine-vdom
+    - typewriter
+  - forks
+  - https://github.com/whaaaley/superfine /202208/js
+    - Add shadowRoot nodes, Treat `shadow-root` prop similar to `key`.
 
 - https://github.com/trueadm/t7 /js
   - lightweight JavaScript template library that compiles ES2015 template strings into virtual DOM objects.

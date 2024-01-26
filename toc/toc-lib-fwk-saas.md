@@ -137,6 +137,22 @@ modified: 2021-05-25T09:41:29.066Z
 - https://github.com/casbin/node-casbin /ts
   - https://casbin.org/
   - An authorization library that supports access control models like ACL, RBAC, ABAC in Node.js and Browser
+
+- https://github.com/stalniy/casl /5.4kStar/MIT/202401/ts
+  - https://casl.js.org/
+  - CASL is an isomorphic authorization JavaScript library which restricts what resources a given user is allowed to access
+  - designed to be incrementally adoptable and can easily scale between a simple claim based and fully featured subject and attribute based authorization.
+  - Heavily inspired by cancan(from ruby-on-rails).
+  - ⚖️ CASL implements Attribute Based Access Control
+  - https://github.com/fratzinger/feathers-casl /ts
+    - a convenient layer to use CASL in feathers.js.
+    - Fully powered by Feathers 5 & CASL 6
+
+## auth-jwt
+
+- https://github.com/rajeshpillai/node-jwt-step-by-step /202005/js
+  - A simple express jwt server with vanilla javascript client for testing
+  - backend + frontend
 # ide-like
 - https://github.com/labring/laf /ts
   - https://laf.dev/

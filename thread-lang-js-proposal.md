@@ -12,7 +12,21 @@ modified: 2023-11-10T08:05:25.474Z
 # discuss
 - ## 
 
-- ## 
+- ## A concise example of why I really don't like decorators that much.
+- https://twitter.com/BenLesh/status/1750560391682294159
+  - IMO, decorators should have been metadata only. We already have enough ways to duck-punch JavaScript into oblivion(遗忘)
+  - Let me tell you about the other thing I don't like, `@defaultExports`
+
+- Where is the problem exactly?
+  - Basic: Any given developer reading the code needs to know what a decorator might change.
+  - Advanced: You can no longer use static analysis to have any idea what a class, property, method, or argument does when it has a decorator applied unless the tool knows exactly what the decorator does.
+
+- The bad thing about decorators is that they add an unnecessary syntax for function calls. Other than that, they are just functions, so the issues you have are with:
+  - Overriding
+  - Metaprogramming
+  - And fairly enough, because they are dangerous tools.
+
+- Why do people get so angry when a perfectly readable function does exactly what it looks like it does
 
 - ## Almost 1 year ago I tried using WeakRef but had to abandon it because it caused bizarre bugs. 
 - https://twitter.com/gaforres/status/1723818760346259631

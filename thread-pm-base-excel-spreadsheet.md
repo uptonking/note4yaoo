@@ -17,7 +17,13 @@ modified: 2022-04-23T18:48:32.550Z
 
 - ## 
 
-- ## 
+- ## Ask Copilot in Excel
+- https://twitter.com/msexcel/status/1750594443076407740
+  - Reveal correlations
+  - Identify outliers
+  - Suggest new formulas
+  - 提供了效果动画
+  - [Introducing Microsoft 365 Copilot | Microsoft 365 Blog](https://www.microsoft.com/en-us/microsoft-365/blog/2023/03/16/introducing-microsoft-365-copilot-a-whole-new-way-to-work/)
 
 - ## 第一次用Google表格的Apps Script，用来做自动化任务很方便。
 - https://twitter.com/wong2_x/status/1742388411481342134

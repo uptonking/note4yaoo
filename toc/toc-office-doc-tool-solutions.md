@@ -128,6 +128,12 @@ modified: 2021-07-21T18:07:43.056Z
   - Posts or Pages are written in Markdown format which is easy to learn and faster to write.
   - Standard website essentials: SEO, Sitemap, Social sharing friendly, Works on desktop and mobile (responsive)
 
+- https://github.com/codex-team/codex.docs /apache2/202212/ts/inactive
+  - https://docs.codex.so/
+  - a free docs application. It's based on Editor.js ecosystem
+  - Docs nesting — create any structure you need
+  - Misprints reports to the Telegram / Slack
+
 - https://github.com/ccontrols/component-controls
   - https://component-controls.com/
   - A next-generation tool to create blazing-fast documentation sites.

@@ -406,7 +406,12 @@ else {
 
 - ## 
 
-- ## 
+- ## Impact of clock uncertainty:
+- https://twitter.com/FranckPachot/status/1725912119898521787
+  * Spanner delays writes to wait out max drift
+  * CRDB might delay reads to wait out max drift
+  - I have no idea what YDB and TiDB do.
+- Yes, same for YugabyteDB, cannot wait on writes without atomic clocks, so detect skew on reads is required. Should be rare as Hybrid Logical Clock timestamp is exchanged with each message
 
 - ## UUIDv7 高位自带了时间戳
 - https://twitter.com/fuyufjh/status/1710500237788459100

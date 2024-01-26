@@ -72,7 +72,27 @@ modified: 2023-09-07T15:58:27.967Z
 - ## 
 
 - ## 
+# discuss-holochain
+- ## 
+
+- ## 
+
+- ## What is the best use case of #Holochain?
+- https://twitter.com/amig_gomes/status/1650123710890754053
+- Anything. List of apps being built right now in the link.
+  - Me and our team are building 4 projects on Holochain and I don't see any of the problems you are telling about here.
+  - https://airtable.com/app0AdzRsynFEsD9z/shrRojl48GW5te3ap/tblWsBn3J5hyOVOUv
+
+- https://twitter.com/helioscomm/status/1750592919420170502
+- #Holochain and unforkability
+- I believe there has been given a definition to 'forking' in a Holo team very narrow technically way.  But forgetting that words can have meaning outside that scope. If I build a UI around my personal archive on my Holoport. People can copy it and alter it? Without my permission?
+  - you're right, we kind of have muddied that term. To build on GitHub's popularisation of forking to mean "make your own copy of a publicly accessible resource and modify it", HC treats hApp backend code (not the UI) as a public resource, along with the data shared by people who run that backend code and communicate with each other.
+  - So if you built your own little personal UI to access the hApp code you share in common w/ others, no, there's no reason you have to share the UI too. Sthg can only be forked if it's been shared.
 # discuss-ipfs-ssb
+- ## 
+
+- ## 
+
 - ## 
 
 - ## To date, IPFS has been a project focused on data. 

@@ -19,6 +19,15 @@ modified: 2021-05-14T15:04:15.333Z
     - 开源论坛可直接copy数据库，不存在此问题
     - 付费产品如vanilla forum可导出mysql dump
 
+- who is using #discourse
+  - prosemirror
+  - handsontable
+  - yjs
+  - tidb-tug
+  - observablehq-notebook
+  - tiddlywiki
+  - openstreetmap
+
 - forum-open
   - spectrum
   - discord

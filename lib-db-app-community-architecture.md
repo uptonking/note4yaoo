@@ -115,7 +115,6 @@ modified: 2023-09-17T17:37:19.913Z
   - It's still in experimental mode but provides literally 10x improvement on read/writes to SQLite.
 - They have built their own storage engine named Redwood, which has some very FoundationDB-specific optimizations (like prefix compression). 
 
-
 - How would you handle schema migrations in a system like this?
   - It depends on the layer, some of the layers might be able to take advantage of how the data is persisted. For example, if you use avro/protobuf, the decoder will handle it for you. If that's not the case, you would have to implement the migration by yourself.
 
@@ -152,7 +151,26 @@ modified: 2023-09-17T17:37:19.913Z
 
 - ## 
 
-- ## 
+- ## 🏘️ It's hard to design a software system that can work on a large scale.
+- https://twitter.com/Franc0Fernand0/status/1750801088310095905
+1. Adding server clones  
+- This is the quickest and cheapest way to scale a system from scratch. 
+- This method works best for services that don't keep any state, so there is nothing to sync. 
+- Whenever the load balancer receives a request, it should be able to send it to any server without knowing where the previous request went.  
+
+2. Partitioning servers  
+- A more complex approach is dividing the system into groups of servers with different roles. 
+- Ideally, each group of servers is a self-contained application that can make decisions independently. 
+- This separation allows each part to be scaled on its own, depending on its needs. It promotes efficient management, as teams can work on different parts of the system simultaneously without interfering with each other. 
+- However, it requires more initial effort, and there's a limit to how much you can partition a system before it becomes too complex.  
+
+3. Partitioning data  
+- A third approach is dividing and distributing the entire dataset across multiple machines, each having a subset of the data. 
+- This setup speeds up data processing and storage as each server only has to deal with a smaller amount of it at a time. 
+- It also makes the system scalable, so as the amount of data grows, you can add more computers and change how the data is distributed between them.
+- The partitioning strategy, however, makes things more complicated.
+  - You need a system to track where each piece of data is stored to direct queries to the correct server. 
+  - Also, it can be hard to make queries that cover more than one data partition work well.
 
 - ## 🗳️ What's your favorite way to work with a database?
 - https://twitter.com/jamesqquick/status/1730592106517790752

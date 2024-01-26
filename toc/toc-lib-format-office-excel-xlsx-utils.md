@@ -200,7 +200,7 @@ modified: 2023-01-09T11:04:13.958Z
   - https://dev.yumdocs.com/docs/tutorials/typescript-tutorial
   - a template engine to automate Word, PowerPoint and Excel documents.
 # utils
-- https://github.com/joway/sheetsql
+- https://github.com/joway/sheetsql /202205/ts/inactive
   - Google Spreadsheet as a Database.
 
 - https://github.com/github/paste-markdown

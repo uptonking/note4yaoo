@@ -156,6 +156,10 @@ npm unlink
 
 - private-npm-registry
   - https://github.com/verdaccio/verdaccio
+
+- https://github.com/sk770/npm-offline-packager /MIT/202011/js
+  - Fetch and publish npm packages for private npm registry
+  - A CLI tool to download and publish NPM packages tarboll (with all dependencies) for offline npm registry (verdaccio, artifactory, etc.)
 # workspaces
 - ref
   - [docs: workspaces](https://docs.npmjs.com/cli/v7/using-npm/workspaces)

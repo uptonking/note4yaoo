@@ -13,7 +13,7 @@ modified: 2022-11-25T17:19:08.656Z
 
 - [Dexie 4.0 Road Map](https://github.com/dexie/Dexie.js/discussions/1455)
 # popular
-- Dexie.js /8kStar/Apache2/202206/ts
+- Dexie.js /8kStar/Apache2/202206/ts/NoDeps
   - https://github.com/dexie/Dexie.js
   - https://dexie.org/
   - https://dexie.org/docs/Tutorial/Hello-World

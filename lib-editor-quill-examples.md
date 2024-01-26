@@ -552,6 +552,10 @@ modified: 2023-02-09T18:32:06.240Z
   - https://all-notes-app.vercel.app/
   - Redux-toolkit, react-quill, LocalStorage
 
+- https://github.com/urbanogardun/monte-note /GPLv3/201804/ts
+  - Note taking application with a rich set of editing and management features
+  - 依赖electron-store、nedb、jquery、quill、react-redux
+
 - https://www.npmjs.com/package/@nocobase/client
   - 依赖react-quill.v1
 

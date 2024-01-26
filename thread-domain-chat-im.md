@@ -22,7 +22,7 @@ modified: 2024-01-04T01:28:58.097Z
 
 - ## 
 
-- ## 🌐️ [Why isn't Bluesky a peer-to-peer network? | Paul's Dev Notes _202401](https://www.pfrazee.com/blog/why-not-p2p)
+- ## 🔁 [Why isn't Bluesky a peer-to-peer network? | Paul's Dev Notes _202401](https://www.pfrazee.com/blog/why-not-p2p)
 - The indie hacker spirit was strong in the NodeJS & Web community in 2014. There was a brief surge of interest in CouchDB and the potential for CouchApps. WebRTC had just stabilized and was being fiddled with.
 - A couple of things then happened all at once:
   - Distributed systems theory became more mainstream
@@ -97,14 +97,14 @@ modified: 2024-01-04T01:28:58.097Z
   - Among the push for decentralization of the web, several projects tried different protocols with different ideals behind their reasoning (some examples : Secure Scuttlebutt or ssb for short, Dat, IPFS, Solid). 
   - But one gained traction recently : what is known as ActivityPub
 
-- ## [FAQ | AT Protocol - Why not use ActivityPub for bluesky?](https://atproto.com/guides/faq)
+- ## ⚖️ [FAQ | AT Protocol - Why not use ActivityPub for bluesky?](https://atproto.com/guides/faq)
 - 🐛 Account portability is the major reason why we chose to build a separate protocol. 
   - We consider portability to be crucial because it protects users from sudden bans, server shutdowns, and policy disagreements. 
   - Our solution for portability requires both signed data repositories and DIDs, neither of which are easy to retrofit into ActivityPub. 
   - The migration tools for ActivityPub are comparatively limited; they require the original server to provide a redirect and cannot migrate the user's previous data.
 - 🐛 Other smaller differences include: a different viewpoint about how schemas should be handled, a preference for domain usernames over AP’s double-@ email usernames, and the goal of having large scale search and discovery (rather than the hashtag style of discovery that ActivityPub favors).
 
-- ## [Why not RDF in the AT Protocol? | Paul's Dev Notes](https://www.pfrazee.com/blog/why-not-rdf)
+- ## ⚖️ [Why not RDF in the AT Protocol? | Paul's Dev Notes](https://www.pfrazee.com/blog/why-not-rdf)
 - There is a problem of semantic and schematic agreement.
   - Semantic: what names(属性名或路径) do we use to identify the types of data.
   - Schematic: how do we model the data — or more simply, what fields do we expect and how do we expect them to be defined?

@@ -80,7 +80,7 @@ db.insert([{ a: 5 }, { b: 42 }], function(err, newDocs) {
 
 - ## [Nedb data export to excel/csv formats ?](https://github.com/louischatriot/nedb/issues/518)
 - You could simply write a method yourself to load in each obj to memory and pipe it out to JSON.
-- By default, a persistent NeDB datafile's format is ndjson (newline-delimited JSON). However, the moment you add a custom afterSerialization and beforeDeserialization hook functions, that default format completely goes out the window at the whim of your hook functions.
+- By default, a persistent NeDB datafile's format is `ndjson` (newline-delimited JSON). However, the moment you add a custom `afterSerialization` and `beforeDeserialization` hook functions, that default format completely goes out the window at the whim(一时的兴致；突然的念头) of your hook functions.
 
 - [adds ndjson language support extension by dimitropoulos](https://github.com/Kong/insomnia/pull/4043)
 

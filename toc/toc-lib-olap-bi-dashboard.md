@@ -169,13 +169,6 @@ modified: 2020-12-09T09:30:24.694Z
     - Implementation of Ag-Grid component for Streamlit
   - https://github.com/cceyda/common-voice-explorer
     - https://28a3b43b-3997-4649-adda-93f52445562a.job.gra.training.ai.cloud.ovh.net/
-# reporting
-- jsreport /1.1kStar/LGPLv3/202305/js
-  - https://github.com/jsreport/jsreport
-  - https://jsreport.net/
-  - jsreport is a reporting server letting developers define reports using javascript templating engines like handlebars. 
-  - It supports various report output formats like html, pdf, excel, docx, and others. 
-  - It also includes advanced reporting features like user management, REST API, scheduling, designer, or sending emails.
 # viz-dashboard
 - https://github.com/kantord/just-dashboard /1.5kStar/201907
   - https://kantord.github.io/just-dashboard/
@@ -216,10 +209,13 @@ modified: 2020-12-09T09:30:24.694Z
   - https://snorkel.logv.org/
   - a realtime exploratory data analysis tool that is complementary to your monitoring software
   - built with flask, bootstrap, nvd3
-- insights
-  - https://github.com/mariusandra/insights
+
+- https://github.com/mariusandra/insights /MIT/202003/ts/inactive
+  - https://demo.insights.sh/
   - Open Source Self-Hosted Business Intelligence Platform
   - a tool to visually explore a PostgreSQL database, with an emphasis on generating graphs that show business performance over time.
+  - 依赖feathersjs.v4、feathers-nedb、@feathersjs/client、react-redux、fixed-data-table-2、antd.v3、kea(state)
+
 - raw /Apache2/6.8kStar
   - https://github.com/rawgraphs/raw
   - The missing link between spreadsheets and data visualization

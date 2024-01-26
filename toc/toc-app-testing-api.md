@@ -58,6 +58,19 @@ modified: 2023-02-08T10:25:14.173Z
 
 - https://github.com/drwpow/openapi-typescript
   - Generate TypeScript types from OpenAPI 3 specs
+# mock-api
+- https://github.com/mwinteringham/restful-booker /GPLv3/202312/js
+  - https://automationintesting.com/training/apitesting/
+  - https://restful-booker.herokuapp.com/
+  - An API playground created by Mark Winteringham for those wanting to learn more about API testing and tools
+  - 依赖express、nedb、js2xmlparser、nedb、pug
+
+- https://github.com/ServeRest/ServeRest /GPLv3/202401/js
+  - https://serverest.dev/
+  - REST server for API testing study
+  - 依赖express、nedb-promises
+  - GET, POST, PUT and DELETE verbs with data persistence
+  - In the online environment, registered data is removed daily, while on-site, simply restart ServeRest.
 # proxy
 - https://github.com/bubenshchykov/ngrok
   - Expose your localhost to the web. Node wrapper for ngrok.

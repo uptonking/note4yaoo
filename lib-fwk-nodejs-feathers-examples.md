@@ -103,9 +103,6 @@ modified: 2023-01-20T00:18:44.282Z
   - It can be run locally or used online.
   - I've been using Feathersjs for several years and this is a tool I created to view and edit my data records during development.
   - All configuration info is stored locally in localStorage
-
-
-
 # api
 - https://github.com/adaptable/feathers-template
   - Adaptable.io template for deploying an autoscaling, Serverless Feathers API. 
@@ -226,3 +223,6 @@ modified: 2023-01-20T00:18:44.282Z
 
 - https://github.com/k-flynn-webdev/app-short-cal-api
   - Create a fancy calendar pages from iCal data
+
+- https://github.com/Dahkenangnon/feathers-demos /202304/ts
+  - demoz apis (v4 & v5) for the https://github.com/Dahkenangnon/flutter_feathersjs.dart package

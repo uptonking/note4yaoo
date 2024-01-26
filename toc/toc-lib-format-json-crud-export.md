@@ -105,7 +105,7 @@ modified: 2022-11-06T16:47:43.444Z
 - https://github.com/zheeeng/export-from-json
   - Export to plain text, css, html, json, csv, xls, xml files from JSON.
 # extension-superset
-- https://github.com/Belphemur/node-json-db
+- https://github.com/Belphemur/node-json-db /MIT/202401/ts
   - A simple "database" that use JSON file for Node. JS.
   - Every method are now asynchronous
   - easily traverse the data to reach directly the interesting property using the DataPath. 

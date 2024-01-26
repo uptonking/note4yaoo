@@ -207,7 +207,6 @@ modified: 2021-08-30T18:56:09.644Z
 
 - https://github.com/upper/db /202208/go
   - Data access layer for PostgreSQL, CockroachDB, MySQL, SQLite and MongoDB with ORM-like features
-
 # db-non-js
 - https://github.com/pingcap/talent-plan /使用rust实现db
   - https://tidb.net/talent-plan

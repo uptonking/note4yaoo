@@ -33,11 +33,11 @@ modified: 2023-09-28T20:33:44.333Z
   - https://github.com/bajankristof/nedb-promises /202209/js
     - A dead-simple promise wrapper for nedb.
     - As of nedb-promises 5.0.0 nedb package has been replaced with a fork seald/nedb
-  - https://github.com/levg34/typescript-nedb-orm
-    - ORM for @seald-io/nedb written in TypeScript
+- https://github.com/levg34/typescript-nedb-orm
+  - ORM for @seald-io/nedb written in TypeScript
 - https://github.com/rmanibus/nedb
   - [Implement Compound Indexes ](https://github.com/seald/nedb/pull/27)
-- https://github.com/ArcBlock/nedb  /202210/MIT/js/no-browser/多线程
+- https://github.com/ArcBlock/nedb /202210/MIT/js/no-browser/多线程
   - a NEDB fork used by ArcBlock products.
   - Use @nedb/multi to read and write to the same database in different node.js processes
   - Use @nedb/mongoose-driver as a drop-in replacement for mongoose + mongodb to make apps lightweight
@@ -62,9 +62,9 @@ modified: 2023-09-28T20:33:44.333Z
 - https://github.com/OneBitAhead/nedb-x /202203/js/很多小功能
   - Functional extension to NeDB
   - Group by with aggregates
- Substructure database with model attribute
- - Joining (left join) model data
- - Tree data (with open/closed nodes)
+  - Substructure database with model attribute
+  - Joining (left join) model data
+  - Tree data (with open/closed nodes)
 
 - mani /12Star/MIT/201606/js/lunr
   - https://github.com/glennjones/mani
@@ -83,6 +83,16 @@ modified: 2023-09-28T20:33:44.333Z
 - https://github.com/ivanvaladares/Node-Suggestive-Search
   - built to help type-ahead and dropdown search boxes and also correct misspelled searches (did you mean?).
   - This module is compatible with: nedb v1.8, mongodb v2.2, redis 2.8
+
+- https://github.com/feathersjs-ecosystem/feathers-nedb /MIT/202311/ts
+  - a database service adapter for NeDB
+  - https://github.com/Helbak/FeatherNeDB
+  - https://github.com/saemax/feathers-rest-socketio-nedb-es6 /202002/js
+- https://github.com/randyscotsmithey/feathers-realworld-example-app /MIT/201902/js/inactive
+  - Feathers implementation for RealWorld example app
+  - 依赖feathersjs-nedb、mongoose
+  - https://github.com/cirosantilli/feathers-realworld-example-app
+    - port from MongoDB to sequelize
 
 - nedb-forks
   - https://github.com/HalleyAssist/nedb /202211/js
@@ -215,17 +225,18 @@ modified: 2023-09-28T20:33:44.333Z
     - in order to prevent loading all items at once
     - in the backend, this is most often solved by offset-based pagination or cursor-based pagination - both of which BlinkDB supports.
 
-- camo /202108/js/inactive/odm(object document mapper)
+- camo /553Star/MIT/202108/js/inactive/odm(object document mapper)
   - https://github.com/scottwrobinson/camo
   - A class-based ES6 ODM for Mongo-like databases.
   - Camo was created for two reasons: to bring traditional-style classes to MongoDB JavaScript, and to support NeDB as a backend
   - Camo was designed and built with multiple Mongo-like backends in mind, like NeDB, LokiJS*, and TaffyDB*.
-- https://github.com/jaykukadiya99/neDB-with-nodeJs
-  - 依赖camo
-  - Nodejs simple application with NeDB (camo package like mongoose for mongodb and NeDB)
+  - https://github.com/ale4ko69/camo /202310/js
 - https://github.com/seald/follicle
   - a fork of camo made for the needs of Seald
   - A class-based ES6 ODM for Mongo-like databases
+- https://github.com/jaykukadiya99/neDB-with-nodeJs
+  - Nodejs simple application with NeDB (camo package like mongoose for mongodb and NeDB)
+  - 依赖camo
 - https://github.com/4strid/nekodb /201910/js
   - Tiny ODM for MongoDB/NeDB
   - NekoDB comes with NeDB built in
@@ -281,8 +292,83 @@ modified: 2023-09-28T20:33:44.333Z
 
 - https://github.com/Ligengxin96/sql-in-mongodb /3Star/GPLv3/202108/ts
   - This tools can convert common sql query to mongodb query
+# examples-@seald-io/nedb
+- https://github.com/Blackmesa-Canteen/boilerplate-electron-react-express /MIT/202311/ts
+  - Boilerplate uses Electron, React, React Router, Webpack, Express.js and React Fast Refresh.
+
+- https://github.com/luolisave/productivity /202401/ts
+  - Tools to improve my coding productivity.
+  - Use vite and ts in react.js front-end.
+  - Simple API server uses new seald-io/nedb database.
+
+- https://github.com/DiCasanova/express-notes /ISC/202307/js/inactive
+  - 依赖express-session、express-session、handlebars
+
+- https://github.com/LehaoLin/mozi /MIT/202312/js
+  - 最爽的方式起个Nodejs小后端
+  - You can write backend APIs in api.js And socket APIs in socket_api.js
+  - It will create a frontend dir with a Vue Vite project named frontend.
+
+- https://github.com/3urobeat/beepBot /GPLv3/202401/js
+  - feature-rich and customizable Discord Bot for all your needs. 
+- https://github.com/ridheshcybe/discord-bot /MIT/202301/js/inactive
+  - 依赖nedb、better-sqlite
+
+- https://github.com/jamesvillarrubia/muralDB /202302/ts
+  - MuralDB is a lightweight abstraction over the NeDB database system that is specifically designed to filter, search, sort, and modify the elements(widgets) exposed by the Mural.co API.
+
+- https://github.com/FujiwaraChoki/clipper-app /MIT/202309/js
+  - An app to store and view your clipboard history across multiple devices.
+  - It is built using React Native, Expo, and Node.js.
+  - Firebase User Authentication for secure login.
+
+- https://github.com/CIRCLECI-GWP/auth-api-feathersjs /202207/js
+  - 依赖feathersjs.v4、feathers-nedb
+
+- https://github.com/FreeTubeApp/FreeTube /AGPLv3/202401/js/vue
+  - https://freetubeapp.io/
+  - open source desktop YouTube player built with privacy in mind.
+  - Available for Windows, Mac & Linux thanks to Electron.
+  - 依赖nedb、video.js、vue2
+
+- https://github.com/opentiny/tiny-engine /MIT/202401/js/vue
+  - https://opentiny.design/tiny-engine
+  - 低代码引擎，基于这个引擎可以构建或者开发出不同领域的低代码平台
+  - https://github.com/opentiny/tiny-engine/tree/develop/mockServer
+    - mock服务，koa + nedb
+
+- https://github.com/Kong/insomnia/tree/develop/packages/insomnia-inso /apache2/ts
+  - A CLI for Insomnia - The Collaborative API Design Tool
+  - 依赖commander、@seald-io/nedb
+
+- https://github.com/jesec/flood /GPLv3/202401/ts
+  - https://flood.js.org/
+  - Flood is a monitoring service for various torrent clients. 
+  - It's a Node.js service that communicates with your favorite torrent client and serves a decent web UI for administration. 
+  - 支持 qBittorrent.v4+, rTorrent, Deluge
+
+- https://github.com/jrmi/ricochet.js /MIT/202303/js
+  - Ricochet.js is a backend tool designed for frontend developers, allowing you to host your backend code alongside your frontend code. 
+  - It provides a document and file store with serverless capabilities, simplifying your application's architecture and data storage needs.
+  - Cloud compatibility: Choose from a variety of stores, including Memory, NeDB (Disk), MongoDB, S3-compatible, and more.
+  - Multi-tenancy: Deploy Ricochet.js once and use it for multiple websites.
+
+- https://github.com/Otus9051/boo /GPLv3/202401/ts
+  - Fast, Secure and probably one of the most beautiful OSS browsers. Based on Electron
+  - Thanks to Wexond and Innatical for providing the base for Boo. Boo is basically a continuation of Skye but with more features and perks and security. 
+  - This project was made to keep its simplistic and beautiful design, but remove all the proprietary Innatical stuff and add more secure implementations of it
+- https://github.com/snaildos/Fifo-Browser /GPLv3/202311/ts
+  - https://fifo.snaildos.com/
+  - a modern web browser, built on top of modern web technologies such as Electron and React that is mean't to be secure. 
+  - This browser is meant for office work, gaming, research and is a secure private browser.
+- https://github.com/FascodeNet/flast-chromium /202304/ts
+  - Cross-platform browser based on Chromium (Electron).
+
+- https://github.com/mycoboco/canary /202401/js
+  - a music streaming server/client with DAAP support
+  - canary is a package of a music streaming server and its companion iOS client that run upon DAAP.
 # examples
-- rhaego(blog starter) /29Star/ISC/202204/js
+- rhaego(blog starter) /29Star/ISC/202204/js/inactive
   - https://github.com/youknowznm/rhaego
   - 基于 react + koa, 开箱即用的 Material Design 风格博客系统
   - 依赖 koa、nedb、marked、react-router5、highlight.js
@@ -295,8 +381,22 @@ modified: 2023-09-28T20:33:44.333Z
   - https://github.com/youknowznm/mini-express
     - 尝试实现一个极简的 express 风格服务器, 实现路由池, 中间件和对请求及响应的部分增强. 
 
-- https://github.com/low-teck/vault /202202/ts
-  - A react-electron app that secures user data locally using AES algorithm with the help of nedb and crypto-js ans styled with chakra-ui.
+- https://github.com/muhammadalihussain17/MovieFlex_Project /202210/js
+  - Mern project using NeDB (lightweight alternative to MongoDB), ExpressJS, React and NodeJs
+
+- https://github.com/conway-hash/photo-database /202210/js
+  - Creating a database using pure HTML, CSS, JS + node.js + NeDB usable for storing and giving a description to files of all kinds.
+
+- https://github.com/husseinhareb/Elenotes /MIT/202312/js
+  - simple note-taking application built with Electron and NeDB
+
+- https://github.com/KeyonYan/NingMo /202105/js
+  - https://yankeyon.notion.site/809b23e3cc78459cbf2215d3fa901bd3
+  - 基于Electron与React的网状笔记软件
+  - Electron\React\NeDB\ElasticSearch
+
+- https://github.com/alejandro-pina/electron-notes-vite-react-nedb-ddd /MIT/202309/ts
+  - a desktop application architecture using Electron as the primary platform.
 
 - https://github.com/abeegit/bibliothek /202101/ts/client+server
   - React and Express + NeDB app that lets you add, edit and display books in the inventory. 
@@ -304,6 +404,9 @@ modified: 2023-09-28T20:33:44.333Z
 - https://github.com/RodgerLai/nodejs-nedb-excel /201703/js
   - 基于nodejs+webpack, 以nosql轻量级嵌入式数据库nedb作为存储，页面渲染采用react+redux, 样式框架为ant design, 实现了excel表格上传导出以及可视化
   - 依赖 https://github.com/jiangxy/react-antd-admin
+
+- https://github.com/low-teck/vault /202202/ts
+  - A react-electron app that secures user data locally using AES algorithm with the help of nedb and crypto-js ans styled with chakra-ui.
 
 - openKB /636Star/MIT/202205/js/inactive/view层handlebars/nedb
   - https://github.com/mrvautin/openKB
@@ -316,14 +419,39 @@ modified: 2023-09-28T20:33:44.333Z
   - openKB uses the pure Javascript nedb embedded database by default or a MongoDB server.
   - openKB uses Markdown-it
 
+- https://github.com/Grivius2005/cars-express /202304/js
+  - Express + Handlebars + NeDB application
+
+- https://github.com/RoushanKC/signup /202304/js
+  - signup page using html , css , javascript , neDB
+  - https://github.com/aisiklar/login-signup-module
+
+- https://github.com/jasonbrandoo/react-express-nedb /202007/js
+  - Simple react auth with express
+
+- https://github.com/AsWeMayThink/Storage /202003/js
+  - simple authentication and profile system with NeDB and MongoDB storage.
+
 - https://github.com/leonardporteria/weight-recording-app
   - https://weight-recording-app.herokuapp.com/
   - A web application to keep track of your weight.
   - HTML5/SCSS/JavaScript/NodeJS/Express/NeDB
 
+- https://github.com/mwinteringham/restful-booker /GPLv3/202312/js
+  - https://automationintesting.com/training/apitesting/
+  - An API playground created by Mark Winteringham for those wanting to learn more about API testing and tools
+  - 依赖express、nedb、js2xmlparser、nedb、pug
+
+- https://github.com/ServeRest/ServeRest /GPLv3/202401/js
+  - https://serverest.dev/
+  - REST server for API testing study
+  - 依赖express、nedb-promises
+  - GET, POST, PUT and DELETE verbs with data persistence
+  - In the online environment, registered data is removed daily, while on-site, simply restart ServeRest.
+
 - https://github.com/mattd-silva22/node-url-shorten-api /202109/ts
   - a url shorten api made if Node.js , Express , TypeScript ans NeDB
-- https://github.com/wheresvic/shorty
+- https://github.com/wheresvic/shorty /MIT/202211/js
   - A simple self-hostable private url shortener using Node.js & Nedb (a file-based Mongodb API compatible db).
   - The idea behind shorty was to have a simple url shortening service that could be hosted on a cheap VPS with less than 1Gb RAM. Therefore, shorty uses only file-based storage to keep dependencies to a minimum.
 - https://github.com/elunico/URL-Shortener
@@ -349,16 +477,32 @@ modified: 2023-09-28T20:33:44.333Z
 - https://github.com/hutia/pwd-mgr /202203/ts/antd
   - personal infomation and password management.
 
-- https://github.com/jasonbrandoo/react-express-nedb
-  - Simple react auth with express
-
-- https://github.com/sibite/social-app
+- https://github.com/sibite/social-app /202303/ts
   - Post, share, comment, upload photos and chat
 
 - https://github.com/massCodeIO/massCode
   - code snippets manager for developers
   - Built with Electron, Vue 3 & Codemirror.
   - The new version will have a database based on plain JSON. In v1 it was used for this purpose library NeDB, which is no longer supported by the author
+
+- https://github.com/widestage/widestage /GPLv3/202009/js/inactive
+  - https://widestage.com/
+  - Lightweight Open Source Business Intelligence and reporting tool for mongodb, postgresql, Mysql, MS sql, oracle
+  - widestage also has a data governance layer AKA semantic layer
+  - 依赖nedb、mongoose、alasql、c3、ejs
+
+- https://github.com/mariusandra/insights /MIT/202003/ts/inactive
+  - https://demo.insights.sh/
+  - Open Source Self-Hosted Business Intelligence Platform
+  - a tool to visually explore a PostgreSQL database, with an emphasis on generating graphs that show business performance over time.
+  - 依赖feathersjs.v4、feathers-nedb、@feathersjs/client、react-redux、fixed-data-table-2、antd.v3、kea(state)
+
+- https://github.com/urbanogardun/monte-note /GPLv3/201804/ts
+  - Note taking application with a rich set of editing and management features
+  - 依赖electron-store、nedb、jquery、quill、react-redux
+
+- https://github.com/louptheron/open-sharing /201603/js
+  - Share files between a group of user without a server.
 # nedb-starter-crud
 - ts-api-server-express-multi-db /1Star/NALic/201804/ts/nedb/多种db/inactive
   - https://github.com/bluesky50/ts-api-server-express-multi-db
@@ -371,11 +515,18 @@ modified: 2023-09-28T20:33:44.333Z
   - https://github.com/bluesky50/ts-api-server-koa-postgres /201805/ts
   - https://github.com/bluesky50/ts-api-server-express-mongo /201804/ts
 
+- https://github.com/halfkai/electron-nedb-example /202302/ts/vue
+  - simple Electron + Vue + Vite boilerplate
+
 - https://github.com/hojinahn4234/electron-typescript-react-nedb /202209/ts
   - work-in-progress scaffold for an Electron app in TypeScript, integrating React and NeDB.
   - Built with create-react-app, electron, and electron-builder.
 - https://github.com/codegiik/electron-react-nedb-boilerplate
   - a fork of https://github.com/electron-react-boilerplate/electron-react-boilerplate
+  - https://github.com/wmalbos/electron-react-nedb /202401/js
+
+- https://github.com/lilnelly355/express-crud /202312/js
+  - simple crud app built with nodejs, nedb, express and more
 
 - https://github.com/AshutoshSinghai-InvizAI-DataEngg/node-backend-nedb /202206/js
   - a sample implementation of an authentication system that uses JSON Web Token to manage users' login data in Node.js web server.
@@ -420,13 +571,14 @@ modified: 2023-09-28T20:33:44.333Z
   - A Mongoose driver for NeDB.
   - 依赖nedb、mongoose、bson
   - [extend nedb to support mongoose like schema](https://gist.github.com/dhigginbotham/5922171)
-- mongoose
-  - https://github.com/aerys/mongoose-nedb
-  - https://github.com/ishantiw/crud-api
-    - This API works on data stored in In-Memory for which we are using NeDB database
-    - We are using modli as an API to define the schema and the crud operation. 
-  - https://github.com/danibram/ffra
-    - Tiny layer over Koa/fastify to make easier create Rest APIs
+
+- https://github.com/aerys/mongoose-nedb
+
+- https://github.com/ishantiw/crud-api /201703/js
+  - This API works on data stored in In-Memory for which we are using NeDB database
+  - We are using modli as an API to define the schema and the crud operation. 
+- https://github.com/danibram/ffra
+  - Tiny layer over Koa/fastify to make easier create Rest APIs
 
 - https://github.com/Mido22/sqlite-to-nedb /201611
   - Util for converting a sqlite database into a nedb database
@@ -447,6 +599,31 @@ modified: 2023-09-28T20:33:44.333Z
 
 - https://github.com/louischatriot/nedb-server
   - HTTP interface for a NeDB database
+
+- https://github.com/node-modli/modli /MIT/201603/js
+  - http://node-modli.github.io/modli/
+  - A module for building models and adapters for multiple data sources
+  - designed to help create unified data modelling, validation and CRUD operations across numerous data sources. 
+  - It accomplishes this by exposing a `model` object and an `adapter` object which are extended upon eachother with the desired adapter for a data source to create a more standard, extensible object.
+  - 提供了 nedb-adapter
+
+- https://github.com/pofider/node-simple-odata-server /MIT/202301/js
+  - Simple OData server for node.js
+  - simple implementation of OData server running on Node.js with easy adapters for mongodb and nedb. 
+  - Just define an OData model, provide a mongo or nedb database, hook into node.js http server and run.
+
+- https://github.com/KeKs0r/orchid /202210/ts/inactive
+  - Orchestrator for promise based tasks in typescript
+  - 提供了很多plugin和nedb-storage
+
+- https://github.com/kba/anno-common /MIT/202105/js/inactive
+  - https://kba.github.io/anno
+  - This monorepo contains packages that provide the building blocks for annotation software implementing the Web Annotation Data Model and Web Annotation Protocol.
+  - A store provides persistent storage of annotations. A store exposes methods that reflect the Web Annotation Protocol and the extensions implemented of this framework.
+  - The store-mongolike module implements most of the store interface for document databases, such as mongodb or NeDB.
+
+- https://github.com/tate2301/redux-persist-nedb-storage /202308/ts
+  - Storage adapter to use nedb with redux-persist
 # more-nedb
 - https://github.com/xiyuan-fengyu/ppspider
   - 基于puppeteer的web爬虫框架，提供灵活的任务队列管理调度方案，提供便捷的数据保存方案（nedb/mongodb），提供数据可视化和用户交互的实现方案
@@ -459,3 +636,12 @@ modified: 2023-09-28T20:33:44.333Z
 
 - https://github.com/seppevs/migrate-mongo
   - A database migration tool for MongoDB in Node
+
+- https://github.com/TeamFleet/WhoCallsTheFleet-DB /MIT/202309/js
+  - JSON format database for Kantai Collection (KanColle) related development
+  - 提供了很多 nedb持久化的数据文件
+
+- https://github.com/iyobo/jollofjs /MIT/202008/js
+  - NodeJS Application Framework 
+  - Built-in Admin User Interface
+  - 支持MongoDB

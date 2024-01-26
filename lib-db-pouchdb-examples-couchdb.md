@@ -324,12 +324,14 @@ modified: 2023-09-28T20:35:56.153Z
 - https://github.com/serby/save /143Star/ISC/202209/js
   - A simple CRUD based persistence abstraction for storing objects to any backend data store. eg. Memory, MongoDB, Redis, CouchDB, Postgres, Punch Card etc.
 
-- https://github.com/paperhive/octonom /201802/ts
-  - General-purpose models and collections with multi-database support, written in TypeScript
-  - Collections are specific to the database you use (e.g. MongoCollection, CouchCollection)
 - https://github.com/genbliz/mocody /202303/ts/wip
   - Implementation of single table design, and unified query access for MongoDB, CouchDB, and dynamoDB
   - https://github.com/genbliz/mocody/tree/add-pouchdb
+- https://github.com/paperhive/octonom /MIT/201802/ts
+  - General-purpose models and collections with multi-database support, written in TypeScript
+  - Collections are specific to the database you use (e.g. MongoCollection, CouchCollection-未实现)
+- https://github.com/Crafity/crafity-storage /MIT/201501/js
+  - a single interface for MongoDB, CouchDB, Redis, fs and RAM
 
 - https://github.com/KorbinianKuhn/pouchoose /202101/ts
   - Mongoose-like API for PouchDB.
@@ -419,6 +421,8 @@ modified: 2023-09-28T20:35:56.153Z
 - https://github.com/pouchdb/pouchdb-fauxton /201703/js
   - Fork/modification of couchdb-fauxton designed for pouchdb-server and express-pouchdb
   - https://github.com/pouchdb/pouchdb-fauxton-base /201508/js
+- https://github.com/sbellity/futon4mongo /2010/ruby/js
+  - A port of CouchDB's Futon web interface to MongoDB
 
 - https://github.com/npm/npm-registry-couchapp /ISC/202003/js/archived
   - couchapp bits of registry.npmjs.org
@@ -854,6 +858,19 @@ modified: 2023-09-28T20:35:56.153Z
 - https://github.com/JaxonRailey/js-todolist-with-pouchdb-and-couchdb /202207/js
   - Another todolist to explain how to use couchdb synchronized pouchdb
   - 问题: 其他设备的更新不会自动通知当前设备的ui
+
+- https://github.com/endyjasmi/feathers-pouchdb /201707/js
+  - Create a PouchDB service for FeatherJS.
+  - Currently this plugin DOES NOT fully support pagination because of the way CouchDB Mango Query is designed to make use map reduce index.
+- https://github.com/Protoss78/feathers-nano /201802/js
+  - A CouchDB/PouchDB Service for Feathers
+- https://github.com/pdxbmw/feathers-couchdb-nano /201704/js
+  - A Feathers service adapter for CouchDB using Apache CouchDB Nano driver
+
+- https://github.com/suld2495/react-realworld-clone /202012/js
+  - 依赖react-redux、pouchdb，模拟后端
+- https://github.com/http4ts/http4ts-realworld-example-app /202004/ts
+  - 依赖http4ts、pouchdb，模拟后端
 
 - https://github.com/ronnix/pouchdb-couchdb-sync-example /201805/js
   - PouchDB + CouchDB syncing example
@@ -1464,9 +1481,6 @@ modified: 2023-09-28T20:35:56.153Z
 - https://github.com/bkniffler/workerdb /201901/ts/rxdb8/rxjs6
   - Performant, Reactive, offline-first, syncable Database in WebWorker based on PouchDB/RxDB, great for electronJS and web-applications
   - vanilla: The database can be used with or without any framework
-
-- https://github.com/genbliz/mocody /202303/ts
-  - Implementation of single table design, and unified query access for MongoDB, CouchDB, and dynamoDB.
 
 - https://github.com/sudzy-group/pouchable /ts
   - PouchDB simplified by TypeScript Decorators

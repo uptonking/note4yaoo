@@ -124,7 +124,7 @@ modified: 2022-11-03T04:14:11.987Z
   - A Lightweight Disk based JSON Database with a MongoDB like API for Node
   - You will never know that you are interacting with a File System
 
-- https://github.com/Belphemur/node-json-db
+- https://github.com/Belphemur/node-json-db /MIT/202401/ts
   - A simple "database" that use JSON file for NodeJS
   - Every method are now asynchronous
 
