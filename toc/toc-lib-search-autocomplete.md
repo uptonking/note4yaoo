@@ -462,6 +462,12 @@ modified: 2023-01-01T13:24:35.994Z
   - Each Vectra index is a folder on disk. There's an index.json file in the folder that contains all the vectors for the index along with any indexed metadata.
   - When queryng Vectra you'll be able to use the same subset of Mongo DB query operators that Pinecone supports and the results will be returned sorted by simularity
   - Keep in mind that your entire Vectra index is loaded into memory
+# search-ai-gpt
+- https://github.com/leptonai/search_with_lepton /apache2/202401/python/ts
+  - https://search.lepton.run/
+  - Build your own conversational search engine using less than 500 lines of code.
+  - Built-in support for LLM
+  - Shareable, cached search results
 # more-search
 - https://github.com/algolia/docsearch
   - The easiest way to add search to your documentation

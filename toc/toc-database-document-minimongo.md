@@ -30,17 +30,32 @@ modified: 2022-11-30T18:57:26.459Z
   - Minimongo is designed to work with a server that performs three-way merging of documents that are being upserted by multiple users.
   - Compared to RxDB, Minimongo has no concept of revisions or conflict handling, which might lead to undefined behavior when used with replication or in multiple browser tabs. Minimongo has no observable queries or changestream.
   - HybridDb: Combines results from the local database with remote data.
-  - [in hybridDb, by default it fetch all fields from remoteDb and cache them. wish to change this behavior_201603](https://github.com/mWater/minimongo/issues/31)
+  - 🔁 [in hybridDb, by default it fetch all fields from remoteDb and cache them. wish to change this behavior _201603](https://github.com/mWater/minimongo/issues/31)
     - If I were to build in partial caching, it would mean that the current contents of the local database could not be trusted as they would be a hodgepodge of partial records from all previous partial queries.
     - However, I believe that you can easily accomplish what you are trying to do: do a query with cacheFind false and then manually cache them yourself. Just call cache on the local database (yourdb.localDb) to cache the rows that you want to keep. Be sure to pass in the same selector that you used for the original query.
-- https://github.com/petehunt/minimongo-cache /201703/coffeescript
+  - [Reactivity over minimongo collection (newbie inside) _201608](https://forums.meteor.com/t/reactivity-over-minimongo-collection-newbie-inside/27829)
+    - 定制的方案，通用性不强
+
+- https://github.com/rurri/minimongo-standalone /MIT/201509/js
+  - Standalone version of Meteor's minimongo database.
+  - Minimongo javascript code released as part of Meteor version:1.1.0.3
+
+- https://github.com/petehunt/minimongo-cache /LGPLv3/201703/coffeescript
   - A forked version of Minimongo designed for a synchronous local cache for React apps. 
   - This is designed to replace Flux.
+  - React is great at coordinating hierarchical data, but not so great when that data is shared "sideways" (outside the component hierarchy).
+  - This project attempts to solve the same problems observable models, state atoms and Flux try to solve.
   - since we treat the local database like a cache, we can use the same read-through caching techniques for data fetching that we use on the server
+  - we store the object graph in a fully normalized state and write modules called domains which are like stateless Flux stores that read from minimongo. 
+  - minimongo-cache is built in a modular style, so there are varying levels of reactivity supported. 
+    - For example, you can just use it as a synchronous cache, as shown above. 
+    - It will also emit `change` events -- they will be batched and deduped within a single event tick, so mutations within a single event tick are effectively atomic to all observers.
+  - [Does minimongo implement reactivity_202011](https://github.com/mWater/minimongo/issues/71)
+    - I'm afraid not. That would be best implemented with a websocket.
   - forks
   - https://github.com/xvonabur/minimongo-cache
     - `for (collectionName in changeRecords) { }` 描述变更
-- https://github.com/meteorrn/minimongo-cache /202211/js
+- https://github.com/meteorrn/minimongo-cache /202312/js
   - A fork of the minimongo-cache package maintained for the purpose of supporting the @meteorrn/core package
   - https://github.com/AstonBraham/minimongo-cache
     - refactor-to-es6
@@ -70,6 +85,9 @@ modified: 2022-11-30T18:57:26.459Z
   - https://github.com/gongojs/gongo-client
     - WIP: DX focused in-browser database with offline and realtime.
     - 依赖idb、modifyjs、arson(encoder and decoder)、bson、ejson
+    - Client-side database. Offline first.
+    - Subscribes to datasets, realtime support.
+    - Optimistic updates for free.
   - https://github.com/gongojs/gongo-client-react
     - React hooks for gongo-client
     - 依赖 gongo-client

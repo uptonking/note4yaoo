@@ -14,6 +14,15 @@ modified: 2022-12-02T11:12:29.905Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🔁 [How much is stored in local minimongo_201211](https://groups.google.com/g/meteor-talk/c/ex22YflfVJo)
+- When you first create a Meteor app, it will publish all data in the collections that you define, but usually you then `meteor remove autopublish` and set up specific publish/subscribe record sets using the Meteor API
+- Autopublish isn't a good fit if you have document sets that large.  You'll want to write your own Meteor.publish function on the server.
+  - The Meteor model is to give developers explicit control over exactly which parts of which documents are published to each client.  That lets you implement your own application-specific tradeoffs between caching data the client may need and limiting the amount of data sent over the wire / stored on the client.
+
 - ## [10 Years of Meteor | Hacker News_202206](https://news.ycombinator.com/item?id=31915573)
 - 100% agree with this post. I also co-authored a book about Meteor.
   - Having methods that can run on either the front end or the back end with basically zero boilerplate was an incredible idea which unfortunately never really got traction. 

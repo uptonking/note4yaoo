@@ -63,6 +63,7 @@ modified: 2021-08-28T11:49:05.730Z
 
 - ## 🗒️ Explaining 9 types of API testing. 
 - https://twitter.com/alexxubyte/status/1718297723177402400
+  - https://twitter.com/alexxubyte/status/1751265300446908506
 
 - ## 💡 I dislike JSDOM. It runs in Node, pretends to be a browser, but is intentionally neither. It's a hack.
 - https://twitter.com/kettanaito/status/1717085912545247557

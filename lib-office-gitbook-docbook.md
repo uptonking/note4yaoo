@@ -73,7 +73,7 @@ modified: 2023-09-19T07:53:59.349Z
 
 - [Lightweight Markup: Markdown, reStructuredText, MediaWiki, AsciiDoc, Org-mode - Hyperpolyglot](https://hyperpolyglot.org/lightweight-markup)
 
-## [DocBook - Wikipedia](https://en.wikipedia.org/wiki/DocBook)
+## ⚖️ [DocBook - Wikipedia](https://en.wikipedia.org/wiki/DocBook)
 
 - DocBook is a semantic markup language for technical documentation. 
 - As a semantic language, DocBook enables its users to create document content in a presentation-neutral form that captures the logical structure of the content; 
@@ -133,15 +133,6 @@ modified: 2023-09-19T07:53:59.349Z
 - [Write a Book with Markdown | Hacker News](https://news.ycombinator.com/item?id=36582208)
   - Being built on DocBook is a great insurance policy for Asciidoc, as DocBook has been around approximately forever and opens lots of doors to other XML specifications via XSL or something more sane.
 
-## [EPUB - Wikipedia](https://en.wikipedia.org/wiki/EPUB)
-
-- The .epub or OEBPS format is a technical standard for e-books 
-- The EPUB format has gained some popularity as a vendor-independent XML-based e-book format.
-- The EPUB format is implemented as an archive file consisting of XHTML files carrying the content, along with images and other supporting files. EPUB is the most widely supported vendor-independent XML-based e-book format; that is, it is supported by almost all hardware readers
-- An EPUB file is an archive that contains, in effect, a website. 
-  - It includes HTML files, images, CSS style sheets, and other assets. It also contains metadata.
-# docbook-docs
-
 ## [DocBook: The Definitive Guide - online](https://tdg.docbook.org/)
 
 - [homepage for DocBook 5: The Definitive Guide](https://docbook.org/)
@@ -170,6 +161,108 @@ modified: 2023-09-19T07:53:59.349Z
   - 相反，MD 和 AsciiDoc 格式的文档却大行其道。主要原因是能够随意部署，并且文档结构少，约束少，更加容易写作和阅读。
   - DITA，编译太复杂，PDF生成问题太多，CHM 格式的文档很多时候大家都
 - dita是底层文件格式的方案，word内部也是xml格式，但是没有有人创建word从xml开始的。dita需要专门写dita的工具和工具集，上下游都是厂商去自行设计的。大型航空公司都用dita
+# blogs-epub
+
+## ⚖️ [EPUB - Wikipedia](https://en.wikipedia.org/wiki/EPUB)
+
+- The .epub or OEBPS format is a technical standard for e-books 
+- The EPUB format has gained some popularity as a vendor-independent XML-based e-book format.
+- The EPUB format is implemented as an archive file consisting of `XHTML` files carrying the content, along with images and other supporting files. 
+- EPUB is the most widely supported vendor-independent XML-based e-book format; that is, it is supported by almost all hardware readers
+- An EPUB file is an archive that contains, in effect, a website. 
+  - It includes HTML files, images, CSS style sheets, and other assets. It also contains metadata.
+
+## ⚖️ [Portable EPUBs _202401](https://willcrichton.net/notes/portable-epubs/)
+
+- https://github.com/nota-lang/bene /202401/ts/rust/tauri
+  - https://nota-lang.github.io/bene/
+  - Bene is a reading system for documents written in the EPUB file format.
+
+- modern document formats like HTML have yet to provide a competitive alternative to PDF. This post explores what prevents HTML documents from being portable, and I propose a way forward based on the EPUB format.
+  - To demonstrate my ideas, this post is presented using a prototype EPUB reading system.
+- PDF is the de facto file format for reading and sharing digital documents like papers, textbooks, and flyers.
+- 🌹 pros-pdf
+  - PDFs are self-contained. A PDF is a single file that contains all the images, fonts, and other data needed to render it. 
+  - PDFs are rendered consistently. A PDF specifies precisely how it should be rendered
+  - PDFs are stable over time. PDFs from decades ago still render the same today. PDFs have a relatively stable standard
+- 🐛 cons-pdf
+  - PDFs cannot easily adapt to different screen sizes. Most PDFs are designed to mimic 8.5x11" paper (or worse, 145, 161 km2). These PDFs are readable on a computer monitor, but they are less readable on a tablet or phone.
+  - PDFs cannot be easily understood by programs. A plain PDF is just a scattered sequence of lines and characters. For accessibility, screen readers may not know which order to read through the text. For data extraction, scraping tables out of a PDF is an open area of research.
+  - PDFs cannot easily express interaction. PDFs were primarily designed as static documents that cannot react to user input beyond filling in forms.
+- These pros and cons can be traced back to one key fact: the PDF representation of a document is fundamentally unstructured. 
+  - PDF commands are unstructured because a document's organization is only clear to a person looking at the rendered document, and not clear from the commands themselves. 
+  - Reflowing, accessibility, data extraction, and interaction all rely on programmatically understanding the structure of a document. Hence, these aspects are not easy to integrate with PDFs.
+
+- how can we design digital documents with the benefits of PDFs but without the limitations?
+- PDFs can be annotated with their logical structure to create a tagged PDF
+  - In theory, these issues could be fixed. If the world's PDF exporters could be modified to include logical structure.
+
+- we already have a structured document format which can be flexibly and interactively rendered: HTML (and CSS and Javascript, but here just collectively referred to as HTML). 
+  - The HTML format provides almost exactly the inverse advantages and disadvantages of PDF.
+- 🌹 pros-html
+  - HTML can more easily adapt to different screen sizes.
+  - HTML can be more easily understood by a program.
+  - HTML can more easily express interaction
+- 🐛 cons-html
+  - HTML is not self-contained. HTML files may contain URL references to external files that may be hosted on a server.
+  - HTML is not always rendered consistently. HTML's dynamic layout means that an author may not see the same document as a reader.
+  - HTML is not fully stable over time. Browsers try to maintain backwards compatibility 
+
+- how can we design HTML documents to gain the benefits of PDFs without losing the key strengths of HTML?
+  - Self-Contained HTML with EPUB
+
+- how can we make HTML documents self-contained? 
+  - This is an old problem with many potential solutions. 
+  - WARC, webarchive, and MHTML are all file formats designed to contain all the resources needed to render a web page. 
+  - But these formats are more designed for snapshotting an existing website, rather than serving as a single source of truth for a web document. 
+- From my research, the most sensible format for this purpose is EPUB.
+- an EPUB is a ZIP archive of web files: HTML, CSS, JS, and assets like images and fonts. 
+  - On a technical level, what distinguishes EPUB from archival formats is that EPUB includes well-specified files that describe metadata about a document. 
+- The EPUB format optimizes for machine-readable content and metadata. 
+  - HTML content is required to be in XML format (hence, XHTML). 
+  - Document metadata like the title and author is provided in structured form in the package document. 
+  - The navigation document has a carefully prescribed tag structure so the TOC can be consistently extracted.
+- Overall, EPUB's structured format makes it a solid candidate for a single-file HTML document container. 
+- However, EPUB is not a silver bullet. EPUB is quite permissive in what kinds of content can be put into a content document.
+  - a major issue for self-containment is that EPUB content can embed external assets. A content document can legally include an image or font file whose src is a URL to a hosted server. 
+  - Google Doc's EPUB exporter will emit CSS that will @include external Google Fonts files. The problem is that such an EPUB will not render correctly without an internet connection, nor will it render correctly if Google changes the URLs of its font files
+
+- Hence, I will propose a new format which I call a portable EPUB, which is an EPUB with additional requirements and recommendations to improve PDF-like portability
+
+- The first requirement is local asset requirement
+  - All assets (like images, scripts, and fonts) embedded in a content document of a portable EPUB must refer to local files included in the EPUB. 
+  - Hyperlinks to external files are permissible.
+- I think the core solution for consistently rendering EPUBs comes down to this:
+  - The document format (i.e., portable EPUB) needs to establish a subset of HTML (call it portable HTML) which could represent most, but not all, documents.
+  - Reading systems need to guarantee that a document within the subset will always look reasonable under all reading conditions.
+  - If a document uses features outside this subset, then the document author is responsible for ensuring the readability of the document.
+- Portable HTML rendering requirement: if a document only uses features in the portable HTML subset, then a portable EPUB reading system must guarantee that the document will render reasonably.
+- Portable HTML generation principle: when possible, systems that generate portable EPUBs should output portable HTML.
+- Fixed-layout fallback principle: systems that generate portable EPUBs can consider providing both a reflowable and fixed-layout rendition of a document.
+- Cascading styles principle: both documents and reading systems should express stylistic preferences (such as font face, font size, and document width) as CSS styles which can be overriden (e.g., do not use !important). The reading system should load the CSS rules such that the priority order is reading system styles < document styles < reader styles.
+
+- I decided to build a lighter EPUB reading system, Bene. 
+  - The styling and icons are mostly borrowed from pdf.js. 
+  - Bene is implemented in Tauri
+  - The general design goal of Bene is to embody my ideals for a portable EPUB reader. 
+
+- Encapsulated scripts principle: interactive components should be implemented as web components when possible, or otherwise be carefully designed to avoid conflicting with the base document or other components.
+- Components fallback requirement: interactive components must provide a fallback mechanism for rendering a reasonable substitute if Javascript is disabled.
+
+- My short-term goal is to implement a few more documents in the portable EPUB format, such as my PLDI paper. 
+- My long-term goal is to design a document language that makes it easy to generate portable EPUBs. Writing XHTML by hand is not reasonable. I designed Nota before I was thinking about EPUBs, so its next iteration will be targeted at this new format
+
+### 👥 [I wrote some ideas for how to actually make HTML documents a viable replacement for PDFs.](https://twitter.com/tonofcrates/status/1750591889391378796)
+
+- PDF continues to exist on the web primarily because we don't have a format that hermetically packs html with all its resources into one file that can be seamlessly loaded in a browser. 
+- My answer is basically:
+  - Use EPUB to package an HTML document into a single file.
+  - Build a better EPUB reading system.
+
+- I think the "aesthetics" point is a lot broader than line-breaking. You can control layout and rendering more in TeX and more in PDF than in HTML and that seems hard to change.
+  - line-breaking is just a prominent example. Besides typography, I think HTML provides pretty expressive layout/render controls? The main problem is using these controls such that a document is still responsive, accessible, etc
+# docbook-docs
+
 # more
 
 # discuss-ebook/epub

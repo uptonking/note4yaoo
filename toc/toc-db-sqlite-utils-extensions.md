@@ -129,6 +129,11 @@ modified: 2022-11-04T14:20:37.172Z
   - basic search engine with crawling/searching. SQLite for storage.
 - https://github.com/sixteenmillimeter/frameworks_search
   - Scripts for building a Postgres database of the frameworks archives and searching that database
+# query
+- https://github.com/jorroll/observable-sqlite /202312/ts
+  - a minimal example of how to subscribe to SQL queries in a SQLite database. 
+  - This example uses typescript and the official WASM distribution of SQLite.
+  - The `liveQuery` method shows how you might subscribe to a query without using `RxJS` and the `observeQuery` method shows the same thing except using `RxJS`.
 # utils
 - https://github.com/simonw/sqlite-utils
   - Python CLI utility and library for manipulating SQLite databases

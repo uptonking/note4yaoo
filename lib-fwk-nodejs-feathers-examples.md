@@ -92,7 +92,7 @@ modified: 2023-01-20T00:18:44.282Z
 - https://github.com/swina/feathersjs-webpush-notifications
   - [WebPush Notifications with Feathersjs_201902](https://swina.github.io/2019/02/webpush-notifications-with-feathersjs/)
 
-- https://github.com/eddyystop/feathers-live-query /201610/js
+- https://github.com/eddyystop/feathers-live-query /MIT/201610/js
   - Live query. Mirror part of a DB on the client.
   - The clients communicate with the server using socket.io websockets. 
 
@@ -103,6 +103,10 @@ modified: 2023-01-20T00:18:44.282Z
   - It can be run locally or used online.
   - I've been using Feathersjs for several years and this is a tool I created to view and edit my data records during development.
   - All configuration info is stored locally in localStorage
+
+- https://github.com/Nubuck/z1-core /202311/js
+  - an incrementally adoptable modular software system aiming to automate the labor and complexity out of developing composable multi-platform projects.
+  - The Z1 core packages augment the Feathers, React, Redux and Tailwind frameworks.
 # api
 - https://github.com/adaptable/feathers-template
   - Adaptable.io template for deploying an autoscaling, Serverless Feathers API. 

@@ -9,6 +9,8 @@ modified: 2023-02-05T18:48:02.500Z
 
 # guide
 
+# discuss-stars
+- ## 
 # discuss
 - ## 
 
@@ -20,3 +22,6 @@ modified: 2023-02-05T18:48:02.500Z
 - I would additionally suggest you to use mongoose over typegoose. Typegoose and the documentation was a pain, we had to switch to mongoose
 - I've tried typeORM and mongoose, I think mongoose are good in doc. and simple for the beginner.
   - TypeORM the doc is not good. and will have a lot of tiny issues. It's not good to be a tool.
+
+- ## [Mongoose browser implementation _202007](https://github.com/Automattic/mongoose/issues/9273)
+- As long as you use Webpack and your webpack config has `target: 'web'` , then you should be able to use `const mongoose = require('mongoose')` in your browser code.

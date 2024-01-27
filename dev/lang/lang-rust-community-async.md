@@ -16,7 +16,15 @@ modified: 2023-08-28T04:43:22.738Z
 
 - ## 
 
-- ## 
+- ## I suppose that Async Rust may properly separate four concepts:
+- https://twitter.com/brabalawuka/status/1751100101312094607
+1. Libs that are runtime agnostic, e.g. combinators, channels.
+2. Libs that bind to a runtime, e.g., timers, IO structs.
+3. Runtime that schedules runtime-agnostic future.
+4. Runtime that schedules certain tasks.
+
+- > Runtime that schedules certain tasks.
+  - More certainly, runtime that drives (IO) tasks. A runtime scheduling common futures cannot move forward such tasks itself. Just like async-executor cannot drive tokio IO tasks.
 
 - ## 大致搞懂了 #Rust Async Runtime 的实现路线。可以先直接拉到最后读结语部分：
 - https://twitter.com/tison1096/status/1721354360922546275

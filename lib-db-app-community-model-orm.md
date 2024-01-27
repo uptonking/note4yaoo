@@ -15,14 +15,30 @@ modified: 2023-09-24T19:05:33.866Z
 - ## 
 
 - ## 
-
-- ## 
 # discuss
 - ## 
 
 - ## 
 
 - ## 
+
+- ## 💡 what would the functional equivalent of an ORM look like?
+- https://twitter.com/Aron_Adler/status/1751208146498957430
+- DDL isn't declarative and should be. At least, should be more declarative.
+- Let me give a concrete example. Suppose columns had both a name and an ID, a bit like protobuf. 
+  - Then when you supply a new table definition, the IDs would determine the column identities, and many schema evolutions would be unambiguous.
+  - Columns could be added, removed, renamed, and reordered with no ambiguity, given only the desired target state.
+  - This needs more thought to pin down all the corner cases, but the point is, a small change to the way tables work could make schema evolutions a lot less imperative.
+  - and that doesn't work with SQL tables in their current form because those evolutions are inherently ill-defined.
+
+- My answer is Squeal(haskell). I applied category theory for a strongly typed embedding of SQL including DDL and DML in Haskell. For instance DDL statements form morphisms of a category whose objects are schemas. 
+
+- Elixir's Ecto does a good job of being a really thin ORM-like.
+
+- There’s a clojure library called korma you could check out.
+- Slick is a Scala library that calls itself a Functional Relational Mapper.
+
+- Maybe look at LINQ. One idea is that querying in-memory and DB data is similar.
 
 - ## I agree  with @ThePrimeagen that SQL ORMs are a leaky abstraction 
 - https://twitter.com/matthew_linkous/status/1721930302321295426

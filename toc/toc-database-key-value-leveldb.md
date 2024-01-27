@@ -296,6 +296,10 @@ modified: 2022-11-03T04:14:00.563Z
 - https://github.com/eugeneware/jsonquery-engine /201504/js
   - A full MongoDB query language implementation with INDEXES for querying your levelup/leveldb database.
   - This is a plugin for level-queryengine.
+# level-query
+- https://github.com/Raynos/level-livefeed /MIT/201409/js
+  - Live query a range in leveldb
+  - You query a range in the database. It will load the range from disk and then also add on anything else you put or del from it.
 # level-multi
 - https://github.com/tradle/multi-hyperbee /js
   - A LevelUP compatible leaderless multi-master database with eventual consistency, **using hyperbee + CRDT + HLC**. 

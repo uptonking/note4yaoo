@@ -32,6 +32,10 @@ modified: 2023-09-19T07:26:04.103Z
 - https://github.com/lufengd3/htmlbook2pdf /202311/js
   - Generate PDF on Playwright Playground
   - [Show HN: Generate pdf with gitbook or mdbook url | Hacker News_202311](https://news.ycombinator.com/item?id=38230453)
+
+- https://github.com/nota-lang/bene /202401/ts/rust/tauri
+  - https://nota-lang.github.io/bene/
+  - Bene is a reading system for documents written in the EPUB file format.
 # mdbook
 - https://github.com/rust-lang/mdBook /15.6kStar/MPLv2/202312/rust
   - https://rust-lang.github.io/mdBook/

@@ -276,6 +276,15 @@ modified: 2023-07-26T11:23:38.282Z
   - Persisted Queries (indexes) are updated as Entity composition changes.
   - Not all systems need to run every frame.
   - The Entity-Component-System paradigm is great for managing dynamic objects in games and simulations.
+
+- https://github.com/bevyengine/bevy /rust
+  - https://bevyengine.org/
+  - Bevy is a refreshingly simple data-driven game engine built in Rust.
+  - Offer a complete 2D and 3D feature set
+  - Data-oriented architecture using the **Entity Component System** paradigm
+  - https://github.com/DioxusLabs/taffy
+    - Taffy is a flexible, high-performance, cross-platform UI layout library written in Rust.
+    - designed to be used as a dependency for other UI and GUI libraries. Right now, it powers: Bevy/Dioxus
 # effects
 - https://github.com/andrejewski/affection /201810/js
   - Declarative side-effects

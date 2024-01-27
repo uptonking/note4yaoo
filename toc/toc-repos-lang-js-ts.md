@@ -106,15 +106,23 @@ modified: 2021-05-14T15:04:55.849Z
   - /2.2kStar/MIT/202009
   - admin interface which can be plugged into your application.
   - 依赖@admin-bro/design-system、axios、styled-components/system、react-redux
-- https://github.com/immerjs/immer
-  - /18.3kStar/MIT/202010/ts
-  - Create the next immutable state by mutating the current one
 - https://github.com/reactivex/rxjs
   - /23.3kStar/Apache2/202011/ts
   - A reactive programming library for JavaScript
 # js-ts-labs
 - https://github.com/WebReflection/raytrace
   - A comparison between original raytrace.ts performance VS a hand-written JS port.
+# js-datatype
+- https://github.com/immerjs/immer  /26.5kStar/MIT/202310/ts
+  - Create the next immutable state by mutating the current one
+
+- https://github.com/unadlib/mutative /1kStar/MIT/202401/ts
+  - Efficient immutable updates, 2-6x faster than naive handcrafted reducer, and more than 10x faster than Immer.
+  - Immer helps us write simpler immutable updates with "mutative" logic. But its performance issue causes a runtime performance overhead. Immer must have auto-freeze enabled by default(Performance will be worse if auto-freeze is disabled)
+  - Mutative supports almost all of Immer features, and you can easily migrate from Immer to Mutative. Migration is also not possible for React Native that does not support Proxy
+  - [How slow is the Spread operator in JavaScript? | Jon Linnell](https://jonlinnell.co.uk/articles/spread-operator-performance)
+    - It gets exponentially slower the more elements it has to cover.
+    - `Array.concat()` is significantly more performant at scale than a spread-merge. 
 # popular
 
 ## viz

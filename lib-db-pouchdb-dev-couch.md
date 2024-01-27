@@ -74,6 +74,7 @@ modified: 2024-01-04T06:53:04.003Z
   - kappa-architecture?
   - partial-replication: 参考hypercore
   - sync: couchbase sync gateway; 与minimongo+mongodb的方案比较; 可参考event-sourcing自己实现
+  - reactive
   - eav: notion-data-model
   - attachment/针对图片视频的blob二进制存储数据库: 参考couchbase, mongodb-gridfs, pg-lo
   - alternative-backend: mysql/pg

@@ -420,6 +420,7 @@ sudo apt install -y  sqlite3 libsqlite3-dev sqlitebrowser
 
 - ms-office 2021官方镜像下载安装激活一条龙
   - https://www.cnblogs.com/hushaojun/p/15967885.html
+  - Office Tool Plus 确实是一个相当好用的工具，直接下载安装指定的版本，还能设置 Vol License，然后辅助激活。无论用正版还是盗版，都是很好用的工具。
 
 - adobe 大师版全家桶、sp版独立包
   - https://www.nite07.com/adobe/

@@ -262,8 +262,12 @@ modified: 2023-11-17T10:12:06.357Z
   - The map editor is based on iDEditor. 
   - The app is built with Electron.
 # offline
-- https://github.com/localForage/localForage
-  - Offline storage, improved. Wraps IndexedDB, WebSQL, or localStorage using a simple but powerful API.
+- localForage /23.8kStar/apache2/202108/js/inactive
+  - https://github.com/localForage/localForage
+  - https://localforage.github.io/localForage
+  - localForage is a fast and simple storage library for JavaScript. 
+  - localForage improves the offline experience of your web app by using asynchronous storage (IndexedDB or WebSQL) with a simple `localStorage`-like API.
+  - localForage uses `localStorage` in browsers with no IndexedDB or WebSQL support.
 
 - https://github.com/hoodiehq/hoodie
   - A generic backend with a client API for Offline First applications

@@ -35,6 +35,13 @@ modified: 2023-02-05T18:50:53.563Z
   - Seamless authentication and user management APIs for your projects based on TypeScript, MongoDB and Redis.
   - open source TypeScript implementation of oauthjs/node-oauth2-server based Mongo DB and Redis with user sign up and login
   - you typically find that you are writing the login, account creation and authentication logic over and over again. This repository provides a plug and play boilerplate
+
+- https://github.com/capaj/Moonridge /MIT/201703/js
+  - http://capaj.github.io/Moonridge
+  - Mongo live query framework bootstrapped on socket.io-rpc and mongoose
+  - isomorphic client side library and server framework, which brings Mongoose model to the browser(or over the network to other node process). 
+  - the coolest feature is live queries. These are performance hungry, but Moonridge is caching live queries in memory
+  - why not just port mongoosejs to the client side and let clients talk to mongo directly. While this would surely be an interesting project, Moonridge has features which would not be possible without a server instance(live querying, custom authorization/authentication). I think these features are worth it introducing a new framework to the backend.
 # mongodb-examples
 - https://github.com/sunnysidelabs/mongoose-express-ts /202210/ts
   - show a good end-to-end project setup and workflow for writing a strongly-typed Mongoose Node.js Express code in TypeScript complete with middleware, models, routes, and types

@@ -10,7 +10,7 @@ modified: 2023-10-29T02:09:26.414Z
 # guide
 
 # db-toys
-- https://github.com/plexidev/quick.db /MIT202310/ts
+- https://github.com/plexidev/quick.db /MIT/202310/ts
   - https://quickdb.js.org/
   - http://docs.plexidev.org/
   - provide an easy way for beginners and people of all levels to access & store data in a low to medium volume environment.

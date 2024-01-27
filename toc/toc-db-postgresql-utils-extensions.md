@@ -95,7 +95,9 @@ modified: 2023-10-26T15:29:40.053Z
   - Triggers are added to all query sources for the query, so that when any of sources change, this package is notified using LISTEN/NOTIFY that a source has changed
   - Because this package uses temporary tables, consider increasing `temp_buffers` PostgreSQL configuration so that there is more space for temporary tables in memory.
   - [Use ideas from Incremental View Maintenance to know what has changed_201901](https://github.com/tozd/node-reactive-postgres/issues/7)
-    - 
+
+- https://github.com/nothingisdead/pg-live-query /201608/js
+  - This package makes it possible in PostgreSQL to get (almost) realtime notifications whenever the results of a query change.
 
 - https://github.com/aarroyoc/postgresql-prolog /202310/prolog
   - A Prolog library to connect to PostgreSQL databases

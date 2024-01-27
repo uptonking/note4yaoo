@@ -124,7 +124,8 @@ modified: 2022-11-06T16:47:43.444Z
 - https://github.com/ansteh/shape-json
   - convert a flat json array into a nested json object with a predefined scheme
 
-- https://github.com/rentzsch/jsongo
+- https://github.com/rentzsch/jsongo /202209/ts/inactive
+  - lightweight, yet flexible database system.
   - like mongo db, except stores data in git-friendly flat json files
   - It consists of a data format, a code library, and a CLI tool.
   - Jsongo's data format is basically the same as MongoDB's semantic data model: Database > Collection > Document

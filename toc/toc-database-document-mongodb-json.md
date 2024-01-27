@@ -50,6 +50,9 @@ modified: 2022-11-03T04:14:11.987Z
   - In theory, every signal library is supported. SignalDB currently have pre-build reactivity ✨ adapters for preact-singals/mobx/solidjs
   - At the heart of SignalDB lies its advanced handling of collections and queries. Our in-memory data storage approach ensures blazing-fast query performance
   - SignalDB plans to implement a cutting-edge data replication engine, drawing inspiration from established protocols like the RxDB replication protocol 
+  - [Show HN: SignalDB – Reactive Local JavaScript Database | Hacker News _202310](https://news.ycombinator.com/item?id=37959470)
+    - Looks exactly like what Meteor did in 2011 (called minimongo)
+    - The design is heavily inspired by Minimongo. 
 
 - ZangoDB /1kStar/MIT/201710/js
   - https://github.com/erikolson186/zangodb
@@ -67,7 +70,7 @@ modified: 2022-11-03T04:14:11.987Z
   - MongoDB and Mongoose Compatible
   - It's just a 'MongoDB' with a cache layer which support distributed transaction.
 
-- ForerunnerDB /707Star/MIT/202006/js/v2
+- ForerunnerDB /707Star/MIT/202006/js/v2/inactive
   - https://github.com/Irrelon/ForerunnerDB
   - http://www.irrelon.com/
   - ForerunnerDB is a NoSQL JavaScript JSON database with a query language based on MongoDB (with some differences) and runs on browsers and Node.js.
@@ -164,9 +167,9 @@ modified: 2022-11-03T04:14:11.987Z
   - turns your RDBMS into a MongoDB-compatible server, supporting the MongoDB query API and MongoDB's replication, but storing your data into a reliable and trusted ACID database. 
   - ToroDB currently supports PostgreSQL as a backend, but others will be added in the future.
 
-- https://github.com/renebigot/reactive-db-js /202012/js
+- https://github.com/renebigot/reactive-db-js /MIT/202012/js
   - in memory reactive database with a MongoDB like query syntax.
-  - reactive : You can subscribe/unsubscribe to any collection, so if documents are created, updated, or removed, you'll be notified.
+  - reactive: You can subscribe/unsubscribe to any collection, so if documents are created, updated, or removed, you'll be notified.
   - reactive-db-js is not performance optimised. It's goal is to provide an easy way to store and query with a notification mecanism. It may be slow with lots of datas stored
 # db-document-json
 - https://github.com/Alex-Werner/SBTree /MIT/202310/js
@@ -277,7 +280,28 @@ modified: 2022-11-03T04:14:11.987Z
 
 - https://github.com/fabianTMC/mongoToSQL /202204/js
   - Convert MongoDB aggregation pipelines to their SQL equivalent
-# mongodb-utils
+# mongo-gui
+- https://github.com/mongodb-js/compass /SSPL/202401/ts
+  - https://mongodb.com/compass
+  - the source code and build tooling used in MongoDB Compass.
+  - 提供了很多Plugins
+
+- https://github.com/mongo-express/mongo-express /MIT/202312/js/传统bootstrap风格
+  - A web-based MongoDB admin interface written with Node.js, Express, and Bootstrap3
+  - Connect to multiple databases
+  - GridFS support - add/get/delete incredibly large files
+  - https://github.com/mrvautin/adminMongo /201906/js/inactive
+
+- https://github.com/arunbandari/mongo-gui /MIT/202311/ts
+  - http://20.169.156.177:4321/
+  - A web-based MongoDB graphical user interface.
+  - 前端依赖angular.v8、ng-zorro-antd、zone.js
+  - 后端依赖express、mongodb、bson
+  - Connect to local/remote mongodb instances
+  - View/add/delete databases
+  - Import CSV or JSON files
+  - Export collection to CSV or JSON files
+# mongo-utils
 - https://github.com/Ligengxin96/sql-in-mongodb /3Star/GPLv3/202108/ts
   - This tools can convert common sql query to mongodb query
 - https://github.com/orgoldfus/sql2mongo /202012/js
@@ -311,6 +335,16 @@ modified: 2022-11-03T04:14:11.987Z
   - Currently, only strict extended json syntax is supported
 - https://github.com/fcoury/mongodb-language-model-rust 
   - ported from Node.js and PEGjs to Rust and pest.rs
+# mongo-sync/collab
+- https://github.com/share/sharedb-milestone-mongo /202309/js
+  - A Mongo implementation of the ShareDB Milestone Database API
+
+- https://github.com/capaj/Moonridge /MIT/201703/js
+  - http://capaj.github.io/Moonridge
+  - Mongo live query framework bootstrapped on socket.io-rpc and mongoose
+  - isomorphic client side library and server framework, which brings Mongoose model to the browser(or over the network to other node process). 
+  - the coolest feature is live queries. These are performance hungry, but Moonridge is caching live queries in memory
+  - why not just port mongoosejs to the client side and let clients talk to mongo directly. While this would surely be an interesting project, Moonridge has features which would not be possible without a server instance(live querying, custom authorization/authentication). I think these features are worth it introducing a new framework to the backend.
 # nosql
 - https://github.com/petersirka/nosql /201907/js/inactive
   - NoSQL embedded database for small node.js projects

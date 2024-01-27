@@ -258,6 +258,8 @@ modified: 2023-09-28T20:35:56.153Z
     - added skip param
   - https://github.com/chrispahm/pouchdb-live-find
     - switch to rollup
+  - https://github.com/jo/pouchdb-live-query /201607/js
+    - Provide a view which keeps itself up to date by listening to the changes feed.
 
 - https://github.com/garbados/pouchdb-paginators /apache2/202311/js
   - A plugin that adds to PouchDB methods like .paginateAllDocs() which return paginators over results. 
@@ -1478,6 +1480,8 @@ modified: 2023-09-28T20:35:56.153Z
   - Transparently proxies all PouchDB API requests to the worker, so that the most expensive database operations are run in a separate thread.
   - https://github.com/roldaojr/worker-pouch
 
+- https://github.com/AGrzes/ouch-rx /201903/js
+  - wrapping PouchDB with rxjs observables
 - https://github.com/bkniffler/workerdb /201901/ts/rxdb8/rxjs6
   - Performant, Reactive, offline-first, syncable Database in WebWorker based on PouchDB/RxDB, great for electronJS and web-applications
   - vanilla: The database can be used with or without any framework

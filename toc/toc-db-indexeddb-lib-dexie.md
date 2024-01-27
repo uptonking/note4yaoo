@@ -9,14 +9,15 @@ modified: 2022-11-25T17:19:08.656Z
 
 # guide
 
-- [Dexie Best Practices](https://dexie.org/docs/Tutorial/Best-Practices)
-
-- [Dexie 4.0 Road Map](https://github.com/dexie/Dexie.js/discussions/1455)
+- resources
+  - [Dexie Best Practices](https://dexie.org/docs/Tutorial/Best-Practices)
+  - [Dexie 4.0 Road Map](https://github.com/dexie/Dexie.js/discussions/1455)
 # popular
-- Dexie.js /8kStar/Apache2/202206/ts/NoDeps
+- Dexie.js /10.4kStar/apache2/202401/ts/NoDeps
   - https://github.com/dexie/Dexie.js
   - https://dexie.org/
   - https://dexie.org/docs/Tutorial/Hello-World
+  - https://dexie.org/docs/Samples /多是框架集成
   - A Minimalistic Wrapper for IndexedDB
   - Dexie solves three main issues with the native IndexedDB API:
     - Poor queries

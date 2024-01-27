@@ -9,6 +9,8 @@ modified: 2022-06-13T02:59:04.350Z
 
 # guide
 
+- resources
+  - [Feature Comparison of MongoDB GUI tools (Jan 2024) | Top MongoDB GUI Tools](https://www.mongodb-gui-tools.com/)
 # discuss-stars
 - ## 
 
@@ -34,7 +36,11 @@ modified: 2022-06-13T02:59:04.350Z
 
 - ## 
 
-- ## 
+- ## [MongoDB Compass looks great and is free, is there any reason to use Robo 3T or Studio 3T anymore? : mongodb _202103](https://www.reddit.com/r/mongodb/comments/m1sr4z/mongodb_compass_looks_great_and_is_free_is_there/)
+- I have used compass, studio 3T, and noSqlBooster and noSqlBooster is by far the best if you are good with JavaScript IMO. 
+  - It has the easiest way to write complex 1 off scripts and incorporates lodash and moment globally for scripts which is incredibly useful. It has mongoose like syntax built in. 
+  - The product is very well maintained and they have some very big name customers.
+  - [Compare Editions - NoSQLBooster for MongoDB](https://nosqlbooster.com/compareEditions)
 
 - ## [To denormalize the TPC-H benchmark dataset_202202](https://www.mongodb.com/community/forums/t/to-denormalize-the-tpc-h-benchmark-dataset/147309)
   - I want to denormalize the TPC-H dataset having 8 relational tables and 22 relational queries. I want to migrate the relational database into MongoDB

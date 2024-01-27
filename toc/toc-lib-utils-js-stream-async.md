@@ -216,6 +216,13 @@ modified: 2023-04-04T22:36:31.529Z
 
 - https://github.com/popeindustries/lit /js
   - Fast server-rendering and client-hydration of lit-html templates and web components
+# queue
+- https://github.com/hajnalben/embedded-queue /MIT/202311/ts
+  - embedded-queue is job/message queue for any platform. 
+  - It does not required any other repository for storing data, like Redis, MySQL, and so on.
+  - 支持in-memory/nedb/custom
+  - https://www.npmjs.com/package/@abtnode/queue
+    - A simple job queue built on top of nedb and fastq
 # concurrency/async
 - https://github.com/sindresorhus/p-queue
   - Promise queue with concurrency control

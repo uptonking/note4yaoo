@@ -60,6 +60,11 @@ modified: 2022-02-12T23:36:22.503Z
   - It runs separately to your application so you have two web servers instead of one
 - https://github.com/cbiltekin/survey-maker
   - This is a survey creating, sharing, answering web application using tools like React, Redux, and Spring.
+# seo
+- https://github.com/goenning/google-indexing-script /MIT/202401/js
+  - [Google Indexing Script - SEO Gets](https://seogets.com/blog/google-indexing-script)
+  - Script to get your site indexed on Google in less than 48 hours
+  - Indexing != Ranking. This will not help your content/page rank on Google, it'll just let Google know about the existence of all your pages.
 # more-saas
 - https://github.com/staqjs/staq
   - Staq is a Javascript library for creating Software-as-a-Service (SaaS) businesses

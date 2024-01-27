@@ -95,10 +95,27 @@ modified: 2023-09-17T17:35:27.024Z
 - 
 
 - **GQL makes joins much easier to write than SQL**, which is what you want to be using in your components. But **GQL is not great for offline-support and caching**. You want your frontend to know about how your data relates to each other. Your frontend GQL should query a local SQL db.
+# discuss-cte(Common Table Expression)
+- ## 
 
-- 
-- 
+- ## 🆚️ CTE vs. Temporal Table: Would temporal tables be faster? 
+- https://twitter.com/RaulJuncoV/status/1751286514045092338
+  - Use CTEs to make queries easy to read and maintain in non-large datasets.
+  - Use Temp Tables for performance optimization with large datasets; they reduce computations.
 
+- CTEs (Common Table Expressions) 
+  - CTEs can make complex queries more readable and easier to maintain. 
+  - They are excellent for breaking down complex logic into simpler, more manageable parts.
+  - CTEs are most efficient for organizing query logic but don't store their results.
+  - They act as temporary views executed every time they are referenced.
+
+- Temporal Tables
+  - Temp tables come with Performance through Persistence.
+  - Temp tables store data in the database's temporary storage (e.g., the tempdb in SQL Server).
+  - On Temp tables, you can also define indexes
+  - This physical storage and the indexes will make the reads or joins X times faster.
+
+- I love CTEs because of their readability, but the performance on Temp Tables is hard to ignore in large datasets.
 # discuss
 - ## 
 

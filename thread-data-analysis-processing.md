@@ -9,7 +9,27 @@ modified: 2021-05-13T16:12:47.773Z
 
 # guide
 
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## 🐍📈 NVIDIA just made Pandas 150x faster with zero code changes
+- https://twitter.com/Sumanth_077/status/1751251621143838914
+  - All you have to add is just a couple of lines of code
+
+```Python
+%load_ext cudf.pandas
+import pandas as pd
+```
+
+- Pandas operates in-memory, as it loads the entire dataset into the local memory of the machine it is running on. This limits its ability to handle large datasets.
+  - With cuDF’s pandas accelerator you can now bring accelerated computing to pandas workflows.
+
+- Also their cuDF library will automatically know if you're running on GPU or CPU and speed up your processing.
 # discuss
+- ## 
+
 - ## 
 
 - ## 

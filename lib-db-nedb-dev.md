@@ -10,9 +10,10 @@ modified: 2022-11-27T19:20:24.273Z
 # guide
 
 - pros
-  - ?
+  - mongo-like api
 
 - cons
+  - 缺少reactive的binding
   - 持久化得到的文本，如何持久化图片
 
 - features

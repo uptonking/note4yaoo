@@ -255,12 +255,12 @@ modified: 2021-01-01T20:11:00.889Z
     - The DuckDuckGo browser uses WebView, the OS-provided rendering engine. In its essence, it's just a UI slapped on to WebView, which is why it's so small. 
     - At the moment, the only WebView options are Chrome and Chromium, so basically, DDG uses Chrome/Chromium.
 
-- https://github.com/samuelmaddock/electron-browser-shell /ts
+- https://github.com/samuelmaddock/electron-browser-shell /GPLv3/202306/ts
   - A minimal, tabbed web browser with support for Chrome extensions—built on Electron.
   - forks
   - https://github.com/fvulich/electron-chrome-extensions
 
-- https://github.com/wexond/browser-base /ts/最近版本v5.2_202102/更新到202201/archived
+- https://github.com/wexond/browser-base /PaidLic/ts/最近版本v5.2_202102/archived
   - Wexond Base is a modern web browser, built on top of modern web technologies such as Electron and React, that can also be used as a framework to create a custom web browser
   - wexond: We've also moved to Chromium as Electron just lacked many important browser features._202111
     - https://twitter.com/sentialx/status/1457867597156917251
@@ -277,12 +277,11 @@ modified: 2021-01-01T20:11:00.889Z
   - [Making a browser using Webkit and Python : browsers](https://www.reddit.com/r/browsers/comments/14u8jf3/making_a_browser_using_webkit_and_python/)
   - QtWebEngine is chromium but significantly easier to maintain. All-in-all, with a tab system and cookies
 
-- https://github.com/Alex313031/beaker-ng /js
+- https://github.com/Alex313031/beaker-ng /MIT/202401/js
   - It is a continued fork of Beaker.
   - Beaker-ng is an experimental peer-to-peer Web browser based on Electron. 
   - It adds new APIs for building hostless applications while remaining compatible with the rest of the Web. 
   - It can use the `dat://` and `hyper://` URL schemes/protocols.
-
 # firefox-gecko
 - https://github.com/Floorp-Projects/Floorp
   - https://floorp.app/

@@ -57,6 +57,10 @@ modified: 2022-11-04T14:22:17.373Z
 - https://github.com/simplifyjs/indexeddb-crud
   - Comparison between native IndexedDB API and using IDB library in operating CRUD workaround
 
+- https://github.com/creasource/reactive-idb /MIT/202109/ts
+  - https://reactive-idb.creasource.dev/
+  - A reactive wrapper to IndexedDB using Rxjs
+
 - https://github.com/normalized-db/data-store /ts/inactive
   - Normalize and persist `JavaScript` objects using `IndexedDB`.
   - JavaScript data stores for IndexedDB-wrapper using normalized data (implemented with TypeScript).

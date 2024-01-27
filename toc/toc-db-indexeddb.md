@@ -69,12 +69,15 @@ modified: 2022-06-03T22:06:16.249Z
     - Full text search module for YDN-DB 
     - build on top of two excellent full text search libraries, [natural](https://github.com/NaturalNode/natural) for stemming, normalization, analyzer and fullproof for tokenization.
 
-- localForage /20.5kStar/Apache2/202108/js/inactive
+- localForage /23.8kStar/apache2/202108/js/inactive
   - https://github.com/localForage/localForage
   - https://localforage.github.io/localForage
   - localForage is a fast and simple storage library for JavaScript. 
-  - localForage improves the offline experience of your web app by using asynchronous storage (IndexedDB or WebSQL) with a simple, localStorage-like API.
-  - localForage uses localStorage in browsers with no IndexedDB or WebSQL support.
+  - localForage improves the offline experience of your web app by using asynchronous storage (IndexedDB or WebSQL) with a simple `localStorage`-like API.
+  - localForage uses `localStorage` in browsers with no IndexedDB or WebSQL support.
+  - You can store any type in localForage; localForage automatically does `JSON.parse()` and `JSON.stringify()` when getting/setting values.
+  - localForage supports storing all native JS objects that can be serialized to JSON, as well as ArrayBuffers, Blobs, and TypedArrays
+  - You can create multiple instances of localForage that point to different stores using `createInstance`.
 - https://github.com/dannyconnell/localbase /202012/js/localforage/inactive
   - A Firebase-Style Database ... Offline!
   - Localbase is built on top of LocalForage.

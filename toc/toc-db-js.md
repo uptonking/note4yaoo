@@ -12,12 +12,13 @@ modified: 2022-11-25T15:50:48.226Z
 - db-features
   - sync/collab/local-first
   - storage-adapter: 支持切换存储层
-  - db for excel
-  - db for markdown
+  - db for excel/markdown
 
 - js-db
-  - popular: lowdb, rxdb, gundb, pouchdb, nedb, dexie, Watermelon, loki, lovefield, tinybase, acebase
-  - examples: tinybase
+  - popular: lowdb, rxdb, gundb, pouchdb, nedb, dexie, watermelon, loki, lovefield, tinybase, acebase
+  - reactive: tinybase, rxdb, dexie, watermelon, vlcn, fireproof
+  - sync: pouchdb, rxdb, watermelon
+  - demos: tinybase, pouchdb
 
 - resources
   - [Offline-First Database Options for Web Applications in 2020](https://joshuatz.com/posts/2020/offline-first-database-options-for-web-applications-in-2020/)
@@ -236,6 +237,7 @@ modified: 2022-11-25T15:50:48.226Z
 
 - realm-js /5kStar/apache2/202211/ts/cpp
   - https://github.com/realm/realm-js
+  - https://www.mongodb.com/developer/products/realm/code-examples/
   - Realm is a mobile database that runs directly inside phones, tablets or wearables. 
   - This project hosts the JavaScript versions of Realm.
   - Currently we support React Native (JSC & Hermes on iOS & Android), Node.js and Electron (on Windows, MacOS and Linux).
@@ -258,7 +260,7 @@ modified: 2022-11-25T15:50:48.226Z
   - https://github.com/SkipLabs/skdb_minimal
     - minimal example using skdb in a browser
 
-- blinkdb /59Star/MIT/202211/ts
+- blinkdb /104Star/MIT/202401/ts
   - https://github.com/blinkdb-js/blinkdb
   - https://blinkdb.io/
   - 依赖sorted-btree
@@ -268,10 +270,12 @@ modified: 2022-11-25T15:50:48.226Z
 
 - alasql /6kStar/MIT/202401/js/bi
   - https://github.com/AlaSQL/alasql
+  - https://alasql.org/
+  - https://github.com/AlaSQL/alasql/wiki/Examples /简单示例及工具
   - an open source SQL database for JavaScript with a strong focus on query speed and data source flexibility for both relational data and schemaless data. 
   - It works in the web browser, Node.js, and mobile apps.
   - Handles both traditional relational tables and nested JSON data (NoSQL). 
-    - Export, store, and import data from localStorage, IndexedDB, or Excel.
+    - We focus on flexibility by making sure you can import/export and query directly on data stored in Excel (both .xls and .xlsx), CSV, JSON, TAB, IndexedDB, LocalStorage, and SQLite files.
   - This library is designed for:
     - Fast in-memory SQL data processing for BI and ERP applications on fat clients
     - Easy ETL and options for persistence by data import / manipulation / export of several formats
@@ -365,20 +369,6 @@ modified: 2022-11-25T15:50:48.226Z
     - Oh I have to expose the ETag header in the CORS config thats improved things to 400ms sometimes but I still have too many preflight requests
     - The sync protocol was designed using object versioning so that the logical names intuitively map to storage names, but then I realised R2, my favourite s3-like doesn't do versions. So now I had to redo it with timestamped suffixes. Total redesign with tricky clock skew defenses
 # db-json
-- lowdb /20.2kStar/MIT/202310/ts/代码少
-  - https://github.com/typicode/lowdb
-  - Simple to use local JSON database.
-  - supports Node, Electron and the browser
-  - adapters: JSONFile/Memory/LocalStorage/TextFile
-    - Change storage, file format (JSON, YAML,XML,remote-storage ...) or add encryption via adapters
-    - An adapter is a simple class that just needs to expose two methods: read/write
-  - Lowdb doesn't support Node's cluster module.
-  - If you have large JavaScript objects (~10-100MB) you may hit some performance issues. 
-    - This is because whenever you call `db.write`, the whole `db.data` is serialized using `JSON.stringify` and written to storage.
-    - If you plan to scale, it's highly recommended to use databases like PostgreSQL or MongoDB instead.
-  - used-by
-    - json-server
-
 - https://github.com/datopian/markdowndb /MIT/202401/ts/sqlite
   - https://markdowndb.com/
   - JS library to turn markdown files into structured queryable database (SQL-based and simple JSON). 
@@ -503,7 +493,16 @@ modified: 2022-11-25T15:50:48.226Z
   - save comes with a fully featured in memory engine which is super handy for testing your models. 
   - https://github.com/serby/save-mongodb
   - https://github.com/serby/save-memory
+
+- https://github.com/live-change/db /202112/js
+  - Database with observable data for live queries
 # rewrite-db
+- https://github.com/plexidev/quick.db /MIT/202310/ts
+  - https://quickdb.js.org/
+  - http://docs.plexidev.org/
+  - provide an easy way for beginners and people of all levels to access & store data in a low to medium volume environment.
+  - All data is stored persistently via either better-sqlite3 or promise-mysql
+
 - https://github.com/ciochetta/learndb /24Star/202101/js/mongodb
   - my first attempt at creating my own database from scratch.
   - I will not be doing a SQL database, instead, I will follow his steps but try to create a document database, like MongoDB

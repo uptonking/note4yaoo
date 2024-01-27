@@ -83,7 +83,13 @@ modified: 2023-10-26T15:03:56.115Z
 
 - ## 
 
-- ## 
+- ## ⚖️ Why aren't @ApacheArrow or Protocol Buffers the universal standard for data formats in Data Engineering and Machine Learning applications?
+- https://twitter.com/Ubunta/status/1750925983710941339
+- There are contexts in which both Apache Arrow, and Protocol Buffers in particular, offer poor performance. This may not matter if your data is small but that isn’t a safe assumption. Using them as default formats carries risk if it makes your platform look slow or inefficient.
+- Same reasons schemas and RPC don’t take over everywhere: tooling that never catches up in quality 
+  - A dynamic and easily discoverable layer that leverages the schema is basically free (in terms of implementation cost) and helps a lot. Services that can negotiate the data format at request time can be both efficient and friendly to standard tools.
+- It's not that DE/ML do not pay attention to the format, it is that AA/PB are not always the best choice, and tooling can be fickle as well (compared to e.g. CSV). PB is sometimes harder to stream compared to other options etc.
+  - [Does Protobuf actually support streaming?](https://www.linkedin.com/pulse/does-protobuf-actually-support-streaming-kent-rosenkoetter/)
 
 - ## Most discussions of row vs columnar layout I see are pretty abstract.
 - https://twitter.com/eatonphil/status/1720453837566197947

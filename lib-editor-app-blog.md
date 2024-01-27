@@ -407,7 +407,7 @@ width = 'this.parent.width - this.marginLeft - this.marginRight'
   - 网络传输会让你的ide跑的慢死 目前的都是本地服务器也就是个跨进程通讯而已
 # editor-non-js
 
-## [kilo: Build Your Own Text Editor](https://viewsourcecode.org/snaptoken/kilo/)
+## ✏️🇨 [kilo: Build Your Own Text Editor](https://viewsourcecode.org/snaptoken/kilo/)
 
 - https://github.com/antirez/kilo /c
   - a small text editor in less than 1K lines of code
@@ -429,7 +429,7 @@ width = 'this.parent.width - this.marginLeft - this.marginRight'
 
 - This is an instruction booklet that shows you how to build a text editor in C.
 
-## [Hecto: Build your own text editor in Rust_201911](https://www.flenker.blog/hecto/)
+## ✏️🦀 [Hecto: Build your own text editor in Rust_201911](https://www.flenker.blog/hecto/)
 
 - This is a series of blog posts that shows you how to build a text editor in Rust. 
   - It’s a re-implementation of kilo in Rust

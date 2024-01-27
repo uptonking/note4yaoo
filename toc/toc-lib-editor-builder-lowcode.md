@@ -352,7 +352,7 @@ modified: 2020-12-28T12:24:09.275Z
   - Jet Admin is a SaaS service that automatically generates extendable back office for your application
   - Jet Bridge is a standalone app which generates REST API thought which your SQL database is connected to Jet Admin.
 
-- https://github.com/openblocks-dev/openblocks /AGPLv3/ts/java
+- https://github.com/openblocks-dev/openblocks /AGPLv3/202303/ts/java/inactive
   - The Open Source Retool Alternative
   - An all-in-one IDE to create internal or customer-facing apps.
   - A place to create, build and share building blocks of web applications.
