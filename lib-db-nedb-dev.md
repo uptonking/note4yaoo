@@ -18,6 +18,9 @@ modified: 2022-11-27T19:20:24.273Z
 
 - features
   - 持久化到磁盘时使用文本文件 ndjson
+
+- alternatives-nedb
+  - minimongo, tingodb, linvodb, nedb-forks
 # lab
 - nedb启动后执行insert/ensureIndex会造成持久化文件中间出现索引行
   - 但每次compact或reload都会压缩持久化文件，都会将索引放在最后，去掉旧的行

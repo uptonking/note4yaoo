@@ -7,25 +7,26 @@ modified: 2020-12-12T19:32:36.255Z
 
 # toc-repos-solutions
 
+# guide
+
 # crawler
-- getsetfetch-extension /202108/ts/inactive
-  - https://github.com/get-set-fetch/extension
-  - https://getsetfetch.org/extension/getting-started.html
-  - open source web scraper available as a cross-browser (chrome, firefox, edge) extension with csv and zip export capabilities.
-  - parses pages and stores relevant data in the builtin browser database (IndexedDB)
-  - Binary data (images, pdf files, …) can be exported as zip archives. Text based data can be exported as csv files.
-
-- https://github.com/get-set-fetch/scraper /ts
-  - a plugin based, nodejs web scraper(刮刀). 
-  - It scrapes, stores and exports data.
-  - At its core, an ordered list of plugins is executed against each to be scraped URL.
-
 - https://github.com/openzim/mwoffliner /GPLv3/ts
   - Mediawiki scraper: all your wiki articles in one highly compressed ZIM file
   - 依赖linux/mac环境、redis、libzim
   - MWoffliner is a tool for making a local offline HTML snapshot of any online MediaWiki instance.
   - It goes through all online articles (or a selection if specified) and create the corresponding ZIM file. 
   - **It has mainly been tested against Wikimedia projects like Wikipedia and Wiktionary** --- but it should also work for any recent MediaWiki.
+
+- https://github.com/get-set-fetch/scraper /ts
+  - a plugin based, nodejs web scraper(刮刀). 
+  - It scrapes, stores and exports data.
+  - At its core, an ordered list of plugins is executed against each to be scraped URL.
+- getsetfetch-extension /202108/ts/inactive
+  - https://github.com/get-set-fetch/extension
+  - https://getsetfetch.org/extension/getting-started.html
+  - open source web scraper available as a cross-browser (chrome, firefox, edge) extension with csv and zip export capabilities.
+  - parses pages and stores relevant data in the builtin browser database (IndexedDB)
+  - Binary data (images, pdf files, …) can be exported as zip archives. Text based data can be exported as csv files.
 
 - https://github.com/webrecorder/browsertrix-crawler /js
   - a simplified (Chrome) browser-based high-fidelity crawling system, designed to run a complex, customizable browser-based crawl in a single Docker container. 
@@ -39,6 +40,10 @@ modified: 2020-12-12T19:32:36.255Z
 
 - https://github.com/yetzt/node-scrapyard /201701/js
   - Scrapyard makes scraping websites easy. I'ts a wrapper for most the things you need, comes with optional caching and retries, and opens as many connections as you like.
+# crawler-examples
+- https://github.com/yangwenmai/github-trending-backup /202401/go
+  - Github trending backup by everyday.
+  - We scrape the github trending page of these languages: Go, Rust, Python, Ruby, C++, C, Java, Shell, Makefile, Swift, Objective-C, Kotlin, Jupyter-Notebook, HTML, JavaScript, TypeScript, CSS, Vue, TeX, Markdown, and push a markdown result everyday.
 # gis
 - https://github.com/lionsoul2014/ip2region
   - 准确率99.9%的离线IP地址定位库，0.0x毫秒级查询

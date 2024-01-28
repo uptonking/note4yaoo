@@ -11,10 +11,28 @@ modified: 2022-12-19T01:59:37.634Z
 
 - resources
   - [2021 Web Worker 现状 - 知乎](https://zhuanlan.zhihu.com/p/393428948)
+# discuss-stars
+- ## 
+
+- ## 
 # discuss
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## Apparently since Node v20 and Chrome v111 it's possible to perfectly* pass a synchronous function to a worker and for that worker to just call it synchronously, thanks to ` SharedArrayBuffer.prototype.grow` .
+- https://twitter.com/fabiospampinato/status/1751590274873077860
+  - Previously this wasn't possible because the worker needs to create a SharedArrayBuffer, pass it to the other thread, and then the other thread writes the result onto the buffer, basically. Problem is you can't pre-allocate a SAB of the right size, now you can grow it though.
+  - Unfortunately there's still the ~problem where it could get into a deadlock situation, where worker A passes a sync function to worker B, and worker B passes a sync function on worker A that depends on the function it received, so both of them can wait on the other part forever.
+
+- grow is nice but not widely available ... Atomics + SAB already make that possible anyway 
+- How do you not need to be able to grow the SAB if you don't know how much space you are going to need to encode the value to return back to the worker?
+  - 2 SAB ... the first one is to ask how many bytes are needed and waited sync to then pass the right SAB to fill with data ... still sync.
+  - With Atomics you can make anything look sync, even multiple Atomics operations batched in a single one.
 
 - ## 🆚️ What's the difference between a Binary Mutex and a Semaphore?
 - https://twitter.com/RaulJuncoV/status/1745817381358747810

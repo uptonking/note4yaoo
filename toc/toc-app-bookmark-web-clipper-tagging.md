@@ -22,14 +22,17 @@ modified: 2022-11-11T11:04:29.007Z
     - notion、github、onenote、joplin
   - https://chrome.google.com/webstore/detail/web-clipper/mhfbofiokmppgdliakminbgdgcmbhbac
 
-- https://github.com/pfcao/abookmark /js
+- https://github.com/pfcao/abookmark /202311/js
+  - https://www.abookmark.org/
   - Advanced bookmark manager comes with labels, sticky notes, and trash mode.
+  - Abookmark uses the native bookmarks as its database and it has some advanced features as labels, sticky notes, and trash mode
   - 基本复刻了chrome bookmark manager的功能
   - 支持list/grid视图
 
 - https://github.com/alyssaxuu/omni
   - The all-in-one tool to supercharge your productivity
-  - With Omni you can use your browser like a pro. Manage tabs, bookmarks, your browser history, perform all sorts of actions and more with a simple command interface.
+  - With Omni you can use your browser like a pro. 
+  - Manage tabs, bookmarks, your browser history, perform all sorts of actions and more with a simple command interface.
 
 - https://github.com/pawelmalak/flame /MIT/202307/ts
   - Flame is self-hosted startpage for your server. inspired (heavily) by SUI.
@@ -104,8 +107,8 @@ modified: 2022-11-11T11:04:29.007Z
 
 - https://github.com/butterops/refer /202105/js/inactive
   - Cross browser web clipper. Takes video notes, screenshots and extract texts or images from supported web br
-# xplat-bookmark
-- https://github.com/itizaworld/webev
+# bookmark
+- https://github.com/itizaworld/webev /202303/ts/archived
   - https://github.com/itizaworld/webev-server
   - https://www.youtube.com/watch?v=EmxXCfOtgMU
   - bookmark manager that improves the organization of information.
@@ -122,7 +125,7 @@ modified: 2022-11-11T11:04:29.007Z
   - Auto-capture a screenshot and PDF from each website.
   - Set multiple tags to each link.
 
-- https://github.com/ndom91/briefkasten /MIT/js/prisma/样式友好
+- https://github.com/ndom91/briefkasten /MIT/202401/js/prisma/样式友好
   - Self-hosted bookmarking application. 
   - Works with any Prisma compatible database 
   - 依赖prisma、NextAuth.js
@@ -150,12 +153,29 @@ modified: 2022-11-11T11:04:29.007Z
   - Mobile: React-Native
   - Link sharing, discovery, managing, observing link groups or users
 
-- https://github.com/floccusaddon/floccus
+- https://github.com/floccusaddon/floccus /MPLv2/202401/ts/js/vue
+  - https://floccus.org/
   - Sync your bookmarks privately across browsers and devices
   - Syncs your real, native browser bookmarks directly
   - Sync via Nextcloud Bookmarks, Google Drive or any WebDAV-compatible service
   - Install the floccus Android app to access your bookmarks on your phone
   - (eventual) consistency is more important than intention preservation
+
+- https://github.com/linkwarden/linkwarden /AGPLv3/202401/ts
+  - https://linkwarden.app/
+  - Self-hosted collaborative bookmark manager to collect, organize, and preserve webpages and articles.
+  - 依赖headlessui、zustand、@mozilla/readability、prisma、nextjs、next-auth
+  - Linkwarden also saves a copy of each webpage as a Screenshot and PDF
+  - designed with collaboration in mind, sharing links with the public and/or allowing multiple users to work together
+
+- https://github.com/ArchiveBox/ArchiveBox /MIT/202401/python
+  - https://archivebox.io/
+  - self-hosted internet archiving solution to collect, save, and view websites offline.
+  - Use ArchiveBox as a command-line package and/or self-hosted web app on Linux, macOS, or in Docker.
+  - It saves snapshots of the URLs you feed it in several redundant formats.
+  - It uses normal filesystem folders to organize archives (no complicated proprietary formats), and offers a CLI + web UI.
+- https://github.com/kanishka-linux/reminiscence /AGPLv3/202401/python/js
+  - Self-hosted Bookmark and Archive manager
 
 - https://github.com/bdTechies/book-manager /201901/js
   - https://book-manager.bdtechies.com/
@@ -171,7 +191,7 @@ modified: 2022-11-11T11:04:29.007Z
   - frontend uses with Angular and Angular CLI.
   - backend uses ExpressJS with MongoDB and Keycloak. OpenAPI
 
-- https://github.com/go-shiori/shiori /go/js
+- https://github.com/go-shiori/shiori /MIT/202312/go/js
   - bookmark manager built with Go
   - Intended as a simple clone of Pocket. 
   - You can use it as a command line application or as a web application. 
@@ -182,7 +202,7 @@ modified: 2022-11-11T11:04:29.007Z
 - https://github.com/helloxz/onenav
   - 使用PHP + SQLite 3开发的书签管理系统，将浏览器书签集中式管理，做到一处部署，随处访问。
 
-- https://github.com/poulainv/tottem
+- https://github.com/poulainv/tottem /202005/ts/inactive
   - Bookmark manager on steroid built with React / NextJs / Apollo Tools / Prisma 2
 
 - https://github.com/nextcloud/bookmarks
@@ -236,7 +256,7 @@ modified: 2022-11-11T11:04:29.007Z
 - https://github.com/JQuinzell/react-bookmarker
   - bookmarking browser extension implemented in react.
 
-- https://github.com/deweyapp/dewey /inactive
+- https://github.com/deweyapp/dewey /201603/js/inactive
   - a Chrome app for tagging, searching and sorting your Chrome bookmarks.
 # tag
 - https://github.com/FelipeCortez/bmarks /django2
@@ -244,11 +264,19 @@ modified: 2022-11-11T11:04:29.007Z
   - Tag-based bookmark manager inspired by delicious and Pinboard
   - Import bookmarks saved in the Netscape format
 
-- https://github.com/tagspaces/tagspaces
+- https://github.com/tagspaces/tagspaces /AGPLv3/202401/ts
+  - https://www.tagspaces.org/
   - an offline, open source, document manager with tagging support
   - no backend, no login, file manager, organizer and browser
-  - It helps you organize your files, photos and other documents with tags
-  - The application is available for Windows, Linux, Mac OS and Android. 
+  - available for Windows, Linux, Mac OS and Android. 
+  - provide a web clipper extension for Firefox, Edge and Chrome
+  - supports two ways for tagging files. The default one embeds the tags directly in the name of the file, the other one uses a so called sidecar files for persisting the tags.
+  - has integrated basic media player functionalities.
+  - does not require an internet connection and any kind of online registration or service provider.
+  - Note Taking - you can create and edit notes in plain text, markdown and html file formats
+  - [Unable to use local folder on Self hosted Web version _202311](https://github.com/tagspaces/tagspaces/issues/2000)
+    - The web version support location pointing to object storage (AWS S3, minio, S3proxy, Wasabi, R2) only
+    - Yes it is technical, TagSpaces is a front-end application, which can connect to S3 back ends. For you use case you can use S3Proxy to expose a shared folder for example on a NAS and connect it with TagSpaces as S3 location.
 
 - https://github.com/sintaxi/node-redis-tag
   - implement a tagging system into any node application.
@@ -291,7 +319,7 @@ modified: 2022-11-11T11:04:29.007Z
 
 - ## 
 
-- ## Tag 可以让内容分类有更高的自由度，但也很容易膨胀到冗余甚至失控，
+- ## Tag可以让内容分类有更高的自由度，但也很容易膨胀到冗余甚至失控，
 - https://twitter.com/houjoe1/status/1732608680305254613
   - 不过，感觉 AI 的上帝视角可以在未来解决这个问题，帮助用户发现不用的 Tag、重复的 Tag、有更好的命名建议的 Tag，减少 Distraction
   - 比如系统自动根据首字母将tag分类

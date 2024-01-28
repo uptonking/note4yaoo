@@ -15,16 +15,11 @@ modified: 2022-12-11T22:38:34.694Z
 - [Comparison of embedded NoSQL databases that can be emedded in a Node.js - Electron app](https://gist.github.com/blahah/2fbc6b3b2e2cb44281247c88ddd84f03)
 
 - 参考sqlite是如何解决并发读写的问题的
-# discuss
+# discuss-not-yet
 - ## 
 
-- ## 
-
-- ## 
-
-- ## [Confusing about option upsert when update](https://github.com/louischatriot/nedb/issues/495)
-- db.insert will generate unique _id for each item, but when use db.update with upsert option, all _id is the same, So, next time when you open database file, only one record will left. 
-  - 👉🏻 each update request is added a new line with an identical id, when the database is reloaded, it will purge itself by removing all old arrays (Keeping the last one). This is done for performance reasons.
+- ## [Can NeDB communicate with a remote server?_201806](https://github.com/louischatriot/nedb/issues/560)
+- There is no existing connectivity in place to communicate off the machine/browser. If you're looking for that, I would suggest looking into MongoDB or maybe PouchDB.
 
 - ## [Listen to database changes](https://github.com/louischatriot/nedb/issues/175)
 - You could manually couple your database operations with custom events, e.g.:
@@ -38,6 +33,22 @@ db.insert([{ a: 5 }, { b: 42 }], function(err, newDocs) {
 - here is my idea for such an API, loosely based on Meteor's `Mongo.Cursor#observe` callbacks... because I really hate the PouchDB API for it. 
 
 - [Inserted, updated and removed events](https://github.com/louischatriot/nedb/pull/156)
+
+- 👤 author: my point of view here is that I do like events and the pubsub pattern, and I understand why some people would want that. 
+  - That said I do not think this should be part of nedb, which is why I have decided against implementing it. 
+  - The main reason is that the usecase for events are very application-specific, so any implementation will be necessarily a pain to use in most usecases. This is best kept at application level.
+# discuss
+- ## 
+
+- ## 
+
+- ## [Have any ORM support nedb? ](https://github.com/louischatriot/nedb/issues/43)
+- waterline (orm) can use adityamukho/sails-nedb
+- camo was made for nedb compatible with mongodb
+
+- ## [Confusing about option upsert when update](https://github.com/louischatriot/nedb/issues/495)
+- db.insert will generate unique _id for each item, but when use db.update with upsert option, all _id is the same, So, next time when you open database file, only one record will left. 
+  - 👉🏻 each update request is added a new line with an identical id, when the database is reloaded, it will purge itself by removing all old arrays (Keeping the last one). This is done for performance reasons.
 
 - ## [Case insensitive sorting?](https://github.com/louischatriot/nedb/issues/580)
 - i just ran into this need as well--i think a sort callback would be a great way to solve this 
@@ -113,7 +124,9 @@ db.insert([{ a: 5 }, { b: 42 }], function(err, newDocs) {
 - i learned from experience (and confirmed from nedb's author) that multiple nedb instances (running in separate processes) on a single file will corrupt that file.
   - in your password example, if u have a unique constraint for "username" or "email", it will get violated by race-conditions from the multiple nedb instances, @ which point nedb will refuse to load the file and crash
 
-- ## [foundryvtt: Database architecture upgrades](https://github.com/foundryvtt/foundryvtt/issues/5065)
+- ## 🆚️ [foundryvtt: Database architecture upgrades _202105](https://github.com/foundryvtt/foundryvtt/issues/5065)
+
+- Migrate the technology used for data persistence from NEDB to LevelDB
 
 ### NeDB
 

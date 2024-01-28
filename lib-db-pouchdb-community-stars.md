@@ -12,7 +12,7 @@ modified: 2023-12-06T15:59:01.332Z
 # discuss-stars
 - ## 
 
-- ## 🔁 Another question: how would you implement "undo" using RxDB? 
+- ## 🔁 how would you implement "undo" using RxDB? 
 - https://discord.com/channels/969553741705539624/1148193932744867890
   - E.g. a user performs an action which triggers query/queries. Then they click an "undo" button, which should revert the changes from those queries
 - I do not think this is rxdb specific. The thing is that between the original action and the undo, another user might have updated the documents.
@@ -62,20 +62,25 @@ modified: 2023-12-06T15:59:01.332Z
 
 - It seems like this space is very fragmented
 
-- ## 🆚️ [Comparison: PouchDB vs. NeDB_201507](https://github.com/pouchdb/pouchdb/issues/4031)
-- I dont have experience with NeDB so only making a comparison by reading the README, but from a brief look it looks like the main differences are PouchDB does synchronisation between the server and the browser, and that PouchDB was designed with the browser in mind. 
+- ## 🆚️ [PouchDB vs. NeDB _201507](https://github.com/pouchdb/pouchdb/issues/4031)
+- I dont have experience with NeDB so only making a comparison by reading the README, but from a brief look it looks like the main differences are PouchDB does synchronisation between the server and the browser, and that PouchDB was designed with the browser in mind. NeDB looks like it has a slightly more featureful querying than pouchdb-find
 
-- **PouchDB will definitely have overhead compared to the other databases, because it stores everything in a "revision" model where the history of every document is preserved**. (Think of it as git vs just overwriting files.) Hence it tends to have overhead, even for gets/puts.
+- 🐛 **PouchDB will definitely have overhead compared to the other databases, because it stores everything in a "revision" model where the history of every document is preserved**. (Think of it as git vs just overwriting files.) Hence it tends to have overhead, even for gets/puts.
 
 - Personally, NeDB has become my go-to for most projects. The sole exception I've, thus far, had was an app that had 2.4 million rows of data. NeDB worked, but it created significant lag so I switched to SQLite and made calls to a backend handler for DB interaction.
   - I considered PouchDB, and it definitely looks like a better alternative for very large datasets ... but I think I'd still go with SQLite in those cases. For most things, according to the benchmarks posted by @user8614, NeDB appears to perform as well or better.
+
+- ## 🆚️ [pouchdb vs realm _201609](https://news.ycombinator.com/item?id=12589426)
+- Here are the top 3 things Realm adds in my opinion: great client-side performance, native models that are extremely easy to use, and conflict-free sync (not conflict resolution!).
+
 - I work on PouchDB, in terms of those points:
   - "great client-side performance": PouchDB is more than fast enough for most use cases, its just a wrapper over indexedDB. (there are areas we can improve, particularly performance of map reduce / mango queries).
   - "native models that are extremely easy to use": Not sure what that means, PouchDB and CouchDB use json, its native and easy to use in JavaScript
-  - "conflict-free sync (not conflict resolution!)": Certainly going to have to take a look at this, any conflict free sync protocol I have seen put a lot of limitations on how data within your application is structured but conflict resolution certainly is something that can be improved within Pouch / Couch.
+  - "conflict-free sync (not conflict resolution!)": Certainly going to have to take a look at this, any conflict free sync protocol I have seen put a lot of limitations on how data within your application is structured but conflict resolution certainly is something that can be improved within Pouch/Couch.
   - I do think there is a bunch we can (and are) improving in PouchDB and its great to see alternatives, will be looking into this further now. But I certainly do not agree that (C|P)ouchDB are not suited for mobile <-> web sync, thats the primary use case I work on Pouch for.
-- In general, I tend to be skeptical of systems that hinge(依赖；装上铰链) on last-write-wins, but LWW is definitely a model that works in a lot of cases where you're not too concerned about the possibility of losing data, and it's also a simpler mental model for the app developer.
-- 👉🏻 Realms approach to conflict resolution is very different from what you see in products like Couch.
+- For "conflict-free sync, " according to the docs, realm appears to be last-write-wins along with a special case for deletes.(Incidentally Couch/Pouch also has a special case for deletes, but it does the opposite behavior by default – deletions lose to updates.)
+  - In general, I tend to be skeptical of systems that hinge(依赖；装上铰链) on last-write-wins, but LWW is definitely a model that works in a lot of cases where you're not too concerned about the possibility of losing data, and it's also a simpler mental model for the app developer.
+- 🔀 Realms approach to conflict resolution is very different from what you see in products like Couch.
   - Realm is an _object_ database, so in contrast to document databases where conflict resolution happens very coarse grained at the document level, in Realm it happens at the object level (and actually all the way down into individual properties).
   - This essentially means that the entire object graph is treated as one big CRDT, transparently handling conflict across individual objects, properties and relations.
   - When talking about ordering by time, both in the context of LWW and insertions in lists, we are talking about **vector clock time**, not necessarily device time (or though that is taken into account as well).

@@ -246,9 +246,14 @@ modified: 2023-01-09T11:04:13.958Z
 - https://github.com/CotalkerPartners/mongo-xlsx
   - convert excel spreadsheets into/from MongoDB data. (MongoDB data -> Array of JSONs)
 
-- https://github.com/ngudbhav/TriCo-electron-app /js
+- https://github.com/ngudbhav/TriCo-electron-app /MIT/202301/js/inactive
+  - https://www.producthunt.com/posts/trico
   - This App Converts your correctly formatted Excel Spreadsheet to a specified table/collection in specified Database in MYSQL/MongoDB.
   - Dump your excel/csv sheet into your preferred your DB.
+  - Batch Files support
+  - You can also try selecting a range of columns and rows.
+  - History Maintainance.
+  - 依赖mongoose、nedb、excel-to-mongodb、excel-to-mongodb
 
 - https://github.com/RyanXu-jn/excel2db /java
   - 实现excel导入数据库的一个web项目

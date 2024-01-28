@@ -110,7 +110,7 @@ modified: 2021-08-30T18:56:09.644Z
   - Minimalistic ODM for Node.js implementing the most fundamental operations (such as GET/SET/DEL) on different kinds of "document(-ish)" stores using one unified API. Switching database should be a matter of changing a line of code.
   - To stick to this philosophy more advanced operations won't be supported in core, but node-document can be used along with any 3rd-party drivers.
 
-- https://github.com/balderdashy/waterline /202208/js/sails/inactive
+- https://github.com/balderdashy/waterline /5.4kStar/MIT/202211/js/sails/inactive
   - An adapter-based ORM for Node.js with support for mysql, mongo, postgres, mssql (SQL Server), and more
   - Waterline is a next-generation storage and retrieval engine, and the default ORM used in the Sails framework.
 

@@ -151,10 +151,12 @@ modified: 2021-10-29T15:02:28.882Z
 
 - ## 
 
-- ## Youtube 这样的平台，到现在还没有自己的视频编辑器， 而 Tiktok 孵化的 Capcut 已经有着超过十亿的用户。
+- ## 🎬 Youtube 这样的平台，到现在还没有自己的视频编辑器， 而 Tiktok 孵化的 Capcut 已经有着超过十亿的用户。
 - https://twitter.com/JourneymanChina/status/1751139260806447237
   - 这真的只是因为国内平台更卷，更喜欢做 All in One 和矩阵；
   - 还是字节比油管更明白垂直整合的威力？
+
+- youtube 最近搞了个youtube create
 
 - 丰田就是垂直整合的资深玩家
 

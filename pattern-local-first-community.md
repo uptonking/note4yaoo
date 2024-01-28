@@ -61,6 +61,16 @@ modified: 2023-09-13T20:24:41.516Z
 - Most apps we use nowadays are cloud-first apps which mostly become useless when:
   - there is no stable internet connection
   - the service is offline or discontinued (h/t Google)
+# discuss-pm
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 不要用导出微信读书笔记之类的浏览器插件, 可能会被判定为爬虫违规抓取内容，会封号的。最近看到几个封号的分享了。
+- https://twitter.com/plusyip/status/1751450228656582752
+
 # discuss
 - ## 
 

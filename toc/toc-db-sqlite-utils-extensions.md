@@ -107,6 +107,10 @@ modified: 2022-11-04T14:20:37.172Z
 - https://github.com/thombashi/sqlitebiter /202203/python
   - a CLI tool to convert CSV / Excel / HTML / JSON / Jupyter Notebook / LDJSON / LTSV / Markdown / SQLite / SSV / TSV / Google-Sheets to a SQLite database file.
 # search
+- https://github.com/haxtra/liquery /MIT/202304/js/NoDeps/inactive
+  - Powerful search, tagging, filtering and sorting via simple text query language, for SQLite databases.
+  - Tags and search terms are technically the same thing, the difference is semantic and depends on what you put in your search field, data, metadata, or both.
+
 - https://github.com/kbumsik/blogsearch /202007/ts
   - a pure client-side, full-text search engine for static websites, powered by SQLite compiled to WebAssembly.
   - The search engine basically is SQLite with the FTS5 extension, compiled to WebAssembly. 

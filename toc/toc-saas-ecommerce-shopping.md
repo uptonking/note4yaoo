@@ -235,10 +235,9 @@ modified: 2023-06-07T14:19:18.719Z
   - aims to provide developers with access to a wide range of free resources and tools that they can use in their work.
   - contribute by creating a PULL REQUEST 
 
-- https://github.com/electron/apps /MIT/202310/js
+- https://github.com/electron/apps /MIT/202310/js/无详情页
   - https://www.electronjs.org/apps
   - A collection of apps built on Electron
-  - 没有详情页
 
 - https://github.com/expojs/made-with-react /202001/js/过于简单
   - https://madewithreact.com/
@@ -263,7 +262,7 @@ modified: 2023-06-07T14:19:18.719Z
   - https://madewithwebassembly.com/
   - A showcase of awesome production applications, side projects, and use cases made with WebAssembly 
 
-- https://github.com/2KAbhishek/projects /GPLv3/202310/js
+- https://github.com/2KAbhishek/projects /GPLv3/202310/js/无详情页
   - https://2kabhishek.github.io/projects
   - Showcase All Your Projects
 

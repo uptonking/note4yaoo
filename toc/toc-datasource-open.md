@@ -29,9 +29,7 @@ modified: 2020-11-11T13:22:28.098Z
 # gis
 - ArcGIS Open Data
   - https://hub.arcgis.com/search
-# organization
-- 北京大学开放研究数据平台
-  - http://opendata.pku.edu.cn/
+# more
 
 - OECD Data
   - https://data.oecd.org/

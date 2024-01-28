@@ -15,6 +15,7 @@ modified: 2023-08-29T10:11:26.348Z
 
 - cons
   - 体积会越来越大
+  - rename文件名需要检测
 
 - features
   - git并不记录每一个操作的change，而是一次commit的所有changes

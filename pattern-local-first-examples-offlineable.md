@@ -291,6 +291,13 @@ modified: 2023-11-17T10:12:06.357Z
 - https://github.com/aerogear/offix /archived
   - GraphQL Offline Client and Server
   - NOTE: GraphQL ecosystem evolved since creation of offix. If you are planning to start new project with offline support please consider react-query
+
+- https://github.com/ArchiveBox/ArchiveBox /MIT/202401/python
+  - https://archivebox.io/
+  - self-hosted internet archiving solution to collect, save, and view websites offline.
+  - Use ArchiveBox as a command-line package and/or self-hosted web app on Linux, macOS, or in Docker.
+  - It saves snapshots of the URLs you feed it in several redundant formats.
+  - It uses normal filesystem folders to organize archives (no complicated proprietary formats), and offers a CLI + web UI.
 # sync/collab
 - https://github.com/YousefED/Matrix-CRDT
   - Use Matrix as a backend for local-first applications with the Matrix-CRDT Yjs provider.

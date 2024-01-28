@@ -1,0 +1,68 @@
+---
+title: lib-office-joplin-examples
+tags: [examples, joplin, note-taking, toc]
+created: 2024-01-28T21:36:57.066Z
+modified: 2024-01-28T21:37:15.191Z
+---
+
+# lib-office-joplin-examples
+
+# guide
+
+# popular
+- joplin /31.9kStar/MIT > AGPLv3/202209/ts/web需付费+pc+mobile
+  - https://github.com/laurent22/joplin
+  - https://joplinapp.org/
+  - note taking and to-do application with synchronization capabilities for Windows, macOS, Linux, Android and iOS
+  - 依赖react-redux、sqlite3、@electron/remote、electron-window-state、async-mutex、tinymce.v5【GPL】、codemirror.v5、immer、mark.js、moment、re-resizable、styled-components
+  - 服务端依赖koa、knex、markdown-it、mustache、sqlite3
+  - [Switch license to AGPL-3.0_20221221](https://joplinapp.org/news/20221221-agpl/)
+    - [最后的MIT版本 v2.9.17/v2.10.2](https://github.com/laurent22/joplin/releases/tag/v2.9.17), v2.10.3为AGPL
+  - https://github.com/laurent22/joplin/commits/dev/packages/server?after=07ee20a0ff13fff779617beb39a79d5ba19fbc3c+769
+    - server最后一个MIT在 v20210510_0b67446
+  - [Why is there no web UI for Joplin?](https://www.reddit.com/r/joplinapp/comments/xjp9zh/why_is_there_no_web_ui_for_joplin/)
+    - 不支持web
+    - Joplin server has no ability to view/edit notes from the server with a web client.
+    - https://github.com/joplin-vieweb/joplin-vieweb
+  - forks
+  - https://github.com/ken1kob/joplin /202212
+    - A branch of Joplin: quick-slim-note
+    - Joplin 2.9.17+quick-slim-note 
+  - https://github.com/genneko/joplin
+    - run Joplin on FreeBSD with this fork
+  - https://github.com/sdip15fa/joplin /202309
+  - https://github.com/XilinJia/Xilinota /202401
+    - a fork from Joplin v2.13.4.
+
+- https://github.com/joplin/plugins
+  - This is the official Joplin Plugin Repository. 
+  - It is updated every 30 minutes on the hour and half-hour.
+
+- https://github.com/ylc395/joplin-plugin-pages-publisher /202208/ts/vue
+  - A Joplin plugin to generate static blog website from picked notes, and publish it as Github Pages
+
+- https://github.com/ThibaultJanBeyer/joplin-sheets /202201/ts/inactive
+  - Plugin to write excel like spreadsheets in Joplin like a pro
+
+- https://github.com/rxliuli/joplin-utils /MIT/202312/ts
+  - https://joplin-utils.rxliuli.com/
+  - joplin-blog: export blog/wiki from Joplin as data source
+  - joplin-search-integration: Integrate joplin notes search results in Google/Bing/Baidu search
+  - joplin-api: api wrapper for Joplin for web/nodejs, and the basis for the above results
+
+- https://github.com/joplin/plugin-templates /MIT/202311/ts
+  - This plugin allows you to create templates in Joplin and use them to create new notes and to-dos.
+# examples
+
+# plugins
+
+- https://github.com/ylc395/joplin-plugin-note-link-system /202211/ts
+  - A complete Link System for Joplin. Referrer(aka. backlink), Quick Link, Copy Anchor, Hover To Preview, and much more feature
+  - [Plugin: Note Link System - Plugins - Joplin Forum _202111](https://discourse.joplinapp.org/t/plugin-note-link-system/21768)
+
+- https://github.com/treymo/joplin-link-graph /MIT/202204/ts/inactive
+  - plugin provides a UI for viewing all links between Joplin notes.
+# utils
+- https://github.com/pansinm/joplin-server-plantuml /MIT/202207/js
+  - render plantuml diagram in share page
+# more

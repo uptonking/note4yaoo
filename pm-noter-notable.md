@@ -21,6 +21,7 @@ modified: 2023-11-28T14:48:45.910Z
   - mobile-app-generator
   - local-first data storage with optional syncing
     - 兼容git的commits
+  - markdown: hotkeys, table-builder
   - office viewer
   - github修改文档要提pr很繁琐; 可协作的workspace可直接改或用审阅修订模式
 

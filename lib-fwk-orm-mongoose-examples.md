@@ -117,6 +117,10 @@ modified: 2023-02-05T18:50:53.563Z
 - https://github.com/victorteokw/seedgoose
   - Mongoose data seeding with smart id references tracking.
 
+- https://github.com/bridge-codes/bridge-mongo /202303/ts
+  - a typed framework built on top of Mongoose
+  - It provides a type-safe approach to querying MongoDB databases that makes it almost impossible to write poorly constructed queries, all while using the same syntax as Mongoose.
+
 - https://github.com/Svjard/nepata /ts
   - A rapid report framework around MongoDB allowing for the generation of materialized views in MongoDB against collections without an in-depth understanding of Mongo queries.
 - https://github.com/ilinieja/node-mongoose-materialized-views-example /ts

@@ -130,6 +130,10 @@ modified: 2022-11-03T04:14:00.563Z
   - UeberDB does bulk writing ergo reduces the overhead of database transactions.
   - Reads are cached and writes are done in a bulk. This can be turned off.
   - 支持 couchdb/Mongo/Elasticsearch/MySQL/pg/sqlite/redis
+
+- https://github.com/huan/flash-store /apache2/202203/ts/inactive
+  - FlashStore is Key-Value persistent storage with easy to use ES6 Map-like API(both Async and Sync support), powered by LevelDB and TypeScript.
+  - Supported Backend: LevelDB,LevelDB,SnapDB,RocksDB
 # leveldb-like
 - https://github.com/Level/bench
   - Benchmark `abstract-level` databases. 

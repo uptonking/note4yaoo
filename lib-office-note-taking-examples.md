@@ -1,16 +1,19 @@
 ---
-title: lib-editor-app-note-taking-examples
-tags: [app, cross-platform, examples, note-taking, toc]
+title: lib-office-note-taking-examples
+tags: [app, cross-platform, note-taking, office, toc]
 created: 2020-10-22T09:55:31.796Z
-modified: 2023-02-05T18:05:44.122Z
+modified: 2024-01-28T20:53:23.690Z
 ---
 
-# lib-editor-app-note-taking-examples
+# lib-office-note-taking-examples
 
 # guide
-- note-taking solutions
-  - web first
-  - offline first
+- note-solutions
+  - web-first: TiddlyWiki
+  - pc-first: joplin
+  - interactive: jupyter, observablehq
+  - ide: vscode-with-ext
+  - offline-first
 
 - 开发桌面版和vscode扩展的区别
 # popular
@@ -26,6 +29,29 @@ modified: 2023-02-05T18:05:44.122Z
   - https://github.com/TiddlyWiki/TiddlyWiki
     - the Classic version (2.x.x) of TiddlyWiki
 
+- joplin /31.9kStar/MIT > AGPLv3/202209/ts/web需付费+pc+mobile
+  - https://github.com/laurent22/joplin
+  - https://joplinapp.org/
+  - note taking and to-do application with synchronization capabilities for Windows, macOS, Linux, Android and iOS
+  - 依赖react-redux、sqlite3、@electron/remote、electron-window-state、async-mutex、tinymce.v5【GPL】、codemirror.v5、immer、mark.js、moment、re-resizable、styled-components
+  - [Switch license to AGPL-3.0_20221221](https://joplinapp.org/news/20221221-agpl/)
+    - [最后的MIT版本 v2.9.17/v2.10.2](https://github.com/laurent22/joplin/releases/tag/v2.9.17), v2.10.3为AGPL
+  - [Why is there no web UI for Joplin?](https://www.reddit.com/r/joplinapp/comments/xjp9zh/why_is_there_no_web_ui_for_joplin/)
+    - 不支持web
+    - Joplin server has no ability to view/edit notes from the server with a web client.
+    - https://github.com/joplin-vieweb/joplin-vieweb
+
+- Standard Notes /3.6kStar/AGPLv3/202208/ts
+  - https://github.com/standardnotes/app
+  - https://standardnotes.com/
+  - an end-to-end encrypted note-taking app
+  - An all-in-one personal knowledge base
+  - 提供了多种编辑器，包括代码、markdown
+  - markdown-visual-editor基于milkdown，社区还有很多编辑器
+    - Standard Notes publishes the source code for its web, desktop, and mobile apps as well as its syncing server and extensions under AGPLv3
+  - https://github.com/standardnotes/server
+    - 后端依赖express
+
 - notesnook /2.8kStar/GPLv3/202209/js+ts/tiptap
   - https://github.com/streetwriters/notesnook
   - https://notesnook.com/
@@ -38,16 +64,30 @@ modified: 2023-02-05T18:05:44.122Z
   - [Allow for 3rd party syncing](https://github.com/streetwriters/notesnook/issues/168)
     - 202306: 3rd party syncing is out of scope for Notesnook. We will add support for self hosting but that's it.
 
-- Standard Notes /3.6kStar/AGPLv3/202208/ts
-  - https://github.com/standardnotes/app
-  - https://standardnotes.com/
-  - an end-to-end encrypted note-taking app
-  - An all-in-one personal knowledge base
-  - 提供了多种编辑器，包括代码、markdown
-  - markdown-visual-editor基于milkdown，社区还有很多编辑器
-    - Standard Notes publishes the source code for its web, desktop, and mobile apps as well as its syncing server and extensions under AGPLv3
-  - https://github.com/standardnotes/server
-    - 后端依赖express
+- https://github.com/tagspaces/tagspaces /AGPLv3/202401/ts
+  - https://www.tagspaces.org/
+  - an offline, open source, document manager with tagging support
+  - no backend, no login, file manager, organizer and browser
+  - available for Windows, Linux, Mac OS and Android. 
+  - provide a web clipper extension for Firefox, Edge and Chrome
+  - supports two ways for tagging files. The default one embeds the tags directly in the name of the file, the other one uses a so called sidecar files for persisting the tags.
+  - has integrated basic media player functionalities.
+  - does not require an internet connection and any kind of online registration or service provider.
+  - Note Taking - you can create and edit notes in plain text, markdown and html file formats
+  - [Unable to use local folder on Self hosted Web version _202311](https://github.com/tagspaces/tagspaces/issues/2000)
+    - The web version support location pointing to object storage (AWS S3, minio, S3proxy, Wasabi, R2) only
+    - Yes it is technical, TagSpaces is a front-end application, which can connect to S3 back ends. For you use case you can use S3Proxy to expose a shared folder for example on a NAS and connect it with TagSpaces as S3 location.
+
+- trilium /17.1kStar/AGPLv3/202208/js/ckeditor5/支持多端
+  - https://github.com/zadam/trilium
+  - https://github.com/zadam/trilium/wiki/
+  - 依赖electron、express、jsdom、turndown、ckeditor.v5、codemirror5、jsplumb、fancytree、bootstrap
+  - a hierarchical note taking application with focus on building large personal knowledge bases. 
+  - Synchronization with self-hosted sync server
+  - Trilium is provided as either desktop application (Linux and Windows) or web application hosted on your server (Linux). 
+    - Mac OS desktop build is available, but it is unsupported.
+    - If you want to install Trilium on server,currently only recent Chrome and Firefox are supported (tested) browsers.
+  - [Notion like database](https://github.com/zadam/trilium/issues/822)
 
 - notable /16.4kStar/MIT > AGPLv3/202007/ts/桌面版
   - https://github.com/notable/notable
@@ -83,7 +123,6 @@ modified: 2023-02-05T18:05:44.122Z
   - 依赖solid-js、remark13、prosemirror、electron-window-state、remark
   - 参考了prosemirror、zettlr、vscode、notable
     - Thanks to Fabio Spampinato for releasing the source to an early version Notable!
-
 - https://github.com/vicjohnson1213/Medley /GPL/202007/inactive
   - 依赖angular7、hightlight.js、marked、monaco-editor、rxjs、subsink、zone.js
   - A tag-based note taking app using Markdown for formatting.
@@ -109,16 +148,6 @@ modified: 2023-02-05T18:05:44.122Z
   - 支持用户编写自己的插件来拓展编辑器的功能。
   - 加密文件的加密解密操作均在前端完成，请务必牢记自己的密码。一旦密码丢失，只能暴力破解了。
 
-- joplin /31.9kStar/MIT > AGPLv3/202209/ts/web需付费+pc+mobile
-  - https://github.com/laurent22/joplin
-  - https://joplinapp.org/
-  - note taking and to-do application with synchronization capabilities for Windows, macOS, Linux, Android and iOS
-  - [Switch license to AGPL-3.0_202212](https://joplinapp.org/news/20221221-agpl/)
-  - [Why is there no web UI for Joplin?](https://www.reddit.com/r/joplinapp/comments/xjp9zh/why_is_there_no_web_ui_for_joplin/)
-    - 不支持web
-    - Joplin server has no ability to view/edit notes from the server with a web client.
-    - https://github.com/joplin-vieweb/joplin-vieweb
-
 - BoostNote /3.1kStar/GPLv3/202209/ts/inactive
   - https://github.com/BoostIO/BoostNote-App
   - https://boostnote.io/
@@ -126,7 +155,7 @@ modified: 2023-02-05T18:05:44.122Z
   - [v0.9.0_202008](https://github.com/BoostIO/BoostNote-App/pull/595)
     - Implement converting pouchdb based storage to file system based storage
 
-- Serenity Notes /不支持web
+- Serenity Notes /AGPLv3/202401/不支持web
   - https://github.com/SerenityNotes/Serenity
     - End-to-end encrypted collaborative notes
     - [Why is there no web client on the roadmap?](https://www.serenity.re/en/notes/support)
@@ -157,16 +186,16 @@ modified: 2023-02-05T18:05:44.122Z
   - Hidden within the code is an alternate version that contain a Node/Express server and integration with GitHub.
   - 👉🏻 What you see is what you paste. No WYSIWIG, no formatting pasted from the web, and no features you don't need or want. 
 
-- trilium /17.1kStar/AGPLv3/202208/js/ckeditor5/支持多端
-  - https://github.com/zadam/trilium
-  - https://github.com/zadam/trilium/wiki/
-  - 依赖electron、express、jsdom、turndown、ckeditor.v5、codemirror5、jsplumb、fancytree、bootstrap
-  - a hierarchical note taking application with focus on building large personal knowledge bases. 
-  - Synchronization with self-hosted sync server
-  - Trilium is provided as either desktop application (Linux and Windows) or web application hosted on your server (Linux). 
-    - Mac OS desktop build is available, but it is unsupported.
-    - If you want to install Trilium on server,currently only recent Chrome and Firefox are supported (tested) browsers.
-  - [Notion like database](https://github.com/zadam/trilium/issues/822)
+- https://github.com/0xGG/crossnote-app /AGPLv3/202111/ts/inactive
+  - https://crossnote.app/
+  - markdown notes reader & editor Progressive Web Application that works offline and supports syncing with arbitrary git repository right inside your browser.
+  - 依赖isomorphic-git、material-ui.v4、automerge.v0.14、codemirror.v5、d3.v6、graphql、pouchdb、minisearch、tesseract、peerjs
+
+- https://github.com/quillpad/quillpad /GPLv3/202401/kotlin
+  - https://quillpad.github.io/
+  - a fork of an original app called Quillnote.
+  - Take beautiful markdown notes whenever you feel inspired. Place them in notebooks and tag them accordingly. 
+  - Stay organized by making task lists, set reminders and keep everything in one place by attaching related files.
 
 - vnote /7.5kStar/MIT/202009/cpp
   - https://github.com/vnotex/vnote
@@ -427,6 +456,10 @@ modified: 2023-02-05T18:05:44.122Z
     - 📝 Everything about note management. All in Zotero.
     - a plugin for Zotero.
     - Keep in sync with your Markdown files. Two-way, automatically
+  - [Zotero 6 | Hacker News _202203](https://news.ycombinator.com/item?id=30714121)
+    - Zotero has a novel build system where instead of using XULRunner, which is no longer available, the build scripts download a release version of Firefox and then replace the browser-specific modules and other assets with Zotero's bundle.
+  - [Zotero: Free, easy-to-use tool to collect, organize, cite, and share research | Hacker News _202201](https://news.ycombinator.com/item?id=29774097)
+    - Zotero is a plug-in for the Firefox Web browser
 
 - https://github.com/dvanoni/notero /MIT/202401/ts
   - a Zotero plugin for syncing items and notes into Notion. 
@@ -452,11 +485,6 @@ modified: 2023-02-05T18:05:44.122Z
 - https://github.com/codex-team/codex.notes
   - /79Star/MIT/202009/js
   - crossplatform desktop notes application based on Electron and Editor.js
-
-- https://github.com/0xGG/crossnote
-  - /404Star/AGPLv3/202009/ts
-  - markdown notes reader & editor Progressive Web Application that works offline and supports syncing with arbitrary git repository right inside your browser
-  - https://github.com/0xGG/vscode-crossnote
 
 - codimd /8kStar/AGPLv3/202401/js
   - https://github.com/hackmdio/codimd

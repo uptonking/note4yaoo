@@ -12,7 +12,14 @@ modified: 2023-08-29T10:13:31.070Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 🆚️ Git Merge vs. Rebase vs. Squash Commit
+- https://twitter.com/alexxubyte/status/1751645221602152881
+  - 示意图
+- 𝐆𝐢𝐭 𝐌𝐞𝐫𝐠𝐞 This creates a new commit G’ in the main branch. G’ ties the histories of both main and feature branches.
+  - Git merge is 𝐧𝐨𝐧-𝐝𝐞𝐬𝐭𝐫𝐮𝐜𝐭𝐢𝐯𝐞. Neither the main nor the feature branch is changed. 
+- Git rebase moves the feature branch histories to the head of the main branch. It creates new commits E’, F’, and G’ for each commit in the feature branch. 
+  - The benefit of rebase is that it has 𝐥𝐢𝐧𝐞𝐚𝐫 𝐜𝐨𝐦𝐦𝐢𝐭 𝐡𝐢𝐬𝐭𝐨𝐫𝐲. 
+  - Rebase can be dangerous if “the golden rule of git rebase” is not followed. 
 
 - ## [what's the difference between a DAG and a tree, specifically with regards to Git?](https://stackoverflow.com/questions/26395521/dag-vs-tree-using-git)
 - The difference between them is that nodes in a DAG can have multiple parents. The most common case of this in Git is when you do a merge. A merge commit will have all of the commits that were merged as parents. 

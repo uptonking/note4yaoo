@@ -64,7 +64,9 @@ modified: 2023-12-24T10:49:01.941Z
 
 - ## 
 
-- ## 
+- ## Inside Fireproof’s 2-layer encrypted Merkle CRDT
+- https://twitter.com/FireproofStorge/status/1751337496670273734
+  - [Remote-Access CRDT-Wrapped Multi-Writer-Enabled Immutable File Format _202312](https://fireproof.storage/posts/remote-access-crdt-wrapped-multi-writer-enabled-immutable-file-format/)
 
 - ## Question: this server file for the Netlify connection ends up being deployed to Deno just to map cars to Netlify's blob store?
 - https://discord.com/channels/1142273421674303619/1142273422131466282/1197618903505973348

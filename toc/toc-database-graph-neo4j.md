@@ -35,12 +35,18 @@ modified: 2022-11-03T04:49:42.587Z
   - You can use it inside your node.js application or in any IndexedDB-powered Browser.
   - LevelGraph loosely follows the Hexastore approach, uses six indices for every triple
 
-- https://github.com/fortunejs/fortune /202108/js
+- https://github.com/fortunejs/fortune /MIT/202108/js/inactive
+  - https://fortune.js.org/
   - non-native graph database abstraction layer that implements graph-like features on the application-level for Node.js and web browsers. 
   - It provides a common interface for databases, as well as relationships, inverse updates, referential integrity, which are built upon assumptions in the data model.
-  - By default, the data is persisted in memory (and IndexedDB for the browser). There are adapters for databases such as MongoDB, Postgres, and NeDB.
+  - By default, the data is persisted in memory (and IndexedDB for the browser). There are adapters for databases such as MongoDB, Postgres, and `NeDB`.
   - No object-relational mapping (ORM) or active record pattern, just plain data objects.
   - No coupling with network protocol, handle requests from anywhere.
+  - Sharing the same data models on the server and client.
+  - Additional features such as networking (HTTP, WebSocket), database adapters, serialization formats are listed in the plugins 
+  - Fortune.js implements its own wire protocol based on WebSocket and MessagePack, which is useful for soft real-time applications.
+  - Adapter interface, use any database that can implement an adapter.
+  - No object-relational mapping (ORM) or active record pattern, just plain data objects.
 
 - https://github.com/usegraffy/graffy /apache2/202310/js
   - https://graffy.org/

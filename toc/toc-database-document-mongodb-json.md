@@ -171,6 +171,11 @@ modified: 2022-11-03T04:14:11.987Z
   - in memory reactive database with a MongoDB like query syntax.
   - reactive: You can subscribe/unsubscribe to any collection, so if documents are created, updated, or removed, you'll be notified.
   - reactive-db-js is not performance optimised. It's goal is to provide an easy way to store and query with a notification mecanism. It may be slow with lots of datas stored
+
+- https://github.com/kanryu/puremongo /201401/ts
+  - a pure JavaScript clone for MongoDB
+  - API is similar to at https://github.com/mongodb/node-mongodb-native .
+  - You can run the DB on node.js, on Common.js, even on web browsers.
 # db-document-json
 - https://github.com/Alex-Werner/SBTree /MIT/202310/js
   - https://alex-werner.github.io/SBTree/
@@ -351,6 +356,14 @@ modified: 2022-11-03T04:14:11.987Z
   - Supports views
   - Supports simple filtering
   - Total.js framework uses NoSQL embedded database
+
+- https://github.com/zelaxo/lazlodb /apache2/201902/js
+  - http://lazlo.yenvo.io/
+  - a portable, compact & serverless NoSql database built using Node JS & MessagePack
+  - Data is stored in .laz files in MessagePack encoded form. As MessagePack is smaller than JSON, it takes less space & hence the files are compact.
+  - Each .laz file represents a document (or a table in sql).
+  - All documents exist in a database, which is essentially a folder being tracked by lazlo.
+  - https://github.com/zelaxo/lazlo-node
 
 - https://github.com/finalclass/finaldb /201402/js
   - Database system using streams and file system. NoSql way

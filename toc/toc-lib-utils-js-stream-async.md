@@ -217,6 +217,24 @@ modified: 2023-04-04T22:36:31.529Z
 - https://github.com/popeindustries/lit /js
   - Fast server-rendering and client-hydration of lit-html templates and web components
 # queue
+- https://github.com/taskforcesh/bullmq /4.8kStar/MIT/202401/ts
+  - https://bullmq.io/
+  - reliable, Redis-based distributed queue for Node.
+  - It is backed by Redis, which makes it easy to scale horizontally and process jobs across multiple servers.
+  - BullMQ is a rewrite of the popular Bull library by the same authors, but with a new API and a more modern codebase written in Typescript and with a bunch of new features and performance improvements.
+- https://github.com/OptimalBits/bull /14.8kStar/MIT/202401/js
+  - reliable, Redis-based queue for Node.
+  - Carefully written for rock solid stability and atomicity.
+  - Bull is currently in maintenance mode, we are only fixing bugs. For new features check BullMQ
+
+- https://github.com/agenda/agenda /9.2kStar/MIT/202208/ts/inactive
+  - http://agendajs.com/
+  - Lightweight job scheduling for Node.js
+  - Scheduling with configurable priority, concurrency, repeating and persistence of job results.
+  - Event backed job queue that you can hook into.
+  - Mongo backed persistence layer.
+  - Agenda-rest: optional standalone REST API.
+
 - https://github.com/hajnalben/embedded-queue /MIT/202311/ts
   - embedded-queue is job/message queue for any platform. 
   - It does not required any other repository for storing data, like Redis, MySQL, and so on.
