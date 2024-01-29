@@ -11,7 +11,7 @@ modified: 2023-11-17T10:27:12.776Z
 
 # blogs-flux
 
-## 🕹️ [Flux In-Depth Overview](https://facebookarchive.github.io/flux/docs/in-depth-overview/)
+## 🧩 [Flux In-Depth Overview](https://facebookarchive.github.io/flux/docs/in-depth-overview/)
 
 ```
               <----- Action  <-----
@@ -102,7 +102,7 @@ Action -> Dispatcher -> Store -> View
 - The action's creation may be wrapped into a semantic helper method
 - Actions may also come from other places, such as the server. This happens, for example, during data initialization
 
-## 🕹️ [Fluxxor - What is Flux? flux vs mvc](http://fluxxor.com/what-is-flux.html)
+## 🧩 [Fluxxor - What is Flux? flux vs mvc](http://fluxxor.com/what-is-flux.html)
 
 - To best describe flux, we will compare it to one of the leading client-side architectures: MVC
 - In a client-side MVC application, a user interaction triggers code in a controller. 

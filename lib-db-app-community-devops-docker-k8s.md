@@ -18,7 +18,17 @@ modified: 2023-12-07T09:33:17.608Z
 # discuss
 - ## 
 
-- ## 
+- ## 🆚️ Docker vs. containerd vs. Podman
+- https://twitter.com/iximiuz/status/1751674025191875064
+  - Docker relies on `containerd` , a lower-level container runtime, to run its containers. It is possible to use containerd from the command line directly, but the UX might be quite rough at times.
+  - contaiNERD CTL ( `nerdctl` ) to the rescue!
+- If you want to:
+  - Explore the capabilities of containerd
+  - Learn more about the internals of Linux containers 
+  - Better understand the difference between containerd and Docker
+  - Launch a container using containerd's default CLI - `ctr` .
+- While both docker(d) and containerd are daemons, containers can actually be launched as regular Linux processes and then left unattended.
+  - That's pretty much how `Podman` does it.
 
 - ## 🤼🏻 [没错，数据库确实应该放入 K8s 里！_20231207](https://mp.weixin.qq.com/s/rpyNczx0AD_iseMMLioVjw)
 

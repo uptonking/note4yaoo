@@ -15,6 +15,9 @@ modified: 2022-06-03T21:34:54.893Z
   - 支持导入通用格式 markdown/csv
   - 偏代码的格式可考虑 rdf/json-ld
 
+- pkm-patterns
+  - memex, xanadu, bulletjournal, zettelkasten
+
 - resources
   - search: knowledge-base/workspace/wiki/Personal Information Manager (PIM)
   - self-contained, in the browser
@@ -161,7 +164,7 @@ modified: 2022-06-03T21:34:54.893Z
   - 前端依赖: LayUI、JQuery、vditor、luckysheet.v2
   - 功能特性: 文档资源管理、书写编辑、阅读分享、站点管理
 
-- notabase /434Star/AGPLv3/202208/ts/仅网页版/supabase
+- notabase /434Star/AGPLv3/202312/ts/仅网页版/supabase
   - https://github.com/churichard/notabase
   - https://notabase.io/
   - A personal knowledge base for networked thinking.
@@ -343,6 +346,16 @@ modified: 2022-06-03T21:34:54.893Z
   - Monotome has support for the common `[[wiki]]` syntax, 
   - Subjects are ordered into a simple directory structure which is mirrored by index.json.
 
+- silverbullet /1.5kStar/MIT/202401/ts
+  - https://github.com/silverbulletmd/silverbullet
+  - https://silverbullet.md/
+  - SilverBullet is an extensible, open source personal knowledge platform. 
+  - implemented as an open-source offline-capable web application.
+  - At its core it’s a clean markdown-based writing/note taking application that stores your pages (notes) as plain markdown files in a folder referred to as a space. 
+  - While SB uses a database for indexing and caching some indexes, all of that can be rebuilt from its markdown source at any time. 
+  - extensible with plugs, and you can customize it
+  - [Silver Bullet: Markdown-based extensible open source personal knowledge platform | Hacker News_202212](https://news.ycombinator.com/item?id=33843009)
+
 - helpkb /8Star/MIT/202209/js
   - https://github.com/mrvautin/helpkb
   - https://docs.helpkb.org/
@@ -439,18 +452,19 @@ modified: 2022-06-03T21:34:54.893Z
   - Powered by the Hypermedia protocol 自定义协议, 
   - Mintter supports the new Hypermedia Web Protocol. This open protocol supports secure identities, version control, semantic documents, multimedia, and groups/organizations.
 # vscode-powered
-- foam /12.5kStar/MIT/202208/ts/vscode
+- foam /14.6kStar/MIT/202401/ts
   - https://github.com/foambubble/foam
-  - https://foambubble.github.io/foam/
-  - Foam is a personal knowledge management and sharing system inspired by Roam Research, built on Visual Studio Code and GitHub.
-  - core基于remark
+  - https://foambubble.github.io/
+  - personal knowledge management and sharing system inspired by Roam Research, built on Visual Studio Code and GitHub.
+  - [Add support for VSCodium](https://github.com/foambubble/foam/issues/26)
+    - Foam is officially published to OpenVSX as of 0.7.5_202012
 
 - memo /613Star/MIT/202208/ts/vscode
   - https://github.com/svsool/memo
   - Markdown knowledge base with bidirectional [[link]]s built on top of VSCode
   - Inspired by Obsidian.md and RoamResearch.
 
-- dendron /4.3kStar/AGPLv3/202208/ts/vscode
+- dendron /6.2kStar/AGPLv3 > apache2/202308/ts/vscode/inactive
   - https://github.com/dendronhq/dendron
   - https://wiki.dendron.so/
   - local-first, markdown-based, note-taking tool built on top of VSCode. 
@@ -469,15 +483,6 @@ modified: 2022-06-03T21:34:54.893Z
   - 无需服务端开发，只需支持http静态访问网页空间
   - 自动更新文库导航目录，支持多级目录
   - 无需服务端的全文库内容搜索与计分排序
-
-- https://github.com/silverbulletmd/silverbullet /MIT/ts
-  - https://silverbullet.md/
-  - SilverBullet is an extensible, open source personal knowledge platform. 
-  - implemented as an offline-first PWA
-  - At its core it’s a clean markdown-based writing/note taking application that stores your pages (notes) as plain markdown files in a folder referred to as a space. 
-  - While SB uses a database for indexing and caching some indexes, all of that can be rebuilt from its markdown source at any time. 
-  - extensible with plugs, and you can customize it
-  - [Silver Bullet: Markdown-based extensible open source personal knowledge platform | Hacker News_202212](https://news.ycombinator.com/item?id=33843009)
 # kb-search
 - https://github.com/coderabbit214/document-ai
   - go基于向量数据库与GPT3.5的通用本地知识库方案

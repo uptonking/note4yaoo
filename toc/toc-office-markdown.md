@@ -10,10 +10,12 @@ modified: 2021-01-04T17:26:25.032Z
 # guide
 
 # popular
-- https://github.com/marktext/marktext /42.5kStar/MIT/202308/js/vue
+- marktext /42.5kStar/MIT/202308/js/vue
+  - https://github.com/marktext/marktext
   - https://www.marktext.cc/
   - simple and elegant markdown editor, available for Linux, macOS and Windows.
   - MarkText uses virtual DOM to render pages
+  - 依赖electron-store、codemirror.v5、dragula、vue2、vuex、element-ui.v2、snabbdom
 
 - https://github.com/Harry-Hopkinson/markdown-editor
   - A markdown editor written in Typescript.
@@ -24,13 +26,16 @@ modified: 2021-01-04T17:26:25.032Z
   - It features a clean mathematical typesetting, chemical equation rendering, code blocks highlighting and writing statistics 
   - 依赖codemirror6、@uiw/react-codemirror、electron
 
-- https://github.com/foambubble/foam
-  - /7.3kStar/MIT/202010/ts
-  - Foam is a personal knowledge management and sharing system built on VSCode and GitHub.
+- https://github.com/foambubble/foam /14.6kStar/MIT/202401/ts
+  - https://foambubble.github.io/
+  - personal knowledge management and sharing system inspired by Roam Research, built on Visual Studio Code and GitHub.
+  - [Add support for VSCodium](https://github.com/foambubble/foam/issues/26)
+    - Foam is officially published to OpenVSX as of 0.7.5_202012
+
 - https://github.com/atom-community/markdown-preview-plus
   - a fork of Markdown Preview that provides a real-time preview of markdown documents.
 
-- markdoc /5.8kStar/MIT/202211/ts/inactive
+- markdoc /6.8kStar/MIT/202312/ts/inactive
   - https://github.com/markdoc/markdoc
   - https://markdoc.dev/
   - Markdoc is a Markdown-based syntax and toolchain for creating custom documentation sites and experiences.
@@ -141,13 +146,15 @@ modified: 2021-01-04T17:26:25.032Z
 - https://github.com/plantain-00/markdown_to_pdf
   - A CLI tool to convert a markdown to a pdf file.
 
-- https://github.com/silverbulletmd/silverbullet /ts
+- silverbullet /1.5kStar/MIT/202401/ts
+  - https://github.com/silverbulletmd/silverbullet
   - https://silverbullet.md/
   - SilverBullet is an extensible, open source personal knowledge platform. 
-  - implemented as an offline-first PWA
+  - implemented as an open-source offline-capable web application.
   - At its core it’s a clean markdown-based writing/note taking application that stores your pages (notes) as plain markdown files in a folder referred to as a space. 
   - While SB uses a database for indexing and caching some indexes, all of that can be rebuilt from its markdown source at any time. 
   - extensible with plugs, and you can customize it
+  - [Silver Bullet: Markdown-based extensible open source personal knowledge platform | Hacker News_202212](https://news.ycombinator.com/item?id=33843009)
 # apps
 - https://github.com/motifland/markprompt
   - Markprompt is a platform for building GPT-powered prompts. 
@@ -155,6 +162,10 @@ modified: 2021-01-04T17:26:25.032Z
 
 - https://github.com/rhiokim/haroopad /201606/js
   - Haroopad is a markdown enabled document processor for creating web-friendly documents.
+
+- https://github.com/amitmerchant1990/electron-markdownify /923Star/MIT/202111/js/inactive
+  - minimal Markdown Editor desktop app built on top of Electron.
+  - Sync Scrolling
 # more-md
 - https://github.com/mgmeyers/obsidian-kanban /GPLv3/202309/ts
   - https://publish.obsidian.md/kanban/

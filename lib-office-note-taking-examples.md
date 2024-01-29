@@ -8,20 +8,28 @@ modified: 2024-01-28T20:53:23.690Z
 # lib-office-note-taking-examples
 
 # guide
+
+- web版 vs 桌面版 vs vscode扩展版
+  - 现有插件生态、编辑器切换
+
+- files-first vs database-first
+  - 若要实现web版产品，files-first的抽象在数据访问和查询时会很不方便
+
 - note-solutions
   - web-first: TiddlyWiki
-  - pc-first: joplin
-  - interactive: jupyter, observablehq
+  - database-first: joplin, trilium, siyuan
+  - files-first: notable, marktext, zettlr, typora, obsidian
   - ide: vscode-with-ext
-  - offline-first
-
-- 开发桌面版和vscode扩展的区别
+  - interactive: jupyter, observablehq
+  - offline-first: typora
+  - 其他产品参考: pdf标注、电子书epub
 # popular
 - TiddlyWiki5 /7.5kStar/BSD/202311/js
   - https://github.com/Jermolene/TiddlyWiki5
   - https://tiddlywiki.com/
   - https://tiddlywiki.com/dev/ Developer documentation
   - A self-contained JavaScript wiki for the browser, Node.js, AWS Lambda etc.
+  - 笔记数据基本内存，需要导出
   - a non-linear personal web notebook that anyone can use and keep forever
   - It can be used as a single HTML file in the browser or as a powerful Node.js application. 
   - Except of a micro-kernel written in JavaScript the whole application consist of a own data-structure called tiddlers and a own markup language called wikiText. 
@@ -29,11 +37,12 @@ modified: 2024-01-28T20:53:23.690Z
   - https://github.com/TiddlyWiki/TiddlyWiki
     - the Classic version (2.x.x) of TiddlyWiki
 
-- joplin /31.9kStar/MIT > AGPLv3/202209/ts/web需付费+pc+mobile
+- joplin /31.9kStar/MIT > AGPLv3/202212/ts/web需付费+pc+mobile
   - https://github.com/laurent22/joplin
   - https://joplinapp.org/
   - note taking and to-do application with synchronization capabilities for Windows, macOS, Linux, Android and iOS
   - 依赖react-redux、sqlite3、@electron/remote、electron-window-state、async-mutex、tinymce.v5【GPL】、codemirror.v5、immer、mark.js、moment、re-resizable、styled-components
+  - 笔记数据基于sqlite，可批量导出md
   - [Switch license to AGPL-3.0_20221221](https://joplinapp.org/news/20221221-agpl/)
     - [最后的MIT版本 v2.9.17/v2.10.2](https://github.com/laurent22/joplin/releases/tag/v2.9.17), v2.10.3为AGPL
   - [Why is there no web UI for Joplin?](https://www.reddit.com/r/joplinapp/comments/xjp9zh/why_is_there_no_web_ui_for_joplin/)
@@ -41,18 +50,19 @@ modified: 2024-01-28T20:53:23.690Z
     - Joplin server has no ability to view/edit notes from the server with a web client.
     - https://github.com/joplin-vieweb/joplin-vieweb
 
-- Standard Notes /3.6kStar/AGPLv3/202208/ts
+- StandardNotes /4.7kStar/AGPLv3/202401/ts
   - https://github.com/standardnotes/app
   - https://standardnotes.com/
   - an end-to-end encrypted note-taking app
   - An all-in-one personal knowledge base
+  - 笔记数据支持sqlite/mysql
   - 提供了多种编辑器，包括代码、markdown
   - markdown-visual-editor基于milkdown，社区还有很多编辑器
     - Standard Notes publishes the source code for its web, desktop, and mobile apps as well as its syncing server and extensions under AGPLv3
   - https://github.com/standardnotes/server
     - 后端依赖express
 
-- notesnook /2.8kStar/GPLv3/202209/js+ts/tiptap
+- notesnook /7.9kStar/GPLv3/202401/js+ts/tiptap
   - https://github.com/streetwriters/notesnook
   - https://notesnook.com/
   - open source & end-to-end encrypted note taking alternative to Evernote.
@@ -64,30 +74,32 @@ modified: 2024-01-28T20:53:23.690Z
   - [Allow for 3rd party syncing](https://github.com/streetwriters/notesnook/issues/168)
     - 202306: 3rd party syncing is out of scope for Notesnook. We will add support for self hosting but that's it.
 
-- https://github.com/tagspaces/tagspaces /AGPLv3/202401/ts
-  - https://www.tagspaces.org/
-  - an offline, open source, document manager with tagging support
-  - no backend, no login, file manager, organizer and browser
-  - available for Windows, Linux, Mac OS and Android. 
-  - provide a web clipper extension for Firefox, Edge and Chrome
-  - supports two ways for tagging files. The default one embeds the tags directly in the name of the file, the other one uses a so called sidecar files for persisting the tags.
-  - has integrated basic media player functionalities.
-  - does not require an internet connection and any kind of online registration or service provider.
-  - Note Taking - you can create and edit notes in plain text, markdown and html file formats
-  - [Unable to use local folder on Self hosted Web version _202311](https://github.com/tagspaces/tagspaces/issues/2000)
-    - The web version support location pointing to object storage (AWS S3, minio, S3proxy, Wasabi, R2) only
-    - Yes it is technical, TagSpaces is a front-end application, which can connect to S3 back ends. For you use case you can use S3Proxy to expose a shared folder for example on a NAS and connect it with TagSpaces as S3 location.
-
-- trilium /17.1kStar/AGPLv3/202208/js/ckeditor5/支持多端
+- trilium /17.1kStar/AGPLv3/202208/js/ckeditor5/支持PC+web
   - https://github.com/zadam/trilium
   - https://github.com/zadam/trilium/wiki/
-  - 依赖electron、express、jsdom、turndown、ckeditor.v5、codemirror5、jsplumb、fancytree、bootstrap
   - a hierarchical note taking application with focus on building large personal knowledge bases. 
+  - 依赖electron、express、jsdom、turndown、ckeditor.v5、codemirror5、jsplumb、fancytree、bootstrap
+  - 笔记数据基于sqlite
   - Synchronization with self-hosted sync server
   - Trilium is provided as either desktop application (Linux and Windows) or web application hosted on your server (Linux). 
     - Mac OS desktop build is available, but it is unsupported.
     - If you want to install Trilium on server,currently only recent Chrome and Firefox are supported (tested) browsers.
   - [Notion like database](https://github.com/zadam/trilium/issues/822)
+  - [tag system suggest](https://github.com/zadam/trilium/issues/760)
+  - [Use interwiki like links to facilitate a long-term proof way to link to file based files _202005](https://github.com/zadam/trilium/issues/1015)
+    - I keep thinking about some reasonable ways to integrate with the file system as well - my ideal solution would be to sort of "mount" some directory into trilium 
+    - This gets complicated with possible filename conflicts, the fact Trilium also supports versioning etc. In the end it would also create a mess - directory full of files which would need to at least contain some UUID. The benefits compared to just storing them in SQLite get smaller
+
+- simplenote /4.6kStar/GPLv2/202201/ts/inactive
+  - https://github.com/Automattic/simplenote-electron
+  - https://simplenote.com/
+  - Simplenote for Web, Windows, and Linux
+  - import notes from Simplenote(.json) exports, Evernote(.enex) export, Plain text files(.txt)
+  - node-simperium for Simperium syncing. 服务端未开源
+  - Simplenote API features such as sharing and publishing will not work with development
+  - https://github.com/Automattic/simplenote-android
+  - https://github.com/Automattic/simplenote-ios
+  - [iOS, Android, and macOS Apps Now Open Source _201608](https://simplenote.com/2016/08/11/ios-android-and-macos-apps-now-open-source/)
 
 - notable /16.4kStar/MIT > AGPLv3/202007/ts/桌面版
   - https://github.com/notable/notable
@@ -98,10 +110,16 @@ modified: 2024-01-28T20:53:23.690Z
   - license
     - `<= v1.3.0` : MIT, 20190131
     - `<= v1.5.1` : AGPLv3, 20190514
-    - `>= v1.6.0` : Not open-source
+    - `>= v1.6.0` : Not Open, 最后一个开源版v1.7.3_201908附带的源码是 v1.5.1
   - [product comparison: notable, bear, boostnote, evernote, joplin, keep, notion](https://notable.app/static/images/comparison.png)
+  - [Show HN: Notable – A Markdown-based note-taking app that doesn't suck | Hacker News_201812](https://news.ycombinator.com/item?id=18765482)
+- https://github.com/redsolver/noteless /MIT/202106/dart
+  - markdown-based note-taking app for Android
+  - Compatible with notes saved in Notable
 - https://github.com/lmihalkovic/notable /MIT
   - https://github.com/Eastonboy99/notable /v1.3
+  - add RxJS to the dependencies
+  - remove CodeMirror and replace it with monaco
 - https://github.com/dps/notable /MIT
   - fork of notable adding built in Google Drive sync, an omnibox and immersive first UI
 - https://github.com/DevTomek-pl/Search-Text-Plugin-for-Notable
@@ -112,8 +130,8 @@ modified: 2024-01-28T20:53:23.690Z
 - https://github.com/fabiospampinato/electron-about
   - Simple standalone about window for Electron.
 - notable-agpl
+  - https://github.com/nicholasbailey/freenotable /1commit
   - https://github.com/Maxwin-z/notable
-  - https://github.com/nicholasbailey/freenotable
   - https://github.com/benrbray/noteworthy
 
 - noteworthy /166Star/AGPLv3/202207/ts/桌面版
@@ -128,7 +146,7 @@ modified: 2024-01-28T20:53:23.690Z
   - A tag-based note taking app using Markdown for formatting.
   - I drew some design inspiration (specifically the tag-based organization) from Notable
 
-- siyuan /6.6kStar/AGPLv3/202208/ts/go/支持协作
+- siyuan /14.3kStar/AGPLv3/202401/ts/go/支持协作
   - https://github.com/siyuan-note/siyuan
   - https://b3log.org/siyuan/
   - a local-first personal knowledge management system
@@ -138,7 +156,64 @@ modified: 2024-01-28T20:53:23.690Z
   - SiYuan is made possible by the Vditor and Lute(golang)
   - 用户自己创建的笔记本文件夹下，.sy 后缀的文件用于保存文档数据，数据格式为JSON
 
-- yn /3.6kStar/AGPLv3/202208/ts/vue/网页版+桌面版
+- marktext /42.5kStar/MIT/202203/js/vue/inactive
+  - https://github.com/marktext/marktext
+  - https://www.marktext.cc/
+  - simple and elegant markdown editor, available for Linux, macOS and Windows.
+  - MarkText uses virtual DOM to render pages
+  - 依赖electron-store、codemirror.v5、dragula、vue2、vuex、element-ui.v2、snabbdom
+  - 不支持添加tag
+  - 🆚️ [MarkText + Zettlr _201907](https://github.com/marktext/marktext/issues/1130)
+    - Zettlr knowledge management features are what sets it apart from Mark Text
+      - Files can have identifiers (the default is a timestamp, but the user can define a custom format using regexp).
+      - Zettlr has a syntax to easily type links to other files [[fileId]]. 
+      - Support for tags: Zettlr recognizes the typical syntax for hashtags #tag.
+    - Mark Text is really just a markdown editor. It will not add the features of note taking, such as tags, metadata, etc. 
+  - issues-not-yet
+    - [Manage Tags](https://github.com/marktext/marktext/issues/641)
+      - Mark Text is a pure markdown editor, there is no storage function, and no notebook function is added
+    - [What do you want to do with plugins?](https://github.com/marktext/marktext/issues/375)
+      - 现有parser代码仍有扩展上的困难，希望以marked为原型，以插件方式实现每个标记，让每个标记实现rule,renderer
+      - marktext 在编辑器内部的渲染不是依赖 marked的，是通过snabbdom 来进行渲染的，所以其是marked 只是提供了block 的解析（不包含inline语法）以及输出markdown 时候会用到（包含block 和 inline 语法）。
+    - [Document is modified when opened/Markdown formatting_202006](https://github.com/marktext/marktext/issues/2189)
+    - [Mark Text performance improvement](https://github.com/marktext/marktext/issues/511)
+  - forks
+  - https://github.com/jacobwhall/marktext /202401
+    - fork of marktext, seeking to modernize our favorite markdown editor
+    - Add .mdx extension support
+  - https://github.com/mostrub/marktext /202401
+  - https://github.com/renerocksai/marktext /202312
+  - https://github.com/pencilheart/marktext /202310
+  - https://github.com/jgwill/warktext /202311
+    - customizable markdown editor, designed for easy distribution across multiple platforms
+  - https://github.com/bigshans/marktext /202204
+    - 支持了中文，并且修改了主题。
+- https://github.com/topabomb/marktext-specialedition /MIT/202302/js
+  - marktext0.17.1分叉的中文特别版
+  - 增加 Mermaid mindmap的支持
+  - 类似于vscode工作区，打开不同的目录可以应用不同的设置
+- https://github.com/625781186/marktext2web /201906/js
+  - try to make it into a web editor
+
+- Zettlr /9.3kStar/GPLv3/202401/ts/vue/偏学术
+  - https://github.com/Zettlr/Zettlr
+  - https://www.zettlr.com/
+  - https://docs.zettlr.com/
+  - Your One-Stop Publication Workbench
+  - 依赖electron-forge、codemirror.v6、@lezer/highlight、d3.v7、katex、remark-math、vue3、vuex4、pinia
+  - exports with Pandoc, LaTeX, and Textbundle
+  - support LaTeX and Word template
+  - Citations made easy: Tight and ever-growing integration with your favourite reference manager (Zotero, JabRef, and many others)
+  - Support for state of the art knowledge management techniques (Zettelkasten)
+
+- https://github.com/mb21/panwriter /GPLv3/202310/ts
+  - https://panwriter.com/
+  - 分屏显示源码和预览
+  - a distraction-free markdown editor with two unique features
+  - Tight integration with pandoc for import/export to/from plenty of file formats (including HTML, docx, LaTeX and EPUB).
+  - Preview pane that can show pages – including page breaks etc. Layout adjustments are immediately reflected in the preview.
+
+- yn /3.6kStar/AGPLv3/202401/ts/vue/网页版+桌面版
   - https://github.com/purocean/yn
   - https://yank-note.vercel.app/
   - 一款面向程序员的Markdown笔记应用
@@ -171,22 +246,31 @@ modified: 2024-01-28T20:53:23.690Z
     - architecture to relay end-to-end encrypted CRDTs over a central service.
     - It was created out of the need to have an end-to-end encrypted protocol to allow data synchronization/fetching incl.
 
+- takenote /2.8kStar/MIT/202108/ts/inactive
+  - https://github.com/taniarascia/takenote
+  - https://takenote.dev/app
+  - A free, open-source notes app for the web
+  - 依赖react-beautiful-dnd、react-router、@reduxjs/toolkit、redux-saga、react-markdown、axios、codemirror、express、jszip
+  - 笔记数据可选local或github
+  - The notes are persisted temporarily in `localStorage`, but you can download all notes in markdown format as a zip.
+  - Hidden within the code is an alternate version that contain a Node/Express server and integration with GitHub.
+  - 👉🏻 What you see is what you paste. No WYSIWYG, no formatting pasted from the web, and no features you don't need or want. 
+
 - https://github.com/bytemakers/Noteslify /GPL/202211/js
   - A Notes Taking Web App Built With Simplicity.
   - Your Privacy Friendly, Open Source. Alternative to EverNote.
   - 编辑器是简单textarea
   - ui界面和后台功能基本实现
 
-- takenote /2.8kStar/MIT/202108/ts/inactive/数据可选local或github
-  - https://github.com/taniarascia/takenote
-  - https://takenote.dev/app
-  - 依赖react-beautiful-dnd、react-router、@reduxjs/toolkit、redux-saga、react-markdown、axios、codemirror、express、jszip
-  - A free, open-source notes app for the web
-  - The notes are persisted temporarily in local storage, but you can download all notes in markdown format as a zip.
-  - Hidden within the code is an alternate version that contain a Node/Express server and integration with GitHub.
-  - 👉🏻 What you see is what you paste. No WYSIWIG, no formatting pasted from the web, and no features you don't need or want. 
+- bear-plus /5Star/ISC/202008/js/ejs
+  - https://github.com/yk9331/bear-plus
+  - https://bear-plus.yenchenkuo.com/@bear-plus/features
+  - A web-based writing application with real-time collaboration and Markdown syntax support for crafting and sharing notes. 
+  - Inspired by Bear note and HackMD.
+  - 依赖codemirror.v5、express、markdown-it、sequelize、express、multer
+  - Group and find note easily with hashtag and full text search. 
 
-- https://github.com/0xGG/crossnote-app /AGPLv3/202111/ts/inactive
+- https://github.com/0xGG/crossnote-app /1kStar/AGPLv3/202111/ts/inactive
   - https://crossnote.app/
   - markdown notes reader & editor Progressive Web Application that works offline and supports syncing with arbitrary git repository right inside your browser.
   - 依赖isomorphic-git、material-ui.v4、automerge.v0.14、codemirror.v5、d3.v6、graphql、pouchdb、minisearch、tesseract、peerjs
@@ -209,16 +293,73 @@ modified: 2024-01-28T20:53:23.690Z
   - https://strlen.com/treesheets/
   - A "hierarchical spreadsheet" that is a great replacement for spreadsheets, mind mappers, outliners, PIMs, text editors and small databases.
 
-- https://github.com/treehousedev/treehouse
-  - open source note-taking frontend to extend and customize. 
-  - Bring your own backend or configure a built-in backend to get started.
-  - Outline editor and repurposable workspace shell.
-  - Minimal dependencies, mainly Mithril.js.
-  - Built with Deno toolchain. Zero Node.js utilization.
-
 - https://github.com/cybersemics/em /ts/yjs/web/ios/android
   - minimalistic note-taking app for personal sensemaking.
-# note-browser-extensions
+# notes-webapp
+- https://github.com/encryptic-team/encryptic /MPLv2/202305/js/deprecated
+  - An encryption-focused open source note taking application
+  - https://github.com/daed/laverna /MPLv2/201810/js
+    - lightweight alternative to Evernote that keeps your notes encrypted.
+  - https://github.com/Laverna/laverna /201802
+    - a JavaScript note taking application with Markdown editor and encryption support. 
+    - Consider it like open source alternative to Evernote.
+
+- https://github.com/notea-org/notea /MIT/202305/ts
+  - Self hosted note taking app stored on S3
+  - 依赖自己维护的@notea/rich-markdown-editor
+  - Support storage in Amazon S3, MinIO, Aliyun OSS, etc
+  - Why not use Database? the data stored in Notea is mainly files (such as text or pictures) but the database is not good at reading and writing these type of files; S3 can generate a signed URL to access the remote files, but the database cannot do it.
+  - Why not use filesystem storage? I couldn't find an APP that supports both self-hosted and easy to manage the synchronized data
+
+- https://github.com/batnoter/batnoter /MIT/202210/ts/inactive
+  - https://batnoter.com/
+  - open source, markdown-based, self-hosted note taking webapp.
+  - https://github.com/batnoter/batnoter-api /go
+
+- https://github.com/treehousedev/treehouse /MIT/202308/ts/Mithril/inactive
+  - https://treehouse.sh/
+  - open source note-taking frontend to extend and customize. 
+  - Bring your own backend or configure a built-in backend to get started.
+  - Treehouse is a frontend written in TypeScript made to be rendered in a browser or webview
+  - It is a "thick" frontend in that it holds most application state in-memory and executes user triggered commands to mutate that state.
+  - Even without a backend adapter, the Treehouse frontend is still a fully functional application packaged as a JavaScript library that can be loaded onto any HTML page.
+  - Outline editor and repurposable workspace shell.
+  - Minimal dependencies, mainly Mithril.js, codemirror
+  - Built with Deno toolchain. Zero Node.js utilization.
+  - By default, data is stored in your browser’s `localStorage`.
+  - If you choose to log in with GitHub, we’ll create a repository and store your data there.
+  - The Treehouse frontend uses its backend adapter to store the state of your workspace into a JSON document. 
+  - The "document" for Treehouse is the Workspace, which is mostly a container for nodes. nodes build a tree-like structure where each node can be extended with components. 
+  - Treehouse will index your workspace for full-text search using Minisearch
+
+- https://github.com/dullage/flatnotes /MIT/202312/ts/vue
+  - https://demo.flatnotes.io/
+  - A self-hosted, database-less note-taking web app that utilises a flat folder of markdown files for storage.
+  - No folders, notebooks or anything like that. Just all of your notes, backed by powerful search and tagging functionality.
+  - Log into the demo site and take a look around. Note: This site resets every 15 minutes.
+  - Wikilink support to easily link to other notes (`[[My Other Note]]`).
+  - TOAST UI Editor 
+
+- https://github.com/penxio/penx /AGPLv3/202401/ts
+  - A structured note-taking app for personal use
+  - Privacy-First - Use End-To-End Encryption to sync data
+  - Version control - GitHub-Based Version control Out-of-box
+  - 依赖tRPC、Prisma、Next.js、NextAuth、Slate.js、IndexedDB
+# notes-apps
+- https://github.com/tagspaces/tagspaces /3.3kStar/AGPLv3/202401/ts
+  - https://www.tagspaces.org/
+  - an offline, open source, document manager with tagging support
+  - no backend, no login, file manager, organizer and browser
+  - available for Windows, Linux, Mac OS and Android. 
+  - provide a web clipper extension for Firefox, Edge and Chrome
+  - supports two ways for tagging files. The default one embeds the tags directly in the name of the file, the other one uses a so called sidecar files for persisting the tags.
+  - has integrated basic media player functionalities.
+  - does not require an internet connection and any kind of online registration or service provider.
+  - Note Taking - you can create and edit notes in plain text, markdown and html file formats
+  - [Unable to use local folder on Self hosted Web version _202311](https://github.com/tagspaces/tagspaces/issues/2000)
+    - The web version support location pointing to object storage (AWS S3, minio, S3proxy, Wasabi, R2) only
+    - Yes it is technical, TagSpaces is a front-end application, which can connect to S3 back ends. For you use case you can use S3Proxy to expose a shared folder for example on a NAS and connect it with TagSpaces as S3 location.
+# notes-browser-extensions
 - note-it /16Star/Apache2/202208/ts/tiptap
   - https://github.com/MuhametSmaili/note-it
   - https://www.youtube.com/watch?v=jxBAMwxbk78
@@ -456,6 +597,11 @@ modified: 2024-01-28T20:53:23.690Z
     - 📝 Everything about note management. All in Zotero.
     - a plugin for Zotero.
     - Keep in sync with your Markdown files. Two-way, automatically
+  - https://github.com/windingwind/zotero-pdf-translate /AGPLv3/202401/ts
+    - Translate PDF, EPub, webpage, metadata, annotations, notes to the target language. 
+    - Support 20+ translate services.
+  - https://github.com/argenos/zotero-mdnotes /GPLv3/202103/js
+    - A Zotero plugin to export item metadata and notes as markdown files.
   - [Zotero 6 | Hacker News _202203](https://news.ycombinator.com/item?id=30714121)
     - Zotero has a novel build system where instead of using XULRunner, which is no longer available, the build scripts download a release version of Firefox and then replace the browser-specific modules and other assets with Zotero's bundle.
   - [Zotero: Free, easy-to-use tool to collect, organize, cite, and share research | Hacker News _202201](https://news.ycombinator.com/item?id=29774097)
@@ -471,19 +617,7 @@ modified: 2024-01-28T20:53:23.690Z
   - Performant graph visualization on the web with WebGL + Webworkers + IndexedDB
   - You can visualize Notion pages on force layout graph using this library
 # more-note-app
-- simplenote-electron /4.1kStar/GPLv2/202201/ts/inactive
-  - https://github.com/Automattic/simplenote-electron
-  - https://simplenote.com/
-  - Simplenote for Web, Windows, and Linux
-  - import notes from Simplenote(.json) exports, Evernote(.enex) export, Plain text files(.txt)
-  - node-simperium for Simperium syncing. 服务端未开源
-  - Simplenote API features such as sharing and publishing will not work with development
-  - ref
-    - https://github.com/Automattic/simplenote-android
-    - https://github.com/Automattic/simplenote-ios
-
-- https://github.com/codex-team/codex.notes
-  - /79Star/MIT/202009/js
+- https://github.com/codex-team/codex.notes /79Star/MIT/202009/js/inactive
   - crossplatform desktop notes application based on Electron and Editor.js
 
 - codimd /8kStar/AGPLv3/202401/js

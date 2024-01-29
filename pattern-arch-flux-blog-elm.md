@@ -11,7 +11,7 @@ modified: 2023-11-21T10:18:24.650Z
 
 # blogs-elm
 
-## 🕹️ [The Elm Architecture · An Introduction to Elm](https://guide.elm-lang.org/architecture/)
+## 🧩 [The Elm Architecture · An Introduction to Elm](https://guide.elm-lang.org/architecture/)
 
 - The Elm Architecture is a pattern for architecting interactive programs, like webapps and games.
 
@@ -51,7 +51,7 @@ modified: 2023-11-21T10:18:24.650Z
   - We can treat our programs as a series of data transformation operations. 
   - This approach to building applications drastically reduces the overall complexity.
 
-## 🕹️ [Elmish · F#](https://elmish.github.io/elmish/)
+## 🧩 [Elmish · F#](https://elmish.github.io/elmish/)
 
 - Elmish implements core abstractions that can be used to build F# applications following the “model view update” style of architecture, as made famous by Elm.
 

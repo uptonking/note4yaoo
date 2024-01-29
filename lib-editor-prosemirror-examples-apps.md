@@ -63,9 +63,10 @@ modified: 2022-08-18T16:57:15.296Z
 - bear-plus /5Star/ISC/202008/js/ejs
   - https://github.com/yk9331/bear-plus
   - https://bear-plus.yenchenkuo.com/@bear-plus/features
-  - 依赖codemirror.v5、express、markdown-it、sequelize、express、multer
   - A web-based writing application with real-time collaboration and Markdown syntax support for crafting and sharing notes. 
-  - Group and find note easily with hashtag and full text search. Inspired by Bear note and HackMD.
+  - Inspired by Bear note and HackMD.
+  - 依赖codemirror.v5、express、markdown-it、sequelize、express、multer
+  - Group and find note easily with hashtag and full text search. 
 
 - yana /175Star/MIT/202201/ts/electron/atlaskit
   - https://github.com/lukasbach/yana
@@ -95,7 +96,7 @@ modified: 2022-08-18T16:57:15.296Z
   - If your browser doesn't support local file system APIs, you'll still be able to open individual local files or import JSON file 
   - Since mdSilo Web app is running completely within the browser, some experiences will naturally be more constrained
   - Available for Web, Linux, Windows and macOS. 
-- mdSilo-app /93Star/AGPLv3/202208/ts/tauri
+- mdSilo-app /463Star/AGPLv3/202312/ts/rust/tauri
   - https://github.com/mdSilo/mdSilo-app
   - https://github.com/danloh/mdSilo-app
   - https://mdsilo.com/

@@ -67,7 +67,7 @@ modified: 2022-11-11T11:04:29.007Z
   - A web extension to clip information from web page.
   - All file will save in local hard disk, you can control your data totally
 
-- https://github.com/deathau/markdownload /202210/js
+- https://github.com/deathau/markdownload /apache2/202312/js
   - an extension to clip websites and download them into a readable markdown file. 
   - Turndown is used to convert the simplified HTML (from Readability.js) into markdown.
 

@@ -27,6 +27,12 @@ modified: 2022-11-09T11:53:13.093Z
   - 提供源码模式、双屏渲染模式、实时编辑模式和只读模式四种渲染模式。
   - 如果有需要，它的底层同时也支持了协同编辑的能力，提供了原子操作 Operation 用于扩展协同编辑。
 
+- https://github.com/marktext/muya /549Star/MIT/202401/ts
+  - markdown editor for web browser applications development
+  - Muya originated from MarkText, which was originally used in the MarkText and provides Markdown editing support for MarkText. Today, Muya is available as a stand-alone library 
+  - What is the relationship between MarkText's version and the Muya's version? None
+  - https://github.com/Jocs/muya-example /201906/js
+
 - react-universal-markdown /202107/js/inactive
   - https://github.com/iddan/react-universal-markdown
   - Markdown component for Web and Native powered by CommonMark

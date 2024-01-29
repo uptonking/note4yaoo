@@ -1,22 +1,36 @@
 ---
-title: pm-notable-xp
-tags: [notable, note-taking, pm, xp]
+title: lib-office-notable-dev
+tags: [dev-log, notable, note-taking, office]
 created: 2020-05-10T07:13:28.652Z
-modified: 2021-06-02T18:24:28.052Z
+modified: 2024-01-29T23:05:26.855Z
 ---
 
-# pm-notable-xp
-- local/offline first markdown-based note-taking app
+# lib-office-notable-dev
+
+> local/offline first markdown-based note-taking app
+
 # features
-- core
+- pros
+  - no vendor lock-in with local markdown files
+  - multi-note editing for tags/pins
+  - nestable tags
+  - attachment
+
+- cons
+  - 不支持移动端
+  - 未实现同步
+  - 会给文件自动添加时间戳front-matter
+
+- features
   - local/offline/private/privacy first markdown-based note app
     - local note data as first class data source
     - local means personal,born to keep data private,强调数据由用户掌控
     - offline means no ad，强调可通用易移植
     - full control of your data, free for sharing and exporting
     - 如何解决版权问题？只能localize本人的创作
-- online sync is optional
-- extended markdown support, including GFM/MDX
+  - online sync is optional
+  - Split Editor
+  - extended markdown support, including GFM/MDX
 
 - toc
   - toc优先采用docked/sticky的设计
@@ -24,9 +38,9 @@ modified: 2021-06-02T18:24:28.052Z
 - themeable markdown editor and viewer  
   - optimized table editor and viewer 
 
-- don't
+- draft
   - inline preview: 边书写边预览，会隐藏实际文本，只预览部分内联元素
-  - video/audio 
+  - video/audio
   - paste html into md
 
 - format
@@ -78,7 +92,25 @@ modified: 2021-06-02T18:24:28.052Z
 - 集成第三方同步
   - icloud
   - 坚果云
-# xp
+# dev-to
+- [ ] fix: lgt symbol not rendered properly, e.g. `Pick<Props, "name">`.
+- [ ] fix: note file name shouldn't change when cut the most front text
+- [ ] search: hightlight search results on current page
+- [ ] toc: 一级toc目录点击后会切换页面，但toc能保持原位，而不是回到第一项
+- [ ] edit: edit at where you click  
+- [ ] edit: collapse current node  
+- [ ] edit: insert one blank line below  
+- [ ] edit-character: special character support, like `「Microsoft Store」`.
+  - https://copychar.cc/symbols/
+- [ ] edit-emoji: emoji with different theme, 素描线划风格的表情字符
+- [ ] edit-list: list symbol to number
+- [ ] edit-list: toggle lines to list
+  - 直接添加`- `将多行文字里的每行转换成列表中的一项，甚至可以添加`- [ ]`转换成待办事项列表
+- [ ] edit: 粘贴后，批量删除中文段落中部分英文单词两边的空格
+- [ ] edit: write x to checkbox without deleting following whitespace `- [ ]`.
+- [ ] keyboard: alt+arrow, move current line up/down
+- [ ] file: 第一次直接使用第一行文字作为标题，之后需要在中间栏修改标题，不能直接在文件中修改标题
+# draft
 - nice-to-have
   - 该多用一级标题`#`来减少嵌套，与最顶部一级标题作为文档标题并不冲突
     - 可能不符合阅读习惯，比如word中顶部一级标题常用最大号，此处渲染可用代码修改
@@ -113,6 +145,12 @@ modified: 2021-06-02T18:24:28.052Z
   - markdown顶部元数据采用注释形式，而不是多级键值对
   - 添加快捷键：复制文字的链接url
 # discuss-notable
+- ## 
+
+- ## 
+
+- ## 
+
 - ## At the moment I'm leaning toward a sort of hybrid approach:
 - https://discord.com/channels/715934079559663646/720653307747500092/969614509037744258
 1. 使用本地数据库抹平不同操作系统文件读写操作的差异。The app would work with a single-file database and most of its codebase would only know about that, all the differences between Windows and Linux/Mac filesystems would be abstracted away, all the ugliness of the filesystem for most of the codebase would be just a sad memory.
@@ -178,89 +216,54 @@ modified: 2021-06-02T18:24:28.052Z
 - https://discord.com/channels/715934079559663646/720653307747500092/969601322292756490 __20220429
   - I think there's no alternative to writing a metadata section automatically?
 - You could just ignore notes that don't already have notable metadata, and have a way to explicitly import them?
-# notable-docs-xp
 
-## notable-xp-dev-to
+- ## 📓 [Notable – A Markdown-based note-taking app | Hacker News _202007](https://news.ycombinator.com/item?id=23883270)
+- I've recently found Foam hard to beat. Awesome markdown "thought web" experience built right into VSCode. 
 
-- [ ] fix: lgt symbol not rendered properly, e.g. `Pick<Props, "name">`.
-- [ ] fix: note file name shouldn't change when cut the most front text
-- [ ] search: hightlight search results on current page
-- [ ] toc: 一级toc目录点击后会切换页面，但toc能保持原位，而不是回到第一项
-- [ ] edit: edit at where you click  
-- [ ] edit: collapse current node  
-- [ ] edit: insert one blank line below  
-- [ ] edit-character: special character support, like `「Microsoft Store」`.
-  - https://copychar.cc/symbols/
-- [ ] edit-emoji: emoji with different theme, 素描线划风格的表情字符
-- [ ] edit-list: list symbol to number
-- [ ] edit-list: toggle lines to list
-  - 直接添加`- `将多行文字里的每行转换成列表中的一项，甚至可以添加`- [ ]`转换成待办事项列表
-- [ ] edit: 粘贴后，批量删除中文段落中部分英文单词两边的空格
-- [ ] edit: write x to checkbox without deleting following whitespace `- [ ]`.
-- [ ] keyboard: alt+arrow, move current line up/down
-- [ ] file: 第一次直接使用第一行文字作为标题，之后需要在中间栏修改标题，不能直接在文件中修改标题
+- My biggest problem with these note-taking apps is that there is no way to have a manual order in the file list.
+  - This has come up a few times, I don't have anything against it, I'm just not sure how it should work exactly. Like since the app supports sorting notes by a few dimensions (title, creation date, modification date), how would a manual sort order fit into this?
 
-## docs
+- I spent a lot of time recently looking for a good note taking app. Notable (electron), QOwnNotes (Qt), and Joplin (electron) are very similar, with a markdown format with the ability to switch to the rendered view or have them split side-by-side. 
+  - Joplin has an experimental combined rendered markdown editor view but it's still a bit rough around the edges.
+- Ultimately I settled on Zettlr. 
+  - It can be used as a normal notebook, and most importantly it's killer feature to me is that it allows you to paste images from your clipboard into a note, and then view that image inline in the markdown editor instead of having to switch to the rendered view to see the image. 
+  - All of the other applications show a markdown `![image-filename]()` link inside the note editor, requiring you to switch to the rendered view to see the actual image. 
+  - The only other applications I found which can do this are: Joplin with the experimental editor, OneNote (no linux support, proprietary format), Bear Note (Apple devices only), and a few desktop note taking applications with a non-markdown format and no mobile application.
+  - With any of the markdown ones you can sync to Syncthing, NextCloud, Dropbox, etc. and then access them on your phone with the Joplin mobile application. 
+  - But Zettlr just feels better than Joplin on the desktop, has some nice themes, and the editor is more refined than Joplin's experimental one.
+  - I don't really see any reason to use Notable over Joplin and Zettlr. 
+- 🆚️ Author here. One practical reason to switch to Notable from Joplin is that notes in Notable are just plain files on disk, and that's extremely powerful. 
+  - In Joplin instead you can only open notes one by one in the default app, the difference is that Joplin essentially copies the note out of its database, opens that in the external editor, and then synchronizes its changes back with the database. 
+  - In Notable the files on disk _are_ the database.
+  - In practice this means that you should be getting better startup times with Joplin's approach, but anything that has to do with manipulating a lot of notes with an external tool is trivial in Notable, but you can't really do it with Joplin.
 
-- The data directory is where all your notes and attachments will be stored
-  - You can edit your notes/attachments without even using Notable
-  - you could also import a Markdown note simply by copying it into the `notes` directory.
-- The sidebar is where all your notes are categorized.
-  - All Notes: contains all notes
-  - Favorites: fixed menu    
-  - Tags: all notes tagged with any tag except the special ones: `Notebooks/*` and `Templates/*`
-      - You can create sub-categories in the following sections: Notebooks, Tags and Templates by using nested tags. 
-  - Untagged: notes that have no tags
-  - Trash: notes that have been deleted. 
-      - These notes won't be displayed in any other category.
-  - Notebooks: notes tagged with the special `Notebooks/*` tag
-  - Templates: notes tagged with the special `Templates/*` tag. 
-      - These notes won't be displayed in any other category.
-- The middlebar shows you all notes contained in the currently active category
-  - title of notes is searched in fuzzily
-  - content of notes is searched in full-match
-  - order by title/modified
-  - Pinned notes are displayed before the others.
-- The mainbar is where you can preview and edit the currently active note
-  - The toolbar contains buttons for triggering actions to the current note
-- Edit the markdown notes with Monaco Editor
-  - a button in the toolbar for opening the current note in the default Markdown editor
-  - When 2 or more notes are selected a multi-note editor will be displayed in the mainbar
-- Notes are written in GitHub-flavored Markdown
-  - Notes can have some metadata: fav/tags
-  - syntax features: GFM, KaTex, AsciiMath, mermaid
-  - attachments: simply copied into `attachments` sub-directory
-- Tags are useful for better categorization
-  - Root tags don't contain any forward slash ( `/` )
-  - Tags can also be nested like a path
-  - tag starting with `Notebooks/` will show in Notebooks section
-  - tag starting with `Templates/` will only show in Templates section
-- Shortcuts
-  - NoteApp/Editor/Nav/Other
-- Importing
-  - Markdown files: `md`/`mkd`/`mdwn`/`mdown` /`markdown`/`markdn`/`mdtxt`/`mdtext`/`txt`
-  - Evernotes' exports with extension: `enex`
-  - Alternatively you could also just put your Markdown notes into the `notes` sub-directory 
-  - Newly imported tags will be tagged with a special `Import-XXXX` tag
-- Multi-Note Editing
-  - When 2 or more notes are selected a multi-note editor will be displayed in the mainbar
-  - fav/pin/trash/tag/
-- Linking Attachments/Notes/Tags
-  - Attachments can be rendered inline, linked to, and linked to via a button
-      - The `@attachment` token is used for this
-  - Notes can be linked to, and linked to via a button. 
-      - The `@note` token is used for this. 
-      - Wiki-style links are supported too.
-  - Tags can be linked to, and linked to via a button. 
-      - The `@tag` token is used for this.
-- Synchronization
-  - third-party service will take care of the synchronization
-- Mobile Editing
-  - third-party apps for editing Markdown files
-  - if you need to change some metadata or add an attachment, but it would be ok most of the times
-- Collaborative Editing
-  - not planned
-- Version Control
-  - not planned
-- Encrypted Notes
-  - third-party program will take care of the encryption
+- There seems to be a markdown note-taking app trend... I just want to throw out there that I have been using jupyter lab as a daily journaling markdown editor for nearly a year now and am very much happy with my setup.
+
+- For me, ability to quickly expand/collapse headings/sub-headings is essential when I am working with markdown. After some effort got it working in Sublime Text.
+
+- I tried using Notable for a while. I ended up sticking with Mark Text. I enjoy the more Bear-like WYSIWYG editor I can switch to for normal note taking.
+
+- 🆚️ Except the import from evernote feature, other features are already supported by modern editor/IDE
+  - General-purpose text editors are not focused on note-taking, so while apps like vscode are powerful enough that you can kind of hack on top of it and build your own note-taking app on it, it just doesn't make a lot of sense for vscode itself to support printing notes, or hyperlinking between them, or adding a tagging system, or searching all notes containing a particular attachment etc.
+
+- I really like Notable, so I made an open-source Android app which is compatible with notes saved in Notable. https://github.com/redsolver/noteless
+
+- ## 🚀📓 [Show HN: Notable – A Markdown-based note-taking app that doesn't suck | Hacker News _201812](https://news.ycombinator.com/item?id=18765482)
+- Notable lacks two crucial features that typora   has:
+  - 1) LaTeX math support (i.e. MathJax). Being able to write inline formulas and using align, table etc. is a must in certain fields.
+  - 2) Notes in custom directory. Currently it seems that all your notes will be stored in your data directory, whereas I'd like to save my notes (and its assets) in a different directory as well
+- the big win that keeps me on Standard Notes is the longevity and encryption, but the editor interface isn't anything special and sometimes I really miss OneNote/Evernote. 
+
+- Notable is better than Boostnote for the following main reasons:
+  - It supports attachments, sooner or later you are going to need to add an image or pdf to a note. The only way of doing that with Boostnote is linking to the absolute-path of that file, which is not portable nor ergonomic
+  - Notes are stored as plain Markdown files, you can also edit them with your editor of choice. 
+  - Multi-note editing is fully supported, from starring/tagging multiple notes at once to performing a regex search & replace across your notes. Boostnote has very limited multi-editing capabilities
+  - Boostnote can't import Evernote's .enex files. Notable can and it preserves both tags and attachments.
+  - Boostnote isn't keyboard friendly. I don't like the dual pane editor
+
+- Have been using Typora. Any major differences other than supporting attachments?
+  - Notable has better notes organization thanks to indefinitely nestable tags.
+  - Notable comes with multi-note editing, which is cool for tagging/pinning/starring multiple notes at once.
+  - Typora is way more customizable.
+
+- Unfortunately there are no mobile apps for Notable, but you could put your notes into Dropbox and edit them using any of the already existing text editors.

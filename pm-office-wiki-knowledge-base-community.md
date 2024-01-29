@@ -9,9 +9,13 @@ modified: 2021-07-27T16:35:20.057Z
 
 # guide
 
-# Memex
-- [Vannevar Bush - The Memex](https://lemelson.mit.edu/resources/vannevar-bush)
+# pattern: Zettelkasten
+- [Zettelkasten? | Hacker News _201910](https://news.ycombinator.com/item?id=21208196)
 
+- https://github.com/Zettelkasten-Method/10000-markdown-files /201601
+  - 10, 000 markdown files. Useful for stress testing note-taking tools.
+# pattern: Memex
+- [Vannevar Bush - The Memex](https://lemelson.mit.edu/resources/vannevar-bush)
 
 - [The Secret History of Hypertext - The Atlantic](https://www.theatlantic.com/technology/archive/2014/05/in-search-of-the-proto-memex/371385/)
 
@@ -20,8 +24,7 @@ modified: 2021-07-27T16:35:20.057Z
   - The system was to provide easy access to the large amount of knowledge that was already recorded. 
   - Building on the technology of his time, Bush described a new kind of device which was a sort of mechanized file and library system. He called it a “memex.” The word memex came from combining portions of the words (mem)ory and (ex)tender. 
   - Even though Memex was never actually built, the concept was used as a guideline in the process of creating our modern-day internet. 
-
-# Xanadu
+# pattern: Xanadu
 - [Project Xanadu](https://xanadu.com.au/ted/XU/XuPageKeio.html)
   - Project Xanadu is the name for Ted Nelson's hypertext work since 1960. 
   - We foresaw world-wide hypertext, clearly and specifically, even in the sixties when almost nobody could imagine hypertext
@@ -31,7 +34,7 @@ modified: 2021-07-27T16:35:20.057Z
   - Lotus Notes, created by Ray Ozzie
   - HyperWave(tm), created by Hermann Maurer
   - MicroCosm(tm), created by Wendy Hall
-# bulletjournal
+# pattern: bulletjournal
 - [Bullet Journal](https://bulletjournal.com/)
   - Bullet Journal® (aka Bujo) is a mindfulness practice designed as a productivity system. 
 
@@ -56,7 +59,24 @@ modified: 2021-07-27T16:35:20.057Z
 # discuss
 - ## 
 
-- ## 
+- ## 🧩 [如何具体实践Zettelkasten卡片盒笔记法的？ - 知乎](https://www.zhihu.com/question/424376132)
+- 卡片笔记法三大核心：
+- 卡片及时记（建立卡片库）。它可以是一句话，也可以是一个灵感，也可以是一片文章
+  - 卡片模板架构：唯一编号（编号+日期+标题）+出处+摘录+复述（一事一记）+链接（主卡入口）。这个步骤叫做信息录入。
+- 深度思考及时理（建立永久库——你的知识体系）。核心强调一点：深度思考+关键词标签。
+  - 我们需要对卡片内容进行深入思考，去其糟粕留其精华，并且对该内容贴上分类标签。这个步骤叫做信息加工。
+  - 永久库模板：标题栏+短文+知识链接九宫格+参考文献+引用目录
+  - 永久库的标准：深度思考后的信息，要做到后期再调取使用时立马可以用。
+- 卡片笔记库的核心：目录。
+  - 一个是永久库的清单目录。一个是内容的主题词目录。使用超链接功能，将目录与永久库链接，实现信息对接。这也是我们随取随用的关键。该步骤目的是为了方便信息提取。
+- 以上就是卢曼卡片笔记法的骨架三部曲。
+
+- 卡片笔记写作法的流程。
+  - 通过阅读、反思记录闪念笔记。
+  - 每隔2-3天将闪念笔记与卡片盒中的笔记进行联系，思考，整理成永久笔记，存入卡片盒。
+  - 在卡片盒中将笔记与笔记建立连接。
+  - 不断生长的卡片笔记逐渐自然生发，产生想法集群，形成主题，并建立索引。
+  - 将主题进一步发展，产生洞见，写成文章或者著作。
 
 - ## [Wiki.js | Hacker News_202007](https://news.ycombinator.com/item?id=23904193)
 - Now, it is fair to complain that VisualEditor is difficult to get running on your own local Mediawiki instance, as it requires the suite of local node.js microservers (RestBase and Parsoid) that aren't part of the core PHP platform. That said, this is about to change! The upcoming Mediawiki 1.35 is supposed to move Parsoid into core PHP, and so VisualEditor is going to become a lot more default-accessible. : D

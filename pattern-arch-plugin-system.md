@@ -460,8 +460,8 @@ class Plugins {
 - https://github.com/jalaali/moment-jalaali
   - A Jalaali (Jalali, Persian, Khorshidi, Shamsi) calendar system plugin for moment.js.
 
-- https://github.com/lorry2018/minimajs /201807/js
-  - MinimaJs is a OSGi-like, simple yet powerfull plugin framework based on NodeJS.
+- https://github.com/lorry2018/minimajs /apache2/201807/js
+  - a OSGi-like, simple yet powerful plugin framework for NodeJS
 
 - https://github.com/codotype/codotype
   - Plugin-based framework for generating custom boilerplate code and scaffolding

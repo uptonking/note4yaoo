@@ -33,7 +33,7 @@ modified: 2023-11-03T17:43:01.518Z
   - https://goodmansasha.github.io/annotation-model/
   - Javascript implementation of the W3C Web Annotation Data Model, useful for Web Extensions and serializing references to specific resources on a HTML page
 
-- https://github.com/openannotation/annotator /js
+- https://github.com/openannotation/annotator /MIT/201511/js
   - http://annotatorjs.org/
   - Annotation tools for the web. Select text, images, or (nearly) anything else, and add your notes.
   - It provides a set of interoperable tools for annotating content in webpages.

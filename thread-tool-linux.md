@@ -18,7 +18,9 @@ modified: 2024-01-06T13:48:42.969Z
 # discuss
 - ## 
 
-- ## 
+- ## SRE Deep Dive into Linux Page Cache
+- https://twitter.com/TanelPoder/status/1751882719603126643
+  - [Linux Page Cache for SRE | Viacheslav Biriukov](https://biriukov.dev/docs/page-cache/0-linux-page-cache-for-sre/)
 
 - ## Linux file system explained.
 - https://twitter.com/alexxubyte/status/1743309278042316933

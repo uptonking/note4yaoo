@@ -14,6 +14,7 @@ modified: 2022-06-02T06:11:16.758Z
     - 即时预览的切换预览和源码文本经常导致页面重排layout
 
 - cons
+  - not open source: backend and sync
   - 支持浏览器直接打开本地文件夹
   - 不支持 database
 
@@ -37,6 +38,17 @@ modified: 2022-06-02T06:11:16.758Z
 
 - who is using #logseq
   - https://note.xuanwo.io/#/all-pages
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## [Release backend source _202211](https://github.com/logseq/logseq/issues/7470)
+- Does this mean there is no plan to make Logseq fully open source?
+  - I think that's the case, although I'm not a member of the team.
+  - However, another effort is underway, see discuss.logseq.com/t/building-a-self-hostable-sync-implementation/21850 and bcspragu/logseq-sync
+
+- [Will Logseq remain fully open-source in the future and will the synchronization feature be self-hostable?  _202210](https://discuss.logseq.com/t/will-logseq-remain-fully-open-source-in-the-future-and-will-the-synchronization-feature-be-self-hostable/11951)
 # discuss
 - ## 
 

@@ -65,4 +65,11 @@ modified: 2024-01-28T21:37:15.191Z
 # utils
 - https://github.com/pansinm/joplin-server-plantuml /MIT/202207/js
   - render plantuml diagram in share page
+
+- https://github.com/QuantiusBenignus/NoteWhispers
+  - Voice memos recorded from the microphone, transcribed offline to text and converted to Joplin notes
+  - This repository, while (hopefully) still providing some utility, was a proof of concept and is now superceded by Spoken, which improves on the same functionality but also adds support for Joplin To-Dos (in a sepparate, standallone executable). 
+- https://github.com/QuantiusBenignus/Spoken /202303/shell
+  - Voice memos recorded from the microphone, transcribed offline to text and converted to Joplin notes or To-Do tasks with automatic notifications
+  - This repository expands on the older NoteWhispers by bringing new tools and functionality, such as recording Joplin to-do tasks with automatic alarms and the ability to transcribe multiple voice-memo/to-do files.
 # more

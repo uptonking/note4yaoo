@@ -7,16 +7,14 @@ modified: 2021-05-14T14:25:57.616Z
 
 # thread-ux-page-screen-examples
 
+# guide
+
 # 大量使用白底圆角矩形卡片的设计
-
-
 - https://vazurio.co/
   - 干净简洁，纯白背景，大量使用圆角矩形，设计感很强
   - https://heros-rouge.vercel.app/
   - https://portfolio-anyelos.vercel.app/
   - https://white-wolf-murex.vercel.app/
-
-
 
 - https://taskablehq.com/
   - 页面背景灰色，卡片背景白色
@@ -28,7 +26,6 @@ modified: 2021-05-14T14:25:57.616Z
 - https://generative.parts/generative
   - https://github.com/winkerVSbecks/generative-parts
   - 配置所有ui组件的圆角、颜色，样式超级友好
-
 
 - https://v2.grommet.io/components
   - 页面背景为白色时，卡片背景就不是白色，所以卡片组件用得反而少了，直接在白色页面上布局图文也很友好
@@ -60,7 +57,6 @@ modified: 2021-05-14T14:25:57.616Z
 
 - 页面背景灰色，卡片背景纯白
   - https://dev.to/awnton/7-code-smells-in-react-components-5f66
-
 # gradients
 - [标题渐变色](https://devtrium.com/posts/react-typescript-using-generics-in-react)
 # logo examples
@@ -85,3 +81,20 @@ modified: 2021-05-14T14:25:57.616Z
 
 - adel
   - https://twitter.com/4lpine/status/1388924537106927628
+# discuss-mobile
+- ## 
+
+- ## 
+
+- ## 绿色清新，material
+- https://twitter.com/hlai21254140/status/1751847647252774986
+- 清新简洁
+- 这类型配色好像是目前最流行的美拉德风格
+- 跟多邻国设计风格很像，很简洁
+
+# discuss
+- ## 
+
+- ## 
+
+- ## 

@@ -352,7 +352,7 @@ modified: 2023-09-07T15:58:27.967Z
 
 - I implemented a slightly different method for my prototype multimedia chat application (text/images/audio/video) over IPFS. I used an envelope format for permissioned encrypted content
 
-- ## 🕹️ [Hypercore protocol: a distributed (P2P) append-only log | Hacker News_202012](https://news.ycombinator.com/item?id=25407193)
+- ## ⚖️ [Hypercore protocol: a distributed (P2P) append-only log | Hacker News_202012](https://news.ycombinator.com/item?id=25407193)
 - The hyper* world seems to be very fragmented right now. 
   - There is the dat project, which started 2013 and shares files between computers p2p. 
   - In may 2020 the dat protocol was renamed to the hypercore protocol and dat "will continue as the collective of teams and projects that have evolved from the original Dat CLI project.". 

@@ -76,7 +76,6 @@ modified: 2023-09-19T07:26:04.103Z
 - https://github.com/kovidgoyal/calibre /python
   - https://calibre-ebook.com/
   - an e-book manager. It can view, convert, edit and catalog e-books in all of the major e-book formats. 
-
 - https://github.com/janeczku/calibre-web /GPLv3/202401/python/js
   - a web app that offers a clean and intuitive interface for browsing, reading, and downloading eBooks using a valid Calibre database
   - This software is a fork of calibreserver
@@ -85,13 +84,17 @@ modified: 2023-09-19T07:26:04.103Z
   - https://standardebooks.org/
   - A collection of tools Standard Ebooks uses to produce its ebooks, including basic setup of ebooks, text processing, and build tools.
 
-- https://github.com/koodo-reader/koodo-reader /12kStar/AGPLv3/202401/ts
+- koodo-reader /12kStar/AGPLv3/202401/ts
+  - https://github.com/koodo-reader/koodo-reader
   - https://github.com/troyeguo/koodo-reader /renamed
   - https://koodo.960960.xyz/
   - A modern ebook manager and reader with sync and backup capacities for Windows, macOS, Linux and Web
+  - 依赖electron-store、fs-extra、howler、react-hot-toast、webdav、marked、jszip
   - Save your data to Dropbox or Webdav
   - Single-column, two-column, or continuous scrolling layouts
   - Add bookmarks, notes, highlights to your books
+  - [希望能够有编辑功能_202401](https://github.com/koodo-reader/koodo-reader/issues/1037)
+    - 个人认为作为一个阅读器，编辑功能有点冗余，如果需要编辑可以用对应的各种强大产品
 
 - https://github.com/koreader/koreader /AGPLv3/lua
   - http://koreader.rocks/

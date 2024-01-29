@@ -52,6 +52,25 @@ modified: 2023-10-28T17:52:17.942Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## i wonder when "PostgresLite" will become a thing
+- https://twitter.com/jarredsumner/status/1751967157884432652
+  - SQLite's single-file embedded no-server model makes getting started easy, but backends often need a database like Postgres
+  - A reasonable alternative is to use SQLite in development and Postgres in production, but that often causes subtle issues. Some queries only work in Postgres. Some queries run very slowly in tests/development. The differences between the two is big enough to matter
+
+- There would be a number of significant technical challenges in adapting Postgres to be single-file, embedded, no-server.
+  - The biggest is probably that it currently has a 1:1 relationship between connection and processes. And requests within a request are processed serially. There has been a long standing debate about moving to multi-threaded but they always settle in staying multi-process onto.
+  - Last time I scanned the mailing list it sounded like they were pretty determined to give it another go but I don't know how that developed after that.
+  - Even if that got working it would almost certainly be more resource heavy than SQLite but that might be a good tradeoff for many use cases.
+  - I have thought about what it would take to lift just like the SQL handling stuff, the query planner, on disk record format etc and then bolting that onto something like LMDB but I never got that far with it.
+
+- This is why I think @deno_land created the KV abstraction. Would love to see something similar in Bun.
+
+- Have you seen @tursodatabase ?  They created a fork of SQLite that contains a server mode and replication protocol to help you serve a SQLite database.
+
 - ## How to use subtransactions in Postgres
 - https://twitter.com/samokhvalov/status/1719228501658882268
   - TL; DR Don't use subtransactions, unless absolutely necessary.
