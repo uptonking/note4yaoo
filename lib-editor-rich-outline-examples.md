@@ -26,7 +26,7 @@ modified: 2023-02-05T07:38:02.647Z
   - ref
     - https://github.com/ProseWorker/ProseWriter
 
-- forks
+- 🍴 forks
   - https://github.com/Cloud303/wiki
   - https://github.com/Avalanche/outline
   - https://github.com/svsticky/Sticky-Compendium

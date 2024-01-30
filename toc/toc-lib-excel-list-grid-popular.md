@@ -154,10 +154,10 @@ modified: 2022-08-21T10:02:27.788Z
   - https://github.com/dream-num/chartMix /js
     - chart plugins for Luckysheet
     - 依赖echarts4、jquery、element-ui、vue2、vuex3
-  - forks
-    - https://github.com/carl-jin/RichSpreadsheet
-    - https://github.com/fromatlantis/Luckysheet
-    - https://github.com/titanDevelopers/Luckysheet
+  - 🍴 forks
+  - https://github.com/carl-jin/RichSpreadsheet
+  - https://github.com/fromatlantis/Luckysheet
+  - https://github.com/titanDevelopers/Luckysheet
 - https://gitee.com/zhouweng/mini_sheet /js
   - 我花了两周时间，通读了LuckySheet的源码，并且裁剪出了可执行的最小项目MiniSheet
   - [MiniSheet目录_舟翁的博客](https://blog.csdn.net/u010593516/article/details/113743472)
@@ -249,7 +249,7 @@ modified: 2022-08-21T10:02:27.788Z
   - React components for efficiently rendering large lists and tabular data
   - React window works by only rendering part of a large data set(just enough to fill viewport).
   - [Support just-in-time measured content](https://github.com/bvaughn/react-window/issues/6)
-  - forks
+  - 🍴 forks
     - https://github.com/webcore-it/react-window
   - https://github.com/vikadata/vikatable /ts
     - 基于 react-window Grid 构建的表格组件
@@ -697,7 +697,7 @@ modified: 2022-08-21T10:02:27.788Z
   - 依赖xlsx、jquery-ui、jszip
   - Your data is saved on the web, and people can edit the same document at the same time. 
   - [EtherCalc: Open-source web spreadsheet | Hacker News_201408](https://news.ycombinator.com/item?id=8129281)
-  - forks
+  - 🍴 forks
   - https://github.com/Tuanshu/ethercalc /202312/
     - post to ethercalc ok
   - https://github.com/davidbwaikato/cbh-ethercalc /202111/js
@@ -1278,7 +1278,7 @@ modified: 2022-08-21T10:02:27.788Z
   - JavaScript implementation of most Microsoft Excel formula functions
   - originally forked from @handsontable/formulajs version 2.0.2 (released in January 2020). There is no regression, only fixes and new functions since the fork.
   - 依赖jstat、bessel(fn)
-  - forks
+  - 🍴 forks
   - https://github.com/handsontable/formula.js /MIT/202001/js
   - https://github.com/davidpolberger/formulajs /201801/js
     - improved error handling, cutting down on dependencies

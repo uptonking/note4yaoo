@@ -52,7 +52,7 @@ modified: 2022-11-30T18:57:26.459Z
     - It will also emit `change` events -- they will be batched and deduped within a single event tick, so mutations within a single event tick are effectively atomic to all observers.
   - [Does minimongo implement reactivity_202011](https://github.com/mWater/minimongo/issues/71)
     - I'm afraid not. That would be best implemented with a websocket.
-  - forks
+  - 🍴 forks
   - https://github.com/xvonabur/minimongo-cache
     - `for (collectionName in changeRecords) { }` 描述变更
 - https://github.com/meteorrn/minimongo-cache /202312/js

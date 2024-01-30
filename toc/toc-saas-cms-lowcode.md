@@ -238,7 +238,7 @@ modified: 2023-01-20T21:59:47.792Z
   - A lightweight CMS loading and saving its data from/to a json file
   - 依赖react-router.v4、react-redux、react-dnd、markdown-it、express
   - It runs the CMS with a default JSON and Schema files. 
-  - forks
+  - 🍴 forks
   - https://github.com/luke-lewandowski/cms-json
 
 - https://github.com/sidharthmenon/simple-json-flat-file-cms /201807/js
@@ -338,7 +338,7 @@ modified: 2023-01-20T21:59:47.792Z
   - CMS/Wiki using Markdown - 100% client side single-page application 
   - No special software installation or server side processing is required. Just upload the mdwiki.html into the same directory as your Markdown files and you are good to go!
   - This is a fork of the stable Dynalon MDwiki release branch v0.6.x containing updated dependencies with all the beloved features (like Markdown include which is missed in the master branch). The original repository is unmaintained and archived (read-only).
-  - forks
+  - 🍴 forks
   - https://github.com/Dynalon/mdwiki /GPLv3/201810/ts/js
   - https://github.com/unmacaque/mdwiki
     - marked was updated to support more GFM syntax

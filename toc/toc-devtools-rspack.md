@@ -31,7 +31,7 @@ modified: 2023-12-26T19:11:22.389Z
   - With a built-in incremental compilation mechanism, HMR is extremely fast and fully capable of developing large-scale projects.
   - Batteries Included: Out-of-the-box support for TypeScript, JSX, CSS, CSS Modules, Sass, and more.
   - Framework Agnostic: Not bound to any frontend framework, ensuring enough flexibility.
-  - forks
+  - 🍴 forks
   - https://github.com/Brooooooklyn/rspack
 
 - https://github.com/rspack-contrib/performance-compare /202312/js

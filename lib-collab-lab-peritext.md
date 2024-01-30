@@ -18,7 +18,7 @@ modified: 2023-09-01T05:13:55.075Z
     - A Typescript implementation of the core Peritext CRDT algorithm
     - A prototype integration with ProseMirror editor
     - An interactive demo UI where you can try out the editor
-  - forks
+  - 🍴 forks
   - https://github.com/philschatz/peritext
     - 更新了版本、迁移到vite、基于automerge-wasm
 

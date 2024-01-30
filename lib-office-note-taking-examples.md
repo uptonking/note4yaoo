@@ -111,24 +111,23 @@ modified: 2024-01-28T20:53:23.690Z
     - `<= v1.3.0` : MIT, 20190131
     - `<= v1.5.1` : AGPLv3, 20190514
     - `>= v1.6.0` : Not Open, 最后一个开源版v1.7.3_201908附带的源码是 v1.5.1
-  - [product comparison: notable, bear, boostnote, evernote, joplin, keep, notion](https://notable.app/static/images/comparison.png)
+  - [comparison: notable, bear, boostnote, evernote, joplin, keep, notion](https://notable.app/static/images/comparison.png)
   - [Show HN: Notable – A Markdown-based note-taking app that doesn't suck | Hacker News_201812](https://news.ycombinator.com/item?id=18765482)
-- https://github.com/redsolver/noteless /MIT/202106/dart
+  - 🍴 forks
+  - https://github.com/lmihalkovic/notable /MIT
+    - https://github.com/Eastonboy99/notable /v1.3
+    - add RxJS to the dependencies
+    - remove CodeMirror and replace it with monaco
+  - https://github.com/dps/notable /MIT
+    - fork of notable adding built in Google Drive sync, an omnibox and immersive first UI
+- https://github.com/redsolver/noteless /MIT/202106/dart/inactive
   - markdown-based note-taking app for Android
   - Compatible with notes saved in Notable
-- https://github.com/lmihalkovic/notable /MIT
-  - https://github.com/Eastonboy99/notable /v1.3
-  - add RxJS to the dependencies
-  - remove CodeMirror and replace it with monaco
-- https://github.com/dps/notable /MIT
-  - fork of notable adding built in Google Drive sync, an omnibox and immersive first UI
 - https://github.com/DevTomek-pl/Search-Text-Plugin-for-Notable
   - a simple JS script for the Notable application that allows you to find a search phrase in the current document.
-- https://github.com/fabiospampinato/noty
+- https://github.com/fabiospampinato/noty /201901/ts/archived
   - Autosaving sticky note with support for multiple notes without needing multiple windows.
   - Deprecated in favor of Notable
-- https://github.com/fabiospampinato/electron-about
-  - Simple standalone about window for Electron.
 - notable-agpl
   - https://github.com/nicholasbailey/freenotable /1commit
   - https://github.com/Maxwin-z/notable
@@ -177,7 +176,7 @@ modified: 2024-01-28T20:53:23.690Z
       - marktext 在编辑器内部的渲染不是依赖 marked的，是通过snabbdom 来进行渲染的，所以其是marked 只是提供了block 的解析（不包含inline语法）以及输出markdown 时候会用到（包含block 和 inline 语法）。
     - [Document is modified when opened/Markdown formatting_202006](https://github.com/marktext/marktext/issues/2189)
     - [Mark Text performance improvement](https://github.com/marktext/marktext/issues/511)
-  - forks
+  - 🍴 forks
   - https://github.com/jacobwhall/marktext /202401
     - fork of marktext, seeking to modernize our favorite markdown editor
     - Add .mdx extension support

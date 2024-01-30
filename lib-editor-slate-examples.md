@@ -978,7 +978,7 @@ modified: 2023-02-05T19:03:12.723Z
   - https://github.com/saadiqbal10/slate-yjs-react-compiled
   - https://github.com/BitPhinix/slate-yjs-example
     - Minimal example project for slate-yjs
-  - forks
+  - 🍴 forks
   - https://github.com/sennpang/slate-yjs
 
 - https://github.com/BangKk/slate-crdt-editor /202310/ts

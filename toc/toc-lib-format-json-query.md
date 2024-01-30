@@ -93,8 +93,8 @@ modified: 2023-05-12T02:04:52.918Z
   - Lightweight query and transformation language for JSON data
   - Inspired by the location path semantics of XPath 3.1
   - Format query results into any JSON output structure
-  - forks
-    - https://github.com/Stedi/jsonata
+  - 🍴 forks
+  - https://github.com/Stedi/jsonata
 
 - https://github.com/jmespath/jmespath.js /202201/js/inactive
   - Javascript implementation of JMESPath, a query language for JSON

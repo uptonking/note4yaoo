@@ -257,7 +257,7 @@ modified: 2021-01-01T20:11:00.889Z
 
 - https://github.com/samuelmaddock/electron-browser-shell /GPLv3/202306/ts
   - A minimal, tabbed web browser with support for Chrome extensions—built on Electron.
-  - forks
+  - 🍴 forks
   - https://github.com/fvulich/electron-chrome-extensions
 
 - https://github.com/wexond/browser-base /PaidLic/ts/最近版本v5.2_202102/archived

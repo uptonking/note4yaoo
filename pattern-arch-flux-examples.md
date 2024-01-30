@@ -97,7 +97,7 @@ modified: 2023-11-17T10:28:14.247Z
     - simple flux tutorial built with alt and react
   - https://github.com/goatslacker/alt-devtool
   - [From Alt to Redux ecosystem (redux-actions, redux-thunk, react-redux, redux-saga)](https://gist.github.com/chodorowicz/c4916dbe1c81ccb14caf)
-  - forks
+  - 🍴 forks
   - https://github.com/bitshares/alt
   - https://github.com/SpaceKnow/alt /decorator
   - https://github.com/koliseoapi/alt-ng /202001/js

@@ -232,8 +232,8 @@ modified: 2022-11-25T15:50:48.226Z
   - The document store, which is just the raw JSON objects stored in leveldb/browser-level
   - The inverted search index, powered by search-index
   - yuno is being built to serve my use-case of embedding pre-made databases in electron apps
-  - forks
-    - https://github.com/pdepip/yunodb
+  - 🍴 forks
+  - https://github.com/pdepip/yunodb
 
 - realm-js /5kStar/apache2/202211/ts/cpp
   - https://github.com/realm/realm-js

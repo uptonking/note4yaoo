@@ -45,7 +45,7 @@ modified: 2021-01-16T20:50:23.893Z
 
 - https://github.com/samuelmaddock/electron-browser-shell /ts
   - A minimal, tabbed web browser with support for Chrome extensions—built on Electron.
-  - forks
+  - 🍴 forks
   - https://github.com/fvulich/electron-chrome-extensions
 
 - https://github.com/Electron-Store/electron-app-store /inactive

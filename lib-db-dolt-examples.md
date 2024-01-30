@@ -124,7 +124,7 @@ modified: 2023-08-25T22:31:05.132Z
 - https://github.com/attic-labs/noms /apache2/go/archived
   - The versioned, forkable, syncable database
   - Dolt is a fork of this project and actively maintained.
-  - forks
+  - 🍴 forks
     - https://github.com/ndau/noms
   - [Question: What is a Prolly Tree?](https://github.com/attic-labs/noms/issues/3849)
     - Prolly trees are very different than tries. 

@@ -45,7 +45,7 @@ modified: 2023-01-09T11:04:13.958Z
   - pro: edit/image/chart
   - SheetJS presents a simple JS interface that works with "Array of Arrays" and "Array of JS Objects".
   - 源码托管在团队的gitea上
-  - forks
+  - 🍴 forks
   - https://github.com/gitbrent/xlsx-js-style /202204/ts
     - Current version of sheetjs used: 0.18.5
     - This project is a fork of SheetJS/sheetjs combined with code from sheetjs-style (by ShanaMaid) and sheetjs-style-v2 (by Raul Gonzalez).
@@ -66,7 +66,7 @@ modified: 2023-01-09T11:04:13.958Z
   - a fork of the original SheetJS/sheetjs
   - extended to enable cell formats to be read from and written to .xlsx workbooks.
   - The intent is to provide a temporary means of using these features in practice, and ultimately to merge this into the primary project.
-  - forks
+  - 🍴 forks
   - https://github.com/iroot/sheetjs /202012/js
     - Manual merge branch 'protobi/master' into style
   - https://github.com/JimZhu6/js-xlsx /202312/js
@@ -162,7 +162,7 @@ modified: 2023-01-09T11:04:13.958Z
   - JavaScript implementation of most Microsoft Excel formula functions
   - originally forked from @handsontable/formulajs version 2.0.2 (202001). There is no regression, only fixes and new functions since the fork.
   - 依赖jstat、bessel(fn)
-  - forks
+  - 🍴 forks
   - https://github.com/handsontable/formula.js /MIT/202001/js
   - https://github.com/davidpolberger/formulajs /201801/js
     - improved error handling, cutting down on dependencies

@@ -42,11 +42,11 @@ modified: 2023-01-15T15:56:43.100Z
     - react-tiny-virtual-list uses PureComponent, and as such, it has no way to know when the sizes of your items changes when you use a function to get the item sizes.
   - https://github.com/clauderic/virtualized-list
     - A tiny vanilla virtualization library, with DOM diffing
-  - forks
-    - https://github.com/matyas-igor/react-small-virtual-list
-      - storybook
-    - https://github.com/manvydasu/react-tiny-virtual-list-oss
-      - support react v18
+  - 🍴 forks
+  - https://github.com/matyas-igor/react-small-virtual-list
+    - storybook
+  - https://github.com/manvydasu/react-tiny-virtual-list-oss
+    - support react v18
 
 - react-window /14kStar/MIT/202304/js
   - https://github.com/bvaughn/react-window
@@ -60,7 +60,7 @@ modified: 2023-01-15T15:56:43.100Z
     - if you are looking for a table/grid/tree, this would be a good start autodesk/react-base-table, built on VariableSizeGrid
     - 支持的替代: tanstack-virtual, react-virtuoso
     - [Question: What happened to DynamicSizeList](https://github.com/bvaughn/react-window/issues/516)
-  - forks
+  - 🍴 forks
     - https://github.com/webcore-it/react-window
   - https://github.com/vikadata/vikatable /ts
     - 基于 react-window Grid 构建的表格组件

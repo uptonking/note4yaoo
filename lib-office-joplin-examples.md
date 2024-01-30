@@ -24,7 +24,7 @@ modified: 2024-01-28T21:37:15.191Z
     - 不支持web
     - Joplin server has no ability to view/edit notes from the server with a web client.
     - https://github.com/joplin-vieweb/joplin-vieweb
-  - forks
+  - 🍴 forks
   - https://github.com/ken1kob/joplin /202212
     - A branch of Joplin: quick-slim-note
     - Joplin 2.9.17+quick-slim-note 

@@ -145,7 +145,7 @@ modified: 2023-09-12T09:37:22.608Z
   - load and store events via EventStream object
   - snapshot support
   - I would like to thank Golo Roden, who was there very early at the beginning of my CQRS/ES/DDD journey and is now here again to take over these modules.
-  - forks
+  - 🍴 forks
   - https://github.com/saperiuminc/node-eventstore /js/inactive
 
 - https://github.com/albe/node-event-storage /202306/js

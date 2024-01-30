@@ -100,7 +100,7 @@ modified: 2023-01-01T13:24:35.994Z
     - A Lunr backend implemented in Rust.
     - The current implementation is able to generate an index that is readable and searchable by lunr.js, but that is about it. 
     - Currently there is no pipeline and no ability to associate metadata with a token.
-  - forks
+  - 🍴 forks
   - https://github.com/CrazyFork/lunr.js
 
 - elasticlunr.js /1.9kStar/MIT/201904/js
@@ -451,7 +451,7 @@ modified: 2023-01-01T13:24:35.994Z
 - https://github.com/eugeneware/level-queryengine /63Star/BSD/201405/js
   - A generic pluggable query-engine system (that supports indexes) for levelup/leveldb databases.
   - Using this architecture you can query your levelup database using your own query langauge with full index support.
-  - forks
+  - 🍴 forks
     - https://github.com/mvayngrib/level-queryengine
 # code-search
 - https://github.com/bytefish/ElasticsearchCodeSearch /csharp

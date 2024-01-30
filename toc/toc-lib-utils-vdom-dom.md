@@ -89,7 +89,7 @@ modified: 2023-11-23T09:56:33.507Z
 - https://github.com/Matt-Esch/virtual-dom /10.8kStar/MIT/201604/js
   - A JavaScript DOM model supporting element creation, diff computation and patch operations for efficient re-rendering
   - 用例: reflex
-  - forks
+  - 🍴 forks
   - https://github.com/MilanConrad/virtual-dom-diff-printing /202307/js
     - Included pretty diff printing
   - https://github.com/Sota-Watanabe/virtual-dom /202111/js
@@ -114,7 +114,7 @@ modified: 2023-11-23T09:56:33.507Z
   - Superfine won't re-create the entire DOM every time we use patch(). By comparing the old and new virtual DOM we are able to change only the parts of the DOM that need to change instead of rendering everything from scratch.
   - who is using #superfine-vdom
     - typewriter
-  - forks
+  - 🍴 forks
   - https://github.com/whaaaley/superfine /202208/js
     - Add shadowRoot nodes, Treat `shadow-root` prop similar to `key`.
 

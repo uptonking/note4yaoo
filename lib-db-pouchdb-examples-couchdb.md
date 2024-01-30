@@ -85,7 +85,7 @@ modified: 2023-09-28T20:35:56.153Z
     - PouchDB has some performance issues because of how it has to store the document revision tree to stay compatible with the CouchDB API.
   - [how to to do partial (descending)l sync? F.e. chat messages](https://github.com/pouchdb/pouchdb/issues/8221)
     - You can use filtered replication
-  - forks
+  - 🍴 forks
   - https://github.com/emtee40/pouchdb-js
   - https://github.com/Passionate-Solver-Technologies/pouchdb-with-attachment /202310
 
@@ -101,7 +101,7 @@ modified: 2023-09-28T20:35:56.153Z
   - [Replication stream endpoint](https://github.com/pouchdb/pouchdb-server/issues/175)
     - The goal is to replace the existing replication algorithm with a less chatty protocol. Thoughts?
     - We have discussed this at CouchDB Dev Summit and for now our hypothesis is that Http/2 solves most of these issues
-  - forks
+  - 🍴 forks
   - https://github.com/VislaLabs/pouchdb-server /202308
     - Move dependencies to express-pouchdb package, sqlite3.v5
   - https://github.com/qiaogaojian/contribute_pouchdb-server /202209
@@ -143,7 +143,7 @@ modified: 2023-09-28T20:35:56.153Z
   - [a helpful link describing the "every-doc-is-a-delta storage pattern"?](https://github.com/redgeoff/delta-pouch/issues/53)
     - Sounds like "every-doc-is-a-delta" is another way of saying "log database". Is that right?
     - I would look up anything related to "Event Sourcing" which perhaps is a superset of this idea. Basically, the idea is that you save the events that happen in your system and then compile those into views.
-  - forks
+  - 🍴 forks
   - https://github.com/Brainsway-Cloud/delta-pouch /201802
   - [Doesn't play nice with Pouch Find](https://github.com/redgeoff/delta-pouch/issues/175)
     - https://github.com/funblaster22/delta-pouch-find/tree/bulkGet

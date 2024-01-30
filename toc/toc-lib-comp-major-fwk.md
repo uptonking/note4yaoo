@@ -40,5 +40,5 @@ modified: 2021-01-01T18:01:50.596Z
   - /MIT/48.1kStar/201810
   - https://semantic-ui.com/
   - https://semantic-ui.com/elements/button.html
-  - forks
-    - https://github.com/fomantic/Fomantic-UI
+  - 🍴 forks
+  - https://github.com/fomantic/Fomantic-UI

@@ -27,9 +27,9 @@ modified: 2022-11-06T15:45:36.913Z
   - https://github.com/anseal/normalizr
     - The main point of difference from the original - performance
     - API is the same as in the original
-  - forks/ts
-    - https://github.com/madonoharu/ts-norm
-    - https://github.com/napolab/normalizr_ts
+  - 🍴 forks/ts
+  - https://github.com/madonoharu/ts-norm
+  - https://github.com/napolab/normalizr_ts
 
 - https://github.com/krispo/simplifr /201607/js
   - Simplifies JSON into a flat single-level path-value structure.

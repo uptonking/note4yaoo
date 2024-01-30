@@ -89,7 +89,7 @@ modified: 2021-01-04T17:26:43.784Z
   - Create and modify PDF documents in any JavaScript environment.
   - Designed to work in any modern JavaScript runtime. Tested in Node, Browser, Deno, and React Native environments.
   - [Is this thing still on?](https://github.com/Hopding/pdf-lib/issues/1423)
-  - forks
+  - 🍴 forks
   - https://github.com/cantoo-scribe/pdf-lib
     - This fork adds the support for svg to the pdf-lib project.
 

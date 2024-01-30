@@ -13,10 +13,10 @@ modified: 2023-11-23T18:01:59.304Z
 - https://github.com/jaredpalmer/formik /ts/react/代码少
   - https://formik.org/
   - Build forms in React, without the tears.
-  - forks
-    - https://github.com/sagarrajak/formikplusplus
-    - https://github.com/astonmartin07/formik
-    - https://github.com/DemoChimpDev/formik-with-sync
+  - 🍴 forks
+  - https://github.com/sagarrajak/formikplusplus
+  - https://github.com/astonmartin07/formik
+  - https://github.com/DemoChimpDev/formik-with-sync
 - https://github.com/formium/formium
   - https://formium.io/
   - Formium is an API-first, headless online form builder and automation tool

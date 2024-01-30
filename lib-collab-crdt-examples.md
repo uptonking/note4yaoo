@@ -217,7 +217,7 @@ modified: 2022-04-05T10:08:25.947Z
   - [Peritext algorithm may attach deleted mark to new inserted text](https://github.com/inkandswitch/peritext/issues/32)
   - [What could be the direction for making Peritext support block elements](https://github.com/inkandswitch/peritext/issues/27)
     - I helped design a convergent data model for tables at Notion recently that would work well using 3 convergent data types: Map (to group and address fields), Ordered Set (for defining the order of rows and the order of columns), and Rich Text (for defining the contents of cells).
-  - forks
+  - 🍴 forks
   - https://github.com/philschatz/peritext
     - 更新了版本、迁移到vite、基于automerge-wasm
 

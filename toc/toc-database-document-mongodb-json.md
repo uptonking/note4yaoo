@@ -60,9 +60,9 @@ modified: 2022-11-03T04:14:11.987Z
   - ZangoDB is a MongoDB-like interface for HTML5 IndexedDB that supports most of the familiar filtering, projection, sorting, updating and aggregation features of MongoDB, for usage in the web browser.
   - an implementation of IndexedDB is required. 
     - For environments without a native implementation of IndexedDB, https://github.com/dumbmatter/fakeIndexedDB can be used
-  - forks
-    - https://github.com/allwi290/zangodb
-      - cjs to es
+  - 🍴 forks
+  - https://github.com/allwi290/zangodb
+    - cjs to es
 
 - https://github.com/rain1017/memdb /201511/js/inactive
   - 全球首个支持分布式事务的MongoDB
@@ -108,7 +108,7 @@ modified: 2022-11-03T04:14:11.987Z
   - The document store, which is just the raw JSON objects stored in leveldb/levelup/browser-level
   - The inverted search index, powered by search-index
   - yuno is being built to serve my use-case of embedding pre-made databases in electron apps
-  - forks
+  - 🍴 forks
     - https://github.com/pdepip/yunodb
 
 - https://github.com/FoundationDB/fdb-document-layer /apache2/201909/cpp/python

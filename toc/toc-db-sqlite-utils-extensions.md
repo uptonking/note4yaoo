@@ -119,8 +119,8 @@ modified: 2022-11-04T14:20:37.172Z
   - Run SQLite on the web, using WebAssembly
   - a fork of sql.js with the following changes in typescript
   - This is a reimplementation of sql.js in TypeScript.
-  - forks
-    - https://github.com/alineacms/sqlite-wasm
+  - 🍴 forks
+  - https://github.com/alineacms/sqlite-wasm
 
 - https://github.com/leodr/fulltext-search-static-sqlite
   - An unsuccessful attempt of performing full-text search without a server with static site hosting.

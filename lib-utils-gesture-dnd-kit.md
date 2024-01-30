@@ -285,11 +285,11 @@ const overId = getFirstCollision(collisions, 'id');
   - This library draws inspiration from react-virtualized, and is meant as a bare-minimum replacement for the `List` component.
   - https://github.com/clauderic/virtualized-list
     - A tiny vanilla virtualization library, with DOM diffing
-  - forks
-    - https://github.com/matyas-igor/react-small-virtual-list
-      - storybook
-    - https://github.com/manvydasu/react-tiny-virtual-list-oss
-      - support react v18
+  - 🍴 forks
+  - https://github.com/matyas-igor/react-small-virtual-list
+    - storybook
+  - https://github.com/manvydasu/react-tiny-virtual-list-oss
+    - support react v18
 
 - https://github.com/RohanShrestha01/task-planner /ts
   - https://tasksplanner.vercel.app/

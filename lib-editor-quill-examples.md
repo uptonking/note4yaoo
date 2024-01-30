@@ -19,7 +19,7 @@ modified: 2023-02-09T18:32:06.240Z
   - https://quilljs.com/
   - https://quilljs.com/playground/
   - a modern WYSIWYG editor built for compatibility and extensibility
-  - forks
+  - 🍴 forks
   - https://github.com/reedsy/quill /202308/ts
     - We need to use our own forked version of the Delta class, which adds support for complex attributes (which we need for tracked changes).
     - 依赖@reedsy/quill-delta、eventemitter3、parchment、rfdc

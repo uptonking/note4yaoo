@@ -77,8 +77,8 @@ modified: 2021-05-14T15:04:15.333Z
   - 后端依赖express、mongoose、passport、nodemailer
   - 前端依赖redux、styled-components、react-query
   - 实现了私信messenger、通知notification、newsfeed，即im+博客文章
-  - forks
-    - https://github.com/BrunoAmerio/orca
+  - 🍴 forks
+  - https://github.com/BrunoAmerio/orca
 
 - MBBS /52Star/MIT/202207/ts/功能全
   - https://github.com/linfaxin/MBBS

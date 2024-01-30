@@ -161,9 +161,9 @@ modified: 2023-09-02T09:17:22.992Z
   - Browsix also provides a POSIX-like shell that makes it easy to compose applications together for parallel data processing via pipes.
   - Browsix enables you to compose the in-browser part of your web applications out of processes. 
     - This process model is implemented on top of existing browser APIs, like web workers, so it works in all modern browsers.
-  - forks
-    - https://github.com/milahu/browsix
-    - https://github.com/SamGinzburg/browsix
+  - 🍴 forks
+  - https://github.com/milahu/browsix
+  - https://github.com/SamGinzburg/browsix
 
 - https://github.com/intigos/possimpible
   - A (UNIX|Plan9) Kernel for the browser written in TypeScript
@@ -216,7 +216,7 @@ modified: 2023-09-02T09:17:22.992Z
   - Browsix also provides a POSIX-like shell that makes it easy to compose applications together for parallel data processing via pipes.
   - Browsix enables you to compose the in-browser part of your web applications out of processes. 
     - This process model is implemented on top of existing browser APIs, like web workers, so it works in all modern browsers.
-  - forks
+  - 🍴 forks
     - https://github.com/milahu/browsix
     - https://github.com/SamGinzburg/browsix
 # more

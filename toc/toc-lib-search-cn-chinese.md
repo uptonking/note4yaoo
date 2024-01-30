@@ -57,7 +57,7 @@ modified: 2023-01-14T15:46:16.644Z
   - https://github.com/yishn/chinese-tokenizer
   - Simple algorithm to tokenize Chinese texts into words using CC-CEDICT.
   - This tokenizer uses a simple greedy algorithm: It always looks for the longest word in the CC-CEDICT dictionary that matches the input, one at a time.
-  - forks
+  - 🍴 forks
   - https://github.com/tadashi-aikawa/chinese-tokenizer
     - does not depend on Node.js.
 

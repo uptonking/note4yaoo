@@ -53,8 +53,8 @@ modified: 2023-02-05T19:08:03.320Z
 - https://github.com/hustcc/echarts-for-react
   - https://git.hust.cc/echarts-for-react
   - 一个简单的 Apache echarts 的 React 封装
-  - forks
-    - https://github.com/ericwalterrobinson/echarts-for-react
+  - 🍴 forks
+  - https://github.com/ericwalterrobinson/echarts-for-react
 - https://github.com/yuhongda/echarts-readymade
   - Make echarts come in handy for React. Based on echarts-for-react
   - Easy to use (provide default layout and style)

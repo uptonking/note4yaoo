@@ -23,7 +23,7 @@ modified: 2023-12-21T20:06:13.700Z
     - https://github.com/handsontable/handsontable/releases/tag/7.0.0
     - [Handsontable v7 and later versions are fully commercial so it really depends on your case](https://twitter.com/handsontable/status/1164198101726433282). 
     - If you want to fully integrate it with your software while maintaining the OSS license, then your only option is to use v6.2.2 - the last one released under the MIT license.
-  - forks
+  - 🍴 forks
     - https://github.com/swsvindland/opentable /202201/js/from-jacksontable/move walkontable back
       - https://github.com/swsvindland/opentable-react
     - https://github.com/rathbone-labs/jacksontable /201907/js/inactive

@@ -215,7 +215,7 @@ modified: 2023-03-09T13:47:07.317Z
     - currently we only use Redis. 
   - [Where are my files](https://github.com/audreyt/ethercalc/issues/587)
     - It seems that exporting to CSV/ODS/Excel/HTML is not lossless (export to CSV and HTML will lose formulas; export to ODS/Excel seems to lose colors).
-  - forks
+  - 🍴 forks
   - https://github.com/Tuanshu/ethercalc /202312/仅修改测试
     - post to ethercalc ok
   - https://github.com/davidbwaikato/cbh-ethercalc /202111/js
@@ -238,7 +238,7 @@ modified: 2023-03-09T13:47:07.317Z
     - Like ethercalc, you can use any URL, even non-secret ones
     - It doesn't support drag to enter ranges in formulas
     - Arrow keys don't move the selection
-  - forks
+  - 🍴 forks
   - https://github.com/Stackato-Apps/EtherSheet /201604/js
 - https://github.com/luigser/Ethersheet2 /201907/js
   - collaborative, realtime open source spreadsheet
@@ -246,7 +246,7 @@ modified: 2023-03-09T13:47:07.317Z
 - https://github.com/DanBricklin/socialcalc /Artistic/201007/js
   - SocialCalc for Socialtext
   - Dan Bricklin co-authored VisiCalc, the first spreadsheet program for the masses.
-  - forks
+  - 🍴 forks
   - https://github.com/marcelklehr/socialcalc /201808/js
     - in-browser spreadsheet editor with support for real-time collaboration
     - 🎯 This version is based on the version used in EtherCalc.
@@ -288,7 +288,7 @@ modified: 2023-03-09T13:47:07.317Z
 - https://github.com/SheetJS/js-harb /201712/js
   - Plaintext spreadsheet (DIF / CSV / TSV / DBF / SocialCalc) parser
   - this has been merged into js-xlsx
-  - forks
+  - 🍴 forks
   - https://github.com/quilt-js/js-harb
     - forked from tokyootakumode/js-harb
   - https://github.com/tokyootakumode/js-harb

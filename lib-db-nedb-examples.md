@@ -129,7 +129,7 @@ modified: 2023-09-28T20:33:44.333Z
   - [It looks like we build similar database engine(tingodb)](https://github.com/louischatriot/nedb/issues/34)
     - I wrote a DB engine over NeDB/LevelUP which auto-indexes so that each query can run indexed and avoid scanning.
     - It doesn't load the full datastore in memory, and with large datasets it's faster than NeDB because of full indexing.
-  - forks
+  - 🍴 forks
   - https://github.com/aerys/linvodb3
   - https://github.com/aerys/mongoose-linvodb3 /升级leveldown
   - https://github.com/wittyPuneet/linvodb3
@@ -186,7 +186,7 @@ modified: 2023-09-28T20:33:44.333Z
     - One great way to improve it, i think, would be to write indexes and actual data in separated files.
   - https://github.com/sergeyksv/tungus
     - Mongoose driver for TingoDB
-  - forks
+  - 🍴 forks
     - https://github.com/alancnet/tingodb
       - Return promises if callback is not specified
 - https://github.com/turinglabsorg/nodejs-express-starter
@@ -242,7 +242,7 @@ modified: 2023-09-28T20:33:44.333Z
   - Camo was created for two reasons: to bring traditional-style classes to MongoDB, and to support NeDB as a backend
   - Camo was designed and built with multiple Mongo-like backends in mind, like NeDB, LokiJS*, and TaffyDB*. 
   - allows you to use Camo in the browser, since databases like NeDB supports in-memory storage.
-  - forks
+  - 🍴 forks
   - https://github.com/justlep/camo /202301/js
     - Modernized fork of Camo, a class-based Object-Document Mapper for NeDB
     - https://github.com/justlep/nedb

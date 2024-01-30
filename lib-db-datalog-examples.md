@@ -44,7 +44,7 @@ modified: 2023-09-16T17:28:29.873Z
   - Unlike DataScript, Mentat exposes free-text indexing, **thanks to SQLite**.
   - Mentat was designed for embedding, initially in an experimental Electron app 
   - Mentat uses partial indices, which are available in SQLite 3.8.0 and higher
-  - forks
+  - 🍴 forks
   - https://github.com/qpdb/mentat
 
 - https://github.com/amitayh/rustomic /rust
