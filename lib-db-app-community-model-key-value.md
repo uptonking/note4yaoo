@@ -22,7 +22,13 @@ modified: 2023-10-26T15:02:47.068Z
 
 - ## 
 
-- ## 
+- ## Apache Kvrocks 在 RocksDB 上建构了一个 Redis 协议兼容的 NoSQL 系统，也实现了 Redis Cluster 兼容的集群方案（底层略有不同）。
+- https://twitter.com/tison1096/status/1752177165146403150
+  - 存在的最初原因是 Redis on Flash 一直拉胯 .. Kvrocks 也跟部分 Redis Client 系统做过兼容测试，目前有一些非常年轻的 C++ 开发者在做创新发展，不是个固守成规的项目。我 2022 年 mentor 这个项目进 Apache 孵化，去年成为 Apache 顶级项目
+
+- ### 📝 [Apache Kvrocks 毕业随感 | 夜天之书 _20230628](https://www.tisonkun.org/2023/06/28/kvrocks-graduate/)
+- Apache Kvrocks 是一个分布式 KV 数据库，使⽤ RocksDB 作为底层存储引擎并兼容 Redis 协议，旨在解决 Redis 内存成本⾼以及容量有限的问题，可以作为 Redis 的持久化变体做 drop-in 替换。
+- Kvrocks 起初是美图内部研发的软件，于 2019 年对外开源并独立运营。2022 年 4 月，Kvrocks 在 Champion 陈亮的推动下进入 ASF 孵化器孵化。
 
 - ## Redis is fast for in-memory data storage. 
 - https://twitter.com/sahnlam/status/1741705354227163316

@@ -212,11 +212,13 @@ modified: 2023-08-23T17:15:46.484Z
 - https://github.com/arso-project/hyper-content-db /201912/js/inactive
   - A Kappa-style peer-to-peer content database, on top of hyperdrives.
 
-- https://github.com/mafintosh/hyperdb /201901/js/inactive
+- https://github.com/mafintosh/hyperdb /201901/js/inactive/作者新作品hypercore
   - HyperDB is a scalable peer-to-peer key-value database.
   - A HyperDB is fundamentally a set of hypercores.
   - The combination of all operations performed on a HyperDB by all of its members forms a DAG (directed acyclic graph). 
   - HyperDB builds an incremental index with every new key/value pairs ("nodes") written
+  - [Is this project maintained anymore?_202012](https://github.com/mafintosh/hyperdb/issues/171)
+    - @hypercore-protocol is now the parent gh org and `mafintosh/hyperbee` is the best replacement for `hyperdb` atm
 
 - https://github.com/peermaps/kappa-sparse-query /js/inactive
   - architecture for sparse data flows over kappa-core driven by peer queries

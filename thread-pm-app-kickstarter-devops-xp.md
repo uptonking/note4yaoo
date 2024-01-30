@@ -189,6 +189,28 @@ modified: 2022-11-07T11:00:28.824Z
 
 - ## 
 
+- ## 发的起高薪的公司都只是整天想着怎么toC，系统软件毫无起色也是意料之中的事了
+- https://twitter.com/geniusvczh/status/1752296790391730399
+- 马化腾昨天在腾讯年会上的35分钟发言实录已经传得到处都是了，比较少见的是他没怎么说虚话，直接评价了腾讯各条重要业务线的成绩，还挺有参考价值的。
+  - 微信，视频号不愧是「全村的希望」，在短视频这块成功顶住了抖音带来的压力，而且重叠性不高，今年要全力做带货；
+  - QQ和网媒，QQ还有潜力，但不够出圈，长视频出了一些爆款剧集，其余部门降本增效执行得很好，不亏钱了，包括虎牙阅文这些投资公司，也在注重财务效率；
+  - 云（企业服务），业绩不好跟市场环境有关，理解并宽容，但不要继续搞招待客户那一套了，要做产品，不做项目，同时为了去风险，支付要主动降份额，没办法；
+  - 游戏，用了「毫无建树」这么一个严厉的词，不躺在功劳簿上，要打鸡血，明确表示继续扶元神为新太子，以及国内卷不动了就去想想怎么做海外市场。
+
+- 视频号，参考抖音、快手，完全可以再造一个千亿美金的产品
+
+- 圆梦之星肯定是败了，最简单的指标，我家娃说不好玩
+  - 圆梦就是一个春晚的大杂烩小品，火的游戏模式都抄一遍，有什么意思，一个发行花那么多钱，产品连几十年前的魔兽争霸的一条毛都比不了
+
+- ## risingwave:　Lessons I Learned After running a startup for Three Full Years: People do not need a “perfect” product. 
+- https://twitter.com/YingjunWu/status/1752056928233246731
+  - Instead, they require a product that satisfies all the following three criteria:
+  - Addresses customers' pain points; 
+  - Fits into customers' existing environments; 
+  - Is stable and reliable.
+  - At @RisingWaveLabs , we are not trying to build a flawless product; nor are we aiming to create an "all-in-one" solution. What we are building is a solution that meets requirements. It’s a customer-request-driven product.
+- Based on personal experience, I feel like "stable and reliable" could be substituted for "not worse than competitors" 
+
 - ## 投资人给我们建议： 这两年情况不好，建议我们还是先做项目兄弟们赚钱，吃香喝辣的更实在，以朋友身份建议我们的
 - https://twitter.com/xqliu/status/1737729445115593142
 - 投资人还建议，要包装！要打造人设，要利用我的海外身份搞个华侨归国创业的噱头，要注册新公司和之前划清界限，但要把业务算在新公司，要做数据，让投资人看到公司增长潜力… 总之太多潜规则了，感觉程序员出身，完全玩不转这一套……

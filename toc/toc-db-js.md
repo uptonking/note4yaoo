@@ -456,8 +456,13 @@ modified: 2022-11-25T15:50:48.226Z
   - Storage Model: Assassin sends data to the server, which then stores the metadata in the distributed file system Hyperdrive, which is built on the DAT protocol
   - [Assassin - An open source, free database for killing slow webpages - DEV Community](https://dev.to/ender_minyard/assassin-an-open-source-free-database-for-killing-slow-webpages-3fip)
 
-- https://github.com/mafintosh/hyperdb /201808/js
-  - Distributed scalable database. a scalable peer-to-peer key-value database.
+- https://github.com/mafintosh/hyperdb /201901/js/inactive/作者新作品hypercore
+  - HyperDB is a scalable peer-to-peer key-value database.
+  - A HyperDB is fundamentally a set of hypercores.
+  - The combination of all operations performed on a HyperDB by all of its members forms a DAG (directed acyclic graph). 
+  - HyperDB builds an incremental index with every new key/value pairs ("nodes") written
+  - [Is this project maintained anymore?_202012](https://github.com/mafintosh/hyperdb/issues/171)
+    - @hypercore-protocol is now the parent gh org and `mafintosh/hyperbee` is the best replacement for `hyperdb` atm
   - A HyperDB is fundamentally a set of hypercores
 - https://github.com/beakerbrowser/webdb /201807/js
   - A database that reads and writes records on dat:// websites.

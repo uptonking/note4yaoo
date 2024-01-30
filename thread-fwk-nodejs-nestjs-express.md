@@ -9,6 +9,14 @@ modified: 2022-12-19T01:51:23.851Z
 
 # guide
 
+# discuss-stars
+- ## 
+
+- ## Is there a way to bridge the gap between fetch-like server APIs of `Request => Promise<Response>` with Node.js APIs of `(IncomingMessage, ServerResponse) => void` .
+- https://twitter.com/tomus_sherman/status/1752268167777243209
+  - have a look at how hono does it
+- After a brief glance it looks like this is bridging `Node -> fetch`
+
 # discuss
 - ## 
 

@@ -2,7 +2,7 @@
 title: lib-office-note-taking-examples
 tags: [app, cross-platform, note-taking, office, toc]
 created: 2020-10-22T09:55:31.796Z
-modified: 2024-01-28T20:53:23.690Z
+modified: 2024-01-30T20:56:45.773Z
 ---
 
 # lib-office-note-taking-examples
@@ -101,7 +101,7 @@ modified: 2024-01-28T20:53:23.690Z
   - https://github.com/Automattic/simplenote-ios
   - [iOS, Android, and macOS Apps Now Open Source _201608](https://simplenote.com/2016/08/11/ios-android-and-macos-apps-now-open-source/)
 
-- notable /16.4kStar/MIT > AGPLv3/202007/ts/桌面版
+- notable /16.4kStar/MIT > AGPLv3/201905/ts/桌面版
   - https://github.com/notable/notable
   - https://notable.md/
   - The Markdown-based note-taking app that doesn't suck.
@@ -114,12 +114,19 @@ modified: 2024-01-28T20:53:23.690Z
   - [comparison: notable, bear, boostnote, evernote, joplin, keep, notion](https://notable.app/static/images/comparison.png)
   - [Show HN: Notable – A Markdown-based note-taking app that doesn't suck | Hacker News_201812](https://news.ycombinator.com/item?id=18765482)
   - 🍴 forks
-  - https://github.com/lmihalkovic/notable /MIT
-    - https://github.com/Eastonboy99/notable /v1.3
+  - https://github.com/Eastonboy99/notable /202001/MIT/v1.3
+    - https://github.com/lmihalkovic/notable /201902/MIT
     - add RxJS to the dependencies
     - remove CodeMirror and replace it with monaco
-  - https://github.com/dps/notable /MIT
+  - https://github.com/dps/notable /201901/MIT
     - fork of notable adding built in Google Drive sync, an omnibox and immersive first UI
+  - https://github.com/Maxwin-z/notable /201911/AGPLv3
+    - feat: allow git sync, try to run sync background
+  - https://github.com/bojjenclon/notable /201901/MIT
+    - Added statusbar widget with word count and position support
+  - https://github.com/nicholasbailey/freenotable /1commit
+- https://github.com/meinto/notable-mobile /AGPLv3/201907/ts/react-native
+  - a native app inspired by notable/notable
 - https://github.com/redsolver/noteless /MIT/202106/dart/inactive
   - markdown-based note-taking app for Android
   - Compatible with notes saved in Notable
@@ -128,10 +135,6 @@ modified: 2024-01-28T20:53:23.690Z
 - https://github.com/fabiospampinato/noty /201901/ts/archived
   - Autosaving sticky note with support for multiple notes without needing multiple windows.
   - Deprecated in favor of Notable
-- notable-agpl
-  - https://github.com/nicholasbailey/freenotable /1commit
-  - https://github.com/Maxwin-z/notable
-  - https://github.com/benrbray/noteworthy
 
 - noteworthy /166Star/AGPLv3/202207/ts/桌面版
   - https://github.com/benrbray/noteworthy

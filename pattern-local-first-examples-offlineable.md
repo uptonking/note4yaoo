@@ -159,10 +159,15 @@ modified: 2023-11-17T10:12:06.357Z
   - Hoodie lets you build apps without thinking about the backend and makes sure that they work great independent of connectivity.
   - https://github.com/hoodiehq/hoodie-app-tracker
 
-- https://github.com/local-first-web/state /automerge
-  - A Redux-based state container for local-first software, offering seamless synchronization using Automerge CRDTs. (Formerly known as fish Cevitxe).
-  - @localfirst/state is an automatically replicated Redux store that gives your app offline capabilities and secure peer-to-peer synchronization superpowers.
-  - https://github.com/local-first-web/auth
+- https://github.com/local-first-web/state /202012/ts/inactive/automerge
+  - A Redux-based state container for local-first software, offering seamless synchronization using Automerge CRDTs. 
+  - Formerly known as fish Cevitxe.
+  - `@localfirst/state` is an automatically replicated Redux store that gives your app offline capabilities and secure peer-to-peer synchronization superpowers.
+  - Data replication & synchronization, using the `Automerge` library
+  - https://github.com/local-first-web/auth /202401/ts
+    - decentralized authentication and authorization for team collaboration, using a secure chain of cryptographic signatures.
+    - This library uses a conflict-free replicated state container based on a signature chain (provided by the CRDX library) to manage team membership, permissions, and authentication.
+    - All changes to the team's membership and permissions are recorded on the signature chain as a sequence of signed and hash-chained actions.
   - https://github.com/local-first-web/relay
 
 - rxdb /17.6kStar/Apache2/202206/ts

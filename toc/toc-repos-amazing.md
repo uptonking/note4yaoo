@@ -180,3 +180,11 @@ modified: 2020-11-03T06:54:59.051Z
   - 可以把城市标志性建筑进行3D化，然后结合天气展示。
   - 结合GPT-4 ALL Tools可以将实时天气直接展示在立体图里。
   - 导入runwayml做成动态，那就太帅了
+
+## avatar
+
+- https://github.com/mayandev/notion-avatar /MIT/202312/ts
+  - https://notion-avatar.vercel.app/
+  - online tool for making notion-style avatars.
+  - 可配置face/eyes/nose/mouse/glasses/hair
+# more

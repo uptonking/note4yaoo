@@ -1,11 +1,11 @@
 ---
-title: toc-lib-web-worker
-tags: [lib, toc, web-worker]
+title: toc-lib-utils-js-worker-concurrency
+tags: [concurrency, lang-js, toc, web-worker]
 created: 2020-12-19T18:21:50.241Z
-modified: 2020-12-19T18:22:27.577Z
+modified: 2024-01-30T14:41:38.742Z
 ---
 
-# toc-lib-web-worker
+# toc-lib-utils-js-worker-concurrency
 
 # guide
 
@@ -161,6 +161,10 @@ modified: 2020-12-19T18:22:27.577Z
   - Native cross-platform Web Workers. 
   - In the browser, it's simply an alias of Worker.
   - In Node, it's a web-compatible Worker implementation atop Node's worker_threads.
+
+- https://github.com/tinylibs/tinypool /971Star/MIT/202401/ts
+  - tiny Node.js Worker Thread Pool implementation 
+  - a fork of piscina. What we try to achieve in this library, is to eliminate some dependencies and features that our target users don't need
 # service-worker
 - https://github.com/mswjs/msw
   - a seamless REST/GraphQL API mocking library for browser and Node.js.

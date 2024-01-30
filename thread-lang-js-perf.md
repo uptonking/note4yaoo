@@ -87,6 +87,16 @@ modified: 2023-11-10T08:05:19.107Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## if you store values in a Map (as key) and to avoid leaks use WeakRef to wrap their counterpart, 
+- https://twitter.com/WebReflection/status/1752296107680416191
+  - don't test `.has(value)` on map, test `.get(value)?.deref()` instead because the GC might kick after the WeakRef has stopped retaining the ref.
+
 - ## For JS runtimes/engines, a lot of performance optimizations look like
 - https://twitter.com/jarredsumner/status/1743982090100908068
   - if you want to loop over all the properties in an object quickly, first you have to check if it’s an object and then if it’s observable that you can loop over the properties (Proxy trap for getOwnPropertyNames) 

@@ -56,7 +56,7 @@ flatpak run com.discordapp.Discord --proxy-server="socks5://127.0.0.1:1080"
 rm package-lock.json && find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +
 
 # npm i
-DEBUG=* npm i --no-audit --loglevel silly
+  DEBUG=* npm i --no-audit --loglevel silly
 DEBUG=* npm install --legacy-peer-deps --no-audit --loglevel silly
 
 $$('[contenteditable]')

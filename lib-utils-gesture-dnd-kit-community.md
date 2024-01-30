@@ -12,7 +12,10 @@ modified: 2023-04-23T13:30:54.152Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## Make resizable area from HTML element with CSS
+- https://twitter.com/davidm_ml/status/1752282817654849977
+- I use this often for quickly testing components for different dimensions.
+  - We can also change the style of resize handler using `::-webkit-resizer` (Not for firefox)
 
 - ## iOS/Safari is so weird. I haven't found a simple way to stop it from zooming if you tap the same button twice quickly other than making sure you call preventDefault() on every pass.
 - https://twitter.com/ericlewisplease/status/1730257076708860325

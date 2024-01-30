@@ -25,6 +25,16 @@ modified: 2021-08-28T11:49:05.730Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## I may have been wrong about property based testing.
+- https://twitter.com/LewisCTech/status/1752061962681553170
+  - Love it in theory. But every library I've used has been complicated and confusing. Which  suggests it's just a complicated and confusing thing to implement.
+
 - ## Is there a good utility for testing a project against multiple versions of its npm dependencies?
 - https://twitter.com/justinfagnani/status/1736795878823014603
   - I know how to do this manually, but I want something more automatic. I should work locally, and so that I could import the package to vary under its default name.

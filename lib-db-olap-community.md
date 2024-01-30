@@ -22,7 +22,13 @@ modified: 2023-12-15T18:01:43.992Z
 # discuss
 - ## 
 
-- ## 
+- ## This is a longer post that goes in-depth on new query engine layers like @ApacheArrow Data Fusion and Velox.
+- https://twitter.com/criccomini/status/1751998894857453657
+  - [Databases Are Falling Apart: Database Disassembly and Its Implications _202401](https://materializedview.io/p/databases-are-falling-apart)
+- Hot takes:
+  - DWH commoditized
+  - Kafka threatened
+  - HTAP coming
 
 - ## 🧊 [The Rise and Fall of the OLAP Cube | Hacker News_202001](https://news.ycombinator.com/item?id=22189178)
 - The columnar database engines are powerful enough to answer the ad-hoc questions so you often don't need to materialize the summary data somewhere else or use BI tools such as Tableau that fetch the data into their server and let you run queries on their platform.

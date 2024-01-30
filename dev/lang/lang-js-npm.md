@@ -14,6 +14,7 @@ modified: 2024-01-02T07:49:41.237Z
   - 批量执行某个命令如build时，若涉及的仓库存在依赖关系，由于npm未实现按依赖顺序编译，可能执行失败或输出的文件是旧逻辑
 
 - tips
+  - npmjs.com支持按作者搜索，如`electron author:authorName`
 
 - proxy
   - [常用网络问题库的url，部分地址失效待检查](https://github.com/cnpm/binary-mirror-config/blob/master/package.json)

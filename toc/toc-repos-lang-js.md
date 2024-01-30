@@ -401,6 +401,11 @@ modified: 2021-05-14T15:04:42.225Z
   - Includes Round Robin algorithm and health check
   - Health check happens every 10th second. They're done in the background.
   - `http-proxy` is a Node.js library that allows you to create HTTP proxy servers. A proxy server simply forwards client HTTP requests to other servers and returns the response back to the client.
+# benchmarking
+
+- https://github.com/tinylibs/tinybench /MIT/202401/ts
+  - tiny and lightweight benchmarking library
+  - You can run your benchmarks in multiple JavaScript runtimes, Tinybench is completely based on the Web APIs with proper timing using `process.hrtime` or `performance.now`.
 # more
 - https://github.com/liljenzin/confluent /cpp
   - Confluent sets and maps are sorted associative containers written in C++11.

@@ -7,8 +7,9 @@ modified: 2020-12-31T15:19:37.542Z
 
 # toc-lib-web-wasm
 
-# js
+# guide
 
+# js
 - https://github.com/TheLartians/modern-wasm-starter
   - A starter template to easily create WebAssembly packages for npm using type-safe C++ code with automatic declarations.
 
@@ -123,4 +124,10 @@ modified: 2020-12-31T15:19:37.542Z
 # wasm-utils
 - https://github.com/inokawa/wasm-ts-runtime
   - [WIP]A toy WebAssembly runtime implementation with TypeScript.
+
+- https://github.com/zxch3n/wasm-size-inspector /202401/ts
+  - https://wasm-size-inspector.vercel.app/
+  - Import and analyze your WASM file size in the browser, built upon Twiggy.
+  - https://github.com/rustwasm/twiggy /rust
+    - A code size profiler for Wasm
 # more
