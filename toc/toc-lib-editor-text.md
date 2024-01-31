@@ -104,10 +104,12 @@ modified: 2021-07-27T15:12:39.959Z
   - Notebook is a simple Markdown and LaTeX Math editor build in React. 
   - The goal of this project is to create a modular / extensible editor for the web
 # editor-electron
-- https://github.com/pulsar-edit/pulsar /MIT/js
+- https://github.com/pulsar-edit/pulsar /MIT/202401/js
   - https://pulsar-edit.dev/
   - A Community-led Hyper-Hackable Text Editor, Forked from Atom, built on Electron.
   - Designed to be deeply customizable, but still approachable using the default configuration.
+  - [Porting Teletype from Atom repo a.k.a Collaboration tool_202305](https://github.com/pulsar-edit/pulsar/issues/536)
+    - The main issue is that Teletype runs on a server and we simply might not be able to justify running such a service without charging a maintenance cost for access.
   - https://github.com/atom-community/atom
     - Community build of the hackable text editor
 # desktop-editor

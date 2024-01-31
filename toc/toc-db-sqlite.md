@@ -25,7 +25,7 @@ modified: 2021-08-30T18:56:18.632Z
     - What is really needed would be a hardened sqlite, to rip out the many openssl-like insanities and insecure defaults. 
     - For those who cannot use Dqlite
 
-- kikko /75Star/MIT/202211/ts
+- kikko /75Star/MIT/202401/ts
   - https://github.com/kikko-land/kikko
   - https://kikko-doc.netlify.app/
   - Powerful SQLite adapter for web, mobile and desktop. Build reactive UI on top of it

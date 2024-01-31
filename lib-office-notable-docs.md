@@ -9,57 +9,6 @@ modified: 2024-01-29T23:07:40.193Z
 
 # guide
 
-# [changelog](https://github.com/notable/notable/releases)
-- v1.8.4_2020-01-22
-  - Bundling OS-specific dependencies only when needed
-  - Ensuring both creation date and modification date are updated when duplicating a note
-
-- v1.8.0_2019-11-07
-  - Upgraded Electron to v7
-  - Rewritten “Select Data Directory...” window as a modal window
-
-- v1.7.0_2019-08-10
-  - Added support for adding image attachments via copy and paste
-  - Added support for writing footnotes
-  - Added support for importing HTML notes
-
-- v1.6.0_2019-07-09
-  - Added support for linking to search queries
-  - Using natural sorting
-
-- v1.5.0_2019-05-12
-  - Added context menu actions for copying attachments/tags/notes names
-  - Upgraded to Electron v5
-  - Markdown: improved stripping of headers, emojis, images, links, wikilinks and todos
-
-- v1.4.0_2019-03-15
-  - 💰 Switched to the AGPL license
-  - Added a “Toggle Sidebar” menu entry
-  - Search: added a button for clearing the input
-  - Replaced CodeMirror with Monaco
-
-- v1.3.0_2019-01-31
-  - Added Wiki-style links supports
-  - Added support for linking to attachments from `source` elements
-
-- v1.2.0_2019-01-25
-  - Added “Undo” and “Redo” to the menu
-  - Added basic support for range selection when holding shift key
-  - Added a Split-View mode
-
-- v1.1.0_2019-01-04
-  - Added KaTeX support
-  - Added support for double-click to collapse/expand tags
-  - Search: searching notes contents (non fuzzly) too
-
-- v1.0.1_2018-12-27
-  - Multi-Editor: improved confirmation messages for adding/removing tags
-  - Tagbox: ensuring their never share the same name
-  - Tags: updating the tree instead of completely rebuilding it, O(n) -> O(1)
-  - Ensuring the special “Tags” tag is collapsible too
-
-- v1.0.0_2018-12-22
-  - 支持win/linux/mac
 # docs
 - The data directory is where all your notes and attachments will be stored
   - You can edit your notes/attachments without even using Notable
@@ -123,3 +72,4 @@ modified: 2024-01-29T23:07:40.193Z
   - not planned
 - Encrypted Notes
   - third-party program will take care of the encryption
+# more

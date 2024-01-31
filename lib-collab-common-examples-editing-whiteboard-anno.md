@@ -22,6 +22,20 @@ modified: 2022-11-07T17:36:22.236Z
 - https://github.com/lovasoa/whitebophir /1.5kStar/AGPLv2/202211/js
   - Online collaborative Whiteboard that is simple, free, easy to use and to deploy
 
+- https://github.com/netless-io/netless-app /MIT/202312/ts
+  - https://netless-io.github.io/netless-app
+  - Official Apps for the Agora Interactive Whiteboard.
+  - https://github.com/netless-io/flat /MIT/202401/ts
+    - https://flat.whiteboard.agora.io/
+    - Project flat is the Web, Windows and macOS client of Agora Flat open source classroom.
+  - https://github.com/netless-io/flat-server
+    - Node.js server for the Agora Flat open source classroom.
+
+- https://github.com/tableaunoir/tableaunoir /GPLv3/202312/ts
+  - https://tableaunoir.github.io/
+  - online collaborative blackboard tool with fridge magnets available in many languages.
+  - designed to give lectures. Tableaunoir enables to easily divide your board in panels and navigate panel by panel.
+
 - https://github.com/spacedeck/spacedeck-open
   - a web based, real time, collaborative whiteboard application with rich media support
 

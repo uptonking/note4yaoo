@@ -16,7 +16,7 @@ modified: 2023-01-02T10:30:48.816Z
 
 - ## 
 
-- ## [IndexedDB shared between windows? · Discussion · cawa-93/vite-electron-builder](https://github.com/cawa-93/vite-electron-builder/discussions/222)
+- ## [IndexedDB shared between windows? · cawa-93/vite-electron-builder](https://github.com/cawa-93/vite-electron-builder/discussions/222)
 - > Context:
   - Create main/renderer windows via new BrowserWindow()
   - Create additional "background" processing window that is hidden via new BrowserWindow()

@@ -23,7 +23,7 @@ modified: 2021-08-23T05:27:08.068Z
     - 所有文件夹，不管嵌套层级，支持直接通过唯一id访问，url都是随机数字
   - onedrive示例  内层文件夹url扁平化
     - /?id=uuid-folder&cid=AE0F511DC7381EDB
-# react-file
+# file-ui
 - react-sortable-tree /MIT/3.3kStar/202005
   - https://github.com/frontend-collective/react-sortable-tree
   - https://frontend-collective.github.io/react-sortable-tree/
@@ -40,10 +40,10 @@ modified: 2021-08-23T05:27:08.068Z
   - react-file-manager contains some generic code for D&D and selection handling. You will need some additional code to make it render something.
   - antd-file-manager contains an implementation based on AntD's `<Table/>` component
 
-- https://github.com/uptick/react-keyed-file-browser
+- https://github.com/uptick/react-keyed-file-browser /MIT/202305/js/inactive
   - https://uptick.github.io/react-keyed-file-browser/
+  - Folder based file browser given a flat keyed list of objects, powered by React.
   - 依赖 react-dnd、date-fns
-  - Folder based file browser given a flat keyed list of objects
 
 - https://github.com/TimboKZ/Chonky
   - https://chonky.io/
@@ -52,7 +52,7 @@ modified: 2021-08-23T05:27:08.068Z
 
 - https://github.com/reactfilemanager/core
   - https://github.com/reactfilemanager/php-server
-# file-manager-web
+# file-manager-fullstack
 - https://github.com/MrWangJustToDo/file-manager
   - 依赖redux-thunk、sqlite3、jquery、codemirror、echarts
   - 个人网盘，支持用户的登录、注册，文件/文件夹的新建、删除，文件的上传、下载、编辑、提交、预览、重命名、复制、回收、搜索

@@ -25,10 +25,41 @@ modified: 2023-01-02T10:30:19.459Z
 # discuss-bundler/compiler
 - ## 
 
-- ## 
+- ## [Question: what's the relationship between electron-webpack and electron-forge? _202001](https://github.com/electron-userland/electron-webpack/issues/342)
+- there is no relationship.... 
+  - `electron-webpack` is a module for helping you use electron with webpack and provices a streamlined experience for working with `electron-builder` to package and distribute apps. 
+  - Electron forge is a different approach, it adds a boilerplate instead of a module and does a lot of the same things.
 
 - ## [Electron community reinvented electron-builder/etc. as electron-forge. How to package Quasar w/ electron-forge?_202309](https://github.com/quasarframework/quasar/discussions/16380)
 - electron-forge uses the electron-packager under the hood. It seems to be a convenience/configuration package.
+
+- ## [Significant Performance Difference Between electron-builder and electron-forge · electron-userland/electron-builder](https://github.com/electron-userland/electron-builder/issues/8000)
+- Can you run a test with asar: false?
+  - electron-builder only packages the code into an asar format and then copies that into the .app, which should be no different than electron-forge. 
+  - The only difference I can think of is that the asar compilation is not as optimized in electron-builder's approach than that of @electron/asar package handles it.
+
+- ## [Question: How easy is it to switch between Builder and Forge? · electron-userland/electron-builder _202003](https://github.com/electron-userland/electron-builder/issues/4733)
+- It depends on your needs. Some users needs advanced / regular / portable installer for Windows. In this case only electron-builder provides solution using NSIS.
+- it will be easier to switch from electron-forge to electron-builder because electron-builder provides more advanced features than electron-forge. 
+
+- Keep in mind that electron-builder STILL doesn't support Flatpak while electron-forge does. Flatpak is getting big on pretty much "every distro except Ubuntu"
+
+- ## 🆚️ [Question: What's the difference with electron-forge? · electron-userland/electron-builder _201702](https://github.com/electron-userland/electron-builder/issues/1193)
+- electron-builder it is a tool to build your Electron application.
+  - electron-forge it is a tool to build your Electron application PLUS boilerplate to create electron app.
+- electron-builder and electron-forge are tools to build your electron app. electron-compile to create.
+
+- electron-builder 16.2.0 supports electron-forge and electron-compile.
+
+- You can use appimage, snap, nsis and nsis-web electron-builder targets in the electron-forge("win32": ["nsis"]). But it is not recommended, because electron-forge packaging and publishing is a far away in terms of quality/feature set from electron-builder.
+
+- ## 🤔 [Why Electron Forge - Electron Forge](https://www.electronforge.io/core-concepts/why-electron-forge)
+- Electron Forge can be considered an alternative to Electron Builder, which fulfills the same use-case for application building and publishing.
+- The key difference in philosophy between the two projects is that Electron Forge focuses on combining existing first-party tools into a single build pipeline, while Builder rewrites its own in-house logic for most build tasks.
+- two main advantages to using Forge:
+  - Forge receives new features for application building as soon as they are supported in Electron. These features are built with first-party Electron tooling in mind, so Forge receives them as soon as they are released.
+  - Forge's multi-package architecture makes it easier to understand and extend. Since Forge is made up of many smaller packages with clear responsibilities, it is easier to follow the flow of the code. 
+
 # discuss
 - ## 
 

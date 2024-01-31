@@ -44,7 +44,7 @@ modified: 2021-08-30T18:56:14.863Z
   - A web app for writing and running SQL queries and visualizing the results. 
   - Supports Postgres, MySQL, SQL Server, ClickHouse, Crate, Vertica, Trino, Presto, SAP HANA, Cassandra, Snowflake, Google BigQuery, SQLite
 
-- https://github.com/sqlectron/sqlectron-gui
+- https://github.com/sqlectron/sqlectron-gui /MIT/202202/ts/inactive
   - https://sqlectron.github.io/
   - lightweight SQL client desktop with cross database and platform support.
 

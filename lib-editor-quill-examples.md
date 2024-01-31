@@ -162,10 +162,11 @@ modified: 2023-02-09T18:32:06.240Z
 
 - https://github.com/netless-io/netless-app/tree/master/packages/app-quill
   - Netless App for rich-text collaborative editing, powered with Yjs (a CRDT implementation) and Quill.
-  - https://github.com/netless-io/netless-app /202312/ts
+  - https://github.com/netless-io/netless-app /MIT/202312/ts
     - https://netless-io.github.io/netless-app
     - Official Apps for the Agora Interactive Whiteboard.
-  - https://github.com/netless-io/flat
+  - https://github.com/netless-io/flat /MIT/202401/ts
+    - https://flat.whiteboard.agora.io/
     - Project flat is the Web, Windows and macOS client of Agora Flat open source classroom.
   - https://github.com/netless-io/flat-server
     - Node.js server for the Agora Flat open source classroom.

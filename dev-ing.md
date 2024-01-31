@@ -316,9 +316,26 @@ $$('[contenteditable]')
     - 2个编辑器同一页面协同的示例未完成
     - cursor光标位置经常对不上
   - [x] streaming infinite-list/tree
-# dev-01
+# dev-02
 
-## 011
+## 020
+
+## 0201
+
+# dev-01-pouchdb-idb-rspack-rebuilt-and-joplin-note
+
+## 0131
+
+- [Error: error:0308010C:digital envelope routines::unsupported (Node.js v19.4.0) - Stack Overflow](https://stackoverflow.com/questions/75167770/error-error0308010cdigital-envelope-routinesunsupported-node-js-v19-4-0)
+
+```shell
+# linux
+export NODE_OPTIONS=--openssl-legacy-provider
+# win
+set NODE_OPTIONS=--openssl-legacy-provider
+
+npm start
+```
 
 ## 0117
 

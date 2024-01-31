@@ -222,16 +222,6 @@ modified: 2023-11-16T15:00:11.503Z
   - It utilizes Reqres as a source of fake backend data to simulate a login flow and load initial user information
   - https://github.com/Faisalramzan282/User-Admin_Role_Auth_VanillaJS /js
 
-- https://github.com/HarshitRoy812/notes-app /202301/js
-  - Developed a full-authenticated notes app using Vanilla and Express JS. Authenticated the app using JWT library.
-
-- https://github.com/dcode-youtube/single-page-app-vanilla-js /js
-  - Taken from my YouTube Tutorial: https://www.youtube.com/watch?v=6BozpmSjk-Y
-- https://github.com/dcode-youtube/notes-app-javascript-localstorage /2020107/js
-  - A Notes App built with vanilla JavaScript and Local Storage.
-- https://github.com/navdeepm20/Notes_app_in_JavaScript /202211/js
-  - Notes App build using Vanilla Js that saves notes on your browser local storage
-
 - https://github.com/CodePapa360/Friends-TvSeries-Site /202308/js
   - https://friends-tv-series-codepapa360.netlify.app/
   - Built entirely from scratch using only JavaScript – no frameworks or libraries involved.
@@ -355,14 +345,6 @@ modified: 2023-11-16T15:00:11.503Z
   - Trello like app made with vanillaJS to practice with Drag and Drop API.
 - https://github.com/albertoarf13/trelloClone /202011/js
   - Trello clone with vanilla Javascript, HTML and CSS. (web app)
-
-- https://github.com/BernardoAguayoOrtega/google-keep-clone /202011/js
-  - https://bernardoaguayoortega.github.io/google-keep-clone/public/
-  - Google keep clone created with vanilla.js, css and html <3
-- https://github.com/nikldev0/google-keep-clone
-  - https://kind-villani-04f47c.netlify.app/
-- https://github.com/AjayShukla007/KeepNote-clone-vanillaJS
-  - a clone of google KeepNote from scratch using html, css, JavaScript, anime.css, all.js and combination.js(a js library created by me by combining different js libraries like hammer.js, fabric.js)
 
 - https://github.com/msawaguchi/paint_xp_clone /202212/js
   - Aesthetic version of Windows XP Paint clone in pure VanillaJS
@@ -544,3 +526,26 @@ modified: 2023-11-16T15:00:11.503Z
   - Hacker News readers as Progressive Web Apps. A spiritual successor to TodoMVC
 - https://github.com/cristianbote/hnpwa-vanilla /202111/js
   - Hacker News PWA implement ed using no framework just javascript
+# notes
+- https://github.com/HarshitRoy812/notes-app /202301/js
+  - Developed a full-authenticated notes app using Vanilla and Express JS. Authenticated the app using JWT library.
+
+- https://github.com/dcode-youtube/single-page-app-vanilla-js /js
+  - Taken from my YouTube Tutorial: https://www.youtube.com/watch?v=6BozpmSjk-Y
+- https://github.com/dcode-youtube/notes-app-javascript-localstorage /2020107/js
+  - A Notes App built with vanilla JavaScript and Local Storage.
+- https://github.com/navdeepm20/Notes_app_in_JavaScript /202211/js
+  - Notes App build using Vanilla Js that saves notes on your browser local storage
+
+- https://github.com/BernardoAguayoOrtega/google-keep-clone /202011/js
+  - https://bernardoaguayoortega.github.io/google-keep-clone/public/
+  - Google keep clone created with vanilla.js, css and html <3
+- https://github.com/nikldev0/google-keep-clone
+  - https://kind-villani-04f47c.netlify.app/
+- https://github.com/AjayShukla007/KeepNote-clone-vanillaJS
+  - a clone of google KeepNote from scratch using html, css, JavaScript, anime.css, all.js and combination.js(a js library created by me by combining different js libraries like hammer.js, fabric.js)
+
+- https://github.com/MeheliR/Notables /MIT/202401/js
+  - https://mehelir.github.io/Notables/
+  - Create, Read, Update, Delete (CRUD) in Vanilla JavaScript : Note Taking Application
+# more

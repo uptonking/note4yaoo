@@ -64,6 +64,15 @@ modified: 2023-02-07T17:38:05.336Z
 - https://github.com/meetfranz/franz /4.4kStar/apachew/202308/js
   - https://meetfranz.com/
   - free messaging app for services like WhatsApp, Slack, Messenger and many more
+
+- https://github.com/netless-io/netless-app /MIT/202312/ts
+  - https://netless-io.github.io/netless-app
+  - Official Apps for the Agora Interactive Whiteboard.
+  - https://github.com/netless-io/flat /MIT/202401/ts
+    - https://flat.whiteboard.agora.io/
+    - Project flat is the Web, Windows and macOS client of Agora Flat open source classroom.
+  - https://github.com/netless-io/flat-server
+    - Node.js server for the Agora Flat open source classroom.
 # microsoft-teams/org
 - https://github.com/xiweicheng/tms /MIT/202309/js/java
   - TMS是基于频道模式的团队沟通协作+轻量级任务看板，支持mardown、富文本、在线表格和思维导图的团队博文wiki，i18n国际化翻译管理的响应式web开源团队协作系统。

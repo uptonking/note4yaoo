@@ -24,6 +24,16 @@ modified: 2021-01-28T14:34:20.579Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## a #zod schema definition becomes a "single source of truth" for BOTH compile-time (#typescript) and runtime (#javascript).
+- https://twitter.com/tomasz_ducin/status/1752300627672416334
+  - You can also generate API contracts (e.g. swagger)
+
+- The typescript space evolved a lot since io-ts and then zod paved the way. All major validation libraries have catched on the typescript support (except joi, ajv and deepkit).
+
 - ## TypeScript tip: use undefined explicitly instead of making a property optional
 - https://twitter.com/DavidKPiano/status/1741829750333587629
   - Why? It's too easy to forget to specify a property, especially in large codebases or refactors. 

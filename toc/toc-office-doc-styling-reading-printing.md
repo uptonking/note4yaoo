@@ -180,9 +180,11 @@ modified: 2022-10-05T04:57:38.647Z
     - https://readium.org/readium-css/docs/
     - stylesheets for EPUB Reading Systems, starting with Readium 2.
 
-- https://github.com/edrlab/thorium-reader /bsd/ts
+- https://github.com/edrlab/thorium-reader /BSD/202402/ts
   - https://www.edrlab.org/software/thorium-reader/
   - A cross platform desktop reading app, based on the Readium Desktop toolkit
+  - an easy to use EPUB reading application for Windows 10/10S, MacOS and Linux. 
+  - 依赖redux、saga、electron
 
 - https://github.com/troyeguo/koodo-reader /AGPLv3/ts
   - https://koodo.960960.xyz/

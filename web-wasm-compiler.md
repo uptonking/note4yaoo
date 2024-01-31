@@ -14,7 +14,7 @@ modified: 2023-12-10T10:45:52.861Z
 - The main tool is the Emscripten Compiler Frontend (emcc). This is a drop-in replacement for a standard compiler like gcc or clang.
   - Emcc uses Clang and LLVM to compile to WebAssembly. 
   - Emcc also emits JavaScript that provides API support to the compiled code. That JavaScript can be executed by Node.js, or from within HTML in a browser.
-- Emscripten SDK(emsdk)  is used to install the entire toolchain, including emcc and LLVM and so forth.
+- Emscripten SDK(emsdk) is used to install the entire toolchain, including emcc and LLVM and so forth.
 
 ## [docs](https://emscripten.org/)
 

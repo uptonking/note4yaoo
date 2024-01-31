@@ -10,9 +10,7 @@ modified: 2021-05-14T14:30:22.685Z
 # guide
 
 - [翻译服务商价格](https://doc.tern.1c7.me/zh/folder/pricing/#%E7%BF%BB%E8%AF%91%E6%9C%8D%E5%8A%A1%E5%95%86%E4%BB%B7%E6%A0%BC)
-
 # exploring
-
 - https://github.com/opentestimonials/opentestimonials
   - https://opentestimonials.typedream.app/
   - Collect and showcase testimonials using Airtable

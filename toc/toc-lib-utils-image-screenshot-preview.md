@@ -69,7 +69,8 @@ modified: 2023-04-16T13:34:33.706Z
 
 ## capture-utils
 
-- https://github.com/likaia/js-screen-shot /ts
+- https://github.com/likaia/js-screen-shot /MIT/202401/ts
+  - https://www.kaisir.cn/js-screen-shot/
   - web端自定义截屏插件(原生JS版)
   - 支持electron环境下使用插件
 

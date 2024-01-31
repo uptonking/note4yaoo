@@ -96,6 +96,12 @@ modified: 2023-09-19T07:26:04.103Z
   - [希望能够有编辑功能_202401](https://github.com/koodo-reader/koodo-reader/issues/1037)
     - 个人认为作为一个阅读器，编辑功能有点冗余，如果需要编辑可以用对应的各种强大产品
 
+- https://github.com/edrlab/thorium-reader /1.4kStar/BSD/202402/ts
+  - https://www.edrlab.org/software/thorium-reader/
+  - A cross platform desktop reading app, based on the Readium Desktop toolkit
+  - an easy to use EPUB reading application for Windows 10/10S, MacOS and Linux. 
+  - 依赖redux、saga、electron
+
 - https://github.com/koreader/koreader /AGPLv3/lua
   - http://koreader.rocks/
   - An ebook reader application supporting PDF, DjVu, EPUB, FB2 and many more formats, running on Cervantes, Kindle, Kobo, PocketBook and Android devices

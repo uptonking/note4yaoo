@@ -506,6 +506,9 @@ modified: 2022-06-03T21:34:54.893Z
   - Themes (light, dark, sepia, slate, black)
   - view history (quickly jump to articles you've previously viewed)
   - [chrome-ext](https://chrome.google.com/webstore/detail/modern-for-wikipedia/emdkdnnopdnajipoapepbeeiemahbjcn)
+# ai/chatgpt
+- https://github.com/KnowledgeCanvas/knowledge /apache2/202401/ts
+  - a tool for saving, searching, accessing, exploring and chatting with all of your favorite websites, documents and files.
 # more
 - https://github.com/notea-org/notea
   - Self hosted note taking app stored on S3

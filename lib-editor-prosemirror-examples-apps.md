@@ -80,7 +80,7 @@ modified: 2022-08-18T16:57:15.296Z
   - Rich notes editor powered by the Atlassian editor core
   - Multiple local workspaces
 
-- codex /195Star/CC-BY-NC-4.0/202202/js/electron
+- codex /195Star/CC-BY-NC-4.0/202401/ts/electron
   - https://github.com/jcv8000/Codex
   - https://codexnotes.com/
   - 依赖 prosemirror、katex、bootstrap4、jquery、highlight.js

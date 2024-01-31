@@ -14,7 +14,11 @@ modified: 2023-10-06T16:26:57.557Z
 
 - ## 
 
-- ## 
+- ## we delve into the challenges of building Zed's GPUI framework in Rust, navigating its unique ownership system to shape user interfaces.
+- https://twitter.com/zeddotdev/status/1751003887706751229
+
+- https://twitter.com/leiysky/status/1752680618767581563
+  - 写 Rust 的一个好处是，大家各自被编译器折腾后都会最终设计出几乎一样的解法，大大降低了交流成本……
 
 - ## I wonder if someone has written a "Rust for C programmers" blog post to highlight the semantic differences between the two languages...
 - https://twitter.com/penberg/status/1746107695533281535

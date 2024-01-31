@@ -320,6 +320,19 @@ modified: 2023-08-29T10:13:31.070Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Explaining Git branching strategies.
+- https://twitter.com/ChrisStaud/status/1752341883198853588
+- Let's take a look at some common approaches to branching:
+  - Feature branching is a popular approach as development tasks are usually revolved around a feature. It involves having a branch for every feature being developed to keep the changes isolated from the main branch.
+  - Gitflow has two permanent branches — a production and a pre-production branch, often referred to as the “prod” and “dev” branches. There are additional temporary branches for each feature, scheduled releases, and urgent bug fixes.
+  - Gitlab flow combines feature-branching and environment-based branching.
+  - GitHub flow takes a simplified process that is similar to feature branching. 
+  - With trunk-based development, branches are very short-lived. Changes are merged into the main branch within a day or two. Feature
+
 - ## A rewindable file system demo I cooked up.
 - https://twitter.com/JungleSilicon/status/1729012610048360626
 - Have you ever managed to get a conflict free data type in front of git, so you can sync to GitHub? 

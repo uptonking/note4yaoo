@@ -101,7 +101,7 @@ modified: 2024-01-30T20:56:45.773Z
   - https://github.com/Automattic/simplenote-ios
   - [iOS, Android, and macOS Apps Now Open Source _201608](https://simplenote.com/2016/08/11/ios-android-and-macos-apps-now-open-source/)
 
-- notable /16.4kStar/MIT > AGPLv3/201905/ts/桌面版
+- notable /22.2kStar/MIT > AGPLv3/201905/ts/桌面版
   - https://github.com/notable/notable
   - https://notable.md/
   - The Markdown-based note-taking app that doesn't suck.
@@ -130,11 +130,24 @@ modified: 2024-01-30T20:56:45.773Z
 - https://github.com/redsolver/noteless /MIT/202106/dart/inactive
   - markdown-based note-taking app for Android
   - Compatible with notes saved in Notable
-- https://github.com/DevTomek-pl/Search-Text-Plugin-for-Notable
+- https://github.com/madeindjs/vscode-notable /MIT/202202/ts
+  - https://marketplace.visualstudio.com/items?itemName=madeindjs.notable
+  - VSCode plugin to take Markdown notes following Notable format.
+  - update modified front mater on save note
+- https://github.com/DevTomek-pl/Search-Text-Plugin-for-Notable /202004/js
   - a simple JS script for the Notable application that allows you to find a search phrase in the current document.
 - https://github.com/fabiospampinato/noty /201901/ts/archived
   - Autosaving sticky note with support for multiple notes without needing multiple windows.
   - Deprecated in favor of Notable
+- https://github.com/pavkum/notable-todoist /202106/js/inactive
+  - Todoist integration with Notable note talking application.
+- https://github.com/andyljones/zonotable /AGPLv3/202105/js/inactive
+  - An interface between Zotero's translators and Notable
+  - This is a local webserver which makes it easy to add research papers to Notable. This turns Notable into a paper library where note-taking is front and center.
+  - Most of the code in this repo comes from Zotero, and in particular it's translation server.
+- https://github.com/thinkaliker/note-publish /MIT/202112/js
+  - a small Notable.app interceptor to take in a POST request from the "Share via Link..." function and publish a file directly to a Github repository, designed for easy blog posting.
+  - This can be run locally or anywhere that can run node.js 
 
 - noteworthy /166Star/AGPLv3/202207/ts/桌面版
   - https://github.com/benrbray/noteworthy
@@ -224,6 +237,10 @@ modified: 2024-01-30T20:56:45.773Z
   - 兼容性强：数据保存为本地Markdown文件；拓展功能尽量用 Markdown 原有的语法实现。
   - 支持用户编写自己的插件来拓展编辑器的功能。
   - 加密文件的加密解密操作均在前端完成，请务必牢记自己的密码。一旦密码丢失，只能暴力破解了。
+  - https://github.com/purocean/yank-note-registry /MIT/202401/js
+    - Yank Note 扩展的注册中心, fork+pr
+  - https://github.com/purocean/yank-note-extension /AGPLv3/ts/vue
+    - Yank Note 支持 “JavaScript 插件” 和 “自定义 CSS 样式” 功能。
 
 - BoostNote /3.1kStar/GPLv3/202209/ts/inactive
   - https://github.com/BoostIO/BoostNote-App
