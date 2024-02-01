@@ -157,10 +157,10 @@ modified: 2022-08-21T10:02:05.129Z
   - Everything is a plugin, all new features can be implemented by developing and installing plugins
   - [change license of plugins-AGPLv3_20230111, v0.8.1 > v0.9.0](https://github.com/nocobase/nocobase/pull/1350)
 
-- focalboard /10.3kStar/src-AGPL & bin-MIT/202203/ts/go/squirrel-sql-builder
+- focalboard /10.3kStar/src-AGPL & bin-MIT/202203/ts/go/参考前端/squirrel-sql-builder
   - https://github.com/mattermost/focalboard
   - https://www.focalboard.com/
-  - 前端webapp依赖 @reduxjs/toolkit、@tippyjs/react、draft-js、@fullcalendar/react、imagemin-svgo、marked、moment、nanoevents、react-dnd.v14、react-hot-keys、react-intl、react-router-dom.v5
+  - 前端依赖 @reduxjs/toolkit、@tippyjs/react、draft-js、@fullcalendar/react、imagemin-svgo、marked、moment、nanoevents、react-dnd.v14、react-hot-keys、react-intl、react-router-dom.v5
   - an open source, multilingual, self-hosted project management tool that's an alternative to Trello, Notion, and Asana.
   - Focalboard comes in two main editions:
     - Personal Desktop: A stand-alone single-user Mac, Windows, or Linux desktop app for your todos and personal projects.
@@ -168,7 +168,7 @@ modified: 2022-08-21T10:02:05.129Z
   - [Focalboard Personal and Plugin Editions Announcement_20230430](https://github.com/mattermost/focalboard/discussions/4645)
     - we won’t be adding any new enhancements
 
-- rowy /4kStar/apache2/202212/ts/firebase/示例丰富
+- rowy /4kStar/apache2/202212/ts/firebase/示例丰富/参考前端
   - https://github.com/rowyio/rowy
   - http://rowy.io/
   - https://demo.rowy.io/
@@ -196,7 +196,7 @@ modified: 2022-08-21T10:02:05.129Z
     - Excel/Google Sheets like UI for Firebase/Firestore. No more admin portals!
     - https://github.com/FiretableProject/firetable
 
-- grist-core /5.3kStar/apache2/202311/ts/python
+- grist-core /5.3kStar/apache2/202311/ts/参考后端
   - https://github.com/gristlabs/grist-core
   - https://support.getgrist.com/
   - 表格不支持视图切换，支持各种widgets，类似dashboard
@@ -356,7 +356,7 @@ modified: 2022-08-21T10:02:05.129Z
   - Vika JavaScript SDK 是对维格表 Fusion API 的官方封装，可以很方便的对你的维格表中的数据进行增删改查操作。
   - 你可以轻松的将维格表中的数据集成到你自己的应用中
 
-- https://github.com/coderinblack08/graspable
+- https://github.com/coderinblack08/graspable /202207/ts/inactive
   - A realtime, powerful, lightweight alternative to Airtable/Excel
   - 依赖firebase/supabase
 

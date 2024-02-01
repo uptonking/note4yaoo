@@ -12,7 +12,12 @@ modified: 2023-04-19T07:08:48.121Z
 # discuss
 - ## 
 
-- ## 
+- ## From 2024 onwards, the lines between Calendar and Task Management apps will start to blur.
+- https://twitter.com/FrancescoD_Ales/status/1753060651977568505
+- Which tools are the one in the exact centre?
+  - Akiflow, Motion
+- I see your point, but the only reason I like apps like @culturedcode and @basecamp is the fact they do one thing well.. Managing to-dos.
+- if Google is going to make the todo list part of Google Calendar + Tasks more usable and feature-rich, it will swipe away so many apps. do you think this is going to happen?
 
 - ## A calendar app that lets me slice my time by different facets:
 - https://twitter.com/geoffreylitt/status/1622729235029954560

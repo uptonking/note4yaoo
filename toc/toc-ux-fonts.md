@@ -20,6 +20,12 @@ modified: 2020-07-17T10:54:16.341Z
     - https://www.1001fonts.com/monospaced+serif-fonts.html
 # tools
 - [Unstyle / Remove Unicode Font Styling](https://yaytext.com/unstyle/)
+
+- https://github.com/KonghaYao/chinese-free-web-font-storage
+  - https://chinese-font.netlify.app/
+  - 中文网字计划是收录众多中文字体并通过 Web Font 的形式提供
+  - https://github.com/KonghaYao/font-server
+    - 用于内网的字体存储和管理服务，支持通过 WebHook 对外通知信息，并允许外部程序通过端口进行内部数据访问。
 # fonts
 - free
   - catalog

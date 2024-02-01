@@ -139,7 +139,7 @@ modified: 2020-11-17T13:38:19.107Z
   - https://github.com/iwangbowen/UI-Builder
   - 基于 bootstrap 4和jquery实现
 
-- react-design-editor /556Star/MIT/202009
+- react-design-editor /1.4kStar/MIT/202401/ts
   - https://github.com/salgum1114/react-design-editor
   - https://salgum1114.github.io/react-design-editor/
   - 画布区是canvas，其余地方是dom，直接导出图片或json

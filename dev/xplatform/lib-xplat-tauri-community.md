@@ -14,7 +14,10 @@ modified: 2023-01-14T17:22:00.810Z
 
 - ## 
 
-- ## 
+- ## 用 Tauri 在小型企业内部做工具会比较合适，大家的系统会比较一致，比如大多是Windows或者macOS之一。
+- https://twitter.com/lencx_/status/1752973276018844061
+  - 排查问题也更方便，直接怼到工位上。
+  - tauri其实是个胶水层，由上游的 WRY 和 TAO 实现
 
 - ## Tauri 看起来很不错啊！提前问一下，这个框架有什么坑么？
 - https://twitter.com/beihuo/status/1724300870068953428

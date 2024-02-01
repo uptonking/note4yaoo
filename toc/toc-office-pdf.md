@@ -106,7 +106,7 @@ modified: 2021-01-04T17:26:43.784Z
   - A universal pdf rendering/editing library
   - model, engine, react
 
-- https://github.com/awesome-yasin/PDF-Verse /MIT/js/ejs
+- https://github.com/awesome-yasin/PDF-Verse /MIT/202312/js/ejs
   - https://pdf-verse.vercel.app/
   - a powerful web based PDF Editor with tools fexamplesor editing, converting, and manipulating PDFs.
   - Merge, compress, add or remove pages, or extract text using OCR technology. 

@@ -55,7 +55,7 @@ modified: 2024-01-31T19:13:11.286Z
   - Browse the images in a folder
   - 示例不是地图
 
-- https://github.com/wulkano/Kap /MIT/202210/ts
+- https://github.com/wulkano/Kap /MIT/202210/ts/inactive
   - open-source screen recorder built with web technology
 
 - https://github.com/xushengfeng/eSearch /GPLv3/202401/ts
@@ -70,6 +70,9 @@ modified: 2024-01-31T19:13:11.286Z
   - 跨平台的截图、录屏、录音、录像软件
   - react + electron + vite + viewerjs + plyr + aplayer + react-screenshots.
   - 支持网页版、pc版
+- https://github.com/nashaofu/screenshots /MIT/202311/ts
+  - https://nashaofu.github.io/screenshots/
+  - 基于electron和react的截图插件，可以快速地实现截图功能，并支持多种截图操作，例如马赛克、文本、画笔、箭头、椭圆和矩形
 
 - https://github.com/likaia/js-screen-shot /MIT/202401/ts
   - https://www.kaisir.cn/js-screen-shot/
@@ -248,14 +251,73 @@ modified: 2024-01-31T19:13:11.286Z
   - 基于 Electron 的多平台直播自动录制软件
   - 普通用户可以直接使用客户端版本来自动录制需要回顾的直播与弹幕
   - 开发者可以基于插件系统来扩展可用的直播平台，或基于 @autorecord/manager 包和已实现的直播平台插件来做一款新的软件
+# server
 
-## file-manager
+# files
+
+- https://github.com/kbrisso/file-base /MIT/202309/js/ts
+  - A database for managing your files using Electron and React.
+  - You can tag, add notes, organize, categorize, filter, search and quickly find your needed files with an easy-to-use application
+  - Filebase does not modify your existing files or directories 
+  - uses `PouchDB` to store file and directory structure using a tree type structure, each of these nodes in the tree can have metadata added to it that will be searchable
+
+- https://github.com/warpdesign/react-explorer /MIT/202303/ts/inactive
+  - File manager written in TypeScript, React, Blueprint and packaged with Electron
+  - Split-view window
+  - Plugin-based: local supported for now, ftp in the works
+  - 依赖blueprintjs、electron-window-state、mobx-react、react-dnd、react-virtual
+
+- https://github.com/fiahfy/zephy /MIT/202401/ts
+  - Simple File Browser based on Electron.
+  - Image, Text and Video Preview
+  - Tree View Display
+
+- https://github.com/suleymanlaarabi/Aurora-Explorer /MIT/202401/ts
+  - powerful file management tool, built with Electron, ReactTS, and ChakraUI
+
+- https://github.com/lzldev/shelf-desktop /GPLv3/202312/ts
+  - Electron app for file organization
 
 - https://github.com/SuboptimalEng/orbital /MIT/202110/ts
   - desktop app that allows you to search, filter, and preview video files on your computer - like YouTube for your local file system.
 
 - https://github.com/caorushizi/oss-client /202401/ts
   - 七牛云文件仿百度网盘文件夹管理，上传下载，删除。
+
+
+
+
+- https://github.com/msihly/Media-Viewer /202402/ts
+  - Electron app for managing media files in a self-contained portable database. 
+  - 依赖dnd-kit、mui.v5、@tensorflow/tfjs、trpc、mobx-react-lite、mongoose、mongodb-memory-server、react-window
+  - Features a hierarchical tagging system with comprehensive search and sorting, automated tag creation / parsing and batch processes, collections / albums, AI face recognition, Stable Diffusion integration, and built-in media viewers.
+  - A self-hosted, portable Electron app for indexing and viewing media files featuring hierarchical tags as well as several features inspired by cloud storage providers that are missing from Windows File Explorer and most contemporary alternatives. 
+  - It has been refined over several iterations with the primary goal of optimizing performance at scale and the UX of batch workflows.
+
+- https://github.com/sindresorhus/electron-serve /MIT/202401/js
+  - Static file serving for Electron apps
+
+- https://github.com/Michael-Vanderford/electron-file-manager /GPLv3/202401/js
+  - Linux File Manager - Built with Electron
+  - Audio or Video to Audio conversion - Requires ffmpeg
+  - [How to transport to Winodws platform?_202312](https://github.com/Michael-Vanderford/electron-file-manager/issues/4)
+    - Sorry, There a currently no plans to support the Windows platform.
+  - https://github.com/Michael-Vanderford/string-file-manager
+# notes
+- https://github.com/husseinhareb/Coffee /202401/js
+  - Text editor with file management and terminal integration using Electron.
+# storage
+- https://github.com/sindresorhus/electron-store /MIT/202305/js
+  - Simple data persistence for your Electron app or module
+  - Save and load user preferences, app state, cache, etc
+  - Electron doesn't have a built-in way to persist user settings and other data. This module handles that for you
+  - The data is saved in a JSON file named config.json in `app.getPath('userData')`.
+  - You can use this module directly in both the main and renderer process
+
+- https://github.com/alexiusacademia/electron-db /MIT/202011/js/inactive
+  - Electron module that acts as database management and uses flat file database (json file) to store tables.
+  - Flat file database solution for electron and other Nodejs apps.
+  - The json file is saved on the application folder or you can specify the location for the database to be created
 # utils
 - https://github.com/nativefier/nativefier /MIT/202309/ts/archived
   - a command-line tool to easily create a “desktop app” for any web site with minimal fuss. 
@@ -264,15 +326,47 @@ modified: 2024-01-31T19:13:11.286Z
     - Nativefier was built a couple of years ago before the ability to create shortcuts for websites in Chrome, or similarly on Firefox. 
     - Users who want to build and use their own website wrappers should strongly prefer these options as they are protected from security vulnerabilities by the browser's self updating mechanism.
 
-- https://github.com/alexiusacademia/electron-db
-  - let you simplify database creation and operation on a json file.
+- https://github.com/sindresorhus/electron-dl /MIT/202310/js
+  - Simplified file downloads for your Electron app
+  - Support for `BrowserWindow` and `BrowserView`.
 
-- https://github.com/sindresorhus/electron-store /MIT/202305/js
-  - Simple data persistence for your Electron app or module
-  - Save and load user preferences, app state, cache, etc
-  - Electron doesn't have a built-in way to persist user settings and other data. This module handles that for you
-  - The data is saved in a JSON file named config.json in `app.getPath('userData')`.
-  - You can use this module directly in both the main and renderer process
+- https://github.com/spaceagetv/electron-file-download /MIT/202308/ts
+  - A simple module to download files via Electron's main process. 
+  - Manages the download process and exposes a simple API to listen for events including progress, success, failure, and cancellation. 
+  - The module also exposes Electron's DownloadItem methods for pausing, resuming, and canceling the download.
+
+
+
+- https://github.com/daltonmenezes/interprocess /MIT/202308/ts
+  - https://daltonmenezes.github.io/interprocess/
+  - A scalable and type-safe Electron IPC management tool with enhanced DX
+  - Electron IPC is good, but difficult to maintain and scale, either because of the numerous channels you have to remember, or because of the inconsistent API between processes and the absence of inferred types of your channels and handlers.
+  - invoke and handle methods in both processes with the same expected behavior
+
+- https://github.com/sindresorhus/electron-util /MIT/202401/ts
+  - Useful utilities for Electron apps and modules
+  - There are three parts of this package, “shared”, “main”, and “node”. The “shared” part works in both the main or rendered process. The “main” part works only in the main process. The “node” part is for Node.js-only APIs (not Electron).
+  - To use features from the “main” part in the renderer process, you will need to set up IPC channels.
+
+- https://github.com/alex8088/electron-toolkit /MIT/202401/ts
+  - Toolkit for Electron
+
+- https://github.com/kunalnagar/encrypt0r /MIT/202211/ts
+  - App to encrypt and decrypt your files with a passphrase
+  - encrypt0r provides a simple drag and drop interface to encrypt/decrypt your files using a password.
+  - When running the app on Mac/Windows, you might get an untrusted developer warning. This is because the app is not signed by the developer (aka me). Signing an app requires a Signing Certificate that costs hundreds of dollars per year
+- https://github.com/gjtiquia/mini-file-encryptor /202401/ts
+  - A secure, offline, minimalistic file encryptor. Built with Electron.
+  - Encrypt any folder into a password-protected file.
+  - Securely encrypted with AES256, being fully offline reduces the risk of leaking sensitive data to the Internet.
+- https://github.com/abhishekY495/File-encryptor /MIT/202311/js
+  - An app that Encrypts / Decrypts your files with a password. 
+  - Built using Electron and TailwindCSS
+  - App works Offline.
+
+
+- https://github.com/rhysd/electron-in-page-search /MIT/201906/ts/inactive
+  - This package provides Chrome's native in-page search feature to Electron applications.
 
 - https://github.com/sentialx/electron-extensions /GPLv3/202007/ts/inactive
   - allow you to use Chrome extensions APIs with Electron.
@@ -281,6 +375,11 @@ modified: 2024-01-31T19:13:11.286Z
 - https://github.com/ArekSredzki/electron-release-server /MIT/202310/js
   - self-hosted release server for electron applications, compatible with auto-updater.
   - A node web server which serves & manages releases of your Electron App, and is fully compatible with Squirrel Auto-updater (which is built into Electron).
+
+- https://github.com/artiebits/pdf-to-printer /MIT/202303/ts/archived
+  - A utility for printing PDFs and images from Node.js and Electron.
+  - Available only on Windows.
+  - https://github.com/artiebits/unix-print
 
 - https://github.com/weolar/miniblink49 /201911/cpp
   - 一个小巧、轻量的浏览器内核，用来取代wke和libcef

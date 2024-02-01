@@ -16,7 +16,9 @@ modified: 2022-11-21T15:27:20.974Z
 
 - ## 
 
-- ## 
+- ## Create this SVG animation using just HTM and CSS 动态边框线
+- https://twitter.com/davidm_ml/status/1753015956119449862
+  - https://github.com/atherosai/ui/tree/main/animation-02
 
 - ## You can create this sparkly backdrop with a single element using mask-composite whilst animating the mask-position
 - https://twitter.com/jh3yy/status/1722397114532048959

@@ -12,6 +12,10 @@ modified: 2023-03-09T13:47:07.317Z
 - office-online
   - [Zoho Writer](https://www.zoho.com/writer/)
 
+- https://github.com/tycrek/degoogle
+  - https://tycrek.github.io/degoogle/
+  - alternatives to Google products
+
 - resources
   - [List of office suites - Wikipedia](https://en.wikipedia.org/wiki/List_of_office_suites)
   - [精读《WOPI协议》 - 掘金](https://juejin.cn/post/7105322391597187103)
@@ -53,11 +57,12 @@ modified: 2023-03-09T13:47:07.317Z
   - 依赖 onlyoffice、netflux-websocket
   - It is built to enable collaboration, synchronizing changes to documents in real time. 
   - Because all data is encrypted, the service and its administrators have no way of seeing the content being edited and stored.
-  - https://github.com/xwiki-labs/netflux-spec2
+  - [Rich Text — CryptPad 5.6.0 documentation](https://docs.cryptpad.org/en/user_guide/apps/richtext.html)
   - The Rich Text application in CryptPad is an integration of `CKEditor`.
   - The Code/Markdown application in CryptPad is an integration of `CodeMirror`.
-  - The Slides application in CryptPad is an integration of `CodeMirror`.
+  - The Slides application in CryptPad is an integration of `CodeMirror`. CryptPad slides are written in Markdown
   - The Kanban application in CryptPad is based on `JKanban`.
+  - The Diagram application in CryptPad is an integration of `Draw.io`.
   - The Whiteboard application in CryptPad is based on `FabricJs`.
   - [What is the relationship between CryptPad and OnlyOffice?](https://docs.cryptpad.org/en/FAQ.html#faq-oointegration)
     - The CryptPad Spreadsheet application is an integration of `OnlyOffice Spreadsheets`.
@@ -66,6 +71,7 @@ modified: 2023-03-09T13:47:07.317Z
   - [CryptPad: Collaboration suite end-to-end encrypted and open-source | Hacker News](https://news.ycombinator.com/item?id=29921947)
   - https://github.com/xwiki-labs/office-converters
     - an example of a browser-based document converter using Web Assembly. 
+  - https://github.com/xwiki-labs/netflux-spec2
 
 - https://github.com/LibreOffice/core /GPLv3/cpp/java
   - [LibreOffice Online](https://www.libreoffice.org/download/libreoffice-online/)
@@ -179,6 +185,19 @@ modified: 2023-03-09T13:47:07.317Z
   - react, 编辑器无依赖
   - [Mini Google Docs Clone in React](https://www.youtube.com/playlist?list=PLN3n1USn4xllb05dQVmRbVtGP2aM4seVq)
 
+- https://github.com/WebDevSimplified/google-docs-clone /ISC/202104/js
+  - 最简单的示例，几乎单文件
+  - 依赖quill, react、mongoose、socket.io
+
+- https://github.com/NickMandylas/noogle-docs /202106/ts
+  - Google Docs clone built with Typescript, inspired by Web Dev Simplified
+  - Front-end: Built with ReactJS (utilising Create React App). The TextEditor used is QuillJS.
+  - Back-end: Fastify (with Fastify-WebSockets), PostgreSQL and Redis.
+
+- https://github.com/noahskorner/google-docs-clone /202203/ts
+  - Google Docs Clone built in React/Typescript/Express/Postgres.
+  - 依赖express、sequelize、socket.io、draft-js
+
 - https://github.com/MartsTech/google-docs-clone /202206/ts
   - Google Docs Clone created with Next. JS, Firebase, Tailwind CSS
 
@@ -191,6 +210,26 @@ modified: 2023-03-09T13:47:07.317Z
   - https://github.com/Raj-Stark/Google-Sheet-2.0
   - https://github.com/noobCode-69/ExcelClone
   - https://github.com/PrinceAttri/sheets-clone
+
+- https://github.com/sujitIwale/sharesheet /202208/js/inactive
+  - https://sharesheet.netlify.app/landing
+  - Upload and Edit Csv File ( Spreadsheet Clone )
+
+- https://github.com/xem/sheet /public/201710/html/js
+  - https://xem.github.io/sheet/
+  - A 188b/253b spreadsheet app in HTML/JS
+  - supports any value: texts, numbers, floats, and formulae. Ex: "=A1+8"
+  - cells update in cascade, circular reference protection
+  - localStorage persistence
+  - [Tinysheet | Hacker News_202110](https://news.ycombinator.com/item?id=28967514)
+
+- https://github.com/kishanrajput23/The-Excel-Clone /202207/js/inactive
+  - https://kishanrajput23.github.io/The-Excel-Clone/
+  - a web application clone of Excel, created using HTML, CSS and Javscript entirely.
+  - User have access of 100 rows and 26 columns to work on.
+  - https://github.com/Ayush2966/Excel-Huh /202305/js
+  - https://github.com/IslamShg/excel /202109/js
+  - https://github.com/amanksdotdev/excel-clone /202307/js
 # EtherCalc/SocialCalc
 - https://github.com/otetard/ownpad /AGPLv3/202401/js
   - a Nextcloud application that allows to create and open Etherpad and Ethercalc documents.

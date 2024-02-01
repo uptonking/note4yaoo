@@ -87,6 +87,14 @@ modified: 2023-11-10T08:05:25.474Z
 
 - 我知道js只支持到2**53 但是我之前记得在那看过 新特性解决了这个问题 还支持有无符号 难道是我记忆错位
 # discuss-feat-enum
+- ## 
+
+- ## 
+
+- ## TypeScript Tips: Always use Integer as Enum values.
+- https://twitter.com/ThaddeusJiang/status/1752971923167064159
+  - Since some dependencies only support `Integer` Enum values, like protobuf.
+
 - ## I will admit, TS enums are kind of useful. But only for one specific case.
 - https://twitter.com/mattpocockuk/status/1694703900778025210
 

@@ -18,6 +18,7 @@ modified: 2022-09-10T02:26:52.062Z
 - 云同步提供商
   - 网盘：百度OAuth2.0, 腾讯文档/微云，onedrive
   - 云服务商：七牛
+  - open: next-cloud(php), owncloud(php), seafile(clang)
   - 非主流存储：github仓库、gitee
 
 - 其他云存储
@@ -77,54 +78,90 @@ modified: 2022-09-10T02:26:52.062Z
   - 一个支持多存储的文件列表程序，基于 go-Gin 和 Solidjs。
   - 支持 国内外主流网盘
 
-- firefiles /133Star/GPLv3/202207/ts/inactive
-  - https://github.com/faisalsayed10/firefiles
-  - https://firefiles.vercel.app/
-  - https://firefiles.vercel.app/docs/self-host
-  - 后端可选firebase、aws-s3、mysql
-  - 依赖chakra-ui、swr、prisma
-  - Firefiles is an open‑source alternative to Dropbox which lets you setup a cloud drive with the backend of your choice 
-  - A modern file-system interface for your storage buckets.
-  - A MySQL database. (We recommend using Railway or PlanetScale)
-
-- myDrive /2.8kStar/GPLv3/202012/js+ts
+- myDrive /2.8kStar/GPLv3/202012/前端js+后端ts/inactive
   - https://github.com/subnub/myDrive
   - https://mydrive-storage.com/
   - MyDrive is an Open Source cloud file storage server (Similar To Google Drive). 
-  - 前端js，依赖react-redux
-  - 后端ts，依赖express、mongoose
+  - 依赖express、mongoose、fluent-ffmpeg、react-redux、react-contextmenu
   - MyDrive uses mongoDB to store file/folder metadata, and supports multiple databases to store the file chunks, such as Amazon S3, the Filesystem, or just MongoDB. 
-  - https://github.com/vitstef/myDrive
+  - 🍴 forks
+  - https://github.com/vitstef/myDrive /202204
+    - Fixed build
+  - https://github.com/CharlesCatYT/charlDrive /202301/format
 
-- ezshare /324Star/MIT/202207/js/inactive
-  - https://github.com/mifi/ezshare
-  - A simple file server that lets you easily share many big files like photos and videos with friends (or between your devices) over a local network without requiring an internet connection.
-  - If you don't want to install Node.js, you can download a zipped executable of ezshare
-  - It starts an HTTP server that lists all files and directories in the directory
-  - Then anyone can then connect to the server and download files or automatically generated ZIP of whole directories (kind of like Google Drive.) 
-  - The client can also upload files to the server via their browser, and clipboard card be shared both ways. A QR code is generated for convenience.
+- https://github.com/0x5eba/Storage /202008/js/MERN
+  - Google Drive and Keep clone in a few lines of code.
+
+- firefiles /133Star/AGPLv3/202308/ts/inactive
+  - https://github.com/faisalsayed10/firefiles
+  - https://firefiles.app/
+  - https://firefiles.vercel.app/
+  - Firefiles is an open‑source alternative to Dropbox which lets you setup a cloud drive with the backend of your choice 
+  - 存储可选firebase、aws-s3、mysql, 🐛 无单独后端服务器
+  - 依赖nextjs、chakra-ui、swr、prisma、dexie-react-hooks
+  - A modern file-system interface for your storage buckets.
+  - A MySQL database. (We recommend using Railway or PlanetScale)
+  - AWS S3 support.
+  - [Feature: Download entire folder with its contents_202202](https://github.com/faisalsayed10/firefiles/issues/16)
+    - Implement downloading an entire folder (.zip) along with its child files and folders.
+    - I can't think of a way where this can be done without a server. So this will probably break our policy of "your files stay with you and we don't access it".
+    - Will need to research a bit on this about how this can be done without needing to have a server.
+
+- https://github.com/linagora/twake-drive /9Star/AGPLv3/202402/ts
+  - open-source alternative to Google Drive.
+  - 依赖mui.v4、fullcalendar、dnd-kit、draft-js、minimongo、fastify、rxjs
 
 - internxt-drive-web /78Star/AGPLv3/202212/ts
   - https://github.com/internxt/drive-web
   - https://internxt.com/drive
   - 类似dropbox
-  - 依赖reduxjs/toolkit、idb、react-dnd
+  - 依赖reduxjs/toolkit、idb、react-dnd、@headlessui/react、xlsx-preview
   - at Internxt, we've created a suite of services truly focused on you. Switch to Internxt Drive, Photos, Send
   - https://github.com/internxt/drive-server-wip
     - WIP: New version of Drive Server based in NestJS
     - based on NestJS and implements DDD (Domain Driven Design). 
     - Our implementation has these layers: Use cases; Persistence; Domain; Controllers
-  - https://github.com/internxt/drive-server
-    - 依赖express实现，旧版
-    - Database setup (MariaDB)
+  - https://github.com/internxt/drive-server /AGPLv3/202401/ts/js/旧版服务端
+    - 依赖express、sequelize、mariadb、multer
+    - Database setup (MariaDB)，似乎支持pg
   - https://github.com/internxt/drive-mobile
     - Current react-native-reanimated fails with Android using RN 0.64
+  - https://github.com/internxt/drive-desktop
 
 - https://github.com/frappe/drive /AGPLv3/202401/python/vue
   - easy to use, document sharing and management solution
   - 依赖werkzeug
   - Upload and store files across multiple platforms.
   - Preview files such as images, videos, PDFs, etc.
+
+- https://github.com/filebrowser/filebrowser /apache2/202401/go/js/vue
+  - https://filebrowser.org/
+  - https://demo.filebrowser.org/
+  - filebrowser provides a file managing interface within a specified directory and it can be used to upload, delete, preview, rename and edit your files. 
+  - It allows the creation of multiple users and each user can have its own directory.
+
+- https://github.com/mgilangjanuar/teledrive /GPLv3/202310/ts
+  - open source Google Drive/OneDrive/iCloud/Dropbox alternative using Telegram API for the free unlimited cloud storage.
+
+- https://github.com/elwood-studio/elwood /apache2/202308/ts/inactive
+  - open source Dropbox alternative, built for advanced media management. 
+  - Lighting fast uploads. Real-time, multi-user collaboration. Powerful role-based sharing. Simple one-click distribution.
+
+- https://github.com/saleel/nymdrive /202201/js/ipfs/inactive
+  - decentralized, E2E encrypted, privacy friendly alternative to Google Drive/Dropbox.
+  - Files are encrypted locally and uploaded to server app using Nym mixnet.
+  - Server app (service-provider) store the files in IPFS using Textile buckets.
+  - Connect multiple devices running NymDrive and keep them in sync.
+
+- https://github.com/akovacs/uploadserver /MIT/202207/rust/inactive
+  - simple standalone webserver which you can upload and download files to/from using just a web browser. 
+  - By running just one instance of the uploadserver, you can transfer files between devices on your local network without installing anything on them.
+
+- https://github.com/devld/go-drive /MIT/202401/go/ts/vue
+  - https://go-drive.top/
+  - simple cloud drive mapping web app supports local, FTP/SFTP, S3, OneDrive, WebDAV, Google Drive.
+  - 拖拽/粘贴上传，拖拽管理文件
+  - 文件打包下载
 # cloud-drive-sync
 - https://github.com/reruin/sharelist
   - ShareList 是一个易用的网盘工具，支持快速挂载 GoogleDrive、OneDrive
@@ -258,7 +295,7 @@ modified: 2022-09-10T02:26:52.062Z
 - https://github.com/jvilk/BrowserFS /202001/ts/inactive
   - BrowserFS is an in-browser filesystem that emulates the Node JS filesystem API and supports storing and retrieving files from various backends.
   - 支持 memory/localStorage/indexeddb/dropbox/Emscripten file systems
-# aws-s3
+# s3/minio
 - Zenko CloudServer /1.5kStar/apache2/202302/js
   - https://github.com/scality/cloudserver
   - https://www.zenko.io/cloudserver
@@ -281,20 +318,20 @@ modified: 2022-09-10T02:26:52.062Z
   - FUSE-based file system backed by Amazon S3
   - s3fs allows Linux, macOS, and FreeBSD to mount an S3 bucket via FUSE(Filesystem in Userspace).
   - s3fs makes you operate files and directories in S3 bucket like a local file system.
-# local-network
-- https://github.com/localsend/localsend /dart
-  - https://localsend.org/
-  - An open source cross-platform alternative to AirDrop
-
-- https://github.com/LANDrop/LANDrop /cpp
-  - https://landrop.app/
-  - Drop any files to any devices on your LAN.
-# file-sharing
+# file-sharing/local-network
 - https://gitlab.com/timvisee/send /MPLv2/202306/js
 - https://github.com/timvisee/send
   - https://send.vis.ee/
   - Simple, private file sharing
   - A fork of Mozilla's Firefox Send. Mozilla discontinued Send, this fork is a community effort to keep the project up-to-date and alive.
+
+- ezshare /324Star/MIT/202207/js/inactive
+  - https://github.com/mifi/ezshare
+  - A simple file server that lets you easily share many big files like photos and videos with friends (or between your devices) over a local network without requiring an internet connection.
+  - If you don't want to install Node.js, you can download a zipped executable of ezshare
+  - It starts an HTTP server that lists all files and directories in the directory
+  - Then anyone can then connect to the server and download files or automatically generated ZIP of whole directories (kind of like Google Drive.) 
+  - The client can also upload files to the server via their browser, and clipboard card be shared both ways. A QR code is generated for convenience.
 
 - https://github.com/RobinLinus/snapdrop /GPLv3/202303/js
   - https://snapdrop.net/
@@ -304,6 +341,14 @@ modified: 2022-09-10T02:26:52.062Z
   - https://github.com/schlagmichdoch/PairDrop /js
     - PairDrop is a sublime alternative to AirDrop that works on all platforms.
     - File Sharing on your local network
+
+- https://github.com/localsend/localsend /dart
+  - https://localsend.org/
+  - An open source cross-platform alternative to AirDrop
+
+- https://github.com/LANDrop/LANDrop /cpp
+  - https://landrop.app/
+  - Drop any files to any devices on your LAN.
 
 - https://github.com/hyperhyperspace/hyperhyperspace-core /MIT/ts
   - https://www.hyperhyperspace.org/

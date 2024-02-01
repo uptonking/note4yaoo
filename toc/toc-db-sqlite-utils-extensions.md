@@ -95,6 +95,13 @@ modified: 2022-11-04T14:20:37.172Z
 - [db-helper.ts](https://gist.github.com/surma/53cb57219eea5217d02083b7dd19b711)
   - https://twitter.com/DasSurma/status/1711013536950784460
   - I just wrote a quick JS template tag for SQLite where I can use string interpolation with SQL queries without skipping the driver’s escaping mechanism.
+
+- https://github.com/dgllghr/stanchion /LGPLv3/202402/c/zig
+  - A SQLite extension that brings column-oriented tables to SQLite
+  - Data seems to be stored in big blobs, which is then accessed with SQLite's Blob I/O. 
+  - https://twitter.com/agarcia_me/status/1752787647175770149
+    - SQLite blob I/O API is useful in specific cases like this. You insert a large BLOB and  "incrementally" read/write data from that blob in chunks.
+    - reading columns in chunks can be useful in some cases! And maybe SQLite devs will update the virtual table API in the future to make it faster.
 # excel
 - https://github.com/x2bool/xlite /202210/rust
   - SQLite extension for querying Excel (.xlsx, .xls, .ods) files as virtual tables

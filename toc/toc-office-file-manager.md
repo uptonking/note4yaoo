@@ -155,23 +155,20 @@ modified: 2021-08-23T05:27:08.068Z
   - Print a directory tree that shows Git status and ignores files dictated by .gitignore.
   - 命令行工具
 # file-electron
-- https://github.com/warpdesign/react-explorer
+- https://github.com/warpdesign/react-explorer /MIT/202303/ts/inactive
   - File manager written in TypeScript, React, Blueprint and packaged with Electron
   - Split-view window
   - Plugin-based: local supported for now, ftp in the works
+  - 依赖blueprintjs、electron-window-state、mobx-react、react-dnd、react-virtual
 
 - https://github.com/Cocycles/electron-storage /201703
   - Simply save/load json files to/from file system in electron applications
 - https://github.com/yan-foto/electron-reload /201908
   - the simplest way to load contents of all active BrowserWindows within electron when the source files are changed.
-- https://github.com/sindresorhus/electron-serve
-  - Static file serving for Electron apps
 
 - https://github.com/vasylhoban/electron-file-manager
   - File manager created on Electron/React/Redux (Windows, in future cross-browser)
-- https://github.com/warpdesign/react-explorer /202011
-  - File manager written in TypeScript, React, Blueprint and packaged with Electron
-- https://github.com/matthew-matvei/freeman /201903
+- https://github.com/matthew-matvei/freeman /GPLv3/201903/archived
   - extensible, cross-platform file manager for power users
 - https://github.com/k-water/electron-filesystem /201807/vue
   - 基于vue-electron的文件管理器
@@ -179,9 +176,9 @@ modified: 2021-08-23T05:27:08.068Z
   - A Simple File Explorer using Vue/Quasar/Electron
 - https://github.com/timotius02/electron-file-explorer /201506
   - File Explorer built using Electron, React, and Flux
-- https://github.com/mperitz/react-filetree-electron /201707
+- https://github.com/mperitz/react-filetree-electron /201707/js
   - A react component that renders an expandable/collapsible filetree in an electron app
-- https://github.com/mflorence99/el-file /201907
+- https://github.com/mflorence99/el-file /201907/ts/inactive
   - Electron-based File Manager
 - https://github.com/marceloaugusto80/electron-react-typescript-boilerplate /202010
   - Boilerplate for electron + file system + react + react-hot-loader + typescript

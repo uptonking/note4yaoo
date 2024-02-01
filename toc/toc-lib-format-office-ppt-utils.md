@@ -10,7 +10,7 @@ modified: 2023-12-10T04:48:32.899Z
 # guide
 
 # popular
-- https://github.com/gitbrent/PptxGenJS /MIT/202305/ts
+- https://github.com/gitbrent/PptxGenJS /MIT/202305/ts/inactive
   - https://gitbrent.github.io/PptxGenJS/
   - Create PowerPoint presentations with a powerful, concise JavaScript API.
   - This library creates Open Office XML (OOXML) Presentations which are compatible with Microsoft PowerPoint, Apple Keynote, and other applications.
@@ -21,6 +21,10 @@ modified: 2023-12-10T04:48:32.899Z
 
 # parser-generator
 
+- https://github.com/airpptx/airppt-parser /201901/ts
+  - Parses a Powerpoint Deck to create standardized elements that can be reused
+  - https://github.com/airpptx/airppt-renderer /201901/ts
+    - Converts Standardized Object to HTML/CSS
 # extension-superset
 
 # more

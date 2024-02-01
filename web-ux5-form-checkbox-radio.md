@@ -13,6 +13,17 @@ modified: 2021-08-29T16:06:25.175Z
   - 就算自己修改了checkbox的样式，也很难保证跨平台的一致性
   - 不如一开始就不使用浏览器native默认样式，完全自定义
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## I feel like i hate combo boxes more and more everyday.
+- https://twitter.com/RogersKonnor/status/1753059012419928486
+  - They feel great on desktop browsers, but on mobile, they just feel miserable because there is so little real estate because of the virtual keyboard and they just make a frustrating experience
+
+- Combo boxes and any kind of modal or slide-in pretty much suck on mobile and I'm not sure there's much that can be done about it.
 
 - ## [Whats the difference between input text field and form element in HTML? - General - The freeCodeCamp Forum](https://forum.freecodecamp.org/t/whats-the-difference-between-input-text-field-and-form-element-in-html/164854/2)
 - The form element ties together a number of different inputs that will be submitted together.

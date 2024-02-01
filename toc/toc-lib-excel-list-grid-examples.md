@@ -64,7 +64,7 @@ modified: 2022-08-21T10:03:52.222Z
   - editable web grid with strict MS-Excel adherence to user experience
   - Very modern (web components, es6 modules) with no dependencies.
 
-- https://github.com/sujitIwale/sharesheet /js
+- https://github.com/sujitIwale/sharesheet /202208/js/inactive
   - https://sharesheet.netlify.app/landing
   - Upload and Edit Csv File ( Spreadsheet Clone )
 

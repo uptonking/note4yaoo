@@ -12,7 +12,14 @@ modified: 2023-10-06T16:26:57.557Z
 # discuss
 - ## 
 
-- ## 
+- ## 🧮 graphs are quite hard to model with Rust, mainly because of the complex interaction between  ownership rules and managing mutable cyclic data structures. 
+- https://twitter.com/debasishg/status/1752737782815195253
+  - Was looking for options and found that arena based modeling (region-based memory management) is possibly the way to go. 
+- Writing a linked list in C/C++ is trivial. In Rust it requires intermediate (almost advanced)  level of knowledge. When I first ended up using PhantomData, I thought to myself this is surely a hack.
+- I don't think this is true. It's just that modeling graphs as nodes that have pointers to other nodes, as you might do on the JVM, does not work. But even on the JVM it is often better to model graphs with edges and node ids.
+
+- What’s wrong with adjacency lists modelled as hashes? Check out cleora graph embedding or mine
+  - petgraph, a widely used Rust graph crate, also uses adjacency list rep for it's main Graph type
 
 - ## we delve into the challenges of building Zed's GPUI framework in Rust, navigating its unique ownership system to shape user interfaces.
 - https://twitter.com/zeddotdev/status/1751003887706751229

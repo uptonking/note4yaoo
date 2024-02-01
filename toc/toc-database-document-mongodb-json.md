@@ -313,9 +313,11 @@ modified: 2022-11-03T04:14:11.987Z
   - Use SQL syntax to query MongoDB
   - Parses an SQL WHERE clause to a mongo query object.
 
-- https://github.com/nodkz/mongodb-memory-server /202211/ts
+- https://github.com/nodkz/mongodb-memory-server /MIT/202401/ts
   - This package spins up an actual/real MongoDB server programmatically from within nodejs, for testing or mocking during development. 
   - By default it holds the data in memory. 
+  - On install, this package downloads the latest MongoDB binaries and saves them to a cache folder.
+  - Every `MongoMemoryServer` instance creates and starts a fresh MongoDB server on some free port.You may start up several `mongod` simultaneously.
 
 - https://github.com/tkssharma/nodejs-db-orm-world /202003/ts
   - Node JS with different ORM like Typeorm, Knex, Prisma and Sequelize with Node JS API Development Node JS with without any ORM (MYSQL raw queries)

@@ -484,7 +484,6 @@ modified: 2023-09-28T20:33:44.333Z
 - https://github.com/AshutoshSinghai-InvizAI-DataEngg/node-backend-nedb /202206/js
   - a sample implementation of an authentication system that uses JSON Web Token to manage users' login data in Node.js web server.
 
-
 - https://github.com/rcoder/nanocrud /202004/ts
   - tiny, dumb HTTP CRUD APIs backed by NeDB databases + automatic Git snapshots
   - insert a new document into the database; if the demo server is running, this should echo back the inserted document and update the test database in /tmp/nanocrud-demo
@@ -564,9 +563,11 @@ modified: 2023-09-28T20:33:44.333Z
   - open source Node JS Snippet repository for Node JS build with Node Js
   - 依赖express、nedb、mongoose、jade、jQuery、bootstrap
 
+- https://github.com/jay-deshmukh/redux-with-vanillaJs-in-electron /201803/js
+  - redux + jQuery
+
 - https://github.com/low-teck/vault /202202/ts
   - A react-electron app that secures user data locally using AES algorithm with the help of nedb and crypto-js ans styled with chakra-ui.
-
 
 - https://github.com/ydkulks/PantryPal /202307/js
   - https://pantry-pal-seven.vercel.app/

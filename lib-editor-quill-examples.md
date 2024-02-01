@@ -514,9 +514,9 @@ modified: 2023-02-09T18:32:06.240Z
   - Publish content as a collection of Ethereum NFTs.
   - 依赖ethers、framework7、ipfs、level-js.v6、inversify、memfs、pouchdb、quill、workbox
 
-- https://github.com/WebDevSimplified/google-docs-clone /202104/js
+- https://github.com/WebDevSimplified/google-docs-clone /ISC/202104/js
   - 最简单的示例，几乎单文件
-  - 依赖quill, react
+  - 依赖quill, react、mongoose、socket.io
 
 - https://github.com/luanpanno/google-docs-clone /202105/ts
   - Google Docs Clone with Node, React, Socket.io and Quill
@@ -525,6 +525,12 @@ modified: 2023-02-09T18:32:06.240Z
   - https://github.com/Khusheel26/Google-docs-clone
   - https://github.com/Danitilahun/SmallGoogleDocClone
   - https://github.com/klublin/google-docs-clone /202212/js/4milestones
+
+
+- https://github.com/NickMandylas/noogle-docs /202106/ts
+  - Google Docs clone built with Typescript, inspired by Web Dev Simplified
+  - Front-end: Built with ReactJS (utilising Create React App). The TextEditor used is QuillJS.
+  - Back-end: Fastify (with Fastify-WebSockets), PostgreSQL and Redis.
 
 - https://github.com/bryanakitchen/google-docs-clone-server /202105/js
   - uses Socket.io, Quill, and Mongoose to generate a text editor that will allow for simultaneous edits.

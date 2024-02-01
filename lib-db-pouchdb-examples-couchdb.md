@@ -1027,11 +1027,11 @@ modified: 2023-09-28T20:35:56.153Z
 - https://github.com/starikan/pouchdb-viewer /202104/js
   - Standalone PouchDB viewer powered by Electron and pouchdb-server
 
-- https://github.com/kbrisso/file-base /202309/js/ts
+- https://github.com/kbrisso/file-base /MIT/202309/js/ts
   - A database for managing your files using Electron and React.
   - You can tag, add notes, organize, categorize, filter, search and quickly find your needed files with an easy-to-use application
   - Filebase does not modify your existing files or directories 
-  - uses PouchDB to store file and directory structure using a tree type structure, each of these nodes in the tree can have metadata added to it that will be searchable
+  - uses `PouchDB` to store file and directory structure using a tree type structure, each of these nodes in the tree can have metadata added to it that will be searchable
 
 - https://github.com/zyzmoz/SubscriptionManager /201907/js
   - User Subscription Manager created w React and PouchDB

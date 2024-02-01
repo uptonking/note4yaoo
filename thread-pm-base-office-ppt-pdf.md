@@ -46,7 +46,10 @@ modified: 2024-01-11T15:57:32.182Z
 
 - ## 
 
-- ## 
+- ## [Powerpoint shapes/diagrams to Draw.io? : powerpoint_202310](https://www.reddit.com/r/powerpoint/comments/16yreii/powerpoint_shapesdiagrams_to_drawio/)
+  - I made diagrams family tree in powerpoint and wanted to edit in draw.io and then edit again in powerpoint.
+
+- I don't think you're going to have an easy time of converting PowerPoint shapes to any of the org chart/diagram flow makers. But you can use the above thought process to look through various software import/export options to see if you can find some overlap.
 
 - ## we want to build a layout, so we have a designer mock it up in Figma, using the box model.
 - https://twitter.com/steveruizok/status/1596886646066393088

@@ -349,6 +349,19 @@ modified: 2023-11-28T14:48:45.910Z
 - ## [Logseq 为什么用 clojure 写? - 知乎](https://www.zhihu.com/question/610034256)
 - 作者的高度决定了项目语言的选择。工程师选clojure没毛病
 
+# discuss-notion-news
+- ## 
+
+- ## 
+
+- ## ✨ Say hello to buttons in databases _202402
+- https://twitter.com/NotionHQ/status/1752728459913400702
+- Automate common workflows like:
+  • approving proposals
+  • upvoting ideas
+  • escalating issues
+- I love buttons. But what I love more is forms. Create a way to build a form that populates a database and you might just go next level.
+- The only missing feature now is: connect Notion to external databases (read and write).
 # discuss-showcase
 - ## 
 
