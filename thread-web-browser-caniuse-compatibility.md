@@ -25,7 +25,26 @@ modified: 2021-07-29T11:15:44.100Z
   - ✅️ 除IE外都支持，很成熟
 # caniuse-js
 
+# discuss-ios-safari
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🚨 TIL: In Safari `navigator⁠.storage.persist` only works for "home screen apps".
+- https://twitter.com/schickling/status/1753417758518173947
+  - This means even with this API, every page you didn't visit for more than 7 day loses all of your data (localstorage, IDB, OPFS, ...)
+  - [Updates to Storage Policy | WebKit _202308](https://www.webkit.org/blog/14403/updates-to-storage-policy/)
+
+- better to persist and sync localStorage with one of the https://0data.app protocols, @remotestorage_ even lets you connect dropbox and google drive
 # discuss
+- ## 
+
+- ## 
+
+- ## 
 
 - ## 
 

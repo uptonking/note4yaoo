@@ -241,6 +241,11 @@ modified: 2023-02-07T17:38:05.336Z
   - Kanban board for workload management. 
   - Redux was implemented in only vanila JS for experimenting.
 
+- https://github.com/iamdeadman/airtable-react-kanban /MIT/201906/js/提交多
+  - A server-rendered React app inspired by Trello.
+  - 依赖redux、React-beautiful-dnd、marked、express、mongodb、passport
+  - 支持集成airtable
+
 - https://github.com/atlassian/react-beautiful-dnd
   - https://react-beautiful-dnd.netlify.app/iframe.html?id=board--simple
   - 官方示例就是看板

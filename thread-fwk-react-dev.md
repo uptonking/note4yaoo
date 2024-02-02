@@ -10,7 +10,25 @@ modified: 2021-01-06T14:40:03.364Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 🤔 The `asChild` API in Radix seemed like a great idea at the time but after being on the other side as a user, I think it's just way too big a footgun.
+- https://twitter.com/chancethedev/status/1753433321126953050
+- Do you favor the "as" prop then?
+  - Nope. Just starting to think that polymorphic components were a mistake.
+- But how would we address the problem they resolve?  
+  - Provide functions for wiring up events, returning props, etc., and let you handle the rendering. React Aria, Zag and Melt (for Svelte) have these patterns for lower-level control.
+- Yeah all of these types of polymorphic APIs aren't ideal. Really hard to compose behaviors correctly automatically. That's why we decided not to support arbitrary element overrides in React Aria Components.
+
+- Ariakit used to expose those lower-level hooks in previous versions. Internally, it's still built with them, and they're now available in a separate @⁠ariakit⁠/⁠react⁠-⁠core package.
+  - However, I don't think it's a good approach to user-facing APIs anymore. This is particularly true now that headless component libraries have become mainstream (thanks largely to Radix and Headless UI).
+  - You typically want to start with higher-level APIs until you need some advanced feature that's only accessible through lower-level APIs.
+  - Modifying your code from components to hooks demands a lot of effort in real-world projects. Whether you have to create a new component (and likely handle forwardRef, along with increased TypeScript complexity) or deal with the rules of hooks.
+  - I believe the transition from higher-level APIs to lower-level APIs should be as seamless as possible. The code should be optimized for change.
+
+- what do you think about mui's slots pattern
+  - I wasn't aware of that API in MUI. But I'm intentionally avoiding this `component` and `componentProps` pattern, which seems to map to `slots` and `slotProps` in MUI. ariakit的作者更倾向于开放ReactElement作为配置项，如render-props
+- Don’t these have some of the same problems as asChild? The mid-level one does untyped opaque prop merging
+  - The most common example of this is links. Say you have a combobox, and want to make items into links, if you just swap the rendered element for a router link that will only navigate on click but in a combobox it should also handle Enter etc. In other cases overriding the DOM element would make the accessibility tree invalid.
+  - I think it’s better if the UI library provides the proper elements and events, and behaviors like router navigation are passed in. Arbitrary element overrides are too much of a footgun, no matter what their API is.
 
 - ## I love the simplicity of React's reuse model.
 - https://twitter.com/housecor/status/1728385239611789758

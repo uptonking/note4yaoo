@@ -177,6 +177,15 @@ modified: 2023-11-28T14:48:45.910Z
 
 - ## 
 
+- ## 
+
+- ## Databases are available! 这对Atlassian来说是个大动作啊。这是向Notion宣战吗？ _202402
+- https://twitter.com/PenngXiao/status/1753369373253996757
+- 事实证明这功能很重要，很多时候人们被迫使用 Excel 就是因为少个轻量的 database
+- 但是事实上，我们team的table才是notion没有的功能哈哈，因为我们可以merge cells，而且database这个是收购来的，之前是个插件，所以加油啊
+  - 而且从内容上来说，现在我们完全可以实现table和database两个不同维度的table，table更偏向于展示而database更偏向于数据和简单计算，我们两个team各自都用同样的核心库来实现，目前应该是我们进度一致。上个半年发了两个feature分别是resizable table和drag and drop。
+- 被迫宣战, 否则confluence就完了
+
 - ## The more I think about notebooks & Notion, the more I think that their blocks should be embedded into places like Discord, Slack, instant messengers, etc.
 - https://twitter.com/JungleSilicon/status/1748547626818302113
   - Interactive knowledge-bases through conversation that can be promoted into more formal structure.

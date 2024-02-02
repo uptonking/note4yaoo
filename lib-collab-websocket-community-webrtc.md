@@ -131,7 +131,16 @@ modified: 2023-12-12T08:45:31.670Z
 # discuss
 - ## 
 
-- ## 
+- ## ChatGPT网页版从SSE改成Websocket了
+- https://twitter.com/wong2_x/status/1753351893211037994
+- 1. 对终端用户来说使用感觉基本没有变化。
+  - 2. 但从技术角度看, ChatGPT改用Websocket技术与服务器端通信可以提升通信效率, 降低延迟, 且支持性更好。
+- http://pplx.ai 也改成了 Websocket.
+- 说明生成和计算速度更快了，也扩容了。
+- 感觉没什么必要，除非交互形式不再需要问一句答一句，而是支持连续提问或者多人群聊
+- 从生命周期来看 Websocket 管理起来更麻烦一些, 但的确建立连接次数会降，也算一个优化吧。工程上提升复杂度，性能上拿到收益。
+- 想问下怎么判断的
+  - 浏览器看下Network
 
 - ## 🆚️ You can use two ways to let web apps talk to each other: polling and webhooks.
 - https://twitter.com/Franc0Fernand0/status/1748620224767701040

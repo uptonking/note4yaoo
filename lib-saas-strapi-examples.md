@@ -901,8 +901,6 @@ modified: 2023-12-15T19:30:23.094Z
   - The Strapi & Next.js Monorepo Starter
   - combining the powers of Strapi, Next.js, and Turborepo in a monorepo setup
 
-
-
 - https://github.com/malgamves/modern-cms-apps-course-v2 /202306/js
   - Building Modern CMS Driven Web Applications with Next.js and Strapi
   - [Modern CMS Driven Web Applications with Strapi and Next 13 | egghead.io](https://egghead.io/courses/modern-cms-driven-web-applications-with-strapi-and-next-13-e923dbd8)
@@ -920,6 +918,11 @@ modified: 2023-12-15T19:30:23.094Z
 
 - https://github.com/GabrielLeandroBS/avion /202311/ts
   - Project frontend for e-commerce using Strapi for CMS headless and Stripe for payment integration.
+
+- https://github.com/ielmar/strapi-puppeteer-parser-cron /202211/js
+  - This is a web scraper which uses Strapi as a headless backend with Sqlite as a database and Puppeteer for scraping data. 
+  - It is used for scraping latest added news to the news site https://sabah.az. 
+  - Cron is used to run Puppeteer in interval and parse the website for any newly added post.
 
 - https://github.com/psparsa/AlphaGallery /202310/ts
   - A minimal image uploading website built with Next.js and Starpi, styled with Tailwind CSS and tested with Jest/RTL.
@@ -990,7 +993,6 @@ modified: 2023-12-15T19:30:23.094Z
 
 - https://github.com/ashish-adhikaree/VetGhat /202303/ts
   - a simple social media app that provides means to connect to your loved ones.
-
 
 - https://github.com/misstarn/chatstrapi /202310/js
   - 使用strapi+socketio作为chatapp的后端

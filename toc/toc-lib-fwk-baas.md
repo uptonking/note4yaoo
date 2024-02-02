@@ -24,12 +24,20 @@ modified: 2021-05-25T09:40:55.797Z
   - Auto-generated APIs
   - Dashboard
 
-- https://github.com/parse-community/parse-server /20.5kStar/apache2/202401/js
+- parse-server /20.5kStar/apache2/202401/js
+  - https://github.com/parse-community/parse-server
   - https://parseplatform.org/
+  - https://docs.parseplatform.org/parse-server/guide/
+  - https://github.com/parse-community/parse-server/wiki
   - Parse Server is an open source backend that can be deployed to any infrastructure that can run Node.js. 
-  - Parse Server works with the Express web application framework. 
-  - It can be added to existing web applications, or run by itself.
-  - MongoDB or PostgreSQL(with PostGIS 2.2.0 or higher)
+  - 依赖express、graphql、mongodb、pg-promise、redis
+  - Parse Server works with the Express web application framework. It can be added to existing web applications, or run by itself.
+  - In addition to the traditional REST API, Parse Server automatically generates a GraphQL API based on your current application schema. 
+  - Parse Server uses MongoDB or PostgreSQL as a database.
+    - 🍃 The preferred database is MongoDB but Postgres is a great option if you’re starting a new project and you expect to have a stable Schema.
+    - When using MongoDB with your Parse app, you need to manage your indexes yourself. You will also need to size up your database as your data grows.
+    - In order to allow for better scaling of your data layer, it is possible to direct queries to a MongoDB secondary for read operations.
+    - 🐘 When using Postgres with your Parse app, you need to manage your indexes yourself.
 
 - appwrite /27.4kStar/BSD/202211/ts/php
   - https://github.com/appwrite/appwrite

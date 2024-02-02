@@ -156,7 +156,7 @@ modified: 2022-11-03T04:14:11.987Z
   - https://github.com/glynnbird/mangogrep
     - A command-line tool for "grepping" streams of JSON with CouchDB Mango selectors, or SQL
 
-- https://github.com/thomas4019/pgmongo /201812/js/inactive
+- https://github.com/thomas4019/pgmongo /ISC/201812/js/inactive
   - Replace MongoDB with PostgreSQL using jsonb fields
   - Drop-in replacement Applications do not need code changes
   - pgmongo rewrites queries and proxies them to a Postgres database.
@@ -317,7 +317,7 @@ modified: 2022-11-03T04:14:11.987Z
   - This package spins up an actual/real MongoDB server programmatically from within nodejs, for testing or mocking during development. 
   - By default it holds the data in memory. 
   - On install, this package downloads the latest MongoDB binaries and saves them to a cache folder.
-  - Every `MongoMemoryServer` instance creates and starts a fresh MongoDB server on some free port.You may start up several `mongod` simultaneously.
+  - Every `MongoMemoryServer` instance creates and starts a fresh MongoDB server on some free port. You may start up several `mongod` simultaneously.
 
 - https://github.com/tkssharma/nodejs-db-orm-world /202003/ts
   - Node JS with different ORM like Typeorm, Knex, Prisma and Sequelize with Node JS API Development Node JS with without any ORM (MYSQL raw queries)
@@ -325,7 +325,7 @@ modified: 2022-11-03T04:14:11.987Z
 - https://github.com/slacy/minimongo /202001/python
   - a lightweight, schemaless, Pythonic Object-Oriented interface to MongoDB
 
-- https://github.com/scottrogowski/mongita /202210/python
+- https://github.com/scottrogowski/mongita /BSD/202304/python/inactive
   - a lightweight embedded document database that implements a commonly-used subset of the MongoDB/PyMongo interface
   - instead of being a server, Mongita is a self-contained Python library. 
   - Mongita can be configured to store its documents either on disk or in memory.
@@ -342,6 +342,20 @@ modified: 2022-11-03T04:14:11.987Z
   - Currently, only strict extended json syntax is supported
 - https://github.com/fcoury/mongodb-language-model-rust 
   - ported from Node.js and PEGjs to Rust and pest.rs
+
+- https://github.com/MyIsaak/sqlitemongo /202212/ts/inactive
+  - Migrate your sqlite3 database to mongodb.
+  - It copies all tables from sqlite3 into mongo collections under a specified database. 
+- https://github.com/J-F-Liu/sqlite2mongo /202203/rust/inactive
+  - Import sqlite database to mongodb.
+  - Differences to sqlitemongo
+    - DateTime, Boolean field types are reserved.
+    - Supports dry-run and convert field name to mixed case.
+
+- https://github.com/thomas4019/mongo-query-to-postgres-jsonb /MIT/202312/js
+  - Converts MongoDB queries to postgresql queries for jsonb fields.
+  - This tool converts a Mongo query to a PostgreSQL where clause for data stored in a jsonb field.
+  - This tool is used by `pgmongo` which intends to provide a drop-in replacement for MongoDB.
 # mongo-sync/collab
 - https://github.com/share/sharedb-milestone-mongo /202309/js
   - A Mongo implementation of the ShareDB Milestone Database API
@@ -378,7 +392,7 @@ modified: 2022-11-03T04:14:11.987Z
   - Embeddable JSON Database engine C library. 
   - Simple XPath like query language (JQL).
 
-- https://github.com/FerretDB/FerretDB /5kStar/apache2/202310/go
+- https://github.com/FerretDB/FerretDB /8.2kStar/apache2/202402/go
   - https://www.ferretdb.io/
   - FerretDB (previously MangoDB) was founded to become the de-facto open-source substitute to MongoDB
   - 直接在PostgreSQL上对外提供 MongoDB 的 API

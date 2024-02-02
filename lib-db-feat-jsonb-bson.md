@@ -13,46 +13,6 @@ modified: 2024-01-01T04:12:09.000Z
   - pg-jsonb和sqlite-jsonb的实现细节是不同的, bson提供了格式规范
 # dev
 
-# blogs
-
-## [What I think of jsonb_201403](https://pgeoghegan.blogspot.com/2014/03/what-i-think-of-jsonb.html)
-
-- Jsonb is a new datatype for Postgres. 
-  - It is distinct from the older json datatype in that its internal representation is binary, and in that it is internally typed. It also makes sophisticated nested predicates within queries on jsonb indexable.
-- Jsonb is emphatically(着重的，强调的) not like the BSON format used by MongoDB. That format accepts input in such a way as to be backwards compatible with JSON, but I believe that BSON isn't really a practical interchange format, because the software development community at large is presumably disinclined(使人不愿意，使人不乐意) to buy into an interchange format that as yet is not described by any RFC, or any communiqué of a recognized standards body. 
-  - In contrast, jsonb is a datatype that will only ever output valid textual JSON, and will only ever accept valid textual JSON (subject to the aforementioned obscure and practically irrelevant restrictions, and the caveat on automatically normalizing duplicate-keyed pairs within the same object). 
-  - Jsonb also imposes an internal ordering on object pairs. Again, this is all anticipated and allowed for by the JSON RFC.
-
-- it's important to note that the protocol or on-disk binary representation of jsonb is an implementation detail; we're not in competition with BSON, and this isn't a new standard. It's just a new Postgres datatype, with new indexing capabilities.
-  - I think it's notable that BSON doesn't have a JSON-style universal number type. It has 32-bit and 64-bit integer types, and double precision 64-bit IEEE 754 floating point numbers. 
-
-## [How FerretDB stores BSON in JSONB | FerretDB Blog_202211](https://blog.ferretdb.io/pjson-how-to-store-bson-in-jsonb/)
-
-- At FerretDB, we are converting MongoDB wire protocol queries into SQL, to store information from BSON to PostgreSQL. 
-  - To achieve this, we created our own mapping called PJSON which translates MongoDB's BSON format into PostgreSQL's JSONB.
-- BSON holds a collection of field name/value pairs which is called a document. 
-  - It contains length information allowing serializer/deserializer to utilize it for the performance benefit. Additionally, it preserves the order of the fields. 
-  - BSON also supports additional data types such as DateTime and binary.
-- At FerretDB, we use PostgreSQL as a database engine and we store JSON data in JSONB data type. In light of this, we need to store BSON equivalent information in JSON format without losing type information.
-
-## 🆚️ [Postgres vs. MongoDB for Storing JSON Data — Which Should You Choose?_202110](https://community.sisense.com/t5/knowledge/postgres-vs-mongodb-for-storing-json-data-which-should-you/ta-p/111)
-
-- JSON is unstructured, flexible, and readable by humans
-  - JSON does, however, lack indexing — and the JSONB data format was created to tackle this problem. 
-  - JSONB stores data in a binary format, instead of a simple JSON blob. Data input is a bit slower, but processing becomes a lot faster since the data doesn’t need to be re-parsed.
-- Postgres and MongoDB both have functions for JSON and JSONB data storage (although MongoDB calls the latter “BSON”).
-
-- There are differences
-  - MongoDB limits its BSON format to a maximum of 64 bits for representing an integer or floating point number. 
-    - Postgres’s JSONB format isn’t limited.
-  - Postgres provides data constraint and validation functions, which help to ensure JSON documents are more meaningful. E.g. It stops you from storing alphabetical characters when only numerical values make sense.
-  - MongoDB offers automatic database sharding, for easy horizontal scaling of JSON data storage; Postgres installation scaling is usually vertical. You can scale Postgres horizontally, but this tends to be trickier or takes third-party help.
-  - MongoDB also lets you increase your write throughput by deferring writing to disk. You might lose some data that way, but it can be good for users who are le ss worried about persisting their data.
-
-## 🆚️ [Jsonb: few more stories about the performance · Erthalion's blog_201712](https://erthalion.info/2017/12/21/advanced-json-benchmarks/)
-
-- The main conclusion is that this is a damn interesting topic to research and I’m still continuing to do so
-- Another interesting conclusion is that basically all the performance differences I’ve shown above were mostly caused by databases themselves, not by the way how they handle documents. 
 # discuss-stars
 - ## 
 

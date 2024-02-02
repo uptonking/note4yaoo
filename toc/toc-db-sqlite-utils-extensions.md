@@ -203,7 +203,7 @@ modified: 2022-11-04T14:20:37.172Z
   - Currently supported formats are CSV, TSV, Excel (.xlsx), JSON Lines (JSONL), and SQLite. Additional writers are also provided to assist with testing and debugging. 
   - All writers perform atomic file operations, writing data to a temporary location and moving it to the final output location when Close is called.
 
-- https://github.com/simonw/airtable-export /python
+- https://github.com/simonw/airtable-export /apache2/202309/python
   - Export Airtable data to YAML, JSON or SQLite files on disk
   - If you run this command against an existing SQLite database records with matching primary keys will be over-written by new records from the export.
 # binary/attachment

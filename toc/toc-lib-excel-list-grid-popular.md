@@ -888,6 +888,11 @@ modified: 2022-08-21T10:02:27.788Z
   - localStorage persistence
   - [Tinysheet | Hacker News_202110](https://news.ycombinator.com/item?id=28967514)
 
+
+- https://github.com/seveibar/react-watertable /201911/js/inactive
+  - https://www.seveibar.com/react-watertable/
+  - A table with advanced editable controls
+
 - recline /2kStar/MIT/202008/js
   - https://github.com/datopian/recline
   - https://github.com/datopian/portaljs

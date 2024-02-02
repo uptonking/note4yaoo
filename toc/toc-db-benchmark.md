@@ -84,6 +84,33 @@ modified: 2022-11-25T16:16:52.713Z
   - created to show how to use NoSQL databases such as Redis, MongoDB, Neo4j and Cassandra to implement a real life data model of a B2C application and try to check how is the query expressiveness for each database. 
   - The data model used for this experiment is the TPCH benchmark data model
   - [TPC-H Queries - Factors Influencing NoSQL Adoption](https://alronz.github.io/Factors-Influencing-NoSQL-Adoption/site/MongoDB/Examples/TPC-H%20Queries/)
+# mongo-sql
+- https://github.com/scsinha/benchmark_mongo_postgres /202003/js
+  - Benchmarking Postgres and MongoDb aggregate queries on 1 million records
+
+- https://github.com/parse-community/benchmark /apache2/201908/js
+  - https://benchmark.parseplatform.org/
+  - a continuous integration tool that runs benchmarks on every commit to Parse server.
+  - 比较了mongo/pg，指标包括get/post/cpu/ram
+
+- https://github.com/kennethjiang/pg-mongo-benchmark /201504/js
+  - The goal of this challenge is to measure the read and write performance for a sample dataset of Postgres and MongoDB
+
+- https://github.com/dtim-upc/MongoDBTests /202005/java
+  - A set of test cases to evaluate cache performance of MongoDB with different document counts and sizes
+  - I have disabled the compression and limited the cache to 0.25GB to get the cache saturated faster.
+
+- https://github.com/monorkin/mongo-vs-pg-large-table-performance /MIT/202308/ruby
+  - a simple benchmark that tests how quick Postgres and MongoDB can concurrently read and write records to a table/collection that has at least 100M records in it.
+  - This kind of benchmark is important to show which DB performs better as an event log store - think thermostat readings, or when a user (dis)connected to a chat room, and similar events that just get logged and never updated.
+# timeseries
+- https://github.com/timescale/tsbs /MIT/202309/go
+  - This repo contains code for benchmarking several time series databases, including TimescaleDB, MongoDB, InfluxDB, CrateDB and Cassandra. 
+  - This code is based on a fork of work initially made public by InfluxDB at https://github.com/influxdata/influxdb-comparisons.
+
+- https://github.com/tsdbbench/Ultimate-TSDB-Comparison /202003/未找到代码
+  - https://tsdbbench.github.io/Ultimate-TSDB-Comparison/
+  - Feature comparison of open source Time Series Databases (TSDBs)
 # utils
 
 # more
@@ -91,7 +118,3 @@ modified: 2022-11-25T16:16:52.713Z
   - http://nolanlawson.github.io/database-comparison/
   - Compare DOM-blocking in browser databases
   - Demo app to test different browser databases (memory, LocalStorage, IndexedDB, WebSQL) and in particular see whether or not they block the DOM.
-
-- https://github.com/nolanlawson/database-comparison /202003
-  - https://tsdbbench.github.io/Ultimate-TSDB-Comparison/
-  - Feature comparison of open source Time Series Databases (TSDBs)

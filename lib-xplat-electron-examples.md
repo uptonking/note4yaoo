@@ -117,11 +117,11 @@ modified: 2024-01-31T19:13:11.286Z
   - A react-electron app that secures user data locally using AES algorithm with the help of nedb and crypto-js ans styled with chakra-ui.
   - https://github.com/codegiik/electron-react-nedb-boilerplate
 
-- https://github.com/wavebox/waveboxapp
+- https://github.com/wavebox/waveboxapp /1.3kStar/MPLv2/js/open2close
   - https://wavebox.io/
   - Browser for Work
   - Wavebox gives you customizable toolbars, sleeping tabs, cookie containers and multiple profile
-  - Wavebox 10, a complete fork of Chromium launched in 2019, but if you're looking for the Electron based Wavebox Classic, there's an archive of the code here
+  - Wavebox 10, a complete **fork of Chromium** launched in 2019, but if you're looking for the Electron based Wavebox Classic, there's an archive of the code here
 
 - https://github.com/samuelmaddock/electron-browser-shell /ts
   - A minimal, tabbed web browser with support for Chrome extensions—built on Electron.

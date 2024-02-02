@@ -320,8 +320,10 @@ $$('[contenteditable]')
 
 ## 020
 
-## 0201
+## 0202
 
+- [How to get the measurementId from the Firebase config? - Stack Overflow](https://stackoverflow.com/questions/60804074/how-to-get-the-measurementid-from-the-firebase-config)
+  - it is displayed when you enable Google analytics first time for the project.
 # dev-01-pouchdb-idb-rspack-rebuilt-and-joplin-note
 
 ## 0131

@@ -18,6 +18,20 @@ modified: 2023-12-09T12:32:50.692Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## basecamp is using their MySQL database as a queue running millions of jobs each day.
+- https://twitter.com/tobias_petry/status/1753408067578773710
+  - But you say that a database couldn't handle your (tiny) load and you have to use something more complex?
+  - Blindly following the architectures of some FAANG companies (e.g. using Kafka when not needed) will just make your stack more complicated.
+
+- The database queue also makes totally sense when used with transactions. Your job will be visible to outer world the same time the data is visible. Or not when the transaction is aborted. A lot of complexity can be removed by that requirement.
+  - The ability to query and re-prioritise things on the fly makes it a more interesting solution too imho.
+
+- Millions of queries per day is tiny. I have databases that do millions of queries a minute.
+
 - ## Just curious, why no one has used Redis streams to build a queue system? 
 - https://twitter.com/AmanVirk1/status/1739538111485358269
   - Especially with Consumer groups, it seems to be a great solution.

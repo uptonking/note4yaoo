@@ -135,6 +135,10 @@ modified: 2022-11-29T14:52:00.701Z
   - 一个用React Native写的电影评分App，支持web端
   - 本项目是一个仿写慕影网H5项目
 
+- https://github.com/ielmar/tmdb-movie-search-app-ts /202308/ts
+  - https://tmdb-movie-search-app.vercel.app/
+  - A NextJS with TS Movie Search App using TMDB API.
+
 - https://github.com/iliophanis/movie-app
   - https://iliophanis.github.io/movie-app
   - Movie Web App - Stack used : ReactJs, Typescript, TailwindCSS, Framer Motion

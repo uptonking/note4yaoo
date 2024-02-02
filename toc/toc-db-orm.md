@@ -43,9 +43,9 @@ modified: 2021-08-30T18:56:09.644Z
   - https://mikro-orm.io/
   - TypeScript ORM for Node.js based on Data Mapper, Unit of Work and Identity Map patterns.
   - 依赖acorn-loose, fs-extra, reflect-metadata
+  - 使用基于装饰器
   - Supports MongoDB, MySQL, MariaDB, PostgreSQL and SQLite databases.
   - Heavily inspired by Doctrine and Nextras Orm. (两者都为PHP设计)
-  - 使用基于装饰器
   - Unit of Work maintains a list of objects (entities) affected by a business transaction and coordinates the writing out of changes. 
   - Identity Map ensures that each object (entity) gets loaded only once by keeping every loaded object in a map. Looks up objects using the map when referring to them. 
 
@@ -53,10 +53,9 @@ modified: 2021-08-30T18:56:09.644Z
   - An easy-to-use multi SQL dialect ORM for Node.js
   - 不支持mongo
 
-- https://github.com/drizzle-team/drizzle-orm
+- https://github.com/drizzle-team/drizzle-orm /代码量少
   - a TypeScript ORM for SQL databases
   - 支持mysql、postgresql、sqlite，不支持mongo
-  - 代码量少
 
 - prisma /28.1kStar/apache2/202301/ts
   - https://github.com/prisma/prisma
@@ -100,16 +99,6 @@ modified: 2021-08-30T18:56:09.644Z
   - A Node.js ORM for MySQL, SQLite, PostgreSQL, MongoDB, GitHub and serverless service like Deta, InspireCloud, CloudBase, LeanCloud.
   - 依赖think-model, think-mongo(think.js)
 
-- https://github.com/biggora/caminte /MIT/201805/js
-  - cross-db ORM for nodejs, providing common interface to access most popular database formats.
-  - mysql, sqlite3, riak, postgres, couchdb, mongodb, redis, neo4j, firebird, rethinkdb, tingodb
-  - [You support couchbase, not couchdb_201803](https://github.com/biggora/caminte/issues/181)
-  - [Getting Null Values from CouchDB (cloudant)](https://github.com/biggora/caminte/issues/134)
-    - I would recommend that if you are using cloudant or couch, just start from a scratch nodejs app, don't use any library for connection, as their is none that is well maintained and fully functional . All the best.
-- https://github.com/grimen/node-document /201311/js
-  - Minimalistic ODM for Node.js implementing the most fundamental operations (such as GET/SET/DEL) on different kinds of "document(-ish)" stores using one unified API. Switching database should be a matter of changing a line of code.
-  - To stick to this philosophy more advanced operations won't be supported in core, but node-document can be used along with any 3rd-party drivers.
-
 - https://github.com/balderdashy/waterline /5.4kStar/MIT/202211/js/sails/inactive
   - An adapter-based ORM for Node.js with support for mysql, mongo, postgres, mssql (SQL Server), and more
   - Waterline is a next-generation storage and retrieval engine, and the default ORM used in the Sails framework.
@@ -128,22 +117,6 @@ modified: 2021-08-30T18:56:09.644Z
   - built on an SQL query builder called knex
   - https://github.com/feathersjs-ecosystem/feathers-objection
     - Feathers database adapter for Objection.js
-
-- https://github.com/Agrejus/db-framework /ts
-  - Database agnostic ORM for NodeJS and the web
-  - a TypeScript first ORM designed to wrap existing database frameworks such as PouchDB to augment its functionality
-  - Inspired by . NET's Entity Framework, Db Framework operates the same way and tries to keep method names as close as possible.
-  - Db Framework provides a ton of flexibility, even going as far as offering a local state store (think Redux).
-
-- orbit /2.3kStar/MIT/202209/ts
-  - https://github.com/orbitjs/orbit
-  - Orbit is a composable data framework for managing the complex needs of today's web applications.
-  - Although Orbit is **primarily used as a flexible client-side ORM**, it can also be used server-side in Node.js.
-  - Interact with data from a variety of sources: a REST server, a WebSocket stream, an IndexedDB backup, an in-memory store, etc.
-  - Work offline, work online, and seamlessly transition between both modes.
-  - Support undo、redo
-  - [How difficult is to create an offline-first app?](https://github.com/orbitjs/orbit/issues/790)
-    - There is currently no CRDT implementation in orbit. There is no server implementation at all.
 
 - https://github.com/Fibonacci-Solucoes-Ageis/MyBatisNodeJs /js
   - MyBatisNodeJs is a port from the The MyBatis data mapper framework for Node. Js.
@@ -165,18 +138,59 @@ modified: 2021-08-30T18:56:09.644Z
 - https://github.com/alfateam/rdb /js
   - ORM for nodejs. Supports postgres, msSql, mySql, Sybase SAP and sqlite.
 
-- https://github.com/izelnakri/memoria
-  - Single JS/TS ORM for frontend, backend & in-memory testing
-  - It is a very flexible typeorm-like entity definition API that just use JS classes and decorators to define or generate the schema. 
-  - You can choose different adapters and use the same CRUD interface: MemoryAdapter, RESTAdapter or SQLAdapter.
-  - The http mock server(@memoria/server) can be run in-browser and node environments, thus allows for running your in-memory test suite in SSR(server-side rendering) environment if it is needed.
-
 - https://github.com/1602/jugglingdb /201607/js/inactive
   - Multi-database ORM for nodejs: redis, mongodb, mysql, sqlite3, postgresql, arango, in-memory
 
 - https://github.com/egomobile/node-orm
   - https://github.com/egomobile/node-orm-pg
   - A simple and generic ORM mapper.
+# orm-alternatives
+- https://gitlab.com/dmfay/massive-js /BSD/202302/js/deprecated
+  - a data mapper for Node.js that goes all in on PostgreSQL, and embraces the power and flexibility of SQL itself and of the relational metaphor
+  - Massive is not an object-relational mapper (ORM)! It doesn't use models, it doesn't track state
+  - https://gitlab.com/monstrous/monstrous /js
+    - a lightweight SQL composer for Node.js and PostgreSQL
+# odm/object-document-mapper
+- https://github.com/NaturalCycles/db-lib /202401/ts
+  - Lowest Common Denominator API to supported Databases
+  - DBQuery allows to use the same query syntax across different DBs. So, you can run it against Datastore, Firestore, Redis, MongoDB, Airtable, etc.
+  - You can test your code against `InMemoryDB` (that implements full CommonDB interface, even with querying, streaming, etc). 
+
+- https://github.com/biggora/caminte /MIT/201805/js
+  - cross-db ORM for nodejs, providing common interface to access most popular database formats.
+  - mysql, sqlite3, riak, postgres, couchdb, mongodb, redis, neo4j, firebird, rethinkdb, tingodb
+  - [You support couchbase, not couchdb_201803](https://github.com/biggora/caminte/issues/181)
+  - [Getting Null Values from CouchDB (cloudant)](https://github.com/biggora/caminte/issues/134)
+    - I would recommend that if you are using cloudant or couch, just start from a scratch nodejs app, don't use any library for connection, as their is none that is well maintained and fully functional . All the best.
+- https://github.com/grimen/node-document /201311/js
+  - Minimalistic ODM for Node.js implementing the most fundamental operations (such as GET/SET/DEL) on different kinds of "document(-ish)" stores using one unified API. Switching database should be a matter of changing a line of code.
+  - To stick to this philosophy more advanced operations won't be supported in core, but node-document can be used along with any 3rd-party drivers.
+
+- https://github.com/Agrejus/db-framework /MIT/202311/ts
+  - Database agnostic ORM for NodeJS and the web
+  - a TypeScript first ORM designed to wrap existing database frameworks such as PouchDB to augment its functionality
+  - Inspired by . NET's Entity Framework, Db Framework operates the same way and tries to keep method names as close as possible.
+  - Db Framework provides a ton of flexibility, even going as far as offering a local state store (think Redux).
+  - https://github.com/Agrejus/db-framework-plugin-examples
+  - https://github.com/Agrejus/db-framework-plugin-memory
+  - https://github.com/Agrejus/db-framework-plugin-local-storage
+  - https://github.com/Agrejus/db-framework-plugin-capacitor-realm
+
+- orbit /2.3kStar/MIT/202209/ts
+  - https://github.com/orbitjs/orbit
+  - Orbit is a composable data framework for managing the complex needs of today's web applications.
+  - Although Orbit is **primarily used as a flexible client-side ORM**, it can also be used server-side in Node.js.
+  - Interact with data from a variety of sources: a REST server, a WebSocket stream, an IndexedDB backup, an in-memory store, etc.
+  - Work offline, work online, and seamlessly transition between both modes.
+  - Support undo、redo
+  - [How difficult is to create an offline-first app?](https://github.com/orbitjs/orbit/issues/790)
+    - There is currently no CRDT implementation in orbit. There is no server implementation at all.
+
+- https://github.com/izelnakri/memoria
+  - Single JS/TS ORM for frontend, backend & in-memory testing
+  - It is a very flexible `typeorm-like` entity definition API that just use JS classes and decorators to define or generate the schema. 
+  - You can choose different adapters and use the same CRUD interface: MemoryAdapter, RESTAdapter or SQLAdapter.
+  - The http mock server(@memoria/server) can be run in-browser and node environments, thus allows for running your in-memory test suite in SSR(server-side rendering) environment if it is needed.
 
 - https://github.com/js-data/js-data /202201/js/inactive
   - JSData is a framework-agnostic, datastore-agnostic ORM for Node.js and the Browser.
@@ -185,13 +199,7 @@ modified: 2021-08-30T18:56:09.644Z
 - https://github.com/paperhive/octonom /201802/ts
   - General-purpose models and collections with multi-database support, written in TypeScript
   - Collections are specific to the database you use (e.g. MongoCollection, CouchCollection)
-# orm-alternatives
-- https://gitlab.com/dmfay/massive-js /BSD/202302/js/deprecated
-  - a data mapper for Node.js that goes all in on PostgreSQL, and embraces the power and flexibility of SQL itself and of the relational metaphor
-  - Massive is not an object-relational mapper (ORM)! It doesn't use models, it doesn't track state
-  - https://gitlab.com/monstrous/monstrous /js
-    - a lightweight SQL composer for Node.js and PostgreSQL
-# db-state-management
+
 - https://github.com/oslabs-beta/LiveStateDB /js/inactive
   - LiveStateDB is a database subscription API that enables developers to make state reflect database changes in real time. 
   - Currently, LiveStateDB only supports MongoDB.

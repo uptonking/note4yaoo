@@ -20,6 +20,13 @@ modified: 2023-04-04T03:59:40.928Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## YC公布了他们今年投资的AIGC公司清单。有意思的是：大部分公司都是2-4人。 _202402
+- https://twitter.com/CoderJeffLee/status/1753387412246733036
+- 不管是不是泡沫，一个巨大的局已经形成了
+- 会不会有一种可能 这是原因 而不是结果
+
 - ## 各位做llm的同学，特别是做独立开发的，现在自己跑预训练的LLM和OpenAi API相比成本哪个高？平衡点在什么地方？
 - https://twitter.com/PenngXiao/status/1732252465419215126
 - 如果普通开发者调试出来的 LLM 能比 OpenAI 的效果更好，那是不是太低估 OpenAI 了呢？不排除有专业问题可以自己做专门的 LLM，但是长期综合成本很可能还是不如用 OpenAI。

@@ -12,7 +12,14 @@ modified: 2021-08-05T04:31:02.298Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## Library authors (and especially .d.ts authors), how do you mark a type as for internal use only? `@internal` via a JSDoc comment?
+- https://twitter.com/mattpocockuk/status/1753328532413899231
+- Yes, and you can set the `stripInternal` compiler option to strip them, but there be dragons.
+- Yes, this practice maintains a clean and clear public API.
+- internal + passing it through `api-extractor` to get rid of it in the published package
+- My team uses `@private` , but internal may be more conventional.
+- You can keep them in a separate .d.ts file and configure tsc to exclude them from the output
+- And you can also try `@ignore`
 
 - ## Avoid type and code duplication. Make types and code in sync without having to maintain both whenever you can.
 - https://twitter.com/ecyrbedev/status/1723411440000799006

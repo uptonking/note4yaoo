@@ -46,7 +46,14 @@ modified: 2023-12-01T09:08:18.316Z
 # discuss
 - ## 
 
-- ## 
+- ## I need a reactive local database; what's the frontend tech to use?
+- https://twitter.com/meijer_s/status/1753354109548204495
+  - I'll fetch multiple pages (offset based pagination) of data from remote
+  - listen to create, update, delete events from remote, and sync those changes into local db
+  - subscribe to that db to render items
+- I'm using react native, so sqlite becomes an option.
+  - I think AsyncStorage works too
+  - react query + async storage had crossed my mind. I was hoping for something that requires less work on my end though.
 
 - ## [What is the best DB for offline-first? : reactnative_202309](https://www.reddit.com/r/reactnative/comments/16f42gz/what_is_the_best_db_for_offlinefirst/)
 - Realm is open sourced? My understanding it was closed and to use it you need to pay for MongoDB. Is this not the case?

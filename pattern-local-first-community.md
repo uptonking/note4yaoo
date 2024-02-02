@@ -74,7 +74,16 @@ modified: 2023-09-13T20:24:41.516Z
 # discuss
 - ## 
 
-- ## 
+- ## if your app implements optimistic-ui, fully functioning for reasonable periods of network loss, with automatic retry and exponential backoff, how would you handle request failures?
+- https://twitter.com/WarrenInTheBuff/status/1753204757013946581
+- server single source of truth. next request is reconciliation
+
+- It depends on the use-case
+  - revert the item to a draft state 
+  - show an error as a notification
+  - pop up a modal if it needs to resolve now
+  - sometimes you can just mark it as failed and allow them to browse failed jobs + retry manually 
+  - success is default case, no extra work
 
 - ## 几个月后，我觉得我没有开发local-first的笔记App的必要。天下没有免费的午餐。
 - https://twitter.com/himself_65/status/1745342123421978982

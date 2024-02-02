@@ -10,7 +10,7 @@ modified: 2022-08-21T10:02:05.129Z
 # guide
 
 - ali-LowCodeEngine目前仅支持生成React的前端代码
-  - 制作成本固然低了，造出来的代码维护成本太高了
+  - 制作成本固然低了，造出来的代码 **维护成本** 太高了
   - 这种东西，不会编程的人对他来说太复杂了，会编程的人来说太繁琐了。
 
 - airtable-like的产品的方向
@@ -121,7 +121,7 @@ modified: 2022-08-21T10:02:05.129Z
   - API: REST and graphql
   - [NocoDB – Turn your SQL database into a Nocode platform | Hacker News_202111](https://news.ycombinator.com/item?id=29176436)
 
-- locokit /47Star/MIT/202301/ts/参考后端
+- locokit /47Star/MIT/202301/ts/vue/参考后端
   - https://github.com/locokit/locokit
   - https://locokit.io/
   - LocoKit is an AirTable alternative, providing database management as a spreadsheet and an app builder.
@@ -294,6 +294,7 @@ modified: 2022-08-21T10:02:05.129Z
   - Irelia is a modern relational spreadsheet. 
   - Python formulas. Full Python syntax is supported, and the standard library.
   - A portable, self-contained format based on SQLite
+  - Irelia formulas in documents will be run using Python executed directly on your machine.
 
 - quadratic /1.5kStar/MIT/202304/rust/ts
   - https://github.com/quadratichq/quadratic
@@ -358,7 +359,7 @@ modified: 2022-08-21T10:02:05.129Z
 
 - https://github.com/coderinblack08/graspable /202207/ts/inactive
   - A realtime, powerful, lightweight alternative to Airtable/Excel
-  - 依赖firebase/supabase
+  - 依赖firebase-admin、supabase、trpc、prisma、tiptap、next-auth、zustand
 
 - https://github.com/whitebrick/whitebrick /202202/ts/deprecated/未完成
   - Open Source Airtable Alternative (No Code DB)
@@ -372,10 +373,46 @@ modified: 2022-08-21T10:02:05.129Z
   - SeaTable is originally built by the Seafile team (haiwen/seafile). 
   - The source code will be uploaded to GitHub later. 
   - https://github.com/seatable/dtable-ui-component
-# examples
-- tips
-  - usecase
+# airtable-like
+- https://github.com/chanchalguptaa/db-dash /202303/js
+  - This is walkover product based on airtable clone
+  - https://github.com/tanishjain510/db_dash_frontend /202303/js
+    - 依赖firebase、@reduxjs/toolkit、react-table.v7
 
+- https://github.com/ielmar/airtable-clone-typescript-nodejs-jest-tailwind /202211/ts/ejs
+  - node后端以纯内存数据作为数据源渲染的简单表格，非常简洁
+
+- https://github.com/medadeshreyas/Airtable.com-Clone /202210/js/仅前端无后端
+  - easy-to-use online platform for creating and sharing relational databases. 
+  - allows anyone to spin up a database in minutes
+  - built in 6 days by a team of 5 developers
+  - https://github.com/SunilHooda/Airtable.com-Clone /202302/js
+  - https://github.com/ramsarraf11/Airtable-Clone
+  - https://github.com/Bipin579/Airtable.com-clone-
+  - https://github.com/misprachi023/Airtable
+  - https://github.com/Avneesh002/Airtable
+  - https://github.com/Sachintewatia-tech/Airtable_clone
+
+- https://github.com/Arro/airtable-json /202202/js
+  - A clean way to get Airtable data into JavaScript.
+  - If your records have references to other tables in the same base, you can get a nice clean json blob with that data included.
+
+- https://github.com/Arro/mongo-airtable /MIT/202008/js
+  - Keep Airtable tables synced with local MongoDB collections
+  - This tool allows you to get and set your data to a MongoDB database, whether or not you have internet access, and then sync whenever is convenient. That way, Airtable is still your ultimate source of truth, but your app's proxy source of truth is MongoDB.
+
+- https://github.com/ThinkAM/typeairtable /MIT/202310/ts
+  - an ORM that can run in NodeJS, Browser, Cordova, PhoneGap, Ionic, React Native, NativeScript, Expo, and Electron platforms and can be used with TypeScript
+  - TypeAirtable is highly influenced by other ORMs, such as TypeORM and Entity Framework.
+  - Using multiple database instances.
+  - Supports Airtable.
+
+- https://github.com/markusand/painless-airtable /MIT/202401/ts
+  - Easily interact with the Airtable API
+- https://github.com/simonw/airtable-export /apache2/202309/python
+  - Export Airtable data to YAML, JSON or SQLite files on disk
+  - If you run this command against an existing SQLite database records with matching primary keys will be over-written by new records from the export.
+# examples
 - https://github.com/1657744680/obsidian-yaml-database /ts
   - 像notion database一样浏览编辑文档的YAML属性
   - 注意：这个表格编辑YAML它是只能编辑一个文件夹下的”子“文档，意思就是这个文件夹的子文件夹下的文档并不会被索引。
