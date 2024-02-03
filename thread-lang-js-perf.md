@@ -32,6 +32,16 @@ modified: 2023-11-10T08:05:19.107Z
 # discuss-array/map
 - ## 
 
+- ## 
+
+- ## The "fill then map" is obviously slower because of extra iterations. Me: Laughs in JIT
+- https://twitter.com/cmgriffing/status/1753556666396930127
+- This is simply a post about how you can't predict the JIT compiler.
+  - The code needs to run often enough to be JIT'd. A React render block is a great example.
+  - Depending on the use case the readability of using `Array.from` might still be preferred.
+- The difference in execution time should mainly be attributed to `new Array()` and `Array.from()` execution. And the iteration appears to have minimal impact on the difference of the execution time.
+- this is why JavaScript is fucked.
+
 - ## Performance tip: if you need to set a lot of dynamic keys to an object, a Map can give you better perf
 - https://twitter.com/Steve8708/status/1508502291170484224
   - In short, JS VMs try to assume a shape of an object using a hidden class. When the shape changes, this can lead to a deopt

@@ -20,6 +20,7 @@ modified: 2024-01-04T06:53:04.003Z
   - pouchdb适合 one-db-per-user 的场景，跨user/db的搜索没有很好的解决方案
   - doc级别的权限管理没有最佳实践, Read access is on a per-database basis
   - 同步协议非常chatty，不适合实时协作，改进方案可参考bonsaidb
+  - 同步协议针对多用户的数据没有最佳实践
   - filtered replication待改进, 过滤计算scale困难
   - 不支持与非couchdb的数据库同步，但可参考event-sourcing自己实现
   - pouchdb擅长同步，但对实时协作的支持不如websocket，不支持awareness

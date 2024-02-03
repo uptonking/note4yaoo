@@ -18,7 +18,15 @@ modified: 2023-09-17T17:35:53.774Z
 
 - ## 
 
-- ## 
+- ## This needs to be said: there is no general data synchronization algorithm. 
+- https://twitter.com/LewisCTech/status/1753615935498547482
+  - Every algorithm depends on the topology of the network of replicas and properties of the data being synchronized.
+- I am tempted to argue that what's now called a "Multi-Value Register CRDT" is something like a general solution for syncing data. It's not the most sophisticated, but it's a rock solid technique over 4 decades old.
+- The word "register" in it defines the semantics of the data — it's a single and independent register. What if my data is a set of registers? What if it's an array? What if it's a tree (like a filesystem)? What if it's an acyclic graph? What if it's a cyclic graph?
+  - Yeah i get what you mean. I suppose where I'm coming from is the key value model, where each value is self contained, is the simplest data model. and has the simplest sync model.
+- If someone were to wrap data sync in a library, they would have a more general and thus complicated model. If your data is a register, it’s better to write the sync logic yourself. This is the tension that makes synchronization-as-a-library so hard.
+  - TBH I don't get data sync as a library. But CouchDB has done very, very well, and it's model is very register-like. I still maintain if you have to pick one generalist sync strategy for a tool, something in that area is where you want to go.
+
 # discuss
 - ## 
 

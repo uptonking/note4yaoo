@@ -40,6 +40,15 @@ modified: 2022-08-21T10:12:02.964Z
 # discuss
 - ## 
 
+- ## 
+
+- ## [I reverse engineered Google Docs to play back any document's keystrokes (2014) | Hacker News _202012](https://news.ycombinator.com/item?id=25545361)
+- I was working on the Google Slides team at the time this blog post was originally published back in 2014. 
+  - Slides and Doc are extremely closely related projects, sharing lots of code (and even sitting next to eachother, at the time at least). 
+  - Our entire team was impressed with the details of the operational transform protocols that the author was able to reverse engineer, and for the most part get correct. IIRC our engineering director ended up calling the guy up for a lunch.
+- Sending around protobufs encoded as JSON makes reverse engineering much easier than you might imagine.
+- It's crazy how vast and powerful databases of even the most simple things turn out to be. You just store characters and context information when someone types them, and this is the result.
+
 - ## Have we talked about sub-documents?
 - https://twitter.com/blaine/status/1409611697157918728
   - Long story short, we have recursive logic in atjson to render atjson documents that are embedded in annotations. Useful for lots of things; e.g., comments can be fully annotated/formatted, tombstones of deleted text can contain the full deleted text (including formatting, etc)

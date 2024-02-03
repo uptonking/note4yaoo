@@ -12,6 +12,15 @@ modified: 2021-08-05T04:31:02.298Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## Since working on Svelte, I always get asked if I really prefer jsdoc over TypeScript. No, I don’t.
+- https://twitter.com/trueadm/status/1753562312651211207
+  - Furthermore, if we had type definitions in the language (there’s a proposal for it) then Svelte could go back to using types instead of jsdoc. We just don’t want or need a build process for Svelte (the library). It does suck though and I’m often conflicted on the topic.
+
+- You still need a build process to generate .d.ts files from jsdoc before publishing though don't you?
+  - That’s a one time thing that’s fine via CI
+
 - ## Library authors (and especially .d.ts authors), how do you mark a type as for internal use only? `@internal` via a JSDoc comment?
 - https://twitter.com/mattpocockuk/status/1753328532413899231
 - Yes, and you can set the `stripInternal` compiler option to strip them, but there be dragons.
@@ -59,7 +68,10 @@ modified: 2021-08-05T04:31:02.298Z
 
 - ## 
 
-- ## 
+- ## TIL - I never knew you could make a method optional using the ?() syntax.
+- https://twitter.com/mattpocockuk/status/1753672834688192989
+- aMethod?: () => void, isn’t it the same thing for it being optional? I use it all the time this way.
+- same energy as `?.()` for optional function invocations
 
 - ## Four ways to define an object type in TypeScript
 - https://twitter.com/wesbos/status/1524040757518258176

@@ -51,12 +51,14 @@ modified: 2023-12-15T17:04:36.589Z
   - Dynamic field is something I also looked into, which I think could work OK. The problem is that they want to add html blocks in the most arbitrary and random places. Sometimes right after the first paragraph, sometimes in the middle, the end. Sometimes there are 10+ html tags in a single Article. They don't have a fixed position. This arbitrary positioning makes it seem like dynamic zone won't work very well. Or maybe I'm missing something ?
   - Anyways, I tried using dynamic zones and it seems to be working pretty well. Seems like getting the most out of Strapi is better than replacing it.
 
-- ## 🍃 [MongoDB support in Strapi: Past, Present & Future_202106](https://strapi.io/blog/mongo-db-support-in-strapi-past-present-and-future)
+- ## 🍃 [MongoDB support in Strapi: Past, Present & Future _202106](https://strapi.io/blog/mongo-db-support-in-strapi-past-present-and-future)
 - Since 2017 and Strapi Alpha, we have always supported SQL databases such as MySQL, PostgreSQL, SQLite, MariaDB, and the document database MongoDB.
 - I posted a message on the Strapi forum announcing that we were thinking about officially dropping our support for MongoDB in Strapi. 
-  - In an attempt to be fully transparent with the Strapi community, we provided some context about the problem and motivation for this important decision. 
-  - 👉🏻 In short, having to support two different connectors (SQL + MongoDB) is slowing down our product developments, and MongoDB usage represents less than 0.4% of all the Strapi projects (data is anonymously collected via Telemetry system).
+  - 💡 In short, having to support two different connectors (SQL + MongoDB) is slowing down our product developments, and MongoDB usage represents less than 0.4% of all the Strapi projects (data is anonymously collected via Telemetry system).
   - For the beta and stable release of the Strapi v4, Strapi won't support MongoDB natively, and no connector will be available (yet).
+
+- [Why MongoDB is not available in Strapi V4 ? _202111](https://github.com/strapi/documentation/issues/520)
+  - we won't maintain a MongoDB connector in v4. If MongoDB (the team) builds one that is up to them.
 
 - [MongoDB compatibility delayed on v4 - Discussions - Strapi Community Forum](https://forum.strapi.io/t/mongodb-compatibility-delayed-on-v4/4549)
 # discuss-features

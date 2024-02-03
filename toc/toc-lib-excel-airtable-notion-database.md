@@ -386,10 +386,11 @@ modified: 2022-08-21T10:02:05.129Z
   - easy-to-use online platform for creating and sharing relational databases. 
   - allows anyone to spin up a database in minutes
   - built in 6 days by a team of 5 developers
+  - https://github.com/manshikumari12/Airtable-Clone /202312/js
   - https://github.com/SunilHooda/Airtable.com-Clone /202302/js
-  - https://github.com/ramsarraf11/Airtable-Clone
+  - https://github.com/misprachi023/Airtable /202311/js
+  - https://github.com/ramsarraf11/Airtable-Clone /202212/js
   - https://github.com/Bipin579/Airtable.com-clone-
-  - https://github.com/misprachi023/Airtable
   - https://github.com/Avneesh002/Airtable
   - https://github.com/Sachintewatia-tech/Airtable_clone
 

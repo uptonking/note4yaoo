@@ -12,6 +12,15 @@ modified: 2023-10-06T16:26:57.557Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Specific types like `Result` and `Option` in Rust offer  methods like `map` and `and_then` that enable a monadic interface, 
+- https://twitter.com/debasishg/status/1753790041812558282
+  - but Rust does not provide means to abstract over monads, which is an important difference with languages like Haskell. 
+  - While having a common interface for `Option` , `Result` , and `Future` would be good, I don't miss monads in Rust where I can write imperative loops without worrying about shared mutable state.
+
 - ## 🧮 graphs are quite hard to model with Rust, mainly because of the complex interaction between  ownership rules and managing mutable cyclic data structures. 
 - https://twitter.com/debasishg/status/1752737782815195253
   - Was looking for options and found that arena based modeling (region-based memory management) is possibly the way to go. 

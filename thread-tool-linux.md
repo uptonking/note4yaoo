@@ -18,6 +18,11 @@ modified: 2024-01-06T13:48:42.969Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 我还记得在本科时候的Linux编程课上，学习了etc和usr的全称——Essential Text Configuration, Unix System Resource。特别是后者很容易望文生义以为是user
+- https://twitter.com/liujinmarshall/status/1753478223135142051
+
 - ## SRE Deep Dive into Linux Page Cache
 - https://twitter.com/TanelPoder/status/1751882719603126643
   - [Linux Page Cache for SRE | Viacheslav Biriukov](https://biriukov.dev/docs/page-cache/0-linux-page-cache-for-sre/)

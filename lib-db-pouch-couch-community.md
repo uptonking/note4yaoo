@@ -249,7 +249,13 @@ modified: 2024-01-04T06:55:12.542Z
 
 - ## 
 
-- ## 
+- ## 🌰 Yesterday, we shut down our CouchDB cluster. In the past six months, we migrated @greenmangaming to @mongodb Atlas
+- https://twitter.com/Joolz/status/1753367568125997080
+  - With terabytes of data and numerous services, we achieved the migration seamlessly, without major code changes. How? 
+  - In Part 1, we had to move data from A to B. So, we created Couch2Mongo, a small Rust project. It uses CouchDB change streams, tracks progress in DynamoDB (also supports Redis), and efficiently copies data from A to B.
+  - Part 2: We created couchapi, a Rust service that acts as a translation layer between CouchDB and MongoDB, converting queries. It was the most challenging part of the project, assisting us in migrating to MongoDB. We'll Open Source that soon too.
+  - We ensured that it had a 'Read Only' mode, which allowed us to pass queries back to CouchDB. This feature enabled us to easily toggle it on and off while debugging issues. 
+  - We developed 'Views' that convert view queries to "Aggregations" in MongoDB.
 
 - ## I'm looking into the best way to support key constraints in a document. 
 - https://couchdb.slack.com/archives/C49LEE7NW/p1705632812084529

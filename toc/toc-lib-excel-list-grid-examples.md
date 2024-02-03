@@ -11,6 +11,9 @@ modified: 2022-08-21T10:03:52.222Z
 
 - 应用示例
   - [h5dw 数据仓库示例， 未开源](http://www.satrda.com/h5dw/)
+
+- https://github.com/jewelshkjony/SpreadSheets
+  - awesome extension to work with google spreadsheet. You can read, write and modify data from your sheets.
 # list/grid view
 - https://github.com/ShuvoHabib/reactjs-toggle-list-grid-view
   - toggle through List and Grid view
