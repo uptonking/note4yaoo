@@ -74,7 +74,7 @@ modified: 2022-12-16T01:52:33.729Z
   - notion焦点移到下一行
   - 飞书、ckeditor、tiptap都是单元格内新加一行
 # draft
-
+- 细粒度的权限，可遮挡价格/电话
 # examples-
 
 # maybe

@@ -1,11 +1,11 @@
 ---
-title: cli-bash-dev
-tags: [cli, lang-bash]
+title: cli-bash-shell
+tags: [cli, lang-bash, shell]
 created: 2024-01-16T11:58:24.868Z
-modified: 2024-01-16T11:59:17.920Z
+modified: 2024-02-04T19:53:29.532Z
 ---
 
-# cli-bash-dev
+# cli-bash-shell
 
 # guide
 
@@ -27,12 +27,24 @@ ${varname:=word}
 # 它的目的是返回一个默认值
 ${varname:-word}
 
-# 如果变量名存在且不为空，则返回word，否则返回空值。它的目的是测试变量是否存在
+# 如果变量名存在且不为空，则返回word，否则返回空值。
+# 它的目的是测试变量是否存在
 ${varname:+word}
 
 # 如果变量varname存在且不为空，则返回它的值，否则打印出varname: message，并中断脚本的执行
 # 它的目的是防止变量未定义，未定义时就中断执行，抛出错误
 ${varname:?message}
+
+# if
+# [ -n string ]：如果字符串string的长度大于零，则判断为真。
+# [ -z string ]：如果字符串string的长度为零，则判断为真。
+# test命令内部的>和<，必须用引号引起来（或者是用反斜杠转义）。否则，它们会被 shell 解释为重定向操作符。
+# [ integer1 -eq integer2 ]：如果integer1等于integer2，则为true。
+# [ integer1 -ne inte ger2 ]：如果integer1不等于integer2，则为true。
+# [ -e file ]：如果 file 存在，则为true。
+# [ -d file ]：如果 file 存在并且是一个目录，则为true。
+
+
 ```
 
 - echo

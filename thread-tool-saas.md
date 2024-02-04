@@ -12,7 +12,10 @@ modified: 2023-05-07T18:35:50.897Z
 # discuss
 - ## 
 
-- ## 
+- ## 发现一个有趣的网站 https://endoflife.date ，呈现各个常见软件（供应链）的生命周期。
+- https://twitter.com/alswl/status/1754053512877781012
+  - [endoflife.date](https://endoflife.date/)
+- Go 的强向后兼容性使得长期维护旧版本没太大意义，如果你愿意升级，完全可以升大版本。
 
 - ## 我压缩图片经常会用到 https://tinypng.com 这个网站，我试过其他的网站和软件好像都没有这个好，它们功能非常简单，就是压缩图片，没别的。
 - https://twitter.com/vikingmute/status/1753609198422937683

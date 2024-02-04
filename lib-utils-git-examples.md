@@ -85,11 +85,11 @@ modified: 2023-08-29T10:12:22.345Z
   - Fossil SCM delta compression in JavaScript
   - The cool thing about it is that plain text inputs generate plain text deltas (binary inputs, of course, may generate binary deltas).
 
-- https://github.com/martinvonz/jj /4.3kStar/apache2/202401/rust
+- https://github.com/martinvonz/jj /4.8kStar/apache2/202401/rust
   - https://martinvonz.github.io/jj
-  - https://martinvonz.github.io/jj/
   - [Other related work](https://martinvonz.github.io/jj/v0.9.0/related-work.html)
   - A Git-compatible DVCS that is both simple and powerful
+  - Jujutsu is unlike most other systems, because internally it abstracts the user interface and version control algorithms from the storage systems used to serve your content. This allows it to serve as a VCS with many possible physical backends, that may have their own data or networking models—like Mercurial or Breezy, or hybrid systems like Google's cloud-based design, Piper/CitC.
   - It combines features from Git (data model, speed), Mercurial (anonymous branching, simple CLI free from "the index", revsets, powerful history-rewriting), and Pijul/Darcs (first-class conflicts), with features not found in most of them
   - Jujutsu has two backends. One of them is a Git backend (the other is a native one). This lets you use Jujutsu as an alternative interface to Git.
   - All operations you perform in the repo are recorded, along with a snapshot of the repo state after the operation. This means that you can easily revert to an earlier repo state, or to simply undo a particular operation

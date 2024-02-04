@@ -36,7 +36,7 @@ modified: 2023-09-16T17:28:29.873Z
   - Instead you'd like to only run against the data that changed and have your result incrementally updated. That's what this is for.
   - [Materialite / Matt | Observable](https://observablehq.com/d/3244e97e61ba5bd1)
 
-- https://github.com/mozilla/mentat /rust/inactive
+- https://github.com/mozilla/mentat /201809/rust/inactive
   - https://mozilla.github.io/mentat/
   - A persistent, relational store inspired by Datomic and DataScript
   - Mentat is intended to be a flexible relational (not key-value, not document-oriented) store that makes it easy to describe, grow, and reuse your domain schema.
@@ -46,6 +46,7 @@ modified: 2023-09-16T17:28:29.873Z
   - Mentat uses partial indices, which are available in SQLite 3.8.0 and higher
   - 🍴 forks
   - https://github.com/qpdb/mentat
+  - https://github.com/mozilla/mentat/tree/clojure /201702
 
 - https://github.com/amitayh/rustomic /rust
   - A simplified Datomic clone built in Rust

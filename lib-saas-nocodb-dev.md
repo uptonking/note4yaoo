@@ -9,6 +9,19 @@ modified: 2023-12-15T16:51:49.971Z
 
 # guide
 
+- pros
+  - open source with AGPLv3
+  - 支持已有数据库，不需要import data
+
+- cons
+  - ?
+
+- features
+  - Multiple Views Types: Grid (By default), Gallery, Form View and Kanban View
+  - View Permissions Types: Collaborative Views & Locked Views
+  - Access Control with Roles : Fine-grained Access Control at different levels
+  - App Store for Workflow Automations
+  - Audit: We are keeping all the user operation logs under one place
 # dev
 
 # [pricing](https://github.com/orgs/nocodb/projects/13/views/2)

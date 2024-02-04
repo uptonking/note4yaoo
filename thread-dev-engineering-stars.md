@@ -61,6 +61,17 @@ modified: 2021-08-10T03:51:01.891Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## A lot of library authors end up with generics requiring a crazy number of ordered parameters.
+- https://twitter.com/ssalbdivad/status/1753880880110518629
+  - This feels fine when you're defining them, but is awful to read and maintain.
+  - Just use a single parameter with named keys!
+- I would argue that if an interface takes more than 2 parameter (beside maybe context/Lifecycle control in some language) then you should split the interface into more specific use cases.
+- I tend to agree with this. It’s what made React’s component props seem unique when it was introduced, but also clean.
+
 - ## 🌰 sentry 现在居然已经这么复杂了，上一次部署的时候只需要 postgres + redis + worker + web 就可以了。
 - https://twitter.com/laixintao/status/1719198693822431517
 - 这个架构已经没有开源和self-host的必要了。引入的复杂度太高。超出了它能解决的复杂度。

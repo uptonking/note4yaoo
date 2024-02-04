@@ -116,10 +116,9 @@ modified: 2023-11-28T14:48:45.911Z
   - 不支持跨block选择部分文字
   - 不支持拖拽block修改顺序
 
-- https://github.com/CedarXi/All-in-one
+- https://github.com/CedarXi/All-in-one /63Star/NALic/202004/js/vue/inactive
   - http://all-in-one.qingzhu.co/
   - https://all-in-one-kappa.vercel.app/
-  - /63Star/NALic/202004/js/vue/inactive
   - All-in-one 是一个开源的模块化内容构建编辑器，基于Vue和element的打造
   - 它不同于传统的文本编辑器，所有的内容都是以模块的概念来打造。灵感来自Notion
   - 所有的模块都以VUE组件的形式编写，可以灵活插拔。
@@ -139,7 +138,6 @@ modified: 2023-11-28T14:48:45.911Z
   - An implementation of the popular Workspace App: Notion.
   - 依赖 nestjs、mongoose、passport、rxjs
   - [Minimalist Notion Implementation: Part 1-Everything Is a Block_202203](https://medium.com/@arcilamatt/minimalist-notion-implementation-part-1-everything-is-a-block-debda338b61a)
-
 
 - https://github.com/fouita/tailwind-editor
   - notion like tailwindcss editor built with svelte
@@ -169,7 +167,7 @@ modified: 2023-11-28T14:48:45.911Z
   - a Notion like editor built on top of TipTap & Prosemirror
   - https://github.com/factly/dega /go
     - lightweight, scalable & high performant CMS written in Go & React
-# notion-block-structure-api/self-hosted
+# notion-block-api/self-hosted
 - https://github.com/dragonman225/nast
   - A block-based intermediate representation for document-like content.
   - `nast-types`: A TypeScript type definition module to specify data models for intermediate representation of data.
@@ -182,8 +180,6 @@ modified: 2023-11-28T14:48:45.911Z
 
 - https://github.com/justjake/monorepo/tree/main/packages/notion-api
   - The missing companion library for the official Notion public API.
-
-
 
 - https://github.com/onedebos/notion-api-server-demo
   - This NodeJS application demonstrates how to read and write data to your Notion Workspace using the new Notion APIs.
@@ -201,8 +197,6 @@ modified: 2023-11-28T14:48:45.911Z
 - https://github.com/brenogcota/simple-notion-api-clone
   - a simple Notion API clone, made with Typescript, Express, Prisma ORM
 
-
-
 - notionapi /1.7kStar/BSD/202208/go
   - https://github.com/kjk/notionapi
   - https://developers.notion.com/reference/block
@@ -211,7 +205,7 @@ modified: 2023-11-28T14:48:45.911Z
 - https://github.com/MrFoxPro/bloki
   - https://bloki.app/
   - 支持在文档上放画板，ui设计友好
-# notion-clone-api
+# notion-api-usage
 - https://github.com/minwook-shin/notion-database
   - https://notion-database.readthedocs.io/
   - Notion API Database Python Implementation

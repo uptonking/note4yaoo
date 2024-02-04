@@ -66,7 +66,9 @@ modified: 2021-08-05T04:31:02.298Z
 # discuss
 - ## 
 
-- ## 
+- ## If you want to declare a value as constant with type checking in editor but the code is not typescript yet. 
+- https://twitter.com/huozhi/status/1754115622667960381
+  - Using TSDoc constant type comment is such a relief
 
 - ## TIL - I never knew you could make a method optional using the ?() syntax.
 - https://twitter.com/mattpocockuk/status/1753672834688192989

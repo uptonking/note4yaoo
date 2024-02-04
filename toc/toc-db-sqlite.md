@@ -127,8 +127,12 @@ modified: 2021-08-30T18:56:18.632Z
 - https://github.com/cyrilbois/Web-GUI-for-SQLite
   - a web-based SQLite browser written in JavaScript.
 
-- https://github.com/inloop/sqlite-viewer
+- https://github.com/inloop/sqlite-viewer /apache2/202401/js
+  - http://inloop.github.io/sqlite-viewer
   - View SQLite file online
+  - Uses sql.js for parsing sqlite files.
+  - You can also load remote files (using JS ajax, remote server must send Access-Control-Allow-Origin:*)
+  - No file will be uploaded - uses only JavaScript HTML5 `FileReader`.
 
 - https://github.com/pawelsalawa/sqlitestudio /202309/c
   - multi-platform SQLite database manager written in C++, with use of Qt framework

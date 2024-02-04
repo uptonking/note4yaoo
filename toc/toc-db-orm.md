@@ -270,14 +270,17 @@ modified: 2021-08-30T18:56:09.644Z
     - The B-Tree implementation in Nebari is designed to offer those exact guarantees.
     - The major downside of append-only formats is that deleted data isn't cleaned up until a maintenance process occurs: compaction. 
 
-- https://github.com/mozilla/mentat /rust/inactive
+- https://github.com/mozilla/mentat /201809/rust/inactive
   - https://mozilla.github.io/mentat/
   - A persistent, relational store inspired by Datomic and DataScript
   - Mentat is intended to be a flexible relational (not key-value, not document-oriented) store that makes it easy to describe, grow, and reuse your domain schema.
   - Just like DataScript, Mentat speaks Datalog for querying and takes additions and retractions as input to a transaction.
-  - Unlike DataScript, Mentat exposes free-text indexing, thanks to SQLite.
+  - Unlike DataScript, Mentat exposes free-text indexing, **thanks to SQLite**.
   - Mentat was designed for embedding, initially in an experimental Electron app 
   - Mentat uses partial indices, which are available in SQLite 3.8.0 and higher
+  - 🍴 forks
+  - https://github.com/qpdb/mentat
+  - https://github.com/mozilla/mentat/tree/clojure /201702
 
 - https://github.com/objectbox/objectbox-java /4.3kStar/apache2/202311/java
   - https://objectbox.io/

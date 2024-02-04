@@ -16,7 +16,16 @@ modified: 2023-11-10T07:10:19.089Z
 # discuss
 - ## 
 
-- ## 
+- ## Node peeps, is there something close to attached built-in (no dep needed).
+- https://twitter.com/aboodman/status/1753586853415125060
+  - I want to launch a child process and emit its output to the console as it happens (not wait for end of process), as well as capture the output to return to caller.
+- it doesn't emit stderr. I could pipe that to stdout so that I can use the `for await` but I ideally wanted to write the child's stderr to parent's stderr, not smoosh the two streams together.
+
+- does args.stdio = "inherit" work?
+  - That doesn’t emit the output until the child process is done
+  - Well we are not emitting it’s output but logging anything that happens from it
+
+- use child.stdout.pipe
 
 - ## 之前一直没太理解AsyncLocalStorage的作用，终于弄了一个好懂的例子了
 - https://twitter.com/wulianwen1/status/1746723329359438024

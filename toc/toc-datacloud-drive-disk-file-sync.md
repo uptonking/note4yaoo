@@ -296,7 +296,7 @@ modified: 2022-09-10T02:26:52.062Z
   - BrowserFS is an in-browser filesystem that emulates the Node JS filesystem API and supports storing and retrieving files from various backends.
   - 支持 memory/localStorage/indexeddb/dropbox/Emscripten file systems
 # s3/minio
-- Zenko CloudServer /1.5kStar/apache2/202302/js
+- Zenko CloudServer /1.5kStar/apache2/202401/js
   - https://github.com/scality/cloudserver
   - https://www.zenko.io/cloudserver
   - CloudServer (formerly S3 Server) is an open-source Amazon S3-compatible object storage server 
@@ -307,6 +307,14 @@ modified: 2022-09-10T02:26:52.062Z
     - Current behavior: Entire file must be pulled back to process one column
     - [Amazon S3 Select supports only the SELECT SQL command.](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-glacier-select-sql-reference-select.html)
   - CloudServer is useful for Developers, either to run as part of a continuos integration test environment to emulate the AWS S3 service locally or as an abstraction layer
+
+- https://git.deuxfleurs.fr/Deuxfleurs/garage /AGPLv3/202401/rust
+  - https://garagehq.deuxfleurs.fr/
+  - open-source distributed object storage service tailored for self-hosting
+  - self-hosted drop-in replacement for the Amazon S3 object store.
+  - Self-contained: We ship a single dependency-free binary that runs on all Linux distributions
+  - https://twitter.com/bluxte/status/1753823896715886898
+    - 
 
 - https://github.com/juicedata/juicefs /apache2/202401/go
   - https://juicefs.com/

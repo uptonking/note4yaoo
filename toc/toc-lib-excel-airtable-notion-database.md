@@ -10,7 +10,7 @@ modified: 2022-08-21T10:02:05.129Z
 # guide
 
 - ali-LowCodeEngine目前仅支持生成React的前端代码
-  - 制作成本固然低了，造出来的代码 **维护成本** 太高了
+  - 开发成本固然低了，造出来的代码 **维护成本** 太高了
   - 这种东西，不会编程的人对他来说太复杂了，会编程的人来说太繁琐了。
 
 - airtable-like的产品的方向
@@ -78,10 +78,6 @@ modified: 2022-08-21T10:02:05.129Z
   - https://github.com/RafaelGB/obsidian-db-folder
     - Obsidian Plugin to Allow Notion like database based on folders
 
-- https://github.com/linyows/notionate
-  - https://notionate.linyo.ws/
-  - React components that uses the Notion API to display the Notion's database and page.
-
 - undb /20Star/AGPLv3/202304/ts/参考前端后端
   - https://github.com/undb-xyz/undb
   - https://www.undb.xyz/
@@ -91,13 +87,15 @@ modified: 2022-08-21T10:02:05.129Z
   - 前端依赖 tanstack-table、dnd-kit、redux-toolkit、emotion、@loadable/component、jotai、react-hook-form、trpc
   - 后端依赖 nestjs、mikro-orm、trpc、undb
   - 可在redux-devtools中查看数据结构
+  - 用户在界面上创建表时，数据库层也会添加一张新表
   - [feature/frontend next_20230503(v0.3), 前端迁移到svelte](https://github.com/undb-xyz/undb/pull/908)
     - 41fa03d9bfbc9b5072266ad94c9532ccdcf25a68
 
 - https://github.com/baastronaut/baastronaut /202304/ts
   - open-source Airtable alternative built on PostgREST
-  - [Show HN: Baastronaut – open-source Airtable alternative built on PostgREST | Hacker News_202303](https://news.ycombinator.com/item?id=35356736)
   - 依赖nestjs、typeorm、mantine.v6、mobx、nextjs
+  - [Show HN: Baastronaut – open-source Airtable alternative built on PostgREST | Hacker News_202303](https://news.ycombinator.com/item?id=35356736)
+    - the most essential features of Airtable are: filtering, grouping, and views. Without that it's a nonstarter. I don't see that here.
 
 - nocodb /33kStar/AGPLv3/202212/ts/vue/参考后端/多视图
   - https://github.com/nocodb/nocodb
@@ -107,6 +105,7 @@ modified: 2022-08-21T10:02:05.129Z
   - Turns any MySQL, PostgreSQL, SQL Server, SQLite & MariaDB into a smart-spreadsheet
   - 后端依赖 express、knex、ioredis、passport、request
   - 前端依赖 nuxt3、ant-design-vue.v3、vueuse、vue-flow(chart)、monaco-editor、d3-scale、dayjs、vuedraggable、xlsx
+  - 用户在界面上创建表时，数据库层也会添加一张新表
   - 支持提供返回表中数据的api
   - 主要功能模块
     - 多种视图ui
@@ -119,7 +118,11 @@ modified: 2022-08-21T10:02:05.129Z
   - Create Views : Grid, Gallery, Kanban, Form
   - Database: Any SQL (postgres, mysql, sqlite, maria DB, SQL server)
   - API: REST and graphql
-  - [NocoDB – Turn your SQL database into a Nocode platform | Hacker News_202111](https://news.ycombinator.com/item?id=29176436)
+  - [Show HN: NocoDB – Open-Source Airtable Alternative | Hacker News _202105](https://news.ycombinator.com/item?id=27303783)
+  - [Nocodb with MongoDB _202205](https://github.com/nocodb/nocodb/discussions/2072)
+    - Sorry, not at the moment
+  - [Feature : NoSQL DB support 暂不支持 _202105](https://github.com/nocodb/nocodb/issues/184)
+  - [Feature : Import data from external source _202205](https://github.com/nocodb/nocodb/issues/2052)
 
 - locokit /47Star/MIT/202301/ts/vue/参考后端
   - https://github.com/locokit/locokit
@@ -137,7 +140,7 @@ modified: 2022-08-21T10:02:05.129Z
   - [[roadmap] API over SQL / Nuxt 3 / Feathers 5 / Pinia](https://github.com/locokit/locokit/issues/151)
     - 正在迁移到nuxt3+pinia(vue store)+feathers5
 
-- nocobase /3.7kStar/apache2/202212/ts/国内
+- nocobase /3.7kStar/apache2(core) + AGPL(plugin)/202212/ts/国内
   - https://github.com/nocobase/nocobase
   - https://www.nocobase.com/
   - [源码安装](https://docs-cn.nocobase.com/welcome/getting-started/installation/git-clone)
@@ -157,7 +160,7 @@ modified: 2022-08-21T10:02:05.129Z
   - Everything is a plugin, all new features can be implemented by developing and installing plugins
   - [change license of plugins-AGPLv3_20230111, v0.8.1 > v0.9.0](https://github.com/nocobase/nocobase/pull/1350)
 
-- focalboard /10.3kStar/src-AGPL & bin-MIT/202203/ts/go/参考前端/squirrel-sql-builder
+- focalboard /10.3kStar/AGPL & bin-MIT/202203/ts/go/偏看板/参考前端/squirrel-sql-builder
   - https://github.com/mattermost/focalboard
   - https://www.focalboard.com/
   - 前端依赖 @reduxjs/toolkit、@tippyjs/react、draft-js、@fullcalendar/react、imagemin-svgo、marked、moment、nanoevents、react-dnd.v14、react-hot-keys、react-intl、react-router-dom.v5
@@ -199,10 +202,12 @@ modified: 2022-08-21T10:02:05.129Z
 - grist-core /5.3kStar/apache2/202311/ts/参考后端
   - https://github.com/gristlabs/grist-core
   - https://support.getgrist.com/
+  - https://docs.getgrist.com/
+  - Grist is a modern relational spreadsheet. 
   - 表格不支持视图切换，支持各种widgets，类似dashboard
+  - 用户在界面上创建表T1时，server会在主数据库会添加数据元信息记录，表T1的实际数据在本地`grist-core/docs`文件夹，用户创建的每个document对应一个sqlite格式的`.grist`文件，用户创建的每张表对应.grist数据库中的一张表，.grist数据库中还包含视图、权限、action等业务数据和元数据
   - 前端依赖backbone-model/events、knockout-observable、jquery、bootstrap3、ace-builds、exceljs
   - 后端依赖typeorm、express、grain-rpc
-  - Grist is a modern relational spreadsheet. 
   - It combines the flexibility of a spreadsheet with the robustness of a database to organize your data and make you more productive.
   - Columns work like they do in databases.
   - Columns can be filled by formula
@@ -210,6 +215,7 @@ modified: 2022-08-21T10:02:05.129Z
   - Full Python syntax is supported, and the standard library.
   - `grist-core` has what you need to run a powerful spreadsheet hosting server. 
   - And to show Grist spreadsheets on a website without any special back-end support, your options include `grist-static`.
+  - Grist spreadsheets by default store a lot of history in the `.grist` file. You can prune that history by building grist-core
   - [Offline first support_202212](https://github.com/gristlabs/grist-core/issues/380)
     - we tried Grist as a conventional SaaS app, and that is when we started accumulating users.
     - Grist has two levels. There's a "home" database, which keeps track of users/sites/workspaces/documents, and that uses postgresql/sqlite via `typeorm`. Then, each individual document has its own database, which is sqlite accessed directly via `node-sqlite3`.
@@ -217,16 +223,18 @@ modified: 2022-08-21T10:02:05.129Z
     - we don't have an implementation of snapshots that works directly on a plain file system, so snapshots don't do anything useful in grist-core. 
     - For our SaaS, we have an implementation for managing document versions in AWS S3. Grist Enterprise includes that implementation
   - [Grist is a modern, relational spreadsheet | Hacker News_202311](https://news.ycombinator.com/item?id=38080951)
-  - https://github.com/gristlabs/grist-static
+  - https://github.com/gristlabs/grist-static /apache2/ts
     - https://gristlabs.github.io/grist-static/
     - Showing Grist spreadsheets on a static website, without a special backend.
     - Use Grist as the PDF of data
-    - Changes aren't stored.Changes are not shared with other viewers.
+    - Changes aren't stored. Changes are not shared with other viewers.
     - No specific access control.
     - No special server is needed for grist-static, it works straight from a CDN or any standard web server.
     - Grist spreadsheets by default store a lot of history in the `.grist` file. You can prune that history
   - https://github.com/gristlabs/grist-ee
     - The source code for self-managed Grist Enterprise.
+  - https://github.com/gristlabs/grist-electron /apache2/ts
+    - Desktop Grist, packaged with Electron
 
 - apitable /2.3kStar/AGPLv3/202301/ts/java/维格表团队
   - https://github.com/apitable/apitable
@@ -287,7 +295,7 @@ modified: 2022-08-21T10:02:05.129Z
   - open source tool that provides a spreadsheet-like interface to a PostgreSQL database.
   - You can use Mathesar to build data models, enter data, and even build reports. 
 
-- irelia /18Star/apache2/202211/ts/python
+- irelia /18Star/apache2/202303/ts/python/inactive
   - https://github.com/IreliaTable/irelia
   - https://ireliatable.github.io/irelia-web/
   - 依赖 gristlabs/grist-core、backbone、knockout、jquery
@@ -393,6 +401,25 @@ modified: 2022-08-21T10:02:05.129Z
   - https://github.com/Bipin579/Airtable.com-clone-
   - https://github.com/Avneesh002/Airtable
   - https://github.com/Sachintewatia-tech/Airtable_clone
+
+- https://github.com/shreyasmanolkar/notion-browser-client /MIT/202308/ts
+  - https://www.notion-s.co/
+  - develop a comprehensive clone resembling the popular platform Notion.
+  - 依赖tiptap、reduxjs/toolkit、firebase
+  - https://github.com/shreyasmanolkar/notion-api /ts
+    - Notion Clone API built with TypeScript and MongoDB, using TDD
+    - 依赖mongodb、express
+  - [Building Notion Clone: Part 1 — Planning the Architecture | by Shreyas manolkar | Medium _202307](https://medium.com/@shreyasmanolkar123/building-notion-clone-part-1-planning-the-architecture-f50342e58019)
+  - [Building Notion Clone: Part 2 — Crafting the Front-end Experience | by Shreyas manolkar | Medium _202307](https://medium.com/@shreyasmanolkar123/building-notion-clone-part-2-crafting-the-front-end-experience-cb194c1d132c)
+
+- https://github.com/Mabloq/mabloq-notion /apache2/202304/ts
+  - An implementation of the popular Workspace App: Notion.
+  - 依赖 nestjs、mongoose、passport、rxjs
+  - [Minimalist Notion Implementation: Part 1-Everything Is a Block_202203](https://medium.com/@arcilamatt/minimalist-notion-implementation-part-1-everything-is-a-block-debda338b61a)
+
+- https://github.com/linyows/notionate
+  - https://notionate.linyo.ws/
+  - React components that uses the Notion API to display the Notion's database and page.
 
 - https://github.com/Arro/airtable-json /202202/js
   - A clean way to get Airtable data into JavaScript.

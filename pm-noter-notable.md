@@ -129,12 +129,17 @@ modified: 2023-11-28T14:48:45.910Z
   - template/page
   - data/block
 
+- image
+  - copy text in image
+  - ocr
+
 - markdown-table工具
   - 在本页面分析表格，filter/sort/group
   - 在新页面的平台分析表格
 
 - observable-notebook默认不支持私有文档
   - 考虑2年后可私有或会员私有
+  - like jupyter but using js/ts
 
 - docx
   - diff .docx and .doc

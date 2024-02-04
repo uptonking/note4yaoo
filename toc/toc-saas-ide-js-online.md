@@ -20,7 +20,7 @@ modified: 2021-05-14T15:03:38.010Z
 - es module发出的http请求，是以scripts脚本加载的形式。而service worker只能拦截fetch。
   - service worker 中监听 fetch 事件当然是可以拦截脚本的请求的，不信你可以试试
   - 包括esm加载时的请求都可以被拦截
-# vscode-powered
+# code-live
 - https://github.com/cdr/code-server /MIT/202401/ts
   - https://coder.com/
   - Run VS Code on any machine anywhere and access it in the browser
@@ -50,6 +50,12 @@ modified: 2021-05-14T15:03:38.010Z
 - https://github.com/lostintangent/codeswing
   - an interactive coding playground for VS Code
   - It's like having the magic of a traditional web playground (e.g. CodePen, JSFiddle), but available directly from your highly-personalized editor
+
+- https://github.com/chr15m/slingcode /MIT/202008/clojure/inactive
+  - https://slingcode.net/
+  - Slingcode is a personal computing platform in a single html file.
+  - You don't need a server, hosting, or an SSL certificate to run the web apps.
+  - You can share apps peer-to-peer over WebTorrent.
 
 ## CodeSandbox
 
