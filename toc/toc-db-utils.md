@@ -102,6 +102,11 @@ modified: 2022-11-06T11:21:27.612Z
   - A framework-agnostic syncing solution that auto-connects any DB/API with your local data store and has optimistic-UI built in
   - Magnetar has 2-way sync database integration for Google Firestore (and others coming). You do not need to learn to work with the database SDK.
 # db-client
+- https://github.com/dbgate/dbgate /MIT/202402/ts/svelte
+  - https://dbgate.org/
+  - Database manager for MySQL, PostgreSQL, SQL Server, MongoDB, SQLite and others. 
+  - Runs under Windows, Linux, Mac or as web application
+
 - https://github.com/mlaanderson/database-js
   - Database-js implements a common, promise-based interface for SQL database access. 
   - Inspired by JDBC, it uses connection strings to identify the database driver. 

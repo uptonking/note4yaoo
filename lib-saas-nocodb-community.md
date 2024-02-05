@@ -62,7 +62,7 @@ modified: 2023-12-15T17:04:24.911Z
 
 - 🆚️ This looks a lot like baserow.io too; nice to see more projects like this opening up spreadsheet/db alternatives.
   - Although there is similarity, we are radically different.
-  - We transform any existing databases MySQL, Postgres, SQL Server & SQLite databases into a spreadsheet. This is a _massive_ difference to begin with. 
+  - 💡 We transform any existing databases MySQL, Postgres, SQL Server & SQLite databases into a spreadsheet. This is a _massive_ difference to begin with. 
   - And the ability to invite team to collaborate and build business workflow automations with Slack, Twilio is available for everybody. 
   - Since the launch today, I have already have close to 25+ plugin requests which sounds reasonable for NocoDB to have! 
   - We believe for a horizontal product like NocoDB - developing every app, connector and plugins is just beyond the ability of single team in open source. It is community driven approach that eases this possibility.

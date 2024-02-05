@@ -19,7 +19,40 @@ modified: 2023-01-02T08:49:39.114Z
 - They've long since implemented these on KD-trees (which work in multiple dimensions too for geographic queries), but doing it on a trie like that was a cool hack. The tens of hours I spent studying the Lucene implementation a few years ago are really paying off as I start to implement filtering in turbopuffer. not easy.
   - Trie has been deprecated for years, but the pro secret is that it was/is still more efficient for some use cases. I saw this in production on some of the world’s largest retail applications that still run Solr. I know Shopify moved to ES long ago, though.
 
+# discuss-opensearch-aws
+- ## 
+
+- ## 
+
+- ## [OpenSearch: AWS fork of Elasticsearch and Kibana | Hacker News _202104](https://news.ycombinator.com/item?id=26780848)
+
+- One thing which surprised me: Elastic has a market capitalization of ~$11B.
+
+- Is there any good that done by Amazon to support OSS? Like ever. They started with cloning MongoDB and now Elastic with actually zero contribution to the community regardless of their insane profits. This is a clear single. Amazon can always clone and redistribute any open source software then lock it in for AWS. If we've started to witness declining in OSS, well at least we know now who started the wave.
+
+- I have mixed feelings about this server side license stuff that mongo db started. Imagine where the internet would be today if the creators of apache and mysql had tried to prevent shared hosting providers in the early days of the web from using their software
+  - The time when Apache or MySQL started out was very different. Imagine where the internet would be if cloud computing itself didn't take off.
+
+- I feel Amazon took the feedback from the DocumentDB/MongoDB fiasco to heart and made positive change in their approach.
+  - DocumentDB is a closed source proprietary database created by Amazon to emulate the MongoDB API. Think Google's Dalvik runtime vs Sun/Oracle's JVM.
+
+- If this project were to be governed by Apache Software Foundation, I'd have associated more credibility to this effort.
+
+- what's the difference here from Open Distro for ElasticSearch? I guess it's just a rebranding, isn't it?
+  - Open Distro for ElasticSearch was not a fork rather an Apache 2.0-licensed distribution of Elasticsearch enhanced with enterprise security, alerting, SQL etc... OpenSearch is a community-driven, open source search and analytics suite derived from Apache 2.0 licensed Elasticsearch 7.10.2 & Kibana 7.10.2.
+  - OpenDistro for ES is the surrounding tools for ES => plugins, index-state-management, basically a suite clone of ES Enterprise offerings (X-pack) because AWS can't ship AWS ES with X-Pack.
+
+- 🆚️ why would I want to use ElasticSearch or OpenSearch over Solr? Are ES and Solr not both based on Lucene?
+  - In all three cases, Lucene is used as a "low level" (Java) API which provides search capabilities. OS, ES and Solr turn Lucene into a server, with features like horizontal scaling (ES Cluster, Solr Cloud). 
+  - The major differences are in how well that all works, how easy it is to administer, how much caching and optimization is done on top of Lucene, etc.
+  - I haven't extensively used ES, but I've used Solr a lot (and contributed to), and I can say that it's a mess. The community is not one of the better ones I've seen. Bugs and stability issues are often ignored. Patches sit around gathering dust. There are some gems and very clever people in the community, of course, but it seems like there are too few of them to cope with the large beast that Solr has become. If I were starting a new project in the search space, Solr would not make my shortlist.
+- I've used both and cannot think of a reason why I would use Solr again, besides licensing.
+- The real vendor lock-in for ES (and now AWS OS) is the REST query API; if Solr implemented ES's API, I bet $1 a lot more people would have moved or at least considered moving over
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 🆚️ My first project as an engineer was benchmarking ElasticSearch versus Lucene versus Lucene on HBase for streaming ingestion and data availability (back in 2013). 

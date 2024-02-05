@@ -427,7 +427,8 @@ modified: 2021-09-14T18:58:58.275Z
   - As a result, we decided to base the SSPL on GPL v3 and to add a new section 13 which clearly and explicitly sets forth the conditions to offering the licensed program as a third-party service.
 
 - ## What specifically is the difference between the GPL and the SSPL?
-  - The only substantive modification is section 13, which makes clear the condition to offering MongoDB as a service. A company that offers a publicly available MongoDB as a service must release the software it uses to offer such service under the terms of the SSPL, including the management software, user interfaces, application program interfaces, automation software, monitoring software, backup software, storage software and hosting software, all such that a user could run an instance of the service using the source code made available.
+  - The only substantive modification is section 13, which makes clear the condition to offering MongoDB as a service. 
+  - A company that offers a publicly available MongoDB as a service must release the software it uses to offer such service under the terms of the SSPL, including the management software, user interfaces, application program interfaces, automation software, monitoring software, backup software, storage software and hosting software, all such that a user could run an instance of the service using the source code made available.
 # BSD
 - ref
   - https://tldrlegal.com/license/bsd-3-clause-license-(revised)

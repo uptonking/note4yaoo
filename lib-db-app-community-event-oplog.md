@@ -14,6 +14,14 @@ modified: 2023-11-01T10:08:09.232Z
 
 - ## 
 
+- ## Learnt the hard way, append everything and deduplicate later is substantially cheaper than merge
+- https://twitter.com/mim_djo/status/1754364525003055380
+- ClickHouse has that approach. Append then reorganise asynchronously.
+- If that were the case why doesn’t a merge just do this under the hood?
+  - Not all data has a natural timestamp order
+- in my current universe, 98% of the data is from vendor APIs with no timestamps. some do. but with most, don't have any other option but snapshot and dedupe
+- Also importantly, deduping can be done during downtime.
+
 - ## 🆚️ [Damn Cool Algorithms: Log structured storage (2009) | Hacker News_201705](https://news.ycombinator.com/item?id=14447727)
 - In the 8 years since this was written, Log-Structured Merge Trees have basically "won". 
   - BigTable, AppEngine, LevelDB, Cassandra, HBase, MongoDB, and several others are all built around them.
@@ -54,6 +62,10 @@ modified: 2023-11-01T10:08:09.232Z
   - It's not the most efficient but for most moderate sized UI's with a single state tree, it performs fine.
 - In addition to the other solutions mentioned, Apache Samza lands somewhere in that neighborhood.
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## I'm looking for a durable (storage-backed) data structure that is a time-indexed log, 

@@ -16,6 +16,19 @@ modified: 2023-11-01T10:15:06.245Z
 - ## 
 
 - ## 
+# discuss-transactions
+- ## 
+
+- ## 
+
+- ## 
+
+- ## What are transactions in a database?
+- https://twitter.com/Franc0Fernand0/status/1754422259869974682
+  - Transactions are a way for databases to group a set of operations into one.
+  - This is helpful in many ways and simplifies the programming model at the application level.
+  - In a single relational database, transactions make sure that the following ACID conditions are met
+
 # discuss
 - ## 
 

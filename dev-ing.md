@@ -320,6 +320,67 @@ $$('[contenteditable]')
 
 ## 020
 
+## 0205
+
+- 💡🔁 postgresql将docker数据库迁移到本地数据库 /#devlog
+  - pg_dump支持连接到remote后再dump，导出sql格式是最通用的，还可以手动修改
+  - remote的pg可能启用了插件，此时要先在本地启用插件如uuid
+  - 对着error一个个处理，可能github-issues已经说明了
+  - dbeaver的tools-dump导出后，不能通过tools-restore恢复，是已知的bug
+
+- su: Authentication failure
+  - 使用 sudo su - postgres
+
+- [postgresql - COPY FROM STDIN does not work in liquibase - Stack Overflow](https://stackoverflow.com/questions/59214217/copy-from-stdin-does-not-work-in-liquibase)
+  - Mixing the `COPY` statement and the data in the same file only works in `psql` scripts.
+  - You should use `INSERT` statements in your script. If you want to load a pg_dump with the JDBC driver, use `pg_dump --inserts` (but expect slower performance).
+
+- [pg_restore: [archiver] input file appears to be a text format dump. Please use psql. · dbeaver/dbeaver](https://github.com/dbeaver/dbeaver/issues/3972)
+  - pg_restore can't import plain SQL files. Its a job for psql. Also it is possible to run SQL dump as script in DBeaver.
+
+- pg_restore: error: could not execute query: ERROR:  function public.uuid_generate_v4() does not exist
+- [How to deal with : Function uuid_generate_v4() does not exist on PostgreSQL - DEV Community](https://dev.to/wteja/how-to-deal-with-function-uuidgeneratev4-does-not-exist-on-postgresql-3fb4)
+  - CREATE EXTENSION IF NOT EXISTS "uuid-ossp"; 
+
+- [How to backup and restore a PostgreSQL database via DBeaver - Databases - Pyramid Analytics Community Forum](https://community.pyramidanalytics.com/t/h7hk07w/how-to-backup-and-restore-a-postgresql-database-via-dbeaver)
+
+- [postgresql 9.5 - Can't backup db: libpq.so.5: cannot open shared object file: No such file or directory - Stack Overflow](https://stackoverflow.com/questions/74463039/cant-backup-db-libpq-so-5-cannot-open-shared-object-file-no-such-file-or-dir)
+  - Make sure you are not using the flatpak version, I had the same problem with this version, if you are using it, uninstall and download the .deb package and install from there.
+
+- [DBeaver Documentation - backup](https://dbeaver.com/docs/dbeaver/Backup-Restore/#backup-postgresql-database)
+  - When performing a Global PostgreSQL database Backup, the entire database is dumped, including roles and tablespaces. 
+  - This differs from standard backup procedures where only specific schemas and their contents can be selected. 
+  - Additionally, multiple databases can be chosen for backup at once in the global method.
+
+- ### [PostgreSQL的模式、表、空间、用户间的关系 - 掘金](https://juejin.cn/post/6844903987762692103)
+- 一个数据库包含一个或多个已命名的模式schema，模式又包含表table。
+  - 模式还可以包含其它对象， 包括数据类型、函数、操作符等。同一个对象名可以在不同的模式里使用而不会导致冲突； 比如，herschema和myschema都可以包含一个名为mytable的表。 
+- 和数据库不同，模式不是严格分离的：只要有权限，一个用户可以访问他所连接的数据库中的任意模式中的对象。
+- 需要模式的原因有好多：
+  - 允许多个用户使用一个数据库而不会干扰其它用户。
+  - 把数据库对象组织成逻辑组，让它们更便于管理。
+  - 第三方的应用可以放在不同的模式中，这样它们就不会和其它对象的名字冲突。
+- 模式类似于操作系统层次的目录，只不过模式不能嵌套。
+
+- 模式(schema)是对数据库(database)逻辑分割。
+  - 在数据库创建的同时，就已经默认为数据库创建了一个模式--public，这也是该数据库的默认模式。所有为此数据库创建的对象(表、函数、试图、索引、序列等)都是创建在这个模式中的
+  - 一个数据库至少有一个模式，所有数据库内部的对象(object)是被创建于模式的。用户登录到系统，连接到一个数据库后，是通过该数据库的search_path来寻找schema的搜索顺序，可以通过命令SHOW search_path；
+  - 官方建议是这样的：在管理员创建一个具体数据库后，应该为所有可以连接到该数据库的用户分别创建一个与用户名相同的模式，然后，将search_path设置为$user，即默认的模式是与用户名相同的模式。
+
+- 表空间是实际的数据存储的地方。
+  - 一个数据库schema可能存在于多个表空间，相似地，一个表空间也可以为多个schema服务。
+  - 通过使用表空间，管理员可以控制磁盘的布局。表空间的最常用的作用是优化性能，例如，一个最常用的索引可以建立在非常快的硬盘上，而不太常用的表可以建立在便宜的硬盘上，比如用来存储用于进行归档文件的表。
+
+- 默认的数据库所有者是当前创建数据库的角色，默认的表空间是系统的默认表空间`pg_default`。
+  - 在PostgreSQL中，数据的创建是通过克隆数据库模板来实现的，这与SQL SERVER是同样的机制。由于CREATE DATABASE dbname并没有指明数据库模板，所以系统将默认克隆template1数据库，得到新的数据库dbname。(By default, the new database will be created by cloning the standard system database template1)
+  - template1数据库的默认表空间是pg_default，这个表空间是在数据库初始化时创建的，所以所有template1中的对象将被同步克隆到新的数据库中。
+  - 在PostgreSQL中，表空间是一个目录，里面存储的是它所包含的数据库的各种物理文件。
+
+- 表空间是一个存储区域，在一个表空间中可以存储多个数据库，尽管PostgreSQL不建议这么做，但我们这么做完全可行。
+  - 一个数据库并不知直接存储表结构等对象的，而是在数据库中逻辑创建了至少一个模式，在模式中创建了表等对象，将不同的模式指派该不同的角色，可以实现权限分离，又可以通过授权，实现模式间对象的共享，public模式可以存储大家都需要访问的对象。
+- 表空间用于定义数据库对象在物理存储设备上的位置，不特定于某个单独的数据库。
+  - 数据库是数据库对象的物理集合，而schema则是数据库内部用于组织管理数据库对象的逻辑集合，schema名字空间之下则是各种应用程序会接触到的对象，比如表、索引、数据类型、函数、操作符等。
+
 ## 0202
 
 - [How to get the measurementId from the Firebase config? - Stack Overflow](https://stackoverflow.com/questions/60804074/how-to-get-the-measurementid-from-the-firebase-config)

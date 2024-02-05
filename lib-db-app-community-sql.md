@@ -121,6 +121,31 @@ modified: 2023-09-17T17:35:27.024Z
 
 - ## 
 
+- ## 
+
+- ## 🔍⚡️ Are there any DBs that have an interface to send query plans over the wire rather than SQL? 
+- https://twitter.com/criccomini/status/1754198831577841918
+  - What I'm thinking is essentially a protobuf of something like a substrait plan.
+  - I think everyone agree's it's kind of silly for an app to go from ORM -> SQL text -> wire -> parse SQL -> IR. If the ORM library could just construct an IR from the ORM and send that over, it'd be much more efficient (and more type safe!).
+  - This would also open up the ability for LLMs to send IRs instead of SQL
+- Vox is below the IR and optimizer. What I’m talking about is farther up the stack—eliminating the parser from the equation and going straight to IR.
+- This is similar to our reasoning in TB for zero deserialization. SQL (as a data format) is not the most efficient for massive write ingest.
+- You need to access the catalog to interpret the SQL and compile it. It must know the schema, views, access rights, row level security. And these can change. More efficient to do it in the DB. To be typesafe, just use bind variables. To not send SQL text, use stored procedures
+- Arrow Flight SQL defines methods for Substrait querying. It is fairly straightforward to implement something like this with DataFusion. I hope others follow. Somewhat related
+
+- Vox is below the IR and optimizer. What I’m talking about is farther up the stack—eliminating the parser from the equation and going straight to IR.
+
+- i think spark connect works that way, it just send unresolved query plan, it does not matter if it is sql or dataframe API, if I understood correctly
+- That's essentially what Spark Connect does
+
+- Not exactly the same as what you said.. but for Postgres there is a pg_hint_plan extension which lets you tweak plans by sending comments over the wire…
+
+- Back in the day, we solved this at @SingleStoreDB by using SQL to communicate between nodes in a cluster, which forced us to build all of the internal optimizer controls with good enough UX that users could access them (as query hints).
+
+- We did this to Kudu - which provides a great storage engine, but no query planner or query language. This project: https://github.com/twilio/calcite-kudu was designed to create the query plan and tell kudu to execute it.
+
+- You can usually send hints to the RDBMS, but I don't know of any that let you send a full execution plan. But why would you need that? For most modern RDBMSs it's highly unlikely that you could out perform them, beyond hints and fresh cardinality
+
 - ## [The Unreasonable Effectiveness of SQL - The Couchbase Blog_201904](https://www.couchbase.com/blog/unreasonable-effectiveness-of-sql/)
 - SQL has inspired query language design for non-relational databases: SQL for object databases, SQL for object-relational, SQL for XML, SQL for spatial, SQL for search, SQL for JSON, SQL for timeseries, SQL for streams and so on.  Every BI tool interacts with the data using variety of SQL.
 - every popular NoSQL databases have a variation of SQL: N1QL in Couchbase, CQL in Cassandra, ElasticSearch SQL in Elastic.

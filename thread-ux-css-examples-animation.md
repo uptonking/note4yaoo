@@ -14,7 +14,13 @@ modified: 2022-11-21T15:27:20.974Z
 
 - ## 
 
-- ## 
+- ## 🌰 You can do blobs with CSS filter but it only works as black or white as far as I know but you can use SVGs to achieve the result you want.
+- https://twitter.com/joyofcodedev/status/1754218335405736273
+  - As a Svelte component
+  - 颜色渐变，通过blur来渐变形状、文字
+  - https://svelte-ux.techniq.dev/docs/components/Gooey
+- You can gradient them & all as in this talk I gave four years ago
+  - https://codepen.io/thebabydino/project/full/ZjwjBe
 
 - ## Create this SVG animation using just HTM and CSS 动态边框线
 - https://twitter.com/davidm_ml/status/1753015956119449862

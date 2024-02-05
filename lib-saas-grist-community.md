@@ -24,7 +24,7 @@ modified: 2024-02-04T20:54:34.896Z
 - Grist's origin was as a standalone, downloaded program. Then, work was done to network it in an end-to-end encrypted way, between individual devices, via a dumb hub. This idea excited people, but no-one seemed willing to actually install and pay for it. So we tried Grist as a conventional SaaS app, and that is when we started accumulating users.
   - There's definitely a case for using an offline first approach. It would be an engineering challenge, but not insurmountable.
   - Grist has two levels. There's a "home" database, which keeps track of users/sites/workspaces/documents, and that uses postgresql/sqlite via typeorm. Then, each individual document has its own database, which is sqlite accessed directly via node-sqlite3.
-  - For offiline first use, you could get good mileage by focusing on the individual document level. Grist has features at this level that are quite compatible with working offline, due to its history.
+  - For offline first use, you could get good mileage by focusing on the individual document level. Grist has features at this level that are quite compatible with working offline, due to its history.
 
 # discuss
 - ## 

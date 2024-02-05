@@ -12,7 +12,20 @@ modified: 2023-12-15T18:01:43.992Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## #1BRC—The Results Are In
+- https://twitter.com/gunnarmorling/status/1754171978892636663
+
+### [1BRC—The Results Are In! - Gunnar Morling _202402](https://www.morling.dev/blog/1brc-results-are-in/)
+
+- here are the top 10 entries for the official 1BRC competition. 
+  - These results are from running on eight cores of a 32 core AMD EPYC™ 7502P (Zen2) machine
+- I am planning to dive into some of the implementation details in another blog post, there is so much to talk about: segmentation and parallelization, SIMD and SWAR, avoiding branch mispredictions and spilling, making sure the processor’s pipelines are always fully utilized, the "process forking" trick, and so much more. 
+- For now let me just touch on two things which stick out when looking at the results. 
+- One is that all the entries in the Top 10 are using Java’s notorious Unsafe class for faster yet unsafe memory access. 
+  - Planned to be removed in a future version, it will be interesting to see which replacement APIs will be provided in the JDK for ensuring performance-sensitive applications like 1BRC don’t suffer.
+- Another noteworthy aspect is that with two exceptions all entries in the Top 10 are using GraalVM to produce a native binary. 
+  - These are faster to start and reach peak performance very quickly (no JIT compilation). 
+  - Note that other entries of the contest also use GraalVM as a JIT compiler for JVM-based entries, which also was beneficial for the problem at hand. 
 
 - ## The One Billion Row Challenge
 - https://twitter.com/gunnarmorling/status/1741839724933751238

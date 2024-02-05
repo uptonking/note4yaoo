@@ -9,9 +9,7 @@ modified: 2021-05-13T03:18:43.412Z
 
 # guide
 - 从es5开始，默认打分算法从TF-IDF变为BM25
-
 # faq
-
 - elasticsearch vs solr
   - 当实时建立索引的时候，solr会产生IO阻塞，而es则不会，所以es查询性能要高于solr
   - 在不断动态添加数据的时候，solr的检索效率会变低，而es则没有什么变化
@@ -86,3 +84,6 @@ modified: 2021-05-13T03:18:43.412Z
   - 简单的插件管理机制
   - 更好支持ICU分词器
   - 更多的管理API
+# blogs
+- [OpenSearch vs Elasticsearch: An Up-to-Date Comparison - BigData Boutique blog _202304](https://bigdataboutique.com/blog/opensearch-vs-elasticsearch-an-up-to-date-comparison-5c1c71)
+# more

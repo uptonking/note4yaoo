@@ -63,6 +63,13 @@ modified: 2023-04-11T02:24:25.572Z
   - 回到顶部/底部: shift + Home/End
   - [How to install Alacritty Terminal on Ubuntu](https://linux.how2shout.com/how-to-install-alacritty-terminal-on-ubuntu-22-04-lts/)
 
+- 不推荐用flatpak安装的apps
+  - 常用浏览器，代理问题、隐藏文件访问问题
+  - vscode/electron，很可能会碰到浏览器相关的问题
+  - clementine自动更新后scrobble失效
+  - vlc从文件夹启动单实例会失效
+  - dbeaver导出或备份数据库会检测本地的数据库工具库.so，flatpak版检测不到
+
 ## gnome
 
 - sudo dpkg-reconfigure gdm3/sddm
@@ -279,6 +286,7 @@ sudo apt-get install -y libgstreamer1.0-0 gstreamer1.0-plugins-base gstreamer1.0
 - https://github.com/rime/librime
   - [弄个Web版 Try Rime Input Tools online](https://github.com/rime/librime/issues/317)
   - [My RIME：我把你最喜欢的输入法做成了网页版 - 知乎](https://zhuanlan.zhihu.com/p/609505137)
+
 ## upgrade-ubuntu
 
 - [2 Ways to Upgrade Ubuntu 20.04 To Ubuntu 22.04 (Graphical & Terminal)](https://www.linuxbabe.com/ubuntu/upgrade-ubuntu-20-04-to-ubuntu-22-04)

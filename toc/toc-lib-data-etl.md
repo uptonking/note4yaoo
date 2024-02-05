@@ -57,4 +57,10 @@ modified: 2023-10-27T15:39:10.466Z
 - https://github.com/coollabsio/coolify
   - https://coollabs.io/coolify
   - An open-source, hassle-free, self-hostable Heroku & Netlify alternative
+# dbt
+
+- https://github.com/godatadriven/dbt-excel /apache2/202306/python/deprecated
+  - https://dbt-excel.com/
+  - A dbt adapter for Excel.
+  - If you would like to use dbt-excel, use `dbt-duckdb` with the plugins capabilities to read from and write to Excel files.
 # more-tools

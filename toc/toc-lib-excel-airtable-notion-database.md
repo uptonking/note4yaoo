@@ -18,6 +18,10 @@ modified: 2022-08-21T10:02:05.129Z
   - 偏前端，类似airtable的通用表格组件，提供各种数据源的集成
   - 偏向automation
 
+- table-builder vs page-builder 和支持表格的页面编辑器有什么区别
+  - nocodb支持现有的外部数据源，而页面编辑器的数据一般都是手动输入到系统内部数据库
+  - 页面编辑器的功能更杂糅，特色功能点和优势不明显
+
 - [什么是比较好的低代码产品_Tw93](https://zhuanlan.zhihu.com/p/596474809)
   - platform, baas, cms, workflow, airtable-like
   - 流程自动化
@@ -32,11 +36,11 @@ modified: 2022-08-21T10:02:05.129Z
   - https://github.com/nick-keller/react-datasheet-grid
   - https://github.com/Equify/react-datasheet-grid
   - https://react-datasheet-grid.netlify.app/docs/features
-  - 依赖react、tanstack-virtual、react-resize-detector
   - more like Airtable or Notion and less like Excel in the sense that instead of dealing with individual cells it deals with entire rows, and each column is responsible for a single property of each row
+  - 依赖react、tanstack-virtual、react-resize-detector
   - 默认可编辑单元格
   - 操作支持获取operation对象
-  - Supports copy / pasting to and from Excel, Google-sheet...
+  - Supports copy/pasting to and from Excel, Google-sheet...
   - Virtualized rows and columns, supports hundreds of thousands of rows
   - undo支持撤销编辑单元格，不支持撤销添加行
     - [Is there anyway I can implement Undo, Update button just after addRow button ?](https://github.com/nick-keller/react-datasheet-grid/discussions/221)
@@ -84,18 +88,12 @@ modified: 2022-08-21T10:02:05.129Z
   - https://docs.undb.xyz/
   - Private first, unified, self-hosted no code database.
   - Open-source Airtable alternative
+  - 可在redux-devtools中查看数据结构
   - 前端依赖 tanstack-table、dnd-kit、redux-toolkit、emotion、@loadable/component、jotai、react-hook-form、trpc
   - 后端依赖 nestjs、mikro-orm、trpc、undb
-  - 可在redux-devtools中查看数据结构
   - 用户在界面上创建表时，数据库层也会添加一张新表
   - [feature/frontend next_20230503(v0.3), 前端迁移到svelte](https://github.com/undb-xyz/undb/pull/908)
     - 41fa03d9bfbc9b5072266ad94c9532ccdcf25a68
-
-- https://github.com/baastronaut/baastronaut /202304/ts
-  - open-source Airtable alternative built on PostgREST
-  - 依赖nestjs、typeorm、mantine.v6、mobx、nextjs
-  - [Show HN: Baastronaut – open-source Airtable alternative built on PostgREST | Hacker News_202303](https://news.ycombinator.com/item?id=35356736)
-    - the most essential features of Airtable are: filtering, grouping, and views. Without that it's a nonstarter. I don't see that here.
 
 - nocodb /33kStar/AGPLv3/202212/ts/vue/参考后端/多视图
   - https://github.com/nocodb/nocodb
@@ -107,6 +105,7 @@ modified: 2022-08-21T10:02:05.129Z
   - 前端依赖 nuxt3、ant-design-vue.v3、vueuse、vue-flow(chart)、monaco-editor、d3-scale、dayjs、vuedraggable、xlsx
   - 用户在界面上创建表时，数据库层也会添加一张新表
   - 支持提供返回表中数据的api
+  - 支持现有数据库，不需要导入数据: We transform any existing databases MySQL, Postgres, SQL Server & SQLite databases into a spreadsheet.
   - 主要功能模块
     - 多种视图ui
     - 管理后台、仪表板
@@ -124,16 +123,19 @@ modified: 2022-08-21T10:02:05.129Z
   - [Feature : NoSQL DB support 暂不支持 _202105](https://github.com/nocodb/nocodb/issues/184)
   - [Feature : Import data from external source _202205](https://github.com/nocodb/nocodb/issues/2052)
 
-- locokit /47Star/MIT/202301/ts/vue/参考后端
+- locokit /47Star/MIT🌹/202301/ts/vue/参考后端/后端依赖pg的schema特性
   - https://github.com/locokit/locokit
   - https://locokit.io/
   - LocoKit is an AirTable alternative, providing database management as a spreadsheet and an app builder.
-  - 后端依赖feathers4、knex.v旧版
-  - 前端依赖vue2、turf、mapbox-gl.v1、monaco-editor、xlsx、marked
   - 不支持除表格外的其他视图
+  - 后端依赖feathers4、knex.v0.21.5旧版
+  - 前端依赖vue2、turf、mapbox-gl.v1、monaco-editor、xlsx、marked
+  - 用户在界面上创建workspace1时，pg数据库会创建一个新的名为workspace1的schema
+  - 用户在界面上创建表T1时，会在public schema的`table_row`表上插入数据，并在workspace1 schema下创建名为T1的view
+  - 添加表格定义和数据的入口在workspace名称右上角的设置按钮，可设置数据源、page-builder、cms页面与结构、自动化流程、权限、用户与组、workspace配置
   - 主要功能模块
     - 数据库设计与数据录入
-    - 前端视图
+    - 前端cms页面与视图
     - workspace管理
     - 成员与权限
     - Processes/Workflows with a webhook mechanism
@@ -205,7 +207,7 @@ modified: 2022-08-21T10:02:05.129Z
   - https://docs.getgrist.com/
   - Grist is a modern relational spreadsheet. 
   - 表格不支持视图切换，支持各种widgets，类似dashboard
-  - 用户在界面上创建表T1时，server会在主数据库会添加数据元信息记录，表T1的实际数据在本地`grist-core/docs`文件夹，用户创建的每个document对应一个sqlite格式的`.grist`文件，用户创建的每张表对应.grist数据库中的一张表，.grist数据库中还包含视图、权限、action等业务数据和元数据
+  - 用户在界面上创建表T1时，server会在主数据库会添加数据元信息记录，表T1的实际数据在本地`grist-core/docs`文件夹，🧐 用户创建的每个document对应一个sqlite格式的`.grist`文件，用户创建的每张表对应.grist数据库中的一张表，.grist数据库中还包含视图、权限、action等业务数据和元数据
   - 前端依赖backbone-model/events、knockout-observable、jquery、bootstrap3、ace-builds、exceljs
   - 后端依赖typeorm、express、grain-rpc
   - It combines the flexibility of a spreadsheet with the robustness of a database to organize your data and make you more productive.
@@ -235,6 +237,15 @@ modified: 2022-08-21T10:02:05.129Z
     - The source code for self-managed Grist Enterprise.
   - https://github.com/gristlabs/grist-electron /apache2/ts
     - Desktop Grist, packaged with Electron
+
+- irelia /18Star/apache2/202303/ts/python/inactive
+  - https://github.com/IreliaTable/irelia
+  - https://ireliatable.github.io/irelia-web/
+  - 依赖 gristlabs/grist-core、backbone、knockout、jquery
+  - Irelia is a modern relational spreadsheet. 
+  - Python formulas. Full Python syntax is supported, and the standard library.
+  - A portable, self-contained format based on SQLite
+  - Irelia formulas in documents will be run using Python executed directly on your machine.
 
 - apitable /2.3kStar/AGPLv3/202301/ts/java/维格表团队
   - https://github.com/apitable/apitable
@@ -269,13 +280,13 @@ modified: 2022-08-21T10:02:05.129Z
     - Vika is a SaaS distribution for China mainland built on APITable open-source core
   - [chore: update BSL license by mr-kelly](https://github.com/apitable/apitable/pull/1428)
 
-- S2 /1.1kStar/MIT/202302/ts
+- S2 /1.1kStar/MIT/202302/ts/纯前端
   - https://github.com/antvis/S2
   - https://s2.antv.antgroup.com/examples
   - S2是多维交叉分析领域的表格解决方案，数据驱动视图，提供底层核心库、基础组件库、业务场景库
   - 依赖 @antv/g-canvas、g-gesture、d3-interpolate
 
-- baserow /1.3kStar/MIT/202212/python/js/vue/多视图
+- baserow /1.3kStar/MIT/202212/python/django/js/vue/多视图
   - https://github.com/bram2w/baserow
   - https://baserow.io/
   - Baserow is an open source no-code database tool and Airtable alternative. 
@@ -289,20 +300,11 @@ modified: 2022-08-21T10:02:05.129Z
   - Uses popular frameworks and tools like Django, Vue.js and PostgreSQL.
   - Baserow is not completely open source, there are features they reserve for premium users (like kanban view).
 
-- mathesar /2kStar/GPLv3/202312/python/svelte
+- mathesar /2kStar/GPLv3/202312/python/django/svelte
   - https://github.com/mathesar-foundation/mathesar
   - https://mathesar.org/
   - open source tool that provides a spreadsheet-like interface to a PostgreSQL database.
   - You can use Mathesar to build data models, enter data, and even build reports. 
-
-- irelia /18Star/apache2/202303/ts/python/inactive
-  - https://github.com/IreliaTable/irelia
-  - https://ireliatable.github.io/irelia-web/
-  - 依赖 gristlabs/grist-core、backbone、knockout、jquery
-  - Irelia is a modern relational spreadsheet. 
-  - Python formulas. Full Python syntax is supported, and the standard library.
-  - A portable, self-contained format based on SQLite
-  - Irelia formulas in documents will be run using Python executed directly on your machine.
 
 - quadratic /1.5kStar/MIT/202304/rust/ts
   - https://github.com/quadratichq/quadratic
@@ -321,10 +323,20 @@ modified: 2022-08-21T10:02:05.129Z
   - It eliminates repetitive tasks demanded by CRUD operations and provides industry standard solutions for critical parts like authentication, access control, routing, networking, state management, and i18n.
   - Connectors for 15+ backend services including REST API
 
+- https://github.com/baastronaut/baastronaut /202304/ts/inactive
+  - open-source Airtable alternative built on PostgREST
+  - 依赖nestjs、typeorm、mantine.v6、mobx、nextjs
+  - [Show HN: Baastronaut – open-source Airtable alternative built on PostgREST | Hacker News_202303](https://news.ycombinator.com/item?id=35356736)
+    - the most essential features of Airtable are: filtering, grouping, and views. Without that it's a nonstarter. I don't see that here.
+
+- https://github.com/coderinblack08/graspable /202207/ts/inactive
+  - A realtime, powerful, lightweight alternative to Airtable/Excel
+  - 依赖firebase-admin、supabase、trpc、prisma、tiptap、next-auth、zustand
+# notion-database-like
 - https://github.com/mukulchugh/kanboard-notion-kanban-react /js
   - https://notion-kanboard-mukul.netlify.app/
   - 暂不支持表格视图
-# notion-database-like
+
 - https://github.com/qwtel/sqlite-viewer-vscode /202304/ts/vscode
   - A quick and easy SQLite viewer for VSCode, inspired by DBBrowser for SQLite and Airtable.
   - [SQLite Viewer Web App](https://sqliteviewer.app/) /未开源
@@ -352,7 +364,7 @@ modified: 2022-08-21T10:02:05.129Z
   - AppFlowy is an open-source alternative to Notion. You are in charge of your data and customizations. 
   - Built with Flutter and Rust.
 
-- anytype
+- anytype /需注册登录才能使用
   - https://github.com/anytypeio/badger
   - https://anytype.io/en
   - 暂时未将项目全部开源
@@ -360,27 +372,6 @@ modified: 2022-08-21T10:02:05.129Z
 
 - https://github.com/souvikinator/notion-to-md /MIT/202307/ts
   - Convert notion pages, block and list of blocks to markdown (supports nesting) using notion-sdk-js
-# table-like
-- https://github.com/vikadata/vika.js
-  - Vika JavaScript SDK 是对维格表 Fusion API 的官方封装，可以很方便的对你的维格表中的数据进行增删改查操作。
-  - 你可以轻松的将维格表中的数据集成到你自己的应用中
-
-- https://github.com/coderinblack08/graspable /202207/ts/inactive
-  - A realtime, powerful, lightweight alternative to Airtable/Excel
-  - 依赖firebase-admin、supabase、trpc、prisma、tiptap、next-auth、zustand
-
-- https://github.com/whitebrick/whitebrick /202202/ts/deprecated/未完成
-  - Open Source Airtable Alternative (No Code DB)
-  - Whitebrick is a lightweight No Code Database with 3 points of difference:
-  - The front end uses a Gatsby static Jamstack client for dead easy customization and deployment.
-  - The back end is a set of Serverless functions for making DDL calls to PostgreSQL and configuring Hasura GraphQL server.
-  - The PostgreSQL database schemas can be accessed directly with psql for data import/export and integrations with other tools.
-
-- https://github.com/seatable/seatable /未开源
-  - SeaTable is a spreadsheet/database like Airtable.
-  - SeaTable is originally built by the Seafile team (haiwen/seafile). 
-  - The source code will be uploaded to GitHub later. 
-  - https://github.com/seatable/dtable-ui-component
 # airtable-like
 - https://github.com/chanchalguptaa/db-dash /202303/js
   - This is walkover product based on airtable clone
@@ -440,6 +431,27 @@ modified: 2022-08-21T10:02:05.129Z
 - https://github.com/simonw/airtable-export /apache2/202309/python
   - Export Airtable data to YAML, JSON or SQLite files on disk
   - If you run this command against an existing SQLite database records with matching primary keys will be over-written by new records from the export.
+# table-solutions
+- https://github.com/vikadata/vika.js
+  - Vika JavaScript SDK 是对维格表 Fusion API 的官方封装，可以很方便的对你的维格表中的数据进行增删改查操作。
+  - 你可以轻松的将维格表中的数据集成到你自己的应用中
+
+- https://github.com/whitebrick/whitebrick /202202/ts/deprecated/未完成
+  - Open Source Airtable Alternative (No Code DB)
+  - Whitebrick is a lightweight No Code Database with 3 points of difference:
+  - The front end uses a Gatsby static Jamstack client for dead easy customization and deployment.
+  - The back end is a set of Serverless functions for making DDL calls to PostgreSQL and configuring Hasura GraphQL server.
+  - The PostgreSQL database schemas can be accessed directly with psql for data import/export and integrations with other tools.
+
+- https://github.com/seatable/seatable /未开源
+  - SeaTable is a spreadsheet/database like Airtable.
+  - SeaTable is originally built by the Seafile team (haiwen/seafile). 
+  - The source code will be uploaded to GitHub later. 
+  - https://github.com/seatable/dtable-ui-component
+
+- https://github.com/yatharth1706/FormVibe /202310/js
+  - Create Forms With Ease. Alternative of typeform and airtable
+  - 依赖Appwrite、NextJS、React DND、Formik
 # examples
 - https://github.com/1657744680/obsidian-yaml-database /ts
   - 像notion database一样浏览编辑文档的YAML属性
