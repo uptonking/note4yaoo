@@ -113,3 +113,5 @@ modified: 2022-11-18T17:06:54.371Z
 - [SQLite的文艺复兴 - 知乎](https://zhuanlan.zhihu.com/p/601510076)
 
 - [Exciting SQLite Improvements Since 2020 | Hacker News](https://news.ycombinator.com/item?id=35740683)
+
+- [SQLite’s Tricky Type System, Durable Execution Moves up the Stack, and HikariCP Is Too Fast... _202402](https://materializedview.io/p/durable-execution-moves-up-the-stack)

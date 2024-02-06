@@ -100,6 +100,12 @@ modified: 2023-08-29T10:12:22.345Z
     - Image-based systems (Smalltalk)
     - Features that require the server to do stuff that Git protocol won’t do, like push notifications
     - In other words, I can’t imagine leaving Git unless it’s as big of an upgrade as Git was to SVN. And you can’t do that while being wire compatible.
+  - [Operation log](https://github.com/martinvonz/jj/blob/main/docs/operation-log.md)
+    - Jujutsu records each operation that modifies the repo in the "operation log". You can see the log with jj op log. 
+    - Each operation object contains a snapshot of how the repo looked at the end of the operation. We call this snapshot a "view" object. 
+    - The view contains information about where each branch, tag, and Git ref pointed, as well as the set of heads in the repo
+    - The view contains information about where each branch, tag, and Git ref (in Git-backed repos) pointed, as well as the set of heads in the repo,
+    - The operation log allows you to undo an operation (jj [op] undo), which doesn't need to be the most recent one. It also lets you restore the entire repo to the way it looked at an earlier point
 
 - Pijul /GPLv2
   - [Pijul is a free and open source (GPL2) distributed version control system](https://pijul.org/)

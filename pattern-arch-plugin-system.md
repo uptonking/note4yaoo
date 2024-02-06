@@ -522,7 +522,15 @@ class Plugins {
 
 - ## 
 
-- ## 
+- ## Since you can access webpack by runtime injection, should webpack still be listed as peerDependency of webpack-xxx-plugin ?
+- https://twitter.com/hardfist_1/status/1754740402580820368
+- i use peerDependencies only when (1) the depended package is explicitly required in my package, (2) and it is a must to share the depended module between my package and the dependent of my package. but never for version suggesting alone - it sometimes brings noises only
+  - package/monorepo managers have a hard time to handle the peerDependencies correctly - the way of handling peerDependencies differs between different package managers, even different versions of same package manager
+  - they have introduced various of configurations for fix the problems peerDependencies have brought in
+- that's why I think peerDep is kind of overused
+
+- u still need a place to tell user like hey this thing needs to work with webpack and it has to be webpack version x or y?
+  - runtime version check seems enough, since people already did this by checking webpack@4 and webpack@5
 
 - ## [Have you guys ever thought about creating a marketplace for plugins and themes? - General - Discourse Meta_202201](https://meta.discourse.org/t/have-you-guys-ever-thought-about-creating-a-marketplace-for-plugins-and-themes/216010)
 - The model most used here is bespoke plugins and themes for pay and open source plugins that give the developer credibility (and skill development). 

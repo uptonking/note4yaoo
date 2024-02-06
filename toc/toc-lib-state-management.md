@@ -37,6 +37,8 @@ modified: 2020-07-14T11:03:53.196Z
     - unstated-next
     - react-redux
 
+- url as state-management
+
 - 基于hooks模仿redux的api
   - [State Management with React Hooks and Context API](https://devsmitra.medium.com/state-management-with-react-hooks-and-context-api-2968a5cf5c83)
   - [React doesn't need state management tool, I said](https://dev.to/tolgee_i18n/react-doesnt-need-state-management-tool-i-said-31l4)

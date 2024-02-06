@@ -320,6 +320,17 @@ $$('[contenteditable]')
 
 ## 020
 
+## 0206
+
+- [How to restore MySQL dump from host to Docker container - Stack Overflow](https://stackoverflow.com/questions/46579381/how-to-restore-mysql-dump-from-host-to-docker-container)
+  - docker exec containerid mysqldump -u root --password=pass portal-db > lower-portal-db.sql
+  - cat lower-portal-db.sql | docker exec -i containerid mysql -u root --password=root portal-db
+
+- [Flutter App stuck at "Running Gradle task 'assembleDebug'... " - Stack Overflow](https://stackoverflow.com/questions/59516408/flutter-app-stuck-at-running-gradle-task-assembledebug)
+
+- [AS Gradle镜像配置 - 掘金](https://juejin.cn/post/7213138784810991677)
+  - 全局； 局部项目
+
 ## 0205
 
 - 💡🔁 postgresql将docker数据库迁移到本地数据库 /#devlog

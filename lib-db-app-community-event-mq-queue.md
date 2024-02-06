@@ -20,7 +20,22 @@ modified: 2023-12-09T12:32:50.692Z
 
 - ## 
 
-- ## 
+- ## Bullmq users: What API should I use for the following scenario?
+- https://twitter.com/AmanVirk1/status/1754842367536873546
+  - I have a job, and when processing it, I find that some prerequisites for the job are not ready. So, I want to reschedule this job after 10 seconds. This rescheduling should not count against the failed attempts
+
+- A custom back off strategy ?
+  - Back off strategy is for re-attempting failed jobs. I don't want this job to be marked as failed, since I never processed it and technically it never failed
+
+- Ideally avoid the race condition by splitting the requirement check and the execution in two jobs, if the requirement check pass add the execution job, if not add another requirement check job
+  - The jobs are shown to the user. Think of it as your Github actions jobs list. Whatever I do, I cannot create multiple jobs for a single action. Otherwise the user will see duplicate jobs for a brief period
+- I think controlling UI display in sql database and updating at job level will be the way to go with bull
+  - Yeah, that is what I think I will do
+
+- I just remove and re-add with the needed delay
+  - Cannot remove a job while processing it.
+
+- Please take a look at docs [Manually processing jobs - BullMQ](https://docs.bullmq.io/patterns/manually-fetching-jobs)
 
 - ## basecamp is using their MySQL database as a queue running millions of jobs each day.
 - https://twitter.com/tobias_petry/status/1753408067578773710

@@ -9,10 +9,11 @@ modified: 2021-10-02T09:02:51.676Z
 
 # guide
 
-## music-app
+## music-forum
 
 - music论坛
   - cdbao.net
+  - [DBREE - Simple Cloud Storage](https://dbree.org/)
   - mixrnb 关停
 # discuss
 

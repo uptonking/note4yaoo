@@ -134,9 +134,9 @@ modified: 2021-07-27T15:12:39.959Z
   - 数据存储依然保持在 ActionText 那个 action_text_rich_texts 表里面，所以引入它，只是会让 ActionText 没了 Trix 和 ActiveStorage 的集成
   - 你存什么进去，就拿什么出来，不做任何 sanitize 处理，把规则交给你自己处理
 
-- https://github.com/helix-editor/helix /rust
+- https://github.com/helix-editor/helix /MPLv2/202402/rust
   - https://helix-editor.com/
-  - A Kakoune / Neovim inspired editor, written in Rust.
+  - A Kakoune/Neovim inspired editor, written in Rust.
   - [Plugin system](https://github.com/helix-editor/helix/discussions/3806)
   - [WebAssembly plugins system](https://github.com/helix-editor/helix/issues/122)
 # editor-utils

@@ -22,6 +22,11 @@ modified: 2022-08-21T10:02:05.129Z
   - nocodb支持现有的外部数据源，而页面编辑器的数据一般都是手动输入到系统内部数据库
   - 页面编辑器的功能更杂糅，特色功能点和优势不明显
 
+- lowcode数据库层实现细节
+  - 参考strapi实现table+audit-log
+  - 参考apitable实现以oplog为数据源的业务数据层
+  - 基于oplog实现业务的案例: redux, event-store
+
 - [什么是比较好的低代码产品_Tw93](https://zhuanlan.zhihu.com/p/596474809)
   - platform, baas, cms, workflow, airtable-like
   - 流程自动化
@@ -251,9 +256,12 @@ modified: 2022-08-21T10:02:05.129Z
   - https://github.com/apitable/apitable
   - https://apitable.com/
   - [开发者指南](https://github.com/apitable/apitable/blob/develop/docs/readme/zh-CN/docs/contribute/developer-guide.md)
+  - [Developer Quick Start](https://apitable.getoutline.com/s/751b142b-866f-4174-a5f1-a2975f85ad41/doc/developer-quick-start-zofpBpXg9A)
   - API-oriented low-code platform for building collaborative apps and better than all other Airtable open-source alternatives
   - 后端依赖 spring-boot、mybatis、easyexcel、grpc、protobuf、nestjs
   - 前端依赖 antd、ahooks、redux、exceljs、konva、markdown-it、react-quill、react-dnd、slate
+  - 用户的所有操作都记录在`datasheet_changeset`这张表，该表的`operations`字段存储了用户操作的元信息和用户输入的数据如AddRecords/SetRecords/SetFieldAttr/DeleteField，业务表和view数据会据此计算得到
+  - 默认管理员 By default the admin account is `admin@apitable.com` and `Apitable2022`.
   - 主要功能模块
     - 基于canvas渲染的表格ui
     - 实时协作

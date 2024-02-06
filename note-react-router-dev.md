@@ -19,6 +19,8 @@ modified: 2023-01-09T15:41:17.179Z
   - 暂不支持react-native
   - 支持ssr
 
+- url as state-management
+
 - [Trailing Slashes on URLs: Contentious or Settled?](https://twitter.com/sebastienlorber/status/1488568747447181315)
   - Trailing slashes are complicated and non-std:
     - depends on output: /path/index.html VS /path.html

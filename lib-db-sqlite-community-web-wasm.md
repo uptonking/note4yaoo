@@ -42,6 +42,30 @@ modified: 2023-12-09T10:03:55.375Z
 - JS: mainly sql.js requires reading/writing the entire database at once, which should be a deal breaker.
 - WASM: amazing, but without memory-mapping WAL is not supported, and file locking is tricky.
 
+# discuss-against-sqlite
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Solid explanation of why web applications using SQLite shouldn't use the default, bare BEGIN TRANSACTION syntax. 
+- https://twitter.com/fractaledmind/status/1754903412548800805
+  - If you are using a framework that automatically wraps write operations in transactions, that framework should ensure those transactions are EXCLUSIVE or IMMEDIATE
+- SQLite transactions are lazy by default -- they only take a write lock when necessary.
+  - If your transactions start readonly and then upgrade to writes, it may be better to just declare it a write transaction from the start
+  - If you expect the contention(争夺；竞争) to be high -- lots of transactions trying to write at the same time -- `BEGIN EXCLUSIVE` is your friend.
+- With `BEGIN EXCLUSIVE` , the flow is:
+  1. Transaction A takes a write lock first
+  2. Transaction A commits, transaction B takes its write lock
+  3. Transaction B commits
+- What about WAL mode (write-ahead log journaling)?
+  - Well, it gets subtly worse. WAL journaling mode gives you a great concurrency boost, because instead of allowing one writer or N readers, it allows one writer and N readers to execute concurrently.
+  - There's a consistency price here though. WAL guarantees you snapshot isolation, which means that each transaction will see some consistent state of the database, and will only commit if there isn't going to be any conflict.
+  - That's optimistic concurrency -- we assume everything is going to be alright and proceed, and worst case we get an error and need to roll back.
+- Again, `BEGIN EXCLUSIVE` lets you opt-out of optimistic concurrency, if you know your workload has high contention.
+- There's also another flavor of transactions in SQLite - `BEGIN IMMEDIATE` , almost identical to `EXCLUSIVE` , and in fact totally identical in WAL mode. 
+
 # discuss
 - ## 
 

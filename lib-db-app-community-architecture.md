@@ -149,7 +149,19 @@ modified: 2023-09-17T17:37:19.913Z
 # discuss
 - ## 
 
-- ## 
+- ## 9 strategies to make your system more scalable in the long run.
+- https://twitter.com/ProgressiveCod2/status/1754827378436841922
+  [1] Horizontal Scalability
+  [2] Load Balancing
+  [3] Caching
+  [4] Database Replication
+  [5] Database Sharding
+  [6] Stateless Services
+  [7] Containerization
+  [8] Async Processing
+  [9] Adopting Serverless
+
+- Separate WRITE and READ workloads gives good scalability as well.
 
 - ## 🏘️ It's hard to design a software system that can work on a large scale.
 - https://twitter.com/Franc0Fernand0/status/1750801088310095905
@@ -158,13 +170,13 @@ modified: 2023-09-17T17:37:19.913Z
 - This method works best for services that don't keep any state, so there is nothing to sync. 
 - Whenever the load balancer receives a request, it should be able to send it to any server without knowing where the previous request went.  
 
-2. Partitioning servers  
+1. Partitioning servers  
 - A more complex approach is dividing the system into groups of servers with different roles. 
 - Ideally, each group of servers is a self-contained application that can make decisions independently. 
 - This separation allows each part to be scaled on its own, depending on its needs. It promotes efficient management, as teams can work on different parts of the system simultaneously without interfering with each other. 
 - However, it requires more initial effort, and there's a limit to how much you can partition a system before it becomes too complex.  
 
-3. Partitioning data  
+1. Partitioning data  
 - A third approach is dividing and distributing the entire dataset across multiple machines, each having a subset of the data. 
 - This setup speeds up data processing and storage as each server only has to deal with a smaller amount of it at a time. 
 - It also makes the system scalable, so as the amount of data grows, you can add more computers and change how the data is distributed between them.

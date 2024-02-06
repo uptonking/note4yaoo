@@ -305,9 +305,9 @@ modified: 2022-11-25T15:41:47.534Z
   - [I saw some mentions that the powersync is going to become fully open-source solution with self-hosting option. Do you have any ETA for that?_20231123](https://discord.com/channels/1138230179878154300/1138230180813479968/1177079452426051614)
     - It will happen next year though.What I can say is that we are busy working on figuring it out, so if you ask me again in 1 month
 
-- https://github.com/vmware/node-replication /202212/rust/inactive
+- https://github.com/vmware/node-replication /MIT/202212/rust/inactive
   - An operation-log based approach for data replication.
-  - implement concurrent and replicated versions of (single-threaded) data structures by combining a set of different concurrency techniques: flat combining, operation logging, readers-writer locks, and partitioning.
+  - implement concurrent and replicated versions of (single-threaded) data structures by combining ap set of different concurrency techniques: flat combining, operation logging, readers-writer locks, and partitioning.
 # partial-sync/replication
 - https://github.com/pietgeursen/bamboo-rs /202108/rust
   - Rust implementation of bamboo

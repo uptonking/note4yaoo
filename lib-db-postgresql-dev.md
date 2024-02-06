@@ -11,8 +11,12 @@ modified: 2020-12-18T05:01:44.282Z
 - who is using #postgresql
   - ?
 # dev
-- linux
-  - /usr/lib/postgresql/14/bin 文件夹存在 pg_dump
+
+# pg-linux
+
+- locations
+  - /usr/lib/postgresql/14/bin/ 文件夹存在 pg_dump
+  - /var/lib/postgresql/14/main/ 文件夹包括 pg_wal/, postgresql.auto.conf
 # pg-devops
 
 # more

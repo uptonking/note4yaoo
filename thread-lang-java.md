@@ -9,6 +9,23 @@ modified: 2023-12-15T19:40:39.912Z
 
 # guide
 
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## 
+# discuss-jvm
+- ## 
+
+- ## 
+
+- ## JVM Performance Comparison for JDK 21
+- https://twitter.com/ionutbalosin/status/1754737482422181973
+  - A deep dive into JVM performance comparison where @gigiblender and I explore different optimizations in OpenJDK C2, Oracle GraalVM, and Graal CE JITs
+  - TL; DR: Check out the @GraalVM JDK distribution and its JIT compiler if you want some extra performance for your @Java applications
+- ### 🆚️⚡️ [JVM Performance Comparison for JDK 21 – Ionut Balosin _202402](https://ionutbalosin.com/2024/02/jvm-performance-comparison-for-jdk-21/)
+
 # discuss
 - ## 
 

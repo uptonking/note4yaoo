@@ -357,7 +357,7 @@ modified: 2023-03-09T13:47:07.317Z
   - This is technically quite easy today, but it also introduces a new party to every signature: The signing tool providers. 
   - Documenso aims to be the world's most trusted document signing tool. 
 
-- https://github.com/docusealco/docuseal /AGPLv3/ts
+- https://github.com/docusealco/docuseal /AGPLv3/202402/ts
   - https://www.docuseal.co/
   - Open source DocuSign alternative. Create, fill, and sign digital documents
 

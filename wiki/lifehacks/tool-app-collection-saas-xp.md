@@ -62,6 +62,10 @@ modified: 2022-11-07T10:25:12.034Z
 
 - [根据需求进行定向搜索，以下是常用的语法和规则（比如：找竞品调研，只找pdf「filetype:pdf」），参见图片的示例](https://twitter.com/xianlezheng/status/1729505482212008157)
   - 查询子域名下的关键词（不包含www站点）： ssl -site:http://ilikejobs.com site:*.ilikejobs.com
+# search-resources
+- common
+  - [猫狸盘搜 - 阿里云盘搜索神器](https://www.alipansou.com/)
+  - [DBREE - Simple Cloud Storage](https://dbree.org/)
 # 知乎/掘金/v2ex/链滴
 - 有时候评论的内容比回答的内容更有意思
 

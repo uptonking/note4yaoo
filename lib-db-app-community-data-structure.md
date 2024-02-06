@@ -152,7 +152,7 @@ modified: 2023-09-17T18:17:41.377Z
 - https://twitter.com/strlen/status/1729586441322168506
   - FWIW, this is a pattern I've seen implemented successfully. Super useful with high-overwrite / high-deletion workloads (e.g. implementing queue-like patterns).
 
-- ## Revisiting Bloom Filter Efficiency in LSM Trees
+- ## 🧮 Revisiting Bloom Filter Efficiency in LSM Trees
 - https://twitter.com/debasishg/status/1726912592437035478
 - Almost all LSM based storage structures use bloom filters in front of their memtable structures to reduce IO overhead at least for the target keys not present in the underlying secondary storage. 
   - This decision to use bloom filters is based on the fact that accessing data on secondary storage, e.g., hard disk drives (HDD) or solid-state drives (SSD), is several orders of magnitude more expensive than probing the filter in memory. 
@@ -180,9 +180,18 @@ modified: 2023-09-17T18:17:41.377Z
 
 - ## 
 
-- ## 
+- ## 🆚️ Compared with B+-tree, LSM-tree has a higher storage space usage efficiency, 
+- https://twitter.com/eatonphil/status/1754626079392727451
+  - which can be explained as follows: One LSM-tree consists of multiple immutable SSTable files, each one contains a number of blocks (typical block size is 4 KB). Being immutable, all the blocks can be 100% full (i.e., completely filled with user data).
+  - each B+-tree page (regardless of compressed or uncompressed) must entirely occupy one or multiple 4  KB LBA blocks on the storage device. When B+-tree applies page compression, the 4KB-alignment constraint could incur noticeable storage space waste. 
 
-- ## I would like to understand write-amplification in B Tree vs LSM Tree. Is there any survey/research paper explaining the same? or a blog post?
+- Why do leaves need to be page-aligned? B+-tree can use smaller allocation units (e.g., 512 B) and construct an 8 KB leaf from contiguous 512 B units, increasing however allocator metadata in memory.
+  - You are right, you can reduce the granularity and reduce it a bit. In practice there are many challenges like read before write if you use the OS cache, the FS will usually write it out in its block size (usually 4K)  or 4Kb is the optimal alignment for an SSD etc. These two come from personal experience.
+  - There has been some good research on this in the past 3-4 years. Their claims are as better performance and reduced read/write amplification.
+
+- This honestly looks like a strawman. Just compress the values *before* inserting them into the tree.
+
+- ## 🆚️ I would like to understand write-amplification in B Tree vs LSM Tree. Is there any survey/research paper explaining the same? or a blog post?
 - https://twitter.com/iavins/status/1726563472522244518
   - [TiKV | B-Tree vs LSM-Tree](https://tikv.org/deep-dive/key-value-engine/b-tree-vs-lsm/)
 
