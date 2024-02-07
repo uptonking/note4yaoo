@@ -111,7 +111,31 @@ modified: 2023-04-19T07:30:34.872Z
   - 分布式数据库和大数据融合，这两者的界限已经越来越模糊，机会还有很多。
   - 与 AI 结合的场景还有广阔的空间，结构化数据处理已经卷成红海，而AI更注重非结构化、半结构化数据的场景，还有很大的空白，向量数据库这一细分品类的出现就是很好的例子
   - 批流结合，大数据技术中批数据和流数据有时是两套架构，甚至两套技术栈，很割裂，现在已经有很多产品想将两者融合，给用户提供统一的使用体验。
+# discuss-spark-alternatives
+- ## 
+
+- ## 
+
+- ## 🧬 @apple has replaced @ApacheSpark 's guts with @ApacheArrow DataFusion. And they're donating it.
+- https://twitter.com/criccomini/status/1755012003503251890
+  - This is an alternative to @MetaOpenSource 's Velox Spark implementation using cpp
+
+- This is a great example of the composable data system concept that everyone seems to be talking about lately. In this case, using Spark's very mature planning and scheduling and delegating to DataFusion for native execution.
+  - DataFusion is winning the OLAP query engine world... @andrewlamb1111 I think your vision is well on its way to become true
+
+- I remember there was a project Gluten that was trying to make it all pluggable so you could swap out the native engine with velox or arrow based like datsfusion, wonder if this uses that or is separate. I guess if it's spark api compatible it doesn't matter from user perspective
+  - This is an alternative to Gluten. Gluten is still an active project though. You are correct that it shouldn't really matter from the user's POV since these are all behind the Spark API.
+- There are quite a few Spark accelerators now:
+  - Databricks Photon
+  - Spark RAPIDS
+  - Gluten + Velox
+  - DataFusion Comet
+- Are you sure? This seems an alternative to Velox? Gluten had some stuff via substrait plans and stuff to generalize things so you could use Spark powered by Clickhouse, Velox, or Datsfusion, or RAPIDS/GPU. I don't think that's a goal of this project, right?
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## Voltron Data做了很多特别基础的活雷锋项目，像arrow, arrow flight, adbc, substrait之类的，都太基础了也没法在云上搞SaaS，

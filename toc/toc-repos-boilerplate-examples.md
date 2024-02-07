@@ -30,7 +30,7 @@ modified: 2023-11-16T15:00:11.503Z
   - [TodoMVC App Written in Vanilla JavaScript | Hacker News_202205](https://news.ycombinator.com/item?id=31293750)
     - that's exactly what I would imagine vanilla js code look like, and I'm glad we moved on to frameworks. Just this small app seems not so fun to maintain
 
-## realword
+## realworld
 
 - resources
   - https://github.com/gothinkster/realworld
@@ -90,7 +90,7 @@ modified: 2023-11-16T15:00:11.503Z
 
 ### api-realworld
 
-- https://github.com/cirosantilli/node-express-sequelize-nextjs-realworld-example-app /202208/ts/be+fe
+- https://github.com/cirosantilli/node-express-sequelize-nextjs-realworld-example-app /202208/后端js+前端ts
   - Node.js + Express.js + Sequelize + SQLite/PostgreSQL + Next.js fullstack static/SSG/ISG Example Realworld App
   - https://github.com/cirosantilli/node-express-sequelize-realworld-example-app /202106/js
 
@@ -100,8 +100,12 @@ modified: 2023-11-16T15:00:11.503Z
 - https://github.com/skopekreep/typescript-node-express-realworld-example-app /202007/ts
   - Rewrite of JS-based node-express RealWorld backend app using Typescript
   - 依赖express-jwt、jsonwebtoken、mongoose、passport
-  - https://github.com/RaoofJM/nodejs-typescript-realworld-backend /202306/ts
+  - https://github.com/RaoofJM/nodejs-typescript-realworld-backend /202306/ts/inactive
     - RealWorld Example of a NodeJS Rest API using TypeScript, MongoDB, Redis and Docker
+    - 依赖express、mongoose、redis
+- https://github.com/tranlehaiquan/nodejs-api-realworld /202308/ts
+  - RestFul with Express, Typescript
+  - 依赖mongoose、jsonwebtoken
 
 - https://github.com/winterrrrrff/realWorld-server /202212/js
   - server-side of realWorld project using Express.js and MongoDB
@@ -116,10 +120,6 @@ modified: 2023-11-16T15:00:11.503Z
 
 - https://github.com/gothinkster/koa-knex-realworld-example /201910/js
   - Example Node. Js (Koa.js + Knex) codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the RealWorld spec and API.
-
-- https://github.com/tranlehaiquan/nodejs-api-realworld /202308/ts
-  - RestFul with Express, Typescript
-  - 依赖mongoose、jsonwebtoken
 
 - https://github.com/gothinkster/node-express-realworld-example-app /201802/js
 - Example Node (Express + Mongoose) codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the RealWorld API spec

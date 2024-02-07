@@ -21,6 +21,11 @@ modified: 2021-01-31T08:40:11.675Z
 
 - ## 
 
+- ## Very excited to publish our new project, http://realtimeinequality.org 
+- https://twitter.com/gabriel_zucman/status/1488151132161523714
+  - Fulfilling an old dream: being able to know in real time who benefits from economic growth
+  - When new GDP numbers come out each quarter in the US, we show how income is growing for each group of the population
+
 - ## 首个中文古籍影像一站式阅读系统——“全球汉籍影像开放集成系统”于今日正式发布
 - https://twitter.com/yun_chuang/status/1710484218696884437
   - 第一期著录中外各大古籍馆藏机构公开影像数据共17万条（约13.7万部又3.3万册）。系统由安徽大学唐宸老师主持研发。

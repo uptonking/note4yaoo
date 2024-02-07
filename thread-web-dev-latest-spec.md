@@ -28,7 +28,14 @@ modified: 2021-04-27T09:19:37.711Z
 # discuss
 - ## 
 
-- ## 
+- ## An issue we're really eager to tackle in the web platform very soon is this thing where state is reset when an element is being reparented/moved (iframes reloading, focus/selection clears, animations restart).
+- https://twitter.com/nomsternom/status/1755275696434286831
+- Seems tricky to solve since the web DOM treats moves as removal followed by insertion. What are your preliminary ideas for addressing this?
+  - Will resist the urge to explain the preliminary ideas clumsily on Twitter and giving the wrong impression, but hoping to publish some concrete preliminary thoughts soon
+
+- Even better: allow such elements to retain state between pages in the same domain. Use view-transition-name to indicate the association.
+
+- As an avid iframe user, yes, absolutely this would be a great issue to tackle! Also, having iframes sized based on their content would make their UX so much better and eliminate the need to use JS to fix this problem
 
 - ## New JS API just dropped in Webkit Nightly for checking if an element is visible or not.
 - https://twitter.com/wesbos/status/1735685150594265147

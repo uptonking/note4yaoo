@@ -11,6 +11,7 @@ modified: 2023-09-12T09:37:22.608Z
 
 - tips
   - event-store类似内存数据库，也可作为一种状态管理方式
+  - cms和admin管理系统的界限不是互斥的，可在一个框架fwk上实现cms或admin
 
 - es-db
   - 还可参考stream/kappa架构
@@ -773,6 +774,19 @@ modified: 2023-09-12T09:37:22.608Z
 - https://github.com/brendanzab/chronicle /201703/rust
   - An event sourced CQRS framework for Rust
   - [A reading list that I'm collecting while building my Rust ES+CQRS](https://gist.github.com/brendanzab/a6073e73f751a6ca9750f960a92f2afe)
+
+## ddd
+
+- https://github.com/feiniaojin/ddd-example-cms /202311/java
+  - 本项目使用ddd-archetype创建，是后端的案例工程。项目中实现CMS部分的功能，并落地部分DDD的概念
+  - 实现的DDD概念有：实体、值对象、聚合根、Factory、Repository、CQRS。
+  - 采用H2内存数据库，无其他中间件依赖
+  - Spring Data Jdbc
+  - https://github.com/feiniaojin/ddd-example-cms-front
+  - https://github.com/feiniaojin/ddd-cms
+    - 采用领域驱动设计（Domain Driven Design、DDD）实现的CMS系统
+  - https://github.com/feiniaojin/ddd-archetype
+    - 本项目是作者《悟道领域驱动设计》书中采用的应用架构的脚手架。
 # utils
 - https://github.com/futurist/edata /js
   - Turn javascript data into observable reactive EventEmitter with value getter/setter, lodash style path, and keep Event Sourcing in mind.

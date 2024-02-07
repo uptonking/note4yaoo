@@ -18,7 +18,7 @@ modified: 2022-08-21T10:02:05.129Z
   - 偏前端，类似airtable的通用表格组件，提供各种数据源的集成
   - 偏向automation
 
-- table-builder vs page-builder 和支持表格的页面编辑器有什么区别
+- 🆚️ table-builder vs page-builder/支持表格的页面编辑器  🤔有什么区别
   - nocodb支持现有的外部数据源，而页面编辑器的数据一般都是手动输入到系统内部数据库
   - 页面编辑器的功能更杂糅，特色功能点和优势不明显
 
@@ -27,15 +27,12 @@ modified: 2022-08-21T10:02:05.129Z
   - 参考apitable实现以oplog为数据源的业务数据层
   - 基于oplog实现业务的案例: redux, event-store
 
-- [什么是比较好的低代码产品_Tw93](https://zhuanlan.zhihu.com/p/596474809)
-  - platform, baas, cms, workflow, airtable-like
-  - 流程自动化
-
 - resources
   - https://github.com/topics/notion-database
   - [A More Human Approach To Databases](https://ccorcos.github.io/filing-cabinets/)
-  - Notion 工程师 Chet 以警察信息管理系统为例，用普通人能理解的大白话，从文件、文件夹、文件柜逐步介绍关系型数据库的构成和实现原理
+    - Notion 工程师 Chet 以警察信息管理系统为例，用普通人能理解的大白话，从文件、文件夹、文件柜逐步介绍关系型数据库的构成和实现原理
   - [Maybe some misunderstanding of how SQL DB indexes work?](https://github.com/ccorcos/tuple-database/issues/11)
+  - [什么是比较好的低代码产品_Tw93](https://zhuanlan.zhihu.com/p/596474809): platform, baas, cms, workflow, airtable-like
 # popular
 - react-datasheet-grid /259Star/MIT/202305/ts
   - https://github.com/nick-keller/react-datasheet-grid
@@ -96,6 +93,7 @@ modified: 2022-08-21T10:02:05.129Z
   - 可在redux-devtools中查看数据结构
   - 前端依赖 tanstack-table、dnd-kit、redux-toolkit、emotion、@loadable/component、jotai、react-hook-form、trpc
   - 后端依赖 nestjs、mikro-orm、trpc、undb
+  - 示例使用sqlite
   - 用户在界面上创建表时，数据库层也会添加一张新表
   - [feature/frontend next_20230503(v0.3), 前端迁移到svelte](https://github.com/undb-xyz/undb/pull/908)
     - 41fa03d9bfbc9b5072266ad94c9532ccdcf25a68
@@ -108,6 +106,7 @@ modified: 2022-08-21T10:02:05.129Z
   - Turns any MySQL, PostgreSQL, SQL Server, SQLite & MariaDB into a smart-spreadsheet
   - 后端依赖 express、knex、ioredis、passport、request
   - 前端依赖 nuxt3、ant-design-vue.v3、vueuse、vue-flow(chart)、monaco-editor、d3-scale、dayjs、vuedraggable、xlsx
+  - 示例使用sqlite
   - 用户在界面上创建表时，数据库层也会添加一张新表
   - 支持提供返回表中数据的api
   - 支持现有数据库，不需要导入数据: We transform any existing databases MySQL, Postgres, SQL Server & SQLite databases into a spreadsheet.
@@ -135,6 +134,7 @@ modified: 2022-08-21T10:02:05.129Z
   - 不支持除表格外的其他视图
   - 后端依赖feathers4、knex.v0.21.5旧版
   - 前端依赖vue2、turf、mapbox-gl.v1、monaco-editor、xlsx、marked
+  - 示例使用postgresql
   - 用户在界面上创建workspace1时，pg数据库会创建一个新的名为workspace1的schema
   - 用户在界面上创建表T1时，会在public schema的`table_row`表上插入数据，并在workspace1 schema下创建名为T1的view
   - 添加表格定义和数据的入口在workspace名称右上角的设置按钮，可设置数据源、page-builder、cms页面与结构、自动化流程、权限、用户与组、workspace配置
@@ -147,7 +147,7 @@ modified: 2022-08-21T10:02:05.129Z
   - [[roadmap] API over SQL / Nuxt 3 / Feathers 5 / Pinia](https://github.com/locokit/locokit/issues/151)
     - 正在迁移到nuxt3+pinia(vue store)+feathers5
 
-- nocobase /3.7kStar/apache2(core) + AGPL(plugin)/202212/ts/国内
+- nocobase /3.7kStar/apache2(core)🌹 + AGPL(plugin)/202212/ts/国内
   - https://github.com/nocobase/nocobase
   - https://www.nocobase.com/
   - [源码安装](https://docs-cn.nocobase.com/welcome/getting-started/installation/git-clone)
@@ -155,6 +155,8 @@ modified: 2022-08-21T10:02:05.129Z
   - NocoBase is a scalability-first, open-source no-code/low-code development platform.
   - 后端依赖 koa、sequelize.v6
   - 前端依赖 umi、antd、g2plot、ahooks、dnd-kit、formily、marked、react-iframe、react-quill、react-router5
+  - 示例使用sqlite
+  - 用户在界面上创建表时，数据库层也会添加一张新表
   - 提供了tree结构的4种存储方式，邻接表、闭包表、路径枚举、嵌套集
   - 支持应用层的插件系统，安装后需要刷新页面
   - 不直接支持输出表格的crud api，但提供了sdk文档，自己实现比较方便
@@ -167,18 +169,19 @@ modified: 2022-08-21T10:02:05.129Z
   - Everything is a plugin, all new features can be implemented by developing and installing plugins
   - [change license of plugins-AGPLv3_20230111, v0.8.1 > v0.9.0](https://github.com/nocobase/nocobase/pull/1350)
 
-- focalboard /10.3kStar/AGPL & bin-MIT/202203/ts/go/偏看板/参考前端/squirrel-sql-builder
+- focalboard /10.3kStar/AGPL-src + MIT-bin/202203/ts/go/偏看板/参考前端/squirrel-sql-builder
   - https://github.com/mattermost/focalboard
   - https://www.focalboard.com/
-  - 前端依赖 @reduxjs/toolkit、@tippyjs/react、draft-js、@fullcalendar/react、imagemin-svgo、marked、moment、nanoevents、react-dnd.v14、react-hot-keys、react-intl、react-router-dom.v5
   - an open source, multilingual, self-hosted project management tool that's an alternative to Trello, Notion, and Asana.
+  - 前端依赖 @reduxjs/toolkit、@tippyjs/react、draft-js、@fullcalendar/react、imagemin-svgo、marked、moment、nanoevents、react-dnd.v14、react-hot-keys、react-intl、react-router-dom.v5
+  - 示例使用sqlite
   - Focalboard comes in two main editions:
     - Personal Desktop: A stand-alone single-user Mac, Windows, or Linux desktop app for your todos and personal projects.
     - Mattermost Boards: A self-hosted or cloud server for your team to plan and collaborate.
   - [Focalboard Personal and Plugin Editions Announcement_20230430](https://github.com/mattermost/focalboard/discussions/4645)
     - we won’t be adding any new enhancements
 
-- rowy /4kStar/apache2/202212/ts/firebase/示例丰富/参考前端
+- rowy /4kStar/apache2🌹/202212/ts/firebase/示例丰富/参考前端
   - https://github.com/rowyio/rowy
   - http://rowy.io/
   - https://demo.rowy.io/
@@ -206,15 +209,16 @@ modified: 2022-08-21T10:02:05.129Z
     - Excel/Google Sheets like UI for Firebase/Firestore. No more admin portals!
     - https://github.com/FiretableProject/firetable
 
-- grist-core /5.3kStar/apache2/202311/ts/参考后端
+- grist-core /5.3kStar/apache2🌹/202311/ts/参考后端
   - https://github.com/gristlabs/grist-core
   - https://support.getgrist.com/
   - https://docs.getgrist.com/
   - Grist is a modern relational spreadsheet. 
   - 表格不支持视图切换，支持各种widgets，类似dashboard
-  - 用户在界面上创建表T1时，server会在主数据库会添加数据元信息记录，表T1的实际数据在本地`grist-core/docs`文件夹，🧐 用户创建的每个document对应一个sqlite格式的`.grist`文件，用户创建的每张表对应.grist数据库中的一张表，.grist数据库中还包含视图、权限、action等业务数据和元数据
   - 前端依赖backbone-model/events、knockout-observable、jquery、bootstrap3、ace-builds、exceljs
   - 后端依赖typeorm、express、grain-rpc
+  - 示例使用sqlite
+  - 用户在界面上创建表T1时，server会在主数据库会添加数据元信息记录，表T1的实际数据在本地`grist-core/docs`文件夹，🧐 用户创建的每个document对应一个sqlite格式的`.grist`文件，用户创建的每张表对应.grist数据库中的一张表，.grist数据库中还包含视图、权限、action等业务数据和元数据
   - It combines the flexibility of a spreadsheet with the robustness of a database to organize your data and make you more productive.
   - Columns work like they do in databases.
   - Columns can be filled by formula
@@ -243,7 +247,7 @@ modified: 2022-08-21T10:02:05.129Z
   - https://github.com/gristlabs/grist-electron /apache2/ts
     - Desktop Grist, packaged with Electron
 
-- irelia /18Star/apache2/202303/ts/python/inactive
+- irelia /18Star/apache2/202301/ts/python/inactive
   - https://github.com/IreliaTable/irelia
   - https://ireliatable.github.io/irelia-web/
   - 依赖 gristlabs/grist-core、backbone、knockout、jquery
@@ -255,11 +259,12 @@ modified: 2022-08-21T10:02:05.129Z
 - apitable /2.3kStar/AGPLv3/202301/ts/java/维格表团队
   - https://github.com/apitable/apitable
   - https://apitable.com/
-  - [开发者指南](https://github.com/apitable/apitable/blob/develop/docs/readme/zh-CN/docs/contribute/developer-guide.md)
+  - [developer-guide](https://github.com/apitable/apitable/blob/develop/docs/readme/zh-CN/docs/contribute/developer-guide.md)
   - [Developer Quick Start](https://apitable.getoutline.com/s/751b142b-866f-4174-a5f1-a2975f85ad41/doc/developer-quick-start-zofpBpXg9A)
   - API-oriented low-code platform for building collaborative apps and better than all other Airtable open-source alternatives
   - 后端依赖 spring-boot、mybatis、easyexcel、grpc、protobuf、nestjs
   - 前端依赖 antd、ahooks、redux、exceljs、konva、markdown-it、react-quill、react-dnd、slate
+  - 示例使用mysql
   - 用户的所有操作都记录在`datasheet_changeset`这张表，该表的`operations`字段存储了用户操作的元信息和用户输入的数据如AddRecords/SetRecords/SetFieldAttr/DeleteField，业务表和view数据会据此计算得到
   - 默认管理员 By default the admin account is `admin@apitable.com` and `Apitable2022`.
   - 主要功能模块
@@ -314,13 +319,16 @@ modified: 2022-08-21T10:02:05.129Z
   - open source tool that provides a spreadsheet-like interface to a PostgreSQL database.
   - You can use Mathesar to build data models, enter data, and even build reports. 
 
-- quadratic /1.5kStar/MIT/202304/rust/ts
+- quadratic /1.5kStar/MIT > Custom/202402/rust/ts
   - https://github.com/quadratichq/quadratic
   - https://www.quadratichq.com/
   - Quadratic is a Web-based spreadsheet application that runs in the browser and as a native app (via Electron).
   - Our goal is to build a spreadsheet that enables you to pull your data from its source (SaaS, Database, CSV, API, etc) and then work with that data using the most popular data science tools today (Python, Pandas, SQL, JS, Excel Formulas, etc).
   - WebGL Grid (pinch and zoom grid)
   - Python, Pandas Support (WASM)
+  - [Update LICENSE _20230826](https://github.com/quadratichq/quadratic/pull/661)
+  - [Is this open source? _202311](https://github.com/quadratichq/quadratic/issues/824)
+    - Quadratic's source code is available publicly in this repo. However, we do not provide any license to use, modify, or distribute our code.
   - [Show HN: Quadratic – Open-Source Spreadsheet with Python, AI (WASM and WebGL) | Hacker News_202304](https://news.ycombinator.com/item?id=35456509)
 
 - refine /6.5kStar/MIT/202212/ts

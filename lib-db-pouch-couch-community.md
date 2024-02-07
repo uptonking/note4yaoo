@@ -61,7 +61,9 @@ modified: 2024-01-04T06:55:12.542Z
 - 📕 LMDB was derived from this project, as mentioned in its copyright notice section.
   - Importantly, the LMDB API allows append mode, and it is very fast.
 
-- The difference is that persistent data structures allow you to traverse the history of the data structure to find past versions. By contrast I only allowed you to see the current version, returning a new version of the root any time you made a modification. As a result, the memory associated with the old version could be freed once nothing would want to access it again. And any version that you had could still be manipulated.
+- 🆚️ The difference is that persistent data structures allow you to traverse the history of the data structure to find past versions. 
+  - By contrast I only allowed you to see the current version, returning a new version of the root any time you made a modification. 
+  - As a result, the memory associated with the old version could be freed once nothing would want to access it again. And any version that you had could still be manipulated.
 
 - Append-only structures are not efficient enough for general use. You're paying a steep price for creating a snapshot of the data for every single operation.
   - I saw this when I was playing with Scala's immutable and mutable data structures - written by the same team - ages ago. The immutable structures were much slower for common operations.

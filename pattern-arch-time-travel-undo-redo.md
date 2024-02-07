@@ -18,6 +18,49 @@ modified: 2023-09-12T09:36:25.608Z
 
 - [Making Data Structures Persistent_1986](http://www.cs.cmu.edu/~sleator/papers/Persistence.htm)
 
+## 🦀 [In Rust, ordinary vectors are values _201802](https://smallcultfollowing.com/babysteps/blog/2018/02/01/in-rust-ordinary-vectors-are-values/)
+
+- Traditionally, persistent collections are seen as this “wildly different” way to setup your collection. Instead of having methods like push, which grow a vector in place
+  - vec.push(element); // add element to `vec`.
+  - you have a method like add, which leaves the original vector alone but returns a new vector that has been modified:
+  - let vec2 = vec.add(element); 
+- The key property here is that vec does not change. 
+  - This makes persistent collections a good fit for functional languages (as well as, potentially, for parallelism).
+
+- 🤔 How do persistent collections work?
+  - I won’t go into the details of any particular design, but most of them are based around some kind of tree. 
+  - For example, if you have a vector like [1, 2, 3, 4, 5, 6], you can imagine that instead of storing those values as one big block, you store them in some kind of tree, the values at the leaves. 
+  - Now imagine that we want to mutate one of those values in the vector. Say, we want to change the 6 to a 10. This means we have to change the right node, but we can keep using left one. Then we also have to re-create the parent node so that it can reference the new right node.
+  - Typically speaking, in a balanced sort of tree, this means that an insert opertion in a persistent vector tends to be O(log n) – we have to clone some leaf and mutate it, and then we have to clone and mutate all the parent nodes on the way up the trees. 
+  - This is quite a bit more expensive than mutating a traditional vector, which is just a couple of CPU instructions.
+- In Rust, the “ordinary collections” that we use every day already act like values: in fact, so does any Rust type that doesn’t use a Cell or a RefCell.
+  - This implies to me that persistent collections in Rust don’t necessarily want to have a “different interface” than ordinary ones.
+  - I created a persistent vector library called dogged
+  - Dogged offers a vector type called DVec, which is based on the persistent vectors offered by Clojure.
+- DVec is a persistent data structure. Under the hood, a DVec is implemented as a trie. It contains an Arc (ref-counted value) that refers to its internal data. When you call push, we will update that Arc to refer to the new vector, leaving the old data in place.
+- The main difference then between a Vec and a DVec lies not in the operations it offers, but in how much they cost. That is, when you push on a standard Vec, it is an O(1) operation. But when you clone, that is O(n). For a DVec, those costs are sort of inverted: pushing is O(log n), but cloning is O(1).
+  - when you do a push on a DVec, it will clone some portion of the data as it rebuilds the affected parts of the tree (whereas a Vec typically can just write into the end of the array).
+
+- One problem I’ve seen with DVec is that it’s pretty tough to compete with the standard Vec in terms of raw performance. 
+  - It’s often just faster to copy a whole bunch of data than to deal with updating trees and allocating memory. 
+  - I’ve found you have to go to pretty extreme lengths to justify using a DVec – e.g., making tons of clones and things, and having a lot of data.
+
+- Conclusion
+  - I’ve tried to illustrate here how Rust’s ownership system offers an intriguing blend of functional and imperative styles, through the lens of persistent collections. 
+  - That is, Rust’s standard collections, while implemented in the typical imperative way, actually act as if they are “values”: when you assign a vector from one place to another, if you want to keep using the original, you must clone it, and that makes the new copy independent from the old one.
+  - That said, I think there is another reason that some have taken interest in persistent collections for Rust specifically. That is, while simultaneous sharing and mutation can be a risky pattern, it is sometimes a necessary and dang useful one, and Rust currently makes it kind of unergonomic
+
+- ### Here's a blog post that explains it beautifully why persistent collections are not as useful in Rust as in other languages
+- https://twitter.com/debasishg/status/1755249637962002649
+- There two pairs of constraints in the design of programming language memory abstractions:
+  - sharing/aliasing + immutability
+  - unique-ownership/noalias + mutability
+- There’s a duality(双重性；两面性) between them.
+  - If you give up aliasing, you can’t give up mutability. You would be forced to deep-copy objects all the time.
+  - If you want the right to share objects, you “have to” give up mutability. Because when you mutate an object through a reference you might break the assumptions of someone else holding that same reference.
+- Languages with GCs are all about sharing references. Clojure with its focus on data structures with sub-structural sharing brings in immutability while leveraging sharing to the maximum extent.
+- If you drop a GC and mostly forbid aliasing in your PL design like Rust does, you can’t efficiently implement the persistent DSs you find in Clojure. But with unique ownership, mutability becomes much less scary because you know your mutation affects only your reference.
+
 ## 💡 [History Data Structures](https://gist.github.com/CMCDragonkai/d266a3055735545447439f0fa662a0e1)
 
 - For stateful applications, there are 5 different ways of managing the history of state:
@@ -86,6 +129,8 @@ modified: 2023-09-12T09:36:25.608Z
 - [Data model for storing revision history in FoundationDB · couchdb](https://github.com/apache/couchdb/issues/1957)
 
 - [Immutable Data Structures - DEV Community](https://dev.to/martinhaeusler/immutable-data-structures-2m70)
+# discuss-stars
+- ## 
 # discuss
 - ## 
 

@@ -324,7 +324,7 @@ $$('[contenteditable]')
 
 - [How to restore MySQL dump from host to Docker container - Stack Overflow](https://stackoverflow.com/questions/46579381/how-to-restore-mysql-dump-from-host-to-docker-container)
   - docker exec containerid mysqldump -u root --password=pass portal-db > lower-portal-db.sql
-  - cat lower-portal-db.sql | docker exec -i containerid mysql -u root --password=root portal-db
+  - cat lower-portal-db.sql | docker exec -i containerid mysql -u root --password=pass portal-db
 
 - [Flutter App stuck at "Running Gradle task 'assembleDebug'... " - Stack Overflow](https://stackoverflow.com/questions/59516408/flutter-app-stuck-at-running-gradle-task-assembledebug)
 

@@ -28,6 +28,23 @@ modified: 2023-09-17T18:10:33.050Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 📥 Question for data people, how do you track files ingested, do you create a specific table or just a simple log like CSV etc ?
+- https://twitter.com/mim_djo/status/1755004742005387534
+- Snowflake automatically create a metadata table for that purpose—no need for any manual stuff. Back in the good old Hadoop days, we created a simple table with the date that has been ingested.
+- but how do you make sure only 1 file is copied?
+  - I think the uniqueness is the combination of filename, checksum and modified date
+
+- In the @dagster , it is given out-of-box with the sensors whereby the run_key is unique and not run two times. You leverage metadata in the background
+  -  we write the checkpoint next to the source folder in the same structure and write files that it was processed
+
+- Normally, I have a table in the database where I log the pipeline ingestion and also track errors in the data processing that could be helpful for troubleshooting later
+
+- We create a lineage table with a row per file or group of files, then this becomes a key on every row in every table within staging, any integration tables and final star schema. In Fabric we also stamp filename on table, if a single notebook loaded multiple files in one go.
+
 - ## If you fix your Data, you have solved half of your problems. And using SQL Constraints is the perfect way to start.
 - https://twitter.com/RaulJuncoV/status/1735285206179860639
   - PRIMARY Key Constraint

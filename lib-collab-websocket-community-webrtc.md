@@ -13,6 +13,14 @@ modified: 2023-12-12T08:45:31.670Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## Blink:  Intent to Ship: WebSocketStream. Someone should do a benchmark comparing message throughput versus WebSocket.
+- https://twitter.com/jarredsumner/status/1755136727415681407
+  - If this becomes adopted by other browsers, it is inevitable that Bun and Node will end up supporting it eventually
+- isn't it already addressed by webtransport?
+- I’m a benchmark guy for Redis Enterpise, write benchmarks for CPUs, Fpgas, ASICS, Embedded platforms. Opposite of fake geek bench . Specify what exactly you would like to benchmark in a real life use case.
+
 - ## [websocket一般会用在什么实际的场合？](https://www.zhihu.com/question/269060103/answer/2399818045)
 1. websocket即时通信、社交订阅
 2. websocket多玩家游戏

@@ -14,7 +14,7 @@ modified: 2020-12-20T08:23:22.808Z
   - Reddit styled threaded comments using Supabase and Next.js
   - 支持voting、sorting、pagination、dark-mode
 
-- waline /1.1kStar/GPLv2/202211/js
+- waline /1.1kStar/GPLv2/202402/js/vue
   - https://github.com/walinejs/waline
   - https://valine.js.org/
   - 一款简洁、安全的评论系统。

@@ -35,11 +35,6 @@ modified: 2021-08-25T14:05:18.280Z
 
 - ## Bun.js v0.0.83 gets a fast builtin SQLite client
 - https://twitter.com/jarredsumner/status/1525105862997442560
-- https://github.com/jpwhite3/northwind-SQLite3
-  - This is a version of the Microsoft Access 2000 Northwind sample database, re-engineered for SQLite3.
-  - The Northwind sample database was provided with Microsoft Access as a tutorial schema for managing small business customers, orders, inventory, purchasing, suppliers, shipping, and employees.
-  - All the TABLES and VIEWS from the MSSQL-2000 version have been converted to Sqlite3 and included here.
-
 - This is awesome, I was just looking at using SQLite in an Electron app the other day, there's just no great way to do that. You need either a native module, read/write the whole thing to disk or hacky stuff like this (https://github.com/jlongster/absurd-sql). This would be perfect for Electron.
   - you could also include 3 sqlite3 binaries (win, mac, linux) and call it a day via https://github.com/WebReflection/sqlite-tag-spawned
   - Potentially that's an easier option but I'd rather not have native binaries (other than node/electron) at all. If you look here  https://github.com/JoshuaWise/better-sqlite3/releases/tag/v7.5.1 there are like 6 binaries for linux, different binaries for node/electron (why?), no binaries for arm win/mac 

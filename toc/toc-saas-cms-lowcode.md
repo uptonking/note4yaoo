@@ -11,23 +11,20 @@ modified: 2023-01-20T21:59:47.792Z
 
 - cms-pm
   - 考虑以calendar/timeline/project/chat为核心，而不是editor
+  - notion-like
 
 - cms-dev
+  - cms和admin管理系统的界限不是互斥的，可在一个框架fwk上实现cms或admin
   - cms业务架构一般分为 服务端、管理端、展示端
   - 管理端交互的核心通常是编辑器
-
-- [什么是比较好的低代码产品_Tw93](https://zhuanlan.zhihu.com/p/596474809)
-  - platform, baas, cms, workflow, airtable-like
-  - 流程自动化
-  - notion-like
 
 - [w3techs: Usage Statistics and Market Share of Content Management Systems](https://w3techs.com/technologies/overview/content_management)
   - WordPress, Wix, Squarespace, Joomla, Drupal, Adobe, PrestaShop, Webflow, TYPO3, Weebly, Gatsby, Hugo, Zendesk, Ghost, 🔥 Odoo, 🔥 MediaWiki, Gitbook, Jekyll, Salesforce
 
-- ref
+- resources
   - https://github.com/postlight/awesome-cms
   - [Headless CMS - Top Content Management Systems | Jamstack](https://jamstack.org/headless-cms/)
-  - crm, erp
+  - [什么是比较好的低代码产品_Tw93](https://zhuanlan.zhihu.com/p/596474809): platform, baas, cms, workflow, airtable-like
 # lowcode-products
 - [AppMaster - The no-code platform for building web & mobile apps](https://appmaster.io/)
 # popular
@@ -361,6 +358,14 @@ modified: 2023-01-20T21:59:47.792Z
 - https://github.com/DominateAi/Dominate-AI /202312/js
   - open source CRM for Tech Founders
   - 依赖MongoDB、ag-grid-react、xlsx
+
+- https://github.com/avored/avored-rust-cms /GPLv3/202401/rust/js
+  - https://avored.github.io/avored-rust-cms/
+  - AvoRed Rust CMS implement with the help of axum web framework and surrealdb as database.
+
+- https://github.com/power-cms/power-cms /201903/ts/inactive
+  - a Domain Driven, CQRS based CMS project in Microservices architecture, written for developers.
+
 # blogging
 - https://github.com/getgridea/gridea /MIT/202302/ts/vue
   - https://open.gridea.dev/

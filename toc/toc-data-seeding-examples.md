@@ -10,41 +10,6 @@ modified: 2021-08-30T19:30:56.453Z
 # guide
 
 # data from popular projects
-- [MongoDB Atlas: Load Sample Data](https://www.mongodb.com/docs/atlas/sample-data/)
-  - Sample AirBnB Listings Dataset
-    - Contains details on AirBnB listings.
-  - Sample Analytics Dataset
-    - Contains training data for a mock financial services application.
-  - Sample Geospatial Dataset
-    - Contains shipwreck data.
-  - Sample Guides Dataset
-    - Contains planet data.
-  - Sample Mflix Dataset
-    - Contains movie data.
-  - Sample Restaurants Dataset
-    - Contains restaurant data.
-  - Sample Supply Store Dataset
-    - Contains data from a mock office supply store.
-  - Sample Training Dataset
-    - Contains MongoDB training services dataset.
-  - Sample Weather Dataset
-    - Contains detailed weather reports.
-
-- [Postgres sample data - Neon Docs](https://neon.tech/docs/import/import-sample-data)
-  - Titanic passenger data
-  - Netflix data
-    - A dataset containing information about movies and tv shows on Netflix.
-  - Chinook database
-    - A sample database for a digital media store, including tables for artists, albums, media tracks, invoices, customers, and more.
-  - Pagila database
-    - Sample data for a fictional DVD rental store. Pagila includes tables for films, actors, film categories, stores, customers, payments, and more.
-  - Lego database 乐高积木
-  - Employees database
-  - Wikipedia vector embeddings
-    - An OpenAI example dataset containing pre-computed vector embeddings for 25000 Wikipedia articles. 
-  - Postgres air
-    - An OpenAI example dataset containing pre-computed vector embeddings for 25000 Wikipedia articles. 
-
 - https://github.com/apache-superset/examples-data
   - This repo holds/serves the small data files that `superset load_examples` uses to load the example data into user databases.
 
@@ -67,15 +32,13 @@ modified: 2021-08-30T19:30:56.453Z
 - https://github.com/ipinfo/sample-database
   - IPinfo database and API sample repository
 # data application
-- https://github.com/pkosiec/mongo-seeding
-  - Mongo Seeding is a flexible set of tools for importing data into MongoDB database.
+- https://github.com/pkosiec/mongo-seeding /MIT/202401/ts
+  - https://github.com/pkosiec/mongo-seeding/tree/main/examples
+  - a flexible set of tools for importing data into MongoDB database.
   - Define MongoDB documents in JSON, JavaScript or even TypeScript files.
-  - Use JS library, install CLI or run Docker image to import them!
-
-- Very excited to publish our new project, http://realtimeinequality.org 
-  - https://twitter.com/gabriel_zucman/status/1488151132161523714
-  - Fulfilling an old dream: being able to know in real time who benefits from economic growth
-  - When new GDP numbers come out each quarter in the US, we show how income is growing for each group of the population
+  - Use JS library, install CLI or run Docker image to import them
+  - Sample import data with model validation, defined in TypeScript
+  - Sample import data with Mongoose and ExpressJS.
 # mock/fake-data
 - https://github.com/faker-js/faker /202212/ts
   - https://fakerjs.dev/
@@ -94,3 +57,4 @@ modified: 2021-08-30T19:30:56.453Z
   - http://mockjs.com/
   - a simulation data generator to help the front-end to develop and prototype separate from the back-end
   - Provide request/response mocking for ajax requests
+# more

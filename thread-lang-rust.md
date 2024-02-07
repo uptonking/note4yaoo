@@ -14,7 +14,21 @@ modified: 2023-10-06T16:26:57.557Z
 
 - ## 
 
-- ## 
+- ## 🤼🏻 Haskell proves you don't need null at a high-level. Rust proves you don't need null at a low-level.
+- https://twitter.com/jdegoes/status/1754938879017140680
+  - Why are you still using null, again??
+
+- Haskell actually has 2 versions of null; ⟂ and None.
+
+- on Web `null` is inevitable 
+  - document.body.getAttribute('null') === null; // true
+  - most APIs (note *most*, not all) don't understand `undefined` or `void`, they just deal with `null` instead to indicate absence of something that although *might* be not-null in the future.
+  - I tend, at least in JS, to follow the same concept
+  - one is a *maybe-null* well known field of the window object (or any DOM element, really) the other one is the complete absence of meaning/API.
+
+- Strong disagree.  Both prove you can manage null or undefined memory at the language level. They both have null/undefined memory. It's how computers/os work. They just deal with it for you. Some use lifetimes and some gc. It's the tools they give you we should focus on!
+
+- Unsafe rust does have null.
 
 - ## Specific types like `Result` and `Option` in Rust offer  methods like `map` and `and_then` that enable a monadic interface, 
 - https://twitter.com/debasishg/status/1753790041812558282

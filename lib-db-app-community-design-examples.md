@@ -16,7 +16,16 @@ modified: 2023-10-27T09:14:12.088Z
 
 - ## 
 
-- ## 
+- ## 🌰 [database - Alternatives to Northwind - Stack Overflow](https://stackoverflow.com/questions/2100982/alternatives-to-northwind)
+- How about Chinook Database
+
+- Microsoft do another set of sample databases called AdventureWorks (these are often used in MS courses).
+
+- [Want to download Northwinds sample database, but confused : SQL](https://www.reddit.com/r/SQL/comments/v3bd5e/want_to_download_northwinds_sample_database_but/)
+  - Don't use Northwind, grab Wide World Importers or AdventureWorks. They're more modern and have more complete instructions for setting up.
+
+- [Northwind or AdventureWorks – SQLServerCentral Forums](https://www.sqlservercentral.com/forums/topic/northwind-or-adventureworks)
+  - AdventureWorks is the better choice in my opinion. It's more complex than Northwind but it covers much more features of SQL Server 2005 and many samples in BOL (Books On Line) work with AdventureWorks
 
 - ## 💡🔥 [Old, Good Database Design | Hacker News_202009](https://news.ycombinator.com/item?id=24467136)
 - 

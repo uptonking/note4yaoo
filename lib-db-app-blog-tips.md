@@ -103,3 +103,8 @@ modified: 2023-10-28T07:03:58.197Z
   - BeyondStorage 构建 go-storage 是为了满足迁移服务的需求，而迁移服务的需求来自于 go-storage 能力的自然延伸。不难发现这套逻辑中出现了一个可怕的循环，链条中完全没有真实用户的参与，项目从发展伊始就在朝着错误的方向狂奔。
   - BeyondStorage 失败的最直接原因是失去了最大金主：青云科技。
   - OpenDAL 最幸运的地方在于它孵化自 Databend 的真实场景。Databend 持续不断地提出新需求，这些需求帮助我判断需求的必要性、调整任务优先级并修正错误假设。
+
+- [Reverse Engineering Existing Databases with Entity Framework Core _202307](https://blog.jetbrains.com/dotnet/2023/07/20/reverse-engineering-existing-databases-with-entity-framework-core/)
+  - You’ll likely need to develop on top of or extend existing databases in the Enterprise world.
+  - With EF Core’s reverse engineering tools, you can avoid the complexity of modeling a large database schema by hand and trust what EF Core sees in your database
+  - However, reverse engineering has some limitations, including logical concepts like table inheritance, owned types, and table splitting.

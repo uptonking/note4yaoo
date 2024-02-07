@@ -9,6 +9,17 @@ modified: 2023-06-22T05:33:12.658Z
 
 # guide
 
+# discuss-news
+- ## 
+
+- ## 
+
+- ## ✨ New example: Select widget controlled by URL
+- https://twitter.com/diegohaz/status/1755243647476342924
+  - Next.js App Router with searchParams
+  - Prefetching
+  - Preview link on mobile
+
 # discuss
 - ## 
 

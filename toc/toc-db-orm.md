@@ -26,7 +26,7 @@ modified: 2021-08-30T18:56:09.644Z
   - Node JS with different ORM like Typeorm, Knex, Prisma and Sequelize with Node JS API Development Node JS with without any ORM (MYSQL raw queries)
 
 - https://github.com/MiroslavPetrik/edgedb-vs-knex
-  - Comparison of Knex/Objection ORM & EdgeDB query builders by implementing & testing a task model with each setup.
+  - Comparison of Knex/Objection ORM & EdgeDB query builders by implementing & testing a task model with each setup
 
 - typeorm /30.1kStar/MIT/202301/ts
   - https://github.com/typeorm/typeorm
@@ -42,18 +42,28 @@ modified: 2021-08-30T18:56:09.644Z
   - https://github.com/mikro-orm/mikro-orm
   - https://mikro-orm.io/
   - TypeScript ORM for Node.js based on Data Mapper, Unit of Work and Identity Map patterns.
-  - 依赖acorn-loose, fs-extra, reflect-metadata
+  - 依赖esprima、dataloader、acorn-loose、fs-extra、reflect-metadata、knex
   - 使用基于装饰器
   - Supports MongoDB, MySQL, MariaDB, PostgreSQL and SQLite databases.
   - Heavily inspired by Doctrine and Nextras Orm. (两者都为PHP设计)
   - Unit of Work maintains a list of objects (entities) affected by a business transaction and coordinates the writing out of changes. 
   - Identity Map ensures that each object (entity) gets loaded only once by keeping every loaded object in a map. Looks up objects using the map when referring to them. 
+  - [MikroORM 3: Knex.js, CLI, Schema Updates _202001](https://mikro-orm.io/blog/mikro-orm-3-released)
+    - Knex.js is now used as both a query builder and a query runner for all SQL drivers. 
+    - With Knex.js used as a query runner, support for connection pooling is finally available
+  - [Who uses MikroORM in production?](https://github.com/mikro-orm/mikro-orm/issues/296)
+    - Mikro relies on `Knex` to create and manage the connection
+    - Even if I don't have much time for feature development in the future, I've always preferred fixing bugs and helping out others with issues
+  - [Choosing the Right TypeScript ORM: MikroORM vs. TypeORM _202308](https://medium.com/@mybytecode/choosing-the-right-typescript-orm-mikroorm-vs-typeorm-fed5d7d9b514)
+    - MikroORM excels with its simplicity and optimized performance, making it perfect for streamlined projects. 
+    - In contrast, TypeORM offers a rich toolkit of features, catering to projects with diverse database requirements and complex queries.
 
 - https://github.com/sequelize/sequelize
   - An easy-to-use multi SQL dialect ORM for Node.js
   - 不支持mongo
 
-- https://github.com/drizzle-team/drizzle-orm /代码量少
+- https://github.com/drizzle-team/drizzle-orm /17kStar/apache2/202401/ts/代码量少
+  - https://orm.drizzle.team/
   - a TypeScript ORM for SQL databases
   - 支持mysql、postgresql、sqlite，不支持mongo
 
@@ -95,7 +105,7 @@ modified: 2021-08-30T18:56:09.644Z
   - 依赖knex、graphql
   - (MySQL, PostgreSQL, Microsoft SQL Server, SQLLite3, CockroachDB, MariaDB, Oracle e Amazon Redshift) and also to the NoSQL database MongoDB.
 
-- https://github.com/walinejs/dittorm
+- https://github.com/walinejs/dittorm /MIT/202305/ts/inactive
   - A Node.js ORM for MySQL, SQLite, PostgreSQL, MongoDB, GitHub and serverless service like Deta, InspireCloud, CloudBase, LeanCloud.
   - 依赖think-model, think-mongo(think.js)
 

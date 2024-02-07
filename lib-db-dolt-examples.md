@@ -406,6 +406,11 @@ modified: 2023-08-25T22:31:05.132Z
   - This crate supports no_std.
   - We support serialization through serde
 
+- https://github.com/nikomatsakis/dogged /MIT/201710/rust
+  - Experimental persistent vector in Rust. 
+  - Based on a digit-indexed trie, as in Clojure. 
+  - [In Rust, ordinary vectors are values _201802](https://smallcultfollowing.com/babysteps/blog/2018/02/01/in-rust-ordinary-vectors-are-values/)
+
 - https://github.com/victorcolombo/prust /MIT/202308/rust/1commit
   - a collection of immutable and persistent data structures, inspired by the standard libraries found in Haskell, OCaml, Closure and Okasaki's Purely Functional Data Structures book.
   - Prust's data structures are inherently thread-safe
