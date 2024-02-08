@@ -162,6 +162,22 @@ modified: 2023-06-07T14:19:18.719Z
 
 ## marketplace
 
+- https://github.com/joplin/website-plugin-discovery /MIT/202401/ts/mustache
+  - https://joplinapp.org/plugins/
+  - https://joplinapp.org/help/api/get_started/plugins/
+  - The official plugin repository website
+  - 依赖codemirror.v6、highlight.js、markdown-it、mustache、webpack
+  - 详情页会显示Minimum app version、下载量
+  - 搜索没有单独的页面
+  - build时会请求`https://github.com/joplin/plugins/blob/master/manifests.json`文件的内容作为所有插件元数据，打包出来的产物是普通spa
+  - npm install -g yo generator-joplin
+    - The `src/` directory contains a `manifest.json` file, which contains the various information about the plugin
+    - You should test your plugin in Development Mode. Doing so means that Joplin will run using a different profile, so you can experiment with the plugin without risking to accidentally change or delete your data.
+  - https://github.com/joplin/plugins /202402
+    - This is the official Joplin Plugin Repository. 
+    - 包含所有plugin的jpl逻辑代码和manifest.json
+    - It is updated every 30 minutes on the hour and half-hour.
+
 - https://github.com/Ulauncher/ext.ulauncher.io /202211/js
   - https://ext.ulauncher.io/
   - Ulauncher Extensions Website

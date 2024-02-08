@@ -9,8 +9,18 @@ modified: 2021-05-06T09:38:31.520Z
 
 # guide
 
+- pros
+  - ?
+
+- cons
+  - ?
+
+- features
+  - ?
+
 - who is using #codemirror6
   - observable-notebook
+  - obsidian
 
 - dev-xp
   - 在github页面，每行代码的行号是确定的，不会显示软换行

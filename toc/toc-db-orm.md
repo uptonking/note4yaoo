@@ -34,6 +34,7 @@ modified: 2021-08-30T18:56:09.644Z
   - TypeORM is an ORM that can run in NodeJS, Browser, Cordova, PhoneGap, Ionic, React Native, NativeScript, Expo, and Electron platforms
   - Supports MySQL, PostgreSQL, MariaDB, SQLite, MS SQL Server, Oracle, SAP Hana, sql.js.
   - Supports MongoDB NoSQL database.
+  - 使用示例是装饰器风格
   - ✨ TypeORM supports both Active Record and Data Mapper patterns
   - 依赖date-fns, reflect-metadata, buffer
   - TypeORM is highly influenced by other ORMs, such as Hibernate, Doctrine and Entity Framework.
@@ -43,7 +44,7 @@ modified: 2021-08-30T18:56:09.644Z
   - https://mikro-orm.io/
   - TypeScript ORM for Node.js based on Data Mapper, Unit of Work and Identity Map patterns.
   - 依赖esprima、dataloader、acorn-loose、fs-extra、reflect-metadata、knex
-  - 使用基于装饰器
+  - 使用示例是装饰器风格
   - Supports MongoDB, MySQL, MariaDB, PostgreSQL and SQLite databases.
   - Heavily inspired by Doctrine and Nextras Orm. (两者都为PHP设计)
   - Unit of Work maintains a list of objects (entities) affected by a business transaction and coordinates the writing out of changes. 

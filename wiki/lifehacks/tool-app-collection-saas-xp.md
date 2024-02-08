@@ -82,7 +82,7 @@ modified: 2022-11-07T10:25:12.034Z
   - [NodeSeek - v2ex-like](https://www.nodeseek.com/)
 # 数据库/pingcap
 - [TiDB 社区](https://asktug.com/)
-- [TiDB Internals](https://internals.tidb.io/)
+  - [TiDB Internals](https://internals.tidb.io/)
 # hacker-news
 - usage-xp
   - 有时网站无法登录或内容无法显示，可能不是网络原因而是服务器宕机了，可在twitter社交平台搜索 `hacker news down` 按时间倒序判断最新状态

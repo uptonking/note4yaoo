@@ -171,18 +171,6 @@ modified: 2023-09-17T17:41:51.689Z
   - Now we are using our home-made optimizer to optimize streaming queries.
   - I recommend starting with Calcite - it will bring you to 50/100 points. But to reach 100 points, you will have to craft your own optimizers.
 
-- ## How does TiDB execute a query?
-- https://twitter.com/sunbains/status/1744048698710171953
-- For simplicity I’ve skipped the transaction part. 
-  - Prepare a plan for this request
-  - Get the metadata of the table from TiKV.
-  - Fetch region/tablet location  for each related key in the SQL query from the Placement Driver (PD).
-  - Group the related keys by Region
-  - Dispatch the tasks to the TiKV instances that contain the regions concurrently
-  - Reassemble the data retuned by the TiKV instances
-  - Return the data to the client.
-- TiKV has a query push down mechanism called Coprocessor to reduce the traffic between the nodes.
-
 - ## [Fine-grained caching strategies of dynamic queries | Hacker News_202309](https://news.ycombinator.com/item?id=37587233)
 - 
 - 

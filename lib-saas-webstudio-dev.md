@@ -43,7 +43,9 @@ modified: 2023-12-15T17:04:43.276Z
 
 - ## 
 
-- ## 
+- ## Webstudio automatically converts all your uploads to the best format 
+- https://twitter.com/getwebstudio/status/1755517023734341847
+  - WebP images are the gold standard when it comes to site speed.
 
 - ## As for commercial usage, you can use open source builder, we are licensing it under MIT. 
 - https://discord.com/channels/955905230107738152/955905231227609158/1080408017595535440

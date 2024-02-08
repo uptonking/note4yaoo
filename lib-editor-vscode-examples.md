@@ -61,14 +61,27 @@ modified: 2023-01-21T18:58:29.846Z
   - This project is aimed to build a web version of VSCode, this is not a fork, simply a web compilation of the VSCode project.
   - Microsoft recently open sourced VSCode web compilation, so I simplified the build process to use the official compilation (no more tweak needed).
 # vscode-server
-- https://github.com/coder/code-server /ts
-  - VS Code in the browser
+- https://github.com/coder/code-server /MIT/202401/ts
+  - https://coder.com/
   - Run VS Code on any machine anywhere and access it in the browser.
-  - Linux machine with WebSockets enabled, 1 GB RAM, and 2 vCPUs
+  - Requirements: Linux machine with WebSockets enabled, 1 GB RAM, and 2 vCPUs
 
-- https://github.com/gitpod-io/openvscode-server
+- https://github.com/gitpod-io/openvscode-server /MIT/202401/ts
   - This project provides a version of VS Code that runs a server on a remote machine and allows access through a modern web browser. 
   - It's based on the very same architecture used by Gitpod or GitHub Codespaces at scale.
+  - in 2019 the VS Code team started to refactor its architecture to support a browser-based working mode. While this architecture has been adopted by Gitpod and GitHub, the important bits have not been open-sourced, until now. As a result, many people in the community still use the old, hard to maintain and error-prone approach.
+  - At Gitpod, we've been asked a lot about how we do it. So we thought we might as well share the minimal set of changes needed 
+  - [VS Code in the browser for everyone - Blog _202109](https://www.gitpod.io/blog/openvscode-server-launch)
+  - [FAQ](https://github.com/coder/code-server/blob/main/docs/FAQ.md)
+  - 🤔 Why can't code-server use Microsoft's extension marketplace?
+    - The core of VS code is open source, while the marketplace and many published Microsoft extensions are not. 
+    - Microsoft prohibits the use of any non-Microsoft VS Code from accessing their marketplace. 
+    - Instead, we use the Open-VSX extension gallery
+  - 🆚️ What's the difference between code-server and Theia?
+    - Theia is a browser IDE loosely based on VS Code. It uses the same text editor library (Monaco) and extension API, but everything else is different. Theia also uses Open VSX for extensions.
+  - 🆚️ What's the difference between code-server and OpenVSCode-Server?
+    - OpenVSCode-Server is a direct fork of VS Code with changes committed directly while code-server pulls VS Code in via a submodule and makes changes via patch files.
+    - OpenVSCode-Server is scoped at only making VS Code available as-is in the web browser. code-server contains additional changes to make the self-hosted experience better 
 
 - https://github.com/cdr/code-server /MIT/202401/ts
   - https://coder.com/

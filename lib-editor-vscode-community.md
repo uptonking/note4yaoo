@@ -9,10 +9,11 @@ modified: 2023-01-21T18:53:04.519Z
 
 # guide
 
-# discuss
+# discuss-stars
 - ## 
 
-- ## 
+- ## [Why VS Code should switch to CodeMirror for default text editing abilities _202105](https://github.com/microsoft/vscode/issues/123826)
+- Our plan is to continue with the monaco editor and to improve the support for mobile, this will be significant less effort than to replace the entire editor implementation.
 
 - ## 又读了一遍 matklad 的这篇文章，感觉很有意思： 为什么 LSP 成功了？
 - https://twitter.com/roifex/status/1747340928090877966
@@ -22,27 +23,6 @@ modified: 2023-01-21T18:53:04.519Z
 - Fleet 的远程开发体验特别好。高延迟下效果比idea好很多，而且plugin不需额外开发就支持远程
 - WebStorm next 重写了 Typescript engine。
 
-- ## 💡 Most sandboxes in CodeSandbox are stored in a Postgres database.
-- https://twitter.com/CompuIves/status/1667148424389566465
-  - 40M+ sandboxes and 400M+ files stored in Postgres, and we still have performant load times.
-  - When going with Postgres, I thought "this is the first thing we'll have to replace". Still didn't happen after 6 years
-- Generally, the three technologies that exceeded my expectations in scale and performance:
-  - Postgres
-  - Elixir
-  - Rust
-- Now we're seeing that the database is growing very big (leading to long & big backups), so we started archiving sandboxes to GCP to save space. We're considering moving our DB from k8s to a managed instance. But still, Postgres has exceeded all my expectations.
-- Curious, which components are written in Rust vs Elixir? Did you find that Elixir was better suited for some tasks than Rust?
-  - Yah, Elixir is doing everything with the API (including websocket message handling).
-  - Rust is doing computationally expensive things, or things that require a lot of string manipulation.
-  - For example, we use Elixir to handle WS OT messages, but we use Rust then to apply the OT operations on the string. We first did this with Elixir, but (partly because of my implementation) it started to eat a lot of memory as every mutation created a new string.
-  - Elixir + Rust interop is fantastic, so it's nice if you can pull out Rust for these kind of things while maintaining the concurrency/robustness of Elixir for the server.
-- Erlang/Elixir under load is just amazing. Incredibly resilient. One of the many reasons I became a fanboy of CouchDB. Still love Postgres but there is something beautiful about storing everything in a giant B-tree
-
-- 🤔 How is the Postgres DB structured.  Is it single node or shareded across multiple nodes?  And do you store files in Postgres as blobs?
-  - Single DB (with a R/O replica). Files are stored as text, binary files are uploaded to GCP and we store a link in the db.
-- Wow, just single DB for such huge workload!  Must be a huge machine.
-  - It's not huge! 4 cores and 24GiB RAM (actually I believe 16GiB would be fine too). Plus we also store sandbox pageviews (hourly, daily, weekly, monthly)/users/teams etc...
-- Incredible!  I am using a little bigger machine for a much lesser scale application.  Likely I am doing something wrong.
 # discuss-web
 - I think the only difference between them is http://vscode.dev supports azure devops repositories. http://github.dev only github ones.
 
@@ -50,7 +30,7 @@ modified: 2023-01-21T18:53:04.519Z
 
 - ## 
 
-- ## Google 的 Web 版 VSCode - Project IDX 今天开放了公众测试版，
+- ## Google 的 Web 版 VSCode - Project IDX 今天开放了公众测试版， _202308
 - https://twitter.com/indigo11/status/1694497731832951265
   - 快速感受了一下，界面几乎和 VSCode 一样，完全在浏览器中运行，
   - 集成了很多云端的 Runtime 环境，导入项目很方便
@@ -101,7 +81,7 @@ modified: 2023-01-21T18:53:04.519Z
 - Theia是在VSCode出来之后复用了很多VSCode的轮子和接口，主要是为了给第三方开放工具提供一个更便于开发的环境。
 - Theia复现了VSCode的插件API，这样**VSCode的插件也可以被安装到Theia上**，但是因为这个API的支持不是很彻底，导致很多插件运行起来有点问题。
 
-# discuss-random
+# discuss
 - ## 
 
 - ## 

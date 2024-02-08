@@ -12,7 +12,15 @@ modified: 2023-12-10T14:20:42.600Z
 # discuss
 - ## 
 
-- ## 
+- ## Caching is one of the fastest ways to boost performance.
+- https://twitter.com/ProgressiveCod2/status/1755496174768070824
+- But when you scale to thousands of servers in multiple clusters across regions, caching becomes extremely challenging.
+- There are 3 major challenges that one has to solve:
+  - Managing latency, load, and failures within a cluster
+  - Managing replication of data within a region
+  - Managing consistency of data across regions
+- I talk in detail about how Facebook solved all of these issues with Memcached in my latest article.
+  - [Facebook's Memcache Breakdown _202402](https://newsletter.systemdesigncodex.com/p/facebook-memcache-breakdown)
 
 - ## 7 concepts you need to master Cache.
 - https://twitter.com/RaulJuncoV/status/1733531023005110576

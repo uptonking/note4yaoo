@@ -44,3 +44,5 @@ modified: 2023-12-15T16:52:28.937Z
 # more
 - [Strapi vs Nest.js: A Tale of Simplicity and Flexibility in Back-end Development_202306](https://medium.com/@inni.chang95/strapi-vs-nest-js-a-tale-of-simplicity-and-flexibility-in-back-end-development-640f3a506289)
   - In conclusion, Strapi shines in its simplicity for straightforward use cases, while Nest.js offers a more comprehensive and flexible framework for developers comfortable with TypeScript. 
+
+- [Understanding the Strapi Request Flow: A Journey from KOA to Modern Middleware Architecture _202311](https://strapi.io/blog/understanding-the-strapi-request-flow-a-journey-from-koa-to-modern-middleware-architecture)

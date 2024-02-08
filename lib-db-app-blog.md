@@ -11,9 +11,6 @@ modified: 2023-09-16T17:49:13.534Z
 
 - [DB-Engines Ranking - popularity ranking of database management systems](https://db-engines.com/en/ranking)
   - ranks database management systems according to their popularity. The ranking is updated monthly.
-
-- [TiKV 源码解析 | PingCAP](https://cn.pingcap.com/blog/tag/tikv-source-code-analysis/)
-- [TiDB 源码阅读 | PingCAP](https://cn.pingcap.com/blog/tag/tidb-source-code-reading/)
 # blogs
 
 ## [数据库计算向量化 | plantegg](https://plantegg.github.io/2021/11/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%A1%E7%AE%97%E5%90%91%E9%87%8F%E5%8C%96/)

@@ -16,6 +16,16 @@ modified: 2023-11-10T07:10:19.089Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## JS isn't for the server
+- https://twitter.com/pilcrowonpaper/status/1755569985995358211
+- what a was the final straw
+  - Issues with bundlers and packages ".node" files - so many help posts on Discord
+- JS on the server shouldn't be processed. Bun or Deno should just execute the source. But we need all isomorphic packages to be shipped unbundled. Although it's scary if we start seeing libraries that rely heavily on non-standard runtime built ins (sqlite)
+
 - ## Node peeps, is there something close to attached built-in (no dep needed).
 - https://twitter.com/aboodman/status/1753586853415125060
   - I want to launch a child process and emit its output to the console as it happens (not wait for end of process), as well as capture the output to return to caller.

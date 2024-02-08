@@ -14,6 +14,12 @@ modified: 2023-10-06T16:26:57.557Z
 
 - ## 
 
+- ## 
+
+- ## 想问问大家写 Rust 都用什么 IDE。 最近体验了一下，感觉 RustRover 也不是很好用啊。经常卡住+代码补全提示不出来。
+- https://twitter.com/jihuayu123/status/1755454756448014441
+- 随便找个编辑器搭配 rust-analyzer 都很好用
+
 - ## 🤼🏻 Haskell proves you don't need null at a high-level. Rust proves you don't need null at a low-level.
 - https://twitter.com/jdegoes/status/1754938879017140680
   - Why are you still using null, again??

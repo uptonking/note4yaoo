@@ -23,10 +23,8 @@ modified: 2023-08-29T10:24:09.136Z
 
 - We normally have two options to fix that problem with normal databases, you can either lock the record when you want to modify it (pessimistic locking) or try to modify it always and make the update fail if the record has changed (optimistic locking).
 - Git only allows us to use the optimistic approach. When you try to “push” your object version by updating the reference in the origin repo you will get an error if the reference (branch) was already changed.
-
-- 
-- 
-
+# blogs-git-usage
+- [Git从入门到应付日常工作](https://jumpshare.com/s/P42MV2FmKfnzSLXjaFUk)
 # blogs-fossil
 - [Fossil Versus Git](https://fossil-scm.org/home/doc/trunk/www/fossil-v-git.wiki)
 # more-blogs

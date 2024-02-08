@@ -66,7 +66,7 @@ modified: 2023-09-17T17:46:07.620Z
 # discuss-kv
 - ## 
 
-- ## [TiDB和FoundationDB各有什么优劣？ - 知乎](https://www.zhihu.com/question/274003103)
+- ## 🆚️ [TiDB和FoundationDB各有什么优劣？ - 知乎](https://www.zhihu.com/question/274003103)
 - FoundationDB和TiKV是一个层次的东西，都是一个支持分布式事务ACID的ordered KV map。
 - 架构：都是shared nothing，TiKV单机引擎rocksdb，核心数据结构skiplist，FoundationDB单机基于磁盘的B-Tree。
   - 两者都强调分层，下面是存储，上面是接口层，TiDB是TiKV的SQL接口层，FoundationDB core就是下面的存储层。

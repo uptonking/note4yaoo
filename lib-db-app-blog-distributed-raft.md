@@ -27,3 +27,4 @@ modified: 2024-02-05T09:44:21.665Z
   - lwt paxos 3
   - raft 2
 # more
+- [An intuition(直觉感知的事, 直觉知识) for distributed consensus in OLTP systems _202402](https://notes.eatonphil.com/2024-02-08-an-intuition-for-distributed-consensus-in-oltp-systems.html)
