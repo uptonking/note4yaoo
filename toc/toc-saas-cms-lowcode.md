@@ -365,8 +365,13 @@ modified: 2023-01-20T21:59:47.792Z
 
 - https://github.com/power-cms/power-cms /201903/ts/inactive
   - a Domain Driven, CQRS based CMS project in Microservices architecture, written for developers.
-
 # blogging
+- https://github.com/LetTTGACO/elog /MIT/202401/ts
+  - https://elog.1874.cool/
+  - Markdown 批量导出工具、开放式跨平台博客解决方案
+  - 随意组合写作平台(语雀/飞书/Notion/FlowUs)和部署平台(Hexo/Vitepress/Halo/Confluence/WordPress等)
+  - Elog支持了在生成MD文件之前，将扫描到的图片上传到图床上，并对文档中的图片链接进行替换。 当前支持的图床有： 本地/阿里云oss/腾讯云cos/Github图床
+
 - https://github.com/getgridea/gridea /MIT/202302/ts/vue
   - https://open.gridea.dev/
   - 一个静态博客写作客户端

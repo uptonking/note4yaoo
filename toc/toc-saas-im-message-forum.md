@@ -150,7 +150,13 @@ modified: 2021-05-14T15:04:15.333Z
 
 - https://github.com/halchester/csqa /inactive/unfinished
   - https://csqa.vercel.app/
-  - CSQA is a Progressive Web App aimed for those who wanna ask silly questions but afraid to get downvoted on stackoverflow
+  - a Progressive Web App aimed for those who wanna ask silly questions but afraid to get downvoted on stackoverflow
+
+
+- https://github.com/liyupi/code-nav /MIT/202111/js/ts
+  - https://www.code-nav.cn/
+  - 以 “帮助大家发现优质编程资源，提升学习效率” 为目标
+  - server使用spring
 
 - https://github.com/seawind8888/Nobibi /202011/ts/inactive
   - Nobibi 是一款轻量级开源社区，包含前后台

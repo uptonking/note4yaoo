@@ -9,6 +9,7 @@ modified: 2023-06-07T14:19:18.719Z
 
 # guide
 
+- 商店类产品的设计可参考类似ckan的data-portal
 # popular
 
 # starter
@@ -39,7 +40,7 @@ modified: 2023-06-07T14:19:18.719Z
   - 插件扩展: vscode-extensions-marketplace, opensumi, chrome-store, jetbrains, Ulauncher
   - marketplace: atlassian, mattermost, airtable, zoho, directus
   - app-store: unhosted/0data, Store.app, Electron
-  - 其他: strapi-plugins, better-discord, observable-notebook-import
+  - 其他: data-portal, strapi-plugins, better-discord, observable-notebook-import
   - 可考虑基于npm发布插件，参考Cerebro-launcher
   - 可考虑类似ckan，但版本管理功能弱
   - search: made-with, product-hunt
@@ -178,6 +179,20 @@ modified: 2023-06-07T14:19:18.719Z
     - 包含所有plugin的jpl逻辑代码和manifest.json
     - It is updated every 30 minutes on the hour and half-hour.
 
+- https://github.com/all-in-aigc/gpts-works /apache2/202312/ts
+  - https://gpts.works/
+  - A Third-party GPTs store
+  - 依赖nextjs、daisyui、react-lazy-load-image-component、langchain、@vercel/postgres
+  - 支持详情页
+  - index system is used for searching GPTs with vector.
+  - fastapi-python for building index system
+  - Vercel Storage Postgres: used for storing data.
+  - Zilliz Cloud: used for vector storing and searching
+
+- https://github.com/xx025/carrot /无源码
+  - https://cc.ai55.cc/
+  - 免费好用的ChatGPT镜像站点
+
 - https://github.com/Ulauncher/ext.ulauncher.io /202211/js
   - https://ext.ulauncher.io/
   - Ulauncher Extensions Website
@@ -235,7 +250,15 @@ modified: 2023-06-07T14:19:18.719Z
   - https://artifacthub.io/
   - a web-based application that enables finding, installing, and publishing packages and configurations for CNCF projects.
 
-## showcase(不支持版本历史)
+## showcase(不支持版本历史)/data-portal
+
+- https://github.com/rupali-codes/LinksHub /MIT/202401/ts
+  - https://linkshub.dev/
+  -  a Hub of Links For Developers By Developers. 
+  - 依赖daisyui、nextjs、typewriter-effect
+  - 无详情页
+  - aims to provide developers with access to a wide range of free resources and tools that they can use in their work.
+  - contribute by creating a PULL REQUEST 
 
 - https://github.com/MarsX-dev/devhunt /MIT/202401/ts/Supabase/nextjs
   - https://devhunt.org/
@@ -244,12 +267,47 @@ modified: 2023-06-07T14:19:18.719Z
   - Create a Supabase Project and make sure to save the database password.
   - For a complete list of all available social login methods, consult the Supabase Social Login documentation
 
-- https://github.com/rupali-codes/LinksHub /MIT/202401/ts
-  - https://linkshub.dev/
-  - LinksHub is a Hub of Links For Developers By Developers. 
-  - 依赖daisyui、nextjs、typewriter-effect
-  - aims to provide developers with access to a wide range of free resources and tools that they can use in their work.
-  - contribute by creating a PULL REQUEST 
+- https://github.com/tgnav/tgnav.github.io /GPLv3/202402/js
+  - https://tgnav.github.io/
+  - Telegram频道导航。收录Telegram上的优质频道
+  - 无详情页
+  - 基于html实现，未使用npm等包管理器
+
+- https://github.com/xjh22222228/nav /MIT/202310/ts
+  - https://nav3.cn/?git
+  - 发现导航, 打造最强静态导航网站(支持SEO)
+  - 无详情页; 支持子路由
+  - 支持sim/side/shortcut/app等多个主题
+
+- https://github.com/WebStackPage/WebStackPage.github.io /MIT/202311/js
+  - http://webstack.cc/
+  - 静态响应式网址导航网站
+  - 无详情页; 单页应用，只有一个url且无其他子路由
+  - 本项目前端基于bootstrap前端框架开发，各后台及主题版本由广大网友提供。
+  - https://github.com/arleycn/arleybookmarks
+    - https://bm.arley.cn/
+    - Webstack网址导航 美化版
+  - https://github.com/Waynenet/Wayne-Navigation
+    - https://nav.kong.pub/
+    - Webstack网址导航美化版
+- https://github.com/hygd0813/WebStack /202312/js/php
+  - https://www.80srz.com/link/
+  - Typecho Webstack导航主题 | 魔改
+  - 包含详情页，在子路由
+
+- https://github.com/liuyike98/233-nav-page /apache2/202111/js
+  - https://liuyike233.gitee.io/vue-web-navigation/
+  - 一个对前端小白和懒人友好的开源网址导航源码, 部署简单, 仅需修改json文件就能自定义网站内容
+  - 使用vue和jquery制作, 纯前台版本, 无后台, 维护比较方便
+
+- https://github.com/x1ah/gena-template yml
+  - https://when.run/nav/
+  - gena 导航网站生成模板，零依赖，自动部署
+  - 数据使用yml
+  - 无详情页; 无子路由
+  - 使用github-actions自动部署到github-pages
+  - https://github.com/x1ah/gena /202210/go/inactive
+    - 导航网站生成器(Start page generator)
 
 - https://github.com/electron/apps /MIT/202310/js/无详情页
   - https://www.electronjs.org/apps
@@ -291,6 +349,11 @@ modified: 2023-06-07T14:19:18.719Z
   - https://www.starknet-ecosystem.com/
   - Starknet Ecosystem Dashboard
   - To update your project you have to do the same thing than for adding. Edit the data/ecosystem.ts file and create a dedicated Pull Request
+
+- https://github.com/jamstack/jamstack.org
+  - https://jamstack.org/generators/
+  - A List of Static Site Generators for Jamstack Sites
+  - 基于eleventy实现
 
 ## more-app-store
 

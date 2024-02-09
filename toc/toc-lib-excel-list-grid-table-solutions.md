@@ -9,6 +9,8 @@ modified: 2023-11-12T06:25:03.307Z
 
 # guide
 
+- 很多design system都实现了自己的list和grid组件
+
 - keyword: data list/grid/table/excel/spreadsheet
 
 - sheet-test
@@ -17,19 +19,22 @@ modified: 2023-11-12T06:25:03.307Z
   - [vaadin spreadsheet test sheets](https://github.com/vaadin/spreadsheet/tree/master/vaadin-spreadsheet/src/test/resources/test_sheets)
 # awesome-list-grid
 - https://jsgrids.statico.io/
-  - https://github.com/statico/jsgrids
+  - https://github.com/statico/jsgrids /MIT/202402/ts
   - 卡片上列出了该项目所支持的表格特性及不支持的特性
+  - 无详情页
+  - 支持多条件filter+sort
 
 - https://amitmy.github.io/grids/
-  - https://github.com/AmitMY/grids
+  - https://github.com/AmitMY/grids /202112/js/jekyll/inactive
   - A grid comparison. 只比较特性，统计不完整。
 
-- 很多design system都实现了自己的list和grid组件
 - https://jspreadsheets.com/
-  - https://github.com/Handsoncode/JSpreadsheets.com
+  - https://github.com/Handsoncode/JSpreadsheets.com /201806/js/inactive
   - 点击卡片可切换查看每个项目的详情及预览图
+  - 支持详情页
+  - 依赖react-static、marked
 
-- https://github.com/FancyGrid/awesome-grid
+- https://github.com/FancyGrid/awesome-grid /markdown
   - A curated list of grid(table) libraries and resources that developers may find useful.
 # excel
 - https://github.com/dataspread/dataspread-web /202105/后端java/js/inactive

@@ -66,7 +66,9 @@ modified: 2023-11-10T08:05:25.474Z
 - Partial application has much wider applicability anyway, and should get in first to reinforce the cowpaths that ACTUALLY need to be paved.
 - I agree deeply with your conclusion. The F# + partial application proposal makes much more sense than the Hack proposal. The Hack proposal feels really bad. JS has been making progress by adding features that make sense and compose well together. The second proposal makes sense.
 - Sad they skipped the F# pipe.
-# discuss-js-features
+# discuss-js-proposals
+- ## 
+
 - ## 
 
 - ## 

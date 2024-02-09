@@ -27,7 +27,7 @@ modified: 2020-12-12T19:01:56.749Z
   - a session replay suite you can host yourself, that lets you see what users do on your web app, helping you troubleshoot issues faster.
 
 - https://github.com/parseablehq/parseable /rust
-  - Parseable is a lightweight, cloud native log observability and analytics engine. 
+  - a lightweight, cloud native log observability and analytics engine. 
   - It is written in Rust and uses Apache Arrow and Parquet.
   - Parseable uses a simple, index-free mechanism to organize and query data allowing low latency, and high throughput ingestion and query. 
   - It can use either a local mount point or object storage (S3/compatible stores) for data storage.
@@ -41,7 +41,18 @@ modified: 2020-12-12T19:01:56.749Z
 
 - https://github.com/del-systems/swatcher /202311/js
   - https://del.systems/2021/06/22/swatcher.html
-  - This project aimed to collect screenshots from UI tests and store them to S3 compatible storage. 
+  - This project aimed to collect screenshots from UI tests and store them to S3 compatible storage.
+
+- https://github.com/PostHog/posthog /MIT/202402/python/ts
+  - https://posthog.com/
+  - open-source product analytics, session recording, feature flagging and A/B testing that you can self-host.
+  - Analyze data with ready-made visualizations, or do it yourself with SQL
+
+# shortlink
+- https://github.com/dubinc/dub /AGPLv3/202402/ts
+  - https://dub.co/
+  - An open-source link management tool for modern marketing teams to create, share, and track short links.
+  - 依赖NextAuth.js、PlanetScale、Tinybird – analytics、Upstash – redis
 # status-page
 - https://github.com/openstatusHQ/openstatus
   - https://openstatus.dev/

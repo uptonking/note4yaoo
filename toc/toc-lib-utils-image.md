@@ -213,6 +213,18 @@ modified: 2023-04-04T22:39:45.442Z
   - This library provides a simple interface to parse OCR data from a stream, buffer or string. 
   - It does not rely on any DOM APIs and can therefore be used in contexts where there is no built-in support for XML parsing, most notably in Web Workers and Service Workers.
   - Currently the library supports hOCR and ALTO OCR markup.
+# photos-management
+- https://github.com/LibrePhotos/librephotos /MIT/202402/python
+  - https://demo2.librephotos.com/
+  - Self hosted alternative to Google Photos
+  - 依赖django4、django-chunked-upload、django-extensions、djangorestframework、flask3、Flask-RESTful、Pillow
+  - django用得比flask多，flask仅在7个文件中使用
+  - Support for all types of photos including raw photos
+  - Timeline view
+  - Scans pictures on the file system
+  - Multiuser support
+  - Face recognition / Face classification
+  - Search by metadata; Semantic image search
 # more
 - https://github.com/ascorbic/unpic-img
   - This library uses unpic to detect the image CDN, and then uses the CDN's URL API to resize and format images. 

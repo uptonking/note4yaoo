@@ -6,6 +6,8 @@ modified: 2021-01-16T20:24:48.984Z
 ---
 
 # toc-office-markdown-mdx-extensions
+
+# guide
 - 实现mdx文档编辑后自动更新的思路
   - (在当前app界面)编辑内容后直接渲染最新内容到dom，都在内存无需本地
   - (在3方编辑器界面)编辑内容后保存到本地文件，然后app扫描目录，渲染内容

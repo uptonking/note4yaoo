@@ -242,6 +242,9 @@ modified: 2022-11-07T17:36:22.236Z
   - a collaborative online office suite, used within a browser and based on LibreOffice technology.
 - https://github.com/CollaboraOnline/online
   - a collaborative online office suite based on LibreOffice technolog
+
+- https://github.com/tajpure/TextSync /201606/js/inactive
+  - Synchronize text from client to server based on the rsync algorithm
 # more
 - EtherSheet /201Star/BSD/201708/js
   - https://github.com/ethersheet-collective/EtherSheet

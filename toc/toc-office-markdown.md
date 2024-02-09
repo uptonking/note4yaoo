@@ -166,6 +166,12 @@ modified: 2021-01-04T17:26:25.032Z
 - https://github.com/amitmerchant1990/electron-markdownify /923Star/MIT/202111/js/inactive
   - minimal Markdown Editor desktop app built on top of Electron.
   - Sync Scrolling
+# import/export
+- https://github.com/LetTTGACO/elog /MIT/202401/ts
+  - https://elog.1874.cool/
+  - Markdown 批量导出工具、开放式跨平台博客解决方案
+  - 随意组合写作平台(语雀/飞书/Notion/FlowUs)和部署平台(Hexo/Vitepress/Halo/Confluence/WordPress等)
+  - Elog支持了在生成MD文件之前，将扫描到的图片上传到图床上，并对文档中的图片链接进行替换。 当前支持的图床有： 本地/阿里云oss/腾讯云cos/Github图床
 # more-md
 - https://github.com/mgmeyers/obsidian-kanban /GPLv3/202309/ts
   - https://publish.obsidian.md/kanban/

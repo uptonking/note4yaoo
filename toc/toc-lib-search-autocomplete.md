@@ -263,7 +263,7 @@ modified: 2023-01-01T13:24:35.994Z
     - It is based on LMDB, a memory-mapped key-value store, so many processes may share the same data and atomically modify the vectors.
     - There are some other libraries to do nearest neighbor search. However, most of them are memory-bound, and none use LMDB for their storage
 
-- https://github.com/paradedb/paradedb /AGPLv3/rust
+- https://github.com/paradedb/paradedb /AGPLv3/202402/rust/c
   - https://paradedb.com/
   - an ElasticSearch alternative built on PostgreSQL, engineered for lightning-fast full text, similarity, and hybrid search.
   - It offers the most comprehensive, Postgres-native search features of any Postgres database, so you don't need to glue cumbersome services like a search engine or vector database on top.

@@ -73,7 +73,7 @@ modified: 2023-10-26T15:29:40.053Z
     - 202306: We hope this patch would be accepted in PostgreSQL 17 even in a limited form. In order to make this progress, we need more discussion in the community.
   - https://github.com/sraoss/pgsql-ivm
 # search
-- https://github.com/paradedb/paradedb /AGPLv3/rust
+- https://github.com/paradedb/paradedb /AGPLv3/202402/rust/c
   - https://paradedb.com/
   - an ElasticSearch alternative built on PostgreSQL, engineered for lightning-fast full text, similarity, and hybrid search.
 

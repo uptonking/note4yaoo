@@ -32,6 +32,13 @@ modified: 2020-12-20T08:23:22.808Z
   - Nested comment section with Vanilla JS, utilizing MVC & Pub-Sub patterns.
   - The project follows the Model-View-Controller (MVC) architectural pattern to separate data, presentation, and user interaction. 
   - Additionally, the Publisher-Subscriber pattern is utilized for event handling
+
+- https://github.com/twikoojs/twikoo /MIT/202401/js/vue
+  - https://twikoo.js.org/
+  - 简洁、安全、免费的静态网站评论系统 
+  - 分为云函数和前端两部分，若要在您的网站上集成 Twikoo，您需要同时部署云函数和前端
+  - 云函数部署 有多种方式，请选择适合自己的部署平台。
+  - 前端部署 有 2 种方式，如果您的网站主题支持 Twikoo，您只需在配置文件中指定 Twikoo 即可；如果您的网站主题不支持 Twikoo，您需要修改源码手动引入 Twikoo 的 js 文件并初始化。
 # comment-github
 - giscus /3.3kStar/MIT/202211/ts
   - https://github.com/giscus/giscus

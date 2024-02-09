@@ -13,6 +13,19 @@ modified: 2023-11-10T07:10:19.089Z
 - ## 
 
 - ## 
+# discuss-js-runtime
+- ## 
+
+- ## 
+
+- ## AWS has entered the (js runtime) domain
+- https://twitter.com/ArrowoodTech/status/1755667431190917577
+- Extremely surprised it uses QuickJS and they specifically chose no JIT. It does make good sense for their situation though.
+
+- yet another JS Runtime implementing Node.js compat? Controversial, but when do we call/turn Node.js into a standard?
+  - defacto standard at this point
+- their firecracker(爆竹，鞭炮; 杰出或激动人心、有吸引力的人或事物) vm is worth looking into if you want to get further back there in the backend and look at infra. i would imagine they are designing something purpose-built for it.
+- IMO WinterCG should eventually work on standardizing the subset of the Node API that runtimes can implement to get “enough” compatibility. Maybe not time yet though
 # discuss
 - ## 
 

@@ -341,20 +341,55 @@ sudo systemctl start minidlna
   - https://playlist.downloader.is/
   - https://ytshorts.savetube.me/youtube-playlist-downloader-1
 # gfw-proxy
+- [镜像站点收集](https://xiaodu114.github.io/p/fav/imageSite/index.html)
+  - 谷歌镜像、YouTube镜像、GitHub镜像
+  - https://xiaodu114.github.io/
+  - https://github.com/xiaodu114/xiaodu114.github.io
+    - 我的学习笔记
+
+## google-proxy
+
+- 备用方法
+  - 直接在bing或yandex搜索 `google 镜像`，选择条件时间1月内，执行二次搜索
+
+- [你用得上的镜像网站 | Google-Mirrors](https://mirror.js.org/)
+  - https://github.com/Heroic-Studio/Google-Mirrors
+  - Google谷歌、Wikipedia维基百科、谷歌学术镜像2023最新 新增各种镜像站
+  - 搜集自网络，请保护好你的隐私，请勿在镜像站中登录谷歌账号
+
 - [googlehosts 作者放弃维护了吗？几个月没更新了](https://github.com/googlehosts/hosts/issues/503)
   - 新发现了个正在活跃维护的
-    - https://github.com/StevenBlack/hosts
-  - 自用 github-hosts
-    - https://raw.githubusercontent.com/Leon406/pyutil/master/github/hosts
-    - https://search.gitee.com/?skin=rec&type=repository&q=GitHub520&sort=updated_at
+
+## github-proxy
+
+- 备用方法
+  - 直接在百度或bing搜索 `github hosts`，选择条件时间1月内，执行二次搜索
+  - gitee上搜索hosts (github520)
+
+- https://github.com/StevenBlack/hosts
+  - This repository consolidates several reputable hosts files, and merges them into a unified hosts file with duplicates removed. 
+
+- github-hosts
+  - https://raw.githubusercontent.com/Leon406/pyutil/master/github/hosts
+  - https://search.gitee.com/?skin=rec&type=repository&q=GitHub520&sort=updated_at
   - https://github.com/ineo6/hosts
     - GitHub最新hosts
-- 备用方法
-  - 直接百度搜索 github-hosts，选择条件时间1月内，执行二次搜索
-  - gitee上搜索hosts (github520)
-    - https://search.gitee.com/?skin=rec&type=repository&q=GitHub520&sort=updated_at
-    - https://gitee.com/monkeycc/GitHub520
-      - https://raw.hellogithub.com/hosts
+  - https://github.com/maxiaof/github-hosts
+    - 通过修改Hosts解决国内Github经常抽风访问不到
+
+- more
+  - https://search.gitee.com/?skin=rec&type=repository&q=GitHub520&sort=updated_at
+  - https://gitee.com/monkeycc/GitHub520
+    - https://raw.hellogithub.com/hosts
+
+## apps-mirrors
+
+- https://github.com/LiLittleCat/awesome-free-chatgpt
+  - 免费的 ChatGPT 镜像网站列表
+
+- [免费ChatGPT镜像网站分享 – MaxSSL](https://www.maxssl.com/article/18048/)
+
+## 机场
 
 - https://github.com/hwanz/SSR-V2ray-Trojan
   - SSR-V2ray-Trojan机场推荐
@@ -396,6 +431,8 @@ sudo systemctl start minidlna
 - 一元机场
   - https://github.com/yiyuanjichang/dizhi
   - [一元机场节点安全吗，不会是钓鱼吧 - V2EX](https://www.v2ex.com/t/913781)
+
+## proxy-cli-for-apps
 
 - git最近更新了socks5的语法，去掉了引号，git config --global http.proxy socks5://127.0.0.1:10808配合V2RayN可用
   - #只对github.com

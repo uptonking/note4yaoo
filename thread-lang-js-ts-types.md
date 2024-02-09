@@ -66,6 +66,14 @@ modified: 2021-08-05T04:31:02.298Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Using a mapped type and key remapping, we can turn a discriminated union into an object 
+- https://twitter.com/mattpocockuk/status/1755917714789466423
+  - Sometimes you need to receive some data in one shape and return it in another. This gives you the ability to express that on the type level.
+
 - ## If you want to declare a value as constant with type checking in editor but the code is not typescript yet. 
 - https://twitter.com/huozhi/status/1754115622667960381
   - Using TSDoc constant type comment is such a relief

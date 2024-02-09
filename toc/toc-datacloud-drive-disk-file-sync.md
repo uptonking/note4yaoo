@@ -308,13 +308,20 @@ modified: 2022-09-10T02:26:52.062Z
     - [Amazon S3 Select supports only the SELECT SQL command.](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-glacier-select-sql-reference-select.html)
   - CloudServer is useful for Developers, either to run as part of a continuos integration test environment to emulate the AWS S3 service locally or as an abstraction layer
 
-- https://git.deuxfleurs.fr/Deuxfleurs/garage /AGPLv3/202401/rust
+- https://github.com/deuxfleurs-org/garage /AGPLv3/202401/rust
+  - https://git.deuxfleurs.fr/Deuxfleurs/garage
   - https://garagehq.deuxfleurs.fr/
-  - open-source distributed object storage service tailored for self-hosting
   - self-hosted drop-in replacement for the Amazon S3 object store.
+  - Garage is designed for storage clusters composed of nodes running at different physical locations
   - Self-contained: We ship a single dependency-free binary that runs on all Linux distributions
+  - https://twitter.com/eatonphil/status/1755942977443074410
+    - Internally garage uses only crdt.
+    - why not raft/paxos? the leader is a bottleneck for all requests
   - https://twitter.com/bluxte/status/1753823896715886898
-    - 
+    - TIL minio not for geo distribution
+  - [Internals | Garage HQ](https://garagehq.deuxfleurs.fr/documentation/design/internals/)
+    - CRDT semantics by default keep all tombstones, because they are necessary for reconciliation
+    - Garage makes use of Sled's atomic operations (such as compare-and-swap and transactions) to ensure that only tombstones that have been correctly propagated to other nodes are ever deleted from the local entry tree.
 
 - https://github.com/juicedata/juicefs /apache2/202401/go
   - https://juicefs.com/

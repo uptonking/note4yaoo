@@ -17,7 +17,7 @@ modified: 2020-11-11T13:16:24.994Z
   - [国内有哪些类似如百度apistore 的平台？ - 知乎](https://www.zhihu.com/question/47541137/answers/updated)
   - [前端常用免费API接口汇总 - 掘金](https://juejin.cn/post/6844903982276542478)
 
-- https://github.com/fangzesheng/free-api
+- https://github.com/fangzesheng/free-api /markdown 
   - 统计了网上诸多的免费API，为您收集免费的接口服务，做一个API的搬运工
 
 - 聚合api平台

@@ -94,6 +94,35 @@ modified: 2023-11-10T07:30:17.500Z
 ## more-blogs
 
 - [谈谈JS二进制：File、Blob、FileReader、ArrayBuffer、Base64 - 李昆博客](https://onelk.cn/article/9OQ30JW7QNPY6ER5)
+# discuss-stars
+- ## 
+
+- ## [Will this behave similar to node's Buffer.toString('base64')? · tc39/proposal-arraybuffer-base64](https://github.com/tc39/proposal-arraybuffer-base64/issues/14)
+- `ArrayBuffer` s (and Uint8Arrays) can only contain bytes, which have a well-defined mapping to and from `base64` . The problem with `atob` is that its input type (String) can contain non-byte values, but that's not an issue here.
+  - This proposal doesn't handle conversion of bytes to/from Unicode, which is the place you need to think about multi-byte characters.
+
+- Why not support `.toString('base64')` and `.from(input, 'base64')` in order to be consistent with `Buffer`?
+  - Because I think that API is much worse, mostly.
+
+- On node’s Buffer, which is generally avoided in modern node code in favor of TypedArrays.
+
+- ## Base64 encoding & decoding to Stage 3
+- https://twitter.com/styfle/status/1755728149969551761
+  - let buf = Uint8Array.fromBase64(str); 
+  - let str = buf.toBase64(); 
+- Once this ships, we can stop using Node Buffer and switch everything to Uint8Array 
+  - [Goodbye, Node.js Buffer _202310](https://sindresorhus.com/blog/goodbye-nodejs-buffer)
+- Cant move off Buffer without a native compare function either.
+  - they shot down toString/from
+- I have a high suspicion that we won't. This makes it on par of Buffer, and Buffer is kind of everywhere. The killer feature would be to have a `TypedArray` that’s a list of `UInt8Array` , 100% API compatible. MASSIVE perf. boost everywhere.
+  - Hard to think of a way this could work and be performant as one would hope. Maybe if the chunks were very large, like 4096 on x64 and 16k on aarch64, some memory mapping tricks could maybe be done
+
+- I can see already tons of issues with that setFromBase64 or setFromHex idea as nobody can know upfront the correct size of that typed array but the first part of the proposal makes sense and it’s welcomed.
+  - That's why it returns a `{ read, written }` pair, so that you know how many characters were read and how many bytes were written. If the target was too small, then you can `string.slice(read)` to get the remainder. If it was too large, you can `target.subarray(0, written)`.
+- Performance, mostly; if you're working with a bunch of chunks of base64, you may not want to allocate a fresh buffer for every single decode operation. And as mentioned in the readme, you can use these methods to build streaming.
+  - Something like this is needed for encryption. Currently generating a fat buffer containing the encrypted data and some metadata needed for decryption requires allocating double the memory, basically.
+
+- Time to finally deprecate the broken atob() and btoa()
 # discuss
 - ## 
 

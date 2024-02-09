@@ -395,6 +395,11 @@ modified: 2021-05-14T15:04:42.225Z
 - https://gitee.com/weolar_admin/mininodejs20 /GPL/202312/cpp
   - 基于quickjs、nodejs14实现的山寨版nodejs
   - 使用quickjs替换v8后的精简nodejs。编译出的二进制文件相比原版，体积大幅减少，冷启动速度大幅提升。
+# js-runtime
+- https://github.com/awslabs/llrt /MIT/202402/rust
+  - lightweight JavaScript runtime designed to address the growing demand for fast and efficient Serverless applications.
+  - It's built in Rust, utilizing QuickJS as JavaScript engine, ensuring efficient memory usage and swift startup.
+  - Extremely surprised it uses QuickJS and they specifically chose no JIT. It does make good sense for their situation though.
 # pref
 - https://github.com/narutosstudent/load-balancer /202401/ts
   - Built a load balancer from scratch. 
@@ -402,7 +407,6 @@ modified: 2021-05-14T15:04:42.225Z
   - Health check happens every 10th second. They're done in the background.
   - `http-proxy` is a Node.js library that allows you to create HTTP proxy servers. A proxy server simply forwards client HTTP requests to other servers and returns the response back to the client.
 # benchmarking
-
 - https://github.com/tinylibs/tinybench /MIT/202401/ts
   - tiny and lightweight benchmarking library
   - You can run your benchmarks in multiple JavaScript runtimes, Tinybench is completely based on the Web APIs with proper timing using `process.hrtime` or `performance.now`.

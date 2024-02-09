@@ -1,11 +1,11 @@
 ---
-title: thread-algs-usecase
-tags: [algorithms, thread, usecase]
+title: thread-dev-data-structure-algs-usecase
+tags: [algorithms, data-structure, thread, usecase]
 created: 2021-02-20T07:29:08.660Z
-modified: 2021-02-20T07:30:23.867Z
+modified: 2024-02-09T14:19:14.801Z
 ---
 
-# thread-algs-usecase
+# thread-dev-data-structure-algs-usecase
 
 # guide
 

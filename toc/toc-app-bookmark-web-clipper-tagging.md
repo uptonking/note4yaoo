@@ -186,6 +186,14 @@ modified: 2022-11-11T11:04:29.007Z
   - A browser bookmark manager optimized for capture and retrieval speed.
   - Extract page title and url into a short markdown snippet.
 
+- https://github.com/geekape/geek-navigation /MIT/202109/ts/vue/前端+后端+管理后台
+  - 极客猿导航－独立开发者的导航站
+  - 前台采用的 Vue 全家桶，服务端使用的框架是 Express，数据库是 Mongodb。
+  - Vue动态导航是采用的单页面方式，非常不利于 SEO 优化，所以改用了 Nuxt SSR 的方式，这也是这个版本最大的改动。
+  - V3.0版本，最大的改动就是把项目拆分为三个子项目: Nuxt后台 -> Ant Design Pro后台, Express -> Eggjs
+  - [强烈推荐建议适配chrome书签json结构，方便一键导出生成](https://github.com/geekape/geek-navigation/issues/101)
+
+
 - https://github.com/codeverland/codever
   - Bookmarks and Snippets Manager for Developers & Co
   - frontend uses with Angular and Angular CLI.
@@ -229,7 +237,7 @@ modified: 2022-11-11T11:04:29.007Z
   - An internet on yer disk. Full text search archive from your browsing and bookmarks.
   - Two modes: archive everything or only bookmark-worthy content
 
-- https://github.com/kanishka-linux/reminiscence /python
+- https://github.com/kanishka-linux/reminiscence /AGPLv3/202401/python/js
   - Self-hosted Bookmark and Archive manager
   - Directory based categorization of bookmarks
   - Automatic Tagging and Summarization, implemented using NLTK library

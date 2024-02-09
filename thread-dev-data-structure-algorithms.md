@@ -9,7 +9,38 @@ modified: 2023-03-15T08:06:35.541Z
 
 # guide
 
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## There are two main groups of data structures: • linear, like arrays and linked lists; • non-linear, like graphs and tree
+- https://twitter.com/Franc0Fernand0/status/1755866411061141567
+- How are they different? 5 key points 
+- 1. Arrangement of elements
+  - Linear: the elements are linked sequentially and can be moved through in a single run
+  - Non-linear: the elements are linked in a hierarchy and set up at different levels
+- 2. Hierarchy
+  - Linear: all the elements are on the same level and don't follow a hierarchy.
+  - Non-linear: the elements are set up in multiple levels
+- 3. Traversal
+  - Linear: all the elements can be traversed in a single run
+  - Non-linear: it takes more than one run to go through all the elements
+- 4. Memory consumption
+  - Linear: you need to know ahead of time how much memory you'll need (except for linked lists)
+  - Non-linear: make more efficient use of memory and don't require a memory declaration in advance
+- 5. Time complexity
+  - Linear: the time complexity of most common operations increases linearly with its size
+  - Non-linear: the time complexity of most common operations stays the same as the input size grows
+
+- In a nutshell:
+  - Choose linear structures for sequential data with known memory needs.
+  - Go with non-linear structures when dealing with hierarchical data, efficient memory use, and better time complexity.
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## [Designing a SIMD Algorithm from Scratch_202311](https://mcyoung.xyz/2023/11/27/simd-base64/)

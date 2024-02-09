@@ -25,7 +25,7 @@ modified: 2021-07-20T13:50:23.433Z
 
 - 技术方向js: 前端版/内存版/oplog + 富文本编辑器，多维表格，协作; dnd，floating，state
 - 技术扩展js/py: 支持拖拽的页面编辑器/lowcode，Excel，图表
-- 技术产品: client/server版 + cms, excel
+- 技术产品: client/server版 + cms, excel, 参考类似ckan的data-portal
 - 技术可选1: 画板, pdf，图形编辑器
 - 技术可选2: olap，bi，数据库，大数据系统
 - 技术可选3: vscode，可参考架构 extensions、capabilities
