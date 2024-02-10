@@ -355,6 +355,11 @@ modified: 2023-06-07T14:19:18.719Z
   - A List of Static Site Generators for Jamstack Sites
   - 基于eleventy实现
 
+- https://github.com/statichunt/statichunt /MIT/202402/js
+  - https://statichunt.com/
+  - a free open-source Jamstack directory that lists hundreds of themes, starters, and resources for static sites.
+  - 依赖next-mdx-remote、marked、react-infinite-scroll-component
+
 ## more-app-store
 
 - https://github.com/pawelmalak/snippet-box /MIT/202110/ts

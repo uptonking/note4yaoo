@@ -802,7 +802,7 @@ modified: 2023-02-05T19:03:12.723Z
 - tips
   - 甚至可参考notion-render
 
-- https://github.com/rockettomatooo/slate-react-presentation /202311/ts
+- https://github.com/rockettomatooo/slate-react-presentation /MIT/202311/ts
   - a small package that lets you render a slate.js document without the overhead of the actual editor.
 
 - https://github.com/dxiaoqi/slate-render-tool /ts

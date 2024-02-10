@@ -46,10 +46,10 @@ modified: 2021-07-21T18:07:43.056Z
     - supports tsx/jsx/md/mdx
     - Support including markdown from a file reference in markdown files
 
-- https://github.com/facebook/docusaurus
-  - /19.5kStar/MIT/202010
-  - 不依赖nextjs
+- https://github.com/facebook/docusaurus /19.5kStar/MIT/202010
   - 使用webpack+babel打包
+  - 依赖webpack、babel、react-loadable、commander、react-router
+  - 不依赖nextjs
   - Docusaurus 1 used to be a pure documentation site generator. 
   - In Docusaurus 2, we rebuilt it from the ground up, allowing for more customizability 
     - but preserved the best parts of Docusaurus 1 - easy to get started, versioned docs, and i18n

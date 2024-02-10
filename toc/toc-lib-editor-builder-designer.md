@@ -145,6 +145,9 @@ modified: 2020-11-17T13:38:19.107Z
   - 画布区是canvas，其余地方是dom，直接导出图片或json
   - developed direct manipulation of editable design tools like Powerpoint
   - We've developed it with reactjs, ant.design, fabricjs
+  - https://github.com/bharathreddyza/react-design-editor /202105/ts
+    - React Design Editor using Fabric.js
+    - https://github.com/bazooka720/scenify-editor /202110
 - react-designer /1.7kStar/MIT/201906/js
   - https://github.com/react-designer/react-designer
   - http://react-designer.github.io/react-designer/

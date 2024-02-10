@@ -32,6 +32,8 @@ modified: 2021-07-20T13:50:23.433Z
 - 技术可选4: 侧重版本控制的数据库，如dolt, SirixDB, git-like-db
 - 玩具尝试1: git+crdt+table+branch/version
 - roadmap: 虚拟渲染、分支版本、协作; crdt历史版本、partial-replica、ivm
+- file-first: notable, hexo
+- db-first: joplin, siyuan, nocodb
 
 - 🚀 产品落地
   - 表格类cms, 内容创作与管理

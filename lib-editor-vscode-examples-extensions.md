@@ -72,6 +72,13 @@ modified: 2023-01-21T19:02:58.833Z
 - https://github.com/bebo-dot-dev/jjs-vscode-toolbar
   - A VSCode toolbar and context menu extension
   - Modifies the VSCode toolbar and context menu to include a few useful commands
+
+
+- https://github.com/estruyf/vscode-front-matter /MIT/202312/ts
+  - https://frontmatter.codes/
+  - Front Matter is a CMS running straight in Visual Studio Code. 
+  - Can be used with static site generators like Hugo, Jekyll, Hexo, NextJs, Gatsby, and many more
+  - Preview your site/content straight in Visual Studio Code
 # utils
 
 # vscode-browser

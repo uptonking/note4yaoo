@@ -76,17 +76,6 @@ modified: 2021-01-04T17:26:25.032Z
 
 - https://github.com/eczn/down-parse /ts/2019
   - markdown parser with a wonderful plugin system
-# md-slide
-- https://github.com/hiroppy/fusuma /js
-  - https://hiroppy.github.io/fusuma
-  - Fusuma makes slides with Markdown easily.
-  - Markdown and MDX
-  - core依赖mdx、webpack.v5、express
-  - client依赖react-modal、prismjs、swiper、screenfull、react-burger-menu、react-event-timeline
-  - 支持导出pdf
-  - https://github.com/nolimits4web/swiper
-    - https://swiperjs.com/
-    - Most modern mobile touch slider with hardware accelerated transitions
 # md-database
 - https://github.com/datopian/markdowndb /MIT/202401/ts/sqlite
   - https://markdowndb.com/
@@ -167,11 +156,20 @@ modified: 2021-01-04T17:26:25.032Z
   - minimal Markdown Editor desktop app built on top of Electron.
   - Sync Scrolling
 # import/export
+- https://github.com/mark-magic/mark-magic /MIT/202402/ts
+  - 一个基于 markdown 的数据连接与转换工具，解决不同工具之间数据转换以及部分常用工具之间的协调。
+  - joplin => hugo 生成 blog
+
 - https://github.com/LetTTGACO/elog /MIT/202401/ts
   - https://elog.1874.cool/
   - Markdown 批量导出工具、开放式跨平台博客解决方案
   - 随意组合写作平台(语雀/飞书/Notion/FlowUs)和部署平台(Hexo/Vitepress/Halo/Confluence/WordPress等)
   - Elog支持了在生成MD文件之前，将扫描到的图片上传到图床上，并对文档中的图片链接进行替换。 当前支持的图床有： 本地/阿里云oss/腾讯云cos/Github图床
+  - https://github.com/LetTTGACO/elog-docs
+    - Elog 的使用文档
+
+- https://github.com/kscript/markdown-download /MIT/202401/js
+  - 谷歌浏览器插件: 将掘金、知乎、思否、简书、博客园、微信公众号、开源中国、CSDN的文章转为markdown文档并下载
 # more-md
 - https://github.com/mgmeyers/obsidian-kanban /GPLv3/202309/ts
   - https://publish.obsidian.md/kanban/
