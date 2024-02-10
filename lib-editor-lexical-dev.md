@@ -25,6 +25,9 @@ modified: 2022-05-15T18:37:07.368Z
     - compatible with screen readers and other assistive technologies.
   - framework agnostic
 
+- who is using #lexical-editor
+  - ghost-cms
+
 - lexical-resources
   - https://lexical.dev/docs/intro
 # faq-not-yet

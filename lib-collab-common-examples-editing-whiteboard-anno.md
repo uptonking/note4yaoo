@@ -15,9 +15,11 @@ modified: 2022-11-07T17:36:22.236Z
   - 研发编辑器不仅要考虑协作，其他功能如find、syntax-highlight对用户体验甚至更重要
   - 所以还是要参考成熟编辑器的可复用功能，如copy-paste、import-export、word-excel
 # whiteboard/annotation
-- https://github.com/feakin/feakin-web
+- https://github.com/feakin/feakin-web /MPLv2/202211/ts/inactive
   - Feakin是一个架构资产可视化管理工具。
   - 基于 图表即代码 的思想体系，支持导入 Mermaid, PlantUML, Excalidraw, Dot 等图形资产格式。
+  - stacks: Rust( + WASM) + React + TypeScript
+  - concepts: Collaboration (CRDT) + DSL (pest.rs) + Graph Engine + Editor Language (Monaco)
 
 - https://github.com/lovasoa/whitebophir /1.5kStar/AGPLv2/202211/js
   - Online collaborative Whiteboard that is simple, free, easy to use and to deploy
@@ -36,7 +38,7 @@ modified: 2022-11-07T17:36:22.236Z
   - online collaborative blackboard tool with fridge magnets available in many languages.
   - designed to give lectures. Tableaunoir enables to easily divide your board in panels and navigate panel by panel.
 
-- https://github.com/spacedeck/spacedeck-open
+- https://github.com/spacedeck/spacedeck-open /AGPLv3/202309/js/inactive
   - a web based, real time, collaborative whiteboard application with rich media support
 
 - https://github.com/cracker0dks/whiteboard /MIT/202311/js
@@ -96,8 +98,10 @@ modified: 2022-11-07T17:36:22.236Z
 - https://github.com/cloud-annotations/cloud-annotations /202106/ts/jupyter/inactive
   - collaborative open source image annotation tool for teams and individuals.
 
-- https://github.com/UniversalDataTool/universal-data-tool
+- https://github.com/UniversalDataTool/universal-data-tool /MIT/202205/js/inactive
   - Collaborate & label any type of data, images, text, or documents, in an easy web interface or desktop app.
+  - a web/desktop app for editing and annotating images, text, audio, documents and to view and edit any data defined in the extensible `.udt.json/.udt.csv` standard.
+  - Usable on web or as Windows, Mac or Linux desktop application
 
 - https://github.com/ncbi-nlp/TeamTat
   - Text annotation tool for team collaboration
@@ -119,6 +123,11 @@ modified: 2022-11-07T17:36:22.236Z
   - The enhanced `<textarea>` is able to render the cursor and selection of other collaborators.
   - This library has no dependency on Convergence.
   - 只依赖textarea-caret，不依赖其他
+
+- nextcloud-text /366Star/AGPLv3/202208/js/tiptap/php
+  - https://github.com/nextcloud/text
+  - Collaborative document editing using Markdown
+  - 依赖tiptap.v2, yjs, @_ueberdosis/prosemirror-tables.v1.1.3, markdown-it、vue2、vuex3
 
 - https://github.com/munshkr/flok /GPLv3/202401/ts
   - https://flok.cc/

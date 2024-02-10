@@ -42,12 +42,13 @@ modified: 2023-02-05T19:03:12.723Z
   - React-specific logic for Slate
   - 提供了android-input-manager
 
-- editablejs /17Star/GPL/202208/ts/自绘光标/模型层block
+- editablejs /17Star/apache2/202208/ts/自绘光标/模型层block
   - https://github.com/editablejs/editable
   - https://github.com/editablejs/editable/blob/main/README.zh-CN.md
   - https://docs.editablejs.com/playground
   - 依赖slate、zustand
   - 只依赖slate不依赖slate-react，但实现是类似的，react组件逻辑并不多
+  - 基于yjs实现协作
   - 一个可扩展的富文本编辑器框架，专注于稳定性、可控性和性能
     - 为此，我们没有使用原生的可编辑属性contenteditable，而是使用了一个自定义的渲染器
     - canvas的开发体验不佳，需要编写更多代码

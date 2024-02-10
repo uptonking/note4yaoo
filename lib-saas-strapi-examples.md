@@ -49,8 +49,10 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/liveblocks/strapi-demo /202310/ts
   - Strapi + Liveblocks demo
 # integrations
-- https://github.com/ONLYOFFICE/onlyoffice-strapi /MIT/202211/js
+- https://github.com/ONLYOFFICE/onlyoffice-strapi /MIT/202211/js/inactive
   - The app which enables the users to edit office documents from Strapi using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to Strapi
+  - 未使用socket
+  - [Collaborate in Strapi with ONLYOFFICE Docs | ONLYOFFICE Blog _202205](https://www.onlyoffice.com/blog/2022/05/strapi-connector-for-onlyoffice)
 
 - https://github.com/marmelab/ra-strapi-demo /202210/前端ts/后端js
   - [Building a B2B app with Strapi and React-Admin_202211](https://marmelab.com/blog/2022/11/28/building-a-crud-app-with-strapi-and-react-admin.html)
@@ -231,6 +233,12 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/ef2-digital/strapi-plugin-bold-title-editor /202310/js
   - A bold title/text editor to accentuate certain parts through HTML or Markdown.
   - Different output options: choose between HTML and Markdown.
+
+- https://github.com/konstantinmuenster/strapi-plugin-rich-text /MIT/202402/ts
+  - A WYSIWYG editor for your rich text fields
+  - This Strapi plugin replaces the Markdown editor with a visual, easy-to-use text editor.
+  - Edit content visually, as in GoogleDocs or Notion.
+  - The plugin stores the content in `HTML` format. When querying content on the frontend, you can simply render the received HTML string.
 
 - https://github.com/dasmikko/strapi-tiptap-editor /202303/js
   - A drop-in replacement for the strapi editor

@@ -14,6 +14,7 @@ modified: 2021-04-30T20:14:17.669Z
 
 - dev-xp
   - ui组件都可分为state、view2部分，editor框架的核心是通过view更新state
+  - ppt可以每页放一个画板或富文本编辑器
 
 - alternatives-ppt
   - 很多ppt的每页是一张图片

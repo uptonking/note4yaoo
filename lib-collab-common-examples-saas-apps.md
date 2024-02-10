@@ -8,13 +8,15 @@ modified: 2023-01-17T19:14:47.611Z
 # lib-collab-common-examples-saas-apps
 
 # guide
-- sync-xp
+- collab-dev-xp
   - 基于缓存实现sync有点类似于react-query
   - 参考vlcn
+  - 不要执着于某个框架，更要参考成熟的解决方案，功能更丰富
 
 - 协作方案参考
   - Liveblocks, synced-store, FluidFramework, gun
   - automerge (2017), yjs (2015), sharedb (2013)
+  - search-keywords: collaborative, multiplayer
 # collab-platform
 - growi /1.1kStar/MIT/202301/ts/remark
   - https://github.com/weseek/growi
@@ -26,6 +28,18 @@ modified: 2023-01-17T19:14:47.611Z
   - Create hierarchical pages with markdown
   - Slack/Mattermost, IFTTT Integration
   - 各种集成
+
+- vrite /1kStar/AGPLv3/202310/ts
+  - https://github.com/vriteio/vrite
+  - https://vrite.io/
+  - https://editor.vrite.io/
+  - headless CMS intended for technical content like programming blogs or documentation
+  - 后端依赖trpc-server/openapi、fastify、yjs、zod、open-graph-scraper
+  - 协作依赖mongodb、hocuspocus
+  - 前端依赖solid-js、solid-primitives、tiptap、trpc-client、yjs
+  - editor包不依赖solid-js
+  - Built-in Kanban dashboard for managing content production and delivery; 
+  - Versitile API and Extension System for customizing your experience and delivering content to any frontend; 
 
 - https://github.com/excalidraw/excalidraw-room /ts
   - Collaboration server for Excalidraw
@@ -69,7 +83,7 @@ modified: 2023-01-17T19:14:47.611Z
     - A No Code Admin, CRM, CMS, Website Builder platform. 
     - Powered by CoCreateJS to provide Realtime and Collaborative CRUD functionality.
 
-- https://github.com/Zeekg-zk/Collaborative-Platform /202210/ts/inactive
+- https://github.com/zach-xing/Collaborative-Platform /202210/ts/inactive
   - 团队协作与管理平台，具有在线多人聊天、消息实时推送、协同编辑等功能
   - 前端使用 NextJS 12.2.0，后端使用 NestJS 8.0
   - 后台管理界面使用 Ant Design Pro
@@ -102,10 +116,17 @@ modified: 2023-01-17T19:14:47.611Z
 - https://github.com/marcellothiry/feature-flags
   - This is the complementary repository for our video series Implementing Feature Flags from Scratch
 
-- https://github.com/hedgedoc/hedgedoc
+- https://github.com/hedgedoc/hedgedoc /AGPLv3/202402/ts
+  - https://demo.hedgedoc.org/features?both
+  - https://docs.hedgedoc.org/setup/getting-started/
+  - 前端依赖yjs、codemirror.v6、markdown-it、@reduxjs/toolkit、nextjs、react-bootstrap、vega-lite.v5
+  - 后端依赖nestjs.v8、rxjs.v7、sqlite3、typeorm、passport、yjs
+  - HedgeDoc is a real-time, multi-platform collaborative markdown note editor.
   - HedgeDoc (formerly known as CodiMD) is an open-source, web-based, self-hosted, collaborative markdown editor.
+  - We are currently working on HedgeDoc 2, a complete rewrite of HedgeDoc.
   - [Proposal: Replace OT with CRDTs](https://github.com/hedgedoc/hedgedoc/issues/527)
     - By using y.js we are using CRDTs now.
+  - [fork history](https://hedgedoc.org/history/): HedgeDoc is the community-driven fork of CodiMD
 
 - https://github.com/plankanban/planka /AGPLv3/js
   - https://plankanban.github.io/planka/

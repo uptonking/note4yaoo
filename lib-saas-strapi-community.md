@@ -14,7 +14,8 @@ modified: 2023-12-15T17:04:36.589Z
 
 - ## 
 
-- ## 
+- ## [Is it possible to create a collaborative platform with Strapi? - Questions and Answers - Strapi Community Forum _202211](https://forum.strapi.io/t/is-it-possible-to-create-a-collaborative-platform-with-strapi/23815)
+- definitely possible but it will require some coding and bending. Afaik you can’t really create this just by clicking around in the admin panel.
 
 - ## 💰 [Can I use strapi free in my self-hosted server? - General - Strapi Community Forum_202304](https://forum.strapi.io/t/can-i-use-strapi-free-in-my-self-hosted-server/27666)
 - The only restrictions on the free version is that audit-logs and Review Workflows are not available

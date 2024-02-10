@@ -135,10 +135,15 @@ modified: 2022-08-18T16:57:15.296Z
 - fiduswriter /455Star/AGPLv3/202209/python/js
   - https://github.com/fiduswriter/fiduswriter
   - https://github.com/fiduswriter/fiduswriter/blob/main/fiduswriter/document/static/js/modules/editor/index.js
-  - 依赖@vivliostyle/print、prosemirror、sortablejs、mathlive
+  - https://github.com/fiduswriter/fiduswriter/wiki/Software-structure
   - an online collaborative editor especially made for academics who need to use citations and/or formulas.
-  - The editor focuses on the content rather than the layout, so that with the same text, you can later on publish it in multiple ways: On a website, as a printed book, or as an ebook. 
+  - 依赖@vivliostyle/print、prosemirror、sortablejs、mathlive
   - 实现了track-changes
+  - The editor focuses on the content rather than the layout, so that with the same text, you can later on publish it in multiple ways: On a website, as a printed book, or as an ebook. 
+  - Fidus Writer consists of Django and Tornado on the backend and a Single Page App (SPA) on the frontend. 
+    - Django is used for the database connection, the database ORM, the administration interface and the overall application structure. 
+    - Tornado is used mainly for websocket connections and proxy connections which allow the client (browser) to proxy a request to a third party site via the server.
+    - django-npm-mjs is used to make the frontend code behave similar to the backend code and to have it integrate across apps.
 
 - binder /24Star/NALic/202210/ts
   - https://github.com/mpazik/binder

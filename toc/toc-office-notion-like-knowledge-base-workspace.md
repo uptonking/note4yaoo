@@ -204,7 +204,7 @@ modified: 2022-06-03T21:34:54.893Z
   - 样式过于简单
   - 这个项目诞生的原始驱动，是因为对“语雀” 知识库的不满。一直不喜欢语雀的目录，发布流程。
 
-- https://github.com/hedgedoc/hedgedoc /AGPLv3
+- https://github.com/hedgedoc/hedgedoc /AGPLv3/202402/ts
   - https://demo.hedgedoc.org/features?both
   - https://docs.hedgedoc.org/setup/getting-started/
   - 后端依赖nestjs.v8、rxjs.v7、sqlite3、typeorm、passport

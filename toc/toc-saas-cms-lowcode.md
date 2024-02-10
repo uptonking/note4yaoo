@@ -151,9 +151,11 @@ modified: 2023-01-20T21:59:47.792Z
   - Built with DNA from Keystone, connects directly to GitHub and doesn’t mess with your source code. 
   - Conceived(构想；设想) for modern front-end frameworks like Next.js, Remix and Astro, designed to fit into your workflow.
 
-- https://github.com/tryghost/Ghost /js/MIT
-  - Turn your audience into a business. 
-  - Publishing, memberships, subscriptions and newsletters.
+- https://github.com/tryghost/Ghost /MIT/202402/js
+  - https://ghost.org/
+  - Independent technology for modern publishing, memberships, subscriptions and newsletters.
+  - core依赖bookshelf-relations、knex2、express-hbs、mysql2、yjs
+  - admin依赖ember、lexical
 
 - alinea /654Star/MIT/202311/ts/query、tiptap
   - https://github.com/alineacms/alinea

@@ -443,7 +443,7 @@ modified: 2022-08-18T16:57:46.405Z
 - nextcloud-text /366Star/AGPLv3/202208/js/vue/tiptap/php
   - https://github.com/nextcloud/text
   - Collaborative document editing using Markdown
-  - 依赖tiptap.v2, @_ueberdosis/prosemirror-tables.v1.1.3, markdown-it、vue2、vuex3
+  - 依赖tiptap.v2, yjs, @_ueberdosis/prosemirror-tables.v1.1.3, markdown-it、vue2、vuex3
 
 - standardnotes.markdown-visual-editor /4Star/AGPLv3/202208/ts/milkdown
   - https://github.com/standardnotes/app/tree/main/packages/components/src/Packages/Editors/org.standardnotes.markdown-visual-editor
