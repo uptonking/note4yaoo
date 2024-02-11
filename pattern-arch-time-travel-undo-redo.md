@@ -18,6 +18,18 @@ modified: 2023-09-12T09:36:25.608Z
 
 - [Making Data Structures Persistent_1986](http://www.cs.cmu.edu/~sleator/papers/Persistence.htm)
 
+## [Text Editor Data Structures: Rethinking Undo](https://cdacamar.github.io/data%20structures/algorithms/benchmarking/text%20editors/c++/rethinking-undo/)
+
+- There are a few properties of undo that are very nice to have:
+  - The undo operation should create a corresponding redo operation, more on redo later.
+  - If undo is applied to the beginning of edit history, the system should report that an undo is not possible and do nothing as a result.
+  - If you undo (or redo) to the point of the last save of the document the system should recognize that there is nothing to save.
+
+- Conclusion
+  - Immutable data structures remain a fascinating point of interest for me. They enable so many interesting avenues to solve problems.
+  - The Myers diff algorithm is incredibly easy to implement, but takes a lot of time to understand what is happening so that you can render it properly.
+  - It is going to be hard for me to go back to linear undo/redo of most editors
+
 ## 🦀 [In Rust, ordinary vectors are values _201802](https://smallcultfollowing.com/babysteps/blog/2018/02/01/in-rust-ordinary-vectors-are-values/)
 
 - Traditionally, persistent collections are seen as this “wildly different” way to setup your collection. Instead of having methods like push, which grow a vector in place
@@ -60,6 +72,14 @@ modified: 2023-09-12T09:36:25.608Z
   - If you want the right to share objects, you “have to” give up mutability. Because when you mutate an object through a reference you might break the assumptions of someone else holding that same reference.
 - Languages with GCs are all about sharing references. Clojure with its focus on data structures with sub-structural sharing brings in immutability while leveraging sharing to the maximum extent.
 - If you drop a GC and mostly forbid aliasing in your PL design like Rust does, you can’t efficiently implement the persistent DSs you find in Clojure. But with unique ownership, mutability becomes much less scary because you know your mutation affects only your reference.
+
+## [Undo/Redo](https://gist.github.com/mlynch/ab554d84dc3b7b8be3d6)
+
+- The best way to look at undo/redo is two stacks of operations the user has performed:
+  - The Undo stack is the "history" of what they've done
+  - The redo stack is the breadcrumbs back to the initial state before they started undoing
+- If the user "undos" an action, we POP off the undo stack, do the operation, then we PUSH an action onto the redo stack.
+- If the user undos multiple times, then does not redo but instead performs a unique action, we consider the redo stack lost. A complicated undo/redo system that needs to preserve these lost operations will probably FORK off here. 
 
 ## 💡 [History Data Structures](https://gist.github.com/CMCDragonkai/d266a3055735545447439f0fa662a0e1)
 

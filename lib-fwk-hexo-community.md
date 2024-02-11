@@ -18,7 +18,8 @@ modified: 2024-02-09T10:54:44.509Z
 # discuss
 - ## 
 
-- ## 
+- ## [Hexo的原理是什么？ - 知乎](https://www.zhihu.com/question/51588481)
+- 每次运行 hexo g 命令，hexo(node.js程序)会遍历你的 source 目录，建立索引，根据你 theme 文件夹的主题生成页面到 public 文件夹。这时 public 文件夹就是一个纯由 html javascript css 等内容制作的博客
 
 - ## 🚀 [Hexo – A fast, simple and powerful blog framework | Hacker News _201305](https://news.ycombinator.com/item?id=5766352)
 - 🆚️ It would be nice to see some benchmarks, comparing with WordPress and others blogging platforms.

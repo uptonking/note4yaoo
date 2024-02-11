@@ -26,7 +26,7 @@ modified: 2023-09-19T07:53:59.349Z
   - docbook/docx描述了数据模型层， HTML/EPUB/PDF/man-pages描述了视图层，侧重点不同
   - docx大多是单篇文档，而不是整本书，但编辑工具很多，docx/xlsx/pptx都属于ooxml
   - **epub不方便实现编辑，不适合作为知识库的编辑层，参考sigil将editor分离出去了**
-  - 用hexo作为ssg生成重展示型的网站，可替代部分reader产品
+  - 用hexo作为ssg生成重展示型的网站，可替代部分reader/cms产品
 
 - 结合纯文本编辑和数据库同步的方案
   - 分离文本的方案使用非常广泛，如ooxml/epub/textbundle，常用来处理只读/读多写少的场景

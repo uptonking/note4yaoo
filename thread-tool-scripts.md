@@ -22,7 +22,14 @@ modified: 2023-12-11T10:12:09.159Z
 
 - ## 
 
-- ## 
+- ## Emitting all the output of an app to stdout, while writing a filtered subset to a file? Not a problem with `tee` and process substitution
+- https://twitter.com/gunnarmorling/status/1756715764168417372
+  - [Filtering Process Output With tee - Gunnar Morling _202402](https://www.morling.dev/blog/filtering-process-output-with-tee/)
+  - Recently I ran into a situation where it was necessary to capture the output of a Java process on the stdout stream, and at the same time a filtered subset of the output in a log file. 
+  - The former, so that the output gets picked up by the Kubernetes logging infrastructure. 
+  - The latter for further processing on our end: we were looking to detect when the JVM stops due to an OutOfMemoryError, passing on that information to some error classifier.
+  - Simply redirecting the standard output stream of the process to a file wouldn’t satisfy the first requirement. 
+  - Instead, the `tee` command offers a solution: it reads from stdin and writes everything to stdout as well as a file
 
 - ## Why stdout is faster than stderr in rust?
 - https://twitter.com/orhunp_/status/1745025263350464650

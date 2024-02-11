@@ -12,7 +12,19 @@ modified: 2023-12-14T04:24:56.899Z
 # discuss
 - ## 
 
-- ## 
+- ## ⚡️ Which tools and techniques do folks use for analyzing off-heap memory issues within Java apps (say, with RocksDB)? 
+- https://twitter.com/gunnarmorling/status/1756233380360835449
+  - JFR and related tooling are great for managed memory analysis, but I feel the story is lacking when it comes to native memory. Any tips?
+- Initial support for Native Memory Tracking is also going to land in @GraalVM Native Image soon
+  - Unfortunately, when I've used NMT in the past, I didn't find it detailed enough to be really helpful in this situation, as it wouldn't tell me where exactly memory gets allocated by a native component (or maybe I just didn't know where to look).
+  - LOL, even wrote about that myself not too long ago: "the one thing which NMT does not report, despite what the name might  suggest, is any memory allocated by native libraries, for instance  invoked via JNI".
+
+- jemalloc/jeprof, I wrote about RocksDB off heap profiling here
+  - [7 Tips For Optimizing Apache Flink Applications _202203](https://shopify.engineering/optimizing-apache-flink-applications-tips)
+
+- How about RocksDB specific tools
+  - Or if in the context of @ApacheFlink state in RocksDB, some suggestions here?
+  - [How to manage your RocksDB memory size in Apache Flink _202002](https://www.ververica.com/blog/manage-rocksdb-memory-size-apache-flink)
 
 - ## We have this premature optimization problem as well (from ancient times). `new HashMap<>(8)` smells. Why? 
 - https://twitter.com/tagir_valeev/status/1734972551426605479

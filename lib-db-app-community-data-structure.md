@@ -318,23 +318,29 @@ modified: 2023-09-17T18:17:41.377Z
 
 - ## 
 
+- ## 
+
+- ## Data Structures for Data-Intensive Applications: Tradeoffs and Design Guidelines
+- https://twitter.com/DistribSystems/status/1755894065147613490
+  - https://t.co/t5BWpn16rP
+
 - ## 8 data structures powering modern databases
 - https://twitter.com/sahnlam/status/1730117267822965056
 1. Skip List
 A skip list is a probabilistic data structure that enables fast search within an ordered sequence of elements. It is commonly used in in-memory databases like Redis because of its efficient average-case lookup and insert operations.
-2. Hash Index
+1. Hash Index
 The hash index, commonly used in-memory databases, is an index data structure that uses a hash table to associate key values with specific data. It's a common solution for fast in-memory key-value lookups.
-3. SSTable (Sorted String Table)
+1. SSTable (Sorted String Table)
 An SSTable is an immutable sorted data structure typically found in disk-based databases. SSTables are a crucial component in the LSM tree.
-4. LSM Tree (Log-Structured Merge-Tree)
+1. LSM Tree (Log-Structured Merge-Tree)
 The LSM tree combines SSTables with an in-memory structure like MemTable. This hybrid disk and memory architecture provides excellent write performance for high-volume writes. However, periodic compaction of SSTables can impact read efficiency if not properly tuned.
-5. B-Tree
+1. B-Tree
 Perhaps the most popular on-disk database index structure, the B-tree is optimized for systems that read and write large blocks of data. Its balanced structure allows for efficient insertion, deletion, and lookup of records. B+ tree is a common variant.
-6. Inverted Index
+1. Inverted Index
 Used in search engines like Lucene, an inverted index stores a mapping from content, such as words or numbers, to their locations within a database. It enables fast full-text search.
-7. Suffix Tree
+1. Suffix Tree
 A specialized string indexing data structure, the suffix tree allows for rapid substring searches.
-8. R-tree
+1. R-tree
 Ideal for spatial indexing, the R-tree is a tree data structure used for indexing multi-dimensional data such as geographical coordinates, rectangles, and polygons. It's commonly used to optimize nearest neighbor and geospatial searches.
 
 - ## 🔥 [Are You Sure You Want to Use MMAP in Your Database Management System? (2022) | Hacker News_202307](https://news.ycombinator.com/item?id=36563187)

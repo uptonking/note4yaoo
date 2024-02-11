@@ -195,4 +195,8 @@ modified: 2023-09-19T07:26:04.103Z
   - https://inventaire.io/
   - Its a collaborative resources mapper project, while yet only focused on exploring books mapping with wikidata and ISBNs
   - https://github.com/inventaire/inventaire-client
+# docs/books-examples
+- https://github.com/CatchTheTornado/opensourcetipsbook /CC-BY-4.0
+  - https://opensourcetipsbook.org/
+  - Open Source book on Open Source. How to create a successful OSS product - tips and tricks that simply works.
 # more

@@ -39,7 +39,7 @@ modified: 2020-11-17T13:38:19.107Z
   - Craft.js is an abstraction where you implement your own page editor upon. 
     - For example, it does not come with a ready-made user interface.
     - However, you could still consider using the examples as a starting point.
-  - [Future of Craft.js - taking it to the next level!_202304](https://github.com/prevwong/craft.js/issues/507)
+  - [Future of Craft.js - taking it to the next level _202304](https://github.com/prevwong/craft.js/issues/507)
     - The current Craft's EditorState is essentially the equivalent of building a single UI component without states and props; and with the ability of adding/reordering JSX templates and mutating simple prop values of those JSX templates.
     - I spent the past couple of months trying to build a new state management system for Craft, reka
     - The current Craft EditorState is a simple implicit tree data structure, whereas Reka is an AST. As such, a Reka AST for an equivalent EditorState is expected to be larger
@@ -54,6 +54,7 @@ modified: 2020-11-17T13:38:19.107Z
     - The View tree is a simple serializable JSON structure.
     - building a renderer for Reka simply means taking this JSON structure and rendering it in your preferred UI framework.
   - Reka provides an external package that allows real-time collaboration via a fully-featured CRDT backed by Yjs
+  - [Show HN: Build your own no-code editor with Reka.js | Hacker News](https://news.ycombinator.com/item?id=35399384)
 
 - webstudio-designer /172Star/MIT>AGPLv3/202212/ts
   - https://github.com/webstudio-is/webstudio-designer
@@ -82,13 +83,15 @@ modified: 2020-11-17T13:38:19.107Z
   - old-repo
     - https://github.com/brick-design/react-visual-editor
 
-- https://github.com/plasmicapp/plasmic /部分开源
+- https://github.com/plasmicapp/plasmic /AGPL + MIT/202402/ts/python
   - https://www.plasmic.app/
   - Visual page builder and web design tool for any website or web app tech stack
   - Plasmic is a platform
     - Visual builder / web design tool--this is the heart of Plasmic
     - Headless CMS for structured content (or bring your own CMS)
     - Growth optimization tools (A/B testing, personalization, analytics)
+  - 前端依赖react-aria、quill
+  - 后端依赖python、fastapi、sqlalchemy、ipdb、pydynamodb
   - [Does this repository include the designer UI?](https://github.com/plasmicapp/plasmic/issues/23)
     - It currently doesn't; will add clarification on this.
 

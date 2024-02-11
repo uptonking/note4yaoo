@@ -24,6 +24,12 @@ modified: 2023-10-26T17:12:59.665Z
 
 - ## 
 
+- ## 
+
+- ## Every DB vendor will end up providing a notebook 
+- https://twitter.com/mim_djo/status/1756688158786535471
+  - SingleStore: We launched a compute service that lets developers spin up GPUs and CPUs to run database-adjacent workloads including data preparation, ETL, third-party native application frameworks, etc.
+
 - ## 🚀🛋️ [SpacetimeDB: A new database written in Rust that replaces your server entirely : programming_202308](https://www.reddit.com/r/programming/comments/15mgp4i/spacetimedb_a_new_database_written_in_rust_that/)
 - > This means that you can write your entire application in a single language, Rust, and deploy it as a single binary. 
   - Am I the only one that sees that as a downside?

@@ -16,7 +16,19 @@ modified: 2023-05-21T15:44:39.196Z
 
 - ## 
 
-- ## 
+- ## 📈🔀 [Quadratic – Open-Source Spreadsheet Is Now Multiplayer | Hacker News _202402](https://news.ycombinator.com/item?id=39217440)
+- Quadratic is an open-source spreadsheet application for engineers that supports Python, SQL (coming soon), and classic Formulas. 
+  - Unlike other spreadsheets, Quadratic has an infinite canvas (like Figma). 
+  - As a result, you can pinch and zoom to navigate large data sets, and everything renders smoothly at 60fps.
+- Quadratic is built using WebGL and Rust WASM. We built our multiplayer service from scratch in Rust to handle large amounts of data smoothly. For smooth rendering of a large grid of data, cells and text are rendered using low-level WebGL for performance.
+
+- What is the use case? You don't seem to be for application building, rather for doing analysis work
+- The use case is doing analysis work as a team, with some engineers and some people only familiar with spreadsheets all being able to work together.
+  - Quadratic is always free for individuals, and we will be paid for Teams, which will be shared folders that we are launching in a couple of weeks.
+
+- I had a look at the server code. Is the idea that you will just vertically scale up the server to handle the load, or is there a mechanism for scaling out horizontally?
+  - The quadratic-multiplayer service is designed to be scaled vertically. Once we hit that limit, we will need to come up with a way to route traffic to servers based on what file a user is accessing and what server is hosting that room.
+  - Every other service can be scaled horizontally today. However, the Rust services are very efficient at processing traffic, and a single node can handle significant usage.
 
 - ## [Show HN: rowsncolumns React Spreadsheet 2 | Hacker News_202311](https://news.ycombinator.com/item?id=38390714)
 - Curious: since you are rendering everything via canvas, how do you do accessibility?

@@ -646,6 +646,13 @@ modified: 2024-02-09T10:55:03.085Z
 - https://github.com/TechQuery/Web-fetch /202306/ts
   - Hexo Migrator plugin for common Web pages
 # alternatives-hexo
+- https://github.com/EasyWebApp/MarkCell /202202/ts
+  - General MDX to TSX/HTML converter, inspired by Hexo & Gatsby
+  - https://github.com/EasyWebApp/mark-wiki
+    - Web-site scaffold based on BootCell, MarkCell & Parcel, is a Static Web-site Generator like Hexo & Gatsby.
+  - https://github.com/EasyWebApp/BootCell-document
+    - Re-implemented Official Web-site of BootStrap based on WebCell, BootCell & MarkCell
+
 - https://github.com/web-infra-dev/rspress /MIT/202402/ts/mdx
   - https://rspress.dev/
   - A fast Rspack-based static site generator

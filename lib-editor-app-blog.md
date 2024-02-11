@@ -13,6 +13,11 @@ modified: 2022-08-21T10:11:37.453Z
 - Yep, we do use contentEditable as an input source and also as the view to which we render (you wouldn't be able to reliably handle the keyboard otherwise).
 # blogs
 
+## [谈谈编辑器的架构设计 - 知乎](https://zhuanlan.zhihu.com/p/681850367)
+
+- 我大致参考过的框架包括两个： lexical/Codemirror
+- 有种设计模式叫MVC。编辑器的架构与其非常相似，我将其分解为三个层次的概念
+
 ## [Bike: Innovative Rich Text Editing](https://www.hogbaysoftware.com/posts/bike-rich-text/)
 
 - Bike Outliner now supports rich text!

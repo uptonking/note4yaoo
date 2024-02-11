@@ -17,6 +17,15 @@ modified: 2023-10-12T14:06:30.848Z
   - [CI/CD Demystified — Build, Test, Deploy, Repeat](https://blog.levelupcoding.co/p/luc-26-cicd-demystified-build-test-deploy-repeat)
   - 使用流程图解释
 
+# discuss-release-publish-changelog
+- ## 
+
+- ## I prefer keeping CHANGELOG.md in git for my open source projects.
+- https://twitter.com/sitnikcode/status/1756657599485735044
+  - But Github gives some handy features on top of Releases.
+  - @edloidas wrote a script for Github Action to create a release when a new tag appears.
+
+- I use Changesets for this. They have GHA to release packages to npm registry (and you can release packages for different languages too), update changelogs and create a release
 # discuss
 - ## 
 

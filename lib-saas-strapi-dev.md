@@ -50,6 +50,8 @@ modified: 2023-12-15T16:51:56.101Z
 - resources
   - [Strapi Community Forum](https://forum.strapi.io/)
   - [Directus vs. Strapi – Comparison Headless CMS — Restack](https://www.restack.io/docs/directus-vs-strapi)
+# draft
+- 流式输出 stream response
 # dev
 
 # codebase

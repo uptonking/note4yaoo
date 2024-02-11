@@ -31,7 +31,11 @@ modified: 2023-12-15T19:40:39.912Z
 
 - ## 
 
-- ## 
+- ## Hibernate and Debezium both came out of @RedHat
+- https://twitter.com/nandini__bagga/status/1756283118632222759
+- Hibernate was created externally originally. Then the team joined JBoss who got acquired by Red Hat. 
+  - Debezium indeed was kicked off by RHT engineers.
+- I've been recently going through Debezium postgres CDC, the fact that it's built on top of Kafka is very interesting to me.
 
 - ## 我对技术的追求就是打死也不用 Java。
 - https://twitter.com/syeerzy/status/1748545447919018119

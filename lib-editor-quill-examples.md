@@ -480,6 +480,33 @@ modified: 2023-02-09T18:32:06.240Z
   - MyBL CMS React Template
   - 依赖redux-toolkit、tanstack-table、fullcalendar、apexcharts、quill
 
+- https://github.com/vuquangpham/boilcms /MIT/202311/js
+  - A CMS that has been built with Node.js and Express.js
+  - 依赖express、ejs、mongoose、quill
+  - https://github.com/vuquangpham/boilcms-ec
+    - https://boilcms-ec.vercel.app/
+    - Boilcms with Ecommerce
+
+- https://github.com/plsrd/hark /MIT/202212/js
+  - a tiny CMS for authoring blog content
+
+- https://github.com/klaudsol/klaudsol-cms /MIT/202307/js
+  - https://cms-demo.klaudsol.app/
+  - a Headless and Serverless CMS (Content Management System). 
+  - A great alternative to WordPress and Strapi.
+  - 依赖@coreui/react、nivo、nextjs、react-redux、react-bootstrap、react-quill
+  - Deploys seamlessly to AWS Amplify Hosting + AWS Aurora Serverless
+
+- https://github.com/johnpolacek/bucket-cms /202311/ts
+  - https://bucket-cms.com/
+  - lightweight CMS around – ready for you to drop into your Next.js project.
+  - no database necessary
+  - 依赖react-quill、next-auth、radix-ui
+
+- https://github.com/ProtoDigitalUK/proto_headless /202312/ts
+  - headless CMS offering a delightful developer experience.
+  - 依赖fastify、pg、sharp、solidjs、quill
+
 - https://github.com/folkloreinc/panneau-js/tree/v0.8
   - https://folkloreinc.github.io/panneau-js/storybook/index.html
   - React components to build forms and administration panels
@@ -493,10 +520,12 @@ modified: 2023-02-09T18:32:06.240Z
   - Use any database, any templating language
   - admin依赖lit-html
 
-- https://github.com/vapid/vapid /MIT/202103/js/archived
+- https://github.com/vapid/vapid /MIT/202101/js/archived
   - https://github.com/vapid/vapid
   - simple content management system built on the idea that you can create a custom dashboard without ever leaving the HTML.
   - 依赖 ace、jquery、quill、turbolinks、koa、sequelize.v5
+  - 🍴 forks
+  - https://github.com/universe/vapid
 
 - https://github.com/klaudsol/klaudsol-cms /202308/js
   - a Headless and Serverless CMS
@@ -508,6 +537,10 @@ modified: 2023-02-09T18:32:06.240Z
   - The API is designed to be consumed by any client, be it a web application (React, Vue, Angular)
   - 前端依赖tanstack-query、quill、localforage
   - 后端依赖nestjs
+
+- https://github.com/entando/entando-cms /LGPLv3/202110/js
+  - This project contains the App Builder screens for the CMS app of Entando.
+  - https://github.com/entando/app-engine /java
 
 - https://github.com/LargeNFT/large-nft /202401/ts
   - decentralized CMS for Ethereum & IPFS that runs offline-first in the browser.
@@ -525,7 +558,6 @@ modified: 2023-02-09T18:32:06.240Z
   - https://github.com/Khusheel26/Google-docs-clone
   - https://github.com/Danitilahun/SmallGoogleDocClone
   - https://github.com/klublin/google-docs-clone /202212/js/4milestones
-
 
 - https://github.com/NickMandylas/noogle-docs /202106/ts
   - Google Docs clone built with Typescript, inspired by Web Dev Simplified
@@ -758,6 +790,8 @@ modified: 2023-02-09T18:32:06.240Z
   - Converts Quill's delta ops to HTML
   - https://github.com/sudowrite/quill-delta-to-html-fork
     - Although it's open source, it's not intended for general use
+  - https://github.com/microcmsio/quill-delta-to-object
+    - Not Supported: Image, Video, Table, Nested List
 
 - https://github.com/xeger/quill-deltacvt /202306/ts
   - Converts Quill Delta to HTML (or other formats) without depending on quill, parchment or quill-delta

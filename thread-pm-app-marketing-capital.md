@@ -12,7 +12,19 @@ modified: 2023-10-14T12:11:39.039Z
 # discuss-office
 - ## 
 
-- ## 
+- ## We're excited to accelerate Skiff's mission by joining Notion. _20240210
+- https://twitter.com/skiffprivacy/status/1756093174806974831
+  - Skiff apps remain free and accessible for the next 6 months. Refunds are available to those with paid accounts.  We understand the inconvenience. Product shutdowns occur.
+
+- TLDR: we're shutting Skiff down and giving up on privacy-first so the founders can get a payday.
+- If notion is smart they’ll use the E2EE behind skiff to their advantage, why else would they buy skiff tbh
+  - Skiff Pages is very Notion-esque. I assume Notion saw Skiff as a potential competitor and decided to gobble them up before they got too big. I’d be very (pleasantly) surprised if Notion decided to offer a privacy-centred email service similar to Skiff
+- They won't. They don't want to a privacy-first competitor now that they've gone down the data mining and AI product path.
+
+- So our data is gonna be sold to Notion? What about the promise of complete privacy
+
+- https://twitter.com/YousefED/status/1756336006763037166
+- It's another reminder how we need more Local-First software - so users have true data ownership and can keep accessing and working with your data long into the future 
 
 - ## 🌰 飞书8000多人的规模，ARR 刚过1亿美元，折算下来人均人民币10万不到的产值，尽管如此，每年却要烧掉100多亿，看不到业务的可持续性。
 - https://twitter.com/ohyishi/status/1730080052044575056

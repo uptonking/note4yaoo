@@ -151,6 +151,7 @@ modified: 2022-06-03T21:34:54.893Z
   - a privacy-first, end-to-end encrypted workspace with Mail, Calendar, Pages, and Drive product
   - This monorepo contains all Skiff apps, libraries, and more
   - 编辑器依赖prosemirror
+  - 依赖yjs、graphql
   - [Not open-source](https://github.com/skiff-org/skiff-apps/issues/94)
     - This project is advertised as open-source despite that CC BY-NC-SA is clearly not an open-source license
 # confluence-like

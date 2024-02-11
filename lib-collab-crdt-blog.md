@@ -18,8 +18,23 @@ modified: 2022-10-13T08:00:21.260Z
   - Part 2 of my CRDT survey blog series is out! This post covers "semantic techniques": deciding what a collaborative should do for users, independent of implementation details like op-based vs state-based.
 # [Making CRDTs 98% More Efficient | jakelazaroff.com_202310](https://jakelazaroff.com/words/making-crdts-98-percent-more-efficient/)
 
-# 📝 [A Gentle Introduction to CRDTs – vlcn.io](https://vlcn.io/blog/intro-to-crdts)
+# 👨🏻‍🏫 [CRDTs Turned Inside Out _202312](https://interjectedfuture.com/crdts-turned-inside-out/)
 
+- There is another class of CRDTs: Merkle CRDTs.
+- Merkle-DAG CRDTs
+- Merkle Search Tree CRDTs
+
+- 
+- 
+- 
+
+- [Trade-offs between Different CRDTs | Hacker News](https://news.ycombinator.com/item?id=38916647)
+# 👥 [CRDTs Turned Inside Out | Hacker News _202401](https://news.ycombinator.com/item?id=39130945)
+
+# 👨🏻‍🏫 [Understanding CRDTs: A Gentle Introduction (Chapter 1) _202401](https://federicoterzi.com/blog/understanding-crdts-a-gentle-introduction-chapter-1/)
+
+- [Understanding CRDTs: A Gentle Introduction | Hacker News](https://news.ycombinator.com/item?id=39092787)
+# 👨🏻‍🏫 [A Gentle Introduction to CRDTs – vlcn.io](https://vlcn.io/blog/intro-to-crdts)
 - Last Write - What Can Go Wrong?
   - Error 1: Forgetting to Update the Loser's Timestamp
   - Error 2: Forgetting & Inconsistent Tie Breaking
@@ -30,7 +45,7 @@ modified: 2022-10-13T08:00:21.260Z
   - Each event gets timestamped with this counter.
   - To totally order events within your process, order by that timestamp. 
   - To scale this up to many cores, use an atomic integer that you can compare-and-swap.
-# 📝 [An Interactive Intro to CRDTs | jakelazaroff.com_202310](https://jakelazaroff.com/words/an-interactive-intro-to-crdts/)
+# 👨🏻‍🏫 [An Interactive Intro to CRDTs | jakelazaroff.com_202310](https://jakelazaroff.com/words/an-interactive-intro-to-crdts/)
 - A register is a CRDT that holds a single value. 
     - There are a couple kinds of registers, but the simplest is the Last Write Wins Register (or LWW Register).
 - LWW Registers simply overwrite their current value with the last value written. 

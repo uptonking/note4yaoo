@@ -96,6 +96,21 @@ modified: 2023-10-26T19:04:00.318Z
   - SOLID (Tim Berners-Lee, RDF)
   - GUN (ours, graph)
 
+# discuss-protocol-raft/paxos
+- ## 
+
+- ## 
+
+- ## 🆚️ [Paxos vs. Raft: Have we reached consensus on distributed consensus? | Hacker News _202107](https://news.ycombinator.com/item?id=27831576)
+- Since the article mentions Google as the outlier preferring Paxos, I may be able to shed some light from a few years ago.
+  - The Paxos, paxosdb, and related libraries (despite the name, all are multi-paxos) are solid and integrated directly into a number of products (Borg, Chubby, CFS, Spanner, etc.). There are years of engineering effort and unit tests behind the core Paxos library and so it makes sense to keep using and improving it instead of going off to Raft. As far as I am aware the Google Paxos implementation predates Raft by quite a while.
+- This makes sense to me. Very few of us have the resources to maintain, for example, the kind of globally synced (way beyond typical NTP) clock infrastructure that Google has (TrueTime)
+
+- I hope that the "Paxos vs Raft" debate can die down, now that engineers are learning TLA+ and distributed systems more thoroughly. These days we can design new protocols and prove their correctness, instead of always relying on academics. For example, at MongoDB we considered adopting the reconfiguration protocol from Raft, but instead we designed our own and checked it with TLA+. 
+
+- 👥 
+- https://twitter.com/tweeshan/status/1756534657892679871
+- Raft has the lowest availability and performance. IIUC Paxos has the best availability (because any replica can lead) but costs 2 round trips.
 # discuss
 - ## 
 

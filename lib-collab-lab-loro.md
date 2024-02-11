@@ -30,7 +30,10 @@ modified: 2024-01-06T15:37:08.031Z
 
 - ## 
 
-- ## 
+- ## [Loro's rich text CRDT | Hacker News _202401](https://news.ycombinator.com/item?id=39102577)
+- 
+- 
+- 
 # discuss
 - ## 
 

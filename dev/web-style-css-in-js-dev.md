@@ -178,6 +178,19 @@ modified: 2021-01-01T20:06:19.327Z
 - It’s depends on ur purposes. 
   - If u use dynamic generated styles (in runtime) a lot — css-in-js (styled-components) is a nice choice. 
   - If not, better use static css-in-js approach (emotion + extract, css-literal-loader) or classic
+# discuss-css-modules
+- ## 
+
+- ## 
+
+- ## using Mantine V7 over the past few months has given me a renewed appreciation for CSS Modules.
+- https://twitter.com/KevinVanCott/status/1756422751257072028
+- If you do it right, you still don't really ever have to think about naming CSS classes.
+  - Follow good CSS variable usage patterns, conditionally style based on `data-*` attributes or other sub-classes, use nested CSS, simplify selectors or calculate complex values with mixins, etc.
+- The main downside of CSS modules in React is that styles must be stored in separate files away from the React code. 
+  - Many see this as a good separation of concerns, but I got used to the co-location DX of Tailwind and Emotion. 
+  - Svelte/Vue templates are better in this regard.
+
 # discuss
 - ## 
 

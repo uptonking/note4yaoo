@@ -205,5 +205,3 @@ npm run develop
 
 - ## [如何评价Strapi? - 知乎](https://www.zhihu.com/question/305040758/answers/updated)
 - 
-- 
-- 

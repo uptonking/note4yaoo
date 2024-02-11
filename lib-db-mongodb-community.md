@@ -34,7 +34,9 @@ modified: 2022-06-13T02:59:04.350Z
 # discuss
 - ## 
 
-- ## 
+- ## MongoDB finds most users stick to defaults when it comes to consistency settings  
+- https://twitter.com/PeterZaitsev/status/1756688542502474001
+  - [Tunable Consistency in MongoDB _202402](https://muratbuffalo.blogspot.com/2024/02/tunable-consistency-in-mongodb.html)
 
 - ## [MongoDB Compass looks great and is free, is there any reason to use Robo 3T or Studio 3T anymore? : mongodb _202103](https://www.reddit.com/r/mongodb/comments/m1sr4z/mongodb_compass_looks_great_and_is_free_is_there/)
 - I have used compass, studio 3T, and noSqlBooster and noSqlBooster is by far the best if you are good with JavaScript IMO. 

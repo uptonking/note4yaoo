@@ -224,6 +224,10 @@ modified: 2023-11-24T18:41:26.906Z
   - https://github.com/kristw/d3kit-timeline /201802/js/依赖d3-scale-axis
     - https://d3kit-timeline.vercel.app/
     - reusable timeline component built on top of D3, d3Kit and Labella.js
+
+- https://github.com/zaboople/klonk /Klonk/202309/java
+  - A text editor with an sort-of-unusual undo/redo algorithm
+  - [Resolving the great undo-redo quandary | Hacker News _202211](https://news.ycombinator.com/item?id=33560275)
 # graphics
 - https://github.com/metricsgraphics/metrics-graphics /7.3kStar/MPLv2/202004/ts/inactive
   - a library built for visualizing and laying out time-series data

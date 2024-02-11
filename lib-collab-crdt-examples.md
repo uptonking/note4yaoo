@@ -903,10 +903,13 @@ modified: 2022-04-05T10:08:25.947Z
 - https://github.com/mweidner037/vlcn-rich-text
   - Collaborative rich text editor over vlcn.io
 
-- https://github.com/nomad/cola /rust
+- https://github.com/nomad/cola /MIT/202402/rust/未使用rope？
   - A text CRDT for real-time collaborative editing
   - [cola: a text CRDT for real-time collaborative editing_202309](https://nomad.foo/blog/cola)
     - It’s about as fast as (if not faster than) the fastest rope libraries in both directions, and it’s currently the fastest text CRDT implementation I know of.
+  - [Cola: A text CRDT for real-time collaborative editing | Hacker News _202309](https://news.ycombinator.com/item?id=37373796)
+  - https://github.com/nomad/crop /rust
+    - A pretty fast text rope
 
 - https://github.com/mweidner037/uniquely-dense-total-order
   - Uniquely Dense Total Orders for List/Text CRDTs

@@ -415,7 +415,7 @@ const overId = getFirstCollision(collisions, 'id');
 - https://github.com/ThemeFuse/Brizy /js/php
   - A page builder that is fast & easy, Brizy is a next-gen website builder
   - 依赖quill
-  - Requires PHP: 5.6.20
+  - Requires:  PHP: 5.6.20; WordPress 4.5 or greater
 - https://github.com/dht/gdi
   - CMS written in ReactJS, hosted on Firebase
 

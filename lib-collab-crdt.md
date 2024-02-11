@@ -35,6 +35,7 @@ modified: 2022-04-05T10:10:08.537Z
   - op-insert: sort+insert
   - gc: tombstone
   - interleaving
+  - crdt更多的是元数据设计，数据库层的结构也很重要
 
 - crdt的常见数据结构
   - base-data-structures

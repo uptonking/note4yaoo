@@ -28,7 +28,12 @@ modified: 2023-11-07T16:47:11.499Z
 
 - ## 
 
-- ## 
+- ## Tips for going deep on databases:
+- https://twitter.com/jorandirkgreef/status/1756165626517709004
+  - 1. Pick a conference, like FAST (nice because it’s less DBMS and more focused on the broader hardware/software interactions) and follow the papers/talks from there each year. They might not make sense. Keep chewing the cud.
+  - 2. A DBMS at heart is a filesystem with a different interface/workload. Therefore, see what you can learn from filesystems, especially ZFS.
+
+- I like your 2nd point because I was reading the Sqlite implementation book and about halfway through it, it hit me I was reading almost similar ideas to what I read in the Practical File System book.
 
 - ## 数据库表字段命名的时候，请一定要用 snake_case 千万不要用 CamelCase/camelCase。踩了个大坑
 - https://twitter.com/mayneyao/status/1749974517123002680
