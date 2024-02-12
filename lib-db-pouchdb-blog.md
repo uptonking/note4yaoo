@@ -309,6 +309,21 @@ modified: 2024-01-04T06:56:55.087Z
 - I wouldnt write couchbase-lite off entirely, sync is extremely hard and with Pouch we are still struggling with slow replications and bugs with binary objects. 
   - The couchbase-lite devs have been contributing to PouchDB and couchbase-lite, PouchDB and CouchDB should all interoperatate in a p2p environment, if they dont then its a bug
 # blogs-sync/collab
+- [Event Sourcing with Couchdb _201505](https://www.withouttheloop.com/articles/2015-05-09-event-sourcing-with-couchdb/)
+
+## [Distributed event log with CouchDB | by Thomas Weiss | Medium _201504](https://medium.com/@thomasweiss_io/distributed-event-log-with-couchdb-a36a63cdf337)
+
+- You may guess that one of the biggest challenges in multi-DC deployments is data management. Keeping your data consistent and synchronised across regions is a tricky business. If you don’t really care about response time and/or availability, you can just plug each region to the same physical database, but it kind of defeats the purpose; you would have a single point of failure for all your endpoints and an obvious performance bottleneck. It makes much more sense to rely on replicated data stores and frankly, the challenge is way more interesting!
+- So what we want to achieve is some kind of replication that eventually synchronises our ever-changing data model across all regions. An interesting approach to replicate state changes is to dispatch the incremental changes (or deltas) that are applied to each data store, and have other stores apply the same changes to their model.
+
+- Personally, I think that event sourcing brings an impressive level of flexibility and really transforms the way you consider data management in your systems. By storing your data updates in the most canonical form, you have the freedom to rebuild your data repository in any shape / schema / model that may get relevant later down the road.
+- It’s also interesting to view the event log as your system’s spinal data source, from which you can feed a collection of repositories like a relational database, a search engine, a cache, etc. But that’s beyond the scope of this article.
+- Once our data management relies on an event log, we can consider spreading our back-end system across different regions by replicating each region’s log to the other ones. The goal here is to make sure that each region’s data updates get eventually written in every other one so that all events eventually appear in all regions.
+
+- Some of CouchDB’s features make it particularly suitable to support our event log
+
+- Apache Kafka is a log system whose purpose is precisely to act as a distributed event log platform. I never tried it myself but I have read excellent feedback from people using it at scale.
+- So why CouchDB and not Kafka? Well, Kafka is written in Java, which is quite far from my technical background, and spawning a Kafka setup (which relies on ZooKeeper for clustering) can seem daunting for the . NET guy that I am. Also, my recent good experience with CouchDB and my feeling that it would nicely fit the bill motivated me to take that path.
 
 ## [Data Sync using Sync Gateway | Couchbase Docs](https://docs.couchbase.com/couchbase-lite/current/c/replication.html)
 

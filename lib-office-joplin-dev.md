@@ -20,6 +20,7 @@ modified: 2024-01-28T20:52:21.981Z
   - 未实现web端
 
 - features
+  - 支持本地文件管理?
   - Offline first, so the entire data is always available on the device even without an internet connection.
   - Support notes, to-dos, tags and notebooks.
   - Support for alarms (notifications) in mobile and desktop applications.

@@ -16,7 +16,7 @@ modified: 2022-11-25T15:50:48.226Z
 
 - js-db
   - popular: lowdb, rxdb, gundb, pouchdb, nedb, dexie, watermelon, loki, lovefield, tinybase, acebase
-  - reactive: tinybase, rxdb, dexie, watermelon, vlcn, fireproof
+  - reactive: tinybase, dexie, rxdb, watermelon/rxjs, vlcn, fireproof
   - sync: pouchdb, rxdb, watermelon
   - demos: tinybase, pouchdb
 

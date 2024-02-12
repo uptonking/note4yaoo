@@ -15,6 +15,8 @@ modified: 2023-12-12T08:45:31.670Z
 
 - ## 
 
+- ## 
+
 - ## Blink:  Intent to Ship: WebSocketStream. Someone should do a benchmark comparing message throughput versus WebSocket.
 - https://twitter.com/jarredsumner/status/1755136727415681407
   - If this becomes adopted by other browsers, it is inevitable that Bun and Node will end up supporting it eventually
@@ -37,6 +39,10 @@ modified: 2023-12-12T08:45:31.670Z
   - 需要从服务器高频率更新数据的应用场景，如游戏、社交通讯、实时投票、拍卖、地图定位导航等
   - 协作应用，如白板应用、多人文档、会议等
   - 需要通知的应用，如邮件、实时推送、远程控制、聊天等。
+
+- ## [手写Socks5通信 - HadYang](https://hadyang.github.io/2019/03/socks-proxy/)
+- Socks 协议本身是基于 TCP 的协议，位于应用层与传输层之间的会话层，将应用层的数据透明的传输到 TCP 层
+- Socks5 协议在进行代理通信时，首先需要进行连接、认证等步骤。
 
 - ## [WebSocket 相比普通的 TCP 长连接有什么优势？ - 知乎](https://www.zhihu.com/question/303724564)
 - WebSocket 是应用层协议，tcp 是传输层协议。

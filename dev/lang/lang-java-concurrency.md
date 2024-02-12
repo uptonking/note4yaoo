@@ -29,6 +29,36 @@ modified: 2022-12-19T01:59:01.628Z
   - There are, of course, a lot of types of locking and synchronization mechanisms available other than just the synchronized keywords, such as counting semaphores, reader-writer locks, etc.
   - There are a lot of other types of concurrency as well, such as the actor model.
 
+# discuss-actor-akka/vertx
+- ## 
+
+- ## 
+
+- ## [Akka vs Vert.x vs (any other similar platform) : java _201705](https://www.reddit.com/r/java/comments/6dsd4s/akka_vs_vertx_vs_any_other_similar_platform/)
+- what do you need the reactivity for? If you want to add reactivity so you can say "reactive machine learning", then go ahead do do it with whatever you feel comfortable with (I'd go with Akka).
+  - In pretty much any other case, I'd say there's a reason for ML algorithms/setups not to be reactive: there are better, easier, faster/more efficient alternatives out there for most of the use cases in which you may need a thing or two from reactivity.
+
+- ## 🤔 [is there any way to implement actors model with vertx? _201807](https://github.com/eclipse-vertx/vert.x/issues/2538)
+- are you familiar with verticles? You can think of them as actors. And you can use event bus for sending/receiving messages, so actor model is already implemented.
+
+- how to create signleton verticles in cluster mode? My solution is use unique adress to register verticles, is there any better solutions?
+  - vertx provides HA verticle deployment, it's explained in the docs
+  - vertx HA deployment deploys a singleton on a cluster, please read the docs
+- I have read this doc. but i have another question, how to identity the verticle in vertx HA? deployment id?
+  - yes, or you can roll your own registry/identifier
+
+- ## [Opinions on vertx : scala _201911](https://www.reddit.com/r/scala/comments/e0j3za/opinions_on_vertx/)
+  - I'm curious to hear opinions from the Scala community on vertx (vertx.io). 
+  - As a framework, it has a lot of overlap with akka in building reactive systems. Scala is a supported language for using the toolkit, and in books/documentation they do mention akka on more than one occasion. 
+  - vertx doesn't implement the actor model (like akka) and doesn't have an actor supervision hierarchy, but in many other ways the two toolkits are very similar.
+
+- In my experience, always prefer libraries over frameworks. Akka, vert.x, etc will drag you in their world and once you have an unconventional problem that they don’t solve directly you’ll end up having a really hard time. Scala is already an incredibly powerful language with a rich library ecosystem.
+
+- It does not really matter how a library/framework/toolkit markets or calls itself. What matters is, who has the control. Is it vertx or is it me?
+
+- Well I experimented about Scala and Vert.x and posted about it a while ago here. I think Vert.x would be a good web server, as long as it remains stateless. Vert.x verticle is well, a poor man Akka Actor. It doesn't work by memory sharing, you will have to technically pass Json between them. Also as some people here brought up, actor is a bit controversial in the way it breaks "statelessness".
+
+- A large part of the community doesn't like akka or frameworks, so I'd think it's unlikely a lot of people would take a serious look a Java framework that attempts to do something similar.
 # discuss
 - ## 
 

@@ -9,6 +9,8 @@ modified: 2023-10-11T21:37:25.329Z
 
 # guide
 
+- forums
+  - https://news.ycombinator.com/threads?id=matlin
 # discuss-author
 - ## 
 
@@ -135,7 +137,7 @@ await client.transact(async (tx) => {
 
 - 🪶 Are there any examples showing how to use Sqlite? I'm developing a notes app and will be using sqlite's full text search extension a lot
   - Triplit is pretty opinionated about how things get stored so it doesn't work with existing SQLite schemas. We support basic `like` operators for searching but are definitely interested in supporting full text search. 
-  - If you want to try that out, we use Sqlite in our server implementation so you can see an example there
+  - 👉🏻 If you want to try that out, we use Sqlite in our server implementation so you can see an example there
 
 - 🪶 Is the underlying db using wasm SQLite in the browser? 
   - Triplit can basically bind to any storage capable of providing ordered key values so we have bindings for SQLite but in the browser you're best of doing either in-memory or IndexedDB (both of which are built-in)
@@ -150,7 +152,7 @@ await client.transact(async (tx) => {
   - We don't have any written docs
 - I just switched from firebase realtime to pouchdb. I was getting concerned about firebase "local first" not really working how I expected and pouch fit the bill nicely. I like the idea of field level sync and wonder if triplit would be faster than pouch.
 
-- Why would I use this over POST and server side update db or websockets?
+- 🆚️ Why would I use this over POST and server side update db or websockets?
   - I’d suggest Triplit if you want to make a rich web app similar to Notion. 
   - Under the hood this thing is doing POST and websocket subscriptions. 
   - You can skip all the manual work to wire up optimistic updates, subscription, local storage, pending transaction queue by adopting someone else’s implementation. 
@@ -159,7 +161,7 @@ await client.transact(async (tx) => {
   - Triplit does this all for you automatically with the mental model that your database queries automatically update when any data changes happen even if you're offline. Triplit takes care of reconciling this whether the request succeeds on the server and with concurrent changes from other users.
 - I don't 100% know in the case of triplit, but pouchdb does what you describe for "free" (i.e. you don't need to code it). firebase uses a websocket, pouch uses (I believe) long polling.
 
-- How would this compare to RxDB?
+- 🆚️ How would this compare to RxDB?
   - RxDB is just provides clientside querying and a sync protocol. 
   - Triplit is full stack in that it's designed to run on both client and server and will "just work" out of the box for end to end syncing, querying, and persisting data. Triplit supports relational querying.
 

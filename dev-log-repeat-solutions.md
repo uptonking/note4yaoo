@@ -12,7 +12,7 @@ modified: 2021-07-20T13:50:23.433Z
 
 - tips
   - paas (~~rendering/web~~) may be the future.
-  - 涉猎saas解决方案，积累方案、算法、库、框架、业务模版
+  - 涉猎saas解决方案，积累算法、库/框架、业务模版、解决方案
   - 深入一个项目
     - 前端分析model/view/dataflow，后端分析数据库设计和优化
     - src-code, issues, pr, forks, extensions, most-commented-issues

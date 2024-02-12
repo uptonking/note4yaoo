@@ -79,6 +79,19 @@ modified: 2023-12-15T18:58:15.432Z
   - Payload is made with React and allows you to even customize the entire frontend of the CMS. It uses Node. JS + Express and has ready-to-use Next.js and e-commerce templates. Even has a Stripe plugin.
 
 - And Strapi has a habit of creating tables in your database if you're playing around with things, but never cleans them up (though I hope that fixed this or will fix it).
+# discuss-lowcode
+- ## 
+
+- ## 低代码这东西老板不会用，程序员不会用。
+- https://twitter.com/xicilion/status/1756797587896873445
+- 基本上低码只能handle简单重复的那部分开发， 复杂的和customized 的部分用低码比自己写的麻烦恶心多了
+- 降本增效的情况下，让低水平的外包用，甚至产品和业务人员直接用（一些标准化的简单流程，报表类）
+
+- https://twitter.com/belliedmonkey/status/1756720462326088150
+- 我觉得低代码这个名字就取得不好，让专业程序员天然想排斥。
+  - 应该叫类似于shipfast，“快搭” 这样的名字。
+  - 因为代码量减少是手段，提高效率降低成本才是目标。客户更喜欢你直接帮他完成目标而不是给他一个方法。
+- 甚至更垂直一点，线上商城快搭平台
 # discuss
 - ## 
 

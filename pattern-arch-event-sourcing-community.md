@@ -233,34 +233,6 @@ that commit position, thus providing "read your own writes" semantics.
   - Yes. Or you can do this as a part of maintenance job. Like, once a week. 
   - It can be done outside of reSolve. 
   - Or you can do system event in the app to trigger this.
-# discuss-cdc/change-data-capture
-- ## 
-
-- ## 
-
-- ## Seven Ways to Put CDC to Work
-- https://twitter.com/gunnarmorling/status/1720468080281702888
-  - [Seven Ways to Put CDC to Work](https://www.decodable.co/blog/seven-ways-to-put-cdc-to-work)
-
-- ## [Why NoSQL | Hacker News_202110](https://news.ycombinator.com/item?id=28767996)
-- > Use Debezium or similar to broadcast entity changes to a Kafka topic keyed on entity id. If you want to retain all changes (e.g., for event streaming), then use an appropriate retention strategy. If you want to retain only the latest state, use log compaction - it will retain the latest record with a given key.
-- Yes, now keep tugging(沿某方向拉或拖) on the thread of that thought. 
-  - If you try to write code to reconstruct the state of your relational database based on those changes, you've got two copies of your logic that will inevitably get out of sync, and you'll have bugs that you only discover when you try to actually do it. (And if you only record differences between writes that actually made it into the relational database, you haven't solved the original problem of data being lost because writes are rejected). 
-  - What you want to do is instead make those Kafka events the primary "source of truth" and construct the "current state of the world" based on that, i.e. event sourcing.
-  - You don't, and can't, make use of transactions with that approach - you get (eventual) consistency because each log is ordered, which gives you the properties that you want with less of the downsides (deadlocks), but writing and reading the eventual results of that write is a fundamentally async process (which is good in the long term - it forces you think about your dataflow and avoid loops - though it might involve more work upfront). 
-  - 👉🏻 And you don't really have relationality - if you need a relation in your live dataflow, you'll generally join at the event pipeline level and make the joined thing its own stream (much like a materialized view in SQL-land). You can build secondary indices etc. but those are explicitly a secondary thing layered on top of your primary datastore.
-
-- ## 💡 Someone got me wondering yesterday: would it be hard to simulate a stream of change-data-capture?
-- https://twitter.com/MichaelDrogalis/status/1711844926642848132
-  - It required a few extra functions, but it works great. It builds off the idea of state machines that I talked about last week.
-  - Modeled after @gunnarmorling 's Debezium
-  - 提供了事件数据json示例
-- Harder than it looks!
-  - It was! Lots of little rules, like an upsert can't happen before an insert, and not all keys should change on every upsert, etc.
-  - I've been there for sure! Wracked my brain. Probably top 5 hardest programming problems I've worked on.
-- Is this a paid only offering? 
-  - yeah
-
 # discuss-cons
 - [When not to use Event Sourcing?](https://event-driven.io/en/when_not_to_use_event_sourcing/)
 
@@ -414,6 +386,24 @@ that commit position, thus providing "read your own writes" semantics.
 
 # discuss
 - ## 
+
+- ## [The Ever Growing Event Store _201009](https://groups.google.com/g/dddcqrs/c/Ohdi49e9R5w)
+- I'm able to cover off most of the common questions, but wound up not having a good story for "If the event store just keeps on growing, how do you manage that data?"
+  - backup and restore (10 years of events is a lot of events)
+  - size of event store over time (what's your load)
+  - keeping inserts performant on an ever-growing database
+  - Also, has anyone ever deleted old events, and if so, what was the outcome?
+
+- ## [Why use Event Sourcing : programming](https://www.reddit.com/r/programming/comments/2yqg50/why_use_event_sourcing/)
+- I'm using ES in a point-of-sale application that's backed by CouchDB. The events are logged in Couch, which means I can reconstitute in a couple ways (map reduce for example) but clients mostly read "query" events as a subscribable changes streams. 
+  - To deal with the problem of strong typing, the events are versioned. In this way, it's not really much different than schema changes or API changes, ie. if your restructure your RDBMS, you'll have a migration headache as well.
+  - Ultimately, I think CQRS is more vital to adaptation. By divorcing "mutation" (commands) concerns from the "read" (query) concerns, I think I've sidestepped a lot of the problems that other MVC formulations face. Also, a pretty standard ES technique is check-points. If your obsolete types "roll-up" into a modern "check-point" type (or types actually), it provides another avenue for migration.
+  - None of this diminishes your point. The system depends on its events and the structure of those events as the Source of Truth and unlike most designs, you ideally carry forward old types. I don't know if this is the "tough" part though. I think reasoning about ES systems might be more natural to functional programmers where ideas like immutability or persistent data reign.
+
+- You are taking "replaying" too literally. No one ever "replays" events as in reproduce all the real world actions.
+  - It is no different than replaying database transaction log. You simply restore the state of the database itself to the latest snapshot, or to any point in time if you like.
+  - As for the actions you are confusing events with commands. Event is simply the result of a successful command that is recorded to the database.
+- Exactly. That's one of the key pieces to understand about event sourcing -- commands are ephemeral, events are permanent and the only source of truth. You get a command to process a credit transaction, you process it, and you record the result in an event. In the future, you're just reconstituting state by looking at what happened, you're not making it happen again.
 
 - ## [Show HN: Bemi, enabling Event Sourcing for any database | Hacker News_202311](https://news.ycombinator.com/item?id=38164797)
 

@@ -9,8 +9,21 @@ modified: 2023-09-13T14:37:51.659Z
 
 # guide
 
+# blogs-cqrs
+- [Simple CQRS in NodeJS with Typescript _202301](https://itnext.io/simple-cqrs-in-nodejs-with-typescript-6da6d3e8a420)
+  - [How to create simple and scalable event driven NodeJS services. | by Ilija | ITNEXT](https://itnext.io/how-to-create-simple-and-scalable-event-driven-nodejs-services-14e9dee75a74)
 # blogs
 - [kappa architecture vs event sourcing](https://github.com/tschudin/ssb-icn2019-paper/issues/6)
+
+## [Why Event Sourcing?](https://abdullin.com/post/event-sourcing-why/)
+
+- Flexibility
+- Messaging Capabilities
+- Improve performance
+- Simplify Developer's Life
+- Downsides
+  - Defining these events is a complex art of it's own, which requires skills in domain modeling 
+  - There is little software and hardware to support event sourcing
 
 ## 👨🏻‍🏫 microsoft-learn event sourcing
 
@@ -44,17 +57,61 @@ modified: 2023-09-13T14:37:51.659Z
 - In conclusion, each data store has its strengths and limitations for Event Sourcing. 
   - It is essential to consider factors such as scalability, consistency, sequencing, transactionality, and query support when selecting a suitable data store for an event-sourced system.
 
-## 🌰 [Event Source your Spreadsheets for Flexibility and Maintainability_202208](https://berk.es/2022/08/16/event-source-your-spreadsheets-for-flexibility-and-maintainability/)
+## 📈🌰 [Event Source your Spreadsheets for Flexibility and Maintainability_202208](https://berk.es/2022/08/16/event-source-your-spreadsheets-for-flexibility-and-maintainability/)
 
 - Spreadsheets can be kept clean, clear, extendable, by organizing them with ideas from Event Sourcing.
   - It is an architecture to clearly distinguish logic from input from presentation in a spreadsheet. 
 
 ## 🌰📝 [Building offline-first web and mobile apps using event-sourcing_201907](https://flpvsk.com/blog/2019-07-20-offline-first-apps-event-sourcing/)
 
-- 👥 discussion
+- Today CRUD is the default paradigm for managing data in a user-facing application. 
+  - It works fine if the user’s device has a stable internet connection, but makes the app unusable in the case of an absent or poor connection. 
+  - Even when online using CRUD eventually leads to loss of data and ordering issues due to the concurrent nature of network communication.
+- This post is a detailed description of how I use event-sourcing to overcome limitations of CRUD and some of the problems that come with this approach.
+- When we use CRUD, we tether our frontend application to the server. 
+  - The server’s database becomes the ultimate source of truth. 
+  - The UI becomes a view of the server’s database. Keeping that view up to date is hard. 
+  - Adding layers of caching and processing in between the frontend and the database makes it even harder.
 
-- [Building offline-first web and mobile apps using event-sourcing](https://www.reddit.com/r/javascript/comments/cfz5aj/building_offlinefirst_web_and_mobile_apps_using/)
-  - There's another con to the approach which the article doesn't state explicitly - the requirement to move the business logic to the client, which may be an issue due to intellectual property. By the way, finally Redux "reducers" make sense to me.
+- There are tricks we could employ to improve the situation, without having to get rid of CRUD. For example:
+  - Poll data from the server at regular intervals to make sure UI is up to date with the server; 
+  - Restrict offline edits, using regular ping-style checks to the API host to determine whether we’re offline; 
+  - Use a versioning system similar to the one in CouchDB. Only allow those updates that have the up-to-date version number of the object attached.
+- These tricks might make the system a bit more reliable, but they will worsen user experience.
+
+- A better way is to untether the frontend from the server. 
+- The client app needs to be able to:
+  - Work online, offline or on a slow or unreliable connection; 
+  - It should provide full, unrestricted experience when offline; 
+  - Once two instances of the app had a chance to exchange messages (via a server or directly), they need to be able to converge on the same value; 
+
+- To do that we need to move the app logic to the client. Make the user-facing app behave more like Winamp less like Soundcloud.
+
+- In the client-server model, the server is the ultimate authority and hence the ultimate bottleneck. 
+- We need to move towards a peer-to-peer or local-first model.
+
+- 🌹 Pros of event-sourcing
+  - The app can work online / offline and with poor connectivity; 
+  - We can share most of the code for working with events and snapshots across the server and different clients; 
+  - Concurrency issues become possible to detect and debug; 
+  - The amount of traffic the app generates decreases; 
+  - We can add offline features gradually; 
+  - We can vary depending on a feature or even user preferences how much data we want to store for offline use; 
+  - Client devices can sync with each other without relying on the server; 
+  - We can change business logic retroactively by changing reducers, as long as events contain all the necessary data for the new reducer to work; 
+  - We can store additional metadata with the event. Things like the user that made the edit and the timestamp.
+
+- 🐛 Cons of event-sourcing
+  - The amount of data we need to store on devices and especially on the server grows significantly. That issue is still an area of active research. If you’re curious about the subject, check out Victor’s work on RON
+  - We’re bringing business logic to the client, that might be a security or an intellectual property concern; 
+  - It’s a new paradigm for many developers. It takes time and effort to get a hang of it and there’s not much information out there.
+
+- I use CRUD for the data that rarely changes, doesn’t need to be updated offline or by several users at a time. 
+  - I use event-sourcing for everything that needs offline and real-time functionality: chat, collaborative editing, local-first applications.
+
+### 👥 [Building offline-first web and mobile apps using event-sourcing](https://www.reddit.com/r/javascript/comments/cfz5aj/building_offlinefirst_web_and_mobile_apps_using/)
+
+- There's another con to the approach which the article doesn't state explicitly - the requirement to move the business logic to the client, which may be an issue due to intellectual property. By the way, finally Redux "reducers" make sense to me.
 
 ## 📝 [Mistakes we made adopting event sourcing (and how we recovered)_201906](http://natpryce.com/articles/000819.html)
 
@@ -190,13 +247,34 @@ modified: 2023-09-13T14:37:51.659Z
 - And there appears the #1 rule in all of software: whatever opinion you hold on a particular subject, there is someone who strongly believes the exact opposite is true.
 
 - Second the recommendation for Axon. We use it for a financial transaction processing system at work and, while it is not a silver bullet, it has been a big help in keeping our architecture clean and consistent and scalable. I especially like how easy it makes writing meaningful, high-quality tests (though that is likely true of any event sourcing framework).
-# blogs-collab-crdt
+# blogs-es-crdt
 - [Replicated Event Sourcing • Akka Documentation](https://doc.akka.io/docs/akka/current/typed/replicated-eventsourcing.html)
   - The rule for operation-based CRDT’s is that the operations must be commutative
   - in other words, applying the same events (which represent the operations) in any order should always produce the same final state. 
   - You may assume each event is applied only once, with causal delivery order.
 
-## 💡 [LWW vs P2P Event Log – vlcn.io](https://vlcn.io/blog/lww-vs-dag)
+## [Downsides of Local First / Offline First | RxDB - JavaScript Database](https://rxdb.info/downsides-of-offline-first.html)
+
+- You do not have to handle conflicts if they cannot happen in the first place. 
+  - You can achieve that by designing a write only database where existing documents cannot be touched. 
+  - Instead of storing the current state in a single document, you store all the events that lead to the current state. 
+  - Sometimes called the "everything is a delta" strategy, others would call it Event Sourcing. 
+  - Like an accountant that does not need an eraser, you append all changes and afterwards aggregate the current state at the client.
+
+- There is this thing called conflict-free replicated data type, short CRDT. 
+  - Using a CRDT library like automerge will magically solve all of your conflict problems. 
+  - Until you use it in production where you observe that implementing CRDTs has basically the same complexity as implementing conflict resolution strategies.
+
+## [CRDTs _202209](https://www.gatlin.io/content/crdts)
+
+- Regarding internal state management, you can think of operation-based CRDTs as analogous to event sourcing. It is an implementation detail, but presumably a "pure" operation-based CRDT will store "just" the events, and compute the state from that (which it may or may not store, internally). 
+  - State-based CRDTs will store the state internally (and may or may not store message events depending on how broadcasting is implemented).
+
+- An ORSet, or "Observed-Remove Set", is the same as an AWSet, or "Add-Wins Set". 
+  - It is a way of defining the tie-breaking semantics of conflicting, concurrent updates. 
+  - If concurrent operations call for a remove and an add, the add wins.
+
+## 🆚️ [LWW vs P2P Event Log – vlcn.io](https://vlcn.io/blog/lww-vs-dag)
 
 - [SQLite Peer to Peer Event Log / Matt](https://observablehq.com/d/dc2bbfad6d64fb5e)
 
@@ -229,6 +307,32 @@ modified: 2023-09-13T14:37:51.659Z
   - We currently re-pull and re-apply the entire DAG on sync rather than doing incremental updates. 
   - We also sync the entire DAG between nodes rather than delta states. 
   - How to incrementally process the DAG is a separate topic.
+
+## [Event Sourcing V1 - Dima Korolev _202309](https://dimakorolev.substack.com/p/event-sourcing-v1)
+
+- The kryptonite for the CRDT approach is any problem where the order of mutations matters, and thus contention is impossible to avoid.
+
+- It is then often best to persuade the product owners to drop the strong consistency requirement, as it is orders of magnitude easier to build a system that is allowed to drop or overwrite a bit of data once in a blue moon, compared to building a bulletproof strongly consistent system. The designs then quickly get into the CRDT- and eventual-consistency territory, where a wealth of knowledge exists on how to do things right.
+
+## [Eventuate - A service framework for operation-based CRDTs _201610](https://krasserm.github.io/2016/10/19/operation-based-crdt-framework/)
+
+- The two CmRDT update phases, prepare and effect, are closely related to the update phases of event-sourced entities, command handling and event handling, respectively
+
+## [Data Laced with History: Causal Trees & Operational CRDTs _201803](http://archagon.net/blog/2018/03/24/data-laced-with-history/)
+
+- CmRDTs, or operation-based CRDTs, only require peers to exchange mutation events, but place some constraints on the transport layer. 
+  - (For instance, exactly-once and/or causal delivery, depending on the CmRDT in question.) 
+- With CvRDTs, or state-based CRDTs, peers must exchange their full data structures and then merge them locally, placing no constraints on the transport layer but taking up far more bandwidth and possibly CPU time. 
+- Both types of CRDT are equivalent and can be converted to either form.
+
+- Usually, operations in a distributed system are executed and discarded on receipt. However, we can also store the operations as data and play them back when needed to reconstruct the model object. (This pattern goes by the name of event sourcing in enterprise circles.) An event log in causal order can be described as having a partial order, since concurrent operations may appear in different positions on different sites depending on their order of arrival. If the log is guaranteed to be identical on all devices, it has a total order. Usually, this can be achieved by sorting operations first by their timestamp, then by some unique origin ID. (Version vectors work best for the timestamp part since they can segregate concurrent events by site instead of simply interleaving them.) Event logs in total order are especially great for convergence: when receiving a concurrent operation from a remote site, you can simply sort it into the correct spot in the event log, then play the whole log back to rebuild the model object with the added influence from the new operation. But it’s not a catch-all solution, since you can run into a O(n2) complexity wall depending on how your events are defined.
+- Now, there are two competing approaches in strong eventual consistency state-of-the-art, both tagged with rather unappetizing initialisms: Operational Transformation (OT) and Conflict-Free Replicated Data Types (CRDTs).
+- In contrast to OT, the CRDT approach considers sync in terms of the underlying data structure, not the sequence of operations. 
+  - A CRDT, at a high level, is a type of object that can be merged with any objects of the same type, in arbitrary order, to produce an identical union object. CRDT merge must be associative, commutative, and idempotent, and the resulting CRDT for each mutation or merge must be “greater” than than all its inputs. (Mathematically, this flow is said to form a monotonic semilattice. For more info and some diagrams, take a look at John Mumm’s excellent primer.) 
+  - As long as each connected peer eventually receives the updates of every other peer, the results will provably converge—even if one peer happens to be a month behind. 
+  - This might sound like a tall order, but you’re already aware of several simple CRDTs. 
+  - For example, no matter how you permute the merge order of any number of insert-only sets, you’ll still end up with the same union set in the end. Really, the concept is quite intuitive!
+- CmRDTs, or operation-based CRDTs, only require peers to exchange mutation events, but place some constraints on the transport layer. (For instance, exactly-once and/or causal delivery, depending on the CmRDT in question.) With CvRDTs, or state-based CRDTs, peers must exchange their full data structures and then merge them locally, placing no constraints on the transport layer but taking up far more bandwidth and possibly CPU time. Both types of CRDT are equivalent and can be converted to either form.
 # blogs-vendors
 
 ## [wix: Event Driven Architecture - 5 Pitfalls to Avoid_202208](https://medium.com/wix-engineering/event-driven-architecture-5-pitfalls-to-avoid-b3ebf885bdb1)

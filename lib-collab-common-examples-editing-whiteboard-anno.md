@@ -156,7 +156,7 @@ modified: 2022-11-07T17:36:22.236Z
   - The philosophy of Statecraft is to "ship the architecture diagram". 
     - The API is designed to make it easy to re-expose a statecraft store over the network.
   - [Show FDB: A scalable realtime text editor on top of foundationdb_201901](https://forums.foundationdb.org/t/show-fdb-a-scalable-realtime-text-editor-on-top-of-foundationdb/1082)
-    - I’m working on a realtime data processing pipeline / event sourcing system lately called statecraft 45. Over the last few days I’ve added foundationdb backend support.
+    - I’m working on a realtime data processing pipeline / event sourcing system lately called statecraft. Over the last few days I’ve added foundationdb backend support.
     - The current code also re-stores the whole text document with every edit, but this is just because I haven’t tuned it. 
 
 - https://github.com/Rishabh-malhotraa/caucus

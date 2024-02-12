@@ -138,6 +138,32 @@ modified: 2023-09-12T09:37:22.608Z
     - es store deltas instead of the current state
     - Git stores complete snapshots of objects, not diffs 
 
+- https://github.com/cloudnativeentrepreneur/sourced /MIT/202108/ts
+  - https://github.com/mateodelnorte/sourced /202005/js
+  - Tiny framework for building models with the event sourcing pattern (events and snapshots) that works in Node.js and the browser
+  - Unlike Active Record where entity state is persisted on a one-model-per row database format, event sourcing stores all the changes (events) to the entity, rather than just its current state. 
+  - The current state is derived by loading all events, or a latest snapshot plus subsequent events, and replaying them against the entity.
+  - Sourced makes no assumptions about how you store your events and snapshots. 
+    - The library is small and tight with only the required functionality to define entities and their logic, enqueue and emit events, and track event state to later be persisted.
+  - https://github.com/CloudNativeEntrepreneur/sourced-repo-svelte-local-storage-store
+    - https://github.com/CloudNativeEntrepreneur/svelte-local-storage-store
+    - A store that adds pub/sub to local storage. Supports changes across multiple tabs.
+  - https://github.com/mateodelnorte/sourced-repo-mongo /202106/js
+    - mongo data store and repository for sourced-style event sourcing models
+  - https://github.com/CloudNativeEntrepreneur/sourced-repo-typeorm
+    - uses TypeORM to persist events
+  - https://github.com/PDMLab/sourced-ts /ts/inactive
+    - forked from sourced for building models with the event sourcing pattern (events and snapshots).
+    - https://github.com/PDMLab/sourced-repo-mongo-ts
+  - https://github.com/dermidgen/sourced-repo-couchdb /MIT/201605/js
+    - couchdb data store and repository for sourced-style event sourcing models
+    - 依赖sourced.v0.1、cradle(CouchDB client)
+
+- https://github.com/petrjanda/node-cqrs /201205/js
+  - Node.js implementation of CQRS
+  - couchdb was chosen for it simple API and architecture which is very much in sync with event sourcing, one of the key concepts of the solution
+  - With current implementation, only CouchDB is supported for both event sourcing storage and views cache storage.
+
 - https://github.com/thenativeweb/node-eventstore /MIT/js/legacy/inactive
   - http://eventstore.js.org/
   - EventStore Implementation in node.js
@@ -169,24 +195,6 @@ modified: 2023-09-12T09:37:22.608Z
   - https://github.com/albe/node-event-storage-ui /js
     - an admin dashboard for inspecting a running node-event-storage on the same machine. 
     - It is built using nextjs with SSR and based on the creative-tim material dashboard dark.
-
-- https://github.com/cloudnativeentrepreneur/sourced /202108/ts
-  - https://github.com/mateodelnorte/sourced /js
-  - Tiny framework for building models with the event sourcing pattern (events and snapshots) that works in Node.js and the browser
-  - Unlike Active Record where entity state is persisted on a one-model-per row database format, event sourcing stores all the changes (events) to the entity, rather than just its current state. 
-  - The current state is derived by loading all events, or a latest snapshot plus subsequent events, and replaying them against the entity.
-  - Sourced makes no assumptions about how you store your events and snapshots. 
-    - The library is small and tight with only the required functionality to define entities and their logic, enqueue and emit events, and track event state to later be persisted.
-  - https://github.com/CloudNativeEntrepreneur/sourced-repo-svelte-local-storage-store
-    - https://github.com/CloudNativeEntrepreneur/svelte-local-storage-store
-    - A store that adds pub/sub to local storage. Supports changes across multiple tabs.
-  - https://github.com/mateodelnorte/sourced-repo-mongo /202106/js
-    - mongo data store and repository for sourced-style event sourcing models
-  - https://github.com/CloudNativeEntrepreneur/sourced-repo-typeorm
-    - uses TypeORM to persist events
-  - https://github.com/PDMLab/sourced-ts /ts/inactive
-    - forked from sourced for building models with the event sourcing pattern (events and snapshots).
-    - https://github.com/PDMLab/sourced-repo-mongo-ts
 
 - https://github.com/fraktalio/fmodel-ts /ts
   - https://fraktalio.com/fmodel/
@@ -268,7 +276,7 @@ modified: 2023-09-12T09:37:22.608Z
 - https://github.com/mafintosh/event-source-stream
   - EventSource implemented in node and the browser as a readable stream
 
-- https://github.com/qas/examples-nodejs-cqrs-es-swagger
+- https://github.com/qas/examples-nodejs-cqrs-es-swagger /201909/ts
   - A Node.js CQRS and Event Sourcing Microservice Example Using Nest.js, Event Store, and Swagger
 
 - https://github.com/binaryminds/react-native-sse /202304/js
@@ -362,8 +370,11 @@ modified: 2023-09-12T09:37:22.608Z
   - https://docs.factcast.org/
   - Simple EventStore based on PostgreSQL
   - a 'good enough' event store using PostgreSQL for persistence, and offers remoting via GRPC.
-# es-collab
-- https://github.com/andykswong/mithic /MIT/ts
+# es-collab/crdt
+- solutions-es-crdt
+  - logux
+
+- https://github.com/andykswong/mithic /MIT/202402/ts
   - https://andykswong.github.io/mithic/
   - Modular library for real-time, offline-first isomorphic JavaScript applications
   - provides the building blocks for creating real-time, offline-first client-server or decentralized applications, using CQRS architecture with CRDT eventsourcing for storage and data replication.
@@ -384,14 +395,14 @@ modified: 2023-09-12T09:37:22.608Z
   - The philosophy of Statecraft is to "ship the architecture diagram". 
     - The API is designed to make it easy to re-expose a statecraft store over the network.
   - [Show FDB: A scalable realtime text editor on top of foundationdb_201901](https://forums.foundationdb.org/t/show-fdb-a-scalable-realtime-text-editor-on-top-of-foundationdb/1082)
-    - I’m working on a realtime data processing pipeline / event sourcing system lately called statecraft 45. Over the last few days I’ve added foundationdb backend support.
+    - I’m working on a realtime data processing pipeline / event sourcing system lately called statecraft. Over the last few days I’ve added foundationdb backend support.
     - The current code also re-stores the whole text document with every edit, but this is just because I haven’t tuned it. 
 
 - https://github.com/soundcloud/roshi /3.1kStar/bsd/go/soundcloud
   - Roshi implements a time-series event storage via a LWW-element-set CRDT with limited inline garbage collection. 
   - Roshi is a stateless, distributed layer on top of Redis and is implemented in Go. 
   - It is partition tolerant, highly available and eventually consistent.
-  - [Roshi: a CRDT system for timestamped events | SoundCloud Blog_201405](https://developers.soundcloud.com/blog/roshi-a-crdt-system-for-timestamped-events)
+  - [Roshi: a CRDT system for timestamped events | SoundCloud Blog _201405](https://developers.soundcloud.com/blog/roshi-a-crdt-system-for-timestamped-events)
 # es-non-js
 - https://github.com/EventStore/EventStore /csharp
   - https://eventstore.com/
@@ -441,16 +452,25 @@ modified: 2023-09-12T09:37:22.608Z
   - opinionated library used to achieve cqrs/es in Rust.
   - Event Sourcing RS uses under the hood sqlx.
 
-- https://github.com/PumpkinDB/PumpkinDB /201708/rust/inactive
+- https://github.com/PumpkinDB/PumpkinDB /MPLv2/201708/rust/inactive
   - an immutable ordered key-value database engine
   - By guaranteeing the immutability of key's value once it is set, PumpkinDB forces its users to think of their data through a temporal perspective.
-  - The core ideas behind PumpkinDB stem from the so called lazy event sourcing approach which is based on storing and indexing events while delaying domain binding for as long as possible.
+  - 💡 The core ideas behind PumpkinDB stem from the so called lazy event sourcing approach which is based on storing and indexing events while delaying domain binding for as long as possible.
+  - That said, the intention of this database is to be a building block for different kinds of architectures, be it classic event sourcing (using it as an event store), lazy event sourcing (using indices) or anything else. 
+  - While an external application can talk to PumpkinDB over a network connection, PumpkinDB's engine itself is embeddable and can be used directly.
   - [Show HN: PumpkinDB, an event sourcing database engine | Hacker News_201702](https://news.ycombinator.com/item?id=13738051)
+  - [PumpkinDB (an event sourcing database engine written in Rust) has been just released : rust _201702](https://www.reddit.com/r/rust/comments/5wa6ly/pumpkindb_an_event_sourcing_database_engine/)
+    - Why use an event sourcing database?
+      - I think the main difference would by fast writes (event sourcing) vs. fast reads (temporal).
+      - Temporal is as fast as you can get with writes since it is append only. The only issue is updating the index which is most likely a hash lookup.
+      - If you assume a temporal database that is built on a append-only log, then I don't think there is a significant difference to a event sourcing database. Now that you say it probably wouldn't make sense to model it as anything other than an append only log.
+    - It looks kind of a lot like CouchDB, except without the built-in JSON semantics. So more pure key/value, but with a similar approach to what could be query servers.
+      - CouchDB doesn't have the interface to do convenient event sourcing with it, but it can be done and is somewhat fast. (i built such a system quite some time ago)
 
-- https://github.com/Actyx/Actyx /apache2/202311/rust/ts
+- https://github.com/Actyx/Actyx /apache2/202402/rust/ts
   - https://developer.actyx.com/
   - a decentralized event database, streaming and processing engine that allows you to easily build local-first cooperative apps.
-  - durable event stream storage in peer-to-peer network using libp2p and ipfs-embed
+  - durable event stream storage in peer-to-peer network using `libp2p` and `ipfs-embed`.
   - tag-based and time-based indexing of events
   - full-fledged support for event-sourcing, guaranteeing eventual consistency
   - aql: full-fledged support for event-sourcing, guaranteeing eventual consistency
@@ -526,6 +546,12 @@ modified: 2023-09-12T09:37:22.608Z
 - https://github.com/pavankjadda/KafkaStream-CQRS-EventSourcing /java
   - Event Sourcing(CQRS) and Materialized views with Kafka Streams
 
+- https://github.com/banq/jdonframework /apache2/201909/java
+  - a Domain Events framework that supports pub-sub asynchronous programming model.
+  - using JdonFramework, you can build your Domain Driven Design + CQRS + EventSourcing applications with asynchronous concurrency and higher throughput.
+  - Jdonframework help you implement a clean and hexagonal architecture
+  - domain events is the basice about CQRS and EventSourcing, In CQRS, using domain events update query model; In Eventsourcing, append domain events into storage repository.
+
 - https://github.com/egetman/jes /202006/java
   - Java Event Store implementation
 - https://github.com/eventsourcing/es4j /201702/java
@@ -555,12 +581,14 @@ modified: 2023-09-12T09:37:22.608Z
   - support push and pull queries
   - ksqlDB allows you to define materialized views over your streams and tables. Materialized views are defined by what is known as a "persistent query". These queries are known as persistent because they maintain their incrementally updated results using a table.
 
-- https://github.com/hallgren/eventsourcing /go
+- https://github.com/hallgren/eventsourcing /MPLv2/202402/go
   - an experiment to try to generialize @jen20's way of implementing event sourcing.
   - [Event Sourcing in Go - jen20.dev](https://jen20.dev/post/event-sourcing-in-go/)
     - https://github.com/jen20/go-event-sourcing-sample
   - [Event sourcing a year later](https://www.reddit.com/r/golang/comments/mp8j2h/event_sourcing_a_year_later/)
     - The main pkg is now totally free from dependencies and instead event stores and snapshot stores are implemented as sub modules making there dependencies isolated.
+  - https://github.com/jen20/go-event-sourcing-sample /201510/go
+    - A small sample of Event Sourcing in Go
 - https://github.com/looplab/eventhorizon /go
   - a CQRS/ES toolkit for Go.
   - NOTE: Event Horizon is used in production systems but the API is not final!
@@ -584,8 +612,9 @@ modified: 2023-09-12T09:37:22.608Z
   - RangeDB supports various backend database engines: PostgreSQL, LevelDB, EventStoreDB, In Memory
   - DDD-CQRS-ES slack group channel: #rangedb
 
-- https://github.com/dhamidi/ess /go/inactive
+- https://github.com/dhamidi/ess /201508/go/inactive
   - provides a library for building event sourced systems.
+  - [Library for building event sourced systems in Go : golang _201508](https://www.reddit.com/r/golang/comments/3i7kgx/library_for_building_event_sourced_systems_in_go/)
 
 - https://github.com/pyeventsourcing/eventsourcing /python
   - https://eventsourcing.readthedocs.io/
@@ -989,7 +1018,7 @@ modified: 2023-09-12T09:37:22.608Z
   - This tool uses Change Data Capture as the event source and Serverless Architecture as the fundamental design pattern for data processing.
   - As opposed to Apache Kafka where all of the streaming components are packaged up into a platform, this tool aims to give you more control of your event-driven system
 
-- https://github.com/debezium/debezium /java
+- https://github.com/debezium/debezium /apache2/202402/java
   - https://debezium.io/
   - provides a low latency data streaming platform for change data capture (CDC). 
   - You set up and configure Debezium to monitor your databases, and then your applications consume events for each row-level change made to the database. 

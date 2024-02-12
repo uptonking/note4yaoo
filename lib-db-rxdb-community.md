@@ -11,6 +11,7 @@ modified: 2023-10-08T10:54:57.575Z
 
 - forums
   - https://news.ycombinator.com/from?site=rxdb.info
+  - https://news.ycombinator.com/threads?id=realPubkey
 # discuss-stars
 - ## 
 
@@ -82,7 +83,7 @@ modified: 2023-10-08T10:54:57.575Z
 - I think Oracle APEX works on the same premise? Store locally in indexedDB and sync up when the connection is back on-line. No need for difficult programming, APEX does this out of the box .
   - Anyhow, a way to force this behaviour in APEX is to make every user interaction a write action on the DB. This way you either save locally or to the backend (but you don't have to worry about the sync between the two).
 
-- ## 💡🔥 [RxDB – a real-time database on top of PouchDB | Hacker News_202009](https://news.ycombinator.com/item?id=24340802)
+- ## 🔥 [RxDB – a real-time database on top of PouchDB | Hacker News_202009](https://news.ycombinator.com/item?id=24340802)
 
 - The concept or RxDB, being able to iterate observables of your change stream, is great. 
   - Centering on schemas and typescript is as well. 

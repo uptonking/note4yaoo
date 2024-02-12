@@ -11,6 +11,12 @@ modified: 2024-01-04T06:34:57.448Z
 
 - resources
   - [couchdb blog](https://blog.couchdb.org/)
+# blogs
+- [CouchDB - many-to-many relations _201409](https://danielwertheim.se/couchdb-many-to-many-relations/)
+- [Document database modelling gone bad _201408](https://danielwertheim.se/document-database-modelling-gone-bad/)
+  - Recently I was building a solution for managing some contents. I used a document oriented database for storing the actual contents. In this particular scenario, I used CouchDB. 
+  - One requirement was to be able to reuse content. The reuse strategy picked was, by faking references. 
+  - This post is about the shortcomings that I’ve found with going that route.
 # blogs-vendors
 
 ## [Budibase Cloud January 9th Incident _202401](https://budibase.com/blog/updates/2024/2024-01-09-incident/)

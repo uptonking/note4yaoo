@@ -366,7 +366,7 @@ modified: 2022-04-05T10:08:25.947Z
     - Each Object has an associated ID which is globally unique, and a set of property-value pairs. 
     - Parent-Child relationships are maintained as a link from the child to its parent.
 
-- https://github.com/andykswong/mithic /MIT/ts
+- https://github.com/andykswong/mithic /MIT/202402/ts
   - https://andykswong.github.io/mithic/
   - Modular library for real-time isomorphic JavaScript applications
   - mithic provides the building blocks for creating real-time, offline-first client-server or decentralized applications, using CQRS architecture with CRDT eventsourcing for storage and data replication.
@@ -1059,7 +1059,7 @@ modified: 2022-04-05T10:08:25.947Z
   - Roshi implements a time-series event storage via a LWW-element-set CRDT with limited inline garbage collection. 
   - Roshi is a stateless, distributed layer on top of Redis and is implemented in Go. 
   - It is partition tolerant, highly available and eventually consistent.
-  - [Roshi: a CRDT system for timestamped events | SoundCloud Blog_201405](https://developers.soundcloud.com/blog/roshi-a-crdt-system-for-timestamped-events)
+  - [Roshi: a CRDT system for timestamped events | SoundCloud Blog _201405](https://developers.soundcloud.com/blog/roshi-a-crdt-system-for-timestamped-events)
 
 - https://github.com/hyoo-ru/crowd.hyoo.ru /ts
   - Delta based CRDT with additional abilities.
@@ -1118,6 +1118,9 @@ modified: 2022-04-05T10:08:25.947Z
 - https://github.com/iambriccardo/causal /rust/Operation-based
   - a simple Reliable Causal Broadcast (RCB) protocol written in Rust that implements several CmRDTs.
   - The operations are commutative. However, they are not necessarily idempotent. The communications infrastructure must therefore ensure that all operations on a replica are delivered to the other replicas, without duplication, but in any order.
+
+- https://github.com/dougfort/crdt-genome /MIT/202112/rust
+  - Experiments with Rust CRDTs using Tokio web application framework Axum.
 # apps-examples
 - https://github.com/josephg/statecraft /ISC/201911/ts/inactive
   - Statecraft is a protocol and set of tools for interacting with data that changes over time. 
@@ -1130,7 +1133,7 @@ modified: 2022-04-05T10:08:25.947Z
   - The philosophy of Statecraft is to "ship the architecture diagram". 
     - The API is designed to make it easy to re-expose a statecraft store over the network.
   - [Show FDB: A scalable realtime text editor on top of foundationdb_201901](https://forums.foundationdb.org/t/show-fdb-a-scalable-realtime-text-editor-on-top-of-foundationdb/1082)
-    - I’m working on a realtime data processing pipeline / event sourcing system lately called statecraft 45. Over the last few days I’ve added foundationdb backend support.
+    - I’m working on a realtime data processing pipeline / event sourcing system lately called statecraft. Over the last few days I’ve added foundationdb backend support.
     - The current code also re-stores the whole text document with every edit, but this is just because I haven’t tuned it. 
 
 - https://github.com/Sambigeara/fuzzynote /AGPLv3/go

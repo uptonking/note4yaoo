@@ -27,7 +27,7 @@ modified: 2024-01-04T06:53:48.837Z
   - multi-master syncing database with an intuitive HTTP/JSON API, designed for reliability
 - We care a lot about distributed scaling. CouchDB is highly available and partition tolerant, but is also eventually consistent
 
-## [4. Best Practices — Apache CouchDB® Documentation](https://docs.couchdb.org/en/stable/best-practices/index.html)
+## 💡 [4. Best Practices — Apache CouchDB® Documentation](https://docs.couchdb.org/en/stable/best-practices/index.html)
 
 - 4.1. Document Design Considerations
 - 4.1.1. Don’t rely on CouchDB’s auto-UUID generation
@@ -37,16 +37,25 @@ modified: 2024-01-04T06:53:48.837Z
 - 4.1.2. Alternatives to auto-incrementing sequences
   - Because of replication, as well as the distributed nature of CouchDB, it is not practical to use auto-incrementing sequences with CouchDB
 - 4.1.3. Pre-aggregating your data
-  - If your intent for CouchDB is as a collect-and-report model, not a real-time view, you may not need to store a single document for every event you’re recording. In this case, pre-aggregating your data may be a good idea. 
+  - If your intent for CouchDB is as a collect-and-report model, not a real-time view, you may not need to store a single document for every event you’re recording. 
+  - In this case, pre-aggregating your data may be a good idea. 
   - In this case, using an in-memory store to summarize your statistical information, then writing out to CouchDB every 10 seconds / 1 minute / whatever level of granularity you need would greatly reduce the number of documents you’ll put in your database
   - Later, you can then further decimate your data by walking the entire database and generating documents to be stored in a new database with a lower level of granularity (say, 1 document a day).
+
 - 4.1.4. Designing an application to work with replication
+  - All of the approaches below which allow automated merging of changes rely on having some sort of history, back to the point where the replicas diverged.
   - CouchDB does not provide a mechanism for this itself. It stores arbitrary numbers of old _ids for one document (trunk now has a mechanism for pruning the _id history), for the purposes of replication. However it will not keep the documents themselves through a compaction cycle, except where there are conflicting versions of a document.
-  - Do not rely on the CouchDB revision history mechanism to help you build an application-level version history. Its sole purpose is to ensure eventually consistent replication between databases.
+  - 🚨 Do not rely on the CouchDB revision history mechanism to help you build an application-level version history. Its sole purpose is to ensure eventually consistent replication between databases. It is up to you to maintain history explicitly in whatever form makes sense for your application, and to prune it to avoid excessive storage utilisation
   - Approach 1: Single JSON doc
-  - Approach 2: Separate document per field. A better way is to keep a string representation of index, which can grow as the tree is subdivided.
+  - Approach 2: Separate document per bookmark. 
+    - Whilst replication is now fixed, care is needed with the “ordered” and “nestable” properties of bookmarks.A better way is to keep a string representation of index, which can grow as the tree is subdivided.
   - Approach 3: Immutable history / event sourcing
+    - In this model, instead of storing individual bookmarks, you store records of changes made - “Bookmark added”, “Bookmark changed”, “Bookmark moved”, “Bookmark deleted”. These are stored in an append-only fashion. 
+    - In order to see the full set of bookmarks, you need to start with a baseline set (initially empty) and run all the change records since the baseline was created; and/or you need to maintain a most-recent version and update it with changes not yet seen.
+    - Care is needed after replication when merging together history from multiple sources. You may get different results depending on how you order them
   - Approach 4: Keep historic versions explicitly
+    - You can keep a pointer to the ‘most current’ revision, and each revision can point to its predecessor. On replication, merging can take place by diffing each of the previous versions (in effect synthesising the command logs) back to a common ancestor.
+    - This is the sort of behaviour which revision control systems such as Git implement as a matter of routine, although generally comparing text files line-by-line rather than comparing JSON objects field-by-field.
 - 4.1.5. Adding client-side security with a translucent(半透明的; 真实的；毫不虚假的) database
   - The simplest solutions use a one-way function like SHA-256 at the client to scramble the name and password before storing the information. This solution gives the client control of the data in the database without requiring a thick layer on the database to test each transaction.
   - There are many variations on this theme detailed in the book Translucent Databases
@@ -524,9 +533,8 @@ modified: 2024-01-04T06:53:48.837Z
 - Approach #1: Comments Inlined
 - Approach #2: Comments Separate
 - Optimization: Using the Power of View Collation
-# docs-tips
 
-## [3.13. Miscellaneous Parameters](https://docs.couchdb.org/en/stable/config/misc.html#uuids-configuration)
+## [3.13. config/Parameters](https://docs.couchdb.org/en/stable/config/misc.html#uuids-configuration)
 
 - CouchDB uses sequential UUID by default
   - the choice of UUID has a significant impact on the layout of the B-tree, prior to compaction.

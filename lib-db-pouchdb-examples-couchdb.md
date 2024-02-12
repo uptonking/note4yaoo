@@ -785,6 +785,15 @@ modified: 2023-09-28T20:35:56.153Z
 - https://github.com/RyanLarge13/My-Recipes-Android /202310/js
   - fullstack recipe mobile Android application made with React Native and PouchDB for offline first data persistence
 # pouchdb-event
+- https://github.com/dermidgen/sourced-repo-couchdb /MIT/201605/js
+  - couchdb data store and repository for sourced-style event sourcing models
+  - 依赖sourced.v0.1、cradle(CouchDB client)
+
+- https://github.com/petrjanda/node-cqrs /201205/js
+  - Node.js implementation of CQRS
+  - couchdb was chosen for it simple API and architecture which is very much in sync with event sourcing, one of the key concepts of the solution
+  - With current implementation, only CouchDB is supported for both event sourcing storage and views cache storage.
+
 - https://github.com/stockulus/pouchdb-event-store /201708/js
   - mimimal eventStore on top of pouchdb
 
@@ -1843,6 +1852,14 @@ modified: 2023-09-28T20:35:56.153Z
 
 - https://github.com/chxyang/couchdb-demo-app
   - The source repository for the getting started tutorial for PouchDB
+
+- https://github.com/cdimascio/couchinator /apache2/201907/js
+  - Couchinator enables you to represent CouchDB and Cloudant database(s) using a simple filesystem structure that mimics the actual database structure.
+  - couchinator is a great tool for unit/integration testing and more. 
+  - couchinator is both a library and a command line utility.
+  - Couchinator will only setup and destroy databases defined in your data layout.
+  - https://github.com/cdimascio/couchinator-java-wrapper
+    - couchinator-java-wrapper wraps couchinator, a Node.js based tool, hence to Node.js must be installed in the running environment.
 
 - https://github.com/gr2m/pouchdb-attachments-sync-test /js
   - https://gr2m.github.io/pouchdb-attachments-sync-test/

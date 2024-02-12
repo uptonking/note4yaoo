@@ -11,6 +11,15 @@ modified: 2023-03-11T15:37:59.134Z
 
 # blogs
 
+## [CRDTs _202209](https://www.gatlin.io/content/crdts)
+
+- Regarding internal state management, you can think of operation-based CRDTs as analogous to event sourcing. It is an implementation detail, but presumably a "pure" operation-based CRDT will store "just" the events, and compute the state from that (which it may or may not store, internally). 
+  - State-based CRDTs will store the state internally (and may or may not store message events depending on how broadcasting is implemented).
+
+- An ORSet, or "Observed-Remove Set", is the same as an AWSet, or "Add-Wins Set". 
+  - It is a way of defining the tie-breaking semantics of conflicting, concurrent updates. 
+  - If concurrent operations call for a remove and an add, the add wins.
+
 ## 📝 [You might not need a CRDT, but server reconciliation _Replicache](https://pitch.com/public/a49fccb0-da65-4d64-966e-e519674d951f)
 
 - replicache doesn't use crdt

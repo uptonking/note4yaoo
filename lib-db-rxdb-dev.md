@@ -8,7 +8,14 @@ modified: 2022-12-02T11:16:05.028Z
 # lib-db-rxdb-dev
 
 # guide
+- pros
+  - RxDB replication protocol支持与自定义后端同步，支持http/websocket/webrtc/CouchDB/Firestore
 
+- cons
+  - 付费的插件太多，包括sqlite/indexeddb相关的
+
+- features
+  - ?
 # faq
 - [Questions & Answers · RxDB - JavaScript Database](https://rxdb.info/questions-answers.html)
 

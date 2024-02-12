@@ -265,17 +265,25 @@ update("transactions", {
   - On the other hand, if the number of operations is high it can be better to transmit the whole state instead of all operations. 
   - Also, it can be simpler to update the state of an object than applying the operations on it, as discussed in 2.1.5.
 
-- [Data Laced with History: Causal Trees & Operational CRDTs](http://archagon.net/blog/2018/03/24/data-laced-with-history/)
+- https://github.com/mpareja/node-uncorded /MIT/201701/js
+  - A state-based CRDT was chosen over an operation-based CRDT so we could forgo(放弃) the requirement of a reliable network ensuring idempotent message delivery. 
+  - The downside of a state-based CRDT is that we always replicate a node's entire state. 
+  - Uncorded's small and short-lived state is a great fit here so long as we don't hold remove-set values indefinitely.
+  - Nodes publish changes to listeners via newline delimited JSON representations of their state. Listeners apply the state changes according to the 2P-set merge algorithm.
+# [Data Laced with History: Causal Trees & Operational CRDTs _201803](http://archagon.net/blog/2018/03/24/data-laced-with-history/)
 - CmRDTs, or operation-based CRDTs, only require peers to exchange mutation events, but place some constraints on the transport layer. 
   - (For instance, exactly-once and/or causal delivery, depending on the CmRDT in question.) 
 - With CvRDTs, or state-based CRDTs, peers must exchange their full data structures and then merge them locally, placing no constraints on the transport layer but taking up far more bandwidth and possibly CPU time. 
 - Both types of CRDT are equivalent and can be converted to either form.
 
-- https://github.com/mpareja/node-uncorded
-  - A state-based CRDT was chosen over an operation-based CRDT so we could forgo(放弃) the requirement of a reliable network ensuring idempotent message delivery. 
-  - The downside of a state-based CRDT is that we always replicate a node's entire state. 
-  - Uncorded's small and short-lived state is a great fit here so long as we don't hold remove-set values indefinitely.
-  - Nodes publish changes to listeners via newline delimited JSON representations of their state. Listeners apply the state changes according to the 2P-set merge algorithm.
+- Usually, operations in a distributed system are executed and discarded on receipt. However, we can also store the operations as data and play them back when needed to reconstruct the model object. (This pattern goes by the name of event sourcing in enterprise circles.) An event log in causal order can be described as having a partial order, since concurrent operations may appear in different positions on different sites depending on their order of arrival. If the log is guaranteed to be identical on all devices, it has a total order. Usually, this can be achieved by sorting operations first by their timestamp, then by some unique origin ID. (Version vectors work best for the timestamp part since they can segregate concurrent events by site instead of simply interleaving them.) Event logs in total order are especially great for convergence: when receiving a concurrent operation from a remote site, you can simply sort it into the correct spot in the event log, then play the whole log back to rebuild the model object with the added influence from the new operation. But it’s not a catch-all solution, since you can run into a O(n2) complexity wall depending on how your events are defined.
+- Now, there are two competing approaches in strong eventual consistency state-of-the-art, both tagged with rather unappetizing initialisms: Operational Transformation (OT) and Conflict-Free Replicated Data Types (CRDTs).
+- In contrast to OT, the CRDT approach considers sync in terms of the underlying data structure, not the sequence of operations. 
+  - A CRDT, at a high level, is a type of object that can be merged with any objects of the same type, in arbitrary order, to produce an identical union object. CRDT merge must be associative, commutative, and idempotent, and the resulting CRDT for each mutation or merge must be “greater” than than all its inputs. (Mathematically, this flow is said to form a monotonic semilattice. For more info and some diagrams, take a look at John Mumm’s excellent primer.) 
+  - As long as each connected peer eventually receives the updates of every other peer, the results will provably converge—even if one peer happens to be a month behind. 
+  - This might sound like a tall order, but you’re already aware of several simple CRDTs. 
+  - For example, no matter how you permute the merge order of any number of insert-only sets, you’ll still end up with the same union set in the end. Really, the concept is quite intuitive!
+- CmRDTs, or operation-based CRDTs, only require peers to exchange mutation events, but place some constraints on the transport layer. (For instance, exactly-once and/or causal delivery, depending on the CmRDT in question.) With CvRDTs, or state-based CRDTs, peers must exchange their full data structures and then merge them locally, placing no constraints on the transport layer but taking up far more bandwidth and possibly CPU time. Both types of CRDT are equivalent and can be converted to either form.
 # yjs vs automerge
 
 ## [yjs Compared to Automerge](https://github.com/yjs/yjs/issues/145)

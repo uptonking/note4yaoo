@@ -57,6 +57,14 @@ modified: 2023-11-16T15:00:11.503Z
   - Exemplary real world application built with Vanilla JS Web Components in an Event Driven Architecture
   - Frontend Event Driven Architecture works basically like the DOM itself. There are loosely coupled components (nodes), which emit events and those get captured by controllers also called stores, routers, etc. Those controllers emit events on their behalf, which the components can consume.
 
+- https://github.com/Ch4mpl00/real-world-app-cqrs-es /202301/ts/inactive
+  - demonstrate a fully fledged fullstack application built with Serverless Node.js + Typescript. 
+  - It includes such cool patterns as CQRS, EventSourcing and DDD with functional programming flavor
+  - Node.js + TS + Dynamodb
+- https://github.com/gothinkster/spring-boot-realworld-example-app /MIT/202206/java/inactive
+  - demonstrate a fully fledged full-stack application built with Spring boot + Mybatis including CRUD operations, authentication, routing, pagination, and more.
+  - implement GraphQL and REST at the same time.
+
 - https://github.com/mutoe/preact-realworld-example-app /202112/js
   - https://mutoe.github.io/preact-realworld-example-app
   - 依赖zustand
@@ -120,6 +128,9 @@ modified: 2023-11-16T15:00:11.503Z
 
 - https://github.com/gothinkster/koa-knex-realworld-example /201910/js
   - Example Node. Js (Koa.js + Knex) codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the RealWorld spec and API.
+
+- https://github.com/oldmanfleming/koa-boilerplate /MIT/202005/ts
+  - Koa + Typescript + TypeORM
 
 - https://github.com/gothinkster/node-express-realworld-example-app /201802/js
 - Example Node (Express + Mongoose) codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the RealWorld API spec

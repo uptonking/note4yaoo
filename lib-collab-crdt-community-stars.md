@@ -70,7 +70,7 @@ modified: 2022-04-05T10:09:51.343Z
 - ## [Lasp: a little further down the Erlang rabbithole | Hacker News_201705](https://news.ycombinator.com/item?id=14300763)
 - My favourite thing about CRDTs (and event sourced data in general) is that they force us to consider the meaning of time and order as it relates to information.
   - When handled with clarity of thought there are flow on effects in correctness of processing
-  - The downside is that popular frameworks don't mesh well, or at all, with this paradigm. Trying to shoehorn(强挤硬塞) event-based data into say, Rails (which I've done), is an frustrating exercise in resolving massive impedance mismatches and growing technical debt. 
+  - 🐛 The downside is that popular frameworks don't mesh well, or at all, with this paradigm. Trying to shoehorn(强挤硬塞) event-based data into say, Rails (which I've done), is an frustrating exercise in resolving massive impedance mismatches and growing technical debt. 
   - Turns out most database-driven MVC frameworks have a very limited understanding of time and order.
   - CQRS helped here, because I realised that my MVC can and should just be a view & query layer, and I should be building the event sourced/CRDT-based logic elsewhere.
 - I've found that many of the modern JavaScript UI libraries play very well with event sourcing, IMHO. 

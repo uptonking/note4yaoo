@@ -9,7 +9,7 @@ modified: 2021-01-15T04:08:46.423Z
 
 # guide
 
-# pieces
+# dev
 - rhino
   - jdk6/7中支持执行js
 - nashorn
@@ -72,6 +72,14 @@ modified: 2021-01-15T04:08:46.423Z
     - 默认仍然是用解释模式（优化级别默认为-1）。
   - Nashorn是一个纯编译的JavaScript引擎。
     - 它没有用Java实现的JavaScript解释器，而只有把JavaScript编译为Java字节码再交由JVM执行这一种流程，跟Rhino的编译流程类似。
+# [es4x](https://reactiverse.io/es4x/)
+
+- A Modern JavaScript runtime for Eclipse Vert.x
+  - Minimal setup with npm-centered project structure
+  - use Reactive Vert.x components in JavaScript, and develop with JavaScript or TypeScript
+  - ES4X runs on top of GraalVM offering a great performance for JavaScript applications on par or better than Java.
+
+
 # discuss
 - ## 
 
