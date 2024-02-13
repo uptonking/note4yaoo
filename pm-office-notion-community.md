@@ -34,10 +34,11 @@ modified: 2023-11-28T14:48:45.910Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## Acquired by Notion 
+- https://twitter.com/FrancescoD_Ales/status/1757067738084717054
+  - skiff-email, calendar-cal, Automate.io
 
 - ## [How Notion pulled itself back from the brink of failure (2019) | Hacker News_202106](https://news.ycombinator.com/item?id=27540471)
-- 
 - 
 
 - I joined Notion two years ago, so this era predates me, but I can shed a little bit of light:

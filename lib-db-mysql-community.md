@@ -66,7 +66,7 @@ modified: 2022-06-13T03:00:06.041Z
   * it is new memory system stress distributed throughout the code (more misses, loads, stores for cache and TLB)
   * much of the new overhead arrives in pre-GA 5.7 and pre-GA 8.0.
 
-# discuss-latest
+# discuss-news
 - ## 
 
 - ## 
@@ -78,6 +78,16 @@ modified: 2022-06-13T03:00:06.041Z
 - I wish for this feature to be added to MySQL Community Edition. Shifting business logic to the front end is a trend, and the ideal future architecture would be front end plus service-oriented databases. This could mark MySQL's move towards service orientation.
 - I didn't experience the era when stored procedures were popular. Are they truly useful? It seems that today's frontend developers prefer to manage everything on their own.
   - I don't like procedures either; they lack capabilities such as version control and canary releases that code has. I believe the front end simply desires a user-friendly SaaS database.
+
+# discuss-internals-mysql
+- ## 
+
+- ## 
+
+- ## InnoDB default setting IIRC is to use DIRECT IO not buffered IO.  Only the WAL uses buffered IO always.
+- https://twitter.com/sunbains/status/1757237923219656991
+  - If you want to have fun look at the algorithm inside InnoDB for writing out zip pages, it needs to trade off between CPU and IO.  
+  - Another fun area in normal background flushing is the complication to determine the batch size and select which pages to flush to persistent store. Especially when there are very few (or none) free pages. This is what makes storage engine design and implementation fun 
 
 # discuss
 - ## 

@@ -12,6 +12,7 @@ modified: 2021-05-14T15:04:15.333Z
 - tips
   - forum的核心也是ugc内容，所以和blog功能相似度高
   - 商城app-store类产品的开发和imdb类似，偏向搜索
+  - 💡 cms中的内容评论也可以作为forum
 
 - 论坛选型参考
   - 尽量选择开源产品，方便自定义
@@ -29,12 +30,11 @@ modified: 2021-05-14T15:04:15.333Z
   - openstreetmap
 
 - forum-open
-  - spectrum
-  - discord
   - discourse
+  - nodebb
+  - spectrum
 
 - chat-open
-  - slack
   - mattermost
   - Zulip
   - gitter
@@ -59,8 +59,10 @@ modified: 2021-05-14T15:04:15.333Z
 
 - https://github.com/apache/incubator-answer /apache2/202401/go/ts
   - https://answer.apache.org/
+  - https://meta.answer.dev/
   - A Q&A platform software for teams at any scales. 
   - Plugins: redis/es/algolia
+  - https://github.com/casbin/casnode /apache2/202312/go
 
 - ddd-forum /1.8kStar/ISC/202306/ts/hacker-news
   - https://github.com/stemmlerjs/ddd-forum
@@ -80,7 +82,7 @@ modified: 2021-05-14T15:04:15.333Z
   - 🍴 forks
   - https://github.com/BrunoAmerio/orca
 
-- MBBS /52Star/MIT/202207/ts/功能全
+- MBBS /52Star/MIT/202312/ts/功能全
   - https://github.com/linfaxin/MBBS
   - http://mbbs.cc/
   - 轻量级全功能论坛、移动/PC双端适配、无依赖一键启动、技术栈 express + sqlite + react
@@ -151,7 +153,6 @@ modified: 2021-05-14T15:04:15.333Z
 - https://github.com/halchester/csqa /inactive/unfinished
   - https://csqa.vercel.app/
   - a Progressive Web App aimed for those who wanna ask silly questions but afraid to get downvoted on stackoverflow
-
 
 - https://github.com/liyupi/code-nav /MIT/202111/js/ts
   - https://www.code-nav.cn/
@@ -244,13 +245,17 @@ modified: 2021-05-14T15:04:15.333Z
   - https://fonoster.com/
   - open-source alternative to Twilio
 # im-instant-messaging-chat
+- https://github.com/satorijs/satori /MIT/202402/ts
+  - The Universal Messenger Protocol
+  - QQ Guild、Feishu、telegram、discord
+
 - tailchat /401Star/apache2/202312/ts
   - https://github.com/msgbyte/tailchat
   - https://tailchat.msgbyte.com/
   - 不仅仅是另一个 Slack, Discord, Rocket. Chat....
   - 目前现有的 IM 应用都仅仅把目光局限在聊天本身，而 IM 天然作为一个多人协作方式，在我看来应当能够承担更多的职责，将外部的应用以 IM 为转发方式形成自己独特的工作流。
   - Tailchat 这样的一个从底层设计之初就为了拓展而存在的即时通讯应用。通过 Tailchat 的插件系统，开发者可以很轻松的将喜欢的应用以一种非常自然的方式作为 Tailchat 的一部分
-  - 后端依赖@socket.io/admin-ui、ejs、mongoose、moleculer-minio、redlock(redis)、moleculer微服务
+  - 后端依赖@socket.io/admin-ui、ejs、mongoose、moleculer微服务、moleculer-minio、redlock(redis)
   - 前端依赖zustand、antd、ahooks、use-gesture、immer、react-dnd、react-virtuoso
   - 前端微内核架构+后端微服务架构，Tailchat 已经为集群化部署做好了准备。
   - 主要功能模块
@@ -259,12 +264,15 @@ modified: 2021-05-14T15:04:15.333Z
     - 插件系统
     - 开放平台
 
+- https://github.com/xiweicheng/tms /MIT/202309/js/java/inactive
+  - TMS是基于频道模式的团队沟通协作+轻量级任务看板，支持mardown、富文本、在线表格和思维导图的团队博文wiki，i18n国际化翻译管理的响应式web开源团队协作系统。
+
 - Linen /1.2kStar/AGPLv3/202311/ts/discord-like
   - https://github.com/Linen-dev/linen.dev
   - https://www.linen.dev/
   - Linen is a Google-searchable community chat tool. 
-  - 依赖headlessui、tanstack-query、nextjs、swr、prisma、express、zod
   - Linen was built as an alternative to closed tools like Slack and Discord.
+  - 依赖headlessui、tanstack-query、nextjs、swr、prisma、express、zod
 
 - https://github.com/Privoce/vocechat-web
   - Private Hosted IM and Social Channels, Easy Integration to Your Site or App
@@ -277,15 +285,12 @@ modified: 2021-05-14T15:04:15.333Z
   - https://zulip.com/
   - open-source team collaboration tool with unique topic-based threading that combines the best of email and chat to make remote work productive and delightful.
   - Zulip is the only modern team chat app that is designed for both live and asynchronous conversations.
+  - The Zulip Botserver is a Python (Flask) server that implements Zulip's outgoing webhooks API
 
 - https://github.com/RocketChat/Rocket.Chat /MIT+EE/ts/meteor
   - https://rocket.chat/
   - fully customizable communications platform developed in JavaScript for organizations with high standards of data protection.
   - We are a MERN based application enabling real-time conversations
-
-- https://github.com/satorijs/satori
-  - The Universal Messenger Protocol
-  - QQ Guild、Feishu、telegram、discord
 
 - https://github.com/juravlevdima/PERN-chat
   - Chat made with PERN Stack & Socket. IO
@@ -296,7 +301,18 @@ modified: 2021-05-14T15:04:15.333Z
   - https://gitter.im/
   - a community for software developers. 
   - This codebase even covers a lot of the mobile and desktop applications which embed a web frame.
+  - Mongodb (persistent storage)
+  - Elasticsearch (search)
+  - Redis (caching and some persistent storage)
+  - Neo4j (suggestions)
+  - [Feature parity of Matrix-based Gitter regarding GitHub/GitLab integration _202301](https://gitlab.com/gitterHQ/webapp/-/issues/2861)
+    - Following the recent announcement that Gitter is on the verge of migrating to be fully backed by Matrix, I am curious about what is the plan for features that are not (yet?) available on the Matrix side of things. Specifically, GitHub/GitLab-related features, like synced room management permissions with GitHub organization membership, issue
   - [Gitter is open source | Hacker News_201707](https://news.ycombinator.com/item?id=14694283)
+  - https://gitlab.com/gitterHQ/realtime-client
+    - Gitter uses Faye for it's realtime communications. 
+    - It uses Faye as a fairly low-level messaging interface, and it can be quite difficult to implement an application correctly on top of it, especially when dealing idiosyncrasies(气质，习性) in the protocol
+    - It uses Backbone Collections to represent Gitter data. The client will populate the collection and maintain the state of the collection to match the server-side representation of the state.
+  - https://github.com/gitterHQ/gitter /201707
 
 - https://github.com/TryQuiet/quiet /GPLv3/clang/cpp/ts
   - https://www.tryquiet.org/
@@ -317,6 +333,13 @@ modified: 2021-05-14T15:04:15.333Z
   - In this tutorial we are going to build and deploy a real time chat application. 
   - Covered topics: React.js, Node.js, Express.js, and Socket.io.
   - https://github.com/adrianhajdin/chat_application
+
+- https://github.com/brave-chat/brave-chat /MIT/202309/js
+  - The ultimate slack alternative built with React, MUI, Redux, and friends.
+
+- https://github.com/jungleworks/fugu-server /apache2/202108/js
+  - https://github.com/jungleworks/fugu-frontend /ts
+  - open source, private cloud, Slack-alternative
 
 ## chatbot
 

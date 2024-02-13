@@ -22,7 +22,9 @@ modified: 2023-08-16T15:50:16.335Z
 
 - ## 
 
-- ## 
+- ## Valibot looks nice and smaller but the API is less intuitive.
+- https://twitter.com/gregberge_/status/1757268398504071561
+  - [Migrating from Zod to Valibot: A Comparative Experience | Matthew Kwong](https://mwskwong.com/blog/migrating-from-zod-to-valibot-a-comparative-experience)
 
 - ## Valibot is a schema library like @zodtypes , except that Valibot is modular and can be code split to a few hundred bytes
 - https://twitter.com/FabianHiller/status/1683841850401251333

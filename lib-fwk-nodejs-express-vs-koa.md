@@ -12,7 +12,6 @@ modified: 2022-12-19T01:55:03.539Z
 - Why isn't Koa just Express 4.0?
   - Koa is a pretty large departure from what people know about Express, the design is fundamentally much different, 
   - so the migration from Express 3.0 to this Express 4.0 would effectively mean rewriting the entire application, so we thought it would be more appropriate to create a new library.
-
 # guide
 
 # express vs koa
@@ -116,31 +115,35 @@ modified: 2022-12-19T01:55:03.539Z
   - Piping binary content through a response (generated PDF created by an external process, got it working just was a bit complicated and way more examples for Express).
   - Using existing admin modules that plug into Express but are not easy or but possible to get working on Koa. Example is say Arena queue admin UI (**). Ended up spinning up a separate admin Express instance on another port as a quick workaround.
   - Not really Koa but made a choice on one of the router modules for it and got burned for a while (had to lock version) when that project changed their implantation breaking the way many had been hooking up routes. And that change was not on a major version bump 
-
-# thread-express-koa
-
-- What's your favourite framework for creating APIs in Node
-  - https://twitter.com/mrflamez_/status/1299852011513565186
-  - for JS it has to be adonis or nest. for setting up a quick POC though it's always express or koa
-
-- Which is the Optimal Node Framework: Express.js, Koa.js or Sails.js?
-  - https://twitter.com/JavaScriptDaily/status/908639055163912192
-  - I love KoaJs, but I admit I lack experience with any of the others
-
-- why are you still using express instead of Koa?(201911)
-  - https://twitter.com/sseraphini/status/1200161578701803520
-  - Express has a larger ecosystem
-    - Many libs build on top of express (graphql-yoga, apollo-server, etc)
-  - i use both, sometimes i only need a sequential middleware stack, sometimes i need to crawl back up the stack. I’d say express is simpler especially for new devs
-  - I recently migrated all my services from Koa back to express.js. 
-    - As others have pointed out: community size. 
-    - Koa itself might be maintained, but there are a lot of poorly supported packages at the edges of the dependency tree/ plugins.
-
-# ref
-
+# more
 - [Bulletproof node.js project architecture ](https://dev.to/santypk4/bulletproof-node-js-project-architecture-4epf)
   - https://github.com/santiq/bulletproof-nodejs
   - Express.js is great frameworks for making a node.js REST APIs however it doesn't give you any clue on how to organizing your node.js project.
   - 3 Layer architecture: controller, service, dao
 - [What's the Node framework landscape like?](https://dev.to/ben/what-s-the-node-framework-landscape-like-5d5f/comments)
 - [Hapi vs Koa vs Express](https://www.section.io/engineering-education/hapi-vs-koa-vs-express/)
+# discuss-express/koa/hono/fastify
+- ## 
+
+- ## 
+
+- ## Express vs Fastify vs Oak vs Hono: Who’s runs fastest?
+- https://twitter.com/honojs/status/1756952637898141815
+  - [Deno — Express vs Fastify vs Oak vs Hono: Who’s runs fastest? | Tech Tonic _202310](https://medium.com/deno-the-complete-reference/deno-express-vs-fastify-vs-oak-vs-hono-whos-runs-fastest-0657d791c17a)
+
+- ## What's your favourite framework for creating APIs in Node
+- https://twitter.com/mrflamez_/status/1299852011513565186
+- for JS it has to be adonis or nest. for setting up a quick POC though it's always express or koa
+
+- ## Which is the Optimal Node Framework: Express.js, Koa.js or Sails.js?
+- https://twitter.com/JavaScriptDaily/status/908639055163912192
+- I love KoaJs, but I admit I lack experience with any of the others
+
+- ## why are you still using express instead of Koa?(201911)
+- https://twitter.com/sseraphini/status/1200161578701803520
+- Express has a larger ecosystem
+  - Many libs build on top of express (graphql-yoga, apollo-server, etc)
+- i use both, sometimes i only need a sequential middleware stack, sometimes i need to crawl back up the stack. I’d say express is simpler especially for new devs
+- I recently migrated all my services from Koa back to express.js. 
+  - As others have pointed out: community size. 
+  - Koa itself might be maintained, but there are a lot of poorly supported packages at the edges of the dependency tree/ plugins.

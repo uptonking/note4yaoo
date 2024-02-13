@@ -9,7 +9,7 @@ modified: 2023-12-31T14:14:59.111Z
 
 # dev-xp
 
-# dev-12
+# dev-12-editoe-kanban-&-image-upload
 
 ## 1231
 
@@ -297,7 +297,7 @@ modified: 2023-12-31T14:14:59.111Z
 
 - https://github.com/nishantpainter/personal-kanban
   - wipLimit可以限制一个面板内的任务卡片数量，当达到指定数量时，不能再添加新卡片
-# dev-11
+# dev-11-editoe-demo-day
 
 ## 1129
 
@@ -820,7 +820,7 @@ return toWidget(container, writer, 'figure');
   - npm run release
   - npm run pub 自动创建新分支，自动push，需要手动提添加新分支的pr
   - npm自动会自动发包
-# dev-10
+# dev-10-editoe-migrate-ckeditor-plugins
 
 ## 1029
 

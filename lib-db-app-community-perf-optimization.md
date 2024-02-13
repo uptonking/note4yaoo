@@ -42,6 +42,12 @@ modified: 2023-10-26T19:00:02.186Z
 - What would you use to maintain the partitions, events, or external cron?
   - I would use a cron
 
+- ## ⚡️ 我司搞数据库优化，我没忍住，说我们先把读写分离搞了。因为至少能搞出来 10x 的性能，还好操作，不用考虑细节。
+- https://twitter.com/yfractal/status/1757276270457770225
+  - 但到执行上，又是各种细节优化。比如我说把后台任务都丢到 read replica 上，变成了挑流量大的。然后还有忙着加 cache 的。
+
+- 最蛋疼的是搞个半天，费尽口舌，最后 PM 过来说：你给的方案怎么做了这么久？怎么到现在问题还好多？
+
 - ## ⚡️ 公司搞优化，讨论如何优化 SQL 和业务。我实在忍不住，跟他们说，先做读写分离，之后把能迁走的表都迁走。
 - https://twitter.com/yfractal/status/1745979462615982578
   - 我司虽然量大，但没多大难度。后端难度大的一个现象是用折腾存储，比如上家公司折腾了 5、6 种存储。

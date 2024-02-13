@@ -320,7 +320,7 @@ modified: 2024-01-21T07:46:00.256Z
 - 🌙 🌛 🌜 🪐
   - 月儿 弯月 光环
 - 🐘 🦣
-  - 大象/postgresql 猛犸象
+  - 大象/postgresql 猛犸象/hadoop
 - 🐬
   - 海豚/mysql
 - 🪶

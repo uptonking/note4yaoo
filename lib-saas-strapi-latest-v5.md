@@ -49,6 +49,17 @@ modified: 2023-12-15T19:39:18.123Z
 # discuss-v5
 - ## 
 
+- ## 
+
+- ## Is grouping by relation fields for rest apis going to be available in v5? For example : /api/jobs?groupBy=company
+- https://discord.com/channels/811989166782021633/1095091586452426824/1206516283600797717
+- I don't believe so. Initial stable release of Strapi v5 is mainly around implementing the breaking changes we need to build some features
+
+- ## would you advise to start a new product on the V5 or V4 and then migrate ? _20240210
+- https://discord.com/channels/811989166782021633/1095091586452426824/1205577881443639417
+- I'd start with v4 for now, we don't expect v5 to be considered "stable" until June-ish
+  - the Beta release will still be open to some breaking changes and expect a lot of bugs between the beta <> stable
+
 - ## we are currently heavily focused on the development of Strapi v5_20231118
 - https://discord.com/channels/811989166782021633/811989167357689918/1175206357339734137
   - we will effectively be heavily slowing down on v4 feature development will largely focus on v4 stability for the remainder of 2023

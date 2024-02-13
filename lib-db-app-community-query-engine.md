@@ -165,6 +165,12 @@ modified: 2023-09-17T17:41:51.689Z
 # discuss
 - ## 
 
+- ## 
+
+- ## SQL optimizers use column statistics to estimate cardinality. What happens when value > max value from last ANALYZE?
+- https://twitter.com/FranckPachot/status/1756946207748899320
+  - [Out of Range statistics with PostgreSQL & YugabyteDB - DEV Community](https://dev.to/yugabyte/out-of-range-statistics-with-postgresql-yugabytedb-2pj8)
+
 - ## 🌰 When we first began building RisingWave, we used Calcite. 
 - https://twitter.com/YingjunWu/status/1744470668937461987
   - But it turned out to be unsuitable, in terms of compatability, flexibility, and several other reasons. 

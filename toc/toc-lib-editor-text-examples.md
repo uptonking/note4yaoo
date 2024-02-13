@@ -65,6 +65,11 @@ modified: 2022-11-08T19:03:33.865Z
     - it also preserves the current position of the caret, the selection, and restores it once React has updated the DOM itself. 
     - This is a rather common technique for `contenteditable` editors, but the `MutationObserver` addition is what enables `use-editable` to let another view library update the element's content.
     - Since use-editable doesn't aim to be a full component that manages the render cycle, it doesn't have to keep any extra state, but will only pass the DOM's text back to the onChange callback.
+
+- https://github.com/Andarist/react-textarea-autosize /MIT/202308/ts
+  - http://andarist.github.io/react-textarea-autosize/
+  - Drop-in replacement for the textarea component which automatically resizes textarea as content changes. 
+  - A native React version of the popular jQuery Autosize
 # computational-editor
 - https://github.com/jaredreich/calcutext
   - Calcutext is a web app where you can do calculations with your written text.

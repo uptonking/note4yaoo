@@ -124,6 +124,14 @@ modified: 2023-02-05T18:50:32.900Z
   - Base repository for creating and sharing Sequelize SSCCEs
   - Short, Self Contained, Correct (Compilable), Example
 
+- ddd-forum /1.8kStar/ISC/202306/ts/hacker-news
+  - https://github.com/stemmlerjs/ddd-forum
+  - https://dddforum.com/
+  - Hacker news-inspired forum app built with TypeScript using DDD practices from solidbook.io.
+  - 后端依赖 express、sequelize、redis
+  - 前端依赖 react、redux、react-quill
+  - https://github.com/dyarleniber/typescript-ddd-forum
+
 - MBBS /52Star/MIT/202207/ts/功能全
   - https://github.com/linfaxin/MBBS
   - http://mbbs.cc/

@@ -360,6 +360,9 @@ sudo systemctl start minidlna
 - [googlehosts 作者放弃维护了吗？几个月没更新了](https://github.com/googlehosts/hosts/issues/503)
   - 新发现了个正在活跃维护的
 
+- [Google 综合加速 | 清北CDN](https://cdn.tsinbei.com/frontend/google.html)
+  - 支持fonts/googleapis/recaptcha
+
 ## github-proxy
 
 - 备用方法
@@ -376,6 +379,12 @@ sudo systemctl start minidlna
     - GitHub最新hosts
   - https://github.com/maxiaof/github-hosts
     - 通过修改Hosts解决国内Github经常抽风访问不到
+
+- [GitHub 镜像站 | 清北CDN](https://cdn.tsinbei.com/mirror/github.html)
+  - 将原网址 github.com 替换为 cdn.tsinbei.com/ghi
+- [GitHub 综合加速 | 清北CDN](https://cdn.tsinbei.com/frontend/github.html)
+  - 主要支持 `git clone` 场景
+  - 本服务已屏蔽 .(zip|rar|7z|apk|ipa|exe|msi|m3u|m3u8|mp4|mp3) 等文件类型的加速，以及部分滥用本服务的仓库内容的加速，详情请查看此页面。
 
 - more
   - https://search.gitee.com/?skin=rec&type=repository&q=GitHub520&sort=updated_at

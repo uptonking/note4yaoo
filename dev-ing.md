@@ -51,6 +51,7 @@ https://meeting.tencent.com/p/9606972663
 
 ```shell
 flatpak run com.discordapp.Discord --proxy-server="socks5://127.0.0.1:1080"
+betterdiscordctl -i flatpak install
 
 # delete all node_modules folders recursively
 rm package-lock.json && find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +
@@ -396,7 +397,7 @@ $$('[contenteditable]')
 
 - [How to get the measurementId from the Firebase config? - Stack Overflow](https://stackoverflow.com/questions/60804074/how-to-get-the-measurementid-from-the-firebase-config)
   - it is displayed when you enable Google analytics first time for the project.
-# dev-01-pouchdb-idb-rspack-rebuilt-and-joplin-note
+# dev-01-pouchdb-idb-rspack-rebuilt-&-ethercalc-ot-&-joplin-note
 
 ## 0131
 

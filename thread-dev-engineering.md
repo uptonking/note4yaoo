@@ -28,7 +28,13 @@ modified: 2021-01-21T17:52:13.333Z
 
 - ## 
 
-- ## 
+- ## What is the preferred way these days to add dev-only code to libraries? 
+- https://twitter.com/buildsghost/status/1757111425129181693
+- I'm still using `process.env.NODE_ENV` checks. Keen to know if there is a better way
+
+- Using the development export condition, Which also works for imports.
+- Oh good, the three environments "production", "development", and "browser" all mutually exclusive
+  - None of them are mutually exclusive. Conditions can be combined using nesting. it works and it's widely supported
 
 - ## 自己的项目里维护一个 TODO点儿md 确实很有用，突发奇想的话就往里面写几笔，有更好的想法了就慢慢细化，等哪几行已经细化到可以动手了，说明就到了能开始TDD的时候了。
 - https://twitter.com/geniusvczh/status/1754440582196568066
@@ -68,9 +74,9 @@ modified: 2021-01-21T17:52:13.333Z
 
 - 这里可能有个悖论, 自己造轮子 研发成本高, 不自己造轮子 显不出技术“高明”, 结果是 996 劣质轮子 遍地都是…
 
-01.    大概率没有开源的好
-02.    造轮子就要维护一个轮子迭代维保团队
-03.    迭代维保团队和其他团队无限的撕逼
+01.     大概率没有开源的好
+02.     造轮子就要维护一个轮子迭代维保团队
+03.     迭代维保团队和其他团队无限的撕逼
 
 - ## Five terms I avoid when naming things:
 - https://twitter.com/housecor/status/1742197661837476018

@@ -16,7 +16,7 @@ modified: 2023-12-31T14:15:11.730Z
   - 10-prosemirror-collab, otjs
   - 11-crdt-hlc, idb-sync
   - 12-nedb, linvodb
-# dev-12-nedb-linvodb
+# dev-12-nedb-&-linvodb
 
 ## 1231
 
@@ -528,7 +528,7 @@ const EmailHead = ({ title = "" }) => {
 
 - [LGPL开源协议开发的库，能否商用？ - 知乎](https://www.zhihu.com/question/395491237)
   - LGPL 允许以动态链接使用开源库，同时，调用了该库的函数的那部分代码还是要开源的，除此之外的部分不需要开源。
-# dev-11-crdt-idbsync
+# dev-11-crdt-hlc-&-idbsync
 
 ## 1130
 
@@ -1072,7 +1072,7 @@ initTodoTypes();
 
 - [Store application-specific data](https://developers.google.com/drive/api/guides/appdata)
   - `appDataFolder` 在ui上始终不可见
-# dev-10-prosemirror-collab-otjs
+# dev-10-prosemirror-collab-&-otjs
 
 ## 1031
 
@@ -1767,7 +1767,7 @@ const MyPage = () => {
   - And although earlier HTML specs were more restrictive (ref, ref), requiring a small set of chars and starting with a letter, browsers never cared, which is a big part of why the HTML5 specification opens things up.
   - If you're going to use those ids with CSS selectors (e.g, style them with CSS, or locate them with `querySelector`, / `querySelectorAll`, or a library like `jQuery` that uses CSS selectors), be aware that it can be a pain and you're probably better off staring the `id` with a letter, because you can't use an id starting with a digit in a CSS id selector literally; you have to escape it. 
   - (For instance,  `#12` is an invalid CSS selector; you have to write it `#\31\32`.) 
-# dev-08-focalboard-tinywrite
+# dev-08-focalboard-&-tinywrite
 
 ## 0829
 
@@ -2010,7 +2010,7 @@ export const useEffectOnce = (effect: () => void | (() => void)) => {
 - `aptitude` then came along. It uses the libraries apt-get uses and actually has an interactive UI (user interface). 
   - aptitude will automatically remove eligible packages, while apt-get needs a separate command to do so. 
   - aptitude provides the functionality of dselect and apt-get as well as many additional features not found in either program.
-# dev-07-comments-site-layout
+# dev-07-affine-comments-site-layout
 
 ## 0730
 
@@ -2527,7 +2527,7 @@ as it is undefined
   - getBlockDatabase 多次读取时，会创建多次（这个我看已经修改过了）；缓存内容，没有考虑账号切换
   - 数据驱动；editor是否只注册一个观察者就可以；感觉没有必要像现在这样，在editor管理更新，是否可以移动到service层
   - Workspace 上挂着pages、二进制文件，这样的话，Observe 更新通知是否过于简陋，不知道更新了哪些内容，现在更新频率过高
-# dev-06-editor-architecture-inline-menu
+# dev-06-affine-editor-architecture-inline-menu
 
 ## 0630
 
@@ -3018,7 +3018,7 @@ type Variants = (typeof VARIANTS_BY_ID)[keyof typeof VARIANTS_BY_ID];
   - 没有解决方案
 
 - [block-menu的动画效果](https://www.figma.com/proto/7pyx5gMz6CN0qSRADmScQ7/AFFINE?node-id=5863%3A2095&scaling=scale-down&page-id=0%3A1&starting-point-node-id=5863%3A2052)
-# dev-05-editor-popup-layer-ui
+# dev-05-affine-editor-popup-layer-ui
 
 ## 0531
 
@@ -3646,7 +3646,7 @@ document.body.removeChild(scrollDiv);
   - 🤔 若用户上午在设备A登录workspaceA，下午在设备B登录workspaceB(先自动登录A然后手动切换到workspaceB)，晚上离线/在线时，在设备A打开自动进入哪个workspace？
 
       - ? 若离线， workspaceId默认先用本地的，然后比较远程同步得到的id和访问时间
-# dev-04-page-tree-login
+# dev-04-affine-page-tree-login
 
 ## 0429
 
@@ -4049,7 +4049,7 @@ document.body.removeChild(scrollDiv);
   - 打开文章面板
 
 - `升级到pro版`的元素的定位是fixed ？
-# dev-03-editor-edu-bugs
+# dev-03-editoe-edu-bugs
 
 ## 0331
 
@@ -4887,7 +4887,7 @@ await dbClient.getByDocumentType('article').then(docs => Array.from(docs.values(
   - https://stackoverflow.com/questions/37576685/using-async-await-with-a-foreach-loop
   - await y.forEach(async (x) => {
     - await Promise.all(y.map(async (x) => {
-# dev-02-editor-edu
+# dev-02-editoe-edu-proj
 
 ## 0228
 
@@ -5176,7 +5176,7 @@ function createHook(initialValue: string) {
 - 编辑器刷新时非常卡
   - 需要清理storage
   - 不能稳定复现
-# dev-01-bibtex
+# dev-01-editoe-bibtex
 
 ## 0126
 

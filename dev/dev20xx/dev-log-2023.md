@@ -21,7 +21,7 @@ modified: 2023-12-31T14:08:16.162Z
   - 10-event-sourcing, pouch, sqlite/postgresql
   - 11-elmish-flux
   - 12-strapi
-# dev-12-strapi-rspack
+# dev-12-strapi-&-rspack-starter
 
 ## 1228
 
@@ -35,7 +35,7 @@ modified: 2023-12-31T14:08:16.162Z
   - The input event is fired every time the `value` of the element changes. 
   - This is unlike the change event, which only fires when the value is committed, such as by pressing the enter key or selecting a value from a list of options. 
   - Note that the input event is not fired when JavaScript changes an element's value programmatically.
-# dev-11-elmish-flux
+# dev-11-elmish-&-flux
 
 ## 1109
 
@@ -51,11 +51,11 @@ modified: 2023-12-31T14:08:16.162Z
   - https://twitter.com/matthewcp/status/1720062244807901542
   - click事件中的 document.addEventListener('click', cb1), cb1会立即执行
   - Yeah, calls the callback before propagating, not after, because it needs to give callback ability to stop propagation
-# dev-10-event-sourcing-sqlite-postgresql
+# dev-10-event-sourcing-db-log-&-db-communites-sqlite-postgresql
 
-# dev-09-event-sourcing/datalog-eav-triple
+# dev-09-event-sourcing-ddd-cqrs-&-datalog-eav-triple-jsonb
 
-# dev-08-pdf-electron/excel-js-scripts/db-kappa-dolt-git
+# dev-08-pdf-electron-&-excel-js-scripts-&-db-kappa-dolt-git
 
 ## 0828
 
@@ -89,7 +89,7 @@ modified: 2023-12-31T14:08:16.162Z
 
 - [GPU process isn't usable. Goodbye.](https://github.com/Automattic/simplenote-electron/issues/3096)
   - run `/opt/Simplenote/simplenote --no-sandbox`
-# dev-07-chinoiserie-color-mdx-styling
+# dev-07-chinoiserie-colors-&-dict-mdx-css-&-use-gesture
 
 ## 0728
 
@@ -227,7 +227,7 @@ div {
   - unrar x filename.part1.rar
   - rar x filename.part1.rar
   - [Unrar multiple parts - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/162987/unrar-multiple-parts)
-# dev-06-ospreadsheet2watarble+resume/八股文+面试
+# dev-06-ospreadsheet2watarble-&-ariakit-state/react
 
 ## 0628
 
@@ -508,7 +508,7 @@ function useRef < T > (initialValue: T | null): RefObject < T > ;
 - [Does JavaScript guarantee object property order? - Stack Overflow](https://stackoverflow.com/questions/5525795/does-javascript-guarantee-object-property-order)
   - The iteration order for objects follows a certain set of rules since ES2015, but it does not (always) follow the insertion order. 
   - Simply put, the iteration order is a combination of the insertion order for strings keys, and ascending order for number-like keys
-# dev-05-tanstack-table-virtual/sequelize/undb
+# dev-05-tanstack-table-virtual-&-sequelize-&-undb
 
 ## 0529
 
@@ -724,7 +724,7 @@ console.log(returnedTarget === target); //true
 },
 ```
 
-# dev-04-slate-image/dnd-kit
+# dev-04-slate-image-&-dnd-kit
 
 ## 0429
 
@@ -977,7 +977,7 @@ function isDefined<T>(value: T | undefined | null): value is T {
 <hr style="width:100px; transform:rotate(90deg);">
 ```
 
-# dev-03-slate-table/toolbar
+# dev-03-slate-table-toolbar
 
 ## 0331
 
@@ -1496,7 +1496,7 @@ JSON.parse(''); // SyntaxError: Unexpected end of JSON input
   - Vite can switch to the swc/rust transform if necessary, we currently chose not to do that because adding swc to the deps list is extra weight, and even without it HMR is fast enough.
   - In the long run we may also consider using turbopack under the hood to replace esbuild/Rollup (where suitable), due to its strong caching capabilities.
   - [feat!: transform jsx with esbuild instead of babel by rtsao · Pull Request #9590 · vitejs/vite_202211](https://github.com/vitejs/vite/pull/9590)
-# dev-02-typewriter+slate
+# dev-02-typewriter-virtual-render-&-slate-src
 
 ## 0228
 
@@ -1668,7 +1668,7 @@ color2 instanceof String; // returns false (color2 is not a String object)
   - [[BUG] \`overrides\` in \`package.json\` do not allow file paths of any kind (including fake ones)](https://github.com/npm/cli/issues/5843)
   - I really hope this can be fixed. Overrides otherwise only fully work in npm v8.
   - npm v9 最新版已修复
-# dev-01-linvo-search+sync
+# dev-01-linvo-search-index-&-linvo-sync
 
 ## 0126
 

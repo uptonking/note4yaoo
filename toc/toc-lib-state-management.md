@@ -215,8 +215,7 @@ modified: 2020-07-14T11:03:53.196Z
   - We had the requirement for a * event to catch all calls, and figured we could improve the file size at the same time. 
   - This library is about 1/3rd the size of Node's version.
   - Are these emitters asynchronous? No.
-- https://github.com/faye/faye
-  - /4.3kStar/Apache2/202008/js
+- https://github.com/faye/faye /4.4kStar/apache2/202008/js/inactive
   - Faye is a publish-subscribe messaging system based on the Bayeux protocol. 
     - Bayeux协议目的是使用ajax实现客户端和服务器的双向通信
   - It provides message servers for Node.js and Ruby, and clients for use on the server and in all major web browsers.
