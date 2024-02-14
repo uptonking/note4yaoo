@@ -11,6 +11,17 @@ modified: 2023-12-15T18:03:33.503Z
 
 # blogs-dbt
 - [How dbt succeeds - by Benn Stancil - benn.substack](https://benn.substack.com/p/how-dbt-succeeds)
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## Today dbt announced column level lineage... but it's not open source and only available for paying cloud users. _202402
+- https://twitter.com/Captaintobs/status/1757601463852023876
+  - dbt is using SQLGlot (an open source SQL framework that my company @TobikoData maintains)  to power this newly gated feature.
+- But there's an open source alternative to dbt cloud... @SQLMesh , where column level lineage is free and open source for everyone to use.
+  - SQLMesh is backwards compatible with existing dbt projects, so you can gain all of its benefits without rewriting your project.
+
 # discuss
 - ## 
 

@@ -14,7 +14,12 @@ modified: 2023-11-21T04:37:09.686Z
 
 - ## 
 
-- ## 
+- ## 🌰 useTextSelection - #React TS hook that tracks user text selections & their screen positions! 
+- https://twitter.com/buildWithKris/status/1756607505755734373
+  - [Grayscales](https://grayscal.es/hooks/use-text-selection)
+  - [A React Typescript hook that tracks user text selections & their screen positions](https://gist.github.com/KristofferEriksson/8acb9b3eb241507eb0f6232938bf4ec7)
+- you can pass an `elementRef` . If you are doing that, it'll only capture selections within that element.
+
 # discuss
 - ## 
 

@@ -14,7 +14,13 @@ modified: 2021-09-10T14:15:55.903Z
 
 - ## 
 
-- ## 
+- ## Linear Mobile v0.1. A fast, native experience for your cellular device.
+- https://twitter.com/artman/status/1757667916474958011
+  - We want to create the best in class application for the devices that we support. Even if it means having to write separate clients for iOS and Android.
+  - Additionally, we quickly realized that we don't want to replicate the entire web experience on mobile, but focus on the most important use-cases that you need on-the-go, and create a beautiful experience around those.
+
+- Is the collaborative text editor present in the mobile apps ? 
+  - We use the same editor, but currently its not collaborative. Shouldn't be hard to make it though.
 
 - ## Why does #ReactNative rely so heavily on #Yoga? 
 - https://twitter.com/tomekzaw_/status/1725886444344844673

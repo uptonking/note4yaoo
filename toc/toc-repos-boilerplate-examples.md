@@ -96,6 +96,10 @@ modified: 2023-11-16T15:00:11.503Z
   - Conduit implementation: ASP. NET Core + Couchbase
   - [How to Build Real World Web Applications with Couchbase_202308](https://www.couchbase.com/blog/build-real-world-web-apps-couchbase/)
 
+- https://github.com/marmelab/argos-realworld /202103/js
+  - This repository stores several versions of the database, API and client of the realworld app, for digital footprint measurements.
+  - We've cloned and tweaked implementations of the realworld frontend and backend apps, so that they can work together 
+
 ### api-realworld
 
 - https://github.com/cirosantilli/node-express-sequelize-nextjs-realworld-example-app /202208/后端js+前端ts

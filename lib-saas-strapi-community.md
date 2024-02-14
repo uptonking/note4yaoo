@@ -12,7 +12,18 @@ modified: 2023-12-15T17:04:36.589Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 🐛 [Question: What are the main pain points you have using Strapi? (Episode 5) _202305](https://github.com/strapi/strapi/issues/16873)
+- Nested components is my main pain point personally. It is supported at the code level at least now, but becomes an issue to maintain for those less knowledgeable with strapi. supporting real nested component at more than just 2 level would be a major thing as it permit the data to be way more self container and reusable.
+
+- A big pain point when building CRUD apps is implementing security policies. Almost every "create", "delete", or "update" route needs an is-owner policy added to make sure the public endpoint isn't being used to delete entries created by other users.
+  - It would be great if in v5 we had a system that made implementing this additional security layer possible from the admin panel. 
+
+- Collapsable Menus
+
+- Too many breaking changes between minor and even patch updates and not sticking to semantic versioning.
+  - v4.5 aimed to prepare the database for the relation sorting, v4.6 brought the relation sorting but it didn't fully work until v4.6.x and even broke some Strapi instances.
+
+- Not being able to have conditional logic for fields.
 
 - ## [Is it possible to create a collaborative platform with Strapi? - Questions and Answers - Strapi Community Forum _202211](https://forum.strapi.io/t/is-it-possible-to-create-a-collaborative-platform-with-strapi/23815)
 - definitely possible but it will require some coding and bending. Afaik you can’t really create this just by clicking around in the admin panel.
@@ -20,12 +31,13 @@ modified: 2023-12-15T17:04:36.589Z
 - ## 💰 [Can I use strapi free in my self-hosted server? - General - Strapi Community Forum_202304](https://forum.strapi.io/t/can-i-use-strapi-free-in-my-self-hosted-server/27666)
 - The only restrictions on the free version is that audit-logs and Review Workflows are not available
 
-# discuss-news
+# discuss-changelog
 - ## 
 
-- ## [[feat]: feature flags_202312](https://github.com/strapi/strapi/pull/18871)
-  - Introduces a new configuration file: features.(j|t)s. By integrating this configuration into our strapi.config, we gain the ability to determine whether to include the content-releases plugin in our application based on an environment variable. This could be used by any new feature we develop. It's also passed to the admin configuration so future flags can be checked
+- ## [Use transactions and expose a transactional API _202301](https://github.com/strapi/strapi/pull/14389)
+- This is a working PR to introduce and use transactions within Strapi.
 
+- [simple implementation of transactions](https://github.com/strapi/strapi/pull/12715)
 # discuss-issues-done
 - ## 
 

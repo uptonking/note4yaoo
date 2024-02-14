@@ -11,7 +11,30 @@ modified: 2023-10-26T16:45:47.318Z
 
 # discuss-stars
 - ## 
+
+- ## ⚡️ ParadeDB has built an open-source PostgreSQL extension to do analytics very fast with high compression by using Parquet under the hood 
+- https://twitter.com/tobias_petry/status/1757355904205213843
+  - near the performance of ClickHouse 
+  - [pg_analytics: Transforming Postgres into a Fast OLAP Database - ParadeDB _](https://blog.paradedb.com/pages/introducing_analytics)
+- How do backups work? I guess there is no way until WAL integration is done? But how will WAL work together with Parquet files?
+  - We do support backups. Re: WALs, not yet but we soon will. Our current plan is to make Delta/Iceberg work with Postgres WAL logs instead, but TBD exactly! Things will change as we dive into the implementation
+
+- DuckDB is equally fast as ClickHouse
+
+- 
+- 
+- 
+- 
+
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 飞总发了一篇《2023年，中国对PostgreSQL的贡献≈0》所以我刚才翻阅了 OSSRank 收录的 188个 PostgreSQL 生态开源项目。
 - https://twitter.com/GobeUncleWang/status/1744190341438472279
 - 中国公司作为主导者或主要参与者的项目只有四个，分别是：
@@ -19,10 +42,6 @@ modified: 2023-10-26T16:45:47.318Z
   - duckdb_fdw：alitrack@杭州
   - zhparser：amutu@深圳
   - pg_roaringbitmap：陈华军@苏宁
-
-- ## 
-
-- ## 
 
 - ## 🔥 [PolarDB, yet another open source database system based on PostgreSQL | Hacker News_202105](https://news.ycombinator.com/item?id=27330342)
 - 

@@ -527,11 +527,6 @@ modified: 2023-02-09T18:32:06.240Z
   - 🍴 forks
   - https://github.com/universe/vapid
 
-- https://github.com/klaudsol/klaudsol-cms /202308/js
-  - a Headless and Serverless CMS
-  - alternative to WordPress and Strapi
-  - Deploys seamlessly to AWS Amplify Hosting + AWS Aurora Serverless
-  - 依赖coreui、next、quill、redux
 
 - https://github.com/webpoint-solutions-llc/easy-blog-cms /202309/ts
   - The API is designed to be consumed by any client, be it a web application (React, Vue, Angular)

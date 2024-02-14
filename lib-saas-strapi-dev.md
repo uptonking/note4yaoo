@@ -53,7 +53,7 @@ modified: 2023-12-15T16:51:56.101Z
 # draft
 - 流式输出 stream response
 # dev
-
+- 在admin添加content-type时，数据库会创建对应的表
 # codebase
 
 # more

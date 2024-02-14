@@ -21,7 +21,10 @@ modified: 2023-11-01T10:15:06.245Z
 
 - ## 
 
-- ## 
+- ## Relies on a global logical clock and claims that an MVCC visibility check can be as simple as an integer comparison. 
+- https://twitter.com/sunbains/status/1757617183218442588
+  - Order transaction on their “recentness” which speeds up GC.
+- Would love to see a comparison to LMDB, as its the best one(currently) in terms of random read perf.
 
 - ## What are transactions in a database?
 - https://twitter.com/Franc0Fernand0/status/1754422259869974682

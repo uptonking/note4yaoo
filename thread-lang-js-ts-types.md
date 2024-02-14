@@ -68,7 +68,9 @@ modified: 2021-08-05T04:31:02.298Z
 
 - ## 
 
-- ## 
+- ## Forcing users to always pass a type argument to your function isn't yet supported in TypeScript.
+- https://twitter.com/mattpocockuk/status/1757733431981625565
+  - But until it is, you set the default to be an error message
 
 - ## Using a mapped type and key remapping, we can turn a discriminated union into an object 
 - https://twitter.com/mattpocockuk/status/1755917714789466423

@@ -12,6 +12,15 @@ modified: 2022-08-21T10:15:06.225Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 📡 For those following @SubsetHQ , sharing some bittersweet news today. We're changing directions away from our canvas spreadsheet 
+- https://twitter.com/AJNandi/status/1757614422162649208
+  - As fun as it was, we realized the bigger opportunity in the spreadsheet world is simply a high quality, local first, desktop spreadsheet. More below!
+  - Over the last few years @thejasonchan and I have become obsessed with building spreadsheets, and we've gotten pretty good at it too. Which is why I'm excited to turn our learnings into a product that really scratches our own itch of a modern high-quality desktop spreadsheet.
+  - We're focused on a few things initially: performance, a local-first and offline experience, desktop and web apps, and seamless import/export from xlsx / sheets files.
+  - After that we want to tackle better ways to collaborate such as version control and branching. And build a community around templates, plugins, and other spreadsheet extensions.
+
 - ## 🚀 [grid-studio: How I built a spreadsheet app with Python to make data science easier | HackerNoon_201907](https://hackernoon.com/introducing-grid-studio-a-spreadsheet-app-with-python-to-make-data-science-easier-tdup38f7)
 - While this project was originally intended for commercial release, I've decided it might be better off as an open source project
 - The reason for this is that during the initial development of the project I've discovered a number of projects that offer similar functionality to Grid studio.

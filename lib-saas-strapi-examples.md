@@ -12,6 +12,7 @@ modified: 2023-12-15T19:30:23.094Z
 - fans-strapi
   - https://github.com/ComfortablyCoding/strapi-plugin-io
   - https://github.com/VirtusLab-Open-Source/strapi-plugin-reactions
+  - https://github.com/notum-cz/strapi-plugin-content-versioning
 # popular
 - https://github.com/strapi-community/awesome-strapi
   - A curated list of awesome things related to Strapi
@@ -184,7 +185,7 @@ modified: 2023-12-15T19:30:23.094Z
   - https://github.com/SVronskiy/strapi-plugin-multi-tenant-example /202305/js
   - https://github.com/bikramkawan/strapi-multitenancy-v4 /202302/js
 
-- https://github.com/VirtusLab-Open-Source/strapi-examples /202304/ts
+- https://github.com/VirtusLab-Open-Source/strapi-examples /202304/ts/js
   - Strapi plugins usage examples
 
 - https://github.com/rixw/strapi-utils /202311/ts
@@ -550,7 +551,7 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/10Life/strapi-plugin-advanced-cache-manager /202312/js
   - This plugin allows Strapi users to invalidate the cache according to the cache time defined in the plugin options. Besides, it also provides a way for users to clear AWS CDN cache.
 
-- https://github.com/VirtusLab-Open-Source/strapi-plugin-comments /202310/ts
+- https://github.com/VirtusLab-Open-Source/strapi-plugin-comments /MIT/202402/ts
   - A plugin for Strapi Headless CMS that provides end to end comments feature with their moderation panel, bad words filtering, abuse reporting and much more.
   - [New Community Plugin: Content Moderation_202202](https://strapi.io/blog/new-community-plugin-content-moderation)
 
@@ -670,6 +671,8 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/minzig/strapi-plugin-init-admin-user /202311/js
   - Creates a strapi admin user on startup. 
   - Simplifies working with multiple strapi environments.
+- https://github.com/sunnysonx/strapi-plugin-bootstrap-admin-user /202012/js
+  - Automatically creates an admin user in development mode.
 
 - https://github.com/Fekide/strapi-plugin-impersonation /202308/js
   - This plugin allows all admin users with sufficient permissions to impersonate(扮演，饰演) any user on your site! So use it with caution!
@@ -903,6 +906,9 @@ modified: 2023-12-15T19:30:23.094Z
 
 - https://github.com/matheus-rodrigues00/strapi_overwriting_user_permission /202303/js
   - Application to demonstrate how to overwrite Strapi user-permission, using Strapi 4.x
+
+- https://github.com/YAKOO-HK/yakoo-strapi-local-starter /MIT/202402/ts
+  - Yakoo Strapi + NEXT.js local-hosting starter template
 # examples
 - https://github.com/sawden/turbostrapi /202311/ts
   - https://turbostrapi.vercel.app/
@@ -921,10 +927,17 @@ modified: 2023-12-15T19:30:23.094Z
   - https://tweethub.vercel.app/
   - twitter clone
 
+- https://github.com/satnaing/next-bookstore /MIT/202309/ts
+  - https://nextbookstore.vercel.app/
+  - online bookstore developed using NextJS 13 with appDir and StrapiCMS. (Still in Beta)
+  - Frontend UI is crafted with radix-ui and TailwindCSS. 
+  - To manage server and client state, TanStack Query and Zustand are used respectively.
+
 - https://github.com/JungRama/strapi-ecommerce-cms /202312/ts
   - Starter ecommerce Integration for NextJS and Strapi
 
 - https://github.com/GabrielLeandroBS/avion /202311/ts
+  - https://avion.vercel.app/
   - Project frontend for e-commerce using Strapi for CMS headless and Stripe for payment integration.
 
 - https://github.com/ielmar/strapi-puppeteer-parser-cron /202211/js
@@ -941,14 +954,25 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/anshu4sharma/blog /202306/ts
   - Next js blog created using tailwind css typescript and strapi
 
+- https://github.com/nicklima/strapi-blog-frontend-next /MIT/202312/ts
+  - Next.js Blog with Strapi Headless CMS
+  - frontend application (next.js hosted on Vercel) of a Headless blog using Strapi as CMS (hosted on Heroku), including image management.
+
 - https://github.com/Marktawa/blog-strapi /202308/ts
   - Blog website using Strapi for the backend and Next.js for the frontend
+
+- https://github.com/Prototypr/prototypr-frontend /202401/js
+  - https://prototypr.io/
+  - Open source publishing platform, built with Next.js and Strapi CMS backend. 
+  - Uses Tiptap/Prose-mirror editor.
+  - This site uses Next.js's Static Generation feature using `Strapi` as the data source.
+  - https://github.com/Prototypr/prototypr-backend /202302/js
 
 - https://github.com/Tammibriggs/strapi-book-app /202208/js
   - Repo for the article on Build a Book App With Infinite Scrolling and Meilisearch Strapi Plugin in React written on Strapi blog
   - [How to Build a Book App With Infinite Scrolling and Meilisearch Strapi Plugin in React_202208](https://strapi.io/blog/build-a-book-app-with-infinite-scrolling-and-meilisearch-strapi-plugin-in-react)
 
-- https://github.com/canopas/canopas-blog /202311/js
+- https://github.com/canopas/canopas-blog /MIT/202402/js
   - https://canopas.com/resources
   - Feature-Rich blogs platform built with strapi and next.js
 
@@ -967,6 +991,8 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/For-Hives/api-formenu /202312/js
   - https://github.com/For-Hives/formenu
   - A digital menu for a whole new experience
+  - API ForMenu application
+  - Strapi, PostgreSQL, NextJs 
 
 - https://github.com/SadmanYasar/prompt-treasure /202307/ts
   - https://prompt-treasure.vercel.app/
@@ -983,6 +1009,14 @@ modified: 2023-12-15T19:30:23.094Z
   - https://userstory.site/
   - POST stories. GET features.
   - https://github.com/EOS-uiux-Solutions/strapi
+
+- https://github.com/platformsh-templates/strapi4 /202402/js
+  - This template builds a Strapi backend for Platform.sh, which can be used to quickly create an API that can be served by itself or as a Headless CMS data source for another frontend app
+  - This repository does not include a frontend application
+
+- https://github.com/Akash-shah-cis/ChromoX /202402/js
+  - a creative platform where art and technology converge to provide a seamless experience for both creators and art enthusiasts. 
+  - This project is built with React, managed effortlessly with Strapi, and transactions powered by Stripe.
 # realtime/collab
 - https://github.com/ComfortablyCoding/strapi-plugin-io /MIT/202312/js
   - https://strapi-plugin-io.netlify.app/
@@ -1096,9 +1130,17 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/strapi/v5-experiments
   - /202307/ts
 # more
+- https://github.com/mgmgpyaesonewin/strapi-upptime
+  - https://upptime.github.io/upptime
+  - This repository contains the open-source uptime monitor and status page for Upptime, powered by Upptime.
+  - With Upptime, you can get your own unlimited and free uptime monitor and status page, powered entirely by a GitHub repository. 
+
 - https://github.com/strapi-support-demo-apps/strapi-example-v4-custom-db /202111/js
   - Example Strapi v4 app showing how the custom v4 migrations work
 
-- https://github.com/klaudsol/klaudsol-cms /202308/js
-  - Headless and Serverless CMS (Content Management System). 
+- https://github.com/klaudsol/klaudsol-cms /MIT/202307/js
+  - https://cms-demo.klaudsol.app/
+  - a Headless and Serverless CMS (Content Management System). 
   - A great alternative to WordPress and Strapi.
+  - 依赖@coreui/react、nivo、nextjs、react-redux、react-bootstrap、react-quill
+  - Deploys seamlessly to AWS Amplify Hosting + AWS Aurora Serverless

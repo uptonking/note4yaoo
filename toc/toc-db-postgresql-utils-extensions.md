@@ -9,6 +9,8 @@ modified: 2023-10-26T15:29:40.053Z
 
 # guide
 
+- extensions-list
+  - [1000+ PostgreSQL EXTENSIONs](https://gist.github.com/joelonsql/e5aa27f8cc9bd22b8999b7de8aee9d47)
 # popular
 - https://github.com/michaelpq/pg_plugins/tree/main/blackhole_am /c
   - This module is a PostgreSQL extension template

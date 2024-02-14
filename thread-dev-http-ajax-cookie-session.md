@@ -9,12 +9,24 @@ modified: 2021-08-06T08:32:26.142Z
 
 # guide
 
-# discuss
+# discuss-stars
 - ## 
 
 - ## 
 
-- ## 
+- ## 🤔 This will forever bother me: await (await fetch(url)).json()
+- https://twitter.com/wesleytodd/status/1757555080897646595
+  - Nearly zero of my use cases are best with fetch so I hardly ever use it, so I hope someone tells me "there is a better way".
+
+- I prefer something like this: `await fetch(url).then(r => r.json())`
+
+- I prefer `await fetch.then(res => res.json())` but some people view this as VERY CONTROVERSIAL
+
+- Just make `getJSON = res => res.json()` helper.
+
+- because of this, I prefer axios but I hate additional dependencies
+
+- There is a better way. One where you handle errors
 
 - ## 📶 How Programs Communicate Over the Network: Sockets
 - https://twitter.com/iximiuz/status/1718230339976389015

@@ -28,6 +28,14 @@ modified: 2021-01-21T17:52:13.333Z
 
 - ## 
 
+- ## Nice DuckDB feature. More applications should do this
+- https://twitter.com/lukaseder/status/1757693702074450336
+- There is a File Leak Detector, a Java agent that collects such info and makes it available to observability tools and users. It would be nice if it was able to automatically augment the exception throws
+
+- ## The Express.js repo got swamped with spam PRs thanks to a YouTube tutorial gone wrong. Hundreds of low-effort contributions flooded in, creating chaos for maintainers.
+- https://twitter.com/feross/status/1757463614532071545
+- One simple CI bot could’ve cleaned it up and kept it clean
+
 - ## What is the preferred way these days to add dev-only code to libraries? 
 - https://twitter.com/buildsghost/status/1757111425129181693
 - I'm still using `process.env.NODE_ENV` checks. Keen to know if there is a better way

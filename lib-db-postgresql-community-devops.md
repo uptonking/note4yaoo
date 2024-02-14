@@ -54,7 +54,8 @@ modified: 2023-10-26T19:18:19.584Z
 # discuss
 - ## 
 
-- ## 
+- ## Manning 的 PostgreSQL 新书，介绍了一些使用 PostgreSQL 的注意事项以及常见问题，属于运维方面的内容吧。
+- https://twitter.com/huangzworks/status/1757410451107754118
 
 - ## TIL, as a Postgres superuser, you can run: `SET ROLE other_user;` Then, start working as that user.
 - https://twitter.com/winsletts/status/1745504268973695371
