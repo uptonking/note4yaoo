@@ -38,7 +38,11 @@ modified: 2021-01-08T17:15:13.906Z
 
 - ## 
 
-- ## 
+- ## 🧩 FOUC: When content paints before its CSS has loaded.
+- https://twitter.com/jaffathecake/status/1757662754331144476 
+  - It results in a layout shift, but not all layout shifts are because of FOUC (in fact, FOUC is pretty rare these days).
+
+- Hence the name Flash of Unstyled Content. As far as I remember, this problem originated in IE. There were so many subtle issues with loading files.
 
 - ## Today I learned about the media scripting feature. It's about detecting JS support via a CSS media query.
 - https://twitter.com/shadeed9/status/1726851509634441259

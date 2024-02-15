@@ -9,6 +9,8 @@ modified: 2022-11-06T15:46:05.676Z
 
 # guide
 
+- tips
+  - csv常作为基于文本的表格的一种形式
 # popular
 - https://github.com/mholt/PapaParse /js
   - https://www.papaparse.com/

@@ -17,6 +17,16 @@ modified: 2023-06-19T12:33:38.006Z
 
 ## collab
 
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## Constraint-based, interactive graph layout in @tldraw
+- https://twitter.com/OrionReedOne/status/1757792684528337154
+  - Nodes (tldraw shapes) don't have to be connected for the layout to work and they can be any shape. 
+  - https://github.com/OrionReed/tldraw-graph-layout
+
 # discuss-collab
 - ## 
 

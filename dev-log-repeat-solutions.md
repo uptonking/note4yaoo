@@ -11,14 +11,13 @@ modified: 2021-07-20T13:50:23.433Z
 # guide
 
 - tips
-  - paas (~~rendering/web~~) may be the future.
-  - 涉猎saas解决方案，积累算法、库/框架、业务模版、解决方案
+  - ~~paas/rendering/web~~ may be the future
+  - 涉猎saas解决方案，积累算法、库、框架、业务模版、生态
   - 深入一个项目
     - 前端分析model/view/dataflow，后端分析数据库设计和优化
     - src-code, issues, pr, forks, extensions, most-commented-issues
     - roadmap, open-issues, alternatives
     - 开放能力: extensions, scripts, marketplace
-    - easy api, simple logic
     - pref: 索引、缓存、分库分表、读写分离
   - 抽空在线体验，工作专注代码
   - specification for pivot table

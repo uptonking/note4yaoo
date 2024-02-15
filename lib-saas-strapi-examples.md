@@ -13,6 +13,9 @@ modified: 2023-12-15T19:30:23.094Z
   - https://github.com/ComfortablyCoding/strapi-plugin-io
   - https://github.com/VirtusLab-Open-Source/strapi-plugin-reactions
   - https://github.com/notum-cz/strapi-plugin-content-versioning
+
+- resources
+  - [Strapi showcases, 很多案例的官网但非开源](https://strapi.io/showcases)
 # popular
 - https://github.com/strapi-community/awesome-strapi
   - A curated list of awesome things related to Strapi
@@ -21,6 +24,7 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/strapi/strapi-examples /202311
   - List of examples using Strapi
   - https://github.com/strapi/nextjs-corporate-starter /202312/ts
+  - https://github.com/ghoshnirmalya/nextjs-strapi-boilerplate /202210/ts
 
 - https://github.com/strapi/starters-and-templates /202307/js
   - Monorepo for all official Strapi v4 starters and templates.
@@ -49,6 +53,16 @@ modified: 2023-12-15T19:30:23.094Z
 
 - https://github.com/liveblocks/strapi-demo /202310/ts
   - Strapi + Liveblocks demo
+
+- https://github.com/its-devtastic/curator /MIT/202310/ts
+  - https://www.curatorjs.org/
+  - An alternative Strapi admin
+  - mobile-friendly admin
+  - Content versioning*
+  - Audit logs*
+  - Flexible plugin system
+  - Curator offers a Strapi plugin that adds those features, and an alternative admin app that is easier to customize.
+  - customizable admin built with React, Ant Design and Tailwind.
 # integrations
 - https://github.com/ONLYOFFICE/onlyoffice-strapi /MIT/202211/js/inactive
   - The app which enables the users to edit office documents from Strapi using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to Strapi
@@ -419,6 +433,7 @@ modified: 2023-12-15T19:30:23.094Z
 
 - https://github.com/flyce/strapi-provider-upload-minio-ce /202307/js
   - This upload provider uses the JavaScript Minio. Client to upload files to a (self hosted) instance of Minio.
+  - https://github.com/ericCHxia/strapi-provider-upload-minio /202312/ts
 - https://github.com/isuvorov/strapi-provider-upload-ts-minio /202207/js/v3
   - This upload provider for Strapi uses the JavaScript Minio. Client to upload files to a (self hosted) instance of Minio.
   - It's compatible with the the strapi 3.1.1.
@@ -751,6 +766,13 @@ modified: 2023-12-15T19:30:23.094Z
 
 ## utils-ext
 
+- https://github.com/smoothdvd/strapi-plugin-bull /MIT/202401/ts
+  - strapi-plugin-bull
+
+- https://github.com/WGR-SA/strapi-plugin-collection-tree /202402/ts
+  - Plugin allows for simple sorting of your collections. 
+  - It incorporates a view that lets you easily drag and drop your items, supporting nested compatibility.
+
 - https://github.com/ShahriarKh/strapi-content-type-explorer /202307/js
   - plugin that visualizes your content types and their relationships like an ERD (Entity Relationship Diagram).
 
@@ -909,6 +931,15 @@ modified: 2023-12-15T19:30:23.094Z
 
 - https://github.com/YAKOO-HK/yakoo-strapi-local-starter /MIT/202402/ts
   - Yakoo Strapi + NEXT.js local-hosting starter template
+
+- https://github.com/appsforyoou/strapi-basic-web /202312/ts
+  - Strapi boilerplate for basic landing page builds.
+
+- https://github.com/DarekMazur/react-content-manager /202402/ts
+  - a minimal setup to get React working in Vite with HMR 
+
+- https://github.com/david-rodgiquez/LandingPage /202401/ts
+  - Jobs page
 # examples
 - https://github.com/sawden/turbostrapi /202311/ts
   - https://turbostrapi.vercel.app/
@@ -939,6 +970,10 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/GabrielLeandroBS/avion /202311/ts
   - https://avion.vercel.app/
   - Project frontend for e-commerce using Strapi for CMS headless and Stripe for payment integration.
+
+- https://github.com/Ernestoc14/Ecommerce-React-Strapi /202402/js
+  - a FullStack E-commerce Website build with React, Strapi and Tailwind CSS.
+  - using React, Material UI, Stripe, Formik and Yup, Strapi CMS and Redux Toolkit 
 
 - https://github.com/ielmar/strapi-puppeteer-parser-cron /202211/js
   - This is a web scraper which uses Strapi as a headless backend with Sqlite as a database and Puppeteer for scraping data. 
@@ -1052,16 +1087,6 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/shahednasser/strapi-react-native /202202/js
   - Code for Create a Notes App with Strapi and React Native
 # utils
-- https://github.com/its-devtastic/curator /MIT/202310/ts
-  - https://www.curatorjs.org/
-  - An alternative Strapi admin
-  - mobile-friendly admin
-  - Content versioning*
-  - Audit logs*
-  - Flexible plugin system
-  - Curator offers a Strapi plugin that adds those features, and an alternative admin app that is easier to customize.
-  - customizable admin built with React, Ant Design and Tailwind.
-
 - https://github.com/acomagu/strapi-payload-model-migrator /202306/ts
   - Import models/components from Strapi V3 to Payload CMS
 

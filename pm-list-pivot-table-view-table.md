@@ -12,6 +12,9 @@ modified: 2022-12-16T01:52:33.729Z
 - 多维表格的使用场景
   - 充分考虑github实现的业务，如何将任务管理project、issues、discussions关联
 
+- table-usage
+  - csv常作为基于文本的表格的一种形式
+
 - roadmap
   - in-memory > virtual-render > on-demand
 # features

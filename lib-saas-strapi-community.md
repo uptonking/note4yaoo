@@ -38,28 +38,6 @@ modified: 2023-12-15T17:04:36.589Z
 - This is a working PR to introduce and use transactions within Strapi.
 
 - [simple implementation of transactions](https://github.com/strapi/strapi/pull/12715)
-# discuss-issues-done
-- ## 
-
-- ## [Can't install strapi - Questions and Answers - Strapi Community Forum](https://forum.strapi.io/t/cant-install-strapi/33500)
-- TypeError: Cannot read properties of undefined (reading 'addBreadcrumb')
-
-```shell
-# cd to your project and
-npm install --legacy-peer-deps
-npm run develop
-```
-
-# discuss-issues-not-yet
-- ## 
-
-- ## 🐛 [Inconsistency between responses gotten from the REST API and the Entity service API_202401](https://forum.strapi.io/t/inconsistency-between-responses-gotten-from-the-rest-api-and-the-entity-service-api/34975)
-- strapi-plugin-transformer plugin was what I was going to recommend. Another approach you can use, is to write a transformer function to flatten the response.
-
-- Yes, the transform plugin is the way to go. 
-  - But I’ve recently learned that it’s all a joke. 
-  - You see, core controllers invoke the transformResponse function which iterates over the service response and produces this highly impractical data/meta/attributes structure. This takes time. Then, the middleware offered by the transform plugin iterates again over that transformed response and flattens it. Which takes time again. 
-  - A performant way would be to disable that transformResponse function alltogether, or at least the part that wraps all non-id field within attributes. Maybe patch-package could be used for that.
 # discuss-strapi-mongo 🍃
 - ## 
 

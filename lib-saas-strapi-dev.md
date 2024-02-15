@@ -19,6 +19,9 @@ modified: 2023-12-15T16:51:56.101Z
   - v4不支持mongodb
   - 不支持多种第三方登录
   - 提供的rbac功能需要内置10张表，难以迁移离开
+  - At this time and in the future there is no plan to allow model creating or updating while in a production environment, and
+    - there is currently no plans to move model settings into the database. 
+    - There are no known nor recommended workarounds for this.
   - It doesn't namespace its admin table
   - 纯前端的plugin不方便直接预览
   - 大版本的breaking-changes很多
@@ -53,7 +56,7 @@ modified: 2023-12-15T16:51:56.101Z
 # draft
 - 流式输出 stream response
 # dev
-- 在admin添加content-type时，数据库会创建对应的表
+- 在admin添加新的content-type时，数据库会创建对应的表，同时后端src/api下面会自动生成对应的schema/router/controller/service，prod生产环境下不支持动态添加新的content-type
 # codebase
 
 # more

@@ -45,6 +45,18 @@ modified: 2020-12-20T12:36:17.694Z
 # discuss-seo
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 今天将网站提交到各个搜索引擎，说下体验：
+- https://twitter.com/YuTengjing/status/1757751907530289573
+  - 百度：不需要 ICP 备案，但是没法提交 sitemap
+  - 搜狗：需要资质认证，要 ICP 备案，域名是 cloudflare 买的，不打算提交了
+  - 360：体验好评，添加站点，添加 sitemap 很顺畅
+  - 谷歌：很顺畅
+  - 必应：直接从谷歌控制台导入站点数据，很贴心
+
 - ## 较基础的 SEO ，包括网站标题、描述、OG 卡片等元数据、整体结构的优化、
 - https://twitter.com/xqliu/status/1748895482276127064
   - 其实一点不难，是典型的 low hanging fruit ，建议及早意识到快速并进行优化。

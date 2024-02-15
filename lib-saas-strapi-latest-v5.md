@@ -10,6 +10,8 @@ modified: 2023-12-15T19:39:18.123Z
 # guide
 
 # rfc
+- resources
+  - [rfcs v5](https://github.com/strapi/rfcs/pulls?q=is%3Aopen+is%3Apr+label%3Av5)
 
 ## ⚖️ [v5 Database Design_202309](https://github.com/strapi/rfcs/blob/v5/database/rfcs/xxxx-v5-database.md)
 
@@ -62,6 +64,17 @@ modified: 2023-12-15T19:39:18.123Z
   - if you do (just an example) ?locale=en&state=draft you will get the draft entry for the english locale and by default you would get your default locale and the published version of your document.
 
 - After carefully considering the different Options, Option 1 is the most viable one for v5 and is the one we will be moving forward with.
+
+## ⚖️ [fe-apis · Introduce typed imperative APIs as opposed to InjectionZones](https://github.com/strapi/rfcs/blob/v5/fe-apis/rfcs/0056-FE-APIs.md)
+
+- proposes new public facing APIs aimed at plugin developers to be able to augment the EditView of the content-manager, the need came from the design proposals of Draft & Publish and would most likely be implemented only in V5 of the product under the Draft & Publish scope.
+- The `addDocumentActions` API is a new API that allows you to add actions to be rendered in the DocumentActions menu (this is new to V5).
+
+### 👥 [[V5]: FE APIs](https://github.com/strapi/rfcs/pull/56)
+
+- Introduce typed imperative APIs to inject DocumentActions, SideBarPanels and DocumentHeaderActions as opposed to InjectionZones in V5.
+
+- I like the idea but why remove the InjectionZones and not build this feature on top of InjectionZones. so it can be an InjectionZones or documentActions, SideBarPanels and DocumentHeaderActions
 # discuss-v5-changelog
 - ## wip
 - [feat(cm): D&P pt2](https://github.com/strapi/strapi/pull/19380)
@@ -116,6 +129,9 @@ modified: 2023-12-15T19:39:18.123Z
   - any new PRs submitted after October 31st (Tuesday) will be closed due to the change freeze unless an exclusion is applied.
   - we have started our major development on Strapi v5 and want to try and limit the amount of merge conflicts that we have between the main branch for Strapi v4 and the v5/* branches.
 
+- ## [Axios instance in strapi - Discussions - Strapi Community Forum](https://forum.strapi.io/t/axios-instance-in-strapi/30425)
+- axios instance will be deprecated in v5 use `useFetchClient` instead
+
 - ## ⚖️ [Notice: Requesting community feedback on v5 RFCs_202309](https://github.com/strapi/strapi/issues/17958)
 - When we launched Strapi v4, we released a few RFCs but did not get enough feedback on them back then and there was quite a bit of feedback shared around some of the changes in v4 that we did and for Strapi v5 we are attempting to prevent making that mistake again. 
 - Below you will find 2 RFCs we are making public for community review
@@ -138,9 +154,10 @@ modified: 2023-12-15T19:39:18.123Z
 # discuss-v5
 - ## 
 
-- ## 
-
-- ## 
+- ## [How to create archive for blog in strapi and nextjs? - Questions and Answers - Strapi Community Forum](https://forum.strapi.io/t/how-to-create-archive-for-blog-in-strapi-and-nextjs/21247/11)
+- the whole reason we need v5 is to build content versioning. We made quite a lot of changes in v4 to try and achieve what we wanted to do but hit some breaking change blockers that required some additional things so it got delayed til v5.
+- 
+- 
 
 - ## webpack requires a decent amount of ram to build the react output
 - https://discord.com/channels/811989166782021633/1187470968009011330/1187486143797792818

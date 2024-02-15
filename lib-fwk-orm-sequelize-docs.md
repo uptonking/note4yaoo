@@ -9,6 +9,18 @@ modified: 2023-02-05T18:49:31.166Z
 
 # guide
 
+# [Read Replication | Sequelize](https://sequelize.org/docs/v6/other-topics/read-replication/)
+- Sequelize supports read replication, i.e. having multiple servers that you can connect to when you want to do a SELECT query. 
+  - When you do read replication, you specify one or more servers to act as read replicas, 
+  - and one server to act as the main writer, which handles all writes and updates and propagates them to the replicas 
+  - (note that the actual replication process is not handled by Sequelize, but should be set up by database backend).
+
+- [Load-balancing using sequelize _201702](https://github.com/sequelize/sequelize/issues/7176)
+  - Is load balancing possible using sequelize? I want to be able to separate the read/write queries and direct the read queries to the read-only database.
+
+- Load balancing is not in our scope, but we do offer replication
+  - You can define two database config in replication.read and replication.write options for Sequelize constructor config. You can define any number of read replicas (config accept array). All your read queries will be sent to read replicas by round robin scheduling technique.
+- ORM should never be in charge of populating read/write replicas, it should be managed by your db service provider. Have you used replicas before?
 # docs-v6
 - A model is an abstraction that represents a table in your database. 
   - In Sequelize, it is a class that extends Model.
@@ -67,7 +79,7 @@ modified: 2023-02-05T18:49:31.166Z
 
 - eager Loading is the act of querying data of several models at once (one 'main' model and one or more associated models). 
   - At the SQL level, this is a query with one or more joins.
-- In Sequelize, eager loading is mainly done by using the `include` option on a model finder query (such as `findOne`,     `findAll`, etc).
+- In Sequelize, eager loading is mainly done by using the `include` option on a model finder query (such as `findOne`,         `findAll`, etc).
 
 - An instance can be created with nested association in one step, provided all elements are new.
 - In contrast, performing updates and deletions involving nested objects is currently not possible. 

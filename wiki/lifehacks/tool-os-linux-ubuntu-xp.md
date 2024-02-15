@@ -171,6 +171,11 @@ modified: 2021-01-01T22:26:57.773Z
   4. Sweeper
   5. rmLint
 # wayland
+- wayland下fractional scaling导致chrome模糊的问题
+  - 目前202402仍没有通用的解决方案，需要系统级的支持和应用级的支持，非常困难来支持大多应用
+  - 考虑浏览器、electron、系统编辑器/文件管理器
+  - 变通方案: 不开启fractional scaling, 保持系统缩放比例 100%， 修改fonts-scaling-factor为1.75
+
 - ## 
 
 - ## 
@@ -216,7 +221,14 @@ modified: 2021-01-01T22:26:57.773Z
 
 - ## 
 
-- ## 
+- ## [Is there any way I could fix or mitigate the blur on applications using XWayland caused by fractional scaling? - Desktop - GNOME Discourse](https://discourse.gnome.org/t/is-there-any-way-i-could-fix-or-mitigate-the-blur-on-applications-using-xwayland-caused-by-fractional-scaling/17052)
+- the blurriness for X11 applications running with fractional scaling is expected, and it cannot really be fixed without porting those applications away from X11.
+  - What KDE does is precisely what GNOME does when changing the text scaling factor; 
+  - the only difference is that KDE modifies the Xrdb settings database, which is what applications using Qt or older X11 toolkits use, whereas GNOME changes a setting that is used by GTK applications. 
+
+- From what I’ve seen, Plasma also offers “Scaled by the system” and “Apply scaling themselves” modes, which looks like a decent “solution” that could (easily?) be used. I’m not sure if GNOME has anything similar to that.
+
+- Open source will always be fragmented because the whole point of it is anyone can change anything, so there is no way to ensure everyone uses the same thing. If that is a problem, I would suggest using something else. Sadly there is no “one size fits all”.
 
 - ## [Fractional scaling makes browser blurred - Ask Ubuntu](https://askubuntu.com/questions/1415924/fractional-scaling-makes-browser-blurred)
 - I found a workaround which is not ideal but achieves the same effect as 125% fractional scaling, without making browser text blurred.
@@ -228,10 +240,11 @@ modified: 2021-01-01T22:26:57.773Z
 - ## [Google Chrome is blurry on Ubuntu 23.04 (Wayland + Nvidia 3050 Ti HiDPI screen with 200% scaling) - Ask Ubuntu](https://askubuntu.com/questions/1472847/google-chrome-is-blurry-on-ubuntu-23-04-wayland-nvidia-3050-ti-hidpi-screen-w)
 - It seems to be caused by the new Wayland fractional scaling feature. What worked for me was turning it off using --disable-features=WaylandFractionalScaleV1.
 
-- ## [Can't use Wayland with Nvidia 510 drivers on Ubuntu 22.04 LTS - Ask Ubuntu](https://askubuntu.com/questions/1403854/cant-use-wayland-with-nvidia-510-drivers-on-ubuntu-22-04-lts)
-- edit  /usr/lib/udev/rules.d/61-gdm.rules
+- ## 💡 [Can't use Wayland with Nvidia 510 drivers on Ubuntu 22.04 LTS - Ask Ubuntu](https://askubuntu.com/questions/1403854/cant-use-wayland-with-nvidia-510-drivers-on-ubuntu-22-04-lts)
+- sudo gedit /usr/lib/udev/rules.d/61-gdm.rules
 
-```
+```shell
+# just comment the last two lines
 LABEL = "gdm_prefer_xorg"
 #RUN += "/usr/lib/gdm-runtime-config set daemon PreferredDisplayServer xorg"
 GOTO = "gdm_end"

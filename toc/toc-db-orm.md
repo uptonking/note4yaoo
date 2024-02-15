@@ -422,6 +422,19 @@ modified: 2021-08-30T18:56:09.644Z
 - https://github.com/eclipse/jnosql-databases /EPLv1
   - https://www.jnosql.org/
   - a Java framework that streamlines the integration of Java applications with NoSQL databases.
+# db-middlewares
+- https://github.com/Meituan-Dianping/Zebra /apache2/201911/java
+  - 基于JDBC API协议上开发出的高可用、高性能的数据库访问层解决方案
+  - 简化了读写分离、分库分表的开发工作
+
+- https://github.com/JimmyAndZzZ/hulk /202308/java
+  - 基于Mysql协议的数据库中间件
+  - 基于Mysql协议，可以通过navicat、jdbc等连接方式
+  - 支持用SQL查询非结构化和结构化数据库，例如Mysql、Oracle、Clickhouse、Excel、elasticsearch
+  - 支持不同数据源之间表关联查，目前支持inner join和left join
+  - 基于calcite进行SQL解析，并对SQL进行扩展，支持自定义扩展操作
+  - 读写分离、单写多读
+  - 支持分库分表、权限设置(可到字段级别)
 # more-database
 - https://github.com/lealone/Lealone
   - /1.6kStar/Apache2+H2MPL2/202012/java

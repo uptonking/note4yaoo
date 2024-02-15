@@ -14,8 +14,21 @@ modified: 2024-01-06T13:48:42.969Z
 
 - ## 
 
-- ## 
+- ## 如果让我只分享一个 shell 小技巧，那么就是个我已经用了快十年的“默认连接 tmux session”了
+- https://twitter.com/beihuo/status/1758014886679069159
+  - 这段代码的主要功能是：如果当前运行的 Terminal 是 Apple Terminal，那么就使用 tmux 并连接到名为 hack 的 session。如果你使用其他软件，可以改成对应的名字。这个判断不会影响 IDE 里面的嵌入式终端。默认的 session 你也可以改成自己喜欢的。
+  - 这段代码虽然短，但是从此以后再也无需关心 Terminal 的状态，随用随开，随时关闭。心态超放松。
+
+- 可以开多个窗口吗？
+  - 可以开多个 tmux window
+
+- tmux a -t stamhe
+  - tmux new -s stamhe
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 终端退出时，并非所有子进程都会退出。只有那些没有忽略或特别处理SIGHUP信号的子进程会随着终端的关闭而退出。

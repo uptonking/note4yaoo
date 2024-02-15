@@ -47,7 +47,15 @@ modified: 2021-04-24T08:29:02.272Z
 # discuss
 - ## 
 
-- ## 
+- ## Are we (Adonisers) the only one building traditional server rendered apps in Node.js?
+- https://twitter.com/AmanVirk1/status/1757980175533306277
+  - Folks using other frameworks like Fastify, Nest, or even Hono . Are you all building JSON API's?
+
+- SPA and JSON API has been a standard for so long that the majority of devs are downright offended for suggesting traditional server apps.
+- Almost every one these days is following Api trend, even if API is not required.
+- I like the html first approach but personally find writing jsx easier in terms of composition. There should be a way to create html strings from it during build so it's not that heavy during runtime but I've not spent time finding an existing solution
+  - [Use TSX for your template engine](https://adonisjs.com/blog/use-tsx-for-your-template-engine)
+- Maybe there’s a dozen using express + ejs
 
 - ## 💡 TLDR: morphing on the server to make smaller HTML payloads doesnt make as much difference as you think and introduces complexity
 - https://twitter.com/RogersKonnor/status/1717185649839657168
@@ -69,12 +77,12 @@ modified: 2021-04-24T08:29:02.272Z
 
 - ## [reactjs - How single-page application works in SSR (React) - Stack Overflow](https://stackoverflow.com/questions/57243697/how-single-page-application-works-in-ssr-react)
 - When implementing Server Side Rendering (SSR), the server knows how to generate a full page with markup so the user gets a fully rendered page and from that moment, when the js resources get downloaded, the application will be live (event listeners will be enabled, the react lifecycle will be active and so on).
-01.   Get a request for a specific path
-02.   Initiate a new store instance for the request
-03.   In case of using react router (or other router solution), fill the state with the requested route
-04.   Render the app, but instead of rendering and mounting the App, render the App to string (with renderToString)
-05.   Dehydrate the state - take the latest state snapshot and append it to the result (after escaping it and wrapping it with script tag for example)
-06.   Return the markup as a response. The markup can look similar to the following: 
+01.    Get a request for a specific path
+02.    Initiate a new store instance for the request
+03.    In case of using react router (or other router solution), fill the state with the requested route
+04.    Render the app, but instead of rendering and mounting the App, render the App to string (with renderToString)
+05.    Dehydrate the state - take the latest state snapshot and append it to the result (after escaping it and wrapping it with script tag for example)
+06.    Return the markup as a response. The markup can look similar to the following: 
 
 ```HTML
 <html>
