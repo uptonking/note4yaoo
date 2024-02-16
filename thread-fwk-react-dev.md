@@ -10,6 +10,28 @@ modified: 2021-01-06T14:40:03.364Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 
+
+- ## By the end of 2024, you’ll likely never need these APIs again:
+- https://twitter.com/acdlite/status/1758229889595977824
+  • useMemo, useCallback, memo → React Compiler
+  • forwardRef → ref is a prop
+  • React.lazy → RSC, promise-as-child
+  • useContext → use(Context)
+  • throw promise → use(promise)
+  • `<Context.Provider>` → `<Context>`
+
+- Can `key` be a normal prop too?
+  - That one is different because conceptually it doesn't belong to the child; it's called `key` because it's like the key for the map of children. So it really belongs to the parent.
+
+- is use(Context) inside memo aka the "context selectors" going to make it to v19?
+  - probably not since we haven't started work on that yet, but it could land in a 19.x minor
+
+- How do we feel about Context.use()
+  - It could theoretically work in the runtime but we want it to be a hook so that the compiler can optimize this in the future. The “use” convention tells the compiler it’s doing something special behind the scenes; it’s not just a normal computation because it affects memoization.
+
 - ## 🤔 The `asChild` API in Radix seemed like a great idea at the time but after being on the other side as a user, I think it's just way too big a footgun.
 - https://twitter.com/chancethedev/status/1753433321126953050
 - Do you favor the "as" prop then?

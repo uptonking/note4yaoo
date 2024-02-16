@@ -9,9 +9,18 @@ modified: 2023-12-15T19:39:18.123Z
 
 # guide
 
-# rfc
+# features/rfc
 - resources
   - [rfcs v5](https://github.com/strapi/rfcs/pulls?q=is%3Aopen+is%3Apr+label%3Av5)
+  - [5.0.0 Milestone](https://github.com/strapi/strapi/milestone/256)
+
+## ✨ draft-publish
+
+### [Q1, 2024 — Draft & Publish | Content Editing XP | Strapi](https://feedback.strapi.io/customization/p/q1-2024-draft-publish)
+
+- > Allow users to manage content by having a published and draft content at the same time.
+
+- We tried the content versioning plugin but it didn't work with related content or unique fields, so we are back to waiting for this to be released. Does anyone know if there is an eta?
 
 ## ⚖️ [v5 Database Design_202309](https://github.com/strapi/rfcs/blob/v5/database/rfcs/xxxx-v5-database.md)
 
@@ -89,14 +98,25 @@ modified: 2023-12-15T19:39:18.123Z
 
 - ## 
 
-- ## [feat: list history versions in the history page sidebar _202402](https://github.com/strapi/strapi/pull/19421)
+- ## 
+
+- ## [feat(content-manager): display history versions _20240210](https://github.com/strapi/strapi/pull/19458)
+- > This PR displays the content of history versions on the history page. We display all the fields in disabled mode.
+
+- To look at previous versions of your content.
+
+- ## [feat: list history versions in the history page sidebar _20240206](https://github.com/strapi/strapi/pull/19421)
 - Displays a list of history versions in the history page sidebar
+
+- [feat(history): add history-version content type _20240125](https://github.com/strapi/strapi/pull/19316)
+  - Registers a history version content type. 
+  - It's a content type for now, but it will converted to a model later when Alex finished his database model API proposal.
 
 - ## [chore(cm): refactor content-manager _202401](https://github.com/strapi/strapi/pull/19341)
 - this PR absolutely destroys the CM. But, it shakes off loads of tech debt, makes data transformations clearer and isolated to one place. It also introduces new public APIs for users
   - refactors the CM to be more driven by domains
 
-- ## ✨ [feat: Draft & Publish V5 _202401](https://github.com/strapi/strapi/pull/18941)
+- ## ✨ [feat: Draft & Publish V5 _20240126](https://github.com/strapi/strapi/pull/18941)
 - this is an iteration of handling Documents and D&P in the content manager.
   - Refactored Collection-Types contracts api to return document metadata (available locales and publication status of a document)
   - Refactored entity-manager to work with the document service (we will rename it to document-manager)
@@ -151,6 +171,8 @@ modified: 2023-12-15T19:39:18.123Z
 - ## [Notice: Stability and changes to our release process (v4.15.x through 2023)](https://github.com/strapi/strapi/issues/18841)
 - here is our internal roadmap for Strapi v5
 
+- Our primarily reason for working on v5 is to be able to release content versioning, content history, and draft & publish (v5 version). 
+  - For certain features (mainly content versioning and content history) to be developed we need the breaking changes from v5 hence the focus and deadline as we have already delayed these features for over a year after we identified that v4 changes were not enough to build these features.
 # discuss-v5
 - ## 
 

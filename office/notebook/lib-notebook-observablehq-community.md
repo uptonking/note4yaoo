@@ -23,6 +23,31 @@ modified: 2021-05-14T14:55:00.191Z
   - That should be possible (the timing and implementation of sending changes is left to your integration code, so it can hold off until some condition is satisfied).
   - (Of course, the result of merging two concurrent syntactically-valid changes may still be syntactically invalid.)
 
+# discuss-news
+- ## 
+
+- ## 
+
+- ## 
+
+- ## I appreciate the nod to "File over app" from @mbostock and the @observablehq team in the latest announcement.
+- https://twitter.com/kepano/status/1758202572446581025
+  - It's so cool that a Markdown file with code blocks can be the source for complex data visualizations and dashboards. This means the files are interoperable with @obsdmd .
+- Your post strengthened my conviction in this evolution of Observable. Interoperability for the win!! Thanks for trying Framework, too.
+- Probably worth mentioning @evidence_dev , a BI library integrating markdown and SQL for elegant data analytics and visualization
+
+- ## @observablehq 2.0 defines a file format, local support, and open source framework
+- https://twitter.com/tmcw/status/1758142768877023451
+- If I understand this correctly, the (evolving) business model here is analogous to making the compiler for a language free, but offering an IDE as a subscription service. http://Observablehq.com is still the way we're expected to develop, in our browsers. I hope this works out.
+- looks excellent. notebooks have never really clicked for me as a non-data-scientist
+
+- ## 🎯 open-source static site generator — Observable Framework — for creating fast, beautiful data apps _202402
+- https://twitter.com/observablehq/status/1758167290942525738
+- Did you give up on the "custom js" idea? 
+- my dream is you making jupyter notebooks that don’t suck. My dream is seeing a python interpreter that works just like your current JS custom interpreter.
+  - You should try writing Python data loaders in Framework! As soon as you save changes to your Python file, the page updates instantly with fresh data without you needing to reload.
+
+- Maybe it worth a try to make a plugin for obsidian that can render the Observable notebook in the local environment. It would be a game changer for the note taking experience.
 # discuss
 - ## 
 

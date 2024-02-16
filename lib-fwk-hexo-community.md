@@ -15,6 +15,13 @@ modified: 2024-02-09T10:54:44.509Z
 - ## 
 
 - ## 
+
+- ## I am looking for a broken link checker tool that I can run against localhost.
+- https://twitter.com/alexandereardon/status/1758252484165025931
+  - For clarity: the markdown is being used to generate a website, and that website is currently running on my localhost
+  - I started writing my own using puppeteer - but I keep thinking that surely one already exists
+
+- since a lot renderers use remark / mdast under the hood i was going to suggest remark-validate-links
 # discuss
 - ## 
 

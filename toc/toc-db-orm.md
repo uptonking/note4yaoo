@@ -68,6 +68,14 @@ modified: 2021-08-30T18:56:09.644Z
   - a TypeScript ORM for SQL databases
   - 支持mysql、postgresql、sqlite，不支持mongo
 
+- knex /18.5kStar/MIT/202401/js
+  - https://github.com/knex/knex
+  - http://knexjs.org/
+  - A query builder for MSSQL, MySQL, PostgreSQL, SQLite3, Oracle
+  - 依赖commander、tarn
+  - feathers.v5抽象出schema+resolver，通过knex+mongoose支持rdbms和nosql
+  - knex-based orm: mikro-orm, bookshelf, objection.js
+
 - prisma /28.1kStar/apache2/202301/ts
   - https://github.com/prisma/prisma
   - https://www.prisma.io/

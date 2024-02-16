@@ -28,6 +28,14 @@ modified: 2021-04-27T09:19:37.711Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Can you Syntax Highlight a code snippet on the web without overloading the DOM with a ton of `<span>` elements wrapped around the tokens? Thanks to the Custom Highlight API, you can!
+- https://twitter.com/bramus/status/1758266600946548878
+  - The Custom Highlight API is supported in Chrome 105+ and Safari 17.2+. Firefox has experimental support.
+
 - ## An issue we're really eager to tackle in the web platform very soon is this thing where state is reset when an element is being reparented/moved (iframes reloading, focus/selection clears, animations restart).
 - https://twitter.com/nomsternom/status/1755275696434286831
 - Seems tricky to solve since the web DOM treats moves as removal followed by insertion. What are your preliminary ideas for addressing this?

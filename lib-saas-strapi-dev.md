@@ -12,9 +12,10 @@ modified: 2023-12-15T16:51:56.101Z
 - pros
   - MIT and features-rich
   - plugin system
-  - 支持audit历史记录表
+  - 支持audit日志记录
 
 - cons
+  - 不支持version-history，但audit日志记录可作为类似功能
   - 与已有数据库集成不方便
   - v4不支持mongodb
   - 不支持多种第三方登录
@@ -27,6 +28,7 @@ modified: 2023-12-15T16:51:56.101Z
   - 大版本的breaking-changes很多
 
 - features
+  - 核心模块: content-mgr, content-type-builder, media-lib, roles-permissions
   - Self-hosted or Cloud
   - Modern Admin Pane
   - Multi-database support: PostgreSQL, MySQL, SQLite
@@ -55,6 +57,15 @@ modified: 2023-12-15T16:51:56.101Z
   - [Directus vs. Strapi – Comparison Headless CMS — Restack](https://www.restack.io/docs/directus-vs-strapi)
 # draft
 - 流式输出 stream response
+
+- media
+  - files: docx/ppt
+  - usage-references
+
+- frontend
+
+- backend
+  - api-rate-limit
 # dev
 - 在admin添加新的content-type时，数据库会创建对应的表，同时后端src/api下面会自动生成对应的schema/router/controller/service，prod生产环境下不支持动态添加新的content-type
 # codebase

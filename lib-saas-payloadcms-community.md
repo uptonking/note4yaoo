@@ -89,6 +89,23 @@ modified: 2023-12-15T17:05:49.576Z
 - It's a very interesting problem space. The http://editable.website approach is to do it all inline (it's basically building an app) but using a CMS comes in handy once I'd start replicating things like publishing workflows, permissions etc.
 # discuss-utils
 - [User CSV Import for a Collection](https://github.com/payloadcms/payload/discussions/1660)
+# discuss-feat-version-history
+- ## 
+
+- ## [Roadmap: Revision History · payloadcms/payload](https://github.com/payloadcms/payload/discussions/292)
+- This is now released in 0.15.0_20220317
+
+- i have one suggestion can we have an extra field in versions to track what triggered the version creation, like where we can add a note ?
+
+- ## ✨ [Versions, Drafts, & Autosave _20220207](https://github.com/payloadcms/payload/pull/409)
+- This draft PR adds three large features to Payload:
+- Versions
+  - Automatically maintain a history of changes to any given collection document or global, including "diff" views and ways to restore to specific versions
+- Drafts
+  - Full system that supports draft / published documents.
+- Autosave
+  - Opt-in pattern for autosaving drafts of documents as they are edited, with control over manually publishing changes.
+
 # discuss
 - ## 
 

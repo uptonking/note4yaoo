@@ -12,7 +12,16 @@ modified: 2021-09-10T14:15:55.903Z
 # discuss
 - ## 
 
-- ## 
+- ## Let's run React Native on the UI thread and see what blows up first
+- https://twitter.com/LinguaBrowse/status/1758141910605283492
+- I always wanted to try this. With worklets (and careful developers) a synchronous UI architecture could lead to much more performant apps
+  - This could become even more relevant with Static Hermes, as JS speed and native interop wouldn't really be a huge bottleneck anymore.
+
+- Seems a shame to go full synchronous when there is a massively capable concurrent UI model in React 18
+
+- BTW, we are also working on a model for sharing objects directly between JS threads. That can enable true multi-threading, but safer, since objects will not be shareable by default. I hope to be able to post more about this when we have more.
+
+- Case-in-point: In NativeScript's official imperative UI library, you can make a virtual list exactly like on native. But with React/Vue/Angular/etc., you have to render into a dummy root and find a way to force all the contents to lay out before the dequeue callback finishes.
 
 - ## Linear Mobile v0.1. A fast, native experience for your cellular device.
 - https://twitter.com/artman/status/1757667916474958011

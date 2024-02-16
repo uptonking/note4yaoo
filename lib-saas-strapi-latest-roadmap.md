@@ -60,3 +60,17 @@ modified: 2023-12-15T18:29:23.105Z
 ## v0.0
 
 # more
+
+# discuss-changelog
+- ## 
+
+- ## 
+
+- ## [Add Audit Logs feature _202301](https://github.com/strapi/strapi/pull/15536)
+- Go to Settings -> Audit Logs, you will see a list with a log of events, you should see also the details of each event in a specific modal if you click the details icon at the right
+
+- ## [Use transactions and expose a transactional API _202301](https://github.com/strapi/strapi/pull/14389)
+  - /#merged
+- This is a working PR to introduce and use transactions within Strapi.
+
+- [simple implementation of transactions](https://github.com/strapi/strapi/pull/12715)

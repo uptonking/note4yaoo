@@ -11,13 +11,13 @@ modified: 2021-08-30T18:56:14.863Z
 
 - http://sqlfiddle.com/
 # query-builder
-- knex /17kStar/MIT/202301/js
+- knex /18.5kStar/MIT/202401/js
   - https://github.com/knex/knex
   - http://knexjs.org/
   - A query builder for MSSQL, MySQL, PostgreSQL, SQLite3, Oracle
-- 依赖commander、tarn
-  - feathers.v5通过schema+resolver的抽象，通过knex+mongoose支持rdbms和nosql
-  - knex-based Object Relational Mapper: mikro-orm, bookshelf, objection.js
+  - 依赖commander、tarn
+  - feathers.v5抽象出schema+resolver，通过knex+mongoose支持rdbms和nosql
+  - knex-based orm: mikro-orm, bookshelf, objection.js
 
 - https://github.com/koskimas/kysely
   - a type-safe and autocompletion-friendly typescript SQL query builder. Inspired by knex. 

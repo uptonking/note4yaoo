@@ -10,7 +10,18 @@ modified: 2024-02-15T05:46:32.456Z
 # guide
 
 # issues-done
-- ## 
+- ## [Deleting/Updating content-type doesn't drop/migrate the database _201805](https://github.com/strapi/strapi/issues/1114)
+- we don't delete your tables we just create new ones, therefore the behavior you described is the correct one.
+
+- Fixed in v4, marking as closed
+  - There is no configuration for this as we will just delete the column/table on reboot when it's deleted. We did discuss a warning or a safer method but opted not to do it in v4. 
+  - When you use v4 we will simply clean up the database for you.
+
+- Yes this is currently intended (as you deleted the schema effectively), the best method to hold onto the data is take a database backup.
+  - If you are simply renaming a content-type or field then you will have to (for now) write a custom migration
+
+- [Data Loss in Content-Type Table After Schema Modification _202401](https://github.com/strapi/strapi/issues/19141)
+  - In Strapi v5 D&P and i18n won't be able to be disabled (though they don't have to be used) so technically in v5 the D&P delete issue won't be a problem anymore since it'll be forced on for all content-types (though you'll have the option to auto-publish by default or if new content should be a draft state).
 
 - ## [Can't install strapi - Questions and Answers - Strapi Community Forum](https://forum.strapi.io/t/cant-install-strapi/33500)
 - TypeError: Cannot read properties of undefined (reading 'addBreadcrumb')
@@ -22,6 +33,8 @@ npm run develop
 ```
 
 # issues-not-yet
+- ## 
+
 - ## 
 
 - ## 

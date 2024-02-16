@@ -13,7 +13,11 @@ modified: 2024-02-09T14:19:14.801Z
 # discuss
 - ## 
 
-- ## 
+- ## git diff and many other diff programs use an algorithm that's based on the famous data structure, LCS (Longest Common Subsequence). 
+- https://twitter.com/debasishg/status/1758204779195744687
+  - The core paper that first implemented this idea is by  Eugene W. Myers. His 1986 paper "An O(ND) Difference Algorithm and Its Variations" is a great read and improved upon the past experiments on this topic.
+
+- What bugs me is diff algorithms meant for storage of changes (patches) being used for humans trying to figure out what changed and/or merging. They're often syntactically oblivious, and therefore don't always detect large block moves (e.g., methods) when small parts are changed.
 
 - ## Not all algorithms with a nested loop run in quadratic time.
 - https://twitter.com/Franc0Fernand0/status/1757417688068935846
@@ -29,15 +33,15 @@ modified: 2024-02-09T14:19:14.801Z
 
 - ## 10 Graph Algorithms You Must Know
 - https://twitter.com/AmigosCode/status/1726941910449672237
-01.   Breadth-first search: Traverses a graph level by level, exploring all neighbors of a node before moving on to the next level. 
-02.   Depth-first search: Explores as far as possible along each branch before backtracking, often implemented using recursion. 
-03.   Shortest path: Finds the most efficient path between two nodes in terms of the sum of edge weights. 
-04.   Cycle detection: Identifies the presence of cycles (loops) in a graph, crucial for detecting dependencies and avoiding infinite loops. 
-05.   Minimum spanning tree: Finds the subset of edges that connects all vertices with the minimum total edge weight, forming a tree. 
-06.   Strongly connected components: Divides a directed graph into strongly connected subgraphs, where each vertex is reachable from every other vertex. 
-07.   Topological sorting: Orders the vertices of a directed acyclic graph in such a way that for every directed edge, the destination vertex comes after the source vertex. 
-08.   Graph Colouring: Assigns colors to vertices of a graph such that no two adjacent vertices share the same color, often used in scheduling and resource allocation. 
-09.   Maximum flow: Determines the maximum amount of flow that can be sent from a designated source to a designated sink in a flow network. 
+01.    Breadth-first search: Traverses a graph level by level, exploring all neighbors of a node before moving on to the next level. 
+02.    Depth-first search: Explores as far as possible along each branch before backtracking, often implemented using recursion. 
+03.    Shortest path: Finds the most efficient path between two nodes in terms of the sum of edge weights. 
+04.    Cycle detection: Identifies the presence of cycles (loops) in a graph, crucial for detecting dependencies and avoiding infinite loops. 
+05.    Minimum spanning tree: Finds the subset of edges that connects all vertices with the minimum total edge weight, forming a tree. 
+06.    Strongly connected components: Divides a directed graph into strongly connected subgraphs, where each vertex is reachable from every other vertex. 
+07.    Topological sorting: Orders the vertices of a directed acyclic graph in such a way that for every directed edge, the destination vertex comes after the source vertex. 
+08.    Graph Colouring: Assigns colors to vertices of a graph such that no two adjacent vertices share the same color, often used in scheduling and resource allocation. 
+09.    Maximum flow: Determines the maximum amount of flow that can be sent from a designated source to a designated sink in a flow network. 
 10. Matching: Identifies edges in a graph such that no two edges share a common vertex, often used in bipartite graph matching or assignment problems.
 
 - ## Here are 7 Search Algorithms you need to know!

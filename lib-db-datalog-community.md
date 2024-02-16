@@ -97,7 +97,18 @@ modified: 2023-09-16T17:27:42.089Z
 
 - ## 
 
-- ## 
+- ## 🚀 [Glowdust is a new kind of database management system | Hacker News _202402](https://news.ycombinator.com/item?id=39344643)
+- This feels a lot like many Prolog-likes, and also tuple-based DBs, and also a bunch of other things.
+
+- Reminds me of datalog, but no mention of it in the readme. I wonder what the big difference is (a part from the syntax)
+  - The big difference I see at a skim is that, in classical datalog, facts are only allowed to contain domain attributes, and not value attributes. E.g., you can express binary facts like Raining(12:00) (it's raining at 12:00), but not Rain(12:00) = 5 in (At 12:00, 5 inches of rain had accumulated).
+  - Value attributes make it much easier to express most forms of aggregation (sum, min, max), so you'll find very similar patterns in practical datalog variants e.g., RelationalAI's Rel, DBToaster's AGCA, etc...
+  - Apart from that, and a syntax that seems to resemble map-style collection programming a bit more than datalog, yeah, this basically looks like datalog.
+
+- At a firsta glance, this looks semantically equivalent to SPARQL, except you can add function expressions. I like combining data and code, but would like to know more about the inspiration and differences to triplestores.
+
+- I rather have data separated from operations done on data. I am very happy since I don't have to deal anymore with stored procedures.
+  - Honestly, the main issue I have with stored procedures is mostly the tooling that is stuck in the 80s…
 
 - ## [SQL + M4 = Composable SQL | Hacker News_202212](https://news.ycombinator.com/item?id=34159699)
 - I've been using dbt for achieving the same goals and it's honestly been a bliss(愉悦感; 极乐; 欣喜). Macros, packages, cross referencing views, unit tests, documentation generation, snapshotting.

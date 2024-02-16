@@ -12,6 +12,8 @@ modified: 2023-12-15T16:52:36.718Z
 - resources
   - [Strapi contributor documentation | Doc](https://contributor.strapi.io/)
   - [Strapi 中文文档](https://www.strapi.cn/)
+  - [Backend Customization Examples Cookbook | Strapi Documentation](https://docs.strapi.io/dev-docs/backend-customization/examples)
+    - Examples are meant to extend the features of FoodAdvisor
 # docs
 - strapi /57.5kStar/MIT+EE/202311/ts
   - https://github.com/strapi/strapi
@@ -37,22 +39,20 @@ modified: 2023-12-15T16:52:36.718Z
 
 ## usage
 
-- This user guide contains the functional documentation related to all features available in the admin panel of your Strapi v4 application.
-
-- Content Manager is a core plugin of Strapi. 
-  - It is a feature that is always activated by default and cannot be deactivated
-  - It is accessible both when the application is in a development and production environment.
-- a sub navigation displaying 2 categories: Collection types and Single types. 
-
-- Content-type Builder is a core plugin of Strapi. 
-  - administrators can create and manage content-types: collection types and single types but also components.
-
 - Media Library is a Strapi plugin that is always activated by default and cannot be deactivated
   - Assets uploaded to the Media Library can be inserted into content-types using the Content Manager.
 
 - Depending on what users and their roles and permissions you want to manage, you should either use the Role Based Access Control (RBAC) feature, or the Users & Permissions plugin.
 
 - Strapi is built around different types of plugins
+
+- If you disabled the Draft & Publish feature, saving your content means saving and publishing at the same time.
+
+- Strapi applications are not meant to be connected to a pre-existing database, not created by a Strapi application, nor connected to a Strapi v3 database. The Strapi team will not support such attempts. 
+  - Attempting to connect to an unsupported database may, and most likely will, result in lost data.
+
+- 
+- 
 
 ## faq
 
@@ -81,6 +81,8 @@ modified: 2023-12-15T16:52:36.718Z
   - assets
   - api tokens
   - cron jobs
+
+- Transfer tokens allow users to authorize the strapi transfer CLI command 
 
 ## api
 
@@ -117,6 +119,11 @@ modified: 2023-12-15T16:52:36.718Z
   - Upload plugin powers the Media Library and allows versatile file uploads.
   - Users & Permissions plugin offers JWT-based authentication and ACL strategies for API protection and user permissions.
 
+- Some plugins can be further extended through the configuration of providers, packages designed to be used on top of an existing plugin and add a specific integration to it.
+- Currently, the only plugins designed to work with providers are the:
+  - Email plugin, and
+  - Media Library plugin (implemented via the Upload plugin).
+
 - The Admin Panel API is about the front end part, i.e. it allows a plugin to customize Strapi's admin panel.
 - The Server API is about the back-end part, i.e. how the plugin interacts with the server part of a Strapi application.
 
@@ -143,4 +150,89 @@ modified: 2023-12-15T16:52:36.718Z
 
 - Within the /server folder you have access to the Strapi object and can do database queries whereas in the /admin folder you can't
 - Passing data from the /server to the /admin folder can be done using the admin panel's Axios instance
+# content-manager
+- Content Manager is a core plugin of Strapi. 
+  - It is a feature that is always activated by default and cannot be deactivated
+  - It is accessible both when the application is in a development and production environment.
+
+- Components are a combination of several fields, which are grouped together in the edit view.
+  - There are 2 types of components: non-repeatable and repeatable components.
+  - Non-repeatable components are a combination of fields that can be used only once. By default, the combination of fields is not directly displayed in the edit view
+  - Repeatable components allow the creation of multiple component entries, all following the same combination of fields. The repeatable component entries can be reordered or deleted directly in the edit view
+
+- Dynamic zones are a combination of components, which themselves are composed of several fields. 
+  - Writing the content of a dynamic zone requires additional steps in order to access the fields.
+  - Dynamic zones' components can also be reordered or deleted directly in the edit view
+  - Unlike regular fields, the order of the fields and components inside a dynamic field is important. It should correspond exactly to how end users will read/see the content.
+
+- Relation-type fields added to a content-type from the Content-type Builder allow establishing a relation with another collection type. These fields are called "relational fields".
+  - The content of relational fields is written from the edit view of the content-type they belong to
+
+- With the Internationalization plugin installed, it is possible to manage content in more than one language, called "locale".
+  - With the Internationalization plugin installed, it is possible to manage content in more than one language, called "locale".
+# content-type-builder
+- Content-type Builder is a core plugin of Strapi. 
+  - It is a feature that is always activated by default and cannot be deactivated. 
+  - The Content-type Builder is only accessible to create and update content-types when your Strapi application is in a development environment, else it will be in a read-only mode in other environments.
+
+- administrators can create and manage content-types: collection types and single types but also components.
+  - Collection types are content-types that can manage several entries.
+  - Single types are content-types that can only manage one entry.
+  - Components are a data structure that can be used in multiple collection types and single types.
+
+- Custom fields are a way to extend Strapi’s capabilities by adding new types of fields to content-types or components. Once installed (see Marketplace documentation), custom fields are listed in the Custom tab when selecting a field for a content-type.
+
+- Components are a combination of several fields. Components allow to create reusable sets of fields, that can be quickly added to content-types, dynamic zones but also nested into other components.
+- Dynamic zones are a combination of components that can be added to content-types. 
+  - When using dynamic zones, different components cannot have the same field name with different types (or with enumeration fields, different values).
+
+- 🚨 keep in mind that regarding the database, renaming a field means creating a whole new field and deleting the former one. 
+  - Although nothing is deleted from the database, the data that was associated with the former field name will not be accessible from the admin panel of your application anymore.
+
+- Deleting a content-type automatically deletes all entries from the Content Manager that were based on that content-type. 
+  - The same goes for the deletion of a component, which is automatically deleted from every content-type or entry where it was used.
+- Deleting a content-type only deletes what was created and available from the Content-type Builder, and by extent from the admin panel of your Strapi application.   
+  - All the data that was created based on that content-type is however kept in the database
+# media-library
+- The Media Library displays all assets uploaded in the application, either via the Media Library itself or via the Content Manager when managing a media field. 
+- Assets uploaded to the Media Library can be inserted into content-types using the Content Manager.
+
+- A variety of media types and extensions are supported by the Media Library:
+  - image/video/audio
+  - files: pdf, csv, xlsx, json, zip
+
+- Folders in the Media Library help you organize uploaded assets. 
+
+- Folders follow the permission system of assets (see Users, Roles & Permissions). It is not yet possible to define specific permissions for a folder.
+# roles/permissions
+- Depending on what users and their roles and permissions you want to manage, you should either use the Role Based Access Control (RBAC) feature, or the Users & Permissions plugin. 
+  - Both are managed from Settings, accessible from the main navigation of the admin panel.
+
+- By default, 3 administrator roles are defined for any Strapi application:
+  - Author: to be able to create and manage their own content.
+  - Editor: to be able to create content, and manage and publish any content.
+  - Super Admin: to be able to access all features and settings. This is the role attributed by default to the first administrator at the creation of the Strapi application.
+
+- end-user accounts are managed from the Content Manager, but end-user roles and permissions are managed in the Settings interface.
+- By default, 2 end-user roles are defined for any Strapi application:
+  - Authenticated: for end users to access content only if they are logged in to a front-end application.
+  - Public: for end users to access content without being logged in to a front-end application.
+
+- With the Users & Permissions plugin, the end users and their account information are managed as a content-type.
+  - Registering new end users in a front-end application with the Users & Permissions plugin consists in adding a new entry to the User collection type
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
 # more

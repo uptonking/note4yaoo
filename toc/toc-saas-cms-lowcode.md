@@ -31,12 +31,13 @@ modified: 2023-01-20T21:59:47.792Z
 - strapi /57.5kStar/MIT+EE/202311/ts
   - https://github.com/strapi/strapi
   - https://strapi.io/
+  - https://strapi.io/demo 一定时长后数据会清除
   - the leading open-source headless CMS
+  - 后端依赖knex、umzug、koa、koa-static、commander、node-schedule
+  - 前端依赖@reduxjs/toolkit、immer、codemirror5、date-fns、formik、markdown-it、react-dnd、sift、slate-react
   - 核心功能是提供了通过ui操作实现rest api的功能
     - 系统内容通过ui操作编写
     - 系统前端strapi没有限制，strapi只提供了api
-  - The original purpose of the project was to help Bootstrap your API
-  - Now, Strapi is an open-source headless CMS that gives developers the freedom to choose their favorite tools and frameworks and allows editors to manage and distribute their content using their application's admin panel.
 
 - payloadcms /9.1kStar/MIT/202301/ts/slate
   - https://github.com/payloadcms/payload
@@ -75,8 +76,7 @@ modified: 2023-01-20T21:59:47.792Z
   - REST & GraphQL API. Instantly layers a blazingly fast Node.js API on top of any SQL database.
   - 后端依赖express、knex、async
   - 前端依赖vue3、tinymce5、p-queue、apexcharts
-  - [Change license to BSL-1.1_202304](https://github.com/directus/directus/pull/18330)
-    - Non-production use of Directus is still completely free for everyone
+  - [Change license to BSL-1.1_20230427](https://github.com/directus/directus/pull/18330)
     - Code released under this new license converts to GPLv3 (OSS) after 3 years
   - [Running Locally | Directus Docs](https://docs.directus.io/contributing/running-locally.html)
     - pnpm --dir api cli bootstrap 
@@ -90,6 +90,10 @@ modified: 2023-01-20T21:59:47.792Z
     - [Unable to run Directus locally](https://github.com/directus/directus/issues/17786)
     - You have to set SERVE_APP=true in your .env file in order to run the api in dev mode with the build app.
     - 最终发现配置server_app后要访问的是服务端:8055/admin，而不是前端:8080/admin
+  - forks
+  - https://github.com/LaWebcapsule/directus9
+    - This repository is a fork of the Directus 9. Directus 9 was under GPLv3 license and so is this repository. 
+    - Directus 10 is now a premium open-source software
 
 - vrite /1kStar/AGPLv3/202310/ts
   - https://github.com/vriteio/vrite

@@ -10,12 +10,13 @@ modified: 2023-12-15T17:04:17.775Z
 # guide
 
 - pros
+  - MIT and features-rich
   - code-first
   - field conditional logic
 
 - cons
   - ~~mongodb only~~, support mysql/pg now
-  - VC-backed
+  - VC-backed, v2功能更丰富但引入大量依赖如drizzle/nextjs
 
 - features
   - code-first

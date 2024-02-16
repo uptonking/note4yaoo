@@ -16,6 +16,19 @@ modified: 2021-06-02T15:26:39.741Z
 
 - ## 
 
+- ## I am looking for a broken link checker tool that I can run against localhost.
+- https://twitter.com/alexandereardon/status/1758252484165025931
+  - For clarity: the markdown is being used to generate a website, and that website is currently running on my localhost
+  - I started writing my own using puppeteer - but I keep thinking that surely one already exists
+
+- since a lot renderers use remark / mdast under the hood i was going to suggest remark-validate-links
+
+- ## I appreciate the nod to "File over app" from @mbostock and the @observablehq team in the latest announcement.
+- https://twitter.com/kepano/status/1758202572446581025
+  - It's so cool that a Markdown file with code blocks can be the source for complex data visualizations and dashboards. This means the files are interoperable with @obsdmd .
+- Your post strengthened my conviction in this evolution of Observable. Interoperability for the win!! Thanks for trying Framework, too.
+- Probably worth mentioning @evidence_dev , a BI library integrating markdown and SQL for elegant data analytics and visualization
+
 - ## [Thoughts On Markdown](https://www.smashingmagazine.com/2022/02/thoughts-on-markdown/)
 - At Sanity.io, we decided early that the block content format should never assume HTML as neither input nor output, and that we could use algorithms to synchronize text strings. 
   - More importantly, was it that block content and rich text should be deeply typed and queryable. 
@@ -199,8 +212,6 @@ export default FrontPage
 - One of the differences to conmonmark is that it's more of an approach. The spec is: here's some Unicode text, here are some annotations on that text (standoff per codex). Annotations have a type, start and end indexes, and a set of type-specific attributes. That's really it!
 
 # discuss
-- ## 
-
 - ## 
 
 - ## 

@@ -31,13 +31,6 @@ modified: 2023-12-15T17:04:36.589Z
 - ## 💰 [Can I use strapi free in my self-hosted server? - General - Strapi Community Forum_202304](https://forum.strapi.io/t/can-i-use-strapi-free-in-my-self-hosted-server/27666)
 - The only restrictions on the free version is that audit-logs and Review Workflows are not available
 
-# discuss-changelog
-- ## 
-
-- ## [Use transactions and expose a transactional API _202301](https://github.com/strapi/strapi/pull/14389)
-- This is a working PR to introduce and use transactions within Strapi.
-
-- [simple implementation of transactions](https://github.com/strapi/strapi/pull/12715)
 # discuss-strapi-mongo 🍃
 - ## 
 
@@ -45,7 +38,7 @@ modified: 2023-12-15T17:04:36.589Z
 
 - ## [Is MongoDB a terrible choice for Strapi? : Strapi _202207](https://www.reddit.com/r/Strapi/comments/w9069u/is_mongodb_a_terrible_choice_for_strapi/)
 - Not a terrible choice, in general: we used MongoDB for all of our v3 instances. However, Mongo is hugely inefficient if you have nested relations between collections (though this makes sense - mongo isn’t a relational DB).
-  - In any case, v4 dropped support for Mongo. We’ve been migrating to v4 with Postegres and we’ve seen some great performance gains, even in applications with very few relations.
+  - In any case, v4 dropped support for Mongo. We’ve been migrating to v4 with Postgres and we’ve seen some great performance gains, even in applications with very few relations.
 
 - ## 🍃📡 [MongoDB support in Strapi: Past, Present & Future _202106](https://strapi.io/blog/mongo-db-support-in-strapi-past-present-and-future)
 - Since 2017 and Strapi Alpha, we have always supported SQL databases such as MySQL, PostgreSQL, SQLite, MariaDB, and the document database MongoDB.
@@ -55,6 +48,7 @@ modified: 2023-12-15T17:04:36.589Z
 
 - [Why MongoDB is not available in Strapi V4 ? _202111](https://github.com/strapi/documentation/issues/520)
   - we won't maintain a MongoDB connector in v4. If MongoDB (the team) builds one that is up to them.
+- First-party support has been dropped, there will be an "official" plugin to connect, but not immediately at release.
 
 - ## 🍃 [MongoDB compatibility delayed on v4 - Discussions - Strapi Community Forum _202104](https://forum.strapi.io/t/mongodb-compatibility-delayed-on-v4/4549)
   - When we re-developed from scratch Strapi, in 2017, we decided to use more specific ORMs. One for SQL database called Knex, and one for NoSQL MongoDB called Mongoose. Why? MongoDB was huge at that time. 
@@ -108,6 +102,35 @@ modified: 2023-12-15T17:04:36.589Z
   - This gets almost just as difficult to read as embedding html everywhere, which is what we currently do.
   - Dynamic field is something I also looked into, which I think could work OK. The problem is that they want to add html blocks in the most arbitrary and random places. Sometimes right after the first paragraph, sometimes in the middle, the end. Sometimes there are 10+ html tags in a single Article. They don't have a fixed position. This arbitrary positioning makes it seem like dynamic zone won't work very well. Or maybe I'm missing something ?
   - Anyways, I tried using dynamic zones and it seems to be working pretty well. Seems like getting the most out of Strapi is better than replacing it.
+# discuss-feat-version-history
+- ## 
+
+- ## [How to add revision history or track any changes made by user? - Questions and Answers / Database-SQL - Strapi Community Forum _202105](https://forum.strapi.io/t/how-to-add-revision-history-or-track-any-changes-made-by-user/4882)
+- there is a complete video of how to create revision history Activity logs 
+
+- [History/Versioning strapi plugin - Questions and Answers - Strapi Community Forum _202105](https://forum.strapi.io/t/history-versioning-strapi-plugin/5343)
+  - I believe there is a plugin strapi-plugin-versionioning as well as strapi-plugin-revisions.
+# discuss-feat-draft-publish
+- ## 
+
+- ## 
+
+- ## [How to publish the data I created with entity service? - Questions and Answers / Strapi Backend - Strapi Community Forum](https://forum.strapi.io/t/how-to-publish-the-data-i-created-with-entity-service/27767)
+- I think you can set the publishedAt to a Date.now() timestamp. 
+  - if publishedAt is null it’s in draft if it has a timestamp it’s considered published.
+
+- ## 👨🏻‍🏫 [Creating a Draft System - Community Guides - Strapi Community Forum _202210](https://forum.strapi.io/t/creating-a-draft-system/22930)
+- What we want here is to fetch only data that has a published status.
+  - But we don’t want to use parameters  (e.g. `/articles?status=published` ) because you can easily fake the params.
+- This guide can be applied to any other controller action.
+
+- ## [How to create draft entry with strapi v4? - Questions and Answers - Strapi Community Forum _202312](https://forum.strapi.io/t/how-to-create-draft-entry-with-strapi-v4/34701)
+- To create a Draft entry, just append `status:'draft'` along with the other body params.
+
+- ## [Is it possible to post a entry as draft in the api? - Questions and Answers - Strapi Community Forum _202108](https://forum.strapi.io/t/is-it-possible-to-post-a-entry-as-draft-in-the-api/9068)
+- Yes, set the `published_at: null` during the POST request and it will be created as a draft. The default for REST/GraphQL sets that field to the current datetime. Passing over the null value will leave it in a draft state.
+- As of 7th February, the field is written `publishedAt` and not `published_at` as said before.
+
 # discuss
 - ## 
 

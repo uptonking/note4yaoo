@@ -26,7 +26,10 @@ modified: 2023-09-01T10:13:59.044Z
 
 - ## 
 
-- ## 
+- ## [How to deal with multiple files/documents? _202402](https://github.com/automerge/automerge/issues/854)
+- 
+- 
+- 
 
 - ## [Granular merging of nested objects](https://github.com/automerge/automerge/issues/549)
 - What you have run into here is what we have been referring to as the "initial data problem". The problem is that individual objects within automerge have their own identity
@@ -43,13 +46,10 @@ modified: 2023-09-01T10:13:59.044Z
 - ## We run automerge over hypercore + hyperswarm and call it hypermerge. Works reasonably well._202004
 - https://twitter.com/pvh/status/1246144720474005505
 
-
-
 - A good CRDT avoids unnecessary conflicts and surfaces inescapable ones.
   - In the case of ambiguous values in automerge, we provide a multi-value register in _conflicts, and select a stand-in value arbitrarily as a default resolution (because programming is hard when every piece of data in your system can be a multivalue.)
 - Interesting. Having an arbitrary stand in is something I want to think about
   - It is unprincipled, but pragmatic, and let me tell you, a whole lot easier to write against. Take a look at Pushpin which is our reference implementation of a production-quality CRDT-based client application.
-
 
 - The author of the JSON CRDT paper ( @martinkl ) is the author of automerge, and the differences are because we tried writing against the original implementation and found the UX wasn't ideal, so we made some changes
 - 
@@ -81,7 +81,7 @@ modified: 2023-09-01T10:13:59.044Z
   - It’s currently using NFS, because I found a simple nfs server template, but it’s a little slow (and very “works on my machine”).
   - The end goal was to build a replacement for git that you didn’t have to remember to use, but I am currently thinking about doing something that doesn’t use NFS instead.
 
-- ## 🆚️ [how does automerge compare to holochain?](https://github.com/automerge/automerge/issues/566)
+- ## 🆚️ [how does automerge compare to holochain? _202303](https://github.com/automerge/automerge/issues/566)
 - Automerge is like Docs. 
   - Holochain is Bittorrent.
   - Both attempt to ensure data integrity in different circumstances.
