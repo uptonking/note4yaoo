@@ -73,7 +73,12 @@ modified: 2023-10-28T13:38:46.522Z
 
 - ## 
 
-- ## 
+- ## The more I work with SQLite, the more I believe it's the perfect database for most indie products.
+- https://twitter.com/ImSh4yy/status/1758577293763514822
+- how do you get around the write limitations?
+  - Spoiler alert: most never get there.
+
+- @tursodatabase even makes multi-tenant stuff a breeze
 
 - ## When should you pick SQLite as your production database?
 - https://twitter.com/penberg/status/1748649917428453524

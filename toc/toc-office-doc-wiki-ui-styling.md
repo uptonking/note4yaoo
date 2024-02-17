@@ -1,11 +1,11 @@
 ---
-title: toc-office-doc-wiki
-tags: [documentation, office, toc, wiki]
+title: toc-office-doc-wiki-ui-styling
+tags: [documentation, office, styling, toc, wiki]
 created: 2021-07-23T08:38:26.538Z
-modified: 2021-07-23T08:38:53.805Z
+modified: 2024-02-17T04:34:30.388Z
 ---
 
-# toc-office-doc-wiki
+# toc-office-doc-wiki-ui-styling
 
 # guide
 

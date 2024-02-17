@@ -103,7 +103,7 @@ modified: 2023-01-17T19:14:47.611Z
   - A collaborative notepad using T3 stack with websockets and Redis
   - 依赖nextjs、tanstack-query.v4、trpc
 
-- https://github.com/Unleash/unleash
+- https://github.com/Unleash/unleash /apache2/202402/ts
   - https://demo.unleash-hosted.com/
   - Unleash is the open source feature toggle service.
   - Unleash increases efficiency and gives teams full control of how and when they enable new functionality for end users.

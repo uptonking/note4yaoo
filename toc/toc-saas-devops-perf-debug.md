@@ -13,6 +13,15 @@ modified: 2024-02-11T15:13:27.696Z
 - https://github.com/perfsee/perfsee /ts
   - https://perfsee.com/
   - provides a set of tool for measuring and debugging performance of frontend applications, including bundle analysis, lighthouse auditing, flamegraph visualization, and more.
+
+## non-js
+
+- https://github.com/nyrkio/nyrkio /apache2/202402/python/js
+  - https://nyrk.io/
+  - an open source platform for analysing performance test results and detecting changes
+  - The frontend is implemented using React and the backend is built on top of FastAPI and Pydantic.
+  - Uses change point detection to find performance regressions and improvements in noisy data
+  - Integrates with GitHub to identify the git commit that caused a change in performance
 # debug
 - https://github.com/acrazing/dpdm
   - Detect circular dependencies in your TypeScript projects.

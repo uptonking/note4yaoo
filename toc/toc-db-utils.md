@@ -107,6 +107,11 @@ modified: 2022-11-06T11:21:27.612Z
   - Database manager for MySQL, PostgreSQL, SQL Server, MongoDB, SQLite and others. 
   - Runs under Windows, Linux, Mac or as web application
 
+- https://github.com/dolthub/dolt-workbench /apache2/202402/ts
+  - https://hub.docker.com/r/dolthub/dolt-workbench
+  - A modern, browser-based, open source SQL workbench for your MySQL and PostgreSQL compatible database with version control features when connected to Dolt.
+  - Use Dolt to unlock powerful version control features.
+
 - https://github.com/mlaanderson/database-js
   - Database-js implements a common, promise-based interface for SQL database access. 
   - Inspired by JDBC, it uses connection strings to identify the database driver. 

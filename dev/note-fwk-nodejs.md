@@ -19,8 +19,8 @@ modified: 2022-12-19T01:48:32.833Z
   - 优点
     - 高效快速
   - 缺点
-    - 若前后台耦合过多，如去掉api服务层，则难以支持不同的前端如android、ios
-# pieces
+    - 若前后端耦合过多，如去掉api服务层，则难以支持不同的前端如android、ios
+# dev
 - node web framework
   - Express, Koa, Hapi, Restify, Fastify, Egg, Midways, Nest, Thinkjs, Sails
 

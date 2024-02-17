@@ -17,6 +17,18 @@ modified: 2022-06-13T03:00:06.041Z
 - ## 
 
 - ## 
+# discuss-perf
+- ## 
+
+- ## Now there are some numbers to put behind MySQL 8 performance regression, and they look pretty bad.
+- https://twitter.com/kibertoad/status/1758800348490367046
+- For comparison, here is the perf change over PostgreSQL versions: 
+  - [Small Datum: Postgres versions 11, 12, 13, 14, 15, and 16 vs sysbench with a medium server _202310](https://smalldatum.blogspot.com/2023/10/postgres-versions-11-12-13-14-15-and-16.html)
+
+1. If you don't expect any heavy load anytime soon — SQLite3
+2. If you expect some load but don't need scaling — PG
+3. Need heavy scaling — CRDB
+4. WordPress — use whatever MySQL version it supports, how cares
 # discuss-myrocks
 - ## 
 

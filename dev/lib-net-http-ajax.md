@@ -227,7 +227,69 @@ modified: 2023-02-06T09:14:40.114Z
 # discuss
 - ## 
 
-- ## 
+- ## 🆚️ Is there any reason to use axios in environments where fetch is available? Other than familiarity.
+- https://twitter.com/mattpocockuk/status/1758552616500445329
+
+- [You may not need Axios - Dan Levy's Programming Blog](https://danlevy.net/you-may-not-need-axios/)
+
+- I think Axios can abort a request?
+  - Fetch can too, using AbortSignal
+- Axios DOES NOT use fetch. (last I checked)
+  - In browsers, it uses `XMLHttpRequest` .
+  - In Node, it uses the builtin modules `http` & `https` .
+- Here's the feature comparison table.  Fetch can do virtually anything Axios can.
+
+- Mostly no, but there are a few use cases like nice defaults, interceptors, retrys, caching. Most of this could be built with a lightweight abstraction on top of fetch, but there are reasons people haven’t moved off. 
+
+- The interface is nice. `const { data, headers, status } = await axios.get<User>('/user')`. This takes a lot more effort with fetch. Still, I think I would use a simple fetch wrapper for new projects.
+- But do you really call axios/fetch directly? In my case it’s always inside a service that check status for auth stuff anyway
+  - Not all APIs need authentication. Also you can authenticate using Axios interceptors, or cookies.
+- the generic is the problem here, interface is actually decent to destructure. fetch wrapper is cheaper and doesn’t use xmlhttprequest
+
+- ky ( @sindresorhus ) and ofetch ( @unjsio ) are both excellent modern fetch wrappers
+
+- axios has cool extras like interceptors, JSON parsing, and better error handling.
+
+- Interceptors. It allows me to automatically assign auth tokens on each request and. Also if you have a global loader in the application you can automatically toggle that on each request
+
+- There are some advantages, I've made good use of axios's interceptor system for tagging on auth and stuff like that
+
+- we use axios between our services internally because you can add interceptors to make axios aware of cache headers. It means that internal HTTP endpoints can be set up with the same type of cache headers as external ones, and you don't have to think about two different types of endpoint response caching depending on where the request came from
+
+- Fetch doesn’t throw on 400/500 so you have to write your own wrapper or rewrite it every place you use fetch. 
+  - Axios has a lot of other nice-to-haves too, like base href and interceptors. 
+  - I went all fetch then went back to axios
+
+- When using fetch, we end up creating a wrapper around it to do basic things, like: 
+  - Parsing the body
+  - Throwing errors
+  - Insert interceptors
+  - Set global default headers config
+- interceptors
+- instances with common configuration
+  - base URL
+  - Auth header
+  - serialization of search params from JSON
+  - serialization of URL params - which is not built-in, but doable using instance configuration
+- automatic parse to and from JSON
+- Default Headers / Cookies
+- Upload Percentage
+- Not 32 awaits to get a response
+- Throws error on error status codes
+
+- Any project I use fetch in, I end up writing a wrapper that handles errors, converts body to json, simplifies setting headers. Axios does this out of the box. So it is in some ways the better option.
+
+- Axios automatically treats non-2xx responses as errors, which is a nice convenience. But writing a fetch wrapper to do that is trivial.
+
+- 💡 I love fetch and have switched over to it but there are some caveats worth knowing:
+  - It doesn't support HTTP/1.1 chunked transfer encoding (ajax does). So if you want to upload a stream of data that you don't know the size of then you're forced to use HTTP/2 and set the duplex: 'half'. Support for all of that is mixed.
+  - There are no progress events. Imagine uploading a large file and wanting to show percent uploaded indicator or progress bar. Can't be done right now afaict.
+  - In Node.js (undici), ReadableStream and fetch are way slower than built-in http client. However, these will catch up in time.
+  - A lot of folks, myself included, can cope with these restrictions though.
+
+- Consider axios only if your project benefits from features like global error handling or progress tracking, which are more straightforward with axios.
+
+- If you build isomorphic web apps, use an LTS version of Node, and don’t use experimental APIs, then you can’t use fetch. It became stable in Node 21.
 
 - ## What made HTTP/1.1 so popular? It was launched in 1997. 
 - https://twitter.com/ProgressiveCod2/status/1736330988807152063

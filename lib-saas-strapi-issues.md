@@ -39,6 +39,24 @@ npm run develop
 
 - ## 
 
+- ## [Concurrency issue with two nodes Postgres cluster _202309](https://github.com/strapi/strapi/issues/17929)
+- Knex don't natively support clusters
+
+- I've not used PG-Pool before (as I'm more of a MariaDB user) but I have used ProxySQL (which is a MySQL/MariaDB tool that is very similar).
+  - Generally the "sync" in a DB cluster is typically non-blocking but it will depend on the cluster setup. You have a primary PG node and a read-replica yeah?
+- Read-replicas should never be syncing back to master, it should be a one-way sync from master -> slave and that should be async.
+
+- TBH for multi-node speed and fault tolerance I would generally recommend MariaDB. PG is best for single-node performance but their clusters are less than great (personal bias here).
+  - MariaDB's Galera cluster (with multi-master support) is far superior especially if your application is write heavy.
+
+- ## [Strapi won't start on a pooled database  _202103](https://github.com/strapi/strapi/issues/9546)
+- There is a difference between connection pooling and database pooling
+  - Connection pooling is a group of connections to a database that can be reused (instead of opening a connection, requesting data, and closing it will keep the connection alive to request more data on another request.) Connection pooling is about reducing connection latency
+  - Database pooling AKA Database clustering is entirely different and typically means you have a primary database node and multiple read-replicas. Knex.js doesn't support Database pooling.
+
+- How about separating the read and write database connections at the application level? When there are more collection types, the initial startup time for strapi becomes very slow or unable to start even with connection pooling. Separating the read connections to a scalable read replica set could solve this issue. (I'm using Postgres in my case)
+  - EG: ProxySQL or MariaDB Maxscale which allow for read/write splitting, monitoring, logging, and even caching which far exceed anything we can (or will do) at the application level
+
 - ## [Why doesn't Strapi have a built-in refresh token feature? - Questions and Answers - Strapi Community Forum _202304](https://forum.strapi.io/t/why-doesnt-strapi-have-a-built-in-refresh-token-feature/27543)
 - JWTs usually have an expiration time (e.g., 15 minutes, 1 hour) to limit their validity. 
   - When a token expires, the client needs to obtain a new one. 

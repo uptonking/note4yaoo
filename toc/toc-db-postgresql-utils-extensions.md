@@ -49,9 +49,11 @@ modified: 2023-10-26T15:29:40.053Z
   - a loadable procedural language that enables writing PostgreSQL functions in the Rust programming language. 
   - These functions are compiled to native machine code. Unlike other procedural languages, PL/Rust functions are not interpreted.
 
-- https://github.com/sastraxi/pgsh /js
+  - https://github.com/sastraxi/pgsh /MIT/202203/js/inactive
   - Branch your PostgreSQL Database like Git
   - pgsh provides a slightly-more-user-friendly interface to knex's migration system.
+  - As your database schema evolves, you quickly realise the challenge of keeping the structure (and triggers, stored procedures, seed data...) of the database in sync with your codebase. 
+  - You may have even witnessed the horror of inconsistent db builds due to "repeatable migrations". Instead, treat the database as a code repository itself: clone and switch between branches just like you do in git.
 
 - https://github.com/zknill/sqledge /202308/go
   - SQLedge uses Postgres logical replication to stream the changes in a source Postgres database to a SQLite database that can run on the edge. 
@@ -112,6 +114,14 @@ modified: 2023-10-26T15:29:40.053Z
   - OxideDB is a translation layer that works as a MongoDB database server while using PostgreSQL's JSON capabilities as the underlying data store.
   - if your use-case leverages MongoDB as a distributed database, then unfortunately this project might not be for you. At least right now supporting multi-sharding and scale-out deployments is not part of the roadmap.
   - heavily inspired by FerretDB. The main difference is that there is no intention to support any database other than PostgreSQL (FerretDB is also supporting Tigris) and it's written in Rust, as opposed to Go.
+# distributed
+- https://github.com/citusdata/citus /AGPLv3/202402/c/vitess-like
+  - https://www.citusdata.com/
+  - Citus is a PostgreSQL extension that transforms Postgres into a distributed database
+  - Distributed query engine routes and parallelizes SELECT, DML, and other operations on distributed tables across the cluster.
+  - Columnar storage compresses data, speeds up scans, and supports fast projections, both on regular and distributed tables.
+  - You can use these Citus superpowers to make your Postgres database scale-out ready on a single Citus node. Or you can build a large cluster 
+  - You can use these Citus superpowers to make your Postgres database scale-out ready on a single Citus node. Or you can build a large cluster 
 # pref
 - https://github.com/le0pard/pgtune /1.9kStar/MIT/202401/js
   - https://pgtune.leopard.in.ua/

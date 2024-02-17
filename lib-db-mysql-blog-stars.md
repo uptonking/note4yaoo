@@ -11,6 +11,20 @@ modified: 2023-10-26T18:16:18.134Z
 
 # blogs
 
+# blogs-perf ⚡️
+
+## [Small Datum: Perf regressions in MySQL from 5.6.21 to 8.0.36 using sysbench and a small server _202402](https://smalldatum.blogspot.com/2024/02/perf-regressions-in-mysql-from-5621-to.html)
+
+- tldr
+  - Upstream MySQL would benefit from changepoint detection as provided by Nyrkiö.
+  - MySQL 8.0 is the worst for perf regressions, while 5.7 and 5.6 are better at avoiding them. Also, there tend to be large regressions between the last point release in one major version and the first point release in the following major version, for instance from 5.6.51 to 5.7.10.
+  - The scan_range=100 microbenchmark that does a full table scan has a large regression from 8.0.28 to 8.0.36 and bug 111538 is open for this
+- Comparing 8.0.36 with 5.6.21
+  - For point queries, 8.0.36 gets 19% to 39% less QPS than 5.6.21
+  - For range queries that don't do aggregation (part 1), 8.0.36 gets 29% to 39% less QPS than 5.6.21
+  - For range queries that do aggregation, 8.0.36 gets 3% to 45% less QPS than 5.6.21. The difference depends on the length of the range scan, where shorter scan == larger regression.
+  - Full scan (scan_range=100) has the largest regression (5.6.21 is ~2X faster than 8.0.36)
+  - For most writes (ignoring the update-index microbenchmark), 8.0.36 gets about half of the throughput compared to 5.6.21
 # blogs-internals
 
 ## [MySQL 8.0: New Lock free, scalable WAL design_201806](https://dev.mysql.com/blog-archive/mysql-8-0-new-lock-free-scalable-wal-design/)

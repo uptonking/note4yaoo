@@ -9,13 +9,16 @@ modified: 2023-02-05T18:49:11.444Z
 
 # guide
 - pros
-  - ?
+  - solid transaction support
+  - read replication
+  - 维护了框架无关的迁移工具 umzug
 
 - cons
   - ?
 
 - features
-  - ?
+  - relations
+  - eager and lazy loading
 
 - who is using #sequelize-orm
   - outline-wiki

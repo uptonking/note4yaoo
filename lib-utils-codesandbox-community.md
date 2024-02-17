@@ -14,7 +14,15 @@ modified: 2024-01-25T13:33:23.267Z
 
 - ## 
 
-- ## 
+- ## 🐛 If I could remove one thing from JavaScript it would be `eval()` .
+- https://twitter.com/awesomekling/status/1758775888647188567
+  1. Calling eval() may change the set of bindings in the existing environment. This prevents a lot of optimizations based on static knowledge of environment layout (although engines can still optimize anyway in scopes where eval is not called.
+  2. It forces us to plumb the “completion” value around in a million finicky ways so that eval() can return it. (This is what’s bugging me today
+  3. Running arbitrary strings as code at runtime in the first place is a pretty goofy API!
+- how do you feel about new Function()? #3 applies but iirc 1 and 2 should be much less
+  - Yeah, it’s a lesser evil and much less annoying to support than eval() 
+
+- #3. is still important for me. I compile HTML templates (a PHP lookalike, containing <? js() ?>) using `new Function()` at runtime. Doing my best to avoid that pesky build step
 
 - ## 🐘 Most sandboxes in CodeSandbox are stored in a Postgres database.
 - https://twitter.com/CompuIves/status/1667148424389566465

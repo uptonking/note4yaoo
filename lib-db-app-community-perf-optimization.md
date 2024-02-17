@@ -32,6 +32,13 @@ modified: 2023-10-26T19:00:02.186Z
 
 - ## 
 
+- ## 
+
+- ## [Understanding Connections and Pools | Hacker News _202101](https://news.ycombinator.com/item?id=25644656)
+- 
+- 
+- 
+
 - ## you can delete old data very efficiently if you partition your table by time ranges and drop one of them.
 - https://twitter.com/tobias_petry/status/1748340608849072602
   - [Delete Old Rows with Partitions - Database Tip](https://sqlfordevs.com/partition-delete-old-rows)

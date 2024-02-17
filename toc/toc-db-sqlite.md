@@ -274,12 +274,17 @@ modified: 2021-08-30T18:56:18.632Z
   - https://loladb.com/
   - LolaDB is an HTTP client that pulls all your db clients on a centralized server infra & wraps the calls into a unified interface 
 
-- https://github.com/haltcase/trilogy /202205/ts
+- https://github.com/haltcase/trilogy /MIT/202205/ts/inactive
   - https://trilogy.js.org/
   - a simple Promise-based wrapper for SQLite databases. 
   - It supports both the native C++ sqlite3 driver and the pure JavaScript sql.js backend
-  - It's not an ORM and isn't intended to be one — it doesn't have any relationship features. 
+  - It's not an ORM and isn't intended to be one — it doesn't have any relationship features.
   - Instead it focuses on providing a simple, clear API that's influenced more by Mongoose than by SQL.
+  - trilogy uses knex internally to build its queries, but it's also exposed so you can use it to build your own. 
+  - supports multiple swappable backends ( plus in-memory storage )
+    - Both the native sqlite3 module and sql.js (pure JavaScript!) are supported. There is also memory-only storage for fast, unpersisted data handling
+
+
 
 - https://github.com/subzerocloud/showcase
   - subZero is a library implemented in Rust with JS/TypeScript bindings that allows you to expose a PostgREST compatible backend on top of any database.

@@ -176,7 +176,7 @@ modified: 2022-11-03T04:14:11.987Z
   - a pure JavaScript clone for MongoDB
   - API is similar to at https://github.com/mongodb/node-mongodb-native .
   - You can run the DB on node.js, on Common.js, even on web browsers.
-# db-document-json
+# db-doc-json
 - https://github.com/Alex-Werner/SBTree /MIT/202310/js
   - https://alex-werner.github.io/SBTree/
   - Fast document store using B+ Tree for fields. 
@@ -220,6 +220,10 @@ modified: 2022-11-03T04:14:11.987Z
   - A python NoSQL dictionary database, with concurrent access and ACID compliance
   - a fast document-based database that uses json files or compressed json files for storage.
   - [I made DictDataBase, it‘s like SQLite but for JSON! : Python_202210](https://www.reddit.com/r/Python/comments/yemdn4/i_made_dictdatabase_its_like_sqlite_but_for_json/)
+
+- https://github.com/nire0510/jsoq /GPLv3/202310/ts
+  - Query and manipulate JSON arrays easily. 
+  - Powered by lodash, inspired by knex and SQL in general.
 # object-storage/s3
 - minio /36.1kStar/AGPLv3/202211/go
   - https://github.com/minio/minio

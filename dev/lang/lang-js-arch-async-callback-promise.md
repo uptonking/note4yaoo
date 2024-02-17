@@ -93,7 +93,7 @@ modified: 2021-08-30T07:01:09.493Z
   - the workaround here would be a map of keys to imports, like -  { "en-US" : () => import('./translations/en-us'), ... }
 
 - One example that comes to mind is code that doesn't need to run until a user has scrolled to a certain point on a page (e.g., with IntersectionObserver). No need to statically bundle the dependencies if a user hasn't scrolled to that point yet (or a certain distance from it)
-  - Actually, this is exactly what I’m doing. Page contains several React components, and each is imported only when needed/viewed. This: `import(`components/${data.componentPath}/index.jsx`) `.
+  - Actually, this is exactly what I’m doing. Page contains several React components, and each is imported only when needed/viewed. This: import(`components/${data.componentPath}/index.jsx`) .
 
 1. Test runners that load your test files dynamically. 
 2. Plugins that are loaded by (dev) tools (eslint, prettier, StrykerJS) 
@@ -114,6 +114,14 @@ modified: 2021-08-30T07:01:09.493Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## Have any JS lib maintainers switched back to using callbacks over promises and async/await?
+- https://twitter.com/tantaman/status/1758828869530906748
+  - The purpose being that by using callbacks you can preserve the task and event loops when the library is deployed with synchronous workloads and still be able to support async workloads.
 
 - ## is there a way to wait for N promises on tests?
 - https://twitter.com/sseraphini/status/1365297469911937025

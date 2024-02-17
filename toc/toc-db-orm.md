@@ -22,7 +22,7 @@ modified: 2021-08-30T18:56:09.644Z
 - https://github.com/emanuelcasco/typescript-orm-benchmark /202009/ts/inactive
   - ORM benchmarking for Node.js applications written in TypeScript
 
-- https://github.com/tkssharma/nodejs-db-orm-world /202003/ts
+- https://github.com/tkssharma/nodejs-db-orm-world /202203/ts
   - Node JS with different ORM like Typeorm, Knex, Prisma and Sequelize with Node JS API Development Node JS with without any ORM (MYSQL raw queries)
 
 - https://github.com/MiroslavPetrik/edgedb-vs-knex
@@ -59,9 +59,11 @@ modified: 2021-08-30T18:56:09.644Z
     - MikroORM excels with its simplicity and optimized performance, making it perfect for streamlined projects. 
     - In contrast, TypeORM offers a rich toolkit of features, catering to projects with diverse database requirements and complex queries.
 
-- https://github.com/sequelize/sequelize
+- https://github.com/sequelize/sequelize /MIT/202402/ts/js
+  - https://sequelize.org/
   - An easy-to-use multi SQL dialect ORM for Node.js
   - 不支持mongo
+  - 使用示例是非装饰器风格
 
 - https://github.com/drizzle-team/drizzle-orm /17kStar/apache2/202401/ts/代码量少
   - https://orm.drizzle.team/
@@ -122,6 +124,13 @@ modified: 2021-08-30T18:56:09.644Z
   - An adapter-based ORM for Node.js with support for mysql, mongo, postgres, mssql (SQL Server), and more
   - Waterline is a next-generation storage and retrieval engine, and the default ORM used in the Sails framework.
 
+- https://github.com/vincit/objection.js /MIT/202402/js
+  - ORM for Node.js
+  - built on an SQL query builder called knex
+  - All databases supported by knex are supported by objection.js
+  - https://github.com/feathersjs-ecosystem/feathers-objection
+    - Feathers database adapter for Objection.js
+
 - bookshelf /6.3kStar/MIT/202007/js/inactive
   - https://github.com/bookshelf/bookshelf
   - Bookshelf is a JavaScript ORM for Node.js, built on the Knex SQL query builder. 
@@ -130,12 +139,6 @@ modified: 2021-08-30T18:56:09.644Z
   - Bookshelf aims to provide a simple library for common tasks when querying databases in JavaScript, and forming relations between these objects, taking a lot of ideas from the Data Mapper Pattern.
   - https://github.com/seegno/bookshelf-json-columns
     - Parse JSON columns with Bookshelf.js
-
-- https://github.com/vincit/objection.js
-  - Objection.js is an ORM for Node.js
-  - built on an SQL query builder called knex
-  - https://github.com/feathersjs-ecosystem/feathers-objection
-    - Feathers database adapter for Objection.js
 
 - https://github.com/Fibonacci-Solucoes-Ageis/MyBatisNodeJs /js
   - MyBatisNodeJs is a port from the The MyBatis data mapper framework for Node. Js.
@@ -390,7 +393,7 @@ modified: 2021-08-30T18:56:09.644Z
   - We (Splitgraph) implemented WASM UDFs in Seafowl, Users can call CREATE FUNCTION within an SQL query to create a WASM UDF.
 # db-popular
 - https://github.com/vitessio/vitess /go
-  - http://vitess.io/
+  - https://vitess.io/
   - Vitess is a database clustering system for horizontal scaling of MySQL through generalized sharding.
   - Vitess is the cloud-native, open source technology powering PlanetScale.
   - By encapsulating shard-routing logic, Vitess allows application code and database queries to remain agnostic to the distribution of data onto multiple shards

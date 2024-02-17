@@ -15,6 +15,14 @@ modified: 2023-10-26T18:11:42.676Z
 
 ## [An Overview of Distributed PostgreSQL Architectures | Crunchy Data Blog_202401](https://www.crunchydata.com/blog/an-overview-of-distributed-postgresql-architectures)
 
+# blogs-perf ⚡️
+
+## [Small Datum: Postgres versions 11, 12, 13, 14, 15, and 16 vs sysbench with a medium server _202310](https://smalldatum.blogspot.com/2023/10/postgres-versions-11-12-13-14-15-and-16.html)
+
+- tldr
+  - Postgres avoids performance regressions from old to new versions. This is excellent.
+  - Postgres 16.0 is mostly faster than 11.21 on read-only benchmark steps
+  - Postgres 16.0 and 11.21 have similar throughput on read-write and write-only benchmark steps
 # blogs-internals
 
 ## [Writing a storage engine for Postgres: an in-memory Table Access Method_202311](https://notes.eatonphil.com/2023-11-01-postgres-table-access-methods.html)

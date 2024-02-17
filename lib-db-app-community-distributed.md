@@ -14,7 +14,26 @@ modified: 2023-10-26T19:04:00.318Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## [Kafka 为什么要抛弃 ZooKeeper？ - 知乎](https://www.zhihu.com/question/624795964)
+- 大数据的生态变了，尤其是hadoop全家桶成为时代的眼泪了。
+  - 以前各公司自己搭一套集群在机房里，hdfs，zookeeper这些东西属于是公共的服务。各种乱七八糟的组建都依赖zookeeper不是累赘，是充分利用资源加强可靠性。
+  - 但是现在是云计算的时代，讲究的是弹性伸缩。集群在云上，机器，容器的数量大幅增加而且变化很快，甚至有很多托管和saas服务你都不在乎有多少机器。
+  - 这样两套分布式系统之间的依赖就成了问题。如果你要新增几百个A服务节点，那么它依赖的B服务节点要不要扩容呢？如果要扩的话，增加多少，怎么保证扩容的过程两套系统的交流不出问题？
+  - 这就是要去除zookeeper的原因，也是hdfs被类s3服务取代的原因
+
+- Spark短时间内不会过时。hadoop要学的是集群思维，部署运维这种东西不用下功夫。
+  - 国内hadoop还能撑一段时间，因为saas化程度低，自建集群的公司还是有，上云的公司很多是类s3的对象存储搭配纯计算的类emr服务，与其说是hadoop生态的残余，更像是hive metastore的生态。
+  - 全上saas全托管的也有，都是有钱的公司。
+  - 至于几大厂普遍喜欢自研，涉及到的东西比hadoop要底层。
+
+- 你这只是底层存储变化（HDFS->S3)，本质上没太大差别，不过一个是对象存储，一个是类文件系统存储，对于计算服务来说，没看出本质差别
+
+- Zookeeper加kafka 的架构，有三层角色，一层是zookeeper ，提供基础的状态持久化和状态通知服务。一层是controller ，基于zookeeper 提供的服务，给松散的broker 提供统一的状态服务，但它本身是没有状态服务的，它是依赖zookeeper 的服务来做主控。一层是broker ，无状态服务，因为他们无状态，无法自发组织起来，所以需要controller 为他们做主控。其中有一个broker 兼职了controller 角色。
+  - 这个架构本来没什么问题，但是如果要优化，也是可以的。zookeeper 本来提供了状态服务，但是因为它不是kafka 的一部分，所以kafka 不得不设计一个controller 来做主控。假如controller 本身就可以提供状态服务，那上面的三层架构就可以简化成两层，也就是一层controller ，提供主控服务，一层broker ，无状态工作服务。
+  - Kafka 抛弃zookeeper 就是做了这样的优化，自己开发了一个基于raft 共识算法的一致性服务kraft，为集群提供之前zookeeper 的状态服务的同时，也为broker 提供主控服务，也就是controller。这样相比之前的架构还有一个很大的优点，那就是controller 的故障切换会非常快，而且切换时间几乎不随集群规模而线性增长。
+  - 原因是，以前的架构，controller 只有一个，如果做controller 的故障切换，那么新controller 需要全量从zookeeper同步集群所有元数据信息并构建到内存，来为做主控服务做准备，这些元数据信息包括topic 和分区信息，如果是一个大规模集群，topic 和分区很多，这个过程将会很耗时，也就会造成更久的停机时间。而kraft 的架构，controller有多个，只是只有一个是leader 提供主控服务，其他的作为follower ，会实时同步leader的元数据信息，也就是元数据在多个controller 里面是几乎保持一致的(raft 协议保证的)，所以故障切换的时候，几乎不需要再同步元数据，就可以完成controller 切换。
+
+- 有点意思，Foundation DB也是多个controller的思路
 
 - ## 🌰 When Discord started partitioning their data, they ran into unexpected issues.
 - https://twitter.com/ProgressiveCod2/status/1734532331338342487

@@ -280,7 +280,7 @@ modified: 2022-06-13T02:57:07.648Z
 - The backing store implementation is built on top of two storage systems:
   - Blobs, managed by the Blob system, are stored as individual files in a per-origin directory. Blobs are specifically designed for storing large amounts of data.
   - LevelDB is a key-value store optimized for small keys (10s-100s of bytes) and fairly small values (10s-1000s of bytes). Chrome creates a per-origin LevelDB database that holds the data for all the origin's IndexedDB databases. The LevelDB database also holds references to the Blobs stored in the Blob system.
-# 🌐️ [How the browsers store IndexedDB data_201210](https://www.aaron-powell.com/posts/2012-10-05-indexeddb-storage/)
+# 🧭 [How the browsers store IndexedDB data_201210](https://www.aaron-powell.com/posts/2012-10-05-indexeddb-storage/)
 - At the time of writing the IndexedDB implementation of WebKit, and by extension Chrome, is still prefixed
   - leveldb
 

@@ -62,6 +62,7 @@ modified: 2023-10-26T15:28:53.748Z
   - An in memory postgres DB instance for your unit tests
   - It works both in Node or in the browser.
   - 依赖immutable.v4、functional-red-black-tree、json-stable-stringify、lru-cache、moment、pgsql-ast-parser、@mikro-orm/core~pg
+  - adapter支持pg-native,node-postgres,knex,typeorm
   - The sql syntax parser is home-made. Which means that some features are not implemented, and will be considered as invalid syntaxes.
   - limitations
     - Materialized views are implemented as views (meaning that they are always up-to-date, without needing them to refresh)

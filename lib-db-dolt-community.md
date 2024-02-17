@@ -529,6 +529,20 @@ modified: 2023-08-25T21:17:11.979Z
 # discuss-branching/versioning
 - ## 
 
+- ## 
+
+- ## 三路合并算法还挺有趣的。最近想在wescale中复刻一下PlanetScale的Branch功能，感觉处理多个Database Branch合并的时候需要用到，我大概猜到PlanetScale是如何实现的了
+- https://twitter.com/earayu/status/1746887903240978811
+  - Git的分支，对于Database Branch来说太复杂了。因为Git会为每个commit维护一个状态，branch之间构成了一个复杂的DAG图。三路合并的一个重要操作是寻找“共同祖先”，可以通过图遍历做到。
+  - 但是Database Branch很难为每个操作（在数据库中就是DDL）维护一个状态。
+  - Database Branch之间如果允许任意merge，那就会让事情变得更复杂。
+  - 一个合理的取舍是：为Database Branch引入一些限制条件。比如某个Database Branch被基于某个base分支创建后，只能合并回它的base分支。这能极大减少Database Branch的状态空间。
+- Database Branch可以被转化成2个子问题： 
+  1. 如何引入限制条件，以减少需要维护的状态（指Schema信息，以及DDL操作信息）
+  2. 如何引入限制条件，以减少Branch的状态空间
+
+- 是的，即使用git做开发，最佳实践也是要求“只合并回它的base分支”。不过除了常规的merge，还有两个操作需要重视：a. rebase，特别是你有多个develop分支时；b. cherry-pick，当需要做Bug hot-fixes时！
+
 - ## 🔥 [Database Version Control with Liquibase | Hacker News_202009](https://news.ycombinator.com/item?id=24577239)
 - 
 - 

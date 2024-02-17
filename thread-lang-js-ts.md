@@ -26,7 +26,11 @@ modified: 2021-01-28T14:34:20.579Z
 
 - ## 
 
-- ## 
+- ## 🆚️ Type predicates (like 'pet is Fish' below) are no safer than 'as'.
+- https://twitter.com/mattpocockuk/status/1758523382155415953
+  - I've started using them less in my code.
+
+- A properly implemented user-defined type provides more safety than `as` because it actually checks for the existence of the expected object shape. `as` can't be safe. Type predicates *can* be.
 
 - ## a #zod schema definition becomes a "single source of truth" for BOTH compile-time (#typescript) and runtime (#javascript).
 - https://twitter.com/tomasz_ducin/status/1752300627672416334

@@ -9,6 +9,8 @@ modified: 2021-01-13T07:57:54.308Z
 
 # guide
 
+- features
+  - code-split/dynamic-import
 # react-like
 
 ## [如何看待由react router原班人马打造并获得三百万美元融资的ts全栈开发框架remix框架?](https://www.zhihu.com/question/502743886)

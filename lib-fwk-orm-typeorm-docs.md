@@ -9,10 +9,7 @@ modified: 2023-01-20T18:44:00.791Z
 
 # guide
 - resources
-# docs
-
 # overview
-
 - typeorm /30.1kStar/MIT/202301/ts
   - https://github.com/typeorm/typeorm
   - http://typeorm.io/
@@ -23,6 +20,8 @@ modified: 2023-01-20T18:44:00.791Z
   - Supports MongoDB NoSQL database.
 - ✨ TypeORM supports both Active Record and Data Mapper patterns
 - TypeORM is highly influenced by other ORMs, such as Hibernate, Doctrine and Entity Framework.
+# docs
+
 # [Active Record vs Data Mapper | TypeORM](https://typeorm.io/active-record-data-mapper)
 - Simply said, the Active Record pattern is an approach to access your database within your models.
   - you define all your query methods inside the model itself, and you save, remove, and load objects using model methods.

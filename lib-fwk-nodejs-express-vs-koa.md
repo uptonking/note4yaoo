@@ -29,7 +29,7 @@ modified: 2022-12-19T01:55:03.539Z
   - Koa是使用的号称异步终极解决方案的Async/Await，也就是基于Promise，使用Try-Catch来捕获错误
 - 中间件的区别
   - Express的中间件是线性模型
-  - Koa的中间件是洋葱模型（聊一聊KOA的洋葱模型）
+  - Koa的中间件是洋葱模型
 - 集成度
   - Express自带了Router和Static的中间件
   - Koa需要自行安装Router和Static的中间件
@@ -122,7 +122,7 @@ modified: 2022-12-19T01:55:03.539Z
   - 3 Layer architecture: controller, service, dao
 - [What's the Node framework landscape like?](https://dev.to/ben/what-s-the-node-framework-landscape-like-5d5f/comments)
 - [Hapi vs Koa vs Express](https://www.section.io/engineering-education/hapi-vs-koa-vs-express/)
-# discuss-express/koa/hono/fastify
+# discuss-comparision 🆚️
 - ## 
 
 - ## 
@@ -147,3 +147,17 @@ modified: 2022-12-19T01:55:03.539Z
 - I recently migrated all my services from Koa back to express.js. 
   - As others have pointed out: community size. 
   - Koa itself might be maintained, but there are a lot of poorly supported packages at the edges of the dependency tree/ plugins.
+
+- ## [Is Express being maintained? : r/node _202208](https://www.reddit.com/r/node/comments/wlr0nc/is_express_being_maintained/)
+- Express v4 is basically feature complete (besides for proper async support). There is no need for continued development once a project is complete.
+
+- it's the lib with the most reliable maintainer and that for a decade! i would only use express bc you can be sure it will be still maintained the next decade. nothing i could imagine of any other lib
+
+- Express' lack of support for async route handlers is a huge missing feature. And it's just been getting bigger with every passing year as async-await coding styles and APIs become more entrenched in the JS ecosystem.
+  - I think even express v4 supports route handlers that return a promise
+
+- v4 only "supports" async handlers in the sense that they won't break anything. But Express completely ignores the returned promise. This creates a whole bunch of "issues-by-omission".
+
+- I think Express is more likely to outlive Koa than vice versa. If you're looking for an alternative to Express, I'm consistently impressed with the ecosystem Walmart Labs is building around Hapi.
+
+- Fastify is really the way to go these days. One of the lead maintainers is Matteo Collina. He is part of the Node Technical Steering Committee 

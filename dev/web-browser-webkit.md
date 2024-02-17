@@ -35,7 +35,14 @@ modified: 2021-01-01T20:11:00.889Z
   - [Google and Mozilla are working on iOS browsers that aren't based on WebKit | Hacker News_202302](https://news.ycombinator.com/item?id=34690788)
 
 - **all Chrome variants except iOS now use Blink**
-  - The restriction to use WebKit as the rendering engine for 3rd party Web browser apps exists solely on iOS. 
+  - The restriction to use WebKit as the rendering engine for 3rd party Web browser apps exists solely on iOS.
+
+- https://github.com/midori-browser/core /LGPLv2/201910/vala/inactive
+  - https://www.midori-browser.org/
+  - https://astian.org/midori-browser/
+  - lightweight, fast and free web browser using WebKit and GTK+
+  - [About Midori's future](https://github.com/midori-browser/core/issues/459)
+    - The version based on WebKit is not recommended for download, it is recommended to migrate to version 11 and the new maintenance cycle, where the same lightness, privacy and security and many more are still maintained.
 # read: WebKit技术内幕_2014
 - 浏览器的功能越来越丰富，包括网页浏览、网络请求、资源管理、多页面管理、插件和扩展、书签管理、历史记录管理、设置、下载、账户同步、安全隐私、外观主题、开发者工具等
 - html5的标准包含10个大的类别
@@ -311,7 +318,7 @@ modified: 2021-01-01T20:11:00.889Z
 
 - https://github.com/devongovett/node-wkhtmltopdf
   - A wrapper for the wkhtmltopdf HTML to PDF converter using WebKit
-# discuss-💡webview
+# discuss-webview 🧭
 - ## 
 
 - ## 

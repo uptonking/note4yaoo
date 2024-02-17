@@ -13,6 +13,64 @@ modified: 2023-03-30T13:31:09.049Z
   - [凯凯刘 独立开发变现周刊](https://www.zhihu.com/column/c_98462514)
     - [让小产品的变现更简单 - ezindie.com](https://www.ezindie.com/)
 # discuss-stars
+- ## 
+
+- ## 
+
+- ## 小红书在国内这么火的原因。很可能是百度搜到的信息都太烂了，它填补的是Google的生态位。而熟练使用Google的人不太能感受到小红书的优势
+- https://twitter.com/oakvale5/status/1758627736854401291
+- 我谷歌重度用户，但买家秀一类的信息，比如某牌子某产品到底好不好，日本租房注意事项/坑，煤气灶怎么安装，某某卡怎么开卡等等，谷歌信息很少很散，小红书又多又切题。当然还有巨量的宠物领养，宠物喂养信息，外语视听材料（不要说youtube，小红书的材料有针对性得多，有人校阅的字幕，语法提炼等
+  - 还有各种最新的签证信息等，谷歌搜到的很散乱或过时。我没用过抖音但估计和小红书内容也差不多？因为看到别人扒下来的外语学习材料/签证信息等都比较像。
+  - 感觉现在短视频平台是结合了买家秀+社区+搜索功能等，而且搜索算法做得特别好
+
+- 部分是，更多是填补朋友圈功能。人都是有炫耀心理，但是基于朋友圈的隐私设置，和天然的排斥非好友属性，已经不足以show off。
+  - 小红书满足了这个, 与其说代替google，更多是填补Instagram空白
+
+- 不是填补Google，因为很多信息Google也搜索不到，移动互联网时代中文世界的信息犹如一座座孤岛被各大厂商占据，百度搞不到的中文信息，Google也无能为力。小红书有点独树一帜，上面有大量其他地方没有的高质量信息，比如旅游，徒步，露营，润，留学，这些都是其他互联网平台没有的。
+- 小红书的优势在于其提供的是“及时的个人案例”。说实话和谷歌更多是信息的互补，不太存在生态位竞争。或者说小红书最大的作用是减少信息噪音，你可以看到一个真实的人关于某一个事情的故事。
+
+- 小红书有社区交流功能，是以前的论坛升级版。Google做不到如此深度。
+
+- 填补了中国用户用电脑少用手机多的空白
+
+- 小红书是典型的“信息收敛”应用，也就是提炼和加工有效信息为目的的应用，互联网的信息爆炸，评估知识的价值还是要回归到人的“经验”，也就是“应用场景”。
+  - 绝大部分人不是搞学术科研的，并没有很精深的理论需求，对知识的诉求主要是来源于各种实际的场景需求，相对浅层次的经验知识即可满足，对于专业知识和服务，其实需要的也只是是如何购买的对接和验收方式。
+  - 小红书主要实现提炼经验类型的知识分两种，一是直接体验的经验，一种是如何购买专业服务和知识的经验。做好这两点其实就足够了。
+  - 它的口号是“你的生活指南”，定位还算蛮清晰的。
+  - 再往深讲一层，基本上就是教人如何打发时间，低劣地打发时间，低劣地无所事事是很多人的常态。
+- 知乎应该是这种方向的，可惜它太端起来了
+
+- 小红书，我觉得就是以前bbs，百度贴吧的进化产品形式，通过大数据，打标签，代替以前的分主题频道的管理模式
+
+- 我自己的感觉是小红书的实时性特别好，可以搜到半个小时前的内容
+
+- ## 翻了一下Sam Altman的履历，才意识到这个人几乎没有任何学术经历/学术成功/工程成果，完全是投资人/商人/高管的路子。
+- https://twitter.com/mistivia/status/1758511186599895189
+
+- 马斯克、乔布斯也不是技术人员
+
+- openAI 的灵魂人物是前首席科学家Ilya Sutskever, 他作为董事投票炒掉奥特曼，被微软公关喊停了，他愤然离职了。
+
+- 这说明了目前明牌重注的技术蓝图下，研发人才具有高可替代性，相比之下产品经理和企业家才是活的灵魂
+- 整合资源的能力，有没有可能比技术更重要？
+- 搞技术就了不起？去年董事会政变不成，说明整个公司都站在奥特曼一边，这种能力比转搞技术强大的多
+- 在商业圈，看人只看学术成果眼界就太低了。能否整合资源，给公司发展指出正确的方向，给下属提供充分的发展空间，这些都比学术重要的多。搞学术是很难，但难不代表重要。
+- 很多工程人員都看不起推展商業模式的人，認為他們沒有生產力，但其實商業模式才是一切企業的基本，技術是有很高取代性的，另外，我寫了好多年的code，去了一趟新創，讓我學到商模的重要
+
+- 一个人已经无法掌握所有的技术了，哪怕技术背景出生，只要管理层级到达一定层级，公司里多的是不懂的技术，这时候懂1/n和懂0/n区别不大，毕竟他也不是执行者，他只需要从下级那里知道能不能做就可以了
+
+- 技术是什么？是一种商品
+
+- 当年程序员们也是这么喷乔布斯的
+
+- 底层技术用的也是别人的, 他们的技术人员也是做工程（产品），这种技术人员是可复制的
+
+- 中国历史早就证明： 一等智商治国，二等智商从商，三等智商为吏，再下为匠人，再下力夫。商业时代兴起之后，商政不分家。
+
+- OPENAI需要融资才能活下去，所以他们需要一个能销售的CEO。事实上sam做的很不错。去年底那场闹剧就能看出来。
+
+- 你如果是学术圈的, 脑子聪明点, 自然能意识到大部分科研和论文本质都是混毕业证混科研经费的一坨大便
+
 - ## 我在前几天发了条帖子说（新人）独立开发选择笔（日）记、记账、Todo主流三件套之一等于加速死亡。
 - https://twitter.com/bestlacklock/status/1689934612737429504
   - 引发了一点点🤏🏻争议。刚好我在选择 app 方向的时候也深思过这个问题，所以我展开讲讲，分享一下我的想法
@@ -26,10 +84,16 @@ modified: 2023-03-30T13:31:09.049Z
   4. 抽象升华，分类填充到互联网产品的认知模型里去
   - 看的多了思考的多了，我们好像戴上一幅滤镜，能一眼看透各种产品的底层逻辑。
   - 这个能力需要刻意练习。
+
 # discuss-declining
 - ## 
 
-- ## 
+- ## [How Quora died | Hacker News _202402](https://news.ycombinator.com/item?id=39241448)
+- If your core business product is content contributed by users... I'm turning to the opinion that you need a C-level ombudsman- / dean of contributors-type role.
+  - Whose sole job it is to (1) figure out what contributors are thinking and want & (2) advocate for them inside the company.
+  - Every contributor-driven platform has eventually jumped the shark, and all in exactly the same way.
+
+- the revenue sharing probably didn't help much for sure. I've seen dozens of sites and platforms add that as a feature, and as unfortunate as it is, this almost always backfires. People see 'make money contributing to this platform' as 'free cash for spamming!' and the quality often falls off a cliff. You need really strict rules and a good moderation team to keep a platform under control in this situation, and that's rarely the case for services like Quora.
 
 - ## InVision 宣布关站。当年和 Sketch 也算是两大设计平台了，一个时代正式结束。
 - https://twitter.com/dingyi/status/1743073399633764502

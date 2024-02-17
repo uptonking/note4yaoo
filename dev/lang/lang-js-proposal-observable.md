@@ -127,6 +127,17 @@ let subscription = commandKeys(inputElement).subscribe({
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🆚️ Promises vs Observables.
+- https://twitter.com/BenLesh/status/1758602497898201142
+  - 1. Promises are fine. 2. Async await is fine. BUT: If you want cancellation... Especially for anything custom, it gets wild really fast.
+  - Observable (in particular RxJS) solves this by making cancellation uniform and ergonomic.
+
+- RxJS IS HARD. Because asynchronous programming is hard. 
+
 - ## Every lib has to write its own implementation of observables because it’s such an important and ubiquitous concept. 
 - https://twitter.com/lexswed/status/1685027901031256064
   - So why not build it into the language so all these libraries can simply use the built in one instead of rolling their own

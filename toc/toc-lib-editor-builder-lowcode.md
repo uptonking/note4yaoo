@@ -292,11 +292,14 @@ modified: 2020-12-28T12:24:09.275Z
     - 成员与权限
   - ToolJet's drag and drop frontend builder allows you to build complicated responsive frontends within minutes
 # lowcode
-- lowdefy /2.1kStar/apache2/202301/js/json/yaml
+- lowdefy /2.1kStar/apache2 > BSL/202401/js/json/yaml
   - https://github.com/lowdefy/lowdefy
   - low-code framework that lets you build web apps with YAML or JSON configuration files
+  - 依赖knex
   - It is great for building admin panels, BI dashboards, workflows, and CRUD apps.
   - Advantages of writing internal tools in YAML or JSON
+  - [chore: Initialise @lowdefy/server-enterprise package.](https://github.com/lowdefy/lowdefy/commit/a0a30d99685a7df211b93eb576d6953a35cc372a)
+    - packages/servers/server-enterprise
 
 - sunmao-ui /apache2/202301/ts
   - https://github.com/smartxworks/sunmao-ui

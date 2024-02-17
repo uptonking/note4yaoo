@@ -14,7 +14,11 @@ modified: 2022-12-19T01:59:01.628Z
 
 - ## 
 
-- ## 
+- ## How do you get around SQLite's write limits?
+- https://twitter.com/ImSh4yy/status/1758618280690929686
+  - SQLite can handle thousands of writes and a ton more reads per second.
+  - If you're hitting these limits, congratulations. You're probably very rich at this point and can hire someone, if not a team, to figure it out for you.
+  - If you're far from these limits, and thinking about workarounds, you're probably doing something wrong.
 
 - ## ⏱️🤔 You might think that SQLite can't work as your production database because it doesn't support concurrent writes. 
 - https://twitter.com/fractaledmind/status/1732061486762147985

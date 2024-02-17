@@ -70,6 +70,20 @@ EXIT，GRANT，NOAUDIT，QUIT，REVOKE，RENAME。
 系统将自动进行提交，这就是自动提交。其格式为：
 SQL>SET AUTOCOMMIT ON；
 
+## 🧩 [What Is the `WITH` Clause in SQL?](https://learnsql.com/blog/what-is-with-clause-sql/)
+
+- The WITH clause in SQL was introduced in standard SQL to simplify complex long queries, especially those with JOINs and subqueries. 
+  - Often interchangeably called CTE or subquery refactoring, a WITH clause defines a temporary data set whose output is available to be referenced in subsequent queries.
+- The WITH clause is considered “temporary” because the result is not permanently stored anywhere in the database schema. 
+  - It acts as a temporary view that only exists for the duration of the query
+  - It is only valid in the query to which it belongs
+- the key advantage of the WITH clause is that it helps organize and simplify long and complex hierarchical queries by breaking them down into smaller, more readable chunks.
+
+- Some common applications of SQL CTE include:
+  - Referencing a temporary table multiple times in a single query.
+  - Using it as an alternative to creating a view in the database.
+  - Performing multi-level aggregations, such as finding the average of maximums.
+  - Performing an identical calculation multiple times over within the context of a larger query.
 # blogs-query-engine
 
 ## 📖 [How Query Engines Work](https://howqueryengineswork.com/)
@@ -114,9 +128,7 @@ SQL>SET AUTOCOMMIT ON；
   - Removing or reducing SerDe overhead is great, and for analytical workloads where SerDe can be 30-50% of clock time then something like Apache Arrow is pure magic. For the remaining 9X% of use cases it's not adding any more value then you'd see from protobuf.
 - 👉🏻 **I agree Arrow by itself doesn't address any novel/fundamental OLTP challenges**, but I'm not arguing that the thing which eventually supplants Postgres will succeed because of best-in-class OLTP performance - anyone needing that today is not choosing Postgres anyway (same as ever).
   - The real proposition is having a modern, general purpose workhorse underpinned by an ecosystem with strong network effects and polyglot APIs. Assuming analytical systems continue to gravitate towards Arrow I believe the OLTP world will be dragged along also.
-# query-non-sql
-
-# N+1
+# blogs-usecase-N+1
 
 ## [数据库查询的N+1问题](https://blog.icehoney.me/posts/2021-02-20-sql-n-1/)
 

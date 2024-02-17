@@ -135,7 +135,7 @@ modified: 2023-02-05T18:50:53.563Z
 - https://github.com/nosuchip/mongoose-track /201806/js
   - Mongoose model change history tracking and storing into model's "history" field.
 # utils-mongo
-- https://github.com/vadimdemedes/mongorito /201807/js
+- https://github.com/vadimdemedes/mongorito /201807/js/archived
   - flexible MongoDB ODM for Node.js apps based on Redux.
   - Each model instance has a separate Redux store, which ensures isolation between other models and easy extensibility.
 

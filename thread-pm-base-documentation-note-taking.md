@@ -367,12 +367,12 @@ modified: 2021-08-16T06:56:53.061Z
 - https://twitter.com/sobedominik/status/1436016818079076366
   - With HelpKit you can use all the Notion blocks you know and love.
   - No code required
-  💨 Ultra fast
-  🎨 Customizable
-  ✨ Looks professional
-  🎛️ Embeddable widget like Intercom or Zendesk
-  🔍 Sophisticated search
-  🌐 Custom domain
+  Ultra fast
+  Customizable
+  Looks professional
+  Embeddable widget like Intercom or Zendesk
+  Sophisticated search
+  Custom domain
 
 - ## Anyone know of smarter reading time estimation algorithms than words/wordsPerMinute?
 - https://twitter.com/wooorm/status/1436262232338444310

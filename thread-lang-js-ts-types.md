@@ -66,7 +66,17 @@ modified: 2021-08-05T04:31:02.298Z
 # discuss
 - ## 
 
-- ## 
+- ## 🌰 Here's a quick guide on how to type your globals and env variables in Vite, Node and the DOM.
+- https://twitter.com/mattpocockuk/status/1758454430666506589
+  - window. MY_ENV = 'whatever'; 
+
+- declare global is not needed if you include file in tsconfig.json#files
+  - It's not needed if there are no import/exports in the file OR if you're using a .d.ts file.
+
+- Is it a good practice to store these declarations in *.d.ts files?
+  - Yes! Then you don't need the declare global.
+
+- Our approach is to zod-parse the whole process.env (or import.meta.env) into a Config module, making them type-safe.
 
 - ## Forcing users to always pass a type argument to your function isn't yet supported in TypeScript.
 - https://twitter.com/mattpocockuk/status/1757733431981625565
