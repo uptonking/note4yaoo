@@ -54,7 +54,7 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/liveblocks/strapi-demo /202310/ts
   - Strapi + Liveblocks demo
 
-- https://github.com/its-devtastic/curator /MIT/202310/ts
+- https://github.com/its-devtastic/curator /MIT/202402/ts
   - https://www.curatorjs.org/
   - An alternative Strapi admin
   - mobile-friendly admin
@@ -63,19 +63,12 @@ modified: 2023-12-15T19:30:23.094Z
   - Flexible plugin system
   - Curator offers a Strapi plugin that adds those features, and an alternative admin app that is easier to customize.
   - customizable admin built with React, Ant Design and Tailwind.
+  - ❌ 不支持: Role management, Content-type builder
 # integrations
 - https://github.com/ONLYOFFICE/onlyoffice-strapi /MIT/202211/js/inactive
   - The app which enables the users to edit office documents from Strapi using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to Strapi
   - 未使用socket
   - [Collaborate in Strapi with ONLYOFFICE Docs | ONLYOFFICE Blog _202205](https://www.onlyoffice.com/blog/2022/05/strapi-connector-for-onlyoffice)
-
-- https://github.com/marmelab/ra-strapi-demo /202210/前端ts/后端js
-  - [Building a B2B app with Strapi and React-Admin_202211](https://marmelab.com/blog/2022/11/28/building-a-crud-app-with-strapi-and-react-admin.html)
-  - 依赖strapi.v3、knex、pg、ra-strapi-rest、react-admin.v4
-
-- https://github.com/marmelab/strapi-beerdex /202103/js
-  - StrapiJS Example Application For Beer Management
-  - [Building A Web Application In 15 Minutes Using StrapiJS And NextJS_202006](https://marmelab.com/blog/2020/06/18/build-an-application-in-fiften-minutes-using-strapijs.html)
 
 - https://github.com/nazirov91/ra-strapi-rest /MIT/202304/ts
   - React Admin data provider for Strapi.js
@@ -84,6 +77,14 @@ modified: 2023-12-15T19:30:23.094Z
 
 - https://github.com/garridorafa/ra-strapi-v4-rest /MIT/202308/ts
   - React Admin REST data provider for Strapi.js v4
+
+- https://github.com/marmelab/ra-strapi-demo /202210/前端ts/后端js
+  - [Building a B2B app with Strapi and React-Admin_202211](https://marmelab.com/blog/2022/11/28/building-a-crud-app-with-strapi-and-react-admin.html)
+  - 依赖strapi.v3、knex、pg、ra-strapi-rest、react-admin.v4
+
+- https://github.com/marmelab/strapi-beerdex /202103/js
+  - StrapiJS Example Application For Beer Management
+  - [Building A Web Application In 15 Minutes Using StrapiJS And NextJS_202006](https://marmelab.com/blog/2020/06/18/build-an-application-in-fiften-minutes-using-strapijs.html)
 
 - https://github.com/sant3001/ra-strapi-v4-graphql /202310/ts
   - GraphQL Strapi v4 Provider for React Admin.
@@ -184,6 +185,10 @@ modified: 2023-12-15T19:30:23.094Z
 
 - https://github.com/Sur-un-nuage/strapi-plugin-expo-notifications /202312/js
   - plugin that allows a Strapi user to send notifications via the Expo API directly from the Strapi admin panel. 
+
+- https://github.com/localazy/strapi-plugin /202311/js
+  - Strapi localization doesn't have to be a headache! 
+  - Install the Strapi localization plugin and seamlessly translate your content into multiple languages with Localazy
 # plugins
 - https://github.com/offset-dev/strapi-calendar /202311/js
   - Visualize your Strapi content in month, week or daily view
@@ -676,10 +681,6 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/webbio/strapi-plugin-internal-links /202311/ts
   - wip
 
-- https://github.com/notum-cz/strapi-plugin-record-locking /202312/js
-  - This plugin provides the functionality to prevent data loss in cases where multiple users are simultaneously editing the same record within STRAPI v4.
-  - When a user attempts to edit a record that is already being edited, a warning will be displayed.
-
 - https://github.com/Edwin-Luijten/strapi-encryptable-field /202310/ts
   - Encrypts values on save, and decrypts on fetch.
 
@@ -981,10 +982,10 @@ modified: 2023-12-15T19:30:23.094Z
   - Cron is used to run Puppeteer in interval and parse the website for any newly added post.
 
 - https://github.com/psparsa/AlphaGallery /202310/ts
-  - A minimal image uploading website built with Next.js and Starpi, styled with Tailwind CSS and tested with Jest/RTL.
+  - A minimal image uploading website built with Next.js and Strapi, styled with Tailwind CSS and tested with Jest/RTL.
 
 - https://github.com/emanuelefavero/strapi-markdown-blog /202303/ts
-  - This is a blog starter project that uses the Strapi Rich Text Data Type and react-markdown
+  - This is a blog starter project that uses the Strapi Rich Text Data Type and react-markdown to render the content.
 
 - https://github.com/anshu4sharma/blog /202306/ts
   - Next js blog created using tailwind css typescript and strapi
@@ -1057,10 +1058,15 @@ modified: 2023-12-15T19:30:23.094Z
   - https://strapi-plugin-io.netlify.app/
   - A plugin for Strapi CMS that provides the ability for Socket IO integration
 
-- https://github.com/larsonnn/strapio /202201/js/inactive
+- https://github.com/genjudev/strapio /202201/js/inactive
   - Socket. IO Implementation for Strapi
   - module for working with socket.io with predefined rules. StrapIO will look at Role permission on each action. StrapIO is looking for all roles which have access to the given contenttype and action type.
   - https://github.com/genjudev/strapio-example-project /202109/js
+
+- https://github.com/notum-cz/strapi-plugin-record-locking /202312/js
+  - This plugin provides the functionality to prevent data loss in cases where multiple users are simultaneously editing the same record within STRAPI v4.
+  - When a user attempts to edit a record that is already being edited, a warning will be displayed.
+  - 依赖socket.io
 
 - https://github.com/jenniferokafor/collaborative-code-editor /202306/ts
   - client依赖codemirror.v6、@uiw/react-codemirror
@@ -1073,16 +1079,47 @@ modified: 2023-12-15T19:30:23.094Z
 
 - https://github.com/misstarn/chatstrapi /202310/js
   - 使用strapi+socketio作为chatapp的后端
+  - https://github.com/misstarn/chatapp
+    - 使用socket.io+nuxt3+vuetify+tailwindcss制作的聊天软件
 
 - https://github.com/divofred/strapi-chat-app /202205/js
   - Complete Strapified chat application
   - strapi v4 + nextjs
   - [Building a Real-time Chat Application Using Strapi, Next, Socket.io, and PostgreSQL_202206](https://strapi.io/blog/real-time-chat-application-using-strapi-next-socket-io-and-postgre-sql)
 
+- https://github.com/divofred/strapi-chat-app /202205/js
+  - chat application
+
+- https://github.com/akashyap25/chat-it /202309/js
+  - fe + be
+  - https://github.com/akashyap25/chat-it-host
+
+- https://github.com/purnima-strapi-blogs /202101/js
+  - self-hostable chat app. Built using ReactJS, Strapi and Socket.io
+  - https://github.com/purnima-strapi-blogs/strapi-chat-ui
+
+- https://github.com/ShalomGoodman/chatapp-api /202308/js
+  - v4
+  - https://github.com/ShalomGoodman/chatapp-frontend
+
 - https://github.com/i1d9/strapi-bids-frontend /202206/js/vue
   - Bid/Auction Application made with strapi, socket-io-client and bootstrap 5
   - https://github.com/i1d9/strapi-bids-backend
   - [Creating a Real-Time Bidding App Using Strapi v4, Vue and Socket IO_202208](https://strapi.io/blog/how-to-create-a-real-time-bidding-app-using-strapi-v4-vue-and-socket-io)
+
+- https://github.com/mervinapiag/room-app-backend-server /202307/ts
+  - Real Time Room App (Create and Join Room)
+  - https://github.com/mervinapiag/room-app-frontend-server /202307/js
+    - A simple frontend to test only the realtime room creation, joining
+
+- https://github.com/mervinapiag/Realtime-Memory-Game /202307/js
+  - Exploring Socket IO using NextJS + Strapi CMS
+
+- https://github.com/Nikoxx99/laniakea /202401/js/vue
+  - A solution for watching videos with your friends in sync using WebSockets
+
+- https://github.com/jempool/Strapi-WebSocket-Server /MIT/202312/js
+  - 依赖strapi.v3
 # clients-mobile/pc
 - https://github.com/shahednasser/strapi-react-native /202202/js
   - Code for Create a Notes App with Strapi and React Native
@@ -1151,6 +1188,9 @@ modified: 2023-12-15T19:30:23.094Z
 
 - https://github.com/jabali2004/strapi-data-replicator /202111/rust
   - Simple command line utility for replicating and migrating persistent tables or collections for Strapi applications.
+
+- https://github.com/tsarrB/strapi-webshell /202303/js
+  - Integrate web shell into your Strapi application
 # v5
 - https://github.com/strapi/v5-experiments
   - /202307/ts

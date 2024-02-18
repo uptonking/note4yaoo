@@ -33,17 +33,15 @@ modified: 2021-05-14T15:04:15.333Z
   - discourse
   - nodebb
   - spectrum
+  - Mumble for voice and text, jitsi for video calls
 
 - chat-open
   - mattermost
   - Zulip
   - gitter
   - telegram的client都是开源的, webK/webA
-# forum-for-dev
-- https://github.com/42wim/matterbridge /202212/go
-  - bridge between mattermost, IRC, gitter, xmpp, slack, discord, telegram, rocketchat, twitch, ssh-chat, zulip, whatsapp, keybase, matrix, microsoft teams, nextcloud, mumble, vk and more with REST API
-  - Mattermost isn't required to run matterbridge
-
+  - [5 open source alternatives to Slack for team chat | Opensource.com](https://opensource.com/alternatives/slack)
+# forum-popular
 - https://github.com/discourse/discourse /GPLv2/202401/ruby/js
   - 依赖emberjs、postgresql、redis
   - discussion platform built for the next decade of the Internet.
@@ -52,17 +50,33 @@ modified: 2021-05-14T15:04:15.333Z
   - Spectrum aims to be the best platform to build any kind of community online by combining the best of forums and real-time chat apps.
   - RethinkDB: Data storage
 
-- https://github.com/NodeBB/NodeBB /GPLv3/202401/js
-  - Node.js based forum software built for the modern web
-  - powered by Node.js and supports either Redis, MongoDB, or a PostgreSQL database
-  - It utilizes web sockets for instant interactions and real-time notifications
-
 - https://github.com/apache/incubator-answer /apache2/202401/go/ts
   - https://answer.apache.org/
   - https://meta.answer.dev/
   - A Q&A platform software for teams at any scales. 
   - Plugins: redis/es/algolia
-  - https://github.com/casbin/casnode /apache2/202312/go
+- https://github.com/casbin/casnode /apache2/202312/go
+  - Open-Source Forum and Social Platform, Alternative to StackOverflow & Flarum
+  - Go (Beego) + MySQL
+
+- https://github.com/NodeBB/NodeBB /GPLv3/202401/js
+  - https://nodebb.org/
+  - Node.js based forum software built for the modern web
+  - powered by Node.js and supports either Redis, MongoDB, or a PostgreSQL database
+  - It utilizes web sockets for instant interactions and real-time notifications
+  - Hosting NodeBB for a few years with custom sso plugin. NodeBb is awesome but the plug-in ecosystem is hell, as most plugins don't get regular updates and break on new versions (break like you can no longer activate them because semver rules mismatch)
+  - [Local development should use non-daemonised DB](https://github.com/NodeBB/NodeBB/issues/1094)
+    - We're definitely fans of re-use, and we do use existing modules, though in certain cases (DBAL and template engine), we roll our own for performance and workflow purposes.
+
+- MBBS /52Star/MIT/202312/ts/功能全
+  - https://github.com/linfaxin/MBBS
+  - http://mbbs.cc/
+  - http://bbs.mbbs.cc/
+  - 轻量级全功能论坛、移动/PC双端适配、无依赖一键启动、技术栈 express + sqlite + react
+  - 后端依赖express、sequelize、sqlite3、svg-captcha
+  - 前端依赖mui、ahooks、umi3
+  - 全功能论坛：板块/楼中楼/角色权限/审核/富文本编辑/个性化配置/邮件通知 等
+  - 自带授权登录：免开发支持 QQ/微信/支付宝 授权登录
 
 - ddd-forum /1.8kStar/ISC/202306/ts/hacker-news
   - https://github.com/stemmlerjs/ddd-forum
@@ -82,15 +96,6 @@ modified: 2021-05-14T15:04:15.333Z
   - 🍴 forks
   - https://github.com/BrunoAmerio/orca
 
-- MBBS /52Star/MIT/202312/ts/功能全
-  - https://github.com/linfaxin/MBBS
-  - http://mbbs.cc/
-  - 轻量级全功能论坛、移动/PC双端适配、无依赖一键启动、技术栈 express + sqlite + react
-  - 后端依赖express、sequelize、sqlite3、svg-captcha
-  - 前端依赖mui、ahooks、umi3
-  - 全功能论坛：板块/楼中楼/角色权限/审核/富文本编辑/个性化配置/邮件通知 等
-  - 自带授权登录：免开发支持 QQ/微信/支付宝 授权登录
-
 - cnode
   - https://github.com/cnodejs/nodeclub
     - Nodeclub 是使用 Node.js 和 MongoDB 开发的社区系统
@@ -100,6 +105,10 @@ modified: 2021-05-14T15:04:15.333Z
 - https://github.com/ChenJiaH/react-cnode
   - 基于react&react-router-dom，利用CNode API重写CNode社区。
   - 依赖只有react-router.v5, react, axios
+
+- https://github.com/heybereket/oasis /202107/inactive
+  - The chat and forums platform for communities
+  - 后端依赖 express、typeorm、passport
 
 - https://github.com/matevsh/web-forum /ts/代码少
   - SPA full-stack app mainly focused on forum functionality
@@ -123,14 +132,86 @@ modified: 2021-05-14T15:04:15.333Z
   - Display repository data using GitHub API
   - https://github.com/planetscale/nextjs-planetscale-starter
     - A Next.js starter app with NextAuth.js (Auth), Prisma (ORM), and PlanetScale (database), ready to be deployed on Netlify
+# forum-non-nodejs
+- https://github.com/LemmyNet/lemmy /AGPLv3/202402/rust
+  - https://join-lemmy.org/
+  - Lemmy is similar to sites like Reddit, Lobste.rs, or Hacker News
+  - 依赖Actix、Diesel、Inferno
+  - anyone can easily run a server, and all these servers are federated (think email), and connected to the same universe, called the Fediverse.
+  - A forum software that supports ActivityPub federation. 
+  - The web framework used is Actix, the frontend is in JavaScript
+  - https://github.com/LemmyNet/lemmyBB
+    - A Lemmy frontend based on phpBB 3.3.
 
-- https://github.com/proshoumma/ReForum
+- https://github.com/freedit-org/freedit /MIT/202402/rust
+  - https://freedit.eu/
+  - The safest and lightest forum, powered by rust
+  - 依赖axum、cached、captcha、jieba-rs、tower
+  - Easy to deploy: one binary to run, using embedded database sled
+  - No javascript at all, for safety maximization
+  - Markdown support
+  - inn: Subgroup like Subreddits
+  - solo: Personal space like Twitter
+
+- https://github.com/kenyipp/discuz /MIT/202302/rust/inactive
+  - This rust-based forum server, named Discuz, is a sample project showcasing the use of Actix-web for CRUD operations, authentication, routing, pagination and more.
+  - not thoroughly tested
+
+- https://github.com/corepaper/morum /AGPLv3/202306/rust
+  - A forum software that leverages the Matrix Protocol
+
+- https://github.com/libreddit/libreddit /AGPLv3/202311/rust
+  - An alternative private front-end to Reddit
+
+- https://github.com/joschan21/breadit /202307/ts/inactive
+  - Modern Fullstack Reddit Clone in Next.js 13 & TypeScript
+  - https://github.com/shadeemerhi/reddit-clone-yt /202301/ts
+- https://github.com/puzzlerush/reddit-clone /202108/js
+  - Full stack reddit clone built with React, Redux, Node.js, Express, and PostgreSQL.
+- https://github.com/romerorocha/reddit-clone-api
+  - Forum API Server
+  - 依赖express，不依赖orm
+- https://github.com/codelucas/flask_reddit /201802/python
+  - Reddit clone in flask + python + nginx + https
+
+- https://github.com/mybb/mybb /LGPLv3/202312/php
+  - https://mybb.com/
+  - a free and open source forum software
+- https://github.com/flaskbb/flaskbb /BSD/202303/python/inactive
+  - https://flaskbb.org/
+  - A classic Forum Software in Python using Flask
+
+- https://github.com/divanov11/Mumble /apache2/202108/js
+  - https://www.mumble.dev/
+  - open source social media platform and public forum for questions and discussions, built for developers.
+  - https://github.com/divanov11/mumbleapi /202107/python
+    - Backend/API for the Mumble.dev, an open source social media application.
+  - https://github.com/divanov11/mumble2 /202205/js
+    - https://www.mumble2.dev/
+    - A real time messaging & video calling.
+    - Create an account on agora.io and create an app to generate an APP ID
+
+- https://github.com/dakshit050/AskAnything
+  - a social discussion platform Developed for college/school students to solve their doubts online
+
+- https://github.com/debiki/talkyard /AGPLv3/202310/scala
+  - A structured discussions platform — brings together the main features from StackOverflow, Slack, Discourse, Reddit/HackerNews, and Disqus blog comments.
+  - Client: React.js, TypeScript, Webdriver.io.
+  - Server: Scala and Play Framework. OpenResty, some Lua. React.js in Java's Nashorn Javascript engine.
+  - Databases: PostgreSQL, Redis, ElasticSearch.
+
+- https://github.com/carbon-bond/carbonbond
+  - 一個次世代的論壇。它在文章之間的交互作用
+  - 前端：使用 typescript + React
+  - 后端：使用 Rust
+
+- https://github.com/proshoumma/ReForum /201809/js/archived
   - A minimal forum board application. 只是仪表板
   - Built on top of React-Redux frontend, ExpressJS-NodeJS backend (with PassportJS for OAuth) and MongoDB databse.
 
-- https://github.com/heybereket/oasis /202107/inactive
-  - The chat and forums platform for communities
-  - 后端依赖 express、typeorm、passport
+- https://gitlab.com/tildes/tildes /AGPLv3/202306/python/jinja
+  - https://tildes.net/
+  - a non-profit community site
 # forum-nodejs
 - jixialunbi /12Star/GPLv3/202211/ts
   - https://github.com/bs32g1038/jixialunbi
@@ -147,6 +228,12 @@ modified: 2021-05-14T15:04:15.333Z
   - Valera Roleplay Forum - Gymnasiearbete
   - 后端依赖 express、mongoose、multer
 
+- https://github.com/seawind8888/Nobibi /202011/ts/inactive
+  - Nobibi 是一款轻量级开源社区，包含前后台
+  - 前台考虑 SEO 使用 next.js + antd 服务端渲结构
+  - 后台系统基于Ant Design Pro(react + dvajs + umijs)搭建开发
+  - 后端接口为 koa+moogoose
+
 - https://github.com/EricBollar/Fullstack-Forum
   - fullstack forum built using industry-standard tools such as Next.js and PostgresQL.
 
@@ -154,20 +241,10 @@ modified: 2021-05-14T15:04:15.333Z
   - https://csqa.vercel.app/
   - a Progressive Web App aimed for those who wanna ask silly questions but afraid to get downvoted on stackoverflow
 
-- https://github.com/liyupi/code-nav /MIT/202111/js/ts
+- https://github.com/liyupi/code-nav /MIT/202111/js/ts/java
   - https://www.code-nav.cn/
   - 以 “帮助大家发现优质编程资源，提升学习效率” 为目标
   - server使用spring
-
-- https://github.com/seawind8888/Nobibi /202011/ts/inactive
-  - Nobibi 是一款轻量级开源社区，包含前后台
-  - 前台考虑 SEO 使用 next.js + antd 服务端渲结构
-  - 后台系统基于Ant Design Pro(react + dvajs + umijs)搭建开发
-  - 后端接口为 koa+moogoose
-
-- https://github.com/romerorocha/reddit-clone-api
-  - Forum API Server
-  - 依赖express，不依赖orm  
 
 - https://github.com/dafengzhen/youdeyiwu-frontend
   - 依赖typescript + react + next、axios、react-query、bootstrap
@@ -176,7 +253,11 @@ modified: 2021-05-14T15:04:15.333Z
   - https://github.com/dafengzhen/youdeyiwu-editor
     - 以 ckeditor5 classic editor 为基础自定义构建，集成了自定义和常用插件
 
-- https://github.com/gudfhr95/stelllar
+- https://github.com/joincomet/comet /202107/ts
+  - All-in-one chat and forums for communities
+  - 依赖express、apollo-server-express、graphql、metascraper
+  - switch from ws to SSE
+- https://github.com/gudfhr95/stelllar /202212/ts/archived
   - Forum & Chat for Communities
   - 依赖nestjs、graphql、mikro-orm、next13
 
@@ -213,28 +294,6 @@ modified: 2021-05-14T15:04:15.333Z
   - Administrators can easily set the look and topic of the forum, manage user permissions, and customize the site footer.
   - https://github.com/Qiming-Liu/ThinkMoreForum-Backen d /java
     - Forum backend build with Spring Boot, JWT, Prometheus.
-# forum-non-nodejs
-- https://github.com/LemmyNet/lemmy /AGPLv3/rust
-  - https://join-lemmy.org/
-  - Lemmy is similar to sites like Reddit, Lobste.rs, or Hacker News
-  - anyone can easily run a server, and all these servers are federated (think email), and connected to the same universe, called the Fediverse.
-
-- https://github.com/dakshit050/AskAnything
-  - a social discussion platform Developed for college/school students to solve their doubts online
-
-- https://github.com/debiki/talkyard /AGPLv3/202310/scala
-  - A structured discussions platform — brings together the main features from StackOverflow, Slack, Discourse, Reddit/HackerNews, and Disqus blog comments.
-  - Client: React.js, TypeScript, Webdriver.io.
-  - Server: Scala and Play Framework. OpenResty, some Lua. React.js in Java's Nashorn Javascript engine.
-  - Databases: PostgreSQL, Redis, ElasticSearch.
-
-- https://github.com/carbon-bond/carbonbond
-  - 前端：使用 typescript + React
-  - 后端：使用 Rust
-
-- https://gitlab.com/tildes/tildes /AGPLv3/202306/python/jinja
-  - https://tildes.net/
-  - a non-profit community site
 # customer-support
 - https://github.com/laudspeaker/laudspeaker /AGPLv3/202401/ts
   - https://laudspeaker.com/
@@ -244,27 +303,53 @@ modified: 2021-05-14T15:04:15.333Z
 - https://github.com/fonoster/fonoster /MIT/202312/ts
   - https://fonoster.com/
   - open-source alternative to Twilio
+  - Engage with your customers with voice or messaging with a single, easy-to-use platform.
+  - Multitenancy
 # im-instant-messaging-chat
+- https://github.com/42wim/matterbridge /202212/go
+  - bridge between mattermost, IRC, gitter, xmpp, slack, discord, telegram, rocketchat, twitch, ssh-chat, zulip, whatsapp, keybase, matrix, microsoft teams, nextcloud, mumble, vk and more with REST API
+  - Mattermost isn't required to run matterbridge
+
 - https://github.com/satorijs/satori /MIT/202402/ts
   - The Universal Messenger Protocol
   - QQ Guild、Feishu、telegram、discord
 
+- https://github.com/spacebarchat/server /AGPLv3/202402/ts
+  - https://spacebar.chat/
+  - Spacebar server - A reimplementation of the Discord.com backend, built with typescript
+  - Spacebar is a free and open source, full stack reverse engineering and reimplementation of Discord.
+  - 依赖typeorm、lambert-server、amqplib、i18next、multer、ws
+  - We aim to reverse engineer and add additional features to the Discord backend, while remaining completely backwards compatible with existing bots, applications, and clients.
+  - You should be able to use any client designed for Discord.com to connect to a Spacebar instance. However, some incompatibilities still exist between Spacebar and Discord. 
+  - https://github.com/spacebarchat/client /AGPLv3/202312/ts
+    - https://app.spacebar.chat/
+    - Open source, themeable and extendable discord-compatible native Spacebar client
+    - 依赖mobx-react-lite、react-markdown、react-virtualized
+  - https://github.com/spacebarchat/fosscord-web-client /archived
+  - https://github.com/SpacingBat3/WebCord /MIT/202402/ts
+    - A Discord and SpaceBar-based client implemented without Discord API.
+    - A major rewrite of the client is being worked on
+
 - tailchat /401Star/apache2/202312/ts
   - https://github.com/msgbyte/tailchat
   - https://tailchat.msgbyte.com/
-  - 不仅仅是另一个 Slack, Discord, Rocket. Chat....
+  - Not only another Slack, Discord, Rocket. Chat....
+  - Next generation noIM application in your own workspace
   - 目前现有的 IM 应用都仅仅把目光局限在聊天本身，而 IM 天然作为一个多人协作方式，在我看来应当能够承担更多的职责，将外部的应用以 IM 为转发方式形成自己独特的工作流。
-  - Tailchat 这样的一个从底层设计之初就为了拓展而存在的即时通讯应用。通过 Tailchat 的插件系统，开发者可以很轻松的将喜欢的应用以一种非常自然的方式作为 Tailchat 的一部分
-  - 后端依赖@socket.io/admin-ui、ejs、mongoose、moleculer微服务、moleculer-minio、redlock(redis)
+  - 设计了以 IM 为中心，第三方应用为增强功能，中间以插件系统作为胶水连接层的个人 / 团队高度自定义的应用平台。
+  - Tailchat 这样的一个从底层设计之初就为了拓展而存在的即时通讯应用。
+  - 通过 Tailchat 的插件系统，开发者可以很轻松的将喜欢的应用以一种非常自然的方式作为 Tailchat 的一部分
+  - 后端依赖@socket.io/admin-ui、ejs、typegoose、mongoose、moleculer微服务、moleculer-minio、redlock(redis)
   - 前端依赖zustand、antd、ahooks、use-gesture、immer、react-dnd、react-virtuoso
   - 前端微内核架构+后端微服务架构，Tailchat 已经为集群化部署做好了准备。
+  - 二维的群组空间，通过频道来分割不同的话题
   - 主要功能模块
     - 用户管理
     - 聊天系统
     - 插件系统
     - 开放平台
 
-- https://github.com/xiweicheng/tms /MIT/202309/js/java/inactive
+- https://github.com/xiweicheng/tms /MIT/202309/js/vue2/java/inactive
   - TMS是基于频道模式的团队沟通协作+轻量级任务看板，支持mardown、富文本、在线表格和思维导图的团队博文wiki，i18n国际化翻译管理的响应式web开源团队协作系统。
 
 - Linen /1.2kStar/AGPLv3/202311/ts/discord-like
@@ -286,6 +371,18 @@ modified: 2021-05-14T15:04:15.333Z
   - open-source team collaboration tool with unique topic-based threading that combines the best of email and chat to make remote work productive and delightful.
   - Zulip is the only modern team chat app that is designed for both live and asynchronous conversations.
   - The Zulip Botserver is a Python (Flask) server that implements Zulip's outgoing webhooks API
+
+- https://github.com/mattermost/mattermost /AGPLv3/202402/go/ts
+  - https://mattermost.com/
+  - open source platform for secure collaboration across the entire software development lifecycle.
+  - written in Go and React and runs as a single Linux binary with MySQL or PostgreSQL.
+  - A new compiled version is released under an MIT license every month on the 16th.
+  - You are licensed to use compiled versions of the Mattermost platform produced by Mattermost, Inc. under an MIT LICENSE
+
+- https://github.com/sdelements/lets-chat /MIT/201708/js/inactive
+  - https://sdelements.github.io/lets-chat/
+  - Self-hosted chat app for small teams
+  - 依赖express.oi、mongoose、nunjucks、passport
 
 - https://github.com/RocketChat/Rocket.Chat /MIT+EE/ts/meteor
   - https://rocket.chat/
@@ -318,12 +415,9 @@ modified: 2021-05-14T15:04:15.333Z
   - https://www.tryquiet.org/
   - A private, p2p alternative to Slack and Discord built on Tor & IPFS
 
-- https://github.com/meetfranz/franz /4.4kStar/apachew/202308/js
+- https://github.com/meetfranz/franz /4.4kStar/apache2/202308/js
   - https://meetfranz.com/
   - free messaging app for services like WhatsApp, Slack, Messenger and many more
-
-- https://github.com/sdelements/lets-chat /MIT/201708/js/inactive
-  - Self-hosted chat app for small teams
 
 - https://github.com/penghuwan/online-chat-app /201908/js
   - 一个在线聊天室，实现了登陆注册功能和聊天功能，
@@ -340,6 +434,36 @@ modified: 2021-05-14T15:04:15.333Z
 - https://github.com/jungleworks/fugu-server /apache2/202108/js
   - https://github.com/jungleworks/fugu-frontend /ts
   - open source, private cloud, Slack-alternative
+
+- https://github.com/MehraDevesh2022/chat-mind /202308/js
+  - a full stack chat application that allows users to communicate with each other in real-time. 
+  - built with the MERN stack and Socket. IO
+  - 依赖express-fileupload、mongoose、socket.io、bcryptjs、react-scrollable-feed、mui.v4
+  - It supports features like user authentication, one-on-one chat, group chat, user profile management, and more.
+  - https://github.com/RahulM4/letschat-vercel-api /202311/js
+  - https://github.com/RahulM4/LetsChat /202310/js/fe+be
+
+- https://github.com/revoltchat/backend /AGPLv3/202402/rust
+  - https://revolt.chat/
+  - https://developers.revolt.chat/api/
+  - Monorepo for Revolt backend services
+  - https://github.com/revoltchat/revite
+    - Revolt client built with Preact
+
+- https://github.com/teamgram/teamgram-server /apache2/202402/go
+  - https://teamgram.net/
+  - Unofficial open source mtproto server written in golang with compatible telegram client.
+  - [Durov's reasoning on not open sourcing the server code : r/Telegram](https://www.reddit.com/r/Telegram/comments/ktthig/durovs_reasoning_on_not_open_sourcing_the_server/)
+    - Publishing the server code doesn’t improve security, because - unlike with the client-side code - there’s no way to verify that the same code is run on the servers.
+  - https://github.com/DrKLO/Telegram /GPLv2/202402/java/cpp
+    - Telegram for Android source
+    - [Pavel Durov on Twitter: The source code of Telegram for iOS and Android is open and free. Enjoy! : r/Android _201703](https://www.reddit.com/r/Android/comments/62lg6j/pavel_durov_on_twitter_the_source_code_of/)
+    - but this doesn't change the fact their server is proprietary and crypto is questionable. 
+    - [Why Telegram code is so ugly? : r/androiddev _201907](https://www.reddit.com/r/androiddev/comments/cazz4h/why_telegram_code_is_so_ugly/)
+  - https://github.com/Telegram-FOSS-Team/Telegram-FOSS /GPLv2/202401/java/cpp
+    - Unofficial, FOSS-friendly fork of the original Telegram client for Android
+  - https://github.com/TGX-Android/Telegram-X /GPLv3/202402/java
+    - alternative Telegram client for Android
 
 ## chatbot
 
@@ -460,12 +584,14 @@ modified: 2021-05-14T15:04:15.333Z
   - an ActivityPub social network server, written in Golang.
   - you can keep in touch with your friends, post, read, and share images and articles.
 # notification
-- https://github.com/novuhq/novu
+- https://github.com/novuhq/novu /MIT/202402/ts
   - The open-source notification infrastructure for products. 
   - Novu provides a unified API that makes it simple to send notifications through multiple channels, including In-App, Push, Email, SMS, and Chat. 
   - With Novu, you can create custom workflows and define conditions for each channel, ensuring that your notifications are delivered in the most effective way possible.
   - Single API for all messaging providers (In-App, Email, SMS, Push, Chat)
   - Equipped with a CMS for advanced layouts and design management
+  - https://github.com/novuhq/blog/tree/main/forum-system-with-react-novu-node
+    - [Building a forum with React, NodeJS - DEV Community](https://dev.to/novu/building-a-forum-with-react-nodejs-6pe)
 # meetings
 - https://github.com/lukevella/rallly /ts
   - https://rallly.co/

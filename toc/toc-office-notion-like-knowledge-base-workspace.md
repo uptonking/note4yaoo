@@ -21,6 +21,7 @@ modified: 2022-06-03T21:34:54.893Z
 - resources
   - search: knowledge-base/workspace/wiki/Personal Information Manager (PIM)
   - self-contained, in the browser
+  - [17 Confluence Alternatives - Open Source, Free & Paid in 2024](https://rigorousthemes.com/blog/best-confluence-alternatives-free-paid/)
 # notion-like-workspace
 - siyuan /6.6kStar/AGPLv3/202208/ts/go/支持协作
   - https://github.com/siyuan-note/siyuan

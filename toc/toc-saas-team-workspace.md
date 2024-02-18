@@ -19,6 +19,7 @@ modified: 2023-02-07T17:38:05.336Z
   - jira, trello, linear
   - focalboard, nocodb
   - 可以从主流产品的issues/discussions里面找替代品
+  - [10 Best Open Source Trello Alternatives](https://rigorousthemes.com/blog/best-open-source-trello-alternatives/)
 # popular
 - growi /1.2kStar/MIT/202311/ts/remark
   - https://github.com/weseek/growi
@@ -139,6 +140,10 @@ modified: 2023-02-07T17:38:05.336Z
 - https://github.com/climech/grit /go
   - an experimental personal task manager that represents tasks as nodes of a multitree, a class of directed acyclic graphs. 
   - The structure enables the subdivision of tasks
+
+- https://github.com/opf/openproject /GPLv3/202402/ruby
+  - https://www.openproject.org/
+  - the leading open source project management software
 # user/permissions/scrum/Inventory
 - https://github.com/bissbr01/Command-project-management /ts
   - A Scrum Management App for teams

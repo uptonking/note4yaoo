@@ -13,6 +13,7 @@ modified: 2024-01-04T01:28:58.097Z
   - discord: 侧重语音/gaming
   - slack: 侧重企服/工作流, 类似有teams/mattermost
   - telegram: 侧重私人与短信，但已逐渐偏离短信
+  - [15 Best Open Source Discord Alternatives 2024](https://rigorousthemes.com/blog/best-open-source-discord-alternatives/)
 # discuss-stars
 - ## 
 
@@ -136,6 +137,18 @@ modified: 2024-01-04T01:28:58.097Z
 - the other significant point of evolvability (that's in practice now) is the RPC methods. New ones can be defined, returning new schemas, and so on.
 # discuss
 - ## 
+
+- ## 
+
+- ## [Is there any Slack self-hosted Alternative? : r/selfhosted](https://www.reddit.com/r/selfhosted/comments/p8ahom/is_there_any_slack_selfhosted_alternative/)
+- Matrix is great! Its a chat protocol that has many front ends your users can choose from. The most popular front end is Element. Why use matrix? At its core, the protocol is just for routing messages between clients and servers. This means you can join multiple servers (hosted by other matrix users). There's also bridges between other chat services so you can do all your communication in one place. Also, with Jitsi integration you can do video calls directly in the app.
+
+- https://revolt.chat is open source (and in rust), and is easily selfhostable
+
+- ## [Slack alternatives? : r/Slack _202307](https://www.reddit.com/r/Slack/comments/15180dl/slack_alternatives/)
+- take a peak at this: https://zulip.com/plans/ . You can use a self-hosted one with all the features included.
+
+- Mattermost, Rocket.chat, Zulip
 
 - ## [Rocket.chat leverages the Matrix protocol for interoperable communications | Hacker News_202205](https://news.ycombinator.com/item?id=31535034)
 
