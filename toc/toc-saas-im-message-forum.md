@@ -305,6 +305,10 @@ modified: 2021-05-14T15:04:15.333Z
   - open-source alternative to Twilio
   - Engage with your customers with voice or messaging with a single, easy-to-use platform.
   - Multitenancy
+
+- https://github.com/chatwoot/chatwoot /202402/ruby/js/vue
+  - https://www.chatwoot.com/help-center
+  - Customer engagement suite, an open-source alternative to Intercom, Zendesk, Salesforce Service Cloud etc.
 # im-instant-messaging-chat
 - https://github.com/42wim/matterbridge /202212/go
   - bridge between mattermost, IRC, gitter, xmpp, slack, discord, telegram, rocketchat, twitch, ssh-chat, zulip, whatsapp, keybase, matrix, microsoft teams, nextcloud, mumble, vk and more with REST API
@@ -365,6 +369,12 @@ modified: 2021-05-14T15:04:15.333Z
   - 依赖react、redux-toolkit、plate、tui-editor、localforage
   - https://github.com/Privoce/vocechat-server-rust /202303/rust/inactive
     - superlight rust written social server.
+
+- https://github.com/yinxin630/fiora /MIT/202207/ts/inactive
+  - https://yinxin630.github.io/fiora/
+  - An interesting open source chat application. 
+  - Developed with node.js, mongoDB, socket.io and react
+  - backend, frontend, Android and iOS apps
 
 - https://github.com/zulip/zulip /apache2/202401/python/django
   - https://zulip.com/
@@ -504,6 +514,11 @@ modified: 2021-05-14T15:04:15.333Z
   - https://github.com/nathanlesage/academics-on-mastodon
     - lists consisting of academics on Mastodon
 
+- https://github.com/rustodon/rustodon /AGPLv3/201908/rust
+  - A Mastodon-compatible, ActivityPub-speaking server in Rust
+  - it's synchronous server ( old Rocket, Old diesel ). 
+  - I didn't realize older versions of rocket.rs weren't async.
+
 - https://github.com/neet/masto.js /ts
   - Mastodon API client for JavaScript, TypeScript, Node.js, browsers
 
@@ -616,4 +631,13 @@ modified: 2021-05-14T15:04:15.333Z
 - https://github.com/weissthorn/weiss
   - Modern, Minimalistic Discussion Software
   - 依赖rethinkdb
+# blogs
+- https://github.com/thematters/matters-web /apache2/202402/ts
+  - https://matters.town/
+  - Website of Matters. Town, built with Next.js
+  - IPFS-based decentralized social media
+  - 依赖apollo-client、tiptap、d3-selection、d3-shape、firebase、next-with-apollo、react-markdown、wagmi
+  - https://github.com/thematters/matters-server /apache2/202402/ts
+    - Server code
+    - 依赖@apollo/server、graphql、knex
 # more

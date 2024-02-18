@@ -35,4 +35,6 @@ modified: 2024-01-18T05:12:04.708Z
 
 - ## 
 
-- ## 
+- ## [Is there a self hosted GitBook alternative? : r/selfhosted _202101](https://www.reddit.com/r/selfhosted/comments/kphfbl/is_there_a_self_hosted_gitbook_alternative/)
+- There are a lot of git powered static site generators 
+- There is Notaku which uses Notion to edit the content and publishes it as a website with search, dark mode, .etc

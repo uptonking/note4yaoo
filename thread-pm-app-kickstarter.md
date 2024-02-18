@@ -14,6 +14,14 @@ modified: 2021-10-29T15:02:28.882Z
 # ideas-stars
 - ## 
 
+- ## 
+
+- ## Unless your customers are developers, they don't give two shits what your frontend or backend are written in or what libraries or framework you're using.  Zero shits.
+- https://twitter.com/codeopinion/status/1759035468446875712
+- Same can be said about any tech at any level in the stack
+- That's why I stick to libraries
+- Even as a developer, I haven’t given shit about all those apps & websites I have used over the decades. Absolute zero.
+
 - ## 以前我是这样，直接埋头开干写代码了，写着写着发现自己都不知道在做啥，然后开始纠结技术栈选型，沉迷技术问题了。
 - https://twitter.com/fkysly/status/1754898753037930896
   - 现在是有想法了，先看下市场上有没有竞品，竞品有多少客户，商业收费是多少，大概市场规模和盈利情况有多大。

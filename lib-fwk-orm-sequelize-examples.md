@@ -154,6 +154,9 @@ modified: 2023-02-05T18:50:32.900Z
     - 【DOM编程艺术】 Hijax---渐进增强地使用Ajax 
     - 按照老传统，让表单把整个页面都提交到服务器，然后服务器再发回来一个包含反馈的新页面，所有处理操作都在服务器上完成
     - 为了给这个登录表单添加AJAX功能，就需要拦截提交表单的请求,让XMLHttpRequest请求来代为发送
+
+- https://github.com/FujiBilly/partition-sequelize-ts /201909/js
+  - 改进 sequelize-typescript 库使其支持 Postgresql 10/11版本的分区表
 # server-sent event
 - https://github.com/dexterio200/chat-app-server
   - Server side of a chat room app - built with Node.js, Express, Sequelize & Server-sent events.

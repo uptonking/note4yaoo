@@ -389,6 +389,31 @@ modified: 2023-08-29T10:13:31.070Z
 - 但回到最初的问题: 你需要的真的是一个"版本控制系统"吗? 也许仅仅是一个集中分享的地方, 也许仅仅是希望一个人修改的时候, 另一个人不能修改, 而已.
 - 其实！你们忽略了一件事情！pptx文件实际上是个zip文件，解压开来全是文本的xml和你加进去的视频、图片，是可以用git管理的！
 
+# discuss-gitlab-gogs-gitea
+- ## 
+
+- ## [Four years of SourceHut (SourceHut is a open source github alternative) : r/linux _202211](https://www.reddit.com/r/linux/comments/ywbrtc/four_years_of_sourcehut_sourcehut_is_a_open/)
+- if only sourcehut was in any way user friendly. making pull requests and looking for issues is such a pain
+  - It's email-based, not PR-based. Although devs use git-request-pull instead of git-send-email.
+  - Also, issues go to the https://todo.sr.ht page. It's just that some devs don't use that.
+
+- ## [Gitlab like server in nodejs _201702](https://github.com/open-source-ideas/ideas/issues/29)
+- I created a basic ssh server that can now clone and push changes. Still needs work on public key auth. Currently using password authentication.
+
+- I feel like Gitea already fills this niche. GitLab supports many features. It's arguable the most complete of the OSS Git front end web apps. Gitea lacks many of its features, but it's considered extremely lightweight, enough so to run well on a Raspberry Pi.
+
+- We need a decentralized open-source alternative, not Gitea or Gogs.
+
+- ## [Does anyone know of a Node.js alternative to GitLab? : r/node _201309](https://www.reddit.com/r/node/comments/1n9byh/does_anyone_know_of_a_nodejs_alternative_to_gitlab/)
+- I'm pretty sure nothing like that exists. 
+- Well Github was originally written on top of a library called Grit which allowed for Ruby to interact with repos. Theyce since moved on to use a C library called libgit. It's possible to write a Node plugin that will interact with libgit, of one doesnt already exist. This would be my first move if I were in your shoes. Once you have a javascript implementation of something like Grit, you'll be able to manipulate and pull information from repos.
+
+- ## [OneDev - Selfhosted open source alternative to GitHub/GitLab : r/selfhosted _202108](https://www.reddit.com/r/selfhosted/comments/p1fikz/selfhosted_open_source_alternative_to_githubgitlab/)
+- Gitea is certainly a really nice project. 
+  - We even used its predecessor gogs for some time, before switching to OneDev. 
+  - The main reason is lacking of functionality such as pull request approval, reviewer auto-assignment based on contribution history, easy symbol navigation while reviewing pull request, selecting any diff/code to start discussion, real-time preview when authoring markdown, customizable issue field and state etc.
+
+- Gogs/Gitea is perfect for personal usage. But for teams with dozens/hundreds of people, some solid features need to exist to be efficient. This is what we built into OneDev.
 # discuss-fossil
 - ## 
 

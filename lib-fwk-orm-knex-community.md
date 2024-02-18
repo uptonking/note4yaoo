@@ -18,6 +18,22 @@ modified: 2023-01-22T19:52:09.270Z
 - Using pg-pool for handling pooling when running knex in multiple processes sounds like nice idea. 
   - I have usually just set databases connection limit to (knex instance count * knex pool size), but having external shared connection pool might be a better choice in some cases, for example where you are not able to tune database settings to allow huge connection counts.
 
+# discuss-partition/sharding
+- ## 
+
+- ## 
+
+- ## [How to use `partition by` with knex?](https://github.com/knex/knex/issues/3391)
+- Seems that partition by with order is not supported by Knex. like partition by user_id order by created_at asc
+
+- Is there an alternative for this? E.g. a mixture of Knex functions with raw db query to create table with partitions using Knex migration?
+  - There is an example that has worked for me.
+
+- ## 🐛 [No option to partitioning a table _201710](https://github.com/knex/knex/issues/2289)
+- Partitioning option is available for all knex supported databases
+  - But 'Partitioning By' is available in following databases
+
+- postgres 10.3 use PARTITION BY RANGE that is not supported by knex and I think also not supported from ORMs
 # discuss-split-read/write
 - ## 
 

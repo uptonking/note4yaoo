@@ -17,6 +17,7 @@ modified: 2022-06-03T21:34:54.893Z
 
 - pkm-patterns
   - memex, xanadu, bulletjournal, zettelkasten
+  - 参考github，实现 repo + issues-forum + gitter-im + proj-mgmt
 
 - resources
   - search: knowledge-base/workspace/wiki/Personal Information Manager (PIM)

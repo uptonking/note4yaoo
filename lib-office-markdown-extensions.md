@@ -49,8 +49,8 @@ modified: 2021-06-02T15:26:19.890Z
 - rmarkdown
   - [cheatsheet: dynamic, reproducible, citations](https://blog.rstudio.com/2021/08/23/cheat-sheet-updates/)
 
-- tips
-  - csv常作为基于文本的表格的一种形式
+- markdown-table
+  - csv常作为基于文本的表格的一种形式, 可参考现有的基于csv的扩展
 
 - ref
   - commonmark rfcs

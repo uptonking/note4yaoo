@@ -15,6 +15,9 @@ modified: 2022-11-07T10:58:24.512Z
 
 - 某一类数据源聚合的产品
   - 搜索多个app-store，如flathub/snap
+
+- inspirations
+  - https://github.com/open-source-ideas/ideas
 # ideas
 - 数据碎片搜集
   - pc, mobile, browser ext

@@ -127,7 +127,11 @@ modified: 2022-04-05T10:09:51.343Z
 
 - ## 
 
-- ## 
+- ## I think I will stop using the term "CRDTs".
+- https://twitter.com/LewisCTech/status/1759148577174204815
+  - I'm interested systems that can be written to w/o coordination and sync predictably. 
+  - And every single one of those will obey the CRDT laws, whether they know the term or not. 
+  - Amazon Dynamo obeyed those laws, but it predates the term.
 
 - ## [What Is JSON Patch? | Hacker News_202205](https://news.ycombinator.com/item?id=31301627)
 

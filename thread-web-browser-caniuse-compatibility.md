@@ -52,7 +52,8 @@ modified: 2021-07-29T11:15:44.100Z
 
 - ## 
 
-- ## 
+- ## With Edge 121 supporting AVIF, it will soon cross the 90% adoption mark
+- https://twitter.com/TimVereecke/status/1758983962792169702
 
 - ## Perhaps one of the most pleasant surprises of 2023 was Safari going all-in on PWA. 
 - https://twitter.com/dhh/status/1736081020393521620

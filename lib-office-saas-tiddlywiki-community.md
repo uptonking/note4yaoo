@@ -12,7 +12,12 @@ modified: 2023-12-15T17:50:49.509Z
 # discuss
 - ## 
 
-- ## 
+- ## 🤝🏻 [Multi User Alternative to TiddlyWiki - Discussion - Talk TW _202203](https://talk.tiddlywiki.org/t/multi-user-alternative-to-tiddlywiki/2899)
+- TiddlyWiki needs an auth system to enable a real multi-user experience. We can store username and salted password in a tiddler that only the admin can see and modify.
+
+- 
+- 
+- 
 
 - ## 💡 [Taking Node Server to the next level_201911](https://groups.google.com/g/TiddlyWiki/c/BtmLkx1mwtU)
   - I have a radical proposal which would take data folders to the next level. What if instead of the file system adapter we would write a new adapter to use a database. We could use PouchDB, but I would vote for something much more widespread like SQLite.

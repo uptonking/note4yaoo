@@ -186,10 +186,19 @@ modified: 2023-09-19T07:26:04.103Z
   - based on Markdown-Writer-FX
   - Typesetting to PDF files requires the following: Theme Pack ConTeXt
 
-- https://github.com/retypeapp/retype /907Star/Free100Pages/202310/js
+- https://github.com/retypeapp/retype /927Star/Free100Pages/202401/js
   - https://retype.com/
   - ultra-high-performance static site generator that builds a website based on simple text files.
+  - 依赖?
+  - 样式模仿gitbook
+  - Pages are formatted using Markdown syntax and Retype components. 
+  - Retype generates a basic HTML website that you can host on any web hosting service
   - [Retype: A self-hosted and free alternative to gitbook | Hacker News_202204](https://news.ycombinator.com/item?id=30938501)
+  - https://github.com/retypeapp/action-build /shell
+
+- https://github.com/openpatch/hyperbook /MIT/202310/ts/inactive
+  - https://hyperbook.openpatch.org/
+  - a quick and easy way to build interactive workbooks, that support modern standards and runs superfast
 # wikidata
 - https://github.com/inventaire/inventaire /js
   - https://inventaire.io/

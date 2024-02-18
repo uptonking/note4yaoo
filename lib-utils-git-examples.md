@@ -37,7 +37,7 @@ modified: 2023-08-29T10:12:22.345Z
   - http://gitlet.maryrosecook.com/docs/gitlet.html
   - I can only understand something by implementing it. So, I wrote Gitlet, my own version of Git
 
-- https://github.com/Byron/gitoxide /rust
+- https://github.com/Byron/gitoxide /7.6kStar/MIT/202402/rust
   - an implementation of git written in Rust
   - for the most part, git operations are heavily reliant on memory mapped IO as well as CPU to decompress data, which doesn't lend itself well to async IO out of the box.
 - https://github.com/chrisdickinson/git-rs
@@ -54,6 +54,13 @@ modified: 2023-08-29T10:12:22.345Z
   - globalization infrastructure for software && version control for apps
   - [Ask HN: Apps that are built with Git as the back end? | Hacker News_202210](https://news.ycombinator.com/item?id=33261862)
   - [discussion about reactivity architecture](https://github.com/inlang/inlang/issues/1122)
+
+- https://github.com/GQL-Project/gql_db /202212/rust/inactive
+  - gql-db is an SQL database server with version control integrated into the database itself. 
+  - It's written in Rust and uses Protocol Buffers/gRPC for communication
+  - We've also implemented a UI for the database server, which can be found at: GQL-Project/gql_client.
+
+
 # git-like
 - https://github.com/GerritCodeReview/jgit /EDL(BSD)/java
   - https://eclipse.dev/jgit/
@@ -141,21 +148,20 @@ modified: 2023-08-29T10:12:22.345Z
   - go: gitea, gogs
   - java: onedev
   - Git comes with a CGI script called GitWeb
+  - https://github.com/ianchanning/awesome-github-alternatives
+    - a list of alternatives to GitHub, that by default offer Git management in some way.
 
-- https://github.com/ianchanning/awesome-github-alternatives
-  - a list of alternatives to GitHub, that by default offer Git management in some way.
-
-- https://github.com/gogs/gogs /MIT/go
+- https://github.com/gogs/gogs /43.8kStar/MIT/202312/go
   - https://gogs.io/
   - aims to build a simple, stable and extensible self-hosted Git service that can be set up in the most painless way. 
   - 依赖gorm、xorm、tablewriter
   - Access repositories via SSH, HTTP and HTTPS protocols.
   - Rich database backend, including PostgreSQL, MySQL, SQLite3 and TiDB.
 
-- https://github.com/go-gitea/gitea /MIT/go
+- https://github.com/go-gitea/gitea /40.7kStar/MIT/202402/go
   - https://about.gitea.com/
   - Painless self-hosted all-in-one software development service, including Git hosting, code review, team collaboration, package registry and CI/CD
-  - a fork of Gogs
+  - forked from Gogs since November of 2016, but a lot has changed
 
 - https://github.com/theonedev/onedev /MIT/202401/java
   - https://onedev.io/
@@ -166,15 +172,106 @@ modified: 2023-08-29T10:12:22.345Z
   - https://forgejo.org/
   - Forgejo was created in 2022 because we think that the project should be owned by an independent community.
   - A painless, self-hosted Git service
+  - [Codeberg: A GitHub alternative from Europe | Hacker News _202210](https://news.ycombinator.com/item?id=33233360)
+    - Codeberg is a fork of Gitea
+  - https://codeberg.org/Codeberg/forgejo
+
+- https://github.com/mellowagain/gitarena /MIT/202306/rust
+  - Software development platform with built-in vcs, issue tracking and code review
+  - lightweight and performant alternative to the likes of GitLab and Gitea, built with self-hosting and cross-platform/cross-architecture support in mind.
+  - 依赖libmagic
+
+- https://github.com/alexwennerberg/mygit /AGPLv3/202108/rust/inactive
+  - Simple self-hosted git server, written in Rust
+  - Lighter weight than gitea, more modern than cgit or gitweb
+  - NOTE: This project is not actively developed. I decided to use cgit instead.
+  - [mygit: simple self-hosted git : r/rust](https://www.reddit.com/r/rust/comments/omw4e7/mygit_simple_selfhosted_git/)
+
+- https://gitlab.com/gitlab-org/gitlab-foss /MIT/ruby
+  - a read-only mirror of GitLab, with all proprietary code remove
+  - This project was previously used to host GitLab Community Edition, but all development has now moved to https://gitlab.com/gitlab-org/gitlab
+
+- https://sr.ht/~sircmpwn/sourcehut/ /go
+  - A software development platform for hackers
 
 - https://github.com/clehner/git-ssb
   - https://scuttlebot.io/apis/community/git-ssb.html
   - social coding on secure-scuttlebutt
+  - https://github.com/hackergrrl/git-ssb-intro
+    - SSB stands for secure scuttlebutt, the database/protocol that powers the peer-to-peer log store scuttlebutt. 
+    - git-ssb builds on top of this: things like commits, branches, issues, and pull requests are encoded into log entries on each participant's personal log, while the gossip protocol runs in the background and propagates new content to everyone involved in the git repository.
 
 - https://app.radicle.xyz/seeds/seed.radicle.xyz /rust
   - https://radicle.xyz/
   - Radicle is a sovereign peer-to-peer network for code collaboration, built on top of Git.
   - Radicle is local-first, providing always-available functionality even without internet access.
+
+- https://github.com/gabrielcsapo/node-git-server /MIT/202208/ts/inactive
+  - https://gabrielcsapo.github.io/node-git-server
+  - A configurable git server written in Node.js
+  - This is a hard fork from pushover.
+
+- https://github.com/stackdot/NodeJS-Git-Server /201703/js/inactive
+  - A multi-tenant git server using NodeJS
+  - The GitServer is a very easy to get up and running git server. 
+  - It uses the Pushover and git-emit modules for listening to git events, and its own layer to do the security for each repo & user.
+
+- https://github.com/georoot/ristretto /GPLv3/201702/js
+  - http://rahulbhola.ml/ristretto/docs
+  - light-weight git server written in nodejs.
+  - Git server that manages requests over ssh
+  - Simple api that currently support authentication and creating new user repo.
+  - most of the codebase is hack and currently lacks some very important features.
+
+- https://github.com/adobe/git-server /apache2/202011/js/archived
+  - A GitHub Protocol & API emulation
+  - git-server serves a hierarchy of local Git repositories to Git clients accessing the repository over http:// and https:// protocol.
+  - Repositories exposed via git-server can be used just like any repository hosted on GitHub, i.e. you can clone them and push changes to
+  - [Explore pure JS alternatives to native nodegit](https://github.com/adobe/git-server/issues/41)
+
+- https://github.com/jasonwhite/rudolfs /MIT/202305/rust/inactive
+  - A high-performance, caching Git LFS server with an AWS S3 back-end.
+  - Multiple backends: 
+    - AWS S3 backend with an optional local disk cache.
+    - Local disk backend.
+  - Encryption of LFS objects in both the cache and in permanent storage.
+  - The back-end storage code is very modular and composable. 
+  - There is no client authentication. This is meant to be run in an internal network with clients you trust
+
+- https://github.com/mbostock/git-static /201503/js
+  - A versioned static file server backed by Git.
+  - Go to `http://localhost:3000/HEAD/path/to/file.html` to view a file from the source repository. You can replace HEAD with a specific commit version, or with short names and aliases for commits such as "0ad4156" or "HEAD~1".
+# apps-by-git
+- https://github.com/w4/rgit /public/202402/rust
+  - A gitweb/cgit-like interface for the modern age. 
+  - Written in Rust using Axum, git2, Askama and RocksDB.
+  - On-Demand Loading: Files, trees, and diffs are loaded using git2 directly upon request. A small in-memory cache is included for rendered READMEs and diffs, enhancing performance.
+  - RocksDB is used to store all metadata about a repository, including commits, branches, and tags.
+
+- https://github.com/NostrGit/NostrGit /AGPLv3/202304/ts/inactive
+  - https://nostrgit.com/
+  - censorship-resistant alternative to GitHub
+  - 依赖trpc、nextjs、tailwind、shadcn-ui
+  - [What are the backend we're thinking of?](https://github.com/NostrGit/NostrGit/discussions/73)
+    - Git is the decentralized storage by itself.
+    - of course git is decentralised but we still need a clear web repo that people can push upstream. git torrent looks promising
+    - NostrGit hosts git servers on a decentralized storage network and uses nostr for everything else
+  - [Backend for git repositories](https://github.com/NostrGit/NostrGit/issues/115)
+    - Decentralised file storage on Nostr as per NIP-95 seems like a promising option for hosting code. It'll probably be far better than what we have right now.
+  - https://github.com/spearson78/gitnostr /go
+    - A proof of concept integration of git and nostr
+    - Git integration for Nostr that supports creation and cloning of repositories and managing permissions of to access the repositorie
+
+- https://github.com/realaravinth/gitpad /AGPLv3/202206/rust
+  - https://gitpad.org/
+  - Self-Hosted alternative to GitHub Gists
+  - Versioning through Git
+
+- https://github.com/thomiceli/opengist /AGPLv3/202401/go/ts
+  - https://demo.opengist.io/
+  - Self-hosted pastebin powered by Git
+  - All snippets are stored in a Git repository and can be read and/or modified using standard Git commands, or with the web interface. 
+  - It is similiar to GitHub Gist, but open-source and could be self-hosted.
 # apps
 - https://github.com/creationix/wheaty /201512/js
   - JS-Git based application hosting platform
@@ -187,6 +284,10 @@ modified: 2023-08-29T10:12:22.345Z
 - https://github.com/brawnski/git-annex /hs
   - git-annex allows managing files with git, without checking the file contents into git. 
   - While that may seem paradoxical, it is useful when dealing with files larger than git can currently easily handle, whether due to limitations in memory, checksumming time, or disk space.
+
+- https://github.com/steveukx/git-js /MIT/202402/ts
+  - A lightweight interface for running git commands in any node.js application.
+  - Requires git to be installed and that it can be called using the command git.
 
 - https://github.com/filhodanuvem/gitql /go
   - a Git query language
@@ -207,6 +308,12 @@ modified: 2023-08-29T10:12:22.345Z
 - https://github.com/developmeh/diff_event_source /rust
   - Creates a diff event source for a given file filter
   - In preparation for a tool that can identify which files have changed in a repo so they can be incrementally published to a knowledge base. I created my first rust CLI that can give produce an event source from libgit2.
+
+- https://github.com/sosuisen/git-documentdb /MPLv2/202304/ts/inactive
+  - https://gitddb.com/
+  - Offline-first Database that Syncs with Git
+  - GitDocumentDB is compatible with Git that brings us distributed multi-primary databases and efficient CI/CD.
+  - The throughput of GitDocumentDB is about the same as Git. It is not as fast as typical databases. Storage size grows when managing many revisions of a document. These are a trade-off for Git features.
 # git-data
 - https://github.com/CodeForPhilly/jawn /js
   - a node.js module that allows distributed version control of Tabular Data. 

@@ -12,6 +12,10 @@ modified: 2021-04-27T09:19:37.711Z
 # discuss-stars
 - ## 
 
+- ## i think i've shared this tip before but if your font supports it, you can use `font-variant-numeric: tabular-nums` in your CSS to keep your numerals the same width and prevent shifting layout.
+- https://twitter.com/xdesro/status/1508172487347036169
+- you can use `font-feature-settings: "tnum"` as well, but I find the numeric-specific rule is better for code clarity.
+
 - ## iframe embeds are slowing down your site, and once Firefox 121 drops in December, every browser will support `<iframe loading="lazy">` . 
 - https://twitter.com/wesbos/status/1729909071799586869
   - Easy perf wins

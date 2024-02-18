@@ -31,6 +31,12 @@ modified: 2023-12-15T19:40:39.912Z
 
 - ## 
 
+- ## 
+
+- ## Why people constantly complain that they don't understand pointers? Pointer is just an index in a global array of bytes that we call "memory". What's the problem?
+- https://twitter.com/tsoding/status/1759191261129343058
+- I think many people are missing background about computer architecture and more importantly the difference between stack and heap memory areas. 
+
 - ## Hibernate and Debezium both came out of @RedHat
 - https://twitter.com/nandini__bagga/status/1756283118632222759
 - Hibernate was created externally originally. Then the team joined JBoss who got acquired by Red Hat. 

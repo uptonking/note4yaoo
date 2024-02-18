@@ -135,7 +135,18 @@ modified: 2023-10-26T19:04:00.318Z
 
 - ## 
 
-- ## 
+- ## There's a difference between a database designed to scale up an existing MySQL or Postgres install and a distributed database that has chosen to try and be compatible with MySQL or Postgres.
+- https://twitter.com/isamlambert/status/1758872040646615090
+- Let me market my names:
+  * AlloyDB, Neon, Aurora = DisaggSQL
+  * Planetscale = ShardSQL
+  * CockroachDB, TiDB, YugabyteDB = DistSQL
+  * Oracle, MySQL, Postgres = TradSQL
+  * MongoDB is DistMQL
+
+- AlloyDB is a good example of a distributed database that is trying to be Postgres compatible.
+
+- Scale up an existing MySQL or Postgres or scale out an existing setup? When folks try to scale out an existing installed: they tend to start building something like a distributed database and then get into frequent buy vs build debates
 
 - ## The purpose of distributed systems has changed drastically over the last 2 decades.
 - https://twitter.com/YingjunWu/status/1745213563755749806

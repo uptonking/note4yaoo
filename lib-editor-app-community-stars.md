@@ -37,6 +37,18 @@ modified: 2022-08-21T10:12:02.964Z
   - etherpad产生diff的2种方式中的第1种方式，完全是etherpad自己的私有机制，没法接入第三方编辑器
   - 但是利用第2种方式，不管第三方编辑器如何改变编辑器内容，只要让etherpad定时去检测到变化，就能生成diff，后续流程完全和原生etherpad一致
   - 将etherpad对内置编辑器的绑定解耦，通过设计api暴露出来，可绑定到第三方编辑器上。这样第三方编辑器就具备了和原生etherpad相同的整套实时协作编辑的能力
+# discuss-stars
+- ## 
+
+- ## 
+# discuss-collab
+- ## 
+
+- ## [Bring Real Time Collaboration to ActionText - rubyonrails-talk - Ruby on Rails Discussions _202012](https://discuss.rubyonrails.org/t/bring-real-time-collaboration-to-actiontext/76653)
+- It does support realtime collaboration, I just haven’t documented it.
+  - The most “stable” way is using HocusPocus as your Y.js server. 
+  - There’s a more bleeding edge approach using Yrb-ActionCable
+
 # discuss
 - ## 
 

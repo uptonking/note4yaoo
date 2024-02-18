@@ -35,7 +35,8 @@ modified: 2023-11-01T10:15:06.245Z
 # discuss
 - ## 
 
-- ## 
+- ## If you are interested in exploring Race Conditions & Data Races, I recommend Testing for Race Conditions via SMT Solving
+- https://twitter.com/DominikTornow/status/1758921755807437258
 
 - ## The diagram below explains what ACID means in the context of a database transaction.
 - https://twitter.com/alexxubyte/status/1732783270855876654

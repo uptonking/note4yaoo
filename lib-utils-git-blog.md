@@ -9,9 +9,11 @@ modified: 2023-08-29T10:24:09.136Z
 
 # guide
 
-# git-database
+# blogs-git-database
 - [make a blog post about git like databases](https://github.com/multun/blog/issues/4)
-# [Using Git as a key-value database](https://secure-git.guide/015_How-to-use-Git-as-a-database/)
+
+## [Using Git as a key-value database](https://secure-git.guide/015_How-to-use-Git-as-a-database/)
+
 - With Git you can store data in two different ways: Git objects, References
 - Git internally uses a key-value database with only 4 types of objects: blobs, trees, commits and annotated-tags
 - Each object is stored in the database and the way to reference the object is by using its sha1 (a checksum of the content).
@@ -27,6 +29,11 @@ modified: 2023-08-29T10:24:09.136Z
 - [Git从入门到应付日常工作](https://jumpshare.com/s/P42MV2FmKfnzSLXjaFUk)
 # blogs-fossil
 - [Fossil Versus Git](https://fossil-scm.org/home/doc/trunk/www/fossil-v-git.wiki)
+# blog-git-version-history
+
+## [ipld-version-control _201706](https://gist.github.com/flyingzumwalt/a6821e843366d606aeb1ba53525b8669)
+
+- hypercore-protocol.org is built on version control, if anyone's interested 
 # more-blogs
 - [Git's database internals I: packed object store - The GitHub Blog](https://github.blog/2022-08-29-gits-database-internals-i-packed-object-store/)
 

@@ -55,7 +55,7 @@ modified: 2021-07-27T11:27:37.050Z
     - 不需要庞大的office软件，普通文本编辑器即可编辑
   - 统一管理各类资源 easy to batch organization
     - 批量替换、快速拆分合并文章
-  - collaborative
+  - collaborative: 协作参考git/github
 
 - optional
   - 双向链接
@@ -64,6 +64,8 @@ modified: 2021-07-27T11:27:37.050Z
   - 统一管理assets，如替换图片
   - 默认以日期年份作为分类标签
   - 打印或导出整个知识库为类似书籍的pdf，包含其中所有文章和书签
+# draft
+- 参考github，实现 repo + issues-forum + gitter-im + proj-mgmt
 # templates 流行模版
 - 飞书知识空间模版
   - 研发部门、产品部们、市场营销、商业化

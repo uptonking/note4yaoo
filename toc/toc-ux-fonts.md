@@ -19,7 +19,8 @@ modified: 2020-07-17T10:54:16.341Z
   - TeX Gyre Cursor can be used as a replacement for Courier
     - https://www.1001fonts.com/monospaced+serif-fonts.html
 # tools
-- [Unstyle / Remove Unicode Font Styling](https://yaytext.com/unstyle/)
+- [Unstyle/Remove Unicode Font Styling](https://yaytext.com/unstyle/)
+  - Remove styling from text and generate a normal/unstyled text
 
 - https://github.com/KonghaYao/chinese-free-web-font-storage
   - https://chinese-font.netlify.app/

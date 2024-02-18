@@ -130,6 +130,16 @@ modified: 2023-01-22T19:52:59.120Z
   - An example app that lets you create a family tree, in this case a historical royal dynasty
   - The main theme of this app is recursion. The SQL model is hierarchical, and a CTE is used to query family tree data. 
   - The family tree graph is displayed by (vanilla) SVG elements wrapped in nested (recursive) React components.
+
+- https://github.com/RisingStack/mysql-large-data-handling /MIT/201706/js
+  - Handling large amount of data with MySQL and Node.js
+  - 依赖knex.v0.13、mysql、moment
+  - 🌰 [Node.js + MySQL Example: Handling 100's of GigaBytes of Data - RisingStack Engineering _202306](https://blog.risingstack.com/node-js-mysql-example-handling-hundred-gigabytes-of-data/)
+    - take a look at how you can efficiently handle billions of rows that take up hundreds of gigabytes of storage space.
+    - Creating tables for each user clearly adds complexity, but it may be a big win when it comes to removing users or similar entities with huge amount of associated data.
+    - With MySQL, a partitioned table will work as if it was multiple tables, but you can use the same interface you got used to
+    - In MySQL, you can partition by RANGE, LIST, COLUMN, HASH and KEY
+    - When you use partitioning, MySQL will keep that data on separate parts of the disk as if they were separate tables and organizes your data automatically based on the partitioning key
 # starter
 - https://github.com/knex/knex-repositories /MIT/202303/ts
   - Parametrized CRUD repository abstraction for Knex.js

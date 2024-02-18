@@ -46,6 +46,12 @@ modified: 2021-01-04T16:21:18.990Z
     - It is not a 3D renderer. Protomaps.js is focused on rendering 2D maps from OpenStreetMap data.
     - It is not based on WebGL. It instead uses the web-standard Canvas drawing API.
   - it works with PostGIS vector tiles! Added an example using @pwramsey 's pg_tileserv with Natural Earth data:
+  - [Transitioning Protomaps from Open Core to Open Source - Protomaps Blog _20240216](https://protomaps.com/blog/open-core-to-open-source)
+    - The core of Protomaps is the PMTiles format and ecosystem, which is an open spec in the public domain
+    - The first Protomaps commercial product offering was a one-time basemap download - not an API, not a subscription, just a download with a big Buy Now button
+    - The Protomaps Store is closed now, and everything previously proprietary is open source on GitHub.
+    - a new Protomaps Commercial Distribution built from the Daylight Map subset of OSM can be a better fit for public-facing deployments by companies.
+    - A monthly sponsorship gives you access to new versions.
 
 - openlayers /BSD/7.4kStar/202009
   - https://github.com/openlayers/openlayers

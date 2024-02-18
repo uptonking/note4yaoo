@@ -76,14 +76,11 @@ modified: 2023-09-17T17:41:51.689Z
 - Data engineering really is just a maintenance of incrementally updated materialized views, but no tool out there yet recognizes it. They at best help you orchestrate and parallelize your ETLs across multiple threads and machines. They become glorified makefiles at the cost of introducing several layers of infrastructure into the picture (eg. Airflow) for what should have been solved by simple bash scripting.
 
 - DBT is interesting, but is far from what I'm describing.
-  1. It is only for structured SQL, not for arbitrary data. I can't use it to unpack raw zipped data for example
-  2. It couples logic for data transformation and view state management. Actually it makes you do it yourself, so it doesn't really help at all. You'll get burned by storing view state together with your data, eg. when a batch increment contains no data.
-  3. It is not built with "incremental materialized views" in mind. It still thinks in a batch refill mode and incremental mode according to this [0].
+  01. It is only for structured SQL, not for arbitrary data. I can't use it to unpack raw zipped data for example
+  02. It couples logic for data transformation and view state management. Actually it makes you do it yourself, so it doesn't really help at all. You'll get burned by storing view state together with your data, eg. when a batch increment contains no data.
+  03. It is not built with "incremental materialized views" in mind. It still thinks in a batch refill mode and incremental mode according to this [0].
   - It is certainly an improvement over managing sql scripts by hand, but far from the ultimate goal of maintaining materialized views in a declarative way.
 - dbt doesn't do much automation/ETL outside of the database you're working in, as other tools might be able to.
-
-- 
-- 
 
 - ## [Materialize Raises a $32M Series B | Hacker News](https://news.ycombinator.com/item?id=25277511)
 - Materialize is an "RDBMS" (though it's not, really) engineered from the ground up to make these sorts of dataflow graphs of matviews-on-matviews-on-matviews practical, by doing its caching completely differently.
@@ -165,7 +162,30 @@ modified: 2023-09-17T17:41:51.689Z
 # discuss
 - ## 
 
-- ## 
+- ## Top 20 SQL query optimization techniques
+- https://twitter.com/milan_milanovic/status/1758831924380880968
+  01. Create an index on huge tables (>1.000.000) rows
+  02. Use EXIST() instead of COUNT() to find an element in the table
+  03. SELECT fields instead of using SELECT *
+  04. Avoid Subqueries in WHERE Clause
+  05. Avoid SELECT DISTINCT where possible
+  06. Use WHERE Clause instead of HAVING
+  07. Create joins with INNER JOIN (not WHERE)
+  08. Use LIMIT to sample query results
+  09. Use UNION ALL instead of UNION wherever possible
+  10. Use UNION where instead of WHERE ... or ... query.
+  11. Run your query during off-peak hours
+  12. Avoid using OR in join queries
+  13. Choose GROUP BY over window functions
+  14. Use derived and temporary tables
+  15. Drop the index before loading bulk data
+  16. Use materialized views instead of views
+  17. Avoid != or <> (not equal) operator
+  18. Minimize the number of subqueries
+  19. Use INNER join as little as possible when you can get the same output using LEFT/RIGHT join.
+  20. Frequently try to use temporary sources to retrieve the same dataset.
+
+- I have done sql optimization before few of them are okay but some are not right
 
 - ## SQL optimizers use column statistics to estimate cardinality. What happens when value > max value from last ANALYZE?
 - https://twitter.com/FranckPachot/status/1756946207748899320

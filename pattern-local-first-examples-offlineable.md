@@ -221,6 +221,12 @@ modified: 2023-11-17T10:12:06.357Z
   - Local-first webpage generator
   - common, backend and frontend are all part of an inactive legacy app (demo) that was cloud-first and made with Axum + Sycamore
   - https://github.com/nate-sys/links-app-perseus /rust
+
+- https://github.com/sosuisen/git-documentdb /MPLv2/202304/ts/inactive
+  - https://gitddb.com/
+  - Offline-first Database that Syncs with Git
+  - GitDocumentDB is compatible with Git that brings us distributed multi-primary databases and efficient CI/CD.
+  - The throughput of GitDocumentDB is about the same as Git. It is not as fast as typical databases. Storage size grows when managing many revisions of a document. These are a trade-off for Git features.
 # local-first-examples
 - https://github.com/actualbudget/actual /MIT/202312/ts/js
   - https://actualbudget.org/

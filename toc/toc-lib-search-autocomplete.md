@@ -386,7 +386,7 @@ modified: 2023-01-01T13:24:35.994Z
   - Search aggregator for Slack, Google Docs, GitHub, and more
   - 支持 Google Drive docs, spreadsheets; Confluence pages; Figma files, projects, and teams; 
 
-- pagefind /677Star/MIT/202301/rust
+- pagefind /2.8kStar/MIT/202402/rust
   - https://github.com/CloudCannon/pagefind
   - https://pagefind.app/
   - Pagefind is a fully static search library that aims to perform well on large sites

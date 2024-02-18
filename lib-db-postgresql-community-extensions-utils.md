@@ -14,7 +14,9 @@ modified: 2023-10-26T21:43:43.231Z
 
 - ## 
 
-- ## 
+- ## Online Schema change for PostgreSQL
+- https://twitter.com/PeterZaitsev/status/1759213177538216008
+  - [Revolutionizing PostgreSQL Schema Changes with `pg_osc` - Mydbops | Blog _202401](https://www.mydbops.com/blog/postgresql-schema-changes-with-pg_osc/)
 
 - ## [PGX: Write Postgres extensions in Rust instead of C | Hacker News_202007](https://news.ycombinator.com/item?id=23821112)
 

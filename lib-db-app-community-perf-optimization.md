@@ -32,7 +32,18 @@ modified: 2023-10-26T19:00:02.186Z
 
 - ## 
 
-- ## 
+- ## 💡 Data skipping is one of the common techniques used with large volumes of data to achieve better query performances.
+- https://twitter.com/Dipankartnt/status/1759054983029203240
+  - The whole idea is simple - read as less data as possible
+  - What that means is that as a compute engine paired with a data lake table format like @apachehudi , it should read only the data files that are needed to satisfy the query from the storage. Data skipping reduces the volume of data that needs to be scanned and processed.
+  - Of course this is made possible because of the metadata information provided by file formats like Parquet. Basically, each Parquet file contains the min/max values of each column along with other useful info: num of NULL values. These min/max values are 'column statistics'.
+  - Now, although, we could directly leverage these stats for data skipping, this could affect the query performance because the engine still has to go through each file to read the footer. 
+
+- What's Hudi's approach?
+  - it adds a next level of pruning. basically it takes all these stats & collates the info in the form of an INDEX.
+  - Indexes such as this are incorporated into Hudi's internal metadata table so engines can just get the files where the data is stored.
+  - Therefore, instead of reading individual Parquet footers, compute engines can directly go to the metadata table's index & fetch the required files. Way faster.
+  - [Hudi’s Column Stats Index and Data Skipping feature help speed up queries by an orders of magnitude _202206](https://www.onehouse.ai/blog/hudis-column-stats-index-and-data-skipping-feature-help-speed-up-queries-by-an-orders-of-magnitude)
 
 - ## [Understanding Connections and Pools | Hacker News _202101](https://news.ycombinator.com/item?id=25644656)
 - 

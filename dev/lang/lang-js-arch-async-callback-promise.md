@@ -54,11 +54,11 @@ modified: 2021-08-30T07:01:09.493Z
   - DeAsync turns async function into sync, implemented with a blocking mechanism by calling Node.js event loop at JavaScript layer. 
   - The core of deasync is written in C++.
 
-- https://github.com/dmaevsky/conclure
+- https://github.com/dmaevsky/conclure /MIT/202211/js/inactive
   - Brings cancellation and testability to your async flows.
   - It is a tiny (core is < 200 lines of code), zero dependencies generator runner.
   - Using generators instead of promises allows for a LOT more flexibility, including cancellation, sync resolution, and better testing. The API is strictly the same as async/await
-  - You should avoid Promises for two major reasons:
+  - 💡 You should avoid Promises for two major reasons:
     - Promises are greedy: once created, cannot be cancelled
     - `await promise` always inserts a tick into your async flow, even if the promise is already resolved or can be resolved synchronously.
   - You can see a Promise as a particular type of an iterator for which the JS VM provides a built-in runner, a quite poorly designed one nonetheless.
@@ -119,9 +119,28 @@ modified: 2021-08-30T07:01:09.493Z
 
 - ## 
 
-- ## Have any JS lib maintainers switched back to using callbacks over promises and async/await?
+- ## 🤔🔀 Have any JS lib maintainers switched back to using callbacks over promises and async/await?
 - https://twitter.com/tantaman/status/1758828869530906748
   - The purpose being that by using callbacks you can preserve the task and event loops when the library is deployed with synchronous workloads and still be able to support async workloads.
+  -  with promises and async functions, everything resolves asynchronously even if it is synchronous. That’s what I want to avoid since, with my lib, some ppl want it to be full synchronous and others full asynchronous. Callbacks allow that as you said. Promises don’t.
+
+- If you create a promise that contains no async call, it will be synchronous, but listeners will be queued in the micro-tasks, which is rarely an issue but maybe it is for you ? You can also return a custom promise to mimic then(), but async stack trace become an issue :/
+  - The micro task queueing for ‘then’ callers is an issue since it will cause interleaved execution of synchronous code.
+  - As a concrete example— I have a library where users can provide a data source. That source could be synchronous or async.
+  - If my library used promises to expose the synchronous sources then any call to get a result from those sources would resolve in a future micro task. 
+  - The most obvious place this is a problem is react controlled inputs. The synchronous sources will cause cursor jumping when put behind a promise api. 
+  - Other issues are code someone wants to run sequentially getting interleaved with other code since all ‘then’ calls are new tasks.
+
+- pulumi is actually callback based and so the new version of sst is as well
+- What did you take into account when deciding to make sst callback based?
+  - we actually wanted to maximize parallelism whereas promises would require the end user to ensure they aren’t blocking unnecessarily
+  - basically we never want them to await
+
+- I've ditched promises long time ago in favor of generators. Wrote a tiny generator runner http://github.com/dmaevsky/conclure that allows me to keep the async/await logic (spelled function*/yield in the iterator world), but sync tasks are still executed sync. And async tasks can be cancelled
+
+- Too many people call await sequentially which kills perf, cause they don't know about parallel.
+
+- I am curious if it possible to make own Promise implementation that will not be falling to microtasks
 
 - ## is there a way to wait for N promises on tests?
 - https://twitter.com/sseraphini/status/1365297469911937025
@@ -139,7 +158,7 @@ modified: 2021-08-30T07:01:09.493Z
 - ## [Why people still compare Observables as "better" than promise as a primitive?](https://www.reddit.com/r/angular/comments/w9ipf4/why_people_still_compare_observables_as_better/)
 - Because observables are much more powerful.
 
-- ## [💡 Why the Microtask queued after chained promises are executed after the first promise resolution ignoring the chained ones? - Stack Overflow](https://stackoverflow.com/questions/75373806/why-the-microtask-queued-after-chained-promises-are-executed-after-the-first-pro)
+- ## 💡 [Why the Microtask queued after chained promises are executed after the first promise resolution ignoring the chained ones? - Stack Overflow](https://stackoverflow.com/questions/75373806/why-the-microtask-queued-after-chained-promises-are-executed-after-the-first-pro)
 
 ```JS
 function tasksAndMicroTasks() {

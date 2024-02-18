@@ -84,6 +84,16 @@ modified: 2023-08-25T22:31:05.132Z
   - A JavaScript library to draw pretty git graphs in the browser
   - core无依赖，支持vanillajs、React
   - @gitgraph/core contains the main logic for manipulating git-like API and compute the graph that should be rendered.
+
+- https://github.com/GQL-Project/gql_db /202212/rust/inactive
+  - gql-db is an SQL database server with version control integrated into the database itself. 
+  - It's written in Rust and uses Protocol Buffers/gRPC for communication
+  - We've also implemented a UI for the database server, which can be found at: GQL-Project/gql_client.
+
+- https://github.com/kamu-data/kamu-cli /BSL/202402/rust
+  - https://kamu.dev/
+  - New generation decentralized data lake and a streaming data pipeline
+  - New take on Git for Data
 # data-branching-versioning/revisions
 - https://github.com/snowtrack/snowfs /GPLv3/ts/inactive
   - https://www.snowtrack.io/

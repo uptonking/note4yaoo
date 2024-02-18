@@ -383,4 +383,8 @@ modified: 2023-06-07T14:19:18.719Z
   - pkgx is a core contributor to the tea protocol
 
 - [useHooks – The React Hooks Library](https://usehooks.com/)
+# books/reads
+- https://github.com/Alamantus/Readlebee /AGPLv3/202104/js/archived
+  - https://gitlab.com/Alamantus/Readlebee
+  - An attempt at a viable alternative to Goodreads
 # more
