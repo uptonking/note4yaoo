@@ -34,7 +34,12 @@ modified: 2022-08-21T10:38:26.289Z
 
 - [IronCalc](https://www.ironcalc.com/)
   - IronCalc is a spreadsheet engine and ecosystem. 
-# products-ecosystem
+# project-management
+- asana
+
+- [Superlist: Home to all your lists](https://www.superlist.com/)
+  - 设计简洁
+# excel-ecosystem
 - [Wax](https://www.wax.run/)
   - Build apps and reports in Google Sheets.
   - Create a bidirectional link between Google Sheets and your database (Postgres, Snowflake, MySQL, Redshift, and SQL Server). 

@@ -128,6 +128,12 @@ modified: 2023-02-09T18:32:06.240Z
   - A Real-Time Distributed-Text-Editor Application with ReactJS, NodeJS, MongoDB and WebSockets.
   - 依赖react、quill、socket.io、mongoose
 
+- https://github.com/exilednick/Bandersnatch /202401/js/ejs
+  - A collaborative text editor
+  - 依赖express、ejs、socket.io
+  - 未实现协同，仅同步未处理冲突
+  - 采用ssr，每次全量覆盖 `socket.on('take_data', data => editor.setText(data));`
+
 - https://github.com/gentabazi2/simulQ /MIT/202312/ts
   - Real-time collaborative editing system with MERN
   - Its purpose is to serve as a reference project on how a real-time collaborative editing system should be developed.
@@ -526,7 +532,6 @@ modified: 2023-02-09T18:32:06.240Z
   - 依赖 ace、jquery、quill、turbolinks、koa、sequelize.v5
   - 🍴 forks
   - https://github.com/universe/vapid
-
 
 - https://github.com/webpoint-solutions-llc/easy-blog-cms /202309/ts
   - The API is designed to be consumed by any client, be it a web application (React, Vue, Angular)

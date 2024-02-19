@@ -138,3 +138,5 @@ modified: 2021-01-09T16:56:35.339Z
   - Create responsive profile card using HTML, CSS and fluid typography
   - https://twitter.com/davidm_ml/status/1742465428260073849
 # more
+- [Craig Harman Portfolio](https://www.craigharman.com/)
+  - 暗黑背景 + 渐变紫色文字

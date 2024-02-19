@@ -962,12 +962,13 @@ modified: 2023-02-05T19:03:12.723Z
   - onChange直接发送op，未使用冲突处理算法
 
 - https://github.com/Regloom/slatesyncedit
-  - 每次同步全量数据
+  - 每次同步全量数据，未使用冲突处理算法
   - 注意测试时要用相同url代表在一个房间里面
 
-- https://github.com/bugbakery/slate-automerge-doc /202307/ts
-  - https://github.com/transcribee/slate-automerge-doc /ts
+- https://github.com/bugbakery/slate-automerge-doc /AGPLv3/202312/ts
   - Syncs slate with an automerge document. Bring your own transport.
+  - 依赖automerge2
+  - https://github.com/transcribee/slate-automerge-doc /ts
   - https://github.com/transcribee/slate-collaborative
   - https://github.com/transcribee/automerge-py
 
@@ -982,7 +983,7 @@ modified: 2023-02-05T19:03:12.723Z
   - 🍴 forks
   - https://github.com/sennpang/slate-yjs
 
-- https://github.com/BangKk/slate-crdt-editor /202310/ts
+- https://github.com/BangKk/slate-crdt-editor /MIT/202310/ts/inactive
   - https://slate-crdt-editor-editor.vercel.app/
   - demo use slatejs and yjs for collaborative editing
 - https://github.com/6thfdwp/crdt-editor
@@ -1010,7 +1011,7 @@ modified: 2023-02-05T19:03:12.723Z
   - Doesn't meaningfully use Slate's tree representation. Just treats the doc as a single text node.
   - Intercepts insert/delete operations from the Slate editor, and converts to corresponding Automerge Text ops to edit
 
-- https://github.com/cudr/slate-collaborative /202101/ts/inactive/automerge
+- https://github.com/cudr/slate-collaborative /MIT/202101/ts/inactive/automerge
   - A example of a collaborative editor using Slate and Automerge
   - 依赖slate.v0.59、automerge.v0.14、socket.io
   - Based on idea of https://github.com/humandx/slate-automerge /201809/js

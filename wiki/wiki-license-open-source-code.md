@@ -39,11 +39,12 @@ modified: 2021-09-14T18:58:58.275Z
   - [Business Source License 1.1 | MariaDB](https://mariadb.com/bsl11/)
 
 - who is using #BSL-lic
-  - outline wiki
-  - Directus cms
   - couchbase
   - surrealdb
   - CockroachDB
+  - outline-wiki
+  - directus-cms
+  - Sentry
   - HashiCorp consul: data center aware solution to connect and configure applications across dynamic, distributed infrastructure
   - kurtosis: Kurtosis shines when creating, working with, and destroying self-contained distributed application environments.
 

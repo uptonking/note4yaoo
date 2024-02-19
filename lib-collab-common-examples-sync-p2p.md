@@ -178,6 +178,13 @@ modified: 2023-01-17T19:13:01.845Z
   - Mutability is implemented using CRDTs. Identities and data authentication are cryptographic.
   - Objects and their references form an immutable DAG, a fact that is used for data replication in HHS p2p mesh.
 
+- https://github.com/karyons/karyon /GPLv3/202312/rust
+  - An infrastructure for peer-to-peer, decentralized, and collaborative software.
+  - karyon jsonrpc: A fast and small async JSONRPC2.0 implementation.
+  - karyon crdt: A CRDT implementation for building collaborative software.
+  - karyon base: A lightweight, extensible database that operates with karyon crdt.
+  - Big thanks to Ink & Switch team, smol async runtime, and zmq.rs for the inspiration!.
+
 - https://github.com/feathersjs-ecosystem/feathers-sync /MIT/202305/js
   - Synchronize service events between Feathers application instances
   - When running multiple instances of your Feathers application (e.g. on several Heroku Dynos), service events (created, updated, patched, removed and any custom defined events) do not get propagated to other instances.

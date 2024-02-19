@@ -149,6 +149,12 @@ modified: 2023-09-17T17:37:19.913Z
 # discuss
 - ## 
 
+- ## 
+
+- ## If SQL is considered a programming language, then relational databases function as virtual machines that execute SQL, similar to how the JVM executes Java.
+- https://twitter.com/criccomini/status/1759375042847314000
+- SQL-speaking databases are both query compilers and runtimes for the resulting execution plan.
+
 - ## 9 strategies to make your system more scalable in the long run.
 - https://twitter.com/ProgressiveCod2/status/1754827378436841922
   [1] Horizontal Scalability

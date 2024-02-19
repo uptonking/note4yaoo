@@ -20,7 +20,7 @@ modified: 2022-09-21T15:47:41.340Z
   - Uses redis-pubsub for horizontal scaling and uses redis-queues to provide eventual-consistency and better behaviour when users join a document being edited by other users.
   - https://github.com/kapv89/yjs-scalable-ws-backend-test
 
-- https://github.com/dev-badace/textrdt /ts
+- https://github.com/dev-badace/textrdt /202304/ts
   - a basic implementation of a text crdt based on the yata this is not meant to be used in production
 
 - https://github.com/yousefed/SyncedStore
@@ -81,7 +81,7 @@ modified: 2022-09-21T15:47:41.340Z
   - Scales horizontally with a session backend model.
   - Provides document-level access control via client tokens.
 # utils
-- https://github.com/rozek/y-lwwmap /ts
+- https://github.com/rozek/y-lwwmap /MIT/202307/ts/inactive
   - Yjs provides a complete ecosystem for (persisting and) sharing "Conflict-free replicated data types" (CRDT) among multiple clients using a variety of persistence and communication providers. 
   - The shared data types include arrays and maps, with shared maps becoming inefficient in most practical cases, which is why there is an alternative implementation based on shared arrays in the `y-utility` package.
   - Being compatible to the Yjs ecosystem, LWWMaps can be shared as part of a Y. Doc using y-websocket, y-webrtc
@@ -91,6 +91,9 @@ modified: 2022-09-21T15:47:41.340Z
   - http://samwillis.co.uk/yjs-sqlite-test/
   - This is a test project to combine yjs and sqlite wasm, it lets you store yjs documents in a sqlite database, update them in place and query the content. 
   - Perfect for building a local first web app.
+
+- https://github.com/maxpert/sqlite-y-crdt /MIT/202212/rust/js/inactive
+  - WIP for wrapping Y-CRDT for SQLite
 
 - https://github.com/pluv-io/pluv /MIT/ts/yjs
   - https://pluv.io/

@@ -21,6 +21,7 @@ modified: 2024-01-29T23:05:26.855Z
   - 未实现同步
   - 会在打开新文件时自动在文件头部添加时间戳front-matter
   - 对本地文件的结构组织有要求，包括顶层`notes`文件夹、附件`attachments`文件夹
+  - 未实现文件管理器，用户使用tag对笔记文件进行管理，所以笔记文件在同一层级
 
 - features
   - core: edit/view-local-files; tags; search-contents

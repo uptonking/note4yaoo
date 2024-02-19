@@ -30,6 +30,7 @@ modified: 2023-01-20T21:59:47.792Z
 # popular
 - strapi /57.5kStar/MIT+EE/202311/ts
   - https://github.com/strapi/strapi
+  - https://docs.strapi.io/dev-docs/intro
   - https://strapi.io/
   - https://strapi.io/demo 一定时长后数据会清除
   - the leading open-source headless CMS
@@ -38,10 +39,12 @@ modified: 2023-01-20T21:59:47.792Z
   - 核心功能是提供了通过ui操作实现rest api的功能
     - 系统内容通过ui操作编写
     - 系统前端strapi没有限制，strapi只提供了api
+  - 未实现: versioning, draft/publish
 
 - payloadcms /9.1kStar/MIT/202301/ts/slate
   - https://github.com/payloadcms/payload
   - https://payloadcms.com/
+  - https://payloadcms.com/docs/getting-started/what-is-payload
   - https://demo.payloadcms.com/admin
   - Code-first Headless CMS and Application Framework built with TypeScript, Node.js, React and MongoDB
   - cms只提供管理界面来拖拽生成数据对应的api，不提供预览内容的前端
@@ -69,13 +72,15 @@ modified: 2023-01-20T21:59:47.792Z
 - https://github.com/NouanceLabs/payload-dashboard-analytics
   - A plugin for Payload CMS to connect analytics data to your Payload dashboard.
 
-- directus /19.5kStar/GPLv3>BSL/202301/ts/vue
+- directus /19.5kStar/GPLv3 > BSL/202301/ts/vue
   - https://github.com/directus/directus
   - https://directus.io/
+  - https://docs.directus.io/
   - Directus is a real-time API and App dashboard for managing SQL database content.
   - REST & GraphQL API. Instantly layers a blazingly fast Node.js API on top of any SQL database.
-  - 后端依赖express、knex、async
+  - 后端依赖express、knex、async、commander、graphql、ioredis、keyv、marked、micromustache、node-cron、rate-limiter-flexible、sharp、vm2
   - 前端依赖vue3、tinymce5、p-queue、apexcharts
+  - 设计graphql的代码不多，可以尝试移除
   - [Change license to BSL-1.1_20230427](https://github.com/directus/directus/pull/18330)
     - Code released under this new license converts to GPLv3 (OSS) after 3 years
   - [Running Locally | Directus Docs](https://docs.directus.io/contributing/running-locally.html)
@@ -91,9 +96,19 @@ modified: 2023-01-20T21:59:47.792Z
     - You have to set SERVE_APP=true in your .env file in order to run the api in dev mode with the build app.
     - 最终发现配置server_app后要访问的是服务端:8055/admin，而不是前端:8080/admin
   - forks
-  - https://github.com/LaWebcapsule/directus9
-    - This repository is a fork of the Directus 9. Directus 9 was under GPLv3 license and so is this repository. 
+  - https://github.com/LaWebcapsule/directus9 /GPLv3/202402/ts/vue
+    - a fork of the Directus 9
     - Directus 10 is now a premium open-source software
+  - https://github.com/ctholho/qryo /202304/ts/inactive
+    - Testing if offline first CRUD applications with Directus are possible
+    - Qryo helps you build offline-first web apps. It concerns itself with server requests like CRUD REST calls or RPCs. 
+    - Qryo is totally not functional yet. This is a proof of concept 
+    - Stack: Tanstack/query, Nuxt and Directus
+    - persist the mutation in IndexedDB
+  - https://github.com/directus-community/awesome-directus
+    - Extensions, Examples/Showcases
+  - [Directus extensions](https://directusextensions.com/browse)
+    - Directus Extensions includes all Directus Extensions available on npm that adhere to the `directus-extension-*` naming strategy
 
 - vrite /1kStar/AGPLv3/202310/ts
   - https://github.com/vriteio/vrite

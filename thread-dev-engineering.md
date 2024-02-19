@@ -26,7 +26,10 @@ modified: 2021-01-21T17:52:13.333Z
 
 - ## 
 
-- ## 
+- ## I feel automatic dependency management actually does more harm than good
+- https://twitter.com/gunnarmorling/status/1759294666699092049
+- I wish there would be an option to disable transitive pulling in Maven/Gradle. Would make this a much more aware process to library creators and consumers alike
+- Plus Maven plugin dependencies for the same things, in different versions - Yay spaghetti
 
 - ## Nice DuckDB feature. More applications should do this
 - https://twitter.com/lukaseder/status/1757693702074450336

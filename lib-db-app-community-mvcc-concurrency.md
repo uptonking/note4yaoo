@@ -19,7 +19,29 @@ modified: 2023-11-01T10:15:06.245Z
 # discuss-transactions
 - ## 
 
-- ## 
+- ## 💡 How do atomic transactions work in a database?
+- https://twitter.com/Franc0Fernand0/status/1759563991540494663
+- Atomicity makes it possible for a transaction to have only 2 results:
+  - it successfully executes all the operations and commit
+  - it aborts because of a failure and undoes all the changes
+- In a single database, atomicity is possible by saving all the changes to the data in a write-ahead log (WAL).
+  - Every time changes are made, the WAL saves them on the disk so that they will last.
+  - Each entry of the WAL contains all the information to undo all the changes.
+- However, the WAL approach is insufficient if the transaction involves more than one database. 
+  - In these situations, the two-phase commit protocol (2PC) is often used. 
+  - The protocol says that one process should be the coordinator and the others should be participants.
+  - Most of the time, the coordinator is the client process that requires the transaction.
+- 2PC protocol has 2 steps:
+- 1. Prepare
+  - The coordinator requests everyone to get ready to complete the transaction. Each participant answers if they can commit or not. 
+  - After answering, the participants wait for further instructions.
+- 2. Commit
+  - If all participants are ready, the coordinator sends them a commit request. Otherwise, it will ask to abort.
+  - This step is a point of no return: the transaction has to be committed or aborted.
+- The 2PC protocol works but has some drawbacks: 
+  - it's slow since it requires multiple round trips between the processes
+  - it gets blocked if the coordinator fails or a participant fails in the commit step
+- Replicating the involved processes makes 2PC more robust but adds complexity.
 
 - ## Relies on a global logical clock and claims that an MVCC visibility check can be as simple as an integer comparison. 
 - https://twitter.com/sunbains/status/1757617183218442588

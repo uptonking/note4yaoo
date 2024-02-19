@@ -22,7 +22,10 @@ modified: 2023-09-21T17:32:15.618Z
 # discuss
 - ## 
 
-- ## 
+- ## [GitLab Wiki or Other self-hosted wiki for Documentation : r/selfhosted _202208](https://www.reddit.com/r/selfhosted/comments/wdjeo8/gitlab_wiki_or_other_selfhosted_wiki_for/)
+- I use MediaWiki (the same software that powers Wikipedia).
+
+- I'm currently moving from DokuWiki to Joplin for all my personal notes. The primary reason to move is that Joplin can provide offline access via mobile app. In a team/collaborative environment I would still continue to use DokuWiki.
 
 - ## [Silver Bullet: Markdown-based extensible open source personal knowledge platform | Hacker News_202212](https://news.ycombinator.com/item?id=33843009)
 - I'm a huge fan of how Obsidian approaches it- previewing each token if you're not actively editing it. This is always how I use it.

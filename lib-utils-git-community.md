@@ -12,6 +12,13 @@ modified: 2023-08-29T10:13:31.070Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## At Githab, anyone can commit for you just by specifying your email in --author.
+- https://twitter.com/sitnikcode/status/1759538798180876516
+  - This is why I enabled signing commits in git using my SSH key using this guide
+  - [Git Tips 2: New Stuff in Git](https://blog.gitbutler.com/git-tips-2-new-stuff-in-git/)
+
 - ## 🆚️ Git Merge vs. Rebase vs. Squash Commit
 - https://twitter.com/alexxubyte/status/1751645221602152881
   - 示意图
@@ -392,6 +399,46 @@ modified: 2023-08-29T10:13:31.070Z
 # discuss-gitlab-gogs-gitea
 - ## 
 
+- ## 
+
+- ## [Any GitHub/GitLab alternatives built for non-technical users? : r/git _202101](https://www.reddit.com/r/git/comments/l2ae04/any_githubgitlab_alternatives_built_for/)
+- The difficulty, IMO, is that Git works best with plain-text files. But many non-IT (NIT) people are wedded to proprietary file formats like MS-Word. So, merely making Git more intuitive ain't going to help—NITs still won't be able to take advantage of Git.
+
+- Wikis can provide good collaboration and version control for text, though, and most people should have at least a passing familiarity with the concept by now.
+
+- I Agree. The answer is something like Confluence.
+
+- What is your goal / what should this software mainly be used for? (What problem are you trying to solve?)
+  - If you just need versioning, there are many simple backup or synching programs.
+  - If you need "forking", there are online collaboration office tools which might be a better fit.
+
+- Gitea is a lot simpler than GitLab/GitHub and still has the core functionalities.
+
+- Check out gitbook.
+
+- ## [Harness launches Gitness, an open-source GitHub competitor | Hacker News _202309](https://news.ycombinator.com/item?id=37598082)
+- Codeberg (2019), which was based on Gitea until they forked it into Forgejo (2022).
+  - Codeberg is a service not a separate software. Just like you wouldn't count salsa.debian.org or framagit.org as separate from GitLab, they are the same with maybe some local customization.
+
+- How does Gitness differ from already existing open source alternatives, such as Gitlab, Gitea, Gogs, Forgejo, Codeberg, Gitweb?
+  - Gitness actually launched in 2012 under the name Drone, with a focus on continuous integration. 
+  - So Gitness has a very strong, mature pipeline engine that is also very popular in the Gogs and Gitea community (Gitness is backward compatible with any Drone yaml). 
+  - Of course, this is just our initial launch which is a very important milestone, but we have a lot of feature gaps and a lot of work to do to make our Code Hosting solution a more interesting replacement. Stay tuned.
+
+- I won't trust Harness with anything open source. It's the same company that killed the open source Drone CI after acquiring it. They changed the license such that you could contribute to it but could not use it if your revenue was more than 1 million USD. They didn't fix bugs that were well known to them because they were working on the enterprise version of it.
+
+- How does this compare to e.g. Forgejo, Gitea, Gogs, self-hosted GitLab, or other alternatives?
+  - Forgejo in particular has self-hosted actions runners that can be registered offline, and the runners themselves can be given labels and execute most existing GitHub actions (in fact, the yaml format they use is intentionally meant to be compatible with GitHub actions).
+  - While the Pipelines UI looks nice, it hides all the very real details of deployment (and configuration) in a variety of environments. This is one thing Forgejo does well compared to e.g. Gitea for CI/CD, thanks to being very flexible in configuring runner secrets, registering runners, and so on. 
+  - The reason I am emphasizing CI/CD is because hosting code and a bug tracker is only one small aspect of GitHub IMO. The real big things are its popularity and GitHub Actions. It's not enough for many people (and businesses) to simply host code anymore. Many now expect commits pushed to certain branches to execute a variety of workflows -- from unit tests to full-on Kubernetes deployments.
+
+- They should host a demo instance like Gitea does.
+
+- Interestingly it looks like this is partly a fork of Gitea (or at least, incorporates large amounts of code from Gitea)
+  - It is largely based on the existing Drone repository, but for Git capabilities we used the Gitea fork of https://github.com/gogs/git-module
+
+- looks more complicated than forgeo/gitea . gitea already servers all github needs for us
+
 - ## [Four years of SourceHut (SourceHut is a open source github alternative) : r/linux _202211](https://www.reddit.com/r/linux/comments/ywbrtc/four_years_of_sourcehut_sourcehut_is_a_open/)
 - if only sourcehut was in any way user friendly. making pull requests and looking for issues is such a pain
   - It's email-based, not PR-based. Although devs use git-request-pull instead of git-send-email.
@@ -414,6 +461,13 @@ modified: 2023-08-29T10:13:31.070Z
   - The main reason is lacking of functionality such as pull request approval, reviewer auto-assignment based on contribution history, easy symbol navigation while reviewing pull request, selecting any diff/code to start discussion, real-time preview when authoring markdown, customizable issue field and state etc.
 
 - Gogs/Gitea is perfect for personal usage. But for teams with dozens/hundreds of people, some solid features need to exist to be efficient. This is what we built into OneDev.
+
+- ## [Re: [jgit-dev] Introducing OneDev - an open source git server _201901](https://www.eclipse.org/lists/jgit-dev/msg03748.html)
+  - Looking at https://github.com/theonedev/onedev/blob/master/core/pom.xml, it appears this is a web interface that uses JGit for Git support.
+
+- Yes it is using JGit for most operations. JGit API is very well designed and is a joy to use. 
+  - The performance is very good, except for long operations such as full clone. 
+  - So for pull/push I am calling native git, but  for other operations which may need to be executed several times during a request I am using JGit which is much faster thanks for the in-process cache. 
 # discuss-fossil
 - ## 
 

@@ -489,10 +489,11 @@ modified: 2023-12-15T19:30:23.094Z
 
 - https://github.com/PenguinOfWar/strapi-plugin-paper-trail /202310/js
   - Accountability and content versioning for strapi v4+
-  - Automatic revision history and auditing with support for all major strapi content types including relations, media, components, and dynamic zones via the admin panel.
+  - ✨ Automatic revision history and auditing with support for all major strapi content types including relations, media, components, and dynamic zones via the admin panel.
   - Roll-back capabilities with the option to select specific fields to restore via the admin panel.
   - Tracks revision history by both admins and users.
   - Internationalization (i18n) plugin support.
+  - https://github.com/JoeriDamme/strapi-plugin-revisions /v3-only
 
 - https://github.com/Marje3PSUT/strapi-plugin-audit-log-marje3 /202309/js
   - A plugin that logs all user interactions, fully-equipped with permissions and settings.

@@ -12,7 +12,11 @@ modified: 2023-01-01T13:24:35.994Z
   - chinese
   - persistence
 
-- ref
+- usecase
+  - 针对ssg的blog的搜索，类似algolia-docsearch
+  - 针对列表项的搜索，类似searchkit
+
+- resources
   - database search solutions
   - [Various search databases and backends as alternatives to Elasticsearch](https://gist.github.com/manigandham/58320ddb24fed654b57b4ba22aceae25)
   - [Tips for a good search | DocSearch by Algolia](https://docsearch.algolia.com/docs/tips)

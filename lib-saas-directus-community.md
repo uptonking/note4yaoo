@@ -14,14 +14,38 @@ modified: 2024-02-16T14:56:17.057Z
 
 - ## 
 
-- ## 
+- ## ✨ [[RFC] Directus Offline First SDK_202303](https://github.com/directus/directus/discussions/17808)
+- I think RxDB is an excellent choice for responsive offline-first applications. During my initial research I found multiple points, why I wouldn't want to use it
+  - It ships a whole db with 45kb gziped
+  - Interfacing with IndexedDB is via a commercial plugin
+  - I want to interface with any HTTP endpoint and not rely on GraphQL or other demanding server side requirements
+- At the end of the day, it is a tradeoff. RxDB can free you from getting locked down to one specific backend, but it has its drawbacks.
+
+- 💡 Conflict Resolution Approaches: 4 methods for handling edit conflicts
+- Generally, conflict resolution falls into four categories, with developers selecting the most suitable strategy. 
+  - Performance and usability with CRDTs have come a long way since their inception 2011. 
+  - For most small to mid-scale Directus use cases CRDTs will work fine. They will probably still be a rarely used data type.
+- Last Write Wins (LWW): 
+  - This default method resolves conflicts by prioritizing the most recent write operation in a CRUD app. Earlier edits are overwritten.
+- Operational Transformation (OT): 
+  - This method can be implemented using a Directus flow operating on the `article_event` data, updating the articles collection accordingly.
+- Conflict-free Replicated Data Types (CRDTs): 
+  - This method employs data structures that automatically merge, resolving conflicts. 
+  - CRDT implementation would be facilitated by Directus' support for views in relational databases. 
+  - However, developers should be be able to fully choose their preferred implementation, because developers may utilize resources like Yjs or Automerge.
+- Return Conflict List to Last Writer or Arbitrator: 
+  - This approach requires handling user responses to conflicts, similar to git. 
+  - It places a significant burden on users and developers, and should only be considered as a last resort for specific use cases.
+
+- I'm very curious to hear some more thoughts around the different conflict resolution techniques though. It sounds like that's something that you might have to be able to override method call to method call (eg what happens if you need a different resolution for articles than for authors etc) 
+  - Totally agree. CRDTs are a data model problem. A CRDT – as opposed to a normal data type – might require that you send different (or usually more) data to the server. The proposed API still expects you to be explicit about what you send to the server.
 # discuss-feat-version-history
 - ## 
 
 - ## 
 
 - ## 🐛⚡️ [Performance issues with revisions and activity _202303](https://github.com/directus/directus/issues/17894)
-- There is a problem with the reveisions and activity queries.
+- There is a problem with the revisions and activity queries.
   - When I navigate in my directus instance, I regularly get a popup that says that a request failed with status 504.
   - When I look in my devtools, it's the requests fetching the revisions for a particular item.
   - I have to purge the activity and revisions often to avoid that, even though I don't have a particularly big database (there are ~ 1 million in activity and 500 000 in revisions).
@@ -41,12 +65,12 @@ modified: 2024-02-16T14:56:17.057Z
 
 - Also want to mention this became more trickier with the addition of Content Versioning. Now, we cannot simply just remove the records from Activity and Revisions. We must check if field version is populated in directus_revisions and not remove it if that's the case
 
-- ## [Content Versioning · Issue #19796 · directus/directus _202309](https://github.com/directus/directus/issues/19796)
+- ## [Content Versioning _202309](https://github.com/directus/directus/issues/19796)
 - Comments and Shares might have to be adjusted to be branch-specific.
 
 - Instead of saving just the delta to Directus Revisions, a secondary “cloned” table could be considered, however there’s some downsides
 
-- ## ✨ [Save Item as Future Revision (Draft of Published Item) · directus/directus](https://github.com/directus/directus/discussions/2975)
+- ## ✨ [Save Item as Future Revision (Draft of Published Item)](https://github.com/directus/directus/discussions/2975)
 - This has been released in 10.7_20231028
 
 - ## [delta stored but not displayed _201611](https://github.com/directus/directus/issues/1301)

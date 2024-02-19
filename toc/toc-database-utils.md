@@ -240,6 +240,11 @@ modified: 2023-08-23T17:15:46.484Z
   - ssb-server is an open source peer-to-peer log store used as a database, identity provider, and messaging system. 
   - ssb-server **behaves just like a Kappa Architecture DB**. 
   - ssb-servers comprise(包含；构成) a global gossip-protocol mesh without any host dependencies.
+- https://github.com/dominictarr/scuttlebutt /201704/js
+  - peer-to-peer replicatable data structure
+  - Creating this module eventually lead me to secure-scuttlebutt it is based on a similar replication protocol as scuttlebutt, but puts security at the forefront.
+  - https://github.com/jacobbubu/crdt-pull /202007/ts
+    - Rewritten crdt in TypeScript and work with scuttlebutt-pull
 
 - https://github.com/okdistribute/peerfs /js
   - multiwriter peer-to-peer filesystem, built on kappa-core and hyperdrive

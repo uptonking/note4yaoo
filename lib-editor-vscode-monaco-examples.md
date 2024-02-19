@@ -38,4 +38,9 @@ modified: 2023-01-21T18:57:47.811Z
 - https://github.com/convergencelabs/monaco-collab-ext
   - Adds collaborative editing capabilities to the Monaco Editor
   - uses Convergence to handle the synchronization of data and user actions
+
+- https://github.com/kehshiba/serengeti /202401/js
+  - crdt-websockets based code collaboration.
+  - 服务端只转发op，没有其他逻辑
+  - 客户端依赖@monaco-editor/react.v4、yjs、socket.io、zustand
 # more

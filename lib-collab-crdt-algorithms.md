@@ -167,7 +167,7 @@ modified: 2023-03-07T04:43:58.713Z
 
 - [Causal Trees](https://www.farley.ai/posts/causal)
 
-- https://github.com/sno6/causal
+- https://github.com/sno6/causal /202312/go/ts
   - https://causal-sno6.vercel.app/
   - a CRDT implementation playground.
 
@@ -702,7 +702,7 @@ modified: 2023-03-07T04:43:58.713Z
 - https://github.com/t-mullen/logoot-crdt
   - Implemented as a tree for fast character position lookups.
 
-- https://github.com/nybblr/logoot /js
+- https://github.com/nybblr/logoot /201911/js
   - Test-driven implementation of the Logoot CRDT, with LSEQ strategy and a healthy distaste for mutation.
 
 - impl

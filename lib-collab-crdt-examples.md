@@ -45,7 +45,8 @@ modified: 2022-04-05T10:08:25.947Z
   - [Alternatives · ElectricSQL](https://electric-sql.com/docs/reference/alternatives)
   - [CRDTs for Non Academics - YouTube](https://www.youtube.com/watch?v=vBU70EjwGfw)
   - https://github.com/doodlewind/crdt-and-local-first
-  - https://github.com/topics/crdt?l=typescript&o=desc&s=updated
+  - https://github.com/topics/crdt?o=desc&s=updated
+  - https://www.npmjs.com/search?ranking=maintenance&q=crdt
 # popular
 - https://github.com/pubuzhixing8/awesome-collaboration
   - Collaborative editing of technical resources, article translation
@@ -80,7 +81,7 @@ modified: 2022-04-05T10:08:25.947Z
   - TriplitDB - Designed to run in any JS environment (browser, node, deno, React Native, etc) and provide expressive, fast, and live updating queries while maintaining consistency with many writers over a network.
   - Client - Browser library to interact with local and remote TriplitDBs.
   - React - React bindings for @triplit/client
-  - ✨ https://github.com/aspen-cloud/triplit/tree/main/packages/db
+  - 🛢️ https://github.com/aspen-cloud/triplit/tree/main/packages/db
   - 依赖tuple-database、sorted-btree、zod、idb
   - the embedded database that powers Triplit, a complete solution to data persistence, state management, and realtime synchronization for web applications 
   - Built-in storage providers for in-memory, IndexedDB, and Sqlite
@@ -109,6 +110,35 @@ modified: 2022-04-05T10:08:25.947Z
   - Logux combines WebSocket with modern reactive client architecture. It synchronizes Redux actions between clients and servers, and keeps the same order of actions.
   - Optimistic UI to improve UI performance by updating UI without waiting for an answer from the server. Time travel will revert changes later if the server refuses them.
   - Compatible with modern stack: Redux, Vuex and pure JS API, works with any back-end language and any database.
+
+- https://github.com/vlcn-io/cr-sqlite /MIT/rust/c
+  - https://vlcn.io/
+  - CR-SQLite is a run-time loadable extension for SQLite and libSQL. 
+  - It allows merging different SQLite databases together that have taken independent writes.
+  - This project implements CRDTs and CRRs in SQLite, allowing databases that share a common schema to merge their state together.
+  - crsqlite works by adding metadata tables and triggers around your existing database schema. 
+  - crsqlite only keeps an extra int per column and a clock per row.
+  - 测试使用python: Integration and performance tests
+  - [expo： [POC][sqlite] Investigate possibility of using crsqlite in expo-sqlite which allows database syncing between clients · expo/expo](https://github.com/expo/expo/pull/23728)
+  - https://github.com/vlcn-io/vlcn-orm /ts
+    - a schema layer whose first goal is to make P2P & Local-First software easy to develop
+    - everything in Aphrodite begins with a schema. This schema encodes the application's data, its relationships, consistency rules, allowed mutations and privacy.
+    - Aphrodite Schemas are written in a DSL.
+    - [IndexedDB support?](https://github.com/vlcn-io/vlcn-orm/issues/48)
+  - https://github.com/vlcn-io/orm-browser-starter
+    - Aphrodite running and saving data locally in the browser
+  - https://github.com/tantaman/Strut
+    - collaborative editing and offline support, powered by vlcn.io
+  - https://github.com/Sheraff/root /MIT/202402/ts
+    - https://sheraff.github.io/root-docs/
+    - A fullstack typescript offline-first PWA template repo
+    - 前端: SQLite (vlcn.io CRDTs) + useQuery hook for reactive queries, SQLite (vlcn.io CRDTs) + useQuery hook for reactive queries
+    - 后端: SQLite (vlcn.io CRDTs), Fastify
+  - https://github.com/Azarattum/CRStore /MIT/202402/ts
+    - Conflict-free replicated store.
+    - CRDTs powered by cr-sqlite
+    - First class tRPC support
+    - Automagical schema using superstruct
 
 - FluidFramework /4.2kStar/MIT/202302/ts
   - https://github.com/microsoft/FluidFramework
@@ -193,17 +223,40 @@ modified: 2022-04-05T10:08:25.947Z
   - B2: Two users producing conflicts
   - B3: Many conflicts
   - B4: Real-world editing dataset
+  - https://github.com/zxch3n/crdt-bench /202401/js
+    - A collection of reproducible benchmarks
+
+- https://github.com/zxch3n/crdt-bench-native /202311/rust
+  - Native CRDT benchmark
 
 - https://github.com/josephg/editing-traces
   - This repository contains some editing histories from real world character-by-character editing traces
-  - The goal of this repository is to provide some standard benchmarks that we can use to compare the performance of rope libraries and various OT / CRDT implementations.
+  - The goal of this repository is to provide some standard benchmarks that we can use to compare the performance of rope libraries and various OT/CRDT implementations.
 
-- https://github.com/streamich/json-joy/tree/master/src/json-crdt
+- https://github.com/streamich/json-joy/tree/master/src/json-crdt /apache2/ts
   - json-crdt中提供了rga、lww-object
   - [Block-wise RGA algorithm implementation for json-joy_202305](https://jsonjoy.com/blog/performant-rga-list-crdt-algorithm)
   - 🆚️ [Benchmarking json-joy against Automerge v2 and Y-libraries_202305](https://jsonjoy.com/blog/list-crdt-benchmarks)
   - [Fuzz Testing RGA CRDT_202306](https://jsonjoy.com/blog/fuzz-testing-rga-crdt)
     - using fuzz testing you can make sure your collaborative editing algorithms are 100% correct
+    - https://github.com/TeemuKoivisto/crdt-nodejs-editing-trace-benchmarks /测试复现
+  - https://github.com/streamich/clickable-json
+    - https://streamich.github.io/clickable-json/
+    - Interactive JSON and JSON CRDT editor and viewer.
+  - https://github.com/streamich/json-crdt-traces
+    - JSON CRDT document sample change traces in JSON CRDT Patch format, for testing and benchmarking
+  - [JSON CRDT file format _202311](https://github.com/streamich/json-joy/issues/403)
+    - Maybe both approaches could be supported, where the big file approach is simply a concatenation of the individual files
+  - [JSON CRDT 2.0 _202212](https://github.com/streamich/json-joy/issues/228)
+  - [Roadmap to synchronizing multiple replicas or undo/redo support _202401](https://github.com/streamich/json-joy/issues/503)
+    - Is there a way to convert JSON-CRDT patches to RFC6902 patches?
+    - The complexity here is that the PatchLog currently is all in memory, however, in a real application one could imagine that the patches are stored on disk. 
+    - Lots of UI debugging tools will be released shortly
+    - major feature for the next few months will be implementation of Peritext rich-text algorithm, it will work on top of Quill editor and eventually a custom CRDT-native rich-text UI will be developed.
+  - https://github.com/streamich/collaborative-input /202402/ts
+    - https://streamich.github.io/collaborative-input/
+    - This package provides bindings for `<input>` and `<textarea>` elements to JSON CRDT data structures. 
+    - It allows multiple users to edit the `<input>` and `<textarea>` elements simultaneously.
 
 - https://github.com/inkandswitch/peritext /MIT/ts
   - https://www.inkandswitch.com/peritext/
@@ -232,6 +285,14 @@ modified: 2022-04-05T10:08:25.947Z
   - [Feat richtext ](https://github.com/loro-dev/crdt-richtext/pull/1)
     - This PR implements an RGA CRDT + Peritext. It's also optimized for high speed with a relatively low memory footprint.
     - Under the hood, it uses the generic-btree crate to store the text content, the text ops, and the Peritext range anchors in a unified way.
+- https://github.com/loro-dev/crdt-list /202311/rust
+  - This repo contains the implementation of the following list crdt algorithm: Fugue, Yata, Woot, Rga
+- https://github.com/mweidner037/fugue /202311/ts
+  - Code and benchmarks for the paper "The Art of the Fugue: Minimizing Interleaving in Collaborative Text Editing"
+  - Tree-Fugue Simple, List-Fugue Simple
+- https://github.com/streamich/reference-frh /202311/ts
+  - This codebase contains a sequence-FRH implementation based around the FUGUE sequence CRDT.
+  - Conceptually, rather than storing a list of transformed operations (OT), or storing a list of intermediate ordered items (CRDTs), FRHs store an append-only, immutable list of original operations. 
 
 - https://github.com/loro-dev/loro /MIT/202311/rust
   - https://loro.dev/
@@ -275,8 +336,10 @@ modified: 2022-04-05T10:08:25.947Z
   - https://twitter.com/matthewweidner3/status/1444475869121110017
     - Collabs is directly inspired by Automerge and Yjs, and uses similar techniques (network-agnostic CRDTs).  
     - The main difference is its API: we try to mimic a non-replicated collections library, with flexibility, composition tools, and strong typing.
+  - https://github.com/composablesys/collabs-template-crdt
+    - Template for a library exporting a custom Collabs CRDT
 
-- https://github.com/TopGunBuild/topgun /ts/gundb
+- https://github.com/TopGunBuild/topgun /MIT/202312/ts/gundb/inactive
   - https://gun.eco/docs/
   - Reimplementation of gunDB in TypeScript
   - A graph data synchronisation engine for building realtime, offline-first, secure and scalable applications.
@@ -301,6 +364,13 @@ modified: 2022-04-05T10:08:25.947Z
   - PartyKit is extremely unopinionated. It's essentially lightweight javascript server, that launches fast and autoscales 
   - Most people seem to run yjs in PartyKit, but you can also run automerge or even Replicache
   - [automerge backend](https://github.com/partykit/partykit/issues/97)
+
+- https://github.com/pluv-io/pluv /MIT/ts/yjs
+  - https://pluv.io/
+  - allows you to build real-time collaborate features with a fully end-to-end type-safe api.
+  - Inspired by trpc, Built with yjs
+  - @pluv/io, @pluv/client, @pluv/crdt-yjs and @pluv/react all require yjs as a peer dependency.
+  - https://github.com/pluv-io/pluv-example
 
 - https://github.com/drifting-in-space/driftdb /MIT/rust/ts
   - https://driftdb.com/
@@ -366,7 +436,7 @@ modified: 2022-04-05T10:08:25.947Z
     - Each Object has an associated ID which is globally unique, and a set of property-value pairs. 
     - Parent-Child relationships are maintained as a link from the child to its parent.
 
-- https://github.com/andykswong/mithic /MIT/202402/ts
+- https://github.com/andykswong/mithic /MIT/202402/ts/lseq
   - https://andykswong.github.io/mithic/
   - Modular library for real-time isomorphic JavaScript applications
   - mithic provides the building blocks for creating real-time, offline-first client-server or decentralized applications, using CQRS architecture with CRDT eventsourcing for storage and data replication.
@@ -397,6 +467,16 @@ modified: 2022-04-05T10:08:25.947Z
   - https://twitter.com/kylemathews/status/1723006206032101875
     - trpc-crdt includes integrations for tRPC for Yjs and ElectricSQL w/ two more almost finished for Automerge and Jazz.
     - The big advantage of this approach is that the server can write directly to the CRDT data so all server mutations get replicated immediately to clients.
+
+- https://github.com/cachapa/crdt /apache2/202309/dart
+  - Dart implementation of Conflict-free Replicated Data Types (CRDTs).
+  - This project is heavily influenced by James Long's talk CRTDs for Mortals 
+  - includes a Dart-native implementation of Hybrid Local Clocks (HLC) 
+  - The `Crdt` class implements CRDT conflict resolution and serves as a storage-agnostic interface for specific implementations. Als included with this package is `MapCrdt`, an ephemeral implementation using Dart HashMaps.
+  - https://github.com/cachapa/crdt_sync /dart
+  - https://github.com/cachapa/sql_crdt /dart
+  - https://github.com/cachapa/sqlite_crdt /dart
+  - https://github.com/cachapa/postgres_crdt /dart
 # crdt-rewrite
 - https://github.com/josephg/crdt-examples /js
   - CRDT examples from a DWEB talk
@@ -410,17 +490,26 @@ modified: 2022-04-05T10:08:25.947Z
   - This is a demo app used for my dotJS 2019 talk "CRDTs for Mortals(普通人)"
   - It contains a full implementation of hybrid logical clocks to generate timestamp for causal ordering of messages. 
   - Using these timestamps, CRDTs can be easily used to change local data that also syncs to multiple devices. 
-  - This also contains an implementation of a merkle tree(默克尔树) to check consistency of the data to make sure all clients are in sync.
+  - This also contains an implementation of a merkle tree to check consistency of the data to make sure all clients are in sync.
   - It provides a server to store and retrieve messages, so that clients don't have to connect peer-to-peer.
   - Server: 132 lines of JS
   - Client: 639 lines of JS
-- https://github.com/daaku/kombat /ts/hlc+merkle-tree
+- https://github.com/clintharris/IDBSideSync /8Star/MIT/202104/ts
+  - https://idbsidesync-todo-demo.vercel.app/
+  - IDBSideSync is an experimental JavaScript library that makes it possible to sync browser-based IndexedDB databases using CRDT concepts
+- https://github.com/daaku/kombat /MIT/202311/ts/hlc+merkle-tree
   - Infrastructure for CRDT powered applications.
   - Timestamp for Hybrid Logical Clocks.
   - https://github.com/daaku/kombat-indexed-db
     - Kombat storage implemented using IndexedDB.
   - https://github.com/daaku/kombat-firestore
     - Kombat storage implemented using Firebase Firestore Database.
+- https://github.com/jonstuebe/crdt /202401/ts
+  - HLC based CRDT system
+- https://github.com/awmuncy/sqlite-crdt /202308/js/inactive
+  - simple library for creating CRDTs using SQLite, including persistent browser support
+  - inspired, and much ripped off from, James Long's CRDT Example App
+  - 依赖sql.js、express、absurd-sql
 
 - https://github.com/ipfs-shipyard/peer-crdt /js/deprecated
   - collection of operation-based CRDTs that are meant to work over a p2p network.
@@ -439,7 +528,14 @@ modified: 2022-04-05T10:08:25.947Z
   - https://github.com/eugene-eeo/crunch-crdt-benchmarks
   - https://github.com/jimpick/delta-crdt-ordering-demo
   - https://github.com/jimpick/causual-playground
-- https://github.com/rust-crdt/rust-crdt /rust/只提供了基础类型
+
+- https://github.com/widmogrod/js-crdt /MIT/201711/ts
+  - explore applications of data structure called CRDT in context of real time collaboration 
+  - https://github.com/widmogrod/notepad-app /201710/ts
+    - Collaborative notepad app (demo).
+    - 依赖quill
+
+- https://github.com/rust-crdt/rust-crdt /apache2/202402/rust
   - a collection of well-tested, serializable CRDTs for Rust
   - A family of CRDT's supporting both State and Op based replication.
   - List is based on the LSEQ and LOGOOT
@@ -447,7 +543,9 @@ modified: 2022-04-05T10:08:25.947Z
     - Yep, Map is indeed recursive, but it has the limitation that every value in the map is of the same type so it does not behave like a JSON CRDT where values may have different structures if that's what your goal is.
     - you don't need an RGA for strings, just a LWW register. In the Riak DT map (and other proprietary JSON like CRDTs I have worked on). Strings have been LWW registers. **If you think of CRDTs as containers (Array, Map, Set) and values (Counter, Register) then you can make a JSON like thing with those alone (you don't even need the Set)**.
     - I still wonder how the ops should be structured though. I can't see a way to have document level CRDT ops that would not store some kind of a path to the target inner field. Since ops are serializable, that path must be serializable too. AFAIK, ditto did it using JSON pointers and I still see no better way to do that.
-- https://github.com/JMLX42/rust-delta-crdts
+- https://github.com/dougfort/crdt-genome /MIT/202112/rust/inactive
+  - Experiments with Rust CRDTs using Tokio web application framework Axum.
+- https://github.com/JMLX42/rust-delta-crdts /rust
   - Delta state-based CRDTs in Rust.
 
 - https://github.com/siliconjungle/delta-crdt /单文件
@@ -464,7 +562,7 @@ modified: 2022-04-05T10:08:25.947Z
   - When we receive operations from the server, apply those operations to our WString instance and apply them to the text in #collab-doc.
   - WOOT, as an approach, gets really slow unless you implement tombstone garbage collection (aka getting rid of text that users have deleted) which can only happen when everyone has disconnected from a document.
 
-- https://github.com/phedkvist/crdt-sequence
+- https://github.com/phedkvist/crdt-sequence /201906/ts
   - CRDT Sequence is a very basic collaborative text editing implementation
   - 自己实现了 history、activeUsers
   - quill的功能使用得很少
@@ -503,12 +601,18 @@ modified: 2022-04-05T10:08:25.947Z
   - 初次连接发送所有changes
   - 后续只发送单次change的msg
 
+- https://github.com/aayushmau5/paperboat /202310/ts
+  - (WIP) P2P WebRTC based real-time collaborative text editor using a CRDT
+
 ## logoot
 
 - https://github.com/mkdynamic/logoot
   - 👉🏻 包含服务端，编辑器使用textarea
   - Collaborative text editor using Logoot CRDT algorithm. 
   - Adds an informal versioning scheme based on state vectors to ensure casual ordering of operations is maintained.
+
+- https://github.com/nybblr/logoot /201911/js
+  - Test-driven implementation of the Logoot CRDT, with LSEQ strategy and a healthy distaste for mutation.
 
 - https://github.com/Martinn1996/Fonto-CRDT /202104/js
   - Bachelor Project: CRDT for Fonto
@@ -551,8 +655,10 @@ modified: 2022-04-05T10:08:25.947Z
   - [yjs-minimal.ts](https://gist.github.com/josephg/dcb1bce2ceb0f0b50ffcac0245a55907)
   - [yjs_testcase.ts](https://gist.github.com/josephg/88c006724435a61afaec5ff3f1bacd87)
 
-- https://github.com/josephg/reference-crdts /ts
+- https://github.com/josephg/reference-crdts /202312/ts
   - This repository contains simple proof-of-concept reference implementations of yjs, automerge and sync9's list types - all implemented in the same codebase. 
+- https://github.com/dev-badace/textrdt /202304/ts
+  - a basic implementation of a text crdt based on the yata this is not meant to be used in production
 
 - https://github.com/jaredly/local-first/tree/master/packages/text-crdt
   - This algorithm is largely based on RGA, with support for rich-text formatting added, along with a number of optimizations.
@@ -603,6 +709,11 @@ modified: 2022-04-05T10:08:25.947Z
     - A similar approach was termed "hybrid timestamps"
     - this is logical clock that tries to be as close to wall clock as possible
 
+- https://github.com/imns/TSCRDT /202402/ts
+  - a project I've developed to dive deeper into the internal workings of CRDTs.
+  - 只实现了简单类型，包括Lamport/vector/hlc, lww, PNCounter
+  - https://github.com/Jumaruba/crdt-sample /202310/rust/python/简单类型
+
 - https://github.com/eugene-eeo/crunch-crdt-benchmarks /js
   - some crdt benchmarks
   - 比较了woot/logoot/lseq/rga/treedoc
@@ -615,12 +726,15 @@ modified: 2022-04-05T10:08:25.947Z
 - https://github.com/dominictarr/crdt /MIT/201403/js
   - Commutative Replicated Data Types for easy collaborative/distributed systems.
   - 提供了简单和复杂多个示例
+  - https://github.com/jacobbubu/crdt-pull /202007/ts
+    - Rewritten crdt in TypeScript and work with scuttlebutt-pull
   - https://github.com/adelriosantiago/easy-crdt
     - up-to-date real-time collaborative editor sample based on dominictarr/crdt
 - https://github.com/liaujianjie/crdt
   - I will be using this repo to experiment with CvRDTs
+
 - more-crdt-impl
-  - https://github.com/streaver/crdt-examples
+  - https://github.com/streaver/crdt-examples /202212/ts/inactive
 
 - https://github.com/wangdashuaihenshuai/crdt-edit /201810/vue/js
   - [我自己从零实现的一个文本文档的协同编辑demo，上面是输入框，下面是数据结构的可视化](https://zhuanlan.zhihu.com/p/48229762)
@@ -684,7 +798,7 @@ modified: 2022-04-05T10:08:25.947Z
   - KSeq is an operations-based, continuous sequence CRDT based on the Logoot and LSEQ systems.
   - Designed for use in collaborative editors, it allows various contributors to concurrently alter the sequence, while preserving both data and intent.
 
-- https://github.com/Timothy-Harianja/CRDT-Collaboration-App
+- https://github.com/Timothy-Harianja/CRDT-Collaboration-App /202210/ts/inactive
   - This project is aimed to experiment on the capabilities of CRDT and OT. 
   - One of the practical uses out these concepts is offline collaboration feature.
   - 依赖automerge
@@ -836,14 +950,11 @@ modified: 2022-04-05T10:08:25.947Z
 - https://github.com/nybblr/LSEQTree
   - provide an implementation of a CRDT-based array  with an underlying exponential tree and the allocation strategy LSeq
 
-- https://github.com/widmogrod/js-crdt /ts/201711
-  - explore applications of data structure called CRDT in context of real time collaboration 
-  - https://github.com/widmogrod/notepad-app
-    - Collaborative notepad app (demo).
-    - 依赖quill
-
 - https://github.com/MatherLyn/co-editing-engine
   - A co-editing engine based on crdt written in JavaScript.
+
+- https://github.com/dev-badace/live-text-crdt /202307/ts
+  - A Text Crdt implementation on top of the liveblocks platform, and tiptap (prosemirror) text editor
 
 ## rust
 
@@ -868,8 +979,9 @@ modified: 2022-04-05T10:08:25.947Z
 - https://github.com/dominwong4/LWW-Element-Dictionary
   - state-based
 
-- lww+map
-  - https://github.com/organicdesign/crdt-map-synchronizer
+- https://github.com/organicdesign/crdt-map-synchronizer /202302/ts
+  - A synchronizer for a CRDT Map
+  - There are a number of things that could improve this synchronizer to increase it's efficiency:
 
 - https://github.com/siliconjungle/last-writer-wins-registers
   - An example with a few different last-writer-wins registers.
@@ -968,12 +1080,20 @@ modified: 2022-04-05T10:08:25.947Z
   - Abstraction of clock (e.g. unix timestamp clock or vector clock)
   - Abstraction of data store (e.g. in memory via Map or object literal, cookie, local storage, database, etc.)
 
-- https://github.com/crdteam/causal-tree-ts
+- https://github.com/crdteam/causal-tree-ts /apache2/202310/ts
   - causal tree replicated data type (RDT) in Typescript.
+
+- https://github.com/foxbunny/crdt-tree /202304/js
+  - CRDT tree sturcutre for p2p collaboration implemented in JavaScript
 
 - https://github.com/codesandbox/crdt-tree /ts
   - A highly-available move operation for replicated trees and distributed filesystems
-  - https://github.com/maidsafe/crdt_tree /BSD/202210/rust
+- https://github.com/maidsafe/crdt_tree /BSD/202210/rust
+  - aims to be an accurate implementation of the tree crdt algorithm described in the paper
+  - There is a PHP implementation too
+
+- https://github.com/Leeeon233/movable-tree-crdt /202401/rust/js
+  - 提供了 examples + benches
 # crdt-table/spreadsheet/excel
 - https://github.com/Horusiath/crdt-table /5Star/GPLv3/202309/js
   - This is proof of concept for Conflict-free Replicated Data Type representing 2-dimensional table
@@ -1005,17 +1125,13 @@ modified: 2022-04-05T10:08:25.947Z
 - https://github.com/Roffelchen/spreadsheet-crdt /js/yjs
   - /yjs
 
-- https://github.com/fabian-gubler/cellster 
+- https://github.com/fabian-gubler/cellster /GPLv3/202401/python
   - Local-first collaborative spreadsheet editing: Harnessing CRDTs for seamless offline formula merges.
+  - AST-based Formula Representation: Convert and visualize Excel formulas as structured Abstract Syntax Trees.
+  - Tailored CRDT implementations that bring robustness to merging offline formula edits.
 # crdt-utils
-- https://github.com/mweidner037/fugue /ts
-  - Code and benchmarks for the paper "The Art of the Fugue: Minimizing Interleaving in Collaborative Text Editing"
-  - Tree-Fugue Simple, List-Fugue Simple
-
 - https://github.com/danielstaleiny/CRDT-sqlite
   - 依赖 idb
-- https://github.com/awmuncy/sqlite-crdt
-  - 使用sql.js、wasm的示例
 
 - https://github.com/SerenityNotes/naisho
   - an architecture to relay end-to-end encrypted CRDTs over a central service.
@@ -1047,7 +1163,7 @@ modified: 2022-04-05T10:08:25.947Z
 - https://github.com/Haotian-Yang/CRDTree
   - 服务端基于ws
 
-- https://github.com/slashdotted/libmelda /rust
+- https://github.com/slashdotted/libmelda /202308/rust
   - A General Purpose Delta State JSON CRDT
   - Melda natively supports the JSON data format and provides a way to synchronize changes made to arbitrary JSON documents.
   - In the Kibi w/Melda repository you can find a fork of the original Kibi text editor with collaboration features implemented using Melda.
@@ -1061,7 +1177,8 @@ modified: 2022-04-05T10:08:25.947Z
   - It is partition tolerant, highly available and eventually consistent.
   - [Roshi: a CRDT system for timestamped events | SoundCloud Blog _201405](https://developers.soundcloud.com/blog/roshi-a-crdt-system-for-timestamped-events)
 
-- https://github.com/hyoo-ru/crowd.hyoo.ru /ts
+- https://github.com/hyoo-ru/crowd.hyoo.ru /MIT/202312/ts
+  - https://crowd.hyoo.ru/
   - Delta based CRDT with additional abilities.
   - Total Available Real-Time Causal Consistency.
   - Merge result is independent of merge order (except auth units).
@@ -1072,6 +1189,16 @@ modified: 2022-04-05T10:08:25.947Z
   - Simple run-length encoding causal graph library in javascript for operation based CRDTs
   - This is a helper library for operation based CRDTs and similar projects which need to track a causal graph (a graph of changes over time) in a compact and simple way.
   - This project exposes a type (CausalGraph) which stores a run-length encoded DAG (join semi-lattice) of entries
+
+- https://github.com/canadaduane/credt /202307/ts/js
+  - fast web framework that uses a CRDT to sync server and client.
+  - See notepad-app for example app using `js-crdt`.
+
+- https://github.com/alwinphilipjohn/CRDT_IPFS /201906/js
+  - A small implementation of CRDT using IPFS
+
+- https://github.com/broswen/ring /202305/ts
+  - CRDT LWW Register cluster with gossip
 # crdt-db
 - https://github.com/josephg/imsyncing /202311/ts
   - simple local first database built on top of CRDTs currently written in typescript.
@@ -1086,10 +1213,16 @@ modified: 2022-04-05T10:08:25.947Z
   - it is not optimized for a giant data set.
   - Everything gets persisted locally to disk. when changes happen, we rate limit saves to disk every 200ms or so.
 
+- https://github.com/JasonkayZK/slime-db /202311/rust/inactive
+  - A CRDTs based database.
+
+- https://github.com/tancehao/ConstDB /apache2/202305/rust/inactive
+  - A redis-like cache store that implements CRDTs and active-active replications.
+
 - https://github.com/AntidoteDB/antidote /202209/erlang/inactive
   - A planet scale, highly available, transactional database built on CRDT technology
   - [Antidote: CRDT-based distributed database | Hacker News_201712](https://news.ycombinator.com/item?id=15862895)
-# crdt-rust
+# crdt-non-js
 - https://github.com/josephg/diamond-types /rust
   - This repository contains a high performance rust CRDT for text editing. 
   - This is a special data type which supports concurrent editing of lists or strings (text documents) by multiple users in a P2P network without needing a centralized server.
@@ -1101,6 +1234,10 @@ modified: 2022-04-05T10:08:25.947Z
     - Yjs uses a different CRDT algorithm than RGA. (It uses YATA)
     - `left` in YATA is semantically equivalent to the `parent` field in Yjs. 
     - Yjs has no `seq` field. RGA has no `right` field.
+
+- https://github.com/federico-terzi/crdt-experiments /MIT/202402/rust
+  - An experimental, high-performance CRDT JSON data structure in Rust
+  - [Understanding CRDTs: A Gentle Introduction (Chapter 1) - Federico Terzi _202401](https://federicoterzi.com/blog/understanding-crdts-a-gentle-introduction-chapter-1/)
 
 - https://github.com/RhizomeDB/rs-rhizome /MIT/202308/rust/inactive
   - https://fission.codes/ecosystem/rhizomedb/
@@ -1119,8 +1256,15 @@ modified: 2022-04-05T10:08:25.947Z
   - a simple Reliable Causal Broadcast (RCB) protocol written in Rust that implements several CmRDTs.
   - The operations are commutative. However, they are not necessarily idempotent. The communications infrastructure must therefore ensure that all operations on a replica are delivered to the other replicas, without duplication, but in any order.
 
-- https://github.com/dougfort/crdt-genome /MIT/202112/rust
-  - Experiments with Rust CRDTs using Tokio web application framework Axum.
+- https://github.com/shinbunbun/merkle-crdt /202402/rust
+  - merkle-crdt
+
+- https://github.com/hankug1234/crdt-implement-project /202310/java
+  - implement crdt application as java
+- https://github.com/an1310/crdt
+  - Base implementation of Java 7-compliant CRDTs
+- https://github.com/ajantis/java-crdt /MIT/202306/java
+  - Collection of common CRDTs for Java.
 # apps-examples
 - https://github.com/josephg/statecraft /ISC/201911/ts/inactive
   - Statecraft is a protocol and set of tools for interacting with data that changes over time. 
@@ -1154,7 +1298,7 @@ modified: 2022-04-05T10:08:25.947Z
   - local-first-web/state: automerge
   - CRDX
 
-- https://github.com/HerbCaudill/crdx
+- https://github.com/HerbCaudill/crdx /202303/ts/inactive
   - CRDX is a state container for JavaScript apps.
   - It is also an operation-based CRDT. Each operation in the CRDT is signed and encrypted. 
   - This library started life as the internal data store for @localfirst/auth
@@ -1173,7 +1317,7 @@ modified: 2022-04-05T10:08:25.947Z
   - implement CRDT helpers for reducers to easily implement complex shared data types.
   - `Timestamps are logical (not wall-clock based) and are in the format <logical timestamp>-<source>`.
 
-- https://github.com/hldb/welo /ts
+- https://github.com/hldb/welo /MIT/202402/ts
   - peer-to-peer, collaborative states using Merkle-CRDTs
   - HLDB implementation in Typescript
   - [Welo Version 3 tasks-list](https://github.com/hldb/welo/issues/102)
@@ -1188,12 +1332,6 @@ modified: 2022-04-05T10:08:25.947Z
   - A python library for CRDTs (Conflict-free Replicated Data types)
 - https://github.com/junjizhi/lww-element-set
   - Last-Writer-Wins Element Set(lww-set) data structure implemented in Python
-
-- https://github.com/aphrodite-sh/cr-sqlite
-  - Convergent, Replicated SQLite. Multi-writer and CRDT support for SQLite
-  - This project implements CRDTs and CRRs in SQLite, allowing databases that share a common schema to merge their state together.
-  - crsqlite works by adding metadata tables and triggers around your existing database schema. 
-  - crsqlite only keeps an extra int per column and a clock per row.
 
 - https://github.com/orda-io/orda
   - Orda: A client and server written in Go. CRDT-based data synchronization supporting document database.
@@ -1237,3 +1375,7 @@ modified: 2022-04-05T10:08:25.947Z
 
 - https://github.com/lecocococo/peer-to-peer-connection-test
   - Using peerjs, A Collaborative Text Editor using CRDT
+
+- https://github.com/CoCreate-app/CoCreate-crdt /AGPLv3/202402/js
+  - A headless vinilla javascript micro component. Easy configuration using HTML5 attributes or Javscript api.
+  - 不清不楚

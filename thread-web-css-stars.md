@@ -18,7 +18,9 @@ modified: 2021-07-25T12:49:10.410Z
 
 - ## 
 
-- ## 
+- ## height and width precede inset (or trbl) in CSS; 
+- https://twitter.com/steveruizok/status/1759351789705433163
+  - so if you want to make something full parent size, it's gotta be: `inset: 0px; height: 100%; width: 100%;`
 
 - ## Backdrop blurs are such a silent performance killer. 
 - https://twitter.com/austin_malerba/status/1733921016978583992

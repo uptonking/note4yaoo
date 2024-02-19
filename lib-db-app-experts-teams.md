@@ -38,11 +38,6 @@ modified: 2023-02-02T03:22:07.941Z
   - kappa architecture
   - crdt
 # popular
-- Yingjun Wu /RisingWave
-  - Founder of RisingWave Labs
-  - https://www.zhihu.com/people/yingjunwu
-  - https://yingjunwu.github.io/
-
 - BohuTANG /databend
   - CEO@DatabendCloud
   - https://www.zhihu.com/people/bohutang
@@ -50,6 +45,15 @@ modified: 2023-02-02T03:22:07.941Z
 - wubx /databend
   - Datafuse Labs · Databend 架构师 & 联合创始人
   - https://www.zhihu.com/people/wubx
+
+- xuanwo /databend /opendal
+  - https://note.xuanwo.io/  /使用logseq
+  - OpenDAL旨在帮助用户从各种存储服务中以统一的方式便捷高效访问数据
+
+- Yingjun Wu /RisingWave
+  - Founder of RisingWave Labs
+  - https://www.zhihu.com/people/yingjunwu
+  - https://yingjunwu.github.io/
 
 - 姚维 /tidb
   - https://github.com/winkyao

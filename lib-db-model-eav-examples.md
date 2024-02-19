@@ -30,7 +30,7 @@ modified: 2023-09-25T17:56:50.116Z
   - https://github.com/aspen-cloud/triplit
   - https://triplit.dev/
   - [Triplit Roadmap](https://aspencloud.notion.site/7362bdf6512243fcbdfe03c9d56a5998?v=acd301c4bd3942b9b30a15f636cecd00)
-  - ✨ https://github.com/aspen-cloud/triplit/tree/main/packages/db
+  - 🛢️ https://github.com/aspen-cloud/triplit/tree/main/packages/db
   - 依赖tuple-database、sorted-btree、zod、idb
   - the embedded database that powers Triplit, a complete solution to data persistence, state management, and realtime synchronization for web applications 
   - Built-in storage providers for in-memory, IndexedDB, and Sqlite

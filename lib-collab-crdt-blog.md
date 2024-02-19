@@ -9,7 +9,7 @@ modified: 2022-10-13T08:00:21.260Z
 
 # guide
 
-- ref
+- resources
   - [CRDT Tutorial for Beginners](https://github.com/ljwagerfield/crdt)
   - [arXiv: collaborative editing](https://arxiv.org/search/?query=collaborative+editing&searchtype=all&source=header)
 # [CRDT Survey, Part 1: Introduction - Matthew Weidner](https://mattweidner.com/2023/09/26/crdt-survey-1.html)
@@ -24,16 +24,15 @@ modified: 2022-10-13T08:00:21.260Z
 - Merkle-DAG CRDTs
 - Merkle Search Tree CRDTs
 
-- 
-- 
-- 
-
 - [Trade-offs between Different CRDTs | Hacker News](https://news.ycombinator.com/item?id=38916647)
 # 👥 [CRDTs Turned Inside Out | Hacker News _202401](https://news.ycombinator.com/item?id=39130945)
 
 # 👨🏻‍🏫 [Understanding CRDTs: A Gentle Introduction (Chapter 1) _202401](https://federicoterzi.com/blog/understanding-crdts-a-gentle-introduction-chapter-1/)
 
-- [Understanding CRDTs: A Gentle Introduction | Hacker News](https://news.ycombinator.com/item?id=39092787)
+- https://github.com/federico-terzi/crdt-experiments /MIT/202402/rust
+  - An experimental, high-performance CRDT JSON data structure in Rust
+
+- 👥 [Understanding CRDTs: A Gentle Introduction | Hacker News](https://news.ycombinator.com/item?id=39092787)
 # 👨🏻‍🏫 [A Gentle Introduction to CRDTs – vlcn.io](https://vlcn.io/blog/intro-to-crdts)
 - Last Write - What Can Go Wrong?
   - Error 1: Forgetting to Update the Loser's Timestamp

@@ -145,8 +145,16 @@ modified: 2023-12-12T08:45:31.670Z
 # discuss
 - ## 
 
-- ## ChatGPT网页版从SSE改成Websocket了
+- ## 
+
+- ## 
+
+- ## 🌰 ChatGPT网页版从SSE改成Websocket了 _20240202
 - https://twitter.com/wong2_x/status/1753351893211037994
+
+- https://twitter.com/wong2_x/status/1759403801394794789
+  - 更新：又全部改回SSE了 _20240219
+
 - 1. 对终端用户来说使用感觉基本没有变化。
   - 2. 但从技术角度看, ChatGPT改用Websocket技术与服务器端通信可以提升通信效率, 降低延迟, 且支持性更好。
 - http://pplx.ai 也改成了 Websocket.
@@ -155,6 +163,17 @@ modified: 2023-12-12T08:45:31.670Z
 - 从生命周期来看 Websocket 管理起来更麻烦一些, 但的确建立连接次数会降，也算一个优化吧。工程上提升复杂度，性能上拿到收益。
 - 想问下怎么判断的
   - 浏览器看下Network
+
+- 是两种都在用 我今天还是wss
+- AB Test测试后回滚？
+  - 应该是的
+
+- 对于这种只需要response流式返回的场景，sse就足够了而且架构足够简单，服务端不需要做什么特殊设置（设置一些content-type）就可以了，相反websocket在chatgpt这种场景下有点杀鸡用牛刀了。
+- 是的，ws有状态，维护起来还是麻烦
+- Gradio 4.0 也从ws改成了SSE
+- ws的后端把上下行拧在了一个连接上，增加复杂度，不易解耦。
+  - 对于前端来说sse还是ws其实无所谓。
+- 对这样的场景来说，websocket 太复杂了。
 
 - ## 🆚️ You can use two ways to let web apps talk to each other: polling and webhooks.
 - https://twitter.com/Franc0Fernand0/status/1748620224767701040

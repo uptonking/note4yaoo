@@ -41,10 +41,13 @@ modified: 2022-11-03T04:14:00.563Z
   - It organizes data as an ordered key-value store and employs ACID transactions for all operations. 
   - It is especially well-suited for read/write workloads but also has excellent performance for write-intensive workloads.
 
-- keyv /2kStar/MIT/202211/js
+- keyv /2.4kStar/MIT/202402/ts
   - https://github.com/jaredwray/keyv
+  - https://keyv.org/
   - Simple key-value storage with support for multiple backends
-  - Storage Adapters: etcd, mongodb, redis, sqlite
+  - Storage Adapters: etcd, mongodb, redis, sqlite, pg, mysql
+  - https://github.com/roccomuso/keyv-leveldb /201803/js
+    - LevelDB storage adapter for Keyv.
 
 - https://github.com/engula/engula /apache2/rust/inactive/selectdb成员项目
   - https://engula.io/
@@ -133,7 +136,14 @@ modified: 2022-11-03T04:14:00.563Z
 
 - https://github.com/huan/flash-store /apache2/202203/ts/inactive
   - FlashStore is Key-Value persistent storage with easy to use ES6 Map-like API(both Async and Sync support), powered by LevelDB and TypeScript.
-  - Supported Backend: LevelDB,LevelDB,SnapDB,RocksDB
+  - Supported Backend: LevelDB, LevelDB, SnapDB, RocksDB
+
+- https://github.com/web3-storage/pail /MIT/202402/js/ts
+  - DAG based key value store. 
+  - Sharded DAG that minimises traversals and work to build shards.
+  - 依赖@ipld/car、@ipld/dag-cbor、cborg、sade
+
+
 # leveldb-like
 - https://github.com/Level/bench
   - Benchmark `abstract-level` databases. 

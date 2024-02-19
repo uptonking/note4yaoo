@@ -209,7 +209,7 @@ modified: 2023-10-28T12:53:48.869Z
 - 收敛是很好的性质，但收敛到的状态是否合意（desirable），还需要人为的判断，这一点对于 CRDTs 同样适用。
   - 相比 OT，CRDT 的合并是去中心化的，无需通过 server，但同样需要保证合并是合意的。
 
-## CRDTs: Interleaving anomalies(异常事物)
+## 🐛 Interleaving anomalies(异常事物)
 
 - 方案一：给新插入的字母分配一个位于[0, 1]的数字。
   - 这种方法确实能保证收敛，但下面这种情况明显不是合意的收敛
@@ -219,7 +219,7 @@ modified: 2023-10-28T12:53:48.869Z
   - 用户 2 输入的 Alice 可能被插入到用户 1 输入的 dear 和 reader 之间，原因在于 RGA 使用了一种基于时间戳的列表数据结构。
   - 根据 RGA 算法，用户的节点上会形成一个如下的树状链表，每个节点都指向输入时该位置所位于的节点
 
-## CRDTs: Moving list items
+## 🐛 Moving list items
 
 - 许多 CRDTs 都实现了 List 数据结构，但不支持 move 操作。
   - 用户可以把 move 拆解为 delete-then-insert。
@@ -227,12 +227,12 @@ modified: 2023-10-28T12:53:48.869Z
   - 需要找到一个合适的数据结构来表达 pos，让 pos 具有 last writes win 的性质
   - 每个 list item 都要有一个 LWWRegister，并把它们放在一个 Add-Wins Set (AWSet) 中
 
-## CRDTs: Moving subtrees of a tree
+## 🐛 Moving subtrees of a tree
 
 - 在一棵树内移动子树也是个很 tricky 的问题，但是这样的场景比较常见，例如文件系统就是一棵树。
 - 一个可行的解决办法是引入操作的时间戳。
 
-## CRDTs: Reducing metadata overhead
+## 🐛 Reducing metadata overhead
 
 - 为了完成 undo 和 redo，CRDT 需要存储很大的 metadata
 - Martin 开始介绍 automerge 项目，他的 proposal 和 PR#253 使用 columnar encoding 的思路，使得 CRDT 的 overhead 变得很小。

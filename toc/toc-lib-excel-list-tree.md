@@ -534,9 +534,3 @@ modified: 2022-08-21T10:02:41.845Z
 - https://github.com/imsnif/nmtree
   - Get a (flat) tree representation of the modules in your node_modules folder
 
-- https://github.com/HannesOberreiter/btree_server
-  - API Server for b.tree Beekeeping Application. Node.js and Objections.js
-  - Written in typescript build with nodejs, express, knex.js and objections.js.
-  - https://github.com/HannesOberreiter/btree_database
-    - The maria folder will be our local volume for the database
-    - The redis folder will be our local volume for the redis database dumps

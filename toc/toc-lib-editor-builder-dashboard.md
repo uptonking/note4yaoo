@@ -527,6 +527,10 @@ modified: 2021-01-08T11:48:16.590Z
 - https://github.com/androidneha/mern-admin-panel
   - Admin-panel using ReactJs, ExpressJs, NodeJs, MongoDB and Bootstrap
   - 样式陈旧
+
+- https://github.com/CoCreate-app/CoCreate-dashboard /202311/js/单文件
+  - A simple dashboard component in vanilla javascript.
+  - 依赖CoCreate.js
 # draggable layout
 - gridstack.js /3.6kStar/MIT/202101/ts
   - https://github.com/gridstack/gridstack.js

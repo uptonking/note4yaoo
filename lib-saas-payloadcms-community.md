@@ -92,7 +92,7 @@ modified: 2023-12-15T17:05:49.576Z
 # discuss-feat-version-history
 - ## 
 
-- ## [Roadmap: Revision History · payloadcms/payload](https://github.com/payloadcms/payload/discussions/292)
+- ## [Roadmap: Revision History](https://github.com/payloadcms/payload/discussions/292)
 - This is now released in 0.15.0_20220317
 
 - i have one suggestion can we have an extra field in versions to track what triggered the version creation, like where we can add a note ?
@@ -102,7 +102,7 @@ modified: 2023-12-15T17:05:49.576Z
 - Versions
   - Automatically maintain a history of changes to any given collection document or global, including "diff" views and ways to restore to specific versions
 - Drafts
-  - Full system that supports draft / published documents.
+  - Full system that supports draft/published documents.
 - Autosave
   - Opt-in pattern for autosaving drafts of documents as they are edited, with control over manually publishing changes.
 

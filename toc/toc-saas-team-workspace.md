@@ -19,6 +19,7 @@ modified: 2023-02-07T17:38:05.336Z
   - jira, trello, linear
   - focalboard, nocodb
   - 可以从主流产品的issues/discussions里面找替代品
+  - 参考github，实现 repo + issues-forum + gitter-im + proj-mgmt + pr + cicd
   - [10 Best Open Source Trello Alternatives](https://rigorousthemes.com/blog/best-open-source-trello-alternatives/)
 # popular
 - growi /1.2kStar/MIT/202311/ts/remark

@@ -32,7 +32,7 @@ modified: 2023-08-29T10:12:22.345Z
     - A node adapter for the fs-db mixin for js-git. This enables access to Git repositories on the filesystem using Node.js.
   - https://github.com/creationix/js-github
     - An implementation of the js-git interface that mounts a live github repo.
-- https://github.com/maryrosecook/gitlet /js
+- https://github.com/maryrosecook/gitlet /MIT/201504/js
   - http://gitlet.maryrosecook.com/
   - http://gitlet.maryrosecook.com/docs/gitlet.html
   - I can only understand something by implementing it. So, I wrote Gitlet, my own version of Git
@@ -59,16 +59,26 @@ modified: 2023-08-29T10:12:22.345Z
   - gql-db is an SQL database server with version control integrated into the database itself. 
   - It's written in Rust and uses Protocol Buffers/gRPC for communication
   - We've also implemented a UI for the database server, which can be found at: GQL-Project/gql_client.
-
-
 # git-like
-- https://github.com/GerritCodeReview/jgit /EDL(BSD)/java
+- https://github.com/GerritCodeReview/jgit /EDL(BSD)/202310/java
   - https://eclipse.dev/jgit/
   - An implementation of the Git version control system in pure Java.
   - JGit 6.0 and newer requires at least Java 11. Older versions require at least Java 1.8.
   - Native symbolic links are supported, provided the file system supports them. 
   - For Windows you must use a non-administrator account and have the SeCreateSymbolicLinkPrivilege.
   - JGit can use JDBC, HBase, Cassandra, Bigtable and more and it's thread safe.
+
+- https://github.com/gitblit-org/gitblit /apache2/202311/java
+  - http://gitblit.com/
+  - pure Java Git solution for managing, viewing, and serving Git repositories. 
+  - It can serve repositories over the GIT, HTTP, and SSH transports; 
+  - it can authenticate against multiple providers; 
+  - Gitblit GO is an integrated, single-stack solution based on Jetty.
+  - Gitblit WAR is what you should download if you already have a servlet container available that you wish to use
+  - JGit 4.5 release supports GitLFS, this could allow mirroring of repositories using LFS and provide a means for handling LFS files during federation requests.
+  - [Support for partial clones? /未实现 _202104](https://github.com/gitblit-org/gitblit/issues/1365)
+    - currently partial cloning is not supported.
+    - Gitblit uses JGit underneath. I am not sure, but I think right now JGit does not have support for it, at least not fully.
 
 - https://github.com/jelmer/dulwich /python
   - Pure-Python Git implementation
@@ -157,16 +167,14 @@ modified: 2023-08-29T10:12:22.345Z
   - 依赖gorm、xorm、tablewriter
   - Access repositories via SSH, HTTP and HTTPS protocols.
   - Rich database backend, including PostgreSQL, MySQL, SQLite3 and TiDB.
+  - https://github.com/gogs/git-module /MIT/202210/go
+    - a Go module for Git access through shell commands
 
 - https://github.com/go-gitea/gitea /40.7kStar/MIT/202402/go
   - https://about.gitea.com/
   - Painless self-hosted all-in-one software development service, including Git hosting, code review, team collaboration, package registry and CI/CD
   - forked from Gogs since November of 2016, but a lot has changed
-
-- https://github.com/theonedev/onedev /MIT/202401/java
-  - https://onedev.io/
-  - Self-hosted Git Server with CI/CD and Kanban
-  - We develop OneDev at https://code.onedev.io/ for sake of dogfooding. 
+  - [Gitea hosted Gitea /未实现 _201702](https://github.com/go-gitea/gitea/issues/1029)
 
 - https://codeberg.org/forgejo/forgejo /go
   - https://forgejo.org/
@@ -175,6 +183,16 @@ modified: 2023-08-29T10:12:22.345Z
   - [Codeberg: A GitHub alternative from Europe | Hacker News _202210](https://news.ycombinator.com/item?id=33233360)
     - Codeberg is a fork of Gitea
   - https://codeberg.org/Codeberg/forgejo
+
+- https://github.com/harness/gitness /apache2/202402/go/ts
+  - https://gitness.com/
+  - Gitness is an Open Source developer platform with Source Control management, Continuous Integration and Continuous Delivery.
+  - It is largely based on the existing Drone repository, but for Git capabilities we used the Gitea fork of https://github.com/gogs/git-module
+
+- https://github.com/theonedev/onedev /MIT/202401/java
+  - https://onedev.io/
+  - Self-hosted Git Server with CI/CD and Kanban
+  - We develop OneDev at https://code.onedev.io/ for sake of dogfooding.
 
 - https://github.com/mellowagain/gitarena /MIT/202306/rust
   - Software development platform with built-in vcs, issue tracking and code review
@@ -243,10 +261,17 @@ modified: 2023-08-29T10:12:22.345Z
   - Go to `http://localhost:3000/HEAD/path/to/file.html` to view a file from the source repository. You can replace HEAD with a specific commit version, or with short names and aliases for commits such as "0ad4156" or "HEAD~1".
 # apps-by-git
 - https://github.com/w4/rgit /public/202402/rust
+  - https://git.inept.dev/
   - A gitweb/cgit-like interface for the modern age. 
   - Written in Rust using Axum, git2, Askama and RocksDB.
   - On-Demand Loading: Files, trees, and diffs are loaded using git2 directly upon request. A small in-memory cache is included for rendered READMEs and diffs, enhancing performance.
   - RocksDB is used to store all metadata about a repository, including commits, branches, and tags.
+- https://github.com/yoannfleurydev/gitweb /apache2/202106/rust
+  - Open the current remote repository in your browser
+  - gitweb is a command line interface I created mainly to learn Rust.
+- https://github.com/TooTallNate/node-gitweb /201302/js
+  - Directly invoke and serve GitWeb through NodeJS.
+  - This module uses `node-cgi` to invoke the` gitweb.cgi` perl file.
 
 - https://github.com/NostrGit/NostrGit /AGPLv3/202304/ts/inactive
   - https://nostrgit.com/

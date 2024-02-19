@@ -226,11 +226,6 @@ modified: 2020-12-28T12:24:09.275Z
   - 前端依赖vue3、tinymce5、p-queue、apexcharts
   - [Block Editor_202105](https://github.com/directus/directus/discussions/5776)
     - [已实现 Move in block editor exclusive extension](https://github.com/directus/directus/pull/18525)
-  - [[RFC] Directus Offline First SDK_202303](https://github.com/directus/directus/discussions/17808)
-    - I think RxDB is an excellent choice for responsive offline-first applications. During my initial research I found multiple points, why I wouldn't want to use it
-      - It ships a whole db with 45kb gziped
-      - Interfacing with IndexedDB is via a commercial plugin
-      - I want to interface with any HTTP endpoint and not rely on GraphQL or other demanding server side requirements
 
 - webstudio-designer /172Star/MIT>AGPLv3/202212/ts
   - https://github.com/webstudio-is/webstudio-designer

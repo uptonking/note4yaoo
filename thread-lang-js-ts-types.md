@@ -12,7 +12,37 @@ modified: 2021-08-05T04:31:02.298Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 🆚️ two choices for how you write the type.
+- https://twitter.com/mattpocockuk/status/1759540590025351234
+  - Either DECLARE the type, then use it to type the value.
+  - Or DERIVE the type from the value.
+
+- I talked about this with @colinhacks (Zod creator) a couple or so weeks ago
+  - I build TypeScript code for teams that want to ship SDKs for their APIs but don't necessarily use TypeScript. 
+  - For those two groups statically-defined types are gold. Being able to jump to definition in your editor and being able to see the types while browsing repos on GitHub goes a long way.
+
+- Declare. Code is for humans. Deriving is not easier on humans when wanting/needing to track down specific types. I want easily walkable types.
+
+- I prefer declaring in most cases, except those when it is better to define something ‘as const’, in which case it isn’t deriving too. 
+  - Deriving is definitely more compute heavy than declaring, which on huge codebases shows up.
+- In a larger codebase, or when working with a larger team, I would declare rather than derive. A declared type gives the next person coming in to make a change a better understanding of the original intentions.
+
+- Definitely define the type first. It allows me to define the business rules or domain model before starting any implementation and decoupled from anything. Which Imho should be how ppl code.
+
+- Prefer the first, as I find they easier to read and also prevents me from accidentally changing the type. The secret and best third option is naturally to declare it using Zod
+
+- I prefer the DECLARE approach but I would use `satisfies` when creating the record, has better DX in IDEs that I've used
+
+- Declare. Let your types enforce the shape of data. 
+  - Otherwise too easy to change data in a way you didn't intend and now you've also erroneously affected the type which may be used elsewhere.
+
+- I think I prefer deriving the type. Something just feels better about the type coming from the underlying runtime code than the other way around
+
+- Depends, but the second one feels more flexible. I’d rather write JavaScript first and use TS to enhance my coding experience, not the other way around.
+
+- I prefer a single source of truth, so #2
+
+- Library: declare; Application: infer
 
 - ## Since working on Svelte, I always get asked if I really prefer jsdoc over TypeScript. No, I don’t.
 - https://twitter.com/trueadm/status/1753562312651211207

@@ -53,7 +53,7 @@ modified: 2023-09-02T09:17:22.992Z
   - Currently implements WScript (Windows Scripting Host) context env/wscript.js
   - browser context is partially implemented env/browser.js.
 
-- https://github.com/patriksimek/vm2 /js/deprecated
+- https://github.com/patriksimek/vm2 /MIT/202307/js/deprecated
   - Advanced vm/sandbox for Node.js
   - vm2 is a sandbox that can run untrusted code with whitelisted Node's built-in modules.
   - It uses the internal `VM` module to create a secure context.

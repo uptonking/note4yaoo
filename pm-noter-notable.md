@@ -8,8 +8,6 @@ modified: 2023-11-28T14:48:45.910Z
 
 # pm-noter-notable
 
- 
-
 > easy to read， easy to write, content-centric notebook
 
 # guide(for notable/noter/paper)
@@ -17,13 +15,11 @@ modified: 2023-11-28T14:48:45.910Z
   - versioning and branching: 基于oplog/events实现, draft/public
   - collaboration-ready: 基于crdt
   - end-user database: 支持用户自定义数据和流程
-  - paid-only paragraphs/sentences
+  - github修改文档要提pr很繁琐; 可协作的workspace可直接改或用审阅修订模式
   - mobile-app-generator
-  - local-first data storage with optional syncing
-    - 兼容git的commits
+  - local-first data storage with optional syncing: 兼容git的commits
   - markdown: hotkeys, table-builder
   - office viewer
-  - github修改文档要提pr很繁琐; 可协作的workspace可直接改或用审阅修订模式
 
 - selling-point-knowledge-base
   - markdown support with git-like database
@@ -36,6 +32,7 @@ modified: 2023-11-28T14:48:45.910Z
   - office editor
   - encrypted elements: 有权限的用户或有密码的用户才可看到的数据
   - 文章段落查重，也可用于论文查重、评论查重
+  - paid-only paragraphs/sentences
   - 视频笔记
     - 针对视频的笔记，如历史片/纪录片
     - 针对视频的搜索

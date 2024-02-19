@@ -17,6 +17,9 @@ modified: 2023-09-01T10:18:14.842Z
     - AutoCouch is a JSON framework combining the benefits of the Automerge CRDT library and CouchDB
   - https://github.com/WoelkiM/Polly_React_Example_AutoCouch
     - an example for a React app using AutoMerge
+# starter
+- https://github.com/bpietroniro/hello-automerge /202401/ts
+  - getting to know the Automerge CRDT library
 # examples
 - https://github.com/jonfk/text-crdt-experiment-automerge-ts /ts
   - http://jonfk.github.io/text-crdt-experiment-automerge-ts
@@ -40,6 +43,9 @@ modified: 2023-09-01T10:18:14.842Z
 
 - https://github.com/ben-ryder/automerge-encryption-demo
   - A proof of concept using Automerge in a React app with client-side encryption, multi device sync via a server and more.
+
+- https://github.com/fr3shw3b/diagramming-crdt /apache2/202402/ts
+  - experimenting with CRDT for a simple diagramming application
 
 ## automerge-hypercore
 
@@ -68,18 +74,23 @@ modified: 2023-09-01T10:18:14.842Z
     - Both client and server store a full replica of all changes made, and from some preliminary testing, it looks like the constant factor is rather high (the on-disk size increasing by multiple kilobytes when adding a single change to an attribute).
     - it is a research tool primarily, and not meant to be production ready.
 
-- https://github.com/jonfk/text-crdt-experiment-automerge-ts
-  - test out Automerge text features to see if it would be a usable for the core data structure of an offline first syncing text editor.
-
 - https://github.com/nornagon/autowiki /automerge
   - Autowiki is a tool for creating networked documents.
   - Autowiki is a local-first app: you own all the data you put into it, and your data never leaves your own machine unless you want it to.
   - Autowiki uses automerge under the hood to resolve edit conflicts automatically.
-
 # sync
+- https://github.com/openscript-ch/automerge-repo-storage-opfs /MIT/202401/ts
+  - https://automerge.org/docs/repositories/storage/
+  - This implements a OPFS storage adapter for Automerge Repo.
 
 - https://github.com/DImuthuUpe/automerge-java-sync-server /apache2/202312/java
   - Java Spring Boot Sync Server For Automerge
 # utils
+- https://github.com/getroomservice/manymerge /202005/ts/inactive
+  - A one-to-many protocol for the Automerge CRDT
+  - It's a replacement for `Automerge.Connection` that supports many-to-many and one-to-many relationships.
 
+- https://github.com/verygoodgraphics/vgg_automerge /MIT/202312/cpp
+  - A C++ implementation of automerge, at an early stage. 
+  - Added several new APIs, users can operate an Automerge doc like a json object
 # more

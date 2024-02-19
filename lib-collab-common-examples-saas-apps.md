@@ -69,11 +69,12 @@ modified: 2023-01-17T19:14:47.611Z
   - architecture to relay end-to-end encrypted CRDTs over a central service.
   - It was created out of the need to have an end-to-end encrypted protocol to allow data synchronization/fetching incl.
 
-- CoCreateJS /19Star/MIT/202212/js
+- CoCreateJS /19Star/MIT > AGPLv3/202212/js
   - https://github.com/CoCreate-app/CoCreateJS
   - https://cocreate.app/
   - A collaborative low code headless CMS and Javascript framework for building collaborative no code platforms, apps and UI
   - A dependency free, vanilla javascript Realtime CRUD and Collaboration Framework. 
+  - [Update Licensing details: MIT > AGPLv3 _20230914](https://github.com/CoCreate-app/CoCreateJS/commit/0637396905885e616583ae808df5704a884bf4df)
   - https://github.com/CoCreate-app/CoCreate-crud-client /202212/js
   - An useful CRUD api operate Create, read, update, delete with built in database. 
   - Can be used as a firebase alternative
@@ -179,6 +180,8 @@ modified: 2023-01-17T19:14:47.611Z
   - The project focuses on providing synchronizable data structures for realtime and turn-based games, matchmaking, and ease of usage both on the server-side and client-side.
   - WebSocket-based communication
   - Automatic state synchronization from server-to-client (delta compressed)
+
+
 
 - https://github.com/clockworklabs/SpacetimeDB /3.4kStar/BSL(AGPLv3)/202401/rust/game
   - https://spacetimedb.com/

@@ -47,7 +47,7 @@ modified: 2023-01-22T19:52:59.120Z
   - Bookshelf aims to provide a simple library for common tasks when querying databases in JavaScript, and forming relations between these objects, taking a lot of ideas from the Data Mapper Pattern.
   - https://github.com/seegno/bookshelf-json-columns
     - Parse JSON columns with Bookshelf.js
-  - https://github.com/tanem/express-bookshelf-realworld-example-app /202210/js
+  - https://github.com/tanem/express-bookshelf-realworld-example-app /202210/js/inactive
     - An Express and Bookshelf based backend implementation of the RealWorld API Spec.
 
 - mikro-orm /5.5kStar/MIT/202301/ts/开发者主程只有1个
@@ -210,6 +210,9 @@ modified: 2023-01-22T19:52:59.120Z
 - https://github.com/ErikBahena/Express-Knex-Postgres-JWT-Auth-Template /202203/js
   - boilerplate code for when you're starting a new postgres backend project
 
+- https://github.com/santoshshinde2012/node-ts-knex-boilerplate /202402/tsconfig
+  - Node-Typescript-Knex-Boilerplate
+
 - https://github.com/cham11ng/typescript-api-starter /MIT/202210/ts
   - Starter for Node.js Express API in Typescript with jsonwebtoken, joi, Knex, Objection.js and many other popular tools.
   - 依赖objection3、knex2、pg、express
@@ -229,9 +232,12 @@ modified: 2023-01-22T19:52:59.120Z
 - https://github.com/Team-PlanOut/planout-backend
   - Planout Knex backend
 
-- https://github.com/HannesOberreiter/btree_server
-  - Backend API for b.tree Beekeeping Webapplication
+- https://github.com/HannesOberreiter/btree_server /AGPLv3/202402/ts
+  - API Server for b.tree Beekeeping Application. Node.js and Objections.js
   - Written in typescript build with nodejs, express, knex.js and objections.js.
+  - https://github.com/HannesOberreiter/btree_database
+    - The maria folder will be our local volume for the database
+    - The redis folder will be our local volume for the redis database dumps
 
 - https://github.com/ganeshmani/node_bookmark_manager_app /202002/js
   - BookMark Manager Built using Nodejs, Express, Knex and MySQL

@@ -124,7 +124,7 @@ modified: 2023-06-03T14:43:26.987Z
   - The total order is equivalent to a tree walk over a binary-ish tree; concurrently-inserted sequences end up in different subtrees, which don't interleave.
   - **You do pay for this with longer strings**, though: "averaging" two neighboring strings adds a UID (~13 chars) instead of a single bit, except when the in-order optimization kicks in.
 
-- I think we can implement a variant of Fugue [1] that stores multiple chars per row. (Untested)
+- I think we can implement a variant of Fugue that stores multiple chars per row. (Untested)
 
 - Closing this as I think enough research has been done and I'm ready to start implementing
 

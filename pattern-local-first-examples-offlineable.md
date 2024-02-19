@@ -11,8 +11,8 @@ modified: 2023-11-17T10:12:06.357Z
 
 - search: local-first, local first, offline first
 
-- ref
-  - https://github.com/arn4v/offline-first
+- https://github.com/arn4v/offline-first
+  - A list of projects in the offline-first storage, sync & realtime collaboration/multiplayer space.
 
 - local-first + realtime协作的示例
   - https://github.com/gongojs/project

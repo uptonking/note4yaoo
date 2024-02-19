@@ -497,10 +497,6 @@ modified: 2023-11-16T15:00:11.503Z
 - https://github.com/jetlinks/jetlinks-ui-antd
   - 演示地址：http://demo.jetlinks.cn
   - 项目多处采用了SSE接口交互，开发需要使用dev环境变量（生产环境使用nginx代理了EventSource接口）
-
-- https://github.com/CoCreate-app/CoCreate-dashboard /202311/js/单文件
-  - A simple dashboard component in vanilla javascript.
-  - 依赖CoCreate.js
 # apps
 - https://github.com/Veri5ied/slack-ui-clone /202012/js
   - React, Vanilla CSS, Material UI Icons, Reach Router and Firestore Slack Clone
