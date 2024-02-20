@@ -83,7 +83,14 @@ modified: 2023-01-14T15:47:04.431Z
 # discuss
 - ## 
 
-- ## 
+- ## I have no idea why so many websites / webapps use geolocation instead of the user's expressed preferred language.
+- https://twitter.com/JoshWComeau/status/1759616073773543485
+  - If you work on internationalization, please do not use the user’s location to decide what language to serve your content in. 
+  - Use the “Accept-Language” header instead.
+  - Users can't set their IP address, but they can set their OS’ language setting.
+
+- What would you suggest as a fallback to the Accept-Language header as a method of language detection?
+  - So I don't *think* you need a fallback, since I believe all major browsers have been including this header automatically for a very long time
 
 - ##  `Intl.MessageFormat` proposal progressed to stage 1_202212
 - https://twitter.com/sebastienlorber/status/1599740137037914112

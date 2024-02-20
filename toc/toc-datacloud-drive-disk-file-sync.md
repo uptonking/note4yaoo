@@ -84,6 +84,8 @@ modified: 2022-09-10T02:26:52.062Z
   - MyDrive is an Open Source cloud file storage server (Similar To Google Drive). 
   - 依赖express、mongoose、fluent-ffmpeg、react-redux、react-contextmenu
   - MyDrive uses mongoDB to store file/folder metadata, and supports multiple databases to store the file chunks, such as Amazon S3, the Filesystem, or just MongoDB. 
+  - [I created an Open Source Google Drive Clone - MyDrive _202006](https://www.reddit.com/r/selfhosted/comments/h8tvtg/i_created_an_open_source_google_drive_clone/)
+    - myDrive uses the HTTP protocol to transfer files.
   - 🍴 forks
   - https://github.com/vitstef/myDrive /202204
     - Fixed build
@@ -108,8 +110,9 @@ modified: 2022-09-10T02:26:52.062Z
     - Will need to research a bit on this about how this can be done without needing to have a server.
 
 - https://github.com/linagora/twake-drive /9Star/AGPLv3/202402/ts
-  - open-source alternative to Google Drive.
-  - 依赖mui.v4、fullcalendar、dnd-kit、draft-js、minimongo、fastify、rxjs
+  - open-source alternative to Google Drive
+  - 依赖mui.v4、antd、redux、fullcalendar、dnd-kit、draft-js、minimongo、fastify、rxjs、opensearch、amqplib、mongodb
+  - rxjs用在event-bus、message-queue
 
 - internxt-drive-web /78Star/AGPLv3/202212/ts
   - https://github.com/internxt/drive-web
@@ -140,6 +143,12 @@ modified: 2022-09-10T02:26:52.062Z
   - filebrowser provides a file managing interface within a specified directory and it can be used to upload, delete, preview, rename and edit your files. 
   - It allows the creation of multiple users and each user can have its own directory.
 
+- https://github.com/pydio/cells /AGPLv3/202402/go/js
+  - https://pydio.com/
+  - the nextgen file sharing platform for organizations. 
+  - It is a full rewrite of the Pydio project using the Go language following a micro-service architecture.
+  - https://github.com/pydio/pydio-core /php/archived
+
 - https://github.com/mgilangjanuar/teledrive /GPLv3/202310/ts
   - open source Google Drive/OneDrive/iCloud/Dropbox alternative using Telegram API for the free unlimited cloud storage.
 
@@ -162,6 +171,10 @@ modified: 2022-09-10T02:26:52.062Z
   - simple cloud drive mapping web app supports local, FTP/SFTP, S3, OneDrive, WebDAV, Google Drive.
   - 拖拽/粘贴上传，拖拽管理文件
   - 文件打包下载
+
+- https://github.com/haiwen/seafile /AGPLv3/202402/c
+  - http://seafile.com/
+  - open source cloud storage system with privacy protection and teamwork features. 
 # cloud-drive-sync
 - https://github.com/reruin/sharelist
   - ShareList 是一个易用的网盘工具，支持快速挂载 GoogleDrive、OneDrive
@@ -254,7 +267,7 @@ modified: 2022-09-10T02:26:52.062Z
 
 - https://github.com/theoephraim/node-google-spreadsheet
   - Google Sheets API (v4) wrapper for Node.js
-# known-drive-dropbox
+# dropbox
 - https://github.com/feup-infolab/dendro /202006/js/inactive
   - "Open-source Dropbox" with added description features. 
   - It is a data storage and description platform designed to help researchers and other users to describe their data files, built on Linked Open Data and ontologies. 
@@ -271,6 +284,8 @@ modified: 2022-09-10T02:26:52.062Z
   - A free, open-source notes app for the web
   - The notes are persisted temporarily in local storage, but you can download all notes in markdown format as a zip.
   - Hidden within the code is an alternate version that contain a Node/Express server and integration with GitHub.
+# webdav
+
 # filesystem
 - https://github.com/internalfx/sqlgrid /16Star/apache2/201910/js
   - A file storage system for SQL databases inspired by GridFS
@@ -373,10 +388,24 @@ modified: 2022-09-10T02:26:52.062Z
     - Objects are both retrieved and cross-referenced using a structural hash of their contents as their id (a form of content-based addressing).
   - Mutability is implemented using CRDTs. Identities and data authentication are cryptographic.
   - Objects and their references form an immutable DAG, a fact that is used for data replication in HHS p2p mesh.
+
+- https://github.com/cypsela/sailplane-web /GPLv3/202206/js
+  - https://cypsela.github.io/sailplane-web
+  - Collaborative p2p file sharing in the browser
+  - https://github.com/cypsela/sailplane-node /202101/js/inactive
+
+
+
+- https://github.com/Peergos/Peergos /AGPLv3/202402/java
+  - https://peergos.org/
+  - A p2p, secure file storage, social network and application protocol
+  - 
 # more-drive
 - https://github.com/FazioNico/dDrive
   - An alternative storage solution to Google Drive
   - open-source and fully decentralized that is built on top of the InterPlanetary File System (IPFS)
+  - The foundation of Peergos is a peer-to-peer encrypted global filesystem with fine-grained access control
+  - Peer-to-peer and data layer - IPFS provides the data storage, routing and retrieval.
 
 - https://github.com/storj/storj /202212/go
   - Storj is an S3-compatible platform and suite of decentralized applications that allows you to store data in a secure and decentralized manner. 

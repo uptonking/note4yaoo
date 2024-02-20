@@ -26,7 +26,29 @@ modified: 2023-11-07T16:47:11.499Z
 
 - ## 
 
-- ## 
+- ## 💡 5 strategies to design a high-performance read-heavy system.
+- https://twitter.com/ProgressiveCod2/status/1759845363450859525
+  - There's a 91.5% chance you'll work on a read-heavy system.
+  - Systems where a majority of requests involve fetching from a data source.
+
+- [1] Database Indexing
+  - Create proper indexes for your tables.
+  - A good index allows your database to quickly locate rows that match a given query.
+- [2] Database Replication (Read Replicas)
+  - Create read replicas of your database.
+  - These replicas are copies of the primary database that can handle read requests.
+  - With more replicas, you can distribute read requests and improve performance.
+- [3] Caching
+  - Caching is great for read-heavy systems where the data doesn’t change much after creation.
+  - A good caching strategy can reduce the load on your database.
+  - Look at caching solutions like Redis or Memcached for fast in-memory storage.
+- [4] Content Delivery Networks
+  - Take caching to the next level by investing in a CDN.
+  - With a CDN, you can cache and serve static content closer to the end users and reduce read latency.
+- [5] Load Balancing
+  - You can spin up multiple replicas, cache instances, or servers to handle the reads.
+  - But you also need to ensure fair distribution of traffic between these instances.
+  - To do so, implement load balancing.
 
 - ## Tips for going deep on databases:
 - https://twitter.com/jorandirkgreef/status/1756165626517709004

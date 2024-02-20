@@ -31,7 +31,13 @@ modified: 2023-11-10T07:10:19.089Z
 
 - ## 
 
-- ## 
+- ## 🌰 With fs.readFile I can't easily determine the mime type in Node, right? (I don't want to use a libary.)
+- https://twitter.com/_mql/status/1759890585949720687
+  - We need it as fallback for "default" assets (like icons) that are not overridden in the database. So I guess in this case I can keep the mime type mapping in sync.
+
+- you can't
+  - you can probably approximate if the file is binary or not — reading first N bytes and see if there's a 0-byte there, which is not something you can find in text files
+  - otherwise, yeah, need to you use libmagic (this is a lib name) probably
 
 - ## JS isn't for the server
 - https://twitter.com/pilcrowonpaper/status/1755569985995358211

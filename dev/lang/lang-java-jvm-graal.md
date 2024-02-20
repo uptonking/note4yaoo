@@ -239,7 +239,8 @@ fs.writeFileSync(__dirname + "/test.jsb", byteCode);
 # discuss
 - ## 
 
-- ## 
+- ## @GraalVM even allows creating stand-alone native images including Python applications
+- https://twitter.com/thomaswue/status/1759968749652672777
 
 - ## 试了下 Spring Boot 3.0 的 native image，体积直接降到100M，启动时间 20.67s -> 0.62s，性能提升明显，但构建时间 18min, 22s 
 - https://twitter.com/zhdsuperman/status/1719371800533217378

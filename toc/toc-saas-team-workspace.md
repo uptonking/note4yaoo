@@ -210,6 +210,11 @@ modified: 2023-02-07T17:38:05.336Z
   - Trello clone/sample app for Automerge persistence library
   - Trellis is a Trello clone built as an Electron desktop application. 
 
+- https://github.com/kanban-org/kanban-board /202402/js
+  - https://www.kanban.live/
+  - full-stack Kanban task management app
+  - 依赖Sequelize
+
 - https://github.com/arthurfigueiredo/Kanban.js /MIT/js
   - http://arthurfigueiredo.github.io/Kanban.js/
   - Javascript plugin to build kanban boards only 2KB
@@ -281,10 +286,10 @@ modified: 2023-02-07T17:38:05.336Z
   - https://www.reactkanban.com/b/SyfPfO8CP/tutorial-board
   - React, Redux, React-beautiful-dnd, Express, MongoDB, Passport
 
-- https://github.com/lxerxa/actionview-fe
-  - ActionView front-end source code, based on Reactjs＋Redux.
-  - https://github.com/lxerxa/actionview /50Star/202101
+- https://github.com/lxerxa/actionview /50Star/202101/php
   - An issue tracking tool based on php laravel-framework in back-end and reactjs+redux in front-end, it's similar to Jira
+  - https://github.com/lxerxa/actionview-fe
+    - ActionView front-end source code, based on Reactjs＋Redux.
 
 - https://github.com/TiagoDiass/easyboards
   - front-end app similar to Trello
@@ -378,11 +383,6 @@ modified: 2023-02-07T17:38:05.336Z
 - https://github.com/hironarita/kanban-lite /ts
   - Simplified version of Trello built with React
   - https://github.com/hironarita/kanban-lite-backend /js
-
-- https://github.com/kanban-org/kanban-board /js
-  - https://www.kanban.live/
-  - full-stack Kanban task management app
-  - 依赖Sequelize
 
 - https://github.com/DishaGup/kanban-board /js
   - Kanban Board web application designed to enhance task management

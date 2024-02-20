@@ -9,6 +9,9 @@ modified: 2020-12-28T12:24:09.275Z
 
 # guide
 
+- tips
+  - 通用或单一的builder价值不大，但针对业务平台特别是app-store的builder对平台方和开发者的价值都很大
+
 - cms-dev
   - cms业务架构一般分为 服务端、管理端、展示端
   - 管理端交互的核心通常是编辑器

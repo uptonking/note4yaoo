@@ -62,7 +62,7 @@ modified: 2023-10-26T15:28:53.748Z
   - An in memory postgres DB instance for your unit tests
   - It works both in Node or in the browser.
   - 依赖immutable.v4、functional-red-black-tree、json-stable-stringify、lru-cache、moment、pgsql-ast-parser、@mikro-orm/core~pg
-  - adapter支持pg-native,node-postgres,knex,typeorm
+  - adapter支持pg-native, node-postgres, knex, typeorm
   - The sql syntax parser is home-made. Which means that some features are not implemented, and will be considered as invalid syntaxes.
   - limitations
     - Materialized views are implemented as views (meaning that they are always up-to-date, without needing them to refresh)
@@ -84,10 +84,16 @@ modified: 2023-10-26T15:28:53.748Z
 - https://github.com/qnighy/featherpg /202107/rust/inactive
   - PostgreSQL-compatible on-memory DB for testing
 
+- https://github.com/divyenduz/fakegres /202402/go
+  - Toy distributed PostgreSQL backed by SQLite
+  - Based on https://notes.eatonphil.com/distributed-postgres.html
+  - https://twitter.com/divyenduz/status/1759917106743693580
+    - Basically 95% the same as @eatonphil 's post, just SQLite used as KV in favor of bolt.
+    - Would be interesting to see something like "not parsing the SQL queries but passing them through to SQLite data stores" in the future.
+
 ## pg-like
 
 # mysql-powered
-
 - https://github.com/wesql/wescale /apache2/202401/go
   - a database proxy that cares about your application, the development experience, and supports OnlineDDL.
   - fork自vitess的，但改造了它的架构，并且为它支持了读写分离、Read After Write Consistency、透明Failover等功能

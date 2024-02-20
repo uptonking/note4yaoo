@@ -31,9 +31,10 @@ modified: 2023-01-21T18:57:47.811Z
   - A text editor for the web based around monaco
   - deprecated: I've recently started using cdr/code-server which is a full VS Code instance which now runs on Android. The same way this does.
 # collab
-- https://github.com/Kshitiz1403/Collaborative-IDE
-  - Run code in your browser and start collaborating with peers. 
-  - User project files are stored & managed using Azure File Storage. A file share is mounted on a linux machine using the SMB protocol.
+- https://github.com/Kshitiz1403/Collaborative-IDE /202401/ts/yjs
+  - a full stack system supporting collaborative code editing, compiling & shared shell.
+  - Monaco editor is the internal implementation of VSCode's editor. I am using the React port of it Monaco for React.
+  - I am using Yjs for providing CRDT & conflict free collaborative editing
 
 - https://github.com/convergencelabs/monaco-collab-ext
   - Adds collaborative editing capabilities to the Monaco Editor

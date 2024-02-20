@@ -28,7 +28,14 @@ if(val) // doSth
 
 - ## 
 
-- ## 
+- ## Did you know that `array.sort()` doesn't work with negative numbers?
+- https://twitter.com/ccorcos/status/1759665586983084255
+  - Just sorts as strings
+
+- It doesn’t work with numbers at all. It performs alphanumeric comparison.
+  - Yeah, good point! I didn’t know that. Ironically, it works for dates, because their string representation is in ISO format.
+
+- default comparator is for strings, not numbers; this is more of a criticism of JavaScript being dynamically typed
 
 - ## unwrap: 即使我能理解这段代码的语法，我还是理解不了这代码的作用
 - https://twitter.com/ThaddeusJiang/status/1678316196318552064

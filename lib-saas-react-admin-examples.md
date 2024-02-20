@@ -85,7 +85,7 @@ modified: 2023-12-19T17:31:23.259Z
   - https://github.com/NathanAdhitya/express-mongoose-ra-json-server-demo
 
 - https://github.com/lalalilo/express-crud-router /113Star/MIT/202201/ts/无db
-  - https://github.com/nicgirault/express-crud-router
+  - https://github.com/nicgirault/express-crud-router /202309/ts
   - Expose resource CRUD routes for Express & Sequelize. 
   - Compatible with React Admin Simple Rest Data Provider. 
   - The lib is ORM agnostic

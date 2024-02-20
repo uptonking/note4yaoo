@@ -11,7 +11,7 @@ modified: 2020-12-08T13:29:35.248Z
 
 ## 📝 [Let’s learn how modern JavaScript frameworks work by building one | Read the Tea Leaves_202312](https://nolanlawson.com/2023/12/02/lets-learn-how-modern-javascript-frameworks-work-by-building-one/)
 
-- #️⃣ [perf: replace Svelte with vanilla JS · nolanlawson/emoji-picker-element](https://github.com/nolanlawson/emoji-picker-element/pull/381)
+- #️ 🔡 [perf: replace Svelte with vanilla JS · nolanlawson/emoji-picker-element](https://github.com/nolanlawson/emoji-picker-element/pull/381)
 
 - From my perspective, the post-React frameworks have all converged on the same foundational ideas:
   - Using reactivity (e.g. signals) for DOM updates.
@@ -27,7 +27,7 @@ modified: 2020-12-08T13:29:35.248Z
 - Note that this technique is not necessarily incompatible with the virtual DOM approach: tools like Preact Signals and Million show that you can have a hybrid system. 
 
 - Cloning DOM trees
-- For a long time, the collective wisdom in JavaScript frameworks was that the fastest way to render the DOM is to create and mount each DOM node individually. In other words, you use APIs like `createElement`,         `setAttribute`, and `textContent` to build the DOM piece-by-piece
+- For a long time, the collective wisdom in JavaScript frameworks was that the fastest way to render the DOM is to create and mount each DOM node individually. In other words, you use APIs like `createElement/setAttribute/textContent` to build the DOM piece-by-piece
 - One alternative is to just shove a big ol’ HTML string into `innerHTML` and let the browser parse it for you
   - This naïve approach has a big downside: if there is any dynamic content in your HTML (for instance, red instead of blue), then you would need to parse HTML strings over and over again.
   - Plus, you are blowing away the DOM with every update, which would reset state such as the value of `<input>`s.

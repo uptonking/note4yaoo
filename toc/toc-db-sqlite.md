@@ -284,7 +284,5 @@ modified: 2021-08-30T18:56:18.632Z
   - supports multiple swappable backends ( plus in-memory storage )
     - Both the native sqlite3 module and sql.js (pure JavaScript!) are supported. There is also memory-only storage for fast, unpersisted data handling
 
-
-
 - https://github.com/subzerocloud/showcase
   - subZero is a library implemented in Rust with JS/TypeScript bindings that allows you to expose a PostgREST compatible backend on top of any database.

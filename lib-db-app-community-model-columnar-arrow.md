@@ -81,7 +81,9 @@ modified: 2023-10-26T15:03:56.115Z
 
 - ## 
 
-- ## 
+- ## Someone on Linkedin asked if anyone in the community would build something that leveraged column level lineage to propagate column descriptions. 
+- https://twitter.com/Captaintobs/status/1759817999073357938
+  - If you've got a long sequence of models selecting the same columns over and over again, it's a pain to copy and paste descriptions. Soon, in SQLMesh, you won't have to!
 
 - ## ⚖️ Why aren't @ApacheArrow or Protocol Buffers the universal standard for data formats in Data Engineering and Machine Learning applications?
 - https://twitter.com/Ubunta/status/1750925983710941339

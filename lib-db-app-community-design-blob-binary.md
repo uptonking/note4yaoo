@@ -18,7 +18,20 @@ modified: 2023-11-07T16:49:03.314Z
 
 - ## 
 
-- ## 
+- ## 🛢️ [Which DB is best for folder structure applications similar to Google Drive : r/node _202310](https://www.reddit.com/r/node/comments/17ca9dy/which_db_is_best_for_folder_structure/)
+- You want to use object storage for something like this. 
+  - Databases are not for files generally. 
+  - Something AwS S3, GCP Cloud Storage, or if you want something you can self host, MinIO.
+
+- Ive built this a few times using postgres and s3, basicallt store the folders in a postgres table and a bit of meta data about the uploaded file in another. Folders can have a parent-_d to another folder to build ”depth”, files can have a ”folder_id”.
+  - I have then uploaded to file to s3 naming it the same as the uuid of the meta data of the file, this way i have a reference to it in the s3 bucket.
+  - So in s3 its basically been a flat list of files, no depth.
+
+- You should not store the files themselves in the db, store those in AWS S3 / Backblaze B2 or similar service. In the db just store the folder structure, file/folder metadata and whatever info you need to retrieve a file from storage.
+  - If this is just a demo project or something like that, with not many users or files, you could store the file data in the db or even on the server hard drive but this will not scale well at all.
+  -  If there's any chance this app will grow then it's probably worth building it the right way and spending a bit of money to use S3 or similar.
+
+- Even if not at scale having large blob objects will cripple your database rather fast. While they can hold big objects they are just not made for that and just using a simple pattern of object path and separate object storage (or something more dedicated like s3 or minio) is future proof without too much hassle.
 
 - ## 📎🔥 [Xata File Attachments: Databases can now store files and images | Hacker News_202308](https://news.ycombinator.com/item?id=37324370)
 - I think for smaller projects just storing images as BLOBs in e.g. PostgreSQL works quite well. I know this is controversial. People will claim it's bad for performance. But that's only bad if performance is something you're having problems with, or going to have problems with. If the system you're working on is small, and going to stay small, then that doesn't matter.
@@ -67,9 +80,33 @@ modified: 2023-11-07T16:49:03.314Z
 # discuss
 - ## 
 
-- ## 
+- ## [Open Source online file storage I created - MyDrive _202101](https://www.reddit.com/r/reactjs/comments/koyf74/open_source_online_file_storage_i_created_mydrive/)
+- You needed MongoDB and Amazon s3 together?
+  - So Amazon S3 is where you store the file chunks. While In mongoDB it stores file object and metadata, such as the owner of the file, filename, size, ect. 
+  - You can choose to just use mongoDB if you choose too, this will use a library called `gridfs` to store the file chunks in mongoDB. Although, this is not recommended since it puts more strain on the CPU, plus mongoDB storage is expensive if you are using a service such as atlas.
+  - The reason you cannot use just Amazon S3 is that it is not really suitable for storing the a file object that you query, delete, and modify.
+- MongoDB is a database. S3 is file storage.
 
-- ## 
+- ## [I created an Open Source Google Drive Clone - MyDrive _202006](https://www.reddit.com/r/selfhosted/comments/h8tvtg/i_created_an_open_source_google_drive_clone/)
+- myDrive uses the HTTP protocol to transfer files.
+
+- FTP is File Transfer Protocol, an older protocol used for transferring files. It would make no sense implementing it in an app like yours (and it's a shitty old protocol anyway).
+- Samba (or more specifically SMB) is a protocol used for transfering files over a (usually) local network, 
+  - it's what Microsoft Windows uses to connect to network drives and whatnot. 
+  - There is an open source implementation, Samba, that's interoperable with SMB, and just like FTP it would make little sense to have it in an app like this, especially since it's very complicated to implement and has tons of security concerns.
+- You are using HTTP with Express I believe.
+  - The only thing that would make sense would be implementing WebDAV. 
+  - It's a standardized protocol on top of HTTP that allows compatible apps (which there are plenty of) to connect to a given endpoint and browse, download and upload files. 
+  - Nextcloud uses this for their apps and such, and a lot of other web-based file-storage services use it as well. It also has a lot of client apps that support it.
+
+- Any advantages to Filerun? That's what I'm currently using that fits in this space. The only thing it doesn't do (or at least I don't use) is auto-syncing. But file sharing, browsing, utility, etc, it does a great job.
+
+- I just want something that can sync files to my phone and is light weight and fast enough and can handle photos and videos while looking good lol. Is that too much to ask for?
+
+- ## [My first open source project! MyDrive _202003](https://www.reddit.com/r/node/comments/feg12q/my_first_open_source_project_mydrive_a/)
+- After looking at your code, I'm very impressed at how clean & well organized it is. Especially the routes folder. When I do my routes, it's a total mess. Thanks man, I learned a lot from this.
+
+- It uses mongoDB for storage, and that number is from how much storage space is left on this computer/server. When you run myDrives startup script it asks for a path so it can check how much storage space you have left.
 
 - ## Images get loaded differently than JavaScript. 
 - https://twitter.com/RogersKonnor/status/1745704080163369407

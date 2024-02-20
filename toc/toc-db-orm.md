@@ -22,6 +22,11 @@ modified: 2021-08-30T18:56:09.644Z
 - https://github.com/emanuelcasco/typescript-orm-benchmark /202009/ts/inactive
   - ORM benchmarking for Node.js applications written in TypeScript
 
+- https://github.com/JS-AK/db-orm-benchmarks /202402/ts
+  - ORM benchmarking for Node.js
+  - 50_000 queries in await Promise.all() 
+  - 50_000 queries in await one by one in for loop 
+
 - https://github.com/tkssharma/nodejs-db-orm-world /202203/ts
   - Node JS with different ORM like Typeorm, Knex, Prisma and Sequelize with Node JS API Development Node JS with without any ORM (MYSQL raw queries)
 

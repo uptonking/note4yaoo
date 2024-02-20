@@ -35,9 +35,17 @@ modified: 2021-01-08T17:13:43.392Z
 
 - ## 
 
+- ## 
+
+- ## 整理了一份独立开发者出海工具库
+- https://twitter.com/weijunext/status/1759857266646282394
+- 可以多看看cloudflare，其服务包括了 数据库，邮件和网站分析。 最重要的，免费额度特别大。
+
+- 推荐nextjs只是个人观点：vue与react切换的学习成本不算高，但是前端理解服务端的成本、了解生态技术栈的成本比较高，而且国外nextjs开源项目比nuxt多太多了，所以我认为一名熟悉vue的程序员学全栈框架，学nextjs成本不会比nuxt高，既然如此，学nextjs可以进入一个更大的社区、多一项技能，何乐而不为
+
 - ## 昨天在为 Django 项目添加 Telegram 登录时，遇到了一个神奇的前端问题，花了足足一天半的时间进行调试
 - https://twitter.com/Ehco1996/status/1746077907972403670
-  - 大部分浏览器会默认打开`noopener`，需要配置特定的header才能让popup页面访问到opener
+  - 大部分浏览器会默认打开 `noopener` ，需要配置特定的header才能让popup页面访问到opener
 
 - ## I'm not sure any 100% spec-compliant programs for matching paths against ".gitignore" files exist, not even git probably. The problem:
 - https://twitter.com/fabiospampinato/status/1733170282196500755

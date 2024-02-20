@@ -20,7 +20,19 @@ modified: 2023-10-28T17:31:26.535Z
 
 - ## 
 
-- ## 
+- ## running a database in production is much more than just doing reads and writes.
+- https://twitter.com/glcst/status/1759670019443577324
+- libSQL needs a PostgREST/supabase equivalent. Major value unlocks when a single Javascript developer can build a whole application without worrying about servers.
+
+1) Some form of support for nosql document storage on top of turso.
+2) Something around search indexes 
+3) Pricing remains serverless but dedicated vms become an option.
+
+- Migrations? Something like this? Does Turso perform vacuum on SQLite automatically?
+
+- Queue net triggers
+
+- Some kind of eventual consistency multi-master
 
 - ## 🪶 SQLite takes multitenancy to the next level. 
 - https://twitter.com/sarna_dev/status/1735673953396338999

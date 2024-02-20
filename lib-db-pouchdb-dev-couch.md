@@ -137,6 +137,9 @@ modified: 2024-01-04T06:53:04.003Z
 
 - couchapp
   - reimplement with wasm
+
+- sync
+  - rxdb-sync-protocol
 # dev
 - > By design, CouchDB and PouchDB do not support transactions. A document is the smallest unit of operations.
 # changelog-pouchdb

@@ -48,6 +48,10 @@ modified: 2023-11-01T10:15:06.245Z
   - Order transaction on their “recentness” which speeds up GC.
 - Would love to see a comparison to LMDB, as its the best one(currently) in terms of random read perf.
 
+- ## What is a Transaction
+- https://twitter.com/DominikTornow/status/1759623957291147331
+  - A transaction is a sequence of a read or a write of a data object that ends in exactly one commit or exactly one abort.
+
 - ## What are transactions in a database?
 - https://twitter.com/Franc0Fernand0/status/1754422259869974682
   - Transactions are a way for databases to group a set of operations into one.

@@ -10,7 +10,7 @@ modified: 2024-02-05T09:44:21.665Z
 # guide
 
 # blogs
-
+- [Object Storage and In-Process Databases are Changing Distributed Systems _202402](https://blog.colinbreck.com/object-storage-and-in-process-databases-are-changing-distributed-systems/)
 # blogs-vendor
 
 ## [ScyllaDB’s move from Paxos to Raft _2024](https://www.scylladb.com/glossary/paxos-consensus-algorithm/)

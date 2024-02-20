@@ -9,6 +9,8 @@ modified: 2021-08-09T07:24:45.113Z
 
 # guide
 
+- resources
+  - [The Modern Data Stack is a Mess | Tembo _202312](https://tembo.io/blog/modern-data-stack-mess)
 # discuss
 - ## 
 

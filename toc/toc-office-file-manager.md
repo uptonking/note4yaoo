@@ -120,7 +120,8 @@ modified: 2021-08-23T05:27:08.068Z
 - https://github.com/magentaLi/CloudDrive
   - 基于javaweb的仿照百度网盘做的小型云盘系统
 
-- https://github.com/mickael-kerjean/filestash
+- https://github.com/mickael-kerjean/filestash /AGPLv3/202401/go/js
+  - https://www.filestash.app/
   - A Dropbox-like file manager that let you manage your data anywhere it is located: FTP • FTPS • SFTP • WebDAV • Git • S3 • LDAP • Mysql CardDAV • CalDAV • Backblaze B2 • Minio Dropbox • Google Drive
 # git-file-tree
 - https://github.com/ovity/octotree

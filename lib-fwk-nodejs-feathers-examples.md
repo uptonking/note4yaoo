@@ -137,7 +137,7 @@ modified: 2023-01-20T00:18:44.282Z
 - https://github.com/timothyhoover/supporty /ts
   - Simple ticket management system built with React, Feathers.js, and Tailwind
 
-- https://github.com/anthonymunene/reservation-apps /ts
+- https://github.com/anthonymunene/reservation-apps /202312/ts
   - A reservation airbnb clone API built with feathersjs knex ORM and PostgreSQL
 
 - https://github.com/r1pk/surveo /js

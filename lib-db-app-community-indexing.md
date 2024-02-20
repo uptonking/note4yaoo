@@ -22,7 +22,9 @@ modified: 2023-09-17T17:38:11.187Z
 
 - ## 
 
-- ## 
+- ## Database indexing explained.
+- https://twitter.com/ChrisStaud/status/1759958340086767693
+  - An index is a key-value pair where the key is used to search for data instead of the corresponding indexed column(s), and the value is a pointer to the relevant row(s) in the table.
 
 - ## 👨🏻‍🏫 How to find redundant indexes
 - https://twitter.com/samokhvalov/status/1734467240832201064

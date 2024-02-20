@@ -22,12 +22,13 @@ modified: 2023-11-28T14:48:45.910Z
   - office viewer
 
 - selling-point-knowledge-base
+  - 通用或单一的builder价值不大，但针对业务平台特别是app-store的builder对平台方和开发者的价值都很大
   - markdown support with git-like database
     - widely used, enterprise-loved(易盈利)
     - text files works well with existing tooling
     - 备选方案参考git，将文本与git工具绑定
     - sync: 本地文件自动生成delta
-  - mdbook/gitbook
+  - mdbook/gitbook: text + actions/workflows
   - open folder as site
   - office editor
   - encrypted elements: 有权限的用户或有密码的用户才可看到的数据
@@ -340,6 +341,79 @@ modified: 2023-11-28T14:48:45.910Z
 - [OfficeSuite OfficeSuite: Pricing of our Office Software](https://www.officesuite.com/en/plans/home)
 
 - [Filmora - Compare All Plans](https://filmora.wondershare.com/shop/buy/buy-video-editor-us-pb.html)
+# business-app-store/marketplace
+- popular
+  - ios, google-play
+  - chrome-web-store, edge
+
+- [Atlassian Marketplace](https://marketplace.atlassian.com/)
+  - 支持jira, confluence, bitbucket, bamboo, crowd
+  - Atlassian has a market cap or net worth of $53.92 billion
+
+- [Microsoft AppSource marketplace](https://appsource.microsoft.com/en-us/marketplace/apps)
+  - 支持word, excel, ppt, outlook, teams, powerbi
+
+- [Google Workspace Marketplace](https://workspace.google.com/marketplace)
+  - 支持google docs/sheets/slide/calendar/drive
+
+- [Zoho Marketplace](https://marketplace.zoho.com/home)
+  - 支持writer/mail/crm/analytics
+
+- [飞书 应用目录](https://app.feishu.cn/)
+- [钉钉应用中心](https://appcenter.dingtalk.com/)
+
+- [有赞应用市场-有赞营销插件-有赞私域场景解决方案](https://yingyong.youzan.com/)
+
+- [Odoo Apps Store](https://apps.odoo.com/apps)
+  - [Marketplace | Odoo Apps Store](https://apps.odoo.com/apps/modules/category/Marketplace/browse)
+- [Salesforce AppExchange | Leading Enterprise Cloud Marketplace](https://appexchange.salesforce.com/)
+
+- [GPTStore](https://gptstore.ai/)
+
+- [Notion Integrations & Marketplace](https://www.notion-marketplace.com/)
+  - The estimated value of Notion is $10 billion. 
+  - Notion is estimated to make $67.2 million each year.
+
+- [Coda Templates](https://www.codaplace.com/all-categories)
+
+- [Airtable Marketplace](https://airtable.com/marketplace)
+  - recently valued at $11.7 billion
+
+- [Monday App Marketplace](https://monday.com/marketplace)
+  - monday.com has a market cap or net worth of $10.76 billion
+
+- [figma community](https://www.figma.com/community)
+  - 支持figma/figjam/plugins/files
+  - As of December 2023, CB Insights estimates that Figma is worth between $8.3 billion and $9 billion, a haircut to the $20B Adobe offered
+
+- [Canva Apps Marketplace](https://www.canva.com/apps/)
+  - from 2023, Canva's valuation may have dropped from $40bn to $26bn in just two years
+
+- [Nextcloud - App Store](https://apps.nextcloud.com/)
+  - 支持files, games, dashboard
+- [ownCloud Marketplace](https://marketplace.owncloud.com/)
+
+- [Mattermost Marketplace](https://mattermost.com/marketplace/)
+
+- [Visual Studio Marketplace](https://marketplace.visualstudio.com/VSCode)
+
+- [Eclipse Marketplace](https://marketplace.eclipse.org/)
+
+- [AWS Marketplace](https://aws.amazon.com/marketplace)
+
+- [Liferay App Marketplace](https://marketplace.liferay.com/home)
+
+- [LibreOffice Extensions](https://extensions.libreoffice.org/)
+
+- [Microsoft Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/home)
+
+- [Zendesk App Marketplace](https://www.zendesk.com/marketplace/apps/)
+
+- [zoom App Marketplace](https://marketplace.zoom.us/)
+- [Motive App Marketplace](https://marketplace.gomotive.com/)
+  - integrations help improve efficiencies, reduce operating costs, and deliver satisfying fleet and driver experiences
+
+- [Shopify App Store](https://apps.shopify.com/)
 # faq
 - 如何不使用图床而将图片直接嵌入到笔记中
   - [MarkDown图片存储格式-Textbundle格式](https://zhuanlan.zhihu.com/p/368463926)
