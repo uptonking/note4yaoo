@@ -15,6 +15,24 @@ modified: 2023-10-28T17:31:26.535Z
 - ## 
 
 - ## 
+# discuss-news
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Our goal with libSQL is to make SQLite production ready. _202402
+- https://twitter.com/glcst/status/1760030875494813928
+  - We started with replication, and are now adding encryption-at-rest. 
+  - SQLite doesn't have encryption at rest as an Open Source feature, meaning you have to rely on your own infrastructure to do it.
+  - Today, we are adding encryption-at-rest natively to libSQL. It is fully OSS, and all you have to is to add a key parameter to the constructor. This works for local files, and you don't even have to be a Turso user for that. 
+
+- I think its inevitable that we have to move to everything encrypted at rest and everything encrypted in transit.
+
+- We rely on SQLite internally in a rather extreme way: every program is in itself an SQLite file that holds the entire JavaScript heap, among other things. We should definitely write a Turso connector though, I think it would be super useful to our users. Added to our roadmap.
 # discuss
 - ## 
 

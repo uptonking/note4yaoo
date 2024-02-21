@@ -391,6 +391,7 @@ modified: 2022-08-21T10:02:05.129Z
 # airtable-like
 - https://github.com/chanchalguptaa/db-dash /202303/js
   - This is walkover product based on airtable clone
+  - 用户数据存放在mongodb/mongoose, 表格数据存放在postgresql/pg
   - https://github.com/tanishjain510/db_dash_frontend /202303/js
     - 依赖firebase、@reduxjs/toolkit、react-table.v7
 
@@ -398,7 +399,7 @@ modified: 2022-08-21T10:02:05.129Z
   - node后端以纯内存数据作为数据源渲染的简单表格，非常简洁
 
 - https://github.com/medadeshreyas/Airtable.com-Clone /202210/js/仅前端无后端
-  - easy-to-use online platform for creating and sharing relational databases. 
+  - easy-to-use online platform for creating and sharing relational databases
   - allows anyone to spin up a database in minutes
   - built in 6 days by a team of 5 developers
   - https://github.com/manshikumari12/Airtable-Clone /202312/js

@@ -75,14 +75,14 @@ modified: 2021-04-24T08:29:02.272Z
 
 - 看场景。做 marketing 页面用 Server Component or SSG 真的很有必要 否则可以完全不用的
 
-- ## [reactjs - How single-page application works in SSR (React) - Stack Overflow](https://stackoverflow.com/questions/57243697/how-single-page-application-works-in-ssr-react)
+- ## [How single-page application works in SSR (React) - Stack Overflow](https://stackoverflow.com/questions/57243697/how-single-page-application-works-in-ssr-react)
 - When implementing Server Side Rendering (SSR), the server knows how to generate a full page with markup so the user gets a fully rendered page and from that moment, when the js resources get downloaded, the application will be live (event listeners will be enabled, the react lifecycle will be active and so on).
-01.    Get a request for a specific path
-02.    Initiate a new store instance for the request
-03.    In case of using react router (or other router solution), fill the state with the requested route
-04.    Render the app, but instead of rendering and mounting the App, render the App to string (with renderToString)
-05.    Dehydrate the state - take the latest state snapshot and append it to the result (after escaping it and wrapping it with script tag for example)
-06.    Return the markup as a response. The markup can look similar to the following: 
+01.     Get a request for a specific path
+02.     Initiate a new store instance for the request
+03.     In case of using react router (or other router solution), fill the state with the requested route
+04.     Render the app, but instead of rendering and mounting the App, render the App to string (with renderToString)
+05.     Dehydrate the state - take the latest state snapshot and append it to the result (after escaping it and wrapping it with script tag for example)
+06.     Return the markup as a response. The markup can look similar to the following: 
 
 ```HTML
 <html>
@@ -107,7 +107,7 @@ modified: 2021-04-24T08:29:02.272Z
 - There are several frameworks (next.js for example) that comes out of the box with SSR solution along with code splitting according to routes. So when the user change route, a new backend request triggers the SSR flow again for the new route.
 - SSR can be implemented in many different variations, but the basic stays the same
 
-- ## [reactjs - How is server-side rendering compatible with single-page applications? - Stack Overflow](https://stackoverflow.com/questions/66893389/how-is-server-side-rendering-compatible-with-single-page-applications)
+- ## [How is server-side rendering compatible with single-page applications? - Stack Overflow](https://stackoverflow.com/questions/66893389/how-is-server-side-rendering-compatible-with-single-page-applications)
 - Do SSR SPAs always respond with full prerendered HTML, or only for first page loads?
   - Usually SSR is used for initial rendering of the page, so for the first question - for the first page load
 

@@ -12,6 +12,19 @@ modified: 2023-10-10T14:20:13.855Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 很多独立开发者朋友，做的是面向普通消费者的产品，可是天天都在开发者圈子里做推广，个人感觉有些路走歪了。
+- https://twitter.com/Wallfacer005/status/1759993903556767802
+  - 甚至有些推广渠道，我都觉着是选错了，例如producthunt，个人感觉上面受众大部分都是跟我们一样的开发者而不是真实的目标用户，天天在那里推不会带来真实用户只会带来一堆竞争对手。
+
+- 产品最终目的是给愿意花钱的客户解决问题，但是这种人在独立开发者还是少。
+
+- Producthunt对于大多数开发者的用处并不是来获取真实用户的
+  - 做PR可以，做MVP验证有可能被误导
+- 据说，在producthunt上也有不少国外的科技KOL，他们也要做内容推陈出新给自己的粉丝，顺带就帮你把推广也做了，这可是免费推广
+- 我倒觉得这样的开发者越多越好, 自嗨最容易……嗨几天拿到些没用的vote number 就可以下定义然后回去找工作搬砖了
+
 - ## In my experience, tech skills aren't enough to build a profitable product. You need Sales & Marketing skills. 
 - https://twitter.com/francoisz/status/1733056844443132169
   - [Selling Open-Source Products Requires Sales & Marketing Skills](https://marmelab.com/blog/2023/12/08/open-source-profit-4.html)

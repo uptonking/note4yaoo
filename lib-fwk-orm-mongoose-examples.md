@@ -9,31 +9,34 @@ modified: 2023-02-05T18:50:53.563Z
 
 # guide
 
-- ref
+- resources
 # popular
-- node-rem /233Star/MIT/202203/ts/inactive/非常精简
+- node-rem /233Star/MIT/202203/ts/inactive
   - https://github.com/ngduc/node-rem
   - https://node-rem-ngduc.vercel.app/
   - NodeJS Rest Express MongoDB (REM) - a production-ready lightweight backend setup.
   - typescript, passport, JWT, socket.io, HTTPS, HTTP2, async/await, nodemailer, templates, pagination, docker, etc.
+  - 功能齐全，代码精简
   - 提供了react前端示例
 
-- https://github.com/saisilinus/node-express-mongoose-typescript-boilerplate /202211/ts
+- https://github.com/saisilinus/node-express-mongoose-typescript-boilerplate /MIT/202402/ts
   - a production-ready Node.js TypeScript app installed and fully configured
   - authentication using JWT, request validation, unit and integration tests, continuous integration, docker support, API documentation
+  - https://github.com/saisilinus/react-redux-typescript-boilerplate /202207/ts/inactive
+    - A react redux typescript for building production ready react apps
 
-- https://github.com/masb0ymas/expresso-mongoose
+- https://github.com/masb0ymas/expresso-mongoose /202210/ts/inactive
   - expresso with Mongoose
 
-- https://github.com/kyooowe/PineUI /ts/mern
+- https://github.com/kyooowe/PineUI /MIT/202311/ts/mern
   - https://home-two-ebon.vercel.app/
   - Boilerplate using TurboRepo, Vite, React, and Express. Provides a fast and efficient setup for building modern web apps.
   - 前端依赖react-popper、preline、zustand、tanstack-query.v4、formik、framer-motion、jsonwebtoken、recharts
   - 后端依赖express、mongoose
 
-- https://github.com/shrihari-prakash/liquid
+- https://github.com/shrihari-prakash/liquid /MIT/202402/ts
   - Seamless authentication and user management APIs for your projects based on TypeScript, MongoDB and Redis.
-  - open source TypeScript implementation of oauthjs/node-oauth2-server based Mongo DB and Redis with user sign up and login
+  - OAuth Based Authentication: Secure and seamless authentication based on a battle tested OAuth core powered by node-oauth2-server from @node-oauth
   - you typically find that you are writing the login, account creation and authentication logic over and over again. This repository provides a plug and play boilerplate
 
 - https://github.com/capaj/Moonridge /MIT/201703/js
@@ -42,12 +45,23 @@ modified: 2023-02-05T18:50:53.563Z
   - isomorphic client side library and server framework, which brings Mongoose model to the browser(or over the network to other node process). 
   - the coolest feature is live queries. These are performance hungry, but Moonridge is caching live queries in memory
   - why not just port mongoosejs to the client side and let clients talk to mongo directly. While this would surely be an interesting project, Moonridge has features which would not be possible without a server instance(live querying, custom authorization/authentication). I think these features are worth it introducing a new framework to the backend.
-# mongodb-examples
+# starter
+- https://github.com/skopekreep/typescript-node-express-realworld-example-app /202007/ts
+  - Rewrite of JS-based node-express RealWorld backend app using Typescript
+  - 依赖express-jwt、jsonwebtoken、mongoose、passport
+  - https://github.com/RaoofJM/nodejs-typescript-realworld-backend /202306/ts/inactive
+    - RealWorld Example of a NodeJS Rest API using TypeScript, MongoDB, Redis and Docker
+    - 依赖express、mongoose、redis
+- https://github.com/tranlehaiquan/nodejs-api-realworld /202303/ts/inactive
+  - RestFul with Express, Typescript
+  - 依赖mongoose、jsonwebtoken
+
 - https://github.com/sunnysidelabs/mongoose-express-ts /202210/ts
   - show a good end-to-end project setup and workflow for writing a strongly-typed Mongoose Node.js Express code in TypeScript complete with middleware, models, routes, and types
+
 - https://github.com/kingRayhan/quick-crud /202205/ts
   - An easy CRUD operation based on Factory pattern with Mongoose
-
+# examples
 - https://github.com/mongodb-university/mflix-ui /201906/js
   - https://github.com/mongodb-university/mflix-js
   - 提供了json数据
@@ -104,9 +118,6 @@ modified: 2023-02-05T18:50:53.563Z
 
 - https://github.com/kira0x1/mikaela
   - a discord music bot that gives users the ability to store their favorite songs, and create playlists on discord.
-# starter
-- https://github.com/saisilinus/react-redux-typescript-boilerplate
-  - A react redux typescript for building production ready react apps
 # utils-mongoose
 - https://github.com/arqo123/speedgoose
   - Next-level mongoose caching layer with event based cache clearing

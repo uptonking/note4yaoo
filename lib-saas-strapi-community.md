@@ -131,6 +131,12 @@ modified: 2023-12-15T17:04:36.589Z
 - Yes, set the `published_at: null` during the POST request and it will be created as a draft. The default for REST/GraphQL sets that field to the current datetime. Passing over the null value will leave it in a draft state.
 - As of 7th February, the field is written `publishedAt` and not `published_at` as said before.
 
+# discuss-news
+- ## 
+
+- ## 
+
+- ## 
 # discuss
 - ## 
 

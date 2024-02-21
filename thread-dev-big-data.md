@@ -136,7 +136,9 @@ modified: 2023-04-19T07:30:34.872Z
 
 - ## 
 
-- ## 
+- ## Everything you ever wanted to know about data catalogs in @ApacheFlink SQL
+- https://twitter.com/Decodableco/status/1759992559353430415
+  - [Catalogs in Flink SQL—Hands On](https://www.decodable.co/blog/catalogs-in-flink-sql-hands-on)
 
 - ## Voltron Data做了很多特别基础的活雷锋项目，像arrow, arrow flight, adbc, substrait之类的，都太基础了也没法在云上搞SaaS，
 - https://twitter.com/niyue/status/1730253887356186951

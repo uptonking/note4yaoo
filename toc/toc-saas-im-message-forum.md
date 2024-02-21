@@ -78,7 +78,7 @@ modified: 2021-05-14T15:04:15.333Z
   - 全功能论坛：板块/楼中楼/角色权限/审核/富文本编辑/个性化配置/邮件通知 等
   - 自带授权登录：免开发支持 QQ/微信/支付宝 授权登录
 
-- ddd-forum /1.8kStar/ISC/202306/ts/hacker-news
+- ddd-forum /1.8kStar/ISC/202306/ts
   - https://github.com/stemmlerjs/ddd-forum
   - https://dddforum.com/
   - Hacker news-inspired forum app built with TypeScript using DDD practices from solidbook.io.

@@ -722,7 +722,7 @@ modified: 2023-09-12T09:37:22.608Z
   - Works with any framework and platform.
   - Reliably respond to webhooks, with retries & payloads stored for history
 
-- ddd-forum /1.8kStar/ISC/202306/ts/hacker-news
+- ddd-forum /1.8kStar/ISC/202306/ts
   - https://github.com/stemmlerjs/ddd-forum
   - https://dddforum.com/
   - Hacker news-inspired forum app built with TypeScript using DDD practices from solidbook.io.

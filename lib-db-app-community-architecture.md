@@ -151,6 +151,14 @@ modified: 2023-09-17T17:37:19.913Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## I am wrapping my head around Snapshot Isolation (SI) with a minimal computational model
+- https://twitter.com/DominikTornow/status/1760054290146873397
+  - SI presents a transaction with a consistent snapshot of the database at the start of the transaction and allows to commit only if there are no conflicts with other concurrent transactions' writes
+
 - ## If SQL is considered a programming language, then relational databases function as virtual machines that execute SQL, similar to how the JVM executes Java.
 - https://twitter.com/criccomini/status/1759375042847314000
 - SQL-speaking databases are both query compilers and runtimes for the resulting execution plan.

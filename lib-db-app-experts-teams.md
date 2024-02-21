@@ -70,9 +70,10 @@ modified: 2023-02-02T03:22:07.941Z
 - Mikeal Rogers /pouchdb
   - https://github.com/mikeal
 
-- Zongzhi Chen (baotiao)
+- 陈宗志 (baotiao) /mysql
   - https://github.com/baotiao
   - http://baotiao.github.io/archive.html
+  - https://www.zhihu.com/people/chenzongzhi
 
 - 温正湖
   - https://www.zhihu.com/people/wen-zheng-hu

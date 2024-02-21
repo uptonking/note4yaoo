@@ -312,3 +312,13 @@ modified: 2021-05-17T11:53:13.568Z
 - JupyterLab sessions always reside in a workspace. 
   - Workspaces contain the state of JupyterLab: the files that are currently open, the layout of the application areas and tabs, etc. 
   - Workspaces can be saved on the server with named workspace URLs.
+
+## extensions
+
+- [Unofficial Jupyter Notebook Extensions](https://jupyter-contrib-nbextensions.readthedocs.io/en/latest/)
+  - https://github.com/ipython-contrib/jupyter_contrib_nbextensions
+    - [jupyter_contrib_nbextenions appears to be incompatible with Jupyter Notebook v7](https://github.com/ipython-contrib/jupyter_contrib_nbextensions/issues/1647)
+- [Extending the Notebook — Jupyter Notebook 7.1.0](https://jupyter-notebook.readthedocs.io/en/stable/extending/index.html)
+  - Please note that the extension system for Notebook 7 is radically different from the one used in Notebook 6.5.x and earlier.
+  - With Notebook 7 being developed on top of JupyterLab and Jupyter Server, the frontend extension system is now based on the same extension system used by JupyterLab.
+# more

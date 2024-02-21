@@ -52,15 +52,15 @@ modified: 2020-12-22T12:42:09.830Z
 - [QuickEdit Text Editor Pro 1.10.6 APK + MOD [Pro Unlocked] Download](https://modded-1.com/apps/productivity/quickedit-text-editor-pro)
 
 - [2021年适用于Linux的顶级Microsoft Office替代产品，赶紧用用吧 - 知乎](https://zhuanlan.zhihu.com/p/370232516)
-  1.      LibreOffice
-  2.      Apache OpenOffice
-  3.      Calligra Office Suite
-  4.      FreeOffice
-  5.      Office Suite
-  6.      Polaris Office
-  7.      OnlyOffice
-  8.      WordPerfect
-  9.      Zoho Workplace
+  01. LibreOffice
+  02. Apache OpenOffice
+  03. Calligra Office Suite
+  04. FreeOffice
+  05. Office Suite
+  06. Polaris Office
+  07. OnlyOffice
+  08. WordPerfect
+  09. Zoho Workplace
   10. Siag
   11. Feng
   12. Google文件

@@ -26,9 +26,8 @@ modified: 2023-02-26T18:25:45.484Z
   - http://marcisbee.com/chipolette/
   - It is designed to replace Bootstrap and to be used with CSS variables.
   - Chipolette is a tiny CSS framework/Starter kit.
-  - It's a fork from Shoelace and Bootstrap, that fully embraces CSS variables/custom properties.
+  - 🍴 It's a fork from Shoelace and Bootstrap, that fully embraces CSS variables/custom properties.
   - It's written in LESS, because of nesting and other neat features
-  - It is designed to replace Bootstrap and to be used with CSS variables.
 
 ## switch-themes
 

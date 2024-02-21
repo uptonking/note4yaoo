@@ -180,6 +180,12 @@ modified: 2023-02-08T10:24:11.422Z
   - Build your extension and let Plasmo handle browser-specific behaviors and bundling
   - https://github.com/yousefamar/bookmarkdown
     - A browser extension that turns a webpage into a useful markdown note
+
+
+- https://github.com/wxt-dev/wxt /MIT/202402/ts
+  - https://wxt.dev/
+  - Next-gen framework for developing web extensions.
+
 # devtools
 - https://github.com/shanebell/JaSON /202104/ts/inactive
   - a Google Chrome extension for testing APIs and making HTTP network requests.

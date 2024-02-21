@@ -9,6 +9,14 @@ modified: 2023-12-03T07:21:27.015Z
 
 # guide
 
+# blogs-streaming
+
+## [From Samza to Flink: A Decade of Stream Processing _202402](https://materializedview.io/p/from-samza-to-flink-a-decade-of-stream)
+
+- 👥 https://twitter.com/criccomini/status/1759958636024181091
+  - Why Samza failed, how it led to Kafka Streams and Kafka Connect, and why I'm skeptical of Apache Flink.
+- Agree 100% that Flink is suffering from feature bloating. And a sad part is that some core fundamentals don't always work , especially on large-scale jobs. I would prefer much less features, but having rock solid base functionality.
+- I think if you can have Flink capabilities without having to deal with its complexities, it is a win
 # blogs
 - [三张图讲清楚大数据基础设施Hadoop、Lambda、kappa架构 - 知乎](https://zhuanlan.zhihu.com/p/337520151)
   - 第一代基础设施：以Hadoop为代表的离线数据处理。

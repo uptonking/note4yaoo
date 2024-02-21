@@ -131,10 +131,17 @@ modified: 2021-08-30T18:57:27.645Z
   - Use the provided sql file `nortwhind.sql` in order to populate your database.
   - https://github.com/engindemirog/Northwind-Database-Script-for-Postgre-Sql /202105
 
-- https://github.com/drizzle-team/drizzle-northwind-benchmarks
+- https://github.com/joovitor12/northwind-node /202210/ts/js/sequelize
+  - northwind-node, northwind-react
+
+- https://github.com/MrsLecter/Traders /202210/ts/ejs/sequelize
+  - Creating a database from existing tables, queries to the database
+  - Express + PostgreSQL + Sequelize + Bootstrap
+
+- https://github.com/drizzle-team/drizzle-northwind-benchmarks /202304/ts/inactive
   - 测试项目 sqlite3、knex、prisma、mikro
   - https://github.com/drizzle-team/drizzle-northwind-benchmarks-pg
-    - Postgres benchmarks between Drizzle ORM and other popular ORM libraries
+    - Postgres benchmarks between Drizzle ORM and other popular ORM
 
 - https://github.com/dalers/mywind /201604
   - a MySQL version of the Microsoft Access 2010 Northwind sample database.

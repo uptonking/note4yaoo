@@ -359,7 +359,7 @@ modified: 2023-11-28T14:48:45.910Z
 - ## [Logseq 为什么用 clojure 写? - 知乎](https://www.zhihu.com/question/610034256)
 - 作者的高度决定了项目语言的选择。工程师选clojure没毛病
 
-# discuss-notion-news
+# discuss-news-notion
 - ## 
 
 - ## 

@@ -10,9 +10,34 @@ modified: 2024-01-20T15:40:37.064Z
 # guide
 
 # leveldb
+- pros
+  - ?
 
+- cons
+  - ?
+
+- features
+  - ?
+
+- who is using #leveldb
+  - chrome-indexeddb
 # rocksdb
+- pros
+  - ?
 
+- cons
+  - ?
+
+- features
+  - ?
+
+- who is using #rocksdb
+  - myrocks
+
+## blogs
+
+- [How RocksDB works _202304](https://artem.krylysov.com/blog/2023/04/19/how-rocksdb-works/)
+  - Unfortunately, configuring RocksDB optimally is not trivial. Even we as RocksDB developers don't fully understand the effect of each configuration change
 # foundationdb
 - pros
   - ?
@@ -30,7 +55,6 @@ modified: 2024-01-20T15:40:37.064Z
   - snowflake
   - Datadog
   - [Does anybody other than Apple use FoundationDB in production?](https://news.ycombinator.com/item?id=39029351)
-
 
 - resources
   - ?

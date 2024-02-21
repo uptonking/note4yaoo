@@ -8,19 +8,14 @@ modified: 2023-01-22T19:52:59.120Z
 # lib-fwk-orm-knex-examples
 
 # guide
-- orm技术选型
-  - issues数量
-    - typeorm 1800+
-    - knex 700+
-    - sequelize 700+
 
 - 后端常用场景
-  - headless CMS, page builder, form builder, file manager, admin-area
+  - cms, page/form builder, file manager
   - admin/dashboard
+  - wiki/knowledge-base
   - forum/community
-  - content内容或文档系统
-  - lowcode integration
-  - 流程自动化
+  - workflow automation
+  - lowcode integrations
 
 - tips
   - [Multitenancy using multiple databases using knex](https://vincit.github.io/objection.js/recipes/multitenancy-using-multiple-databases.html)
@@ -28,6 +23,13 @@ modified: 2023-01-22T19:52:59.120Z
 - resources
   - [knex/ECOSYSTEM.md](https://github.com/knex/knex/blob/master/ECOSYSTEM.md)
 # popular
+- https://github.com/shalior/express-ts-template /结构合理
+  - Express.js template using TypeScript, Knex and Docker to head-start development.
+  - 🍴 fork of https://github.com/cdellacqua/express-knex-typescript-template /202311/ts
+  - view层pug
+  - 功能非常丰富
+  - https://github.com/shalior/express-mongo-ts /202301/ts/inactive
+
 - knex /18.5kStar/MIT/202401/js
   - https://github.com/knex/knex
   - http://knexjs.org/
@@ -89,29 +91,21 @@ modified: 2023-01-22T19:52:59.120Z
   - in browser sandbox for playing around with Knex.js
   - https://github.com/shuta13/knex-sandbox /202103/ts
 
-- https://github.com/shalior/express-ts-template /结构合理
-  - 🌰 Express.js template using TypeScript, Knex and Docker to head-start development.
-  - fork of https://github.com/cdellacqua/express-knex-typescript-template /202311/ts
-  - https://github.com/shalior/express-mongo-ts
+- https://github.com/r48n34/db-erd-gen /MIT/202401/ts/自动生成sql-ddl
+  - https://db-erd-gen.vercel.app/
+  - Free DrawSQL like website
+  - Save SQL in various DB format
 
 - https://github.com/kurierjs/kurier /MIT/202312/ts
   - https://kurier.readthedocs.io/en/latest/
   - TypeScript framework to create JSON: API compliant APIs
   - A TypeScript framework to create APIs following the 1.1 Spec of JSONAPI + the Operations proposal spec.
-  - Baked into Kurier, there is an operation processor which takes care of basic CRUD actions by using Knex.
-  - JSONAPI is transport-layer independent, so it can be used for HTTP, WebSockets or any transport protocol of your choice.
+  - there is an operation processor which takes care of basic CRUD actions by using Knex.
+  - ✨ JSONAPI is transport-layer independent, so it can be used for HTTP, WebSockets or any transport protocol of your choice.
   - The framework supports JSONAPI operations via WebSockets, and it includes middlewares for Koa, Express and Vercel to automatically add HTTP endpoints for each declared resource and processor.
   - The framework uses JSON Web Tokens as a way of verifying if a user is valid for a given operation.
   - https://github.com/carlbennettnz/json-api-knex-adapter /202006/ts
-    - Serve resources from your SQL database using json-api@3.
-
-- https://github.com/waitingsong/kmore /MIT/202402/ts
-  - SQL query builder based on Knex with powerful TypeScript type support.
-  - Declarative Transaction via decorator `@Transactional`.
-  - Type-safe join table easily
-
-- https://github.com/victor-vieira21/knex-mongoose-sequelize-lucid
-  - 4个orm示例
+    - Serve resources from your SQL database using json-api@3
 
 - https://github.com/thetutlage/knex-dynamic-connection /MIT/202310/ts
   - This module is meant to patch knex and add support for defining dynamic connection configuration.
@@ -151,70 +145,69 @@ modified: 2023-01-22T19:52:59.120Z
     - In MySQL, you can partition by RANGE, LIST, COLUMN, HASH and KEY
     - When you use partitioning, MySQL will keep that data on separate parts of the disk as if they were separate tables and organizes your data automatically based on the partitioning key
 # starter
-- https://github.com/gothinkster/koa-knex-realworld-example /201910/js
-  - Example Node. Js (Koa.js + Knex) codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the RealWorld spec and API.
-- https://github.com/avanelli/fastify-realworld-example-app /202303/js
-  - Fastify + Knex.js - Realworld Example App
 - https://github.com/kenyipp/realworld-nodejs-example-app /202304/ts
   - scalable RealWorld app implemented with TypeScript, Node.js, AWS Lambda, and tested with high-quality unit and integration tests
   - Express + Knex
 
+- https://github.com/gothinkster/koa-knex-realworld-example /201910/js
+  - Example Node. Js (Koa.js + Knex) codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the RealWorld spec and API.
+
+- https://github.com/LimarenkoDenis/typescript-node-koa-realworld-example-app /201710/ts
+  - fullstack application built with Koa.js + Knex including CRUD operations, authentication, routing, pagination, and more.
+  - https://github.com/LimarenkoDenis/angular-ngxs-nx-realworld-example-app
+- https://github.com/avanelli/fastify-realworld-example-app /202303/js
+  - Fastify + Knex.js - Realworld Example App
+
+- https://github.com/victor-vieira21/knex-mongoose-sequelize-lucid
+  - 4个orm示例
+
+- https://github.com/ljlm0402/typescript-express-starter /202311/ts
+  - Express RESTful API Boilerplate Using TypeScript，多技术栈的模版项目
+  - 支持mongoose、orm、graphql、knex
+
 - https://github.com/agencyenterprise/aeboilerplate /202001/ts/inactive
   - a full-stack React/Node Typescript project
+  - an opinionated boilerplate that includes independent client and API
 
 - https://github.com/dhruvsaxena1998/node-typescript-starter /202110/ts/inactive
   - Node.js express template written with typescript.
   - https://github.com/alonavns/Yerevan /201907/ts
   - https://github.com/mxro/knex-typescript-starter-project /202002/ts
   - https://github.com/eliranlevi/node-ts-boilerplate /201904/ts
+
+- https://github.com/santoshshinde2012/node-ts-knex-boilerplate /202402/tsconfig
+  - Node-Typescript-Knex-Boilerplate
+  - https://github.com/MatthewAraujo/api-rest /202307/ts
+
+- https://github.com/whyboris/express-knex-api /202001/js/inactive/单文件示例
+  - A RESTful API that interacts with business data
+
 - https://github.com/antonkalik/knex-postgres-boilerplate /202307/ts
   - knex-postgres-boilerplate
   - https://github.com/resitdc/express-knex-pg-boilerplate /202305/ts
+
+- https://github.com/apotox/knex-pg-express /202212/ts
+  - unit tests + mocks
+  - vitest setup inMemory pg database
+- https://github.com/dyshaev-working/nodejs-express-typescript-knex-psql-crud-example /202012/ts
+  - Example CRUD application Express/Knex/PostgreSql
+
 - https://github.com/yosua-kristianto/typescript-expressjs /202212/ts
   - I made a boilerplate
 
 - https://github.com/kasvith/typescript-express-jwt-knex-boilerplate /MIT/202107/ts
   - Typescript Express JWT Knex Boilerplate
-- https://github.com/travishorn/koa-sqlite-jwt-server /201810/js
-  - API server with JWT-authenticated routes. Uses Koa and Knex.
 
 - https://github.com/gabsrethink/nodejs-knex-authentication /202210/ts/inactive
   - Authentication API using NodeJS with TypeScript and Knex
   - 提供了jest测试
+
+- https://github.com/travishorn/koa-sqlite-jwt-server /201810/js
+  - API server with JWT-authenticated routes. Uses Koa and Knex.
+
 - https://github.com/orphandeity/express-authorization-server /202312/js
   - offers secure user authentication for web applications. 
   - Built on Express, it includes JWT session management, Redis for token storage, and SQLite for user data. 
-
-- https://github.com/ttuom1nen/knex-test
-  - Express, Knex, Postgresql, Typescript
-  - minimal test for Migrations/Seeds
-
-- https://github.com/apotox/knex-pg-express
-  - unit tests + mocks
-  - vitest setup inMemory pg database
-  - https://github.com/dyshaev-working/nodejs-express-typescript-knex-psql-crud-example /202012/ts
-    - Example CRUD application Express/Knex/PostgreSql
-
-- https://github.com/fransaycon/fastify-esbuild-postgres-boilerplate
-  - fastify boilerplate with built in setup for esbuild, knex+postgres
-
-- https://github.com/vipinkavlar/node-express-typescript-mysql-knex-swagger
-  - Node-express-typescript with Mysql integrated with Knex querybuilder
-  - 依赖awilix(IoC)
-- https://github.com/mstickel/jokes-system
-  - TypeDI, Actuator
-
-- https://github.com/ljlm0402/typescript-express-starter /202311/ts
-  - Express RESTful API Boilerplate Using TypeScript，多技术栈的模版项目
-  - 支持mongoose、orm、graphql、knex
-
-- https://github.com/agencyenterprise/aeboilerplate /201907/ts/inactive
-  - full-stack React/Node/Typescript web project starter that focuses primarily on ease-of-use and simplicity.
-  - an opinionated boilerplate that includes independent client and API
-
-- https://github.com/eliranlevi/node-ts-boilerplate /201904/ts/inactive
-  - Preconfigured boilerplate for building Node.js applications using Express & TypeScript, MySQL with Objection (ORM) and Knex. 
-  - Start building REST APIs in seconds.
 
 - https://github.com/ErikBahena/Express-Knex-Postgres-JWT-Auth-Template /202203/js
   - boilerplate code for when you're starting a new postgres backend project
@@ -227,15 +220,14 @@ modified: 2023-01-22T19:52:59.120Z
   - https://github.com/the-complete-todo-application/front-end
     - Front-end application. React, Redux, TypeScript, Material-UI.
 
-- https://github.com/santoshshinde2012/node-ts-knex-boilerplate /202402/tsconfig
-  - Node-Typescript-Knex-Boilerplate
-  - https://github.com/MatthewAraujo/api-rest /202307/ts
 - https://github.com/vitorlinsbinski/api-rest-nodejs /202402/ts
   - RESTful API developed in NodeJS with Fastify
 
+- https://github.com/fransaycon/fastify-esbuild-postgres-boilerplate /202302/ts
+  - fastify boilerplate with built in setup for esbuild, knex+postgres
+
 - https://github.com/jvcjunior/node_express_functional /202012/ts
   - Node/Express API using some functional approach
-  - https://github.com/EliasJuniorNino/typexpress-template /202007/ts
 
 - https://github.com/cham11ng/typescript-api-starter /MIT/202210/ts/inactive
   - Starter for Node.js Express API in Typescript with jsonwebtoken, joi, Knex, Objection.js and many other popular tools.
@@ -244,8 +236,7 @@ modified: 2023-01-22T19:52:59.120Z
     - Objection + Koa
 - https://github.com/bilalsha/api-skelton /202301/ts
   - Skelton for creating api using express, typescript, eslint, prettier, jest, knex, objection, sqlite
-- https://github.com/zayniddindev/nodejs-typescript
-  - objection + knex
+
 - https://github.com/restuwahyu13/express-book-store /202111/ts/inactive
   - Example book store api using Express + Typescript and Knex ORM + Objection
 
@@ -266,16 +257,6 @@ modified: 2023-01-22T19:52:59.120Z
   - https://github.com/bravi-software/knextancy-example /201608/js
     - a simple example of how to build a multi tenant REST API. 
     - Using knextancy with express and PostgreSQL database.
-
-- https://github.com/Team-PlanOut/planout-backend
-  - Planout Knex backend
-
-- https://github.com/HannesOberreiter/btree_server /AGPLv3/202402/ts
-  - API Server for b.tree Beekeeping Application. Node.js and Objections.js
-  - Written in typescript build with nodejs, express, knex.js and objections.js.
-  - https://github.com/HannesOberreiter/btree_database
-    - The maria folder will be our local volume for the database
-    - The redis folder will be our local volume for the redis database dumps
 
 - https://github.com/ganeshmani/node_bookmark_manager_app /202002/js
   - BookMark Manager Built using Nodejs, Express, Knex and MySQL
@@ -298,6 +279,13 @@ modified: 2023-01-22T19:52:59.120Z
 - https://github.com/Himmeltala/chatroom-serve /202304/ts/inactive
   - 【练习项目】基于 Node.js + Socket.io + knex + mysql2 实现的聊天室服务器
 
+- https://github.com/HannesOberreiter/btree_server /AGPLv3/202402/ts
+  - API Server for b.tree Beekeeping Application. Node.js and Objections.js
+  - Written in typescript build with nodejs, express, knex.js and objections.js.
+  - https://github.com/HannesOberreiter/btree_database
+    - The maria folder will be our local volume for the database
+    - The redis folder will be our local volume for the redis database dumps
+
 - https://github.com/osvaldokalvaitir/nodejs-proffy /202008/ts/inactive
   - Proffy Application using Node.js, Express, knex.js, TypeScript, CORS, SQLite and Insomnia
   - Project built during Rocketseat's Next Level Week #2
@@ -308,6 +296,9 @@ modified: 2023-01-22T19:52:59.120Z
 
 - https://github.com/jplsilva/Palebot /202107/ts
   - A Discord bot made with Discordjs, Typescript, Node.js and Knex
+
+- https://github.com/gabrielmaialva33/wpp-ai /MIT/202311/ts
+  - chatbot for WhatsApp using Node.js, Typescript and following general best practices.
 
 - https://github.com/anthonymunene/reservation-apps /202312/ts
   - A reservation airbnb clone API built with feathersjs knex ORM and PostgreSQL
@@ -326,8 +317,11 @@ modified: 2023-01-22T19:52:59.120Z
   - A backend server for Smart Face Detector project using Node JS, Express JS, and PostgreSQL. 
   - a capstone project for Zero to Mastery Academy: Web Developer 2022
 
-- https://github.com/gabrielmaialva33/wpp-ai /MIT/202311/ts
-  - chatbot for WhatsApp using Node.js, Typescript and following general best practices.
+- https://github.com/Team-PlanOut/planout-backend /202210/ts/inactive
+  - https://planout-one.vercel.app/
+  - Task Manager Application for Casual Event Planning
+  - https://github.com/Team-PlanOut/planout-frontend
+    - Plan events and get notifications when tasks are completed.
 # utils
 - https://github.com/justsml/knex-full-text-search /202308/ts
   - A Knex plugin for easy Full-text Search queries in Postgres.
@@ -340,17 +334,6 @@ modified: 2023-01-22T19:52:59.120Z
 
 - https://github.com/mrdulin/nodejs-pg-knex-samples /MIT/202001/ts
   - Learning PostgreSQL, knex.js by examples.
-
-- https://github.com/r48n34/db-erd-gen /MIT/202401/ts/自动生成sql-ddl
-  - https://db-erd-gen.vercel.app/
-  - Free DrawSQL like website
-  - Save SQL in various DB format
-
-- https://github.com/felixmosh/knex-mock-client /MIT/202310/ts
-  - A mock client for knex which allows you to write unit tests with DB interactions
-  - Each db request that your app makes throughout knex will be registered in a scoped (by query method) history call list. 
-- https://github.com/jbrumwell/mock-knex /MIT/202312/js
-  - A mock knex adapter for simulating a database during testing, especially useful when used in combination with fixture-factory.
 
 - https://github.com/felixmosh/knex-paginate /MIT/202303/js
   - Extension of Knex's query builder with `paginate` method that will help with your pagination tasks.
@@ -374,15 +357,9 @@ modified: 2023-01-22T19:52:59.120Z
   - JSON column support for Knex and TypeORM
   - If you need to query JSON columns with your Query Builder and Connection Pool without writing raw SQL, this package is for you.
 
-- https://github.com/ozum/knex-migrate-sql-file /MIT/202303/ts
-  - Use sql files instead of (or in addition to) `knex.schema` methods.
-  - Exports getMigrators, upSQL and downSQL functions which executes knex.raw() method on SQL files having same file name appended .up.sql and .down.sql.
-
-- https://github.com/maxcnunes/mongo-to-knex /201702/js
-  - Applies mongo standard query to knex query builder.
-
 - https://github.com/FleekHQ/knex-flex-filter /201907/js
   - a no-dependency package that adds dynamic filter functionality to Knex.
+  - you can send the server side a `{'price_gt', 100}` param that can be directly interpreted by Knex Flex Filter 
 
 - https://github.com/kibertoad/knex-tablecleaner /202109/js
   - Simple library for deleting all rows from a given list of DB tables. 
@@ -401,7 +378,9 @@ modified: 2023-01-22T19:52:59.120Z
 
 - https://github.com/TRUEPIC/queryql /MIT/202401/js
   - QueryQL makes it easy to add filtering, sorting, and pagination to your Node.js REST API through your old friend: the query string
-  - QueryQL makes it easy to add filtering, sorting, and pagination to your Node.js REST API through your old friend: the query string
+  - QueryQL works with any Node.js web framework (be it Express, Koa, etc.), supports any query builder / ORM through adapters, and allows for custom validators so you can define validation in a familiar way.
+  - QueryQL supports knex/joi
+  - QueryQL takes a parsed query string (like Express' req.query) and translates it into the appropriate function calls that your query builder / ORM understands to filter, sort, and paginate the records.
 
 - https://github.com/alarner/perk /202301/ts/inactive
   - A well documented set of tools for building node web applications.
@@ -446,6 +425,11 @@ modified: 2023-01-22T19:52:59.120Z
   - Supported: Knex/Typeorm
   - you can use the `@Transactional` decorator at usecases/services/adapters layer without the fear of coupling the layers of your application with the ORM specific syntax.
 
+- https://github.com/waitingsong/kmore /MIT/202402/ts
+  - SQL query builder based on Knex with powerful TypeScript type support.
+  - Declarative Transaction via decorator `@Transactional`.
+  - Type-safe join table easily
+
 - https://github.com/smooth-code/knex-scripts /202211/js
   - Knex utilities to interact with Postgres database.
 
@@ -458,7 +442,6 @@ modified: 2023-01-22T19:52:59.120Z
   - Useful extensions for knex query builder
 
 - https://github.com/StreetStrider/knexed /202007/js
-  - Adds some neatness to Knex library. 
   - Utilities for tables, joins, transactions and other.
 
 - https://github.com/justsml/knex-spatial /202309/ts
@@ -470,7 +453,7 @@ modified: 2023-01-22T19:52:59.120Z
 - https://github.com/cornflowerblu/knex-repository /202207/ts
   - a simple repository pattern using native PG & Knex as a light wrapper for serialization.
   - https://github.com/allie-wake-up/birchtree /201805/ts
-    - a repository library built on knexjs
+    - a repository library built on knex
 
 - https://github.com/js-items/foundation /201910/ts/inactive
   - Provides set of interfaces, utils and tests for concrete implementations of js-items repositories.
@@ -482,7 +465,17 @@ modified: 2023-01-22T19:52:59.120Z
   - A lightweight repository library powered by KnexJS
   - an extremely lightweight layer on top of Knex
   - It's not meant to be extensive, support associations (belongs to, has many), etc
+# testing
+- https://github.com/felixmosh/knex-mock-client /MIT/202310/ts
+  - A mock client for knex which allows you to write unit tests with DB interactions
+  - Each db request that your app makes throughout knex will be registered in a scoped (by query method) history call list. 
+- https://github.com/jbrumwell/mock-knex /MIT/202312/js
+  - A mock knex adapter for simulating a database during testing, especially useful when used in combination with fixture-factory.
 # devops
+- https://github.com/ozum/knex-migrate-sql-file /MIT/202303/ts
+  - Use sql files instead of (or in addition to) `knex.schema` methods.
+  - Exports getMigrators, upSQL and downSQL functions which executes knex.raw() method on SQL files having same file name appended .up.sql and .down.sql.
+
 - https://github.com/jfollmann/knex-migrations-ts /202108/ts
   - Sample to use knex migrations with PostgreSQL and Typescript support.
 
@@ -522,9 +515,12 @@ modified: 2023-01-22T19:52:59.120Z
   - This storage adapter not only shows you the current state of a migration but also shows all the migration paths and tracks hostname and system user which executed a migration.
   - This library only makes knex work with umzug. Please check out the umzug api for more details
 
+- https://github.com/maxcnunes/mongo-to-knex /201702/js
+  - Applies mongo standard query to knex query builder.
+
 - https://github.com/Vincit/knex-db-manager /ISC/202008/js
   - Utility for create, drop, truncate etc. administrative database operations.
-  - Library uses knex connection for non administrative queries, but also creates priviliged connection directly with driver with superuser privileges for creating and dropping databases / roles.
+  - Library uses knex connection for non administrative queries, but also creates privileged connection directly with driver with superuser privileges for creating and dropping databases / roles.
 # more
 - https://github.com/nire0510/jsoq /GPLv3/202310/ts
   - Query and manipulate JSON arrays easily. 

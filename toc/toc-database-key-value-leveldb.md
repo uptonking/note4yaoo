@@ -71,7 +71,7 @@ modified: 2022-11-03T04:14:00.563Z
   - Multi-version concurrency control
   - Rich transaction support with rollbacks
 
-- https://github.com/spacejam/sled /rust/bw-tree
+- https://github.com/spacejam/sled /MIT/202308/rust/bw-tree
   - https://docs.rs/sled
   - http://sled.rs/
   - a high-performance embedded database with an API that is similar to a `BTreeMap<[u8], [u8]>`.

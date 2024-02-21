@@ -17,7 +17,6 @@ modified: 2020-12-19T13:04:40.865Z
   - The Next.js like React framework for better User & Developer experience!
   - Vitext (Vite + Next) is a lightning fast SSG/SSR tool that lets you develop better and quicker front-end apps.
 
-
 - https://github.com/vikejs/vike /MIT/202401/ts
   - https://vike.dev/
   - Like Next.js / Nuxt but as do-one-thing-do-it-well Vite plugin.
@@ -69,6 +68,29 @@ modified: 2020-12-19T13:04:40.865Z
 
 - https://github.com/kapouer/express-dom /js
   - Express middleware for (pre)rendering web pages with playwright.
+
+- https://github.com/pmb0/express-tsx-views /MIT/202110/ts/inactive
+  - Server-side JSX/TSX rendering for your express or NestJS application
+  - With this template engine, TSX files can be rendered server-side by your Express application. 
+  - Unlike other JSX express renderers, this one does not rely on JSX files being transpiled by `babel` at runtime. Instead, TSX files are processed once by the `tsc` compiler.
+  - For this to work, the templates are imported dynamically during rendering. 
+- https://github.com/redexp/express-engine-jsx /MIT/202309/js
+  - JSX engine for ExpressJS
+  - this component can be rendered to html with `ReactDOM.renderToStaticMarkup()`.
+
+- https://github.com/reactjs/express-react-views /201810/js
+  - an Express view engine which renders React components on server.
+  - It renders static markup and does not support mounting those views on the client.
+  - This is intended to be used as a replacement for existing server-side view solutions, like jade, ejs, or handlebars.
+  - This package is no longer maintained. I recommend Next.js or Remix.
+  - https://github.com/geemaple/react-server-rendering-example
+    - An example of React server-side rendering with express-react-views view engine
+  - https://github.com/magalhas/express-react-engine /201704/js
+
+- https://github.com/paypal/react-engine /apache2/201802/js/archived
+  - a react render engine for Universal (previously Isomorphic) JavaScript apps written with express
+  - renders both plain react views and optionally react-router views
+  - enables server rendered views to be client mountable
 
 ## examples
 
@@ -148,10 +170,6 @@ modified: 2020-12-19T13:04:40.865Z
   - Use multiple frameworks on the same page without refreshing the page (React, AngularJS, Angular, Ember)
   - Lazy load code for improved initial load time.
 # more-ssr
-- https://github.com/pmb0/express-tsx-views
-  - Server-side JSX/TSX rendering for your express or NestJS application
-  - With this template engine, TSX files can be rendered server-side by your Express application. Unlike other JSX express renderers, this one does not rely on JSX files being transpiled by babel at runtime. Instead, TSX files are processed once by the tsc compiler.
-
 - https://github.com/MrWangJustToDo/fullstack-nest-react-ssr-template
   - fullstack ssr template, BE with nestjs, FE with react
 

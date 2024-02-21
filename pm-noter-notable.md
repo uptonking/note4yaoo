@@ -136,8 +136,8 @@ modified: 2023-11-28T14:48:45.910Z
   - 在新页面的平台分析表格
 
 - observable-notebook默认不支持私有文档
-  - 考虑2年后可私有或会员私有
   - like jupyter but using js/ts
+  - 考虑2年后可私有或会员私有
 
 - docx
   - diff .docx and .doc
@@ -157,6 +157,11 @@ modified: 2023-11-28T14:48:45.910Z
   - core-text-mode，整体页面突出文字，淡化链接样式
   - statistics-in-editor
     - 自动统计链接点击次数、图片分享次数、page或问题的访问次数
+
+- editor/ide-settings sync/store/sharing
+
+- excel
+  - apache-arrow
 
 ## search
 
@@ -201,6 +206,11 @@ modified: 2023-11-28T14:48:45.910Z
 ## comment
 
 - 页面底部的comment、侧边栏跟随内容的comment、侧边弹框的comment
+
+- comments
+  - 编辑态评论
+  - 阅读态评论
+  - 分享态评论
 # experimental
 - notion like block editor
 - roam like editor with bidirectional links，国内思源笔记
@@ -396,6 +406,12 @@ modified: 2023-11-28T14:48:45.910Z
 - [Mattermost Marketplace](https://mattermost.com/marketplace/)
 
 - [Visual Studio Marketplace](https://marketplace.visualstudio.com/VSCode)
+- [Unofficial Jupyter Notebook Extensions](https://jupyter-contrib-nbextensions.readthedocs.io/en/latest/)
+  - https://github.com/ipython-contrib/jupyter_contrib_nbextensions
+    - [jupyter_contrib_nbextenions appears to be incompatible with Jupyter Notebook v7](https://github.com/ipython-contrib/jupyter_contrib_nbextensions/issues/1647)
+  - [Extending the Notebook — Jupyter Notebook 7.1.0](https://jupyter-notebook.readthedocs.io/en/stable/extending/index.html)
+    - Please note that the extension system for Notebook 7 is radically different from the one used in Notebook 6.5.x and earlier.
+    - With Notebook 7 being developed on top of JupyterLab and Jupyter Server, the frontend extension system is now based on the same extension system used by JupyterLab.
 
 - [Eclipse Marketplace](https://marketplace.eclipse.org/)
 

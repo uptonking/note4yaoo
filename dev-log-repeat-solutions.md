@@ -22,9 +22,9 @@ modified: 2021-07-20T13:50:23.433Z
   - 抽空在线体验，工作专注代码
   - specification for pivot table
 
-- 技术方向js: 前端版/内存版/oplog + 富文本编辑器，多维表格，协作; dnd，floating，state
-- 技术扩展js/py: 支持拖拽的页面编辑器/lowcode，Excel/kanban，图表
-- 技术产品: client/server版 + cms, excel, 参考类似ckan的data-portal
+- 技术方向js: 前端版/流式版/oplog + 富文本编辑器，多维表格，协作; dnd，floating
+- 技术扩展js/py: 可拖拽的页面编辑器/lowcode, Excel/kanban, 图表
+- 技术产品: client/server版 + cms, airtable, 参考类似ckan的data-portal
 - 技术可选1: 画板, pdf，图形编辑器
 - 技术可选2: olap，bi，数据库，大数据系统
 - 技术可选3: vscode，可参考架构 extensions、capabilities
@@ -45,10 +45,10 @@ modified: 2021-07-20T13:50:23.433Z
   - office365，从 word/excel 复制粘贴的表格，如果其中有合并的单元格，也能支持正常展示
   - jupyter-notebook, observable-notebook
 
-- marketplace
+- marketplace: vscode/jupyter
   - browser-extensions
-  - figma
   - table-capture/shot
+  - figma
   - ocr
 
 - 团队版/企业版-features
@@ -92,9 +92,9 @@ modified: 2021-07-20T13:50:23.433Z
   - 👉🏻 nocodb     (AGPL/knex+nuxt3)
   - 👉🏻 ethercalc   (MIT/nodejs+redis)
   - locokit        (MIT/knex+vue2)
+  - undb          (AGPL/nestjs+mikro-orm+dnd-kit/table)
   - apitable      (AGPL/spring-mybatis+canvas)
   - focalboard    (AGPL/go+react-dnd)
-  - undb          (AGPL/nestjs+mikro-orm+dnd-kit/table)
   - rowy       (apache2/firebase+tinymce5)
   - baserow        (MIT/django+nuxt2)
   - ckan
@@ -139,15 +139,6 @@ modified: 2021-07-20T13:50:23.433Z
   - 腾讯文档
   - 类似outline集成slack
   - 类似superset支持各种数据源
-# ideas
-- editor/ide-settings sync/store/sharing
-- comments
-  - 编辑态评论
-  - 阅读态评论
-  - 分享态评论
-
-- excel
-  - apache-arrow
 # editor
 - tips
   - live edit

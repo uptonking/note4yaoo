@@ -35,17 +35,20 @@ modified: 2023-02-26T18:25:01.328Z
   - 默认border是gray-200(#e5e7eb)
   - input中提交按钮背景色默认blue-500
 
-- https://github.com/htmlstreamofficial/preline /2kStar/MIT/202306/js
+- https://github.com/htmlstreamofficial/preline /3.4kStar/MIT/202401/ts
   - https://preline.co/examples.html
   - prebuilt UI components based on the utility-first Tailwind CSS
+  - 分隔线用的不多
   - table示例元素丰富、色彩丰富、操作丰富
   - sidebar可多级
   - modal按钮位置多变，分隔线很少
-  - 分隔线用的不多
   - icon直接用的svg+path，不方便复用
   - dark mode暂不支持
   - [Application AI Prompt](https://preline.co/examples/application-ai-prompt.html)
-  - [Fork from Flowbite. Shouldn't it be mentioned?](https://github.com/htmlstreamofficial/preline/issues/1)
+  - [Application Form Layouts](https://preline.co/examples/application-form-layouts.html)
+  - [Application Layouts](https://preline.co/examples/layouts-application.html)
+  - [Blog Articles](https://preline.co/examples/blog-articles.html)
+  - [Fork from Flowbite. Shouldn't it be mentioned? _202206](https://github.com/htmlstreamofficial/preline/issues/1)
     - I've taken a good look at Preline and I must say that as one of the founders of Flowbite I have found a whole lot of similarities
     - Of course the code is not exactly the same, but the whole concept of Preline seems VERY similar to Flowbite.
   - [Show HN: Preline UI – Open-Source Tailwind CSS Components | Hacker News_202207](https://news.ycombinator.com/item?id=31989062)
@@ -78,11 +81,14 @@ modified: 2023-02-26T18:25:01.328Z
   - https://flowbite.com/blocks/
   - https://flowbite.com/application-ui/demo/
   - UI components based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, templates, and more.
+  - 字体较大，图标线条粗、颜色深
   - 很多付费解锁，但可参考效果
-  - 字体较大
   - All of the elements are built using the utility classes from Tailwind CSS and vanilla JavaScript with support for TypeScript.
   - Flowbite also offers an API for using the components programmatically with vanillajs
   - The preferred way to use the interactive UI components from Flowbite is via the `data-*` attributes interface which allows us to add functionality via the HTML element attributes and most of the examples on our documentation applies this strategy.
+  - [Sidenav - Flowbite](https://flowbite.com/blocks/application/sidenav/)
+  - [Blog Templates - Flowbite](https://flowbite.com/blocks/publisher/blog-templates/)
+  - [Update Forms (CRUD) - Flowbite](https://flowbite.com/blocks/application/crud-update-forms/)
 
 - https://github.com/themesberg/flowbite-react /1.2kStar/MIT
   - https://www.flowbite-react.com/

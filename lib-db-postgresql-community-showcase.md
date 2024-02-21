@@ -9,6 +9,10 @@ modified: 2023-10-26T16:45:47.318Z
 
 # guide
 
+# pg-powered
+- neon
+
+- Crunchy Data. Trusted Open Source PostgreSQL and Enterprise PostgreSQL Support, Technology and Training
 # discuss-stars
 - ## 
 

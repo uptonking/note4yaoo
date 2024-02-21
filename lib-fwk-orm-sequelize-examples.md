@@ -8,35 +8,36 @@ modified: 2023-02-05T18:50:32.900Z
 # lib-fwk-orm-sequelize-examples
 
 # guide
-- orm技术选型
-  - issues数量
-    - typeorm 1800+
-    - knex 700+
-    - sequelize 700+
 
 - tips
   - 模版参考: react-admin
-  - [Multitenancy using multiple databases using knex](https://vincit.github.io/objection.js/recipes/multitenancy-using-multiple-databases.html)
+
+- resources
 # popular
-- https://github.com/masb0ymas/expresso-sequelize /MIT/202310/ts/提交多/功能丰富
+- https://github.com/masb0ymas/expresso-sequelize /MIT/202401/ts/提交多/功能丰富
+  - https://expresso.masb0ymas.com/
   - Sequelize ORM v6.x + Sequelize TypeScript v2.x
   - Handlebars for templating HTML
   - Using Module Alias for simplify the require/import paths
   - Documentation with Swagger，但测试create user失败
   - 还提供了typeorm、mongoose版本
   - v5_20230404: improve apps with service pattern
+  - https://github.com/masb0ymas/expresso
+    - core + hooks + provider + query
   - https://github.com/masb0ymas/koala-sequelize-typescript /202103/ts/inactive
   - https://github.com/masb0ymas/expresso-gateway
     - Api Gateway with Express TypeScript
+  - https://github.com/masb0ymas/expresso-typeorm
+  - https://github.com/masb0ymas/expresso-mongoose
 
-- https://github.com/bissbr01/Command-project-management /ts
+- https://github.com/bissbr01/Command-project-management /202301/ts/inactive
   - A Scrum Management App for teams
   - 依赖reduxjs-toolkit、mantine、dnd-kit、formik
   - 提供了project、team等基础功能，还支持看板
   - 仅支持第3方登录，未提供注册
-  - https://github.com/bissbr01/Command-backend /js
+  - https://github.com/bissbr01/Command-backend /202303/js
+    - A containerized REST API for the Command project management app.
     - 依赖sequelize6
-    - A containerized REST API for the Command project managment app.
 
 - https://github.com/ruyd/automated-express-backend /202306/ts
   - NodeJS Express Starter for backends and microservices
@@ -53,12 +54,13 @@ modified: 2023-02-05T18:50:32.900Z
     - 支持注册新用户、admin界面
     - http://localhost:3000/admin/settings
 
-- https://github.com/lalalilo/express-crud-router /113Star/MIT/202201/ts/无db
-  - https://github.com/nicgirault/express-crud-router /202309/ts
+- https://github.com/nicgirault/express-crud-router /113Star/MIT/202309/ts/无db
   - Expose resource CRUD routes for Express & Sequelize. 
   - Compatible with React Admin Simple Rest Data Provider. 
   - The lib is ORM agnostic
-  - https://github.com/lalalilo/express-crud-router-sequelize-v6-connector
+  - https://github.com/lalalilo/express-crud-router-sequelize-v6-connector /202308/ts
+  - https://github.com/nicgirault/ra-toolkit
+    - Additional react-admin components & hooks
 
 - https://github.com/MyungWanPark/shopping-mall-backend /202401/ts
   - https://github.com/MyungWanPark/shopping-mall-frontend
@@ -68,22 +70,20 @@ modified: 2023-02-05T18:50:32.900Z
   - State Management: Context API
   - 支持注册登录jwt、购物车、简单销售仪表板、搜索
 
-- https://github.com/tiagospeckart/geekscript-backend
+- https://github.com/tiagospeckart/geekscript-backend /202305/ts/inactive
   - https://github.com/GabrielGameDev/geek-script-front
   - This repository is the final project for the Gama Academy Web Development course
   - 实现了登录，未实现注册
-
-- https://github.com/nmanikiran/rest-api-node-typescript /202106/ts/inactive
-  - simple REST API with node and express with typescript
-  - 架构典型，可通过api访问数据 http://localhost:3009/api/lessons
-  - 不支持jwt
 
 - https://github.com/feathersjs-ecosystem/feathers-sequelize /202306/ts
   - A Feathers service adapter for the Sequelize ORM. 
   - Supporting MySQL, MariaDB, Postgres, SQLite, and SQL Server
 
-- https://github.com/sequelize/express-example /js
-  - A proposal for the usage of Sequelize within an Express. JS application.
+- https://github.com/tomjschuster/sequelize-ui /BSD/202402/ts
+  - https://sequelizeui.app/
+  - a Sequelize ORM code generator, which generates a full Node.js TypeScript project, entirely in the browser
+  - Use the schema editor to design your database tables, fields and associations, then preview the Sequelize models and migrations in the code viewer before downloading the project as a zip file or copying code from individual files.
+  - Sequelize UI currently only generates TypeScript Sequelize code, not js
 
 - https://github.com/overlookmotel/sequelize-hierarchy /js/201906/inactive
   - Relational databases aren't very good at dealing with nested hierarchies like **folders/categories/Tree**
@@ -104,12 +104,7 @@ modified: 2023-02-05T18:50:32.900Z
   - Each row stores the identifiers of the node’s ancestors or path as a string.
   - The pattern also provides more flexibility in working with the path, such as finding nodes by partial paths.
 
-- https://github.com/sequelize/sequelize-sscce /202402/ts
-  - Base repository for creating and sharing Sequelize SSCCEs
-  - Use this repository to create an SSCCE for your issue
-  - Short, Self Contained, Correct (Compilable), Example
-
-- ddd-forum /1.8kStar/ISC/202306/ts/hacker-news
+- ddd-forum /1.8kStar/ISC/202306/ts
   - https://github.com/stemmlerjs/ddd-forum
   - https://dddforum.com/
   - Hacker news-inspired forum app built with TypeScript using DDD practices from solidbook.io.
@@ -127,13 +122,12 @@ modified: 2023-02-05T18:50:32.900Z
   - 全功能论坛：板块/楼中楼/角色权限/审核/富文本编辑/个性化配置/邮件通知 等
   - 自带授权登录：免开发支持 QQ/微信/支付宝 授权登录
 
-- https://github.com/PelagicCreatures/marlin /202204/js/inactive
+- https://github.com/PelagicCreatures/marlin /202204/js/pug/inactive
   - An ExpressJS CMS for sites with Sequelize db backends
   - Data model driven database (sequelize)
   - Admin data editing UI suite automatically built from data model
   - ACL access control on tables by user role (superuser, admin, etc.)
-  - 前端依赖pug，未找到prosemirror
-  - https://github.com/PelagicCreatures/marlin-app
+  - https://github.com/PelagicCreatures/marlin-app /202109/js/pug
     - a boilerplate app that includes many common functions of a web site/app featuring registered users. 
     - we use HIJAX to load pages after the initial load. 
     - 【DOM编程艺术】 Hijax---渐进增强地使用Ajax 
@@ -145,7 +139,7 @@ modified: 2023-02-05T18:50:32.900Z
 # v7
 - https://github.com/tapiwakundi/movies-api /js
   - simple example
-# apps-v7
+
 - https://github.com/dez126/team-git-saved-backend-main
   - HomeTasktick App Backend
 
@@ -165,29 +159,14 @@ modified: 2023-02-05T18:50:32.900Z
 
 - https://github.com/craftycodie/Sunrise-Halo3-WebServices
   - A NestJS, Domain-Driven Design reimplementation of Halo 3's web services.
-# v6
-- https://github.com/Kaltsoon/sequelize-cursor-pagination
-  - Cursor-based pagination queries for Sequelize models
-
-- https://github.com/tomjschuster/sequelize-ui /BSD/202402/ts
-  - https://sequelizeui.app/
-  - a Sequelize ORM code generator, which generates a full Node.js TypeScript project, entirely in the browser
-  - Use the schema editor to design your database tables, fields and associations, then preview the Sequelize models and migrations in the code viewer before downloading the project as a zip file or copying code from individual files.
-  - Sequelize UI currently only generates TypeScript Sequelize code, not js
-
-- https://github.com/andyforever/sequelizer
-  - A GUI Desktop App for export sequelize models from database automatically.
-# apps-v6
+# examples
 - https://github.com/demamano/File-Import /202306/ts
-  - file import with reatTS , NodeTS, and express , sequelize , mysql
-
-- https://github.com/juravlevdima/PERN-chat
-  - Chat made with PERN Stack & Socket. IO
-  - React | React Router | Redux Toolkit
-  - Real-time chat using web-sockets
+  - file import with reactTS , NodeTS, and express , sequelize , mysql
+  - upload and view excel sheets
+  - 依赖express、sequelize、exceljs、xlsx、mysql2、antd、react-dropzone
 
 - https://github.com/khaled-badenjki/cilo /202307/js
-  - Cilo simplifies the build of multi tenant applications by providing a wrapper around sequelize that handles the multi-tenancy for you.
+  - simplifies the build of multi tenant applications by providing a wrapper around sequelize that handles the multi-tenancy for you.
   - The code will bahave the same as if you were building a single tenant application.
 
 - https://github.com/Wind213/sequelize-multi-tenant /201901/js
@@ -195,9 +174,6 @@ modified: 2023-02-05T18:50:32.900Z
 
 - https://github.com/AnishLushte07/multi-tenant-application /201909/js
   - Multi tenant application using NodeJs, express, sequelize, mysql.
-
-- https://github.com/ali-husnain/expressjs-multi-tenant-rest-graphql-api-boilerplate /js
-  - This is a proof-of-concept (POC), multi-tenant RESTful Web Services application built on top of NodeJS.
 
 - https://github.com/PIYoung/node-express-boilerplate-multitenant /MIT/202302/ts
   - node express postgres boilerplate for multitenant(saas)
@@ -208,7 +184,7 @@ modified: 2023-02-05T18:50:32.900Z
 - https://github.com/kanban-org/kanban-board /202402/js
   - https://www.kanban.live/
   - full-stack Kanban task management app
-  - 依赖Sequelize
+  - 依赖express、sequelize、pg、react-redux、formik、react-beautiful-dnd
 
 - https://github.com/fnfacun/Koa_trello /202005/ts
   - 后端 - trello 团队协作工具
@@ -224,6 +200,12 @@ modified: 2023-02-05T18:50:32.900Z
 
 - https://github.com/raphaelalmeidamartins/fullstack-bank /202309/ts
   - Digital wallet full stack application developed with Next.js and Node.js
+
+- https://github.com/juravlevdima/PERN-chat /202212/ts/inactive
+  - https://pern-chat.onrender.com/
+  - Chat made with PERN Stack & Socket. IO
+  - React | React Router | Redux Toolkit
+  - Real-time chat using web-sockets
 
 - https://github.com/thedenisnikulin/chattitude-app-backend /202206/ts/inactive
   - a well structured Typescript version of old Chattitude
@@ -265,11 +247,10 @@ modified: 2023-02-05T18:50:32.900Z
   - 多用户电子木鱼系统，基于Koa2
   - https://github.com/xcfstudio/woodfish-app /vue
 
-- https://github.com/nban38/NFT_API_Typescript
-  - Node Js ( Typescript )
-
-- https://github.com/viclafouch/meme-studio
+- https://github.com/viclafouch/meme-studio /202401/ts
+  - https://www.meme-studio.io/
   - creating and sharing "internet memes"
+  - I do not save your meme in our database, so make sure you export your work.
 
 - https://github.com/Kshitiz1403/Collaborative-IDE /202401/ts/yjs
   - a full stack system supporting collaborative code editing, compiling & shared shell.
@@ -305,6 +286,11 @@ modified: 2023-02-05T18:50:32.900Z
   - CherryChart BACK-END (express, typescript)
   - https://github.com/jihunhong/CherryChart-Client /202210/js
 # starter
+- https://github.com/sequelize/sequelize-sscce /202402/ts
+  - Base repository for creating and sharing Sequelize SSCCEs
+  - Use this repository to create an SSCCE for your issue
+  - Short, Self Contained, Correct (Compilable), Example
+
 - https://github.com/cirosantilli/node-express-sequelize-nextjs-realworld-example-app /202208/ts/be+fe
   - Node.js + Express.js + Sequelize + SQLite/PostgreSQL + Next.js fullstack static/SSG/ISG Example Realworld App
   - https://github.com/cirosantilli/node-express-sequelize-realworld-example-app /202106/js
@@ -317,34 +303,23 @@ modified: 2023-02-05T18:50:32.900Z
   - Express and NodeJS based backend implementation of the RealWorld API Spec.
   - MySQL + Sequelize
 
-- https://github.com/boxpositron/typescript-webpack-sequelize-template
-  - NodeJS Server Template with support for sequelize and webpack
-  - 过于简单
+- https://github.com/joovitor12/northwind-node /202210/ts/js
+  - northwind-node, northwind-react
 
-- https://github.com/CuaMcCarsaree44/typescript-expressjs
-  - Turns out I made a boilerplate code through this repository.
+- https://github.com/MrsLecter/Traders /202210/ts/ejs
+  - Creating a database from existing tables, queries to the database
+  - Express + PostgreSQL + Sequelize + Bootstrap
 
-- https://github.com/StefanNedelchev/express-sequelize-ts-example /202401/ts
-  - A basic example of using express with sessions, sequelize and typescript.
-  - basic NodeJS application for web API microservices that uses express with express-session, sequelize-typescript to connect to a SQL database and authenticate users.
-  - The app is written following the proper OOP approach using TypeScript classes with decorators
-  - 过于简单
-  - If the registration/login was successful, the user should be instantly logged in with a session. 
-
-- https://github.com/felipecal/Api-Sequelize /MIT/202402/ts
+- https://github.com/felipecal/Api-Sequelize /MIT/202402/ts/提交多
   - This is a simple CRUD api in TypeScript, sequelize, aws rds or docker database.
   - 依赖express、sequelize、swagger-ui-express、bcrypt
   - AWS RDS or Docker Database
   - Swagger - Documentation
 
-- https://github.com/mcaligares/express-typescript /202310/ts
-  - Express project with Typescript support ready to start coding
-
-- https://github.com/Mohammad-Faisal/professional-express-sequelize-docker-boilerplate /MIT/202205/ts/typedi/inactive
-  - ExpressJS Boilerplate with Typescrip+Docker+Sequelize integration
-
-- https://github.com/kushalshit27/nodejs-sequelize-typeScript /202402/ts
-  - build your own API with Node.js + Express+ Sequelize + TypeScript
+- https://github.com/nmanikiran/rest-api-node-typescript /202106/ts/inactive
+  - simple REST API with node and express with typescript
+  - 架构典型，可通过api访问数据 http://localhost:3009/api/lessons
+  - 不支持jwt
 
 - https://github.com/ljlm0402/typescript-express-starter /202301/ts
   - Express RESTful API Boilerplate Using TypeScript，可选参数的模版项目
@@ -354,16 +329,38 @@ modified: 2023-02-05T18:50:32.900Z
 
 - https://github.com/Thre4dripper/NodeTs-Express-Service-Based-Template /MIT/202401/ts
   - configurable Node.js, Express, and TypeScript server template with a service-based architecture 
+  - Sequelize/Mongoose
   - Database Compatibility: Interact with MySQL, PostgreSQL, MariaDB, Sqlite, MSSql, MongoDB.
 
-- https://github.com/codespede/pwoli /202311/ts
-  - Pwoli is a NodeJS/TypeScript framework written in TypeScript which can work independantly on a raw NodeJS/TypeScript environement OR, in co-ordination with any other frameworks or libraries like Express.js.
+- https://github.com/codespede/pwoli /BSD/202303/ts
+  - Pwoli is a NodeJS/TypeScript framework written in TypeScript which can work independantly on a raw NodeJS/TypeScript environment OR, in co-ordination with any other frameworks or libraries like Express.js.
   - Pwoli can connect to any kind of ORMs by implementing thier corresponding ORM Adapters and works with Sequelize and Mongoose 
 
 - https://github.com/Thre4dripper/node-server-init /202401/ts
   - initializing Node.js server projects with customizable configurations.
   - npx node-server-init my-server
   - Sequelize & Mongoose: Integrations with Sequelize for SQL database operations and Mongoose for MongoDB.
+
+- https://github.com/SourceSprint/ts-webpack-sequelize-template /202308/ts/过于简单
+  - NodeJS Server Template with support for sequelize and webpack
+
+- https://github.com/yosua-kristianto/typescript-expressjs /202212/ts
+  - Turns out I made a boilerplate code through this repository.
+
+- https://github.com/StefanNedelchev/express-sequelize-ts-example /202401/ts/过于简单
+  - A basic example of using express with sessions, sequelize and typescript.
+  - basic NodeJS application for web API microservices that uses express with express-session, sequelize-typescript to connect to a SQL database and authenticate users.
+  - 🧐 The app is written following the proper OOP approach using TypeScript classes with decorators
+  - If the registration/login was successful, the user should be instantly logged in with a session. 
+
+- https://github.com/kushalshit27/nodejs-sequelize-typeScript /202402/ts
+  - build your own API with Node.js + Express+ Sequelize + TypeScript
+
+- https://github.com/mcaligares/express-typescript /202310/ts
+  - Express project with Typescript support ready to start coding
+
+- https://github.com/Mohammad-Faisal/professional-express-sequelize-docker-boilerplate /MIT/202205/ts/typedi/inactive
+  - ExpressJS Boilerplate with Typescrip+Docker+Sequelize integration
 
 - https://github.com/weareopensource/Typescript /202110/ts/inactive
   - TypeScript - Boilerplate Back : Express, Jwt, Mongo, Sequelize (Draft)
@@ -374,8 +371,8 @@ modified: 2023-02-05T18:50:32.900Z
 - https://github.com/kazi-naimul/typescript-express-mysql-boilerplate /202312/ts
   - A boilerplate for any enterprise rest api or service with Node.js -Typescript, Express and Sequelize ORM for mysql, postgresql or others.
 
-- https://github.com/HUNTER9881/Sqlite_Express_Typescript
-  - [Node.js + TypeScript + MongoDB: JWT Authentication 2023](https://codevoweb.com/node-typescript-mongodb-jwt-authentication/)
+- https://github.com/HUNTER9881/Sqlite_Express_Typescript /202301/ts
+  - [Node.js + TypeScript + MongoDB: JWT Authentication](https://codevoweb.com/node-typescript-mongodb-jwt-authentication/)
 
 - https://github.com/salino3/node-typescript /202402/ts
   - front + back
@@ -396,33 +393,43 @@ modified: 2023-02-05T18:50:32.900Z
   - using Fastify with Sequelize.
 
 - https://github.com/designly1/nextjs14-auth-sequelize-starter /202402/ts
-  - starter app with Sequelze ORM and JWT authentication
+  - starter app with Sequelize ORM and JWT authentication
 
 - https://github.com/saulotarsobc/electronjs-with-nextjs /202401/ts
   - ElectronJS application with NextJS and TypeScript
+
+- https://github.com/sequelize/express-example /202203/js/inactive
+  - A proposal for the usage of Sequelize within an Express. JS application.
 # auth
 - https://github.com/diegomottadev/auth-base-app /202402/ts
   - This repository contain a REST API project for creating users, user roles, and user authentication using Node.js, Express.js, and Sequelize with TypeScript.
 
-- https://github.com/rahulthackkar/nodejs-mysql-jwt-sequelize /js
+- https://github.com/rahulthackkar/nodejs-mysql-jwt-sequelize /202207/js/ejs
   - Node JS + Express + User authentication using JWT + Sequelize + Jest + Docker
 
 - https://github.com/PROTEK-ID/mern-auth-template /202309/ts
   - MERN Stack Authentication using Sequelize (MySQL as dialect) for backend template.
 
-- https://github.com/bezkoder/node-js-express-login-example /js
+- https://github.com/bezkoder/node-js-express-login-example /202402/js/流程图很清晰
   - Express Login example (with Registration) using JWT, Cookies, MySQL database
-  - 流程图很清晰
-  - [Node.js Express: Login and Registration example with JWT - BezKoder](https://www.bezkoder.com/node-js-express-login-example/)
+  - [Node.js Express: Login and Registration example with JWT](https://www.bezkoder.com/node-js-express-login-example/)
 
-- https://github.com/kylewhittemore/react-sequelize-template /js
+- https://github.com/kylewhittemore/react-sequelize-template /202105/js
   - Full-stack react with passport js local strategy for authentication
 # utils
+- https://github.com/mujz/pg-search-sequelize /js/inactive
+  - Postgres full-text search in Node.js and Sequelize.
+  - https://github.com/mujz/pg-search-sequelize-example /js/inactive
+    - An example use case of pg-search-sequelize
+
 - https://github.com/tylerjpeterson/sequelize-history /js
   - This module will setup automatic revision tracking for any Sequelize model. 
   - This is effectively a re-write of sequelize-temporal
 - https://github.com/nielsgl/sequelize-paper-trail /js
   - Sequelize plugin for tracking revision history of model instances.
+
+- https://github.com/andyforever/sequelizer
+  - A GUI Desktop App for export sequelize models from database automatically.
 
 - https://github.com/sequelize/sequelize-auto /202112/ts
   - Automatically generate models for SequelizeJS via the command line.
@@ -568,13 +575,17 @@ modified: 2023-02-05T18:50:32.900Z
 - https://github.com/joeybaker/sequelize-stream
   - Create a stream of Sequelize create, update, and destroy events. 
   - This is useful if you want to build a real-time stream of events in your database.
-# search
-- https://github.com/mujz/pg-search-sequelize /js/inactive
-  - Postgres full-text search in Node.js and Sequelize.
-  - https://github.com/mujz/pg-search-sequelize-example /js/inactive
-    - An example use case of pg-search-sequelize
 # cms
-- https://github.com/apstanisic/zmaj /ts
+- https://github.com/ezy/seedpress-cms /201807/js
+  - A headless CMS built in Express for PostgresQL using Sequelize. 
+  - Generally follows the Wordpress post and term schema.
+
+- https://github.com/TaleLin/lin-cms-koa /202111/js
+  - 使用Node. JS KOA构建的CMS开发框架
+  - 是林间有风团队经过大量项目实践所提炼出的一套内容管理系统框架。
+  - https://github.com/TaleLin/lin-cms-vue /202401/js/vue
+
+- https://github.com/apstanisic/zmaj /202310/ts
   - https://zmaj.vercel.app/
   - a headless CMS with RESTful API for your database and admin panel to easily manage your data
   - Built on top of React and React Admin for admin panel, and NestJS and Sequelize for API.

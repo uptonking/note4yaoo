@@ -83,6 +83,7 @@ modified: 2022-09-10T02:26:52.062Z
   - https://mydrive-storage.com/
   - MyDrive is an Open Source cloud file storage server (Similar To Google Drive). 
   - 依赖express、mongoose、fluent-ffmpeg、react-redux、react-contextmenu
+  - 🐛 不支持 webdav
   - MyDrive uses mongoDB to store file/folder metadata, and supports multiple databases to store the file chunks, such as Amazon S3, the Filesystem, or just MongoDB. 
   - [I created an Open Source Google Drive Clone - MyDrive _202006](https://www.reddit.com/r/selfhosted/comments/h8tvtg/i_created_an_open_source_google_drive_clone/)
     - myDrive uses the HTTP protocol to transfer files.
@@ -394,12 +395,11 @@ modified: 2022-09-10T02:26:52.062Z
   - Collaborative p2p file sharing in the browser
   - https://github.com/cypsela/sailplane-node /202101/js/inactive
 
-
-
 - https://github.com/Peergos/Peergos /AGPLv3/202402/java
   - https://peergos.org/
   - A p2p, secure file storage, social network and application protocol
   - 
+
 # more-drive
 - https://github.com/FazioNico/dDrive
   - An alternative storage solution to Google Drive

@@ -59,6 +59,18 @@ modified: 2023-08-29T10:12:22.345Z
   - gql-db is an SQL database server with version control integrated into the database itself. 
   - It's written in Rust and uses Protocol Buffers/gRPC for communication
   - We've also implemented a UI for the database server, which can be found at: GQL-Project/gql_client.
+
+- https://github.com/gitbutlerapp/gitbutler /FSL-1.0-MIT/202402/rust/ts/svelte
+  - https://gitbutler.com/
+  - The GitButler version control client, backed by Git, powered by Tauri/Rust/Svelte
+  - Git branch management tool, built from the ground up for modern workflows
+  - GitButler is a git client that lets you work on multiple branches at the same time
+  - ✨ Changes to files or parts of files can be grouped into what we call virtual branches. 
+  - 🆚️ How do GB's virtual branches differ from Git branches?
+    - The branches that we know and love in Git are separate universes, and switching between them is a full context switch. 
+    - GitButler allows you to work with multiple branches in parallel in the same working directory.
+    - GitButler is aware of changes before they are committed. This allows it to keep a record of which virtual branch each individual diff belongs to.
+    - while in Git it is preferable that you create your desired branch ahead of time, using GitButler you can move changes between virtual branches at any point during development.
 # git-like
 - https://github.com/GerritCodeReview/jgit /EDL(BSD)/202310/java
   - https://eclipse.dev/jgit/

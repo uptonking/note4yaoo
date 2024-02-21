@@ -598,7 +598,7 @@ modified: 2023-02-09T18:32:06.240Z
 - https://www.npmjs.com/package/@nocobase/client
   - 依赖react-quill.v1
 
-- ddd-forum /1.8kStar/ISC/202306/ts/hacker-news
+- ddd-forum /1.8kStar/ISC/202306/ts
   - https://github.com/stemmlerjs/ddd-forum
   - https://dddforum.com/
   - Hacker news-inspired forum app built with TypeScript using DDD practices from solidbook.io.

@@ -25,7 +25,12 @@ modified: 2021-08-30T18:56:09.644Z
 - https://github.com/JS-AK/db-orm-benchmarks /202402/ts
   - ORM benchmarking for Node.js
   - 50_000 queries in await Promise.all() 
-  - 50_000 queries in await one by one in for loop 
+  - 50_000 queries in await one by one in for loop
+
+- https://github.com/drizzle-team/drizzle-northwind-benchmarks /202304/ts/inactive
+  - 测试项目 sqlite3、knex、prisma、mikro
+  - https://github.com/drizzle-team/drizzle-northwind-benchmarks-pg
+    - Postgres benchmarks between Drizzle ORM and other popular ORM
 
 - https://github.com/tkssharma/nodejs-db-orm-world /202203/ts
   - Node JS with different ORM like Typeorm, Knex, Prisma and Sequelize with Node JS API Development Node JS with without any ORM (MYSQL raw queries)
@@ -232,13 +237,38 @@ modified: 2021-08-30T18:56:09.644Z
   - Currently, LiveStateDB only supports MongoDB.
   - LiveStateDB features a client side library and a server side library that can be installed via npm or yarn with the following commands. The libraries need to be installed on both sides in order to make use of LiveStateDB's real time updates.
 # orm-non-js
-- https://github.com/SeaQL/sea-orm /rust
+- https://github.com/diesel-rs/diesel /MIT/202402/rust/同步api
+  - https://diesel.rs/
+  - A safe, extensible ORM and Query Builder for Rust
+  - Supported databases: PostgreSQL, MySQL, SQLite
+  - Preventing Runtime Errors: eliminate the possibility of incorrect database interactions at compile time.
+  - Performance: Our focus on zero-cost abstractions allows Diesel to run your query and load your data even faster than C.
+  - Extensible: Unlike Active Record and other ORMs, Diesel is designed to be abstracted over.
+  - [What ORM do you use? : r/rust _202305](https://www.reddit.com/r/rust/comments/13d9ayi/what_orm_do_you_use/)
+
+- https://github.com/SeaQL/sea-orm /MIT/202402/rust/异步api
   - https://www.sea-ql.org/SeaORM/
   - An async & dynamic ORM for Rust
-  - Seaography is a GraphQL framework built on top of SeaORM. 
+  - Async: Relying on SQLx
+  - Dynamic: Built upon SeaQuery, SeaORM allows you to build complex dynamic queries.
+  - Service Oriented: Quickly build services that join, filter, sort and paginate data in REST, GraphQL and gRPC APIs.
+  - 🆚️ [Compare with Diesel](https://www.sea-ql.org/SeaORM/docs/internal-design/diesel/)
+    - the number one requested feature, async Rust support.SeaORM together with SQLx offers you a pure Rust technology stack. Diesel uses native drivers by default and it may take some effort for you to replace it with a pure Rust driver. 
+    - big distinction between Diesel and SeaORM is static vs dynamic.
+    - Diesel provides an everything-compile-time API where types can be checked entirely statically. You can also do dynamic queries with Diesel, but you'd lose some of the benefits of compile-time type-checking.
+    - SeaORM is dynamic, in which things are established at runtime. It offers more flexibility. 
+  - https://github.com/SeaQL/sea-query /rust
+    - A dynamic SQL query builder for MySQL, Postgres and SQLite
   - https://github.com/SeaQL/starfish-ql
     - a graph database and query engine to enable graph analysis and visualization on the web. 
     - StarfishQL uses a SQL database internally and is built on top of other libraries in the SeaQL ecosystem.
+
+- https://github.com/launchbadge/sqlx /MIT/202402/rust
+  - an async, pure Rust† SQL crate featuring compile-time checked queries without a DSL.
+  - Truly Asynchronous. Built from the ground-up using async/await for maximum concurrency.
+  - Compile-time checked queries (if you want). See SQLx is not an ORM.
+  - Database Agnostic. Support for PostgreSQL, MySQL, MariaDB, SQLite.
+  - Runtime Agnostic. Works on different runtimes (async-std / tokio / actix) and TLS backends (native-tls, rustls).
 
 - https://github.com/upper/db /202208/go
   - Data access layer for PostgreSQL, CockroachDB, MySQL, SQLite and MongoDB with ORM-like features

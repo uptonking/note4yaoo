@@ -29,17 +29,17 @@ modified: 2021-01-01T16:02:50.598Z
   - An Open Data Catalog built on Drupal 8
   - [Comparing DKAN and CKAN](https://dkan.readthedocs.io/en/latest/introduction/dkan-ckan.html)
 
-- datopian-portaljs /2kStar/MIT/202401/ts
+- datopian-portaljs /2kStar/MIT/202402/ts
   - https://github.com/datopian/portaljs
   - https://portaljs.org/
   - a framework for rapidly building rich data portal frontends using a modern frontend approach.
-  - 依赖ag-grid、tanstack-table、xlsx、material-ui.v4, mui-x-data-grid, react-plotly.js, nextjs
+  - 依赖nextjs、ag-grid、tanstack-table、xlsx、material-ui.v4、mui-x-data-grid、react-plotly.js
   - built in Javascript and React on top of the popular Next.js framework. 
   - portal assumes a "decoupled" approach where the frontend is a separate service from the backend and interacts with backend(s) via an API. 
   - It can be used with any backend and has out of the box support for CKAN.
   - Portal.js used to be Recline(JS)
   - https://www.datopian.com/solutions/open-data-portals
-    - 🚧 Our team is proud to be led by the creator of CKAN
+    - 👷🏻 Our team is proud to be led by the creator of CKAN
 - https://github.com/datopian/frontend-v2
   - Data Portal frontend. Designed for CKAN but usable anywhere. 
   - Microservice architecture so you can run and customize it standalone and connect to your backend of choice. 

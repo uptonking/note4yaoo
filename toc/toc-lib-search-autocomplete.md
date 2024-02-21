@@ -400,14 +400,15 @@ modified: 2023-01-01T13:24:35.994Z
   - The installation process is always the same: Pagefind only requires a folder containing the built static files of your website
   - After indexing, Pagefind adds a static search bundle to your built files, which exposes a JavaScript search API that can be used anywhere on your site. 
 
-- https://github.com/dosyago/DiskerNet /js
+- https://github.com/dosyago/DiskerNet /AGPLv3/202312/js
+  - https://github.com/dosyago/DownloadNet
   - An internet on yer disk. Full text search archive from your browsing and bookmarks.
 
 - https://github.com/answeroverflow/answeroverflow /ts
   - https://www.answeroverflow.com/
   - Indexing Discord Help Channel Questions into Google
   - Powerful analytics - Learn what questions are asked the most, who is most helpful, and other community insights
-# full-text-search-solutions
+# full-text-search
 - pouchdb-quick-search /370Star/apache2/201702/js/lunr/inactive
   - https://github.com/pouchdb-community/pouchdb-quick-search
   - Full-text search engine on top of PouchDB
@@ -457,6 +458,14 @@ modified: 2023-01-01T13:24:35.994Z
   - Using this architecture you can query your levelup database using your own query langauge with full index support.
   - 🍴 forks
     - https://github.com/mvayngrib/level-queryengine
+# docsearch
+- https://github.com/typesense/typesense-docsearch-scraper /MIT/202312/python
+  - https://typesense.org/docs/guide/docsearch.html
+  - A fork of Algolia's awesome DocSearch Scraper, customized to index data in Typesense
+
+- https://github.com/jquery/typesense-minibar /MIT/202312/js/NoDeps
+  - a fast 2kB autocomplete search bar for Typesense. 
+  - It is an alternative to typesense-docsearch.js, Algolia DocSearch, InstantSearch, autocomplete-js, and typesense-js.
 # code-search
 - https://github.com/bytefish/ElasticsearchCodeSearch /csharp
   - This repository is an Elasticsearch experiment to see how to build a code search engine.

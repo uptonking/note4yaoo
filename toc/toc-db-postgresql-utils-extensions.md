@@ -76,6 +76,11 @@ modified: 2023-10-26T15:29:40.053Z
   - [Status of IVM within Postgres · sraoss/pg_ivm](https://github.com/sraoss/pg_ivm/issues/57)
     - 202306: We hope this patch would be accepted in PostgreSQL 17 even in a limited form. In order to make this progress, we need more discussion in the community.
   - https://github.com/sraoss/pgsql-ivm
+
+- https://github.com/djrobstep/migra /202209/python
+  - https://databaseci.com/docs/migra
+  - a schema diff tool for PostgreSQL, written in Python. 
+  - Use it in your python scripts, or from the command line
 # search
 - https://github.com/paradedb/paradedb /AGPLv3/202402/rust/c
   - https://paradedb.com/

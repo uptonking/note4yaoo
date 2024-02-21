@@ -134,7 +134,8 @@ modified: 2021-08-30T18:56:18.632Z
   - You can also load remote files (using JS ajax, remote server must send Access-Control-Allow-Origin:*)
   - No file will be uploaded - uses only JavaScript HTML5 `FileReader`.
 
-- https://github.com/pawelsalawa/sqlitestudio /202309/c
+- https://github.com/pawelsalawa/sqlitestudio /GPLv3/202309/c/qt
+  - https://sqlitestudio.pl/
   - multi-platform SQLite database manager written in C++, with use of Qt framework
 # powered-by-sqlite
 - https://github.com/datopian/markdowndb /MIT/202401/ts/sqlite
