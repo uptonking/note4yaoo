@@ -48,4 +48,5 @@ modified: 2023-02-07T09:43:01.972Z
   - [Is Falcor being actively maintained?](https://github.com/Netflix/falcor/issues/1016)
     - there are many mentions of netflix moving away from falcor. while they certainly have their reasons falcor still has its place and has no real alternative in many usecases where graphQL is not a good fit!
     - graphQL is too complex to automatically map to simple plain old js object interactions plus i dont want to write schemas for everything up front 
+    - falcor has the same scaling capabilities as graphQL. They neeeded to raplace their monolithic falcor backend with a new architecture and happened to chose graphQL, they could also have rewritten a new falcor server with a different architecture and solved those issues. So falcor is not inherently less scalable.
 # more

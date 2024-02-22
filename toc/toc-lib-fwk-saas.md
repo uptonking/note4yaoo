@@ -153,6 +153,12 @@ modified: 2021-05-25T09:41:29.066Z
 - https://github.com/rajeshpillai/node-jwt-step-by-step /202005/js
   - A simple express jwt server with vanilla javascript client for testing
   - backend + frontend
+
+- https://github.com/braitsch/node-login /MIT/202104/js
+  - A template for quickly building login systems on top of Node.js & MongoDB
+- https://github.com/cornflourblue/node-mongo-registration-login-api /MIT/20207/js
+  - NodeJS + MongoDB API for User Management, Authentication and Registration
+
 # ide-like
 - https://github.com/labring/laf /ts
   - https://laf.dev/

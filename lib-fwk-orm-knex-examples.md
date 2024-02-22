@@ -23,11 +23,11 @@ modified: 2023-01-22T19:52:59.120Z
 - resources
   - [knex/ECOSYSTEM.md](https://github.com/knex/knex/blob/master/ECOSYSTEM.md)
 # popular
-- https://github.com/shalior/express-ts-template /结构合理
+- https://github.com/cdellacqua/express-knex-typescript-template /202311/ts
   - Express.js template using TypeScript, Knex and Docker to head-start development.
-  - 🍴 fork of https://github.com/cdellacqua/express-knex-typescript-template /202311/ts
   - view层pug
-  - 功能非常丰富
+  - 功能丰富, 代码精简
+  - 🍴 fork https://github.com/shalior/express-ts-template
   - https://github.com/shalior/express-mongo-ts /202301/ts/inactive
 
 - knex /18.5kStar/MIT/202401/js
@@ -145,12 +145,17 @@ modified: 2023-01-22T19:52:59.120Z
     - In MySQL, you can partition by RANGE, LIST, COLUMN, HASH and KEY
     - When you use partitioning, MySQL will keep that data on separate parts of the disk as if they were separate tables and organizes your data automatically based on the partitioning key
 # starter
+- https://github.com/gothinkster/koa-knex-realworld-example /201910/js/archived
+  - Example Node. Js (Koa.js + Knex) codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the RealWorld spec and API.
+  - 🍴 forks
+  - https://github.com/EJIqpEP/koa-knex-realworld-example /202205/js
+  - https://github.com/mlaccetti/koa-knex-realworld-heroku-example /201905/js
+
 - https://github.com/kenyipp/realworld-nodejs-example-app /202304/ts
   - scalable RealWorld app implemented with TypeScript, Node.js, AWS Lambda, and tested with high-quality unit and integration tests
   - Express + Knex
-
-- https://github.com/gothinkster/koa-knex-realworld-example /201910/js
-  - Example Node. Js (Koa.js + Knex) codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the RealWorld spec and API.
+  - Refactor project to implement a microservice architecture using TypeScript
+  - Implement GraphQL endpoint for retrieving articles
 
 - https://github.com/LimarenkoDenis/typescript-node-koa-realworld-example-app /201710/ts
   - fullstack application built with Koa.js + Knex including CRUD operations, authentication, routing, pagination, and more.
@@ -168,12 +173,14 @@ modified: 2023-01-22T19:52:59.120Z
 - https://github.com/agencyenterprise/aeboilerplate /202001/ts/inactive
   - a full-stack React/Node Typescript project
   - an opinionated boilerplate that includes independent client and API
+  - The client application is generated using `create-react-app`.
+  - https://github.com/agencyenterprise/ae-bootstrap
+  - https://github.com/agencyenterprise/hack-2023-ae-faucet
 
 - https://github.com/dhruvsaxena1998/node-typescript-starter /202110/ts/inactive
   - Node.js express template written with typescript.
   - https://github.com/alonavns/Yerevan /201907/ts
   - https://github.com/mxro/knex-typescript-starter-project /202002/ts
-  - https://github.com/eliranlevi/node-ts-boilerplate /201904/ts
 
 - https://github.com/santoshshinde2012/node-ts-knex-boilerplate /202402/tsconfig
   - Node-Typescript-Knex-Boilerplate
@@ -193,7 +200,7 @@ modified: 2023-01-22T19:52:59.120Z
   - Example CRUD application Express/Knex/PostgreSql
 
 - https://github.com/yosua-kristianto/typescript-expressjs /202212/ts
-  - I made a boilerplate
+  - I made a boilerplate; java风格
 
 - https://github.com/kasvith/typescript-express-jwt-knex-boilerplate /MIT/202107/ts
   - Typescript Express JWT Knex Boilerplate
@@ -228,6 +235,25 @@ modified: 2023-01-22T19:52:59.120Z
 
 - https://github.com/jvcjunior/node_express_functional /202012/ts
   - Node/Express API using some functional approach
+
+- https://github.com/RafaelGoulartB/proffy /MIT/202202/ts
+  - Project made to connect teachers to students, made in Next Level Week #2
+  - 依赖express、knex、sqlite3、react
+
+- https://github.com/osvaldokalvaitir/nodejs-proffy /202008/ts/inactive
+  - Proffy Application using Node.js, Express, knex.js, TypeScript, CORS, SQLite and Insomnia
+  - Project built during Rocketseat's Next Level Week #2
+  - https://github.com/higorsnt/proffy /202008
+
+- https://github.com/tdubs42/tdubs-fullstack-framework /202108/js
+  - Uses express, CORS, helmet, and knex for the backend. 
+  - Uses react and axios for the frontend.
+- https://github.com/rednil/express-passport-knex-lit /202301/js
+  - A fullstack starter for little projects requiring authentication and user management.
+  - Based on express, passport, knex and lit, automatically packed into a docker container using a github action.
+- https://github.com/alexeagleson/nextjs-fullstack-app-template /202301/ts
+  - A fullstack template for a NextJs App
+  - This tutorial is available as a video on youtube
 
 - https://github.com/cham11ng/typescript-api-starter /MIT/202210/ts/inactive
   - Starter for Node.js Express API in Typescript with jsonwebtoken, joi, Knex, Objection.js and many other popular tools.
@@ -285,10 +311,6 @@ modified: 2023-01-22T19:52:59.120Z
   - https://github.com/HannesOberreiter/btree_database
     - The maria folder will be our local volume for the database
     - The redis folder will be our local volume for the redis database dumps
-
-- https://github.com/osvaldokalvaitir/nodejs-proffy /202008/ts/inactive
-  - Proffy Application using Node.js, Express, knex.js, TypeScript, CORS, SQLite and Insomnia
-  - Project built during Rocketseat's Next Level Week #2
 
 - https://github.com/bot-ts/framework /202310/ts
   - a framework for discord.js designed in TypeScript 

@@ -40,3 +40,13 @@ modified: 2024-02-09T10:54:44.509Z
   - With aggressive disk caching on servers static files are probably near enough in-memory anyhow (+ I'm sure you could configure a modern web server application to cache anyhow), so yeah it's probably pretty fast.
   - However it's more limiting to simply serve static files - you're limited to what you've generated. With redis you can serve it as json data and use it dynamically for e.g. search or showing all articles with a given tag, in a given date range, etc.
   - Additionally, I'm not a big fan of a whole bunch of static files sat in a folder somewhere that needs to be regenerated every time I change something. Personal preference, perhaps
+# discuss-alternatives-hexo
+- ## 
+
+- ## 
+
+- ## Rspress v1.12.0 takes a bunch of update:
+- https://twitter.com/sanyuan0704/status/1760631881836699982
+  - Make component preview framework-agnostic, support not only React
+  - Implement HMR for sidebar when markdown  header changes
+  - Install size reduces 50%

@@ -30,7 +30,7 @@ modified: 2023-09-28T20:35:56.153Z
   - [Pouchdb Plugins and External Projects](https://pouchdb.com/external.html)
   - [Couchbase Open Source Projects](https://developer.couchbase.com/open-source-projects/)
 # popular
-- [Sheets in PouchDB | SheetJS Community Edition](https://docs.sheetjs.com/docs/demos/data/pouchdb#complete-example)
+- [Sheets in PouchDB | SheetJS Community Edition](https://docs.sheetjs.com/docs/demos/data/pouchdb)
   - This demo uses PouchDB and SheetJS to export database snapshots to spreadsheets and import bulk data from workbooks.
 
 - https://github.com/pubkey/client-side-databases

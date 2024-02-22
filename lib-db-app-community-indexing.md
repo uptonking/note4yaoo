@@ -20,7 +20,15 @@ modified: 2023-09-17T17:38:11.187Z
 # discuss
 - ## 
 
-- ## 
+- ## When many database indexes are too many?
+- https://twitter.com/deisbel/status/1760322457750085930
+- instead of trying to figure out the right number of indexes, let's change our approach to:
+  - 1- Define an index only if you have proof you will use it.
+  - 2- If you are unsure, refrain(克制；抑制) from creating it.
+  - 3- If you need more later, add them.
+- If your system mostly makes queries, with not too many concurrent data transactions, then you have more liberty to create more indexes.
+
+- Measure Twice, Index Once. If a particular query is slow, look at whether indexing could help—but also consider other factors like query optimization or schema changes.
 
 - ## Database indexing explained.
 - https://twitter.com/ChrisStaud/status/1759958340086767693

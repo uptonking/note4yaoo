@@ -138,10 +138,12 @@ modified: 2023-10-26T19:04:00.318Z
   - SOLID (Tim Berners-Lee, RDF)
   - GUN (ours, graph)
 
-# discuss-protocol-raft/paxos
+# discuss-protocol-raft/paxos ⚖️
 - ## 
 
-- ## 
+- ## 偶然发现剑桥大学 2020 年对比 Paxos 和 Raft 的一篇论文，题目很有意思：“我们就共识协议达成共识了吗？”
+- https://twitter.com/qtmuniao/status/1760552518051070087
+  - 主要思路是用 Raft 的术语和思路去表述 MultiPaxos，以明晰两者的区别和联系。
 
 - ## 🆚️ [Paxos vs. Raft: Have we reached consensus on distributed consensus? | Hacker News _202107](https://news.ycombinator.com/item?id=27831576)
 - Since the article mentions Google as the outlier preferring Paxos, I may be able to shed some light from a few years ago.

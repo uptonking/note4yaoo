@@ -7,6 +7,8 @@ modified: 2021-01-06T14:40:03.364Z
 
 # thread-fwk-react-dev
 - 关于react的特殊用法、架构设计、与其他框架的联系区别
+
+- react的替代框架，考虑 nanostore+logux
 # discuss-stars
 - ## 
 
@@ -165,6 +167,18 @@ modified: 2021-01-06T14:40:03.364Z
   - yep. inspect works by intercepting the assignment — that way, if you use debugger or console.trace it will lead you to the line of code that caused the update (which wouldn't be possible if we used effects for inspecting)
 - Good to know. How about $effect, will it be triggered once or twice?
   - Only once
+
+# discuss-compiler-fwk
+- ## 
+
+- ## 
+
+- ## 
+
+- ## I think 2024 will be the year you see what’s possible with compilers. 
+- https://twitter.com/trueadm/status/1760437544703906058
+  - With React Forget on the horizon, I think we’ll start to see more front end UI compiler driven optimizations that aren’t just Babel plugins.
+  - Not to say that Babel plugins weren’t important. They were. It’s just you need a proper compiler pipeline to make larger scale optimizations. It gets even more impressive when you couple the compiler to the bundler/type system.
 
 # discuss
 - ## 

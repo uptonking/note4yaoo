@@ -22,6 +22,8 @@ modified: 2023-12-11T10:12:09.159Z
 
 - ## 
 
+- ## 
+
 - ## Emitting all the output of an app to stdout, while writing a filtered subset to a file? Not a problem with `tee` and process substitution
 - https://twitter.com/gunnarmorling/status/1756715764168417372
   - [Filtering Process Output With tee - Gunnar Morling _202402](https://www.morling.dev/blog/filtering-process-output-with-tee/)

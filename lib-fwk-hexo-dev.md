@@ -16,6 +16,7 @@ modified: 2024-02-09T10:53:39.813Z
 - cons
   - hexo(nodejs)比hugo(go)慢
   - 每次更新内容后需要全量rebuild
+  - 对文件的目录结构有要求
 
 - features
   - Support for GitHub Flavored Markdown and most Octopress plugins

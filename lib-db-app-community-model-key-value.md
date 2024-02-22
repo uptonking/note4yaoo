@@ -20,7 +20,25 @@ modified: 2023-10-26T15:02:47.068Z
 # discuss-redis
 - ## 
 
-- ## 
+- ## Is Redis Data Persistence Useful in Practice?
+- https://twitter.com/sahnlam/status/1760552420457980239
+  - There are two ways to save Redis data to disk
+
+- AOF (Append-Only File)
+  - Unlike a write-ahead log, the Redis AOF log writes after commands run. 
+  - Redis runs commands to change the data in memory first. Then it writes the commands to the log file. 
+  - AOF logs the commands instead of the data. This simpler design makes recovering data easier. 
+  - Additionally, AOF records commands after they have executed in memory. So it does not block current write operations.
+
+- RDB (Redis Database)
+  - The limitation of AOF is that it saves commands instead of data. 
+  - When we use the AOF log to recover data, the whole log must be scanned. When the log size is large, Redis takes longer to recover. So Redis offers another way to save data - RDB.
+  - RDB records snapshots of data at certain times. When the server needs recovery, the data snapshot can load directly into memory for fast recovery.
+  - Step 1: The main thread forks the "bgsave" sub-process, which shares all the in-memory data. "bgsave" reads the data from the main thread and writes it to the RDB file.
+  - Steps 2 and 3: If the main thread changes data, a copy is created.
+  - Steps 4 and 5: The main thread then operates on the copy. Meanwhile, the "bgsave" sub-process continues writing data to the RDB file.
+
+- redis supports BGREWRITEAOF, asynchronously rewrites the append-only file to disk
 
 - ## Apache Kvrocks 在 RocksDB 上建构了一个 Redis 协议兼容的 NoSQL 系统，也实现了 Redis Cluster 兼容的集群方案（底层略有不同）。
 - https://twitter.com/tison1096/status/1752177165146403150

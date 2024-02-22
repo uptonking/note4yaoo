@@ -76,8 +76,10 @@ modified: 2022-05-15T18:37:27.994Z
   - Designed for @lexical/react. 
   - Headless & fully customizable.
 # mobile
-- https://github.com/facebook/lexical-ios
+- https://github.com/facebook/lexical-ios /MIT/202402/swift
   - An extensible text editor/renderer written in Swift, built on top of TextKit, and sharing a philosophy and API with Lexical JavaScript.
+  - written in Swift, and targets iOS 13 and above. (Note that the Playground app requires at least iOS 14, due to use of UIKit features such as UIMenu.)
+  - Lexical iOS is used in multiple apps at Meta, including rendering feed posts that contain inline images in Workplace iOS.
 # utils
 - https://github.com/RegiByte/lexi-kit /19Star/MIT/202305/ts
   - a set of tools that can be used to build rich text editors with Lexical without having to reinvent the wheel every time.

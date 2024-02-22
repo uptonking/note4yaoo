@@ -55,12 +55,21 @@ modified: 2023-02-05T18:50:53.563Z
 - https://github.com/tranlehaiquan/nodejs-api-realworld /202303/ts/inactive
   - RestFul with Express, Typescript
   - 依赖mongoose、jsonwebtoken
+- https://github.com/gothinkster/node-express-realworld-example-app /201802/js
+- Example Node (Express + Mongoose) codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the RealWorld API spec
 
 - https://github.com/sunnysidelabs/mongoose-express-ts /202210/ts
   - show a good end-to-end project setup and workflow for writing a strongly-typed Mongoose Node.js Express code in TypeScript complete with middleware, models, routes, and types
 
 - https://github.com/kingRayhan/quick-crud /202205/ts
   - An easy CRUD operation based on Factory pattern with Mongoose
+
+- https://github.com/braitsch/node-login /MIT/202104/js
+  - A template for quickly building login systems on top of Node.js & MongoDB
+- https://github.com/cornflourblue/node-mongo-registration-login-api /MIT/20207/js
+  - NodeJS + MongoDB API for User Management, Authentication and Registration
+- https://github.com/Mohammed-Abdelhady/FULL-MERN-AUTH-Boilerplate /202003/js
+  - MERN Authentication, Login, Register, verification email, Facebook, Google, Forget Password
 # examples
 - https://github.com/mongodb-university/mflix-ui /201906/js
   - https://github.com/mongodb-university/mflix-js

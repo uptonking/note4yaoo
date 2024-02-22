@@ -12,6 +12,12 @@ modified: 2024-01-02T07:52:13.141Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 🌰 [How to build your React component as a dependency library using Webpack? - Stack Overflow](https://stackoverflow.com/questions/63955925/how-to-build-your-react-component-as-a-dependency-library-using-webpack)
+- It looks like you forgot to exclude React + ReactDOM out of your bundle file as you build with production mode.
+  - As you publish your code as React component, apart from set React as peer dependency you have to set the react as externals to use the react at the consumer library.
+
 - ## [What is the difference between `main` and `module` vs `exports` in package.json? - Stack Overflow](https://stackoverflow.com/questions/68572936/what-is-the-difference-between-main-and-module-vs-exports-in-package-json)
 - "exports" field superseded the "module" field. 
   - "module" itself has never been an official standard but it became so widespread that at some point it was a de facto standard.

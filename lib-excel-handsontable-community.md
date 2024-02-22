@@ -18,6 +18,14 @@ modified: 2023-12-21T20:07:29.584Z
 
 - ## 
 
+- ## 
+
+- ## [Rendering and Scrolling Slow for Large Tables _201606](https://github.com/handsontable/handsontable/issues/3591)
+- Virtual scrolling will mitigate this by only creating those elements that are actually visible to the user, which greatly improves performance.
+
+- ## [Virtual rendering for columns doesn't seem to work _201603](https://github.com/handsontable/handsontable/issues/3364)
+- Handsontable triggers virtual rendering if there are more columns than visible + defined by `viewportColumnRenderingOffset` . When I changed your grid's width to 200px it worked.
+
 - ## 🤔 [WTF is a Walkontable?_201508](https://github.com/handsontable/handsontable/issues/2716)
 - Walkontable is for internal use only. It used to be a separate library, but now it is included to HOT repository and it's core functionality is to render HTML table.
 

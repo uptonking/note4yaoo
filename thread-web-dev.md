@@ -35,7 +35,16 @@ modified: 2021-01-08T17:13:43.392Z
 
 - ## 
 
-- ## 
+- ## Learn concepts instead of implementations/frameworks
+- https://twitter.com/sseraphini/status/1760262122129207442
+  - babel -> compilers
+  - webpack -> bundlers
+  - javascript -> programming logic
+  - sql -> databases
+  - redis -> cache
+  - serverless, k8s, aws -> containers, linux, vm, DNS, IP
+  - express -> HTTP/TCP/UDP
+  - react -> html, css, js
 
 - ## 整理了一份独立开发者出海工具库
 - https://twitter.com/weijunext/status/1759857266646282394

@@ -327,7 +327,7 @@ modified: 2023-09-12T09:37:22.608Z
 
 ## postgresql
 
-- https://github.com/message-db/message-db
+- https://github.com/message-db/message-db /MIT/202301/psql/inactive
   - http://docs.eventide-project.org/user-guide/message-db/
   - Microservice Native Event Store and Message Store for Postgres
   - A fully-featured event store and message store implemented in PostgreSQL for Pub/Sub, Event Sourcing, Messaging, and Evented Microservices applications.

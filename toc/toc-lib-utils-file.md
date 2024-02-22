@@ -302,7 +302,7 @@ modified: 2023-04-05T19:35:14.347Z
   - Mutability is implemented using CRDTs. Identities and data authentication are cryptographic.
   - Objects and their references form an immutable DAG, a fact that is used for data replication in HHS p2p mesh.
 # undo/history
-- https://github.com/pomber/git-history
+- https://github.com/pomber/git-history /MIT/202303/js/inactive
   - https://githistory.xyz/
   - Quickly browse the history of files in any git repo
   - Go to a file in GitHub (or GitLab, or Bitbucket); Replace github.com with github.githistory.xyz

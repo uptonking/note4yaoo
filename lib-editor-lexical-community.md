@@ -35,7 +35,27 @@ modified: 2022-05-15T18:35:39.272Z
   - We flatten text within a given block, and use inline Y. Map nodes between characters to infer the beginning and end of Lexical TextNodes. The Y. Map also holds all the properties of the TextNode, or user extended TextNode and scales well without having to use attribute ranges, which isn’t performant in Lexical’s case with CRDT. 
   - We are internally shipping Lexical with Yjs today and we hope to expand this in the future to more surfaces, including mobile.
 - If anything, the reason I’m here on the ProseMirror discussion board is to praise ProseMirror’s efforts and ideas. Without them, we wouldn’t have the Lexical we have today. 
+# discuss-mobile
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 📱 [React Native Support _202204](https://github.com/facebook/lexical/discussions/2410)
+- As Dominic has hinted elsewhere, I’m leading a project to build native Lexical on iOS. I’m in the very early days of looking in to what a React Native wrapper around Lexical iOS would look like. 
+  - 👉🏻 The main sticking point is ensuring synchronous callbacks from JS to native, which requires bleeding edge RN features, but aside from that the issue will be the completely different layout engine for TextKit on iOS compared with DOM/CSS. So even if we enable building node subclasses in JS under RN, those node subclasses will have to use iOS semantics (providing string attributes rather than Dom nodes). That’s why I’m trying to find out what the most useful level of RN support would be, to ensure we focus on making that a good experience first.
+  - I know I’ve not mentioned Android either. We have nothing to talk about there yet, alas
+
+- ## is there an ETA for react-native support yet?_20221002
+- https://discord.com/channels/953974421008293909/955972012541628456/1026124845232177224
+- Not that I’m aware of
+
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## What about the usage of the 'beforeinput' event on contenteditable? 
@@ -53,17 +73,6 @@ modified: 2022-05-15T18:35:39.272Z
 - https://twitter.com/trueadm/status/1596600189913296898
 - We looked at using Slate before even starting on Lexical. 
   - It has far too many issues around IME/Android and with browser extension and text autocomplete replacement. Hold down e so it becomes è at the start of an empty editor to see what I mean. This was also a common Draft bug
-
-- ## React Native Support
-- https://github.com/facebook/lexical/discussions/2410
-- 20220417
-  - As Dominic has hinted elsewhere, I’m leading a project to build native Lexical on iOS. I’m in the very early days of looking in to what a React Native wrapper around Lexical iOS would look like. 
-  - 👉🏻 The main sticking point is ensuring synchronous callbacks from JS to native, which requires bleeding edge RN features, but aside from that the issue will be the completely different layout engine for TextKit on iOS compared with DOM/CSS. So even if we enable building node subclasses in JS under RN, those node subclasses will have to use iOS semantics (providing string attributes rather than Dom nodes). That’s why I’m trying to find out what the most useful level of RN support would be, to ensure we focus on making that a good experience first.
-  - I know I’ve not mentioned Android either. We have nothing to talk about there yet, alas
-
-- ## is there an ETA for react-native support yet?_20221002
-- https://discord.com/channels/953974421008293909/955972012541628456/1026124845232177224
-- Not that I’m aware of
 
 - ## I'm storing the output as JSON. I also need to consume the JSON on my ReactNative app and allow the user to edit the post_20220910
 - https://discord.com/channels/953974421008293909/1017916026249281627

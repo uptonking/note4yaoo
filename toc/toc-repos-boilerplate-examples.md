@@ -21,7 +21,6 @@ modified: 2023-11-16T15:00:11.503Z
 - https://todomvc.com/
 - https://github.com/tastejs/todomvc
 - https://github.com/twinstae/todomvc-for-all
-- https://github.com/rokoroku/react-redux-typescript-boilerplate
 - https://github.com/dwyl/javascript-todo-list-tutorial /js
   - A step-by-step complete beginner example/tutorial for building a Todo List App (TodoMVC) from scratch
 - https://github.com/1Marc/modern-todomvc-vanillajs /js
@@ -44,14 +43,28 @@ modified: 2023-11-16T15:00:11.503Z
 - https://github.com/Allianzcortex/react-typescript-hooks-realworld /202110/ts/redux
   - https://react-typescript-hooks-realworld.vercel.app/
   - React FC + Immer + Redux + Hooks + axios + Testing Library
+  - 不依赖redux-toolkit
 
 - https://github.com/adr1enbe4udou1n/react-ts-realworld-example-app /202312/ts
   - https://github.com/adr1enbe4udou1n/nestjs-realworld-example-app
   - 依赖react-query.v5、openapi-typescript-fetch、use-local-storage-state
-  - https://github.com/likui628/react-realworld-example-app
+  - https://github.com/likui628/react-realworld-example-app /202311/ts
+    - 依赖reduxjs-toolkit
+
+- https://github.com/angelguzmaning/ts-redux-react-realworld-example-app /202111/ts
+  - built with React, Typescript, and Redux Toolkit 
+
+- https://github.com/andrejewski/raj-react-realworld /201806/js
+  - demonstrate a fully fledged fullstack application built with React and Raj including CRUD operations, authentication, routing, pagination, and more.
+
+- https://github.com/kwasniew/hyperapp2-real-world-example /202006/js
+  - Real Word Example App in Hyperapp v2
+- https://github.com/kwasniew/hyperapp-realworld-example-app /201908/js
+  - A Single Page Application written in Hyperapp 1
 
 - https://github.com/gothinkster/web-components-realworld-example-app /201705/js/archived
   - Exemplary real world application built with Vanilla JS Web Components
+  - https://github.com/gardient/realworld-typescript-webcomponents /201810/ts
 - https://github.com/mits-gossau/event-driven-web-components-realworld-example-app /202303/js
   - https://mits-gossau.github.io/event-driven-web-components-realworld-example-app/
   - Exemplary real world application built with Vanilla JS Web Components in an Event Driven Architecture
@@ -90,6 +103,8 @@ modified: 2023-11-16T15:00:11.503Z
   - https://github.com/cirosantilli/feathers-realworld-example-app
     - port from MongoDB to sequelize
 
+- https://github.com/MacklinEngineering/Conduit /202312/ts
+  - fullstack application built with Express.js + Couchbase + Typescript
 - https://github.com/maruakinu/couchbase-springboot-realworld-example-app /202305/java
   - a backend project using springboot that uses Couchbase for its Database.
 - https://github.com/mgroves/realworld-aspnet-couchbase /MIT/202311/csharp
@@ -100,6 +115,10 @@ modified: 2023-11-16T15:00:11.503Z
   - This repository stores several versions of the database, API and client of the realworld app, for digital footprint measurements.
   - We've cloned and tweaked implementations of the realworld frontend and backend apps, so that they can work together 
 
+
+- https://github.com/jiheon788/react-query-realworld /202402/ts
+  - fullstack application built with React + React Query including CRUD operations, authentication, routing, pagination, and more.
+  - 依赖@tanstack/react-query、react-router.v6、remark-gfm
 ### api-realworld
 
 - https://github.com/cirosantilli/node-express-sequelize-nextjs-realworld-example-app /202208/后端js+前端ts

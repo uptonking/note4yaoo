@@ -9,7 +9,19 @@ modified: 2021-09-10T14:15:55.903Z
 
 # guide
 
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## Fun historical fact: JSI was literally designed by the Hermes team so we could replace JSC with Hermes in Facebook apps without breaking source compatibility (and could go back in case Hermes didn't deliver; fortunately it did).
+- https://twitter.com/tmikov/status/1760552911812399448
+
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## Let's run React Native on the UI thread and see what blows up first

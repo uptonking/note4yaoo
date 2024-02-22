@@ -12,9 +12,9 @@ modified: 2021-07-20T13:50:23.433Z
 
 - tips
   - ~~paas/rendering/web~~ may be the future
-  - 涉猎saas解决方案，积累算法、库、框架、业务模版、生态
+  - 涉猎saas解决方案，积累算法、库、框架、模版项目、生态
   - 深入一个项目
-    - 前端分析model/view/dataflow，后端分析数据库设计和优化
+    - 前端分析model/view/dataflow, 后端分析数据库设计和优化
     - src-code, issues, pr, forks, extensions, most-commented-issues
     - roadmap, open-issues, alternatives
     - 开放能力: extensions, scripts, marketplace
@@ -22,9 +22,9 @@ modified: 2021-07-20T13:50:23.433Z
   - 抽空在线体验，工作专注代码
   - specification for pivot table
 
-- 技术方向js: 前端版/流式版/oplog + 富文本编辑器，多维表格，协作; dnd，floating
+- 技术方向js: 前端版/流式版/oplog; 富文本编辑器，多维表格，协作; dnd，floating
 - 技术扩展js/py: 可拖拽的页面编辑器/lowcode, Excel/kanban, 图表
-- 技术产品: client/server版 + cms, airtable, 参考类似ckan的data-portal
+- 技术产品: client/server版; cms, airtable, 参考类似ckan的data-portal
 - 技术可选1: 画板, pdf，图形编辑器
 - 技术可选2: olap，bi，数据库，大数据系统
 - 技术可选3: vscode，可参考架构 extensions、capabilities
@@ -97,7 +97,7 @@ modified: 2021-07-20T13:50:23.433Z
   - focalboard    (AGPL/go+react-dnd)
   - rowy       (apache2/firebase+tinymce5)
   - baserow        (MIT/django+nuxt2)
-  - ckan
+  - ckan/datapian
 - ✨ workflow
   - n8n           (AGPL/typeorm+vue2+jsplumb)
   - budibase      (AGPL/knex+svelte)

@@ -9,9 +9,10 @@ modified: 2022-12-31T20:13:33.307Z
 
 # guide
 
-- [Node.js ES2015/ES6, ES2016 and ES2017 support](https://node.green/)
-
-- [Node.js Previous Releases with dates](https://nodejs.org/en/download/releases/)
+- resources
+  - [Node.js Release Blog Posts](https://nodejs.org/en/blog/release)
+  - [Node.js Previous Releases with dates](https://nodejs.org/en/download/releases/)
+  - [Node.js ES2015/ES6, ES2016 and ES2017 support](https://node.green/)
 # changelog
 
 ## v22.0.0_202404

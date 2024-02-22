@@ -257,6 +257,8 @@ modified: 2023-11-21T10:17:34.596Z
   - https://github.com/jorgebucaran/hyperapp
   - The tiny framework for building hypertext applications
   - an ultra-lightweight Virtual DOM, highly-optimized diff algorithm, and state management library obsessed with minimalism.
+  - [Release 2.0.0 _20190727](https://github.com/jorgebucaran/hyperapp/releases/tag/2.0.0)
+    - Hyperapp 2.0 introduces several new features, including Effects, Subscriptions, and an enhanced Dispatch mechanism.
   - [Hyperapp V2_201905](https://github.com/jorgebucaran/hyperapp/pull/726)
     - Middleware: const enhance = oldDispatch => newDispatch
     - Payload creators: const NewValue = (state, value) => ({ ...state, value })
@@ -264,16 +266,29 @@ modified: 2023-11-21T10:17:34.596Z
     - Hyperapp holds firm on the functional programming front when managing your state, but takes a pragmatic approach to allowing for side effects, asynchronous actions, and DOM manipulations.
     - All Things Dynamic — First class support for code splitting and dynamically loading actions and views using import()
     - Introduce a subscriptions API inspired by Elm
+  - [V2 Router support](https://github.com/jorgebucaran/hyperapp/issues/902)
+    - We're working on @hyperapp/navigation, which will be Hyperapp's official navigation solution. I haven't published it to npm yet
+    - [@hyperapp/navigation can't handle external links](https://github.com/jorgebucaran/hyperapp/issues/1033)
+    - I've decided to focus on shipping Hyperapp and creating quality examples to show people how easy it is to DIY these things, instead of crafting scoped packages, so I'm not going to publish `@hyperapp/navigation` any time soon
+  - [SSR](https://github.com/jorgebucaran/hyperapp/issues/257)
   - [V2 What if?_201810](https://github.com/jorgebucaran/hyperapp/issues/765)
     - Effects need to be represented as objects.If you use a function to represent an effect, then it's impossible to test effects using a strict equality check
     - I designed this part of the API looking at Elm.
+- https://github.com/shish/hyperapp-navigation /202211/ts
+  - A polished version of the abandoned @hyperapp/navigation
+- https://github.com/loteoo/hyperstatic /MIT/202105/ts/太复杂
+  - a small navigation layer on top of hyperapp that helps create fast and SEO friendly static sites
+- https://github.com/kriasoft/hyperapp-render /MIT/202206/js
+  - Render Hyperapp to an HTML string with SSR and Node.js streaming support
 
-- https://github.com/hydux/hydux /201902/ts
+- https://github.com/hydux/hydux /201902/ts/inactive
   - A light-weight Elm-like alternative for Redux ecosystem, inspired by Hyperapp and Elmish.
+  - hyperapp compatible API
   - Elm Architecture, split your whole app with init, state, actions.
   - Elm-like side effect manager and subscribe API
   - Support any vdom library, including react
-  - hyperapp compatible API
+  - Router provided
+  - ssr
   - Official support for react-router
   - 未实现undo，但devtools支持时间旅行
   - logger, persist, Redux Devtools with time traveling, ultradom(1kb vdom), **All in One**
@@ -281,6 +296,9 @@ modified: 2023-11-21T10:17:34.596Z
   - I create this to support different vdom libraries, like React(official support), ultradom(built-in), Preact, inferno 
   - https://github.com/hydux/hydux-preact
   - https://github.com/hydux/hydux-react-router
+
+- https://github.com/gamebox/snazzy-ui /MIT/202401/ts
+  - modern, functional UI library that is API compatible with Hyperapp, but built on top of the battle-tested `Snabbdom` VDOM library
 
 - https://github.com/jorgebucaran/superfine /1.6kStar/MIT/202104/js
   - a minimal view layer for building web interfaces. 

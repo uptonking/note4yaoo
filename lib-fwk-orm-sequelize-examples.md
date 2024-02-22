@@ -70,11 +70,6 @@ modified: 2023-02-05T18:50:32.900Z
   - State Management: Context API
   - 支持注册登录jwt、购物车、简单销售仪表板、搜索
 
-- https://github.com/tiagospeckart/geekscript-backend /202305/ts/inactive
-  - https://github.com/GabrielGameDev/geek-script-front
-  - This repository is the final project for the Gama Academy Web Development course
-  - 实现了登录，未实现注册
-
 - https://github.com/feathersjs-ecosystem/feathers-sequelize /202306/ts
   - A Feathers service adapter for the Sequelize ORM. 
   - Supporting MySQL, MariaDB, Postgres, SQLite, and SQL Server
@@ -400,9 +395,16 @@ modified: 2023-02-05T18:50:32.900Z
 
 - https://github.com/sequelize/express-example /202203/js/inactive
   - A proposal for the usage of Sequelize within an Express. JS application.
+
+- https://github.com/tiagospeckart/geekscript-backend /202305/ts/inactive
+  - https://github.com/GabrielGameDev/geek-script-front
+  - This repository is the final project for the Gama Academy Web Development course
+  - 实现了登录，未实现注册
 # auth
 - https://github.com/diegomottadev/auth-base-app /202402/ts
   - This repository contain a REST API project for creating users, user roles, and user authentication using Node.js, Express.js, and Sequelize with TypeScript.
+  - https://github.com/diegomottadev/auth-base-view /202402/js
+    - Frontend utilizing React with JavaScript that incorporates user, role, and permission logic crucial for orchestrating flow within any application interface.
 
 - https://github.com/rahulthackkar/nodejs-mysql-jwt-sequelize /202207/js/ejs
   - Node JS + Express + User authentication using JWT + Sequelize + Jest + Docker

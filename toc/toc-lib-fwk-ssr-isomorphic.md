@@ -22,7 +22,7 @@ modified: 2020-12-19T13:04:40.865Z
   - Like Next.js / Nuxt but as do-one-thing-do-it-well Vite plugin.
   - The vite-plugin-ssr project has been renamed Vike
 
-- https://github.com/sanyuan0704/island.js
+- https://github.com/sanyuan0704/island.js /MIT/202308/ts
   - Vite & MDX powered static site generator. Base on islands architecture
   - [如何看待最近正式发布的 Web 全栈框架 Fresh? - 知乎](https://zhuanlan.zhihu.com/p/556336887)
   - Fresh 中关于 Islands 架构的实现是基于 Preact 的，我本人也借鉴了 Fresh 的思路，通过拦截 React.createElement 方法在 React 当中也实现了 Islands 架构
@@ -69,6 +69,14 @@ modified: 2020-12-19T13:04:40.865Z
 - https://github.com/kapouer/express-dom /js
   - Express middleware for (pre)rendering web pages with playwright.
 
+- https://github.com/nanojsx/nano /MIT/202401/ts
+  - http://nanojsx.io/
+  - SSR first, lightweight 1kB JSX library.
+  - Partial Hydration: Hydrate and only the parts you really need
+  - Pre-Rendering: Renders your app to static html if you want. This is possible, but requires some knowledge.
+  - Uses Tagged Templates instead of JSX if you prefer
+  - Prefetch: Use the built-in Link Component
+
 - https://github.com/pmb0/express-tsx-views /MIT/202110/ts/inactive
   - Server-side JSX/TSX rendering for your express or NestJS application
   - With this template engine, TSX files can be rendered server-side by your Express application. 
@@ -91,6 +99,10 @@ modified: 2020-12-19T13:04:40.865Z
   - a react render engine for Universal (previously Isomorphic) JavaScript apps written with express
   - renders both plain react views and optionally react-router views
   - enables server rendered views to be client mountable
+
+- https://github.com/airbnb/hypernova /MIT/202204/js/archived
+  - A service for server-side rendering your JavaScript views
+  - we are no longer using this technology internally
 
 ## examples
 

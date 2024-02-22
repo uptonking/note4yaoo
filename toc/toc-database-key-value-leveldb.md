@@ -48,6 +48,9 @@ modified: 2022-11-03T04:14:00.563Z
   - Storage Adapters: etcd, mongodb, redis, sqlite, pg, mysql
   - https://github.com/roccomuso/keyv-leveldb /201803/js
     - LevelDB storage adapter for Keyv.
+  - https://github.com/zaaack/keyv-file /202402/ts
+    - File storage adapter for Keyv, using json to serialize data fast and small
+    - TTL functionality is handled internally by interval scan, don't need to panic about expired data take too much space.
 
 - https://github.com/engula/engula /apache2/rust/inactive/selectdb成员项目
   - https://engula.io/
@@ -142,8 +145,6 @@ modified: 2022-11-03T04:14:00.563Z
   - DAG based key value store. 
   - Sharded DAG that minimises traversals and work to build shards.
   - 依赖@ipld/car、@ipld/dag-cbor、cborg、sade
-
-
 # leveldb-like
 - https://github.com/Level/bench
   - Benchmark `abstract-level` databases. 

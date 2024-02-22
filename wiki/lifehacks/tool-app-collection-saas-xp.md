@@ -386,6 +386,9 @@ sudo systemctl start minidlna
   - 主要支持 `git clone` 场景
   - 本服务已屏蔽 .(zip|rar|7z|apk|ipa|exe|msi|m3u|m3u8|mp4|mp3) 等文件类型的加速，以及部分滥用本服务的仓库内容的加速，详情请查看此页面。
 
+- mirrors
+  - https://gh.mlsub.net/
+
 - more
   - https://search.gitee.com/?skin=rec&type=repository&q=GitHub520&sort=updated_at
   - https://gitee.com/monkeycc/GitHub520
