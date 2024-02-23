@@ -39,7 +39,20 @@ modified: 2023-01-09T15:41:17.179Z
   - replace them by allowing either `style` or `className` to accept functions with the active state. 
 # issues
 
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## [Can we use react-router-dom in next.js app and still achieve server side rendering? : r/nextjs _202306](https://www.reddit.com/r/nextjs/comments/13xct3y/can_we_use_reactrouterdom_in_nextjs_app_and_still/)
+- file based routing is probably the Nextjs' biggest selling point. As you said, use react-router-dom cause every component to be client-side rendered, which mostly defeats the whole purpose of Nextjs. This is dumb.
+
+- I think the best you can do is tell your client that nextjs can’t do both, ask them to list out which page to have SSR (calls to getServerSideProps), which page is not, maybe a few of them are required for SEO, most other page isn’t required can be stay with react-router-dom
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## I don’t understand why the JavaScript community is obsessed with file based routing. It’s not needed and you can clearly see the complexity it creates in every real world implementation.

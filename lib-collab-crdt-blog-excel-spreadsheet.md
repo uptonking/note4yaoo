@@ -30,3 +30,22 @@ modified: 2023-10-28T09:04:42.521Z
     - For small number of selection brute(纯体力的) force over all known selections wouldn't be an issue. 
     - For bigger number, we could modify indexing structures for 2-dimensional data such as R-Trees (used ie. to index geospatial data).
 # more
+
+# discuss-excel-collab
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Multiplayer sync with spreadsheets is so unbelievable complicated, even after multiple years of working on it, it still makes my head spin.
+- https://twitter.com/AJNandi/status/1760740582480335208
+- Toy examples with a handful of cells and formulas are really easy to build with some off the shelf sync providers, and are great learning examples.
+- But as soon as you get to anywhere above an average spreadsheet of ~1k rows, everything gets way more complex.
+- You've got to handle things like
+  - batching of thousands of cells changing in a single command
+  - lazy instantiation of cells, rows, columns that don't exist yet but are referenced in formulas
+  - communicating with web workers to run calculations off the main thread
+  - immutable references to mutable cell addresses like A1, B5 etc.
+  - ... there's probably 15 other things I could complain about, lmk if you're curious!

@@ -8,10 +8,14 @@ modified: 2020-12-12T18:59:54.950Z
 # toc-lib-web-router
 
 # guide
-
+- tips
+  - 一般ssr方案都会提供自己的router, nextjs将file-based-routing作为卖点
+  - 没必要寻找前后端通用的router，前端、后端框架都有自己的，routing常和prefetch耦合
 # popular
-- https://github.com/unjs/radix3 /ts
+- https://github.com/unjs/radix3 /MIT/202402/ts
   - fast router for JavaScript based on Radix Tree.
+  - https://github.com/yoshuawuyts/sheet-router /MIT/201702/js
+    - fast, modular client-side router with radix-trie
 
 - https://github.com/TanStack/router /202402/ts
   - typesafe Router for React (and friends) w/ built-in caching, 1st class search-param APIs, client-side cache integration and isomorphic rendering

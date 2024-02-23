@@ -1110,19 +1110,25 @@ modified: 2022-04-05T10:08:25.947Z
     - For small number of selection brute(纯体力的) force over all known selections wouldn't be an issue. 
     - For bigger number, we could modify indexing structures for 2-dimensional data such as R-Trees (used ie. to index geospatial data).
 
+- https://github.com/zxch3n/lww-table /202402/rust
+  - Lightweight & Fast LWW CRDT Table
+  - Supports delta updates
+  - It allows for syncing tabular data via peer-to-peer connections, supports end-to-end encryption
+  - Currently, it functions solely as an in-memory table with a unique persistence format and is not a comprehensive database solution. It is not suitable for sparse tables yet.
+
 - @fluid-example/table-view /MIT/ts
   - https://github.com/microsoft/FluidFramework/tree/main/examples/data-objects/table-view
   - Table View is a basic table/grid view built on top of the @fluid-example/table-document data object. 
   - Since Table View uses the data model provided by Table Document it only uses it's DDS to store a reference to the created Table Document.
   - Table View uses the following distributed data structures: SharedDirectory - root
 
-- https://github.com/itoumlilt/CRDT-Spreasheet /ts
+- https://github.com/itoumlilt/CRDT-Spreasheet /MIT/202208/ts/inactive
   - CRDT based collaborative Spreadsheet
   - 依赖concordant-crdtlib、delta-crdts
   - This demo app shows a collaborative application developed using a draft implementation of the `Concordant` API.
   - The application uses the C-Service API which currently supports two eventual consistency backends: revision-based and CRDT-based
 
-- https://github.com/Roffelchen/spreadsheet-crdt /js/yjs
+- https://github.com/Roffelchen/spreadsheet-crdt /202302/js/yjs/inactive
   - /yjs
 
 - https://github.com/fabian-gubler/cellster /GPLv3/202401/python

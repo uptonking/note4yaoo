@@ -10,6 +10,7 @@ modified: 2023-11-24T18:41:26.906Z
 # guide
 - tips
   - timeline的使用范围很广，可以是内容的变化历史，可以是独立的component时间轴组件
+  - undo/history类产品的形态可参考git commits的交互和设计
 
 - usecase-branching
   - testing/drafting
@@ -26,7 +27,7 @@ modified: 2023-11-24T18:41:26.906Z
   - Import/Export histories: Play them back locally, including realtime speed.
   - Time-travel is "pure": That is, state history changes without refiring the actual actions that produced said change (so still works for impure/async actions).
   - A store enhancer provides the history tracking on each state change, recording the state change, the timestamp of the change, and the action type that produced said change.
-  - https://github.com/calesce/redux-slider-monitor
+  - https://github.com/calesce/redux-slider-monitor /201706/js
     - https://calesce.github.io/redux-slider-monitor/
     - A custom monitor for Redux DevTools to replay recorded Redux actions
     - This package was merged into redux-devtools monorepo

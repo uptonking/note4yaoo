@@ -94,7 +94,14 @@ modified: 2024-01-23T02:52:23.932Z
 
 - ## 
 
-- ## 
+- ## 了解并同时使用 Obsidian 和 Logseq 已经有好几年了，刚开始的时候我同样看好 Obsidian 和 Logseq 的生态和未来
+- https://twitter.com/realexblue/status/1761049182893449374
+  - 时间过去了好几年，无意间看到这个主题并安装设置好之后，我突然意识到好像最近一年自己打开 Logseq 的次数屈指可数，反倒是 Obsidian 上记录了很多内容。
+  - 四年前的时候我以为 Logseq 可以追上 Obsidian，其实当时市面上也充斥着各种各样的双链笔记软件，双链风潮下，当时 Logseq 给我的感觉太惊艳了，当时的我也对 Logseq 充满了希望。
+  - 但是在今天这个节点，一个软件已经做了四年了，Obsidian 更久，当我同时打开两个软件，对比之下两者的差距实在有点太大，不仅仅是软件的成熟度、生态和社区的配合程度，都差太多了。Logseq 的同步做了这么多年也还是 beta 内测，主题几乎找不到一个好看且完全兼容软件显示效果的，显示错位，开关左右侧栏闪白。
+  - 插件倒是挺多的，但是和 Obsidian 相比之下就有点不够看了，质量上也有差距。
+  - 一个软件，开发这么久，依然还在内测阶段，没有正式向用户收费，长久的资金消耗肯定是一个不小的负担，坚持到这个程度，依然没有放出正式版，我其实是蛮佩服开发者团队的，
+  - 但是再反过来想一下，一个笔记软件，开发了四年，依然无法推出正式版，其实也能说明一些问题，可能是开发路线的问题，也有可能是开发团队的问题，也有可能是软件架构的问题，肯定是哪个方面出了一些问题
 
 - ## [Chinese note-taking app copied Obsidian? : ObsidianMD _202311](https://www.reddit.com/r/ObsidianMD/comments/17yjex3/chinese_notetaking_app_copied_obsidian/)
 - It is similar to Obsidian in many way, to be sure.

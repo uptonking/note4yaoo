@@ -16,7 +16,15 @@ modified: 2023-10-26T15:28:53.748Z
   - Postgres Wire Protocol is a relatively general-purpose Layer-7 protocol. 
   - note that Postgres Wire Protocol has no semantics about SQL, so literally you can use any query language, data formats or even natural language to interact with the backend.
   - The response are always encoded as data row format. And there is a field description as header of the data to describe its name, type and format.
-  - Projects using pgwire: greptimedb, sqld, risinglight, peerdb, 
+  - Projects using pgwire: greptimedb, sqld, risinglight, peerdb
+
+- https://github.com/electric-sql/pglite /apache2/202402/ts
+  - PGlite is a WASM Postgres build packaged into a TypeScript client library that enables you to run Postgres in the browser, Node.js and Bun, with no need to install any other dependencies.
+  - It is only 3.7mb gzipped.
+  - It can be used both as an ephemeral in-memory database or with persistance to the file system (Node/Bun) or indexedDB (Browser).
+  - Unlike previous "Postgres in the browser" projects, PGlite does not use a Linux virtual machine - it is simply Postgres in WASM.
+  - It is being developed at ElectricSQL in collaboration with Neon. 
+  - 🚧 Parameterized queries are not currently supported, but this will be added soon.
 
 - https://github.com/centerofci/mathesar /GPLv3/python/svelte
   - https://mathesar.org/

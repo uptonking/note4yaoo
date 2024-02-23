@@ -97,6 +97,14 @@ modified: 2022-02-05T18:45:34.558Z
   - [Does this really need to be a react-only library?](https://github.com/atlassian/react-beautiful-dnd/issues/1217)
     - I don't see it being on the cards for a while as we are still trying to deliver some core features
 
+- https://github.com/formkit/drag-and-drop /MIT/202402/ts
+  - https://drag-and-drop-docs.vercel.app/
+  - a small library for adding data-first drag and drop sorting and transferring for lists in your app. 
+  - It’s simple, flexible, framework agnostic, and clocks in at only ~4Kb gzipped.
+  - "data-first" approach, "No direct DOM manipulations".
+  - Drag and drop ships out of the box with the ability to sort and transfer individual items between lists. 
+  - The multi-drag plugin allows you to select multiple items and drag them together.
+
 - dflex /1.5kSStar/MIT/202302/ts
   - https://github.com/dflex-js/dflex
   - https://www.dflex.dev/demo/lists/nested/

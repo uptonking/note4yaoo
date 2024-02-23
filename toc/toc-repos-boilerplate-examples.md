@@ -62,6 +62,15 @@ modified: 2023-11-16T15:00:11.503Z
 - https://github.com/kwasniew/hyperapp-realworld-example-app /201908/js
   - A Single Page Application written in Hyperapp 1
 
+- https://github.com/noodlesfly/realworld-ssr-express /202207/js/vue
+  - a server side demo by express&vue
+
+- https://github.com/Bechma/realworld-leptos /MIT/202401/rust
+  - Realworld leptos application with SSR
+
+- https://github.com/arrlancore/nextjs-ssr-real-world-app-example /201911/js
+  - A nextjs server side rendering real world app example you can use
+
 - https://github.com/gothinkster/web-components-realworld-example-app /201705/js/archived
   - Exemplary real world application built with Vanilla JS Web Components
   - https://github.com/gardient/realworld-typescript-webcomponents /201810/ts
@@ -115,10 +124,10 @@ modified: 2023-11-16T15:00:11.503Z
   - This repository stores several versions of the database, API and client of the realworld app, for digital footprint measurements.
   - We've cloned and tweaked implementations of the realworld frontend and backend apps, so that they can work together 
 
-
 - https://github.com/jiheon788/react-query-realworld /202402/ts
   - fullstack application built with React + React Query including CRUD operations, authentication, routing, pagination, and more.
   - 依赖@tanstack/react-query、react-router.v6、remark-gfm
+
 ### api-realworld
 
 - https://github.com/cirosantilli/node-express-sequelize-nextjs-realworld-example-app /202208/后端js+前端ts

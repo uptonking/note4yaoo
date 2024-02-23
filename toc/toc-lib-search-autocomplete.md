@@ -13,8 +13,8 @@ modified: 2023-01-01T13:24:35.994Z
   - persistence
 
 - usecase
-  - 针对ssg/blog的搜索，类似algolia-docsearch, hacker-news-search
-  - 针对列表项的搜索，类似searchkit
+  - 针对ssg/blog的搜索，类似algolia-docsearch/autocomplete-renderer, hacker-news-search
+  - 针对列表项的搜索，类似searchkit, es-search-ui
 
 - resources
   - database search solutions
@@ -64,7 +64,7 @@ modified: 2023-01-01T13:24:35.994Z
     - Lunr, Fuse.js, and Minisearch are similar, but are Javascript-only (no WASM). 
     - Meilisearch, EdgeSearch, and Tantivy are all server-hosted search engines written in Rust. 
 # search-js
-- flexsearch /9.4kStar/apache2/202210/js
+- flexsearch /11.3kStar/apache2/202401/js
   - https://github.com/nextapps-de/flexsearch
   - Next-Generation full text search library for Browser and Node.js
   - memory-flexible full-text search library with zero dependencies.
@@ -182,12 +182,21 @@ modified: 2023-01-01T13:24:35.994Z
   - https://thesephist.github.io/libsearch/
   - Simple, index-free text search for JavaScript, used across my personal projects
 
-- Fuse /15.2kStar/apache2/202208/js
+- Fuse /15.2kStar/apache2/202310/js/NoDeps
   - https://github.com/krisk/Fuse
   - https://fusejs.io/
+  - https://www.fusejs.io/demo.html
+  - lightweight fuzzy-search library, with zero dependencies.
+  - fuzzy searching (more formally known as approximate string matching) is the technique of finding strings that are approximately equal to a given pattern (rather than exactly).
   - [a lightweight fuzzy-search, in JS, with zero dependencies.](https://gist.github.com/ericyd/fe4ce86a1143e86b821e0d12d5daf236)
     - 实现很简单
     - an example of how to implement fuse.js with a web worker
+
+- https://github.com/askorama/orama /apache2/202402/ts
+  - https://docs.oramasearch.com/
+  - Fast, dependency-free, full-text and vector search engine with typo tolerance, filters, facets, stemming, and more. 
+  - Works with any JavaScript runtime, browser, server, service
+  - Orama is a full-text and vector search engine. This allows you to adopt different kinds of search paradigms depending on your specific use case.
 
 - https://github.com/superhuman/command-score
   - Yet another javascript fuzzy string matching library!
@@ -235,6 +244,9 @@ modified: 2023-01-01T13:24:35.994Z
   - You can use whatever you want in your sources: a static set of searches terms, search results from an external source like an Algolia index, recent searches, and more.
   - The library creates an input and provides the interactivity and accessibility attributes, but you’re in full control of the DOM elements to output.
   - Unlike InstantSearch, Autocomplete doesn’t provide a library of ready-made UI widgets
+  - [Support for hugo](https://github.com/algolia/autocomplete/discussions/999)
+    - There's nothing specific about the backend or static site generation that would make autocomplete not work. Can you clarify where you are stuck?
+    - There's also examples here: /examples
 
 - autoComplete.js /3.7kStar/apache2/202206/js/NoDeps
   - https://github.com/TarekRaafat/autoComplete.js
@@ -257,15 +269,18 @@ modified: 2023-01-01T13:24:35.994Z
 # search-non-js
 - https://github.com/tj/reds
   - simple full text search module for node.js - backed by Redis
-  - Version 1.0.0 is syntactically compatible with previous versions of reds (0.2.5).
 
-- https://github.com/meilisearch/meilisearch /40.2kStar/MIT/202312/rust
+- https://github.com/meilisearch/meilisearch /40.2kStar/MIT/202402/rust
+  - https://www.meilisearch.com/
   - fast search engine that fits effortlessly into your apps, websites, and workflow.
   - [Elasticsearch like alternative · Issue · mastodon/mastodon](https://github.com/mastodon/mastodon/issues/20743)
   - https://github.com/meilisearch/arroy /MIT/202312/rust
     - a Rust library with the interface of the Annoy Python library to search for vectors in space that are close to a given query vector.
     - It is based on LMDB, a memory-mapped key-value store, so many processes may share the same data and atomically modify the vectors.
     - There are some other libraries to do nearest neighbor search. However, most of them are memory-bound, and none use LMDB for their storage
+- https://github.com/riccox/meilisearch-ui /apache2/202401/ts
+  - https://meilisearch-ui.riccox.com/
+  - fast meilisearch admin dashboard UI for managing your meilisearch instances
 
 - https://github.com/paradedb/paradedb /AGPLv3/202402/rust/c
   - https://paradedb.com/
@@ -280,11 +295,18 @@ modified: 2023-01-01T13:24:35.994Z
   - lightweight & schema-less search backend. 
   - An alternative to Elasticsearch that runs on a few MBs of RAM.
 
-- https://github.com/toshi-search/Toshi /202204/rust
-  - Toshi is meant to be a full-text search engine similar to Elasticsearch.
+- https://github.com/toshi-search/Toshi /MIT/202310/rust
+  - a full-text search engine similar to Elasticsearch
+  - Toshi strives to be to Elasticsearch what Tantivy is to Lucene.
+
 - https://github.com/quickwit-oss/tantivy /MIT/202401/rust
   - Tantivy is a full-text search engine library inspired by Apache Lucene and written in Rust
   - If you are looking for an alternative to Elasticsearch or Apache Solr, check out `Quickwit`, our distributed search engine built on top of `Tantivy`.
+  - https://github.com/quickwit-oss/quickwit /AGPLv3
+    - https://quickwit.io/
+    - Cloud-native search engine for observability. 
+    - An open-source alternative to Datadog, Elasticsearch, Loki, and Tempo.
+    - Elasticsearch-compatible API, use Quickwit with any Elasticsearch or OpenSearch client
 
 - bibliothecula /152Star/GPLv3/202107/rust/archived
   - https://github.com/epilys/bibliothecula
@@ -320,7 +342,7 @@ modified: 2023-01-01T13:24:35.994Z
 
 - https://github.com/cloudant-labs/clouseau /apache2/202401/scala
   - Expose Lucene features as an erlang-like node
-# search-ui-examples
+# search-ui
 - Faceted Search ui
   - [Tailwind CSS Faceted Search Drawers](https://flowbite.com/blocks/application/faceted-search-drawers/)
 
@@ -352,21 +374,20 @@ modified: 2023-01-01T13:24:35.994Z
     - https://github.com/unplatform-io/clientside-instantsearch-demo
     - https://clientside-instantsearch-demo.vercel.app/
 
-- https://github.com/riccox/meilisearch-ui
-  - fast meilisearch admin dashboard UI for managing your meilisearch instances
-
-- https://github.com/searchkit/searchkit
-  - /3.9kStar/Apache2/202008
+- https://github.com/searchkit/searchkit /3.9kStar/apache2/202312/ts
+  - http://www.searchkit.co/docs
+  - https://www.searchkit.co/demos
   - Search UI for Elasticsearch & Opensearch. 
   - Compatible with Algolia's Instantsearch and Autocomplete components. 
   - React & Vue support
+  - core几乎无依赖
   - https://github.com/searchkit/searchkit-starter-app
 
-- https://github.com/appbaseio/dejavu
-  - /7kStar/MIT/202008
+- https://github.com/appbaseio/dejavu /8.3kStar/MIT/202301/js/inactive
+  - https://dejavu.reactivesearch.io/
   - The Missing Web UI for Elasticsearch: Import, browse and edit data with rich filters
 
-- https://github.com/appbaseio/reactivesearch
+- https://github.com/appbaseio/reactivesearch /apache2/202401/js
   - https://opensource.appbase.io/reactivesearch
   - Search UI components for React and Vue: powered by appbase.io / Elasticsearch
 
@@ -399,6 +420,8 @@ modified: 2023-01-01T13:24:35.994Z
     - Pagefind then outputs a static search bundle to your website, and exposes a JavaScript search API that can be used anywhere on your site.
   - The installation process is always the same: Pagefind only requires a folder containing the built static files of your website
   - After indexing, Pagefind adds a static search bundle to your built files, which exposes a JavaScript search API that can be used anywhere on your site. 
+  - [Using Pagefind with a specific SSG](https://pagefind.app/docs/resources/)
+    - 支持hugo,hexo,Eleventy,Astro
 
 - https://github.com/dosyago/DiskerNet /AGPLv3/202312/js
   - https://github.com/dosyago/DownloadNet
@@ -459,6 +482,12 @@ modified: 2023-01-01T13:24:35.994Z
   - 🍴 forks
     - https://github.com/mvayngrib/level-queryengine
 # docsearch
+- https://github.com/algolia/docsearch
+  - The easiest way to add search to your documentation
+  - DocSearch crawls your documentation, pushes the content to an Algolia index and provides a dropdown search experience on your website.
+  - [Run your own | DocSearch by Algolia](https://docsearch.algolia.com/docs/legacy/run-your-own/)
+    - The scraper is a python tool based on scrapy
+
 - https://github.com/typesense/typesense-docsearch-scraper /MIT/202312/python
   - https://typesense.org/docs/guide/docsearch.html
   - A fork of Algolia's awesome DocSearch Scraper, customized to index data in Typesense
@@ -467,6 +496,10 @@ modified: 2023-01-01T13:24:35.994Z
   - a fast 2kB autocomplete search bar for Typesense. 
   - It is an alternative to typesense-docsearch.js, Algolia DocSearch, InstantSearch, autocomplete-js, and typesense-js.
 # code-search
+- https://github.com/BloopAI/bloop /apache2/202402/rust/ts
+  - https://bloop.ai/
+  - a fast code search engine written in Rust.
+
 - https://github.com/bytefish/ElasticsearchCodeSearch /csharp
   - This repository is an Elasticsearch experiment to see how to build a code search engine.
 # vector-db
@@ -482,11 +515,6 @@ modified: 2023-01-01T13:24:35.994Z
   - Built-in support for LLM
   - Shareable, cached search results
 # more-search
-- https://github.com/algolia/docsearch
-  - The easiest way to add search to your documentation
-  - [Run your own | DocSearch by Algolia](https://docsearch.algolia.com/docs/legacy/run-your-own/)
-    - The scraper is a python tool based on scrapy
-
 - https://github.com/typicode/json-server
   - Get a full fake REST API with zero coding
   - support Full-text search `GET /posts?q=internet`

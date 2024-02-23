@@ -234,6 +234,9 @@ flatpak run com.discordapp.Discord --proxy-server="socks5://127.0.0.1:1080"
     - https://betterdiscord.app/
   - https://github.com/mwittrien/BetterDiscordAddons
     - A series of plugins and themes for BetterDiscord.
+  - https://github.com/MaddyUnderStars/Fosscord-BD /202209/ts/archived
+    - BetterDiscord/Replugged plugin allowing connections to Fosscord instances
+    - After Discord moved to swc, this plugin no longer works.
 # 邮箱注册
 - 不需要手机号的邮箱
   - mail.protonmail.com

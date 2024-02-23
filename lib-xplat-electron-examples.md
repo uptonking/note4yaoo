@@ -284,9 +284,6 @@ modified: 2024-01-31T19:13:11.286Z
 - https://github.com/caorushizi/oss-client /202401/ts
   - 七牛云文件仿百度网盘文件夹管理，上传下载，删除。
 
-
-
-
 - https://github.com/msihly/Media-Viewer /202402/ts
   - Electron app for managing media files in a self-contained portable database. 
   - 依赖dnd-kit、mui.v5、@tensorflow/tfjs、trpc、mobx-react-lite、mongoose、mongodb-memory-server、react-window
@@ -335,8 +332,6 @@ modified: 2024-01-31T19:13:11.286Z
   - Manages the download process and exposes a simple API to listen for events including progress, success, failure, and cancellation. 
   - The module also exposes Electron's DownloadItem methods for pausing, resuming, and canceling the download.
 
-
-
 - https://github.com/daltonmenezes/interprocess /MIT/202308/ts
   - https://daltonmenezes.github.io/interprocess/
   - A scalable and type-safe Electron IPC management tool with enhanced DX
@@ -363,7 +358,6 @@ modified: 2024-01-31T19:13:11.286Z
   - An app that Encrypts / Decrypts your files with a password. 
   - Built using Electron and TailwindCSS
   - App works Offline.
-
 
 - https://github.com/rhysd/electron-in-page-search /MIT/201906/ts/inactive
   - This package provides Chrome's native in-page search feature to Electron applications.

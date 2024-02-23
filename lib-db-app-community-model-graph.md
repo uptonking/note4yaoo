@@ -49,10 +49,10 @@ modified: 2023-10-26T15:04:42.968Z
 - How does this perform compared to a “native” graph database like Neo4J?
   - I would benchmark the tasks "traversal", "aggregation" and "shortest past" for a 10k to 10M node graph. Anything under 10k would be good enough with most techs and over 10M need to consider more tasks (writes, backup, the precise fields queried can become their particular problems at larger scale).
 
-- 👉🏻 There has been a lot of progress on creating standardized query languages for graphs. The two most notable ones are [2]:
+- 👉🏻 There has been a lot of progress on creating standardized query languages for graphs. The two most notable ones are:
   - SQL/PGQ, a property graph query extension to SQL is planned to be released next year as part of SQL:2021.
   - GQL, a standalone graph query language will follow later.
-  - While it is a lot of work to design these languages, both graph database vendors (e.g. Neo4j, TigerGraph) and traditional RDBMS companies (e.g. Oracle [2], PostgreSQL/2ndQuadrant [3]) seem serious about them. And with a well-defined query language, it should be possible to build a SQL/PGQ engine in (or on top of) SQLite as well.
+  - While it is a lot of work to design these languages, both graph database vendors (e.g. Neo4j, TigerGraph) and traditional RDBMS companies (e.g. Oracle , PostgreSQL/2ndQuadrant) seem serious about them. And with a well-defined query language, it should be possible to build a SQL/PGQ engine in (or on top of) SQLite as well.
 - SQL/PGQ and GQL target the property graph data model and support an ASCII-art like syntax for pattern matching queries (inspired by Cypher). They also offer some graph traversal/shortest path operations (including shortest path and regular path queries). Additionally, GQL supports returning graphs so it's queries can be composed.
 
 - It depends on how the graph is stored in the database. In this project the nodes ids are TEXT so it will likely not scale very well. I know because I use a similar implementation with GUID as string in Sqlite in a project since a couple of years and while it works fine for the graph I have (<1 million nodes, few edges per nodes) it won’t perform too well past that.
@@ -65,7 +65,11 @@ modified: 2023-10-26T15:04:42.968Z
 # discuss-graph-query
 - ## 
 
-- ## 
+- ## ⚖️ The SQL:2023 standard introduced a whole new sublanguage for graph queries (SQL/PGQ).
+- https://twitter.com/ohmypy/status/1760857306751754282
+  - It's a separate specification, 270 pages long. 
+  - And as far as I can see, it's an Oracle-only thing. This graph query language was invented by Oracle and only implemented in Oracle Database 23c.
+  - I wonder why other vendors are okay with it.
 
 - ## [SQL:2023 is finished: Here is what's new | Hacker News_202304](https://news.ycombinator.com/item?id=35562430)
 - I don't believe that adding property graph support to SQL makes much of a difference for SQL and relational databases...

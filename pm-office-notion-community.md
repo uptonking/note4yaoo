@@ -34,9 +34,9 @@ modified: 2023-11-28T14:48:45.910Z
 # discuss-stars
 - ## 
 
-- ## Acquired by Notion 
-- https://twitter.com/FrancescoD_Ales/status/1757067738084717054
-  - skiff-email, calendar-cal, Automate.io
+- ## 
+
+- ## 
 
 - ## [How Notion pulled itself back from the brink of failure (2019) | Hacker News_202106](https://news.ycombinator.com/item?id=27540471)
 - 
@@ -230,14 +230,14 @@ modified: 2023-11-28T14:48:45.910Z
   - For prose text, what do you think about combining a document-scale CRDT, with fine-grained locking — e.g. splitting the document into a "list of lines/sentences", where lines have identity, and then only allowing one person to be modifying a given line at a time?
 - I almost thought Notion would be a good example of this, but apparently not — they actually do allow multiple users to be editing the same leaf-node content block at the same time, and so have taken on the full scope of the CRDT problem.
 
-- ## Notion’s selection and undo/redo with multiplayer are pretty potato._202209
+- ## 💡 Notion’s selection and undo/redo with multiplayer are pretty potato._202209
 - https://news.ycombinator.com/item?id=32991105
   - Notion stores selection as grapheme indexes in a text property, so while it won’t lose selection if someone adds/removed characters from a text, your selection won’t make as much sense as one in Google Docs. 
-  - Likewise with undo/redo or regular typing into the same field - it’s all last-write-wins updates.
+  - 🔀 Likewise with undo/redo or regular typing into the same field - it’s all last-write-wins updates.
 - On the other hand, Notion’s editor does a much better job with CJK input, Android, etc compared to Slate. Slate has a beautiful API design but its implementation suffers outside of ideal conditions.
 - ProseMirror did the best the last time I tested these libraries. TipTap (a competitor of yours?) provides an API layer on top, which I haven’t spent much time investigating. For my purpose I don’t want intermediary abstractions - but might be useful for your context depending on how much you want to specialize in rich text.
 
-- ## [Peritext: A CRDT for Rich-Text Collaboration_202111](https://www.inkandswitch.com/peritext/)
+- ## 🔀 [Peritext: A CRDT for Rich-Text Collaboration_202111](https://www.inkandswitch.com/peritext/)
 - Notion allows users to edit their notes offline, but if two users concurrently edit the same paragraph (called “block” in Notion), then only one of those edits is preserved, and the other is discarded. The Peritext algorithm would allow them to merge those edits instead.
 
 - ## So much CRDT literature seems to focus on collaborative text, but it feels like a pretty niche(针对特定小群体的) problem to me._202210
@@ -255,7 +255,7 @@ modified: 2023-11-28T14:48:45.910Z
   - Depends on how you want to query it... The framework I'm building uses schema based data which doesn't handle recursive nesting, but could represent a graph by ID references and query each level iteratively. Not ideal. Classics like YJS probably better. Check GUN too.
 - collaborative text is good because its a list type that people are already familiar with! turns out we can build arbitrary JSON out of lists (like what Automerge and Yjs have done) which allow you to synchronize state of entire applications
 
-- ## Muse using last-write-wins for merging text blocks._202205
+- ## 🔀 Muse using last-write-wins for merging text blocks._202205
 - https://twitter.com/gordonbrander/status/1524885567686660096
   - “Notably, [Figma, @actualbudget ] independently arrived at this notion of having a bunch of last-write-wins registers as the CRDTs. 
   - So these are very small, simple, almost degenerate(退化的；简并的) CRDTs”
@@ -364,6 +364,10 @@ modified: 2023-11-28T14:48:45.910Z
 
 - ## 
 
+- ## Acquired by Notion _202402
+- https://twitter.com/FrancescoD_Ales/status/1757067738084717054
+  - skiff-email, calendar-cal, Automate.io
+
 - ## ✨ Say hello to buttons in databases _202402
 - https://twitter.com/NotionHQ/status/1752728459913400702
 - Automate common workflows like:
@@ -383,10 +387,9 @@ modified: 2023-11-28T14:48:45.910Z
 - 
 - 
 - 
-- 
 
 - ## @jkosoy ’s first month as a new Notion employee (AKA Newtino), in his own kanban
 - https://twitter.com/NotionHQ/status/1697660535704322514
   - 页面渲染多个分类，效果类似看板
-- How does Notion at Notion deal with unbearable database speeds once you have too many relations  and rollups? Notion is a dream of a software and one of the most important in my life, but the performance is just sooooo annoying
+- How does Notion at Notion deal with unbearable database speeds once you have too many relations  and rollups? Notion is a dream of a software and one of the most important in my life, but the performance is just so annoying
   - I just had a conversation with our infra team about it yesterday. It can be a little annoying, but rest assured they are thinking about this *all the time*. 

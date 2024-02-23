@@ -12,7 +12,9 @@ modified: 2021-05-13T16:12:47.773Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## Hot take: Using dashboards for analysis is an antipattern
+- https://twitter.com/ergestx/status/1761013565115322689
+- If a dashboard is designed for data exploration or analysis it will eventually be dumped into Excel
 
 - ## 🐍📈 NVIDIA just made Pandas 150x faster with zero code changes
 - https://twitter.com/Sumanth_077/status/1751251621143838914

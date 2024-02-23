@@ -255,6 +255,12 @@ modified: 2024-02-09T10:55:03.085Z
   - 目前版本支持的模版页：首页、文章详情页、归档页、单页；
   - 无预留评论位置（后续可能会安排）。
 
+
+- https://github.com/xaoxuu/hexo-theme-stellar /MIT/202402/js/ejs
+  - https://xaoxuu.com/wiki/stellar/
+  - https://xaoxuu.com/wiki/stellar/examples.html
+  - 内置文档系统的简约商务风Hexo主题，支持大量的标签组件和动态数据组件。
+
 - https://github.com/zalando-incubator/hexo-theme-doc /MIT/201903/js
   - https://zalando-incubator.github.io/hexo-theme-doc
   - A documentation theme for Hexo
@@ -309,6 +315,11 @@ modified: 2024-02-09T10:55:03.085Z
   - Parse FrontMatter Markdown Posts To Javascript Object
   - support Parsing HexoJS/Jekyll/Hugo/Frontmatter
   - Get all images from post body and push them to metadata.photos
+
+- https://github.com/unnamed42/hexo-spoiler /202402/ts
+  - Hexo plugin for spoiler
+
+
 
 - https://github.com/Cerallin/hexo-filter-text-autospace /GPLv3/202310/js
   - hexo 插件，用于在 CJK 字符与拉丁字符中间插入适当的间距。

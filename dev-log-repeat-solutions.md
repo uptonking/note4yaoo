@@ -24,12 +24,12 @@ modified: 2021-07-20T13:50:23.433Z
 
 - 技术方向js: 前端版/流式版/oplog; 富文本编辑器，多维表格，协作; dnd，floating
 - 技术扩展js/py: 可拖拽的页面编辑器/lowcode, Excel/kanban, 图表
-- 技术产品: client/server版; cms, airtable, 参考类似ckan的data-portal
+- 技术产品: client/server版; cms, airtable/table, db, git-squash
 - 技术可选1: 画板, pdf，图形编辑器
 - 技术可选2: olap，bi，数据库，大数据系统
 - 技术可选3: vscode，可参考架构 extensions、capabilities
 - 技术可选4: 侧重版本控制的数据库，如dolt, SirixDB, git-like-db
-- 玩具尝试1: git+crdt+table+branch/version
+- 玩具尝试1: git+crdt+table+branch/version, 参考类似ckan的data-portal
 - roadmap: 虚拟渲染、分支版本、协作; crdt历史版本、partial-replica、ivm
 - file-first: notable, hexo
 - db-first: joplin, siyuan, nocodb

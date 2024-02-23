@@ -79,7 +79,10 @@ modified: 2023-10-26T15:03:56.115Z
 # discuss
 - ## 
 
-- ## 
+- ## Are there any other SQL engines / optimizer that do column level lineage purely through AST manipulation and traversal? 
+- https://twitter.com/Captaintobs/status/1760914650353574237
+  - The common approaching uses logical plans.
+  - SQLGlot's lineage is a bit weird in that regard. I built out the optimizer initially with the goal of creating "canonical sql", which is why I chose to do do everything on the AST.
 
 - ## Someone on Linkedin asked if anyone in the community would build something that leveraged column level lineage to propagate column descriptions. 
 - https://twitter.com/Captaintobs/status/1759817999073357938

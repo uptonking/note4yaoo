@@ -23,7 +23,7 @@ modified: 2020-12-19T13:05:23.294Z
   - ?
 
 - tips
-  - 开发前进行技术选型时多分析使用场景，ssr和csr的技术栈本身就是不同的，jsx只是view层，服务端要考虑routing/cache
+  - 产品开发前进行技术选型时要多分析使用场景，ssr和csr的技术栈本身就是不同的，jsx只是view层，服务端要考虑routing/cache/streaming/i18n
 
 - usecase
   - 针对重消费者业务的seo，偏离市场主流业务
@@ -169,13 +169,13 @@ modified: 2020-12-19T13:05:23.294Z
 - 
 
 - ## 🚀 [Show HN: Vite-plugin-ssr – Do-one-thing-do-it-well alternative to Next.js / Nuxt | Hacker News _202210](https://news.ycombinator.com/item?id=33188372)
-- How would you say it compares to Astro? Astro is currently either all-SSG or all-SSR, but this quarter they're working on configuring that per -route.
+- 🆚️ How would you say it compares to Astro? Astro is currently either all-SSG or all-SSR, but this quarter they're working on configuring that per -route.
   - 1) Astro is either all-SSG or all-SSR, while VPS is mix-and-match
-  - 2) Astro uses .astro templates by default, while VPS uses .js by default
+  - 2) Astro uses `.astro` templates by default, while VPS uses `.js` by default
   - 3) Astro comes out-of-the-box with Typescript, Sass, etc., while VPS requires more configuration (by design)
 - VPS is tailored for users who like/want/need control. If you care about control, Astro isn't a good fit. E.g. you won't be able to use Astro with React Server Components. And many other subtleties that, in the end, sum up to a fundamentally different tool.
 
-- What are the differences between this and the ssr in vite?
+- 🆚️ What are the differences between this and the ssr in vite?
   - The process in that doc provide the primitives on which SSR can be built. Vite-plugin-ssr is one such implementation. It provides a rather "NextJS-like" experience out of the box. 
 
 - ## 🆚️ [Nano JSX, Laravel, InertiaJS with SSR · nanojsx/nano](https://github.com/nanojsx/nano/discussions/75)

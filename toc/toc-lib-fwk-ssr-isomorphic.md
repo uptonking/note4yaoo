@@ -9,21 +9,39 @@ modified: 2020-12-19T13:04:40.865Z
 
 # guide
 - tips
-  - 开发前进行技术选型时多分析使用场景，ssr和csr的技术栈本身就是不同的，jsx只是view层，服务端要考虑routing/cache/streaming/i18n
+  - 产品开发前进行技术选型时要多分析使用场景，ssr和csr的技术栈本身就是不同的，jsx只是view层，服务端要考虑routing/cache/streaming/i18n
+  - 一般ssr方案都会提供自己的router, nextjs将file-based-routing作为卖点
+  - 没必要寻找前后端通用的router，前端、后端框架都有自己的，routing常和prefetch耦合
+  - 有的方案支持首屏ssr，之后spa，基于不同的render mode
 # ssr
 - https://github.com/vikejs/vike /3.4kStar/MIT/202402/ts/js
   - https://vike.dev/
   - https://vike.land/
   - Like Next.js/Nuxt but as do-one-thing-do-it-well Vite plugin.
   - The vite-plugin-ssr project has been renamed Vike
-  - 🆚️ [Comparison with NextJS](https://github.com/vikejs/vike/issues/158)
   - do-one-thing-do-it-well architecture: Vike focuses on being an excellent frontend framework while not interfering with the rest of your stack.
     - Any UI framework (React/Vue/Solid/...)
     - Any server (Express.js, Deno, HatTip, ...)
     - Any deployment (AWS, Cloudflare Workers, Vercel, ...)
   - Filesystem Routing, Data fetching, Pre-rendering, Layouts, HMR, i18n, Link Prefetching, HTML Streaming.
-  - All render modes: SSR, SPA, MPA, SSG, HTML-only. Each page can use a different mode.
-  - [Show HN: Vite-plugin-ssr – Do-one-thing-do-it-well alternative to Next.js / Nuxt | Hacker News _202210](https://news.ycombinator.com/item?id=33188372)
+  - ✨ All render modes: SSR, SPA, MPA, SSG, HTML-only. Each page can use a different mode.
+  - 🆚️ [Comparison with NextJS](https://github.com/vikejs/vike/issues/158)
+  - [Show HN: Vite-plugin-ssr – Do-one-thing-do-it-well alternative to Next.js/Nuxt | Hacker News _202210](https://news.ycombinator.com/item?id=33188372)
+
+- https://github.com/ElMassimo/iles /MIT/202309/ts
+  - https://iles.pages.dev/
+  - The joyful site generator
+  - îles — french word for "islands". 
+  - Partial Hydration - zero JS by default, hydrates the interactive bits
+  - Multi-Framework - vue, preact, svelte, solid
+  - Fast - instant reloading powered by Vite
+  - Routing - automatically configured from files
+  - https://iles-docs.netlify.app/faqs
+    - With iles the page is pre-rendered just like in server-side rendering, but JS is automatically added for the interactive bits, more optimal than hydrating the entire page.
+    - VitePress has an MPA mode to strip away all JS. In iles that happens automatically if you don't use hydration directives.
+  - [question: purpose of this library _202110](https://github.com/ElMassimo/iles/issues/5)
+    - The main difference is that îles provides great support partial hydration, so you can ship JS only for the interactive parts of the page by simply adding `client:` directives. In Vitepress partial hydration is still a manual process.
+    - It's easier to build blogs in îles than in Vitepress, and if you need a SPA you would go with Vitepress.
 
 - https://github.com/beenotung/ts-liveview /BSD/202402/ts
   - https://liveviews.cc/
@@ -55,9 +73,10 @@ modified: 2020-12-19T13:04:40.865Z
   - SSR first, lightweight 1kB JSX library.
   - Partial Hydration: Hydrate and only the parts you really need
   - Pre-Rendering: Renders your app to static html if you want. This is possible, but requires some knowledge.
+  - Isomorphic Router Works on Client- and Server-Side
   - Uses Tagged Templates instead of JSX if you prefer
   - Prefetch: Use the built-in Link Component
-  - ❓ 不支持streaming
+  - ❓ 不支持streaming, 不支持spa
   - [Nano JSX, Laravel, InertiaJS with SSR _202112](https://github.com/nanojsx/nano/discussions/75)
 
 - https://github.com/inertiajs/inertia /MIT/202311/ts
@@ -66,7 +85,7 @@ modified: 2020-12-19T13:04:40.865Z
   - Inertia works great with any backend framework, but it's fine-tuned for Laravel.
   - Inertia isn't a framework, nor is it a replacement for your existing server-side or client-side frameworks. Rather, it's designed to work with them
   - https://discord.com/channels/592327939920494592/758259460920573992/1204350428708339773
-    - Inertia SSR is an addition, not a conversion / replacement
+    - Inertia SSR is an addition, not a conversion/replacement
   - [How it works - Inertia.js](https://inertiajs.com/how-it-works)
     - At its core, Inertia is essentially a client-side routing library. It allows you to make page visits without forcing a full page reload. 
     - This is done using the `<Link>` component, a light-weight wrapper around a normal anchor link. 
@@ -102,6 +121,8 @@ modified: 2020-12-19T13:04:40.865Z
 - https://github.com/airbnb/hypernova /MIT/202204/js/archived
   - A service for server-side rendering your JavaScript views
   - we are no longer using this technology internally
+  - https://github.com/ara-framework/hypernova-preact
+  - https://github.com/ara-framework/hypernova-hyperapp
 
 - https://github.com/PaulBlanche/frugal /202308/ts
   - https://frugal.deno.dev/
@@ -244,7 +265,7 @@ modified: 2020-12-19T13:04:40.865Z
   - React ssr setup, new ssr for react-18
   - 灵活的渲染方式 SSR CSR
 
-- https://github.com/rakkasjs/rakkasjs
+- https://github.com/rakkasjs/rakkasjs /MIT/202402/ts
   - a bleeding-edge full-stack React framework powered by Vite. 
   - You can consider it an up-and-coming alternative to Next.js, Remix, or Gatsby.
 # ssr-non-js

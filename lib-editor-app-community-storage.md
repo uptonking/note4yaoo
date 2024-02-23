@@ -10,8 +10,28 @@ modified: 2022-08-30T01:18:19.063Z
 # guide
 
 # discuss
+- ## 
 
-## 
+- ## 
+
+- ## 
+
+- ## 🌵 On the Patchwork project at @inkandswitch we’re exploring dynamic history: auto-saving every change to a document, and flexibly querying that history later on.
+- https://twitter.com/geoffreylitt/status/1760750912765579298
+- The goal is to combine the best aspects of two paradigms:
+  - Mobile and web apps typically autosave every change.
+  - Traditional desktop apps require the user to manually save and name files. Similarly, dev version control tools require explicit commits w/ a message
+- Each approach has advantages.
+  - Auto-saving requires less effort by users, supports live collaboration, and avoids accidentally losing work.
+  - But manual savepoints are useful for indicating milestones, which helps with collaboration and understanding history
+- Dynamic history combines the two:
+  - Auto-save every change in a doc
+  - Offer flexible views of the history depending on the task
+  - Allow users to mark important milestones
+- we’ve found that it’s indeed useful to have multiple ways of querying history.
+  - For example, zooming out to see a big batch of edits from many authors over the course of a few days, or zooming in to see very small edits from a single author.
+  - In practice, though, it seems most cases can be supported by a small set of groupings, such as by author and edit time. So we plan to build default user-facing views based on these groupings, while still preserving the ability to query more flexibly in rarer situations
+- we’re building on top of Automerge, which already tracks the full change history. In an upcoming post, we’ll share more about why Automerge gives us a strong foundation for user-facing version control.
 
 - ## [What is the recommended way to store data in a database/create a controlled editor component? · typewriter-editor/typewriter](https://github.com/typewriter-editor/typewriter/issues/66)
 - `editor.getHTML() and editor.setHTML(value)` would work better for rich text. 

@@ -35,9 +35,15 @@ modified: 2023-10-26T16:45:47.318Z
 
 - ## 
 
-- ## 
+- ## Introducing PGlite - WASM Postgres running in the browser, Bun and Node
+- https://twitter.com/samwillis/status/1760735476343001553
+- which extensions does it support? Does it WAL/sync back to a server?
+  - No extensions yet, but we are looking to support pgvector. Syncing to/from the server with @ElectricSQL is coming very soon
 
-- ## 
+- ## 🚀 PGlite, WASM Postgres running in the browser, Bun and Node. Only 3.7mb gzipped
+- https://twitter.com/ElectricSQL/status/1760734511132995604
+- I’ve literally been waiting years for something like this to exist so Postgres could run in @stackblitz
+- How did you achieve persistent to idb? Is it block based writing or just whole db dump? If it is block based, what did you do with async writing? Did you use asyncify? So much questions, but I didn't find answers after brief repo review 
 
 - ## 飞总发了一篇《2023年，中国对PostgreSQL的贡献≈0》所以我刚才翻阅了 OSSRank 收录的 188个 PostgreSQL 生态开源项目。
 - https://twitter.com/GobeUncleWang/status/1744190341438472279

@@ -16,7 +16,10 @@ modified: 2021-01-01T20:20:18.269Z
 
 - ## 
 
-- ## 
+- ## Code-first products present an unreasonably effective interface to AI models, because AIs excel at generating the very code these products run on.
+- https://twitter.com/medriscoll/status/1760758205855224041
+  - Today's release of Rill 0.41 introduces a related, powerful side effect of our BI-as-code philosophy:  You can now create an operational dashboard from any data source with just one click, thanks to an integration with GPT-3.5 Turbo.
+  - 示例动画效果很好
 
 - ## 一哥们分享通过 DSL 来生成特定领域 (BI) sql, 下面有人出来说这样的方式并没有解决底下 db 的问题
 - https://twitter.com/Ehco1996/status/1752885599789629519

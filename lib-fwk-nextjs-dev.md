@@ -9,7 +9,7 @@ modified: 2020-12-12T19:22:00.735Z
 - The React Framework with all the features you need for production
 # guide
 - meta-framework
-  - 接管 打包、路由、布局、请求api、ssr、mock
+  - 功能特性: 打包、路由、布局、请求api、ssr、mock
 
 - features
   - opinionated react framework with features for production out of the box
@@ -18,8 +18,7 @@ modified: 2020-12-12T19:22:00.735Z
     - hybrid static & server rendering
     - Pre-render pages at build time (SSG) or request time (SSR) in a single project
   - Zero config with flexible customization
-  - file-system based routing
-    - route pre-fetching
+  - file-system based routing, route pre-fetching
   - Incremental Static Regeneration
     - Add and update statically pre-rendered pages incrementally after build time.
 

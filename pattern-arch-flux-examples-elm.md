@@ -12,6 +12,9 @@ modified: 2023-11-21T10:17:34.596Z
 - tips
   - popular-elm: elmish, hyperapp, hydux, raj, apprun
 
+- fans-hyperapp
+  - https://github.com/zaceno/hyperlit
+
 - resources
   - [The Elm Architecture · An Introduction to Elm](https://guide.elm-lang.org/architecture/)
   - [Elmish · F#](https://elmish.github.io/elmish/)
@@ -102,6 +105,15 @@ modified: 2023-11-21T10:17:34.596Z
   - function UI component with raj/react implement the elm language theory
 - https://github.com/rluiten/rajts /201807/ts
   - Convert raj into typescript
+
+- https://github.com/marcodpt/merlin /MIT/202312/js
+  - https://marcodpt.github.io/merlin/
+  - The Merlin JS framework
+  - No building tools. Use a regular html file as a Single File Component.
+  - Server side rendered by default (templates are valid html).
+  - Ultrafast vDom.
+  - Built-in Single Page Application Router.
+  - influenced by elm/raj/hyperapp
 
 - https://github.com/jonaskello/tea-minimal /202201/ts
   - Minimal The Elm Architecture implementation in typescript
@@ -271,15 +283,27 @@ modified: 2023-11-21T10:17:34.596Z
     - [@hyperapp/navigation can't handle external links](https://github.com/jorgebucaran/hyperapp/issues/1033)
     - I've decided to focus on shipping Hyperapp and creating quality examples to show people how easy it is to DIY these things, instead of crafting scoped packages, so I'm not going to publish `@hyperapp/navigation` any time soon
   - [SSR](https://github.com/jorgebucaran/hyperapp/issues/257)
+    - 
+
+  - [Server Rendering? _201706](https://github.com/jorgebucaran/hyperapp/issues/14)
+    - I'd like to share @benjaminj6's summary of the different SSR approaches available
   - [V2 What if?_201810](https://github.com/jorgebucaran/hyperapp/issues/765)
     - Effects need to be represented as objects.If you use a function to represent an effect, then it's impossible to test effects using a strict equality check
     - I designed this part of the API looking at Elm.
 - https://github.com/shish/hyperapp-navigation /202211/ts
   - A polished version of the abandoned @hyperapp/navigation
-- https://github.com/loteoo/hyperstatic /MIT/202105/ts/太复杂
-  - a small navigation layer on top of hyperapp that helps create fast and SEO friendly static sites
+- https://github.com/mrozbarry/hyperapp-router /202102/js
+  - modern router for hyperapp
+- https://github.com/jrop/hyperapp-routes /201707/ts
+  - A router that supports both hash-based and history-API-based routing
+  - https://github.com/yuku/hyperapp-hash-router /201804/js
+
 - https://github.com/kriasoft/hyperapp-render /MIT/202206/js
-  - Render Hyperapp to an HTML string with SSR and Node.js streaming support
+  - Render Hyperapp views to an HTML string with SSR and Node.js streaming support
+  - The `renderToStream` function returns a Readable stream that outputs an HTML string. The HTML output by this stream is exactly equal to what `renderToString` would return. By using this function you can reduce TTFB and improve user experience even more.
+- https://github.com/talentlessguy/hyperapp-fullstack-starter /MIT/202105/js
+  - Hyperapp fullstack starter with batteries included (SSR, routing, bundling)
+  - 依赖tinyhttp、hyperapp2、hyperapp-render、hyperlit、
 
 - https://github.com/hydux/hydux /201902/ts/inactive
   - A light-weight Elm-like alternative for Redux ecosystem, inspired by Hyperapp and Elmish.
@@ -297,6 +321,14 @@ modified: 2023-11-21T10:17:34.596Z
   - https://github.com/hydux/hydux-preact
   - https://github.com/hydux/hydux-react-router
 
+- https://github.com/loteoo/hyperstatic /MIT/202105/ts/inactive
+  - https://github.com/loteoo/hyperstatic-starter
+  - a small navigation layer on top of hyperapp that helps create fast and SEO friendly static sites
+  - ✨ It's goal is to be a simpler, lighter and faster Gatsby, that uses hyperapp instead of React
+  - It's TypeScript codebase has an inherently small footprint by using Puppeteer for pre-rendering and dynamic imports for code-splitting.
+  - [Router implementation alternatives](https://github.com/loteoo/hyperstatic/issues/12)
+    - The current implementation of the router (depending on parsing the current DOM into virtual nodes) seems like not very good practice and is definitely not declarative
+
 - https://github.com/gamebox/snazzy-ui /MIT/202401/ts
   - modern, functional UI library that is API compatible with Hyperapp, but built on top of the battle-tested `Snabbdom` VDOM library
 
@@ -305,7 +337,7 @@ modified: 2023-11-21T10:17:34.596Z
   - we use the `h()` and `text()` functions to create a lightweight representation of the DOM (or virtual DOM for short), and `patch()` to actually render the DOM.
   - Superfine won't re-create the entire DOM every time we use patch(). By comparing the old and new virtual DOM we are able to change only the parts of the DOM that need to change instead of rendering everything from scratch.
 
-- https://github.com/loteoo/hyperapp-starter /202104/ts
+- https://github.com/loteoo/hyperapp-starter /MIT/202104/ts/inactive
   - Clean web app starter using Hyperapp with strong focus on developer experience.
   - https://github.com/anticrisis/hyperapp-starter /202003/ts
   - https://github.com/bonniss/hyparcel /202005/js

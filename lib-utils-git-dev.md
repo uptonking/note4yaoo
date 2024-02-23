@@ -31,6 +31,12 @@ modified: 2023-08-29T10:11:26.348Z
   - 基于文件和基于数据库最大的区别是引用数据块的方式，数据库中的数据块很容易获取id，文件中的位置不容易描述位置或id
   - 设计合适的数据结构和传输协议，都可以实现离线合并
 
+- 🧐 git注意点
+  - git支持 prune: unreachable or "orphaned" Git objects
+  - git支持 Rewriting History
+    - squash: pick up a bunch of commits and just squash them together into a big commit
+    - reorder/split
+
 - 将git自动生成的.git文件夹改为自定义database，将snapshot改为crdt-changes，似乎可以实现支持时间旅行和协作合并的新工具，参考fossil
   - 离线编辑再合并，在ui交互上会增加复杂度，使用体验真的会方便吗，基于db实现同步不难
   - 对所有数据实现自动冲突解决和合并不实际，特别是二进制数据或不重要的评论数据

@@ -53,7 +53,9 @@ modified: 2023-01-02T08:49:39.114Z
 
 - ## 
 
-- ## 
+- ## Reminder: Elasticsearch *is* a vector database (and has been for a long time) and has a great @testcontainers module (and has for a long time)
+- https://twitter.com/bluxte/status/1760936516329615795
+- it is, and the Elasticsearch module is proudly presented in the "Vector database" category in the Testcontainers module catalog
 
 - ## 🆚️ My first project as an engineer was benchmarking ElasticSearch versus Lucene versus Lucene on HBase for streaming ingestion and data availability (back in 2013). 
 - https://twitter.com/JohnKutay/status/1750695024449458406

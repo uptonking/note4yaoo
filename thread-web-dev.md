@@ -35,6 +35,12 @@ modified: 2021-01-08T17:13:43.392Z
 
 - ## 
 
+- ## 
+
+- ## IIRC at Nokia times, we developed Nokia Maps with Offline Navigation (RIP WebSQL) and all mobile browsers (Android 2 at that time or iOS 5) 
+- https://twitter.com/WebReflection/status/1760950919779270758
+  - and it was less than 100K & no framework used, it worked wonderfully well too
+
 - ## Learn concepts instead of implementations/frameworks
 - https://twitter.com/sseraphini/status/1760262122129207442
   - babel -> compilers

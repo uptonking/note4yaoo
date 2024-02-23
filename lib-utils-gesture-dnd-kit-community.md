@@ -100,7 +100,23 @@ input[type="button"] {
 - react-beautiful-dnd does not seems to support grid sorting
 - the main difference would be that react-beautiful-dnd is specifically built for lists, while @dndkit supports a much wider range of use cases, such as grids, trees, 2D games, and much more.
 
+# discuss-alternatives-dnd
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🚀 Announcing: FormKit Drag and Drop. A tiny (~4Kb) data-first drag and drop library for React, Vue, and native JavaScript apps. _20240223
+- https://twitter.com/jpschroeder/status/1760729910535180523
+- when you said 'native', I thought you meant 'React Native', but you've actually been referring to vanilla JavaScript
+- it uses native dnd API
+
+- In terms of pure draw speed — direct-DOM manipulation may be “faster” but you have to do more computation manually rectiftying state which then re-draws
+- I agree, the API is usually much cleaner this route. I can count on my fingers the number of situations in which I went "outside of React" to modify the DOM directly. I remember a similar situation from when I was working at http://flixier.com. We decided to modify the DOM directly instead of going through the Vuex store. But can't remember the specifics.
 # discuss-performance
+- ## 
+
 - ## [Unnecessary rerenders cause poor performance](https://github.com/clauderic/dnd-kit/issues/389)
 - We use @dnd-kit on some fairly large and complex applications at Shopify and have not run into any significant performance issues when the components that use useDraggable, useDroppable or useSortable and their child components are properly memoized.
 

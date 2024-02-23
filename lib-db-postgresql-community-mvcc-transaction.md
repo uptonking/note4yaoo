@@ -27,7 +27,9 @@ modified: 2024-02-18T13:52:07.926Z
 # discuss
 - ## 
 
-- ## 
+- ## Postgres MVCC Backstage Run a few basic SELECTS, INSERTS, and UPDATES to see how the MVCC engine functions internally
+- https://twitter.com/denismagda/status/1760780953285284251
+  - https://github.com/dmagda/DevMastersDb/blob/main/postgres/postgres_mvcc_backstage.md
 
 - ## 🤼🏻 [PostgreSQL reconsiders its process-based model | Hacker News_202306](https://news.ycombinator.com/item?id=36393030)
 

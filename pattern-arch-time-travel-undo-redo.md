@@ -12,6 +12,7 @@ modified: 2023-09-12T09:36:25.608Z
   - 同类产品，如git
   - 编辑器，如vscode、ckeditor、ospreadsheet
   - 数据库，如dolt、mongodb-doc-ver
+  - undo/history类产品的形态可参考git commits的交互和设计
 # dev
 
 # blogs

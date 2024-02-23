@@ -105,7 +105,9 @@ modified: 2023-03-30T13:31:09.049Z
 
 - ## 
 
-- ## 
+- ## 给自己的产品 HeyForm 寻一个 co-founder，以便我可以更好地把时间放在获客和增长上。
+- https://twitter.com/LuoSays/status/1760967855330525647
+  - 希望你对表单这个赛道本身就感兴趣，如果你有一些复杂项目的研发经验，维护过组件库，那就再适合不过了。你不必全职投入，只需要每天能够抽出一点时间参与产品迭代的讨论和执行。
 
 - ## [How we built a $1M ARR open source SaaS | Plausible Analytics _202206](https://plausible.io/blog/open-source-saas)
 
