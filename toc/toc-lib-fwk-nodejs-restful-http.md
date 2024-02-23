@@ -243,10 +243,11 @@ modified: 2022-12-19T01:51:01.389Z
   - a modern Express-like web framework 
   - Async middleware support
 
-- https://github.com/hattipjs/hattip /ts
+- https://github.com/hattipjs/hattip /MIT/202402/ts
   - Like Express, but for the future
   - HatTip is a set of JavaScript packages for building HTTP server applications.
   - Modern: Based on current and future web standards (Fetch API & WinterCG).
+  - Runs anywhere (Node.js, the Edge, Deno, ...).
   - Modular: Use as much or as little as you need.
   - compose function from the @hattip/compose package can be used to compose multiple handlers into a single one, creating a simple but powerful middleware system.
 

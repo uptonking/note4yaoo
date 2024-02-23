@@ -13,7 +13,7 @@ modified: 2023-01-01T13:24:35.994Z
   - persistence
 
 - usecase
-  - 针对ssg的blog的搜索，类似algolia-docsearch
+  - 针对ssg/blog的搜索，类似algolia-docsearch, hacker-news-search
   - 针对列表项的搜索，类似searchkit
 
 - resources

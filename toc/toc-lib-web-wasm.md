@@ -79,9 +79,8 @@ modified: 2020-12-31T15:19:37.542Z
 - https://github.com/wwwg/wasmdec
   - WebAssembly to C decompiler
 # rust
-- https://github.com/yewstack/yew
+- https://github.com/yewstack/yew /14.4kStar/MIT/202312/rust
   - https://yew.rs/
-  - /14.4kStar/MIT|Apache2/202012/rust
   - Rust/Wasm framework for building client web apps
   - modern Rust framework for creating multi-threaded front-end web apps with WebAssembly.
 - https://github.com/seed-rs/seed

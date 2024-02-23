@@ -8,63 +8,44 @@ modified: 2020-12-19T13:04:40.865Z
 # toc-lib-fwk-ssr-isomorphic
 
 # guide
-
+- tips
+  - 开发前进行技术选型时多分析使用场景，ssr和csr的技术栈本身就是不同的，jsx只是view层，服务端要考虑routing/cache/streaming/i18n
 # ssr
-- https://github.com/jaredpalmer/after.js /202111/ts/inactive/代码少
-  - Next.js-like framework for server-rendered React apps built with React Router
-
-- https://github.com/Aslemammad/vitext /202201/ts/inactive
-  - The Next.js like React framework for better User & Developer experience!
-  - Vitext (Vite + Next) is a lightning fast SSG/SSR tool that lets you develop better and quicker front-end apps.
-
-- https://github.com/vikejs/vike /MIT/202401/ts
+- https://github.com/vikejs/vike /3.4kStar/MIT/202402/ts/js
   - https://vike.dev/
-  - Like Next.js / Nuxt but as do-one-thing-do-it-well Vite plugin.
+  - https://vike.land/
+  - Like Next.js/Nuxt but as do-one-thing-do-it-well Vite plugin.
   - The vite-plugin-ssr project has been renamed Vike
+  - 🆚️ [Comparison with NextJS](https://github.com/vikejs/vike/issues/158)
+  - do-one-thing-do-it-well architecture: Vike focuses on being an excellent frontend framework while not interfering with the rest of your stack.
+    - Any UI framework (React/Vue/Solid/...)
+    - Any server (Express.js, Deno, HatTip, ...)
+    - Any deployment (AWS, Cloudflare Workers, Vercel, ...)
+  - Filesystem Routing, Data fetching, Pre-rendering, Layouts, HMR, i18n, Link Prefetching, HTML Streaming.
+  - All render modes: SSR, SPA, MPA, SSG, HTML-only. Each page can use a different mode.
+  - [Show HN: Vite-plugin-ssr – Do-one-thing-do-it-well alternative to Next.js / Nuxt | Hacker News _202210](https://news.ycombinator.com/item?id=33188372)
 
-- https://github.com/sanyuan0704/island.js /MIT/202308/ts
-  - Vite & MDX powered static site generator. Base on islands architecture
-  - [如何看待最近正式发布的 Web 全栈框架 Fresh? - 知乎](https://zhuanlan.zhihu.com/p/556336887)
-  - Fresh 中关于 Islands 架构的实现是基于 Preact 的，我本人也借鉴了 Fresh 的思路，通过拦截 React.createElement 方法在 React 当中也实现了 Islands 架构
+- https://github.com/beenotung/ts-liveview /BSD/202402/ts
+  - https://liveviews.cc/
+  - Build hybrid SSG and SSR realtime SPA/MPA with Typescript
+  - ts-liveview supports JSX but it doesn't rely on Virtual DOM. Instead, precise DOM operations are derived from application-specific event handlers, and sent to the browser client(s) for realtime UI updates.
+  - Support hybrid rendering mode: pre-rendering, Request-time server-rendering with HTML streaming
+  - Support url-based routing architectures
+  - Enable interactive UI with minimal amount of javascript to be downloaded
+  - Support to develop with JSX, AST, or html template
+  - Lightweight WebSocket-based protocols 
+  - Built-in locale support (language and timezone)
+  - Inspired from Phoenix LiveView, htmx
 
-- https://github.com/childrentime/island-architecture
-  - a demo of implementing the Island Architecture in React.
-
-- https://github.com/floodfx/liveviewjs /646Star/MIT/202306/ts
+- https://github.com/floodfx/liveviewjs /646Star/MIT/202303/ts/inactive
   - https://www.liveviewjs.com/docs/overview/introduction
   - LiveViewJS is an open-source framework for "LiveView"-based, full-stack applications in NodeJS and Deno.
   - The LiveView pattern, as popularized in Elixir’s Phoenix framework, shifts your UI’s state management, event handling to the server, calculating minimal diffs to drive updates in your HTML over WebSockets.
   - a LiveView is a server-rendered HTML page that, when loaded, connects back to the server via a persistent web socket. As the user interacts with the LiveView, the client to sends user events (click, keys, etc) via the websocket back to the server and the server responds with diffs to the HTML page in return.
   - LiveViewJS is a protocol compliant, implementation of Phoenix LiveView but written in Typescript and runs on NodeJS and Deno. We want to bring the magic and productivity of LiveView to the NodeJS and Deno ecosystems
 
-- https://github.com/winwiz1/crisp-react /202201/ts
-  - Crisp React can optionally split a monolithic React app into multiple Single Page Applications (SPAs) and selectively prerender the landing/index page of any SPA at the build time.
-  - Helps to split a monolithic React app into multiple SPAs and avoid vendor lock-in.
-  - in each SPA the routing is managed by a separate instance of React Router 
-  - By default SSR is enabled for the first SPA and disabled for the second SPA.
-  - On the contrary to popular belief that SEO requires SSR, this solution innovatively demonstrates how to get all SPA pages indexed by Google and specific
-  - [How to achieve SEO for React SPA without SSR or prerendering](https://stackoverflow.com/questions/70390808/how-to-achieve-seo-for-react-spa-without-ssr-or-prerendering-and-preferably-kee)
-  - [Single Page Application: Dispelling SEO Myths | HackerNoon](https://hackernoon.com/single-page-application-dispelling-seo-myths)
-
-- https://github.com/MrWangJustToDo/react-ssr-setup
-  - React ssr setup, new ssr for react-18
-  - 灵活的渲染方式 SSR CSR
-
 - https://github.com/plantain-00/router-demo
   - Multiple-application SPA and SSR demo
-
-- https://github.com/rakkasjs/rakkasjs
-  - a bleeding-edge full-stack React framework powered by Vite. 
-  - You can consider it an up-and-coming alternative to Next.js, Remix, or Gatsby.
-
-- https://github.com/fusionjs/fusionjs
-  - Uber’s open source universal web framework, represents the fusion of the client and the server. 
-
-- https://github.com/electrode-io/electrode
-  - Web applications with node.js and React
-  - universal webapp with server side rendering powered by node.js
-  - https://github.com/electrode-io/electrode-native
-    - A platform to ease integration&delivery of React Native apps in existing mobile applications
 
 - https://github.com/kapouer/express-dom /js
   - Express middleware for (pre)rendering web pages with playwright.
@@ -76,6 +57,24 @@ modified: 2020-12-19T13:04:40.865Z
   - Pre-Rendering: Renders your app to static html if you want. This is possible, but requires some knowledge.
   - Uses Tagged Templates instead of JSX if you prefer
   - Prefetch: Use the built-in Link Component
+  - ❓ 不支持streaming
+  - [Nano JSX, Laravel, InertiaJS with SSR _202112](https://github.com/nanojsx/nano/discussions/75)
+
+- https://github.com/inertiajs/inertia /MIT/202311/ts
+  - https://inertiajs.com/
+  - Inertia.js lets you quickly build modern single-page React, Vue and Svelte apps using classic server-side routing and controllers. 
+  - Inertia works great with any backend framework, but it's fine-tuned for Laravel.
+  - Inertia isn't a framework, nor is it a replacement for your existing server-side or client-side frameworks. Rather, it's designed to work with them
+  - https://discord.com/channels/592327939920494592/758259460920573992/1204350428708339773
+    - Inertia SSR is an addition, not a conversion / replacement
+  - [How it works - Inertia.js](https://inertiajs.com/how-it-works)
+    - At its core, Inertia is essentially a client-side routing library. It allows you to make page visits without forcing a full page reload. 
+    - This is done using the `<Link>` component, a light-weight wrapper around a normal anchor link. 
+    - When you click an Inertia link, Inertia intercepts the click and makes the visit via XHR instead. 
+    - You can even make these visits programmatically in JavaScript using `router.visit()`.
+    - When Inertia makes an XHR visit, the server detects that it's an Inertia visit and, instead of returning a full HTML response, it returns a JSON response with the JavaScript page component name and data (props). 
+  - [Server-side rendering (SSR) - Inertia.js](https://inertiajs.com/server-side-rendering)
+    - Server-side rendering pre-renders your JavaScript pages on the server, allowing your visitors to receive fully rendered HTML
 
 - https://github.com/pmb0/express-tsx-views /MIT/202110/ts/inactive
   - Server-side JSX/TSX rendering for your express or NestJS application
@@ -104,12 +103,14 @@ modified: 2020-12-19T13:04:40.865Z
   - A service for server-side rendering your JavaScript views
   - we are no longer using this technology internally
 
-## examples
-
-- https://github.com/htdangkhoa/react-ssr-starter /js/inactive
-  - A React boilerplate for a universal web app with a highly scalable, offline-first foundation 
-  - our focus on performance and best practices.
-  - Using SWC will give build times 1.5x faster for the server and 2.2x for the client instead of using Babel.
+- https://github.com/PaulBlanche/frugal /202308/ts
+  - https://frugal.deno.dev/
+  - Frugal is a hybrid, dynamic and static site generator that aims to minimize the amount of JavaScript served, thanks to partial hydration
+  - Static pages rendered at build time: by default Frugal produces static html.
+  - Server side pages render at request time
+  - Bring your own framework: Frugal works with any UI framework able to compile to html
+  - Manual partial hydration for interactive island in pages if you use Preact
+  - Incremental build: if both data and code did not change, the page is not rebuilt
 
 ## solutions
 
@@ -144,6 +145,21 @@ modified: 2020-12-19T13:04:40.865Z
 - https://github.com/alibaba/beidou
   - Isomorphic framework for server-rendered React apps
 
+- https://github.com/zhangyuang/ssr /MIT/202402/ts
+  - https://doc.ssr-fc.com/docs/why
+  - 此框架脱胎于 egg-react-ssr 项目和 ssr v4版本（midway-faas + react ssr），在之前的基础上做了诸多演进，
+  - 通过插件化的代码组织形式，支持任意服务端框架与任意前端框架的组合使用，(Serverless/Midway/NestJS) + (React/Vue2/Vue3)
+  - 功能丰富，UI 框架、代码分割、HMR、TS、Serverless、SSR 降级 CSR 开发所需要的功能应有尽有
+  - 🧐 core无依赖，但view层的依赖很多, 依赖webpack4
+  - 支持返回 Stream
+  - 不内置服务端模块, ssr 框架默认提供的示例就是与业界最优秀的两个 Node.js 框架的示例结合。且 ssr 框架仅抛出一个逻辑非常清晰的渲染函数供服务端框架调用，兼容 koa, express 系的所有框架
+  - 支持四种渲染模式, 支持服务端渲染与客户端渲染两种模式任意切换。随时安全降级。支持 SSG(预渲染) 能力同时支持生成传统骨架 html 文件独立部署
+  - 没有使用类似于 nunjucks ejs 这种模版引擎，根据场景 All in JSX 或者 Vue SFC 来编写 html 布局
+  - [Webpack最优化问题 _202306](https://github.com/zhangyuang/ssr/issues/296)
+    - 不考虑升 webpack5
+  - [可以升级到webpack5吗？ _202207](https://github.com/zhangyuang/ssr/issues/223)
+    - 没有升级webpack5的打算，and 微前端搜文档，不看好一切用模块联邦实现的微前端方案
+
 - https://github.com/ykfe/egg-react-ssr
   - 小而美的Egg + React + SSR 服务端渲染应用骨架，同时支持JS和TS
   - 实现方式简洁，生产环境构建出来的bundle为同等复杂度的 next.js 项目的 0.7 倍，生成文件数量相比于 next.js 减少非常多
@@ -156,8 +172,6 @@ modified: 2020-12-19T13:04:40.865Z
     - 本应用是直接采用webpack --watch + inline-sourcemap 的方式将文件写到本地，实现更加简洁。
     - next.js hmr采用hot-middleware + webpackHotDevClient.js实现
     - 本应用hmr直接用社区的热门库webpack-dev-server实现
-- https://github.com/zhangyuang/ssr
-  - 此框架脱胎于 egg-react-ssr 项目和 ssr v4版本（midway-faas + react ssr），在之前的基础上做了诸多演进，通过插件化的代码组织形式，支持任意服务端框架与任意前端框架的组合使用
 
 - https://github.com/FormidableLabs/react-ssr-prepass
   - A custom partial React SSR renderer for prefetching and suspense
@@ -172,9 +186,72 @@ modified: 2020-12-19T13:04:40.865Z
   - An Isomorphic MVC Framework supports both SSR and CSR
   - MVC 三者都是 Isomorphic，既是服务端 MVC，也是浏览器端 MVC。
   - https://github.com/Lucifier129/isomorphic-cnode
-# react-ssr
+
+- https://github.com/next-boost/next-boost /202206/ts/inactive
+  - next-boost adds a cache layer to your SSR (Server-Side Rendering) applications. 
+  - It was built originally for Next.js and should work with any node.js `http.Server` based application.
+  - achieves great performance by rendering webpages on `worker_threads` while serving the cached on the main thread.
+  - If you are familiar with Next.js, next-boost can be considered as an implementation of Incremental Static Regeneration which works with getServerSideProps. And it's not meant to be used with getStaticProps, in which Next.js will do the cache for you.
+  - Drop-in replacement for Next.js's production mode
+# ssr-react
+- https://github.com/fusionjs/fusionjs /MIT/202303/ts/inactive
+  - Modern framework for fast, powerful React apps
+  - Uber’s open source universal web framework, represents the fusion of the client and the server. 
+  - It's geared for server-side rendering out of the box, and its plugin-driven architecture allows for complex frontend and backend logic to be encapsulated in a single plugin
+  - Because Fusion.js applications are universal, which means that apps have a single entry point, all code from React components to middlewares in Fusion.js plugins by default runs on both the server and browser.
+
+- https://github.com/electrode-io/electrode
+  - Web applications with node.js and React
+  - universal webapp with server side rendering powered by node.js
+  - https://github.com/electrode-io/electrode-native
+    - A platform to ease integration&
+
+- https://github.com/htdangkhoa/react-ssr-starter /js/inactive
+  - A React boilerplate for a universal web app with a highly scalable, offline-first foundation 
+  - our focus on performance and best practices.
+  - Using SWC will give build times 1.5x faster for the server and 2.2x for the client instead of using Babel.
+
 - https://github.com/panDaxiang/ssr
   - react服务端渲染demo
+
+- https://github.com/winwiz1/crisp-react /202201/ts
+  - Crisp React can optionally split a monolithic React app into multiple Single Page Applications (SPAs) and selectively prerender the landing/index page of any SPA at the build time.
+  - Helps to split a monolithic React app into multiple SPAs and avoid vendor lock-in.
+  - in each SPA the routing is managed by a separate instance of React Router 
+  - By default SSR is enabled for the first SPA and disabled for the second SPA.
+  - On the contrary to popular belief that SEO requires SSR, this solution innovatively demonstrates how to get all SPA pages indexed by Google and specific
+  - [How to achieve SEO for React SPA without SSR or prerendering](https://stackoverflow.com/questions/70390808/how-to-achieve-seo-for-react-spa-without-ssr-or-prerendering-and-preferably-kee)
+  - [Single Page Application: Dispelling SEO Myths | HackerNoon](https://hackernoon.com/single-page-application-dispelling-seo-myths)
+
+- https://github.com/jaredpalmer/after.js /202111/ts/inactive/代码少
+  - Next.js-like framework for server-rendered React apps built with React Router
+
+- https://github.com/Aslemammad/vitext /202201/ts/inactive
+  - The Next.js like React framework for better User & Developer experience!
+  - Vitext (Vite + Next) is a lightning fast SSG/SSR tool that lets you develop better and quicker front-end apps.
+
+- https://github.com/sanyuan0704/island.js /MIT/202308/ts
+  - Vite & MDX powered static site generator. 
+  - Base on islands architecture. implement less client bundle and partial hydration
+  - Internal MDX support, you can write React component in markdown file.
+  - [如何看待最近正式发布的 Web 全栈框架 Fresh? - 知乎](https://zhuanlan.zhihu.com/p/556336887)
+  - Fresh 中关于 Islands 架构的实现是基于 Preact 的，我本人也借鉴了 Fresh 的思路，通过拦截 React.createElement 方法在 React 当中也实现了 Islands 架构
+
+- https://github.com/childrentime/island-architecture
+  - a demo of implementing the Island Architecture in React.
+
+- https://github.com/MrWangJustToDo/react-ssr-setup
+  - React ssr setup, new ssr for react-18
+  - 灵活的渲染方式 SSR CSR
+
+- https://github.com/rakkasjs/rakkasjs
+  - a bleeding-edge full-stack React framework powered by Vite. 
+  - You can consider it an up-and-coming alternative to Next.js, Remix, or Gatsby.
+# ssr-non-js
+- https://github.com/floodfx/undead /202312/java/js
+  - LiveView server implementation for the JVM
+  - Undead is built on top StringTemplates which is a "Preview Feature" of Java 21.
+  - No need to write javascript
 # microfrontend
 - https://github.com/single-spa/single-spa /js
   - The router for easy microfrontends

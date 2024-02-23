@@ -12,7 +12,12 @@ modified: 2024-02-16T14:56:17.057Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 请教下 表结构更改了（使用外部数据库工具修改的） 除了重启directus以外，有办法热加载表结构吗？ _20231214
+- https://discord.com/channels/725371605378924594/946422284426551346/1184739818568171620
+- 可以试试看清除缓存 https://docs.directus.io/reference/system/utilities.html#clear-the-internal-cache
+
+- 感谢 亲测有效，之前一直是重启容器来重新加载schema， 最近突然重新要5min左右， 所以在寻找原因和方案。 
+  - 测试/utils/cache/clear 接口成功实现了 新增表/字段后的变更
 
 - ## ✨ [[RFC] Directus Offline First SDK_202303](https://github.com/directus/directus/discussions/17808)
 - I think RxDB is an excellent choice for responsive offline-first applications. During my initial research I found multiple points, why I wouldn't want to use it

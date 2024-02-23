@@ -24,13 +24,6 @@ modified: 2020-12-31T15:18:33.994Z
   - Hyper is a multi-cloud, multi-language, service framework that enables best-of-breed cloud service utilization, from any cloud provider. 
   - By providing a simple and extensible context-bound API for the Cloud, the hyper Service Framework decouples application services from the infrastructure that powers them
   - Hyper organizations tame technical debt, by using Clean Cloud Architecture 
-# rust
-- https://github.com/tokio-rs/axum /13kStar/MIT/202311/rust
-  - https://docs.rs/axum
-  - modular web framework built with Tokio, Tower, and Hyper
-  - Take full advantage of the tower and tower-http ecosystem of middleware, services, and utilities.
-  - what sets axum apart from other frameworks: axum doesn't have its own middleware system but instead uses `tower::Service`.
-  - axum is a relatively thin layer on top of hyper and adds very little overhead. So axum's performance is comparable to hyper.
 # css
 - https://github.com/googlechromelabs/houdini-samples
   - https://googlechromelabs.github.io/houdini-samples/

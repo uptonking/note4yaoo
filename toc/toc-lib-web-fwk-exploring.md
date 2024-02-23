@@ -9,23 +9,19 @@ modified: 2020-12-31T17:05:37.410Z
 
 # trending
 
-## Crank.js
-
 - crank /2.2kStar/MIT/202011/ts/NoDeps
-- https://github.com/bikeshaving/crank
-- Crank uses the same JSX syntax and diffing algorithm popularized by React, allowing you to write HTML-like code directly in JavaScript.
-- All components in Crank are just functions or generator functions. 
-- No classes, hooks, proxies or template languages are needed.
-- Crank provides first-class support for promises. 
-- The core renderer can be extended to target alternative environments such as WebGL libraries, terminals, smartphones or smart TVs.
-- [如何看待 Crank 这个前端框架？](https://www.zhihu.com/question/388457689)
-  - 这个框架的源码实现，很一般，基本的更新算法都木有
-  - 组件的异步处理方式，无论是 react 的 Suspense 还是 crank 的 async generator，甚至是 vue3 的 suspense（async setup）
-    - 都是对异步组件的处理方式，Suspense 之所以更加讨人欢喜不是因为它找到了一个安全的异步处理方式，而是它带来的一种【调度理念】
-  - generator 是不好的异步方案
-  - 违背了不可变和纯函数的原则
-
-## DataFormsJS
+  - https://github.com/bikeshaving/crank
+  - Crank uses the same JSX syntax and diffing algorithm popularized by React, allowing you to write HTML-like code directly in JavaScript.
+  - All components in Crank are just functions or generator functions. 
+  - No classes, hooks, proxies or template languages are needed.
+  - Crank provides first-class support for promises. 
+  - The core renderer can be extended to target alternative environments such as WebGL libraries, terminals, smartphones or smart TVs.
+  - [如何看待 Crank 这个前端框架？](https://www.zhihu.com/question/388457689)
+    - 这个框架的源码实现，很一般，基本的更新算法都木有
+    - 组件的异步处理方式，无论是 react 的 Suspense 还是 crank 的 async generator，甚至是 vue3 的 suspense（async setup）
+      - 都是对异步组件的处理方式，Suspense 之所以更加讨人欢喜不是因为它找到了一个安全的异步处理方式，而是它带来的一种【调度理念】
+    - generator 是不好的异步方案
+    - 违背了不可变和纯函数的原则
 
 - DataFormsJS /80Star/MIT/202011/js
   - https://github.com/dataformsjs/dataformsjs
@@ -38,8 +34,6 @@ modified: 2020-12-31T17:05:37.410Z
     - separate React Components have been developed to help with React Development 
     - and the Framework has been expanded to support Vue. 
     - Additionally separate Web Components have been developed to allow for similar functionality in modern browsers without using a JavaScript framework.
-
-## SolidJS
 
 - solid /4.4kStar/MIT/202011/ts
   - https://github.com/ryansolid/solid
@@ -68,7 +62,14 @@ const CountingComponent = () => {
 ```
 
 # rust-web
-- https://github.com/DioxusLabs/dioxus
+- https://github.com/tokio-rs/axum /13kStar/MIT/202311/rust
+  - https://docs.rs/axum
+  - modular web framework built with Tokio, Tower, and Hyper
+  - Take full advantage of the tower and tower-http ecosystem of middleware, services, and utilities.
+  - what sets axum apart from other frameworks: axum doesn't have its own middleware system but instead uses `tower::Service`.
+  - axum is a relatively thin layer on top of hyper and adds very little overhead. So axum's performance is comparable to hyper.
+
+- https://github.com/DioxusLabs/dioxus /MIT/202402/rust
   - https://dioxuslabs.com/
   - Dioxus is a portable, performant, and ergonomic framework for building cross-platform user interfaces in Rust.
   - React-like GUI library for desktop, web, mobile, TUI, and more.

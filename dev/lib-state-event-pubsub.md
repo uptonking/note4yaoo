@@ -64,6 +64,9 @@ modified: 2021-05-13T03:13:45.375Z
   - EventEmitter is written in EcmaScript 3
   - Domain support has been removed.
 
+- https://github.com/yandeu/events /MIT/202211/ts/inactive
+  - Simplified and TypeScripted version of EventEmitter3@4.0.7
+
 - more-event-emitter-impl
   - https://github.com/facebookarchive/emitter /js
 # discuss

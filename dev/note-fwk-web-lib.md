@@ -43,3 +43,41 @@ modified: 2021-01-13T07:57:54.308Z
   - 同时Stimulus中并不存在vdom，并不会进行UI渲染。
 - 这是Ruby社区给多页面应用设计的框架。
   - 别再拿单页面框架跟 Stimulus 做对比了，适用的场景是不同滴。
+# discuss-web-fwk
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🎯⌛️ [Four Eras of JavaScript Frameworks | Hacker News _202204](https://news.ycombinator.com/item?id=31176910)
+- Four eras of practice:
+  1. DHTML scripts: individual scripts that provided functionality e.g. a date picker. You grabbed the scripts, and wired them together on your pages to enhance your page. Includes the first generation of Ajax scripts (in page communication with the server, often using raw HTML, text, or XML). Hidden iframes and other techniques also used for server communications.
+  2. jQuery: the popular library that everyone used because it provided a fabulous API to access and modify the DOM, plus helper methods to abstract out browser differences and bug workarounds. Bringing Ajax to all web developers, allowing them to enhance the pages delivered by their backend web server of choice (PHP, RoR, etcetera).
+  3. component framework (Cambrian explosion): mostly enhance pages delivered by the server, each framework with a unique approach to its API. Pages use components designed for each framework. YUI, Dojo, jQuery UI, Mootools, ExtJS. Starting to see more Single Page Apps, but no widespread usage of any framework on large numbers of sites.
+  4. React (and other 2nd gen frameworks, mostly virtual DOM): fully component based, can easily deliver an SPA (Single Page Application) and often the server only really delivers JSON (no HTML pages except a blank container). Widespread usage of React in industry.
+
+- the author is too young to have accurate memories of what web development was like pre-2010.
+  - The primary difference between GWT/Closure and what we've got now is that JavaScript was treated as a compilation target, not a developer platform.
+  - The tooling was all in Java or C++, there was no concept of writing a transpiler or bundler in JavaScript and no culture of standalone JS interpreters. 
+  - IIRC the only option at the time for running JS on the server was Rhino (based on Netscape/Mozilla), which for whatever reason never saw the broad adoption of Node.
+
+- ExtJS, Ember, Angular, and Next are all "full-stack" frameworks and the all were released at very different times.
+  - Direct manipilation with custom architecture and models (JQuery) -> MVC/P (Ember/ExtJS/Angular) -> Components (React/Vue).
+
+- the next generation: "compiler-frameworks"(or "UI compilers").
+  - The real revolution is in what these next-generation frameworks like Svelte or SolidJS offer: small bundles combined with high performance achieved through eschewing virtual DOM in favour of precise changes in the DOM.
+
+- Yep. SSR has been around for ages. The very first "web frameworks" were pure SSR. And by that I'm referring to PHP and the old CGI!
+  - The big leap forward from Solidjs and Svelte is that they do complex source-to-source compilation to avoid virtual dom diffing. That approach lets them get the best of both worlds - the programmer can pretend their components are pure & reactive. (Solidjs looks almost identical to react.) Thats great because it means there's no bugs due to fiddly or forgotten DOM updating.
+
+- The one lesson of the past 2 decades that I’ve taken: do not adopt a JS framework for your production env. until it reaches industry-wide acceptance.
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 

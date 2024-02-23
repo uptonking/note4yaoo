@@ -173,11 +173,15 @@ modified: 2023-07-26T11:23:38.282Z
   - a lightweight reactive data library for JavaScript applications that provides composable primitives for ordering query/mutation/peek flows, managing network and cache, and reducing data for presentation.
   - The core of Ember‍Data is the Store, which coordinates interaction between your application, the Cache, and sources of data (such as your API or a local persistence layer). Optionally, the Store can be configured to hydrate the response data into rich presentation classes.
 
-- https://github.com/vanjs-org/van /js
+- https://github.com/vanjs-org/van /MIT/202402/js
   - https://vanjs.org/
   - lightweight, zero-dependency and unopinionated Reactive UI framework based on pure vanilla JavaScript and DOM. 
   - You can convert any HTML snippet into VanJS code with our online converter.
   - VanJS helps you manage states and UI bindings as well, with a more natural API
+  - https://github.com/vanjs-org/mini-van /MIT/js
+    - lightweight template engine for DOM composition and manipulation
+    - Mini-Van is the slimmed-down version of VanJS, which aims to provide an ultra-lightweight, zero-dependency, and unopinionated Reactive UI framework based on pure vanilla JavaScript and DOM. 
+    - can be used on the server-side as a template engine.
 # functional dom ui
 - choo /6.5kStar/MIT/202001/js/inactive/在benchmark非常靠后
   - https://github.com/choojs/choo

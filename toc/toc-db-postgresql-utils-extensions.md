@@ -12,6 +12,14 @@ modified: 2023-10-26T15:29:40.053Z
 - extensions-list
   - [1000+ PostgreSQL EXTENSIONs](https://gist.github.com/joelonsql/e5aa27f8cc9bd22b8999b7de8aee9d47)
 # popular
+- https://github.com/brianc/node-postgres /MIT/202402/js
+  - https://node-postgres.com/
+  - Non-blocking PostgreSQL client for Node.js. 
+  - Pure JavaScript and optional native libpq bindings.
+  - This repo is a monorepo which contains the core pg module as well as related modules like pg-pool/cursor/protocol
+  - [Support for multiple hosts](https://github.com/brianc/node-postgres/issues/1470)
+    - we had to switch to this lib porsager/postgres#multi-host-connections---high-availability-ha, and can confirm it works and also support pretty much all functionalities. 
+
 - https://github.com/michaelpq/pg_plugins/tree/main/blackhole_am /c
   - This module is a PostgreSQL extension template
 

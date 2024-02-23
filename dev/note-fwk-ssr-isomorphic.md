@@ -9,7 +9,7 @@ modified: 2020-12-19T13:05:23.294Z
 
 # guide
 
-- ssr的优点
+- pros-ssr
   - seo搜索引擎优化
     - 更多针对toC消费者业务，对企业管理系统没必要做seo
     - 现在的互联网应用是信息孤岛的趋势，微信公众号的文章内容不让百度收录
@@ -18,6 +18,12 @@ modified: 2020-12-19T13:05:23.294Z
   - 加快首屏显示
     - 使用代码拆分和动态(懒)加载也能实现
   - 提升开发效率，使用同构渲染，一套代码可以运行在服务端和客户端
+
+- cons-ssr
+  - ?
+
+- tips
+  - 开发前进行技术选型时多分析使用场景，ssr和csr的技术栈本身就是不同的，jsx只是view层，服务端要考虑routing/cache
 
 - usecase
   - 针对重消费者业务的seo，偏离市场主流业务
@@ -154,6 +160,30 @@ modified: 2020-12-19T13:05:23.294Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 🧩 [A Gentle Introduction to SSR | Hacker News _202205](https://news.ycombinator.com/item?id=31224226)
+- 
+- 
+- 
+
+- ## 🚀 [Show HN: Vite-plugin-ssr – Do-one-thing-do-it-well alternative to Next.js / Nuxt | Hacker News _202210](https://news.ycombinator.com/item?id=33188372)
+- How would you say it compares to Astro? Astro is currently either all-SSG or all-SSR, but this quarter they're working on configuring that per -route.
+  - 1) Astro is either all-SSG or all-SSR, while VPS is mix-and-match
+  - 2) Astro uses .astro templates by default, while VPS uses .js by default
+  - 3) Astro comes out-of-the-box with Typescript, Sass, etc., while VPS requires more configuration (by design)
+- VPS is tailored for users who like/want/need control. If you care about control, Astro isn't a good fit. E.g. you won't be able to use Astro with React Server Components. And many other subtleties that, in the end, sum up to a fundamentally different tool.
+
+- What are the differences between this and the ssr in vite?
+  - The process in that doc provide the primitives on which SSR can be built. Vite-plugin-ssr is one such implementation. It provides a rather "NextJS-like" experience out of the box. 
+
+- ## 🆚️ [Nano JSX, Laravel, InertiaJS with SSR · nanojsx/nano](https://github.com/nanojsx/nano/discussions/75)
+- SSR and hydrating to SPA (like you describe) will never be faster than SSR and partial hydration (how I use NanoJSX).
+  - What makes a site fast, is less JavaScript. 
+  - The point of Nano JSX is to ship as few bytes as possbile.
+- Even if it seems that client-side routing (like in react) is fast. Low end phone and slow connections have to deal with 50+ KB before interacting with your site.
+- SSR and partial hydration is basically how web development was few years ago. Render everything on the server and ship only the JavaScript needed for the current page.
 
 - ## 一直不理解 SSR 的 Hydration 水合，看到 Next.js 的这个插图一下了就理解了。文档友好太重要了。
 - https://twitter.com/hclj37/status/1623575951773687815
