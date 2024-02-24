@@ -16,8 +16,14 @@ modified: 2021-01-13T07:57:54.308Z
   - router: express-router, nanostore-router
   - ssr: nanojsx
 
+- tips
+  - 产品开发前进行技术选型时要多分析使用场景，ssr和csr的技术栈本身就是不同的，jsx只是view层，服务端要考虑routing/cache/streaming/i18n
+  - 一般ssr方案都会提供自己的router, nextjs将file-based-routing作为卖点
+  - 没必要寻找前后端通用的router，前端、后端框架都有自己的，routing常和prefetch耦合
+  - 有的方案支持首屏ssr，之后spa，基于不同的render mode
+
 - features
-  - code-split/dynamic-import
+  - code-split, dynamic-import
   - react的替代框架，考虑 nanostore+logux
 # fwk
 
@@ -72,12 +78,3 @@ modified: 2021-01-13T07:57:54.308Z
   - The big leap forward from Solidjs and Svelte is that they do complex source-to-source compilation to avoid virtual dom diffing. That approach lets them get the best of both worlds - the programmer can pretend their components are pure & reactive. (Solidjs looks almost identical to react.) Thats great because it means there's no bugs due to fiddly or forgotten DOM updating.
 
 - The one lesson of the past 2 decades that I’ve taken: do not adopt a JS framework for your production env. until it reaches industry-wide acceptance.
-
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 

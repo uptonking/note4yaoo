@@ -319,7 +319,13 @@ $$('[contenteditable]')
   - [x] streaming infinite-list/tree
 # dev-02
 
-## 020
+## 022
+
+## 0224
+
+- [Remove all subfolders in Node using globs with the help of rimraf package? - Stack Overflow](https://stackoverflow.com/questions/58056804/remove-all-subfolders-in-node-using-globs-with-the-help-of-rimraf-package)
+  - You can simply use `rimraf dist/*/` to remove all the subfolders within a particular folder.
+  - This will remove subfolders and will preserve all the other extensions file.
 
 ## 0206
 

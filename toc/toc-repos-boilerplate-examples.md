@@ -35,11 +35,17 @@ modified: 2023-11-16T15:00:11.503Z
   - https://github.com/gothinkster/realworld
   - [RealWorld](https://www.realworld.how/)
   - [CodebaseShow – RealWorld Example Apps](https://codebase.show/projects/realworld)
+  - [API | RealWorld](https://realworld-docs.netlify.app/docs/specs/frontend-specs/api)
+    - https://api.realworld.io/api/articles /默认返回10条articles数据/无需登录
+    - 还可在github上找最新repo，寻找可用的公共api-url
+  - [V2 Roadmap · gothinkster/realworld](https://github.com/gothinkster/realworld/issues/693)
 
 - https://github.com/chagweyh/react-hooks-typescript-realworld /202011/ts/inactive
   - https://react-hooks-typescript-realworld.netlify.com/
-  - Exemplary real world application built with React Hooks + Typescript
+  - Exemplary(用作模范的) real world application built with React Hooks + Typescript
   - 依赖react、axios、reach-router
+- https://github.com/shuent/realworld-clone /202104/ts
+  - React 練習。TypeScript + Hooks + Context API + Axios + jwt+localstorage
 - https://github.com/Allianzcortex/react-typescript-hooks-realworld /202110/ts/redux
   - https://react-typescript-hooks-realworld.vercel.app/
   - React FC + Immer + Redux + Hooks + axios + Testing Library
@@ -62,6 +68,11 @@ modified: 2023-11-16T15:00:11.503Z
 - https://github.com/kwasniew/hyperapp-realworld-example-app /201908/js
   - A Single Page Application written in Hyperapp 1
 
+- https://github.com/jacobstern/typescript-handlebars-realworld /201905/ts
+  - Full stack server-rendered app with TypeScript, Express, Handlebars.js
+  - Unlike most RealWorld implementations, which separate the backend and the frontend, this one is a "full stack" server-rendered app with minimal client-side JavaScript
+  - I've also implemented Turbolinks to improve perceived performance for server-rendered page loads.
+
 - https://github.com/noodlesfly/realworld-ssr-express /202207/js/vue
   - a server side demo by express&vue
 
@@ -70,6 +81,10 @@ modified: 2023-11-16T15:00:11.503Z
 
 - https://github.com/arrlancore/nextjs-ssr-real-world-app-example /201911/js
   - A nextjs server side rendering real world app example you can use
+  - https://github.com/reck1ess/next-realworld-example-app /202008/ts
+
+- https://github.com/RenatoPassos/api-realworld-v2 /MIT/202206/ts/inactive
+  - 依赖prisma、express-jwt
 
 - https://github.com/gothinkster/web-components-realworld-example-app /201705/js/archived
   - Exemplary real world application built with Vanilla JS Web Components
@@ -89,7 +104,10 @@ modified: 2023-11-16T15:00:11.503Z
 
 - https://github.com/mutoe/preact-realworld-example-app /202112/js
   - https://mutoe.github.io/preact-realworld-example-app
-  - 依赖zustand
+  - 依赖zustand、ts-api-toolkit、snarkdown
+  - https://github.com/lukeed/preact-realworld-app /201711/js
+- https://github.com/rajeshpillai/realworld-react-preact-signal /202209/js
+  - Real World Conduit App implementation using React + Preact Signal
 - https://github.com/romansndlr/react-vite-realworld-example-app /202204/js
   - 依赖valtio、react-query.v3
 
@@ -127,6 +145,7 @@ modified: 2023-11-16T15:00:11.503Z
 - https://github.com/jiheon788/react-query-realworld /202402/ts
   - fullstack application built with React + React Query including CRUD operations, authentication, routing, pagination, and more.
   - 依赖@tanstack/react-query、react-router.v6、remark-gfm
+  - https://github.com/abdulrahmanalaa123/conduit /202402/js/tanstack-query
 
 ### api-realworld
 
@@ -165,7 +184,8 @@ modified: 2023-11-16T15:00:11.503Z
   - Koa + Typescript + TypeORM
 
 - https://github.com/gothinkster/node-express-realworld-example-app /201802/js
-- Example Node (Express + Mongoose) codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the RealWorld API spec
+- Express + Prisma
+- ~~Example Node (Express + Mongoose) codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the RealWorld API spec~~
 
 - https://github.com/launchbadge/realworld-axum-sqlx /202203/rust
   - A Rust implementation of the Realworld demo app spec using Axum and SQLx
@@ -176,7 +196,7 @@ modified: 2023-11-16T15:00:11.503Z
   - poem-openapi
   - https://github.com/hseeberger/realworld-frontend
     - RealWorld frontend implementation in Rust, using Leptos
-- https://github.com/dxps/fullstack-rust-axum-dioxus-rwa /202306/rust
+- https://github.com/dxps/fullstack-rust-axum-dioxus-rwa /MIT/202402/rust
   - RealWorld app implementation as a Fullstack Rust project using Axum (be) and Dioxus (fe)
 - https://github.com/snamiki1212/realworld-v1-rust-actix-web-diesel /202306/rust
   - RealWorld with Rust + ActixWeb + Diesel on Clean Architecture
@@ -199,6 +219,9 @@ modified: 2023-11-16T15:00:11.503Z
 
 - https://github.com/err0r500/go-realworld-clean /201808/go
   - a clean architecture implementation of the realworldapp
+
+- https://github.com/socar-foden/react-realworld /202106/js/提交多
+  - react-realworld, 韩语, 프로젝트 목적
 # vanillajs
 - https://github.com/aman-maharshi/vanilla-js /202304/js
   - Projects using pure JavaScript without any external libraries or frameworks

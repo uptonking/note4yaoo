@@ -12,6 +12,7 @@ modified: 2024-01-02T07:53:22.956Z
   - 难以迁移lib打包用到的第三方plugin
   - 难以迁移lib打包用到的第三方loader，如fonts/svg/img
   - 难以打包包含二进制的包，如leveldown/sqlite
+  - 难以打包包含二进制的文件，如png，特别是在esm的环境下
   - 对客户端开发环境的支持，如electron/react-native
   - ✅ node内置模块打包到浏览器环境下fallback库的实现不够成熟
 

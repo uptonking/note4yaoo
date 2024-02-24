@@ -1115,6 +1115,9 @@ modified: 2022-04-05T10:08:25.947Z
   - Supports delta updates
   - It allows for syncing tabular data via peer-to-peer connections, supports end-to-end encryption
   - Currently, it functions solely as an in-memory table with a unique persistence format and is not a comprehensive database solution. It is not suitable for sparse tables yet.
+  - https://twitter.com/zxch3n/status/1760969219582398934
+    - It's a last-write-win CRDT for tabular data. You can sync tabular data with millions of cells easily with it. 
+    - I'm considering making it more like a database.
 
 - @fluid-example/table-view /MIT/ts
   - https://github.com/microsoft/FluidFramework/tree/main/examples/data-objects/table-view

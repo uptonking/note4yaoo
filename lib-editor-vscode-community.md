@@ -81,6 +81,14 @@ modified: 2023-01-21T18:53:04.519Z
 - Theia是在VSCode出来之后复用了很多VSCode的轮子和接口，主要是为了给第三方开放工具提供一个更便于开发的环境。
 - Theia复现了VSCode的插件API，这样**VSCode的插件也可以被安装到Theia上**，但是因为这个API的支持不是很彻底，导致很多插件运行起来有点问题。
 
+# discuss-feat-not-yet
+- ## 
+
+- ## 
+
+- ## [Allow to change the font size and font of the workbench](https://github.com/microsoft/vscode/issues/519)
+- We're approaching 9 years since this issue was opened! Can we get to 10?
+
 # discuss
 - ## 
 

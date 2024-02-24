@@ -227,6 +227,21 @@ modified: 2023-02-06T09:14:40.114Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## It seems that `fetch` , and by extension all browsers, only support "half duplex" streaming. 
+- https://twitter.com/BenLesh/status/1761092192242729125
+  - Meaning you can stream the request to the server, but you can't simultaneously stream the response back.
+- I think the web is ready for a new API. Observables support this time
+  - There's already the WebTransport API, which is http/3. But that's not supported everywhere yet. In particular, I don't think Node supports it yet (but I'm unsure).
+
+- Presumably a WebSocket would work here?
+  - Yup. But then I’m hand-rolling multiplexing logic on both ends or using some bloated library.
+
+- It's indeed implied by HTTP protocol which is half-duplex. Websockets allow to upgrade the connection to fullduplex.
+
 - ## 🆚️ Is there any reason to use axios in environments where fetch is available? Other than familiarity.
 - https://twitter.com/mattpocockuk/status/1758552616500445329
 

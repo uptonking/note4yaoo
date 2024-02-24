@@ -6,6 +6,10 @@ modified: 2021-05-06T09:58:23.803Z
 ---
 
 # guide
+- popular-icons
+  - feather-icons, heroicons-tailwind, tabler
+  - iconpark, phosphor
+
 - ✨ icons-pack
   - https://icon-sets.iconify.design/
     - https://github.com/iconify/iconify

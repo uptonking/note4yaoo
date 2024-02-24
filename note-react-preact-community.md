@@ -48,7 +48,7 @@ modified: 2021-05-13T03:46:35.666Z
 
 - [Asynchronous rendering pipeline based on microtask](https://github.com/preactjs/preact/issues/3127)
 
-- ## I have been working on an experimental ground-up rewrite of Preact's renderer. It now renders TodoMVC faster than hand-written vanilla JS.
+- ## I have been working on an experimental ground-up rewrite of Preact's renderer. It now renders TodoMVC faster than hand-written vanilla JS. _202107
 - https://twitter.com/_developit/status/1412451442946981890
   - It's somewhere between 1.5x and 3x faster than Preact 10 (depending on VM optimization state).
 - A lot of the performance improvement comes from two key things: 
@@ -91,15 +91,15 @@ modified: 2021-05-13T03:46:35.666Z
 
 - ## 
 
-- ## [Anyone using Preact in prod? : reactjs_202301](https://www.reddit.com/r/reactjs/comments/10o661t/anyone_using_preact_in_prod/)
-- TLDR: Steer clear of preact. Try Next or Remix.
+- ## 💡 [Anyone using Preact in prod? : reactjs_202301](https://www.reddit.com/r/reactjs/comments/10o661t/anyone_using_preact_in_prod/)
+- TLDR: Steer(驾驶; 沿着前进) clear of preact. Try Next or Remix.
   - Almost all issues we encounter upgrading dependencies are related to Preact, because even if the thing runs first time, good chance half of your unit tests will fail.
   - I can’t count the number of times my tests have been flaky because I have preact and react in the same project (because react is listed as a peer dependency of something), and webpack has got its panties in a bunch because it’s not sure how to render something.
   - React Testing Library is at version what, 12? The preact counterpart is v2. Using preact you miss out on features like Suspense that you now have to implement manually.
 
 - Exactly the same experience, I ended up spending a couple of days and moved everything into React.
 
-- do not use a library/framework similar react just because it has better performance. React is fast enough, just focus on architecture/detail design instead
+- do not use a library/framework similar to react just because it has better performance. React is fast enough, just focus on architecture/detail design instead
 
 - Fullcalendar uses preact by default, and I use it in a project in prod. But that's about it.
 

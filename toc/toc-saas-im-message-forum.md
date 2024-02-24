@@ -45,6 +45,10 @@ modified: 2021-05-14T15:04:15.333Z
 - https://github.com/discourse/discourse /GPLv2/202401/ruby/js
   - 依赖emberjs、postgresql、redis
   - discussion platform built for the next decade of the Internet.
+- https://github.com/forem/forem /AGPLv3/202402/ruby/js
+  - https://forem.com/
+  - Forem is the platform that powers dev.to
+  - We run on a Rails backend, and we are currently transitioning to a Preact-first frontend.
 - https://github.com/withspectrum/spectrum /js/archived
   - 依赖express、graphql、apollo、draft-js、redux、rethinkdb
   - Spectrum aims to be the best platform to build any kind of community online by combining the best of forums and real-time chat apps.

@@ -56,7 +56,13 @@ modified: 2023-09-16T17:43:09.215Z
 
 - ## 
 
-- ## 
+- ## It seems that file system use cases could be boil down into:
+- https://twitter.com/Horusiath/status/1761345182924968138
+  1. append-only log
+  2. (block-based) key-value store
+  3. insert or full-replace BLOB file
+  4. give me a disk segment and GTFO
+- File system is often used as shared memory
 
 - ## This is one downside of having no hard links in an FS: renaming a directory means copying all the contained data to the new location.
 - https://twitter.com/msimoni/status/1729921989408661877
