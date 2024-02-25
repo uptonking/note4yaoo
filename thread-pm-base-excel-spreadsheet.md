@@ -15,7 +15,9 @@ modified: 2022-04-23T18:48:32.550Z
 # discuss
 - ## 
 
-- ## 
+- ## You are exporting the data and processing it in excel, are you not?
+- https://twitter.com/haro_ca_/status/1761440042965168526
+- Shameless plug incoming - I built http://pushbyte.io to sync data from SQL to Google Sheets
 
 - ## Ask Copilot in Excel
 - https://twitter.com/msexcel/status/1750594443076407740

@@ -321,6 +321,39 @@ $$('[contenteditable]')
 
 ## 022
 
+## 0225
+
+- [Attach Authorization header for all axios requests - Stack Overflow](https://stackoverflow.com/questions/43051291/attach-authorization-header-for-all-axios-requests)
+  - I have explained the two most common approaches.
+  - you can use axios interceptors to intercept any requests and add authorization headers.
+    - config.headers.Authorization =  token;
+  - there is a mechanism available which allows you to set default header which will be sent with every request you make.
+    - axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
+  - A minor gotcha: You will have to set default headers for each instance of Axios in your application separately if you are following second method. This took me a while to figure out
+  - Sometimes you get a case where some of the requests made with axios are pointed to endpoints that do not accept authorization headers. Thus, alternative way to set authorization header only on allowed domain is as in the example below
+- never store token in localStorage
+  - the most secure way would be that server sets cookie with token. Important thing - cookie should have attributes "httpOnly" and "secure". And axios should not worry about token, because that cookie would be attached to request header. 
+  - The other approach (which usually is used by third party auth libraries, for example MSAL) - to store in session storage (and not in local storage). In this case would be necessary to define `Authorization` header as in Your example. 
+
+- [A neat little trick with JavaScript's indexOf() - DEV Community](https://dev.to/werninator/a-neat-little-trick-with-javascripts-indexof-4dj5)
+  - The Bitwise NOT-Operator ~ It flips all bits of a number
+  - 按位非 ~num 等价于 -num -1, 只有num为-1时为0(falsy)，其余值的~num都为truthy
+  - Unless one will reuse the index in other places, I like to recommend `includes` instead of `indexOf`. I think it's more readable.
+
+```JS
+var arr = [1, 2, 3, 'foo'];
+
+// old way
+if (arr.indexOf('foo') > -1) {
+  console.log('"foo" is in "arr"!');
+}
+
+// new way
+if (~arr.indexOf('foo')) {
+  console.log('"foo" is in "arr"!');
+}
+```
+
 ## 0224
 
 - [Remove all subfolders in Node using globs with the help of rimraf package? - Stack Overflow](https://stackoverflow.com/questions/58056804/remove-all-subfolders-in-node-using-globs-with-the-help-of-rimraf-package)

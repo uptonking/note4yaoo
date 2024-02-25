@@ -64,6 +64,13 @@ modified: 2023-09-16T17:43:09.215Z
   4. give me a disk segment and GTFO
 - File system is often used as shared memory
 
+- Why is 2 “block-based”?
+  - Maybe I went too deep into implementation part on this one, but pretty much every persistent KV store nowadays uses uniform-sized blocks, and this assumption goes from OS (prefetching fixed size buffers) down to hardware (having fixed size alloc units).
+- I was confused because I thought you were looking for "block storage". BTW, not every KV uses uniform-sized blocks. If your KV supports compression and writes fixed-size blocks/pages to disk then it will almost always waste space.
+  - The ones that don't use uniform sized blocks usually work like append-only logs, which are then occasionally reorganised (also using either uniform blocks or another append-only log). And yes pretty much every KV does waste the space all the time, one way or another.
+- RocksDB supports variable-sized pages and as a result is much more space efficient than other engines. For example, in MySQL world more space efficient than InnoDB.
+  - Except that RocksDB (and LSM) in this context is a series of append-only log files.
+
 - ## This is one downside of having no hard links in an FS: renaming a directory means copying all the contained data to the new location.
 - https://twitter.com/msimoni/status/1729921989408661877
   - If you have hard links, and you're moving a directory, you can just remove the old hard link and insert the new hard link. But if you don't have hard links ...

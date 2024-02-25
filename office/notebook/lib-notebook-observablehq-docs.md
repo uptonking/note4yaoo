@@ -485,7 +485,7 @@ html `<p>I am a <i>paragraph</i> element!</p>`
 // "[object Promise]world!"
 {
   let promise = Promises.delay(3000, "Hello, ");
-  return promise + "world!"; // 💥 Oops!
+  return promise + "world!"; 
 }
 
 // "Hello, world!"

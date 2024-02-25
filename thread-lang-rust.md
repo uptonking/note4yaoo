@@ -117,6 +117,15 @@ modified: 2023-10-06T16:26:57.557Z
 - 每次看到这种牺牲自由度，换取安全性的编程语言，我都忍不住想到点别的东西
 
 - 不是bug, 是feature。 双向链表用 `LinkedList<T>` 就好。
+# discuss-usecase 🌰
+- ## 
+
+- ## 
+
+- ## [Complete Rewrite of ESLint | Hacker News _202211](https://news.ycombinator.com/item?id=33772530)
+- also note that both Deno and Sveltekit moved from TypeScript to JSDoc
+
+- Cloudflare made Pingora (Rust) to use instead of NGINX (C) though idk if that meets the rewrite criteria.
 # discuss-rs-js
 - ## 
 

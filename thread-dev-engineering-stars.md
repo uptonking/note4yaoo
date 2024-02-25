@@ -13,7 +13,13 @@ modified: 2021-08-10T03:51:01.891Z
 
 - ## 
 
-- ## 
+- ## 💡 I have a "give it 5 years" rule for assessing tech trends. It's not performant but reliable.
+- https://twitter.com/rednafi/status/1761727361047835072
+  - GraphQL, Prisma, and many other JS zeitgeists didn't pass the filter. 
+  - Vue, Go, Django, RoR, Sqlite, FastAPI did. 
+  - I'll treat ML & the movement to make programmers obsolete the same way.
+
+- Where does Rust belong?
 
 - ## Avoid Barrels (A barrel is a file that exports code from other files)
 - https://twitter.com/housecor/status/1730993597862780976

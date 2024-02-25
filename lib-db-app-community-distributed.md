@@ -160,6 +160,15 @@ modified: 2023-10-26T19:04:00.318Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## This summarizes quite well the diff between Data Sharding vs. Distributed SQL
+- https://twitter.com/FranckPachot/status/1761673558206407031
+  - Sharding with table families is not one logical DB: a single hierarchy of foreign key and no global index
+  - Distributed SQL provides all relational SQL features at global level
+
 - ## There's a difference between a database designed to scale up an existing MySQL or Postgres install and a distributed database that has chosen to try and be compatible with MySQL or Postgres.
 - https://twitter.com/isamlambert/status/1758872040646615090
 - Let me market my names:

@@ -24,3 +24,10 @@ modified: 2021-05-14T14:30:22.685Z
   - https://github.com/sherlock-project/sherlock
     - Sherlock, a powerful command line tool, can be used to find usernames across many social networks. 
     - It requires Python 3.6 or higher and works on MacOS, Linux and Windows.
+
+- https://github.com/infinitered/nsfwjs /MIT/202402/ts
+  - https://nsfwjs.com/
+  - NSFW detection on the client-side via TensorFlow.js
+  - A simple JavaScript library to help you quickly identify unseemly images; all in the client's browser. 
+  - NSFWJS isn't perfect, but it's pretty accurate (~90% with small and ~93% with midsized model).
+  - The library categorizes image probabilities in the following 5 classes: Drawing, Hentai, Neutral, Porn, Sexy

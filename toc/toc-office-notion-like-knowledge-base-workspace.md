@@ -23,7 +23,7 @@ modified: 2022-06-03T21:34:54.893Z
   - search: knowledge-base/workspace/wiki/Personal Information Manager (PIM)
   - self-contained, in the browser
   - [17 Confluence Alternatives - Open Source, Free & Paid in 2024](https://rigorousthemes.com/blog/best-confluence-alternatives-free-paid/)
-# notion-like-workspace
+# notion-like-knowledge-base
 - siyuan /6.6kStar/AGPLv3/202208/ts/go/支持协作
   - https://github.com/siyuan-note/siyuan
   - https://b3log.org/siyuan/
@@ -156,6 +156,13 @@ modified: 2022-06-03T21:34:54.893Z
   - 依赖yjs、graphql
   - [Not open-source](https://github.com/skiff-org/skiff-apps/issues/94)
     - This project is advertised as open-source despite that CC BY-NC-SA is clearly not an open-source license
+
+- https://github.com/netease-youdao/QAnything /apache2/202402/python/vue
+  - https://qanything.ai/
+  - 开源的企业级本地知识库问答解决方案，致力于支持任意格式文件或数据库的问答
+  - 模型数据全在本地，可断网使用
+  - Support selecting multiple knowledge bases for Q&A
+  - Currently supported formats include: PDF(pdf), Word(docx), PPT(pptx), XLS(xlsx), Markdown(md), Email(eml), TXT(txt), Image(jpg，jpeg，png), CSV(csv), Web links(html) and more
 # confluence-like
 - MrDoc /2.1kStar/GPLv3/202208/js/python/Django/仅网页版
   - https://github.com/zmister2016/MrDoc

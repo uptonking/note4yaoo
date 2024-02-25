@@ -86,7 +86,24 @@ modified: 2023-03-15T08:06:35.541Z
 
 - ## 
 
-- ## 
+- ## This is common algorithms knowledge - for solving dynamic programming problems, commonly we have 2 approaches - top down memoized recursive approach and bottom up iterative approach ..
+- https://twitter.com/debasishg/status/1761425555289976927
+  - However this observation, which I saw first and only in Erik Demaine's 6.006 lecture videos on DP, very enlightening - 
+  - the bottom up approach of solving DP problems is a topological sort of subproblem dependency DAG
+  - I don't think CLRS states this so succinctly - any other source that made this observation before ?
+
+- Any dependency order is a topological sort of the dag of those nodes(nodes being subproblems here) . Kind of intuitive.
+
+- Isn’t top-down implicitly navigating this DAG too?
+  - Sure, in top down approach it's implicitly navigating the DAG. 
+  - The key difference lies in the order in which subproblems are solved, with bottom-up being more iterative and top-down being more recursive. 
+  - I think the topological sort concept is more explicit in the bottom-up approach, but it's still inherent in the top-down approach due to the order of recursive calls.
+
+- Indeed, I sometimes prefer doing it the bottom up way because it's good validation that the recursion isn't circular - i.e, it really forces you to think through the DAG order...
+  - I find the top down recursive version more intuitive but always fall back to the bottom up approach for implementation.
+
+- https://news.ycombinator.com/item?id=14413305
+  - Once you have the recursive solution, the DP solution should be fairly easy. Draw out the recursion tree for an example (or do it more generally), convert it to a DAG by combining redundant nodes, and then do a topological sort. That topological sort is the order in which you need to solve the subproblems to get a DP solution.
 
 - ## [Designing a SIMD Algorithm from Scratch_202311](https://mcyoung.xyz/2023/11/27/simd-base64/)
 

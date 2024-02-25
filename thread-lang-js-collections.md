@@ -117,7 +117,11 @@ items.reduce((acc, item) => {
 
 - ## 
 
-- ## 
+- ## I often see filter calls that needlessly fall back to an empty array. 
+- https://twitter.com/housecor/status/1761755043651366954
+  - JavaScript's array.filter always returns an array.
+  - Even when the array being filtered is empty.
+  - Even when the filter finds no results.
 
 - ## If you have a JS array and want a map from its value to their indexes, the shortest code to do so is probably `new Map(arr.map(Array))` , which feels like magic.
 - https://twitter.com/NicoloRibaudo/status/1757877709688950985

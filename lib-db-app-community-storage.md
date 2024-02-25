@@ -91,6 +91,42 @@ modified: 2023-09-17T17:36:36.118Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## ⌛️ What was life like with PostgreSQL prior to the 7.1 release in 2001 which added a WAL?
+- https://twitter.com/MarkCallaghanDB/status/1761086709859864849
+  - Was it like life with MyISAM, as in crashes often meant restore from backup and/or loss of recent commits?
+  - For MyISAM I heard stories too -- run myisamchk each night after crashes. 
+  - Did PG even have pgchk back then (pre 7.1) to do the same? But I already am snarky about MyISAM. I am just trying to figure out if I can also be snarky about early PG.
+
+- I remember hearing how ALTER TABLE needed 24 hrs to complete
+
+- I don't remember the times per node. I do remember the estimated time to roll out a change over the tier for popular tables. Online Schema Change (OSC) was a game changer.
+
+- it seems Postgres really took off after 9.5/9.6 and the transition to the annual numbering system from 10 onwards. I don’t have much experience before that, and it’s quite shocking to find people still happily running 9.6 because 10 looked like a brand new version and they got cold feet about upgrading
+
+- Having started out a Full-History database may have helped here a little. Up to v 6.2 PostgreSQL had tmin and tmax system fields and SQL syntax for each table to specify at which point in time you wanted to see it. So everything was still there, which probably helped a lot
+
+- > "To maintain database consistency in case of an operating system crash, previous releases of PostgreSQL have forced all data modifications to disk before each transaction commit." /v7.1-docs
+- If you have M pages to write back and a crash occurs after N pages were written (N < M) then what happens? I am still trying to figure out whether it was a problem.
+  - SQLite has a solution for that, but it comes at a cost (write pages elsewhere first, fsync, then update pages in place). 
+  - InnoDB has doublewrite buffer which is similar, but exists for a different reason (torn page protection). 
+  - What did old PG do?
+- PostgreSQL didn't have autovacuum back then (introduced in v7.4) so most transaction operations were write-only. And I assume transactions were marked committed only after syncing all other data. Crashed transactions would presumably be nothing more than dead tuples in the table.
+
+- f a transaction made 5 heap pages dirty and a crash happens after the first 3 were written to disk, what was done on recovery? There are more complicated scenarios, but I want to start with an easy one.
+  - Postgres doesn’t overwrite data ) except in some catalog cases) so the unfinished transaction would appear to have rolled back.
+- My comments above are about overwriting disk pages which is required to make a transaction durable -- and which should be all or nothing. I am asking whether PG was crash safe WRT that prior to 7.1.
+  - Hmm. The heap table AM was essentially write-only except tuple header metadata fields, so that should be consistent. I'm not 100% sure about indexes though; I suspect that would've had some additional special handling to flush btree pages around splits, so that no data is lost.
+- I think the answer is that if it wrote N < M whole pages, that's fine, because the CLOG doesn't say that the relevant transaction committed yet (see my other answer about two flushes).  But if it wrote half a page you could get in trouble (CF InnoDB's double writes, and PG's FPW)
+  - That is the detail I needed. I still have much to learn about PG and clearly I don't know much about the CLOG.
+
+- FYI, the `clog` was renamed to `pg_xact` in version 10.
+
+- I'm sure I remember Postgres 6.4 was very solid, but it was pretty slow. That's why MySQL got traction on the web, it was fast as long as you didn't mind a bit of data loss.
+
 - ## 看 OrioleDB 的博客，早些年磁盘 IOPS 是瓶颈，数据库的算法和数据结构都是围绕降低 IOPS 设计的，不太考虑 CPU，
 - https://twitter.com/liumengxinfly/status/1747577046883287331
   - 现在 IOPS 上来了之前的很多设计就不合理了，又要回来优化 CPU 的利用率，降低各种锁的开销

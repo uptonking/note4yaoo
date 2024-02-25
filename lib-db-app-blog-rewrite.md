@@ -26,7 +26,7 @@ modified: 2023-10-29T02:09:26.414Z
 
 - https://github.com/yywe/yoursql /rust
   - Your SQL database for learning purpose
-  - recently I'm learning the source code of arrow-datafusion. I'm trying to a tiny version of it by extracting the most essential parts. 
+  - recently I'm learning the source code of `arrow-datafusion`. I'm trying to a tiny version of it by extracting the most essential parts. 
   - Although database books talked about query parser, query plan, query execution, etc, I find there is a large gap between theory and implementation
   - In the latest revision, I'm keep each dev branch named as "MILSTONEn-**"
 # db-js
@@ -64,11 +64,23 @@ modified: 2023-10-29T02:09:26.414Z
     - This parser does not support (yet) PL/pgSQL.
 # db-non-js
 
-## 👥🔥[The “Build Your Own Database” book is finished | Hacker News_202304](https://news.ycombinator.com/item?id=35666598)
+## 🐭 [Build your own Database Index: part 1 _202312](https://dx13.co.uk/articles/2023/12/02/byo-index-pt1/)
 
-- 
-- 
-- 
+- I’ve been working through creating a simple database-like index, to understand the concepts involved more concretely.
+- I’ve been reading Database Internals as part of a book club for the last few weeks. One of the noticeable things in the first few chapters is that nearly everything is based on a storage layer with a relatively simple interface, that of a key-value store where both key and value are byte arrays.
+  - The stores are ordered by key and are used for both storing primary data (eg, key = primary key; value = relational row data) and for indexes (key = indexed value; value = referenced row’s primary key). 
+- Inspired by my reading, I decided to have a go at writing a simple index for JSON data.
+
+- I wanted to concentrate on the index part, so used an existing key-value store. Any would do, but I decided to use PebbleDB which is the underlying store used by CockroachDB. I chose PebbleDB because it was written in Go. I was going to write my code in Go
+
+- I wanted to create a generic JSON index. Generic, meaning that adding an arbitrary JSON document should index each field automatically, without having a pre-existing schema.
+
+- 👥 
+- https://twitter.com/ifesdjeen/status/1761109124924797103
+
+- Working on an MPP type on Prem database for long, I had no idea about challenges faced by distributed systems. The whole LSM tree and B+ tree research etc. The book was an eye opener for me.
+
+- It's crucial for engineers to build performant, scalable, and cost-optimized data systems. Your book clearly guides me through the 'what' and 'why' of my work. But when I write code it’s a different ball game , connecting the theory and implementation is the goal.
 
 ## 🐭 [Writing a SQL database from scratch in Go](https://notes.eatonphil.com/tags/databases.html)
 
@@ -80,9 +92,9 @@ modified: 2023-10-29T02:09:26.414Z
 - https://github.com/eatonphil/gosql /go
   - An early PostgreSQL implementation in Go
 
-## 👥🐭🔥 [Writing a SQL database from scratch in Go | Hacker News](https://news.ycombinator.com/item?id=22850817)
+### 👥🐭🔥 [Writing a SQL database from scratch in Go | Hacker News](https://news.ycombinator.com/item?id=22850817)
 
-## 📝🧲 [Writing a sqlite clone from scratch in C](https://cstack.github.io/db_tutorial/)
+## 🧲 [Writing a sqlite clone from scratch in C](https://cstack.github.io/db_tutorial/)
 
 - https://github.com/cstack/db_tutorial /c
   - Writing a sqlite clone from scratch in C
@@ -106,10 +118,11 @@ modified: 2023-10-29T02:09:26.414Z
 - Part II: Mini Relational DB
 # sql
 
-## 🔍🦀 [A SQL query compiler from scratch in Rust (step by step): Part one, the query plan representation_202312](https://andres.senac.es/posts/query-compiler-part-one/)
+## 🔍🦀 [A SQL query compiler from scratch in Rust (step by step): Part one, the query plan representation _202312](https://andres.senac.es/posts/query-compiler-part-one/)
 
 - https://github.com/asenac/rust-sql-playground /202307/rust
   - a SQL query compiler written in Rust mainly for learning and blogging purposes.
   - There is no SQL parser yet and its overall functionality is very limited, although the logical optimizer is getting real.
   - JsonSerializer utility can be used to dump the query plan in JSON format that can be rendered with any of the utilities in tools folder, using different graph rendering libraries.
 # more
+- 👥🔥[The “Build Your Own Database” book is finished | Hacker News_202304](https://news.ycombinator.com/item?id=35666598)

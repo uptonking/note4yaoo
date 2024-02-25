@@ -89,7 +89,40 @@ modified: 2021-05-13T03:46:35.666Z
 
 - ## 
 
-- ## 
+- ## Preact didn't work with react-three/fiber _202209
+- https://twitter.com/0xca0a/status/1567420875560964097
+- preact is a web framework, it has no means to reconcile other platform. you wouldn't have that many benefits in any case, it wouldn't be faster or leaner. 
+  - fiber needs to implement its own event system since three has none, that's the bulk of the bundle.
+
+- [react-three-fiber on Preact? _202005](https://github.com/preactjs/preact/issues/2538)
+  - Preact does not support reconcilers, so this is likely not possible.
+  - Preact always had a reconciler internally, but we don't expose it as it's closely married to the DOM. There are no current plans to change that, which means react-three-fiber is not supported.
+
+- ## fiber and concurrent are names for React internal abstractions/functionality. _202203
+- https://twitter.com/_developit/status/1503388011781926916
+  - The next two versions of Preact do actually have data structure changes (called "Internals" or "Backing Tree") that make it more similar to React's fiber data structure.
+  - As for "concurrent", we have a mix of plans right now, but nothing that would be a direct analog for React's direction there. The APIs and timing will be supported to the extent possible via compat, as always.
+
+- ## [React implementation without Virtual DOM : r/programming _202008](https://www.reddit.com/r/programming/comments/iiatsy/react_implementation_without_virtual_dom/)
+- Preact doesn't have fiber architecture and does not support concurrent mode, and will be hard to support concurrent mode with current recursion based reconciliation in preact.
+
+- ## [PreactJS 10.1.1 Released : r/reactjs _201912](https://www.reddit.com/r/reactjs/comments/ebuf49/preactjs_1011_released/)
+- Is there any good reason to use it other than the small footprint?
+  - Nope, it's just a smaller alternative to React.
+
+- Directly compared to React there are a few key points which allow Preact to be smaller:
+  - No Synthetic events. We re-use browser events.
+  - No renderer Abstraction. We focus exclusively on the DOM and don't have something like `react-native`.
+  - No Fiber abstraction. Our components act as a sort-of fiber.
+  - Priority on small and readable code. This may seem minor, but we have a culture that encourages that. Each build prints the effect on size a change has.
+  - Everything development related like debug warnings, propTypes etc is moved into a separate `preact/debug` import
+
+- there are also subtle incompatibility issues, often batching related. You can't take the compatibility promise blindly, just be aware..
+
+- What does the React synthetic event system afford?
+  - Basically it's a cross browser wrapper for event handlers. The Synthetic Event wrapper normalizes events so they act consistently across browsers and in order to do so, they have to add a lot of overhead.
+
+- Preact has Suspense and SuspenseList now
 
 - ## 💡 [Anyone using Preact in prod? : reactjs_202301](https://www.reddit.com/r/reactjs/comments/10o661t/anyone_using_preact_in_prod/)
 - TLDR: Steer(驾驶; 沿着前进) clear of preact. Try Next or Remix.

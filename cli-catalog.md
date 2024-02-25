@@ -87,7 +87,7 @@ git commit --amend -m 'new msg'
 git rebase -i HEAD~n    倒数条第N条，N>=1
 
 # trigger CI
-git commit --allow-empty -m 'empty'
+git commit --allow-empty -m 'chore: empty commit'
 
 # 撤销上次commit的记录，不回滚修改
 # **只撤销本次提交记录，实际修改后的文件仍然存在本地**

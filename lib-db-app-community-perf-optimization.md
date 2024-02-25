@@ -32,6 +32,12 @@ modified: 2023-10-26T19:00:02.186Z
 
 - ## 
 
+- ## 
+
+- ## 🌰 Many tutorials give you tips to improve your Database performance using only single-column Indexes.
+- https://twitter.com/deisbel/status/1761384992775500055
+  - Using 4 examples, I’ll teach you 3 new tips to create great Composite Indexes.
+
 - ## 💡 Data skipping is one of the common techniques used with large volumes of data to achieve better query performances.
 - https://twitter.com/Dipankartnt/status/1759054983029203240
   - The whole idea is simple - read as less data as possible

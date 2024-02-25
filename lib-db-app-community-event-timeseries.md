@@ -12,6 +12,21 @@ modified: 2023-10-27T07:03:12.118Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🤔 Is anyone building a serverless time-series database? (for geotiff)
+- https://twitter.com/medriscoll/status/1761463338440200299
+  - The architecture would be a one-dimensional version of what cloud optimized GeoTIFFs use:  tiles across time, with different aggregation levels (minutely, hourly, daily, etc), all backed by an object store.
+  - You wouldn't need an always-on database, just a lightweight client to pull and process tiles, that could be spun-up on demand.
+  - And you could probably connect it directly to @warpstream_labs , for a fully serverless ingestion and database time-series service.
+
+- I’m building Data Taps with Boiling and DuckDB. Very simple and scalable data ingestion. Then analytics on Boiling serverless and on browser (duckdb wasm). But what does ”building a db” mean these days?
+- protomaps is a good inspiration for this
+- I think DuckDB will handle this really well in a release or 2. The plan is to propagate the notions of partitions & orderings through the execution plan. Then joins, window functions, etc can use that to do less work! It may require manual columns at different time granularities.
+- I've seen a system like this, columnar format based. NAS based rather than object store, but it worked great at scale
+
 - ## 🤔🔥 [Why Not to Build a Time-Series Database | Hacker News_201811](https://news.ycombinator.com/item?id=18402890)
 - 
 - 

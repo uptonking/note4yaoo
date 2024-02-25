@@ -100,7 +100,7 @@ modified: 2021-08-05T04:31:02.298Z
 - https://twitter.com/mattpocockuk/status/1758454430666506589
   - window. MY_ENV = 'whatever'; 
 
-- declare global is not needed if you include file in tsconfig.json#files
+- `declare global` is not needed if you include file in tsconfig.json#files
   - It's not needed if there are no import/exports in the file OR if you're using a .d.ts file.
 
 - Is it a good practice to store these declarations in *.d.ts files?

@@ -140,6 +140,34 @@ modified: 2023-09-17T18:17:41.377Z
 # discuss-tree-lsm
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 💡 LSM has higher write amplification due to compaction but the data compresses better in an LSM because of the way it is compressed and stored. 
+- https://twitter.com/sunbains/status/1760730549264732361
+  - In the worst case a single byte change in a B+Tree page can result in a full page write 
+  - but the worst case doesn’t happen in practice because of the WAL and caching.
+- The two properties that make LSM a good choice are:
+  1. Compression
+  2. Immutability of files on disk. Helps in distributed systems
+
+- Also B+Trees page splits can also add to write amp. Especially at leaf level.
+  - Good point, but going back to what I had mentioned about researchers trying to improve B+Trees. There are variations that claim they can solve this problem or at least mitigate it significantly.
+
+- If you take RocksDB and say the InnoDB B-Tree implementation you can see tradeoffs in the implementations. @MarkCallaghanDB has lots of blogs comparing the two.
+  - It doesn't generalize though, there are people working on B-Tree implementations where they claim very good compression, on par with LSM implementations. I remember seeing one with variable page sizes too, lots of other tricks.
+  - It's a rich area to explore, and not be bogged down by a particular implementation of an LSM or B+Tree.
+
+- For one production workload (social graph OLTP at Facebook), compressed MyRocks used 1/2 the space and 1/10 the write-amp vs compressed InnoDB. But context matters, hopefully similar measurements can be shared for other workloads.
+
+- I don’t understand how LSM caching is somehow easier or more performant  than a B+tree. You can use a bloom filter for a B+tree too.
+
+- Typically, LSM KV stores in production use a growth factor of 8-10 between the LSM levels for space efficiency. As a result, all the levels except the last take 10% of the device's capacity.
+  - My only quibble(反对或批评的意见；吹毛求疵) is that there is an “it depends” on the compaction strategy . The different compaction strategies have trade offs and that’s one of the problems with tuning LSMs for the general case. You need to select the compaction strategy that makes the right trade offs for your use case.
+- Good point. The post above refers to a leveling organization where each level has non-overlapping SSTs. The tiering case where a kv pair could be in multiple SSTs within a level needs bloom filters for the whole dataset.
+- In this case, the memory needed to keep bloom filters for all but the last level for a 4 TB device (assuming an average KV pair size of 200 B and 11 bits per key) is 2.8 GB, and about 800 CPU cycles for a bloom filter lookup at each level.
+
 - ## [Write throughput differences in B-tree vs LSM-tree based databases? : databasedevelopment](https://www.reddit.com/r/databasedevelopment/comments/187cp1g/write_throughput_differences_in_btree_vs_lsmtree/)
 
 - ## Any recent papers related to compaction in Log Structured Merge (LSM) or similar trees?

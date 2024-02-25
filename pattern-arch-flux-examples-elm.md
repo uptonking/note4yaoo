@@ -269,6 +269,9 @@ modified: 2023-11-21T10:17:34.596Z
   - https://github.com/jorgebucaran/hyperapp
   - The tiny framework for building hypertext applications
   - an ultra-lightweight Virtual DOM, highly-optimized diff algorithm, and state management library obsessed with minimalism.
+  - [What's coming next & Superfine v. Hyperapp  · jorgebucaran/superfine](https://github.com/jorgebucaran/superfine/issues/134)
+    - Superfine (this project) and Hyperapp 2's VDOM code is essentially the same, therefore performance is the same too. /201903
+    - Hyperapp 2 doesn't include lifecycle events (Superfine still does) and DOM events dispatch actions directly, making it faster than Superfine, but possibly not for a lot.
   - [Release 2.0.0 _20190727](https://github.com/jorgebucaran/hyperapp/releases/tag/2.0.0)
     - Hyperapp 2.0 introduces several new features, including Effects, Subscriptions, and an enhanced Dispatch mechanism.
   - [Hyperapp V2_201905](https://github.com/jorgebucaran/hyperapp/pull/726)

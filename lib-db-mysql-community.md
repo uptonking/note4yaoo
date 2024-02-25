@@ -16,7 +16,13 @@ modified: 2022-06-13T03:00:06.041Z
 
 - ## 
 
-- ## 
+- ## Decided to resurrect an old project this weekend. Embedded InnoDB.
+- https://twitter.com/sunbains/status/1761628685973782870
+  - Based on 5.1, a very old code base, but a lot simpler too. Should be good for learning. 
+  - It's still the original C code, before the core optimizations and conversion to C++.
+  - The long term plan is to slowly convert it to Zig (or Rust). Zig for now because it's easier to get started.
+
+- People still use MySQL v5.1 in production, so this is not a toy storage engine. Last time this code was used in anger was in Riak AFAIK.
 # discuss-perf
 - ## 
 

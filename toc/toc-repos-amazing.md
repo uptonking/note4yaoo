@@ -102,6 +102,13 @@ modified: 2020-11-03T06:54:59.051Z
   - [Announcing Remotion - a framework for making videos in React!](https://twitter.com/JNYBGR/status/1358824089960542208)
 - https://github.com/FelippeChemello/podcast-maker
   - This project takes tech news, creates a 5 minute daily briefing, renders it in 3 different formats, and uploads it to YouTube, Instagram and AnchorFM - fully automated using Remotion and Github Actions!
+
+- https://github.com/infinitered/nsfwjs /MIT/202402/ts
+  - https://nsfwjs.com/
+  - NSFW detection on the client-side via TensorFlow.js
+  - A simple JavaScript library to help you quickly identify unseemly images; all in the client's browser. 
+  - NSFWJS isn't perfect, but it's pretty accurate (~90% with small and ~93% with midsized model).
+  - The library categorizes image probabilities in the following 5 classes: Drawing, Hentai, Neutral, Porn, Sexy
 # nice
 - https://github.com/kamranahmedse/driver.js /11.7kStar/MIT/202311/ts
   - https://driverjs.com/

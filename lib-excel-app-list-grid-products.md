@@ -44,6 +44,8 @@ modified: 2022-08-21T10:38:26.289Z
   - Build apps and reports in Google Sheets.
   - Create a bidirectional link between Google Sheets and your database (Postgres, Snowflake, MySQL, Redshift, and SQL Server). 
   - Build powerful tools and automate work with Python, SQL & JS scripts.
+
+- [dbt-excel](https://dbt-excel.com/)
 # more
 - [11 Excel Alternatives & Competitors 2023 (Features & Pricing) | ClickUp](https://clickup.com/blog/excel-alternatives/)
 

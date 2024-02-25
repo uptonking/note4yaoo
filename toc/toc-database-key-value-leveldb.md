@@ -145,6 +145,19 @@ modified: 2022-11-03T04:14:00.563Z
   - DAG based key value store. 
   - Sharded DAG that minimises traversals and work to build shards.
   - 依赖@ipld/car、@ipld/dag-cbor、cborg、sade
+
+- https://github.com/cockroachdb/pebble /BSD/202402/go
+  - RocksDB/LevelDB inspired key-value database in Go
+  - a LevelDB/RocksDB inspired key-value store focused on performance and internal usage by CockroachDB.
+  - Pebble inherits the RocksDB file formats and a few extensions such as range deletion tombstones, table-level bloom filters, and updates to the MANIFEST format.
+  - Pebble intentionally does not aspire to include every feature in RocksDB and specifically targets the use case and feature set needed by CockroachDB:
+    - Block-based tables
+    - Checkpoints
+    - Indexed batches
+    - Level-based compaction
+  - RocksDB has a large number of features that are not implemented in Pebble
+  - WARNING: Pebble may silently corrupt data or behave incorrectly if used with a RocksDB database that uses a feature Pebble doesn't support
+  - Pebble was introduced as an alternative storage engine to RocksDB in CockroachDB v20.1 (released May 2020) and was used in production successfully at that time. Pebble was made the default storage engine in CockroachDB v20.2 (released Nov 2020). 
 # leveldb-like
 - https://github.com/Level/bench
   - Benchmark `abstract-level` databases. 

@@ -24,8 +24,11 @@ modified: 2022-08-21T10:02:05.129Z
 
 - lowcode数据库层实现细节
   - 参考strapi实现table+audit-log
-  - 参考apitable实现以oplog为数据源的业务数据层
+  - 参考apitable/directus实现以oplog为数据源的业务数据层
   - 基于oplog实现业务的案例: redux, event-store
+
+- 🤔 难点
+  - 动态修改数据类型、修改schema
 
 - resources
   - https://github.com/topics/notion-database
