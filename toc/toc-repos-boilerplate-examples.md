@@ -32,6 +32,7 @@ modified: 2023-11-16T15:00:11.503Z
 ## realworld
 
 - resources
+  - https://demo.realworld.io/
   - https://github.com/gothinkster/realworld
   - [RealWorld](https://www.realworld.how/)
   - [CodebaseShow – RealWorld Example Apps](https://codebase.show/projects/realworld)
@@ -146,6 +147,7 @@ modified: 2023-11-16T15:00:11.503Z
   - fullstack application built with React + React Query including CRUD operations, authentication, routing, pagination, and more.
   - 依赖@tanstack/react-query、react-router.v6、remark-gfm
   - https://github.com/abdulrahmanalaa123/conduit /202402/js/tanstack-query
+  - https://github.com/romansndlr/react-vite-realworld-example-app /202204/js/react-query.v3
 
 ### api-realworld
 
@@ -154,7 +156,8 @@ modified: 2023-11-16T15:00:11.503Z
   - https://github.com/cirosantilli/node-express-sequelize-realworld-example-app /202106/js
 
 - https://github.com/TonyMckes/conduit-realworld-example-app /202303/js/be+fe
-  - created to demonstrate a fully fledged fullstack application built with React / Express.js / Sequelize / PostgreSQL including CRUD operations, authentication, routing, pagination, and more.
+  - created to demonstrate a fully fledged fullstack application 
+  - built with React, Express.js, Sequelize, PostgreSQL
 
 - https://github.com/skopekreep/typescript-node-express-realworld-example-app /202007/ts
   - Rewrite of JS-based node-express RealWorld backend app using Typescript

@@ -10,16 +10,20 @@ modified: 2023-04-15T08:19:14.117Z
 # guide
 
 # popular
-
 - https://github.com/jupyter-widgets-contrib/ipysheet /MIT/202401/python/ts
   - Jupyter handsontable integration
   - Due to Handsontable licensing changes ipysheet is stuck witch the outdated Handsontable version 6.2.2 (open-source). We recommend not using ipysheet anymore. 
   - We suggest an alternative like ipydatagrid.
   - https://github.com/bloomberg/ipydatagrid
 
-
+- https://github.com/paddymul/buckaroo /BSD/202402/python/jupyter
+  - https://buckaroo-data.readthedocs.io/en/latest/
+  - Buckaroo is a modern data table for Jupyter that expedites the most common exploratory data analysis tasks
+  - Buckaroo starts with a modern performant data table that displays up to 10k rows, is sortable, has value formatting, and scrolls.
+  - Quickly explore dataframes, and run pandas commands via a GUI. 
+  - Works inside the jupyter notebook.
+  - When you run `import buckaroo` in a Jupyter notebook, Buckaroo becomes the default display method for Pandas and Polars DataFrames
 # jupyter-js
-
 - https://github.com/ElixirNote/elixirnote
   - a next-generation web-based user interface for Project Jupyter.
 

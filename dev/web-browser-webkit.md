@@ -374,6 +374,15 @@ modified: 2021-01-01T20:11:00.889Z
 # discuss-webkit-browsers
 - ## 
 
+- ## 
+
+- ## 🍎 [如何看待 iOS 应用在欧盟范围内可以使用非 WebKit 作为浏览器内核? - 知乎](https://www.zhihu.com/question/641302656)
+- 苹果的 App Store 审核指南里一直有这么一条规则， 也就是在 iOS 里要开发一个浏览器或者任何带浏览网页功能的 APP，必须要用苹果自己的 `WKWebView` 这个类来实现。
+  - 苹果声称这个限制的原因是其它引擎存在安全和性能风险，而只有 WebKit 对 iPhone 用户来说是真正优化和安全的
+- DMA（Digital Markets Act）是欧盟的一项法规，旨在对大型科技公司实施严格规定，促进数字市场的公平竞争和保护消费者权益
+- 除了让自己变强，苹果也搞了其它一些小九九，比如既然只有欧盟的法律要求这么做，那我就只允许欧盟的应用市场上传使用第三方引擎的浏览器，意味着 Chrome 和 Firefox 都需要打包两个版本，比如 Chrome for iOS (Blink).ipa 给欧盟用，和 Chrome for iOS (WebKit).ipa 给其它地区用，给普通 Web 开发人员也带来了调试上的麻烦。
+  - 还有一个小九九是给欧盟最新的 17.4 Beta 版里不知是故意还是 bug，关掉了 PWA 能力
+
 - ## [Why are there no open source browsers using Webkit as the core engine? | The FreeBSD Forums](https://forums.freebsd.org/threads/why-are-there-no-open-source-browsers-using-webkit-as-the-core-engine.88112/)
 - Webkit, while OSS, is corporate owned and driven by Apple - also the reason why Google created their own fork, Blink, to get free of Apple's influence
 - Building Webkit takes forever, even on a quite powerful machine, 

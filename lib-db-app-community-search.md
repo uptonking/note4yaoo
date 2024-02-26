@@ -54,3 +54,31 @@ modified: 2023-10-26T19:56:12.974Z
 - Hadoop (and any other Spark data source) via SparkSQL
 
 - I would like SQL better if jOOQ-style libraries were common across every major language. A standardized query language is good, but passing in queries as strings will never not feel wrong to me.
+# discuss-code-search
+- ## 
+
+- ## 
+
+- ## 🌰 The code search on GitHub is a great tool. But how does it work?
+- https://twitter.com/Franc0Fernand0/status/1762094007348306234
+  - You can search over 200M+ public repositories in seconds with it. 
+
+- The code search problem is not the same as the normal full-text search.
+- Full text lets you look through all the words in a file to find a search term. 
+  - This is a well-known problem that systems like Lucene and Elasticsearch handle.
+- Code search is different and has its own rules:
+  - there is no stemming(词干)
+  - punctuations are ignored
+  - words from queries are left intact
+- GitHub uses Blackbird: a Rust-based search engine tailored to search through programming languages.
+- All text search engines use a data structure called Inverted Index. 
+- An inverted index resembles an index section of a textbook:
+  - all words are ordered alphabetically
+  - each word is followed by page numbers where the word is found
+- Blackbird uses a particular type of inverted index called an n-gram index. 
+  - Building such a data structure at the GitHub scale was quite challenging. 
+- The collection of documents was too large for a single inverted index. 
+  - How to deal with this? By sharding.
+  - Documents are partitioned across shards based on blob object IDs. This ID is given by the SHA-1 hash of the file contents; thus, identical files always share the same ID. 
+
+- Architectures for crawling and indexing are generally stream processing flows that transform and augment the data as it is collected. Not surprising that Kafka plays a big role there.

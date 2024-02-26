@@ -66,7 +66,22 @@ modified: 2023-11-01T10:08:09.232Z
 
 - ## 
 
-- ## 
+- ## If you like logs and databases and event sourcing stuff, definitely check out this article from @PatHelland .
+- https://twitter.com/LewisCTech/status/1762034969243943107
+  - This is a really intuitive model of Eventual Consistency
+- > From this perspective, the contents of the database hold a caching of the latest record values in the logs. The truth is the log. The database is a cache of a subset of the log. /@PatHelland
+
+- I love the concept of logs as a first class distributed database (or at least the write model)
+  - Tbh, this was eye-opening for me and since then influenced how I think about systems and design - and everything else causally related to it 
+
+- https://twitter.com/ifesdjeen/status/1762012801847960047
+- Performance retrieval seems like a fundamental need to me.
+- if performance is not a concern, then Event Sourcing is fine. Problem is, in real world, performance is a major concern. Don’t get me wrong, I think Event Sourcing is a great concept, but only in theory.
+- Goog luck replaying 5 years of events when your new server boots.
+  - Not sure if you have worked with event sourcing before, but not every time you have to read all messages. You have consumers that store the position to read from it when server reboots. Also sometimes you have snapshot mechanism to not read the whole stream again.
+- Snapshots + log is not just the log.
+
+- You mean the actual WAL vs the b-trees?
 
 - ## I'm looking for a durable (storage-backed) data structure that is a time-indexed log, 
 - https://twitter.com/dustingetz/status/1734337596115886146

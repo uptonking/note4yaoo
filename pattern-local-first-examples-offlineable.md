@@ -216,6 +216,13 @@ modified: 2023-11-17T10:12:06.357Z
   - https://github.com/Netflix/falcor
     - Falcor lets you represent all your remote data sources as a single domain model via a virtual JSON graph. You code the same way no matter where the data is, whether in memory on the client or over the network on the server.
 
+- https://github.com/graphql/dataloader /MIT/202303/js/NoDeps/单文件/inactive
+  - DataLoader is a generic utility to be used as part of your application's data fetching layer to provide a consistent API over various backends and reduce requests to those backends via batching and caching
+  - A port of the "Loader" API originally developed by @schrockn at Facebook in 2010. DataLoader is a simplified version of this original idea implemented in JavaScript for Node.js services
+  - This mechanism of batching and caching data requests is certainly not unique to Node.js or JavaScript, it is also the primary motivation for Haxl(haskell)
+  - Each `DataLoader` instance represents a unique cache. Typically instances are created per request when used within a web-server like express
+  - DataLoader provides a memoization cache for all loads which occur in a single request to your application
+
 - https://github.com/commune-os/weird /202309/rust/svelte
   - https://weird-test.krivah.me/
   - Local-first webpage generator

@@ -27,6 +27,20 @@ modified: 2024-02-18T13:52:07.926Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Postgres doesn't use threads, pgbouncer doesn't use threads. 
+- https://twitter.com/samokhvalov/status/1762113679372521706
+  - If critical processes like walsender, logical replication worker or pgbouncer reach 100% of a single vCPU, we have a big trouble.
+  - Now: how come nobody (uppercase, NOBODY) among monitoring developers recognized that and added proper metrics to observe usage & saturation risks?
+
+- There is a really big effort ongoing to make Postgres multithreaded
+  - Define "ongoing". Unfortunately, the latest msg in that thread is from Aug.
+- We have Google AlloyDB and we see 100 pct CPU utilisation. Not able to figure out how this happens. Max_connetions set 1000 (alloydb default) and pgBouncer max_client connections=500 default_connection_pool=100.
+  - This is different, I think. I was talking about 100% of a single vCPU, and excluding regular Postgres backends that process queries (they can hit 100% of one vCPU all the time -- just let them do SeqScans, for instance)
+
 - ## Postgres MVCC Backstage Run a few basic SELECTS, INSERTS, and UPDATES to see how the MVCC engine functions internally
 - https://twitter.com/denismagda/status/1760780953285284251
   - https://github.com/dmagda/DevMastersDb/blob/main/postgres/postgres_mvcc_backstage.md

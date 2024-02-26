@@ -12,6 +12,23 @@ modified: 2023-10-26T21:54:54.201Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🌰🆚️ Is there some kind of web app or tool that mimics a spreadsheet/excel in UX that directly translates into sql queries?
+- https://twitter.com/Captaintobs/status/1761835197459538195
+- The closest thing that comes to mind is VSCode Data Wrangler: UI that generates pandas code
+- I have built the open source Buckaroo table widget for Jupyter/VSCode.  It has a prototype for a lowcode UI that can emit pandas/polars (IBIS soon) code
+
+- Depends what aspects of spreadsheets you are looking for, but https://tadviewer.com has a spreadsheet-like pivot table UI powered by @duckdb .
+- @Ultorg does that; spreadsheet-like UI, generates SQL behind the scenes. It's a desktop app, so you can connect directly to databases on localhost or on a private network if desired.
+- jetbrains datagrip has a feature for this! I don't think that part of the code is open source
+
+- @QuadraticHQ is doing spreadsheets with SQL capabilities
+
+- @Tabulaio provides exactly this - it is visual no code step by step transformation builder and compiles into SQL dialect of your database or python code. It can also compile into dbt projects.
+
 - ## 🧮 [A Gentle Introduction to Ted Nelson's ZigZag Structure (2002) | Hacker News_202105](https://news.ycombinator.com/item?id=27210008)
 - Happily, Nelson's patent has finally expired.
 

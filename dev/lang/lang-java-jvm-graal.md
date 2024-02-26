@@ -321,6 +321,16 @@ fs.writeFileSync(__dirname + "/test.jsb", byteCode);
 - 现在jdk里面的jit compiler c2太老了 
   - 晦涩难懂 已经很久没有更新了 在当前基础上 已经不可能有重大更新 都是加一些手动的intrinsic
   - graal是用java写的compiler 加上hotspot vm 就是graalvm 现在的结构更加模块化 更容易实现强大的优化 比如多语言支持 aot
+# discuss-news-graal
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Initial support for Native Memory Tracking just landed in @GraalVM Native Image! _20240226
+- https://twitter.com/fniephaus/status/1762039450404593871
+
 # discuss-usecase
 - ## 
 

@@ -403,7 +403,7 @@ if (~arr.indexOf('foo')) {
   - This differs from standard backup procedures where only specific schemas and their contents can be selected. 
   - Additionally, multiple databases can be chosen for backup at once in the global method.
 
-- ### [PostgreSQL的模式、表、空间、用户间的关系 - 掘金](https://juejin.cn/post/6844903987762692103)
+- ### 🐘 [PostgreSQL的模式、表、空间、用户间的关系 - 掘金](https://juejin.cn/post/6844903987762692103)
 - 一个数据库包含一个或多个已命名的模式schema，模式又包含表table。
   - 模式还可以包含其它对象， 包括数据类型、函数、操作符等。同一个对象名可以在不同的模式里使用而不会导致冲突； 比如，herschema和myschema都可以包含一个名为mytable的表。 
 - 和数据库不同，模式不是严格分离的：只要有权限，一个用户可以访问他所连接的数据库中的任意模式中的对象。

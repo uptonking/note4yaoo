@@ -139,6 +139,12 @@ modified: 2023-11-28T14:48:45.910Z
   - like jupyter but using js/ts
   - 考虑2年后可私有或会员私有
 
+- ✨ 图文转视频
+  - 视频的体验更生动有趣
+  - 市场空白
+
+- 自动生成头图、缩略图
+
 - docx
   - diff .docx and .doc
 # draft

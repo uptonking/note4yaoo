@@ -65,3 +65,11 @@ modified: 2023-11-29T15:23:06.805Z
   - I think it comes down to consistency once the decision is made.
   - For example, the graphql apollo world now is embracing the pattern you are regretting, returning changed data as a call result
   - A GraphQL context is interesting. And, I think different enough to have different rules. Since GraphQL allows the client to tell the server what it needs, 
+# discuss-design-pattern
+- ## 
+
+- ## 
+
+- ## design patterns like Gang of Four and Clean Code are a scam made up by consultants that didn’t have the time to understand your codebase and wanted to parachute in and out of clients for loads of money.
+- https://twitter.com/leostera/status/1762018884444463355
+  - they were not designed to make software better.
