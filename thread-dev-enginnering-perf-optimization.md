@@ -37,6 +37,13 @@ modified: 2022-03-18T20:56:35.254Z
 # discuss
 - ## 
 
+- ## 
+
+- ## [UUID Benchmark War | Hacker News _202402](https://news.ycombinator.com/item?id=39254871)
+- 
+- 
+- 
+
 - ## Have a lag radar that tells you if something takes longer than some interval, in real-time, no profile recordings.
 - https://twitter.com/fabiospampinato/status/1650188305248518148
 - I like your visualizing and framing as a "performance radar". I've built this FPS meter for the same purpose

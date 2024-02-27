@@ -237,6 +237,19 @@ modified: 2023-01-17T19:13:01.845Z
   - A collaborative database
   - PeerDB requires an ElasticSearch instance. ElasticSearch instance needs to have an index with documents in PeerDB schema and configured with PeerDB mapping.
   - Power of PeerDB Search comes from having data in ElasticSearch index organized into documents in PeerDB schema.
+
+- https://github.com/dmotz/trystero /MIT/202402/js
+  - https://oxism.com/trystero
+  - Build instant multiplayer webapps, no server required — Magic WebRTC matchmaking over BitTorrent, Nostr, MQTT, IPFS, and Firebase
+  - Trystero manages a clandestine courier network that lets your application's users talk directly with one another, encrypted and without a server middleman.
+  - Peers can connect via BitTorrent, Nostr, MQTT, Firebase, or IPFS – all using the same API.
+  - Trystero offers some nice abstractions on top of WebRTC:
+    - Rooms / broadcasting
+    - Automatic chunking and throttling of large data
+    - Session data encryption
+  - To establish a direct peer-to-peer connection with WebRTC, a signalling channel is needed to exchange peer information (SDP). 
+    - Typically this involves running your own matchmaking server but Trystero abstracts this away for you and offers multiple "serverless" strategies for connecting peers (currently BitTorrent, Nostr, MQTT, Firebase, and IPFS).
+    - Beyond peer discovery, your app's data never touches the strategy medium and is sent directly peer-to-peer and end-to-end encrypted between users.
 # sync-json
 - https://github.com/zettant/realtime-object-sync
   - server and client libraries for realtime JSON object synchronization.

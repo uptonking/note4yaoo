@@ -1,16 +1,14 @@
 ---
-title: toc-repos-clone-toys-alternatives
-tags: [alternatives, rewrite, toc, toys]
+title: toc-repos-toys-clone-examples
+tags: [examples, rewrite, toc, toys]
 created: 2021-07-21T10:03:20.513Z
-modified: 2023-11-23T17:24:53.472Z
+modified: 2024-02-27T10:42:48.580Z
 ---
 
-# toc-repos-clone-toys-alternatives
-
+# toc-repos-toys-clone-examples
+- 高仿玩具rip-off
 # guide
-
-- ref
-  - 高仿玩具rip-off
+- resources
   - [Repository dedicated to all my UI(clonoe) projects!](https://github.com/Pedro-Murilo/user-interface)
 # toys-react
 - https://github.com/leoronne/github-ui-clone

@@ -41,6 +41,10 @@ modified: 2022-11-29T20:41:25.566Z
   - [Bramble Synchronisation Protocol, version 0](https://code.briarproject.org/briar/briar-spec/-/blob/master/protocols/BSP.md)
     - BSP is an application layer data synchronisation protocol suitable for delay-tolerant networks.
   - [A Quick Overview of the Protocol Stack](https://code.briarproject.org/briar/briar/-/wikis/A-Quick-Overview-of-the-Protocol-Stack)
+
+- [Fossil: The Fossil Sync Protocol](https://www.fossil-scm.org/home/doc/trunk/www/sync.wiki)
+  - The "bag of artifacts" data model used by Fossil is apparently an implementation of a particular Conflict-Free Replicated Datatype (CRDT) called a "G-Set" or "Grow-only Set". 
+  - [The Fossil Sync Protocol | Hacker News _202402](https://news.ycombinator.com/item?id=39464938)
 # blogs-sync
 - [MongoDB Realm: Device Sync Protocol](https://www.mongodb.com/docs/atlas/app-services/sync/details/protocol/)
   - Atlas Device Sync uses a protocol to correctly and efficiently sync data changes in real time across multiple clients that each maintain their own local Realm files
@@ -66,7 +70,7 @@ modified: 2022-11-29T20:41:25.566Z
   - [MySQL: Replication Protocol](https://dev.mysql.com/doc/dev/mysql-server/latest/page_protocol_replication.html)
     - Replication uses binlogs to ship changes done on the master to the slave and can be written to Binlog File and sent over the network as Binlog Network Stream.
 
-## [RxDB replication protocol](https://rxdb.info/replication.html)
+ ## [RxDB replication protocol](https://rxdb.info/replication.html)
 
 - 支持websocket、graphql、couchdb、p2p
 - The RxDB replication protocol provides the ability to replicate the database state in realtime between the clients and the server.

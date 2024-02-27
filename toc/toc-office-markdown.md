@@ -53,21 +53,26 @@ modified: 2021-01-04T17:26:25.032Z
   - Quartz is a set of tools that helps you publish your digital garden and notes as a website for free. 
   - Quartz v4 features a from-the-ground rewrite focusing on end-user extensibility and ease-of-use.
 # md-parser-generator
-- markdown-it /10.4kStar/MIT/202009
-  - https://github.com/markdown-it/markdown-it
-  - https://markdown-it.github.io/
-  - Markdown parser. 
-  - 100% CommonMark support, extensions, syntax plugins & high speed
-
 - remark 
   - https://github.com/remarkjs/remark/tree/main/packages/remark-parse
   - Parses Markdown to mdast syntax trees. 
   - Built on micromark and mdast-util-from-markdown
 
-- marked /24kStar/MIT/202012/js
+- marked /31.5kStar/MIT/202402/ts/NoDeps
   - https://github.com/markedjs/marked
+  - https://marked.js.org/
   - A markdown parser and compiler. Built for speed.
   - light-weight while implementing all markdown features from the supported flavors & specification
+  - works in a browser, on a server, or from a command line interface (CLI)
+  - Marked can be extended using custom extensions. This is a list of extensions that can be used with `marked.use(extension)`.
+
+- markdown-it /16.8kStar/MIT/202401/js
+  - https://github.com/markdown-it/markdown-it
+  - https://markdown-it.github.io/
+  - Markdown parser done right. Fast and easy to extend.
+  - Follows the CommonMark spec + adds syntax extensions & sugar (URL autolinking, typographer).
+  - Community-written plugins and other packages on npm.
+  - a fork of https://github.com/jonschlinkert/remarkable /js
 
 - snarkdown /2kStar/MIT/202201/js/单文件
   - https://github.com/developit/snarkdown

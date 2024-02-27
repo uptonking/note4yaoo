@@ -1227,6 +1227,9 @@ modified: 2022-04-05T10:08:25.947Z
 
 - https://github.com/tancehao/ConstDB /apache2/202305/rust/inactive
   - A redis-like cache store that implements CRDTs and active-active replications.
+  - ConstDB is an in-memory cache store which aims at master-master replications.
+  - When a write command has been executed in one instance, it is asynchronously replicated to all the other instances. The data structures that are used for storing the client's data implement CRDT(Conflict-Free Replicated Data Types), thus we are sure data in different instances are eventually consistent.
+  - ConstDB is compatible with redis protocol, and I have implemented a portion of redis's data types and commands. 
 
 - https://github.com/AntidoteDB/antidote /202209/erlang/inactive
   - A planet scale, highly available, transactional database built on CRDT technology

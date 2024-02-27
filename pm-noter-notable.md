@@ -147,6 +147,10 @@ modified: 2023-11-28T14:48:45.910Z
 
 - docx
   - diff .docx and .doc
+
+- optimization(参考git的问题)
+  - 针对二进制文件
+  - 针对大项目
 # draft
 - 功能或菜单太多容易使人迷茫，考虑设计多个版本的前端：lite、pro、customized
 

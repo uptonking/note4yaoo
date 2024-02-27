@@ -38,7 +38,13 @@ modified: 2023-09-07T15:56:52.778Z
 
 - ## 
 
-- ## 
+- ## [Scuttlebutt social network: a decentralised platform | Hacker News _202402](https://news.ycombinator.com/item?id=39484907)
+- I keep hearing about Scuttlebutt for a long time but haven't seen anyone actually using it? Why?
+  - Scuttlebutt had the Bitcoin like problem of requiring everybody to have a local copy of the entire database, with a confusing/glitchy "syncing" process to download the latest posts.
+- This isn't entirely true. Scuttelbutt had some design and scaling issues. But there wasn't a global database. Each user gets their own blockchain. Its a network of tiny blockchains where the consensus model was the signature from the private key and the chain of hashes.
+- The Merkle tree structure is the root of the scaling issues which is why I think it's fair to describe it as "bitcoin-like" and it serves as an intuition pump for people to understand why it was so difficult to use on mobile, regardless of whether it was actually quite as bad as Bitcoin or not.
+
+- https://www.manyver.se/ is one of the leading implementations of Scuttlebutt. They're currently working on a protocol replacement called PPPPP which addresses some of the shortcomings they identified, the leading one being storage requirements and growth.
 
 - ## I'm super excited about the new earthstar project.
 - https://twitter.com/rabble/status/1265795078263435265

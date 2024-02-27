@@ -56,6 +56,18 @@ modified: 2023-09-07T15:58:27.967Z
 # discuss-keet
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🚀 [Holepunch Unveils P2P Platform "Pear Runtime" | Hacker News _202402](https://news.ycombinator.com/item?id=39373960)
+- This looks exciting and I'm pleased to see more and more frictionless ways of making p2p apps. I've been building a somewhat similar hobby project that aims to connect peers in the browser by piggybacking on open protocols out on the net (BitTorrent, MQTT, Nostr, IPFS, etc).
+  - This project seems to be using Hyperswarm which I've looked at for use as a peering medium but it seems like it's not supported in the browser. I'd love to implement it if that story changes since it's so easy to distribute apps on the web.
+
+- 
+- 
+- 
+
 - ## When will Keet be fully open sourced?_202312
 - https://discord.com/channels/985129863348371516/985129863348371519/1186957837767823370
 - I think it's in February... Or something like that.

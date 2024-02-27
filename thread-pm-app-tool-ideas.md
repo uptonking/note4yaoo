@@ -57,6 +57,8 @@ modified: 2022-11-07T10:58:24.512Z
 - 分享设备的dock栏
 
 - 分享有设计感的网站、主页
+
+- b站很多视频是带人读文章/公告、读论文
 # integrations
 - doscord message saver
   - [Discord Notebook](https://chrome.google.com/webstore/detail/discord-notebook/jeeilfacglnffgflhgmciaegglekjlod?hl=en)

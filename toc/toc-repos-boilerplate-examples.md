@@ -33,12 +33,15 @@ modified: 2023-11-16T15:00:11.503Z
 
 - resources
   - https://demo.realworld.io/
+    - https://conduit-realworld-example-app.fly.dev/
+    - https://scrimba.com/scrim/cBewLHL
   - https://github.com/gothinkster/realworld
   - [RealWorld](https://www.realworld.how/)
   - [CodebaseShow – RealWorld Example Apps](https://codebase.show/projects/realworld)
   - [API | RealWorld](https://realworld-docs.netlify.app/docs/specs/frontend-specs/api)
     - https://api.realworld.io/api/articles /默认返回10条articles数据/无需登录
     - 还可在github上找最新repo，寻找可用的公共api-url
+    - https://conduit-realworld-example-app.fly.dev/api/articles /默认返回3篇
   - [V2 Roadmap · gothinkster/realworld](https://github.com/gothinkster/realworld/issues/693)
 
 - https://github.com/chagweyh/react-hooks-typescript-realworld /202011/ts/inactive
@@ -156,6 +159,7 @@ modified: 2023-11-16T15:00:11.503Z
   - https://github.com/cirosantilli/node-express-sequelize-realworld-example-app /202106/js
 
 - https://github.com/TonyMckes/conduit-realworld-example-app /202303/js/be+fe
+  - https://conduit-realworld-example-app.fly.dev/
   - created to demonstrate a fully fledged fullstack application 
   - built with React, Express.js, Sequelize, PostgreSQL
 

@@ -7,8 +7,12 @@ modified: 2022-08-13T05:10:32.238Z
 
 # toc-repos-toys-clone
 
-# popular-clone
+# guide
 
+- https://github.com/GorvGoyl/clone-wars
+  - https://gourav.io/clone-wars
+  - 100+ open-source clones of popular sites like Airbnb, Amazon, Instagram, Netflix, Tiktok, Spotify, Whatsapp, Youtube etc.
+# popular-clone
 - https://github.com/NayeemNishaat/discord /202209/ts
   - A clone of Discord that allows realtime chatting (private/group), video/audio calls and screen sharing. Also allows creation of groups and inviting friends.
   - 包含前后端2个文件夹

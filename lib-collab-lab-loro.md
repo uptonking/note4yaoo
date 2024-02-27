@@ -31,9 +31,23 @@ modified: 2024-01-06T15:37:08.031Z
 - ## 
 
 - ## [Loro's rich text CRDT | Hacker News _202401](https://news.ycombinator.com/item?id=39102577)
+- I invented replayable event graphs. 
+- If you remove these ops from history, does that remove the ability to time travel
+  - Yes it does. You also need the ops from history to be able to merge changes. You can only merge changes so long as you have the operations going back to the point at which the fork happened.
+- is it possible to put the removed historical/tombstone ops into a "cold storage" that's optional and only loaded for time-travel use?
+  - Absolutely. And this is very practically useful. For example, you could have a web page which loads the current state of a document (just a string. Unlike CRDTs, it needs no additional metadata!). 
+- All this said, with text documents the overhead of just keeping the historical operations is pretty tiny anyway. 
+  - In my testing using diamond types (same algorithm, different library), storing the entire set of historical operations usually increases the file size by less than 50% compared to just storing the final text string. Its much more efficient on disk than git, and more efficient than other CRDTs like automerge and Yjs. 
+  - So I think most of the time its easier to just keep the history around and not worry about the complexity.
+
+- Similar to OT, in certain scenarios, it's sufficient to ensure that only a subset of peers have the complete data, while others don't need the full history. 
+  - For instance, in real-time collaboration scenarios with a central server, we can, just like OT, allow clients to hold only a shallow clone instead of the complete history. 
+  - This approach results in minimal overhead for the clients.
+
 - 
 - 
 - 
+
 # discuss
 - ## 
 

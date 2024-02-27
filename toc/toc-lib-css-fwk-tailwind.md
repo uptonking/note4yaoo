@@ -34,6 +34,8 @@ modified: 2023-02-26T18:25:01.328Z
     - 设计稿中是slate-600 #475569
   - 默认border是gray-200 #e5e7eb
   - input中提交按钮背景色默认blue-500
+  - palette
+    - Fuchsia: 500-#d946ef 600-#c026d3 700-#a21caf 800-#86198f 900-#701a75
 
 - https://github.com/htmlstreamofficial/preline /3.4kStar/MIT/202401/ts
   - https://preline.co/examples.html

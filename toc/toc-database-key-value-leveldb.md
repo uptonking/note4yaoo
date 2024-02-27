@@ -213,6 +213,11 @@ modified: 2022-11-03T04:14:00.563Z
 - https://github.com/jed/sheet-down
   - This library uses abstract-leveldown to turn a worksheet within a Google Spreadsheet into a leveldown-compatible store for use with levelup.
 
+- https://github.com/tancehao/reimplement-leveldb-in-rust /202304/rust/inactive
+  - reimplement leveldb in rust, with some new features.
+  - Search tired levels(L0 currently) in parellel; 
+  - MVCC enabled.
+
 - https://github.com/belayeng/quadstore /MIT/ts
   - https://belayeng.github.io/quadstore
   - Quadstore is a LevelDB-backed RDF graph database / triplestore for JavaScript runtimes (browsers, Node.js, Deno, Bun, ...) written in TypeScript.

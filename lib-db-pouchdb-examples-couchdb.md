@@ -1786,6 +1786,10 @@ modified: 2023-09-28T20:35:56.153Z
 - https://github.com/glynnbird/docstream /201405/js
   - Node.js utility to turn CouchDB's _all_docs stream in to stream of plain documents
 
+- https://github.com/18F/couch-rules-engine /202003/js/inactive
+  - This is a prototype effort to evaluate the suitability of using CouchDB as the foundation for a rules engine using the built in document validation features.
+  - https://github.com/mheadd/couch-rules-engine
+
 - https://github.com/vrtmrz/file2couch /202312/ts
   - Upload Files to CouchDB as attachments.
 

@@ -8,13 +8,48 @@ modified: 2023-08-29T10:13:31.070Z
 # lib-utils-git-community
 
 # guide
-
+- [Fossil: The Fossil Sync Protocol](https://www.fossil-scm.org/home/doc/trunk/www/sync.wiki)
+  - The "bag of artifacts" data model used by Fossil is apparently an implementation of a particular Conflict-Free Replicated Datatype (CRDT) called a "G-Set" or "Grow-only Set". 
 # discuss-stars
 - ## 
 
-- ## 
+- ## 🚀🌵 [A Git client for simultaneous branches on top of your existing workflow | Hacker News _202402](https://news.ycombinator.com/item?id=39357068)
+- > Quick warning. You cannot use both GitButler virtual branches and normal Git branching commands at the same time, you will have to "commit" to one approach or the other.
+  - Basically anything you do with git (or another GUI) will get blown away by GitButler; or if you change branch away from it then it will stop working.
+- This limitation stems from the fact that GB introduces an additional dimension of versioning on top of Git. 
+  - One way of thinking of what it does with virtual branches is like "multiplexing" multiple branches onto the same working directory. On the way out they get "demuxed" into plain git trees.
+  - With that said, the tool is very cautious not to mess with any existing branches. This is the very reason it operates on a separate integration branch. Switching between the "special/integration" branch and any other branch is also not an issue.
 
-- ## At Githab, anyone can commit for you just by specifying your email in --author.
+- For my own sake, allow me to articulate the core value proposition once more. GitButler's virtual branches permit two novel use cases:
+  - A developer can lazily assign diffs/changes to belong to separate logical branches while maintaining their content within the same working dir. 
+  - A developer can apply and unapply the content of remote branches to their working directory for the purpose of testing & review. 
+
+- 🆚️ there _is_ a way to work on multiple branches at the same time: worktrees. What's the advantage of a tool like this over that?
+  - With worktrees you can have different branches in different working directories and work on them at the same time. But practically, there is very little difference to just cloning the repo twice and working on different branches in the two checkouts.
+  - The way we're doing it, the branches are both in the same working directory at the same time.
+- This can have a couple of advantages 
+  - one is if you have an annoying bugfix and you need it in order to keep working on your feature, you can have them both applied but you don't have to commit one into the history of the other. You cannot do this with worktrees.
+  - Another is trying out multiple branches together. If they don't conflict, you can essentially get the result of a multi-way merge without creating any merge artifacts. Say you merge three work in progress branches to test them together, then keep working on each independently. Also, in this case, you _know_ that you can merge them in any order and the result will work because you've actually worked on the merged tree.
+
+- 🔀 The CRDT thing happens in GitButler, but we hid the UI to search and find old changes for now
+  - We still record the data locally and could theoretically recreate the state of your working directory and branches at any time.
+
+- Is there a way to identify commits made by GitButler? Can I configure my host to reject them automatically?
+  - GitButler creates normal Git commits and trees with libgit2. It's not dissimilar to using a tool that implements it's own interactive adding or something. The point is that Git is the database and Git hosts (such as GitHub) matter in our workflows, but actually creating the trees that represent the trees you want to share can happen in any way. We are changing how to conceptualize and execute how to get the trees you want, but the output is Git objects.
+
+- Intellij IDE support this through changelists.
+- The listed cons of “changelists”:
+  1. Not part of Git at all—not committed
+  2. Can’t be shared because, duh, not part of Git
+  - That sounds like a fail to me. The whole point of using Git commits is that once committed, it’s just there. And things can be shared. The point of collaborative version control.
+
+- doesn't work with other tools + GUI only => non starter
+
+- 
+- 
+- 
+
+- ## At Github, anyone can commit for you just by specifying your email in --author.
 - https://twitter.com/sitnikcode/status/1759538798180876516
   - This is why I enabled signing commits in git using my SSH key using this guide
   - [Git Tips 2: New Stuff in Git](https://blog.gitbutler.com/git-tips-2-new-stuff-in-git/)
@@ -381,7 +416,7 @@ modified: 2023-08-29T10:13:31.070Z
 - ref
   - [gitee仓库体积过大，如何减小？](https://gitee.com/help/articles/4232#article-header0)
 
-- ## [为什么其他办公领域不使用git?](https://www.zhihu.com/question/329750471)
+- ## 🆚️🤔 [为什么其他办公领域不使用git?](https://www.zhihu.com/question/329750471)
 - Git对非纯文本内容支持并不好，虽然能管理版本，但是无法方便的diff，merge。
 - Git一般对文本文件支持比较好，但word、excel等office文档是二进制文件。
 - 最好的方案是在加工内容阶段和格式优化阶段完全剥离。
@@ -396,7 +431,7 @@ modified: 2023-08-29T10:13:31.070Z
 - 但回到最初的问题: 你需要的真的是一个"版本控制系统"吗? 也许仅仅是一个集中分享的地方, 也许仅仅是希望一个人修改的时候, 另一个人不能修改, 而已.
 - 其实！你们忽略了一件事情！pptx文件实际上是个zip文件，解压开来全是文本的xml和你加进去的视频、图片，是可以用git管理的！
 
-# discuss-gitlab-gogs-gitea
+# discuss-gitlab-gogs-gitea-platform
 - ## 
 
 - ## 
@@ -468,12 +503,95 @@ modified: 2023-08-29T10:13:31.070Z
 - Yes it is using JGit for most operations. JGit API is very well designed and is a joy to use. 
   - The performance is very good, except for long operations such as full clone. 
   - So for pull/push I am calling native git, but  for other operations which may need to be executed several times during a request I am using JGit which is much faster thanks for the in-process cache. 
+# discuss-git-alternatives 🆚️
+- ## 
+
+- ## [为什么很多大企业都在用收费的perforce而不是免费的svn或者git？ - 知乎](https://www.zhihu.com/question/23930380)
+- 主要还是SVN和GIT都对二进制文件支持很差. GITHUB还特别针对大型文件做了GIT-LFS插件用来支持这种超大文件.
+  - 而大型研发公司. 特别是做3D软件的. 分分钟容量爆棚
+
+- 之前不觉得P4有多屌，直到在P4里面创建了有分支功能的stream库，我只能说实在太好用了，一切都是那么清晰。
+  - 问了一下，初创公司，每个用户授权大概8000+
+
+- 好像是从15年版本后开始的，还有个1000次提交次数的限制，需要扩展人数可以联系我
+
+- ## 🌵 [Pijul is a free and open source (GPL2) distributed version control system | Hacker News _202402](https://news.ycombinator.com/item?id=39452543)
+- Do you know of any FOSS alternatives that handle that stuff better (specifically binary asset handling and permissions)?
+  - Pijul does binary files natively, actually. Permissions aren't hard to add, if anybody had a real-world case I'd be happy to help.
+
+- the places where I've seen people leverage the folder-level permissions in Perforce (in the games industry) would be like: a contractor that provides art would only have access to the portions of the project that relate to the art they're working on but not the code; translators might have read access on one directory and write access on another directory. 
+  - In academic settings I've seen Perforce used such that an instructor has read-write access on a directory and students have read-only access on the directory, and then each student has a subdirectory where they have read-write access and everyone else has read access, so that everyone can play each other's games. 
+  - You can do stuff like this in git with submodules but it's somewhat complicated and difficult to teach to non-programmers.
+  - The mathematical/theoretical foundations are clear, but the target audience is unclear, so I'm not sure if these are use-cases that you consider to be within the project's scope or not; just sharing how I've seen the permissions models used in the games industry.
+
+- some indies use Subversion, but Perforce is the industry standard.
+
+- Git compatibility is a great way around this problem. I have been enjoying Jujutsu lately.
+- Supporting conversion with some lossy tendencies is a good idea, but maintaining compatibility will stifle innovation as al bugs & design decisions cannot be fundamentally worked around.
+  - Adjacent, I heard folks praising Forgejo for its Actions & Microsoft GitHub compatibility, but that means you are still left with the same YAML spaghetti and its other limitations. What would have been nice is something better for CI--something that prompts the project to want to switch to get a better experience. 
+  - As such, while I agree with the moral reasons to switch to non-proprietary software, the reason for switching is philosophical, not philosophical + technical. I feel being a wrapper around Git or Git compatibility will likely fall in this category rather than being more compelling.
+- Not really. The real innovation of a lot of these alternative DVCS systems is that they free the state of the source from being dependent on the history that got you there. Such that applying patches A & B in that order is the same as applying B' & A' -- it results in the same tree. Git, on the other hand, hashes the actual list of changes to the state identifier, which is why rebasing results in a different git hash id.
+  - So long as you require git compatibility, you're kinda stuck with git's view of what history looks like. Which is rather the point.
+- jj is not patch based, like pijul, but snapshots, like git.
+  - A sibling commentor points out the change id stored by jj: it is true that at the moment, this isn't really exportable to git in a native way. However, there is a path forward here, and it may come to pass. Until then, systems like Gerrit or Phabricator work better with jj than systems like GitHub.
+- Jujutsu uses change IDs, which are an abstraction over commit IDs, that are stable over operations like rebasing.
+
+- So Pijul is patch-based. And not in the boring implementation-sense of storing changes as a series of patches. In the interesting sense that patches can be ordered in more arbitrary ways. 
+  - On the other hand Git is snapshot-based. And Git was built for the Linux Kernel (specifically from the perspective of the lead maintainer).
+- My understanding is that a big part of the reason that Git is snapshot based is for reliability and for ease of checkout -- being snapshot based means Git doesn't need to replay commits every time you check things out.
+  - That likely comes with some downsides (cherry-picking does come to mind, yes), but also seems like some serious upsides, one of the biggest one being that simplicity. It's relatively easy for me to reason about what Git is doing under the hood. 
+  - I like that I'm seeing that Pijul's patch operations are associative, I like at first glance what I'm seeing it say about merges, but it's not making it clear to me what the downsides are.
+- There's no reason you can't cache tree snapshots in a pijul/darcs setting. That's just an implementation detail. The difference is more in how a rebase or merge operation works internally, and how essential the particular history is to the current workplace state.
+
+- Pijul has a number of stated strengths over Git, and looks like the version history is implemented as a CRDT from my first impression. Some of the statements make me wonder how many conflicts occur in real use. If they are equal to or less than the number it produces, great. If more than what Git produces, that's a barrier to adoption, as merge conflicts are one of the biggest pains when using Git.
+  - 🐛 Git compatibility is a key missing feature. Git had this with Subversion, and I think it's a big reason why Git won over many of the Subversion crowd.
+
+- I'm watching this (and Jujitsu, Sapling, etc.) with interest, but I wish there was more focus on Git's real weak areas. Yes it sometimes makes merge conflicts more difficult than it could, but you can generally deal with that. 
+- 🐛 The bigger problems are:
+  * Poor support for large/binary files. LFS is bare-minimum proof of concept.
+  * Poor support for large projects. Big monorepo support is definitely getting better thanks to Microsoft. Submodules are a disaster though.
+  - The basic premise of Pijul is that the way they model changes leads to better merges, fewer conflicts, and (crucially) no cases of bad merges. Git can complete merges and do it incorrectly
+- Large/binary files: Pijul splits patches into operations + contents. You can download a patch saying "I added 1Tb there" without downloading any single byte of the 1Tb. No need to add any extra feature.
+  - Large projects: Pijul solves that easily using commutativity, you can work on partial repos natively, and your changes will commute with changes on other parts of the monorepo.
+
+- Just like how Sapling is compatible with GitHub, I'd love to see Pijul being compatible with GitHub wrt creating at least a read-only mirror.
+- Is sapling compatible? It gets rid of your .git directory.
+  - It's network compatible in that you can clone, pull, push, etc with a github repo.
+
+- All version control tools have the same problem since AFAIK none of them care about the semantics of the program being version-controlled (except Unison).
+
+- 🆚️ IIUC, Pijul has all the good parts of Darcs, with the exponential merge issue resolved.
+
+- Does Pijul handle branches better than Darcs? I _love_ using Darcs but I had to stop because there was no good way for my teammates to see my new branches (really separate repos) unless I told them myself.
+  - pijul fork. There you go, I wrote an entire key-value store just to get that to work. It turned out to be faster than all others, but that wasn't intentional.
 # discuss-fossil
 - ## 
 
 - ## 
 
-- ## 
+- ## 🔁⚖️ [The Fossil Sync Protocol | Hacker News _202402](https://news.ycombinator.com/item?id=39464938)
+- The problem with single file formats is they don't play nicely with file sync tools in what I'd call "common" scenarios.
+  - Due to the way it's laid out, a git bare repository will work quite well with a per-file syncing system because references are stored as files pointing at the hashed object store.
+  - So the worst you can do even without central coordination is have a reference conflict. I'm sure bad things can happen, but for the purposes of "keeping repos synced via syncthing" it works well enough (note: this is different to trying to keep a working repository synced, which I wouldn't recommend).
+
+- Since it uses SQLite under the hood, Fossil as a version control system might be able to scale much more gracefully than git for huge monorepos. I think about this often but haven't found a way to effectively use this knowledge yet, since I haven't worked in a giant monorepo shop yet, nor have I found any third parties talking about their experience with this.
+- 🐛 They tried using Fossil for netbsd (and may still use it for some things, I'm not sure). Fossil was not designed for large repositories
+  - [Fossil Forum: Fossil and large repos? _20200908](https://fossil-scm.org/forum/forumpost/5ad122663cbae98f)
+  - It could be optimized for that case, but since there doesn't seem to be a lot of interest, I don't know that anyone is going to do the work.
+
+- Microsoft uses git for Windows repository pretty successfully. It started with custom VFS implementation and fork of git but by now everthing is upstreamed and VFS is not used anymore.
+  - Git original implementation did not scale to huge sizes. Needed specific development work to change assumptions. Presumably similar design improvements could change fossil.
+
+- I love the concept of Fossil being in SQLite, but there's a reason that Mercurial invented revlogs and Git tries to keep related objects close to each other in packfiles. Sometimes, you really do need a dedicated file format optimized for specific use cases. I'm completely unsurprised OpenBSD wasn't able to pull this off.
+
+- For a large monorepo network filesystem approach is inevitable. Every local storage approach has limits and breaks down eventually.
+
+- > The "bag of artifacts" data model used by Fossil is apparently an implementation of a particular Conflict-Free Replicated Datatype (CRDT) called a "G-Set" or "Grow-only Set".
+  - Isn’t this just by virtue of content addressing objects? In that sense Git’s odb is also a G-set.
+- If you look at the definition of CRDTS, it seems trivial that all distributed scms must satisfy CRDT properties. Some observations are trivial once you think about it, but worth saying to connect to different audiences with different interests or backgrounds. I wouldn't be surprised if they added this because they got the question many times. The rest of the paragraph makes clear that they did not develop fossil in the context of CRDTs, and nothing in the rest of the document depends on this observation.
+
+- 🤔 Is this, or could this be modified to be, able to sync an sqlite database (or really the data it contains) between devices? I'm aware of other ways to do this but if there was an internal sqlite way to do this...
+  - No, this protocol doesn't deal with SQLite. In fact, SQLite in Fossil is just an implementation detail, the design doesn't depend on it.
 
 - ## [Fossil | Hacker News_202203](https://news.ycombinator.com/item?id=30815693)
 - Git's 'killer-feature' by now is simply its ubiquity
