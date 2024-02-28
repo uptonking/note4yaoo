@@ -221,6 +221,11 @@ modified: 2020-12-19T13:04:40.865Z
   - It's geared for server-side rendering out of the box, and its plugin-driven architecture allows for complex frontend and backend logic to be encapsulated in a single plugin
   - Because Fusion.js applications are universal, which means that apps have a single entry point, all code from React components to middlewares in Fusion.js plugins by default runs on both the server and browser.
 
+- https://github.com/rakkasjs/rakkasjs /MIT/202402/ts
+  - a bleeding-edge full-stack React framework powered by Vite. 
+  - You can consider it an up-and-coming alternative to Next.js, Remix, or Gatsby.
+  - Rakkas is fairly opinionated. If you need more flexibility, try vite-ssr-plugin/vike.
+
 - https://github.com/electrode-io/electrode
   - Web applications with node.js and React
   - universal webapp with server side rendering powered by node.js
@@ -264,10 +269,6 @@ modified: 2020-12-19T13:04:40.865Z
 - https://github.com/MrWangJustToDo/react-ssr-setup
   - React ssr setup, new ssr for react-18
   - 灵活的渲染方式 SSR CSR
-
-- https://github.com/rakkasjs/rakkasjs /MIT/202402/ts
-  - a bleeding-edge full-stack React framework powered by Vite. 
-  - You can consider it an up-and-coming alternative to Next.js, Remix, or Gatsby.
 # ssr-non-js
 - https://github.com/floodfx/undead /202312/java/js
   - LiveView server implementation for the JVM

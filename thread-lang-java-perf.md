@@ -9,8 +9,19 @@ modified: 2023-12-14T04:24:56.899Z
 
 # guide
 
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## 
 # discuss
 - ## 
+
+- ## 
+
+- ## 🔨 #performance #java friends: do you know of any tools which, given 2 versions of the same JMH benchmark results can compute the statistical diff with p-value out of it? 
+- https://twitter.com/forked_franz/status/1762422844762255524
 
 - ## ⚡️ Which tools and techniques do folks use for analyzing off-heap memory issues within Java apps (say, with RocksDB)? 
 - https://twitter.com/gunnarmorling/status/1756233380360835449

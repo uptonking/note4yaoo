@@ -26,6 +26,15 @@ modified: 2021-01-21T17:52:13.333Z
 
 - ## 
 
+- ## 
+
+- ## Do people still follow the 80 column width rule for code?
+- https://twitter.com/sunbains/status/1762593260927873110
+- Yes, it makes the code much easier on the eye. Helps in readability.
+- I stick to 80chars pretty religiously. It's easier to read tall and arrow text. Also let's me keep a bunch of stuff visible on the screen at once.
+
+- If you work on a large monitor (>24 inches) most of the time, having a 100-120 column width is reasonable.
+
 - ## I feel automatic dependency management actually does more harm than good
 - https://twitter.com/gunnarmorling/status/1759294666699092049
 - I wish there would be an option to disable transitive pulling in Maven/Gradle. Would make this a much more aware process to library creators and consumers alike
@@ -85,9 +94,9 @@ modified: 2021-01-21T17:52:13.333Z
 
 - 这里可能有个悖论, 自己造轮子 研发成本高, 不自己造轮子 显不出技术“高明”, 结果是 996 劣质轮子 遍地都是…
 
-01.     大概率没有开源的好
-02.     造轮子就要维护一个轮子迭代维保团队
-03.     迭代维保团队和其他团队无限的撕逼
+01.       大概率没有开源的好
+02.       造轮子就要维护一个轮子迭代维保团队
+03.       迭代维保团队和其他团队无限的撕逼
 
 - ## Five terms I avoid when naming things:
 - https://twitter.com/housecor/status/1742197661837476018

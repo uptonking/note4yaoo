@@ -20,7 +20,11 @@ modified: 2023-09-24T19:05:33.866Z
 
 - ## 
 
-- ## 
+- ## 各种流行的orm都有一些先天性的不足，比如很难描述partition, merge into和CTE等高级请求，甚至是复杂一点的transaction。
+- https://twitter.com/geniusvczh/status/1762750265089007886
+  - 这些硬伤会导致你哪一天真的用上的时候，会发现手写sql难以跟用了orm的部分保持状态的一致性，最后只能全部代码删掉重来。这才是我认为orm 不好的的地方
+- 最麻烦的一点是，代码里用了ORM的模型，就得处处使用，还不如自建模型，底层用原生SQL和DB Helper函数hybrid编写。
+- 所以我觉得说不定可以把数据访问层搞成接口，前期用EF实现，后期有必要的话用裸SQL/SP慢慢重写就行了。
 
 - ## 💡 what would the functional equivalent of an ORM look like?
 - https://twitter.com/Aron_Adler/status/1751208146498957430

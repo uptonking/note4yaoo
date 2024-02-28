@@ -216,7 +216,9 @@ modified: 2023-03-05T08:55:03.696Z
 
 - ## 
 
-- ## 
+- ## 🤼🏻 react-query doesn't do data-fetching - it's an async state manager based on promises, so you don't need to copy data from react-query into another state manager.
+- https://twitter.com/TkDodo/status/1762544165211050236
+- Same for SWR, I use it for all states including sync and local ones like localStorage.
 
 - ## Where’s the best place to put a useQuery when using TanStack’s React Query? 
 - https://twitter.com/dkapper01/status/1719439612257489116

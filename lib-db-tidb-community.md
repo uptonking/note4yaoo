@@ -43,7 +43,6 @@ modified: 2024-02-08T16:04:30.976Z
   - Return the data to the client.
 - TiKV has a query push down mechanism called Coprocessor to reduce the traffic between the nodes.
 
-
 - ## TiDB Serverless is a MySQL compatible true Serverless solution. 
 - https://twitter.com/sunbains/status/1755265066629570974
   - Doesn’t use any MySQL code and is architected to leverage the elasticity of the cloud infrastructure with goodies like disaggregated storage (primary storage is S3, which reduces cost significantly), query pushdown, optimized for space efficiency and lots more
@@ -53,4 +52,8 @@ modified: 2024-02-08T16:04:30.976Z
 
 - ## 
 
-- ## 
+- ## 🧩 I want to explain consistency in TiDB because it's a distributed database
+- https://twitter.com/sunbains/status/1762212381982429194
+  - Consistency originated in the world of CPUs when researchers started reasoning about shared memory systems. It was borrowed from there by the databases researches to explain  consistency in single node databases where concurrent transactions work on shared state. 
+  - In the database world, you additionally need to think about isolation to achieve whatever level of consistency you are aiming for. It's the I in ACID, and isolation levels are used to  reason about what happens when concurrently executing transactions are running at different isolation levels.
+  - In the distributed database world consistency  means that an observer sees the same data on all the replicas ie. consistent view. If clients don't see the same state of the distributed  system we can say that their view of the distributed system is inconsistent.

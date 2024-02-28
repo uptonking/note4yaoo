@@ -7,8 +7,10 @@ modified: 2023-06-14T00:53:15.226Z
 
 # dev-ing-log-debug
 
-# dev-2023
+# guide
 
+# tips
+- 前端页面有时无法捕获鼠标事件，可尝试先F12关闭devtools控制台，再重启服务，然后页面可能就能正常交互了，再F12打开控制台调试异常
 # issues
 
 ## 

@@ -26,6 +26,15 @@ modified: 2023-12-15T19:40:39.912Z
   - TL; DR: Check out the @GraalVM JDK distribution and its JIT compiler if you want some extra performance for your @Java applications
 - ### 🆚️⚡️ [JVM Performance Comparison for JDK 21 – Ionut Balosin _202402](https://ionutbalosin.com/2024/02/jvm-performance-comparison-for-jdk-21/)
 
+# discuss-news-java
+- ## 
+
+- ## 
+
+- ## "JEP 467: Markdown Documentation Comments"
+- https://twitter.com/gunnarmorling/status/1762719948709806338
+  - Yes, finally! Being able to use Markdown in #JavaDoc should make live a bit easier. Can't wait!
+
 # discuss
 - ## 
 

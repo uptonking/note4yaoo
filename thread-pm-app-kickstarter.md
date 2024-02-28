@@ -108,7 +108,7 @@ modified: 2021-10-29T15:02:28.882Z
 - 在OA领域做过好几年的开发实施，曾经有用户抱怨过，我原来找领导签字，现在用你们这个系统，我已经好久没见过领导了。对她来说，这是弊端，因为她需要各种借口去找领导。一些常见OA的功能模块并无用处，比如车辆管理、会议室管理、易耗品领用。但是OA审批还是比线下纸件快的多
   - 还有，某甲方领导和我说，没系统的时候，各部门买电脑的申请送来，大多数时候直接通过，有了系统，很方便看看该部门买过多少台电脑，是不是够用了。
 
-- ## 创业公司如何面对竞争 
+- ## 创业公司如何面对竞争
 - https://twitter.com/Tisoga/status/1729398498590933428
   - Paul Graham 给的建议是：ignore competitors; just make something people want.
   - 专注创造价值。
@@ -168,8 +168,17 @@ modified: 2021-10-29T15:02:28.882Z
 # ideas
 - ## 
 
-- ## 
+- ## 一些词汇背后的意思
+- https://twitter.com/mayneyao/status/1762379955542077628
+  Selfhost - 部署可能需要服务器/docker
+  PWA - 我们没钱做 app
+  Electron - 我们没钱做 app 
+  Tauri - 我们没钱做 app 还踩了很多坑
+  Local first - 多设备同步、备份之类的还是得上云
+  Realtime collaboration - 我们是 2B 的
+  AI features - 我们调 openai 的 API
 
+- 有段时间我没钱续费vps了，把wp搬到本地完全local Wordpress，定期生成html文件上传到GitHub 备份
 - ## 独立开发者可以和大厂产品竞争的逻辑是什么？
 - https://twitter.com/lvloomystery/status/1761995316566585363
   - 你的成本足够低，只需要覆盖自己的薪资成本和服务器成本，没有管理成本。​更低的成本意味着更低的定价，哪怕不赚钱，开源为自己积累粉丝也是可以的。但是大厂的逻辑不是这样的，他们需要算roi，需要盈利。

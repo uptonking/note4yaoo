@@ -30,7 +30,11 @@ modified: 2023-08-28T04:43:22.738Z
 # discuss
 - ## 
 
-- ## 
+- ## How do you track memory usage in Rust async? 
+- https://twitter.com/BohuTANG/status/1762675998997577928
+  - For a data warehouse developed in Rust, like Databend, tracking and controlling memory usage is very challenging and has consumed a lot of our effort.
+
+- Write your own runtime or drop the async ecosystem ... A Data INFRA System always ends with its own runtime.
 
 - ## [rust 的异步为什么要把网络库重新写一遍？ - 知乎](https://www.zhihu.com/question/556880425)
 - go 的异步是有栈协程，无传染性，任意函数调用里都可以切换控制权。底层网络库可以选择切换，也可以选择阻塞，不一定需要提供两套 API。 go runtime 本身就是异步运行时，标准库自然都是异步的。

@@ -50,9 +50,6 @@ https://meeting.tencent.com/p/9606972663
   - https://code-mentor.ai/
 
 ```shell
-flatpak run com.discordapp.Discord --proxy-server="socks5://127.0.0.1:1080"
-betterdiscordctl -i flatpak install
-
 # delete all node_modules folders recursively
 rm package-lock.json && find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +
 
@@ -61,6 +58,9 @@ rm package-lock.json && find . -name 'node_modules' -type d -prune -exec rm -rf 
 DEBUG=* npm install --legacy-peer-deps --no-audit --loglevel silly
 
 $$('[contenteditable]')
+
+flatpak run com.discordapp.Discord --proxy-server="socks5://127.0.0.1:1080"
+betterdiscordctl -i flatpak install
 ```
 
 - dev-goals 不能在产品中检验的技术不玩，注意产品化
@@ -320,6 +320,34 @@ $$('[contenteditable]')
 # dev-02
 
 ## 022
+
+## 0228
+
+- [reactjs - How to use Private route in react-router-dom@v6 - Stack Overflow](https://stackoverflow.com/questions/69923420/how-to-use-private-route-in-react-router-domv6)
+
+```JSX
+import { Navigate, type RouteProps } from 'react-router-dom'; 
+
+export function PrivateRoute({ children }: RouteProps) {
+  const isLoggedIn = checkUser() // check cookie or local storage etc
+  return (
+     isLoggedIn
+        ? children
+        : <Navigate to="/sign-in"/>
+  );
+}
+
+// <Route path="/" element={ <PrivateRoute> <AdminPage /> </PrivateRoute> } />
+```
+
+- [node.js - Error [ERR_PACKAGE_PATH_NOT_EXPORTED]: Package subpath './lib/tokenize' is not defined by "exports" in the package.json of a module in node\_modules - Stack Overflow](https://stackoverflow.com/questions/69693907/error-err-package-path-not-exported-package-subpath-lib-tokenize-is-not-d)
+  - Remove node_modules folder and .lock file and re-install your packages (yarn or npm). It worked for me with last 17.0.1 of nodejs, I can npm (or yarn) start my app again.
+
+- [Disable ESLint that create-react-app provides - Stack Overflow](https://stackoverflow.com/questions/55821078/disable-eslint-that-create-react-app-provides)
+  - `DISABLE_ESLINT_PLUGIN=true react-scripts start`
+
+- [How can I disable all typescript type checking? - Stack Overflow](https://stackoverflow.com/questions/54506744/how-can-i-disable-all-typescript-type-checking)
+  - `TSC_COMPILE_ON_ERROR=true`
 
 ## 0225
 

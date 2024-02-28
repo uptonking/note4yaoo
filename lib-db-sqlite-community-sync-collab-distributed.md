@@ -12,7 +12,13 @@ modified: 2023-10-26T19:03:22.063Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## Figured out a new recipe for tracking SQLite table history using a JSON audit log and a somewhat terrifying set of nested `json_patch()` SQL functions
+- https://twitter.com/simonw/status/1762296697886257267
+- Is this to make a crdt table?
+  - No, just an audit log - would be interesting if you could use it for full CRDTs though
+- This is essentially how the CRDT based sync in @ElectricSQL works in the client SQLite. Triggers record all changes in a oplog table as JSON. These are then synced to/from Postgres over a websocket. We have rules that apply LWW and compensations to maintain referential integrity.
+- Am using a similar approach in postgres. Except a function to update json columns rather than a trigger. And implemented in JavaScript (postgres `plv8` extension).
+
 # discuss-SQLSync
 - ## 
 

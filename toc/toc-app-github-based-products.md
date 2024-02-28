@@ -53,7 +53,7 @@ modified: 2023-04-13T03:32:04.013Z
   - A component library for building webview-based extensions in Visual Studio Code.
   - [Webview API | Visual Studio Code Extension API](https://code.visualstudio.com/api/extension-guides/webview)
 # popular
-- https://github.com/pingcap/ossinsight /ts
+- https://github.com/pingcap/ossinsight /apache2/202402/ts
   - https://ossinsight.io/
   - OSS Insight is a powerful tool that provides comprehensive, valuable, and trending insights into the open source world by analyzing 5+ billion rows of GitHub events data.
   - OSS Insight's Data Explorer provides a new way to explore GitHub data. Simply ask your question in natural language and **Data Explorer will generate SQL**, query the data, and present the results visually.

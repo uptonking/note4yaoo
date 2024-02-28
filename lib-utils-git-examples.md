@@ -9,6 +9,8 @@ modified: 2023-08-29T10:12:22.345Z
 
 # guide
 
+- git-powered
+  - 对git的统计可参考 https://github.com/pingcap/ossinsight
 # popular
 - https://github.com/isomorphic-git/isomorphic-git /7kStar/MIT/202307/js
   - https://isomorphic-git.org/

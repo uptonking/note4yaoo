@@ -49,9 +49,6 @@ function range(start, end) {
 }
 ```
 
-# react
-- cra
-  - `npm x -- create-react-app react-cra-ts --template typescript --use-npm`
 # npm-cli
 - config-settings
   - prefix
