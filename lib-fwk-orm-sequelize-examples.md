@@ -14,23 +14,30 @@ modified: 2023-02-05T18:50:32.900Z
 
 - resources
 # popular
-- https://github.com/masb0ymas/expresso-sequelize /MIT/202401/ts/提交多/功能丰富
+- https://github.com/masb0ymas/expresso-sequelize /MIT/202402/ts/提交多/功能丰富
   - https://expresso.masb0ymas.com/
+  - expresso with Sequelize
+  - 依赖axios、express-rate-limit、i18next-fs-backend、multer、node-cron、pg-hstore、sequelize-typescript2、zod
   - Sequelize ORM v6.x + Sequelize TypeScript v2.x
   - Handlebars for templating HTML
-  - Using Module Alias for simplify the require/import paths
   - Documentation with Swagger，但测试create user失败
   - 还提供了typeorm、mongoose版本
-  - v5_20230404: improve apps with service pattern
+  - 💡📡 可参考实现knex版
+  - v5_20230404: improve apps with service pattern, 将工具lib拆分到了单独仓库
   - https://github.com/masb0ymas/expresso
-    - core + hooks + provider + query
+    - Library for expresso Template: core, hooks, query, provider
+    - Storage Provider ( Aws S3, Google Cloud Storage, and MinIO )
+    - Memory Cache ( ioredis )
+    - Permission Access per Endpoint API
+  - https://github.com/masb0ymas/expresso-typeorm /MIT/202401/ts
+  - https://github.com/masb0ymas/expresso-mongoose /202210/ts/inactive
   - https://github.com/masb0ymas/koala-sequelize-typescript /202103/ts/inactive
+    - Just Boilerplate Koa, Sequelize and TypeScript 
   - https://github.com/masb0ymas/expresso-gateway
     - Api Gateway with Express TypeScript
-  - https://github.com/masb0ymas/expresso-typeorm
-  - https://github.com/masb0ymas/expresso-mongoose
 
 - https://github.com/bissbr01/Command-project-management /202301/ts/inactive
+  - https://scrum-management-frontend.onrender.com/
   - A Scrum Management App for teams
   - 依赖reduxjs-toolkit、mantine、dnd-kit、formik
   - 提供了project、team等基础功能，还支持看板
@@ -59,11 +66,11 @@ modified: 2023-02-05T18:50:32.900Z
   - Compatible with React Admin Simple Rest Data Provider. 
   - The lib is ORM agnostic
   - https://github.com/lalalilo/express-crud-router-sequelize-v6-connector /202308/ts
-  - https://github.com/nicgirault/ra-toolkit
+  - https://github.com/nicgirault/ra-toolkit /202309/ts
     - Additional react-admin components & hooks
 
-- https://github.com/MyungWanPark/shopping-mall-backend /202401/ts
-  - https://github.com/MyungWanPark/shopping-mall-frontend
+- https://github.com/MyungWanPark/shopping-mall-backend /202303/ts/inactive
+  - https://github.com/MyungWanPark/shopping-mall-frontend /202303/ts/inactive
   - https://shoppingmall-myungwan.netlify.app/
   - 后端express、sequelize、mysql、jwt
   - 前端依赖react、mui、ApexCharts、axios
@@ -93,7 +100,7 @@ modified: 2023-02-05T18:50:32.900Z
   - https://github.com/astrosoftpro/sequelize-hierarchy-next
   - https://github.com/SecurityESys/sequelize-hierarchy
 
-- https://github.com/grantcarthew/node-mppg /js/inactive
+- https://github.com/grantcarthew/node-mppg /MIT/202112/js/单文件/inactive
   - The Materialized Paths pattern is a simple method to store tree or hierarchical data into a flat data store. 
   - It stores each tree node as a row in a table. 
   - Each row stores the identifiers of the node’s ancestors or path as a string.
@@ -117,21 +124,23 @@ modified: 2023-02-05T18:50:32.900Z
   - 全功能论坛：板块/楼中楼/角色权限/审核/富文本编辑/个性化配置/邮件通知 等
   - 自带授权登录：免开发支持 QQ/微信/支付宝 授权登录
 
-- https://github.com/PelagicCreatures/marlin /202204/js/pug/inactive
-  - An ExpressJS CMS for sites with Sequelize db backends
-  - Data model driven database (sequelize)
-  - Admin data editing UI suite automatically built from data model
-  - ACL access control on tables by user role (superuser, admin, etc.)
-  - https://github.com/PelagicCreatures/marlin-app /202109/js/pug
-    - a boilerplate app that includes many common functions of a web site/app featuring registered users. 
-    - we use HIJAX to load pages after the initial load. 
-    - 【DOM编程艺术】 Hijax---渐进增强地使用Ajax 
-    - 按照老传统，让表单把整个页面都提交到服务器，然后服务器再发回来一个包含反馈的新页面，所有处理操作都在服务器上完成
-    - 为了给这个登录表单添加AJAX功能，就需要拦截提交表单的请求,让XMLHttpRequest请求来代为发送
-
 - https://github.com/FujiBilly/partition-sequelize-ts /201909/js
   - 改进 sequelize-typescript 库使其支持 Postgresql 10/11版本的分区表
+- https://github.com/sequelize/sequelize-typescript /MIT/202311/ts
+  - Decorators and some other features for sequelize (v6).
+  - [Any plan to support sequelize 7? _202301](https://github.com/sequelize/sequelize-typescript/issues/1564)
+    - Decorators are being implemented directly into the sequelize package as of v7 with same/similar API for compatibility. I think some of the functionality might already been ported in early alpha versions.
+  - [Is this repo still maintained? _202210](https://github.com/sequelize/sequelize-typescript/issues/1452)
+    - Development on sequelize-typescript is indeed slowing down. 
+    - Luckily sequelize-typescript will be merged with sequelize for the next major release (v7) under the NPM package @sequelize/core
+    - sequelize-typescript is being sunsetted because we're merging it into core.
+  - [Question: Any blog post explaining why someone should use this package instead of just using sequelize? _202304](https://github.com/sequelize/sequelize-typescript/issues/1628)
+    - In sequelize v7 these features are part of sequelize itself so there is no need to use sequelize-typescript anymore.
 # v7
+- https://github.com/bitovi/bitscaffold /202305/ts
+  - Scaffold is a web application framework designed to accelerate the development of new, or enhancement of existing, CRUD applications.
+  - Create a new Koa + Scaffold 
+
 - https://github.com/tapiwakundi/movies-api /js
   - simple example
 
@@ -146,7 +155,7 @@ modified: 2023-02-05T18:50:32.900Z
   - 后端依赖express、2版sequelize、minimist
   - https://github.com/haandev/easystate-dashboard
 
-- https://github.com/fdc1010/cffi-admin-dashboard
+- https://github.com/fdc1010/cffi-admin-dashboard /202211/js/inactive
   - CFFI Admin Dashboard powered by Argon Dashboard 2 MUI 
 
 - https://github.com/Hemocione/competitions-backend
@@ -223,6 +232,11 @@ modified: 2023-02-05T18:50:32.900Z
 - https://github.com/liadber/together /202401/ts/angular
   - a basic social network designed for entrepreneurs. 
   - Users can create profiles, share projects, 
+
+- https://github.com/GeneralBots/BotServer /AGPLv3/202402/ts
+  - https://gb.pragmatismo.com.br/
+  - Bot Server accelerates the process of developing a bot. It provisions all code base, resources and deployment to the cloud, and gives you templates you can choose from whenever you need a new bot. 
+  - The server has a database and service backend allowing you to further modify your bot package directly by downloading a zip file, editing and uploading it back to the server (deploying process) with no code
 
 - https://github.com/attila-huszar/fox-ticket /202402/ts
   - Fox Ticket Full Stack Project
@@ -307,31 +321,46 @@ modified: 2023-02-05T18:50:32.900Z
 
 - https://github.com/felipecal/Api-Sequelize /MIT/202402/ts/提交多
   - This is a simple CRUD api in TypeScript, sequelize, aws rds or docker database.
-  - 依赖express、sequelize、swagger-ui-express、bcrypt
+  - 依赖express、sequelize、swagger-ui-express、bcrypt、jsonwebtoken
   - AWS RDS or Docker Database
   - Swagger - Documentation
+
+- https://github.com/osamaAbdullah/express_template /202402/ts/结构合理
+  - 依赖sequelize7、express-session、passport-local、vinejs(validate)
+  - 未实现jwt
 
 - https://github.com/nmanikiran/rest-api-node-typescript /202106/ts/inactive
   - simple REST API with node and express with typescript
   - 架构典型，可通过api访问数据 http://localhost:3009/api/lessons
-  - 不支持jwt
+  - 未实现jwt
 
 - https://github.com/ljlm0402/typescript-express-starter /202301/ts
   - Express RESTful API Boilerplate Using TypeScript，可选参数的模版项目
   - 支持mongoose、多种orm、graphql
-- https://github.com/SamuelMarks/restify-orm-scaffold /202402/ts
-  - Simple baseline scaffold to get you started using TypeORM and/or Sequelize and/or Waterline on restify with TypeScript.
 
 - https://github.com/Thre4dripper/NodeTs-Express-Service-Based-Template /MIT/202401/ts
   - configurable Node.js, Express, and TypeScript server template with a service-based architecture 
   - Sequelize/Mongoose
-  - Database Compatibility: Interact with MySQL, PostgreSQL, MariaDB, Sqlite, MSSql, MongoDB.
+  - 依赖axios、express、jsonwebtoken、swagger-ui-express
+  - Database Compatibility: Interact with MySQL, PostgreSQL, MariaDB, Sqlite, MSSql, MongoDB
 
 - https://github.com/codespede/pwoli /BSD/202303/ts
-  - Pwoli is a NodeJS/TypeScript framework written in TypeScript which can work independantly on a raw NodeJS/TypeScript environment OR, in co-ordination with any other frameworks or libraries like Express.js.
-  - Pwoli can connect to any kind of ORMs by implementing thier corresponding ORM Adapters and works with Sequelize and Mongoose 
+  - https://codespede.github.io/pwoli/rest-api
+  - https://codespede.github.io/pwoli/input-forms
+  - a NodeJS/TypeScript framework written in TypeScript which can work independently on a raw NodeJS/TypeScript environment OR, in co-ordination with any other frameworks or libraries like Express.js.
+  - 依赖ejs、fs-extra、typedoc
+  - Pwoli can connect to any kind of ORMs by implementing their corresponding ORM Adapters and works with Sequelize and Mongoose 
+  - For any other DB/ORM support, an ORM Adapter implementing `IORMAdapter` has to be implemented. 
+  - Fully flexible and extensible - thanks to the OOP based architecture
+  - Frontend widgets like ActiveForm, GridView, ListView for SSR(Server Side HTML Rendering) applications.
+  - Works on both raw NodeJS and TypeScript applications.
+  - Pwoli is inspired from PHP's Yii framework.
 
-- https://github.com/Thre4dripper/node-server-init /202401/ts
+- https://github.com/SamuelMarks/restify-orm-scaffold /202402/ts
+  - Simple baseline scaffold to get you started using TypeORM and/or Sequelize and/or Waterline on restify with TypeScript.
+  - 无架构，仅实现了user/auth api
+
+- https://github.com/Thre4dripper/node-server-init /202401/ts/偏向cli
   - initializing Node.js server projects with customizable configurations.
   - npx node-server-init my-server
   - Sequelize & Mongoose: Integrations with Sequelize for SQL database operations and Mongoose for MongoDB.
@@ -400,6 +429,9 @@ modified: 2023-02-05T18:50:32.900Z
   - https://github.com/GabrielGameDev/geek-script-front
   - This repository is the final project for the Gama Academy Web Development course
   - 实现了登录，未实现注册
+
+- https://github.com/Billeclipse/Supercharging-Node.js-Applications-with-Sequelize-Project /202311/js
+  - My version of a learning project on an educational course/book from Packt named "Supercharging Node.js Applications with Sequelize"
 # auth
 - https://github.com/diegomottadev/auth-base-app /202402/ts
   - This repository contain a REST API project for creating users, user roles, and user authentication using Node.js, Express.js, and Sequelize with TypeScript.
@@ -416,21 +448,27 @@ modified: 2023-02-05T18:50:32.900Z
   - Express Login example (with Registration) using JWT, Cookies, MySQL database
   - [Node.js Express: Login and Registration example with JWT](https://www.bezkoder.com/node-js-express-login-example/)
 
+- https://github.com/cornflourblue/node-mysql-registration-login-api /MIT/202008/js
+  - Node.js + MySQL API for User Management, Authentication and Registration
+  - 依赖sequelize6、express-jwt、express-jwt、bcryptjs
+  - https://github.com/cornflourblue/react-redux-registration-login-example /202008/js
+  - https://github.com/cornflourblue/react-redux-jwt-authentication-example /202006/js
+
 - https://github.com/kylewhittemore/react-sequelize-template /202105/js
   - Full-stack react with passport js local strategy for authentication
 # utils
-- https://github.com/mujz/pg-search-sequelize /js/inactive
+- https://github.com/mujz/pg-search-sequelize /201711/js/inactive
   - Postgres full-text search in Node.js and Sequelize.
   - https://github.com/mujz/pg-search-sequelize-example /js/inactive
     - An example use case of pg-search-sequelize
 
-- https://github.com/tylerjpeterson/sequelize-history /js
+- https://github.com/tylerjpeterson/sequelize-history /201912/js
   - This module will setup automatic revision tracking for any Sequelize model. 
   - This is effectively a re-write of sequelize-temporal
-- https://github.com/nielsgl/sequelize-paper-trail /js
+- https://github.com/nielsgl/sequelize-paper-trail /201909/js
   - Sequelize plugin for tracking revision history of model instances.
 
-- https://github.com/andyforever/sequelizer
+- https://github.com/andyforever/sequelizer /202211/js
   - A GUI Desktop App for export sequelize models from database automatically.
 
 - https://github.com/sequelize/sequelize-auto /202112/ts
@@ -442,9 +480,6 @@ modified: 2023-02-05T18:50:32.900Z
 
 - https://github.com/TeamMaestro/sequelize-common /202308/ts
   - A common set of models and functions that we use throughout most of our Sequelize projects
-
-- https://github.com/sequelize/sequelize-typescript
-  - Decorators and some other features for sequelize (v6).
 
 - https://github.com/doralteres/express-sequelize-autocrud /MIT/202402/ts
   - library designed to simplify the creation of CRUD (Create, Read, Update, Delete) routes for your Sequelize models in an Express.js
@@ -512,8 +547,9 @@ modified: 2023-02-05T18:50:32.900Z
   - Other implementations: DAO, Sequelize, Service
   - https://github.com/Judahh/sequelizePersistence
 
-- https://github.com/sugarandmagic/sequelize-mv-support /MIT/ts
+- https://github.com/sugarandmagic/sequelize-mv-support /MIT/202211/ts/inactive
   - This package adds support for Views and Materialized Views in Sequelize.
+  - NOTE: Currently it's only supported in PostgreSQL.
   - We're heavy users of views and materialized views, but we use Sequelize a lot for bootstrapping and testing database schema. 
   - this module adds support for both views and materialized views to Sequelize, as well as properly exporting typescript declarations.
   - All the original Sequelize methods and options still work with this module
@@ -578,6 +614,25 @@ modified: 2023-02-05T18:50:32.900Z
   - Create a stream of Sequelize create, update, and destroy events. 
   - This is useful if you want to build a real-time stream of events in your database.
 # cms
+- https://github.com/PelagicCreatures/marlin /202204/js/pug/inactive
+  - An ExpressJS CMS for sites with Sequelize db backends
+  - Data model driven database (sequelize)
+  - Admin data editing UI suite automatically built from data model
+  - ACL access control on tables by user role (superuser, admin, etc.)
+  - https://github.com/PelagicCreatures/marlin-app /202109/js/pug
+    - a boilerplate app that includes many common functions of a web site/app featuring registered users. 
+    - we use HIJAX to load pages after the initial load. 
+    - 【DOM编程艺术】 Hijax---渐进增强地使用Ajax 
+    - 按照老传统，让表单把整个页面都提交到服务器，然后服务器再发回来一个包含反馈的新页面，所有处理操作都在服务器上完成
+    - 为了给这个登录表单添加AJAX功能，就需要拦截提交表单的请求,让XMLHttpRequest请求来代为发送
+
+- https://github.com/duhdugg/preaction-cms /MIT/202303/js/inactive
+  - https://duhdugg.github.io/preaction-cms/
+  - a barebones, extensible Content Management System built on top of simple JavaScript libraries. 
+  - When starting the server, lib/ext scans the `ext` directory for other directories containing an `index.js` file
+  - By default, Preaction CMS only supports 5 block types: Carousel, Content, Iframe, Navigation, and Spacer. You can add more block types by putting them in the `blockExtensions` object in `src/ext/index.js`.
+  - You should run Preaction CMS behind a reverse-proxy such as Nginx.
+
 - https://github.com/ezy/seedpress-cms /201807/js
   - A headless CMS built in Express for PostgresQL using Sequelize. 
   - Generally follows the Wordpress post and term schema.

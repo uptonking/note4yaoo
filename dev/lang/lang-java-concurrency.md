@@ -64,7 +64,10 @@ modified: 2022-12-19T01:59:01.628Z
 
 - ## 
 
-- ## 
+- ## 可能是暴论，但我认为高性能并发编程最佳选项始终是Go语言的goroutine和channel。
+- https://twitter.com/stephenzhang233/status/1762883684456390874
+  - 其他高级语言的并发模型难以实现Go那样接近硬件的控制和精细的任务管理。
+  - 比如，Java的并发机制虽然增强了线程安全，却带来了复杂的同步控制、庞大的线程管理负担，以及上下文切换的性能开销。
 
 - ## [Java中synchronized锁和Lock锁在CPU层的实现，或者说在JVM层的实现是否是一致的？ - 知乎](https://www.zhihu.com/question/332327455)
   - 一致指的是都是用CAS指令来判断是否可以获取锁，只不过synchronized底层封装了该指令，Lock锁显示调用了该指令并提供了更为灵便的操作方式？

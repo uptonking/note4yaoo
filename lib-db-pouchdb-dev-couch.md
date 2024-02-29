@@ -110,6 +110,8 @@ modified: 2024-01-04T06:53:04.003Z
   - couchbase discord
   - [IBM Cloudant](https://www.ibm.com/cloud/cloudant)
   - [couchdb-user-archive - Google Groups](https://groups.google.com/g/couchdb-user-archive)
+# not-yet
+- ❓ 是否是存储与计算分离的
 # draft
 - nonsyncable/local-only tables for config/temporary-data
   - local documents解决了此问题

@@ -35,7 +35,12 @@ modified: 2022-08-21T10:15:06.225Z
 
 - ## 
 
-- ## 
+- ## A great example of where multiplayer spreadsheet sync is hard to get right. 
+- https://twitter.com/AJNandi/status/1763017297785213158
+  - Inserting rows needs to expand formula references that contain the index where the row was inserted. 
+  - And recalculating needs to account for these new dependencies on all clients.
+
+- Have you looked at Croquet style reflector networks as a means of implementing multiplayer spreadsheet?
 
 - ## After working on CSV parsing for the past two months, I'm convinced that 98% of the time spent on building a CSV reader is dealing with semi-broken files.
 - https://twitter.com/holanda_pe/status/1650760335823970304

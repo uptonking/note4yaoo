@@ -29,6 +29,15 @@ modified: 2021-01-04T19:34:22.729Z
 
 - ## 
 
+- ## 
+
+- ## ✨ [Refactor reactivity system to use version counting and doubly-linked list tracking · Pull Request #10397 · vuejs/core _20240224](https://github.com/vuejs/core/pull/10397)
+- This PR refactors the core reactivity system to use version counting and a doubly-linked list data structure inspired by Preact signals.
+
+- our priority is making improvements while retaining backwards compatibility, not "winning" in arbitrary micro-benchmarks. We will appreciate any constructive feedback, but being a tongue-in-cheek jerk won't help your library get more adoption.
+
+- The result seems to be based on Vue 3.4.x rather than this PR. I'm also curious as to why 3.4 produces unnecessary recalculations
+
 - ## [Is there a library like Preact for React, but for Vue? : vuejs](https://www.reddit.com/r/vuejs/comments/pp4o1s/is_there_a_library_like_preact_for_react_but_for/)
 - Not a direct comparison but this exists: https://github.com/vuejs/petite-vue
 

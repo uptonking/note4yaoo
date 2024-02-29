@@ -13,6 +13,22 @@ modified: 2021-08-10T03:51:01.891Z
 
 - ## 
 
+- ## 
+
+- ## Question for other library authors: how do you handle experimental code? 
+- https://twitter.com/steveruizok/status/1763119013243007438
+  - We have a feature flag system in tldraw but mainly for our dotcom/application layer. 
+  - It makes me nervous to ship experimental code in the library releases.
+- Follow the React model, e.g. `unstable_new_thing` ?
+- for libraries, it could be a constructor option with a very explicit name like `UNSTABLE_<featureName>` .
+
+- We do this in @getunleash : Feature flags are part of our code. 
+  - In our cloud they are resolved using an internal Unleash Instance. 
+  - For self-hosted, we have zero insights, so it's treated as static configuration, and the user can opt-in by setting the experimental flag.
+- Our code is open, so you can inspect it yourself. For our cloud we simply provide the Unleash SDK as a dynamic flag resolver.
+
+- Future flags from remix is an awesome concept
+
 - ## 💡 I have a "give it 5 years" rule for assessing tech trends. It's not performant but reliable.
 - https://twitter.com/rednafi/status/1761727361047835072
   - GraphQL, Prisma, and many other JS zeitgeists didn't pass the filter. 

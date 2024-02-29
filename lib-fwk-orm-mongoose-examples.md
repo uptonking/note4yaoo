@@ -66,8 +66,13 @@ modified: 2023-02-05T18:50:53.563Z
 
 - https://github.com/braitsch/node-login /MIT/202104/js
   - A template for quickly building login systems on top of Node.js & MongoDB
-- https://github.com/cornflourblue/node-mongo-registration-login-api /MIT/20207/js
+
+- https://github.com/cornflourblue/node-mongo-registration-login-api /MIT/202007/js
   - NodeJS + MongoDB API for User Management, Authentication and Registration
+  - 依赖mongoose、express-jwt、jsonwebtoken、bcryptjs
+  - https://github.com/cornflourblue/react-redux-registration-login-example /202008/js
+  - https://github.com/cornflourblue/react-redux-jwt-authentication-example /202006/js
+
 - https://github.com/Mohammed-Abdelhady/FULL-MERN-AUTH-Boilerplate /202003/js
   - MERN Authentication, Login, Register, verification email, Facebook, Google, Forget Password
 # examples

@@ -12,7 +12,15 @@ modified: 2023-11-01T10:08:09.232Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## Don’t stack your Log on my Log
+- https://twitter.com/eatonphil/status/1762920320585879627
+- Related: LSM without WHL (2022)
+  - Interesting as an LSM trees uses ... a log; the WHL required for recovery requires... a log. Can we just drop one ? It seems that the answer is yes. Just Looking into it.
+- You build a replicated database for MySQL (or postgres) on top of RocksDB on top of Raft on top of a filesystem on top of ssds How many logs do you have?
+  - Physiological Log describes metadata operations carried out at that layer. And the definition of metadata changes at each layer - dbms, fs and flash.
+- I'm struggling to see how realize that uni-log - these pieces of software are perched on top of one another - application(user-space) <- DBMS(user) <- FS (kernel) <- Device Driver (kernel) .
+
+- Doesn’t this put a lot of questions on time series databases and their long term performance on SSDs?
 
 - ## Learnt the hard way, append everything and deduplicate later is substantially cheaper than merge
 - https://twitter.com/mim_djo/status/1754364525003055380

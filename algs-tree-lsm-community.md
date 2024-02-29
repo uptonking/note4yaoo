@@ -28,7 +28,11 @@ modified: 2024-02-28T08:22:23.107Z
   - To reduce the cost of randomized IO on the vLog file use prefetching (exploit SSD parallelism).
 - I am not sure how GC on vLog will affect performance when the system is under high write workload. My concern is not the algorithms or locks but GC saturating the Disk bandwidth.
 
+- fyi Badger is the WiscKey implementation in Go
+
+- TiKV + Titan is another implementation.
+  - Is this plugin based on diffkv paper ?
+    - Yes, that is one of the motivations. The Wisckey part is to leverage the SSD IO internal model. One thing I’ve never understood is how does the SSD specific optimizations work on network storage in the cloud infrastructure?
+
 - I found the original 97 paper a really good read
   - Yeah, I did too. I started last week with the original paper and then went through the "BigTable" paper (just to read the origins of the terms like "SSTable", "memtable", etc).
-
-- fyi Badger is the WiscKey implementation in Go

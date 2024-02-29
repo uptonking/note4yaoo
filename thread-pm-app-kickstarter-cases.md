@@ -88,6 +88,11 @@ modified: 2023-03-30T13:31:09.049Z
 # discuss-declining
 - ## 
 
+- ## 
+
+- ## 看了 Adobe 高管的访谈才知道，Adobe XD 实在是太惨了： 管理层不会提及它，我甚至不知道它还活着。 对我们来说，它早已死了，只是为了购买了的企业提供维护服务
+- https://twitter.com/FarSideOfMoonvy/status/1763169283750670774
+
 - ## [How Quora died | Hacker News _202402](https://news.ycombinator.com/item?id=39241448)
 - If your core business product is content contributed by users... I'm turning to the opinion that you need a C-level ombudsman- / dean of contributors-type role.
   - Whose sole job it is to (1) figure out what contributors are thinking and want & (2) advocate for them inside the company.
@@ -100,7 +105,25 @@ modified: 2023-03-30T13:31:09.049Z
 - 和 Figma 一样想取代 Sketch，可惜没做起来
 - 当年横空出世，宣传视频很牛逼，结果产品出来非常不好用，核心东西没做好就开始想玩花儿
 
+# discuss-trending
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 特别推荐那些身在海外，没有副业的朋友去做跨境电商……亚马逊，独立站 TK ….
+- https://twitter.com/edwardzsky2017/status/1763046409849479531
+  - 现在的北美就是几年前的国内，虽然发展缓慢，但是你还是会看到这个发展的势头
+- 正在开发跨境的工具软件
+
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 顶流的 Swift 开发教学油管频道月入 400 刀，而顶流的吃播频道月入 12000 刀，不一定准但大差不差，还不包括卖课卖订阅的额外收入。

@@ -21,8 +21,8 @@ modified: 2023-02-05T18:49:11.444Z
   - eager and lazy loading
 
 - who is using #sequelize-orm
-  - outline-wiki
-  - nocobase
+  - cms: outline-wiki
+  - app: nocobase
 # dev
 
 # more

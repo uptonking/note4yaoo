@@ -222,6 +222,11 @@ modified: 2023-04-04T22:36:31.529Z
   - reliable, Redis-based distributed queue for Node.
   - It is backed by Redis, which makes it easy to scale horizontally and process jobs across multiple servers.
   - BullMQ is a rewrite of the popular Bull library by the same authors, but with a new API and a more modern codebase written in Typescript and with a bunch of new features and performance improvements.
+- https://github.com/felixmosh/bull-board /MIT/202402/ts
+  - Bull Dashboard is a UI built on top of Bull or BullMQ to help you visualize your queues and their jobs. 
+  - With this library you get a beautiful UI for visualizing what's happening with each job in your queues, their status and some actions that will enable you to get the job done.
+  - As this library provides only the visualization for your queues, Aside the options to retry and clean jobs, this library is not responsible for processing the jobs, reporting progress or any other thing. This must be done in your application with your own logic; 
+  - This library doesn't hijack Bull's way of working.
 - https://github.com/OptimalBits/bull /14.8kStar/MIT/202401/js
   - reliable, Redis-based queue for Node.
   - Carefully written for rock solid stability and atomicity.

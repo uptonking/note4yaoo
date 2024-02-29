@@ -1,6 +1,6 @@
 ---
 title: thread-fwk-react-dev
-tags: [framework, react, thread]
+tags: [framework, nextjs, react, thread]
 created: 2020-12-05T17:52:28.808Z
 modified: 2021-01-06T14:40:03.364Z
 ---
@@ -12,9 +12,37 @@ modified: 2021-01-06T14:40:03.364Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 🆚️🏘️ [Remix vs Modern JS · remix-run/remix _202310](https://github.com/remix-run/remix/discussions/7767)
+- My high-level understanding of modern.js is that it is mostly a re-implementation of Remix on top of the webpack and Rspack compilers. 
+  - It copies and/or references a lot of Remix code and packages to implement the same concepts, whilst re-exporting react-router-dom and remix-router for the majority of its functionality.
+- It's all tradeoffs that you'll have to evaluate as Remix doesn't have anywhere near as seamless micro-frontend or module federation support, so if that's really important to you then maybe ModernJS is the best option. If you want to be on full blown Module Federation which is only WebPack and soon Rspack then it is probably the only option as I can't recommend Remix's webpack compiler as a good long-term option. Side note is that Vite announced a desire to support Module Federation in their new Rolldown bundler that will share code with Rspack, but that's probably a year away.
+  - With Remix switching to Vite, you have some alternative options though. If you are happy with the more limited features and smaller community of the tooling agnostic and browser import maps based Native Federation and have the resources and skilled JS devs to manage that yourself then have a look at jrestall/remix-federation 
+  - I don't see anything in ModernJS that isn't also achievable in Native Federation + Vite, they just have more helpers and orchestration around it to make it simple. 
 
-- ## 
+- Hi, I am a member of Modern.js team. I want to share some ideas from my perspective.
+  - Modern.js was heavily inspired by Remix.js in routing and SSR. 
+  - At the same time, Modern.js' routing solution is based on `react-router`, which is created by the Remix team.
+- There are some thoughts when we creating Modern.js:
+  - We uses webpack and Rspack as bundlers in Modern.js. We have seen the perfect ecosystem of webpack
+  - In the enterprise-level application scenarios we face, micro-frontends are a very important way for us to solve the scaling problem so we have made first-class support for micro-frontends in Modern.js. This also includes support for Module Federation.abs
+  - We see that CSR (client-side rendering), SSR (server-side rendering) and SSG（Static Site Generation）each have their suitable usage scenarios. Therefore, in Modern.js, We provide support for all these rendering modes
+
+- ## When next drops webpack, federation dies for next users. 
+- https://twitter.com/ScriptedAlchemy/status/1762908635879920040
+  - Another reason to avoid. You’re building dead apps, just a matter of time.
+
+- What do you suggest?
+  - @remix_run or modernjs are my general go tos but there’s others like boring stack etc
+  - I’m trying to work with remix to align modernjs so that it can be a “hat” that sits on top of remix as an upgrade path. Since modernjs is a fork of remix already
+
+- I thought Turbopack was supposed to be backward-compatible in that way and work towards Rspack could potentially apply as well. 
+  - Good marketing budget. Turbo still only works in next. Not sure if it will ever go standalone.
+  - Rspack will have full parity with webpack in less than 1 year of dev (June) so I can’t see why turbo still doesn’t even have plugin api nearly 2 years on
+- 
+- 
+- 
+- 
+- 
 
 - ## By the end of 2024, you’ll likely never need these APIs again:
 - https://twitter.com/acdlite/status/1758229889595977824
@@ -184,6 +212,13 @@ modified: 2021-01-06T14:40:03.364Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## I'm starting to like Remix! Moving to Vite was a smart decision, and their SPA mode is the cherry on top.
+- https://twitter.com/ImSh4yy/status/1762915802116706618
+- I haven't tried remix yet, but is it something I can use as meta framework like nexths but with my own backend, like nitrojs or honojs?
+  - Yes definitely. Think of Remix as an alternative to NextJS. Use Remix as your backend or make calls to your own, the choice is yours
 
 - ## remix: Replicate the whole database to indexedDB and get instant search
 - https://twitter.com/ryanflorence/status/1750265435248116137

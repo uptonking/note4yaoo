@@ -102,6 +102,9 @@ modified: 2021-05-25T09:41:29.066Z
   - This library can be used for using Redux in a Micro Frontend based architecture.
   - Micro Frontends is an architectural pattern for breaking up a monolith Frontend application into manageable, decoupled and smaller applications.
 # auth
+- tips
+  - 用户管理的参考方案，可直接在现有cms的基础上提取部分代码
+
 - https://github.com/nextauthjs/next-auth /ISC/ts
   - https://authjs.dev/
   - a set of open-source packages that are built on Web Standard APIs for authentication in modern applications with any framework on any platform in any JS runtime.
@@ -128,6 +131,15 @@ modified: 2021-05-25T09:41:29.066Z
     - 支持express、fastify、nextjs、astro
   - uses adapters to connect to your database
     - 支持mongoose、sqlite、pg、redis、prisma、drizzle-orm、kysely
+
+- https://github.com/nickredmark/ooth /MIT/201902/ts/archived
+  - https://nickredmark.github.io/ooth/
+  - a user identity management system for node.js
+  - Architecture - A typical scenario has 3 components:
+    - The authentication/identity management server
+    - A resource API (optional, can be integrated with the auth server or standalone)
+    - The client
+  - example with a starting UI with all the main user account flow is programmed with next.js. 
 
 - https://github.com/keycloak/keycloak /18.4kStar/apache2/202312/java
   - https://www.keycloak.org/
@@ -156,9 +168,15 @@ modified: 2021-05-25T09:41:29.066Z
 
 - https://github.com/braitsch/node-login /MIT/202104/js
   - A template for quickly building login systems on top of Node.js & MongoDB
-- https://github.com/cornflourblue/node-mongo-registration-login-api /MIT/20207/js
-  - NodeJS + MongoDB API for User Management, Authentication and Registration
 
+- https://github.com/cornflourblue/node-mongo-registration-login-api /MIT/202007/js
+  - NodeJS + MongoDB API for User Management, Authentication and Registration
+  - 依赖mongoose、express-jwt、jsonwebtoken、bcryptjs
+  - https://github.com/cornflourblue/react-redux-registration-login-example /202008/js
+  - https://github.com/cornflourblue/react-redux-jwt-authentication-example /202006/js
+- https://github.com/cornflourblue/node-mysql-registration-login-api /MIT/202008/js
+  - Node.js + MySQL API for User Management, Authentication and Registration
+  - 依赖sequelize6、express-jwt、express-jwt、bcryptjs
 # ide-like
 - https://github.com/labring/laf /ts
   - https://laf.dev/

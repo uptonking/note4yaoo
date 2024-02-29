@@ -12,6 +12,12 @@ modified: 2023-09-13T14:28:01.426Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## I remember this talk from Martin Fowler years ago where he described an event sourced system that kept all the application state in memory (because as we all know the DB is the log).
+- https://twitter.com/LewisCTech/status/1762786070574633046
+  - TIL it's the same system Tigerbeetle bases its architecture on - LMAX.
+
 - ## [Partial Event Sourcing (ES + CRUD)_201305](https://groups.google.com/g/dddcqrs/c/v8Pd1ixx0vI)
 
 > es与crud结合的方案，参考cdc

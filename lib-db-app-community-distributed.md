@@ -141,6 +141,31 @@ modified: 2023-10-26T19:04:00.318Z
 # discuss-protocol-raft/paxos ⚖️
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Log stacking can happen when using Raft/Paxos to replicate DBs w/ their own WALs. 
+- https://twitter.com/strlen/status/1762933075783405649
+  - Apache Kudu consolidates: the tablet WAL is also the Raft log. 
+  - There have been experimental in other systems by disabling local WAL and using consensus log for recovery. 
+  - Is there a generic solution?
+
+- https://twitter.com/jorandirkgreef/status/1763073571616694751
+  - This is why TigerBeetle’s global consensus protocol and local storage engine were co-designed:
+  - not only to share the WAL, but also to
+  - run directly on a raw block device
+  - without requiring a filesystem
+
+- I don't think it's possible in a multi-node system.  Whether you call it the log or the network.
+
+- Back in the day we built Baardskeerder, an append-only B-tree'ish thing, to act as both the log and the database for Arakoon, a multi-Paxos key-value-store. Earlier version used traditional separation in log files and something BDB-like (TokyoCabinet).
+
+- In Redpanda the only log is a Raft log.
+
+- I believe AWS has such a generic building block _internally_ seen it called various names – AlfBus, transaction journal, and perhaps what they called Grover 
+  - I am familiar with Grover, I worked on Aurora in 2016-2018. It is its storage system publicly discussed in the Aurora papers. It does provide centralized storage for both the data and log pages. Not sure about any changes since then.
+
 - ## 偶然发现剑桥大学 2020 年对比 Paxos 和 Raft 的一篇论文，题目很有意思：“我们就共识协议达成共识了吗？”
 - https://twitter.com/qtmuniao/status/1760552518051070087
   - 主要思路是用 Raft 的术语和思路去表述 MultiPaxos，以明晰两者的区别和联系。

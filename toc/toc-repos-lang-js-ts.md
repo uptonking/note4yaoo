@@ -407,6 +407,12 @@ modified: 2021-05-14T15:04:55.849Z
 
 - https://github.com/narutosstudent/Zod-from-scratch /202312/ts
   - Building zod from scratch to deepen my TypeScript knowledge.
+
+- https://github.com/vinejs/vine /MIT/202402/ts
+  - https://vinejs.dev/
+  - VineJS is a form data validation library for Node.js
+  - You may use it to validate the HTTP request body in your backend applications.
+  - VineJS performance is the outcome of our pre-compiling API. Both Yup and Zod have no option for pre-compiling schemas.
 # ts-repos
 - https://github.com/julianshapiro/velocity
   - Accelerated JavaScript animation.

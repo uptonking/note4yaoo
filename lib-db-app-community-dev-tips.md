@@ -14,7 +14,29 @@ modified: 2023-11-07T16:47:11.499Z
 
 - ## 
 
-- ## 
+- ## 🆚️🧩 Databases are not intended for storing data but for storing relationships. Relationships are what make Entities worthy.
+- https://twitter.com/deisbel/status/1762864820049600840
+  - Your main goal in designing databases is to identify Entities and Relationships between them.
+  - I show here the types of Relationships and how to store them.
+- There are 3 types of relationships in Relational Databases:
+  - 1- One to one
+  - 2- One to many
+  - 3- Many to many
+- 1- One to one
+  - The way to store this relationship type is by adding the key of one of the Entities into the other.
+  - You can store this relationship in any of the table
+- 2- One to many
+  - The way to store this relationship type is by adding the key of Entities on the side One into the Entity of the side Many. 
+  - There is only one possible way.
+- 3- Many to many
+  - This type of relationship needs to create an extra table for storing it. 
+  - You will name the table at your convenience using a meaningful name for the relation. 
+  - The table must contain the key from each table.
+  - You can also add extra data you want to consider for that relationship, like the maximum number of hours to be used.
+  - AssignedComputers(StudentId, ComputerId, MaxHoursToUse)
+
+- Relational databases can model almost everything, but in some cases other kind of databases can fit better.
+  - Right, the type and the frequency of the changes are key points in many decisions.
 
 - ## 🔥🔥 [When your data doesn’t fit in memory: the basic techniques | Hacker News_201911](https://news.ycombinator.com/item?id=21508542)
 - 

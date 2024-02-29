@@ -30,7 +30,7 @@ modified: 2023-02-06T09:14:21.143Z
 
 ## 🆚️🧩 [JSON API, OpenAPI and JSON Schema Working in Harmony _201809](https://medium.com/apis-you-wont-hate/json-api-openapi-and-json-schema-working-in-harmony-ad4175f4ff84)
 
-- JSON API
+- 🧩 JSON API
 - JSON API is a specification written with the goal of being an anti-bikeshedding tool for writing JSON APIs.
   - JSON API is one of many data formats that is often applied to REST (or RESTish) APIs, as an alternative to Siren, HAL, Uber, etc.
 - The goal of JSON API is to standardize some of the specifics of API design that the REST paradigm leaves to the implementer. 
@@ -41,15 +41,15 @@ modified: 2023-02-06T09:14:21.143Z
   - There is no “schema” functionality (or types, as some folks call them). 
   - For that, you need to look at something like OpenAPI, or JSON Schema.
 
-- OpenAPI
+- 🧩 OpenAPI
 - OpenAPI aims to describe both the service model (the API in general), endpoints, request metadata like headers, authentication strategies, response metadata, etc., 
   - and it also covers the HTTP request/response body using a bunch of keywords based on JSON Schema
 
-- JSON Schema
+- 🧩 JSON Schema
 - JSON Schema aims to describe an instance of JSON data, like the ones found in a HTTP request or response, but is in no way limited to a HTTP API.
 - In describing the data, you can say which fields are required, mention common formats like email, UUID, etc., add more complex validation rules to those fields like maximum length, or regex patterns
 
-## [OpenAPI vs JSON: API - Stack Overflow](https://stackoverflow.com/questions/64828587/openapi-vs-jsonapi)
+## 🆚️ [OpenAPI vs JSON: API - Stack Overflow](https://stackoverflow.com/questions/64828587/openapi-vs-jsonapi)
 
 - OpenAPI's goal is really to provide a full description on how your API can be called, and what operations are available. 
   - JSON: API gives you a strong opinion on how to structure it.

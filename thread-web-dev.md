@@ -35,7 +35,10 @@ modified: 2021-01-08T17:13:43.392Z
 
 - ## 
 
-- ## 
+- ## if you guys remember, Cloudflare moved away from NGINX to build their own proxy named Pingora
+- https://twitter.com/hnasr/status/1762868114675687793
+- I wonder if it performs better than NGINX for Wordpress installations that also uses cloudflare as a cdn 
+  - my thoughts too, this was built for Cloudflare scale, I wonder the overhead is (for multi-pool connection for example) for smaller installations.
 
 - ## IIRC at Nokia times, we developed Nokia Maps with Offline Navigation (RIP WebSQL) and all mobile browsers (Android 2 at that time or iOS 5) 
 - https://twitter.com/WebReflection/status/1760950919779270758

@@ -12,7 +12,21 @@ modified: 2023-04-19T07:30:34.872Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 🆚️ Spark was a short-lived anomaly. The future of data and analytics is very clearly Python and Rust.
+- https://twitter.com/jdegoes/status/1762770034579931533
+- Data scientists use Python. In the very uncommon cases when you need to extend Python, you can do so with C/C++ bindings, but that is not what data scientists do.
+- mojo is in the Python bucket, to the extent it doesn't diverge.
+
+- Check out Daft https://github.com/Eventual-Inc/Daft It’s a next gen Pyspark built in Rust!
+
+- Wherever performance matters any JVM language is better than python. To speak about spark, it has come a long way. It is de facto standard for distributed parallel processing. I don’t think I need to explain well known pros of it.
+
+- The end state for data is SQL(-like), the rest are SQL generating embedded DSLs. Projects converging to sql dsl: Spark, Kstreams, Flink, ...
+
+- if you meant "spark will be replaced by another MapReduce library, with executors in Rust and apis for Python" - maybe
+  - if you meant that Rust Data Engineer positions are going to become the norm - no. DE is built on cheap labor and Rust programmers aren't cheap
+
+- rewriting should be easy considering that spark-core only has 18k lines of code, but it never happened. would you like give it a burl?
 
 - ## 🎯 [2024 年，一个大数据从业者决定…… - 个人文章 - SegmentFault 思否_202401](https://zhuanlan.zhihu.com/p/675918720)
 - 那会正是大数据如日中天的时代，我见到了很多用户例如招行、平安、微软等的如何使用大数据技术解决自己的业务问题；看到了 cloudera 和 hortonworks 两家hadoop 发行商是如何合并，以及大数据如何开始走向疲软的；

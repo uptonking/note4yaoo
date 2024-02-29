@@ -116,6 +116,19 @@ modified: 2023-01-03T14:52:51.355Z
 - To determine the optimal ingest order, we need a way to tell how similar one repository is to another (similar in terms of their content), so we invented a new probabilistic data structure to do this in the same class of data structures as MinHash and HyperLogLog. This data structure, which we call a geometric filter, allows computing set similarity and the symmetric difference between sets with logarithmic space. 
 # blogs
 
+## [Introducing DoorDash’s In-House Search Engine - DoorDash Engineering Blog _202402](https://doordash.engineering/2024/02/27/introducing-doordashs-in-house-search-engine/)
+
+- 
+- 
+
+- https://twitter.com/spinscale/status/1762838817457721569
+- DoorDash implementing their own search engine on top of Apache Lucene.
+  - The trend of splitting storage and compute to not pay indexing costs more than once keeps going. Also Ranking phases and resource isolation in addition to cost savings played a role.
+- A common pattern: LinkedIn have written at least three Lucene-based stacks over the years.
+- Zero-interest rate problem IMHO
+  - 50% agreement on my side. Other half is lack of a standardized/highly adopted search engine providing separation of indexing and search (aka being cloud native[tm]) plus reranking. I’m sure you have a suggestion
+
+- [Kaldb: serverless lucene at petabyte scale :: Berlin Buzzwords 2023 :: pretalx](https://program.berlinbuzzwords.de/berlin-buzzwords-2023/talk/KPELMM/)
 ## [The holistic(整体的；全盘的) UX of integrated search filters](https://rystorm.com/blog/integrated-search-filters)
 
 - What is an integrated search filter?

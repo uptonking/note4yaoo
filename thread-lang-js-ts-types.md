@@ -12,6 +12,24 @@ modified: 2021-08-05T04:31:02.298Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🤼🏻 My biggest gripe(牢骚；怨言；不满) with @TypeScript is that while it should follow API design, it often drives it. 
+- https://twitter.com/LeaVerou/status/1762884918281994281
+  - The beauty of JS is that it enables highly dynamic, flexible APIs that can provide great ergonomics, but TS tends to do very poorly with them so they’re often ruled out.
+  - The priority of constituencies¹ is end-users > authors² > implementors > theoretical purity.
+  - API design decisions should be driven by user needs, not tooling limitations.
+
+- A valid opinion, but I feel the opposite, strong typing drives  API design and that’s a Good Thing. JS is a necessary component to the web, but dynamic typing is not the best choice for everyone. And for library design TS is wildly flexible in comparison to most typed langs
+
+- My biggest gripe with JS are the “clever” APIs that give you 10 different ways to do the same thing.
+
+- https://twitter.com/mattpocockuk/status/1762962933972078594
+  - I actually agree with Lea here. When you're designing an API, TypeScript narrows your choices in unexpected ways. It can't describe all of the strange, dynamic, or bizarre things you can do in JavaScript.
+  - It leaves you with a relatively narrow subset of tools to power smart inference in your API designs.
+
 - ## 🆚️ two choices for how you write the type.
 - https://twitter.com/mattpocockuk/status/1759540590025351234
   - Either DECLARE the type, then use it to type the value.

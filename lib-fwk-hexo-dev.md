@@ -10,7 +10,7 @@ modified: 2024-02-09T10:53:39.813Z
 # guide
 - pros
   - Hundreds of themes & plugins
-  - 基于ssr/ssg，seo友好
+  - 基于ssr/ssg，seo友好, 生成的产物是多页应用MPA，加载比SPA快
   - 不依赖前端框架如react
 
 - cons

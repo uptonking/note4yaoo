@@ -40,6 +40,8 @@ modified: 2021-08-30T18:56:14.863Z
     - This is just a prototype of an alternate SQL syntax to pull hierarchies.
     - it compiles to plain SQL.
 # db-sql-tools
+- [SQL Workbench - Rapid prototyping SQL Queries & Data Visualizations](https://sql-workbench.com/)
+
 - https://github.com/sqlpad/sqlpad
   - A web app for writing and running SQL queries and visualizing the results. 
   - Supports Postgres, MySQL, SQL Server, ClickHouse, Crate, Vertica, Trino, Presto, SAP HANA, Cassandra, Snowflake, Google BigQuery, SQLite

@@ -150,6 +150,7 @@ modified: 2023-01-22T19:52:59.120Z
   - 🍴 forks
   - https://github.com/EJIqpEP/koa-knex-realworld-example /202205/js
   - https://github.com/mlaccetti/koa-knex-realworld-heroku-example /201905/js
+    - Add in the in-memory caching, require('memory-cache')
 
 - https://github.com/kenyipp/realworld-nodejs-example-app /202304/ts
   - scalable RealWorld app implemented with TypeScript, Node.js, AWS Lambda, and tested with high-quality unit and integration tests
@@ -344,6 +345,10 @@ modified: 2023-01-22T19:52:59.120Z
   - Task Manager Application for Casual Event Planning
   - https://github.com/Team-PlanOut/planout-frontend
     - Plan events and get notifications when tasks are completed.
+
+- https://github.com/robgietema/nick /MIT/202401/js
+  - Nick is a (nearly) headless CMS written in Node.js which provides a RESTful hypermedia API. 
+  - The API is compatible with the REST API of the Plone CMS and can be used together with the web frontend Volto.
 # utils
 - https://github.com/justsml/knex-full-text-search /202308/ts
   - A Knex plugin for easy Full-text Search queries in Postgres.

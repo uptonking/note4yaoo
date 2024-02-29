@@ -23,6 +23,24 @@ modified: 2022-12-04T16:34:29.342Z
 
 - ## 
 
+- ## 
+
+- ## 筹备许久的双屏折叠便携屏项目终于上线了（实际一个月前就上线了），昨天收到 iF 的邮件，拿了个 iF 奖。
+- https://twitter.com/juransir/status/1763089711307067417
+  - 最后，希望 FlipGo 能够帮助开发者、差旅人士、文字工作者等对多屏展示有需求的效率人士提升效率和体验
+
+- 也分享下这款产品的定义思路：
+  1. 主打效率人群，便携屏，既然主打便携，那就让人有带出门的欲望。市面上双屏便携屏要么重、要么厚。我们做了两个尺寸，大家可以按需选择。 13.5 英寸版本 1.3kg，我们认为这会是个目前不错的平衡。
+  2. 连 windows 电脑还好，连 mac 的话因为 macOS 的种种大聪明设计，体验并不好，所以跟 better display 合作，他为我们进行了专门优化。届时 better display 会发布更新，包含对 FlipGo 的多项优化。再次感谢 better display（可惜他们没有社媒账号）。
+  3. 一线连接。既然主打外出便携，那在连接上就尽可能简单（我们考虑过无线方案，但稳定性太差延迟太高取消掉了），一根线连接两个屏幕。
+  4. 一键切换大屏显示和双屏显示。两块屏幕可以当一块大显示器用，也可以分别展示不同的画面。
+  5. hi-dpi，display link 支持。
+
+- 不清楚屏幕硬件指标上跟国内卖的现有的各种便携屏幕有啥优势
+  - 轻，磁吸。屏幕素质比其他便携屏稍好点。但如果是专业设计师、摄影师就不建议用了。便携屏如果把屏幕素质堆上去，成本直接起飞。并且市面上的芯片方案也未必有合适的。
+
+- 既然都做硬件了 不如加上无头骑士 mac 直接卖整机。。。
+
 - ## [unavatar, the ultimate avatar service that offers everything you need to easily retrieve user avatars](https://unavatar.io/#/)
   - The service seamlessly incorporates into your current applications or websites with ease
 

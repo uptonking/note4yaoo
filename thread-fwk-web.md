@@ -7,11 +7,20 @@ modified: 2021-01-08T17:13:53.965Z
 
 # thread-fwk-web
 
-# pieces
+# guide
 
+# discuss
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 大佬提到飞冰 http://ice.work 了，同时又提到交给新同学负责后会好很多（之前是我负责），不确定是在喷飞冰还是在喷我（可能都是？）
+- https://twitter.com/imsobear/status/1763055473161535871
+- 
+- 
+- 
 
 - ## vice Worker Side Rendering (SWSR)
 - https://dev.to/thepassle/service-worker-side-rendering-swsr-cb1

@@ -18,7 +18,11 @@ modified: 2023-12-09T12:32:50.692Z
 # discuss
 - ## 
 
-- ## 
+- ## [如何评价nats这套信息系统（对比于kafka) ？ - 知乎](https://www.zhihu.com/question/267769248)
+- 
+
+- [nats消息队列 - 知乎](https://zhuanlan.zhihu.com/p/666658170)
+  - NATS原来是使用Ruby编写，可以实现每秒150k消息，后来使用Go语言重写，能够达到每秒8-11百万个消息。
 
 - ## Bullmq users: What API should I use for the following scenario?
 - https://twitter.com/AmanVirk1/status/1754842367536873546

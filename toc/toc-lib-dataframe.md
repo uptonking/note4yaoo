@@ -45,6 +45,14 @@ modified: 2021-05-13T16:14:41.762Z
   - multi-threaded, hybrid-streaming DataFrame library in Rust | Python | Node.js
   - If you have data that does not fit into memory, polars lazy is able to process your query (or parts of your query) in a streaming fashion
   - In the TPCH benchmarks polars is orders of magnitudes faster than pandas, dask, modin and vaex on full queries (including IO).
+
+- https://github.com/Eventual-Inc/Daft /apache2/202402/rust/python
+  - https://getdaft.io/
+  - Daft is a distributed query engine for large-scale data processing in Python and is implemented in Rust.
+  - Seamless Interchange: Built on the Apache Arrow In-Memory Format
+  - Familiar interactive API: Lazy Python Dataframe for rapid and interactive iteration
+  - Full integration with data catalogs such as Apache Iceberg
+  - Built for the cloud: Record-setting I/O performance for integrations with S3 cloud storage
 # java
 - https://github.com/jtablesaw/tablesaw
   - /2.4kStar/Apache2/202011

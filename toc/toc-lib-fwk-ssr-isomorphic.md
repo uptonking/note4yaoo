@@ -20,7 +20,7 @@ modified: 2020-12-19T13:04:40.865Z
   - Like Next.js/Nuxt but as do-one-thing-do-it-well Vite plugin.
   - The vite-plugin-ssr project has been renamed Vike
   - do-one-thing-do-it-well architecture: Vike focuses on being an excellent frontend framework while not interfering with the rest of your stack.
-    - Any UI framework (React/Vue/Solid/...)
+    - 🎨 Any UI framework (React/Vue/Solid/...)
     - Any server (Express.js, Deno, HatTip, ...)
     - Any deployment (AWS, Cloudflare Workers, Vercel, ...)
   - Filesystem Routing, Data fetching, Pre-rendering, Layouts, HMR, i18n, Link Prefetching, HTML Streaming.
@@ -33,7 +33,7 @@ modified: 2020-12-19T13:04:40.865Z
   - The joyful site generator
   - îles — french word for "islands". 
   - Partial Hydration - zero JS by default, hydrates the interactive bits
-  - Multi-Framework - vue, preact, svelte, solid
+  - 🎨 Multi-Framework - vue, preact, svelte, solid
   - Fast - instant reloading powered by Vite
   - Routing - automatically configured from files
   - https://iles-docs.netlify.app/faqs
