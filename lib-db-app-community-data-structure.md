@@ -208,6 +208,38 @@ modified: 2023-09-17T18:17:41.377Z
 
 - ## 
 
+- ## 
+
+- ## 🆚️🆚️ I would like to understand write-amplification in B Tree vs LSM Tree. 
+- https://twitter.com/iavins/status/1726563472522244518
+  - Is there any survey/research paper explaining the same? or a blog post?
+- Did you see the MyRocks experiment from Meta a few years back? This showed MyRocks (MySQL but with LSM) as “10x more write efficient”.
+
+- LSM trees have lower write amplification than b-trees. LSM trees write data sequentially on disk in large chunks, while b-trees usually need small in-place data updates, which result in high write amplification on SSD drives
+  - Beyond write performance, LSM does have some nice systems architecture properties in that it follows the general memory hierarchy (snapshots can be easier, as well as hot/cold data tiering).
+- In LSMs, if they are batching writes and writing large chunks, then what about durability? The machine could crash before the data is fsync-ed. This is from an assumption that in B Tree, you are fsyncing every B tree page, which does result in high write amplification
+  - durability is still provided in LSM trees with commit (redo) log. batching is done through a memtable (e.g. skip list). writes are appended to both.
+- I noticed that writes to commit (redo) log are buffered before they are fsycned. That was the case in RocksDB, Scylla, and Cassandra. 
+
+- I think one of the biggest advantages of the LSM trees is that you can DELAY write amplification by sacrificing read amplification. Don’t know if something like that can be done in B-trees. Even fsync could be throttled. Durability much better - immutable parts of the tree atomically updated.
+  - Can you elaborate please? Is it about writing to WAL/logfile before it is merged to  SSTable
+
+- When smaller files are merged into bigger files at LSM trees, then it is safe to fail the merge at any time - the data remains available in smaller files. The data may be lost on failure to create the first level of LSM files from in-memory data.
+  - For this case write-ahead log (WAL) can be used. Other approaches:
+  - To store data to the first level of LSM tree before returning 'success' to the client, who wrote the data.
+  - To document the possibility of recently written data loss, which hasn't been written to files yet.
+
+- Lets say we are using WAL, then if we write to it at every insert/update, then it would incur in write amplification right? since min write is always the page. If we buffer (which is what RocksDB does) and fill up till page size before write, thats a durability issue.
+  - The `persist data before responding to client` approach works good when clients write data in big batches. This approach is used by ClickHouse. 
+  - The `drop recently ingested data on crash` approach is used by VictoriaMetrics.
+
+- [WAL usage looks broken in modern Time Series Databases? _201902](https://valyala.medium.com/wal-usage-looks-broken-in-modern-time-series-databases-b62a627ab704)
+
+- You need to consider how writes are distributed, most analysis is around time series or similar. I read that InfluxDB had  issues with that too because of multiple series which causes random writes. It also depends on the compaction strategy, If you find an objective study that covers this topic it will be interesting.
+  - The only practical benefit I’ve seen is around compression and that helps in reducing write amplification too.  but I’ve also seen CPU use go up significantly due to compression.
+  - There is a big it depends here, how you use the technology. TiDB experience with large deployments in 100s of TB demonstrates that it’s more complicated than it seems.  Jitter due to LSM compaction forced a rethink to  use a different strategy for LSM in TiDB.
+  - Theory and practice are quite different.
+
 - ## 🆚️ Compared with B+-tree, LSM-tree has a higher storage space usage efficiency, 
 - https://twitter.com/eatonphil/status/1754626079392727451
   - which can be explained as follows: One LSM-tree consists of multiple immutable SSTable files, each one contains a number of blocks (typical block size is 4 KB). Being immutable, all the blocks can be 100% full (i.e., completely filled with user data).

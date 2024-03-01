@@ -12,6 +12,17 @@ modified: 2023-11-10T08:05:25.474Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## JSR - the JavaScript Registry - is now available in public beta.
+- https://twitter.com/deno_land/status/1763556854716661961
+  - Works across runtimes (Node, Deno, Bun, workerd and more) and alongside npm/yarn/pnpm
+  - TypeScript first, ESM only
+- Interesting choice of esm only, probably the right thing but what happens when cjs is detected?
+  - In Node and Deno runtimes, there's a compatibility layer that lets you import CJS modules as ESM. JSR packages use this behavior.
+
 - ## A concise example of why I really don't like decorators that much.
 - https://twitter.com/BenLesh/status/1750560391682294159
   - IMO, decorators should have been metadata only. We already have enough ways to duck-punch JavaScript into oblivion(遗忘)

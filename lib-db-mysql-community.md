@@ -112,7 +112,11 @@ modified: 2022-06-13T03:00:06.041Z
 
 - ## 
 
-- ## 
+- ## Grouping transaction effects together in #MySQL Ndb Cluster epoch transactions improves the computation 2 communication ratio per Binlog transaction, improving compression, storage + communication, increasing apply parallelism + optimising commit processing. 
+- https://twitter.com/frazerclement/status/1763275358663541190
+- It is the old systems trick of batching for performance. Just, most people don't Conover it for OLTP. Sequential disk writes no longer as big a requirement with nvme.
+  - Performance is improved @ the source too as independent commits are unordered. Defining + recording an artificial commit order for discrete transactions for the Binlog @ the source would be a waste.  They are batched and ordered on epoch boundaries only avoiding unnecessary coord
+- Yes, it's a different tradeoff on coordination between processes compared to existing systems. The only required coordination between transactions is a timestamp for its epoch - but without the need for an oracle service handing out transaction IDs. Replace that service with a periodic global transaction commit protocol is a good tradeoff for many apps, IMO.
 
 - ## 美团做的这个MySQL的优化也太极限了
 - https://twitter.com/changwei1006/status/1722343947459330417

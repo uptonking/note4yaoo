@@ -12,7 +12,9 @@ modified: 2022-11-21T15:27:20.974Z
 # ux-examples
 - ## 
 
-- ## 
+- ## Create this beautiful sound wave using just HTML and CSS 
+- https://twitter.com/davidm_ml/status/1763530731337257266
+  - https://github.com/atherosai/ui/tree/main/animation-01
 
 - ## 🌰 You can do blobs with CSS filter but it only works as black or white as far as I know but you can use SVGs to achieve the result you want.
 - https://twitter.com/joyofcodedev/status/1754218335405736273

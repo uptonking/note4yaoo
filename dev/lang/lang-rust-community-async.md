@@ -30,6 +30,17 @@ modified: 2023-08-28T04:43:22.738Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Does https://github.com/cloudflare/pingora has potential to be the killer application of tokio?
+- https://twitter.com/leiysky/status/1763203777543479473
+- It's not raw tokio it's Pingora tokio runtime
+  - By default it will use the stealing runtime, which is tokio runtime. And the no stealing runtime is backed by multiple tokio single-threaded runtime. Thus it's a typical tokio application
+- No stealing runtime seems interesting. Is it becoming thread per core?
+  - Not sure. Good to read the internal doc here
+
 - ## How do you track memory usage in Rust async? 
 - https://twitter.com/BohuTANG/status/1762675998997577928
   - For a data warehouse developed in Rust, like Databend, tracking and controlling memory usage is very challenging and has consumed a lot of our effort.

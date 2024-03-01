@@ -12,7 +12,10 @@ modified: 2021-07-25T12:49:10.410Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## Here's the ultimate z-index hack — `z-index: calc(infinity)` .
+- https://twitter.com/stefanjudis/status/1763476475150286971
+- Technically, you will still lose the z-index battle if someone plays the `!important` card. 
+
 # discuss
 - ## 
 

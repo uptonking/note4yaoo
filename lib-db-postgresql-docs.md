@@ -12,5 +12,15 @@ modified: 2022-06-13T03:00:51.734Z
 - [PostgreSQL wiki](https://wiki.postgresql.org/wiki/Main_Page)
 # docs
 
+## [16: F.18. hstore — hstore key/value datatype](https://www.postgresql.org/docs/current/hstore.html)
+
+- This module implements the `hstore` data type for storing sets of key/value pairs within a single PostgreSQL value. 
+  - This can be useful in various scenarios, such as rows with many attributes that are rarely examined, or semi-structured data. 
+  - Keys and values are simply text strings.
+- The order of the pairs is not significant (and may not be reproduced on output).
+
+- 
+- 
+
 # more
 - [Ubuntu PostgreSQL安装和配置](https://www.cnblogs.com/Siegel/p/6917213.html)

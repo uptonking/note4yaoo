@@ -10,6 +10,7 @@ modified: 2023-02-05T18:50:32.900Z
 # guide
 
 - tips
+  - examples: starter, realworld, fullstack
   - 模版参考: react-admin
 
 - resources
@@ -96,9 +97,14 @@ modified: 2023-02-05T18:50:32.900Z
   - Requires Sequelize v2.x.x, v3.x.x, v4.x.x or v5.x.x.
   - [Add initial support for Sequelize V6](https://github.com/overlookmotel/sequelize-hierarchy/pull/223)
   - [Sequelize V6](https://github.com/overlookmotel/sequelize-hierarchy/issues/174)
-  - https://github.com/fizure/sequelize-hierarchy
-  - https://github.com/astrosoftpro/sequelize-hierarchy-next
-  - https://github.com/SecurityESys/sequelize-hierarchy
+  - 🍴 forks
+  - https://github.com/fizure/sequelize-hierarchy /202204/js
+    - Add Hierarchy model; support v6
+  - https://github.com/astrosoftpro/sequelize-hierarchy-next /202301/js
+    - rework: coroutine->await, support sequelize 6
+  - https://github.com/SecurityESys/sequelize-hierarchy /202302/js
+    - Merge patches for v6 support
+  - https://github.com/wizspark/sequelize-hierarchy /202202/js
 
 - https://github.com/grantcarthew/node-mppg /MIT/202112/js/单文件/inactive
   - The Materialized Paths pattern is a simple method to store tree or hierarchical data into a flat data store. 
@@ -181,6 +187,9 @@ modified: 2023-02-05T18:50:32.900Z
 
 - https://github.com/PIYoung/node-express-boilerplate-multitenant /MIT/202302/ts
   - node express postgres boilerplate for multitenant(saas)
+
+- https://github.com/westmark/sequelize-multi-tenant-enhancer /201702/js
+  - A Proxy based enhancer function which enables schema based multi tenancy in Sequelize.
 
 - https://github.com/rreeves1996/team-manager /202309/ts
   - a MERN app (MySQL database) that functions as a team management app
@@ -300,12 +309,13 @@ modified: 2023-02-05T18:50:32.900Z
   - Use this repository to create an SSCCE for your issue
   - Short, Self Contained, Correct (Compilable), Example
 
+- https://github.com/TonyMckes/conduit-realworld-example-app /202303/js/be+fe
+  - created to demonstrate a fully fledged fullstack application built with React / Express.js / Sequelize / PostgreSQL including CRUD operations, authentication, routing, pagination, and more.
+
 - https://github.com/cirosantilli/node-express-sequelize-nextjs-realworld-example-app /202208/ts/be+fe
   - Node.js + Express.js + Sequelize + SQLite/PostgreSQL + Next.js fullstack static/SSG/ISG Example Realworld App
   - https://github.com/cirosantilli/node-express-sequelize-realworld-example-app /202106/js
 
-- https://github.com/TonyMckes/conduit-realworld-example-app /202303/js/be+fe
-  - created to demonstrate a fully fledged fullstack application built with React / Express.js / Sequelize / PostgreSQL including CRUD operations, authentication, routing, pagination, and more.
 - https://github.com/chojs23/realword-express-sequelize /202303/js
   - sequelize ^6.26.0
 - https://github.com/Varun-Hegde/Conduit_NodeJS /202105/js
@@ -408,7 +418,6 @@ modified: 2023-02-05T18:50:32.900Z
   - Boilerplate NODEJS TYPESCRIPT SEQUELIZE MYSQL
   - https://github.com/juananmuxed/template-ts-api /202312/ts
   - https://github.com/nabadeep25/typescript-node-sequelize-boilerplate /202310/ts
-  - https://github.com/SourceSprint/ts-webpack-sequelize-template /202308/ts
 
 - https://github.com/SystangoTechnologies/koach-typescript /202203/ts/inactive
   - Production ready boilerplate for building APIs in Typescript(3.4) with koa2, and using SQL database and http/2 as the communication protocol.
@@ -459,6 +468,7 @@ modified: 2023-02-05T18:50:32.900Z
 # utils
 - https://github.com/mujz/pg-search-sequelize /201711/js/inactive
   - Postgres full-text search in Node.js and Sequelize.
+  - This library makes use of Postgres full-text search and Materialized Views to run fast, powerful, and simple search queries
   - https://github.com/mujz/pg-search-sequelize-example /js/inactive
     - An example use case of pg-search-sequelize
 
@@ -505,13 +515,10 @@ modified: 2023-02-05T18:50:32.900Z
 - https://github.com/nealwp/smodg
   - Generate Sequelize models from TypeScript type definitions
 
-- https://github.com/blankstar85/sequelize-central-log
+- https://github.com/blankstar85/sequelize-central-log /MIT/202309/ts
   - Maintain Sequelize Model change history in a central table. 
   - This is highly configurable and supports composite primary keys ( up to 3 for now). 
   - Written in Typescript and provides typing.
-
-- https://github.com/westmark/sequelize-multi-tenant-enhancer /201702/js
-  - A Proxy based enhancer function which enables schema based multi tenancy in Sequelize.
 
 - https://github.com/pilagod/uow-sequelize /ts/inactive
   - Unit of Work pattern implementation for Sequelize, based on uow-template.
@@ -562,7 +569,7 @@ modified: 2023-02-05T18:50:32.900Z
   - AWS services: Lambda, AppSync, Systems Manager Parameter Store
   - I started this project using Khalil Stemmler's white-label users module and applied some concepts based on Vladimir Khorikov courses where he tackles DDD in a great way.
 
-- https://github.com/QuaNode/beamjs /js
+- https://github.com/QuaNode/beamjs /MIT/202401/js
   - Enterprise full stack web development framework (Backend-JS - ExpressJS - AngularJS - MongoDB)
   - BeamJS is built above Backend-JS to provide data controllers for SQL and No-SQL databases. It also includes file system controllers that work on a local file system or cloud storage.
   - These data controllers are abstract adapters above ODM/ORM patterns of MongooseJS and SequelizeJS. These data controllers are abstract adapters above ODM/ORM patterns of MongooseJS and SequelizeJS.
@@ -571,10 +578,10 @@ modified: 2023-02-05T18:50:32.900Z
   - https://github.com/quaNode/Backend-JS /js
     - a layer built above expressjs and socket.io to enable behaviours framework for nodejs applications.
 
-- https://github.com/luizcalaca/ddd-typescript-sequelize-node-api /ts
+- https://github.com/luizcalaca/ddd-typescript-sequelize-node-api /202209/ts/inactive
   - Domain Drive Design + Clean Architecture + Node.js + Typescript + Sequelize
 
-- https://github.com/joshuaalpuerto/node-ddd-boilerplate /js/inactive
+- https://github.com/joshuaalpuerto/node-ddd-boilerplate /201905/js/inactive
   - Node DDD Boilerplate
   - Sequelize is used to define mappings between models and database tables
 

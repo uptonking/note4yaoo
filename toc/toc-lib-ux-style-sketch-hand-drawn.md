@@ -13,10 +13,11 @@ modified: 2021-01-13T19:30:59.508Z
   - [Excalidraw白板调研文档](http://wangxiang.website/docs/work/excalidraw.html)
     - npm 包目前不支持：多人协作、共享链接等，不过 Excalidraw 团队已经在规划当中，不久就会以插件的形式支持。
 # popular
-- tldraw /5.8kStar/MIT/202202/ts
+- tldraw /5.8kStar/MIT > NonCommercial/202202/ts
   - https://github.com/tldraw/tldraw
   - https://www.tldraw.com/
   - 基于svg实现
+  - [Change licenses to tldraw _20231219](https://github.com/tldraw/tldraw/pull/2167)
   - packages/tldraw contains the source for the @tldraw/tldraw package. 
     - 依赖 radix-ui、@stitches/react、@tldraw/core、zustand
     - This is an editor as a React component named `<Tldraw>`.

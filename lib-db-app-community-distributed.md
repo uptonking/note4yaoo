@@ -187,7 +187,35 @@ modified: 2023-10-26T19:04:00.318Z
 
 - ## 
 
-- ## 
+- ## Distributed Services can't exist without Eventual Consistency.
+- https://twitter.com/RaulJuncoV/status/1763220110251032900
+- These are the 3 patterns to deal with it.
+- A practical example: Imagine you have two services: Orders and Invoices. When the customer places an order, you must generate the associated invoice.
+- 1. Background Synchronization Pattern
+  - You save the order and then update/create the invoice in the background.
+  - The job in schedule checks for new or changed orders and creates or updates invoices.
+  - This approach decouples the services and reduces the latency on the user-facing service (Orders service).
+  - You get Eventual Consistency but slowly.
+
+- 2. Orchestrated Request-Based Pattern
+  - You save the order and send it to the Invoices service. Unlike the previous pattern, this one attempts to process the entire distributed transaction. 
+  - It requires some kind of Orchestrator Service, which can be a separate service or an existing one.
+  - It requires compensating transactions.
+
+- 3. Event-Based Pattern
+  - Services emit events, and others listen to them to update their data. 
+  - You save the order and emit an event of "order-created." The Invoices service listens for these events and creates a new invoice based on the order. 
+  - The services do not need to know about each other and can scale independently.
+
+- TL; DR
+  - Background Synchronization offers simplicity and decouples services but introduces delays in data consistency.
+  - Orchestrated Request-Response offers a controlled flow with reliability but increases response times.
+  - Event-based brings loose coupling and scalability and allows services to react to changes at the cost of complexity.
+
+- Eventual Consistency is the price for better performance, scalability, and availability.
+
+- I prefer Event-Based but I have used background synchronization a lot in the past. You can set up synchronization between your database instances releasing the Application layer from that responsibility.
+- If the latency to move data over is not a problem, Background Synchronization is the right solution.
 
 - ## This summarizes quite well the diff between Data Sharding vs. Distributed SQL
 - https://twitter.com/FranckPachot/status/1761673558206407031

@@ -26,7 +26,14 @@ if(val) // doSth
 
 - ## 
 
-- ## 
+- ## Ever wondered what the difference between a class method and arrow function is?
+- https://twitter.com/mattpocockuk/status/1763251034565013841
+  - arrow functions retain the context they were defined in.
+
+- Important to note you can’t bind arrow functions
+  - Binding the arrow function doesn't affect "this" keyword like it does with normal functions
+
+- don’t write code like this
 
 - ## Did you know that `array.sort()` doesn't work with negative numbers?
 - https://twitter.com/ccorcos/status/1759665586983084255

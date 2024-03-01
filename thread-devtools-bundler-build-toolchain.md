@@ -12,6 +12,12 @@ modified: 2023-05-26T11:09:41.593Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
 - ## Do you know that webpack can share ast between loaders and parser, 
 - https://twitter.com/rspack_dev/status/1716962318804988101
   - but because babel acorn and swc have different ast so it's hard to share ast between them, 

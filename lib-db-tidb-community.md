@@ -52,6 +52,14 @@ modified: 2024-02-08T16:04:30.976Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 很久之前给 TiDB 加 TTL 的时候就很想搞个 async index，TiDB 有 cdc 有 stale read，离 async index 感觉只差临门一（大）脚了。
+- https://twitter.com/YangKeao/status/1763283939005984989
+  - YDB 的 TTL 看起来用了这个功能，很合适。
+
 - ## 🧩 I want to explain consistency in TiDB because it's a distributed database
 - https://twitter.com/sunbains/status/1762212381982429194
   - Consistency originated in the world of CPUs when researchers started reasoning about shared memory systems. It was borrowed from there by the databases researches to explain  consistency in single node databases where concurrent transactions work on shared state. 

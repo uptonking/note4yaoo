@@ -70,3 +70,6 @@ modified: 2023-09-16T17:49:13.534Z
 
 - [Database Systems: 8Base, Dolt, MindsDB, Xata – SQL Rob](https://sqlrob.com/2023/04/17/database-systems-8base-dolt-mindsdb-xata/)
   - [15 futuristic databases you’ve never heard of - YouTube](https://www.youtube.com/watch?v=jb2AvF8XzII)
+
+- [Write amplification - Wikipedia](https://en.wikipedia.org/wiki/Write_amplification)
+  - Write amplification (WA) is an undesirable phenomenon associated with flash memory and solid-state drives (SSDs) where the actual amount of information physically written to the storage media is a multiple of the logical amount intended to be written.

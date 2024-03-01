@@ -9,6 +9,15 @@ modified: 2022-12-04T16:34:29.342Z
 
 # guide
 
+# discuss
+- ## 
+
+- ## 为啥感觉国内没有类似 ProductHunt 这样的网站火起来
+- https://twitter.com/liumengxinfly/status/1763235401463152981
+- 国内独立开发收个款都得鸡飞狗跳，搞这种网站不成了网安重点审查中心（但我也很好奇为啥没有
+
+- 有个垂类叫“墨天轮”，你可以了解下它的来龙去脉和现状，作为某种缩影。
+  - 看上去是个收裁判费的，没有啥社区的感觉
 # products-office
 - ## 
 
@@ -21,9 +30,11 @@ modified: 2022-12-04T16:34:29.342Z
 # products
 - ## 
 
-- ## 
+- ## [Ask HN: Alternative to Crunchbase Pro ($360/year)? | Hacker News _202006](https://news.ycombinator.com/item?id=23658819)
+- I find crunchbase, owler, linkedin etc overpriced, and they don't really have that great data especially on emerging startups - there's few hard data points they have, and some bias towards companies who volunteer their data (or investors who do).
 
-- ## 
+- ## ~1000 @GitHub repos have more than 20K stars; now, Budibase is one of them.
+- https://twitter.com/budibase/status/1763244991931900091
 
 - ## 筹备许久的双屏折叠便携屏项目终于上线了（实际一个月前就上线了），昨天收到 iF 的邮件，拿了个 iF 奖。
 - https://twitter.com/juransir/status/1763089711307067417

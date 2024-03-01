@@ -30,6 +30,9 @@ modified: 2023-09-28T20:33:44.333Z
 - https://github.com/seald/nedb /202209/js/active
   - forked it and maintain it for the needs of Seald.
   - Since version 3.0.0, NeDB provides a Promise-based equivalent for each function which is suffixed with `Async`.
+  - [Implement Compound Indexes. 合并到v4.0 _20230119](https://github.com/seald/nedb/pull/27)
+    - [Compound Indexes · seald/nedb](https://github.com/seald/nedb/issues/26)
+    - https://github.com/rmanibus/nedb
   - https://github.com/bajankristof/nedb-promises /202209/js
     - A dead-simple promise wrapper for nedb.
     - As of nedb-promises 5.0.0 nedb package has been replaced with a fork seald/nedb
@@ -37,9 +40,6 @@ modified: 2023-09-28T20:33:44.333Z
   - ORM for @seald-io/nedb written in TypeScript
   - [Only method save and find is supported currently?](https://github.com/levg34/typescript-nedb-orm/issues/5)
     - Yes, currently that is all
-
-- https://github.com/rmanibus/nedb
-  - [Implement Compound Indexes](https://github.com/seald/nedb/pull/27)
 
 - https://github.com/ArcBlock/nedb /202302/MIT/js/NonBrowser/多线程
   - https://github.com/ArcBlock/nedb/tree/master/packages/mongoose-driver

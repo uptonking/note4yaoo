@@ -37,6 +37,20 @@ modified: 2023-09-17T17:46:07.620Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## if I was starting a new Rails app today, I would either pick SQLite with Litestream or MySQL on PlanetScale, depending on my expectations for scale.
+- https://twitter.com/joeldrapper/status/1763150631018127579
+- is there something today in the market like "planetscale for postgres"? I don't think so, right?
+  - YugabyteDB is the distributed Postgres (shared-nothing, fault-tolerant, on-prem or cloud). It has a schema/data migration tool
+- Amazon RDS for PostgreSQL
+  - This service does not scale horizontally. Planetscale does.
+
+- I just read about SQLite on Litestream 5 minutes ago; does this mean you deploy on one dedicated server and all the infra lives on one machine?
+  - Yes. Also means you can do SQL queries in microseconds because there’s no latency. 
+
 - ## There's been a trend back to SQL databases in the latest set of database-y startups ( @neondatabase , @supabase , @tursodatabase , @PlanetScale , et. al).
 - https://twitter.com/elithrar/status/1735691896373096485
   - Is the era of alternative NoSQL architectures (like DynamoDB, MongoDB or FaunaDB) over?

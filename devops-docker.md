@@ -87,6 +87,27 @@ docker stop containerId
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🤔 Do you use Docker during development with a Node.js project?
+- https://twitter.com/AmanVirk1/status/1763471630171349201
+- My issues are:
+  - Running npm scripts is slow
+  - File watchers needs polling
+  - Installing dependencies is confusing. Should I stop container, install deps and re-run container?
+  - Debugging code inside editors like VSCode is a nightmare
+
+- I use it with nodemon. 
+  - In dev, node project folder is mounted as a volume and watched by nodemon. 
+  - In prod it’s built with dockerfile and run with ‘node server.js’ command (not using npm in prod).
+- That's the best approach, IMO.
+
+- If you’re using vscode, try devcontainers ! It’s awesome as it allows you to develop inside your container. You need to configure it the right way but once done, you have the same experience as developing without docker. Of course, with the benefices of it
+
+- Nop, docker only for external services like a database, redis or mail but too many issues and start time is slow to be something usable.
+
 - ## 查了一个月的性能问题，containerd 换成 docker 后好了，CNCF 出来赔钱
 - https://twitter.com/liumengxinfly/status/1734399431271944670
 - 啥问题 ？ docker 也用 containerd

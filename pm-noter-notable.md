@@ -366,7 +366,7 @@ modified: 2023-11-28T14:48:45.910Z
   - ios, google-play
   - chrome-web-store, edge
 
-- [Atlassian Marketplace](https://marketplace.atlassian.com/)
+- [Atlassian Marketplace](https://mar ketplace.atlassian.com/)
   - 支持jira, confluence, bitbucket, bamboo, crowd
   - Atlassian has a market cap or net worth of $53.92 billion
 
@@ -378,6 +378,8 @@ modified: 2023-11-28T14:48:45.910Z
 
 - [Zoho Marketplace](https://marketplace.zoho.com/home)
   - 支持writer/mail/crm/analytics
+  - estimated market value of between $5 billion – $15 billion
+  - [How Zoho became a $1B company without a dime of external investment… | TechCrunch _202209](https://techcrunch.com/2022/09/10/how-zoho-became-1b-company-without-a-dime-of-external-investment/)
 
 - [飞书 应用目录](https://app.feishu.cn/)
 - [钉钉应用中心](https://appcenter.dingtalk.com/)
@@ -414,6 +416,10 @@ modified: 2023-11-28T14:48:45.910Z
 - [ownCloud Marketplace](https://marketplace.owncloud.com/)
 
 - [Mattermost Marketplace](https://mattermost.com/marketplace/)
+  - 到2019年series-b共融资 70m
+
+- [ClickApps in ClickUp™](https://clickup.com/clickapps)
+  - Clickup Hits $4b Valuation 
 
 - [Visual Studio Marketplace](https://marketplace.visualstudio.com/VSCode)
 - [Unofficial Jupyter Notebook Extensions](https://jupyter-contrib-nbextensions.readthedocs.io/en/latest/)
@@ -422,6 +428,9 @@ modified: 2023-11-28T14:48:45.910Z
   - [Extending the Notebook — Jupyter Notebook 7.1.0](https://jupyter-notebook.readthedocs.io/en/stable/extending/index.html)
     - Please note that the extension system for Notebook 7 is radically different from the one used in Notebook 6.5.x and earlier.
     - With Notebook 7 being developed on top of JupyterLab and Jupyter Server, the frontend extension system is now based on the same extension system used by JupyterLab.
+
+- [JetBrains Marketplace](https://plugins.jetbrains.com/)
+  - valuation. $7.0b (Public information from Dec 2020)
 
 - [Eclipse Marketplace](https://marketplace.eclipse.org/)
 
@@ -440,6 +449,9 @@ modified: 2023-11-28T14:48:45.910Z
   - integrations help improve efficiencies, reduce operating costs, and deliver satisfying fleet and driver experiences
 
 - [Shopify App Store](https://apps.shopify.com/)
+
+- more-valuation
+  - [Businesses based on open source software](https://www.factoftheday1.com/p/july-15-businesses-based-on-open)
 # faq
 - 如何不使用图床而将图片直接嵌入到笔记中
   - [MarkDown图片存储格式-Textbundle格式](https://zhuanlan.zhihu.com/p/368463926)

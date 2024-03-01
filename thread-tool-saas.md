@@ -9,6 +9,22 @@ modified: 2023-05-07T18:35:50.897Z
 
 # guide
 
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Cloudflare 禁止自助服务（包括 Cloudflare Pages）用于图床和视频床。
+- https://twitter.com/isukkaw/status/1763415242330235088
+  - 只要有别有用心的人对着这个域名的图片刷 100 TiB 流量，Cloudflare 就会派销售提醒你需要掏钱上 Business Plan 否则就会 Suspend 你的域名。
+- 我能理解有 100TiB 的免费流量吗？
+  - Cloudflare 免费客户的 DDoS 防护基本形同虚设、阈值设的非常高的。一旦流量被刷到域名 Suspend，就意味着只要你不交钱升级，你这个域名终身不能继续薅 Cloudflare。
+  - 所以我自己托管在 Cloudflare 上的服务都上 Cloudflare 配了一堆 WAF 规则避免被刷流量。
+  - 配置 WAF 需要绑自己的域名，免费套餐可以配简单的自定义规则（Cloudflare Managed WAF 需要额外加钱）和简单的 Rate Limit。
+  - 我的建议还是注册个单独的 Cloudflare 账号、单独的域名做这件事。这样即使不幸被 Cloudflare 清退，也不过损失一个域名、一个账号而已。
+
 # discuss
 - ## 
 

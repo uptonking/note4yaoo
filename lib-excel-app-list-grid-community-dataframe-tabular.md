@@ -12,6 +12,10 @@ modified: 2023-11-14T06:31:35.103Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 
+
 - ## We present the first detailed, empirical evaluation of three popular and increasingly-adopted formats and evaluate their suitability to be used as a native format in a DBMS
 - https://twitter.com/gunnarmorling/status/1731776497197756545
   - @ApacheArrow , @ApacheParquet , @apacheorc compared, by Chunwei Liu et al.

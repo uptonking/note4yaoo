@@ -11,9 +11,22 @@ modified: 2021-08-10T03:51:01.891Z
 
 - ## 
 
-- ## 
+- ## 📏 which URL format we going with?
+- https://twitter.com/Shpigford/status/1763318774336311731
+  - param-in-url-path vs query-params
+- My view on this: the path is the WHAT, the query is the HOW.
+  - Excellent advice! Query parameters essentially serve as an additional filtering layer
+  - Also it is easier to add more params when/if needed, and client wouldn’t care about the order of them.
 
-- ## 
+- Query params are widely used to filter down the data you get from an endpoint. I don’t see the reason not to use them.
+
+- I like 2nd since better support for languages query params to string concept. Lots of http libs out there handle key/value pairs to query string. W/o it you manually construct it, which is fine too but more readable as a dictionary in code IMO
+
+- 2.  Clean URLs and clean configurable parameters.
+
+- ## your codebase is a mess
+- https://twitter.com/catalinmpit/status/1763178455750029710
+- talk is cheap, send me patches
 
 - ## Question for other library authors: how do you handle experimental code? 
 - https://twitter.com/steveruizok/status/1763119013243007438

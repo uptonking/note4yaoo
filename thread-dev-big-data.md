@@ -12,6 +12,35 @@ modified: 2023-04-19T07:30:34.872Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 🚀 [ClickHouse Keeper: A ZooKeeper alternative written in C++ | Hacker News _202309](https://news.ycombinator.com/item?id=37674967)
+- 
+- 
+- 
+
+- ## Hudi is considered as one of the open lakehouse table formats.
+- https://twitter.com/Dipankartnt/status/1763400988210110667
+- Hudi actually provides various "platform services" that extends Hudi's role from being just a table format to a comprehensive lakehouse platform.
+- These services includes things like:
+  - HudiStreamer for ingestion: ingest from different sources such as DFS or Kafka
+  - Tools for snapshotting, exporting/importing Hudi tables
+  - Commit notifications
+  - Catalog support (Hive, Glue, BigQuery)
+- If we break down the Hudi stack, this is what it looks like (bottom to top):
+✅ Lake storage - cloud object stores (S3, ADLS, GCS)
+✅ Open file format - Parquet, ORC & other data files that stores data
+✅ Transactional database layer
+  - Table format
+  - Indexes
+  - Concurrency control
+  - Table services
+  - Lake Cache, Metaserver (wip)
+✅ Programming APIs - Writers, Readers
+✅ User Interface
+- Platform services - HudiStreamer (ingestion), catalog sync, admin CLI
+- Query engine
+
 - ## 🆚️ Spark was a short-lived anomaly. The future of data and analytics is very clearly Python and Rust.
 - https://twitter.com/jdegoes/status/1762770034579931533
 - Data scientists use Python. In the very uncommon cases when you need to extend Python, you can do so with C/C++ bindings, but that is not what data scientists do.

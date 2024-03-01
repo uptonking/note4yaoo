@@ -15,7 +15,20 @@ modified: 2024-02-28T08:22:23.107Z
 - ## 
 
 - ## 
+# discuss-usecase-lsm
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Many modern databases use LSM-Tree and RocksDB with adaptations. Here is what YugabyteDB did
+- https://twitter.com/FranckPachot/status/1763387123502321950
+  - [Enhancing RocksDB for Speed and Scale | YugabyteDB Friday Tech Talk | Episode 88 - YouTube _202311](https://www.youtube.com/watch?v=WwsiDu-qmFU&list=PL8Z3vt4qJTkLTIqB9eTLuqOdpzghX8H40&index=4)
+
 # discuss
+- ## 
+
 - ## 
 
 - ## 

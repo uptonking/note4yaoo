@@ -9,6 +9,12 @@ modified: 2021-01-01T20:52:42.088Z
 
 # guide
 
+- watching
+  - sqlite version of websql in the browsers
+
+- 2024
+  - ai-chat/llm
+
 - 2023
   - triplit
 

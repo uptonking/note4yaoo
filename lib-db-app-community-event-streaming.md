@@ -34,7 +34,10 @@ modified: 2023-10-27T07:02:42.391Z
 
 - ## 
 
-- ## 
+- ## Internal consistency in streaming systems. 
+- https://twitter.com/spinscale/status/1763201454741791221
+  - Three years old, but a great post testing streaming systems and how an eventual consistent streaming system is more of an issue than a database.
+  - [Internal consistency in streaming systems _202104](https://www.scattered-thoughts.net/writing/internal-consistency-in-streaming-systems/)
 
 - ## At WarpStream, we’re betting on the future of data streaming being completely object storage based.
 - https://twitter.com/richardartoul/status/1729566466305913166

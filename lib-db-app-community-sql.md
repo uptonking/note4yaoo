@@ -121,7 +121,11 @@ modified: 2023-09-17T17:35:27.024Z
 
 - ## 
 
-- ## 
+- ## 💡 dengTIL PRQL - Pipelined Relational Query Language, pronounced “Prequel”. 
+- https://twitter.com/iavins/status/1763244325981331782
+  - It compiles to SQL and claims that it makes writing complex SQL queries simple and in
+- Also worth taking a look at Kusto (kql) from @Microsoft , ES|QL from @elastic and SPL from @splunk
+- This is generally a good idea. See this tweet. It's a powerful augment to SQL, without taking away the Recursive expression+value based nature of SQL
 
 - ## 🔍⚡️ Are there any DBs that have an interface to send query plans over the wire rather than SQL? 
 - https://twitter.com/criccomini/status/1754198831577841918

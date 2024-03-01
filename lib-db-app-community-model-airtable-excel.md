@@ -45,7 +45,13 @@ modified: 2023-10-26T21:54:54.201Z
 
 - ## 
 
-- ## 
+- ## 🚀 We've created the fastest spreadsheet
+- https://twitter.com/ProgRockRec/status/1763337727335125031
+- The 8 million row one worked, and it is blazing fast to work with, a sum was instantaneous, however Sort doesn't seem to be implemented yet?
+  - If you select the 8M row range, you can right click and select "Sort range" (or Data > Sort). You can also filter, which creates a persistant UI for sorting & filtering.
+
+- https://twitter.com/wesmckinn/status/1763285838673449377
+  - I’m thrilled to be an early investor in @GetRowZero and proud that it is built on @ApacheArrow !
 
 - ## [Microsoft announces Lists, a new Airtable-like app | Hacker News_202005](https://news.ycombinator.com/item?id=23236364)
 - It's just something with lots of Microsoft's latest software that annoys me. They all feel behind, laggy and lacking features in comparison to their competitor.

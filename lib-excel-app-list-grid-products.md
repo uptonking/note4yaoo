@@ -34,6 +34,9 @@ modified: 2022-08-21T10:38:26.289Z
 
 - [IronCalc](https://www.ironcalc.com/)
   - IronCalc is a spreadsheet engine and ecosystem. 
+
+- [Row Zero - The World's Most Powerful Spreadsheet](https://rowzero.io/)
+  - making big data feel small in a familiar spreadsheet interface
 # project-management
 - asana
 

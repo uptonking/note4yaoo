@@ -94,7 +94,9 @@ modified: 2023-01-22T19:52:59.120Z
 - https://github.com/r48n34/db-erd-gen /MIT/202401/ts/自动生成sql-ddl
   - https://db-erd-gen.vercel.app/
   - Free DrawSQL like website
+  - 依赖@devbookhq/splitter、mantine5、reactflow、zustand、zod
   - Save SQL in various DB format
+  - support output: Postgres MySQL SQLite knex.js kysely ts types
 
 - https://github.com/kurierjs/kurier /MIT/202312/ts
   - https://kurier.readthedocs.io/en/latest/
@@ -134,6 +136,7 @@ modified: 2023-01-22T19:52:59.120Z
   - An example app that lets you create a family tree, in this case a historical royal dynasty
   - The main theme of this app is recursion. The SQL model is hierarchical, and a CTE is used to query family tree data. 
   - The family tree graph is displayed by (vanilla) SVG elements wrapped in nested (recursive) React components.
+  - This app uses: React Redux Apollo GraphQL graphql-server ReactRouter ReduxForm SVG Knex/SQL CTE (Common Table Expression)
 
 - https://github.com/RisingStack/mysql-large-data-handling /MIT/201706/js
   - Handling large amount of data with MySQL and Node.js
@@ -288,11 +291,11 @@ modified: 2023-01-22T19:52:59.120Z
 - https://github.com/ganeshmani/node_bookmark_manager_app /202002/js
   - BookMark Manager Built using Nodejs, Express, Knex and MySQL
 
-- https://github.com/onosendi/product-feedback /202202/ts/inactive
+- https://github.com/onosendi/product-feedback /202202/ts/样式友好/inactive
   - https://product-feedback.dlindegren.com/
   - Product feedback hobby project
   - Community product feedback that moves through a life cycle: suggestion -> planned -> in-progress -> live.
-  - Redux Toolkit, Fastify, pg, knex
+  - 依赖Redux-Toolkit, Fastify, pg, knex, react-final-form
 
 - https://github.com/sumanthyedoti/indirect /202209/ts/inactive
   - Communication platform for organisations and communities
@@ -364,6 +367,7 @@ modified: 2023-01-22T19:52:59.120Z
 
 - https://github.com/felixmosh/knex-paginate /MIT/202303/js
   - Extension of Knex's query builder with `paginate` method that will help with your pagination tasks.
+  - This lib got inspiration from knex-paginator.
   - https://github.com/cannblw/knex-paginator /201912/js
 
 - https://github.com/jpalumickas/knex-cursor-pagination /MIT/202206/ts

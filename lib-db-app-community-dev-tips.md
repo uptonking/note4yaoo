@@ -12,7 +12,17 @@ modified: 2023-11-07T16:47:11.499Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 💡🛢️ I had bought the G&R book a few years before I landed a job to write a storage engine from scratch.
+- https://twitter.com/sunbains/status/1756185046409691467
+  - These days it’s a lot easier, there lots of resources out there, code, articles, videos, people willing to cooperate.
+  - Ignore distributed systems to start with.  
+  - Ignore performance, make it work, make it correct and then make it performant.
+1. Write a WAL
+2. Write an LSM or BTree
+3. Write a lock manager
+4. Write the transaction manager
+- This is the sequence I followed and when I talked to Heikki Tuuri the creator of InnoDB, he took the exact same steps.
+- There is a lot of code on GitHub with friendly licenses, copy the code play with it. Once you are comfortable rewrite it based on your understanding.
 
 - ## 🆚️🧩 Databases are not intended for storing data but for storing relationships. Relationships are what make Entities worthy.
 - https://twitter.com/deisbel/status/1762864820049600840
@@ -47,6 +57,22 @@ modified: 2023-11-07T16:47:11.499Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## Every day, we deal with hierarchical structures like Manager-Employees, Family, and Binary Trees.
+- https://twitter.com/deisbel/status/1763218755163766875
+  - The solution uses Recursive Relationships (RR).
+  - Recursive because every row in that table will have a column containing a reference to another row, commonly its parent in the classic parent-child relation existing in Trees.
+  - The challenge is to traverse the Tree, in other words, get all his children at any level below it.
+- Example 1: One-to-Many
+  - Designing a relationship between people named "mother/children."
+- Example 2: Many-to-Many
+  - It is a many-to-many relationship because every person could have more than one relative.
+
+- 
+- 
+- 
 
 - ## 💡 5 strategies to design a high-performance read-heavy system.
 - https://twitter.com/ProgressiveCod2/status/1759845363450859525

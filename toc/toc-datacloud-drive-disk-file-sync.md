@@ -286,7 +286,11 @@ modified: 2022-09-10T02:26:52.062Z
   - The notes are persisted temporarily in local storage, but you can download all notes in markdown format as a zip.
   - Hidden within the code is an alternate version that contain a Node/Express server and integration with GitHub.
 # webdav
-
+- https://github.com/sigoden/dufs /MIT/202402/rust
+  - A file server that supports static serving, uploading, searching, accessing control, webdav...
+  - Download folder as zip file
+  - Upload files and folders (Drag & Drop)
+  - Resumable/partial uploads/downloads
 # filesystem
 - https://github.com/internalfx/sqlgrid /16Star/apache2/201910/js
   - A file storage system for SQL databases inspired by GridFS
