@@ -140,6 +140,23 @@ modified: 2024-01-04T01:28:58.097Z
 
 - ## 
 
+- ## 
+
+- ## 🤔 近期在纠结 #Slack 和 #Discord 作为社群 IM 平台的选型。
+- https://twitter.com/tison1096/status/1763774282914742550
+- Your goal is to build a robust community not to choose a tool.
+- Yes, full history without extra cost. Besides, discord has:
+  1. Better threads support (easier to use than slack)
+  2. One account difference profiles in different servers (no need to "find my workspace")
+  3. Good permissions support (it’s still free!)
+
+- Rust 社区用的 zulipchat 呢？
+  - 太 Geek 了，我自己的项目我敢用，有一定大众需求的项目还是算了。另外一些集成方面还不如另两个丰富，直接的就是我要把 activities 接到 CommonRoom 上，另两个直接有集成，Zulip 理论上我可以自己写，但是实际上不太可能有时间写好。
+
+- 感觉 Discord 跟企业微信的存在有点像，目的是跟用户对接，而非内部成员之间的联络
+
+- 前段时间看到once出的campfire似乎也不错，299刀买断，有源码可以自托管
+
 - ## [Is there any Slack self-hosted Alternative? : r/selfhosted](https://www.reddit.com/r/selfhosted/comments/p8ahom/is_there_any_slack_selfhosted_alternative/)
 - Matrix is great! Its a chat protocol that has many front ends your users can choose from. The most popular front end is Element. Why use matrix? At its core, the protocol is just for routing messages between clients and servers. This means you can join multiple servers (hosted by other matrix users). There's also bridges between other chat services so you can do all your communication in one place. Also, with Jitsi integration you can do video calls directly in the app.
 

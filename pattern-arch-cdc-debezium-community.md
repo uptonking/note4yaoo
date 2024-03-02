@@ -53,7 +53,13 @@ modified: 2024-02-12T17:47:34.152Z
 # discuss-debezium
 - ## 
 
-- ## 
+- ## What could be a valid use case for also updating the primary key on upserts? 
+- https://twitter.com/thegeeknarrator/status/1763866449360162968
+  - The way Debezium works in this case is it creates a Delete and an Insert event with the new key. 
+  - I believe this is how CDC is supposed to work and I think it makes sense. Thoughts? 
+
+- This should only occur when using some business key as the primary key, say an email address. I'd always advise to use immutable surrogate(替代物；代用品) keys instead. That way, there are no ordering concerns (delete + insert with new key may yield different partition).
+  - Yes, that’s is what my recommendation was. Delete and insert going to different partitions wasn’t really an issue in this case, but yes could be a concern.
 
 - ## 🌰 [Streaming Databases in Real-Time with Kafka, Debezium, and MySQL | Hacker News _201703](https://news.ycombinator.com/item?id=13995648)
 - Totally agree! Once we were very close to implement a very similar scenario (stream of events, some lightweight processing, kafka for distribution, hbase/solr for storage). 

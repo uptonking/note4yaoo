@@ -18,6 +18,7 @@ modified: 2023-02-05T18:50:32.900Z
 - https://github.com/masb0ymas/expresso-sequelize /MIT/202402/ts/提交多/功能丰富
   - https://expresso.masb0ymas.com/
   - expresso with Sequelize
+  - 采用controller/service/entity三层架构，class风格
   - 依赖axios、express-rate-limit、i18next-fs-backend、multer、node-cron、pg-hstore、sequelize-typescript2、zod
   - Sequelize ORM v6.x + Sequelize TypeScript v2.x
   - Handlebars for templating HTML
@@ -49,6 +50,7 @@ modified: 2023-02-05T18:50:32.900Z
 
 - https://github.com/ruyd/automated-express-backend /202306/ts
   - NodeJS Express Starter for backends and microservices
+  - 依赖express-jwt、firebase-admin、sequelize6、socket.io、swagger-ui-express、umzug
   - Auto CRUD API Routes for Models
   - Auto SwaggerUI Admin
   - Non-invasive, allows regular/custom backend work
@@ -57,6 +59,7 @@ modified: 2023-02-05T18:50:32.900Z
   - 数据库依赖docker
   - https://github.com/ruyd/fullstack-monorepo /202306/ts/提交多
     - Fullstack Canvas Drawing App and TypeScript Starter Template
+    - 采用controller/model两层架构，函数式风格
     - React, Redux, React Query, Material UI
     - Sequelize, Postgres, auth0
     - 支持注册新用户、admin界面
@@ -312,7 +315,7 @@ modified: 2023-02-05T18:50:32.900Z
 - https://github.com/TonyMckes/conduit-realworld-example-app /202303/js/be+fe
   - created to demonstrate a fully fledged fullstack application built with React / Express.js / Sequelize / PostgreSQL including CRUD operations, authentication, routing, pagination, and more.
 
-- https://github.com/cirosantilli/node-express-sequelize-nextjs-realworld-example-app /202208/ts/be+fe
+- https://github.com/cirosantilli/node-express-sequelize-nextjs-realworld-example-app /202208/ts
   - Node.js + Express.js + Sequelize + SQLite/PostgreSQL + Next.js fullstack static/SSG/ISG Example Realworld App
   - https://github.com/cirosantilli/node-express-sequelize-realworld-example-app /202106/js
 
@@ -332,15 +335,18 @@ modified: 2023-02-05T18:50:32.900Z
 - https://github.com/felipecal/Api-Sequelize /MIT/202402/ts/提交多
   - This is a simple CRUD api in TypeScript, sequelize, aws rds or docker database.
   - 依赖express、sequelize、swagger-ui-express、bcrypt、jsonwebtoken
+  - 采用controller/service/model三层架构，class风格
   - AWS RDS or Docker Database
   - Swagger - Documentation
 
 - https://github.com/osamaAbdullah/express_template /202402/ts/结构合理
   - 依赖sequelize7、express-session、passport-local、vinejs(validate)
+  - 采用controller/model两层架构，函数式风格
   - 未实现jwt
 
 - https://github.com/nmanikiran/rest-api-node-typescript /202106/ts/inactive
   - simple REST API with node and express with typescript
+  - 采用controller/repository/model三层架构，class风格
   - 架构典型，可通过api访问数据 http://localhost:3009/api/lessons
   - 未实现jwt
 
@@ -352,6 +358,7 @@ modified: 2023-02-05T18:50:32.900Z
   - configurable Node.js, Express, and TypeScript server template with a service-based architecture 
   - Sequelize/Mongoose
   - 依赖axios、express、jsonwebtoken、swagger-ui-express
+  - 采用controller/service/repository/model四层架构，class风格
   - Database Compatibility: Interact with MySQL, PostgreSQL, MariaDB, Sqlite, MSSql, MongoDB
 
 - https://github.com/codespede/pwoli /BSD/202303/ts
@@ -365,6 +372,8 @@ modified: 2023-02-05T18:50:32.900Z
   - Frontend widgets like ActiveForm, GridView, ListView for SSR(Server Side HTML Rendering) applications.
   - Works on both raw NodeJS and TypeScript applications.
   - Pwoli is inspired from PHP's Yii framework.
+  - https://github.com/codespede/pwoli-express-typescript-sample /202211/ts/mongo
+  - https://github.com/codespede/pwoli-nodejs-typescript-sample /202211/ts/sequelize
 
 - https://github.com/SamuelMarks/restify-orm-scaffold /202402/ts
   - Simple baseline scaffold to get you started using TypeORM and/or Sequelize and/or Waterline on restify with TypeScript.
@@ -380,6 +389,7 @@ modified: 2023-02-05T18:50:32.900Z
 
 - https://github.com/yosua-kristianto/typescript-expressjs /202212/ts
   - Turns out I made a boilerplate code through this repository.
+  - class风格，controller/repository/model三层架构
 
 - https://github.com/StefanNedelchev/express-sequelize-ts-example /202401/ts/过于简单
   - A basic example of using express with sessions, sequelize and typescript.
@@ -389,12 +399,14 @@ modified: 2023-02-05T18:50:32.900Z
 
 - https://github.com/kushalshit27/nodejs-sequelize-typeScript /202402/ts
   - build your own API with Node.js + Express+ Sequelize + TypeScript
+  - 两层架构, class风格
 
 - https://github.com/mcaligares/express-typescript /202310/ts
   - Express project with Typescript support ready to start coding
 
 - https://github.com/Mohammad-Faisal/professional-express-sequelize-docker-boilerplate /MIT/202205/ts/typedi/inactive
   - ExpressJS Boilerplate with Typescrip+Docker+Sequelize integration
+  - 采用controller/service/repository/model四层架构，class风格，多装饰器
 
 - https://github.com/weareopensource/Typescript /202110/ts/inactive
   - TypeScript - Boilerplate Back : Express, Jwt, Mongo, Sequelize (Draft)
@@ -411,8 +423,9 @@ modified: 2023-02-05T18:50:32.900Z
 - https://github.com/salino3/node-typescript /202402/ts
   - front + back
 
-- https://github.com/ImRLopezAG/Ts-Api-Template /202311/ts
+- https://github.com/ImRLopezAG/Ts-Api-Template /202311/ts/tsyringe
   - This is an API template made with express and typescript, to speed up your development, it contains repositories and generic services for the typical CRUD actions, based on a Sequelize model, we use it for data persistence
+  - 依赖tsyringe、express、jsonwebtoken、sequelize6、swagger-ui-express
 
 - https://github.com/Murilo-MRS/nodejs-ts-boilerplate /202401/ts
   - Boilerplate NODEJS TYPESCRIPT SEQUELIZE MYSQL

@@ -110,7 +110,26 @@ modified: 2020-07-17T10:54:16.341Z
   - 2021年在 MIUI 13 中推出全新系统字体 MiSans, 加入了丰富的 OpenType Features
   - 2023年在全新系统 Xiaomi HyperOS 中推出全球语言定制字体项目— MiSans Global。这是一个庞大的字体家族，涵盖 20 多种书写系统，支持 600 多种语言，字符数量累计超过10万个。
 
-## web fonts
+## dev-fonts
+
+- [MonoLisa - font follows function](https://www.monolisa.dev/)
+  - [MonoLisa - End User License Agreement (EULA)](https://www.monolisa.dev/license)
+  - MonoLisa was designed with developers in mind. 
+  - It’s one of the few fonts that comes packed with symbols to use in CLIs including PowerLine.
+  - For personal use, you are permitted to use the typeface on your own computer(s), including your work computer. 
+  - However, you are not permitted to use the typeface within a commercial context
+  - In other words, you can use the typeface for developing a product but not as a part of a product
+  - commercial license allows the following types of usages:
+    - Desktop/print usage
+    - Web usage
+    - Application usage
+    - ePub usage
+
+- [JetBrains Mono: A free and open source typeface for developers](https://www.jetbrains.com/lp/mono/)
+  - available under the SIL Open Font License 1.1 license
+  - free for both commercial and non-commercial purposes
+
+## web-fonts
 
 - 问题
   - 中文webfont过大，目前暂无优秀的解决方案

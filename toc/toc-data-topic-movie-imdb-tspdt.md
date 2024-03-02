@@ -32,7 +32,7 @@ modified: 2022-11-29T14:52:00.701Z
 - https://github.com/vegidio/js-vimdb
   - This package lets you get IMDb information from movies, series, etc without an API key.
 
-- https://github.com/worr/node-imdb-api
+- https://github.com/worr/node-imdb-api /202203/ts/inactive
   - A non-scraping, functional node.js interface to imdb
   - an api key is required
 

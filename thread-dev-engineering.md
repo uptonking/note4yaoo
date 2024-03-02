@@ -26,7 +26,10 @@ modified: 2021-01-21T17:52:13.333Z
 
 - ## 
 
-- ## 
+- ## What's your favourite coding font?
+- https://twitter.com/JoshWComeau/status/1763587415539597433
+- It's https://monolisa.dev. I've been jumping on and off different monospace fonts for years. MonoLisa is what finally made me happy. It's a phenomenal font
+- Using Hack Nerd Font Mono currently. It's nice. Doesn't have ligatures but not a fan of them personally.
 
 - ## Do people still follow the 80 column width rule for code?
 - https://twitter.com/sunbains/status/1762593260927873110
@@ -94,9 +97,9 @@ modified: 2021-01-21T17:52:13.333Z
 
 - 这里可能有个悖论, 自己造轮子 研发成本高, 不自己造轮子 显不出技术“高明”, 结果是 996 劣质轮子 遍地都是…
 
-01. 大概率没有开源的好
-02. 造轮子就要维护一个轮子迭代维保团队
-03. 迭代维保团队和其他团队无限的撕逼
+01.  大概率没有开源的好
+02.  造轮子就要维护一个轮子迭代维保团队
+03.  迭代维保团队和其他团队无限的撕逼
 
 - ## Five terms I avoid when naming things:
 - https://twitter.com/housecor/status/1742197661837476018

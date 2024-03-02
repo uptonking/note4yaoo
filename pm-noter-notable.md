@@ -41,6 +41,9 @@ modified: 2023-11-28T14:48:45.910Z
   - split-table
   - ActionText
   - cms+crdt
+  - encryption
+    - 只对部分段落或部分文字加密
+    - 处理类似`.env`文件时，对secretKey加密
   - integrations
     - jupyter-notebook
     - whisper-editor
@@ -57,10 +60,8 @@ modified: 2023-11-28T14:48:45.910Z
 - 特色功能点
   - localizable note file(not local-first)
   - keyboard shortcuts(accessible): 参考office、vscode、浏览器不冲突
-  - api doc
-    - 生成openapi/swagger ui风格的文档
-  - hero block
-    - 类似在一页ppt上只显示一个大号的单词/短语，以醒目突出
+  - api doc，生成openapi/swagger ui风格的文档
+  - hero block，类似在一页ppt上只显示一个大号的单词/短语，以醒目突出
   - examples as notes
   - instant-preview
     - 类似typora的即时预览，可选择 行内/上下 两种结构

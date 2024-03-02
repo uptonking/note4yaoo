@@ -9,6 +9,9 @@ modified: 2021-05-17T11:53:13.568Z
 
 # guide
 
+- who is using #jupyter
+  - fwk:
+  - app: cocalc
 # faq
 - ## vote: if you do exploratory data analysis or build machine learning models, what tool do you reach for first?
   - local, Jupyter notebook

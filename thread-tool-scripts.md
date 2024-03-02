@@ -22,7 +22,9 @@ modified: 2023-12-11T10:12:09.159Z
 
 - ## 
 
-- ## 
+- ## Polyfill CDN 服务 http://polyfill.io 被中国菠菜 CDN 收购
+- https://twitter.com/isukkaw/status/1763650534198972721
+  - 先开几十个 PR、把 http://polyfill.io 赶出 GitHub、统统换成 http://cdnjs.cloudflare.com/polyfill
 
 - ## Emitting all the output of an app to stdout, while writing a filtered subset to a file? Not a problem with `tee` and process substitution
 - https://twitter.com/gunnarmorling/status/1756715764168417372

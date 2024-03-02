@@ -9,7 +9,19 @@ modified: 2023-05-21T15:46:35.896Z
 
 # guide
 
+# discuss-instantdb
+- ## 
+
+- ## 
+
+- ## This month Instant grew a little bigger - two big updates, data explorer and a refreshed landing page. _202403
+- https://twitter.com/stopachka/status/1763618042225860728
+  - Similar to Firebase, we’ve added a data explorer to the dashboard so you can easily see your app’s data
+  - We also spent this month laying the ground-work for some exciting features next month. In March we’re going to give you a schema editor, more powerful query capabilities, and support for ephemeral data
+
 # discuss
+- ## 
+
 - ## 
 
 - ## 

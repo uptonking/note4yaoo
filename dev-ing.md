@@ -74,7 +74,7 @@ betterdiscordctl -i flatpak install
   - ui: ariakit, zag/ark, radix-ui, mantine
   - apps: cms+crdt
 
-- deep into lib/fwk 书籍原理与代码实践要分开
+- deep into lib/fwk 书籍原理与代码实践要分开, 寻找深入debug的状态
   - 学习巩固: 实践练习 > 源码/示例 > 文档/论坛 > 社交分享
   - 不要从一个想法开始，而是从一个真正的问题开始
   - src-code, issues, pr, forks, extensions/alternatives

@@ -34,7 +34,10 @@ modified: 2023-12-15T17:04:36.589Z
 # discuss-strapi-mongo 🍃
 - ## 
 
-- ## 
+- ## We probably will never bring back MongoDB ourselves. _20240302
+- https://discord.com/channels/811989166782021633/1095091586452426824/1213168058454114315
+  - We are basically "all in" on relational databases.
+- DynamoDB is still a NoSQL database and we basically exclusively use Knex.js and would really only work with the databases they support (even that though we don't ever plan on adding support for say Microsoft SQL or OracleDB because of licensing).
 
 - ## [Is MongoDB a terrible choice for Strapi? : Strapi _202207](https://www.reddit.com/r/Strapi/comments/w9069u/is_mongodb_a_terrible_choice_for_strapi/)
 - Not a terrible choice, in general: we used MongoDB for all of our v3 instances. However, Mongo is hugely inefficient if you have nested relations between collections (though this makes sense - mongo isn’t a relational DB).
@@ -137,6 +140,24 @@ modified: 2023-12-15T17:04:36.589Z
 - ## 
 
 - ## 
+# discuss-schema-change
+- ## 
+
+- ## [Data Loss in Content-Type Table After Schema Modification _202401](https://github.com/strapi/strapi/issues/19141)
+- In Strapi v5 D&P and i18n won't be able to be disabled (though they don't have to be used) so technically in v5 the D&P delete issue won't be a problem anymore since it'll be forced on for all content-types (though you'll have the option to auto-publish by default or if new content should be a draft state).
+
+- ## [Deleting/Updating content-type doesn't drop/migrate the database ](https://github.com/strapi/strapi/issues/1114)
+- 202210: Yes this is currently intended (as you deleted the schema effectively), the best method to hold onto the data is take a database backup.
+  - Certainly any modifications a dev is making should be tested in a staging environment. 
+  - If you are simply renaming a content-type or field then you will have to (for now) write a custom migration
+
+- ## 🐛 [Renaming a field in a content-type will erase the existing data _202202](https://github.com/strapi/strapi/issues/12626)
+- this behavior is the intended one (at least for the moment). 
+  - In V3 we weren't cleaning up the DBs as projects were evolving and it created a lot of friction & resentment from the community. 
+  - For V4, we decided to tackles this issue and started cleaning up the DB on schema changes (basically a schema/DB sync). 
+  - However -and you're right- there is no way today for the schema sync to differentiate when a field is renamed from when one is deleted/created. If we want to allow this kind of distinction, it would imply in-depth modification of the content type builder API as well as some behavior in the schemas themselves. As we lack bandwidth for the moment, this is not something that will be handled in the short term.
+  - However, it's true that there is a possible data loss when deploying a field rename from dev to production. Thus, I would advise creating a custom DB migration so that you can transfer the data before the schema sync is done. (more info on Derrick's link)
+
 # discuss
 - ## 
 

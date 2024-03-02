@@ -88,6 +88,10 @@ modified: 2022-12-19T01:51:01.389Z
   - our API hub offers custom endpoints that provide a hands-on experience in handling API responses.
   - our API hub also provides advanced APIs to challenge and stretch your skills.
   - Our open-source project is currently hosted on a remote server, where we are forced to reset the entire server, including the file system and MongoDB database, every 2 hours to avoid incurring additional costs.
+
+- https://github.com/jbreckmckye/node-typescript-architecture /202307/ts/inactive
+  - Hexagonal architecture / ports-and-adapters for Node.js using simple functional programming
+  - 依赖newtype-ts、monocle-ts、fp-ts、express
 # crud/admin
 - api-server-nodejs /178Star/MIT/202212/ts
   - https://github.com/app-generator/api-server-nodejs
@@ -127,6 +131,15 @@ modified: 2022-12-19T01:51:01.389Z
   - 基于目前市面上开源的高星admin项目fork，集成fast-crud，Antdv 3x 、Element-Plus 、NaiveUI 三选一
     - https://github.com/fast-crud/fs-admin-antdv /vue
 
+- https://github.com/thomas4019/expressa /MIT/202401/js/vue
+  - API creation middleware with an admin interface
+  - makes it easy to create basic APIs by using JSON schema
+  - django-like admin interface for creating collection-REST endpoints and managing permissions
+  - 依赖express、mongo-query、sift
+  - it's just middleware, not a framework
+  - per-collection database storage: MongoDB, PostgreSQL, or JSON-files (useful for version control)
+  - Expressa is not primarily built for simple blog websites or mostly static content websites.
+
 - https://github.com/idurar/mern-admin /MIT/202311/js
   - https://www.idurarapp.com/demo-mern-admin/
   - MERN Stack Antd Admin Dashboard CRUD Auth
@@ -154,10 +167,6 @@ modified: 2022-12-19T01:51:01.389Z
   - 开源了dashboard的react前端和后端
   - https://github.com/creativetimofficial/argon-dashboard-nodejs
   - https://github.com/creativetimofficial/material-dashboard-react-nodejs
-
-- https://github.com/thomas4019/expressa /202210/js/vue
-  - makes it easy to create basic APIs by using JSON schema
-  - django-like admin interface for creating collection-REST endpoints and managing permissions
 
 - https://github.com/AndhikaBukh/Storify /202208/ts/starter
   - http://storify-six.vercel.app/

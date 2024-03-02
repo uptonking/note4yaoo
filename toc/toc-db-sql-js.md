@@ -105,6 +105,16 @@ modified: 2021-08-30T18:56:14.863Z
 - https://github.com/fibo/SQL92-JSON
   - can stringify a JSON into an SQL and viceversa parse an SQL and serialize it into a JSON
 
+- https://github.com/goodybag/mongo-sql /201811/js
+  - extensible SQL generation library for JavaScript with a focus on introspectibility
+  - writing your SQL as JSON
+
+- https://github.com/planetarydev/json-sql-builder2 /202108/js
+  - When you need to write dynamic queries defined by the user, it is much easier to use JSON instead of generating a string-based query.
+- https://github.com/2do2go/json-sql /202011/js
+  - Node.js library for mapping mongo-style query objects to SQL queries.
+  - it is only translator, you should use specific driver for your db
+
 - https://github.com/turbot/steampipe /go
   - https://steampipe.io/
   - Use SQL to instantly query your cloud services (AWS, Azure, GCP and more). Open source CLI. 

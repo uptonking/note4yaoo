@@ -8,7 +8,9 @@ modified: 2023-02-05T18:55:27.887Z
 # lib-fwk-nodejs-express-dev
 
 # guide
-
+- who is using #express
+  - fwk: strapi, eggjs
+  - app: outline
 # dev
 
 # orm-同时支持rdbms和nosql的方案(sqlite+mongodb)

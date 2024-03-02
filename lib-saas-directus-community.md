@@ -12,6 +12,31 @@ modified: 2024-02-16T14:56:17.057Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [CSV/Excel File Import](https://github.com/directus/directus/discussions/7246)
+- Yes u can already do that through api
+  - I'm talking about the DIrectus GUI. A button to upload the file/select from the file library
+
+- This has since been implemented _20230511
+
+- ## 📡📈 [Add a Spreadsheet Layout _20210201](https://github.com/directus/directus/discussions/3874)
+- I'm torn between two options:
+  - Spreadsheet style, showing and editing raw values
+  - Table Layout Plus... where clicking a field will open a context popup with the proper interface
+
+- I'd prefer a third option: Use the correct interfaces and only make them pop up if necessary from a layout perspective. That way in the mockup above probably only the Image fields would need context popup, as text/dropdown should work with really little space.
+  - Of course the decision which mode to use could be manual (but per field), in the layout settings.
+
+- I'd advice you not to build the spreadsheet yourself but to reuse a dedicated component (like Revogrid, with proper patches and customization ?) or you'll end up with endless requests for new features everyone expect from spreadsheets but were not in your 80/20 plan (selection, copy paste, moving values, infinite loading...).
+
+- Maybe nocodb.com can be used as a spreadsheet for the collections? Directus can integrate NocoDB by sharing the same DB connection, and can have a button "Open in NocoDB" (opens collection in a new tab and in NocoDB loaded) in the collection toolbar.
+  - Interesting. This platform actually seems far more robust than a library we can leverage... more like a secondary competitor. Still, we'll look into it
+
+- This feature request has received over 15 votes from the community. This means we'll move this feature request to the Under Review state _202305
+
 - ## 请教下 表结构更改了（使用外部数据库工具修改的） 除了重启directus以外，有办法热加载表结构吗？ _20231214
 - https://discord.com/channels/725371605378924594/946422284426551346/1184739818568171620
 - 可以试试看清除缓存 https://docs.directus.io/reference/system/utilities.html#clear-the-internal-cache
@@ -19,7 +44,7 @@ modified: 2024-02-16T14:56:17.057Z
 - 感谢 亲测有效，之前一直是重启容器来重新加载schema， 最近突然重新要5min左右， 所以在寻找原因和方案。 
   - 测试/utils/cache/clear 接口成功实现了 新增表/字段后的变更
 
-- ## ✨ [[RFC] Directus Offline First SDK_202303](https://github.com/directus/directus/discussions/17808)
+- ## ✨🔀 [[RFC] Directus Offline First SDK_202303](https://github.com/directus/directus/discussions/17808)
 - I think RxDB is an excellent choice for responsive offline-first applications. During my initial research I found multiple points, why I wouldn't want to use it
   - It ships a whole db with 45kb gziped
   - Interfacing with IndexedDB is via a commercial plugin
@@ -30,24 +55,56 @@ modified: 2024-02-16T14:56:17.057Z
 - Generally, conflict resolution falls into four categories, with developers selecting the most suitable strategy. 
   - Performance and usability with CRDTs have come a long way since their inception 2011. 
   - For most small to mid-scale Directus use cases CRDTs will work fine. They will probably still be a rarely used data type.
-- Last Write Wins (LWW): 
+- 👉🏻 Last Write Wins (LWW): 
   - This default method resolves conflicts by prioritizing the most recent write operation in a CRUD app. Earlier edits are overwritten.
-- Operational Transformation (OT): 
+- 👉🏻 Operational Transformation (OT): 
   - This method can be implemented using a Directus flow operating on the `article_event` data, updating the articles collection accordingly.
-- Conflict-free Replicated Data Types (CRDTs): 
+- 👉🏻 Conflict-free Replicated Data Types (CRDTs): 
   - This method employs data structures that automatically merge, resolving conflicts. 
   - CRDT implementation would be facilitated by Directus' support for views in relational databases. 
   - However, developers should be be able to fully choose their preferred implementation, because developers may utilize resources like Yjs or Automerge.
-- Return Conflict List to Last Writer or Arbitrator: 
+- 👉🏻 Return Conflict List to Last Writer or Arbitrator: 
   - This approach requires handling user responses to conflicts, similar to git. 
   - It places a significant burden on users and developers, and should only be considered as a last resort for specific use cases.
 
 - I'm very curious to hear some more thoughts around the different conflict resolution techniques though. It sounds like that's something that you might have to be able to override method call to method call (eg what happens if you need a different resolution for articles than for authors etc) 
   - Totally agree. CRDTs are a data model problem. A CRDT – as opposed to a normal data type – might require that you send different (or usually more) data to the server. The proposed API still expects you to be explicit about what you send to the server.
+
+- ## 💰 [Funding, Focus, and What's Next? · directus/directus _20230329](https://github.com/directus/directus/discussions/17977)
+- I am also a user of odoo.com which is an open source product too.
+- What odoo team is offering are :
+  - A community version of product, similar to Directus we have for now
+  - A cloud service, also similar to Directus cloud
+  - A partner program, company can pay to be a listed partner, to get leads for customers need odoo and some other trainings, advanced product features.
+  - Some advance features, for example rapid development tools, extensions etc for paid subscribers (paid user).
+- Odoo is with a lot of vertical/industry related solutions which can be used by a company without too many customization. This will make odoo relatively easier in finding customers.
+  - Directus is more developer focused.
+
+- I really like directus and want to give some advices on how to make the project financeable and continously grow.
+  - make a marketplace (inside sell your own layouts, plugins or general extensions) example: plugins.craftcms.com or apps.shopify.com; users can earn from their plugins and directus can have their own also.
+  - create some boilerplates to be sold (for example i want an ecommerce, and have no time to develop all models or schemas, so by adding some ready-to-use boilerplates to the marketplace would be great)
+  - create an expert or developers part - shopify.com/it/partner
+  - create an video academy craftquest.io
 # discuss-feat-version-history
 - ## 
 
-- ## 
+- ## I personally love the branch concept, but I'm 99% sure it would be lost on the newsroom. _202309
+- https://discord.com/channels/725371605378924594/1144680972382646455/1149334537474691133
+  - My view is very narrow here (using Directus to create and publish news content for the web), but I think there are existing patterns that will be more universally understood.
+  - WordPress, for instance, have the concept of 'save' and 'publish/update'.
+  - Imo, `save` should always be a safe action (pre and post publishing). `Publish/update` on the other hand has weight & consequence, and should always be a deliberate action.
+- I'm thinking we should/could add a toggle that switches between "simple" draft/publish and "full" branching modes as a setting
+- Any change on a branch itself is a revision, so every branch has it's own revision history as well 
+
+- just out of curiosity: is it based on Git internally?
+  - Nope
+
+- I like this idea of a "simple mode" and an "advanced mode"
+- simple mode is a single default branch (so no naming required)
+  - every new version created in simple mode is a new entry in that default branch (thus superceding any previously existing versions that were created in simple mode)
+  - when the simple mode branch is "promoted" or whatever term we want to use, there would be no "merging" step, the latest version in the branch would simply be made the main version exactly how it is
+
+- I'd want it to be possible to create both simple and advanced branches on the same item
 
 - ## 🐛⚡️ [Performance issues with revisions and activity _202303](https://github.com/directus/directus/issues/17894)
 - There is a problem with the revisions and activity queries.
@@ -86,9 +143,47 @@ modified: 2024-02-16T14:56:17.057Z
 
 - [how to restore revision via gui? _201709](https://github.com/directus/directus/issues/1809)
   - the revisions are stored in the `directus_activity` table for all changes, but we don't have a GUI for restoring previous deltas yet. 
+# discuss-schema-change
+- ## 
+
+- ## 
+
+- ## [Migrations vs Schemas, what is the way to go? _202204](https://github.com/directus/directus/discussions/12713)
+- Sounds like schema migrations is what you'd be looking for. Those allow you to create a snapshot of the current configuration, and apply that to another instance. Migrations could also be used for this purpose, but are intended for more edge-case uses (it's an escape hatch in case schema migrations doesn't offer what you need) 
+
+- ## 🐛 [Ability to rename collections and fields  _202005](https://github.com/directus/directus/discussions/2711)
+- For anyone here that is only concerned about what the Directus user sees and not names in the underlying database, you can use field name translations and collection naming translations to change the name throughout the Directus Studio. It doesn't change anything for the underlying database or the API, but it's better than nothing!
+
+- [Change Field Name / Type after creation](https://github.com/directus/directus/discussions/14037)
+
+- ## [Code-first configuration of schema, roles and permissions _202204](https://github.com/directus/directus/discussions/13041)
+  - It would be great if schemas, roles and permissions could be managed via code. 
+  - Often custom permissions contain logic that is of a fairly technical nature and should ideally be versioned and repeatable between dev/staging/prod environments.
+
+- Here is my approach on this issue:
+  - A module (with UI) where you can download config/collections piece by piece in JSON format
+  - Save the downloaded files in a template directory in the repo
+  - A hook reacting on server start that reads the files in the template directory and patches everything
+  - This way, 'everything' can be version controlled and synced between environments.
+- Patching and reading files like this on server start will greatly increase startup times leading to lower horizontal scaling performance.
+
+- Hi, I've just built a tool called directus-sync that could help streamline the way we handle Directus configurations and schema management. It’s inspired by the principles of infrastructure-as-code, with a touch of the familiar workflow from Terraform. This is currently a beta release, and I’m seeking collaborators who are up for testing, providing feedback, and contributing to its evolution. Check out the repo and let me know what you think!
 # discuss
 - ## 
 
 - ## 
 
 - ## 
+
+- ## 🚀 [Show HN: Directus – Free and Open-Source Headless CMS | Hacker News _201609](https://news.ycombinator.com/item?id=12496964)
+- 🆚️ What is the difference with for example Active Admin (for Ruby on Rails)?
+  - Certainly similar in concept. Other than the server-side language, the biggest difference seems to be how it saves the actual data. 
+  - AA has file-based exports (csv, json, etc), not seeing a relational datastore (maybe Mongo?) – 
+  - Directus is built on top of your custom-schema SQL database so it scales with large/complex datasets.
+  - Also, while AA has a good set of simple features, Directus has comprehensive user management ACL, more robust file control, and is generally a bit more full-featured.
+
+- What's the benefit of a headless CMS?
+  - A headless (or decoupled) CMS is one that only manages content, as opposed to most “CMS” out there now that overreach by managing your views, templates, logic, routing, etc. 
+  - That means that most current “CMS” are built specifically for websites only (more specifically, blogs), however a headless CMS only manages the data itself, and therefore is appropriate for anything from native apps, content syndications, interactive walls, or other data-driven projects. 
+  - In fact a more important distinction is that it can manage content for MULTIPLE clients, for example a project where an app, widget, and website all pull the same content.
+  - Since the content is decoupled from the application/view, you access your data through an API or SDK. For Directus, you can use our API, one of our language SDKs, or just connect to the database directly. That gives developers freedom over their workflow, process, libraries, and database architecture – which can expedite(加快；加速) development and optimize performance.

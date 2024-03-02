@@ -47,12 +47,17 @@ modified: 2022-11-07T10:58:24.512Z
 
 - 数据整理
   - [2023各平台年终报告](https://www.yuque.com/paidaxin/dkopg8/gqpfgysdw0wiqwmh)
+# 国内替代
+- algolia
+  - MeiliSearch
+  - algolia是纯做SaaS服务的吧，跟es还是有定位上的区别。
 # sharing
 - 规避版权问题的内容讨论平台
   - 科技分享，类似hacker-news
   - 产品讨论，类似product-hunt
   - 打分评论，类似豆瓣电影与音乐
   - 论坛圈子，类似贴吧/reddit，支持一个url在不同板块重复讨论、多次讨论
+  - today i learned
 
 - 分享设备的dock栏
 

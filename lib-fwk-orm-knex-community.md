@@ -12,7 +12,10 @@ modified: 2023-01-22T19:52:09.270Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 🆚️ [How is Node.js Knex similar/different to Sequelize? - Stack Overflow](https://stackoverflow.com/questions/56028287/how-is-node-js-knex-similar-different-to-sequelize)
+- Sequelize is full blown ORM forcing you to hide SQL behind object representation. 
+  - Knex is plain query builder, which is way too low level tool for application development.
+  - Better to use objection.js it combines good parts of ORMs without compromising power of writing any kind of SQL queries.
 
 - ## [PgBouncer transaction pooling vs. Knex pooling? _201902](https://github.com/knex/knex/issues/3069)
 - Using pg-pool for handling pooling when running knex in multiple processes sounds like nice idea. 

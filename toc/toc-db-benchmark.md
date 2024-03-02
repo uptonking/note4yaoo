@@ -54,6 +54,11 @@ modified: 2022-11-25T16:16:52.713Z
   - A fork of sysbench to add Vitess specific Modifications
   - sysbench is a scriptable multi-threaded benchmark tool based on LuaJIT. 
   - It is most frequently used for database benchmarks, but can also be used to create arbitrarily complex workloads that do not involve a database server.
+
+- https://github.com/akopytov/sysbench /GPLv2/202307/c
+  - sysbench is a scriptable multi-threaded benchmark tool based on LuaJIT. 
+  - It is most frequently used for database benchmarks, but can also be used to create arbitrarily complex workloads that do not involve a database server.
+  - new benchmarks can be easily created by implementing pre-defined hooks in user-provided Lua scripts; 
 # tpc
 - https://github.com/abz53378/tpch-json /201905/json
   - 导入json输入到mongodb

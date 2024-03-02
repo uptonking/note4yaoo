@@ -68,6 +68,14 @@ modified: 2023-12-15T16:51:56.101Z
   - api-rate-limit
 # dev
 - 在admin添加新的content-type时，数据库会创建对应的表，同时后端src/api下面会自动生成对应的schema/router/controller/service，prod生产环境下不支持动态添加新的content-type
+
+- ❓ draft/publish的实现似乎只在api层面，admin界面的显示状态有问题
+
+- 
+- 
+- 
+- 
+
 # codebase
 
 # more

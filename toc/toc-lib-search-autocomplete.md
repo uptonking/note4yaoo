@@ -21,6 +21,16 @@ modified: 2023-01-01T13:24:35.994Z
   - [Various search databases and backends as alternatives to Elasticsearch](https://gist.github.com/manigandham/58320ddb24fed654b57b4ba22aceae25)
   - [Tips for a good search | DocSearch by Algolia](https://docsearch.algolia.com/docs/tips)
 # popular
+- https://github.com/algolia/hn-search /MIT/202403/ruby/ts
+  - https://hn.algolia.com/api
+  - the widely known Hacker News API 
+  - This API is built on top of Algolia Search's API. 
+  - It enables developers to access HN data programmatically using a REST API. 
+  - This documentation describes how to request data from the API and how to interpret the response.
+  - https://github.com/HackerNews/API
+    - Documentation and Samples for the Official HN API
+    - In partnership with Firebase, we're making the public Hacker News data available in near real time
+
 - OpenSearch protocol
   - https://github.com/dewitt/opensearch
   - OpenSearch is a collection of simple formats for the sharing of search results.

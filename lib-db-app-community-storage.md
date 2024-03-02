@@ -93,7 +93,15 @@ modified: 2023-09-17T17:36:36.118Z
 
 - ## 
 
-- ## 
+- ## 🛢️🌰 How Cassandra handles writes?
+- https://twitter.com/thegeeknarrator/status/1763903178393694467
+- Accept write requests
+- save it to an in-memory write-back cache called memtable. 
+  - Serve reads faster, no disk access required. 
+- Append to a Commitlog (WAL)
+  - Durability. 
+  - If Cassandra crashes before flushing the memtable to disk, it restores acked writes by replaying the Commitlog.
+- When the memtable is flushed to disk as an SSTable (an immutable file), Commitlog entries that have been persisted can be eliminated. 
 
 - ## ⌛️ What was life like with PostgreSQL prior to the 7.1 release in 2001 which added a WAL?
 - https://twitter.com/MarkCallaghanDB/status/1761086709859864849

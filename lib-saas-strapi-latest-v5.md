@@ -98,7 +98,8 @@ modified: 2023-12-15T19:39:18.123Z
 
 - ## 
 
-- ## 
+- ## [chore: merge draft & publish into history _20240209](https://github.com/strapi/strapi/pull/19632)
+- update History with new v5 APIs 
 
 - ## [feat(content-manager): display history versions _20240210](https://github.com/strapi/strapi/pull/19458)
 - > This PR displays the content of history versions on the history page. We display all the fields in disabled mode.

@@ -36,6 +36,7 @@ modified: 2023-01-20T21:59:47.792Z
   - the leading open-source headless CMS
   - 后端依赖knex、umzug、koa、koa-static、commander、node-schedule
   - 前端依赖@reduxjs/toolkit、immer、codemirror5、date-fns、formik、markdown-it、react-dnd、sift、slate-react
+  - 在admin添加新的content-type时，数据库会创建对应的表，同时后端src/api下面会自动生成对应的schema/router/controller/service，prod生产环境下不支持动态添加新的content-type
   - 核心功能是提供了通过ui操作实现rest api的功能
     - 系统内容通过ui操作编写
     - 系统前端strapi没有限制，strapi只提供了api
@@ -81,6 +82,7 @@ modified: 2023-01-20T21:59:47.792Z
   - 后端依赖express、knex、async、commander、graphql、ioredis、keyv、marked、micromustache、node-cron、rate-limiter-flexible、sharp、vm2
   - 前端依赖vue3、tinymce5、p-queue、apexcharts
   - 设计graphql的代码不多，可以尝试移除
+  - 在admin添加新的data-model时，数据库会创建对应的表
   - [Change license to BSL-1.1_20230427](https://github.com/directus/directus/pull/18330)
     - Code released under this new license converts to GPLv3 (OSS) after 3 years
   - [Running Locally | Directus Docs](https://docs.directus.io/contributing/running-locally.html)
@@ -93,8 +95,17 @@ modified: 2023-01-20T21:59:47.792Z
   - dev-xp
   - 登录界面一直白屏，排查了很久未定位到原因，但firefox可正常打开，chrome体系都是白屏
     - [Unable to run Directus locally](https://github.com/directus/directus/issues/17786)
-    - You have to set SERVE_APP=true in your .env file in order to run the api in dev mode with the build app.
+    - You have to set `SERVE_APP=true` in your .env file in order to run the api in dev mode with the build app.
     - 最终发现配置server_app后要访问的是服务端:8055/admin，而不是前端:8080/admin
+  - https://github.com/directus-labs/agency-os /MIT/202402/ts/vue
+    - https://agencyos.dev/
+    - https://agency-os.vercel.app/
+    - 管理后台在 https://directus.pizza/
+    - The open source operating system for digital agencies. 
+    - Built with Nuxt 3 Website/Application + Directus Backend.
+    - Brought to you by partnership magic between Directus and NuxtLabs.
+    - [Introducing AgencyOS: The All-In-One Operating System for Digital Agencies _20231025](https://directus.io/blog/announcing-agencyos)
+      - we’re releasing AgencyOS as the first example of a purpose-built system to show off the incredible functionality that you can build in record time with Directus.
   - forks
   - https://github.com/LaWebcapsule/directus9 /GPLv3/202402/ts/vue
     - a fork of the Directus 9
@@ -310,7 +321,7 @@ modified: 2023-01-20T21:59:47.792Z
   - https://github.com/jansmolders86/gh-cms-starter-template
     - https://jansmolders86.github.io/gh-cms-starter-template/
     - A starter template for a website managed with GH-CMS
-# cms
+# git-based-cms
 - netlify/decap-cms /16kStar/MIT/202204/js
   - https://github.com/netlify/netlify-cms
   - https://github.com/decaporg/decap-cms /js
@@ -325,6 +336,13 @@ modified: 2023-01-20T21:59:47.792Z
   - https://www.staticcms.org/
   - A Git-based CMS for Static Site Generators
 
+- https://github.com/avitorio/outstatic /MIT/202402/ts
+  - https://outstatic.com/
+  - A static CMS for Next.js
+  - No need for databases, external services, or complicated setups. 
+  - It allows you to create, edit and save content that is automatically committed to your repository and deployed to your live website.
+  - [Show HN: I made a CMS that uses Git to store your data | Hacker News _20221023](https://news.ycombinator.com/item?id=33306029)
+# cms
 - https://github.com/fiatjaf/coisas /317Star/MIT/201907/js/inactive
   - a headless CMS specifically designed to let you edit files hosted in a GitHub repository. 
   - It is similar to Netlify CMS and Prose.

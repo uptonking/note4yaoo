@@ -203,3 +203,7 @@ modified: 2023-03-16T16:29:47.610Z
 # more
 - 画板或批注类产品要参考规范 [Web Annotation Data Model](https://www.w3.org/TR/annotation-model/)
   - 富文本格式也可参考
+
+- encryption
+  - 只对部分段落或部分文字加密
+  - 处理类似`.env`文件时，对secretKey加密

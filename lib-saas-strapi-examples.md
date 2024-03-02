@@ -145,7 +145,7 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/trieb-work/strapi-neon-tech-db-branches /202307/ts
   - Strapi plugin to connect the neon.tech Postgres database using the neon API
 
-- https://github.com/ddlogical/uploads-duplicator /202312/js
+- https://github.com/ddlogical/uploads-duplicator /MIT/202312/js
   - This plugin allows you to seamlessly synchronize your Strapi CMS uploads folder with Google Drive. 
   - It utilizes OAuth for secure authorization and provides a straightforward way to automate the backup and storage of your media assets.
 
@@ -535,12 +535,17 @@ modified: 2023-12-15T19:30:23.094Z
 
 - https://github.com/DomDew/strapi-plugin-fuzzy-search /202311/ts
   - Register a weighted fuzzy search endpoint for Strapi Headless CMS you can add your content types to in no time
-  - Uses fuzzysort under the hood: Simple, quick and easy. No need to worry about setting up an instance for a complex search engine.
+  - Uses `fuzzysort` under the hood: Simple, quick and easy. No need to worry about setting up an instance for a complex search engine.
   - https://github.com/farzher/fuzzysort /202211/js
 
 - https://github.com/strapi-community/strapi-plugin-search /MIT/202310/ts
   - A Strapi CMS plugin that provides search engine agnostic sync support
   - Coming soon
+
+- https://github.com/pdalvi1893/strapi-global-search /202309/js
+  - Working on Strapi version: v4.0.3
+  - Support JSON export & import
+  - Include the following lines to allows large excel imports in middelware.js
 
 - https://github.com/strapi/strapi-plugin-seo /202311/js
   - The official plugin to make your Strapi content SEO friendly

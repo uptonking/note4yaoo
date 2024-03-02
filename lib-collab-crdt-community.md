@@ -16,7 +16,11 @@ modified: 2022-04-05T13:25:40.892Z
 
 - ## 
 
-- ## 
+- ## Tbh. CRDTs as a domain are still pretty fresh with low barrier of entry - hence the hype to become creator. 
+- https://twitter.com/LewisCTech/status/1763797001945403455
+  - The technically challenging solutions are not even 10yo.
+  - Compare that to relational DBs, which were for decades and got more funding than curing the cancer.
+- Earliest description of a CRDT I can find is 1983, though not under that name. They're probably older.
 
 - ## There are arguments to be made for both types or conflict resolutions, Add-wins and Delete-wins. 
 - https://discord.com/channels/933657521581858818/933657523049885698/1196458454592794665

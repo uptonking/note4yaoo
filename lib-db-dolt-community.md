@@ -16,9 +16,13 @@ modified: 2023-08-25T21:17:11.979Z
 
 - ## 
 
-- ## 
+- ## 🌲 Prolly trees are prolly one of the most impactful new data structures.
+- https://twitter.com/msimoni/status/1763627424619618415
+  - Think sorted database index, but with the same properties as a Git repo: identified by single root hash, structural sharing of data between versions, quickly snapshot-, sync-, and diffable.
+- You can even sync sub-ranges of the full tree, making it efficient to take small slices of big data.
+- They do have a weakness: The auto-rebalancing can potentially cascade from the insertion point all the way to the right side of the tree. This can be mitigated by increasing the target variance of the length of children in a node
 
-- ## 🧮 I never looked too closely at the changes Dolt made to the prolly tree chunking algorithm. 
+- ## 🧮🌲 I never looked too closely at the changes Dolt made to the prolly tree chunking algorithm. 
 - https://twitter.com/aboodman/status/1740086730504667608
   - It's very beautiful. Not sure who exactly on the team is responsible for this change but 10/10, no notes, ::chefs kiss::
 - I never thought hard about what the distribution of chunk sizes would look like with the rolling hash in Noms. I think I assumed that because the average size would be 4KB, that would mean the distribution would be normal.

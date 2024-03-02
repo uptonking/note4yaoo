@@ -191,6 +191,12 @@ modified: 2023-11-16T15:00:11.503Z
 - Express + Prisma
 - ~~Example Node (Express + Mongoose) codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the RealWorld API spec~~
 
+
+- https://github.com/fdaciuk/conduit-api /MIT/202112/ts/inactive
+  - API for Real World App project (Conduit) using Node.js + TS with Functional Programming
+  - This project uses Hexagonal Architecture (Ports & Adapters) with Functional Programming.
+  - 依赖newtype-ts、monocle-ts、fp-ts、express、fastify
+
 - https://github.com/launchbadge/realworld-axum-sqlx /202203/rust
   - A Rust implementation of the Realworld demo app spec using Axum and SQLx(sea-orm)
   - Best practices are always in flux, and a major point of this project was to experiment with project architecture and suss out what those best practices might look like.

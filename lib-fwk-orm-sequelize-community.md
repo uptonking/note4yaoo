@@ -40,6 +40,30 @@ modified: 2023-02-05T18:49:43.540Z
   - With DataMapper-based ORMs, the programmer has a lot more responsibility and control over how objects and database rows are mapped to each other
 - The Wikipedia article on `SQLAlchemy` gives a really nice succinct summary of why a direct mapping of database rows to OOP objects may not be satisfactory:
   - > SQLAlchemy's philosophy is that SQL databases behave less and less like object collections the more size and performance start to matter, ...
+# discuss-issues-not-yet
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [No query builder? Can we fix that? _201301](https://github.com/sequelize/sequelize/issues/394)
+  - I was somewhat surprised (and dismayed) by the fact that Sequelize doesn't have a query builder. 
+  - This means that in order to write generic selects with optional ands, or and ins, you have to start gluing strings together
+  - When you have array of conditions (e.g. filtering) or more complicated queries, you risk a mental breakdown
+
+- ORMs like `TypeORM` also provides a query builder.
+
+- No one is working on it. Requires a lot of work obviously, a full API design and then implementation with a good test suite. Ideally i'd just like to integrate `mongo-sql` but it only supports PG atm.
+
+```JS
+sequelize.getQueryInterface().QueryGenerator.getWhereConditions({ a: 1, b: 2, c: 3 })
+// "a" = 1 AND "b" = 2 AND "c" = 3
+```
+
+- knex would be the ideal solution; it is also used in Adonis ORM etc
+
+- this is why Laravel still relevant in 2023
 # discuss
 - ## 
 

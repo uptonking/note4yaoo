@@ -162,11 +162,15 @@ modified: 2020-11-11T13:16:24.994Z
 # ww
 - https://github.com/public-apis/public-apis
 
-- the widely known Hacker News API 
+- https://github.com/algolia/hn-search /MIT/202403/ruby/ts
   - https://hn.algolia.com/api
+  - the widely known Hacker News API 
   - This API is built on top of Algolia Search's API. 
   - It enables developers to access HN data programmatically using a REST API. 
   - This documentation describes how to request data from the API and how to interpret the response.
+  - https://github.com/HackerNews/API
+    - Documentation and Samples for the Official HN API
+    - In partnership with Firebase, we're making the public Hacker News data available in near real time
 
 - https://github.com/mdn/data
   - There's a top-level directory for each broad area covered: for example, "api", "css", "svg". 

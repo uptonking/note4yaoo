@@ -365,6 +365,21 @@ modified: 2020-12-28T12:24:09.275Z
   - Lowcoder continues from the abandoned Openblocks project
   - The Open Source Retool, Tooljet and Appsmith Alternative
 
+- https://github.com/basetool-io/basetool /apache2/202202/ts/archived
+  - https://basetool.io/
+  - Open-source internal tool framework. 
+  - Empower your team and collaborators to view and manage the data you already own in a nice easy-to-use protected tool.
+  - 依赖chakra-ui.v1、codemirror6、@reduxjs/toolkit、prisma、next-auth
+  - Basetool is organized in data sources that belong to organizations. When you create your account an organization will be created for you.
+
+- https://github.com/jet-admin/jet-bridge /MIT/202402/python
+  - https://www.jetadmin.io/
+  - No-code Business App builder
+  - Jet Admin is a SaaS service that automatically generates extendable back office for your application.
+  - Jet Bridge is a standalone app which generates REST API through which your SQL database is connected to Jet Admin.
+  - This is a complete remake of our popular Django Jet admin interface.
+  - https://github.com/geex-arts/django-jet /201810/python/inactive
+
 - https://github.com/polterguy/magic
   - a Low-Code CRUD generator with machine learning and artificial intelligence allowing you to generate most of your code 100% automatically.
   - In addition it is a complete open source cloud platform and IDE

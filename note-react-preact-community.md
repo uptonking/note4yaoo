@@ -84,6 +84,15 @@ modified: 2021-05-13T03:46:35.666Z
   - it's actually not that strange when you think about how JS engines optimize code. JIT optimizes for consistency, and abstractions are able to capitalize on that in a way direct imperative code generally can't.
 - all framework should be faster than bare metal js, bc they schedule. base op perf plays a small role in how fast an app is. first thing that makes apps slow is read/write order → layout thrashing, diffing updates → too many changes, virtualisation → breaching 15ms/frame.
   - that brings us to the high probability that all bare metal js apps are sub-optimal bc if they weren't they'd have a framework wrapped or written around it. there's nothing in js that helps w/ scheduling, and the complexity, if not well abstracted, creeps into the entire codebase.
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## Yup, using function arguments is a lot faster than intermediary objects for performance critical code. 
+- https://twitter.com/marvinhagemeist/status/1763817716887027801
+  - That's why some functions in the Preact code base have quite a few arguments.
+
 # discuss-🆚️-preact-react
 - ## 
 
