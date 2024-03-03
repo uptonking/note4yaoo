@@ -101,6 +101,9 @@ modified: 2021-05-14T15:03:38.010Z
   - Scrimba lets you take up an instructors demo and build it up into whatever use case you desire. 
   - In the playground mode, you can interact with the instructor's code however you please, 
   - and you can edit, copy, paste and basically perform any interactive operation you desire.
+# ide-online
+- https://github.com/adarshaacharya/CodeTreats /MIT/202110/ts
+  - In-browser IDE for running, collaborating, saving and sharing code snippets
 # more-online-code-editor
 - https://github.com/agneym/playground
   - https://blog.agney.dev/introducing-playground/

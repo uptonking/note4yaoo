@@ -175,6 +175,13 @@ modified: 2021-08-30T18:57:27.645Z
   - This is an implementation of northwind using a DynamoDB single table design
   - This is an implementation using Jeremy Daly's dynamodb-toolbox library
 
+- https://github.com/Breeze/northwind-demo /202106/ts/js
+  - Breeze end-to-end demo with client and server
+  - Client is one of Angular Aurelia React Vue
+  - Server is one of . NET, NodeJS with Sequelize
+  - 前后端都依赖breeze-client
+  - Breeze Client (breeze-client) is a JavaScript library for managing data on the client, much as an ORM manages it on the server.
+
 ## apps-northwind
 
 - https://github.com/Musili-Adebayo/Northwind-Database /202308

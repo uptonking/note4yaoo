@@ -58,6 +58,13 @@ modified: 2023-02-05T18:50:53.563Z
 - https://github.com/gothinkster/node-express-realworld-example-app /201802/js
 - Example Node (Express + Mongoose) codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the RealWorld API spec
 
+- https://github.com/weareopensource/Typescript /202110/ts/inactive
+  - TypeScript - Boilerplate Back : Express, Jwt, Mongo, Sequelize (Draft)
+  - 采用controller/service/repository/model四层架构，函数式风格，按业务modules划分架构
+  - 支持mongoose/sequelize
+  - model使用joi校验
+  - 依赖express、jsonwebtoken、passport-jwt
+
 - https://github.com/sunnysidelabs/mongoose-express-ts /202210/ts
   - show a good end-to-end project setup and workflow for writing a strongly-typed Mongoose Node.js Express code in TypeScript complete with middleware, models, routes, and types
 

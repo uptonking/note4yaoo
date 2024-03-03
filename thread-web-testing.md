@@ -29,7 +29,12 @@ modified: 2021-08-28T11:49:05.730Z
 
 - ## 
 
-- ## 
+- ## it is interesting to watch how every project that adopts some form of simulation testing chooses to model the network using a completely different mental model (all equally valid)
+- https://twitter.com/AlexMillerDB/status/1764136495429107729
+  - FoundationDB: An RPC endpoint is just a stream of futures.
+  - TigerBeetle: The network is just a bus of messages.
+  - Cassandra: The network is a network.
+  - Resonate: The network is actually a queue of requests and completions.
 
 - ## I may have been wrong about property based testing.
 - https://twitter.com/LewisCTech/status/1752061962681553170

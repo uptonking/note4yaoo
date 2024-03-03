@@ -14,7 +14,11 @@ modified: 2023-11-10T08:05:12.852Z
 
 - ## 
 
-- ## 
+- ## Btw the takeaway here isn't "never use objects rather than N args" but to profile. 
+- https://twitter.com/Jack_Franklin/status/1764245242079834142
+  - Yes objects tend to be slower, but the vast majority of the time it won't matter. 
+  - We had to optimise in canvas rendering code that gets run rapidly over and over again as users scroll/zoom etc.
+  - As always, the answer is to be aware of this fact and profile your application if you think it might be problematic. In this particular case look for lots of Garbage Collection (this shows up in the Perf panel of DevTools).
 
 - ## Has anyone heard of a technique where you cache a value only until the current event loop tasks finish?
 - https://twitter.com/SCooperDev/status/1737200221459734681

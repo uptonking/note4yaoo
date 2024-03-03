@@ -182,6 +182,14 @@ modified: 2021-08-30T18:56:09.644Z
   - Massive is not an object-relational mapper (ORM)! It doesn't use models, it doesn't track state
   - https://gitlab.com/monstrous/monstrous /js
     - a lightweight SQL composer for Node.js and PostgreSQL
+
+- https://github.com/foxifyjs/odin /MIT/202009/ts
+  - Odin is an implementation of the Active Record pattern in TypeScript
+  - JSON Schema generator (based on model schema)
+
+- https://github.com/DavidDuwaer/Coloquent /MIT/202202/ts/inactive
+  - library mapping objects and their interrelations to JSON API, with a clean, fluent ActiveRecord (e.g. similar to Laravel's Eloquent) syntax for creating, retrieving, updating and deleting model objects
+
 # odm/object-document-mapper
 - https://github.com/NaturalCycles/db-lib /202401/ts
   - Lowest Common Denominator API to supported Databases

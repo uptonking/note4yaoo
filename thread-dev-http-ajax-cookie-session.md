@@ -51,6 +51,21 @@ modified: 2021-08-06T08:32:26.142Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## How Data Travels Through the Layers of the Internet
+- https://twitter.com/sahnlam/status/1764175138877231570
+  - The TCP/IP model provides a more practical framework compared to the theoretical OSI model. 
+  - This model more closely matches real-world internet communication by condensing the seven OSI layers into these four fundamental ones.
+
+- The 𝗧𝗖𝗣/𝗜𝗣 𝗠𝗼𝗱𝗲𝗹 contains four key layers:
+  - Application - supports end-user processes like HTTP, SMTP
+  - Transport - handles host-to-host communication (TCP, UDP)
+  - Network - addresses and routes packets (IP protocol)
+  - Link - moves the bits over the network's physical wires, cables or wireless channels
+
 - ## RTC 领域，每秒钟需要全球调度上 T 的数据，最好的用户体验，不是全自建或全上云，而是混合云方案（自建+云），理由：
 - https://twitter.com/skywind3000/status/1718801244360216701
   - 1）云服务商的 IDC 并不能很好覆盖你的核心用户群，那么你需要多家并存，或者考虑核自建才能提供更好覆盖；

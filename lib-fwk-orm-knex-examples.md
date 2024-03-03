@@ -18,18 +18,13 @@ modified: 2023-01-22T19:52:59.120Z
   - lowcode integrations
 
 - tips
+  - 很少存在替换orm的场景，通常orm都会支持主流rdbms
+  - 同时支持knex和mongoose需要架构层的抽象
   - [Multitenancy using multiple databases using knex](https://vincit.github.io/objection.js/recipes/multitenancy-using-multiple-databases.html)
 
 - resources
   - [knex/ECOSYSTEM.md](https://github.com/knex/knex/blob/master/ECOSYSTEM.md)
 # popular
-- https://github.com/cdellacqua/express-knex-typescript-template /202311/ts
-  - Express.js template using TypeScript, Knex and Docker to head-start development.
-  - view层pug
-  - 功能丰富, 代码精简
-  - 🍴 fork https://github.com/shalior/express-ts-template
-  - https://github.com/shalior/express-mongo-ts /202301/ts/inactive
-
 - knex /18.5kStar/MIT/202401/js
   - https://github.com/knex/knex
   - http://knexjs.org/
@@ -149,7 +144,7 @@ modified: 2023-01-22T19:52:59.120Z
     - When you use partitioning, MySQL will keep that data on separate parts of the disk as if they were separate tables and organizes your data automatically based on the partitioning key
 # starter
 - https://github.com/gothinkster/koa-knex-realworld-example /201910/js/archived
-  - Example Node. Js (Koa.js + Knex) codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the RealWorld spec and API.
+  - Example Node (Koa.js + Knex) codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the RealWorld spec and API.
   - 🍴 forks
   - https://github.com/EJIqpEP/koa-knex-realworld-example /202205/js
   - https://github.com/mlaccetti/koa-knex-realworld-heroku-example /201905/js
@@ -168,52 +163,87 @@ modified: 2023-01-22T19:52:59.120Z
   - Fastify + Knex.js - Realworld Example App
 
 - https://github.com/victor-vieira21/knex-mongoose-sequelize-lucid
-  - 4个orm示例
+  - 4个orm示例，弱架构，仅参考
 
-- https://github.com/ljlm0402/typescript-express-starter /202311/ts
-  - Express RESTful API Boilerplate Using TypeScript，多技术栈的模版项目
-  - 支持mongoose、orm、graphql、knex
+- https://github.com/ljlm0402/typescript-express-starter /202301/ts/typedi
+  - Express RESTful API Boilerplate Using TypeScript，可选参数的模版项目
+  - 支持mongoose、多种orm、graphql
+  - 采用controller/service/model三层架构，class风格，依赖注入，少量使用装饰器
+  - 使用objection
 
 - https://github.com/agencyenterprise/aeboilerplate /202001/ts/inactive
   - a full-stack React/Node Typescript project
+  - 采用controller/service两层架构，函数式风格
   - an opinionated boilerplate that includes independent client and API
   - The client application is generated using `create-react-app`.
   - https://github.com/agencyenterprise/ae-bootstrap
   - https://github.com/agencyenterprise/hack-2023-ae-faucet
 
+- https://github.com/dyshaev-working/nodejs-express-typescript-knex-psql-crud-example /202012/ts
+  - Example CRUD application Express/Knex/PostgreSql
+  - 采用controller/service/dao三层架构，函数式风格
+
+- https://github.com/icapps/nodejs-silverback /201902/ts
+  - NodeJS boilerplate project
+  - 采用controller/service/repository/model四层架构，函数式风格
+  - 依赖express、redis、tree-house-authentication
+
+- https://github.com/Zarkus13/pizza-pasta-api /202211/ts/inactive
+  - Pizza & Pasta API using Node.js, Express, TypeScript, Knex, Zod
+  - 采用controller/service/dao/model四层架构，函数式风格，按业务modules划分架构
+  - 依赖express、jsonwebtoken、multer、zod
+
 - https://github.com/dhruvsaxena1998/node-typescript-starter /202110/ts/inactive
   - Node.js express template written with typescript.
-  - https://github.com/alonavns/Yerevan /201907/ts
-  - https://github.com/mxro/knex-typescript-starter-project /202002/ts
+  - 采用controller/service/repository三层架构，class风格
 
 - https://github.com/santoshshinde2012/node-ts-knex-boilerplate /202402/tsconfig
   - Node-Typescript-Knex-Boilerplate
-  - https://github.com/MatthewAraujo/api-rest /202307/ts
+  - 采用controller/service/model三层架构，class风格
+
+- https://github.com/cdellacqua/express-knex-typescript-template /202311/ts
+  - Express.js template using TypeScript, Knex and Docker to head-start development.
+  - 采用route/service两层架构
+  - view层pug，功能丰富, 代码精简
+  - 🍴 fork https://github.com/shalior/express-ts-template
+  - https://github.com/shalior/express-mongo-ts /202301/ts/inactive
+
+- https://github.com/jasogwa/typescript-api /202209/ts
+  - CRUD API Using NODE JS, Typescript, Knex, and SQL
+  - 采用controller/service两层架构
+  - 数据库采用连接池pool
 
 - https://github.com/whyboris/express-knex-api /202001/js/inactive/单文件示例
   - A RESTful API that interacts with business data
 
-- https://github.com/antonkalik/knex-postgres-boilerplate /202307/ts
+- https://github.com/antonkalik/knex-postgres-boilerplate /202307/ts/弱架构
   - knex-postgres-boilerplate
-  - https://github.com/resitdc/express-knex-pg-boilerplate /202305/ts
+  - https://github.com/MatthewAraujo/api-rest /202307/ts/弱架构
+  - https://github.com/mxro/knex-typescript-starter-project /202002/ts/弱架构
 
-- https://github.com/apotox/knex-pg-express /202212/ts
+- https://github.com/apotox/knex-pg-express /202212/ts/弱架构
   - unit tests + mocks
   - vitest setup inMemory pg database
-- https://github.com/dyshaev-working/nodejs-express-typescript-knex-psql-crud-example /202012/ts
-  - Example CRUD application Express/Knex/PostgreSql
+
+- https://github.com/jvcjunior/node_express_functional /202012/ts
+  - Node/Express API using some functional approach
+  - 采用controller/service/repository/model四层架构，函数式风格
+  - 依赖express、jsonwebtoken、knex、objection、sqlite3
 
 - https://github.com/yosua-kristianto/typescript-expressjs /202212/ts
-  - I made a boilerplate; java风格
+  - I made a boilerplate; java风格; knex几乎没用，主要用sequelize
+  - 采用controller/repository/model三层架构，class风格
 
 - https://github.com/kasvith/typescript-express-jwt-knex-boilerplate /MIT/202107/ts
   - Typescript Express JWT Knex Boilerplate
+  - 实现了自定义decorator，如@ApiVersion('1.0')
+  - 实现了自定义依赖注入
 
 - https://github.com/gabsrethink/nodejs-knex-authentication /202210/ts/inactive
   - Authentication API using NodeJS with TypeScript and Knex
   - 提供了jest测试
 
-- https://github.com/travishorn/koa-sqlite-jwt-server /201810/js
+- https://github.com/travishorn/koa-sqlite-jwt-server /201810/js/弱架构
   - API server with JWT-authenticated routes. Uses Koa and Knex.
 
 - https://github.com/orphandeity/express-authorization-server /202312/js
@@ -237,14 +267,16 @@ modified: 2023-01-22T19:52:59.120Z
 - https://github.com/fransaycon/fastify-esbuild-postgres-boilerplate /202302/ts
   - fastify boilerplate with built in setup for esbuild, knex+postgres
 
-- https://github.com/jvcjunior/node_express_functional /202012/ts
-  - Node/Express API using some functional approach
+- https://github.com/DanielAraldi/Proffy /MIT/202402/ts
+  - Proffy is an online study platform
+  - Proffy is an application that connects students with teachers.
+  - 采用controller/repository/model三层架构，class风格
 
 - https://github.com/RafaelGoulartB/proffy /MIT/202202/ts
   - Project made to connect teachers to students, made in Next Level Week #2
   - 依赖express、knex、sqlite3、react
 
-- https://github.com/osvaldokalvaitir/nodejs-proffy /202008/ts/inactive
+- https://github.com/osvaldokalvaitir/nodejs-proffy /202008/ts/弱架构
   - Proffy Application using Node.js, Express, knex.js, TypeScript, CORS, SQLite and Insomnia
   - Project built during Rocketseat's Next Level Week #2
   - https://github.com/higorsnt/proffy /202008
@@ -262,8 +294,10 @@ modified: 2023-01-22T19:52:59.120Z
 - https://github.com/cham11ng/typescript-api-starter /MIT/202210/ts/inactive
   - Starter for Node.js Express API in Typescript with jsonwebtoken, joi, Knex, Objection.js and many other popular tools.
   - 依赖objection3、knex2、pg、express
-  - https://github.com/Nawaytes/koa-boilerplate
+  - https://github.com/Nawaytes/koa-boilerplate /202306/ts/多占位符文件
     - Objection + Koa
+  - https://github.com/resitdc/express-knex-pg-boilerplate /202305/ts
+    - 采用controller/model两层架构，class Users extends objection.Model
 - https://github.com/bilalsha/api-skelton /202301/ts
   - Skelton for creating api using express, typescript, eslint, prettier, jest, knex, objection, sqlite
 
@@ -275,6 +309,14 @@ modified: 2023-01-22T19:52:59.120Z
   - https://github.com/oMatheusmol/api-knex-clean-architecture /202112/ts
   - https://github.com/MatheusWill/CRUD-Clean-Architecture /202112/ts
   - https://github.com/matheussantiago12/typescript-clean-api /202104/ts
+
+- https://github.com/bkonkle/node-knex-typescript-example /201901/ts
+  - An example API application using Node, Knex, and TypeScript
+  - 提供了PostgresProvider、RedisProvider
+
+- https://github.com/githiago-f/customers-api /202105/ts
+  - Monorepo using express on the back-end and react on front-end
+  - 采用controller/repository两层架构，函数式风格
 # examples
 - https://github.com/franzon/postgres-rls-example /202006/js
   - This application is an example of how RLS can be used in an express app, using a middleware for getting the correct connection for each tenant.
@@ -364,6 +406,14 @@ modified: 2023-01-22T19:52:59.120Z
 
 - https://github.com/mrdulin/nodejs-pg-knex-samples /MIT/202001/ts
   - Learning PostgreSQL, knex.js by examples.
+
+- https://github.com/jadbox/mongoose-sql /201702/js
+  - Mongoose compatible interface for PostgreSQL
+  - uses Knex to interface with PostgreSQL
+
+- https://github.com/baethon/kex /MIT/202111/js
+  - Kex is a query extension for Knex. 
+  - It uses the concept of "model" from ORMs like Lucid, or Laravel Eloquent restricted only to make queries. It has support for scopes, plugins, relations, and many more.
 
 - https://github.com/felixmosh/knex-paginate /MIT/202303/js
   - Extension of Knex's query builder with `paginate` method that will help with your pagination tasks.
@@ -496,6 +546,9 @@ modified: 2023-01-22T19:52:59.120Z
   - A lightweight repository library powered by KnexJS
   - an extremely lightweight layer on top of Knex
   - It's not meant to be extensive, support associations (belongs to, has many), etc
+
+- https://github.com/day1co/fastdao /MIT/202402/ts
+  - fast and simple dao using knex
 # testing
 - https://github.com/felixmosh/knex-mock-client /MIT/202310/ts
   - A mock client for knex which allows you to write unit tests with DB interactions

@@ -12,6 +12,31 @@ modified: 2023-11-07T16:47:11.499Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🏘️ Databases are getting quite commoditized.
+- https://twitter.com/criccomini/status/1764007593419378939
+  - Velox/DataFusion/DataBend/Substrait/optd commoditize query engine
+  - S3/RocksDB/Arrow/Parquet commoditize storage layer
+  - PostgreSQL commoditizes protocol and SQL dialect
+  - WAL is next
+
+- Seems like the way to compete is to built DBs for very specific use cases and verticals. Like @niledatabase [$] for SaaS, @TigerBeetleDB [$] for finance, etc...
+
+- This is why data pipelines are so interesting.
+  - If everyone is using PG replication...
+
+- I think there’s still room for differentiation by making the product more integrated/wide. Examples are Planetscale/Neon/CockroachDB which are much more than the sum of their parts and will keep providing more and more “platform” level features
+  - But isn’t the fact that there are like 10 of these evidence that they’re all just going to compete on cost? Neon, planet scale, cockroach, alloy, tikv, spanner, on and on and on…
+- It is much more likely that they'll compete on features, service, ecosystem, and UX/DX. Open Source has been commoditizing  DBs for decades, yet DB TAM is ~$100B. AMZN/MSFT/GOOG make billions hosting OSS DBs. Velox will kill Snowflake like Postgres killed Oracle (i.e not at all)
+
+- Isn’t Kafka the WAL next?
+  - WAL moves to storage a la aurora
+
+- General purpose DBS are dead
+
 - ## 💡🛢️ I had bought the G&R book a few years before I landed a job to write a storage engine from scratch.
 - https://twitter.com/sunbains/status/1756185046409691467
   - These days it’s a lot easier, there lots of resources out there, code, articles, videos, people willing to cooperate.

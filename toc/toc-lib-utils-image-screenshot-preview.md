@@ -187,6 +187,27 @@ modified: 2023-04-16T13:34:33.706Z
 - https://github.com/octref/polacode /js
   - Polaroid for your code
   - Resize the snippet / container by dragging the lowerright corner
+# google-photos-like
+- https://github.com/ente-io/ente /AGPLv3/202403/ts/dart
+  - https://ente.io/
+  - open source, End to End Encrypted alternative to Google Photos and Apple Photos
+  - Ente is a service that provides a fully open source, end-to-end encrypted platform for you to store your data in the cloud without needing to trust the service provider. 
+  - On top of this platform, we have built two apps so far: Ente Photos and Ente Auth
+  - This monorepo contains all our source code - the client apps (iOS / Android / F-Droid / Web / Linux / macOS / Windows) for both the products, and the server 
+  - Ente Photos is a paid service, but we offer a free trial. You can also clone this repository and choose to self host.
+  - Two years ago, while building Ente Photos, we realized that there was no open source end-to-end encrypted authenticator app. We already had the building blocks, so we built one.
+
+- https://github.com/LibrePhotos/librephotos /MIT/202402/python
+  - https://demo2.librephotos.com/
+  - Self hosted alternative to Google Photos
+  - 依赖django4、django-chunked-upload、django-extensions、djangorestframework、flask3、Flask-RESTful、Pillow
+  - django用得比flask多，flask仅在7个文件中使用
+  - Support for all types of photos including raw photos
+  - Timeline view
+  - Scans pictures on the file system
+  - Multiuser support
+  - Face recognition / Face classification
+  - Search by metadata; Semantic image search
 # more
 - https://github.com/antfu/broz
   - A simple, frameless browser for screenshots

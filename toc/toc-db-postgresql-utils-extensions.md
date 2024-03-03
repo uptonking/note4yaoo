@@ -123,6 +123,10 @@ modified: 2023-10-26T15:29:40.053Z
 - https://github.com/alitrack/duckdb_fdw /MIT/202312/cpp
   - a foreign data wrapper (FDW) to connect PostgreSQL to DuckDB database file
 # json/mongo
+- https://github.com/jadbox/mongoose-sql /201702/js
+  - Mongoose compatible interface for PostgreSQL
+  - uses Knex to interface with PostgreSQL
+
 - https://github.com/fcoury/oxide /apache2/202210/rust
   - OxideDB is a translation layer that works as a MongoDB database server while using PostgreSQL's JSON capabilities as the underlying data store.
   - if your use-case leverages MongoDB as a distributed database, then unfortunately this project might not be for you. At least right now supporting multi-sharding and scale-out deployments is not part of the roadmap.

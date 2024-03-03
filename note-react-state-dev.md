@@ -100,7 +100,17 @@ modified: 2020-12-08T13:40:02.577Z
 
 - ## 
 
-- ## 
+- ## Prediction: Third-party React state libraries will become less relevant in 2024.
+- https://twitter.com/housecor/status/1763919937481973801
+  - 1. Routers are becoming state managers. Example: @tan_stack router has built in loaders and caching. 
+  - 2. React Server Components (RSC). RSC enables server-side fetching and caching. Example: @nextjs .
+  - @tan_stack query already taught us - *most state is server state* (data fetched from a server). Both 1 and 2 above handle "server state".
+
+- This is a web centric take
+- For cloud-first apps maybe.
+
+- Wasn't @remix_run the first to change the game?
+  - Yes I believe they popularized loaders.
 
 - ## [Implement naive version of context selectors](https://github.com/facebook/react/pull/20646)
 - `const selection = useSelectedContext(Context, c => select(c));`

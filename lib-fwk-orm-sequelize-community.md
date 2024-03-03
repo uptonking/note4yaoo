@@ -45,7 +45,10 @@ modified: 2023-02-05T18:49:43.540Z
 
 - ## 
 
-- ## 
+- ## [Feature Request: Ability to get raw sql query _201409](https://github.com/sequelize/sequelize/issues/2325)
+- I think we should consider reworking `QueryGenerator` to fully make it a public API. Right now, it's too much of an internal API.
+
+- This seems like another potential use for what I mentioned here - could also be a huge opportunity to start migrating our codebase to TS. I 110% agree that `Model` should just be calling `QueryInterface`, great idea.
 
 - ## [No query builder? Can we fix that? _201301](https://github.com/sequelize/sequelize/issues/394)
   - I was somewhat surprised (and dismayed) by the fact that Sequelize doesn't have a query builder. 

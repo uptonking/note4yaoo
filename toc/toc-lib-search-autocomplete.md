@@ -21,7 +21,7 @@ modified: 2023-01-01T13:24:35.994Z
   - [Various search databases and backends as alternatives to Elasticsearch](https://gist.github.com/manigandham/58320ddb24fed654b57b4ba22aceae25)
   - [Tips for a good search | DocSearch by Algolia](https://docsearch.algolia.com/docs/tips)
 # popular
-- https://github.com/algolia/hn-search /MIT/202403/ruby/ts
+- https://github.com/algolia/hn-search /MIT/202403/ruby/ts/可参考搜索ui
   - https://hn.algolia.com/api
   - the widely known Hacker News API 
   - This API is built on top of Algolia Search's API. 

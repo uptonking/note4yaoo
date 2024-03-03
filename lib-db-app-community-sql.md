@@ -121,6 +121,12 @@ modified: 2023-09-17T17:35:27.024Z
 
 - ## 
 
+- ## 
+
+- ## 🐛 SQL does this weird thing too. I wonder what ancient language this comes from
+- https://twitter.com/lukaseder/status/1764218716156305624
+  - python print(['a', 'b' 'c', 'd']) => ['a', 'bc', 'd']
+
 - ## 💡 dengTIL PRQL - Pipelined Relational Query Language, pronounced “Prequel”. 
 - https://twitter.com/iavins/status/1763244325981331782
   - It compiles to SQL and claims that it makes writing complex SQL queries simple and in

@@ -12,7 +12,17 @@ modified: 2023-10-06T16:26:57.557Z
 # discuss
 - ## 
 
-- ## 
+- ## The US government explicitly recommends 6 memory safe languages:
+- https://twitter.com/samuel_colvin/status/1763339372361814187
+  - C# - created by Microsoft
+  - Go - created by Google
+  - Java - created by Sun, bought by Oracle
+  - Rust - create bor Mozilla
+  - Swift - created by Apple
+  - Python - create by one fucking genius on his own in his Christmas holidays 
+
+- For those saying "but Python is written in C" please think for a minute. All these languages are implemented using tools which are not themselves memory safe - it's precisely the language which provides a way for developers to construct assembly instructions in a memory safe way.
+  - E.g. Rust generates llvm code. Llvm is not memory safe - it's the borrow checker etc. that make Rust memory safe.
 
 - ## [Rust语言已有哪些成功的（被看好的）应用、实践？ - 知乎](https://www.zhihu.com/question/314665060)
 - Rust 入驻 Linux 内核，同时又入驻 Windows 内核，世上两大操作系统都青睐 Rust

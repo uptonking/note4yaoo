@@ -93,6 +93,20 @@ modified: 2023-09-17T17:36:36.118Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## I deleted a few TBs of data from s3, cost me $270 to **delete** data
+- https://twitter.com/boristane/status/1764018341327286549
+  - according to cost explorer it's the DeleteObject operation
+- Oh it’s probably cause you’re using glacier and doing early deletes. From S3 standard they’re always free.
+  - That's probably it "Objects that are archived to S3 Glacier (...) are charged for a minimum storage duration of 90 days(...)Objects deleted prior to the minimum storage duration incur a pro-rated charge equal to the storage charge for the remaining days."
+  - Same for "S3 Standard-IA" but 30 days. It's a bit of a scam they leave this in a finer print while recommending to use "Intelligent-Tiering" everywhere.
+
+- Many people dont realize S3 is paid by API call. Also the sane reason opening your S3 up to public access is crazy. Put CloudFront infront of it and save 70%.
+  - And glacier has a 90 day minimum
+
 - ## 🛢️🌰 How Cassandra handles writes?
 - https://twitter.com/thegeeknarrator/status/1763903178393694467
 - Accept write requests

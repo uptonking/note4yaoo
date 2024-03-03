@@ -9,7 +9,28 @@ modified: 2022-11-11T06:57:09.670Z
 
 # guide
 
+# discuss-compiler
+- ## 
+
+- ## 
+
+- ## [Does Rust still depend on LLVM? : r/rust _202205](https://www.reddit.com/r/rust/comments/us6rza/does_rust_still_depend_on_llvm/)
+- Yes. cargo/rustc use LLVM as a codegen backend by default, and likely will for the foreseeable future.
+  - However, there's ongoing work to support using rustc with alternative backends. rustc_codegen_cranelift plugs rustc into cranelift, and might be used by default in the future for debug builds, since it tends to be faster at builds than LLVM. 
+  - rustc_codegen_gcc uses GCC as the compiler backend, and aims to extend the range of targets rustc can target.
+- There's also rust-gpu that's an entirely new rustc backend to generate SPIR-V to be able to run Rust on the GPU
+  - SPIR-V is an intermediate representation that can be consumed by graphics drivers and compiled down by them to the GPU's native code. In that sense it's more similar to emitting LLVM IR than e.g. x86 machine code. 
+  - Similarly, Rust-CUDA emits NVVM IR, which is a subset of LLVM IR.
+
+- Yes, and I doubt it will change in the near future LLVM is a "compiler framework". It's an intermediate representation catered to a lot of optimizations that the LLVM compiler framework. The only part of the compiler that is "written in Rust" is the transformation from Rust code to LLVM intermediate code, but the actual compiling, optimizing and binary production are on LLVM's end
+  - I believe rustc is looking into adopting Cranelift for debug builds to make compilation faster (at the expense of runtime performance), but release builds will continue to use LLVM by default due to better optimizations.
+
+- Llvm doesn’t really have a frontend of its own, it’s designed for you to bring your own frontend for the language you’re compiling. The only possible exception there is for c/c++, where the llvm project also ships clang, which is essentially just a frontend for those languages that uses llvm in much the same way rustc does
+- 💡 Clang is a frontend for C/C++, Rustc is a frontend for Rust. Both use LLVM as a backend. 
+  - Rustc can also use Cranelift or Gcc as a backend. 
 # discuss
+- ## 
+
 - ## 
 
 - ## 

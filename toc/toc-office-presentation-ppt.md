@@ -127,6 +127,11 @@ modified: 2021-04-30T20:14:17.669Z
 - https://github.com/ChurchApps/FreeShow /GPLv3/202402/ts/svelte
   - https://freeshow.app/
   - free software with a user-friendly interface that offers powerful features for creating and editing slideshows. 
+
+- https://github.com/shikijs/shiki-magic-move /MIT/202403/ts/vue
+  - https://shiki-magic-move.netlify.app/
+  - Smoothly animated code blocks with Shiki.
+  - 依赖shiki、vue3
 # ppt-editor
 - PPTist /apache2 > AGPLv3/202401/ts/vue
   - https://github.com/pipipi-pikachu/PPTist

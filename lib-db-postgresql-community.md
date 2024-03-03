@@ -9,25 +9,18 @@ modified: 2022-06-13T03:01:05.956Z
 
 # guide
 
-# discuss-stars
-- ## 
-
-- ## 
-
-- ## Are there major builds of OSS Postgres offered by different groups like there are JDKs?
-- https://twitter.com/eatonphil/status/1744141903669465227
-  - For example: Postgres builds with different allocators, configuration defaults, builtin plugins, etc.
-  - The reason I ask is that almost every guide for running postgres in production says you need to tune it because the defaults are for the lowest common denominator.
-  - So, why not have various distributions with sensible defaults for modern hardware?
-
-- [Percona Distribution for PostgreSQL](https://docs.percona.com/postgresql/)
-  - Percona Distribution for PostgreSQL is a collection of tools to assist you in managing your PostgreSQL database system: it installs PostgreSQL and complements it by a selection of extensions that enable solving essential practical tasks efficiently
-
-- @TimescaleDB looks pretty good for time-series data
 # discuss
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 实现了 pg wire protocol 的数据库是不是都是 pg 了
+- https://twitter.com/leiysky/status/1764242517472752040
+- 那种只能算PG生态。DuckDB虽然是 PG wire protocol，但是有 duckdb_fdw 和 pg_quack 给包进来，能让 PG 本体主干直接利用上，所以算是个例外。
 
 - ## 🔥 [How Postgres is more than a relational database: Extensions | Hacker News_201811](https://news.ycombinator.com/item?id=18555276)
 - 

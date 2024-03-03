@@ -182,7 +182,7 @@ modified: 2023-11-16T15:00:11.503Z
   - MySQL/SQLite/Postgres
 
 - https://github.com/gothinkster/koa-knex-realworld-example /201910/js
-  - Example Node. Js (Koa.js + Knex) codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the RealWorld spec and API.
+  - Example Node (Koa.js + Knex) codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the RealWorld spec and API.
 
 - https://github.com/oldmanfleming/koa-boilerplate /MIT/202005/ts
   - Koa + Typescript + TypeORM
