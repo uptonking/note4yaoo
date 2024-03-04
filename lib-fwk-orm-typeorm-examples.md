@@ -32,9 +32,7 @@ modified: 2023-01-20T18:45:02.826Z
 - https://github.com/w3tecch/typeorm-seeding
   - A delightful way to seed test data into your database.
   - Inspired by the awesome framework laravel in PHP and of the repositories from pleerock
-
 # admin
-
 - api-server-nodejs /178Star/MIT/202212/ts
   - https://github.com/app-generator/api-server-nodejs
   - Express Starter with JWT authentication, and SQLite persistance - Provided by AppSeed App Generator. 
@@ -49,12 +47,11 @@ modified: 2023-01-20T18:45:02.826Z
   - Can be used with other React Starters for a complete Full-Stack experience
 - https://github.com/app-generator/sample-docker-nodejs-react
   - docker compose up --build 
-
-# crud-boilerplate
-- https://github.com/ljlm0402/typescript-express-starter /202301/ts
-  - Express RESTful API Boilerplate Using TypeScript，模版项目
-  - 支持切换不同orm
-  - 支持mongoose、orm、graphql
+# starter
+- https://github.com/ljlm0402/typescript-express-starter /202311/ts/typedi
+  - Express RESTful API Boilerplate Using TypeScript, 可选的多模版项目
+  - ✨ 支持Mongoose/Sequelize/TypeORM/Prisma/Knex/MikroORM/GraphQL
+  - 采用controller/service/model三层架构，class风格，依赖注入，少量使用装饰器
 
 - https://github.com/mkosir/typeorm-express-typescript
   - Minimal Express RESTful API boilerplate
@@ -93,7 +90,6 @@ modified: 2023-01-20T18:45:02.826Z
 
 - https://github.com/camesine/Typescript-restful-starter
   - ExpressJS + Joi + Typeorm + Typescript + JWT + ES2015 + Clustering + Tslint + Mocha + Chai
-
 
 ## cms
 

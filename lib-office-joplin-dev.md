@@ -10,7 +10,7 @@ modified: 2024-01-28T20:52:21.981Z
 # guide
 - pros
   - MIT > AGPLv3
-  - 支持plugins
+  - 支持plugins，并提供了插件市场网站
   - 客户端丰富，支持win/linux/mac/android/ios, 还提供Web Clipper
   - End To End Encryption (E2EE)
   - Note history (revisions)

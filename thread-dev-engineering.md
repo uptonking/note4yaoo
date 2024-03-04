@@ -21,6 +21,23 @@ modified: 2021-01-21T17:52:13.333Z
 - 一般都是向后端发送hashed password
 - 这有什么争议，自己加密如果比https更安全更方便，那https可以废弃了。
 - 加了也没法完全防 mitm 吧，和 ssl pinning bypass 一个道理吧
+# discuss-architecture-cases
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Why Amazon Abandoned Microservices Architecture in Favor Of Monolith?
+- https://twitter.com/milan_milanovic/status/1764566784680550654
+  - In the latest post (check in the comments), a team that works on Prime Video explained their approach to ensuring that customers receive high-quality content. They use a tool to monitor every stream viewed by customers and use it to identify quality issues.
+  - The tool was intended to run on a small scale, so they noticed that onboarding more streams to the service was very expensive. So, they decided to revise the architecture.
+  - The initial architecture consisted of serverless components orchestrated by AWS Step Functions. They moved expensive operations between components into a single process to keep the data more transient within process memory.
+  - After the analysis, they concluded that the distributed approach didn't bring many benefits, so they packed all the components into a single process. 
+  - Moving their service to a monolith reduced their infrastructure cost by over 90% and increased scaling capabilities.
+
 # discuss
 - ## 
 

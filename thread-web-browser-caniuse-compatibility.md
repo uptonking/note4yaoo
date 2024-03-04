@@ -50,7 +50,14 @@ modified: 2021-07-29T11:15:44.100Z
 
 - ## 
 
-- ## 
+- ## popover ships in Firefox 125 _20240304
+- https://twitter.com/hdv/status/1764577917093228813
+  - [Dialogs and popovers seem similar. How are they different? _202309](https://hidde.blog/dialog-modal-popover-differences/)
+
+- `popover` is available:
+  - Chrome (116) and Edge (115)
+  - Safari 17
+  - Firefox from 114 (behind dom.element.popover.enabled flag)
 
 - ## With Edge 121 supporting AVIF, it will soon cross the 90% adoption mark
 - https://twitter.com/TimVereecke/status/1758983962792169702

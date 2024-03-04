@@ -19,10 +19,22 @@ modified: 2020-12-12T19:01:56.749Z
   - An open-source link management tool for modern marketing teams to create, share, and track short links.
   - 依赖NextAuth.js、PlanetScale、Tinybird – analytics、Upstash – redis
 # status-page
-- https://github.com/openstatusHQ/openstatus
+- https://github.com/openstatusHQ/openstatus /AGPLv3/202402/ts
   - https://openstatus.dev/
   - The Open-source Status Page and Alerting System
   - The Statuspage Open Source Alternative.
+
+- https://github.com/OneUptime/oneuptime /apache2/202403/ts
+  - https://oneuptime.com/
+  - a comprehensive solution for monitoring and managing your online services
+  - Monitor the availability and response time of your online services from multiple locations around the world.
+  - Replace tools like StatusPage.io.
+  - Create incident reports, assign tasks, update stakeholders, and document resolutions. Replace tools like Incident.io.
+  - Collect, store, and analyze logs from your online services. Search, filter, and visualize log data to gain insights and troubleshoot issues. Replace tools like Loggly.
+
+- https://github.com/RafalWilinski/express-status-monitor /MIT/202204/js/inactive
+  - https://dynobase.dev/
+  - Realtime Monitoring solution for Node.js/Express.js apps, inspired by status.github.com
 
 - https://github.com/webmin/webmin /perl
   - http://www.webmin.com/

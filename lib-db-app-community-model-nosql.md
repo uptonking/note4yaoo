@@ -15,12 +15,16 @@ modified: 2023-10-27T07:07:52.778Z
 - ## 
 
 - ## 
-
-- ## 
 # discuss
 - ## 
 
 - ## 
+
+- ## 🆚️ Why are Relational databases (RDBMS) not a good fit for horizontal scaling? Why are NoSQL databases a good fit?
+- https://twitter.com/deisbel/status/1764342602843779282
+  - RDBMS stores related data using many small pieces, establishing data integrity restrictions between them that are hard to split and migrate. 
+  - Besides, RDBMS need to maintain many indexes on top of data.
+  - NoSQL uses only one unit of storage for each piece of data.
 
 - ## 🔥 [How NoSQL forced the evolution of a scalable relational database | Hacker News_201807](https://news.ycombinator.com/item?id=17520809)
 - 

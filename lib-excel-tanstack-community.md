@@ -16,7 +16,11 @@ modified: 2023-03-01T13:00:27.664Z
 
 - ## 
 
-- ## 
+- ## Looking at the @tan_stack router docs and @tan_stack query docs and I cannot see a way to use both of them together.
+- https://twitter.com/isocroft/status/1764279324134277146
+  - Or am I wrong. Cos, I am seeing duplicate function here
+
+- They have a small amount of overlap in caching, but for the most part, they go really well together using loaders to preload queries.
 
 - ## What's your opinion on React Server Components right now?
 - https://twitter.com/tannerlinsley/status/1687552723875676162

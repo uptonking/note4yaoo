@@ -62,6 +62,13 @@ modified: 2024-01-28T21:37:15.191Z
   - joplin-search-integration: Integrate joplin notes search results in Google/Bing/Baidu search
   - joplin-api: api wrapper for Joplin for web/nodejs, and the basis for the above results
 
+- https://github.com/markerikson/joplin-plugin-vscode-style-search /202403/ts
+  - A Joplin plugin that provides a search UI panel patterned after VS Code, with matches per note and per-match hit highlighting
+  - Search for text, and matches will be shown grouped by file, one line per match, with the match text highlighted. 
+  - Both plain text and regular expression syntax should work.
+  - todo
+    - Scroll to a specific match line when clicked
+
 - https://github.com/joplin/plugin-templates /MIT/202311/ts
   - This plugin allows you to create templates in Joplin and use them to create new notes and to-dos.
 # examples

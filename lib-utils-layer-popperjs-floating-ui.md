@@ -28,6 +28,15 @@ modified: 2022-06-04T00:44:40.955Z
   - [HTMLElement API: popover | Can I use](https://caniuse.com/mdn-api_htmlelement_popover)
 # blogs
 
+## [Dialogs and popovers seem similar. How are they different? _202309](https://hidde.blog/dialog-modal-popover-differences/)
+
+- This post goes into the differences between dialogs, popovers, overlays and disclosure widgets. 
+
+- `popover` is available:
+  - Chrome (116) and Edge (115)
+  - Safari 17
+  - Firefox from 114 (behind dom.element.popover.enabled flag)
+
 ## [Everything I Know About Positioning Poppers (Tooltips, Popovers, Dropdowns) in UIs by popperjs-author_202004](https://dev.to/atomiks/everything-i-know-about-positioning-poppers-tooltips-popovers-dropdowns-in-uis-3nkl)
 
 Problem 1: Preventing overflow if the popper will be clipped or overflow the main axis of a boundary

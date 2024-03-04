@@ -139,6 +139,8 @@ modified: 2021-07-20T13:50:23.433Z
   - 腾讯文档
   - 类似outline集成slack
   - 类似superset支持各种数据源
+# ideas
+- kibana for meilisearch
 # editor
 - tips
   - live edit

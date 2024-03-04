@@ -105,32 +105,47 @@ modified: 2021-05-25T09:41:29.066Z
 - tips
   - 用户管理的参考方案，可直接在现有cms的基础上提取部分代码
 
-- https://github.com/nextauthjs/next-auth /ISC/ts
+- https://github.com/nextauthjs/next-auth /21.4kStar/ISC/202403/ts
   - https://authjs.dev/
   - a set of open-source packages that are built on Web Standard APIs for authentication in modern applications with any framework on any platform in any JS runtime.
+  - Designed to work with any OAuth service, it supports 2.0+, OIDC
+  - Built-in support for many popular sign-in services
+  - Built-in email/passwordless/magic link authentication
+  - Built-in support for MySQL, MariaDB, Postgres, Microsoft SQL Server, MongoDB, SQLite, etc.
   - [database adapters](https://authjs.dev/reference/adapters)
     - 支持sequelize、prisma、drizzle
+  - When JSON Web Tokens are used, they are encrypted by default (JWE) with A256CBC-HS512
   - [NextAuth.js is becoming Auth.js_20221215](https://twitter.com/balazsorban44/status/1603082914362986496)
     - Runtime/framework agnostic
   - https://github.com/nextauthjs/next-auth-example
     - Example showing how to use NextAuth.js with Next.js
 
-- https://github.com/logto-io/logto /MPL/ts
+- https://github.com/logto-io/logto /6.9kStar/MPLv2/202403/ts
   - https://logto.io/
+  - https://docs.logto.io/
   - a modern Auth0 alternative for building identity infrastructure with minimal effort
   - offers a comprehensive identity solution covering both the front and backend, complete with pre-built infrastructure
   - OIDC-based authentication and RBAC authorization.
   - Flexible connectors, scalable with community contributions, customizable with SAML, OAuth, and OIDC protocols.
   - Various sign-in options, such as social, email, phone number, and username, including passwordless authentication
   - User management and audit logs help you understand user identity-related information and keep your security on track.
+  - https://github.com/logto-io/js
+    - The monorepo for SDKs and working samples written in JavaScript (Well, mostly in TypeScript).
 
-- https://github.com/pilcrowOnPaper/lucia /MIT/ts
+- https://github.com/lucia-auth/lucia /6.8kStar/MIT/202403/ts
   - https://lucia-auth.com/
   - a simple and flexible user and session management library that provides an abstraction layer between your app and your database. 
   - Middleware allows Lucia to read the request and response since these are different across frameworks and runtime
     - 支持express、fastify、nextjs、astro
-  - uses adapters to connect to your database
-    - 支持mongoose、sqlite、pg、redis、prisma、drizzle-orm、kysely
+  - [A database is required for storing your users and sessions](https://lucia-auth.com/database/)
+    - 支持mongoose、sqlite、pg、prisma、drizzle-orm、kysely
+  - [Lucia 3.0 · Discussion _20240127](https://github.com/lucia-auth/lucia/discussions/1361)
+    - Lucia doesn't use JWTs
+    - We used to support JWT and it was a broken mess. Token rotation requires additional complexity, you need to sync state in the client, and the added security risks requires you to just do more. Even if it was simple, sessions and JWTs are 2 totally different things and require different db tables. Supporting both with a single library doesn't make any sense.
+    - I would prefer a jwt session. Is it possible with Lucia? Any reason why a db approach is used instead?
+      - it's beyond the scope of what lucia was initially designed to do (manage sessions), and maintaining the implementation was a mess.
+      - Refresh token rotation is really tricky to abstract away in a flexible manner. 
+      - And on the other hand, in-memory DB nicely pollyfills all of the benefits of JWT, so it might actually not make a lot of sense to maintain that solution.
 
 - https://github.com/nickredmark/ooth /MIT/201902/ts/archived
   - https://nickredmark.github.io/ooth/
@@ -140,6 +155,11 @@ modified: 2021-05-25T09:41:29.066Z
     - A resource API (optional, can be integrated with the auth server or standalone)
     - The client
   - example with a starting UI with all the main user account flow is programmed with next.js. 
+
+- https://github.com/Swizec/useAuth
+  - The simplest way to add authentication to your React app.
+  - You'll need an account with Auth0 or Netlify Identity and the appropriate access keys.
+  - We use XState behind the scenes to manage authentication state for you.
 
 - https://github.com/keycloak/keycloak /18.4kStar/apache2/202312/java
   - https://www.keycloak.org/
@@ -177,6 +197,22 @@ modified: 2021-05-25T09:41:29.066Z
 - https://github.com/cornflourblue/node-mysql-registration-login-api /MIT/202008/js
   - Node.js + MySQL API for User Management, Authentication and Registration
   - 依赖sequelize6、express-jwt、express-jwt、bcryptjs
+
+## auth-examples
+
+- https://github.com/auth0-blog/spa-jwt-authentication-tutorial /201507/js
+  - Add authentication to a vanilla js single page app
+
+- https://github.com/rajeshpillai/node-jwt-step-by-step /202005/js
+  - A simple express jwt server with vanilla javascript client for testing
+  - backend + frontend
+
+- https://github.com/LeeSoMyoung/Express-NodeJS-Auth-with-JWT /202202/js
+  - NodeJS, Express, MySQL, Vanilla JS로 구현한 Authentication
+
+- https://github.com/cornflourblue/node-mongo-registration-login-api /202007/js
+  - NodeJS + MongoDB API for User Management, Authentication and Registration
+  - [NodeJS + MongoDB - Simple API for Authentication, Registration and User Management | Jason Watmore's Blog](https://jasonwatmore.com/post/2018/06/14/nodejs-mongodb-simple-api-for-authentication-registration-and-user-management)
 # ide-like
 - https://github.com/labring/laf /ts
   - https://laf.dev/

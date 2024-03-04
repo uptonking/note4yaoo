@@ -16,7 +16,13 @@ modified: 2021-01-13T19:30:59.508Z
 - tldraw /5.8kStar/MIT > NonCommercial/202202/ts
   - https://github.com/tldraw/tldraw
   - https://www.tldraw.com/
+  - https://tldraw.substack.com/archive
   - 基于svg实现
+  - [License updates for the tldraw SDK - by Steve Ruiz _20231220](https://tldraw.substack.com/p/license-updates-for-the-tldraw-sdk)
+    - Under our new license, you are permitted to use the tldraw SDK for non-commercial purposes.
+    - The pre-release 2.x versions released until Apache-2.0 will remain licensed under Apache-2.0.
+    - The 1.x version of tldraw will remain licensed under MIT forever. 
+    - We’ve discussed selling a hosted collaboration service, similar to TipTap Collab, or splitting the library into free features and premium features like AgGrid, pricing based on usage like MapBox, or even turning tldraw.com into a teams-based SaaS app like Excalidraw+.
   - [Change licenses to tldraw _20231219](https://github.com/tldraw/tldraw/pull/2167)
   - packages/tldraw contains the source for the @tldraw/tldraw package. 
     - 依赖 radix-ui、@stitches/react、@tldraw/core、zustand
@@ -103,6 +109,10 @@ modified: 2021-01-13T19:30:59.508Z
   - A composable editor canvas library.
   - 基于svg实现的图形编辑器
   - 提供了多种编辑场景示例
+
+- https://github.com/mohitkumartoshniwal/whiteboard-konva-react /202402/js
+  - Code for the Youtube video on building excalidraw clone using React and Konva.js
+  - [Excalidraw or Figma Clone using React and Konva - YouTube](https://www.youtube.com/watch?v=LXlE1y5PQsk)
 # canvas-drawing
 - https://infinitecanvas.tools/gallery/
   - 画板类产品列表

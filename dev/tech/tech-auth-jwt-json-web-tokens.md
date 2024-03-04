@@ -20,11 +20,6 @@ modified: 2021-08-12T14:36:02.148Z
 - todo
   - jwt的核心功能的示例
   - 切换 fake backend api的例子，不必执着，全局的替换需要考虑的场景太多
-# auth-examples
-- https://github.com/Swizec/useAuth
-  - The simplest way to add authentication to your React app.
-  - You'll need an account with Auth0 or Netlify Identity and the appropriate access keys.
-  - We use XState behind the scenes to manage authentication state for you.
 # jwt-blogs
 
 ## [五分钟带你了解啥是JWT](https://zhuanlan.zhihu.com/p/86937325)

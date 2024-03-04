@@ -152,6 +152,14 @@ modified: 2023-06-19T12:33:38.006Z
 
 - ## 
 
+- ## 
+
+- ## Spent some time this weekend learning about @godotengine ’s architecture, deeply impressed.
+- https://twitter.com/steveruizok/status/1764622086922727602
+  - For tldraw, we have a bunch of abstractions around shapes and ui elements which are starting to show their limits as people want to use the library in new ways.
+  - There are a lot of concepts, like selection and erasing and snapping and binding, which are managed separately. They’re not expressions of the same behavior or system.
+  - Seeing a mature system for solving similar problems is great. Being able to look at the source code is great. Excellent documentation. A+, will make a few canvas toys with it
+
 - ## 🤔 I’m thinking of implementing a tldraw block type for my notebook app, 
 - https://twitter.com/JungleSilicon/status/1694046938877018314
   - but that means that there will be many instances of tldraw within the same document. Do you foresee any issues?

@@ -15,7 +15,22 @@ modified: 2023-09-07T04:17:31.787Z
 
 - ## 
 
-- ## 
+- ## [Does Figma have any serious competition? : r/UXDesign _202212](https://www.reddit.com/r/UXDesign/comments/zd2odq/does_figma_have_any_serious_competition/)
+- Figma is still really poor at making interactive mock-ups. Axure remains my go-to for that.
+- I've been considering bringing Axure back into my workflow to prototype in-page and micro interactions. I was a bit surprised to see that they haven't made any updates in years. Has it been abandoned?
+  - Axure still issues periodic updates, though I couldn’t tell you the last time a big feature was added or significantly changed.
+  - I find Axure still offers a robust and relatively easy to use set of features for creating interactive mock-ups, and I greatly prefer interactive mock-ups over a series of annotated static screens. I also don’t love the infinite canvas that’s used in both Figma and Miro. It has its uses but I find it disorienting to pan and zoom all over the place.
+
+- Figma has won this race and has became the industry standard tool. For now you can still watch the ongoing competition FigJam vs Miro
+
+- I use Figma for design and Axure to prototype since it is so much more robust.
+
+- Figma is big in the product designer space then sketch, etc. 
+  - Axure is bigger in the UX designer/research space since it requires "if/then" tools
+
+- Not currently, not for a long time. None of the current tools are comparable. Sketch used to have no competition for a long time as well, but Figma plug ins allow the apps to go beyond what the developers build. Also, cross OS systems arnd browser-based options are really nice. Long dead the time where design tools are strictly in for Apple.
+
+- Framer is coming.
 
 - ## 看了一下 http://Builder.io 新的博客，介绍了他们的从 Figma 到前端代码是如何实现的。
 - https://twitter.com/iguangzhengli/status/1714976679943368985

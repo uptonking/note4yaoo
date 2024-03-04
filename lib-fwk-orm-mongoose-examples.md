@@ -108,10 +108,11 @@ modified: 2023-02-05T18:50:53.563Z
   - this is mini social platform
   - Create Account, Create Posts, Edit or Delete Them, Explore Others Posts, Follow User
 
-- https://github.com/ljlm0402/typescript-express-starter /202301/ts
-  - Express RESTful API Boilerplate Using TypeScript，模版项目
-  - 支持切换不同orm
-  - 支持mongoose、orm、graphql
+- https://github.com/ljlm0402/typescript-express-starter /202311/ts/typedi
+  - Express RESTful API Boilerplate Using TypeScript, 可选的多模版项目
+  - ✨ 支持Mongoose/Sequelize/TypeORM/Prisma/Knex/MikroORM/GraphQL
+  - 采用controller/service/model三层架构，class风格，依赖注入，少量使用装饰器
+
 - https://github.com/janishar/nodejs-backend-architecture-typescript /202010/ts
   - Node.js Backend Architecture Typescript
   - Open-Source Project By AfterAcademy

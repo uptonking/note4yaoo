@@ -18,6 +18,9 @@ modified: 2021-05-14T15:04:42.225Z
   - styled-components, 
   - ramda, deepmerge, date-fns
   - marked
+
+- [Best of JS](https://bestofjs.org/)
+  - [2023 JavaScript Rising Stars](https://risingstars.js.org/2023/en)
 # js-utils
 - https://github.com/pull-stream/pull-stream /js
   - https://pull-stream.github.io/

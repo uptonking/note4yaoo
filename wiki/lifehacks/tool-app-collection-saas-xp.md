@@ -189,6 +189,9 @@ modified: 2022-11-07T10:25:12.034Z
 - [Bluesky](https://bsky.app/)
 - [AT Protocol](https://atproto.com/guides/overview)
 # telegram
+- [Telemetrio - Your dedicated manager throughout the analysis telegram-channels](https://telemetr.io/en)
+  - https://telemetr.io/en/channels?languages=zh
+
 - 资源搜索
   - [Meow. TG-做最懂你的TG搜索](https://meow.tg/)
   - [sssoou.com](https://www.sssoou.com/)

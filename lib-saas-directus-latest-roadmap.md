@@ -36,7 +36,7 @@ modified: 2024-03-02T13:33:54.693Z
   - Added Sorting by Aggregated Queries
 
 - v10.6.0
-  - Replaced `vm2` with `isolated-vm` for sandboxing the "Run Script"-Operation in Flows
+  - ✨ Replaced `vm2` with `isolated-vm` for sandboxing the "Run Script"-Operation in Flows
   - Introduced new JSON Web Token (JWT) operation to Flows
 
 - v10.5.0

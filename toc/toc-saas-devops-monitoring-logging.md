@@ -18,9 +18,20 @@ modified: 2024-02-11T15:11:31.598Z
   - We provide a set of SDKs and integration options to make it easier to get started with HyperDX, such as Browser, Node.js, and Python
   - HyperDX is compatible with OpenTelemetry, a vendor-neutral standard for instrumenting your application
 
+- https://github.com/quickwit-oss/quickwit /AGPLv3/202403/rust
+  - https://quickwit.io/
+  - Cloud-native search engine for observability. 
+  - An open-source alternative to Datadog, Elasticsearch, Loki, and Tempo.
+  - Elasticsearch-compatible API, use Quickwit with any Elasticsearch or OpenSearch client
+
 - https://github.com/openreplay/openreplay /8.2kStar/Elastic/202311/ts/go/python
   - https://openreplay.com/
   - a session replay suite you can host yourself, that lets you see what users do on your web app, helping you troubleshoot issues faster.
+- https://github.com/SigNoz/signoz /202403/go/ts
+  - open-source observability platform native to OpenTelemetry with logs, traces and metrics in a single application. 
+  - An open-source alternative to DataDog, NewRelic, etc
+- https://github.com/highlight/highlight /202403/go/ts
+  - open source, full-stack monitoring platform.
 
 - https://github.com/parseablehq/parseable /AGPLv3/202402/rust
   - https://parseable.com/

@@ -24,4 +24,12 @@ modified: 2024-02-16T14:55:58.271Z
   - Our no-code Vue.js app is intuitive for non-technical users
 # dev
 - 在admin添加新的data-model时，数据库会创建对应的表，~~同时后端src/api下面会自动生成对应的schema/router/controller/service~~
+# examples
+
+## utils
+
+- https://github.com/fabian-hiller/directus-sdk /202306/ts
+  - This repository can be seen as an alternative proposal to the current Directus SDK.
+  - Modular design
+  - This SDK builds on existing web APIs like the Fetch API and therefore has no dependencies and can run in any environment. 
 # more

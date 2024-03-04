@@ -36,7 +36,18 @@ modified: 2020-07-08T03:17:23.369Z
   - [bigIssues](https://github.com/facebook/react/issues?q=is:open+is:issue+label:%22Type:+Big+Picture%22)
   - [React.js有哪些设计缺陷？](https://www.zhihu.com/question/316425133)
   - [React v16.9.0 and the Roadmap Update_20190808](https://reactjs.org/blog/2019/08/08/react-v16.9.0.html)
-# roadmap
+# discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## React already supports generator functions and will support async generator functions natively. 
+- https://twitter.com/sebmarkbage/status/1764399242179744093
+  - However it will means each new item is added to the end of a list. It’s not representing a reactive value over time.
+  - The web platform is missing syntax for this or a runtime primitive. Maybe signals. Perhaps React Server Components should have a form of hooks that can also update an instance over time.
+
 - ## [Remove the warning for setState on unmounted components](https://github.com/facebook/react/pull/22114)
 - why added? 
   - If you forget the unsubscribe call, after the component unmounts you'll get a memory leak.
@@ -119,13 +130,8 @@ async function handleSubmit() {
 - Other Projects
   - Modernizing React DOM
   - Suspense for Server Rendering
-# discussion
-- time-slicing
 
-## React Flare 
-
-- ref
-  - [React Flare](https://github.com/facebook/react/issues/15257)
+- ## [React Flare: React Events API](https://github.com/facebook/react/issues/15257)
 
 - The idea is to extend React's event system to include high-level events that allow for consistent cross-device and cross-platform behavior.
 - The goal of React Flare is to make it easy to build UIs that feel great on desktop and mobile, with mouse and touch, and that are accessible. 
@@ -145,10 +151,7 @@ async function handleSubmit() {
   - Our goal is still to make it possible for library authors to work with passive events, capture/bubble phase, custom events, and events occurring on the document from within a React function component...while reducing the amount of event-related code needed in ReactDOM. 
   - Ultimately building both intermediate abstractions like the Responder Event system and high-level abstractions like useTap (which we prototyped in Flare) should be possible in user-space
 
-## React Fire: Modernizing React DOM
-
-- ref
-  - [React Fire](https://github.com/facebook/react/issues/13525)
+- ## [React Fire: Modernizing React DOM](https://github.com/facebook/react/issues/13525)
 
 - Our goal is to make React better aligned with how the DOM works, revisit some controversial past decisions that led to problems, and make React smaller and faster.
 

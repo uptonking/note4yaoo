@@ -9,6 +9,8 @@ modified: 2020-10-05T09:12:01.565Z
 
 # guide
 
+- olap-solutions
+  - clickhouse在计算层和存储层与hadoop体系无关
 # popular
 - https://github.com/chdb-io/chdb /apache2/202312/cpp
   - https://doc.chdb.io/

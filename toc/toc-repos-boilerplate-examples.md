@@ -576,20 +576,6 @@ modified: 2023-11-16T15:00:11.503Z
 
 - https://github.com/matt212/Nodejs_Postgresql_VanillaJS_Fastify /202208/js
   - Config based Node.js and PostgreSQL Web App Boilerplate/Scaffolding with custom RBAC and stream-based CSV upload and download mechanics.
-# auth
-- https://github.com/auth0-blog/spa-jwt-authentication-tutorial /201507/js
-  - Add authentication to a vanilla js single page app
-
-- https://github.com/rajeshpillai/node-jwt-step-by-step /202005/js
-  - A simple express jwt server with vanilla javascript client for testing
-  - backend + frontend
-
-- https://github.com/LeeSoMyoung/Express-NodeJS-Auth-with-JWT /202202/js
-  - NodeJS, Express, MySQL, Vanilla JS로 구현한 Authentication
-
-- https://github.com/cornflourblue/node-mongo-registration-login-api /202007/js
-  - NodeJS + MongoDB API for User Management, Authentication and Registration
-  - [NodeJS + MongoDB - Simple API for Authentication, Registration and User Management | Jason Watmore's Blog](https://jasonwatmore.com/post/2018/06/14/nodejs-mongodb-simple-api-for-authentication-registration-and-user-management)
 # pwa
 - https://github.com/hemanth/awesome-pwa
   - Useful resources for creating Progressive Web Apps

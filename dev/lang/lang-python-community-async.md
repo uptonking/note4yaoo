@@ -16,7 +16,14 @@ modified: 2023-08-28T06:15:13.277Z
 
 - ## 
 
-- ## 
+- ## js 的 await 语法和 python 几乎就是一样的
+- https://twitter.com/LaiskyCai/status/1764462751227777066
+  - 我觉得跟 js 完全一模一样啊，应该说当初 ECMA6 设计的时候就是照着 py 抄的。
+  - py 会传染 js 也会传染。想要不传染的解耦写法也是类似的。异步编程的基本功就是要掌握 同步/异步 的互相转换。比如同步等异步、异步包同步。
+
+- js传染没那么严重，在同步里写也可以用then，py就没得选择了，主要是js天生异步吧
+
+- 感觉 JS 这块语法更像 C# 的，两者都是 ECMA 的东西。
 
 - ## python http.server 的性能过于差了
 - https://twitter.com/yihong0618/status/1763402989996540391

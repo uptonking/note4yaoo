@@ -130,7 +130,7 @@ modified: 2023-03-30T13:31:09.049Z
 
 - the revenue sharing probably didn't help much for sure. I've seen dozens of sites and platforms add that as a feature, and as unfortunate as it is, this almost always backfires. People see 'make money contributing to this platform' as 'free cash for spamming!' and the quality often falls off a cliff. You need really strict rules and a good moderation team to keep a platform under control in this situation, and that's rarely the case for services like Quora.
 
-- ## InVision 宣布关站。当年和 Sketch 也算是两大设计平台了，一个时代正式结束。
+- ## InVision 宣布关站。当年和 Sketch 也算是两大设计平台了，一个时代正式结束。 _202401
 - https://twitter.com/dingyi/status/1743073399633764502
 - 和 Figma 一样想取代 Sketch，可惜没做起来
 - 当年横空出世，宣传视频很牛逼，结果产品出来非常不好用，核心东西没做好就开始想玩花儿
@@ -154,7 +154,25 @@ modified: 2023-03-30T13:31:09.049Z
 
 - ## 
 
-- ## 
+- ## 选择与努力之间，我一直选择努力。5年的公众号收入，不及一篇 AI 声音克隆的收益
+- https://twitter.com/huangyun_122/status/1764481168089448832
+  - 谁不曾拥有美好的理想？
+- 说明风口的重要性
+
+- 冯春培早就改行做安全了， 老盖都完全放弃oracle走国产话去了； 当年很多同行都转阿里和云计算方向，以后数据库行业圈子会越来越小。部分会被云计算吃掉，部分会被国产数据库吃掉。
+  - 是啊，冯春培，Fenng 老师，盖国强盖总，这一辈人，曾经的明灯。如今，都在各自领域焕发又一春。唯独 Oracle, SQL Server 等这些数据库，再无人提及
+
+- 越专业的内容看的人越少。
+  - 有道理的。婉拒了7/8个出版社的出书邀请，他们给的建议就是这些内容适合出现在书上
+
+- 一篇AI声音克隆是指公众号文章还是小报童专栏之类的收益？
+  - 公众号付费文章，还包括 1v1 指导网友搭建完整个流程，TA 们给我的红包
+
+- 怎么变现的ai声音克隆，卖教程吗
+  - 卖教程和售后
+
+- 付费了这么多 ai课程，等待起飞
+  - 课程可以提供，起飞得靠自己，哈哈哈哈哈
 
 - ## 顶流的 Swift 开发教学油管频道月入 400 刀，而顶流的吃播频道月入 12000 刀，不一定准但大差不差，还不包括卖课卖订阅的额外收入。
 - https://twitter.com/ZeroZ_JQ/status/1761948318090084546

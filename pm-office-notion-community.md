@@ -178,7 +178,12 @@ modified: 2023-11-28T14:48:45.910Z
 
 - ## 
 
-- ## 
+- ## Notion and Slack have so many rough edges in terms of UX.
+- https://twitter.com/tantaman/status/1764647109897154815
+  - Code blocks that become inescapable
+  - Inconsistent shift+enter behavior
+  - Lists responding to delete incorrectly when things like mentions are in them
+  - vs Obsidian & Discord where everything works as expected.
 
 - ## Databases are available! 这对Atlassian来说是个大动作啊。这是向Notion宣战吗？ _202402
 - https://twitter.com/PenngXiao/status/1753369373253996757

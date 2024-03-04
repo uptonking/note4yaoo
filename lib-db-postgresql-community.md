@@ -16,7 +16,13 @@ modified: 2022-06-13T03:01:05.956Z
 
 - ## 
 
-- ## 
+- ## What do you call "dead tuple" in PostgreSQL?
+- https://twitter.com/mmeent_pg/status/1764657105825374319
+  - when xmax < current xid
+  - when xmax < xmin horizon for all ongoing tx or replication 
+  - when lp_flags=dead (and space is reusable)
+- It depends on what you expect. The answers given don't really provide a correct answer from an internals PoV
+  - A tuple is considered dead if the transaction indicated in xmin has aborted, or if the transaction indicated by xmax has committed and has passed the global xmin horizon (or, if you're looking from a visibility snapshot PoV, if the xmin/xmax rules apply within the snapshot).
 
 - ## 实现了 pg wire protocol 的数据库是不是都是 pg 了
 - https://twitter.com/leiysky/status/1764242517472752040

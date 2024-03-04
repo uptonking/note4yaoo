@@ -118,6 +118,26 @@ modified: 2023-10-26T19:04:00.318Z
 - > In comparison to {C, P}ouchDB, I think the question is around offline-first availability.
   - Got it, thanks! Yeah that is indeed not how TigerBeetle works. If you ever cannot connect to the cluster, you keep retry messages (idempotently) until you connect and the message succeeds.
 
+# discuss-cap
+- ## 
+
+- ## 
+
+- ## 
+
+- ## What is the difference between Linearizability and Serializability? 
+- https://twitter.com/vaibhaw_vipul/status/1764525904045220312
+- Linearizability in context of consistency refers to the "C" in CAP theorem. 
+  - It is synonym of "atomic consistency". 
+  - It is a guarantee about single operation on single objects. Writes appear instantaneous.  
+- Serializability is the "I" or isolation in ACID. 
+  - It is a guarantee about transaction or groups of one or more operations over one or more objects. 
+  - It guarantees that the execution of a set of transactions (usually containing read and write operations) over multiple items is equivalent to some serial execution (total ordering) of the transactions. 
+  - Serializability is a mechanism for guaranteeing database correctness.
+  - Combining serializability and linearizability yields strict serializability
+
+- In practice, your database is unlikely to provide serializability, and your multi-core processor is unlikely to provide linearizability—at least by default. 
+  - As the above theory hints, achieving these properties requires a lot of expensive coordination.
 # discuss-decentralized/p2p
 - ## 
 
@@ -185,7 +205,22 @@ modified: 2023-10-26T19:04:00.318Z
 
 - ## 
 
-- ## 
+- ## Scaling Database: When and How to Shard
+- https://twitter.com/sahnlam/status/1764539121782112444
+  - Database sharding refers to splitting data across multiple database servers and is commonly used for scaling. 
+  - However, sharding introduces major operational and infrastructure complexity that should be avoided unless absolutely necessary.
+
+- 💡 Alternative Scaling Approaches
+  - Vertical Scaling:  Use more powerful single database servers with more CPUs, memory, storage and I/O bandwidth. Much simpler to manage than sharding.
+  - SQL Optimization: Tune SQL queries and database schema to maximize performance on a single server using proper indexes, efficient SQL, etc.
+  - Caching: Use in-memory caches like Redis to reduce database load by serving common queries from the cache instead of hitting the database every time.
+  - Read Replicas + Load Balancer: Add horizontal read scaleability without full complexity of sharding. Directs reads across replicas.
+- These optimization approaches should be exhausted before considering sharding.
+
+- 💡 Sharding Methods
+  - Vertical Sharding: Split database into columnar tables or sections vs rows. For example, having one table for names and another table for emails.
+  - Horizontal Sharding: Split database into row partitions distributed evenly across multiple servers. Methods include range based, directory based, and hash based sharding.
+- When sharding, use the simplest approach that meets requirements to minimize complexity. Seek to avoid sharding until necessary despite the scaling benefits. The infrastructure and operational overheads often outweigh gains.
 
 - ## Distributed Services can't exist without Eventual Consistency.
 - https://twitter.com/RaulJuncoV/status/1763220110251032900

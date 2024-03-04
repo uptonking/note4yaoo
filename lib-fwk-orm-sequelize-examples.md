@@ -14,6 +14,7 @@ modified: 2023-02-05T18:50:32.900Z
   - 模版参考: react-admin
 
 - 后端架构总结
+  - 通常三层架构就能满足开发需求且不繁琐，需要支持nosql时再添加dao或定制开发
   - controller: 请求接收，参数校验，尽量没有业务逻辑，尽量只用一个service，
     - 若需要多个service则考虑创建新service包含所需业务流程
   - service: 梳理业务流程，使用所需的(多个)dao/repo进行计算与持久化返回结果
@@ -21,6 +22,7 @@ modified: 2023-02-05T18:50:32.900Z
   - dao: 只包含db的crud，尽量没有业务逻辑
     - dao的实现依赖orm，可能需要model，也可能不需要model
   - model: 对应db表schema
+  - ioc的缺点: 调试时跳转到方法调用的定义不方便
 
 - resources
 # popular
@@ -193,9 +195,9 @@ modified: 2023-02-05T18:50:32.900Z
 
 - https://github.com/bitovi/hatchify /202403/ts
   - A medium-code React, MUI, and Sequelize, koa
-  - a web application framework designed to accelerate the development of CRUD applications
-  - provide you with a fully functional system straight from a datatype schema. 
-  - Our frontend will use React and MUI, and our backend will be using Koa
+  - Hatchify is a web application framework designed to accelerate the development of CRUD applications. 
+  - Hatchify can provide you with a fully functional system straight from a datatype schema.
+  - Hatchify’s schemas define your data structure fields and relationships. We share these schemas across our backend and frontend to create database tables, generate REST endpoints, and create React components and data fetchers.
 
 - https://github.com/khaled-badenjki/cilo /202307/js
   - simplifies the build of multi tenant applications by providing a wrapper around sequelize that handles the multi-tenancy for you.
@@ -358,18 +360,78 @@ modified: 2023-02-05T18:50:32.900Z
   - Creating a database from existing tables, queries to the database
   - Express + PostgreSQL + Sequelize + Bootstrap
 
+- https://github.com/ljlm0402/typescript-express-starter /202311/ts/typedi
+  - Express RESTful API Boilerplate Using TypeScript, 可选的多模版项目
+  - ✨ 支持Mongoose/Sequelize/TypeORM/Prisma/Knex/MikroORM/GraphQL
+  - 采用controller/service/model三层架构，class风格，依赖注入，少量使用装饰器
+
+- https://github.com/Thre4dripper/NodeTs-Express-Service-Based-Template /MIT/202401/ts
+  - configurable Node.js, Express, and TypeScript server template with a service-based architecture 
+  - 采用controller/service/repository/model四层架构，class风格，可按业务modules划分架构
+  - Sequelize/Mongoose
+  - 依赖axios、express、jsonwebtoken、swagger-ui-express
+  - Database Compatibility: Interact with MySQL, PostgreSQL, MariaDB, Sqlite, MSSql, MongoDB
+
+- https://github.com/Thre4dripper/node-server-init /202401/ts/偏向cli
+  - initialize Node.js server projects with customizable configurations
+  - 采用controller/service/repository/model四层架构，可按业务modules划分架构
+  - Sequelize & Mongoose: Integrations with Sequelize for SQL database operations and Mongoose for MongoDB.
+  - Built-in validations for incoming request payloads.
+
+- https://github.com/owliehq/neatsio /MIT/202210/ts
+  - Generate REST API from your Sequelize/Mongoose models
+  - NOT ALL METHODS ARE YET IMPLEMENTED WITH MONGOOSE
+  - To use Neatsio, you have to create Models using Sequelize or Mongoose. Planned for the next project iterations, Neatsio will be interoperable with TypeORM, Bookshelf or Objection.js
+  - Focus on models and business logic, the lib generate automatically endpoints based on mongoose/sequelize schemas. 
+  - This lib is opinionated, some features or development orientation are due to personal choices
+  - Support of query paramaters to handle filtering, pagination, sorting, and sub-populating
+  - https://github.com/owliehq/buboJS /202303/ts/inactive
+    - a library to build quickly and efficiently a Rest API
+    - Integrated role management tools, For the rights, the library `role-acl` is used
+    - Middlewares Sequelize: @SequelizeAttributes
+  - https://github.com/owliehq/models /MIT/202002/ts
+    - Organize & share your business logic ressources onto ODM style objects
+
+- https://github.com/codespede/pwoli /BSD/202303/ts
+  - https://codespede.github.io/pwoli/rest-api
+  - https://codespede.github.io/pwoli/input-forms
+  - a NodeJS/TypeScript framework written in TypeScript which can work independently on a raw NodeJS/TypeScript environment OR, in co-ordination with any other frameworks or libraries like Express.js.
+  - 依赖ejs、fs-extra、typedoc
+  - 类似ssr全栈框架，不是orm
+  - 示例是直接调用model的方法
+  - Pwoli can connect to any kind of ORMs by implementing their corresponding ORM Adapters and works with Sequelize and Mongoose 
+  - For any other DB/ORM support, an ORM Adapter implementing `IORMAdapter` has to be implemented. 
+  - Fully flexible and extensible - thanks to the OOP based architecture
+  - Frontend widgets like ActiveForm, GridView, ListView for SSR(Server Side HTML Rendering) applications.
+  - Works on both raw NodeJS and TypeScript applications.
+  - 💡 Pwoli is inspired from PHP's Yii framework.
+  - https://github.com/codespede/pwoli-express-typescript-sample /202211/ts/mongo
+  - https://github.com/codespede/pwoli-nodejs-typescript-sample /202211/ts/sequelize
+
+- https://github.com/mikemajesty/node-generic-repositories /202402/ts
+  - TypeORM | Sequelize Typescript | Mongoose
+  - 简单示例，代码混乱
+
+- https://github.com/SamuelMarks/restify-orm-scaffold /202402/ts
+  - Simple baseline scaffold to get you started using TypeORM and/or Sequelize and/or Waterline on restify with TypeScript.
+  - 无架构，仅实现了user/auth api
+
 - https://github.com/felipecal/Api-Sequelize /MIT/202402/ts/提交多
   - This is a simple CRUD api in TypeScript, sequelize, aws rds or docker database.
   - 采用controller/service/model三层架构，class风格
-  - 依赖express、sequelize、swagger-ui-express、bcrypt、jsonwebtoken
+  - 依赖express、jsonwebtoken、sequelize、swagger-ui-express、bcrypt
 
 - https://github.com/kazi-naimul/typescript-express-mysql-boilerplate /202312/ts
   - A boilerplate for any enterprise rest api or service with Node.js -Typescript, Express and Sequelize ORM for mysql, postgresql or others.
   - 采用controller/service/dao/model四层架构，class风格，无装饰器
   - service/dao/model都采用interface+impl的实现
   - 依赖express、jsonwebtoken、passport-jwt、redis
+  - Authentication and authorization: using passport
+  - Job scheduler: with Node-cron
 
 - https://github.com/weareopensource/Typescript /202110/ts/inactive
+  - https://node.weareopensource.me/api/tasks
+  - https://vue.weareopensource.me/
   - TypeScript - Boilerplate Back: Express, Jwt, Mongo, Sequelize (Draft)
   - 采用controller/service/repository/model四层架构，函数式风格，按业务modules划分架构
   - 支持mongoose/sequelize, model使用joi校验
@@ -381,7 +443,7 @@ modified: 2023-02-05T18:50:32.900Z
 
 - https://github.com/mcaligares/express-typescript /202310/ts
   - Express project with Typescript support ready to start coding
-  - 采用controller/service/repository/model四层架构，函数式风格
+  - ✨ 采用controller/service/repository/model四层架构，函数式风格
   - model基于接口实现
   - 依赖express、jsonwebtoken、sequelize-typescript、crypto-js
 
@@ -389,14 +451,16 @@ modified: 2023-02-05T18:50:32.900Z
   - 采用controller/service/model三层架构, 函数式风格
   - 依赖express、jsonwebtoken、joi、swagger-ui-express
 
-- https://github.com/Haniismail/sequelize-starter /MIT/202306/ts
+- https://github.com/Haniismail/sequelize-starter /MIT/202306/ts/较乱
   - A starter for a node.js and sequelize app that includes an MVC architecture 
-  - 采用controller/service/model三层架构, 函数式风格
+  - 采用controller/repository/model三层架构, 函数式风格
 
 - https://github.com/osamaAbdullah/express_template /202402/ts/结构合理
   - 依赖sequelize7、express-session、passport-local、vinejs(validate)
   - 采用controller/model两层架构，函数式风格
   - 未实现jwt
+- https://github.com/Oivlisfriend/sequelize_typescript_nodejs_mysql /202310/ts
+  - 采用controller/model两层架构，函数式风格
 
 - https://github.com/mksglu/sequelize-ts /201905/ts
   - Starter Kit: Node JS, PostgreSQL, Express JS, TypeScript, Sequelize, TDD, Docker
@@ -428,63 +492,13 @@ modified: 2023-02-05T18:50:32.900Z
   - a base template for Node.js Rest API applications
   - 采用controller/service/model三层架构, class风格, 按业务modules划分架构
   - 依赖express、jwt-simple、passport-jwt、sequelize
+- https://github.com/sudhakar-jonnakuti/express-sequelize /202312/ts
+  - express + typescript + sequelize
+  - 采用controller/service/model三层架构, class风格, 按业务modules划分架构
 
 - https://github.com/sonbyungjun/cucu /202008/ts/typedi
   - TypeScript Express Starter With CRUD Generator
   - 采用controller/service/model三层架构, class风格, 装饰器, 按业务modules划分架构
-
-- https://github.com/ljlm0402/typescript-express-starter /202301/ts/typedi
-  - Express RESTful API Boilerplate Using TypeScript，可选参数的模版项目
-  - 支持mongoose、多种orm、graphql
-  - 采用controller/service/model三层架构，class风格，依赖注入，少量使用装饰器
-
-- https://github.com/Thre4dripper/NodeTs-Express-Service-Based-Template /MIT/202401/ts
-  - configurable Node.js, Express, and TypeScript server template with a service-based architecture 
-  - 采用controller/service/repository/model四层架构，class风格
-  - Sequelize/Mongoose
-  - 依赖axios、express、jsonwebtoken、swagger-ui-express
-  - Database Compatibility: Interact with MySQL, PostgreSQL, MariaDB, Sqlite, MSSql, MongoDB
-
-- https://github.com/owliehq/neatsio /MIT/202210/ts
-  - Generate REST API from your Sequelize/Mongoose models
-  - NOT ALL METHODS ARE YET IMPLEMENTED WITH MONGOOSE
-  - To use Neatsio, you have to create Models using Sequelize or Mongoose. Planned for the next project iterations, Neatsio will be interoperable with TypeORM, Bookshelf or Objection.js
-  - Focus on models and business logic, the lib generate automatically endpoints based on mongoose/sequelize schemas. 
-  - This lib is opinionated, some features or development orientation are due to personal choices
-  - Support of query paramaters to handle filtering, pagination, sorting, and sub-populating
-  - https://github.com/owliehq/buboJS /202303/ts/inactive
-    - a library to build quickly and efficiently a Rest API
-    - Integrated role management tools, For the rights, the library `role-acl` is used
-    - Middlewares Sequelize: @SequelizeAttributes
-  - https://github.com/owliehq/models /MIT/202002/ts
-    - Organize & share your business logic ressources onto ODM style objects
-
-- https://github.com/codespede/pwoli /BSD/202303/ts
-  - https://codespede.github.io/pwoli/rest-api
-  - https://codespede.github.io/pwoli/input-forms
-  - a NodeJS/TypeScript framework written in TypeScript which can work independently on a raw NodeJS/TypeScript environment OR, in co-ordination with any other frameworks or libraries like Express.js.
-  - 依赖ejs、fs-extra、typedoc
-  - 类似ssr全栈框架，不是orm
-  - Pwoli can connect to any kind of ORMs by implementing their corresponding ORM Adapters and works with Sequelize and Mongoose 
-  - For any other DB/ORM support, an ORM Adapter implementing `IORMAdapter` has to be implemented. 
-  - Fully flexible and extensible - thanks to the OOP based architecture
-  - Frontend widgets like ActiveForm, GridView, ListView for SSR(Server Side HTML Rendering) applications.
-  - Works on both raw NodeJS and TypeScript applications.
-  - 💡 Pwoli is inspired from PHP's Yii framework.
-  - https://github.com/codespede/pwoli-express-typescript-sample /202211/ts/mongo
-  - https://github.com/codespede/pwoli-nodejs-typescript-sample /202211/ts/sequelize
-
-- https://github.com/mikemajesty/node-generic-repositories /202402/ts
-  - TypeORM | Sequelize Typescript | Mongoose
-
-- https://github.com/SamuelMarks/restify-orm-scaffold /202402/ts
-  - Simple baseline scaffold to get you started using TypeORM and/or Sequelize and/or Waterline on restify with TypeScript.
-  - 无架构，仅实现了user/auth api
-
-- https://github.com/Thre4dripper/node-server-init /202401/ts/偏向cli
-  - initializing Node.js server projects with customizable configurations.
-  - npx node-server-init my-server
-  - Sequelize & Mongoose: Integrations with Sequelize for SQL database operations and Mongoose for MongoDB.
 
 - https://github.com/yosua-kristianto/typescript-expressjs /202212/ts
   - Turns out I made a boilerplate code through this repository.
@@ -557,6 +571,9 @@ modified: 2023-02-05T18:50:32.900Z
   - 函数式风格
   - 业务代码比较乱
 # auth
+- resources
+  - [@auth/sequelize-adapter | Auth.js](https://authjs.dev/reference/adapter/sequelize)
+
 - https://github.com/diegomottadev/auth-base-app /202402/ts
   - https://documenter.getpostman.com/view/21594008/2s93z873e9
   - This repository contain a REST API project for creating users, user roles, and user authentication using Node.js, Express.js, and Sequelize with TypeScript.
@@ -567,7 +584,7 @@ modified: 2023-02-05T18:50:32.900Z
 - https://github.com/rahulthackkar/nodejs-mysql-jwt-sequelize /202207/js/ejs
   - Node JS + Express + User authentication using JWT + Sequelize + Jest + Docker
 
-- https://github.com/PROTEK-ID/mern-auth-template /202309/ts
+- https://github.com/PROTEK-ID/mern-auth-template /202309/ts/fe+be
   - MERN Stack Authentication using Sequelize (MySQL as dialect) for backend template.
 
 - https://github.com/bezkoder/node-js-express-login-example /202402/js/流程图很清晰

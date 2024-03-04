@@ -10,7 +10,7 @@ modified: 2023-08-25T21:17:31.432Z
 # guide
 
 - resources
-# author-blogs
+# blogs-author
 - [Have Postgres. Want Dolt. | DoltHub Blog](https://www.dolthub.com/blog/2022-03-28-have-postgres-want-dolt/)
 
 - [Benchmarking Dolt with TPC-C | DoltHub Blog](https://www.dolthub.com/blog/2022-09-16-tpcc-update/)

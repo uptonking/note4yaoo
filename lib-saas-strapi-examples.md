@@ -64,6 +64,11 @@ modified: 2023-12-15T19:30:23.094Z
   - Curator offers a Strapi plugin that adds those features, and an alternative admin app that is easier to customize.
   - customizable admin built with React, Ant Design and Tailwind.
   - ❌ 不支持: Role management, Content-type builder
+
+- https://github.com/Stun3R/strapi-sdk-js /MIT/202308/ts/inactive
+  - https://strapi-sdk-js.netlify.app/
+  - Javascript SDK for your Strapi API
+  - Simplified request responses
 # integrations
 - https://github.com/ONLYOFFICE/onlyoffice-strapi /MIT/202211/js/inactive
   - The app which enables the users to edit office documents from Strapi using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to Strapi
@@ -1162,10 +1167,6 @@ modified: 2023-12-15T19:30:23.094Z
 
 - https://github.com/weisrc/strapi-reader /202308/ts
   - Type-safe Reader for Strapi API.
-
-- https://github.com/Stun3R/strapi-sdk-js /202308/ts
-  - Javascript SDK for your Strapi API
-  - Simplified request responses
 
 - https://github.com/render-examples/strapi-sqlite /202209/js
   - Deploy Strapi with SQLite on Render

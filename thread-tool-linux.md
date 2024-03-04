@@ -29,7 +29,9 @@ modified: 2024-01-06T13:48:42.969Z
 
 - ## 
 
-- ## 
+- ## if Linux was a stock, you better buy it sooner than later ... steady growth and it's wonderful these days from daily tasks to gaming and developing (that one has always been the case though).
+- https://twitter.com/WebReflection/status/1764653246608539946
+  - Linux on the desktop breaks 4% for the first time on Statcounter
 
 - ## 终端退出时，并非所有子进程都会退出。只有那些没有忽略或特别处理SIGHUP信号的子进程会随着终端的关闭而退出。
 - https://twitter.com/unixzii/status/1754172044563083481

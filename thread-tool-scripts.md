@@ -22,6 +22,14 @@ modified: 2023-12-11T10:12:09.159Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 我用这个 simple-git-hooks 而不是 husky，纯粹是因为我不想根目录多一个 .husky 文件夹。
+- https://twitter.com/YuTengjing/status/1764511774248956061
+  - 本身多数情况用这个就是为了加一个 pre-commit 命令，需求很简单，husky 要求必须用 .husky 文件夹感觉有点强行提高自己的存在感
+
 - ## Polyfill CDN 服务 http://polyfill.io 被中国菠菜 CDN 收购
 - https://twitter.com/isukkaw/status/1763650534198972721
   - 先开几十个 PR、把 http://polyfill.io 赶出 GitHub、统统换成 http://cdnjs.cloudflare.com/polyfill

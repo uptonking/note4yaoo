@@ -165,9 +165,9 @@ modified: 2023-01-22T19:52:59.120Z
 - https://github.com/victor-vieira21/knex-mongoose-sequelize-lucid
   - 4个orm示例，弱架构，仅参考
 
-- https://github.com/ljlm0402/typescript-express-starter /202301/ts/typedi
-  - Express RESTful API Boilerplate Using TypeScript，可选参数的模版项目
-  - 支持mongoose、多种orm、graphql
+- https://github.com/ljlm0402/typescript-express-starter /202311/ts/typedi
+  - Express RESTful API Boilerplate Using TypeScript, 可选的多模版项目
+  - ✨ 支持Mongoose/Sequelize/TypeORM/Prisma/Knex/MikroORM/GraphQL
   - 采用controller/service/model三层架构，class风格，依赖注入，少量使用装饰器
   - 使用objection
 

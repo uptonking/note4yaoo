@@ -101,7 +101,9 @@ modified: 2023-11-10T08:05:19.107Z
 
 - ## 
 
-- ## 
+- ## 真的绝了，没想到分支预测对性能的影响有这么明显。不论怎么跑，三元表达式一定相对更慢
+- https://twitter.com/isukkaw/status/1764654438785200536
+  - map['p1'] (更快; p1对应0/1)   vs   false ? 0 : 1
 
 - ## if you store values in a Map (as key) and to avoid leaks use WeakRef to wrap their counterpart, 
 - https://twitter.com/WebReflection/status/1752296107680416191
