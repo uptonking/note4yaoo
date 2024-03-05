@@ -159,7 +159,7 @@ modified: 2023-04-19T07:30:34.872Z
 
 - ## 
 
-- ## 🧬 @apple has replaced @ApacheSpark 's guts with @ApacheArrow DataFusion. And they're donating it.
+- ## 👣 @apple has replaced @ApacheSpark 's guts with @ApacheArrow DataFusion. And they're donating it.
 - https://twitter.com/criccomini/status/1755012003503251890
   - This is an alternative to @MetaOpenSource 's Velox Spark implementation using cpp
 
@@ -174,6 +174,24 @@ modified: 2023-04-19T07:30:34.872Z
   - Gluten + Velox
   - DataFusion Comet
 - Are you sure? This seems an alternative to Velox? Gluten had some stuff via substrait plans and stuff to generalize things so you could use Spark powered by Clickhouse, Velox, or Datsfusion, or RAPIDS/GPU. I don't think that's a goal of this project, right?
+# discuss-hudi-iceberg-delta
+- ## 
+
+- ## 
+
+- ## Apache Hudi’s WRITE operation - Under the Hood. 
+- https://twitter.com/apachehudi/status/1764814812939202841
+01. Deduplication:  Any duplicate record keys in the incoming batch are identified & addressed appropriately
+02. Index Lookup: Next, an index lookup is performed to identify the file group an input record belongs to. For a new INSERT, this step returns no results
+03. File Sizing: Then the file sizing algorithm will add sufficient records into a small file until it nearly reaches the configured maximum limit (via bin-packing)
+04. Partitioning: Here the allocation of specific updates & inserts to existing or new file groups is determined
+05. Write I/O: Actual writes happens here. Either the base file is created or an existing log file is appended to
+06. Update Index: The Index is then updated to reflect the inclusion of new file groups, among other updates
+07. Commit: Finally the changes are committed atomically
+08. Clean: Following the commit, cleaning is initiated as required
+09. Compaction: For MoR tables, compaction may run inline or be scheduled to execute asynchronously
+10. Archival: Finally, an archival process is run, transferring old items from the timeline to an archive folder
+
 # discuss
 - ## 
 
@@ -199,11 +217,11 @@ modified: 2023-04-19T07:30:34.872Z
 
 - ## In ascending order of importance for Data Engineering:
 - https://twitter.com/Ubunta/status/1718275186074730997
-  1. Data Format
-  2. Mutability (Mutable vs. Immutable Data)
-  3. Logging Mechanisms
-  4. Infrastructure Management
-  5. Rapid Data Access with Governance
+  01. Data Format
+  02. Mutability (Mutable vs. Immutable Data)
+  03. Logging Mechanisms
+  04. Infrastructure Management
+  05. Rapid Data Access with Governance
   - Each has become an industry in itself now
 
 - ## nice talk about Umbra: A Disk-Based System with In-Memory Performance, 

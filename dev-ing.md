@@ -317,9 +317,27 @@ betterdiscordctl -i flatpak install
     - 2个编辑器同一页面协同的示例未完成
     - cursor光标位置经常对不上
   - [x] streaming infinite-list/tree
-# dev-02
+# dev-03-realworld-react-nodejs
 
-## 022
+## 030
+
+## 0305
+
+- [Extend Express Request object using Typescript - Stack Overflow](https://stackoverflow.com/questions/37377731/extend-express-request-object-using-typescript)
+  - Solving this with .d.ts declarations is hack. Accept the fact that express' middleware system is not for typescript. I suggest not to use them.
+
+```typescript
+// 在 src/types.ts 添加自定义覆盖类型
+declare namespace Express {
+   export interface Request {
+      tenant?: string
+   }
+}
+
+```
+
+- [Express middleware with TS: void' is not assignable to parameter of type 'PathParams' - Stack Overflow](https://stackoverflow.com/questions/73505586/express-middleware-with-ts-void-is-not-assignable-to-parameter-of-type-pathpa)
+# dev-02-hexo-eg-&-strapi-eg
 
 ## 0228
 

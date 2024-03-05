@@ -54,7 +54,8 @@ modified: 2021-06-02T15:26:19.890Z
 
 - ref
   - commonmark rfcs
-# popular
+# table-md
+- 参考textbundle格式的csv来与表格交互
 
 ## [Tables in pure Markdown](https://talk.commonmark.org/t/tables-in-pure-markdown/81)
 

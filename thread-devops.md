@@ -37,6 +37,14 @@ modified: 2021-03-31T06:50:19.936Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Caddy is the best thing to happen to the world of web servers since nginx. So I invite you to try it out with this interactive guide I prepared.
+- https://twitter.com/ohmypy/status/1764978049274065112
+  - All examples work from the browser, no need to download or install anything.
+
 - ## 我使用 Caddy 做本地开发，经常载入页面需要好几秒。让 ChatGPT 帮我 debug 了一下，发现是 namelookup 花时间最多，在 hosts 文件中加了后面两行解决了
 - https://twitter.com/beihuo/status/1741600998035165639
 - Caddy很方便，跑起来配置少写好多

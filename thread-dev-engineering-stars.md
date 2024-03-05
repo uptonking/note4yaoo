@@ -7,8 +7,10 @@ modified: 2021-08-10T03:51:01.891Z
 
 # thread-dev-engineering-stars
 
-# discuss-stars
+# guide
 
+- 处理超多配置项，可参考 tsconfig/webpack/vscode
+# discuss-stars
 - ## 
 
 - ## 📏 which URL format we going with?
@@ -24,7 +26,7 @@ modified: 2021-08-10T03:51:01.891Z
 
 - 2.  Clean URLs and clean configurable parameters.
 
-- ## your codebase is a mess
+- ## 🤼🏻 your codebase is a mess
 - https://twitter.com/catalinmpit/status/1763178455750029710
 - talk is cheap, send me patches
 

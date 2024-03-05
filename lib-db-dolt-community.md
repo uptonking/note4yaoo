@@ -22,6 +22,10 @@ modified: 2023-08-25T21:17:11.979Z
 - You can even sync sub-ranges of the full tree, making it efficient to take small slices of big data.
 - They do have a weakness: The auto-rebalancing can potentially cascade from the insertion point all the way to the right side of the tree. This can be mitigated by increasing the target variance of the length of children in a node
 
+- https://twitter.com/DoltHub/status/1764725891412705301
+  - A Prolly Tree is a data structure closely related to a B-tree. 
+  - Prolly Trees are generally useful but have proven particularly effective as the basis of the storage engine for version controlled databases. 
+
 - ## 🧮🌲 I never looked too closely at the changes Dolt made to the prolly tree chunking algorithm. 
 - https://twitter.com/aboodman/status/1740086730504667608
   - It's very beautiful. Not sure who exactly on the team is responsible for this change but 10/10, no notes, ::chefs kiss::

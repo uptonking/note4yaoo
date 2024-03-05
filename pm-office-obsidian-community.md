@@ -23,6 +23,61 @@ modified: 2024-01-23T02:52:23.932Z
 
 - ## 
 
+- ## The file over app philosophy does not make a distinction between data and file. Both are one and the same. 
+- https://twitter.com/kepano/status/1764775797444026557
+  - The source is the output, and vice versa. It's a two-way door.
+  - Exports are useful if you want to exit the tool. Exports are not useful if you want to directly manipulate your data. Exporting requires your explicit intention, whereas file over app requires no intention at all. 
+
+- Collaboration can be solved with git or CRDTs.
+
+- Have you seen anyone implement the file over app philosophy well on web or mobile apps? I’m curious if it works as well as Obsidian does.
+  - On mobile you can store files locally just like you can on desktop, but interoperability is somewhat limited by sandboxing, especially on iOS. With web apps there are various ways to store data locally, but I am not sure if that's what you had in mind. 
+  - Cloud has its benefits but is inherently opposed to files.
+
+- An export is sufficient for most people. Of course there are edge cases.
+
+- ## 📏 File over app is a philosophy: 
+- https://twitter.com/kepano/status/1675626836821409792
+  - if you want to create digital artifacts that last, they must be files you can control, in formats that are easy to retrieve and read. 
+  - Use tools that give you this freedom.
+  - In the fullness of time, the files you create are more important than the tools you use to create them. Apps are ephemeral, but your files have a chance to last.
+
+- Why not more generally "Data over app"? (or information, knowledge, content; a file is just a container)
+  - They are related but different. Both are good. Files are a more specific, retrievable instantiation of the data.
+  - > Obsidian mainly uses CommonMark, with some functionality from GitHub Flavored Markdown and LaTeX.
+- data can live in some opaque container 
+  - or it can live in an internal db 
+  - or it can live in an easily understood and self-documenting json or markdown file 
+  - you can choose
+
+- This is exactly the approach I'm taking with SEN: extending the golden (quality and age wise) UNIX mantra of "everything is a file", you can express any entity as a file. 
+
+- I prefer to prioritize content over files and files over tools. While files are undoubtedly important, they merely serve as containers for our content. The content itself is what truly matters and should be considered eternal, whereas files may come and go over time.
+  - there's a lot of content stored in the container that is my head. if that content is not transferred to an externalized container, no one else can interact with it, and it may become degraded or forgotten
+  - ideas can only survive and reproduce through externalization
+
+- I don’t need files when I can export with Shortcuts – I can get structured data in whatever format I want.
+  - Export-based workflows make sense when non-destructive formats are essential to the process (e.g. video editing, music production, etc) since the editable content is expected to be ephemeral, and is in service of a rendered output. 
+  - For workflows where the editable content is the same as the final output then writing directly to a file is preferable to me
+  - 🧩 "non-destructive editing" it means that editing does not modify the source data (pixels, audio, etc), but rather adds metadata about the edits, such that those edits can be recreated on top of the same or other source data
+
+- I use @obsdmd but once you add plugins (dataviews, db_folders, etc.) your files lose value. Not to mention the hours I've wasted trying to replicate functions like @NotionHQ tables inside Obsidian - I can just do it NOW w/ an app. Sometimes time value trumps philosophy.
+
+- real-time collaboration is compatible with file-based storage... you need good conflict resolution but everything has its tradeoffs
+
+- This is a great philosophy, but expecting files to be read by older systems isn’t always feasible. For example sparse matrix storage, direct object serialization like pickles, or neural network compression. I love obsidian but not everything can be a txt file
+
+- Apps are files too.
+  - Applications are binary’s, tied to a specific processor architecture and OS. They are designed to be read by a specific family of machines, not humans.
+
+- I have Word Docs from when I was young that I don't know if I can open any more. Word doesn't open them. Today:
+  - Notes: md in Obsidian
+  - Slides: md in Deckset
+  - Screenplays: Fountain
+  - Equations: Latex
+
+- Even with text files as output, there's still complexity of line ending differences when crossing from Windows to Linux or vice-versa. Small price to pay. Aside from writing, your same point applies for software applications reading/writing data. Often, text file storage of data is a preferred long-term solution over databases.
+
 - ## 🆚️ [Why Logseq is not popular like Obsidian? : logseq_202308](https://www.reddit.com/r/logseq/comments/15yvx2s/why_logseq_is_not_popular_like_obsidian/)
 - In theory I wanted to love Logseq, but whenever I tried to build a serious workflow with it, the software felt too buggy and unpolished, especially when compared to Obsidian (which arguably has a smaller team and all), so I had to move on.
   - he portability factor is also an issue: the Markdown produced by Logseq (so obviously I'm not talking about queries) is or at least used to be horrid. Plus the constant orphan files with incomplete titles whenever I created new links, etc., etc.

@@ -39,6 +39,17 @@ modified: 2022-03-18T20:56:35.254Z
 
 - ## 
 
+- ## 
+
+- ## Terminal flamegraph tools feel under-appreciated.
+- https://twitter.com/eatonphil/status/1764992041602187296
+  - My default flow used to be: record a profile, scp it off my server, `<input type="file" />` upload it into some website, click to generate.
+  - TUI flamegraph tools are much simpler!
+
+- I should really figure out how to run pprof
+
+- My typical workflow is to run bcc profile then run the flame graph perl script and then scp the SVG back to my own machine. Terminal would be a lot more convenient.
+
 - ## [UUID Benchmark War | Hacker News _202402](https://news.ycombinator.com/item?id=39254871)
 - 
 - 
@@ -52,9 +63,9 @@ modified: 2022-03-18T20:56:35.254Z
 
 - I've seen stuff like this, but I'm always curious, how is it actionable? With log statements, you'd be able to look back through the history, and see which things took the most out of your time budget
 - I'm using it like this:
-  01. I play with my components.
-  02. I take a note of which interactions cause the lag radar to show me some red.
-  03. Lastly I turn on the profiler and see exactly what's going on.
+  01.  I play with my components.
+  02.  I take a note of which interactions cause the lag radar to show me some red.
+  03.  Lastly I turn on the profiler and see exactly what's going on.
   - The radar is good for knowing when to profile, it's not a replacement for it.
 
 - ## If importing an SVG is the best thing for you ergonomically, choose a solution that returns a URL for use with `<img>` , or extracts them into `<defs>` for use with `<use href="#">` .  

@@ -292,17 +292,17 @@ modified: 2023-10-26T19:04:00.318Z
 
 - ## 6 Load Balancing ALGORITHMS you Must Know
 - https://twitter.com/AmigosCode/status/1725507946950344949
-1. Round Robin 🔄
+1. Round Robin
  - Allocates incoming requests to each server in a circular sequence. It ensures an equal distribution of the workload among servers.
-2. Sticky Round Robin 🍭🔄
+2. Sticky Round Robin
  - Similar to Round Robin, but with the added feature of maintaining session persistence. Once a client is assigned to a server, subsequent requests from that client continue to be directed to the same server.
-3. Least Time⏱️
+3. Least Time
  - Assigns requests to the server with the least expected processing time. This algorithm considers factors like server response time and current load.
-4. Least Connections 🔗🔀
+4. Least Connections
  - Directs traffic to the server with the fewest active connections. This helps distribute the load more evenly across servers, preventing overload on any single server.
-5. IP/URL Hash 📌🔗
+5. IP/URL Hash
  - Uses a hash function on the client's IP address or URL to determine which server should handle the request. This ensures that requests from the same client are consistently directed to the same server.
-6. Weighted Round Robin ⚖️🔄
+6. Weighted Round Robin
  - Similar to Round Robin, but assigns different weights to servers based on their capacity or processing power. Servers with higher weights receive more requests, allowing for proportional load distribution.
 
 - Each of these load balancing algorithms plays a crucial role in optimizing the performance and reliability of server clusters by efficiently distributing incoming requests.

@@ -9,6 +9,8 @@ modified: 2021-08-05T04:31:02.298Z
 
 # guide
 
+- ts-perf
+  - [Performance · microsoft/TypeScript Wiki](https://github.com/microsoft/TypeScript/wiki/Performance)
 # discuss-stars
 - ## 
 
@@ -30,7 +32,7 @@ modified: 2021-08-05T04:31:02.298Z
   - I actually agree with Lea here. When you're designing an API, TypeScript narrows your choices in unexpected ways. It can't describe all of the strange, dynamic, or bizarre things you can do in JavaScript.
   - It leaves you with a relatively narrow subset of tools to power smart inference in your API designs.
 
-- ## 🆚️ two choices for how you write the type.
+- ## 🆚️💡 two choices for how you write the type.
 - https://twitter.com/mattpocockuk/status/1759540590025351234
   - Either DECLARE the type, then use it to type the value.
   - Or DERIVE the type from the value.
@@ -64,7 +66,9 @@ modified: 2021-08-05T04:31:02.298Z
 
 - ## Since working on Svelte, I always get asked if I really prefer jsdoc over TypeScript. No, I don’t.
 - https://twitter.com/trueadm/status/1753562312651211207
-  - Furthermore, if we had type definitions in the language (there’s a proposal for it) then Svelte could go back to using types instead of jsdoc. We just don’t want or need a build process for Svelte (the library). It does suck though and I’m often conflicted on the topic.
+  - Furthermore, if we had type definitions in the language (there’s a proposal for it) then Svelte could go back to using types instead of jsdoc. 
+  - We just don’t want or need a build process for Svelte (the library). 
+  - It does suck though and I’m often conflicted on the topic.
 
 - You still need a build process to generate .d.ts files from jsdoc before publishing though don't you?
   - That’s a one time thing that’s fine via CI
@@ -86,6 +90,7 @@ modified: 2021-08-05T04:31:02.298Z
 - ## React TypeScript Cheatsheet
 - https://github.com/typescript-cheatsheets/react
   - https://react-typescript-cheatsheet.netlify.app/docs/basic/setup
+
 - ## Here's everything I've learned from leading TS dev teams and working on XState's core team.
 - https://twitter.com/mpocock1/status/1509964736275927042
 - more-cheatsheet
@@ -111,15 +116,29 @@ modified: 2021-08-05T04:31:02.298Z
 - Pretty sure these are included if you just put these in your eslintrc ‘extends’ rule
   - plugin:@typescript-eslint/recommended
   - plugin:@typescript-eslint/recommended-requiring-type-checking', 
+# discuss-ts-perf
+- ## 
+
+- ## 
+
+- ## I've heard anecdotally that moving from intersections to 'interface extends' speeds up TypeScript performance significantly in big codebases.
+- https://twitter.com/mattpocockuk/status/1764968902105137388
+- This is documented in TypeScript wiki itself
+- we experienced this with `@panda__css` style props, migrating to interface everywhere when possible solved it and now it's instant
+
 # discuss
 - ## 
 
-- ## 🌰 Here's a quick guide on how to type your globals and env variables in Vite, Node and the DOM.
-- https://twitter.com/mattpocockuk/status/1758454430666506589
-  - window. MY_ENV = 'whatever'; 
+- ## 
 
-- `declare global` is not needed if you include file in tsconfig.json#files
-  - It's not needed if there are no import/exports in the file OR if you're using a .d.ts file.
+- ## 
+
+- ## 🌰💡 Here's a quick guide on how to type your globals and env variables in Vite, Node and the DOM.
+- https://twitter.com/mattpocockuk/status/1758454430666506589
+  - `window.MY_ENV = 'whatever'; `
+
+- `declare global` is not needed if you include file in `tsconfig.json#files`.
+  - It's not needed if there are no import/exports in the file OR if you're using a `.d.ts` file.
 
 - Is it a good practice to store these declarations in *.d.ts files?
   - Yes! Then you don't need the declare global.

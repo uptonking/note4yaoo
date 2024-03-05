@@ -101,6 +101,7 @@ modified: 2021-05-14T14:33:33.975Z
 
 - 目标
   - 在普通md预览器中显示较友好的表格
+  - 参考textbundle格式的csv来与表格交互
 
 - table-features
   - 预置theming切换，同时支持设置表格样式

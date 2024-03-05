@@ -19,6 +19,23 @@ modified: 2023-08-28T06:08:05.348Z
 - ## 
 
 - ## 
+# discuss-compiler-toolchain
+- ## 
+
+- ## Why do so many Gophers dislike cgo so much? 
+- https://twitter.com/penberg/status/1764702044672204806
+  - I see people have ported SQLite to Go by machine translating the C code but also wrapping a Wasm build of SQLite in Go. 
+  - Why is that better than using SQLite with cgo?
+
+- Biggest thing I've seen: CGO makes compilation really, really slow. 
+  - Compiling Go apps that are 100% go is really fast, but the moment you add 1 C dependency, it slows things down a lot. 
+  - Also you lose cross-compilation support. You can emulate with zig, but it's not the best
+  - Also for perf, sharing data from Go -> C and C -> Go can be really slow. Probably faster that re-writing an entire C app in Go/running it in WASM, but still something to consider
+
+- It’s mostly the performance - CGO perf is so bad that it’s faster in some cases to call a wasm function via Wazero than directly via CGO 
+  - Plus there’s the additional compilation complexity
+
+- People dislike what they don't understand. I am a C junkie who likes to use Go. There is nothing wrong with cgo, I'm not writing the software for banks or jet engines. So I use cgo.
 # discuss-gc
 - ## 
 

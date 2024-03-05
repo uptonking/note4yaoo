@@ -250,6 +250,11 @@ flatpak run com.discordapp.Discord --proxy-server="socks5://127.0.0.1:1080"
   - https://unsplash.dogedoge.com/
 # video/tv
 
+## wiki
+
+- [NeoDB - 发现](https://neodb.social/discover/)
+  - NeoDB致力于提供一个涵盖书籍、影视、音乐、游戏、播客的自由开放互联的收藏评论空间
+
 ## player
 
 - cross-platform

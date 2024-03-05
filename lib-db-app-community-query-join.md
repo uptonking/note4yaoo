@@ -14,7 +14,14 @@ modified: 2023-10-31T11:17:48.697Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## If you find yourself writing a lot of JOINs and dealing with query speed, it is time to redesign your database.
+- https://twitter.com/RaulJuncoV/status/1765008031509631014
+- 3 ways you can solve these problems:
+  - 1. If two tables are often joined, you can combine them into a single table. But make sure the merged table maintains all necessary information.
+  - 2. If the data doesn't change often. You can duplicate the information in many tables to avoid joins.
+  - 3. Store the result of a complex query in materialized views (or indexed views). This form of logical Denormalization doesn't need to change the underlying table structures.
+  - We call this Denormalization.
+  - Denormalization is a strategic decision that should balance performance improvements and data integrity.
 
 - ## 👨🏻‍🏫 How do SQL Joins Work? The diagram below shows how 4 types of SQL joins work
 - https://twitter.com/alexxubyte/status/1734245951009910881

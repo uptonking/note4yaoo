@@ -434,6 +434,7 @@ modified: 2023-02-05T18:50:32.900Z
   - https://vue.weareopensource.me/
   - TypeScript - Boilerplate Back: Express, Jwt, Mongo, Sequelize (Draft)
   - 采用controller/service/repository/model四层架构，函数式风格，按业务modules划分架构
+  - routes/policies无需手动定义，server init时会自动读取目录并注册routes
   - 支持mongoose/sequelize, model使用joi校验
   - 依赖express、jsonwebtoken、passport-jwt
   - https://github.com/weareopensource/Node /202401/js
@@ -459,12 +460,13 @@ modified: 2023-02-05T18:50:32.900Z
   - 依赖sequelize7、express-session、passport-local、vinejs(validate)
   - 采用controller/model两层架构，函数式风格
   - 未实现jwt
-- https://github.com/Oivlisfriend/sequelize_typescript_nodejs_mysql /202310/ts
-  - 采用controller/model两层架构，函数式风格
 
 - https://github.com/mksglu/sequelize-ts /201905/ts
   - Starter Kit: Node JS, PostgreSQL, Express JS, TypeScript, Sequelize, TDD, Docker
   - 采用service/model两层架构，函数式风格
+
+- https://github.com/Oivlisfriend/sequelize_typescript_nodejs_mysql /202310/ts/过于简单
+  - 采用controller/model两层架构，函数式风格
 
 - https://github.com/nmanikiran/rest-api-node-typescript /202106/ts/inactive
   - simple REST API with node and express with typescript
