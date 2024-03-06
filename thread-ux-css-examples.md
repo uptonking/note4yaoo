@@ -14,7 +14,9 @@ modified: 2021-02-05T14:00:02.922Z
 
 - ## 
 
-- ## 
+- ## Understand CSS calc() function
+- https://twitter.com/davidm_ml/status/1765330193009315848
+  - 示意动画
 
 - ## Create this horizontal scrolling widget using HTML, CSS and JavaScript
 - https://twitter.com/davidm_ml/status/1750466235463004343

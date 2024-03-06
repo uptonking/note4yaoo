@@ -24,5 +24,6 @@ modified: 2023-02-05T18:49:11.444Z
   - cms: outline-wiki
   - app: nocobase
 # dev
-
+- model
+  - MyModel.init部分的schema定义才会被同步到db，model class自身可包含额外属性和方法
 # more

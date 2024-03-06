@@ -24,6 +24,10 @@ modified: 2023-02-05T18:50:32.900Z
   - model: 对应db表schema
   - ioc的缺点: 调试时跳转到方法调用的定义不方便
 
+- 动态添加route和建表
+  - 多数模版项目的api route是固定的，动态添加api需要定制开发
+  - 动态添加model需定制开发
+
 - resources
 # popular
 - https://github.com/masb0ymas/expresso-sequelize /MIT/202402/ts/提交多/功能丰富
@@ -340,8 +344,12 @@ modified: 2023-02-05T18:50:32.900Z
   - Use this repository to create an SSCCE for your issue
   - Short, Self Contained, Correct (Compilable), Example
 
-- https://github.com/TonyMckes/conduit-realworld-example-app /202303/js/be+fe
-  - created to demonstrate a fully fledged fullstack application built with React / Express.js / Sequelize / PostgreSQL including CRUD operations, authentication, routing, pagination, and more.
+- https://github.com/TonyMckes/conduit-realworld-example-app /MIT/202303/js/inactive/be+fe/依赖少
+  - https://conduit-realworld-example-app.fly.dev/
+  - created to demonstrate a fully fledged fullstack application 
+  - built with React, Express.js, Sequelize, PostgreSQL
+  - 前端依赖axios、react-paginate、markdown-to-jsx，不依赖第三方状态管理
+  - 后端依赖express、jsonwebtoken、jsonwebtoken
 
 - https://github.com/cirosantilli/node-express-sequelize-nextjs-realworld-example-app /202208/ts
   - Node.js + Express.js + Sequelize + SQLite/PostgreSQL + Next.js fullstack static/SSG/ISG Example Realworld App
@@ -425,6 +433,7 @@ modified: 2023-02-05T18:50:32.900Z
   - A boilerplate for any enterprise rest api or service with Node.js -Typescript, Express and Sequelize ORM for mysql, postgresql or others.
   - 采用controller/service/dao/model四层架构，class风格，无装饰器
   - service/dao/model都采用interface+impl的实现
+  - 实现了associate
   - 依赖express、jsonwebtoken、passport-jwt、redis
   - Authentication and authorization: using passport
   - Job scheduler: with Node-cron
@@ -455,6 +464,7 @@ modified: 2023-02-05T18:50:32.900Z
 - https://github.com/Haniismail/sequelize-starter /MIT/202306/ts/较乱
   - A starter for a node.js and sequelize app that includes an MVC architecture 
   - 采用controller/repository/model三层架构, 函数式风格
+  - 实现了associate
 
 - https://github.com/osamaAbdullah/express_template /202402/ts/结构合理
   - 依赖sequelize7、express-session、passport-local、vinejs(validate)
@@ -464,6 +474,7 @@ modified: 2023-02-05T18:50:32.900Z
 - https://github.com/mksglu/sequelize-ts /201905/ts
   - Starter Kit: Node JS, PostgreSQL, Express JS, TypeScript, Sequelize, TDD, Docker
   - 采用service/model两层架构，函数式风格
+  - 实现了associate
 
 - https://github.com/Oivlisfriend/sequelize_typescript_nodejs_mysql /202310/ts/过于简单
   - 采用controller/model两层架构，函数式风格

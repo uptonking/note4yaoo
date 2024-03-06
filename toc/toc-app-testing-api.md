@@ -9,6 +9,7 @@ modified: 2023-02-08T10:25:14.173Z
 
 # guide
 
+- [Testing Distributed Systems | Curated list of resources on testing distributed systems](https://asatarin.github.io/testing-distributed-systems/)
 # postman-like
 - https://github.com/hoppscotch/hoppscotch /MIT/202401/ts/vue
   - https://hoppscotch.io/

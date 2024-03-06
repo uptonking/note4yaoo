@@ -42,7 +42,15 @@ modified: 2023-11-16T15:00:11.503Z
     - https://api.realworld.io/api/articles /默认返回10条articles数据/无需登录
     - 还可在github上找最新repo，寻找可用的公共api-url
     - https://conduit-realworld-example-app.fly.dev/api/articles /默认返回3篇
+    - https://github.com/gothinkster/node-express-prisma-v1-official-app/blob/main/docs/swagger.json
   - [V2 Roadmap · gothinkster/realworld _202107](https://github.com/gothinkster/realworld/issues/693)
+
+- https://github.com/TonyMckes/conduit-realworld-example-app /MIT/202303/js/inactive/be+fe/依赖少
+  - https://conduit-realworld-example-app.fly.dev/
+  - created to demonstrate a fully fledged fullstack application 
+  - built with React, Express.js, Sequelize, PostgreSQL
+  - 前端依赖axios、react-paginate、markdown-to-jsx，不依赖第三方状态管理
+  - 后端依赖express、jsonwebtoken、jsonwebtoken
 
 - https://github.com/chagweyh/react-hooks-typescript-realworld /202011/ts/inactive
   - https://react-hooks-typescript-realworld.netlify.com/
@@ -155,11 +163,6 @@ modified: 2023-11-16T15:00:11.503Z
   - Node.js + Express.js + Sequelize + SQLite/PostgreSQL + Next.js fullstack static/SSG/ISG Example Realworld App
   - https://github.com/cirosantilli/node-express-sequelize-realworld-example-app /202106/js
 
-- https://github.com/TonyMckes/conduit-realworld-example-app /202303/js/be+fe
-  - https://conduit-realworld-example-app.fly.dev/
-  - created to demonstrate a fully fledged fullstack application 
-  - built with React, Express.js, Sequelize, PostgreSQL
-
 - https://github.com/skopekreep/typescript-node-express-realworld-example-app /202007/ts
   - Rewrite of JS-based node-express RealWorld backend app using Typescript
   - 依赖express-jwt、jsonwebtoken、mongoose、passport
@@ -190,7 +193,6 @@ modified: 2023-11-16T15:00:11.503Z
 - https://github.com/gothinkster/node-express-realworld-example-app /201802/js
 - Express + Prisma
 - ~~Example Node (Express + Mongoose) codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the RealWorld API spec~~
-
 
 - https://github.com/fdaciuk/conduit-api /MIT/202112/ts/inactive
   - API for Real World App project (Conduit) using Node.js + TS with Functional Programming

@@ -9,6 +9,11 @@ modified: 2023-02-05T18:49:31.166Z
 
 # guide
 
+# blogs-dex-xp
+- [Sequelize Data Types: a practical guide _202010](https://codewithhugo.com/sequelize-data-types-a-practical-guide/)
+  - STRING A variable length string. Default length 255.
+  - CHAR A fixed length string. Default length 255.
+  - TEXT: An unlimited length text column
 # cluster
 
 ## [Read Replication | Sequelize](https://sequelize.org/docs/v6/other-topics/read-replication/)

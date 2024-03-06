@@ -100,7 +100,11 @@ modified: 2021-08-10T03:51:01.891Z
 
 - ## 
 
-- ## 
+- ## 🆚️ In many programming languages, there are two ways of a specifying a sort: a comparator function, and a sort key.
+- https://twitter.com/julianhyde/status/1765135622451368386
+  - From a theory-of-computation perspective, is the comparator function strictly more powerful? Or can you always devise a (infinite?) sort key to match it?
+- The values being compared might only be parseable by a Turing Machine. memcmp() can be implemented by an NFA, and since languages recognized by Turing Machines are superset of languages recognized by NFAs, comparator function is strictly more powerful
+  - Yes.  But we "can devise" (i.e. compute the key using any method) and all one has to do is produce a key that has the same effect.  All a comparator function can do is produce a list of choices.  A key can navigate any list of choices.
 
 - ## A lot of library authors end up with generics requiring a crazy number of ordered parameters.
 - https://twitter.com/ssalbdivad/status/1753880880110518629

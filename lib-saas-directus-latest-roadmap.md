@@ -93,3 +93,19 @@ modified: 2024-03-02T13:33:54.693Z
 - Move union query application to `applyQuery`, fix where clause
 - Use hash instead of random for default index name
 # more
+- [An Overnight Success (Two Decades In The Making) _20240228](https://directus.io/blog/directus-two-decades)
+  - We weren’t in it for the “quick buck.” We wanted to build a premium product, without technical debt, that would stand the test of time
+  - The answer was to take our time distilling all the specific features and requirements we’d seen over decades of building one-off projects, abstracting everything into an agnostic solution.
+  - we focused on making Directus a collaborative project, embracing new engineers from around the world, all joining us as contributors to our open source project.
+# discuss-news
+- ## 
+
+- ## 
+
+- ## 
+
+- ## our Leap Week 02 keynote was yesterday. Here's the full recording, but check out the thread for key announcements
+- https://twitter.com/directus/status/1765014721294397655
+  - Announcing the Directus Marketplace Beta, focused on publishing, discovery, and installation of extensions in all Directus projects - both self-hosted and on Directus Cloud.
+  - A brand new hackathon taking place this March focused on payments.
+  - Level Up With Directus+ - a companion subscription with starter kits, exclusive workshops, and more.

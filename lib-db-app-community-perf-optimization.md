@@ -32,7 +32,13 @@ modified: 2023-10-26T19:00:02.186Z
 
 - ## 
 
-- ## 
+- ## Database Caching is a million-dollar technique you can’t ignore.
+- https://twitter.com/ProgressiveCod2/status/1765333907522916465
+- Cache-Aside Strategy
+- Read-Through Strategy
+- Write-Around Strategy
+- Write-Through Strategy
+- Write-Back Strategy
 
 - ## 🌰 Many tutorials give you tips to improve your Database performance using only single-column Indexes.
 - https://twitter.com/deisbel/status/1761384992775500055

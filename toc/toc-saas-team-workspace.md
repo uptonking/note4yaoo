@@ -360,6 +360,10 @@ modified: 2023-02-07T17:38:05.336Z
   - https://publish.obsidian.md/kanban/
   - Create markdown-backed Kanban boards in Obsidian.
 
+- https://github.com/remix-run/example-trellix /202401/ts
+  - https://trellix.fly.dev/
+  - A partial trello board clone with Remix
+
 ## kanban-fullstack
 
 - https://github.com/ApelsinU/KanbanBoard /ts

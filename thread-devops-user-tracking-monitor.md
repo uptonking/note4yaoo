@@ -16,7 +16,19 @@ modified: 2023-04-25T17:48:06.146Z
 
 - ## 
 
-- ## 
+- ## There are 4 pillars of API observability:
+- https://twitter.com/mjovanovictech/status/1765052411394097462
+  - Metrics
+  - Events
+  - Logs
+  - Traces
+- Metrics measure values that determine API health. A few interesting metrics are throughput, latency, CPU usage, and memory usage.
+- Events capture significant changes in the system. They also include contextual information about what happened.
+- Logs capture important activity in the application and record the system actions. 
+- Traces represent a record of a request's path through a distributed system.
+- To make your API observable, you must instrument it with event listeners, agents, or libraries, which can collect metrics, events, logs, and traces.
+
+- You can use telemetry data to create alerts to notify your team about potential issues. Another use case is visualization. Some services can ingest telemetry data and present them in a dashboard.
 
 - ## Your job doesn't end when you deploy to production.
 - https://twitter.com/RaulJuncoV/status/1729870028806443352
