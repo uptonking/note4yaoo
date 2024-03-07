@@ -104,6 +104,24 @@ modified: 2023-11-10T08:05:25.474Z
 
 - ## 
 
+- ## 
+
+- ## Did you know that numeric and string enums compile differently?
+- https://twitter.com/mattpocockuk/status/1765700809113645458
+  - Numeric enums create a reverse mapping(keys and values all mapped to keys), but string enums don't
+- Also weird that you can mix them and the individual values compile differently
+
+- Probably because typescript numeric enums are bit mask, as in bitwise a | b satisfies the type. That number value won’t be in the object map, so it could lead to runtime errors. So it’s better to not support mapping in that direction at all.
+
+- I don't like enums at all. I prefer mapped object or union types 
+  - but in case I have to use them... I prefer they are not compiled, just defining the enum as const.
+
+- I'm going to stick with the plain JavaScript object with as const from now on
+
+- I’m rewriting enums to simple union types all the time.
+
+- If you reverse mapped string enums, you could create collisions between keys and values
+
 - ## TypeScript Tips: Always use Integer as Enum values.
 - https://twitter.com/ThaddeusJiang/status/1752971923167064159
   - Since some dependencies only support `Integer` Enum values, like protobuf.

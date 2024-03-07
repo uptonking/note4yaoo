@@ -148,4 +148,27 @@ modified: 2023-02-05T18:49:31.166Z
 - Managed transactions: 
   - Sequelize will automatically rollback the transaction if any error is thrown, or commit the transaction otherwise. 
   - Also, if CLS (Continuation Local Storage) is enabled, all queries within the transaction callback will automatically receive the transaction object.
+
+## [Associations | Sequelize](https://sequelize.org/docs/v6/core-concepts/assocs/)
+
+- Lazy Loading refers to the technique of fetching the associated data only when you really want it; 
+  - Eager Loading, on the other hand, refers to the technique of fetching everything at once, since the beginning, with a larger query.
+  - Eager Loading is performed in Sequelize by using the `include` option
+
+- The `save()` instance method is not aware of associations. 
+  - In other words, if you change a value from a child object that was eager loaded along a parent object, calling `save()` on the parent will completely ignore the change that happened on the child.
+
+- `getShip()` instance method used above is one of the methods Sequelize automatically adds to `Captain` instances.
+
+- Defining an Alias is more powerful than simply specifying a custom name for the foreign key.
+- Aliases are especially useful when you need to define two different associations between the same models
+  - it is possible to define multiple associations between the same models. You just have to define different aliases for them
+
+- When an association is defined between two models, the instances of those models gain special methods to interact with their associated counterparts.
+
+- Why associations are defined in pairs?
+  - When a Sequelize association is defined between two models, only the source model knows about it.
+
+- Sequelize allows you to define an association that uses another field, instead of the primary key field, to establish the association.
+  - This other field must have a unique constraint on it (otherwise, it wouldn't make sense).
 # more

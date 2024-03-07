@@ -15,6 +15,7 @@ modified: 2022-06-04T00:44:30.749Z
 
 - cons
   - react-only
+  - not support to drag from the desktop or between windows 
 
 - features
   - good docs and examples

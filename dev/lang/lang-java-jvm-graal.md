@@ -109,6 +109,15 @@ modified: 2021-01-15T04:09:25.198Z
 
 - ## 
 
+- ## 
+
+- ## @SpringBoot running in the browser(!) with @cheerpj
+- https://twitter.com/david_syer/status/1764947792605093999
+- WebAssembly?
+  - Yep. Java 8 lives to fight another day.
+- I stopped looking when I saw it only worked with Java 8.  Still very cool though.
+- Java 8 limitation is not structural, the architecture can support modern Java. We just need some more time
+
 - ## [既然 GraalVM 支持多语言且能 AOT 编译 Java，它能否用来 AOT 编译 TS？ - 知乎](https://www.zhihu.com/question/423945328/answers/updated)
 - 现在 graal.js 如果做成 native image，是相当于把 Java 写的 JS 解释器编译到 native，然后解释执行 JS 吗？还是说像 Dart 那样把 JS 源码本身给 AOT 了（这时候弱类型感觉没法做啊）？
   - 恩，AOT的是解释(编译)器本身，js代码还是要到运行时被这个AOT了的JIT编译器JIT编译。

@@ -50,6 +50,15 @@ modified: 2021-07-29T11:15:44.100Z
 
 - ## 
 
+- ## 
+
+- ## 🌊 `ReadableStream` async iteration is coming to a Chromium-based browser near you! 
+- https://twitter.com/MattiasBuelens/status/1765655738095960191
+  - In Chrome Canary, this now works: `for await (const chunk of response.body) {}`
+
+- Also tastes great combined with WebSocketStream
+  - `for await (const message of wss.readable) {}`
+
 - ## popover ships in Firefox 125 _20240304
 - https://twitter.com/hdv/status/1764577917093228813
   - [Dialogs and popovers seem similar. How are they different? _202309](https://hidde.blog/dialog-modal-popover-differences/)

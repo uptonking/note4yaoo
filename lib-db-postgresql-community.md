@@ -14,7 +14,11 @@ modified: 2022-06-13T03:01:05.956Z
 
 - ## 
 
-- ## 
+- ## great to see more posts on table access methods for postgres (I.e. pluggable storage engines)
+- https://twitter.com/eatonphil/status/1765456975012282750
+  - Here was my take on this topic a bit ago
+- So could we use this for audit trails/logs? Those are not use frequently and are only read-only. Even if you have to ship it manually every day to a new table.
+  - Yeah, we could. I imagined a use case like where a table is partitioned per day and child tables are converted to road every day to compact the whole partitioned table.
 
 - ## What do you call "dead tuple" in PostgreSQL?
 - https://twitter.com/mmeent_pg/status/1764657105825374319

@@ -13,6 +13,19 @@ modified: 2023-11-10T07:10:19.089Z
 - ## 
 
 - ## 
+# discuss-news-nodejs
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Node.js now has a built-in API for styling text (similar to `chalk` , `picocolors` , etc)
+- https://twitter.com/styfle/status/1765458512421814707
+- Maybe an API like this could become a standard
+
 # discuss-js-runtime
 - ## 
 

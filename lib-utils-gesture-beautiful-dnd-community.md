@@ -9,7 +9,31 @@ modified: 2023-09-03T13:21:26.939Z
 
 # guide
 
-# discuss-issues
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## 
+# discuss-news-pdnd
+- ## 
+
+- ## 
+
+- ## 🌰 Pragmatic drag and drop 1.0 adds cross browser support for dragging into an out of iframes _202403
+- https://twitter.com/alexandereardon/status/1765523608682795227
+  - 示例动画
+  - Some applications leverage iframes for sandboxing (eg for addons), Site builders, etc
+  - I'm pretty hyped about this, as achieving something like  this on your own is really hard. pdnd makes it real safe and straight forward to set up
+
+- postMessage?
+# discuss-pdnd
+- ## 
+
+- ## 
+
+- ## 
+# discuss-rbd-issues
 - ## 
 
 - ## 
@@ -38,16 +62,11 @@ modified: 2023-09-03T13:21:26.939Z
 - ## [Virtualized nested list (Cannot find droppable entry with id(uuid))](https://github.com/atlassian/react-beautiful-dnd/issues/2196)
 - [Cant dragging nested items with Virtualization](https://github.com/atlassian/react-beautiful-dnd/issues/2157)
 
-# discuss
-- ## 
-
-- ## 
-
-- ## [Drag and drop within a canvas?](https://github.com/atlassian/react-beautiful-dnd/issues/2065)
-
 # discuss-rbd
 - ## 
 
 - ## 
 
 - ## 
+
+- ## [Drag and drop within a canvas?](https://github.com/atlassian/react-beautiful-dnd/issues/2065)

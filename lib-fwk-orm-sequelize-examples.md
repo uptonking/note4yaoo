@@ -12,17 +12,21 @@ modified: 2023-02-05T18:50:32.900Z
 - tips
   - examples: starter, realworld, fullstack
   - 模版参考: react-admin
+  - 数据库典型示例: 商品-货架， 电影-演员
 
 - 后端架构总结
   - 通常三层架构就能满足开发需求且不繁琐，需要支持nosql时再添加dao或定制开发
   - controller: 请求接收，参数校验，尽量没有业务逻辑，尽量只用一个service，
     - 若需要多个service则考虑创建新service包含所需业务流程
+    - createX/newX, getX, updateX/saveX, removeX, register
   - service: 梳理业务流程，使用所需的(多个)dao/repo进行计算与持久化返回结果
     - 返回的可以不是db中的model，可返回业务对象do/vo/dto
+    - addX/insertX, findX/selec, setX/updateByX, deleteX
   - dao: 只包含db的crud，尽量没有业务逻辑
     - dao的实现依赖orm，可能需要model，也可能不需要model
   - model: 对应db表schema
   - ioc的缺点: 调试时跳转到方法调用的定义不方便
+  - [What is the best practice for service-dao pattern? - Stack Overflow](https://stackoverflow.com/questions/17639731/what-is-the-best-practice-for-service-dao-pattern)
 
 - 动态添加route和建表
   - 多数模版项目的api route是固定的，动态添加api需要定制开发

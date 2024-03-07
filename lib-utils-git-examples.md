@@ -237,6 +237,10 @@ modified: 2023-08-29T10:12:22.345Z
   - https://radicle.xyz/
   - Radicle is a sovereign peer-to-peer network for code collaboration, built on top of Git.
   - Radicle is local-first, providing always-available functionality even without internet access.
+  - https://twitter.com/vikingmute/status/1765538828167848190
+    - 使用 P2P 的方式来进行 git 协作，分布式，无法被禁止
+    - git不就是本身就是本地化的么。git clone是所有分支所有代码都在本地。怕个锤子
+    - Git 本身是去中心化的，但是现实世界的 Collaboration 是中心化的
 
 - https://github.com/gabrielcsapo/node-git-server /MIT/202208/ts/inactive
   - https://gabrielcsapo.github.io/node-git-server

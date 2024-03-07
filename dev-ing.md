@@ -321,6 +321,15 @@ betterdiscordctl -i flatpak install
 
 ## 030
 
+## 0307
+
+- [Sequelize error - "model.get is not a function" - Stack Overflow](https://stackoverflow.com/questions/46475953/sequelize-error-model-get-is-not-a-function)
+
+- [css - What is the difference between :focus and :active? - Stack Overflow](https://stackoverflow.com/questions/1677990/what-is-the-difference-between-focus-and-active)
+  - `:focus` represents the state when the element is currently selected to receive input
+  - `:active` represents the state when the element is currently being activated by the user.
+  - when you click on an element, you give it focus, which also cultivates the illusion that :focus and :active are the same. They are not the same. When clicked the button is in `:focus:active` state.
+
 ## 0305
 
 - [Extend Express Request object using Typescript - Stack Overflow](https://stackoverflow.com/questions/37377731/extend-express-request-object-using-typescript)

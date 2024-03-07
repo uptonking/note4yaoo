@@ -72,6 +72,14 @@ sequelize.getQueryInterface().QueryGenerator.getWhereConditions({ a: 1, b: 2, c:
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Get only dataValues from Sequelize ORM - Stack Overflow](https://stackoverflow.com/questions/46380563/get-only-datavalues-from-sequelize-orm)
+- const sequelize = new Sequelize('connectionUri', {   define: {     raw: true    } }); 
+  - Please not this does not work with eager loading nested entities.
+
 - ## [Sequelize.sync({ force: true }) is too dangerous to live _201412](https://github.com/sequelize/sequelize/issues/2670)
 - In order to ensure a 1:1 parity between ORM model definitions and the underlying schema, the user must clutter their model definitions with attribute hints to help the ORM understand how to build the schema. This is a task for a migrator, not an ORM. 
   - If we look at ActiveRecord or Knex/Bookshelf, we see an entirely separate system at play for schema-building and model-building.
