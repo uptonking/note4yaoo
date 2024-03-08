@@ -50,7 +50,8 @@ modified: 2021-07-29T11:15:44.100Z
 
 - ## 
 
-- ## 
+- ##  `ElementInternals.states` is coming in Safari 17.4, which means only Firefox is left — and it's already available behind a flag.
+- https://twitter.com/claviska/status/1765707964692697564
 
 - ## 🌊 `ReadableStream` async iteration is coming to a Chromium-based browser near you! 
 - https://twitter.com/MattiasBuelens/status/1765655738095960191

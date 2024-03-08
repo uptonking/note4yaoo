@@ -9,6 +9,15 @@ modified: 2023-08-28T04:38:19.489Z
 
 # guide
 
+# discuss-toolchain
+- ## 
+
+- ## 
+
+- ## As for Java build systems, Maven is the right default choice for most teams. 
+- https://twitter.com/gunnarmorling/status/1766073035377840213
+  - Gradle lets you go way further and has many advantages, e.g. around build avoidance, but in absence of someone who truly groks how Gradle works (which takes time!), it's too easy to shoot your own foot.
+
 # discuss
 - ## 
 

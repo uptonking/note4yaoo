@@ -30,6 +30,14 @@ modified: 2022-12-04T16:34:29.342Z
 # products
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 非常喜欢字节和北大一起做的这个古籍网站「识典古籍」。
+- https://twitter.com/fm100/status/1765970319247106348
+  - [识典古籍-古籍在线阅读平台](https://www.shidianguji.com/)
+
 - ## [Ask HN: Alternative to Crunchbase Pro ($360/year)? | Hacker News _202006](https://news.ycombinator.com/item?id=23658819)
 - I find crunchbase, owler, linkedin etc overpriced, and they don't really have that great data especially on emerging startups - there's few hard data points they have, and some bias towards companies who volunteer their data (or investors who do).
 

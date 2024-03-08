@@ -12,6 +12,8 @@ modified: 2023-09-13T20:24:41.516Z
 # discuss-stars
 - ## 
 
+- ## 
+
 - ## 🤔 Is it wrong to build all blog content into a SQLite database that you ship alongside your blog and access serverside via RSC
 - https://twitter.com/steveruizok/status/1711466753711128633
   - So my situation is: I have a bunch of markdown files with frontmatter (section, category, order) and some authors and sections and categories. I’m currently parsing them all and putting them in a big json blob that I can pull from on the server
@@ -61,6 +63,31 @@ modified: 2023-09-13T20:24:41.516Z
 - Most apps we use nowadays are cloud-first apps which mostly become useless when:
   - there is no stable internet connection
   - the service is offline or discontinued (h/t Google)
+# discuss-big-data
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🔁 One of the local-first killer features is automatic data syncing.
+- https://twitter.com/schickling/status/1766011500018237879
+  - Similarly how React freed developers from manual view rendering/maintenance, local-first sync engines free developers from manually fetching and pushing data.
+  - This unlocks global reactive data.
+
+- 🤔 How does it handle a large amount of data? For example, for all of the issues of one company in GitHub or something similar, there will be a bottleneck with the first initial sync, right?
+- We (as in the local-first community) are still trying to figure out the best practices for this, but there are a few different approaches to handle this.
+  - You could for example break up your entire application data into "semantic buckets" (e.g. for GitHub per repo) and then prioritize syncing what you'll need for a given UX use case. 
+  - Sometimes this is referred to as partial syncing but you could also model this in a hybrid cloud/local-first way.
+  - Definitely a key challenge that needs to be explored further. That being said, there are many, many apps where this is a non-issue.
+- I'd argue that those "extreme cases" might not be ideal fits for local-first software as of today
+
+- A nicer example would be a Wiki scenario where local-first would still be a vast improvement. Greedy sync top n nodes incl. edges, lazy sync beyond that. Always persist when nodes were written to by the current user. Purge read-only by LRU.
+
+- The thing that made local-first really click with me was when I realised that solving the data syncing problem is 95% of the work needed for real-time multiplayer.
+  - Only difference between offline eventually consistent sync and realtime multiplayer is latency.
+- Also 90% of crud backends. You end up with a permissionslist and db-triggered side effects
+  - Yep, the permissions side is one of the key parts of what we're building with @ElectricSQL , with CRUD being a big part of our target market. I've built a few demos using event-sourcing from PG triggers, it works really well, and has great DX.
 # discuss-pm
 - ## 
 

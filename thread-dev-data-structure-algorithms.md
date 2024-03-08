@@ -84,7 +84,13 @@ modified: 2023-03-15T08:06:35.541Z
 # discuss
 - ## 
 
-- ## 
+- ## A lot of the time, many data structures provide a similar performance with small data sets.
+- https://twitter.com/Franc0Fernand0/status/1765656204242571352
+  - But selecting the wrong data structure can cause disasters in terms of performance with large data sets.
+
+- Very true. Big O doesn’t matter if N is small.
+
+- There are multiple business cases where you should refrain(克制；抑制) from optimising for larger data sets too soon. The key is to design the code so that it can be easily upgraded as needed.
 
 - ## This is common algorithms knowledge - for solving dynamic programming problems, commonly we have 2 approaches - top down memoized recursive approach and bottom up iterative approach ..
 - https://twitter.com/debasishg/status/1761425555289976927

@@ -117,7 +117,11 @@ modified: 2021-08-30T07:01:09.493Z
 
 - ## 
 
-- ## 
+- ## A common misunderstanding about `Promise.all` is that it cancels the remaining promises as soon as it rejects—this is NOT true! 
+- https://twitter.com/hovhaDovah/status/1765763275545817427
+  - It simply ensures that you don't have to *wait* for the remaining promises to resolve if a promise has already rejected. What do you think this code logs?
+- In other words, Promise.all gives you fail-fast behavior, allowing you to handle the error case sooner than if you had waited for all of the promises to settle.
+- very interesting, even if one promise fails it goes into the catch block, makes a ton of sense to do so.
 
 - ## 🤔🔀 Have any JS lib maintainers switched back to using callbacks over promises and async/await?
 - https://twitter.com/tantaman/status/1758828869530906748

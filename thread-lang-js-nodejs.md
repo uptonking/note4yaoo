@@ -29,7 +29,14 @@ modified: 2023-11-10T07:10:19.089Z
 # discuss-js-runtime
 - ## 
 
-- ## 
+- ## 🐛 The abundance of js runtimes, each subtly different from each other, makes it a little harder to write code that works across them
+- https://twitter.com/threepointone/status/1765656643155423739
+  - “feature detection” strategies don’t work that well when you need to detect presence of modules (and the interplay with bundlers)
+  - typescript isn’t very good at configuring codebases where different modules run in different runtimes (sometimes multiple)
+  - in modern full stack frameworks, a single module might have bits where a function or two might run in a different runtime 
+- for websocket clients I would be surprised if there isn’t a wrapper npm package that chooses ws in node and then WebSocket global elsewhere. for websocket servers, not sure what the best approach is today besides Hono. for bun you can use “ws” and it’ll mostly work
+- That's why WinterCG exists https://wintercg.org
+- I end up with files just to do bundling tricks
 
 - ## AWS has entered the (js runtime) domain
 - https://twitter.com/ArrowoodTech/status/1755667431190917577

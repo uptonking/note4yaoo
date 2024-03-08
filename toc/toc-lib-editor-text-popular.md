@@ -20,6 +20,7 @@ modified: 2022-11-08T19:04:00.289Z
   - layout-engine: layout-columns, ritzy, google-docs
   - search
   - the-elm-architecture
+  - drag between windows
 
 - 开源编辑器
   - 国内: wangEditor, editablejs/am-editor, textbus, vditor, ueditor

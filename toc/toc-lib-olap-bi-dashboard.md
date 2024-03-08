@@ -105,7 +105,7 @@ modified: 2020-12-09T09:30:24.694Z
   - Business intelligence, data exploration and viz web application for Druid
   - https://github.com/implydata/pivot
 
-- evidence /2.5kStar/MIT/202311/js/svelte
+- evidence /2.5kStar/MIT/202403/js/svelte
   - https://github.com/evidence-dev/evidence
   - https://evidence.dev/
   - Build a polished business intelligence system using only SQL and markdown.

@@ -97,6 +97,10 @@ The problem is that the read replica of mysql server are updated by the master s
 
 - ## 
 
+- ## 
+
+- ## [Knex many-to-many relationships _201502](https://github.com/knex/knex/issues/714)
+
 - ## [Add option to skip unnecessary select after create · prisma/prisma](https://github.com/prisma/prisma/issues/4246)
 - This is likely going to be an unsatisfying recommendation but all those who have felt the pain for long enough will agree - just use a query builder. 
   - Knex is great and while there's marginally more boilerplate, it's easy and extensible.

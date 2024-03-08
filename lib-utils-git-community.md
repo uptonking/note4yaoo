@@ -13,6 +13,32 @@ modified: 2023-08-29T10:13:31.070Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🤔 What makes Git so popular?
+- https://twitter.com/sahnlam/status/1765986551123882087
+- 𝗕𝗲𝗳𝗼𝗿𝗲 𝗚𝗶𝘁, developers struggled with source control. Systems like CVS and Subversion caused:
+  - Collaboration Bottlenecks - Pushing to a shared central codebase created bottlenecks and isolated work.
+  - Slow Branching/Merging - Diverging code streams and combining changes was clumsy and inefficient.
+  - Scaling Issues - Performance degraded as projects and users grew. Centralized systems didn't scale.
+  - Release Headaches - Coordinating versions across teams was messy.
+- Git 𝗿𝗲𝘃𝗼𝗹𝘂𝘁𝗶𝗼𝗻𝗶𝘇𝗲𝗱 source control by:
+  - Enabling decentralized collaboration through distributed repositories.
+  - Streamlining local branching and merges.
+  - Allowing offline work with full local codebase copies.
+  - Optimizing performance even for large projects.
+  - Tracking every change at a granular level.
+- 𝗚𝗶𝘁𝗛𝘂𝗯 𝗮𝗰𝗰𝗲𝗹𝗲𝗿𝗮𝘁𝗲𝗱 Git's popularity by adding:
+  - Web-based collaboration around remote repositories
+  - Pull requests and code reviews
+  - Social coding features like stars and follows
+- However, Git 𝗶𝘀𝗻'𝘁 𝘄𝗶𝘁𝗵𝗼𝘂𝘁 𝗱𝗼𝘄𝗻𝘀𝗶𝗱𝗲𝘀:
+  - The conceptual model is complex with a steep learning curve.
+  - The command line interface is unintuitive and confusing.
+- Despite these complaints, Git's collaboration features and flexible workflows cement(加强；巩固) its place in modern development. This game-changing tool revolutionized source control for the better.
+
 - ## 🚀🌵 [A Git client for simultaneous branches on top of your existing workflow | Hacker News _202402](https://news.ycombinator.com/item?id=39357068)
 - > Quick warning. You cannot use both GitButler virtual branches and normal Git branching commands at the same time, you will have to "commit" to one approach or the other.
   - Basically anything you do with git (or another GUI) will get blown away by GitButler; or if you change branch away from it then it will stop working.

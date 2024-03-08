@@ -108,7 +108,7 @@ modified: 2023-02-05T18:49:31.166Z
 
 - eager Loading is the act of querying data of several models at once (one 'main' model and one or more associated models). 
   - At the SQL level, this is a query with one or more joins.
-- In Sequelize, eager loading is mainly done by using the `include` option on a model finder query (such as `findOne/findAll`, etc).
+- eager loading is mainly done by using the `include` option on a model finder query (such as `findOne/findAll`, etc).
 
 - An instance can be created with nested association in one step, provided all elements are new.
 - In contrast, performing updates and deletions involving nested objects is currently not possible. 

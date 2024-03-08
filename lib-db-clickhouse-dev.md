@@ -24,6 +24,20 @@ modified: 2023-12-15T18:01:18.391Z
   - Read about how you can use TTL (time-to-live) clauses in ClickHouse to delete, reset, or compress old data that’s no longer necessary.
 # more
 - [ClickHouse and The One Billion Row Challenge _202401](https://clickhouse.com/blog/clickhouse-one-billion-row-challenge?utm_source=twitter&utm_medium=social&utm_campaign=blog)
+# discuss-news
+- ## 
+
+- ## 
+
+- ## Today(20240308) @ClickHouseDB announced they're moving into the embedded OLAP engine space, with their acquisition of @chdb_io , and directly competing with @duckdb .
+- https://twitter.com/medriscoll/status/1765785275014557831
+  - Because @chdb_io , like @duckdb , provides a cheaper, faster, and SQL-ier alternative to Spark for crunching data on the data lake.
+- If I understood correctly @chdb_io only had a Python API so far? If so, I don’t think that it’s currently on-par with @duckdb
+  - Yes agree @duckdb has far more APIs for running in-process, though I suspect Python represents the majority of use cases
+
+- Photon runs inside of Spark as an accelerator for parts of the pipeline, not as a standalone engine, per se.
+
+- @sunchao 's Rust-based Comet project looks awesome and is an open-source alternative to Photon (only available in Databricks Cloud)
 # discuss
 - ## 
 

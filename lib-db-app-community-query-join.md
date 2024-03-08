@@ -39,7 +39,15 @@ modified: 2023-10-31T11:17:48.697Z
 # discuss
 - ## 
 
-- ## 
+- ## 7 SQL Joins You Must Know
+- https://twitter.com/AmigosCode/status/1766073736640303292
+➡️ Inner Join: Retrieves records with matching values in both tables.
+➡️ Left Join: Retrieves all records from the left table and matching records from the right table.
+➡️ Left Join with Null Check: Filters only the records where there is no match in the right table (NULL values).
+➡️ Right Join: Retrieves all records from the right table and matching records from the left table.
+➡️ Right Join with Null Check: Filters only the records where there is no match in the left table (NULL values).
+➡️ Full Join: Retrieves all records when there is a match in either the left or right table.
+➡️ Full Join with Null Check: Filters only the records where there is no match in either the left or right table (NULL values).
 
 - ## Colocated and interleaved tables are one of the performance optimization techniques available in some distributed SQL databases.
 - https://twitter.com/denismagda/status/1733187029997932891

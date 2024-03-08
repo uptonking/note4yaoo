@@ -340,6 +340,15 @@ fs.writeFileSync(__dirname + "/test.jsb", byteCode);
 - ## Initial support for Native Memory Tracking just landed in @GraalVM Native Image! _20240226
 - https://twitter.com/fniephaus/status/1762039450404593871
 
+# discuss-aot
+- ## 
+
+- ## 📦 It's quite wild that @GraalVM Native Image can turn an application using the new Class-File API (JEP 457) into an executable, which then generates a valid class file that runs on HotSpot
+- https://twitter.com/fniephaus/status/1766034831790457217
+  - https://github.com/mrjameshamilton/jep457-hello-world
+
+- Does native-image fully run on Espresso these days? 
+  - no, I don't think it runs on Espresso yet. But you can AOT-compile `javac` and use that (and/or the Class-File API) to generate class files, which you then feed into 'native-image' again. It's a self-sustaining ecosystem
 # discuss-usecase
 - ## 
 

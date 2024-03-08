@@ -31,6 +31,13 @@ modified: 2023-11-16T15:00:11.503Z
 
 ## realworld
 
+- 核心功能
+  - article
+  - tag
+  - user, following
+  - comment
+  - favorites/bookmarks
+
 - resources
   - https://demo.realworld.io/
     - https://conduit-realworld-example-app.fly.dev/

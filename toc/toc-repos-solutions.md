@@ -28,6 +28,16 @@ modified: 2020-12-12T19:32:36.255Z
   - parses pages and stores relevant data in the builtin browser database (IndexedDB)
   - Binary data (images, pdf files, …) can be exported as zip archives. Text based data can be exported as csv files.
 
+- https://github.com/apify/crawlee /11.6kStar/apache2/202403/ts
+  - https://crawlee.dev/
+  - A web scraping and browser automation library for Node.js to build reliable crawlers. 
+  - Extract data for AI, LLMs, RAG, or GPTs. 
+  - Download HTML, PDF, JPG, PNG, and other files from websites. 
+  - Works with Puppeteer, Playwright, Cheerio, JSDOM, and raw HTTP. 
+  - Both headful and headless mode. With proxy rotation.
+  - Crawlee gives you the tools to crawl the web for links, scrape data, and store it to disk or cloud while staying configurable to suit your project's needs.
+  - Pluggable storage of both tabular data and files
+
 - https://github.com/webrecorder/browsertrix-crawler /js
   - a simplified (Chrome) browser-based high-fidelity crawling system, designed to run a complex, customizable browser-based crawl in a single Docker container. 
   - uses Puppeteer to control one or more browser windows in parallel.

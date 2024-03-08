@@ -25,9 +25,11 @@ modified: 2023-06-22T05:33:12.658Z
 
 - ## 
 
-- ## 
+- ## 🌰 It doesn't take much to turn your @ariakitjs Disclosures into an Accordion. I've abstracted this away into a hook so you don't have to.
+- https://twitter.com/hnkhandev/status/1765661923801231769
+  - https://gist.github.com/hnkhandev/a78bbce431e73ea25e78671ae5420958
 
-- ## New example: Combobox with tabs
+- ## 🌰 New example: Combobox with tabs
 - https://twitter.com/diegohaz/status/1738615278701892062
   - It combines Combobox and Tab components to create an accessible combobox widget, where options are organized into tabs.
 

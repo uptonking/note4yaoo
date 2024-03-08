@@ -153,7 +153,11 @@ modified: 2023-09-17T17:37:19.913Z
 
 - ## 
 
-- ## 
+- ## Database-per-Service said each service should have its own private database. You can only access the data through its API.
+- https://twitter.com/RaulJuncoV/status/1766092301955113113
+  - In monolithic architectures, different parts of the application share data schemas.
+  - Imagine you need to remove the Foreign keys and Views from your database.
+  - That's what you have to do if you want a Database-per-Service pattern in microservices.
 
 - ## I am wrapping my head around Snapshot Isolation (SI) with a minimal computational model
 - https://twitter.com/DominikTornow/status/1760054290146873397

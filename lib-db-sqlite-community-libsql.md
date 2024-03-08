@@ -14,7 +14,39 @@ modified: 2023-10-28T17:31:26.535Z
 
 - ## 
 
-- ## 
+- ## 🌲💡 How do Turso/libSQL replicate database schema and data replication?
+- https://twitter.com/penberg/status/1766031437919138218
+  - The short answer is that it replicates the SQLite write-ahead log (WAL).
+  - tl; dr; Turso replicates database schema and data by making copies of the write-ahead log (WAL) that stores all the changed data, which allows fast consistent snapshot reads at the replicas.
+  - SQLite, which powers Turso, is a relational database management system, like Postgres or MySQL, in which the database stores data as tables that contain rows. You then model your application domain model as a set of tables to represent your data
+  - In SQLite (and many other databases), a table is represented as a b-tree, which stores the rows of a table in a deterministic order using your table primary key for efficient queries. 
+  - Internally, the b-tree places multiple rows in a fixed-size storage called a page.
+  - So why the detour talking about relational model, b-trees and pages? Because as it turns out, that is the fundamental model of replication, pioneered by Litestream and LiteFS, that we also use in Turso/libSQL!
+  - When you write to an SQLite database, the database engine appends updated pages (called frames) affected by the write the WAL. For example, if you insert a new row, SQLite creates a new page with that row and appends it to the WAL. The same applies to updates and deletions.
+  - Before we get to replication, the final step to understand is that when you read from SQLite database that has a WAL, the database always checks the WAL if there are more up-to-date pages than the database itself has there and uses them.
+  - There is also a checkpointing mechanism that essentially writes back the WAL to the main database file, but that's a topic for another thread.
+  - In Turso/libSQL, writes always happen in a single place called the primary. If you have replicas available, writes are always delegated to the primary. This ensures that there are no conflicting updates on the WAL.
+  - You might have already guessed that replication is now simply a matter of getting the primary WAL to the replicas and now SQLite actually does all the work for us. There's some tricks involved to inject WAL frames to a SQLite database file, but that's all transparent to you.
+  - What this model means to an application is that you can read from your local SQLite database file, which gives you a consistent snapshot in time because the WAL also includes transaction boundaries. You are always observing the latest consistent view of your data that you have.
+  - However, there always is some replication lag, depending on how far the replica is from the primary. 
+  - In the @flydotio infrastructure that we use today, you're going to see replication lag in the order of 100 to 300 milliseconds if replicas are far away geographically.
+  - But we have one more trick that we use. Your application can write to a replica and it will transparently delegate your write to the primary. But won't you now be subject to the replication lag?
+  - The answer is: yes, but we hide that. When a replicate delegates a write to the primary, it will wait for the affected frames to replicate back before acknowledging the write to the client. This means that the replica guarantees an important property of read-your-writes.
+  - When you put all of this together, Turso/libSQL gives a single URL, which gives an illusion of a single database to applications, although the data can be replicated in many different locations for lower access latency.
+  - Finally, one source of confusion folks have is around how schema is replicated. The answer is surprisingly simple: it happens through the WAL. That's because schema is represented as internal table in SQLite, which gets stored in the WAL all the same.
+
+- Does the client decide where to issue queries to? Or is it via done middle-aged which decides primary or replica?
+  - We use @flydotio ’s infrastructure to route queries to the nearest replica server.
+
+- Does D1 by @CloudflareDev use the same technique? What’s the difference with Google Spanner? (ignoring spanner sharding).
+  - I unfortunately don't know how D1 works internally because there doesn't seem to be public information about that.
+  - Spanner layers relational model on top of key-value store like I think CockroachDB and YugaByte do. So the technique is different because I think they're replicating the data, not the changes like WAL does. But I am not an expert on those systems so don't take me too seriously.
+
+- 
+- 
+- 
+
+- [libSQL: Diving Into a Database Engineering Epic _202307](https://compileralchemy.substack.com/p/libsql-diving-into-a-database-engineering)
 # discuss-news
 - ## 
 
@@ -22,7 +54,15 @@ modified: 2023-10-28T17:31:26.535Z
 
 - ## 
 
-- ## 
+- ## SQLite and MySQL are quite different, and it won't work for all of you.
+- https://twitter.com/glcst/status/1765852342627246402
+- I’ve never used SQLite. What are the differences or situations where a migration from MySQL doesn’t make sense?
+  - sqlite is a way simpler database. Technically, it suffers with write heavy workloads. (Think more than 1k writes per second) Aside from that, it is mostly around whether you adapt well to its simplicity.
+- Does this 1k write/s also apply if I have multiple databases?
+  - that is per database.
+
+- Can I use update with returning but get the value of a row before the update, not after?
+  - Everything in Turso is transactional, so if you do a select for the value right after in a batch, you should get the value of the row before the update.
 
 - ## Our goal with libSQL is to make SQLite production ready. _202402
 - https://twitter.com/glcst/status/1760030875494813928

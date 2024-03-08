@@ -14,6 +14,22 @@ modified: 2023-02-05T18:49:43.540Z
 
 - ## 
 
+- ## 💡 [Delete password from sequelize model - Stack Overflow](https://stackoverflow.com/questions/71808210/delete-password-from-sequelize-model)
+  - `delete user.dataValues.password` where does dataValues ​​come from
+- it is same to get field from sequelize with `user.get("field_name")` , `user.getDataValue("field_name")` and `user.dataValues.field_name` . 
+
+- I don't recommend to delete service props in Sequelize model (dataValues prop holds metadata about all fields of a certain model) because it can lead to incorrect work of this model. 
+  - Instead of deleting the password field form dataValues you need to delete it from a plain object that represents a certain model instance
+  - `const { password, ...plainUser } = user.get({ plain: true })`
+
+- ## 💡 [Sequelize Update with Object - Stack Overflow](https://stackoverflow.com/questions/63261248/sequelize-update-with-object)
+  - I have a code using sequelize to update one record and then return this updated record
+  - It is working but I have to separate into two query statements. Is there a way I can mix them together?
+
+- no. when you update most sql dbs will only return provide only number of affected rows. Even if sequelize provide an interface through it, the implementation will not be difference than what you did logically 
+
+- The `returning` option of `Model.update` still only supports PostgreSQL for sequelize v6.
+
 - ## [Table partitioning](https://github.com/sequelize/sequelize/issues/7673)
 
 - > 针对pg的方案有pr，但未合并
@@ -74,7 +90,8 @@ sequelize.getQueryInterface().QueryGenerator.getWhereConditions({ a: 1, b: 2, c:
 
 - ## 
 
-- ## 
+- ## 💡 [Sequelize, convert entity to plain object - Stack Overflow](https://stackoverflow.com/questions/21961818/sequelize-convert-entity-to-plain-object)
+- Using `.get()` won't convert included associations, use `.get({ plain: true })` instead.
 
 - ## [Get only dataValues from Sequelize ORM - Stack Overflow](https://stackoverflow.com/questions/46380563/get-only-datavalues-from-sequelize-orm)
 - const sequelize = new Sequelize('connectionUri', {   define: {     raw: true    } }); 

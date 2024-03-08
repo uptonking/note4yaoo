@@ -20,6 +20,7 @@ modified: 2023-11-28T14:48:45.910Z
   - local-first data storage with optional syncing: 兼容git的commits
   - markdown: hotkeys, table-builder
   - office viewer
+  - drag between windows
 
 - selling-point-knowledge-base
   - 通用或单一的builder价值不大，但针对业务平台特别是app-store的builder对平台方和开发者的价值都很大

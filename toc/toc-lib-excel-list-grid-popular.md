@@ -31,6 +31,7 @@ modified: 2022-08-21T10:02:27.788Z
   - 接入现有组件库
   - modular, extensible, customizable
   - the-elm-architecture
+  - drag between windows
 
 - collaborative-editing
   - 数据模型考虑 持久化(一般db-text/json/blob)、展示(json)、协作(llw/map/sequence)、衍生计算(如聚合)
@@ -887,7 +888,6 @@ modified: 2022-08-21T10:02:27.788Z
   - cells update in cascade, circular reference protection
   - localStorage persistence
   - [Tinysheet | Hacker News_202110](https://news.ycombinator.com/item?id=28967514)
-
 
 - https://github.com/seveibar/react-watertable /201911/js/inactive
   - https://www.seveibar.com/react-watertable/
