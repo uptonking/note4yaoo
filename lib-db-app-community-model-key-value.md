@@ -20,6 +20,31 @@ modified: 2023-10-26T15:02:47.068Z
 # discuss-redis
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Why is Redis Fast? Redis is fast for in-memory data storage.
+- https://twitter.com/sahnlam/status/1766345407045767559
+  - Its speed has made it popular for caching, session storage, and real-time analytics.
+- RAM-Based Storage
+  - Redis primarily uses main memory for storing data. Accessing data from RAM is orders of magnitude faster than from disk. This is a major reason for Redis's speed.
+  - To persist data, Redis supports disk snapshots and append-only file logging. This combines RAM's performance with disk's permanence.
+  - There is a tradeoff though - recovery from disk is slow. If a Redis instance fails, restarting from disk can be slow compared to failing over to a replica instance fully in memory. So while Redis offers durability via disk, it comes at the cost of slower recovery.
+  - A better solution is Redis replication. With a synchronized replica kept in memory, failover is instant with no rehydration. This maintains speed and near-instant recovery.
+- IO Multiplexing & Single-threaded Read/Write
+  - Redis uses an event-driven, single-threaded model for its core operations. A main event loop handles all client requests and data operations sequentially. 
+  - This single-threaded execution avoids context switching and synchronization overhead typical of multi-threaded systems.
+  - Redis uses non-blocking I/O to handle multiple connections asynchronously. This allows it to support many client connections with very low overhead, 
+  - Redis also uses pipelining for high throughput. Clients pipeline commands without waiting for each response. 
+- Redis does leverage threading in certain areas:
+  - Background tasks like taking snapshots.
+  - I/O threads are used for certain operations.
+  - Modules can use threads.
+  - Since Redis 6.0, it supports multi-threaded I/O for network communication, improving performance on multi-core systems.
+- Redis supports various optimized data structures, from linked lists, zip lists, and skip lists to sets, hashes, and sorted sets, among others. 
+  - Each is carefully designed for specific use cases for quick and efficient data access.
+
 - ## Is Redis Data Persistence Useful in Practice?
 - https://twitter.com/sahnlam/status/1760552420457980239
   - There are two ways to save Redis data to disk
@@ -64,6 +89,12 @@ modified: 2023-10-26T15:02:47.068Z
 
 - Threads same as the CPU cores. I believe vertex does something similar.
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 
 
 - ## [What is the best key-value store for Rust 2021 : rust_202201](https://www.reddit.com/r/rust/comments/s1cgof/what_is_the_best_keyvalue_store_for_rust_2021/)

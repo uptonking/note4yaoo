@@ -236,6 +236,11 @@ modified: 2023-11-28T14:48:45.910Z
   - 链接导出markdown，tag放在下一行
 
 - animated-cards
+
+- github非常强大的branching和历史版本功能在交互上隐藏太深
+  - 可与timeseries时序数据库结合尝试
+
+- 不那么成功的项目 wikidata
 # connections
 - 支持mdx，内置开源组件
 # knowledge-base

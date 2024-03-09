@@ -352,6 +352,14 @@ modified: 2022-11-08T19:04:00.289Z
     - CKEditor tracked changes plugin was built on top of ICE
   - 🍴 forks
   - https://github.com/concordnow/ice /202110/js
+
+- https://github.com/superlistapp/super_editor /MIT/202403/dart
+  - https://superlist.com/SuperEditor/
+  - A Flutter toolkit for building document editors and readers
+  - configurable, extensible text editor and document renderer for Flutter.
+  - Super Editor works with any backend. Plug yours in and go
+  - initiated by Superlist and is implemented and maintained by the Flutter Bounty Hunters, Superlist
+  - we're not just building an editor. We're building a document editing toolkit. In fact, we're revolutionizing all text layout and editing with Flutter
 # collab
 - https://github.com/microsoft/FluidExamples/tree/main/collaborative-text-area
   - an example to demonstrate building a collaborative text area in React using the SharedString

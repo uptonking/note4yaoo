@@ -83,7 +83,7 @@ modified: 2022-06-04T00:44:30.749Z
   - 左右拖拽时，要区分水平移动和创建分栏，一般只在顶层创建分栏
   - 向左拖拽子级节点时，被拖拽节点会自动提升到父节点的下一个节点，符合预期，参考文件拖拽
 # roadmap
-- [future of library & maintenance_20230829](https://github.com/clauderic/dnd-kit/issues/1194)
+- 📡 [future of library & maintenance_20230829](https://github.com/clauderic/dnd-kit/issues/1194)
   - I want to reassure everyone that I'm still actively working on this library. 
   - The reason why a lot of issues have gone unaddressed for a while is that I have been working on a significant refactor of @dnd-kit since earlier this year.
   - Framework agnostic by building an agnostic layer that can be extended by concrete implementations, such as a DOM layer.

@@ -101,10 +101,28 @@ modified: 2023-09-17T17:37:19.913Z
 - 技术上根本没有障碍。JS可以做几乎任何事，但是很多事情会被浏览器给拦下来。
   - 比如你用js不借助file控件直接读写一个本地文件你觉得可能吗？如果真的可以后台直接操作，那当你打开某个网页时，你的所有电脑信息都可以被拷贝走
   - 但凡有点经验的开发都知道，所有放到前端的东西都是不安全的。
-# discuss-db-per-user
+# discuss-db-per-user 👣
 - ## 
 
-- ## 
+- ## 🐛 read this before you go do the “db per user” pattern
+- https://twitter.com/thdxr/status/1766450800425865279
+  - it makes a lot of things harder
+  - you cannot easily query across customers and while your primary application might not need to do this, internal functions often will
+  - any analytics questions you have, any admin or operations workflows require extra special architecture
+  - it forces replicating your data into a central place way earlier (we used bigquery) but that only works for reads
+  - schema and data migrations need to be fanned out N times - lot of stuff you have to invent for this
+  - it was worth it for us given the specific circumstances but i doubt i’d really ever do it again
+- Not to mention the problems you hit if/when you need a product feature to share data between users.
+  - What is the problem you're really trying to solve with db per user? Authorization. This is why I'm a fan of things like row level security.
+
+- What’s your opinion on something like ATTACH in SQLite. Allows you to connect to multiple DBs in a transaction. Would something like that have solved your issues?
+  - that maybe could have been helpful but probably still needs a few exotic things
+  - we used lmdb (similar, single file on disk) and the problem was not all files were on the same machine
+
+- Was doing this with Replicache + Turso and it definitely makes some things a bit more annoying
+  - I asked yesterday about the schema and data migration issue and they said they will have something to solve that in their launch week soon
+
+- Had to go in this direction of multi-tenancy two years back and instead chose to use RLS with custom policies in PostgreSQL to achieve the logical isolation.
 
 - ## [Apple built iCloud to store billions of databases | Hacker News_202401](https://news.ycombinator.com/item?id=39028672)
 - I leveraged FoundationDB and RecordLayer to build a transactional catalog system for all our data services at a previous company, and it was honestly just an amazing piece of software. 

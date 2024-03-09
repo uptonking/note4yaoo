@@ -11,6 +11,8 @@ modified: 2022-10-11T09:02:26.869Z
 
 - feathers框架为实时类应用而设计
 # blogs
+- [Pushpin | Generic Realtime Intermediary Protocol](https://pushpin.org/docs/protocols/grip/)
+  - GRIP makes it possible for a web service to delegate realtime push behavior to a proxy component
 
 ## [都2022年了，实时更新数据你还只会用短轮询? - 掘金](https://juejin.cn/post/7139684620777291807)
 

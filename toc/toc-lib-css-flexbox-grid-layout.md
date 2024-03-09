@@ -21,11 +21,13 @@ modified: 2021-01-28T21:31:18.697Z
   - 依赖material-ui.v3、immutablejs4、react-dnd7
   - [Build a Drag and Drop (DnD) layout builder with React and ImmutableJS](https://javascript.plainenglish.io/build-a-drag-and-drop-dnd-layout-builder-with-react-and-immutablejs-78a0797259a6)
 
-- muuri /10.1kStar/MIT/202107/js
+- muuri /10.1kStar/MIT/202107/js/inactive
   - https://github.com/haltu/muuri
   - https://muuri.dev/
   - a JavaScript layout engine that allows you to build all kinds of layouts 
   - and make them responsive, sortable, filterable, draggable and/or animated.
+  - Muuri is a combination of Packery, Masonry, Isotope and Sortable. 
+  - This project owes much to David DeSandro's Masonry, Packery and Isotope libraries.
   - https://github.com/paol-imi/muuri-react
     - React implementation of the amazing Muuri layout engine.
     - All Muuri features are implemented in a React-friendly way, with custom components and hooks

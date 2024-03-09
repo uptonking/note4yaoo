@@ -45,6 +45,9 @@ modified: 2022-11-29T20:41:25.566Z
 - [Fossil: The Fossil Sync Protocol](https://www.fossil-scm.org/home/doc/trunk/www/sync.wiki)
   - The "bag of artifacts" data model used by Fossil is apparently an implementation of a particular Conflict-Free Replicated Datatype (CRDT) called a "G-Set" or "Grow-only Set". 
   - [The Fossil Sync Protocol | Hacker News _202402](https://news.ycombinator.com/item?id=39464938)
+
+- [Pushpin | Generic Realtime Intermediary Protocol](https://pushpin.org/docs/protocols/grip/)
+  - GRIP makes it possible for a web service to delegate realtime push behavior to a proxy component
 # blogs-sync
 - [MongoDB Realm: Device Sync Protocol](https://www.mongodb.com/docs/atlas/app-services/sync/details/protocol/)
   - Atlas Device Sync uses a protocol to correctly and efficiently sync data changes in real time across multiple clients that each maintain their own local Realm files

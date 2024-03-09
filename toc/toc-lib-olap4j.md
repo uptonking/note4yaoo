@@ -75,6 +75,7 @@ modified: 2020-10-22T06:50:47.668Z
   - https://www.elastic.co/guide/en/kibana/current/index.html
   - Kibana is your window into the Elastic Stack. 
   - a browser-based analytics and search dashboard for Elasticsearch.
+  - [Kibana on Clickhouse data with Quesma - first working prototype _202402](https://quesma.com/blog-detail/kibana-on-clickhouse-data-with-quesma-first-working-prototype)
 
 - saiku /1.3kStar/apache2/201910/js+java/inactive
   - https://github.com/OSBI/saiku

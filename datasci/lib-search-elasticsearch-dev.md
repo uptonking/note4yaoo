@@ -86,4 +86,6 @@ modified: 2021-05-13T03:18:43.412Z
   - 更多的管理API
 # blogs
 - [OpenSearch vs Elasticsearch: An Up-to-Date Comparison - BigData Boutique blog _202304](https://bigdataboutique.com/blog/opensearch-vs-elasticsearch-an-up-to-date-comparison-5c1c71)
+# products-elk
+- [Online pivot tables (BI tool) | SeekTable](https://www.seektable.com/)
 # more

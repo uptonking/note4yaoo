@@ -11,6 +11,8 @@ modified: 2023-12-15T18:02:11.745Z
 
 # blogs
 - [DuckDB -- table的存储格式 | Tangdh's Blog_202307](https://tangdh.life/posts/database/duckdb-file/)
+
+- [Perf is not enough _202401](https://motherduck.com/blog/perf-is-not-enough/)
 # docs
 - DuckDB is a relational (table-oriented) DBMS that supports the Structured Query Language (SQL).
 - DuckDB is designed to support analytical query workloads, also known as Online analytical processing (OLAP). 

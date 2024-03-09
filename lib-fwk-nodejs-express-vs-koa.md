@@ -20,8 +20,8 @@ modified: 2022-12-19T01:55:03.539Z
   - 本文从 Handler 处理方式、中间件执行机制的实现、响应机制三个维度来对 Express、Koa 做了比较，
     - 通常都会说 Koa 是洋葱模型，这重点在于中间件的设计。
     - 但是按照上面的分析，会发现 Express 也是类似的，
-    - 不同的是Express 中间件机制使用了 Callback 实现，这样如果出现异步则可能会使你在执行顺序上感到困惑，因此如果我们想做接口耗时统计、错误处理 Koa 的这种中间件模式处理起来更方便些。
-  - 最后一点响应机制也很重要，Koa 不是立即响应，是整个中间件处理完成在最外层进行了响应，而 Express 则是立即响应。
+    - 不同的是Express中间件机制使用了 Callback 实现，这样如果出现异步则可能会使你在执行顺序上感到困惑，因此如果我们想做接口耗时统计、错误处理 Koa 的这种中间件模式处理起来更方便些。
+  - 最后一点响应机制也很重要，Koa不是立即响应，是整个中间件处理完成在最外层进行了响应，而 Express 则是立即响应。
 
 - [Express和Koa2的区别](https://segmentfault.com/a/1190000022536921)
 - 用法的区别
@@ -83,15 +83,15 @@ modified: 2022-12-19T01:55:03.539Z
     - 不过在实际的使用中，有可能用到的不止这两个中间件，
     - 比如有的团队会配合使用一些mock中间件或者http请求转发中间件等，
     - 就我看到的目前大部分还都是express，如果要替换，是这些一整套都要进行替换，成本还是比较大的~
-    - 而且作为前端工具来讲，在express生态比较成熟的情况下，硬要替换成koa感觉也没啥收益~
+    - 而且作为前端工具来讲，在express生态比较成熟的情况下，硬要替换成koa感觉也没啥收益
   - 知道callback的人async await的人多多了
   - express有着比koa2更多的中间件、社区资源
 
-- [Koa vs Express](https://github.com/koajs/koa/blob/master/docs/koa-vs-express.md)
+- 🆚️ [Koa vs Express](https://github.com/koajs/koa/blob/master/docs/koa-vs-express.md)
   - Philosophically, Koa aims to "fix and replace node", whereas Express "augments node".
   - Koa uses promises and async functions to rid apps of callback hell and simplify error handling. 
-    - It exposes its own ctx.request and ctx.response objects instead of node's req and res objects.
-  - Express, on the other hand, augments node's req and res objects with additional properties and methods 
+    - It exposes its own `ctx.request` and `ctx.response` objects instead of node's `req` and `res` objects.
+  - Express, on the other hand, augments node's `req` and `res` objects with additional properties and methods 
     - and includes many other "framework" features, such as routing, templating, jsonp, sending files, which Koa does not.
   - Thus, Koa can be viewed as an abstraction of node.js's http modules, where as Express is an application framework for node.js.
     - Thus, if you'd like to be closer to node.js and traditional node.js-style coding, you probably want to stick to Connect/Express or similar frameworks. 
@@ -99,22 +99,6 @@ modified: 2022-12-19T01:55:03.539Z
     - As result of this different philosophy is that traditional node.js "middleware", i.e. functions of the form (req, res, next), are incompatible with Koa. 
   - a lot of the Express goodies were moved to the middleware level in Koa to help form a stronger foundation
     - This makes middleware more enjoyable and less error-prone to write, for the entire stack, not just the end application code.
-
-- [Should I be using Koa over express?](https://www.reddit.com/r/node/comments/8iz642/should_i_be_using_koa_over_express/)
-  - The main reason that Koa got any real traction was during a period when Express wasn't receiving regular updates, and there were some ownership issues. 
-    - Express has since been donated to the Node.js Foundation and it's leaps and bounds more popular than any other framework (4.7M weekly downloads for Express vs 123k for Koa, 227k for Hapi). 
-    - You will find more documentation, training, support, and plugins for Express than other frameworks
-    - if you plan on working with other developers,
-    -  it's more likely that they'll have experience with Express compared to other frameworks
-
- - Either is fine. Express is still more popular. 
-   - Use koa if you like writing “onion” style middleware
-
-- [reddit: Koa vs Express](https://www.reddit.com/r/node/comments/f7da6o/koa_vs_express_without_the_bs/)
-- I use Koa on a side projects and I ran into issues in three areas:
-  - Piping binary content through a response (generated PDF created by an external process, got it working just was a bit complicated and way more examples for Express).
-  - Using existing admin modules that plug into Express but are not easy or but possible to get working on Koa. Example is say Arena queue admin UI (**). Ended up spinning up a separate admin Express instance on another port as a quick workaround.
-  - Not really Koa but made a choice on one of the router modules for it and got burned for a while (had to lock version) when that project changed their implantation breaking the way many had been hooking up routes. And that change was not on a major version bump 
 # more
 - [Bulletproof node.js project architecture ](https://dev.to/santypk4/bulletproof-node-js-project-architecture-4epf)
   - https://github.com/santiq/bulletproof-nodejs
@@ -126,6 +110,21 @@ modified: 2022-12-19T01:55:03.539Z
 - ## 
 
 - ## 
+
+- ## [Should I be using Koa over express?](https://www.reddit.com/r/node/comments/8iz642/should_i_be_using_koa_over_express/)
+- The main reason that Koa got any real traction was during a period when Express wasn't receiving regular updates, and there were some ownership issues. 
+  - Express has since been donated to the Node.js Foundation and it's leaps and bounds more popular than any other framework (4.7M weekly downloads for Express vs 123k for Koa, 227k for Hapi). 
+  - You will find more documentation, training, support, and plugins for Express than other frameworks
+  - if you plan on working with other developers, it's more likely that they'll have experience with Express compared to other frameworks
+
+ - Either is fine. Express is still more popular. 
+   - Use koa if you like writing “onion” style middleware
+
+- ## [reddit: Koa vs Express](https://www.reddit.com/r/node/comments/f7da6o/koa_vs_express_without_the_bs/)
+- I use Koa on a side projects and I ran into issues in three areas:
+  - Piping binary content through a response (generated PDF created by an external process, got it working just was a bit complicated and way more examples for Express).
+  - Using existing admin modules that plug into Express but are not easy or but possible to get working on Koa. Example is say Arena queue admin UI (**). Ended up spinning up a separate admin Express instance on another port as a quick workaround.
+  - Not really Koa but made a choice on one of the router modules for it and got burned for a while (had to lock version) when that project changed their implantation breaking the way many had been hooking up routes. And that change was not on a major version bump 
 
 - ## Express vs Fastify vs Oak vs Hono: Who’s runs fastest?
 - https://twitter.com/honojs/status/1756952637898141815
@@ -156,7 +155,7 @@ modified: 2022-12-19T01:55:03.539Z
 - Express' lack of support for async route handlers is a huge missing feature. And it's just been getting bigger with every passing year as async-await coding styles and APIs become more entrenched in the JS ecosystem.
   - I think even express v4 supports route handlers that return a promise
 
-- v4 only "supports" async handlers in the sense that they won't break anything. But Express completely ignores the returned promise. This creates a whole bunch of "issues-by-omission".
+- 🐛 v4 only "supports" async handlers in the sense that they won't break anything. But Express completely ignores the returned promise. This creates a whole bunch of "issues-by-omission".
 
 - I think Express is more likely to outlive Koa than vice versa. If you're looking for an alternative to Express, I'm consistently impressed with the ecosystem Walmart Labs is building around Hapi.
 

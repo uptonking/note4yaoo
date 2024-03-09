@@ -16,7 +16,10 @@ modified: 2024-02-19T05:24:00.064Z
 
 - ## 
 
-- ## 
+- ## [glassfish和tomcat各自的优势和劣势有哪些？ - 知乎](https://www.zhihu.com/question/20039000/answers/updated)
+- Tomcat是Servlet容器，GlassFish是JEE容器。JEE容器必然是包含Servlet容器这一部分功能的。
+  - ps: 以前版本的GlassFish，其内部的Servlet容器实现就是直接采用的Tomcat。
+  - JEE容器提供了更多的功能，同时也有方便的管理控制台可以在界面上进行各种配置和应用部署等，比Tomcat的Manager应用要功能丰富的多
 
 - ## [servlet的本质是什么，它是如何工作的？ - 知乎](https://www.zhihu.com/question/21416727)
 - 作用就是为java程序提供一个统一的web应用的规范，方便程序员统一的使用这种规范来编写程序，应用容器可以使用提供的规范来实现自己的特性。

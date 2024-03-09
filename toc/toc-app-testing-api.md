@@ -126,4 +126,8 @@ modified: 2023-02-08T10:25:14.173Z
 - https://github.com/liriliri/eruda /js
   - https://eruda.liriliri.io/
   - Console for Mobile Browsers.
+# jmeter
+- https://github.com/anthonygauthier/jmeter-es-backendlistener-dashboard /201810/js
+  - Dashboard to visualize JMeter results generated via the ElasticSearch Backend Listener. 
+  - Alternative to Grafana & Kibana.
 # more

@@ -28,12 +28,18 @@ modified: 2023-10-26T16:45:47.318Z
 - 
 - 
 - 
-- 
 
 # discuss
 - ## 
 
 - ## 
+
+- ## 
+
+- ## Hyperdrive is: https://hyperdrive-demo.pages.dev - but tl; dr: access Postgres (so far…) databases directly from Workers, 
+- https://twitter.com/elithrar/status/1766472461481054484
+  - make them faster via our network, put a HTTP API in front of your DB, and offload frequently run queries to our dialect-aware cache.
+- How does cache invalidation work with Hyperdrive?
 
 - ## Introducing PGlite - WASM Postgres running in the browser, Bun and Node
 - https://twitter.com/samwillis/status/1760735476343001553

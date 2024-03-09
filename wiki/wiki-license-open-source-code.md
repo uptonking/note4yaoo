@@ -460,9 +460,11 @@ modified: 2021-09-14T18:58:58.275Z
 - BSD 3-Clause License is a permissive license similar to the BSD 2-Clause License, but with a 3rd clause that prohibits others from using the name of the project or its contributors to promote derived products without written consent(允许、批准).
 # EDL(Eclipse Distribution License)
 - ref
-  - [Eclipse Distribution License v1.0](https://www.eclipse.org/org/documents/edl-v10.php)
 
-- [Is the EDL v1.0 GPL-compatible?](https://opensource.stackexchange.com/questions/10996/is-the-edl-v1-0-gpl-compatible)
+- [Eclipse Distribution License v1.0](https://www.eclipse.org/org/documents/edl-v10.php)
+  - The Eclipse Distribution License is an OSI Approved Open Source License by means of the New BSD License.
+
+- 💡 [Is the EDL v1.0 GPL-compatible?](https://opensource.stackexchange.com/questions/10996/is-the-edl-v1-0-gpl-compatible)
   - The Eclipse Distribution License (EDL) is just an alternative name for the BSD 3-clause license, listed by the GNU project as the modified BSD license.
   - This is a highly permissive license that is widely compatible with other licenses, including the GPL and AGPL in all versions.
 # MIT

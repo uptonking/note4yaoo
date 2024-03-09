@@ -9,6 +9,10 @@ modified: 2023-10-27T09:12:16.163Z
 
 # guide
 
+# products-db
+- [dbdiagram.io - Database Relationship Diagrams Design Tool](https://dbdiagram.io/home)
+  - simple tool to draw ER diagrams by just writing code
+  - Designed for developers and data analysts
 # discuss-stars
 - ## 
 

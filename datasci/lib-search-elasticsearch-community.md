@@ -19,6 +19,18 @@ modified: 2023-01-02T08:49:39.114Z
 - They've long since implemented these on KD-trees (which work in multiple dimensions too for geographic queries), but doing it on a trie like that was a cool hack. The tens of hours I spent studying the Lucene implementation a few years ago are really paying off as I start to implement filtering in turbopuffer. not easy.
   - Trie has been deprecated for years, but the pro secret is that it was/is still more efficient for some use cases. I saw this in production on some of the world’s largest retail applications that still run Solr. I know Shopify moved to ES long ago, though.
 
+# discuss-elk-stack
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Alternatives to ELK (filebeat, logstash, kibana, elasticsearch) : r/sysadmin _202207](https://www.reddit.com/r/sysadmin/comments/w19k5l/alternatives_to_elk_filebeat_logstash_kibana/)
+- Grafana Loki would be worth checking out.
+
+- Currently; I use ELK stack for production web logs and application; we generate around 100-150GB/day and keep at least 90 days of "full" logs; before
+  - We're currently leaning towards FluentD => Logstash => Clickhouse (with metabase and Grafana for query/dashboarding)
 # discuss-opensearch-aws
 - ## 
 

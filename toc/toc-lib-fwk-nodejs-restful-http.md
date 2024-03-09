@@ -192,6 +192,11 @@ modified: 2022-12-19T01:51:01.389Z
 - https://github.com/plantain-00/protocol-based-web-framework
   - A protocol and code generation based web framework.
   - db支持sqlite、postgres、mongodb
+
+- https://github.com/senchalabs/Connect /MIT/201905/js/inactive
+  - Connect is an extensible HTTP server framework for node using "plugins" known as middleware.
+  - The core of Connect is "using" middleware. Middleware are added as a "stack" where incoming requests will execute each middleware one-by-one until a middleware does not call `next()` within it.
+  - These middleware and libraries are officially supported by the Connect/Express team
 # rest-starter
 - https://github.com/criscunas/todo-server
   - Backend API for Todo App built with Node & Express.

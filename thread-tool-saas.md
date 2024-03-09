@@ -52,7 +52,11 @@ modified: 2023-05-07T18:35:50.897Z
 
 - ## 
 
-- ## 
+- ## http://SchemaStore.org now serves 1.6 TB of data every single day, and that number just keeps going up. 
+- https://twitter.com/mkristensen/status/1766232046349984046
+  - Pretty much all modern IDEs and editors consume it for both JSON, YAML, and TOML schemas. It's mind-blowing to me.
+  - Thank you, Microsoft, for sponsoring the massive amount of traffic
+- Mostly immutable data - what’s the cache policy? Could this have been done by a CDN?
 
 - ## 我的密码管理最佳实践
 - https://twitter.com/kinokoameme/status/1765950237515141363
@@ -67,7 +71,7 @@ modified: 2023-05-07T18:35:50.897Z
 推特：#3xKtwitter
 微信：#3xKwechat
 支付宝：#3xKalipay
-4. 【重要】设置随服务名不同而变化的魔数。再制定一条可以简单心算的规则，比如服务名的字母对应9键键盘的数字之类的（可以选取一部分，比如前两个后两个之类的）。
+1. 【重要】设置随服务名不同而变化的魔数。再制定一条可以简单心算的规则，比如服务名的字母对应9键键盘的数字之类的（可以选取一部分，比如前两个后两个之类的）。
 
 - 依照上述规则制定的密码有如下好处。
 1. 规则固定简单，只需脑记即可，无需任何工具劳神，也不存在忘记的可能。

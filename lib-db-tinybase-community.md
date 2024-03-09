@@ -100,7 +100,16 @@ modified: 2023-04-21T11:42:46.575Z
 
 - ## 
 
-- ## 
+- ## 🧮 Merkle CRDTs look really interesting and I'm considering them for TinyBase. _20240203
+- https://twitter.com/jamespearce/status/1753783959417155746
+- My previous company built Noms and prolly trees. Replicache started out based on Noms, but we moved away from it. Neither are CRDTs, but closely-related. 
+
+- I’m starting to like a rebase model over a crdt model 
+- What is rebase model?
+  - In the limit they’re equivalent. Rebasing would mean that you keep a mutation log and each peer is able to rebase new mutations into their logs such that everyone eventually processes all mutations in the same order.
+- So linear history with some kind of ordering consistency once all peers have the same changes?
+  - Yeah. I wrote a bit about how one might do this in SQLite
+  - You could also have a non linear history if you can flag branches and version the database
 
 - ## TinyBase v3 is going to have two demos to showcase CRDT synchronization.
 - https://twitter.com/jamespearce/status/1608520684795465728

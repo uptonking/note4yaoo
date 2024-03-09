@@ -9,7 +9,18 @@ modified: 2024-02-11T15:11:31.598Z
 
 # guide
 
-# monitoring
+# grafana/kibana-like
+- https://github.com/metrico/qryn /AGPLv3/202403/js/go
+  - https://qryn.dev/
+  - polyglot, lighweight, multi-standard drop-in observability framework for Logs, Metrics and Traces
+  - All-in-one Polyglot Observability stack with OLAP storage. 
+  - Drop-in LGTM compatible with Loki, Prometheus, Tempo, Pyroscope, Opentelemetry and more
+  - wasm powered 
+- https://github.com/metrico/qryn-view /AGPLv3/202402/ts
+  - http://view.cloki.org/
+  - qryn polyglot user interface to explore logs, metrics and traces 
+  - Grafana Explore alternative compatible with Loki, Prometheus and Tempo
+# monitoring/observability
 - https://github.com/hyperdxio/hyperdx /MIT/202402/ts
   - https://hyperdx.io/
   - open source observability platform unifying session replays, logs, metrics, traces and errors powered by Clickhouse and OpenTelemetry.
@@ -60,6 +71,16 @@ modified: 2024-02-11T15:11:31.598Z
   - https://posthog.com/
   - open-source product analytics, session recording, feature flagging and A/B testing that you can self-host.
   - Analyze data with ready-made visualizations, or do it yourself with SQL
+
+- https://github.com/perses/perses /apache2/202403/go/ts
+  - https://demo.perses.dev/
+  - The CNCF candidate for observability visualisation. 
+  - Already supports Prometheus - more data sources to come
+  - we want to promote the project to the Cloud Native Computing Foundation and be part of the monitoring tools like Prometheus or Thanos.
+
+- https://github.com/ccfos/nightingale /go/python
+  - 夜莺 Nightingale 是中国计算机学会接受捐赠并托管的第一个开源项目，是一个 All-in-One 的云原生监控工具，
+  - 集合了 Prometheus 和 Grafana 的优点，你可以在 WebUI 上管理和配置告警策略，也可以对分布在多个 Region 的指标、日志、链路追踪数据进行统一的可视化和分析。
 # examples
 - https://github.com/dillionverma/llm.report /GPLv3/202402/ts
   - open-source logging and analytics platform for OpenAI: Log your ChatGPT API requests, analyze costs, and improve your prompts.
@@ -80,3 +101,6 @@ modified: 2024-02-11T15:11:31.598Z
   - Users can watch adhoc log streams by activating inputs and binding them to multiple screens via the web UI.
   - log.io uses a stateless TCP API to receive log messages.
 # more
+- https://github.com/anthonygauthier/jmeter-es-backendlistener-dashboard /201810/js
+  - Dashboard to visualize JMeter results generated via the ElasticSearch Backend Listener. 
+  - Alternative to Grafana & Kibana.

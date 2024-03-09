@@ -22,7 +22,7 @@ modified: 2021-07-20T13:50:23.433Z
   - 抽空在线体验，工作专注代码
   - specification for pivot table
 
-- 技术方向js: 前端版/流式版/oplog; 富文本编辑器，多维表格，协作; dnd，floating
+- 技术方向js: 前端版/流式版/oplog; 富文本编辑器，多维表格，协作/db/git; dnd，floating
 - 技术扩展js/py: 可拖拽的页面编辑器/lowcode, Excel/kanban, 图表
 - 技术产品: client/server版; cms, airtable/table, db, git-squash
 - 技术可选1: 画板, pdf，图形编辑器

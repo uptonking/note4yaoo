@@ -12,6 +12,8 @@ modified: 2022-12-04T16:34:29.342Z
 # discuss
 - ## 
 
+- ## 
+
 - ## 为啥感觉国内没有类似 ProductHunt 这样的网站火起来
 - https://twitter.com/liumengxinfly/status/1763235401463152981
 - 国内独立开发收个款都得鸡飞狗跳，搞这种网站不成了网安重点审查中心（但我也很好奇为啥没有
@@ -33,6 +35,13 @@ modified: 2022-12-04T16:34:29.342Z
 - ## 
 
 - ## 
+
+- ## Great tech doesn't pop up because one developer thought of it. They are born from hard lessons and solve hard problems.
+- https://twitter.com/RaulJuncoV/status/1766486051407667475
+  - Git: It lets you keep track of changes in your project so you can work better with others.
+  - CI/CD: Automates software delivery. You can build, test, and deploy your project faster and more reliably.
+  - Cloud Computing Platforms (AWS, Azure, GCP): Gives you computer power when you need it without buying equipment.
+  - Kubernetes: Simplifies container orchestration, enabling automated deployment, scaling, and management of containerized applications.
 
 - ## 非常喜欢字节和北大一起做的这个古籍网站「识典古籍」。
 - https://twitter.com/fm100/status/1765970319247106348

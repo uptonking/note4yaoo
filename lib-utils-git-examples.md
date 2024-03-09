@@ -73,6 +73,12 @@ modified: 2023-08-29T10:12:22.345Z
     - GitButler allows you to work with multiple branches in parallel in the same working directory.
     - GitButler is aware of changes before they are committed. This allows it to keep a record of which virtual branch each individual diff belongs to.
     - while in Git it is preferable that you create your desired branch ahead of time, using GitButler you can move changes between virtual branches at any point during development.
+
+- https://github.com/MichaelMure/git-bug /GPLv3/202310/go
+  - Distributed, offline-first bug tracker embedded in git, with bridges
+  - fully embedded in git: you only need your git repository to have a bug tracker
+  - distributed: use your normal git remote to collaborate, push and pull your bugs
+  - use bridges to import and export to other trackers.
 # git-like
 - https://github.com/GerritCodeReview/jgit /EDL(BSD)/202310/java
   - https://eclipse.dev/jgit/
@@ -81,6 +87,11 @@ modified: 2023-08-29T10:12:22.345Z
   - Native symbolic links are supported, provided the file system supports them. 
   - For Windows you must use a non-administrator account and have the SeCreateSymbolicLinkPrivilege.
   - JGit can use JDBC, HBase, Cassandra, Bigtable and more and it's thread safe.
+  - There are some missing features:
+    - shallow and partial cloning
+    - support for multiple working trees (git-worktree)
+    - using external diff tools
+    - git protocol V2 (client side): packfile-uris
 
 - https://github.com/gitblit-org/gitblit /apache2/202311/java
   - http://gitblit.com/
@@ -166,11 +177,12 @@ modified: 2023-08-29T10:12:22.345Z
   - https://corylus.dev/
   - Corylus is a graphical user interface for Git. 
   - It aims to offer much of the power and flexibility of Git without having to remember CLI commands.
-# git-server
+# git-server/gitlab-like
 - github-alternatives
   - ruby: gitlab
   - go: gitea, gogs
   - java: onedev
+  - rust: 多是git的挑战者
   - Git comes with a CGI script called GitWeb
   - https://github.com/ianchanning/awesome-github-alternatives
     - a list of alternatives to GitHub, that by default offer Git management in some way.
@@ -203,15 +215,23 @@ modified: 2023-08-29T10:12:22.345Z
   - Gitness is an Open Source developer platform with Source Control management, Continuous Integration and Continuous Delivery.
   - It is largely based on the existing Drone repository, but for Git capabilities we used the Gitea fork of https://github.com/gogs/git-module
 
-- https://github.com/theonedev/onedev /MIT/202401/java
+- https://github.com/theonedev/onedev /MIT/202401/java/不依赖spring
   - https://onedev.io/
   - Self-hosted Git Server with CI/CD and Kanban
+  - 依赖jgit、shiro、hibernate、glassfish
   - We develop OneDev at https://code.onedev.io/ for sake of dogfooding.
+  - it is using JGit for most operations. JGit API is very well designed and is a joy to use.
+    - The performance is very good, except for long operations such as full clone.
+    - So for pull/push I am calling native git, but for other operations which may need to be executed several times during a request I am using JGit which is much faster thanks for the in-process cache.
 
-- https://github.com/mellowagain/gitarena /MIT/202306/rust
+- https://github.com/mellowagain/gitarena /MIT/202306/rust/inactive
   - Software development platform with built-in vcs, issue tracking and code review
   - lightweight and performant alternative to the likes of GitLab and Gitea, built with self-hosting and cross-platform/cross-architecture support in mind.
-  - 依赖libmagic
+  - 依赖libmagic、gitoxide
+  - Currently, GitArena is work in progress and is not yet fully featured. The basics such as repositories and pushing/pulling as well as accounts work
+  - [switch to using custom backend for git](https://github.com/mellowagain/gitarena/issues/58)
+    - libgit2 allows custom backends, should consider this with e.g S3
+    - maybe gitoxide also provides such a backend?
 
 - https://github.com/alexwennerberg/mygit /AGPLv3/202108/rust/inactive
   - Simple self-hosted git server, written in Rust

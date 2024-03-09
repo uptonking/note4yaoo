@@ -64,7 +64,14 @@ modified: 2023-01-23T19:27:46.948Z
   - soketi implements the Pusher Protocol v7. Therefore, any Pusher-maintained or compatible client can connect to it
   - Soketi is capable to hold thousands of active connections with high traffic on less than 1 GB and 1 CPU in the cloud
 
-- https://github.com/kartikk221/hyper-express /js
+
+- https://github.com/fanout/js-serve-grip /MIT/202309/ts
+  - GRIP library for Node.js, provided as connect-compatible middleware.
+  - [Pushpin | Generic Realtime Intermediary Protocol](https://pushpin.org/docs/protocols/grip/)
+    - GRIP is a protocol that enables a web service to delegate realtime push behavior to a proxy component, using HTTP and headers.
+  - 
+
+- https://github.com/kartikk221/hyper-express /MIT/202402/js
   - High performance Node.js webserver with a simple-to-use API powered by uWebsockets.js under the hood
   - Limited Express.js API Compatibility Through Shared Methods/Properties
 

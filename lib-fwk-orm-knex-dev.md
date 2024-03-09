@@ -25,7 +25,7 @@ modified: 2023-01-22T19:52:21.676Z
   - app: nocodb, locokit, budibase, automatisch
   - fwk: feathers.v5: 基于schema+resolver，通过knex+mongoose支持rdbms和nosql
   - libs: bookshelf, mikro-orm, adonisjs-lucid
-  - more: undb, lightdash
+  - more: undb, lightdash, joplin-server
 # dev
 - knex is for relational data. Using it with Mongo doesn't make much sense. I wholeheartedly recommend Mongoose.
 # [changelog](https://github.com/knex/knex/blob/master/CHANGELOG.md)

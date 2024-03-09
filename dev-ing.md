@@ -321,6 +321,18 @@ betterdiscordctl -i flatpak install
 
 ## 030
 
+## 0309
+
+- [What is the difference between “rethink” and “think again”? - English Language & Usage Stack Exchange](https://english.stackexchange.com/questions/444690/what-is-the-difference-between-rethink-and-think-again)
+  - ‘think again’ is the simple long-established English way of expressing the idea.
+  - 'Think Again" carries the certainty that the other person is wrong, whereas 'please rethink' is simply a request that they reconsider.
+
+- [Is it "twice more" or "twice again" ? : r/ENGLISH](https://www.reddit.com/r/ENGLISH/comments/14wsisp/is_it_twice_more_or_twice_again/)
+  - "two times" is replaced by "twice".
+  - “Two more times” is correct. “Twice more” sounds wrong.
+  - "twice more" = the amount of times that it happened goes up by two.
+  - "twice again" = it happened two times, and then it happened two times after that.
+
 ## 0307
 
 - [Sequelize error - "model.get is not a function" - Stack Overflow](https://stackoverflow.com/questions/46475953/sequelize-error-model-get-is-not-a-function)

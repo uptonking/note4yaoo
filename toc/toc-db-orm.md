@@ -189,7 +189,6 @@ modified: 2021-08-30T18:56:09.644Z
 
 - https://github.com/DavidDuwaer/Coloquent /MIT/202202/ts/inactive
   - library mapping objects and their interrelations to JSON API, with a clean, fluent ActiveRecord (e.g. similar to Laravel's Eloquent) syntax for creating, retrieving, updating and deleting model objects
-
 # odm/object-document-mapper
 - https://github.com/NaturalCycles/db-lib /202401/ts
   - Lowest Common Denominator API to supported Databases
@@ -232,9 +231,10 @@ modified: 2021-08-30T18:56:09.644Z
   - You can choose different adapters and use the same CRUD interface: MemoryAdapter, RESTAdapter or SQLAdapter.
   - The http mock server(@memoria/server) can be run in-browser and node environments, thus allows for running your in-memory test suite in SSR(server-side rendering) environment if it is needed.
 
-- https://github.com/js-data/js-data /202201/js/inactive
+- https://github.com/js-data/js-data /MIT/202201/js/inactive
   - JSData is a framework-agnostic, datastore-agnostic ORM for Node.js and the Browser.
   - Adapters allow JSData to connect to various data sources such as Firebase, MySql, RethinkDB, MongoDB, localStorage, Redis, a REST API
+  - With JSData you can re-use your data modeling code between environments, with a unified data API on the server and the client. 
 
 - https://github.com/paperhive/octonom /201802/ts
   - General-purpose models and collections with multi-database support, written in TypeScript

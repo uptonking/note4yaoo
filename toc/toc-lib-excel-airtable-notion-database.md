@@ -456,6 +456,10 @@ modified: 2022-08-21T10:02:05.129Z
   - Vika JavaScript SDK 是对维格表 Fusion API 的官方封装，可以很方便的对你的维格表中的数据进行增删改查操作。
   - 你可以轻松的将维格表中的数据集成到你自己的应用中
 
+- https://github.com/teableio/airtable2teable /MIT/202311/ts
+  - https://teable.io/
+  - The data pipeline from airtable to teable.
+
 - https://github.com/whitebrick/whitebrick /202202/ts/deprecated/未完成
   - Open Source Airtable Alternative (No Code DB)
   - Whitebrick is a lightweight No Code Database with 3 points of difference:

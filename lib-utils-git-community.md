@@ -528,7 +528,7 @@ modified: 2023-08-29T10:13:31.070Z
 
 - Yes it is using JGit for most operations. JGit API is very well designed and is a joy to use. 
   - The performance is very good, except for long operations such as full clone. 
-  - So for pull/push I am calling native git, but  for other operations which may need to be executed several times during a request I am using JGit which is much faster thanks for the in-process cache. 
+  - So for pull/push I am calling native git, but for other operations which may need to be executed several times during a request I am using JGit which is much faster thanks for the in-process cache. 
 # discuss-git-alternatives 🆚️
 - ## 
 

@@ -42,6 +42,8 @@ modified: 2022-08-21T10:38:26.289Z
 
 - [Superlist: Home to all your lists](https://www.superlist.com/)
   - 设计简洁
+# airtable-like
+- [Teable - Postgres-Airtable Fusion](https://teable.io/)
 # excel-ecosystem
 - [Wax](https://www.wax.run/)
   - Build apps and reports in Google Sheets.
