@@ -28,6 +28,9 @@ modified: 2023-01-22T19:52:21.676Z
   - more: undb, lightdash, joplin-server
 # dev
 - knex is for relational data. Using it with Mongo doesn't make much sense. I wholeheartedly recommend Mongoose.
+
+- migrate
+  - migrations下的脚本，up和down需要return才能在db中创建表，不return就不会创建
 # [changelog](https://github.com/knex/knex/blob/master/CHANGELOG.md)
 - resources
   - [Changelog | Knex.js](https://knexjs.org/changelog.html)

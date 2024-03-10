@@ -10,6 +10,10 @@ modified: 2022-11-24T11:39:26.000Z
 # guide
 
 # goals
+- powerful editing
+- dom-based view
+- crdt
+
 - 兼容主流数据格式, 如docx/xlsx
 # dev-to
 

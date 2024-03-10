@@ -30,7 +30,35 @@ modified: 2023-02-05T18:49:31.166Z
   - You can define two database config in replication.read and replication.write options for Sequelize constructor config. You can define any number of read replicas (config accept array). All your read queries will be sent to read replicas by round robin scheduling technique.
 - ORM should never be in charge of populating read/write replicas, it should be managed by your db service provider. Have you used replicas before?
 # docs-v7
+- If you simply want to store and retrieve a JSON representation, using `JSON` will take less disk space and less time to build from its input representation. 
+  - However, if you want to do any operations on the JSON value, you should prefer the `JSONB` data type.
 
+## [Inheritance | Sequelize](https://sequelize.org/docs/v7/models/inheritance/)
+
+- Model inheritance is a way to share common attributes and methods between models.
+  - Sequelize supports a style of inheritance called Concrete Table Inheritance. 
+  - This means that each non-abstract model in the hierarchy has its own table in the database
+
+- Some models are not meant to be used directly. They are meant to be used as a base class for other models. Those models are called abstract models.
+  - Those models should not be registered in the Sequelize instance, to prevent them from creating a table in the database. 
+
+## [Paranoid Models | Sequelize](https://sequelize.org/docs/v7/models/paranoid/)
+
+- A paranoid(患妄想狂的；患偏执狂的) table is one that, when told to delete a record, will not truly delete it. 
+  - Instead, it will record that the model is deleted by setting its "deleted at" column to the current timestamp.
+  - This means that paranoid tables perform a soft-deletion of records, instead of a hard-deletion.
+
+## [Transactions | Sequelize](https://sequelize.org/docs/v7/querying/transactions/)
+
+- Managed transactions (recommended): Sequelize will automatically rollback the transaction if any error is thrown, or commit the transaction otherwise. Queries also automatically use the active transaction by default.
+- Unmanaged transactions: Committing and rolling back the transaction must be handled manually by the user (by calling the appropriate Sequelize methods).
+
+## [Read Replication | Sequelize](https://sequelize.org/docs/v7/other-topics/read-replication/)
+- Sequelize supports read replication, i.e. having multiple servers that you can connect to when you want to do a `SELECT` query. 
+  - When you do read replication, you specify one or more servers to act as read replicas, and one server to act as the main writer, which handles all writes and updates and propagates them to the replicas 
+  - (note that the actual replication process is not handled by Sequelize, but should be set up by database backend).
+
+- 
 - 
 - 
 - 

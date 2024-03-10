@@ -76,6 +76,10 @@ modified: 2023-01-22T19:52:59.120Z
   - Build on top of knex.js
   - async/await or promise friendly
 
+- https://github.com/sutandojs/sutando /MIT/202402/js
+  - https://sutando.org/
+  - a modern Node.js ORM, like Laravel Eloquent
+
 - https://github.com/dgadelha/knex-playground /202310/ts
   - https://dgadelha.github.io/knex-playground/
   - 在类似vscode的浏览器界面中查看sql 
@@ -146,6 +150,7 @@ modified: 2023-01-22T19:52:59.120Z
 - https://github.com/gothinkster/koa-knex-realworld-example /201910/js/archived
   - Example Node (Koa.js + Knex) codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the RealWorld spec and API.
   - 在controller中直接用knex构建并执行sql
+  - 提供了建表的knex脚本
   - 🍴 forks
   - https://github.com/EJIqpEP/koa-knex-realworld-example /202205/js
     - Updated sqlite3, Fixed bcrypt
@@ -160,6 +165,7 @@ modified: 2023-01-22T19:52:59.120Z
   - https://github.com/kenyipp/realworld-nodejs-example-app/tree/eef7b22eff24e3249dba5f7eedebea3d865de967 /202207/js
     - 早期版本基于express、knex2实现
     - 采用controller/model两层架构, model实际上是dao因为封装了knex方法
+    - 提供了建表的sql
 
 - https://github.com/LimarenkoDenis/typescript-node-koa-realworld-example-app /201710/ts
   - fullstack application built with Koa.js + Knex including CRUD operations, authentication, routing, pagination, and more.
@@ -167,6 +173,7 @@ modified: 2023-01-22T19:52:59.120Z
 
 - https://github.com/avanelli/fastify-realworld-example-app /202303/js
   - Fastify + Knex.js - Realworld Example App
+  - [提供了建表的knex脚本](https://github.com/avanelli/fastify-realworld-example-app/blob/main/knex/migrations/20220919145459_create.js)
   - https://github.com/Z-Ferguson/Fastify-Knex-PostgreSQL-Conduit /202305/js
 
 - https://github.com/PedroPadilhaPortella/Medium_Clone_NgRx /202208/be-js/fe-ts/inactive
@@ -184,14 +191,28 @@ modified: 2023-01-22T19:52:59.120Z
 - https://github.com/dyshaev-working/nodejs-express-typescript-knex-psql-crud-example /202012/ts
   - Example CRUD application Express/Knex/PostgreSql
   - 采用controller/service/dao三层架构，函数式风格
-  - 实现简单，仅1个route
+  - 实现简单，仅1个route，无jwt
 
-- https://github.com/icapps/nodejs-silverback /201902/ts
+- https://github.com/icapps/nodejs-silverback /ISC/201902/ts
   - NodeJS boilerplate project
   - 采用controller/service/repository/model四层架构，函数式风格，经典架构
   - repository层使用knex，model层仅定义schema类型及crud方法参数类型
   - 依赖express、redis、tree-house-authentication
-  - 功能丰富，包括auth/mail
+  - 功能丰富，包括auth/mail; 团队转向nestjs
+  - redis用于测试和auth-session
+  - https://github.com/icapps/react-silverback /201807/js
+    - 依赖react-redux、bootstrap4
+  - https://github.com/icapps/tree-house /202107/ts
+    - NodeJS utilities and handy helpers extending ExpressJS functionalities
+    - setBasicSecurity,setBodyParser,getRateLimiter
+  - https://github.com/icapps/tree-house-authentication /202301/ts
+    - authentication utilities and JWT methods; Two-factor auth
+  - https://github.com/icapps/tree-house-storage /202207/ts
+    - multipartUpload, Local filesystem, S3
+  - https://github.com/icapps/nodejs_boilerplate /202111/ts/单文件
+  - https://github.com/icapps/nodejs-express-template /201711/ts
+    - 依赖sequelize4
+    - 采用controller/serviec/model三层架构, class风格
 
 - https://github.com/Zarkus13/pizza-pasta-api /202211/ts/inactive
   - Pizza & Pasta API using Node.js, Express, TypeScript, Knex, Zod
@@ -200,12 +221,14 @@ modified: 2023-01-22T19:52:59.120Z
 
 - https://github.com/dhruvsaxena1998/node-typescript-starter /202110/ts/inactive
   - Node.js express template written with typescript.
-  - 采用controller/service/repository三层架构，class风格，经典架构
+  - ✨ 采用controller/service/repository三层架构，class风格，经典架构
+  - 依赖express、jsonwebtoken、swagger-ui-express
 
 - https://github.com/santoshshinde2012/node-ts-knex-boilerplate /202402/tsconfig
   - Node-Typescript-Knex-Boilerplate
   - 采用controller/service/entity三层架构，class风格, 可按业务modules划分架构
   - service层操作db，entity层定义schema和配置
+  - 未实现jwt
 
 - https://github.com/cdellacqua/express-knex-typescript-template /202311/ts/ssr-pug
   - Express.js template using TypeScript, Knex and Docker to head-start development.
@@ -619,6 +642,10 @@ modified: 2023-01-22T19:52:59.120Z
 - https://github.com/Vincit/knex-db-manager /ISC/202008/js
   - Utility for create, drop, truncate etc. administrative database operations.
   - Library uses knex connection for non administrative queries, but also creates privileged connection directly with driver with superuser privileges for creating and dropping databases / roles.
+
+- https://github.com/leapfrogtechnology/sync-db /MIT/202306/ts/inactive
+  - Command line utility to synchronize and version control relational database objects across databases.
+  - This utility uses Knex under the hood
 # more
 - https://github.com/nire0510/jsoq /GPLv3/202310/ts
   - Query and manipulate JSON arrays easily. 

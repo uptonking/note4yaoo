@@ -110,6 +110,23 @@ modified: 2021-08-30T07:01:09.493Z
 - The code for dynamic `import` can be placed in the `head` of the file instead of inside the `onClick` function, two benefits: 
   - 1. maintain page performance (dynamic import will start loading after the static import), 
   - 2. no need to wait to use the function inside the onClick function
+# discuss-stars
+- ## 
+
+- ## [Events vs Streams vs Observables vs Async Iterators - Stack Overflow](https://stackoverflow.com/questions/39439653/events-vs-streams-vs-observables-vs-async-iterators)
+- There are roughly two categories of APIs here: pull and push.
+  - Push APIs are a good fit for when something is generating data, and the data being generated does not care about whether anyone wants it or not
+  - Async pull APIs are a good fit for cases where data is pulled from a source. This source might be a file, or a network socket, or a directory listing, or anything else. The key is that work is done to pull or generate data from the source when asked.
+
+- ## [Would it be a good idea to unify generators and async-await? : r/ProgrammingLanguages _202008](https://www.reddit.com/r/ProgrammingLanguages/comments/igy5jd/would_it_be_a_good_idea_to_unify_generators_and/)
+  - Many languages, including C#, Python and JavaScript, support both generators via yield and concurrency via async-await.
+  - C# (conceptually) uses source-code transformation to turn coroutine functions of both types into state machines. 
+  - Python has the ability to suspend and resume individual stack frames.
+  - Do you think it would be a good idea to offer a single coroutine feature, instead of separate generators and async-await?
+
+- That’s what goroutines do in golang. Channels and channel-operations are used to model both concurrency and generators. The same is true for core.async in clojure.
+
+- This is what Kotlin does. They offer a generic coroutine framework that lets you build “suspend” functionality
 # discuss
 - ## 
 

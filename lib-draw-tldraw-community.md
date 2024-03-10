@@ -190,6 +190,19 @@ modified: 2023-06-19T12:33:38.006Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🌰 Is it possible to write a custom renderer for @tldraw ? 
+- https://twitter.com/tldraw/status/1766569569009758657
+  - It is incredibly for making diagrams, but I want to write an article where the diagrams are a bit stylized (different font, post process to give it a "paper-y" feel, etc).
+  - I'd love to write little custom shaders/logic
+- Sort of, yeah! The easiest might be using CSS to hide the shape container (.tl-shapes) and then replace the `Background` component with a canvas. Then pull data from the editor to render it.
+  - 作者实现了一个简单示例
+
 - ## the tldraw dot com source code is now available on our public repo. _20240118
 - https://twitter.com/steveruizok/status/1747677160230269200
   - If you’ve ever wondered how the share feature or our multiplayer sync works, take a look!

@@ -26,6 +26,12 @@ modified: 2021-01-28T14:34:20.579Z
 
 - ## 
 
+- ## 
+
+- ## It annoys me to no end that the return type of `Object.keys(T)` is `string[]` and not `(keyof T)[]` .
+- https://twitter.com/rossipedia/status/1766699756745638318
+- ts-reset library (which attempts to fix similar shortcomings of ts) comments on the reason why this might not be the ideal solution
+
 - ## 🆚️ Type predicates (like 'pet is Fish' below) are no safer than 'as'.
 - https://twitter.com/mattpocockuk/status/1758523382155415953
   - I've started using them less in my code.

@@ -7,10 +7,20 @@ modified: 2023-02-06T09:14:21.143Z
 
 # lib-net-api-openapi-swagger
 
+# guide
+
+- resources
+  - https://editor.swagger.io  /支持在线转换格式; 直接粘贴json/yml
 # openapi
-- OpenAPI 规范（OAS）是一种通用的、和编程语言无关的 API 描述规范，使人类和计算机都可以发现和理解服务的功能，而无需访问源代码、文档或针对接口进行嗅探。正确定义后，使用者可以使用最少的实现逻辑来理解远程服务并与之交互。
+- OpenAPI规范（OAS）是一种通用的、和编程语言无关的 API 描述规范，使人类和计算机都可以发现和理解服务的功能，而无需访问源代码、文档或针对接口进行嗅探。
   - OpenAPI 始于 Swagger 规范，Swagger 规范已于 2015 年捐赠给 Linux 基金会后改名为 OpenAPI，并定义最新的规范为 OpenAPI 3.0。
+
+- [OpenAPI Specification - Wikipedia](https://en.wikipedia.org/wiki/OpenAPI_Specification)
 # swagger
+
+## [swagger - How to convert OpenAPI 2.0 to OpenAPI 3.0? - Stack Overflow](https://stackoverflow.com/questions/59749513/how-to-convert-openapi-2-0-to-openapi-3-0)
+
+- Paste your OpenAPI 2.0 definition into https://editor.swagger.io and select Edit > Convert to OpenAPI 3 from the menu.
 
 ## [swagger跟openAPI不同](https://blog.csdn.net/fanzhongcang/article/details/102695534)
 
@@ -79,3 +89,6 @@ modified: 2023-02-06T09:14:21.143Z
 - A webhook is a type of event-driven API. 
   - Rather than sending information in response to another app's request, a webhook sends information or performs a specific function in response to a trigger—like the time of day, clicking a button, or receiving a form submission. 
   - Since the application sending the data initiates the transfer, webhooks are often referred to as "reverse APIs." 
+# more
+- [Migration from Swagger 2 to OpenAPI 3 _202105](https://medium.com/javarevisited/migration-from-swagger-2-to-openapi-3-391f3e97da73)
+  - 基于spring注解

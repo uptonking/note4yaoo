@@ -12,7 +12,21 @@ modified: 2022-11-08T10:34:34.820Z
 # work-xp
 - ## 
 
-- ## 
+- ## As an experienced backend engineer. Please learn:
+- https://twitter.com/SumitM14455640/status/1766522519778189790
+  - SOLID design principles 
+  - Multithreading 
+  - Immutability 
+  - Streaming , messaging
+  - Caching
+  - Security - SSL, JWT, OAuth
+  - factory, decorator, singleton, obeservable design patterns
+  - TDD
+- As an "experienced" engineer, learn to:
+  - Communicate up, down and sideways
+  - Write detailed design & arch docs
+  - Provide constructive feedback during reviews
+  - Effectively breakdown large features
 
 - ## 为什么程序员这行对持续学习要求这么高呢？
 - https://twitter.com/plantegg/status/1766407351761014929

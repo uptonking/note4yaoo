@@ -131,7 +131,12 @@ modified: 2021-08-05T04:31:02.298Z
 
 - ## 
 
-- ## 
+- ## For those of us who wish we had a Rust-like `Option<T>` type in TypeScript.
+- https://twitter.com/GabrielVergnaud/status/1766554404650418187
+  - I'm sure some of you are thinking "why the heck wouldn't we just do `T | null` " 
+  - The reason is that `T` might contain `null` already
+- To me `null` inside an `Option` is an oxymoron(自相矛盾的说法/概念). This now adds the unnecessary overhead with `null` having different meanings without an explicit reason. `Option` solves boolean blindness; this approach amplifies(使变得明显, 增强) it.
+- JS/TS is just not a nice language to use this pattern. Now you have to unwrap value everywhere, and then you want a Result and have to deal with function colors...
 
 - ## 🌰💡 Here's a quick guide on how to type your globals and env variables in Vite, Node and the DOM.
 - https://twitter.com/mattpocockuk/status/1758454430666506589

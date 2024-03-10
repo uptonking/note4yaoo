@@ -26,6 +26,17 @@ if(val) // doSth
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ##  `Number.parseFloat()` is essentially `Number()` with the extra steps of:
+- https://twitter.com/kripod97/status/1766767605962981784
+  - Treating empty/whitespace-only values as `NaN` .
+  - Ignoring trailing characters until the value is parsable or empty
+- You should copy this function into your code and use it instead of Number() or Number.parseFloat()
+  - Really we should add it to JavaScript as `Number.safeParse()`
+
 - ## Ever wondered what the difference between a class method and arrow function is?
 - https://twitter.com/mattpocockuk/status/1763251034565013841
   - arrow functions retain the context they were defined in.

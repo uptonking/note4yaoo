@@ -140,6 +140,8 @@ modified: 2021-08-30T18:56:09.644Z
   - All databases supported by knex are supported by objection.js
   - https://github.com/feathersjs-ecosystem/feathers-objection
     - Feathers database adapter for Objection.js
+  - forks
+  - https://github.com/ovos/objection.js
 
 - bookshelf /6.3kStar/MIT/202007/js/inactive
   - https://github.com/bookshelf/bookshelf

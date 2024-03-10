@@ -16,6 +16,14 @@ modified: 2023-12-18T15:15:36.887Z
 
 - ## 
 
+- ## 
+
+- ## 开源中文 OCR 最好用的是哪个? 甲方不想用云服务.
+- https://twitter.com/hylarucoder/status/1766782291651575871
+- 现在基本上都在paddleocr上finetuning，我在大厂
+- 恐怕只有paddle可用, 但是他的分拆較差, 有丟行的情況
+- OneNote自带的OCR功能。
+
 - ## Is there some library to run OCR on any image, get text and also exact position of the text in the image?
 - https://twitter.com/dobroslav_dev/status/1736407254138527774
 - If you want to do any OCR (non-diagrammatic/flow charts etc), google cloud vision is the industry standard. have tried almost all the managed and open-source solutions over the years - for millions of images

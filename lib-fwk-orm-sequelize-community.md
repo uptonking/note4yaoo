@@ -14,6 +14,13 @@ modified: 2023-02-05T18:49:43.540Z
 
 - ## 
 
+- ## 
+
+- ## 🚨✨ [[RFC] Decorators · sequelize/sequelize _202112](https://github.com/sequelize/sequelize/issues/14298)
+- One of the main issues I have with sequelize-typescript is recursive imports. When I wanted to upgrade NextJs on my project I ran into tons of problems because recursive imports suddenly become errors instead of "just" warnings. 
+
+- Everything described in here is implemented now _202306
+
 - ## 💡 [Delete password from sequelize model - Stack Overflow](https://stackoverflow.com/questions/71808210/delete-password-from-sequelize-model)
   - `delete user.dataValues.password` where does dataValues ​​come from
 - it is same to get field from sequelize with `user.get("field_name")` , `user.getDataValue("field_name")` and `user.dataValues.field_name` . 
@@ -83,6 +90,14 @@ sequelize.getQueryInterface().QueryGenerator.getWhereConditions({ a: 1, b: 2, c:
 - knex would be the ideal solution; it is also used in Adonis ORM etc
 
 - this is why Laravel still relevant in 2023
+# discuss-news
+- ## 
+
+- ## 
+
+- ## [Status of merge with sequelize-typescript _202211](https://github.com/sequelize/sequelize/issues/15334)
+- /wip/202403
+
 # discuss
 - ## 
 

@@ -36,6 +36,13 @@ modified: 2022-12-04T16:34:29.342Z
 
 - ## 
 
+- ## 
+
+- ## What’s the best way to publish/maintain a public roadmap? Landing pages, special vendors, public trello boards?
+- https://twitter.com/steveruizok/status/1766768033320558635
+- You can do nice roadmaps on @linear and then make them public.
+- our @buttondown public roadmap in github
+
 - ## Great tech doesn't pop up because one developer thought of it. They are born from hard lessons and solve hard problems.
 - https://twitter.com/RaulJuncoV/status/1766486051407667475
   - Git: It lets you keep track of changes in your project so you can work better with others.

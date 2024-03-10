@@ -319,7 +319,21 @@ betterdiscordctl -i flatpak install
   - [x] streaming infinite-list/tree
 # dev-03-realworld-react-nodejs
 
-## 030
+## 031
+
+## 0310
+
+- [golang pq sql driver: pq: invalid input syntax for type uuid error type - Stack Overflow](https://stackoverflow.com/questions/69305845/golang-pq-sql-driver-pq-invalid-input-syntax-for-type-uuid-error-type)
+  - In the query you can cast the uuid column to text
+
+- [Postgres SELECT where the WHERE is UUID or string - Stack Overflow](https://stackoverflow.com/questions/46433459/postgres-select-where-the-where-is-uuid-or-string)
+  - Casting the UUID column to ::text stops the error.
+
+```SQL
+SELECT * FROM user
+WHERE id::text = '33bb9554-c616-42e6-a9c6-88d3bba4221c' 
+  OR uid = '33bb9554-c616-42e6-a9c6-88d3bba4221c';
+```
 
 ## 0309
 

@@ -21,6 +21,14 @@ modified: 2023-01-22T19:52:35.031Z
 - 
 - 
 
+# api
+
+```JS
+// Adds a uuid column - this uses the built-in uuid type in PostgreSQL, and falling back to a char(36) in other databases by default.
+// ❓ how to use nanoid
+table.uuid('uuidColumn').defaultTo(knex.fn.uuid());
+```
+
 # docs
 - The client created by the configuration initializes a connection pool, using the `tarn.js` library
   - This connection pool has a default setting of a `min: 2, max: 10` for the MySQL and PG libraries, and a single connection for sqlite3 (due to issues with utilizing multiple connections on a single file).

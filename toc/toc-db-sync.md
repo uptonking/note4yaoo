@@ -131,7 +131,7 @@ modified: 2022-11-25T15:41:47.534Z
   - `Dexie.Syncable` is used for the synchronization. This module contains an implementation of the `ISyncProtocol`. 
   - It was primarily written to work with `sync-server` but should work with other servers which offer the same API.
 
-- https://github.com/leapfrogtechnology/sync-db /ts
+- https://github.com/leapfrogtechnology/sync-db /MIT/202306/ts/inactive
   - Command line utility to synchronize and version control relational database objects across databases.
   - This utility uses Knex under the hood
 

@@ -9,6 +9,10 @@ modified: 2023-04-04T22:36:31.529Z
 
 # guide
 
+- async-sync (push/pull)
+  - event/stream/observable/iterator 可作为统一async/sync的思路
+  - 模式的选型会影响整个codebase的代码
+
 - blogs
   - [kappa architecture vs event sourcing](https://github.com/tschudin/ssb-icn2019-paper/issues/6)
 # popular
@@ -71,6 +75,18 @@ modified: 2023-04-04T22:36:31.529Z
 - https://github.com/holepunchto/hypercore /js
   - Hypercore is a secure, distributed append-only log.
   - Built for sharing large datasets and streams of real time data
+
+- https://github.com/TomerAberbach/lfi /apache2/202308/ts
+  - A lazy functional iteration library supporting sync, async, and concurrent iteration
+  - Lazy: delays applying operations until their results are needed
+  - Functional: provides highly composable functions
+  - Iteration: supports sync iterables, async iterables, and unique concurrent iterables
+  - https://github.com/loganfsmyth/gensync /202010/js
+    - This module allows for developers to write common code that can share implementation details, hiding whether an underlying request happens synchronously or asynchronously. 
+    - This is in contrast with many current Node APIs which explicitly implement the same API twice, once with calls to synchronous functions, and once with asynchronous functions.
+
+- https://github.com/graphicore/obtainJS /201604/js
+  - Framework to unify synchronous and asynchronous JavaScript.
 # stream
 - https://github.com/zoubin/streamify-your-node-program
   - 对Node.js中stream模块的学习积累和理解
@@ -145,9 +161,6 @@ modified: 2023-04-04T22:36:31.529Z
   - A js library to stringify json to stream to avoid out-of-memory of JSON.stringify.
 
 ## generator
-
-- https://github.com/TomerAberbach/lfi
-  - A lazy functional iteration library supporting sync, async, and concurrent iteration.
 
 - https://github.com/0no-co/wonka
   - A tiny but capable push & pull stream library for TypeScript and Flow, loosely following the callbag spec
@@ -370,6 +383,27 @@ modified: 2023-04-04T22:36:31.529Z
   - Javascript Spreadsheet Engine
   - Create an Excel-like object in Javascript that automagically computes itself whenever updated.
   - [I made a Spreadsheet engine in Javascript](https://www.reddit.com/r/javascript/comments/g4o075/i_made_a_spreadsheet_engine_in_javascript/)
+
+## async-sync-converter
+
+- https://github.com/Kaciras/deasync /MIT/202403/ts
+  - Turns async function into sync via JavaScript wrapper of Node event loop
+  - DeAsync turns async code into sync, implemented with a blocking mechanism by calling Node.js event loop at JavaScript layer. 
+  - The core of deasync is written in C++.
+
+- https://github.com/TomerAberbach/betterator /apache2/202204/ts/inactive
+  - A better sync and async iterator API.
+  - Familiar: lots of other programming languages use the same API
+
+- https://github.com/un-ts/synckit /MIT/202401/ts
+  - Perform async work synchronously in Node.js using `worker_threads` with first-class TypeScript and Yarn P'n'P support.
+
+- https://github.com/thelinuxlich/go-go-try /2020401/ts
+  - Tries to execute a sync/async function, returns a Golang style result
+  - https://github.com/astoilkov/good-try
+
+- https://github.com/grimmer0125/d4c-queue /202111/ts
+  - Wrap an async/promise-returning/sync function as a queue-ready async function, which is enqueued while being called. 
 # stream-examples
 - https://github.com/nagix/chartjs-plugin-streaming
   - Chart.js plugin for live streaming data

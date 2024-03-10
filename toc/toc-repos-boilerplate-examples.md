@@ -46,9 +46,11 @@ modified: 2023-11-16T15:00:11.503Z
   - [RealWorld](https://www.realworld.how/)
   - [CodebaseShow – RealWorld Example Apps](https://codebase.show/projects/realworld)
   - [API | RealWorld](https://realworld-docs.netlify.app/docs/specs/frontend-specs/api)
+    - https://realworld-docs.netlify.app/docs/specs/frontend-specs/swagger/
     - https://api.realworld.io/api/articles /默认返回10条articles数据/无需登录
     - 还可在github上找最新repo，寻找可用的公共api-url
     - https://conduit-realworld-example-app.fly.dev/api/articles /默认返回3篇
+    - https://github.com/gothinkster/realworld/blob/main/api/openapi.yml
     - https://github.com/gothinkster/node-express-prisma-v1-official-app/blob/main/docs/swagger.json
   - [V2 Roadmap · gothinkster/realworld _202107](https://github.com/gothinkster/realworld/issues/693)
 

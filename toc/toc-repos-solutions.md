@@ -50,6 +50,14 @@ modified: 2020-12-12T19:32:36.255Z
 
 - https://github.com/yetzt/node-scrapyard /201701/js
   - Scrapyard makes scraping websites easy. I'ts a wrapper for most the things you need, comes with optional caching and retries, and opens as many connections as you like.
+
+- https://github.com/coder-hxl/x-crawl /MIT/202311/rust
+  - 一个灵活的 Node.js 多功能爬虫库。灵活的使用方式和众多的功能可以帮助您快速、安全、稳定地爬取页面、接口以及文件。
+  - 异步同步 - 只需更改一下 mode 属性即可切换异步或同步爬取模式。
+  - 支持爬动态页面、静态页面、接口数据、文件以及轮询操作。
+  - 无间隔、固定间隔以及随机间隔，产生或避免高并发爬取。
+  - 配合失败重试，自定义错误次数以及 HTTP 状态码自动轮换代理。
+  - 优先队列 - 根据单个爬取目标的优先级可以优先于其他目标提前爬取。
 # crawler-examples
 - https://github.com/yangwenmai/github-trending-backup /202401/go
   - Github trending backup by everyday.

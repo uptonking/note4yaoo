@@ -20,7 +20,9 @@ modified: 2023-10-26T15:01:36.462Z
 
 - ## 
 
-- ## 
+- ## Databases introduce unnecessary layers of complexity. Just use JSON files
+- https://twitter.com/andre_z/status/1766408187802972590
+- The db people make it unnecessarily complex by forcing you to think about concurrent updates and access.
 
 - ## [Show HN: CursusDB – A new scalable distributed document oriented database in go | Hacker News_202401](https://news.ycombinator.com/item?id=38869393)
 - For new products I always recommend the same thing: name your competitors and use cases. Compare them in a table; don't make the user think. Who should and should not use your product? Being in-memory and distributed, I imagine your competitors include Ignite and Hazelcast?

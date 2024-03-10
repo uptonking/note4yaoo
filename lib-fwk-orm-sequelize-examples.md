@@ -21,7 +21,7 @@ modified: 2023-02-05T18:50:32.900Z
     - createX/newX, getX, updateX/saveX, removeX, register
   - service: 梳理业务流程，使用所需的(多个)dao/repo进行计算与持久化返回结果
     - 返回的可以不是db中的model，可返回业务对象do/vo/dto
-    - addX/insertX, findX/selec, setX/updateByX, deleteX
+    - addX/insertX, findX/selectX, setX/updateByX, deleteX
   - dao: 只包含db的crud，尽量没有业务逻辑
     - dao的实现依赖orm，可能需要model，也可能不需要model
   - model: 对应db表schema
@@ -457,18 +457,19 @@ modified: 2023-02-05T18:50:32.900Z
 
 - https://github.com/mcaligares/express-typescript /202310/ts
   - Express project with Typescript support ready to start coding
-  - ✨ 采用controller/service/repository/model四层架构，函数式风格
+  - 采用controller/service/repository/model四层架构，函数式风格
   - model基于接口实现
   - 依赖express、jsonwebtoken、sequelize-typescript、crypto-js
 
 - https://github.com/nabadeep25/typescript-node-sequelize-boilerplate /202310/ts
-  - 采用controller/service/model三层架构, 函数式风格
+  - ✨ 采用controller/service/model三层架构, 函数式风格
   - 依赖express、jsonwebtoken、joi、swagger-ui-express
 
 - https://github.com/Haniismail/sequelize-starter /MIT/202306/ts/较乱
   - A starter for a node.js and sequelize app that includes an MVC architecture 
   - 采用controller/repository/model三层架构, 函数式风格
   - 实现了associate
+  - 依赖express、jsonwebtoken、swagger-ui-express
 
 - https://github.com/osamaAbdullah/express_template /202402/ts/结构合理
   - 依赖sequelize7、express-session、passport-local、vinejs(validate)

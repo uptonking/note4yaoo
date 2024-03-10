@@ -92,12 +92,26 @@ modified: 2023-01-22T19:52:09.270Z
 The problem is that the read replica of mysql server are updated by the master server (which handles write queries) in 20ms, so if we do read immediately after write we dont get the new data there.
 - this sounds like a really bad idea in multiple ways (trying to create pseudo synchronous replication setup with application side code).
   - I would just suggest to configure replication setup to work in synchronous manner and that way DB know when to lock (it slows down writes a bit, but it sounds like a lot loss of a problem). Also this effectively limits your write speed to < 10 writes per second or those delays will block all your DB reads...
+# discuss-knex-orm-objection
+- ## 
+
+- ## 
+
+- ## 🗑️ [Objection.js has been sunset, which ORM/querybuilder did you move to? : r/node _202212 ](https://www.reddit.com/r/node/comments/zblmqf/well_shit_objectionjs_has_been_sunset_which/)
+
+- [The future of Objection.js · Vincit/objection.js _202211](https://github.com/Vincit/objection.js/discussions/2463)
+  - The main reason for this is that Objection's typescript typings would need a full rewrite for them to become competitive and up to today's high standards for typescript codebases. 
+  - I simply don't have time, or quite frankly the interest, to do that. 
+  - Objection was designed before typescript was widely adopted
+
+- If you like knex's query builder and objection.js's relation capabilities, sutando is a better alternative
 # discuss
 - ## 
 
 - ## 
 
-- ## 
+- ## [Knex how to use database functions within schema building functions](https://github.com/knex/knex/issues/1185)
+- After double checking, I found out that uuid extension was not installed the postgresql database
 
 - ## [Knex many-to-many relationships _201502](https://github.com/knex/knex/issues/714)
 

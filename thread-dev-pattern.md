@@ -9,6 +9,24 @@ modified: 2021-02-19T12:23:12.286Z
 
 # guide
 
+# discuss-event-driven
+- ## 
+
+- ## 
+
+- ## If you're building a callback API, make the callback async. You'll thank me later.
+- https://twitter.com/davidfowl/status/1766549359452405955
+  - My hot take is that events are not great. I may use events internally, but I'd never expose events from an API in 2024. Methods are more flexible and can be overloads.
+  - I have stopped using events. Methods are better, and can overloaded.
+
+- What if you want more than one subscriber?
+  - Call the method multiple times
+
+- Would be good if C# team could unify the sync and async dichotomy like Go.
+
+- Then the API needs to fully reenterly and thread safe from any point the callback is called.
+
+- And use ValueTask
 # discuss
 - ## 
 

@@ -127,3 +127,23 @@ modified: 2020-11-03T06:56:19.448Z
 - https://github.com/getditto/safer_ffi /MIT/202311/rust
   - http://getditto.github.io/safer_ffi
   - a framework that helps you write foreign function interfaces (FFI) without polluting your Rust code with `unsafe { ... }` code blocks while making functions far easier to read and maintain.
+
+## async
+
+- https://github.com/fMeow/maybe-async-rs /MIT/202402/rust
+  - https://docs.rs/maybe-async
+  - A procedure macro to unify SYNC and ASYNC implementation for downstream application/crates
+  - maybe-async help unifying async and sync implementation by procedural macro.
+  - https://github.com/nvksv/maybe-async-cfg /MIT/202208/rust
+
+- https://github.com/fereidani/kanal /MIT/202310/rust
+  - The fast sync and async channel that Rust deserves
+  - a Rust implementation of channels of the CSP (Communicating Sequential Processes) model, designed to assist programmers in creating efficient concurrent programs. 
+  - The library has a focus on unifying message passing between synchronous and asynchronous portions of Rust code through a combination of synchronous and asynchronous APIs while maintaining high performance.
+  - Kanal employs a highly optimized composite technique for the transfer of objects. When the data size is less than or equal to the pointer size, it utilizes serialization, encoding the data as the pointer address. Conversely, when the data size exceeds the pointer size, the protocol employs a strategy similar to that utilized by the Golang programming language, utilizing direct memory access to copy objects from the sender's stack or write directly to the receiver's stack. 
+  - Kanal utilizes a specially tuned mutex for its channel locking mechanism, made possible by the predictable internal lock time of the channel. 
+  - Kanal is using Unsafe. If you are not ok with that in your project we suggest using safe-only alternatives.
+
+- https://github.com/zkat/cacache-rs /apache2/202402/rust
+  - A high-performance, concurrent, content-addressable disk cache, with support for both sync and async APIs
+  - First-class async support, using either async-std or tokio as its runtime. Sync APIs are available but secondary.

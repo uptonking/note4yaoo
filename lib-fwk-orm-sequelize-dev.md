@@ -19,6 +19,7 @@ modified: 2023-02-05T18:49:11.444Z
 - features
   - relations
   - eager and lazy loading
+  - jsonb: 支持pg, 不支持sqlite
 
 - who is using #sequelize-orm
   - cms: outline-wiki

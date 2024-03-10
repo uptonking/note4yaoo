@@ -93,6 +93,28 @@ modified: 2023-02-07T09:22:03.120Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## #声音clone产品推荐 开源的实现：
+- https://twitter.com/leeoxiang/status/1766700987627327683
+  - 1、GPT-SoVITS： https://github.com/RVC-Boss/GPT-SoVITS    对中文、英文、日文支持都不错，需要 10 分钟左右的干素材，瞬时 clone 的能力还没开放。
+  - 2、OpenVoice：https://github.com/myshell-ai/OpenVoice  对中文支持还可以，主打瞬时 clone，发展势头很好，一个月前测试的时候中文声音 clone 还有一股英语味道。
+
+- 商业的产品：
+  - 1、ElevenLab：https://elevenlabs.io  商业实现中支持语言种类最多的，支持 瞬时 clone，综合效果最好的一个产品，我是 22$每个月的订阅用户，已经在内部的配音产品上用上。
+  - 2、Reecho：https://reecho.ai  中国团队，支持长音频声音 clone 和瞬时声音 clone，据说是和火山引擎的声音 clone 技术是同源的。
+  - 3、自得语音：https://zideai.com  中国团队，支持瞬时声音 clone 和声音定制，还没测试。
+
+- 瞬时克隆剪映也推送出了。类似 openvoice
+  - 剪映这个限制很多，只能 clone自己的的。
+  - 思路打开啊。你先克隆出志玲的语音，然后把剪映要你朗读的内容提前克隆出来，点朗读，然后不就也有了么，剪映主要语音加字幕比较方便。我把王者李白的声音克隆在剪映里了，志玲的训练好了，数据不小心丢了，懒得在去剪视频弄数据喂了
+
+- 目前试过瞬时克隆的 还没有发现特别像的效果  11lab最大优点是稳定性很好  而且情绪调节做得不错 这一点比gpt- sovits好一些
+
+- 用过 GPT-SoVITS 和 ElevenLab，目前对于克隆中文声音效果最好的是 GPT-SoVITS，非中文是 ElevenLab
+
 - ## OpenAI 推出的开源免费 Whisper 在语音识别领域（ASR）可以说无出其右，
 - https://twitter.com/Barret_China/status/1729521472669151516
   - 不过它有一个较大的局限性，就是无法进行说话人分类（Speaker diarization），尤其是在重叠语音检测（Overlapped speech detection）方面，Whisper 在训练过程中只识别了一个声音，同时将其他声音视为背景噪声。
