@@ -179,6 +179,13 @@ modified: 2021-08-30T18:56:09.644Z
   - https://github.com/egomobile/node-orm-pg
   - A simple and generic ORM mapper.
 # orm-alternatives
+- https://github.com/archfirst/joinjs /MIT/201902/js/NoDeps/单文件/inactive
+  - A JavaScript library to map complex database joins to nested objects
+  - It's a simpler alternative to a full-blown Object-Relation Mapper (ORM), and gives you direct control over your database interactions.
+  - JoinJS takes a much simpler and straightforward approach inspired by a popular Java mapping framework called MyBatis 
+  - You can use any database driver or query builder (such as Knex.js) to query your database, however you use JoinJS to convert the returned results into a hierarchy of nested objects.
+  - ResultMaps are used to teach JoinJS how to map database results to objects. 
+
 - https://gitlab.com/dmfay/massive-js /BSD/202302/js/deprecated
   - a data mapper for Node.js that goes all in on PostgreSQL, and embraces the power and flexibility of SQL itself and of the relational metaphor
   - Massive is not an object-relational mapper (ORM)! It doesn't use models, it doesn't track state

@@ -15,6 +15,13 @@ modified: 2023-06-14T00:53:15.226Z
 
 ## 
 
+## 
+
+## express router 无法触发的问题
+
+- 一步步调试，定位到问题是 middleware 是高阶函数，route使用时不能直接用，要用 userRouter.get('/', [authorize()], userController.me); 
+  - 而不是 userRouter.get('/', [authorize], userController.me); 
+
 ## monorepo多包项目的bundle
 
 - 若打包各包默认的 dist/index.js， 会产生大量的重复代码

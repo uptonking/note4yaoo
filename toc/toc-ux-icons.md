@@ -316,7 +316,10 @@ modified: 2021-05-06T09:58:23.803Z
 # logos
 - [FreeLogo.me – Free SVG Logo Templates](https://freelogo.me/)
   - SVG Logo placeholders you can download and use with no restrictions for free.
-# ref
+# icons-tooling
+- [Iconbuddy — 200K+ open source free svg icons](https://iconbuddy.app/)
+  - Download, Customize, Edit and Personalize. Over 200k+ open source icons.
+# more
 - https://github.com/fontello/fontello
   - This tool lets you combine icon webfonts
   - shrink glyph collections, minimizing font size

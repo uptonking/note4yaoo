@@ -138,6 +138,30 @@ modified: 2023-10-26T19:04:00.318Z
 
 - In practice, your database is unlikely to provide serializability, and your multi-core processor is unlikely to provide linearizability—at least by default. 
   - As the above theory hints, achieving these properties requires a lot of expensive coordination.
+# discuss-clock
+- ## 
+
+- ## 
+
+- ## 
+
+- ## How can you order events in a distributed system?
+- https://twitter.com/Franc0Fernand0/status/1767167089385541760
+- Distributed systems don't have a global clock to order events. They use logical clocks to measure time in terms of logical operations.
+- There are two popular types of logical clocks.
+- A Lamport clock uses a single counter initialized to 0 for each process.
+  - A process increases its counter before each operation:
+  - when sending a message, a process attaches a copy of its counter
+  - when receiving a message, a process merges its and the received counter. The merge takes the maximum of the two counters.
+- Vector clocks address this problem.
+  - Such a clock uses a list of N counters for each process, where N is the number of processes.
+  - A process increases its counter in its list before each operation:
+  - when sending a message, a process attaches a copy of its list.
+  - when receiving a message, a process merges its and the received list. The merge takes the maximum of each counter in the two lists.
+- This mechanism gives a partial ordering between lists by comparing corresponding counters.
+- One problem with vector clocks is that the required memory grows linearly with the process.
+  - There are, however, variants of vector clocks that can fix this.
+
 # discuss-decentralized/p2p
 - ## 
 

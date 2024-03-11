@@ -6,11 +6,41 @@ modified: 2022-08-21T10:19:58.756Z
 ---
 
 # lib-excel-tanstack-table-community-v8
-- [Making Tanstack Table 1000x faster with a 1 line change - JP Camara](https://jpcamara.com/2023/03/07/making-tanstack-table.html)
-  - [[v8] Improve grouping performance on large clusters of values_202210](https://github.com/TanStack/table/pull/4495)
+
 # guide
 
+- [Making Tanstack Table 1000x faster with a 1 line change - JP Camara](https://jpcamara.com/2023/03/07/making-tanstack-table.html)
+  - [[v8] Improve grouping performance on large clusters of values_202210](https://github.com/TanStack/table/pull/4495)
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## 🌰 Here's how to do server-side table filtering like @linear _202309
+- https://twitter.com/jacobmparis/status/1706469083078709635
+  - [Build a server-side filter UI with Remix _202403](https://www.jacobparis.com/content/remix-filter-bar)
+  - put OData query params in the URL
+  - use @shadcn ui menus to select the filters
+  - display it with @tan_stack table
+  - Remix's loaders will update the data as soon as the URL changes
+
+- https://github.com/jacobparis-insiders/jacobparis.com/tree/main/app/examples/remix-filter-bar
+  - https://www.jacobparis.com/content/remix-filter-bar/example
+
+- cool! but fyi linear’s is not server side
+  - I thought so. Isn’t linear using local first sync architecture? Wondering if the search/filter is also local first…
+- Linear does filtering client side, you can’t compete
+
+- OData is an ISO standard for REST applications, which includes a standard for filtering data via the url 
+  - I worked with it briefly some time ago and it was a bit cumbersome for the team to pick up, the feedback was generally negative. Wasn't aware people still use it.
+
+- Why use server-side filtering when the table is initially delivered unfiltered? All the data is already on the client side, so why not just filter there?
+  - As soon as you add pagination you will never have the full data set on the client again And with remix it’s even easier to do this all serverside than to build your own sort and paging system client side
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## [How do you get the value from `onSortingChange` , or even `onStateChange` ?](https://github.com/TanStack/table/discussions/4005)

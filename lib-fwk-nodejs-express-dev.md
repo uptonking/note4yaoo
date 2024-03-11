@@ -8,6 +8,15 @@ modified: 2023-02-05T18:55:27.887Z
 # lib-fwk-nodejs-express-dev
 
 # guide
+
+- pros
+  - almost feature-complete
+
+- cons
+  - 功能特性的集成缺少类似nestjs的最佳实践，特别是缓存、消息队列，导致代码易混乱
+  - 对最新标准的支持不好，如http2/tls
+  - No support of async error handling, async middlewares.
+
 - who is using #express
   - fwk: strapi, eggjs
   - app: outline

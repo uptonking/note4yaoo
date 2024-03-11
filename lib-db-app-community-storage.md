@@ -31,6 +31,18 @@ modified: 2023-09-17T17:36:36.118Z
 
 - ## 
 
+- ## 
+
+- ## 🤼🏻 the more I learn about file systems， the more I question if they are necessarily for database systems.
+- https://twitter.com/hnasr/status/1767019119201931726
+  - fs caching, journaling and inode locking adds overhead, and databases already have shared buffer pool, WAL and torn page protection.
+  - is that why some DBMS use O_DIRECT?
+
+- YES. Databases do not necessarily need an fs. That's exactly what Amazon Aurora and many other modern cloud-based db do. 
+  - We're working on GreptimDB, a timeseries database, which uses kafka as WAL and S3 as storage and OpenDAL as access layer instead of posix API.
+
+- I have thought about this. But achieving a database that “doesn’t use a filesystem”, essentially requires the creation of a “db filesystem”. Db would have to manage and map partitions itself. This is not practical IMO. Fs implementations can however be optimized for dbms’s though
+
 - ## [What "filetype" is a database? : learnprogramming_202209](https://www.reddit.com/r/learnprogramming/comments/xhqlk7/what_filetype_is_a_database/)
 - the important thing to note is that a database isn't a file, it's a program. Now obviously the program will write the contents to disk somehow so that the data isn't lost when the computer restarts, but that's an implementation detail of the database and should never be interacted with directly. For example, you would never try to read/write a .doc file but instead always use Microsoft Word to interact with it since that is their special format and not intended for direct consumption.
 

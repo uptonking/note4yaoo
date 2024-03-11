@@ -11,7 +11,7 @@ modified: 2022-11-24T11:39:26.000Z
 
 # goals
 - powerful editing
-- dom-based view
+- dom-based view, simple and enough
 - crdt
 
 - 兼容主流数据格式, 如docx/xlsx

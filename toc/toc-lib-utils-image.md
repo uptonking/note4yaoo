@@ -157,7 +157,7 @@ modified: 2023-04-04T22:39:45.442Z
   - https://labelflow.ai/
   - an open platform for image labeling. 
 # codec
-- https://github.com/GoogleChromeLabs/squoosh /apache2/202310/ts
+- https://github.com/GoogleChromeLabs/squoosh /apache2/202401/ts
   - https://squoosh.app/
   - Make images smaller using best-in-class codecs, right in the browser.
   - Squoosh does not send your image to a server. All image compression processes locally.
@@ -214,6 +214,11 @@ modified: 2023-04-04T22:39:45.442Z
   - It does not rely on any DOM APIs and can therefore be used in contexts where there is no built-in support for XML parsing, most notably in Web Workers and Service Workers.
   - Currently the library supports hOCR and ALTO OCR markup.
 
+## ocr-apps
+
+- https://github.com/hiroi-sora/Umi-OCR /MIT/202403/python/qml
+  - 开源、免费的离线OCR软件。
+  - 支持截屏/批量导入图片，PDF文档识别，排除水印/页眉页脚，扫描/生成二维码。内置多国语言库。
 # more
 - https://github.com/ascorbic/unpic-img
   - This library uses unpic to detect the image CDN, and then uses the CDN's URL API to resize and format images. 

@@ -150,6 +150,32 @@ modified: 2022-08-21T10:02:05.129Z
   - [[roadmap] API over SQL / Nuxt 3 / Feathers 5 / Pinia](https://github.com/locokit/locokit/issues/151)
     - 正在迁移到nuxt3+pinia(vue store)+feathers5
 
+- teable /80Star/AGPLv3/202403/ts
+  - https://github.com/teableio/teable
+  - https://teable.io/
+  - https://app.teable.io/share/shrVgdLiOvNQABtW0yX/view
+  - fast, Real-time, Professional, Developer friendly, No code database built on Postgres
+  - uses a spreadsheet-like interface to create complex enterprise-level database applications. 
+  - 表格基于canvas实现
+  - 后端依赖nestjs、@keyv/sqlite、sharedb、passport、opentelemetry、prisma、knex、next、ts-pattern、zod
+  - 前端依赖nextjs、zustand、shadcn-ui、codemirror6、g6、dnd-kit、emoji-mart、tanstack-table.v8、echarts5、knex、react-grid-layout、react-hook-form、react-markdown、remark-gfm
+  - Formula Support: Input mathematical and logical formulas to auto-calculate values.
+  - Aggregation Function: Automatically summarize statistics for each column, providing instant calculations like sum, average, count, max, and min for streamlined data analysis.
+  - Multiple Views
+    - Grid
+    - Form
+    - wip: Kanban, Calendar,Gallery,Gantt,Timeline
+  - wip
+    - Undo/Redo
+    - Bring your own database
+    - Support for multiple databases
+    - Row Styling & Conditional Formatting
+    - Charts & Visualization Tools
+    - Comments & Annotations
+    - Find & Replace
+    - Extensions
+    - Automation
+
 - nocobase /3.7kStar/apache2(core)🌹 + AGPL(plugin)/202212/ts/国内
   - https://github.com/nocobase/nocobase
   - https://www.nocobase.com/

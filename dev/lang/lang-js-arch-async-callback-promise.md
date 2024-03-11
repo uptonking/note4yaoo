@@ -113,6 +113,23 @@ modified: 2021-08-30T07:01:09.493Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🆚️ Let’s say `f()` returns a promise:
+- https://twitter.com/shuding_/status/1766842504635134271
+  - async function a() { return f() }
+  - async function b() { return await f() }
+  - function c() { return f() }
+- A returns a promise like c, since no await is used with async. 
+  - B unwraps the promise in f, and rewraps it since async and await are used. 
+  - F directly returns the promise from f. Behavior is the same.
+
+- it’s the matter of where you handle the result of Promise, and where the error or success should be handled imo
+- The examples are identical unless you expect c() === c() and don't add more code in each function. Try/catch in a() and errors before the return in c() make it behave differently.
+- Only b) will return a complete stack trace if the promise code errors
+
 - ## [Events vs Streams vs Observables vs Async Iterators - Stack Overflow](https://stackoverflow.com/questions/39439653/events-vs-streams-vs-observables-vs-async-iterators)
 - There are roughly two categories of APIs here: pull and push.
   - Push APIs are a good fit for when something is generating data, and the data being generated does not care about whether anyone wants it or not

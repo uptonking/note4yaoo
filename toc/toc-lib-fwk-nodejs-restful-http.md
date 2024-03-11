@@ -269,9 +269,16 @@ modified: 2022-12-19T01:51:01.389Z
   - https://hono.dev/
   - a small, simple, and ultrafast web framework for the Edges. 
   - It works on any JavaScript runtime: Cloudflare Workers, Fastly Compute@Edge, Deno, Bun, Vercel, Lagon, AWS Lambda, Lambda@Edge, and Node.js.
+  - 作者是Developer Advocate @cloudflare，前端网红宣传多，待观望
   - The router RegExpRouter is really fast. Not using linear loops. 
   - Hono has zero dependencies and uses only the Web Standard API.
   - Hono has built-in middleware, custom middleware, and third-party middleware. 
+  - https://github.com/honojs/honox /MIT/202403/ts
+    - meta framework for creating full-stack websites or Web APIs - (formerly Sonik)
+    - built on Hono, Vite, and UI libraries.
+    - File-based routing - You can create a large application like Next.js.
+    - You can bring your own renderer, not only one using hono/jsx.
+    - Islands hydration - If you want interactions, create an island. JavaScript is hydrated only for it.
 
 - https://github.com/Actionhero/Actionhero /apache2/202401/ts
   - https://www.actionherojs.com/

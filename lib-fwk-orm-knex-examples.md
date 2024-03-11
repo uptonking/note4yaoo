@@ -148,7 +148,7 @@ modified: 2023-01-22T19:52:59.120Z
     - When you use partitioning, MySQL will keep that data on separate parts of the disk as if they were separate tables and organizes your data automatically based on the partitioning key
 # starter
 - https://github.com/gothinkster/koa-knex-realworld-example /201910/js/archived
-  - Example Node (Koa.js + Knex) codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the RealWorld spec and API.
+  - Example (Koa.js + Knex) containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the RealWorld spec and API
   - 在controller中直接用knex构建并执行sql
   - 提供了建表的knex脚本
   - 🍴 forks

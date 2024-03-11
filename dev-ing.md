@@ -317,7 +317,7 @@ betterdiscordctl -i flatpak install
     - 2个编辑器同一页面协同的示例未完成
     - cursor光标位置经常对不上
   - [x] streaming infinite-list/tree
-# dev-03-realworld-react-nodejs
+# dev-03-realworld-react-sequelize-knex
 
 ## 031
 
@@ -372,7 +372,7 @@ declare namespace Express {
 ```
 
 - [Express middleware with TS: void' is not assignable to parameter of type 'PathParams' - Stack Overflow](https://stackoverflow.com/questions/73505586/express-middleware-with-ts-void-is-not-assignable-to-parameter-of-type-pathpa)
-# dev-02-hexo-eg-&-strapi-eg
+# dev-02-airtable-db-dash-&-hexo-eg-&-strapi-eg
 
 ## 0228
 

@@ -16,10 +16,10 @@ modified: 2023-02-05T18:50:32.900Z
 
 - 后端架构总结
   - 通常三层架构就能满足开发需求且不繁琐，需要支持nosql时再添加dao或定制开发
-  - controller: 请求接收，参数校验，尽量没有业务逻辑，尽量只用一个service，
+  - controller: 请求接收，参数校验，异常状态码，尽量没有业务逻辑，尽量只用一个service，
     - 若需要多个service则考虑创建新service包含所需业务流程
     - createX/newX, getX, updateX/saveX, removeX, register
-  - service: 梳理业务流程，使用所需的(多个)dao/repo进行计算与持久化返回结果
+  - service: 梳理业务流程，数据模型转换，使用所需的(多个)dao/repo进行计算与持久化返回结果dto
     - 返回的可以不是db中的model，可返回业务对象do/vo/dto
     - addX/insertX, findX/selectX, setX/updateByX, deleteX
   - dao: 只包含db的crud，尽量没有业务逻辑
