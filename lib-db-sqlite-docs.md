@@ -123,6 +123,13 @@ modified: 2021-08-30T17:33:20.586Z
 - [SQLite Over a Network, Caveats and Considerations](https://www.sqlite.org/useovernet.html)
 # sqlite3_vfs
 
+# group/aggregation
+
+- [Built-in Aggregate Functions](https://www.sqlite.org/lang_aggfunc.html)
+  - count(*), count(X)
+  - avg(X), sum(X), total(X)
+  - max(X), min(X)
+  - group_concat(X), group_concat(X, Y), string_agg(X, Y)
 # [Many Small Queries Are Efficient In SQLite](https://www.sqlite.org/np1queryprob.html)
 - with SQLite, 200 or more SQL statement per webpage is not a problem.
 

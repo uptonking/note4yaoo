@@ -134,3 +134,21 @@ The problem is that the read replica of mysql server are updated by the master s
 - Any thoughts on migrations with Bookshelf?
   - Bookshelf is running on top of Knex.js, so I suppose you can use its migration features
 - I've used node-db-migrate on some toy projects in conjunction with Bookshelf, and it seemed to work fine.
+# discuss-sql-builder
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Progressively migrate from knex to kysely · kysely-org/kysely _202308](https://github.com/kysely-org/kysely/issues/630)
+- You should be able to use knex and Kysely side by side in the same project without any issues. The only thing I can think of, off the top of my head is that, depending on the setup, you might end up with two connection pools. That might not be an issue, but something to keep in mind.
+  - Knex uses it's own connection pool, so there's no way to share that with Kysely currently. We could in theory create a KnexDialect that takes a knex instance and uses it as the driver 
+
+- ## [Kysely: TypeScript SQL Query Builder | Hacker News _202301](https://news.ycombinator.com/item?id=34506657)
+- 
+- 
+- 
+
+- ## 🆚️ [Kysely vs. Knex.js : r/node _202402](https://www.reddit.com/r/node/comments/1anoemm/kysely_vs_knexjs/)
+- Kysely has some really great typing support plus it can generate types from an existing database out of the box, so you don't need to write any types manually.

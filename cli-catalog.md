@@ -277,6 +277,7 @@ git log -- path/to/folder
 gh repo list --fork --visibility public --json owner,name | jq -r 'map(.owner.login + "/" + .name) | .[]' | xargs -t -L1 gh repo sync
 ```
 
+- [Git by example](https://codapi.org/git/)
 # java相关
 - maven编译
   - 编译异常后解决了继续上次编译： `mvn <args> -rf :pdi-ce`

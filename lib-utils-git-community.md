@@ -80,6 +80,26 @@ modified: 2023-08-29T10:13:31.070Z
   - This is why I enabled signing commits in git using my SSH key using this guide
   - [Git Tips 2: New Stuff in Git](https://blog.gitbutler.com/git-tips-2-new-stuff-in-git/)
 
+
+
+- ## 🆚️ Git Merge vs. Rebase vs. Squash Commit
+- https://twitter.com/sahnlam/status/1767434052695621850
+- 𝗚𝗶𝘁 𝗠𝗲𝗿𝗴𝗲 
+  - This creates a new commit in the target branch. 
+  - The new commit ties the histories of both main and feature branches together. 
+  - Git merge is non-destructive - it introduces a new commit without altering existing ones.
+- 𝗚𝗶𝘁 𝗥𝗲𝗯𝗮𝘀𝗲
+  - Rebase transplants commits to the tip of another branch. It creates new commits for each one moved over.
+  - The benefit is linear history. But be cautious with shared branches to avoid confusing collaborators.
+- 𝗚𝗶𝘁 𝗦𝗾𝘂𝗮𝘀𝗵 𝗖𝗼𝗺𝗺𝗶𝘁
+  - Squashing condenses multiple commits into one, streamlining the commit history.
+
+- 
+- 
+- 
+- 
+
+
 - ## 🆚️ Git Merge vs. Rebase vs. Squash Commit
 - https://twitter.com/alexxubyte/status/1751645221602152881
   - 示意图

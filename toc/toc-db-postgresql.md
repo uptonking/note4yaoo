@@ -31,6 +31,10 @@ modified: 2023-10-26T15:28:53.748Z
   - open source tool that provides a spreadsheet-like interface to a PostgreSQL database.
   - You can use Mathesar to build data models, enter data, and even build reports.
   - [Show HN: Mathesar – open-source collaborative UI for Postgres databases | Hacker News_202303](https://news.ycombinator.com/item?id=34999774)
+
+- https://github.com/gajus/slonik /BSD/202403/ts
+  - A Node.js PostgreSQL client with runtime and build time type safety, and composable SQL
+  - A battle-tested Node.js PostgreSQL client with strict types, detailed logging and assertions.
 # pg-viewer
 
 # powered-by-pg

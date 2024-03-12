@@ -321,6 +321,21 @@ betterdiscordctl -i flatpak install
 
 ## 031
 
+## 0312
+
+- [Postgresql GROUP_CONCAT equivalent? - Stack Overflow](https://stackoverflow.com/questions/2560946/postgresql-group-concat-equivalent)
+  - `select string_agg(distinct column1, ', ') as tagList from tags`; 
+  - If column type is integer, don't forget to convert or use `concat(column, '')` for implicit conversion
+
+- [sql - must appear in the GROUP BY clause or be used in an aggregate function - Stack Overflow](https://stackoverflow.com/questions/19601948/must-appear-in-the-group-by-clause-or-be-used-in-an-aggregate-function?answertab=scoredesc#tab-top)
+  - 实测的解决方法是，将异常中必需的字段手动添加到group by
+
+- ["message":"Error: TypeError: (intermediate value) is not iterable" - Stack Overflow](https://stackoverflow.com/questions/75157742/messageerror-typeerror-intermediate-value-is-not-iterable)
+  - you can't use destructuring on undefined.
+
+- [knex.js: combination of orWhere followed by multiple where - Stack Overflow](https://stackoverflow.com/questions/64912025/knex-js-combination-of-orwhere-followed-by-multiple-where)
+  - `.where(function () { this.orWhere({'Project.productType': 1}).orWhere({'Project.productType': 2}) });`
+
 ## 0310
 
 - [golang pq sql driver: pq: invalid input syntax for type uuid error type - Stack Overflow](https://stackoverflow.com/questions/69305845/golang-pq-sql-driver-pq-invalid-input-syntax-for-type-uuid-error-type)

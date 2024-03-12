@@ -47,7 +47,7 @@ modified: 2022-10-02T20:51:30.444Z
   - https://github.com/ygs-code/sharedb-textarea-example
     - ShareDB with textarea 源码分析
 
-- sharedb /5.4kStar/MIT/202210/js
+- sharedb /5.9kStar/MIT/202402/js/代码少
   - https://github.com/share/sharedb
   - ShareDB is a realtime database backend based on Operational Transformation (OT) of JSON documents. 
   - It is the realtime backend for the DerbyJS web application framework.

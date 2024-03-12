@@ -20,6 +20,7 @@ modified: 2024-01-21T07:46:00.256Z
   - https://www.emojiall.com/en/all-emojis
   - [Emoji cheat sheet for GitHub, Basecamp, Slack & more](https://www.webfx.com/tools/emoji-cheat-sheet/)
   - [Unicode Full Emoji List](https://unicode.org/emoji/charts/full-emoji-list.html)
+  - [Mattermost Pro Tips: Using emojis to improve team collaboration - Mattermost](https://mattermost.com/blog/mattermost-pro-tips-using-emojis-to-improve-team-collaboration/)
 
 - https://github.com/carloscuesta/gitmoji
   - https://gitmoji.dev/

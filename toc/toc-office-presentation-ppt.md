@@ -19,6 +19,7 @@ modified: 2021-04-30T20:14:17.669Z
 - alternatives-ppt
   - 很多ppt的每页是一张图片
   - 只需ppt的viewer，presentation常是各个系统的核心功能
+  - ✨ pdf-editor与ppt-editor的相似点: 支持批注、左侧页面缩略图
   - 可参考: svg-editor, pdf-editor
 # popular
 - https://github.com/gitbrent/PptxGenJS /MIT/202305/ts/inactive

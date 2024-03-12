@@ -36,6 +36,11 @@ modified: 2023-01-22T19:52:59.120Z
     - a future version of knex (TypeScript + internal rewrite), just putting it here for anyone interested
     - Better dialect feature separation
 
+- https://github.com/kysely-org/kysely /MIT/202403/ts
+  - https://kysely.dev/
+  - a type-safe and autocompletion-friendly typescript SQL query builder. 
+  - Inspired by knex. 
+
 - bookshelf /6.3kStar/MIT/202007/js/inactive/同作者
   - https://github.com/bookshelf/bookshelf
   - Bookshelf is a JavaScript ORM for Node.js, built on the Knex SQL query builder. 
@@ -174,7 +179,7 @@ modified: 2023-01-22T19:52:59.120Z
 - https://github.com/avanelli/fastify-realworld-example-app /202303/js
   - Fastify + Knex.js - Realworld Example App
   - [提供了建表的knex脚本](https://github.com/avanelli/fastify-realworld-example-app/blob/main/knex/migrations/20220919145459_create.js)
-  - https://github.com/Z-Ferguson/Fastify-Knex-PostgreSQL-Conduit /202305/js
+  - https://github.com/Z-Ferguson/Fastify-Knex-PostgreSQL-Conduit /202305/js/未完成/只做了user和article
 
 - https://github.com/PedroPadilhaPortella/Medium_Clone_NgRx /202208/be-js/fe-ts/inactive
   - Medium_Clone_NgRx, koa2 + knex.v0.21
@@ -233,6 +238,7 @@ modified: 2023-01-22T19:52:59.120Z
 - https://github.com/cdellacqua/express-knex-typescript-template /202311/ts/ssr-pug
   - Express.js template using TypeScript, Knex and Docker to head-start development.
   - 采用route/service两层架构
+  - service层部分crud方法通过公共工具方法实现，如findOneGenerator/createMultiGenerator
   - view层pug，功能丰富, 代码精简
   - 🍴 fork https://github.com/shalior/express-ts-template
   - https://github.com/shalior/express-mongo-ts /202301/ts/inactive

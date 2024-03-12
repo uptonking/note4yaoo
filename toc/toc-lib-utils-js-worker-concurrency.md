@@ -26,7 +26,7 @@ modified: 2024-01-30T14:41:38.742Z
   - https://github.com/evoluhq/evolu
   - https://www.evolu.dev/
   - React Hooks library for local-first software with end-to-end encrypted backup and sync using SQLite and CRDT
-  - 依赖fp-ts、protobuf、kysely(sql-builder)、murmurhash、~~zod~~
+  - 依赖fp-ts、protobuf、kysely、murmurhash、~~zod~~
   - 提供了dbworker.worker
 
 - https://github.com/StudentOfJS/query-plus

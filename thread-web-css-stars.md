@@ -21,6 +21,13 @@ modified: 2021-07-25T12:49:10.410Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## CSS Tips: To get the maximum z-index, you can use calc(1 / 0) in addition to calc(Infinity).
+- https://twitter.com/yisibl/status/1767531873742528698
+
 - ## height and width precede inset (or trbl) in CSS; 
 - https://twitter.com/steveruizok/status/1759351789705433163
   - so if you want to make something full parent size, it's gotta be: `inset: 0px; height: 100%; width: 100%;`

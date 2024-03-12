@@ -33,6 +33,9 @@ modified: 2023-10-30T07:34:03.602Z
 - https://twitter.com/liumengxinfly/status/1767073319956971891
   - 然后用 go 的 embed 特性直接把这些动态库全都打包到 go 的二进制里，然后在用 cgo 和 dlfcn 加载和调用 llama.cpp，实现了一个二进制文件免编译，免安装的解决所有问题
 
+- https://twitter.com/holegots/status/1767427148506431665
+  - 不过这个本质也是 llama.cpp 套壳吧 , 底层还是 cpp, golang 并不参与实际的推理.
+
 - ## 最新版的 OpenAI Translator 已经无缝支持本地大模型了（Ollama），无需联网，快速便捷，安全稳定！再也不怕 OpenAI 账号被封了！翻译效果对比大家可以看一下截图，大家快来下载体验一下吧！ _202402
 - https://twitter.com/yetone/status/1761607398819840511
 - 现在好像还不支持自定义模型？只有有限的几个模型可供选择，最好是有一个文本框可以自定义输入

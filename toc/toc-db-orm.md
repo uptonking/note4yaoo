@@ -179,6 +179,11 @@ modified: 2021-08-30T18:56:09.644Z
   - https://github.com/egomobile/node-orm-pg
   - A simple and generic ORM mapper.
 # orm-alternatives
+- https://github.com/kysely-org/kysely /8.9kStar/MIT/202403/ts
+  - https://kysely.dev/
+  - a type-safe and autocompletion-friendly typescript SQL query builder. 
+  - Inspired by knex. 
+
 - https://github.com/archfirst/joinjs /MIT/201902/js/NoDeps/单文件/inactive
   - A JavaScript library to map complex database joins to nested objects
   - It's a simpler alternative to a full-blown Object-Relation Mapper (ORM), and gives you direct control over your database interactions.

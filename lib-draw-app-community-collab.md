@@ -9,6 +9,17 @@ modified: 2023-09-07T04:18:42.020Z
 
 # guide
 
+# discuss-stars
+- ## 
+
+- ## 
+# discuss-interoperable
+- ## 
+
+- ## Maybe it’s time to start an open working group with @tldraw , @obsdmd , @excalidraw , @MuseAppHQ , +others to develop a minimal, open and interoperable format so canvases can approach the longevity of text files.
+- https://twitter.com/OrionReedOne/status/1767289054209397092
+- The standard should probably be based on a 3D+ design which can be rendered as 2D.
+
 # discuss
 - ## 
 

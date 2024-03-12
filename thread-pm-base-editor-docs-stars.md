@@ -14,6 +14,15 @@ modified: 2021-08-22T07:29:34.045Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🌰 pinyin-pro速度嘎嘎快。写了一个使用 ruby 标签排版拼音的 playground
+- https://twitter.com/yisibl/status/1767492218670194896 
+  - https://codepen.io/yisi/pen/WNWxvJr
+- 我搞了几个内部工具的搜索功能都用了 pinyin-pro，确实挺好用的
+
 - ## 🌰📝 今日HackerNews 上的最热贴： 《9 years of Apple text editor solo dev - 独立开发 Apple 文本编辑器的九年》
 - https://twitter.com/vikingmute/status/1743447079257858454
   - [9 years of Apple text editor solo dev | Hacker News_202401](https://news.ycombinator.com/item?id=38866170)

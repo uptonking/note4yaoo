@@ -169,7 +169,12 @@ modified: 2023-09-17T17:37:19.913Z
 
 - ## 
 
-- ## 
+- ## 🌰 Memory allocation by layers in YugabyteDB:
+- https://twitter.com/FranckPachot/status/1767219717037490550
+  - YSQL (PostgreSQL backend), visible in pg_stat_activity.allocated_mem_bytes
+  - DocDB Block Cache for reads (Block Based Table)
+  - DocDB MemTable for writes (Tablet Overhead)
+  - goes to SST Files when flushed
 
 - ## Database-per-Service said each service should have its own private database. You can only access the data through its API.
 - https://twitter.com/RaulJuncoV/status/1766092301955113113

@@ -132,6 +132,25 @@ modified: 2023-10-06T16:26:57.557Z
 
 - ## 
 
+- ## 
+
+- ## 为啥现在写本地模型更流行的是 c++ 和 python, 而不是近些年比较火的 Rust 和 go?
+- https://twitter.com/holegots/status/1767428017960423484
+- 之前研究过这个问题, 感觉的主要原因是 CUDA 和 CPP  耦合到一起了, 而 Python 和 CUDA/CPP 的交互已经有一整套生态和轮子, 
+  - 反观其他语言(Rust/Go) 只能走 C 再调用 CPP 来调用 CUDA , 这点劣势太大了, 而且算法老哥们也大部分不太会这两个语言.
+
+- 生态打不过，而且我个人理解主要计算是在 gpu 上面跑，这一块基本上都是 Python 胶水 + C++ 实现。 Rust 这边做 model serving 什么还挺好的。如果写 ml/dl 模型的话 binding C++ (流行度差很多数量级) 或者 Pure Rust (gpu 不支持) 的一些也有。其实目前不太看得到替换 Python 的必要。
+
+- cpp底层+python应用+各种库=既灵活又高效还通用，go和rust我粗浅的感觉还是偏专长
+
+- 我司也在搞端上（安卓，ios和pc）的模型，业务流程分为三块，云上的数据召回，端上动态数据召回以及端上模型（数据embedding和nn），云上的数据用go什么都可以，但是端上几乎不可能使用c++以外的语言，因为go，rust在机器学习库上非常少。c++有caffe和mnn。python是由于pytorch等，但也只用于训练
+
+- 训练的package是python的，部署lib是cpp的。rust和go也能做，不是主流。甚至R, matlab, julia, perl, lisp, java都可以。
+
+- C++ 和 Python 已经有了很成熟的生态和库。许多机器学习框架（例如 TensorFlow、PyTorch、Scikit-learn）都在这两种语言中得到了广泛的应用和支持。另外，C++ 语言所提供的内存管理能力可以支持更加高效的本地模型开发，Python 语言则具有更加方便易用的特点。Rust 和 Go 不如 C++ 和 Python 成熟
+
+- 首先所有实验除了很早期之外都是利用py的各种库做。而且py上手落地都快，科学计算库非常成熟，利于快速实现算法，性能大家都是本质调cuda，那点卖点根本没意义。你从算法开发角度想就理解了。c++和cuda更不用说。
+
 - ## [Complete Rewrite of ESLint | Hacker News _202211](https://news.ycombinator.com/item?id=33772530)
 - also note that both Deno and Sveltekit moved from TypeScript to JSDoc
 

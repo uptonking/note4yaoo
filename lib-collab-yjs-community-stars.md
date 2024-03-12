@@ -12,7 +12,14 @@ modified: 2022-10-22T18:46:45.456Z
 # discuss
 - ## 
 
-- ## 
+- ## 🆚️🛢️ [How is this different from ShareDB · yjs/yjs _201801](https://github.com/yjs/yjs/issues/93)
+- I try to advertise that Yjs is much easier to use, has offline support, and works peer-to-peer. 
+- I argue that ShareDB is rather hard to use because you, as a user of the library, have to know about how the data is structured and have to apply transformations on the data. 
+  - Yjs provides types that are observable, convenient to use, and have bindings to several editors (Ace, QuillJs, ..).
+- There are a lot of things that you can do in Yjs, but you can't do in ShareDB. 
+  - For example, you can design a completely distributed application with Yjs (see y-webrtc or y-ipfs). It is also possible to scale Yjs to serve millions of users. 
+  - As a comparison, you can open a google docs document with at most 50 users. While ShareDB generally supports more users than that, it is hard to scale ShareDB, because there is only a single source of truth - a single source of failure. This is a limitation of the transformation approach that is used in ShareDB (OT).
+  - yjs的计算发生在客户端而不是server
 
 - ## 🤔🌰 [How would you model a complex diagram page? - Yjs Community](https://discuss.yjs.dev/t/how-would-you-model-a-complex-diagram-page/2114)
 - I have 2 ideas:

@@ -32,6 +32,18 @@ modified: 2021-01-08T17:14:34.841Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Framer Motion 11.0.11 is a quantum leap in animation library performance.
+- https://twitter.com/mattgperry/status/1767532370792427577
+  - Introducing deferred keyframe resolution. 2.5x faster than 10.0 and GSAP animating from a cold start and 6x faster animating between unit types 
+  - This is about to become super important for SEO.
+
+- Why? Google is introducing the Interaction to Next Paint (INP) score. This means sites will be penalised the longer it takes for a page to become interactive and the longer between events and animation start. I've created two new benchmarks to improve the times for both.
+- Motion 11 batches all reads and writes on the next animation frame. This saves an incredible amount of work - no more red marks!
+
 - ## Like mixing JS animations and WAAPI seems to have no performance impact *until* there's a WAAPI animation on the main thread.
 - https://twitter.com/mattgperry/status/1735665781784916216
   - Reaffirms my belief in only running select animations via WAAPI and will be removing backgroundColor to start.
@@ -66,7 +78,7 @@ modified: 2021-01-08T17:14:34.841Z
 
 - The thing that annoys me about it is having to rename the latest values(in old solution with deps). latest- is a convention but you’d probably choose to call them the same thing you called the MotionValues
 
-- ## framer motion had signals five years ago 
+- ## 💡 framer motion had signals five years ago 
 - https://twitter.com/steveruizok/status/1635197073078513664
   - `MotionValue` provide reactive composable atomic state that provided a second channel for data that didn’t cause React to re-render (essential for animations). They can be computed via “transform” hooks.
 

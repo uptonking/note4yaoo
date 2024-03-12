@@ -74,6 +74,16 @@ modified: 2023-10-10T14:20:13.855Z
 - How do you market to B2B? I feel like it's different than b2c
   - I try to publish posts wherever possible (Reddit, Facebook, LinkedIn) and also add tools to AI catalogs.
 
+# discuss-ugc
+- ## 
+
+- ## 
+
+- ## 写小红书，看了各种策略，撇开技巧来说，核心部分跟写作还是挺像的，
+- https://twitter.com/houjoe1/status/1767444357999894952
+  - 小红书不是朋友圈，而是一种利他的内容或者说产品，最重要的是要避免自嗨，而是看是否对别人有用。
+  - 另外，要避免频繁切换主题，不是想写什么就写什么，不写什么才是关键，选择好角度一直写，于是我变身为了数码博主了
+
 # discuss-publish
 - ## 
 

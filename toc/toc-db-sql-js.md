@@ -19,10 +19,12 @@ modified: 2021-08-30T18:56:14.863Z
   - feathers.v5抽象出schema+resolver，通过knex+mongoose支持rdbms和nosql
   - knex-based orm: mikro-orm, bookshelf, objection.js
 
-- https://github.com/koskimas/kysely
-  - a type-safe and autocompletion-friendly typescript SQL query builder. Inspired by knex. 
+- https://github.com/kysely-org/kysely /8.9kStar/MIT/202403/ts
+  - https://kysely.dev/
+  - a type-safe and autocompletion-friendly typescript SQL query builder. 
+  - Inspired by knex. 
 
-- https://github.com/juanluispaz/ts-sql-query
+- https://github.com/juanluispaz/ts-sql-query /259Star/MIT/202403/ts
   - Type-safe SQL query builder like QueryDSL or JOOQ in Java or Linq 
   - provides a way to build dynamic SQL queries in a type-safe way
 
