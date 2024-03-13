@@ -11,16 +11,23 @@ modified: 2023-12-15T16:51:56.101Z
 
 - pros
   - MIT and features-rich
-  - plugin system
+  - plugin system and marketplace
+  - rbac is free
   - 支持audit日志记录
+  - Data Import & Export
+  - future flags
+  - built with typescript
+  - 提供了很多集成示例，如 redis/search
 
 - cons
+  - paid: Review workflow, Audit Logs, Shared Projects
   - 不支持version-history，但audit日志记录可作为类似功能
+  - ui不支持: Conditional fields, nested component
   - 与已有数据库集成不方便
   - v4不支持mongodb
   - 不支持多种第三方登录
-  - 提供的rbac功能需要内置10张表，难以迁移离开
-  - At this time and in the future there is no plan to allow model creating or updating while in a production environment, and
+  - rbac功能默认需要内置的10张表，复杂度高，难以迁移离开
+  - 🐛 At this time and in the future there is no plan to allow model creating or updating while in a production environment, and
     - there is currently no plans to move model settings into the database. 
     - There are no known nor recommended workarounds for this.
   - It doesn't namespace its admin table
@@ -51,6 +58,10 @@ modified: 2023-12-15T16:51:56.101Z
 
 - cms vs framework
   - ?
+
+- tips
+  - 💡🤔 notion database 的设计思路是先填写数据再设置类型，而不是大多数cms的先设置类型再填写数据
+  - 动态修改数据类型、修改schema
 
 - resources
   - [Strapi Community Forum](https://forum.strapi.io/)

@@ -16,7 +16,41 @@ modified: 2023-10-26T15:04:42.968Z
 
 - ## 
 
-- ## 
+- ## How would you design a data structure for a graph? Would nodes/edges be an object, or an array?
+- https://twitter.com/DavidKPiano/status/1767900376693342713
+- When nodes/edges are a key/value mapping, lookup is O(1), and addition/deletion is easy. ID uniqueness is also guaranteed.
+  - But if order matters, you have to keep an `order` property, and unique order isn't guaranteed without extra logic.
+- Nodes/edges as arrays seems like the most natural approach, iteration is easier, and ordering is inherent. But addition/deletion is trickier, and IDs are not guaranteed to be unique. Lookup is also O(n), which can be bad for larger graphs.
+
+- For objects, aren’t string keys guaranteed to be ordered by insertion time?
+  - In JS, yes (wouldn't trust it), but how would you *reorder* them?
+
+- Alternatively you could maintain a lookup map on the array implementation. I think with some extra maintenance code, you can kind of get the best of both worlds here, since this isn't like an academic exercise where you have to strictly choose one
+- If both, lookup performance and order are important, you could combine them:
+
+```typescript
+interface Graph {
+  nodeMap: Record<NodeId, Node>
+  nodes: NodeId[]
+  edgeMap: Record<EdgeId, Edge>
+  edges: EdgeId[]
+}
+```
+
+- Why do you need ordering in your use case? As theoretical concepts, graphs don't have a canonical ordering for their elements
+  - Good question. Here's 2 use-cases:
+  - State machine transitions (edges) can have the same event but different conditions. Precedence is based on order.
+  - Graphs on a visual canvas use order to determine which entities should be above others.
+
+- Usually you'd use either a adjacency matrix (table n*n which tells which nodes are connected) or adjacency list (nodes as objects, but they also contain a list of direct descendants).
+  - Edge lookup becomes less efficient, which can be a fine trade-off depending on the use-case. XState is essentially an adjacency "matrix", because edge source/targets never need to be modified.
+
+- 
+- 
+- 
+- 
+- 
+- 
 
 - ## 🕸️🔥🔥 [Postgres as a graph database | Hacker News_202303](https://news.ycombinator.com/item?id=35386948)
 - I designed and maintain several graph benchmarks in the Linked Data Benchmark Council, including workloads aimed for databases. We make no restrictions on implementations, they can any query language like Cypher, SQL, etc.

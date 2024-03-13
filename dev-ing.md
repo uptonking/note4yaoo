@@ -88,6 +88,12 @@ betterdiscordctl -i flatpak install
   - 不必执着于vanillajs，常用模式早晚会抽象出工具库或框架，如reactive/effect/ajax/undo
 # dev-2024-方向+方法+时间
 - 👉🏻 output: 代码产出、产品落地、生态积累
+
+- log2024 表格编辑、版本协作、cms
+  - 01-pouchdb-idb-rspack, ethercalc-ot
+  - 02-hexo-ssg, strapi-v5, realworld-fe-react
+  - 03-realworld-be-sequelize/knex, airtable-like
+
 - cms
   - outline, payloadcms, undb, nocobase
   - business-features, 盈利支持自身
@@ -297,6 +303,7 @@ betterdiscordctl -i flatpak install
     - 复现方法，在一个浏览器输入，在另一个浏览器全选+删除
 
 - dev-later
+  - realworld - test
   - 悬浮工具条
   - merge-cells 逻辑优化
   - cell-floating-menu 右上角
@@ -320,6 +327,21 @@ betterdiscordctl -i flatpak install
 # dev-03-realworld-react-sequelize-knex
 
 ## 031
+
+## 0313
+
+- [How to Create a Custom API Endpoint in Strapi? - DEV Community](https://dev.to/strapi/how-to-create-a-custom-api-endpoint-in-strapi-2pa4)
+  - go to the Setting > Roles > Public in the Strapi dashboard. 
+  - Please, check the final for the pages-report route and hit the save button.
+
+- [How to Create a Custom API Endpoint in Strapi](https://strapi.io/blog/how-to-create-a-custom-api-endpoint-in-strapi)
+  - In order to make the end-point accessible only to the authenticated users, go to the Settings > Roles > Authenticated
+
+- [Puppeteer国产镜像地址不能用了？ - 知乎](https://zhuanlan.zhihu.com/p/637107614)
+  - 对于Puppeteer20.1以上的版本，可以 
+  - puppeteer-download-base-url="https://cdn.npmmirror.com/binaries/chrome-for-testing"
+  - 19以下版本还是原来的方式
+  - puppeteer-download-host="https://cdn.npmmirror.com/binaries"
 
 ## 0312
 

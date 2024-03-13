@@ -258,8 +258,10 @@ A custom frontend for a CMS is a good investment in UX. A CMS isn’t publicy vi
 - ## [Questions: EAV vs Triplestore, Gremlin, Geographical data, immutability, further readings? · google/badwolf](https://github.com/google/badwolf/issues/82)
 - 
 
-- ## [Directus EAV · directus/directus](https://github.com/directus/directus/discussions/2840)
+- ## 🧩 [Directus EAV · directus/directus _202009](https://github.com/directus/directus/discussions/2840)
 - Use relationships
+  - A single product with multiple attributes could be configured as a one-to-many from products->attributes. 
+  - If an attribute can be used by multiple products, use a many-to-many instead
 
 - ## 🤔 [Rhizome on top of RDF · RhizomeDB/rs-rhizome](https://github.com/RhizomeDB/rs-rhizome/discussions/107)
 

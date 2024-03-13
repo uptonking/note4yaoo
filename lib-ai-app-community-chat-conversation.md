@@ -15,6 +15,15 @@ modified: 2023-04-16T10:02:58.738Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## GPT 回答标准模板：
+- https://twitter.com/kk_shinkai/status/1767841511516082470
+  1、把问题用自己更啰嗦的语言复述一遍；
+  2、大篇幅地介绍提问里那些你显然非常熟悉而且完全没问的背景概念；
+  3、像当代大学生写有字数要求的毕业论文那样回答你的问题 (如果运气好的话偶尔可以从这部分里抠出来明明一句话就能说明白的答案)；
+  4、一段仿佛是在凑字数的综述；
+
 - ## Chat interfaces won't supersede GUIs for most purposes.
 - https://twitter.com/msimoni/status/1732439305530851679
   - Clicking buttons/menus requires much less effort than entering text into a chat, esp. mobile.

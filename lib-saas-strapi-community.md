@@ -106,6 +106,11 @@ modified: 2023-12-15T17:04:36.589Z
   - Dynamic field is something I also looked into, which I think could work OK. The problem is that they want to add html blocks in the most arbitrary and random places. Sometimes right after the first paragraph, sometimes in the middle, the end. Sometimes there are 10+ html tags in a single Article. They don't have a fixed position. This arbitrary positioning makes it seem like dynamic zone won't work very well. Or maybe I'm missing something ?
   - Anyways, I tried using dynamic zones and it seems to be working pretty well. Seems like getting the most out of Strapi is better than replacing it.
 # discuss-feat-version-history
+- ## [Q2, 2024 - Content history | Content Editing XP | Strapi](https://feedback.strapi.io/customization/p/q2-2024-content-history)
+- Track version history of content: view the different iterations of a piece of content.
+
+- ## 
+
 - ## 
 
 - ## [How to add revision history or track any changes made by user? - Questions and Answers / Database-SQL - Strapi Community Forum _202105](https://forum.strapi.io/t/how-to-add-revision-history-or-track-any-changes-made-by-user/4882)
@@ -114,6 +119,11 @@ modified: 2023-12-15T17:04:36.589Z
 - [History/Versioning strapi plugin - Questions and Answers - Strapi Community Forum _202105](https://forum.strapi.io/t/history-versioning-strapi-plugin/5343)
   - I believe there is a plugin strapi-plugin-versionioning as well as strapi-plugin-revisions.
 # discuss-feat-draft-publish
+- ## [Q2, 2024 — Draft & Publish | Content Editing XP | Strapi](https://feedback.strapi.io/customization/p/q2-2024-draft-publish)
+- Allow users to manage content by having a published and draft content at the same time.
+
+- ## 
+
 - ## 
 
 - ## 
@@ -143,6 +153,13 @@ modified: 2023-12-15T17:04:36.589Z
 # discuss-schema-change
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Strapi model schema management - Questions and Answers - Strapi Community Forum _202305](https://forum.strapi.io/t/strapi-model-schema-management/28879)
+- In order to deploy content model changes to a production system you would initially have to apply the related changes in the db and then deploy a new version of Strapi with the aligned json model definitions
+
 - ## [Data Loss in Content-Type Table After Schema Modification _202401](https://github.com/strapi/strapi/issues/19141)
 - In Strapi v5 D&P and i18n won't be able to be disabled (though they don't have to be used) so technically in v5 the D&P delete issue won't be a problem anymore since it'll be forced on for all content-types (though you'll have the option to auto-publish by default or if new content should be a draft state).
 
@@ -157,6 +174,10 @@ modified: 2023-12-15T17:04:36.589Z
   - For V4, we decided to tackles this issue and started cleaning up the DB on schema changes (basically a schema/DB sync). 
   - However -and you're right- there is no way today for the schema sync to differentiate when a field is renamed from when one is deleted/created. If we want to allow this kind of distinction, it would imply in-depth modification of the content type builder API as well as some behavior in the schemas themselves. As we lack bandwidth for the moment, this is not something that will be handled in the short term.
   - However, it's true that there is a possible data loss when deploying a field rename from dev to production. Thus, I would advise creating a custom DB migration so that you can transfer the data before the schema sync is done. (more info on Derrick's link)
+
+- ## [Losing data when modifying a model - Discussions - Strapi Community Forum _202302](https://forum.strapi.io/t/losing-data-when-modifying-a-model/25989/2)
+- Renaming a field is what is called a non-compatible change. As long as you change your API definition, you’ll have destructive change. These type of changes should be handled with care and with multiple intermediate phasis.
+  - you can use the migrations scripts and then create the new column or do a rename with your script, so that Strapi won’t have to do anything when upgrading the schema.
 
 # discuss
 - ## 

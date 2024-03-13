@@ -68,5 +68,8 @@ modified: 2020-11-03T06:55:09.225Z
 - https://github.com/medusajs/medusa
   - https://medusajs.com/
   - The open-source Shopify alternative
+  - [Custom Fields API _202208](https://github.com/medusajs/medusa/discussions/1947)
+    - 202304: After spending over 5 hours testing medusa js, I'm sad to say that the lack of a custom fields API is too much of a worry to use the library, so I won't be using it to build my e-commerce site.
+    - Extending an entity does not alter the core database table, but instead, the EAV pattern will be applied (TBD)
   - https://github.com/medusajs/admin
     - Admin system for Medusa Stores

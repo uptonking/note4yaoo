@@ -11,6 +11,17 @@ modified: 2024-02-05T09:44:21.665Z
 
 # blogs
 - [Object Storage and In-Process Databases are Changing Distributed Systems _202402](https://blog.colinbreck.com/object-storage-and-in-process-databases-are-changing-distributed-systems/)
+# blogs-jepsen
+
+## [Deterministic Simulation Testing for Our Entire SaaS - WarpStream - Stream More, Manage Less](https://www.warpstream.com/blog/deterministic-simulation-testing-for-our-entire-saas)
+
+- Why use Antithesis instead of a traditional Jepsen test? 
+  - The Antithesis technology is more robust, and much more likely to catch bugs than the Jepsen harness
+  - Antithesis integrates natively into how our engineers are used to working. The entire test setup is expressed using standard docker-compose files and Docker images, and Antithesis tests are kicked off using Github Actions that push WarpStream images to Antithesis’ docker registry.
+  - Antithesis testing is designed to be a continuous process with accompanying professional services that help you grow and adapt the tests as the scope of your product increases
+  - it would not have been practical to continuously test our entire SaaS platform with Jepsen in the same way that we do with Antithesis. 
+
+- https://twitter.com/jorandirkgreef/status/1767767536572006436
 # blogs-vendor
 
 ## [ScyllaDB’s move from Paxos to Raft _2024](https://www.scylladb.com/glossary/paxos-consensus-algorithm/)

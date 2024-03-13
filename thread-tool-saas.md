@@ -52,6 +52,19 @@ modified: 2023-05-07T18:35:50.897Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## oh-my-rime，不喜欢输入法联网的朋友可以试试。
+- https://twitter.com/iamcheyan/status/1767761177004961926
+- rime双拼的问题一直没有好的解决方案
+- 这似乎不是输入法，就是一套 Rime 配置，大量借鉴了雾凇拼音，不太确定和雾凇拼音相比有什么差异或优势。但是网站和教程比雾凇拼音更新手友好一点。
+
 - ## http://SchemaStore.org now serves 1.6 TB of data every single day, and that number just keeps going up. 
 - https://twitter.com/mkristensen/status/1766232046349984046
   - Pretty much all modern IDEs and editors consume it for both JSON, YAML, and TOML schemas. It's mind-blowing to me.

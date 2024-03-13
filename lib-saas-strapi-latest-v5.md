@@ -14,6 +14,9 @@ modified: 2023-12-15T19:39:18.123Z
   - [rfcs v5](https://github.com/strapi/rfcs/pulls?q=is%3Aopen+is%3Apr+label%3Av5)
   - [5.0.0 Milestone](https://github.com/strapi/strapi/milestone/256)
 
+- [Q2, 2024 - Strapi 5 | Content Editing XP | Strapi](https://feedback.strapi.io/customization/p/q2-2024-strapi-5)
+  - two exciting new features: Draft & Publish; Content History
+
 ## ✨ draft-publish
 
 ### [Q1, 2024 — Draft & Publish | Content Editing XP | Strapi](https://feedback.strapi.io/customization/p/q1-2024-draft-publish)
@@ -86,17 +89,24 @@ modified: 2023-12-15T19:39:18.123Z
 - I like the idea but why remove the InjectionZones and not build this feature on top of InjectionZones. so it can be an InjectionZones or documentActions, SideBarPanels and DocumentHeaderActions
 # discuss-v5-changelog
 - ## wip
-- [feat(cm): D&P pt2](https://github.com/strapi/strapi/pull/19380)
-  - chore: use document from create and update
 
-- [feat(cm): add content history](https://github.com/strapi/strapi/pull/19315)
-  - Adds the content history feature
-
+- [feat(cm): reimplement relations for draft & publish ](https://github.com/strapi/strapi/pull/19642)
+- [chore: deprecate entity-service and delegate to document service ](https://github.com/strapi/strapi/pull/19728)
 - 
 - 
 - 
 
 - ## 
+
+- ## 
+
+- ## [feat: add basic pagination to history frontend _20240311](https://github.com/strapi/strapi/pull/19729)
+
+- ## [feat(cm): add content history _20240306](https://github.com/strapi/strapi/pull/19315)
+  - Adds the content history feature
+
+- ## [feat(cm): D&P pt2 _20240223](https://github.com/strapi/strapi/pull/19380)
+  - chore: use document from create and update
 
 - ## [chore: merge draft & publish into history _20240209](https://github.com/strapi/strapi/pull/19632)
 - update History with new v5 APIs 
@@ -122,6 +132,9 @@ modified: 2023-12-15T19:39:18.123Z
   - Refactored Collection-Types contracts api to return document metadata (available locales and publication status of a document)
   - Refactored entity-manager to work with the document service (we will rename it to document-manager)
   - Refactored collection-types controller to work with documents.
+
+- ## [chore(cm): refactor to use redux-toolkit-query](https://github.com/strapi/strapi/pull/19281/files)
+  - 从 react-query.v3 迁移到 redux-toolkit-query
 
 - ## [feat: Document Service _202311](https://github.com/strapi/strapi/pull/18558)
 - Implementation of the document service.

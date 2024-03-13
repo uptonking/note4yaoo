@@ -18,7 +18,7 @@ modified: 2023-04-11T02:24:25.572Z
 # proxy-usecase
 - browser-proxy
   - edge浏览器右上角一直无法登录同步因为国内网络问题，折中方案是点击右侧边栏的outlook或office按钮，在侧边栏登录后，整个浏览器也会登录
-  - flatpak安装的chrome默认支持系统代理，但edge浏览器未支持，所以edge不能访问特殊网站
+  - chrome推荐安装.deb， flatpak安装的chrome默认支持系统代理，但edge浏览器未支持，所以edge不能访问特殊网站
     - [edge: Add proxy support?](https://github.com/flathub/com.microsoft.Edge/pull/181)
 # apps-common
 - chrome应用商店 #镜像站点

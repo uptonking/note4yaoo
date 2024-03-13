@@ -14,7 +14,13 @@ modified: 2024-01-25T13:32:35.137Z
 
 - ## 
 
-- ## 
+- ## [[Question] How to use nodebox-runtime in browser without any online resource's support · Sandpack/nodebox-runtime](https://github.com/Sandpack/nodebox-runtime/issues/34)
+- Unfortunately, we did not fully open-source Nodebox for a variety of reasons
+
+- [Working Offline · Sandpack/nodebox-runtime](https://github.com/Sandpack/nodebox-runtime/issues/37)
+  - Currently nodebox takes a new domain for the preview every time you create a nodebox instance as it was the safest way to ensure consistent update logic and a single nodebox instance is connected to the preview.
+  - Because of this we need a network connection for the initial render and once it's rendered you can remove internet for any additional changes.
+  - We could make our caching on service workers a bit more aggressive but the core issue will remain and is really hard to fix properly without introducing more issues.
 # discuss-stackblitz
 - ## 
 

@@ -24,11 +24,11 @@ modified: 2023-12-15T16:51:49.971Z
   - Audit: We are keeping all the user operation logs under one place
 # dev
 
-# [pricing](https://github.com/orgs/nocodb/projects/13/views/2)
+# 💰 [pricing](https://github.com/orgs/nocodb/projects/13/views/2)
 
 - [What is available in free version ?](https://docs.nocodb.com/faqs/#what-is-available-in-free-version-)
 
-- NocoDB has just one version that is free & open source.
+- 🆚️ NocoDB has just one version that is free & open source.
   - In it you will notice advanced features are all available for free
   - ACL; Collaboration; Views; Share; protected; Automations
   - And we would never move these features from free to an enterprise version of NocoDB.

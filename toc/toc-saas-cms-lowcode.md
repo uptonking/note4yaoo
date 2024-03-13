@@ -171,7 +171,7 @@ modified: 2023-01-20T21:59:47.792Z
   - core依赖bookshelf-relations、knex2、express-hbs、mysql2、yjs
   - admin依赖ember、lexical
 
-- https://github.com/burdy-io/burdy /202202/ts/inactive
+- https://github.com/burdy-io/burdy /MIT/202202/ts/inactive
   - Headless CMS built in NodeJS and React. Written in Typescript
   - Node.js, TypeORM, Express
   - React, Fluent UI

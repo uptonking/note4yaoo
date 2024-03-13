@@ -30,7 +30,7 @@ modified: 2024-03-02T15:21:17.619Z
 
 - Content Versioning enables users to create unpublished copies of an item (called "Content Versions"), modify them independently from the main version, and promote them to become the new main version when ready.
 
-- [Revisions | Directus Docs](https://docs.directus.io/reference/system/revisions.html)
+- ⌛️ [Revisions | Directus Docs](https://docs.directus.io/reference/system/revisions.html)
 - Revisions are individual changes to items made. 
 - Directus keeps track of changes made, so you're able to revert to a previous state at will
 - Revisions are created whenever an Item is updated. 

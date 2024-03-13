@@ -14,7 +14,14 @@ modified: 2023-10-26T21:54:54.201Z
 
 - ## 
 
-- ## 
+- ## [自定义字段的功能数据库是怎么设计的呢？ - V2EX _202211](https://www.v2ex.com/t/895430)
+  - 业务中开发了个设施巡检系统，功能只是记录对种类不同的设备进行记录。
+  - 如果描述不清楚，同样的需求在 OA 平台、问卷系统、低代码平台很常有，想了解下一般实现方案。
+- mongodb 本身就是 document 数据库，没有 schema ，性能也足够。但是你需要有一套成熟的 ORM 框架。还有如果用 mongodb 你也要考虑到和其他数据表的 relation 。如果你已经很熟悉 mysql 或者 psql 了，用 json 类型其实也可以。
+  - 或者就是单独一个表来保存扩展属性（ key/value 的形式），这种就是读取数据时，要 join 联查出来
+- postgresql 的表继承方案也可以了解一下， 我们公司用的就是这种方案
+
+- 📝 [MySQL动态存储方案对比「转」 - RoninZc 的个人博客](https://ronin-zc.com/%E5%8A%A8%E6%80%81%E5%AD%98%E5%82%A8%E6%96%B9%E6%A1%88%E5%AF%B9%E6%AF%94%E8%BD%AC%E8%BD%BD/)
 
 - ## 🌰🆚️ Is there some kind of web app or tool that mimics a spreadsheet/excel in UX that directly translates into sql queries?
 - https://twitter.com/Captaintobs/status/1761835197459538195
@@ -44,6 +51,15 @@ modified: 2023-10-26T21:54:54.201Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [Any database engine supports 20-40k column tables? : r/SQL _202210](https://www.reddit.com/r/SQL/comments/xs7dqk/any_database_engine_supports_2040k_column_tables/)
+  - The question: does any DB support 40k columns with 100k rows and performs quite fast? Essbase?
+
+- no db engine supports bad design
 
 - ## 🚀 We've created the fastest spreadsheet
 - https://twitter.com/ProgRockRec/status/1763337727335125031

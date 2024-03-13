@@ -97,6 +97,27 @@ modified: 2022-06-13T03:00:06.041Z
 - I didn't experience the era when stored procedures were popular. Are they truly useful? It seems that today's frontend developers prefer to manage everything on their own.
   - I don't like procedures either; they lack capabilities such as version control and canary releases that code has. I believe the front end simply desires a user-friendly SaaS database.
 
+# discuss-distributed/replication
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🧩 Tables + indexes are horizontally partitioned across #MySQL Ndb Cluster nodegroups for read + write scale out.
+- https://twitter.com/frazerclement/status/1767715870984282225
+  - Fully Replicated (FR) tables are instead replicated to every nodegroup trading write scale + storage for read scale + locality.
+- The MySQL optimizer like Postgres assumes a single node. How does that work with NDB Cluster data distribution across the nodes?
+  - Yes the MySQL optimizer is not aware of data distribution or intra query parallelism.  The Ndb SE supplies controlled table + index statistics and engine capabilities to the optimizer to influence the execution plan.
+  - The Ndb SE also identifies operations, filters and nested-loop query fragments that can be shipped to the data nodes for execution to reduce data transfer.
+  - A transaction coordinator (TC) instance on the data nodes routes operations and query fragments to data nodes containing the relevant partition replicas for execution, in parallel if possible or required.
+  - Query fragments are handled by a special component in the data nodes called SPJ which performs a [parallel slice] of a parallel query, and may involve routing subrequests to other data nodes if required.
+  - So the data distribution is primarily handled across the Ndb storage engine (SE) layer in the MySQL Server, the NdbApi and the Transaction Coordinator (TC) and Select-Project-Join (SPJ) components in the data nodes, rather than the MySQL Optimizer.
+
+- The fully replicated tables are very useful for lookup tables, so the joins can happen locally.
+  - Yes, this is a good use case - e.g. dimension tables in a star schema.  The resulting join is effectively a Distributed Parallel Partitioned Hash Join.
+- Yes especially for tables that are quite static and small and don’t have the same partition key of the main ones. Guys looking at this conversation is a jump in the past! I miss all of you so much.
+- Good point. Intuitively you would think that it is better to fully replicate as small a number of tables as possible, but in a star schema fact_tables >>> dimension_tables, so this makes sense.
 # discuss-internals-mysql
 - ## 
 

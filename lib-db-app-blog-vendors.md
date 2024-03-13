@@ -66,7 +66,7 @@ modified: 2023-10-26T18:14:17.038Z
 - 
 - 
 
-## [Building and operating a pretty big storage system called S3_202307](https://www.allthingsdistributed.com/2023/07/building-and-operating-a-pretty-big-storage-system.html)
+## 🛢️ [Building and operating a pretty big storage system called S3 _202307](https://www.allthingsdistributed.com/2023/07/building-and-operating-a-pretty-big-storage-system.html)
 
 # more
 - [planetscale - Database branching: three-way merge for schema changes_202304](https://planetscale.com/blog/database-branching-three-way-merge-schema-changes)

@@ -14,7 +14,30 @@ modified: 2023-12-09T12:32:50.692Z
 
 - ## 
 
-- ## 
+- ## 🆚️ Trade-offs between Topics and Queues and 5 questions to pick the "right" one.
+- https://twitter.com/RaulJuncoV/status/1767894183560220931
+1. What are the Application requirements?
+If you need to ensure that exactly one consumer processes a message, use a queue.
+If your application requires sending messages to many consumers, use a topic.
+
+2. Do you need message durability and delivery guarantees?
+You need message durability and acknowledgments if you can't afford to lose messages.
+Queues offer better support for message durability out of the box. Topics might need more configuration.
+
+3. Scalability?
+Queues are better suited for scaling workloads. Each consumer you add can process messages in parallel without stepping on each other's toes.
+With topics, adding more subscribers means all subscribers process each message. You are not distributing the workload; you are only adding more consumers.
+
+4. How about if one of your consumers is not available now?
+In topics, keeping track of which subscribers have received which messages adds overhead.
+Managing this state is complex, especially if message order matters.
+
+5. How likely are your system's messaging needs to evolve?
+If this is a young system, it will change frequently.
+Topics may provide the flexibility needed to adapt without significant re-architecture.
+For more stable, defined workflows, queues offer simplicity and directness.
+
+- Could integrating both queues and topics offer a more versatile messaging solution?
 # discuss
 - ## 
 

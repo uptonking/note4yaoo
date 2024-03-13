@@ -24,7 +24,11 @@ modified: 2023-05-21T15:46:35.896Z
 
 - ## 
 
-- ## 
+- ## When building multiplayer forms, it's easy to show presence with a border—but how do you handle users editing at the same time?
+- https://twitter.com/ctnicholasdev/status/1767654875595432349
+  - One way is to lock the input while it's being used, and display a 🔒 icon in the presence selection until it's ready for editing.
+  - This is great for single-line inputs, but for anything multi-line, it may be better to allow multiple users to edit at once.
+  - Below I'm using https://liveblocks.io/yjs to create a real-time text editor with permanent storage, without hosting any servers.
 
 - ## [Show HN: RemoteStorage – sync localStorage across devices and browsers | Hacker News_202401](https://news.ycombinator.com/item?id=38972358)
 - the native localStorage API is super useful for keeping track of state between sessions in the same browser, but it's not as good a solution when your data needs to be shared across multiple devices or browsers.

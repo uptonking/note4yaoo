@@ -51,7 +51,12 @@ modified: 2024-01-04T06:36:06.762Z
   - It'll scream when I eventually get it onto the new storage system. (I've been feeling the itch to dust this off, so I'm hopeful I'll get back to it sometime this year)
 
 - Is compression implemented or planned for sediment/nebari?
-  - I wasn't originally planning it for Sediment, since to me it's a bit of a low-level building block type library. And Nebari was designed around the idea of a vault which is given the opportunitty to perform any operations on all blocks stored and loaded from the database. This is how BonsaiDb implements compression and encryption in Nebari.
+  - I wasn't originally planning it for Sediment, since to me it's a bit of a low-level building block type library. 
+  - And Nebari was designed around the idea of a vault which is given the opportunitty to perform any operations on all blocks stored and loaded from the database. This is how BonsaiDb implements compression and encryption in Nebari.
+- I'm quite interested in KV stores for the purpose of creating my own file format, which is why I've been following redb and its predecessor sanakirja for a while. Not sure that Nebari would be the best fit for that though.
+  - It might be! But it might not be, it will end up being a multi-file database in the new version, which isn't as attractive as a purely single file database like sqlite.
+- if you want to create your own file format, why would you use a KV store? then it's not your file format, but you're stuck with the KV's disk format
+  - The structure doesn't matter so much, only the container and the data I'm able to store in it
 
 - ## What's the status of sediment + nebari looking like? I've been interested to see how it performs_202312
 - https://discord.com/channels/578968877866811403/833332909808025610/1188641694300786789

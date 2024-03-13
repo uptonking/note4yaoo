@@ -19,8 +19,8 @@ modified: 2023-12-31T14:08:16.162Z
   - 08-kappa-db, dolt-git
   - 09-event-sourcing, datalog, eav/triple
   - 10-event-sourcing, pouch, sqlite/postgresql
-  - 11-elmish-flux
-  - 12-strapi
+  - 11-elmish, flux
+  - 12-strapi, rspack-react-starter
 # dev-12-strapi-&-rspack-starter
 
 ## 1228

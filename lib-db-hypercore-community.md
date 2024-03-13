@@ -58,7 +58,10 @@ modified: 2023-09-07T15:58:27.967Z
 
 - ## 
 
-- ## 
+- ## Is Keet open source yet? I can't seem to find the repo. Or maybe it isn't yet? _202403
+- https://discord.com/channels/985129863348371516/1057659276778274986/1215233784803500072
+- It isnt open source, but most of the packages are
+  - keet is mostly proprietaru UI on top of the open source pears runtime
 
 - ## 🚀 [Holepunch Unveils P2P Platform "Pear Runtime" | Hacker News _202402](https://news.ycombinator.com/item?id=39373960)
 - This looks exciting and I'm pleased to see more and more frictionless ways of making p2p apps. I've been building a somewhat similar hobby project that aims to connect peers in the browser by piggybacking on open protocols out on the net (BitTorrent, MQTT, Nostr, IPFS, etc).

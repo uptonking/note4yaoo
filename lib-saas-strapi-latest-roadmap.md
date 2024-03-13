@@ -57,7 +57,7 @@ modified: 2023-12-15T18:29:23.105Z
 - media library
 - plug-in providers
 
-## v0.0
+## v0.x
 
 # more
 
@@ -68,6 +68,10 @@ modified: 2023-12-15T18:29:23.105Z
 
 - ## [Add Audit Logs feature _202301](https://github.com/strapi/strapi/pull/15536)
 - Go to Settings -> Audit Logs, you will see a list with a log of events, you should see also the details of each event in a specific modal if you click the details icon at the right
+
+- ## 💡 [Database Transactions | Developer Experience | Strapi](https://feedback.strapi.io/developer-experience/p/database-transactions)
+- While this is still experimental and is subject to changes in the future versions, there is the possibility to use transactions.
+  - We had been using this internally for the past months but I can not give an exact date of when this will released as stable _202306
 
 - ## [Use transactions and expose a transactional API _202301](https://github.com/strapi/strapi/pull/14389)
   - /#merged

@@ -15,7 +15,9 @@ modified: 2023-06-14T00:53:15.226Z
 
 ## 
 
-## 
+## sharp安装问题
+
+- 可尝试修改 node_modules dist 目录下的源码，绕过sharp
 
 ## express router 无法触发的问题
 

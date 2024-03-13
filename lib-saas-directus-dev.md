@@ -28,6 +28,17 @@ modified: 2024-02-16T14:55:58.271Z
 
 ## utils
 
+- https://github.com/tractr/directus-sync /MIT/202403/ts
+  - A CLI tool for synchronizing the schema and configuration of Directus across various environments.
+  - By leveraging Directus's REST API, it aligns closely with the native actions performed within the application
+  - Updates are granular, focusing on differential data changes rather than blunt table overwrites, which means only the necessary changes are applied, preserving the integrity and history of your data.
+  - directus-sync organizes backups into multiple files, significantly improving readability and making it easier to track and review changes. 
+  - directus-sync operates on a tagging system similar to Terraform, where each trackable element within Directus is assigned a unique synchronization identifier (SyncID). This system is key to enabling version control for the configurations and schema within Directus.
+
+- https://github.com/bcc-code/directus-schema-sync /apache2/202402/ts
+  - The better way to sync your Directus schema, configuration and selected data between environments.
+  - Automatically export and import both the schema and data when you make changes via Directus or in the json data files
+
 - https://github.com/fabian-hiller/directus-sdk /202306/ts
   - This repository can be seen as an alternative proposal to the current Directus SDK.
   - Modular design

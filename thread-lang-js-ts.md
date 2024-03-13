@@ -26,7 +26,11 @@ modified: 2021-01-28T14:34:20.579Z
 
 - ## 
 
-- ## 
+- ## One really neat pattern is to 'brand' the data that can be fetched from a URL _directly_ onto the URL itself.
+- https://twitter.com/mattpocockuk/status/1767849338305163333
+  - This means you just to use the url directly, and get your data strongly typed.
+
+- i'd rather make a function 'getUser' than doing this.
 
 - ## It annoys me to no end that the return type of `Object.keys(T)` is `string[]` and not `(keyof T)[]` .
 - https://twitter.com/rossipedia/status/1766699756745638318

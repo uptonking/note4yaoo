@@ -13,9 +13,10 @@ modified: 2023-01-22T19:52:21.676Z
   - transaction support (with savepoints)
   - connection pooling
   - streaming queries
+  - 部分数据库支持 Partition By
 
 - cons
-  - ?
+  - 官方未支持 read replica, 但有第三方方案
 
 - features
   - both a promise and callback API

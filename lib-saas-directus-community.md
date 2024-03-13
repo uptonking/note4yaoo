@@ -16,7 +16,12 @@ modified: 2024-02-16T14:56:17.057Z
 
 - ## 
 
-- ## [CSV/Excel File Import](https://github.com/directus/directus/discussions/7246)
+- ## 🧩 [Directus EAV · directus/directus _202009](https://github.com/directus/directus/discussions/2840)
+- Use relationships
+  - A single product with multiple attributes could be configured as a one-to-many from products->attributes. 
+  - If an attribute can be used by multiple products, use a many-to-many instead
+
+- ## 📈 [CSV/Excel File Import](https://github.com/directus/directus/discussions/7246)
 - Yes u can already do that through api
   - I'm talking about the DIrectus GUI. A button to upload the file/select from the file library
 
@@ -88,6 +93,17 @@ modified: 2024-02-16T14:56:17.057Z
 # discuss-feat-version-history
 - ## 
 
+- ## 
+
+- ## 
+
+- ## I'm trying to setup previews using content versioning. _202312
+- https://discord.com/channels/725371605378924594/1151320093565927504/1184512066086785044
+  - When fetching a page by version using REST I do get a response. But I expected to get the complete page, not a modified object with create, delete, update. Is this the intended result?
+  - If it's meant to work this way, I guess I need to fetch the complete page without version, then the version diff and merge them both for the CMS preview?
+
+- Correct. content versions only stores a delta not the complete object 
+
 - ## I personally love the branch concept, but I'm 99% sure it would be lost on the newsroom. _202309
 - https://discord.com/channels/725371605378924594/1144680972382646455/1149334537474691133
   - My view is very narrow here (using Directus to create and publish news content for the web), but I think there are existing patterns that will be more universally understood.
@@ -156,7 +172,7 @@ modified: 2024-02-16T14:56:17.057Z
 
 - [Change Field Name / Type after creation](https://github.com/directus/directus/discussions/14037)
 
-- ## [Code-first configuration of schema, roles and permissions _202204](https://github.com/directus/directus/discussions/13041)
+- ## 💡💫 [Code-first configuration of schema, roles and permissions _202204](https://github.com/directus/directus/discussions/13041)
   - It would be great if schemas, roles and permissions could be managed via code. 
   - Often custom permissions contain logic that is of a fairly technical nature and should ideally be versioned and repeatable between dev/staging/prod environments.
 
@@ -167,7 +183,27 @@ modified: 2024-02-16T14:56:17.057Z
   - This way, 'everything' can be version controlled and synced between environments.
 - Patching and reading files like this on server start will greatly increase startup times leading to lower horizontal scaling performance.
 
-- Hi, I've just built a tool called directus-sync that could help streamline the way we handle Directus configurations and schema management. It’s inspired by the principles of infrastructure-as-code, with a touch of the familiar workflow from Terraform. This is currently a beta release, and I’m seeking collaborators who are up for testing, providing feedback, and contributing to its evolution. Check out the repo and let me know what you think!
+- 202311: Hi, I've just built a tool called `directus-sync` that could help streamline the way we handle Directus configurations and schema management. It’s inspired by the principles of infrastructure-as-code, with a touch of the familiar workflow from Terraform. This is currently a beta release, and I’m seeking collaborators who are up for testing, providing feedback, and contributing to its evolution. 
+
+- I still prefer the idea of starting to create schema changes, adding roles, or configure permissions on the UI rather than generating migration files manually because I love Directs UI and it is way faster/easier to create, setup and experiment.
+- I have been experimenting with DrizzleORM recently to manage migrations outside of Directus just to find out how this could be managed
+
+- ⚖️ The general idea is that schemas, roles and permissions could be developed in code (e.g. yaml) and applied to the database the next time directus is started. 
+  - An extension of this would be that changes made via the UI (locally) are reflected back to code and can be reviewed and committed to source control. 
+  - Applying changes to production could be part of a CI/CD pipeline (e.g. Github Actions) which could use the directus API.
+
+- 🔒 There should also be a locked mode, where it's only possible to change data, but not schemas, permissions and so on in a production environment. 
+  - Could be enabled by an environment variable or something similar outside the application. This would make sure a production environment is predictable.
+
+- ## [Separate Directus tables from content _202010](https://github.com/directus/directus/discussions/2882)
+- One approach could be kind of like Wordpress' ACF Pro solves it with their acf-json directory:
+  - The database stays as it is, but additionally for each model/role/permission, a json file is saved somewhere in the filesystem, containing all the details to reproduce it. (Also giving dev teams the chance to check them into git.)
+  - Whenever the schema changes, the json file changes.
+  - Each file has a "modified" timestamp and when directus discovers a newer json definition (for example because of a git pull), it will offer a sync button to incorporate the changes into the db schema.
+- Or if you prefer thinking in terms of migrations (because these json files can get messy): Each change to the schema creates a new migration file. 
+  - Directus tracks which migrations have been run and when a new migration is discoverd, gives the developer an option to run it to update their database. (Or even run them automatically, analog to the EXTENSIONS_AUTO_RELOAD function, or on server start.)
+
+- This is basically what we currently do through the schema snapshotting feature
 # discuss
 - ## 
 

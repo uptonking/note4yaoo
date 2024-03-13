@@ -29,6 +29,15 @@ modified: 2023-11-10T07:10:19.089Z
 # discuss-js-runtime
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 一旦度过了冷启动阶段，llrt 的 quickjs 就无法跟 v8 对比了，差距太大
+- https://twitter.com/fengmk2/status/1767742512561635462
+- 那当然，冷启动和 JIT 二选一嘛
+- 感觉正道还是做js的 AOT 编译啊
+
 - ## 🐛 The abundance of js runtimes, each subtly different from each other, makes it a little harder to write code that works across them
 - https://twitter.com/threepointone/status/1765656643155423739
   - “feature detection” strategies don’t work that well when you need to detect presence of modules (and the interplay with bundlers)

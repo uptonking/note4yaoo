@@ -30,6 +30,7 @@ modified: 2023-04-04T22:35:59.255Z
 - https://github.com/unjs/std-env /MIT/202402/ts
   - Runtime Agnostic JS utils
   - hasWindow; isMacOS; nodeVersion
+  - [Introducing UnJS Relations · Blog · UnJS](https://unjs.io/blog/2024-02-07-introducing-unjs-relations)
 # ioc
 - https://github.com/snatalenko/di0
   - Dependency injection for ES6 classes

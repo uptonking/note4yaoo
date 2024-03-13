@@ -9,16 +9,16 @@ modified: 2022-08-21T10:02:05.129Z
 
 # guide
 
-- ali-LowCodeEngine目前仅支持生成React的前端代码
+- ali-LowCodeEngine 目前仅支持生成React的前端代码
   - 开发成本固然低了，造出来的代码 **维护成本** 太高了
   - 这种东西，不会编程的人对他来说太复杂了，会编程的人来说太繁琐了。
 
-- airtable-like的产品的方向
+- airtable-like 的产品的方向
   - 偏后端，偏api，类似strapi通过拖拽ui字段生成rest crud api，即headless cms
   - 偏前端，类似airtable的通用表格组件，提供各种数据源的集成
   - 偏向automation
 
-- 🆚️ table-builder vs page-builder/支持表格的页面编辑器  🤔有什么区别
+- 🆚️ table-builder vs page-builder/支持表格的页面编辑器
   - nocodb支持现有的外部数据源，而页面编辑器的数据一般都是手动输入到系统内部数据库
   - 页面编辑器的功能更杂糅，特色功能点和优势不明显
 
@@ -27,8 +27,9 @@ modified: 2022-08-21T10:02:05.129Z
   - 参考apitable/directus实现以oplog为数据源的业务数据层
   - 基于oplog实现业务的案例: redux, event-store
 
-- 🤔 难点
-  - 动态修改数据类型、修改schema
+- 🤔 要点
+  - 🆚️ notion database 的设计思路是先填写数据再设置类型，而不是大多数cms的先设置类型再填写数据
+  - 动态修改数据类型或schema，可用eav或jsonb, 但大多方案是用户建表时在db建表
 
 - resources
   - https://github.com/topics/notion-database
@@ -101,7 +102,7 @@ modified: 2022-08-21T10:02:05.129Z
   - [feature/frontend next_20230503(v0.3), 前端迁移到svelte](https://github.com/undb-xyz/undb/pull/908)
     - 41fa03d9bfbc9b5072266ad94c9532ccdcf25a68
 
-- nocodb /33kStar/AGPLv3/202212/ts/vue/参考后端/多视图
+- nocodb /33kStar/AGPLv3/202212/ts/nuxt-vue/参考后端/多视图
   - https://github.com/nocodb/nocodb
   - https://nocodb.com/
   - [Development Setup](https://docs.nocodb.com/engineering/development-setup/)
@@ -109,8 +110,8 @@ modified: 2022-08-21T10:02:05.129Z
   - Turns any MySQL, PostgreSQL, SQL Server, SQLite & MariaDB into a smart-spreadsheet
   - 后端依赖 express、knex、ioredis、passport、request
   - 前端依赖 nuxt3、ant-design-vue.v3、vueuse、vue-flow(chart)、monaco-editor、d3-scale、dayjs、vuedraggable、xlsx
-  - 示例使用sqlite
-  - 用户在界面上创建表时，数据库层也会添加一张新表
+  - db仅支持sqlite
+  - 用户在界面上创建表时，数据库层也会添加一张新表, 表名前缀 nc__k4v___
   - 支持提供返回表中数据的api
   - 支持现有数据库，不需要导入数据: We transform any existing databases MySQL, Postgres, SQL Server & SQLite databases into a spreadsheet.
   - 主要功能模块
@@ -129,6 +130,12 @@ modified: 2022-08-21T10:02:05.129Z
     - Sorry, not at the moment
   - [Feature : NoSQL DB support 暂不支持 _202105](https://github.com/nocodb/nocodb/issues/184)
   - [Feature : Import data from external source _202205](https://github.com/nocodb/nocodb/issues/2052)
+  - [[Feature] Allow changing the `column type` without changing the `column type` by default _202112](https://github.com/nocodb/nocodb/issues/833)
+    - Currently, when you change a Column Type to, let's say, SingleLineText from LongText, NocoDB update the Type in Database from text to varchar. 
+    - Currently, all UI datatypes map one to one with a respective physical data type(s). _202112
+  - https://github.com/o1lab/xmysql /MIT/202105/js/inactive
+    - Xmysql is now NocoDB
+    - Xmysql : One command to generate REST APIs for any MySql database
 
 - locokit /47Star/MIT🌹/202301/ts/vue/参考后端/后端依赖pg的schema特性
   - https://github.com/locokit/locokit
@@ -202,6 +209,7 @@ modified: 2022-08-21T10:02:05.129Z
   - https://github.com/mattermost/focalboard
   - https://www.focalboard.com/
   - an open source, multilingual, self-hosted project management tool that's an alternative to Trello, Notion, and Asana.
+  - ❓ 用户建表时，似乎没有在db中建表
   - 前端依赖 @reduxjs/toolkit、@tippyjs/react、draft-js、@fullcalendar/react、imagemin-svgo、marked、moment、nanoevents、react-dnd.v14、react-hot-keys、react-intl、react-router-dom.v5
   - 示例使用sqlite
   - Focalboard comes in two main editions:
@@ -238,7 +246,7 @@ modified: 2022-08-21T10:02:05.129Z
     - Excel/Google Sheets like UI for Firebase/Firestore. No more admin portals!
     - https://github.com/FiretableProject/firetable
 
-- grist-core /5.3kStar/apache2🌹/202311/ts/参考后端
+- grist-core /5.3kStar/apache2🌹/202311/ts/参考后端/每个document对应一个sqlite格式的.grist文件
   - https://github.com/gristlabs/grist-core
   - https://support.getgrist.com/
   - https://docs.getgrist.com/
@@ -420,7 +428,9 @@ modified: 2022-08-21T10:02:05.129Z
 # airtable-like
 - https://github.com/chanchalguptaa/db-dash /202303/js
   - This is walkover product based on airtable clone
-  - 用户数据存放在mongodb/mongoose, 表格数据存放在postgresql/pg
+  - 用户建库时会在pg创建一个单独的数据库，建表时会在pg数据库创建单独的表，表名是uuid并且记录在mongodb中
+  - 🤔 数据库设计是否合适
+  - 用户数据存放在mongodb/mongoose, 表格数据存放在postgresql/pg，mongo中保存了连接地址如postgres://postgres:111111@localhost/untitledDb_65be9e17c57695b60e2c4e
   - https://github.com/tanishjain510/db_dash_frontend /202303/js
     - 依赖firebase、@reduxjs/toolkit、react-table.v7
 

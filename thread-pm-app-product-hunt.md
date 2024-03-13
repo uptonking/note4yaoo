@@ -36,7 +36,9 @@ modified: 2022-12-04T16:34:29.342Z
 
 - ## 
 
-- ## 
+- ## #这网站不错 包含有279 个真实 App 完整截图
+- https://twitter.com/austinit/status/1767873308354351557
+  - 特别适合用于UI方面的学习。
 
 - ## What’s the best way to publish/maintain a public roadmap? Landing pages, special vendors, public trello boards?
 - https://twitter.com/steveruizok/status/1766768033320558635

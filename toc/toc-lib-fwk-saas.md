@@ -238,3 +238,7 @@ modified: 2021-05-25T09:41:29.066Z
   - The goal of the framework is to help you create & maintain frontends, backends, and clouds
   - Stacks UI: Powered by Bun, Nitro, Tauri, UnoCSS, Vite & Vue
   - Stacks Functions: Develop serverless (or server) functions with countless helpers 
+
+- [MemFireDB](https://memfiredb.com/)
+  - 轻松构建小程序、Web网站、移动应用
+  - 采用开源的Supabase，兼容国内开发生态，降低开发/运维成本

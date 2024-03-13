@@ -39,6 +39,7 @@ modified: 2023-11-16T15:00:11.503Z
   - favorites/bookmarks
 
 - resources
+  - 可参考strapi官方提供的功能类似的template, 特别是api
   - https://demo.realworld.io/
     - https://conduit-realworld-example-app.fly.dev/
     - https://scrimba.com/scrim/cBewLHL

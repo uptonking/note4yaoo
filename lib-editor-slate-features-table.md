@@ -152,6 +152,8 @@ modified: 2023-02-27T19:07:31.111Z
 - 使用数字编号或日期编号展示内容变化
   - use numbered figures (e.g. fig 1, fig 2) to describe different stages of an interaction
 
+- 表格内容不变，但数据类型变化，如何实现
+
 ## diff-timeline-animation
 
 # editor-table-solutions

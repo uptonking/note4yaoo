@@ -193,6 +193,18 @@ npm unlink
 - pnpm has built-in support for monorepos (a.k.a. multi-package repositories, multi-project repositories, or monolithic repositories). 
   - You can create a workspace to unite multiple projects inside a single repository.
   - A workspace must have a pnpm-workspace.yaml file in its root.
+# mirror/proxy
+- https://github.com/cnpm/binary-mirror-config
+  - Binary mirror config for prebuild and node-pre-gyp
+
+- https://github.com/gucong3000/mirror-config-china /MIT/202305/js
+  - 为中国内地的Node.js开发者准备的镜像配置，大大提高node模块安装速度
+  - 支持Windows和其他操作系统
+  - 🍴 forks
+  - https://github.com/cloudyan/npm-config-china
+# yarn
+- [Yarn doesn't read from .npmrc Files for custom registry settings · yarnpkg/yarn](https://github.com/yarnpkg/yarn/issues/606)
+  - fallback to npm config if it exists after getting default yarn config value
 # lerna
 - 优点
   - 安装依赖时自动link

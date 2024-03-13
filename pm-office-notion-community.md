@@ -79,7 +79,7 @@ modified: 2023-11-28T14:48:45.910Z
 - 
 - 
 
-- ## 📈💡 [The data model behind Notion's flexibility_202105](https://news.ycombinator.com/item?id=27200177)
+- ## 📈🛢️ [The data model behind Notion's flexibility_202105](https://news.ycombinator.com/item?id=27200177)
 
 - I think it makes us unique among the popular editors of today, but we're very aware that the block model isn't original. Execution matters much more than innovation.
   - Pretty sure Athens & Workflowy (both YC companies) use blocks.
@@ -98,7 +98,7 @@ modified: 2023-11-28T14:48:45.910Z
   - Coda, on the other hand, started from an "easier application builder" approach, like Retool for Excel experts
 
 - 🎮 At http://story.ai the editor makes use of an ECS (Shipyard Crate in WASM). The flexibility it affords us has been super powerful particularly in support of constructs that are close to a programming language (values in and out of scope, suggestions and autocompletions, determining whether a "skill" is fully formed for publishing etc)
-  - jitl: In a previous iteration of Notion used a kind of model kinda like ECS, where each block was represented by multiple records called "reference" and "composite", so a block could have different type depending on context. From an internal doc on history: > We later decided this wasn't useful or necessary and collapsed them into one thing. WTF was I thinking??
+  - 👷🏻 jitl: In a previous iteration of Notion used a kind of model kinda like ECS, where each block was represented by multiple records called "reference" and "composite", so a block could have different type depending on context. From an internal doc on history: > We later decided this wasn't useful or necessary and collapsed them into one thing. WTF was I thinking??
 
 - I'm actually building a Confluence/Notion competitor, and it is document based. Being block-based makes a lot of things much more complex
 
@@ -106,9 +106,9 @@ modified: 2023-11-28T14:48:45.910Z
   - Yet in both cases, they ended up not really taking advantage of this flexibility. 
   - The logical schema of both systems is a very ordinary relational schema that could have been implemented directly on the database, with much better performance. 
   - I wonder if the Notion developers made a serious attempt to build on top of a more conventional structured schema, and found it really was unworkable?
-- 👉🏻 jitl: I actually think Notion's data model is much more conventional than the data stores behind document editors like Google Docs or Figma. Blocks are "just" rows in Postgres.
+- 👷🏻 jitl: I actually think Notion's data model is much more conventional than the data stores behind document editors like Google Docs or Figma. Blocks are "just" rows in Postgres.
   - We **use JSON for properties for flexibility and for user-defined property schemas**.
-  - We could use an entity-attribute-value table as you describe for that, but such a table would complicate our caching techniques. It would also be enormous, but, it might be time for another think about that since we finished sharding.
+  - We could use an `entity-attribute-value` table as you describe for that, but such a table would complicate our caching techniques. It would also be enormous, but, it might be time for another think about that since we finished sharding.
 - I was thinking more along the lines of, specific tables for different classes of entity, with a schema that’s as fixed as possible, so you get the most compact and indexable representation.
 - I'm curious if Notion has any plans to make the "type" property user-extensible. Given the current data-structure, which decouples the block data from the way its rendered through the type property, a user has to define only one template for rendering arrangements of UI components (boxes, bullets, etc), titles and children. 
   - This sounds a bit like customized structured data types with style inheritance, à la DITA.

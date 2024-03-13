@@ -16,6 +16,7 @@ modified: 2023-05-17T07:36:07.757Z
 
 - cons
   - 不支持undo/redo
+  - 只支持sqlite，不支持pg/mysql
   - 每个url只能显示一个table
   - 用户每新建一张表，就会在数据库中创建一张物理表
 
@@ -115,3 +116,18 @@ modified: 2023-05-17T07:36:07.757Z
   - Start by creating a link to table field before using a lookup field.
 - The Count field is used to count the number of matching entries in the referenced table for the unique key (foreign key) referenced by the current row. 
 # more
+
+# discuss
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## From a quick look at the code, it appears you only support sqlite right now. Do you plan to support postgres? _202310
+- https://discord.com/channels/1095348405749952604/1120844973366067341/1160968073868750889
+- I agree with your point that supporting all databases would require a lot of effort with little benefit. 
+  - nocode database data often cannot be easily converted to real db data, so our inclination is to support a single database. 
+  - The reason for choosing SQLite is its simplicity in terms of getting started and deployment, and its natural support for offline usage. For some simple applications and private deployment scenarios, SQLite is sufficient. 
+  - Currently, our plan is to explore distributed database solutions compatible with SQLite, such as rqlite. Another option is to provide limited support for both SQLite and MySQL (PostgreSQL) databases.

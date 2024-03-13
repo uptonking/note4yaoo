@@ -27,6 +27,66 @@ modified: 2023-09-25T17:52:11.778Z
 
 - [Flattening an EAV model in SQL, the DRY way - dbt Community Forum_201907](https://discourse.getdbt.com/t/flattening-an-eav-model-in-sql-the-dry-way/486)
 
+## [从 EAV 到 XTable | Jeremy's blog _202402](https://www.isyin.cn/rust/2024-02-29-%E4%BB%8E-eav-%E5%88%B0-xtable/)
+
+- 今天真正想说的是一个什么问题呢？其实是想说一个技术和业务结合的综合性问题。
+  - 首先，我们目前大多数业务型系统大致上会有这么几个东西：用来显示和操作的UI层，一般叫前端，用来处理数据和执行操作的业务逻辑层，一般就是后端，这个后端在大多数情况下是“无状态”的，意思就是它本身是不保存什么数据的，而数据都会给谁去保存呢？数据库
+- 商城类产品的数据存储，由于产品的属性千差万别，在小型公司的的数据量规模下，就已经很经常出现性能瓶颈了，因为如果要用 EAV 模式，它形成的数据规模是巨大的，哪里大呢？行数。MySQL 之前的版本，多少行比较合适相比也有所耳闻了。把这个数字算一算，看看最大能撑下多少产品数量，这取决于一个产品到底有多少个产品属性字段。
+  - 更不用说，后来有些需求还想基于这些字段做筛选、排序、计数等操作。
+- 技术层面有一个永远也不会过时的问题：规模。
+  - 在非常小规模的时候，你想怎么玩就怎么玩，有多少功能就上多少能力，把别人提供的功能全给我用上，以体现技术人员的能力也行，想体现产品人员的产品丰富度也行，随便玩。
+  - 但是，一旦规模上去了，就不能这么为所欲为了。这也是很多产品，以及一些开源产品，你自己玩玩可以，私有化部署企业内部用用也可以，但是，要想基于它为你的外部客户提供服务，这就成了一个 SaaS 服务的通病：规模问题、租户问题。
+- 作为 SaaS 服务，随便一百个客户，放在一起，数据规模随随便便就是亿级。
+  - 你说，干嘛不按客户分开放，那你愿意这样干也行，就是等于私有化部署嘛，那看你愿意投入多少资源去维护了。
+- 上面说的这个，还只是真正做业务系统，离业务最近的，等于是按业务进行定制化开发的。
+  - 后来，业务总是有泛化的需求：字段要能让客户随意自定义，自定义的字段还要能参与筛选、排序、搜索等等之类。
+- 我曾想，是不是类似 AirTable 那样的产品能真正满足需求，从功能逻辑想，如果人家有那样的产品能力实现，是不是通用的底层能力就有了，什么客户自定义的需求都能完美满足？
+  - 后来又真正去到了做这样的通用能力的产品的公司，这种产品，离业务又更远了，看似把很多需求都抽象出了通用能力，看似这个需求能满足，那个需求也能满足，但是回过头来看，好像又哪个领域的需求都没有真正深入满足，然后又收获到一堆客户的各种稀奇古怪的需求。
+  - 分析需求，抽象需求，设计产品功能，实现它，跑起来。
+  - 技术上，性能关过不了。
+  - 业务上，需求关过不了。
+  - 需求关过不了可以砍需求，技术关过不去，就真的只能等死。
+  - 客户如果对一个产品没有了期望，就一定不会续费。这对一个 SaaS 产品来说，就是等死。
+- 要想完全一个需求也不砍，只能重新再造一个数据库产品。
+- 所以，通用型自定义字段需求，即 XTable 类型在线 SaaS 产品，除非家大业大，技术储备足够，基本没有普通公司什么事情了。
+  - 它在技术上，要想成功，等于再造一个数据库产品，如果没有很大的实力，玩不动的。
+  - 所以结论还是：XTable 类型在线 SaaS 产品，除非技术关有重大突破，否则业务关总之是闯不过去的。
+
+## 💡 [Schemaless platforms. Architectural considerations _202002](https://medium.com/samanvay-on-tech/schemaless-platforms-e6bbf0a64a24)
+
+- Architectural considerations for products that allow their users to define their own data models
+
+- In most schemaless platform there is a platform-user who defines their specific data model and an end-user who simply uses that solution.
+
+- Three types of schemaless platforms
+  - Products where schemalessness is the defining feature of the product — like Google Forms, ODK, AirTable.
+  - Products with an embedded schemaless facility in multiple parts of the system— electronic medical records, SalesForce.
+  - Products that support the definition of custom fields, but they are not very powerful in what they allow — like multiple data types, skip logic, validations, calculated fields, schema migration, etc.
+
+- Do I need to use NoSQL databases for creating schemaless platforms? 
+  - Strictly speaking no, because there are ways to achieve schemalessness on relational databases as well.
+- Entity Attribute Value (EAV)— In a nutshell, keep one-row per field value. 
+  - A key column that represents the name of the field and a column for storing the value. 
+- Embedded schemaless facility within a relational database products. 
+  - For example support for JSONB within PostgreSQL.
+- User-defined database schema — Here the user can specify the schema, using which the platform creates database objects (tables, columns, index, etc) — providing a schema full structure when deployed. 
+  - This is followed by Strapi, Drupal. 
+  - One cannot do this if you want to use a single database schema for multiple customers who will all define their schema for themselves.
+- Spare columns — The platform provides spare columns in the database tables, where it wants to provide support for user-defined fields. 
+  - It can choose to represent all data types as a string or provide spare columns for multiple data types. 
+  - Obviously in-elegant, but clever from a performance perspective, as we will see later. This can be further extended to have spare tables with spare columns.
+
+- all schemaless platforms need to provide the ability for the user to define their schema and for the platform to store and serve it. 
+- Even though there are many schemaless platforms, this space has lacked standards for defining user schema
+
+- 🆚️ Technical tradeoffs in schemaless platforms
+- Relational databases schemas are quite standardised. This allows for reporting tools like Metabase, Tableau and others to provide numerous features 
+  - With schemaless platforms, we lose these benefits. These reporting tools do not understand EAV, JSONB, NoSQL very well
+- The database constraints like foreign-key, unique, not null, custom constraints cannot be taken for granted anymore. 
+- Data migration on schema change
+  - In schema full applications, the schema change and its associated re-arrangement of data are handled by the programmers using SQL (with flyway, Liquibase etc). 
+  - In schemaless platforms, supporting the change in user-schema over time is simpler to implement but performing data migration to the new schema is tricky.
+
 ## [How EAV Data Model helped us_201901](https://medium.com/@deepak.mallah/how-eav-data-model-helped-us-36c7c765d7e3)
 
 - EAV data model provides flexibility in such manner that you do not need to alter database tables to add/remove new product attributes.

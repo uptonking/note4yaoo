@@ -278,7 +278,7 @@ modified: 2020-12-28T12:24:09.275Z
   - 实现了编辑器和页面前端框架的分离, 可以支持不同的前端框架.
   - 目前已经支持 Vue, React, 和 Omi, 理论上可以支持任意前端框架.
 
-- ToolJet /17.1kStar/AGPLv3/202301/前端js+后端nestjs
+- ToolJet /17.1kStar/AGPLv3/202403/前端js+后端nestjs
   - https://github.com/ToolJet/ToolJet
   - https://tooljet.com/
   - low-code framework to build and deploy internal tools
@@ -289,6 +289,8 @@ modified: 2020-12-28T12:24:09.275Z
     - 仪表板
     - 成员与权限
   - ToolJet's drag and drop frontend builder allows you to build complicated responsive frontends within minutes
+  - [Add realtime collaboration _202203](https://github.com/ToolJet/ToolJet/issues/2516)
+    - Use yjs as the barebone library for adding the collaborative feature
 # lowcode
 - lowdefy /2.1kStar/apache2 > BSL/202401/js/json/yaml
   - https://github.com/lowdefy/lowdefy
@@ -414,9 +416,11 @@ modified: 2020-12-28T12:24:09.275Z
   - Low code production-ready solution for admin business components packages
   - Built on the design principles developed by Ant Design And Formly
 
-- https://github.com/steedos/steedos-platform
-  - 华炎魔方是Salesforce低代码平台的开源替代方案
+- https://github.com/steedos/steedos-platform /MIT/202403/ts/meteor
+  - https://www.steedos.org/
+  - 炎魔方低代码PaaS平台是一款基于 Salesforce Platform 的开源替代方案
   - 华炎魔方前端使用 React 开发表单、列表视图控件，并基于 Meteor 实现完整界面。
+  - 华炎魔方支持以插件的方式与第三方开源项目无缝融合，包括统一身份认证、数据分析、微应用、流程自动化，为客户构建一体化的企业PaaS平台。
 
 - https://github.com/alibaba/designable /ts/inactive
   - https://designable.netlify.app/
