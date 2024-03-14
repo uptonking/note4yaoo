@@ -77,6 +77,70 @@ modified: 2023-12-15T16:52:28.937Z
 - Data migration on schema change
   - In schema full applications, the schema change and its associated re-arrangement of data are handled by the programmers using SQL (with flyway, Liquibase etc). 
   - In schemaless platforms, supporting the change in user-schema over time is simpler to implement but performing data migration to the new schema is tricky.
+# blogs-cms
+
+## 🆚 [Directus vs Strapi: which one is better ? _202209](https://www.izoukhai.com/blog/directus-vs-strapi-full-comparison)
+
+- Directus supports 6 DB clients:
+  Postgres
+  Sqlite3
+  MySQL
+  OracleDB
+  MsSQL
+  CockroachDB. 
+  Supabase
+- Strapi supports only 4: 
+  Postgres
+  SQLite
+  MySQL
+  MariaDB
+
+- Strapi's architecture is based on local files: collections models, life-cycle hooks... everything is declared in configuration files.
+- Directus stores everything in the database except for custom plugins (hooks, app mods, endpoints...).
+  - Personally, I prefer Directus' way mainly because any change is applied instantly, you don't need to wait for the app to restart, unlike Strapi.
+
+- Strapi's admin app is based on React, Directus' on Vue. 
+  - Directus clearly outperforms Strapi on this part: customization, snappiness, coherence...  
+
+- Directus' advantages over Strapi
+- Directus can be used over an existing database
+  - Directus can initialize itself over your existing database, allowing you to manage your tables even if they were not created with the tool (except for relational fields I think). 
+  - Strapi forces you to bootstrap your project with it if you want to have control over your database.
+
+- Directus has a powerful role & permission system
+  - Directus offers a simple and powerful permissions management interface through the admin app. 
+  - Directus lets you create an unlimited number of roles, where Strapi has a limit of 3 roles in its free version.
+  - Although Strapi provides an interface to manage permissions per roles, Directus goes much (MUCH) further by allowing you to customize access based on conditions, and per field access.
+
+- Directus supports geographic objects (PostGIS)
+
+- Directus' UI is more customizable
+  - Directus allows you customize your admin dashboard much more than Strapi, allowing non-technical users to actually use the dashboard easily.
+  - Conditional display
+  - Per field aliases
+  - Collections grouping
+  - Adjust collection page layout 
+
+- Directus Flows allow you to run operations based on different triggers directly from your dashboard in a no-code way, with a beautiful UI composed of blocks connected to each other.
+
+- Why Directus is so unpopular ?
+  - Even though Directus has been around longer than Strapi with its PHP version (< v9), the latter just destroyed the game. 
+
+- Conclusion
+  - Don't fall for Strapi's powerful marketing
+
+##  [Strapi vs Directus: which one to choose 2023? _202310](https://medium.com/@weframe.tech/strapi-vs-directus-which-one-is-good-ff398e7c9e42)
+
+- Benefits of Directus Compared to Strapi
+  - Database Integration: Directus can seamlessly adapt to your existing database, enabling you to manage tables that were not originally created with the tool (excluding relational fields, as far as we know). 
+    - In contrast, Strapi requires you to initiate your project with it to gain control over your database.
+  - Robust Role & Permission System: Directus boasts a robust and powerful role and permission system.
+    - Directus offers the flexibility to create an unlimited number of roles, whereas Strapi’s free version imposes an inexplicable limit of 3 roles. 
+    - While Strapi does provide a permissions management interface for roles, Directus takes it to the next level by allowing extensive customization of access conditions and per-field access.
+  - Directus’ Geospatial Advantage: PostGIS Support
+  - Directus Flows
+
+
 # more
 - [Strapi vs Nest.js: A Tale of Simplicity and Flexibility in Back-end Development_202306](https://medium.com/@inni.chang95/strapi-vs-nest-js-a-tale-of-simplicity-and-flexibility-in-back-end-development-640f3a506289)
   - In conclusion, Strapi shines in its simplicity for straightforward use cases, while Nest.js offers a more comprehensive and flexible framework for developers comfortable with TypeScript. 

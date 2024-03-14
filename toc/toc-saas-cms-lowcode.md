@@ -73,31 +73,29 @@ modified: 2023-01-20T21:59:47.792Z
 - https://github.com/NouanceLabs/payload-dashboard-analytics
   - A plugin for Payload CMS to connect analytics data to your Payload dashboard.
 
-- directus /19.5kStar/GPLv3 > BSL/202301/ts/vue
+- directus /25kStar/GPLv3 > BSL/202403/ts/vue
   - https://github.com/directus/directus
   - https://directus.io/
   - https://docs.directus.io/
-  - Directus is a real-time API and App dashboard for managing SQL database content.
-  - REST & GraphQL API. Instantly layers a blazingly fast Node.js API on top of any SQL database.
+  - Directus is an instant REST+GraphQL API and intuitive no-code data collaboration app for any SQL database.
   - 后端依赖express、knex、async、commander、graphql、ioredis、keyv、marked、micromustache、node-cron、rate-limiter-flexible、sharp、vm2
   - 前端依赖vue3、tinymce5、p-queue、apexcharts
-  - 设计graphql的代码不多，可以尝试移除
+  - 涉及graphql的代码不多，可以尝试移除
   - 在admin添加新的data-model时，数据库会创建对应的表
   - [Change license to BSL-1.1_20230427](https://github.com/directus/directus/pull/18330)
     - Code released under this new license converts to GPLv3 (OSS) after 3 years
   - [Running Locally | Directus Docs](https://docs.directus.io/contributing/running-locally.html)
     - pnpm --dir api cli bootstrap 
     - 注意在.env中配置初始用户名密码
-  - Directus uses TinyMCE, which stores content as a string of HTML. 
-  - Directus is SQL-based which requires overhead like migrations and more.
-  - Payload allows bringing your own Express server.
+  - Directus uses TinyMCE, which stores content as a string of HTML
+  - Directus is SQL-based which requires overhead like migrations
   - Directus only supports role-based access control (RBAC). However, Payload supports function-based access control which can be used on either a document or field-by-field basis 
   - dev-xp
   - 登录界面一直白屏，排查了很久未定位到原因，但firefox可正常打开，chrome体系都是白屏
     - [Unable to run Directus locally](https://github.com/directus/directus/issues/17786)
     - You have to set `SERVE_APP=true` in your .env file in order to run the api in dev mode with the build app.
     - 最终发现配置server_app后要访问的是服务端:8055/admin，而不是前端:8080/admin
-  - https://github.com/directus-labs/agency-os /MIT/202402/ts/vue
+  - https://github.com/directus-labs/agency-os /MIT/202402/ts/vue/nuxt
     - https://agencyos.dev/
     - https://agency-os.vercel.app/
     - 管理后台在 https://directus.pizza/

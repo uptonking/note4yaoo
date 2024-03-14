@@ -10,6 +10,7 @@ modified: 2020-11-16T13:21:12.289Z
 # guide
 
 - who is using #editorjs
+  - directus
   - 蓝湖超级文档
 # dev
 

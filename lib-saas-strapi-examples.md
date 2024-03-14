@@ -18,14 +18,14 @@ modified: 2023-12-15T19:30:23.094Z
   - [Strapi showcases, 很多案例的官网但非开源](https://strapi.io/showcases)
   - [Websites using Strapi](https://trends.builtwith.com/websitelist/Strapi)
 # popular
-- strapi /57.5kStar/MIT+EE/202311/ts
+- strapi /57.5kStar/MIT+EE/202403/ts
   - https://github.com/strapi/strapi
   - https://strapi.io/
   - https://strapi.io/demo 一定时长后数据会清除
   - the leading open-source headless CMS
-  - 核心功能是提供了通过ui操作实现rest api的功能
-    - 系统内容通过ui操作编写
-    - 系统前端strapi没有限制，strapi只提供了api
+  - 核心功能是提供了通过ui操作实现rest api的功能，系统前端没有限制，strapi只提供了api
+  - 后端依赖koa、knex、umzug、commander、passport-local、node-schedule
+  - 前端依赖@reduxjs/toolkit、immer、slate、markdown-it、codemirror5、formik、react-dnd、react-window、sift、vite、esbuild
   - The original purpose of the project was to help Bootstrap your API
   - Now, Strapi is an open-source headless CMS that gives developers the freedom to choose their favorite tools and frameworks and allows editors to manage and distribute their content using their application's admin panel.
 
@@ -1085,6 +1085,10 @@ modified: 2023-12-15T19:30:23.094Z
   - A digital menu for a whole new experience
   - API ForMenu application
   - Strapi, PostgreSQL, NextJs 
+
+- https://github.com/h4zan/pottery-studio /202403/ts
+  - Project to revisit a pottery shop project, reminiscent of an earlier creation during my HTML and CSS learning phase.
+  - currently paused but will be revisited in the near future.
 
 - https://github.com/SadmanYasar/prompt-treasure /202307/ts
   - https://prompt-treasure.vercel.app/

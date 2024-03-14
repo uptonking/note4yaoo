@@ -29,13 +29,70 @@ modified: 2023-12-15T18:58:15.432Z
   - 3) declarative model and DB migration.
   - Last but not least, @payloadcms generated only 3 builtin tables, which makes the DB very clean and tidy, while strapi by default generated 20+ tables in your DB, no matter whether you need it or not. 
 
-# discuss-strapi
+# discuss-strapi-directus
 - ## 
 
 - ## 
+
+- ## [Strapi vs Directus : r/Strapi _202205](https://www.reddit.com/r/Strapi/comments/uwnosc/strapi_vs_directus/)
+- in Strapi our i18n feature is very similar as a functional manyToMany relation but we abstract it away 
+  - But the major difference between us and Directus is our approach to schemas. 
+  - Directus is database first whereas we focus on source-control based. Kinda the difference between a "one and done" deployment or a CI/CD application.
+
+- ## [Directus vs Strapi : Comparing the headless CMS features : r/node _202301](https://www.reddit.com/r/node/comments/108fc3k/directus_vs_strapi_comparing_the_headless_cms/)
+- Directus has no role based access control for their Admin UI. You can either give a user access to the entire Admin or let them be with no access. Their role based access control is only for the APIs.
+  - In contrast, Strapi allows a granular role based Admin UI access (in addition to the same for API).
+  - From my experience on this - it's a big limitation for enterprise CMS implementations where multiple content teams have access to the CMS and each need to be provided access only to some CMS tables/functionalities via the Admin UI.
+- Not true, within Directus you can create new roles as you like, and append which 'collection' it is able to create, read, update or delete within the Admin UI.
+  - You might tried Directus before this was implemented, but it's definitely possible.
+
+- Directus' REST API is so nice with their HTTP 'search' method for querying data
+
+- Yes! Strapi 4.5 has contains and containsi (I think that is the name) for searches too. Strapi 4.x is a lot better but their data migration for upgrades from 3.x to 4.x is super complicated.
+
+- ## 🆚️💡 [Strapi vs Directus: why you should go for Directus : r/webdev _202209](https://www.reddit.com/r/webdev/comments/xphtbk/strapi_vs_directus_why_you_should_go_for_directus/)
+
+- Things I missed while trying out Directus that Strapi did better:
+  - a decent way to model a multi level navigation module / component
+  - intuitive way for components / reusable blocks like a page builder, the m2a is honestly not as good as strapi
+  - support for multiple languages on directus seems hacky
+- Other than that I loved the speed of the running bunny and no need to wait for restarts.
+
+- 🐛 Some of these things listed as pros kinda fall apart when you use Directus in production. Here's some of my pain points of using Directus in production 
+- The search is not very useful, this is probably the biggest problem with directus since search is obviously very important feature. 
+  - If you have articles with translations, the search wont find articles by title, it won't find articles by text included in articles, it won't find articles by your tagged authors. 
+  - That's because the search only works on direct fields on the articles table and doesn't work for relations. 
+  - Now there is a flexible search system where you click through lots of relations and write filters, but good luck finding a non engineer who understands how it is used.
+- Another pain point which is pointed as a pro in the article: The views are not that good. 
+  - You can edit custom views for your editors to use, but once they open the view even once it will be "forked" for them and now any changes you make to the views won't show up to the editors anymore. 
+  - Also, there's no way to give view columns custom names which is obviously a problem since if you add author.name column the column name will be "name". 
+- While the UI looks good, it's somewhat unintuitive, especially translations. 
+  - Even though it's somewhat "natively supported" by directus. Opening a content that has translations just selects some language for you, instead of showing the language that actually has translation. That leaves editors wondering why the content is empty.
+- Another super common issue is that the editor will write their content to the wrong language and then they have to switch between languages copypasting the content. 
+- I think the configuration is obvious, I think it's better to have the configuration in files instead of in database because it makes it so much easier to automatically deploy stuff.
+- Flows kinda look cool as some sort of tech demo, but I don't really see any actual usecase for them. 
+  - A non programmer can't really use them since you need to still understand lots of stuff and know all the magic variables that are available. 
+  - And when a dev is doing it, it's way easier to just write the hook in typescript/javascript. For example you can't really make dele
+- Overall the process of how Directus works with automatic deployments doesn't seem to be thought about that much meaning that you'll have to resort to hacky stuff to make things work. 
+  - For example you really need 2 different kind of migrations, those that run before directus migrations and those that run after. But there's really no support for this and I think some "official" answer around this was to move the after. 
+  - There is this schema import/export but it doesn't really export everything you need, so you'll still need migrations or some other way to populate rest of the stuff you need. 
+  - Also you're going to have to figure out why after every deployment you can't edit any content, because directus has cached your db schema and for some reason directus cli cache apply doesn't reset the cache.
+- The javascript SDK isn't very good which is why we're considering just using the database directly when reading data from directus. 
+  - Especially any proper support for typescript would be really needed. Directus already knows my schema so it's a shame I have to write it again for some ORM to have proper data access.
+
+- Strapi is more popular because they received funding rounds early on in their project development. This lead them to sussing out tech bloggers, youtubers and other people and making them try their cms.
+
+- directus support websockets (also in and out). a few other flows that strapi doesn't . Actually this seems to be one of the big diff on features from Directus side because it have websocket, cron, manual, hook and you can chain an combine flows even run custom js code based on the flow.
+
+- Having worked with both as a freelancer, here's my brief take:
+  - Directus seems more polished and really works with whatever database schema you got. This was perfect for reusing existing data rather than having a whole migration process set up. 
+    - The UI is a lot cleaner too. Bonus points for it being Vue. 
+    - Only downside was during the v9 beta were a lot of things were breaking but that was to be expected.
+  - Strapi is decent if you're trying to introduce end users to a Wordpress alternative. I think this is the closest one to looking like Wordpress. 
+    - The only downside was in building extensions. It was a bit convoluted the way I had to fetch and render certain models.
 
 - ## [Is strapi(or headless cms in general) the right tool to use if I already have an existing backend api? : Strapi_202203](https://www.reddit.com/r/Strapi/comments/tj5afk/is_strapior_headless_cms_in_general_the_right/)
-- 🚫 We do not support importing existing databases yet, sadly I don't think we are what you are looking for
+- 🐛 We do not support importing existing databases yet, sadly I don't think we are what you are looking for
 - This video suggests there is a way to import existing database with some extra effort(still have to create the content type manually and edit some code). Does it still work?
   - Given it's age I would say no. Even if that did work, it's not something I'd recommend. Especially in our v4, the database code will go through and delete any columns or tables that Strapi isn't aware of and our relational structure is very specific.
 

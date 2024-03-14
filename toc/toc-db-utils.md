@@ -127,6 +127,12 @@ modified: 2022-11-06T11:21:27.612Z
 - https://github.com/csanyipal/ajqvue /java/inactive
   - Ajqvue provides an easy to use Java based user interface frontend for viewing, adding, editing, or deleting entries in several mainstream databases.
   - Plugin Framework.
+# schema
+- https://github.com/schemaspy/schemaspy /LGPLv3/202402/java/js
+  - http://schemaspy.org/
+  - a database metadata analyzer. 
+  - It helps your database administrators and developers visualize, navigate and understand your data model. 
+  - SchemaSpy is a standalone application without GUI. Just download the latest JAR file
 
  # more
 

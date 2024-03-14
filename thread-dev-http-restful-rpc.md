@@ -57,6 +57,14 @@ modified: 2021-09-20T18:38:00.319Z
 
 - ## 
 
+- ## 
+
+- ## 🪧 REST API Cheatsheet
+- https://twitter.com/sahnlam/status/1768159055229723063
+  - six fundamental principles of REST API design
+  - Key components like HTTP methods, protocols, and versioning
+  - Practical tips on pagination, filtering, and endpoint design
+
 - ## gRPC is gaining popularity for service-to-service communication. Here's why:
 - https://twitter.com/sahnlam/status/1738787868414550072
   - Speed - gRPC is built on HTTP/2 and Protobufs for maximum throughput and minimal latency. Much faster than JSON over HTTP.

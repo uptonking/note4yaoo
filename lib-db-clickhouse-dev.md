@@ -43,7 +43,12 @@ modified: 2023-12-15T18:01:18.391Z
 
 - ## 
 
-- ## 
+- ## Interesting language feature in ClickHouse: LIMIT .. BY column (in addition to ordinary LIMIT). 
+- https://twitter.com/lukaseder/status/1768220718469206478
+  - It corresponds to PostgreSQL's DISTINCT ON clause, but:
+  - 1) is (way) more intuitive, IMO
+  - 2) supports more than TOP-1 per group rows
+  - Of course, both syntaxes aren't strictly necessary. They're just convenice for ROW_NUMBER() filtering from a derived table, or using QUALIFY, if available
 
 - ## 近期准备写一个clickhouse性能优化三板斧的文章。
 - https://twitter.com/li_taiyang/status/1615559241296928769

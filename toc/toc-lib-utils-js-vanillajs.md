@@ -126,9 +126,6 @@ modified: 2023-04-04T22:35:59.255Z
   - a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing applications. 
   - provides a collection of robust, high performance libraries for mathematics, statistics, data processing, streams, and more
 # lang-nodejs
-- https://github.com/RafaelGSS/nodejs-bench-operations
-  - This repository provides benchmarks for basic operations to aid in determining a high-performance solution.
-
 - https://github.com/niksy/node-stdlib-browser
   - Node standard library for browser.
   - Based on `node-libs-browser` for Webpack
@@ -234,6 +231,9 @@ modified: 2023-04-04T22:35:59.255Z
   - 视频清晰度配置(最高支持4K)
   - 动画时间配置
   - 保存为自定义模板
+# benchmark/testing
+- https://github.com/RafaelGSS/nodejs-bench-operations /202403/js
+  - This repository provides benchmarks for basic operations to aid in determining a high-performance solution.
 # more
 - https://github.com/zspecza/common-tags
   - Useful template literal tags for dealing with strings in ES2015+

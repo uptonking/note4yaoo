@@ -267,6 +267,9 @@ modified: 2021-08-30T18:56:09.644Z
   - Performance: Our focus on zero-cost abstractions allows Diesel to run your query and load your data even faster than C.
   - Extensible: Unlike Active Record and other ORMs, Diesel is designed to be abstracted over.
   - [What ORM do you use? : r/rust _202305](https://www.reddit.com/r/rust/comments/13d9ayi/what_orm_do_you_use/)
+  - https://github.com/diesel-rs/diesel-dynamic-schema
+    - Query schemas not known at compile time with Diesel
+    - This code is merged into the main diesel repository
 
 - https://github.com/SeaQL/sea-orm /MIT/202402/rust/异步api
   - https://www.sea-ql.org/SeaORM/

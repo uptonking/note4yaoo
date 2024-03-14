@@ -23,6 +23,7 @@ modified: 2022-09-10T02:26:52.062Z
 
 - 其他云存储
   - 国外：dropbox clone
+  - 类似cms的media library
 
 - free-cloud-database
   - PlanetScale: mysql

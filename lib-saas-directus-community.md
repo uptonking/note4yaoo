@@ -14,8 +14,6 @@ modified: 2024-02-16T14:56:17.057Z
 
 - ## 
 
-- ## 
-
 - ## 🧩 [Directus EAV · directus/directus _202009](https://github.com/directus/directus/discussions/2840)
 - Use relationships
   - A single product with multiple attributes could be configured as a one-to-many from products->attributes. 
@@ -204,6 +202,55 @@ modified: 2024-02-16T14:56:17.057Z
   - Directus tracks which migrations have been run and when a new migration is discoverd, gives the developer an option to run it to update their database. (Or even run them automatically, analog to the EXTENSIONS_AUTO_RELOAD function, or on server start.)
 
 - This is basically what we currently do through the schema snapshotting feature
+# discuss-collaborative/realtime
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Add "Multiple Users Editing Page" Warning _202009](https://github.com/directus/directus/discussions/4793)
+- Not sure about a locking system - that could really cause headaches. I do really like the idea of a warning however.
+  - Maybe the warning should tie into the permissions system so that it's only triggered if someone is on a detail page for an item that they have permission to edit?
+
+- Wordpress solves this by having a "Take Over" button, so no one is truely locked out, but they are made very aware something might be lost if they proceed.
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
+- ## [Users overwrite each others changes if they save the same collection item _202101](https://github.com/directus/directus/issues/3558)
+- In this case, your reported situation feels like the expected behavior here. If user A is setting title to "Hello", while user B is making it "Hello World", whoever saves last is the one that becomes the saved value.
+
+- ## 🤝🏻 [Realtime App Updates _202011](https://github.com/directus/directus/discussions/3221)
+- Next to websockets, also worth looking into MQTT support (needs more research
+
+- 🚀 This was implemented in version 10.3 _202306
+  - Not so quick Connor! WebSockets support in the API was implemented, but the app isn't using it yet. That's what this feature request is about 
+# discuss-editor
+- ## 
+
+- ## 📝 [Block Editor_202105](https://github.com/directus/directus/discussions/5776)
+  - It would be great to add a Block Editor aka Medium or the new Wordpress.
+  - The main usefulness of this versus a WYSIWYG editor is it can be controlled in a better way with only very specific output, which is then easier to transform with CSS/JS when in use.
+
+- [已实现 Move in block editor exclusive extension _202305](https://github.com/directus/directus/pull/18525)
+
+- ## 📝 [State of WYSIWYG interface _202003](https://github.com/directus/directus/issues/2613)
+- we did not want to have two WYSIWYG editors in the core suite any longer, and TipTap was not feature-rich enough to be the single/only editor. Since TinyMCE is proven (WordPress) and quite feature-rich, we chose that library.
+
+# discuss-news
+- ## 
+
+- ## 
+
+- ## 
 # discuss
 - ## 
 

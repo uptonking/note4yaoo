@@ -24,7 +24,7 @@ modified: 2022-08-21T10:02:05.129Z
 
 - lowcode数据库层实现细节
   - 参考strapi实现table+audit-log
-  - 参考apitable/directus实现以oplog为数据源的业务数据层
+  - 参考apitable/directus实现以oplog/delta为数据源的业务数据层
   - 基于oplog实现业务的案例: redux, event-store
 
 - 🤔 要点
@@ -38,6 +38,11 @@ modified: 2022-08-21T10:02:05.129Z
   - [Maybe some misunderstanding of how SQL DB indexes work?](https://github.com/ccorcos/tuple-database/issues/11)
   - [什么是比较好的低代码产品_Tw93](https://zhuanlan.zhihu.com/p/596474809): platform, baas, cms, workflow, airtable-like
 # popular
+- https://github.com/SAKryukov/personal-database-dynamic-schema /MIT/202311/js/NoDeps/inactive
+  - https://sakryukov.github.io/personal-database-dynamic-schema
+  - Personal single-file in-memory database. 
+  - Dynamic database schema designed to add and remove columns to the table anytime during editing.
+
 - react-datasheet-grid /259Star/MIT/202305/ts
   - https://github.com/nick-keller/react-datasheet-grid
   - https://github.com/Equify/react-datasheet-grid
@@ -114,6 +119,7 @@ modified: 2022-08-21T10:02:05.129Z
   - 用户在界面上创建表时，数据库层也会添加一张新表, 表名前缀 nc__k4v___
   - 支持提供返回表中数据的api
   - 支持现有数据库，不需要导入数据: We transform any existing databases MySQL, Postgres, SQL Server & SQLite databases into a spreadsheet.
+  - 使用流程，workspace > base > create table > add fields > relations > add rows > views
   - 主要功能模块
     - 多种视图ui
     - 管理后台、仪表板
@@ -182,6 +188,9 @@ modified: 2022-08-21T10:02:05.129Z
     - Find & Replace
     - Extensions
     - Automation
+  - https://github.com/teableio/airtable2teable /MIT/202311/ts
+    - https://teable.io/
+    - The data pipeline from airtable to teable.
 
 - nocobase /3.7kStar/apache2(core)🌹 + AGPL(plugin)/202212/ts/国内
   - https://github.com/nocobase/nocobase
@@ -492,10 +501,6 @@ modified: 2022-08-21T10:02:05.129Z
   - Vika JavaScript SDK 是对维格表 Fusion API 的官方封装，可以很方便的对你的维格表中的数据进行增删改查操作。
   - 你可以轻松的将维格表中的数据集成到你自己的应用中
 
-- https://github.com/teableio/airtable2teable /MIT/202311/ts
-  - https://teable.io/
-  - The data pipeline from airtable to teable.
-
 - https://github.com/whitebrick/whitebrick /202202/ts/deprecated/未完成
   - Open Source Airtable Alternative (No Code DB)
   - Whitebrick is a lightweight No Code Database with 3 points of difference:
@@ -519,4 +524,24 @@ modified: 2022-08-21T10:02:05.129Z
 
 - https://github.com/jdan/notes /js/类似渲染表格数据的其他视图
   - Turn a Notion database into a deck of cards
+# db-dynamic-model
+- https://github.com/laracraft-tech/laravel-dynamic-model /202304/php/inactive
+  - Dynamic Eloquent models for Laravel
+  - It provides you with an eloquent model which finally can handle multiple tables and if you want also multiple database connections
+
+- https://github.com/facebookincubator/OnlineSchemaChange /BSD/202402/python
+  - A tool for performing online schema changes on MySQL.
+  - a tool for making schema changes for MySQL tables in a non-blocking way
+  - OSC must be run on the same host as MySQL server.
+  - OSC works outside of replication, all the statements are issued under `sql_log_bin=0`. It can be run on either replica or master at your demand. This means you can issue a schema change on one replica first for prove of concept and then roll out to master when you're sure about the change
+
+- https://github.com/Azure-Samples/azure-sql-db-dynamic-schema /MIT/202403/csharp
+  - Samples on how efficiently to handle dynamic schemas in Azure SQL
+  - using the native JSON support and then three options: table/json/hybrid
+
+- https://github.com/clarityai-eng/jsonschema2ddl /MIT/202203/python/inactive
+  - https://clarityai-eng.github.io/jsonschema2ddl/
+  - Generate tables dynamically from a JSON Schema and insert data
+  - Create your DDL statements for your database based on your JSON Schema.
+  - Postgres and Redshift are supported.
 # more

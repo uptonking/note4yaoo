@@ -24,6 +24,9 @@ modified: 2024-01-03T16:13:33.558Z
   - The following utilities improve performance by compiling and serving assets in memory rather than writing to disk:
     - webpack-dev-server/webpack-hot-middleware/webpack-dev-middleware
 
+- resources
+  - [Terser REPL](https://try.terser.org/)
+
 - [How Webpack decides what entry to load from a package.json](https://www.jonathancreamer.com/how-webpack-decides-what-entry-to-load-from-a-package-json/)
   - If the `target` of your app is `web` or a few others (which is default). 
   - It will look first at the `browser` field, and if it doesn't exist, it'll look for the `module`, and lastly `main`.

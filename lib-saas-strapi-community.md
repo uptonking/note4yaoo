@@ -12,6 +12,15 @@ modified: 2023-12-15T17:04:36.589Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 🐛 [How do I create a new Content type ? : r/Strapi](https://www.reddit.com/r/Strapi/comments/153ntvx/how_do_i_create_a_new_content_type/)
+- you’ve never been able to edit content definitions in production
+  - Strapi is a bootstrapped API - more than a CMS. Development mode content type creation makes perfect sense given the way Strapi generates the schema, controllers and models for the endpoints.
+
+- Strapi has been designed to be configured in development (local environment) and deployed in production. This is a best practice to make sure editors do not change the content structure in production, which could entirely break the frontend application. 
+  - Strapi is a CMS that has been strongly designed for developers and is deeply integrated with their workflows.
+
 - ## 🐛 [Question: What are the main pain points you have using Strapi? (Episode 5) _202305](https://github.com/strapi/strapi/issues/16873)
 - Nested components is my main pain point personally. It is supported at the code level at least now, but becomes an issue to maintain for those less knowledgeable with strapi. supporting real nested component at more than just 2 level would be a major thing as it permit the data to be way more self container and reusable.
 
@@ -25,7 +34,7 @@ modified: 2023-12-15T17:04:36.589Z
 
 - Not being able to have conditional logic for fields.
 
-- ## [Is it possible to create a collaborative platform with Strapi? - Questions and Answers - Strapi Community Forum _202211](https://forum.strapi.io/t/is-it-possible-to-create-a-collaborative-platform-with-strapi/23815)
+- ## 🤝🏻 [Is it possible to create a collaborative platform with Strapi? - Questions and Answers - Strapi Community Forum _202211](https://forum.strapi.io/t/is-it-possible-to-create-a-collaborative-platform-with-strapi/23815)
 - definitely possible but it will require some coding and bending. Afaik you can’t really create this just by clicking around in the admin panel.
 
 - ## 💰 [Can I use strapi free in my self-hosted server? - General - Strapi Community Forum_202304](https://forum.strapi.io/t/can-i-use-strapi-free-in-my-self-hosted-server/27666)
@@ -80,7 +89,7 @@ modified: 2023-12-15T17:04:36.589Z
 
 - The current and previous (v3) WYSIWYG editor are more so basic markdown editors
   - Our current editor only supports the bare minimums in terms of markdown support (eg no tables, ect) and support for things like inline youtube video previews, ect are a bit more complex to handle properly.
-  - There is already community options in both v3 and v4 such as CKEditor 5, React MD, Toast UI, and Editor.js I do think we should ship something more feature complete then forcing everyone to install one of the community options.
+  - There is already community options in both v3 and v4 such as CKEditor 5, React MD, Toast UI, and Editor.js. I do think we should ship something more feature complete then forcing everyone to install one of the community options.
   - If anything we could also make it easier to swap out our editor by standardizing methods to build new editors into the Strapi interface.
 
 - 202309: It's Aurélien from Strapi, we released an alpha version today (v14) with a new field type called Blocks. It's based on Slate and provides the same capabilities as any rich-text editor. In the beta, we plan to support links, markdown, keyboard shortcuts (Notion-like), and an expanded view.
@@ -144,12 +153,6 @@ modified: 2023-12-15T17:04:36.589Z
 - Yes, set the `published_at: null` during the POST request and it will be created as a draft. The default for REST/GraphQL sets that field to the current datetime. Passing over the null value will leave it in a draft state.
 - As of 7th February, the field is written `publishedAt` and not `published_at` as said before.
 
-# discuss-news
-- ## 
-
-- ## 
-
-- ## 
 # discuss-schema-change
 - ## 
 
@@ -179,6 +182,12 @@ modified: 2023-12-15T17:04:36.589Z
 - Renaming a field is what is called a non-compatible change. As long as you change your API definition, you’ll have destructive change. These type of changes should be handled with care and with multiple intermediate phasis.
   - you can use the migrations scripts and then create the new column or do a rename with your script, so that Strapi won’t have to do anything when upgrading the schema.
 
+# discuss-news
+- ## 
+
+- ## 
+
+- ## 
 # discuss
 - ## 
 

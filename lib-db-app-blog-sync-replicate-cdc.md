@@ -112,4 +112,7 @@ modified: 2023-12-10T18:38:43.604Z
   - Delta by comparison
   - Timestamp-based CDC
   - Transaction Log-based CDC
+
+## [A Taxonomy Of Data Change Events _202403](https://www.decodable.co/blog/taxonomy-of-data-change-events)
+
 # more

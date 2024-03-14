@@ -10,9 +10,7 @@ modified: 2021-09-14T18:59:03.144Z
 # guide
 
 - [Creative Commons Licenses](https://creativecommons.org/licenses/)
-
 # Creative Commons
-
 - 开源项目不是代码，建议使用： Creative Commons
 - 这是一个相对宽松的版权协议，它只保留几种了权利（some rights reserved）。
 - 使用者可以明确知道所有者的权利，不容易侵犯对方的版权，作品可以得到有效传播。
@@ -37,9 +35,13 @@ modified: 2021-09-14T18:59:03.144Z
 - Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)
   - https://tldrlegal.com/license/creative-commons-attribution-noncommercial-4.0-international-(cc-by-nc-4.0)
   - cannot commercial use, sublicense
+# fonts
 
+## SIL
+
+- [SIL Open Font License - Wikipedia](https://en.wikipedia.org/wiki/SIL_Open_Font_License)
+  - OFL is one of the major open font licenses, which allows embedding, or "bundling", of the font in commercially sold products.
 # ref
-
 - [Unsplash photos can be used freely for both commercial and non-commercial](https://unsplash.com/license)
 
 - [How to use Creative Commons images](https://www.pixsy.com/academy/image-user/use-creative-commons-images/)

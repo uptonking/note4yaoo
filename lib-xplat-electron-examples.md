@@ -99,10 +99,12 @@ modified: 2024-01-31T19:13:11.286Z
   - https://codexnotes.com/
   - 依赖 prosemirror、katex、bootstrap4、jquery、highlight.js
   - A free note-taking software for programmers and Computer Science students
-- https://github.com/1943time/bluestone /AGPLv3/202401/ts
+
+- https://github.com/1943time/bluestone /AGPLv3/202403/ts
   - https://www.bluemd.me/
   - 青石是一个开源的所见即所得Markdown编辑器
-  - markdown的table元素也不利于书写，双栏模式并不利于聚焦，所以开发了青石编辑器。他以富文本的方式结合markdown的编辑习惯来帮助你日常记录，并以标准的markdown格式保存
+  - markdown的table元素也不利于书写，双栏模式并不利于聚焦，所以开发了青石编辑器。
+  - 使用了富文本的编辑模式，同时兼容Markdown语法转换与编辑习惯，当使用搜索功能时，Markdown符号不会被搜索。
   - Using shiki as a code shader to make code highlights more fine-grained
   - 依赖mobx-react-lite、remark-gfm
 

@@ -313,12 +313,16 @@ modified: 2021-05-06T09:58:23.803Z
   - https://github.com/aykutkardas/svgps
     - https://svgps.app/
     - SVGPS removes the burden of working with a cluster of SVG files by converting your icons into a single JSON file. You can easily use this file in your frontend or mobile projects.
-# logos
-- [FreeLogo.me – Free SVG Logo Templates](https://freelogo.me/)
-  - SVG Logo placeholders you can download and use with no restrictions for free.
 # icons-tooling
 - [Iconbuddy — 200K+ open source free svg icons](https://iconbuddy.app/)
   - Download, Customize, Edit and Personalize. Over 200k+ open source icons.
+# logos
+- [FreeLogo.me – Free SVG Logo Templates](https://freelogo.me/)
+  - SVG Logo placeholders you can download and use with no restrictions for free.
+
+- [Logo Design & Brand Identity for Entrepreneurs | Looka](https://looka.com/)
+  - AI-powered platform to design a logo and brand you love
+  - 生成超多选择性的 logo 图标 , 然后下载是要收费的，你可以去直接扒 dom 里的 svg，去绕过这个问题
 # more
 - https://github.com/fontello/fontello
   - This tool lets you combine icon webfonts

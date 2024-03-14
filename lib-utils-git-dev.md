@@ -21,6 +21,10 @@ modified: 2023-08-29T10:11:26.348Z
   - git并不记录每一个操作的change，而是一次commit的所有changes
     - 可以拆分大commit为多个小commit来添加各个子文件的修改描述
 
+- 🌵 branching
+  - 强大的功能，但ui设计和使用场景有待挖掘
+  - 可用于db dynamic schema, 作为实现或备份
+
 - tips
   - git的广泛使用一个原因是与现有的文件和工具都集成方便，设计架构时要考虑现有格式与集成
     - 拆分核心内容和周边功能，split git-src and issues/pr/wiki, split txt/docx/xlsx and api

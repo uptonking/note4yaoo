@@ -167,6 +167,10 @@ modified: 2023-02-05T18:50:53.563Z
   - What if I want to store the changes in the database? This plugin does not support 
 - https://github.com/nosuchip/mongoose-track /201806/js
   - Mongoose model change history tracking and storing into model's "history" field.
+
+- https://github.com/NestorsImagination/mongoose-dynamic-schemas /MIT/201810/js
+  - A lightweight module which allows to dynamically add, remove, move and redefine schema fields of Mongoose models. 
+  - Useful when you need a model to be flexible but still want it to conform to a well defined schema.
 # utils-mongo
 - https://github.com/vadimdemedes/mongorito /201807/js/archived
   - flexible MongoDB ODM for Node.js apps based on Redux.

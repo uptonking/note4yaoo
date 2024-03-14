@@ -57,7 +57,7 @@ modified: 2023-01-23T19:27:46.948Z
   - build on super fast observables using most.js
   - Kafka broker should be version >= 0.11.x
 
-- https://github.com/soketi/soketi /AGPL3/202310/ts
+- https://github.com/soketi/soketi /4.4kStar/AGPL3/202402/ts
   - https://soketi.app/
   - Next-gen, Pusher-compatible, open-source WebSockets server
   - built on top of uWebSockets.js - a C application ported to Node.js

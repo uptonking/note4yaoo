@@ -29,6 +29,16 @@ modified: 2024-01-06T13:48:42.969Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## “因为程序编译问题鲁莽地删掉了 libc.6.so”
+- https://twitter.com/IIInoki/status/1767932966259335240
+- 谁年轻的时候没有因为libc版本低，然后升级libc导致系统挂掉的。
+- 感觉去镜像上下个同发行版的libc包解压复制回去就行了
+- linux下所有so都有版本依赖，你从别的地方搞来的so多数情况下不满足依赖条件，也就无法工作
+
 - ## if Linux was a stock, you better buy it sooner than later ... steady growth and it's wonderful these days from daily tasks to gaming and developing (that one has always been the case though).
 - https://twitter.com/WebReflection/status/1764653246608539946
   - Linux on the desktop breaks 4% for the first time on Statcounter

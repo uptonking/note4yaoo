@@ -159,6 +159,18 @@ modified: 2022-11-09T11:53:13.093Z
   - The flexible TypeScript Markdown editor that powers https://octo.app
   - 依赖codemirror6、lezer、solidjs
   - ui部分代码少
+# md-app
+- https://github.com/1943time/bluestone /AGPLv3/202403/ts
+  - https://www.bluemd.me/
+  - 青石是一个开源的所见即所得Markdown编辑器
+  - markdown的table元素也不利于书写，双栏模式并不利于聚焦，所以开发了青石编辑器。
+  - 使用了富文本的编辑模式，同时兼容Markdown语法转换与编辑习惯，当使用搜索功能时，Markdown符号不会被搜索。
+  - Using shiki as a code shader to make code highlights more fine-grained
+  - 依赖mobx-react-lite、remark-gfm
+
+- https://github.com/tk04/Marker /MIT/202403/ts/tauri
+  - A Desktop App for Easily Viewing and Editing Markdown Files
+  - user-friendly UI for viewing and editing markdown files
 # examples
 - https://github.com/joshnuss/hypersonic /202401/js/svelte
   - https://hypersonic.wiki/

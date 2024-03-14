@@ -97,6 +97,8 @@ modified: 2023-11-28T14:48:45.910Z
   - s2: 使用标题+列表，借助标题进行折叠
   - s3: 列表块的判断基于前置符号+块级换行，这样可以将列表项前的段落作为折叠触发点
 
+- toggle-list，支持设置初始折叠状态
+
 ## image
 
 - text on image, 类似支持编辑器卡片背景图片和文字
@@ -241,7 +243,9 @@ modified: 2023-11-28T14:48:45.910Z
   - 可与timeseries时序数据库结合尝试
 
 - 不那么成功的项目 wikidata
-# connections
+# versions/history
+- 文档级、文件夹级、workspace级
+# integretions
 - 支持mdx，内置开源组件
 # knowledge-base
 - 个人知识搜索引擎

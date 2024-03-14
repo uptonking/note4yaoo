@@ -167,7 +167,30 @@ modified: 2023-09-17T17:37:19.913Z
 # discuss
 - ## 
 
-- ## 
+- ## 4 must-know strategies to build high-availability systems:
+- https://twitter.com/ProgressiveCod2/status/1768176860037517417
+- [1] Replication
+  - Involves duplicating data on servers spread across different locations & data centers  
+  - If one server goes down, the other can support the workload  
+  - Also, protects against data loss by increasing durability
+
+- [2] Load Balancing
+  - Distribute traffic across multiple servers to share the load  
+  - This ensures no single server gets overwhelmed by incoming requests  
+  - Also, if certain servers go down, other servers are present to take over
+
+- [3] Auto Scaling
+  - Sometimes a dramatic increase in load can result in a loss of availability  
+  - Auto-scaling helps a system scale out based on demand
+  - This ensures that the overall availability is not impacted
+
+- [4] Rate Limiting
+  - Denial-of-Service attacks can cripple a system’s availability
+  - Rate limiting based on IP addresses or users can ensure that the system is not abused by a malicious actor  
+  - This ensures that genuine users are not impacted
+
+- Backups and disaster recovery plans
+- Auto Scaling is critical for elasticity! Just make sure to set your Rate Limiter to avoid a surprising bill
 
 - ## 🌰 Memory allocation by layers in YugabyteDB:
 - https://twitter.com/FranckPachot/status/1767219717037490550

@@ -144,6 +144,13 @@ modified: 2020-07-17T10:54:16.341Z
 - 腾讯的Font-Spider
   - 可以把页面中没有的字从字库剔除掉，使用的是NodeJS
   - 适合静态页面
+
+
+- https://github.com/lxgw/LxgwWenKai /ofl1.1/202402
+  - https://lxgw.github.io/2021/01/28/Klee-Simpchin/
+  - LXGW WenKai / 霞鹜文楷, 一款开源中文字体，基于 FONTWORKS 出品字体 Klee One 衍生。
+  - FONTWORKS是一款有着日本教科书体风格的字体，兼有仿宋和楷体的特点
+  - https://github.com/CMBill/lxgw-wenkai-web
 # discuss
 - ## 
 

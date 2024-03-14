@@ -52,7 +52,7 @@ modified: 2024-03-02T15:21:17.619Z
   - In bigger projects this collection can get large.
   - Some Directus users combat this my periodically purging some or all data in this collection.
 
-## 🔀🤝🏻 [Introducing Content Versioning v10.7.0 _20231023](https://directus.io/blog/introducing-content-versioning)
+## ⌛️🌵 [Introducing Content Versioning v10.7.0 _20231023](https://directus.io/blog/introducing-content-versioning)
 
 - Today we're releasing Content Versioning as part of Directus v10.7.
   - This unlocks two powerful new authoring workflows - preparing draft updates of content without publishing them, and collaboration with others without accidentally overwriting content.

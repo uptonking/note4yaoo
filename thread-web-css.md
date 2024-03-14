@@ -38,6 +38,22 @@ modified: 2021-01-08T17:15:13.906Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Apply CSS to the last element of a specific class. 
+- https://twitter.com/diegohaz/status/1768048415630295061
+  - This is useful when there are other sibling elements with different classes.
+
+```CSS
+/* Plain CSS: */
+:nth-last-child(1 of .some-class) {}
+
+/* Tailwind: */
+[:nth-last-child(1_of_&)]:rounded-r
+```
+
 - ## 🧩 FOUC: When content paints before its CSS has loaded.
 - https://twitter.com/jaffathecake/status/1757662754331144476 
   - It results in a layout shift, but not all layout shifts are because of FOUC (in fact, FOUC is pretty rare these days).

@@ -76,7 +76,7 @@ modified: 2021-05-25T09:40:55.797Z
 - https://github.com/TheHadiAhmadi/minibase /202211/js
   - minimal (and slow) firebase alternative
 
-- https://github.com/soketi/soketi /AGPL3/202310/ts
+- https://github.com/soketi/soketi /4.4kStar/AGPL3/202402/ts
   - https://soketi.app/
   - Next-gen, Pusher-compatible, open-source WebSockets server
   - built on top of uWebSockets.js - a C application ported to Node.js

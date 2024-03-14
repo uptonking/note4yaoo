@@ -30,10 +30,10 @@ modified: 2020-12-28T12:24:09.275Z
 
 - lowcode vs builder
   - 建站侧重于自动生成并发布页面，而不是编辑器
-# popular
-- ref
-  - https://github.com/taowen/awesome-lowcode
 
+- resources
+  - https://github.com/taowen/awesome-lowcode
+# popular
 - payloadcms /9.1kStar/MIT/202301/ts/slate
   - https://github.com/payloadcms/payload
   - https://payloadcms.com/
@@ -139,13 +139,14 @@ modified: 2020-12-28T12:24:09.275Z
   - 不支持在editor拖拽修改block顺序，只能在大纲拖拽
   - [阿里低代码引擎简介](https://lowcode-engine.cn/site/docs/guide/quickStart/intro)
 
-- jd-drip-table /677Star/MIT/202301/ts/仅表格
+- jd-drip-table /1.2kStar/MIT/202403/ts/仅前端的表格无需后端
+  - https://github.com/jd-opensource/drip-table
   - https://github.com/JDFED/drip-table
   - https://drip-table.jd.com/
   - https://drip-table.jd.com/demo
-  - 依赖viewerjs-image-viewer, rc-*组件，react-window、moment
   - 京东零售推出的一款用于企业级中后台的动态列表解决方案
-    - 类似表格渲染编辑器
+  - 项目基于 React 和 JSON Schema，旨在通过简单配置快速生成页面动态列表来降低列表开发难度、提高工作效率。
+  - 依赖antd4、viewerjs-image-viewer、react-window、sortablejs、react-quill、react-monaco、rc-*组件、moment
   - 抛弃繁重难以维护的JSX堆砌表格列，采用无需开发的低代码拖拽搭建模式。
   - 专注于可视化搭建、组件渲染分发，底层渲染逻辑由组件库处理，因此不依赖指定界面框架，可支持多种主流界面组件库。
   - 全家桶
@@ -211,26 +212,29 @@ modified: 2020-12-28T12:24:09.275Z
   - Everything is a plugin, all new features can be implemented by developing and installing plugins
   - [change license of plugins-AGPLv3_20230111, v0.8.1 > v0.9.0](https://github.com/nocobase/nocobase/pull/1350)
 
-- fast-crud /512Star/MIT/202311/ts/vue
+- fast-crud /512Star/MIT/202402/ts/vue/仅前端
   - https://github.com/fast-crud/fast-crud
   - http://fast-crud.docmirror.cn/
   - 面向配置的crud开发框架，快速开发crud功能，可作为低代码平台的基础框架
+  - 目标是实现一个fs-crud组件，帮助快速开发crud功能，admin脚手架并不是本项目的重点
   - 可以直接使用示例中的fs-admin，特点是简单
   - 也可以采用其他的admin开源项目，然后集成fast-crud
   - 基于目前市面上开源的高星admin项目fork，集成fast-crud，Antdv 3x 、Element-Plus 、NaiveUI 三选一
     - https://github.com/fast-crud/fs-admin-antdv /vue
 
-- directus /19.5kStar/GPLv3/202301/ts/vue
+- directus /25kStar/GPLv3 > BSL/202403/ts/vue
   - https://github.com/directus/directus
   - https://directus.io/
-  - Directus is a real-time API and App dashboard for managing SQL database content.
-  - REST & GraphQL API. Instantly layers a blazingly fast Node.js API on top of any SQL database.
-  - 后端依赖express、knex、async
-  - 前端依赖vue3、tinymce5、p-queue、apexcharts
-  - [Block Editor_202105](https://github.com/directus/directus/discussions/5776)
-    - [已实现 Move in block editor exclusive extension](https://github.com/directus/directus/pull/18525)
+  - https://docs.directus.io/
+  - Directus is an instant REST+GraphQL API and intuitive no-code data collaboration app for any SQL database
+  - 后端依赖express、knex、async、commander、graphql、ioredis、keyv、marked、micromustache、eventemitter2、node-cron、rate-limiter-flexible、sharp、vm2、ws
+  - 前端依赖vue3、vueuse、vuedraggable、editorjs、tinymce.v6、tinymce-vue.v5、fullcalendar、p-queue、apexcharts、codemirror.v5、cropperjs(img)、maplibre-gl、marked、mitt
+  - 涉及graphql的代码不多，可以尝试移除
+  - 在admin添加新的data-model时，数据库会创建对应的表
+  - [Change license to BSL-1.1_20230427](https://github.com/directus/directus/pull/18330)
 
 - webstudio-designer /172Star/MIT>AGPLv3/202212/ts
+  - https://github.com/webstudio-is/webstudio
   - https://github.com/webstudio-is/webstudio-designer
   - https://webstudio.is/
   - Webstudio Designer is a NoCode Visual Tool inspired by Webflow
@@ -241,8 +245,10 @@ modified: 2020-12-28T12:24:09.275Z
   - Webstudio features a UI to create API bindings. You can add a GraphQL binding to any component and choose which endpoint and data properties to bind to each component property. 
   - block块级元素不支持拖拽
   - [Change license from MIT to AGPL V3_202307](https://github.com/webstudio-is/webstudio/pull/1980)
+  - [Apps Marketplace](https://github.com/webstudio-is/webstudio/issues/2648)
+    - Similar thing to figma apps, they are effectively standalone web apps loaded via iframe, hosted by the 3rd-party provider but with access to project data and api to change it
 
-- https://github.com/codebdy/rxdrag /ts/antd
+- https://github.com/codebdy/rxdrag /golang/ts/antd
   - https://rxdrag.vercel.app/
   - https://github.com/codebdy/minions-go /golang/逻辑编排go引擎
   - 可视化编辑，设计一切基于HTML的东西，模块化设计

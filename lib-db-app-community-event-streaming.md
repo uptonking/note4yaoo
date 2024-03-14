@@ -32,7 +32,15 @@ modified: 2023-10-27T07:02:42.391Z
 
 - ## 
 
-- ## 
+- ## 🐘 Shower thought: It'd be neat to have a Kafka <-> PostgreSQL streaming replication proxy. 
+- https://twitter.com/criccomini/status/1767957871638229066
+  - PG -> Kafka can be done with Debezium, but I'm interested in the reverse as well. 
+  - Many DBs are now building PG replication for ingest; it'd be nice to leverage that for Kafka data.
+- maybe you have in mind to expose Kafka data through the PG wire protocol, I guess?
+  - you could. But you'd have to put the data into some sort of indexable structure, if you want to have any kind of queryability. At which point you just could write to Postgres proper.
+- I'm talking about the PG replication stream protocol.
+  - gotcha. You then could use Debezium to ingest that one, rinse and repeat ; ) More seriously, what use case would you see for this?
+- Just sort of musing about how many new DBs seem to be adopting PG streaming replication ingest (eg CedarDB, ElectricSQL). Would be need to easily get the event data into them as well—especially the multi-model and HTAP ones.
 
 - ## Internal consistency in streaming systems. 
 - https://twitter.com/spinscale/status/1763201454741791221

@@ -74,7 +74,18 @@ modified: 2021-08-16T06:56:53.061Z
 # discuss
 - ## 
 
-- ## 
+- ## 一个程序员最卷的项目：Markdown 编辑器。
+- https://twitter.com/vikingmute/status/1768090000481288276
+- 卷是卷，就是没一个特别好用的，尤其是缺乏原生的。比如一些markdown 扩展支持不好，互相不兼容，例如obsidian 的查询语句。
+
+- 还不够卷，我就没见过哪个 markdown 编辑器的渲染不依靠现成的 web 渲染器的。有本事直接去渲染啊，markdown 需要的文本样式又不多。
+  - 自己渲染的话有些直接在 md 里写 html tag 就没法给预览了。另外 mermaid 这些扩展也没法直接用（虽然可以用两套渲染器）。 Mac 平台上确实有几个不走 web 渲染的，都不便宜。
+- 我一直觉得 MD 那么简单的样式，不是 native 的都是花拳绣腿，毕竟 MD 一开始就是 HTML 的语法糖。
+- https://mweb.im mweb应该是原生不用web渲染的
+
+- typora 在处理大量文本（100k+) 时候会卡, 不知道其他怎么样
+
+- 用过好几个，现在不折腾了，就vscode吧，起码有个多光标
 
 - ## 用了两年的 Logseq 后，神奇的发现我好像不怎么使用双链了。
 - https://twitter.com/henices/status/1748365491633049904

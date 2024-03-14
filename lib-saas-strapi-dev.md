@@ -12,6 +12,7 @@ modified: 2023-12-15T16:51:56.101Z
 - pros
   - MIT and features-rich
   - plugin system and marketplace
+  - media library
   - rbac is free
   - 支持audit日志记录
   - Data Import & Export
@@ -33,6 +34,7 @@ modified: 2023-12-15T16:51:56.101Z
   - It doesn't namespace its admin table
   - 纯前端的plugin不方便直接预览
   - 大版本的breaking-changes很多
+  - media-lib可能存在大量未被使用的media
 
 - features
   - 核心模块: content-mgr, content-type-builder, media-lib, roles-permissions

@@ -146,6 +146,7 @@ modified: 2023-03-16T16:29:47.610Z
   - 变可选，toggle标题/list
   - 父级checkbox支持显示部分选中的intermediate中间态
   - checkbox前的拖拽图标位置要往上一点
+  - toggle-list，支持设置初始折叠状态
 
 - 若当前列表项为空，按回车应该转换为普通p标签
 
