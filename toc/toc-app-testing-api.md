@@ -31,13 +31,19 @@ modified: 2023-02-08T10:25:14.173Z
   - It's a desktop application and a CLI that help you work faster with APIs by mocking them. 
   - Integrate third-party APIs quicker, improve your integration tests, speed up your development, etc.
 
-- https://github.com/Kong/insomnia /MIT/ts/桌面版
+- https://github.com/Kong/insomnia /apache2/ts/仅桌面版
   - https://insomnia.rest/
   - cross-platform API client for GraphQL, REST, WebSockets and gRPC.
   - available for Mac, Windows, and Linux
   - [Comparison of API development environments: Postman vs Insomnia](https://gist.github.com/samoshkin/c0a2c0dd85b1d5b02d893a0f6ac0e93c)
   - https://chrome.google.com/webstore/detail/insomnia-rest-client/gmodihnfibbjdecbanmpmbmeffnmloel?hl=en-US
     - not updated
+
+- https://github.com/firecamp-dev/firecamp /AGPLv3/202403/ts
+  - https://firecamp.dev/
+  - Developer-first OpenSource API DevTool, Postman/Insomnia alternative.
+  - a dx-first API development platform that helps developers design, develop, test, and document their APIs
+  - multi-protocol testing capabilities with Rest, GraphQL, Websocket, and SocketIO APIs.
 
 - https://github.com/usebruno/bruno /MIT/202403/js/tauri
   - https://www.usebruno.com/

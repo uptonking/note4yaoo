@@ -14,6 +14,14 @@ modified: 2023-12-15T17:04:36.589Z
 
 - ## 
 
+- ## 
+
+- ## 🕵🏻 any chance of getting a query engine decorator?  usefull for fake multitenency
+- https://discord.com/channels/811989166782021633/1218214776405233754/1218217608676114673
+- it was a firm no. I think it's not the technical direction we want to take and it wasn't a great pattern to implement in the first place, we'd rather go forward with lifecycles and middlewares, like the doc service has
+
+- We are stripping out the decorators we were using before anyway and moving to middlewares/lifecycles ourselves
+
 - ## 🐛 [How do I create a new Content type ? : r/Strapi](https://www.reddit.com/r/Strapi/comments/153ntvx/how_do_i_create_a_new_content_type/)
 - you’ve never been able to edit content definitions in production
   - Strapi is a bootstrapped API - more than a CMS. Development mode content type creation makes perfect sense given the way Strapi generates the schema, controllers and models for the endpoints.
@@ -120,7 +128,11 @@ modified: 2023-12-15T17:04:36.589Z
 
 - ## 
 
-- ## 
+- ## 💰 history is v5 only & an EE feature. _20230315
+- https://discord.com/channels/811989166782021633/1095091586452426824/1218161565052833853
+  - You need a license. Enterprise edition, paid for
+- I just want to test locally. Is there any workaround
+  - No there’s not really, there are checks all over the place
 
 - ## [How to add revision history or track any changes made by user? - Questions and Answers / Database-SQL - Strapi Community Forum _202105](https://forum.strapi.io/t/how-to-add-revision-history-or-track-any-changes-made-by-user/4882)
 - there is a complete video of how to create revision history Activity logs 

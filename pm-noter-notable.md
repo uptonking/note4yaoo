@@ -243,6 +243,9 @@ modified: 2023-11-28T14:48:45.910Z
   - 可与timeseries时序数据库结合尝试
 
 - 不那么成功的项目 wikidata
+# gitbook-like
+- 提供类似github的自动部署能力
+- 支持mdx，支持部分js组件库
 # versions/history
 - 文档级、文件夹级、workspace级
 # integretions

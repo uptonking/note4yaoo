@@ -56,6 +56,12 @@ modified: 2023-10-28T17:52:17.942Z
 
 - ## 
 
+- ## 
+
+- ## Postgres doesn’t support hints
+- https://twitter.com/denismagda/status/1768411154651718087
+  - but there is one mighty extension- `pg_hint_plan` - that brings the feature to the database 
+
 - ## i wonder when "PostgresLite" will become a thing
 - https://twitter.com/jarredsumner/status/1751967157884432652
   - SQLite's single-file embedded no-server model makes getting started easy, but backends often need a database like Postgres

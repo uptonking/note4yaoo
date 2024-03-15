@@ -34,7 +34,15 @@ import pandas as pd
 
 - ## 
 
-- ## 
+- ## Another important component in Time Series data is the noise.
+- https://twitter.com/daansan_ml/status/1768622446037594453
+  - The noise component refers to the random or irregular fluctuations that are not explained by the underlying patterns or trends in the data.
+
+- The noise component can arise from various sources, including:
+  1️⃣ Measurement errors
+  2️⃣ Random shocks or events
+  3️⃣ Unobserved or unmodeled factors
+  4️⃣ Inherent variability
 
 - ## Volatility can be a big problem in Time Series forecasting!
 - https://twitter.com/daansan_ml/status/1736295237184897157

@@ -23,6 +23,7 @@ modified: 2023-12-08T15:49:56.046Z
   - sync by table/collection/doc，可参考 pouchdb
   - sync by versionNumber/timestamp
   - 👉🏻 **query-based sync**: 取数基于query，query时可使用各种filter，可参考mongo-realm; 是否与具体业务紧密相关
+  - 一种思路是类似 `git clone --depth=1`
 # blogs-sync-partial
 - [What is Data Replication? Examples, Types, and Use Cases | Redis](https://redis.com/blog/what-is-data-replication/)
   - Full Database Replication occurs when an entire primary database is replicated within every replica instance available. 

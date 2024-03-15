@@ -43,6 +43,16 @@ modified: 2021-01-21T17:52:13.333Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 最近上手写 Intellij Plugin，能感受到 IDEA 内部代码有多屎... （甚至还没碰到 PSI）
+- https://twitter.com/kirraObj/status/1768567112661152236
+  - 文档少得可怜 / 没有参考性，开发过程中几乎是有大半时间是去翻看 Github 现有仓库的实现
+  - 翻到贴合我的需求的相关文档有一个参考 repo 链接，上次 commit 时间是十年前。
+- 不同版本api的兼容性也很差
+
 - ## What's your favourite coding font?
 - https://twitter.com/JoshWComeau/status/1763587415539597433
 - It's https://monolisa.dev. I've been jumping on and off different monospace fonts for years. MonoLisa is what finally made me happy. It's a phenomenal font
@@ -114,9 +124,9 @@ modified: 2021-01-21T17:52:13.333Z
 
 - 这里可能有个悖论, 自己造轮子 研发成本高, 不自己造轮子 显不出技术“高明”, 结果是 996 劣质轮子 遍地都是…
 
-01.  大概率没有开源的好
-02.  造轮子就要维护一个轮子迭代维保团队
-03.  迭代维保团队和其他团队无限的撕逼
+01.   大概率没有开源的好
+02.   造轮子就要维护一个轮子迭代维保团队
+03.   迭代维保团队和其他团队无限的撕逼
 
 - ## Five terms I avoid when naming things:
 - https://twitter.com/housecor/status/1742197661837476018

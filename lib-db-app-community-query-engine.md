@@ -29,26 +29,6 @@ modified: 2023-09-17T17:41:51.689Z
 - What is the service behind? Algolia?
   - Nope, literally a vector db and a call to openAI's embeddings endpoint
 - Nope, literally a vector db and a call to openAI's embeddings endpoint
-
-- ## I’m seeing more and more devs writing db queries directly inside their API route handlers and I find it quite bizarre. Where do you write your db queries?
-- https://twitter.com/ImSh4yy/status/1711092090103267784
-- In NestJS: Controller => service => DB query using Prisma
-- In the repository: Repository -> Service -> Controller
-- For a POC, the router. 
-  - For an serious app, i follow the adaptor pattern (glorified way of saying domain based functions called by the routers/controllers)
-- Why is this bizarre? With a good ORM like Prisma, this is becoming the norm tbh
-  - It's a matter of "separation of concerns, " which is then translated into several important "abilities" in the code: readability, maintainability, scalability, reusability, etc.
-  - Accessing the database from all over the place is a code smell, in fact a big one, imo, and could cause many issues as things start to grow. 
-  - As a basic example, imagine you want to start caching certain queries. If your db is being accessed from all over the place, you'd most likely run into many issues trying to ensure every query is properly cached and invalidated at the right time.
-- I break all the queries into their own Query controllers and only expose them to the rest of the code as an abstracted layer.
-  - Router -> Controller -> Query
-
-- I abstract all DB queries inside “services” or “controller” classes. Not just DB queries but all IO related operations.
-
-- "Early stage, " "iteration speed, " "MVP, " etc., are all excuses for writing shitty code.
-  - **it's bad practice to write db queries inside your router** alongside all its other responsibilities.
-  - Spending a few seconds abstracting away some database queries is negligible compared to the time it takes to debug issues that arise from the few seconds you thought you were saving.
-  - Premature optimization and overengineering are indeed a waste of time during the MVP and early stages of a product. However, writing clean, well-structured code isn't either of these.
 # discuss-view
 - ## 
 
@@ -162,7 +142,7 @@ modified: 2023-09-17T17:41:51.689Z
 # discuss
 - ## 
 
-- ## Top 20 SQL query optimization techniques
+- ## 🪧 Top 20 SQL query optimization techniques
 - https://twitter.com/milan_milanovic/status/1758831924380880968
   01. Create an index on huge tables (>1.000.000) rows
   02. Use EXIST() instead of COUNT() to find an element in the table
@@ -191,7 +171,7 @@ modified: 2023-09-17T17:41:51.689Z
 - https://twitter.com/FranckPachot/status/1756946207748899320
   - [Out of Range statistics with PostgreSQL & YugabyteDB - DEV Community](https://dev.to/yugabyte/out-of-range-statistics-with-postgresql-yugabytedb-2pj8)
 
-- ## 🌰 When we first began building RisingWave, we used Calcite. 
+- ## 🌰🕵🏻 When we first began building RisingWave, we used Calcite. 
 - https://twitter.com/YingjunWu/status/1744470668937461987
   - But it turned out to be unsuitable, in terms of compatability, flexibility, and several other reasons. 
   - Now we are using our home-made optimizer to optimize streaming queries.

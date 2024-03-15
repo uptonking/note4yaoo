@@ -62,9 +62,19 @@ modified: 2023-10-26T18:14:17.038Z
   - Regions: Where are your users located? Are they in one region or scattered across multiple geographies? Where is your database located?
   - API: Do you use Node.js specific functions? 
 
-## 📝 [notion: Herding elephants: Lessons learned from sharding Postgres at Notion_202110](https://www.notion.so/blog/sharding-postgres-at-notion)
+## 💠 [how Figma built a sharded Postgres environment _202403](https://www.figma.com/blog/how-figmas-databases-team-lived-to-tell-the-scale/)
 
-## [从 Notion 分片 Postgres 中吸取的教训(Notion 工程团队) - 为少 - 博客园_202110](https://www.cnblogs.com/hacker-linner/p/16243380.html)
+- https://twitter.com/eatonphil/status/1768336441715658938
+  - Doesn't Aurora Limitless solve this problem?
+
+### 👥 [How Figma's databases team lived to tell the scale | Hacker News _202403](https://news.ycombinator.com/item?id=39706968)
+
+- Serverless Aurora is incredibly expensive for most workloads. I have yet to find a use case for any SaaS product that is used >4 hours a day. Since all my products span at least 3 time zones there is at least 12 hours of activity a day.
+  - We found this out the hard way in a small startup. The per query and I/O expense was through the roof.
+
+## 💠 [notion: Lessons learned from sharding Postgres at Notion _202110](https://www.notion.so/blog/sharding-postgres-at-notion)
+
+- [从 Notion 分片 Postgres 中吸取的教训(Notion 工程团队) - 为少 - 博客园_202110](https://www.cnblogs.com/hacker-linner/p/16243380.html)
 
 ## 🔥🔥 [retool: How we upgraded our 4TB Postgres database | Hacker News_202204](https://news.ycombinator.com/item?id=31084147)
 

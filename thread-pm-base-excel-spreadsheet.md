@@ -15,6 +15,15 @@ modified: 2022-04-23T18:48:32.550Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 用 Excel 实现了一个简易的 GPT2，可以下载：不过特别大，有 1.25 个G
+- https://twitter.com/vikingmute/status/1768452277600387161
+  - [Spreadsheets are all you need.ai – A low-code way to learn AI](https://spreadsheets-are-all-you-need.ai/)
+  - 用一个Excel 表格来学习 ChatGPT 的工作原理，不用写任何代码，配有三个Youtube 视频，非常形象。
+
 - ## You are exporting the data and processing it in excel, are you not?
 - https://twitter.com/haro_ca_/status/1761440042965168526
 - Shameless plug incoming - I built http://pushbyte.io to sync data from SQL to Google Sheets

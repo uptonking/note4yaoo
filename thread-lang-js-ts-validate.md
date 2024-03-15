@@ -9,6 +9,8 @@ modified: 2023-08-16T15:50:16.335Z
 
 # guide
 
+- resources
+  - [Zod Tutorial | Total TypeScript](https://www.totaltypescript.com/tutorials/zod)
 # discuss-stars
 - ## 
 

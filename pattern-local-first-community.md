@@ -101,6 +101,21 @@ modified: 2023-09-13T20:24:41.516Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 我很怀疑 local-first 软件在文件数量大了之后的易用性，如果不限制空间大小的话，对用户和服务商来说都是很大的负担，你能想象一个永远全量下载的云盘么
+- https://twitter.com/kk_shinkai/status/1768454538259001723
+- Git 大多数文件都是纯文本吧
+- 感觉这和 local-first 也不太一样，local-first app 都是会在每次启动的时候自动把所有数据同步到本地的，Git 得用户手动控制，和云盘的逻辑更像一点
+
+- GitHub 其实已经意识到这个问题，而且已经做了一些改进。目前的 GitHub Actions/CI 应该都用上了。 
+  - 不过这也使得 Git 变得更像 SVN，感觉 Linux 内核那边不会接受。毕竟违反了 Git 分布式/没有 center control 的设计目标。
+  - [Get up to speed with partial clone and shallow clone - The GitHub Blog _202012](https://github.blog/2020-12-21-get-up-to-speed-with-partial-clone-and-shallow-clone/)
+
+- 这种 local-first 感觉更好的例子是比特币，每个矿工都要下载完整的区块链/账本，以抵御 51% 攻击。
+
 - ## if your app implements optimistic-ui, fully functioning for reasonable periods of network loss, with automatic retry and exponential backoff, how would you handle request failures?
 - https://twitter.com/WarrenInTheBuff/status/1753204757013946581
 - server single source of truth. next request is reconciliation

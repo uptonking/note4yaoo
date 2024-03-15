@@ -145,12 +145,23 @@ modified: 2020-07-17T10:54:16.341Z
   - 可以把页面中没有的字从字库剔除掉，使用的是NodeJS
   - 适合静态页面
 
-
 - https://github.com/lxgw/LxgwWenKai /ofl1.1/202402
   - https://lxgw.github.io/2021/01/28/Klee-Simpchin/
   - LXGW WenKai / 霞鹜文楷, 一款开源中文字体，基于 FONTWORKS 出品字体 Klee One 衍生。
   - FONTWORKS是一款有着日本教科书体风格的字体，兼有仿宋和楷体的特点
   - https://github.com/CMBill/lxgw-wenkai-web
+# fonts-cn
+
+## utils-cn
+
+- https://github.com/zh-lx/pinyin-pro /MIT/202403/ts
+  - https://pinyin-pro.cn/
+  - 中文转拼音、拼音音调、拼音声母、拼音韵母、多音字拼音、姓氏拼音、拼音匹配
+  - 专业的 js 汉字拼音转换库，功能丰富、准确率高、性能优异。
+  - 支持拼音/声母/韵母/首字母/音调/全部信息
+  - 支持人名姓氏模式
+  - 以下是 pinyin-pro、pinyin 及 @napi-rs/pinyin 包对于汉字转换的速度及准确率对比表
+  - 应用 AC 自动机 + 贪心算法 + 动态规划等算法，可在 1 秒内完成数百万规模中文拼音的转换
 # discuss
 - ## 
 

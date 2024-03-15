@@ -12,9 +12,15 @@ modified: 2023-06-22T05:33:12.658Z
 # discuss-news
 - ## 
 
-- ## 
+- ## 🌰 Here's a demo that combines Tag with Combobox:
+- https://twitter.com/diegohaz/status/1768330706281754720
+- dialog is anchored relative to the tag. Vs anchoring off of the input and matching it's width (and thus also not moving around as tags are added).
+  - I tested both cases, and the UX seemed improved when suggestions were displayed closer to the editing point. But, of course, it's entirely configurable.
 
-- ## ✨ New example: Select widget controlled by URL
+- It's something I want to add to our component and was wondering what's an elegant API for it.
+  - I haven't considered a specific API for that. There's a lower-level TagAdd component that can be rendered as a combobox item
+
+- ## 🌰 New example: Select widget controlled by URL
 - https://twitter.com/diegohaz/status/1755243647476342924
   - Next.js App Router with searchParams
   - Prefetching

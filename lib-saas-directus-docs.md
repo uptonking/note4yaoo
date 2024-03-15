@@ -79,4 +79,32 @@ modified: 2024-03-02T15:21:17.619Z
 - Directus offers both a REST and GraphQL API to manage the data in the database.
 - There is no difference in the functionality available between the REST and GraphQL endpoints. 
   - The functionality available in both is mapped to the same set of core services, meaning that you don't lose any performance or capabilities by choosing one or the other.
+
+## 〰️ [Flows | Directus Docs](https://docs.directus.io/app/flows.html)
+
+- Flows enable custom, event-driven data processing and task automation within Directus. 
+
+- Each flow is composed of one trigger, followed by a series of operations.
+  - Each flow is made up of three elements: A trigger, operations, and a data chain.
+
+- a trigger defines the action or event that starts the Flow. 
+  - This action or event could be some type of transaction within the app, an incoming webhook, a cron job, etc.
+- An operation is an action or process performed within the flow. 
+  - These enable you to manage data: send off emails, push in-app notifications, send webhooks, and beyond.
+- Data Chains
+  - In order for a flow's operations to track and access the same data, each flow creates its own data chain. 
+  - Every operation has access to this data chain and each operation appends some value onto this object after it runs. 
+  - This means you can dynamically access data from a previous operation in the current operation with data chain variables.
+
+- flows let you implement control flow, by providing success paths and failure paths within a flow
+
+- logs store information for each flow execution. 
+  - Each log will display information from triggers as well as each operation in the flow
+  - Logs are not a 1:1 mapping to the data chain. 
+  - Each trigger and operation gets its own dropdown, which stores its relevant data. 
+
+- 
+- 
+- 
+
 # more

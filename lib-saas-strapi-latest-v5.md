@@ -102,7 +102,7 @@ modified: 2023-12-15T19:39:18.123Z
 
 - ## [feat: add basic pagination to history frontend _20240311](https://github.com/strapi/strapi/pull/19729)
 
-- ## [feat(cm): add content history _20240306](https://github.com/strapi/strapi/pull/19315)
+- ## ✨ [feat(cm): add content history _20240306](https://github.com/strapi/strapi/pull/19315)
   - Adds the content history feature
 
 - ## [feat(cm): D&P pt2 _20240223](https://github.com/strapi/strapi/pull/19380)

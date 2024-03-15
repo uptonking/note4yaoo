@@ -17,7 +17,25 @@ modified: 2023-04-16T10:02:58.738Z
 
 - ## 
 
-- ## GPT 回答标准模板：
+- ## 
+
+- ## 
+
+- ## 现在RAG+LLM那套太成熟了…亲自体验两百行代码就可以实现一个包括前端在内的定制化Chatbot（比如某个人/某个领域的定制化知识库）。
+- https://twitter.com/VoidAsuka/status/1768328842056499654
+  - 从完全不懂这一套的小白程序员从开发到部署两小时就能搞定，反而还是爬数据、洗数据花的时间更多…果然数据是新时代的黄金
+  - Langchain + Streamlit 几百行搞定
+- 不是成熟，是本来就简单吧 不用langchain不差哪里的，只是他更全
+  - 简单就是成熟的体现之一啊
+- 搭起来很简单，做到效果好很难，做一套评测标准也很难
+- 就是chatbot这个形态有点不三不四
+
+- ## 用 Excel 实现了一个简易的 GPT2，可以下载：不过特别大，有 1.25 个G
+- https://twitter.com/vikingmute/status/1768452277600387161
+  - [Spreadsheets are all you need.ai – A low-code way to learn AI](https://spreadsheets-are-all-you-need.ai/)
+  - 用一个Excel 表格来学习 ChatGPT 的工作原理，不用写任何代码，配有三个Youtube 视频，非常形象。
+
+- ## 👣 GPT 回答标准模板：
 - https://twitter.com/kk_shinkai/status/1767841511516082470
   1、把问题用自己更啰嗦的语言复述一遍；
   2、大篇幅地介绍提问里那些你显然非常熟悉而且完全没问的背景概念；
@@ -65,6 +83,25 @@ modified: 2023-04-16T10:02:58.738Z
 
 # discuss
 - ## 
+
+- ## 
+
+- ## https://kimi.moonshot.cn 推荐一个号称国内最强 ai， 超大上下文，还免费。谁了解这家公司的
+- https://twitter.com/huangjinbo/status/1768443353417560520
+- 公司： 月之暗面科技有限公司（Moonshot AI）
+  - 杨植麟 - 法人代表、主要创始人。杨植麟曾在清华大学计算机系学习，并在卡内基梅隆大学攻读博士学位，师从苹果公司AI负责人Ruslan Salakhutdinov和Google AI首席科学家William W. Cohen。他在自然语言处理（NLP）领域有着显著的贡献，包括发表有影响力的论文如Transformer-XL与XLNet，并在Facebook AI Research和Google Brain有过工作经历
+  - KimiChat ，联网搜索和文件总结能力在中文场景确实很好用。 
+
+- 这家公司前不久融了1b
+- 好像里面很多人来自谷歌，创始人是90后，昨天输入三份PDF测试，实测kimi产品上下文能力，超过gpt和Claude了，gpt长了会截断，claude 直接提示超长，kimi正常解答还是对的
+
+- ## RAG 路线确实是最可行的了，相当于把审核工作和成本 delegate 给了别的厂商，自己坐享其成。
+- https://twitter.com/laike9m/status/1768537063392231714
+  - 不过未来说不准会吃版权官司。
+- 目前kimi差不多是想bing那样用得最多的是知乎的数据。另外公众号数据最值钱了，要是大家都反应过来走RAG线路，腾讯最后是赢家。
+
+- https://twitter.com/laike9m/status/1768456246154379647
+  - kimi目前效果很好了，走的是perplexity路线，先检索过滤过的互联网内容，然后补充AI生成，就是RAG路线。一是减少幻觉，二是直接用网络资料增加中文理解，吊打文心。这个路线真实天才。
 
 - ## [Vanna.ai: Chat with your SQL database | Hacker News_202401](https://news.ycombinator.com/item?id=38992601)
 - All these products that pitch about using AI to find insights from your data always end up looking pretty in demos and fall short in reality. 

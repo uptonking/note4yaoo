@@ -26,6 +26,7 @@ modified: 2024-02-16T14:55:58.271Z
   - built with vue3
 
 - features
+  - 核心模块: content, user, files, flows, insights/dashboard
   - instant REST+GraphQL API on top of any SQL database
   - Our no-code Vue.js app is intuitive for non-technical users
 # dev-xp

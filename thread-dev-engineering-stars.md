@@ -13,12 +13,41 @@ modified: 2021-08-10T03:51:01.891Z
 # discuss-stars
 - ## 
 
-- ## 📏 which URL format we going with?
+- ## 
+
+- ## The devil hides in long "Utils" classes.
+- https://twitter.com/RaulJuncoV/status/1768623548703060460
+1. Add your Tests before touching anything
+   - You will understand behavior.
+   - You will refactor with confidence.
+   - They will serve as your new documentation until you have something better.
+
+2. Data-Driven class design
+Methods that operate on the same data should be within the same class.
+Group data and behavior.
+
+3. Struggling with finding a name means something (SRP)
+If you struggle to find a name for a function or a class, you will likely need to split.
+Every class should have only one reason to change and do one job.
+If you find a class doing too much, it's time to break it down into more focused classes.
+
+4. Encapsulation Through Composition
+Prefer composition over inheritance where practical.
+Use objects to represent behaviors or states you can compose into your classes rather than extending them through inheritance.
+Use composition over inheritance to create flexible and loosely coupled systems.
+
+5. Validate Input at Public Interfaces
+When your methods need to accept input from other parts of your code, don't just trust that the input is correct.
+Validate it to ensure it meets the method's requirements.
+
+- Unfortunately, "Utils" classes are a common bad practice.  Someone creates a single util class to put a method not fitting in any other place. Then the new class quickly pollute with many other methods.
+
+- ## 🆚️ which URL format we going with?
 - https://twitter.com/Shpigford/status/1763318774336311731
   - param-in-url-path vs query-params
 - My view on this: the path is the WHAT, the query is the HOW.
   - Excellent advice! Query parameters essentially serve as an additional filtering layer
-  - Also it is easier to add more params when/if needed, and client wouldn’t care about the order of them.
+  - 💡 注意顺序。Also it is easier to add more params when/if needed, and client wouldn’t care about the order of them.
 
 - Query params are widely used to filter down the data you get from an endpoint. I don’t see the reason not to use them.
 

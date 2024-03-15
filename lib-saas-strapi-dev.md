@@ -21,20 +21,20 @@ modified: 2023-12-15T16:51:56.101Z
   - 提供了很多集成示例，如 redis/search
 
 - cons
-  - paid: Review workflow, Audit Logs, Shared Projects
-  - 不支持version-history，但audit日志记录可作为类似功能
+  - paid: Review workflow, Audit Logs, version-history, Shared Projects
+    - ~~不支持version-history，但audit日志记录可作为类似功能~~
   - ui不支持: Conditional fields, nested component
   - 与已有数据库集成不方便
   - v4不支持mongodb
-  - 不支持多种第三方登录
-  - rbac功能默认需要内置的10张表，复杂度高，难以迁移离开
   - 🐛 At this time and in the future there is no plan to allow model creating or updating while in a production environment, and
     - there is currently no plans to move model settings into the database. 
     - There are no known nor recommended workarounds for this.
   - It doesn't namespace its admin table
+  - 不支持多种第三方登录
+  - rbac功能默认需要内置的10张表，复杂度高，难以迁移离开
   - 纯前端的plugin不方便直接预览
   - 大版本的breaking-changes很多
-  - media-lib可能存在大量未被使用的media
+  - media-lib可能存在大量未被使用的media，如何清理
 
 - features
   - 核心模块: content-mgr, content-type-builder, media-lib, roles-permissions
@@ -74,12 +74,18 @@ modified: 2023-12-15T16:51:56.101Z
 
 - 流式输出 stream response
 
+- ⌛️ version/history
+  - 参考官方实现来做开源版本，参考 
+    - `packages/core/content-manager/server/src/history` 源码
+    - `packages/core/admin/admin/src/content-manager/history/pages/History.tsx` 源码
+
 - media
   - files: docx/ppt
   - usage-references
 
-- frontend
-  - ❓ 将 content-type-builder/manager 隐藏后是否就是普通网站的界面了
+- frontend-admin
+  - 🤔 将 content-type-builder 隐藏后是否就是普通网站的界面了
+  - 参考curator实现自定义admin
 
 - backend
   - api-rate-limit

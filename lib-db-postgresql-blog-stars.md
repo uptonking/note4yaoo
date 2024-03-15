@@ -25,6 +25,8 @@ modified: 2023-10-26T18:11:42.676Z
   - Postgres 16.0 and 11.21 have similar throughput on read-write and write-only benchmark steps
 # blogs-internals
 
+## [PostgreSQL Internals Part 1: Understanding Database Cluster, Database and Tables - Stormatics _202403](https://stormatics.tech/blogs/postgresql-internals-part-1-understanding-database-cluster-database-and-tables)
+
 ## [Writing a storage engine for Postgres: an in-memory Table Access Method_202311](https://notes.eatonphil.com/2023-11-01-postgres-table-access-methods.html)
 
 - With Postgres 12, released in 2019, it became possible to swap out Postgres's storage engine.

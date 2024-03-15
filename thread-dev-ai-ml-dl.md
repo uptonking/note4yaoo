@@ -17,10 +17,25 @@ modified: 2021-05-18T19:33:51.768Z
 - ## I've now completed 45 of the 68 Python notebooks that accompany my forthcoming book "Understanding Deep Learning".
 - https://twitter.com/SimonPrinceAI/status/1712801009741815965
   - [udlbook.github.io/udlbook/](https://udlbook.github.io/udlbook/)
+
 # discuss
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 💡🕸️ Perceptron, the simplest Neural Network. I explain how it works.
+- https://twitter.com/levikul09/status/1768581694800740836
+- The Perceptron is a binary classifier. It can decide if data belongs to A or B or make yes or no decisions. The two classes are usually represented with 0 and 1. 
+- Here are the steps Perceptrons go through:
+  - It takes several inputs
+  - Apply weights and biases
+  - Provides output
+- If the result is less than or equal to 0, the output is 0.
+  - If the result is higher than 0, the output is 1.
 
 - ## 想问问万能的推友们，如果我有能力提供音色、比如自己录一些干音作为基本素材，要怎么才能够制作和训练出能够一个能够阅读的 AI 语音服务呢？
 - https://twitter.com/Shenqingchuan/status/1707047120061235642

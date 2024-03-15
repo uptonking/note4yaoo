@@ -62,6 +62,7 @@ modified: 2023-12-15T19:30:23.094Z
 
 - https://github.com/iopanda/strapi-crack-ee /202310/js
   - only for technique testing, DO NOT use this package in any production environment
+  - 在本地生成lic文件 `fs.writeFileSync(fx, publicKey)`
 
 - https://github.com/liveblocks/strapi-demo /202310/ts
   - Strapi + Liveblocks demo
@@ -76,7 +77,7 @@ modified: 2023-12-15T19:30:23.094Z
   - Flexible plugin system
   - Curator offers a Strapi plugin that adds those features, and an alternative admin app that is easier to customize.
   - customizable admin built with React, Ant Design and Tailwind.
-  - ❌ 不支持: Role management, Content-type builder
+  - ❌ 不支持: Role management, Content-type builder(对终端用户不重要)
 
 - https://github.com/Stun3R/strapi-sdk-js /MIT/202308/ts/inactive
   - https://strapi-sdk-js.netlify.app/
@@ -107,13 +108,18 @@ modified: 2023-12-15T19:30:23.094Z
   - 未使用socket; 协作的逻辑感觉在onlyoffice-server，而不是strapi
   - [Collaborate in Strapi with ONLYOFFICE Docs | ONLYOFFICE Blog _202205](https://www.onlyoffice.com/blog/2022/05/strapi-connector-for-onlyoffice)
 
-- https://github.com/nazirov91/ra-strapi-rest /MIT/202304/ts
+- https://github.com/garridorafa/ra-strapi-v4-rest /MIT/202403/ts
+  - 👮🏻 React Admin REST data provider for Strapi.js v4
+
+- https://github.com/nazirov91/ra-strapi-rest /MIT/202304/ts/inactive
   - React Admin data provider for Strapi.js
   - 旧版支持v3
   - https://github.com/nazirov91/ra-strapi-rest-demo
-
-- https://github.com/garridorafa/ra-strapi-v4-rest /MIT/202308/ts
-  - React Admin REST data provider for Strapi.js v4
+  - forks
+  - https://github.com/szynek99/ra-strapi-rest
+    - fix: create & update
+  - https://github.com/chris-heney/ra-strapi-rest
+    - Fixed ability to parse the field name and operator from the filters 
 
 - https://github.com/marmelab/ra-strapi-demo /202210/前端ts/后端js
   - [Building a B2B app with Strapi and React-Admin_202211](https://marmelab.com/blog/2022/11/28/building-a-crud-app-with-strapi-and-react-admin.html)
@@ -265,12 +271,20 @@ modified: 2023-12-15T19:30:23.094Z
   - Seamless integration with a developer-friendly API for any frontend app.
   - Shipping, Taxes, Payment gateway, Analytics
 
-- https://github.com/joshuaellis/strapi-plugin-media-browser /202304/ts
-  - A new look at what the media library _could be_
-  - A convenient way to browse, manage and select all your Strapi assets, inspired by MacOS.
+- https://github.com/joshuaellis/strapi-plugin-media-browser /MIT/202304/ts/inactive
+  - 🎞️ A new look at what the media library _could be_
+  - A convenient way to browse, manage and select all your Strapi assets, inspired by MacOS🍎.
   - Support for batch uploads with drag and drop support
+  - Tag your assets individually or in bulk
   - Complete control of your folder structure (incl. nested)
   - Virtualized grid for super speedy browsing, even with thousands of assets and tags
+  - Refine your search with any combination of search facets such as filtering by tag name, asset usage, file size, orientation
+  - https://github.com/kodermax/strapi-plugin-media-api /202311/ts/inactive
+  - https://github.com/BaptisteAg/strapi4-ftp-provider /202309/js
+
+- https://github.com/isneezy/strapi-media-preview /202312/ts
+  - Automatically generates thumbnails and responsive formats for PDF files upon upload
+  - Create responsive image formats (small, medium, large) for supported files upon upload
 
 ## ui-ext
 
@@ -810,6 +824,9 @@ modified: 2023-12-15T19:30:23.094Z
   - A plugin for Strapi CMS that protects certain entries from being deleted.
   - Use various comparators to match against protection rules.
 
+- https://github.com/pakoc/strapi-plugin-html-media /202402/ts
+  - Plugin provides a customField that allows you to upload zip archives with html pages to the Strapi CMS
+
 ## utils-ext
 
 - https://github.com/smoothdvd/strapi-plugin-bull /MIT/202401/ts
@@ -1004,9 +1021,9 @@ modified: 2023-12-15T19:30:23.094Z
   - https://github.com/hubertnare/notion-clone-strapi-frontend /nextjs
   - https://github.com/mariesta/mariesta-notion-strapi-nextjs /202109/js
 
-- https://github.com/AlirezaBs/twitter-clone /202306/ts
+- https://github.com/AlirezaBs/twitter-clone /202306/ts/inactive
   - https://tweethub.vercel.app/
-  - twitter clone
+  - twitter clone, nextjs
 
 - https://github.com/Dmuasya/SchoolWebsiteStrapi /202301/js/inactive
   - build the frontend and backend of a school website using Strapi, HTML, CSS, and standard JavaScript.
@@ -1015,6 +1032,11 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/hubertnare/pet-adoption /202204/js/inactive
   - For the Pet List, Add Pet, Update Pet, and Delete Pet features from the application, you will use React with a Context API. 
   - [Building a CRUD App with React and a Headless CMS _202205](https://strapi.io/blog/how-to-build-a-crud-app-with-react-and-a-headless-cms)
+
+- https://github.com/aungchanmyaethaw/social-media-app-strapi /202212/js/inactive
+  - This is a social media app. 
+  - Strapi is used to handle database. 
+  - UseContext hook is used to store client side data. 
 
 - https://github.com/satnaing/next-bookstore /MIT/202309/ts
   - https://nextbookstore.vercel.app/
@@ -1029,19 +1051,20 @@ modified: 2023-12-15T19:30:23.094Z
   - https://avion.vercel.app/
   - Project frontend for e-commerce using Strapi for CMS headless and Stripe for payment integration.
 
-- https://github.com/Ernestoc14/Ecommerce-React-Strapi /202402/js
+- https://github.com/Ernestoc14/Ecommerce-React-Strapi /202403/js
+  - https://ecommerce-react-strapi.vercel.app/
   - a FullStack E-commerce Website build with React, Strapi and Tailwind CSS.
   - using React, Material UI, Stripe, Formik and Yup, Strapi CMS and Redux Toolkit 
 
 - https://github.com/ielmar/strapi-puppeteer-parser-cron /202211/js
-  - This is a web scraper which uses Strapi as a headless backend with Sqlite as a database and Puppeteer for scraping data. 
+  - 🕷️ This is a web scraper which uses Strapi as a headless backend with Sqlite as a database and Puppeteer for scraping data. 
   - It is used for scraping latest added news to the news site https://sabah.az. 
   - Cron is used to run Puppeteer in interval and parse the website for any newly added post.
 
 - https://github.com/psparsa/AlphaGallery /202310/ts
   - A minimal image uploading website built with Next.js and Strapi, styled with Tailwind CSS and tested with Jest/RTL.
 
-- https://github.com/emanuelefavero/strapi-markdown-blog /202303/ts
+- https://github.com/emanuelefavero/strapi-markdown-blog /202303/fe-ts/be-js/nextjs/inactive
   - This is a blog starter project that uses the Strapi Rich Text Data Type and react-markdown to render the content.
 
 - https://github.com/anshu4sharma/blog /202306/ts
@@ -1109,7 +1132,7 @@ modified: 2023-12-15T19:30:23.094Z
   - POST stories. GET features.
   - https://github.com/EOS-uiux-Solutions/strapi
 
-- https://github.com/platformsh-templates/strapi4 /202402/js
+- https://github.com/platformsh-templates/strapi4 /202403/js
   - This template builds a Strapi backend for Platform.sh, which can be used to quickly create an API that can be served by itself or as a Headless CMS data source for another frontend app
   - This repository does not include a frontend application
 

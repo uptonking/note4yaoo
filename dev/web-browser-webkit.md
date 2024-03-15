@@ -318,6 +318,16 @@ modified: 2021-01-01T20:11:00.889Z
 
 - https://github.com/devongovett/node-wkhtmltopdf
   - A wrapper for the wkhtmltopdf HTML to PDF converter using WebKit
+
+## webkit-utils
+
+- https://github.com/WebPlatformForEmbedded/libwpe /BSD/202401/c
+  - General-purpose library specifically developed for the WPE-flavored port of WebKit.
+  - [WPE](https://wpewebkit.org/)
+    - A WebKit port for Linux-based embedded devices designed with flexibility and hardware acceleration in mind, leveraging common 3D graphics APIs for best performance.
+  - https://twitter.com/WebReflection/status/1768378104085467183
+    - I think @WPEWebKit is still the go-to embedded browser to use but I was triggered by @ServoDev claims about embedded ability and 10 minutes building
+    - I personally love @nw_js great community and well maintained project. There is ARM build also. Certainly not low-consumption  oriented but work well on small hardware for me.
 # discuss-webview 🧭
 - ## 
 

@@ -27,6 +27,24 @@ docker stop containerId
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🆚️ What is the difference between Virtual Machines and Containers?
+- https://twitter.com/Franc0Fernand0/status/1768614813335208237
+- VMs are made up of two parts:
+  - a Hypervisor which manages the resources of virtual machines that run on real hardware
+  - a guest OS that is an operating system that is different from the host OS
+- Containers put all the code and tools needed to run a single app into one unit. Each container has a very small OS and uses the host OS when more resources are necessary.
+
+- The main benefit of virtual machines is the superior isolation level. There is a clear separation between the processes on the host OS and the guest OS.
+  - Containers offer less isolation but use less memory and CPU, start up faster, and are more portable.
+
+- VMs use hardware virtualization, containers use OS virtualization.
+
+- [Build Your Own Docker | Coding Challenges](https://codingchallenges.fyi/challenges/challenge-docker/)
+
 - ## 🆚️ [虚拟化软件Docker、Wine、Qemu、KVM有什么区别？ - 知乎](https://www.zhihu.com/question/540942002)
 - 你把模拟和虚拟混淆掉，OS级别和软件级别也混淆了，当然傻傻分不清了。
 - Docker不存在模拟，也不存在虚拟。

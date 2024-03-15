@@ -224,6 +224,19 @@ modified: 2023-10-26T19:04:00.318Z
 - 👥 
 - https://twitter.com/tweeshan/status/1756534657892679871
 - Raft has the lowest availability and performance. IIUC Paxos has the best availability (because any replica can lead) but costs 2 round trips.
+# discuss-sharding
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Sharding is the most proven database scaling pattern. The rest is just noise
+- https://twitter.com/isamlambert/status/1768341699334668676
+- It’s basically the only pattern, but it’s not limited to sql of course
+  - 
+- Consistent hashing is another pattern... Sharding is just preferred because you can shard per account. A single account will (typically) never access another account's data.
+  - Okay, okay... You have to split up the data to scale horizontally, of course. I guess ANOTHER scaling pattern would be MemSQL in order to process more/faster on a single instance.
 # discuss
 - ## 
 

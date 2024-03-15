@@ -12,7 +12,12 @@ modified: 2024-02-16T14:56:17.057Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 🌰〰️ [Explanation on transmitting data inside flows _202308](https://github.com/directus/directus/discussions/19471)
+- [directus flows - How to all field value pass in payload when record update in direct us - Stack Overflow](https://stackoverflow.com/questions/76613284/how-to-all-field-value-pass-in-payload-when-record-update-in-direct-us)
+
+- Choose the collection Support and set the IDs to `"{{$trigger.keys[0]}}"` (be aware of In Read Data operation flow IDs stays blank despite the Raw value)
+  - 思路是 update-trigger > read-updated > create/email
+  - 注意填写id可能保存值为空，可切换id编辑器的模式raw/json再写id
 
 - ## 🧩 [Directus EAV · directus/directus _202009](https://github.com/directus/directus/discussions/2840)
 - Use relationships

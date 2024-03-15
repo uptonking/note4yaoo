@@ -118,7 +118,11 @@ modified: 2023-03-30T13:31:09.049Z
 # discuss-declining
 - ## 
 
-- ## 
+- ## postman: This is what happens when an HTTP client raises $225M at a $5.6B valuation. It’s just awful
+- https://twitter.com/ImSh4yy/status/1768131911379992921
+- That's crazy, but it's also marketing
+
+- That's the only reason we did not raise single Penney for http://Firecamp.dev  
 
 - ## 看了 Adobe 高管的访谈才知道，Adobe XD 实在是太惨了： 管理层不会提及它，我甚至不知道它还活着。 对我们来说，它早已死了，只是为了购买了的企业提供维护服务
 - https://twitter.com/FarSideOfMoonvy/status/1763169283750670774
@@ -156,7 +160,6 @@ modified: 2023-03-30T13:31:09.049Z
 - https://twitter.com/ailiangzi/status/1765547679311143402
   - 简单的一个人的项目，简单的技术栈 PHP、MySQL，收费$22/年。网站年入$200k
   - 联想到最近 Chrome 推出的自动标签功能，看来用 AI 来做标签应用，大有可为。
-
 
 - ## 选择与努力之间，我一直选择努力。5年的公众号收入，不及一篇 AI 声音克隆的收益
 - https://twitter.com/huangyun_122/status/1764481168089448832

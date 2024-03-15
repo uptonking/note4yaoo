@@ -53,7 +53,12 @@ modified: 2021-08-06T08:32:26.142Z
 
 - ## 
 
-- ## 
+- ## 💡🪧 Here's my cache-control cheat sheet.
+- https://twitter.com/ImSh4yy/status/1768351157737447931
+  - [Cache-Control: Cheat Sheet](https://shayy.org/posts/cache-control/)
+- I was once part of a small team of developer-pirates that saved the SEO of the #3 real estate website from being absolutely demolished(拆除, 拆毁; 打败，击败). We did a 100 things but nothing helped more than Varnish+SWR.
+
+- `max-age` is amazing, you basically get throttling requests and instant navigation between for example UI tabs. All without single line of js
 
 - ## How Data Travels Through the Layers of the Internet
 - https://twitter.com/sahnlam/status/1764175138877231570

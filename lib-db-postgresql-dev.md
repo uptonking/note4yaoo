@@ -10,6 +10,10 @@ modified: 2020-12-18T05:01:44.282Z
 # guide
 - who is using #postgresql
   - ?
+
+- resources
+  - [PostgreSQL: Tutorials & Other Resources](https://www.postgresql.org/docs/online-resources/)
+  - [pgPedia - a PostgreSQL Encyclopedia](https://pgpedia.info/)
 # dev
 
 # pg-linux
