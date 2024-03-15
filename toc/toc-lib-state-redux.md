@@ -26,8 +26,12 @@ modified: 2020-11-02T19:13:04.103Z
 - https://github.com/schrodinger/fixed-data-table-2 /js
   - A React table component designed to allow presenting millions of rows of data.
 
-- https://github.com/jshjohnson/Choices
-  - configurable select box/text input plugin. Similar to Select2 and Selectize but without the jQuery
+- https://github.com/Choices-js/Choices /ts
+  - https://github.com/jshjohnson/Choices /ts
+  - https://choices-js.github.io/Choices/
+  - configurable select box/text input plugin.
+  - Similar to Select2 and Selectize but without the jQuery dependency.
+  - Flexible styling
   - 依赖redux、fuse.js(fuzzy-search in js)
 
 - https://github.com/microsoft/redux-dynamic-modules /202003/ts/inactive

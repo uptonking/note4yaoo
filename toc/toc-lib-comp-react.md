@@ -356,7 +356,7 @@ modified: 2020-11-13T07:31:20.012Z
 - http://react-day-picker.js.org/
   - https://github.com/gpbl/react-day-picker
 
-- http://clauderic.github.io/react-infinite-calendar
+- http://clauderic.github.io/react-infinite-calendar /MIT/201705/js
   - https://github.com/clauderic/react-infinite-calendar
 - http://react-component.github.io/time-picker/
 - http://react-component.github.io/m-picker/examples/picker.html

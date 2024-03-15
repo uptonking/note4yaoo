@@ -309,11 +309,11 @@ modified: 2023-11-17T10:28:14.247Z
     - Redux is basically event-sourcing where there is a single projection to consume the application state.
     - A single state tree can grow big really fast for a single store but an actions stack grows subtlely for a number of stores when dealing with complex single-page applications(SPAs)
   - Infinite/Finite Undo/Redo + Time Travel
-  - 😁 Gains of Redux single store, Same applies to Radixx
+  - 🌹 Gains of Redux single store, Same applies to Radixx
     - Infinite Undo/Redo + Live-Editing Time Travel (As application state is immutable).
     - Predictable Atomic Operation on Application state object (As actions are run in a specific predictable order).
     - Single source of truth (No Guesswork!!) for applicaton state
-  - 😩 Troubles with Redux single store
+  - 🐛 Troubles with Redux single store
     - Dynamically structured state is impossible. (mature, complex apps need this the most).
     - Increased probability of state key(s) collisions between reducers (very likely in a big complex web app)
     - Global variables are most times a bad thing (This applies to the composition of the Redux application state itself) as you could clobber(痛打；猛揍) them unknowingly. 类似数据库的单点故障问题

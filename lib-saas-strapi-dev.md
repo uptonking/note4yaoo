@@ -69,6 +69,9 @@ modified: 2023-12-15T16:51:56.101Z
   - [Strapi Community Forum](https://forum.strapi.io/)
   - [Directus vs. Strapi – Comparison Headless CMS — Restack](https://www.restack.io/docs/directus-vs-strapi)
 # draft
+- lts
+  - editor, excel-table, local-db
+
 - 流式输出 stream response
 
 - media
@@ -76,6 +79,7 @@ modified: 2023-12-15T16:51:56.101Z
   - usage-references
 
 - frontend
+  - ❓ 将 content-type-builder/manager 隐藏后是否就是普通网站的界面了
 
 - backend
   - api-rate-limit

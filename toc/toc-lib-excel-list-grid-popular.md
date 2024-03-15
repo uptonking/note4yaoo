@@ -32,6 +32,8 @@ modified: 2022-08-21T10:02:27.788Z
   - modular, extensible, customizable
   - the-elm-architecture
   - drag between windows
+  - stream
+  - 常见场景: virtual, infinite, lazy
 
 - collaborative-editing
   - 数据模型考虑 持久化(一般db-text/json/blob)、展示(json)、协作(llw/map/sequence)、衍生计算(如聚合)
@@ -255,7 +257,7 @@ modified: 2022-08-21T10:02:27.788Z
   - https://github.com/vikadata/vikatable /ts
     - 基于 react-window Grid 构建的表格组件
     - @apitable/react-flow 基于其中的 Grid 构建，通过扩展 Grid 的 props 参数，非侵入式支持更多的表格特性, 使其更方便构建表格。
-  - https://github.com/bvaughn/react-window-infinite-loader
+  - https://github.com/bvaughn/react-window-infinite-loader /MIT/202102/js/inactive
     - https://codesandbox.io/s/5wqo7z2np4
     - InfiniteLoader component inspired by react-virtualized but for use with react-window
     - This demo app mimics loading remote data.Once data has been "loaded" the row number will be displayed.
@@ -288,7 +290,7 @@ modified: 2022-08-21T10:02:27.788Z
   - https://clauderic.github.io/react-tiny-virtual-list/
   - A tiny but mighty 3kb list virtualization library, with zero dependencies
   - Supports variable heights/widths, sticky items, scrolling to index, and more
-  - https://github.com/clauderic/react-infinite-calendar /inactive
+  - https://github.com/clauderic/react-infinite-calendar /201705/js
     - 依赖tiny-virtual-list,date-fns
 - react-virtualized /MIT/19.5kStar/202105/js
   - https://github.com/bvaughn/react-virtualized
@@ -853,13 +855,6 @@ modified: 2022-08-21T10:02:27.788Z
   - highly customizable with css.
   - 基于div实现，无依赖，功能较少
 
-- react-list /MIT/1.8kStar/202009/layout
-  - https://github.com/caseywebdev/react-list
-  - https://ca.sey.me/react-list/
-  - 基于div实现，样式太陈旧
-  - 多用于布局
-  - A versatile infinite scroll React component.
-
 - https://github.com/andrglo/react-window-grid /js
   - A react grid with synced column and row headers based on react-window
 
@@ -1076,12 +1071,6 @@ modified: 2022-08-21T10:02:27.788Z
   - 源码是传统的单文件
   - frontend data table/grid with paging, sorting, filtering, grouping, sub-grids, exporting and editing.
   - Can be used with any framework.
-
-- list.js /9.8kStar/MIT/201912/js/inactive
-  - https://github.com/javve/list.js
-  - https://codepen.io/javve/pen/cLdfw
-  - adding search, sort, filters and flexibility to tables, lists and various HTML elements.
-  - Built to be invisible and work on existing HTML.
 
 - https://github.com/lebonnet/bomtable /js
   - https://lebonnet.github.io/

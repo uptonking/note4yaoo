@@ -82,6 +82,12 @@ modified: 2021-05-14T15:04:42.225Z
 
 - https://github.com/pgte/js-sparse-array /201812/js
   - Sparse array implementation in JS with no dependencies
+
+- https://github.com/RobinMalfait/lazy-collections /MIT/202309/ts
+  - Collection of fast and lazy operations
+  - Working with methods like .map(), .filter() and .reduce() is nice, however they create new arrays and everything is eagerly done before going to the next step.
+  - This is where lazy collections come in, under the hood we use iterators and async iterators so that your data flows like a stream to have the optimal speed.
+  - All functions should work with both `iterator` and `asyncIterator`
 # repos
 - https://github.com/tannerlinsley/react-table
 - https://github.com/bvaughn/react-window

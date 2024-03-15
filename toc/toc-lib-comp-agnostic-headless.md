@@ -240,6 +240,11 @@ modified: 2021-04-11T06:17:51.318Z
   - Uses Image implementation and canvas from node-canvas. 
   - Tiles, Markers and vector layers work well with leaflet-image
 
+- https://github.com/select2/select2 /25.8kStar/MIT/202303/js/inactive
+  - https://select2.org/
+  - a jQuery based replacement for select boxes. 
+  - It supports searching, remote data sets, and infinite scrolling of results.
+
 - https://github.com/Choices-js/Choices /ts
   - https://github.com/jshjohnson/Choices /ts
   - https://choices-js.github.io/Choices/
@@ -279,12 +284,6 @@ modified: 2021-04-11T06:17:51.318Z
   - UI headless simple markdown editor using only textarea
   - 依赖react
   - You can choose any markdown parser, create your own layout, and use your own textarea component that is styled and behaves however you like
-
-- https://github.com/wellyshen/react-cool-virtual
-  - A tiny React hook for rendering large datasets like a breeze.
-  - Renders millions of items with highly performant way, using DOM recycling.
-  - react-virtual is flexible and headless but using and styling it can be verbose (because it's a low-level hook).
-  - React Cool Virtual is a tiny React hook that gives you a better DX and modern way for virtualizing a large amount of data
 
 - vechaiui /1kStar/MIT/202206/ts
   - https://github.com/vechai/vechaiui

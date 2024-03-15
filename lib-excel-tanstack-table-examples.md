@@ -204,9 +204,6 @@ modified: 2022-08-21T10:37:01.349Z
 
 ## in-memory
 
-- https://github.com/nodew/lazyList /ts
-  - A lazy list implementation with generator and iterator
-
 - https://github.com/francisrstokes/Lazy-Infinite-List /js
   - Lazily Evaluated Infinite List Data Structure.
   - lazy-infinite uses generators to define a potentially infinite data structure, and allows you to describe transforming the elements in that structure without evaluating it
@@ -215,6 +212,9 @@ modified: 2022-08-21T10:37:01.349Z
   - Lazy list(lazy list) with high tree-shaking affinity and easy customization.
   - Iterable can also be seamlessly treated as Async Iterator.
   - To achieve tree-shaking, we use an rxjs-like syntax.
+
+- https://github.com/nodew/lazyList /201810/ts
+  - A lazy list implementation with generator and iterator
 # design-system-ui-v8
 - https://github.com/saas-js/saas-ui/tree/main/packages/saas-ui-data-table
   - https://saas-ui.dev/docs/components/data-display/data-table

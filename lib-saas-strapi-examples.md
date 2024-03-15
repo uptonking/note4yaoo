@@ -69,6 +69,7 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/its-devtastic/curator /MIT/202402/ts
   - https://www.curatorjs.org/
   - An alternative Strapi admin
+  - 依赖zustand、dnd-kit、tiptap2、antd5、formik、i18next
   - mobile-friendly admin
   - Content versioning*
   - Audit logs*
@@ -184,8 +185,10 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/ddlogical/uploads-duplicator /MIT/202312/js
   - This plugin allows you to seamlessly synchronize your Strapi CMS uploads folder with Google Drive. 
   - It utilizes OAuth for secure authorization and provides a straightforward way to automate the backup and storage of your media assets.
+  - If you delete files in Media Library, you also should manually delete this files(all versions) on Google Drive
+  - To completely delete files in the "uploads" folder, please, restart strapi
 
-- https://github.com/strapi-community/strapi-provider-upload-google-cloud-storage /js
+- https://github.com/strapi-community/strapi-provider-upload-google-cloud-storage /MIT/202305/js
   - Google Cloud Storage Upload Provider for Strapi
 
 - https://github.com/jakeFeldman/strapi-provider-upload-azure-storage /202311/ts
@@ -290,10 +293,10 @@ modified: 2023-12-15T19:30:23.094Z
   - A bold title/text editor to accentuate certain parts through HTML or Markdown.
   - Different output options: choose between HTML and Markdown.
 
-- https://github.com/konstantinmuenster/strapi-plugin-rich-text /MIT/202402/ts
+- https://github.com/konstantinmuenster/strapi-plugin-rich-text /MIT/202402/ts/
   - A WYSIWYG editor for your rich text fields
   - This Strapi plugin replaces the Markdown editor with a visual, easy-to-use text editor.
-  - Edit content visually, as in GoogleDocs or Notion.
+  - 依赖tiptap2、markdown-it
   - The plugin stores the content in `HTML` format. When querying content on the frontend, you can simply render the received HTML string.
 
 - https://github.com/dasmikko/strapi-tiptap-editor /202303/js

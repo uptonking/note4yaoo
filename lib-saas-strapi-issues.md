@@ -37,7 +37,8 @@ npm run develop
 
 - ## 
 
-- ## 
+- ## 💾 [Can I save and upload media file with google drive?](https://forum.strapi.io/t/can-i-save-and-upload-media-file-with-google-drive/24817)
+- I guess you could but you would have to make your own plugin for it.
 
 - ## [Issue installing sharp glib-object.h: No such file or directory · lovell/sharp](https://github.com/lovell/sharp/issues/4003)
 - [Update sharp package to version v0.33.2 · strapi/strapi](https://github.com/strapi/strapi/pull/19311)

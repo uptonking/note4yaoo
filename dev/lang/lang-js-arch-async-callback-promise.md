@@ -130,7 +130,7 @@ modified: 2021-08-30T07:01:09.493Z
 - The examples are identical unless you expect c() === c() and don't add more code in each function. Try/catch in a() and errors before the return in c() make it behave differently.
 - Only b) will return a complete stack trace if the promise code errors
 
-- ## [Events vs Streams vs Observables vs Async Iterators - Stack Overflow](https://stackoverflow.com/questions/39439653/events-vs-streams-vs-observables-vs-async-iterators)
+- ## 🆚️ [Events vs Streams vs Observables vs Async Iterators - Stack Overflow](https://stackoverflow.com/questions/39439653/events-vs-streams-vs-observables-vs-async-iterators)
 - There are roughly two categories of APIs here: pull and push.
   - Push APIs are a good fit for when something is generating data, and the data being generated does not care about whether anyone wants it or not
   - Async pull APIs are a good fit for cases where data is pulled from a source. This source might be a file, or a network socket, or a directory listing, or anything else. The key is that work is done to pull or generate data from the source when asked.

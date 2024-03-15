@@ -149,6 +149,9 @@ modified: 2020-12-28T12:24:09.275Z
   - 依赖antd4、viewerjs-image-viewer、react-window、sortablejs、react-quill、react-monaco、rc-*组件、moment
   - 抛弃繁重难以维护的JSX堆砌表格列，采用无需开发的低代码拖拽搭建模式。
   - 专注于可视化搭建、组件渲染分发，底层渲染逻辑由组件库处理，因此不依赖指定界面框架，可支持多种主流界面组件库。
+  - [插件的应用范围](https://github.com/jd-opensource/drip-table/discussions/21)
+    - antd-table旨在简化前端Table的开发，封装了HTML原生Table；而drip-table是为了解决实际业务中Table的逻辑复杂难以维护的痛点，让用户通过低代码开发Table。
+    - drip-table面向的使用者是产品人员和开发人员。
   - 全家桶
     - https://jdfed.github.io/drip-form/
 

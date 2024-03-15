@@ -59,7 +59,7 @@ modified: 2023-04-07T04:09:54.488Z
 
 - Signals are not composable and composition is key in programming!
 
-- ## 👉🏻 Signals are inverted AsyncIterators in a way.
+- ## 🧩 Signals are inverted AsyncIterators in a way.
 - https://twitter.com/BenLesh/status/1691488028127113231
   - Just another shaped reactive type with it's own traits.
   - pull - Iterable/function

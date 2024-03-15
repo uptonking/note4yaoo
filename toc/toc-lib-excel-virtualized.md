@@ -8,17 +8,31 @@ modified: 2023-01-15T15:56:43.100Z
 # toc-lib-excel-virtualized
 
 # guide
-
-# virtualized-react
-- virtua /9Star/MIT/202304/ts
+- list
+  - 常见场景: virtual, infinite, lazy
+  - 滚动时，infinite列表的按需加载可看做是lazy
+# virtualized
+- virtua /871Star/MIT/202403/ts
   - https://github.com/inokawa/virtua
   - https://inokawa.github.io/virtua/
-  - A zero-config, fast and small (3kB) virtual list component for React.
+  - A zero-config, fast and small (~3kB) virtual list (and grid) component for React, Vue and Solid.
+  - core无依赖，react依赖只有use-sync-external-store
   - 示例比较了react-virtual/react-window
-  - 依赖只有use-sync-external-store
+  - 示例非常丰富，包括chat/date-picker/feed(无限滚动)/lazy
+  - 提供了同类virtual库的比较表格
   - Aiming to support many usecases - fixed size, dynamic size, horizontal scrolling, reverse scrolling, rtl direction, sticky, infinite scrolling, placeholder, scrollTo, dnd, table, and more
-  - Framework agnostic (WIP): Currently only for React but we could support Vue, Svelte, Solid and more in the future.
-  - Fast: Scrolling without frame drop needs optimization in many aspects (reduce CPU usage, reduce GC, reduce layout recalculation, optimize for frameworks, etc). We are trying to combine the best of them.
+  - Framework agnostic
+  - [Bug: `shift` causes render artifacts when items are added/removed mid-list _202312](https://github.com/inokawa/virtua/issues/284)
+    - `shift` works great when prepending items, but causes lots of rendering artifacts when adding/removing items from anywhere else in the list
+  - [An issue I haven't seen handled in any virtualized library _202312](https://github.com/inokawa/virtua/discussions/293)
+    - I have an array of elements that elements might be added or removed for any position in the array. The issue i have seen in every virtualized list is that the scroll position is not maintained
+    - It seems that the scroll position maintainer doesn't support adding item to(or removing item from) upper middle of the list.
+    - this problem might be solvable with comparing React keys. I'll take a time to research
+  - [Virtualized list of items where each item is a virtualized list _202312](https://github.com/inokawa/virtua/discussions/299)
+    - Virtualization in virtualized list hasn't been officially tested yet so it may work or may not work. Overriding some styles of VList may help it.
+  - [Padding is buggy _202312](https://github.com/inokawa/virtua/issues/272)
+    - Padding is always unintentionally buggy. header/footer div approach like other libraries might be better.
+    - Incomplete padding support was dropped from `VList` in 0.20.0. Use new `Virtualizer` which has header/footer support. It only supports static header/footer. Dynamic ones will be supported in #315 .
 
 - tanstack-virtual /4.1kStar/MIT/202303/ts
   - https://github.com/TanStack/virtual
@@ -39,7 +53,7 @@ modified: 2023-01-15T15:56:43.100Z
   - [Height of item](https://github.com/clauderic/react-tiny-virtual-list/issues/9)
     - You can pass in a function to itemSize which returns the height of an item given its index. 
   - [I have to force render the list again, if the list item heights are dynamic](https://github.com/clauderic/react-tiny-virtual-list/issues/52)
-    - react-tiny-virtual-list uses PureComponent, and as such, it has no way to know when the sizes of your items changes when you use a function to get the item sizes.
+    - react-tiny-virtual-list uses `PureComponent`, and as such, it has no way to know when the sizes of your items changes when you use a function to get the item sizes.
   - https://github.com/clauderic/virtualized-list
     - A tiny vanilla virtualization library, with DOM diffing
   - 🍴 forks
@@ -54,7 +68,7 @@ modified: 2023-01-15T15:56:43.100Z
   - 基于div实现，每行对应的dom元素不存在
   - React components for efficiently rendering large lists and tabular data
   - React window works by only rendering part of a large data set(just enough to fill viewport).
-  - [暂不支持 Support just-in-time measured content](https://github.com/bvaughn/react-window/issues/6)
+  - 🐛 [暂不支持 Support just-in-time measured content](https://github.com/bvaughn/react-window/issues/6)
     - https://codesandbox.io/s/dynamic-size-list-zcntp
     - It took me quite some time to figure out that dynamic content is not actually supported by the library and it's only useful for items with fixed/known size
     - if you are looking for a table/grid/tree, this would be a good start autodesk/react-base-table, built on VariableSizeGrid
@@ -144,13 +158,87 @@ modified: 2023-01-15T15:56:43.100Z
 - react-virtualized-sticky-tree
   - https://github.com/marchaos/react-virtualized-sticky-tree
   - https://marchaos.github.io/react-virtualized-sticky-tree/
+  - A React component for efficiently rendering tree like structures with support for `position: sticky`.
   - 依赖react-measure
   - 使用场景类似滚动城市列表时能固定省名
-  - A React component for efficiently rendering tree like structures with support for `position: sticky`.
   - uses a similar API to react-virtualized.
-# virtualized-examples
+# infinite/lazy
+- https://github.com/bvaughn/react-window-infinite-loader /MIT/202102/js/inactive
+  - https://codesandbox.io/s/5wqo7z2np4
+  - InfiniteLoader component inspired by react-virtualized but for use with react-window
+  - This demo app mimics loading remote data. Once data has been "loaded", the row number will be displayed.
 
-# more-virtualized
+- https://github.com/omer73364/lazy-load-list /MIT/202202/js
+  - https://lazy-load-react-example.netlify.app/
+  - Lazy Load List is a lightweight web package that loads items in lazy way
+  - Supports most loved JS frameworks
 
+- https://github.com/wellyshen/react-cool-virtual /MIT/202201/ts/inactive/示例丰富
+  - A tiny React hook for rendering large datasets like a breeze.
+  - 仅依赖react
+  - Renders millions of items with highly performant way, using DOM recycling.
+  - react-virtual is flexible and headless but using and styling it can be verbose (because it's a low-level hook).
+  - a tiny React hook that gives you a better DX and modern way for virtualizing a large amount of data
+  - Supports fixed, variable, dynamic, and real-time heights/widths.
+  - Built-ins load more callback for you to deal with infinite scroll + skeleton screens.
+  - Supports server-side rendering (SSR) for a fast FP + FCP and better SEO.
+  - https://github.com/wellyshen/react-cool-virtual/tree/master/examples/infinite-scroll
+
+- https://github.com/onderonur/react-infinite-scroll-hook /MIT/202303/ts/inactive
+  - https://onderonur.github.io/react-infinite-scroll-hook/
+  - React hook for creating infinite scroll components
+
+- https://github.com/ankeetmaini/react-infinite-scroll-component /MIT/202104/ts
+  - https://react-infinite-scroll-component.netlify.com/
+  - An infinite-scroll that actually works and super-simple to integrate
+
+- https://github.com/select2/select2 /25.8kStar/MIT/202303/js/inactive
+  - https://select2.org/
+  - a jQuery based replacement for select boxes. 
+  - It supports searching, remote data sets, and infinite scrolling of results.
+
+- react-list /2kStar/MIT/202010/inactive
+  - https://github.com/caseywebdev/react-list
+  - https://ca.sey.me/react-list/
+  - 基于div实现，样式太陈旧
+  - 只依赖react
+  - A versatile infinite scroll React component.
+  - [Support loading data on demand](https://github.com/caseywebdev/react-list/issues/60)
+    - it's up to you to decide when you should fetch new data and how. You can use itemRenderer as a gauge for what's being displayed, and you can use getVisibleRange() to get similar information on demand. ReactList won't tell you when to fetch more data because each use case is different
+  - [Question: Implementing 'FetchList'](https://github.com/caseywebdev/react-list/issues/24)
+  - [Question: How is data fetched, could you hook it up to Relay?](https://github.com/caseywebdev/react-list/issues/104)
+    - There isn't a specific callback to fetch data because this is a low-level component that makes no assumptions of your data. You can leverage the renderItem method to know what section of the list is attempting to be rendered and act accordingly
+- https://github.com/u-wave/react-list-lazy-load /MIT/202102/js/archived
+  - https://u-wave.github.io/react-list-lazy-load/
+  - Lazy loading wrapper for react-list
+  - This component works for finite collections only. If you have a large list of a known size that you do not want to load all at once, this component allows loading pages once the user scrolls near them. 
+  - It does not implement infinite scrolling.
+
+- list.js /11.1kStar/MIT/202011/js/inactive
+  - https://github.com/javve/list.js
+  - https://listjs.com/
+  - https://codepen.io/javve/pen/cLdfw
+  - adding search, sort, filters and flexibility to tables, lists and various HTML elements.
+  - Built to be invisible and work on existing HTML.
+
+- https://github.com/alibaba/alist /MIT/202206/ts/inactive
+  - https://alist.wiki/
+  - 在 Fusion/Ant-Design 的 Table 已经成为业界事实标准的情况下，且 Formily 表单方案作为搜索区域的不二之选时，通过对这些方案的整合，可以快速实现标准化的列表场景。
+  - 列表状态核心管理包(不依赖任何第三方UI框架)
+  - 管理 搜索框 Filter 状态、列表 Table 状态、分页 Pagination 状态、Filter/Table/Pagination 之间的依赖关系、列表生命周期 ListLifeCycle
+  - AList是集各方成熟方案于一体的框架
+    - 搜索区域使用UForm，Pagination，Table区域则使用Fusion-Next或Ant-Design或其他第三方组件库。 
+    - 底层通过核心层抽象列表各个维度数据，UI层则负责适配不同端的特性，顶层通过Schema协议描述快速渲染。
+
+- https://github.com/webcreate/infinite-ajax-scroll /AGPLv3/202209/js/inactive
+  - https://docs.infiniteajaxscroll.com/
+  - https://infiniteajaxscroll.com/
+  - https://infiniteajaxscroll.com/examples
+  - a javascript infinite scrolling plugin. 
+  - It works by reading the next (and previous) links of your existing server-side pagination and load these pages via AJAX when the visitor scrolls to the end of the page.
+  - Progressive enhancement: Infinite Ajax Scroll progressively enhances your server-side pagination with AJAX. When a client doesn't support JavaScript it will fall back on your server-side pagination
+# examples
+
+# more
 - https://github.com/PolymerLabs/uni-virtualizer
   - provides viewport-based virtualization (including virtual scrolling) for Lit.

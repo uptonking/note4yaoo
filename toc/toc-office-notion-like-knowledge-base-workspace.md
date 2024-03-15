@@ -317,7 +317,7 @@ modified: 2022-06-03T21:34:54.893Z
 
 - https://github.com/Alamantus/FeatherWiki /91Star/AGPLv3/202310/js
   - https://codeberg.org/Alamantus/FeatherWiki
-  - Feather Wiki is a lightning fast infinitely extensible tool for creating personal non-linear notebooks, databases, and wikis that is entirely self-contained, runs in your browser, and is only 55 kilobytes. 
+  - extensible tool for creating personal non-linear notebooks, databases, and wikis that is entirely self-contained, runs in your browser, and is only 55 kilobytes. 
   - The idea is that it's like TiddlyWiki but as small as possible.
   - 👉🏻 The app and all of the content you create using it are stored within the single HTML file generated when you save your wiki. 
   - Publishing your content is as simple as uploading that file to a web server, and **updating is as simple as overwriting the file**.

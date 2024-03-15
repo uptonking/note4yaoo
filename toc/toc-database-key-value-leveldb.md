@@ -356,7 +356,7 @@ modified: 2022-11-03T04:14:00.563Z
 - https://github.com/kesla/mysqldown /201307/js
   - An drop-in replacement for LevelDOWN that works in mysql
 # kv-based
-- https://github.com/nlfiedler/mokuroku /apache2/rust/202309
+- https://github.com/nlfiedler/mokuroku /apache2/rust/202309/inactive
   - Secondary indices for RocksDB in Rust.
   - designed to provide a secondary index on top of the RocksDB key/value store, similar to what PouchDB does for LevelDB.
   - Your application will provide implementations of the `Document` trait to suit the various types of data to be stored in the database, and this library will invoke the mapping function on those Document instances to produce index key/value pairs.

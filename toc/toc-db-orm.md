@@ -321,6 +321,8 @@ modified: 2021-08-30T18:56:09.644Z
 - https://github.com/JRMurr/SQLJr /rust
   - Toy DB to get more systems expereince
   - [Building a Simple DB in Rust - Part 1 - Parsing](https://johns.codes/blog/build-a-db/part01)
+- https://github.com/mzinsmeister/OxidSQL /apache2/202306/rust
+  - Toy SQL Database in Rust
 
 - https://github.com/nukep/llamadb /201712/rust/inactive
   - a simple SQL database, written entirely in Rust 

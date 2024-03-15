@@ -8,7 +8,11 @@ modified: 2022-08-21T10:02:41.845Z
 # toc-lib-excel-list-tree
 
 # guide
-- tips
+- list
+  - 常见场景: virtual, infinite, lazy
+  - 滚动时，infinite列表的按需加载可看做是lazy
+
+- tree
   - > see also json/ast; editor-render-only
 # flat-tree
 - 更推荐用parentId的方式
@@ -299,6 +303,29 @@ modified: 2022-08-21T10:02:41.845Z
 
 - https://github.com/hughsk/flat /js
   - Flatten/unflatten nested Javascript objects
+# lazy-load-tree
+- use-tree /6Star/MIT/202207/ts
+  - https://github.com/elseu/use-tree
+  - useTree is a set of components and hooks that make it ridiculously easy to work with lazy-loaded tree structures like navigation menus or tables of contents.
+
+- react-lazy-tree /12Star/MIT/201808/js
+  - https://github.com/ethanselzer/react-lazy-tree
+  - https://ethanselzer.github.io/react-lazy-tree
+  - Recursively render tree data structures. Render lazily or greedily.
+  - 侧边导航栏经典示例，一次仅展开一个第一层
+
+- https://github.com/legharir/react-lazy-paginated-tree /201808/js
+  - https://boweihan.github.io/rlpt-example/
+  - 依赖material-ui.v1
+
+- https://github.com/mar10/fancytree /202310/js/jquery
+  - http://wwwendt.de/tech/fancytree/demo/
+  - a JavaScript tree view/tree grid plugin with support for keyboard, inline editing, filtering, checkboxes, drag'n'drop, and lazy loading.
+
+- https://github.com/velovsky/Derived-D3.js-Collapsible-Tree
+  - https://rawgit.com/velovsky/Derived-D3.js-Collapsible-Tree/master/src/test.html
+  - a D3 tree performing lazy loadings on click
+  - 类似思维导图
 # crdt-tree
 - https://github.com/ymlsam/lww-element-dict
   - a LWW key-value store, a conflict-free replicated data type (CRDT) implemented in Typescript/Javascript
@@ -495,32 +522,10 @@ modified: 2022-08-21T10:02:41.845Z
   - An accessible vanilla JS accordion with extensible API
 - https://github.com/cferdinandi/houdini
   - A simple, accessible show-and-hide/accordion script.
-# lazy-load-tree
-- use-tree /6Star/MIT/202207/ts
-  - https://github.com/elseu/use-tree
-  - useTree is a set of components and hooks that make it ridiculously easy to work with lazy-loaded tree structures like navigation menus or tables of contents.
-
-- react-lazy-tree /12Star/MIT/201808/js
-  - https://github.com/ethanselzer/react-lazy-tree
-  - https://ethanselzer.github.io/react-lazy-tree
-  - Recursively render tree data structures. Render lazily or greedily.
-  - 侧边导航栏经典示例，一次仅展开一个第一层
-
-- https://github.com/velovsky/Derived-D3.js-Collapsible-Tree
-  - https://rawgit.com/velovsky/Derived-D3.js-Collapsible-Tree/master/src/test.html
-  - a D3 tree performing lazy loadings on click
-  - 类似思维导图
-
-- https://github.com/legharir/react-lazy-paginated-tree /201808/js
-  - https://boweihan.github.io/rlpt-example/
-  - 依赖material-ui.v1
 # more
 - https://github.com/daniel-hauser/react-organizational-chart
   - Simple react hierarchy tree - any React children accepted for nodes
 - https://github.com/bkrem/react-d3-tree
-- https://github.com/mar10/fancytree
-  - http://wwwendt.de/tech/fancytree/demo/
-  - a JavaScript tree view/tree grid plugin with support for keyboard, inline editing, filtering, checkboxes, drag'n'drop, and lazy loading.
 - https://github.com/vakata/jstree
   - http://jstree.com/
   - jquery tree plugin
@@ -533,4 +538,3 @@ modified: 2022-08-21T10:02:41.845Z
 
 - https://github.com/imsnif/nmtree
   - Get a (flat) tree representation of the modules in your node_modules folder
-
