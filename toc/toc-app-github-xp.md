@@ -71,6 +71,9 @@ modified: 2023-02-08T10:46:26.912Z
 
 - 搜索名称为folder11的文件夹
 
+- 搜索repo名称包含关键词如directus的用户，按仓库数量最多排序，可发现directus的爱好者
+  - 甚至可以再按年份排序
+
 ## search-issues/pr
 
 - is:unmerged

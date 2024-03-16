@@ -16,9 +16,10 @@ modified: 2023-10-26T15:02:47.068Z
 
 - ## 
 
-- ## Cloudflare KV的更新时间大概要5~6秒啊。不知道是不是我用的有问题。
+- ## 🌰 Cloudflare KV的更新时间大概要5~6秒啊。不知道是不是我用的有问题。
 - https://twitter.com/PenngXiao/status/1768595444672905321
 - 最终一致性
+- 文档说了是60秒以内，五六秒已经很好了
 
 # discuss-redis
 - ## 

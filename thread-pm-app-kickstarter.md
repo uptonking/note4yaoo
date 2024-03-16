@@ -14,7 +14,14 @@ modified: 2021-10-29T15:02:28.882Z
 # ideas-stars
 - ## 
 
-- ## 
+- ## 💡💰 请教订阅管理问题：我个人订阅了不少服务，如 Spotify、iCloud 等。
+- https://twitter.com/wulujia/status/1768835607089037620
+  - 公司还有些订阅如企业微信、Notion、Slack、OpenAI 、AWS、Github 等。
+  - 怎样很好地管理——包括续退订、成员、权限、用量等。现在太乱了。
+- 有很多管理订阅的APP, 不过你每次要自己填入进去, 他没办法自动化同步
+- 研究了好久管理服务，最后半年过去了还是没管理起来，后来直接用备忘录，半个月就把不需要的全部清退了
+- google sheets
+- 使用 Notion 做个订阅管理的database，但是仅记录，不支持一键续订啥的
 
 - ## Unless your customers are developers, they don't give two shits what your frontend or backend are written in or what libraries or framework you're using.  Zero shits.
 - https://twitter.com/codeopinion/status/1759035468446875712

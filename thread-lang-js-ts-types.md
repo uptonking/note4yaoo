@@ -131,6 +131,14 @@ modified: 2021-08-05T04:31:02.298Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Why do people use Partial + literal type instead of writing the literal type in the correct form at once?  
+- https://twitter.com/MangelMaxime/status/1768661605846245775
+- Partial was added for the use case where you already had existing types and there were some places where a partial would have been a better choice (either consumption or transformation)
+
 - ## For those of us who wish we had a Rust-like `Option<T>` type in TypeScript.
 - https://twitter.com/GabrielVergnaud/status/1766554404650418187
   - I'm sure some of you are thinking "why the heck wouldn't we just do `T | null` " 

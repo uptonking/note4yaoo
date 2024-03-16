@@ -104,25 +104,24 @@ modified: 2020-12-08T13:29:35.248Z
   - 在数据更新的时候实现最小操作，并不像string-based模板引擎那样，可能改了一个值就要重新生成巨大的一部分字符串。
 - 个人认为，在浏览器端，string-based模板引擎的应用场景越来越有限，string-based模板引擎对现在提倡的组件化开发其实是挺不友好的。
 # popular
-- https://github.com/mde/ejs
+- https://github.com/mde/ejs /5.1kStar/apache2/202009/js
   - http://ejs.co/
-  - /5.1kStar/Apache2/202009/js
   - Embedded JavaScript templates
   - Client-side support
     - When `true`, compiles a function that can be rendered in the browser without needing to load the EJS Runtime (ejs.min.js).
     - includes do not work unless you use an include callback
   - Complies with the Express view system
 
-- https://github.com/handlebars-lang/handlebars.js
+- https://github.com/handlebars-lang/handlebars.js /15.8kStar/MIT/202011/js
   - https://handlebarsjs.com/guide/
-  - /15.8kStar/MIT/202011/js
   - Handlebars let you build semantic templates effectively
   - Handlebars is largely compatible with Mustache templates.
   - 👉🏻 syntax of Handlebars.js templates is a superset of Mustache templates.
 
-- https://github.com/userpixel/micromustache
-  - fast and small sub-implementation of the {{mustache}} template engine for JavaScript
-  - No dependencies
+- https://github.com/alexewerlof/micromustache /MIT/202008/ts/NoDeps/inactive
+  - https://github.com/userpixel/micromustache /legacy
+  - fast and small sub-implementation of the `{{mustache}}` template engine for JavaScript
+  - If variable interpolation is all you need, micromustache is a drop-in replacement for MustacheJS
   - less than 350 source lines of code, easy to audit
   - dropping the following features from MustacheJS
     - Array iterations: {{# ...}}
@@ -130,6 +129,15 @@ modified: 2020-12-08T13:29:35.248Z
     - Inverted selection: {{^ ...}}
     - Comments: {{! ...}}
     - HTML sanitization: {{{ propertyName }}}
+
+- https://github.com/harttle/liquidjs /MIT/202403/ts
+  - https://liquidjs.com/
+  - https://liquidjs.com/playground.html
+  - A simple, expressive and safe Shopify/Github Pages compatible template engine in pure JavaScript. 
+  - The purpose of this repo is to provide a standard Liquid implementation for the JavaScript community so that Jekyll sites, Github Pages and Shopify templates can be ported to Node.js without pain.
+  - Basically there're two types of Liquid syntax: tags enclosed by `{% %}` and outputs enclosed by `{{ }}`.
+  - who is using #liquidjs
+    - directus, Eleventy, Opensense, Mitosis, Builder.io, Microsoft Power Pages
 # pieces
 - [用20行代码带你了解模板引擎实现原理](https://zhuanlan.zhihu.com/p/267830144)
   - 模板引擎就是将数据（data）和模板（template）合并然后生成 HTML 文本。

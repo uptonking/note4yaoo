@@ -38,4 +38,11 @@ modified: 2024-02-16T14:55:58.271Z
   - [Unable to run Directus locally](https://github.com/directus/directus/issues/17786)
   - You have to set `SERVE_APP=true` in your .env file in order to run the api in dev mode with the build app.
   - 最终发现配置server_app后要访问的是服务端:8055/admin，而不是前端:8080/admin
+# codebase
+- flows
+  - 基于vuedraggable实现，未使用其他外部依赖
+
+- graphql用的不多
+  - 前端app主要是insights部分
+  - 后端包括controller/**service**/middleware, 移除需要一定的工作量
 # more

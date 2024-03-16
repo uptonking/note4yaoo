@@ -92,7 +92,10 @@ modified: 2022-12-16T01:52:33.729Z
 
 - ## 
 
-- ## 
+- ## 🪧 Data table features tree cheatsheet
+- https://twitter.com/101babich/status/1768612940217786754
+  - This cheatsheet will help you choose all the features for your complex data table
+  - [How To Architect A Complex Web Table — Smashing Magazine _201902](https://www.smashingmagazine.com/2019/02/complex-web-tables/)
 
 - ## [UI considerations for designing large data tables | Hacker News_202401](https://news.ycombinator.com/item?id=38942439)
 - ag-grid is pretty great at all of this. 

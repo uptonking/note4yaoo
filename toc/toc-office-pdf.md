@@ -150,7 +150,7 @@ modified: 2021-01-04T17:26:43.784Z
   - JavaScript Client/Server Side PDF-Generator based in PDFKit
   - Plugins Ready!
 
-- https://github.com/eKoopmans/html2pdf.js /3.6kStar/MIT/202109/js
+- https://github.com/eKoopmans/html2pdf.js /3.6kStar/MIT/202109/js/inactive
   - Client-side HTML-to-PDF rendering using pure JS.
   - html2pdf.js converts any webpage or element into a printable PDF entirely client-side using `html2canvas` and `jsPDF`.
 

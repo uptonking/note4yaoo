@@ -21,6 +21,19 @@ modified: 2021-01-28T14:34:20.579Z
 
 - I use this typed API client (with zod validations) almost everywhere. 
   - [Fully typed API client with zod and fetch](https://gist.github.com/jordienr/3127f4186d520e57d3e77fa784058366)
+# discuss-news
+- ## 
+
+- ## 
+
+- ## 
+
+- ## In TS 5.5, type predicates will be inferred automatically from functions that return a narrowing statement.
+- https://twitter.com/mattpocockuk/status/1768809254733951424
+  - No more 'val is string' to force TypeScript's hand.
+- If you manually write the return type, will TS error if the inference doesn’t match what you wrote?
+  - No, it won't - a possible addition for the future.
+
 # discuss
 - ## 
 

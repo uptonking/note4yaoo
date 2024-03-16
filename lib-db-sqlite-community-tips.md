@@ -73,6 +73,11 @@ modified: 2023-10-28T13:38:46.522Z
 
 - ## 
 
+- ## 
+
+- ## how fast can you put a 10 million row, 11gb CSV into SQLite while handling NULL correctly? I’m at about a minute
+- https://twitter.com/jitl/status/1768710776552853582
+
 - ## The more I work with SQLite, the more I believe it's the perfect database for most indie products.
 - https://twitter.com/ImSh4yy/status/1758577293763514822
 - how do you get around the write limitations?

@@ -586,8 +586,8 @@ modified: 2023-12-15T19:30:23.094Z
   - A plugin for Strapi Headless CMS that provides a simple voting system together with a moderation panel and logs.
   - Search and filter through the logs and see various voting statistics.
 
-- https://github.com/DomDew/strapi-plugin-fuzzy-search /202311/ts
-  - Register a weighted fuzzy search endpoint for Strapi Headless CMS you can add your content types to in no time
+- https://github.com/DomDew/strapi-plugin-fuzzy-search /MIT/202403/ts
+  - Register a weighted fuzzy search endpoint for Strapi
   - Uses `fuzzysort` under the hood: Simple, quick and easy. No need to worry about setting up an instance for a complex search engine.
   - https://github.com/farzher/fuzzysort /202211/js
 
@@ -599,6 +599,9 @@ modified: 2023-12-15T19:30:23.094Z
   - Working on Strapi version: v4.0.3
   - Support JSON export & import
   - Include the following lines to allows large excel imports in middelware.js
+
+- https://github.com/pdalvi1893/strapi-indexed-search-multilingual /202403/js
+  - Simple search plugin
 
 - https://github.com/strapi/strapi-plugin-seo /202311/js
   - The official plugin to make your Strapi content SEO friendly
@@ -999,6 +1002,11 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/YAKOO-HK/yakoo-strapi-local-starter /MIT/202402/ts
   - Yakoo Strapi + NEXT.js local-hosting starter template
 
+- https://github.com/hoangnhatfe/strapi_nextjs_template /202306/ts/inactive
+  - https://strapi-nextjs-template.vercel.app/
+  - boilerplate for building SEO-friendly and internationalized (i18n) web applications using Strapi 4.9 and Next.js 13.4. 
+  - The project utilizes Next.js with app routing, Server-Side Rendering (SSR) support, and Tailwind CSS for flexible styling.
+
 - https://github.com/appsforyoou/strapi-basic-web /202312/ts
   - Strapi boilerplate for basic landing page builds.
 
@@ -1029,14 +1037,14 @@ modified: 2023-12-15T19:30:23.094Z
   - build the frontend and backend of a school website using Strapi, HTML, CSS, and standard JavaScript.
   - [Build a School Website with Strapi and Vanilla JavaScript _202303](https://strapi.io/blog/how-to-build-a-school-website-with-strapi-cms-using-vanilla-javascript)
 
-- https://github.com/hubertnare/pet-adoption /202204/js/inactive
-  - For the Pet List, Add Pet, Update Pet, and Delete Pet features from the application, you will use React with a Context API. 
-  - [Building a CRUD App with React and a Headless CMS _202205](https://strapi.io/blog/how-to-build-a-crud-app-with-react-and-a-headless-cms)
-
-- https://github.com/aungchanmyaethaw/social-media-app-strapi /202212/js/inactive
+- https://github.com/aungchanmyaethaw/social-media-app-strapi /202212/js/fe+be/inactive
   - This is a social media app. 
   - Strapi is used to handle database. 
   - UseContext hook is used to store client side data. 
+
+- https://github.com/hubertnare/pet-adoption /202204/js/仅前端/inactive
+  - For the Pet List, Add Pet, Update Pet, and Delete Pet features from the application, you will use React with a Context API. 
+  - [Building a CRUD App with React and a Headless CMS _202205](https://strapi.io/blog/how-to-build-a-crud-app-with-react-and-a-headless-cms)
 
 - https://github.com/satnaing/next-bookstore /MIT/202309/ts
   - https://nextbookstore.vercel.app/

@@ -12,7 +12,9 @@ modified: 2023-10-26T19:18:19.584Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 《云RDS阉掉了PostgreSQL的灵魂》—— 用户无法在云数据库 RDS 上自由加装扩展，一些强力扩展也不可能出现在 RDS 中。
+- https://twitter.com/GobeUncleWang/status/1768815151300706686
+  - 使用 RDS 无法发挥出 PostgreSQL 真正的实力，而这是一个对云厂商来说无法解决的缺陷。（不过使用本地优先的RDS Pigsty则无此问题
 # discuss-perf
 - ## 
 

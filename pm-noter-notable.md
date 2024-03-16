@@ -99,6 +99,10 @@ modified: 2023-11-28T14:48:45.910Z
 
 - toggle-list，支持设置初始折叠状态
 
+## link
+
+- 统计以 github.com 开头的链接次数
+
 ## image
 
 - text on image, 类似支持编辑器卡片背景图片和文字
