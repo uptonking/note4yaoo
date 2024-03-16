@@ -106,14 +106,14 @@ modified: 2023-11-21T10:17:34.596Z
 - https://github.com/rluiten/rajts /201807/ts
   - Convert raj into typescript
 
-- https://github.com/marcodpt/merlin /MIT/202312/js
+- https://github.com/marcodpt/merlin /MIT/202312/js/inactive
   - https://marcodpt.github.io/merlin/
   - The Merlin JS framework
   - No building tools. Use a regular html file as a Single File Component.
   - Server side rendered by default (templates are valid html).
   - Ultrafast vDom.
-  - Built-in Single Page Application Router.
   - influenced by elm/raj/hyperapp
+  - Built-in Single Page Application Router.
 
 - https://github.com/jonaskello/tea-minimal /202201/ts
   - Minimal The Elm Architecture implementation in typescript
@@ -268,7 +268,9 @@ modified: 2023-11-21T10:17:34.596Z
 - hyperapp /19kStar/MIT/202205/js
   - https://github.com/jorgebucaran/hyperapp
   - The tiny framework for building hypertext applications
-  - an ultra-lightweight Virtual DOM, highly-optimized diff algorithm, and state management library obsessed with minimalism.
+  - an ultra-lightweight Virtual DOM, highly-optimized diff algorithm, and state management library obsessed with minimalism
+  - 🍴 forks
+    - https://github.com/kofifus/hyperapp /202202/js/inactive
   - [What's coming next & Superfine v. Hyperapp  · jorgebucaran/superfine](https://github.com/jorgebucaran/superfine/issues/134)
     - Superfine (this project) and Hyperapp 2's VDOM code is essentially the same, therefore performance is the same too. /201903
     - Hyperapp 2 doesn't include lifecycle events (Superfine still does) and DOM events dispatch actions directly, making it faster than Superfine, but possibly not for a lot.
@@ -286,8 +288,6 @@ modified: 2023-11-21T10:17:34.596Z
     - [@hyperapp/navigation can't handle external links](https://github.com/jorgebucaran/hyperapp/issues/1033)
     - I've decided to focus on shipping Hyperapp and creating quality examples to show people how easy it is to DIY these things, instead of crafting scoped packages, so I'm not going to publish `@hyperapp/navigation` any time soon
   - [SSR](https://github.com/jorgebucaran/hyperapp/issues/257)
-    - 
-
   - [Server Rendering? _201706](https://github.com/jorgebucaran/hyperapp/issues/14)
     - I'd like to share @benjaminj6's summary of the different SSR approaches available
   - [V2 What if?_201810](https://github.com/jorgebucaran/hyperapp/issues/765)
@@ -323,6 +323,9 @@ modified: 2023-11-21T10:17:34.596Z
   - I create this to support different vdom libraries, like React(official support), ultradom(built-in), Preact, inferno 
   - https://github.com/hydux/hydux-preact
   - https://github.com/hydux/hydux-react-router
+
+- https://github.com/okwolf/hyperapp-fx /MIT/202202/js/inactive
+  - A handy set of effects for use with Hyperapp.
 
 - https://github.com/loteoo/hyperstatic /MIT/202105/ts/inactive
   - https://github.com/loteoo/hyperstatic-starter
@@ -360,6 +363,10 @@ modified: 2023-11-21T10:17:34.596Z
   - Real Word Example App in Hyperapp v2
 - https://github.com/kwasniew/hyperapp-realworld-example-app /201908/js
   - A Single Page Application written in Hyperapp 1
+
+- https://github.com/jwiedeman/ShroomDexWeb /202401/js
+  - https://jwiedeman.github.io/ShroomDexWeb/
+  - Hyperapp Firebase App
 
 - https://github.com/jacobtipp/hypernews /201807/js
   - hackernews clone with hyperapp

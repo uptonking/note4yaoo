@@ -80,8 +80,6 @@ modified: 2023-08-29T10:13:31.070Z
   - This is why I enabled signing commits in git using my SSH key using this guide
   - [Git Tips 2: New Stuff in Git](https://blog.gitbutler.com/git-tips-2-new-stuff-in-git/)
 
-
-
 - ## 🆚️ Git Merge vs. Rebase vs. Squash Commit
 - https://twitter.com/sahnlam/status/1767434052695621850
 - 𝗚𝗶𝘁 𝗠𝗲𝗿𝗴𝗲 
@@ -98,7 +96,6 @@ modified: 2023-08-29T10:13:31.070Z
 - 
 - 
 - 
-
 
 - ## 🆚️ Git Merge vs. Rebase vs. Squash Commit
 - https://twitter.com/alexxubyte/status/1751645221602152881
@@ -737,3 +734,19 @@ modified: 2023-08-29T10:13:31.070Z
 - Would the wiki part of fossil be a good static site generator?
   - Not in the general case, no. Fossil-generated wiki/markdown output expect to be browsed within the context of a fossil repository, and will generate links accordingly.
   - There might be very limited use cases where it would work reasonably well, but not generically. e.g. adding a link to a local file or another wiki page will not work if the output is browsed from outside of a fossil repo instance.
+# disccuss-git-cli
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🔀 大家都用什么方式处理git merge/rebase conflict?
+- https://twitter.com/changwei1006/status/1768927296570921435
+  - 用IDEA内置的merge revisions功能，可以很方便的三栏查看代码的差别，并且会用红色和蓝色高亮标识出新旧代码和当前代码之间存在【添加/删除】的冲突代码块，然后【行号】旁边的【小箭头】还可以快速把需要保留的代码应用到当前文件
+- 这种在 Git 里叫 diff3
+  - 除了 diff3 还有很多, 像是 Changes、DiffMerge、ECMerge 啥的
+- idea是除了命令行以外最好的git客户端没有之一。在我的workflow里，唯一不能替代命令行的就是git rebase -i ，
+  - 但idea也有不可替代的我经常用到的一个功能：idea可以让我快速直观选择具体哪几行作为一次commit，而不用stage整个文件。（git add -p 或-i 太慢了）
+- 最喜欢冲突合并时的那个魔法棒
+- 比命令行下搞可视化好太多 同样操作

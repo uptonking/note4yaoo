@@ -74,6 +74,45 @@ modified: 2021-05-13T03:13:45.375Z
 
 - ## 
 
+- ## 
+
+- ## 🆚️ Choosing Between Pub-Sub Brokers and REST APIs in System Design
+- https://twitter.com/rixlabs/status/1768901435192664538
+
+- Pub-Sub Broker Pros:
+  - Real-Time Operations: Ideal for systems needing instant data sharing like live feeds or notifications.
+  - Decoupling: Producers and consumers work independently, improving system resilience and scalability.
+  - Event-Driven: Supports reactive architectures, responding to events as they occur.
+  - High Volume: Handles large amounts of messages efficiently, distributing them to numerous subscribers.
+
+- Pub-Sub Broker Cons:
+  - Complexity: Can be harder to set up and manage compared to direct API calls.
+  - Overhead: Might introduce additional overhead for low-volume or infrequent data exchanges.
+  - Message Tracking: Tracing and debugging can be more challenging due to asynchronous nature.
+
+- REST API Pros:
+  - Simplicity: Straightforward for retrieving or updating data through standard HTTP methods.
+  - Statelessness: Each call is independent, making scaling and caching more effective.
+  - Interoperability: Easily integrates with different types of clients, from web to mobile.
+  - CRUD Operations: Intuitive for standard database operations: create, read, update, delete.
+
+- REST API Cons:
+  - Polling: Not suitable for real-time updates without frequent server requests.
+  - Coupling: Tighter coupling between client and server; changes in API can affect clients.
+  - Scalability: While scalable, high traffic requires careful management to avoid server overload.
+
+- Choose a pub-sub broker when building real-time, event-driven systems where components must react quickly to changes without being tightly coupled. 
+  - It’s suitable for systems where the workload is unpredictable or where you expect to scale significantly.
+
+- Opt for REST APIs in scenarios where systems perform direct, specific actions on data like reading or updating records. 
+  - REST is more applicable for interfaces that external users or services will interact with, especially when actions are straightforward and stateless.
+
+- Your choice should align with the system’s operational requirements and scalability needs. 
+  - Pub-sub is for real-time, high-volume messaging, while REST APIs are for predictable, stateless interactions. 
+
+- This is not Pub/Sub but Point-to-Point.
+  - True. I did the schema in 3 min on my iPad. I could have draw better symbols.
+
 - ## TIL the browser event system is basically a built-in pubsub system.
 - https://twitter.com/ralex1993/status/1745790936808837331
   - [Patterns for Reactivity with Modern Vanilla JavaScript – Frontend Masters Boost](https://frontendmasters.com/blog/vanilla-javascript-reactivity/#pubsub-pattern-publish-subscriber)

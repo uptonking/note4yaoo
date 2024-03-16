@@ -32,10 +32,11 @@ modified: 2021-07-21T18:07:43.056Z
     - https://shoelace.style/
     - https://imdone.io/docs/
 
-- https://github.com/callstack/component-docs /120Star/MIT/202011/ts
+- https://github.com/callstack/component-docs /120Star/MIT/202011/ts/inactive
   - Simple documentation for your React components.
+  - 依赖@mdx-js/mdx.v0.20、express、linaria.v1、marked、rehype、webpack5
   - `pages (required)`: An array of items or a function returning an array of items to show as pages
-  - component-docs is used for [react-native-paper](https://callstack.github.io/react-native-paper/)
+  - component-docs was used for [react-native-paper](https://callstack.github.io/react-native-paper/)
   - 左侧目录支持折叠和多级目录
   - 没有实现当前页的toc
   - features

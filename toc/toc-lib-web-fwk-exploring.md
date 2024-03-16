@@ -69,12 +69,27 @@ const CountingComponent = () => {
   - what sets axum apart from other frameworks: axum doesn't have its own middleware system but instead uses `tower::Service`.
   - axum is a relatively thin layer on top of hyper and adds very little overhead. So axum's performance is comparable to hyper.
 
-- https://github.com/DioxusLabs/dioxus /MIT/202402/rust
+- https://github.com/DioxusLabs/dioxus /MIT/202403/rust
   - https://dioxuslabs.com/
   - Dioxus is a portable, performant, and ergonomic framework for building cross-platform user interfaces in Rust.
   - React-like GUI library for desktop, web, mobile, TUI, and more.
   - Desktop apps running natively (no Electron!) in less than 10 lines of code.
   - First-class async support with coroutines and suspense
+  - Web: Render directly to the DOM using WebAssembly
+
+- https://github.com/leptos-rs/leptos /MIT/202403/rust
+  - https://leptos.dev/
+  - fast web applications with Rust
+  - can be used to build apps that run in the browser (client-side rendering), on the server (server-side rendering), or by rendering HTML on the server and then adding interactivity in the browser (server-side rendering with hydration)
+  - 🆚️ How is this different from Dioxus?
+    - While Dioxus has a performant virtual DOM (VDOM), it still uses coarse-grained/component-scoped reactivity
+    - Leptos components use a different mental model, creating (and returning) actual DOM nodes and setting up a reactive system to update those DOM nodes.
+    - Dioxus uses Leptos server functions in its fullstack mode, but does not have the same `<Suspense>`-based support for things like streaming HTML rendering
+    - Leptos tends to prioritize holistic web performance (streaming HTML rendering, smaller WASM binary sizes, etc.), whereas Dioxus has an unparalleled experience when building desktop app
+  - 🆚️ How is this different from Sycamore?
+    - Sycamore and Leptos are both heavily influenced by SolidJS. 
+    - At this point, Leptos has a larger community 
+    - Sycamore uses a custom templating language for its views, while Leptos uses a JSX-like template format.
 # web-ui-framework
 - https://github.com/nanojsx/nano /MIT/202401/ts
   - http://nanojsx.io/

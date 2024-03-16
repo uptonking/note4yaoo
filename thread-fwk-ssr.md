@@ -52,7 +52,11 @@ modified: 2021-04-24T08:29:02.272Z
 
 - ## 
 
-- ## 
+- ## ⌛️ History strikes back. HTMX, and Hotwire to add dynamic behavior are getting a lot of traction lately. 
+- https://twitter.com/simas_ch/status/1768918127008477382
+  - Something that Jakarta Faces (JSF) has already had for 15 years! AJAX was introduced in JSF 2.0 in May 2009
+- The problem with JSF is that it tried to force a stateful model onto stateless technology in the most brutal way. If Bootstrap came a few years earlier JSF may have never gained traction. JSF has more exotic abstractions while bootstrap augments CSS and HTMX augments HTML.
+- for ASP.net Web Forms via Ajax Extensions since 2007.
 
 - ## Unless you have a really good reason to SSR apps behind auth, you're better off using CSR with a separate backend.
 - https://twitter.com/ImSh4yy/status/1767608702587097325
@@ -90,12 +94,12 @@ modified: 2021-04-24T08:29:02.272Z
 
 - ## [How single-page application works in SSR (React) - Stack Overflow](https://stackoverflow.com/questions/57243697/how-single-page-application-works-in-ssr-react)
 - When implementing Server Side Rendering (SSR), the server knows how to generate a full page with markup so the user gets a fully rendered page and from that moment, when the js resources get downloaded, the application will be live (event listeners will be enabled, the react lifecycle will be active and so on).
-01.       Get a request for a specific path
-02.       Initiate a new store instance for the request
-03.       In case of using react router (or other router solution), fill the state with the requested route
-04.       Render the app, but instead of rendering and mounting the App, render the App to string (with renderToString)
-05.       Dehydrate the state - take the latest state snapshot and append it to the result (after escaping it and wrapping it with script tag for example)
-06.       Return the markup as a response. The markup can look similar to the following: 
+01.        Get a request for a specific path
+02.        Initiate a new store instance for the request
+03.        In case of using react router (or other router solution), fill the state with the requested route
+04.        Render the app, but instead of rendering and mounting the App, render the App to string (with renderToString)
+05.        Dehydrate the state - take the latest state snapshot and append it to the result (after escaping it and wrapping it with script tag for example)
+06.        Return the markup as a response. The markup can look similar to the following: 
 
 ```HTML
 <html>

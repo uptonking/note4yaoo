@@ -50,11 +50,15 @@ modified: 2021-01-16T20:24:48.984Z
   - allows you to easily embed popular 3rd party media content such as YouTube videos, Tweets, Instagram posts and many more straight into your .mdx - no import required!
   - 支持codepen, codesandbox, flickr
 # mdx-docs
-- https://github.com/callstack/component-docs
-  - /120Star/MIT/202011/ts
-  - 支持ssr，已实现自动搜索指定目录下的所有.mdx文件
+- https://github.com/callstack/component-docs /137Star/MIT/202011/ts/inactive
   - Simple documentation for your React components.
-  - component-docs is used for [react-native-paper](https://callstack.github.io/react-native-paper/)
+  - 支持ssr，已实现自动搜索指定目录下的所有.mdx文件
+  - 依赖@mdx-js/mdx.v0.20、express、linaria.v1、marked、rehype、webpack5
+  - Fully static, deployable on GitHub pages
+  - Optimized for mobile screens
+  - Supports rendering React Components as well as markdown and MDX files
+  - Support including markdown from a file reference in markdown files
+  - component-docs was used for [react-native-paper](https://callstack.github.io/react-native-paper/)
 
 - https://github.com/mitchgavan/react-mdx-styleguide
   - 标准的components文档网站，实现复杂度不大不小

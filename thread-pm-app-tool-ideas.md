@@ -132,6 +132,11 @@ modified: 2022-11-07T10:58:24.512Z
 
 - ## 
 
+- ## 
+
+- ## 为猫开发的抓鱼游戏
+- https://twitter.com/ShouldHaveCat/status/1768910153737277752
+
 - ## 推荐一款语音识别 APP，Whisper Transcription，
 - https://twitter.com/Barret_China/status/1730988938641449287
   - 这款软件基本属于对 Whisper 模型的本地套壳，附加了诸多体验优化和额外功能模块。看来在大模型时代只要肯动手，还是有很多机会的

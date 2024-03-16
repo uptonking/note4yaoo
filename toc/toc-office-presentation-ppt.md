@@ -105,7 +105,7 @@ modified: 2021-04-30T20:14:17.669Z
   - 不能修改背景色
   - 无法拖拽调整布局宽高、大小
 
-- https://github.com/hiroppy/fusuma /js
+- https://github.com/hiroppy/fusuma /MIT/202112/js/inactive
   - https://hiroppy.github.io/fusuma
   - Fusuma makes slides with Markdown easily.
   - Markdown and MDX
@@ -211,7 +211,7 @@ modified: 2021-04-30T20:14:17.669Z
   - Minimalistic javascript presentation-library. 
   - Zero dependencies. 
   - Can be used in combination with frameworks like Bootstrap, Materialize, Vue etc.
-# markdown-slide
+# markdown-slide-utils
 - https://github.com/googleworkspace/md2googleslides /apache2/202107/ts
   - Generate Google Slides from markdown & HTML
   - This project was developed as an example of how to use the Slides API.

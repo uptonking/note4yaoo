@@ -110,6 +110,9 @@ modified: 2022-11-11T10:46:41.519Z
   - library for working with .djvu files online without any connection with the server. 
   - DjVu.js Viewer is a widget that allows viewing .djvu files right in the browser
   - .djvu is a computer file format designed primarily to store scanned documents
+
+- https://github.com/typst/pdf-writer /MIT/202402/rust
+  - A step-by-step PDF writer.
 # latex
 - https://github.com/dginev/ar5iv /MIT/rust
   - https://ar5iv.org/

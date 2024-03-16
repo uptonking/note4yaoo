@@ -107,6 +107,9 @@ modified: 2023-11-28T14:48:45.910Z
 
 - text on image, 类似支持编辑器卡片背景图片和文字
 
+- searchable-image
+  - ocr
+
 ## export
 
 - 文本优先版编辑器会丢失部分数据

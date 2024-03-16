@@ -16,7 +16,13 @@ modified: 2023-10-26T19:56:12.974Z
 
 - ## 
 
-- ## 
+- ## What is the sqlite equivalent for document search? 
+- https://twitter.com/squarecog/status/1768773259653533755
+  - Like if I have a few doc files and I want to create a tiny index and query it from my code, with no other infra to run?
+- doesn't really exist unfortunately. sqlite has an FTS module but it's not very good.
+- Tantivy came closest 
+- Depending on the size, you could use FAISS to embed and index your dataset. Then run similarity search, vector clustering and more as if you had an in memory DB.
+
 # discuss-text-search
 - ## 
 

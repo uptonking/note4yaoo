@@ -229,7 +229,25 @@ modified: 2023-10-26T19:04:00.318Z
 
 - ## 
 
-- ## 
+- ## 🆚️ Sharding is overloaded, do you mean table partitioning, page partitioning, node partitioning or something else? Ignoring hash/range partition trade offs, separate discussion.
+- https://twitter.com/sunbains/status/1769017995664437733
+- Table partitioning is on the same node and consistency is preserved but problems with global indexes and foreign keys. 
+  - The former complicates your queries. Usually suitable as a poor man’s time series type solution. 
+  - You can drop old data by simple dropping the old partition, it’s not a general solution for scalability.
+- With node partition like CitusDB or Vitesse, you have the above problems plus bigger problems with cross node consistency. 
+  - It becomes the application problem, not good either. 
+  - Manually shard the data and the application has to be aware of the location of the data. 
+  - Resharding when you outgrow your shards is the stuff of nightmares. 
+  - DDL. takes that pain to a different level, you have to have worked on very large data sets to understand it. 
+  - Foreign keys forget it. Given the consistency issues, good luck.
+- Automatic sharding at the page level, this is the architecture pioneered by Google Spanner. 
+  - This gives strong consistency guarantees, no manual resharding, DDL is easy and can be scaled by using all the nodes in the network (look at TiDB Distributed eXecution Framwotk for an example). 
+  - No stopping the world on DDL, see F1 online schema change paper. 
+  - Foreign keys and constraints and all the benefits of RDBMS with proper distributed SQL queries. 
+  - This isn’t the future. You can start small, try it with http://tiup.io , HA out of the box, excellent observability tools built in too.
+  - TiDB does this and is MySQL compatible.
+
+- Yugabyte and CockroachDB are Postgres compatible.
 
 - ## Sharding is the most proven database scaling pattern. The rest is just noise
 - https://twitter.com/isamlambert/status/1768341699334668676

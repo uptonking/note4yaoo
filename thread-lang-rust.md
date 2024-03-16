@@ -162,6 +162,24 @@ modified: 2023-10-06T16:26:57.557Z
 
 - ## 
 
+- ## [Is there a transpiler or something that converts Rust code to JavaScript? _202112](https://users.rust-lang.org/t/is-there-a-transpiler-or-something-that-converts-rust-code-to-javascript/69324)
+- WASM does not support threads, but in the browser it can be done using web workers if I understand correctly.
+  - You won't be able to do anything that requires network access and so on. At least not in the browser.
+
+- ## [Compiling Rust to JS? - community - The Rust Programming Language Forum _202001](https://users.rust-lang.org/t/compiling-rust-to-js/37480)
+- It depends what you mean by compiling to "JS". Rust has an asm.js target too, so it's technically JavaScript. But asm.js back-end is not as reliable and fast as the WASM one.
+  - TypeScript, CoffeeScript, and partially Dart can be compiled to code that looks like JavaScript source code, with the same higher-level constructs. But this is because semantics of these languages is very similar to JavaScript's, and these languages have intentionally chosen to avoid behaving in ways that are impossible to express in JS.
+  - Rust does lots of things that high-level JavaScript code can't do, or does differently. Even simplest things like addition of two numbers has different semantics, so you can't translate Rust's a+b to a+b in JS.
+
+- ## [Compile to javascript : r/rust _201902](https://www.reddit.com/r/rust/comments/am2qoc/compile_to_javascript/)
+  - Is there a pathway to compiling Rust to JS? Like Scala.js or Gopher.js? 
+
+- There is the asmjs-unknown-emscripten compile target, which compiles to asm.js (subset of JS) via emscripten.
+
+- You can use the asmjs target, which produces perfectly fine JavaScript libs. 
+  - Alternatively you could try to use the wasm-unknown target and use the wasm2js tool to convert the wasm file to JS
+  - Unfortunately the latter case produces > 300 MiB JS files for me that break uglifyjs 
+
 - ## [I rewrote 10k lines of JS into Rust over the last month. Here'a write up about i : rust_202010](https://www.reddit.com/r/rust/comments/k3jy5g/i_rewrote_10k_lines_of_js_into_rust_over_the_last/)
 - Overall I've been brainstorming this change for a couple years. So I'd already shifted from a classical OOP mess with Shield/Weapon/Pillar inheriting from Permanent to one where everything is a Thing.
 - I'd also moved towards having everything be referenced with integer ids which seems to be something Rust likes. This was originally so that a clone wouldn't need to update any references

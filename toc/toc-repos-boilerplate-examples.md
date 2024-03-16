@@ -78,15 +78,15 @@ modified: 2023-11-16T15:00:11.503Z
 - https://github.com/angelguzmaning/ts-redux-react-realworld-example-app /202111/ts
   - built with React, Typescript, and Redux Toolkit 
 
-- https://github.com/andrejewski/raj-react-realworld /201806/js
-  - demonstrate a fully fledged fullstack application built with React and Raj including CRUD operations, authentication, routing, pagination, and more.
-
 - https://github.com/kwasniew/hyperapp2-real-world-example /202006/js
   - Real Word Example App in Hyperapp v2
   - https://github.com/kwasniew/hyperapp-realworld-example-app /201908/js
     - A Single Page Application written in Hyperapp 1
 
-- https://github.com/jacobstern/typescript-handlebars-realworld /201905/ts
+- https://github.com/andrejewski/raj-react-realworld /201806/js
+  - demonstrate a fully fledged fullstack application built with React and Raj including CRUD operations, authentication, routing, pagination, and more.
+
+- https://github.com/jacobstern/typescript-handlebars-realworld /201905/ts/ssr
   - Full stack server-rendered app with TypeScript, Express, Handlebars.js
   - Unlike most RealWorld implementations, which separate the backend and the frontend, this one is a "full stack" server-rendered app with minimal client-side JavaScript
   - I've also implemented Turbolinks to improve perceived performance for server-rendered page loads.

@@ -59,7 +59,10 @@ modified: 2021-02-27T15:31:23.130Z
 
 - ## 
 
-- ## 
+- ## 💡 Did you know that in #javascript `JSON.stringify()` removes `undefined` properties from objects? 
+- https://twitter.com/SergiiShymko/status/1768671330734407684
+  - There’s no concept of `undefined` in JSON format, only `null` .
+- maybe that's because undefined means absence of value and is not a value by itself.
 
 - ## whats the best way to diff two big json files?
 - https://twitter.com/jarredsumner/status/1673782475573850113

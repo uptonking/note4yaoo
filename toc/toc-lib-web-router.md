@@ -26,7 +26,7 @@ modified: 2020-12-12T18:59:54.950Z
   - Mimics React Router's best practices by providing familiar Route, Link, Switch and Redirect components.
   - hook-based API for more granular control over routing (like animations): useLocation, useRoute and useRouter.
 
-- https://github.com/visionmedia/page.js /202004/js/inactive
+- https://github.com/visionmedia/page.js /202004/js/单文件/inactive
   - Tiny Express-inspired client-side router
   - 示例丰富，基于script标签
   - [is this project still active?](https://github.com/visionmedia/page.js/issues/611)

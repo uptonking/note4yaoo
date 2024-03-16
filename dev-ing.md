@@ -328,6 +328,19 @@ betterdiscordctl -i flatpak install
 
 ## 031
 
+## 0316
+
+- [Why use parentheses when returning in JavaScript? - Stack Overflow](https://stackoverflow.com/questions/20824558/why-use-parentheses-when-returning-in-javascript)
+  - Using parentheses when returning is necessary if you want to write your return statement over several lines.
+
+- TypeError: Illegal invocation
+  - 创建函数别名时记得bind
+  - const qs = document.querySelector.bind('document'); 
+
+- Cannot find name 'DocumentAndElementEventHandlers'
+  - [HTMLElement definition in typescript.lib/lib.dom.d.ts was overridden by @types/react/global.d.ts - Stack Overflow](https://stackoverflow.com/questions/54167595/htmlelement-definition-in-typescript-lib-lib-dom-d-ts-was-overridden-by-types-r)
+  - ts类型定义更新快，查找同名interface的extends或属性名称的变化
+
 ## 0313
 
 - [How to Create a Custom API Endpoint in Strapi? - DEV Community](https://dev.to/strapi/how-to-create-a-custom-api-endpoint-in-strapi-2pa4)

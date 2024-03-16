@@ -184,7 +184,7 @@ type Program = {
 
 - To get `bind(add, 1) === bind(add, 1)`, you should just need to memoize your bind function. Since you are using Ramda, that should just be putting `const bind = R.memoize(R.partial)` in your top-level scope.
 
-## 🏘️ [Model-View-Update (MVU) – How Does It Work?_202002](https://thomasbandt.com/model-view-update)
+## 🏘️👣 [Model-View-Update (MVU) – How Does It Work?_202002](https://thomasbandt.com/model-view-update)
 
 ## [Fable · Elmish Components with Elmish 4 and UseElmish_202210](https://fable.io/blog/2022/2022-10-13-use-elmish.html)
 

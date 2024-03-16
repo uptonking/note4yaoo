@@ -18,6 +18,10 @@ Symbol('a') === Symbol('a'); //false
 
 - ## 
 
+- ## 
+
+- ## 
+
 - ## how we see strings: v8 vs js
 - https://twitter.com/hd_nvim/status/1749922260478263740
   - [Exploring V8's strings: implementation and optimizations | iliazeus](https://iliazeus.github.io/articles/js-string-optimizations-en/)

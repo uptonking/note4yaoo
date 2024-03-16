@@ -50,6 +50,9 @@ modified: 2021-07-29T11:15:44.100Z
 
 - ## 
 
+- ## JSPI, which lets you use async JS APIs from sync WebAssembly without asyncifying the entire app, is going to origin trial in Chrome 123
+- https://twitter.com/v8js/status/1768755661083701361
+
 - ##  `ElementInternals.states` is coming in Safari 17.4, which means only Firefox is left — and it's already available behind a flag.
 - https://twitter.com/claviska/status/1765707964692697564
 
