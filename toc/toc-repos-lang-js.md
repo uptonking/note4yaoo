@@ -415,6 +415,10 @@ modified: 2021-05-14T15:04:42.225Z
   - Includes Round Robin algorithm and health check
   - Health check happens every 10th second. They're done in the background.
   - `http-proxy` is a Node.js library that allows you to create HTTP proxy servers. A proxy server simply forwards client HTTP requests to other servers and returns the response back to the client.
+# testing
+- https://github.com/bcoe/c8 /ISC/202401/js
+  - Code-coverage using Node.js' built in functionality that's compatible with Istanbul's reporters.
+  - [question: how use it with typescript using ts-node](https://github.com/bcoe/c8/issues/139)
 # benchmarking
 - https://github.com/tinylibs/tinybench /MIT/202401/ts
   - tiny and lightweight benchmarking library

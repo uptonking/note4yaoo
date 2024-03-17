@@ -328,6 +328,12 @@ betterdiscordctl -i flatpak install
 
 ## 031
 
+## 0317
+
+- [Assignment (=) - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Assignment)
+  - The assignment (=) operator is used to assign a value to a variable or property. 
+  - 💡 The assignment expression itself has a value, which is the assigned value. This allows multiple assignments to be chained in order to assign a single value to multiple variables
+
 ## 0316
 
 - [Why use parentheses when returning in JavaScript? - Stack Overflow](https://stackoverflow.com/questions/20824558/why-use-parentheses-when-returning-in-javascript)

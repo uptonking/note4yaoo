@@ -265,6 +265,9 @@ modified: 2023-11-21T10:17:34.596Z
   - https://hyperapp.dev/
   - A curated list of awesome projects built with Hyperapp
 
+- https://github.com/kwasniew/hyperbook /202104/markdown
+  - This book gives you full coverage of Hyperapp
+
 - hyperapp /19kStar/MIT/202205/js
   - https://github.com/jorgebucaran/hyperapp
   - The tiny framework for building hypertext applications
@@ -389,7 +392,7 @@ modified: 2023-11-21T10:17:34.596Z
   - open-source web desktop platform with a window manager, application APIs, GUI toolkit, filesystem abstractions and much more.
   - 依赖hyperapp.v1、hyperapp-nestable
 
-- https://github.com/icylace/uy /202204/ts
+- https://github.com/icylace/uy /MIT/202204/ts/inactive
   - a UI library for Hyperapp.
 
 - https://github.com/PacktPublishing/Hands-On-Web-Development-with-Hyperapp-V2 /201906/js

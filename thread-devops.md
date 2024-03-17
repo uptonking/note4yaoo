@@ -14,7 +14,25 @@ modified: 2021-03-31T06:50:19.936Z
     - 在/etc/apache2/sites-available目录下，建立单独文件，如kanban.conf
     - 保存后执行a2ensite kanban.conf，执行后会自动在/etc/apache2/sites-available建立相应的文件链接。
     - 注意要做域名解析
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 我们有几个在线服务，流量和计算压力很小，不想买vps了，准备在本地部署一个物理台式机（二手thinkpad）然后买点端口转发服务，靠谱吗？
+- https://twitter.com/franklinHaHaHa/status/1769314440086962449
+- 但是一台物理机器，要考虑数据可靠性吗？要经常备份
+- 既然都用二手笔记本了估计运算量不大，为什么不考虑二手intel NUC或者rasberry pi，耗电会更低。
+  - 有点担心arm的兼容性，另外，二手nuc 不便宜吧？
+- 靠谱，我有些吃性能的服务就是放在本地主机上的，不过转发用的是自己在VPS上部署的NPS。
+- 可能需要两台，不过如果电池无法拆卸可能有些风险
+- 靠谱，在路由器上设置一下VLAN，把服务器和自己常用的网络隔离开，再配置端口转发。便宜VPS的一个月3USD，但是是固定IP，固定IP比较方便。如果IP会变化，还要再配置DDNS。
+
 # discuss-known
+- ## 
+
 - ## 
 
 - ## 

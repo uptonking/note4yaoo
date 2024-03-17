@@ -29,7 +29,13 @@ modified: 2023-12-15T19:40:39.912Z
 # discuss-news-java
 - ## 
 
-- ## 
+- ## 🐛🍎 An issue introduced by macOS 14.4, which causes Java process to terminate unexpectedly, is affecting all Java versions from Java 8 to the early access builds of JDK 22. _202403
+- https://twitter.com/tison1096/status/1769297687046951179
+  - [Java users on macOS 14 running on Apple silicon systems should consider delaying the macOS 14.4 update](https://blogs.oracle.com/java/post/java-on-macos-14-4)
+- 这个其实不算是java问题，虚拟机的异常处理最后必然要结合宿主机的软硬件中断或系统信号，问题在于苹果系统并不是一个unix完全兼容系统，在发信号这方面完全可以不按标准来。
+- 感觉还是因为之前的不合理，但 bug 变 feature 然后有人依赖于这个 feature 了
+- 我记得有说法说 Chromium 也在 macOS 上用了不少非公开 API。
+- jvm的safe point 也是用保护页实现的
 
 - ## "JEP 467: Markdown Documentation Comments"
 - https://twitter.com/gunnarmorling/status/1762719948709806338

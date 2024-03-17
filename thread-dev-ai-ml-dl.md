@@ -14,6 +14,15 @@ modified: 2021-05-18T19:33:51.768Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 📏 OpenRouter，它将所有 AI 模型统一为一个 API 接口，集中供应
+- https://twitter.com/JohnWmm/status/1769225457378152795
+  - 另外，提供免费模型，请求频率限制：10次/每分钟。
+- 我的一个实践是，OpenRouter 这里集中采购 AI 模型，然后自建客户端，常见的有 LobeChat、NextChat、以及其它各种手机客户端，因为他的输出接口和 OpenAI 的一致，所以基本通用了。充值我用的 OKX 钱包，充多少用多少
+
 - ## I've now completed 45 of the 68 Python notebooks that accompany my forthcoming book "Understanding Deep Learning".
 - https://twitter.com/SimonPrinceAI/status/1712801009741815965
   - [udlbook.github.io/udlbook/](https://udlbook.github.io/udlbook/)

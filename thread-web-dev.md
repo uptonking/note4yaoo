@@ -35,6 +35,13 @@ modified: 2021-01-08T17:13:43.392Z
 
 - ## 
 
+- ## 
+
+- ## TIL the `<option>` element has a "label" attribute.
+- https://twitter.com/RogersKonnor/status/1769034451370082344
+- What’s the difference between label and the innerHTML?
+  - If label attribute isn't specifically set, reading it returns the element's text content.
+
 - ## if you guys remember, Cloudflare moved away from NGINX to build their own proxy named Pingora
 - https://twitter.com/hnasr/status/1762868114675687793
 - I wonder if it performs better than NGINX for Wordpress installations that also uses cloudflare as a cdn 

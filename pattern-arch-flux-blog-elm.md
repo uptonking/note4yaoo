@@ -9,6 +9,53 @@ modified: 2023-11-21T10:18:24.650Z
 
 # guide
 
+# docs-hyperapp
+
+## dev-xp
+
+- not-yet
+  - 是否支持 partial render
+
+- action的返回值默认是newState
+- action的返回值可以是 `[newState, effecterFn]`,   `[newState, [effecterFn,options]]`
+
+## tutorials
+
+- [A reference of Hyperapp 2 actions, effects and subscriptions and how they are declared and used.](https://gist.github.com/skanne/62fc8a9c0701b579fe74bc3531cca04d)
+
+- Each app has an internal value called state. 
+  - The `init` property sets the state's initial value. 
+  - The `view` is always called with the current state, allowing us to display values from the state in the view.
+
+- Action: `const Toggle = state => ({ ...state, checked: !state.checked })`; 
+  - It describes a transformation of the state. 
+  - It expects a value in the shape of the app's state as argument, and will return something of the same shape. Such functions are known as actions
+
+- Since the view is made up of nested function-calls, it is easy to break out a portion of it as a separate function for reuse & repetition.
+  - Defining and combining view components is a common practice for managing large views. 
+  - Note, however, that it does not rely on any special Hyperapp-features – just plain function composition.
+
+- payload is the second argument to the action function
+  - Bare actions (not given as [action, payload]) have a default payload which is the `event` object
+- 链式action: When an action returns another action, or an `[action, payload]` tuple instead of a new state, Hyperapp will dispatch that instead.
+
+- Actions are not general purpose event-handlers for running arbitrary code. Actions are meant to simply calculate a value and return it.
+  - The way to run arbitrary code with some action, is to wrap that code in a function and return it alongside the new state
+  - When an action returns something like `[newState, [effecterFunction]]`, the function is known as an `effecter` (a k a "effect runner"). Hyperapp will call that function for you, as a part of the dispatch process. 
+  - Hyperapp provides a `dispatch` function as the first argument to `effecter`s, allowing them to "call back" with response data
+
+- A tuple such as `[newState, [effecterFunction, options]]` is known as an effect. 
+  - The `options` in the effect will be provided to the `effecter` as the second argument.
+- effect creator doesn't rely any special Hyperapp features. It is just a common way to make using effects more convenient and readable.
+
+- The `init` property works as if it was the return value of an initially dispatched action. 
+  - That means you may set it as `[initialState, someEffect]` to have the an effect run immediately on start.
+
+- If effects are how an app affects the outside world, then subscriptions are how an app reacts to the outside world. 
+- A `subscriber` is a lot like an effecter, but whereas an effecter contains what we want to do, a subscriber says how to start listening/reacting to an event.
+  - subscribers must return a function that lets Hyperapp know how to stop listening
+- A pair of `[subscriber, options]` is known as a `subscription`. We tell Hyperapp what subscriptions we would like active through the `subscriptions` property of the `app` definition.
+- Each time the state changes, Hyperapp will use the subscriptions function to see which subscriptions should be active, and start/stop them accordingly.
 # blogs-elm
 
 ## 🧩 [The Elm Architecture · An Introduction to Elm](https://guide.elm-lang.org/architecture/)

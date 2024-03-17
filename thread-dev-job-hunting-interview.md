@@ -110,6 +110,14 @@ modified: 2024-01-07T15:00:50.079Z
 
 - ## 
 
+- ## 
+
+- ## 哈希表是我面试的时候喜欢问的一道基础题，我喜欢这道题的主要原因在于其“丰俭由人”：
+- https://twitter.com/qtmuniao/status/1769250398450376710
+  - 基础版实现并不难：但仍需要做些假设、处理些细节
+  - 可以有很多 Follow Up：Resize、线程安全、冲突优化等。
+  - 但面试下来，发现连基础版能写好的同学都不多——竟不足六分之一。
+
 - ## If you want to become good at solving recursion problems, learn these 6 templates:
 - https://twitter.com/Franc0Fernand0/status/1743912605909918083
 - 1. Iteration
