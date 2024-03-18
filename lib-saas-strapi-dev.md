@@ -12,7 +12,7 @@ modified: 2023-12-15T16:51:56.101Z
 - pros
   - MIT and features-rich
   - plugin system and marketplace
-  - media library
+  - media library and providers
   - rbac is free
   - 支持audit日志记录
   - Data Import & Export

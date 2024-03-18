@@ -88,6 +88,16 @@ modified: 2023-11-01T14:13:41.390Z
 # discuss-pg-mysql
 - ## 
 
+- ## 
+
+- ## 
+
+- ## pg可以创建自定义的range类型也可以用内置的daterange类型存储范围类型 然后使用@>, *, +, -等运算符进行范围查询 例如交集 差集 左右开闭区间包含等
+- https://twitter.com/changwei1006/status/1769657994030281210
+  - pg的GiST索引结合exclude约束可以实现在海量范围数据中快速执行包含以上各种运算符的范围查询
+  - MySQL在这些领域就是垃圾
+- MySQL也可以between查询两个字符串格式的时间吧
+
 - ## [Supabase or Planetscale? : r/nextjs _202305](https://www.reddit.com/r/nextjs/comments/13owssn/supabase_or_planetscale/)
 - If you plan on staying on the free tier planetscale is a lot cheaper. On supabase you get 500mb on the free tier vs 5gb storage on planetscale. supabase has a lot more to offer like auth etc. tho
 

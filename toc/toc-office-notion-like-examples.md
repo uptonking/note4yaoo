@@ -184,6 +184,11 @@ modified: 2023-11-28T14:48:45.911Z
 - https://github.com/onedebos/notion-api-server-demo
   - This NodeJS application demonstrates how to read and write data to your Notion Workspace using the new Notion APIs.
 
+- https://github.com/benborgers/potion /MIT/202111/js
+  - Reverse-engineered Notion API
+  - Write your content in Notion, and use Potion's hosted API endpoints to read your content.
+  - I no longer maintain Potion, since the official Notion API has been released and is more stable than Notion’s internal API, which Potion relies on.
+
 - https://github.com/anconprotocol/parkydb
   - block based, linkable and verifiable document database
   - A data mesh database using Web 3.0 technology

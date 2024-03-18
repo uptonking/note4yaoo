@@ -67,6 +67,12 @@ modified: 2023-01-02T10:30:19.459Z
 
 - ## 
 
+- ## 
+
+- ## I learned that you can load multiple "BrowserViews" inside one "BrowserWindow" in @electronjs
+- https://twitter.com/hhg2288/status/1769708139182449041
+  - This is interesting to have multiple UI's load on the same window but in separate "threads"
+
 - ## Am I right in thinking that Electron apps can't have "type": "module" in their package.json? Getting errors when I try.
 - https://twitter.com/mattpocockuk/status/1719028975945531724
   - its landing in v28 - use @28 .0.0-alpha.6 to get it now

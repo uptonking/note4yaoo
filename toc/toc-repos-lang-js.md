@@ -423,6 +423,9 @@ modified: 2021-05-14T15:04:42.225Z
 - https://github.com/tinylibs/tinybench /MIT/202401/ts
   - tiny and lightweight benchmarking library
   - You can run your benchmarks in multiple JavaScript runtimes, Tinybench is completely based on the Web APIs with proper timing using `process.hrtime` or `performance.now`.
+# toolchain
+- https://github.com/albertan017/LLM4Decompile /MIT/202403/python
+  - 🔡 Reverse Engineering: Decompiling Binary Code with Large Language Models
 # more
 - https://github.com/liljenzin/confluent /cpp
   - Confluent sets and maps are sorted associative containers written in C++11.

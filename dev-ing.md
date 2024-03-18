@@ -328,6 +328,21 @@ betterdiscordctl -i flatpak install
 
 ## 031
 
+## 0318
+
+- [ReferenceError: Cannot access x before initialization _202008](https://github.com/pmmmwh/react-refresh-webpack-plugin/issues/190)
+  - 由 react-refresh webpack热加载插件导致的异常
+  - To be clear, this is not a problem that only exists on our side - it is a limitation of HMR of Webpack (or potentially any other bundlers that creates a module graph). 
+  - When a graph needs to be created and there exists cyclic references, the order of which node is created first can be nondeterministic, which means while your app could work in production, it will not work in development with HMR enabled.
+  - Generally, I think the Webpack maintainers hold a similar stance as I do - cyclic dependencies are bad.you should try eliminate them
+- This is really an unexpected meeting. We have seen the same problem and come out with a way to solve it In Rspack.
+  - The problem is caused by eagerly accessing some un-initialized variables declared by const. The accessing is done due to the react-refresh need to access each export of modules. By making accessing laziness, we solved the problem
+
+- [run-p: command not found - Stack Overflow](https://stackoverflow.com/questions/53252424/run-p-command-not-found)
+  - npm i npm-run-all --save-dev
+
+- [2024 年，该如何写一个全面兼容的 NPM 库 - 静かな森](https://innei.in/posts/tech/write-a-universally-compatible-js-library-with-fully-types)
+
 ## 0317
 
 - [Assignment (=) - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Assignment)

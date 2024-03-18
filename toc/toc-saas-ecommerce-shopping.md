@@ -78,8 +78,8 @@ modified: 2023-06-07T14:19:18.719Z
   - 支持显示包的历史版本和各版本信息，和npm前端几乎类似
   - Verdaccio comes out of the box with its own tiny database, and the ability to proxy other registries (eg. npmjs.org), caching the downloaded modules along the way
   - 🔜 使用openvsx的前端替换
-  - File system storage plugin for verdaccio
   - A memory based storage plugin.
+  - File system storage plugin for verdaccio
   - AWS S3/minio storage plugin for Verdaccio
   - [Release v6.0.0-beta.1 _202401](https://github.com/verdaccio/verdaccio/releases/tag/v6.0.0-beta.1)
     - node > v16
@@ -87,6 +87,12 @@ modified: 2023-06-07T14:19:18.719Z
     - replace deprecated `request` dependency by `got`.
     - experiment: accept async tarball_url_redirect function
     - refactor auth class 
+  - [Show HN: Verdaccio – Open-Source Lightweight private NPM proxy registry | Hacker News _201806](https://news.ycombinator.com/item?id=17215474)
+    - Does this use couchdb the way NPM seems to?
+    - If you're looking for that, try smart-private-npm.
+  - https://www.npmjs.com/package/verdaccio/v/2.7.2
+    - verdaccio is a fork of sinopia. It aims to keep backwards compatibility with sinopia, while keeping up with npm changes.
+    - No CouchDB here. This application is supposed to work with zero configuration, so filesystem is used as a storage.
   - https://github.com/sgrandner/my-local-npm-registry-with-verdaccio
   - examples-private-registry
     - https://npm.patrocinium.com/
@@ -161,6 +167,10 @@ modified: 2023-06-07T14:19:18.719Z
 - https://github.com/denosaurs/crux.land /MIT/202205/ts
   - a free registry service meant for hosting small (≤ 20kB) single deno scripts.
   - crux.land runs on deno deploy and requires the deployctl cli for local development.
+
+- https://github.com/Tanuel/baggy /202005/ts/inactive
+  - a reverse engineered NPM registry with a modular structure.
+  - You can provide your own functionality for storing artifacts and metadata.
 
 ## marketplace
 

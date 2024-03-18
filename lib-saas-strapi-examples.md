@@ -188,13 +188,19 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/trieb-work/strapi-neon-tech-db-branches /202307/ts
   - Strapi plugin to connect the neon.tech Postgres database using the neon API
 
+- https://github.com/jclaveau/strapi-provider-upload-google-drive /MIT/202209/js
+  - Store your Strapi uploads on Google Drive
+  - This plugin is meant to store the content of your medialibrary on Google Drive. While accessed those files are copied locally to avoid massive slow calls on the Google Drive API. This allows to spawn Strapi instances not having persistent storage for free.
+
+
+
 - https://github.com/ddlogical/uploads-duplicator /MIT/202312/js
   - This plugin allows you to seamlessly synchronize your Strapi CMS uploads folder with Google Drive. 
   - It utilizes OAuth for secure authorization and provides a straightforward way to automate the backup and storage of your media assets.
   - If you delete files in Media Library, you also should manually delete this files(all versions) on Google Drive
   - To completely delete files in the "uploads" folder, please, restart strapi
 
-- https://github.com/strapi-community/strapi-provider-upload-google-cloud-storage /MIT/202305/js
+- https://github.com/strapi-community/strapi-provider-upload-google-cloud-storage /MIT/202305/js/inactive
   - Google Cloud Storage Upload Provider for Strapi
 
 - https://github.com/jakeFeldman/strapi-provider-upload-azure-storage /202311/ts
@@ -285,6 +291,16 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/isneezy/strapi-media-preview /202312/ts
   - Automatically generates thumbnails and responsive formats for PDF files upon upload
   - Create responsive image formats (small, medium, large) for supported files upon upload
+
+- https://github.com/yasudacloud/strapi-plugin-csv-upload /202209/js
+  - API calls are made per line, it cannot be rolled back. If drafts are enabled, they will be registered as drafts.
+  - https://github.com/afonsobspinto/strapi-plugin-import-csv /202111/js
+
+- https://github.com/sat8ndra/import-excel /202311/js
+  - A strapi plugin to import excel bulk import into content of strapi
+
+- https://github.com/reveilleaum/strapi-bulk-operator /202304/js
+  - This plugin allows you to create and update multiple entries from .xls or .xlsx file
 
 ## ui-ext
 
@@ -483,11 +499,16 @@ modified: 2023-12-15T19:30:23.094Z
 
 - https://github.com/darron1217/strapi-plugin-video-thumbnail /202203/js
   - Video thumbnail plugin for Strapi
-- https://github.com/apivideo/api.video-strapi-plugin /202310/ts
-  - A Strapi plugin for managing uploads to api.video.
 
 - https://github.com/SKLINET/strapi-plugin-video-field /202304/js
-  - This plugin adds custom video field into your Strapi application ! Plugin currently supports YouTube, Vimeo, and Facebook videos.
+  - This plugin adds custom video field into your Strapi application 
+  - Plugin currently supports YouTube, Vimeo, and Facebook videos.
+
+- https://github.com/apivideo/api.video-strapi-plugin /202310/ts
+  - A Strapi plugin for managing uploads to api.video.
+  - Upload videos using a file to api.video inside of Strapi
+  - Manage assets with the plugin's asset grid and pagination capabilities
+  - Preview content using our player (powered by the api.video-player-react package)
 
 - https://github.com/flyce/strapi-provider-upload-minio-ce /202307/js
   - This upload provider uses the JavaScript Minio. Client to upload files to a (self hosted) instance of Minio.
@@ -500,9 +521,8 @@ modified: 2023-12-15T19:30:23.094Z
   - plugin that extends image uploads to generate and attach a color palette to the schema when uploaded.
   - It uses GraphicsMagick to extract the colors from the image after it's uploaded, and stores them in the database schema. 
 
-- https://github.com/alexkainzinger/strapi-middleware-upload-plugin-cache /202208/js
+- https://github.com/alexkainzinger/strapi-middleware-upload-plugin-cache /202208/js/inactive
   - Adds middleware for caching uploaded assets when using strapi-provider-upload-local
-  - https://github.com/merijnponzo/strapi-provider-upload-local-resize /js
 
 - https://github.com/andreciornavei/strapi-provider-upload-local-url /202201/js
   - This provider reflects the strapi-provider-upload-local but with an additional option to set the `baseurl` on upload url data as prefix.
@@ -513,15 +533,6 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/fabimc/strapi-provider-upload-ftp /202208/js
   - FTP provider for Strapi v4 file upload.
   - https://github.com/mmattosr/strapi-provider-upload-sftp /202002/js
-
-- https://github.com/yasudacloud/strapi-plugin-csv-upload /202209/js
-  - API calls are made per line, it cannot be rolled back. If drafts are enabled, they will be registered as drafts.
-
-- https://github.com/sat8ndra/import-excel /202311/js
-  - A strapi plugin to import excel bulk import into content of strapi
-
-- https://github.com/reveilleaum/strapi-bulk-operator /202304/js
-  - This plugin allows you to create and update multiple entries from .xls or .xlsx file
 
 ## features-ext
 
@@ -829,6 +840,10 @@ modified: 2023-12-15T19:30:23.094Z
 
 - https://github.com/pakoc/strapi-plugin-html-media /202402/ts
   - Plugin provides a customField that allows you to upload zip archives with html pages to the Strapi CMS
+
+- https://github.com/weilaiqishi/strapi-upload-big-file /202207/ts
+  - 学习一下实现大文件上传
+  - 前端: React + Antd, 服务端: Nodejs@16 + strapi
 
 ## utils-ext
 

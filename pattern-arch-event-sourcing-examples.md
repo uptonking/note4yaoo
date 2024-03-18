@@ -775,10 +775,12 @@ modified: 2023-09-12T09:37:22.608Z
 
 ## cqrs-non-js
 
-- https://github.com/serverlesstechnology/cqrs /278Star/apache2/202309/rust
+- https://github.com/serverlesstechnology/cqrs /278Star/apache2/202402/rust
   - A lightweight, opinionated CQRS and event sourcing framework targeting serverless architectures.
   - Event sourcing uses the generated events as the source of truth for the state of the application.
   - Three backing data stores are supported: mysql, pg, dynamodb
+  - Greater isolation of the aggregate.
+  - A horizontally scalable read path.
   - https://github.com/serverlesstechnology/cqrs-demo
     - Demo application using the axum http server.
 

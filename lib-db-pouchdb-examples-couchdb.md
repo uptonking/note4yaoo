@@ -447,6 +447,15 @@ modified: 2023-09-28T20:35:56.153Z
   - HttpP - talks to a real CouchDB. only works with CouchDB 2 (relies on _bulk_get).
   - No changes feed. No views. Almost no error handling. No deletes. No checkpointing.
 
+- https://github.com/anuragvohraec/recliner-js /MIT/202403/ts
+  - A CouchDB like DB, which runs in your browser
+  - Uses same REST API like Couch DB.
+  - 🔁 Implements CouchDB replicator protocol for seemless replication with backend.
+  - Can Lazy load Blobs(video media) from cloud.
+  - Partial content and stream supported.
+  - Uses IndexedDB as its backend DB and hence no storage restrictions.
+  - Mango like queries for searching and replication.
+
 - https://github.com/DrGomi/OuchDB /202006/ts
   - shameless copy of the most basic PouchDB functionality
 

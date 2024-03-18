@@ -17,7 +17,15 @@ modified: 2023-08-01T08:59:45.360Z
 
 - ## 
 
-- ## 
+- ## The fundamental problem that list CRDTs need to solve is how to create stable positions that can be referenced when space can be created or destroyed between elements.
+- https://twitter.com/JungleSilicon/status/1769414610036089241
+  - Fractional indexing solves this by using non-whole numbers so new space can be represented!
+  - This poses a problem when two users wish to insert elements at the same position concurrently! This could be solved by tie-breaking with a unique id per user.
+- but then we run into a problem of interleaving, our words will be intertwined with the other users changes.
+  - There are many ways to solve this problem, but the main ones are:
+  - reference a position at a point in time
+  - position elements in relation to their left and right elements
+  - create a total ordering similar to fractional indexing like  position strings
 
 - ## How to compress causal graphs to tiny sizes.
 - https://twitter.com/JungleSilicon/status/1740062478560903395

@@ -20,6 +20,19 @@ modified: 2023-04-16T12:52:03.130Z
 - https://twitter.com/xenovacom/status/1716711760982319429
   - `import { pipeline } from '@​xenova/transformers';`
 
+# discuss-image
+- ## 
+
+- ## 揭秘一下一键大胸技术原理，顺便请教一下有没有更好的解决方案:
+- https://twitter.com/moeimiku/status/1769285829586022574
+  1. 通过 SagmentAnyThing + Grounding-DINO识别乳沟和胸部，然后做叠加遮罩~  
+  2. 利用StableDiffution对遮罩区域做基于原图的重绘
+  - 现在遇到的问题是，灵敏度默认0.3的情况下不能覆盖所有图片：有的图片识别不出来，需要降低到0.25. 有的图片把全身都识别出来了，则需要增加灵敏度。
+- 可以加个遮罩层区域抹涂编辑功能，既能解决准确性的问题，又会大大增加产品的趣味性和粘性。
+  - 靠谱，还想做一键穿丝袜功能
+- 这个通过拖拽构建系统的框架是什么？
+  - comfyUI 关注我回头出教程
+
 # discuss
 - ## 
 

@@ -152,3 +152,32 @@ modified: 2021-05-13T03:14:10.096Z
   - you can argue that Redux is a redundant addition to Angular because Angular achieves the same behavior using RxJS.
 - [6 things I wished I knew about state management when I started writing React apps](https://medium.com/@veeralpatel/things-ive-learned-about-state-management-for-react-apps-174b8bde87fb)
   - [reddit discussion](https://www.reddit.com/r/javascript/comments/f1jop9/6_things_i_wished_i_knew_about_state_management/)
+# changelog
+
+## [v5.0.0_20231204](https://github.com/reduxjs/redux/releases/tag/v5.0.0)
+
+- This release is part of a wave of major versions of all the Redux packages: Redux Toolkit 2.0, Redux core 5.0, React-Redux 9.0, Reselect 5.0, and Redux Thunk 3.0.
+
+- ✨ Converts the codebase to TypeScript
+- Continues to mark `createStore` as deprecated
+- Requires that `action.type` must be a string
+- Removes the `PreloadedState` type in favor of a new generic argument for the `Reducer` type.
+
+- The biggest theme of the Redux v5 and RTK 2.0 releases is trying to get "true" ESM package publishing compatibility in place, while still supporting CJS in the published package.
+  - There's now a `redux.browser.mjs` file in the package that can be loaded from a CDN like Unpkg.
+
+- AnyAction deprecated in favour of UnknownAction
+- Middleware type changed - Middleware action and next are typed as unknown
+
+- Internal Listener Implementation
+  - Redux store has always used an array to track listener callbacks, and used `listeners.findIndex` to remove listeners on `unsubscribe`. 
+  - As we found in `React-Redux`, that can have perf issues when many listeners are unsubscribing at once.
+  - In `React-Redux`, we fixed that with a more sophisticated linked list approach. Here, we've updated the listeners to be stored in a `Map` instead, which has better delete performance than an array.
+
+### [rtk-v2](https://github.com/reduxjs/redux-toolkit/releases/tag/v2.0.0)
+
+- We have removed the "object" form for both `createReducer` and `createSlice.extraReducers` in RTK 2.0, as the builder callback form is effectively the same number of lines of code, and works much better with TypeScript.
+- Adds a new `combineSlices` method with support for lazy-loading slice reducers
+- Adds a new "dynamic middleware" middleware with support for adding middleware at runtime
+- Adds the `autoBatchEnhancer` to `configureStore` by default
+# more

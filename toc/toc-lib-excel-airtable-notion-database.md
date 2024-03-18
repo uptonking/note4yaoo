@@ -67,31 +67,7 @@ modified: 2022-08-21T10:02:05.129Z
     - Keyboard navigation and shortcuts fully-supported
 
 - https://github.com/archit-p/editable-react-table
-  - React table built to resemble a database.
-
-- obsidian dataview /5.8kStar/MIT/202312/ts
-  - https://github.com/blacksmithgu/obsidian-dataview
-  - https://blacksmithgu.github.io/obsidian-dataview/
-  - A high-performance data index and query language over Markdown files, for obsidian
-  - Treat your Obsidian Vault as a database which you can query from. 
-  - Provides a JavaScript API and pipeline-based query language for filtering, sorting, and extracting data from Markdown pages.
-  - **Dataview generates data from your vault by pulling information from Markdown frontmatter and Inline fields**.
-  - Markdown frontmatter is arbitrary YAML enclosed by `---` at the top of a markdown document which can store metadata about that document.
-  - Inline fields are a Dataview feature which allow you to write metadata directly inline in your markdown document via `Key:: Value` syntax.
-  - [Obsidian Dataview: Turn Obsidian Vault into a database you can query from | Hacker News_202205](https://news.ycombinator.com/item?id=31407781)
-  - https://github.com/obsidianmd/obsidian-releases
-    - Obsidian is not open source software and this repo DOES NOT contain the source code of Obsidian. 
-    - However, if you wish to contribute to Obsidian, you can easily do so with our extensive plugin system.
-  - https://github.com/blacksmithgu/datacore /MIT
-    - Datacore is a work-in-progress re-imagining of Dataview with a focus on 2-10x better query and rendering performance, as well as fully interactible views.
-    - Datacore is fundamentally the same thing as dataview - an index over Markdown files that supports live-updating views and metadata. 
-    - However, Datacore focuses on substantial index changes for performance, as well as a new sleek UI which completely replaces traditional Dataview queries. 
-    - Datacore supports all query operations that Dataview does, with some extra functionality.
-    - WYSIWYG Views: Datacore queries now use a responsive table view and can be manipulated with a table editor much more akin to what you would see in places like Notion and Airtable.
-    - Live Editing: Values inside of table views can now be edited; task views include more nuanced rendering of metadata like due date and more operations for manipulating tasks directly.
-    - Live Editing: Values inside of table views can now be edited; task views include more nuanced rendering of metadata like due date and more operations for manipulating tasks directly.
-  - https://github.com/RafaelGB/obsidian-db-folder
-    - Obsidian Plugin to Allow Notion like database based on folders
+  - React table built to resemble a database
 
 - undb /20Star/AGPLv3/202304/ts/参考前端后端
   - https://github.com/undb-xyz/undb
@@ -101,8 +77,8 @@ modified: 2022-08-21T10:02:05.129Z
   - Open-source Airtable alternative
   - 可在redux-devtools中查看数据结构
   - 前端依赖 tanstack-table、dnd-kit、redux-toolkit、emotion、@loadable/component、jotai、react-hook-form、trpc
-  - 后端依赖 nestjs、mikro-orm、trpc、undb
-  - 示例使用sqlite
+  - 后端依赖 @nestjs/cqrs、@mikro-orm/better-sqlite、@mikro-orm/better-sqlite、undb-core、passport-local
+  - 示例使用sqlite，基于@nest/cqrs实现
   - 用户在界面上创建表时，数据库层也会添加一张新表
   - [feature/frontend next_20230503(v0.3), 前端迁移到svelte](https://github.com/undb-xyz/undb/pull/908)
     - 41fa03d9bfbc9b5072266ad94c9532ccdcf25a68
@@ -170,8 +146,9 @@ modified: 2022-08-21T10:02:05.129Z
   - fast, Real-time, Professional, Developer friendly, No code database built on Postgres
   - uses a spreadsheet-like interface to create complex enterprise-level database applications. 
   - 表格基于canvas实现
-  - 后端依赖nestjs、@keyv/sqlite、sharedb、passport、opentelemetry、prisma、knex、next、ts-pattern、zod
+  - 后端依赖nestjs、sharedb、@keyv/sqlite、prisma、knex、passport、opentelemetry、next、ts-pattern、zod
   - 前端依赖nextjs、zustand、shadcn-ui、codemirror6、g6、dnd-kit、emoji-mart、tanstack-table.v8、echarts5、knex、react-grid-layout、react-hook-form、react-markdown、remark-gfm
+  - 后端数据库操作，table/record/view相关用的knex，user/view相关用的prisma
   - Formula Support: Input mathematical and logical formulas to auto-calculate values.
   - Aggregation Function: Automatically summarize statistics for each column, providing instant calculations like sum, average, count, max, and min for streamlined data analysis.
   - Multiple Views
@@ -395,6 +372,30 @@ modified: 2022-08-21T10:02:05.129Z
   - A realtime, powerful, lightweight alternative to Airtable/Excel
   - 依赖firebase-admin、supabase、trpc、prisma、tiptap、next-auth、zustand
 # notion-database-like
+- obsidian dataview /5.8kStar/MIT/202312/ts
+  - https://github.com/blacksmithgu/obsidian-dataview
+  - https://blacksmithgu.github.io/obsidian-dataview/
+  - A high-performance data index and query language over Markdown files, for obsidian
+  - Treat your Obsidian Vault as a database which you can query from. 
+  - Provides a JavaScript API and pipeline-based query language for filtering, sorting, and extracting data from Markdown pages.
+  - **Dataview generates data from your vault by pulling information from Markdown frontmatter and Inline fields**.
+  - Markdown frontmatter is arbitrary YAML enclosed by `---` at the top of a markdown document which can store metadata about that document.
+  - Inline fields are a Dataview feature which allow you to write metadata directly inline in your markdown document via `Key:: Value` syntax.
+  - [Obsidian Dataview: Turn Obsidian Vault into a database you can query from | Hacker News_202205](https://news.ycombinator.com/item?id=31407781)
+  - https://github.com/obsidianmd/obsidian-releases
+    - Obsidian is not open source software and this repo DOES NOT contain the source code of Obsidian. 
+    - However, if you wish to contribute to Obsidian, you can easily do so with our extensive plugin system.
+  - https://github.com/blacksmithgu/datacore /MIT
+    - Datacore is a work-in-progress re-imagining of Dataview with a focus on 2-10x better query and rendering performance, as well as fully interactible views.
+    - Datacore is fundamentally the same thing as dataview - an index over Markdown files that supports live-updating views and metadata. 
+    - However, Datacore focuses on substantial index changes for performance, as well as a new sleek UI which completely replaces traditional Dataview queries. 
+    - Datacore supports all query operations that Dataview does, with some extra functionality.
+    - WYSIWYG Views: Datacore queries now use a responsive table view and can be manipulated with a table editor much more akin to what you would see in places like Notion and Airtable.
+    - Live Editing: Values inside of table views can now be edited; task views include more nuanced rendering of metadata like due date and more operations for manipulating tasks directly.
+    - Live Editing: Values inside of table views can now be edited; task views include more nuanced rendering of metadata like due date and more operations for manipulating tasks directly.
+  - https://github.com/RafaelGB/obsidian-db-folder
+    - Obsidian Plugin to Allow Notion like database based on folders
+
 - https://github.com/mukulchugh/kanboard-notion-kanban-react /js
   - https://notion-kanboard-mukul.netlify.app/
   - 暂不支持表格视图

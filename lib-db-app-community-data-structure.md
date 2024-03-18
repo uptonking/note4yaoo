@@ -378,7 +378,16 @@ modified: 2023-09-17T18:17:41.377Z
 
 - ## 
 
-- ## 
+- ## 🧮 I'm talking about Consistent Hashing.
+- https://twitter.com/ProgressiveCod2/status/1769670841657381245
+  - The hashing technique that powers so many modern databases and caching solutions.
+
+- Here's a simple 3-step introduction to how Consistent Hashing works:
+  - Consider that there is a Ring of possible values. Hash the nodes using the IP address or domain name and place them on the ring
+  - Hash the incoming request key using the same hash function to find their position on the ring.
+  - Traverse the ring in a clockwise(顺时针 ) direction starting from the position of the key until a node is found. Once a node is found, store the key on that node.
+
+- I've drawn hashing rings countless number of times to understand this concept. Imo this is one of the most fundamental concepts of system design. I read that data replication can be carried out by replicating data on N physical servers on the ring going clockwise from the key.
 
 - ## Data Structures for Data-Intensive Applications: Tradeoffs and Design Guidelines
 - https://twitter.com/DistribSystems/status/1755894065147613490

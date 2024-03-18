@@ -67,6 +67,10 @@ modified: 2023-05-07T18:35:50.897Z
 - 从它某一年突然取消默认提供的域名，必须要绑定一个备案后的域名才能访问存储中的内容时，我就没再用过它了
   - 中国特色，内容会污染域名。
 
+- https://twitter.com/alswl/status/1769321792693530996
+  - 研究了原因和解决方案，我的结论是： 免费证书都是 90d 了，只能使用自动化机制。 使用 http://acme.sh 可以对接多种 CA + DNS Provider + CDN 厂商。
+  - 最终方案：使用 http://acme.sh 申请 ZeroSSL，通过 DNS Domain 认证（CF + DNSPod），使用 Qiniu API 自动上传证书并部署 CDN。
+
 - ## oh-my-rime，不喜欢输入法联网的朋友可以试试。
 - https://twitter.com/iamcheyan/status/1767761177004961926
 - rime双拼的问题一直没有好的解决方案

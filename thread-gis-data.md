@@ -26,3 +26,6 @@ modified: 2021-05-25T08:42:01.343Z
 - https://twitter.com/tmcw/status/1769117685260878048
   - converting the world bank's shapefiles to topojson seems like the top option so far
 - we made https://data.humdata.org/dataset/kontur-boundaries for exactly that
+
+- https://twitter.com/tmcw/status/1769436417023779217
+  - placemark globe now shows crimea as part of ukraine by default / thanks @visionscarto for open-sourcing the great dataset

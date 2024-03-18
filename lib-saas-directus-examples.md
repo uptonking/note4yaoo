@@ -227,6 +227,9 @@ modified: 2024-03-14T13:51:11.429Z
   - This extension allows you to import images from external URLs in a Flow. 
   - It will download the image and store it in the Directus storage.
 
+- https://github.com/Guiqft/directus-backup-operation /202301/ts/inactive
+  - Custom Directus operation to backup Postgres database using `pg_dump` and upload the `.dump` file into Directus storage.
+
 ## ui
 
 - https://github.com/formfcw/directus-extension-flexible-editor /GPLv3/202403/ts
@@ -334,6 +337,14 @@ modified: 2024-03-14T13:51:11.429Z
   - Seed simple data into the database (useful for setting permissions and settings)
 
 ## utils
+
+- https://github.com/TheRocketLab/directus-import-images-and-data /MIT/202307/js
+  - This repo bulk uploads images and data and associates them with a collection in Directus
+  - You have formatted your JSON file to match the collection you are trying to import to in Directus
+
+- https://github.com/utomic-media/directus-extension-upload-limiter /202207/ts/inactive
+  - extension which tracks the aggregated filesize of all uploads by a user and allows to set an project-wide upload limit. 
+  - Hooks into create and delete actions of directus_files and calculates the upload-size
 
 - https://github.com/FireboltCasters/directus-extension-auto-backup /202402/js
   - This extension automatically makes backups of your database for you.
@@ -484,10 +495,9 @@ modified: 2024-03-14T13:51:11.429Z
   - https://seedx.seedwebs.com/
   - The Open Source Starter Site with Next.js, Tailwind CSS & Directus
 
-
 - https://github.com/zzacong/twitter-clone-next /202304/ts
   - https://tw.zzacong.com/
-  - Twitter 2.0 with REACT.JS! (Next.js, Directus CMS, Typescript, SSR, TailwindCSS & NextAuth)
+  - Twitter 2.0 with REACT. JS! (Next.js, Directus CMS, Typescript, SSR, TailwindCSS & NextAuth)
 
 - https://github.com/funny2code/hackernews_clone /202308/js
   - NextJs and Directus

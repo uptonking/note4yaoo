@@ -94,9 +94,6 @@ modified: 2023-12-15T16:52:36.718Z
   - In most use cases, it's recommended to use the Entity Service API instead of the Query Engine API.
 - To avoid performance issues, bulk operations are not allowed on relations.
 
-- Providers add an extension to the core capabilities of the plugin, for example to upload media files to AWS S3 instead of the local server
-  - Only the Upload and Email plugins are currently designed to work with providers.
-
 ## plugins
 
 - your experience with Strapi plugins will fall under the following 4 use cases:
@@ -142,6 +139,13 @@ modified: 2023-12-15T16:52:36.718Z
 
 - Within the /server folder you have access to the Strapi object and can do database queries whereas in the /admin folder you can't
 - Passing data from the /server to the /admin folder can be done using the admin panel's Axios instance
+
+## providers
+
+- Providers add an extension to the core capabilities of the plugin, for example to upload media files to AWS S3 instead of the local server
+  - Only the Upload and Email plugins are currently designed to work with providers.
+
+- A provider can be configured to be private to ensure asset URLs will be signed for secure access.
 # content-manager
 - Content Manager is a core plugin of Strapi. 
   - It is a feature that is always activated by default and cannot be deactivated

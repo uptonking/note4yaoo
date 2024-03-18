@@ -337,6 +337,8 @@ modified: 2021-05-14T15:04:15.333Z
   - https://github.com/SpacingBat3/WebCord /MIT/202402/ts
     - A Discord and SpaceBar-based client implemented without Discord API.
     - A major rewrite of the client is being worked on
+  - https://github.com/morroid/Morroid /MIT/202306/ts/archived
+    - A reverse-engineered discord server written in typescript
 
 - tailchat /401Star/apache2/202312/ts
   - https://github.com/msgbyte/tailchat
@@ -367,7 +369,7 @@ modified: 2021-05-14T15:04:15.333Z
   - Linen was built as an alternative to closed tools like Slack and Discord.
   - 依赖headlessui、tanstack-query、nextjs、swr、prisma、express、zod
 
-- https://github.com/Privoce/vocechat-web
+- https://github.com/Privoce/vocechat-web /GPLv3/202403/ts
   - Private Hosted IM and Social Channels, Easy Integration to Your Site or App
   - VoceChat is a superlight Rust powered chat App, API and SDK that prioritizes private hosting
   - 依赖react、redux-toolkit、plate、tui-editor、localforage

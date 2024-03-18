@@ -14,10 +14,15 @@ modified: 2023-11-21T10:18:24.650Z
 ## dev-xp
 
 - not-yet
-  - 是否支持 partial render
+  - 是否支持 partial render，不用全量生成vdom(memo是否支持此功能)
+  - subscription是否要在初始化时全部注册，不能动态添加新订阅
 
 - action的返回值默认是newState
-- action的返回值可以是 `[newState, effecterFn]`,   `[newState, [effecterFn,options]]`
+- action的返回值可以是 `[newState, effecterFn]` `[newState, [effecterFn,options]]`
+
+- subscription和effect在功能上有很多重合点
+  - 可以使用effect进行事件注册，而不使用subscription
+- By using a boolean condition we can switch a subscription on or off whenever the state changes and
 
 ## tutorials
 

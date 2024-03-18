@@ -20,7 +20,10 @@ modified: 2023-11-10T07:10:19.089Z
 
 - ## 
 
-- ## 
+- ## Node `require()` is about to be able to load (non-async) ESM. This will solve so many problems.
+- https://twitter.com/devongovett/status/1769709489962295414
+- if only this could be backported a few versions!
+  - It will be backported. Only 18. All previous lines are EOL.
 
 - ## Node.js now has a built-in API for styling text (similar to `chalk` , `picocolors` , etc)
 - https://twitter.com/styfle/status/1765458512421814707

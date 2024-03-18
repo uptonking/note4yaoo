@@ -325,10 +325,12 @@ modified: 2023-11-21T10:17:34.596Z
   - built-in support for HMR, logger, persist, Redux Devtools
   - I create this to support different vdom libraries, like React(official support), ultradom(built-in), Preact, inferno 
   - https://github.com/hydux/hydux-preact
-  - https://github.com/hydux/hydux-react-router
+  - https://github.com/hydux/hydux-react
+    - React renderer for hydux
 
 - https://github.com/okwolf/hyperapp-fx /MIT/202202/js/inactive
   - A handy set of effects for use with Hyperapp.
+
 
 - https://github.com/loteoo/hyperstatic /MIT/202105/ts/inactive
   - https://github.com/loteoo/hyperstatic-starter
@@ -337,6 +339,10 @@ modified: 2023-11-21T10:17:34.596Z
   - It's TypeScript codebase has an inherently small footprint by using Puppeteer for pre-rendering and dynamic imports for code-splitting.
   - [Router implementation alternatives](https://github.com/loteoo/hyperstatic/issues/12)
     - The current implementation of the router (depending on parsing the current DOM into virtual nodes) seems like not very good practice and is definitely not declarative
+
+
+- https://github.com/okwolf/react-hyperapp /201803/js
+  - Hyperapp as a React component
 
 - https://github.com/gamebox/snazzy-ui /MIT/202401/ts
   - modern, functional UI library that is API compatible with Hyperapp, but built on top of the battle-tested `Snabbdom` VDOM library

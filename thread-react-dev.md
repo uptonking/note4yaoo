@@ -14,6 +14,16 @@ modified: 2021-01-06T14:40:11.360Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 💫 In React, how would you fix the performance of this black bar animation that's dropping frames when the new page renders?
+- https://twitter.com/ryanflorence/status/1769374265873441229
+- This can be handled by using CSS-only solutions, outside of React. When something can be handled by CSS only, I tend to prefer that solution. It frees up the main event loop to focus on interaction & the browser’s CSS layout engine is vastly more performant.
+- Handle the animation outside of React. So many React performance problems can be handled by taking it outside of the React render cycle
+- Just get rid of the animation.
+
 - ## 🤔 Am I going crazy or is this a legit way to avoid hydration errors? 
 - https://twitter.com/TkDodo/status/1741068994981826947
   - Basically abusing `useSyncExternalStore` to safely read server snapshots on the server and on the first client render, and then falling back to the client snapshot.
@@ -328,7 +338,7 @@ useEffect(() => {
 
 - What are your issues exactly with unserializable data in this case?
   - Specifically: Replay's codebase is 80% a copy-paste of the FF DevTools. 
-  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,                                                        `ValueFront`,                                                        `Pause`, etc. 
+  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,                                                          `ValueFront`,                                                          `Pause`, etc. 
   - We currently parse JSON and instantiate those classes, _then_ put them into Redux.
   - The Replay codebase started with very legacy Redux patterns (hand-written reducers, etc), and no Redux DevTools integration. When I added the DevTools setup, that began to choke on the class instances. So, I had to sanitize those out from being sent to the DevTools.
   - I've been modernizing our reducers to RTK's `createSlice`, which uses Immer. Immer recursively freezes all values by default. Unfortunately, those `SomeFront` instances are mutable, and _do_ get updated later. This now causes "can't update read-only field X" errors

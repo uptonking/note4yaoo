@@ -151,6 +151,11 @@ modified: 2020-10-05T06:22:02.107Z
   - Motions 
     - animation concerns, CSS transitions/animations, JS animations, whatever you can imagine
 # js animation
+- https://github.com/formkit/auto-animate /MIT/202311/ts
+  - https://auto-animate.formkit.com/
+  - A zero-config, drop-in animation utility that adds smooth transitions to your web app. 
+  - You can use it with React, Vue, or any other JavaScript application.
+
 - https://github.com/jeremyckahn/shifty
   - https://jeremyckahn.github.io/shifty/doc/
   - Shifty is a tweening engine for JavaScript
@@ -271,7 +276,6 @@ modified: 2020-10-05T06:22:02.107Z
   - a 2D rigid body physics engine for the web
   - 一个高性能的 2D 物理 js 库
 # page-transition
-
 - https://github.com/michalzalobny/plain-page-transition
   - https://zesty-cocada-b5eb44.netlify.app/
   - Transition between pages made from scratch with plain JavaScript and no external libraries

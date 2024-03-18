@@ -18,12 +18,11 @@ modified: 2023-05-17T07:36:07.757Z
   - 不支持undo/redo
   - 只支持sqlite，不支持pg/mysql
   - 每个url只能显示一个table
-  - 用户每新建一张表，就会在数据库中创建一张物理表
 
 - features
   - private-first / self-hostable
-  - multiple built-in field types
-  - multiple views, including grid, kanban, tree, calendar and more
+  - rich built-in field types
+  - rich views, including grid, kanban, tree, calendar and more
 
 - kanban-examples
   - https://github.com/orgs/sequelize/projects/1
@@ -61,12 +60,16 @@ modified: 2023-05-17T07:36:07.757Z
 
 - board-insights
 - across-board
-# codebase
+# codebase 🔡
 - undb底层数据库设计包括 table/field/view/attachment
   - 每个table保存了 views_order
   - 每个view保存了 fields_order
 
-- 前端一张表，对应数据库中的一张表
+- 用户每新建一张表，就会在数据库中创建一张物理表
+  - 界面一张表，对应数据库中的一张表
+
+- 只使用了getCoreRowModel，那么sort/group是如何实现的
+  - 每次调整顺序都会从数据库重新全量取数
 
 - 前后端模块
   - 共用的模块 core/cqrs/i18n
@@ -81,8 +84,7 @@ modified: 2023-05-17T07:36:07.757Z
   - 插入column时，更新view表的fields_order字段
   - 插入row时，更新
 # faq
-- 只使用了getCoreRowModel，那么sort/group是如何实现的
-  - 每次调整顺序都会从数据库重新全量取数
+
 # design
 - 看板整体布局的结构
   - 可以总体为一行，每列包含顶部列标题、当前列内容卡片

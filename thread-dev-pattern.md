@@ -32,9 +32,23 @@ modified: 2021-02-19T12:23:12.286Z
 
 - ## 
 
-- ## 
+- ## 🧩 A simple introduction to "The workflow event pattern: a reactive architecture."
+- https://twitter.com/RaulJuncoV/status/1769703136124391486
+  - The main issue with async communication is error handling.
+- The Producer asynchronously passes data through a message channel to the event consumer.
+- If the Consumer experiences an error while processing the data, it delegates that error to the Processor and moves on to the following message.
+  - The Consumer doesn't spend time dealing with errors, and the responsiveness is not affected.
+- Once the workflow processor receives an error, it tries to figure out what is wrong.
+- This could be:
+  - A static and deterministic error handler.
+  - Some ML algorithms analyze the message to see anomalies in the data.
+- The Processor changes the original data to try to repair it and then sends it back to the originating queue.
+- The event consumer sees this message and tries to process it again. Hopefully, with some success this time.
+- If the workflow processor can't determine what is wrong, it sends the message off to a "dashboard."
+- The human in the loop will take care of the cases in the dashboard and resubmit them to the original queue.
+- This pattern is a reactive architecture. 
 
-- ## Mastering the sliding window method is a competitive edge in coding interviews.
+- ## 🧮 Mastering the sliding window method is a competitive edge in coding interviews.
 - https://twitter.com/Franc0Fernand0/status/1750079118803165429
   - A sliding window is a subarray that moves from left to right through an array.
   - The window is defined by two pointers representing its left and right bound. The window size can be fixed or variable.
