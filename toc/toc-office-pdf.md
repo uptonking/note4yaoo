@@ -160,7 +160,7 @@ modified: 2021-01-04T17:26:43.784Z
   - It supports both Client-side rendering and server-side generation.
   - Jikji provides all the necessary components to creates reach reports; you can build sections and pages with the header, footer, watermarks, etc. And give you the power to use thousands of JS libraries to create beautiful charts and distinguished reports and export it to PDF, Image ot HTML.
 
-- https://github.com/isneezy/pdf-generator-service /ts
+- https://github.com/isneezy/pdf-generator-service /MIT/202301/ts
   - simple express service that generates a pdf based on the submitted HTML using Chromium and Puppeteer.
 
 - https://github.com/tuanpham-dev/react-invoice-generator /ts

@@ -98,7 +98,7 @@ modified: 2023-12-15T19:39:18.123Z
 
 - ## 
 
-- ## 
+- ## [feat: add drag-and-drop to relations _20240315](https://github.com/strapi/strapi/pull/19788)
 
 - ## [feat: add basic pagination to history frontend _20240311](https://github.com/strapi/strapi/pull/19729)
 

@@ -17,11 +17,12 @@ modified: 2022-08-21T10:19:58.756Z
   - 提供了header表头相关的数据结构和操作
 
 - cons
-  - 编辑功能支持不多，ag-grid也是
-  - react组件会过多rerender
-  - selection仅实现了RowSelection，单元格级别的选区未实现
-  - focus-management
+  - 编辑功能支持不多, ag-grid也是
+  - selection仅实现了RowSelection, cell级别的选区未实现
+  - 未实现focus-management
   - accessible
+  - 缺少view层的规范，如formatter/editor/display
+  - react组件会过多rerender
   - 如何支持多个table，且每个table数据模型不同，还要支持typescript
   - 在某一种表格布局下的功能实现与优化，如flex/absolute
 

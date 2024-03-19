@@ -21,6 +21,16 @@ modified: 2024-01-03T16:14:53.804Z
 - ## 
 
 - ## 
+# discuss-perf
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Slow re-build time when changing JSX structure in React component _202401](https://github.com/web-infra-dev/rspack/issues/5315)
+- Should been fixed _202402
+
 # discuss-features
 - ## 
 

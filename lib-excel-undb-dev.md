@@ -10,27 +10,25 @@ modified: 2023-05-17T07:36:07.757Z
 # guide
 
 - pros
-  - 支持多种类型的字段
+  - rich fields types and views types
   - 支持高级字段，如 reference/lookup field
-  - 每一行作为弹窗打开，不支持行内编辑
 
 - cons
+  - 🐛 不支持手动调整row的顺序，添加row不能插入到中间只能加到末尾
   - 不支持undo/redo
-  - 只支持sqlite，不支持pg/mysql
+  - db只支持sqlite, 不支持pg/mysql
   - 每个url只能显示一个table
 
 - features
-  - private-first / self-hostable
+  - private-first, self-hostable
   - rich built-in field types
   - rich views, including grid, kanban, tree, calendar and more
+  - 每一行作为弹窗打开，不支持行内编辑
 
 - kanban-examples
   - https://github.com/orgs/sequelize/projects/1
   - https://github.com/orgs/chakra-ui/projects/3
   - [How Notion uses Notion – Notion Template Gallery](https://www.notion.so/templates/categories/how-notion-uses-notion)
-
-- 桌面版
-  - 不支持刷新页面恢复状态
 # dev-to
 - 数据库重构
   - 用户的每张表并不需要对应数据库中物理表，可使用triple store
@@ -60,6 +58,8 @@ modified: 2023-05-17T07:36:07.757Z
 
 - board-insights
 - across-board
+# dev-done
+- 支持刷新页面恢复用户数据和状态
 # codebase 🔡
 - undb底层数据库设计包括 table/field/view/attachment
   - 每个table保存了 views_order

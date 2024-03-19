@@ -40,12 +40,18 @@ npm run develop
 - ## 💾 [Can I save and upload media file with google drive?](https://forum.strapi.io/t/can-i-save-and-upload-media-file-with-google-drive/24817)
 - I guess you could but you would have to make your own plugin for it.
 
-- ## [Issue installing sharp glib-object.h: No such file or directory · lovell/sharp](https://github.com/lovell/sharp/issues/4003)
+- ## 🖼️ [Issue installing sharp glib-object.h: No such file or directory · lovell/sharp](https://github.com/lovell/sharp/issues/4003)
 - [Update sharp package to version v0.33.2 · strapi/strapi](https://github.com/strapi/strapi/pull/19311)
 
-- 
-- 
-- 
+- 💡 变通方法
+
+```JSON
+{
+  "overrides": {
+    "sharp": "0.33.2"
+  }
+}
+```
 
 - ## [Concurrency issue with two nodes Postgres cluster _202309](https://github.com/strapi/strapi/issues/17929)
 - Knex don't natively support clusters

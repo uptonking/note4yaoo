@@ -22,6 +22,8 @@ modified: 2023-12-15T17:04:36.589Z
 
 - We are stripping out the decorators we were using before anyway and moving to middlewares/lifecycles ourselves
 
+- What I meant is can we get any way in the query engine to return before doing the DB query and return a result so we can do caching. since to my knowledge the only way to get out of it is trowwing a error. what means I can't return data I think I just found myself a workaround lol
+
 - ## 🐛 [How do I create a new Content type ? : r/Strapi](https://www.reddit.com/r/Strapi/comments/153ntvx/how_do_i_create_a_new_content_type/)
 - you’ve never been able to edit content definitions in production
   - Strapi is a bootstrapped API - more than a CMS. Development mode content type creation makes perfect sense given the way Strapi generates the schema, controllers and models for the endpoints.

@@ -95,6 +95,29 @@ modified: 2023-04-21T11:42:46.575Z
 
 - https://github.com/circadian-risk/tinybased
   - An experiment for an opinionated typesafe wrapper for TinyBase
+# discuss-news
+- ## 
+
+- ## 
+
+- ## 
+
+- ## v5 is going to be a big release. The whole idea is that TinyBase becomes a CRDT and you can merge stores together.
+- https://twitter.com/tinybasejs/status/1769781789403300020
+  - This will give us the native ability to synchronize data between clients or with a server.
+  - It does this by adding an extended class `MergeableStore` , that carries with it the timestamps and hashes used to merge instances together cleanly.
+  - Generally you’ll be able to just replace all your current Store instances with MergeableStore instances.
+- 🧮 The CRDT magic comes from the use of a Hybrid Logical Clock mechanism that provides global sortable timestamps between clients. 
+  - Then there’s a Merkel-like hashing that can identify which parts of two `MergeableStore` instances are out of sync.
+  - These MergeableStore instances can be persisted locally as well as synchronized remotely. So for example you can keep data in localStorage while someone is offline and then merge with the server once they reconnect.
+
+- We have three things to finish:
+  - 1/ the sync protocol
+  - 2/ documentation
+  - 3/ templates and examples
+
+- The sync protocol is for two (or more) MergeableStores to chat about what changes need to be sent over the wire.
+  - The scaffolding for this is in place and hopefully the magic will hide behind the same `Persister` interface you know and love from TinyBase today.
 # discuss
 - ## 
 

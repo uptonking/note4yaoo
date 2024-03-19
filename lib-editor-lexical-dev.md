@@ -27,6 +27,7 @@ modified: 2022-05-15T18:37:07.368Z
 
 - who is using #lexical-editor
   - ghost-cms
+  - webstudio
 
 - lexical-resources
   - https://lexical.dev/docs/intro

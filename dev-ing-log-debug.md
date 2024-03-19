@@ -15,6 +15,12 @@ modified: 2023-06-14T00:53:15.226Z
 
 ## 
 
+## 
+
+## [rspack serve 热加载慢到200s，若执行rspack build会慢到70s, ，，我还用webpack试了都没有这么慢](https://discord.com/channels/977448667919286283/1219528136543440988/1219619268987977770)
+
+- 看了下 newTreeshaking 关闭的情况下是快的，建议 production build 的时候再开 newTreeshaking, 现在 dev 下开 newTreeshaking 会有点慢 
+
 ## sharp安装问题
 
 - 可尝试修改 node_modules dist 目录下的源码，绕过sharp

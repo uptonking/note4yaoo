@@ -15,6 +15,7 @@ modified: 2023-02-09T18:23:23.288Z
 - cons
   - 扁平的结构查询一个节点的子节点不太方便，但也可通过attributes自定义属性来实现
   - inactive maintainance
+  - lack of classic examples and ecosystem
 
 - features
   - stable rich text editor

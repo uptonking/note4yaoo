@@ -216,7 +216,8 @@ modified: 2024-01-04T01:28:58.097Z
 
 - ## 
 
-- ## 
+- ## ✨ [Select multiple chat messages to create a thread from – Discord](https://support.discord.com/hc/en-us/community/posts/4405512392727-Select-multiple-chat-messages-to-create-a-thread-from)
+- just now discovering what Discord is & does, & cannot believe this isn't already a feature
 
 - ## [Slack Is Going Public at a $16B Valuation | Hacker News_201906](https://news.ycombinator.com/item?id=20228689)
 - Their product-vision was clear, their execution focused on what mattered... and they didn't need to bend or break laws to succeed.

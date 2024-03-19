@@ -94,8 +94,8 @@ betterdiscordctl -i flatpak install
   - 02-hexo-ssg, strapi-v5, realworld-fe-react
   - 03-realworld-be-sequelize/knex, airtable-like
 
-- cms
-  - outline, payloadcms, undb, nocobase
+- cms 功能融合及模块化
+  - outline, strapi, undb, nocobase, 将undb的多维表格加入strapi-admin
   - business-features, 盈利支持自身
   - 不必执着于engine如db/excel-dataflow, 产品的形式大多cms
 - slate-wangeditor
@@ -327,6 +327,24 @@ betterdiscordctl -i flatpak install
 # dev-03-realworld-react-sequelize-knex
 
 ## 031
+
+## 0319
+
+
+- [Remove leftover \`unstable\_\` prefix from \`Blocker\`/\`BlockerFunction\` types by brophdawg11 · Pull Request #11187 · remix-run/react-router](https://github.com/remix-run/react-router/pull/11187)
+  - This pull request first appeared in react-router@6.21.3-pre.0
+
+- [MIME type ('text/html') is not executable, and strict MIME type checking is enabled - Stack Overflow](https://stackoverflow.com/questions/49617440/mime-type-text-html-is-not-executable-and-strict-mime-type-checking-is-enab)
+  - Try changing `webpack.config.js` add `publicPath`.
+  - `publicPath: '/'`
+
+- [通用唯一识别码 - 维基百科，自由的百科全书](https://zh.wikipedia.org/wiki/%E9%80%9A%E7%94%A8%E5%94%AF%E4%B8%80%E8%AF%86%E5%88%AB%E7%A0%81)
+  - UUID是用于计算机体系中以识别信息的一个128位标识符。
+  - UUID按照标准方法生成时，在实际应用中具有唯一性，且不依赖中央机构的注册和分配。UUID重复的概率接近零，可以忽略不计
+  - UUID 的 16 个 8 位字节表示为 32 个十六进制数字，由连字符 '-' 分隔成五组显示，形式为“8-4-4-4-12”总共 36 个字符（32 个十六进制数字和 4 个连字符）。
+  - xxxxxxxx-xxxx-Mxxx-Nxxx-xxxxxxxxxxxx
+  - M表示 UUID 版本，数字 N的一至三个最高有效位表示 UUID 变体
+  - UUID的变体1是目前世界最常见的UUID，完全以大端序（big-endian）二进制存储与传输 UUID 。
 
 ## 0318
 

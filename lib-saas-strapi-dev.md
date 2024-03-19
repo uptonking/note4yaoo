@@ -54,6 +54,10 @@ modified: 2023-12-15T16:51:56.101Z
 - features-enterprise
   - The only restrictions on the free version is that audit-logs and Review Workflows are not available
 
+- roadmap
+  - lts: editor, excel-table, local-db
+  - ~~掌握strapi-够用~~ > 模仿directus-config/delta > undb-fe-be > 模仿directus-flow > collab
+
 - who is using #strapi
   - luban-h5
   - VirtusLab
@@ -69,11 +73,6 @@ modified: 2023-12-15T16:51:56.101Z
   - [Strapi Community Forum](https://forum.strapi.io/)
   - [Directus vs. Strapi – Comparison Headless CMS — Restack](https://www.restack.io/docs/directus-vs-strapi)
 # draft
-- lts
-  - editor, excel-table, local-db
-
-- 流式输出 stream response
-
 - ⌛️ version/history
   - 参考官方实现来做开源版本，参考 
     - `packages/core/content-manager/server/src/history` 源码
@@ -89,6 +88,11 @@ modified: 2023-12-15T16:51:56.101Z
 
 - backend
   - api-rate-limit
+
+- 流式输出 stream response
+
+- integrations
+  - 如何集成页面编辑器，如craft，可参考内置编辑器
 # dev
 - 在admin添加新的content-type时，数据库会创建对应的表，同时后端src/api下面会自动生成对应的schema/router/controller/service，prod生产环境下不支持动态添加新的content-type
 

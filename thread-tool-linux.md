@@ -31,7 +31,19 @@ modified: 2024-01-06T13:48:42.969Z
 
 - ## 
 
-- ## 
+- ## 使用 nix 管理所有的命令行应用 https://nix.dev
+- https://twitter.com/vikingmute/status/1769540841553772726
+  - 使用 homebrew bundle 安装所有的 GUI，可以快速配置新的Mac 环境。
+  - 使用 dotfiles  管理各种配置。
+- 为什么命令行应用要另外用 http://nix.dev ？例如我要安装 git, 直接 brew install git 不好？
+  - brew 只能在 mac 上用，无法锁软件版本，也存在依赖冲突问题，对开发环境的搭建不友好。
+  - http://nix.dev 是支持多环境的，类似pyenv的概念
+- nix是跨平台的系统层包管理工具，所以它能做的远比 pyenv 要多。 
+  - 举例来说，我使用了一套配置同时管理 10 多台 NixOS 主机以及 2 台 macOS 的系统环境跟开发环境，而且我的 macOS 跟 NixOS 的开发环境基本相同，配置完全共用，通过 git 仓库实现无缝同步。
+- dotfile跟vscode devcontainer关联，开发环境（容器）也可以一键配置
+
+- https://twitter.com/vikingmute/status/1770004206273069091 
+  - 可复现能力以及跨平台能力。nix 的配置在 macOS WSL 跟 Linux 三端都能复现出完全一致的环境，而且多端能通过 git 仓库无缝同步。 非常适合机器多的个人用户，或者企业开发环境的搭建。 缺点是门槛高一些。
 
 - ## “因为程序编译问题鲁莽地删掉了 libc.6.so”
 - https://twitter.com/IIInoki/status/1767932966259335240

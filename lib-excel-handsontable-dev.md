@@ -13,6 +13,7 @@ modified: 2022-08-21T09:57:32.451Z
   - features rich and open source
 
 - cons
+  - non-commercial
   - ? cell只支持string和number，不支持date
 
 - features

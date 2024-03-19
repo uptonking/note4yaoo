@@ -11,6 +11,14 @@ modified: 2022-11-06T15:45:36.913Z
 - tips
   - > also see tree; editor-render-only
   - 本地保存为文本过于灵活，易损坏格式，折中选择是本地保存为office格式如docx/xlsx
+# large-json
+- 打开或查看大文件，可使用主流ide，如kde-kate/sublime/nodepad
+
+- [Ask HN: How do you view large JSON files? | Hacker News _201607](https://news.ycombinator.com/item?id=12063626)
+  - Not Atom
+
+- [Dadroit JSON Viewer](https://dadroit.com/)
+  - free for up to 50mb
 # popular
 - https://github.com/streamich/json-joy
   - JSON utilities for joy and collaborative editing with OT and CRDT approaches. 

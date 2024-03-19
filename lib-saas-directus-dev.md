@@ -23,13 +23,21 @@ modified: 2024-02-16T14:55:58.271Z
 
 - cons
   - license: GPLv3 > BSL
-  - built with vue3
+  - content的视图无法保存，不能实现类似notion database切换多种视图
 
 - features
   - 核心模块: content, user, files, flows, insights/dashboard
+  - built with vue3
   - instant REST+GraphQL API on top of any SQL database
   - Our no-code Vue.js app is intuitive for non-technical users
 # dev-xp
+
+```shell
+# start dev app
+pnpm --filter api dev
+pnpm --filter app dev
+```
+
 - 在admin添加新的data-model时，数据库会创建对应的表，~~同时后端src/api下面会自动生成对应的schema/router/controller/service~~
 
 ## dev-done

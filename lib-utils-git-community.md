@@ -409,7 +409,22 @@ modified: 2023-08-29T10:13:31.070Z
 
 - ## 
 
-- ## Explaining Git branching strategies.
+- ## 
+
+- ## 🧩 for git, there are 4 locations for your code:
+- https://twitter.com/sahnlam/status/1769954179886547365
+  - Working Directory
+  - Staging Area
+  - Local Repository
+  - Remote Repository (like GitHub)
+- Basic commands move code between these locations:
+  - git add stages changes
+  - git commit saves them locally
+  - git push shares them remotely
+  - git pull fetches updates from others
+- Concepts like git clone, merge, rebase enable collaboration.
+
+- ## 🌵 Explaining Git branching strategies.
 - https://twitter.com/ChrisStaud/status/1752341883198853588
 - Let's take a look at some common approaches to branching:
   - Feature branching is a popular approach as development tasks are usually revolved around a feature. It involves having a branch for every feature being developed to keep the changes isolated from the main branch.

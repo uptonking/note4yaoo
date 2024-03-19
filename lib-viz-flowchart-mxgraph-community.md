@@ -14,6 +14,14 @@ modified: 2023-05-29T15:09:48.766Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## ComfyUI 这种交互形式有名字吗？macOS/iOS 有实现好的库吗吗？
+- https://twitter.com/s1ntone/status/1769908843323240871
+- 前端的还有 React Flow / Rate.js / BaklavaJS
+
 - ## Have someone tried to build a graph like this in HTML and CSS?
 - https://twitter.com/hhg2288/status/1727836911899676856
 - I'd consider constructing this kind of thing with SVG. Also, it might end up being easiest to actually measure locations of the adjacent history parts rather than trying to predict them.

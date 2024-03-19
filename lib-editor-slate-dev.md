@@ -12,6 +12,7 @@ modified: 2023-02-05T19:03:12.722Z
 # guide
 - pros
   - easy to start
+  - super flexible plugins
   - transfrom/operation 默认异步batch
 
 - cons
