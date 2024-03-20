@@ -723,7 +723,7 @@ modified: 2023-02-09T18:32:06.240Z
     - 多人光标待改进
   - https://github.com/PHedkvist/crdt-server
 
-- https://github.com/pedrogao/co-editor /202212/ts/vue
+- https://github.com/pedrogao/co-editor /202212/ts/vue/inactive
   - 协同 markdown 编辑器
   - 还未开发完成，目前仅仅是一个 demo
 

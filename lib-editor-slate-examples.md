@@ -1028,7 +1028,11 @@ modified: 2023-02-05T19:03:12.723Z
 
 ## slate-ot
 
-- https://github.com/onechunlin/collaborative-docs /202304/ts
+- https://github.com/cchaonie/collaborative-editor /202401/ts/slate+sharedb
+  - Learn collaborative softwares by creating a collaborative editor
+  - The slate handles the UI part, and the sharedb handles the collaborative part.
+
+- https://github.com/onechunlin/collaborative-docs /202304/ts/inactive
   - 基于 Slate 和 ShareDb 实现的基于 OT 算法的协同文档
 
 - https://github.com/solidoc/slate-ot /ts/202006

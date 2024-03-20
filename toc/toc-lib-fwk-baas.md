@@ -119,6 +119,10 @@ modified: 2021-05-25T09:40:55.797Z
   - embedded database (SQLite) with realtime subscriptions
   - built-in files and users management
   - convenient Admin dashboard UI
+  - [Show HN: PocketBase – Open Source realtime backend in one file | Hacker News _202207](https://news.ycombinator.com/item?id=32013330)
+    - Have you thought about adding Operational Transform or CRDT primitives to your offering?
+    - Currently any additional data transformation is left to the developers to extend via event hooks or custom client side handling.
+    - I've worked with CRDT in the past (yjs), but it may not be very useful in PocketBase considering that the application was designed to run on a single server and db writes are practically queued (you can have only one sqlite writer at a time)
 
 - https://github.com/easycrud/easycrud
   - https://easycrud.org/

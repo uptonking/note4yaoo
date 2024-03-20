@@ -46,7 +46,7 @@ modified: 2023-09-13T14:28:01.426Z
 - I've become a bit of a CouchDB zealot(狂热者) of late for this exact reason... Native support for incrementally updating map-reduce combined with change-feeds makes implementing event sourcing straightforward. 
   - If you wanted to reimplement event sourcing in couch, it can be implemented as a versioned merge in a map-reduce view that takes a sequential ordered events (e.g. ui-event:0000025) and maps those changes into a "versioned" JSON. This versioned JSON changes leaf values into versioned objects like "fieldValue": { "_val": 34.00, "_ver": 25 } which I call property fields. 
   - This is necessary because CouchDB is a B+Tree implementation and reduce operations are sequential but not contiguous(相邻的). 
-  - The reduce phase merges all events sequentially by choosing property fields with the latest event – making it a CRDT type – and resulting in a single JSON document with the latest fields with "_ver" info for each. 
+  - 👉🏻 The reduce phase merges all events sequentially by choosing property fields with the latest event – making it a CRDT type – and resulting in a single JSON document with the latest fields with "_ver" info for each. 
   - This scheme has a drawback that each event needs to have a unique serially ordered ID to work. Not sure how time stamps would work. I chose the ID based scheme to allow the UI be able to know when a user interaction conflicts (a vector clock between) and let it display the conflict to the user or decide how to merge the knew state.
 
 - ## 💡 This confluence of things is going to unlock some stellar new infrastructure.
@@ -60,7 +60,7 @@ modified: 2023-09-13T14:28:01.426Z
 - I'm experimenting with this stuff - I believe that massively scalable multi-master even stores could be implemented with an append only log and some kind of index of event ID -> index-in-log. The index could just be resident in memory too.
 
 - 🤔 Any thoughts on compressing the log? People have made a ton of progress in terms of compacting sequence crdt event logs. Not sure about generic event logs.
-  - I do feel as if history pruning would go against event sourcing though. Compaction makes a lot of sense - probably for events that have gone offline? (IE not accepting any more writes for last years events... following businesss rules).
+  - I do feel as if history pruning would go against event sourcing though. Compaction makes a lot of sense - probably for events that have gone offline? (IE not accepting any more writes for last years events... following business rules).
 - Abtimatter is interesting since it finds history that doesn’t matter and can be dropped even if peers never saw it and things still converge to the same state without those events.
 - Ideas for log pruning exists almost from the very beginning. The problem is always the same - you need to be able to restrict the set of writers or deny concurrent updates.
 - No I just naiively assume storage will keep getting better and it's fine

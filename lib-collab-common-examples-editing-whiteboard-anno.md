@@ -175,7 +175,7 @@ modified: 2022-11-07T17:36:22.236Z
   - https://github.com/coast-team/dotted-logootsplit /MPL
     - a delta-based version of LogootSplit with smaller metadata. We provide both op-based and delta-based synchronizations.
 
-- https://github.com/cchaonie/collaborative-editor /ts/slate+sharedb
+- https://github.com/cchaonie/collaborative-editor /202401/ts/slate+sharedb
   - Learn collaborative softwares by creating a collaborative editor
   - The slate handles the UI part, and the sharedb handles the collaborative part.
 

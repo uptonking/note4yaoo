@@ -26,6 +26,12 @@ modified: 2022-04-05T10:10:59.826Z
 - features
   - ?
 
+- who is using #yjs
+  - jupyter
+  - evernote
+  - gutenberg
+  - more: Serenity Notes, Skiff
+
 - 实现协作要考虑到切换冲突处理算法, 如slate-yjs/automerge/sharedb
 
 - https://github.com/yjs/y-protocols

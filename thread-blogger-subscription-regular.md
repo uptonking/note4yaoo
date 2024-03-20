@@ -80,3 +80,5 @@ modified: 2021-09-20T18:01:39.932Z
 - - [swyx blogs: Idea Showcase](https://www.swyx.io/ideas/)
 # more-blogging
 - [微信微文档团队，专注于在线文档](https://www.zhihu.com/column/c_1285334850644570112)
+
+- [周e信 存档](https://www.zhouexin.com/archives)

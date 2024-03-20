@@ -168,6 +168,9 @@ modified: 2023-01-20T21:59:47.792Z
   - Independent technology for modern publishing, memberships, subscriptions and newsletters.
   - core依赖bookshelf-relations、knex2、express-hbs、mysql2、yjs
   - admin依赖ember、lexical
+  - [Initial setup for Lexical multiplayer websockets service _202304](https://github.com/TryGhost/Ghost/commit/b286faf011c6e487198e93f0b6cab11f2cae7486)
+    - Docs are in-memory only, YJS state will be lost on server restart
+    - **No tie-in with saved lexical state**. Lexical state is updated in the post model via normal API requests from Admin which can mean the multiplayer doc and the saved lexical state become out of sync but there's no detection/indication of that state at present. Will also trigger the "someone else is editing" errors because multiplayer doesn't yet override the default post update collision detection
 
 - https://github.com/burdy-io/burdy /MIT/202202/ts/inactive
   - Headless CMS built in NodeJS and React. Written in Typescript

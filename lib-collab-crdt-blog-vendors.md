@@ -35,7 +35,9 @@ modified: 2023-10-26T18:14:17.038Z
 
 - you can use Ditto in your apps as a regular document database
 
-## [jupyterlab-rtc: We can class the RTC Algorithms into 3 main categories crdt/ot/diff](https://jupyterlab-rtc.readthedocs.io/en/latest/about-rtc/algorithms.html)
+## 🪧 [EmacsWiki: Collaborative Editing](https://www.emacswiki.org/emacs/CollaborativeEditing)
+
+## 🪧 [jupyterlab-rtc: We can class the RTC Algorithms into 3 main categories crdt/ot/diff](https://jupyterlab-rtc.readthedocs.io/en/latest/about-rtc/algorithms.html)
 
 - We can class the RTC Algorithms into 3 main categories:
   - CRDT category doesn’t need a central server and is used by Riak, TomTom GPS, Teletype for Atom…
@@ -44,7 +46,8 @@ modified: 2023-10-26T18:14:17.038Z
 
 ## [zed: How CRDTs make multiplayer text editing part of Zed's DNA_2022212](https://zed.dev/blog/crdts)
 
-# 📝 [supabase: `pg_crdt` - an experimental CRDT extension for Postgres_202212](https://supabase.com/blog/postgres-crdt)
+## 📝 [supabase: `pg_crdt` - an experimental CRDT extension for Postgres_202212](https://supabase.com/blog/postgres-crdt)
+
 - https://github.com/supabase/pg_crdt
   - pg_crdt is an experimental extension adding support for conflict-free replicated data types (CRDTs) in Postgres.
   - It supports Yjs/Yrs and Automerge.
@@ -77,7 +80,8 @@ modified: 2023-10-26T18:14:17.038Z
   - Realtime broadcasts database changes from the Postgres write ahead log (WAL). The WAL includes a complete copy of the the underlying data so small updates cause the entire document to broadcast to all collaborators
   - Frequently updated CRDTs produce a lot of WAL and dead tuples
   - Large CRDT types in Postgres generate significant serialization/deserialization overhead on-update.
-# 👥 [Show HN: Pg_CRDT – an experimental CRDT extension for Postgres | Hacker News_202212](https://news.ycombinator.com/item?id=33931971)
+
+## 👥 [Show HN: Pg_CRDT – an experimental CRDT extension for Postgres | Hacker News_202212](https://news.ycombinator.com/item?id=33931971)
 
 - 
 - 
@@ -120,3 +124,4 @@ This is how we might do it with with "Realtime as an authority" approach (and is
 - Last Writer Wins is not the most compelling use case for CRDT because if those fruits were denormalized into Postgres rows, you'd already have the behavior described. 
 - In general, Sequence CRDTs seem to be the most difficult and most interesting area of continuous research. In my own work, I've implemented a sequence CRDT to create a distributed log of events across users that then (because the order is guaranteed to eventually be the same for each device) can just be reduced to whatever data structure you need. It means, we end up with one CRDT to rule them all and then can just write the "conflict resolution" in simple term with the business logic.
 # more
+- [Many Worlds: A Philosophy of Data Collaboration _202111](https://terminusdb.com/blog/many-worlds-a-philosophy-of-data-collaboration/)

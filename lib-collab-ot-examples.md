@@ -9,6 +9,10 @@ modified: 2022-10-02T20:51:30.444Z
 
 # guide
 
+- ot-tips
+  - 经典的冲突处理算法，需要central server处理冲突
+  - 可不参考冲突处理的逻辑，只参考op的存储和同步
+
 - [am-editor 协同编辑配置](https://editor.aomao.com/zh-CN/config/ot)
   - 编辑器基于 sharedb 与 json0 协议交互协作操作数据
   - 客户端（编辑器）通过 WebSocket 与服务端建立长连接通信，编辑器每次的 dom 结构变更都将转换为json0格式操作命令（ops）发送到服务端并修改服务端数据后再分发给各个客户端
@@ -30,7 +34,7 @@ modified: 2022-10-02T20:51:30.444Z
 
 - https://github.com/ygs-code/ot-system
   - https://github.com/ygs-code/ot-system-server
-    - 服务端用了 node koa，webpack， graphql ， mysql，redis.
+    - 服务端用了 node koa，webpack， graphql， mysql，redis.
     - graphql有他的一定优势，就是减少了前后联调对接沟通，对于过滤一些非法请求，也可以说是提高了一些安全性问题，因为http请求他需要先经过graphql验证通过之后才会做业务查询。
   - https://github.com/ygs-code/ot-system-client
     - c 端客户端 我是用我自己写的一个 React Ssr框架写的
@@ -47,37 +51,20 @@ modified: 2022-10-02T20:51:30.444Z
   - https://github.com/ygs-code/sharedb-textarea-example
     - ShareDB with textarea 源码分析
 
-- sharedb /5.9kStar/MIT/202402/js/代码少
-  - https://github.com/share/sharedb
-  - ShareDB is a realtime database backend based on Operational Transformation (OT) of JSON documents. 
-  - It is the realtime backend for the DerbyJS web application framework.
-  - 依赖json0
-  - [Remove JSON0 Dependency for Client](https://github.com/share/sharedb/issues/548)
-  - https://github.com/derbyjs/derby
-    - MVC framework making it easy to write realtime, collaborative applications that run in both Node.js and browsers
-  - https://github.com/vizhub-core/sharedb-client-browser
-    - A distribution of the ShareDB client suitable for use in Vite, Rollup and other build tools that do not have built-in support for CommonJS
-- https://github.com/derbyjs/racer /js
-  - Realtime model synchronization engine for Node.js
-  - By leveraging ShareDB, multiple users can interact with the same data in realtime via Operational Transformation
-  - ShareDB also supports PubSub across multiple servers for horizontal scaling. 
-- https://github.com/goodow/realtime-store /201503/java
-  - Google Docs–style collaboration via the use of operational transforms
-  - Credits: sharedb for implementation and documents of database api.
+- https://github.com/Webstrates/Webstrates /apache2/202210/js/inactive
+  - 💡✨ a research prototype enabling collaborative editing of websites through DOM manipulations.
+  - With Webstrates, webpages become collaboratively editable in real-time. 
+  - Changes to the Document Object Model (DOM) of a page persist and are synchronised to all connected clients of the same page using Operational Transformation through ShareDB.
+  - https://github.com/Webstrates/Codestrates-v2 /apache2/202402/js
+    - Codestrates builds on Webstrates. 
+    - A web-page served from a Webstrates server is called a webstrate, and is a web-page where changes to the document object model (DOM) are persisted to the server and synchronized with other clients of the same page.
 
 - https://github.com/Progyan1997/Operational-Transformation
   - http://operational-transformation.github.io/
   - A collection of Algorithms to Synchronise changes across multiple clients using Operational Transformation
 
-- https://github.com/startupjs/startupjs
-  - https://startupjs-ui.dev.dmapper.co/
-  - A React Native framework to build cross-platform apps for web and mobile.
-  - 前端依赖react-native-web
-  - 后端依赖express、mongoose、sharedb
-  - Observer pattern: When you subscribe to a channel, you are being added to the list of subscribers who then will be notified about new
-
 - https://github.com/3mcd/p2p-edit /js/201606/inactive
-  - collaborative text editor powered by WebRTC and OT. 
+  - collaborative text editor powered by WebRTC and OT
   - Local operations to the document are reconciled by remote clients by use of a data structure called text-tp2.
   - https://github.com/ottypes/text-tp2
     - an implementation of OT for text which implements transform property 2 through the use of tombstones.
@@ -85,6 +72,67 @@ modified: 2022-10-02T20:51:30.444Z
 
 - https://github.com/ryankaplan/pattern-based-ot /201601/ts
   - A server/client for the Pattern-Based Operational Transform algorithm
+# sharedb
+- sharedb /5.9kStar/MIT/202402/js/代码少
+  - https://github.com/share/sharedb
+  - ShareDB is a realtime database backend based on Operational Transformation (OT) of JSON documents. 
+  - It is the realtime backend for the DerbyJS web application framework.
+  - 依赖json0
+  - [Remove JSON0 Dependency for Client](https://github.com/share/sharedb/issues/548)
+  - [List of User/Supporters](https://github.com/share/sharedb/issues/182)
+  - https://github.com/derbyjs/derby
+    - MVC framework making it easy to write realtime, collaborative applications that run in both Node.js and browsers
+  - https://github.com/vizhub-core/sharedb-client-browser
+    - A distribution of the ShareDB client suitable for use in Vite, Rollup and other build tools that do not have built-in support for CommonJS
+
+- https://github.com/derbyjs/racer /1.2kStar/MIT/202306/js/inactive
+  - Realtime model synchronization engine for Node.js
+  - By leveraging ShareDB, multiple users can interact with the same data in realtime via Operational Transformation
+  - ShareDB also supports PubSub across multiple servers for horizontal scaling. 
+  - different clients can be subscribed to different overlapping sets of data
+
+- https://github.com/startupjs/startupjs /MIT/202403/js
+  - https://startupjs-ui.dev.dmapper.co/
+  - Universal React Native + Web framework with isomorphic collaborative DB and observables.
+  - 前端依赖react-native-web
+  - 后端依赖express、mongoose、sharedb
+  - Collaborative Database: MongoDB which runs behind ShareDB and a client-server observable ORM
+  - Observer pattern: When you subscribe to a channel, you are being added to the list of subscribers who then will be notified about new
+  - react-native-web for the Web-frontend
+  - React Native for the Native-frontend (iOS, Android, etc.)
+  - Model based on `Racer` with an ability to create custom ORM methods.
+  - Redis for the pub/sub (required by ShareDB) and locking functionality.
+
+  
+- https://github.com/goodow/realtime-store /201503/java
+  - Google Docs–style collaboration via the use of operational transforms
+  - Credits: sharedb for implementation and documents of database api.
+
+- https://github.com/stanographer/u-backend /202008/js/inactive
+  - CMS for real-time captioning and transcriptions
+  - allows real-time captioners to share their transcription feed to remote participants or to send their feed of live-produced text to any device with an Internet connection.
+
+- https://github.com/source-academy/sharedb-ace-backend /apache2/202212/js/单文件/inactive
+  - Backend of collaborative editor (ShareDB, Koa)
+  - https://github.com/source-academy/sharedb-ace /202008/js
+    - Sharedb-ace provides two-way bindings between ShareDB and Ace Editor.
+
+## sharedb-examples
+
+- https://github.com/ahemaid/OntoEditor /MIT/202312/js
+  - Online Collaborative Ontology Editor, built on Distributed Version Control Systems. 
+  - It aims to support collaborative ontology development across different RDF serialization formats: Turtle, JSON-LD, and RDF/XML.
+  - 依赖codemirror5、ot-text、sharedb-mongo、websocket-json-stream
+
+- https://github.com/with-labs/popspace /GPLv2/202311/ts/inactive
+  - open source virtual canvas platform for chatting, collaborating, and playing.
+  - rich-text editor example based on Quill and ShareDB
+
+- https://github.com/LSX-s-Software/PaperPilotApp /MIT/202312/swift
+  - 基于 SwiftUI 的多平台多人协作文献管理软件
+  - 实时同步富文本笔记、论文批注
+  - 在 Mac、iPad、Apple Vision Pro 等设备上查看文献
+  - 100% 原生，不含任何网页、JavaScript 等代码
 # ot-rewrite
 - https://github.com/Operational-Transformation/ot.js /js
   - http://operational-transformation.github.io/

@@ -9,17 +9,25 @@ modified: 2022-04-05T10:09:36.436Z
 
 # guide
 
-- not-yet
+- who is using #ot
+  - ckeditor, tinymce, typewriter
+  - mongodb realm Atlas Device Sync Protocol
+- who is using #sharedb
+  - am-editor
+- who is using #last-write-win
+  - notion
+
+- tips
+  - 就算使用ot，大多产品都会使用定制的ot或变体，如ckeditor, prosemirror
+  - 除了ot冲突处理逻辑，对op的存储、同步、业务实体抽象逻辑也很重要
+
+- ☑️ not-yet
   - otjs示例
     - ❓ undo/redo未分析计算逻辑，以及ot里undo和cm组件undo的执行流程
     - codemirror内容的变更changes事件转换为TextOperation的流程
     - 中文输入法优化
 
-- who is using #ot
-  - ckeditor/tinymce
-  - mongodb realm Atlas Device Sync Protocol
-
-- ot vs crdt
+- 🆚️ ot vs crdt
   - **ot的主流实现依赖中心服务器决定op的接收顺序，server根据版本号判断是否接收op**
     - server发送到客户端的是转换后的op，opPrime
     - op在不同客户端的apply顺序可能不同
