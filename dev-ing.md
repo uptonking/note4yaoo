@@ -331,7 +331,7 @@ betterdiscordctl -i flatpak install
 ## 0319
 
 
-- [Remove leftover \`unstable\_\` prefix from \`Blocker\`/\`BlockerFunction\` types by brophdawg11 · Pull Request #11187 · remix-run/react-router](https://github.com/remix-run/react-router/pull/11187)
+- [Remove leftover `unstable_` prefix from `Blocker`/`BlockerFunction` types by brophdawg11 · Pull Request #11187 · remix-run/react-router](https://github.com/remix-run/react-router/pull/11187)
   - This pull request first appeared in react-router@6.21.3-pre.0
 
 - [MIME type ('text/html') is not executable, and strict MIME type checking is enabled - Stack Overflow](https://stackoverflow.com/questions/49617440/mime-type-text-html-is-not-executable-and-strict-mime-type-checking-is-enab)

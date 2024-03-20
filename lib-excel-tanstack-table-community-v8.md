@@ -36,6 +36,20 @@ modified: 2022-08-21T10:19:58.756Z
 
 - Why use server-side filtering when the table is initially delivered unfiltered? All the data is already on the client side, so why not just filter there?
   - As soon as you add pagination you will never have the full data set on the client again And with remix it’s even easier to do this all serverside than to build your own sort and paging system client side
+# discuss-news
+- ## 
+
+- ## 
+
+- ## 🔌 I just released a small, but somewhat significant "feature" to TanStack Table.
+- https://twitter.com/KevinVanCott/status/1770162986629337282
+  - Version 8.14.0 exposes the underlying APIs to integrate custom features into the table instance in the same exact way that the internal features are constructed.
+- TanStack Table v8 has always been pretty easy to extend with custom functionality through composition, but now we are offering a much more tightly integrated/official solution to adding custom state, options, and APIs to your table, header, column, row, and cell instances.
+  - This essentially reintroduces the "plugin" system that React Table v7 had, but with a few less things to worry about. And it can be 100% type-safe too
+  - I wrote a dedicated guide to integrating custom features to TanStack Table with the new `_features` table option.
+- 
+- 
+- 
 # discuss
 - ## 
 

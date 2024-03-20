@@ -14,6 +14,7 @@ modified: 2023-12-15T16:52:36.718Z
   - [Strapi 中文文档](https://www.strapi.cn/)
   - [Backend Customization Examples Cookbook | Strapi Documentation](https://docs.strapi.io/dev-docs/backend-customization/examples)
     - Examples are meant to extend the features of FoodAdvisor
+  - https://docs.strapi.io/openapi/
 # docs
 
 ## overview
@@ -43,6 +44,13 @@ modified: 2023-12-15T16:52:36.718Z
 - Strapi applications are not meant to be connected to a pre-existing database, not created by a Strapi application, nor connected to a Strapi v3 database. The Strapi team will not support such attempts. 
   - Attempting to connect to an unsupported database may, and most likely will, result in lost data.
 
+- By default Strapi provides a provider that uploads files to a local directory, which by default will be `public/uploads/` in your Strapi project. Additional providers are available should you want to upload your files to another location.
+  - By default Strapi accepts localServer configurations for locally uploaded files. These will be passed as the options for `koa-static`.
+
+- The authenticated `user` object is a property of `ctx.state`.
+
+- 
+- 
 - 
 - 
 
@@ -136,6 +144,7 @@ modified: 2023-12-15T16:52:36.718Z
 - To store data with a Strapi plugin, use a plugin content-type. 
   - Plugin content-types work exactly like other content-types. 
   - Once the content-type is created, you can start interacting with the data.
+- A plugin can only interact with data from the `/server` folder. If you need to update data from the admin panel, please refer to the passing data guide
 
 - Within the /server folder you have access to the Strapi object and can do database queries whereas in the /admin folder you can't
 - Passing data from the /server to the /admin folder can be done using the admin panel's Axios instance

@@ -176,6 +176,8 @@ modified: 2021-05-25T09:41:29.066Z
   - designed to be incrementally adoptable and can easily scale between a simple claim based and fully featured subject and attribute based authorization.
   - Heavily inspired by cancan(from ruby-on-rails).
   - ⚖️ CASL implements Attribute Based Access Control
+  - who is using #casl
+    - strapi
   - https://github.com/fratzinger/feathers-casl /ts
     - a convenient layer to use CASL in feathers.js.
     - Fully powered by Feathers 5 & CASL 6

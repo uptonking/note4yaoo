@@ -11,6 +11,10 @@ modified: 2022-11-06T11:21:27.612Z
 
 - [DB Fiddle - SQL Database Playground](https://www.db-fiddle.com/)
   - An online SQL database playground for testing, debugging and sharing SQL snippets.
+
+- [dbdiagram.io - Database Relationship Diagrams Design Tool](https://dbdiagram.io/home)
+  - simple tool to draw ER diagrams by just writing code
+  - Designed for developers and data analysts
 # rest
 - https://github.com/formio/resquel /202101/ts/inactive
   - Express.js middleware library that is able to convert SQL databases into a REST API.

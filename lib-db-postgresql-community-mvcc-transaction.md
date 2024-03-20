@@ -29,7 +29,13 @@ modified: 2024-02-18T13:52:07.926Z
 
 - ## 
 
-- ## 
+- ## 🆚️ PostgreSQL MVCC has one well-known➖: vacuum and only two➕often mentioned: simpler indexes, fast rollback
+- https://twitter.com/FranckPachot/status/1770214536261386477
+  - IMO the HUGE ➕of PostgreSQL MVCC compared to Oracle is the ability to do unlogged DML on a table. 
+  - I've seen many Oracle DBs generating tons of redo for staging tables
+
+- What do you mean by “unlogged DML on a table”? Are you talking about UNLOGGED TABLES?
+  - Yes. I precised DML because all DML are unlogged. Oracle has nologging tables but that affects only direct-path append which is more like DDL (locking the table in exclusive mode)
 
 - ## Postgres doesn't use threads, pgbouncer doesn't use threads. 
 - https://twitter.com/samokhvalov/status/1762113679372521706

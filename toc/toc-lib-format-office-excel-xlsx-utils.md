@@ -11,6 +11,9 @@ modified: 2023-01-09T11:04:13.958Z
 
 - https://github.com/SheetJS/notes
   - Various spreadsheet file format notes
+
+- resources
+  - [Exceljs VS Sheetjs(xlsx.js) VS xlsx-populate.js](https://jstool.gitlab.io/demo/exceljs-vs-sheetjs-vs-xlsx-populate/)
 # popular
 - https://github.com/x2bool/xlite /rust
   - Query Excel spreadsheets (.xlsx, .xls, .ods) using SQLite
@@ -24,6 +27,14 @@ modified: 2023-01-09T11:04:13.958Z
   - A node module to generate .xlsx files from a .xlsx template.
   - When xltpl reads a xlsx file, it creates a tree for each worksheet.
   - And, each tree is translated to a nunjucks(jinja2) template with custom tags.
+
+- https://github.com/PengChen96/table-xlsx /MIT/202401/ts
+  - https://pengchen96.github.io/table-xlsx/docs/intro
+  - 基于SheetJS封装，帮助你快速将xlsx文件转换成表格数据或表格数据导出生成xlsx文件，
+  - 导出支持简单样式设置、多sheet页、行/列合并等
+  - SheetJS/js-xlsx社区版本不支持样式，您可以使用@pengchen/xlsx
+  - 依赖自定义fork @pengchen/xlsx，基于js-xlsx@0.17.0修改
+  - https://github.com/PengChen96/sheetjs /202206/js/inactive
 
 - https://github.com/sail-sail/ejsExcel /js
   - node export excel, ejsExcel
@@ -76,10 +87,10 @@ modified: 2023-01-09T11:04:13.958Z
 - https://github.com/protobi/workbook /201602/js
   - Wrapper for js-xlsx providing convenient way to accumulate sheets, rows, styles
 
-- exceljs /11.7kStar/MIT/202305/js
+- exceljs /11.7kStar/MIT/202401/js
   - https://github.com/exceljs/exceljs
   - Read, manipulate and write spreadsheet data and styles to XLSX and JSON.
-- https://github.com/zurmokeeper/excelize /js
+- https://github.com/zurmokeeper/excelize /202310/js
   - forked from exceljs v4.3.0_20230505
   - 需要完成一个读取WPS带密码保密的excel功能，找遍了社区所有的库，都没有找到，一开始发现 xlsx-populate 支持解密，后面发现只支持 ecma376 agile encryption。是现在office xlsx格式的加密方式，不是WPS的加密方法，所以无法解密.
   - 后面发现 WPS 对xlsx文件的加解密用的是 ecma376 standard encryption
@@ -112,7 +123,9 @@ modified: 2023-01-09T11:04:13.958Z
   - https://importabular.lecaro.me/
   - Lightweight spreadsheet editor for the web, to easily let your users import their data from excel.
   - No sorting, pivot, formula, etc
-  - No sorting, pivot, formula, etc
+
+- https://github.com/ashishd751/react-excel-renderer /MIT/202006/js/inactive
+  - react library to render and display excel sheets on webpage
 # parser-generator
 - https://github.com/Claviz/xlstream /ts
   - Turns XLSX into a readable stream.

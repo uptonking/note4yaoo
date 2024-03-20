@@ -16,6 +16,20 @@ modified: 2023-02-09T18:23:43.486Z
 - https://github.com/volser/quill-table-ui
   - https://codepen.io/volser/pen/QWWpOpr
 
+# discuss-news
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Release Version 2.0.0-beta.0 _202312](https://github.com/quilljs/quill/releases/tag/v2.0.0-beta.0)
+- Nested Quill support
+- History: Record selection in history module 
+
+- ## [Support OT for table _202205](https://github.com/quilljs/quill/pull/3590)
+- This adds the OT ability for table format and also supports nested scrolls.
+
 # discuss
 - ## 
 

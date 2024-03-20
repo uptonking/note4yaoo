@@ -12,12 +12,50 @@ modified: 2023-10-27T06:54:20.487Z
 # discuss-stars
 - ## 
 
-- ## 💡 Most databases were built when data was static and queries were dynamic. 
+- ## 💡👣 Most databases were built when data was static and queries were dynamic. 
 - https://twitter.com/tantaman/status/1699826662408409383
   - For applications, most queries are static and the data is dynamic
 - What you really want is a database where a query is the same things as an index, is the same thing as a subscription... These are all the same underlying mechanic.
 
-- ## Myth(神话，想像或虚构的人物): Using UUID as the primary key will slow down inserts. 
+- ## 🐬🐛 The problem with using a UUID primary key in MySQL
+- https://twitter.com/PlanetScale/status/1770120605905612861
+- I'm pretty certain the same issues exist for UUIDs regardless of the DB.
+  - I use a CUID which may suffer from some issues itself, but in practice I've not had problems.
+- Most DB engines including SQLite use b-trees. As the database grows, you might notice inserts get slower. It's often overlooked as users are forgiving of slow writes and even more so of bulk writes. 
+  - CUID (not CUID2) is good as it is increasing over time
+- CUID is deprecated due to security issues though: https://github.com/paralleldrive/cuid. You can change the size of your ID with CUID2. Does this change anything for you, or would you still go with CUID?
+
+- Bad for performance, but very good for minimizing bugs. By using IDs that are globally unique like UUIDs, you'll never mistakenly mix up a reference.
+
+- not mentioning k-sorted uuid like ksuid that specifically fixes the sort issue for b-tree indexes
+
+- ### 📝 [The problem with using a UUID primary key in MySQL _202403](https://planetscale.com/blog/the-problem-with-using-a-uuid-primary-key-in-mysql)
+
+- The many versions of UUIDs
+
+- Be aware that there are several tradeoffs to doing so when compared to an auto-incrementing integer.
+- Insert performance
+  - Whenever a new record is inserted into a table in MySQL, the index associated with the primary key needs to be updated so querying the table is performant. 
+  - Indexes in MySQL take the form of a B+ Tree, which is a multi-layered data structure that allows queries to quickly find the data they need.
+  - the goal of page splitting is to keep the B+ Tree structure balanced so that MySQL can quickly find the data it's looking for. 
+  - With sequential values, this process is relatively straightforward; however, when randomness is introduced into the algorithm, it can take significantly longer for MySQL to rebalance the tree. 
+- Higher storage utilization
+  - All primary keys in MySQL are indexed. By default, an auto-incrementing integer will consume 32 bits of storage per value. Compare this with UUIDs. If stored in a compact binary form, a single UUID would consume 128bits on disk. 
+  - secondary indexes will also consume more space. This is because secondary indexes use the primary key as a pointer to the actual row, meaning they need to be stored with the index.
+  - This can lead to a significant increase in storage requirements for your database depending on how many indexes are created on tables using UUIDs as the primary key.
+
+- Best ways to use a UUID primary key with MySQL
+- Use the binary data type
+  - While UUIDs are often sometimes as 36-character strings, they can also be represented in their native binary format as well.
+- Use an ordered UUID variant
+  - Using a UUID version that supports ordering can mitigate some of the performance
+- Use the built-in MySQL UUID functions
+  - MySQL supports generating UUIDs directly within SQL; however, it only supports UUIDv1 values. 
+  - there is a helper function in MySQL called `uuid_to_bin`. Not only does this function convert the string value to binary, but you can use the option 'swap flag', which will reorder the timestamp portion to make the resulting binary more sequential.
+- Use an alternate ID type
+  - different formats such as Snowflake IDs, ULIDs, or even NanoIDs
+
+- ## 💡 Myth(神话，想像或虚构的人物): Using UUID as the primary key will slow down inserts. 
 - https://twitter.com/gwenshap/status/1686148804821811200
   - Fact: Not in Postgres.
   - I often recommend using UUIDs instead of integer sequences as primary keys. I was surprised to discover that many developers are uncomfortable with them and believe they will slow down inserts. 

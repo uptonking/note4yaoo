@@ -17,6 +17,7 @@ modified: 2023-12-15T16:51:56.101Z
   - 支持audit日志记录
   - Data Import & Export
   - future flags
+  - draft & publish
   - built with typescript
   - 提供了很多集成示例，如 redis/search
 
@@ -49,6 +50,7 @@ modified: 2023-12-15T16:51:56.101Z
   - i18n: create, manage and distribute localized content in different languages, called "locales"
   - Role Based Access Control: Create an unlimited number of custom roles and permissions for admin and end users.
   - GraphQL or REST: Consume the API using REST or GraphQL
+  - 支持openapi doc
   - [Internationalization - Strapi Features](https://strapi.io/features/internationalization)
 
 - features-enterprise
@@ -91,18 +93,19 @@ modified: 2023-12-15T16:51:56.101Z
 
 - 流式输出 stream response
 
-- integrations
-  - 如何集成页面编辑器，如craft，可参考内置编辑器
+- more toC features
+# 🖇️ integrations
+- 集成react-admin
+- 如何集成页面编辑器，如craft，可参考内置编辑器
 # dev
 - 在admin添加新的content-type时，数据库会创建对应的表，同时后端src/api下面会自动生成对应的schema/router/controller/service，prod生产环境下不支持动态添加新的content-type
 
-- ❓ draft/publish的实现似乎只在api层面，admin界面的显示状态有问题
-
 - 
 - 
 - 
 - 
 
-# codebase
+## done
 
+- ~~draft/publish的实现似乎只在api层面，admin界面的显示状态有问题~~, v5已解决
 # more

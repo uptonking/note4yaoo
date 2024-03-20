@@ -20,7 +20,7 @@ modified: 2023-12-15T17:04:36.589Z
 - https://discord.com/channels/811989166782021633/1218214776405233754/1218217608676114673
 - it was a firm no. I think it's not the technical direction we want to take and it wasn't a great pattern to implement in the first place, we'd rather go forward with lifecycles and middlewares, like the doc service has
 
-- We are stripping out the decorators we were using before anyway and moving to middlewares/lifecycles ourselves
+- 📡 We are stripping out the decorators we were using before anyway and moving to middlewares/lifecycles ourselves
 
 - What I meant is can we get any way in the query engine to return before doing the DB query and return a result so we can do caching. since to my knowledge the only way to get out of it is trowwing a error. what means I can't return data I think I just found myself a workaround lol
 
@@ -202,9 +202,23 @@ modified: 2023-12-15T17:04:36.589Z
 - ## 
 
 - ## 
-# discuss
+
+- ## I would like to know details on transformer i would like go through and maintain it. _202403
+- https://discord.com/channels/811989166782021633/1217462664809152553/1219677189801246863
+- just a heads up it won't be needed for Strapi 5 as we plan on baking in support into Strapi 5 to simplify the structure and be able to use the v4 syntax throughout Strapi 5. Happy to give it to you though if you want to continue to maintain it on Strapi 4
+- Publisher might also be superseded by something from Strapi 
+
+# discuss-devops
 - ## 
 
+- ## 
+
+- ## [Data transfer / import _202403](https://forum.strapi.io/t/data-transfer-import/36810)
+- In the data transfer / import/export data options it’s possible to exclude files, config etc… Is it possible to exclude certain tables, for instance user permissions tables?
+  - Sadly that is not possible as of yet. It is just a full on db overwrite. It’ll wipe anything that’s already in the db and fill it again with the dump
+
+- Though as of v5 all entries will have uuids to identify them, so technically this can be solved in v5
+# discuss
 - ## 
 
 - ## 

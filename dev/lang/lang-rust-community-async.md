@@ -32,7 +32,9 @@ modified: 2023-08-28T04:43:22.738Z
 
 - ## 
 
-- ## 
+- ## I have decided All IN async fn and stopping implementing poll based futures any more (although I spent a lot of time to make them works correctly)
+- https://twitter.com/OnlyXuanwo/status/1770122232146305162
+- The first problem: rustfmt won't format `stream!` macro
 
 - ## Does https://github.com/cloudflare/pingora has potential to be the killer application of tokio?
 - https://twitter.com/leiysky/status/1763203777543479473

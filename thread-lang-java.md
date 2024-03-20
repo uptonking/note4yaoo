@@ -18,7 +18,13 @@ modified: 2023-12-15T19:40:39.912Z
 # discuss-jvm
 - ## 
 
-- ## 
+- ## Project Panama completes the trinity(三件套; 三人组合) of features I want 
+- https://twitter.com/starbuxman/status/1770125635253375232
+  - Project Panama(新的外部内存/函数访问 ffi API 以及手动 SIMD 支持) for easy foreign function interfaces (Bye, JNI!)
+  - Project Loom (shipped in Java 21, 实现协程和尾调用优化) for cheap, easy scalability 
+  - aot: GraalVM for lightning fast, small footprint, statically linked, self-contained binaries
+
+- If only static linking wasn't so slow
 
 - ## JVM Performance Comparison for JDK 21
 - https://twitter.com/ionutbalosin/status/1754737482422181973
@@ -28,6 +34,19 @@ modified: 2023-12-15T19:40:39.912Z
 
 # discuss-news-java
 - ## 
+
+- ## 
+
+- ## 
+
+- ## java 22 is now available _20240319
+- https://twitter.com/ErikGahlin/status/1770118137062588630
+  - [The Arrival of Java 22](https://blogs.oracle.com/java/post/the-arrival-of-java-22)
+  - Foreign Function & Memory API - JEP 454
+  - Regional Pinning for G1 - JEP 423
+  - Unnamed Variables & Patterns
+  - New Native Library Load/Unload and Compiler Statistics Queue events.
+  - New Parallel GC Phases, Java Agents and System.gc() views.
 
 - ## 🐛🍎 An issue introduced by macOS 14.4, which causes Java process to terminate unexpectedly, is affecting all Java versions from Java 8 to the early access builds of JDK 22. _202403
 - https://twitter.com/tison1096/status/1769297687046951179

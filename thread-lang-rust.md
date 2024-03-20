@@ -12,6 +12,15 @@ modified: 2023-10-06T16:26:57.557Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 写多了 JSON.stringify / JSON.parse，现在发现用 rust 生成个 JSON 都好费劲，JS 太灵活了
+- https://twitter.com/zoomdong2/status/1770085465955369054
+- 静态语言是这样的。
+  - 没有对象字面量的动态语言在这方面体验是最差的.
+
 - ## The US government explicitly recommends 6 memory safe languages:
 - https://twitter.com/samuel_colvin/status/1763339372361814187
   - C# - created by Microsoft

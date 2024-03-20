@@ -11,6 +11,25 @@ modified: 2022-01-06T17:30:03.280Z
 
 # rbac-blogs
 
+## [Using CASL and roles with persisted permissions - Rule of Tech _202205](https://ruleoftech.com/2022/using-casl-and-roles-with-persisted-permissions)
+
+- Two popular types of authorization are: Role-based access control (RBAC) and Attributes-based access control (ABAC)
+- Role based access control (RBAC) is a simple and efficient solution to manage user permissions in an organization. 
+  - We have to create roles for each user group and assign permissions for certain operations to each role. This is commonly used practice with roles such as “System admin”, “Administrator”, “Editor” and “User”. 
+  - The drawbacks of RBAC, especially in a complex system, is that a user can have various roles, which require more time and effort to organize. Also the more roles you create, the more security holes will be born.
+- Attributes-based access control (ABAC) is an authorization mechanism granting access dynamically based on user characteristics, environment context, action types, and more. 
+  - Here we can have some action which is permitted to certain user, e.g. "{ action: 'edit', subject: 'Registration' }", "{ action: 'manage', subject: 'User', fields: ['givenName', 'familyName', 'email', 'phone', 'role'] }". 
+  - For example, a manager can view only the users in their department; an user can not access his project’s information. 
+  - ABAC is sometimes referred to as claims-based access control (CBAC) or policy-based access control (PBAC)
+- The difference between ABAC and RBAC is that ABAC supports Boolean logic, if the user meets this condition he is allowed to do that action. 
+  - Attribute-based Access Control (ABAC) enables more flexible control of access permissions as you can grant, adjust or revoke permissions instantly.
+- RBAC is a simple but sufficient solution to manage access in an uncomplicated system. However, it is not flexible and scalable and that is why ABAC becomes an efficient approach in this case. In the contrast, ABAC may be costly to implement.
+
+- you can add attribute based permissions to RBAC model
+
+- RBAC is a simple but sufficient solution to manage access in an uncomplicated system. ABAC in the other hand is flexible and scalable approach but may be costly to implement. There is no all-in-one solution and it depends on your business requirements.
+- Using CASL with roles, groups and permissions makes the handling of the authorization side of things easier but as you can see from the database diagram the overall complexity of the system is still quite high and we’re not even touched the user interface of managing the roles, groups and permissions.
+
 ## [了解HATEOAS - 知乎](https://zhuanlan.zhihu.com/p/96027191)
 
 - Web服务使用 HATEOAS。在资源的表达中包含了链接信息。客户端可以根据链接来发现可以执行的动作。

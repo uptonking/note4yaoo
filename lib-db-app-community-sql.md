@@ -121,7 +121,8 @@ modified: 2023-09-17T17:35:27.024Z
 
 - ## 
 
-- ## 
+- ## There is currently some fuzz about the performance of  subqueries vs with clause.
+- https://twitter.com/SQLPerfTips/status/1770139458265850351
 
 - ## 🐛 SQL does this weird thing too. I wonder what ancient language this comes from
 - https://twitter.com/lukaseder/status/1764218716156305624

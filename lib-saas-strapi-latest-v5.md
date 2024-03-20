@@ -25,7 +25,7 @@ modified: 2023-12-15T19:39:18.123Z
 
 - We tried the content versioning plugin but it didn't work with related content or unique fields, so we are back to waiting for this to be released. Does anyone know if there is an eta?
 
-## ⚖️ [v5 Database Design_202309](https://github.com/strapi/rfcs/blob/v5/database/rfcs/xxxx-v5-database.md)
+## ⚖️✨ [v5 Database Design_202309](https://github.com/strapi/rfcs/blob/v5/database/rfcs/xxxx-v5-database.md)
 
 - We need to support development of new features. Most of them are going towards a more CMS like model. 
   - to support this approach we will introduce the notion of documents & links.
