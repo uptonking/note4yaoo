@@ -37,6 +37,14 @@ npm run develop
 
 - ## 
 
+- ## [can i hide left menu nav? _202302](https://github.com/strapi/strapi/issues/15658)
+  - i want to only show right content area and hide left area?
+- Right now this is not possible. If you need it, it would be great if you could open a feature request
+
+- ## [Issue with PNPM Workspaces and Strapi Plugins in Monorepo _202401](https://github.com/strapi/strapi/issues/19176)
+  - The problem arises specifically when installing plugins or custom fields located within my monorepo. 
+- I use file:// to link plugin dependency has no this issue. I only use --shamefully-hoist option to install.
+
 - ## 💾 [Can I save and upload media file with google drive?](https://forum.strapi.io/t/can-i-save-and-upload-media-file-with-google-drive/24817)
 - I guess you could but you would have to make your own plugin for it.
 

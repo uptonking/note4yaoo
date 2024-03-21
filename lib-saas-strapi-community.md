@@ -12,9 +12,21 @@ modified: 2023-12-15T17:04:36.589Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## [Strapi Hide Content Type - Stack Overflow](https://stackoverflow.com/questions/65846609/strapi-hide-content-type)
+- You can extend the content type plugin to make updates to the content-type's schema.
+  - In Strapi v4 it is `"visible": false`
 
-- ## 
+- ## 🔒 [Customise hide areas of the Admin interface per roles _201804](https://github.com/strapi/strapi/issues/931)
+- your can
+  - uninstall de content type builder when you're done using it (plugins link on the admin)
+  - create role for your users with specific permissions for each content type
+  - the admin is currently available to admin users only
+  - you can display specific content types in the admin
+
+- [Allow other User roles access to Admin Panel _201805](https://github.com/strapi/strapi/issues/1152)
+- 
+- 
+- 
 
 - ## 🕵🏻 any chance of getting a query engine decorator?  usefull for fake multitenency
 - https://discord.com/channels/811989166782021633/1218214776405233754/1218217608676114673

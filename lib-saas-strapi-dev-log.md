@@ -1,0 +1,20 @@
+---
+title: lib-saas-strapi-dev-log
+tags: [dev-log, strapi]
+created: 2024-03-21T13:27:55.928Z
+modified: 2024-03-21T13:28:16.872Z
+---
+
+# lib-saas-strapi-dev-log
+
+# guide
+
+# draft
+
+# not-yet
+- ❓ Cannot destructure property 'uid' of 'U' as it is undefined.
+  - 在访问content item时会抛出异常
+  - 经排查是strapi-plugin-reactions导致，移除就正常了
+# done
+
+# more

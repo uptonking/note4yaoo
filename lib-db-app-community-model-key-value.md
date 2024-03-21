@@ -14,7 +14,9 @@ modified: 2023-10-26T15:02:47.068Z
 
 - ## 
 
-- ## 
+- ## 💰 Redis Adopts Dual Source-Available Licensing
+- https://twitter.com/eatonphil/status/1770599507828330547
+- Not surprising. The trend of OSS creators earning minimal revenue while hyperscalers profit massively off their work will persist. Business-backed open source must adapt its open competition ethos or shift towards source-available models as the new standard.
 
 - ## 🌰 Cloudflare KV的更新时间大概要5~6秒啊。不知道是不是我用的有问题。
 - https://twitter.com/PenngXiao/status/1768595444672905321

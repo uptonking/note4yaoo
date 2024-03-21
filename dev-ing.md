@@ -55,7 +55,7 @@ rm package-lock.json && find . -name 'node_modules' -type d -prune -exec rm -rf 
 
 # npm i
   DEBUG=* npm i --no-audit --loglevel silly
-DEBUG=* npm install --legacy-peer-deps --no-audit --loglevel silly
+DEBUG=* npm i --legacy-peer-deps --no-audit --loglevel silly
 
 $$('[contenteditable]')
 
@@ -329,7 +329,6 @@ betterdiscordctl -i flatpak install
 ## 031
 
 ## 0319
-
 
 - [Remove leftover `unstable_` prefix from `Blocker`/`BlockerFunction` types by brophdawg11 · Pull Request #11187 · remix-run/react-router](https://github.com/remix-run/react-router/pull/11187)
   - This pull request first appeared in react-router@6.21.3-pre.0

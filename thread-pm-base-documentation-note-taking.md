@@ -74,6 +74,12 @@ modified: 2021-08-16T06:56:53.061Z
 # discuss
 - ## 
 
+- ## 
+
+- ## combine it with CSS scroll-driven animation
+- https://twitter.com/jh3yy/status/1770603402923225175
+  - 图片挤压文字的动画效果
+
 - ## 一个程序员最卷的项目：Markdown 编辑器。
 - https://twitter.com/vikingmute/status/1768090000481288276
 - 卷是卷，就是没一个特别好用的，尤其是缺乏原生的。比如一些markdown 扩展支持不好，互相不兼容，例如obsidian 的查询语句。

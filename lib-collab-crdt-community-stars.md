@@ -97,7 +97,10 @@ modified: 2022-04-05T10:09:51.343Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## I’m wondering if we can have best of both worlds (“plain text interoperability” + crdt versioning metadata
+- https://twitter.com/YousefED/status/1770364932334260257
+- automerge member: I don't see how? like yjs+filesystem?
+- most approaches that do this sort of thing are lossy and beed to do diffs to convert into ops.
 
 - ## OT & CRDTs (with history) are great for most data types, but don't really make sense for supporting arbitrary binary file formats (as there are *so many*). 
 - https://twitter.com/JungleSilicon/status/1738332065777738092

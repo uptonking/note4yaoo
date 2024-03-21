@@ -165,7 +165,11 @@ modified: 2020-07-17T10:54:16.341Z
 # discuss
 - ## 
 
-- ## 
+- ## 💡 Why does the browser's find-in-page treat the Chinese character 〇 and the Arabic numeral 0 as the same character? 
+- https://twitter.com/yisibl/status/1770691638219726914
+  - I was shocked to learn that both Chrome and Firefox have this bug.
+- 会不会两个字符的 Unicode 是同一个，和浏览器没关系？
+  - str.codePointAt 获取的码点不同
 
 - ## Variable font animation
 - https://twitter.com/vponamariov/status/1722521972754522582

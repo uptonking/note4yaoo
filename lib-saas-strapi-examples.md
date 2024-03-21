@@ -19,6 +19,7 @@ modified: 2023-12-15T19:30:23.094Z
 - resources
   - [Strapi showcases, 很多案例的官网但非开源](https://strapi.io/showcases)
   - [Websites using Strapi](https://trends.builtwith.com/websitelist/Strapi)
+  - https://www.npmjs.com/org/strapi
 # popular
 - strapi /57.5kStar/MIT+EE/202403/ts
   - https://github.com/strapi/strapi
@@ -255,7 +256,7 @@ modified: 2023-12-15T19:30:23.094Z
   - 有了strapi和strapi-db，就不再需要编写增删查改的接口和前端请求代码，这些工作，只需要一行代码。
   - 灵感主要来自于UniCloudDb
 # plugins
-- https://github.com/offset-dev/strapi-calendar /202311/js
+- https://github.com/offset-dev/strapi-calendar /MIT/202311/js
   - Visualize your Strapi content in month, week or daily view
   - select which collection and fields to use
 
@@ -288,6 +289,9 @@ modified: 2023-12-15T19:30:23.094Z
 
 - https://github.com/joshuaellis/strapi-plugin-media-browser /MIT/202304/ts/inactive
   - 🎞️ A new look at what the media library _could be_
+  - 上传文件后文件保存在`public/uploads`文件夹
+  - 拖拽操作不流畅
+  - 只能拖拽上传，没有单独的上传按钮
   - A convenient way to browse, manage and select all your Strapi assets, inspired by MacOS🍎.
   - Support for batch uploads with drag and drop support
   - Tag your assets individually or in bulk
@@ -299,17 +303,27 @@ modified: 2023-12-15T19:30:23.094Z
 
 - https://github.com/isneezy/strapi-media-preview /202312/ts
   - Automatically generates thumbnails and responsive formats for PDF files upon upload
+  - 只生成缩略图却没有使用
   - Create responsive image formats (small, medium, large) for supported files upon upload
 
 - https://github.com/yasudacloud/strapi-plugin-csv-upload /202209/js
   - API calls are made per line, it cannot be rolled back. If drafts are enabled, they will be registered as drafts.
   - https://github.com/afonsobspinto/strapi-plugin-import-csv /202111/js
 
-- https://github.com/sat8ndra/import-excel /202311/js
-  - A strapi plugin to import excel bulk import into content of strapi
-
 - https://github.com/reveilleaum/strapi-bulk-operator /202304/js
   - This plugin allows you to create and update multiple entries from .xls or .xlsx file
+  - 支持导出导入excel文件
+
+- https://github.com/sat8ndra/import-excel /202311/js/未实现
+  - A strapi plugin to import excel bulk import into content of strapi
+- https://github.com/vinubabu323/strapi-plugin-excel-export /202402/js
+  - This plugin allows users to generate and download excel files 
+  - 使用麻烦但支持配置导出字段
+  - Create an `excel.js` file in the config folder. This file is used to provide tables and columns that need to be in the excel file
+
+- https://github.com/weilaiqishi/strapi-upload-big-file /202207/ts
+  - 学习一下实现大文件上传
+  - 前端: React + Antd, 服务端: Nodejs@16 + strapi
 
 - https://github.com/strapi-community/strapi-plugin-notes /MIT/202402/js
   - A plugin for Strapi Headless CMS that provides the ability to add notes to entity records.
@@ -321,10 +335,11 @@ modified: 2023-12-15T19:30:23.094Z
 
 - https://github.com/alexzaganelli/strapi-plugin-email-designer /202312/js
   - Design your own email templates w/ visual composer directly inside the Strapi admin panel and send composed emails programmatically from your controllers / services.
-
+  - 依赖外部embed editor.unlayer.com
 - https://github.com/SomeDevelopper/strapi-pdf-designer /202308/js
   - a fork of the Strapi Plugin Email Designer. 
   - It is used to create a single-one-page PDF using drag-and-drop.
+  - The plugin return a Buffer in base64.
 
 - https://github.com/vivmagarwal/strapi-plugin-custom-api-builder /202403/js
   - ✨ Build an API Visually from the Admin UI
@@ -332,6 +347,12 @@ modified: 2023-12-15T19:30:23.094Z
   - Auto compose Routes, Controllers and Services
   - Support for media & multiple media added
   - Support for multiple relationships at the same level added
+
+- https://github.com/nicolashmln/strapi-plugin-oembed /202312/js
+  - Embed content from third party sites (Youtube, Vimeo, Tiktok, Soundcloud, Spotify, CodePen...) for https://strapi.io v4 (For strapi v3 use v0.4.0)
+  - 需要手改代码 Go to your model and add the `oembed` field
+  - The data is fetched and stored in the content
+  - Supported: Youtube, Vimeo, Tiktok, Soundcloud, Spotify, CodePen, Twitter
 
 - https://github.com/kauedavila/kanban-strapi /202309/js/inactive
   - https://github.com/kauedavila/kanban
@@ -597,7 +618,7 @@ modified: 2023-12-15T19:30:23.094Z
   - A plugin that logs all user interactions, fully-equipped with permissions and settings.
   - This plugin aims to store all user interactions as logs that can be accessed easily and securely through the use of permissions.
 
-- https://github.com/10Life/strapi-plugin-audit-trail /202312/js
+- https://github.com/10Life/strapi-plugin-audit-trail /MIT/202401/js
   - A comprehensive audit trail plugin for Strapi that tracks user activities.
   - This plugin utilizes a middleware to create an audit log of user activities. The audit log is accessible in the Audit Trail content type. The admin page provides a functionality to clear audit trails.
 
@@ -633,6 +654,7 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/DomDew/strapi-plugin-fuzzy-search /MIT/202403/ts
   - Register a weighted fuzzy search endpoint for Strapi
   - Uses `fuzzysort` under the hood: Simple, quick and easy. No need to worry about setting up an instance for a complex search engine.
+  - Since we had issues with `Fuse.js` and it's underlying algorithm, we opted for `fuzzysearch` to do the heavy lifting instead.
   - https://github.com/farzher/fuzzysort /202211/js
 
 - https://github.com/strapi-community/strapi-plugin-search /MIT/202310/ts
@@ -656,11 +678,6 @@ modified: 2023-12-15T19:30:23.094Z
 
 - https://github.com/ExFabrica/strapi-plugin-awesome-seo /202309/js
   - Awesome SEO allows your content manager in one click to get the results of your website SEO analysis directly available in Strapi.
-
-- https://github.com/nicolashmln/strapi-plugin-oembed /202312/js
-  - Embed content from third party sites (Youtube, Vimeo, Tiktok, Soundcloud, Spotify, CodePen...) for https://strapi.io v4 (For strapi v3 use v0.4.0)
-  - The data is fetched and stored in the content
-  - Supported: Youtube, Vimeo, Tiktok, Soundcloud, Spotify, CodePen, Twitter
 
 - https://github.com/strapi-community/strapi-plugin-rest-cache /105Star/MIT/202310/js
   - https://strapi-community.github.io/strapi-plugin-rest-cache/
@@ -716,7 +733,7 @@ modified: 2023-12-15T19:30:23.094Z
   - Strapi Plugin to schedule publish and depublish actions for any collection type.
   - Schedule when you want to publish your content
 
-- https://github.com/innovato/strapi-plugin-cron /202212/ts
+- https://github.com/innovato/strapi-plugin-cron /202402/ts
   - Manage and monitor cron jobs from Strapi admin panel.
   - tasks scheduling tool incorporating start/end dates and iterations counter
 
@@ -857,7 +874,7 @@ modified: 2023-12-15T19:30:23.094Z
   - Makes possible to login strapi via oauth provider, currently only implemented for keycloak
 
 - https://github.com/dej10/strapi-plugin-file-system /202312/js
-  - plugin for Strapi that provides endpoints to interact with the file system, allowing you to retrieve folders and files.
+  - a plugin for Strapi that provides endpoints to interact with the media library, allowing you to retrieve folders and files
 
 - https://github.com/ChristopheCVB/strapi-plugin-soft-delete /202312/ts
   - Powerful Strapi based Soft Delete feature, never loose content again
@@ -868,10 +885,6 @@ modified: 2023-12-15T19:30:23.094Z
 
 - https://github.com/pakoc/strapi-plugin-html-media /202402/ts
   - Plugin provides a customField that allows you to upload zip archives with html pages to the Strapi CMS
-
-- https://github.com/weilaiqishi/strapi-upload-big-file /202207/ts
-  - 学习一下实现大文件上传
-  - 前端: React + Antd, 服务端: Nodejs@16 + strapi
 
 ## utils-ext
 
@@ -989,17 +1002,23 @@ modified: 2023-12-15T19:30:23.094Z
   - Add permissions & roles
   - Use list view filters in exported data like created_at range, order by, etc.
 
+- https://github.com/Dulajdeshan/strapi-advanced-uuid /MIT/202402/ts
+  - plugin for Strapi that automatically generates a unique UUID for your content. 
+  - It also allows you to generate UUID based on your regular expressions.
+
 - https://github.com/soranoo/strapi-ulid /202309/ts
   - This plugin adds support for ULID field type to Strapi as a Custom field. The field will be automatically generated when creating a new entry.
   - This plugin is inspired and based on strapi-auto-uuid by Cringe Studio.
 
-- https://github.com/Dulajdeshan/strapi-advanced-uuid /202310/ts
-  - plugin for Strapi that automatically generates a unique UUID for your content. 
-  - It also allows you to generate UUID based on your regular expressions.
-
 - https://github.com/Cringe-Studio/strapi-auto-uuid /202306/ts
   - Custom field plugin to automatically add manage uuid for your content types, inspired by @strapi-plugin-field-uuid
 
+- https://github.com/taskworld/strapi-plugin-import-export-web /202311/ts
+  - This plugin provides a web ui for the strapi import and strapi export commands, so that you can backup/restore your strapi easily.
+
+- https://github.com/skynettechnologies/strapi-plugin-all-in-one-accessibility /202402/js
+  - https://www.skynettechnologies.com/all-in-one-accessibility
+  - Website accessibility widget for improving WCAG 2.0, 2.1, 2.2 and ADA compliance!
 ## themes
 
 - https://github.com/ShahriarKh/strapi-admin-tailwind-theme /202308/js/inactive
@@ -1086,6 +1105,10 @@ modified: 2023-12-15T19:30:23.094Z
 
 - https://github.com/SKLINET/strapi-boilerplate /202403/ts/fe+be
   - 依赖graphql、relay
+
+- https://github.com/praveen-1995/strapi-submenus-react-project-v2 /202309/js
+  - https://react-strapi-submenus-v2-prod.netlify.app/
+  - 纯前端介绍页
 # examples
 - https://github.com/sawden/turbostrapi /202311/ts
   - https://turbostrapi.vercel.app/
@@ -1312,6 +1335,11 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/shahednasser/strapi-react-native /202202/js
   - Code for Create a Notes App with Strapi and React Native
 # utils
+
+- https://github.com/Kazdan1994/strapi-custom-register-endpoint /202312/js
+  - You can overwrite strapi register and / or login endpoint
+  - https://github.com/PaulBratslavsky/strapi-register-and-get-github-repos
+
 - https://github.com/acomagu/strapi-payload-model-migrator /202306/ts
   - Import models/components from Strapi V3 to Payload CMS
 
@@ -1327,6 +1355,9 @@ modified: 2023-12-15T19:30:23.094Z
 
 - https://github.com/rogwild/strapi-utils /202310/js/提交多
   - Strapi Utils For Bootstraping Development
+
+- https://github.com/marcusmcb/datasheet-conversion /202312/js
+  - Utility app to convert CSV to JSON for Strapi CMS data collection imports
 
 - https://github.com/luca-soda/strapi-handler /202303/ts
   - composing certain types of queries with Strapi can be cumbersome and time-consuming. The complexity of URLs required for these queries can quickly become a developer's worst nightmare

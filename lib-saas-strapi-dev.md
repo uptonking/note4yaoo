@@ -13,19 +13,21 @@ modified: 2023-12-15T16:51:56.101Z
   - MIT and features-rich
   - plugin system and marketplace
   - media library and providers
+  - draft & publish
   - rbac is free
   - 支持audit日志记录
   - Data Import & Export
   - future flags
-  - draft & publish
+  - rich fields: 支持 custom filed
   - built with typescript
   - 提供了很多集成示例，如 redis/search
 
 - cons
-  - paid: Review workflow, Audit Logs, version-history, Shared Projects
+  - paid: Review workflow, Audit Logs, version-history
+    - Shared Projects
     - ~~不支持version-history，但audit日志记录可作为类似功能~~
   - ui不支持: Conditional fields, nested component
-  - 与已有数据库集成不方便
+  - 与现有数据库集成不方便
   - v4不支持mongodb
   - 🐛 At this time and in the future there is no plan to allow model creating or updating while in a production environment, and
     - there is currently no plans to move model settings into the database. 
@@ -36,6 +38,9 @@ modified: 2023-12-15T16:51:56.101Z
   - 纯前端的plugin不方便直接预览
   - 大版本的breaking-changes很多
   - media-lib可能存在大量未被使用的media，如何清理
+  - user用户管理功能弱，不支持分组, 类似multi-tenancy
+  - 前端旧版本的依赖难以升级，如react-router
+  - ❓ 如何与现有系统集成，可参考sso单点登录
 
 - features
   - 核心模块: content-mgr, content-type-builder, media-lib, roles-permissions
@@ -76,13 +81,14 @@ modified: 2023-12-15T16:51:56.101Z
   - [Directus vs. Strapi – Comparison Headless CMS — Restack](https://www.restack.io/docs/directus-vs-strapi)
 # draft
 - ⌛️ version/history
-  - 参考官方实现来做开源版本，参考 
+  - 参考官方实现来做开源版本，参考官方文档说明和代码 
     - `packages/core/content-manager/server/src/history` 源码
     - `packages/core/admin/admin/src/content-manager/history/pages/History.tsx` 源码
 
 - media
   - files: docx/ppt
   - usage-references
+  - 默认删除到回收站
 
 - frontend-admin
   - 🤔 将 content-type-builder 隐藏后是否就是普通网站的界面了
@@ -94,13 +100,38 @@ modified: 2023-12-15T16:51:56.101Z
 - 流式输出 stream response
 
 - more toC features
+
+- 启动时自动切换到可用端口
+# 🔌 plugins
+- dev-xp
+  - 🐛 plugin disable后再启动，plugin的数据或自定义api会丢失
+
+- export
+  - ☑️ 不支持选择指定字段导出
+
+- media
+  - ☑️ media-preview 只生成缩略图却没有使用
+
+- upload
+  - 支持在不用建表或配置字段的情况下，导入导出excel/csv
+  - 处理大文件的上传
+
+- navigation
+  - ☑️ 跳转到content item的路由失效
+
+- 
+- 
+
 # 🖇️ integrations
+- ❓ 如何与现有系统集成，可参考sso单点登录
+
 - 集成react-admin
 - 如何集成页面编辑器，如craft，可参考内置编辑器
 # dev
 - 在admin添加新的content-type时，数据库会创建对应的表，同时后端src/api下面会自动生成对应的schema/router/controller/service，prod生产环境下不支持动态添加新的content-type
 
-- 
+- 删除media-lib中的文件时，文件也会删除(待确认是否在回收站)
+
 - 
 - 
 - 

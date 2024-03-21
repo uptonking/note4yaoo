@@ -128,7 +128,7 @@ modified: 2022-09-21T15:47:41.340Z
   - Built With React Material UI yjs Written in TypeScript
   - 依赖knex、pg、yjs、codemirror5
 
-- https://github.com/motifland/yfs
+- https://github.com/Motif-Archived/yfs /MIT/202301/ts/inactive
   - https://yfs.vercel.app/
   - Synchronize text files between the browser and the file system using the File System Access API and Yjs.
   - 依赖yjs.v13、idb-keyval、diff、react
