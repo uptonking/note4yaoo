@@ -23,7 +23,19 @@ modified: 2021-07-25T12:49:10.410Z
 
 - ## 
 
-- ## 
+- ## Use CSS relative color syntax to darken/lighten colors for borders, backgrounds, etc.
+- https://twitter.com/jh3yy/status/1770948509933445269
+
+```CSS
+.success {
+  --c: green;
+}
+
+aside {
+  background: oklch(from var(--c) calc(l * 0.75) c h / 0.5);
+  color: oklch(from var(--c) calc(l * 1.5) c h);
+}
+```
 
 - ## CSS Tips: To get the maximum z-index, you can use calc(1 / 0) in addition to calc(Infinity).
 - https://twitter.com/yisibl/status/1767531873742528698

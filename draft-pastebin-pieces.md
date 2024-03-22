@@ -48,6 +48,14 @@ Math.random()
   .substring(0, 5);
 ```
 
+- strapi服务端返回csv的示例
+
+```JS
+{
+  "data": "id,documentId,name,createdAt,updatedAt,publishedAt,locale\n1,hovfsfgtgnvroevstontx2h1,mystery,2024-03-22T15:59:30.658Z,2024-03-22T15:59:30.658Z,,"
+}
+```
+
 - 图片 base64 编码示例
 
 ```

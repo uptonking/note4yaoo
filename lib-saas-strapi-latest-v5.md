@@ -9,6 +9,18 @@ modified: 2023-12-15T19:39:18.123Z
 
 # guide
 
+```shell
+npx create-strapi-app@5.0.0-beta.0 strapi5-app-beta0 --quickstart --ts
+```
+
+- [v5-features](https://docs-next.strapi.io/dev-docs/whats-new)
+  - all entries will have uuids
+
+- v5-changes
+  - [v4 to v5 breaking changes](https://docs-next.strapi.io/dev-docs/migration/v4-to-v5/breaking-changes)
+  - `i18n` is now part of the strapi core
+  - `helper-plugin` is deprecated
+  - remove old plugin generator in favor of `plugin:init`.
 # features/rfc
 - resources
   - [rfcs v5](https://github.com/strapi/rfcs/pulls?q=is%3Aopen+is%3Apr+label%3Av5)
@@ -90,15 +102,23 @@ modified: 2023-12-15T19:39:18.123Z
 # discuss-v5-changelog
 - ## wip
 
-- [feat(cm): reimplement relations for draft & publish ](https://github.com/strapi/strapi/pull/19642)
-- [chore: deprecate entity-service and delegate to document service ](https://github.com/strapi/strapi/pull/19728)
-- 
+- [Feat(releases): Bulk Release ](https://github.com/strapi/strapi/pull/19891)
+- [Feature: ability to add custom auth providers in plugin ](https://github.com/strapi/strapi/pull/15559)
+
 - 
 - 
 
 - ## 
 
+- ## 
+
+- ## 🗑️ [chore: remove old plugin generator in favor of plugin:init _20240322](https://github.com/strapi/strapi/pull/19875)
+
 - ## [feat: add drag-and-drop to relations _20240315](https://github.com/strapi/strapi/pull/19788)
+
+- ## [feat(cm): reimplement relations for draft & publish _20240313](https://github.com/strapi/strapi/pull/19642)
+
+- ## 🗑️ [chore: deprecate entity-service and delegate to document service _20240314](https://github.com/strapi/strapi/pull/19728)
 
 - ## [feat: add basic pagination to history frontend _20240311](https://github.com/strapi/strapi/pull/19729)
 
@@ -163,7 +183,7 @@ modified: 2023-12-15T19:39:18.123Z
   - any new PRs submitted after October 31st (Tuesday) will be closed due to the change freeze unless an exclusion is applied.
   - we have started our major development on Strapi v5 and want to try and limit the amount of merge conflicts that we have between the main branch for Strapi v4 and the v5/* branches.
 
-- ## [Axios instance in strapi - Discussions - Strapi Community Forum](https://forum.strapi.io/t/axios-instance-in-strapi/30425)
+- ## 🗑️ [Axios instance in strapi - Discussions - Strapi Community Forum](https://forum.strapi.io/t/axios-instance-in-strapi/30425)
 - axios instance will be deprecated in v5 use `useFetchClient` instead
 
 - ## ⚖️ [Notice: Requesting community feedback on v5 RFCs_202309](https://github.com/strapi/strapi/issues/17958)
@@ -190,10 +210,12 @@ modified: 2023-12-15T19:39:18.123Z
 # discuss-v5
 - ## 
 
+- ## 
+
+- ## 
+
 - ## [How to create archive for blog in strapi and nextjs? - Questions and Answers - Strapi Community Forum](https://forum.strapi.io/t/how-to-create-archive-for-blog-in-strapi-and-nextjs/21247/11)
-- the whole reason we need v5 is to build content versioning. We made quite a lot of changes in v4 to try and achieve what we wanted to do but hit some breaking change blockers that required some additional things so it got delayed til v5.
-- 
-- 
+- ⌛️ the whole reason we need v5 is to build content versioning. We made quite a lot of changes in v4 to try and achieve what we wanted to do but hit some breaking change blockers that required some additional things so it got delayed til v5.
 
 - ## webpack requires a decent amount of ram to build the react output
 - https://discord.com/channels/811989166782021633/1187470968009011330/1187486143797792818

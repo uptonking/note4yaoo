@@ -12,6 +12,20 @@ modified: 2023-12-15T17:04:36.589Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🆔️ [Data transfer/import _202403](https://forum.strapi.io/t/data-transfer-import/36810)
+- In the data transfer / import/export data options it’s possible to exclude files, config etc… Is it possible to exclude certain tables, for instance user permissions tables?
+  - Sadly that is not possible as of yet. It is just a full on db overwrite. It’ll wipe anything that’s already in the db and fill it again with the dump
+  - I believe that was because of an issue with auto-increment id’s not working properly across multiple dbs
+  - 💡 Though as of v5 all entries will have uuids to identify them, so technically this can be solved in v5
+
+- ## [Is it possible to connect an existing database with Strapi CMS? - Stack Overflow](https://stackoverflow.com/questions/62656356/is-it-possible-to-connect-an-existing-database-with-strapi-cms)
+- It seems the only answer is no, because Strapi is not schema-agnostic: you must adopt their database structure to use Strapi.
+- The best way is to create a new database with the same structure but created with strapi and after migrate the data.
+
 - ## [Strapi Hide Content Type - Stack Overflow](https://stackoverflow.com/questions/65846609/strapi-hide-content-type)
 - You can extend the content type plugin to make updates to the content-type's schema.
   - In Strapi v4 it is `"visible": false`
@@ -220,22 +234,18 @@ modified: 2023-12-15T17:04:36.589Z
 - just a heads up it won't be needed for Strapi 5 as we plan on baking in support into Strapi 5 to simplify the structure and be able to use the v4 syntax throughout Strapi 5. Happy to give it to you though if you want to continue to maintain it on Strapi 4
 - Publisher might also be superseded by something from Strapi 
 
-# discuss-devops
-- ## 
-
-- ## 
-
-- ## [Data transfer / import _202403](https://forum.strapi.io/t/data-transfer-import/36810)
-- In the data transfer / import/export data options it’s possible to exclude files, config etc… Is it possible to exclude certain tables, for instance user permissions tables?
-  - Sadly that is not possible as of yet. It is just a full on db overwrite. It’ll wipe anything that’s already in the db and fill it again with the dump
-
-- Though as of v5 all entries will have uuids to identify them, so technically this can be solved in v5
 # discuss
 - ## 
 
 - ## 
 
-- ## 
+- ## 🌲 [How to create nested categories in V4 - Questions and Answers - Strapi Community Forum](https://forum.strapi.io/t/how-to-create-nested-categories-in-v4/16416)
+- creating multiple collection is not practical. since you will have to create new collection for every level 
+  - i prefer to have 1 collection only
+
+- [Hierarchical collection ](https://github.com/strapi/strapi/issues/6329)
+  - We currently(202203) do not plan to add native support for this at this time. Marking as closed
+  - It doesn't follow the project vision that we have for how Strapi will function in the near, mid, and long term future. Something like this is more inline with document databases and not with relational ones.
 
 - ## ⚖️ @strapijs and so #Strapi Cloud will become SOC2 compliant! We just achieved 99%_202401
 - https://twitter.com/laurie_jim/status/1746903974442406057

@@ -11,6 +11,7 @@ modified: 2023-12-15T16:52:36.718Z
 
 - resources
   - 👷🏻 [Strapi contributor documentation | Doc](https://contributor.strapi.io/)
+  - https://docs-next.strapi.io/dev-docs/whats-new
   - [Strapi 中文文档](https://www.strapi.cn/)
   - [Backend Customization Examples Cookbook | Strapi Documentation](https://docs.strapi.io/dev-docs/backend-customization/examples)
     - Examples are meant to extend the features of FoodAdvisor

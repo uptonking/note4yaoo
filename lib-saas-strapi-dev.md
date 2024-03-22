@@ -12,21 +12,20 @@ modified: 2023-12-15T16:51:56.101Z
 - pros
   - MIT and features-rich
   - plugin system and marketplace
-  - media library and providers
   - draft & publish
   - rbac is free
-  - 支持audit日志记录
+  - media library and providers
   - Data Import & Export
   - future flags
-  - rich fields: 支持 custom filed
+  - rich fields: 支持custom filed, 但需要写代码不能通过ui创建
   - built with typescript
-  - 提供了很多集成示例，如 redis/search
+  - 提供了很多集成示例，如redis/search
 
 - cons
   - paid: Review workflow, Audit Logs, version-history
     - Shared Projects
     - ~~不支持version-history，但audit日志记录可作为类似功能~~
-  - ui不支持: Conditional fields, nested component
+  - ui不支持: Conditional fields, nested component, nestable menu
   - 与现有数据库集成不方便
   - v4不支持mongodb
   - 🐛 At this time and in the future there is no plan to allow model creating or updating while in a production environment, and
@@ -79,7 +78,7 @@ modified: 2023-12-15T16:51:56.101Z
 - resources
   - [Strapi Community Forum](https://forum.strapi.io/)
   - [Directus vs. Strapi – Comparison Headless CMS — Restack](https://www.restack.io/docs/directus-vs-strapi)
-# draft
+# draft/migrate-to-v5
 - ⌛️ version/history
   - 参考官方实现来做开源版本，参考官方文档说明和代码 
     - `packages/core/content-manager/server/src/history` 源码
@@ -88,11 +87,12 @@ modified: 2023-12-15T16:51:56.101Z
 - media
   - files: docx/ppt
   - usage-references
-  - 默认删除到回收站
+  - 默认删除到回收站, soft-delete
 
 - frontend-admin
   - 🤔 将 content-type-builder 隐藏后是否就是普通网站的界面了
   - 参考curator实现自定义admin
+  - 多层次的菜单 collapsible/nestable menu
 
 - backend
   - api-rate-limit
@@ -102,6 +102,8 @@ modified: 2023-12-15T16:51:56.101Z
 - more toC features
 
 - 启动时自动切换到可用端口
+
+- 单元格级别、卡片级别的权限控制，如隐藏看板卡片
 # 🔌 plugins
 - dev-xp
   - 🐛 plugin disable后再启动，plugin的数据或自定义api会丢失
@@ -127,10 +129,17 @@ modified: 2023-12-15T16:51:56.101Z
 
 - 集成react-admin
 - 如何集成页面编辑器，如craft，可参考内置编辑器
+# dev-v5
+- v5插件的热加载问题很大，基于vite实现
+  - 不能检测到新创建的文件，需要重启
 # dev
 - 在admin添加新的content-type时，数据库会创建对应的表，同时后端src/api下面会自动生成对应的schema/router/controller/service，prod生产环境下不支持动态添加新的content-type
 
 - 删除media-lib中的文件时，文件也会删除(待确认是否在回收站)
+
+- 默认的role权限
+  - author只能输入数据，不能查看其他人的数据，数据处于draft状态但不能publish
+  - editor可以查看其他人的数据，可以publish
 
 - 
 - 

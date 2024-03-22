@@ -34,7 +34,10 @@ modified: 2021-01-08T17:14:34.841Z
 
 - ## 
 
-- ## 
+- ## 💫 implementing text animations with framer-motion is so fun
+- https://twitter.com/consolerod/status/1770819569654870318
+- is it motionValue that’s being animated?
+  - that could be a an approach but i'm actually just animating motion.divs with initial and exit properties, since i already know the values and the edges of the selection window i just pass them to the tooltip, as new values comes in when scrolling they replace the previous ones
 
 - ## Framer Motion 11.0.11 is a quantum leap in animation library performance.
 - https://twitter.com/mattgperry/status/1767532370792427577

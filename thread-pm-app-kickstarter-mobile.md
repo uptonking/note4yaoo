@@ -24,6 +24,19 @@ modified: 2023-03-21T09:03:05.361Z
 - ## 终于备案完了，备到最后两个才知道可以一次提交多个。一个ECS只可以备5个，多了另外可以从淘宝买一个什么码。
 - https://twitter.com/haozes/status/1723949186985378276
 
+# discuss-app-store
+- ## 
+
+- ## 
+
+- ## App Stores were a mistake.
+- https://twitter.com/videolan/status/1771104206872555660
+  - Currently, we cannot update VLC on Windows Store, and we cannot update VLC on Android Play Store, without reducing security or dropping a lot of users...
+  - For now, iOS App Store still allows us to ship for iOS9, but until when?
+- VLC cannot even enter the Mac App Store, because of the restrictions
+- It's updated on F-Droid, who cares about the Play Store
+- This is just another reason I prefer Linux! I can’t say I have a ton of use for vlc on my phone, I sympathize they really are restrictive on the AppStore and that sucks!
+
 # discuss
 - ## 
 

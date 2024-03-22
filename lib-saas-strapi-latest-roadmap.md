@@ -9,8 +9,11 @@ modified: 2023-12-15T18:29:23.105Z
 
 # guide
 
+- resources
+  - https://github.com/orgs/strapi/projects
+  - [Strapi Feedback & Roadmap](https://feedback.strapi.io/)
 # roadmap
-- [Strapi Feedback & Roadmap](https://feedback.strapi.io/)
+
 # [changelog](https://strapi.io/changelog)
 
 ## v5

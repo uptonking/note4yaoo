@@ -326,7 +326,13 @@ betterdiscordctl -i flatpak install
   - [x] streaming infinite-list/tree
 # dev-03-realworld-react-sequelize-knex
 
-## 031
+## 032
+
+## 0322
+
+- [Failed to resolve import. Does the file exist? since 5.1.0-beta.4 (5.1.0-beta.3 was fine) · vitejs/vite](https://github.com/vitejs/vite/issues/15784)
+  - I guess it may be related to the path cache.  server: { fs: { cachedChecks: false } }
+  - 实测需要重启dev-server
 
 ## 0319
 

@@ -11,6 +11,44 @@ modified: 2023-12-15T16:52:28.937Z
 
 # blogs
 
+## 🏘️ [Exploring Strapi's Architecture: A Technical Analysis of the Headless CMS Model _202401](https://strapi.io/blog/strapi-architecture)
+
+- Strapi, a blend of an API building framework and a CMS, designed to be both robust and adaptable.
+  - unlike a monolithic CMS where the front-end and back-end are tightly coupled, Strapi introduces a headless architecture
+  - Headless architecture here means that the back-end -- your content management and API delivery -- is separate from the front-end presentation.
+
+- The server initialization is the critical bootstrapping phase where Strapi's application server, based on Node.js and Koa
+  - involves setting up the server configuration, initializing the database connections, and preparing the middleware stack
+- Middleware in Strapi is crucial; it processes every incoming request, handling tasks such as CORS, body parsing, session managemen
+- Strapi introduces policies and hooks as a means to interject custom logic at various points of the application flow. 
+  - The policies registry holds a collection of functions that can be executed before an action in a controller, acting as gatekeepers. 
+  - Hooks, on the other hand, provide a way to modify core features or add new ones, enabling integrations and custom behaviors. 
+  - They act as middleware, but they are tailored to do specific things and don't just act as generic middleware.
+- Content API is the essence of Strapi's content management capabilities. 
+  - This segment deals with the CRUD operations defined by the content types.
+  - It consists of controllers that handle the routing and processing of requests, services that encapsulate the business logic, and the entity service that interacts with the database layer.
+
+- ⛓️ The flow within Strapi begins at the route, guiding requests to their respective policies. 
+  - After passing through any Route Policies that apply, the request is handled by Route Middleware for tasks such as authentication or payload processing. 
+  - The request is then handed off to the Controller, specifically a Koa handler, to orchestrate the next steps.
+  - Inside the Controller, the logic unfolds, tasking the Service to manage business-specific actions. 
+  - The Service then engages the EntityService for any data manipulation, which, in turn, communicates with the QueryEngine. 
+  - This engine smartly constructs queries that are executed via Knex.js, ensuring the data interacts seamlessly with the database.
+
+- Each plugin can introduce new functionalities or extend existing ones. 
+  - They are registered within the system during server initialization, enabling them to integrate seamlessly into Strapi's core. 
+- Plugins interact with Strapi's core by hooking into the server's lifecycle events, registering new controllers, services, routes, and even UI components. 
+  - They communicate with the main architecture through well-defined interfaces, ensuring that core updates do not break plugin functionality.
+
+- Strapi has evolved its approach to database interactions, moving away from the Waterline ORM used in earlier versions to a more sophisticated and flexible system in Strapi v4.
+  - The platform now employs a custom-built query engine, designed specifically for an agnostic interaction with both SQL and NoSQL databases. 
+  - The engine effectively translates queries from Strapi's service layer into the specific commands required by the chosen database, enabling developers to perform Create, Read, Update, and Delete (CRUD) operations using JavaScript
+- When services require data operations, they utilize the entity service's ORM to communicate with the database. 
+  - This interaction abstracts the complexities of direct database manipulation, providing a unified codebase that can interact with multiple database types
+  - Lifecycle hooks add another layer of interaction, allowing developers to run custom code during data processing events.
+
+- Every line of code is an open invitation: come and see how we've built this, tweak it, break it, rebuild it. It's in these interactions that Strapi grows stronger and more attuned to real-world applications.
+
 ## 🎯 [Bye 2023, Hello 2024! A year in review_202401](https://strapi.io/blog/bye-2023-hello-2024-a-year-in-review)
 
 - improvements
@@ -139,8 +177,6 @@ modified: 2023-12-15T16:52:28.937Z
     - While Strapi does provide a permissions management interface for roles, Directus takes it to the next level by allowing extensive customization of access conditions and per-field access.
   - Directus’ Geospatial Advantage: PostGIS Support
   - Directus Flows
-
-
 # more
 - [Strapi vs Nest.js: A Tale of Simplicity and Flexibility in Back-end Development_202306](https://medium.com/@inni.chang95/strapi-vs-nest-js-a-tale-of-simplicity-and-flexibility-in-back-end-development-640f3a506289)
   - In conclusion, Strapi shines in its simplicity for straightforward use cases, while Nest.js offers a more comprehensive and flexible framework for developers comfortable with TypeScript. 

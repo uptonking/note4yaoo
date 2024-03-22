@@ -32,10 +32,22 @@ npm install --legacy-peer-deps
 npm run develop
 ```
 
+# rfc
+- ## 
+
+- ## [Allow customization of Primary Key (ID) type and name | Developer Experience | Strapi _202203](https://feedback.strapi.io/developer-experience/p/allow-customization-of-primary-key-id-type-and-name)
+
+- ## [Conditional fields | Content Editing XP | Strapi _202203](https://feedback.strapi.io/customization/p/conditional-fields)
+  - Display a field only if some conditions are met.
+
+- ## [Setting for collapsing/expanding components in the admin panel by default | Voters | Strapi _202306](https://feedback.strapi.io/feature-requests/p/setting-for-collapsingexpanding-components-in-the-admin-panel-by-default)
+  - For content type structures that feature a lot of components, this makes the page very very long.
+
 # issues-not-yet
 - ## 
 
-- ## 
+- ## [Organize entities into folders ](https://github.com/strapi/strapi/issues/10545)
+- Marking as closed as this isn't likely something we will do _202203
 
 - ## [can i hide left menu nav? _202302](https://github.com/strapi/strapi/issues/15658)
   - i want to only show right content area and hide left area?

@@ -167,6 +167,19 @@ modified: 2023-09-17T17:37:19.913Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Use synchronous by default, asynchronous when necessary.
+- https://twitter.com/RaulJuncoV/status/1770789583375974471
+- Sync is more convenient in most cases. But can lead to low scalability, reliability, and other undesirable characteristics.
+- Async can provide performance benefits and scale. But can present a host of headaches:
+  • data synchronization
+  • deadlocks
+  • Race conditions
+  • Debugging, and so on
+
 - ## 4 must-know strategies to build high-availability systems:
 - https://twitter.com/ProgressiveCod2/status/1768176860037517417
 - [1] Replication
