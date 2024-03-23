@@ -9,6 +9,7 @@ modified: 2024-03-16T14:11:57.461Z
 
 # guide
 
+- [细说 JavaScript 七种数据类型 - 一像素 - 博客园](https://www.cnblogs.com/onepixel/p/5140944.html)
 # discuss-stars
 - ## 
 

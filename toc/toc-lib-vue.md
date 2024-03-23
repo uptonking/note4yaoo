@@ -11,22 +11,19 @@ modified: 2023-06-22T05:10:17.349Z
 
 # popular
 
-
 # rewrite/alternatives
-- https://github.com/vuejs/petite-vue /MIT/202201/ts
+- https://github.com/vuejs/petite-vue /MIT/202201/ts/inactive/vue3
   - 6kb subset of Vue optimized for progressive enhancement
   - It provides the same template syntax and reactivity mental model as standard Vue. 
   - However, it is specifically optimized for "sprinkling" a small amount of interactions on an existing HTML page rendered by a server framework. 
   - Vue-compatible template syntax
   - DOM-based, mutates in place
-  - Driven by `@vue/reactivity`.
+  - Driven by `@vue/reactivity`， 重要依赖
   - [Petite-Vue – 5kb subset of Vue optimized for progressive enhancement | Hacker News_202107](https://news.ycombinator.com/item?id=27719290)
 
 - https://github.com/cuixiaorui/mini-vue /MIT/202301/ts
   - 实现最简 vue3 模型，用于深入学习 vue3
   - B站提供了视频讲解使用方式
-
-
 # components
 - https://github.com/primefaces/primevue
   - https://primevue.org/

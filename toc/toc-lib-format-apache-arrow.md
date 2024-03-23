@@ -10,7 +10,7 @@ modified: 2023-01-08T16:27:44.918Z
 # guide
 - apache-arrow-js的使用示例可以在observablehq社区发现
 # popular
-- polars /12.3kStar/MIT/202301/rust/NoDeps
+- polars /12.3kStar/MIT/202403/rust/NoDeps
   - https://github.com/pola-rs/polars
   - https://pola.rs/
   - Polars is a blazingly fast DataFrames library implemented in Rust using Apache Arrow Columnar Format as the memory model.

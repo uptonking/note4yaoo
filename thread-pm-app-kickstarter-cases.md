@@ -156,6 +156,15 @@ modified: 2023-03-30T13:31:09.049Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## We got up to $200k ARR for Remix in 6 months _202403
+- https://twitter.com/ryanflorence/status/1771280346924884109
+  - and it's a JAVASCRIPT FRAMEWORK, there are like a hundred free ones
+  - sell something, it's super fun
+
 - ## 独立开发貌似刚好一个月了，盘点了一下失业后的收入：
 - https://twitter.com/austinit/status/1769366074695565410
   1. 公众号付费文章与打赏，0.22k，耗时1小时。

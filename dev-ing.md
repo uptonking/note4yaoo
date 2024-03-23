@@ -51,7 +51,7 @@ https://meeting.tencent.com/p/9606972663
 
 ```shell
 # delete all node_modules folders recursively
-rm package-lock.json && find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +
+rm package-lock.json && find . -name 'node_modules' -type d -prune -exec rm -rf '{}' + && find . -name 'dist' -type d -prune -exec rm -rf '{}' +
 
 # npm i
   DEBUG=* npm i --no-audit --loglevel silly
@@ -327,6 +327,19 @@ betterdiscordctl -i flatpak install
 # dev-03-realworld-react-sequelize-knex
 
 ## 032
+
+## 0323
+
+- [Using the Compiler API · microsoft/TypeScript Wiki](https://github.com/Microsoft/TypeScript/wiki/Using-the-Compiler-API)
+
+```ts
+import * as ts from "typescript";
+
+function compile(fileNames: string[], options: ts.CompilerOptions): void {
+  let program = ts.createProgram(fileNames, options);
+  let emitResult = program.emit();
+  }
+```
 
 ## 0322
 

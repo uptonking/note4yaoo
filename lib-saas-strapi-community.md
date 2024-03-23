@@ -76,7 +76,7 @@ modified: 2023-12-15T17:04:36.589Z
 - ## 💰 [Can I use strapi free in my self-hosted server? - General - Strapi Community Forum_202304](https://forum.strapi.io/t/can-i-use-strapi-free-in-my-self-hosted-server/27666)
 - The only restrictions on the free version is that audit-logs and Review Workflows are not available
 
-# discuss-strapi-mongo 🍃
+# discuss-mongo-strapi 🍃
 - ## 
 
 - ## We probably will never bring back MongoDB ourselves. _20240302
@@ -103,7 +103,7 @@ modified: 2023-12-15T17:04:36.589Z
   - MongoDB wasn’t the recommended starting database to test and try Strapi. It has been replaced by SQLite
   - Drupal, WordPress, and many other CMSs restrict to one database, often SQL one and these are successful projects.
 
-# discuss-editor
+# discuss-editor 📝
 - ## 
 
 - ## the new editor just went stable in 4.15, but are there future plans to allow the Slate instance to be extended with plugins, or the UI to be extended? _202310
@@ -150,7 +150,7 @@ modified: 2023-12-15T17:04:36.589Z
   - This gets almost just as difficult to read as embedding html everywhere, which is what we currently do.
   - Dynamic field is something I also looked into, which I think could work OK. The problem is that they want to add html blocks in the most arbitrary and random places. Sometimes right after the first paragraph, sometimes in the middle, the end. Sometimes there are 10+ html tags in a single Article. They don't have a fixed position. This arbitrary positioning makes it seem like dynamic zone won't work very well. Or maybe I'm missing something ?
   - Anyways, I tried using dynamic zones and it seems to be working pretty well. Seems like getting the most out of Strapi is better than replacing it.
-# discuss-feat-version-history
+# discuss-feat-version-history ⌛️
 - ## [Q2, 2024 - Content history | Content Editing XP | Strapi](https://feedback.strapi.io/customization/p/q2-2024-content-history)
 - Track version history of content: view the different iterations of a piece of content.
 
@@ -167,7 +167,7 @@ modified: 2023-12-15T17:04:36.589Z
 
 - [History/Versioning strapi plugin - Questions and Answers - Strapi Community Forum _202105](https://forum.strapi.io/t/history-versioning-strapi-plugin/5343)
   - I believe there is a plugin strapi-plugin-versionioning as well as strapi-plugin-revisions.
-# discuss-feat-draft-publish
+# discuss-feat-draft-publish 🌵
 - ## [Q2, 2024 — Draft & Publish | Content Editing XP | Strapi](https://feedback.strapi.io/customization/p/q2-2024-draft-publish)
 - Allow users to manage content by having a published and draft content at the same time.
 
@@ -193,7 +193,7 @@ modified: 2023-12-15T17:04:36.589Z
 - Yes, set the `published_at: null` during the POST request and it will be created as a draft. The default for REST/GraphQL sets that field to the current datetime. Passing over the null value will leave it in a draft state.
 - As of 7th February, the field is written `publishedAt` and not `published_at` as said before.
 
-# discuss-schema-change
+# discuss-schema-change 🚨
 - ## 
 
 - ## 
@@ -222,7 +222,7 @@ modified: 2023-12-15T17:04:36.589Z
 - Renaming a field is what is called a non-compatible change. As long as you change your API definition, you’ll have destructive change. These type of changes should be handled with care and with multiple intermediate phasis.
   - you can use the migrations scripts and then create the new column or do a rename with your script, so that Strapi won’t have to do anything when upgrading the schema.
 
-# discuss-news
+# discuss-news 🆕️
 - ## 
 
 - ## 
@@ -231,13 +231,19 @@ modified: 2023-12-15T17:04:36.589Z
 
 - ## I would like to know details on transformer i would like go through and maintain it. _202403
 - https://discord.com/channels/811989166782021633/1217462664809152553/1219677189801246863
-- just a heads up it won't be needed for Strapi 5 as we plan on baking in support into Strapi 5 to simplify the structure and be able to use the v4 syntax throughout Strapi 5. Happy to give it to you though if you want to continue to maintain it on Strapi 4
+- just a heads up it won't be needed for Strapi 5 as we plan on baking in support into Strapi 5 to simplify the structure and be able to use the v4 syntax throughout Strapi 5. 
 - Publisher might also be superseded by something from Strapi 
 
 # discuss
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [Why are dynamic zones automatically array fields? : r/Strapi _202301](https://www.reddit.com/r/Strapi/comments/10jtmsa/why_are_dynamic_zones_automatically_array_fields/)
+- You probably don't need a "dynamic zone" if you don't want an array. 
+  - You can still transform your array into a custom object after fetching it, if you really need that
 
 - ## 🌲 [How to create nested categories in V4 - Questions and Answers - Strapi Community Forum](https://forum.strapi.io/t/how-to-create-nested-categories-in-v4/16416)
 - creating multiple collection is not practical. since you will have to create new collection for every level 

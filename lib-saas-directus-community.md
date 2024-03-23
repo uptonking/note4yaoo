@@ -12,6 +12,13 @@ modified: 2024-02-16T14:56:17.057Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 🆚️ [GraphQL/REST/SDK: is there any principal difference? _202212](https://github.com/directus/directus/discussions/16889)
+- They all support the same functionality set. The SDK is a thin wrapper around axios which calls the regular REST API endpoints, so there's no functional difference between the two.
+  - 💡 In general, Directus converts requests coming in (through rest/graphql or soon websockets) into a generic `AST` which is then parsed through the data pipeline to be queried/modified. 
+  - That allows all of these interfaces to support the same feature sets and generally have the same performance
+
 - ## 🌰〰️ [Explanation on transmitting data inside flows _202308](https://github.com/directus/directus/discussions/19471)
 - [directus flows - How to all field value pass in payload when record update in direct us - Stack Overflow](https://stackoverflow.com/questions/76613284/how-to-all-field-value-pass-in-payload-when-record-update-in-direct-us)
 

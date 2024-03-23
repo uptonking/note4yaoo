@@ -246,7 +246,7 @@ modified: 2023-03-05T08:55:03.696Z
 
 - Alternatively, we can split things up into two components: A wrapper that fetches data and the actual select that takes an `initialSelection`. This will push state further down, but refetches are completely ignored with that.
 
-- ## Non-RxJS Observables in the wild... tanstack edition
+- ## 🆚️ Non-RxJS Observables in the wild... tanstack edition _202305
 - https://twitter.com/BenLesh/status/1656746366553452573
 - Yes, yes, it's more of a "Subject"... which is an observable.
 - Incidentally, @tannerlinsley , I don't know all of the usage here, but as a pro-tip, *if* you can move away from an array of listeners to a `Set` it will help perf a lot. (But comes with idempotent listener adds, obviously)

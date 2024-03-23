@@ -76,6 +76,33 @@ modified: 2021-05-13T03:13:45.375Z
 
 - ## 
 
+
+- ## 🆚️ Non-RxJS Observables in the wild... tanstack edition _202305
+- https://twitter.com/BenLesh/status/1656746366553452573
+- Yes, yes, it's more of a "Subject"... which is an observable.
+- Incidentally, @tannerlinsley , I don't know all of the usage here, but as a pro-tip, *if* you can move away from an array of listeners to a `Set` it will help perf a lot. (But comes with idempotent listener adds, obviously)
+  - (I've been wanting to do that to RxJS Subjects, but it would be too broad of a breaking change for us)
+  - Prior art is `EventTarget` , though: `addEventListener` is idempotent.
+- ⚡️ heh, I actually did the `array->Map` switch for the Redux core in v5 alpha
+- Ooh do XState next (we love our bespoke artisanal handcrafted observables)
+  - All ActorRefs (what is returned from interpret(...)) are observable
+
+
+
+- ## I wrote up a bit about the different types of cancellation/unregistration that exist, and why AbortSignal is a solid choice for DOM Observables in JavaScript.
+- https://twitter.com/BenLesh/status/1729970596715376698
+  - I think it's worth sharing, because it's a general API design choice some folks need to make. "What's the best way to add and remove some resource like a callback from some other thing?"
+- [How to removeEventListener? · WICG/observable](https://github.com/WICG/observable/issues/75#issuecomment-1832698540)
+  - Return a means of removing the resource, (RxJS does this with `subscribe(): Subscription` , other APIs might return a removal function like `subscribe(cb: Callback): UnsubscribeFunction` , etc.
+  - Provide a separate unregistration function. This is what `addEventListener` and `removeEventListener` are. Or think of like the Observer pattern's Subject: `addObserver/removeObserver` , etc.
+  - Allow the consumer to pass in a token-based cancellation mechanism. This is `AbortSignal` , or in something like . NET, `CancellationToken` , etc.
+- Every single one of the above is just a different way to do the same thing. They all have advantages and disadvantages.
+- `AbortSignal` has the most advantages for `Observable` because it allows the cancellation mechanism to be created before the subscription starts, when the subscription could emit values synchronously (as is required of anything that is going to model `EventTarget` ). It's also nice because there's no need to keep the `EventTarget` instance itself on-hand to unregister the listener, like you would if you had to use `removeEventListener` .
+  - Sort of: You not only have to have a handle to your function, but you must also have a handle to the actual target as well, AND you have to know the "magic string" it was registered under. So you need 3 components: `target.removeEventListener('type', func)` . With an `AbortSignal` , you only need to have a reference to the `AbortController` to unregister the listener.
+
+- removeEventListener has to be the most annoying thing in JS. Thankfully in modern JS there's usually a nice framework wrapping it.
+  - Terribly, in some cases (DOM events), you need 4 pieces of information to remove a listener! In addition to the three you mentioned, you also need to know whether the listener was added for the capture or bubble phase of the event.
+
 - ## 🆚️ Choosing Between Pub-Sub Brokers and REST APIs in System Design
 - https://twitter.com/rixlabs/status/1768901435192664538
 

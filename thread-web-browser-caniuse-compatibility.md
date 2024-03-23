@@ -50,6 +50,21 @@ modified: 2021-07-29T11:15:44.100Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## new APIs to help make scroll-snap and overflow areas more feature rich and easier to work with:
+- https://twitter.com/argyleink/status/1771320680417816818  
+  - Experimental feature (from Canary) 
+
+- JS
+  - snapChanging
+  - snapChanged
+- CSS
+  - scroll-start
+  - scroll-start-target
+
 - ## JSPI, which lets you use async JS APIs from sync WebAssembly without asyncifying the entire app, is going to origin trial in Chrome 123
 - https://twitter.com/v8js/status/1768755661083701361
 

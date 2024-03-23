@@ -13,6 +13,17 @@ modified: 2022-11-07T11:00:28.824Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [有没有开源软件转变为商业闭源软件的例子？ - 知乎](https://www.zhihu.com/question/649348918)
+- 最近的例子就是redis ，更改了自己的License为RSALv2（Redis Source Available License 2.0 ）和SSPL（Server Side Public License v1）
+  - 这次License的修改主要就是限制云服务厂商“白嫖”redis，提供托管的redis服务
+- mongodb，以SSPL发布，目的是限制云厂商的托管服务。
+- Elasticsearch，以SSPL发布，目的是限制云厂商的托管服务。
+- Terraform，以BSL发布，目的是限制竞争对手提供相同的服务。
+
 - ## ☁️ 刚刚YC上发起的新项目Ubicloud引起热议，旨在提供（整个）AWS的开源替代方案。
 - https://twitter.com/GobeUncleWang/status/1768457488108839411
   - 在创业公司眼中，公有云的企业形象已经从普惠的公共存储计算基础设施，变成了剥削血汗的赛博地主，构建杀猪盘的邪恶帝国，是亟需革命与打倒的对象。而新的勇者已经出现。《云计算反叛军》

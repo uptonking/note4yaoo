@@ -19,6 +19,14 @@ modified: 2022-04-23T18:48:32.550Z
 
 - ## 
 
+- ## 
+
+- ## 🤖 who’s working on the spreadsheet for generative ai?
+- https://twitter.com/JungleSilicon/status/1771196431115710496
+  - i’m not talking llm’s helping you with formulas. i mean feature detection, style transfer, addition of concepts, etc.
+  - should work across modalities (text, images, video, audio)
+- simplest case you could get it to do math on the embeddings and do reverse embedding look ups. more complex would be using ai to interpret the values
+
 - ## 用 Excel 实现了一个简易的 GPT2，可以下载：不过特别大，有 1.25 个G
 - https://twitter.com/vikingmute/status/1768452277600387161
   - [Spreadsheets are all you need.ai – A low-code way to learn AI](https://spreadsheets-are-all-you-need.ai/)

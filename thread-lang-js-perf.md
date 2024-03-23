@@ -48,7 +48,7 @@ modified: 2023-11-10T08:05:19.107Z
   - It's the same reason why setting a property to null/undefined can be faster than deleting
   - A Map, on the other hand, is optimized for this very use case of frequently adding and removing keys (see the "performance" table row here)
 
-- ## 💡 And as a principal dev, I've had the map/filter/reduce ripped out in hot paths where copying Arrays is a lot more expensive than just a for loop.
+- ## 💡 as a principal dev, I've had the map/filter/reduce ripped out in hot paths where copying Arrays is a lot more expensive than just a for loop.
 - https://twitter.com/mattpodwysocki/status/1722687839660376469
 - Absolutely. Just this week I found an optimization where I reduced sudden +700MB bursts of allocations (and consequentially, OOMs) due to 3 .map()s with a simple for loop, where heap stays at maximum 100MB.
   - Yeah, most languages/runtimes aren't suited for that style, especially with eager evaluation and intermediate allocations will just blow the memory
@@ -105,7 +105,7 @@ modified: 2023-11-10T08:05:19.107Z
 - https://twitter.com/isukkaw/status/1764654438785200536
   - map['p1'] (更快; p1对应0/1)   vs   false ? 0 : 1
 
-- ## if you store values in a Map (as key) and to avoid leaks use WeakRef to wrap their counterpart, 
+- ## if you store values in a `Map` (as key) and to avoid leaks use `WeakRef` to wrap their counterpart, 
 - https://twitter.com/WebReflection/status/1752296107680416191
   - don't test `.has(value)` on map, test `.get(value)?.deref()` instead because the GC might kick after the WeakRef has stopped retaining the ref.
 

@@ -11,6 +11,28 @@ modified: 2021-01-04T19:34:22.729Z
 
 # roadmap
 
+# changelog
+
+## v3.0_20200908
+
+- 
+- 
+- 
+- 
+
+## v2.0_20160930
+
+- 
+- 
+
+## v1.0_20151027
+
+- v1.0_20151027
+- 
+
+## v0.x
+
+- v0.6_20231208
 # vue-state-management
 
 ## [Vue3学习笔记（七）—— 状态管理、Vuex、Pinia - 张果 - 博客园](https://www.cnblogs.com/best/p/16906357.html)
@@ -31,7 +53,7 @@ modified: 2021-01-04T19:34:22.729Z
 
 - ## 
 
-- ## ✨ [Refactor reactivity system to use version counting and doubly-linked list tracking · Pull Request #10397 · vuejs/core _20240224](https://github.com/vuejs/core/pull/10397)
+- ## ✨ [Refactor reactivity system to use version counting and doubly-linked list tracking · Pull Request · vuejs/core _20240224](https://github.com/vuejs/core/pull/10397)
 - This PR refactors the core reactivity system to use version counting and a doubly-linked list data structure inspired by Preact signals.
 
 - our priority is making improvements while retaining backwards compatibility, not "winning" in arbitrary micro-benchmarks. We will appreciate any constructive feedback, but being a tongue-in-cheek jerk won't help your library get more adoption.

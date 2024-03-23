@@ -38,7 +38,7 @@ modified: 2021-05-13T16:14:41.762Z
 - https://github.com/wesm/feather /202102/inactive
   - Feather: fast, interoperable binary data frame storage for Python, R, and more powered by Apache Arrow
 # rust
-- polars /12.3kStar/MIT/202301/rust/NoDeps
+- polars /12.3kStar/MIT/202403/rust/NoDeps
   - https://github.com/pola-rs/polars
   - https://pola.rs/
   - Polars is a blazingly fast DataFrames library implemented in Rust using Apache Arrow Columnar Format as the memory model.

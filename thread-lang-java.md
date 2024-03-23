@@ -65,7 +65,13 @@ modified: 2023-12-15T19:40:39.912Z
 
 - ## 
 
-- ## 
+- ## today's hell: jar wants to load jar, but different versions of jackson. can someone get these people json in their stdlib its 2024
+- https://twitter.com/jitl/status/1771290827362377906
+  - im not even the one building it i am using enterprise softwares
+  - Confluent (R) Kafka (R) Connect (R) with Community Connector For Debezium Postgres
+- it is a known issue that there are two jacksons that fight in this process. this is fine.
+- it is a pain indeed, kotlin stdlib fixes this
+  - i like kotlin, when we write java at notion, its kotlin
 
 - ## Why people constantly complain that they don't understand pointers? Pointer is just an index in a global array of bytes that we call "memory". What's the problem?
 - https://twitter.com/tsoding/status/1759191261129343058

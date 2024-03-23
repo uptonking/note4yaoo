@@ -9,14 +9,15 @@ modified: 2023-12-15T16:51:56.101Z
 
 # guide
 
-- pros
-  - MIT and features-rich
-  - plugin system and marketplace
+- pros 支持扩展api和ui
+  - MIT; features-rich; good documentation/community
+  - plugin-system and marketplace
   - draft & publish
-  - rbac is free
+  - rbac is free for 3 roles
   - media library and providers
-  - Data Import & Export
+  - i18n
   - future flags
+  - Data Import & Export
   - rich fields: 支持custom filed, 但需要写代码不能通过ui创建
   - built with typescript
   - 提供了很多集成示例，如redis/search
@@ -26,12 +27,13 @@ modified: 2023-12-15T16:51:56.101Z
     - Shared Projects
     - ~~不支持version-history，但audit日志记录可作为类似功能~~
   - ui不支持: Conditional fields, nested component, nestable menu
-  - 与现有数据库集成不方便
   - v4不支持mongodb
+  - 🐛 与现有数据库集成不方便
   - 🐛 At this time and in the future there is no plan to allow model creating or updating while in a production environment, and
     - there is currently no plans to move model settings into the database. 
     - There are no known nor recommended workarounds for this.
   - It doesn't namespace its admin table
+  - cannot store Content Manager layout configurations in the model settings. 因为未来移动版的layout可能不同，保存后如何恢复
   - 不支持多种第三方登录
   - rbac功能默认需要内置的10张表，复杂度高，难以迁移离开
   - 纯前端的plugin不方便直接预览
@@ -60,10 +62,6 @@ modified: 2023-12-15T16:51:56.101Z
 - features-enterprise
   - The only restrictions on the free version is that audit-logs and Review Workflows are not available
 
-- roadmap
-  - lts: editor, excel-table, local-db
-  - ~~掌握strapi-够用~~ > 模仿directus-config/delta > undb-fe-be > 模仿directus-flow > collab
-
 - who is using #strapi
   - luban-h5
   - VirtusLab
@@ -79,15 +77,20 @@ modified: 2023-12-15T16:51:56.101Z
   - [Strapi Community Forum](https://forum.strapi.io/)
   - [Directus vs. Strapi – Comparison Headless CMS — Restack](https://www.restack.io/docs/directus-vs-strapi)
 # draft/migrate-to-v5
+- roadmap - lts: editor, excel-table, local-db
+  - migrate plugins to v5: versioning, media
+  - ~~掌握strapi-够用~~ > 模仿directus-config/delta > undb-fe-be > 模仿directus-flow > collab
+
 - ⌛️ version/history
-  - 参考官方实现来做开源版本，参考官方文档说明和代码 
+  - 参考官方实现来做开源版本，参考官方文档说明和代码
     - `packages/core/content-manager/server/src/history` 源码
     - `packages/core/admin/admin/src/content-manager/history/pages/History.tsx` 源码
 
 - media
+  - 🍴 fork media-lib/upload 实现文件管理、资源管理
   - files: docx/ppt
   - usage-references
-  - 默认删除到回收站, soft-delete
+  - 🗑️ 默认删除到回收站, soft-delete
 
 - frontend-admin
   - 🤔 将 content-type-builder 隐藏后是否就是普通网站的界面了

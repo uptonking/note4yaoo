@@ -55,6 +55,32 @@ modified: 2023-12-15T16:52:36.718Z
 - 
 - 
 
+## v5-api
+
+- The Document Service API is meant to replace the Entity Service API used in Strapi v4.
+
+- A Document in Strapi 5 contains all the variations (e.g., locales, draft and published versions) of a unique piece of content.
+
+- The Document Service is the layer that handles documents as well as Strapi's complex data structures like components and dynamic zones.
+
+- All content types are private by default and need to be either made public or queries need to be authenticated with the proper permissions.
+
+- Strapi 5's Content API includes 2 major differences with Strapi v4:
+  - The response format has been flattened, which means attributes are no longer nested in a `data.attributes` object and are directly accessible at the first level of the `data` object
+  - Strapi 5 now uses documents and documents are accessed by their `documentId`.
+
+- An important difference between the back-end and front-end APIs is about the default version returned when no parameter is passed:
+  - The Document Service API returns the draft version by default, while REST and GraphQL APIs return the published version by default.
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
 ## faq
 
 ### Can Strapi be run in serverless environments?
@@ -186,10 +212,13 @@ modified: 2023-12-15T16:52:36.718Z
   - Single types are content-types that can only manage one entry.
   - Components are a data structure that can be used in multiple collection types and single types.
 
-- Custom fields are a way to extend Strapi’s capabilities by adding new types of fields to content-types or components. Once installed (see Marketplace documentation), custom fields are listed in the Custom tab when selecting a field for a content-type.
+- 🧩 Custom fields are a way to extend Strapi’s capabilities by adding new types of fields to content-types or components. 
+  - Once installed (from Marketplace), custom fields are listed in the Custom tab when selecting a field for a content-type.
 
-- Components are a combination of several fields. Components allow to create reusable sets of fields, that can be quickly added to content-types, dynamic zones but also nested into other components.
-- Dynamic zones are a combination of components that can be added to content-types. 
+- 🧩 Components are a combination of several fields. 
+  - Components allow to create reusable sets of fields, that can be quickly added to content-types, dynamic zones but also nested into other components.
+
+- 🧩 Dynamic zones are a combination of components that can be added to content-types. 
   - When using dynamic zones, different components cannot have the same field name with different types (or with enumeration fields, different values).
 
 - 🚨 keep in mind that regarding the database, renaming a field means creating a whole new field and deleting the former one. 

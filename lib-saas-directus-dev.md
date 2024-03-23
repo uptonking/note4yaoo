@@ -8,8 +8,8 @@ modified: 2024-02-16T14:55:58.271Z
 # lib-saas-directus-dev
 
 # guide
-- pros
-  - 支持 content versioning
+- pros 支持扩展api和ui
+  - 支持content versioning
     - 数据修改更新的架构采用delta的设计
   - 在admin添加新的data-model时，数据库会创建对应的表，但后端无需生成代码，支持动态访问，相比之下，strapi不支持在生产环境中添加model需要restart
   - Works with new or existing SQL databases, no migration required
@@ -18,8 +18,10 @@ modified: 2024-02-16T14:55:58.271Z
   - 内置数据库表名有统一前缀
   - 支持realtime updates
   - Extensions provide a way to modify or expand Directus' functionality
+  - Sandboxed Extensions 
   - 支持postgis
   - flows
+  - 通知系统
 
 - cons
   - license: GPLv3 > BSL

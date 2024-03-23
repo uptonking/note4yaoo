@@ -260,6 +260,21 @@ modified: 2023-10-26T19:04:00.318Z
 
 - ## 
 
+- ## 
+
+- ## 🧩 Database guarantees durability using WAL, and it is possible due to LSN 
+- https://twitter.com/sunbains/status/1771190591034102129
+  - Databases dump every single operation in WAL before it is applied to the actual data, and the Log Sequence Number (LSN) is a unique identifier associated with each record added to the WAL.
+  - LSNs are monotonically increasing enabling replicas to keep track of the replication. The master node keeps a record of the highest LSN it has written. The difference between the master_lsn and the LSN on the replica helps the database determine the Replication Lag.
+- Thus LSNs are what enable us to achieve and implement three critical features of any durable database, and they are
+  1. recovery from failure and rebuilding in-memory state of the database
+  2. asynchronous replication between master and replica
+  3. point-in-time snapshots by replaying changes from WAL until desired LSN
+
+- You don’t necessarily need a WAL and LSN for replication, they are orthogonal(正交的). 
+  - The idea of a WAL is to first write to the log (the A in WAL) then data files. 
+  - Also, it doesn’t have to be a transaction aware log either. It can simply be a physical log and you can build the transaction log on top of it along with the replication, both synchronous and asynchronous.
+
 - ## Scaling Database: When and How to Shard
 - https://twitter.com/sahnlam/status/1764539121782112444
   - Database sharding refers to splitting data across multiple database servers and is commonly used for scaling. 

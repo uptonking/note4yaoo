@@ -15,6 +15,8 @@ npx create-strapi-app@5.0.0-beta.0 strapi5-app-beta0 --quickstart --ts
 
 - [v5-features](https://docs-next.strapi.io/dev-docs/whats-new)
   - all entries will have uuids
+  - Draft & Publish feature has been fully reworked.
+  - Strapi 5 now use documents and introduces a new Document Service API to replace the Entity Service API from v4
 
 - v5-changes
   - [v4 to v5 breaking changes](https://docs-next.strapi.io/dev-docs/migration/v4-to-v5/breaking-changes)
@@ -107,12 +109,13 @@ npx create-strapi-app@5.0.0-beta.0 strapi5-app-beta0 --quickstart --ts
 
 - 
 - 
+- 
 
 - ## 
 
 - ## 
 
-- ## 🗑️ [chore: remove old plugin generator in favor of plugin:init _20240322](https://github.com/strapi/strapi/pull/19875)
+- ## 🗑️ [chore: remove old plugin generator in favor of `plugin:init` _20240322](https://github.com/strapi/strapi/pull/19875)
 
 - ## [feat: add drag-and-drop to relations _20240315](https://github.com/strapi/strapi/pull/19788)
 
@@ -136,7 +139,7 @@ npx create-strapi-app@5.0.0-beta.0 strapi5-app-beta0 --quickstart --ts
 
 - To look at previous versions of your content.
 
-- ## [feat: list history versions in the history page sidebar _20240206](https://github.com/strapi/strapi/pull/19421)
+- ## ⌛️ [feat: list history versions in the history page sidebar _20240206](https://github.com/strapi/strapi/pull/19421)
 - Displays a list of history versions in the history page sidebar
 
 - [feat(history): add history-version content type _20240125](https://github.com/strapi/strapi/pull/19316)
@@ -156,10 +159,10 @@ npx create-strapi-app@5.0.0-beta.0 strapi5-app-beta0 --quickstart --ts
 - ## [chore(cm): refactor to use redux-toolkit-query](https://github.com/strapi/strapi/pull/19281/files)
   - 从 react-query.v3 迁移到 redux-toolkit-query
 
-- ## [feat: Document Service _202311](https://github.com/strapi/strapi/pull/18558)
+- ## 🚨 [feat: Document Service _202311](https://github.com/strapi/strapi/pull/18558)
 - Implementation of the document service.
 
-- ## [[feat]: feature flags _202311](https://github.com/strapi/strapi/pull/18871)
+- ## ✨ [[feat]: feature flags _202311](https://github.com/strapi/strapi/pull/18871)
 - Introduces a new configuration file: features.(j|t)s. 
   - It's also passed to the admin configuration so future flags can be checked via `window.strapi.future.isEnabled('contentReleases')` .
 - This pull request first appeared in v4.16.0
@@ -168,12 +171,12 @@ npx create-strapi-app@5.0.0-beta.0 strapi5-app-beta0 --quickstart --ts
 - Replaces `strapi.fetch` object with a native `Fetch` wrapper instead of a `node-fetch` wrapper
 - Removes dependency for `node-fetch` throughout strapi
 
-- ## [V5: add Document ID _20231115](https://github.com/strapi/strapi/pull/18303)
+- ## 🆔️ [V5: add Document ID _20231115](https://github.com/strapi/strapi/pull/18303)
 - Adds document id in strapi/strapi; It defaults to a cuid id
 - Doc ID is a hidden and not writtable attribute in CTB and Content Manager
 - Added to reserved names
 
-- ## [TS @strapi/strapi _20230921](https://github.com/strapi/strapi/pull/17960)
+- ## ⤴️ [TS @strapi/strapi _20230921](https://github.com/strapi/strapi/pull/17960)
   - Migrate strapi/strapi to ts
 - [feat: Migrate @strapi/admin server to typescript _202311](https://github.com/strapi/strapi/pull/18232)
 - [chore(admin): convert review workflows page to TS _202312](https://github.com/strapi/strapi/pull/18984)
@@ -184,7 +187,7 @@ npx create-strapi-app@5.0.0-beta.0 strapi5-app-beta0 --quickstart --ts
   - we have started our major development on Strapi v5 and want to try and limit the amount of merge conflicts that we have between the main branch for Strapi v4 and the v5/* branches.
 
 - ## 🗑️ [Axios instance in strapi - Discussions - Strapi Community Forum](https://forum.strapi.io/t/axios-instance-in-strapi/30425)
-- axios instance will be deprecated in v5 use `useFetchClient` instead
+- `axios` instance will be deprecated in v5 use `useFetchClient` instead
 
 - ## ⚖️ [Notice: Requesting community feedback on v5 RFCs_202309](https://github.com/strapi/strapi/issues/17958)
 - When we launched Strapi v4, we released a few RFCs but did not get enough feedback on them back then and there was quite a bit of feedback shared around some of the changes in v4 that we did and for Strapi v5 we are attempting to prevent making that mistake again. 
@@ -214,8 +217,8 @@ npx create-strapi-app@5.0.0-beta.0 strapi5-app-beta0 --quickstart --ts
 
 - ## 
 
-- ## [How to create archive for blog in strapi and nextjs? - Questions and Answers - Strapi Community Forum](https://forum.strapi.io/t/how-to-create-archive-for-blog-in-strapi-and-nextjs/21247/11)
-- ⌛️ the whole reason we need v5 is to build content versioning. We made quite a lot of changes in v4 to try and achieve what we wanted to do but hit some breaking change blockers that required some additional things so it got delayed til v5.
+- ## ⌛️ [How to create archive for blog in strapi and nextjs? _202309](https://forum.strapi.io/t/how-to-create-archive-for-blog-in-strapi-and-nextjs/21247/11)
+- the whole reason we need v5 is to build content versioning. We made quite a lot of changes in v4 to try and achieve what we wanted to do but hit some breaking change blockers that required some additional things so it got delayed til v5.
 
 - ## webpack requires a decent amount of ram to build the react output
 - https://discord.com/channels/811989166782021633/1187470968009011330/1187486143797792818
@@ -266,7 +269,7 @@ npx create-strapi-app@5.0.0-beta.0 strapi5-app-beta0 --quickstart --ts
 
 - ## Apart from maybe breaking compatibility with certain plugins, will the upgrade process to V5 be a fairly seamless transition, or is this going to require a fresh install?
 - https://discord.com/channels/811989166782021633/1095091586452426824/1200565021181214731
-- It should be fairly painless, we demo'ed it in the Janurary call which will be on Youtube soon but the general gist of the migration:
+- It should be fairly painless, we demo'ed it in the January call which will be on Youtube soon but the general gist of the migration:
   - The code changes and all the codemods we can automate will update most of your code automatically 
 - There won't be any data migration scripts you need to run manually like v3 -> v4 since it's now going to be baked right into Strapi 5 and run on boot (it'll detect the state of your database and if it's a v4 or v5)
   - You will not be able to go from Strapi v3 to v5 directly, you have to be on Strapi v4 first. 
@@ -274,7 +277,7 @@ npx create-strapi-app@5.0.0-beta.0 strapi5-app-beta0 --quickstart --ts
 - https://discord.com/channels/811989166782021633/1095091586452426824/1197515666685689856
   - Currently, there are no plans to add new features to the media library for V5.
 
-- ## we are currently heavily focused on the development of Strapi v5_20231118
+- ## we are currently heavily focused on the development of Strapi v5 _20231118
 - https://discord.com/channels/811989166782021633/811989167357689918/1175206357339734137
   - we will effectively be heavily slowing down on v4 feature development will largely focus on v4 stability for the remainder of 2023
   - Our timeline for Strapi v5 stable will be around the end of Q1/beginning of Q2 2024 with several weeks of Alpha/Beta testing

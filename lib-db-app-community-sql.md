@@ -121,6 +121,13 @@ modified: 2023-09-17T17:35:27.024Z
 
 - ## 
 
+- ## 
+
+- ## 👨🏻‍🏫 How Databases Execute SQL Statements?
+- https://twitter.com/sahnlam/status/1771407763517898825
+  - The process of SQL execution in a database involves several components interacting together. 
+  - While the specific architecture can vary between different database systems, the following steps describe a common sequence of operations.
+
 - ## There is currently some fuzz about the performance of  subqueries vs with clause.
 - https://twitter.com/SQLPerfTips/status/1770139458265850351
 

@@ -386,6 +386,12 @@ modified: 2021-01-01T20:11:00.889Z
 
 - ## 
 
+- ## 
+
+- ## Did you know that WebKit is still the only browser engine to ship CSS JIT? 
+- https://twitter.com/rniwa_dev/status/1771310225892753783
+  - It has been ten years since we first introduced this pinnacle of innovation.
+
 - ## 🍎 [如何看待 iOS 应用在欧盟范围内可以使用非 WebKit 作为浏览器内核? - 知乎](https://www.zhihu.com/question/641302656)
 - 苹果的 App Store 审核指南里一直有这么一条规则， 也就是在 iOS 里要开发一个浏览器或者任何带浏览网页功能的 APP，必须要用苹果自己的 `WKWebView` 这个类来实现。
   - 苹果声称这个限制的原因是其它引擎存在安全和性能风险，而只有 WebKit 对 iPhone 用户来说是真正优化和安全的

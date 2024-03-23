@@ -28,7 +28,7 @@ modified: 2023-12-15T19:30:23.094Z
   - the leading open-source headless CMS
   - 核心功能是提供了通过ui操作实现rest api的功能，系统前端没有限制，strapi只提供了api
   - 后端依赖koa、knex、umzug、commander、passport-local、node-schedule、casl
-  - 前端依赖@reduxjs/toolkit、immer、slate、markdown-it、codemirror5、formik、react-dnd、react-window、sift、vite、esbuild
+  - 前端依赖@reduxjs/toolkit、immer、slate、markdown-it、codemirror5、formik、react-dnd、react-window、sift、vite、react-intl
   - The original purpose of the project was to help Bootstrap your API
   - Now, Strapi is an open-source headless CMS that gives developers the freedom to choose their favorite tools and frameworks and allows editors to manage and distribute their content using their application's admin panel.
 
@@ -83,6 +83,8 @@ modified: 2023-12-15T19:30:23.094Z
   - https://strapi-sdk-js.netlify.app/
   - Javascript SDK for your Strapi API
   - Simplified request responses
+  - https://github.com/strapi/strapi-sdk-javascript /201910/archived
+    - We stopped to maintained it because the features provided by this SDK are the same as a good HTTP client well configured
 
 - https://github.com/Prototypr/prototypr-frontend /202401/js
   - https://prototypr.io/
@@ -1019,6 +1021,7 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/skynettechnologies/strapi-plugin-all-in-one-accessibility /202402/js
   - https://www.skynettechnologies.com/all-in-one-accessibility
   - Website accessibility widget for improving WCAG 2.0, 2.1, 2.2 and ADA compliance!
+
 ## themes
 
 - https://github.com/ShahriarKh/strapi-admin-tailwind-theme /202308/js/inactive
@@ -1335,7 +1338,6 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/shahednasser/strapi-react-native /202202/js
   - Code for Create a Notes App with Strapi and React Native
 # utils
-
 - https://github.com/Kazdan1994/strapi-custom-register-endpoint /202312/js
   - You can overwrite strapi register and / or login endpoint
   - https://github.com/PaulBratslavsky/strapi-register-and-get-github-repos
