@@ -214,7 +214,14 @@ modified: 2023-03-05T08:55:03.696Z
 
 - ## 
 
-- ## 
+- ## can’t believe i’m becoming a use the platform/standards guy.
+- https://twitter.com/thdxr/status/1771536372412604924
+  - but please lookup cache control headers, particularly stale white revalidate 
+  - they’re so powerful and can eliminate a ton of complexity that you think you need specialized solutions for
+- A few years ago, when first hyping Remix, @ryanflorence made a good video explaining these headers. It’s pretty long though
+- swr works great in browsers because humans are slow and forgiving... if something needs to reload or data changes they mostly roll with it. sadly, caching on the backend is a lot less forgiving
+- Now we just need to bully Safari into supporting stale-while-revalidate
+  - [headers HTTP header: Cache-Control: `stale-while-revalidate` ](https://caniuse.com/mdn-http_headers_cache-control_stale-while-revalidate)
 
 - ## 🤼🏻 react-query doesn't do data-fetching - it's an async state manager based on promises, so you don't need to copy data from react-query into another state manager.
 - https://twitter.com/TkDodo/status/1762544165211050236

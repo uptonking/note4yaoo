@@ -21,7 +21,11 @@ modified: 2024-03-20T15:11:37.860Z
 
 - resources
   - 👷🏻 [Strapi contributor documentation | Doc](https://contributor.strapi.io/)
+# not-yet
+- 表的关系是如何实现的
 # overview
+- 整体是函数式风格，少量class风格
+
 - init启动流程
   - npm run strapi develop
   - `new Strapi()`; 
@@ -40,7 +44,7 @@ modified: 2024-03-20T15:11:37.860Z
     - this.store = createCoreStore({ db: this.db })
     - 💡 this.entityService = createEntityService
     - this.documents = createDocumentService
-    - await this.db.schema.sync();
+    - `this.db.schema.sync();` // 重启时会同步模型层变化
     - this.server.initMiddlewares();
     - this.server.initRouting();
     - await this.contentAPI.permissions.registerActions();
@@ -58,7 +62,6 @@ modified: 2024-03-20T15:11:37.860Z
   - listeners(Map) 用于存储带name的事件
   - subscribers(Array) 用于存储全局事件，每次emit都会执行，可不带名称
 
-- 
 - 
 - 
 - 

@@ -12,11 +12,16 @@ modified: 2023-12-15T16:51:49.971Z
 - pros
   - open source with AGPLv3
   - 支持已有数据库，不需要import data
+  - app store支持在线安装discord/mail
+  - 支持拖拽自动填充单元格
+  - 支持cell级别的comment
 
 - cons
-  - ?
+  - 不支持拖拽调整row顺序和拖拽row内容，但支持拖拽调整column顺序
+  - 不支持在任意位置插入row, 支持在某一列前后插入列
 
 - features
+  - 表格默认处于编辑状态
   - Multiple Views Types: Grid (By default), Gallery, Form View and Kanban View
   - View Permissions Types: Collaborative Views & Locked Views
   - Access Control with Roles : Fine-grained Access Control at different levels

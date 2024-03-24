@@ -194,10 +194,10 @@ modified: 2023-11-24T18:41:26.906Z
   - simple JavaScript library provides a history for undo/redo functionality
   - 示例用的textarea，一次undo会删除多个文字
 
-- https://github.com/JannicBeck/undox /202103/ts
+- https://github.com/JannicBeck/undox /202103/ts/inactive
   - Redux Implementation of Undo/Redo based on storing actions instead of states.
   - Actions are stored in an array named history. 
-  - The most popular and used library to add undo/redo functionality to redux is without a doubt redux-undo. It stores whole states instead of actions. This is great for small states and fat actions, but does not scale well if the state tree grows and especially if state is persisted.
+  - 🐛🆚️ The most popular and used library to add undo/redo functionality to redux is without a doubt redux-undo. It stores whole states instead of actions. This is great for small states and fat actions, but does not scale well if the state tree grows and especially if state is persisted.
   - It really just boils down to if your state is fat and your actions are thin or your state is thin and your actions are fat.
 - https://github.com/omnidan/redux-undo /202001/js
   - higher order reducer to add undo/redo functionality to redux state containers

@@ -77,8 +77,10 @@ modified: 2023-11-18T09:48:30.897Z
   - 缺点是每次保存全量数据可能导致性能问题和空间浪费，多人协作时不方便撤销他人的中间op
 # elm-dev
 
+# hyperapp-dev
+- undo/redo因为action是fn实现较麻烦
+- 实现undo可参考devtools https://github.com/mrozbarry/hyperapp-debug
 # [changelog-elm](https://elm-lang.org/news)
-
 - v0.19_201808
   - 🚨 Removal of custom operators and native modules
   - Smaller assets, faster builds

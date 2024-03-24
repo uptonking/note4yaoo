@@ -54,6 +54,15 @@ modified: 2021-07-29T11:15:44.100Z
 
 - ## 
 
+- ## 📏 fun fact: while chrome URL limit is 2, 083 characters the hash part of URL is not limited by this number, that's why I was able to put 100kb of code into typescript playground
+- https://twitter.com/JLarky/status/1771603877676142666
+  -  set your querystring to a buncha zeroes and send it to a willing httpd
+- Yeah we use the same trick in sveltelab to get a whole repo in the url. I think it's not actually chrome the problem but rather the server receiving the url. Since the hash is not sent you can write whatever in it
+- nope, Chrome's URL limit is absolutely not 2083 bytes — you're probably seeing a limit enforced by your `httpd` (which of course wouldn't include the hash) 
+  - set your httpd to have unlimited request length and you can easily see Chrome put 100kb on the wire
+  - set your querystring to a buncha zeroes and send it to a willing httpd
+- Move away blockchain, new distributed database is on the way.
+
 - ## new APIs to help make scroll-snap and overflow areas more feature rich and easier to work with:
 - https://twitter.com/argyleink/status/1771320680417816818  
   - Experimental feature (from Canary) 

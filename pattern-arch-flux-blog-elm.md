@@ -16,6 +16,7 @@ modified: 2023-11-21T10:18:24.650Z
 - not-yet
   - 是否支持 partial render，不用全量生成vdom(memo是否支持此功能)
   - subscription是否要在初始化时全部注册，不能动态添加新订阅
+  - undo/redo因为action是fn实现较麻烦
 
 - action的返回值默认是newState
 - action的返回值可以是 `[newState, effecterFn]` `[newState, [effecterFn,options]]`

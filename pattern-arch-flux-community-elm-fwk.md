@@ -23,8 +23,6 @@ modified: 2023-11-22T17:27:51.371Z
 
 - ## 
 
-- ## 
-
 - ## Is there a best practice for integrating Hyperapp with a library like d3 that maintains its own, mutable state? 
 - https://discord.com/channels/804672552348680192/804672553095528470/1207164676388028506
   - I'm trying to build a layout like this, rendered by hyperapp
@@ -41,12 +39,18 @@ modified: 2023-11-22T17:27:51.371Z
 - Unlike React, etc. where all you've got are declarative views and suit-yourself & good luck imperative code, Hyperapp brings you declarative effects, subscriptions, actions and views. That's Hyperapp's value proposition—everything is declarative, not just one piece of the pie
   - The benefit is in how you can create an entire app based on functional principles, using 99.99% pure & immutable code.
 
-- ## Is time-travel/serializing actions possible to implement in hyperapp?_202103
+- ## ⌛️ Is time-travel/serializing actions possible to implement in hyperapp?_20210311
 - https://discord.com/channels/804672552348680192/805935640318705744/819411360424919060
+  - I remember there was something available for hyperapp 1.x but I think that relied on the fact that all of hyperapp 1.x actions were in an object, in 2.x everything is "decentralized" - actions are just functions. So there must be a way to centralize the actions, in order to "replay" them after they've been serialized...
 - I was tinkering with some approaches to time-travel. I think the most straightforward way is probably to use immutable state and push changes to an array. That way, each state uses "structural sharing" and only updates references to changed values. Immer was helpful, but maybe it can be done with vanilla JS? Not sure.
 - we've been experimenting with JSON Patches that describe which paths/values changed. Immer supports patches out of the box.
   - JSON Patch is handy for implementing proper undo using inverse patches. That way you can grab a specific change and restore the previous value(s).
 - https://github.com/mrozbarry/hyperapp-debug I think this might be already outdated, but it shows you how you'd basically add time traveling and similar stuff
+  - V2 definitely makes this easier than V1.
+
+- ## ⌛️ [V2 Middleware API _201808](https://github.com/jorgebucaran/hyperapp/issues/753)
+- I think it's fine to use middleware for production. This is an old discussion, though, so the info is outdated. 
+  - The current middleware signature is: `const middleware = dispatch => /* newDispatch */`
 
 - ## 🤔🏘️ Hyperapp looks like a sane version of Elm. Are there any common practices on how to organize a multi-page SPA in Hyperapp? _202205
 - https://discord.com/channels/804672552348680192/804672553095528470/973843076533600336
@@ -110,7 +114,7 @@ modified: 2023-11-22T17:27:51.371Z
 
 - ## 🚀 [Show HN: HyperApp – 1k JavaScript framework for building web applications | Hacker News _201805](https://news.ycombinator.com/item?id=17126670)
 
-- If you're interesting in a reactive template library that doesn't require a compiler for non-standard JavaScript syntax, check out a library I've been working on for a little while now,     `lit-html`.
+- If you're interesting in a reactive template library that doesn't require a compiler for non-standard JavaScript syntax, check out a library I've been working on for a little while now,       `lit-html`.
   - lit-html uses `<template>`s and cloning, so that it doesn't have to do any expensive VDOM diffs.
 - So… it's not doing reconciliations and is just replacing the entire tree on every render, losing things like cursor position and forcing the browser to re-render and re-layout the entire thing?
   - No, not at all. It marks the places in the DOM that can change and on updates only changes those.

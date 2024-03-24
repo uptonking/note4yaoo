@@ -9,29 +9,42 @@ modified: 2024-02-16T14:55:58.271Z
 
 # guide
 - pros 支持扩展api和ui
-  - 支持content versioning
+  - ⌛️ 支持content versioning
     - 数据修改更新的架构采用delta的设计
+    - 提供了用户所有的操作log, activity feed
   - 在admin添加新的data-model时，数据库会创建对应的表，但后端无需生成代码，支持动态访问，相比之下，strapi不支持在生产环境中添加model需要restart
-  - Works with new or existing SQL databases, no migration required
-  - plug-and-play, so you're free to link or remove it anytime, with zero impact on your data
-  - 强大的权限系统，支持per-field和conditional
+  - 🛢️ Works with new or existing SQL databases, no migration required
+    - plug-and-play, so you're free to link or remove it anytime, with zero impact on your data
   - 内置数据库表名有统一前缀
+  - 强大的权限系统，支持per-field
+  - 表格支持conditional-fields
   - 支持realtime updates
-  - Extensions provide a way to modify or expand Directus' functionality
-  - Sandboxed Extensions 
+  - 🔌 Extensions provide a way to modify or expand Directus' functionality
+  - Sandboxed Extensions
   - 支持postgis
-  - flows
+  - 〰️ flows
+  - 🎛️ insights/dashboard
+  - 用户管理
   - 通知系统
 
-- cons
+- cons 定位不明确 cms vs app
   - license: GPLv3 > BSL
+  - auth实现复杂，token包括jwt/session/static三种
+  - 📈 表格不支持拖拽调整row顺序，但支持拖拽调整column顺序
+    - 不支持在任意位置插入row, 支持在设置而不是表格中添加列和调整列顺序
+    - 支持拖拽调整列宽度
   - content的视图无法保存，不能实现类似notion database切换多种视图
+  - 开发ext实现热加载比较麻烦
 
 - features
   - 核心模块: content, user, files, flows, insights/dashboard
+  - 表格默认处于查看状态
   - built with vue3
   - instant REST+GraphQL API on top of any SQL database
   - Our no-code Vue.js app is intuitive for non-technical users
+# draft
+- collections
+  - 优化方案，修改schema时数据库层数据操作可能过多，可采用冷热模式，冷模式即目前的方案直接修改schema，热模式会先修改中间表或内存然后等一段时间再持久化同步到db
 # dev-xp
 
 ```shell

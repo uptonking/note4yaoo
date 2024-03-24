@@ -11,9 +11,9 @@ modified: 2023-12-15T16:51:56.101Z
 
 - pros 支持扩展api和ui
   - MIT; features-rich; good documentation/community
-  - plugin-system and marketplace
-  - draft & publish
-  - rbac is free for 3 roles
+  - plugin-system and marketplace, 插件架构很彻底, 如ctb/cm
+  - draft & publish, 不支持多个draft-version(directus支持)
+  - rbac is free for 3 roles，权限功能强大
   - media library and providers
   - i18n
   - future flags
@@ -33,6 +33,9 @@ modified: 2023-12-15T16:51:56.101Z
     - there is currently no plans to move model settings into the database. 
     - There are no known nor recommended workarounds for this.
   - It doesn't namespace its admin table
+  - 📈 表格不支持拖拽调整row顺序和column顺序，但支持设置调整列顺序
+    - 不支持在任意位置插入row, 支持在设置而不是表格中添加列和调整列顺序
+    - 不支持拖拽调整列宽度
   - cannot store Content Manager layout configurations in the model settings. 因为未来移动版的layout可能不同，保存后如何恢复
   - 不支持多种第三方登录
   - rbac功能默认需要内置的10张表，复杂度高，难以迁移离开
@@ -46,6 +49,7 @@ modified: 2023-12-15T16:51:56.101Z
 - features
   - 核心模块: content-mgr, content-type-builder, media-lib, roles-permissions
   - Self-hosted or Cloud
+  - compose fields: component/dynamic-zone
   - Modern Admin Pane
   - Multi-database support: PostgreSQL, MySQL, SQLite
   - Customizable: fully customizing APIs, routes, or plugins
@@ -144,6 +148,12 @@ modified: 2023-12-15T16:51:56.101Z
   - author只能输入数据，不能查看其他人的数据，数据处于draft状态但不能publish
   - editor可以查看其他人的数据，可以publish
 
+- ❓ 不支持查询所有现有的content-types; 似乎有折中方案
+  - 待确认，因为content-type-builder可显示所有collection-types，需要分析请求的接口
+
+- 
+- 
+- 
 - 
 - 
 - 

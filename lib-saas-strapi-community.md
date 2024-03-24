@@ -241,6 +241,21 @@ modified: 2023-12-15T17:04:36.589Z
 
 - ## 
 
+- ## 💡 [How to query collections from custom plugin in strapi? - Questions and Answers - Strapi Community Forum](https://forum.strapi.io/t/how-to-query-collections-from-custom-plugin-in-strapi/11699)
+- In the backend of your plugin you can use the global `strapi.contentTypes` variable to fetch all Single and Collection types.
+- I find in Roles of Setting has: `/content-manager/collection-types/:model`.
+- 
+- 
+
+- ## 💡 [Is it possible to query the Collection-Types of strapi - Stack Overflow _202208](https://stackoverflow.com/questions/73304791/is-it-possible-to-query-the-collection-types-of-strapi)
+
+- Well there does not seem to be a native way of doing this. But some hacky solution could be to fetch all existing types and filter them somehow.
+  - every type that contains the phrase `EntityResponseCollection` is possibly a collection type. Exclude plugin related types and file collection types and you should be able to get all your content types.
+  - Not very elegant but does the job.
+
+- I didn't have any luck. We ended up building our own solution with React instead of using Strapi.
+
+
 - ## [Why are dynamic zones automatically array fields? : r/Strapi _202301](https://www.reddit.com/r/Strapi/comments/10jtmsa/why_are_dynamic_zones_automatically_array_fields/)
 - You probably don't need a "dynamic zone" if you don't want an array. 
   - You can still transform your array into a custom object after fetching it, if you really need that

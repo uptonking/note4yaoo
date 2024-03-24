@@ -15,6 +15,17 @@ modified: 2021-08-10T03:51:01.891Z
 
 - ## 
 
+- ## 
+
+- ## 📏 fun fact: while chrome URL limit is 2, 083 characters the hash part of URL is not limited by this number, that's why I was able to put 100kb of code into typescript playground
+- https://twitter.com/JLarky/status/1771603877676142666
+  -  set your querystring to a buncha zeroes and send it to a willing httpd
+- Yeah we use the same trick in sveltelab to get a whole repo in the url. I think it's not actually chrome the problem but rather the server receiving the url. Since the hash is not sent you can write whatever in it
+- nope, Chrome's URL limit is absolutely not 2083 bytes — you're probably seeing a limit enforced by your `httpd` (which of course wouldn't include the hash) 
+  - set your httpd to have unlimited request length and you can easily see Chrome put 100kb on the wire
+  - set your querystring to a buncha zeroes and send it to a willing httpd
+- Move away blockchain, new distributed database is on the way.
+
 - ## The devil hides in long "Utils" classes.
 - https://twitter.com/RaulJuncoV/status/1768623548703060460
 1. Add your Tests before touching anything
@@ -26,17 +37,17 @@ modified: 2021-08-10T03:51:01.891Z
 Methods that operate on the same data should be within the same class.
 Group data and behavior.
 
-3. Struggling with finding a name means something (SRP)
+1. Struggling with finding a name means something (SRP)
 If you struggle to find a name for a function or a class, you will likely need to split.
 Every class should have only one reason to change and do one job.
 If you find a class doing too much, it's time to break it down into more focused classes.
 
-4. Encapsulation Through Composition
+1. Encapsulation Through Composition
 Prefer composition over inheritance where practical.
 Use objects to represent behaviors or states you can compose into your classes rather than extending them through inheritance.
 Use composition over inheritance to create flexible and loosely coupled systems.
 
-5. Validate Input at Public Interfaces
+1. Validate Input at Public Interfaces
 When your methods need to accept input from other parts of your code, don't just trust that the input is correct.
 Validate it to ensure it meets the method's requirements.
 
@@ -133,7 +144,8 @@ Validate it to ensure it meets the method's requirements.
 
 - ## 
 
-- ## 
+- ## insert commas into your password so when your credentials are dumped into a csv, it breaks
+- https://twitter.com/WasteCleaner/status/1771517463752032712
 
 - ## 🆚️ In many programming languages, there are two ways of a specifying a sort: a comparator function, and a sort key.
 - https://twitter.com/julianhyde/status/1765135622451368386

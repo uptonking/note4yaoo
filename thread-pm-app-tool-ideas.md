@@ -117,6 +117,9 @@ modified: 2022-11-07T10:58:24.512Z
 - links
   - 外链，显示链接或简化版文字可减少干扰，减少用户离开；支持付费自定义card样式
 
+- open-graph
+  - http://ogstudio.app, to dynamically generate Open Graph images with custom texts
+
 - 内容页面都可公开访问，但页面中部分敏感数据或结论默认是隐藏或付费可见
   - 敏感内容不会被seo或泄露，但普通内容可正常访问
 

@@ -268,7 +268,12 @@ modified: 2024-02-16T14:56:17.057Z
 
 - ## 
 
-- ## 
+- ## [Collection folders as route _202209](https://github.com/directus/directus/discussions/15772)
+- I think one "roadblock" for this structure is it's not possible to have 2 collections (or more precisely, 2 database tables) of the same name, as your example would require 2 articles tables and 2 news tables.
+  - It should technically be possible to create a custom endpoint extension to do `/:folder/:collection` (eg. /app1/articles1, /app2/articles2) for a structure such as this
+  - but then it would be more straightforward to use /items/articles1 and /items/articles2 instead.
+
+- Perhaps an alternative structure would be to create an "app" collection (for app1 and `app2), and create relationships between the app collection to articles and news, so that it will be much easier to filter the results based on the app.
 
 - ## 🚀 [Show HN: Directus – Free and Open-Source Headless CMS | Hacker News _201609](https://news.ycombinator.com/item?id=12496964)
 - 🆚️ What is the difference with for example Active Admin (for Ruby on Rails)?

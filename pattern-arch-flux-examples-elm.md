@@ -13,6 +13,7 @@ modified: 2023-11-21T10:17:34.596Z
   - popular-elm: elmish, hyperapp, hydux, raj, apprun
 
 - fans-hyperapp
+  - https://github.com/mrozbarry/hyperapp-router
   - https://github.com/zaceno/hyperlit
 
 - resources
@@ -298,7 +299,7 @@ modified: 2023-11-21T10:17:34.596Z
     - I designed this part of the API looking at Elm.
 - https://github.com/shish/hyperapp-navigation /202211/ts
   - A polished version of the abandoned @hyperapp/navigation
-- https://github.com/mrozbarry/hyperapp-router /202102/js
+- https://github.com/mrozbarry/hyperapp-router /202102/js/inactive/实现简单
   - modern router for hyperapp
 - https://github.com/jrop/hyperapp-routes /201707/ts
   - A router that supports both hash-based and history-API-based routing
@@ -331,7 +332,6 @@ modified: 2023-11-21T10:17:34.596Z
 - https://github.com/okwolf/hyperapp-fx /MIT/202202/js/inactive
   - A handy set of effects for use with Hyperapp.
 
-
 - https://github.com/loteoo/hyperstatic /MIT/202105/ts/inactive
   - https://github.com/loteoo/hyperstatic-starter
   - a small navigation layer on top of hyperapp that helps create fast and SEO friendly static sites
@@ -339,7 +339,6 @@ modified: 2023-11-21T10:17:34.596Z
   - It's TypeScript codebase has an inherently small footprint by using Puppeteer for pre-rendering and dynamic imports for code-splitting.
   - [Router implementation alternatives](https://github.com/loteoo/hyperstatic/issues/12)
     - The current implementation of the router (depending on parsing the current DOM into virtual nodes) seems like not very good practice and is definitely not declarative
-
 
 - https://github.com/okwolf/react-hyperapp /201803/js
   - Hyperapp as a React component
@@ -409,6 +408,12 @@ modified: 2023-11-21T10:17:34.596Z
 
 - https://github.com/sergey-shpak/hyperapp-middlewares /202105/js
   - Frequently used hyperapp#2 middlewares
+
+- https://github.com/mrozbarry/hyperapp-debug /202001/js/inactive
+  - A debugger for your Hyperapp applications
+  - It is a tool similar to redux-dev-tools or vue-dev-tools
+  - If you are debugging Hyperapp V1 applications, check out the legacy debugger.
+  - [Migrate to V2 _201909](https://github.com/mrozbarry/hyperapp-debug/pull/6)
 # elm-react
 - https://github.com/acdlite/realm /201601/js
   - A total rip-off(仿冒品; 抄袭之作) of the Elm Architecture, in React.

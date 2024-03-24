@@ -328,6 +328,12 @@ betterdiscordctl -i flatpak install
 
 ## 032
 
+## 0324
+
+```JS
+import * as TOML from 'https://jspm.dev/@ltd/j-toml@1.29';
+```
+
 ## 0323
 
 - [Using the Compiler API · microsoft/TypeScript Wiki](https://github.com/Microsoft/TypeScript/wiki/Using-the-Compiler-API)

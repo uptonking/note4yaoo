@@ -27,6 +27,8 @@ modified: 2023-12-15T16:52:36.718Z
 
 - we utilize future flags, which provide a way to enable unstable features at your own risk
 
+- 🔒 plugin uses JWTs to authenticate users
+
 - 
 - 
 - 
@@ -130,6 +132,8 @@ modified: 2023-12-15T16:52:36.718Z
 - To avoid performance issues, bulk operations are not allowed on relations.
 
 ## plugins
+
+- plugin uses JWTs to authenticate users
 
 - your experience with Strapi plugins will fall under the following 4 use cases:
   - Some built-in plugins can already be pre-installed 

@@ -34,7 +34,10 @@ modified: 2021-05-18T19:33:51.768Z
 
 - ## 
 
-- ## 
+- ## 弱协议+ 模版化，最终ai友好出码。外加各种工具，应用开发真的越来越简单了。反过来，你节省的时间用来干嘛了呢?
+- https://twitter.com/i5ting/status/1771729198933024857
+- 对于独立开发来说, 错误示范：继续做新功能, 正确示范：疯狂运营搞增长
+- UI、编码这一类型都能交给AI来实现的话，独立开发的核心能力哪些是AI还没能替代的? 运营这类型也是能交给AI来处理，更重要是挖掘需求，将其解决方案抽象出来，实现产品化的能力
 
 - ## 💡🕸️ Perceptron, the simplest Neural Network. I explain how it works.
 - https://twitter.com/levikul09/status/1768581694800740836

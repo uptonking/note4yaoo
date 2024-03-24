@@ -355,7 +355,7 @@ modified: 2020-12-28T12:24:09.275Z
   - 后端依赖express、passport、pg、socket.io
   - 前端采用script标签导入，依赖ckeditor4、codemirror5、jquery、jsgrid、tabulator、bootstrap4
 
-- illa-builder /2.7kStar/apache2/202212/ts/go
+- illa-builder /10.5kStar/apache2/202403/ts/go
   - https://github.com/illacloud/illa-builder
   - https://www.illacloud.com/
   - https://fast-try.illacloud.com/

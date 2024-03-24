@@ -26,8 +26,9 @@ modified: 2024-03-14T13:51:11.429Z
   - https://github.com/directus/directus
   - https://directus.io/
   - https://docs.directus.io/
+  - http://0.0.0.0:8055/admin
   - Directus is an instant REST+GraphQL API and intuitive no-code data collaboration app for any SQL database
-  - 后端依赖express、knex、async、commander、graphql、ioredis、keyv、marked、micromustache、eventemitter2、node-cron、rate-limiter-flexible、sharp、vm2、ws
+  - 后端依赖express、knex、ioredis、keyv、async(很少用)、commander、graphql、marked、micromustache、eventemitter2、node-cron、rate-limiter-flexible、sharp、vm2、ws
   - 前端依赖vue3、pinia2、vueuse、vuedraggable、editorjs、tinymce.v6、tinymce-vue.v5、fullcalendar、p-queue、apexcharts、codemirror.v5、cropperjs(img)、maplibre-gl、marked、mitt、histoire
   - 涉及graphql的代码不多，可以尝试移除
   - 在admin添加新的data-model时，数据库会创建对应的表

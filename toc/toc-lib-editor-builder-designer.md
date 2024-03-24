@@ -64,6 +64,11 @@ modified: 2020-11-17T13:38:19.107Z
   - 依赖lexical-editor、radix-ui、stitches、remix-auth、downshift
   - [Change license from MIT to AGPL V3_202307](https://github.com/webstudio-is/webstudio/pull/1980)
 
+- https://github.com/QuiiBz/ogstudio /MIT/202403/ts
+  - https://ogstudio.app/
+  - Figma-like OG (Open Graph) Image builder
+  - 依赖drizzle-orm、libsql、nextjs、lucia-auth、vercel/kv、tanstack-query、dnd-kit、zustand
+
 - https://github.com/plantain-00/schema-based-json-editor
   - https://plantain-00.github.io/schema-based-json-editor/packages/react/demo/
   - A reactjs and vuejs component of schema based json editor.

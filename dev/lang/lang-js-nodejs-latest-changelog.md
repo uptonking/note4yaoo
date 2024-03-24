@@ -83,12 +83,33 @@ modified: 2022-12-31T20:13:33.307Z
 
 ## v18.0.0_20220418
 
-- ✨ Global `fetch` enable by default, inspired by node-fetch
-- Core `test` runner module to write the unit tests and report results in Test Anything Protocol (TAP) format. 
-- experimental JSON Import Assertions
-- experimental Web Streams API
-- global Blob, BroadcastChannel
-- server.headersTimeout/requestTimeout
+- v18.18.0_20230918
+  - deps: upgrade to libuv 1.46.0
+  - deps: add missing thread-common.c in uv.gyp
+  - esm: add --import flag
+  - events: allow safely adding listener to abortSignal 
+  - fs, stream: initial Symbol.dispose and Symbol.asyncDispose support
+  - net: add autoSelectFamily global getter and setter
+  - child_process: use addAbortListener 
+
+- v18.17.0_20230718
+  - comes with the latest version of the URL parser, Ada
+  - Web Crypto API functions' arguments are now coerced and validated as per their WebIDL definitions 
+    - This further improves interoperability with other implementations of Web Crypto API.
+  - fs: add recursive option to readdir and opendir
+  - fs: implement byob mode for readableWebStream()
+  - http: add `highWaterMark` opt in http.createServer
+  - implement AbortSignal.any() 
+  - add webstreams to Duplex.from() 
+  - no longer require flag to enable `wasi`
+
+- v18.0.0_20220418
+  - ✨ Global `fetch` enable by default, inspired by node-fetch
+  - Core `test` runner module to write the unit tests and report results in Test Anything Protocol (TAP) format. 
+  - experimental JSON Import Assertions
+  - experimental Web Streams API
+  - global Blob, BroadcastChannel
+  - server.headersTimeout/requestTimeout
 
 - v17.5.0
   - importing a JSON file is possible using Import Assertions

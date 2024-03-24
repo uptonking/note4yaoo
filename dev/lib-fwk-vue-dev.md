@@ -63,6 +63,17 @@ modified: 2021-01-04T19:34:22.729Z
 - ## [Is there a library like Preact for React, but for Vue? : vuejs](https://www.reddit.com/r/vuejs/comments/pp4o1s/is_there_a_library_like_preact_for_react_but_for/)
 - Not a direct comparison but this exists: https://github.com/vuejs/petite-vue
 
+# discuss-nuxt
+- ## 
+
+- ## 
+
+- ## [What are some large-scale Nuxt 3 open-source projects : r/Nuxt _202401](https://www.reddit.com/r/Nuxt/comments/1af9aok/what_are_some_largescale_nuxt_3_opensource/)
+- Elk is a Mastodon client that has a lot of notable contributors.
+- NocoDB
+- agency-os is a fairly robust template project using Nuxt on the frontend + Directus on the backend
+- uninbox is growing to be quite an app
+
 # discuss
 - ## 
 

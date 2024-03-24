@@ -18,9 +18,24 @@ modified: 2024-03-02T13:33:54.693Z
 
 ## [v10.0.0_20230427](https://github.com/directus/directus/releases/tag/v10.0.0)
 
+- [v10.10.0_20240306](https://github.com/directus/directus/releases/tag/v10.10.0)
+  - Integrated the Content Version in the browser URL / history to enable browser navigation and page refresh
+  - Starting with 10.10.0, when requesting Item Content Versions via the API, nested relational changes to one-to-many are resolved rather than returned as a raw changes object
+    - The change makes the output for a versioned record match the format of the Main record more closely, which then natively supports other features like Live Preview.
+  - 🔒 Implemented Session Based Authentication
+    - For improved security and ease of use we have implemented session based authentication and have updated the App to use this method over the previous token based authentication. 
+    - To keep using the previous SSO behavior setting the refresh token instead of session token for use in external applications, you can set `AUTH_<PROVIDER>_MODE=cookie`
+  - Add the Directus Marketplace
+  - 🗑️ Legacy extension type directory-based structure (`/interfaces/my-interface/, /endpoints/my-endpoint`, etc) are being removed in favor of relying on the `package.json` file for metadata including extension type.
+    - Directus will ignore extensions that use the legacy format
+  - Migrations are no longer considered an extension type
+  - Email Templates are no longer considered an extension type
+
 - v10.9.0_20240207
   - Enabled theme override permissions to be set on a per role basis 
   - Added enable/disable support for bundle type extensions
+  - Dropped Support for Asynchronous Logic In JS Config Files
+  - The sort order of fields and relations inside schema snapshots has been changed to their original creation order. 
 
 - v10.8.0_20231117
   - Added theme-selector interface to settings and users
@@ -29,7 +44,7 @@ modified: 2024-03-02T13:33:54.693Z
   - Renamed the type `ExtensionItem` to `DirectusExtension`, allowed extending the type with custom fields
 
 - v10.7.0_20231023
-  - ✨🌵 Add support for Content Versioning
+  - ⌛️ Add support for Content Versioning
   - Allow enabling/disabling extensions through app and api 
   - Added a new section to settings that lists all the installed extensions
   - Added support for the optional sandbox flag in API extensions 
@@ -60,16 +75,16 @@ modified: 2024-03-02T13:33:54.693Z
   - Added live preview functionality to the Data Studio App to easily and instantly track the impact of item changes on web pages
 
 - v10.1.0
-  - ✨ Added Kanban layout
+  - 🪟 Added Kanban layout
     - [Move in kanban layout exclusive extension _20230510](https://github.com/directus/directus/pull/18516)
-  - ✨ Added block editor interface
+  - 📝 Added block editor interface
     - [Move in block editor exclusive extension _20230512](https://github.com/directus/directus/pull/18525)
     - 基于editorjs实现
     - This first iteration is going to be just the "regular" JSON structure. That being said, we are about to dive into improving the M2A builder and potentially also creating an editorjs-type setup that works with that data model 
   - Added Pressure-based rate limiter
   - Added support for building API extensions to ESM format and default to ESM for new extensions 
 
-- In v10.0.0, Directus is adopting BSL 1.1 
+- 💰 In v10.0.0, Directus is adopting BSL 1.1 
   - All Directus source code will still be open and available on GitHub
   - Non-production use of Directus is still completely free for everyone
   - Production use of Directus is still completely free for nearly all users

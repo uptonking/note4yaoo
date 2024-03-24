@@ -73,27 +73,27 @@ modified: 2022-08-21T10:02:05.129Z
   - https://github.com/undb-xyz/undb
   - https://www.undb.xyz/
   - https://docs.undb.xyz/
+  - http://localhost:3000/
   - Private first, unified, self-hosted no code database.
   - Open-source Airtable alternative
   - 可在redux-devtools中查看数据结构
   - 前端依赖 tanstack-table、dnd-kit、redux-toolkit、emotion、@loadable/component、jotai、react-hook-form、trpc
   - 后端依赖 @nestjs/cqrs、@mikro-orm/better-sqlite、@mikro-orm/better-sqlite、undb-core、passport-local
-  - 示例使用sqlite，基于@nest/cqrs实现
+  - db仅支持sqlite，基于@nest/cqrs实现
   - 用户在界面上创建表时，数据库层也会添加一张新表
   - [feature/frontend next_20230503(v0.3), 前端迁移到svelte](https://github.com/undb-xyz/undb/pull/908)
     - 41fa03d9bfbc9b5072266ad94c9532ccdcf25a68
 
-- nocodb /33kStar/AGPLv3/202212/ts/nuxt-vue/参考后端/多视图
+- nocodb /41.5kStar/AGPLv3/202403/ts/nuxt-vue/参考后端/多视图
   - https://github.com/nocodb/nocodb
   - https://nocodb.com/
-  - [Development Setup](https://docs.nocodb.com/engineering/development-setup/)
   - The Open Source Airtable Alternative
   - Turns any MySQL, PostgreSQL, SQL Server, SQLite & MariaDB into a smart-spreadsheet
   - 后端依赖 express、knex、ioredis、passport、request
   - 前端依赖 nuxt3、ant-design-vue.v3、vueuse、vue-flow(chart)、monaco-editor、d3-scale、dayjs、vuedraggable、xlsx
-  - db仅支持sqlite
   - 用户在界面上创建表时，数据库层也会添加一张新表, 表名前缀 nc__k4v___
   - 支持提供返回表中数据的api
+  - [Development Setup](https://docs.nocodb.com/engineering/development-setup/)
   - 支持现有数据库，不需要导入数据: We transform any existing databases MySQL, Postgres, SQL Server & SQLite databases into a spreadsheet.
   - 使用流程，workspace > base > create table > add fields > relations > add rows > views
   - 主要功能模块

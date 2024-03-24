@@ -48,10 +48,16 @@ modified: 2023-12-15T18:02:01.825Z
   - [Pragmas - DuckDB](https://duckdb.org/docs/sql/pragmas#storage_info)
 - And vacuum delete was merged just yesterday 
 - [DuckDB -- table的存储格式 | Tangdh's Blog_202307](https://tangdh.life/posts/database/duckdb-file/)
+
 # discuss
 - ## 
 
 - ## 
+
+- ## 
+
+- ## Core DuckDB has 0 dependencies to keep things simple, but now it is simple to add dependencies in DuckDB extensions if you would like
+- https://twitter.com/__AlexMonahan__/status/1771247480576852462
 
 - ## I'm gonna use it(duckdb) with WASM to let users query data in the browser, but otherwise, I don't see what problem it solves that sqlite doesn't.
 - https://twitter.com/JamesTimmins/status/1676742803114827776

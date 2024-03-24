@@ -404,6 +404,10 @@ modified: 2022-11-25T15:41:47.534Z
 - https://github.com/drmingdrmer/one_file_raft /202401/rust/单文件
   - This is a concise, demonstrative implementation of the Raft consensus algorithm contained within a single Rust file, approximately 300 lines in length.
   - 288行了, 要实现joint有点不够了
+
+- https://github.com/noghartt/paxos-from-scratch /202402/rust
+  - An implementation of simple Paxos consensus algorithm written from scratch with Rust.
+  - Single-decree(判决，裁定) Paxos Consensus Algorithm written from scratch
 # more
 - https://github.com/rethinkdb/rethinkdb /202211/cpp/python
   - The open-source database for the realtime web.
