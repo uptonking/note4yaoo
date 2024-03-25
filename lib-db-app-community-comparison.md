@@ -99,6 +99,20 @@ modified: 2023-09-17T17:46:07.620Z
 # discuss-mongo-like
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Are there any reasons to use MongoDB (instead of, say, Postgres) for new projects these days? _202403
+- https://twitter.com/ohmypy/status/1772181070202417245
+- New projects? Probably nah. But not having to deal with migration is a big deal in a distributed system. 
+  - Eventual consistency is a pain but you have to deal with that even w/ Postgres when you have a single writer with ~15 readers—writes take time to show up in all of them.
+- I use it in iximiuz labs - pretty happy about it. But I generally an anti-JOIN person
+- Personal preference to write JavaScript for data extraction
+- every company I have seen mongo in prod ends up regretting it. Every one.
+- Migrations
+  - Why not simply design the schema correctly from the start
+
 - ## When you think about the reasons people reached out for Mongo in 2010:
 - https://twitter.com/glcst/status/1735695103962894701
   - It was dead simple.

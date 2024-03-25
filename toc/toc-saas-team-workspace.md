@@ -469,6 +469,14 @@ modified: 2023-02-07T17:38:05.336Z
   - https://b2ntp.vercel.app/
   - Kanban style New Tab Page extension with your bookmarks and powerful search
   - support chrome/firefox
+# calendar
+- https://github.com/calcom/cal.com /AGPLv3/202403/ts
+  - https://github.com/calcom/cal.com
+  - open-source Calendly alternative, formerly Calendso
+  - API-driven and ready to be deployed on your own domain.
+  - PostgreSQL
+  - 黑色圆角线框风格
+  - https://github.com/calcom/ui
 # browser/thunderbird-inspired
 - products
   - [Rambox | Workspace Simplifier to Boost your Productivity](https://rambox.app/)

@@ -7,6 +7,8 @@ modified: 2022-11-24T11:39:26.000Z
 
 # watarble-dev
 
+> have data and insights at your fingertips
+
 # guide
 
 # goals

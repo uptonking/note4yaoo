@@ -10,9 +10,14 @@ modified: 2023-02-08T07:20:48.475Z
 # guide
 
 # popular
-
+- https://github.com/mudler/LocalAI /MIT/202403/cpp
+  - https://localai.io/
+  - free, Open Source OpenAI alternative. 
+  - Self-hosted, community-driven and local-first. 
+  - LocalAI act as a drop-in replacement REST API that’s compatible with OpenAI API specifications for local inferencing. 
+  - It allows you to run LLMs, generate images, audio (and not only) locally or on-prem with consumer grade hardware, supporting multiple model families. 
+  - Does not require GPU.
 # LLM
-
 - https://github.com/xenova/transformers.js
   - Run Transformers in your browser! We currently support BERT, ALBERT, DistilBERT, MobileBERT, SqueezeBERT, T5, T5v1.1, FLAN-T5, mT5, BART
   - [宝玉 on Twitter: "这有必要吗？"](https://twitter.com/dotey/status/1643801825580122115)
@@ -107,6 +112,9 @@ modified: 2023-02-08T07:20:48.475Z
   - https://github.com/khaledmk20/quill
     - Quill redefines PDF interaction with intelligent conversations.
 # coding-copilot
+- products
+  - https://copilot.microsoft.com/
+
 - https://github.com/TabbyML/tabby
   - https://tabbyml.github.io/tabby
   - Self-hosted AI coding assistant. 
@@ -114,6 +122,10 @@ modified: 2023-02-08T07:20:48.475Z
   - Self-contained, with no need for a DBMS or cloud service
   - OpenAPI interface, easy to integrate with existing infrastructure (e.g Cloud IDE).
   - Tabby 是一个自我托管的 #GitHub #Copliot 开源替代品，自带可视化界面与 #OpenAPI 接口，还支持消费者级别的 #GPU，具有 FP-16 重量加载和各种优化功能，提供了 #Docker 镜像
+
+- https://github.com/rjmacarthy/twinny /995Star/MIT/202403/ts
+  - The most no-nonsense locally hosted (or API hosted) AI code completion plugin for Visual Studio Code, like GitHub Copilot but 100% free and 100% private.
+  - designed to work seamlessly with: Ollama
 # text2image
 - https://github.com/Stability-AI/stablediffusion
   - https://github.com/CompVis/stable-diffusion

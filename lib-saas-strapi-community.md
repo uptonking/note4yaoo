@@ -42,7 +42,7 @@ modified: 2023-12-15T17:04:36.589Z
 - 
 - 
 
-- ## 🕵🏻 any chance of getting a query engine decorator?  usefull for fake multitenency
+- ## 🤔 any chance of getting a query engine decorator?  usefull for fake multitenency
 - https://discord.com/channels/811989166782021633/1218214776405233754/1218217608676114673
 - it was a firm no. I think it's not the technical direction we want to take and it wasn't a great pattern to implement in the first place, we'd rather go forward with lifecycles and middlewares, like the doc service has
 
@@ -243,7 +243,7 @@ modified: 2023-12-15T17:04:36.589Z
 
 - ## 💡 [How to query collections from custom plugin in strapi? - Questions and Answers - Strapi Community Forum](https://forum.strapi.io/t/how-to-query-collections-from-custom-plugin-in-strapi/11699)
 - In the backend of your plugin you can use the global `strapi.contentTypes` variable to fetch all Single and Collection types.
-- I find in Roles of Setting has: `/content-manager/collection-types/:model`.
+- I find in Roles of Setting has: `/content-manager/collection-types/:model` .
 - 
 - 
 
@@ -254,7 +254,6 @@ modified: 2023-12-15T17:04:36.589Z
   - Not very elegant but does the job.
 
 - I didn't have any luck. We ended up building our own solution with React instead of using Strapi.
-
 
 - ## [Why are dynamic zones automatically array fields? : r/Strapi _202301](https://www.reddit.com/r/Strapi/comments/10jtmsa/why_are_dynamic_zones_automatically_array_fields/)
 - You probably don't need a "dynamic zone" if you don't want an array. 

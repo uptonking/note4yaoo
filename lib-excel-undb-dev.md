@@ -16,6 +16,7 @@ modified: 2023-05-17T07:36:07.757Z
 - cons
   - 📈 表格不支持拖拽调整row顺序和column顺序
     - 不支持在任意位置插入row, 支持在某一列前后插入列
+    - 不支持分组视图
     - 支持拖拽调整列宽度
   - 不支持undo/redo
   - db只支持sqlite, 不支持pg/mysql

@@ -37,10 +37,6 @@ modified: 2021-01-12T18:49:02.623Z
 - https://github.com/FredKSchott/fflip
   - fflip gives you complete control over releasing new functionality to your users based on their user id, join date, membership status, and whatever else you can think of. 
 
-- [Canny: Customer Feedback Management Software and Tools](https://canny.io/)
-  - [Chakra UI Feedback](https://chakra-ui.canny.io/)
-  - [Graze for Mastodon Feedback](https://graze.canny.io/)
-
 - https://github.com/salman-monetate/react-component-export-image
   - https://codesandbox.io/s/nostalgic-poincare-7xfrl?file=/src/App.js
   - Export component as jpeg, png or pdf

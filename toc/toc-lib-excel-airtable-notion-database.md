@@ -29,7 +29,7 @@ modified: 2022-08-21T10:02:05.129Z
 
 - 🤔 要点
   - 🆚️ notion database 的设计思路是先填写数据再设置类型，而不是大多数cms的先设置类型再填写数据
-  - 动态修改数据类型或schema，可用eav或jsonb, 但大多方案是用户建表时在db建表
+  - 动态修改数据类型或schema，可用eav或jsonb, 但大多方案是用户建表时同时在db建表
 
 - resources
   - https://github.com/topics/notion-database

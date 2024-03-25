@@ -23,11 +23,11 @@ npx create-strapi-app@5.0.0-beta.0 strapi5-app-beta0 --quickstart --ts
   - `i18n` is now part of the strapi core
   - `helper-plugin` is deprecated
   - remove old plugin generator in favor of `plugin:init`.
-# features/rfc
 - resources
   - [rfcs v5](https://github.com/strapi/rfcs/pulls?q=is%3Aopen+is%3Apr+label%3Av5)
   - [5.0.0 Milestone](https://github.com/strapi/strapi/milestone/256)
-
+  - https://v5.contributor.strapi.io/docs/intro
+# features/rfc
 - [Q2, 2024 - Strapi 5 | Content Editing XP | Strapi](https://feedback.strapi.io/customization/p/q2-2024-strapi-5)
   - two exciting new features: Draft & Publish; Content History
 
@@ -91,7 +91,7 @@ npx create-strapi-app@5.0.0-beta.0 strapi5-app-beta0 --quickstart --ts
 
 - After carefully considering the different Options, Option 1 is the most viable one for v5 and is the one we will be moving forward with.
 
-## ⚖️ [fe-apis · Introduce typed imperative APIs as opposed to InjectionZones](https://github.com/strapi/rfcs/blob/v5/fe-apis/rfcs/0056-FE-APIs.md)
+## 🗑️ [fe-apis · Introduce typed imperative APIs as opposed to InjectionZones](https://github.com/strapi/rfcs/blob/v5/fe-apis/rfcs/0056-FE-APIs.md)
 
 - proposes new public facing APIs aimed at plugin developers to be able to augment the EditView of the content-manager, the need came from the design proposals of Draft & Publish and would most likely be implemented only in V5 of the product under the Draft & Publish scope.
 - The `addDocumentActions` API is a new API that allows you to add actions to be rendered in the DocumentActions menu (this is new to V5).
@@ -230,12 +230,13 @@ npx create-strapi-app@5.0.0-beta.0 strapi5-app-beta0 --quickstart --ts
 - For groupby/aggregations we do have two feature requests for those
   - Virtual fields are technically already possible but requires a little bit of coding to do, I've done something similar by injecting a custom UUID field and automatically setting it using lifecycles and forcefully setting the "view" as disabled so it's read-only in a v4 projects. Given it's not a native virtual field but functionally it gets to the same end goal
 
-- ## Strapi team has acknowledged the limitations of the injection zones and have proposed an alternative solution that would deprecate the current injection zones for V5
+- ## 🗑️ Strapi team has acknowledged the limitations of the injection zones and have proposed an alternative solution that would deprecate the current injection zones for V5
 - https://discord.com/channels/811989166782021633/1196439693877854250/1196443802081185942
 
 - https://discord.com/channels/811989166782021633/1095091586452426824/1179487055420596264
   - You can't control what people do in their user applications though? 
-  - I get that you want more InjectionZones, but we're not doing it for V5. We've been clear that we're not removing any InjectionZones on V5 either but the direction is not to carry on with them
+  - I get that you want more InjectionZones, but we're not doing it for V5. 
+  - 👉🏻 We've been clear that we're not removing any InjectionZones on V5 either but the direction is not to carry on with them
 
 - ## [refactor(core/strapi): move components to registry _202310](https://github.com/strapi/strapi/pull/16273)
 - We are starting to work on v5 and won't be adding such a big change in v5. FYI we already created a registry for compos in v5 even if we are not ready yet to allow components coming from plugins this is a 1st step into that direction.

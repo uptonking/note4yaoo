@@ -20,6 +20,12 @@ modified: 2024-03-14T13:51:32.122Z
 
 - ## 
 
+- ## [Custom fields in `directus_fields` doesn't show up in App when editing/creating a field _202211](https://github.com/directus/directus/discussions/16432)
+- Since we're able to create custom fields in system collections, it would be nice to have a place to set those values on all the collections.
+
+- ## [How to custom field type? _202204](https://github.com/directus/directus/discussions/12674)
+- You can create custom interfaces by extension
+
 - ## 🔒 [Public User Registration ](https://github.com/directus/directus/discussions/3083)
 
 - How to determine role with public registration?

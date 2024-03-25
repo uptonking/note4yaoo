@@ -40,6 +40,8 @@ npm run develop
 - ## [Conditional fields | Content Editing XP | Strapi _202203](https://feedback.strapi.io/customization/p/conditional-fields)
   - Display a field only if some conditions are met.
 
+- [Conditionally hide/show collection type fields based on other fields - Questions and Answers - Strapi Community Forum](https://forum.strapi.io/t/conditionally-hide-show-collection-type-fields-based-on-other-fields/28474)
+
 - ## [Setting for collapsing/expanding components in the admin panel by default | Voters | Strapi _202306](https://feedback.strapi.io/feature-requests/p/setting-for-collapsingexpanding-components-in-the-admin-panel-by-default)
   - For content type structures that feature a lot of components, this makes the page very very long.
 
@@ -52,7 +54,23 @@ npm run develop
 
 - ## 
 
-- ## [Organize entities into folders ](https://github.com/strapi/strapi/issues/10545)
+- ## 🔒 [Field Level Permissions - End User management | Voters | Strapi _202203](https://feedback.strapi.io/feature-requests/p/field-level-permissions-end-user-management)
+  - The current Users-permissions plugin is very limited in the control you have over accessing fields or even nested relations, components, and dynamic zones.
+
+- 
+- 
+
+- ## [Webhook by content type | Voters | Strapi _202203](https://feedback.strapi.io/feature-requests/p/webhook-by-content-type)
+- 
+- 
+- 
+
+- ## 📈 [Add a "folder-like" group function to organize content types | Voters | Strapi _202205](https://feedback.strapi.io/feature-requests/p/add-a-folder-like-group-function-to-organize-content-types)
+
+- [User interface - Grouping Collection Types _202212](https://forum.strapi.io/t/user-interface-grouping-collection-types/24304)
+  - Unfortunately this is not possible yet
+
+- ## 📈 [Organize entities into folders ](https://github.com/strapi/strapi/issues/10545)
 - Marking as closed as this isn't likely something we will do _202203
 
 - ## [can i hide left menu nav? _202302](https://github.com/strapi/strapi/issues/15658)
@@ -121,3 +139,5 @@ npm run develop
   - But I’ve recently learned that it’s all a joke. 
   - You see, core controllers invoke the transformResponse function which iterates over the service response and produces this highly impractical data/meta/attributes structure. This takes time. Then, the middleware offered by the transform plugin iterates again over that transformed response and flattens it. Which takes time again. 
   - A performant way would be to disable that transformResponse function alltogether, or at least the part that wraps all non-id field within attributes. Maybe patch-package could be used for that.
+
+- ## 🏘️ [Multi-tenancy | Voters | Strapi _202202](https://feedback.strapi.io/feature-requests/p/multi-tenancy)

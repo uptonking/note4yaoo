@@ -16,8 +16,11 @@ modified: 2024-02-16T14:55:58.271Z
   - 🛢️ Works with new or existing SQL databases, no migration required
     - plug-and-play, so you're free to link or remove it anytime, with zero impact on your data
   - 内置数据库表名有统一前缀
+  - rich-fields: rich-text
+    - 支持custom field type(基于extension),需要写代码
+  - rich-views: table, kanban, calendar, card, map
+    - 支持custom layouts
   - 强大的权限系统，支持per-field
-  - 表格支持conditional-fields
   - 支持realtime updates
   - 🔌 Extensions provide a way to modify or expand Directus' functionality
   - Sandboxed Extensions
@@ -30,11 +33,15 @@ modified: 2024-02-16T14:55:58.271Z
 - cons 定位不明确 cms vs app
   - license: GPLv3 > BSL
   - auth实现复杂，token包括jwt/session/static三种
-  - 📈 表格不支持拖拽调整row顺序，但支持拖拽调整column顺序
-    - 不支持在任意位置插入row, 支持在设置而不是表格中添加列和调整列顺序
-    - 支持拖拽调整列宽度
   - content的视图无法保存，不能实现类似notion database切换多种视图
   - 开发ext实现热加载比较麻烦
+
+- 📈 表格不支持拖拽调整row顺序，但支持拖拽调整column顺序
+  - 不支持在任意位置插入row, 支持在设置而不是表格中添加列和调整列顺序
+  - 不支持分组视图，aggregate接口支持groupBy
+  - ✅ 支持拖拽调整列宽度
+  - 支持conditional-fields
+  - 支持group fields
 
 - features
   - 核心模块: content, user, files, flows, insights/dashboard
@@ -69,3 +76,4 @@ pnpm --filter app dev
   - 前端app主要是insights部分
   - 后端包括controller/**service**/middleware, 移除需要一定的工作量
 # more
+- [Advanced Filtering: Dates, Aggregation & Grouping, and Combining Filters | Directus Docs](https://docs.directus.io/blog/advanced-filtering-dates-aggregation-and-grouping-and-combining-filters.html)

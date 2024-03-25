@@ -90,6 +90,9 @@ modified: 2022-10-05T04:57:38.647Z
 - https://github.com/kykungz/html-a4-paper
   - https://kykungz.github.io/html-a4-paper/
   - Create your own printable A4 page with HTML and CSS
+
+- https://www.nordtheme.com/docs/colors-and-palettes
+  - 背景灰色，页面白色，典型的文档风格，无toc
 # styles about documentation products
 - https://github.com/facebookincubator/infima
   - https://infima.dev/
@@ -272,9 +275,6 @@ modified: 2022-10-05T04:57:38.647Z
   - http://vinitkumar.github.io/white-paper/
   - clean jekyll theme.
   - It is made keeping content in focus and is best for writers/developers who also like to share code with their essays.
-
-- https://www.nordtheme.com/docs/colors-and-palettes
-  - 背景灰色，页面白色，典型的文档风格，无toc
 
 - https://flexiple.com/react/conditional-rendering-in-react/
   - 典型的技术文档风格，页面背景灰色，文档背景白色

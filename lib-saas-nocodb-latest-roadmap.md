@@ -24,7 +24,7 @@ modified: 2023-12-15T17:05:43.586Z
   - Global search should include all fields by default
   - use chart-js
 
-- v0.203.0_20231228
+- [v0.203.0_20231228](https://github.com/nocodb/nocodb/releases/tag/0.203.0)
   - RichText fields
   - User fields
 

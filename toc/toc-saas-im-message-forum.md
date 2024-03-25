@@ -604,6 +604,30 @@ modified: 2021-05-14T15:04:15.333Z
   - Fast, fun, small ActivityPub server
   - an ActivityPub social network server, written in Golang.
   - you can keep in touch with your friends, post, read, and share images and articles.
+# helpdesk/feedback/ticket
+- [Canny: Customer Feedback Management Software and Tools](https://canny.io/)
+  - [Chakra UI Feedback](https://chakra-ui.canny.io/)
+  - [Graze for Mastodon Feedback](https://graze.canny.io/)
+
+- https://github.com/Peppermint-Lab/peppermint /AGPLv3/202403/ts
+  - https://peppermint.sh/
+  - open source ticket management & help desk solution. 
+  - A freshdesk alternative
+  - Markdown based Notebook with todo lists
+  - A log of client history
+
+- https://github.com/polonel/trudesk /apache2/202311/js/inactive
+  - http://trudesk.io/
+  - an open-source help desk/ticketing solution
+  - built with nodejs and mongodb; Elasticsearch 8 is optional 
+
+- https://github.com/astuto/astuto /AGPLv3/202403/ruby/ts
+  - https://feedback.astuto.io/
+  - A free, open source, self-hosted customer feedback tool
+
+- https://github.com/getfider/fider /AGPLv3/202307/go/ts/inactive
+  - https://fider.io/
+  - Open platform to collect and prioritize feedback
 # notification
 - https://github.com/novuhq/novu /MIT/202402/ts
   - The open-source notification infrastructure for products. 

@@ -600,6 +600,9 @@ modified: 2023-12-15T19:30:23.094Z
   - Does not work well with GraphQL
   - Not working with UID and unique fields
   - [Advanced Strapi Enhancement: Notum's Open-Source Plugins_202312](https://strapi.io/blog/elevating-strapi-notum-s-journey-in-creating-three-open-source-plugins)
+    - the plugin still has some limitations like the inability to support unique fields and relations inside components
+    - the entities are still stored in the same database table but each of them is assigned a unique versioning identifier and a link to relevant locale.
+    - one of the most challenging parts derives from the fact that when the content has multiple locales and each locale has multiple versions
 
 - https://github.com/PenguinOfWar/strapi-plugin-paper-trail /MIT/202402/js
   - Accountability and content versioning for strapi v4+
@@ -1277,10 +1280,15 @@ modified: 2023-12-15T19:30:23.094Z
   - module for working with socket.io with predefined rules. StrapIO will look at Role permission on each action. StrapIO is looking for all roles which have access to the given contenttype and action type.
   - https://github.com/genjudev/strapio-example-project /202109/js
 
-- https://github.com/notum-cz/strapi-plugin-record-locking /202312/js
+- https://github.com/notum-cz/strapi-plugin-record-locking /202312/js/协作简化
   - This plugin provides the functionality to prevent data loss in cases where multiple users are simultaneously editing the same record within STRAPI v4.
   - When a user attempts to edit a record that is already being edited, a warning will be displayed.
   - 依赖socket.io
+  - The plugin features its own collection of currently edited entities which is essential for it to work.
+    - it sends a web socket event to the Strapi backend with the details of the opened entity
+    - When the backend receives this event it adds this entity to the collection of opened entities
+    - Why did we use a web socket instead of rest to achieve this?
+    - when the user just closes the browser, the web socket receives an event informing the connection was closed
 
 - https://github.com/jenniferokafor/collaborative-code-editor /202306/ts
   - client依赖codemirror.v6、@uiw/react-codemirror

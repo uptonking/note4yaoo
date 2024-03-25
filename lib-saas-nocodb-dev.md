@@ -12,9 +12,15 @@ modified: 2023-12-15T16:51:49.971Z
 - pros
   - open source with AGPLv3
   - 支持已有数据库，不需要import data
+  - rich-fields: rich-text, Formula, Links, Lookup, Rollup
+    - 支持custom field, 基于json
+  - rich-views: grid, kanban, gallery, form
   - app store支持在线安装discord/mail
+  - ✨ 支持Group: supports three levels of record segregation
   - 支持拖拽自动填充单元格
   - 支持cell级别的comment
+  - 支持Attachment
+  - Audit: We are keeping all the user operation logs under one place
 
 - cons
   - 不支持拖拽调整row顺序和拖拽row内容，但支持拖拽调整column顺序

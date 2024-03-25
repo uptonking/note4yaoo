@@ -66,9 +66,11 @@ modified: 2022-05-15T18:37:27.994Z
   - https://medium-ai.vercel.app/
   - open-source, AI-powered text editor inspired by medium.com
 
-- https://github.com/calcom/cal.com
+- https://github.com/calcom/cal.com /AGPLv3/202403/ts
+  - https://github.com/calcom/cal.com
+  - open-source Calendly alternative
+  - 黑色圆角线框风格
   - https://github.com/calcom/ui
-  - open-source Calendly alternative.
 # extensions
 - https://github.com/konstantinmuenster/lexical-floating-menu
   - https://lexical-floating-menu.vercel.app/

@@ -26,11 +26,21 @@ modified: 2023-12-15T17:04:24.911Z
 # discuss
 - ## 
 
-- ## 
+- ## [row level security _202110](https://github.com/nocodb/nocodb/discussions/640)
+- RLS is there in nocodb but currently are tucked away ( its in API ACL - you can click on column name (header) and you should be able to set additional rules - but they won't work yet ) . To make them work with nested tables - we've to rethink a bit. Hence we havent documented them.
 
-- ## 
+- ## 🔒 [row level security workaround (implemented at the backend) _202307](https://github.com/nocodb/nocodb/issues/6076)
+- 未实现
 
-- ## 
+- ## [Feature: Row / Column base permission, and audit log _202302](https://github.com/nocodb/nocodb/issues/5075)
+
+- ## [Bug: API for nested fields other than primary field _202301](https://github.com/nocodb/nocodb/issues/4757)
+- By default, the behavior is to fetch the primary value and key for nested data. 
+  - To fetch nested fields from the LTAR column, you can pass the fields query parameter nested[LinkToFoo][fields]=* in the request. 
+  - Or if you want to get specific fields then you can pass them as comma-separated field names as follows - nested[LinkToFoo][fields]=fieldq, field2.
+
+- ## [Feature : Row number required ](https://github.com/nocodb/nocodb/issues/787)
+- Empty rows won't be saved to DB in latest version. _202210
 
 - ## [Feature : Support Kanban view](https://github.com/nocodb/nocodb/issues/140)
 - You need to create a `SingleSelect` column in your table. Other column types are not supported to be a grouping field.

@@ -18,7 +18,8 @@ modified: 2023-12-15T16:51:56.101Z
   - i18n
   - future flags
   - Data Import & Export
-  - rich fields: 支持custom filed, 但需要写代码不能通过ui创建
+  - rich fields: rich-text
+    - 支持custom filed, 但需要写代码不能通过ui创建
   - built with typescript
   - 提供了很多集成示例，如redis/search
 
@@ -27,15 +28,13 @@ modified: 2023-12-15T16:51:56.101Z
     - Shared Projects
     - ~~不支持version-history，但audit日志记录可作为类似功能~~
   - ui不支持: Conditional fields, nested component, nestable menu
+  - rich views not supported
   - v4不支持mongodb
   - 🐛 与现有数据库集成不方便
   - 🐛 At this time and in the future there is no plan to allow model creating or updating while in a production environment, and
     - there is currently no plans to move model settings into the database. 
     - There are no known nor recommended workarounds for this.
   - It doesn't namespace its admin table
-  - 📈 表格不支持拖拽调整row顺序和column顺序，但支持设置调整列顺序
-    - 不支持在任意位置插入row, 支持在设置而不是表格中添加列和调整列顺序
-    - 不支持拖拽调整列宽度
   - cannot store Content Manager layout configurations in the model settings. 因为未来移动版的layout可能不同，保存后如何恢复
   - 不支持多种第三方登录
   - rbac功能默认需要内置的10张表，复杂度高，难以迁移离开
@@ -45,6 +44,12 @@ modified: 2023-12-15T16:51:56.101Z
   - user用户管理功能弱，不支持分组, 类似multi-tenancy
   - 前端旧版本的依赖难以升级，如react-router
   - ❓ 如何与现有系统集成，可参考sso单点登录
+
+- 📈 表格不支持拖拽调整row顺序和column顺序，但支持设置调整列顺序
+  - 不支持在任意位置插入row, 支持在设置而不是表格中添加列和调整列顺序
+  - 不支持拖拽调整列宽度
+  - 不支持conditional-fields
+  - ✅ 支持group fields: components/dynamic-zone
 
 - features
   - 核心模块: content-mgr, content-type-builder, media-lib, roles-permissions
@@ -84,6 +89,7 @@ modified: 2023-12-15T16:51:56.101Z
 - roadmap - lts: editor, excel-table, local-db
   - migrate plugins to v5: versioning, media
   - ~~掌握strapi-够用~~ > 模仿directus-config/delta > undb-fe-be > 模仿directus-flow > collab
+  - examples: realworld
 
 - ⌛️ version/history
   - 参考官方实现来做开源版本，参考官方文档说明和代码
@@ -103,6 +109,15 @@ modified: 2023-12-15T16:51:56.101Z
 
 - backend
   - api-rate-limit
+
+- plugins
+  - 如何实现在线安装plugins
+
+- flow
+  - 考虑基于flow实现conditional fields
+
+- gis
+  - plugin-location: filter by coordinate, using postgis
 
 - 流式输出 stream response
 
@@ -128,6 +143,19 @@ modified: 2023-12-15T16:51:56.101Z
 - navigation
   - ☑️ 跳转到content item的路由失效
 
+- 
+- 
+
+## plugin-version-history
+
+- features
+  - switch versions
+  - time-travel
+  - multiple draft
+
+- plugin-content-versioning
+  - 使用了非公开api addMiddlewares
+- 
 - 
 - 
 
