@@ -118,3 +118,22 @@ modified: 2020-12-20T15:48:03.553Z
   - This means “swapping” an event handler to a new function reference only updates the current handler reference and does not remove or re-add any event listeners.
 # more-patterns
 - [The Outbox Pattern](https://www.kamilgrzybek.com/blog/posts/the-outbox-pattern)
+# discuss-oop
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## I avoid OOP as much as possible nowadays
+- https://twitter.com/0xglitchbyte/status/1772474741007220770
+  - I wrote and worked in heavy OOP codebases, and found nothing but messes and layers of indirection
+  - After a while, I got introduced to Data Oriented Design
+
+- I always thought it was never really an either or decision. Some situations a class and inheritance is nice, some pure data is better. To me, common lisp got this right with being multi paradigm. Going wild either way usually works against clarity.
+
+- OOP is a tool. Just don't abuse it. I'm looking at you Java and C# ...
+
+- I had the same opinion... until I had to work with Unreal Engine. The fact that it's maybe the best engine out there has a lot to do with it being entirely OOP. I still don't think high of OOP, especially for hp tasks, however after my experience with UE, I'm not so sure anymore.

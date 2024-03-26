@@ -46,7 +46,7 @@ modified: 2022-10-04T23:32:30.824Z
   - This solves two key problems with `prosemirror-collab` through server-side rebasing without the use of CRDTs:
     - Throughput: 200 active clients per 1s of commit delay is feasible depending on backend implementation and edit characteristics.
     - Fairness: Users with high latencies will not have their edits blocked by users with low latencies. This will greatly smooth the collab experience on documents with high levels of concurrent edits.
-  - [ProseMirror Collab Performance | Blog_202307](https://stepwisehq.com/blog/2023-07-25-prosemirror-collab-performance/)
+  - ⚡️ [ProseMirror Collab Performance | Blog_202307](https://stepwisehq.com/blog/2023-07-25-prosemirror-collab-performance/)
   - https://news.ycombinator.com/item?id=36959889
     - A commit-based collab plugin that's far more performant under heavily active client loads than stock. I'm a fan of YJS, but not a fan of state-based CRDT layer on top of ProseMirror for my use cases
     - I also translated the core ProseMirror projects of model, transform, and test-builder to C#

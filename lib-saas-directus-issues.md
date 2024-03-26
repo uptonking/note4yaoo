@@ -20,6 +20,13 @@ modified: 2024-03-14T13:51:32.122Z
 
 - ## 
 
+- ## 
+
+- ## 🧐 [Support nested relational values in conditional fields _202109](https://github.com/directus/directus/issues/8228)
+- 
+- 
+- 
+
 - ## [Custom fields in `directus_fields` doesn't show up in App when editing/creating a field _202211](https://github.com/directus/directus/discussions/16432)
 - Since we're able to create custom fields in system collections, it would be nice to have a place to set those values on all the collections.
 

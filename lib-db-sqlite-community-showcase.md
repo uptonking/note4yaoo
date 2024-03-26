@@ -12,6 +12,17 @@ modified: 2023-05-21T14:54:15.817Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Interactive SQLite Documentation: Experiment with Queries in Real-Time | Hacker News _202403](https://news.ycombinator.com/item?id=39600968)
+- 
+- 
+- 
+
 - ## 🪶🌰 [Bluesky migrates to single-tenant SQLite | Hacker News_202311](https://news.ycombinator.com/item?id=38171322)
 - I'm not opposed to this setup at all and it does have its place. But we are running away from schema-per-tenant setup at warp speed at work. There are so many issues if you don't invest in it properly and I don't think many are prepared when they initially have the idea.
   - The funny thing is that about a decade ago, the app was born on a SQLite per tenant setup, then it moved to schema per tenant on Postgres, now it's finally moving to a single schema with RLS. So, the exact opposite progression.

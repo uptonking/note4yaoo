@@ -139,6 +139,8 @@ modified: 2023-01-01T13:24:35.994Z
   - MiniSearch addresses use cases where full-text search features are needed (e.g. prefix search, fuzzy search, ranking, boosting of fields…)
   - Memory-efficient index, designed to support memory-constrained use cases like mobile browsers.
   - 支持中文
+  - forks
+  - https://github.com/Mister-Hope/slimsearch /202402/ts
 
 - itemsjs /274Star/apache2/202208/js/NoDeps
   - https://github.com/itemsapi/itemsjs

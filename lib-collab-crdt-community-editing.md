@@ -24,7 +24,20 @@ modified: 2023-10-28T09:00:45.811Z
 
 - ## 
 
-- ## 
+- ## 🔀 [You Might Not Need a CRDT: Document Sync in the Wild [video] | Hacker News _202403](https://news.ycombinator.com/item?id=39615987)
+- 👷🏻 jitl: Maybe you don’t need it for shapes and what not, but for collaborative text documents it’s really hard to have a good experience without convergent intention preserving async merges on text - you’re gonna want OT or CRDT for collaborative text editing eventually.
+  - I work on Notion, a collaborate editor that (famously?) doesn’t merge text updates. 
+  - Our editor predates the popular CRDT libraries. We’ve taken the last write wins optimistic model about as far as it will go, 
+  - and now we’re building CRDT text as the basis for a bunch of new features. It’s challenging to integrate with our existing model but I think the end result will be well worth it.
+- You can merge text, preserving intention, without CRDTs. In fact, you can do a better job of preserving a history log without CRDTs.
+  - For an app like Notion you don't have direct peer-to-peer syncing: you have a star topology with a central service able to create a canonical total ordering of events, so you really don't need CRDTs at all.
+  - For most SaaS apps even offline is going to sync with the central service and not with other peers. Direct peer-to-peer without a intermediating server is so rare for SaaS that I don't even know of an example.
+- Even with a star topology, how do you go about preserving user intent for text insertions without CRDTs and without rewriting (transforming) mutations so that client and server result in same state (basically OT)?
+  - When inserting text, you can either use mutations that insert the text relative to some reference character(s) or at some index. The former is basically the approach of most text CRDTs. I'm having a hard time imagining the latter without modifying the insertion index relative to concurrent insertions or deletions. I believe that Jupiter based OT imposes a global order, but uses it to determine how concurrent mutations are transformed against one another.
+
+- 
+- 
+- 
 
 - ## BlueSky uses standoff markup to represent rich text. They call them facets
 - https://twitter.com/jessmartin/status/1750543829868916797

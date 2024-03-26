@@ -28,7 +28,7 @@ modified: 2023-12-15T16:52:28.937Z
   - This segment deals with the CRUD operations defined by the content types.
   - It consists of controllers that handle the routing and processing of requests, services that encapsulate the business logic, and the entity service that interacts with the database layer.
 
-- ⛓️ The flow within Strapi begins at the route, guiding requests to their respective policies. 
+- 〰️ The flow within Strapi begins at the route, guiding requests to their respective policies. 
   - After passing through any Route Policies that apply, the request is handled by Route Middleware for tasks such as authentication or payload processing. 
   - The request is then handed off to the Controller, specifically a Koa handler, to orchestrate the next steps.
   - Inside the Controller, the logic unfolds, tasking the Service to manage business-specific actions. 
@@ -48,6 +48,56 @@ modified: 2023-12-15T16:52:28.937Z
   - Lifecycle hooks add another layer of interaction, allowing developers to run custom code during data processing events.
 
 - Every line of code is an open invitation: come and see how we've built this, tweak it, break it, rebuild it. It's in these interactions that Strapi grows stronger and more attuned to real-world applications.
+
+## [Understanding the Strapi Request Flow: A Journey from KOA to Modern Middleware Architecture _202311](https://strapi.io/blog/understanding-the-strapi-request-flow-a-journey-from-koa-to-modern-middleware-architecture)
+
+- the use of middleware or any middleware-like constructs became a standard practice
+  - Frameworks, such as Express.js, Ruby on Rails, Django, and Laravel, provide built-in support for defining and using middlewares as a core feature of their architecture.
+- Different web frameworks have different implementations and approaches to middleware architectures, but with it, the fundamental concept of pre-processing; authentication, authorization, Logging, and post-processing; response modification, error handling, and caching, — remains consistent.
+
+- like any typical KOA middleware, strapi middlewares execute sequentially, in the order they’re added onto the stack.
+
+- The Strapi Request Chain is an adaptation of the KOA Request Chain. 
+  - The twist here is that the Strapi Request Chain is a more elaborate chain with a bigger bag of tricks. 
+  - However, at its core, the Strapi Chain still adheres to several rules found in KOA's Chain, such as the LIFO execution order, middleware cascading, and the use of the callback function 'await next()'
+
+- 🧩 Lifecycles are essentially smaller middlewares at their core, wrapping around various database queries, whether it's for creating, updating, deleting, or any other action.
+  - These are essentially default middlewares added to Strapi as part of its abstraction layers.
+
+- Strapi's methodology aligns well with other contemporary frameworks like Ruby on Rails (which follows the "Rails way" of doing things), Django (with its opinionated structure), and Laravel (which provides clear conventions for various aspects of web development). 
+
+## [Different types/categories of Strapi Hooks /v4 _202203](https://strapi.io/blog/understanding-the-different-types-categories-of-strapi-hooks)
+
+- A Content-Type is a JSON representation used to specify the underlying database structure of a content entity we want to store in Strapi's database.
+  - lifecycle hooks allow us to extend Strapi's default Content-Type functionality by introducing custom code that will run whenever (before or after) a query is executed over a Content-Type. 
+- server hooks allows us to add functionality to Strapi's core
+  - A common development pattern of a server hook is to have it run an initialization function when the server boots, and then expose its functionality via methods made available either in [strapi.services] or [strapi.hook]
+- Webhooks are not exclusive to Strapi; 
+  - an application that implements webhooks is able to notify other applications as a certain event occurs in its context. 
+  - webhooks are typically implemented as HTTP POST requests.
+
+### [How to Use Lifecycle Hooks for Audit Logs in Strapi](https://strapi.io/blog/how-to-use-lifecyle-hooks-for-audit-logs-in-strapi
+
+- 
+- 
+- 
+
+## [Strapi Internals: Customizing the Backend [Part 1 — Models, Controllers & Routes] _202205](https://strapi.io/blog/strapi-internals-customizing-the-backend-part-1-models-controllers-and-routes)
+
+- 
+- 
+- [Strapi Internals: Customizing the Backend [Part 2]](https://strapi.io/blog/strapi-internals-customizing-the-backend-part-2-policies-webhooks)
+  - Global policies can be associated with any route in the project. 
+  - Scoped policies only apply to a specific API or plugin
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 
 ## 🎯 [Bye 2023, Hello 2024! A year in review_202401](https://strapi.io/blog/bye-2023-hello-2024-a-year-in-review)
 
@@ -180,5 +230,3 @@ modified: 2023-12-15T16:52:28.937Z
 # more
 - [Strapi vs Nest.js: A Tale of Simplicity and Flexibility in Back-end Development_202306](https://medium.com/@inni.chang95/strapi-vs-nest-js-a-tale-of-simplicity-and-flexibility-in-back-end-development-640f3a506289)
   - In conclusion, Strapi shines in its simplicity for straightforward use cases, while Nest.js offers a more comprehensive and flexible framework for developers comfortable with TypeScript. 
-
-- [Understanding the Strapi Request Flow: A Journey from KOA to Modern Middleware Architecture _202311](https://strapi.io/blog/understanding-the-strapi-request-flow-a-journey-from-koa-to-modern-middleware-architecture)

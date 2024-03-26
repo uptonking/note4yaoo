@@ -12,6 +12,11 @@ modified: 2023-10-14T12:11:39.039Z
 # discuss-office
 - ## 
 
+- ## 
+
+- ## We’re super excited to share Canva has joined forces with @affinitybyserif the creative software suite  _20240326
+- https://twitter.com/canva/status/1772448060259623330
+
 - ## We're excited to accelerate Skiff's mission by joining Notion. _20240210
 - https://twitter.com/skiffprivacy/status/1756093174806974831
   - Skiff apps remain free and accessible for the next 6 months. Refunds are available to those with paid accounts.  We understand the inconvenience. Product shutdowns occur.

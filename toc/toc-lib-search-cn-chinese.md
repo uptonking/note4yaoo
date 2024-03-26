@@ -31,6 +31,11 @@ modified: 2023-01-14T15:46:16.644Z
   - 依赖nodejieba、segment、lowdb
   - Support two search mode: full-text search and field search
 
+- https://github.com/luckykaiyi/nodejieba /MIT/202305/cpp/ts
+  - "结巴"中文分词的Node.js版本
+  - forks
+  - https://github.com/Mister-Hope/nodejs-jieba
+
 - https://github.com/sxyizhiren/cn-search
   - ch-search , a light-weight chinese search engine based on reds, english support also.
 

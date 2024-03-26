@@ -32,6 +32,9 @@ modified: 2022-11-29T20:41:25.566Z
 
 - 支持offline的架构
   - 还可以考虑使用多级缓存，不一定全量数据库，类似react-query + indexeddb
+
+- 跨系统的协作
+  - 画板中的文档
 # sync-protocols
 - [Building an offline realtime sync engine references](https://gist.github.com/pesterhazy/3e039677f2e314cb77ffe3497ebca07b)
   - figma, linear

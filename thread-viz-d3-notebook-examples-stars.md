@@ -9,6 +9,14 @@ modified: 2022-05-20T19:34:35.500Z
 
 # examples
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## build regular (or irregular) grids with #geoviz
+- https://observablehq.com/@neocartocnrs/bees
 
 - ## US election results for the midterms are almost final. 
 - https://twitter.com/karim_douieb/status/1600120307821355008

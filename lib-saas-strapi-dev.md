@@ -36,6 +36,7 @@ modified: 2023-12-15T16:51:56.101Z
     - There are no known nor recommended workarounds for this.
   - It doesn't namespace its admin table
   - cannot store Content Manager layout configurations in the model settings. 因为未来移动版的layout可能不同，保存后如何恢复
+  - 不支持conditional-field
   - 不支持多种第三方登录
   - rbac功能默认需要内置的10张表，复杂度高，难以迁移离开
   - 纯前端的plugin不方便直接预览
@@ -48,7 +49,6 @@ modified: 2023-12-15T16:51:56.101Z
 - 📈 表格不支持拖拽调整row顺序和column顺序，但支持设置调整列顺序
   - 不支持在任意位置插入row, 支持在设置而不是表格中添加列和调整列顺序
   - 不支持拖拽调整列宽度
-  - 不支持conditional-fields
   - ✅ 支持group fields: components/dynamic-zone
 
 - features
@@ -153,8 +153,128 @@ modified: 2023-12-15T16:51:56.101Z
   - time-travel
   - multiple draft
 
-- plugin-content-versioning
-  - 使用了非公开api addMiddlewares
+- 要点
+  - 更新内容时保存历史数据
+  - 返回数据时返回历史版本
+
+- 
+- 
+- 
+
+### plugin-content-versioning
+
+- 在admin前端使用了非公开api `addMiddlewares`
+
+```JS
+// 📌 在ctb创建类型时
+// payload POST /content-type-builder/content-types
+
+{
+  "components": [],
+  "contentType": {
+    "draftAndPublish": true,
+    "pluginOptions": {
+      "versions": {
+        "versioned": true // 👈🏻
+      }
+    },
+    "displayName": "test-version1",
+    "singularName": "test-version1",
+    "pluralName": "test-version1s",
+    "kind": "collectionType",
+    "attributes": {
+      "body": {
+        "pluginOptions": {
+          "versions": {
+            "versioned": true // 👈🏻
+          }
+        },
+        "type": "string"
+      }
+    }
+  }
+}
+
+// response
+{
+  "data": {
+    "uid": "api::test-version1.test-version1"
+  }
+}
+
+// 📌 在cm更新内容时
+// PUT /content-manager/collection-types/api::test-version1.test-version1/2
+
+{
+  "id": 3,
+  "body": "content123====",
+  "createdAt": "2024-03-26T05:59:50.397Z",
+  "updatedAt": "2024-03-26T05:59:50.397Z",
+  "publishedAt": null,
+  "vuid": "d8f65e57-1ec8-4069-9f9d-01ae56514213",
+  "versionNumber": 3,
+  "versionComment": null,
+  "isVisibleInListView": true,
+  "versions": [
+    1,
+    2
+  ]
+}
+// response 会返回所有历史版本
+
+{
+  "id": 4,
+  "body": "content123====",
+  "createdAt": "2024-03-26T06:03:09.631Z",
+  "updatedAt": "2024-03-26T06:03:09.631Z",
+  "publishedAt": null,
+  "vuid": "d8f65e57-1ec8-4069-9f9d-01ae56514213",
+  "versionNumber": 4, // 👈🏻 最新版本
+  "versionComment": null,
+  "isVisibleInListView": true,
+  "createdBy": {
+    "id": 1,
+    "firstname": "admin",
+    "lastname": "super",
+    "username": null
+  },
+  "updatedBy": {
+    "id": 1,
+    "firstname": "admin",
+    "lastname": "super",
+    "username": null
+  },
+  "versions": [{ // 👈🏻 所有历史版本，不包含最新版
+      "id": 1,
+      "body": "content",
+      "createdAt": "2024-03-26T05:58:47.799Z",
+      "updatedAt": "2024-03-26T05:58:47.799Z",
+      "publishedAt": null,
+      "vuid": "d8f65e57-1ec8-4069-9f9d-01ae56514213",
+      "versionNumber": 1,
+      "versionComment": null,
+      "isVisibleInListView": false
+    },
+    {
+      "id": 2,
+      "body": "content1",
+    },
+    {
+      "id": 3,
+      "body": "content123",
+      "createdAt": "2024-03-26T05:59:50.397Z",
+      "updatedAt": "2024-03-26T05:59:50.397Z",
+      "publishedAt": null,
+      "vuid": "d8f65e57-1ec8-4069-9f9d-01ae56514213",
+      "versionNumber": 3,
+      "versionComment": null,
+      "isVisibleInListView": false
+    }
+  ]
+}
+```
+
+- 
 - 
 - 
 - 

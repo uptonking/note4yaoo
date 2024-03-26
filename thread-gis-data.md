@@ -20,7 +20,10 @@ modified: 2021-05-25T08:42:01.343Z
 
 - ## 
 
-- ## 
+- ## Many public data sources are only available as Esri MapServers, FeatureServers or ImageServers, which can be hard to work with. 
+- https://twitter.com/felt/status/1772299987042656279
+  - Fortunately, you can simply upload the URL into Felt and let us do the work.
+  - And this technique works with raster as well as vector data
 
 - ## geospatial twitter: where can i find a geojson/topojson country borders dataset that's openly licensed and does not show crimea as part of russia
 - https://twitter.com/tmcw/status/1769117685260878048

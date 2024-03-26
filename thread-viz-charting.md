@@ -7,8 +7,19 @@ modified: 2021-03-24T14:13:19.830Z
 
 # thread-viz-charting
 
-# pieces
+# guide
 
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## How to pick the best graphic representation?
+- https://twitter.com/R_Graph_Gallery/status/1772561749666873373
+  - https://www.data-to-viz.com/ is a classification of chart types based on their input format
+  - It also provides link to R, Python and D3 examples.
+
+# discuss
 - ## 
 
 - ## 

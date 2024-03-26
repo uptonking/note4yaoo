@@ -17,7 +17,33 @@ modified: 2023-10-27T06:54:20.487Z
   - For applications, most queries are static and the data is dynamic
 - What you really want is a database where a query is the same things as an index, is the same thing as a subscription... These are all the same underlying mechanic.
 
-- ## 🐬🐛 The problem with using a UUID primary key in MySQL
+- ## 🆔️ GUID做主键的弊病：
+- https://twitter.com/geniusvczh/status/1772367461091795070
+  - 1、guid生成是随机的离散的，主键通常会生成主键索引，为了优化搜索、插入、删除操作的效率，显然主键有序更好，这是其一；
+  - 2、Oracle、SQL Server和MySQL的常规索引都是B树或B+树，是一种平衡树。在插入和删除的时候，因为guid的离散性，会导致平衡树失衡，导致数据重排
+- btree在写入数据到叶子层的page的时候，需要不断排序。数值型的主键id直接排序即可，因为写入的id肯定比之前的大，而uuid需要根据一定规则进行排序，因为是不规则类型，因此对应的record需要不断的进行重排，这样当前page中在进行着不断的排序，不断的对象和地址的copy。
+
+- 我原来也用自增数字，后来由于删除过数据，在库间copy表时，两个表的数字键会不一样，这给我带来很大的麻烦，而搜索性能方面的弊端在我这里并不突出或用别的方法解决，我就以后都用guid了。省心。
+- 碰到数据拆分合并，guid还是最好的选择
+- 我都10年没用过自增了，如果重逻辑重重构的话，GUID显然是无二选择
+
+- 如果用UUIDv7有序的呢
+  - Sequential GUID吗？那和snowflake id没啥区别了吧。我觉得Sequential GUID不能叫"GUID"了
+  - 微软特例叫guid，我们java boy都是叫uuid，用ulid和雪花的估计也少了
+
+- 取决于 传统的db还是 distributed kv 比如dynamo。对于k, v来说，uuid反而是受到鼓励的, 因为会均匀的分布在不同的node上
+  - 但dynamo不是有自己的hash func么？可以让数据分散在不同的node上。这样一来，感觉guid都有些redundant了。
+- 你说的是对的。 例外在于，dynamo可以用partition key + sort key 作为pk 如果不必要的使用了两个field作为pk, 而第一个field有重复的值，就会出现data skew的问题，可能影响性能。 再者，如果同时动态创建多个新的数据，用uuid是最简单的方法。（分布式保持一个一直递增的id不简单）
+
+- 🐛 使用自增主键，有删除数据的话，oracle没有问题因为它使用的是自增sequence 。但mysql 会重复使用被删除的主键，有时候会带来业务查询上的问题。
+
+- 果然是mysql受害者。别人的数据库用不用guid总的来说差别不是很大，就是mysql的效果特别明显
+
+- 
+- 
+- 
+
+- ## 🆔️🐬 The problem with using a UUID primary key in MySQL
 - https://twitter.com/PlanetScale/status/1770120605905612861
 - I'm pretty certain the same issues exist for UUIDs regardless of the DB.
   - I use a CUID which may suffer from some issues itself, but in practice I've not had problems.
@@ -55,7 +81,7 @@ modified: 2023-10-27T06:54:20.487Z
 - Use an alternate ID type
   - different formats such as Snowflake IDs, ULIDs, or even NanoIDs
 
-- ## 💡 Myth(神话，想像或虚构的人物): Using UUID as the primary key will slow down inserts. 
+- ## 🆔️ Myth(神话，想像或虚构的人物): Using UUID as the primary key will slow down inserts. 
 - https://twitter.com/gwenshap/status/1686148804821811200
   - Fact: Not in Postgres.
   - I often recommend using UUIDs instead of integer sequences as primary keys. I was surprised to discover that many developers are uncomfortable with them and believe they will slow down inserts. 

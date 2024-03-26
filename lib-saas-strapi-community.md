@@ -239,7 +239,19 @@ modified: 2023-12-15T17:04:36.589Z
 
 - ## 
 
-- ## 
+- ## [How to debug server errors by adding logging details? - Questions and Answers / Strapi Backend - Strapi Community Forum _202207](https://forum.strapi.io/t/how-to-debug-server-errors-by-adding-logging-details/20242)
+
+- ## 🔡 [[v5] ] Set default log level to 'info'  _202311](https://github.com/strapi/strapi/pull/18904/files)
+
+- ## [V4 aggregation-grouping](https://github.com/strapi/strapi/issues/11745)
+- If you want to customize/augment the behaviour of an existing query, you can either call its default resolver using the `buildQueriesResolver` or use a middleware.
+- The entity service is a layer used both by the REST & GraphQL API, it allows us to normalize the requests & responses. 
+  - Controllers & resolvers are basically interfaces that translate protocol-based requests to entity-service requests. 
+  - note that you can decorate entity service's methods, not sure it has been documented though
+
+- ## [Replace query builder _202212](https://forum.strapi.io/t/replace-query-builder/24623/2)
+  - I need to modify some of the queries before I send them to the db.
+- You could see if `strapi.entityService.decorate` is the solution for you. this will be ran on all quarry’s
 
 - ## 💡 [How to query collections from custom plugin in strapi? - Questions and Answers - Strapi Community Forum](https://forum.strapi.io/t/how-to-query-collections-from-custom-plugin-in-strapi/11699)
 - In the backend of your plugin you can use the global `strapi.contentTypes` variable to fetch all Single and Collection types.

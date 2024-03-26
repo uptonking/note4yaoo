@@ -16,6 +16,26 @@ modified: 2023-05-21T15:44:39.196Z
 
 - ## 
 
+- ## 
+
+- ## 🚀 [Bricks - Show HN: Fast Modern Spreadsheet | Hacker News _202403](https://news.ycombinator.com/item?id=39817041)
+- 👷🏻 Co-founder/CTO here.
+  - we wanted to make an online spreadsheet that exceeds the speed of a desktop version of Excel
+  - we are running all calculations on the client-side using multithreaded WebAssembly (C++) & CRDT for collaboration. 
+  - We also wrote our own optimized Canvas-based spreadsheet renderer.
+  - Running calculations locally allows us to minimize cost to serve a user, to eventually implement e2e encryption, and to provide an offline mode. 
+  - We will also ship a native desktop app next month to get around 4GB browser WASM limitation and to get an extra 30% speed boost.
+
+- 
+- 
+- 
+
+- ## [rowzero - Show HN: We built the fastest spreadsheet | Hacker News _202402](https://news.ycombinator.com/item?id=39551064)
+- 🤔 How is the data modelled and persisted? What database and how is conflict handled? CRDT?
+  - We use Apache Arrow data format, so it's fairly columnar. We have built some custom layers on top of Arrow as well to handle some fancier data types.
+  - For storage and orchestration we use S3 and Dynamo.
+  - Yes exactly, we use CRDTs for multiplayer stuff.
+
 - ## 📈🔀 [Quadratic – Open-Source Spreadsheet Is Now Multiplayer | Hacker News _202402](https://news.ycombinator.com/item?id=39217440)
 - Quadratic is an open-source spreadsheet application for engineers that supports Python, SQL (coming soon), and classic Formulas. 
   - Unlike other spreadsheets, Quadratic has an infinite canvas (like Figma). 

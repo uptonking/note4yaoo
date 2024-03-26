@@ -18,6 +18,11 @@ modified: 2024-03-08T05:29:35.446Z
 # discuss-news-pdnd
 - ## 
 
+- ## 
+
+- ## Working on a @tan_stack virtual list example, with drag and drop powered by Pragmatic drag and drop
+- https://twitter.com/alexandereardon/status/1772394493943091270
+
 - ## 🌰 Seamless dragging between windows; second columns are in iframes
 - https://twitter.com/alexandereardon/status/1765874214471614652
   - Yes, this works in Safari and Firefox

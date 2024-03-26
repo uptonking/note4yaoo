@@ -37,6 +37,10 @@ modified: 2022-08-21T10:38:26.289Z
 
 - [Row Zero - The World's Most Powerful Spreadsheet](https://rowzero.io/)
   - making big data feel small in a familiar spreadsheet interface
+
+- [Bricks | Where presentations and spreadsheets become one](https://www.thebricks.com/)
+  - [How fast is Bricks? • Bricks](https://app.thebricks.com/file/b0e5a7da-f92b-4966-b2d6-22f20629be03/6@e5a7daf9-2bf9-46f2-9622-f20629be0304:0/visual-board)
+  - 设计简洁，左侧侧边栏可折叠为悬浮按钮
 # project-management
 - asana
 

@@ -263,6 +263,11 @@ modified: 2024-02-16T14:56:17.057Z
 - ## 
 
 - ## 
+
+- ## ✨ [pr已合并 - Add support for Conditional Fields _202107](https://github.com/directus/directus/pull/6864)
+- Multiple conditions can be configured at once, the last one that matches has it's rules applied
+- Conditions can be set on groups as well, allowing for showing/hiding sets of groups at once
+
 # discuss
 - ## 
 

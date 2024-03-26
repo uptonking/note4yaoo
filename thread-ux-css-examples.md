@@ -16,7 +16,8 @@ modified: 2021-02-05T14:00:02.922Z
 
 - ## 
 
-- ## 
+- ## Create sidebar using HTML and CSS 
+- https://twitter.com/davidm_ml/status/1772248123575771620
 
 - ## Sticky/Stretching Cursor
 - https://twitter.com/DevLoop01/status/1771689132890439932

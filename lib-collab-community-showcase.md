@@ -22,7 +22,10 @@ modified: 2023-05-21T15:46:35.896Z
 # discuss
 - ## 
 
-- ## 
+- ## 🌰 [Ibis, a federated Wikipedia alternative | Hacker News _202403](https://news.ycombinator.com/item?id=39694045)
+- 
+- 
+- 
 
 - ## When building multiplayer forms, it's easy to show presence with a border—but how do you handle users editing at the same time?
 - https://twitter.com/ctnicholasdev/status/1767654875595432349

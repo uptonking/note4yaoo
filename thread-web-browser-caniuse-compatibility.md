@@ -52,7 +52,9 @@ modified: 2021-07-29T11:15:44.100Z
 
 - ## 
 
-- ## 
+- ## From Chrome 124, scrollers are keyboard focusable by default if they have no keyboard focusable children.
+- https://twitter.com/passle_/status/1771448139876118951
+- I believe a variation of this has existed inside of Firefox for a bit too. Be nice if* it finally makes it to chrome stable. 
 
 - ## 📏 fun fact: while chrome URL limit is 2, 083 characters the hash part of URL is not limited by this number, that's why I was able to put 100kb of code into typescript playground
 - https://twitter.com/JLarky/status/1771603877676142666

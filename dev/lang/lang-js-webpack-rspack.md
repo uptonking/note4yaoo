@@ -66,6 +66,10 @@ modified: 2024-01-02T07:53:22.956Z
 
 - Uncaught SyntaxError: Cannot use 'import.meta' outside a module
   - 定位到原因是 `outputModule: true`， 而不是 `newTreeshaking: true`
+# vite-dev-xp
+- vite的cache目录默认在 node_modules/.strapi/deps/**.js
+  - 修改dist目录后需要先删除cache目录，然后cache会再次生成
+  - 默认使用esm入口，即dist/index.mjs，而不是index.js
 # changelog
 
 ## v2023
