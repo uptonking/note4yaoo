@@ -52,7 +52,16 @@ npm run develop
 
 - ## 
 
-- ## 
+- ## one of the major issues i’ve had with Strapi is that you cannot reliably add calculated fields (from other data sources) to responses. 
+- https://discord.com/channels/811989166782021633/811989167357689922/1222502997121175602
+  - You can't do it through services, hooks or the query engine. 
+  - You could arguably do it through middleware, and check the response body to see if a particular entity was populated and then add the calculated fields, but this isn't great either because it relies on the name of the relation rather than the actual content type.
+  - I’m wondering what the official Strapi position on this is, and how they recommend going about this?
+- Middlewares, model lifecycles, or soon in Strapi 5 the document service middlewares.
+  - Tbh this use-case is extremely niche and is basically known as API federation, it's better handled with a proper custom field that links to that external system (mux custom field plugin is a great example)
+- Lifecycles don't run on relations so that wouldn't be a reliable approach. Is it really that niche? I can think of loads of scenarios where you'd want to alter the response to have a field that isn't isn't stored permanently within the model
+
+- Aren't custom fields global rather than scoped to a specific content type?
 
 - ## 🔒 [Field Level Permissions - End User management | Voters | Strapi _202203](https://feedback.strapi.io/feature-requests/p/field-level-permissions-end-user-management)
   - The current Users-permissions plugin is very limited in the control you have over accessing fields or even nested relations, components, and dynamic zones.

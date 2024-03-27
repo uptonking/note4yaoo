@@ -12,6 +12,25 @@ modified: 2022-11-21T15:27:20.974Z
 # ux-examples
 - ## 
 
+- ## 
+
+- ## Make your CSS animations stand out by using the `linear()` easing function to create more complex animation curves that can mimic bounce and spring effects.
+- https://twitter.com/joyofcodedev/status/1772639782553669673
+
+- ## 💫 combine it with CSS scroll-driven animation
+- https://twitter.com/jh3yy/status/1770603402923225175
+  - 图片挤压文字的动画效果
+- https://twitter.com/jh3yy/status/1772702339389923355
+  - https://codepen.io/jh3y/pen/ZEZJYVe
+
+- https://twitter.com/jh3yy/status/1772705093546107377
+  - The CSS trick here is using custom properties to drive your CSS animation behavior
+  - Doesn't have to be a scroll animation
+
+- https://twitter.com/jh3yy/status/1771294048889786389
+  - Custom property powered responsive scroll animations with CSS
+  - https://codepen.io/jh3y/pen/JjVRGwR
+
 - ## Create this beautiful sound wave using just HTML and CSS 
 - https://twitter.com/davidm_ml/status/1763530731337257266
   - https://github.com/atherosai/ui/tree/main/animation-01

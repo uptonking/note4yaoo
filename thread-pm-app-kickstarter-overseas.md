@@ -14,7 +14,11 @@ modified: 2023-03-31T16:22:00.794Z
 
 - ## 
 
-- ## 
+- ## 都说纽约是科创圈FinTech之城，我之前还没有什么感知。
+- https://twitter.com/0xthefool/status/1772865660097294553
+  - 准备找一下下周末在纽约的科创活动，看了一圈在别的城市创业圈被AI入侵的时候，NYC居然还是满满的FinTech
+- 新加坡香港和东京：web3 >> ai
+
 # discuss-cn
 - ## 
 

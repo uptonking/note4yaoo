@@ -39,6 +39,19 @@ modified: 2023-10-31T11:17:48.697Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Lots of queries that remove duplicates using DISTINCT or GROUP BY after an INNER JOIN (or LEFT JOIN) could perform significantly better if using a SEMI JOIN
+- https://twitter.com/lukaseder/status/1772971845785927825
+  - [If you remove duplicates after INNER JOIN, consider using SEMI JOIN](https://blog.jooq.org/sql-join-or-exists-chances-are-youre-doing-it-wrong/)
+- An JOIN is nothing but a filtered cartesian product
+  - In SQL, a cartesian product can be written as either a CROSS JOIN, or a table list in the FROM clause.
+- By using a SEMI-JOIN. It is called semi join (i.e. “half” join) in relational algebra, because we only care about one side of the JOIN operation in the results, not the other side.
+  - Unfortunately, SQL doesn’t have SEMI JOIN keywords
+  - The SQL way to express a SEMI JOIN is by using EXISTS () or IN (). 
+
 - ## 7 SQL Joins You Must Know
 - https://twitter.com/AmigosCode/status/1766073736640303292
 ➡️ Inner Join: Retrieves records with matching values in both tables.

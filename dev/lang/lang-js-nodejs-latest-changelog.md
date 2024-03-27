@@ -40,6 +40,11 @@ modified: 2022-12-31T20:13:33.307Z
 
 ## v20.0.0_20230418
 
+- [v20.12.0_2024-03-26](https://nodejs.org/en/blog/release/v20.12.0)
+  - implement `crypto.hash()`, 1.2-2x faster than the object-based `createHash()` for smaller inputs (<= 5MB) 
+  - vm: support using the default loader to handle dynamic import()
+  - stream: add support for deflate-raw format to webstreams compression
+
 - [v20.11.0_2024-01-09](https://nodejs.org/en/blog/release/v20.11.0)
   - esm: add `import.meta.dirname` and `import.meta.filename`.
     - https://twitter.com/meijer_s/status/1745727753964462431

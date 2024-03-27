@@ -12,7 +12,7 @@ modified: 2021-08-16T06:56:53.061Z
 # discuss-stars
 - ## 
 
-- ## 💡 It seems that there are just three approaches that "knowledge management" apps take:
+- ## 🆚️ It seems that there are just three approaches that "knowledge management" apps take:
 - https://twitter.com/jessmartin/status/1710261497786413516
   - Document-first (Notion, Obsidian, etc)
   - Spatial-first (Miro, Muse, etc)
@@ -25,15 +25,17 @@ modified: 2021-08-16T06:56:53.061Z
   - what should be embeddable in what
   - how you visually present an entity/object throughout(各方面)
 
+- Tana, Roam, and Logseq all seem like Outline-first, where the primary unit is actually a point in the outline.
+  - Good point! Outline ≠ document. When I’ve tried to treat an outliner as a normal document, I’ve been incredibly frustrated
+
+- Task-first. @clickup Docs function as my primary knowledge base with links to Tasks in Lists that track my long-term and ongoing projects. It’s powerful to have knowledge management and project management in a single tool.
+
 - Also http://getguru.com - they look similar but take a different approach (with verification features) and are very successful with it
   - [Guru | Your company’s all-in-one solution for trusted information | Guru](https://www.getguru.com/)
   - 3 products. 1 platform: AI-powered enterprise search, wiki, and intranet
 - On the surface, it looks like document-first (an enterprise wiki)
 - What would you say differs about their approach?
   - One differentiator is verification. Each "card" needs checking and verifying within a certain time-period. This ensures that information doesn't grow stale which is a problem in so many company wikis. By default the card creator is the verifier, but they can also be nominated.
-
-- Tana, Roam, and Logseq all seem like Outline-first, where the primary unit is actually a point in the outline.
-  - Good point! Outline ≠ document. When I’ve tried to treat an outliner as a normal document, I’ve been incredibly frustrated
 
 - I would consider http://rewind.ai a tool for knowledge management, a very novel one.
 
@@ -69,16 +71,24 @@ modified: 2021-08-16T06:56:53.061Z
 
 - @RoamResearch is block-first, even in a way that Notion is not (I think you're right to call Notion "Document-first") 
   - It then *composes* the three approaches you list here by combining together the same underlying items in different forms (slightly different than "adding on")
-
-- Task-first. @clickup Docs function as my primary knowledge base with links to Tasks in Lists that track my long-term and ongoing projects. It’s powerful to have knowledge management and project management in a single tool.
 # discuss
 - ## 
 
 - ## 
 
-- ## combine it with CSS scroll-driven animation
+- ## 💫 combine it with CSS scroll-driven animation
 - https://twitter.com/jh3yy/status/1770603402923225175
   - 图片挤压文字的动画效果
+- https://twitter.com/jh3yy/status/1772702339389923355
+  - https://codepen.io/jh3y/pen/ZEZJYVe
+
+- https://twitter.com/jh3yy/status/1772705093546107377
+  - The CSS trick here is using custom properties to drive your CSS animation behavior
+  - Doesn't have to be a scroll animation
+
+- https://twitter.com/jh3yy/status/1771294048889786389
+  - Custom property powered responsive scroll animations with CSS
+  - https://codepen.io/jh3y/pen/JjVRGwR
 
 - ## 一个程序员最卷的项目：Markdown 编辑器。
 - https://twitter.com/vikingmute/status/1768090000481288276

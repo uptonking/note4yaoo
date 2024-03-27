@@ -49,6 +49,27 @@ modified: 2023-10-28T17:52:17.942Z
 - ## [RustgreSQL | Hacker News_201701](https://news.ycombinator.com/item?id=13354099)
 - I would suggest that the author creates a clone of a "simpler" DB like SQLite or Redis. Those have, as far as I understand, good C codebases, so understanding the system should be much easier.
 
+# discuss-cons-pg
+- ## 
+
+- ## 
+
+- ## PostgreSQL has some limits on the number of partitions. 
+- https://twitter.com/FranckPachot/status/1772630850854670729
+  - YugabyteDB scales out with the automatic distribution of rows and index entries and uses partitions for lifecycle management or geo-partitioning, where the number is low
+  - [Solve PostgreSQL Indexes, Partitioning, LockManager Limitations _202403](https://www.yugabyte.com/blog/postgresql-indexes-partitioning-lockmanager-limitations/)
+- Interesting article. I feel that partitioning by hash is a different use case to partitioning by range of time (which I feel is the more common use in PG). Are you looking to cover that partitioning case sometime?
+  - Yes I used hash here because it is easy to distribute without thinking of values. Will be the same on time: partition by range in postgres, or declaring the key as ASC or DESC in YugabyteDB. Can additionally partition by range on YB for lifecycle management, with few partitions)
+
+- To me this seems applicable to hash partitioning but not when partitioning by range on time (e.g. monthly) though right?
+  - It can. An index on the date will be: `CREATE INDEX on payments (created desc, payment_id)`
+
+  - range sharded, split automatically when growing (you can pre-split if you know the values) 
+  - Or, if the date is in the key, PK can be: `primary key (created desc, payment_id)`
+
+- https://twitter.com/FranckPachot/status/1772895989394710668
+  - Sharding by HASH is nice to immediately distribute, is the default on first key column
+  - RANGE sharding is better for range queries
 # discuss
 - ## 
 

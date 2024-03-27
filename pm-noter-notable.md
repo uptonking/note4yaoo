@@ -266,20 +266,18 @@ modified: 2023-11-28T14:48:45.910Z
 # ux
 - 当视口宽度变窄时，tab页或宽卡片可以像tweetdeck一样折叠以缩小空间，折叠的过程可显示动画
 # business-features
-- ActionText
+- 提供相同的功能，但
+  - 需要点击更多的确认按钮
+  - 非高级的动画效果
 
-- 规避版权问题的内容讨论平台
-  - 科技分享，类似hacker-news
-  - 产品讨论，类似product-hunt
-  - 打分评论，类似豆瓣电影与音乐
-  - 论坛圈子，类似贴吧/reddit，支持一个url在不同板块重复讨论、多次讨论
+- ActionText
 
 - office开放集成
   - 支持wopi协议集成
 
 - core免费，plugin收费
   - 类似vscode扩展市场
-  - 非热门产品的特性插件是否该付费，参考nocodb，只将某些数据源收费，如oracledb
+  - 非热门产品的特性插件是否该付费，参考nocodb，只将某些数据源收费，如oracle-db
 
 ## pricing
 

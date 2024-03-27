@@ -115,6 +115,7 @@ modified: 2024-03-20T15:11:37.860Z
 
 - 创建collection-type时，先将数据保存到redux，点击save才会提交请求到服务端
   - POST `/content-type-builder/content-types`.
+    - packages/core/content-type-builder/admin/src/components/DataManagerProvider/DataManagerProvider.tsx
   - content-type-builder-plugin的route会处理创建请求，插件的service会createContentTypes
   - 先创建contentTypes对应的builder，然后builder.writeFiles(), Write all type to files, 
   - ✍🏻️ 会执行 schemaHandler.flush()，执行 写文件ctrl/srv.ts，并将fse.writeJSON将类型定义写到json文件
@@ -130,6 +131,16 @@ modified: 2024-03-20T15:11:37.860Z
 - 
 
 # content-manager
+- 选择以后类型后，默认显示的组件是 ProtectedListViewPage
+- 点击create创建内容时，显示的组件是 ProtectedEditViewPage
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 
 # media-library/upload
 

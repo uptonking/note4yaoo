@@ -32,6 +32,8 @@ modified: 2022-11-07T10:58:24.512Z
   - linear，挑战jira
   - zendesk，客户帮助平台
   - roadmap/feedback, canny
+
+- 如果你做独立开发，没任何用户感知和判断力，建议多逛逛这个subreddit，https://reddit.com/r/SideProject/
 # datable/数据整理
 - 政府数据
   - 各级统计局
@@ -114,6 +116,10 @@ modified: 2022-11-07T10:58:24.512Z
 
 # business-features
 
+- 提供相同的功能，但
+  - 需要点击更多的确认按钮
+  - 非高级的动画效果
+
 - links
   - 外链，显示链接或简化版文字可减少干扰，减少用户离开；支持付费自定义card样式
 
@@ -129,7 +135,11 @@ modified: 2022-11-07T10:58:24.512Z
 
 - ActionText
 
-- 如果你做独立开发，没任何用户感知和判断力，建议多逛逛这个subreddit，https://reddit.com/r/SideProject/
+- 规避版权问题的内容讨论平台
+  - 科技分享，类似hacker-news, reddit
+  - 论坛圈子，类似贴吧/reddit，支持一个url在不同板块重复讨论、多次讨论
+  - 产品讨论，类似product-hunt
+  - 打分评论，类似豆瓣电影与音乐
 # discuss
 - ## 
 

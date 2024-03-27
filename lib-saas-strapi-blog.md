@@ -76,7 +76,7 @@ modified: 2023-12-15T16:52:28.937Z
   - an application that implements webhooks is able to notify other applications as a certain event occurs in its context. 
   - webhooks are typically implemented as HTTP POST requests.
 
-### [How to Use Lifecycle Hooks for Audit Logs in Strapi](https://strapi.io/blog/how-to-use-lifecyle-hooks-for-audit-logs-in-strapi
+### [How to Use Lifecycle Hooks for Audit Logs in Strapi v4 _202210](https://strapi.io/blog/how-to-use-lifecyle-hooks-for-audit-logs-in-strapi)
 
 - 
 - 

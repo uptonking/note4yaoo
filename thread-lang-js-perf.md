@@ -99,7 +99,7 @@ modified: 2023-11-10T08:05:19.107Z
 
 - ## 
 
-- ## 
+- ## [Optimizing Javascript for fun and for profit _202403](https://romgrk.com/posts/optimizing-javascript)
 
 - ## 真的绝了，没想到分支预测对性能的影响有这么明显。不论怎么跑，三元表达式一定相对更慢
 - https://twitter.com/isukkaw/status/1764654438785200536

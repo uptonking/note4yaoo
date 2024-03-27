@@ -11,6 +11,16 @@ modified: 2023-03-11T15:37:59.134Z
 
 # blogs
 
+## [Store the history and the state of CRDTs in a KV store _202403](https://twitter.com/zxch3n/status/1772864473348653162)
+
+- Git is built on top of its own KV store to store the history of edits. 
+  - We can probably do similar things for CRDTs libs like @loro_dev and Automerge, where we can extract the history(all the operations) of CRDTs into a separate KV store and load them lazily. 
+  - 🆚️ The differences are Git uses the hash as keys, CRDTs should use the id of the ops as keys, and they tend to have significantly more entries than Git because they treat every keystroke as a separate version.
+- Document states can also be persisted in the KV store, enabling scenarios like spreadsheets with millions of cells or storing the entire Git repo inside a single "CRDTs document." 
+  - This would make these CRDTs libs more like embedded databases. There are many exploratory works to be done, but I'm excited about its potential.
+
+- This would make these CRDTs libs more like embedded databases. There are many exploratory works to be done, but I'm excited about its potential.
+
 ## [CRDTs _202209](https://www.gatlin.io/content/crdts)
 
 - Regarding internal state management, you can think of operation-based CRDTs as analogous to event sourcing. It is an implementation detail, but presumably a "pure" operation-based CRDT will store "just" the events, and compute the state from that (which it may or may not store, internally). 

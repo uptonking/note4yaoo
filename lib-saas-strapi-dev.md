@@ -168,7 +168,6 @@ modified: 2023-12-15T16:51:56.101Z
 ```JS
 // 📌 在ctb创建类型时
 // payload POST /content-type-builder/content-types
-
 {
   "components": [],
   "contentType": {
@@ -183,10 +182,10 @@ modified: 2023-12-15T16:51:56.101Z
     "pluralName": "test-version1s",
     "kind": "collectionType",
     "attributes": {
-      "body": {
+      "body11": {
         "pluginOptions": {
           "versions": {
-            "versioned": true // 👈🏻
+            "versioned": true // 👈🏻 
           }
         },
         "type": "string"
@@ -202,7 +201,7 @@ modified: 2023-12-15T16:51:56.101Z
   }
 }
 
-// 📌 在cm更新内容时
+// 📌 在cm更新内容时, url包含当前ver，返回的内容包含ver+1
 // PUT /content-manager/collection-types/api::test-version1.test-version1/2
 
 {
@@ -271,6 +270,18 @@ modified: 2023-12-15T16:51:56.101Z
       "isVisibleInListView": false
     }
   ]
+}
+
+// 服务端自动生成的 schema.json
+"attributes": {
+  "body": {
+    "pluginOptions": {
+      "versions": {
+        "versioned": true
+      }
+    },
+    "type": "string"
+  }
 }
 ```
 
