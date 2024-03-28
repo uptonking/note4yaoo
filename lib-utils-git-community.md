@@ -749,12 +749,13 @@ modified: 2023-08-29T10:13:31.070Z
 - Would the wiki part of fossil be a good static site generator?
   - Not in the general case, no. Fossil-generated wiki/markdown output expect to be browsed within the context of a fossil repository, and will generate links accordingly.
   - There might be very limited use cases where it would work reasonably well, but not generically. e.g. adding a link to a local file or another wiki page will not work if the output is browsed from outside of a fossil repo instance.
-# disccuss-git-cli
+# disccuss-git-usage/cli
 - ## 
 
 - ## 
 
-- ## 
+- ## git log searcher, as a webapp. Took me 1 hr to assemble with clj-git + clojure's datafy/nav + hyperfiddle datagrid + @ElectricClojure .
+- https://twitter.com/dustingetz/status/1773035945379484041
 
 - ## 🔀 大家都用什么方式处理git merge/rebase conflict?
 - https://twitter.com/changwei1006/status/1768927296570921435

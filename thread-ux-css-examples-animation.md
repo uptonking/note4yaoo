@@ -14,6 +14,13 @@ modified: 2022-11-21T15:27:20.974Z
 
 - ## 
 
+- ## 
+
+- ## Pacman loader con SVG y CSS
+- https://twitter.com/carmenansio/status/1773032297303835006
+  - https://codepen.io/carmenansio/pen/RwLvxEr
+  - 圆脸张嘴吃弹珠的动画，无js
+
 - ## Make your CSS animations stand out by using the `linear()` easing function to create more complex animation curves that can mimic bounce and spring effects.
 - https://twitter.com/joyofcodedev/status/1772639782553669673
 

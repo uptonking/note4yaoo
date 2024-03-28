@@ -186,6 +186,38 @@ modified: 2023-12-15T16:52:36.718Z
   - Only the Upload and Email plugins are currently designed to work with providers.
 
 - A provider can be configured to be private to ensure asset URLs will be signed for secure access.
+
+# server
+- The request's context can also be accessed from anywhere in the code with the `strapi.requestContext` function with v4.3.9+.
+  - You should only use this inside of functions that will be called in the context of an HTTP request.
+  - Strapi uses a Node.js feature called `AsyncLocalStorage` to make the context available anywhere.
+
+- Dynamic routes can be created using parameters and regular expressions
+- Routes files are loaded in alphabetical order. 
+  - To load custom routes before core routes, make sure to name custom routes appropriately (e.g. 01-custom-routes.js
+
+- An action from a core controller can be replaced entirely by creating a custom action and naming the action the same as the original action (e.g. find, findOne, create, update, or delete).
+
+- Controllers are declared and attached to a route. 
+  - Controllers are automatically called when the route is called, so controllers usually do not need to be called explicitly. 
+  - However, services can call controllers
+- Once a service is created, it's accessible from controllers or from other services
+
+- There are 2 different types of models in Strapi:
+  - content-types, which can be collection types or single types, depending on how many entries they manage, 
+  - and components that are data structures re-usable in multiple content-types.
+- Content-types and components models are created and stored differently.
+  - Component models can't be created with CLI tools. Use the Content-type Builder or create them manually.
+
+- `schema.json` for the model's schema definition. (generated automatically, when creating content-type with either method)
+
+- Lifecycles hooks are not triggered when using directly the `knex` library instead of Strapi functions.
+
+- 
+- 
+- 
+
+
 # content-manager
 - Content Manager is a core plugin of Strapi. 
   - It is a feature that is always activated by default and cannot be deactivated

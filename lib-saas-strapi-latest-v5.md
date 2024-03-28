@@ -219,23 +219,11 @@ npx create-strapi-app@5.0.0-beta.0 strapi5-app-beta0 --quickstart --ts
 
 - ## 
 
-- ## 🤔 Since documents now work by documentId and the regular id is one of its versions, how should we add relations in strapi5? Via documentId?
-- https://discord.com/channels/811989166782021633/1222438841345118308/1222473132137513030
-- It's mainly complicated because of situations where you're connecting D&P enabled CTs to non-D&P CTs and then adding in locales as well it's additionally complicated. 
-  - For full transparency, we still use `id` on the FE to simplify things, but, you can pass status `locale` and `documentId` instead to refine your connection. That should work
-
 - ## what are the actual improvements of Strapi v5? _20240327
 - https://discord.com/channels/811989166782021633/1095091586452426824/1222274834952622081
 - Most are internal breaking changes we needed to make for future feature development, 
   - the largest change was the rewrite of the draft + publish system as you can now have a single draft of an already published entity. 
   - In the future this will be expanded with multiple drafts (effectively content versioning).
-- 
-- 
-- 
-- 
-- 
-- 
-- 
 
 - ## ⌛️ [How to create archive for blog in strapi and nextjs? _202309](https://forum.strapi.io/t/how-to-create-archive-for-blog-in-strapi-and-nextjs/21247/11)
 - the whole reason we need v5 is to build content versioning. We made quite a lot of changes in v4 to try and achieve what we wanted to do but hit some breaking change blockers that required some additional things so it got delayed til v5.

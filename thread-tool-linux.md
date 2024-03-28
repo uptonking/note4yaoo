@@ -29,7 +29,17 @@ modified: 2024-01-06T13:48:42.969Z
 
 - ## 
 
-- ## 
+- ## zsh 在特别大的一个 Git 仓库下会特别卡
+- https://twitter.com/alswl/status/1773166682887888927
+  - 原因是 zsh 的 prompt 会在每次命令执行之后计算 Git 仓库的 status 和 dirty status。
+  - 解法是可以通过图中命令禁用。
+- 这是 oh-my-zsh，不是 zsh 本身。这要看你的 oh-my-zsh 都配置了那些插件，配置了 git 插件就会执行这些命令。
+  - 是的，我没刻意区分。oh-my-zsh 的主题中 hell prompt 里面会带上 Git 仓库状态。
+
+- 主要是 oh-my-zsh 太慢了吧，可以试试gitstatus 
+  - 我尝试了一下，gitstatus 原理是会拉起一个 gitstatusd 后台，用预热方式换时间。
+
+- 完全没必要禁用，换一个异步的主题就行，比如 powerline10k
 
 - ## 使用 nix 管理所有的命令行应用 https://nix.dev
 - https://twitter.com/vikingmute/status/1769540841553772726

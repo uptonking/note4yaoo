@@ -835,7 +835,7 @@ modified: 2023-12-15T19:30:23.094Z
   - This plugin implements a simple way to seed strapi permission::users-permissions table from routes configuration. 
   - It means that you can define your routes permissions direcly on yours routes.json files.
 
-- https://github.com/strapi-community/strapi-plugin-protected-populate /202311/js
+- https://github.com/strapi-community/strapi-plugin-protected-populate /MIT/202403/js
   - The purpose of this plugin is to have a easy way to protect your get endpoints from getting to much information out of them. I made this plugin since I got sick and tired of writing complex policies to do this exact thing.
   - Protected your Get request populates and fields
 

@@ -12,7 +12,16 @@ modified: 2023-10-26T15:02:47.068Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 🆚️ does anyone have good sources comparing and contrasting the tradeoffs of relational dbs versus key-value stores? 
+- https://twitter.com/jessmartin/status/1773320178786271236
+- kv stores are used to implement relational dbs.
+- So relational dbs are a set of abstractions on top of kv stores to give you:
+  - rich queries
+  - schemas
+  - invariants
+  - transactions across keyspaces
+  - managed indices
+  - query planning
 
 - ## 💰 Redis Adopts Dual Source-Available Licensing
 - https://twitter.com/eatonphil/status/1770599507828330547

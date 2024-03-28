@@ -154,8 +154,8 @@ modified: 2023-12-15T16:51:56.101Z
   - multiple draft
 
 - 要点
-  - 更新内容时保存历史数据
-  - 返回数据时返回历史版本
+  - 更新内容时保存历史数据 /post/put
+  - 返回数据时返回历史版本 /get
 
 - 
 - 
@@ -201,9 +201,70 @@ modified: 2023-12-15T16:51:56.101Z
   }
 }
 
-// 📌 在cm更新内容时, url包含当前ver，返回的内容包含ver+1
-// PUT /content-manager/collection-types/api::test-version1.test-version1/2
+// 📌 在cm创建内容时，发送填写内容，返回带版本的完整内容
+// POST /content-manager/collection-types/api::test-version11.test-version11
+// payload
+{
+  "title11": "hi11"
+}
+// response v4
+{
+  "id": 5,
+  "title11": "hi11",
+  "createdAt": "2024-03-28T04:10:11.152Z",
+  "updatedAt": "2024-03-28T04:10:11.152Z",
+  "publishedAt": null,
+  "vuid": "24b728b9-878b-4c00-b70f-e262ab3bb8db",
+  "versionNumber": 1,
+  "versionComment": null,
+  "isVisibleInListView": true,
+  "createdBy": {
+    "id": 1,
+    "firstname": "admin",
+    "lastname": "super",
+    "username": null
+  },
+  "updatedBy": {
+    "id": 1,
+    "firstname": "admin",
+    "lastname": "super",
+    "username": null
+  },
+  "versions": []
+}
+// response v5
+{
+  "id": 3,
+  "documentId": "xvvoa31x94xacp6anfp5ace0",
+  "title11": "hi",
+  "createdAt": "2024-03-28T04:27:30.940Z",
+  "updatedAt": "2024-03-28T04:27:30.940Z",
+  "publishedAt": null,
+  "locale": null,
+  "vuid": null,
+  "versionNumber": 1,
+  "versionComment": null,
+  "isVisibleInListView": true,
+  "createdBy": {
+    "id": 1,
+    "firstname": "admin",
+    "lastname": "super",
+    "username": null
+  },
+  "updatedBy": {
+    "id": 1,
+    "firstname": "admin",
+    "lastname": "super",
+    "username": null
+  },
+  "versions": [],
+  "status": "draft"
+}
 
+// 📌 在cm更新内容时, url包含当前ver，返回的内容包含ver+1及所有旧version
+// v4 PUT /content-manager/collection-types/api::test-version1.test-version1/2
+// v5 PUT /content-manager/collection-types/api::test-version12.test-version12/xvvoa31x94xacp6anfp5ace0
+// payload
 {
   "id": 3,
   "body": "content123====",
@@ -218,8 +279,10 @@ modified: 2023-12-15T16:51:56.101Z
     1,
     2
   ]
+} {
+  "title11": "hi11"
 }
-// response 会返回所有历史版本
+// response v4 会返回所有历史版本
 
 {
   "id": 4,
@@ -270,6 +333,40 @@ modified: 2023-12-15T16:51:56.101Z
       "isVisibleInListView": false
     }
   ]
+}
+// response v5
+{
+  "data": {
+    "id": 3,
+    "documentId": "xvvoa31x94xacp6anfp5ace0",
+    "title11": "hi11",
+    "createdAt": "2024-03-28T04:27:30.940Z",
+    "updatedAt": "2024-03-28T04:30:56.360Z",
+    "publishedAt": null,
+    "locale": null,
+    "vuid": null,
+    "versionNumber": 1,
+    "versionComment": null,
+    "isVisibleInListView": true,
+    "createdBy": {
+      "id": 1,
+      "firstname": "admin",
+      "lastname": "super",
+      "username": null
+    },
+    "updatedBy": {
+      "id": 1,
+      "firstname": "admin",
+      "lastname": "super",
+      "username": null
+    },
+    "versions": [],
+    "status": "draft"
+  },
+  "meta": {
+    "availableLocales": [],
+    "availableStatus": []
+  }
 }
 
 // 服务端自动生成的 schema.json

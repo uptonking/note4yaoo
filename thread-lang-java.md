@@ -63,7 +63,14 @@ modified: 2023-12-15T19:40:39.912Z
 # discuss
 - ## 
 
-- ## 
+- ## When it comes to reading / writing ARRAY / OBJECT / STRUCT types, really every JDBC driver does it differently, it seems.
+- https://twitter.com/lukaseder/status/1773285403727925288
+  - Some support java.sql.Array
+  - Some support Object[] types
+  - Some support List<?> types
+  - Some support java.sql.Struct
+  - Some support java.sql.SQLData
+- Luckily, thanks to jOOQ and jOOQ's code generator, you really don't need to worry about any of that.
 
 - ## today's hell: jar wants to load jar, but different versions of jackson. can someone get these people json in their stdlib its 2024
 - https://twitter.com/jitl/status/1771290827362377906

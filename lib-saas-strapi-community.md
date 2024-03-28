@@ -14,7 +14,21 @@ modified: 2023-12-15T17:04:36.589Z
 
 - ## 
 
-- ## 
+- ## 🎯🚨 I'd love to read a post-mortem on the architecture decision regarding the api response structure v3 -> v4 -> v5
+- https://discord.com/channels/811989166782021633/1095091586452426824/1222611092971323393
+- It's fairly simple honestly
+  - v3 was largely based on `OpenAPI` , we didn't want to use that format
+  - v4 we wanted to use `JSONAPI` and we tried to stick to that standard as much as possible (which included the data, attributes, meta, ect) -> We got a ton of negative feedback about it
+  - v5 we took the feedback and are still sticking to JSONAPI but just not as strict now
+
+- ## 🆔️ Since documents now work by `documentId` and the regular `id` is one of its versions, how should we add relations in strapi5? Via documentId?
+- https://discord.com/channels/811989166782021633/1222438841345118308/1222473132137513030
+- It's mainly complicated because of situations where you're connecting D&P enabled CTs to non-D&P CTs and then adding in locales as well it's additionally complicated. 
+  - For full transparency, we still use `id` on the FE to simplify things, but, you can pass status `locale` and `documentId` instead to refine your connection. That should work
+
+- https://discord.com/channels/811989166782021633/1221051875642703952/1222264436488802447
+  - I wonder why they didn’t just get rid of the id column as a whole
+  - You can have multiple entries for the same document, hence the entry_id + document_id
 
 - ## 🆔️ [Data transfer/import _202403](https://forum.strapi.io/t/data-transfer-import/36810)
 - In the data transfer / import/export data options it’s possible to exclude files, config etc… Is it possible to exclude certain tables, for instance user permissions tables?
@@ -238,6 +252,15 @@ modified: 2023-12-15T17:04:36.589Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## if I modify `result` object directly in `afterUpdate` lifecycle event, like `result.version=1` , the response seems modified too. 
+- https://discord.com/channels/811989166782021633/1095091586452426824/1222935473383800842
+  - Is this a recommended way to transform response?
+- AfterUpdate will only apply on the API response and not in the admin. I wouldn't use any afterX lifecycle to constantly mutate the response and that's better left to a route middleware
 
 - ## [How to debug server errors by adding logging details? - Questions and Answers / Strapi Backend - Strapi Community Forum _202207](https://forum.strapi.io/t/how-to-debug-server-errors-by-adding-logging-details/20242)
 
