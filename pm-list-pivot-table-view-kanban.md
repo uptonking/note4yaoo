@@ -22,6 +22,14 @@ modified: 2023-01-22T18:45:58.936Z
 
 - ## 
 
+- ## 
+
+- ## 我们团队近期不得不尝试寻找 Trello 替代品。
+- https://twitter.com/DIGITALYCHEE/status/1773238652073881795
+  - 一方面，未来新入职的员工下载 Trello App 的难度过大。另一方面，Trello 4月份会加大免费版的功能限制。
+- Microsoft project online，用来分解复杂任务比较方便。
+- 其实有个共享文档，就能做好协同了。
+
 - ## 🪟✨ [如何评价 workflowy 新推出的 fractal boards (分形看板) 功能? - 知乎_202007](https://www.zhihu.com/question/404166572)
 - 整个 workflowy 中的每一个节点全部可以在 (bullets / board) 这两种显示模式之间切换。
   - 无论选择哪种显示模式，原始数据都不会有任何改变，改变的只是展示形式。

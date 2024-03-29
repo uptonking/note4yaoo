@@ -14,6 +14,27 @@ modified: 2023-09-17T17:36:36.118Z
 
 - ## 
 
+- ## 🤼🏻 > ScyllaDB completely bypasses the Linux cache during reads, using its own highly efficient row-based cache instead.
+- https://twitter.com/eatonphil/status/1773513087301066877
+- I am assuming by Linux cache, they mean the file cache. There are other databases that bypass the file cache and use DirectIO, for example MySQL InnoDB. So this is not something ScyllaDB specific.
+- I am aware that many large companies use DIRECT_IO and a large InnoDB Buffer Pool for their online MySQL instances.
+
+- Oracle has been doing direct I/O on filesystems for a long time. At some point they built their own "filesystem" Automatic Storage Management that acts as a physical<->logical disk address mapping directory - the database processes do I/O directly against the block devices.
+- As others already pointed out, Oracle, for example, has been doing direct I/O for a long time. You can always make caching more effective at a higher level because your application (database) knows better what data to discard than the OS. You can try to mitigate this with giving hint to the OS, but there's no requirement from the OS to follow your advice.
+  - Another problem with using the OS page cache is that often times you need the in-memory representation to be different from the on-disk representation, which means that you are now storing the data in-memory twice.
+
+- Cache bypass is common for high-scale databases. There are two motivations:
+  - Linux cache behavior is poor for databases and none of the knobs fix it
+  - Major architectural optimizations require deterministic cache control
+  - Former is annoying, latter is performance critical.
+
+- TreeLine has some words in 3.1 arguing for key-value caches and against page caches. I think this is more compelling for LSMs, where you only need to know the last page of the file to perform any write (as it’s all append only)
+  - Otherwise you pay a read per write for each btree page, as you don’t have a page cache.  If you do have a page cache, you’re duplicating each key into a different logical KV caching structure which doesn’t sound worth the memory.
+
+- Another benefit of their approach -- the kernel can use (or waste) a lot of memory to run the page cache, memory beyond that consumed for the cached pages.
+
+- It is quite common to bypass the os caches for databases. The database system knows what it is doing and can therefore build a better cache, for instance doing smarter pre-fetching of pages.
+
 - ## Databases have tables and indexes stored in files. 
 - https://twitter.com/hnasr/status/1725905694111498532
   - As you create rows, the database system writes to data pages in memory which is then written to data files on disk. 
@@ -166,14 +187,14 @@ modified: 2023-09-17T17:36:36.118Z
   - 现在 IOPS 上来了之前的很多设计就不合理了，又要回来优化 CPU 的利用率，降低各种锁的开销
   - [Rethinking buffer mapping for modern hardware architectures_202301](https://www.orioledata.com/blog/buffer-management/)
 
-- ## Direct IO can easily be misunderstood: Is it required for database durability?
+- ## 🤼🏻 Direct IO can easily be misunderstood: Is it required for database durability?
 - https://twitter.com/jorandirkgreef/status/1724950847035941074
   - The crux of the problem is that DBMS's do need to distinguish between volatile data (kernel page cache) and durable data when they externalize transaction commitments to users.
   - It's hard to do that (at least correctly) if the DBMS is only able to read from the kernel page cache, i.e. if the DBMS has no way to read directly from the disk itself.
   - Granted, there's still the disk's own cache to consider, which Direct IO alone doesn't address (you can fsync the fd when you call open to address this—a FoundationDB trick, which inspired the same for @TigerBeetleDB )... but Direct IO is a vital(极重要的，必不可少的) building block in designing a DBMS for durability.
   - To be clear, the non-intuitive thing about DBMS durability is that it’s often surprisingly as much as how you read() from the disk, for example, when recovering from the WAL at startup, as how you write() to the disk and call fsync.
 
-- looks like `fsync` flushes both the kernel page cache and the disk cache from the man page doc
+- 💡 looks like `fsync` flushes both the kernel page cache and the disk cache from the man page doc
   - Yes, exactly. Direct IO bypasses the kernel page cache, but you still need `fsync` to flush writes from the disk cache all the way to durable disk.
 - It also ensures that the write is flushed from the various queues. Queues at the OS level like the staging queue and the hardware dispatch queue. And the submission queue between OS and the SSD.
 - Enterprise grade SSDs have Power Loss Protection (PLP). Effectively a bunch of capacitors having sufficient charge for tens of milliseconds to flush the content from the cache (DRAM) to the NAND based flash. The fsync to the drive can effectively be a noop.

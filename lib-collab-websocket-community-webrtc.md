@@ -109,7 +109,16 @@ modified: 2023-12-12T08:45:31.670Z
 # discuss-sse
 - ## 
 
-- ## 
+- ## 🌰 did you know that there is another technologie, simpler, native and that use HTTP you can use to do real-time?
+- https://twitter.com/soubiran_/status/1773634287918608804
+- SSE is great. A lot of apps just don't need bi-directional communication that WS provide.
+  - However, currently browsers limits a website to have a maximum of 6 SSE streams. So if someone opens a 7th tab, the SSE connection will fail.
+
+- Do technologies like Firebase auth use SSE to observe auth changes on the client? Any idea?
+  - 🌰 i recommend @supabase realtime event subscription instead, easier to implement, especially when deploying on Serverless platform (where SSE is crippled).
+
+- what is the server load for SSEs? If the HTTP connection stays always open, that means that the server needs to more resources?
+  - Yes and that's exactly the same for WebSocket. Once the client disconnect, the connection ends.
 
 - ## 有在实际项目中用过 SSE(Server Sent Events) 的吗。有啥坑没
 - https://twitter.com/_a_wing/status/1739901379953787028

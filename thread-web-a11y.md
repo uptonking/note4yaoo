@@ -18,6 +18,12 @@ modified: 2023-12-02T09:28:47.243Z
 # discuss
 - ## 
 
+- ## 
+
+- ## TIL if you add a `tabindex=-1` to a `<div role="option">` Screenreader won't follow focus when used in a combobox with arrow keys
+- https://twitter.com/RogersKonnor/status/1773502964604215360
+  - It'll still work with the cmd+option+arrow-key, but its bizarre it doesnt' follow focus otherwise.
+
 - ## 🤔 How do you control the children tabindex?
 - https://twitter.com/devongovett/status/1735457449199419758
   - We don’t! The toolbar keeps track of its last focused child and marshals(带领；引领) focus back to it when tabbing in from the outside. There's also a Tab key handler that moves focus out of the whole toolbar.

@@ -17,6 +17,11 @@ modified: 2023-02-08T07:20:48.475Z
   - LocalAI act as a drop-in replacement REST API that’s compatible with OpenAI API specifications for local inferencing. 
   - It allows you to run LLMs, generate images, audio (and not only) locally or on-prem with consumer grade hardware, supporting multiple model families. 
   - Does not require GPU.
+
+- https://github.com/janhq/jan /AGPLv3/202403/ts
+  - https://jan.ai/
+  - an open source alternative to ChatGPT that runs 100% offline on your computer
+  - Nitro is a high-efficiency C++ inference engine for edge computing. It is lightweight and embeddable
 # LLM
 - https://github.com/xenova/transformers.js
   - Run Transformers in your browser! We currently support BERT, ALBERT, DistilBERT, MobileBERT, SqueezeBERT, T5, T5v1.1, FLAN-T5, mT5, BART
@@ -24,10 +29,6 @@ modified: 2023-02-08T07:20:48.475Z
     - 毕竟浏览器有沙盒，相对在本地运行一个没审计过的程序放心一点，但现在浏览器对gpu硬件支持还是拉胯。
     - 这是分布式算力啊，这不就是挖矿嘛
 # chatgpt
-- https://github.com/janhq/jan /AGPLv3/202402/ts
-  - https://jan.ai/
-  - an open source alternative to ChatGPT that runs 100% offline on your computer
-  - Nitro is a high-efficiency C++ inference engine for edge computing. It is lightweight and embeddable
 
 - app-site
   - https://github.com/LiLittleCat/awesome-free-chatgpt

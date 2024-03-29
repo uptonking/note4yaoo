@@ -92,6 +92,10 @@ modified: 2022-12-16T01:52:33.729Z
 
 - ## 
 
+- ## 🌰 [Linear on X: "How we redesigned the Linear UI (part Ⅱ)  _202403](https://twitter.com/linear/status/1773435685275328542)
+- 
+- 
+
 - ## 🪧 Data table features tree cheatsheet
 - https://twitter.com/101babich/status/1768612940217786754
   - This cheatsheet will help you choose all the features for your complex data table

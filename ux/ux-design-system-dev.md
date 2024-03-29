@@ -14,9 +14,20 @@ modified: 2021-01-01T20:08:38.154Z
 
  
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🌰 [Linear on X: "How we redesigned the Linear UI (part Ⅱ)  _202403](https://twitter.com/linear/status/1773435685275328542)
+- 
+- 
+- 
+
 - ## In our design system, we have 2 different space scales:
 - https://twitter.com/markdalgleish/status/1280029511807983617
-  - Between UI elements (e.g. within a `<Stack>`)
+  - Between UI elements (e.g. within a `<Stack>` )
   - Between wrapping lines of text (implicit in the relationship between font size and line height)
   - Change one, you have to manually adjust the other.
 - We shouldn’t use `line-height` at all, 
@@ -29,14 +40,18 @@ modified: 2021-01-01T20:08:38.154Z
   - The scales can have different values, but it works if they're all based off the same baseline value.
   - Or polyfill line-height-step (and send me the link if you do!)
   - When you say "change one", what would you be changing? You mean changing the actual space scale?
+
     - Yeah, but more likely is that you're changing your typography.
+
   - The only solution I've seen for type setting issues is line-height-step
 - Can you hoist them into custom properties and calcs? 
   - my hunch(直觉，预感) is that you should have a single space scale that's derived from your typographical scale. 
   - The space between lines and the space between UI elements both come from a single design decision.
   - Building systems for system's sake, huh?
+
     - In my experience, only one out of ten designers are actually designing UI all based on typographic baselines, 
     - and eventually they move on from their print layout practises and accept that it's impossible to enforce baselines on the web.
+
   - What I'm aiming for is a component system that follows the baseline grid for you automatically, and we're having a lot of success with it.
 - Material UI uses a `gutterBottom` prop to add same space below an typography element element.  
   - Don't know if that would be better than adding Stack between multiple texts
@@ -77,17 +92,21 @@ modified: 2021-01-01T20:08:38.154Z
   - and the user of the component provides how they should it should be laid out with wrapper components for layout that use our spacing values.
 - Tend to avoid baking it in because it breaks composability. 
   - Prefer a wrapper component, something like `<VerticalSpacing size=“m” />`
+
 - Basically using styled-system so every component can have a margin based on a scale defined in the theme.
   - I had this, too but figured out it’s rather messy when all you want is spacing between components. 
+
     - Simple example: add spacing between chips but not after the last one. 
     - Not possible with margin in a clean way but it’s very simple using stack abstraction.
 
 - ## Exposing the internal DOM structure of the components in your design system is very dangerous
 - https://twitter.com/devongovett/status/1197945884455030784
   - and you're probably doing it unintentionally.
+
     * className/style
     * DOM prop forwarding
     * Ref forwarding
+
   - Changes to internal DOM structure or styling can break usage of these props.
 - Instead of forwarding all DOM props directly, you should expose an interface specific to each component. 
   - Intentionally consider what properties should be allowed for a given component (e.g. events, data attrs, etc.) 

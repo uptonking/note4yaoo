@@ -50,7 +50,9 @@ modified: 2021-07-29T11:15:44.100Z
 
 - ## 
 
-- ## 
+- ## View Transitions are now in Safari Tech Preview 191
+- https://twitter.com/dannymoerkerke/status/1773392919002525954
+  - https://codepen.io/dannymoerkerke/pen/ExMEPaW
 
 - ## From Chrome 124, scrollers are keyboard focusable by default if they have no keyboard focusable children.
 - https://twitter.com/passle_/status/1771448139876118951

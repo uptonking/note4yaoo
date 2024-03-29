@@ -50,12 +50,19 @@ modified: 2022-08-21T10:19:58.756Z
 - 
 - 
 - 
+
 # discuss
 - ## 
 
 - ## 
 
-- ## 
+- ## 🤔 how can I use the sorting to sort by nested object. 
+- https://twitter.com/som3aware/status/1773516234388127966
+  - Assume I have an array of objects, let's say user who had a names attribute which is an object
+- 👷🏻 It is recommended for the accessorKey or accessorFn to resolve a primitive value that it will sort, filter, or group on. Use a custom `cell` option to render more info.
+  - However, for advanced functionality, you can provide a custom `sortingFn` that can look for any row data.
+  - 👉🏻 accessors are not necessarily for what you want to render on screen in a table cell, but for how you want the data to be processed for sorting and filtering.
+  - Use custom `cell` renders to render the cell how the design wants it.
 
 - ## [How do you get the value from `onSortingChange` , or even `onStateChange` ?](https://github.com/TanStack/table/discussions/4005)
 

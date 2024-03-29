@@ -91,7 +91,7 @@ modified: 2022-08-21T10:02:05.129Z
   - Turns any MySQL, PostgreSQL, SQL Server, SQLite & MariaDB into a smart-spreadsheet
   - 后端依赖 express、knex、ioredis、passport、request
   - 前端依赖 nuxt3、ant-design-vue.v3、vueuse、vue-flow(chart)、monaco-editor、d3-scale、dayjs、vuedraggable、xlsx
-  - 用户在界面上创建表时，数据库层也会添加一张新表, 表名前缀 nc__k4v___
+  - 用户在界面上创建表时，数据库层也会添加一张新表, 表名前缀 nc__k4v___/nc_rbby___
   - 支持提供返回表中数据的api
   - [Development Setup](https://docs.nocodb.com/engineering/development-setup/)
   - 支持现有数据库，不需要导入数据: We transform any existing databases MySQL, Postgres, SQL Server & SQLite databases into a spreadsheet.

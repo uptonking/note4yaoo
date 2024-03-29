@@ -29,6 +29,19 @@ modified: 2024-02-11T15:11:31.598Z
   - We provide a set of SDKs and integration options to make it easier to get started with HyperDX, such as Browser, Node.js, and Python
   - HyperDX is compatible with OpenTelemetry, a vendor-neutral standard for instrumenting your application
 
+- https://github.com/Openpanel-dev/openpanel /AGPLv3/202403/ts
+  - https://openpanel.dev/
+  - a simple analytics tool for logging events on web, apps and backend
+  - All the goodies from both Mixpanel and Plausible combined into one tool.
+  - Access all your visitors and there history
+  - Cloud or Self-Hosting
+  - Nextjs - the dashboard
+  - Postgres - storing basic information
+  - Clickhouse - storing events
+  - Fastify - event api
+  - Redis - cache layer, pub/sub and queue
+
+
 - https://github.com/quickwit-oss/quickwit /AGPLv3/202403/rust
   - https://quickwit.io/
   - Cloud-native search engine for observability. 
@@ -82,7 +95,6 @@ modified: 2024-02-11T15:11:31.598Z
   - 夜莺 Nightingale 是中国计算机学会接受捐赠并托管的第一个开源项目，是一个 All-in-One 的云原生监控工具，
   - 集合了 Prometheus 和 Grafana 的优点，你可以在 WebUI 上管理和配置告警策略，也可以对分布在多个 Region 的指标、日志、链路追踪数据进行统一的可视化和分析。
 # google-analytics-like
-
 - https://github.com/umami-software/umami /MIT/202403/ts
   - https://umami.is/
   - a simple, fast, privacy-focused alternative to Google Analytics.
@@ -93,7 +105,6 @@ modified: 2024-02-11T15:11:31.598Z
 - https://github.com/dillionverma/llm.report /GPLv3/202402/ts
   - open-source logging and analytics platform for OpenAI: Log your ChatGPT API requests, analyze costs, and improve your prompts.
   - No-code solution to analyze your OpenAI API costs and token usage.
-
 # utils
 - https://github.com/Tencent/TSW /MIT/202310/ts
   - https://tswjs.org/

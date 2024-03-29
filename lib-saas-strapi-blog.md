@@ -129,6 +129,8 @@ modified: 2023-12-15T16:52:28.937Z
 6. A large number of issues
    - Enterprise Edition of the platform includes various advanced features, such as a Customer Success Manager, custom roles, and support with SLAs.
 
+# blog-usage
+- [Implementing i18n for Static Sites with Strapi](https://strapi.io/blog/i18n-for-static-sites-with-strapi)
 # blog-stars
 
 ## 💡 [Schemaless platforms. Architectural considerations _202002](https://medium.com/samanvay-on-tech/schemaless-platforms-e6bbf0a64a24)

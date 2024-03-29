@@ -89,6 +89,15 @@ docker stop containerId
 # discuss-k8s
 - ## 
 
+- ## 
+
+- ## 
+
+- ## K8s的kubelet默认的maxPods是110个，不知道这样设计的缘由是什么
+- https://twitter.com/stephenzhang233/status/1773648671940149460
+- 早期版本 kubelet 有个本地的 kube API burst 和 qps 5 还是10的限制，这也会导致节点pod 太多，同步状态都会卡住。这也是为了减小apiserver压力， 一个节点qps5，kube qps 1000只能支撑 200个节点。而最初kube设计可能是几百个节点，～10000pod的数量级。才会有这些限制。
+- 不希望集群太大了，规模太大了的话会各种组件都要魔改
+
 - ## Google 当时的Borg 是没做网络虚拟化的，服务启动后前分配随机端口，启动后注册端口。这些都是在SDK里实现的。
 - https://twitter.com/9hills/status/1730829030239117766
   - 这套方案社区根本接受不了。上下游全都要对接服务发现，否则你端口号都拿不到！至于负载均衡直接在SDK中实现。

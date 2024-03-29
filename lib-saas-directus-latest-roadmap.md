@@ -138,3 +138,10 @@ modified: 2024-03-02T13:33:54.693Z
 - Heartbeat signal to keep the connection alive
 - Follows the Directus permission model
 - Extensible event driven design
+
+- ## ✨ [pr已合并 - Add support for Conditional Fields _202107](https://github.com/directus/directus/pull/6864)
+  - Condition: There can be =, >, <, like, != and the like, depending on the selected field type
+  - Result: display, not display
+
+- Multiple conditions can be configured at once, the last one that matches has it's rules applied
+- Conditions can be set on groups as well, allowing for showing/hiding sets of groups at once

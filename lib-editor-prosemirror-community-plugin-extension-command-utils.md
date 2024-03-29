@@ -81,7 +81,7 @@ modified: 2022-08-30T22:07:26.164Z
   - Allow plugins to be passed directly to the view, without storing them in the state.
   - Merged and released as part of prosemirror-view 1.20.0
 
-- ## Generalized State Architecture
+- ## 🏘️ Generalized State Architecture
 - https://discuss.prosemirror.net/t/generalized-state-architecture/3908
   - I realized that I really liked the architecture of ProseMirror (the plugin system is awesome) and I wanted to see if I could generalize an entire React frontend state management with a similar structure and actually route all transactions through a global state system.
 - 🤔 **why is `EditorState` a class as opposed to a plain JSON object**?

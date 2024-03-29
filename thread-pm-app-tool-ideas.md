@@ -135,6 +135,9 @@ modified: 2022-11-07T10:58:24.512Z
 
 - ActionText
 
+- offline/local
+  - 本地大模型llm
+
 - 规避版权问题的内容讨论平台
   - 科技分享，类似hacker-news, reddit
   - 论坛圈子，类似贴吧/reddit，支持一个url在不同板块重复讨论、多次讨论

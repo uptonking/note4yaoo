@@ -11,6 +11,13 @@ modified: 2024-03-24T06:28:12.838Z
 
 - code-main
   - api/src/app.ts
+
+- flows
+  - 基于vuedraggable实现，未使用其他外部依赖
+
+- graphql用的不多
+  - 前端app主要是insights部分
+  - 后端包括controller/**service**/middleware, 移除需要一定的工作量
 # not-yet
 - 表的关系是如何实现的
 
@@ -88,9 +95,6 @@ modified: 2024-03-24T06:28:12.838Z
 - Directus heavily relies on the primary key of a collection, so we have to make sure that every collection that is created has a primary key. 
   - If no primary key field is created while making the collection, we default to an auto incremented id named `id`.
 
-- 
-- 
-- 
 - 
 - 
 - 

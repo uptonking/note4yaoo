@@ -15,7 +15,16 @@ modified: 2021-08-10T03:51:01.891Z
 
 - ## 
 
-- ## 
+- ## 又开发后端接口，又写前端页面的话。
+- https://twitter.com/Justin1024go/status/1773628313950466521
+  - 我是该写完所有预期的后端接口之后，再来写页面好一点？
+  - 还是直接写页面（功能），然后要啥数据，再来写接口来查相关的数据呢？
+  - 现在是后端核心功能已经跑通，就差一些业务逻辑接口与前端交互了
+- 一点不成熟的经验。 设计→页面→接口 
+  - 如果先写接口，后续做页面的时候，可能会缺少数据, 前期可以直接在页面上 mock 数据
+- 我的体验是，先做前端页面，而且要做得漂漂亮亮的。页面出来后就很有动力去完成剩下的部分。而且后端接口会出得更合理。
+- 先动手，不纠结了
+- 作为一个资深全干工程师，我的做法是先写openapi, 然后直接generator, 前后端都有了(最好的建议是不要给别人建议
 
 - ## 📏 fun fact: while chrome URL limit is 2, 083 characters the hash part of URL is not limited by this number, that's why I was able to put 100kb of code into typescript playground
 - https://twitter.com/JLarky/status/1771603877676142666

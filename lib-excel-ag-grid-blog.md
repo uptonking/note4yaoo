@@ -23,6 +23,8 @@ modified: 2022-08-21T09:54:10.490Z
   - [JavaScript Big Data in a Small Browser](https://medium.com/@niall.crosby/javascript-big-data-in-a-small-browser-3b19c01e2132)
   - [Delivering Big Data in the Small Browser](https://blog.ag-grid.com/delivering-big-data-in-the-small-browser/)
 - [Max Koretskyi articles](https://indepth.dev/author/maxkoretskyi/)
+# [React Grid: React Best Practices | AG Grid](https://www.ag-grid.com/react-data-grid/react-hooks/)
+- This page explains best practices for using React Hooks with AG Grid.
 # [React UI Overview](https://blog.ag-grid.com/react-ui-overview/)
 - Version 26.0.0 of AG Grid contains the first public iteration of our new React UI - a rendering engine for AG Grid written in pure React.
 - The previous approach to rendering in React was a wrapper around the JavaScript rendering engine using Portals for custom controls.
@@ -35,9 +37,7 @@ modified: 2022-08-21T09:54:10.490Z
   - Previously the Grid hosted every React Component in a React Portal with every component in the DOM view wrapped in an `ag-react-container`.
   - Now, every React Component is directly in the DOM hierarchy with no wrapper.
   - This change will improve the rendering optimisation of the components.
-# 8 Performance Hacks for JavaScript in ag-grid
-- [8 Performance Hacks for JavaScript_Niall Crosby_201709](https://www.ag-grid.com/ag-grid-8-performance-hacks-for-javascript/)
-
+# ⚡️ [8 Performance Hacks for JavaScript_Niall Crosby_201709](https://www.ag-grid.com/ag-grid-8-performance-hacks-for-javascript/)
 - This blog presents performance patterns, or performance hacks, that we used to put our grid on steroids.
 
 - ## Row virtualization

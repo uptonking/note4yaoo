@@ -52,7 +52,7 @@ modified: 2024-02-16T14:56:17.057Z
 
 - This feature request has received over 15 votes from the community. This means we'll move this feature request to the Under Review state _202305
 
-- ## 请教下 表结构更改了（使用外部数据库工具修改的） 除了重启directus以外，有办法热加载表结构吗？ _20231214
+- ## 请教下 表结构更改了（使用外部数据库工具修改的）, 除了重启directus以外，有办法热加载表结构吗？ _20231214
 - https://discord.com/channels/725371605378924594/946422284426551346/1184739818568171620
 - 可以试试看清除缓存 https://docs.directus.io/reference/system/utilities.html#clear-the-internal-cache
 
@@ -95,80 +95,11 @@ modified: 2024-02-16T14:56:17.057Z
 - Odoo is with a lot of vertical/industry related solutions which can be used by a company without too many customization. This will make odoo relatively easier in finding customers.
   - Directus is more developer focused.
 
-- I really like directus and want to give some advices on how to make the project financeable and continously grow.
+- I really like directus and want to give some advices on how to make the project financeable and continuously grow.
   - make a marketplace (inside sell your own layouts, plugins or general extensions) example: plugins.craftcms.com or apps.shopify.com; users can earn from their plugins and directus can have their own also.
   - create some boilerplates to be sold (for example i want an ecommerce, and have no time to develop all models or schemas, so by adding some ready-to-use boilerplates to the marketplace would be great)
   - create an expert or developers part - shopify.com/it/partner
   - create an video academy craftquest.io
-# discuss-feat-version-history
-- ## 
-
-- ## 
-
-- ## 
-
-- ## I'm trying to setup previews using content versioning. _202312
-- https://discord.com/channels/725371605378924594/1151320093565927504/1184512066086785044
-  - When fetching a page by version using REST I do get a response. But I expected to get the complete page, not a modified object with create, delete, update. Is this the intended result?
-  - If it's meant to work this way, I guess I need to fetch the complete page without version, then the version diff and merge them both for the CMS preview?
-
-- Correct. content versions only stores a delta not the complete object 
-
-- ## I personally love the branch concept, but I'm 99% sure it would be lost on the newsroom. _202309
-- https://discord.com/channels/725371605378924594/1144680972382646455/1149334537474691133
-  - My view is very narrow here (using Directus to create and publish news content for the web), but I think there are existing patterns that will be more universally understood.
-  - WordPress, for instance, have the concept of 'save' and 'publish/update'.
-  - Imo, `save` should always be a safe action (pre and post publishing). `Publish/update` on the other hand has weight & consequence, and should always be a deliberate action.
-- I'm thinking we should/could add a toggle that switches between "simple" draft/publish and "full" branching modes as a setting
-- Any change on a branch itself is a revision, so every branch has it's own revision history as well 
-
-- just out of curiosity: is it based on Git internally?
-  - Nope
-
-- I like this idea of a "simple mode" and an "advanced mode"
-- simple mode is a single default branch (so no naming required)
-  - every new version created in simple mode is a new entry in that default branch (thus superceding any previously existing versions that were created in simple mode)
-  - when the simple mode branch is "promoted" or whatever term we want to use, there would be no "merging" step, the latest version in the branch would simply be made the main version exactly how it is
-
-- I'd want it to be possible to create both simple and advanced branches on the same item
-
-- ## 🐛⚡️ [Performance issues with revisions and activity _202303](https://github.com/directus/directus/issues/17894)
-- There is a problem with the revisions and activity queries.
-  - When I navigate in my directus instance, I regularly get a popup that says that a request failed with status 504.
-  - When I look in my devtools, it's the requests fetching the revisions for a particular item.
-  - I have to purge the activity and revisions often to avoid that, even though I don't have a particularly big database (there are ~ 1 million in activity and 500 000 in revisions).
-  - I have to purge the activity and revisions often to avoid that, even though I don't have a particularly big database (there are ~ 1 million in activity and 500 000 in revisions).
-
-- Same issue here. Revisions take a really long time to load. Have about 700, 000 records in the directus_revisions table.
-
-- 💡 I added an index on the item column of the directus_revisions table and it greatly improved performance. It would be great if it was added by default or possible to enable as a config flag.
-
-- On top of the index suggestion we should also have a configuration to limit the amount of revisions per item, so they are rotative. For example, only save last 0, 5, 10, 20, 50 revisions per item. Probably can be configured per collection.
-  - This is because Directus can crash because it does not have sufficient memory (OOMKilled - Out of Memory). 
-  - It happens when the machine has limited memory and there's some WYSIWYG, JSON or any other column that can have a great amount of data. 
-  - Because `directus_revisions` will store every column of the record in data and will store the huge data column in delta, it can crash sooner than later.
-- Another thing we can do is truncate data and delta and only retrieve those columns in full when we want to restore a specific version or when we retrieve that single revision 
-
-- I implements two new env vars to control the max retention in time for activity and revisions separately.
-
-- Also want to mention this became more trickier with the addition of Content Versioning. Now, we cannot simply just remove the records from Activity and Revisions. We must check if field version is populated in directus_revisions and not remove it if that's the case
-
-- ## [Content Versioning _202309](https://github.com/directus/directus/issues/19796)
-- Comments and Shares might have to be adjusted to be branch-specific.
-
-- Instead of saving just the delta to Directus Revisions, a secondary “cloned” table could be considered, however there’s some downsides
-
-- ## ✨ [Save Item as Future Revision (Draft of Published Item)](https://github.com/directus/directus/discussions/2975)
-- This has been released in 10.7_20231028
-
-- ## [delta stored but not displayed _201611](https://github.com/directus/directus/issues/1301)
-  - I noticed that the delta for changes are stored in the `directus_activity` table, but isn't displayed on the interface itself. 
-
-- you're correct, we're storing the full item at each change, as well as the delta (with user for accountability). Activity is shown inline with comments at the bottom of the Item Detail page. And while we used to have an interface for "rolling back" we've disabled it due to unintended and far-reaching consequences of relational data.
-  - We're actually in the middle of a design refresh that addresses this issue which will be rolling out in v6.5
-
-- [how to restore revision via gui? _201709](https://github.com/directus/directus/issues/1809)
-  - the revisions are stored in the `directus_activity` table for all changes, but we don't have a GUI for restoring previous deltas yet. 
 # discuss-schema-change
 - ## 
 
@@ -182,7 +113,7 @@ modified: 2024-02-16T14:56:17.057Z
 
 - [Change Field Name / Type after creation](https://github.com/directus/directus/discussions/14037)
 
-- ## 💡💫 [Code-first configuration of schema, roles and permissions _202204](https://github.com/directus/directus/discussions/13041)
+- ## 💡🏘️ [Code-first configuration of schema, roles and permissions _202204](https://github.com/directus/directus/discussions/13041)
   - It would be great if schemas, roles and permissions could be managed via code. 
   - Often custom permissions contain logic that is of a fairly technical nature and should ideally be versioned and repeatable between dev/staging/prod environments.
 
@@ -213,7 +144,7 @@ modified: 2024-02-16T14:56:17.057Z
 - Or if you prefer thinking in terms of migrations (because these json files can get messy): Each change to the schema creates a new migration file. 
   - Directus tracks which migrations have been run and when a new migration is discoverd, gives the developer an option to run it to update their database. (Or even run them automatically, analog to the EXTENSIONS_AUTO_RELOAD function, or on server start.)
 
-- This is basically what we currently do through the schema snapshotting feature
+- This is basically what we currently do through the schema snapshotting feature _202206
 # discuss-collaborative/realtime
 - ## 
 
@@ -229,15 +160,7 @@ modified: 2024-02-16T14:56:17.057Z
 
 - Wordpress solves this by having a "Take Over" button, so no one is truely locked out, but they are made very aware something might be lost if they proceed.
 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-
-- ## [Users overwrite each others changes if they save the same collection item _202101](https://github.com/directus/directus/issues/3558)
+- ## 🔀 [Users overwrite each others changes if they save the same collection item _202101](https://github.com/directus/directus/issues/3558)
 - In this case, your reported situation feels like the expected behavior here. If user A is setting title to "Hello", while user B is making it "Hello World", whoever saves last is the one that becomes the saved value.
 
 - ## 🤝🏻 [Realtime App Updates _202011](https://github.com/directus/directus/discussions/3221)
@@ -252,7 +175,8 @@ modified: 2024-02-16T14:56:17.057Z
   - It would be great to add a Block Editor aka Medium or the new Wordpress.
   - The main usefulness of this versus a WYSIWYG editor is it can be controlled in a better way with only very specific output, which is then easier to transform with CSS/JS when in use.
 
-- [已实现 Move in block editor exclusive extension _202305](https://github.com/directus/directus/pull/18525)
+- ✨ [已实现 Move in block editor exclusive extension _202305](https://github.com/directus/directus/pull/18525)
+  - This first iteration is going to be just the "regular" JSON structure.
 
 - ## 📝 [State of WYSIWYG interface _202003](https://github.com/directus/directus/issues/2613)
 - we did not want to have two WYSIWYG editors in the core suite any longer, and TipTap was not feature-rich enough to be the single/only editor. Since TinyMCE is proven (WordPress) and quite feature-rich, we chose that library.
@@ -263,12 +187,9 @@ modified: 2024-02-16T14:56:17.057Z
 - ## 
 
 - ## 
-
-- ## ✨ [pr已合并 - Add support for Conditional Fields _202107](https://github.com/directus/directus/pull/6864)
-- Multiple conditions can be configured at once, the last one that matches has it's rules applied
-- Conditions can be set on groups as well, allowing for showing/hiding sets of groups at once
-
 # discuss
+- ## 
+
 - ## 
 
 - ## 

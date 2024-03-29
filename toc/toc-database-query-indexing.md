@@ -31,8 +31,6 @@ modified: 2023-10-30T14:22:08.767Z
     - We developed an exhaustive benchmark, sheetperf, to evaluate the performance of spreadsheet systems.
   - https://github.com/dataspread/sheetanalyzer /java
     - a library for analyzing the dependency and formula structure of a spreadsheet
-
-
 # multidimensional
 - https://github.com/mikolalysenko/static-kdtree /js/inactive
   - A static kdtree data structure
@@ -87,6 +85,21 @@ modified: 2023-10-30T14:22:08.767Z
   - SciDB is designed to store petabytes of data spread over large number of machines. 
   - High performance, high-availability, fault tolerance, and scalability are the main goals considered in the design of SciDB
 # spatial-indexing
+- https://github.com/kylebarron/geo-index /MIT/202403/rust
+  - A Rust crate for packed, static, zero-copy spatial indexes.
+  - An R-tree and k-d tree written in safe rust.
+  - Memory-efficient. The index is fully packed, meaning that all nodes are at full capacity (except for the last node at each tree level). 
+  - Multiple R-tree sorting methods. Currently, hilbert and sort-tile-recursive (STR) sorting methods
+  - Being ABI-stable means that the spatial index can be shared zero-copy between Rust and another program like Python.
+  - Drawbacks
+    - Trees are static. After creating the index, items can no longer be added or removed.
+    - Only two-dimensional data is supported. 
+    - Only the set of coordinate types that exist in JavaScript are allowed, to maintain FFI compatibility 
+    - Nearest-neighbor queries on the R-tree. This is implemented in the original JS version but hasn't been ported yet.
+  - Inspiration: @mourner's amazing flatbush and kdbush libraries are the fastest JavaScript libraries for static R-trees and k-d trees.
+  - `GeoArrow` defines a language-independent, ABI-stable memory layout. 
+    - Currently, this library is used under the hood in `geoarrow-rs` to speed up boolean operations and spatial joins
+
 - https://github.com/tzaeschke/tinspin-indexes /apache2/java
   - Spatial index library with R*Tree, STR-Tree, Quadtree, CritBit, KD-Tree, CoverTree and PH-Tree
   - This is a library of in-memory indexes. They are used in the TinSpin TinSpin project. 

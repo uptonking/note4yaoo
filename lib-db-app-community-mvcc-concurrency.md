@@ -61,6 +61,25 @@ modified: 2023-11-01T10:15:06.245Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🆚️ Trying to get a sense for thread architectures:
+- https://twitter.com/eatonphil/status/1773518000043299309
+- Single-threaded: Cache-friendly and scales decently if you use some form of async io. Good for tasks with little-to-medium CPU-work since cache won't get busted. i.e. works fine with shared data between tasks. Too much CPU-work though limits your ability to scale.
+- Work-stealing & work-sharing: Cache-unfriendly, works fine with sync or async io, since cache is core-local and work-switching threads (to another core) thus busts the cache/makes it ineffective. Fine for tasks with little CPU-work where cache doesn't matter as much. Scales well for little CPU-work tasks.
+- Thread-per-core: Cache-friendly so long as work is independent, works fine with sync or async io. Scales best among all options for small or large CPU-work. Even if there is shared data, still probably scales better than work-stealing/sharing and single-thread.
+- Multi-process: Basically the same as thread-per-core, if processes are 1:1 with cores?
+
+- cache is not important compared to blocking IO(disk>network) wait, which is the origins async-io is used for. But concurrent programming includes the threading/cache thing, while the `concurrent` concept covers the syntax sugar async/await.
+
+- Thread-per-core with blocking I/O is going to end up leaving lots of cores idle so you pretty much have to use async. I wonder if the cache friendliness/unfriendliness has ever been measured or if it's propaganda. Sadly, results are going to be different between Intel & AMD.
+
+- If you want to build intuition, think about how you are mapping hardware resources (CPU and memory) to your application logic and state.
+
 - ## If you are interested in exploring Race Conditions & Data Races, I recommend Testing for Race Conditions via SMT Solving
 - https://twitter.com/DominikTornow/status/1758921755807437258
 

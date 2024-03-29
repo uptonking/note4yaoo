@@ -17,6 +17,7 @@ modified: 2023-12-15T16:51:49.971Z
   - rich-views: grid, kanban, gallery, form
   - app store支持在线安装discord/mail
   - ✨ 支持Group: supports three levels of record segregation
+  - 支持rename table/field
   - 支持拖拽自动填充单元格
   - 支持cell级别的comment
   - 支持Attachment
@@ -33,10 +34,11 @@ modified: 2023-12-15T16:51:49.971Z
   - Access Control with Roles : Fine-grained Access Control at different levels
   - App Store for Workflow Automations
   - Audit: We are keeping all the user operation logs under one place
-# dev
+# dev-xp
+- 用户在界面上创建表时，数据库层也会添加一张新表, 表名前缀 nc__k4v___/nc_rbby___/nc_r12u__
 
+- 支持rename table/field, db中的表名和字段名也会变化
 # 💰 [pricing](https://github.com/orgs/nocodb/projects/13/views/2)
-
 - [What is available in free version ?](https://docs.nocodb.com/faqs/#what-is-available-in-free-version-)
 
 - 🆚️ NocoDB has just one version that is free & open source.

@@ -12,16 +12,18 @@ modified: 2023-12-15T16:51:56.101Z
 - pros 支持扩展api和ui
   - MIT; features-rich; good documentation/community
   - plugin-system and marketplace, 插件架构很彻底, 如ctb/cm
+    - 但不支持类似directus的在线安装plugin
   - draft & publish, 不支持多个draft-version(directus支持)
   - rbac is free for 3 roles，权限功能强大
   - media library and providers
-  - i18n
+  - i18n, 在架构层支持多语言，支持多语言的内容自动建立关联
   - future flags
   - Data Import & Export
   - rich fields: rich-text
     - 支持custom filed, 但需要写代码不能通过ui创建
   - built with typescript
   - 提供了很多集成示例，如redis/search
+  - 支持rename field(需要restart)，不支持rename table
 
 - cons
   - paid: Review workflow, Audit Logs, version-history
@@ -166,7 +168,7 @@ modified: 2023-12-15T16:51:56.101Z
 - 在admin前端使用了非公开api `addMiddlewares`
 
 ```JS
-// 📌 在ctb创建类型时
+// 📌 在ctb创建类型时，后端会创建schema.json文件
 // payload POST /content-type-builder/content-types
 {
   "components": [],
@@ -193,15 +195,25 @@ modified: 2023-12-15T16:51:56.101Z
     }
   }
 }
-
 // response
 {
   "data": {
     "uid": "api::test-version1.test-version1"
   }
 }
+// 服务端自动生成的 schema.json
+"attributes": {
+  "body": {
+    "pluginOptions": {
+      "versions": {
+        "versioned": true
+      }
+    },
+    "type": "string"
+  }
+}
 
-// 📌 在cm创建内容时，发送填写内容，返回带版本的完整内容
+// 📌 在cm创建内容时，发送用户输入内容，返回带版本的完整内容
 // POST /content-manager/collection-types/api::test-version11.test-version11
 // payload
 {
@@ -262,6 +274,7 @@ modified: 2023-12-15T16:51:56.101Z
 }
 
 // 📌 在cm更新内容时, url包含当前ver，返回的内容包含ver+1及所有旧version
+// 后端会create创建新的row而不是update当前row，实现细节参考了i18n插件
 // v4 PUT /content-manager/collection-types/api::test-version1.test-version1/2
 // v5 PUT /content-manager/collection-types/api::test-version12.test-version12/xvvoa31x94xacp6anfp5ace0
 // payload
@@ -368,18 +381,6 @@ modified: 2023-12-15T16:51:56.101Z
     "availableStatus": []
   }
 }
-
-// 服务端自动生成的 schema.json
-"attributes": {
-  "body": {
-    "pluginOptions": {
-      "versions": {
-        "versioned": true
-      }
-    },
-    "type": "string"
-  }
-}
 ```
 
 - 
@@ -395,7 +396,7 @@ modified: 2023-12-15T16:51:56.101Z
 # dev-v5
 - v5插件的热加载问题很大，基于vite实现
   - 不能检测到新创建的文件，需要重启
-# dev
+# dev-xp
 - 在admin添加新的content-type时，数据库会创建对应的表，同时后端src/api下面会自动生成对应的schema/router/controller/service，prod生产环境下不支持动态添加新的content-type
 
 - 删除media-lib中的文件时，文件也会删除(待确认是否在回收站)
@@ -407,7 +408,16 @@ modified: 2023-12-15T16:51:56.101Z
 - ❓ 不支持查询所有现有的content-types; 似乎有折中方案
   - 待确认，因为content-type-builder可显示所有collection-types，需要分析请求的接口
 
-- 
+- i18n支持admin配置界面语言和cm内容语言，提供了表级别的内容过滤显示
+  - 所有内容仍在db的同一张表中，系统自动添加了`locale`字段
+  - Content can only be managed one locale at the time. 
+  - It is not possible to edit or publish content for several locales at the same time 
+- 支持不同语言的entry~~共享部分字段~~，通过fill-in快速填充同名字段的内容
+  - 同一文章会自动建立关联，支持切换语言时立即显示
+  - 删除文章时会同时删除其他语言的内容
+  - 支持将表的部分字段禁止多语言，即共享部分字段
+  - 不支持并排显示多语言的内容
+
 - 
 - 
 - 

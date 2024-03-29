@@ -20,6 +20,12 @@ modified: 2023-09-17T17:38:11.187Z
 # discuss
 - ## 
 
+- ## 
+
+- ## SQL Indexing in a Nutshell:
+- https://twitter.com/vikasrajputin/status/1773568534737727614
+  - 动画示意图
+
 - ## When many database indexes are too many?
 - https://twitter.com/deisbel/status/1760322457750085930
 - instead of trying to figure out the right number of indexes, let's change our approach to:

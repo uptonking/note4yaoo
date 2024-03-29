@@ -14,7 +14,10 @@ modified: 2023-10-06T16:26:57.557Z
 
 - ## 
 
-- ## 
+- ## 依我看，rust 并不适合大部分项目。rust优点是内存安全，缺点是表达能力太差。
+- https://twitter.com/geniusvczh/status/1773593794199384320
+  - 需要内存安全的项目少之又少，而表达能力差直接影响到写不出用起来舒适的库（看看隔壁Jvav ）。
+  - 内存安全也不是免费的，你得加一堆东西来让编译器证明，结果大家学不会就只能unsafe，退化成了好看一点的C语言，脱裤子放屁
 
 - ## 写多了 JSON.stringify / JSON.parse，现在发现用 rust 生成个 JSON 都好费劲，JS 太灵活了
 - https://twitter.com/zoomdong2/status/1770085465955369054

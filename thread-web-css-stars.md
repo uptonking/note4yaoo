@@ -12,6 +12,16 @@ modified: 2021-07-25T12:49:10.410Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## PREVIOUSLY: separate rulesets for light and dark
+- https://twitter.com/argyleink/status/1773387209925869752
+  - NOW: one ruleset with `light-dark()` .
+  - made with Shiki "magic move"
+
+- https://twitter.com/devongovett/status/1773523822290846048
+  - Want to use light-dark() today across all browsers? Use @lightningcss 
+
 - ## Here's the ultimate z-index hack — `z-index: calc(infinity)` .
 - https://twitter.com/stefanjudis/status/1763476475150286971
 - Technically, you will still lose the z-index battle if someone plays the `!important` card. 

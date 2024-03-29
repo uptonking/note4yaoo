@@ -14,6 +14,16 @@ modified: 2022-08-30T01:18:19.063Z
 
 - ## 
 
+- ## 🧮 [Text Editor Data Structures | Hacker News _202306](https://news.ycombinator.com/item?id=36312488)
+- 
+- 
+- 
+
+# discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 🌵 On the Patchwork project at @inkandswitch we’re exploring dynamic history: auto-saving every change to a document, and flexibly querying that history later on.

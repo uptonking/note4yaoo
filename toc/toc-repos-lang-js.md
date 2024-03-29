@@ -408,6 +408,8 @@ modified: 2021-05-14T15:04:42.225Z
 - [Runtime compatibility across JavaScript runtimes](https://runtime-compat.unjs.io/)
   - allows you to easily visualize the compatibility of different APIs (including WinterCG) across different JavaScript runtimes
 
+- [A list of JavaScript engines, runtimes, interpreters _202403](https://gist.github.com/guest271314/bd292fc33e1b30dede0643a283fadc6a)
+
 - https://github.com/awslabs/llrt /MIT/202402/rust
   - lightweight JavaScript runtime designed to address the growing demand for fast and efficient Serverless applications.
   - It's built in Rust, utilizing QuickJS as JavaScript engine, ensuring efficient memory usage and swift startup.

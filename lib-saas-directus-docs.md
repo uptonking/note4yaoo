@@ -9,6 +9,14 @@ modified: 2024-03-02T15:21:17.619Z
 
 # guide
 
+# blogs
+- [Why I like Directus _202311](https://larryhudson.io/why-i-like-directus/)
+  - The features that make it appealing to me are:
+  - a user-friendly web interface for managing the database structure
+  - automatically creates a REST API for the database
+  - ‘Flows’ give you a way to create automations by chaining together operations, similar to Zapier or IFTTT.
+  - extensions SDK that makes it possible to create little add-ons
+  - open source and can be self-hostable
 # [docs](https://docs.directus.io/)
 
 ## overview
@@ -31,13 +39,33 @@ modified: 2024-03-02T15:21:17.619Z
   - 🗑️ Webhooks are a deprecated feature and will be removed from the platform. 
   - This functionality has been fully replaced by Flows
 
-## version-history
+- Directus has a built-in data-caching option. 
+  - Enabling this will cache the output of requests (based on the current user and exact query parameters used) into configured cache storage location. 
+  - This drastically improves API performance, as subsequent requests are served straight from this cache. 
+  - Enabling cache will also make Directus return accurate cache-control headers. 
+
+- By default, Directus stores all uploaded files locally on disk. 
+  - However, you can also configure Directus to use S3, Google Cloud Storage, Azure, Cloudinary or Supabase
+  - You can also configure multiple storage adapters at the same time.
+  - This allows you to choose where files are being uploaded on a file-by-file basis. 
+
+- Redis is required in case of multiple instances
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
+## ⌛️ version-history
 
 ### [Content Versions | Directus Docs](https://docs.directus.io/reference/system/versions.html)
 
-- Content Versioning enables users to create unpublished copies of an item (called "Content Versions"), modify them independently from the main version, and promote them to become the new main version when ready.
+- Content Versioning enables users to create unpublished copies of an item (called "Content Versions"), modify them independently from the main version, and promote them to become the new main version when ready. 
 
-### ⌛️ [Revisions | Directus Docs](https://docs.directus.io/reference/system/revisions.html)
+### ⌛️💡 [Revisions | Directus Docs](https://docs.directus.io/reference/system/revisions.html)
 
 - Revisions are individual changes to items made. 
 - Directus keeps track of changes made, so you're able to revert to a previous state at will
@@ -57,9 +85,15 @@ modified: 2024-03-02T15:21:17.619Z
 - Promote: Promoting a version means to make it the new main version. 
   - When a new version is promoted, it becomes the main version that is displayed to users, and it replaces the previous main version.
 
+- All new versions originate from the main version. This implies that the main version acts as the single source of truth for other versions.
+  - main version 变化时
+    - 若其他verA无修改，则main的变化会同步到其他verA
+    - 若其他verA已修改，则main的变化不会同步到其他verA
+
 - Under the hood, content versions are stored in the `directus_revisions` collection. 
   - In bigger projects this collection can get large.
   - Some Directus users combat this my periodically purging some or all data in this collection.
+  - Be aware that this could unintentionally purge content versions, so purging logic may have to be updated.
 
 ### ⌛️🌵 [Introducing Content Versioning v10.7.0 _20231023](https://directus.io/blog/introducing-content-versioning)
 
@@ -106,15 +140,35 @@ modified: 2024-03-02T15:21:17.619Z
   - they don't have any access to the database, network, or filesystem by default.
 - The Sandboxed Extensions Framework is available for API and Hybrid Extensions.
 
-- Isolates only have access to JavaScript standard built-in objects. This means that common runtime functions such as `console` and `setTimeout` are not available.
+- Isolates only have access to JavaScript standard built-in objects. 
+  - This means that common runtime functions such as `console` and `setTimeout` are not available.
 
 - In order for extensions to interact with the project's database or host environment, it has to use functions that are made available through the virtual `directus:api` Sandbox SDK.
+
 - 
 - 
 - 
+
+### [Publish on the Directus Marketplace | Directus Docs](https://docs.directus.io/extensions/marketplace/publishing.html)
+
+- The Directus Marketplace will allow installation of all App extension types (Interfaces, Layouts, Displays, Panels, Modules, Themes) and Sandboxed API/Hybrid extensions (Endpoints, Hooks, Operations, Bundles).
+
+- extensions which are not sandboxed will not be available via the Marketplace by default in an effort to increase security and trust. 
+  - They can be made available by setting the `MARKETPLACE_TRUST` environment variable to `all` (self-hosted and Enterprise Cloud).
+
 - 
 - 
 - 
+
+## [Archive](https://docs.directus.io/app/data-model/collections.html#archive)
+
+- Archive provides a soft-delete functionality for items in a collection. 
+  - Archived items will still exist in the collection and database, but are filtered within the Data Studio. 
+- When you create a collection, you have the option to create an optional `Status` Field. 
+  - If you choose to include this field, the collection's archive settings will be automatically configured for you.
+- The archive fields can contain any number of additional values besides the archived and unarchived values defined above.
+- Archived items are hidden in the app by default, but they are still returned normally via the API unless explicitly filtered out. 
+  - This gives you the flexibility to manage archived items however you want when working with the API.
 
 ## [API Reference | Directus Docs](https://docs.directus.io/reference/introduction.html)
 
@@ -162,6 +216,25 @@ modified: 2024-03-02T15:21:17.619Z
   - They are less secure, but quite useful for server-to-server communication. 
   - They are saved as plain-text 
 
+- 
+- 
+- 
+
+# i18n/translation
+
+## [Creating Content Translations | Directus Docs](https://docs.directus.io/guides/headless-cms/content-translations.html)
+
+- You will be creating several collections (one for storing different languages, one for your content, and one junction collection that will store all the different translations of your content). 
+
+- You can show one language at a time or show two languages side by side.
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 - 
 - 
 - 

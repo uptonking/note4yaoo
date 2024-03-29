@@ -51,6 +51,16 @@ modified: 2024-01-06T15:37:08.031Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## In Loro, we maintain this property: 
+- https://twitter.com/loro_dev/status/1773591628927598888
+  - given the distance between versions A and B as m and the total number of operations in the document as n, the cost of computing the difference from version A to version B is O(m log n) instead of O(n log n).
+  - Versions A and B can be arbitrary without requiring version B >= A. 
+  - This allows us to perform fast version difference comparisons and supports undo/redo based on them.
+
 - ## 💡 There's an alternative approach to rich-text formatting, keeping the formatting outside of the text
 - https://discord.com/channels/1069799218614640721/1168069498918670336/1193907169708494898
   - Instead of embedding style information within the text, one would have a "stylesheet"* outside of the text that maps from relative positions to style information. Unlike HTML/CSS (and Peritext, Markdown, etc), where text is marked up for styling inline, the text would be plain and decoupled from its formatting. 

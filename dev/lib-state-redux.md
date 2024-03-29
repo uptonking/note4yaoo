@@ -13,6 +13,11 @@ modified: 2021-05-13T03:14:10.096Z
   - 架构设计：single store, read only state, reducer as pure function
   - 要让状态的变化可追踪，可重复，可维护
 # dev
+- redux-core不依赖immer
+  - You do not need to use Immer with Redux. 
+  - Plain JavaScript, if written correctly, is perfectly capable of providing immutability without having to use an immutable-focused library.
+  - using an immutable update utility library such as Immer can significantly improve the reliability of your app, and make your app’s development much easier.
+
 - redux-persist初始化流程
   - @@INIT, api/middlewareRegistered注册后
   - persist/PERSIST, REHYDRATE

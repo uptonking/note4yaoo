@@ -28,7 +28,11 @@ if(val) // doSth
 
 - ## 
 
-- ## 
+- ##  `Symbol()` is effectively awesome as primitive but it cannot survive cross realms serializations in any meaningful way unless really carefully orchestrated and yet impossible to reflect elsewhere: 
+- https://twitter.com/WebReflection/status/1773390355976597524
+  - if your library uses Symbol() and would like to work out of Workers consider smt else
+  - in coincident library Symbol.known is possible, as well as Symbol.for(...) but if you trust a "hidden" (yet accessible) field to have a Symbol(), there's no way to translate or survive a postMessage, Atomics or whatever dance as that won't be the same Symbol() in the outer world.
+  - React there can't be used from a worker (at least not the regular React client library)
 
 - ##  `Number.parseFloat()` is essentially `Number()` with the extra steps of:
 - https://twitter.com/kripod97/status/1766767605962981784

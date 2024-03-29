@@ -67,6 +67,11 @@ modified: 2023-10-26T18:14:17.038Z
 - https://twitter.com/eatonphil/status/1768336441715658938
   - Doesn't Aurora Limitless solve this problem?
 
+### [Why Has Figma Reinvented the Wheel With PostgreSQL? _202403](https://medium.com/@magda7817/why-has-figma-reinveted-the-wheel-with-postgresql-3a1cb2e9297c)
+
+- The Figma engineering team was aware of, and evaluated, several existing options that could have made their database layer horizontally scalable. 
+  - But still, they decided to build their own sharding solution from scratch.
+
 ### 👥 [How Figma's databases team lived to tell the scale | Hacker News _202403](https://news.ycombinator.com/item?id=39706968)
 
 - Serverless Aurora is incredibly expensive for most workloads. I have yet to find a use case for any SaaS product that is used >4 hours a day. Since all my products span at least 3 time zones there is at least 12 hours of activity a day.
