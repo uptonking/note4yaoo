@@ -117,6 +117,8 @@ modified: 2021-05-25T09:41:29.066Z
   - When JSON Web Tokens are used, they are encrypted by default (JWE) with A256CBC-HS512
   - [NextAuth.js is becoming Auth.js_20221215](https://twitter.com/balazsorban44/status/1603082914362986496)
     - Runtime/framework agnostic
+  - [Integration with an existing project _202006](https://github.com/nextauthjs/next-auth/issues/296)
+    - These are the options that are probably most relevant
   - https://github.com/nextauthjs/next-auth-example
     - Example showing how to use NextAuth.js with Next.js
 

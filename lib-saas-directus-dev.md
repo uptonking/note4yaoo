@@ -23,7 +23,6 @@ modified: 2024-02-16T14:55:58.271Z
   - rich-views: table, kanban, calendar, card, map
     - 支持custom layouts
   - 强大的权限系统，支持per-field
-  - 支持realtime updates
   - 🔌 Extensions and marketplace
     - marketplace支持自定义地址 MARKETPLACE_REGISTRY
   - Sandboxed Extensions, ✨ 支持在线安装扩展
@@ -31,6 +30,7 @@ modified: 2024-02-16T14:55:58.271Z
   - 🎛️ insights/dashboard
   - 用户管理
   - 通知系统
+  - 支持realtime data, 包括rest/graphql
   - 支持i18n, 偏向于简单翻译，提供了translations类型的字段，会自动建立关联表
     - lang/content表需要用户自己创建和配置
 
@@ -51,17 +51,30 @@ modified: 2024-02-16T14:55:58.271Z
 
 - features
   - 核心模块: content, user, files, flows, insights/dashboard
-  - 表格默认处于查看状态
+  - 表格默认处于只读查看状态，而不是编辑状态
   - built with vue3
+  - 📝 block-editor使用editorjs, wysiwyg使用tinymce.v6
   - instant REST+GraphQL API on top of any SQL database
   - Our no-code Vue.js app is intuitive for non-technical users
+
+- who is using #directus
+  - ?
+
+- tips
+  - ?
 # draft
 - collections
   - 优化方案，修改schema时数据库层数据操作可能过多，可采用冷热模式，冷模式即目前的方案直接修改schema，热模式会先修改中间表或内存然后等一段时间再持久化同步到db
+
+- 影响范围大的operation如何设计实现，如插入row/column
+
+- relation关系数据的联动显示功能很强大，但意外修改的影响范围也很大，且难以undo
 # dev-xp
 
 ```shell
 # start dev app
+pnpm i
+pnpm build
 pnpm --filter api dev
 pnpm --filter app dev
 ```
@@ -79,18 +92,47 @@ pnpm --filter app dev
 
 ## dev-done
 
-- 登录界面一直白屏，排查了很久未定位到原因，但firefox可正常打开，chrome体系都是白屏
+- 登录界面白屏，排查很久未定位到原因，但firefox可正常打开，chrome体系都是白屏
   - [Unable to run Directus locally](https://github.com/directus/directus/issues/17786)
   - You have to set `SERVE_APP=true` in your .env file in order to run the api in dev mode with the build app.
   - 最终发现配置server_app后要访问的是服务端:8055/admin，而不是前端:8080/admin
+  - 可能是本地开发时url对应域名的localStorage或cookie存在其他开发的token
 
 ## dev-revision-history
+
+- undo可考虑基于revision-history实现
 
 - 更新一行内容时 `PATCH /items/test_version11/0a18dd69-uuid` api
   - 但发送的是字段级的全量内容，不是行级
 
+### 📌 创建内容
+
 ```JS
-// 更新内容时发送的payload
+// POST /items/articles
+// payload
+{
+  "title": "post03301824",
+  "contents": "# hi, post03301824"
+}
+// response
+{
+  "id": "ff52b0e7-56e8-4d27-9ec8-d5cbdcacb643",
+  "title": "post03301824",
+  "contents": "# hi, post03301824",
+  "user_created": "01198d9a-07a0-4f20-b2e2-927d7253d8bd",
+  "date_created": "2024-03-30T10:35:04.113Z",
+  "user_updated": null,
+  "date_updated": null
+}
+
+// 📌 更新内容时
+// PATCH /items/articles/ff52b0e7-56e8-4d27-9ec8-d5cbdcacb643
+// 更新markdown类型字段，基于codemirror
+// payload 只包含修改过的字段，title未变化所以没发送
+{
+  "contents": "# hi, post03301824\n\n- aa"
+}
+// 更新rich-text类型字段，基于editorjs
 {
   "details": {
     "time": 1711727969329,
@@ -113,8 +155,8 @@ pnpm --filter app dev
   }
 }
 
-// 用户编辑rich-text字段时，db directus_revisions表的内容，delta字段的内容
-// 创建时
+// 👉🏻 更新rich-text字段时，db directus_revisions表的delta字段的内容
+// 创建时的delta
 {
   "title": "simple-text",
   "details": {
@@ -129,7 +171,7 @@ pnpm --filter app dev
     "version": "2.28.2"
   }
 }
-// 更新时
+// 更新时的delta
 {
   "details": {
     "time": 1711728704077,
@@ -147,5 +189,222 @@ pnpm --filter app dev
 }
 ```
 
+### 📌 获取revisions
+
+```JS
+// GET  /revisions?filter[_and][0][collection][_eq]=articles&filter[_and][1][item][_eq]=ff52b0e7-56e8-4d27-9ec8-d5cbdcacb643&filter[_and][2][version][_null]=true&sort=-id&limit=10&page=0&fields[]=id&fields[]=data&fields[]=delta&fields[]=collection&fields[]=item&fields[]=activity.action&fields[]=activity.timestamp&fields[]=activity.user.id&fields[]=activity.user.email&fields[]=activity.user.first_name&fields[]=activity.user.last_name&fields[]=activity.ip&fields[]=activity.user_agent&fields[]=activity.origin
+// response
+[{
+    "id": 277,
+    "data": {
+      "id": "ff52b0e7-56e8-4d27-9ec8-d5cbdcacb643",
+      "user_created": "01198d9a-07a0-4f20-b2e2-927d7253d8bd",
+      "date_created": "2024-03-30T10:35:04.113Z",
+      "user_updated": "01198d9a-07a0-4f20-b2e2-927d7253d8bd",
+      "date_updated": "2024-03-30T10:38:02.430Z",
+      "title": "post03301824",
+      "contents": "# hi, post03301824\n\n- aa"
+    },
+    "delta": {
+      "contents": "# hi, post03301824\n\n- aa",
+      "user_updated": "01198d9a-07a0-4f20-b2e2-927d7253d8bd",
+      "date_updated": "2024-03-30T10:38:02.430Z"
+    },
+    "collection": "articles",
+    "item": "ff52b0e7-56e8-4d27-9ec8-d5cbdcacb643",
+    "activity": {
+      "action": "update",
+      "timestamp": "2024-03-30T10:38:02.432Z",
+      "ip": "127.0.0.1",
+      "user_agent": "Mozilla/5.0",
+      "origin": "http://localhost:8080",
+      "user": {}
+    }
+  },
+  {
+    "id": 276,
+    "data": {
+      "title": "post03301824",
+      "contents": "# hi, post03301824"
+    },
+    "delta": {
+      "title": "post03301824",
+      "contents": "# hi, post03301824"
+    },
+    "collection": "articles",
+    "item": "ff52b0e7-56e8-4d27-9ec8-d5cbdcacb643",
+    "activity": {
+      "action": "create",
+      "timestamp": "2024-03-30T10:35:04.119Z",
+      "ip": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 ",
+      "origin": "http://localhost:8080",
+      "user": {}
+    }
+  }
+]
+
+// 📌 revision revert
+// 本质是更新 PATCH items/articles/ff52b0e7-56e8-4d27-9ec8-d5cbdcacb643
+```
+
+### 📌 创建table-schema
+
+```JS
+// POST /collections
+// payload
+{
+  "collection": "test_table11",
+  "fields": [{
+      "field": "id",
+      "type": "uuid",
+      "meta": {
+        "hidden": true,
+        "readonly": true,
+        "interface": "input",
+        "special": [
+          "uuid"
+        ]
+      },
+      "schema": {
+        "is_primary_key": true,
+        "length": 36,
+        "has_auto_increment": false
+      }
+    },
+    {
+      "field": "status",
+      "type": "string",
+      "meta": {
+        "width": "full",
+        "options": {
+          "choices": [{
+              "text": "$t:published",
+              "value": "published",
+              "color": "var(--theme--primary)"
+            },
+            {
+              "text": "$t:draft",
+              "value": "draft",
+              "color": "var(--theme--foreground)"
+            },
+            {
+              "text": "$t:archived",
+              "value": "archived",
+              "color": "var(--theme--warning)"
+            }
+          ]
+        },
+        "interface": "select-dropdown",
+        "display": "labels",
+        "display_options": {
+          "showAsDot": true,
+          "choices": [{
+              "text": "$t:published",
+              "value": "published",
+              "color": "var(--theme--primary)",
+              "foreground": "var(--theme--primary)",
+              "background": "var(--theme--primary-background)"
+            },
+            {
+              "text": "$t:draft",
+              "value": "draft",
+              "color": "var(--theme--foreground)",
+              "foreground": "var(--theme--foreground)",
+              "background": "var(--theme--background-normal)"
+            },
+            {
+              "text": "$t:archived",
+              "value": "archived",
+              "color": "var(--theme--warning)",
+              "foreground": "var(--theme--warning)",
+              "background": "var(--theme--warning-background)"
+            }
+          ]
+        }
+      },
+      "schema": {
+        "default_value": "draft",
+        "is_nullable": false
+      }
+    },
+    {
+      "field": "user_updated",
+      "type": "uuid",
+      "meta": {
+        "special": [
+          "user-updated"
+        ],
+        "interface": "select-dropdown-m2o",
+        "options": {
+          "template": "{{avatar.$thumbnail}} {{first_name}} {{last_name}}"
+        },
+        "display": "user",
+        "readonly": true,
+        "hidden": true,
+        "width": "half"
+      },
+      "schema": {}
+    },
+    {
+      "field": "date_updated",
+      "type": "timestamp",
+      "meta": {
+        "special": [
+          "date-updated"
+        ],
+        "interface": "datetime",
+        "readonly": true,
+        "hidden": true,
+        "width": "half",
+        "display": "datetime",
+        "display_options": {
+          "relative": true
+        }
+      },
+      "schema": {}
+    }
+  ],
+  "schema": {},
+  "meta": {
+    "archive_field": "status",
+    "archive_value": "archived",
+    "unarchive_value": "draft",
+    "singleton": false
+  }
+}
+
+// response
+{
+  "collection": "test_table11",
+  "meta": {
+    "collection": "test_table11",
+    "icon": null,
+    "note": null,
+    "display_template": null,
+    "hidden": false,
+    "singleton": false,
+    "translations": null,
+    "archive_field": "status",
+    "archive_app_filter": true,
+    "archive_value": "archived",
+    "unarchive_value": "draft",
+    "sort_field": null,
+    "accountability": "all",
+    "color": null,
+    "item_duplication_fields": null,
+    "sort": null,
+    "group": null,
+    "collapse": "open",
+    "preview_url": null,
+    "versioning": false
+  },
+  "schema": {
+    "name": "test_table11",
+    "sql": "CREATE TABLE `test_table11` (`id` char(36) not null, `status` varchar(255) not null default 'draft', `user_updated` char(36) null, `date_updated` datetime null, primary key (`id`))"
+  }
+}
+// 📌 更新table-schema
+```
+
 # more
-- [Advanced Filtering: Dates, Aggregation & Grouping, and Combining Filters | Directus Docs](https://docs.directus.io/blog/advanced-filtering-dates-aggregation-and-grouping-and-combining-filters.html)

@@ -12,6 +12,8 @@ modified: 2023-04-21T11:42:46.575Z
 - pros
   - reactive data store for local‑first apps
   - Easily sync your data to browser storage, IndexedDB, SQLite, CRDTs, PartyKit, ElectricSQL
+  - 支持undo/redo, 需使用checkpoint，似乎不是基于delta的方案
+  - 提供了collaboration的示例
 
 - cons
   - 未采用插件式架构
@@ -95,6 +97,9 @@ modified: 2023-04-21T11:42:46.575Z
 
 - https://github.com/circadian-risk/tinybased
   - An experiment for an opinionated typesafe wrapper for TinyBase
+# docs
+- [Using Checkpoints | TinyBase](https://tinybase.org/guides/relationships-and-checkpoints/using-checkpoints/)
+  - the checkpoints module gives you the ability to create and track changes to a Store's data for the purposes of undo and redo functionality
 # discuss-news
 - ## 
 

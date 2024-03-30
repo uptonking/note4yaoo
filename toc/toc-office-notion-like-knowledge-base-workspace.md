@@ -48,7 +48,7 @@ modified: 2022-06-03T21:34:54.893Z
   - ref
     - https://github.com/ProseWorker/ProseWriter
 
-- think /1kStar/MIT/202208/ts/nestjs/tiptap
+- think /1.8kStar/MIT/202304/ts/nestjs/tiptap/inactive
   - https://github.com/fantasticit/think
   - https://think.codingit.cn/
   - 依赖 MySQL/NextJS/nestjs/tiptap
@@ -57,6 +57,10 @@ modified: 2022-06-03T21:34:54.893Z
   - 前端依赖 @douyinfe/semi-ui、excalidraw、tiptap2、docx、katex、markdown-it、nextjs、react-pdf、react-query3、tippy.js、yjs
   - 后端依赖 nestjs、typeorm、passport、mysql、yjs
   - Think 是一款开源知识管理工具。通过独立的知识库空间，结构化地组织在线协作文档，实现知识的积累与沉淀，促进知识的复用与流通。同时支持多人协作文档。
+  - 为什么停止开发了？
+    - 对于文档类产品，无法做出独立的 library 或 framework 给不同需求的团队（或个人），这使得我不确定这件事的意义
+    - 对于独立编辑器开发，无论最终以何种形态存在，其表现还是为应用，而非框架（或依赖），能做到的也许只是一种示范
+    - 作者本身专攻前端，对高性能、扩展性良好的后端架构心有余而力不足
   - https://github.com/fantasticit/magic-editor /202301/ts
 
 - logseq /15.9kStar/AGPLv3/202208/clojure/ts
@@ -71,7 +75,7 @@ modified: 2022-06-03T21:34:54.893Z
   - Built on a graph database, Athens helps map and communicate complex knowledge in complex domains.
   - athens-export converts your pages to markdown and a logseq-compatible directory
 
-- growi /1.2kStar/MIT/202311/ts/remark
+- growi /1.2kStar/MIT/202311/ts/remark/偏向文档管理
   - https://github.com/weseek/growi
   - https://docs.growi.org/en/guide/
   - https://demo.growi.org/
@@ -82,25 +86,40 @@ modified: 2022-06-03T21:34:54.893Z
   - Slack/Mattermost, IFTTT Integration
   - 各种集成
 
+- https://github.com/hedgedoc/hedgedoc /AGPLv3/202402/ts
+  - https://demo.hedgedoc.org/features?both
+  - https://docs.hedgedoc.org/setup/getting-started/
+  - 后端依赖nestjs.v8、rxjs.v7、sqlite3、typeorm、passport
+  - HedgeDoc is a real-time, multi-platform collaborative markdown note editor.
+  - HedgeDoc (formerly known as CodiMD) is an open-source, web-based, self-hosted, collaborative markdown editor.
+  - We are currently working on HedgeDoc 2, a complete rewrite of HedgeDoc.
+  - [Proposal: Replace OT with CRDTs](https://github.com/hedgedoc/hedgedoc/issues/527)
+    - By using y.js we are using CRDTs now.
+  - [fork history](https://hedgedoc.org/history/): HedgeDoc is the community-driven fork of CodiMD
+- https://github.com/hedgedoc/react-client
+  - https://ui-test.hedgedoc.org/intro
+  - 前端依赖 react、redux-toolkit、codemirror.v6、bootstrap.v4、flowchart.js、markdown-it.v12、katex、vega、i18next、next.v12、react-bootstrap、yjs
+  - 支持markdown的分屏预览，一边源码、一边预览，同步滚动
+
 - affine /7.1kStar/MIT/202208/ts
   - https://github.com/toeverything/AFFiNE
   - https://affine.pro/
   - Affine is a next-gen knowledge base that brings planning, sorting and creating all together. Privacy first, open-source, customizable and ready to use.
-- blocksuite /50Star/MPLv2/202210/ts
-  - https://github.com/toeverything/blocksuite
-  - https://pathfinder.affine.pro/
-  - 支持跨block选择部分文字，但不支持跨block加粗快捷键
-  - 不支持拖拽block修改顺序，不支持拖入拖出list item
-  - 模型层基于yjs、y-indexeddb，渲染层将每个block的数据渲染成一个contenteditable，输入层依赖beforeinput，编辑操作抽象成了command
-  - 多编辑器实例的优点
-    - 容易实现虚拟滚动
-  - 多编辑器实例的缺点
-    - 自定义选区的同步和更新变得复杂
-    - 跨block的操作变得复杂
-  - https://github.com/zzj3720/blocksvite
-    - simple Block editor like BlockSuite, based on Vue and @blocksuite/store
-  - https://github.com/JhinBoard/jhin
-    - Next-Gen Collaborative Knowledge Base, A free replacement for Notion & Miro
+  - blocksuite /50Star/MPLv2/202210/ts
+    - https://github.com/toeverything/blocksuite
+    - https://pathfinder.affine.pro/
+    - 支持跨block选择部分文字，但不支持跨block加粗快捷键
+    - 不支持拖拽block修改顺序，不支持拖入拖出list item
+    - 模型层基于yjs、y-indexeddb，渲染层将每个block的数据渲染成一个contenteditable，输入层依赖beforeinput，编辑操作抽象成了command
+    - 多编辑器实例的优点
+      - 容易实现虚拟滚动
+    - 多编辑器实例的缺点
+      - 自定义选区的同步和更新变得复杂
+      - 跨block的操作变得复杂
+    - https://github.com/zzj3720/blocksvite
+      - simple Block editor like BlockSuite, based on Vue and @blocksuite/store
+    - https://github.com/JhinBoard/jhin
+      - Next-Gen Collaborative Knowledge Base, A free replacement for Notion & Miro
 
 - trilium /23.3kStar/AGPLv3/202311/js/ckeditor5/支持多端
   - https://github.com/zadam/trilium
@@ -121,14 +140,16 @@ modified: 2022-06-03T21:34:54.893Z
     - Trilium makes links / relations between different notes which can be quickly retrieved / navigated (e.g. for note map).There's no such support in file systems 
     - Filesystems are generally not transactional. While this is not completely required for a note-taking application, having transactions make it way easier to keep notes and their metadata in predictable and consistent state.
 
-- https://github.com/aliscie/odoc /rust/ts
+- https://github.com/aliscie/odoc /202308/rust/ts/inactive
   - This app is Notion.so clone, roam research clone and obsidian clone. 
   - The main purpose of this app is not to just clone these note-taking apps but to make an all-in-one Open source note-taking app with automation features.
   - make sure to install zstd llvm, clang and openssl, gcc, rocksdb in order for the desktop app to work (surealdb requirements).
 
-- https://github.com/slotDumpling/multibility /ts/协同笔记与PDF批注
+- https://github.com/slotDumpling/multibility /202310/ts/inactive
   - https://slotdumpling.github.io/multibility/
   - Collaborative notes and PDF annotations
+  - 协同笔记与PDF批注
+  - 依赖draft-pad(基于paperjs-canvas)、antd.v4、antd-mobile.v5、immutable.v4、pdfjs、react-beautiful-dnd、socket.io
 
 - https://github.com/appotry/dootask /php/vue
   - https://www.dootask.com/
@@ -165,13 +186,13 @@ modified: 2022-06-03T21:34:54.893Z
   - Support selecting multiple knowledge bases for Q&A
   - Currently supported formats include: PDF(pdf), Word(docx), PPT(pptx), XLS(xlsx), Markdown(md), Email(eml), TXT(txt), Image(jpg，jpeg，png), CSV(csv), Web links(html) and more
 # confluence-like
-- MrDoc /2.1kStar/GPLv3/202208/js/python/Django/仅网页版
+- MrDoc /2.1kStar/GPLv3/202403/js/python/Django/仅网页版
   - https://github.com/zmister2016/MrDoc
   - https://mrdoc.pro/
   - http://mrdoc.zmister.com/project-20/
   - 个人和小型团队的云笔记、云文档、知识管理私有化部署方案
     - 场景：个人云笔记、在线产品手册、团队内部知识库、在线电子教程等私有化部署场景
-  - 后端依赖: Python、Django
+  - 后端依赖: Python、Django; 后端代码量很少
   - 前端依赖: LayUI、JQuery、vditor、luckysheet.v2
   - 功能特性: 文档资源管理、书写编辑、阅读分享、站点管理
 
@@ -198,7 +219,7 @@ modified: 2022-06-03T21:34:54.893Z
   - 编辑器仅支持简单文本
   - Where applicable, components are uncontrolled by default but can also be controlled, without needing to create any local states.
 
-- memos /260Star/NALic/202206/ts/go
+- memos /26.4kStar/MIT/202403/ts/go
   - https://github.com/usememos/memos
   - https://usememos.com/
   - 后端依赖 go
@@ -214,21 +235,6 @@ modified: 2022-06-03T21:34:54.893Z
   - 后端依赖 go
   - 样式过于简单
   - 这个项目诞生的原始驱动，是因为对“语雀” 知识库的不满。一直不喜欢语雀的目录，发布流程。
-
-- https://github.com/hedgedoc/hedgedoc /AGPLv3/202402/ts
-  - https://demo.hedgedoc.org/features?both
-  - https://docs.hedgedoc.org/setup/getting-started/
-  - 后端依赖nestjs.v8、rxjs.v7、sqlite3、typeorm、passport
-  - HedgeDoc is a real-time, multi-platform collaborative markdown note editor.
-  - HedgeDoc (formerly known as CodiMD) is an open-source, web-based, self-hosted, collaborative markdown editor.
-  - We are currently working on HedgeDoc 2, a complete rewrite of HedgeDoc.
-  - [Proposal: Replace OT with CRDTs](https://github.com/hedgedoc/hedgedoc/issues/527)
-    - By using y.js we are using CRDTs now.
-  - [fork history](https://hedgedoc.org/history/): HedgeDoc is the community-driven fork of CodiMD
-- https://github.com/hedgedoc/react-client
-  - https://ui-test.hedgedoc.org/intro
-  - 前端依赖 react、redux-toolkit、codemirror.v6、bootstrap.v4、flowchart.js、markdown-it.v12、katex、vega、i18next、next.v12、react-bootstrap、yjs
-  - 支持markdown的分屏预览，一边源码、一边预览，同步滚动
 
 - pervane /200Star/MIT/202205/js/python
   - https://github.com/hakanu/pervane
@@ -253,6 +259,16 @@ modified: 2022-06-03T21:34:54.893Z
   - https://nextool.app/
   - GTD-oriented task manager with support for nested tasks and a focus on finding actionable tasks.
 
+- https://github.com/ganskef/mdwiki /202310/js
+  - CMS/Wiki using Markdown - 100% client side single-page application 
+  - No special software installation or server side processing is required. Just upload the mdwiki.html into the same directory as your Markdown files and you are good to go!
+  - This is a fork of the stable Dynalon MDwiki release branch v0.6.x containing updated dependencies with all the beloved features (like Markdown include which is missed in the master branch). The original repository is unmaintained and archived (read-only).
+  - 🍴 forks
+  - https://github.com/Dynalon/mdwiki /GPLv3/201810/ts/js
+  - https://github.com/unmacaque/mdwiki
+    - marked was updated to support more GFM syntax
+  - https://github.com/stephanedenis/mdwiki
+
 - https://github.com/documize/community /go/emberjs
   - https://docs.documize.com/
   - 依赖 go、js、handlebars、EmberJS
@@ -271,7 +287,7 @@ modified: 2022-06-03T21:34:54.893Z
   - A next-generation curated knowledge sharing platform for data scientists and other technical professions.
   - Knowledge Repo project is focused on facilitating the sharing of knowledge between data scientists and other technical roles using data formats and tools 
 
-- https://github.com/andymatuschak/orbit /1.5kStar/apache2/202305/ts
+- https://github.com/andymatuschak/orbit /1.5kStar/apache2/202305/ts/inactive
   - https://withorbit.com/
   - Orbit is an experimental platform for publishing and engaging with small tasks repeatedly over time.
   - [Project: data architecture improvements_202104](https://github.com/andymatuschak/orbit/issues/192)
@@ -283,7 +299,7 @@ modified: 2022-06-03T21:34:54.893Z
     - That’s the approach Orbit takes: simple event structures (simpler than CRDTs, sacrificing some of their key guarantees to reduce complexity), with well-defined merge operations, in a SQLite db. Users can write scripts to insert their own events if they like.
     - Orbit’s implementations are quite general (i.e. they have almost no specific knowledge of Orbit’s structures), so perhaps they’ll be of use to others. See store-*, sync, and backend packages here
 
-- Ink-wash-docs /472Star/Apache2/202010/js
+- Ink-wash-docs /472Star/Apache2/202309/js/inactive
   - https://github.com/huangwei9527/Ink-wash-docs
   - 水墨文档，一款基于egg+vue开发的在线文档管理平台，支持markdown文档， excel文档，原型托管等功能.
   - 依赖vue、element-ui、vditor、egg、x-spreadsheet
@@ -295,7 +311,7 @@ modified: 2022-06-03T21:34:54.893Z
   - WYSIWYG Block Editor built upon Slate.js, with drag & drop, custom block rendering, etc.
   - Cross platform powered by Electron.
 
-- https://github.com/courajs/referent /js
+- https://github.com/courajs/referent /202201/js/inactive
   - An offline-first, realtime-collaborative wiki engine
 
 - cryptpad /4.3kStar/AGPLv3/202301/js

@@ -108,10 +108,12 @@ modified: 2024-02-16T14:56:17.057Z
 - ## [Migrations vs Schemas, what is the way to go? _202204](https://github.com/directus/directus/discussions/12713)
 - Sounds like schema migrations is what you'd be looking for. Those allow you to create a snapshot of the current configuration, and apply that to another instance. Migrations could also be used for this purpose, but are intended for more edge-case uses (it's an escape hatch in case schema migrations doesn't offer what you need) 
 
-- ## 🐛 [Ability to rename collections and fields  _202005](https://github.com/directus/directus/discussions/2711)
+- ## 🐛🆔️ [Ability to rename collections and fields  _202005](https://github.com/directus/directus/discussions/2711)
 - For anyone here that is only concerned about what the Directus user sees and not names in the underlying database, you can use field name translations and collection naming translations to change the name throughout the Directus Studio. It doesn't change anything for the underlying database or the API, but it's better than nothing!
 
 - [Change Field Name / Type after creation](https://github.com/directus/directus/discussions/14037)
+
+- [The ability to rename columns in table layout, especially for those that are properties of relations ](https://github.com/directus/directus/discussions/13277)
 
 - ## 💡🏘️ [Code-first configuration of schema, roles and permissions _202204](https://github.com/directus/directus/discussions/13041)
   - It would be great if schemas, roles and permissions could be managed via code. 
@@ -171,6 +173,15 @@ modified: 2024-02-16T14:56:17.057Z
 # discuss-editor
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🐛↩️ [CMD Z (or ctrl z) won't work after paste in blockeditor _202312](https://github.com/directus/directus/issues/20655)
+  - It only applies when you paste more then one paragraph (so a new block is started in the json).
+- This seems to be an open issue for editor.js (the block editor library)
+  - [未修复 [Bug] Undo is ignored, when Copy-paste 2-3 paragraph from Wikipedia · codex-team/editor.js _202207](https://github.com/codex-team/editor.js/issues/2110)
+
 - ## 📝 [Block Editor_202105](https://github.com/directus/directus/discussions/5776)
   - It would be great to add a Block Editor aka Medium or the new Wordpress.
   - The main usefulness of this versus a WYSIWYG editor is it can be controlled in a better way with only very specific output, which is then easier to transform with CSS/JS when in use.
@@ -200,6 +211,9 @@ modified: 2024-02-16T14:56:17.057Z
   - but then it would be more straightforward to use /items/articles1 and /items/articles2 instead.
 
 - Perhaps an alternative structure would be to create an "app" collection (for app1 and `app2), and create relationships between the app collection to articles and news, so that it will be much easier to filter the results based on the app.
+
+- ## [We're the small team behind Directus, an open-source data platform for managing any SQL database. We'd love your feedback before releasing v9! : r/programming _202103](https://www.reddit.com/r/programming/comments/m8hrgs/were_the_small_team_behind_directus_an_opensource/)
+- it's free, self-hosted, has roles, webhooks, supports sqlite (because this was a small project), and supports (unlimited) locales. 
 
 - ## 🚀 [Show HN: Directus – Free and Open-Source Headless CMS | Hacker News _201609](https://news.ycombinator.com/item?id=12496964)
 - 🆚️ What is the difference with for example Active Admin (for Ruby on Rails)?

@@ -489,8 +489,8 @@ modified: 2020-07-14T11:03:53.196Z
   - Uses immer for state updates - easily and safely mutate your state directly
   - Originally inspired by the now seemingly abandoned library - bey. Although substantially different now- with Server-side rendering and Async Actions built in
 
-- https://github.com/vigetlabs/microcosm /201909/js/inactive
-  - a state management tool for React 
+- https://github.com/vigetlabs/microcosm /MIT/201909/js/inactive
+  - a state management tool for React
   - Other Flux implementations treat actions as static events; the result of calling a dispatch method or resolving some sort of data structure like a Promise.
   - Microcosm actions are first-class citizens.
 

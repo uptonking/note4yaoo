@@ -42,6 +42,8 @@ modified: 2022-08-21T10:02:05.129Z
   - https://sakryukov.github.io/personal-database-dynamic-schema
   - Personal single-file in-memory database. 
   - Dynamic database schema designed to add and remove columns to the table anytime during editing.
+  - 支持在中间位置插入column和row
+  - 不支持undo/redo
 
 - react-datasheet-grid /259Star/MIT/202305/ts
   - https://github.com/nick-keller/react-datasheet-grid
@@ -53,18 +55,16 @@ modified: 2022-08-21T10:02:05.129Z
   - 操作支持获取operation对象
   - Supports copy/pasting to and from Excel, Google-sheet...
   - Virtualized rows and columns, supports hundreds of thousands of rows
-  - undo支持撤销编辑单元格，不支持撤销添加行
-    - [Is there anyway I can implement Undo, Update button just after addRow button ?](https://github.com/nick-keller/react-datasheet-grid/discussions/221)
+  - undo支持撤销编辑单元格，不支持撤销添加行, 但可自定义实现
+    - [Is there anyway I can implement Undo, Update button just after addRow button ? _202212](https://github.com/nick-keller/react-datasheet-grid/discussions/221)
   - [V2 status update_202106](https://github.com/Equify/react-datasheet-grid/issues/37)
   - [Feature Roadmap_202106](https://github.com/Equify/react-datasheet-grid/issues/38)
   - Fast
     - can easily handle hundreds of thousands of rows thanks to its virtualized architecture.
     - Renders have been optimized to the strict minimum, follow the performance guides 
-  - Customizable
-    - Control every behavior of the spreadsheet, implement you own widgets, and customize the style of DSG to match your app.
-  - Feature rich
-    - Supports copy/pasting to and from Excel, Google-sheet, Notion
-    - Keyboard navigation and shortcuts fully-supported
+  - Customizable: Control every behavior of the spreadsheet, implement you own widgets, and customize the style of DSG to match your app.
+  - Supports copy/pasting to and from Excel, Google-sheet, Notion
+  - Keyboard navigation and shortcuts fully-supported
 
 - https://github.com/archit-p/editable-react-table
   - React table built to resemble a database
@@ -84,7 +84,7 @@ modified: 2022-08-21T10:02:05.129Z
   - [feature/frontend next_20230503(v0.3), 前端迁移到svelte](https://github.com/undb-xyz/undb/pull/908)
     - 41fa03d9bfbc9b5072266ad94c9532ccdcf25a68
 
-- nocodb /41.5kStar/AGPLv3/202403/ts/nuxt-vue/参考后端/多视图
+- nocodb /41.5kStar/AGPLv3/202403/ts/nuxt/参考后端/多视图
   - https://github.com/nocodb/nocodb
   - https://nocodb.com/
   - The Open Source Airtable Alternative
@@ -93,6 +93,7 @@ modified: 2022-08-21T10:02:05.129Z
   - 前端依赖 nuxt3、ant-design-vue.v3、vueuse、vue-flow(chart)、monaco-editor、d3-scale、dayjs、vuedraggable、xlsx
   - 用户在界面上创建表时，数据库层也会添加一张新表, 表名前缀 nc__k4v___/nc_rbby___
   - 支持提供返回表中数据的api
+  - 支持undo/redo_202304
   - [Development Setup](https://docs.nocodb.com/engineering/development-setup/)
   - 支持现有数据库，不需要导入数据: We transform any existing databases MySQL, Postgres, SQL Server & SQLite databases into a spreadsheet.
   - 使用流程，workspace > base > create table > add fields > relations > add rows > views

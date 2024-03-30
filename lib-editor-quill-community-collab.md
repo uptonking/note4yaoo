@@ -23,6 +23,14 @@ modified: 2023-11-27T15:55:06.815Z
 
 - ## 
 
+- ## [Enhancement: Provide a way to track changes in editor _201909](https://github.com/KillerCodeMonkey/ngx-quill/issues/524)
+- 
+- 
+
+- ## [Quill Track Changes _201912](https://github.com/quilljs/quill/issues/2858)
+- 
+- 
+
 - ## [How do I perform track changes in the quill editor just like Google docs? - Stack Overflow](https://stackoverflow.com/questions/58887843/how-do-i-perform-track-changes-in-the-quill-editor-just-like-google-docs)
 - We tried to implement track changes / suggestions with QuillJS and came relatively far. But in the end it did not really work, since OT (Operational Transform, the format for syncing the changes) does not support hierarchical structures. The
   - Team from CKEditor changed the OT to support this. But unfortunately it seems to be a lot of work and their code is closed

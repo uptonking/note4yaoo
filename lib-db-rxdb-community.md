@@ -62,6 +62,20 @@ modified: 2023-10-08T10:54:57.575Z
 
 - ## 
 
+- ## 
+
+- ## 🎯↩️ [ANNOUNCEMENT: Plans for the next major version 15.0.0 _202310](https://github.com/pubkey/rxdb/issues/4994)
+- One thing we have come across that would be useful to be able to have a TTL on records stored locally. In our use case there are certain forms of data we only need to know about the last 14 days.
+  - This is the big tradeoff. RxDB choose to have a simple-as-possible replication protocol, so that it can be implemented on top of any infrastructure. 
+  - To make this possible, we do not have cross-document transactions and it is not possible to enforce coordinated replications. 
+  - Most users do not have this problem because they pack everything that belongs together, into the same document. 
+  - Your code should assume that a linked document can exist, but also might not be there (yet).
+
+- In order to keep track of document changes in scenarios like Undo/Redo stacks or version control in general, it would be a very pleasant DX if we could have a native checkpoints plugin. 
+  - RxDB only stores the latest known document state. We stored all changes in the past (aka event-sourcing) when RxDB was build on pouchdb. But experience has shown that event-sourcing requires too much performance for client side databases. This is why RxDB resolves conflicts directly on replication, not afterwards so that it only has to store the latest state.
+  - But maybe what you describe can make sense for the CRDT plugin. There we could "undo" operations by calculating the opposite CRDT operation to any given step.
+- totally agree it's a good fit for the CRDT plugin, I think building this on top of the CRDT plugin can also help with even more complex scenarios, for example: a multiplayer undo stack where each user can undo their own actions, not affecting changes made by others.
+
 - ## 💡 [rxdb: Offline First_202109](https://news.ycombinator.com/item?id=28690427)
 - what's a good solution for syncing with the main database after the device goes back online?
 - 👉🏻 CouchDB/PouchDB(the JS compatible cousin) make use of a global sequence counter to track which documents have changed between sync.

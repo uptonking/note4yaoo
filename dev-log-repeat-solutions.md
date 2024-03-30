@@ -30,7 +30,9 @@ modified: 2021-07-20T13:50:23.433Z
 - 技术可选3: vscode，可参考架构 extensions、capabilities
 - 技术可选4: 侧重版本控制的数据库，如dolt, SirixDB, git-like-db
 - 玩具尝试1: git+crdt+table+branch/version, 参考类似ckan的data-portal
-- roadmap: 📝 虚拟渲染、分支版本、协作; 🔀🛢️ crdt历史版本、partial-replica、ivm, delta-db, dynamic-schema/eav
+- roadmap: 
+  - 📝 虚拟渲染, 分支版本, 协作冲突, undo/redo
+  - 🔀🛢️ crdt版本历史, partial-replica、ivm, delta-db, dynamic-schema/eav
 - file-first: notable, hexo
 - db-first: joplin, siyuan, nocodb
 
@@ -98,15 +100,17 @@ modified: 2021-07-20T13:50:23.433Z
   - rowy       (apache2/firebase+tinymce5)
   - baserow        (MIT/django+nuxt2)
   - ckan/datapian
-- ✨ workflow
+- ✨ ~~workflow~~ > directus
   - n8n           (AGPL/typeorm+vue2+jsplumb)
   - budibase      (AGPL/knex+svelte)
   - automatisch   (AGPL/knex+graphql+slate)
 - ✨ bi
   - 👉🏻 lightdash   (MIT/knex+echarts)
   - superset   (apache2/flask+echarts)
+- more
+  - kanban, jira/linear
 
-- ✨ admin-dashboard
+- ✨ admin-dashboard > strapi
   - react-admin
   - tremor
 - ✨ editor-wiki(web+pc)

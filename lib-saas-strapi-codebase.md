@@ -26,6 +26,7 @@ modified: 2024-03-20T15:11:37.860Z
 
 - documentService如何实现类似entityService的decorator
   - 变通方案1: 若客户端route请求有规律，可考虑route middleware
+  - 等待官方的documentService middleware
 
 - 
 - 
@@ -64,7 +65,7 @@ modified: 2024-03-20T15:11:37.860Z
 - @strapi/strapi作为cli，是执行的入口，基于commander实现
 
 - @strapi/core会load和热加载dist目录的产物
-  - 重要的代码都在services
+  - 重要的代码都在services文件夹
 
 - EventHub是个典型的发布订阅模型，支持多实例
   - listeners(Map) 用于存储带name的事件

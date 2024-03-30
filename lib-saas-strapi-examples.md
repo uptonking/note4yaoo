@@ -9,6 +9,8 @@ modified: 2023-12-15T19:30:23.094Z
 
 # guide
 
+- examples: shop, form-builder
+
 - fans-strapi
   - https://github.com/notum-cz/strapi-plugin-content-versioning
   - https://github.com/VirtusLab-Open-Source/strapi-plugin-reactions
@@ -349,6 +351,20 @@ modified: 2023-12-15T19:30:23.094Z
   - Auto compose Routes, Controllers and Services
   - Support for media & multiple media added
   - Support for multiple relationships at the same level added
+
+- https://github.com/priyanshiisingh/React-Form-Strapi /202204/ts/app
+  - This form is created using React hook form
+  - it accepts user information and uploads it to the strapi database. 
+  - It also involves react captcha verification
+  - https://github.com/BirinderSingh2410/ReactForm-Strapi
+
+- https://github.com/daandegooijer/strapi-api-forms /202402/ts
+  - a plugin for Strapi that allows you to generate API forms with multiple input fields and email handling capabilities.
+- https://github.com/dan-micro/Strapi-Form-Builder-plugin /202209/ts
+  - Form Builder Plugin
+- https://github.com/zekerzichtbaar/formzz /202303/js/inactive
+  - a Strapi plugin that allows you to create forms through collection types
+  - automatically install input-field components
 
 - https://github.com/nicolashmln/strapi-plugin-oembed /202312/js
   - Embed content from third party sites (Youtube, Vimeo, Tiktok, Soundcloud, Spotify, CodePen...) for https://strapi.io v4 (For strapi v3 use v0.4.0)
@@ -931,6 +947,10 @@ modified: 2023-12-15T19:30:23.094Z
   - Control which roles can import/export data from the admin UI.
   - https://github.com/jbeuckm/strapi-plugin-import-content /v3
 
+- https://github.com/UIGStudio/strapi-plugin-export-import-form /202210/ts
+  - Export/import plugin that works entirely on client side. 
+  - Supports single types, copying media, matching page relations and locales.
+
 - https://github.com/NovaGaia/strapi-plugin-mock-datas /202310/js
   - This plugin aims to temporarily replace API responses with full mocks
 
@@ -1031,6 +1051,9 @@ modified: 2023-12-15T19:30:23.094Z
   - This extension replaces Strapi Design System colors with Tailwind colors.
 
 ## v3-ext
+
+- https://github.com/autom8-apps/strapi--form-builder /202009/js
+  - form-builder
 
 - https://github.com/alan2207/strapi-plugin-sync-roles-permissions /202107/js
   - Store user roles and permissions configuration as a JSON file and then import and reuse it any time.

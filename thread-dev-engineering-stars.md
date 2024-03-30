@@ -151,7 +151,10 @@ Validate it to ensure it meets the method's requirements.
 
 - ## 
 
-- ## 
+- ## I really like the “code” property Node adds to Error objects I wish this was standardized for browsers & JS
+- https://twitter.com/jarredsumner/status/1773783996272726505
+  - TypeError, RangeError, DOMException is not specific enough
+- We could learn from C# (also have TypeScript to allow multiple catch etc.)
 
 - ## insert commas into your password so when your credentials are dumped into a csv, it breaks
 - https://twitter.com/WasteCleaner/status/1771517463752032712

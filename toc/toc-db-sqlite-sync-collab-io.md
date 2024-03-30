@@ -24,7 +24,7 @@ modified: 2022-11-04T14:21:31.365Z
   - https://twitter.com/tantaman/status/1717634582000865632
     - Similar to this idea https://vlcn.io/blog/crdt-substrate but simplified by going through a central server
 
-- https://github.com/superfly/litefs /apache2/go
+- https://github.com/superfly/litefs /apache2/202401/go
   - FUSE-based file system for replicating SQLite databases across a cluster of machines
   - It works as a passthrough file system that intercepts writes to SQLite databases in order to detect transaction boundaries and record changes on a per-transaction level in LTX files.
   - It's a goal of LiteFS to pass the SQLite TCL test suite
@@ -96,7 +96,7 @@ modified: 2022-11-04T14:21:31.365Z
 - https://github.com/isaiahnields/csv-to-sqlite
   - A desktop app to convert CSV files to SQLite databases!
 # utils
-- https://github.com/WeWatchWall/stark-db /MIT/202310/ts
+- https://github.com/WeWatchWall/stark-db /MIT/202401/ts
   - SQLite-backed, change-tracking database available over HTTP.
   - By default, the DB engine is configured to run over SSL. 
   - This database tracks changes to all entities in the auto-created column(on all tables) `stark_version`. With the help of this change tracking, synchronization mechanisms can be built later.

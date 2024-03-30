@@ -24,6 +24,16 @@ modified: 2024-02-17T13:01:44.351Z
 # discuss-pg-vitess
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Is there a Vitess for Postgres? _202006
+- https://news.ycombinator.com/item?id=23642484
+- Isn't Citus sort of the same?
+  - Yes but I feel Vitess is much more widely used than Citus. MySQL community, last time I check has formed a more mature ecosystem and conscious on HA and Clustering.
+  - Postgres still feels more like throwing you a bunch of options and you are on your own.
+
 - ## [PlanetScale – Database for Developers | Hacker News _202105](https://news.ycombinator.com/item?id=27197873)
 - Wondering will we see something like this for Postgres? I like the cool things but I can’t migrate to MySQL just because of this.
 - I've been following Citus Data
@@ -39,7 +49,7 @@ modified: 2024-02-17T13:01:44.351Z
 - ## [Postgres compatibility · vitessio/vitess _202011](https://github.com/vitessio/vitess/issues/7003)
 - Since this is a non-trivial task, the process is for you to write up a proposal and request comments from the maintainers and community. 
 
-- ## 📡 [RFC: Postgres support · vitessio/vitess _202011](https://github.com/vitessio/vitess/issues/7084)
+- ## 📡🐘 [RFC: Postgres support · vitessio/vitess _202011](https://github.com/vitessio/vitess/issues/7084)
 - Before anyone gets too excited, this work is not yet planned by anyone we know. 
   - The intent behind writing this up is to document the size and scope of the work and a possible blueprint for when someone is ready to take this up. 
   - This RFC is intentionally at a very high-level. Each of the sections will probably need a more detailed RFC of their own.

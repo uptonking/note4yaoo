@@ -367,7 +367,9 @@ modified: 2023-11-28T14:48:45.910Z
 # discuss-news-notion
 - ## 
 
-- ## 
+- ## A story in 2 parts: Crop image, Mask image _202403
+- https://twitter.com/NotionHQ/status/1773739884077105516
+  - 用了一张经典搞笑图
 
 - ## Acquired by Notion _202402
 - https://twitter.com/FrancescoD_Ales/status/1757067738084717054

@@ -11,6 +11,9 @@ modified: 2023-10-11T21:37:25.329Z
 
 - forums
   - https://news.ycombinator.com/threads?id=matlin
+# roadmap
+- resources
+  - https://triplit.dev/roadmap
 # discuss-author
 - ## 
 
@@ -57,6 +60,16 @@ modified: 2023-10-11T21:37:25.329Z
 
 - ## Big improvements to our update API - much easier to use and less code! Under the hood we use a ES6 proxy, similar to how Immer.js works. _202308
 - https://twitter.com/triplit_dev/status/1688638103164981248
+
+# discuss-not-yet
+- ## 
+
+- ## 
+
+- ## does triplit db provide utilities to implement undo/redo? 
+- https://discord.com/channels/1138467878623006720/1138467879113728033/1223502401609404447
+- Not currently but it's on our roadmap triplit.dev/roadmap
+  - Triplit does already retain the history of edits made to each attribute.
 
 # discuss-stars
 - ## 

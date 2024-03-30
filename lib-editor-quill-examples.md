@@ -696,6 +696,10 @@ modified: 2023-02-09T18:32:06.240Z
   - 后台管理界面使用 Ant Design Pro
   - 支持多人协作文档（使用 Quill 富文本编辑器）
 # collab-crdt
+- https://github.com/mweidner037/list-demos/tree/master/triplit-quill /202401/ts
+  - Basic collaborative rich-text editor that synchronizes using the Triplit fullstack database. 
+  - The editor is Quill.
+
 - https://github.com/WindrunnerMax/Collab /202308/ts
   - 初探富文本之OT协同实例 sharedb+quill
   - 初探富文本之CRDT协同实例 yjs+quill

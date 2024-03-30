@@ -51,6 +51,14 @@ modified: 2022-05-15T18:35:39.272Z
 - https://discord.com/channels/953974421008293909/955972012541628456/1026124845232177224
 - Not that I’m aware of
 
+# discuss-version-history
+- ## 
+
+- ## 
+
+- ## [Implement track changes _202306](https://github.com/facebook/lexical/discussions/4707)
+- Have you figured it out? If not the CharacterLimitPlugin from the playground might help which basically does the same, only wrapping characters (or text) which is longer than allowed and then instead of wrapping deleted it unwraps
+
 # discuss
 - ## 
 

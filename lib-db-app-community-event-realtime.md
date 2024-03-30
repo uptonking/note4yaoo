@@ -9,6 +9,8 @@ modified: 2023-10-27T07:01:45.080Z
 
 # guide
 
+- realtime的方案参考
+  - supabase realtime(Elixir): Broadcast, Presence, and Postgres Changes via WebSockets
 # discuss-stars
 - ## 
 

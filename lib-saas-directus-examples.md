@@ -233,7 +233,7 @@ modified: 2024-03-14T13:51:11.429Z
 
 ## ui
 
-- https://github.com/formfcw/directus-extension-flexible-editor /GPLv3/202403/ts
+- https://github.com/formfcw/directus-extension-flexible-editor /GPLv3/202403/ts/tiptap
   - A Rich Text Editor (WYSIWYG) with JSON output, that allows to integrate M2A relations to make it extremely flexible.
   - 依赖tiptap2、tiptap-render-view
 

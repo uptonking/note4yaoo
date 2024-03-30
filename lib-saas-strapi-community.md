@@ -21,6 +21,11 @@ modified: 2023-12-15T17:04:36.589Z
   - v4 we wanted to use `JSONAPI` and we tried to stick to that standard as much as possible (which included the data, attributes, meta, ect) -> We got a ton of negative feedback about it
   - v5 we took the feedback and are still sticking to JSONAPI but just not as strict now
 
+- https://github.com/directus/directus/discussions/13277
+  - The GraphQL syntax change in Strapi v4 is a result of deciding to standardize to the JSON: API spec with the stated goal of bringing the GraphQL syntax in line with the REST syntax, 
+  - but this means that every gql query must now be contained within a parent "data" and all fields within a parent "attributes" so that graphql queries are wordier and results deeper. 
+  - Interesting! If such a format is required, I would've expected they'd go with Apollo's style (eg `nodes/edges` instead of `data/attributes`) to get some compatibility with federation as well, but what do I know
+
 - ## 🆔️ Since documents now work by `documentId` and the regular `id` is one of its versions, how should we add relations in strapi5? Via documentId?
 - https://discord.com/channels/811989166782021633/1222438841345118308/1222473132137513030
 - It's mainly complicated because of situations where you're connecting D&P enabled CTs to non-D&P CTs and then adding in locales as well it's additionally complicated. 

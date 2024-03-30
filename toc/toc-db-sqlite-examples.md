@@ -57,14 +57,15 @@ modified: 2022-06-03T22:07:49.519Z
   - 使用cf全家桶
   - a demo of the Northwind dataset, running on Cloudflare Workers, and D1 - Cloudflare's newest SQL database, running on SQLite.
 
-- memos /260Star/NALic/202206/ts/go
+- memos /26.4kStar/MIT/202403/ts/go
   - https://github.com/usememos/memos
   - https://usememos.com/
   - 后端依赖 go
   - 前端依赖 redux-toolkit, dayjs, axios
+  - 编辑器使用的是简单 textarea
   - ui高度复刻flomo，中文开发者作品，代码量不大
   - self-hosted knowledge base that works with a SQLite db file.
-  - 编辑器使用的是简单 textarea，Write in the plain textarea without any burden
+  - Write in the plain textarea without any burden
   - It has no external dependency.
 
 - https://github.com/thevahidal/soul /js

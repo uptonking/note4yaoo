@@ -246,6 +246,12 @@ modified: 2021-01-04T17:26:43.784Z
   - WebViewer is a powerful JavaScript-based PDF Library that's part of the Apryse PDF SDK. 
   - It provides a slick out-of-the-box responsive UI that interacts with the core library to view, annotate and manipulate PDFs that can be embedded into any web project.
 
+- https://github.com/slotDumpling/multibility /202310/ts/inactive
+  - https://slotdumpling.github.io/multibility/
+  - Collaborative notes and PDF annotations
+  - 协同笔记与PDF批注
+  - 依赖draft-pad(基于paperjs-canvas)、antd.v4、antd-mobile.v5、immutable.v4、pdfjs、react-beautiful-dnd、socket.io
+
 - https://github.com/koreader/koreader /lua
   - http://koreader.rocks/
   - An ebook reader application supporting PDF, DjVu, EPUB, FB2 and many more formats, running on Cervantes, Kindle, Kobo, PocketBook and Android devices

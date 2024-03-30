@@ -21,6 +21,8 @@ modified: 2024-03-24T06:28:12.838Z
 # not-yet
 - 表的关系是如何实现的
 
+- 每个router的每个controller都创建了ItemsService，好处是每个请求都可以单独配置track/revision/permission, 但是否创建太多了
+
 - 
 - 
 - 
@@ -30,8 +32,10 @@ modified: 2024-03-24T06:28:12.838Z
 
 - 两层架构
   - controller使用service处理业务
-  - service使用knex操作数据库和控制流程
-  - 所有表的操作通过ItemsService执行，业务Service内部基于ItemsService操作
+  - 通用的ItemsService可以处理配置过的collection, 所以可以作为通用的DAO使用
+  - ItemsService内部直接使用knex操作数据库，还能控制业务流程
+  - 其他业务Service内部也基于ItemsService操作，所有表都通过ItemsService操作
+  - 整体架构的插件化不强，但提供了很多hooks
 
 - init启动流程
   - loadExtensions > extensionManager.initialize() 
@@ -64,7 +68,7 @@ modified: 2024-03-24T06:28:12.838Z
 - 
 - 
 
-# collection/table
+# model/collection/table
 - Collections are the individual collections of items, similar to tables in a database. 
   - Changes to collections will alter the schema of the database
 - `folder` collections do not hold any data, hence their schema would be `null`.
@@ -75,7 +79,7 @@ modified: 2024-03-24T06:28:12.838Z
 - `POST /collections` Create a Collection
   - controller: `new CollectionsService()`; 
   - collectionsService.createOne
-  - 先查询已有表 knex.select('collection').from('directus_collections'))
+  - 先查询已有表 knex.select('collection').from('directus_collections')
   - new FieldsService({schema})
   - trx.schema.createTable
   - fieldsService.addColumnToTable(table, field)
@@ -84,9 +88,9 @@ modified: 2024-03-24T06:28:12.838Z
   - collectionItemsService = new ItemsService('directus_collections')
   - collectionItemsService.createOne
   - new PayloadService
-  - `payloadService.processM2O` 处理表的关系
+  - payloadService.processM2O // 处理表的关系
   - payloadService.processA2O
-  - trx.insert(payloadWithoutAliases).into(collection)
+  - `trx.insert(payloadWithoutAliases).into(collection)` // 类型入库
   - new ActivityService // save activity row
   - new RevisionsService // If revisions are tracked, create revisions record
 
@@ -100,7 +104,77 @@ modified: 2024-03-24T06:28:12.838Z
 - 
 - 
 
-# operations
+# content
+- `POST /items/:collection` Create a new item in the given collection
+  - new ItemsService(collection)
+  - service.createOne
+    - new PayloadService
+    - new AuthorizationService
+    - payloadService.processM2O
+    - payloadService.processA2O
+    - `insert(payloadWithoutAliases).into(this.collection)` // 创建
+    - payloadService.processO2M
+    - new ActivityService
+    - activityService.createOne
+    - new RevisionsService
+    - revisionDelta = await payloadService.prepareDelta
+    - revisionsService.createOne({data: revisionDelta,delta: revisionDelta})
+    - revisionsService.updateMany(childrenRevisions)
+    - opts.onRevisionCreate(revision) // hooks
+    - emitter.emitAction('items.create') // hooks
+    - return primaryKey
+  - service.readOne
+    - this.readByQuery(queryWithKey)
+    - ast = getASTFromQuery(this.collection)
+    - authorizationService.processAST(ast)
+    - records = await runAST(ast)
+    - filteredRecords
+    - emitter.emitAction('items.read')
+
+```JS
+trx
+  .insert(payloadWithoutAliases)
+  .into(this.collection)
+  .returning(primaryKeyField)
+  .then((result) => result[0])
+```
+
+- 
+- 
+
+- `PATCH /items/:collection/:id` Update an existing item
+  - new ItemsService(req.collection)
+  - sanitizeQuery(req.body.query)
+  - keys = service.updateByQuery(sanitizedQuery)
+    - keys = await this.getKeysByQuery(query);
+    - new ItemsService
+    - itemsService.readByQuery
+    - this.updateMany(keys, data)
+    - new AuthorizationService
+    - new PayloadService
+    - payloadService.processM2O
+    - payloadService.processA2O
+    - payloadService.processValues
+    - `trx(this.collection).update(payload).whereIn()` // 更新
+    - payloadService.processO2M
+    - new ActivityService
+    - activityService.createManythis.readByQuery
+    - new RevisionsService
+    - payloadService.prepareDelta
+    - revisionsService.createMany
+    - opts.onRevisionCreate
+    - emitter.emitAction('items.update')
+  - service.readMany(keys)
+    - this.readByQuery
+
+```JS
+await trx(this.collection).update(payloadWithTypeCasting).whereIn(primaryKeyField, keys);
+```
+
+- 
+- 
+- 
+- 
 
 # flow
 
@@ -112,7 +186,7 @@ modified: 2024-03-24T06:28:12.838Z
 
 - 对fields的crud基于ItemsService实现
 
-## more
+## other-api
 
 - PayloadService
   - Process a given payload for a collection to ensure the special fields (hash, uuid, date etc) are handled correctly.

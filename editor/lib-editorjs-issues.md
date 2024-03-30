@@ -54,13 +54,24 @@ modified: 2020-11-17T09:39:37.776Z
 - yjs
 
 # discuss
-- ## 
+- ## [[Feature Request] Apply granular updates without recreating all blocks _202307](https://github.com/codex-team/editor.js/discussions/2427)
+  - Look at ChatGPT and how it writes answers letter by letter. It does so by using Server-sent events (SSE) where small text parts are transmitted one by one.
+  - Current APIs: Calling `editor.render({ blocks: [..] })` results in recreating all blocks in the editor, so calling it over and over again lets the editor flicker where the contents of the editor become invisible because of too much rerendering.
+  - Trying to only update or insert blocks that have changed
+- I was trying to accomplish this using editor.js but inthe end I couldn't get it stable enough for production. I had to overwrite almost all block tools but then I run into problems with editor undo history and lots of other difficulties
+  - In the end I went to an alternative editor. 
+  - By the time now I use quill, because its data model allows diffing new content to the current content and applying only chances, although its abstract model "delta" is terrible.
+  - In future I will migrate to slate, because all big apps use it under the hood and it seems to be the best choice.
 
-- ## [Undo operations by Ctrl+Z](https://github.com/codex-team/editor.js/discussions/1868)
+- I managed to get the openai api text streaming into the editor without any flickering based on your code, but have found myself exactly where you were prior to moving on - non-stop problems/bugs with editor.js, resulting in tons of additional code/plugins attempting to get the editor to work as production ready
+  - While researching alternative solutions - Tiptap, Novel (based on Tiptap), Plate all look promising, and now based on your recommendation, I'll explore Slate too. 
 
-- I've been using immer for a project recently and adding in my own undo / redo functionality was trivial. It is a great library because it offers the ability to use "patches", which are records of the individual pieces of your JSON tree that you have changed on your object.
+- ## [Undo operations by Ctrl+Z _201811](https://github.com/codex-team/editor.js/discussions/1868)
+
+- I've been using immer for a project recently and adding in my own undo/redo functionality was trivial. It is a great library because it offers the ability to use "patches", which are records of the individual pieces of your JSON tree that you have changed on your object.
 
 - The performance for editorjs-undo is unbearable. I've had to fork the undo plugin to support slices of what's changed. However, I have had no luck in getting what has changed from editorjs 
+  - We just released a beta version of editorjs-undo (v2.0.0-rc.0) that improve the unexpected behavior. _202201
 
 - ## [CRUD via block ID](https://github.com/codex-team/editor.js/issues/1684)
   - I'm interested in having the opportunity to perform CRUD operations based on ID. 

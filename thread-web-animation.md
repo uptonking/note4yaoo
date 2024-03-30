@@ -12,6 +12,12 @@ modified: 2021-01-08T17:14:34.841Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## Learn how to make your own layout animation library using the FLIP animation technique and the Web Animations API to create impossible layout animations.
+- https://twitter.com/joyofcodedev/status/1773817479019593914
+  - [Make Your Own Layout Animation Library Using The FLIP Animation Technique - YouTube](https://www.youtube.com/watch?v=idD9DA9eR_A)
+
 - ## animating numbers? use a monospace font or `font-variant-numeric: tabular-nums` to avoid layout shifts
 - https://twitter.com/JohnPhamous/status/1721954437839872383
 - Also great for tables to keep numbers nice and neat across rows

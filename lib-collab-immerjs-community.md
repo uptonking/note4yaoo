@@ -16,12 +16,46 @@ modified: 2023-06-04T21:27:01.100Z
 - immerjs基于 copy-on-write
 - immutablejs基于 hash maps tries
 
+- tips
+  - immer的实现基于 copy-on-write + proxy
+
 - resources
   - [Distributing state changes using snapshots, patches and actions — Part 1 | by Michel Weststrate | Medium](https://medium.com/@mweststrate/distributing-state-changes-using-snapshots-patches-and-actions-part-1-2811a2fcd65f)
   - [Distributing state changes using snapshots, patches and actions — Part 2 | by Michel Weststrate | Medium](https://medium.com/@mweststrate/distributing-state-changes-using-snapshots-patches-and-actions-part-2-2f50d8363988)
   - [Using Immer to compress Immer patches](https://medium.com/@dedels/using-immer-to-compress-immer-patches-f382835b6c69)
 # dev
 
+# blogs
+
+## 🚀 [Introducing Immer: Immutability the easy way _201801](https://medium.com/hackernoon/introducing-immer-immutability-the-easy-way-9d73d8f71cb3)
+
+- Immutable, structurally shared data structures are a great paradigm for storing state. 
+  - Especially when combined with an event-sourcing architecture. 
+  - However, there is a cost to pay. 
+- In a language like JavaScript where immutability is not built into the language, producing a new state from the previous one is a boring, boiler-platy task. 
+  - To prove the point: The Redux-ecosystem-links page alone lists 67(!) packages to help
+- And still; most of them don’t solve the root problem: lack of language support. 
+  - For example, where update-in is an elegant concept in a language like ClojureScript, any JavaScript counterparts will basically rely on ugly string paths.
+- Immer works by writing producers
+  - The produce function takes two arguments. The currentState and a producer function.
+  - The producer function receives one argument, the draft, which is a proxy to the current state you passed in. Any modification you make to the draft will be recorded and used to produce nextState. The currentState will be untouched during this process.
+- Because immer uses **structural sharing**, and our example producer above didn’t modify anything, the next state above is simply the state we started with.
+  - that the parts of the state that were modified in the draft have resulted in new objects. However, unchanged parts are structurally shared with the previous state.
+- The idea to produce the next immutable state by modifying a temporarily draft isn’t new. 
+  - For example immutableJS provides a similar mechanism: withMutations. 
+  - The big advantage of Immer however, is that you don’t have to learn (nor load) an entire new library for your data structures. Immer operates on normal JavaScript objects and arrays.
+
+### How does Immer work?
+
+- 1) Copy-on-write. 
+- 2) Proxies
+- Initially, when the producer starts, there is only one such proxy. 
+  - It is the draft object that get’s passed into your function. 
+  - Whenever you read any non-primitive value from that first proxy, it will in turn create a Proxy for that value. 
+  - So that means that you end up with a proxy tree, that kind of overlays (or shadows) the original base tree. 
+  - Yet, only the parts you have visited in the producer so far.
+- Now, as soon as you try to change something on a proxy (directly or through any API), it will immediately create a shallow copy of the node in the source tree it is related to, and sets a flag “modified”.
+  - From now on, any future read and write to that proxy will not end up in the source tree, but in the copy.
 # discuss-collaboration
 - ## 
 
@@ -47,7 +81,13 @@ modified: 2023-06-04T21:27:01.100Z
 # discuss
 - ## 
 
-- ## [Immer or ImmutableJS ](https://www.reddit.com/r/javascript/comments/96xqnu/immer_or_immutablejs/)
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🆚️ [Immer or ImmutableJS ](https://www.reddit.com/r/javascript/comments/96xqnu/immer_or_immutablejs/)
 - The difference is that Immer doesn’t protect you against making mistakes and mutating data you shouldn’t. 
   - Immutable.js forces you to never mutate the underlying data in an unsafe way because it wraps the data
 - Inside of a produce callback, it's totally safe to "mutate" data - Immer uses Proxies to track what changes you're trying to make, and correctly applies those updates immutably to create the result value.
@@ -58,34 +98,6 @@ modified: 2023-06-04T21:27:01.100Z
 - Don't bother with immutable, it pollutes your entire application.
 
 - Immer is based on Proxies (and has a fallback implementation as well for older environments).
-
-- ## [Introducing Immer: Immutability the easy way_201801](https://medium.com/hackernoon/introducing-immer-immutability-the-easy-way-9d73d8f71cb3)
-- Immutable, structurally shared data structures are a great paradigm for storing state. 
-  - Especially when combined with an event-sourcing architecture. 
-  - However, there is a cost to pay. 
-- In a language like JavaScript where immutability is not built into the language, producing a new state from the previous one is a boring, boiler-platy task. 
-  - To prove the point: The Redux-ecosystem-links page alone lists 67(!) packages to help
-- And still; most of them don’t solve the root problem: lack of language support. 
-  - For example, where update-in is an elegant concept in a language like ClojureScript, any JavaScript counterparts will basically rely on ugly string paths.
-- Immer works by writing producers
-  - The produce function takes two arguments. The currentState and a producer function.
-  - The producer function receives one argument, the draft, which is a proxy to the current state you passed in. Any modification you make to the draft will be recorded and used to produce nextState. The currentState will be untouched during this process.
-- Because immer uses **structural sharing**, and our example producer above didn’t modify anything, the next state above is simply the state we started with.
-  - that the parts of the state that were modified in the draft have resulted in new objects. However, unchanged parts are structurally shared with the previous state.
-- The idea to produce the next immutable state by modifying a temporarily draft isn’t new. 
-  - For example immutableJS provides a similar mechanism: withMutations. 
-  - The big advantage of Immer however, is that you don’t have to learn (nor load) an entire new library for your data structures. Immer operates on normal JavaScript objects and arrays.
-
-- ### How does Immer work?
-  - 1) Copy-on-write. 
-  - 2) Proxies
-- Initially, when the producer starts, there is only one such proxy. 
-  - It is the draft object that get’s passed into your function. 
-  - Whenever you read any non-primitive value from that first proxy, it will in turn create a Proxy for that value. 
-  - So that means that you end up with a proxy tree, that kind of overlays (or shadows) the original base tree. 
-  - Yet, only the parts you have visited in the producer so far.
-- Now, as soon as you try to change something on a proxy (directly or through any API), it will immediately create a shallow copy of the node in the source tree it is related to, and sets a flag “modified”.
-  - From now on, any future read and write to that proxy will not end up in the source tree, but in the copy.
 
 - ## [In Javascript, is there a way to create a copy-on-write clone of an object?](https://stackoverflow.com/questions/60242768/in-javascript-is-there-a-way-to-create-a-copy-on-write-clone-of-an-object)
 - The immer library doing exactly what you describe - implementing COW using JavaScript proxies

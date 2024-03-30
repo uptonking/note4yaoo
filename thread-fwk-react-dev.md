@@ -213,7 +213,9 @@ modified: 2021-01-06T14:40:03.364Z
 
 - ## 
 
-- ## 
+- ## HTMX 2.3 will be rolling out a brand new, immutable state management layer, as well as it own serialization protocols for faster time across the wire
+- https://twitter.com/WarrenInTheBuff/status/1773799884820296138
+- plus a runtime to execute hyperscript on the server, making all that as performance as it can possibly be
 
 - ## I'm starting to like Remix! Moving to Vite was a smart decision, and their SPA mode is the cherry on top.
 - https://twitter.com/ImSh4yy/status/1762915802116706618

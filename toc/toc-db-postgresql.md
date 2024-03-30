@@ -53,6 +53,10 @@ modified: 2023-10-26T15:28:53.748Z
   - https://neon.tech/
   - Neon is a serverless open-source alternative to AWS Aurora Postgres. 
   - It separates storage and compute and substitutes the PostgreSQL storage layer by redistributing data across a cluster of nodes.
+  - 🆚️ [PlanetScale vs. Neon: the Continued Saga between MySQL and PostgreSQL](https://www.bytebase.com/blog/planetscale-vs-neon/)
+    - PlanetScale: The shared-nothing architecture grants near-linear scalability up to 1 million QPS. 
+    - Neon is a shared-storage architecture. It separates the compute and storage. The compute part is just normal PostgreSQL server, the storage part is a custom-built multi-tenant storage system shared by all Postgres compute nodes.
+    - Neon can not scale as much as PlanetScale. After all, it's a single-node PostgreSQL instance. Neon separates the storage and compute, thus each can scale individually.
 
 - https://github.com/aquametalabs/aquameta /1.1kStar/GPLv3/202401/go
   - Web development platform built entirely in PostgreSQL

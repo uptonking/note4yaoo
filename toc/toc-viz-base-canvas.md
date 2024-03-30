@@ -68,7 +68,7 @@ modified: 2020-10-05T06:17:42.467Z
     - https://github.com/spritejs/q-charts
     - 基于 spritejs 封装的图表库
 
-- paper.js /12.2kStar/MIT/202006/js
+- paper.js /12.2kStar/MIT/202401/js
   - https://github.com/paperjs/paper.js
   - http://paperjs.org/
   - Scriptographer ported to JavaScript and the browser, using HTML5 Canvas.

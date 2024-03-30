@@ -24,6 +24,7 @@ modified: 2023-10-11T21:37:11.168Z
 - cons
   - js only, no implementation for other language
   - 未采用插件式架构
+  - 似乎不支持undo，但可参考quill的例子
 
 - features
   - Real-time sync with incremental updates and conflict resolution at the property level
@@ -52,7 +53,7 @@ modified: 2023-10-11T21:37:11.168Z
 
 # examples
 
-- https://github.com/mweidner037/list-demos/tree/master/triplit-quill
+- https://github.com/mweidner037/list-demos/tree/master/triplit-quill /202401/ts
   - Basic collaborative rich-text editor that synchronizes using the Triplit fullstack database. 
   - The editor is Quill.
   - https://discord.com/channels/1138467878623006720/1195033937026752522/1195033937026752522

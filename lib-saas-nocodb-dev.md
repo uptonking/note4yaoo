@@ -22,6 +22,7 @@ modified: 2023-12-15T16:51:49.971Z
   - 支持cell级别的comment
   - 支持Attachment
   - Audit: We are keeping all the user operation logs under one place
+  - 支持undo/redo
 
 - cons
   - 不支持拖拽调整row顺序和拖拽row内容，但支持拖拽调整column顺序

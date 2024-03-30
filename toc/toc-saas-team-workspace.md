@@ -22,7 +22,7 @@ modified: 2023-02-07T17:38:05.336Z
   - 参考github，实现 repo + issues-forum + gitter-im + proj-mgmt + pr + cicd
   - [10 Best Open Source Trello Alternatives](https://rigorousthemes.com/blog/best-open-source-trello-alternatives/)
 # popular
-- growi /1.2kStar/MIT/202311/ts/remark
+- growi /1.2kStar/MIT/202403/ts/remark/偏向文档管理
   - https://github.com/weseek/growi
   - https://docs.growi.org/en/guide/
   - https://demo.growi.org/
@@ -67,7 +67,7 @@ modified: 2023-02-07T17:38:05.336Z
   - https://meetfranz.com/
   - free messaging app for services like WhatsApp, Slack, Messenger and many more
 
-- https://github.com/netless-io/netless-app /MIT/202312/ts
+- https://github.com/netless-io/netless-app /MIT/202312/ts/svelte
   - https://netless-io.github.io/netless-app
   - Official Apps for the Agora Interactive Whiteboard.
   - https://github.com/netless-io/flat /MIT/202401/ts
@@ -85,7 +85,7 @@ modified: 2023-02-07T17:38:05.336Z
   - 后端js，mongoose
   - 前端ts，redux、semantic-ui、react-beautiful-dnd
 
-- https://github.com/vishwajeetraj11/projectboard /202308/ts
+- https://github.com/vishwajeetraj11/projectboard /202308/ts/inactive
   - https://github.com/vishwajeetraj11/projectboard-backend
   - A project management application that allows you to track tasks process
   - 后端js，mongoose
@@ -110,7 +110,15 @@ modified: 2023-02-07T17:38:05.336Z
     - https://gauzy.co/
     - Open-Source Business Management Platform (ERP/CRM/HRM)
 # project-management
-- https://github.com/jacobrdz77/selfwork
+- https://github.com/bissbr01/Command-project-management /202303/ts-fe/inactive
+  - A Scrum Management App for teams
+  - 依赖reduxjs-toolkit、mantine、dnd-kit、formik
+  - https://github.com/bissbr01/Command-backend /js-be
+    - 依赖sequelize6
+    - A containerized REST API for the Command project management app.
+
+- https://github.com/jacobrdz77/selfwork /MIT/202402/ts
+  - https://selfwork.vercel.app/
   - A project management system for small teams and freelancers.
   - 依赖prisma、next、tanstack-query、zustand
   - Organize your projects and members in different workspaces you create.
@@ -120,10 +128,12 @@ modified: 2023-02-07T17:38:05.336Z
   - npx prisma migrate dev --name init
   - npm run seed
 
-- https://github.com/rcamach7/project-management-app
+- https://github.com/rcamach7/project-management-app /202302/ts/inactive
+  - https://project-management-app-eight.vercel.app/
   - Project management application, similar to that of Trello or Jira.
-  - Utilized NextAuth to authenticate users and store their data in a MongoDB database
   - 依赖next-auth、mongoose、mui5，不支持拖拽
+  - Utilized NextAuth to authenticate users and store their data in a MongoDB database
+  - 暗黑主题
 
 - https://github.com/pooridev/Todoooze
   - https://todooooze.vercel.app/
@@ -146,13 +156,6 @@ modified: 2023-02-07T17:38:05.336Z
   - https://www.openproject.org/
   - the leading open source project management software
 # user/permissions/scrum/Inventory
-- https://github.com/bissbr01/Command-project-management /ts
-  - A Scrum Management App for teams
-  - 依赖reduxjs-toolkit、mantine、dnd-kit、formik
-  - https://github.com/bissbr01/Command-backend /js
-    - 依赖sequelize6
-    - A containerized REST API for the Command project managment app.
-
 - https://github.com/pure-admin/pure-admin-backend /ts/echarts
   - pure-admin官方后端
   - 依赖express、mysql，未使用orm
