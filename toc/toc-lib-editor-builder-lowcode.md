@@ -469,7 +469,7 @@ modified: 2020-12-28T12:24:09.275Z
   - 后端依赖remix、prisma
   - 前端依赖headless/react、codemirror6、json-query、keyv、pulsar
 
-- https://github.com/automatisch/automatisch /AGPLv3/ts/graphql
+- https://github.com/automatisch/automatisch /3.8kStar/AGPLv3/202403/js/graphql
   - open source Zapier alternative. 
   - Build workflow automation without spending time and money.
   - 前端依赖mui5、apollo、graphql、slate
@@ -515,6 +515,11 @@ modified: 2020-12-28T12:24:09.275Z
     - Destination: 存放/写入数据的目的地，对接各种数据库和线上存储
     - Transformation: 转化数据的 code block
     - Pipeline: 将以上组合起来的工作流
+
+- https://github.com/activepieces/activepieces /MIT+EE/202403/ts
+  - https://www.activepieces.com/
+  - Your friendliest open source all-in-one automation tool 
+  - Workflow automation tool 100+ integration / Enterprise automation tool / Zapier Alternative
 # json-builder
 - https://github.com/redgeoff/mson /apache2/202401/js
   - The MSON compiler allows you to generate apps from JSON

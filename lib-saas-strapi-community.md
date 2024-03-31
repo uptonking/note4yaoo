@@ -253,6 +253,8 @@ modified: 2023-12-15T17:04:36.589Z
 - just a heads up it won't be needed for Strapi 5 as we plan on baking in support into Strapi 5 to simplify the structure and be able to use the v4 syntax throughout Strapi 5. 
 - Publisher might also be superseded by something from Strapi 
 
+- ## 🔒 [Custom Roles & Permissions Available for Free in Strapi v4.8 | Strapi _202303](https://medium.com/strapi/custom-roles-permissions-available-for-free-in-strapi-v4-8-140f664b328c)
+
 # discuss
 - ## 
 

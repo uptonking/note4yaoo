@@ -159,6 +159,13 @@ modified: 2022-11-09T11:53:13.093Z
   - The flexible TypeScript Markdown editor that powers https://octo.app
   - 依赖codemirror6、lezer、solidjs
   - ui部分代码少
+
+- https://github.com/mermaid-js/mermaid-live-editor /MIT/202403/ts/svelte
+  - https://mermaid-js.github.io/mermaid-live-editor/
+  - https://mermaid.live/
+  - Edit, preview and share mermaid charts/diagrams. 
+  - New implementation of the live editor.
+  - 左侧代码，右侧流程图，整体类似markdown编辑器
 # md-app
 - https://github.com/1943time/bluestone /AGPLv3/202403/ts
   - https://www.bluemd.me/

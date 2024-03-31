@@ -110,7 +110,8 @@ modified: 2023-10-26T15:02:47.068Z
 
 - ## 
 
-- ## 
+- ## 说来真巧，在 Redis 改协议之前 DHH 就决定 Rails 8 要去掉 Redis 依赖了，理由是基于数据库的缓存/队列/订阅对于小应用已经足够好
+- https://twitter.com/chloerei/status/1774303359547347297
 
 - ## [What is the best key-value store for Rust 2021 : rust_202201](https://www.reddit.com/r/rust/comments/s1cgof/what_is_the_best_keyvalue_store_for_rust_2021/)
 - Depends on what you want to do. If you're solely in memory, use the std lib HashMap. That'll be plenty fast.

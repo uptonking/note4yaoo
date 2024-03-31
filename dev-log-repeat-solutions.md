@@ -108,7 +108,11 @@ modified: 2021-07-20T13:50:23.433Z
   - 👉🏻 lightdash   (MIT/knex+echarts)
   - superset   (apache2/flask+echarts)
 - more
-  - kanban, jira/linear
+  - notion/confluence/outline
+  - airtable/nocodb
+  - trello/kanban/jira/linear/asana
+  - dropbox/google-drive
+  - chat, forum
 
 - ✨ admin-dashboard > strapi
   - react-admin

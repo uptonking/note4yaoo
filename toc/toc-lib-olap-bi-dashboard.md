@@ -142,7 +142,7 @@ modified: 2020-12-09T09:30:24.694Z
     - Q is a system that lets journalists create visual elements for stories. It is developed by NZZ Editorial Tech and NZZ Visuals and used in the NZZ newsroom. 
     - 依赖hapi、puppeteer
 
-- countly /4.7kStar/AGPLv3/202101/js
+- countly /4.7kStar/AGPLv3/202403/js
   - https://github.com/Countly/countly-server
   - built with mongodb, express
   - Countly is a product analytics solution that helps teams track product performance and customer journey and behavior across mobile, web, and desktop applications. 

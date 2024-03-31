@@ -47,7 +47,7 @@ modified: 2021-05-14T15:04:15.333Z
   - discussion platform built for the next decade of the Internet.
 - https://github.com/forem/forem /AGPLv3/202402/ruby/js
   - https://forem.com/
-  - Forem is the platform that powers dev.to
+  - the platform that powers dev.to
   - We run on a Rails backend, and we are currently transitioning to a Preact-first frontend.
 - https://github.com/withspectrum/spectrum /js/archived
   - 依赖express、graphql、apollo、draft-js、redux、rethinkdb
@@ -324,11 +324,13 @@ modified: 2021-05-14T15:04:15.333Z
 
 - https://github.com/spacebarchat/server /AGPLv3/202402/ts
   - https://spacebar.chat/
+  - https://docs.spacebar.chat/
   - Spacebar server - A reimplementation of the Discord.com backend, built with typescript
   - Spacebar is a free and open source, full stack reverse engineering and reimplementation of Discord.
   - 依赖typeorm、lambert-server、amqplib、i18next、multer、ws
   - We aim to reverse engineer and add additional features to the Discord backend, while remaining completely backwards compatible with existing bots, applications, and clients.
   - You should be able to use any client designed for Discord.com to connect to a Spacebar instance. However, some incompatibilities still exist between Spacebar and Discord. 
+  - 🐛 Currently there is no voice or video support in any Spacebar instance. This is a very difficult feature to get working, especially given that we must implement it the exact same way as Discord.com for client compatibility
   - https://github.com/spacebarchat/client /AGPLv3/202312/ts
     - https://app.spacebar.chat/
     - Open source, themeable and extendable discord-compatible native Spacebar client
@@ -339,8 +341,9 @@ modified: 2021-05-14T15:04:15.333Z
     - A major rewrite of the client is being worked on
   - https://github.com/morroid/Morroid /MIT/202306/ts/archived
     - A reverse-engineered discord server written in typescript
+  - https://github.com/spacebarchat/spacebarchat /仅文档
 
-- tailchat /401Star/apache2/202312/ts
+- tailchat /2.4kStar/apache2/202403/ts
   - https://github.com/msgbyte/tailchat
   - https://tailchat.msgbyte.com/
   - Not only another Slack, Discord, Rocket. Chat....

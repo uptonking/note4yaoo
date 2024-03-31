@@ -41,7 +41,6 @@ modified: 2024-02-11T15:11:31.598Z
   - Fastify - event api
   - Redis - cache layer, pub/sub and queue
 
-
 - https://github.com/quickwit-oss/quickwit /AGPLv3/202403/rust
   - https://quickwit.io/
   - Cloud-native search engine for observability. 
@@ -80,11 +79,6 @@ modified: 2024-02-11T15:11:31.598Z
   - https://del.systems/2021/06/22/swatcher.html
   - This project aimed to collect screenshots from UI tests and store them to S3 compatible storage.
 
-- https://github.com/PostHog/posthog /MIT/202402/python/ts
-  - https://posthog.com/
-  - open-source product analytics, session recording, feature flagging and A/B testing that you can self-host.
-  - Analyze data with ready-made visualizations, or do it yourself with SQL
-
 - https://github.com/perses/perses /apache2/202403/go/ts
   - https://demo.perses.dev/
   - The CNCF candidate for observability visualisation. 
@@ -95,12 +89,47 @@ modified: 2024-02-11T15:11:31.598Z
   - 夜莺 Nightingale 是中国计算机学会接受捐赠并托管的第一个开源项目，是一个 All-in-One 的云原生监控工具，
   - 集合了 Prometheus 和 Grafana 的优点，你可以在 WebUI 上管理和配置告警策略，也可以对分布在多个 Region 的指标、日志、链路追踪数据进行统一的可视化和分析。
 # google-analytics-like
-- https://github.com/umami-software/umami /MIT/202403/ts
+- https://github.com/umami-software/umami /19.3kStar/MIT/202403/ts
   - https://umami.is/
   - a simple, fast, privacy-focused alternative to Google Analytics.
   - supports MySQL and Postgresql databases.
   - https://twitter.com/vikingmute/status/1768823778581303460
     - 现在类似的解决方案也太多了，而且界面都类似，不知道各家竞争是这么活下去的。
+
+- countly /4.7kStar/AGPLv3/202403/js
+  - https://github.com/Countly/countly-server
+  - built with mongodb, express
+  - Countly is a product analytics solution that helps teams track product performance and customer journey and behavior across mobile, web, and desktop applications. 
+  - Countly relies on a wide diversity of SDKs for deployment
+  - 依赖express、mongoose
+  - [Download & Install Countly](https://github.com/osoner/countly-documentation/blob/master/installation/countly-server-installation.md)
+# feature-flag
+- https://github.com/Unleash/unleash /10.1kStar/apache2/202403/ts
+  - https://getunleash.io/
+  - https://demo.unleash-hosted.com/
+  - Unleash is the open source feature toggle service.
+  - Unleash increases efficiency and gives teams full control of how and when they enable new functionality for end users.
+
+- https://github.com/PostHog/posthog /MIT/202402/python/ts
+  - https://posthog.com/
+  - open-source product analytics, session recording, feature flagging and A/B testing that you can self-host.
+  - Analyze data with ready-made visualizations, or do it yourself with SQL
+
+- https://github.com/flipt-io/flipt /go
+  - https://flipt.io/
+  - open source, self-hosted feature flag solution
+
+- https://github.com/growthbook/growthbook
+  - Open Source Feature Flagging and A/B Testing
+  - SDKs for React, Javascript, PHP, Ruby, Python, Go, and Kotlin (Android) with more coming soon
+
+- https://github.com/marcellothiry/feature-flags
+  - This is the complementary repository for our video series Implementing Feature Flags from Scratch
+
+- https://github.com/configcat/trello-powerup /202403/ts
+  - ConfigCat Power-Up to manage feature flags from any Trello board. 
+  - ConfigCat is a hosted feature flag service
+  - Provides open-source SDKs for easy integration with any web, mobile or backend application.
 # examples
 - https://github.com/dillionverma/llm.report /GPLv3/202402/ts
   - open-source logging and analytics platform for OpenAI: Log your ChatGPT API requests, analyze costs, and improve your prompts.

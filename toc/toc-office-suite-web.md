@@ -34,7 +34,7 @@ modified: 2023-03-09T13:47:07.317Z
       - 示例依赖server api，本地无法运行
     - https://github.com/ONLYOFFICE/document-editor-react
       - 示例依赖server api，本地无法运行
-- https://github.com/ibisheng/onlyoffice-ibisheng /201911/js
+- https://github.com/ibisheng/onlyoffice-ibisheng /AGPLv3/201911/js
   - 毕升文档在线文件服务部分在编辑和预览Office时集成了onlyOffice。我们在集成onlyOffice主要是使用了sdkjs部分代码
   - 抛弃了only Office的原来的UI，整体UI重新设计实现
   - 抛弃了原来only Office开源部分的服务器实现，使用golang 和node js重新了实现Office在线编辑时的服务器逻辑
@@ -164,6 +164,13 @@ modified: 2023-03-09T13:47:07.317Z
 - https://github.com/YiJiuSmile/kkFileViewOfficeEdit /201903/java/inactive
   - 文件在线预览及OFFICE(word, excel, ppt)的在线编辑
   - 对kkFileView进行了二次开发，整合了openOffice进来，项目体积更大了！但使用和配置更简单，只需要配置redis即可
+
+- https://github.com/sismics/docs /GPLv2/202403/js/java
+  - https://teedy.io/
+  - open source, lightweight document management system for individuals and businesses.
+  - Support image, PDF, ODT, DOCX, PPTX files
+  - Video file support
+  - Tested to one million documents
 
 - https://github.com/webodf/ViewerJS /agpl/201504/js/inactive
   - https://viewerjs.org/

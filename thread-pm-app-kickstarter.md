@@ -139,6 +139,10 @@ modified: 2021-10-29T15:02:28.882Z
 - ## 🔥 [I’ve been building a database of successful companies | Hacker News_202209](https://news.ycombinator.com/item?id=32926477)
 - 
 - 
+
+- ## [Ask HN: What's your 1-man startup? | Hacker News _201509](https://news.ycombinator.com/item?id=10201549)
+- 
+- 
 - 
 
 # ecommerce

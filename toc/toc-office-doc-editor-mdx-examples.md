@@ -18,9 +18,12 @@ modified: 2021-04-28T15:26:27.324Z
   - http://mermaid-js.github.io/mermaid/
   - Generation of diagram and flowchart from text in a similar manner as markdown
   - Mermaid lets you represent diagrams using text and code
-- https://github.com/mermaid-js/mermaid-live-editor
+
+- https://github.com/mermaid-js/mermaid-live-editor /MIT/202403/ts/svelte
   - https://mermaid-js.github.io/mermaid-live-editor/
+  - https://mermaid.live/
   - Edit, preview and share mermaid charts/diagrams. 
   - New implementation of the live editor.
+  - 左侧代码，右侧流程图，整体类似markdown编辑器
 
  

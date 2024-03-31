@@ -11,7 +11,10 @@ modified: 2023-02-07T17:38:05.336Z
 > team, admin-members
 
 # guide
-- tips
+- tips-team
+  - 与team结合紧密的是chat、project
+
+- kanban
   - 看板的ui状态和样式很容易实现
   - 看板的数据模型及持久化要考虑兼容主流看板及任务类产品，如trello、notion-database
 
@@ -28,9 +31,14 @@ modified: 2023-02-07T17:38:05.336Z
   - https://demo.growi.org/
   - Team collaboration software using markdown
   - 依赖 express、mongoose、es、redis、swr、handsontable.v6
-  - Simultaneously edit with multiple people by HackMD(CodiMD) integration
   - Create hierarchical pages with markdown
+  - Simultaneously edit with multiple people by HackMD(CodiMD) integration
+  - 支持notification
+  - 支持显示正在浏览或编辑的用户
+  - 支持显示编辑历史history
+  - Support Authentication with LDAP / Active Directory, OAuth
   - Slack/Mattermost, IFTTT Integration
+  - You can find plugins from npm or github
   - 各种集成
 
 - crowi /1.1kStar/MIT/202211/ts/inactive
@@ -39,16 +47,18 @@ modified: 2023-02-07T17:38:05.336Z
   - The Markdown Wiki - Empower the team with sharing your knowledge
   - URL Based Page Tree
   - pages that end with slashes (/) are automatically generated as list views. 
+  - Useful timeline list view
   - 功能和样式都很普通
-  - 依赖mongoose、es、redis、swig
+  - 依赖mongoose、es、redis、swig、Elasticsearch(optional)
 
 - https://github.com/makeplane/plane /AGPLv3/python/ts
   - https://plane.so/
   - Open Source JIRA, Linear and Height Alternative.
   - 后端依赖django、djangorestframework
   - 前端依赖blueprintjs、nivo-chart、remirror、nextjs、swr
+  - https://github.com/makeplane/plane-mobile /dart
 
-- https://github.com/JordanKnott/taskcafe /go/ts
+- https://github.com/JordanKnott/taskcafe /MIT/202209/go/ts/inactive
   - open source project management tool with Kanban boards
   - Manage tasks through a Kanban board interface (set due dates, labels, add checklists)
   - Task comments and activity
@@ -79,17 +89,27 @@ modified: 2023-02-07T17:38:05.336Z
 - https://github.com/xiweicheng/tms /MIT/202309/js/java
   - TMS是基于频道模式的团队沟通协作+轻量级任务看板，支持mardown、富文本、在线表格和思维导图的团队博文wiki，i18n国际化翻译管理的响应式web开源团队协作系统。
 
+- https://github.com/bissbr01/Command-project-management /202303/ts-fe/inactive
+  - A Scrum Management App for teams
+  - 依赖reduxjs-toolkit、mantine、dnd-kit、formik
+  - 支持create-teams
+  - https://github.com/bissbr01/Command-backend /js-be
+    - 依赖sequelize6
+    - A containerized REST API for the Command project management app.
+
+- https://github.com/vishwajeetraj11/projectboard /MIT/202308/ts/inactive/样式友好
+  - https://github.com/vishwajeetraj11/projectboard-backend /202205/js
+  - A project management application that allows you to track tasks process
+  - 后端js，mongoose
+  - 前端ts，redux， react-markdown-editor, react-beautiful-dnd
+  - 界面类似linear，支持看板
+  - Login/Signup to Auth0
+
 - https://github.com/bennymeier/mern-stack-project-management /202111/ts/js
   - A project management platform built with the MERN-Stack.
   - Jira clone with MongoDB, Express, React and Node.js
   - 后端js，mongoose
   - 前端ts，redux、semantic-ui、react-beautiful-dnd
-
-- https://github.com/vishwajeetraj11/projectboard /202308/ts/inactive
-  - https://github.com/vishwajeetraj11/projectboard-backend
-  - A project management application that allows you to track tasks process
-  - 后端js，mongoose
-  - 前端ts，redux， react-markdown-editor, react-beautiful-dnd
 
 - https://github.com/linagora/Twake /php
   - Open-source alternative to Microsoft Teams
@@ -103,20 +123,15 @@ modified: 2023-02-07T17:38:05.336Z
   - [Slack, gDrive and Trello have a self-hosted baby : Twake : selfhosted](https://www.reddit.com/r/selfhosted/comments/q1pmd7/slack_gdrive_and_trello_have_a_selfhosted_baby/)
     - Frontend is in React and backend in PHP.
 
-- https://github.com/ever-co/ever-teams /ts
+- https://github.com/ever-co/ever-teams /AGPLv3/202403/ts
   - https://app.ever.team/
   - Open Work and Project Management Platform
+  - Projects / Tasks & Issues Management
+  - Ever® Teams™ Platform is built on top of our Business Management Platform (ERP/CRM/HRM) - Ever® Gauzy™ Platform
   - https://github.com/ever-co/ever-gauzy /ts
     - https://gauzy.co/
     - Open-Source Business Management Platform (ERP/CRM/HRM)
 # project-management
-- https://github.com/bissbr01/Command-project-management /202303/ts-fe/inactive
-  - A Scrum Management App for teams
-  - 依赖reduxjs-toolkit、mantine、dnd-kit、formik
-  - https://github.com/bissbr01/Command-backend /js-be
-    - 依赖sequelize6
-    - A containerized REST API for the Command project management app.
-
 - https://github.com/jacobrdz77/selfwork /MIT/202402/ts
   - https://selfwork.vercel.app/
   - A project management system for small teams and freelancers.
@@ -155,6 +170,23 @@ modified: 2023-02-07T17:38:05.336Z
 - https://github.com/opf/openproject /GPLv3/202402/ruby
   - https://www.openproject.org/
   - the leading open source project management software
+
+- https://github.com/hcengineering/platform /EPLv2/202403/ts/svelte
+  - https://huly.io/
+  - All-in-One Project Management Platform (alternative to Linear, Jira, Slack, Notion, Motion)
+  - a robust framework designed to accelerate the development of business applications, such as CRM systems. 
+  - This repository includes several applications, such as Chat, Project Management, CRM, HRM, and ATS. 
+  - Various teams are building products on top of the Platform, including Huly and TraceX.
+
+- https://github.com/marcelovicentegc/octosync /MIT/202105/ts/inactive
+  - An open-source solution to keep Github and Jira issues synchronized. 
+  - An alternative to Exalate and Unito.
+  - Sync bi-directionally: issue creation/closing/comments
+
+- https://github.com/johnny-estrada/issue-tracker /202403/ts/依赖少
+  - Klarity is an issue tracker web application built with MySQL, React, TypeScript, Node.js, Express, and Tailwind CSS. 
+  - It provides a platform for managing and tracking project issues, facilitating collaboration and organization within teams
+  - 依赖express、sequelize.v6、mysql2、jsonwebtoken、@headlessui/react、@reduxjs/toolkit、recharts2、tailwind-merge
 # user/permissions/scrum/Inventory
 - https://github.com/pure-admin/pure-admin-backend /ts/echarts
   - pure-admin官方后端
@@ -186,12 +218,25 @@ modified: 2023-02-07T17:38:05.336Z
   - CRUX reads json config and creates a React Component that you can add to your app.
   - Since its a client side library, it is completely agnostic to server side tech stack.
 # kanban/board
+- focalboard /10.3kStar/AGPL-src + MIT-bin/202203/ts/go/偏看板/参考前端/squirrel-sql-builder
+  - https://github.com/mattermost/focalboard
+  - https://www.focalboard.com/
+  - an open source, multilingual, self-hosted project management tool that's an alternative to Trello, Notion, and Asana.
+  - ❓ 用户建表时，似乎没有在db中建表
+  - 前端依赖 @reduxjs/toolkit、@tippyjs/react、draft-js、@fullcalendar/react、imagemin-svgo、marked、moment、nanoevents、react-dnd.v14、react-hot-keys、react-intl、react-router-dom.v5
+  - 示例使用sqlite
+
 - https://github.com/Fredkiss3/thullo
   - https://thullo.fredkiss.dev/dashboard
   - A Trello Clone
   - 后端依赖express、tsyringe(IoC)、mongoose
   - 前端依赖dnd-kit、react-beautiful-dnd、react-query、headlessui
   - 样式友好
+
+- https://github.com/kanban-org/kanban-board /202402/js
+  - https://www.kanban.live/
+  - full-stack Kanban task management app
+  - 依赖Sequelize
 
 - https://github.com/knowankit/trello-clone /ts
   - Built with Nextjs framework with Typescript and Chakra UI library with support from MongoDB
@@ -212,11 +257,6 @@ modified: 2023-02-07T17:38:05.336Z
 - https://github.com/automerge/trellis /js/inactive
   - Trello clone/sample app for Automerge persistence library
   - Trellis is a Trello clone built as an Electron desktop application. 
-
-- https://github.com/kanban-org/kanban-board /202402/js
-  - https://www.kanban.live/
-  - full-stack Kanban task management app
-  - 依赖Sequelize
 
 - https://github.com/arthurfigueiredo/Kanban.js /MIT/js
   - http://arthurfigueiredo.github.io/Kanban.js/
@@ -334,7 +374,7 @@ modified: 2023-02-07T17:38:05.336Z
   - It is heavily inspired by Trello.
 
 - https://github.com/waterrmalann/task-raft /ts
-  - A trello-like kanban board for team based task management.
+  - A trello-like kanban board for team based task management
 
 - https://github.com/sakihet/trellith /ts
   - https://trellith.vercel.app/
@@ -405,6 +445,11 @@ modified: 2023-02-07T17:38:05.336Z
   - full-stack task manager app built with React TS, Node, Express, and MongoDB
   - https://github.com/onoseremejohn/Kanban-Task-Manager
 
+- https://github.com/rapidomize/rTask /apache2/202301/ts/inactive
+  - Open source, self-hosted project management, kanban board tool that's an alternative to Trello. 
+  - It allows you to track & manage your work.
+  - 依赖angular、ngx-quill
+
 ## realtime
 
 - https://github.com/plankanban/planka /AGPLv3/202309/js/redux
@@ -472,6 +517,9 @@ modified: 2023-02-07T17:38:05.336Z
   - https://b2ntp.vercel.app/
   - Kanban style New Tab Page extension with your bookmarks and powerful search
   - support chrome/firefox
+
+- https://github.com/nextcloud/deck /202403/js
+  - Kanban-style project & personal management tool for Nextcloud, similar to Trello
 # calendar
 - https://github.com/calcom/cal.com /AGPLv3/202403/ts
   - https://github.com/calcom/cal.com
@@ -518,7 +566,7 @@ modified: 2023-02-07T17:38:05.336Z
   - Both Flatpak and non-Flatpak versions of Tangram provide sandboxing for Web applications.
     - Flatpak via our restricted permissions
     - Non-Flatpak through `WebkitGTK` Sandboxing (requires WebkitGTK >= 2.26)
-# format
+# task-format
 - https://github.com/imdone/imdone-core /MIT/js
   - https://imdone.io/
   - Imdone is text based kanban processor with a simple syntax that uses comment tags like TODO and FIXME and todo.txt format. 
@@ -533,7 +581,7 @@ modified: 2023-02-07T17:38:05.336Z
 - https://github.com/todomd/todo.md
   - The TODO.md format is based on GFM - GitHub Flavored Markdown - Task Lists.
   - Tasks in TODO.md can be visualized using Kanban Board where sections become columns on the board.
-# sandbox
+# sandbox/all-in-one
 - https://github.com/sandstorm-io/sandstorm /apache2/202308/js/cpp
   - https://sandstorm.io/
   - a self-hostable web productivity suite. 
@@ -565,3 +613,7 @@ modified: 2023-02-07T17:38:05.336Z
 
 - https://github.com/PradKalkar/microsoft-teams-clone
   - Developed a Microsoft teams clone as a part of Microsoft Engage '21
+
+- https://github.com/atlassian/github-for-jira /MIT/202401/ts
+  - Connect your GitHub code with your project management in Jira. 
+  - A separate Jira subscription is required.

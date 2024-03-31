@@ -1,11 +1,11 @@
 ---
-title: toc-datacloud-drive-disk-file-sync
-tags: [cloud-drive, data, data-sync, synchronization, toc]
+title: toc-saas-drive-disk-file-sync
+tags: [cloud-drive, data-sync, saas, synchronization, toc]
 created: 2022-09-10T02:24:13.285Z
-modified: 2022-09-10T02:26:52.062Z
+modified: 2024-03-31T17:45:16.789Z
 ---
 
-# toc-datacloud-drive-disk-file-sync
+# toc-saas-drive-disk-file-sync
 
 # guide
 
@@ -15,6 +15,12 @@ modified: 2022-09-10T02:26:52.062Z
   - 浏览器标签页部分设置和布局，或扩展列表
   - 同步方式，对大数据或小数据都可以放在云盘，需要自己读取解析
 
+- tips
+  - 网盘实现: file-manager + storage-provider
+  - 开源cms的files/media通常包含网盘的常用功能
+  - 若强调文件预览，则更推荐专门的软件
+  - 对于视频类的预览，推荐plex
+# 云存储
 - 云同步提供商
   - 网盘：百度OAuth2.0, 腾讯文档/微云，onedrive
   - 云服务商：七牛
@@ -116,7 +122,7 @@ modified: 2022-09-10T02:26:52.062Z
   - 依赖mui.v4、antd、redux、fullcalendar、dnd-kit、draft-js、minimongo、fastify、rxjs、opensearch、amqplib、mongodb
   - rxjs用在event-bus、message-queue
 
-- internxt-drive-web /78Star/AGPLv3/202212/ts
+- internxt-drive-web /78Star/AGPLv3/202403/ts
   - https://github.com/internxt/drive-web
   - https://internxt.com/drive
   - 类似dropbox
@@ -153,10 +159,6 @@ modified: 2022-09-10T02:26:52.062Z
 
 - https://github.com/mgilangjanuar/teledrive /GPLv3/202310/ts
   - open source Google Drive/OneDrive/iCloud/Dropbox alternative using Telegram API for the free unlimited cloud storage.
-
-- https://github.com/elwood-studio/elwood /apache2/202308/ts/inactive
-  - open source Dropbox alternative, built for advanced media management. 
-  - Lighting fast uploads. Real-time, multi-user collaboration. Powerful role-based sharing. Simple one-click distribution.
 
 - https://github.com/saleel/nymdrive /202201/js/ipfs/inactive
   - decentralized, E2E encrypted, privacy friendly alternative to Google Drive/Dropbox.
@@ -270,7 +272,13 @@ modified: 2022-09-10T02:26:52.062Z
 - https://github.com/theoephraim/node-google-spreadsheet
   - Google Sheets API (v4) wrapper for Node.js
 # dropbox
-- https://github.com/feup-infolab/dendro /202006/js/inactive
+- https://github.com/psi-4ward/psitransfer /1.4kStar/BSD/202311/js/vue/inactive
+  - Simple open source self-hosted file sharing solution.
+  - alternative to paid services like Dropbox, WeTransfer.
+  - No accounts, no logins
+  - Supports many and very big files (Streams ftw)
+
+- https://github.com/feup-infolab/dendro /28Star/202006/js/inactive
   - "Open-source Dropbox" with added description features. 
   - It is a data storage and description platform designed to help researchers and other users to describe their data files, built on Linked Open Data and ontologies. 
   - Users can use Dendro to publish data to CKAN, Zenodo, DSpace or EUDAT's B2Share and others.
@@ -286,6 +294,12 @@ modified: 2022-09-10T02:26:52.062Z
   - A free, open-source notes app for the web
   - The notes are persisted temporarily in local storage, but you can download all notes in markdown format as a zip.
   - Hidden within the code is an alternate version that contain a Node/Express server and integration with GitHub.
+
+- https://github.com/elwood-studio/elwood /apache2/202308/ts/inactive
+  - open source Dropbox alternative, built for advanced media management. 
+  - Lighting fast uploads. Real-time, multi-user collaboration. 
+  - Powerful role-based sharing. 
+  - Simple one-click distribution.
 # webdav
 - https://github.com/sigoden/dufs /MIT/202402/rust
   - A file server that supports static serving, uploading, searching, accessing control, webdav...
@@ -293,6 +307,15 @@ modified: 2022-09-10T02:26:52.062Z
   - Upload files and folders (Drag & Drop)
   - Resumable/partial uploads/downloads
 # filesystem
+- https://github.com/rejetto/hfs /GPLv3/202402/ts
+  - HFS is the best way via web to access or share files from your disk.
+  - access files from a phone or another computer just using a browser
+  - possibly create accounts and limit access to files
+  - Share even a single file with our virtual file system, even with a different name, all without touching the real file. Present things the way you want!
+  - Watch all activities in real-time.
+  - Control bandwidth, decide how much to give.
+  - This is a full rewrite of the Delphi version.
+
 - https://github.com/internalfx/sqlgrid /16Star/apache2/201910/js
   - A file storage system for SQL databases inspired by GridFS
   - Revisions - Keeps multiple versions of files.
@@ -369,7 +392,7 @@ modified: 2022-09-10T02:26:52.062Z
   - Then anyone can then connect to the server and download files or automatically generated ZIP of whole directories (kind of like Google Drive.) 
   - The client can also upload files to the server via their browser, and clipboard card be shared both ways. A QR code is generated for convenience.
 
-- https://github.com/RobinLinus/snapdrop /GPLv3/202303/js
+- https://github.com/RobinLinus/snapdrop /17.2kStar/GPLv3/202302/js/inactive
   - https://snapdrop.net/
   - local file sharing in your browser. Inspired by Apple's Airdrop.
   - Vanilla HTML5/ES6/CSS3 frontend
@@ -377,6 +400,7 @@ modified: 2022-09-10T02:26:52.062Z
   - https://github.com/schlagmichdoch/PairDrop /js
     - PairDrop is a sublime alternative to AirDrop that works on all platforms.
     - File Sharing on your local network
+    - Fork of Snapdrop.
 
 - https://github.com/localsend/localsend /dart
   - https://localsend.org/

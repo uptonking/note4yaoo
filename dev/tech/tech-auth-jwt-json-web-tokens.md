@@ -214,7 +214,22 @@ HMACSHA256(
 # discuss
 - ## 
 
-- ## 
+- ## 🤼🏻 Please stop using middleware to protect your routes
+- https://twitter.com/pilcrowonpaper/status/1774251864743449019
+  - I see middleware and wrappers as different things. One's a library level abstraction while one's an application/dev level
+
+- Any reason why wrappers instead of local middleware (middleware only for a specific route)?
+  1. Everything is local - you don't have to deal with your auth logic scattered across your project
+  2. It leads to nested middleware
+  3. I'd rather have one way of handling authorization and not mix middleware and route-level approach
+
+- I like the wrapper function approach. Basically, high order functions. Authorization belongs in the logic anyway, because it depends on the route and sometimes user data etc. But what's wrong with using middleware for authentication?
+  - "Protecting routes" == authorization ?
+
+- I personally don't see any logical benefit in the proposed approach
+  - Doing authentication checks in every controller is unnecessary. It'll be the same logic in every single app controller. Even with a wrapper you'll end up just wrapping every single app route anyway
+
+- I don't quite use middleware in the same way you showed but I still think it has some value: preventing accidental mistakes. i.e. I forget to check for auth in one of the 10s of handlers I have
 
 - ## 👨🏻‍🏫💡 What’s the difference between Session-based authentication and JWTs?
 - https://twitter.com/ProgressiveCod2/status/1747885840544755981

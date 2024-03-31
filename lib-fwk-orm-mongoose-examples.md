@@ -75,13 +75,18 @@ modified: 2023-02-05T18:50:53.563Z
   - A template for quickly building login systems on top of Node.js & MongoDB
 
 - https://github.com/cornflourblue/node-mongo-registration-login-api /MIT/202007/js
-  - NodeJS + MongoDB API for User Management, Authentication and Registration
+  - NodeJS + MongoDB API for User Manhttps://github.com/disney-parent-pass/back-endagement, Authentication and Registration
   - 依赖mongoose、express-jwt、jsonwebtoken、bcryptjs
   - https://github.com/cornflourblue/react-redux-registration-login-example /202008/js
   - https://github.com/cornflourblue/react-redux-jwt-authentication-example /202006/js
 
 - https://github.com/Mohammed-Abdelhady/FULL-MERN-AUTH-Boilerplate /202003/js
   - MERN Authentication, Login, Register, verification email, Facebook, Google, Forget Password
+
+- https://github.com/Alais29/coderhouse-ecommerce /202312/ts
+  - Coderhouse backend course final project. A fullstack MERN ecommerce app.
+
+
 # examples
 - https://github.com/mongodb-university/mflix-ui /201906/js
   - https://github.com/mongodb-university/mflix-js
@@ -140,6 +145,9 @@ modified: 2023-02-05T18:50:53.563Z
 
 - https://github.com/kira0x1/mikaela
   - a discord music bot that gives users the ability to store their favorite songs, and create playlists on discord.
+
+- https://github.com/the-code-writer/enftis-nft-marketplace-pulumi-cicd-do-pipeline /202401/ts
+  - NodeJS Server running ExpressJS and Mongoose DB, Implements JWT
 # utils-mongoose
 - https://github.com/arqo123/speedgoose
   - Next-level mongoose caching layer with event based cache clearing

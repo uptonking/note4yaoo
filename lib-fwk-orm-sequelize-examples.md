@@ -39,6 +39,7 @@ modified: 2023-02-05T18:50:32.900Z
   - expresso with Sequelize
   - 采用controller/service/entity三层架构，class风格
   - 依赖axios、express-rate-limit、i18next-fs-backend、multer、node-cron、pg-hstore、sequelize-typescript2、zod
+  - router使用了asyncHandler
   - Sequelize ORM v6.x + Sequelize TypeScript v2.x
   - Handlebars for templating HTML
   - Documentation with Swagger，但测试create user失败
@@ -57,13 +58,13 @@ modified: 2023-02-05T18:50:32.900Z
   - https://github.com/masb0ymas/expresso-gateway
     - Api Gateway with Express TypeScript
 
-- https://github.com/bissbr01/Command-project-management /202301/ts/inactive
+- https://github.com/bissbr01/Command-project-management /202301/ts-fe/inactive
   - https://scrum-management-frontend.onrender.com/
   - A Scrum Management App for teams
   - 依赖reduxjs-toolkit、mantine、dnd-kit、formik
   - 提供了project、team等基础功能，还支持看板
   - 仅支持第3方登录，未提供注册
-  - https://github.com/bissbr01/Command-backend /202303/js
+  - https://github.com/bissbr01/Command-backend /202303/js-be
     - A containerized REST API for the Command project management app.
     - 依赖sequelize6
 
@@ -71,6 +72,7 @@ modified: 2023-02-05T18:50:32.900Z
   - NodeJS Express Starter for backends and microservices
   - 依赖express-jwt、firebase-admin、sequelize6、socket.io、swagger-ui-express、umzug
   - 采用controller/model两层架构，函数式风格
+  - 按业务modules划分架构
   - Auto CRUD API Routes for Models
   - Auto SwaggerUI Admin
   - Non-invasive, allows regular/custom backend work
@@ -333,6 +335,11 @@ modified: 2023-02-05T18:50:32.900Z
 - https://github.com/Slash-Go/SlashGoServer /MIT/202211/ts
   - The most seamless way to manage intra-organization knowledge through memorable shortlinks
 
+- https://github.com/marcobiedermann/url-shortener /202205/ts
+  - Simple URL Shortener
+  - 依赖express、sequelize6
+  - 未实现认证
+
 - https://github.com/Maxinum/WareHouseBot /202308/ts
   - Telegram bot for keeping records of deliveries and sales
 
@@ -383,6 +390,11 @@ modified: 2023-02-05T18:50:32.900Z
   - Sequelize/Mongoose
   - 依赖axios、express、jsonwebtoken、swagger-ui-express
   - Database Compatibility: Interact with MySQL, PostgreSQL, MariaDB, Sqlite, MSSql, MongoDB
+
+- https://github.com/sharafdin/yonode /MIT/202403/ts/js
+  - https://docs.yonode.org/
+  - The Node.js Toolkit for Rapid Development
+  - Yonode templates are available for both JavaScript and TypeScript
 
 - https://github.com/Thre4dripper/node-server-init /202401/ts/偏向cli
   - initialize Node.js server projects with customizable configurations
@@ -552,6 +564,12 @@ modified: 2023-02-05T18:50:32.900Z
 - https://github.com/juananmuxed/template-ts-api /202312/ts
   - 采用controller/model两层架构，class风格
 
+- https://github.com/Faeshal/nodets-layered-architecture-sequelize /202311/ts/inactive
+  - Typescript Node REST API boilerplate using service layered architecture + sequelize
+  - 3 main layers: Controller, Service, Repository
+  - 依赖express-paginate、sequelize6
+  - 未使用jwt，未实现认证
+
 - https://github.com/SystangoTechnologies/koach-typescript /202203/ts/inactive
   - Production ready boilerplate for building APIs in Typescript(3.4) with koa2, and using SQL database and http/2 as the communication protocol.
   - 采用controller/service/entity/model四层架构, class风格
@@ -576,6 +594,10 @@ modified: 2023-02-05T18:50:32.900Z
 
 - https://github.com/sequelize/express-example /202203/js/inactive
   - A proposal for the usage of Sequelize within an Express. JS application.
+
+- https://github.com/saumya04/Nodular /201904/js/inactive
+  - A Node JS structure following some of the most best practices from other top frameworks - Built on the top of Express JS
+  - 依赖sequelize5、jsonwebtoken、express
 
 - https://github.com/tiagospeckart/geekscript-backend /202305/ts/inactive
   - https://github.com/GabrielGameDev/geek-script-front

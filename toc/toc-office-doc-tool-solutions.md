@@ -268,7 +268,7 @@ modified: 2021-07-21T18:07:43.056Z
   - https://github.com/squidfunk/mkdocs-material
     - Write your documentation in Markdown and create a professional static site for your Open Source or commercial project in minutes – searchable, customizable, more than 50 languages, for all devices.
 
-- https://github.com/star7th/showdoc
+- https://github.com/star7th/showdoc /apache2/202403/php/js/vue
   - https://www.showdoc.com.cn/
   - https://www.showdoc.com.cn/demo/10
   - 适合IT团队的在线API文档、技术文档工具

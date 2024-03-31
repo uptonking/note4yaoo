@@ -1162,12 +1162,6 @@ modified: 2022-11-07T11:00:28.824Z
   - I wrote it all as one giant markdown file in Sublime Text, then compiled the markdown to HTML with a few custom scripts and turned the markdown into PDF with PrinceXML and a custom stylesheet.
 - In case it’s helpful Matthew, I’ve started using ASCIIDoc for my ebooks as it has converters to PDF in most languages. 
 
-- ## 开个thread分享一下程序员找国外远程工作的资源&网站，脱离国内卷的环境的手段之一
-- https://twitter.com/shengxj1/status/1632317733517004800
-- 电鸭社区，数字游民的聚集地，还有【程序员英语训练营】不定期有招聘机会
-  - https://eleduck.com/
-- vercel的谁在招人讨论区
-
 - ## 明明可以直接抢，非要说成税
 - https://twitter.com/Ice_Hazymoon/status/1635170190211297283
   - 总结一下，我不是想偷税漏税，而是个人所得税+公司所得税将近 40% 多，毒贩听了都直呼离谱，你要是 5-10% 这样我倒是还愿意交，40% 谁受得了，我又不是月入几百万的大公司。

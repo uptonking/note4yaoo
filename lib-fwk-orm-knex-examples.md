@@ -205,6 +205,7 @@ modified: 2023-01-22T19:52:59.120Z
   - 依赖express、redis、tree-house-authentication
   - 功能丰富，包括auth/mail; 团队转向nestjs
   - redis用于测试和auth-session
+  - router使用handleAsyncFn
   - https://github.com/icapps/react-silverback /201807/js
     - 依赖react-redux、bootstrap4
   - https://github.com/icapps/tree-house /202107/ts
@@ -217,7 +218,7 @@ modified: 2023-01-22T19:52:59.120Z
   - https://github.com/icapps/nodejs_boilerplate /202111/ts/单文件
   - https://github.com/icapps/nodejs-express-template /201711/ts
     - 依赖sequelize4
-    - 采用controller/serviec/model三层架构, class风格
+    - 采用controller/service/model三层架构, class风格
 
 - https://github.com/Zarkus13/pizza-pasta-api /202211/ts/inactive
   - Pizza & Pasta API using Node.js, Express, TypeScript, Knex, Zod
@@ -229,23 +230,38 @@ modified: 2023-01-22T19:52:59.120Z
   - ✨ 采用controller/service/repository三层架构，class风格，经典架构
   - 依赖express、jsonwebtoken、swagger-ui-express
 
-- https://github.com/santoshshinde2012/node-ts-knex-boilerplate /202402/tsconfig
+- https://github.com/VladShevchenko9/ts-api /MIT/202403/ts
+  - Simple ts-node api endpoints
+  - 依赖express、knex、jsonwebtoken、mysql
+  - 采用controller/service/repository三层架构, class风格
+  - AbstractModelService抽象出了通用crud工具方法
+
+- https://github.com/santoshshinde2012/node-ts-knex-boilerplate /202402/ts
   - Node-Typescript-Knex-Boilerplate
   - 采用controller/service/entity三层架构，class风格, 可按业务modules划分架构
   - service层操作db，entity层定义schema和配置
   - 未实现jwt
 
+- https://github.com/disney-parent-pass/back-end /202212/ts/inactive
+  - Gain more experience building out an API server with user authentication
+  - 依赖jsonwebtoken、knex、sqlite3
+  - 采用controller/service/entity三层架构，class风格, 可按业务modules划分架构
+
 - https://github.com/cdellacqua/express-knex-typescript-template /202311/ts/ssr-pug
   - Express.js template using TypeScript, Knex and Docker to head-start development.
   - 采用route/service两层架构
-  - service层部分crud方法通过公共工具方法实现，如findOneGenerator/createMultiGenerator
+  - ✨ service层部分crud方法通过公共工具方法实现，如findOneGenerator/createMultiGenerator
   - view层pug，功能丰富, 代码精简
+  - 依赖knex-transact、bcryptjs、jsonwebtoken、pg-query-stream、pug、winston、express-validator
+  - router使用asyncWrapper
   - 🍴 fork https://github.com/shalior/express-ts-template
   - https://github.com/shalior/express-mongo-ts /202301/ts/inactive
 
 - https://github.com/agencyenterprise/aeboilerplate /202001/ts/inactive
   - a full-stack React/Node Typescript project
   - 采用controller/service两层架构，函数式风格
+  - router使用了asyncHandler
+  - 依赖passport、knex，未使用jwt
   - an opinionated boilerplate that includes independent client and API
   - The client application is generated using `create-react-app`.
   - https://github.com/agencyenterprise/ae-bootstrap
@@ -360,6 +376,16 @@ modified: 2023-01-22T19:52:59.120Z
 - https://github.com/githiago-f/customers-api /202105/ts
   - Monorepo using express on the back-end and react on front-end
   - 采用controller/repository两层架构，函数式风格
+
+- https://github.com/benjamin-chavez/node-pg-knex-passport-template /202309/ts/inactive
+  - Backend Express API Template using Knex, PostgreSQL, Passport, and Typescript.
+  - 依赖passport-local，不依赖jwt
+
+- https://github.com/otedesco/apart-services /202307/ts/inactive
+  - Microservices architecture backend, built with Node.js and Typescript using Turborepo.
+
+- https://github.com/benjamin-chavez/express-api-auth0 /MIT/202309/ts/inactive
+  - Backend Express API Template using Knex, PostgreSQL, Passport, and Typescript.
 # examples
 - https://github.com/franzon/postgres-rls-example /202006/js
   - This application is an example of how RLS can be used in an express app, using a middleware for getting the correct connection for each tenant.
@@ -405,6 +431,10 @@ modified: 2023-01-22T19:52:59.120Z
   - a framework for discord.js designed in TypeScript 
   - discord.js is a powerful Node.js  module that allows you to interact with the Discord API  very easily. It takes a much more object-oriented approach
 
+- https://github.com/YappyBots/YappyGitHub /202403/js
+  - A github monitor bot for Discord
+  - Monitor your github repos by adding this bot to your server, set up a channel for it, and don't miss any events!
+
 - https://github.com/jplsilva/Palebot /202107/ts
   - A Discord bot made with Discordjs, Typescript, Node.js and Knex
 
@@ -437,6 +467,23 @@ modified: 2023-01-22T19:52:59.120Z
 - https://github.com/robgietema/nick /MIT/202401/js
   - Nick is a (nearly) headless CMS written in Node.js which provides a RESTful hypermedia API. 
   - The API is compatible with the REST API of the Plone CMS and can be used together with the web frontend Volto.
+
+- https://github.com/thedevs-network/kutt /MIT/202211/ts/inactive
+  - a modern URL shortener with support for custom domains. 
+  - Shorten URLs, manage your links and view the click rate statistics.
+  - 依赖Express、Passport、Next、EasyPeasy-State、Recharts、PostgreSQL、Redis
+  - Admin account to view, delete and ban links.
+  - Set password for links.
+  - Expiration time for links.
+  - https://github.com/recaptime-dev/rtappdotio /202204/ts/inactive
+    - Source code for the Kutt instance at rtapp.tk, in-sync with the upstream
+  - https://github.com/OldSergo/kutt /202401/ts
+
+- https://github.com/lungers/wastebin /AGPLv3/202307/ts/inactive
+  - yet another pastebin and url shortener
+
+- https://github.com/colic-nevena/docsy /202306/ts/inactive
+  - Document sharing PWA using React, Express and OneSignal
 # utils
 - https://github.com/justsml/knex-full-text-search /202308/ts
   - A Knex plugin for easy Full-text Search queries in Postgres.

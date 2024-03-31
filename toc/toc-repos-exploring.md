@@ -10,6 +10,11 @@ modified: 2020-11-03T06:55:09.225Z
 # collection
  
 
+- https://github.com/piotrkulpinski/openalternative /GPLv3/202403/ts
+  - https://openalternative.co/
+  - A community driven list of open source alternatives to proprietary software and applications.
+  - OpenAlternative is currently written in Remix. 
+
 - https://github.com/GoogleChrome/web.dev
   - The frontend, backend, and content source code for web.dev
 

@@ -9,6 +9,11 @@ modified: 2021-05-14T14:29:40.981Z
 
 # promising
 
+# alternatives
+- https://github.com/piotrkulpinski/openalternative /GPLv3/202403/ts
+  - https://openalternative.co/
+  - A community driven list of open source alternatives to proprietary software and applications.
+  - OpenAlternative is currently written in Remix. 
 # open2commercial
 - handsontable
 

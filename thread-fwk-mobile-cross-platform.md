@@ -21,9 +21,30 @@ modified: 2021-04-30T15:26:55.024Z
 
 - ## 
 
-- ## 
+- ## 🆚️ 请问大家，2024 年了，跨平台移动端开发，Capacitor vs. React Native vs. Flutter，你们会怎么选？好奇一些真实的使用体验
+- https://twitter.com/noworkforsixian/status/1774332953683964369
+- 在我眼里 Web > React Native >> Swift UI >>>>> Flutter
+- RN. 最少我Flutter写得很糟心…
+  - Dart的语法也不太喜欢
+  - 比较影响的还有Linux上直接跑好像还不能热重载（浏览器可以，桌面我没重载成功过）
+- 如果有跨平台移动端社交类开发，我应该选RN，毕竟dart要从头学
+- 不来试试Compose吗，kt写起来真的挺舒服的，这框架再完善完善应该能很不错
+  - iOS 还在 Alpha
+- 公司大，用flutter，体验比较好。小公司，直接H5离线一把梭
+- 如果考虑最优体验、最优性能、最好生态的话，三个中 flutter 会更好（基于原生渲染），背靠  Google 也在持续投入，未来很多体验问题也会继续解决。（包括鸿蒙适配）
+- 感觉最快最简单，最省时间的就是capacitor了，他们家ionic感觉都挺活跃的。只要不涉及小程序，单兵作战那就capacitor
+- Kotlin multiplatform, 业务逻辑早就可以共享，现在还有compose 可以共享UI层代码。
+- 我2018年开始用react native开发，之前做原生android开发。react native的热更新太好了，后期维护要比其他好太多了。flutter听说运行效果会比react native好一些。但是这个我觉得见仁见智。最后要说运行体验，那肯定原生比这些都强，但是一般普通的应用，区别不大。
+- 主动权在甲方，独立开发者的话，不会选跨端少的
+- 看看第三方的对跨平台支持。
+- 这年头学语言的成本极低不会浪费你多少时间
 
-- ## 🚀 I'm please to announce that Node.js Mobile is rebooted! New docs, new version, new CLI tool_202310
+- 有人提到开发成本，其实目前很多 UI 框架都是基于声明式的（SwiftUI、Jetpack Compose、flutter 等），学习成本都比较低，理解一次基本各个框架核心都理解了，只剩 api 的理解成本了，相反 js 的学习成本可能更高（capacitor 基于 vue、rn 基于 react）。
+
+- NativeScript有话要说
+  - 现在可以直接用DOM了，整个web生态都能用
+
+- ## 🚀 I'm please to announce that Node.js Mobile is rebooted! New docs, new version, new CLI tool _202310
 - https://twitter.com/andrestaltz/status/1718591964235362642
   - Node.js can run inside a mobile app
   - Its core component is a library – available for Android and iOS – that lets you add a Node.js background worker to any mobile app.

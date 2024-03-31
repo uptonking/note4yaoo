@@ -68,12 +68,26 @@ modified: 2023-10-28T13:38:46.522Z
   - The same story was with Subversion where they replaced Berkeley key DB due to reliability issues.
   - This reliability comes from a very deep knowledge of OS API and all their corner cases. 
   - Creating a programming language typically involves less corner cases and the bugs in the compiler/runtime are much simple to reproduce (again, typically).
+# discuss-perf
+- ## 
+
+- ## 
+
+- ## SQLite requires a different mindset for performance tuning than most dbs. 
+- https://twitter.com/fractaledmind/status/1774121491778441680
+  - For MySQL or PG the default advice is to prefer a smaller number of large queries, to minimize network latency. 
+  - For SQLite, you should prefer a larger number of small queries.
+- Writes block, so you want to avoid long running write queries. So if you want to avoid busy errors, you want to keep your writes small and quick. This allows SQLite to linearize them and keep any from overflowing the timeout.
+
 # discuss
 - ## 
 
 - ## 
 
-- ## 
+- ## 因为没有 network latency，SQLite 不需要优化 N+1 Query，但这玩意写入容易成为瓶颈...
+- https://twitter.com/Hooopo/status/1774372573222236582
+- 但凡 sql 场景，explain analyze 保命
+- 还得看下硬件，如果使用 pcie 4.0 的企业级 ssd，4k 的 iops 写都可以到 200k 了，很多场景都够用了，如果使用傲腾的话单盘 iops 到 550k 也是很可观了
 
 - ## how fast can you put a 10 million row, 11gb CSV into SQLite while handling NULL correctly? I’m at about a minute
 - https://twitter.com/jitl/status/1768710776552853582

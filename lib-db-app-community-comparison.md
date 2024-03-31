@@ -12,7 +12,26 @@ modified: 2023-09-17T17:46:07.620Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 🍃🐘 [The Great Migration from MongoDB to PostgreSQL | Hacker News _202403](https://news.ycombinator.com/item?id=39860769)
+- I don't understand how folks seemingly ignore Postgres' non-existent out of the box HA and horizontal scaling support.
+  - As far as I can tell, there is no interest in making these features work well in Postgres core because all of the contributors' companies make their money selling solutions for HA/sharding. 
+  - This is an area where MySQL is so significantly better than Postgres (because so many large Internet companies use MySQL) 
+- You'll never see true support for horizontal scalability in Postgres because doing so would require a fundamental shift in what Postgres is and the guarantees is provides. Postgres is available and consistent. It cannot truly be partitionable without impacting availability or consistency.
+  - When you hit the point that you need horizontally scalable databases you must update the application. This is one of the reasons that NewSQL databases like CockroachDB and Vitess are so popular. They expose themselves as a SQL database but make you deal with the availability/consistency problems on day 1, so as your application scales you dont need to change anything.
+- Because vertical scaling can take you so far these days that 99% of companies will never, ever reach the scale where they need more. There is just few incentives.
+
+- Citus is open source and well financed. This comment may have made sense a few years ago, but no longer.
+  - By "well financed" you mean "owned by Microsoft"?
+
+- the core problem with key value stores, your data needs usually grow beyond key value scenarios. In the beginning it might fit, but then you add more pages with different needs, reporting/dashboards with different needs, APIs with different needs, and ETL processes with different needs. Trying to force everything into key value is short term thinking.
+
+- Some things that are nice in Postgres and missing in MySQL:
+  - Create constraints as NOT VALID and later VALIDATE them. This allows you to create them without expensive locks.
+  - explain (analyze, buffers). I miss this so much.
+  - Row level security.
+  - TOAST simplicity for variable text fields. MySQL has so many caveats around row size and what features are allowed and when. Postgres just simplifies it all.
+  - Rich extension ecosystem. Whether it's full text search or vector data, extensions are pretty simple to use (even in managed environments, a wide range of extensions are available).
+- PostGIS was way ahead of the MySQL equivalent last time I checked.
 
 - ## do you use Postgres or MySQL at work?
 - https://twitter.com/jarredsumner/status/1710737550292423152

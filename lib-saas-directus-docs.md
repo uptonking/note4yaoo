@@ -71,7 +71,7 @@ modified: 2024-03-02T15:21:17.619Z
 - Directus keeps track of changes made, so you're able to revert to a previous state at will
 - Revisions are created whenever an Item is updated. 
   - These alternate versions are tracked so that previous states can be recovered. 
-  - 🧐 Every change made to items in Directus is stored as a complete versioned snapshot and a set of specific changes made (the delta). 
+  - ⌛️ Every change made to items in Directus is stored as a complete versioned snapshot and a set of specific changes made (the delta). 
   - The revisions system is tightly coupled to the activity logs system, with each revision linked to the activity event where it was created.
 
 ### [Implementing Content Versioning | Directus Docs](https://docs.directus.io/guides/headless-cms/content-versioning.html)
@@ -106,7 +106,7 @@ modified: 2024-03-02T15:21:17.619Z
 
 - All events within Directus are tracked and stored in the activities collection. 
   - This gives you full accountability over everything that happen
-- 
+
 - 
 - 
 - 

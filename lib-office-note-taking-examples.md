@@ -568,7 +568,7 @@ modified: 2024-01-30T20:56:45.773Z
   - 请勿与其他同步解决方案（包括 iCloud、Obsidian Sync）一起使用。在启用此插件之前，请确保禁用所有其他同步方法以避免内容损坏或重复。
   - [Obsidian 各种同步方式体验](https://irithys.com/obsidian-sync-exp/)
     - 我使用中认为体验最好的同步方式，但是缺点是不能当做备份使用。所以 Webdav 同步方案依然存在一定的价值
-  - https://github.com/kkbt0/obcsapi-go /MIT/202401/go/vue
+  - https://github.com/kkbt0/obcsapi-go /MIT/202403/go/vue
     - 基于 WebDAV，S3 存储或 CouchDb 的后端 API ，Obsidian 笔记的 API
     - 可借助 Obsidian 插件 Remotely-Save 插件，或者 Self-hosted LiveSync (ex:Obsidian-livesync) 插件 CouchDb 方式，保存消息到 Obsidian 库
     - 一个简易图床，附带命令行上传工具

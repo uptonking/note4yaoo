@@ -1545,6 +1545,11 @@ modified: 2023-09-28T20:35:56.153Z
 
 - https://github.com/apache/couchdb-fauxton /js
   - the new Web UI for CouchDB
+- 
+- https://github.com/jhs/davcouch /201009/js
+  - CouchDB as a WebDAV server, all from a CouchApp
+- https://github.com/Decentralized-Sharing-Working-Group/rest-translator /201504/js
+  - Translate CRUD actions between WebDAV, remoteStorage, CouchDB and Swell
 
 - https://github.com/arnesten/smartdb /MIT/202308/js
   - CouchDB library for Node.js with advanced entity and cache support

@@ -86,6 +86,10 @@ modified: 2023-05-12T02:04:52.918Z
 
 - https://github.com/APIDevTools/json-schema-ref-parser
   - a full JSON Reference and JSON Pointer implementation that crawls even the most complex JSON Schemas and gives you simple, straightforward JavaScript objects.
+# search
+- https://github.com/triggerdotdev/fuzzy-json-search /MIT/202204/ts/inactive
+  - Use VSCode style fuzzy search on a JSON document
+  - Searches through key names, path, raw values and formatted values
 # more
 - https://github.com/jsonata-js/jsonata /202302/js/ibm/xpath
   - https://jsonata.org/

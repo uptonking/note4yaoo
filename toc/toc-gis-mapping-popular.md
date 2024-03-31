@@ -84,8 +84,11 @@ modified: 2021-08-05T06:48:22.687Z
   - Extracts features such as: buildings, parking lots, roads, water, clouds
   - Robosat is neither maintained not actively developed any longer by Mapbox.
   - RoboSat is an end-to-end pipeline written in Python 3 for feature extraction from aerial and satellite imagery. 
-- https://github.com/mapbox/geojson.io
+
+- https://github.com/mapbox/geojson.io /ISC/202401/js
+  - http://geojson.io/
   - A fast, simple editor for map data.
+
 - https://github.com/mapbox/supercluster
   - fast geospatial point clustering library for browsers and Node.
 - https://github.com/mapbox/geobuf

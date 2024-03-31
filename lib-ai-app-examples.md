@@ -29,7 +29,6 @@ modified: 2023-02-08T07:20:48.475Z
     - 毕竟浏览器有沙盒，相对在本地运行一个没审计过的程序放心一点，但现在浏览器对gpu硬件支持还是拉胯。
     - 这是分布式算力啊，这不就是挖矿嘛
 # chatgpt
-
 - app-site
   - https://github.com/LiLittleCat/awesome-free-chatgpt
   - [免费 chatgpt](https://twitter.com/search?q=%E5%85%8D%E8%B4%B9%20chatgpt&src=typed_query&f=live)
@@ -72,6 +71,13 @@ modified: 2023-02-08T07:20:48.475Z
 - https://github.com/Mintplex-Labs/anything-llm /MIT/js/python
   - https://useanything.com/
   - An efficient, customizable, and open-source enterprise-ready document chatbot solution.
+
+- https://github.com/AprilNEA/ChatGPT-Admin-Web /MIT/202312/ts/inactive
+  - CAW 是一个自托管网络应用程序，提供开箱即用的用户管理，包括后台界面以及可配置的支付计划和相关支付界面
+  - Nest.js + Next.js
+  - 开箱即用的用户管理
+  - 付费方案配置，一键对接支付接口
+  - 关键词过滤、替换保证文本安全
 
 ## api
 

@@ -160,7 +160,7 @@ modified: 2023-04-16T13:34:33.706Z
   - https://codeimage.dev/
   - A tool to beautify your code screenshots. Built with SolidJS
 
-- https://github.com/carbon-app/carbon /js
+- https://github.com/carbon-app/carbon /MIT/202403/js
   - https://carbon.now.sh/
   - Create and share beautiful images of your source code
   - 对源码生成截图时支持多种theme
@@ -197,6 +197,17 @@ modified: 2023-04-16T13:34:33.706Z
   - Ente Photos is a paid service, but we offer a free trial. You can also clone this repository and choose to self host.
   - Two years ago, while building Ente Photos, we realized that there was no open source end-to-end encrypted authenticator app. We already had the building blocks, so we built one.
 
+- https://github.com/gavinfitch/Pixel /202312/js/inactive
+  - a photo-sharing application built on PostgreSQL, Express.js, React, and Redux
+  - Logged in users can upload, view, edit, and delete photos. They can also create, view, edit, and delete albums. 
+  - heavily inspired by Flickr and is meant to be seen as a loose clone
+  - 依赖express、sequelize5、PostgreSQL
+  - AWS is used for all storage of user uploaded files, and the React-AWS-S3 module is used for communication between React and the S3 bucket.
+  - All user files are uploaded to an S3 bucket, AWS then sends back the location of the files to the backend, where they are stored, along with any other relevant information
+
+- https://github.com/mustafaomousa/Rumblr /202201/js
+  - A full stack application clone of Tumblr, but with cars.
+
 - https://github.com/LibrePhotos/librephotos /MIT/202402/python
   - https://demo2.librephotos.com/
   - Self hosted alternative to Google Photos
@@ -208,6 +219,16 @@ modified: 2023-04-16T13:34:33.706Z
   - Multiuser support
   - Face recognition / Face classification
   - Search by metadata; Semantic image search
+# screen-sharing
+- https://github.com/CapSoftware/Cap /AGPLv3/202403/rust/ts
+  - https://cap.so/
+  - instant screen sharing. Open source and cross-platform.
+  - Cap is an open source alternative to Loom. It's a video messaging tool that allows you to record, edit and share videos in seconds.
+  - 依赖Rust, React (Next.js), TypeScript, Tauri, Drizzle (ORM), MySQL, TailwindCSS, Turborepo
+  - Download for macOS · Windows · Linux
+# thumbnail/preview-image
+- https://github.com/wei/socialify /MIT/202311/ts/inactive
+  - Socialify helps you showcase your project to the world by generating a beautiful project image 
 # more
 - https://github.com/antfu/broz
   - A simple, frameless browser for screenshots
