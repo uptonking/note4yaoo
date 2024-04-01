@@ -225,10 +225,10 @@ modified: 2023-12-15T17:04:36.589Z
 - ## [Data Loss in Content-Type Table After Schema Modification _202401](https://github.com/strapi/strapi/issues/19141)
 - In Strapi v5 D&P and i18n won't be able to be disabled (though they don't have to be used) so technically in v5 the D&P delete issue won't be a problem anymore since it'll be forced on for all content-types (though you'll have the option to auto-publish by default or if new content should be a draft state).
 
-- ## [Deleting/Updating content-type doesn't drop/migrate the database ](https://github.com/strapi/strapi/issues/1114)
+- ## 🧐 [Deleting/Updating content-type doesn't drop/migrate the database ](https://github.com/strapi/strapi/issues/1114)
 - 202210: Yes this is currently intended (as you deleted the schema effectively), the best method to hold onto the data is take a database backup.
   - Certainly any modifications a dev is making should be tested in a staging environment. 
-  - If you are simply renaming a content-type or field then you will have to (for now) write a custom migration
+  - If you are simply renaming a content-type or field, then you will have to (for now) write a custom migration
 
 - ## 🐛 [Renaming a field in a content-type will erase the existing data _202202](https://github.com/strapi/strapi/issues/12626)
 - this behavior is the intended one (at least for the moment). 
@@ -248,11 +248,6 @@ modified: 2023-12-15T17:04:36.589Z
 
 - ## 
 
-- ## I would like to know details on transformer i would like go through and maintain it. _202403
-- https://discord.com/channels/811989166782021633/1217462664809152553/1219677189801246863
-- just a heads up it won't be needed for Strapi 5 as we plan on baking in support into Strapi 5 to simplify the structure and be able to use the v4 syntax throughout Strapi 5. 
-- Publisher might also be superseded by something from Strapi 
-
 - ## 🔒 [Custom Roles & Permissions Available for Free in Strapi v4.8 | Strapi _202303](https://medium.com/strapi/custom-roles-permissions-available-for-free-in-strapi-v4-8-140f664b328c)
 
 # discuss
@@ -269,7 +264,7 @@ modified: 2023-12-15T17:04:36.589Z
   - Is this a recommended way to transform response?
 - AfterUpdate will only apply on the API response and not in the admin. I wouldn't use any afterX lifecycle to constantly mutate the response and that's better left to a route middleware
 
-- ## [How to debug server errors by adding logging details? - Questions and Answers / Strapi Backend - Strapi Community Forum _202207](https://forum.strapi.io/t/how-to-debug-server-errors-by-adding-logging-details/20242)
+- ## [How to debug server errors by adding logging details?  _202207](https://forum.strapi.io/t/how-to-debug-server-errors-by-adding-logging-details/20242)
 
 - ## 🔡 [[v5] ] Set default log level to 'info'  _202311](https://github.com/strapi/strapi/pull/18904/files)
 

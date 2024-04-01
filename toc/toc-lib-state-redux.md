@@ -122,6 +122,9 @@ modified: 2020-11-02T19:13:04.103Z
   - By using the robodux pattern the amount of redux boilerplate is dramatically reduced. 
   - In most cases, wiring up action types, action creators, and reducers can be done in one line of code.
   - createTable: Thinking of reducers as database tables, this function builds actions, reducer, and selectors that builds simple and repeatable operations for that table.
+
+- https://github.com/PenguinOfWar/reducks-redux-queue /MIT/202310/js
+  - A super simple FIFO queueing system for Redux.
 # flux-like
 - https://github.com/isocroft/Radixx /201810/js/inactive
   - a simple Javascript library that implements the Facebook Flux Architecture with a twist to how the entire application state is managed, changed and updated.

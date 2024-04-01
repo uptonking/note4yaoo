@@ -101,8 +101,46 @@ npx create-strapi-app@5.0.0-beta.0 strapi5-app-beta0 --quickstart --ts
 - Introduce typed imperative APIs to inject DocumentActions, SideBarPanels and DocumentHeaderActions as opposed to InjectionZones in V5.
 
 - I like the idea but why remove the InjectionZones and not build this feature on top of InjectionZones. so it can be an InjectionZones or documentActions, SideBarPanels and DocumentHeaderActions
+# discuss-v5-breaking-changes
+- ## 
+
+- ## 
+
+- ## 🌐️ [chore: refactor i18n _20240220](https://github.com/strapi/strapi/pull/19555)
+  - re-implements i18n admin side
+  - refactors i18n to use redux-toolkit-query
+
+- [chore: make i18n plugin a dep & required _20240319](https://github.com/strapi/strapi/pull/19843)
+  - Add i18N as default & pre installed plugin
+
+- ## lifecycles (in plugins) have stopped working?
+- https://discord.com/channels/811989166782021633/1095091586452426824/1224045126083416164
+  - I just realized this major thing. Because the draft and the published version of a document are 2 entries, the `beforeCreate` lifecycle will run both on creating the draft and publishing it. 
+  - I'm pretty sure lots of people have created lifecycles that aren't supposed to run on both. I think this deserves attention in the breaking changes.
+  - everytime i press publish, the `beforeCreate` lifecycle run
+
+- ## Is there any v5 engineer to help me migrate entityService decorator logic to documentService?
+- https://discord.com/channels/811989166782021633/1095091586452426824/1222904152032546856
+  - In v5 decorators no longer exist they will be replaced by documentService Middlewares that are currently not yet fully stable 
+  - Still there is a version of the new documentService Middlewares in strapi 
+
+- ## I would like to know details on transformer i would like go through and maintain it. _202403
+- https://discord.com/channels/811989166782021633/1217462664809152553/1219677189801246863
+- just a heads up it won't be needed for Strapi 5 as we plan on baking in support into Strapi 5 to simplify the structure and be able to use the v4 syntax throughout Strapi 5. 
+- Publisher might also be superseded by something from Strapi 
+
+- https://discord.com/channels/811989166782021633/1095091586452426824/1222905448722595840
+- what's the v5 way to transform response?
+  - Document middleware or route middleware.
+
+- from the doc, route middlewares require me to enumerate the model uid. but I need to modify the response for several routes by a rule.
+  - You can dynamically inject route middlewares in register.(js/ts)
+  - And I assume the same thing is posible for document service middleware but I would have to test that out.
 # discuss-v5-changelog
 - ## wip
+
+- [feat(i18n): non localized fields ](https://github.com/strapi/strapi/pull/19720)
+  - Implement non localized fields in v5 using document service middlewares
 
 - [Feat(releases): Bulk Release ](https://github.com/strapi/strapi/pull/19891)
 - [Feature: ability to add custom auth providers in plugin ](https://github.com/strapi/strapi/pull/15559)
@@ -159,7 +197,7 @@ npx create-strapi-app@5.0.0-beta.0 strapi5-app-beta0 --quickstart --ts
 - ## [chore(cm): refactor to use redux-toolkit-query](https://github.com/strapi/strapi/pull/19281/files)
   - 从 react-query.v3 迁移到 redux-toolkit-query
 
-- ## 🚨 [feat: Document Service _202311](https://github.com/strapi/strapi/pull/18558)
+- ## ✨🚨 [feat: Document Service _202311](https://github.com/strapi/strapi/pull/18558)
 - Implementation of the document service.
 
 - ## ✨ [[feat]: feature flags _202311](https://github.com/strapi/strapi/pull/18871)

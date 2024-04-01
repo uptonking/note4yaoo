@@ -133,7 +133,9 @@ modified: 2021-08-05T04:31:02.298Z
 
 - ## 
 
-- ## 
+- ## Are there any TypeScript wizards that can tell me if I should use `readonly` more often? Or can I not worry about it?
+- https://twitter.com/KevinVanCott/status/1774603530331885977
+- It help avoid mutation, but I feel like most of the time it makes internal types terrible.
 
 - ## Why do people use Partial + literal type instead of writing the literal type in the correct form at once?  
 - https://twitter.com/MangelMaxime/status/1768661605846245775

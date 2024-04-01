@@ -324,9 +324,11 @@ betterdiscordctl -i flatpak install
     - 2个编辑器同一页面协同的示例未完成
     - cursor光标位置经常对不上
   - [x] streaming infinite-list/tree
-# dev-03-realworld-react-sequelize-knex
+# dev-04-strapi-versioning
 
-## 032
+## 040
+
+# dev-03-realworld-react-sequelize-knex-&-strapi-versioning
 
 ## 0324
 

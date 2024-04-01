@@ -612,39 +612,54 @@ modified: 2023-12-15T19:30:23.094Z
   - This plugin enables content versioning in Strapi
   - Enables you to have multiple draft versions
   - Keeps a history of all changes, providing the ability to time travel (revert back to previous versions).
+  - 🐛 实现原理是每次update都create新的entry插入到对应表，disable本插件会导致数据被污染，但可通过额外字段区分有效数据
   - Gives you the ability to have different published and draft data
   - Does not work well with GraphQL
   - Not working with UID and unique fields
   - [Advanced Strapi Enhancement: Notum's Open-Source Plugins_202312](https://strapi.io/blog/elevating-strapi-notum-s-journey-in-creating-three-open-source-plugins)
     - the plugin still has some limitations like the inability to support unique fields and relations inside components
-    - the entities are still stored in the same database table but each of them is assigned a unique versioning identifier and a link to relevant locale.
+    - 🧐 the entities are still stored in the same database table but each of them is assigned a unique versioning identifier and a link to relevant locale.
     - one of the most challenging parts derives from the fact that when the content has multiple locales and each locale has multiple versions
 
 - https://github.com/PenguinOfWar/strapi-plugin-paper-trail /MIT/202402/js
   - Accountability and content versioning for strapi v4+
-  - ✨ Automatic revision history and auditing with support for all major strapi content types including relations, media, components, and dynamic zones via the admin panel.
+  - ⌛️ Automatic revision history and auditing with support for all major strapi content types including relations, media, components, and dynamic zones via the admin panel.
   - Support for collection and single content types
   - Roll-back capabilities with the option to select specific fields to restore via the admin panel.
   - Tracks revision history by both admins and users.
+  - the plugin will differentiate `CREATE` from `UPDATE` and will display which user made the change
   - Internationalization (i18n) plugin support.
   - The plugin relies on the content type plugin `UID` property to identify the correct content type and associate the revision history. 
-  - The plugin is a middleware listening on the admin and user content management endpoints. Making changes directly to the records outside of this scope (e.g. from a custom service or controller) will not be logged as a revision by the plugin, however it shouldn't be difficult to manually implement
+  - 🧐 The plugin is a middleware listening on the admin and user content management endpoints. Making changes directly to the records outside of this scope (e.g. from a custom service or controller) will not be logged as a revision by the plugin, however it shouldn't be difficult to manually implement it
+  - `password` type is not supported for security reasons.
+  - roadmap
+    - Better support for only logging changed fields (currently the strapi admin sends the entire record back and not just the changes fields) to reduce revision noise
+    - Plugin management panel for purging revision history.
   - https://github.com/JoeriDamme/strapi-plugin-revisions /v3-only
 
 - https://github.com/strapi-community/strapi-plugin-audit /MIT/202208/js/inactive
   - Audit Log plugin for Strapi v4
-  - One of this package's co-maintainers is an employee of Strapi, maintained in the free time 
+  - One of this package's co-maintainers is an employee of Strapi however this package is not officially maintained by Strapi
 
-- https://github.com/Marje3PSUT/strapi-plugin-audit-log-marje3 /202309/js
+- https://github.com/Marje3PSUT/strapi-plugin-audit-log-marje3 /202309/js/inactive
   - A plugin that logs all user interactions, fully-equipped with permissions and settings.
   - This plugin aims to store all user interactions as logs that can be accessed easily and securely through the use of permissions.
 
+- https://github.com/NarKarapetyan93/strapi-audit-log /202307/ts/inactive
+  - This plugin allows you to log all the actions performed by the users
+  - For external changes if ctx.state.user is empty, it shows "External Change" instead of user name.
+  - This plugin only visible for users with Super Admin role. However, you can give access to other users
+
 - https://github.com/10Life/strapi-plugin-audit-trail /MIT/202401/js
   - A comprehensive audit trail plugin for Strapi that tracks user activities.
-  - This plugin utilizes a middleware to create an audit log of user activities. The audit log is accessible in the Audit Trail content type. The admin page provides a functionality to clear audit trails.
+  - This plugin utilizes a middleware to create an audit log of user activities. 
+  - The audit log is accessible in the `Audit Trail` content type. The admin page provides a functionality to clear audit trails.
 
 - https://github.com/Madde22/strapi-plugin-audit-history /202310/js/inactive
-  - A plugin to log all the changes made to the content-types. It will log the following actions: before create/update/delete
+  - A plugin to log all the changes made to the content-types. 
+  - It will log the following actions: before create/update/delete
+- https://github.com/jeremyProwseYS/strapi-audit-logs /202302/js/inactive
+  - Plugin that adds very basic audit functionality to strapi sites.
 
 - https://github.com/antokhio/strapi-plugin-categorizer /202308/ts
   - A plugin that lets you categorize content quickly.
@@ -1044,6 +1059,9 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/skynettechnologies/strapi-plugin-all-in-one-accessibility /202402/js
   - https://www.skynettechnologies.com/all-in-one-accessibility
   - Website accessibility widget for improving WCAG 2.0, 2.1, 2.2 and ADA compliance!
+
+- https://github.com/x-team/strapi-plugin-webhooks /202308/js/inactive
+  - A slightly better version of strapi's built-in webhooks.
 
 ## themes
 

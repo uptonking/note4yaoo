@@ -7,8 +7,20 @@ modified: 2021-09-10T18:35:00.465Z
 
 # thread-viz-charting-flow
 
-# discuss
+# guide
 
+# discuss
+- ## 
+
+- ## 
+
+- ## made a tool to visualise your discord friends – creates a graph based on your mutual friends and renders it in 3d space
+- https://twitter.com/fr3fou/status/1774565881336459588
+  - 人际关系的3d网状图
+  - https://github.com/fr3fou/discord-mutual-friends /202404/go/ts
+  - In order to start the visualisation, you need to enter your personal Discord token
+
+# discuss
 - ## 
 
 - ## 

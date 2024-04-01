@@ -19,7 +19,7 @@ modified: 2023-12-15T16:51:56.101Z
   - i18n, 在架构层支持多语言，支持多语言的内容自动建立关联
   - future flags
   - Data Import & Export
-  - rich fields: rich-text
+  - rich fields: rich-text-blocks/markdown, media
     - 支持custom filed, 但需要写代码不能通过ui创建
   - built with typescript
   - 提供了很多集成示例，如redis/search
@@ -93,6 +93,7 @@ modified: 2023-12-15T16:51:56.101Z
 - roadmap - lts: editor, excel-table, local-db
   - migrate plugins to v5: versioning, media
   - ~~掌握strapi-够用~~ > 模仿directus-config/delta > undb-fe-be > 模仿directus-flow > collab
+  - i18n-cn: 多语言、版本控制
   - examples: realworld
 
 - ⌛️ version/history
