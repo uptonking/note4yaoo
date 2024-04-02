@@ -48,6 +48,7 @@ modified: 2023-12-15T16:51:56.101Z
   - user用户管理功能弱，不支持分组, 类似multi-tenancy
   - 前端旧版本的依赖难以升级，如react-router
   - ❓ 如何与现有系统集成，可参考sso单点登录
+  - 编辑内容点击save后，插件中的组件不会rerender更新，需要 location.reload
 
 - 📈 表格不支持拖拽调整row顺序和column顺序，但支持设置调整列顺序
   - 不支持在任意位置插入row, 支持在设置而不是表格中添加列和调整列顺序

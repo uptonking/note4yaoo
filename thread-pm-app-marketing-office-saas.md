@@ -146,7 +146,9 @@ modified: 2023-10-10T14:20:13.855Z
 # discuss
 - ## 
 
-- ## 
+- ## 因为要法律合规，海外 SaaS 公司一般会公开提供他们的 Subprocessors 信息，也就是他们用的第三方服务。
+- https://twitter.com/beihuo/status/1774952394595733751
+  - 只需要搜索 "SaaS 名字 + Subprocessors" 就可以找到，这对于想要开拓海外 SaaS 市场的人很有参考意义
 
 - ## 简单学习一下 #雷军 的 #小米su7 定价
 - https://twitter.com/JamesGoong/status/1773495060077887876

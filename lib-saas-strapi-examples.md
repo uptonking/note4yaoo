@@ -1156,6 +1156,12 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/praveen-1995/strapi-submenus-react-project-v2 /202309/js
   - https://react-strapi-submenus-v2-prod.netlify.app/
   - 纯前端介绍页
+
+## auth/register
+
+- https://github.com/Kazdan1994/strapi-custom-register-endpoint /202312/js
+  - You can overwrite strapi register and / or login endpoint
+  - https://github.com/PaulBratslavsky/strapi-register-and-get-github-repos
 # examples
 - https://github.com/sawden/turbostrapi /202311/ts
   - https://turbostrapi.vercel.app/
@@ -1387,10 +1393,6 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/shahednasser/strapi-react-native /202202/js
   - Code for Create a Notes App with Strapi and React Native
 # utils
-- https://github.com/Kazdan1994/strapi-custom-register-endpoint /202312/js
-  - You can overwrite strapi register and / or login endpoint
-  - https://github.com/PaulBratslavsky/strapi-register-and-get-github-repos
-
 - https://github.com/acomagu/strapi-payload-model-migrator /202306/ts
   - Import models/components from Strapi V3 to Payload CMS
 

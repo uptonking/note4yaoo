@@ -57,7 +57,14 @@ modified: 2021-03-31T06:50:19.936Z
 
 - ## 
 
-- ## 
+- ## 我问 infra 能不能搞灰度部署，我说可以一个一个 pod 部署就行。infra 说不能，因为真正的灰度部署，流量是要能按比例分配。
+- https://twitter.com/yfractal/status/1775014098335658211
+  - pod 级别的，能解决 99% 的问题了。剩下的 1%，不是没用，而是 99% 的问题还没解决呢，想那 1% 干啥。
+
+- 确实，单个 pod 金丝雀发布比控制流量比例的灰度发布的技术含量低很多，很解决问题 
+
+- 有需要精准按流量分配的一般是 AB Test 这种，为了看数据的时候
+  - 对，上 featureflag 反而容易控制
 
 - ## Caddy is the best thing to happen to the world of web servers since nginx. So I invite you to try it out with this interactive guide I prepared.
 - https://twitter.com/ohmypy/status/1764978049274065112

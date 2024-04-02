@@ -144,7 +144,9 @@ modified: 2023-10-06T16:26:57.557Z
 
 - ## 
 
-- ## 
+- ## Starting next week, @meilisearch will switch its core engine from Rust to C++. 
+- https://twitter.com/Kerollmops/status/1774917166350868893
+  - After years of struggling with segfaults, out-of-bounds issues, and a complex package manager, the team decided that the Rust language still needed to reach its promise of being the successor of C++.
 
 - ## 为啥现在写本地模型更流行的是 c++ 和 python, 而不是近些年比较火的 Rust 和 go?
 - https://twitter.com/holegots/status/1767428017960423484

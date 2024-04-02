@@ -80,6 +80,9 @@ modified: 2021-09-29T13:23:09.969Z
     - Mobx clone
   - https://github.com/atlassubbed/atlas-mini-dom
     - React clone
+# compiler
+- https://github.com/jamiebuilds/the-super-tiny-compiler /202001/js/inactive
+  - This is an ultra-simplified example of all the major pieces of a modern compiler written in easy to read JavaScript.
 # more
 - https://github.com/bradtraversy/vanillawebprojects /202311/js
   - https://vanillawebprojects.com/

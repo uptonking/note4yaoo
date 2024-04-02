@@ -210,10 +210,11 @@ modified: 2022-08-21T10:02:05.129Z
   - http://rowy.io/
   - https://demo.rowy.io/
   - Rowy is an open-source low-code platform for Firebase and Firestore.
-  - 前端依赖mui5、tanstack-table、tinymce5、monaco-editor、jotai、swr、react-dnd
+  - 前端依赖mui5、tanstack-table、tinymce5、@monaco-editor/react、jotai.v1、swr、react-dnd、jszip、react-hook-form、eact-markdown、remark-gfm、firebase、firebaseui
   - 后端依赖firebase
   - 不支持firebase外的其他数据库、数据源，但在开发中
   - 不支持除表格外的其他视图
+  - 状态管理主要用jotai.v1，不依赖redux
   - Airtable-like UI with cloud functions workflows in JS/TS, all in your browser.
   - Manage Firestore data in a spreadsheet-like UI, write Cloud Functions effortlessly in the browser
   - Powerful spreadsheet interface for Firestore

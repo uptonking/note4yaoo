@@ -14,7 +14,10 @@ modified: 2022-11-21T15:27:20.974Z
 
 - ## 
 
-- ## 
+- ## 💫 4 lines of JavaScript. Zero dependencies.
+- https://twitter.com/crutchcorn/status/1774695605455224871
+  - 渐变的彩色边框线
+  - https://gist.github.com/crutchcorn/e97804c1061d07d18df5e7a7110ef450
 
 - ## Pacman loader con SVG y CSS
 - https://twitter.com/carmenansio/status/1773032297303835006

@@ -41,7 +41,8 @@ modified: 2023-10-31T11:17:48.697Z
 
 - ## 
 
-- ## 
+- ## Do people realize how leveraged Postgres JSON is? It's basically GraphQL without the n+1 problem
+- https://twitter.com/username_ZAYDEK/status/1774971520747798873
 
 - ## Lots of queries that remove duplicates using DISTINCT or GROUP BY after an INNER JOIN (or LEFT JOIN) could perform significantly better if using a SEMI JOIN
 - https://twitter.com/lukaseder/status/1772971845785927825

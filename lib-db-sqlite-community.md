@@ -49,6 +49,16 @@ modified: 2021-08-30T17:33:46.086Z
 
 - ## 
 
+- ## 
+
+- ## fun fact: SQLite is the most deployed and most used database. There are over one trillion (1e12) SQLite databases in active use.
+- https://twitter.com/iavins/status/1774464622067679738
+  - It is maintained by three people. They don't allow outside contributions.
+  - Open-Source, not Open-Contribution
+- LibSQL is an interesting fork of SQLite that is both open-source and open-contributions.
+
+- It's part of Chromium as well, used for WebSQL, you can open the corresponding file on disk directly with Sqlite, I use that feature to pass some data from extension to local program
+
 - ## 🔥 [Joining CSV and JSON data with an in-memory SQLite database | Hacker News_202106](https://news.ycombinator.com/item?id=27565482)
 - 
 - 

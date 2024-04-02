@@ -328,6 +328,20 @@ betterdiscordctl -i flatpak install
 
 ## 040
 
+## 0402
+
+- 🆚️ [Is it fine to use JSON.stringify for deep comparisons and cloning? - Stack Overflow](https://stackoverflow.com/questions/15376185/is-it-fine-to-use-json-stringify-for-deep-comparisons-and-cloning)
+  - JavaScript does not guarantee the order of keys.
+  - If they are entered in the same order, this approach would work most of the time, but it would not be reliable.
+
+```JS
+JSON.stringify(NaN) === JSON.stringify(null)
+// => true
+
+JSON.stringify(Infinity) === JSON.stringify(null)
+// => true
+```
+
 # dev-03-realworld-react-sequelize-knex-&-strapi-versioning
 
 ## 0324

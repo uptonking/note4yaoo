@@ -45,6 +45,27 @@ npm run develop
 - ## [Setting for collapsing/expanding components in the admin panel by default | Voters | Strapi _202306](https://feedback.strapi.io/feature-requests/p/setting-for-collapsingexpanding-components-in-the-admin-panel-by-default)
   - For content type structures that feature a lot of components, this makes the page very very long.
 
+# issues-not-yet-vip
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [How to update frontend when content in Strapi is changed _202208](https://forum.strapi.io/t/how-to-update-frontend-when-content-in-strapi-is-changed/21270)
+- Maybe you can try using socket.io 
+
+- ## [How to trigger a page refresh in the Admin UI after a Lifecycle Hook _202209](https://forum.strapi.io/t/how-to-trigger-a-page-refresh-in-the-admin-ui-after-a-lifecycle-hook/21766)
+- I may found a solution. You could register a `injectContentManagerComponent` in a plugin and register a react component to inject into a injection zone inside of the ContentManager edit window. 
+  - inside of the injection zone you could call `window.location.reload()` what will trigger a reload of the whole page you should be able to see initialData from `useCMEditViewDataManager` change as soon as you save it should change. 
+  - You should be able to use that to check for when a save happens and call a reload.
+
+- 
+- 
+- 
+- 
+- 
+
 # issues-not-yet
 - ## 
 

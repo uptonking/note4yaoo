@@ -147,6 +147,9 @@ modified: 2023-09-17T17:41:51.689Z
 - ## Don't do this. Just don't. Wrong on so many levels.
 - https://twitter.com/greglow/status/1773866511100444878
 
+- ## Quick runbook for optimising database queries, from Your database skills are not 'good to have'
+- https://twitter.com/iavins/status/1774820637057417369
+
 - ## 🪧 Top 20 SQL query optimization techniques
 - https://twitter.com/milan_milanovic/status/1758831924380880968
   01. Create an index on huge tables (>1.000.000) rows
