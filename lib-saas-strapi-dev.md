@@ -11,10 +11,10 @@ modified: 2023-12-15T16:51:56.101Z
 
 - pros 支持扩展api和ui
   - MIT; features-rich; good documentation/community
-  - plugin-system and marketplace, 插件架构很彻底, 如ctb/cm
+  - 🔌 plugin-system and marketplace, 插件架构很彻底, 如ctb/cm
     - 但不支持类似directus的在线安装plugin
-  - draft & publish, 不支持多个draft-version(directus支持)
-  - rbac is free for 3 roles，权限功能强大
+  - 📣 draft & publish, 不支持多个draft-version(directus支持)
+  - free Custom Roles & Permissions since v4.8，权限功能强大
   - media library and providers
   - i18n, 在架构层支持多语言，支持多语言的内容自动建立关联
   - future flags
@@ -23,7 +23,9 @@ modified: 2023-12-15T16:51:56.101Z
     - 支持custom filed, 但需要写代码不能通过ui创建
   - built with typescript
   - 提供了很多集成示例，如redis/search
-  - 支持rename field(需要restart)，不支持rename table
+  - 👀 支持rename field(需要restart)，不支持rename table
+  - 开发plugins时支持热加载
+  - 支持graphql
 
 - cons
   - paid: Review workflow, Audit Logs, version-history
@@ -33,22 +35,24 @@ modified: 2023-12-15T16:51:56.101Z
   - rich views not supported
   - v4不支持mongodb
   - 🐛 与现有数据库集成不方便
-  - 🐛 At this time and in the future there is no plan to allow model creating or updating while in a production environment, and
+  - 🚨 At this time and in the future there is no plan to allow model creating or updating while in a production environment, and
     - there is currently no plans to move model settings into the database. 
     - There are no known nor recommended workarounds for this.
   - It doesn't namespace its admin table
   - cannot store Content Manager layout configurations in the model settings. 因为未来移动版的layout可能不同，保存后如何恢复
-  - 不支持conditional-field
   - 不支持undo, undo可考虑基于revision-history实现， v4支持unpublish
   - 不支持多种第三方登录
+    - ❓ 如何与现有系统集成，可参考sso单点登录
   - rbac功能默认需要内置的10张表，复杂度高，难以迁移离开
-  - 纯前端的plugin不方便直接预览
   - 大版本的breaking-changes很多
   - media-lib可能存在大量未被使用的media，如何清理
   - user用户管理功能弱，不支持分组, 类似multi-tenancy
   - 前端旧版本的依赖难以升级，如react-router
-  - ❓ 如何与现有系统集成，可参考sso单点登录
   - 编辑内容点击save后，插件中的组件不会rerender更新，需要 location.reload
+  - plugins
+    - 🚨 plugin disable后再启动，plugin的db表数据、配置、自定义api会被删除，如builder
+    - 纯前端的plugin不方便直接预览
+    - 开发插件时server和admin无法共享工具方法，因为tsc的编译target分别是cjs/es5
 
 - 📈 表格不支持拖拽调整row顺序和column顺序，但支持设置调整列顺序
   - 不支持在任意位置插入row, 支持在设置而不是表格中添加列和调整列顺序
@@ -94,7 +98,7 @@ modified: 2023-12-15T16:51:56.101Z
 - roadmap - lts: editor, excel-table, local-db
   - migrate plugins to v5: versioning, media
   - ~~掌握strapi-够用~~ > 模仿directus-config/delta > undb-fe-be > 模仿directus-flow > collab
-  - i18n-cn: 多语言、版本控制
+  - i18n-cn: 多语言优化、版本控制
   - examples: realworld
 
 - ⌛️ version/history
@@ -106,7 +110,7 @@ modified: 2023-12-15T16:51:56.101Z
   - 🍴 fork media-lib/upload 实现文件管理、资源管理
   - files: docx/ppt
   - usage-references
-  - 🗑️ 默认删除到回收站, soft-delete
+  - ♻️ 支持回收站，默认删除到回收站, soft-delete
 
 - frontend-admin
   - 🤔 将 content-type-builder 隐藏后是否就是普通网站的界面了
@@ -115,9 +119,18 @@ modified: 2023-12-15T16:51:56.101Z
 
 - backend
   - api-rate-limit
+  - open register
 
 - plugins
   - 如何实现在线安装plugins
+  - plugins settings page
+
+- content-types
+  - 🔒 让content-type-builder中的models在prod或默认环境下readonly，admin可开启edit
+  - 让invisible状态的models处于折叠且只读的状态，而不是隐藏
+
+- rich-fields
+  - password
 
 - flow
   - 🤔 考虑基于flow实现conditional fields
@@ -134,7 +147,7 @@ modified: 2023-12-15T16:51:56.101Z
 - 单元格级别、卡片级别的权限控制，如隐藏部分看板卡片
 # 🔌 plugins
 - dev-xp
-  - 🐛 plugin disable后再启动，plugin的数据或自定义api会丢失，如builder
+  - 🚨 plugin disable后再启动，plugin的db表数据、配置、自定义api会被删除，如builder
 
 - export
   - ☑️ 不支持选择指定字段导出
@@ -178,9 +191,9 @@ modified: 2023-12-15T16:51:56.101Z
   - It is not possible to edit or publish content for several locales at the same time 
 - 支持不同语言的entry~~共享部分字段~~，通过fill-in快速填充同名字段的内容
   - 同一文章会自动建立关联，支持切换语言时立即显示
-  - 删除文章时会同时删除其他语言的内容
+  - 🧐 删除文章时会同时删除其他语言的内容
   - 支持将表的部分字段禁止多语言，即共享部分字段
-  - 不支持并排显示多语言的内容
+  - ☑️ 不支持并排显示多语言的内容
 
 - 不要直接在afterCreate/afterUpdate中修改response，这样admin界面不会显示修改
   - ❓ 通过route middleware可以更新admin界面的显示

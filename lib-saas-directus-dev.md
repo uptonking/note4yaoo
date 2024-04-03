@@ -18,9 +18,9 @@ modified: 2024-02-16T14:55:58.271Z
     - plug-and-play, so you're free to link or remove it anytime, with zero impact on your data
     - 支持postgis 🌍
   - 内置数据库表名有统一前缀
-  - rich-fields: rich-text
+  - rich-fields: block-editor, WYSIWYG, markdown
     - 支持custom field type(基于extension),需要写代码
-  - rich-views: table, kanban, calendar, card, map
+  - 🪟 rich-views: table, kanban, calendar, card, map
     - 支持custom layouts
   - 强大的权限系统，支持per-field
   - 🔌 Extensions and marketplace
@@ -32,14 +32,14 @@ modified: 2024-02-16T14:55:58.271Z
   - 通知系统
   - 支持realtime data, 包括rest/graphql
   - 支持i18n, 偏向于简单翻译，提供了translations类型的字段，会自动建立关联表
-    - lang/content表需要用户自己创建和配置
+    - lang/content表需要用户自己创建和配置，自动化程度不高
 
 - cons 定位不明确 cms vs app
   - license: GPLv3 > BSL
   - auth实现复杂，token包括jwt/session/static三种
+  - 👀 不支持rename collection/table和field
   - content的视图无法保存，不能实现类似notion database切换多种视图
   - 开发ext实现热加载比较麻烦
-  - 不支持rename collection/table和field
   - versioning的其他版本只能从main创建，不能从其他version再创建version
 
 - 📈 表格不支持拖拽调整row顺序，但支持拖拽调整column顺序
@@ -82,7 +82,7 @@ pnpm --filter app dev
 - 在admin添加新的data-model时，数据库会创建对应的表，~~同时后端src/api下面会自动生成对应的schema/router/controller/service~~
 
 - 支持i18n, 提供了translations类型的字段，会自动建立关联表
-  - 所有内容仍在db的同一张表中，lang/content表需要用户自己创建和配置
+  - 所有内容仍在db的同一张表中，lang/content表需要用户自己创建和配置，自动化程度不高
   - 内容列表显示时同一内容的翻译显示成一篇文章
   - 支持并排显示多语言的内容
 

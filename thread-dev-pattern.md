@@ -32,6 +32,15 @@ modified: 2021-02-19T12:23:12.286Z
 
 - ## 
 
+- ## 
+
+- ## "exposing platform APIs over wrapping them" that really stuck with me, 
+- https://twitter.com/jimniels/status/1774808433675719106
+  - especially when I found myself trying to get `<meta>` tags into a Next.js app I was working on.
+- That's why Remix replaced the meta object syntax with the array of objects (keys/values of meta or custom tagName) syntax in v2. There were just too many ways to represent the meta tags. This gives control back to the developer.
+- The metadata API in next.js serves an important purpose: to ensure that we can send the head for bots & crawlers in the initial HTML
+  - If you don't care about that purpose you are free to render meta tags anywhere you like and React will hoist them to the head element
+
 - ## 🧩 A simple introduction to "The workflow event pattern: a reactive architecture."
 - https://twitter.com/RaulJuncoV/status/1769703136124391486
   - The main issue with async communication is error handling.

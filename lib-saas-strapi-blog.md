@@ -82,6 +82,8 @@ modified: 2023-12-15T16:52:28.937Z
 - 
 - 
 
+## [Demystifying Strapi’s Populate & Filtering | by Strapi | Strapi | Medium](https://medium.com/strapi/demystifying-strapis-populate-filtering-88a95f4dfd6f)
+
 ## [Strapi Internals: Customizing the Backend [Part 1 — Models, Controllers & Routes] _202205](https://strapi.io/blog/strapi-internals-customizing-the-backend-part-1-models-controllers-and-routes)
 
 - 
@@ -131,6 +133,8 @@ modified: 2023-12-15T16:52:28.937Z
 
 # blog-usage
 - [Implementing i18n for Static Sites with Strapi](https://strapi.io/blog/i18n-for-static-sites-with-strapi)
+
+- [How to Build a Pseudo Multi-Tenant Application in Strapi? | Strapi](https://medium.com/strapi/how-to-build-a-pseudo-multi-tenant-application-in-strapi-5b877e2b2951)
 # blog-stars
 
 ## 💡 [Schemaless platforms. Architectural considerations _202002](https://medium.com/samanvay-on-tech/schemaless-platforms-e6bbf0a64a24)
@@ -232,3 +236,5 @@ modified: 2023-12-15T16:52:28.937Z
 # more
 - [Strapi vs Nest.js: A Tale of Simplicity and Flexibility in Back-end Development_202306](https://medium.com/@inni.chang95/strapi-vs-nest-js-a-tale-of-simplicity-and-flexibility-in-back-end-development-640f3a506289)
   - In conclusion, Strapi shines in its simplicity for straightforward use cases, while Nest.js offers a more comprehensive and flexible framework for developers comfortable with TypeScript. 
+
+- [Best Practices of API Security in Strapi | by Strapi | Strapi | Medium](https://medium.com/strapi/best-practices-of-api-security-in-strapi-3ed59aa2b0c0)

@@ -119,6 +119,10 @@ npx create-strapi-app@5.0.0-beta.0 strapi5-app-beta0 --quickstart --ts
   - I'm pretty sure lots of people have created lifecycles that aren't supposed to run on both. I think this deserves attention in the breaking changes.
   - everytime i press publish, the `beforeCreate` lifecycle run
 
+- [v5 documents completely change how lifecycles work, not documented as a breaking change _202404](https://github.com/strapi/strapi/issues/19982)
+- 
+- 
+
 - ## Is there any v5 engineer to help me migrate entityService decorator logic to documentService?
 - https://discord.com/channels/811989166782021633/1095091586452426824/1222904152032546856
   - In v5 decorators no longer exist they will be replaced by documentService Middlewares that are currently not yet fully stable 
@@ -136,6 +140,8 @@ npx create-strapi-app@5.0.0-beta.0 strapi5-app-beta0 --quickstart --ts
 - from the doc, route middlewares require me to enumerate the model uid. but I need to modify the response for several routes by a rule.
   - You can dynamically inject route middlewares in register.(js/ts)
   - And I assume the same thing is posible for document service middleware but I would have to test that out.
+
+
 # discuss-v5-changelog
 - ## wip
 

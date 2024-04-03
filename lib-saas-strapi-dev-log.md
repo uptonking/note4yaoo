@@ -12,6 +12,10 @@ modified: 2024-03-21T13:28:16.872Z
 # draft
 
 # not-yet
+
+- 如何在自定义plugin-component触发edit view form的rerender
+  - 变通方案是整页reload
+
 - ❓ Cannot destructure property 'uid' of 'U' as it is undefined.
   - 在访问content item时会抛出异常
   - 经排查是strapi-plugin-reactions导致，移除就正常了

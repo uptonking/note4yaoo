@@ -50,7 +50,16 @@ npm run develop
 
 - ## 
 
-- ## 
+- ## [Update EditView onClick ](https://forum.strapi.io/t/update-editview-onclick/26871)
+- I just managed to do it with React’s router:
+
+```JS
+import { useHistory } from 'react-router-dom';
+const Component = () => {
+  const history = useHistory();
+  history.push(`contentype/path/:id`)
+}
+```
 
 - ## [How to update frontend when content in Strapi is changed _202208](https://forum.strapi.io/t/how-to-update-frontend-when-content-in-strapi-is-changed/21270)
 - Maybe you can try using socket.io 
@@ -71,7 +80,7 @@ npm run develop
 
 - ## 
 
-- ## 
+- ## [Pagination parameters not working in Users endpoint ](https://github.com/strapi/strapi/issues/12911)
 
 - ## one of the major issues i’ve had with Strapi is that you cannot reliably add calculated fields (from other data sources) to responses. 
 - https://discord.com/channels/811989166782021633/811989167357689922/1222502997121175602

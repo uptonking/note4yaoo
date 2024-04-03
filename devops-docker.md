@@ -116,7 +116,20 @@ docker stop containerId
 
 - ## 
 
-- ## 
+- ## 如果不用docker咋给mac/linux/win的用户统一开发环境啊?
+- https://twitter.com/hylarucoder/status/1775365292459499625
+
+- 方便管理，配置文件管理比手动调配置方便多了
+  - 很环保，搞坏了直接删掉重新up一下，所有服务全搞定
+- docker 现在新版本相对统一还是比较好用的吧。如果用 docker，可以把一天半天的部署调试时间压缩到一两个小时，花点钱加内存也不是啥事儿。如果对内存 几百 G 很敏感的，可能也不会用 docker 去频繁替换架构了。
+
+- 统一环境的是部署过程，是包管理，而不是docker
+  - 你干过运维就该清楚什么都往docker里扔，维护起来是多么痛苦，时间长了没文档，当初做镜像的人还搞成了黑盒，排错的时候这没有那没有，反而增加了维护成本。
+  - docker并不能解决部署混乱的问题，它只是把混乱的环境从主机移到了容器
+
+- 三套脚本吧。Windows bat, Linux 和 Mac 用 shell。 脚本比 Docker 好的一点是它们方便做调整。docker封装好之后迁移肯定方便，但是调整和版本维护也麻烦啊。脚本只要改语句就行了，docker要更新和分发就笨重了。
+- 我最讨厌配置环境，想起以前给toG客户开发全是离网环境，自己还要拿光盘把安装包和依赖一个个拷到服务器然后手动安装，真的是操蛋；尤其是碰到Python这种没办法像Java或Go这样没法直接打包部署，就连Linux版解释器都得自己编译一个的更想死
+- 一个组的开发机器如果不是统一的OS。装了Docker也没用。遇到问题反而更难调试。
 
 - ## 🤔 Do you use Docker during development with a Node.js project?
 - https://twitter.com/AmanVirk1/status/1763471630171349201

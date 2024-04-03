@@ -328,6 +328,21 @@ betterdiscordctl -i flatpak install
 
 ## 040
 
+## 0403
+
+- [How do I reload a page with react-router? - Stack Overflow](https://stackoverflow.com/questions/46820682/how-do-i-reload-a-page-with-react-router)
+
+```JS
+// react-router v6
+import { useNavigate } from "react-router-dom";
+
+const navigate = useNavigate();
+
+const refreshPage = () => {
+  navigate(0);
+}
+```
+
 ## 0402
 
 - 🆚️ [Is it fine to use JSON.stringify for deep comparisons and cloning? - Stack Overflow](https://stackoverflow.com/questions/15376185/is-it-fine-to-use-json-stringify-for-deep-comparisons-and-cloning)

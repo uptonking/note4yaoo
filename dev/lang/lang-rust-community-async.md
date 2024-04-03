@@ -30,7 +30,17 @@ modified: 2023-08-28T04:43:22.738Z
 # discuss
 - ## 
 
-- ## 
+- ## So http://tokio.rs is Spring? 
+- https://twitter.com/criccomini/status/1775277749537792059
+- it is netty and its associated projects. 
+  - there are alternatives to its components. if you are looking for something basic it works. 
+  - tikv has its own alternatives to parts of it e.g., https://github.com/tikv/yatp instead of tokio::task for tasks. 
+  - There are other async runtimes too
+  - on the other hand Tonic/Hyper is pretty common ways of doing protobuf based RPC servers. 
+  - This is what I meant by async being a mess in some ways :) (See also crossbeam, mio, parking lot which do both sync and async. Then again, Java didn’t get NIO until 1.4 etc…)
+
+- there is support for atomics, basic/sync blocking multi-threading and channels already in stdlib, tokio does have a good channel implementation that can work as both async and sync. crossbeam has concurrent skip lists, additional channels and locks? and other neat things. 
+  - note that my opinions on these matters (parallelism and concurrency) are excessively grumpy(脾气暴躁的) as i deal with it day to day. (i also happen to think java.util.concurrent is the gold standard for concurrency and i refused to use anything else in the JVM land, including when using Scala, where I just ignored its own Futures…)
 
 - ## I have decided All IN async fn and stopping implementing poll based futures any more (although I spent a lot of time to make them works correctly)
 - https://twitter.com/OnlyXuanwo/status/1770122232146305162

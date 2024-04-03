@@ -249,7 +249,38 @@ modified: 2023-12-15T17:04:36.589Z
 - ## 
 
 - ## 🔒 [Custom Roles & Permissions Available for Free in Strapi v4.8 | Strapi _202303](https://medium.com/strapi/custom-roles-permissions-available-for-free-in-strapi-v4-8-140f664b328c)
+- Before Strapi v4.8, the free Community Edition RBAC was limited to only three predefined roles: SuperAdmin, Editor, and Author. 
+  - Granular and custom roles and permissions were only available in the Enterprise Edition
+- all Strapi users who migrate to v4.8 are able to create an unlimited number of custom roles and permissions. 
+- 
+- 
+- 
 
+# discuss-auth 🔒
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Why all users in Strapi have access to update all users profile? _202212](https://stackoverflow.com/questions/74728231/why-all-users-in-strapi-have-access-to-update-all-users-profile/74734475)
+- to limit the user actions in the auth scope you have to use middleware or policy
+
+- ## [How to create Row-Level-Security on user uploads _202302](https://discord.com/channels/811989166782021633/1079162815056715857/1079162815056715857)
+  - This way strapi will get this refId from the user's token instead of the form data.
+
+- ## [Is it possible to create Row-Level-Security in Content-Types? _202210](https://discord.com/channels/811989166782021633/1026451268010512424/1026451268010512424)
+- Yes and no, something like this requires access to the conditionals feature
+  - but this is only available to EE users for now. 
+  - We do plan to completely unlock RBAC in the near future (I think Q1 2023) but without it you can't customize the conditionals used.
+
+- Enterprise plans offer RBAC for admins.
+  - If you need RBAC for users, there's nothing at the Strapi-core level that's ready to use, and afaik there's no plugin to do that either
+  - So you'll have to write your own policies to define permissions
+  - You can change which content types users have access to and which controllers they can use on them (find, findOne, etc. + custom controllers)
+  - But there's nothing built-in to handle row-level permissions (eg. specify that a field is only accessible to users respecting certain conditions)
+- Yes, so this would be handled in a policy right, for example lets say that a user can only edit a collection item that is related to his user id 
+  - yep
 # discuss
 - ## 
 

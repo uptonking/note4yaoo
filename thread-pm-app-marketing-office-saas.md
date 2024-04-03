@@ -146,7 +146,14 @@ modified: 2023-10-10T14:20:13.855Z
 # discuss
 - ## 
 
-- ## 因为要法律合规，海外 SaaS 公司一般会公开提供他们的 Subprocessors 信息，也就是他们用的第三方服务。
+- ## 
+
+- ## ⚖️ 做 SaaS 不能没有隐私协议（Privacy Policy）和使用协议（Terms and Conditions）。
+- https://twitter.com/beihuo/status/1775012647139991797
+  - 当然，本着能用免费服务就不花钱的 indie maker 精神，找到一个服务可以免费生成这两个协议。
+- termsfeed价格免费量又足
+
+- ## ⚖️ 因为要法律合规，海外 SaaS 公司一般会公开提供他们的 Subprocessors 信息，也就是他们用的第三方服务。
 - https://twitter.com/beihuo/status/1774952394595733751
   - 只需要搜索 "SaaS 名字 + Subprocessors" 就可以找到，这对于想要开拓海外 SaaS 市场的人很有参考意义
 

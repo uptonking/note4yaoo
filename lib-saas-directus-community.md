@@ -109,7 +109,9 @@ modified: 2024-02-16T14:56:17.057Z
 - Sounds like schema migrations is what you'd be looking for. Those allow you to create a snapshot of the current configuration, and apply that to another instance. Migrations could also be used for this purpose, but are intended for more edge-case uses (it's an escape hatch in case schema migrations doesn't offer what you need) 
 
 - ## 🐛🆔️ [Ability to rename collections and fields  _202005](https://github.com/directus/directus/discussions/2711)
-- For anyone here that is only concerned about what the Directus user sees and not names in the underlying database, you can use field name translations and collection naming translations to change the name throughout the Directus Studio. It doesn't change anything for the underlying database or the API, but it's better than nothing!
+- 202401: Realistically the only way to support this natively is to start relying on UUIDs for collections/fields instead of the database key. Trying to update the name in like 30 places every time you want to change the key feels very error prone
+
+- 202401: For anyone here that is only concerned about what the Directus user sees and not names in the underlying database, you can use `field name translations` and `collection naming translations` to change the name throughout the Directus Studio. It doesn't change anything for the underlying database or the API, but it's better than nothing!
 
 - [Change Field Name / Type after creation](https://github.com/directus/directus/discussions/14037)
 
