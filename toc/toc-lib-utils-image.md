@@ -140,6 +140,11 @@ modified: 2023-04-04T22:39:45.442Z
 - https://github.com/imgly/background-removal-js /GPLv3/ts
   - Remove backgrounds from images directly in the browser environment with ease and no additional costs or privacy concerns
 
+- https://github.com/willnguyen1312/zoom-image /MIT/202404/ts
+  - https://willnguyen1312.github.io/zoom-image/
+  - powerful framework agnostic headless library to zoom images on the web
+  - Examples are written with Preact, React, Svelte, Vanilla JS and Vue.
+
 ## annotation/labelling
 
 - mirador /400Star/Apache2/202105/js

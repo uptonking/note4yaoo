@@ -491,6 +491,8 @@ modified: 2023-12-15T19:30:23.094Z
 
 - https://github.com/excl-networks/strapi-plugin-ezforms /202312/js
   - This plugin allows you to easily consume forms from your front end and automatically reject spam, send out notifications, and store the data in your database.
+  - features like server side form validation and heavy customiztations will most likely never be added to this forms plugin. 
+    - If you need something more customized you should look into making a custom controller.
 
 - https://github.com/Zaydme/strapi-plugin-multi-select /202307/js
   - A strapi custom field for selecting multiple options from a provided list of items.

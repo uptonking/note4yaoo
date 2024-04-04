@@ -181,11 +181,9 @@ modified: 2023-02-08T10:24:11.422Z
   - https://github.com/yousefamar/bookmarkdown
     - A browser extension that turns a webpage into a useful markdown note
 
-
 - https://github.com/wxt-dev/wxt /MIT/202402/ts
   - https://wxt.dev/
   - Next-gen framework for developing web extensions.
-
 # devtools
 - https://github.com/shanebell/JaSON /202104/ts/inactive
   - a Google Chrome extension for testing APIs and making HTTP network requests.
@@ -236,6 +234,9 @@ modified: 2023-02-08T10:24:11.422Z
 - https://github.com/DoctorLai/VideoDownloadHelper
   - On 31/Oct/2017, Google has reinstated the extension
   - But you are still able to use the web version: https://weibomiaopai.com/download-video-parser.php
+
+- https://github.com/ngti/svg-grabber /MIT/201803/js/inactive
+  - Open source chrome extension to quickly preview, download or copy inline or embedded SVG images from a website
 # more-extensions
 - https://github.com/SanderRonde/CustomRightClickMenu
   - A browser extension to add links and run scripts/stylesheets all from your right-click menu

@@ -56,6 +56,10 @@ modified: 2020-11-02T19:13:04.103Z
 - https://github.com/RichardBray/no-redux /js
   - [Replacing redux with react hooks and context (part 1)](https://medium.com/octopus-labs-london/replacing-redux-with-react-hooks-and-context-part-1-11b72ffdb533)
 # redux-utils
+- https://github.com/aholachek/redux-usage-report /201905/js/inactive
+  - This library tracks the way your app is actually using the data in your Redux store. 
+  - By setting up the monitor in devtools you can see a live view of when different parts of your store are accessed
+
 - https://github.com/rt2zz/redux-persist
   - Persist and rehydrate a redux store.
 - https://github.com/piotr-cz/redux-persist-idb-storage

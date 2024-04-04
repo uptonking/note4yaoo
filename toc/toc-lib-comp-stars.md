@@ -10,21 +10,32 @@ modified: 2021-01-12T18:49:07.422Z
 # guide
 
 # calendar
-- https://github.com/nhn/tui.calendar /ts
+- https://github.com/nhn/tui.calendar /MIT/202301/ts/inactive
   - http://ui.toast.com/tui-calendar
   - available when using the Plain JavaScript, React, Vue Component.
   - 依赖tui-date-picker、tui-time-picker、preact、immer
   - date依赖moment、moment-timezone
 
-- https://github.com/fullcalendar/fullcalendar
+- https://github.com/fullcalendar/fullcalendar /MIT/202402/ts
   - https://fullcalendar.io/
+  - https://fullcalendar.io/demos
   - Full-sized drag & drop event calendar in JavaScript
+  - 支持react/vue/angular
+  - paid: Timeline View(Gantt), Vertical Resource View, Printer-friendly rendering
+
+- https://github.com/dan-lee/timescape /107Star/MIT/202403/ts/NoDeps
+  - https://timescape.daniellehr.de/
+  - A flexible, headless date and time input library for JavaScript. 
+  - Provides tools for building fully customizable date and time input fields
+  - support React, Preact, Vue, Svelte and Solid
+  - Full A11y compliance, keyboard navigation and manual input.
+  - Touch device support: Use it on any device, including touch devices.
 
 - https://github.com/Zertz/tempocal
   - https://tempocal.pierluc.io/
   - Highly flexible building blocks to craft calendars with Temporal API
 
-- https://github.com/wojtekmaj/react-date-picker
+- https://github.com/wojtekmaj/react-date-picker /MIT/202404/ts
   - A date picker for your React app.
 - https://github.com/wojtekmaj/react-time-picker
   - A time picker for your React app.
@@ -33,6 +44,9 @@ modified: 2021-01-12T18:49:07.422Z
 - https://github.com/gpbl/react-day-picker
   - Lightweight date picker component for React
 
+- https://github.com/TBear79/headless-datepicker /201801/ts/inactive
+  - Provides the logic for a datepicker. Apply your own UI on top.
+  - Relies on moment.js
 ## calendar-heatmap
 
 - https://github.com/grubersjoe/react-activity-calendar

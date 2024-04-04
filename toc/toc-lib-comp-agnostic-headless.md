@@ -9,11 +9,8 @@ modified: 2021-04-11T06:17:51.318Z
 
 # guide
 
-- components-design
-  - styling
-  - state
-  - accessible
-  - animation
+- 组件库组成
+  - state, styling, a11y, animation
 
 - pick-ui-components
   - framework-agnostic
@@ -130,7 +127,7 @@ modified: 2021-04-11T06:17:51.318Z
   - 依赖styled-components
   - Garden React provides consistent styling and behavior for Garden components. 
 
-- makeup-js /26Star/MIT/202210/js/vanillajs
+- makeup-js /26Star/MIT/202403/js/vanillajs
   - https://github.com/makeup/makeup-js
   - https://makeup.github.io/makeup-js/
   - A suite of vanilla JavaScript modules for building accessible user interfaces.
@@ -169,11 +166,12 @@ modified: 2021-04-11T06:17:51.318Z
   - https://tiptap.dev/
   - A headless, framework-agnostic and extendable rich text editor, comes without any CSS. You are in full control over markup, styling and behaviour.
 
-- https://github.com/elastic/search-ui /ts
+- https://github.com/elastic/search-ui /apache2/202403/ts
   - https://github.com/elastic/search-ui/tree/master/packages/search-ui
   - https://docs.elastic.co/search-ui/overview
-  - 依赖date-fns、history、qs
   - The "Headless Search UI" that serves as a foundation for the react-search-ui library.
+  - 依赖date-fns、history、qs
+  - core是框架无关的
   - this library can be used in conjunction with any other framework. 
   - Instead of working with components as you do in React, you simply work directly with state and actions.
 
@@ -201,44 +199,53 @@ modified: 2021-04-11T06:17:51.318Z
     - You can use it in JavaScript, Preact, React, or Vue projects. 
     - Renderers provide a UI to headless autocomplete experiences built with `autocomplete-core`.
 
-- https://github.com/plantain-00/select2-component
-  - https://plantain-00.github.io/select2-component/packages/react/demo/
-  - A vuejs and reactjs select component.
-  - local search
-  - multiple selection
+- https://github.com/dan-lee/timescape /107Star/MIT/202403/ts/NoDeps
+  - https://timescape.daniellehr.de/
+  - A flexible, headless date and time input library for JavaScript
+  - Provides tools for building fully customizable date and time input fields
+  - support React, Preact, Vue, Svelte and Solid
+  - Full A11y compliance, keyboard navigation and manual input.
+  - Touch device support: Use it on any device, including touch devices.
+  - 示例丰富，包括calendar、range
+  - 样式较简单
 
-- https://github.com/TanStack/ranger
+- https://github.com/TanStack/time /202403/ts
+  - Headless utilities for building time and calendar components
+  - React, Solid, Vue, Svelte and Angular
+
+- https://github.com/TanStack/ranger /MIT/202403/ts
   - Headless utilities for building range and multi-range sliders in React, Preact, Solid, Vue, Svelte and Angular
 
-- https://github.com/roginfarrer/collapsed /485Star/MIT/202311/ts
+- https://github.com/roginfarrer/collapsed /485Star/MIT/202311/ts/inactive
   - https://react-collapsed.netlify.app/
   - Headless UI for for creating flexible and accessible expand/collapse components
   - Includes adapter for React.
+  - No animation framework required! Simply powered by CSS animations
 
-- https://github.com/TBear79/headless-datepicker
-  - Provides the logic for a datepicker. Apply your own UI on top.
-  - Relies on moment.js
-
-- https://github.com/handsontable/hyperformula /ts
+- https://github.com/handsontable/hyperformula /GPLv3/202402/ts
   - An advanced headless evaluator and parser of Excel formulas
 
 - https://github.com/vincentdchan/blocky-editor
   - An headless editor built with blocks
   - The core of the editor. Written in vanilla JS.
 
-- https://github.com/ivan-dalmet/formiz
-  - https://formiz-react.com/
-  - React forms with ease! Composable, headless & with built-in multi steps
-
-- accessible-ui /inactive
-  - https://github.com/accessible-ui
-  - Accessible style-agnostic components for React
-
 - https://github.com/jieter/leaflet-headless
   - Leaflet for node.(Has Leaflet 1.1.x as dependency.)
   - Uses jsdom to fake ad DOM.
   - Uses Image implementation and canvas from node-canvas. 
   - Tiles, Markers and vector layers work well with leaflet-image
+
+- https://github.com/plantain-00/select2-component
+  - https://plantain-00.github.io/select2-component/packages/react/demo/
+  - A vuejs and reactjs select component.
+  - local search
+  - multiple selection
+
+- https://github.com/plantain-00/tree-component
+  - https://plantain-00.github.io/tree-component/packages/react/demo/
+  - A reactjs and vuejs tree component.
+  - drag and drop between different tree
+  - composition model(reactjs children and vuejs slot)
 
 - https://github.com/select2/select2 /25.8kStar/MIT/202303/js/inactive
   - https://select2.org/
@@ -261,16 +268,27 @@ modified: 2021-04-11T06:17:51.318Z
   - It's available for React, Vue, React Native and Flutter.
   - https://github.com/appbaseio/reactivesearch
     - https://opensource.appbase.io/reactivesearch
-    - Search UI components for React and Vue: powered by appbase.io / Elasticsearch
+    - Search UI components for React and Vue: powered by appbase.io/Elasticsearch
   - https://github.com/appbaseio/reactivecore
     - Core architecture of reactive UI libraries
     - 依赖redux、redux-thunk、xdate
 
-- https://github.com/yairEO/tagify /js
+- https://github.com/yairEO/tagify /MIT/202403/js
   - https://yaireo.github.io/tagify/
   - Transforms an input field or a textarea into a Tags component
   - Tags input component in VanillaJS/React/Angular/Vue
+  - Tagify is not a controlled component.
+
+- https://github.com/willnguyen1312/zoom-image /MIT/202404/ts
+  - https://willnguyen1312.github.io/zoom-image/
+  - powerful framework agnostic headless library to zoom images on the web
+  - Examples are written with Preact, React, Svelte, Vanilla JS and Vue.
 # headless-react
+- https://github.com/h6s-dev/h6s /MIT/202404/ts
+  - https://h6s.dev/
+  - Serve headless component development kit for React 
+  - 提供了: table, calendar
+
 - https://github.com/chatscope/use-chat
   - https://chatscope.io/demo/
   - https://demo.chatscope.io/
@@ -285,6 +303,11 @@ modified: 2021-04-11T06:17:51.318Z
   - 依赖react
   - You can choose any markdown parser, create your own layout, and use your own textarea component that is styled and behaves however you like
 
+- https://github.com/BearStudio/formiz /MIT/202402/ts
+  - https://formiz-react.com/
+  - React forms with ease
+  - Composable, headless & with built-in multi steps
+
 - vechaiui /1kStar/MIT/202206/ts
   - https://github.com/vechai/vechaiui
   - 组件实现都很简单，复杂组件直接import三方
@@ -293,7 +316,7 @@ modified: 2021-04-11T06:17:51.318Z
 - https://github.com/op-ent/unstyled-ui
   - an headless react library.
 
-- https://github.com/nrkno/core-components
+- https://github.com/nrkno/core-components /MIT/202310/js/inactive
   - https://static.nrk.no/core-components/latest/
   - A kit of lightweight, unstyled and accessible Javascript and React/Preact components.
 - https://github.com/smakosh/ontwik-ui
@@ -312,8 +335,7 @@ modified: 2021-04-11T06:17:51.318Z
   - similar to Unstated by Jamie Kyle
 - https://github.com/tannerlinsley/react-ranger
   - Hooks for building range and multi-range sliders in React
-- https://github.com/Buuntu/react-final-table
-  - /9Star/MIT/202009
+- https://github.com/Buuntu/react-final-table /32Star/MIT/202104/ts/inactive
   - A headless UI component libray for managing complex table state in React.
   - Inspired by react-table but with Typescript support built in and a simpler API.
 
@@ -325,6 +347,9 @@ modified: 2021-04-11T06:17:51.318Z
 - https://github.com/headless-components/headless-components-react
   - /2Star/NALic/202004
   - Headless component in React with Custom hooks
+# accessible
+- https://github.com/accessible-ui /inactive
+  - Accessible style-agnostic components for React
 # more-headless-ui
 - https://github.com/coveo/ui-kit
   - Coveo UI kit repository, home of @coveo/headless, @coveo/atomic, and more.

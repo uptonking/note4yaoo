@@ -114,6 +114,11 @@ modified: 2022-11-11T10:46:41.519Z
 
 - https://github.com/typst/pdf-writer /MIT/202402/rust
   - A step-by-step PDF writer.
+
+- https://github.com/wuxue107/bookjs-eazy /MIT/202310/js/inactive
+  - HTML自动分页插件。用于生成PDF, 前端WEB打印生成PDF或后端wkhtmltopdf、chrome headless生成
+  - 主要解决，HTML生成PDF，分页可控的问题
+  - 依赖 jquery、lodash、bookjs-eazy
 # latex
 - https://github.com/dginev/ar5iv /MIT/rust
   - https://ar5iv.org/

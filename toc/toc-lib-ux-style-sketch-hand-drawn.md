@@ -104,11 +104,19 @@ modified: 2021-01-13T19:30:59.508Z
   - Built with Replicache, Next.js, Pusher, and Postgres.
     - pusher: create and maintain complex messaging infrastructure
 
-- https://github.com/plantain-00/composable-editor-canvas
+- https://github.com/plantain-00/composable-editor-canvas /MIT/202404/ts
   - https://plantain-00.github.io/composable-editor-canvas/
   - A composable editor canvas library.
-  - 基于svg实现的图形编辑器
   - 提供了多种编辑场景示例
+  - 提供了多种render target:react, react-canvas, react-svg, react-webgl
+  - 实现了2种undo: undo, patch-based-undo-redo
+
+- https://github.com/antfu/drauu /MIT/202402/ts
+  - https://drauu.netlify.app/
+  - Headless SVG-based drawboard in browser.
+  - built with Vanilla JavaScript
+  - Built for Slidev.
+
 
 - https://github.com/mohitkumartoshniwal/whiteboard-konva-react /202402/js
   - Code for the Youtube video on building excalidraw clone using React and Konva.js

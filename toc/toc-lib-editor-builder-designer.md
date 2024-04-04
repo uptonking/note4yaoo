@@ -97,6 +97,7 @@ modified: 2020-11-17T13:38:19.107Z
     - Growth optimization tools (A/B testing, personalization, analytics)
   - 前端依赖react-aria、quill
   - 后端依赖python、fastapi、sqlalchemy、ipdb、pydynamodb
+  - 后端代码很少
   - [Does this repository include the designer UI?](https://github.com/plasmicapp/plasmic/issues/23)
     - It currently doesn't; will add clarification on this.
 

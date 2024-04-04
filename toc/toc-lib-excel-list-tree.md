@@ -28,7 +28,7 @@ modified: 2022-08-21T10:02:41.845Z
 
 ## 基于id+parentId
 
-- https://github.com/naisutech/react-tree /202302/ts/不支持drag
+- https://github.com/naisutech/react-tree /MIT/202210/ts/不支持drag/inactive
   - https://naisutech.github.io/react-tree/
   - a hierarchical tree component for React in Typescript
   - data should be a flat list of node objects with 
@@ -50,7 +50,7 @@ modified: 2022-08-21T10:02:41.845Z
 
 ## 基于path
 
-- infinite-tree /153Star/MIT/202207/js
+- infinite-tree /153Star/MIT/202207/js/inactive
   - https://github.com/cheton/infinite-tree
   - https://infinite-tree.js.org/
   - High performance infinite scroll with large data set
@@ -128,7 +128,7 @@ modified: 2022-08-21T10:02:41.845Z
   - 无依赖；可折叠；无样式主题
   - Easy, light, flexible tree view made with React.
 
-- cp-react-tree-table /MIT/41Star/202106/ts/NoDeps
+- cp-react-tree-table /MIT/41Star/202207/ts/NoDeps/inactive
   - https://github.com/constantin-p/cp-react-tree-table
   - https://constantin-p.github.io/cp-react-tree-table/
   - 给出的示例很像data table，可以从外部按钮触发展开、折叠、滚动

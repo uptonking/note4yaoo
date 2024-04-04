@@ -83,7 +83,7 @@ modified: 2020-10-05T06:17:42.467Z
   - https://github.com/raphamorim/react-tv
     - deprecated for react-ape
 
-- https://github.com/leaferjs/leafer /MIT/ts
+- https://github.com/leaferjs/leafer /MIT/202404/ts
   - https://www.leaferjs.com/
   - HTML5 Canvas 2D 图形渲染引擎，可结合 AI 绘图、生成界面。
   - Leafer 定义了图形渲染引擎的核心功能，可以瞬间创建 100 万个图形，与具体 UI、业务场景无关
@@ -111,6 +111,13 @@ modified: 2020-10-05T06:17:42.467Z
 - https://github.com/karasjs/karas
   - A declarative JavaScript framework on Canvas/Svg/Webgl.
   - karas实现了一个微型浏览器引擎，同时扩充CSS/WAA在样式/动画上的标准，增强类似SVG的矢量标签描述语法，结合JSX/React的开发方式，形成一个对前端友好的RIA框架。
+
+- https://github.com/pikasojs/pikaso /MIT/202402/ts
+  - https://pikaso.app/
+  - Fully-typed and Fully-tested HTML5 Canvas Library
+  - Pikaso is built on top of `Konva` to provide a couple of advanced features that Konva doesn't support out of the box.
+  - Pikaso comes with support for NodeJs out of the box
+  - https://github.com/pikasojs/pikaso-react-hook
 
 - https://github.com/fabricjs/fabric.js
   - Javascript Canvas Library, SVG-to-Canvas (& canvas-to-SVG) Parser

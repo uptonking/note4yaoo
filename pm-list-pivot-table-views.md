@@ -121,7 +121,18 @@ The url define which "globe" should be focused
 
 - ## 
 
-- ## 
+- ## 🎨 Here are some tips for designing clean & effective tables
+- https://twitter.com/Ash_uxi/status/1775606725795610725
+  - Design Philosophy: Tables are critical for SaaS products. Over years of designing hundreds of tables, my approach evolved to minimal, clean & uncluttered for better readability & scannability with less strain, especially when dealing with large datasets. Minimal design wins
+  - Approach: Build small cells, then combine them into horizontal rows. These row components come in various styles. Rows are easier to prototype than columns, but columns work too!
+  - Tables start with cells, like tiny building blocks. Give them widths based on what goes inside: 170px or so for names. Text can be trimmed if it overflows, with a handy tooltip revealing everything on hover.
+  - Design all the possible versions of cells that may be used in your t able. It's okay if you're unsure now; you can always add new ones later.
+  - Select all cells, create a component set. Skip naming layers, but never forget to name your components! NEVER!
+  - Extract instances and create a horizontal row stack using autolayout.
+  - PRO TIP: To make a table looks consistent and clean, ensure elements have similar Optical heights. Increase height for standout elements like important CTAs such as "Pay Invoice."
+  - Create different variants of the row. I usually make three variants: Idle, Hover, and Selected.
+
+
 
 - ## 给新团队发一个招聘，欢迎加入字节 #多维表格 #Base 团队：
 - https://twitter.com/fkysly/status/1742513230751408397
@@ -129,16 +140,16 @@ The url define which "globe" should be focused
 1. 自研数据库内核，和字节数据库团队合作专用数据库引擎
   a. 数据规模越高越好，单表支持 X 万行记录
   b. 注意，需要有非常严格的安全合规要求，任何数据都必须严格加密
-2. 自研公式计算引擎，后端计算需要支持多租户、多场景、大规模的调度
+1. 自研公式计算引擎，后端计算需要支持多租户、多场景、大规模的调度
   a. 注意，公式支持跨行计算，计算复杂度有可能爆表，如何保证准实时的计算体验？
-3. 实时协同体验，前后端需要同构
+1. 实时协同体验，前后端需要同构
   a. 协同通常基于表锁的机制，怎么保证读写并发性能？
-4. 领先的技术品质，如何做到全面业内最优？
+1. 领先的技术品质，如何做到全面业内最优？
   a. 移动端注定无法打开大数据量的表，按需加载、渲染怎么做？
-5. Automation 自动化提供秒级执行响应
+1. Automation 自动化提供秒级执行响应
   a. 用户点击 Button 字段后触发 Automation，希望响应在秒级，否则就觉得你慢，怎么办？
-6. 开放生态，几乎任何功能都需要可扩展开放
-7. AI，AIGC 对 Base 这样 Nocode 产品会产生什么颠覆性的影响？
+1. 开放生态，几乎任何功能都需要可扩展开放
+2. AI，AIGC 对 Base 这样 Nocode 产品会产生什么颠覆性的影响？
 - 从目前的产品架构和技术分析来看，我们很有机会做到这个品类的全球领先。加入我们，一起打造世界级的产品。
 
 - 列存、Bitmap等等，大数据的数据库在单表数据上有很多参考借鉴，更专业吧

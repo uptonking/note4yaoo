@@ -48,6 +48,13 @@ modified: 2021-05-19T13:54:12.338Z
   - Flex layout and commonly used CSS
   - MVVM
   - Scaffolding and development server out of the box (supports hot reload)
+
+- https://github.com/pikasojs/pikaso /MIT/202402/ts
+  - https://pikaso.app/
+  - Fully-typed and Fully-tested HTML5 Canvas Library
+  - Pikaso is built on top of `Konva` to provide a couple of advanced features that Konva doesn't support out of the box.
+  - Pikaso comes with support for NodeJs out of the box
+  - https://github.com/pikasojs/pikaso-react-hook
 # render-to-canvas
 - Crosskit /3Star/MIT/202004/js/archived
   - https://github.com/steria773-archive/Crosskit

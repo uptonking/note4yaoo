@@ -744,9 +744,9 @@ modified: 2022-08-21T10:02:27.788Z
   - a basic table/grid view built on top of the `@fluid-example/table-document` data object.
   - it only uses it's DDS to store a reference to the created Table Document
 
-- https://github.com/itoumlilt/CRDT-Spreasheet
+- https://github.com/itoumlilt/CRDT-Spreasheet /MIT/202010/ts/inactive
   - CRDT based collaborative Spreadsheet
-  - 依赖concordant-crdtlib、delta-crdts
+  - 依赖concordant-crdtlib、delta-crdts、react-spreadsheet
   - This demo app shows a collaborative application developed using a draft implementation of the Concordant API.
   - The application uses the C-Service API which currently supports two eventual consistency backends: revision-based and CRDT-based
 # list-grid-div-react

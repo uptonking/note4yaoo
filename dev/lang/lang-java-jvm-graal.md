@@ -377,8 +377,12 @@ fs.writeFileSync(__dirname + "/test.jsb", byteCode);
 - 讲讲我个人使用的问题吧
   - 实际上graalvm占用会高一些
   - libgraal需要额外空间加载jit编译器替换掉c2，想要恢复rss占用请用企业版
-# more
-- [graalvm license分析 | mjblog_202009](https://mjblog.github.io/2020/09/25/graal_license/)
+# graal-license
+- [A New GraalVM Release and New Free License _202306](https://medium.com/graalvm/a-new-graalvm-release-and-new-free-license-4aab483692f5)
+  - 调整了许可模型，大致上是除非你收费基于graalvm 开发的应用，基本上oracle graalvm 分发版本的可以免费使用，包含了不少新特性
+
+- [graalvm license分析 _202009](https://mjblog.github.io/2020/09/25/graal_license/)
   - graalvm社区版本使整体是GPLv2 with classpath exception
   - 目前关心的组件主要有GPLv2(compiler/vm)、UPL(truffle/js)和BSD(sulong)三种协议
   - UPL是非常开放友好的开源协议。不仅允许任意重用代码(包括商业使用)，而且明确提供了专利授权和保护，法律风险非常低
+# more

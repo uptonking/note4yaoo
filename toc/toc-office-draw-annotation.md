@@ -10,12 +10,6 @@ modified: 2023-11-03T17:43:01.518Z
 # guide
 - 画板或批注类产品要参考规范 [Web Annotation Data Model](https://www.w3.org/TR/annotation-model/)
   - 富文本格式也可参考
-# whiteboard
-- https://github.com/antfu/drauu /MIT/ts
-  - https://drauu.netlify.app/
-  - Headless SVG-based drawboard in browser.
-  - built with Vanilla JavaScript
-  - Built for Slidev.
 # annotation
 - https://github.com/apache/incubator-annotator /apache2/ts
   - https://annotator.apache.org/

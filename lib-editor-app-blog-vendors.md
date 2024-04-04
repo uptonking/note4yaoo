@@ -22,7 +22,19 @@ modified: 2023-10-26T18:14:17.037Z
 - [腾讯文档渲染优化之路-肖骏](https://www.modb.pro/doc/48211)
 - [腾讯文档工程实践-李逸峰](https://www.modb.pro/doc/48204)
 
-## [浅谈 Canvas 渲染引擎设计](https://github.com/yinguangyao/blog/issues/84)
+## 🎨 [浅谈 Canvas 渲染引擎设计 _202302](https://github.com/yinguangyao/blog/issues/84)
+
+- 绘制 Canvas 的时候一般是通过相对坐标来确定当前要绘制的位置，所以都是通过各种计算来拿到 x、y。 即使是 Konva 也是依赖于 x、y 来做相对定位。
+  - 因此，在 AntV 和 SpriteJS 这类 Canvas 渲染引擎里面，都内置支持了盒模型的语法糖，底层会将盒模型属性进行一次计算转换成 x、y。
+- 在腾讯开源的 Hippy 里面自己实现了一套类似 Yoga 的排版引擎，叫做Titank
+- 在飞书文档多维表格里面，排版语法更加接近于 Flutter，实现了 Padding、Column、Row、Margin、Expanded、Flex、GridView 等 Widget。
+
+- 离屏渲染我们应该都比较熟悉了，就是两个 Canvas 来回用 drawImage 绘制可复用部分，从而减少绘制的耗时。
+  - 在 Konva 中的离屏渲染主要是针对 Group 级别来做的，通过调用 cache 方法就能实现离屏渲染。
+
+- 在多维表格看板视图里面，每个分组都是一个虚拟列表，多个分组（虚拟列表）又组合成一个大的虚拟列表。
+
+- 由于飞书多维表格底层统一了渲染引擎，所有绘制元素都是 Widget（对齐 Flutter），可以脱水转换成下面 FVG 格式。
 
 ## [腾讯文档渲染层 Feature 设计 - 掘金](https://juejin.cn/post/7185789225902538811)
 

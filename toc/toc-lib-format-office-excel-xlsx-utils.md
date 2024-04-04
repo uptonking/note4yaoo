@@ -198,7 +198,7 @@ modified: 2023-01-09T11:04:13.958Z
   - Extendable formula parser and executor.
   - It supports three types of literals (data types): string/number/boolean
 
-- https://github.com/plantain-00/expression-engine
+- https://github.com/plantain-00/expression-engine /MIT/202402/ts
   - An expression tokenizer, parser and evaluator.
 
 - https://github.com/vinci1it2000/formulas /python

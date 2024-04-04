@@ -9,7 +9,7 @@ modified: 2023-11-23T18:01:59.304Z
 
 # guide
 
-# examples
+# popular
 - https://github.com/jaredpalmer/formik /ts/react/代码少
   - https://formik.org/
   - Build forms in React, without the tears.
@@ -17,11 +17,11 @@ modified: 2023-11-23T18:01:59.304Z
   - https://github.com/sagarrajak/formikplusplus
   - https://github.com/astonmartin07/formik
   - https://github.com/DemoChimpDev/formik-with-sync
-- https://github.com/formium/formium
-  - https://formium.io/
-  - Formium is an API-first, headless online form builder and automation tool
-  - In addition to hosting forms and surveys on formium.io, you can use your own React components to natively render your forms and surveys in your existing apps 
-  - 依赖 formik
+  - https://github.com/formium/formium /BSL/202107/ts/inactive
+    - https://formium.io/
+    - Formium is an API-first, headless online form builder and automation tool
+    - In addition to hosting forms and surveys on formium.io, you can use your own React components to natively render your forms and surveys in your existing apps 
+    - 依赖 formik
 
 - https://github.com/react-hook-form/react-hook-form /代码高度模块化
   - https://react-hook-form.com/
@@ -59,6 +59,11 @@ modified: 2023-11-23T18:01:59.304Z
 - https://github.com/charlzyx/da
   - https://charlzyx.github.io/da/
 
+
+- https://github.com/formkit/formkit /MIT/202403/ts
+  - https://formkit.com/
+  - FormKit is a form-authoring framework for Vue
+  - supports its whole feature set for native HTML inputs (like select, checkbox, and textarea) 
 # form-elements
 
 - tom-select /947Star/apache2/202212/ts/vanillajs

@@ -65,7 +65,15 @@ modified: 2023-11-01T10:15:06.245Z
 
 - ## 
 
-- ## 
+- ## Are there any databases which do MVCC at page level granularity and have multi writer concurrency? Or any research papers on the same?
+- https://twitter.com/iavins/status/1775532839179633076
+  - Only one I know is SQLite's `BEGIN CONCURRENT` (alpha) feature
+- SQLite also does single writer MVCC with pages.. but I am interested in learning more about multiple writers.
+
+- I don’t understand the question. MVCC is usually associated with transactions and the versions are usually of rows (don’t have to be). A page can be made up of many rows and versions of these rows from many different transactions. Some active and some completed or rolled back. Note rollback doesn’t imply that the changes are undone. The changes are “invisible”, that’s the job of the MVCC.
+- AFAIK, Oracle uses row versioning for MVCC, InnoDB copies that design.
+- It’s still row version based. The head of the row version list is in the block. That’s all. It makes no sense to log both blocks and row versions. 
+- Postgres stores the versions in the table and that’s why vacuum is a pain.
 
 - ## 🆚️ Trying to get a sense for thread architectures:
 - https://twitter.com/eatonphil/status/1773518000043299309

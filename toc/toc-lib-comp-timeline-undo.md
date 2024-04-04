@@ -16,10 +16,21 @@ modified: 2023-11-24T18:41:26.906Z
   - testing/drafting
   - form editing
 # timeline
+- https://github.com/reduxjs/redux-devtools/tree/main/packages/redux-devtools-slider-monitor /202404/ts
+  - A custom monitor for use with Redux DevTools.
+  - It uses a slider based on `react-slider` to slide between different recorded actions. 
+  - 不依赖redux-toolkit
+  - 依赖react-redux、styled-components
+  - It also features play/pause/step-through, which is inspired by some very cool Elm examples.
+  - https://github.com/calesce/redux-slider-monitor /201706/js/inactive
+    - https://calesce.github.io/redux-slider-monitor/
+    - A custom monitor for Redux DevTools to replay recorded Redux actions
+    - This package was merged into redux-devtools monorepo
+
 - https://github.com/inakianduaga/redux-state-history /201608/ts
   - https://inakianduaga.github.io/redux-state-history-example/
   - Redux store enhancers for tracking and visualizing state changes
-  - 依赖react-redux、jsondiffpatch
+  - 依赖react-redux、jsondiffpatch、react-dropzone
   - todomvc在页面上展示op时间轴的示例，可自动播放，无需devtools，直接在页面上展示
   - Inspired by the redux devtools and redux slider monitor, this package provides state recording/playback (i.e. "time travel") abilities for redux applications.
   - Only state diffs are stored for each state change (performance untested for large state/long running applications).
@@ -27,20 +38,19 @@ modified: 2023-11-24T18:41:26.906Z
   - Import/Export histories: Play them back locally, including realtime speed.
   - Time-travel is "pure": That is, state history changes without refiring the actual actions that produced said change (so still works for impure/async actions).
   - A store enhancer provides the history tracking on each state change, recording the state change, the timestamp of the change, and the action type that produced said change.
-  - https://github.com/calesce/redux-slider-monitor /201706/js
-    - https://calesce.github.io/redux-slider-monitor/
-    - A custom monitor for Redux DevTools to replay recorded Redux actions
-    - This package was merged into redux-devtools monorepo
 
-- https://github.com/squarechip/timeline /202002/js/NoDeps/支持横竖向
+- https://github.com/squarechip/timeline /202002/js/NoDeps/inactive
   - https://squarechip.github.io/timeline/
-  - vanilla JavaScript horizontal/vertical timeline.
+  - vanilla JavaScript horizontal/vertical timeline
+  - 支持横竖向
 
-- https://github.com/prabhuignoto/react-chrono /3.7kStar/MIT/202311/ts
+- react-chrono /3.8kStar/MIT/202403/ts
+  - https://github.com/prabhuignoto/react-chrono
   - https://react-chrono.prabhumurthy.com/
   - https://5f985eb478dcb00022cfd60e-wfennyutax.chromatic.com/
   - Modern Timeline Component for React
   - 依赖dayjs、styled-components
+  - 示例丰富，支持自定义icon、动态请求、
   - Render timelines in three different modes (Horizontal, Vertical, Vertical-Alternating).
   - Auto play the timeline with the slideshow mode.
   - Nested timelines
@@ -50,6 +60,7 @@ modified: 2023-11-24T18:41:26.906Z
   - https://react-timeline.com/
   - add responsive and customizable timelines to React apps.
   - 支持alternate间隔布局、日期事布两列局件
+
 - https://github.com/rcdexta/react-event-timeline /201905/js/仅竖向
   - https://rcdexta.com/react-event-timeline
   - React component to generate a responsive vertical event timeline
@@ -64,15 +75,32 @@ modified: 2023-11-24T18:41:26.906Z
   - customizable, interactive timelines and 2d-graphs with items and ranges
   - 鼠标滚动时会缩放日期范围
   - 示例丰富
+  - 依赖moment、vis-data、vis-util，代码量不大
   - https://github.com/razbensimon/react-vis-timeline
+  - https://github.com/visjs/vis-data
+    - Manage unstructured data using DataSet. 
+    - Add, update, and remove data, and listen for changes in the data.
 
-- TimelineJS /2.8kStar/MPLv2/202309/js
+- TimelineJS /2.8kStar/MPLv2/202309/js/inactive
   - https://github.com/NUKnightLab/TimelineJS3
   - http://timeline.knightlab.com/
   - https://timeline.knightlab.com/examples/houston/index.html
   - A Storytelling Timeline built in JavaScript.
   - TimelineJS works on any site or blog.
   - https://github.com/NUKnightLab/TimelineJS /8.8kStar/201507/js
+
+- https://github.com/twitter/labella.js /201705/js
+  - https://twitter.github.io/labella.js/
+  - Placing labels on a timeline without overlap.
+  - If you try to place labels for points on a timeline (or any 1D space), one common problem is the labels often overlap.
+  - Force is the main engine that takes your nodes (labels) and figures out where to place them on the screen. 
+    - There are actually two steps in this process: distribute and remove overlap(s)
+    - In the distribute step, the nodes are split into multiple layers if all nodes cannot fit within one layer. 
+    - In the remove overlap(s) step, Labella employs a constraint-based layout algorithm and uses special quadratric programming solver called VPSC to find the best location to place the nodes. 
+  - labella.js does not require D3 to function though. It is a standalone library with no dependency. D3 was only used in the examples for demoing purpose
+  - https://github.com/kristw/d3kit-timeline /201802/js/依赖d3-scale-axis
+    - https://d3kit-timeline.vercel.app/
+    - reusable timeline component built on top of D3, d3Kit and Labella.js
 # gantt
 - https://github.com/guiqui/react-timeline-gantt /202112/js
   - https://guiqui.github.io/react-timeline-gantt/index.html
@@ -110,20 +138,13 @@ modified: 2023-11-24T18:41:26.906Z
 - https://github.com/nicoespeon/gitgraph.js /2.9kStar/MIT/202209/ts/inactive
   - https://www.nicoespeon.com/gitgraph.js
   - https://www.nicoespeon.com/gitgraph.js/stories/
-  - A JavaScript library to draw pretty git graphs in the browser
-  - core无依赖，支持vanillajs、React
-  - @gitgraph/core contains the main logic for manipulating git-like API and compute the graph that should be rendered.
+  - 🌵 A JavaScript library to draw pretty git graphs in the browser
+  - core无依赖，支持vanillajs、React，基于svg实现
+  - core contains the main logic for manipulating git-like API and compute the graph that should be rendered.
 
 - https://github.com/sdq/history-tree /201901/js
   - https://sdq.github.io/history-tree/
   - An interactive history tree for undo/redo/reset/revisit in javascript
-
-- https://github.com/philipmendels/undomundo /202204/ts/依赖fp-ts
-  - a library for managing an action-based undo history, with support for time travel and branching. 
-  - It can be used in a multi-user setting because it allows for modification of the history at the time of undo/redo, as visually explained in this blog article from Figma.
-  - Undomundo does not enable you to declare in advance which actions should be grouped/skipped and under which circumstances. You can however skip actions on a per-call basis
-  - https://github.com/philipmendels/use-flexible-undo
-    - React hook that lets you use undomundo's branching undo/redo functionality independently of how you structure your application state
 
 - https://github.com/mikolalysenko/version-tree /201404/js/inactive
   - A data structure for maintaining a tree of versions. 
@@ -173,10 +194,30 @@ modified: 2023-11-24T18:41:26.906Z
 - https://github.com/open-source-labs/reactime /2.1kStar/MIT/202310/ts
   - https://www.reacti.me/
   - an open-source Chrome developer tool for time travel debugging and performance monitoring in React applications. 
-  - Reactime enables developers to record snapshots of application state, jump between and inspect state snapshots, and monitor performance metrics such as component render time and render frequency.
+  - enables developers to record snapshots of application state, jump between and inspect state snapshots, and monitor performance metrics such as component render time and render frequency.
   - Whenever the state is changed (whenever setState, useState is called), this extension will create a snapshot of the current state tree and record it
   - jump to any previously recorded snapshots
-# utils
+# utils/undo
+- https://github.com/philipmendels/undomundo /202204/ts/依赖fp-ts
+  - https://github.com/philipmendels/undomundo-multiplayground
+  - https://philipmendels.github.io/undomundo-multiplayground/
+  - a library for managing an action-based undo history, with support for time travel and branching. 
+  - 🤝🏻 It can be used in a multi-user setting because it allows for modification of the history at the time of undo/redo, as visually explained in this blog article from Figma.
+  - Undomundo does not enable you to declare in advance which actions should be grouped/skipped and under which circumstances. You can however skip actions on a per-call basis
+  - https://github.com/philipmendels/use-flexible-undo
+    - React hook that lets you use undomundo's branching undo/redo functionality independently of how you structure your application state
+  - https://github.com/philipmendels/overboard
+    - Example repo for using the library use-flexible-undo together with an interactive board. 
+    - The board itself is built from scratch in React. The list with draggable items/layers uses react-beautiful-dnd.
+    - Desktop only. No touch support yet.
+
+- https://github.com/plantain-00/composable-editor-canvas /MIT/202404/ts
+  - https://plantain-00.github.io/composable-editor-canvas/
+  - A composable editor canvas library.
+  - 提供了多种编辑场景示例
+  - 提供了多种render target:react, react-canvas, react-svg, react-webgl
+  - 实现了2种undo: undo, patch-based-undo-redo
+
 - https://github.com/ArthurClemens/JavaScript-Undo-Manager /424Star/MIT/202305/js/NoDeps/单文件
   - https://codesandbox.io/s/undo-manager-color-sliders-z4myoj
   - Simple undo manager to provide undo and redo actions in JavaScript applications.
@@ -197,7 +238,7 @@ modified: 2023-11-24T18:41:26.906Z
 - https://github.com/JannicBeck/undox /202103/ts/inactive
   - Redux Implementation of Undo/Redo based on storing actions instead of states.
   - Actions are stored in an array named history. 
-  - 🐛🆚️ The most popular and used library to add undo/redo functionality to redux is without a doubt redux-undo. It stores whole states instead of actions. This is great for small states and fat actions, but does not scale well if the state tree grows and especially if state is persisted.
+  - 🐛🆚️ The most popular and used library to add undo/redo functionality to redux is without a doubt `redux-undo`. It stores whole states instead of actions. This is great for small states and fat actions, but does not scale well if the state tree grows and especially if state is persisted.
   - It really just boils down to if your state is fat and your actions are thin or your state is thin and your actions are fat.
 - https://github.com/omnidan/redux-undo /202001/js
   - higher order reducer to add undo/redo functionality to redux state containers
@@ -213,24 +254,12 @@ modified: 2023-11-24T18:41:26.906Z
   - provides a simple and flexible pattern to define user actions that can be done and undone through the historyManager
   - You can record multiple actions within a single ChangeLog and undo them all in one call.
 
-- https://github.com/twitter/labella.js /201705/js
-  - https://twitter.github.io/labella.js/
-  - Placing labels on a timeline without overlap.
-  - If you try to place labels for points on a timeline (or any 1D space), one common problem is the labels often overlap.
-  - Force is the main engine that takes your nodes (labels) and figures out where to place them on the screen. 
-    - There are actually two steps in this process: distribute and remove overlap(s)
-    - In the distribute step, the nodes are split into multiple layers if all nodes cannot fit within one layer. 
-    - In the remove overlap(s) step, Labella employs a constraint-based layout algorithm and uses special quadratric programming solver called VPSC to find the best location to place the nodes. 
-  - labella.js does not require D3 to function though. It is a standalone library with no dependency. D3 was only used in the examples for demoing purpose
-  - https://github.com/kristw/d3kit-timeline /201802/js/依赖d3-scale-axis
-    - https://d3kit-timeline.vercel.app/
-    - reusable timeline component built on top of D3, d3Kit and Labella.js
-
 - https://github.com/zaboople/klonk /Klonk/202309/java
   - A text editor with an sort-of-unusual undo/redo algorithm
   - [Resolving the great undo-redo quandary | Hacker News _202211](https://news.ycombinator.com/item?id=33560275)
 # graphics
 - https://github.com/metricsgraphics/metrics-graphics /7.3kStar/MPLv2/202004/ts/inactive
+  - http://metricsgraphicsjs.org/
   - a library built for visualizing and laying out time-series data
   - currently supports line charts, scatterplots and histograms, as well as features like rug plots.
 # more

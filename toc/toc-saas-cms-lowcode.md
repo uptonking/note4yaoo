@@ -188,19 +188,22 @@ modified: 2023-01-20T21:59:47.792Z
   - Built with DNA from Keystone, connects directly to GitHub and doesn’t mess with your source code. 
   - Conceived(构想；设想) for modern front-end frameworks like Next.js, Remix and Astro, designed to fit into your workflow.
 
-- alinea /654Star/MIT/202311/ts/tiptap
+- alinea /654Star/MIT/202403/ts/tiptap
   - https://github.com/alineacms/alinea
   - https://alinea.sh/
   - https://demo.alinea.sh/
-  - an open source headless CMS written in Typescript.
+  - modern content management system
   - 非wysiwyg，左侧编辑块数据，右侧预览
   - 依赖dnd-kit、yjs、react-query、tiptap
   - Content is stored in flat files and committed to your repository
-  - 👉🏻 Content is easily queryable through an in-memory SQLite database
-  - Content is fully typed
-  - Content is available during static site generation and when server side querying. Content is bundled with your code and can be queried with zero network overhead.
+  - 🛢️ Content is easily queryable through an in-memory SQLite database
+  - Content is version controlled in your git repository. Easily branch and feature test content changes.
+  - Content is available during static site generation and when server side querying. 
+    - Content is bundled with your code and can be queried with zero network overhead.
+    - Content is bundled with deploys so it can be retrieved without network roundtrips.
   - Alinea supports custom backends that can be hosted as a simple Node.js process or on serverless runtimes.
     - Hosting an Alinea backend requires several services such as storing and retrieving drafts, publishing changes and authenticating users
+  - 🚀 [Introducing Alinea _202209](https://alinea.sh/blog/introducing-alinea)
 
 - https://github.com/MrXujiang/lowcode-cms
   - 基于dooring低台, 代码社区的开源cms系统
@@ -387,7 +390,7 @@ modified: 2023-01-20T21:59:47.792Z
   - It uses a JSON datastore with content saved in both json files and in memory.
   - You can download and upload a single binary backup file containing content, images, and templates as needed.
 
-- https://github.com/CromwellCMS/Cromwell /600Star/MIT/202308/ts
+- https://github.com/CromwellCMS/Cromwell /600Star/MIT/202308/ts/inactive
   - https://cromwellcms.com/docs/overview/intro/#examples
   - open source headless TypeScript CMS for creating lightning-fast websites with React and Next.js. 
   - It has a powerful plugin/theming system while providing extensive Admin panel GUI for WordPress-like user experience. 

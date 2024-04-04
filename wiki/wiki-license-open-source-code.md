@@ -535,12 +535,12 @@ modified: 2021-09-14T18:58:58.275Z
 
 - A license with no conditions whatsoever which dedicates works to the public domain. 
 - Unlicensed works, modifications, and larger works may be distributed under different terms and without source code.
-# Universal Permissive License (UPL) 
+# Universal Permissive License (UPL) 🔒
 - ref
   - https://oss.oracle.com/licenses/upl/
   - https://tldrlegal.com/license/universal-permissive-license-1.0-(upl-1.0)
 
-- [graalvm license分析 | mjblog_202009](https://mjblog.github.io/2020/09/25/graal_license/)
+- [graalvm license分析 _202009](https://mjblog.github.io/2020/09/25/graal_license/)
   - graalvm社区版本使整体是GPLv2 with classpath exception
   - 目前关心的组件主要有GPLv2(compiler/vm)、UPL(truffle/js)和BSD(sulong)三种协议
   - UPL是非常开放友好的开源协议。不仅允许任意重用代码(包括商业使用)，而且明确提供了专利授权和保护，法律风险非常低

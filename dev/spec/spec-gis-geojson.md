@@ -71,3 +71,21 @@ modified: 2021-09-30T07:43:15.350Z
 # dev
 
 - 
+
+# discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Geojson is the worst geospatial file format.
+- https://twitter.com/MapMakinMeyers/status/1775621983939510448
+  - Shapefile is better eight days outta the week compared to geojson.
+
+- Geojson is good for one thing: previewing as text without having to load a GIS program but how much is that worth?
+- NDGeoJSON is a little better
+
+- GeoArrow has the potential to be good for both
+
+- XML is easier to understand JSON formatting is. It serves it's purpose in ArcMap by making layers and datasets easier to parse and import into a map.

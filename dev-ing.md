@@ -328,6 +328,11 @@ betterdiscordctl -i flatpak install
 
 ## 040
 
+## 0404
+
+- [Does TypeScript Interface have anonymous and named function? - Stack Overflow](https://stackoverflow.com/questions/41082804/does-typescript-interface-have-anonymous-and-named-function)
+  - An "unnamed" member in a TypeScript interface does not refer to an anonymous member, but declares the function signature of the interfaced class itself
+
 ## 0403
 
 - [How do I reload a page with react-router? - Stack Overflow](https://stackoverflow.com/questions/46820682/how-do-i-reload-a-page-with-react-router)

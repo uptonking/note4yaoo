@@ -66,12 +66,12 @@ modified: 2023-01-01T13:24:35.994Z
   - Jhaystack allows you to create full-text indexes using an index strategy. 
   - Full-text indexes can be used not just for full-text search but also for search filters in queries which works great for larger data sets.
 
-- https://github.com/jameslittle230/stork /apache2/202307/rust/ts
+- https://github.com/jameslittle230/stork /apache2/202307/rust/ts/inactive
   - fast web search, made for static sites.
   - Stork is built with Rust, and the Javascript library uses WebAssembly behind the scenes.
   - [I'm winding down my work with Stork_202306](https://github.com/jameslittle230/stork/discussions/360)
     - Tinysearch and PageFind are, philosophically, the most similar alternatives to Stork. 
-    - Lunr, Fuse.js, and Minisearch are similar, but are Javascript-only (no WASM). 
+    - 💡 Lunr, Fuse.js, and Minisearch are similar, but are Javascript-only (no WASM). 
     - Meilisearch, EdgeSearch, and Tantivy are all server-hosted search engines written in Rust. 
 # search-js
 - flexsearch /11.3kStar/apache2/202401/js
@@ -142,7 +142,7 @@ modified: 2023-01-01T13:24:35.994Z
   - forks
   - https://github.com/Mister-Hope/slimsearch /202402/ts
 
-- itemsjs /274Star/apache2/202208/js/NoDeps
+- itemsjs /274Star/apache2/202403/js/NoDeps
   - https://github.com/itemsapi/itemsjs
   - Full text, faceted, (almost) dependency free search engine in javascript
   - **Created to perform fast search on json dataset (up to 100K items)**.
@@ -386,13 +386,14 @@ modified: 2023-01-01T13:24:35.994Z
     - https://github.com/unplatform-io/clientside-instantsearch-demo
     - https://clientside-instantsearch-demo.vercel.app/
 
-- https://github.com/searchkit/searchkit /3.9kStar/apache2/202312/ts
+- https://github.com/searchkit/searchkit /4.7kStar/apache2/202403/ts
   - http://www.searchkit.co/docs
   - https://www.searchkit.co/demos
   - Search UI for Elasticsearch & Opensearch. 
   - Compatible with Algolia's Instantsearch and Autocomplete components. 
-  - React & Vue support
   - core几乎无依赖
+  - Works with Javascript, React, Vue, Angular, and more.
+  - Searchkit Node API proxies Elasticsearch requests from the browser.
   - https://github.com/searchkit/searchkit-starter-app
 
 - https://github.com/appbaseio/dejavu /8.3kStar/MIT/202301/js/inactive

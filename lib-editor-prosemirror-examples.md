@@ -86,11 +86,11 @@ modified: 2022-08-18T16:57:46.405Z
   - Great support for mobile devices.
   - Out-of-the-box editors, or create own by composing extensions.
   - Collaborative editing with yjs or prosemirror-collab.
-  - https://github.com/ocavue/prosekit /101Star/MIT/202312/ts
-    - https://prosekit.dev/
-    - Framework agnostic and headless rich text editor based on ProseMirror
-    - why not keep developing remirror?
-    - I’ll continue maintaining Remirror. The api change is just too big that I cannot base on the Remirror codebase.
+- https://github.com/ocavue/prosekit /101Star/MIT/202404/ts
+  - https://prosekit.dev/
+  - Framework agnostic and headless rich text editor based on ProseMirror
+  - why not keep developing remirror?
+  - I’ll continue maintaining Remirror. The api change is just too big that I cannot base on the Remirror codebase.
 
 - prosemirror-adapter /65Star/MIT/202311/ts
   - https://github.com/Saul-Mirone/prosemirror-adapter
@@ -415,6 +415,11 @@ modified: 2022-08-18T16:57:46.405Z
       - 合并了其他人的修复 https://github.com/kepta/prosemirror-dev-tools
     - https://github.com/luke-john-atlassian/prosemirror-devtools /单独app或extension/inactive
     - [Is there a good way to understand the “pos” that is used all over?](https://discuss.prosemirror.net/t/is-there-a-good-way-to-understand-the-pos-that-is-used-all-over/3458)
+
+- https://github.com/WaiSiuKei/neditor /MIT/202308/ts/inactive
+  - https://waisiukei.github.io/neditor/
+  - rich text editor aimed at running in Canvas.
+  - 在事件模型和 DOM 模型都准备好之后，移植 ProseMirror 就非常容易了。
 # tiptap/milkdown/remirror/atlassian
 - typist /8Star/MIT/202211/ts
   - https://github.com/Doist/typist

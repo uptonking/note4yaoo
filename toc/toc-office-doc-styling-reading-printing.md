@@ -250,6 +250,14 @@ modified: 2022-10-05T04:57:38.647Z
 - https://github.com/vincentdoerig/latex-css
   - https://latex.vercel.app/
   - This almost class-less CSS library turns your HTML document into a website that looks like a LATEX document. 
+# printing
+- https://github.com/wuxue107/bookjs-eazy /MIT/202310/js/inactive
+  - HTML自动分页插件。用于生成PDF, 前端WEB打印生成PDF或后端wkhtmltopdf、chrome headless生成
+  - 主要解决，HTML生成PDF，分页可控的问题
+  - 依赖 jquery、lodash、bookjs-eazy
+
+- https://github.com/booktype/BookJS /AGPLv3/201804/js
+  - BookJS was an effort to use the page formatting functions present in certain Chromium versions to convert a webpage into a set of pages formatted for printing
 # more
 - https://github.com/wecatch/markdown-css
   - http://wecatch.me/markdown-css/

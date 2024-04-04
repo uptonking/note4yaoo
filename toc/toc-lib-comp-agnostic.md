@@ -19,25 +19,20 @@ modified: 2020-11-13T07:28:27.824Z
   - 跨平台的差异，考虑拖拽、弹层
   - react-canvas/webgl，在一定程度也是将vdom渲染到不同平台
 
+- 组件库组成
+  - state, styling, a11y, animation
+
 - refs
   - https://github.com/SaraVieira/ui-libraries /组件库对比
   - [The Vanilla Javascript Component Pattern](https://dev.to/megazear7/the-vanilla-javascript-component-pattern-37la)
 # framework-agnostic components
-- https://github.com/dmitriz/un /202304/js
-  - Unframework for Universal Uncomponents
-  - We do not think in terms of reusable components. Instead, we focus on reusable functions.
-  - Write your business logic as pure functions with no external dependencies
-  - Why "uncomponent"? Because there isn't really much of a "component", the `reducer` and the `view` are just two plain functions and the initial `state` is a plain value.
-    - your simply import your favorite familiar libraries that you are already using anyway
-  - Currently a single tiny factory function called `createMount`. Its role is similar to `React.render`.
-  - Streams are in the core of un
-
 - zag /1.5kStar/MIT/202210/ts/state-machine/panda-css
   - https://github.com/chakra-ui/zag
   - https://zagjs.com/overview/introduction
   - Finite state machines for accessible JavaScript components
   - The component interactions are modelled in a framework agnostic way. 
   - We provide adapters for JS frameworks like React, Solid, or Vue.
+  - 技术选型很独特，css基于自研panda，或属性css选择器
   - Zag.js (low-level state machine) => Ark (headless components) => Chakra (Ark + CSS-in-JS)
   - The machine APIs are completely unstyled and gives you the control to use any styling solution you prefer.
   - Zag is built on top of the latest ideas in Statecharts. We don't follow the SCXML specifications
@@ -45,6 +40,7 @@ modified: 2020-11-13T07:28:27.824Z
     - [Roadmap - v3.0_2022-12-30](https://github.com/chakra-ui/chakra-ui/issues/7180)
     - excited to push all interactive components from Zag.js into Chakra UI in v4.
     - [The Future of Chakra UI in 4 parts_202102: styling build time, state-machine, a11y, motion](https://www.youtube.com/watch?v=I5xEc9t-HZg)
+    - [The future of Chakra UI _202303](https://www.adebayosegun.com/blog/the-future-of-chakra-ui)
 
 - papanasi /298Star/MIT/202211/ts/Mitosis
   - https://github.com/CKGrafico/papanasi
@@ -56,10 +52,19 @@ modified: 2020-11-13T07:28:27.824Z
     - Write components once, compile to every framework
     - While `Zag.js` focuses on writing framework-agnostic interactions, `Mitosis` focuses on writing framework-specific components.
 
+- https://github.com/dmitriz/un /202304/js/inactive
+  - Unframework for Universal Uncomponents
+  - We do not think in terms of reusable components. Instead, we focus on reusable functions.
+  - Write your business logic as pure functions with no external dependencies
+  - Why "uncomponent"? Because there isn't really much of a "component", the `reducer` and the `view` are just two plain functions and the initial `state` is a plain value.
+    - your simply import your favorite familiar libraries that you are already using anyway
+  - Currently a single tiny factory function called `createMount`. Its role is similar to `React.render`.
+  - Streams are in the core of un
+
 - https://github.com/phonon-framework/phonon /421Star/MIT/202004/ts/inactive
   - responsive front-end framework with a focus on flexibility in Sass and TS
   - theming基于sass vars
-  - 提供了在react/vue(无angular)项目中使用phonon组件的示例
+  - 提供了在react/vue项目中使用phonon组件的示例
     - 可以使用css和dom标签，重新实现react组件，与js组件无关
     - 也可在react组件的didMount方法中，创建js组件对象，在render方法中给dom标签添加ref进行操作，而不是`return null`
   - Phonon uses a DOM MutationObserver which enables to react to DOM changes
@@ -100,8 +105,8 @@ modified: 2020-11-13T07:28:27.824Z
   - [Semi Design - UI组件库如何分层设计，使其具备适配多种mvvm框架能力](https://bytedance.feishu.cn/wiki/wikcnOVYexosCS1Rmvb5qCsWT1f)
   - [希望官方支持 Vue 版本](https://github.com/DouyinFE/semi-design/issues/311)
     - 我们的工作重点依然是React体系。没有计划去重新实现一个Vue版本
-    - https://github.com/rashagu/semi-design-vue /202311/ts
-      - Vue3 UI components based on semi-design and Vue
+  - https://github.com/rashagu/semi-design-vue /202401/ts
+    - Vue3 UI components based on semi-design and Vue
 
 - https://github.com/carbon-design-system/carbon
   - /3.5kStar/Apache2/202009/js
@@ -109,7 +114,7 @@ modified: 2020-11-13T07:28:27.824Z
   - carbon-components-react: 基于class组件实现
   - @carbon/elements: IBM Design Language elements like colors, type, iconography, and more
 
-- easy-canvas /555Star/MIT/202208/js/NoDeps
+- easy-canvas /555Star/MIT/202208/js/NoDeps/inactive
   - https://github.com/Gitjinfeiyang/easy-canvas
   - https://gitjinfeiyang.github.io/easy-canvas/example/ui.html
   - 使用render函数在canvas中创建文档流布局，海报图、小程序朋友圈分享图。
@@ -145,7 +150,7 @@ modified: 2020-11-13T07:28:27.824Z
 
 - tradeshift-ui /33Star/lic/202009/js/deprecated
   - https://github.com/Tradeshift/tradeshift-ui
-  - a framework-agnostic JavaScript library to provide reusable UI components.
+  - a framework-agnostic JavaScript library to provide reusable UI components
   - Check out Tradeshift new Web Component-powered UI library Elements.
   - https://github.com/Tradeshift/react-tradeshift-ui
     - https://github.com/jinglongchenTS/react-tradeshift-ui
@@ -162,7 +167,7 @@ modified: 2020-11-13T07:28:27.824Z
     - Primitive (bottom-up runtime approach): framework agnostic low-level building blocks.Each primitive acts as an adapter to plug framework dependent logic.
     - Compiler (build time approach): Use a build tool to generate, from a single source code, either web component (eg. via Stencil) or per framework implementations (eg. via Mitosis).
 # adapters
-- https://github.com/plantain-00/schema-based-json-editor
+- https://github.com/plantain-00/schema-based-json-editor /MIT/202211/ts/inactive
   - https://plantain-00.github.io/schema-based-json-editor/packages/react/demo/
   - A reactjs and vuejs component of schema based json editor.
 
@@ -185,8 +190,8 @@ modified: 2020-11-13T07:28:27.824Z
   - click to choose file(s)
   - paste file from clipboard
   - progress bar
-# vanillajs
-- https://github.com/vitmalina/w2ui /2.6kStar/MIT/202310/js
+# vanillajs-fwk-suite
+- https://github.com/vitmalina/w2ui /2.6kStar/MIT/202403/js
   - http://w2ui.com/
   - UI widgets for modern apps.
   - Data table, forms, toolbars, sidebar, tabs, tooltips, popups.
@@ -195,7 +200,7 @@ modified: 2020-11-13T07:28:27.824Z
   - All classes in w2ui are extended from w2base class that provides basic event functionality.
   - All under 120kb (gzipped).
 
-- https://github.com/jsuites/jsuites /476Star/MIT/202311/js
+- https://github.com/jsuites/jsuites /476Star/MIT/202403/js
   - https://github.com/paulhodel/jsuites
   - https://bossanova.uk/jsuites
   - a collection of lightweight common required javascript components. 
@@ -230,7 +235,7 @@ modified: 2020-11-13T07:28:27.824Z
 - https://github.com/abuseofnotation/vanilla-fp /202310/js
   - The no-framework framework for building component-based purely-functional UIs.
   - A component is a pure-ish function that typically receives two parameters (called 'state' and 'setState', but can vary across components)
-  - Each vanilla-fp , a component is in charge of keeping the states of its children, instead of utilizing some external global functions and frameworks.
+  - Each vanilla-fp, a component is in charge of keeping the states of its children, instead of utilizing some external global functions and frameworks.
   - In vanilla-js, the state is handled by passing some simple event-handling functions from the parent component to the children, which means that you have to write the 'setState' implementation of your children every time
   - https://github.com/abuseofnotation/fediscope
 

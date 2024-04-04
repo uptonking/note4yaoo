@@ -32,7 +32,11 @@ modified: 2022-12-24T07:31:48.493Z
 
 - ## 
 
-- ## 
+- ## Why are the Cloudflare folks so obsessed with using WASM as the runtime for Workers? 
+- https://twitter.com/auxten/status/1775554577649340830
+  - I personally prefer AWS Firecracker. Has Cloudflare lost engineers who understand the low level technology?
+- I have the same question. WASM is an extremely promising technology, but since many Python packages are not compatible with it yet, it doesn't seem like a great value proposition to tell me they'll run my Python code with WASM.
+- from what I can tell, the push for wasm is mainly because they've invested a lot into v8 isolates, and v8 can only run javascript and wasm
 
 - ## Wasm actually delivered a cross-platform and cross-architecture bytecode, a legitimate technical feat, 
 - https://twitter.com/paulgb/status/1737601018198732947

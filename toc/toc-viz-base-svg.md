@@ -66,3 +66,5 @@ modified: 2020-10-05T06:18:21.639Z
   - web-based, JavaScript-driven SVG drawing editor that works in any modern browser. 
   - SVGEdit is based on a powerful SVG canvas @svgedit/svgcanvas
 # more-repos
+- https://github.com/ngti/svg-grabber /MIT/201803/js/inactive
+  - Open source chrome extension to quickly preview, download or copy inline or embedded SVG images from a website

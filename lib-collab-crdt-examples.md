@@ -1110,7 +1110,7 @@ modified: 2022-04-05T10:08:25.947Z
     - For small number of selection brute(纯体力的) force over all known selections wouldn't be an issue. 
     - For bigger number, we could modify indexing structures for 2-dimensional data such as R-Trees (used ie. to index geospatial data).
 
-- https://github.com/zxch3n/lww-table /202402/rust
+- https://github.com/zxch3n/lww-table /NALic/202402/rust
   - Lightweight & Fast LWW CRDT Table
   - Supports delta updates
   - It allows for syncing tabular data via peer-to-peer connections, supports end-to-end encryption
@@ -1130,6 +1130,15 @@ modified: 2022-04-05T10:08:25.947Z
   - 依赖concordant-crdtlib、delta-crdts
   - This demo app shows a collaborative application developed using a draft implementation of the `Concordant` API.
   - The application uses the C-Service API which currently supports two eventual consistency backends: revision-based and CRDT-based
+  - https://gitlab.inria.fr/concordant/software/c-service /MIT/202209/ts/inactive
+    - https://github.com/concordant/c-service
+    - The C-Service is a lightweight proxy service that can run on many kinds of devices and connect in one end C-Client instances
+    - it runs as a ServiceWorker in web browsers, using PouchDB to synchronize with a remote CouchDB server
+  - https://gitlab.inria.fr/concordant/software/c-crdtlib /MIT/202209/kotlin/inactive
+    - https://github.com/concordant/c-crdtlib
+    - CRDT library in Kotlin for the Concordant platform API.
+    - This project is based on Kotlin multiplatform feature.
+    - The Kotlin code is compiled to both JVM Bytecode and Javascript/Typescript
 
 - https://github.com/Roffelchen/spreadsheet-crdt /202302/js/yjs/inactive
   - /yjs

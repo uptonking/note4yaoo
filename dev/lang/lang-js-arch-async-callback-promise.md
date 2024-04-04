@@ -149,7 +149,17 @@ modified: 2021-08-30T07:01:09.493Z
 
 - ## 
 
-- ## 
+- ## 前端的发展还是很快的，对语言设计来说可以很快落地试验一些 feature, 
+- https://twitter.com/codeworm96/status/1775764265695322438
+  - Javascript以很快的速度走过了 callback -> promise -> async/await 的路（而 async rust 和 c++...）而且现在前端也足够工程化了，完全足以观察在大项目中的表现
+- 别尬黑，我发现的前端大部分的问题，都是 JS 根上乱搞导致的.. 工程化的事情系统开发好早就明白了，前端得等到组件化以后，很多新技术也还在斗争，了解/兼容一堆村规想死..
+- JS主要作为脚本语言，以文本形式分发，所以新版本至少不能在 parse 上 break 掉旧版本；于是就这么拖着屎山一路向前。 很难想象像 Python 3 那样搞语法不兼容会对 JS 产生什么后果。
+- 我感觉async await跟手动内存管理相性不好
+- 我觉得 async await 至少是符合 structured concurrency 的，但一些比较复杂的控制流表达不出来。 
+  - 我觉得原文传达出来最主要的意思是 structured 的控制流（除了循环）基本是从上而下顺序的，而 goto (go) 是乱跳的；async await 是符合顺序的，而如果你试过用 callback 或者 Promise 实现循环，你就会发现代码的顺序很别扭。
+- go 怎么类比goto 呢，go 有 waitgroup，感觉挺容易写成 structured concurrency 呀。我的疑问是，协程本身应该支持 structured concurrency，这是趋势，但是并不是 async/await 更容易写成 structured concurrency。像 go 和 java 这样不用勿扰代码的协程方式，同样很容易实现 structured concurrency
+- 写说可以写的，JS 也有 await Promise.all() 。主要是多人协作的项目里意识的问题。你可以用 go 来实现 structured concurrency，但别人不一定会有这个意识；相比之下 async await 由于不支持像 go 这样跳，下限更低一点，不容易用出问题。goto 也可以实现所有的控制流。
+  - 你说的没毛病。什么特性滥用都会导致预料外的事情。所以 java 在virtual thread基础上在实现 sc。 并鼓励使用最佳实践。go类似。 我想表达的是，核心是 sc，而不是 await/async 更容易 sc
 
 - ## A common misunderstanding about `Promise.all` is that it cancels the remaining promises as soon as it rejects—this is NOT true! 
 - https://twitter.com/hovhaDovah/status/1765763275545817427

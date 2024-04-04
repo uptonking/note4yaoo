@@ -24,9 +24,9 @@ npx create-strapi-app@5.0.0-beta.0 strapi5-app-beta0 --quickstart --ts
   - `helper-plugin` is deprecated
   - remove old plugin generator in favor of `plugin:init`.
 - resources
+  - https://v5.contributor.strapi.io/docs/intro
   - [rfcs v5](https://github.com/strapi/rfcs/pulls?q=is%3Aopen+is%3Apr+label%3Av5)
   - [5.0.0 Milestone](https://github.com/strapi/strapi/milestone/256)
-  - https://v5.contributor.strapi.io/docs/intro
 # features/rfc
 - [Q2, 2024 - Strapi 5 | Content Editing XP | Strapi](https://feedback.strapi.io/customization/p/q2-2024-strapi-5)
   - two exciting new features: Draft & Publish; Content History
