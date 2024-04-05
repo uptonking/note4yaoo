@@ -328,6 +328,31 @@ betterdiscordctl -i flatpak install
 
 ## 040
 
+## 0405
+
+- [Can we add a `<span>` inside an `<h1>` tag? - Stack Overflow](https://stackoverflow.com/questions/7524185/can-we-add-a-span-inside-an-h1-tag)
+  - Yes, it's typically fine to use a span inside of an h1. span is an inline element, so it's typically okay to use it inside anything
+
+- [Can I createPortal from an onClick handler? - Stack Overflow](https://stackoverflow.com/questions/69324046/can-i-createportal-from-an-onclick-handler)
+  - A better method to do it would be having the portaled element in a separate component and having a state in your `MyPage` component that renders the modal conditionally
+
+```JSX
+const MyPortaledModal = () => createPortal(<MyModalDialog />, document.body)
+
+const MyPage = () => {
+  const [shouldShowModal, setShouldShowModal] = useState(false);
+
+  const toggleModal = () => setShowModal(prevValue => !prevValue)
+
+  return (
+    <div>
+      <button onClick={toggleModal}>Click me</button>
+      {shouldShowModal && <MyPortaledModal/>}
+    </div>
+  )
+}
+```
+
 ## 0404
 
 - [Does TypeScript Interface have anonymous and named function? - Stack Overflow](https://stackoverflow.com/questions/41082804/does-typescript-interface-have-anonymous-and-named-function)

@@ -1,11 +1,11 @@
 ---
-title: thread-devops-cicd
-tags: [cicd, devops]
+title: thread-devops-deploy-cicd
+tags: [cicd, deploy, devops]
 created: 2023-10-12T14:06:13.077Z
-modified: 2023-10-12T14:06:30.848Z
+modified: 2024-04-05T06:34:05.602Z
 ---
 
-# thread-devops-cicd
+# thread-devops-deploy-cicd
 
 # guide
 
@@ -29,7 +29,27 @@ modified: 2023-10-12T14:06:30.848Z
 # discuss
 - ## 
 
-- ## 
+- ## 把静态网站，next.js 网站部署在 Cloudflare 上，和部署在 Vercel 上相比，有什么优势呢？
+- https://twitter.com/xqliu/status/1775874477538320521
+1. 大体上体验非常接近，包括 GitHub 导入、构建脚本支持、版本预览等等
+2. Vercel 好处：
+   1. 域名放在哪里都可以；
+   2. 集成数据服务（KV，DB，Config）非常方便
+   3. 团队管理更好用
+3. CF 好处：
+   1. 提供很好用的分析工具，包含 Web Vitals
+   2. 免费额度更高
+   3. 全球最近接入
+
+- CF Workers 也有 KV 和 D1 做存储。
+  - 不过 D1 不是基于 Postgresql 而是 Sqlite 的
+- 昨天刚宣布了prisma集成，可以连第三方PG了
+
+- 区别就是能在vercel跑起来的next项目在cloudflare有可能失败
+
+- 静态随便，nextjs 的server 用cf的话，想連Postgres或者redis都不行。Vercel 则可以
+
+- 超过免费额度后，Vercel 的费用远高于 Cloudflare。
 
 - ## 优化 golang 项目 CICD 速度的技巧, CD 耗时爆降超过 50%
 - https://twitter.com/jarredsumner/status/1712218329413489011

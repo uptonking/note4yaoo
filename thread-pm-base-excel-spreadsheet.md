@@ -12,6 +12,14 @@ modified: 2022-04-23T18:48:32.550Z
 - ideas
   - excel + whiteboard: [Subset - A remarkably simple way to create a spreadsheet](https://subset.so/)
   - 自然语言查询、中文查询优化
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## how about version control for spreadsheets? Here's Patchwork added to a @handsontable data grid.
+- https://twitter.com/_adamwiggins_/status/1775523348430069853
+  - Here an edit is selected in the history, highlighting the diff on the document.
 # discuss
 - ## 
 

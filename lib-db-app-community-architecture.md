@@ -169,7 +169,8 @@ modified: 2023-09-17T17:37:19.913Z
 
 - ## 
 
-- ## 
+- ## 简明易懂的分片原理教程，来自Architecture Notes——这家网站真的是宝藏，里面有不少带有漂亮手绘图的好文章。
+- https://twitter.com/huangzworks/status/1776087981214101659
 
 - ## Use synchronous by default, asynchronous when necessary.
 - https://twitter.com/RaulJuncoV/status/1770789583375974471

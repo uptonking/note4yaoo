@@ -21,6 +21,7 @@ modified: 2023-12-15T16:51:56.101Z
   - Data Import & Export
   - rich fields: rich-text-blocks/markdown, media
     - 支持custom filed, 但需要写代码不能通过ui创建
+    - 不支持dropdown,但有第三方插件支持
   - built with typescript
   - 提供了很多集成示例，如redis/search
   - 👀 支持rename field(需要restart)，不支持rename table
@@ -198,7 +199,9 @@ modified: 2023-12-15T16:51:56.101Z
 - 不要直接在afterCreate/afterUpdate中修改response，这样admin界面不会显示修改
   - ❓ 通过route middleware可以更新admin界面的显示
 
-- 
+- 支持的fields
+- BlocksInput: 基于slate
+- Wysiwyg: 基于codemirror5
 - 
 - 
 

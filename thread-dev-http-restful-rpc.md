@@ -75,6 +75,19 @@ modified: 2021-09-20T18:38:00.319Z
   3. Tooling: While growing, gRPC tooling is less mature than REST's.
   4. Not human-readable: Because they are binary, they are not easy to debug like text-based formats (such as XML or JSON).
 
+# discuss-graphql
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 除非你有很特别的需求，100% 确定 GraphQL 非常适合，否则 RESTful API 足够你使用
+- https://twitter.com/beihuo/status/1775960603858960630
+  - 因为 GraphQL 会引入大量的复杂性，比如如何做缓存，如何做 rate limit。
+  - 最后你会发现你可能还需要引入 federation，事情一下子变了。各个语言和框架的实现，又是一个坑。
+- 还有细粒度数据安全的问题（不知道是不是你说的federation包括了这个）
+
 # discuss
 - ## 
 

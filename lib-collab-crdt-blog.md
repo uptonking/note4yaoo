@@ -17,9 +17,10 @@ modified: 2022-10-13T08:00:21.260Z
   - This post gives a gentle definition of op-based and state-based CRDTs and outlines my goals for the survey.
   - Part 2 of my CRDT survey blog series is out! This post covers "semantic techniques": deciding what a collaborative should do for users, independent of implementation details like op-based vs state-based.
 # [Making CRDTs 98% More Efficient | jakelazaroff.com_202310](https://jakelazaroff.com/words/making-crdts-98-percent-more-efficient/)
-
+- ## JSON structures are not good when you have a lot of events. Binary structures are better for CRDT log.
+- https://twitter.com/sitnikcode/status/1775917335863271616
+  - It uses a graphical editor as an example, but the same approach is used for text.
 # 👨🏻‍🏫 [CRDTs Turned Inside Out _202312](https://interjectedfuture.com/crdts-turned-inside-out/)
-
 - There is another class of CRDTs: Merkle CRDTs.
 - Merkle-DAG CRDTs
 - Merkle Search Tree CRDTs

@@ -769,6 +769,10 @@ modified: 2023-02-05T19:03:12.723Z
   - This react component provides a slack like rich text editing experience powered by slate.js
   - Starting v0.2.0, react-slite is powered by lexical.
 # utils
+
+- https://github.com/pubuzhixing8/slate-diff /202107/ts/js/inactive
+  - 基于ot、diff-match-patch
+
 - https://github.com/komkanit/slate-auto-save /202307/js/不依赖slate
   - A Slate plugin to handle onChange event on silence without event stack. Useful for implementing auto save Editor.
 

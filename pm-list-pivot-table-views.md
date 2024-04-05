@@ -119,7 +119,8 @@ The url define which "globe" should be focused
 
 - ## 
 
-- ## 
+- ## 🎨 Our table project is coming together beautifully
+- https://twitter.com/daKmoR/status/1760226397501415514
 
 - ## 🎨 Here are some tips for designing clean & effective tables
 - https://twitter.com/Ash_uxi/status/1775606725795610725
@@ -131,8 +132,6 @@ The url define which "globe" should be focused
   - Extract instances and create a horizontal row stack using autolayout.
   - PRO TIP: To make a table looks consistent and clean, ensure elements have similar Optical heights. Increase height for standout elements like important CTAs such as "Pay Invoice."
   - Create different variants of the row. I usually make three variants: Idle, Hover, and Selected.
-
-
 
 - ## 给新团队发一个招聘，欢迎加入字节 #多维表格 #Base 团队：
 - https://twitter.com/fkysly/status/1742513230751408397

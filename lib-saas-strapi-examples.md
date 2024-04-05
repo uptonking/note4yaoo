@@ -56,10 +56,12 @@ modified: 2023-12-15T19:30:23.094Z
   - Next.js client ready to fetch the content of the Strapi application (/client)
   - You can also fork this repository and deploy it on Strapi Cloud
 
-- https://github.com/strapi/blocks-react-renderer /202312/ts
+- https://github.com/strapi/blocks-react-renderer /MIT/202403/ts
   - A React renderer for the Strapi's Blocks rich text editor
-- https://github.com/sinkng/strapi-custom-field-type-renderer /202201/js
-  - v4
+  - https://github.com/klammerzu/blocks-html-renderer /202401/ts
+    - Render the content of Strapi's Blocks rich text editor as HTML
+  - https://github.com/sinkng/strapi-custom-field-type-renderer /202201/js
+    - v4
 
 - https://github.com/iopanda/strapi-crack-ee /202310/js
   - only for technique testing, DO NOT use this package in any production environment
@@ -475,8 +477,9 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/plantagoIT/strapi-drag-drop-content-type-plugin /202402/js
   - plugin that provides a drag and droppable menu for ordering content types in a somewhat userfriendly way.
 
-- https://github.com/mattmilburn/strapi-plugin-preview-button /202311/js
+- https://github.com/mattmilburn/strapi-plugin-preview-button /MIT/202402/js
   - A plugin for Strapi CMS that adds a preview button and live view button to the content manager edit view.
+  - Optional column in a collection's list view containing "preview" and "copy link" buttons.
   - https://github.com/danestves/strapi-plugin-preview-content /v3
 
 - https://github.com/its-devtastic/strapi-plugin-previewable /202207/js
@@ -494,7 +497,7 @@ modified: 2023-12-15T19:30:23.094Z
   - features like server side form validation and heavy customiztations will most likely never be added to this forms plugin. 
     - If you need something more customized you should look into making a custom controller.
 
-- https://github.com/Zaydme/strapi-plugin-multi-select /202307/js
+- https://github.com/Zaydme/strapi-plugin-multi-select /MIT/202312/js
   - A strapi custom field for selecting multiple options from a provided list of items.
   - https://github.com/zaydme/strapi-plugin-multi-country-select /202307/js
     - A strapi custom field for selecting any country based on the ISO 3166-1 country code standard.
@@ -514,7 +517,7 @@ modified: 2023-12-15T19:30:23.094Z
   - Add `react-icon` as custom field to your content type.
 - https://github.com/rgomeztinoco/strapi-plugin-heroicons-field /202311/js
   - Strapi plugin. Adds a heroicon picker custom field to your content types. 
-  - Don't need to install any frontend library - it returns the SVG code of the icon and the name as a stringyfied JSON
+  - Don't need to install any frontend library - it returns the SVG code of the icon and the name as a stringified JSON
 
 - https://github.com/play14team/strapi-plugin-map-field /202311/js
   - plugin allows to add a Mapbox map custom field in your content-types.
@@ -530,6 +533,10 @@ modified: 2023-12-15T19:30:23.094Z
   - A plugin for Strapi CMS, that allows creating a custom input field for adding lottie animations seamlessly via `LottieFiles` public animation repository.
   - Custom field creation in Strapi models
   - Keyword based search
+
+- https://github.com/am2222/strapi-custom-fields /202205/js/inactive
+  - Adds different field renderers to the strapi admin page.
+  - ColorPicker Field
 
 - https://github.com/Studio-Parkers/strapi-datetimepicker /202310/ts
   - A user-friendly alternative for Strapi's build-in datetime picker

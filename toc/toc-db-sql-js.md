@@ -78,6 +78,10 @@ modified: 2021-08-30T18:56:14.863Z
 - https://github.com/withtyped/withtyped
   - Type-safe RESTful framework for fullstack with all native implementation
   - Write native SQL-in-TS and get 4 tailored dev engines with no time
+
+- https://github.com/datawan-labs/pg /MIT/202404/ts
+  - https://pg.datawan.id/
+  - In Browser PostgreSQL Playground, no server, just client and pglite (postgresql wasm)
 # examples
 - https://github.com/prostgles/ui
   - https://prostgles.com/ui

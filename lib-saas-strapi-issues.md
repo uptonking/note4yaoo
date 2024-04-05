@@ -50,6 +50,13 @@ npm run develop
 
 - ## 
 
+- ## 
+
+- ## [Custom dropdowns _202301](https://forum.strapi.io/t/custom-dropdowns/24905)
+- Do you want this for the strapi admin panel or for a custom frontend
+  - Also to my knowledge it is not possible with out changing the core admin code 
+  - Only option I see for you is to change the core/admin code directly to get this to work
+
 - ## [Update EditView onClick ](https://forum.strapi.io/t/update-editview-onclick/26871)
 - I just managed to do it with React’s router:
 

@@ -126,6 +126,17 @@ modified: 2021-08-05T04:31:02.298Z
 - This is documented in TypeScript wiki itself
 - we experienced this with `@panda__css` style props, migrating to interface everywhere when possible solved it and now it's instant
 
+# discuss-ts-cons
+- ## 
+
+- ## 
+
+- ## tfw appeasing the type checker is more work than writing the actual code.
+- https://twitter.com/tantaman/status/1775901059321356578
+  - quite worth it for the perfect auto-complete. Even prevents you from selecting ambiguous fields.
+- It would make more sense to actually name those generic values. Also, there has to be easier ways for typing
+- The side benefit is that now you can’t even easily see or read the actual code! But hey, it’s type-safe
+
 # discuss
 - ## 
 
