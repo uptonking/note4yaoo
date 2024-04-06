@@ -17,7 +17,7 @@ modified: 2022-08-21T10:14:49.838Z
 
 ## [OpenOffice Sparse Matrix](https://iq.opengenus.org/data-structure-for-spreadsheet/#openofficesimplementation)
 
-## [在线Excel项目到底有多刺激-腾讯文档Excel_202012](https://mp.weixin.qq.com/s/f1vwzuPryc8ag6nd5Ngr5A)
+## 📈🔀 [在线Excel项目到底有多刺激-腾讯文档Excel _202012](https://mp.weixin.qq.com/s/f1vwzuPryc8ag6nd5Ngr5A)
 
 - 冲突处理
 - 版本管理
@@ -28,6 +28,8 @@ modified: 2022-08-21T10:14:49.838Z
 - 复制粘贴
 - 表格渲染有多复杂
 - 数据管理的难题
+
+- [我攻克的技术难题--在线 Excel 项目到底有多刺激 ](https://cloud.tencent.com/developer/article/2379452)
 
 ## [精读《高性能表格》_202104](https://zhuanlan.zhihu.com/p/364094849)
 

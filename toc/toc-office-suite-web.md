@@ -371,6 +371,14 @@ modified: 2023-03-09T13:47:07.317Z
 - https://github.com/PDFTron/pdftron-sign-app /paid/202305/js
   - Sign and request signatures on PDFs, MS Office documents
   - demonstrates building a signing application where users can request signatures on the documents by placing fields, sign documents, review signed documents using PDFTron PDF SDK.
+
+- https://gitee.com/software-minister/jvs-knowledge-ui /apache2/202204/java/inactive
+  - 无忧·企业文档=企业级知识库+在线编辑工具集+企业搜索引擎+内容展示平台
+  - 【企业级在线文档】，解决企业内部文档编辑、知识沉淀、知识协同等痛点。
+  - 项目主要采用Java开发，基础框架采用JVS（spring cloud+Vue）。
+  - 支持私有化部署场景。
+  - [开源版和商业版有什么区别？ ](https://gitee.com/software-minister/jvs-knowledge-ui/issues/I839LC)
+    - 无回答
 # protocol/sync/WOPI
 - https://github.com/mikeebowen/node-wopi-server /MIT/202310/ts
   - A WOPI Server written with Node.js

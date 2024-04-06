@@ -230,7 +230,7 @@ modified: 2022-08-21T10:11:43.095Z
 
 - A review of how GNU Moe, Plan 9 Sam, Bill Joy's Ex/Vi, GNOME GtkTextView/GtkTextBuffer, GNU Emacs, and due to popular demand, Scintilla, manage their textual data. This article is subject to updates.
 
-### [A Brief Glance at How Various Text Editors Manage Their Textual Data (2015) | Hacker News](https://news.ycombinator.com/item?id=11244103)
+### [A Brief Glance at How Various Text Editors Manage Their Textual Data (2015) | Hacker News _201603](https://news.ycombinator.com/item?id=11244103)
 
 - If you are interested in this, [Data Structures for Text Sequences](https://www.cs.unm.edu/~crowley/papers/sds.pdf) by Charles Crowley is an excellent paper to study.
 

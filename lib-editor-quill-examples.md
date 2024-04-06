@@ -21,7 +21,7 @@ modified: 2023-02-09T18:32:06.240Z
   - https://quilljs.com/playground/
   - a modern WYSIWYG editor built for compatibility and extensibility
   - 🍴 forks
-  - https://github.com/reedsy/quill /202308/ts
+  - https://github.com/reedsy/quill /BSD/202404/ts
     - We need to use our own forked version of the Delta class, which adds support for complex attributes (which we need for tracked changes).
     - 依赖@reedsy/quill-delta、eventemitter3、parchment、rfdc
     - https://github.com/reedsy/delta
@@ -31,20 +31,21 @@ modified: 2023-02-09T18:32:06.240Z
 
 - typewriter /347Star/MIT/202311/ts
   - https://github.com/typewriter-editor/typewriter
-  - A rich text editor based off of Quill.js and Ultradom, and using Svelte for UI.
+  - A rich text editor based off of Quill.js and Ultradom, and using Svelte for UI
   - 依赖 svelte、popperjs2、typewriter/delta
   - Built on the same data model as Quill.js, the Delta format, and using a tiny virtual DOM, Superfine, Typewriter aims to make custom rich text editors faster, easier, and more powerful
 
-- https://github.com/ludejun/quill-react-commercial /202311/ts/js
+- https://github.com/ludejun/quill-react-commercial /ISC/202404/ts/js
   - https://ludejun.github.io/quill-react-commercial/
   - 多功能的、可面向商业化的quill富文本编辑器
-  - Use the latest quill@2.0.0-dev.4. 
-  - Implement using React Hooks
+  - 使用最新的quill@2.0.0-rc.4，方便向后兼容。
+  - 使用React Hooks实现
 
-- https://github.com/welkinwong/superdocs-quill /202311/ts
+- https://github.com/welkinwong/superdocs-quill /202311/ts/inactive
   - https://github.com/welkinwong/superdocs-rsuite
+  - a fork of quill, inactive
 
-- https://github.com/shenmaxg/quill-imitate-shimo /202110/ts
+- https://github.com/shenmaxg/quill-imitate-shimo /202110/ts/inactive
   - 基于 quill 的富文本编辑器
 
 - https://github.com/hubertnare/strapi4-wysiwyg-replacement /202202/js
@@ -662,6 +663,10 @@ modified: 2023-02-09T18:32:06.240Z
   - https://weekday.work/
   - Weekday is a messaging-first collaboration platform that gives your team superpowers. 
   - 依赖pouchdb、react-quill、redux、rxjs、graphql、apollo
+
+- https://github.com/huygamcha/Ecommerce /202404/ts
+  - https://ecommerce-huygamcha.vercel.app/
+  - client + server
 # collab-ot
 - https://github.com/WindrunnerMax/Collab /202308/ts
   - 初探富文本之OT协同实例 sharedb+quill
@@ -701,11 +706,13 @@ modified: 2023-02-09T18:32:06.240Z
   - Basic collaborative rich-text editor that synchronizes using the Triplit fullstack database. 
   - The editor is Quill.
 
-- https://github.com/WindrunnerMax/Collab /202308/ts
+- https://github.com/WindrunnerMax/Collab /202308/ts/inactive
   - 初探富文本之OT协同实例 sharedb+quill
   - 初探富文本之CRDT协同实例 yjs+quill
+- https://github.com/F-star/yjs-quill-simple-demo /202310/ts/inactive
+  - HOST=localhost PORT=1234 npx y-websocket
 
-- https://github.com/jaredly/local-first/tree/master/packages/text-crdt
+- https://github.com/jaredly/local-first/tree/master/packages/text-crdt /202104/js/inactive
   - This algorithm is largely based on RGA, with support for rich-text formatting added, along with a number of optimizations.
   - integrate with Quill.
   - Your approach seems to resemble RGASplit which I believe is bases for
@@ -732,7 +739,7 @@ modified: 2023-02-09T18:32:06.240Z
   - 协同 markdown 编辑器
   - 还未开发完成，目前仅仅是一个 demo
 
-- https://github.com/yjs/y-quill /202205/js
+- https://github.com/yjs/y-quill /MIT/202205/js/inactive
   - https://demos.yjs.dev/quill/quill.html
   - This binding maps a Y. Text to a Quill instance. 
   - It optionally supports shared cursors via the quill-cursors module.

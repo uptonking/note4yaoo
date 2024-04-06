@@ -27,7 +27,7 @@ modified: 2023-11-27T15:55:06.815Z
 - 
 - 
 
-- ## [Quill Track Changes _201912](https://github.com/quilljs/quill/issues/2858)
+- ## 🔀 [Quill Track Changes _201912](https://github.com/quilljs/quill/issues/2858)
 - 
 - 
 

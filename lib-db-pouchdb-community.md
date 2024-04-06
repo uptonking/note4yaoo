@@ -24,12 +24,9 @@ modified: 2023-10-29T02:23:48.086Z
 - local docs are a bit weird, we don't do all the MVCC stuff for them
 
 - ## [use a bloomfilter for idb_201502](https://github.com/pouchdb/pouchdb/pull/3485)
-- _local docs do not have MVCC and are not replicated around a
-cluster. If you write two copies simultaneously then I think it will be
-last write wins (which might not be the same as last request wins). This
-actually might cause some strange behaviour in a cluster (a discussion for
-#couchdb-dev) but my understanding is that's how it's worked in Cloudant
-forever...
+- _local docs do not have MVCC and are not replicated around a cluster. 
+  - If you write two copies simultaneously then I think it will be last write wins (which might not be the same as last request wins). 
+  - This actually might cause some strange behaviour in a cluster (a discussion for #couchdb-dev) but my understanding is that's how it's worked in Cloudant forever...
 
 - ## [Read/Write Consistency_201401](https://github.com/pouchdb/pouchdb/issues/1249)
 - My concurrency issue was that we read data and write it from/to leveljs. there is no transaction around that or mvcc mechanism so I dont know anyway in which it cant be broken, ie 2 writes, both read the same metadata, last write overwrites first's data

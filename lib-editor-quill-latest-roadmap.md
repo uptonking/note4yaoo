@@ -20,4 +20,19 @@ modified: 2023-11-27T20:19:50.947Z
   - Adopting New Web Features. One example is using `event.key` to more easily add keyboard shortcuts
 # changelog
 
+## v2.0
+
+- [v2.0.0-beta.0_2023-12-08](https://github.com/quilljs/quill/releases/tag/v2.0.0-beta.0)
+  - Quill has been significantly modernized. 
+  - Leveraging the latest browser-supported APIs, Quill now delivers a more efficient and reliable editing experience.
+  - Nested Quill support
+  - Improved IME and spell corrector support
+  - History: Record selection in history module
+  - Auto detect scrolling container
+  - Quill 2.0 includes many performance optimizations, the most important of which is the improved rendering speed for large content.
+
+## v1.0
+
+- v1.3.7_2019-09-09
+  - Security related bug fixes.
 # more

@@ -128,6 +128,14 @@ modified: 2020-11-03T06:56:19.448Z
   - http://getditto.github.io/safer_ffi
   - a framework that helps you write foreign function interfaces (FFI) without polluting your Rust code with `unsafe { ... }` code blocks while making functions far easier to read and maintain.
 
+## fwk
+
+- https://github.com/loco-rs/loco /apache2/202403/rust
+  - https://loco.rs/
+  - The one-person framework for Rust for side-projects and startups
+  - Loco is strongly inspired by Rails.
+  - Loco is feature complete, but features are still being added rapidly.
+
 ## async
 
 - https://github.com/fMeow/maybe-async-rs /MIT/202402/rust

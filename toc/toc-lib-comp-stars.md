@@ -140,7 +140,7 @@ modified: 2021-01-12T18:49:07.422Z
   - Library Agnostic: Works well in JavaScript, TypeScript, React, Vue, Angular
   - Mobile First: Supports multi touch and is fully responsive
 
-- https://github.com/Splidejs/splide /202210/ts/NoDeps
+- https://github.com/Splidejs/splide /MIT/202210/ts/NoDeps/inactive
   - https://splidejs.com/
   - flexible and accessible slider/carousel written in TypeScript.
 

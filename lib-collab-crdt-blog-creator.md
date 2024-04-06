@@ -134,7 +134,7 @@ modified: 2023-10-28T12:53:48.869Z
 - Why have I been focussing on collaborative text editing? Because I think performance has been the #1 blocker stopping us from using CRDTs in most software. And text CRDTs are a canary in the coal mine for performance. Uh, thats a tortured metaphor. I mean, If we can make text CRDTs fast, we can make everything fast.
   - And JSON editing (what everyone actually wants) needs to embed text editing anyway. So we've sort of gotta do that first anyway.
   - Smart people have also been working on the JSON editing problem. 
-  - Shelf algorithm for last-writer-wins JSON editing is simple enough you can implement it in less than 100 lines of code. But shelf doesn't support collaborative list or text editing (text is a list of characters).
+  - 🔀 Shelf algorithm for last-writer-wins JSON editing is simple enough you can implement it in less than 100 lines of code. But shelf doesn't support collaborative list or text editing (text is a list of characters).
   - thats something Yjs and automerge both already do, and do quite well.
 
 - 👉🏻 Probably because outside collaborative text editing, it's called more generally, like CQRS or event sourcing
@@ -223,7 +223,7 @@ modified: 2023-10-28T12:53:48.869Z
 
 - 许多 CRDTs 都实现了 List 数据结构，但不支持 move 操作。
   - 用户可以把 move 拆解为 delete-then-insert。
-  - 但是会发生下面的 anomaly。
+  - 但是会发生下面的 anomaly
   - 需要找到一个合适的数据结构来表达 pos，让 pos 具有 last writes win 的性质
   - 每个 list item 都要有一个 LWWRegister，并把它们放在一个 Add-Wins Set (AWSet) 中
 

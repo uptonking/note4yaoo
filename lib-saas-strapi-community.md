@@ -261,7 +261,9 @@ modified: 2023-12-15T17:04:36.589Z
 
 - ## 
 
-- ## 
+- ## I really want to read a blog like using strapi to implement row level security. 
+- https://discord.com/channels/811989166782021633/1095091586452426824/1225852080330379264
+- What you are looking for is called an `is-owner` policy. We have a simplistic guide on the docs.
 
 - ## [Why all users in Strapi have access to update all users profile? _202212](https://stackoverflow.com/questions/74728231/why-all-users-in-strapi-have-access-to-update-all-users-profile/74734475)
 - to limit the user actions in the auth scope you have to use middleware or policy

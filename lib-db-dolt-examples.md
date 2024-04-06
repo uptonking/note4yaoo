@@ -94,6 +94,13 @@ modified: 2023-08-25T22:31:05.132Z
   - https://kamu.dev/
   - New generation decentralized data lake and a streaming data pipeline
   - New take on Git for Data
+
+- https://github.com/florophore/floro-mono /MIT/202404/ts
+  - https://floro.io/
+  - offline-first content management for static assets and i18n strings
+  - [Show HN: Floro – Visual Version Control | Hacker News _202404](https://news.ycombinator.com/item?id=39894823)
+    - offline-first visual version control system that allows you to merge and diff graphical content
+    - allow users to test their local content out by building a browser extension that would allow them to override the state of their production websites and apps with the local content from floro. 
 # data-branching-versioning/revisions
 - https://github.com/snowtrack/snowfs /GPLv3/ts/inactive
   - https://www.snowtrack.io/

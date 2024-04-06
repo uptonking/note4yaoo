@@ -10,12 +10,13 @@ modified: 2021-05-06T09:39:53.522Z
 # guide
 - pros
   - powerful features
-  - modular, extensible
+  - 🔌 modular, extensible
+  - 🔀 collaborative plugin is optional
   - selective undo/redo
+  - 👣 codemirror采用相似的架构
   - support branch
-  - 支持多实例，参考官方示例
-  - optional collaborative plugin
   - 支持rebase
+  - 支持多实例，参考官方示例
   - selection支持多个ranges
 
 - cons

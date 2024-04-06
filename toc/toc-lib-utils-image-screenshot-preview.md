@@ -219,13 +219,18 @@ modified: 2023-04-16T13:34:33.706Z
   - Multiuser support
   - Face recognition / Face classification
   - Search by metadata; Semantic image search
-# screen-sharing
+# screen-recording/sharing
 - https://github.com/CapSoftware/Cap /AGPLv3/202403/rust/ts
   - https://cap.so/
   - instant screen sharing. Open source and cross-platform.
   - Cap is an open source alternative to Loom. It's a video messaging tool that allows you to record, edit and share videos in seconds.
   - 依赖Rust, React (Next.js), TypeScript, Tauri, Drizzle (ORM), MySQL, TailwindCSS, Turborepo
   - Download for macOS · Windows · Linux
+
+- https://github.com/hughfenghen/bloom-shadow /202401/ts
+  - https://hughfenghen.github.io/bloom-shadow/
+  - 在浏览器中运行的录屏工具，可用于视频课程制作、直播推流工作台；
+  - 基于 WebAV 实现
 # thumbnail/preview-image
 - https://github.com/wei/socialify /MIT/202311/ts/inactive
   - Socialify helps you showcase your project to the world by generating a beautiful project image 

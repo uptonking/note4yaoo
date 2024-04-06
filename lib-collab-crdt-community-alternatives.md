@@ -14,12 +14,15 @@ modified: 2023-12-16T17:36:57.942Z
 
 - ## 
 
-- ## 
+- ## 🌰🔀 [How Figma's Multiplayer Technology Works | Hacker News _201910](https://news.ycombinator.com/item?id=21378858)
+- 
+- 
+- 
 
 - ## 🤼🏻 [You don't need a CRDT to build a collaborative experience | Hacker News_202311](https://news.ycombinator.com/item?id=38289327)
-- jitl(notion-dev): I agree broadly with the article’s position but I think locks are more harmful than helpful. 
+- 👷🏻 jitl(notion-dev): I agree broadly with the article’s position but I think locks are more harmful than helpful. 
   - Instead just allow LWW overwrites. If users have contention and your sync & presence is fast, they’ll figure it out pretty quick, and at most lose 1-2 keystrokes, or one drag gesture, or one color pick.
-  - 💡 Notion is “collaborative” and we don’t use a CRDT for text, it’s all last-write-wins decided by the server. However our LWW texts are individually small - one block/paragraph in size - and adding/moving/removing blocks is intention-preserving if not perfectly convergent.
+  - 🔀 Notion is “collaborative” and we don’t use a CRDT for text, it’s all last-write-wins decided by the server. However our LWW texts are individually small - one block/paragraph in size - and adding/moving/removing blocks is intention-preserving if not perfectly convergent.
   - As the article says, the downside for LWW is that “offline” / async collaboration isn’t so great. That’s why we’re working on switching to CRDT for our texts. If you’re interested in bringing CRDTs to a product with a lot of users, consider joining Notion’s Docs team
 
 - Are you considering having a CRDT for each text block individually, or moving to a CRDT for the entire data model for a document? Really curious about the design approach here, especially insofar(在这个范围；到这种程度 ) as there's now an external API that the data models need to service!
@@ -27,7 +30,7 @@ modified: 2023-12-16T17:36:57.942Z
   - All the edge cases are very interesting, like what happens if I use backspace to join a block of CRDT B into block of CRDT A.
   - 💡 API consumers are unaffected. Likely we’ll support API updates of text as best-effort `diff-match-patch` of the text on our side applied as CRDT ops.
 
-- So Last-Write-Wins (LWW) basically _is_ a CRDT, but not in the sense that anyone really expects, because they aren't that useful or intention preserving. Especially if the two writes happen in very quick succession / concurrently.
+- 🔀 So Last-Write-Wins (LWW) basically _is_ a CRDT, but not in the sense that anyone really expects, because they aren't that useful or intention preserving. Especially if the two writes happen in very quick succession/concurrently.
   - LWW becomes useful if you can:
     - a) help humans to see who is doing what on a doc
     - b) reduce the size of the change that is LWW

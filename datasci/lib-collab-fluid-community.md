@@ -35,7 +35,7 @@ modified: 2023-02-11T11:07:43.781Z
 - ## [Microsoft Loop brings back Google Wave? | Hacker News _202111](https://news.ycombinator.com/item?id=29082706)
 - Fluid is based on CRDTs under the hood (or possibly the CRDT predecessor OT like Wave was), but Fluid believes writing CRDTs is hard (it is), especially writing them that obey the math laws CRDTs are supposed to, and then getting that to perform well (including and especially things like catch-up/replay) is also hard, so yes the actual programming interface Fluid presents is high level "distributed data structures" though the wire format is closer to CRDTs with some cheats from assumed knowledge of the data structures (things like sending the latest contents of a list for catch-up rather than replaying the entire CRDT chain for that list)
 
-- ## [Building a BFT JSON CRDT | Hacker News](https://news.ycombinator.com/item?id=33694568)
+- ## 👥👨🏻‍🏫 [Building a BFT JSON CRDT | Hacker News](https://news.ycombinator.com/item?id=33694568)
 - It's the Byzantine Fault Tolerant part of this that is particularly innovative and based on Kleppmanns most recent work. I believe it solves the issue of either malicious actors in the networks modifying others transactions, spoofing them, or the messages being modified by third parties ("outside" the network) who have MITM the connection. These are really great problems to solve.
 
 - Interesting, yeah access-control is kinda open problem with Yjs. Regarding ProseMirror and rich-text documents, you can mess up documents in other ways as well. Eg deploy a faulty command with a transaction that inserts nodes with invalid children (can be prevented though by using createChecked). Or just changing your schema in an incompatible way with the previous version. So you kinda have to deal with possible malformed documents either way.
@@ -45,13 +45,13 @@ modified: 2023-02-11T11:07:43.781Z
   - With a centralized schema provider, you run a connected node on a trusted server and reject changes that are out of schema or should not be accessed by a user.
   - An owned object is an object where a user (or user group that votes via quorum) that owns the object can veto changes to the object. The changes are temporarily applied until accepted by the owners. I haven't dug deep enough into this BFT implementation to know how our model would map to this model.
 
-- ## [Lessons learned from creating a rich-text editor with real-time collab (2018) | Hacker News](https://news.ycombinator.com/item?id=25394609)
+- ## 💡 [Lessons learned from creating a rich-text editor with real-time collab (2018) | Hacker News _202012](https://news.ycombinator.com/item?id=25394609)
 - Disclosure: I work on a related project (Fluid Framework) that makes application agnostic CRDTs easily available.
   - The CKEditor folks did a great job building an OSS text editor and they did an especially strong work building a text editor that works well with collaboration. 
   - I've made a few OSS rich text editors work (mostly) with Fluid [0, 1] and the design of the text editor really changes how easily collaboration can be added. Luckily the text editor accepts remote changes, integrating an OT or CRDT solution is approximately the same.
   - They also did a great job explaining the problem. 
 - My experience has been that people don't intuitively understand why real time collaboration is a tricky problem. I didn't. 
-  - First of all, for a bunch of use cases websockets + redis + a last write wins conflict resolution (or some similar solution) is totally enough. 
+  - 🔀 First of all, for a bunch of use cases websockets + redis + a last write wins conflict resolution (or some similar solution) is totally enough. 
   - Second, it's not immediately obvious why rich text editing requires more complex conflict resolution. 
   - Third, it's not obvious why solving the RTE problem doesn't immediately lend itself to other problems 
 

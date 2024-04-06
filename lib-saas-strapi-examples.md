@@ -98,6 +98,8 @@ modified: 2023-12-15T19:30:23.094Z
   - This site uses Next.js's Static Generation feature using `Strapi` as the data source.
   - https://github.com/Prototypr/prototypr-backend /MIT/202403/js
     - 依赖strapi.v4、strapi-plugin-meilisearch、radix-ui、tiptap、novel(editor)
+  - https://open.prototypr.io/
+    - develop Prototypr as an inclusive and open source Web Monetized publishing platform for designers
 
 - https://github.com/losol/converto /GPLv3/202311/ts/inactive
   - a Strapi base solution for converting HTML to PDF
@@ -1342,6 +1344,10 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/Akash-shah-cis/ChromoX /202402/js
   - a creative platform where art and technology converge to provide a seamless experience for both creators and art enthusiasts. 
   - This project is built with React, managed effortlessly with Strapi, and transactions powered by Stripe.
+
+- https://github.com/dhzdhd/bidwave /GPLv3/202311/ts/svelte
+  - https://bidwave.vercel.app/
+  - A realtime auction platform built on SvelteKit and Strapi
 # realtime/collab
 - https://github.com/strapi-community/strapi-plugin-io /MIT/202312/js
   - https://strapi-plugin-io.netlify.app/
@@ -1365,13 +1371,14 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/jenniferokafor/collaborative-code-editor /202306/ts
   - client依赖codemirror.v6、@uiw/react-codemirror
 
-- https://github.com/frontcodelover/iloveshare /202208/js
-  - Just an webapp like dev.to. but in french language only Users can be connected and add articles, tags, pictures.
+- https://github.com/frontcodelover/iloveshare /202208/js/inactive
+  - Just an webapp like dev.to. but in french language only 
+  - Users can be connected and add articles, tags, pictures.
 
 - https://github.com/ashish-adhikaree/VetGhat /202303/ts
   - a simple social media app that provides means to connect to your loved ones.
 
-- https://github.com/misstarn/chatstrapi /202310/js
+- https://github.com/misstarn/chatstrapi /202310/js/inactive
   - 使用strapi+socketio作为chatapp的后端
   - https://github.com/misstarn/chatapp
     - 使用socket.io+nuxt3+vuetify+tailwindcss制作的聊天软件
@@ -1414,6 +1421,10 @@ modified: 2023-12-15T19:30:23.094Z
 
 - https://github.com/jempool/Strapi-WebSocket-Server /MIT/202312/js
   - 依赖strapi.v3
+
+- https://github.com/dhzdhd/bidwave /GPLv3/202311/ts/svelte
+  - https://bidwave.vercel.app/
+  - A realtime auction platform built on SvelteKit and Strapi
 # clients-mobile/pc
 - https://github.com/shahednasser/strapi-react-native /202202/js
   - Code for Create a Notes App with Strapi and React Native

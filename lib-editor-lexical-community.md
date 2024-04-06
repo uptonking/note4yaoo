@@ -9,8 +9,7 @@ modified: 2022-05-15T18:35:39.272Z
 
 # discuss-stars
 
-- ## Differences between Prosemirror and Lexical_202204
-- https://discuss.prosemirror.net/t/differences-between-prosemirror-and-lexical/4557
+- ## [Differences between Prosemirror and Lexical _202204](https://discuss.prosemirror.net/t/differences-between-prosemirror-and-lexical/4557)
 - They(lexical) affirm that their value proposition differentiates them from RTE as Prosemirror in the following points:
   - **Mutable state approach**: I would appreciate if someone can elaborate on this point.
   - **Prevent the DOM from being manipulated externally (i.e. extensions)** to guarantee that the DOM always matches the EditorState

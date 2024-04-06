@@ -178,7 +178,7 @@ modified: 2022-11-29T20:41:25.566Z
   - If you’re worried about storing all of those hashes - you can push the hashes to the protocol layer and not store them internally (there are tricks necessary if you don’t want to recompute the hashes for everything).
   - Other version control systems like perforce are better at handling very large file sizes than git. I haven’t looked too deeply into why. (Specifically binary files & media content - in game dev it was the vcs of choice for a long time, not sure if it’s still the case)
 
-- ## Because there are no pre built solutions everyone's forced to roll their own sync engine!
+- ## 💡 Because there are no pre built solutions everyone's forced to roll their own sync engine!
 - https://twitter.com/LewisCTech/status/1737707633572986981
 - Yeah, I find it surprising how often I talk to companies that have built their own sync with a very simple conflict model and find they don’t need much more. Last-write-wins on fine-grained document state is often good enough in practice!
 - I feel multi-value registers should be the baseline since it's the simplest thing that doesn't throw data away.

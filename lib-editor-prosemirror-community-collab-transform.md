@@ -68,8 +68,7 @@ modified: 2022-10-22T18:47:16.228Z
   - ( when external changes are coming into YJS it replaces the whole document, causing DecorationSet.map to return an empty array, effectively deleting decorations ).
 - Just use YJS absolute positions in the plugin state, and create decorations from that.
 
-- ## Offline, Peer-to-Peer, Collaborative Editing using Yjs__202001
-- https://discuss.prosemirror.net/t/offline-peer-to-peer-collaborative-editing-using-yjs/2488
+- ## 🔀 [Offline, Peer-to-Peer, Collaborative Editing using Yjs __202001](https://discuss.prosemirror.net/t/offline-peer-to-peer-collaborative-editing-using-yjs/2488)
 - I haven’t dug into the y-prosemirror code in depth yet, but, is there any way with Yjs fragments to model changes that happen to a fragment as steps rather than replacing the whole document? 
   - It seems like in the current implementation of the sync plugin, **every synced change ends up replacing the whole document**  (taking care to maintain the local selection state, and managing the undo state with a Yjs specific plugin). 
   - Basically what I’m curious about is whether you could replicate ProseMirror data using Yjs, but still write ProseMirror plugins without needing to “know” that Yjs was handling remote state updates (e.g. where you could, for example, rely on transaction steps + step maps to figure out what ranges have changed during a given remote sync).

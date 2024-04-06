@@ -14,7 +14,7 @@ modified: 2023-12-15T16:51:56.101Z
   - 🔌 plugin-system and marketplace, 插件架构很彻底, 如ctb/cm
     - 但不支持类似directus的在线安装plugin
   - 📣 draft & publish, 不支持多个draft-version(directus支持)
-  - free Custom Roles & Permissions since v4.8，权限功能强大
+  - free Custom Roles & Permissions since v4.8, 权限功能强大
   - media library and providers
   - i18n, 在架构层支持多语言，支持多语言的内容自动建立关联
   - future flags

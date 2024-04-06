@@ -10,12 +10,11 @@ modified: 2021-04-11T06:17:51.318Z
 # guide
 
 - 组件库组成
-  - state, styling, a11y, animation
+  - state, styling, a11y, animation, view
 
 - pick-ui-components
   - framework-agnostic
-  - headless/unstyled
-    - headless, renderless, no styling, unstyled, accessible
+  - headless/unstyled: headless, renderless, no styling
   - accessible
 
 - 💡️ 不必执着于完整的现有组件库，可分析其他组件支持多个框架的方法，如tanstack-table
@@ -27,18 +26,14 @@ modified: 2021-04-11T06:17:51.318Z
 
 - headless-ui-examples
   - popular: floating-ui, dnd-kit, autocomplete
-  - radix-ui
-    - 提供了自研stitches的样式解决方案
-  - react-spectrum
-    - based on react-stately,react-aria
+  - radix-ui: 提供了自研stitches的样式解决方案
+  - react-spectrum: based on react-stately, react-aria
   - headlessui
     - listbox/select,dropdown/menu,switch,radio-group
     - dialog,popover,disclosure,transition
     - 示例组件的动画体验非常好
-  - ariakit/reakit
-    - used-by: bumbag-ui
-  - adaptui/renderlesskit-react
-    - 依赖reakit,react-aria,chakra-ui
+  - ariakit/reakit: used-by bumbag-ui
+  - adaptui/renderlesskit-react: 依赖reakit, react-aria, chakra-ui
   - zendesk-garden-react-containers: 2种使用方式 hook, render-prop
   - zag
   - reach-ui

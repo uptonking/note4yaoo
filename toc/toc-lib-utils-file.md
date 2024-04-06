@@ -103,6 +103,15 @@ modified: 2023-04-05T19:35:14.347Z
   asynchronous Origin-Private FileSystem (OPFS) APIs using a second
   Worker, implemented in sqlite3-opfs-async-proxy.js.
 
+- https://github.com/hughfenghen/opfs-tools /MIT/202404/ts
+  - https://hughfenghen.github.io/opfs-tools-explorer/
+  - 在浏览器中运行的简单、高性能、完备的文件系统 API，基于 OPFS 构建
+  - [Web文件系统（OPFS 及工具）介绍 | 风痕 · 術&思](https://hughfenghen.github.io/posts/2024/03/14/web-storage-and-opfs/)
+  - https://github.com/hughfenghen/opfs-tools-explorer /MIT/202403/ts
+    - Manage OPFS assets in your web site, supporting file creation, copying, and moving features, providing a user-friendly interactive experience.
+    - 支持创建文件夹、文件，支持编辑文本
+    - The basic file operation capabilities are provided by opfs-tools.
+
 - https://github.com/wariasar/opfs
   - https://v22018096896673253.goodsrv.de/opfs/
   - This is just a test for the OPFS feature in Webbrowsers. 

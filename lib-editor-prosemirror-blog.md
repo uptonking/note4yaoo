@@ -11,6 +11,15 @@ modified: 2021-06-15T00:07:49.228Z
 
 - refs
   - [NEXT Engineering](https://medium.com/collaborne-engineering)
+# [CodeMirror and ProseMirror _202306](https://jzhao.xyz/thoughts/CodeMirror)
+- An extensible and fast rope-based code/prose editor component for the web.
+- the library’s state representation is strictly functional—the document and state data structures are immutable, and operations on them are pure functions, whereas the view component and command interface wrap these in an imperative interface
+  - Document changes are themselves values, describing precisely which ranges of the old document are being replaced by which bits of new text. 
+- CodeMirror uses plain numbers to address positions in the document. 
+  - These represent character counts—more precisely, they count `UTF16` code units (so astral(星的；灵魂的；精神的) characters count as two units)
+
+- Enforcing that a CRDT complies to a schema might be impossible without an inordinate amount of bookkeeping. 
+  - But something you could try is to create a view on the data that complies to the schema. For example, if a blockquote does not have any children, ignore it.
 # [《ProseMirror》专栏](https://juejin.cn/column/7085905991698481183)
 
 # [Why we picked Remirror/Prosemirror as WYSIWYG editor in our React application__202108](https://medium.com/collaborne-engineering/rich-text-editor-for-react-f7d71746867f)

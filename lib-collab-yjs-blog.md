@@ -11,6 +11,11 @@ modified: 2022-10-22T18:45:00.382Z
 
 # blogs
 
+## 🌰 [Postgres and Yjs CRDT Collaborative Text Editing, Using PowerSync _202401](https://www.powersync.com/blog/postgres-and-yjs-crdt-collaborative-text-editing-using-powersync)
+
+- we’re excited to release an initial Yjs + PowerSync demo which uses the Tiptap rich text editor
+  - We built the demo as a React app with the PowerSync Web SDK, and used Supabase as our Postgres backend for simplicity.
+
 ## [YJS协同编辑入门，集成slate/codemirror](https://juejin.cn/post/7033041594911883271)
 
 - 在slate-yjs的实现中，Element/Text 与 YMap 对应；

@@ -14,9 +14,8 @@ modified: 2023-02-09T18:30:19.001Z
   - 更新操作: insert, delete, format, retain
 # blogs-collab
 
+## ⌛️ [A Document Revisions System in JavaScript - DEV Community_202208](https://dev.to/kornatzky/a-document-revisions-system-in-javascript-1o3h)
 
-
-## [A Document Revisions System in JavaScript - DEV Community_202208](https://dev.to/kornatzky/a-document-revisions-system-in-javascript-1o3h)
 # blogs
 
 ## [现代 Web 富文本编辑器 Quill.js - 从基本使用到核心概念 - 掘金_202101](https://juejin.cn/post/6918893948412887053)

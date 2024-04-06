@@ -111,7 +111,7 @@ modified: 2022-08-21T10:12:02.964Z
   - Gap buffer was appealing on really slow machines, where you are counting cycles on each key-press. If the gap is at the right position, the cycle count is very low. But you can probably do the same even with a tree-structure: you need to keep a pointer to the leaf in the abstract pointer used for the cursor.
   - Also I would tie in the undo system to the data structure if possible. Rope does this with copy-on-write. Every version of the file could be a different top-node, and most middle and leaf nodes would be shared between revisions.
 
-- [A Brief Glance at How Various Text Editors Manage Their Textual Data (2015) | Hacker News](https://news.ycombinator.com/item?id=11244103)
+- [A Brief Glance at How Various Text Editors Manage Their Textual Data (2015) | Hacker News _201603](https://news.ycombinator.com/item?id=11244103)
   - JOE was written in the final days of expensive memory and was written so that it can edit files larger than memory. Even today this is sometimes useful: you can edit an 8 GB file on a 32-bit machine.
   - It uses a doubly linked list of gap buffers. Each gap buffer has a header and a 4K data page. The headers are always in memory, but the data pages can be swapped out to a file in /tmp. The memory usage limit is 32 MB. Possibly this is no longer a good idea- it's easily possible that you could have more RAM than /tmp space.
   - The header has the data page's offset in the swap file, the link pointers, the gap location and a count of the number of newlines in the gap buffer.

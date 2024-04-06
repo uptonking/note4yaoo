@@ -95,7 +95,7 @@ modified: 2022-09-21T15:47:41.340Z
 - https://github.com/maxpert/sqlite-y-crdt /MIT/202212/rust/js/inactive
   - WIP for wrapping Y-CRDT for SQLite
 
-- https://github.com/pluv-io/pluv /MIT/ts/yjs
+- https://github.com/pluv-io/pluv /MIT/202403/ts/yjs
   - https://pluv.io/
   - allows you to build real-time collaborate features with a fully end-to-end type-safe api.
   - Inspired by trpc, Built with yjs
@@ -143,6 +143,10 @@ modified: 2022-09-21T15:47:41.340Z
 
 - https://github.com/nimeshnayaju/yjs-tldraw
   - multiplayer implementation on tldraw using yjs.
+
+- https://github.com/malte-j/piko.space /202312/ts/inactive
+  - https://piko.space/
+  - Collaborate at the speed of light and seamlessly sync offline work
 
 - https://github.com/haggen/hindsight
   - Hindsight is a retrospective board for Scrum practitioners.

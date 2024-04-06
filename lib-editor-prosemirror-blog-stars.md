@@ -9,6 +9,30 @@ modified: 2023-03-02T14:25:34.817Z
 
 # guide
 
+# blogs-pref
+
+## ⚡️ [ProseMirror Collab Performance | Blog _202307](https://stepwisehq.com/blog/2023-07-25-prosemirror-collab-performance/)
+
+- https://github.com/stepwisehq/prosemirror-collab-commit /MIT/202307/ts/inactive
+  - Commit-based collaborative editing plugin for ProseMirror.
+
+- ProseMirror-Collab collects unconfirmed steps and sends them to an authority so they can be recorded to the document’s source-of-truth. 
+  - this is the exact issue people hit early on with prosemirror-collab performance; some producers get starved out by constant authority rejection while others are getting their changes in consistently.
+- In 2020 user benaubin wrote on discuss. ProseMirror about creating a new commit-based collab backend. 
+  - The technique was based on a referenced Apache Wave paper. This ended with the release of prosemirror-collab-plus which has not been updated since August 2020.
+  - The gist is that we can batch updates(steps) into commits, apply those as the atomic changes on the back-end, and map/apply the commits on the back-end instead of rejecting them and sending them back to the clients.
+  - With this, client round-trip latency no longer factors into accepting or rejecting updates; client commits can be applied in the order they arrive based on any committed document version
+- We took the ideas from prosemirror-collab-plus, the Apache Wave paper, and built a new plugin based on the structure of prosemirror-collab. 
+  - This new project has brought over the full test suite from prosemirror-collab, with some tweaks to account for server-side step mapping
+
+- https://news.ycombinator.com/item?id=36959889
+  - A commit-based collab plugin that's far more performant under heavily active client loads than stock. I'm a fan of YJS, but not a fan of state-based CRDT layer on top of ProseMirror for my use cases
+  - I also translated the core ProseMirror projects of model, transform, and test-builder to C#
+  - I spent quite a bit of time as an FTE building out a robust-ish and efficient Yjs backend POC. 
+  - At the end of it all my personal takeaways were:
+  * State-based CRDT isn't great when you want a central authority in the mix anyway and are fundamentally trying to work with operations
+  * The exchange rate between ProseMirror's currency, steps, and some other replication strategies building blocks is too high
+  * ProseMirror should add the concept of range-relocation to its mappings; this is a bit of an aside but it would help retain user intent when reconciling concurrent edits involved in block relocations
 # [Prosemirror: Highlights & Comments_202205](https://medium.com/collaborne-engineering/prosemirror-highlights-comments-20ce820149ed)
 
 > Model highlights/comments as marks instead of annotations to allow for collaborative editing

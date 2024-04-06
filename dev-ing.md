@@ -328,6 +328,14 @@ betterdiscordctl -i flatpak install
 
 ## 040
 
+## 0406
+
+```JS
+// Number.prototype.toLocaleString()
+3500. toLocaleString() // Uncaught SyntaxError: Invalid or unexpected token
+3500..toLocaleString() // 3,500
+```
+
 ## 0405
 
 - [Can we add a `<span>` inside an `<h1>` tag? - Stack Overflow](https://stackoverflow.com/questions/7524185/can-we-add-a-span-inside-an-h1-tag)

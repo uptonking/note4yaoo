@@ -20,7 +20,7 @@ modified: 2020-11-13T07:28:27.824Z
   - react-canvas/webgl，在一定程度也是将vdom渲染到不同平台
 
 - 组件库组成
-  - state, styling, a11y, animation
+  - state, styling, a11y, animation, view
 
 - refs
   - https://github.com/SaraVieira/ui-libraries /组件库对比
@@ -108,8 +108,7 @@ modified: 2020-11-13T07:28:27.824Z
   - https://github.com/rashagu/semi-design-vue /202401/ts
     - Vue3 UI components based on semi-design and Vue
 
-- https://github.com/carbon-design-system/carbon
-  - /3.5kStar/Apache2/202009/js
+- https://github.com/carbon-design-system/carbon /3.5kStar/Apache2/202009/js
   - carbon-components: Component styles and Vanilla JavaScript
   - carbon-components-react: 基于class组件实现
   - @carbon/elements: IBM Design Language elements like colors, type, iconography, and more
@@ -206,7 +205,7 @@ modified: 2020-11-13T07:28:27.824Z
   - a collection of lightweight common required javascript components. 
   - It is composed of fully responsive vanilla plugins
 
-- https://github.com/themesberg/flowbite /ts
+- https://github.com/themesberg/flowbite /MIT/202404/ts
   - https://flowbite.com/blocks/
   - UI components based on the utility-first Tailwind CSS framework featuring dark mode support, a Figma design system, templates, and more.
   - All of the elements are built using the utility classes from Tailwind CSS and vanilla JavaScript with support for TypeScript.
@@ -219,7 +218,7 @@ modified: 2020-11-13T07:28:27.824Z
   - https://github.com/pqina/react-filepond
   - https://github.com/pqina/vue-filepond
 
-- https://github.com/xtendui/xtendui /362Star/MIT/202309/js
+- https://github.com/xtendui/xtendui /362Star/MIT/202309/js/inactive
   - https://xtendui.com/
   - a powerful frontend library of Tailwind CSS components enhanced by vanilla js
   - Some animations and interactions with Gsap

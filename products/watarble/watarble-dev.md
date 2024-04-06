@@ -20,6 +20,8 @@ modified: 2022-11-24T11:39:26.000Z
 # dev-to
 
 # dev-later
+- devtools like ckeditor/lexical-editor
+
 - ~~将ClientId改为actorId~~，client更通用
 # dev-maybe
 

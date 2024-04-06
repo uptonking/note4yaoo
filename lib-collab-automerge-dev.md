@@ -14,7 +14,8 @@ modified: 2023-09-01T10:16:03.555Z
   - team-work
 
 - cons
-  - ?
+  - 与同团队的loro/pretext定位相同，前景不明确
+  - 使用案例不如yjs多
 
 - features
   - ?
@@ -22,7 +23,7 @@ modified: 2023-09-01T10:16:03.555Z
 - [Automerge CRDT Sync Protocol](https://automerge.org/docs/how-it-works/sync/)
 # not-yet
 
-# roadmap
+# draft
 - 将https://github.com/automerge/hypermerge迁移到v2
 # dev
 

@@ -19,7 +19,7 @@ modified: 2023-10-28T09:04:42.521Z
   - This is proof of concept for Conflict-free Replicated Data Type representing 2-dimensional table
   - Insert or update existing rows (conflict resolution timestamp per cell basis)
   - Insert new series of rows in between existing rows.
-  - Row/column inserts are resolved using `LSeq` - while it has interleaving issues, we believe its not that important on that field as when it comes to ie. collaborative text editing.
+  - 🔀 Row/column inserts are resolved using `LSeq` - while it has interleaving issues, we believe its not that important on that field as when it comes to ie. collaborative text editing.
     - Cell updates and cell updates against row/column deletions are resolved using Last-Write-Wins semantics.
     - There's a minimal overhead related to keeping tombstone information when entire rows/columns are deleted. This could also be shifted to partially ordered log for keeping info about commutative updates.
   - This implementation uses a combination `{HybridLogicalTimestamp,PeerID}` as a means of conflict resolution, which on positive side is quite lightweight, but otherwise is pretty cumbersome: 😩 possible clock drifts on client devices; 😩 no ability to recognize concurrent updates ie. conflict resolution for things like update cell / delete column now depends on the clock timestamp

@@ -10,11 +10,11 @@ modified: 2023-12-21T20:06:13.700Z
 # guide
 
 # popular
-- handsontable v6.2.2 /13.8kStar/MIT~Paid/201903/js
+- handsontable v6.2.2 /13.8kStar/MIT > Free4NonCommercial/201903/js
   - https://github.com/handsontable/handsontable
   - https://handsontable.com/
   - 基于table标签实现
-  - 依赖numbro, moment, pikaday
+  - 依赖numbro、moment、pikaday
   - a JS HTML5 data grid with spreadsheet look & feel.
   - free for all non-commercial purposes since 7.0
   - 不支持协作
@@ -128,7 +128,7 @@ modified: 2023-12-21T20:06:13.700Z
 - https://github.com/shuttlethread/hodf /202009/js/v7
   - A wrapper around handsontable spreadsheet for collecting data.frame objects with a dynamic number of columns / rows.
 # examples
-- https://github.com/hughfenghen/spreadsheet-demo /202003/js
+- https://github.com/hughfenghen/spreadsheet-demo /202003/js/inactive
   - 电子表格从调研到demo的杂乱记录 Handsontable vs SpreadJS
   - SpreadJS时间较长，基本上对标Excel，功能比Hot丰富。比如对公式（Hot 处于alpha版，不支持自定义）、分组（Hot不支持）、图表（Hot需要继承第三方图表）的支持。
 

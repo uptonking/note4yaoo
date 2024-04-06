@@ -40,7 +40,11 @@ modified: 2021-01-08T17:15:13.906Z
 
 - ## 
 
-- ## 
+- ## Guess why some people use box shadow instead of border or outline?
+- https://twitter.com/oleg008/status/1776548962050113600
+- Because it does not count in box size.
+  - yep, but also its actually a big problem solver, you want a layout to have certain space for content and not cause subpixel values
+- Also more performant to animate iirc
 
 - ## Apply CSS to the last element of a specific class. 
 - https://twitter.com/diegohaz/status/1768048415630295061

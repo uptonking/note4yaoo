@@ -69,7 +69,7 @@ modified: 2022-10-22T18:47:16.228Z
     - The `LiveQuery` provides a way to run a query every time the underlying stores are updated
   - Entities without `keyPath` are not currently supported.
   - Only the last version of each entity is kept on the client side.
-  - conflict: The last write wins (though you can customize the behavior in the `onpusherror` handler).
+  - 🔀 conflict: The last write wins (though you can customize the behavior in the `onpusherror` handler).
   - Inspired from Dexie.js liveQuery.
   - https://github.com/darrachequesne/synceddb-todo-example /js/express-server
 

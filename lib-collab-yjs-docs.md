@@ -9,9 +9,10 @@ modified: 2022-04-05T10:11:21.023Z
 
 # guide
 
+- resources
+  - [Yjs Docs beta](https://beta.yjs.dev/docs/introduction)
 # [Yjs Internals](https://github.com/yjs/yjs/blob/main/INTERNALS.md)
 - The Yjs CRDT algorithm is described in the YATA paper from 2016.
-
 
 - At its heart, Yjs is a list CRDT. 
 - 👉🏻 Everything is squeezed into a list in order to reuse the CRDT resolution algorithm

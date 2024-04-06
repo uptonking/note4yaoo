@@ -19,6 +19,9 @@ modified: 2022-04-05T10:10:08.537Z
   - crdt的程序数据、算法都在用户本地，用户反馈的问题难以调试
   - 难以支持的操作: file-rename, reparent, bulk-replace
 
+- who is using #last-write-win
+  - notion
+
 - 协作方案参考
   - Liveblocks, synced-store, FluidFramework, gundb, pouchdb
   - automerge (2017), yjs (2015), sharedb (2013)

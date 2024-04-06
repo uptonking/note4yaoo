@@ -34,7 +34,7 @@ modified: 2023-02-11T11:07:05.558Z
 - The Fluid Framework relies on update-based operations that are ordered using our Total Order Broadcast to prevent conflicts. 
 - This allows us to have non-commutative operations because there is an explicit ordering.
 
-## How does Fluid Framework deal with conflict resolution?
+## 🔀 How does Fluid Framework deal with conflict resolution?
 
 - Conflict resolution is built into the DDSes, and the strategies vary between DDSes. 
   - For example the `SharedMap` uses a last-write-wins approach, whereas `SharedString` attempts to apply all changes while preserving user intention. 
@@ -302,7 +302,7 @@ modified: 2023-02-11T11:07:05.558Z
 - In a distributed system like Fluid, it is critical to understand how changes from multiple clients are merged. 
   - Understanding the merge logic enables you to “preserve user intent” when users are collaborating on data.
 - In Fluid, the merge behavior is defined by the DDS. 
-- 👉🏻 The simplest merge strategy, employed by key-value distributed data structures like SharedMap, is last writer wins (LWW). 
+- 🔀 The simplest merge strategy, employed by key-value distributed data structures like SharedMap, is last writer wins (LWW). 
   - With this merge strategy, when multiple clients write different values to the same key, the value that was written last will overwrite the others.
 
 - Fluid DDSes exhibit different performance characteristics based on how they interact with the Fluid service. 
@@ -310,7 +310,7 @@ modified: 2023-02-11T11:07:05.558Z
 
 - Optimistic DDSes apply Fluid operations locally before they are sequenced by the Fluid service. 
   - The local changes are said to be applied optimistically in that they are applied before receiving confirmation from the Fluid service, hence the name optimistic DDSes.
-  - Many of the most commonly used DDSes are optimistic, including `SharedMap`,         `SharedSequence`, and `SharedString`.
+  - Many of the most commonly used DDSes are optimistic, including `SharedMap`,          `SharedSequence`, and `SharedString`.
 
 - Consensus-based DDSes are different from optimistic DDSes because they wait for confirmation from the Fluid service before applying operations – even local operations. 
   - These data structures offer additional behavior guarantees and can be used when you need atomicity or synchronous behavior.

@@ -403,6 +403,8 @@ modified: 2022-04-05T10:08:25.947Z
     - Also, we don't support Text CRDTs yet.
   - [Is the backend open source?_202211](https://github.com/liveblocks/liveblocks/discussions/570)
     - The backend is not open source. It might at some point, but not in the short term.
+  - [[FEATURE_REQUEST] Self-hosting?](https://github.com/liveblocks/liveblocks/issues/682)
+    - We’re planning to open source a server package in the coming months, so stay tuned. _202402
   - [Liveblocks: Add real‑time collaboration to your product in minutes_202107](https://news.ycombinator.com/item?id=27994480)
   - User permissions and privileges in a collaborative app are much easier to handle with a centralised server
 

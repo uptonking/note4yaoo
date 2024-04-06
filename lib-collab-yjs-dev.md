@@ -21,7 +21,7 @@ modified: 2022-04-05T10:10:59.826Z
   - persistence
 
 - cons
-  - ?
+  - yata冲突处理算法不如rga/logoot/lseq主流
 
 - features
   - ?
@@ -31,6 +31,10 @@ modified: 2022-04-05T10:10:59.826Z
   - evernote
   - gutenberg
   - more: Serenity Notes, Skiff
+  - [Yjs in the Wild | Yjs Docs](https://docs.yjs.dev/yjs-in-the-wild)
+
+- tips
+  - 协作只有文本部分需要YText这类复杂的crdt，表格使用llw-map足够
 
 - 实现协作要考虑到切换冲突处理算法, 如slate-yjs/automerge/sharedb
 

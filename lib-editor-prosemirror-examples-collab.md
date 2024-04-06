@@ -46,15 +46,6 @@ modified: 2022-10-04T23:32:30.824Z
   - This solves two key problems with `prosemirror-collab` through server-side rebasing without the use of CRDTs:
     - Throughput: 200 active clients per 1s of commit delay is feasible depending on backend implementation and edit characteristics.
     - Fairness: Users with high latencies will not have their edits blocked by users with low latencies. This will greatly smooth the collab experience on documents with high levels of concurrent edits.
-  - ⚡️ [ProseMirror Collab Performance | Blog_202307](https://stepwisehq.com/blog/2023-07-25-prosemirror-collab-performance/)
-  - https://news.ycombinator.com/item?id=36959889
-    - A commit-based collab plugin that's far more performant under heavily active client loads than stock. I'm a fan of YJS, but not a fan of state-based CRDT layer on top of ProseMirror for my use cases
-    - I also translated the core ProseMirror projects of model, transform, and test-builder to C#
-    - I spent quite a bit of time as an FTE building out a robust-ish and efficient Yjs backend POC. 
-    - At the end of it all my personal takeaways were:
-    * State-based CRDT isn't great when you want a central authority in the mix anyway and are fundamentally trying to work with operations
-    * The exchange rate between ProseMirror's currency, steps, and some other replication strategies building blocks is too high
-    * ProseMirror should add the concept of range-relocation to its mappings; this is a bit of an aside but it would help retain user intent when reconciling concurrent edits involved in block relocations
 
 - https://github.com/TeemuKoivisto/prosemirror-track-changes-example
   - https://teemukoivisto.github.io/prosemirror-track-changes-example/
@@ -84,6 +75,12 @@ modified: 2022-10-04T23:32:30.824Z
   - Web application for editing texteditor and painting canvas in real-time collaboration.
   - 展示了 quill、draftjs、canvas+mousemove 几个示例
   - 提供了client+server，可作为通用协作方案
+
+- https://github.com/scenaristeur/noosphere /202210/js/vue
+  - https://scenaristeur.github.io/noosphere
+  - 依赖milkdown.v6、vue2、bootstrap-vue.v2、remark-directive、three、yjs
+  - https://github.com/scenaristeur/noosphere2 /202306/js/vue
+    - A simple example for using milkdown with vue.
 # versions
 - https://github.com/inkandswitch/upwelling-code /ts
   - https://upwelling-prototype.netlify.app/
@@ -143,7 +140,8 @@ modified: 2022-10-04T23:32:30.824Z
 # crdt/yjs
 - https://github.com/yjs/y-prosemirror
   - ProseMirror editor binding for Yjs
-- https://github.com/reactivepad/use-yjs-prosemirror
+
+- https://github.com/reactivepad/use-yjs-prosemirror /apache2/202212/ts/inactive
   - use-yjs-prosemirror
 
 - https://github.com/idealjs/chao-feng
@@ -183,6 +181,10 @@ modified: 2022-10-04T23:32:30.824Z
 
 - https://github.com/li-yechao/paper-collab
   - Backend of the rich editor paper-editor.
+
+- https://github.com/stepwisehq/prosemirror-collab-commit /MIT/202307/ts/inactive
+  - Commit-based collaborative editing plugin for ProseMirror
+  - [ProseMirror Collab Performance | Blog _202307](https://stepwisehq.com/blog/2023-07-25-prosemirror-collab-performance/)
 
 - https://github.com/benaubin/prosemirror-collab-plus /202008/ts/inactive
   - Improvements over prosemirror-collab:

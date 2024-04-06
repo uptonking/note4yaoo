@@ -14,7 +14,7 @@ modified: 2022-08-21T09:57:36.123Z
 - stretchH能使表格充满容器宽度，且各列水平均分
 
 - handsontable大小尺寸
-  - Handsontable by default fills its nearest parent element which has a defined `width` ,  `height` and the CSS `overflow` property set to `hidden` .
+  - Handsontable by default fills its nearest parent element which has a defined `width/height` and the CSS `overflow` property set to `hidden` .
     - Having that, you can expand your Handsontable to the window’s dimension and use the native scrollbars to navigate through the grid.
   - If you provide height only and decide to leave the width indefinite, then the spreadsheet will expand to the window’s full width (or any parent element with defined dimensions and `overflow: hidden` )
   - If you set only the table’s width, it won’t render properly until you use the `preventOverflow` option. 

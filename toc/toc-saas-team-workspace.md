@@ -24,6 +24,9 @@ modified: 2023-02-07T17:38:05.336Z
   - 可以从主流产品的issues/discussions里面找替代品
   - 参考github，实现 repo + issues-forum + gitter-im + proj-mgmt + pr + cicd
   - [10 Best Open Source Trello Alternatives](https://rigorousthemes.com/blog/best-open-source-trello-alternatives/)
+
+- tips
+  - 聊天类产品，将聊天室的内容替换成编辑器就成了协同类产品
 # popular
 - growi /1.2kStar/MIT/202403/ts/remark/偏向文档管理
   - https://github.com/weseek/growi

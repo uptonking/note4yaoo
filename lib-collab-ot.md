@@ -11,11 +11,10 @@ modified: 2022-04-05T10:09:36.436Z
 
 - who is using #ot
   - ckeditor, tinymce, typewriter
+  - odoo/o-spreadsheet
   - mongodb realm Atlas Device Sync Protocol
 - who is using #sharedb
   - am-editor
-- who is using #last-write-win
-  - notion
 
 - tips
   - 就算使用ot，大多产品都会使用定制的ot或变体，如ckeditor, prosemirror

@@ -119,7 +119,7 @@ modified: 2023-01-20T21:59:47.792Z
   - [Directus extensions](https://directusextensions.com/browse)
     - Directus Extensions includes all Directus Extensions available on npm that adhere to the `directus-extension-*` naming strategy
 
-- vrite /1kStar/AGPLv3/202310/ts
+- vrite /1kStar/AGPLv3+Elastic/202403/ts
   - https://github.com/vriteio/vrite
   - https://vrite.io/
   - https://editor.vrite.io/

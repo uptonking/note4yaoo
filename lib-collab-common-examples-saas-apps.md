@@ -261,6 +261,9 @@ modified: 2023-01-17T19:14:47.611Z
   - https://deepstreamio.github.io/
   - open source server inspired by concepts behind financial trading technology. 
   - It allows clients and backend services to sync data, send messages and make rpcs at very high speed and scale.
+# cursor
+- https://github.com/mskelton/cursed /202402/ts
+  - Multiplayer live cursors
 # utils
 - clientdb /506Star/apache2/202207/ts/同步未完成
   - https://github.com/clientdb/clientdb

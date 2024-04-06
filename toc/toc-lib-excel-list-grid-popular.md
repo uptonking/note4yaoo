@@ -40,7 +40,7 @@ modified: 2022-08-21T10:02:27.788Z
     - 以哪种数据作为single source of truth
     - 一般以crdt形式的数据结构作为唯一数据源，是否在内存？
   - 实时协作、冲突处理
-  - 离线合并，last-write-win对同一用户不同设备的合并不友好
+  - 离线合并，last-write-win对~~同一用户~~不同设备的合并不友好
   - 对于现有系统，是不是只用替换模型层数据结构且保留api接口不变就可以了
   - 自己实现sync，参考hlc；使用现有同步层，参考logux、automerge
   - undo/redo的实现
@@ -1037,7 +1037,7 @@ modified: 2022-08-21T10:02:27.788Z
   - https://observablehq.com/@analyzer2004/svgtable
   - An SVG Table with sticky rows, columns and many other features.
 # list-grid-table-tr-td
-- jspreadsheet-ce /6.4kStar/MIT/202305/js/单文件
+- jspreadsheet-ce /6.4kStar/MIT/202403/js/单文件
   - https://github.com/jspreadsheet/ce
   - https://github.com/paulhodel/jexcel
   - https://bossanova.uk/jspreadsheet/v4
@@ -1045,10 +1045,12 @@ modified: 2022-08-21T10:02:27.788Z
   - Vanilla JavaScript data grid plugin to create amazing web-based interactive HTML tables, and spreadsheets compatible data grid with other spreadsheet software
   - 基于table标签实现
   - jQuery is not required anymore.
-- https://github.com/sorryljt/react-jexcel
-  - 基于jspreadsheet v4版本，封装的React 版本的轻量级Excel插件
+  - paid-pro: csv, comment, charts, form, formula, search, validator
+  - paid-ultimate: toolar-menu, server, shapes
+  - https://github.com/sorryljt/react-jexcel
+    - 基于jspreadsheet v4版本，封装的React 版本的轻量级Excel插件
 
-- GridManager /551Star/MIT/202010/ts
+- GridManager /551Star/MIT/202308/ts
   - https://github.com/baukh789/GridManager
   - https://gridmanager.lovejavascript.com/
   - https://gridmanager.lovejavascript.com/demo/index.html

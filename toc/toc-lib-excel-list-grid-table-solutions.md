@@ -70,7 +70,7 @@ modified: 2023-11-12T06:25:03.307Z
 - DevExtreme DataGrid /Free4NonCommercial
   - https://js.devexpress.com/
   - DevExtreme HTML5 Data Grid is a feature-rich data shaping and editing client-side widget 
-  - DevExtreme React Grid /Free4NonCommercial
+  - DevExtreme React Grid
     - https://devexpress.github.io/devextreme-reactive/react/grid/ 
     - It is a component that displays table data from a local or remote source.
     - It supports paging, sorting, filtering, grouping and other data shaping options, row selection, and data editing. 

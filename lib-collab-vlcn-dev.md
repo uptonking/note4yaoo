@@ -82,7 +82,10 @@ modified: 2023-06-03T14:43:26.987Z
 
 - ## 
 
-- ## 🚀 [Crsql – Multi-writer and CRDT support for SQLite | Hacker News_202211](https://news.ycombinator.com/item?id=33606311)
+- ## 🚀🔀 [Crsql – Multi-writer and CRDT support for SQLite | Hacker News _202211](https://news.ycombinator.com/item?id=33606311)
+- Does this support CRDTs other than last-write-wins registers?
+  - Not yet. I was thinking of collaborating with Seph to bring DiamondTypes in for sequence crdt support. If that is even possible -- just an idea at the moment.
+
 - 
 - 
 - 
@@ -90,6 +93,13 @@ modified: 2023-06-03T14:43:26.987Z
 - That isn't how CRDT's work though. In the example of mutating a bank balance, there would be addition operations and subtraction operations. So /eventually/ all nodes would arrive at the same balance. It's a bit like event sourcing but lower-level.
   - Depends on the type of CRDT. You can have a CRDT which supports setting a register (or column value in a row) to a particular value. This is what Crsql appears to do as one sibling comment indicated. There are a number of ways to resolve conflicting updates, but Crsql chooses LWW (last writer wins).
 
+- The part i dont understand is as far as i understand, CRDT requires data types with commutative update functions, but SQL does not have that. The part i dont understand is how these two technologies that seem to have conflicting requirements are being joined.
+  - Columns are LWW (last writer wins) registers within rows which are LWW maps. When concurrent writes occur because peers may not be communicating, there is typically an arbitrary but convergent selection based on peer id.
+- There's different strategies for solving conflicts but CRDTs wouldn't be a good fit where you need a total ordering of all transactions -- such as bank deposits.
+
+
+- 
+- 
 - 
 - 
 
