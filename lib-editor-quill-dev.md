@@ -26,6 +26,11 @@ modified: 2023-02-09T18:23:23.288Z
   - ERPNext
   - Grammarly Editor
   - [vaadin rich-text-editor is built with Quill](https://vaadin.com/docs/latest/components/rich-text-editor)
+
+- tips
+  - 视图层的实现可参考: wangEditor/typewriter/autocomplete, 库和应用层有不同
+# not-yet
+- y-quill中`quill.setContents(type.toDelta(), this);`第2个参数不能设为ts类型中的`silent`
 # dev
 
 # more

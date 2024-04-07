@@ -13,7 +13,7 @@ modified: 2023-02-09T18:23:23.287Z
 - Typewriter is influenced by Quill.js, being built on the same data model, but with differences
   - Typewriter uses tuples of indexes to describe ranges and selection
   - Typewriter’s rendering to the DOM is just a module. It can be left out or replaced with custom rendering (e.g. for virtualized rendering).
-  - Typewriter provides a TextChange interface to roll up multiple change operations into one atomic change in the editor.
+  - Typewriter provides a `TextChange` interface to roll up multiple change operations into one atomic change in the editor.
   - Typewriter’s single `insert` replaces Quill's `insertText` and `insertEmbed` methods and allows overwriting selected content in one operation.
   - Typewriter provides a module for decorations.
   - Typewriter has no stylesheet requirements. 

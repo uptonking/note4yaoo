@@ -46,6 +46,21 @@ modified: 2022-08-21T10:37:45.959Z
     - 👉🏻 暂时没有这样的计划来引入ot
     - 我们还是更倾向于将单元格的属性作为原子，而不是属性的内容作为原子，而单元格的内容也是一个单元格属性
 # collab
+- https://git.qmpoa.com/fe_common_lib/y-luckysheet /202403/ts
+  - 将 Luckysheet 数据映射到 Y. Map
+  - 同步 Luckysheet 数据、光标
+  - Undo / Redo 仅对删除 sheet 做了管理，其它依赖 Luckysheet 自有逻辑
+  - https://git.qmpoa.com/fe_common_lib/luckysheet
+
+- https://gitee.com/wfeng0/mpoe /apache2/202402/js/vue
+  - 多人协同编辑器开发 MPOE（Multi person online edit）
+  - node采用较强的模块化思想，每个单独的模块都会独立导出 index.js ，因此，node有很多的 index.js，注意区分; 
+  - 使用Yjs、Quill、LuckySheet 等技术实现的markdown、txt、excel 等文件的多人在线协同编辑，支持以 websocket、webRTC、组合API等形式实现通信
+  - 对pako压缩数据进行解析，这是第一个难点；
+  - exceljs file-saver 实现文件导出；
+  - [Luckysheet 实现excel多人在线协同编辑 - 掘金](https://juejin.cn/post/7298170736480485376)
+  - [Yjs + Quill 实现文档多人协同编辑器开发（基础+实战） - 掘金 _202309](https://juejin.cn/post/7273432426772070457)
+
 - https://github.com/DilemmaVi/ecsheet /java/js
   - 基于Luckysheet实现的协同编辑在线表格
   - SpringBoot + Websocket

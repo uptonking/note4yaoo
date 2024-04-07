@@ -59,7 +59,7 @@ modified: 2023-02-05T19:03:12.723Z
   - [修改license为GPL_20220204](https://github.com/editablejs/editable/commits/main?after=d61da6caa411139cddb0ae0e8eeeeaee05893610+69&branch=main&qualified_name=refs%2Fheads%2Fmain)
   - unicode-trie主要对一些 unicode 字符进行索引的计算。因为有些字符占位所占的字节数不确定，造成某些字符拆分后的索引不准确
 
-- wangEditor.v5 /14.3kStar/MIT/202208/ts/vanillajs
+- wangEditor.v5 /14.3kStar/MIT/202212/ts/vanillajs/inactive
   - https://github.com/wangeditor-team/wangEditor
   - https://www.wangeditor.com/
   - https://www.wangeditor.com/demo/index.html
@@ -769,7 +769,6 @@ modified: 2023-02-05T19:03:12.723Z
   - This react component provides a slack like rich text editing experience powered by slate.js
   - Starting v0.2.0, react-slite is powered by lexical.
 # utils
-
 - https://github.com/pubuzhixing8/slate-diff /202107/ts/js/inactive
   - 基于ot、diff-match-patch
 

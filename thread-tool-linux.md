@@ -29,6 +29,11 @@ modified: 2024-01-06T13:48:42.969Z
 
 - ## 
 
+- ## 
+
+- ## Interesting, @intellijidea built block based terminal in 2024.1 like @warpdotdev
+- https://twitter.com/OnlyXuanwo/status/1776791869848231993
+
 - ## zsh 在特别大的一个 Git 仓库下会特别卡
 - https://twitter.com/alswl/status/1773166682887888927
   - 原因是 zsh 的 prompt 会在每次命令执行之后计算 Git 仓库的 status 和 dirty status。

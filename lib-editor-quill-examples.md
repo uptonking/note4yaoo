@@ -14,6 +14,7 @@ modified: 2023-02-09T18:32:06.240Z
   - search: mern + quill
   - 很多dashboard也包含quill
   - [Quill Diff - old/new/diff](https://codepen.io/belomm/pen/ebdbGy)
+  - https://npmtrends.com/@tiptap/core-vs-draft-js-vs-lexical-vs-quill-vs-slate
 # popular
 - quill /37.5kStar/BSD/202311/ts
   - https://github.com/quilljs/quill
@@ -40,6 +41,13 @@ modified: 2023-02-09T18:32:06.240Z
   - 多功能的、可面向商业化的quill富文本编辑器
   - 使用最新的quill@2.0.0-rc.4，方便向后兼容。
   - 使用React Hooks实现
+
+- https://gitee.com/wfeng0/mpoe /apache2/202402/js/vue
+  - 多人协同编辑器开发 MPOE（Multi person online edit）
+  - node采用较强的模块化思想，每个单独的模块都会独立导出 index.js ，因此，node有很多的 index.js，注意区分; 
+  - 使用Yjs、Quill、LuckySheet 等技术实现的markdown、txt、excel 等文件的多人在线协同编辑，支持以 websocket、webRTC、组合API等形式实现通信
+  - [Luckysheet 实现excel多人在线协同编辑 - 掘金](https://juejin.cn/post/7298170736480485376)
+  - [Yjs + Quill 实现文档多人协同编辑器开发（基础+实战） - 掘金 _202309](https://juejin.cn/post/7273432426772070457)
 
 - https://github.com/welkinwong/superdocs-quill /202311/ts/inactive
   - https://github.com/welkinwong/superdocs-rsuite

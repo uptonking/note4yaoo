@@ -328,6 +328,16 @@ betterdiscordctl -i flatpak install
 
 ## 040
 
+## 0407
+
+- [NodeJS - setTimeout(fn, 0) vs setImmediate(fn) - Stack Overflow](https://stackoverflow.com/questions/24117267/nodejs-settimeoutfn-0-vs-setimmediatefn)
+  - `setImmediate()` is to schedule the immediate execution of callback after I/O events callbacks and before `setTimeout` and `setInterval` .
+
+- [OnsenUI : uncaught ReferenceError: setImmediate is not defined - Stack Overflow](https://stackoverflow.com/questions/52164025/onsenui-uncaught-referenceerror-setimmediate-is-not-defined)
+  - `window.setImmediate = window.setTimeout; `
+
+- [Type safety in JavaScript with JSDoc and VSCode - DEV Community](https://dev.to/t7yang/type-safety-in-javascript-with-jsdoc-and-vscode-1a28)
+
 ## 0406
 
 ```JS

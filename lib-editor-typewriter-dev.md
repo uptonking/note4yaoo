@@ -10,8 +10,8 @@ modified: 2023-02-09T12:24:23.549Z
 # guide
 
 - features
-  - collab
   - virtual render
+  - collab
 
 - 技术要点
   - 模型层TextDocument将Delta中的op数组按换行符拆分为blocks/lines数组

@@ -10,10 +10,10 @@ modified: 2023-02-09T18:24:06.718Z
 # guide
 - delta
   - 内容元素: block, inline-text, inline-non-text
-  - 更新操作: insert, delete, format, retain
+  - 更新操作: insert, delete, retain, format
 # docs
 
-## [Parchment](https://github.com/quilljs/parchment)
+## ⚖️ [Parchment](https://github.com/quilljs/parchment)
 
 - Parchment is Quill's document model. 
 - It is a parallel tree structure to the DOM tree, and provides functionality useful for content editors, like Quill. 
@@ -23,10 +23,10 @@ modified: 2023-02-09T18:24:06.718Z
   - Several basic implementations such as Block, Inline, and Embed are provided. 
 - Attributors are the alternative, more lightweight, way to represent formats.
 
-## [Delta - Quill Rich Text Editor](https://quilljs.com/docs/delta/)
+## ⚖️ [Delta - Quill Rich Text Editor](https://quilljs.com/docs/delta/)
 
 - Deltas are a simple, yet expressive format that can be used to describe Quill’s contents and changes. 
-- The format is a strict subset of JSON, is human readable
+  - The format is a strict subset of JSON, is human readable
 - Deltas represents both documents and changes to documents. 
   - If you think of Deltas as the instructions from going from one document to another, the way Deltas represent a document is by expressing the instructions starting from an empty document.
   - When Deltas are used to describe content, it can be thought of as the content that would be created if the Delta was applied to an empty document.
@@ -39,7 +39,7 @@ modified: 2023-02-09T18:24:06.718Z
 
 - A retain operation simply means keep the next number of characters, without modification. 
 
-### [Designing the Delta Format - Quill](https://quilljs.com/guides/designing-the-delta-format/)
+## ⚖️💡 [Designing the Delta Format - Quill](https://quilljs.com/guides/designing-the-delta-format/)
 
 - Rich text editors lack a specification to express its own contents.
 - Deltas, the specification describing rich text, is designed to be easy to understand and use
@@ -52,6 +52,7 @@ modified: 2023-02-09T18:24:06.718Z
 - Canonical
   - If two Deltas are equal, the content they represent must be equal
   - Programmatically, this allows you to simply deep compare two Deltas to determine if the content they represent is equal.
+
 - Line Formatting
   - Line formats affect the contents of an entire line
   - To solve this, Quill “adds” a newline to all documents and always ends Deltas with “\n”.

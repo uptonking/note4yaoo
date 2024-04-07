@@ -11,6 +11,7 @@ modified: 2022-08-21T09:57:32.451Z
 
 - pros
   - features rich and open source
+  - 有很多公开插件，如formula
 
 - cons
   - non-commercial

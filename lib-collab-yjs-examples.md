@@ -81,6 +81,10 @@ modified: 2022-09-21T15:47:41.340Z
   - Scales horizontally with a session backend model.
   - Provides document-level access control via client tokens.
 # utils
+- https://github.com/WaiSiuKei/yjs-devtools-formatter /MIT/202401/ts
+  - A Chrome DevTools formatter for Yjs.
+  - It makes the Yjs data types printed in the Chrome DevTools console easier to read and inspect, allowing developers to inspect Yjs data types just as they do with primitive data types.
+
 - https://github.com/rozek/y-lwwmap /MIT/202307/ts/inactive
   - Yjs provides a complete ecosystem for (persisting and) sharing "Conflict-free replicated data types" (CRDT) among multiple clients using a variety of persistence and communication providers. 
   - The shared data types include arrays and maps, with shared maps becoming inefficient in most practical cases, which is why there is an alternative implementation based on shared arrays in the `y-utility` package.

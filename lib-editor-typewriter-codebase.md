@@ -24,7 +24,7 @@ modified: 2023-02-09T12:26:14.281Z
 - Editor自身是一个经典自定义eventemitter，
   - 注意触发事件基于dom event，类似`this.dispatchEvent(new Event('root'));`，默认不冒泡
   - 在editor的构造函数中，初始化rendering模块时会注册事件， `editor.on('change', renderOnChange);`。
-  - editor数据更新时，会手动执行this.update，从而触发view更新 `editor.dispatchEvent(new EditorChangeEvent())`
+  - editor数据更新时，会手动执行this.update更新model，再通过emitter触发view更新 `editor.dispatchEvent(new EditorChangeEvent())`
   - prosemirror的数据变化后，可以手动在dispatchTransaction中view.updateState(newState)
 
 - 触发rerender/update的场景
@@ -49,7 +49,7 @@ modified: 2023-02-09T12:26:14.281Z
   - lines/formats/embeds的render属性定义了渲染细节，`() => h('img', props)`
 
 ```typescript
-// vnode中不包含真实dom
+// 自定义vnode中不包含真实dom，但snabbdom包含
 export interface VNode {
   type: string;
   props: Props;

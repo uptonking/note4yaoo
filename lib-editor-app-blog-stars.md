@@ -35,7 +35,14 @@ modified: 2022-08-21T10:11:43.095Z
 # blogs
 - [The future of document editing - inspirations](https://lukasmurdock.com/cms/)
 
-## [从浏览器源码开始实现 Canvas 富文本编辑器 - 知乎_](https://zhuanlan.zhihu.com/p/642703113)
+## ✏️🎨 [Canvas-Editor 实现类似 Word 协同编辑 - 掘金 _202401](https://juejin.cn/post/7326979670485925926)
+
+- 推荐基于canvas/svg 的富文本编辑器 canvas-editor，能实现类似word的基础功能
+  - 虽然canvas-editor做的还不错，API都比较完善，但是对协同部分还是空缺，因此我们此次的重点是实现协同部分的代码，难免会修改源码部分。
+- 用户闪烁的光标目前还没有思路实现，后面会攻克技术难点，但是用户选取可以通过API实现
+- 整个编辑器需要实现协同的地方，都能调用 ydoc 实现。
+
+## 🌰✏️🎨 [从浏览器源码开始实现 Canvas 富文本编辑器 - 知乎_](https://zhuanlan.zhihu.com/p/642703113)
 
 - https://github.com/WaiSiuKei/neditor /MIT/202308/ts
   - https://waisiukei.github.io/neditor/
@@ -48,18 +55,21 @@ modified: 2022-08-21T10:11:43.095Z
 - 最终，我发现了 YouTube 的 Cobalt 项目，它能够运行 HTML5 标准的子集。
   - 他们最初也是维护一个基于 Chromium 移植版，但为了在游戏主机、机顶盒等资源受限的环境中实现基于 HTML5 的视频浏览和播放应用程序
   - 他们从头开始构建了一个简化的 HTML 子集实现和 CSS Box 模型所需的代码，没有使用复杂的 Blink 内核，也没有使用 Chromium 复杂的合成器和渲染管线的代码。
-  - DOM 层：这是实现 W3C 标准子集的地方，可以支持常用的 HTML 标签，布局方面支持流式布局和 Flex 布局。 
+  - DOM层：这是实现 W3C 标准子集的地方，可以支持常用的 HTML 标签，布局方面支持流式布局和 Flex 布局。 
   - 布局引擎：基于 DOM 树计算布局树，并进一步生成用于指示绘图的渲染树，以发送到渲染器。 
-  - 渲染器/ Skia：渲染器遍历布局引擎生成的渲染树，使用 Skia 图形库对其进行绘制、光栅化输出
+  - 渲染器/Skia：渲染器遍历布局引擎生成的渲染树，使用 Skia 图形库对其进行绘制、光栅化输出
 
 - 在将 Cobalt 内核移植用于渲染后，我可以使用 HTML 来描述 DOM 结构，然后渲染内核就可以在 Canvas 元素内绘制出界面内容，但是这只是一个单纯的数据展示层，我还需要完成完整的架构设计，将各个分层模块组合起来才能形成富文本编辑器。
 
 - 我使用了 Vue 来构建 DOM 树。然而，在现在这个基于移植的虚拟 DOM 的富文本编辑器中，我们可以选择一些没有虚拟 DOM 层的前端框架（例如 Svelte），以减少不必要的层级。我选择了 Pettie-vue 项目，它类似于 Vue，可以将响应式对象转换为想要的页面，但比 Vue 更简单，更容易移植到我所定义的虚拟 DOM 层上。
 
 - Model -> ViewModel -> View（DOM 树）-> Layout 树数据 -> Render 树数据
+- 上述搭建的 MVVM 架构只完成了编辑器使用链路中的半条链路——将数据更新到视图，而另一半链路是如何通过用户在视图上的鼠标键盘交互来更新数据。
+  - 在解决后半条链路的问题时，首先需要解决的是如何将 Canvas 内的鼠标键盘事件发送到外部这个问题。
+  - 如果直接在对象上添加事件监听器，会让编辑器忙于增加和删除事件监听器，这样的设计会非常麻烦。在前端开发实践中，一种解决这种问题的方法是采用事件委托。例如，VSCode 的 Monaco 编辑器内部的事件模型，也使用事件委托的方式在 View 层集中处理事件。
+  - 
 
 - 在完成了上述事件机制之后，我回头结合之前研究的浏览器源码来对 ProseMirror 进行移植。
-
 - Cobalt 源码中没有 Chromium 中所有与文本编辑相关的部分，但是两者都是基于遵守 HTML 标准去实现 Node、Text、Element 和 HTMLElement 这些类。
   - 这使得我可以直接从 Chromium 的 Editing 模块中复制与 Range 和 Selection 相关的代码来使用。
   - 在事件模型和 DOM 模型都准备好之后，移植 ProseMirror 就非常容易了。

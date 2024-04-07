@@ -92,6 +92,13 @@ modified: 2023-03-09T13:47:07.317Z
   - a word processor, a spreadsheet, a drawing app and a presentation maker
   - packaged as data URLs, so you can use them right away, without downloading or installing
   - but they can't store their state, so whatever you type there would be lost on page refresh
+
+- https://gitee.com/wfeng0/mpoe /apache2/202402/js/vue
+  - 多人协同编辑器开发 MPOE（Multi person online edit）
+  - node采用较强的模块化思想，每个单独的模块都会独立导出 index.js ，因此，node有很多的 index.js，注意区分; 
+  - 使用Yjs、Quill、LuckySheet 等技术实现的markdown、txt、excel 等文件的多人在线协同编辑，支持以 websocket、webRTC、组合API等形式实现通信
+  - [Luckysheet 实现excel多人在线协同编辑 - 掘金](https://juejin.cn/post/7298170736480485376)
+  - [Yjs + Quill 实现文档多人协同编辑器开发（基础+实战） - 掘金 _202309](https://juejin.cn/post/7273432426772070457)
 # office-like
 - https://github.com/mnt-ltd/moredoc /go
   - moredoc，魔豆文库，基于golang开发的类似百度文库的开源文库系统，dochub文库的重构版本。

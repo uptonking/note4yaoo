@@ -25,6 +25,7 @@ modified: 2022-04-05T10:10:08.537Z
 - 协作方案参考
   - Liveblocks, synced-store, FluidFramework, gundb, pouchdb
   - automerge (2017), yjs (2015), sharedb (2013)
+- 实现协作要考虑到切换冲突处理算法，如slate-yjs/automerge/sharedb
 
 - state-based和operation-based没必要二选一，两者可转换
   - 两者的主要区别
@@ -66,7 +67,8 @@ modified: 2022-04-05T10:10:08.537Z
     - yata/yjs
     - chronofold
 
-- 实现协作要考虑到切换冲突处理算法，如slate-yjs/automerge/sharedb
+- 协作类产品开发的架构
+  - 一般分为视图模型层、协作层、持久化层
 
 - [Bartosz Sypytkowski crdt series](https://www.bartoszsypytkowski.com/the-state-of-a-state-based-crdts/)
 

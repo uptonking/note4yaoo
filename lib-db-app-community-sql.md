@@ -121,7 +121,12 @@ modified: 2023-09-17T17:35:27.024Z
 
 - ## 
 
-- ## 
+- ## Neumann把SQL批判一顿，说SQL语法顺序和语义顺序不一致不利于初学者学习，CTE的抽象不好用不利于数据分析人士使用，SQL越来越复杂要累死数据库开发者了。
+- https://twitter.com/DylanGalois/status/1776906328348217387
+  - 既然学SQL前要学关系代数，干脆直接写关系代数得了，所有人都开心，于是有了SaneQL。最后出来的东西真像DataFrame API
+- SQL 就是上个世纪的东西，浓浓的 COBOL 味, DataFrame API 才是现代编程语言的该有的 style
+- 殊途同归嘛，但是 SQL 的功能太丰富了，还是没法被完全替代
+- 光批判SQL有啥用，要批判就把数据库一起批判，每个数据库都想着扩充一把SQL，同样一句SQL这个数据库能跑那个数据库没法跑，多数据库并存混用的时候，还得请教多个dba帮着矫正SQL
 
 - ## 👨🏻‍🏫 How Databases Execute SQL Statements?
 - https://twitter.com/sahnlam/status/1771407763517898825

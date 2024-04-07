@@ -9,9 +9,9 @@ modified: 2023-11-27T20:19:50.947Z
 
 # guide
 
+- changes
+  - quill很久未更新了，v1.3.7和v2都最后更新在202004
 # roadmap
-- quill很久未更新了，v1.3.7和v2都最后更新在202004
-
 - [The State of Quill and 2.0_201709](https://medium.com/@jhchen/the-state-of-quill-and-2-0-fb38db7a59b9)
   - Historically, major software releases have focused on technical developments and new features. Quill’s 2.0 release, however, will also prioritize supporting activities.
   - With early adopters proving out several uses cases and providing more confidence in Parchment’s API, we can move from making sure our aim is possible towards making them easy for the wider audience.

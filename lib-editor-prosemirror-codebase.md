@@ -18,29 +18,15 @@ modified: 2021-06-02T17:13:37.692Z
   - editorView
   - 协作
 
-- 要关注的重点
+- 代码要点
   - 编辑器state数据结构是如何设计的
   - plugin如何更新state
-
-- 用户输入时如何更新editorState
-  - 获取输入内容，beforeinput/keydown/MutationObserver
-  - 寻找合适的插入位置
-  - 替换节点
-  - 返回新文档
-  - 更新选取等其他状态
-
-- editorState变化时如何更新dom元素
-  - 更新viewDesc
-  - node
-  - mark
-  - decoration
-  - renderDescs 更新dom
 
 - PMENode与DOM
   - parseDOM实现解析
   - 编辑时要toDOM，特殊节点如footnote/编辑操作一般是通过insert菜单
 
-- prosemirror-history依赖 rope-sequence
+- prosemirror-history 依赖 rope-sequence
   - a persistent sequence type implemented as a loosely-balanced rope. 
   - It supports appending, prepending, and slicing without doing a full copy. 
   - Random access is somewhat more expensive than in an array (logarithmic, with some overhead), but should still be relatively fast.
@@ -88,9 +74,31 @@ modified: 2021-06-02T17:13:37.692Z
 
 - ## 如何实现virtualized虚拟化渲染
 - 参考思路，先实现分页，再渲染前后2页
-# architecture
+# 🏘️ architecture
 - dataflow
   - 先更新state/model，再更新view
+
+- 用户输入时如何更新editorState
+  - 获取输入内容，beforeinput/keydown/MutationObserver
+  - 寻找合适的插入位置
+  - 替换节点
+  - 返回新文档
+  - 更新选取等其他状态
+
+- editorState变化时如何更新dom元素
+  - 更新viewDesc
+  - node
+  - mark
+  - decoration
+  - renderDescs 更新dom
+
+- 用户输入时如何更新dom
+  - 编辑器最外层样式类为`.ProseMirror`的div元素的`contenteditable`为true，所以编辑器内元素都可编辑
+  - 浏览器编辑发生后，通过domObserver将修改同步到editorState
+  - view已经是最新而无需再更新，~~pm-state的更新会触发view的更新~~
+
+- 外部工具条按钮的逻辑
+  - 先更新state，再更新view
 
 ```JS
 let state = EditorState.create({ schema })
@@ -149,16 +157,12 @@ let view = new EditorView(document.body, {
   - vdom定义、decoration、selection同步、domObserver状态同步、dom-coords、clipboard处理、浏览器兼容性处理
 
 - decoration vs NodeView vs plugin.view()
-  - decoration不影响prosemirror document
-  - NodeView可以完全定制渲染逻辑和更新逻辑，只有在编辑器中存在该类型PMNode时，才会创建和更新
+  - decoration不影响prosemirror document-model
+  - NodeView可以完全定制渲染逻辑和更新逻辑, 与model层联系紧密，只有在编辑器中存在该类型PMNode时，才会创建和更新
   - plugin.view()只要EditorView更新了，就会被调用，因此要注意控制更新逻辑提高性能
 
 - editorView.props存放了editorState，获取时会同步获取最新的
   - this._props.state = this.state
-
-- 编辑输入时如何更新dom
-  - 编辑器最外层样式类为`. ProseMirror`的div元素的`contenteditable`为true，所以编辑器内元素都可编辑
-  - 浏览器编辑发生后，通过domObserver将修改同步到editorState
 # plugin
 - plugin-dev
   - undo和collab都作为plugin实现
@@ -211,7 +215,7 @@ let view = new EditorView(document.body, {
 ## 使用react组件作为nodeViews的方法
 
 - @atlaskit/editor(prosemirror-react-typescript-example)
-- In case you want to use nodeViews as React components, they use `portalProvider` to render themselves as portals which are updated inside each `dispatchTransaction` call to flush the changes only once (instead of updating them in each update call in each `ReactNodeView` separately).
+  - In case you want to use nodeViews as React components, they use `portalProvider` to render themselves as portals which are updated inside each `dispatchTransaction` call to flush the changes only once (instead of updating them in each update call in each `ReactNodeView` separately).
   - Syncing PM editor state to React components isn't always that easy and definitely there are still some enhancements that I should do.
 
 - prosemirror-react-nodeviews/bangle.dev-editor/tiptap

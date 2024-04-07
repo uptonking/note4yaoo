@@ -131,3 +131,11 @@ yarray.insert(0, [subArray]) // Throws exception!
   - Relative positions give you a powerful API to express positions.
 - A relative position is fixated to an element in the shared document and is not affected by remote changes. 
 - Relative positions are guaranteed to always point to the same location ⇒ When all clients sync up, all relative positions will translate to the same index-position. This is not possible in OT-like solutions
+
+## [Delta Format | Yjs Docs](https://docs.yjs.dev/api/delta-format)
+
+- The Delta Format was originally described by the Quill rich text editor. 
+  - We adapted the approach to describe changes on sequence-like data (e.g. `Y.Text, Y.Array, Y.XmlFragment`).
+  - it can also be used to describe the current state of a sequence-like data structure
+- The delta format is very powerful to express changes that are performed in a Transaction.
+  - events are fired after transactions. With the delta format we can express multiple changes in a single event

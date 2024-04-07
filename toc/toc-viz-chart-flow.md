@@ -113,11 +113,12 @@ modified: 2020-10-22T10:22:55.878Z
   - [is Dynamic auto layouting using dagre possible?](https://github.com/wbkd/react-flow/issues/1113)
     - Dynamic auto layout with dagre is possible. As explained you need to re-layout your graph when you add a node. The easiest way is to have pre-defined dimensions for your nodes. If that's not possible you need to wait for the first render and then do a re-calculation of the layout.
 
-- LogicFlow /4.5kStar/apache2/202305/ts
+- LogicFlow /4.5kStar/apache2/202404/ts
   - https://github.com/didi/LogicFlow
   - https://docs.logic-flow.cn/examples/#/gallery
   - 专注于业务自定义的流程图编辑框架，支持实现脑图、ER图、UML、工作流等各种图编辑场景
-  - core依赖preact、mobx、mousetrap
+  - core依赖preact、mousetrap, mobx-react似乎是可选依赖
+  - engine是一个可以在JavaScript环境执行的流程引擎
   - 视图层依赖preact，但使用时不要求react环境，通过instance.render()执行
   - 部分使用class组件
   - 兼容各种产品自定义的流程编辑需求，绝大部分模块以插件的形式实现，支持各模块自由插拔

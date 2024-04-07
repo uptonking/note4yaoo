@@ -30,9 +30,9 @@ modified: 2023-02-22T19:49:14.823Z
 
 ## architecture
 
-- ReactEditor组件初始化时
-  - createEditor会传入setState逻辑到onChange属性，可以触发整个view更新
-  - coreCreateEditor会new TextArea(selector)创建核心视图对象
+- `@wangeditor/editor-for-react`组件初始化时
+  - createEditor时组件setState的逻辑会作为配置传到editor.onChange属性，可触发整个view更新
+  - coreCreateEditor会`new TextArea(selector)`创建核心视图对象
 
 - TextArea核心视图组件(可能不是html-textarea)初始化时
   - editor.on('change', this.changeViewState.bind(this)); 

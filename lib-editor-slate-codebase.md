@@ -15,7 +15,10 @@ modified: 2023-02-05T19:03:12.722Z
   - dirtyPath
   - decoarate
   - op move/split/merge
-  - 支持tiptap/prosemirror的json
+  - import/export: tiptap/prosemirror的json
+
+- tips
+  - 协作3大要点: 模型数据、光标选区、undo/redo
 
 - 若slate-model层采用扁平化Node
   - 如何保持path和key同步，参考 getKeysToPathsTable, getByKey实现上基于getByPath
@@ -27,7 +30,7 @@ modified: 2023-02-05T19:03:12.722Z
 
 - 实现扁平化Node的方式
   - 理想方式是每个op会在apply结束后顺便计算dirtyPath相关的数据变化
-  - 临时方案，diff当前op的最高节点作为根节点的树，先flat再diff计算出added/removed
+  - 变通方案，diff当前op的最高节点作为根节点的树，先flat再diff计算出added/removed
 
 - virtual render在渲染层实现
   - 此时选区和范围如何表示，因为dom可能不存在
@@ -55,7 +58,7 @@ modified: 2023-02-05T19:03:12.722Z
 - remirror的api设计 uncontrolled by default
   - 支持设置state+onChange让ReEditor组件变成controlled
 
-## answers
+## done
 
 - 光标在斜体粗体文字边上时，选区对应的具体位置在里面还是外面
   - 粗体、斜体只是文本节点的属性
@@ -63,11 +66,18 @@ modified: 2023-02-05T19:03:12.722Z
 - contenteditable内的元素，mousedown可以触发，keydown不能触发
   - 因为只有能够获取focus的元素才能触发key事件
 
-- 🤔 输入字母时，为什么beforeinput的selection为5，onChange方法里的selection为6，何时更新的
+- 🤔 输入字母时，为什么beforeinput的selection为5，onChange方法里的selection为6，selection对象是何时更新的
   - 首先确认更新范围，onChange执行后useEffect才执行将 slateSel-TO-domSel，所以更新sel发生在渲染前
   - 排查定位到，执行op `insert_text`时，顺便就把selection更新了
   - 不需要在op-text执行后单独执行op-selection来更新sel
-# undo/history
+# 🏘️ architecture
+- 用户输入时如何更新dom
+  - 一般在beforeinput拦截并获取用户输入内容，然后更新editor-model
+  - model更新触发view层react组件更新
+
+- 外部工具条按钮的逻辑
+  - 先更新state，再更新view
+# ⌛️ undo/history
 - 思路是先计算inverseOps，再执行它
 
 ```JS
@@ -94,12 +104,9 @@ e.apply = (op: Operation) => {
 }
 ```
 
-# slate-yjs
+# 🔀 slate-yjs
 - not-yet
   - undo/redo的按键事件是在哪里处理的
-
-- tips
-  - 协作3大要点: 模型数据、光标选区、undo/redo
 
 - 网络通信socket，基于框架隐藏了网络通信的细节
   - 客户端连接使用HocuspocusProvider
@@ -158,7 +165,6 @@ const op = {
 ​
 - slate-react 大量 WeakMap 数据结构的使用，如果看过 Vue3.0 源码的 reactivity 的源码，应该对这种数据结构不陌生。
   - 使用 WeakMap 的好处是它的键值对象是一种弱引用，所以它的 key 是不能枚举的，能一定程度上节约内存，防止内存泄漏。
-​
 
 ## Editable
 

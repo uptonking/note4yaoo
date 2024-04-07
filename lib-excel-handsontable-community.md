@@ -12,7 +12,8 @@ modified: 2023-12-21T20:07:29.584Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## [Handsontable v6.2.2 doc is removed _202403](https://forum.handsontable.com/t/handsontable-v6-2-2-doc-is-removed/7490)
+
 # discuss
 - ## 
 

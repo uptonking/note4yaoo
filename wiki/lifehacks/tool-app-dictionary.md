@@ -219,6 +219,13 @@ modified: 2023-07-08T12:47:00.141Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 👣 Anna's Archive 可以视为 Zlibrary 的超集，拥有比 Zlibrary 更多的图书资源，不需要登录即可下载。
+- https://twitter.com/OldPanda/status/1764871238282080549
+
 - ## 单词还原词干，有算法还原，有数据库还原；前者容易出错，后者经常容易不全，
 - https://twitter.com/skywind3000/status/1734245007991951699
   - 我扫描了 BNC 语料库全部 1 亿个词条语料生成了一个 lemma.en.txt 文件，可以方便的查询各种词干，数据库是最稳妥的，找不到时再靠算法判断 -ing, -ed 之类的

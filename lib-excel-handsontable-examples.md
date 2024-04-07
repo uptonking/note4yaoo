@@ -18,7 +18,7 @@ modified: 2023-12-21T20:06:13.700Z
   - a JS HTML5 data grid with spreadsheet look & feel.
   - free for all non-commercial purposes since 7.0
   - 不支持协作
-  - 支持undo，[Q: Possible to combine multiple actions into single undo/redo step?](https://github.com/handsontable/handsontable/issues/7324)
+  - 支持undo，[Q: Possible to combine multiple actions into single undo/redo step? _202010](https://github.com/handsontable/handsontable/issues/7324)
   - [Handsontable drops open source for a non-commercial license_201903](https://github.com/handsontable/handsontable/issues/5831)
     - https://github.com/handsontable/handsontable/releases/tag/7.0.0
     - [Handsontable v7 and later versions are fully commercial so it really depends on your case](https://twitter.com/handsontable/status/1164198101726433282). 
@@ -100,6 +100,14 @@ modified: 2023-12-21T20:06:13.700Z
 
 - https://github.com/zayscue/websheets /MIT/201811/js
   - a test for importing an excel sheet into a web page using react.js, react dropzone, sheet.js, and handsontable
+
+- https://github.com/handsontable/formula-parser /MIT/202101/js/archived
+  - Javascript Library parsing Excel Formulas and more
+  - https://github.com/formulajs/formulajs /500Star/MIT/202403/js
+  - https://github.com/handsontable/formula.js /MIT/202001/js/archived
+  - 🧮 [Handsontable 9.0.0: New formula plugin _202106](https://handsontable.com/blog/handsontable-9.0.0-new-formula-plugin)
+    - It integrates our powerful calculation engine – HyperFormula®
+    - Up to version 8.4.0 there was a formula plugin that was built by us based on two other projects: our own formula parser, and an external library of spreadsheet functions, called formula.js. T
 # utils
 - https://github.com/Yinger/ts-excel-compare /202009/ts
   - https://yinger.github.io/ts-excel-compare/

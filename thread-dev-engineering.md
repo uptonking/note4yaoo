@@ -43,7 +43,10 @@ modified: 2021-01-21T17:52:13.333Z
 
 - ## 
 
-- ## 
+- ## An interesting recurring theme in data infra: protocols/APIs outliving specific implementations.
+- https://twitter.com/gunnarmorling/status/1716878504044998914
+  - E.g. #Kafka wire protocol (#RedPanda, #WarpStream as alternative providers), S3 API (#MinIO, #Ceph, etc.), #Postgres protocol (too many to list even).
+- Dynamodb, Cassandra/Scylladb
 
 - ## 刚读完了这两篇关于 xz-utils 包的供应链攻击说明，攻击者潜伏了三年，很精彩，只差一点点就可以往众多 Linux 发行版的 sshd 注入后门，可用于绕过密钥验证
 - https://twitter.com/Blankwonder/status/1773921956615877110
@@ -139,9 +142,9 @@ modified: 2021-01-21T17:52:13.333Z
 
 - 这里可能有个悖论, 自己造轮子 研发成本高, 不自己造轮子 显不出技术“高明”, 结果是 996 劣质轮子 遍地都是…
 
-01.      大概率没有开源的好
-02.      造轮子就要维护一个轮子迭代维保团队
-03.      迭代维保团队和其他团队无限的撕逼
+01.       大概率没有开源的好
+02.       造轮子就要维护一个轮子迭代维保团队
+03.       迭代维保团队和其他团队无限的撕逼
 
 - ## Five terms I avoid when naming things:
 - https://twitter.com/housecor/status/1742197661837476018

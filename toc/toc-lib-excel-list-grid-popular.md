@@ -1271,13 +1271,13 @@ modified: 2022-08-21T10:02:27.788Z
   - [Hyperformula support for ag grid](https://github.com/handsontable/hyperformula/discussions/817)
     - The only supported integration of HyperFormula with a spreadsheet solution with an advanced scope of features is with the Handsontable.
 
-- https://github.com/formulajs/formulajs /500Star/MIT/202310/js
+- https://github.com/formulajs/formulajs /500Star/MIT/202403/js
   - https://formulajs.info/
   - JavaScript implementation of most Microsoft Excel formula functions
   - originally forked from @handsontable/formulajs version 2.0.2 (released in January 2020). There is no regression, only fixes and new functions since the fork.
   - 依赖jstat、bessel(fn)
   - 🍴 forks
-  - https://github.com/handsontable/formula.js /MIT/202001/js
+  - https://github.com/handsontable/formula.js /MIT/202001/js/archived
   - https://github.com/davidpolberger/formulajs /201801/js
     - improved error handling, cutting down on dependencies
   - https://github.com/jspreadsheet/formulajs
