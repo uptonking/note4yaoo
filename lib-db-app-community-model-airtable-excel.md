@@ -14,6 +14,128 @@ modified: 2023-10-26T21:54:54.201Z
 
 - ## 
 
+- ## 
+
+- ## 🔢🔀 [The surprisingly difficult problem of user-defined order in SQL | Hacker News _202101](https://news.ycombinator.com/item?id=25797674)
+- ✏️ This is the same problem seen in algorithms for concurrent remote document editing, and the author seems to have re-invented some of the same solutions. 
+  - This belongs to the class of problems involving trying to represent a tree in a relational database. There are many solutions, all with some problem.
+
+- I've been reviewing this problem lately for a project, and I've settled on a solution that feels elegant and versatile which this article doesn't cover: lexicographical sort.
+  - I'm using Mudder.js to do it, but the algorithm is straightforward. Define an alphabet (e.g., A-Z). Every time an item is inserted/repositioned, its sort order is given the midpoint between the sort values of its two neighbors. So the first item is given the sort value M (midpoint between A and Z). Inserting before that item gets G (between A and M). Inserting between these two items gets J (between G and M).
+  - Once you run out of letters between two sort values, the algorithm tacks a digit onto the sort value of the item ahead of it. So inserting between M and N yields MM. If you do this enough times in a pathological pattern and wind up with some long string of characters you can reflow your list and rebalance everything out evenly (though that's strictly an optimization for storage space/bandwidth, and not a requirement for the algorithm to function).
+  - This all sorts perfectly with ORDER BY etc., supports an number of repositions bounded only by your storage space, and doesn't require arbitrary-precision decimal datatypes or fraction handling.
+- Isn't this just a less efficient version of the "arbitrary precision" variant of approach 2 from the article?
+  - It applies the same philosophy but doesn't require special data types. Not all data stores support decimal numbers, and every programming language I've used uses floating point numbers my default. JS doesn't seem to even have a native decimal implementation at all.
+  - 💡 Strings work everywhere, and are first-class data types it most systems/languages. They take more bits per digit than numbers (though you can choose a wider alphabet to mitigate that, such as ASCII 33 '!' through 126 '~'), but I'm happy to trade the storage away for using a first-class data types.
+- Floating point numbers aren't special data types either. You don't need decimal. It works fine with binary floating point. The reason they don't call it robust is that it requires re-balancing, but so does your proposal.
+  - float/double data types have a hard requirement of periodic rebalancing to support unbounded repositions. Lexicographical sorting does not require rebalancing ever, though it may be performed as an optional storage/bandwidth optimization. That is a very meaningful distinction in my book.
+- I would use byte array instead of strings, as they should be supported by everything and they are more compact. But I'm crazy guy who wants to optimize everything, I think that in reality string will work just as well and probably easier to debug when you need to deal with it (also easier to serialize if you need to pass it around).
+  - Since your alphabet is composed of 8-bit words, you'd get more mileage out of each byte by using 256 symbols in your alphabet, one for each binary value. And by using binary as your alphabet makes things conceptually simpler (even if the values are stored as 8-bit words).
+- String used for indexing can be further used for sorting not only a flat list, but whole trees of nodes. Similar technique was used before (at least in 1997) to answer queries about the order at a particular time in the past.
+
+- There are CRDT algorithms that are similar to this. Some pick from the middle, some from one end or the other and some randomize the choice. It's the solution I'd probably go with for this specific problem (maybe with a bigger alphabet, although some DBMSs are case-insensitive).
+
+- There are CRDT algorithms that are similar to this. Some pick from the middle, some from one end or the other and some randomize the choice. It's the solution I'd probably go with for this specific problem (maybe with a bigger alphabet, although some DBMSs are case-insensitive).
+
+- I actually solved this exact problem recently (who is NOT trying to recreate Roam Research amirite?) And surprised no one else suggested the solution I came up with: just use a text column? When a new list is created the items get incrementing chars as text. If a user reorders an item, the items new sort order value is the value of the item above it concatenated to an "a". This is infinitely extensible, it's only slightly a drag on storage, and very trivial to clean up with some periodic code if storage is actually getting to e a problem. Works like a charm and Dont need to modify postgres itself for this!
+
+- I find similar issues with z-index in CSS.
+
+- Why not (assuming that every entry has a unique ID) add a “next_id” field, and treat it like a linked list?
+  - That was my thought, but the query is not simple to get the list in order. Plus inserts also require an update.
+- I used this approach as part of a personal learning project. It ended up working very well because I was using Mongo, so I could just use $graphLookup with an index on the next ID.
+- How do you get the list back in order if there are thousands of entries?
+  - It seems like you're in one of two situations: (1) you want the entire list, or (2) you want a small "page" of entries in the list, starting from a known point. For (1), you can fetch all of the entries in table order, whatever that may be, and then figure out the list order after you have the entries. For (2), you make the database do seeks for you in a loop, but it's not such a big deal because it's a small number of them.
+
+- Any of these methods can be combined with a process that re-indexes the order column once things get too pathological, or even does it on a schedule.
+
+- For me the final solution is the Left, right and depth approach Ex https://github.com/collectiveidea/awesome_nested_set
+
+- There are two problems here:
+  1. The position of an element in an array is not a property of the element but of the array.
+  2. Don't use sorted sets when you need the properties of an array / linked list.
+- Modern SQL has CTEs, functions, and arrays. They are very elegant when solving the problem of arrays in SQL.
+- 💡 This is a much more practical answer. Point #1 seems exactly right. Even without modern SQL arrays one could even keep references to place, per user, in a simple comma separated text field and munge it in code. Elegant? Probably not. But perhaps more practical then some of the approaches presented. But modern SQL does have arrays.
+
+- ## 🔢 [User-defined Order in SQL | Hacker News _201803](https://news.ycombinator.com/item?id=16635440)
+- My immediate thought was to store the information in a doubly-linked list type structure in SQL. Obviously the space efficiency is not optimal, but I am surprised that the article didn't even point this out.
+  - The table could be designed with a unique PK, the todo item, and some binary or bool field to determine first (head) and last (tail). You would then add 'previous' and 'next' fields that would be updated for insert/delete/updates.
+- This is probably decently efficient if you use recursive CTE's to traverse it, and use keyset pagination rather than limit/offset.
+
+- why not use a linked list made of self references? For the use case of rearranging and inserting at arbitrary positions, wouldn't a linked list be ideal?
+  - The table you show is not actually a linked list. Traversing a table with self references in order requires a recursive query, and doesn’t benefit from indexes for ordering.
+  - There is also the issue of how many writes you do: finding a fraction between two others let’s you do just one INSERT or UPDATE (effectively the same thing in MVCC); but rewiring a linked list implies altering two rows. That may be okay but it’s not ideal.
+
+- For most practical uses, something like the transaction described in Approach 1 should be good enough.
+  - It has no limit imposed by precision, the benefit of a compact and well-supported storage format (just one BIGINT) will probably compensate for any inefficiency caused by updating several rows, and the multiple steps are not fragile at all if you trust PostgreSQL to handle trasactions properly. If you're really worried, just increment the sequence before you update a bunch of rows, not afterward.
+  - But what if you have millions of users reordering billions of todo items?
+  - Well, change the uniqueness constraint to (user_id, list_id, pos) or something composite like that. Only reorder items belonging to the same list owned by the same user. If a person is manually reordering items, there can't be too many items in any given list in the first place. There's no need to touch billions of other items belonging to other lists and other users.
+
+- Simple solution: Don't use unique.
+  - Yes! I'm reading through all this discussion and thinking "why are these people so bent on overthinking such a simple concept"? Also using text as the sort order solves most of the issues people are bringing up.
+- Pretty much every implementation of arbitrary sort order I have seen uses varchar for this very reason, and requires none of the cleverness in the article.
+
+- Related is modeling trees in SQL
+
+- Why not strings? For two different strings A and B it's trivial to build one that is between them in alphabetic order.
+  - That is equivalent to the "Arbitrary Precision" section under Approach 2.
+
+- While it's vendor-specific, SQL Server has a built-in solution for it
+
+- I must admit, I don't like the the use of floats/decimals/rationals in this way. They are unfit for sorting.
+  - Floats only solve two issues: Making inserting easier while still being able to use order by. But reasoning about your data becomes a lot harder.
+- They are fine for sorting! You just need to think about things differently. 
+  - This option works for unlimited top-n without creating a bunch of unnecessary columns in the response.
+- Would you elaborate on why you consider these types unfit for sorting? Their orderings are deterministic, and efficiency depends on the implementation of the indexes for those specific types, not inherent in the data types themselves.
+  - I should have changed that language, what I meant was that they were unfit for reasoning about your data from an isolated point of view, i.e. standing with just one row. To understand an item's position using floats, you must know the entire context.
+
+- Another approach is that users often want the newest items listed first, but occasionally want exceptions. Thus, have a "sort date" with a time portion that governs the order. The sort-date defaults to the data entry (add) date/time. The display date and sort-date may differ, if present. A sort-date doesn't work for everything, but is simple, intuitive, and effective for news- or blog-like content.
+
+- Honestly I don't think there is a "best" solution here. Even in a "regular" programming language where you can easily use any data structure, it's not obvious which is best for maintaining the order.
+  - Updating the order "value" of all the rows = moving a value around in an array (causing you to also shift a bunch of other values around).
+  - Storing the ID of the row that should show up next in the list (not mentioned in the article, but mentioned in the comments below) = moving nodes around in a linked list.
+  - It is a little bit trickier in a database, just because, no matter what you do, you also have to pay the price of putting something into a tree as well. Still... I can think of situations where I'd use any of these techniques. In general, this is not a problem with a clean solution for every use case.
+
+- At Pinterest, we expanded the precision of our existing timestamp-based sequence column to accommodate reordering
+  - 🌰 [How we built rearranging Pins | Pinterest Engineering Blog | Medium _201802](https://medium.com/pinterest-engineering/how-we-built-rearranging-pins-b11052e95c8b)
+
+- I implemented something like this in a naive way. 
+  - I took the modified date (previous default sort order) and stored the unix timestamp * 100 in a 64 bit indexed SortVal column. 
+  - Drag-n-drop sets the SortVal +/-1 relative to the item it is being dropped against. There's only ~30 items per page so I figure it won't break except in the pathological case.
+  - Curious if there is some obvious flaw with this plan or if I really need the power of true fractions.
+- How do you handle situations where two items (lets call them A and B) are both moved before a third item C? Then wouldn't A and B both have a "SortVal" that's 1 less than C's SortVal? That would make your SortVals non-unique and order arbitrary.
+  - Well, only if your UI allows dragging two items at once. If you reorder multiple items, well, I suppose you can resolve it by passing some relative position. If you want to squeeze something in-between reordered items, then -1 probably is not a good choice, but more like calculating some middle value between previous and next item.
+
+- You can also use ORDPATH, which is built for tree structures but should work just as well for a flat list as it does support "in-between inserts."
+
+- There are a lot of solutions to this problem, each with their own merits. Personally, I'd probably add a second table with FKs to the todos table PK. That allows you to remove the calls to nexval. It doesn't remove the need for a processing language, but it's a much cleaner solution, I think.
+
+- with a graph database this would be trivial.
+
+- 
+- 
+- 
+
+- ## [How can I reorder rows in sql database - Stack Overflow](https://stackoverflow.com/questions/812630/how-can-i-reorder-rows-in-sql-database)
+- As others have mentioned, it's not a good idea to depend on the physical order of the database table. Relational tables are conceptually more like unordered sets than ordered lists. Assuming a certain physical order may lead to unpredictable results.
+  - Sounds like what you need is a separate column that stores the user's preferred sort order. But you'll still need to do something in your query to display the results in that order.
+  - It is possible to specify the physical order of records in a database by creating a clustered index, but that is not something you'd want to do on an arbitrary user-specified basis. And it may still lead to unexpected results.
+
+- anyone still looking for an answer to this problem, you need to use the Stern-Brocot technique.
+  - For each item you need to store a numerator and denominator. Then you can also add a computed column which is the division of both. Each time you move an item inbetween 2 others, the item's numerator becomes the sum of both neighboring numerators, and the item's denominator becomes the sum of both neighboring denominators.
+  - https://github.com/PieterjanDeClippel/DragDropOrderingDatabase /202111/csharp/inactive
+    - How to reorder items at database level using the Stern-Brocot technique
+  - Up to a certain point. If the user manages to choose the right order of reordering, he can manage to screw things up after 50 swaps. In the demo, you need to let the numbers grow as fast as possible. Thus, the reliability of this method depends on the number of items in the list...
+
+- ## 🔢🔀 [Reorder a selected row in a table · pawelsalawa/sqlitestudio _202105](https://github.com/pawelsalawa/sqlitestudio/issues/4099)
+  - Ability to order (move up and down) the selected row in a table.
+
+- This would be against how data is stored in the database. 
+  - Order is dictated by the query that you execute. 
+  - If you need to modify order of query that shows you a table data, you can click on header of the column or right-click and define more complex sorting order from there.
+  - Drag&drop of a row (or few rows) would have no result in the actual order in database, because - as I said above - row order is not a stored property(*), but rather property of SQL query. If such D&D would be allowed, it would give users wrong idea that rows were actually reordered and they would expect the same order after refreshing data view - which it would not be and they would come here and report bugs.
+  - (*) - to be more precise, the default order IS property of stored data, but the thing is that it is insertion order and you cannot change insertion order, because - well - it is order in which you inserted data and that's it.
+
 - ## [自定义字段的功能数据库是怎么设计的呢？ - V2EX _202211](https://www.v2ex.com/t/895430)
   - 业务中开发了个设施巡检系统，功能只是记录对种类不同的设备进行记录。
   - 如果描述不清楚，同样的需求在 OA 平台、问卷系统、低代码平台很常有，想了解下一般实现方案。

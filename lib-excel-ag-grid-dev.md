@@ -19,6 +19,7 @@ modified: 2022-08-21T09:54:26.037Z
 
 - features
   - 支持RangeSelection
+  - 支持Immutable模式
 
 - ag-grid-playground
   - resizable

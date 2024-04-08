@@ -18,6 +18,8 @@ modified: 2022-08-21T10:38:26.289Z
   - Query, analyze, and report on live data from the comfort of your spreadsheet.
   - Instantly turn spreadsheets into dashboards and automatically distribute up-to-date reports.
 
+- [smartsheet - The enterprise work management platform](https://www.smartsheet.com/)
+
 - [Spreadsheet.com - The online spreadsheet for Project Management, CRM, and building no-code apps](https://www.spreadsheet.com/)
 
 - https://rows.com/

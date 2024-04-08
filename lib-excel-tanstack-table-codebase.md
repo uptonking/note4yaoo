@@ -29,7 +29,7 @@ modified: 2022-08-21T10:19:58.756Z
   - manualExpanding
 
 - ~~table和virtual都用到了react forceRender模式~~
-# architecture
+# 🏘️ architecture
 - init createTable 的初始化流程
   - 计算插件options，合并feature options
   - 添加插件initialState到全局initialState
@@ -68,7 +68,7 @@ export interface RowModel<TData extends RowData> {
 }
 ```
 
-- 计算rowModel的顺序 💡 从下向上
+- 计算rowModel的顺序 👆🏻 从下向上
   - table.getPaginationRowModel(); 
   - table.getPrePaginationRowModel(); 
   - table.getExpandedRowModel(), 

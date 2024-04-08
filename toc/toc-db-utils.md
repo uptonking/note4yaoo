@@ -15,6 +15,13 @@ modified: 2022-11-06T11:21:27.612Z
 - [dbdiagram.io - Database Relationship Diagrams Design Tool](https://dbdiagram.io/home)
   - simple tool to draw ER diagrams by just writing code
   - Designed for developers and data analysts
+# popular
+- https://github.com/PieterjanDeClippel/DragDropOrderingDatabase /202111/csharp/inactive
+  - How to reorder items at database level using the Stern-Brocot technique
+
+- https://github.com/fasiha/mudderjs /Unlicense(free)/202301/js/inactive
+  - Lexicographically-subdivide the “space” between strings, by defining an alternate non-base-ten number system using a pre-defined dictionary of symbol↔︎number mappings. 
+  - Handy for ordering NoSQL keys.
 # rest
 - https://github.com/formio/resquel /202101/ts/inactive
   - Express.js middleware library that is able to convert SQL databases into a REST API.

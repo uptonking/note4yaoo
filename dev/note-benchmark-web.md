@@ -32,10 +32,11 @@ modified: 2020-07-14T09:28:43.976Z
 - https://github.com/handsontable/performance-lab
   - JavaScript performance tests for Handsontable
 
-- https://github.com/bryntum/grid-performance
+- https://github.com/bryntum/grid-performance /MIT/201910/js/inactive
   - A performance comparison of popular JavaScript data grid components. 
   - Measures the initial rendering time and scroll performance for the following data grids
   - ag-grid, bryntum, devextreme, dhtmlx, extjs
+  - https://github.com/bryntum/siesta
 
 - https://github.com/bgrins/data-ui-tests
   - https://bgrins.github.io/data-ui-tests/

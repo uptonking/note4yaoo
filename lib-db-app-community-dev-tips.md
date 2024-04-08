@@ -83,7 +83,12 @@ modified: 2023-11-07T16:47:11.499Z
 
 - ## 
 
-- ## 
+- ## pg里的 Function 与 Trigger 互相配合，能干好多事，之前要写多个API才能完成的事儿，现在一个就行了
+- https://twitter.com/wsygc/status/1777141917291311516
+- 我印象中应该尽量少用 db funcyions ，因为不容易编写测试。 我个人的实践是在编程语言里写逻辑，便于编写自动化测试
+- 虽然我经历的大型项目不多，但是“存储过程”都是大家尽力避免的。至今我也没见过哪位高人推广存储过程开发模式。
+- trigger 不要用，function 只停留在 check 和 report 就行。结合在一起很难维护和迁移。
+- 不赞同。项目达到一定量级的时候，瓶颈往往出现在DB上。应该是把业务逻辑尽量前置，能不放在DB操作就不要在DB操作
 
 - ## Every day, we deal with hierarchical structures like Manager-Employees, Family, and Binary Trees.
 - https://twitter.com/deisbel/status/1763218755163766875

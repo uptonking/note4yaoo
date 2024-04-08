@@ -9,19 +9,19 @@ modified: 2021-05-06T09:39:53.522Z
 
 # guide
 - pros
-  - powerful features
+  - powerful features and stable
   - 🔌 modular, extensible
   - 🔀 collaborative plugin is optional
   - selective undo/redo
-  - 👣 codemirror采用相似的架构
+  - 🔡 codemirror采用相似的架构
   - support branch
   - 支持rebase
   - 支持多实例，参考官方示例
   - selection支持多个ranges
 
 - cons
-  - 数据结构层的设计不够通用
-    - step/transform不是典型的ot operation
+  - 复杂度高(功能丰富)
+  - 数据结构层的设计不够通用, step/transform不是典型的ot operation
   - 不支持动态改变schema
   - 编辑器的多个插件存在依赖关系时如何处理
   - 示例没有强调json优先，不如slate的数据直观

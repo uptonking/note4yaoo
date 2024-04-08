@@ -10,10 +10,12 @@ modified: 2023-06-07T22:37:07.042Z
 # guide
 
 - pros
-  - 架构清晰可扩展
-  - 支持协作，基于ot
+  - 架构清晰可扩展, 支持plugin/commands
+  - 基于canvas实现，高性能
+  - 支持协作, 基于ot
   - 支持selective undo，支持branch
   - 支持添加自定义函数，addFunction("MY. FUNC", MY_FUNC); 
+  - 支持formula
 
 - cons
   - 视图层基于odoo自研的owl

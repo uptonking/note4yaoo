@@ -10,7 +10,7 @@ modified: 2022-08-21T09:59:33.314Z
 # guide
 
 # discuss-stars
-- ## 🚀📈 [Tabulator – Easy-to-use JavaScript library for interactive tables_201811](https://news.ycombinator.com/item?id=18568072)
+- ## 🚀📈 [Tabulator – Easy-to-use JavaScript library for interactive tables _201811](https://news.ycombinator.com/item?id=18568072)
 - It seems standard that all of these JS table libraries are rendering using `<div>` elements instead of a `<table>` element. Why? As far as I can tell, all of the features could be implemented using the correct HTML element rather than using `<div>` to mimic a table.
 
 - 🌰 Let me preface my answer by saying im the chap(对男子的友好称呼，家伙，伙计) that built Tabulator
@@ -41,9 +41,9 @@ modified: 2022-08-21T09:59:33.314Z
   - Because Tabulator uses a virtual DOM it makes it a since to redraw parts of the table when needed
   - I wrote my own VDOM library, Tabulator has zero dependencies for its core functionality
 
-- 📈 Author of Handsontable, here. We actually use `<table>` , but there are many things that are easier with `<div>` :
+- 👷🏻📈 Author of Handsontable, here. We actually use `<table>` , but there are many things that are easier with `<div>` :
   - With `<div>` , you have complete control over the positioning of the cells. 
-    - With `<table>` , you delegate(v,委托，选派) the layout to the browser engine. 
+    - With `<table>` , you delegate(委托，选派) the layout to the browser engine. 
   - `<table>` has lots of semantic meaning, which makes it slower to render than a `<div>` , because the browser engine needs to make a sense of it. 
     - There are differences in how `<table>` s are rendered in various browsers. 
     - This is especially a problem with old browsers such as IE6. 
@@ -58,12 +58,22 @@ modified: 2022-08-21T09:59:33.314Z
   - Still, Handsontable uses `<table>` because you can overcome these problems if you're motivated enough. 
     - The biggest benefit is that `<table>` gives you enhanced semantics, which are good for Accessibility, SEO or any other form of code processing.
     - In addition to that, using `<table>` gives you out-of-the-box Excel file export because `.xlsx` files (which are basically zipped XML files) support HTML tables.
-  - Could use use `<table>` for the semantics but set `display:block` to get `<div>` style layout?
-    - the problem is it isnt just the table element, it is the thead,tbody,td,th elements as well
-    - Complex interactive tables need a great number of elements to make them run and these wont conform(v,遵守，服从) to the standards of using a table (you cant just put a div inside a tbody element) but that is exactly what you would need to get a table with a virtual DOM to work correctly.
-    - There are a lot of different styling tweaks that would need to be overriden for each element, some of which arent consistent across each browser.
-    - Also people have a tendency to put styles on the generic table tab to style tables across the site. if Tabulator was to then be used on the page, it could have any number of unknown CSS properties set on it, so would essentially have to look at overriding all possible style properties.
-    - where as no one generically styles divs or spans and they come with very little built in styling making them the ideal choice for a library that wants to keeps its functionality isolated from the rest of the site
-  - table libraries using table tags:
-    - handsontable, datatables.net(for jQuery)
+- 🤔🆚️ Could use use `<table>` for the semantics but set `display:block` to get `<div>` style layout?
+  - the problem is it isnt just the table element, it is the thead, tbody, td, th elements as well
+  - Complex interactive tables need a great number of elements to make them run and these wont conform(v, 遵守，服从) to the standards of using a table (you cant just put a div inside a tbody element) but that is exactly what you would need to get a table with a virtual DOM to work correctly.
+  - There are a lot of different styling tweaks that would need to be overriden for each element, some of which arent consistent across each browser.
+  - Also people have a tendency to put styles on the generic table tab to style tables across the site. if Tabulator was to then be used on the page, it could have any number of unknown CSS properties set on it, so would essentially have to look at overriding all possible style properties.
+  - where as no one generically styles divs or spans and they come with very little built in styling making them the ideal choice for a library that wants to keeps its functionality isolated from the rest of the site
+- table libraries using table tags:
+  - handsontable, datatables.net(for jQuery)
+
+- 🆚️ Anyone have comments on how this might stack up against AG-Grid?
+  - AG-Grid has some features that tabulator lacks, like multi-cell editing and cell group selection. (but these features will be coming soon to Tabulator)
+  - AG-Grid focus's on being a fully functional spreadsheet where as tabulator goes more down the route of interactive table.
+  - Most importantly, Tabulator is FREE even for commercial use!
+
+- 
+- 
+- 
+
 # discuss

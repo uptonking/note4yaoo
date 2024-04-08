@@ -21,10 +21,17 @@ modified: 2022-11-06T15:46:05.676Z
 - https://github.com/fabiospampinato/csv-simple-parser /ts
   - A simple, fast and configurable CSV parser.
 # examples
-- https://github.com/UgnisSoftware/react-spreadsheet-import /ts
+- https://github.com/UgnisSoftware/react-spreadsheet-import /MIT/202401/ts
   - https://ugnissoftware.github.io/react-spreadsheet-import
   - Import flow for Excel (.xlsx) and CSV file with automated column matching and validation.
   - A component used for importing XLS / XLSX / CSV documents built with Chakra UI.
+
+- https://github.com/tableflowhq/csv-import /MIT/202404/ts/react
+  - https://tableflow.com/
+  - Open-source CSV and XLS/XLSX file importer for React and JavaScript
+  - Embed the CSV Importer in your app with the React or JavaScript SDK
+  - 依赖react、@chakra-ui/react.v2、papaparse、xlsx、react-dropzone、zustand
+  - https://www.npmjs.com/package/csv-import-js
 
 - https://github.com/beamworks/react-csv-importer /ts/依赖少
   - This library combines an uploader + CSV parser + raw file preview + UI for custom user column mapping, all in one.
@@ -48,9 +55,12 @@ modified: 2022-11-06T15:46:05.676Z
   - The app runs entirely in browser with no backend supporting it.
   - 依赖react、csvtojson、json2csv
 
-- https://github.com/react-csv/react-csv /js
+- https://github.com/react-csv/react-csv /MIT/202201/js/inactive
   - https://react-csv.github.io/react-csv/
   - React components to build CSV files on the fly basing on Array/literal object of data
+  - Generate a CSV file from given data.
+  - This data can be an array of arrays, an array of literal objects, or strings.
+  - It triggers downloading ONLY on mounting the component. so , be careful to render this component whenever it is needed.
 
 - https://github.com/dumbmatter/csv-sql-live /202206/js
   - http://dumbmatter.com/csv-sql-live/

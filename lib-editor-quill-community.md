@@ -81,7 +81,7 @@ quill.pasteHTML(YOUR_HTML_HERE, 'silent');
 
 - Some strengths unique to Quill:
   * API Quill has the most powerful API of any editor I have seen. You can make any text or formatting change in any part of the editor at any time. Trix by contrast only allows changes to the current selection.
-  * Modules Quill's internals are broken into modules[2] that themselves can be configured or even swapped out. Many modules also include their own APIs. Trix does not have documentation in this regard, but looking at its codebase, it does not appear designed to support major modification of its internals.
+  * Modules Quill's internals are broken into modules that themselves can be configured or even swapped out. Many modules also include their own APIs. Trix does not have documentation in this regard, but looking at its codebase, it does not appear designed to support major modification of its internals.
   * Formats/Content Quill's document model itself is customizable, which allows users to define their own formats or customize existing ones. This capability is what kicked of 1.0 development
   * One main idea I'd like to highlight is this: Text is no longer written to be printed. It is written to be rendered on the web—a much richer canvas than paper. Quill 1.0 was designed and built to support this next generation canvas.
 

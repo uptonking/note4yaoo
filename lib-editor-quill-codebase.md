@@ -12,6 +12,8 @@ modified: 2023-02-09T18:24:31.494Z
   - 内容元素: block, inline-text, inline-non-text
   - 更新操作: insert, delete, retain, format
 # codebase
+- 整体class风格
+
 - 通过全局instances支持多实例 `WeakMap<HTMLElement, Quill>`
 # 🏘️ architecture
 - 用户输入时如何更新dom

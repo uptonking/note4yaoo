@@ -9,16 +9,21 @@ modified: 2023-02-22T19:49:14.823Z
 
 # guide
 
+- pros
+  - 支持配置工具条、菜单、定义新元素
+  - 支持plugin，但要在创建编辑器之前注册，且只能注册一次，不可重复注册
+  - 函数式风格
+
+- cons
+  - lack of maintenance
+
 - features
   - L1级编辑器，以slate作为模型层数据结构
   - model与view分离，模块化的架构
   - 使用扩展插件和模块的机制，保证扩展性
   - 内置丰富模块，无需大量二次开发
-  - view层没有与具体框架绑定
+  - view层没有与具体框架绑定，使用 vdom
   - 中文友好
-
-- cons
-  - unstable maintenance
 # codebase
 - dev-to
   - link异常

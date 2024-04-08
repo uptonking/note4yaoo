@@ -12,16 +12,61 @@ modified: 2022-08-21T09:57:32.451Z
 - pros
   - features rich and open source
   - 有很多公开插件，如formula
+  - 支持virtual-render
+  - Merge cells
+  - Freeze rows/columns
+  - Define custom cell types
+  - Add comments to cells
+  - Non-contiguous selection
+  - 使用table标签和布局，而不是div，enhanced semantics, good for a11y, SEO 
+  - Auto fill: Dragging fill handle to populate data
+  - Drag rows or columns to swap them 
+  - Stretching: Allow columns to the parent container width
 
 - cons
+  - 🐛 model-view的架构不清晰, 非immutable的架构，支持直接通过指针修改data+手动render
+    - 非immutable的架构对从外部更新数据不友好
+  - 🐛 没有对外notify changes的功能
+  - v6未实现batch，最新版支持; 不支持transaction
+  - 视图层更新时渲染粒度很粗，full rerender
+  - 事件系统依赖domElement.dispatchEvent
   - non-commercial
+  - paid: Filtering, Collapsing columns, hiding row/col
+    - Formulas, Gantt Chart, Nested rows, Nested headers
+  - no group/aggregations
   - ? cell只支持string和number，不支持date
 
 - features
-  - ?
+  - cell-types: Dropdown, Select, Checkbox
+  - Alignment
+  - Autocomplete
+  - Sorting
+  - Data validation
+  - Conditional formatting
+  - Moving rows/columns
+  - Resize rows/columns
+  - Context menu
+  - Highlighting current row/col
+  - Scroll: Use native scrollbars to navigate within the table
+  - Internationalization
+
+- dev-xp
+  - mutable data before v8
+# draft
+- handsontable该如何与使用contenteditable的文本编辑器结合
+  - 需要改造事件的dispatch机制
 # dev
 
 # changelog
+
+## v8.0
+
+- One of the breaking changes in 8.0.0 is:
+  - Modifying the table’s data by reference and calling `render()` will not work as it used to anymore. 
+  - From this point onward, all the data-related operations need to be performed using the API methods, such as `populateFromArray` or `setDataAtCell`.
+
+- [Need a way to update source data in filtered state ](https://github.com/handsontable/handsontable/issues/6680)
+  - v8.0.0 from beta.2 introduces setSourceDataAtCell to modify source data and it's using physical indexes / object props.
 
 ## v7.0.0_20190306
 

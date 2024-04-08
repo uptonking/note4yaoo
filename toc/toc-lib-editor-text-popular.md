@@ -379,7 +379,13 @@ modified: 2022-11-08T19:04:00.289Z
 - https://github.com/dukelester/collaborator_text_editor
   - A simple realtime multiuser collaboration text application with Node js and React js.
   - 客户端依赖slate
-# ending
+# ai-editor
+- https://gitee.com/aieditor-team/aieditor /LGPLv2/202403/ts
+  - https://aieditor.dev/
+  - 面向 AI 的下一代富文本编辑器，基于 Web Component，因此支持 Layui、Vue、React、Angular 等几乎任何前端框架
+  - 现代风格（类腾讯文档）: http://aieditor1.jpress.cn
+  - 经典/传统风格: http://aieditor.jpress.cn
+# inactive
 - https://github.com/guardian/scribe /apache2/201808/js
   - A rich text editor framework for the web platform, with patches for browser inconsistencies and sensible defaults.
   - [Leaving Scribe_201901](https://www.theguardian.com/info/2019/jan/24/leaving-scribe)

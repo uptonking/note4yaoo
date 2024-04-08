@@ -14,6 +14,17 @@ modified: 2022-08-21T10:15:06.225Z
 
 - ## 
 
+- ## 
+
+- ## 🔢🔀 [Reorder a selected row in a table · pawelsalawa/sqlitestudio _202105](https://github.com/pawelsalawa/sqlitestudio/issues/4099)
+  - Ability to order (move up and down) the selected row in a table.
+
+- This would be against how data is stored in the database. 
+  - Order is dictated by the query that you execute. 
+  - If you need to modify order of query that shows you a table data, you can click on header of the column or right-click and define more complex sorting order from there.
+  - Drag&drop of a row (or few rows) would have no result in the actual order in database, because - as I said above - row order is not a stored property(*), but rather property of SQL query. If such D&D would be allowed, it would give users wrong idea that rows were actually reordered and they would expect the same order after refreshing data view - which it would not be and they would come here and report bugs.
+  - (*) - to be more precise, the default order IS property of stored data, but the thing is that it is insertion order and you cannot change insertion order, because - well - it is order in which you inserted data and that's it.
+
 - ## 📡 For those following @SubsetHQ , sharing some bittersweet news today. We're changing directions away from our canvas spreadsheet 
 - https://twitter.com/AJNandi/status/1757614422162649208
   - As fun as it was, we realized the bigger opportunity in the spreadsheet world is simply a high quality, local first, desktop spreadsheet. More below!

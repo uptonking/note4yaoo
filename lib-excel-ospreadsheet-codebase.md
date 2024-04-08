@@ -13,7 +13,7 @@ modified: 2023-06-07T22:37:26.731Z
 - action-queues async
 # architecture
 - init
-  - 在initiateConnection时，new Model(demoData)
+  - 在initiateConnection时, new Model(demoData)
   - owlAppComponent.render-SpreadsheetComp
 
 - update

@@ -180,7 +180,7 @@ await trx(this.collection).update(payloadWithTypeCasting).whereIn(primaryKeyFiel
 
 # dashboard/insights
 
-# pickup
+# notes
 
 ## FieldsService
 

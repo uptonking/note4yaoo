@@ -23,6 +23,8 @@ modified: 2023-12-21T20:06:13.700Z
     - https://github.com/handsontable/handsontable/releases/tag/7.0.0
     - [Handsontable v7 and later versions are fully commercial so it really depends on your case](https://twitter.com/handsontable/status/1164198101726433282). 
     - If you want to fully integrate it with your software while maintaining the OSS license, then your only option is to use v6.2.2 - the last one released under the MIT license.
+  - https://github.com/handsontable/react-handsontable/tree/2.1.0 /MIT/201812/ts
+    - the official wrapper 
   - 🍴 forks
     - https://github.com/swsvindland/opentable /202201/js/from-jacksontable/move walkontable back
       - https://github.com/swsvindland/opentable-react
@@ -30,6 +32,8 @@ modified: 2023-12-21T20:06:13.700Z
     - https://github.com/lbobylev/jacksontable
     - https://github.com/dreamsavior/mitontable /2commits
     - https://github.com/janisdd/handsontable /202304/v6/ts-d/fork for https://github.com/janisdd/vscode-edit-csv
+      - https://edit-csv.net/
+      - vs code extension to edit csv files with an excel like table ui
     - https://github.com/nzzdev/handsontable /v6/fix-excel-copy-paste
       - used by Q-editor
     - https://github.com/KonstantinMilovanovDSR/handsontable /202210/v6/fix
@@ -45,6 +49,7 @@ modified: 2023-12-21T20:06:13.700Z
     - https://github.com/jansiegel/handsontable /202211/from v12
     - https://github.com/iLoveBug/handsontable /202305/v12
     - https://github.com/pingyuanChen/handsontable /201611/js/inactive
+    - https://github.com/pingyuanChen/Spreadsheet /201606/js
   - repos
   - https://github.com/warpech/walkontable /MIT/201304/js
     - This is a playground for next table view engine that will enable virtual rendering in Handsontable.
@@ -52,12 +57,12 @@ modified: 2023-12-21T20:06:13.700Z
     - [Refactor Walkontable Selection rendering module_202304](https://github.com/handsontable/handsontable/pull/10265)
       - The PR refactors and extends the Walkontable Selection rendering module for the ability to highlight the table's headers. The work presented here will be the basis for the navigation in headers
 
-- https://github.com/moregorenine/handsontable-example /202110/ts
-  - handsontable 6.2.2 MIT version example
-
 - https://github.com/laomu1988/handsontable /201910/js/inactive
   - https://laomu1988.github.io/handsontable/
   - 在线表格编辑，可编辑公式、添加Object对象
+
+- https://github.com/moregorenine/handsontable-example /202110/ts
+  - handsontable 6.2.2 MIT version example
 
 - https://github.com/hand-dot/table2md /201906/js
   - https://hand-dot.github.io/table2md/
@@ -72,6 +77,9 @@ modified: 2023-12-21T20:06:13.700Z
 
 - https://github.com/WranglHQ/handsontable_vs_reactdatagrid
   - a website to compare the performance of two excel-type React spreadsheet components: react-data-grid and handsontable
+
+- https://github.com/hh54188/hansontable-react-performance /201908/js
+  - web_worker_demo
 
 - https://github.com/project-kit/handsontable-select2 /201905/ts
   - Handsontable editor and cell based on select2
@@ -108,6 +116,14 @@ modified: 2023-12-21T20:06:13.700Z
   - 🧮 [Handsontable 9.0.0: New formula plugin _202106](https://handsontable.com/blog/handsontable-9.0.0-new-formula-plugin)
     - It integrates our powerful calculation engine – HyperFormula®
     - Up to version 8.4.0 there was a formula plugin that was built by us based on two other projects: our own formula parser, and an external library of spreadsheet functions, called formula.js. T
+  - https://github.com/PascalKeukInovia/hot-formula-parser /202205/js/inactive
+    - Library provides a Parser class that evaluates excel and mathematical formulas.
+    - All excel formulas defined in formula.js;
+
+- https://github.com/tdjun/handsontable.webpack /MIT/201805/js
+  - Custom Hansontable+ es6
+  - handsontable formula
+  - Merge handsontable Grid implementation
 # utils
 - https://github.com/Yinger/ts-excel-compare /202009/ts
   - https://yinger.github.io/ts-excel-compare/
@@ -116,6 +132,10 @@ modified: 2023-12-21T20:06:13.700Z
 
 - https://github.com/21epub/xlsx /201908/js
   - xlsx table data module
+
+- https://github.com/mydea/handsontable-chosen-editor /201901/js
+  - http://mydea.github.io/handsontable-chosen-editor/
+  - select field
 
 - https://github.com/orestisrodriguez/handsontable-multi-select /202007/js/v7
   - Editor for handsontable that allows multiple select cells. Based on jshjohnson/Choices
@@ -134,7 +154,14 @@ modified: 2023-12-21T20:06:13.700Z
   - https://github.com/Pikaday/Pikaday /202109/js/inactive
 
 - https://github.com/shuttlethread/hodf /202009/js/v7
-  - A wrapper around handsontable spreadsheet for collecting data.frame objects with a dynamic number of columns / rows.
+  - A wrapper around handsontable spreadsheet for collecting data.frame objects with a dynamic number of columns/rows.
+
+- https://github.com/omid/formula /MIT/202211/rust/inactive
+  - A parser and evaluator of spreadsheet-like formulas
+  - Add this library to your project with npm install formula-wasm
+  - At the moment, we don't support table data. It means you need to extract table data and pass theirs values to this library
+  - We still do not support parentheses to change the order of operations, but you can use our F. function
+  - Inspired by formulajs
 # examples
 - https://github.com/hughfenghen/spreadsheet-demo /202003/js/inactive
   - 电子表格从调研到demo的杂乱记录 Handsontable vs SpreadJS
@@ -147,6 +174,15 @@ modified: 2023-12-21T20:06:13.700Z
 - https://github.com/ONSdigital/dp-table-builder-ui /202207/js
   - react component ui for table builder
   - 依赖handsontable.v0.33
+
+- https://github.com/GeordiIGT/grids /202207/js
+  - For FuturMaster: handsontable, ag-grid
+
+- https://github.com/geoffreylitt/wildcard /202104/ts/inactive
+  - https://www.geoffreylitt.com/wildcard/
+  - A browser extension for customizing web apps with a spreadsheet view
+  - Wildcard is a platform that empowers anyone to build browser extensions and modify websites to meet their own specific needs.
+  - Wildcard shows a simplified view of the data in a web page as a familiar table view. People can directly manipulate the table to sort/filter content, add annotations, and even use spreadsheet-style formulas to pull in data from other websites.
 
 - https://github.com/tinper-acs/ac-spreadsheet /201905/js/v5
   - https://tinper-acs.github.io/ac-spreadsheet
@@ -192,6 +228,17 @@ modified: 2023-12-21T20:06:13.700Z
 
 - https://github.com/OpenDataRepository/data-publisher /202401/php/js
   - aims to create a simple tool for publishing data to the web.
+
+- https://github.com/decisive-wizard/GridHub /201412/js/inactive
+  - Desktop spreadsheet editor with version history
+
+- https://github.com/thanhlevu/excel-alike-editor /202401/ts/HyperFormula
+  - client + server
+
+- https://github.com/willchenko7/sheets-ai /202307/js/inactive
+  - The goal of this repo is to create a natural language interface to perform spreadsheet tasks.
+  - This code uses prompt engineering to generate code from a given request that will then interact with the spreadsheet.
+  - The approach to this app is to leverage GPT to take a user's request, convert it into a piece of code that is then executed with eval.
 # integrations
 - https://gitlab.com/thanhhuu09/superset-handsontable-plugin /202308/ts/v13
   - This is the Superset Handsontable Plugin Superset Chart Plugin.

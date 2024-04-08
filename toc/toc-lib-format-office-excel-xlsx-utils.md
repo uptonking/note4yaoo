@@ -204,6 +204,13 @@ modified: 2023-01-09T11:04:13.958Z
 - https://github.com/vinci1it2000/formulas /python
   - formulas implements an interpreter for Excel formulas, which parses and compile Excel formulas expressions.
   - it compiles Excel workbooks to python and executes without using the Excel COM server. Hence, Excel is not needed.
+
+- https://github.com/omid/formula /MIT/202211/rust/inactive
+  - A parser and evaluator of spreadsheet-like formulas
+  - Add this library to your project with npm install formula-wasm
+  - At the moment, we don't support table data. It means you need to extract table data and pass theirs values to this library
+  - We still do not support parentheses to change the order of operations, but you can use our F. function
+  - Inspired by formulajs
 # template
 - https://github.com/plantain-00/js-excel-template
   - A js excel template used in browser or nodejs environment.

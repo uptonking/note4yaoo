@@ -138,7 +138,7 @@ modified: 2023-03-09T13:47:07.317Z
   - 支持预览xlsx, docx, svg, pdf, zip等格式, 后来才增加markdown编辑器
   - 该扩展在vscode内集成Vditor
 
-- https://github.com/501351981/vue-office /MIT/202401/js/vue
+- https://github.com/501351981/vue-office /MIT/202401/js/vue/react
   - https://501351981.github.io/vue-office/examples/docs/
   - 支持word(.docx)、excel(.xlsx)、pdf等各类型office文件预览的vue组件集合，提供一站式office文件预览方案
   - 支持vue2和3，也支持React等非Vue框架

@@ -1043,8 +1043,8 @@ modified: 2023-02-05T19:03:12.723Z
   - 依赖sharedb
 
 - https://github.com/pubuzhixing8/ottype-slate
-  - 基于 Slate 编辑器数据模型的 OTType ，基于标准的 ottypes 实现。
-  - 基于原子操作的类型转换还在开发中。
+  - 基于 Slate 编辑器数据模型的 OTType, 基于标准的 ottypes 实现。
+  - 基于原子操作的类型转换还在开发中
   - 示例基于sharedb、slate.v0.65
 
 - https://github.com/Immortalin/slate-operational-transform

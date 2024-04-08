@@ -9,20 +9,19 @@ modified: 2022-08-21T09:54:02.990Z
 
 # overview
 
-# architecture
-- dataflow
+# 🏘️ architecture
 - init
   - Grid入口类初始化时
     - 会初始化很多基础类，注册很多事件
     - 会执行rowModel.start()，计算rowModel
   - EVENT_MODEL_UPDATED会触发paginationProxy.onModelUpdated计算分页数据，
     - 然后执行rowRenderer注册的onPageLoaded
-    - rowRenderer.onPageLoaded.onModelUpdated会执行 redrawAfterModelUpdate，触发首次渲染当前页所有行
+    - rowRenderer.onPageLoaded.onModelUpdated 会执行 redrawAfterModelUpdate, 触发首次渲染当前页所有行
   - rowModel初始化时会注册很多事件到eventService
     - 比如EVENT_SORT/Filter_CHANGED，这些事件被触发时会执行refreshModel更新rowModel
 
 - update
-  - refreshModel在rowModel每次计算后都会触发EVENT_MODEL_UPDATED事件，从而更新ui
+  - refreshModel在rowModel每次计算后都会触发`EVENT_MODEL_UPDATED`事件，从而更新ui
     - 主要触发paginationProxy.onModelUpdated
   - `api.setRowData` 更新全量数据
     - this.clientSideRowModel.setRowData(rowData)
