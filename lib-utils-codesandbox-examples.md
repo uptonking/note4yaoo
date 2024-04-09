@@ -219,6 +219,11 @@ modified: 2023-09-02T09:17:22.992Z
   - 🍴 forks
     - https://github.com/milahu/browsix
     - https://github.com/SamGinzburg/browsix
+# utils
+- https://github.com/ximing/jsvm2 /202402/ts
+  - Javascript Interpreter implemented by typescript（TS实现的JS解释器）
+  - https://github.com/ximing/jsvm3 /202402/ts
+    - 自定义字节码的jsvm
 # more
 - https://github.com/BrowserBox/BrowserBox /AGPLv3/js
   - https://dosyago.com/

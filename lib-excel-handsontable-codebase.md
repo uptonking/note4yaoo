@@ -18,10 +18,10 @@ modified: 2024-04-08T03:57:18.943Z
 
 - 独特的事件系统
   - core和plugins支持的操作事件统一抽象在全局globalSingleHook
-  - 用户操作的事件统一通过hooks注册，hook的触发逻辑在ui层已封装
-  - 整体都是事件委托
+  - 用户操作的事件统一通过hooks注册，hook的触发逻辑在ui视图层已添加
+  - 整体都是事件委托，没有将事件注册到具体的单元格上
 
-- 状态优先的架构，视图层只在render方法中占比高，core/editor/plugins中状态占比高
+- 状态优先的架构，视图层只在renderer中占比高，core/editor/plugins中状态占比高
 
 - 不依赖contenteditable, 部分事件注册在document
   - 🤔 将事件注册到rootElem是否会更好
@@ -80,11 +80,11 @@ modified: 2024-04-08T03:57:18.943Z
 - setDataAtCell
   - prop = datamap.colToProp(input[i][1]); 
   - 收集changes.push
-  - applyChanges(changes)
-  - datamap.createRow
-  - datamap.createCol
-  - datamap.set
-  - activeEditor.refreshValue(); 
+  - 🚧 applyChanges(changes)
+    - datamap.createRow
+    - datamap.createCol
+    - datamap.set
+    - activeEditor.refreshValue(); 
 
 - 
 - 
@@ -111,7 +111,15 @@ modified: 2024-04-08T03:57:18.943Z
   - grid.populateFromArray
   - instance.setDataAtCell
 
-- 
+- 编辑器创建的元素统一放在dom的末尾，`position: absolute;` 绝对定位
+  - 容器样式名 .handsontableInputHolder
+
+- TextEditor创建的文本编辑元素添加在末尾
+  - `this.instance.rootElement.appendChild(this.TEXTAREA_PARENT)`; 
+
+- SelectEditor
+  - `this.instance.rootElement.appendChild(this.select)`; 
+
 - 
 - 
 - 
@@ -155,7 +163,7 @@ modified: 2024-04-08T03:57:18.943Z
   - 在事件中会会记录 `plugin.done(new UndoRedo.ChangeAction(changes))`; 
   - this.doneActions.push(action); 
 
-- onBeforeKeyDown 
+- onBeforeKeyDown 监听ctrl+z/y
   - instance.undoRedo.undo(); 
   - const action = this.doneActions.pop(); 
   - action.undo()

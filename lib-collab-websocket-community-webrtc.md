@@ -156,7 +156,23 @@ modified: 2023-12-12T08:45:31.670Z
 
 - ## 
 
-- ## 
+- ## 🆚️ Server-sent events, WebSocket, and Webhooks. How do they differ?
+- https://twitter.com/Franc0Fernand0/status/1777675213729136987
+- WebSocket 
+  - They provide a bidirectional communication channel over a single TCP connection.
+  - The client and server can both send messages through the channel in real-time.
+  - To use WebSocket, the client must include specific fields in the HTTP header to tell the server to switch to the WebSocket protocol.
+  - Once the server replies, a WebSocket connection is set up.
+
+- Server-sent events 
+  - A bidirectional channel is overkill in scenarios where the data flow is unidirectional.
+  - SSE addresses this problem and allows the server to push messages to a client over HTTP.
+  - The client sends a GET request to the server, specifying it’s waiting for an event stream.
+  - This will start an open connection that the server can use to send messages to the client.
+
+- WebHooks 
+  - While SSE is usually used to get updates to the front end, Webhooks generally get updates to the back end.
+  - They work like a callback informing the client of new updates. The server set up a clear API endpoint to receive updates from outside.
 
 - ## 🌰 ChatGPT网页版从SSE改成Websocket了 _20240202
 - https://twitter.com/wong2_x/status/1753351893211037994

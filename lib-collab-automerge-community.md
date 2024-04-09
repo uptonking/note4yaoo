@@ -116,3 +116,12 @@ u1. Extremely difficult to build backend in other programming languages than Nod
 - the local mini-mongo is acting a local-state and the JSON/JS all the way is solving the marshalling/ORM issue. I understand it is a centralized way of dealing with this, however, it was operating on the same problem space. Furthermore, automerge can be used as the server, which bring it closer to what Meteor did. I was hinting at the overlap in the problem space, but I should have phrased it better. Anyway, I'm keep to try automerge.
 
 - The key feature of automerge is that it's decentralized like git. Two people could work asynchronously and only occasionally merge their results.
+
+- ## [A JSON-like data structure (a CRDT) that can be modified concurrently by different users, and merged | Lobsters _202107](https://lobste.rs/s/urvu1p/json_like_data_structure_crdt_can_be)
+- I’ve read about both Automerge and Y.js; my personal assessment is that Y.js has more users
+  - Another aspect to keep in mind for these libraries is, can you write your database logic against the CRDT in Rust (or any other non-JS language)? Because CRDT is CPU expensive at scale, I would expect that using Rust or another threaded language that doesn’t die when CPU work happens on the server would eventually be required for a serious scale backend for a CRDT service. 
+  - Both Yjs and Automerge also have rust port projects in the early stages.
+
+- 
+- 
+- 

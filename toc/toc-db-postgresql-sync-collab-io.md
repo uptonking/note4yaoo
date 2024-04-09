@@ -32,6 +32,9 @@ modified: 2023-10-26T15:30:18.297Z
   - https://github.com/BemiHQ/bemi-typeorm
   - https://github.com/BemiHQ/bemi-prisma
   - https://github.com/BemiHQ/bemi-prisma-example
+
+- https://github.com/Horusiath/pgrdt /apache2/202103/rust/inactive
+  - Postgres extension for conflict-free distributed programming utilities written in Rust
 # etl/import/export
 - https://github.com/dimitri/pgcopydb /c
   - a tool that automates running `pg_dump | pg_restore` between two running Postgres servers. 

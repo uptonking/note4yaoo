@@ -138,12 +138,9 @@ modified: 2022-08-21T09:54:37.766Z
   - Drag & Drop
   - export csv
   - Printing
-
 # Tool Panels - Side Bar
-
 - Tool Panels are panels that sit in the Side Bar to the right of the grid. 
 - The Side Bar allows access to the tool panels via buttons that work like tabs. 
-
 # Tool Panels - Columns Panel
 
 # Tool Panels - Filters Panel
@@ -154,8 +151,15 @@ modified: 2022-08-21T09:54:37.766Z
 
 # Status Bar
 
-# Overlays
+# Master/Detail
 
+- Master Detail refers to a top level grid called a Master Grid having rows that expand. 
+  - When the row is expanded, another grid is displayed with more details related to the expanded row. The grid that appears is known as the Detail Grid.
+- 
+- 
+- 
+
+# Overlays
 - At present, there are two overlays for the grid:
   - Loading: Gets displayed when the grid is loading data.
   - No Rows: Gets displayed when loading has complete but no rows to show.

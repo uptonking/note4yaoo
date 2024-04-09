@@ -321,6 +321,10 @@ modified: 2023-01-09T11:04:13.958Z
   - https://yinger.github.io/ts-excel-compare/
   - Diff Tool to Compare Two Excel Spreadsheet Files 
   - 依赖handsontable、sheetjs、daff、antd
+
+- https://github.com/ximing/xmexcel /201804/js
+  - A excel transform for realtime collaboration write by javascript
+  - ExcelModel 每次应用op将会产生新的excel和history
 # table-format
 - https://github.com/microsoft/lst-bench /java
   - a framework that allows users to run benchmarks specifically designed for evaluating the performance, efficiency, and stability of Log-Structured Tables (LSTs), also commonly referred to as table formats, such as Delta Lake, Apache Hudi, and Apache Iceberg.

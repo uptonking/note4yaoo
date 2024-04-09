@@ -62,6 +62,20 @@ modified: 2022-10-13T08:00:21.260Z
   - Short answer: SQLite has serious shortcomings when it comes to reactivity and we think we can be as fast as SQLite for the application-type queries we aim to support. 
   - The long answer would be about supporting all of features we don't need in SQLite and all of the quirks that come with it like having `null` as a primary key
   - We also recently came up with a relational-style querying system without joins
+
+- > the fact that we always use text editing as the de-facto solution is so weird to me since that problem is both niche and extremely complex
+  - The reason we use that is because it is complex enough to show the problems that CRDTs solve
+  - Simple text inserts with a simple "insert after" CRDTs is not much more complicated but involves things like generated unique IDs without communication and how to resolve conflicts with some sort of globally consistent ordering.
+
+- I agree that it's simple, but that's exactly what makes it so powerful — it's easy to understand and yet you can do a ton with it. I've been working on a vector editor as well that's also built with just registers and maps. That one is a bit long for a blog post (although I might do a high level overview of some techniques like fractional indexing). But the point I'm trying to drive at here is that you can get really far just by combining simple CRDTs.
+
+- Figma's interesting because it's not strictly speaking a CRDT. It borrows heavily from some of the CRDT ideas, but it's really an editable tree where most changes are atomic and thus use a last-writer-wins approach. That, and re-ordering tree nodes uses fractional indexing.
+  - Figma's interesting because it's not strictly speaking a CRDT. It borrows heavily from some of the CRDT ideas, but it's really an editable tree where most changes are atomic and thus use a last-writer-wins approach. That, and re-ordering tree nodes uses fractional indexing.
+
+- 
+- 
+- 
+
 # 📝 [Building a Collaborative Pixel Art Editor with CRDTs | jakelazaroff.com](https://jakelazaroff.com/words/building-a-collaborative-pixel-art-editor-with-crdts/)
 - In An Interactive Intro to CRDTs, we learned what CRDTs are, and implemented two: a **Last Write Wins Register** and a **Last Write Wins Map**. 
   - We now have everything we need to build a collaborative pixel art editor

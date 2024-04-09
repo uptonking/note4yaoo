@@ -49,7 +49,7 @@ modified: 2022-10-22T18:45:00.382Z
 # yjs-usecase
 - [How we made Jupyter Notebooks collaborative with Yjs](https://blog.jupyter.org/how-we-made-jupyter-notebooks-collaborative-with-yjs-b8dff6a9d8af)
 
-## yjs在runjs在线代码沙盒的应用 
+## [yjs在runjs在线代码沙盒的应用](https://runjs.work/projects/b86ef5c4eddf4cc8) 
 
 ### 背景
 

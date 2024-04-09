@@ -479,6 +479,35 @@ modified: 2022-04-05T10:08:25.947Z
   - https://github.com/cachapa/sql_crdt /dart
   - https://github.com/cachapa/sqlite_crdt /dart
   - https://github.com/cachapa/postgres_crdt /dart
+
+- https://github.com/rocicorp/fractional-indexing /cc0/202302/js/inactive
+  - Fractional Indexing in JavaScript
+  - This is based on Implementing Fractional Indexing by David Greenspan .
+  - Fractional indexing is a technique to create an ordering that can be used for Realtime Editing of Ordered Sequences.
+  - This implementation includes variable-length integers, and the prepend/append optimization described in David's article.
+
+- https://github.com/TMeerhof/fractional-indexing-jittered /cc0/202312/ts
+  - Goal of this package is a abstraction to use Fractional indexing, a technique to generate new order keys in between a existing list without having to reorder all the existing keys.
+  - This package supports Jittering the key to have a high probability of a unique key.
+  - Fractional index API is a collection of functions to generate order keys, either jittered or not
+  - This package builds on a solid foundation both in writing and in code, see credits
+  - Both the low level API and generator the support jittering. This means that the keys are with high probability unique even when multiple actors insert on the same spot at the same time
+
+- https://github.com/goabstract/fractional-index /MIT/202101/js/inactive
+  - A Javascript implementation of fractional indexes for sorting items
+  - Given two indexes the library will always return a fractional index at the midpoint between the two. This is particularly useful for realtime collaboration and cases where sending an entire set of ordered items back to the server is undesirable.
+
+- https://github.com/drifting-in-space/fractional_index /MIT/202312/rust
+  - This crate implements fractional indexing, a term coined by Figma in their blog post Realtime Editing of Ordered Sequences.
+  - A FractionalIndex can only be constructed from a default constructor or by reference to an existing FractionalIndex.
+  - A FractionalIndex acts as a “black box” that is only useful for comparing to another FractionalIndex. 
+  - This is useful as a key in a `BTreeMap` when we want to be able to arbitrarily insert or re-order elements in a collection, but don't actually care what the key is. 
+  - It’s also useful for resloving conflicts when a list is modified concurrently by multiple users.
+
+- https://github.com/sh-tiye/lexicon-fractional-index /202112/rust/inactive
+  - A Rust version for fractional-indexing . 
+  - Keys in string and satisfy lexicographic order.
+  - Rewritten from existed codebase: rocicorp/fractional-indexing
 # crdt-rewrite
 - https://github.com/josephg/crdt-examples /js
   - CRDT examples from a DWEB talk
@@ -1005,7 +1034,7 @@ modified: 2022-04-05T10:08:25.947Z
 - https://github.com/mweidner037/position-strings
   - implements a list/text CRDT with a "lightweight" API based on lexicographically-sorted strings.
   - You can also think of position-strings like fractional indexing, but with a few extra features: global uniqueness, non-interleaving, and slower (logarithmic) length growth in sequences.
-  - ["Position Strings" for Collaborative Lists and Text](https://mattweidner.com/2023/04/13/position-strings.html)
+  - ["Position Strings" for Collaborative Lists and Text _202304](https://mattweidner.com/2023/04/13/position-strings.html)
     - position-strings is supposed to make it easy to add list/text CRDT functionality to an existing data model, such as a database table. 
     - The example app uses it to build a collaborative text editor on top of Firebase RTDB.
 - https://github.com/mweidner037/firebase-text-editor
@@ -1028,7 +1057,7 @@ modified: 2022-04-05T10:08:25.947Z
 - https://github.com/mweidner037/uniquely-dense-total-order
   - Uniquely Dense Total Orders for List/Text CRDTs
   - This is a concept similar to fractional indexing, but resilient to concurrent insertions.
-  - [Plain Tree: A Basic List CRDT](https://mattweidner.com/2022/10/21/basic-list-crdt.html)
+  - [Fugue(Plain Tree): A Basic List CRDT _202210](https://mattweidner.com/2022/10/21/basic-list-crdt.html)
     - The rest of this post introduces a basic UniquelyDenseTotalOrder that I especially like. 
     - I have not seen it in the existing literature, although it is similar enough to Logoot, Treedoc, and others that I wouldn’t be surprised if it’s already known. For now, I call it Plain Tree.
 

@@ -14,8 +14,13 @@ modified: 2022-08-21T09:54:26.037Z
   - 社区版开源，专业版也开源，但专业版的源码和社区版深度耦合
 
 - cons
+  - built with typescript; provide react-data-grid
   - 可定制性有限，支持自定义renderer、filter等
     - 但不支持类似handsontable、prosemirror提供的全局功能拦截插件
+  - 💰 paid: Advanced Filter, Fill Handle, Range Selection, Clipboard
+    - row-group,Aggregation,tree,pivot,master-detail,server-side-model
+    - context-menu, Tool Panels,Status Bar
+  - 功能比handsontable
 
 - features
   - 支持RangeSelection

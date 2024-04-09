@@ -15,6 +15,7 @@ modified: 2021-07-20T13:50:23.433Z
   - 涉猎saas解决方案，积累算法、库、框架、模版项目、生态
   - 深入一个项目，开发需要精力，建立生态更需要精力
     - 视图+持久化，前端分析model/view/dataflow, 后端分析数据库设计和优化
+    - 分析api的设计，包括扩展ui、api，插件开发，热加载
     - src-code, issues, pr, forks, extensions, most-commented-issues
     - roadmap, open-issues, alternatives
     - 开放能力: extensions, scripts, marketplace

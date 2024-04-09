@@ -290,7 +290,11 @@ modified: 2023-12-15T17:04:36.589Z
 
 - ## 
 
-- ## 
+- ## Is there an `/alive` or other endpoints typically used in docker/kubernetes to know if a container is ready? 
+- https://discord.com/channels/811989166782021633/1095091586452426824/1226630834812092506
+- For v5, it looks to be `yarn strapi routes:list` and the endpoint is `/_health`
+
+- It's `HEAD /_health`
 
 - ## if I modify `result` object directly in `afterUpdate` lifecycle event, like `result.version=1` , the response seems modified too. 
 - https://discord.com/channels/811989166782021633/1095091586452426824/1222935473383800842

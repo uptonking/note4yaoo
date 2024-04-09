@@ -22,6 +22,24 @@ modified: 2022-04-05T10:10:08.537Z
 - who is using #last-write-win
   - notion
 
+- who is using #crdt-rga/ct
+  - automerge
+
+- who is using #crdt-woot
+  - atom-teletype
+
+- who is using #crdt-fractional indexing
+  - figma
+  - tldraw
+
+- rga: linked-list or tree
+- logoot
+  - sparse n-ary tree
+- treedoc/2009
+  - binary tree
+- lseq/2013
+  - exponential tree
+
 - 协作方案参考
   - Liveblocks, synced-store, FluidFramework, gundb, pouchdb
   - automerge (2017), yjs (2015), sharedb (2013)

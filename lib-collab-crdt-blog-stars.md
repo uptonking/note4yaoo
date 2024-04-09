@@ -9,6 +9,146 @@ modified: 2023-03-11T15:37:59.134Z
 
 # guide
 
+# blogs-fractional-index
+
+## 🧮 [CRDT: Fractional Indexing - Made by Evan _202211](https://madebyevan.com/algos/crdt-fractional-indexing/)
+
+- [Realtime Editing of Ordered Sequences - Made by Evan _201703](https://madebyevan.com/figma/realtime-editing-of-ordered-sequences/)
+
+- Collaborative peer-to-peer applications sometimes need to operate on sequences of objects with a consistent order across all peers. 
+  - Unlike my original article about this technique, the algorithm presented here uses random offsets to avoid requiring a central server, and works in true peer-to-peer scenarios.
+- Compared to tree-based indexing, fractional indexing is simpler but doesn't prevent interleaving of concurrently-inserted runs, which makes it inappropriate for textual data.
+
+### [CRDT: Tree-Based Indexing - Made by Evan _202211](https://madebyevan.com/algos/crdt-tree-based-indexing/)
+
+- Compared to fractional indexing, tree-based indexing is more complicated but prevents interleaving of concurrently-inserted runs, which makes it appropriate for textual data. 
+- The algorithm presented here is similar to a well-known one called "RGA" but with reordering layered on top.
+
+## 👥🧮 [CRDT: Fractional Indexing _202211](https://news.ycombinator.com/item?id=33764449)
+
+- 👷🏻jitl: To me the other algorithms described in the list are more novel and interesting:
+  - crdt-tree-based-indexing/ - for when precise order is critical, like paragraphs in a document. This algorithm is almost like storing adjacency information like a linked list, but is more convergent. 
+  - crdt-mutable-tree-hierarchy/ - for tree-shaped data, like blocks in a Notion page that should have exactly one parent, but allow concurrent re-parenting operations
+  - log-spaced-snapshots/ - log space snapshots, for choosing what fidelity of historical information to store. For context, many CRDTs for rich text or sequences store unbounded history so that any edit made at any time can be merged into the sequence. For long-lived documents, this could be impractical to sync to all clients or keep in "hot" memory. Instead, we can decide to compact historical data and move it to cold storage, imposing a time boundary on what writes the system can accept on the hot path. The log-spaced snapshots algorithm here could be used to decide what should be kept "hot", and how to tune the cold storage.
+- do you have thoughts on the CRDT vs OT debate? 
+- I’m not the GP, but OT is pretty annoying to implement. There are so many cases that it’s quite difficult to formally prove an OT correct. 
+  - On the other hand, a large subset of CRDTs can be implemented in Datalog and if you do that you can’t possibly end up with an invalid CRDT.
+
+- CRDTs are often talked about in the same breath as collaborative editing software, but they're useful for much more than that. They really are a theoretical model of how distributed, convergent, multi-master systems have to work. 
+  - IE the DT in CRDT could be a whole datastore, not as just an individual document.
+
+- 🧮 This is basically the idea behind Logoot [Weis_2009] that was improved by LSeq [Nédelec_2013] and later extended to the first block-wise sequence CRDT: LogootSplit [André_2013]. LogootSplit was recently improved as Dotted LogootSplit(MPLv2/201907) [Elvinger_2021].
+- Is this the same as LSeq except rather than using bytes one is basically using digits in a floating point representation (given this is JS where most things are floats)?
+
+- This is kind of interesting but "fractional indexing" doesn't seem to be a computer science topic, and I think it might be clearer to treat these indexes as lists of numbers (or ordinals in ω^ω, if you prefer) rather than fractions. 
+  - Those are simpler to generate and compare than arbitrary-precision fractions. Or as jitl's post suggests, using trees as indexes (I haven't yet looked at jitl's linked articles). Those would presumably have order type. 
+  - It's not clear to me why you'd want that, but it seems doable. In all these schemes you might occasionally want a "stop the world garbage collection" where you reset all the indices to be ordinary integers or maybe pairs of integers. I guess that is also doable without having to pause all the updates, at least if you use pairs.
+
+- Reminds me a little of "Lexorank" used in Jira, except by using decimals instead of base-36 strings, which I guess could be more efficient? The "rebalancing" aspect is interesting because on a long enough timescale for a document you will definitely want to do it. Would love to read up more on any algorithms for doing this in a p2p manner - with a central server it's probably quite easy using some tombstoning or something.
+
+- reminds me a lot of Ford Circle / Farey Diagram / Stern Brocot tree Basically a tree of fractions where you take two rational points on a number line, a/b and c/d, then the next point in the tree is (a+b) / (c+d). Turns out that every single point you create this way has a unique position and never duplicate each other, and it forms a tree like structure.
+
+- The algorithm exposed in the article would be better served by a Stern-Brocot than average + jitter.
+
+- Doesn't this end up being effectively a binary heap, with a maximum tree depth of 23 (floating point mantissa precision)? I imagine there must be a rebalancing operation required every so often, possibly more frequently for pathological insertion orders.
+  - > Fractional positions should be represented using arbitrary-precision decimals so that they don't run out of precision. Floating-point numbers are insufficient.
+
+## [Reordering Part 2: Tables and Fractional Indexing - Steve Ruiz _202202](https://www.steveruiz.me/posts/reordering-fractional-indices)
+
+- In a previous blog post, we looked at implementing four common reordering commands in a zoom UI or canvas app. Those commands are:
+  - Send to Back
+  - Send Backward
+  - Bring Forward
+  - Bring to Front
+- While the last post showed how we might implement these commands when our items were stored in an array, this post will focus on the more complex implementation for cases where items are stored in hash tables.
+
+- Let's say we have an application where we're storing items in a hash table—in JavaScript, a regular object. 
+  - Because tables (unlike arrays) have no "position" or index for items in the table, we'll need to keep track of that information ourselves.
+  - each item's `index` is stored as a property using number.
+- 🤔 How should we implement changes to our `index` properties? 
+  - A simple approach could reproduce the same index logic as in an array, re-assigning each item's index whenever a reorder occurs.
+  - The problem with this approach is that making a change to one item's order might mean making a change to all items in the stack. 
+  - This strategy could lead to excessive writes to a database, or larger packets being sent to ensure consistency between users in a multiplayer session, and even unnecessary renders depending on how changes are observed.
+  - What we really want is a method that ensures that only the moving items will require new index values.
+- The strategy we'll be using is called "fractional indexing", common in databases but introduced to me by Figma's article on the topic.
+  - In this strategy, an `index` only needs to ensure that, when our items are sorted by their index, the items end up in the right order. 
+  - The index values themselves do not have to be integers or evenly distributed—all that matters is that they let us produce the correct sort.
+- Fractional indexing makes reordering operations much cheaper in terms of writes to the document or database, as we only need to mutate the items that have actually moved.
+  - There is one issue, however, and you may have spotted it already: how many times can you divide a number before the difference is less than your program's floating point precision? With the implementation shown here, that number is 52.
+- Better Indexing! The solution to this is to use a more accurate index.
+  - At the moment we're sorting based on the greater of two numbers; however, we can also sort alphabetically.
+
+## 🧮 [Fractional Indexing – vlcn.io](https://vlcn.io/blog/fractional-indexing)
+
+- To enable user provided ordering of rows, most people reach for a fractional index. 
+  - They're great given they let you change the position of one row without modifying any other rows. 
+- Fractional indices have a number of gotchas, however.
+- 🐛 Precision
+  - You might think 52 bits of precision (for JS floats) would be plenty to continuously insert between two items. Since inserts divide the space by 2, you will actually run out of precision after 53 insertions in the wrong spot.
+- 🐛 Collisions
+  - In a distributed setting, fractional indices have problems when it comes to nodes assigning items the same orders.
+- 🐛 Interleaving
+  - Since each node is assigning orders to items independently, this can cause unwanted interleaving of data. 
+
+- Fixing the Gotchas
+- 💡 Precision & Exponential Index
+  - To prevent exponential growth of your fractional index, insertions at the end should be whole increments and insertions at the beginning should be whole decrements.
+  - You can also use a variable length encoding for your fractional index to compress away repeating numbers
+- 💡 Collisions
+  - A proposed workaround for collisions is to add random jitter to your index. 
+  - Jitter(晃动, 抖动; 偏移), unfortunately, can still lead to a collision and will increase the space of your index.
+  - The other workaround is to allow collisions
+  - This is implemented in cr-sqlite here.
+- 💡 Interleaving
+  - To fix interleaving we will part ways with fractional indexing and instead sort based on recursive relationships between rows. You can read about this in recursive ordering.
+  - there are other approaches to fix interleaving
+
+## [Building Conclave: a decentralized, real time, collaborative text editor _201801](https://medium.com/hackernoon/building-conclave-a-decentralized-real-time-collaborative-text-editor-a6ab438fe79f)
+
+- Conclave is a decentralized, real time, collaborative editor for the browser. 
+- Relative positions are the key concept that differentiates a CRDT from OT. The positions of characters in a CRDT never change even if the characters around them are removed. Furthermore, the relative position can always be used to determine the location of the character in the document.
+  - Fractional positions as arrays of integers.
+
+- Version Vector is simply a strategy that tracks which operations we have received from each user.
+  - Whenever an operation is sent out, in addition to the character object and the type of operation (insert/delete), we include the character’s Site ID and Site Counter value. The Site ID indicates who originally sent the operation and the Counter indicates which operation number it is from that particular user.
+
+- https://github.com/conclave-team/conclave /MIT/202106/js/lseq/inactive
+  - https://conclave-team.github.io/conclave-site/
+  - CRDT and WebRTC based real-time, peer-to-peer, collaborative text editor
+  - 示例使用simplemde、rxjs、peerjs
+  - Intrigued by collaboration tools like Google Docs, we set out to build one from scratch. 
+  - Conclave uses (CRDT) to make sure all users stay in-sync and WebRTC to allow users to send messages directly to one another.
+  - We implemented an “adaptive allocation strategy for sequence CRDT” called LSEQ(exponential tree).
+  - Similar non-academic implementation with optimizations and tweaks - based on Logoot/LSEQ.
+
+- [Building Conclave: a decentralized, real time, collaborative text editor | HackerNoon _201712](https://hackernoon.com/building-conclave-a-decentralized-real-time-collaborative-text-editor-a6ab438fe79f)
+
+## 🧮 ["Position Strings" for Collaborative Lists and Text _202304](https://mattweidner.com/2023/04/13/position-strings.html)
+
+- it provides “position strings” for use in collaborative lists or text strings. 
+  - Each position string points to a specific list element (or text character), and the list order is given by the lexicographic order on position strings.
+- position-strings is supposed to make it easy to add list/text CRDT functionality to an existing data model, such as a database table. 
+- Unlike most CRDT implementations, position-strings doesn’t “own” the list state or store extra metadata; 
+  - instead, you are free to store the positions and chars (or list values) wherever you like.
+  - For example, you could store each { position, char } as a row in a cloud-synced database like Firebase Realtime DB - I provide an example app that implements collaborative text editing this way.
+- You can also think of position-strings like fractional indexing, but with a few extra features: global uniqueness, non-interleaving, and slower (logarithmic) length growth in sequences.
+
+- The catch is that a list/text CRDT using `position-strings` will have more storage and network overhead than a dedicated data structure like `Y.Array`
+- Under the hood, position-strings uses an optimized version of `Fugue`’s string implementation. 
+
+## [Fugue(Plain Tree): A Basic List CRDT _202210](https://mattweidner.com/2022/10/21/basic-list-crdt.html)
+
+- This post was previously titled “Plain Tree: A Basic List CRDT”. 
+  - Since posting, I and Martin Kleppmann wrote a paper about this list CRDT and renamed it Fugue.
+
+- In this post, I describe Fugue, a basic List CRDT that I find fairly easy to understand, plus some simple implementations. My goal is that you will also understand it, filling in a gap from my previous post. 
+  - Despite its simplicity, the CRDT described here is my preferred List CRDT. 
+  - In particular,  `Collabs` uses it for all list implementations.
+
+- 
+- 
+- 
+
 # blogs
 
 ## [Store the history and the state of CRDTs in a KV store _202403](https://twitter.com/zxch3n/status/1772864473348653162)

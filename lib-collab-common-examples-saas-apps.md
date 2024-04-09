@@ -244,6 +244,13 @@ modified: 2023-01-17T19:14:47.611Z
   - Realtime collaborative tool which can run custom applications in a Wiki page
   - Wiki using Markdown with realtime preview and operational transformation
   - Custom applications run in preview pane E.g. Kanban useace (ja)
+
+- https://github.com/chr15m/bugout /MIT/202301/js/inactive
+  - https://chr15m.github.io/bugout
+  - Back end web app services over WebRTC.
+  - Browser-to-browser networking built on WebTorrent. Web service bug-out bag. 
+  - Easily send messages directly between browsers.
+  - Client-server over WebRTC instead of HTTPS.
 # realtime-room
 - https://github.com/Poujhit/Chatzilla
   - Chat Room Application made using React/Typescript and NodeJs-Web sockets.

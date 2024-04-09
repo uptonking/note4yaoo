@@ -115,12 +115,23 @@ modified: 2023-12-21T20:07:29.584Z
 - ## [Performance issue: splicing source data with observeChanges/columnSorting triggers "observe change" on all data that comes after the spliced index ](https://github.com/handsontable/handsontable/issues/5274)
 - It looks like the `observeChanges` is used to perform proper sorting after adding or removing rows. It fires for `afterCreateRow` and `afterRemoveRow` hooks.
 
+# discuss-server
+- ## 
+
+- ## 
+
+- ## [Is it possible to delegate filtering from the frontend to the backend _202106](https://github.com/handsontable/handsontable/discussions/8152)
+- The `beforeFilter` hook prints all the information needed to proceed with back-end filtering.
+  - Once you get the new dataset you can load it back to Handsontable. 
+
 # discuss
 - ## 
 
 - ## 
 
-- ## 
+- ## [Click event swallowed after redraw of custom cell renderer ](https://github.com/handsontable/handsontable/issues/3436)
+- I recommend you to use renderer only to render elements. 
+  - If you would like to add any logic to elements from the renderer, you can use `beforeOnCellMouseDown`
 
 - ## [Programatically updating data in Handsontable 11.1 - Getting help / Questions - Handsontable Forum _202205](https://forum.handsontable.com/t/programatically-updating-data-in-handsontable-11-1/6128)
   - In our app we only use this kind of methods to improve performance and to not have to reload the whole table at each and every external change or side effect changes

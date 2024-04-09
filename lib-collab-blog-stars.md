@@ -66,10 +66,77 @@ modified: 2022-04-05T10:10:22.091Z
 - Realtime GitHub uses two strategies:
   - for fine-grained realtime changes, clients write a ProseMirror transaction, which produces a new Git state on the server, and also sends the transaction to other clients to apply to their local state (rebasing local changes if needed).
   - (not implemented yet) for coarse-grained changes (e.g. merging one branch into another), we do a Git-style three-way merge on the JSON structure of the document, producing a semantically valid document. Conflicts are marked as special document nodes, which are displayed in the editor UI for manual resolution.
-# [figma: How Figma’s multiplayer technology works__201910](https://www.figma.com/blog/how-figmas-multiplayer-technology-works/)
+# 🌰🔀 [figma: How Figma’s multiplayer technology works__201910](https://www.figma.com/blog/how-figmas-multiplayer-technology-works/)
+- As a startup we value the ability to ship features quickly, and OTs were unnecessarily complex for our problem space
 
+- When a document is opened, the client starts by downloading a copy of the file.
+  - From that point on, updates to that document in both directions are synced over the WebSocket connection. 
+  - Figma lets you go offline for an arbitrary amount of time and continue editing. When you come back online, the client downloads a fresh copy of the document, reapplies any offline edits on top of this latest state, and then continues syncing updates over a new WebSocket connection. 
+- It’s worth noting that we only use multiplayer for syncing changes to Figma documents. 
+  - We also sync changes to a lot of other data (comments, users, teams, projects, etc.) but that is stored in Postgres, not our multiplayer system, and is synced with clients using a completely separate system that won’t be discussed in this article
+- Our primary goal when designing our multiplayer system was for it to be no more complex than necessary to get the job done. 
+  - A simpler system is easier to reason about which then makes it easier to implement, debug, test, and maintain. 
+  - Since Figma isn't a text editor, we didn't need the power of OTs and could get away with something less complicated.
+
+- Figma's tech is instead inspired by something called CRDTs
+  - All CRDTs satisfy certain mathematical properties which guarantee eventual consistency
+- Figma isn't using true CRDTs though. 
+  - CRDTs are designed for decentralized systems where there is no single central authority to decide what the final state should be. 
+  - Since Figma is centralized (our server is the central authority), we can simplify our system by removing this extra overhead and benefit from a faster and leaner implementation.
+- It’s also worth noting that Figma's data structure isn't a single CRDT. Instead it's inspired by multiple separate CRDTs and uses them in combination to create the final data structure that represents a Figma document
+- 🧮 Every Figma document is a tree of objects, similar to the HTML DOM. 
+  - There is a single root object that represents the entire document. 
+  - Underneath the root object are page objects, and underneath each page object is a hierarchy of objects representing the contents of the page. 
+  - This tree is is presented in the layers panel on the left-hand side of the Figma editor.
+
+- Figma’s multiplayer servers keep track of the latest value that any client has sent for a given property on a given object. 
+  - This means that two clients changing unrelated properties on the same object won’t conflict, and two clients changing the same property on unrelated objects also won’t conflict
+  - A conflict happens when two clients change the same property on the same object, in which case the document will just end up with the last value that was sent to the server.
+  - 🔀 This approach is similar to a last-writer-wins register in CRDT literature except we don’t need a timestamp because the server can define the order of events.
+- An important consequence of this is that changes are atomic at the property value boundary.
+- The most complicated part of this is how to handle conflicts on the client when there’s a conflicting change. 
+  - Property changes on the client are always applied immediately instead of waiting for acknowledgement from the server since we want Figma to feel as responsive as possible. 
+  - Since our change we just sent hasn’t yet been acknowledged by the server but all changes coming from the server have been, our change is our best prediction because it’s the most recent change we know about in last-to-the-server order. So we want to discard incoming changes from the server that conflict with unacknowledged property changes.
+- Arranging objects in an eventually-consistent tree structure is the most complicated part of our multiplayer system.
+  - The complexity comes from what to do about reparenting operations (moving an object from one parent to another).
+  - Many approaches represent reparenting as deleting the object and recreating it somewhere else with a new ID, but that doesn't work for us because concurrent edits would be dropped when the object's identity changes
+  - The approach we settled on was to represent the parent-child relationship by storing a link to the parent as a property on the child. That way object identity is preserved. We also don’t need to deal with the situation where an object somehow ends up with multiple parents that we might have if, say, we instead had each parent store links to its children.
+- However, we now have a new problem. Without any other restrictions, these parent links are just directed edges on a graph. There’s nothing to ensure that they have no cycles and form a valid tree. 
+  - Figma’s multiplayer servers reject parent property updates that would cause a cycle, so this issue can’t happen on the server. But it can still happen on the client.
+  - Figma’s solution is to temporarily parent these objects to each other and remove them from the tree until the server rejects the client’s change and the object is reparented where it belongs. This solution isn’t great because the object temporarily disappears, but it’s a simple solution to a very rare temporary problem so we didn’t feel the need to try something more complicated here such as breaking these temporary cycles on the client.
+- 🧮 To construct a tree we also need a way of determining the order of the children for a given parent. 
+  - Figma uses a technique called “fractional indexing” to do this. 
+  - At a high level, an object’s position in its parent’s array of children is represented as a fraction between 0 and 1 exclusive. 
+  - The order of an object’s children is determined by sorting them by their positions. 
+  - You can insert an object between two other objects by setting its position to the average of the positions of the two other objects.
+
+- undo in a multiplayer environment is inherently confusing.
+  - We had a lot of trouble until we settled on a principle to help guide us: if you undo a lot, copy something, and redo back to the present (a common operation), the document should not change. 
+  - This is why in Figma an undo operation modifies redo history at the time of the undo, and likewise a redo operation modifies undo history at the time of the redo.
+
+## 🧮 [Realtime Editing of Ordered Sequences | Figma Blog _201703](https://www.figma.com/blog/realtime-editing-of-ordered-sequences/)
+
+- Instead of OT, Figma uses a trick that’s often used to implement reordering on top of a database. 
+  - Every object has a real number as an index and the order of the children for an element of the tree is determined by sorting all children by their index.
+  - To insert between two objects, just set the index for the new object to the average index of the two objects on either side. 
+  - We use arbitrary-precision fractions instead of 64-bit doubles so that we can’t run out of precision after lots of edits.
+- In our implementation, every index is a fraction between 0 and 1 exclusive. 
+  - Being exclusive is important; it ensures we can always generate an index before or after an existing index by averaging with 0 or 1, respectively. 
+  - Each index is stored as a string and averaging is done using string manipulation to retain precision. 
+  - For compactness, we omit the leading “0.” from the fraction and we use the entire ASCII range instead of just the numbers 0–9 (base 95 instead of base 10).
+
+- Benefits:
+  - Easy to understand and implement
+  - Reordering an object only involves editing a single value
+- Drawbacks:
+  - Index length can grow over time
+  - Merging new elements from multiple clients may interleave them
+  - Averaging between two identical indices doesn’t work
+
+- We’ve been using fractional indexing for multiplayer editing in Figma from the beginning and it’s worked out really well for us. 
+  - Even though OT provides some additional benefits around performance and interleaving, it’s much more beneficial for the Figma platform to use simple algorithms that are easy to understand and implement than to use the most advanced algorithms out there. 
+  - It means more people can work on Figma, the implementation is more stable, and we can develop and ship features faster.
 # [figma: LiveGraph: real-time data fetching at Figma | Figma Blog_202110](https://www.figma.com/blog/livegraph-real-time-data-fetching-at-figma/)
-
 - how do we empower our product engineers to build these real-time views easily, while abstracting away the complexity of pushing data back and forth?
   - 👉🏻 To provide a general solution to this fundamental business need, we developed LiveGraph, **a data fetching layer on top of Postgres that allows our frontend code to request real-time data subscriptions expressed with GraphQL**. 
   - It issues queries directly to the database and provides live updates in the order of(~of/in the order of sth, 大约、数量级) milliseconds by reading the database replication stream.

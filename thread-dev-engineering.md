@@ -43,6 +43,14 @@ modified: 2021-01-21T17:52:13.333Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 过早的优化是万恶之源。我认同的优化只有一种，让现有代码可以随时被丢弃。
+- https://twitter.com/xqliu/status/1777600103987200371
+- Docker+PostgreSQL+express+react+iOS+Android一把梭，这技术栈可以支持到赚到$100million的时候，再换k8s。很多人都是业务赚不到几个钱，技术栈高级的不行。
+
 - ## An interesting recurring theme in data infra: protocols/APIs outliving specific implementations.
 - https://twitter.com/gunnarmorling/status/1716878504044998914
   - E.g. #Kafka wire protocol (#RedPanda, #WarpStream as alternative providers), S3 API (#MinIO, #Ceph, etc.), #Postgres protocol (too many to list even).

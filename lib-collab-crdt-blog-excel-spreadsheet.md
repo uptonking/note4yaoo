@@ -13,6 +13,39 @@ modified: 2023-10-28T09:04:42.521Z
 
 # 📈 [Conflict-free Replicated Spread Sheets_202310](https://www.bartoszsypytkowski.com/crdt-tables/)
 
+- Before going to implementation details, let's specify the characteristics of the spread sheets workloads. Once data volume grows, its impossible to optimize the data structure for all work patterns. We need to pick our battles. For this reason we need to construct some initial assumptions:
+  - Some spread sheets can consists of hundreds of columns and (in some cases) hundreds of thousands of rows. For this reason, the size of metadata per row (and per cell) matters.
+  - Relative position of rows is usually not that important - unless we apply specific ordering rules (like order rows by column X), the insertion order rarely changes the meaning of the entire context. This is very much in contrast to ie. text editors where preserving the intended order of inserted characters is a grave matter. For that reason we acknowledge `interleaving` as an acceptable tradeoff.
+  - The majority of changes come from cell updates, including deletion of cell contents. Our conflict resolution should work on cell level not row level
+  - The majority of inserts are actually appends of consecutive ranges of rows and columns, including copy/pasting massive amount of rows from another source. Inserting rows in between existing rows can happen but it's less common than ie. in case of text editors.
+  - Even if our sheet has thousands of rows, we usually render only a handful of them (adjacent to each other within window boundaries) at the time. For this reason its good to keep similarity between how rows are presented to a user, and their actual in-memory layout
+
+- 🧮 we're going to keep track of inserted columns and rows by using LSeq data structure: represented in our case as array of fractional keys. 
+  - While we did describe LSeq in the past, let's gloss over it very quickly: linear sequence inserts elements at index i by generating key for new inserted entry, that's lexically smaller than the key at position i+1 and greater than the key at position i-1.
+- What's important here is that, neighbour keys are needed only during key generation time, not a conflict resolution time. 
+  - It means that if we can guarantee causality of our operations (and prevent duplicate updated), we don't need to preserve tombstones of removed elements.
+- That being said, our implementation uses tombstones simply because we don't use replication protocol that preserves causality - we simply shove updates around. With a protocol capable of deduplicating updates we wouldn't need them.
+
+- When working with spread sheets, quite often we want to be able to select a window of data. 
+  - Using markers like `A1:B3` mentioned above has common problem: they represent current order as observed by user. When other users will start to concurrently insert/remove rows or cells, these positions may no longer refer to fragments of data we intended them to. 
+  - For this reason, we're going to represent our selections as a combination of two opposite points using logical indexing (our fractional keys) instead
+
+- Keep in mind that when we're referring to ranges, we actually what to refer to spaces between elements at given indexes - hence notion of left/right side inclusive/exclusive ranges. 
+  - Same problem concerns windows of data. This usually requires keeping additional flags around. 
+- Moreover, if we want to mark an entire range of values (eg. all current and future elements of a row/column), we need additional way to describe it as well.
+
+- we'd need to add some degree of reactivity: whenever a value inside of selection changes, we need to recompute formulas in all affected cells. For that we may need to quickly locate selections containing given cell or those that intersect with updated range ie. when we copy paste area of cell values at once.
+  - With small number of listening selections, doing a brute force check over all of them may be probably enough.
+- Indexing selections for fast constains/overlaps search operations may sound like a hard problem. However in the past we already covered concept of index structures optimized for multi-dimensional values: R-Trees. Below you can see how databases like Postgres use R-Tree to recursively split search space to improve lookups of geographical data.
+
+- R-Tree is build on B+Tree, where we have a fixed-size nodes of keys/areas (here: selections). 
+  - Keys in each node can be summarized as another selection that fits them all within its boundaries. This way keys can be grouped and build a recursive hierarchical tree structure. 
+  - When node is full and a new selection needs to be inserted, we split that node in two and assign existing values as follows - pick two selections that are most far away from each other as seeds for newly created buckets, then split remaining values from old bucket by computing how much area covered of each bucket would grow if that key would have to be added there and pick the one where this growth rate is lower.
+
+- if we're talking about LSeq, we can technically implement move(source, destination) as simple delete+upsert (with a little twist)
+
+- The table we described here is row-oriented (array of rows). However when it comes to serialization, it turns out that serializing data by columns is often more feasible. It's because cells existing in the same columns are more likely to have the same data type, and having the same type can make a huge difference.
+
 - [R-Tree: algorithm for efficient indexing of spatial data_202204](https://www.bartoszsypytkowski.com/r-tree/)
 
 - https://github.com/Horusiath/crdt-table /5Star/GPLv3/202309/js

@@ -13,7 +13,7 @@ modified: 2024-01-06T15:37:08.031Z
 
 # blogs
 
-## [Introduction to Loro's Rich Text CRDT – Loro_202401](https://www.loro.dev/blog/loro-richtext)
+## [Introduction to Loro's Rich Text CRDT – Loro _202401](https://www.loro.dev/blog/loro-richtext)
 
 - This article presents the rich text CRDT algorithm implemented in Loro, complying with Peritext's criteria for seamless rich text collaboration. 
   - Furthermore, it can be built on top of any List CRDT algorithms and turn them into rich text CRDTs.
@@ -53,7 +53,11 @@ modified: 2024-01-06T15:37:08.031Z
 
 - ## 
 
-- ## 
+- ## [[LORO-300] Fractional index _202311](https://github.com/loro-dev/loro/issues/140)
+- 👷🏻202401: It's dropped. The fractional index suffers from interleaving problems. We will try building a movable list this season that can avoid this problem while remaining efficient. We hope to integrate it into tree as well.
+  - The other reason we drop it is that the fractional index the solution can be implemented in the application code. It doesn't require special CRDT behaviors(LLW register is enough), so we can already use it with the current movable trees.
+
+- Fair enough. Interleaving is OK for me, but I see that it can be a problem for others.
 
 - ## In Loro, we maintain this property: 
 - https://twitter.com/loro_dev/status/1773591628927598888

@@ -16,14 +16,40 @@ modified: 2023-10-26T21:54:54.201Z
 
 - ## 
 
+- ## 🧮 [Realtime Editing of Ordered Sequences | Figma Blog _201703](https://www.figma.com/blog/realtime-editing-of-ordered-sequences/)
+
+- 💡💡 Instead of OT, Figma uses a trick that’s often used to implement reordering on top of a database. 
+  - Every object has a real number as an index and the order of the children for an element of the tree is determined by sorting all children by their index.
+  - To insert between two objects, just set the index for the new object to the average index of the two objects on either side. 
+  - We use arbitrary-precision fractions instead of 64-bit doubles so that we can’t run out of precision after lots of edits.
+- In our implementation, every index is a fraction between 0 and 1 exclusive. 
+  - Being exclusive is important; it ensures we can always generate an index before or after an existing index by averaging with 0 or 1, respectively. 
+  - Each index is stored as a string and averaging is done using string manipulation to retain precision. 
+  - For compactness, we omit the leading “0.” from the fraction and we use the entire ASCII range instead of just the numbers 0–9 (base 95 instead of base 10).
+
+- Benefits:
+  - Easy to understand and implement
+  - Reordering an object only involves editing a single value
+- Drawbacks:
+  - Index length can grow over time
+  - Merging new elements from multiple clients may interleave them
+  - Averaging between two identical indices doesn’t work
+
+- We’ve been using fractional indexing for multiplayer editing in Figma from the beginning and it’s worked out really well for us. 
+  - Even though OT provides some additional benefits around performance and interleaving, it’s much more beneficial for the Figma platform to use simple algorithms that are easy to understand and implement than to use the most advanced algorithms out there. 
+  - It means more people can work on Figma, the implementation is more stable, and we can develop and ship features faster.
+
 - ## 🔢🔀 [The surprisingly difficult problem of user-defined order in SQL | Hacker News _202101](https://news.ycombinator.com/item?id=25797674)
-- ✏️ This is the same problem seen in algorithms for concurrent remote document editing, and the author seems to have re-invented some of the same solutions. 
+- Using this integer strategy also lends itself to easy reindexing
+
+- ✏️🌲 This is the same problem seen in algorithms for concurrent remote document editing, and the author seems to have re-invented some of the same solutions. 
   - This belongs to the class of problems involving trying to represent a tree in a relational database. There are many solutions, all with some problem.
 
-- I've been reviewing this problem lately for a project, and I've settled on a solution that feels elegant and versatile which this article doesn't cover: lexicographical sort.
+- 🧮 I've been reviewing this problem lately for a project, and I've settled on a solution that feels elegant and versatile which this article doesn't cover: lexicographical sort.
   - I'm using Mudder.js to do it, but the algorithm is straightforward. Define an alphabet (e.g., A-Z). Every time an item is inserted/repositioned, its sort order is given the midpoint between the sort values of its two neighbors. So the first item is given the sort value M (midpoint between A and Z). Inserting before that item gets G (between A and M). Inserting between these two items gets J (between G and M).
-  - Once you run out of letters between two sort values, the algorithm tacks a digit onto the sort value of the item ahead of it. So inserting between M and N yields MM. If you do this enough times in a pathological pattern and wind up with some long string of characters you can reflow your list and rebalance everything out evenly (though that's strictly an optimization for storage space/bandwidth, and not a requirement for the algorithm to function).
-  - This all sorts perfectly with ORDER BY etc., supports an number of repositions bounded only by your storage space, and doesn't require arbitrary-precision decimal datatypes or fraction handling.
+  - Once you run out of letters between two sort values, the algorithm tacks a digit onto the sort value of the item ahead of it. So inserting between M and N yields MM. 
+  - If you do this enough times in a pathological pattern and wind up with some long string of characters, you can reflow your list and rebalance everything out evenly (though that's strictly an optimization for storage space/bandwidth, and not a requirement for the algorithm to function).
+  - This all sorts perfectly with `ORDER BY` etc., supports an number of repositions bounded only by your storage space, and doesn't require arbitrary-precision decimal datatypes or fraction handling.
 - Isn't this just a less efficient version of the "arbitrary precision" variant of approach 2 from the article?
   - It applies the same philosophy but doesn't require special data types. Not all data stores support decimal numbers, and every programming language I've used uses floating point numbers my default. JS doesn't seem to even have a native decimal implementation at all.
   - 💡 Strings work everywhere, and are first-class data types it most systems/languages. They take more bits per digit than numbers (though you can choose a wider alphabet to mitigate that, such as ASCII 33 '!' through 126 '~'), but I'm happy to trade the storage away for using a first-class data types.
@@ -31,9 +57,10 @@ modified: 2023-10-26T21:54:54.201Z
   - float/double data types have a hard requirement of periodic rebalancing to support unbounded repositions. Lexicographical sorting does not require rebalancing ever, though it may be performed as an optional storage/bandwidth optimization. That is a very meaningful distinction in my book.
 - I would use byte array instead of strings, as they should be supported by everything and they are more compact. But I'm crazy guy who wants to optimize everything, I think that in reality string will work just as well and probably easier to debug when you need to deal with it (also easier to serialize if you need to pass it around).
   - Since your alphabet is composed of 8-bit words, you'd get more mileage out of each byte by using 256 symbols in your alphabet, one for each binary value. And by using binary as your alphabet makes things conceptually simpler (even if the values are stored as 8-bit words).
-- String used for indexing can be further used for sorting not only a flat list, but whole trees of nodes. Similar technique was used before (at least in 1997) to answer queries about the order at a particular time in the past.
 
-- There are CRDT algorithms that are similar to this. Some pick from the middle, some from one end or the other and some randomize the choice. It's the solution I'd probably go with for this specific problem (maybe with a bigger alphabet, although some DBMSs are case-insensitive).
+- 🌲 String used for indexing can be further used for sorting not only a flat list, but whole trees of nodes. Similar technique was used before (at least in 1997) to answer queries about the order at a particular time in the past.
+- I've looked into string-based tree sorting before, but the only answers I can come up with involve recursive queries, or encoding the entire tree path into each item, which means updating many records if an item with many descendants gets repositioned.
+  - Updating many records might be necessary, agree, but for balanced trees the number of records to update could likely be logarithmic. No recursive queries was used (e.g., no Oracle's "CONNECT BY").
 
 - There are CRDT algorithms that are similar to this. Some pick from the middle, some from one end or the other and some randomize the choice. It's the solution I'd probably go with for this specific problem (maybe with a bigger alphabet, although some DBMSs are case-insensitive).
 
@@ -41,7 +68,7 @@ modified: 2023-10-26T21:54:54.201Z
 
 - I find similar issues with z-index in CSS.
 
-- Why not (assuming that every entry has a unique ID) add a “next_id” field, and treat it like a linked list?
+- 🤔 Why not (assuming that every entry has a unique ID) add a “next_id” field, and treat it like a linked list?
   - That was my thought, but the query is not simple to get the list in order. Plus inserts also require an update.
 - I used this approach as part of a personal learning project. It ended up working very well because I was using Mongo, so I could just use $graphLookup with an index on the next ID.
 - How do you get the list back in order if there are thousands of entries?
@@ -56,6 +83,17 @@ modified: 2023-10-26T21:54:54.201Z
   2. Don't use sorted sets when you need the properties of an array / linked list.
 - Modern SQL has CTEs, functions, and arrays. They are very elegant when solving the problem of arrays in SQL.
 - 💡 This is a much more practical answer. Point #1 seems exactly right. Even without modern SQL arrays one could even keep references to place, per user, in a simple comma separated text field and munge it in code. Elegant? Probably not. But perhaps more practical then some of the approaches presented. But modern SQL does have arrays.
+
+- IMO the first approach is the best, unless there's a very high number of items (which usually in these scenarios, there's not, even a couple thousand wouldn't be catastrophically bad to update if it's not a common operation). they all kind of suck but everything else seems worse.
+- A basic ordered list of integers can cause a lot more problems than I would have expected at first glance.
+  - Updating dozens/hundreds/thousands of records at once is obviously unnecessarily heavy to process. But depending on your storage layer's locking model, it could cause high lock contention if concurrent actors are updating the same list and fight over large fractions of the dataset with every update.
+  - If you're working in a networked scenario, naïve implementations can turn into transmitting a lot of data across the wire for every single reposition.
+  - It's also algorithmically challenging in concurrent scenarios. If I update my local state rearrange items, and you update your local state to rearrange items in an overlapping range, when they have to sync up this quickly turns into the developer having to learn to implement CRDTs or Operational Transforms. You could implement optimistic or pessimistic locking, but you have to lock such a large fraction of the dataset that it's easy to limit throughput.
+  - Distributed/eventual-consistency problems are particularly challenging with ordering solutions of this variety, but the difference between one operation updating a wide swath of values vs just the single updated value can make a difference in how primitive a reconciliation algorithm the develop can bring to bear.
+
+- 
+- 
+- 
 
 - ## 🔢 [User-defined Order in SQL | Hacker News _201803](https://news.ycombinator.com/item?id=16635440)
 - My immediate thought was to store the information in a doubly-linked list type structure in SQL. Obviously the space efficiency is not optimal, but I am surprised that the article didn't even point this out.

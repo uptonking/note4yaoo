@@ -41,6 +41,10 @@ modified: 2023-04-04T22:39:45.442Z
   - 效果类似在图片上的画板批注层
   - Linkware license for v2; MIT for v1
   - https://github.com/ailon/markerjs
+# image-editor
+- https://github.com/ximing/fabric-photo /MIT/202003/js/inactive
+  - https://ximing.github.io/fabric-photo/
+  - 基于 canvas 的纯前端的图片编辑器，支持方形，圆形，箭头，缩放，拖拽，鹰眼，马赛克，涂鸦，线条，导出 png，剪切等
 # image-viewer
 - https://github.com/xiaolin/react-image-gallery /js
   - http://linxtion.com/demo/react-image-gallery

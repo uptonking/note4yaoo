@@ -14,16 +14,6 @@ modified: 2023-10-28T09:00:45.811Z
 
 - ## 
 
-- ## 🌵📄 I'm presenting some early ideas about CRDTs & branch-and-merge documents.
-- https://twitter.com/MatthewWeidner3/status/1715023602976764299
-  - [Proposal: Versioned Collaborative Documents (PLF 2023 - Programming Local-first Software) - SPLASH 2023](https://2023.splashcon.org/details/plf-2023-papers/4/Proposal-Versioned-Collaborative-Documents)
-
-- One compromise is to use a git-like arch (full history, merge reviews) but store CRDT updates instead of git's patches. The CRDT enables live collaboration, and first-pass merges for non-code data (e.g. spreadsheets).
-# discuss
-- ## 
-
-- ## 
-
 - ## 🔀 [You Might Not Need a CRDT: Document Sync in the Wild [video] | Hacker News _202403](https://news.ycombinator.com/item?id=39615987)
 - 👷🏻 jitl: Maybe you don’t need it for shapes and what not, but for collaborative text documents it’s really hard to have a good experience without convergent intention preserving async merges on text - you’re gonna want OT or CRDT for collaborative text editing eventually.
   - I work on Notion, a collaborate editor that (famously?) doesn’t merge text updates. 
@@ -36,6 +26,79 @@ modified: 2023-10-28T09:00:45.811Z
   - When inserting text, you can either use mutations that insert the text relative to some reference character(s) or at some index. The former is basically the approach of most text CRDTs. I'm having a hard time imagining the latter without modifying the insertion index relative to concurrent insertions or deletions. I believe that Jupiter based OT imposes a global order, but uses it to determine how concurrent mutations are transformed against one another.
 
 - 
+- 
+
+- ## ✏️ [Using CRDTs for multiplayer text editing | Hacker News _202212](https://news.ycombinator.com/item?id=33820975)
+- One common failure mode is that two people start typing at the beginning of the same line, and rather than getting two lines, it alternates characters. At least, Etherpad did this.
+  - This is called the “interleaving problem”. It shows up with simple list algorithms like fractional indexing.
+  - All the main text editing CRDT algorithms around today solve this no problem. (Yjs, automerge, diamond types, etc).
+
+- Peritext is the only one that came close to solving rich-text, but even that one left out important aspect of rich-text editing like handling list & table operations as "work to be done later".
+
+- 
+- 
+- 
+
+- ## 🧮✏️ [investigate sequence/text crdts _202211](https://github.com/vlcn-io/cr-sqlite/issues/65)
+- If we don't target WASM I think adding diamond types will be easy.
+  - Targeting WASM makes everything harder since WASM binaries currently can not load other binaries (AFAIK) so we have to compile Rust code with C code. 
+  - Maybe I'm worried about nothing and that is actually an easy thing to do?
+
+- We've (iver & myself) been discussing this a bunch offline and here is a summary of where we're at so far:
+  - 💡 **Queries that order by a recursive relationship in SQLite are actually rather performant** 
+  - Because of (1), _we can represent any tree-based CRDT in a table_
+  - A proposed table structure is something like below
+
+- If you're interested, one alternative is to use a "CRDT-quality" version of fractional indices. 
+  - These will never be as storage-efficient as a dedicated list CRDT, but you can generate the strings in <100 LOC and put them in a "position" column that you ORDER BY.
+- 🤔 I still haven't seen any fractional indexing string which didn't have interleaving problems.. Has that been solved?
+  - Yeah, it was also my impression that you couldn't fix the interleaving problem with fractional indexing.
+  - btw -- we have implemented fractional indexing in cr-sqlite. 
+
+- It should be non-interleaving in both directions. 
+  - The total order is equivalent to a tree walk over a binary-ish tree; concurrently-inserted sequences end up in different subtrees, which don't interleave.
+  - **You do pay for this with longer strings**, though: "averaging" two neighboring strings adds a UID (~13 chars) instead of a single bit, except when the in-order optimization kicks in.
+
+- Is there an approach with fractional indices that does not require tombstones for character removals?
+  - You don't need tombstones - just the positions of present characters. It's okay to call d = source.createBetween(a, b) even if there used to some other a < c < b where c was deleted. You can even "restore" c later and it will compare to d in a reasonable way (though I'm not sure about non-interleaving).
+  - Fractional indexing in general also shouldn't need tombstones, except for the usual uniqueness issues.
+- 🌲 In general, for any tree-based list CRDT, you can choose if you want "no-tombstone mode" with longer positions (= whole paths in the tree), or "tombstone mode" with shorter positions (= pointers to nodes in the tree). 
+  - The former lets you compare two positions directly, without consulting some external tree state; so position-strings (and fractional indexing) uses this mode. 
+  - But tombstone mode is usually more memory-efficient, so that's what the slides recommend, and what libraries like Yjs do.
+- I think it would be possible to re-implement that optimization within a database table (e.g. columns "position" and "substring", instead of "position" and "char"), but it could be hard to query.
+
+- I think we can implement a variant of Fugue that stores multiple chars per row. (Untested)
+
+- Closing this as I think enough research has been done and I'm ready to start implementing
+
+- ## 🌵📄 I'm presenting some early ideas about CRDTs & branch-and-merge documents.
+- https://twitter.com/MatthewWeidner3/status/1715023602976764299
+  - [Proposal: Versioned Collaborative Documents (PLF 2023 - Programming Local-first Software) - SPLASH 2023](https://2023.splashcon.org/details/plf-2023-papers/4/Proposal-Versioned-Collaborative-Documents)
+
+- One compromise is to use a git-like arch (full history, merge reviews) but store CRDT updates instead of git's patches. The CRDT enables live collaboration, and first-pass merges for non-code data (e.g. spreadsheets).
+# discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Using "index" to denote cursor positions can be unstable, as positions may shift with document edits. 
+- https://twitter.com/zxch3n/status/1777341492467847650
+  - We can use characters' IDs to represent positions stably in a Text CRDT. What should we call them?
+  - Relative positions
+  - Stable positions
+  - Cursors
+- While Yjs keeps a "relative position" for historical reasons, after some discussion we actually started to call it "sticky index" (this name is used in Yrs). 
+- Other proposals were:
+  - cursor position: given cursor is another concept used in yrs/yjs
+  - bookmark
+- using character ids as anchors feels like relative positions, stable positions feels more like ‘position strings’ or ‘fractional indexing’.
+- If I remember correctly, in Automerge there were cursorId and it was pretty clear
+
+- ## [SQLite Forum: [novice] Handling edit conflicts with wiki-style editing _202207](https://sqlite.org/forum/info/e26a268fe9a411ad48d4e192436d529856081129c7ddafc5bee53de6ff4bbada)
+- > Fossil's wiki system works on a "last one wins" principle.
+
 - 
 - 
 

@@ -174,7 +174,7 @@ modified: 2023-02-07T17:38:05.336Z
   - https://www.openproject.org/
   - the leading open source project management software
 
-- https://github.com/hcengineering/platform /EPLv2/202403/ts/svelte
+- https://github.com/hcengineering/platform /EPLv2/202404/ts/svelte/Huly
   - https://huly.io/
   - All-in-One Project Management Platform (alternative to Linear, Jira, Slack, Notion, Motion)
   - a robust framework designed to accelerate the development of business applications, such as CRM systems. 

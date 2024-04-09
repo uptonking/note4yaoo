@@ -41,6 +41,17 @@ For more stable, defined workflows, queues offer simplicity and directness.
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Why is everyone suddenly talking about rabbitmq?
+- https://twitter.com/isamlambert/status/1777344945017471156
+- Dunno but I had to migrate to bullmq pretty quickly
+- Everyone needs a bus for their micro service based todo apps.
+
 - ## [如何评价nats这套信息系统（对比于kafka) ？ - 知乎](https://www.zhihu.com/question/267769248)
 - 
 

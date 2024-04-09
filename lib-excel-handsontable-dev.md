@@ -24,14 +24,15 @@ modified: 2022-08-21T09:57:32.451Z
   - Stretching: Allow columns to the parent container width
 
 - cons
-  - 🐛 model-view的架构不清晰, 非immutable的架构，支持直接通过指针修改data+手动render
-    - 非immutable的架构对从外部更新数据不友好
-  - 🐛 没有对外notify changes的功能
-  - v6未实现batch，最新版支持; 不支持transaction
-  - 视图层更新时渲染粒度很粗，full rerender
+  - 🐛 model-view的架构不清晰
+    - 非immutable的架构,不modern，可直接通过指针修改data+手动render
+    - 非immutable的架构对从外部更新数据和视图不友好
+  - ~~没有对外notify changes的功能~~
+  - v6未实现batch，最新版支持; 不支持 transaction
+  - 视图层更新时渲染粒度很粗，full rerender, 基于virtual-render使得渲染成本低
   - 事件系统依赖domElement.dispatchEvent
   - non-commercial
-  - paid: Filtering, Collapsing columns, hiding row/col
+  - 💰 paid: Filtering, Collapsing columns, hiding row/col
     - Formulas, Gantt Chart, Nested rows, Nested headers
   - no group/aggregations
   - ? cell只支持string和number，不支持date

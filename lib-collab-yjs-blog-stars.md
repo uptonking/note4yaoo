@@ -21,8 +21,61 @@ modified: 2022-10-22T18:45:23.619Z
   2. 不支持移动操作，移动后的合并位置不符合预期
   3. ContentFormat 不支持同类型样式的嵌套或交错（不能还原 ProseMirror Mark 的特性）
   4. ProseMirror 的 Step 和 Yjs 的 insert/delete API 不匹配，y-prosemirror 采用了一套 diff 算法，导致用户意图丢失。也许与 Quilljs 结合没有这样的问题。
+# [Yjs代码简析 - 个人文章 - SegmentFault 思否 _202306](https://segmentfault.com/a/1190000043871178)
+
+- 
+- 
+- 
+
+# [深度解析 Yjs 协同编辑原理【看这篇就够了】 - 掘金 _202312](https://juejin.cn/post/7316592817341399090)
+
+- 
+- 
+
+# [实时协作-yjs基本理解 | 一席之地 _201704](https://www.ximing.ren/post/2017/%E5%AE%9E%E6%97%B6%E5%8D%8F%E4%BD%9C-yjs%E5%9F%BA%E6%9C%AC%E7%90%86%E8%A7%A31-%E6%A6%82%E8%A7%88/)
+
+- 
+- 
+
+## [实时协作-yjs基本理解2-向量时钟 | 一席之地](https://www.ximing.ren/post/2017/%E5%AE%9E%E6%97%B6%E5%8D%8F%E4%BD%9C-yjs%E5%9F%BA%E6%9C%AC%E7%90%86%E8%A7%A32-%E5%90%91%E9%87%8F%E6%97%B6%E9%92%9F/)
+
+## [实时协作-yjs基本理解3-操作日志 | 一席之地](https://www.ximing.ren/post/2017/%E5%AE%9E%E6%97%B6%E5%8D%8F%E4%BD%9C-yjs%E5%9F%BA%E6%9C%AC%E7%90%86%E8%A7%A33-%E6%93%8D%E4%BD%9C%E6%97%A5%E5%BF%97/)
+
+## [实时协作-yjs基本理解4-Ytext | 一席之地](https://www.ximing.ren/post/2017/%E5%AE%9E%E6%97%B6%E5%8D%8F%E4%BD%9C-yjs%E5%9F%BA%E6%9C%AC%E7%90%86%E8%A7%A34-Ytext/)
+
+# 🆚️ [实时协作-yjs和ShareDB对比 | 一席之地 _201704](https://www.ximing.ren/post/2017/%E5%AE%9E%E6%97%B6%E5%8D%8F%E4%BD%9C-yjs%E5%92%8CShareDB%E5%AF%B9%E6%AF%94/)
+- Yjs (基于 CRDT 算法) 的优点：
+  - 离线支持和冲突解决： CRDT 算法在设计上就考虑到了离线工作和冲突解决，使得 Yjs 能够在无需中心化服务器参与的情况下解决冲突。用户可以在离线状态下进行编辑，然后在重新连接时将其更改与其他副本合并，而不会导致任何冲突。
+  - 分布式和去中心化： CRDT 不需要中心服务器来解决冲突，这使得 Yjs 在设计上更加分布式和去中心化，可以在不同的网络环境中使用，包括 peer-to-peer 网络。
+高性能和可伸缩性： Yjs 的实现对于大量用户协作编辑大型文档具有很好的性能和可伸缩性。
+
+- Yjs (基于 CRDT 算法) 的不足：
+  - 数据负载： 由于 CRDT 保持所有操作的历史记录以解决冲突，因此文档的大小可能会随着时间和操作的数量而增长，这可能会对网络传输和存储产生影响。
+  - 复杂性： CRDT 的理论和实现比 OT 更复杂，这可能会增加学习和实施的难度。
+
+- ShareDB (基于 OT 算法) 的优点：
+  - 实时同步： ShareDB 通过使用 WebSocket 提供实时的数据同步，这使得它在低延迟的网络环境中表现良好。
+  - 灵活性： ShareDB 支持任何 JSON 可序列化的数据类型，使其适用于更多种类的应用。
+
+- ShareDB (基于 OT 算法) 的不足：
+  - 需要中心服务器： OT 需要一个中心服务器来处理和转换操作，以解决冲突。这使得 ShareDB 更依赖于中心服务器和网络连接。
+  - 离线支持和冲突解决： 尽管 ShareDB 提供了离线支持，但是在没有服务器参与的情况下解决冲突往往会更复杂，而且实践下来存在乱序&丢内容的情况。
+  - 性能和可伸缩性： 与 CRDT 相比，OT 的性能和可伸缩性可能会受到更多的限制，特别是在大量用户协作编辑大型文档的情况下。
+# [Yjs Fundamentals - Part 1: Theory | by Dovetail Engineering | Dovetail Engineering | Medium _202210](https://medium.com/dovetail-engineering/yjs-fundamentals-part-1-theory-232a450dad7b)
+
+- 
+- 
+- 
+
+## [Yjs Fundamentals — Part 2: Sync & Awareness _202212](https://medium.com/dovetail-engineering/yjs-fundamentals-part-2-sync-awareness-73b8fabc2233)
+
+- 
+- 
+- 
+- 
 
 # [Yjs——一个基于CRDT的数据协同框架_腾讯alloy_202104](https://mp.weixin.qq.com/s?src=11×tamp=1686787686&ver=4591&signature=0vaM7PBUtg8XVbWmk8vJypnfhEzMZKA*n2ZLsyNLrvul6UKW2aw8*1teZ1rzopI6YHA*2wP1t9PSaUaQhpkV0XhyA6jRigandep79YE59mpO5*e*tJGuHIoORlbpDViE&new=1)
+
 # [Near Real-Time Peer-to-Peer Shared Editing on Extensible Data Types](https://www.researchgate.net/publication/310212186_Near_Real-Time_Peer-to-Peer_Shared_Editing_on_Extensible_Data_Types)
 
 # [【译】Near Real-Time Peer-to-Peer Shared Editing on Extensible Data Types - 掘金](https://juejin.cn/post/7027487213525041166)

@@ -64,6 +64,18 @@ modified: 2023-12-15T18:29:23.105Z
 
 # more
 
+# discuss-roadmap
+- ## 
+
+- ## 
+
+- ## 
+
+- ## responsiveness is gonna take a lot of time and I do believe it is something we are going to do _202404
+- https://discord.com/channels/811989166782021633/1095091586452426824/1227000252632928347
+  - but there are very few quick wins and a whole lot of work to do either completely redesigning components or tweaking some of the easier ones into responsive design workable.
+  - That's work we will almost certainly do ourselves and not accept contributions on because we have to look at the whole picture
+
 # discuss-changelog
 - ## 
 

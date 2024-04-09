@@ -14,7 +14,18 @@ modified: 2022-09-05T03:25:02.690Z
 
 - ## 
 
-- ## 
+- ## [How to save to database in optimal way? _202307](https://discuss.prosemirror.net/t/how-to-save-to-database-in-optimal-way/5733)
+- There are many ways to approach this, but one of the ways that comes to my mind quickly is to treat the database as something similar to another client that performs an occasional autosave to the database after multiple changes. This is kinda similar to how Figma works, I believe.
+  - The way you store the documents to your databases is up to you, as there are many ways to approach that between serializing to HTML string or to JSON. 
+
+- Consider just storing as plain text for now. If you have an issue with the size of the files stored, you can always migrate the data by adding a column or property like "encoding": "gzip", and gzip each text file up into a more space-efficient representation.
+  - As well, it might sound inefficient to do fetching of the entire document, manipulation, and re-storage, but I would push you to try it out and see if there’s an issue with your users. All storage and synchronization should not block the socket connection, so it shouldn’t affect the user’s experience.
+  - There are many solutions to making everything more efficient, and those solutions are easier to prioritize when you have many users who are complaining about something.
+  - My suspicion is that if you have too many users, that you’re algorithm is causing back-pressure issues or something like that, then you have enough users and a valuable enough product to get a loan or pay for consultation to tackle the very specific performance problem.
+
+- 
+- 
+- 
 
 - ## [How can I listen to transactions and “translate” them to something more concrete like “moveNode”, “replaceNode” or “deleteNode”?](https://discuss.prosemirror.net/t/listen-and-categorize-changes/5606)
   - I’m starting to use PM for my startup https://mintter.com in our editor, we do not save the whole state value in the backend, but **we send the backend all the operations that happened at a specific node level**: we have a block-based editor similar to notion, and we are just storing changes at the block level (moves, replace and delete).

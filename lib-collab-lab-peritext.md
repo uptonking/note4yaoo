@@ -252,13 +252,18 @@ I’m surprised there is not much CRDT literature/projects for dealing with rich
 
 - 🐛 Unfortunately, this issue makes Peritext as it stands unsuitable for use in diamond types. I'd also love a workable answer to this problem.
 
-- ## 🚀 [CRDT-richtext: Rust implementation of Peritext and Fugue | Hacker News_202305](https://news.ycombinator.com/item?id=35988046)
+- ## 🚀 [CRDT-richtext: Rust implementation of Peritext and Fugue | Hacker News _202305](https://news.ycombinator.com/item?id=35988046)
 - I'm happy to see even further performance improvements towards rich-text CRDTs but at this point, I think the barrier to adoption isn't speed or compactness but instead integration with existing backends and databases.
   - I have a hunch that we're reinventing the wheel by creating new B-Tree implementations in Rust when we could be figuring out how to make an existing database do the hard work of storing and retrieving characters in the correct order. 
   - I know Martin Kleppmann has looked at Datalog being a potential solution to this problem but until we have a good full-stack solution to collaborative text editing, I don't think we'll see major adoption of these CRDT solutions.
 - I agree that full stack support is the missing pice that's need to make use explode. But I do think the current implementations will get there.
   - Also most general purpose CRDTs are a combination of JSON and XML like data structures, it's useful to be able to query the structures in your database. For example if you build a notes app that supports inline tags, it's useful to be able to query and index those from within the XML like structure without having to dump the whole thing out at another layer of your stack.
 
+- Simple CRDTs are surprisingly simple. If you don't need text the complexity drops off quite quickly.
+  - I just ripped yjs out of a personal project and replaced it with something I wrote from scratch. Getting exactly the semantics I want is nice. For example it's easier to make compound properties update atomically. A good place to get started is one of the figma founders' blogs: https://madebyevan.com/algos/crdt-fractional-indexing/
+  - You'll notice if you use Figma that it's mostly last-writer-wins fields. That seems to often turn out to be the ideal UI and it's the simplest to implement. 
+
+- 
 - 
 - 
 

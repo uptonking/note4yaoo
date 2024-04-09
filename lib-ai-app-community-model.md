@@ -20,6 +20,17 @@ modified: 2023-10-30T07:34:03.602Z
 - https://twitter.com/FinanceYF5/status/1730912502312296935
   - [国产大模型188个list - Feishu Docs](https://zw73xyquvv.feishu.cn/wiki/WXLmwBbYuiTobkkJ6Ojc2cxqnj0?sheet=2XjJlJ&table=tblS2Jv7isKtSODz&view=vewfCdOf0U)
 
+# discuss-ollama
+- ## 
+
+- ## [Allow listening on all local interfaces _202310](https://github.com/ollama/ollama/issues/703)
+- If you’re running Ollama directly from the command line, use the
+`OLLAMA_HOST=0.0.0.0 ollama serve` command
+
+- Edit the service file: Open `/etc/systemd/system/ollama.service` and add the following line inside the [Service] section:
+`Environment="OLLAMA_HOST=0.0.0.0"`
+- sudo systemctl daemon-reload
+- sudo systemctl restart ollama
 # discuss
 - ## 
 

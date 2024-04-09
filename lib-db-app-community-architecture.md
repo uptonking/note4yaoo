@@ -14,6 +14,18 @@ modified: 2023-09-17T17:37:19.913Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## [Synchronizing local state with the database : r/rust _202306](https://www.reddit.com/r/rust/comments/14jfcen/synchronizing_local_state_with_the_database/)
+- I'm working on a websocket server too, and I'm completely forgoing the DB for real time updates.
+  - Roughly, each thing a user might open a WS connection for is managed in-memory by a tokio task. This tokio task pulls in input, applies it to its local copy of the state, and then pushes the updates to other connections. This keeps everything entirely in-memory to avoid as much latency as possible.
+  - To persist things to the DB, there is a separate task running that writes to the DB. Depending on what data you're storing, you can either communicate via a channel that your state has changed and should be read or you can just send the updates via the channel directly. In the first case, you'll want to store your document in something like a left-right. In the second case, your persistence task can probably write directly to the DB.
+
+- Meilisearch does something extremely similar; they call it autobatching requests. 
+
+- 
+- 
+
 - ## 🔁 at Facebook, our experience was that client–server roundtrips are expensive and server–DB roundtrips are mostly fine; 
 - https://twitter.com/sophiebits/status/1728536177110905215
   - this is reflected in the design of both Relay and XHP/RSC

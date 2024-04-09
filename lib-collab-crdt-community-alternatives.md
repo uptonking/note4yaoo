@@ -15,9 +15,8 @@ modified: 2023-12-16T17:36:57.942Z
 - ## 
 
 - ## 🌰🔀 [How Figma's Multiplayer Technology Works | Hacker News _201910](https://news.ycombinator.com/item?id=21378858)
-- 
-- 
-- 
+- This is incredibly similar to the way we did multi-user simultaneous editing in https://Clara.io back in 2013/2014. It was also a tree-based OT-like system, but there was a few differences.
+- I think the approach of mutating each property independently is an excellent approach and I'm glad to see it working at scale.
 
 - ## 🤼🏻 [You don't need a CRDT to build a collaborative experience | Hacker News_202311](https://news.ycombinator.com/item?id=38289327)
 - 👷🏻 jitl(notion-dev): I agree broadly with the article’s position but I think locks are more harmful than helpful. 

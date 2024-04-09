@@ -54,7 +54,8 @@ modified: 2023-03-07T04:43:58.713Z
   - https://github.com/josephg
   - https://github.com/josephg/diamond-types
 # crdt-algorithms
-- rga
+- rga: linked-list or tree
+- fractional-index
 - logoot
   - sparse n-ary tree
 - treedoc/2009
@@ -598,9 +599,9 @@ modified: 2023-03-07T04:43:58.713Z
   - For example, a document with an history of a million operations and finally containing a single line can have as much as 499999 tombstones. 
   - Garbaging tombstones requires costly protocols in decentralized distributed systems. 
 - (ii) Variable-size identifiers. 
-  - This class includes for example Logoot [21]. It does not require tombstones, but its identifiers can grow unbounded. Consequently, although it does not require garbage protocols, its space complexity remains till now linear with the number of insert operations. Thus, it is possible to have only a single element in the sequence having an identifier of length 499999. 
-  - Treedoc [12] uses both tombstones and variable size identifiers but relies on a complex garbage protocol when identifiers grow too much.
-- ✨ In this paper, we propose a new approach, called LSEQ, that belongs to the variable-size identifiers class of sequence CRDTs.
+  - This class includes for example Logoot. It does not require tombstones, but its identifiers can grow unbounded. Consequently, although it does not require garbage protocols, its space complexity remains till now linear with the number of insert operations. Thus, it is possible to have only a single element in the sequence having an identifier of length 499999. 
+  - Treedoc uses both tombstones and variable size identifiers but relies on a complex garbage protocol when identifiers grow too much.
+- 💡 In this paper, we propose a new approach, called LSEQ, that belongs to the variable-size identifiers class of sequence CRDTs.
   - LSEQ is an adaptive allocation strategy with a sub-linear upper-bound in its spatial complexity. 
 - We choose Logoot (for comparison) as it delivers overall best performances for variable-size sequence CRDTs
 
@@ -643,7 +644,7 @@ modified: 2023-03-07T04:43:58.713Z
 
 ### 📕 [TreeDoc: A Commutative Replicated Data Type for Cooperative Editing_200906](https://www.researchgate.net/publication/221460068_A_Commutative_Replicated_Data_Type_for_Cooperative_Editing)
 
-- Logoot uses a sparse n-ary tree rather than Treedoc's dense binary tree. 
+- 🌲 Logoot uses a sparse n-ary tree rather than Treedoc's dense binary tree. 
   - A position identifier is a list of (long) unique identifiers, and Logoot does not flatten.
 
 - A Logoot position identifier is a sequence of fixed-sized unique identifiers.
@@ -774,16 +775,18 @@ ba => v5
 - cons
   - unbalanced tree is bad for query
 
-- uses a binary tree to represent the document
+- 🌲 uses a binary tree to represent the document
 
 - https://github.com/mweidner037/uniquely-dense-total-order
-  - [Plain Tree: A Basic List CRDT](https://mattweidner.com/2022/10/21/basic-list-crdt.html)
+  - [Fugue(Plain Tree): A Basic List CRDT _202210](https://mattweidner.com/2022/10/21/basic-list-crdt.html)
     - The rest of this post introduces a basic UniquelyDenseTotalOrder that I especially like. 
     - I have not seen it in the existing literature, although it is similar enough to Logoot, Treedoc, and others that I wouldn’t be surprised if it’s already known. For now, I call it Plain Tree.
 
 - Logoot and TreeDoc used variable-length identifiers.
 
 - [CRDT: Tree-Based Indexing - Made by Evan](https://madebyevan.com/algos/crdt-tree-based-indexing/)
+  - Compared to fractional indexing, tree-based indexing is more complicated but prevents interleaving of concurrently-inserted runs, which makes it appropriate for textual data. 
+  - The algorithm presented here is similar to a well-known one called "RGA" but with reordering layered on top.
 
 ### impl
 
@@ -803,20 +806,3 @@ ba => v5
   - mine(local-first-rga) uses a tree
   - automerge uses a transaction log (and has in-memory caches for perf)
 - Your approach seems to resemble RGASplit which I believe is bases for
-
-- ## 🧮🔀 [CRDT: Fractional Indexing _202211](https://news.ycombinator.com/item?id=33764449)
-- To me the other algorithms described in the list are more novel and interesting:
-  - crdt-tree-based-indexing/ - for when precise order is critical, like paragraphs in a document. This algorithm is almost like storing adjacency information like a linked list, but is more convergent. 
-  - crdt-mutable-tree-hierarchy/ - for tree-shaped data, like blocks in a Notion page that should have exactly one parent, but allow concurrent re-parenting operations
-  - log-spaced-snapshots/ - log space snapshots, for choosing what fidelity of historical information to store. For context, many CRDTs for rich text or sequences store unbounded history so that any edit made at any time can be merged into the sequence. For long-lived documents, this could be impractical to sync to all clients or keep in "hot" memory. Instead, we can decide to compact historical data and move it to cold storage, imposing a time boundary on what writes the system can accept on the hot path. The log-spaced snapshots algorithm here could be used to decide what should be kept "hot", and how to tune the cold storage.
-
-- do you have thoughts on the CRDT vs OT debate? 
-- I’m not the GP, but OT is pretty annoying to implement. There are so many cases that it’s quite difficult to formally prove an OT correct. 
-  - On the other hand, a large subset of CRDTs can be implemented in Datalog and if you do that you can’t possibly end up with an invalid CRDT.
-
-- This is basically the idea behind Logoot [Weis_2009] that was improved by LSeq [Nédelec_2013] and later extended to the first block-wise sequence CRDT: LogootSplit [André_2013]. LogootSplit was recently improved as Dotted LogootSplit(MPLv2/201907) [Elvinger_2021].
-
-- Is this the same as LSeq except rather than using bytes one is basically using digits in a floating point representation (given this is JS where most things are floats)?
-
-- Doesn't this end up being effectively a binary heap, with a maximum tree depth of 23 (floating point mantissa precision)? I imagine there must be a rebalancing operation required every so often, possibly more frequently for pathological insertion orders.
-  - > Fractional positions should be represented using arbitrary-precision decimals so that they don't run out of precision. Floating-point numbers are insufficient.

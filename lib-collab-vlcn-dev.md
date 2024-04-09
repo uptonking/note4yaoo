@@ -97,7 +97,6 @@ modified: 2023-06-03T14:43:26.987Z
   - Columns are LWW (last writer wins) registers within rows which are LWW maps. When concurrent writes occur because peers may not be communicating, there is typically an arbitrary but convergent selection based on peer id.
 - There's different strategies for solving conflicts but CRDTs wouldn't be a good fit where you need a total ordering of all transactions -- such as bank deposits.
 
-
 - 
 - 
 - 
@@ -114,7 +113,7 @@ modified: 2023-06-03T14:43:26.987Z
 - this is probably worth implementing as the first sequence crdt. So simple
   - Space is a concern of course. But it looks like you don't need to keep delete records and maybe we can assign short ids to participants in a document
 
-- ## [investigate sequence/text crdts](https://github.com/vlcn-io/cr-sqlite/issues/65)
+- ## 🧮✏️ [investigate sequence/text crdts _202211](https://github.com/vlcn-io/cr-sqlite/issues/65)
 - If we don't target WASM I think adding diamond types will be easy.
   - Targeting WASM makes everything harder since WASM binaries currently can not load other binaries (AFAIK) so we have to compile Rust code with C code. 
   - Maybe I'm worried about nothing and that is actually an easy thing to do?
@@ -126,13 +125,22 @@ modified: 2023-06-03T14:43:26.987Z
 
 - If you're interested, one alternative is to use a "CRDT-quality" version of fractional indices. 
   - These will never be as storage-efficient as a dedicated list CRDT, but you can generate the strings in <100 LOC and put them in a "position" column that you ORDER BY.
-- I still haven't seen any fractional indexing string which didn't have interleaving problems.. Has that been solved?
+- 🤔 I still haven't seen any fractional indexing string which didn't have interleaving problems.. Has that been solved?
   - Yeah, it was also my impression that you couldn't fix the interleaving problem with fractional indexing.
   - btw -- we have implemented fractional indexing in cr-sqlite. 
 
 - It should be non-interleaving in both directions. 
   - The total order is equivalent to a tree walk over a binary-ish tree; concurrently-inserted sequences end up in different subtrees, which don't interleave.
   - **You do pay for this with longer strings**, though: "averaging" two neighboring strings adds a UID (~13 chars) instead of a single bit, except when the in-order optimization kicks in.
+
+
+- Is there an approach with fractional indices that does not require tombstones for character removals?
+  - You don't need tombstones - just the positions of present characters. It's okay to call d = source.createBetween(a, b) even if there used to some other a < c < b where c was deleted. You can even "restore" c later and it will compare to d in a reasonable way (though I'm not sure about non-interleaving).
+  - Fractional indexing in general also shouldn't need tombstones, except for the usual uniqueness issues.
+- 🌲 In general, for any tree-based list CRDT, you can choose if you want "no-tombstone mode" with longer positions (= whole paths in the tree), or "tombstone mode" with shorter positions (= pointers to nodes in the tree). 
+  - The former lets you compare two positions directly, without consulting some external tree state; so position-strings (and fractional indexing) uses this mode. 
+  - But tombstone mode is usually more memory-efficient, so that's what the slides recommend, and what libraries like Yjs do.
+- I think it would be possible to re-implement that optimization within a database table (e.g. columns "position" and "substring", instead of "position" and "char"), but it could be hard to query.
 
 - I think we can implement a variant of Fugue that stores multiple chars per row. (Untested)
 

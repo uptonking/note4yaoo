@@ -28,10 +28,20 @@ modified: 2022-04-05T10:10:59.826Z
 
 - who is using #yjs
   - jupyter
-  - evernote
   - gutenberg
+  - apps: linear, Gitbook, Evernote, Appflowy(yrs), AppMaster
   - more: Serenity Notes, Skiff
   - [Yjs in the Wild | Yjs Docs](https://docs.yjs.dev/yjs-in-the-wild)
+
+- bindings
+  - prosemirror, quill, slate, codemirror, monaco
+  - immer, valtio, mobx, SyncedStore
+
+- providers
+  - y-websocket, y-webrtc, y-redis, y-sweet
+  - Tinybase
+  - PartyKit, @liveblocks/yjs
+  - Matrix-CRDT
 
 - tips
   - 协作只有文本部分需要YText这类复杂的crdt，表格使用llw-map足够
