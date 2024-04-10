@@ -36,11 +36,25 @@ modified: 2023-02-09T18:32:06.240Z
   - 依赖 svelte、popperjs2、typewriter/delta
   - Built on the same data model as Quill.js, the Delta format, and using a tiny virtual DOM, Superfine, Typewriter aims to make custom rich text editors faster, easier, and more powerful
 
+- https://github.com/WindrunnerMax/QuillBlocks /202403/ts
+  - Quill Editor Blocks Kit
+  - 依赖react
+
 - https://github.com/ludejun/quill-react-commercial /ISC/202404/ts/js
   - https://ludejun.github.io/quill-react-commercial/
   - 多功能的、可面向商业化的quill富文本编辑器
-  - 使用最新的quill@2.0.0-rc.4，方便向后兼容。
+  - 使用最新的quill@2.0.0-rc.4，方便向后兼容
   - 使用React Hooks实现
+
+- https://github.com/AmeyVijeesh/ReactTextEditor /202404/js
+  - https://atext.netlify.app/
+  - Rich Text Editor made with React and Quill.js
+  - 实现了简单工具条
+  - Save the edited text locally or on a server.
+
+- https://github.com/KID-1912/quill-js-editor /202312/js
+  - Custom JavaScript editor built on quill
+  - 不依赖react
 
 - https://gitee.com/wfeng0/mpoe /apache2/202402/js/vue
   - 多人协同编辑器开发 MPOE（Multi person online edit）
@@ -54,7 +68,7 @@ modified: 2023-02-09T18:32:06.240Z
   - a fork of quill, inactive
 
 - https://github.com/shenmaxg/quill-imitate-shimo /202110/ts/inactive
-  - 基于 quill 的富文本编辑器
+  - 基于 quill 的富文本编辑器，react
 
 - https://github.com/hubertnare/strapi4-wysiwyg-replacement /202202/js
   - change the default WYSIWYG to Quill Editor
@@ -88,10 +102,10 @@ modified: 2023-02-09T18:32:06.240Z
 - https://stackblitz.com/edit/quill-editor-demo
   - [Render React Component inside Quill without losing context_202004](https://culture.kissflow.com/render-react-component-inside-quill-without-losing-context-151eac4eda08)
 
-- https://github.com/mild-blue/quill-even-better-table /202306/js
+- https://github.com/mild-blue/quill-even-better-table /MIT/202306/js
   - https://codepen.io/soccerloway/pen/WWJowj
   - A module for better table in Quill, more useful features are supported
-- https://github.com/seehar/quill-better-table-plus /202308/js
+- https://github.com/seehar/quill-better-table-plus /MIT/202308/js
   - fork by quill-better-table
 - https://github.com/soccerloway/quill-better-table /202007/js
   - https://codepen.io/soccerloway/pen/WWJowj
@@ -109,7 +123,7 @@ modified: 2023-02-09T18:32:06.240Z
   - quilljs v2.0.0-dev.3
   - 功能太少
 
-- https://github.com/dost/quilljs-table /201703/js
+- https://github.com/dost/quilljs-table /201703/js/archived
   - Test lab for creating TABLE functionality in QuillJS using Containers.
   - https://github.com/Shatiger/quill-table /202305/js
 - https://github.com/unzld/quill-better-table-picker /202110/js
@@ -124,21 +138,22 @@ modified: 2023-02-09T18:32:06.240Z
   - a notion like menu and table editor based on quilljs
   - table功能简单，通过类似/菜单添加
   - table的delta通过给\n添加attributes为row来区分行
+  - 不依赖react
   - https://github.com/uragirii/Notion-Clone /202012/js
 - https://github.com/tzhangchi/quill-menu-module /202201/ts
   - Notion-like style quill menu module based on Quill.js
 
-- https://github.com/imtiaz101325/quill-fold-example /202008/ts
-  - feature of collapsable bullet points
+- https://github.com/imtiaz101325/quill-fold-example /202008/ts/archived
+  - A simple quill.js base WYSIWYG editor with an added feature of collapsable bullet points
 
 - https://github.com/Kibo/filemanager-js /202201/ts/vue
   - The JavaScript filemanager for CKEditor, Quill, TinyMCE.
 
-- https://github.com/BrenoFariasdaSilva/TextSync /CC0/202309/js/仅同步未处理冲突
+- https://github.com/BrenoFariasdaSilva/TextSync /CC0/202306/js/仅同步未处理冲突/inactive
   - A Real-Time Distributed-Text-Editor Application with ReactJS, NodeJS, MongoDB and WebSockets.
   - 依赖react、quill、socket.io、mongoose
 
-- https://github.com/exilednick/Bandersnatch /202401/js/ejs
+- https://github.com/exilednick/Bandersnatch /202009/js/ejs/inactive
   - A collaborative text editor
   - 依赖express、ejs、socket.io
   - 未实现协同，仅同步未处理冲突
@@ -176,7 +191,7 @@ modified: 2023-02-09T18:32:06.240Z
 - https://github.com/amamov/smart-editor-dev-playground /202107/ts
   - realtime collabo editor and rich editor demo - quill, draft-js, toast-ui
 
-- https://github.com/netless-io/netless-app/tree/master/packages/app-quill
+- https://github.com/netless-io/netless-app/tree/master/packages/app-quill /MIT/202312/ts/svelte
   - Netless App for rich-text collaborative editing, powered with Yjs (a CRDT implementation) and Quill.
   - https://github.com/netless-io/netless-app /MIT/202312/ts
     - https://netless-io.github.io/netless-app
@@ -196,26 +211,30 @@ modified: 2023-02-09T18:32:06.240Z
   - Applicable version: Quill v1.3.7
   - 简单的分页效果
 # quill-based-editors
-- https://github.com/brsloan/warewoolf /202306/js
+- https://github.com/brsloan/warewoolf /MIT/202403/js
   - A minimalist novel-writing system/rich text editor designed to be usable without a mouse.
   - All-keyboard navigation designed for pleasant use without a mouse
   - 依赖quill.v1、docx、@electron/remote
 
-- https://github.com/innovatorved/Markdown-Editor /202212/ts
+- https://github.com/domilin/media-quill /202011/ts
+  - Rich text editor based on Quill
+  - Built in vanilla JS, typescript support, so it can be used on React, Vue, Angular as well
+
+- https://github.com/weblineindia/ReactJS-CK-Editor /MIT/202403/js
+  - A simple, native and easy-to-use WYSIWYG / Rich Text editor built in Quill.js and React.js
+
+- https://github.com/innovatorved/Markdown-Editor /202212/ts/inactive
   - https://markdown-editor-six-mu.vercel.app/
   - A simple Nextjs , Quill based markdown Editor
 
 - https://github.com/ChrisMayor/D365RichTextEditor /202012/ts
   - Dynamics 365 Rich text editor for Unified Interface / Based on PowerApps component framework, React and quill
 
-- https://github.com/KID-1912/quill-js-editor /202312/js
-  - Custom JavaScript editor built on quill
-
 - https://github.com/TonyYu2015/GEditor /202309/js
   - https://g-editor-fawn.vercel.app/
   - rich-text base on Quill
 
-- https://github.com/fgilde/MudExRichTextEditor /GPLv3/202401/js
+- https://github.com/fgilde/MudExRichTextEditor /GPLv3/202403/js
   - Quill based RichEditor component for MudBlazor
   - easily consume Quill combining in a MudBlazor project Features with MudBlazor Theme Support.
   - Exports editor contents in Text, HTML, and Quill’s native Delta format
@@ -232,10 +251,7 @@ modified: 2023-02-09T18:32:06.240Z
 
 - https://github.com/BobaBoard/boba-editor /MIT/202203/ts/deprecated
   - An advanced text editor based on QuillJS, vaguely inspired by Tumblr's
-
-- https://github.com/domilin/media-quill /202011/ts
-  - Rich text editor based on Quill
-  - Built in vanilla JS, typescript support, so it can be used on React, Vue, Angular as well
+  - 最新转向tiptap
 # client-mobile
 - https://github.com/imnapo/react-native-cn-quill /202306/ts
   - a rich-text editor for react-native. 
@@ -260,6 +276,10 @@ modified: 2023-02-09T18:32:06.240Z
 - https://github.com/quill-mention/quill-mention /635Star/MIT/202311/js
   - https://quill-mention.com/
   - a module to provide @mentions or #hashtag functionality for the Quill rich text editor.
+
+- https://github.com/xie392/quill-mention-react /MIT/202403/ts
+  - https://quill-mention-react.vercel.app/
+  - Quill 富文本编辑器的 @mentions
 
 - https://github.com/raphaelM-sudo/quill-emoji-mart-picker /202006/ts
   - https://quill-emoji-mart-picker.netlify.com/
@@ -464,8 +484,14 @@ modified: 2023-02-09T18:32:06.240Z
 - https://github.com/reedsy/quill-cursors /202301/ts
   - A multi cursor module for Quill text editor.
   - https://github.com/welkinwong/superdocs-quill-cursors
+
+- https://github.com/devaman/quill-selection /202403/js
+  - a module to provide selection and show dropdown functionality for the Quill rich text editor.
+# starter
+- https://github.com/quilljs/webpack-example /202403/ts/单文件
+  - A working example of building Quill as part of a larger application build pipeline using Webpack.
 # examples
-- https://github.com/jotform/dnd-builder /43Star/MIT/202305/js
+- https://github.com/jotform/dnd-builder /43Star/MIT/202402/js
   - https://www.jotform.com/open-source/dnd-builder/
   - accessible drag and drop page builder with React
   - 依赖use-gesture、fuse.js、react-dnd-cjs、react-quill、recharts
@@ -492,9 +518,12 @@ modified: 2023-02-09T18:32:06.240Z
   - https://github.com/smallbets/userbase /js
     - Userbase is the easiest way to add user accounts and user data persistence to your static site.
 
-- https://github.com/mushfiqweb/mybl-cms /202311/ts/仅前端/样式友好
+- https://github.com/AChiabodo/SimpleCMS /202403/js/fe+be
+  - A simple Blog implemented in React.js and Node.js
+
+- https://github.com/mushfiqweb/mybl-cms /202311/ts/仅前端/样式友好/inactive
   - MyBL CMS React Template
-  - 依赖redux-toolkit、tanstack-table、fullcalendar、apexcharts、quill
+  - 依赖redux-toolkit、tanstack-table、fullcalendar、apexcharts、quill、formik
 
 - https://github.com/vuquangpham/boilcms /MIT/202311/js
   - A CMS that has been built with Node.js and Express.js
@@ -519,7 +548,7 @@ modified: 2023-02-09T18:32:06.240Z
   - no database necessary
   - 依赖react-quill、next-auth、radix-ui
 
-- https://github.com/ProtoDigitalUK/proto_headless /202312/ts
+- https://github.com/ProtoDigitalUK/proto_headless /202404/ts
   - headless CMS offering a delightful developer experience.
   - 依赖fastify、pg、sharp、solidjs、quill
 
@@ -675,7 +704,15 @@ modified: 2023-02-09T18:32:06.240Z
 - https://github.com/huygamcha/Ecommerce /202404/ts
   - https://ecommerce-huygamcha.vercel.app/
   - client + server
-# collab-ot
+
+- https://github.com/pandeyrochak/quillpages /202403/ts
+  - https://quillpages.vercel.app/
+  - This is the official repository for Penit, a blog application.
+  - 依赖next-auth、swr、react-quill、firebase、@prisma/client
+
+- https://github.com/Top-Ranger/writergo /202403/go/js
+  - A simple collaborative editing software
+# collab/ot
 - https://github.com/WindrunnerMax/Collab /202308/ts
   - 初探富文本之OT协同实例 sharedb+quill
   - 初探富文本之CRDT协同实例 yjs+quill
@@ -709,6 +746,11 @@ modified: 2023-02-09T18:32:06.240Z
   - 前端使用 NextJS 12.2.0，后端使用 NestJS 8.0
   - 后台管理界面使用 Ant Design Pro
   - 支持多人协作文档（使用 Quill 富文本编辑器）
+
+- https://github.com/anjalipal2001/QuillSync /202403/ts
+  - Real time Collaborating App
+  - 依赖radix-ui、@supabase/supabase-js、drizzle-orm、quill.v1、socket.io
+  - https://github.com/EduardStroescu/QuillScribe
 # collab-crdt
 - https://github.com/mweidner037/list-demos/tree/master/triplit-quill /202401/ts
   - Basic collaborative rich-text editor that synchronizes using the Triplit fullstack database. 
@@ -724,6 +766,9 @@ modified: 2023-02-09T18:32:06.240Z
   - This algorithm is largely based on RGA, with support for rich-text formatting added, along with a number of optimizations.
   - integrate with Quill.
   - Your approach seems to resemble RGASplit which I believe is bases for
+
+- https://github.com/arusikgrigorian/Rich_Editors_Socket_Integration /202404/ts
+  - Integration of Quill and Slate with y-websocket
 
 - https://github.com/loro-dev/crdt-richtext /169Star/MIT/202305/rust
   - https://crdt-richtext-quill-demo.vercel.app/

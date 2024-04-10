@@ -108,7 +108,36 @@ modified: 2022-08-21T10:16:52.004Z
   - [有道AI情报局 网易有道技术团队](https://juejin.cn/user/1882007127197694/posts)
   - [有道云笔记新版编辑器架构设计（上）](https://juejin.cn/post/6920054071571251208)
   - [有道云笔记新版编辑器架构设计（下）](https://juejin.cn/post/6922343979325325319)
-# collab
+# collab/crdt
+- Seph Gentle /sharedb/diamond-types
+  - https://github.com/josephg
+  - https://github.com/josephg/diamond-types
+
+- Kevin Jahns /yjs
+  - https://github.com/dmonad
+  - https://github.com/yjs/yjs
+  - port到各种语言
+
+- Martin Kleppmann /automerge
+  - https://github.com/ept
+  - [blog posts](https://martin.kleppmann.com/archive.html)
+  - [crdt.tech](https://crdt.tech/)
+
+- Va Da streamich  /json-joy
+  - https://github.com/streamich
+  - [List CRDT Benchmarks _202305](https://jsonjoy.com/blog/list-crdt-benchmarks)
+
+- Oster /woot/logoot
+  - [Publications – Gérald OSTER](https://members.loria.fr/goster/publications/)
+  - 2005年发布WOOT
+  - 2017年发布Mute, 基于logoot变体
+
+- gritzko /swarm/chronofold
+  - https://github.com/gritzko
+  - citrea-model, 2012
+  - swarm, 2013
+  - chronofold, 20 20
+
 - Bartosz Sypytkowski
   - Distributed systems, databases and protocols enthusiast
   - https://twitter.com/Horusiath
@@ -137,10 +166,6 @@ modified: 2022-08-21T10:16:52.004Z
 - phedkvist
   - crdt, woot
   - https://github.com/phedkvist/crdt-sequence
-
-- Victor Grishchenko
-  - crdt, swarm
-  - https://github.com/lambdafu/swarm-doc
 
 - Matt
   - crdt, sqlite

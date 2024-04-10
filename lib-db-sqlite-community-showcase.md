@@ -16,7 +16,24 @@ modified: 2023-05-21T14:54:15.817Z
 
 - ## 
 
-- ## 
+- ## Top 5 free SQLite GUIs 
+- https://twitter.com/notrab/status/1777708042760376638
+- [DB Browser for SQLite](https://sqlitebrowser.org/)
+  - visual, open source tool to create, design, and edit database files compatible with SQLite.
+  - DB4S is for users and developers who want to create, search, and edit databases. 
+  - DB4S uses a familiar spreadsheet-like interface, and complicated SQL commands do not have to be learned.
+- [Beekeeper Studio](https://www.beekeeperstudio.io/)
+  - modern, easy to use, and good looking SQL client for MySQL, Postgres, SQLite, SQL Server, and more.
+- [DBeaver](https://dbeaver.io/) 
+  - popular cross-platform database tool for developers and database administrators. 
+  - It's free, open-source, works on Windows, macOS, Linux, and support SQLite.
+- [Sqlime](https://sqlime.org/) 
+  - an online SQLite playground that runs in the browser. You can use it with local or remote SQLite databases.
+  - Full-blown database in the browser
+  - Sqlime is backed by the latest version of SQLite via the sqlean.js project. It provides a full-featured SQL implementation, including indexes, triggers, views, transactions, CTEs, window functions and execution plans.
+  - Connect any local or remote SQLite database.
+  - https://github.com/nalgeon/sqlime
+- [SQLite Viewer](https://alpha.sqliteviewer.app/)
 
 - ## [Interactive SQLite Documentation: Experiment with Queries in Real-Time | Hacker News _202403](https://news.ycombinator.com/item?id=39600968)
 - 

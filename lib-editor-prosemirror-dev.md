@@ -145,7 +145,7 @@ tr.setSelection(TextSelection.create(tr.doc, 3));
   - After increasing to at least 1, when this count reaches 0 again, the model transaction is considered complete and the event notifications of the model change are fired.
 - This provide the ability in mxGraph to create separate transactions that be used as “library transactions”, the ability to create compound changes and for one set of events to be fired for all the changes and only one undo created. 
   - Automatic layouting is a good example of where the functionality is required.
-# [cs-repeat: Marijn Haverbeke: Salvaging contentEditable: Building a Robust WYSIWYG Editor | JSConf EU__201510](https://www.youtube.com/watch?v=EEF2DlOUkag)
+# 🎞️ [cs-repeat: Marijn Haverbeke: Salvaging contentEditable: Building a Robust WYSIWYG Editor | JSConf EU__201510](https://www.youtube.com/watch?v=EEF2DlOUkag)
 - some new editors like google docs drop contenteditable and create their own selection and caret
   - good xp
 - problems: 

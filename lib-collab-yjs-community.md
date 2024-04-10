@@ -14,31 +14,33 @@ modified: 2022-04-05T10:11:40.379Z
 
 - ## 
 
-- ##  I had no idea how popular yjs was compared to other folks in this space
+- ## I had no idea how popular yjs was compared to other folks in this space
 - https://twitter.com/steveruizok/status/1673442035611717632
-- Yeah yjs was miles ahead in terms of performance until the recent wave of optimisations hit. Now I think some of the other libraries are doing comparatively / outperforming in different ways but the community support still makes it the defacto for a lot of people.
+- Yeah yjs was miles ahead in terms of performance until the recent wave of optimisations hit. Now I think some of the other libraries are doing comparatively/outperforming in different ways but the community support still makes it the defacto for a lot of people.
 
 - for a long time it was the only game in town that was a) fast, and b) actively maintained
 
-- ## [Show HN: SyncedStore CRDT – build multiplayer collaborative apps for React / Vue | Hacker News_202112](https://news.ycombinator.com/item?id=29483913)
+- ## 🚀 We’re open sourcing y-sweet, a standalone Yjs CRDT server written in Rust. _202308
+- https://twitter.com/drifting_corp/status/1687148228259577856
+  - The core idea of y-sweet is that documents are files, not database entries. 
+  - It uses a session backend model to store files directly on S3-compatible storage (including R2).
+- 👉🏻 We discussed the idea that file editors should use files, rather than databases, in the last Browsertech Digest. 
+  - y-sweet’s architecture is heavily inspired by Figma’s persistence and multiplayer.
+- Our goal is to help to elevate Yjs to the level of end-to-end developer ergonomics developers expect from a collaboration frameworks, but without the lock-in. 
+  - We’re also releasing React hooks and an SDK for integrating client token generation with your existing auth.
+
+
+- ## 🚀 [Show HN: SyncedStore CRDT – build multiplayer collaborative apps for React / Vue | Hacker News _202112](https://news.ycombinator.com/item?id=29483913)
   - It's designed specifically for React, Vue, Svelte but also works with plain JS. 
   - By using Javascript Proxies, the data store looks like plain javascript objects, except that they'll now sync automatically across devices / users!
   - The API is inspired mostly by Reactive Programming libraries such as MobX (from the same author as Immer).
 
-- ## [Modeling slate split node behavior in YJS - Yjs Community](https://discuss.yjs.dev/t/modeling-slate-split-node-behavior-in-yjs/283)
-- Is there a way to perform a slate like split node operation in YJs?
-  - Currently I’m modeling a split node operation by removing the 2nd part of the split text from the “origin” node and creating a new text with the removed part, but this leads to issues
-- There are two answers to this:
-- Answer 1: Use Y. Text
-- Answer 2: There is no right solution for splitting nodes
-  - Sync conflicts are resolved almost immediately. So in the unlikely case that two users really split the same node concurrently, the users will easily manage to undo one of the splits and continue working together. Shared editing cannot be implemented perfectly and it is impossible to model every intention. Most users will avoid working on the same paragraph anyway when they see the cursor location of another user. So implementing shared cursors already solves this issue.
 
-- ## Published a small react library to make adding presence (live cursors/avatars) to multiplayer applications easy using Yjs. 
+- ## 🌰 Published a small react library to make adding presence (live cursors/avatars) to multiplayer applications easy using Yjs. 
 - https://twitter.com/nayajunimesh/status/1482192104503713792
   - https://codesandbox.io/s/y-presence-demo-live-avatars-65xpc
 
-- ## Main takeaways from toying with both Yjs and Automerge_202112
-- https://news.ycombinator.com/item?id=29507948
+- ## [Main takeaways from toying with both Yjs and Automerge _202112](https://news.ycombinator.com/item?id=29507948)
 
 1. Extremely difficult to build backend in other programming languages than Nodejs
   - You will cry looking at source code C-binding, FFI, etc, https://github.com/yjs/y-crdt/blob/main/yffi/src/lib.rs

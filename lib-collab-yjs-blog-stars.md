@@ -9,41 +9,106 @@ modified: 2022-10-22T18:45:23.619Z
 
 # guide
 
-# [探秘前端 CRDT 实时协作库 Yjs 工程实现 - 知乎_202201](https://zhuanlan.zhihu.com/p/452980520)
-- 本文会从 Yjs 的工程实现出发，介绍一个典型的工业级 CRDT 库是如何实现以下能力的：
-- 建模数据结构
-- 解决并发冲突
-- 回溯历史记录
-- 同步网络状态
+# blogs
 
-- Yjs 的算法先进，但在实际应用中确存在下面的问题：
-  1. fast search marker 不支持在 YXmlText 中使用
-  2. 不支持移动操作，移动后的合并位置不符合预期
-  3. ContentFormat 不支持同类型样式的嵌套或交错（不能还原 ProseMirror Mark 的特性）
-  4. ProseMirror 的 Step 和 Yjs 的 insert/delete API 不匹配，y-prosemirror 采用了一套 diff 算法，导致用户意图丢失。也许与 Quilljs 结合没有这样的问题。
-# [Yjs代码简析 - 个人文章 - SegmentFault 思否 _202306](https://segmentfault.com/a/1190000043871178)
+## [Yjs Fundamentals - Part 1: Theory | by Dovetail Engineering | Dovetail Engineering | Medium _202210](https://medium.com/dovetail-engineering/yjs-fundamentals-part-1-theory-232a450dad7b)
 
 - 
 - 
 - 
 
-# [深度解析 Yjs 协同编辑原理【看这篇就够了】 - 掘金 _202312](https://juejin.cn/post/7316592817341399090)
+### [Yjs Fundamentals — Part 2: Sync & Awareness _202212](https://medium.com/dovetail-engineering/yjs-fundamentals-part-2-sync-awareness-73b8fabc2233)
+
+- 
+- 
+- 
+- 
+
+## [深度解析 Yjs 协同编辑原理【看这篇就够了】 - 掘金 _202312](https://juejin.cn/post/7316592817341399090)
+
+- 将doc.gc=false设置为禁用垃圾收集并能够恢复旧内容
+- 共享文档上的每一个更改都发生在一个事务中, 在每个事务之后都会调用Observer调用和update事件。您应该将更改捆绑到单个事务中，以减少事件调用。
+
+- 在共享类型的作用域上创建新的Y. UndoManager。
+  - 如果任何指定的类型或其任何子类型被修改，UndoManager会在其堆栈上添加一个反向操作。也可以指定trackedOrigins来筛选特定的更改。
+  - 默认情况下，将跟踪所有本地更改, UndoManager合并在特定captureTimeout（默认为500ms）内创建的编辑, 将其设置为0可单独捕获每个更改。
+- 调用stopCapturing（）以确保UndoManager上的下一个操作不会与上一个操作合并
+
+## [CRDT与协同编辑 简介](https://www.herui.club/archives/1066)
+
+- OT与CRDT
+  1. OT (Operational Transformation) 操作转换
+  2. CRDT (Conflict-free Replicated Data Type) 无冲突复制数据类型
+- YATA算法思想
+- 数据结构
+  - YATA从一开始就为在文档中创建的每个字符构造一个特殊的数据结构Item，Item之间以双向链表的形式连接在一起；
+  - Item之间可以根据ID来比较逻辑先后关系。由此，我们获得了数学上严格的偏序结构。
+- 冲突处理
+  - Item之间是通过ID排序的，因此这个序列如果满足以下三条规则，在数学上可以证明是严格全序的：
+    - 规则一：禁止互相冲突的操作之间有交叉连接的原点。
+    - 规则二：当指定`O1<O2`时，不会存在另外一个操作比O2大同时比O1小。
+    - 规则三：当两个冲突的插入操作具有相同Origin时，用户ID小的操作在左侧。此规则参照了OT算法。
+- 历史回溯
+  - CRDT中使用了链表的数据结构，而不是根据坐标定位，所以可以理解为完全没有「脏路径」问题
+  - 基于 CRDT 的方案中，实现 undos/redos 应该就比较简单了，只需要根据 CRDT 的数据结构的新增或者删除去实现 undos/redos 栈就可以有效解决问题。 假如进行了一个生成结构对象的操作，那么撤回的时候就把它标记删除即可。
+- 网络同步
+  - 设计了配套的网络协议y-protocols。核心是分发序列化的Item，因为Item携带了前驱后继等引用信息，所以不能简单地直接序列化为JSON格式
+  - y-protocols使用了Uint8Array 形式的 update 数据编解码。YATA支持每个客户端离线编辑，并把操作记录在本地，客户端联网后，YATA会检查本地数据和共享数据的不同并完成数据同步。
+  - 在同步文档状态时，Yjs 划分了两个阶段：
+    - 阶段一：某个客户端可以发送自己本地的 state vector，向远程客户端获取缺失的文档 update 数据。
+    - 阶段二：远程客户端可以使用各自的本地 clock 计算出该客户端所需的 item 对象，并进一步编码生成包含了所有未同步状态的最小 update 数据。
+
+## [再遇协同编辑：Yjs + Quill，文档协同编辑竟如此简单 _202402](https://juejin.cn/post/7339341982836097075)
+
+- Yjs 中 Documents/Shared Types 的所有更改都发生在事务中，每次发生事务后都会触发 observer 调用和 update 事件，触发监听和更新操作。
+
+- 在不使用 y-quill 的情况下，使用 Yjs 自带的 API 实现了 Quill 的协同编辑。  
+  - 首先监听 Quill 文本的变化； 接着将 Quill 的 Delta 数据结构转换为 yText 结构；
+  - yText 改变时通过 y-websocket 发送到其他客户端；
+  - 其他客户端监听 yText 的变化，解析出 Quill 的 Delta 数据，回填到编辑器中。
+
+- Yjs 已经提供了常用的编辑器的数据绑定，像Prosemirror、Tiptap、Monaco、Quill 等等，我们可以看下y-quill和y-monaco的源码，Yjs 应用到不同的编辑器，基本都是这一套逻辑：
+  - 首先监听编辑器的数据变化，当发生变化时，将编辑器数据转为 Yjs 的 Shared Types 数据结构，当本地 Yjs 数据发生变化时会通过 Network Provider 将数据结构同步给所有协同者，其他协同者再通过监听 Yjs 数据的变动，将 Yjs 数据转为编辑器数据，利用自身的 API 将变化填充到编辑器中，从而实现协同编辑。
+
+- 每一个客户端都维护了一个 Yjs 数据结构的副本
+
+## [基于CRDT的一种文档冲突算法 - 一行舟 _202202](https://juejin.cn/post/7064236095440961550)
+
+- 本文我们主要介绍基于CRDT的一种文档合并算法-YATA, 开源实现Yjs
+  - 全文偏理论
+
+## [实时协作-yjs基本理解 | 一席之地 _201704](https://www.ximing.ren/post/2017/%E5%AE%9E%E6%97%B6%E5%8D%8F%E4%BD%9C-yjs%E5%9F%BA%E6%9C%AC%E7%90%86%E8%A7%A31-%E6%A6%82%E8%A7%88/)
 
 - 
 - 
 
-# [实时协作-yjs基本理解 | 一席之地 _201704](https://www.ximing.ren/post/2017/%E5%AE%9E%E6%97%B6%E5%8D%8F%E4%BD%9C-yjs%E5%9F%BA%E6%9C%AC%E7%90%86%E8%A7%A31-%E6%A6%82%E8%A7%88/)
+### [实时协作-yjs基本理解2-向量时钟 | 一席之地](https://www.ximing.ren/post/2017/%E5%AE%9E%E6%97%B6%E5%8D%8F%E4%BD%9C-yjs%E5%9F%BA%E6%9C%AC%E7%90%86%E8%A7%A32-%E5%90%91%E9%87%8F%E6%97%B6%E9%92%9F/)
 
-- 
-- 
+### [实时协作-yjs基本理解3-操作日志 | 一席之地](https://www.ximing.ren/post/2017/%E5%AE%9E%E6%97%B6%E5%8D%8F%E4%BD%9C-yjs%E5%9F%BA%E6%9C%AC%E7%90%86%E8%A7%A33-%E6%93%8D%E4%BD%9C%E6%97%A5%E5%BF%97/)
 
-## [实时协作-yjs基本理解2-向量时钟 | 一席之地](https://www.ximing.ren/post/2017/%E5%AE%9E%E6%97%B6%E5%8D%8F%E4%BD%9C-yjs%E5%9F%BA%E6%9C%AC%E7%90%86%E8%A7%A32-%E5%90%91%E9%87%8F%E6%97%B6%E9%92%9F/)
+### [实时协作-yjs基本理解4-Ytext | 一席之地](https://www.ximing.ren/post/2017/%E5%AE%9E%E6%97%B6%E5%8D%8F%E4%BD%9C-yjs%E5%9F%BA%E6%9C%AC%E7%90%86%E8%A7%A34-Ytext/)
 
-## [实时协作-yjs基本理解3-操作日志 | 一席之地](https://www.ximing.ren/post/2017/%E5%AE%9E%E6%97%B6%E5%8D%8F%E4%BD%9C-yjs%E5%9F%BA%E6%9C%AC%E7%90%86%E8%A7%A33-%E6%93%8D%E4%BD%9C%E6%97%A5%E5%BF%97/)
+## [Yjs——一个基于CRDT的数据协同框架_腾讯alloy_202104](https://mp.weixin.qq.com/s?src=11×tamp=1686787686&ver=4591&signature=0vaM7PBUtg8XVbWmk8vJypnfhEzMZKA*n2ZLsyNLrvul6UKW2aw8*1teZ1rzopI6YHA*2wP1t9PSaUaQhpkV0XhyA6jRigandep79YE59mpO5*e*tJGuHIoORlbpDViE&new=1)
 
-## [实时协作-yjs基本理解4-Ytext | 一席之地](https://www.ximing.ren/post/2017/%E5%AE%9E%E6%97%B6%E5%8D%8F%E4%BD%9C-yjs%E5%9F%BA%E6%9C%AC%E7%90%86%E8%A7%A34-Ytext/)
+# blogs-comparison 🆚️
 
-# 🆚️ [实时协作-yjs和ShareDB对比 | 一席之地 _201704](https://www.ximing.ren/post/2017/%E5%AE%9E%E6%97%B6%E5%8D%8F%E4%BD%9C-yjs%E5%92%8CShareDB%E5%AF%B9%E6%AF%94/)
+## [A comparison of JavaScript CRDTs - Alexis Métaireau _202403](https://blog.notmyidea.org/a-comparison-of-javascript-crdts.html)
+
+- Conflict-free Resolution Data Types are a family of data types able to merge their states with other states without generating conflicts. 
+- “Append-only sets” are probably one of the most common type of CRDT: you can add the same element again and again, it will only be present once in the set. It’s our old friend Set, as we can find in many programming languages.
+
+- I found Y.js and Automerge quite similar for my use case, while JSON Joy was taking a different (less “all-included”) approach. 
+
+- In order to observe the changes, we need to inspect the given patches and work on what we find.
+- One thing to keep in mind is that these “patch” events happen only once per patch received. You can see it as a “diff” of the state between the current and the incoming states.
+  - Y.js exposes a utility which is able to tell you what the action on the key is (“delete”, “update” and “add”)
+  - Automerge and JSON Joy, on the other hand, don’t provide such utility functions, meaning you would need to find that out yourself.
+
+- Conclusion
+  - None of them implement the high-level API I was expecting, where the clients talk with each other and the server just relays messages, but maybe it’s because it’s better in general to have the server have the representation of the data, saving a roundtrip for the clients.
+
+## [实时协作-yjs和ShareDB对比 | 一席之地 _201704](https://www.ximing.ren/post/2017/%E5%AE%9E%E6%97%B6%E5%8D%8F%E4%BD%9C-yjs%E5%92%8CShareDB%E5%AF%B9%E6%AF%94/)
+
 - Yjs (基于 CRDT 算法) 的优点：
   - 离线支持和冲突解决： CRDT 算法在设计上就考虑到了离线工作和冲突解决，使得 Yjs 能够在无需中心化服务器参与的情况下解决冲突。用户可以在离线状态下进行编辑，然后在重新连接时将其更改与其他副本合并，而不会导致任何冲突。
   - 分布式和去中心化： CRDT 不需要中心服务器来解决冲突，这使得 Yjs 在设计上更加分布式和去中心化，可以在不同的网络环境中使用，包括 peer-to-peer 网络。
@@ -61,132 +126,4 @@ modified: 2022-10-22T18:45:23.619Z
   - 需要中心服务器： OT 需要一个中心服务器来处理和转换操作，以解决冲突。这使得 ShareDB 更依赖于中心服务器和网络连接。
   - 离线支持和冲突解决： 尽管 ShareDB 提供了离线支持，但是在没有服务器参与的情况下解决冲突往往会更复杂，而且实践下来存在乱序&丢内容的情况。
   - 性能和可伸缩性： 与 CRDT 相比，OT 的性能和可伸缩性可能会受到更多的限制，特别是在大量用户协作编辑大型文档的情况下。
-# [Yjs Fundamentals - Part 1: Theory | by Dovetail Engineering | Dovetail Engineering | Medium _202210](https://medium.com/dovetail-engineering/yjs-fundamentals-part-1-theory-232a450dad7b)
-
-- 
-- 
-- 
-
-## [Yjs Fundamentals — Part 2: Sync & Awareness _202212](https://medium.com/dovetail-engineering/yjs-fundamentals-part-2-sync-awareness-73b8fabc2233)
-
-- 
-- 
-- 
-- 
-
-# [Yjs——一个基于CRDT的数据协同框架_腾讯alloy_202104](https://mp.weixin.qq.com/s?src=11×tamp=1686787686&ver=4591&signature=0vaM7PBUtg8XVbWmk8vJypnfhEzMZKA*n2ZLsyNLrvul6UKW2aw8*1teZ1rzopI6YHA*2wP1t9PSaUaQhpkV0XhyA6jRigandep79YE59mpO5*e*tJGuHIoORlbpDViE&new=1)
-
-# [Near Real-Time Peer-to-Peer Shared Editing on Extensible Data Types](https://www.researchgate.net/publication/310212186_Near_Real-Time_Peer-to-Peer_Shared_Editing_on_Extensible_Data_Types)
-
-# [【译】Near Real-Time Peer-to-Peer Shared Editing on Extensible Data Types - 掘金](https://juejin.cn/post/7027487213525041166)
-- 在此之前，我们证明了 发生冲突的插入操作 存在全序关系。
-- 在本节中，我们将给出一个算法，当我们已经有一个有序的插入列表时，计算新的插入的位置。
-- 该算法利用不存在的交叉的 origin 链接作为中断条件。因此，当连接之间会交叉时，停止计算。
-# [YATA线性数据插入算法](https://juejin.cn/post/7030327499829542942)
-- 一个插入操作 Item 包含了唯一的操作标识符 ID、插入操作的内容和插入的意图 originLeft 和 originRight。
-  - 这里需要注意的是，YATA 中的插入意图只有 originLeft，Yjs 为了解决一种特殊情况，添加了 originRight，下文会讲述。
-- 操作的唯一标识符 ID 是由 Client 和 Clock 组成的元组，其中 Client 是副本的唯一标识符，Clock 是一个副本产生操作的累加计数器，每产生一个操作，计数器加 1。
-  - 在 Yjs 中，如果连续的插入操作的内容都是同类型的文本，为了降低空间复杂度，会将这些连续的文本操作合并成一个操作。
-  - 👉🏻 考虑到以后有把这些操作拆分的需求，所以在 Yjs 中，Clock每次加的是**内容的长度**。
-- 考虑一个纯文本文档，对于文档的编辑只包含插入和删除两种操作。
-  - 在 YATA 中，删除采用了墓碑法，对于文档的操作只有插入文本一个操作。
-  - 所以，文档可以看成是插入操作的集合。
-  - 为了保证各个副本之间的收敛，需要插入操作的集合满足全序关序，即每两个插入操作都有一个前后关系。
-  - YATA 插入算法正是在这样一个前提下，提出了三条规则，最后根据这三条规则，提出了线形数据的插入算法。
-- Yjs 对于文档内容Doc.content的定义采用的是操作的链表结构，这里为了更方便的解释算法，在不考虑时间复杂度的情况下，采用了数组结构 Item[]
-
-- 插入算法的核心在于插入操作的集合满足全序关序，每两个插入都有一个前后关系。
-  - 现在要将副本 1 产生的 o1o_1o1​与副本 2 产生的 o2o_2o2​ 集合在一起，为了保证副本 1 和副本 2 有相同的前后顺序，就需要计算出 o1o_1o1​ 和 o2o_2o2​ 的前后关系。
-# [YATA：一种针对文本编辑优化的 CRDT 算法](https://hyrious.me/p/yata.html)
-- YATA 算法的核心是：如果我们把参考节点一起发出去，新节点和参考节点之间连线，那么所有的这种连线都不能交叉。
-
-- 如果有两个新元素的参考元素是同一个，这意味着发生了冲突，此时 YATA 算法引入了一个新的属性：right，表示参考元素右侧的元素。当发生冲突时，我们先切换到比较右侧元素上来，当右侧元素也一样时，再通过 id 排序决定。
-# [Delta-state CRDTs: indexed sequences with YATA](https://www.bartoszsypytkowski.com/yata/)
-- This time we'll cover YATA (Yet Another Transformation Approach): a delta-state based variant, introduced and popularized by Yjs framework
-
-- A core concept behind all indexed CRDTs is notion of unique identifier assigned to the inserted element
-
-- A popular approach is to define that unique identifier as a composite of two values:
-
-- Unique identifier of a given replica/peer. Since we cannot guarantee uniqueness of sequence numbers generated concurrently by different peers, we can use them together with peer's own ID to make it so.
-- Sequence number used for comparison. 
-- It varies depending on the algorithm:
-  - LSeq uses a variable-length byte sequence which is a function id(left_neighbor, righ_neighbor) that's expected to produce a sequence which is lexically greater than id of an item at previous index, but lower than id of an item at the next index (lseq[n-1].id < lseq[n].id < lseq[n+1].id).
-  - ❓ RGA maintains a single globally incremented counter (which can be ordinary integer value), that's updated anytime we detect that remote insert has an id with sequence number higher that local counter. Therefore every time, we produce a new insert operation, we give it a highest counter value known at the time.
-  - YATA also uses a single integer value, however unlike in case of RGA we don't use a single counter shared with other replicas, but rather let each peer keep its own, which is incremented monotonically only by that peer. Since increments are monotonic, we can also use them to detect missing operations eg. updates marked as A:1 and A:3 imply, that there must be another (potentially missing) update A:2.
-
-- YATA is similar to RGA in regard to keeping expected predecessor id as part of the operation. 
-  - Additionally we also attach a successor id. In YATA naming convention, we call them left/right origins. 
-  - Therefore insert operation can be defined as `ins(left, right, id, char)`. 
-- Why do we need two origins instead of one like in case of RGA? 
-  - YATA is delta-state CRDT with a fairly low number of restrictions regarding its replication protocol - at least when we compare it to a reliable causal broadcast requirements of their operation-based counterparts. 
-  - In order to correctly place inserts send out of order, sometimes we may need two pointers instead of just one.
-
-- In order to safely resolve any potential conflicts, that may have appeared in result of concurrent block insertion, we use left and right origins as a reference points. That mean, they must have been there first.
-
-- there's a 1-1 relation between YATA block IDs and vector clocks. 
-  - Given such vector clock, we can also easily generate the deltas themselves. 
-  - All we need to do is to take blocks which sequence numbers are higher that sequence numbers of corresponding vector clock entries. 
-  - After this we're almost done: we also need to remember that there might be blocks known to remote peer, that have been deleted in the meantime. 
-  - For this reason we take IDs of tombstoned blocks and pass them over as well.
-# [Deep dive into Yrs architecture](https://www.bartoszsypytkowski.com/yrs-architecture/)
-- Document is the most top-level organization unit in Yjs. 
-  - It basically represents an independent key-value store, where keys are names defined by programmers, and values are so called root types: a Conflict-free Replicated Data Types (CRDTs) that serve particular purposes. 
-- In Yjs every operation happens in a scope of its document: all information is stored in documents, all causality (represented by the vector clocks) is tracked on per document basis. 
-  - If you want to compute or apply a delta update to synchronize two peers, this also must happen on an entire document.
-
-- Documents are using delta-state variant of CRDTs and offer a very simple 2-step protocol, which is similar to an optimization technique we discussed in the past
-  - Document A sends its vector version (in Yrs it's called StateVector) to Document B.
-  - Based on A's state vector, B can calculate missing delta which contains only the necessary data and then send it back to A.
-- This way we make deltas efficient and very lightweight. 
-  - Even more, Yrs encodes deltas using customized binary format, optimized specifically to make payloads small and efficient.
-
-- Under the hood, document represents all user data together with an information used for tracking causality within a dedicated collection called the block store.
-
-- A concept correlated to documents is one of a transaction
-  - that name was inherited from Yjs and may be deceptive(误导的), as they don't have anything in common with ACID transactions known from standard databases. 
-  - They are more like batches of updates reinforced with some optimization logic - like checking if updates that happen within a scope of transaction can be squashed(压碎、压扁或挤烂) into previously existing block store structure or triggering update events, programmers can subscribe to.
-
-- All updates in Yrs are represented as blocks (a.k.a. structs in Yjs). 
-  - Whenever you're inserting or removing a piece of data into your Y-data structure - be it a YText, YArray, YMap or XML types - you're producing a block. 
-  - This block contains all metadata necessary to correctly resolve potential concurrency conflicts with blocks inserted concurrently by other users
-- These blocks are organized in a block store on per client (peer) basis - all blocks produced by the same client are laid out next to each other in memory
-- This layout is optimal to perform several operations like using state vectors and deltas, block squashing, efficient encoding format etc
-
-- Yjs/Yrs use YATA algorithm as an universal conflict resolution strategy for all data types
-
-- You may think, this is a lot of metadata to hold for every single character inserted by the user. That would be right, however Yjs implements an optimization technique that allows us to squash blocks inserted or deleted one after another, effectively reducing their count while keeping all guarantees in check.
-
-- Block split
-- We already discussed in detail how to implement a block-wise variant or RGA CRDT on this blog post, and it's YATA equivalent is not that much different. 
-- The tl; dr explanation is: whenever we want to make a new insert in between elements grouped under the same block, we split that block in two parts and rewire their left and right neighbour pointers to a newly inserted block.
-- All of this is possible because consecutive(连续不断的) block ID (client_id-clock pairs) are not assigned using clock numbers increased by one per block, but by one per a block element 
-
-- Block squashing
-- it's a reverse of splitting, executed upon transaction commit. 
-- It's very useful in scenarios when the same peer inserts multiple elements one after another as a separate operations. 
-- The most obvious case of this is simply writing sentences character by character in your text editor.
-- Thanks to block squashing, we can represent separate consecutive blocks of data (eg. A:1=[a] followed by A:2=[b]) using a single block instead (A:1=[a, b]).
-- The major advantage is reduction of memory footprint 
-- Keep in mind that squashing has some limits to it: squashed blocks must be next to each other both in terms of A) being each others neighbours B) emitted by the same client and C) their IDs must follow one another with no "holes between"
-
-- Yrs uses delta-state approach to CRDTs with an extremely small and robust replication protocol
-- These types can be nested in each other according to their limitations
-- Underneath all CRDT collections are represented by the same kind of block content known as a Branch. 
-- Branch node is capable of storing two specific types of collections at once: both key-value entries and index-ordered double-linked list containing batches of items.
-
-- Yrs Text and Array types make use of the same indexed sequence component and their in-memory representation is basically a double linked list of continuous elements (such as individual string characters or ranges of JSON values).
-- Thanks to the use of YATA conflict resolution algorithm, these types are free from interleaving issues boggling other CRDT algorithms like LSeq. 
-- And since we're using split-block approach, it lets our insert operations computational complexity to become independent of the number of elements inserted (in most cases). 
-
-- a dynamic nested XML tree of nodes, which can contain attributes, text or other nodes. 
-  - The way it works is actually pretty simple: a branch node uses its list head to point to a first XML child node block and map field to point to blocks used as attributes.
-
-- v1 encoding relies heavily on variable integer encoding and block store layout to omit fields which can be inferred using blocks mutual relationships.
-- v2 encoding was influenced by research made by Martin Kleppmann when he worked on automerge library, and adapted to Yjs. 
-  - It extends the formatting to make use of run-length encoding, which can bring further savings, especially for deltas having many block updates.
-# [Syncing text files between browser and disk using Yjs and the File System Access API_202205](https://motif.land/blog/syncing-text-files-using-yjs-and-the-file-system-access-api)
-- Wrote this blog post on how to sync files between browser and disk using Yjs and the File System Access API. It works really well! 
-- https://twitter.com/michaelfester/status/1523698983117684736
-
-- https://news.ycombinator.com/item?id=31315717
+# more

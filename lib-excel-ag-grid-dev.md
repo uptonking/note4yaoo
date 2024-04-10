@@ -34,7 +34,7 @@ modified: 2022-08-21T09:54:26.037Z
   - [AdapTable Overview](https://docs.adaptabletools.com/docs/)
     - AdapTable is a sophisticated HTML5 DataGrid add-on.
     - AdapTable does not provide a DataGrid control of its own; AdapTable is most commonly used together with ag-Grid
-# [cs-repeat: Building a Complex High Performance JavaScript Project__201812](https://www.youtube.com/watch?v=rT0vQejPcrs)
+# 🎞️ [cs-repeat: Building a Complex High Performance JavaScript Project__201812](https://www.youtube.com/watch?v=rT0vQejPcrs)
 - ioc service
 
 - row virtualization

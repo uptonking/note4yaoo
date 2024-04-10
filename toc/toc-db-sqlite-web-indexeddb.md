@@ -71,6 +71,10 @@ modified: 2022-11-06T03:19:28.284Z
 - https://github.com/tr1ckydev/great.db /202210/ts
   - human-friendly database library for JavaScript using SQLite. 
   - great.db automatically detects which runtime you are using and uses the respective fastest between better-sqlite3/bun-sqlite
+
+- https://github.com/nalgeon/sqlean.js /MIT
+  - This package provides an SQLite database engine compiled for the browser and bundled with sqlean extensions. 
+  - It's a drop-in replacement for the standard `sqlite-wasm` package.
 # sqlite-web-examples
 - https://github.com/mstrahov/hnsql /实现简单
   - https://mstrahov.github.io/hnsql/

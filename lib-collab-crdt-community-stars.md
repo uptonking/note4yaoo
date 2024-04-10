@@ -76,10 +76,18 @@ modified: 2022-04-05T10:09:51.343Z
 - I've found that many of the modern JavaScript UI libraries play very well with event sourcing, IMHO. 
   - React and Vue.js in particular work very well when combined with Redux/Vuex and a CRDT database. 
   - Both of those stores are essentially event sources themselves, where the actions and mutators are separated and the data store itself is updated only in one place. 
-- 🤔 What CRDT databases do you use in this sort of application?
+- 🔀🤔 What CRDT databases do you use in this sort of application?
   - Currently leveraging CouchDB and it's incremental map-reduce to handle the "CRDT" merging of an event stream. 
   - Technically I'm not using a CRDT library or DB, but it's surprisingly easy to implement the core "commutative operations" of CRDT's via a modified deep-merge versioning algorithm.
   - Works pretty well as I can deploy 20, 000+ user interactions on an embedded CouchDB instance with steady performance.
+
+- ## 🆚️🧮 Here's a visual comparison of the data structures underlying three different "collaborative text editing" algorithms.
+- https://twitter.com/jaredforsyth/status/1232532781936173056
+  - [yjs vs automerge vs rga](https://text-crdt-compare.surge.sh/)
+  - yjs uses a doubly-linked list of nodes
+  - mine(local-first-rga) uses a tree
+  - automerge uses a transaction log (and has in-memory caches for perf)
+- Your approach seems to resemble RGASplit which I believe is bases for
 
 # discuss-gc
 - ## 
@@ -124,6 +132,12 @@ modified: 2022-04-05T10:09:51.343Z
 - We don't need a perfect solution for general cases. We just need a good enough one and allow users to resolve conflicts manually when the default merge result is unsatisfactory. So, the worst case is to fall back to something like git.
 - Counterpoint(形成对比的论点): I’ve supported more peer-to-peer database applications in prod than almost anyone out there. Only a handful of times did conflict resolution strategies have to be proactively(积极的; 主动的) coded. Getting document granularity right is most of the work.
 - Having built on top of crdts quite a bit, I think that the replicache model is probably the more explicit, better abstraction. It's very clear what effect concurrent edits will have as you write reducers and very hard to model the same with crdts without simulation.
+
+# discuss-crdt-db
+- ## 
+
+- ## It is relatively easy to turn any LSM databases ( @cassandra , @LevelDB , @RocksDB , Pebble of @CockroachDB ) into mutually compatible syncable CRDT databases
+- https://twitter.com/gritzko/status/1777966931804631387
 
 # discuss
 - ## 

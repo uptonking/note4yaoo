@@ -385,6 +385,9 @@ modified: 2023-11-28T14:48:45.910Z
   - ios, google-play
   - chrome-web-store, edge
 
+- latest
+  - ModelScope魔搭社区，主打中文的 AI 模型开源社区
+
 - [Atlassian Marketplace](https://mar ketplace.atlassian.com/)
   - 支持jira, confluence, bitbucket, bamboo, crowd
   - Atlassian has a market cap or net worth of $53.92 billion

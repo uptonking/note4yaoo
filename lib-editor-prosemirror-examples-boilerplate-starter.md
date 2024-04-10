@@ -57,7 +57,7 @@ modified: 2022-09-05T03:41:15.727Z
   - A web text editor application that allows users to create, edit, store and share several documents, with support for real-time collaborative editing.
   - DoX is clearly inspired to well known online word processors such as Google Docs
 
-- https://github.com/vivaxy/examples/tree/master/libraries/prosemirror
+- https://github.com/vivaxy/examples/tree/master/libraries/prosemirror /MIT/202404/js
   - https://vivaxy.github.io/examples/libraries/prosemirror/
   - 日常积累的各种demo，包括prosemirror/yjs/算法
 

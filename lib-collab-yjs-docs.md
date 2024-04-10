@@ -11,8 +11,11 @@ modified: 2022-04-05T10:11:21.023Z
 
 - resources
   - [Yjs Docs beta](https://beta.yjs.dev/docs/introduction)
-# [Yjs Internals](https://github.com/yjs/yjs/blob/main/INTERNALS.md)
+# 🧮 [Yjs Internals](https://github.com/yjs/yjs/blob/main/INTERNALS.md)
+- This document roughly explains how Yjs works internally. 
 - The Yjs CRDT algorithm is described in the YATA paper from 2016.
+  - There are a handful of small improvements implemented in Yjs which aren't described in the paper.
+  - The most notable is that items have an `originRight` as well as an `origin` property, which improves performance when many concurrent inserts happen after the same character.
 
 - At its heart, Yjs is a list CRDT. 
 - 👉🏻 Everything is squeezed into a list in order to reuse the CRDT resolution algorithm
@@ -24,7 +27,7 @@ modified: 2022-04-05T10:11:21.023Z
 
 - Deletions in Yjs are treated very differently from insertions. 
   - 👉🏻 Insertions are implemented as a sequential operation based CRDT, but deletions are treated as a simpler state based CRDT.
-# faq
+# faq 🤔
 
 ## I get a new ClientID for every session, is there a way to make it static for a peer accessing the document?
 
@@ -46,12 +49,12 @@ modified: 2022-04-05T10:11:21.023Z
 
 - When reasoning around how to structure data in Yjs I recommend to consider these aspects:
 1. **The flow of data for common use cases**: It can be good to group data that is often used together. In contrast, it may not be practical to load hundreds of YDocs at once or load new YDocs very frequently.
-2. **Read/write permissions:** Permissions cannot be practically enforced within a YDoc so you need to split data into multiple YDocs if you need different permissions for different parts of the data.
+2. **Read/write permissions:** Permissions cannot be practically enforced within a YDoc, so you need to split data into multiple YDocs if you need different permissions for different parts of the data.
 3. **Size is very rarely a practical problem** as long as you deal with human-entered text input. (See [benchmarks](https://github.com/dmonad/crdt-benchmarks).)
 4. **Separate structure and data:** In some cases, it can be practical to have one YDoc that holds only the id references across entities (eg. pages) and one YDoc per entity data. This is particularly relevant if you need different permission levels for different entities. If you have no need for granular control, a split like this may be unnecessarily complex.
 5. **History and undo:** At what level is it natural to track edit history and perform undo? It is much easier to perform history tracking within a single YDoc rather than spread across multiple YDocs.
 6. **Consider using a single top-level YMap:** Top-level shared types cannot be deleted, so you may want to structure all your data in a single top-level YMap, eg. `yDoc.getMap('data').get('page-1')`.
-7. **Subdocuments:** You may also consider using [subdocuments 2](https://docs.yjs.dev/api/subdocuments). However, it gets a bit more complex and your provider may not support it.
+7. **Subdocuments:** You may also consider using [subdocuments](https://docs.yjs.dev/api/subdocuments). However, it gets a bit more complex and your provider may not support it.
 # yjs-docs
 - Yjs documents are collections of shared objects that sync automatically.
 
@@ -130,7 +133,7 @@ yarray.insert(0, [subArray]) // Throws exception!
   - Normal index-positions (expressed as integers) are not convenient to use because the index-range is invalidated as soon as a remote change manipulates the document. 
   - Relative positions give you a powerful API to express positions.
 - A relative position is fixated to an element in the shared document and is not affected by remote changes. 
-- Relative positions are guaranteed to always point to the same location ⇒ When all clients sync up, all relative positions will translate to the same index-position. This is not possible in OT-like solutions
+- Relative positions are guaranteed to always point to the same location When all clients sync up, all relative positions will translate to the same index-position. This is not possible in OT-like solutions
 
 ## [Delta Format | Yjs Docs](https://docs.yjs.dev/api/delta-format)
 

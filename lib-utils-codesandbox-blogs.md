@@ -11,7 +11,7 @@ modified: 2024-01-25T13:29:10.054Z
 
 # blogs
 
-## [Building a Next-Level Code Playground / Sandbox / REPL with Sandpack](https://www.joshwcomeau.com/react/next-level-playground/)
+## [Building a Next-Level Code Playground/Sandbox/REPL with Sandpack _202402](https://www.joshwcomeau.com/react/next-level-playground/)
 
 - I recently rebuilt this blog's playground, using Sandpack, a modern playground framework built by the folks at CodeSandbox
 - The "secret sauce" for CodeSandbox has been the in-browser bundler. It can fetch dependencies from NPM, transpile your JSX, and even supports modern quality-of-life features like hot module reloading. It does this all in-browser
@@ -21,11 +21,11 @@ modified: 2024-01-25T13:29:10.054Z
   - This iframe is hosted by CodeSandbox, and all of the bundling happens on their external domain.
   - Essentially, when the user makes a change to the code in the editor, the new code is dispatched over to the site in the iframe. That page will re-bundle the code and display the new result.
 - The good thing about this approach is that it's secure. 
-  - If the user writes some JS that attempts to read cookies / localStorage, for example, they'll be accessing the stuff on CodeSandbox's domain, not your own.
+  - If the user writes some JS that attempts to read cookies/localStorage, for example, they'll be accessing the stuff on CodeSandbox's domain, not your own.
 - That said, I was a bit wary of having such a hard dependency on an external service. If CodeSandbox ever goes down, I don't want it to affect my playgrounds!
 - we can build + deploy the bundler code ourselves, to whatever domain we'd like.
   - You can learn how to self-host the bundler in their docs.
-# blogs-js-sandbox
+# blogs-js-sandbox 🧊
 
 ## [浅析 JavaScript 沙箱 - 掘金](https://juejin.cn/post/7148335784431468551)
 
@@ -142,7 +142,7 @@ Function('str', 'console.log(str, aaa)')('aaa:');
 - When CodeSandbox started, it ran all projects in the browser using a primitive bundler that runs in an iframe. 
   - We’re now at the point that the bundler supports npm dependencies, hot module reloading, caching, and a whole lot more.
 
-## [What's Unique About CodeSandbox_201810](https://codesandbox.io/blog/whats-unique-about-codesandbox)
+## [What's Unique About CodeSandbox _201810](https://codesandbox.io/blog/whats-unique-about-codesandbox)
 
 - The frontend and the microservices of CodeSandbox are open source! This is the place where you can find out how CodeSandbox works
 # more

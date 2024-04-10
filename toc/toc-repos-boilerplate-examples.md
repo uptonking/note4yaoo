@@ -574,6 +574,12 @@ modified: 2023-11-16T15:00:11.503Z
 # apps
 - https://github.com/Veri5ied/slack-ui-clone /202012/js
   - React, Vanilla CSS, Material UI Icons, Reach Router and Firestore Slack Clone
+
+- https://github.com/deriv-com/quill-icons-park /202404/ts/依赖少
+  - https://quill-icons-park.pages.dev/
+  - A little park to explore Quill Icons intuitively.
+  - 图标的查看和搜索，无详情页，简洁
+  - 依赖react、file-saver、@tanstack/react-query.v5
 # apps-api
 - https://github.com/hiteshchoudhary/apihub /MIT/202401/js
   - https://freeapi.app/

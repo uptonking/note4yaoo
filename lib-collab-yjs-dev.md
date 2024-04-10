@@ -10,6 +10,7 @@ modified: 2022-04-05T10:10:59.826Z
 # guide
 
 - pros
+  - good ecosystem: docs, bindings, examples
   - common data types
   - undo/redo
   - versions/revision-history
@@ -21,10 +22,14 @@ modified: 2022-04-05T10:10:59.826Z
   - persistence
 
 - cons
-  - yata冲突处理算法不如rga/logoot/lseq主流
+  - yata冲突处理算法不如rga/fractional-index/logoot/lseq主流
+  - 数据传输基于二进制，高性能，但开发调试很不方便，需要devtools
+  - 文本格式的添加清除较繁琐
 
 - features
-  - ?
+  - Automatic Syncing and no conflicts
+  - Offline Support
+  - support Peer-to-Peer
 
 - who is using #yjs
   - jupyter
@@ -45,6 +50,7 @@ modified: 2022-04-05T10:10:59.826Z
 
 - tips
   - 协作只有文本部分需要YText这类复杂的crdt，表格使用llw-map足够
+  - 协作类研发可考虑与event-sourcing结合，状态数据可视为oplog的materialized-view
 
 - 实现协作要考虑到切换冲突处理算法, 如slate-yjs/automerge/sharedb
 
@@ -55,7 +61,7 @@ modified: 2022-04-05T10:10:59.826Z
 - [Automerge CRDT Sync Protocol](https://automerge.org/docs/how-it-works/sync/)
 
 - resources
-# [cs-repeat: How Yjs works from the inside out with Joseph Gentle & Kevin Jahns__202009](https://www.youtube.com/watch?v=0l5XgnQ6rB4)
+# 🎞️ [cs-repeat: How Yjs works from the inside out with Joseph Gentle & Kevin Jahns __202009](https://www.youtube.com/watch?v=0l5XgnQ6rB4)
 - 17:30
 - an item is the representation of a linked list
   - list crdt is built on this
@@ -213,6 +219,15 @@ modified: 2022-04-05T10:10:59.826Z
 - single op perf doesnot matter
   - consider batch operations
   - benchmark tests should contain this
+# draft
+
+- 
+- 
+- 
+- 
+- 
+- 
+
 # dev
 
 # more

@@ -227,6 +227,12 @@ modified: 2023-06-07T14:19:18.719Z
   - How to submit your plugin?
   - Make a Github Pull Request
 
+- https://github.com/deriv-com/quill-icons-park /202404/ts/依赖少
+  - https://quill-icons-park.pages.dev/
+  - A little park to explore Quill Icons intuitively.
+  - 图标的查看和搜索，无详情页，简洁
+  - 依赖react、file-saver、@tanstack/react-query.v5
+
 ## package-manager
 
 - https://github.com/0dataapp/0data

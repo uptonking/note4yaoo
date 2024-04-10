@@ -235,8 +235,8 @@ modified: 2022-04-05T10:08:25.947Z
 
 - https://github.com/streamich/json-joy/tree/master/src/json-crdt /apache2/ts
   - json-crdt中提供了rga、lww-object
-  - [Block-wise RGA algorithm implementation for json-joy_202305](https://jsonjoy.com/blog/performant-rga-list-crdt-algorithm)
-  - 🆚️ [Benchmarking json-joy against Automerge v2 and Y-libraries_202305](https://jsonjoy.com/blog/list-crdt-benchmarks)
+  - 🧮 [Block-wise RGA algorithm implementation for json-joy_202305](https://jsonjoy.com/blog/performant-rga-list-crdt-algorithm)
+  - 🆚️⚡️ [Benchmarking json-joy against Automerge v2 and Y-libraries_202305](https://jsonjoy.com/blog/list-crdt-benchmarks)
   - [Fuzz Testing RGA CRDT_202306](https://jsonjoy.com/blog/fuzz-testing-rga-crdt)
     - using fuzz testing you can make sure your collaborative editing algorithms are 100% correct
     - https://github.com/TeemuKoivisto/crdt-nodejs-editing-trace-benchmarks /测试复现
@@ -690,6 +690,10 @@ modified: 2022-04-05T10:08:25.947Z
   - This repository contains simple proof-of-concept reference implementations of yjs, automerge and sync9's list types - all implemented in the same codebase. 
 - https://github.com/dev-badace/textrdt /202304/ts
   - a basic implementation of a text crdt based on the yata this is not meant to be used in production
+
+- https://github.com/streamich/json-joy/tree/master/src/json-crdt /apache2/ts
+  - json-crdt中提供了rga、lww-object
+  - 🧮 [Block-wise RGA algorithm implementation for json-joy_202305](https://jsonjoy.com/blog/performant-rga-list-crdt-algorithm)
 
 - https://github.com/jaredly/local-first/tree/master/packages/text-crdt
   - This algorithm is largely based on RGA, with support for rich-text formatting added, along with a number of optimizations.

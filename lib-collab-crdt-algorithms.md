@@ -29,12 +29,16 @@ modified: 2023-03-07T04:43:58.713Z
   - 能不能将协作的粒度从字符提升为句子
   - 或者crdt-text-by-lines, still sequence crdt，参考typewriter-quill
 # crdt-experts
-- Kevin Jahns, yjs
+- Seph Gentle /sharedb/diamond-types
+  - https://github.com/josephg
+  - https://github.com/josephg/diamond-types
+
+- Kevin Jahns /yjs
   - https://github.com/dmonad
   - https://github.com/yjs/yjs
   - port到各种语言
 
-- Martin Kleppmann, automerge
+- Martin Kleppmann /automerge
   - https://github.com/ept
   - [blog posts](https://martin.kleppmann.com/archive.html)
   - [crdt.tech](https://crdt.tech/)
@@ -49,10 +53,6 @@ modified: 2023-03-07T04:43:58.713Z
   - citrea-model, 2012
   - swarm, 2013
   - chronofold, 20 20
-
-- Seph Gentle, sharedb/diamond-types
-  - https://github.com/josephg
-  - https://github.com/josephg/diamond-types
 # crdt-algorithms
 - rga: linked-list or tree
 - fractional-index
@@ -799,7 +799,7 @@ ba => v5
 
 - ## 
 
-- ## 🆚️ Here's a visual comparison of the data structures underlying three different "collaborative text editing" algorithms.
+- ## 🆚️🧮 Here's a visual comparison of the data structures underlying three different "collaborative text editing" algorithms.
 - https://twitter.com/jaredforsyth/status/1232532781936173056
   - [yjs vs automerge vs rga](https://text-crdt-compare.surge.sh/)
   - yjs uses a doubly-linked list of nodes

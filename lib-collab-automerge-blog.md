@@ -61,7 +61,7 @@ modified: 2023-09-01T11:01:24.685Z
 
 ## 👥 [Automerge: JSON-like data structure for building collaborative apps_201802](https://news.ycombinator.com/item?id=16309533)
 
-## 🎯📝 [Automerge 2.0_202301](https://automerge.org/blog/automerge-2/)
+## 🎯📝 [Automerge 2.0 _202301](https://automerge.org/blog/automerge-2/)
 
 - Earlier versions of Automerge were implemented in pure JavaScript. 
   - Our initial implementations were theoretically sound but much too slow and used too much memory for most production use cases.
@@ -70,14 +70,15 @@ modified: 2023-09-01T11:01:24.685Z
   - This way we can be confident that the core CRDT logic is identical across all platforms and that everyone benefits from new features and optimizations together.
 - For JavaScript applications, this means compiling the Rust to WebAssembly and providing a JavaScript wrapper that maintains the existing Automerge API.
 
-## 🎯👥 [Automerge 2.0 | Hacker News_202301](https://news.ycombinator.com/item?id=34586433)
+## 🎯👥 [Automerge 2.0 | Hacker News _202301](https://news.ycombinator.com/item?id=34586433)
 
 - It looks like Automerge 2 latest is faster than Yjs, but still uses 2x more memory.
   - Yjs (pure javascript?) is quoted on the paper benchmark at 1, 074ms and 10, 141, 696 bytes of memory, compared to Automerge 2.0.2-unstable at 661ms and 22, 953, 984 bytes of memory. 
   - I wonder if this is comparing usage from JS via bindings, or directly comparing two different rust implementations, or comparing Automerge 2.0.2-unstable via Rust to Yjs via NodeJS.
   - I am still not sure which set of tools I would recommend; I believe Yjs is more actively deployed in production since the Automerge implementation was so far behind performance wise until now. 
   - However one of the Peritext authors (https://twitter.com/sliminality who is on my team at Notion) tells me that 👉🏻 Automerge is better at text because it doesn't suffer from interleaved characters like Yjs does. So consider it instead of Yjs!
-- 👉🏻 I’ve spent a lot of time benchmarking both libraries and talking to the authors. The main difference is that yjs has an extra optimization that’s still missing from automerge: Yjs does internal run-length encoding of adjacent inserted items. And adjacent inserts come up a lot in real text editing traces.
+- 🆚️ I’ve spent a lot of time benchmarking both libraries and talking to the authors. 
+  - The main difference is that yjs has an extra optimization that’s still missing from automerge: Yjs does internal run-length encoding of adjacent inserted items. And adjacent inserts come up a lot in real text editing traces.
   - Adding this optimization to diamond types, in pure rust, improved performance by another order of magnitude (25ms for the same test with this tweak). It also dropped memory usage to about 2MB. 
   - The automerge engineers know about this trick (I’ve talked to them about it). So I assume it’s in the pipeline somewhere. And yjs is working on a rust reimplementation, which should bring its performance in line too.
 - This optimization is indeed in the pipeline, although there are other things nearer the front because performance is currently Good Enough ™ that other things are more pressing (other things being e.g. completing the Peritext implementation, improving the sync protocol).

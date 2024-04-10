@@ -102,7 +102,9 @@ modified: 2022-06-13T03:00:06.041Z
 
 - ## 
 
-- ## 
+- ## MySQL Cluster nodes assemble using std TCP/IP.  
+- https://twitter.com/frazerclement/status/1778021984200249434
+  - Dataplane then setup as a mesh of Transporters, by default using OS TCP/IP (over loopback, Ethernet, Infiniband...)  Co-located API+Data nodes use a Shared Memory Transporter for perf.
 
 - ## 🧩 Tables + indexes are horizontally partitioned across #MySQL Ndb Cluster nodegroups for read + write scale out.
 - https://twitter.com/frazerclement/status/1767715870984282225

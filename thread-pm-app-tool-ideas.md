@@ -34,6 +34,10 @@ modified: 2022-11-07T10:58:24.512Z
   - roadmap/feedback, canny
 
 - 如果你做独立开发，没任何用户感知和判断力，建议多逛逛这个subreddit，https://reddit.com/r/SideProject/
+
+- 
+- 
+
 # datable/数据整理
 - 政府数据
   - 各级统计局
@@ -70,6 +74,11 @@ modified: 2022-11-07T10:58:24.512Z
 
 - b站很多视频是带人读文章/公告、读论文
 # integrations
+- ModelScope魔搭社区，主打中文的 AI 模型开源社区，
+  - 魔搭社区经过半年左右的发展，拥有开发者数量超过160万，模型下载量超过2500万，但演示应用程序才41个，下载应用比例是百万分之一，严重不符合实际
+  - 希望国内这种平台有朝一日可以互通，比如百度AIStudio和魔搭。
+  - 类似的社区像百度飞浆社区早就办了好久了，也是公开了百度自己训练的文心大模型，还半免费供用户使用百度的GPU算力，类似谷歌colab的模式
+
 - doscord message saver
   - [Discord Notebook](https://chrome.google.com/webstore/detail/discord-notebook/jeeilfacglnffgflhgmciaegglekjlod?hl=en)
   - the extension will save your messages locally in your browser storage.

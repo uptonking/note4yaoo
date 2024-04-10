@@ -10,6 +10,10 @@ modified: 2022-09-21T15:47:41.340Z
 # guide
 
 # popular
+- https://github.com/ueberdosis/hocuspocus /MIT/202403/ts
+  - https://tiptap.dev/docs/hocuspocus/introduction
+  - A plug & play collaboration backend based on Y.js
+
 - https://github.com/closeally/yjs-server
   - An extensible, y-websocket-compatible server. Written in TypeScript. Supports authentication. ESM-only.
   - server included in y-websocket is limited in its capabilities: it is difficult to extend from the outside, tests are missing, authentication is not easy to implement
@@ -19,9 +23,6 @@ modified: 2022-09-21T15:47:41.340Z
   - Example of horizontally scalable websocket backend for y-js to be used with y-websocket provider with persistence to postgresql using knex. 
   - Uses redis-pubsub for horizontal scaling and uses redis-queues to provide eventual-consistency and better behaviour when users join a document being edited by other users.
   - https://github.com/kapv89/yjs-scalable-ws-backend-test
-
-- https://github.com/dev-badace/textrdt /202304/ts
-  - a basic implementation of a text crdt based on the yata this is not meant to be used in production
 
 - https://github.com/yousefed/SyncedStore
   - https://syncedstore.org/docs/
@@ -37,9 +38,6 @@ modified: 2022-09-21T15:47:41.340Z
     - The document is immediately available and only diffs need to be synced through the network provider.
   - https://github.com/YousefED/reactive
     - A super simple, yet powerful and performant library for State Management / Reactive Programming.
-
-- https://github.com/ueberdosis/hocuspocus
-  - server
 
 - https://github.com/BitPhinix/slate-yjs
   - https://docs.slate-yjs.dev/
@@ -67,6 +65,13 @@ modified: 2022-09-21T15:47:41.340Z
 - https://github.com/jaqarrick/yjs-canvas
   - Collaborative canvas using Yjs CRDT
 
+- https://github.com/pluv-io/pluv /MIT/202403/ts/yjs
+  - https://pluv.io/
+  - allows you to build real-time collaborate features with a fully end-to-end type-safe api.
+  - Inspired by trpc, Built with yjs
+  - @pluv/io, @pluv/client, @pluv/crdt-yjs and @pluv/react all require yjs as a peer dependency.
+  - https://github.com/pluv-io/pluv-example
+
 - https://github.com/hockyy/peertocp /202211/js
   - Electron Project for WebRTC Based Code Editor, Compiler, and C++ runner
   - CRDT Peer-to-Peer Branch using modified y-webrtc
@@ -80,16 +85,24 @@ modified: 2022-09-21T15:47:41.340Z
   - Persists document data to a network filesystem or S3-compatible storage, inspired by Figma’s infrastructure.
   - Scales horizontally with a session backend model.
   - Provides document-level access control via client tokens.
-# utils
-- https://github.com/WaiSiuKei/yjs-devtools-formatter /MIT/202401/ts
-  - A Chrome DevTools formatter for Yjs.
-  - It makes the Yjs data types printed in the Chrome DevTools console easier to read and inspect, allowing developers to inspect Yjs data types just as they do with primitive data types.
+# rewrite-yjs
+- https://github.com/dev-badace/textrdt /202304/ts
+  - a basic implementation of a text crdt based on the yata this is not meant to be used in production
+
+- https://github.com/josephg/reference-crdts
+  - This repository contains simple proof-of-concept reference implementations of yjs, automerge and sync9's list types - all implemented in the same codebase. 
 
 - https://github.com/rozek/y-lwwmap /MIT/202307/ts/inactive
   - Yjs provides a complete ecosystem for (persisting and) sharing "Conflict-free replicated data types" (CRDT) among multiple clients using a variety of persistence and communication providers. 
   - The shared data types include arrays and maps, with shared maps becoming inefficient in most practical cases, which is why there is an alternative implementation based on shared arrays in the `y-utility` package.
   - Being compatible to the Yjs ecosystem, LWWMaps can be shared as part of a Y. Doc using y-websocket, y-webrtc
   - Its implementation is based on that of `YKeyValue` but uses a "last-write-wins" strategy during synchronization
+
+- https://vivaxy.github.io/examples/libraries/prosemirror/yata/
+# utils
+- https://github.com/WaiSiuKei/yjs-devtools-formatter /MIT/202401/ts
+  - A Chrome DevTools formatter for Yjs.
+  - It makes the Yjs data types printed in the Chrome DevTools console easier to read and inspect, allowing developers to inspect Yjs data types just as they do with primitive data types.
 
 - https://github.com/samwillis/yjs-sqlite-test
   - http://samwillis.co.uk/yjs-sqlite-test/
@@ -98,13 +111,6 @@ modified: 2022-09-21T15:47:41.340Z
 
 - https://github.com/maxpert/sqlite-y-crdt /MIT/202212/rust/js/inactive
   - WIP for wrapping Y-CRDT for SQLite
-
-- https://github.com/pluv-io/pluv /MIT/202403/ts/yjs
-  - https://pluv.io/
-  - allows you to build real-time collaborate features with a fully end-to-end type-safe api.
-  - Inspired by trpc, Built with yjs
-  - @pluv/io, @pluv/client, @pluv/crdt-yjs and @pluv/react all require yjs as a peer dependency.
-  - https://github.com/pluv-io/pluv-example
 
 - https://github.com/JonnysCode/y-solid
   - An experimental Solid protocol provider for Yjs
@@ -167,8 +173,7 @@ modified: 2022-09-21T15:47:41.340Z
 
 - https://github.com/sanalabs/collaboration-kit
   - packages that facilitate working with arbitrary JSON structures in Yjs
-  - @sanalabs/y-redux Two-way sync of Redux and Yjs
-- ref-redux-yjs
+  - `@sanalabs/y-redux` Two-way sync of Redux and Yjs
   - [Yjs Redux binding](https://discuss.yjs.dev/t/yjs-redux-binding/755)
 
 - https://github.com/lscheibel/redux-yjs-bindings
@@ -198,9 +203,6 @@ modified: 2022-09-21T15:47:41.340Z
   - 🍴 forks
   - https://github.com/sthagen/yjs-yjs
 
-- https://github.com/josephg/reference-crdts
-  - This repository contains simple proof-of-concept reference implementations of yjs, automerge and sync9's list types - all implemented in the same codebase. 
-
 - https://github.com/YousefED/reactive-crdt
   - It's built on top of Yjs, a proven, high performance CRDT implementation.
 
@@ -213,3 +215,4 @@ modified: 2022-09-21T15:47:41.340Z
   - Built for sharing large datasets and streams of real time data
   - [hypercore and Yjs: how to make them work together](https://github.com/hypercore-protocol/hypercore/issues/296)
     - the y-dat implementation does not actually use the core feature of the hypercore’s append only merkle tree signed log, due to the mutable nature of the Yjs CRDT implementation.
+# more

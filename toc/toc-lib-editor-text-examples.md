@@ -10,11 +10,13 @@ modified: 2022-11-08T19:03:33.865Z
 # popular
 
 # textarea
-- react-markdown-editor-lite /833Star/MIT/202207/ts/markdown-it/非所见即所得
+- react-markdown-editor-lite /833Star/MIT/202205/ts/非所见即所得/inactive
   - https://github.com/HarryChen0506/react-markdown-editor-lite
   - https://harrychen0506.github.io/react-markdown-editor-lite/
   - 基于textarea和React的markdown编辑器，实现简单且清晰
   - UI可配置, 如只显示编辑区或预览区，支持编辑区和预览区同步滚动
+  - 依赖react、eventemitter3
+  - 支持配置markdown-parser, 示例使用markdown-it
 
 - https://github.com/inokawa/rich-textarea
   - https://inokawa.github.io/rich-textarea/

@@ -34,6 +34,16 @@ modified: 2022-02-05T18:45:34.558Z
   - https://github.com/wix-playground/dnd-kit
   - https://github.com/replayio/dnd-kit
 
+- pragmatic-drag-and-drop /apache2/202404/ts
+  - https://github.com/atlassian/pragmatic-drag-and-drop
+  - https://atlassian.design/components/pragmatic-drag-and-drop
+  - Fast drag and drop for any experience on any tech stack
+  - a low level drag and drop toolchain that enables safe and successful usage of the browsers built in drag and drop functionality. 
+  - Pragmatic drag and drop can be used with any view layer (react, svelte, vue, angular and so on). 
+  - Pragmatic drag and drop is powering some of the biggest products on the web, including Trello, Jira and Confluence.
+  - We have created optional visual outputs (eg our drop indicator) to make it super fast for us to build consistent Atlassian user experiences. 
+  - The optional assistive controls we provide are based on the Atlassian Design System. 
+
 - use-gesture /7.5kStar/MIT/202307/ts/vanillajs
   - https://github.com/pmndrs/use-gesture
   - https://use-gesture.netlify.app/docs/examples/

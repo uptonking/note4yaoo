@@ -14,7 +14,10 @@ modified: 2023-10-26T19:04:00.318Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## I learned today that TimescaleDB deprecated their distributed (multi-node) support
+- https://twitter.com/a_prout/status/1777813707327684750
+  - It reminded me that distributed databases come with a cost
+  - [Distributed SQL Databases And The Costs of Being Distributed | by Adam Prout | Medium _202401](https://medium.com/@adamprout/distributed-sql-databases-and-the-costs-of-being-distributed-ab7b38b0fa50)
 
 - ## 🆚️🤔 [有了分布式数据库，是不是就不需要分库分表了？ - 知乎](https://www.zhihu.com/question/356734992)
 - 分布式数据库不能阻止你把一个表或者库搞的和宇宙争大小, 用好数据库永远需要人的参与，系统无法解决这个问题
@@ -260,7 +263,10 @@ modified: 2023-10-26T19:04:00.318Z
 
 - ## 
 
-- ## 
+- ## Eventual Consistency (EC) means it’s impossible to diverge (a safety invariant: if all messages are sent, states are equal). 
+- https://twitter.com/_Felipe/status/1777667242403999970
+  - SEC(Strong EC) means the messages will, in fact, be eventually sent (a liveness property).
+- Leslie Lamport’s TLA+ is an extension of LTL (Linear Temporal Logic).
 
 - ## 🧩 Database guarantees durability using WAL, and it is possible due to LSN 
 - https://twitter.com/sunbains/status/1771190591034102129

@@ -8,6 +8,10 @@ modified: 2022-11-09T11:53:13.093Z
 # toc-office-markdown-editor
 
 # guide
+
+- tips
+  - 没必要找单独的md编辑器，一般主流的wysiwyg会有第三方支持md的版本
+
 - popular-md-products(产品核心部分都是编辑器)
   - outline, HedgeDoc/CodiMD/HackMD, Crowi
   - gitbook, bookdown, docsify, docusaurus, nextra
@@ -17,33 +21,54 @@ modified: 2022-11-09T11:53:13.093Z
   - react-resume-site
 
 - popular-md-editor
-  - tui.editor, milkdown, rich-markdown-editor, vditor
+  - milkdown, tui.editor, milkdown, rich-markdown-editor, vditor
   - zettlr
   - mermaid
 # markdown-editor
-- web-editor-markdown /90Star/MIT/202211/ts
+- web-editor-markdown /392Star/MIT/202211/ts/vanillajs/NoDeps/inactive
   - https://github.com/Ben-love-zy/web-editor-markdown
-  - 基于 Web 浏览器，即时渲染的 Markdown 编辑器。它基于 TypeScript 和 vanillajs 打造，并且不依赖任何第三方框架，对中文支持友好
+  - 基于 Web 浏览器，即时渲染的 Markdown 编辑器
+  - 基于 TypeScript 和 vanillajs 打造，并且不依赖任何第三方框架，对中文支持友好
   - 提供源码模式、双屏渲染模式、实时编辑模式和只读模式四种渲染模式。
   - 如果有需要，它的底层同时也支持了协同编辑的能力，提供了原子操作 Operation 用于扩展协同编辑。
 
-- https://github.com/marktext/muya /549Star/MIT/202401/ts
+- https://github.com/marktext/muya /549Star/MIT/202404/ts
   - markdown editor for web browser applications development
+  - 依赖fuse.js、marked、katex、ot-json1、prismjs、snabbdom、turndown、vega-lite
   - Muya originated from MarkText, which was originally used in the MarkText and provides Markdown editing support for MarkText. Today, Muya is available as a stand-alone library 
   - What is the relationship between MarkText's version and the Muya's version? None
   - https://github.com/Jocs/muya-example /201906/js
+
+- rich-markdown-editor /2kStar/BSD/202105/ts
+  - https://github.com/outline/rich-markdown-editor
+  - 依赖react、styled-components、prosemirror-markdown、markdown-it、prism-refractor、fuzzy-search、react-medium-image-zoom
+  - React and Prosemirror based markdown editor that powers Outline.
+  - The editor is WYSIWYG and includes formatting tools whilst retaining the ability to write markdown shortcuts inline and output plain Markdown.
+  - https://atlaskit.atlassian.com/packages/editor/editor-markdown-transformer
+    - A Markdown to ProseMirror Node parser.
+
+- milkdown /6.5kStar/MIT/202208/ts
+  - https://github.com/Saul-Mirone/milkdown
+  - https://milkdown.dev/
+  - https://milkdown.dev/online-demo
+  - 依赖prosemirror、remark、prism、katex，但不依赖prosemirror-markdown、react
+  - A plugin-driven WYSIWYG markdown Editor, inspired by Typora, built on top of prosemirror and remark.
+  - 不同于其他prosemirror项目，可配置支持的markdown特性
+  - ⚠️️breaking: @milkdown/core@4.4.0(202107) migrate from markdown-it to remark
+
+- react-markdown-editor-lite /833Star/MIT/202205/ts/非所见即所得/inactive
+  - https://github.com/HarryChen0506/react-markdown-editor-lite
+  - https://harrychen0506.github.io/react-markdown-editor-lite/
+  - 基于textarea和React的markdown编辑器，实现简单且清晰
+  - UI可配置, 如只显示编辑区或预览区，支持编辑区和预览区同步滚动
+  - 依赖react、eventemitter3
+  - 支持配置markdown-parser, 示例使用markdown-it
 
 - react-universal-markdown /202107/js/inactive
   - https://github.com/iddan/react-universal-markdown
   - Markdown component for Web and Native powered by CommonMark
   - With React Native/DOM
   - 依赖commonmark
-
-- react-markdown-editor-lite /833Star/MIT/202207/ts/markdown-it/非所见即所得
-  - https://github.com/HarryChen0506/react-markdown-editor-lite
-  - https://harrychen0506.github.io/react-markdown-editor-lite/
-  - 基于textarea和React的markdown编辑器，实现简单且清晰
-  - UI可配置, 如只显示编辑区或预览区，支持编辑区和预览区同步滚动
 
 - https://github.com/mdx-editor/editor /ts/lexical
   - https://mdxeditor.dev/
@@ -94,37 +119,27 @@ modified: 2022-11-09T11:53:13.093Z
   - Extremely minimalistic text editor
   - 依赖react-markdown
 
-- https://github.com/donny-chan/qingshu
+- https://github.com/donny-chan/qingshu /MIT/202307/ts/vue/inactive
+  - 现代的、极简的、美观、对中文友好的 Markdown 编辑器。
   - A modern, minimalistic Markdown editor for Windows, implemented in Vue + Electron + TypeScript.
   - Support GitHub Flavored Markdown + LaTeX (including inline math).
 
 - https://github.com/Eroxl/Note-Rack
   - An inline WYSIWYG markdown editor built for students to manage school work
 
-- rich-markdown-editor /2kStar/BSD/202105/ts
-  - https://github.com/outline/rich-markdown-editor
-  - 依赖prosemirror-markdown
-  - React and Prosemirror based markdown editor that powers Outline.
-  - The editor is WYSIWYG and includes formatting tools whilst retaining the ability to write markdown shortcuts inline and output plain Markdown.
-- milkdown /6.5kStar/MIT/202208/ts
-  - https://github.com/Saul-Mirone/milkdown
-  - https://milkdown.dev/
-  - https://milkdown.dev/online-demo
-  - 依赖prosemirror、remark、prism、katex，但不依赖prosemirror-markdown、react
-  - A plugin-driven WYSIWYG markdown Editor, inspired by Typora, built on top of prosemirror and remark.
-  - 不同于其他prosemirror项目，可配置支持的markdown特性
-  - ⚠️️breaking: @milkdown/core@4.4.0(date202107) migrate from markdown-it to remark
-- https://atlaskit.atlassian.com/packages/editor/editor-markdown-transformer
-  - A Markdown to ProseMirror Node parser.
-
-- https://github.com/remarkjs/react-markdown
+- https://github.com/remarkjs/react-markdown /12.1kStar/MIT/202309/js/单文件
   - https://remarkjs.github.io/react-markdown/
-  - /7.1kStar/MIT/202105/js
   - 依赖remark-parse、remark-rehype、unified, vfile
-  - Markdown component for React using remark.
+  - React component to render markdown
+  - safe by default (no `dangerouslySetInnerHTML` or XSS attacks)
+  -  plugins (many plugins you can pick and choose from)
   - why this one?
     - The two main reasons are that they often rely on `dangerouslySetInnerHTML` or have bugs with how they handle markdown. 
     - react-markdown uses a syntax tree to build the virtual dom which allows for updating only the changing DOM instead of completely overwriting.
+  - https://github.com/remarkjs/remark /MIT/202403/js
+    - remark is a tool that transforms markdown with plugins.
+    - You can use remark on the server, the client, CLIs, deno, etc.
+    - 100% to CommonMark, 100% to GFM or MDX with a plugin
 
 - https://github.com/StackExchange/Stacks-Editor
   - Stack Overflow's Combination Rich Text/Markdown Editor
@@ -173,7 +188,7 @@ modified: 2022-11-09T11:53:13.093Z
   - markdown的table元素也不利于书写，双栏模式并不利于聚焦，所以开发了青石编辑器。
   - 使用了富文本的编辑模式，同时兼容Markdown语法转换与编辑习惯，当使用搜索功能时，Markdown符号不会被搜索。
   - Using shiki as a code shader to make code highlights more fine-grained
-  - 依赖mobx-react-lite、remark-gfm
+  - 依赖electron-store、rxjs、mobx-react-lite、remark-gfm、antd
 
 - https://github.com/tk04/Marker /MIT/202403/ts/tauri
   - A Desktop App for Easily Viewing and Editing Markdown Files

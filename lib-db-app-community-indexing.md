@@ -20,7 +20,12 @@ modified: 2023-09-17T17:38:11.187Z
 # discuss
 - ## 
 
-- ## 
+- ## why you always need a multi-column index
+- https://twitter.com/tobias_petry/status/1777985940302032975
+  - An index with more columns can check more of a query's conditions. So fewer rows are loaded and the query is faster
+- multi-column is an essential feature available with EVERY sql database. 
+  - Indexing JSON is a complicated topic. Too much for tweet - and it depends on your database. I wrote an entire chapter on that in my book.
+  - For PG just use GIN indexes, with MySQL it is more complicated
 
 - ## SQL Indexing in a Nutshell:
 - https://twitter.com/vikasrajputin/status/1773568534737727614

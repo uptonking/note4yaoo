@@ -26,10 +26,14 @@ modified: 2023-01-21T18:57:47.811Z
 
 - 
 
-# apps
+# examples
 - https://github.com/SamsungInternet/web-code /201910/js
   - A text editor for the web based around monaco
   - deprecated: I've recently started using cdr/code-server which is a full VS Code instance which now runs on Android. The same way this does.
+
+- https://github.com/shubhangii0324/quill-editor /202404/ts
+  - https://quill-editor-three.vercel.app/
+  - a Next.js project
 # collab
 - https://github.com/Kshitiz1403/Collaborative-IDE /202401/ts/yjs
   - a full stack system supporting collaborative code editing, compiling & shared shell.

@@ -187,7 +187,9 @@ modified: 2022-04-05T10:10:27.212Z
   - If you use ProseMirror, then you might consider using its prosemirror-collab plugin.
   - If you know that real-time rich text editing will be your primary feature, then you’d probably want to double down and use OT.
 # blogs-ot-crdt
+
 ## [协同文档：OT与CRDT实现协同编辑笔记，偏理论](https://www.zhoulujun.cn/html/webfront/engineer/Architecture/8564.html)
+
 - 实时协同编辑，是指多人同时编辑一个文档，你可以实时看到别人做出的修改，不用手动刷新页面，最典型的例子是 Google Docs。
 - 要实现实时编辑，我们需要解决两个技术点：实时通信问题、编辑冲突问题，其中实时通信问题比较好解决，可以使用 long pull 或 WebSocket
 - 一个文档可以被抽象为一系列操作的集合，这个集合便是 changeset。
@@ -265,9 +267,7 @@ modified: 2022-04-05T10:10:27.212Z
 
 - Conclusion
   - The OT protocol and Delta format are our basis for real-time collaboration in the Grammarly Editor, ensuring that even when users are working on text across multiple devices or browser windows, their changes are always synchronized, and there are no losses or corruptions to the text. 
-
 # [Braid: Synchronization for HTTP](https://braid.org/)
-
 - https://github.com/toomim
   - https://github.com/braid-org/braidjs
   - https://invisible.college/@toomim
@@ -278,5 +278,15 @@ modified: 2022-04-05T10:10:27.212Z
   - Subscriptions to GET requests
   - Patches to Range Requests
   - Merge-Types to specify OT or CRDT behavior
+
+## [CRDT与协同编辑 简介](https://www.herui.club/archives/1066)
+
+- OT与CRDT
+  1. OT (Operational Transformation) 操作转换
+  2. CRDT (Conflict-free Replicated Data Type) 无冲突复制数据类型
+- YATA算法思想
+  - 数据结构
+  - 冲突处理
+  - 历史回溯
+  - 网络同步
 # more
-- [CRDT与协同编辑 简介](https://www.herui.club/archives/1066)

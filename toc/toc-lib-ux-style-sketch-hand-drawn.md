@@ -62,6 +62,12 @@ modified: 2021-01-13T19:30:59.508Z
   - 只依赖react
   - 画板元素都是svg元素
 
+- https://github.com/gezilinll/blitz /202404/ts/vue
+  - [Blitz：可以实时聊天的多人协同白板 _202307](https://zhuanlan.zhihu.com/p/643903971)
+    - 无限画布 目前我是直接使用 Pixi 作为渲染引擎，因此只需要将视图中的 传递给 Pixi 的 Application 即可
+    - 编辑器用户界面框架是基于 Vue3 落地的，在 UI 组件和风格上采用的是 Element-Plus 为主
+    - 协同编辑我采用的是 Hocuspocus 的解决方案，其除了提供客户端的 Provider 外，也提供了对应服务端的 SDK
+
 - https://github.com/LHRUN/paint-board /MIT/202309/ts
   - https://songlh.top/paint-board/
   - 基于canvas的多功能画板
@@ -116,7 +122,6 @@ modified: 2021-01-13T19:30:59.508Z
   - Headless SVG-based drawboard in browser.
   - built with Vanilla JavaScript
   - Built for Slidev.
-
 
 - https://github.com/mohitkumartoshniwal/whiteboard-konva-react /202402/js
   - Code for the Youtube video on building excalidraw clone using React and Konva.js

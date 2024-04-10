@@ -19,7 +19,7 @@ modified: 2024-04-06T16:54:27.145Z
   - remove toDom methods
 
 - [v14.0.0-0_2022-08-19](https://github.com/yjs/yjs/releases/tag/v14.0.0-0)
-  - This PR enables single-range moves in Y. Arrays. 
+  - This PR enables single-range moves in `Y.Array`s. 
   - The data structure is forwards compatible. That means that v14 can read v13 updates, but v13 can't read v14 updates (if content has ever been moved).
   - The feature is stable. I plan to do a couple of breaking API changes before I make a final v14 release.
   - Remove apis that use the DOM (e.g. toDOM)

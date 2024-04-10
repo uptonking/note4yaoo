@@ -38,7 +38,8 @@ modified: 2021-01-08T17:15:13.906Z
 
 - ## 
 
-- ## 
+- ## HTML ruby 中也可以支持标点挤压（CSS text-spacing-trim）
+- https://twitter.com/yisibl/status/1778036279089017258
 
 - ## Guess why some people use box shadow instead of border or outline?
 - https://twitter.com/oleg008/status/1776548962050113600

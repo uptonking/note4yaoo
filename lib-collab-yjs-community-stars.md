@@ -9,8 +9,31 @@ modified: 2022-10-22T18:46:45.456Z
 
 # guide
 
-# discuss
+# discuss-stars
 - ## 
+
+- ## 
+
+- ## 
+
+- ## ✏️ [Modeling slate split node behavior in YJS - Yjs Community](https://discuss.yjs.dev/t/modeling-slate-split-node-behavior-in-yjs/283)
+- Is there a way to perform a slate like split node operation in YJs?
+  - Currently I’m modeling a split node operation by removing the 2nd part of the split text from the “origin” node and creating a new text with the removed part, but this leads to issues
+- There are two answers to this:
+- Answer 1: Use Y. Text
+- Answer 2: There is no right solution for splitting nodes
+  - Sync conflicts are resolved almost immediately. So in the unlikely case that two users really split the same node concurrently, the users will easily manage to undo one of the splits and continue working together. Shared editing cannot be implemented perfectly and it is impossible to model every intention. Most users will avoid working on the same paragraph anyway when they see the cursor location of another user. So implementing shared cursors already solves this issue.
+
+
+- ## 🌵 [Document branches like git branches? - Yjs Community](https://discuss.yjs.dev/t/document-branches-like-git-branches/697)
+  - I’m wondering if I can build like a branch structure with Yjs docs.
+  - My use case, imagine I have a parent document with a lot of work made on it, then we want to make a copy of this document to derivate some content.
+  - We should have the possibility to integrate parent changes in our clone, and reversely we want to be able to move back some child content to the parent.
+  - And the child document could have different user and access policies, so we want to kindly clean the data.
+
+- So if I want to collapse the metadata at the end, I can simply create a brand new doc and iterate over the previous one to clone the content, so I would have only one clientID and one clock.
+  - The clientIDs don’t leak any user information. In order to get rid of stored content, you can simply load the content into a fresh Y. Doc with gc enabled (it is enabled by default).
+  - This way you can still merge updates from the original document and vice versa. The metadata that is retained doesn’t leak any user-information or editing snippets. If you tried might be able to recognize editing patterns as you can see how much content was inserted and deleted.
 
 - ## 🆚️🛢️ [How is this different from ShareDB · yjs/yjs _201801](https://github.com/yjs/yjs/issues/93)
 - I try to advertise that Yjs is much easier to use, has offline support, and works peer-to-peer. 
@@ -21,73 +44,16 @@ modified: 2022-10-22T18:46:45.456Z
   - As a comparison, you can open a google docs document with at most 50 users. While ShareDB generally supports more users than that, it is hard to scale ShareDB, because there is only a single source of truth - a single source of failure. This is a limitation of the transformation approach that is used in ShareDB (OT).
   - yjs的计算发生在客户端而不是server
 
-- ## 🤔🌰 [How would you model a complex diagram page? - Yjs Community](https://discuss.yjs.dev/t/how-would-you-model-a-complex-diagram-page/2114)
-- I have 2 ideas:
-  - 1. State as sequence of actions
-  - 2. Represent everything as map
-  - 3. Integrate yjs deeply into the system and build an object graph
+# discuss
+- ## 
 
-- ## 💡 [Document branches like git branches? - Yjs Community](https://discuss.yjs.dev/t/document-branches-like-git-branches/697)
-  - I’m wondering if I can build like a branch structure with Yjs docs.
-  - My use case, imagine I have a parent document with a lot of work made on it, then we want to make a copy of this document to derivate some content.
-  - We should have the possibility to integrate parent changes in our clone, and reversely we want to be able to move back some child content to the parent.
-  - And the child document could have different user and access policies, so we want to kindly clean the data.
+- ## 
 
-- So if I want to collapse the metadata at the end, I can simply create a brand new doc and iterate over the previous one to clone the content, so I would have only one clientID and one clock.
-  - The clientIDs don’t leak any user information. In order to get rid of stored content, you can simply load the content into a fresh Y. Doc with gc enabled (it is enabled by default).
-  - This way you can still merge updates from the original document and vice versa. The metadata that is retained doesn’t leak any user-information or editing snippets. If you tried might be able to recognize editing patterns as you can see how much content was inserted and deleted.
+- ## 
 
-- ## 🤔 We’re open sourcing y-sweet, a standalone Yjs CRDT server written in Rust.
-- https://twitter.com/drifting_corp/status/1687148228259577856
-  - The core idea of y-sweet is that documents are files, not database entries. 
-  - It uses a session backend model to store files directly on S3-compatible storage (including R2).
-- 👉🏻 We discussed the idea that file editors should use files, rather than databases, in the last Browsertech Digest. 
-  - y-sweet’s architecture is heavily inspired by Figma’s persistence and multiplayer.
-- Our goal is to help to elevate Yjs to the level of end-to-end developer ergonomics developers expect from a collaboration frameworks, but without the lock-in. 
-  - We’re also releasing React hooks and an SDK for integrating client token generation with your existing auth.
-
-- ## Seriously question, is YATA/YJS the same model as WooT and/or WootH. _202009
-- https://twitter.com/kevin_jahns/status/1300857487466229760
-  - What are the characteristic differences that distinguish from this original implementation and recent updates inspired by RGA?
-- 👉🏻 I don't see how YATA is similar to WOOT. They are completely different algorithms with different performance characteristics. IMO the biggest contribution of the YATA paper was that conflicts can be visualized.
-  - Choosing a CRDT algorithm is always a tradeoff. 
-  - YATA requires additional metadata for conflict resolution (one integer more). 
-  - Using the compression format, this drawback is eliminated (just look at https://github.com/dmonad/crdt-benchmarks/pull/4). 
-  - In exchange, Yjs applies updates more efficiently.
-- Nice! In regards to GC "a tombstone object can be removed only if no future operation will be concurrent with  the delete operation that converted the object into a tombstone" Isn't this mathematically impossible given conditions like being disconnected/offline?
-  - Yes, exactly! But if you assume that clients will be connected (which I did at the time, as it is the case with GDocs that also didn't allow offline editing), then you can garbage collect tombstones. You could gc after a week, and assume that all documents synced in that time.
-- Just to be completely clear here: GC approaches can work, but they are not worth the risk of diverging documents. Which is why this GC approach is no longer a part of Yjs. There are other ways to compress tombstones in a secure manner, as I explained here
-
-- One characteristic similarity that jumped out at me is the use of linked lists as structure. But it looks like that's about the only similarity. I'm only beginning to grasp the differences here in implementation (CT/Chronofold/OpLog..etc)
-  - Yeah, I get that. Also it doesn't help that Chengzheng Sun published a series of misleading articles that describe Yjs as a WOOT based CRDT with an incorrect garbage collection scheme. This is probably where you got the idea from.
-
-- It is often claimed that RGA is the fastest linear CRDT, which is clearly not the case. YATA can be implemented very efficiently. Using the visual representation, conflicts are resolved without any transformation in most cases.
-  - The current implementation has the same runtime performance as RGA, but works better in practice. In the benchmarks Yjs outperforms any RGA implementation - just look at how badly RGA performs in B1.3 or B3. 
-
-- I'm also curious on a more complete benchmark of Chronofold and using RON for encoding. I saw @gritzko posted here https://github.com/dmonad/crdt-benchmarks/issues/3 One thing that jumps out for me is that chronofolds may not necessarily have the same op seq as each of the peers (though still converges)
-  - Whoops, you already shared the link. But the point is that RONs representation is apparently worse in B1.4 than Yjs (100kB RON, 30kB Yjs). The C++ implementation runs obviously much faster than js. We should be able to compare Yjs with more CRDTs once Yjs has a Rust port.
 
 - ## [Support for PubSub communication protocol · yjs/yjs_201701](https://github.com/yjs/yjs/issues/63)
 - We recently published a paper about the CRDT used it Yjs: yjs.pdf If you are familiar with WOOT: they share some similarities.
-
-- ## 💡 [Which algorithm y-array is using? · y-js/y-array_201708](https://github.com/y-js/y-array/issues/9)
-- Yjs does not share any concepts with the RGA algorithm. 
-  - If you want to compare it conceptually, Yjs is actually more similar to WOOT.
-
-- While both algorithms have a time complexity of O(H^2), the syncing process is actually very performant in Yjs. 
-  - In WOOT, you basically have to apply all operations from the beginning of time. 
-  - In Yjs only missing operations need to be applied.
-- You got me thinking. I could improve the complexity to O(log(n)*N) by using a lookup table. 
-  - This will make Yjs look better on paper. 
-  - But I doubt that this makes a difference in practice. 
-  - Conflicts rarely occur in practice. 
-  - Again to clarify, this is the number of characters that is inserted at the same time+same position. 
-  - Have a look at this comparison of CRDTs. 
-  - Even when a large number of conflicts are forced, WOOT performs pretty similar to RGA, without having a big memory overhead.
-
-- In JS and other higher-level languages, objects have quite a lot of overhead: headers, gc bookkeeping, etc. 
-  - That may dwarf those 62+8 bytes. 
-  - That's why Causal Tree (my RGAish algo) keeps the data in strings or typed arrays.
 
 - ## [Should we do state management directly with yjs, or through bindings like SyncedStore? - Yjs Community](https://discuss.yjs.dev/t/should-we-do-state-management-directly-with-yjs-or-through-bindings-like-syncedstore/1345)
 - It really depends. There are arguably nicer libraries for state management. 
@@ -97,7 +63,13 @@ modified: 2022-10-22T18:46:45.456Z
   - React data stores are, in my opinion, too close to the representation. You likely want to reorganize data when the structure of your application changes. synced-store might make it too easy to make an existing application collaborative. 
   - Instead, you should think very carefully about the schema of your data. Because it’s really hard to change it once you have active users.
 
-- ## [Full JSON representation](https://github.com/yjs/yjs/issues/284)
+- ## 🤔🌲 [How would you model a complex diagram page? - Yjs Community](https://discuss.yjs.dev/t/how-would-you-model-a-complex-diagram-page/2114)
+- I have 2 ideas:
+  - 1. State as sequence of actions
+  - 2. Represent everything as map
+  - 3. Integrate yjs deeply into the system and build an object graph
+
+- ## 🌲 [Full JSON representation](https://github.com/yjs/yjs/issues/284)
 
 - One of the advantages of using a JSON structure it because it is a bit more human readable. 
   - In our case we save snapshots of the document in json format that can be queried afterwards. 

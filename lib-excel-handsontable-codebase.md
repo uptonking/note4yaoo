@@ -175,7 +175,7 @@ modified: 2024-04-08T03:57:18.943Z
 - 
 - 
 
-# notes
+# keywords
 - DataSource
   - this.dataType = 'array'; // array of array, or array of objects
   - 提供了数据操作的方法，大多读取

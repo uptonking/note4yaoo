@@ -12,7 +12,9 @@ modified: 2024-01-25T13:33:23.267Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## The fastest way to restore an environment is to take a memory snapshot and restore it. 
+- https://twitter.com/Vjeux/status/1777721284345930088
+  - It’s pretty wild that CodeSandbox made it happen at scale!
 
 - ## 🐛 If I could remove one thing from JavaScript it would be `eval()` .
 - https://twitter.com/awesomekling/status/1758775888647188567

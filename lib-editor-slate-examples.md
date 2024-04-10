@@ -76,6 +76,8 @@ modified: 2023-02-05T19:03:12.723Z
     - 表格方向键未实现
   - https://github.com/wangfupeng1988/slate-dom-view /202105/ts
     - 💡 slate.js for DOM, without React.
+  - [有计划整合slate-yjs插件吗？ _202204](https://github.com/wangeditor-team/wangEditor/issues/4033)
+    - 暂时没有开发多人协同功能的计划。多人协同是一个非常复杂的工程，不是集成一个插件就可以解决的，还需要服务端做很多配合。
 
 - rich-block-editor /2Star/ISC/202306/ts
   - https://github.com/rgbui/rich

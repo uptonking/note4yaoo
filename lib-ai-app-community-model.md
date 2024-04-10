@@ -11,7 +11,13 @@ modified: 2023-10-30T07:34:03.602Z
 
 - [大规模语言模型：从理论到实践](https://intro-llm.github.io/)
   - 复旦大学张奇教授团队写了一本在线免费的电子书，大概有 300 页篇幅，将大模型从理论到实战的每个阶段都描述的较为清楚
+
+- leaderboard
+  - https://chat.lmsys.org/?leaderboard
+    - https://leaderboard.lmsys.org
 # discuss-stars
+- ## 
+
 - ## 
 
 - ## 
@@ -20,21 +26,56 @@ modified: 2023-10-30T07:34:03.602Z
 - https://twitter.com/FinanceYF5/status/1730912502312296935
   - [国产大模型188个list - Feishu Docs](https://zw73xyquvv.feishu.cn/wiki/WXLmwBbYuiTobkkJ6Ojc2cxqnj0?sheet=2XjJlJ&table=tblS2Jv7isKtSODz&view=vewfCdOf0U)
 
-# discuss-ollama
+# discuss-llama2
 - ## 
+
+- ## 
+
+- ## [为什么Llama2大模型可以在个人电脑上部署 ？ - 知乎](https://zhuanlan.zhihu.com/p/646939066)
+- 我在Meat的官网上看到 llama2 是构建在PyTorch之上的，而ChatGPT是基于TensorFlow Probability框架的，本文里面就简称TFP。
+
+- ## [Meta AI 为什么会开源 Llama2 呢? - 知乎](https://www.zhihu.com/question/613072688/answers/updated)
+- 因为所谓的LLM开源只是公布训练好的结构和参数而已，真正重要的数据和训练代码并没有开源，更别说大部分人还没有足够的GPU。
+  - 即使如此，目前mistral这样的也只开源7b不开源large，llama后续还得继续观察
+
+- Llama2 开源但不是可以随便用的商用许可。 用户数到了一定程度就不是免费的。
+  - 7亿月活
 
 - ## [Allow listening on all local interfaces _202310](https://github.com/ollama/ollama/issues/703)
 - If you’re running Ollama directly from the command line, use the
 `OLLAMA_HOST=0.0.0.0 ollama serve` command
 
 - Edit the service file: Open `/etc/systemd/system/ollama.service` and add the following line inside the [Service] section:
-`Environment="OLLAMA_HOST=0.0.0.0"`
+ `Environment="OLLAMA_HOST=0.0.0.0"`
+
 - sudo systemctl daemon-reload
 - sudo systemctl restart ollama
 # discuss
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [langchain到底该怎么使用，大家在项目中实践有成功的案例吗? - 知乎](https://www.zhihu.com/question/609483833)
+- LangChain之所以大火，是因为它提供了一系列方便的工具、组件和接口，大大降低了 AI 应用开发的门槛，也极大简化了大模型应用程序的开发过程。
+  - LangChain框架背后的核心思想是将自然语言处理序列分解为各个部分，允许开发人员根据自己的需求高效地定制工作流程。
+- Langchain有6大核心模块：
+  - Models：模型，是各种类型的模型和模型集成。
+  - Prompts：提示，包括提示管理、提示优化和提示序列化。
+  - Memory：记忆，用来保存和模型交互时的上下文状态。
+  - Indexes：索引，用来结构化文档，以便和模型交互。包括文档加载程序、向量存储器、文本分割器和检索器等。
+  - Agents：代理，决定模型采取哪些行动，执行并且观察流程，直到完成为止。
+  - Chains：链，一系列对各种组件的调用。
+- LangChain 通常被用作「粘合剂」，将构建 LLM 应用所需的各个模块连接在一起。使用Langchain中不同组件的特性和能力，可以构建不同场景下的应用，如聊天机器人、基于文档的问答、知识管理、个人助理、Agent智能体等等。
+
+- 你的这个认识存在一些偏差，首先，依赖API key 是为了你使用大模型厂商的服务和鉴权，这没有什么拉跨的。很多第三方的服务都需要鉴权验证，这是比较主流的方式。
+- 可以企业自己部署大模型，这种成本是很高的。从我们自己的实验效果来看，13B 以下的大模型基本就是玩具，优化半天费时费力，而 34B 或者更大的模型，公司部署成本又很高。
+- langchain 中的特色是它的 langchain expression language (LCEL），是一种类似 linux 管道形式的调用方式，可以很简单的实现它的 chain 相关的功能。这个，在我实际使用的时候，没有想象的那么好用，可以根据实际情况去学习。
+- 最后，langchain 中还有一个叫做 langgraph 的组件，能够和 pytorch 一样用搭积木的方式去构造一个有向无环图、循环的链，比 LCEL 更高级。
+
+- 
+- 
 
 - ## LLM搞反编译，.not care和Jvav用户再也不用折腾什么混淆了，都没用了
 - https://twitter.com/geniusvczh/status/1774053196039962758
