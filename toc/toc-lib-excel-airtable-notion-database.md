@@ -170,7 +170,7 @@ modified: 2022-08-21T10:02:05.129Z
     - https://teable.io/
     - The data pipeline from airtable to teable.
 
-- nocobase /3.7kStar/apache2(core)🌹 + AGPL(plugin)/202212/ts/国内
+- nocobase /3.7kStar/apache2(core)🌹 > AGPL/202404/ts
   - https://github.com/nocobase/nocobase
   - https://www.nocobase.com/
   - [源码安装](https://docs-cn.nocobase.com/welcome/getting-started/installation/git-clone)
@@ -191,6 +191,7 @@ modified: 2022-08-21T10:02:05.129Z
   - you can configure the user interface directly with WYSIWYG operations.
   - Everything is a plugin, all new features can be implemented by developing and installing plugins
   - [change license of plugins-AGPLv3_20230111, v0.8.1 > v0.9.0](https://github.com/nocobase/nocobase/pull/1350)
+  - [change license to AGPLv3 or commercial _2024-03-30](https://github.com/nocobase/nocobase/commit/e2763b332286affb7cfd9c6a9fb90d656226e3fb)
 
 - focalboard /10.3kStar/AGPL-src + MIT-bin/202203/ts/go/偏看板/参考前端/squirrel-sql-builder
   - https://github.com/mattermost/focalboard

@@ -60,6 +60,10 @@ modified: 2023-12-15T19:30:23.094Z
   - A React renderer for the Strapi's Blocks rich text editor
   - https://github.com/klammerzu/blocks-html-renderer /202401/ts
     - Render the content of Strapi's Blocks rich text editor as HTML
+  - https://github.com/niklasfjeldberg/vue-strapi-blocks-renderer /202404/ts/vue
+    - Easily render the content of Strapi's new Blocks rich text editor in your Vue frontend.
+  - https://github.com/freb97/nuxt-strapi-blocks-renderer /MIT/202404/ts
+    - Nuxt 3 module for rendering text with the new Blocks rich text editor from Strapi CMS
   - https://github.com/sinkng/strapi-custom-field-type-renderer /202201/js
     - v4
 
@@ -273,6 +277,14 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/treblle/treblle-strapi /MIT/202403/js
   - allows Strapi users to use Treblle — a lightweight SDK that helps engineering and product teams build, ship, and maintain REST-based APIs faster.
   - API Monitoring and Observability
+
+- https://github.com/CinquinAndy/notes-to-strapi-export-article-ai /MIT/202404/ts
+  - Strapi Exporter: Supercharge Your Obsidian-to-Strapi Workflow, export an obsidian notes directly to your Strapi API
+  - a game-changing Obsidian plugin that streamlines your content creation process by seamlessly exporting your notes to Strapi CMS. 
+  - With its AI-powered image handling and SEO optimization features, you can take your content to the next level with just a few clicks.
+- https://github.com/CinquinAndy/plugin-auto-alt-caption-title-on-images-ai-enhanced /MIT/202404/js
+  - A Strapi plugin that automatically generates alternative text (alt), caption, and name for images using AI-powered image analysis. 
+  - require An OpenAI API key. You can sign up for an API key at OpenAI.
 # plugins
 - https://github.com/offset-dev/strapi-calendar /MIT/202311/js
   - Visualize your Strapi content in month, week or daily view
@@ -345,6 +357,9 @@ modified: 2023-12-15T19:30:23.094Z
   - 使用麻烦但支持配置导出字段
   - Create an `excel.js` file in the config folder. This file is used to provide tables and columns that need to be in the excel file
 
+- https://github.com/gustomedialab/strapi-csv-export /202304/js
+  - plugin csv-export
+
 - https://github.com/weilaiqishi/strapi-upload-big-file /202207/ts
   - 学习一下实现大文件上传
   - 前端: React + Antd, 服务端: Nodejs@16 + strapi
@@ -392,6 +407,12 @@ modified: 2023-12-15T19:30:23.094Z
   - The data is fetched and stored in the content
   - Supported: Youtube, Vimeo, Tiktok, Soundcloud, Spotify, CodePen, Twitter
 
+- https://github.com/Ahmed-Adel3/Demo-Next-js-strapi-plasmic /202309/ts/inactive
+  - a simple demo for an integration between Next.js, Strapi Headless CMS and Plasmic as a visual page builder
+- https://github.com/silexlabs/silex-strapi-11ty /MIT/202403/js
+  - a simple example of how to integrate Silex with 11ty and strapi
+  - Silex: AGPLv3
+
 - https://github.com/kauedavila/kanban-strapi /202309/js/inactive
   - https://github.com/kauedavila/kanban
   - This is a Next.js project bootstrapped with create-next-app.
@@ -412,6 +433,20 @@ modified: 2023-12-15T19:30:23.094Z
   - Strapi conformant REST API to fetch hierarchical menu data
   - Import/Export of navigation structure via strapis native command line tools
 
+- https://github.com/strapi-fan/strapi-grapesjs-plugin /202309/js
+  - provides a custom field for Strapi that lets you use and configure GrapeJs in no time.
+- https://github.com/wisdomwebsolution/strapi-grapesjs-plugin /202210/js/inactive
+  - Strapi plugin for GrapesJS web builder custom field
+- https://github.com/JensUweB/strapi-plugin-page-builder /MIT/202208/ts/inactive
+  - Web page builder for strapi 4.3 or later
+
+- https://github.com/habilelabs/strapi-html-editor /202208/js
+  - Presenting an alternative to standard wysiwyg editor in Strapi in the form of this HTML-editor that facilitates easier and hussle-free data customization to use with various frontends.
+
+- https://github.com/surgeharb/strapi-plugin-graphs-builder /202203/js/inactive
+  - A plugin for Strapi Headless CMS that provides graphs building tool to generate custom dashboards and reports with the data inside Strapi's database.
+  - https://github.com/surgeharb/strapi-plugins
+
 - https://github.com/ef2-digital/strapi-plugin-bold-title-editor /202310/js
   - A bold title/text editor to accentuate certain parts through HTML or Markdown.
   - Different output options: choose between HTML and Markdown.
@@ -421,19 +456,25 @@ modified: 2023-12-15T19:30:23.094Z
   - This Strapi plugin replaces the Markdown editor with a visual, easy-to-use text editor.
   - 依赖tiptap2、markdown-it
   - The plugin stores the content in `HTML` format. When querying content on the frontend, you can simply render the received HTML string.
-
-- https://github.com/dasmikko/strapi-tiptap-editor /202303/js
+- https://github.com/dasmikko/strapi-tiptap-editor /MIT/202303/js/inactive
   - A drop-in replacement for the strapi editor
   - It's build for Strapi v4. It has been tested to work with v4.5.5
+- https://github.com/itsrifat/strapi-plugin-blocknote /202402/ts
+  - plugin to replace the default markdown editor with BlockNote wysiwyg editor
+  - https://github.com/coderdiaz/strapi-novel
 
 - https://github.com/hubertnare/strapi4-wysiwyg-replacement /202202/js
   - change the default WYSIWYG to Quill Editor
   - [How to change the default WYSIWYG in Strapi v4 to Quill Editor_202203](https://strapi.io/blog/how-to-change-the-default-wysiwy-to-quill-editor)
+- https://github.com/osadavc/strapi-newsletter /MIT/202206/js/archived
+  - a plugin that makes it easy to send newsletters to your users when you publish a post
+  - You have two available providers to use: Mailchimp, ConvertKit
+  - 依赖react-quill、showdown
 
 - https://github.com/SKLINET/strapi-plugin-tinymce /202304/js
   - Replaces the default Strapi WYSIWYG editor with a customized build of TinyMCE editor.
 
-- https://github.com/ckeditor/strapi-plugin-ckeditor /202310/js
+- https://github.com/ckeditor/strapi-plugin-ckeditor /MIT/202403/js
   - This package provides a custom field for Strapi that lets you use and configure CKEditor in no time.
   - Custom fields are supported since Strapi 4.4+ and offer powerful API to create highly customizable fields.
 - https://github.com/nshenderov/strapi-plugin-ckeditor /202303/js
@@ -448,14 +489,16 @@ modified: 2023-12-15T19:30:23.094Z
   - Replace default Strapi markdown WYSIWYG editor with enhanced build of HTML CKEditor 5.
   - Automatic translation of UI into selected in Strapi language (Strapi v3)
   - Strapi v4 (work in progress)
-  - https://github.com/Roslovets-Inc/ckeditor5-build-strapi-wysiwyg /202203/js
+  - https://github.com/Roslovets-Inc/ckeditor5-build-strapi-wysiwyg /202203/js/inactive
 
-- https://github.com/spalz/strapi-plugin-editorjs-field /202312/ts
+- https://github.com/spalz/strapi-plugin-editorjs-field /MIT/202401/ts
   - This code was developed based on the strapi-plugin-react-editorjs
   - The option to disable specific tools for each field individually
-- https://github.com/melishev/strapi-plugin-react-editorjs /202209/js
+- https://github.com/melishev/strapi-plugin-react-editorjs /202209/js/archived
   - Plugin for Strapi Headless CMS, hiding the standard WYSIWYG editor on Editor.js
   - This is the Strapi v4 version of this plugin
+  - https://github.com/softkitit/strapi-plugin-react-editorjs /202403/js
+    - Fork of unmaintained editorjs for strapi
 - https://github.com/GregorSondermeier/strapi-plugin-editorjs /202212/js
   - A Strapi v4 compatible plugin that provides a custom field for Editor.js rich text content
 
@@ -463,21 +506,17 @@ modified: 2023-12-15T19:30:23.094Z
   - This plugin replaces strapi wysiwyg draft editor with toastui editor.
   - https://github.com/wizcas/strapi-plugin-wysiwyg-tui-editor /js
 
-- https://github.com/kwinyyyc/strapi-plugin-wysiwyg-react-md-editor /202301/js
+- https://github.com/floatrx/strapi-wysiwyg-mdxeditor-plugin /202403/js
+  - https://mdxeditor.dev/editor/demo
+  - This plugin is a WYSIWYG editor for Strapi. It uses the @mdxeditor/editor to provide a rich text editor for Strapi.
+  - Allows you to replace default Strapi WYSIWYG editor with a MdxEditor
+
+- https://github.com/kwinyyyc/strapi-plugin-wysiwyg-react-md-editor /MIT/202403/ts
   - This is a strapi rich text editor plugin based on react md editor
-
-- https://github.com/strapi-fan/strapi-grapesjs-plugin /202309/js
-  - provides a custom field for Strapi that lets you use and configure GrapeJs in no time.
-
-- https://github.com/habilelabs/strapi-html-editor /202208/js
-  - Presenting an alternative to standard wysiwyg editor in Strapi in the form of this HTML-editor that facilitates easier and hussle-free data customization to use with various frontends.
 
 - https://github.com/TomaszPilch/strapi-code-editor-custom-field /202308/ts
   - Code editor plugin for strapi CMS. 
   - It uses the monaco editor (vscode).
-
-- https://github.com/plantagoIT/strapi-drag-drop-content-type-plugin /202402/js
-  - plugin that provides a drag and droppable menu for ordering content types in a somewhat userfriendly way.
 
 - https://github.com/mattmilburn/strapi-plugin-preview-button /MIT/202402/js
   - A plugin for Strapi CMS that adds a preview button and live view button to the content manager edit view.
@@ -489,7 +528,11 @@ modified: 2023-12-15T19:30:23.094Z
   - The use case for this is to allow content editors to easily enter Preview Mode.
 
 - https://github.com/vinubabu323/strapi-plugin-component-preview /202304/js
-  - his plugin helps to give a live preview the component we are using.
+  - plugin helps to give a live preview the component we are using
+  - 用来给字段添加preview
+- https://github.com/abhishek1020N/strapi-plugin-multi-component-preview /202404/js
+  - plugin used to view the actual component through a custom field in strapi. This plugin helps to give a live preview the component we are using. 
+  - This plugin is based on https://www.npmjs.com/package/strapi-plugin-component-preview
 
 - https://github.com/lautr/strapi-plugin-duplicate-button /202311/js
   - Adds a Duplicate Button to the edit view
@@ -499,14 +542,16 @@ modified: 2023-12-15T19:30:23.094Z
   - features like server side form validation and heavy customiztations will most likely never be added to this forms plugin. 
     - If you need something more customized you should look into making a custom controller.
 
-- https://github.com/Zaydme/strapi-plugin-multi-select /MIT/202312/js
+- https://github.com/Zaydme/strapi-plugin-multi-select /MIT/202312/js/inactive
   - A strapi custom field for selecting multiple options from a provided list of items.
   - https://github.com/zaydme/strapi-plugin-multi-country-select /202307/js
     - A strapi custom field for selecting any country based on the ISO 3166-1 country code standard.
   - https://github.com/ChrisEbert/strapi-plugin-country-select /202310/js
 
-- https://github.com/alanzdr/strapi-plugin-dynamic-enumeration-field /202311/js
+- https://github.com/alanzdr/strapi-plugin-dynamic-enumeration-field /MIT/202403/js
   - This plugin adds a new type of enumeration that works like a combobox, where you can get data already registered in the enumeration previously, or add a new item to the select options.
+  - New field Dynamic Enumeration appears in admin content-type-builder page, in the custom tab.
+  - Works inside Components and Dynamic Zones.
 
 - https://github.com/raykeating/strapi-location-field-plugin /202310/js
   - A Strapi plugin to enable a custom location field with autocomplete input
@@ -635,7 +680,7 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/obafunmiso-olufemi/strapi-plugin-review-workflow /202401/ts/wip
   - workflow
 
-- https://github.com/notum-cz/strapi-plugin-content-versioning /117Star/MIT/202403/js
+- https://github.com/notum-cz/strapi-plugin-content-versioning /117Star/MIT/202403/js/deprecated
   - This plugin enables content versioning in Strapi
   - Enables you to have multiple draft versions
   - Keeps a history of all changes, providing the ability to time travel (revert back to previous versions).
@@ -643,6 +688,7 @@ modified: 2023-12-15T19:30:23.094Z
   - Gives you the ability to have different published and draft data
   - Does not work well with GraphQL
   - Not working with UID and unique fields
+  - With Strapi version 5 introducing support for draft content versions, the majority of features offered by this plugin repository will become available as core features. 
   - [Advanced Strapi Enhancement: Notum's Open-Source Plugins_202312](https://strapi.io/blog/elevating-strapi-notum-s-journey-in-creating-three-open-source-plugins)
     - the plugin still has some limitations like the inability to support unique fields and relations inside components
     - 🧐 the entities are still stored in the same database table but each of them is assigned a unique versioning identifier and a link to relevant locale.
@@ -732,6 +778,9 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/pdalvi1893/strapi-indexed-search-multilingual /202403/js
   - Simple search plugin
 
+- https://github.com/wizbii/strapi-plugin-strapi-algolia /202404/ts
+  - A strapi plugin that index items to algolia
+
 - https://github.com/strapi/strapi-plugin-seo /202311/js
   - The official plugin to make your Strapi content SEO friendly
   - Manage the important tags for your SEO (metatitle, metadescription) and preview your content in the SERP
@@ -811,10 +860,6 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/Braunmann/strapi-provider-translate-chatgpt /202304/ts
   - ChatGPT provider for translate plugin in Strapi 4
 
-- https://github.com/surgeharb/strapi-plugin-graphs-builder /202203/js
-  - A plugin for Strapi Headless CMS that provides graphs building tool to generate custom dashboards and reports with the data inside Strapi's database.
-  - https://github.com/surgeharb/strapi-plugins
-
 - https://github.com/Webbist-dev/strapi-redirects /202307/js
   - This plugin allows a user to manage redirects from the admin panel.
   - Inside this plugin you can add redirects, each redirect requires the following fields `[to, from, type]`.
@@ -858,6 +903,11 @@ modified: 2023-12-15T19:30:23.094Z
 
 - https://github.com/webbio/strapi-plugin-internal-links /202311/ts
   - wip
+
+- https://github.com/Webbist-dev/strapi-redirects /MIT/202404/js
+  - This plugin provides a convenient way to manage URL redirects within a dedicated collection type in Strapi
+  - While it does not automatically handle redirects on the server side, it offers a structured endpoint from which frontend applications can fetch redirect rules and implement redirection logic as needed.
+  - Redirects are made available through the `api/redirects` endpoint as a JSON object. This endpoint is accessible to authenticated users
 
 - https://github.com/Edwin-Luijten/strapi-encryptable-field /202310/ts
   - Encrypts values on save, and decrypts on fetch.
@@ -945,6 +995,8 @@ modified: 2023-12-15T19:30:23.094Z
 
 - https://github.com/pakoc/strapi-plugin-html-media /202402/ts
   - Plugin provides a customField that allows you to upload zip archives with html pages to the Strapi CMS
+  - These zip archives contain mini web applications with an index.html launch file
+  - Upon uploading a mini application archive, the server unpacks the archive and saves information about it in a separate table called html-media in the database.
 
 ## utils-ext
 
@@ -962,9 +1014,13 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/smoothdvd/strapi-plugin-bull /MIT/202401/ts
   - strapi-plugin-bull
 
-- https://github.com/WGR-SA/strapi-plugin-collection-tree /202402/ts
+- https://github.com/WGR-SA/strapi-plugin-collection-tree /MIT/202402/ts
   - Plugin allows for simple sorting of your collections. 
   - It incorporates a view that lets you easily drag and drop your items, supporting nested compatibility.
+  - Go to the Collection Tree page, select the collection you wish to sort, and use drag and drop to arrange items. Remember to save your changes
+
+- https://github.com/plantagoIT/strapi-drag-drop-content-type-plugin /202402/js
+  - plugin that provides a drag and droppable menu for ordering content types in a somewhat userfriendly way
 
 - https://github.com/ShahriarKh/strapi-content-type-explorer /MIT/202401/js
   - plugin that visualizes your content types and their relationships like an ERD (Entity Relationship Diagram).
@@ -1073,8 +1129,9 @@ modified: 2023-12-15T19:30:23.094Z
   - plugin for Strapi that automatically generates a unique UUID for your content. 
   - It also allows you to generate UUID based on your regular expressions.
 
-- https://github.com/soranoo/strapi-ulid /202309/ts
-  - This plugin adds support for ULID field type to Strapi as a Custom field. The field will be automatically generated when creating a new entry.
+- https://github.com/soranoo/strapi-ulid /MIT/202404/ts
+  - This plugin adds support for ULID field type to Strapi as a Custom field. 
+  - The field will be automatically generated when creating a new entry.
   - This plugin is inspired and based on strapi-auto-uuid by Cringe Studio.
 
 - https://github.com/Cringe-Studio/strapi-auto-uuid /202306/ts
@@ -1096,6 +1153,9 @@ modified: 2023-12-15T19:30:23.094Z
   - This extension replaces Strapi Design System colors with Tailwind colors.
 
 ## v3-ext
+
+- https://github.com/uwizy/strapi-plugin-webpage-builder /MIT/202006/js
+  - Add GrapesJS builder to your own strapi application
 
 - https://github.com/autom8-apps/strapi--form-builder /202009/js
   - form-builder
@@ -1183,6 +1243,10 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/praveen-1995/strapi-submenus-react-project-v2 /202309/js
   - https://react-strapi-submenus-v2-prod.netlify.app/
   - 纯前端介绍页
+
+- https://github.com/mparramont/strapi-starter /202404/ts
+  - Strapi Starter with PostgreSQL, Typescript and test setup
+  - Simple Access Role setup as a Strapi Content-Type
 
 ## auth/register
 
@@ -1425,13 +1489,10 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/dhzdhd/bidwave /GPLv3/202311/ts/svelte
   - https://bidwave.vercel.app/
   - A realtime auction platform built on SvelteKit and Strapi
-# clients-mobile/pc
+# client-mobile/pc
 - https://github.com/shahednasser/strapi-react-native /202202/js
   - Code for Create a Notes App with Strapi and React Native
 # utils
-- https://github.com/acomagu/strapi-payload-model-migrator /202306/ts
-  - Import models/components from Strapi V3 to Payload CMS
-
 - https://github.com/kristinacowan/wordpress-2-strapi /202005/js
   - Wordpress to strapi one-time conversion code
 
@@ -1474,6 +1535,9 @@ modified: 2023-12-15T19:30:23.094Z
   - Utility for type safe queries for Strapi
   - Strapi has flexible syntax for building queries, as the project grows the logic of the queries becomes complex it becomes difficult to keep track of errors in syntax.
 
+- https://github.com/DigiTailsBR/strapiQueryBuilder /202403/js
+  - provides a convenient way to construct queries for interacting with a Strapi API.
+
 - https://github.com/FlokiTV/strapi-ez /202309/js
   - provides a convenient way to construct queries for interacting with a Strapi API. 
   - It offers various methods to set filters, specify fields, sort results, paginate data, and more. Here's an overview of the features and usage of the StrapiEz class
@@ -1484,20 +1548,32 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/ravgeetdhillon/custom-controllers-strapi /202204/js
   - Implementation Custom Controllers in Strapi using the example of a simple Messaging application.
 
+- https://github.com/mohammadGh/strapi-js /MIT/202404/ts
+  - A minimal node / browser / edge, Typescript / Javascript SDK for Strapi headless CMS
+  - based on Ofetch and Works with Node.js / Browser / Edge
+
 - https://github.com/LittleBadBad/strapi-common-api /202308/ts
   - provide a "strapi client SDK" wrapped some common request api service functions and strapi types support for strapi based frontend apps, and provide some key typescript types hint help, which is something that is not yet officially implemented by strapi
 
 - https://github.com/liondj0/strapi-orm /202305/ts
   - a package that makes creating requests and mapping responses from strapi cms easy.
 
-- https://github.com/jabali2004/strapi-data-replicator /202111/rust
-  - Simple command line utility for replicating and migrating persistent tables or collections for Strapi applications.
-
 - https://github.com/tsarrB/strapi-webshell /202303/js
   - Integrate web shell into your Strapi application
+# devops
+- https://github.com/acomagu/strapi-payload-model-migrator /202306/ts
+  - Import models/components from Strapi V3 to Payload CMS
+
+- https://github.com/jabali2004/strapi-data-replicator /apache2/202404/rust
+  - https://jabali2004.github.io/strapi-data-replicator/strapi_data_replicator/index.html
+  - Simple command line utility for replicating and migrating persistent tables or collections for Strapi applications
+  - The main goal is to simplify development with Strapi and enable easy and automated deployment.
+  - Supported databases: MySQL, MongoDB (3.x.x)
 # more
 - https://github.com/mgmgpyaesonewin/strapi-upptime
   - https://upptime.github.io/upptime
+  - https://demo.upptime.js.org/
+  - Strapi CMS API Monitoring Page Powered by: Upptime
   - This repository contains the open-source uptime monitor and status page for Upptime, powered by Upptime.
   - With Upptime, you can get your own unlimited and free uptime monitor and status page, powered entirely by a GitHub repository. 
 

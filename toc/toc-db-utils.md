@@ -16,6 +16,16 @@ modified: 2022-11-06T11:21:27.612Z
   - simple tool to draw ER diagrams by just writing code
   - Designed for developers and data analysts
 # popular
+- https://github.com/www-zerocode-net-cn/ERD-Online /MIT/202312/ts
+  - https://www.erdonline.com/
+  - 开源、免费在线数据建模、元数据管理平台
+  - 团队协作：三级权限（拥有者、管理员、普通角色）管理，元素级权限控制
+  - 依赖antd-pro、mui5、ace、spreadsheet-ce、handsontable.v6
+  - 元数据设计：快速复制已有表结构、JSON 生成表，表默认字段、默认大小写等控制
+  - 支持多种数据库连接在线管理（Mysql、Oracle、DB2、SqlServer、PostGreSql），各数据源之间元数据结构同步
+  - 版本管理：每个需求与变动，都可以生成版本；每个版本之间可以比对差异
+  - 可将所有表结构，自动生成 word、html、md 文档，便于线下流动
+
 - https://github.com/PieterjanDeClippel/DragDropOrderingDatabase /202111/csharp/inactive
   - How to reorder items at database level using the Stern-Brocot technique
 
@@ -36,16 +46,6 @@ modified: 2022-11-06T11:21:27.612Z
   - PostgREST serves a fully RESTful API from any existing PostgreSQL database. 
   - It provides a cleaner, more standards-compliant, faster API than you are likely to write from scratch.
 # apps
-- https://github.com/www-zerocode-net-cn/ERD-Online /MIT/202312/ts
-  - https://www.erdonline.com/
-  - 开源、免费在线数据建模、元数据管理平台
-  - 团队协作：三级权限（拥有者、管理员、普通角色）管理，元素级权限控制
-  - 依赖antd-pro、mui5、ace、spreadsheet-ce、handsontable.v6
-  - 元数据设计：快速复制已有表结构、JSON 生成表，表默认字段、默认大小写等控制
-  - 支持多种数据库连接在线管理（Mysql、Oracle、DB2、SqlServer、PostGreSql），各数据源之间元数据结构同步
-  - 版本管理：每个需求与变动，都可以生成版本；每个版本之间可以比对差异
-  - 可将所有表结构，自动生成 word、html、md 文档，便于线下流动
-
 - https://github.com/multiprocessio/datastation /ts/go
   - DataStation is an open-source data IDE for developers. 
   - It allows you to easily build graphs and tables with data pulled from SQL databases

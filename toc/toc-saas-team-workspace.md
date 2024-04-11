@@ -33,7 +33,7 @@ modified: 2023-02-07T17:38:05.336Z
   - https://docs.growi.org/en/guide/
   - https://demo.growi.org/
   - Team collaboration software using markdown
-  - 依赖 express、mongoose、es、redis、swr、handsontable.v6
+  - 依赖 express、mongoose、es7、redis、nextjs、swr、i18next、remark-gfm、yjs、y-mongodb-provider、handsontable.v6、react-dnd、react-markdown
   - Create hierarchical pages with markdown
   - Simultaneously edit with multiple people by HackMD(CodiMD) integration
   - 支持notification

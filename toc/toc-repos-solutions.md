@@ -61,6 +61,9 @@ modified: 2020-12-12T19:32:36.255Z
   - 无间隔、固定间隔以及随机间隔，产生或避免高并发爬取。
   - 配合失败重试，自定义错误次数以及 HTTP 状态码自动轮换代理。
   - 优先队列 - 根据单个爬取目标的优先级可以优先于其他目标提前爬取。
+
+- https://github.com/NaiboWang/EasySpider /CC-NonCommercial/202404/python/js
+  - 易采集：一个可视化浏览器自动化测试/数据采集/爬虫软件，可以无代码图形化的设计和执行爬虫任务
 # crawler-examples
 - https://github.com/yangwenmai/github-trending-backup /202401/go
   - Github trending backup by everyday.

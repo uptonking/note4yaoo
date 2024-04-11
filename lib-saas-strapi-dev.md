@@ -96,11 +96,13 @@ modified: 2023-12-15T16:51:56.101Z
   - [Strapi Community Forum](https://forum.strapi.io/)
   - [Directus vs. Strapi – Comparison Headless CMS — Restack](https://www.restack.io/docs/directus-vs-strapi)
 # draft/migrate-to-v5
-- roadmap - lts: editor, excel-table, local-db
-  - migrate plugins to v5: versioning, media
+- 📡 roadmap - lts: editor, excel-table, local-db
   - ~~掌握strapi-够用~~ > 模仿directus-config/delta > undb-fe-be > 模仿directus-flow > collab
+  - migrate plugins to v5: versioning, media
+  - editor: slate, quill, craftjs
   - i18n-cn: 多语言优化、版本控制
   - examples: realworld
+  - 针对 移动端 短视频/小程序 的nocode更符合国内市场需求
 
 - ⌛️ version/history
   - 参考官方实现来做开源版本，参考官方文档说明和代码

@@ -22,6 +22,7 @@ modified: 2023-11-24T18:41:26.906Z
   - 不依赖redux-toolkit
   - 依赖react-redux、styled-components
   - It also features play/pause/step-through, which is inspired by some very cool Elm examples.
+  - [redux-devtools integrations for js and non-js frameworks](https://github.com/reduxjs/redux-devtools/blob/main/extension/docs/Integrations.md)
   - https://github.com/calesce/redux-slider-monitor /201706/js/inactive
     - https://calesce.github.io/redux-slider-monitor/
     - A custom monitor for Redux DevTools to replay recorded Redux actions

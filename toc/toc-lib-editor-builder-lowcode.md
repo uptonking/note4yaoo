@@ -138,6 +138,7 @@ modified: 2020-12-28T12:24:09.275Z
     - 这种东西，不会编程的人对他来说太复杂了，会编程的人来说太繁琐了。
   - 不支持在editor拖拽修改block顺序，只能在大纲拖拽
   - [阿里低代码引擎简介](https://lowcode-engine.cn/site/docs/guide/quickStart/intro)
+  - https://github.com/alibaba/lowcode-demo
 
 - jd-drip-table /1.2kStar/MIT/202403/ts/仅前端的表格无需后端
   - https://github.com/jd-opensource/drip-table
@@ -155,13 +156,23 @@ modified: 2020-12-28T12:24:09.275Z
   - 全家桶
     - https://jdfed.github.io/drip-form/
 
-- tmagic-editor /3.9kStar/apache2/202311/ts
+- tmagic-editor /3.9kStar/apache2/202311/ts/vue/react
   - https://github.com/Tencent/tmagic-editor
   - https://tencent.github.io/tmagic-editor/docs/index.html
   - https://tencent.github.io/tmagic-editor/playground/index.html
   - 页面可视化平台
   - 编辑器是使用 vue3 开发的，但使用编辑器的业务可以不限框架，可以用 vue2、react 等开发业务组件。
   - runtime 概念，tmagic-editor编辑器中心的模拟器画布，是一个 iframe（这里的 runtimeUrl 配置的，就是你提供的 iframe 的 url），其中渲染了一个 runtime，用来响应编辑器中的组件增删改等操作。
+
+- https://github.com/NetEase/tango /1.8kStar/MIT/202404/ts
+  - https://netease.github.io/tango-site/
+  - https://tango-demo.musicfe.com/designer/
+  - 一个源码驱动的低代码设计器框架
+  - 经历网易云音乐内网生产环境的实际检验，可灵活集成应用于低代码平台，本地开发工具等
+  - 基于源码 AST 驱动，无私有 DSL 和协议
+  - 提供实时出码能力，支持源码进，源码出
+  - 提供灵活易用的设计器 React 组件
+  - 感谢 CodeSandbox 提供的 Sandpack 项目，为 Tango 提供了强大的基于浏览器的代码构建与执行能力
 
 - apitable /2.3kStar/AGPLv3/202301/ts/java/维格表团队开源
   - https://github.com/apitable/apitable
@@ -192,7 +203,7 @@ modified: 2020-12-28T12:24:09.275Z
     - APITable is the open-source and community version of Vika.
     - Vika is a SaaS distribution for China mainland built on APITable open-source core
 
-- nocobase /3.7kStar/apache2/202212/ts/国内
+- nocobase /3.7kStar/apache2(core)🌹 > AGPL/202404/ts
   - https://github.com/nocobase/nocobase
   - https://www.nocobase.com/
   - [features](https://docs-cn.nocobase.com/welcome/introduction/features)
@@ -214,6 +225,7 @@ modified: 2020-12-28T12:24:09.275Z
   - you can configure the user interface directly with WYSIWYG operations.
   - Everything is a plugin, all new features can be implemented by developing and installing plugins
   - [change license of plugins-AGPLv3_20230111, v0.8.1 > v0.9.0](https://github.com/nocobase/nocobase/pull/1350)
+  - [change license to AGPLv3 or commercial _2024-03-30](https://github.com/nocobase/nocobase/commit/e2763b332286affb7cfd9c6a9fb90d656226e3fb)
 
 - fast-crud /512Star/MIT/202402/ts/vue/仅前端
   - https://github.com/fast-crud/fast-crud
@@ -250,6 +262,10 @@ modified: 2020-12-28T12:24:09.275Z
   - [Change license from MIT to AGPL V3_202307](https://github.com/webstudio-is/webstudio/pull/1980)
   - [Apps Marketplace](https://github.com/webstudio-is/webstudio/issues/2648)
     - Similar thing to figma apps, they are effectively standalone web apps loaded via iframe, hosted by the 3rd-party provider but with access to project data and api to change it
+
+- https://github.com/dotenx/dotenx /apache2/202402/ts/go
+  - No-code and Low-code all-in-one platform to build landing pages, websites, web applications, APIs, automations. 
+  - An alternative for Wix, Webflow
 
 - https://github.com/codebdy/rxdrag /golang/ts/antd
   - https://rxdrag.vercel.app/
@@ -307,7 +323,7 @@ modified: 2020-12-28T12:24:09.275Z
   - 依赖knex
   - It is great for building admin panels, BI dashboards, workflows, and CRUD apps.
   - Advantages of writing internal tools in YAML or JSON
-  - [chore: Initialise @lowdefy/server-enterprise package.](https://github.com/lowdefy/lowdefy/commit/a0a30d99685a7df211b93eb576d6953a35cc372a)
+  - [chore: Initialise @lowdefy/server-enterprise package _202310](https://github.com/lowdefy/lowdefy/commit/a0a30d99685a7df211b93eb576d6953a35cc372a)
     - packages/servers/server-enterprise
 
 - sunmao-ui /apache2/202301/ts

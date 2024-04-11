@@ -29,7 +29,6 @@ modified: 2020-10-22T16:09:43.158Z
   - This template is designed to accelerate building out a "scrollytelling" map story. The primary input is a story broken into sections (chapters), each hooked to a particular view of a map.
   - This template is for data journalists and digital storytellers of any kind. No coding experience is required.
 # platform
-
 - https://github.com/vizhub-core/vizhub
   - https://vizhub.community/
   - Self Hosted CMS for Web-based Dataviz
@@ -39,6 +38,11 @@ modified: 2020-10-22T16:09:43.158Z
     - possible to self-host your own instance
     - possible to extend the core with plugins
 
+- https://github.com/owid/owid-grapher /MIT/202404/ts
+  - https://ourworldindata.org/owid-grapher
+  - A platform for creating interactive data visualizations
+  - This is the project we use at Our World in Data to create embeddable visualizations
+  - This repo is currently not well-designed for reuse as a visualization library, as our tools are tightly coupled with our database structure.
 # amazing
 - https://github.com/Jannchie/Historical-ranking-data-visualization-based-on-d3.js
   - /4.5kStar/GPLv3/202008

@@ -39,7 +39,10 @@ modified: 2022-08-21T10:19:58.756Z
 # discuss-news
 - ## 
 
-- ## 
+- ## 🎯📡 [TanStack Table V9 Roadmap _202401](https://github.com/TanStack/table/discussions/5270)
+- 
+- 
+- 
 
 - ## 🔌 I just released a small, but somewhat significant "feature" to TanStack Table.
 - https://twitter.com/KevinVanCott/status/1770162986629337282

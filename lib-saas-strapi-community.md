@@ -288,7 +288,14 @@ modified: 2023-12-15T17:04:36.589Z
 
 - ## 
 
-- ## 
+- ## 📄 I have a question, the documentation plugin, is it done with redoc? _202404
+- https://discord.com/channels/811989166782021633/1095091586452426824/1227337659115114638
+- I don't believe so but I believe the plan is in v5 we will end up building an API explorer into the admin and immediately after deprecate that plugin. 
+  - We don't follow the OpenAPI spec and have no plans to (we follow the JSON API Spec)
+  - Documentation plugin just uses the swagger-ui
+- will you deprecate the documentation plugin? Why?
+  - Because half of it doesn't work and it's quite the chore to maintain. We are willing to give it to a community maintainer. It wasn't even slated to make to Strapi 5
+- The documentation plugin always generated empty as soon as i used custom routes
 
 - ## Is there an `/alive` or other endpoints typically used in docker/kubernetes to know if a container is ready? 
 - https://discord.com/channels/811989166782021633/1095091586452426824/1226630834812092506

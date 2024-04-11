@@ -167,7 +167,7 @@ modified: 2021-05-14T14:46:37.026Z
   - Quarto documents are authored using markdown
   - Support for embedding output from Python, R, and Julia via integration with Jupyter and Knitr .
 # data-platform
-- https://github.com/owid/owid-grapher /MIT/202401/ts
+- https://github.com/owid/owid-grapher /MIT/202404/ts
   - https://ourworldindata.org/owid-grapher
   - A platform for creating interactive data visualizations
   - This is the project we use at Our World in Data to create embeddable visualizations

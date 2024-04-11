@@ -12,7 +12,8 @@ modified: 2023-12-21T20:07:29.584Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 🎨 [canvas table render _201408](https://github.com/handsontable/handsontable/issues/1697)
+- 201603: Thanks for the suggestion, but we're strongly rooted in the DOM elements approach, so we don't plan changing that in the foreseeable future.
 
 - ## 🤔💡 [What is the proper way to update data that has been returned from an API call after the table was already initialized/constructed? _202001](https://forum.handsontable.com/t/what-is-the-proper-way-to-update-data-that-has-been-returned-from-an-api-call-after-the-table-was-already-initialized-constructed/4030)
   - What is the best/proper way to reload the hands on table data with the data source that has come back from an API call to the server. 
@@ -92,7 +93,7 @@ modified: 2023-12-21T20:07:29.584Z
   - So I finally got it working. Simply moved all logic into `afterInit()` and stopped using `useState` in any way at all. Just plain js objects and arrays, set inside that the init function.
 
 - ## [Collaboration guide ](https://github.com/handsontable/handsontable/discussions/8517)
-- currently we are not in business of answering these topics.
+- 202012: currently we are not in business of answering these topics.
 
 - ## 🔀 [Remove non used dependencies jsonpatch in v9 _202106](https://github.com/handsontable/handsontable/issues/8140)
 - Since the `ObservedChanges` plugin has been removed recently there are still some artifacts in the source code that should be removed. 
@@ -100,9 +101,9 @@ modified: 2023-12-21T20:07:29.584Z
 
 - [Fixed ObserveChanges plugin memory leak ](https://github.com/handsontable/handsontable/pull/4710)
 
-- ## [Hot to use setDataAtCell while editing a cell and not get blured _202103](https://forum.handsontable.com/t/hot-to-use-setdataatcell-while-editing-a-cell-and-not-get-blured/5068)
+- ## [Hot to use `setDataAtCell` while editing a cell and not get blured _202103](https://forum.handsontable.com/t/hot-to-use-setdataatcell-while-editing-a-cell-and-not-get-blured/5068)
   - I’m working on a collaborative sheet, basically someone could change the data of his sheet and broadcast the change to everyone else, and I’m using setDataAtCell to do that.
-  - And the problem occurs when you are editing a cell, meanwhile setDataAtCell triggered to set the value of another cell, then you’ll lost focus on the cell and what you’ve been editing.
+  - And the problem occurs when you are editing a cell, meanwhile `setDataAtCell` triggered to set the value of another cell, then you’ll lost focus on the cell and what you’ve been editing.
 
 # discuss-perf
 - ## 

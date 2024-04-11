@@ -18,7 +18,9 @@ modified: 2023-04-07T03:10:46.225Z
   - bundle size
 
 - who is using #mobx
-  - linear
+  - reka/craftjs
+  - apps: linear
+  - [Who uses MobX?](https://github.com/mobxjs/mobx/discussions/681)
 # dev
 - Mobx数据管理方案，采用观察者模式，观察可变数据，持有细粒度的数据响应模式，感知到哪些组件需要被更新的时间复杂度是`O(1)`的
 # rewrite
@@ -37,19 +39,48 @@ modified: 2023-04-07T03:10:46.225Z
   - because changes can be detected on a fine-grained level, JSON patches are supported out of the box.
   - because it supports snapshots, action middlewares and replayable actions out of the box, it is possible to replace a Redux store and reducer with a MobX data model. This makes it possible to connect the Redux devtools to mobx-keystone.
 
-## utils
+- https://github.com/EasyWebApp/WebCell /202402/ts
+  - https://web-cell.dev/WebCell/
+  - Web Components engine based on VDOM, JSX, MobX & TypeScript
 
-- https://github.com/ryansolid/mobx-jsx /ts
+## mobx-view
+
+- https://github.com/botverse/vdom-mobx-example /201606/js
+  - Small example on how to use virtual-dom with MobX
+
+- https://github.com/ryansolid/mobx-jsx /MIT/202210/ts/inactive
   - Raw MobX performance without being restrained by a Virtual DOM
   - a demonstration of how MobX fine grain control can be leveraged directly in JSX for considerably better performance than pairing it with a Virtual DOM library
   - It compiles JSX to DOM statements and wraps expressions in functions that can be called by the library of choice.
+    - Unlike Virtual DOM only the changed nodes are affected and the whole tree is not re-rendered over and over.
   - MobX JSX works both with function and Class components
   - MobX JSX also supports a Context API.
   - Alternatively supports Tagged Template Literals or HyperScript
   - Tagged Template solution is much more performant that the HyperScript version, but HyperScript opens up compatibility with some companion tooling
+  - [Solid and mobx-jsx comparison _202005](https://github.com/ryansolid/mobx-jsx/issues/17)
 
-- https://github.com/BrascoJS/delorean /js
+## undo/time-travel
+
+- https://github.com/httptoolkit/mobx-shallow-undo /apache2/202209/ts/inactive
+  - Zero-config undo & redo for Mobx
+
+- https://github.com/mobxjs/mobx-devtools /MIT/202106/js/inactive
+  - Mobx Devtools (React, Chrome Extension) - Looking for maintainers
+  - Track changes in MobX observables
+  - MST support
+
+- https://github.com/zalmoxisus/mobx-remotedev /MIT/201902/js/inactive
+  - MobX DevTools extension
+  - Remote debugging for MobX with Redux DevTools extension
+  - [redux-devtools integrations for js and non-js frameworks](https://github.com/reduxjs/redux-devtools/blob/main/extension/docs/Integrations.md)
+
+- https://github.com/antitoxic/mobx-redux-devtools /201607/js
+  - Sync redux-devtools with mobx structure and get of all devtool goodness like time-travel (undo/redo), persistence, charts, etc.
+
+- https://github.com/BrascoJS/delorean /201711/js/inactive
   - A MobX-React Time Travel Debugger
+
+## utils
 
 - https://github.com/sindresorhus/on-change /js
   - Watch an object or array for changes
@@ -57,6 +88,11 @@ modified: 2023-04-07T03:10:46.225Z
   - Uses the `Proxy` API.
 # blogs
 - [Cool Software | Benchmarking MobX-State-Tree Performance](https://coolsoftware.dev/blog/benchmarking-mobx-state-tree/)
+
+##  🆚️ [Comparison with Other Frameworks — Vue2](https://v2.vuejs.org/v2/guide/comparison.html)
+
+- MobX has become quite popular in the React community and it actually uses a nearly identical reactivity system to Vue. 
+  - To a limited extent, the React + MobX workflow can be thought of as a more verbose Vue, so if you’re using that combination and are enjoying it, jumping into Vue is probably the next logical step.
 
 ## [Mobx 思想的实现原理，及与 Redux 对比 - 知乎](https://zhuanlan.zhihu.com/p/25585910)
 
@@ -130,6 +166,39 @@ modified: 2023-04-07T03:10:46.225Z
   - setup的写法解决的首要问题和hooks是一致的这个一目了然。
 
 - Vuex的响应原理跟vue是一样的，因为对比的是响应原理，不是用法
+
+## 🆚️ [Comparing reactivity models - React vs Vue vs Svelte vs MobX vs Solid vs Redux _202008](https://dev.to/lloyds-digital/comparing-reactivity-models-react-vs-vue-vs-svelte-vs-mobx-vs-solid-29m8)
+
+- In React, reactive state is created using the useState hook - it returns the state itself, and a setter function to update the state.
+  - When the setter is called the whole component re-renders - this makes it really simple to declare derived data - we simply declare a variable that uses the reactive state.
+  - It's possible to run a function whenever some reactive state changes using the useEffect hook.
+  - There's one downside to Reacts reactivity model - the hooks (useState and useEffect) have to always be called in the same order and you can't put them inside an if block. 
+
+- In Vue we can declare reactive values using the ref function from the Composition API. 
+  - It returns a reactive value with a value property that tracks everytime you access it. 
+  - We can declare derived values using the computed function. 
+  - Updating state is as simple as writing to the .value prop of reactive data. Arrays can be changed directly using push, pop, splice and other array methods.
+  - We can run effects when some data changes using watchEffect - it takes a function that runs whenever a reactive value used inside changes.
+
+- Svelte uses a "radical new approach" to building UI - it's a compiler that generates code and leaves no traces of the framework at runtime.
+  - any variable declared with let can be reactive. Derived data is declared with the $: label
+
+- MobX is a state management solution and can be used with React, Vue or any UI library. 
+  - we first pass some data to observable to make it observable.
+  - Updating values is very simple - we can use all the common array methods like push, pop, slice etc. on observable arrays.
+  - The only caveat is that MobX doesn't actually track usage, but rather it tracks data access, so you have to make sure you access the data through a property inside the observer component.
+  - Running effects is as simple as passing the effect to autorun. Any observable or computed values accessed in the function become the effect dependency - when they change, the effects re-runs.
+
+- Solid is kinda like if React and Svelte had a baby
+  - We can create observable state using createSignal
+  - To create derived data we can use createMemo
+  - createEffect function that also tracks dependencies, but instead of returning values it just runs some arbitrary effect.
+
+- Redux is a predictable state container for JavaScript apps.
+  - To define the initial state we use the createSlice
+  - Derived data can be defined by creating selectors 
+  - Running effects when state changes can be achieved by simply subscribing to the store using store.subscribe and passing it a function that runs whenever the state changes.
+  - Only thing to remember is that in Redux you have to dispatch the actions.
 # blogs-rewrite
 - [手写实现MobX的observable和autorun方法 | JackySummer](https://jacky-summer.github.io/2021/01/01/%E6%89%8B%E5%86%99%E5%AE%9E%E7%8E%B0MobX%E7%9A%84observable%E5%92%8Cautorun%E6%96%B9%E6%B3%95/)
   - [手写状态管理库: Mobx - 掘金](https://juejin.cn/post/7076329672706883591)
@@ -145,3 +214,25 @@ modified: 2023-04-07T03:10:46.225Z
 
 - We want our library to build up a mapping between every property available in the store and a list of components that should re-render when that property changes.
 # more
+
+# discuss-mobx
+
+- ## 
+
+- ## 
+
+- ## [Undo Redo manager with mobx-utils `deepObserve` _202202](https://github.com/mobxjs/mobx/discussions/3281)
+- here's a new version that runs synchronously: codesandbox.io/s/mobx-undo-redo-v4-mwyi6
+
+- ## [Performant undo without spies in MobX 4+ _201810](https://github.com/mobxjs/mobx/issues/1764)
+- I think the freshly released `deepObserve` utility should be able to help you out
+  - Unfortunately, I don't think we can guarantee that the state is fully cycle-free.
+
+- ## [Q: building an undo/redo using Mobx 5 _201807](https://github.com/mobxjs/mobx/issues/1630)
+- snapshots are not the best basis for undo/redo, patches are more
+reliable if you are building a multi actor system (e.g. changes are being received from the server, which you don't want to undo)
+  - To record mutations without MST,  `deepObserve` from mobx-utils can now be used
+
+- ## [I'm confused a bit with spy removal at 5.x. _201902](https://github.com/mobxjs/mobx/issues/1906)
+- You might want to try `mobx-utils.deepObserve` instead. 
+  - Spy triggers on anything, not just the relevant pieces of your model, so it isn't a scalable solution

@@ -89,6 +89,38 @@ modified: 2023-10-27T06:54:20.487Z
 - It makes the code easier as well because you can generate IDs on the client.
   - Exactly! this also makes the system as a whole more scalable. This is not something you need early on, but changing PKs later is super hard and starting with UUIDs is not.
 
+- 🆔️ [GUIDS case sensitive? - C# / C Sharp](https://bytes.com/topic/c-sharp/answers/233494-guids-case-sensitive)
+  - Is the uniqueness of a guid case-sensitive?
+  - No. A guid is really just 128 bits of data. The string representation is just one way of making it a little easier to read and work with
+  - The "letters" you refer to are actually hex digits A-F, so no, case doesn't matter.
+  - A GUID is a 128 bit structure. The normal string representation uses 32 hex digits to represent the 32 nibbles in the structure, and is not case-sensative.
+
+- ## 🆔️ [Universally Unique Lexicographically Sortable Identifier in Go | Hacker News _201612](https://news.ycombinator.com/item?id=13116308)
+  - [Understanding How UUIDs Are Generated | Hacker News _202009](https://news.ycombinator.com/item?id=24636204)
+
+- I wonder why you would ever want it to be case-insensitive? Surely that increases the possibility of clashes, and violates the very good principle of least surprise (pretty much every other ID in the world is case-sensitive).
+  - The hex representation of GUIDs/UUIDs is case insensitive in most interpretations, I'd say that counts enough.
+- I'd be surprised if many developers these days actually compared UUIDs case-insensitively, though, even if they're intended to be. Microsoft, which have relied on GUIDs for years going back to their version of DCE/RPC, probably does it right.
+
+- 🆚️ compare ULID with UUID
+  - An ulid is "sortable". 
+    - But the whole point of an UUID is a random unique ID. Non guessable. Sortable is not a feature you normally want from an uuid. And still UUIDs are still sortable. But it doesnt have any meaning. 
+  - An ulid also encodes Time, an uuid doesn't. 
+  - An uuid has less change of clashing: Its 128 bit vs 80 bit for ulid.
+  - An uuid is also url safe.
+  - An ulid is case insensitive. I don't see how this is an advantage.
+
+- ULIDs are meant to be compared with Time UUIDs in particular
+
+- ## 🆚️🆔️ [Question: how this compares with ulid ? · paralleldrive/cuid _201804](https://github.com/paralleldrive/cuid/issues/103)
+- ulid lacks the client fingerprint. It may get away with that because by default, it will only use a CSRNG rather than pseudo-random source.
+- cuid has been battle tested in production in apps with hundreds of millions of users since 2012. We have never had a verified report of collision issues. We continuously run collision tests across multiple generating hosts. I have never seen them fail in a production release of cuid (Beware: I have seen slug collisions).
+  - As of this writing, cuid is used in 488 packages and over 21, 000 repos, including the native id generator for some dbms systems. ulid is used in 34 packages and 153 repos. This doesn't mean it's better, but it does provide evidence that it's a lot more battle tested.
+- Because cuid doesn't rely on CSRNG, it is likely to be faster, and synchronous.
+- ulid is more configurable -- it allows you to supply your own time and random number generators via the factory -- this could also be considered a downside, because you trade off consistency and the assurance that your id generating methods are battle-tested and collision resistant.
+
+- ### [feat: add support to cuid · cockroachdb/cockroach _202211](https://github.com/cockroachdb/cockroach/issues/91006)
+- Thanks for the feature request! Until we add this support, you might be able to get what you want by using a `bytes` column, and in 22.2, you can add a user-defined function that converts it to CUID format.
 # discuss
 - ## 
 

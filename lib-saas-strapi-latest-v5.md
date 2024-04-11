@@ -140,8 +140,6 @@ npx create-strapi-app@5.0.0-beta.0 strapi5-app-beta0 --quickstart --ts
 - from the doc, route middlewares require me to enumerate the model uid. but I need to modify the response for several routes by a rule.
   - You can dynamically inject route middlewares in register.(js/ts)
   - And I assume the same thing is posible for document service middleware but I would have to test that out.
-
-
 # discuss-v5-changelog
 - ## wip
 
@@ -157,7 +155,12 @@ npx create-strapi-app@5.0.0-beta.0 strapi5-app-beta0 --quickstart --ts
 
 - ## 
 
-- ## 
+- ## [feat(admin): rbac middleware _20240328](https://github.com/strapi/strapi/pull/19949)
+  - so we can use rbac middleware across the app generically, not just isolated to the CM with a weird redux workaround
+- adds an RBAC api class to run a middleware system
+- removes the content-manager RBAC manager from redux.
+- `useRBAC` now returns an array of permissions
+- Internally `useRBAC` now preferably wants an array and ignores keys of the object, so the action names are derived from the `action` property of the `permission` .
 
 - ## 🗑️ [chore: remove old plugin generator in favor of `plugin:init` _20240322](https://github.com/strapi/strapi/pull/19875)
 

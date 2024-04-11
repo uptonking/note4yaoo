@@ -326,7 +326,17 @@ betterdiscordctl -i flatpak install
   - [x] streaming infinite-list/tree
 # dev-04-strapi-preview-versions-&-yjs-codebase
 
-## 040
+## 041
+
+## 0411
+
+
+- [Is there any difference between a GUID and a UUID? - Stack Overflow](https://stackoverflow.com/questions/246930/is-there-any-difference-between-a-guid-and-a-uuid)
+  - The simple answer is: no difference, they are the same thing.
+  - For most practical purposes, treat them as 16 byte (128 bits) values that are used as a unique identifier. In Microsoft-speak they are called GUIDs, but call them UUIDs when not using Microsoft-speak.
+  - GUID is Microsoft's implementation of the UUID standard.
+  - RFC 4122 itself states that UUIDs "are also known as GUIDs". All this suggests that "GUID", while originally referring to a variant of UUID used by Microsoft, has become simply an alternative name for UUID…
+  - One difference between GUID in SQL Server and UUID in PostgreSQL is letter case; SQL Server outputs upper while PostgreSQL outputs lower.
 
 ## 0407
 

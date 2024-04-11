@@ -13,7 +13,9 @@ modified: 2021-08-16T06:45:26.099Z
 
 - ## 
 
-- ## 
+- ## 五一准备去哪
+- https://twitter.com/sun0225SUN/status/1778210771874578773
+  - 小红书地图
 
 - ## Farewell, orange highways. 
 - https://twitter.com/dbabbs/status/1729550577841877169
@@ -27,7 +29,6 @@ modified: 2021-08-16T06:45:26.099Z
   Meta / FB - 2022
   Uber - 2018
 - The remaining holdouts that have yet to converge: Waze, Bing/Azure, and Amazon AWS
-
 
 - our reasoning: orange/yellow highways pulled visual attention from full color place iconography we were adding and clashed with our new global landcover layer. our map is also heavily focused on pedestrian + social use cases.
 

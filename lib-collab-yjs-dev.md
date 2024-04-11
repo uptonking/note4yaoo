@@ -23,6 +23,7 @@ modified: 2022-04-05T10:10:59.826Z
 
 - cons
   - yata冲突处理算法不如rga/fractional-index/logoot/lseq主流
+  - 难以添加自定义data type或扩展现有类型
   - 数据传输基于二进制，高性能，但开发调试很不方便，需要devtools
   - 文本格式的添加清除较繁琐
 
@@ -30,6 +31,7 @@ modified: 2022-04-05T10:10:59.826Z
   - Automatic Syncing and no conflicts
   - Offline Support
   - support Peer-to-Peer
+  - delete使用state-based crdt
 
 - who is using #yjs
   - jupyter

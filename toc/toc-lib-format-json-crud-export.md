@@ -21,6 +21,12 @@ modified: 2022-11-06T16:47:43.444Z
 - https://github.com/mongodb-js/jsonpatch-to-mongodb
   - Convert JSON patches into a MongoDB update
 # json-patch-diff
+- https://github.com/chbrown/rfc6902 /MIT/202312/ts
+  - https://chbrown.github.io/rfc6902/
+  - Complete implementation of RFC6902 in TypeScript
+  - Complete implementation of RFC6902 "JavaScript Object Notation (JSON) Patch" (including RFC6901 "JavaScript Object Notation (JSON) Pointer"), for creating and consuming application/json-patch+json documents. 
+  - Also offers "diff" functionality without using Object.observe.
+
 - https://github.com/Starcounter-Jack/JSON-Patch /ts
   - Lean and mean Javascript implementation of the JSON-Patch standard (RFC 6902).
   - Update JSON documents using delta patches.

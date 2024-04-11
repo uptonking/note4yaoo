@@ -22,6 +22,7 @@ modified: 2023-02-26T18:25:01.328Z
 - dashboard-demos
   - flowbite-admin、windster
   - react-admin、material
+  - tremor
 
 - tailwind-css-classes
   - [Tailwind CSS Cheat Sheet - Flowbite](https://flowbite.com/tools/tailwind-cheat-sheet/)

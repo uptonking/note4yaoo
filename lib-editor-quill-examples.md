@@ -36,10 +36,6 @@ modified: 2023-02-09T18:32:06.240Z
   - 依赖 svelte、popperjs2、typewriter/delta
   - Built on the same data model as Quill.js, the Delta format, and using a tiny virtual DOM, Superfine, Typewriter aims to make custom rich text editors faster, easier, and more powerful
 
-- https://github.com/WindrunnerMax/QuillBlocks /202403/ts
-  - Quill Editor Blocks Kit
-  - 依赖react
-
 - https://github.com/ludejun/quill-react-commercial /ISC/202404/ts/js
   - https://ludejun.github.io/quill-react-commercial/
   - 多功能的、可面向商业化的quill富文本编辑器
@@ -223,9 +219,9 @@ modified: 2023-02-09T18:32:06.240Z
 - https://github.com/weblineindia/ReactJS-CK-Editor /MIT/202403/js
   - A simple, native and easy-to-use WYSIWYG / Rich Text editor built in Quill.js and React.js
 
-- https://github.com/innovatorved/Markdown-Editor /202212/ts/inactive
-  - https://markdown-editor-six-mu.vercel.app/
-  - A simple Nextjs , Quill based markdown Editor
+- https://github.com/WindrunnerMax/QuillBlocks /202403/ts
+  - Quill Editor Blocks Kit
+  - 依赖react
 
 - https://github.com/ChrisMayor/D365RichTextEditor /202012/ts
   - Dynamics 365 Rich text editor for Unified Interface / Based on PowerApps component framework, React and quill
@@ -251,7 +247,12 @@ modified: 2023-02-09T18:32:06.240Z
 
 - https://github.com/BobaBoard/boba-editor /MIT/202203/ts/deprecated
   - An advanced text editor based on QuillJS, vaguely inspired by Tumblr's
-  - 最新转向tiptap
+  - https://github.com/FujoWebDev/astrolabe
+    - 最新转向tiptap
+
+- https://github.com/innovatorved/Markdown-Editor /202212/ts/inactive
+  - https://markdown-editor-six-mu.vercel.app/
+  - A simple Nextjs , Quill based markdown Editor
 # client-mobile
 - https://github.com/imnapo/react-native-cn-quill /202306/ts
   - a rich-text editor for react-native. 

@@ -132,6 +132,7 @@ modified: 2023-03-09T13:47:07.317Z
 
 - https://github.com/Graphite-Docs/graphite /201908/js
   - Encrypted, secure, user-owned productivity suite
+  - 依赖slate.v0.47、handsontable.v7
 # office-viewer
 - https://github.com/cweijan/vscode-office /MIT/202401/js
   - 让VSCode支持预览PDF, Excel和Word等格式, 并增加markdown所见即所得编辑器
@@ -145,6 +146,13 @@ modified: 2023-03-09T13:47:07.317Z
   - 依赖docx-preview、pdfjs、exceljs、x-data-spreadsheet
   - [非Vue框架文件预览 | vue-office](https://501351981.github.io/vue-office/examples/docs/guide/js-preview.html)
     - 为了在非Vue的框架中进行Office文件预览，增加了通过js进行预览的方式。
+
+- https://github.com/zhuye1993/file-view /202203/js/vue/inactive
+  - https://zhuye1993.github.io/file-view/dist/index.html
+  - [前端实现word、excel、pdf、ppt、mp4、图片、文本等文件的预览 - 掘金 _202203](https://juejin.cn/post/7071598747519549454)
+- https://github.com/zgsgs/vitest-starter-plus /202307/ts/vue/inactive
+  - Vue 3 + TypeScript + Vite + Vitest + wsm + UnoCSS
+  - 依赖vue3、pinia、naive-ui、handsontable.v12、nuxt、@vueuse/nuxt、unocss
 
 - https://github.com/Jarrettluo/all-docs /MIT/202401/js/vue
   - https://jiaruiblog.com/all-docs-page/
@@ -379,7 +387,9 @@ modified: 2023-03-09T13:47:07.317Z
   - Sign and request signatures on PDFs, MS Office documents
   - demonstrates building a signing application where users can request signatures on the documents by placing fields, sign documents, review signed documents using PDFTron PDF SDK.
 
-- https://gitee.com/software-minister/jvs-knowledge-ui /apache2/202204/java/inactive
+- https://github.com/RKQF-JVS/jvs-knowledge-ui /apache2/202207/java/js/vue/inactive
+  - https://gitee.com/software-minister/jvs-knowledge-ui
+  - http://knowledge.bctools.cn/
   - 无忧·企业文档=企业级知识库+在线编辑工具集+企业搜索引擎+内容展示平台
   - 【企业级在线文档】，解决企业内部文档编辑、知识沉淀、知识协同等痛点。
   - 项目主要采用Java开发，基础框架采用JVS（spring cloud+Vue）。

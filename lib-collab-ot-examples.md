@@ -276,9 +276,10 @@ modified: 2022-10-02T20:51:30.444Z
 - https://github.com/vaziliybober/operlib
   - An operational transformation library
 
-- https://github.com/BrotherJing/scalable-ot
+- https://github.com/BrotherJing/scalable-ot /MIT/201911/ts/inactive
   - A scalable concurrent collaboration framework based on Operational Transformation (OT).
   - 后端依赖 ot-json0、ot-text、google-protobuf、mongodb、ws、express
+  - 前端依赖handsontable.v7、text-diff-binding、protobuf
   - Clients send operations through API.
   - Operations are pushed into MQ, partitioned by document id.
   - OT server receives operations of same document sequentially and performs conflict solving.

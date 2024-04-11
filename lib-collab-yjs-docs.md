@@ -86,7 +86,7 @@ modified: 2022-04-05T10:11:21.023Z
 - We could share even more awareness information like the mouse position of each user, or a live video recording of each user. 
   - But when we share too much information, we distract our users from the task at hand. 
   - So it is important to find the right balance, that makes sense for your application.
-- Awareness information isn't stored in the Yjs document, as it doesn't need to be persisted across sessions. 
+- 🧮 Awareness information isn't stored in the Yjs document, as it doesn't need to be persisted across sessions. 
   - Instead, we use a tiny state-based Awareness CRDT that propagates JSON objects to all users. 
   - When you go offline, your own awareness state is automatically deleted and all users are notified that you went offline. 
   - While this feature is optional, it is recommended that network providers implement the awareness protocol to make it easier to switch providers. 
@@ -135,10 +135,30 @@ yarray.insert(0, [subArray]) // Throws exception!
 - A relative position is fixated to an element in the shared document and is not affected by remote changes. 
 - Relative positions are guaranteed to always point to the same location When all clients sync up, all relative positions will translate to the same index-position. This is not possible in OT-like solutions
 
-## [Delta Format | Yjs Docs](https://docs.yjs.dev/api/delta-format)
+## ⚖️ [Delta Format | Yjs Docs](https://docs.yjs.dev/api/delta-format)
 
 - The Delta Format was originally described by the Quill rich text editor. 
   - We adapted the approach to describe changes on sequence-like data (e.g. `Y.Text, Y.Array, Y.XmlFragment`).
   - it can also be used to describe the current state of a sequence-like data structure
 - The delta format is very powerful to express changes that are performed in a Transaction.
   - events are fired after transactions. With the delta format we can express multiple changes in a single event
+
+## [Subdocuments | Yjs Docs](https://docs.yjs.dev/api/subdocuments)
+
+- Yjs documents can be embedded into shared types. This allows you to manage vast amounts of Yjs documents as part of a root document.
+- An obvious use-case is to manage documents in a folder structure. 
+  - Each document (potentially containing large amounts of rich-text content) could be represented as a subdocument that is lazily loaded to memory when needed. 
+  - By default, subdocuments are empty until they are explicitly loaded.
+- It is up to the providers to sync subdocuments. It is possible to create a very efficient sync mechanism using sub-documents. 
+
+- By default, all subdocuments must be explicitly loaded before they are filled with content.
+
+- 
+- 
+- 
+- 
+
+# more
+
+- 
+- 

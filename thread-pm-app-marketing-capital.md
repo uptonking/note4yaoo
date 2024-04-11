@@ -9,15 +9,19 @@ modified: 2023-10-14T12:11:39.039Z
 
 # guide
 
-# discuss-office
+# discuss-office-capital
 - ## 
 
-- ## 
+- ## Proton and @StandardNotes are joining forces! __20240410
+- https://twitter.com/ProtonPrivacy/status/1778045394217312712
+  - We’re excited that #StandardNotes will be joining the Proton family to bring end-to-end encrypted note-taking to Proton users.
+  - Standard Notes will remain free, #opensource, and fully supported
+- Standard Notes doing things right, unlike Skiff
 
-- ## We’re super excited to share Canva has joined forces with @affinitybyserif the creative software suite  _20240326
+- ## We’re super excited to share Canva has joined forces with @affinitybyserif the creative software suite  __20240326
 - https://twitter.com/canva/status/1772448060259623330
 
-- ## We're excited to accelerate Skiff's mission by joining Notion. _20240210
+- ## We're excited to accelerate Skiff's mission by joining Notion. __20240210
 - https://twitter.com/skiffprivacy/status/1756093174806974831
   - Skiff apps remain free and accessible for the next 6 months. Refunds are available to those with paid accounts.  We understand the inconvenience. Product shutdowns occur.
 
@@ -30,6 +34,29 @@ modified: 2023-10-14T12:11:39.039Z
 
 - https://twitter.com/YousefED/status/1756336006763037166
 - It's another reminder how we need more Local-First software - so users have true data ownership and can keep accessing and working with your data long into the future 
+
+- ## tiptap: Raised $2.6M for our Series Seed. __202310
+- https://twitter.com/tiptap_editor/status/1714991359201771592
+  - Tiptap is one of the leading open-source dev tools for rich content editors, with over 2 million downloads per month and used by companies like @SubstackInc , @AxiosHQ , and @gitlab .
+  - Over the next few months, we'll be doubling down on our two major features: real-time collaboration and AI for the Tiptap editor. We will also be providing more features and open-source extensions to turn every text box on the web into a smart and collaborative one.
+- Does this mean that you can opensource the Pro plugins?
+  - They are already available for free (but no OSS at the moment)
+
+- ## Atlassian acquires Loom for $975m __202310
+- https://twitter.com/FrancescoD_Ales/status/1712467243022577927
+
+- ### Atlassian 今天宣布，以10亿美元收购录屏软件 Loom
+- https://twitter.com/ruanyf/status/1712842503656001568
+  - 成立于2015年，只是一个 Chrome 插件（图二），后来陆续发布了桌面端和手机端。它会把你的录屏自动发到云端，生成一个链接，你把这个 URL 发给其他人，对方就能在 Loom 的网站看到这个视频
+  - 对企业用户非常有用，有些事情说不清，录一段屏就能让别人明白。它现在有20万用户，每月生成500万段视频，就能价值10亿美元。
+- 这卖的不是录屏功能而是在线视频saas服务，数据存储，社交分享功能。
+-  一堆免费截屏软件作者表示可惜。
+# discuss-office
+- ## 
+
+- ## 
+
+- ## 
 
 - ## 🌰 飞书8000多人的规模，ARR 刚过1亿美元，折算下来人均人民币10万不到的产值，尽管如此，每年却要烧掉100多亿，看不到业务的可持续性。
 - https://twitter.com/ohyishi/status/1730080052044575056
@@ -63,24 +90,7 @@ modified: 2023-10-14T12:11:39.039Z
   - 补充：我们是飞书的付费用户，但我们这种主动买工具的 SMB 在中国少见，更多还是要靠 KA。字节可以做飞书这件事的根本原因是有抖音这个印钞机，而飞书毕竟是一个“社会责任”的脸面。
 - 小公司的业务模式不需要用飞书，微信+金山文档就够了，上万人的大厂为了信息安全又会自己做IM，就像字节自己也是用了一段时间钉钉后就开始开发飞书。
 
-- ## tiptap: Raised $2.6M for our Series Seed. __/202310
-- https://twitter.com/tiptap_editor/status/1714991359201771592
-  - Tiptap is one of the leading open-source dev tools for rich content editors, with over 2 million downloads per month and used by companies like @SubstackInc , @AxiosHQ , and @gitlab .
-  - Over the next few months, we'll be doubling down on our two major features: real-time collaboration and AI for the Tiptap editor. We will also be providing more features and open-source extensions to turn every text box on the web into a smart and collaborative one.
-- Does this mean that you can opensource the Pro plugins?
-  - They are already available for free (but no OSS at the moment)
-
-- ## Atlassian acquires Loom for $975m __/202310
-- https://twitter.com/FrancescoD_Ales/status/1712467243022577927
-
-- ### Atlassian 今天宣布，以10亿美元收购录屏软件 Loom
-- https://twitter.com/ruanyf/status/1712842503656001568
-  - 成立于2015年，只是一个 Chrome 插件（图二），后来陆续发布了桌面端和手机端。它会把你的录屏自动发到云端，生成一个链接，你把这个 URL 发给其他人，对方就能在 Loom 的网站看到这个视频
-  - 对企业用户非常有用，有些事情说不清，录一段屏就能让别人明白。它现在有20万用户，每月生成500万段视频，就能价值10亿美元。
-- 这卖的不是录屏功能而是在线视频saas服务，数据存储，社交分享功能。
--  一堆免费截屏软件作者表示可惜。
-
-- ## Sentry raised $217M in VC __/202310
+- ## Sentry raised $217M in VC __202310
 - https://twitter.com/1Marc/status/1710866233845801353
   - I’m glad they are contributing $500k to open source, and I do hope other companies follow suit. 
   - But we’ll see… it’s definitely better than ads and dev rel which is where most of these companies dump their investor’s money.
@@ -94,6 +104,10 @@ modified: 2023-10-14T12:11:39.039Z
 
 - 你抽腾讯的钱，那叫抽成。你特么抽我用户的钱，算特么哪门子的抽成？这就是垄断的可怕之处。
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

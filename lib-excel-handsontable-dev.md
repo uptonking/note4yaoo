@@ -51,6 +51,10 @@ modified: 2022-08-21T09:57:32.451Z
   - Scroll: Use native scrollbars to navigate within the table
   - Internationalization
 
+
+- who is using #handsontable
+  - growi(hot.v6)
+
 - dev-xp
   - mutable data before v8
 # draft

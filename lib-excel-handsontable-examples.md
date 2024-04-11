@@ -26,7 +26,7 @@ modified: 2023-12-21T20:06:13.700Z
   - https://github.com/handsontable/react-handsontable/tree/2.1.0 /MIT/201812/ts
     - the official wrapper 
   - 🍴 forks
-    - https://github.com/swsvindland/opentable /202201/js/from-jacksontable/move walkontable back
+    - https://github.com/firm-app/opentable /202201/js/from-jacksontable/move walkontable back
       - https://github.com/swsvindland/opentable-react
     - https://github.com/rathbone-labs/jacksontable /201907/js/inactive
     - https://github.com/lbobylev/jacksontable
@@ -91,7 +91,7 @@ modified: 2023-12-21T20:06:13.700Z
   - CSV editor that gives you a great experience with simple operations.
   - 依赖hot.v6、electron、vuedraggable
 
-- https://github.com/implerhq/impler.io /MIT/202401/ts
+- https://github.com/implerhq/impler.io /MIT/202401/ts/Nestjs
   - https://impler.io/
   - Open source CSV & Excel file Import Experience
   - Built With Nestjs Typescript Nx Pnpm
@@ -101,6 +101,10 @@ modified: 2023-12-21T20:06:13.700Z
   - https://dtstack.github.io/dt-react-component/
   - React UI component library based on antd package
   - 依赖handsontable.v6
+
+- https://github.com/tinper-acs/ac-hand-table /201911/js/inactive
+  - https://tinper-acs.github.io/ac-hand-table/
+  - ac-hand-table 是基于 handsontable.v7 的适用于 React 框架的电子表格，它提供了数据绑定、数据验证、行过滤、列排序、表格多选、表格样式、表头交互、表头拖拽、行高拖拽、行交换等操作
 
 - https://gitee.com/bomwu/xlsx2handson /202205/js/inactive
   - 一个将XLSX文件转换为Handsontable配置的工具, 可参考dist/index.html
@@ -169,11 +173,20 @@ modified: 2023-12-21T20:06:13.700Z
 
 - https://github.com/xuehongyanL/SetLite /MIT/201901/js
   - lightweight electron app for data processing & visualization
-  - 依赖handsontable.v6、katex
+  - 依赖handsontable.v6、react-katex、react-bootstrap
+  - I have used miniblink as alternative for electron built-in browser kernel
 
 - https://github.com/ONSdigital/dp-table-builder-ui /202207/js
   - react component ui for table builder
   - 依赖handsontable.v0.33
+
+- https://github.com/White-Canary-Team/Google-Docs /201710/js
+  - Cloned Google Docs with react | redux | nodeJS | Socket. IO | QuillJS | JSpreadsheets | MaterialUI.
+  - 依赖handsontable.v0.34、material-ui.v0.19、react-quill、react-redux、socket.io
+
+- https://github.com/bloodstrawberry/react-project /202404/js
+  - https://bloodstrawberry.github.io/react-project/myHandsTable
+  - 玩具合集: hot/tui/file-browser/chat
 
 - https://github.com/GeordiIGT/grids /202207/js
   - For FuturMaster: handsontable, ag-grid
@@ -181,6 +194,7 @@ modified: 2023-12-21T20:06:13.700Z
 - https://github.com/geoffreylitt/wildcard /202104/ts/inactive
   - https://www.geoffreylitt.com/wildcard/
   - A browser extension for customizing web apps with a spreadsheet view
+  - 依赖hot.v7
   - Wildcard is a platform that empowers anyone to build browser extensions and modify websites to meet their own specific needs.
   - Wildcard shows a simplified view of the data in a web page as a familiar table view. People can directly manipulate the table to sort/filter content, add annotations, and even use spreadsheet-style formulas to pull in data from other websites.
 
@@ -239,6 +253,30 @@ modified: 2023-12-21T20:06:13.700Z
   - The goal of this repo is to create a natural language interface to perform spreadsheet tasks.
   - This code uses prompt engineering to generate code from a given request that will then interact with the spreadsheet.
   - The approach to this app is to leverage GPT to take a user's request, convert it into a piece of code that is then executed with eval.
+
+- https://github.com/liuwei2016/file-viewer /202301/js/vue/inactive
+  - 一个客户端压缩包和文件预览系统
+  - 依赖vue2、jszip、handsontable.v11
+
+- https://github.com/bloodstrawberry/csv-editor-with-handsontable /202208/js
+  - 依赖hot.v12
+# collab
+- https://github.com/liddiard/project-linteum /201703/js
+  - Concept for a Handsontable+Node.js+Websockets collaborative editing tool that publicly exposes sheet data via an API. 
+  -  Didn't get very far because https://github.com/liddiard/google-sheet-s3 solved my use case
+
+- https://github.com/BrotherJing/scalable-ot /MIT/201911/ts/inactive
+  - A scalable concurrent collaboration framework based on Operational Transformation (OT).
+  - 后端依赖 ot-json0、ot-text、google-protobuf、mongodb、ws、express
+  - 前端依赖handsontable.v7、text-diff-binding、protobuf
+  - Clients send operations through API.
+  - Operations are pushed into MQ, partitioned by document id.
+  - OT server receives operations of same document sequentially and performs conflict solving.
+  - Broadcast server sends conflict-free operations to clients.
+  - Conflict-free operations are pushed into another MQ(or db stream), trigger a consumer which apply them on document snapshot sequentially.
+
+- https://github.com/khalilgharbaoui/realtime_spreadsheet /201906/ruby
+  - Realtime spreadsheet like google docs using Rails, RethinkDB (nobrainer)
 # integrations
 - https://gitlab.com/thanhhuu09/superset-handsontable-plugin /202308/ts/v13
   - This is the Superset Handsontable Plugin Superset Chart Plugin.
@@ -247,3 +285,8 @@ modified: 2023-12-21T20:06:13.700Z
   - You can view and edit the kintone list screen with the look of a spreadsheet like Excel.
   - 依赖handsontable.v6、kintone-ui-component
 # more
+- https://github.com/owid/owid-grapher /MIT/202404/ts
+  - https://ourworldindata.org/owid-grapher
+  - A platform for creating interactive data visualizations
+  - This is the project we use at Our World in Data to create embeddable visualizations
+  - This repo is currently not well-designed for reuse as a visualization library, as our tools are tightly coupled with our database structure.

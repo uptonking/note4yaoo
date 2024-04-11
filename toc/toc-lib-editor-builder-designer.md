@@ -14,7 +14,7 @@ modified: 2020-11-17T13:38:19.107Z
 - ui-prototype
   - https://uigenerator.org/
 # popular
-- grida /104Star/Apache2/202206/ts/design2code
+- grida /104Star/apache2/202404/ts/design2code
   - https://github.com/gridaco/grida
   - https://grida.co/
   - Skia based performant live design collaboration & workspace app - redesigned for both designers and developers
@@ -31,29 +31,38 @@ modified: 2020-11-17T13:38:19.107Z
     - Grida's Design to code core library. 
     - Convert your figma, sketch and adobe xd design to flutter, react, vue and more.
 
-- craft.js /5.9kStar/MIT/202305/ts
+- craft.js /7kStar/MIT/202402/ts
   - https://github.com/prevwong/craft.js
   - https://craft.js.org/
-  - core依赖react、lodash，layers依赖react-contenteditable、s-c
   - A React Framework for building extensible drag and drop page editors
+  - core依赖react、lodash，layers依赖react-contenteditable、s-c
+  - 富文本编辑器和页面编辑器的区别，主要在是否使用conetenteditable
+  - Craft.js solves this problem by modularising the building blocks of a page editor. It ships with a drag-n-drop system and handles the way user components should be rendered, updated and moved
   - Craft.js is an abstraction where you implement your own page editor upon. 
     - For example, it does not come with a ready-made user interface.
     - However, you could still consider using the examples as a starting point.
+  - many aspects of Craft.js are written with `react-dnd` as a reference. 但未使用
+  - The element positioning logic used in Craft.js is borrowed from Grape.js
+  - [Can this be extended to be used on other JS framework like Vue or Svelte?](https://github.com/prevwong/craft.js/issues/101)
+    - whole code is React dependend
   - [Future of Craft.js - taking it to the next level _202304](https://github.com/prevwong/craft.js/issues/507)
+    - Reka is not a replacement for Craft. It's simply intended to replace the internal state management system in Craft
     - The current Craft's EditorState is essentially the equivalent of building a single UI component without states and props; and with the ability of adding/reordering JSX templates and mutating simple prop values of those JSX templates.
     - I spent the past couple of months trying to build a new state management system for Craft, reka
     - The current Craft EditorState is a simple implicit tree data structure, whereas Reka is an AST. As such, a Reka AST for an equivalent EditorState is expected to be larger
-- https://github.com/prevwong/reka.js /ts/yjs/暂未用在craft
+- https://github.com/prevwong/reka.js /437Star/MIT/202404/ts/yjs/暂未用在craft
   - https://reka.js.org/
-  - Reka is a state management system for building no-code editors.
+  - https://reka.js.org/docs/introduction
+  - ✨ Reka is a state management system for building no-code editors
   - Reka solves this by providing an AST-powered state system that enables end-users to create UI components that are nearly as complex as ones that developers could write in code
   - along with an interpreter to efficiently compute an output that could be rendered on the browser.
-  - core依赖mobx、lodash
+  - core依赖mobx、nanoid, 周边依赖mobx-react-lite、codemirror6、@lezer/highlight、acorn-jsx、yjs
   - It's primarily built to serve as the new state management system to power `Craft.js` and its page builders.
   - Reka computes a Component instance from its State by generating a `View` tree
+    - Whenever there's a change made to the State, Reka efficiently recomputes the updated View.
     - The View tree is a simple serializable JSON structure.
-    - building a renderer for Reka simply means taking this JSON structure and rendering it in your preferred UI framework.
-  - Reka provides an external package that allows real-time collaboration via a fully-featured CRDT backed by Yjs
+    - So regardless of what UI framework you're working with to build your page builder - whether it's React, Vue or Svelte; building a renderer for Reka simply means taking this JSON structure and rendering it in your preferred UI framework.
+  - Reka provides an external package that allows real-time collaboration via a fully-featured CRDT backed by `Yjs`.
   - [Show HN: Build your own no-code editor with Reka.js | Hacker News](https://news.ycombinator.com/item?id=35399384)
 
 - webstudio-designer /172Star/MIT>AGPLv3/202212/ts
@@ -62,7 +71,27 @@ modified: 2020-11-17T13:38:19.107Z
   - Webstudio Designer is a NoCode Visual Tool inspired by Webflow
   - block块级元素不支持拖拽
   - 依赖lexical-editor、radix-ui、stitches、remix-auth、downshift
-  - [Change license from MIT to AGPL V3_202307](https://github.com/webstudio-is/webstudio/pull/1980)
+  - [Change license from MIT to AGPL V3 _202307](https://github.com/webstudio-is/webstudio/pull/1980)
+
+- silex /1.8kStar/AGPLv3/202404/ts
+  - https://github.com/silexlabs/Silex
+  - http://www.silex.me/
+  - https://editor.silex.me/
+  - https://v3.silex.me/en/
+  - a no-code tool for building websites. 
+  - 基于dom实现
+  - It can be used online, offline or in a JAMStack project.
+  - Silex lets you create websites without coding, but it also has built-in editors for HTML, CSS, and JavaScript for when you need more control
+  - it has a plugin system and can integrate with headless CMS and static site generators, it is part of the JSAMStack ecosystem since the v3
+  - [Feature: storage connectors _202307](https://github.com/silexlabs/Silex/issues/1515)
+    - Silex v3 aims to focus on free and open-source services to align with the principles of open data, user privacy, and freedom of choice. 
+    - Gitlab is now implemented (v3.silex.me) _202309
+
+- https://github.com/app-generator/free-site-builder /Free4NonCommercial/202310/ts/inactive
+  - https://www.simpllo.com/
+  - Free & Open-Source Site Builder that uses Vanilla JS and a Remote Server for components injection - Actively supported by AppSeed.
+  - 一个ui厂商开源的编辑器
+  - 支持在弹窗中预览
 
 - https://github.com/QuiiBz/ogstudio /MIT/202403/ts
   - https://ogstudio.app/
@@ -80,7 +109,7 @@ modified: 2020-11-17T13:38:19.107Z
   - 海报模板也可以使用模版引擎来简化生成逻辑，只不过操作的是设计元素而不是 html 标签。
   - 可以通过创建、websocket 转发、应用 json patch 的方式，实现简单的多人协同编辑模板功能。
 
-- brick-design/react-visual-editor /MIT/2.3kStar/202008
+- brick-design/react-visual-editor /MIT/2.3kStar/202310/ts/inactive
   - https://github.com/brick-design/brick-design
   - https://brick-design.github.io/brick-design/
   - 组件可视化拖拽，页面搭建，源码生成工具, 自由拖拽嵌套
@@ -110,25 +139,29 @@ modified: 2020-11-17T13:38:19.107Z
   - https://openchakra.app/
   - 画布编辑区全部基于dom实现
   - visual editor and code generator for React using Chakra UI
-- VvvebJs /Apache2/3.3kStar/202306/js
+
+- VvvebJs /apache2/3.3kStar/202403/js
   - https://github.com/givanz/VvvebJs
   - http://www.vvveb.com/vvvebjs/editor.html
   - Drag and drop website builder javascript library.
-  - 依赖jquery和bootstrap4
+  - 依赖jquery、bootstrap4
 
-- grapesjs /19.1kStar/BSD/202311/ts
+- grapesjs /19.1kStar/BSD/202404/ts
   - https://github.com/GrapesJS/grapesjs
   - https://github.com/artf/grapesjs
   - https://grapesjs.com/
   - a free and open source Web Builder Framework 
   - 依赖backbone、codemirror5、underscore
+  - GrapesJS was designed to be used inside a CMS to speed up the creation of dynamic templates. 
 
-- react-page /8.3kStar/MIT/202304/ts/redux
+- react-page /8.3kStar/MIT/202304/ts/redux/inactive
   - https://github.com/react-page/react-page
   - https://react-page.github.io/
   - 画布编辑区全部基于dom实现
   - content editor for the browser - based on React and Redux and written in TypeScript. WYSIWYG on steroids.
   - 依赖react-redux、redux-undo、mui.v5、react-dnd、uniforms
+  - 12-column grid responsive grid layout
+  - Undo & Redo, copy and hotkey support
   - LGPLv3 to MIT_202010
 
 - https://github.com/sitebud
@@ -169,7 +202,7 @@ modified: 2020-11-17T13:38:19.107Z
 - antd-visual-editor /443SStar/201904
   - https://github.com/yu-tou/antd-visual-editor
   - https://yu-tou.github.io/antd-visual-editor/index.html
-- pagedraw /MIT/2.8kStar/201906/CoffeeScript
+- pagedraw /MIT/2.8kStar/201906/CoffeeScript/inactive
   - https://github.com/Pagedraw/pagedraw
   - https://pagedraw.io/
   - a UI builder for React web apps
@@ -189,14 +222,6 @@ modified: 2020-11-17T13:38:19.107Z
   - https://components.ai/css-gui
   - Visual development environment for CSS
   - 效果类似page-builder
-
-- silex /1.8kStar/AGPLv3/202311/ts
-  - https://github.com/silexlabs/Silex
-  - http://www.silex.me/
-  - a no-code tool for building websites. 
-  - It can be used online, offline or in a JAMStack project.
-  - Silex lets you create websites without coding, but it also has built-in editors for HTML, CSS, and JavaScript for when you need more control
-  - it has a plugin system and can integrate with headless CMS and static site generators, it is part of the JSAMStack ecosystem since the v3.
 # designer-prototype
 - alva /MIT/3.5kStar/201907/ts
   - https://github.com/meetalva/alva
@@ -223,6 +248,12 @@ modified: 2020-11-17T13:38:19.107Z
   - 稿定设计
     - 在线PS、自动抠图、海量素材
 # page/site/ui-builder
+- https://github.com/deco-cx/deco /apache2/202404/ts
+  - https://deno.land/x/deco
+  - Open-Source web editor based on Preact, Tailwind and TypeScript. 
+  - It's focused on reusability and composability of UI components (Sections) and API integrations (Loaders and Actions).
+  - Deco combines the best of visual page editing (like Webflow) and the ability for app composition at the admin level (like Wordpress)
+
 - page-builder /NALic/77Star/202008
   - https://github.com/cqm1994617/page-builder
   - 依赖：antd4, braft-editor, koa, react-dnd, redux-thunk2, styled-components, swiper 
@@ -241,7 +272,7 @@ modified: 2020-11-17T13:38:19.107Z
   - 可视化编辑器在线工具 
   - 目前 amis-editor 未开源，但可以免费使用（包括商用）。
 # h5-editor
-- h5-dooring /7kStar/GPLv3/202211/ts
+- h5-dooring /7kStar/GPLv3/202312/ts
   - https://github.com/MrXujiang/h5-Dooring
   - http://h5.dooring.cn/
   - https://github.com/H5-Dooring/dooringx
@@ -252,7 +283,7 @@ modified: 2020-11-17T13:38:19.107Z
   - 技术栈以react和typescript为主， 后台采用nodejs开发, 正在探索h5-lowcode解决方案
   - editor依赖antd4、braft-editor、react-dnd
   - ui依赖umi、antd-pro、react-grid-layout
-  - https://github.com/MrXujiang/lowcode-cms
+  - https://github.com/MrXujiang/lowcode-cms /MIT/202305/js/inactive
     - 基于dooring低代码社区的开源cms系统
     - 后端依赖koa-session、koa-views、pug、qiniu
     - 前端依赖antd-pro-layout、umi.v3、braft-editor、turndown
@@ -273,7 +304,7 @@ modified: 2020-11-17T13:38:19.107Z
   - /4Star/MIT/202006
   - Since React UI Builder is based on a visual Web application builder - Webcodesk
   - we use Webcodesk to create the component library locally.
-# misc
+# more
 - react-drag-drop-layout-builder /NALic/172Star/201904/ts
   - https://github.com/chriskitson/react-drag-drop-layout-builder
   - 依赖material-ui.v3、immutablejs4、react-dnd7
@@ -286,11 +317,17 @@ modified: 2020-11-17T13:38:19.107Z
   - ref
     - https://github.com/annezhou920/react-dnd-example
 
-- https://github.com/h5ds/h5ds
-  - 只开源了部分前端组件和功能
+- https://github.com/h5ds/h5ds /201912/js/inactive
+  - 只开源了编辑器(v5.x版本)页面的代码，如需获取最新版本的（v6.x）源码请购买商业授权
+
 - https://visly.app/
 
 - https://github.com/swagger-api/swagger-editor
   - Swagger Editor lets you edit Swagger API specifications in YAML inside your browser and to preview documentations in real time. 
+
+- https://github.com/lovasoa/SQLpage /MIT/202404/rust
+  - https://sql.ophir.dev/
+  - SQL-only webapp builder, empowering data analysts to build websites and applications quickly
+  - you write simple .sql files containing queries to your database to select, group, update, insert, and delete your data, and you get good-looking clean webpages 
 # discussion
 - [List of drag & drop React UI builders_202003](https://www.reddit.com/r/reactjs/comments/flz4t9/list_of_drag_drop_react_ui_builders/)

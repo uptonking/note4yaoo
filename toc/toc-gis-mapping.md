@@ -79,9 +79,10 @@ modified: 2021-01-04T16:21:18.990Z
   - a full-featured JavaScript map rendering engine using HTML5 Canvas. 
   - It was initially developed as a JavaScript port of Kothic rendering engine written in Python
 # leaflet
-- https://github.com/geoman-io/leaflet-geoman /js
+- https://github.com/geoman-io/leaflet-geoman /MIT/202403/js
   - https://geoman.io/leaflet-geoman
   - powerful leaflet plugin for drawing and editing geometry layers
+  - Supports Markers, CircleMarkers, Polylines, Polygons, Circles, Rectangles, ImageOverlays, LayerGroups, GeoJSON, MultiLineStrings and MultiPolygons
 # draw-on-map
 - https://github.com/JamesLMilner/terra-draw /ts
   - https://terradraw.io/

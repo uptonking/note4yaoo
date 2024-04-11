@@ -88,6 +88,10 @@ modified: 2023-07-26T11:23:38.282Z
   - functional reactive Node.js framework for building server-side applications, based on TS and RxJS.
 - https://github.com/hufeng/iflux
   - immer.js + react.js
+
+- https://github.com/acdlite/recompose /MIT/201812/js/inactive
+  - Recompose is a React utility belt for function components and higher-order components. Think of it like lodash for React.
+  - I created Recompose about three years ago. About a year after that, I joined the React team. Hooks solves all the problems I attempted to address with Recompose
 # reactive
 - tips
   - 具体的业务如ospreadsheet会禁用框架内部的reactivity，自己管理数据和状态，以便实现undo、协作等功能
@@ -156,7 +160,7 @@ modified: 2023-07-26T11:23:38.282Z
   - 代码量大，功能全
   - Formily2.x 在实现的过程中发现 Mobx 还是存在一些不兼容 Formily 核心思想的问题，最终，只能重新造了一个轮子，延续 Mobx 的核心思想的 @formily/reactive
 
-- https://github.com/ryansolid/mobx-jsx /ts
+- https://github.com/ryansolid/mobx-jsx /MIT/202210/ts/inactive
   - Raw MobX performance without being restrained by a Virtual DOM
   - a demonstration of how MobX fine grain control can be leveraged directly in JSX for considerably better performance than pairing it with a Virtual DOM library
   - It compiles JSX to DOM statements and wraps expressions in functions that can be called by the library of choice.

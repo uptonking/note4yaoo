@@ -96,6 +96,10 @@ modified: 2022-11-01T01:05:07.873Z
 - https://github.com/405go/pdman
   - 开源免费的数据库模型建模工具
   - 是PowerDesigner之外，更好的免费的替代方案
+# mobile
+
+- https://github.com/Tencent/vConsole /MIT/202306/svelte
+  - A lightweight, extendable front-end developer tool for mobile web page
 # site
 - https://github.com/jbake-org/jbake
   - Java based open source static site/blog generator

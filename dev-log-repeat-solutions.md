@@ -243,6 +243,7 @@ modified: 2021-07-20T13:50:23.433Z
   - 协作系统需要对文本使用特殊的数据结构，还要考虑版本历史/yjs/权限
   - 编辑器在模型层要考虑db架构和更新op采用ot/crdt, 系统中编辑器大多可替换
   - 协作只有文本部分需要YText这类复杂的crdt，表格使用llw-map足够
+  - 富文本编辑器和页面编辑器的区别，主要在是否使用conetenteditable
 
 - 视图层的实现可参考: wangeditor/typewriter/autocomplete, 库和应用层不同在于ajax
 - 架构参考

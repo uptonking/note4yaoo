@@ -9,6 +9,19 @@ modified: 2023-01-14T17:22:00.810Z
 
 # guide
 
+# discuss-stars
+- ## 
+
+- ## 
+# discuss-news
+- ## 
+
+- ## Tauri v2 正在大力开发移动端，我还没尝试不知效果如何
+- https://twitter.com/lencx_/status/1778353417607676104
+  - 桌面端是基于系统 webview（v2 比 v1 API 强了许多），移动端也是调用内置 webview 嘛？对系统 API 的控制权又有多少？
+- 必定是 webview，和 capacitor 差不多
+- 国内Rom碎片化太严重了，WebView也不能像原生Rom一样随时更新。
+
 # discuss
 - ## 
 

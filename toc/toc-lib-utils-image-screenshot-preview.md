@@ -77,7 +77,7 @@ modified: 2023-04-16T13:34:33.706Z
 - https://github.com/xataio/screenshot /ts
   - zero-dependency browser-native way to take screenshots powered by the native web MediaDevices API.
 
-- https://github.com/sindresorhus/pageres
+- https://github.com/sindresorhus/pageres /MIT/202311/ts
   - Capture screenshots of websites in various resolutions. 
   - It can also be used to render SVG images.
   - 基于puppeter

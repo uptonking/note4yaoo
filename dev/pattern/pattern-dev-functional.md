@@ -144,9 +144,13 @@ expect(o3).toEqual({ foo: 2, bar: 'hello'})
 # discuss-functional
 - ## 
 
-- ## 
+- ## [What is a simple explanation of Decorators in JavaScript and how useful is it in functional programming - Stack Overflow](https://stackoverflow.com/questions/50168239/what-is-a-simple-explanation-of-decorators-in-javascript-and-how-useful-is-it-in)
+- Decorators are specific to classes. As long as you don't mix OOP and FP, they aren't useful. 
+- The other benefit of using functional programming is that, the testing becomes super easy because you have to test individual functions and while coding in react, it saves a lot of your time and energy. I use `recompose` all the time and don't even use the `class` keyword.
 
-- ## 
+- ## [haskell - Functional equivalent of decorator pattern? - Stack Overflow](https://stackoverflow.com/questions/7064389/functional-equivalent-of-decorator-pattern)
+- Currying functional parameters / composition is the closest equivalent. 
+  - However, it's a mistake to even ask this question, because patterns exist to compensate for weaknesses in the host language.
 
 - ## OOP really disillusioned generations of programmers into thinking the way to do polymorphism is to construct overly complex class hierarchies instead of just using sum types (tagged/discriminated unions)
 - https://twitter.com/zack_overflow/status/1709670429680353718

@@ -418,6 +418,10 @@ modified: 2023-02-05T19:03:12.723Z
 - https://github.com/bipboy/rich-slate-editor /202305/ts
   - A small react implementation of a text editor based on Slate and Baseweb(css-in-js)
 
+
+- https://github.com/ncqwer/lla-editor /202403/ts
+  - 本项目使用 Slate 作为基础。旨在打造 React 友好的富文本编辑器
+
 - https://github.com/pietrop/slate-transcript-editor /202110/js
   - https://pietrop.github.io/slate-transcript-editor
   - A React component to make correcting automated transcriptions of audio and video easier and faster. 
