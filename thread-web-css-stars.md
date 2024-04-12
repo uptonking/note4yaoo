@@ -12,7 +12,10 @@ modified: 2021-07-25T12:49:10.410Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## Create hover gallery effect using flex grow 
+- https://twitter.com/davidm_ml/status/1778436043781341443
+  - 卡片点击后会展开当前卡片，压缩其他卡片
+  - https://github.com/atherosai/ui/tree/main/gallery-06
 
 - ## PREVIOUSLY: separate rulesets for light and dark
 - https://twitter.com/argyleink/status/1773387209925869752

@@ -409,7 +409,14 @@ modified: 2023-08-29T10:13:31.070Z
 
 - ## 
 
-- ## 
+- ## Git is and has always been local first, distributed model. 
+- https://twitter.com/oleg008/status/1778716391488598085
+  - Isn't it a bit weird that we ended up relying on centralized services even though there is no need at all? 
+  - All the collaboration data could be equally in git just like the code, all synced and distributed.
+- There is certainly a need for one primary remote repository. You would have crazy inconsistencies, availability-problems and merge-problems otherwise.
+
+- That’s what I like about fossil-scm It has the other supporting functions that the centralized services give you. 
+- I think Fossil SCM does this for issues, wiki, forum etc?
 
 - ## 🧩 for git, there are 4 locations for your code:
 - https://twitter.com/sahnlam/status/1769954179886547365

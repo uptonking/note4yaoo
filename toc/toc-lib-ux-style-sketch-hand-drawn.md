@@ -81,8 +81,13 @@ modified: 2021-01-13T19:30:59.508Z
 
 - roughViz /MIT/5.4kStar/202006
   - https://github.com/jwilber/roughViz
-  - https://github.com/rough-stuff/rough
   - a reusable JavaScript library for creating sketchy/hand-drawn styled charts in the browser, based on D3v5, roughjs, and handy.
+- https://github.com/rough-stuff/rough /MIT/202311/ts/inactive
+  - https://roughjs.com/
+  - https://github.com/rough-stuff/rough/wiki
+  - a small (<9kB gzipped) graphics library that lets you draw in a sketchy, hand-drawn-like, style.
+  - Rough.js works with both Canvas and SVG.
+  - RoughCanvas or RoughSVG provides the main interface to work with this library
 - wired-elements /8.4kStar/MIT/202006/ts
   - https://github.com/rough-stuff/wired-elements
   - https://wiredjs.com/

@@ -102,7 +102,13 @@ modified: 2023-12-15T16:51:56.101Z
   - editor: slate, quill, craftjs
   - i18n-cn: 多语言优化、版本控制
   - examples: realworld
+- app-builder
   - 针对 移动端 短视频/小程序 的nocode更符合国内市场需求
+  - build: admin, h5, mini-app, themes, cloud-component
+
+- 基于ast实现lowcode的方案
+  - craft/reka
+  - tango, sparrow
 
 - ⌛️ version/history
   - 参考官方实现来做开源版本，参考官方文档说明和代码
@@ -202,8 +208,9 @@ modified: 2023-12-15T16:51:56.101Z
   - ❓ 通过route middleware可以更新admin界面的显示
 
 - 支持的fields
-- BlocksInput: 基于slate
-- Wysiwyg: 基于codemirror5
+  - rich-blocks: 基于slate
+  - rich-markdown: 基于codemirror5
+
 - 
 - 
 

@@ -68,6 +68,12 @@ modified: 2023-06-19T12:34:49.156Z
 - Interesting, I didn’t think about adding it to the payload. 
   - That would solve the problem I was trying to avoid: increasing the length of the url. Thanks! Would you be interested in implementing it?
 
+- ## [Open-source drawing tool – Excalidraw | Hacker News _202312](https://news.ycombinator.com/item?id=38499375)
+- I like excalidraw for live discussions but if I want to make more detailed or better looking diagrams, I really enjoy these two tools:
+  - For drag-and-drop/WYSIWYG, I really like DrawIO. 
+  - For text-as-diagram, I think Mermaid wins this by default since GitHub added markdown support for these
+- Excalidraw itself is also pretty cool as an embeddable widget, we recently built a cool real-time AI-accelerated drawing playground
+
 # blogs
 
 ## 🔀 [Excalidraw: Building Excalidraw's P2P Collaboration Feature_202003](https://blog.excalidraw.com/building-excalidraw-p2p-collaboration-feature/)

@@ -10,6 +10,24 @@ modified: 2023-09-02T09:17:22.992Z
 # guide
 
 # js-sandbox
+- https://github.com/codesandbox/codesandbox-client /GPLv3+apache2/202404/js
+  - https://codesandbox.io/
+  - An online IDE for rapid web development
+  - CodeSandbox is licensed under GPLv3, except for `packages/common` and `packages/sandpack-core` and `packages/app/src/sandbox`, which are licensed under the Apache License, Version 2.0.
+  - 🍴 forks
+  - https://github.com/NetEase/codesandbox-client /tango
+
+- https://github.com/mcuking/vitesandbox-client /MIT/202211/js/inactive
+  - https://github.com/mcuking/vitesandbox-client-example
+  - https://mcuking.github.io/vitesandbox-client-example/
+  - An Online Vite Sandbox that compiles web projects based on browser-vite
+  - 🧊🆚️ [搭建一个浏览器版 Vite 沙箱 _202201](https://github.com/mcuking/blog/issues/111)
+    - CodeSandbox 方案在构建规模较大的前端应用比较耗时的问题，并在文章结尾提到会尝试采用 bundless 构建模式来解决这个问题
+    - 针对通用的应用进行实时构建可以采用云端沙箱（Cloud Sandbox）模式。该方案首先会在服务器中出初始化一个代码运行环境（Docker 或 microVM 等），然后将需要被构建的应用代码从指定位置（例如某个 git 代码仓库）拷贝到该运行环境中，安装依赖，最后执行构建命令对应用进行构建。该种模式对应用所采用的编程语言等没有特定要求，完全等同于本地环境。
+    - 如果仅构建前端应用，则可以将应用的编译构建的过程迁移到浏览器中进行，最终的构建结果直接在浏览器中执行 —— 渲染出最终的页面，也就是浏览器端沙箱（Browser Sandbox）模式
+    - CodeSandbox 本质上是在浏览器中运行的简化版 Webpack
+    - 本方案主要对 Vite / esm.sh 等开源方案的改造，再结合 Web Worker / Service Worker / Broadcast Channel / Cache Storage / iframe 等浏览器技术，以实现在浏览器中对前端应用按照 bundless 模式进行实时构建的目的
+
 - https://github.com/endojs/endo /apache2/js
   - a distributed secure JavaScript sandbox, based on SES
   - Endo is a JavaScript platform under development for secure communication among objects within one process and distributed between mutually suspicious machines

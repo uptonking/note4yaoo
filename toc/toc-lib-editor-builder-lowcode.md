@@ -9,8 +9,20 @@ modified: 2020-12-28T12:24:09.275Z
 
 # guide
 
+- features
+  - preview pc/mobile
+  - toggle views: designer view, code view
+  - 是否基于iframe
+
 - tips
-  - 通用或单一的builder价值不大，但针对业务平台特别是app-store的builder对平台方和开发者的价值都很大
+  - 通用型builder价值不大，但针对业务平台特别是app-store的builder对平台方和开发者的价值都很大
+  - lowcode重逻辑轻设计，侧重给页面元素添加事件和逻辑，而不是样式布局，产物偏向非静态前端工程
+  - 使用代码生成器的方式(tango/strapi)，优点是功能强，但不如配置方式性能高、体验好
+
+- 基于ast实现lowcode的方案
+  - craft/reka
+  - tango, sparrow
+  - vue
 
 - cms-dev
   - cms业务架构一般分为 服务端、管理端、展示端
@@ -109,24 +121,45 @@ modified: 2020-12-28T12:24:09.275Z
     - contains all the code for Pipedream's app, actions and triggers. The code is deployed to Pipedream system.
     - Currently, Pipedream does NOT offer self-host option.
 
-- baidu-amis /12.9kStar//apache2/202301/ts/编辑器未开源
+- baidu-amis /12.9kStar//apache2/202404/ts/偏前端工程
   - https://github.com/baidu/amis
-  - 依赖downshift、rc-menu、mobx、sortablejs、tinymce、codemirror5、echarts5、uncontrollable
-  - 前端低代码框架，通过JSON配置就能生成各种后台页面
+  - https://baidu.github.io/amis/
+  - https://aisuda.github.io/amis-editor-demo
+  - amis是一个低代码前端框架，它使用 JSON 配置来生成页面，可以减少开发工作量，提升效率
+  - core依赖mobx-state-tree、mobx-react、amis-formula、papaparse、react-json-view、uncontrollable
+  - editor-core依赖json-ast-comments、react-frame-component、sortablejs
+  - 依赖downshift、rc-menu、mobx、sortablejs、tinymce、codemirror5、echarts5
+  - 支持切换pc/mobile视图
+  - 🔡 支持查看源码json
+  - 当为移动模式时，将采用 iframe 来预览
+  - 🐛 配置产物与平台耦合
+  - 默认JSSDK不是 hash 路由，但可改成 hash 路由模式
+  - 可以 完全 使用 可视化页面编辑器 来制作页面：一般前端可视化编辑器只能用来做静态原型，而 amis 可视化编辑器做出的页面是可以直接上线的
+  - amis只需 JSON 配置就能完成完整功能开发，包括数据获取、表单提交及验证等功能，做出来的页面不需要经过二次开发就能直接上线；
+  - 除了低代码模式，还可以通过 自定义组件 来扩充组件，实际上 amis 可以当成普通 UI 库来使用
+  - amis在百度内部得到了广泛使用，在 6 年多的时间里创建了 5 万页面
   - 在以下场合并不适合amis：大量定制UI、复杂或特殊的交互
-  - 目前富文本编辑器基于两个库：[froala](https://froala.com/) 和 [tinymce](https://github.com/tinymce/tinymce)，默认使用 tinymce
-  - https://github.com/aisuda/amis-editor-demo
-    - http://aisuda.github.io/amis-editor-demo
-    - amis 可视化编辑器示例
-    - 目前 amis-editor 未开源，但可以免费使用（包括商用）。
-  - [请问@fex/amis-editor 有开源计划吗？](https://github.com/aisuda/amis-editor-demo/issues/12)
-    - 目前amis-editor已将内置的plugin源码开放出来了
+  - 目前富文本编辑器基于两个库 froala 和 tinymce，默认使用 tinymce
+  - https://github.com/aisuda/amis-editor-demo /202403/ts
+    - amis可视化编辑器
+  - [feat: 模板替换成新版本的 amis-formula v1.5.0 _202111](https://github.com/baidu/amis/pull/3057)
+    - 新版直接使用ast转义
+  - [我不明白这个 amis 低代码意义何在?](https://github.com/baidu/amis/issues/9156)
+    - 低代码有一个很大的优势，就是在线运维，用amis配置的页面可以在线调整，不需要前端修改打包升级
 
-- alibaba-lowcode-engine /8.9kStar/MIT/202212/ts
+- alibaba-lowcode-engine /8.9kStar/MIT/202212/ts/偏页面
   - https://github.com/alibaba/lowcode-engine
+  - https://lowcode-engine.cn/
+  - https://lowcode-engine.cn/demo/demo-general/index.html
   - 一套面向扩展设计的企业级低代码技术体系
   - 引擎完整实现了低代码引擎 搭建协议、物料协议、资产包协议
-  - 依赖fusion-design、mobx、power-di
+  - engine依赖fusion-next-ui、自研plugins
+  - editor依赖mobx-react、power-di、fusion-next-ui
+  - renderer依赖fetch-jsonp、socket.io
+  - 支持切换pc/mobile
+  - 🔡 支持查看源码js工程并下载zip
+  - 画布渲染使用了设计态与渲染态的双层架构。设计器和渲染器其实处在不同的 Frame 下，渲染器以单独的 iframe 嵌入。这样做的好处，一是为了给渲染器一个更纯净的运行环境，更贴近生产环境，二是扩展性考虑，让用户基于接口约束自定义自己的渲染器。
+  - 🐛 不支持配置路由
   - 主要功能模块
     - 页面与大纲
     - 组件与资源
@@ -139,6 +172,82 @@ modified: 2020-12-28T12:24:09.275Z
   - 不支持在editor拖拽修改block顺序，只能在大纲拖拽
   - [阿里低代码引擎简介](https://lowcode-engine.cn/site/docs/guide/quickStart/intro)
   - https://github.com/alibaba/lowcode-demo
+  - [关于编辑器怎么整合到，业务系统中 _202306](https://github.com/alibaba/lowcode-engine/issues/21s t r a p60)
+    - 现在的编辑器，没有登录和路由，怎么整合到日常的业务系统里呢
+    - 登录要自己写插件及服务端去处理，路由不建议，本项目by design是作为独立页面使用，如果要嵌入其他页面或spa需要iframe方式
+
+- tmagic-editor /3.9kStar/apache2/202311/ts/偏页面
+  - https://github.com/Tencent/tmagic-editor
+  - https://tencent.github.io/tmagic-editor/docs/index.html
+  - https://tencent.github.io/tmagic-editor/playground/index.html#/form-editor
+  - 页面可视化平台
+  - 不支持切换pc/mobile，但可缩放画布
+  - 🔡 支持查看源码类似json的js-dsl
+  - 编辑器是使用 vue3 开发的，但使用编辑器的业务可以不限框架，可以用 vue2、react 等开发业务组件。
+    - 编辑器中最终保存得到的配置结果，同时也是tmagic-editor页面最终渲染的描述文件，就是一份 JS schema 形式的 DSL。
+    - 在tmagic-editor编辑器中，所有的操作和配置信息，最终都保存成这一份 DSL。
+    - 这份配置在tmagic-editor runtime 中被加载和渲染
+  - 由于tmagic-editor在编辑器中的模拟器是通过 iframe 渲染的，和tmagic-editor平台本身可以做到框架解耦，所以 runtime 也可以用不同框架开发。目前tmagic-editor提供了 vue2/vue3 和 react 的 runtime 示例。
+  - runtime 概念，tmagic-editor编辑器中心的模拟器画布，是一个 iframe（这里的 runtimeUrl 配置的，就是你提供的 iframe 的 url），其中渲染了一个 runtime，用来响应编辑器中的组件增删改等操作。
+
+- https://github.com/NetEase/tango /1.8kStar/MIT/202404/ts/ast/偏前端工程
+  - https://netease.github.io/tango-site/
+  - https://tango-demo.musicfe.com/designer/
+  - 一个源码驱动的低代码设计器框架
+  - 支持切换pc和mobile
+  - 🔡 支持查看源码react项目
+  - Sandpack提供了一个独立的 iframe 运行代码，可实现代码的运行时环境隔离，避免污染全局变量
+  - 支持配置路由
+  - 🐛 缺点是codesandbox实时将ast生成业务框架代码再运行性能低、体验差
+    - 未开放源码产物下载
+  - 使用代码生成器的方式，优点是功能强大，但不如配置方式性能高
+  - 经历网易云音乐内网生产环境的实际检验，可灵活集成应用于低代码平台，本地开发工具等
+  - 基于源码 AST 驱动，无私有 DSL 和协议
+  - 提供实时出码能力，支持源码进，源码出
+  - 提供灵活易用的设计器 React 组件
+  - 感谢 CodeSandbox 提供的 Sandpack 项目，为 Tango 提供了强大的基于浏览器的代码构建与执行能力
+  - 主要包括 3 个核心组成部分，分别是：
+    - 引擎内核：负责建立文件，节点模型，提供输入输出能力。
+    - 拖拽引擎和可视化面板：提供可视化开发能力
+    - 渲染沙箱：提供源码在浏览器上的编译执行能力。
+  - [技术架构概览 | 基于源码的低代码引擎](https://netease.github.io/tango-site/docs/designer/design/overview)
+    - 我们在 2023年8月底正式开源了 Tango 低代码引擎
+    - 传统的低代码搭建方案往往采用定义私有 Schema 协议来可视化表达视图逻辑，也就是将代码逻辑转换为私有的描述, 这类方案很容易面临不断膨胀的私有 JSON 协议
+    - ESTree规范作为主流的处理 JavaScript 源代码的标准社区协议，被广泛用于浏览器 JavaScript Parser 的实现。借助于 ESTree 协议，可以完美的实现对源码逻辑的描述
+    - 借助于 ESTree 规范，我们无需定义私有的渲染描述协议，并且可以低成本的实现代码到协议，协议到代码到互转
+    - 首先将源代码解析为 AST。用户的拖拉拽等操作则映射为对 AST 的遍历和修改。最后将新的 AST 重新生成代码，交给设计器沙箱去渲染执行
+    - 对 AST 的解析、遍历、修改、生成，则可以借助大量的社区工具，这里我们选择的是 babel
+    - 首先是引擎初始化。源码文件会被引擎内核解析进行状态初始化。接下来，对于用户的操作，会触发浏览器事件，引擎接收到相应的事件，触发内核中的状态变更，更新 AST。
+    - 然后，内核会基于新的 AST 的同步生成代码，由引擎将代码同步给渲染沙箱。渲染沙箱感知到代码变化后，会触发页面重新渲染，也就是沙箱的 HMR 过程。
+    - sandpack，它是由 CodeSandbox 开源的可以在浏览器中实时运行 JavaScript 项目的的工具库
+  - [关于服务端API的问题 _202404](https://github.com/NetEase/tango/issues/130)
+    - 我是否可以通过定义代理来拉取业务的api接口描述，达到快否集成目的 目前，API Server端并没有开放，那只能自己编写或生成API GetWay这层的封装。
+    - 可以的，目前我们内部也是这么实践的，可以直接后端的 java 代码生成对应的前端 UI 代码。
+  - [大佬这个可以生成vue2或者vue3源码么？ _202308](https://github.com/NetEase/tango/issues/2)
+    - 目前只适配了react的ast解析和操纵逻辑。vue后续可以考虑社区共建下，逻辑上是一样的
+    - codesandbox-client 支持react 热更新， 不支持 vue 热更新
+  - [能否提供一个 vitesandbox-client 类似 www 的产物  _202402](https://github.com/NetEase/tango/issues/109)
+    - 我们已经废弃了该方案，所以这套沙箱方案已经不在 Tango 体系的范围内。而且该沙箱的 api 与 Tango 目前使用的 CodeSandbox 方案不是完全兼容的，所以不一定能直接使用
+  - [沙箱运行起来了 但是报错 _202312](https://github.com/NetEase/tango/issues/80)
+    - codesandbox-client运行的是源码，其本身是有 vue-cli 的模板的，所以理论上可以运行 Vue
+    - Tango 目前只适配了 React 的场景，还未适配 Vue，后续可以考虑通过社区共建的形式支持
+    - AST 未传递到沙箱中，沙箱运行的是项目的源代码。设计模式下与沙箱交互时，沙箱会触发事件传递当前操作的节点。引擎根据节点信息到 AST 树上查找节点，然后高亮节点并展示组件的配置信息。节点修改配置后映射为 AST 上的修改，AST 还原为源码，再将更新后的源码传入沙箱渲染
+  - [tango面向的目标用户是哪些群体？ _202403](https://github.com/NetEase/tango/discussions/115)
+    - 开源版本只包括了最核心的搭建引擎部分。你说的大部分问题都指向了物料的封装程度和易用性上，本身和搭建引擎的能力并不相关。
+    - 对于低代码物料部分，因为工作量较大，目前并不在我们的开源范围。
+  - [演示项目出现的问题 _202402](https://github.com/NetEase/tango/issues/108)
+    - 开源版本目前只提供了一个组件库的接入示例，没有提供完整的组件库，内部的组件库节藕工作工作量比较大，我们会在合适的时机将组件库部分合并到开源代码中。
+    - RN 部分涉及到 Native 的相关能力，此部分不在开源范围
+  - [codesandbox-client协议是GPLv3，如何进行商业化？ ](https://github.com/NetEase/tango/issues/34)
+    - Tango 主要使用的是 codesandbox 的 Sandpack 能力，而 Sandpack 部分使用的协议是 Apache 2.0
+  - [本地已有沙箱，如何接入？](https://github.com/NetEase/tango/issues/29)
+    - 由于 codesandbox 构建的产物的一些限制，其必须从一个域名的根路径下加载，否则一些静态资源或 web worker 会无法正常加载。而这也意味着 playground 的 origin 和 sandbox 会不一致
+    - 为了解决跨域交互的问题，我们采用了经典解决方案，通过修改 `document.domain` 让设计器与沙箱落在相同的二级域名下，来实现 iframe 的跨域交互。但是 Chrome 在 115 对上述逻辑做了默认限制，因此需要追加 Origin-Agent-Cluster: ?0 这一响应头来绕过 Chrome 的限制。
+  - [网易云音乐 Tango 低代码引擎正式开源！ - 掘金 _202308](https://juejin.cn/post/7273051203562749971)
+    - 优点：基于 AST作为 DSL，视图和代码表现一致性，值得学习借鉴。
+    - 缺点：对比 schema 直接以组件渲染，AST 多了层转换到 runtime，拖拽之后展示略有点卡，需要进一步优化转换算法
+    - 后端部分不在本次开源范围
+  - https://github.com/NetEase/tango-playground
 
 - jd-drip-table /1.2kStar/MIT/202403/ts/仅前端的表格无需后端
   - https://github.com/jd-opensource/drip-table
@@ -156,23 +265,19 @@ modified: 2020-12-28T12:24:09.275Z
   - 全家桶
     - https://jdfed.github.io/drip-form/
 
-- tmagic-editor /3.9kStar/apache2/202311/ts/vue/react
-  - https://github.com/Tencent/tmagic-editor
-  - https://tencent.github.io/tmagic-editor/docs/index.html
-  - https://tencent.github.io/tmagic-editor/playground/index.html
-  - 页面可视化平台
-  - 编辑器是使用 vue3 开发的，但使用编辑器的业务可以不限框架，可以用 vue2、react 等开发业务组件。
-  - runtime 概念，tmagic-editor编辑器中心的模拟器画布，是一个 iframe（这里的 runtimeUrl 配置的，就是你提供的 iframe 的 url），其中渲染了一个 runtime，用来响应编辑器中的组件增删改等操作。
-
-- https://github.com/NetEase/tango /1.8kStar/MIT/202404/ts
-  - https://netease.github.io/tango-site/
-  - https://tango-demo.musicfe.com/designer/
-  - 一个源码驱动的低代码设计器框架
-  - 经历网易云音乐内网生产环境的实际检验，可灵活集成应用于低代码平台，本地开发工具等
-  - 基于源码 AST 驱动，无私有 DSL 和协议
-  - 提供实时出码能力，支持源码进，源码出
-  - 提供灵活易用的设计器 React 组件
-  - 感谢 CodeSandbox 提供的 Sandpack 项目，为 Tango 提供了强大的基于浏览器的代码构建与执行能力
+- https://github.com/hlerenow/chameleon /apache2/202403/ts
+  - https://hlerenow.github.io/chameleon/documents/docs/tutorial/quickStart
+  - https://hlerenow.github.io/chameleon/
+  - Web visual programming engine. (lowcode)
+  - 基于灵活的插件机制，所有功能均可二次开发
+  - 不支持切换pc/mobile
+  - 🔡 支持查看源码json
+  - 使用 React 作为基础运行时，丰富的第三方组件供您使用
+  - 通过页面编辑，最终倒出后可以得到一个页面的 schema json 协议，如何将协议重新渲染为一个可以运行的 React 页面呢?
+  - 引擎内置只提供了基础的 HTML Tag 组件以及对应的物料, 如: div、p、video... 等等，可扩展使用自定义的物料
+  - 组件物料包括两部分: 组件库, 组件描述, 组件库和组件描述之间通过componentName一一对应
+  - [震惊和我想做的低码出奇的一致  · NetEase/tango](https://github.com/NetEase/tango/issues/3)
+    - 做前端的增强开发工具，并且可以导出源码，给其他系统做集成
 
 - apitable /2.3kStar/AGPLv3/202301/ts/java/维格表团队开源
   - https://github.com/apitable/apitable
@@ -267,36 +372,84 @@ modified: 2020-12-28T12:24:09.275Z
   - No-code and Low-code all-in-one platform to build landing pages, websites, web applications, APIs, automations. 
   - An alternative for Wix, Webflow
 
-- https://github.com/codebdy/rxdrag /golang/ts/antd
+- https://github.com/sparrow-js/sparrow /MIT/202107/ts/vue/ast/inactive
+  - https://sparrow-js.github.io/sparrow-vue-site/
+  - 场景化低代码（LowCode）搭建工作台，实时输出源代码
+  - 基于vue、element-ui组件库中后台项目的实践，实时输出源代码
+  - 易于扩展，通过AST读取组件源代码，进行组合
+  - [理论上能否支持 React 组件 & React 代码模式？ _202110](https://github.com/sparrow-js/sparrow/issues/38)
+    - 可以，理论上啥框架都一样
+    - 我看生成的代码是有 lifecycle 之类的控制的，但这样生成的代码，可能对于开发来说维护性不一定合适？ 需要依赖最终生产出来代码的这种模式
+    - 这种就需要提供扩展能力了，需要自定义写插件，这个项目还有一些别的问题比如目前生成的代码不能二次开发，正在开发一个在“不破坏源代码”的基础上实现可视化的开发能力的工具
+    - 目前只有组件部分写了自定义的能力，更多的扩展能力没有写，代码部分是解析成ast的，理论上开放ast就可以自己往里加自定义的
+
+- https://github.com/codebdy/rxdrag /MIT/202401/ts/antd
   - https://rxdrag.vercel.app/
   - https://github.com/codebdy/minions-go /golang/逻辑编排go引擎
-  - 可视化编辑，设计一切基于HTML的东西，模块化设计
+  - 可视化编辑， 带逻辑引擎的低代码前端
   - editor-core依赖redux-toolkit、lodash
   - react-runner依赖react-router.v6、@monaco-editor/react、styled-components
   - 侧边栏模块: 页面、组件资源、大纲、历史记录
-  - [实战，一个高扩展、可视化低代码前端，详实、完整 - 掘金](https://juejin.cn/post/7205361008272326716)
+  - [实战，一个高扩展、可视化低代码前端，详实、完整 - 掘金 _202303](https://juejin.cn/post/7205361008272326716)
     - RxEditor是一款开源企业级可视化低代码前端，目标是可以编辑所有 HTML 基础的组件。比如支持 React、VUE、小程序等，目前仅实现了 React 版
-    - 目标，是能够通过拖拽的方式操作基于 HTML 制作的组件，如：调整这些组件的包含关系，并设置组件属性。
     - 编辑器（RxEditor）要维护一个树形模型，这个模型描述的是组件的隶属关系，以及 props。同时还能跟 dom 树交互，通过各种 dom 事件，操作组件模型树。
-    - 这里关键的一个点是，编辑器需要知道 dom 节点跟组件节点之间的对应关系。在不侵入组件的前提下，并且还要忽略前端库的差异，比较理想的方法是给 dom 节点赋一个特殊属性，并跟模型中组件的 id 对应，在 RxEditor 中，这个属性是rx-id，比如在dom节点中这样表示 `<div rx-id="one-uuid">`. 
-    - rx-id 算是设计器的基础性原理，它给设计器内核抹平了前端框架的差异
     - 编辑器操作的是JSON格式的组件树，设计时，设计引擎根据这个组件树渲染画布。这个组件树是设计器的数据模型，通常会被叫做 Schema。
     - 项目中的前端组件，要在两个地方渲染，一是设计引擎的画布，另一处是预览页面。这两处使用的是不同渲染引擎
-    - 设计形态，在设计器画布内渲染，需要提供ref或者转发rx-id，有能力跟设计引擎交互。
-    - 预览形态，预览引擎使用，渲染机制跟运行时渲染一样。相当于普通的前端组件。
-    - 设计形态的组件跟预览形态的组件，对应的是同一份schema，只是在渲染时，使用不同的组件实现。
-    - Material，物料的定义。一个Schema，只是用来描述一个组件，这个组件相关的配置，比如多语言信息、在工具箱中的图标、编辑规则（比如：内容类型限制）等等这些信息，需要一个配置来描述，这个就是物料
-    - 状态管理。rxjs虽然看起来不错，但是没有使用经验，暂时放弃了。mobx，个人不喜欢，与上面的设计原则“尽量减少对组件的入侵，最大程度使用已有组件资源”相悖，也只能放弃。最后，选择了Redux。
-    - 软件架构
-    - 设计器，用于设计页面，消费的是设计形态的组件。生成页面Schema。
-    - 运行时，把设计器生成的页面Schema，渲染为正常运行的页面，消费的是预览形态的组件。 采用分层设计架构，上层依赖下层。
-  - [挑战零代码：可视化逻辑编排 - 掘金](https://juejin.cn/post/7257814347463671863)
-    - 逻辑编排的目的，是用最少甚至不用代码来实现软件的业务逻辑，包括前端业务逻辑跟后端业务逻辑。
+    - 设计形态的组件跟预览形态的组件，对应的是同一份schema，只是在渲染时，使用不同的组件实现
+    - Material，物料的定义。一个Schema，只是用来描述一个组件，这个组件相关的配置，比如多语言信息、在工具箱中的图标、编辑规则
+    - 软件架构,软件被划分为两个比较独立的部分：
+      - 设计器，用于设计页面，消费的是设计形态的组件。生成页面Schema。
+      - 运行时，把设计器生成的页面Schema，渲染为正常运行的页面，消费的是预览形态的组件。 
+      - core包是整个设计器的基础，包含了 Redux 状态树、页面互动逻辑，编辑器的各种状态等。
+      - 运行时包含三个包：ComponentRender、fieldy跟minions，前者依赖后两者
+  - [挑战零代码：可视化逻辑编排 - 掘金 _202307](https://juejin.cn/post/7257814347463671863)
+    - 逻辑编排的目的，是用最少代码来实现软件的业务逻辑，包括前端业务逻辑跟后端业务逻辑
     - 本文前端代码基于typescript、react技术栈，后端基于golang。
     - 涵盖内容：数据流驱动的逻辑编排原理，业务编排编辑器的实现，页面控件联动，前端业务逻辑与UI层的分离，子编排的复用、自定义循环等嵌入式子编排的处理、事务处理等
     - 逻辑编排编辑器，顾名思义，可视化编辑器，根据物料提供的元件信息，编辑生成JSON格式的“编排描述数据”。
-    - 前端解析引擎，Typescript 实现的解析引擎，直接解析“编排描述数据”并执行，从而实现的软件的业务逻辑。
-    - 后端解析引擎，Golang 实现的解析引擎，直接解析“编排描述数据”并执行，从而实现的软件的业务逻辑
+- https://github.com/codebdy/dingflow /202402/ts
+  - https://dingflow.vercel.app/
+  - React 仿钉钉审批流、工作流
+  - 依赖@reduxjs/toolkit、antd5
+  - [css-in-js、React Redux经典案例：仿钉钉审批流 - 掘金 _202308](https://juejin.cn/post/7263858443329191996)
+    - 只包含审批流设计部分，不包含表单的设计，表单的设计请参考作者另一个可视化前端项目rxdrag
+    - workflow-editor 是编辑器核心，未来要作为独立的npm package来发布；example 是演示如何使用workflow-editor来把审批流集成入自己的项目。
+    - 画布区是通过嵌套的`div`实现的，连线、箭头通过css的border、伪类before跟after实现
+    - UI虽然是树形结构，但是项目内部的数据结构可以是树形，也可以是扁平的。最后选择了树形数据结构,因为后端是树形结构，跟div的结构一致
+    - redux基于immutable的方式，可以保留状态快照，易于回溯，很容易就完成撤销、重做功能
+    - EditorEngine。编辑器的绝大多数业务逻辑，都在这部分实现，主要功能就是操作Redux store
+    - 物料就是节点的定义，包括节点的图标、颜色、缺省配置等信息。把这些信息独立出来的好处，是让代码更容易扩展，方便后期添加新的节点类型。作者自己开源低代码前端RxDrag，也用了类似的设计方式
+    - workflow-editor对外提供两个组件：FlowEditorScope，FlowEditorCanvas。前者负责接收各种配置资源，比如物料、物料ui、多语言资源。FlowEditorCanvas是画布区
+
+- https://github.com/deco-cx/deco /apache2/202404/ts
+  - https://deno.land/x/deco
+  - Open-Source web editor based on Preact, Tailwind and TypeScript. 
+  - It's focused on reusability and composability of UI components (Sections) and API integrations (Loaders and Actions).
+  - 依赖deno
+  - Deco combines the best of visual page editing (like Webflow) and the ability for app composition at the admin level (like Wordpress)
+  - Sections, Loaders and Actions can be packaged and installed with one click as Apps.
+  - Deco Blocks are interoperable: one's output can be visually configured as another's input in the visual editor, based on matching TypeScript types.
+
+- https://github.com/opentiny/tiny-engine /MIT/202404/js/vue
+  - https://opentiny.design/tiny-engine
+  - 华为低代码引擎，基于这个引擎可以构建或者开发出不同领域的低代码平台
+  - 跨端跨框架前端组件
+  - 直接生成可部署的源码，运行时无需引擎支撑
+  - https://github.com/opentiny/tiny-engine/tree/develop/mockServer
+    - mock服务，koa + nedb
+  - [谁在使用 TinyEngine 低代码引擎](https://github.com/opentiny/tiny-engine/issues/334)
+  - [Q&A：常见问题答疑 ](https://github.com/opentiny/tiny-engine/issues/78)
+
+- https://github.com/mybricks/designer-spa /202308/demos/json
+  - https://github.com/mybricks/designer-spa-demo /isc
+  - https://mybricks.world/
+  - mybricks-SPA 是mybricks引擎家族面向页面应用的企业级低代码设计引擎。
+  - MyBricks 开源了平台、渲染引擎、插件、编辑库、组件库等源代码。
+  - [生成源代码 | MyBricks 文档中心](https://docs.mybricks.world/docs/publish-integration/to-sourcecode/)
+    - 搭建产物目前是一份 JSON 作为页面标准协议，所需要做的就是基于这份协议进行解析生成所需要的源代码
+    - 👉🏻 生成后产物为一份普通的 React 代码工程，可以基于此工程之上再进行业务开发
+    - 代码生成器：理论上可以由页面协议解析生成任意技术栈源代码
+    - MyBricks通过搭建过程生成一份 JSON 描述，这份描述详细地反映了页面内的组件以及它们之间的交互。
 
 - https://github.com/page-pipepline/pipeline-editor /201910/js/inactive
   - 页面可视化搭建框架的 web 编辑器
@@ -420,9 +573,6 @@ modified: 2020-12-28T12:24:09.275Z
   - https://djit.su/
   - 依赖react、redux、styled-components、razzle、d3-require、@mdx-js/runtime、@editorjs、antd.v4、ahooks
   - Djitsu is an editor, application, and an execution platform all rolled into one
-
-- https://github.com/sparrow-js/sparrow /vue/inactive
-  - 场景化低代码（LowCode）搭建工作台
 
 - https://github.com/icodebetter/icodebetter /js/inactive
   - An opinionated low code platform that helps you code business applications

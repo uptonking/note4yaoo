@@ -22,6 +22,8 @@ modified: 2021-07-20T13:50:23.433Z
     - pref: 索引、缓存、分库分表、读写分离
   - 抽空在线体验，工作专注代码
   - specification for pivot table
+  - data-app: 输入数据input-data-table, 开放数据api，开放应用app-builder
+  - 产品方向: 重设计、重业务逻辑
 
 - 技术方向js: 前端版/流式版/oplog; 编辑器，多维表格，协作/gitdb; dnd，floating
 - 技术扩展js/py: 可拖拽的页面编辑器/lowcode, Excel/kanban, 图表

@@ -486,14 +486,14 @@ modified: 2023-12-15T19:30:23.094Z
   - Automatically upload Inserted images to Strapi Media Library (thanks to ckeditor5-strapi-upload-plugin)
   - Access Strapi Media Library directly from the editor toolbar
 - https://github.com/Roslovets-Inc/strapi-plugin-ckeditor5 /202303/js/v3
-  - Replace default Strapi markdown WYSIWYG editor with enhanced build of HTML CKEditor 5.
+  - Replace default Strapi markdown WYSIWYG editor with enhanced build of HTML CKEditor 5
   - Automatic translation of UI into selected in Strapi language (Strapi v3)
   - Strapi v4 (work in progress)
   - https://github.com/Roslovets-Inc/ckeditor5-build-strapi-wysiwyg /202203/js/inactive
 
 - https://github.com/spalz/strapi-plugin-editorjs-field /MIT/202401/ts
   - This code was developed based on the strapi-plugin-react-editorjs
-  - The option to disable specific tools for each field individually
+  - Add custom field in collection type or single type
 - https://github.com/melishev/strapi-plugin-react-editorjs /202209/js/archived
   - Plugin for Strapi Headless CMS, hiding the standard WYSIWYG editor on Editor.js
   - This is the Strapi v4 version of this plugin
@@ -513,6 +513,7 @@ modified: 2023-12-15T19:30:23.094Z
 
 - https://github.com/kwinyyyc/strapi-plugin-wysiwyg-react-md-editor /MIT/202403/ts
   - This is a strapi rich text editor plugin based on react md editor
+  - 源码和预览的分栏视图
 
 - https://github.com/TomaszPilch/strapi-code-editor-custom-field /202308/ts
   - Code editor plugin for strapi CMS. 
@@ -1177,6 +1178,9 @@ modified: 2023-12-15T19:30:23.094Z
   - StrapiCMS-focused monorepo concepts, tips and strategies
   - 仅模版，无业务案例
 
+- https://github.com/samMeow/strapi-v4-custom-field-example /202206/js
+  - a demo for creating a custom field in content manager in admin panel, but it doesnt cover changing underlying DB structure.
+
 - https://github.com/strapi-community/strapi-tool-dockerize /202311/js
   - Easy add support for docker to your strapi project
   - https://github.com/strapi-community/strapi-tool-deployify
@@ -1209,9 +1213,6 @@ modified: 2023-12-15T19:30:23.094Z
 
 - https://github.com/letanure/strapi-boilerplate /202311/ts
   - mostly update deps
-
-- https://github.com/samMeow/strapi-v4-custom-field-example /202206/js
-  - a demo for creating a custom field in content manager in admin panel, but it doesnt cover changing underlying DB structure.
 
 - https://github.com/matheus-rodrigues00/strapi_overwriting_user_permission /202303/js
   - Application to demonstrate how to overwrite Strapi user-permission, using Strapi 4.x

@@ -396,11 +396,15 @@ modified: 2023-09-28T20:33:44.333Z
   - Available for Windows, Mac & Linux thanks to Electron.
   - 依赖nedb、video.js、vue2
 
-- https://github.com/opentiny/tiny-engine /MIT/202401/js/vue
+- https://github.com/opentiny/tiny-engine /MIT/202404/js/vue
   - https://opentiny.design/tiny-engine
-  - 低代码引擎，基于这个引擎可以构建或者开发出不同领域的低代码平台
+  - 华为低代码引擎，基于这个引擎可以构建或者开发出不同领域的低代码平台
+  - 跨端跨框架前端组件
+  - 直接生成可部署的源码，运行时无需引擎支撑
   - https://github.com/opentiny/tiny-engine/tree/develop/mockServer
     - mock服务，koa + nedb
+  - [谁在使用 TinyEngine 低代码引擎](https://github.com/opentiny/tiny-engine/issues/334)
+  - [Q&A：常见问题答疑 ](https://github.com/opentiny/tiny-engine/issues/78)
 
 - https://github.com/Kong/insomnia/tree/develop/packages/insomnia-inso /apache2/ts
   - A CLI for Insomnia - The Collaborative API Design Tool

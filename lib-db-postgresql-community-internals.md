@@ -14,7 +14,8 @@ modified: 2023-10-28T13:46:14.957Z
 
 - ## 
 
-- ## 
+- ## How does Postgres decide when to use an index? Depends.
+- https://twitter.com/denismagda/status/1778445306662723747
 
 - ## Postgres is an amazing database. It’s only significant weakness now is in Materialized views, with their lack of incremental refresh._202207
 - https://news.ycombinator.com/item?id=32097663

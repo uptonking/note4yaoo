@@ -34,6 +34,7 @@ modified: 2020-10-22T10:22:55.878Z
   - https://github.com/gelvidge/maxGraph
   - maxGraph is a fully client side JavaScript diagramming library
   - It provides many of the diagramming features which would be expected by a piece of presentation software like Microsoft® PowerPoint™ or LibreOffice® Impress such as being able to resize, move or rotate nodes, but has a stronger focus on automatic layout algorithms and applications of Graph Theory.
+  - 🐛 未提供开箱即用的app，如编辑形状属性和文本
   - [mxgraph 系列【2】：项目结构说明 - 掘金](https://juejin.cn/post/6844904153873924110)
   - [mxgraph 系列【4】：事务管理 - 掘金](https://juejin.cn/post/6844904193094860808)
   - https://github.com/jgraph/mxgraph
@@ -48,6 +49,7 @@ modified: 2020-10-22T10:22:55.878Z
   - https://www.drawio.com/
   - draw.io, this project, is a configurable diagramming/whiteboarding visualization application
   - draw.io is not suitable as a framework for building other products from. For this try either Tldraw or Excalidraw.
+  - 🐛 部分代码未开源，是压缩过的，如mxClient.js
   - It is not an SVG editing app, the SVG export is designed only for embedding in web pages, not for further editing in other tools.
   - Additional minified JavaScript files and Java libraries are used in this project. All of the licenses are deemed compatible with the Apache 2.0, nothing is GPL or AGPL
   - draw.io is also closed to contributions.

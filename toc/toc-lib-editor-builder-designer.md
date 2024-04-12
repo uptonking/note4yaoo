@@ -8,7 +8,7 @@ modified: 2020-11-17T13:38:19.107Z
 # toc-lib-editor-builder-designer
 
 # guide
-- designer侧重编辑器和图形
+- designer侧重编辑器、图形、样式布局，产物偏向静态组件
   - 将可拖拽编辑器用于界面设计、交互设计、产品原型设计
 
 - ui-prototype
@@ -31,12 +31,13 @@ modified: 2020-11-17T13:38:19.107Z
     - Grida's Design to code core library. 
     - Convert your figma, sketch and adobe xd design to flutter, react, vue and more.
 
-- craft.js /7kStar/MIT/202402/ts
+- craft.js /7kStar/MIT/202402/ts/偏设计
   - https://github.com/prevwong/craft.js
   - https://craft.js.org/
   - A React Framework for building extensible drag and drop page editors
   - core依赖react、lodash，layers依赖react-contenteditable、s-c
   - 富文本编辑器和页面编辑器的区别，主要在是否使用conetenteditable
+  - 支持分栏布局，支持容器嵌套，支持layers图层显示
   - Craft.js solves this problem by modularising the building blocks of a page editor. It ships with a drag-n-drop system and handles the way user components should be rendered, updated and moved
   - Craft.js is an abstraction where you implement your own page editor upon. 
     - For example, it does not come with a ready-made user interface.
@@ -46,9 +47,9 @@ modified: 2020-11-17T13:38:19.107Z
   - [Can this be extended to be used on other JS framework like Vue or Svelte?](https://github.com/prevwong/craft.js/issues/101)
     - whole code is React dependend
   - [Future of Craft.js - taking it to the next level _202304](https://github.com/prevwong/craft.js/issues/507)
-    - Reka is not a replacement for Craft. It's simply intended to replace the internal state management system in Craft
-    - The current Craft's EditorState is essentially the equivalent of building a single UI component without states and props; and with the ability of adding/reordering JSX templates and mutating simple prop values of those JSX templates.
-    - I spent the past couple of months trying to build a new state management system for Craft, reka
+    - 📡 Reka is not a replacement for Craft. It's simply intended to replace the internal state management system in Craft
+    - The current Craft's `EditorState` is essentially the equivalent of building a single UI component without states and props; and with the ability of adding/reordering JSX templates and mutating simple prop values of those JSX templates.
+    - I spent the past couple of months trying to build a new state management system for Craft; one that could allow end-users of your page editors to build UI components that could be as complex as ones that developers could write in React code. 
     - The current Craft EditorState is a simple implicit tree data structure, whereas Reka is an AST. As such, a Reka AST for an equivalent EditorState is expected to be larger
 - https://github.com/prevwong/reka.js /437Star/MIT/202404/ts/yjs/暂未用在craft
   - https://reka.js.org/
@@ -248,12 +249,6 @@ modified: 2020-11-17T13:38:19.107Z
   - 稿定设计
     - 在线PS、自动抠图、海量素材
 # page/site/ui-builder
-- https://github.com/deco-cx/deco /apache2/202404/ts
-  - https://deno.land/x/deco
-  - Open-Source web editor based on Preact, Tailwind and TypeScript. 
-  - It's focused on reusability and composability of UI components (Sections) and API integrations (Loaders and Actions).
-  - Deco combines the best of visual page editing (like Webflow) and the ability for app composition at the admin level (like Wordpress)
-
 - page-builder /NALic/77Star/202008
   - https://github.com/cqm1994617/page-builder
   - 依赖：antd4, braft-editor, koa, react-dnd, redux-thunk2, styled-components, swiper 
@@ -304,6 +299,21 @@ modified: 2020-11-17T13:38:19.107Z
   - /4Star/MIT/202006
   - Since React UI Builder is based on a visual Web application builder - Webcodesk
   - we use Webcodesk to create the component library locally.
+# d2c/design-to-code
+- https://github.com/BigFishTeam/dream-builder /202205/ts/inactive
+  - 轻量级中后台前端可视化搭建平台，不限制任何组件库和框架，插件化集成，拥有强大的页面编排能力
+  - 不限制任何 react 组件库，默认内置常用业务组件: sui-components、antd
+  - core: 底层数据结构，主要包括：AST 树、执行引擎、request 请求等基类
+
+- https://github.com/zuoyanart/lens /apache2/202206/js/inactive
+  - 一个通过智能算法将设计稿转换为前端页面的产品（design to code），是`低代码`平台的一个分支方向， 
+  - 他的输入是设计稿产出是前端页面，中间无需值守即可自动完成
+  - 此项目可以一键将 Sketch、Photoshop 的设计稿转换为可维护的前端代码
+
+- https://github.com/winyh/astx /202003/js
+  - 基于React技术栈构建一个可视化搭建平台，通过拖拽的方式构建中台
+  - 代码自动生成底层技术原理是AST, DSL做功能辅助
+  - 很多大的平台在开始做这样的可视化搭建平台，节约项目开发成本。在目前来看，没有特别好的系统解决方案。微软的power，阿里云的云凤蝶，金蝉等
 # more
 - react-drag-drop-layout-builder /NALic/172Star/201904/ts
   - https://github.com/chriskitson/react-drag-drop-layout-builder

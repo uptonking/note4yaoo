@@ -216,6 +216,10 @@ modified: 2022-08-21T10:16:52.004Z
 
 - https://github.com/herrdu
   - https://github.com/herrdu/DEditor
+# lowcode
+- Water. Licodebdy /rxdrag
+  - https://github.com/codebdy/rxdrag
+  - https://juejin.cn/user/26044011654871/posts
 # more
 - [介绍在线文档、在线Excel等在线协作场景](https://www.zhihu.com/column/c_1412741892215459840)
  

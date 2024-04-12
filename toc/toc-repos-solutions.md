@@ -63,7 +63,12 @@ modified: 2020-12-12T19:32:36.255Z
   - 优先队列 - 根据单个爬取目标的优先级可以优先于其他目标提前爬取。
 
 - https://github.com/NaiboWang/EasySpider /CC-NonCommercial/202404/python/js
-  - 易采集：一个可视化浏览器自动化测试/数据采集/爬虫软件，可以无代码图形化的设计和执行爬虫任务
+  - https://www.easyspider.cn/
+  - https://github.com/NaiboWang/EasySpider/wiki
+  - 易采集: 可视化浏览器自动化测试/数据采集/爬虫软件
+  - 可以使用图形化界面，无代码可视化的设计和执行任务
+  - 只需要在网页上选择自己想要操作的内容并根据提示框操作即可完成任务的设计和执行
+  - 依赖beautifulsoup4、pandas、undetected-chromedriver、xlsxwriter、selenium
 # crawler-examples
 - https://github.com/yangwenmai/github-trending-backup /202401/go
   - Github trending backup by everyday.

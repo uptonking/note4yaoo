@@ -288,6 +288,11 @@ modified: 2023-12-15T17:04:36.589Z
 
 - ## 
 
+- ## 
+
+- ## [Custom Fields not showing in version 4.0.0 _202112](https://forum.strapi.io/t/custom-fields-not-showing-in-version-4-0-0/13057)
+- app.addFields({ type: 'lineItems', Component: MyComponent }); 
+
 - ## 📄 I have a question, the documentation plugin, is it done with redoc? _202404
 - https://discord.com/channels/811989166782021633/1095091586452426824/1227337659115114638
 - I don't believe so but I believe the plan is in v5 we will end up building an API explorer into the admin and immediately after deprecate that plugin. 

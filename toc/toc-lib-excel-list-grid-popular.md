@@ -109,6 +109,9 @@ modified: 2022-08-21T10:02:27.788Z
   - glide-data-grid: react组件
   - x-spreadsheet/wolf: class类和函数式都有
   - cheetah-grid(ts): 基于class类继承
+
+- resources
+  - [TablesGenerator.com: 支持latex/markdown/html/text/mediawiki](https://www.tablesgenerator.com/)
 # list-grid-div
 - tanstack-table /MIT/11.6kStar/202202/ts
   - https://github.com/tannerlinsley/react-table
@@ -1407,6 +1410,14 @@ modified: 2022-08-21T10:02:27.788Z
 - https://github.com/coston/react-super-responsive-table
   - https://react-super-responsive-table.netlify.app/
   - converts your table data to a user-friendly list in mobile view.
+# text-table
+- https://github.com/PlainTextTools/plain-text-table /MIT/201504/js/inactive
+  - https://plaintexttools.github.io/plain-text-table/
+  - Interactively create and edit tables and export them to plain text
+  - Interactive input table (using handsontable)
+  - Merged cell support (colspan and rowspan)
+  - Multiline text in the cells
+  - Text alignement support (horizontal and vertical)
 # more
 - https://github.com/cidgoh/DataHarmonizer /js
   - A standardized browser-based spreadsheet editor and validator that can be run offline and locally
