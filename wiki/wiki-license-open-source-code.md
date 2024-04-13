@@ -395,6 +395,19 @@ modified: 2021-09-14T18:58:58.275Z
 
 - ## Is my EPL-2.0 licensed project GPL compatible by default?
 - No. EPL-2.0 licensed projects may explicitly add GPL compatibility by way of adding a Secondary License
+# CDDL
+- ref
+  - [The CDDL (Common Development and Distribution License) - FOSSA](https://fossa.com/blog/open-source-licenses-101-cddl-common-development-distribution-license/)
+
+- The CDDL has similar provisions to the Mozilla Public License 2.0 and the Eclipse Public License
+- As a weak copyleft license, the CDDL carries more requirements on the use of the licensed code than permissive licenses but offers more freedoms than strong copyleft licenses.
+
+- Users can rework the code, but if they distribute these modifications, they must make them available in source code form.
+
+- CDDL vs. MPL
+  - MPL 2.0 is compatible with GPL v2 or later, LGPL 2.1 or later, and/or AGPL 3.0 or later, while the CDDL and earlier versions of the MPL are not.
+
+- EPL’s secondary license provision, which is not part of the CDDL
 # AGPL (Affero General Public License)
 - you have to allow the source to be downloaded even if you never distribute the binary but do provide a service
 - GPL v2和v3还有一个非常大的“漏洞”，就是软件“发布” 才必须开源。

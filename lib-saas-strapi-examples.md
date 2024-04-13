@@ -494,6 +494,7 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/spalz/strapi-plugin-editorjs-field /MIT/202401/ts
   - This code was developed based on the strapi-plugin-react-editorjs
   - Add custom field in collection type or single type
+  - This code was developed based on the strapi-plugin-react-editorjs 
 - https://github.com/melishev/strapi-plugin-react-editorjs /202209/js/archived
   - Plugin for Strapi Headless CMS, hiding the standard WYSIWYG editor on Editor.js
   - This is the Strapi v4 version of this plugin
@@ -515,9 +516,11 @@ modified: 2023-12-15T19:30:23.094Z
   - This is a strapi rich text editor plugin based on react md editor
   - 源码和预览的分栏视图
 
-- https://github.com/TomaszPilch/strapi-code-editor-custom-field /202308/ts
+- https://github.com/TomaszPilch/strapi-code-editor-custom-field /202308/ts/inactive
   - Code editor plugin for strapi CMS. 
   - It uses the monaco editor (vscode).
+  - When you add the plugin you will see two new custom fields. One for javascript (and other languages) and one for json.
+  - Editor is using two different types for strapi field. When you select JSON editor it will be `json` type. When you select different language, it will be `text` type.
 
 - https://github.com/mattmilburn/strapi-plugin-preview-button /MIT/202402/js
   - A plugin for Strapi CMS that adds a preview button and live view button to the content manager edit view.

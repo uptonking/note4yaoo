@@ -12,11 +12,25 @@ modified: 2024-01-02T07:52:13.141Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## [ignoring node_modules · webpack/webpack](https://github.com/webpack/webpack/issues/839)
+- Here is my way to prevent node_modules from being bundled:
+
+```JS
+{
+  externals: [({ context, request }, cb) => {
+    !/^\./.test(request) ?
+      cb(null, request) :
+      cb(null, false);
+  }]
+}
+```
+
+- https://github.com/liady/webpack-node-externals
+  - Easily exclude node modules in Webpack
 
 - ## 🌰 [How to build your React component as a dependency library using Webpack? - Stack Overflow](https://stackoverflow.com/questions/63955925/how-to-build-your-react-component-as-a-dependency-library-using-webpack)
 - It looks like you forgot to exclude React + ReactDOM out of your bundle file as you build with production mode.
-  - As you publish your code as React component, apart from set React as peer dependency you have to set the react as externals to use the react at the consumer library.
+  - As you publish your code as React component, apart from set React as peer dependency you have to set the react as `externals` to use the react at the consumer library.
 
 - ## [What is the difference between `main` and `module` vs `exports` in package.json? - Stack Overflow](https://stackoverflow.com/questions/68572936/what-is-the-difference-between-main-and-module-vs-exports-in-package-json)
 - "exports" field superseded the "module" field. 

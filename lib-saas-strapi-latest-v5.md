@@ -20,9 +20,11 @@ npx create-strapi-app@5.0.0-beta.0 strapi5-app-beta0 --quickstart --ts
 
 - v5-changes
   - [v4 to v5 breaking changes](https://docs-next.strapi.io/dev-docs/migration/v4-to-v5/breaking-changes)
+  - 替换默认markdown编辑器时，v4可用wysiwyg/richtext，v5只能richtext
   - `i18n` is now part of the strapi core
   - `helper-plugin` is deprecated
   - remove old plugin generator in favor of `plugin:init`.
+
 - resources
   - https://v5.contributor.strapi.io/docs/intro
   - [rfcs v5](https://github.com/strapi/rfcs/pulls?q=is%3Aopen+is%3Apr+label%3Av5)

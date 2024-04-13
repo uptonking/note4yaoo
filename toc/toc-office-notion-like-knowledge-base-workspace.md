@@ -531,6 +531,17 @@ modified: 2022-06-03T21:34:54.893Z
 - https://github.com/maxlath/wikibase-sdk /202310/ts
   - JS utils functions to query a Wikibase instance and simplify its results
 
+- https://github.com/Nutomic/ibis /AGPLv3/202404/rust
+  - ibis is a federated alternative to Wikipedia. 
+  - It uses the Activitypub protocol for communication between different servers (instances), similar to Mastodon or Lemmy. 
+  - Users can sign up on any instance to read and edit articles, including articles from other instances.
+  - First install PostgreSQL 
+  - Main objects in terms of federation are the Instance and Article. Each article belongs to a single origin instance
+  - Articles have a collection of Edits a custom ActivityPub type containing a diff.
+  - ⌛️ The text of any article can be built by starting from empty string and applying all associated edits in order.
+  - 🔀 Edits are done with diffs which are generated on the backend, and allow for conflict resolution similar to git. 
+  - Editing also works over federation. In this case an activity Update/Edit is sent to the origin instance.
+
 ## viewer
 
 - [Modern for Wikipedia](https://www.modernwiki.app/)

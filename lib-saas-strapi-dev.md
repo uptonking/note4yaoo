@@ -179,7 +179,9 @@ modified: 2023-12-15T16:51:56.101Z
 
 - 集成react-admin
 - 如何集成页面编辑器，如craft，可参考内置编辑器
-# dev-v5
+# dev-not-yet
+- 在`config/plugin.ts`文件disable plugin后启动`npx strapi develop`，plugin仍生效
+
 - v5插件的热加载问题很大，基于vite实现
   - 不能检测到新创建的文件，需要重启
 # dev-xp

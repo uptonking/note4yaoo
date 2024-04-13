@@ -52,7 +52,9 @@ modified: 2021-02-26T16:42:06.878Z
 # discuss
 - ## 
 
-- ## 
+- ## ActivationTime tells you how much lead time the browser has to prerender a page. (higher=better)
+- https://twitter.com/TimVereecke/status/1779079932506763405
+  - Here you can see improvements to ActivationTime after I switched from eagerness conservative to moderate
 
 - ## It hasn't been necessary to remove event listeners to prevent memory leaks for about 10 years, unless you are somehow holding on a reference to the DOM element the listener is registered on
 - https://twitter.com/Shenqingchuan/status/1749722057540358169
@@ -93,15 +95,15 @@ modified: 2021-02-26T16:42:06.878Z
 
 - ## How to optimize style recalculations
 - https://twitter.com/fabiospampinato/status/1652326018613379074
-01.     Open chrome://tracing
-02.     Record
-03.     Manual settings -> turn on "blink.debug"
-04.     Record
-05.     Interact with the page
-06.     Select everything
-07.     Click "Slices"
-08.     Click "SelectorStats"
-09.     Spot overly-broad selectors
+1.      Open chrome://tracing
+2.      Record
+3.      Manual settings -> turn on "blink.debug"
+4.      Record
+5.      Interact with the page
+6.      Select everything
+7.      Click "Slices"
+8.      Click "SelectorStats"
+9.      Spot overly-broad selectors
 10. Make them more specific
 
 - A bit easier in MS Edge, just turn on ‘advanced rendering instrumentation’ in the performance tab, and then the ‘selector stats’ tab will appear when you inspect a style recalc

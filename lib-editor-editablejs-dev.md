@@ -52,7 +52,8 @@ modified: 2023-02-20T15:15:50.211Z
 
 - ## 
 
-- ## 
+- ## [这个光标怎么实现的？ _202403](https://github.com/editablejs/editable/discussions/172)
+- 使用 div 模拟光标的显示，然后再隐藏一个 textarea，需要输入的时候使用 textarea 接收输入的文本
 
 - ## I'm hesitating between a canvas-based code, and a DOM-based approach
 - https://stackoverflow.com/questions/33611482

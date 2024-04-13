@@ -39,6 +39,14 @@ modified: 2021-01-28T14:34:20.579Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## The year is 2024 and TypeScript still doesn’t have a built-in JSON type
+- https://twitter.com/EricVicenti/status/1778823633248702972
+- Super easy to write though
+
 - ## One really neat pattern is to 'brand' the data that can be fetched from a URL _directly_ onto the URL itself.
 - https://twitter.com/mattpocockuk/status/1767849338305163333
   - This means you just to use the url directly, and get your data strongly typed.

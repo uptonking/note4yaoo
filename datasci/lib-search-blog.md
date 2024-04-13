@@ -114,6 +114,74 @@ modified: 2023-01-03T14:52:51.355Z
   - There are some big wins on the size of the index as well.
 
 - To determine the optimal ingest order, we need a way to tell how similar one repository is to another (similar in terms of their content), so we invented a new probabilistic data structure to do this in the same class of data structures as MinHash and HyperLogLog. This data structure, which we call a geometric filter, allows computing set similarity and the symmetric difference between sets with logarithmic space. 
+# blogs-code-search 🔡
+
+## [Code search is easy _202404](https://pomdtr-code_search_is_easy.web.val.run/)
+
+- I for sure agree with Tom that search feature needs improvements. But while reading his post, I immediately thought of a different approach to the problem
+- I pushed the data to a Github Repository
+  - I created a simple frontend on top of the Github Search API that allows you to search the data. It's hosted on Val Town (obviously).
+
+- Am I abusing the Github API? Maybe.
+
+- Does it work better than the current search feature of Val Town? Absolutely!
+
+## 📝 [Code Search is Hard _202404](https://blog.val.town/blog/search-notes/)
+
+- Val Town’s search functionality isn’t very good. 
+  - Right now it’s built on the Postgres `ILIKE` functionality, which just performs a substring search: if your search term is in the code, it appears in search results. 
+  - There’s virtually no ranking involved, and queries with multiple words are pretty poorly supported. 
+  - Better search is one of our most-requested features.
+- we haven’t found a solution that fits our needs yet. 
+- Here are some notes from our research. So far what we’ve learned is that:
+  - Mainstream search solutions are designed for natural language, not code.
+  - Big companies with code search needs have spent a lot of time and money building their own custom solutions.
+  - We have a lot of data already, and need a solution that scales well.
+  - The infrastructure and complexity tradeoffs involved in using a separate search service instead of a database extension are important.
+
+## 👥 [Code search is hard | Hacker News _202404](https://news.ycombinator.com/item?id=39993976)
+
+- I'm at Sourcegraph. We obviously have to deal with massive scale, but for anyone starting out adding code search to their product, I'd recommend not starting with an index and just doing on-the-fly searching until that does not scale.
+  - It actually will scale well for longer than you think if you just need to find the first N matches (because that result buffer can be filled without needing to search everything exhaustively). 
+- when you're ready to do indexed search, Zoekt (over which Sourcegraph graciously took maintainership a while ago) is the best way to do it that I've found. After discounting both Livegrep and Hound (they both struggled to perform in various dimensions with the amount of stuff we wanted indexed, Hound moreso than Livegrep), we migrated to Zoekt from a (necessarily) very old and creaky deployment of OpenGrok and it's night and day, both in terms of indexing performance and search performance/ergonomics.
+  - Sourcegraph of course adds many more sophisticated features on top of just the code search that Zoekt provides.
+
+- If you ever leave you can use Livegrep, which was based on code-search work done at Google. I personally don't use it right now but it's great and will probably meet all your needs.
+
+- I’d also point out that VSCode uses `ripgrep` for its search feature which is a great starting point.
+  - It does! And I only recently learned this, and it explains why I've always found the VS Code search and replace across all files to be tremendously useful.
+
+- 🌰 GitLab is also using ElasticSearch, so one could recreate the ElasticSearch Indices they came up with.
+  - They also share some of the challenges, they faced along the way. It also discusses interesting challenges, like implementing the authorization model.
+  - [Update: Elasticsearch lessons learnt for Advanced Global Search _202004](https://about.gitlab.com/blog/2020/04/28/elasticsearch-update/)
+  - [Update: The challenge of enabling Elasticsearch on GitLab.com _201907](https://about.gitlab.com/blog/2019/07/16/elasticsearch-update/)
+- Elasticsearch is good, and it does scale, but it is much more cumbersome and expensive to scale and operate than Postgres. If you use the managed service, you'll pay for the operational pain in the form of higher pricing.
+
+- I wrote zoekt. From what I understand valtown does, I would try to use brute force first (ie. something equivalent to ripgrep). Once that starts breaking down, you could use last-updated-timestamps to reduce the brute force
+  - If the snippets are small, you can probably use a (trigram => snippets) index for space savings relative to a (trigram => offset) index.
+
+- Is it possible to combine n-gram and AST to dump a better indexing?
+  - You could, but I don't know what you gain out of it. The underlying index would be almost the same size, and n-gram would also allow you to search for e.t for example which you are losing in this process.
+
+- Be careful with trigram indexes. At least in the postgres 10 era they caused severe index bloat for frequently updated tables.
+  - Its a result of trigrams themselves. For example turning searchcode (please ignore plug, this is just the example I had to hand) goes from 1 thing you would need to index into 8.
+  - As a result the index rapidly becomes larger than you would expect.
+
+- the rum index has worked well for us on roughly 1TB of pdfs. written by postgrespro, same folks who wrote core text search and json indexing. not sure why rum not in core. we have no problems.
+  - RUM is good, but it lacks some of the more complex features like language tokenizers, etc. that a full search engine library like Lucene/Tantivy (and ParadeDB in Postgres) offer
+
+- Surprised that hound https://github.com/hound-search/hound isn't mentioned. I thought it was the leader of open source solutions in this space.
+  - I've been using Wikimedia's instance ( https://codesearch.wmcloud.org/search/ ) and have generally been pretty happy with what it provides.
+- Hound has made an interesting choice to not bound searches.
+
+- I suppose using something like tree sitter to get a consistent abstract syntax tree to work with would be a good starting point. And then try building a custom analyzer (if using elasticsearch lingo) with that?
+
+- Surprised not to see Livegrep on the list of options. Very well-engineered technology; the codebase is clean (if a little underdocumented on the architecture side) and you should be able to index your code without much difficulty. Built with Bazel (~meh, but useful if you don't have an existing cpp toolchain all set up) and there are prebuilt containers you can run. Try that first.
+
+- A feature I'd appreciate from Val Town is the ability to point it to a GitHub repo that I own and have it write the source code for all of my Vals to that repo, on an ongoing basis. 
+  - Then I could use GitHub code search, or even "git pull" and run ripgrep.
+
+- OpenGrok (https://github.com/oracle/opengrok /CDDL(MPL-like)) is a wonderful tool to search a codebase. It runs on-prem and handles lots of popular programming languages.
 # blogs
 
 ## [Introducing DoorDash’s In-House Search Engine - DoorDash Engineering Blog _202402](https://doordash.engineering/2024/02/27/introducing-doordashs-in-house-search-engine/)
@@ -129,6 +197,7 @@ modified: 2023-01-03T14:52:51.355Z
   - 50% agreement on my side. Other half is lack of a standardized/highly adopted search engine providing separation of indexing and search (aka being cloud native[tm]) plus reranking. I’m sure you have a suggestion
 
 - [Kaldb: serverless lucene at petabyte scale :: Berlin Buzzwords 2023 :: pretalx](https://program.berlinbuzzwords.de/berlin-buzzwords-2023/talk/KPELMM/)
+
 ## [The holistic(整体的；全盘的) UX of integrated search filters](https://rystorm.com/blog/integrated-search-filters)
 
 - What is an integrated search filter?

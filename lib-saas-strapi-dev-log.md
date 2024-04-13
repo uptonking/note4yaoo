@@ -13,6 +13,8 @@ modified: 2024-03-21T13:28:16.872Z
 
 # not-yet
 
+- custom-field multi-select onChange prop is missing
+
 - 如何在自定义plugin-component触发edit view form的rerender
   - 变通方案是整页reload
 

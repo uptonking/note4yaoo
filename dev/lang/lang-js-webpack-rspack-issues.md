@@ -22,6 +22,8 @@ modified: 2024-01-03T16:14:25.702Z
   - if (typeof import.meta.url === "string") scriptUrl = import.meta.url
   - 注释掉产物中异常的代码，图片依然无法显示
   - 但 .svg 能正常打包
+# issues-not-yet
+- rspack.v0.6在打包yjs时，YDoc的random未使用打包模块
 # discuss-not-yet
 - ## 
 

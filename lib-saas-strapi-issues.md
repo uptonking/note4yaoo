@@ -50,7 +50,8 @@ npm run develop
 
 - ## 
 
-- ## 
+- ## 🔌 [Disable Email and Upload plugins _202208](https://forum.strapi.io/t/disable-email-and-upload-plugins/21128/2)
+- I would like to know this as well. I tried setting `enabled: false` for the upload plugin in my plugins.js, but it does not do the trick.
 
 - ## [Custom dropdowns _202301](https://forum.strapi.io/t/custom-dropdowns/24905)
 - Do you want this for the strapi admin panel or for a custom frontend

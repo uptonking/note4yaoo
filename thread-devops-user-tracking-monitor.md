@@ -14,6 +14,12 @@ modified: 2023-04-25T17:48:06.146Z
 
 - ## 
 
+- ## 
+
+- ## Tried to explain why OpenTelemetry format for metrics is bloated and over-engineered, and why Prometheus remote_write format is better 
+- https://twitter.com/valyala/status/1779061261524775371
+  - [OpenTelemetry Is Too Complicated, VictoriaMetrics Says | Lobsters _202404](https://lobste.rs/s/0srgrw/opentelemetry_is_too_complicated)
+
 - ## 网站上线之后，下一步就是添加 APM 了。APM 就是 Application Performance Management (应用性能管理)。
 - https://twitter.com/beihuo/status/1774530839201845335
   - 这类的服务一般都提供监控服务性能、错误报告，还有查看日志等。今天比较一下不同的 APM 服务，看看哪个最适合个人或者小团队的预算

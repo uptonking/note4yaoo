@@ -20,6 +20,15 @@ modified: 2023-02-09T18:23:43.486Z
 - ## 
 
 - ## 
+# discuss-storage
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [which format of content should be stored into database postgresql? _201904](https://github.com/quilljs/quill/issues/2590)
+- You should store the Delta returned from getContents(). 
 
 - ## 💡 [Proposal: (Doc) write about **the correct way** to store & display quill editor content _201808](https://github.com/quilljs/quill/issues/2276)
 - There are 2 way to store and then display content when using quill editor to write content.

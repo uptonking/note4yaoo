@@ -15,6 +15,47 @@ modified: 2023-09-21T17:33:01.520Z
 - ## 
 
 - ## 
+
+- ## 🔀🐛 [Ibis, a federated Wikipedia alternative | Hacker News _202403](https://news.ycombinator.com/item?id=39694045)
+- I do not understand how federation is going to solve the problems mentioned in the homepage. Surely it is going to make them 10x worse, right? The same incidents can happen, but it becomes impossible to moderate the content.
+
+- The real wikipedia renders (perfectly!) without javascript. This does not render at all without javascript. Not an alternative.
+
+- Automatically merging updates between different variants of the article, in fact, seems like a terrible idea. This is because resolving conflicts between edits is easy, but making sure that (for lack of a better word) semantic conflicts don't make it through requires a manual review of changes.
+  - Your CRDT merge can be a technological marvel that will seamlessly stitch together different edits on a topic... that say wildly different things about it, resulting in a completely nonsensical article.
+
+- CRDT adds automatic conflict resolution, wikis need at most, if any, manual conflict resolution, because their page editing has little need for concurrent real-time edits, it's a slower process (ironic given the meaning of wiki in Hawaiian). 
+  - About git, OP tried to explain to non-wiki editors what wikis do under the hood, conflict reconciliation in wikis is vaguely similar to git but simpler, and the tech Ibis uses, paired to a design for independence prone to content rotting (every url of the federation can differ even in context about any page), makes me smell of just importing by hand or by trust edits from peers into the backing store.
+
+- I think it depends what you want. Diffs are better if you want to review changes and intelligently merge them.
+  - CRDT is better if you want there to be just one document that everyone is editing at the same time, with merging being an automatic process and the rare non-sensical merge being acceptable.
+
+- It doesn't matter all that much whether your servers are federated or served from a single domain, the time users spend with the page editor open is much longer than the latency of a federation request. A server somewhere might be horribly out of sync and cause a lot of conflicts, but presumably those are also the scuffy servers with low traffic that don't see a lot of edits per minute anyways.
+  - CRDT is cool, but it's deploying a very shiny new tech for a small problem that doesn't really need anything fancy.
+
+- CRDTs make sure there is only one version, but that version might be garbage. Think taking all the lines from all conflicts in git. Sometimes it's ok, sometimes not. It's even worse than that: you don't know there was a conflict, so you don't know if there was a problem or not. It's trying to solve social problems with technology, it's never enough (but can bring us a good way there)
+  - Manual merging is mandatory to have human meaning, so might as well use it all the time.
+
+- CRDTs are cool for tiny concurrent edits. For example two people typing on one line. 
+  - But it doesn't save you when you get large conflicting edits. No system can automatically merge instance A removing a sentence and instance B adding some words within the that sentence. It's still the user that will have to make a decision. 
+  - And at that point, you're effectively looking at a git style 3-way merge.
+
+- Wikipedia is an amalgam of a large number of humans editing w/ some guardrails provided by the guidelines and tech (clean-up bots, edit alerts). If there's a human problem (corruption, bias), there's no tech solution that'll magically make all of it go away.
+
+- The reason to make a new wiki or wiki-style technology is to serve a different informational niche, guided by different rules. There's a reason each video game has its own Wiki. 
+
+- Reading through, this doesn't sound like a "federated wikipedia"
+  - It sounds more like they want to implement the github fork & pull-request model of version control where currently Wikipedia uses a more SVN type of version control.
+  - There are pros and cons to both models. However federation it is not. The mentioned controversies also seem entirely unrelated to which model you like.
+
+- I think there's a spectrum of knowledge-base like solutions, but the middle of the spectrum is often poorly served:
+  - wikipedia: global, canonical reference material. Is very good, and we almost all use it in some fashion.
+  - confluence/notion/gh-wiki: team knowledge base. Often spotty, stale, neglected.
+  - logseq/obsidian/org-mode: personal knowledge base, notes. Typically very idiosyncratic, sketchy, but can work very well for the people who put effort into it.
+  - What if a "federated wiki" was targeted at the team/personal level? I'm not saying this is Ibis in its present form
+
+- How does moderation work in this system, and if it results in multiple diverging pages on the same topic, how is any of it trusted?
+  - As much as it's a complicated mess, a centralised system with a broad army of moderators operating to similar standards, is the feature of Wikipedia. They may be wrong at times, but they're accountable somewhat collectively for that and so hold each other to account.
 # discuss-format
 - ## 
 
@@ -31,7 +72,7 @@ modified: 2023-09-21T17:33:01.520Z
 - I totally understand the reason why **it is made for read-only consumption**. However, we live in a moment where storage is significant cheaper, and so is processing. There could have a compromise, though I do not see any indication of such. SQLite could very well be used here.
 
 - I was curious how they achieve this. It looks like the underlying file format uses LZMA, or optionally Zstd, compression. **Both achieve pretty high compression ratios against plain text and markup**.
-  - Its file compression uses LZMA2, as implemented by the `xz-utils` library, and, more recently,    `Zstandard`. 
+  - Its file compression uses LZMA2, as implemented by the `xz-utils` library, and, more recently,          `Zstandard`. 
 - The more important thing is that they **aggressively downsize the images and omit the history and talk pages**. Even if they were using LZW it would probably only triple the filesize.
 
 - 👉🏻 File size is always an issue when downloading such big content, so we always produce each Wikipedia file in three flavours:

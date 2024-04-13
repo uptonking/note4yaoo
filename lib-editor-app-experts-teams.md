@@ -30,7 +30,7 @@ modified: 2022-08-21T10:16:52.004Z
   - https://github.com/worktile/slate-angular
   - https://www.zhihu.com/people/pubuzhixing/posts
 
-- 阿扎东 /slate-editablejs
+- 阿扎东 /slate-editablejs/am-editor
   - editablejs, 自绘光标
   - https://github.com/big-camel
 
