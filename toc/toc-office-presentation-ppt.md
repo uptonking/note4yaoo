@@ -143,6 +143,12 @@ modified: 2021-04-30T20:14:17.669Z
   - [feat: 支持移动端/更换开源协议 _202206](https://github.com/pipipi-pikachu/PPTist/commit/704192508247085d327577848691634a925623b8)
     - apache2 > GPLv3
 
+- https://github.com/jotform/dnd-builder /43Star/MIT/202402/js
+  - https://www.jotform.com/open-source/dnd-builder/
+  - accessible drag and drop page builder with React
+  - 依赖use-gesture、fuse.js、react-dnd-cjs、react-quill、react-sortable-hoc、react-zoom-pan-pinch、react-window、recharts
+  - 示例丰富，支持preview/ppt/print
+
 - https://github.com/tantaman/strut /AGPLv3/202312/ts
   - https://strut.io/
   - An Impress.js and Bespoke.js Presentation Editor

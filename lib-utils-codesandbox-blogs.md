@@ -98,6 +98,19 @@ Function('str', 'console.log(str, aaa)')('aaa:');
 - 这里选择了 Figma 曾经的方案 - Duktape
   - Duktape是一个嵌入式Javascript引擎，专注于可移植性和低空间占用。
   - 易于集成到C/C++项目中：将duktape.c, duktape.h，和duk_config.h添加到的构建项目中，然后使用Duktape API实现 C 代码与 Ecmascript 函数的双向调用。
+# blogs-iframe
+
+## [初探富文本之React实时预览](https://github.com/WindrunnerMax/EveryDay/blob/master/Plugin/%E5%88%9D%E6%8E%A2%E5%AF%8C%E6%96%87%E6%9C%AC%E4%B9%8BReact%E5%AE%9E%E6%97%B6%E9%A2%84%E8%A7%88.md)
+
+- 在上文中我们一直是使用限制用户访问全局变量或者是隔离当前环境的方式来实现沙箱，
+  - 但是实际上我们还可以换个思路，我们可以将用户的代码放置于一个iframe中来执行，这样我们就可以将用户的代码隔离在一个独立的环境中，从而实现沙箱的效果，
+  - 这种方式也是比较常见的，例如CodeSandbox就是使用这种方式来实现的
+  - 还可以通过iframe的sandbox属性来限制用户的行为，例如限制allow-forms表单提交、allow-popups弹窗、allow-top-navigation导航修改等，这样就可以做到更加安全的沙箱了
+
+- 
+- 
+- 
+
 # blogs-codesandbox
 
 ## [Hosting the Bundler – Sandpack](https://sandpack.codesandbox.io/docs/guides/hosting-the-bundler)

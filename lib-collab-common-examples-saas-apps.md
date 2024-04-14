@@ -122,7 +122,7 @@ modified: 2023-01-17T19:14:47.611Z
   - React, Redux, Redux-Saga, Redux-ORM, Semantic UI React, react-beautiful-dnd
   - Sails.js, Knex.js, PostgreSQL
 
-- https://github.com/MicroHealthLLC/mSuite /ruby/vue
+- https://github.com/MicroHealthLLC/mSuite /202404/ruby/vue
   - Real Time Collaboration Made Simple for concept maps, kanban, documents and spreadsheets.
 
 - https://github.com/bigbluebutton/bigbluebutton

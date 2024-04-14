@@ -425,9 +425,10 @@ modified: 2021-05-14T15:04:42.225Z
   - Code-coverage using Node.js' built in functionality that's compatible with Istanbul's reporters.
   - [question: how use it with typescript using ts-node](https://github.com/bcoe/c8/issues/139)
 # benchmarking
-- https://github.com/tinylibs/tinybench /MIT/202401/ts
+- https://github.com/tinylibs/tinybench /MIT/202404/ts/NoDeps
   - tiny and lightweight benchmarking library
   - You can run your benchmarks in multiple JavaScript runtimes, Tinybench is completely based on the Web APIs with proper timing using `process.hrtime` or `performance.now`.
+  - Event and EventTarget compatible events
 # toolchain
 - https://github.com/albertan017/LLM4Decompile /MIT/202403/python
   - 🔡 Reverse Engineering: Decompiling Binary Code with Large Language Models

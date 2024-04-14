@@ -36,3 +36,12 @@ modified: 2023-11-27T20:19:50.947Z
 - v1.3.7_2019-09-09
   - Security related bug fixes.
 # more
+
+# discuss
+
+- ## 
+
+- ## 
+
+- ## [is there any plan for quilljs2.0 _202004](https://github.com/zenoamaro/react-quill/issues/601)
+- Chrome is going to stop supporting mutation events that are in quill 1.3.7 on July 30 2024

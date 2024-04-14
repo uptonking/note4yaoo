@@ -13,6 +13,13 @@ modified: 2023-02-09T18:30:19.001Z
 
 ## ⌛️ [A Document Revisions System in JavaScript - DEV Community_202208](https://dev.to/kornatzky/a-document-revisions-system-in-javascript-1o3h)
 
+## [Yjs + Quill 实现文档多人协同编辑器开发（基础+实战） - 掘金 _202309](https://juejin.cn/post/7273432426772070457)
+
+- 
+- 
+- 
+- 
+
 # blogs
 
 ## [现代 Web 富文本编辑器 Quill.js - 从基本使用到核心概念 - 掘金_202101](https://juejin.cn/post/6918893948412887053)
@@ -48,26 +55,17 @@ modified: 2023-02-09T18:30:19.001Z
 
 ## 🌰 [appflowy: How we built a highly customizable rich-text editor for Flutter _202212](https://blog.appflowy.io/how-we-built-a-highly-customizable-rich-text-editor-for-flutter/)
 
+- in the early versions (v0.0.1 to v0.0.5) of AppFlowy, we used flutter_quill as our editor component.
+  - we have encountered problems with extensibility, consistency, and code coverage.
+- we have decided to design and develop the new AppFlowy Editor component ourselves.
+
 - Quill.js uses Delta as the data structure, while Slate.js uses tree nodes as the data structure. 
-  - Ultimately we have elected to use a tree node like Slate.js to assemble the documents while continuing to use Delta for the data storage of text nodes.
+  - 💡 Ultimately we have elected to use a tree node like Slate.js to assemble the documents while continuing to use Delta for the data storage of text nodes.
 - Why do we use a node tree?
   - The entirety of the document data is described using a single Delta data which does not allow us to easily describe complex nested scenarios.
   - our preference is to use a node tree like Slate.js to describe the document in chunks, where each chunk’s additions, deletions, and modifications only affect the changes to the current node.
 - Why do we still use Delta for the text node?
   - If text with different styles continues to be split into different nodes, it will increase the complexity of the tree node structure.
   - The ability to export a text change delta is already supported in Flutter, so it is easy to substitute the Flutter text change delta to Delta.
-
-- 
-- 
-
-# blogs-collab
-
-## [Yjs + Quill 实现文档多人协同编辑器开发（基础+实战） - 掘金 _202309](https://juejin.cn/post/7273432426772070457)
-
-- 
-- 
-- 
-- 
-
 # more
 - [Quill: The DOM, Parchment, and Delta views of the document](http://billauer.co.il/blog/2021/12/quill-document-views/)

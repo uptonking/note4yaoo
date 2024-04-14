@@ -38,6 +38,11 @@ modified: 2021-05-19T08:32:28.120Z
   - The render layer by svg is under development, see feature/svg
   - The export pdf feature is available now, see feature/pdf
   - [一个开源可分页的富文本编辑器_202212](https://zhuanlan.zhihu.com/p/592004147)
+  - https://gitee.com/wfeng0/canvas-editor /202402/ts
+    - [Canvas-Editor 实现类似 Word 协同编辑 - 掘金 _202401](https://juejin.cn/post/7326979670485925926)
+    - 此次的重点是实现协同部分的代码，难免会修改源码部分，实现协同。
+    - Yjs 的基本使用中，通过Map设置数据，observe观察器实现数据获取
+    - 用户闪烁的光标目前还没有思路实现，后面会攻克技术难点，但是用户选取可以通过API实现
 
 - https://github.com/karpov-kir/canvas-block-editor /ts
   - A block based canvas text editor.

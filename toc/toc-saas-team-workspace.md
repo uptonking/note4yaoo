@@ -584,6 +584,11 @@ modified: 2023-02-07T17:38:05.336Z
 - https://github.com/todomd/todo.md
   - The TODO.md format is based on GFM - GitHub Flavored Markdown - Task Lists.
   - Tasks in TODO.md can be visualized using Kanban Board where sections become columns on the board.
+
+- https://github.com/ransome1/sleek /MIT/202403/ts
+  - https://github.com/ransome1/sleek/wiki
+  - open-source (FOSS) todo manager based on the todo.txt syntax. 
+  - available for Windows, macOS and Linux
 # sandbox/all-in-one
 - https://github.com/sandstorm-io/sandstorm /apache2/202308/js/cpp
   - https://sandstorm.io/

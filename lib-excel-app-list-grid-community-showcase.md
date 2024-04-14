@@ -9,6 +9,26 @@ modified: 2023-05-21T15:44:39.196Z
 
 # guide
 
+# discuss-teable/eidos
+- ## 
+
+- ## 有没有 logseq/obsidian 插件玩的比较 6 的。 扩展是全局可用还是和 space 绑定，哪种方案好一点
+- https://discord.com/channels/1153437530952323186/1170178651761946654/1219438282245542009
+- 最近把 scripts 扩展成了 extensions，分成了下面几种扩展类型。
+  - script，写代码实现任意功能
+  - udf，在表格 formula 字段中使用的自定义函数
+  - prompt，自定义提示词, 目前可以和文档集成
+  - app，script + ui
+
+- ob的插件只能当前仓库生效，我觉得如果可以支持全局就很不错
+
+- ## teable 底层用 grid 库和 eidos 是同一个？
+- https://discord.com/channels/1153437530952323186/1170178651761946654/1216653039176253450
+- 不是。teable 是 canvas 自己画的，还没有抽象出来可用的包，目前就是内部用。
+- eidos 用的 https://github.com/glideapps/glide-data-grid
+
+- eidos 什么时候开源？  
+  - 不知道，大功能做不了，小 bug 不想修。每天就是摸鱼
 # discuss
 - ## 
 

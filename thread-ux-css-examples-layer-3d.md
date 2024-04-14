@@ -18,7 +18,8 @@ modified: 2022-11-21T15:27:20.974Z
 
 - ## 
 
-- ## 
+- ## N-body problem and the Barnes-Hut algorithm: visualizing the quadtree spatial partitioning that cuts complexity from O(N²) to O(N logN) through hierarchical force approximation
+- https://twitter.com/PeRossello/status/1779294633496924524
 
 - ## I made a Mac mini with HTML & CSS.
 - https://twitter.com/_georgemoller/status/1388528849600847874

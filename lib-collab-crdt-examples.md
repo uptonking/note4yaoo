@@ -1072,7 +1072,7 @@ modified: 2022-04-05T10:08:25.947Z
   - [yjs-minimal.ts](https://gist.github.com/josephg/dcb1bce2ceb0f0b50ffcac0245a55907)
   - [yjs_testcase.ts](https://gist.github.com/josephg/88c006724435a61afaec5ff3f1bacd87)
 
-- https://github.com/kindone/text-versioncontrol /202208/ts
+- https://github.com/kindone/text-versioncontrol /MIT/202208/ts/inactive
   - provides version and concurrency control for text editing based on OT(Operational Transformation) and CRDT(Conflict-free Replicated Data Type) ideas
   - Text-VersionControl utilizes Quill's Delta representation in JSON. 
   - Text-VersionControl borrows Quill Delta's representation and many of its method names but does not behave the same in a few cases.

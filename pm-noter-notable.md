@@ -114,6 +114,9 @@ modified: 2023-11-28T14:48:45.910Z
 
 - 文本优先版编辑器会丢失部分数据
 - 标准版会导出所有编辑数据，以sqlite格式
+
+# mobile
+- 移动端的缩放
 # premium
 - 针对table优化的notebook
 

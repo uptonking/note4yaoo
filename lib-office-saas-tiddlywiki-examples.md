@@ -103,12 +103,17 @@ modified: 2023-12-15T17:50:41.213Z
 - https://github.com/ThaddeusJiang/Projectify /202206/js
   - https://thaddeusjiang.github.io/Projectify/
   - a project management app for TiddlyWiki, inspired by products like Todoist and Basecamp.
-# sync
+# sync/collab
 - https://github.com/qiushihe/tiddlywiki-remote-filesystem-syncadaptor /202201/ts
   - A `syncadaptor` module for TiddlyWiki to synchronize tiddlers with remote filesystem (i.e. AWS S3).
 
 - https://github.com/fiatjaf/tiddlywiki-remotestorage /201810/js
   - a syncadaptor plugin that saves tiddlers on custom remoteStorage directories
+
+- https://github.com/joshuafontany/y-tiddlywiki /202202/js/inactive
+  - Tiddlywiki5 binding for Yjs
+  - maps a Y. Doc to a Tiddlywiki 5 instance. 
+  - It optionally supports shared cursors via the quill-cursors module.
 # examples
 
 # plugins

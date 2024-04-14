@@ -74,6 +74,9 @@ modified: 2023-02-08T10:46:26.912Z
 - 搜索repo名称包含关键词如directus的用户，按仓库数量最多排序，可发现directus的爱好者
   - 甚至可以再按年份排序
 
+- [Search & Sort by number of commits ](https://github.com/orgs/community/discussions/63611)
+  - For now, Most forks, Most Stars might be alternatives
+
 ## search-issues/pr
 
 - is:unmerged

@@ -12,6 +12,19 @@ modified: 2022-08-21T10:11:19.219Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 请问大家有什么办法在复制页面文本时不copy格式吗？
+- https://twitter.com/geniusvczh/status/1779482089194398169
+- 这个思路不对，因为复制的时候操作系统的剪贴板里面是同时拥有不同格式的数据的，你应该问如何粘贴的时候选择plain text格式。答案就简单了，app做了就行，不做就不行，一般都会放在很显眼的地方，比如office
+
+- Cmd Shift V 无格式粘贴
+
+- 复制到sublime或者notepad++里边变成text方式
+- 在浏览器地址栏洗一下
+
 - ## [Ask HN: What is your favorite FOSS WYSIWYG editor? | Hacker News_202310](https://news.ycombinator.com/item?id=37974321)
 - This space has a lot of churn(搅乳器); a hot new project is started by a dev who claims they'll finally have "the solution" for the WYSIWYG space. Then it gets dropped after a few years. In fact many of the comments are listing archived projects no longer under development.
   - The only two WYSIWYG editors I can recommend are OSS but have premium plugins

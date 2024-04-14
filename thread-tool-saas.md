@@ -57,7 +57,10 @@ modified: 2023-05-07T18:35:50.897Z
 
 - ## 
 
-- ## 
+- ## 做了一个在浏览器里「视频转 GIF 」的工具。
+- https://twitter.com/zQwQs/status/1779465415217066204
+  - 使用 WebCodec 解码视频，转换速度还是有保障的。而且还可以自定义颜色、抖动等参数，提高转换效果
+  - https://lyonbot.github.io/video-to-gif/
 
 - ## 💡 七牛现在提供的 CDN HTTPS 免费证书只有 90d 的版本了 
 - https://twitter.com/alswl/status/1768924198372794718

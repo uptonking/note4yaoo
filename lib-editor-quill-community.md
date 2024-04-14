@@ -20,24 +20,6 @@ modified: 2023-02-09T18:23:43.486Z
 - ## 
 
 - ## 
-# discuss-storage
-- ## 
-
-- ## 
-
-- ## 
-
-- ## [which format of content should be stored into database postgresql? _201904](https://github.com/quilljs/quill/issues/2590)
-- You should store the Delta returned from getContents(). 
-
-- ## 💡 [Proposal: (Doc) write about **the correct way** to store & display quill editor content _201808](https://github.com/quilljs/quill/issues/2276)
-- There are 2 way to store and then display content when using quill editor to write content.
-  - (Delta) Store Delta into database (MySQL/PostgreSQL as JSON). then, when Display, use some library convert Delta to HTML and then display
-  - (HTML) Store HTML using `quill.root.innerHTML` into database (MySQL/PostgreSQL) and then just Display these HTML
-
-- HTML from users is unsafe. Best way is to store Delta in the database and render it to HTML if needed.
-
-- In case anyone comes across this and finds this useful. You don't need to use innerHTML to render the delta, you can instantiate a new quill object with the settings of readonly and no toolbar
 # discuss-news
 - ## 
 
@@ -53,6 +35,14 @@ modified: 2023-02-09T18:23:43.486Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [I started rewriting using hooks and React 17 compatible APIs _201911](https://github.com/zenoamaro/react-quill/issues/547)
+- Do you have something you would recommend for inclusion? Eg. code or documentation about Katex?
+  - I think polling window.katex works well with async CDN script tags.
+
 - ## [How to read in existing data into Quill JS - Stack Overflow](https://stackoverflow.com/questions/39733120/how-to-read-in-existing-data-into-quill-js)
 
 ```JS
@@ -65,13 +55,6 @@ quill.setContents({
 quill.clipboard.dangerouslyPasteHTML("<p>here is some <strong>awesome</strong> text</p>");
 quill.pasteHTML(YOUR_HTML_HERE, 'silent');
 ```
-
-- 
-- 
-- 
-- 
-- 
-- 
 
 - ## 🎯 [What Quill version to use?](https://github.com/quilljs/quill/issues/3356)
   - 1.3.7 which is installed from npm by npm install quill and was published 2 years ago.
@@ -114,3 +97,31 @@ quill.pasteHTML(YOUR_HTML_HERE, 'silent');
   - TinyMCE and CK Editors are implemented with contenteditable, which is a very flawed mechanism that isn't standard or consistent across browsers.
   - Quill relies on contenteditable in order to support certain operations, such as pasting. 
   - Quill has its own document model, and supports things like deltas/operational transforms, which are practically impossible if you use the DOM as the truth like TinyCKE et al do.
+
+- ## [Quill – A cross browser rich text editor with an API | Hacker News _201510](https://news.ycombinator.com/item?id=10446865)
+- We built Quill to because my previous company needed a modern editor with an API to manipulate the contents (our use case was collaborative coauthoring). Before I left we open sourced Quill and I have been working on it since.
+
+- 🆚️ Could you compare and contrast Quill with some of the other editors that have popped up on HN recently? 
+  - I would say the old approach was to add contenteditable=true to a `<div>`, call execCommand for formatting, and try to fix the issues this would cause. 
+  - Editors in the last couple of years simply avoid using contenteditable in as many cases as possible. 
+  - So the major differences would probably be when and where each of these editors tolerate native contenteditable behavior and which implement it themselves. 
+    - But it's near impossible to not use contenteditable at all and all editors that I know of (including Trix and ProseMirror) use it to some degree.
+    - For example to handle paste, I've found the best way is to detect a paste, shift focus to another invisible contenteditable div, interpret the pasted content, and insert that into the actual editor through the editor's API. That way no weird/unexpected markup ends up in the editor (whether or not the editor also utilizes contenteditable).
+  - Another trend is a focus on the document model, which is the editor's main data structure to keep track of content. 
+    - Older editors just use the DOM (or HTML strings) and hand that to you as their API. These editors really don't know themselves precisely what content they contain and cannot offer an API for the simple task of inserting text in a specific nth position. Extensibility becomes quite limited and often leads to a lot of edge case code. 
+    - I think ProseMirror is right to have the document model as a focal point as I've reached the same conclusion with Quill and have worked on to improve for some time now. 
+    - The upcoming 1.0 version boasts a much more powerful document model that is being open source separately as Parchment.
+
+- All of these new browser rich text editors look really nice, but without basic table support there is no way anyone can switch from TinyMCE (which is about as horrible as you can get).
+  - Tables are hard to do well and there’s ambiguity as to what constitutes basic. After being able to create an NxM table, should you be able to add/remove rows/columns? What about resizing the width or height of rows or columns.
+
+- what are the main use cases for RTE's? 
+  - Websites. RTEs are a necessary evil there.
+  - basic HTML markup 
+  - HTML tables
+  - images
+  - black magic to cope with Word's markup
+
+- ## 🚀 [Quill – An Open Source Rich Text Editor with an API | Hacker News _201405](https://news.ycombinator.com/item?id=7716376)
+- This project was started originally at Stypi where we needed an editor with a better API than just getting/setting the text to support coauthoring. 
+  - Stypi was acquired by Salesforce in 2012 but we continued to work on Quill because we felt it was a missing piece of the web. 

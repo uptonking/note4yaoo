@@ -352,10 +352,13 @@ modified: 2023-12-15T19:30:23.094Z
 
 - https://github.com/sat8ndra/import-excel /202311/js/未实现
   - A strapi plugin to import excel bulk import into content of strapi
-- https://github.com/vinubabu323/strapi-plugin-excel-export /202402/js
+- https://github.com/vinubabu323/strapi-plugin-excel-export /MIT/202403/js
   - This plugin allows users to generate and download excel files 
   - 使用麻烦但支持配置导出字段
+  - 依赖exceljs、react-data-table-component
   - Create an `excel.js` file in the config folder. This file is used to provide tables and columns that need to be in the excel file
+  - You can't extract data from dynamic zone or nested components.
+  - Relational fields need to be specified in the relation. Currently one level of relation is supported.
 
 - https://github.com/gustomedialab/strapi-csv-export /202304/js
   - plugin csv-export
@@ -557,6 +560,12 @@ modified: 2023-12-15T19:30:23.094Z
   - New field Dynamic Enumeration appears in admin content-type-builder page, in the custom tab.
   - Works inside Components and Dynamic Zones.
 
+- https://github.com/Freyb/strapi-plugin-content-tags /202306/js
+  - A Strapi plugin that allows you to add custom tags to your content.
+
+- https://github.com/canopas/strapi-plugin-tagsinput /MIT/202402/js
+  - This plugin is used to add tagsinput in your strapi admin panel. 
+
 - https://github.com/raykeating/strapi-location-field-plugin /202310/js
   - A Strapi plugin to enable a custom location field with autocomplete input
 
@@ -573,8 +582,8 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/play14team/strapi-plugin-map-field /202311/js
   - plugin allows to add a Mapbox map custom field in your content-types.
 
-- https://github.com/BorysShulyak/strapi-plugin-field-formula /202311/js
-  - A plugin for Strapi Headless CMS that provides an integration with powerful mathjs library.
+- https://github.com/BorysShulyak/strapi-plugin-field-formula /MIT/202310/js/inactive
+  - A plugin for Strapi Headless CMS that provides an integration with powerful `mathjs` library.
   - Is compatible with JavaScript’s built-in Math library.
   - Calculating the `formula` with the provided `scope` using the powerful `mathjs.evaluate` method.
   - https://github.com/quyen1708/strapi-4-custom-field-math-type /202311/ts
@@ -594,6 +603,9 @@ modified: 2023-12-15T19:30:23.094Z
   - For now only supports English (not American/Simplified English) date format
 - https://github.com/everythinginjs/strapi-better-datepicker /202312/ts
   - A quick description of strapi-better-datepicker.
+
+- https://github.com/muammerkeles/strapi-date-range-picker-plugin /202312/js
+  - Custom Date Range Picker field for Strapi admin
 
 - https://github.com/play14team/strapi-plugin-timezone-select /202303/js
   - A strapi custom field for selecting any timezone based on the moment.js timezones.
@@ -742,12 +754,6 @@ modified: 2023-12-15T19:30:23.094Z
   - A plugin that lets you categorize content quickly.
   - supports multiple categorizer fields per collection
   - feature: multiple categorizers on one target*
-
-- https://github.com/Freyb/strapi-plugin-content-tags /202306/js
-  - A Strapi plugin that allows you to add custom tags to your content.
-
-- https://github.com/canopas/strapi-plugin-tagsinput /202402/js
-  - This plugin is used to add tagsinput in your strapi admin panel. 
 
 - https://github.com/luisguve/strapi-plugin-ratings /202211/js
   - Strapi plugin to enable and manage reviews for your content

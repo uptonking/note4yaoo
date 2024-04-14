@@ -224,6 +224,13 @@ modified: 2020-10-22T10:22:55.878Z
   - 基于svg实现的图形编辑器
   - 提供了多种编辑场景示例
   - 实现了多种react-render-target: canvas, svg, webgl
+
+
+- https://gitee.com/wfeng0/svg-flow-editor-mvp /apache2/202402/ts
+  - 一款自研流程图编辑器，提供了一系列流程图交互、编辑所必需的功能，计划支持前端研发自定义开发各种逻辑编排场景，如流程图、ER 图、BPMN 流程等
+  - 项目使用typescript与svg、canvas等技术进行搭建，脱离vue、react等框架的限制
+  - 底层依赖了svg对项目元件库的基础元件进行创作，同时使用了canvas对背景网格、水印等进行绘制，使用html进行页面布局
+
 # uml
 - https://github.com/jgraph/mxgraph
   - /6.1kStar/Apache2/202011/archived

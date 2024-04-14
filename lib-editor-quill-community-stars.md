@@ -24,8 +24,9 @@ modified: 2023-02-09T18:27:26.010Z
 
 - ## 
 
-- ## was not expecting figma to use quill editor... that was the first text editor lib i used too, but wasn't maintained for a while
+- ## was not expecting figma to use quill editor... _202310
 - https://twitter.com/soupdumplingcat/status/1717036069194240048
+  - that was the first text editor lib i used too, but wasn't maintained for a while 
 
 - ## [Render quill delta without instantiating an editor](https://github.com/quilljs/quill/issues/993)
 - Current best solution seems to be to convert the deltas to HTML

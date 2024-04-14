@@ -23,10 +23,6 @@ modified: 2023-11-27T15:55:06.815Z
 
 - ## 
 
-- ## [Enhancement: Provide a way to track changes in editor _201909](https://github.com/KillerCodeMonkey/ngx-quill/issues/524)
-- 
-- 
-
 - ## 🔀 [Quill Track Changes _201912](https://github.com/quilljs/quill/issues/2858)
 - 
 - 

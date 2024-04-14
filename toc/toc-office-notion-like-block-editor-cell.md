@@ -35,6 +35,8 @@ modified: 2022-08-14T16:26:48.558Z
   - 支持协作
   - preact的封装很少，大部分vanillajs
   - An headless editor built with blocks
+  - 依赖quill-delta、lodash
+  - v202210版不依赖rxjs，后面引入rxjs
   - Extensible. Extend the editor with custom blocks and spans.
   - Currently, the document tree of BlockyEditor supports collaborative editing using operation transforming(known as OT).
   - You can also use a CRDT library such as YJS and bind the data model to it.

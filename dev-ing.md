@@ -328,8 +328,23 @@ betterdiscordctl -i flatpak install
 
 ## 041
 
-## 0411
+## 0414
 
+- [react-dnd 16.0.0 is causing "Module not found: Error: Can't resolve 'react/jsx-runtime'" · Issue #3423 · react-dnd/react-dnd](https://github.com/react-dnd/react-dnd/issues/3423)
+  - With Webpack and React 17, you can add this Webpack config so it knows where to find those files if they dont exist:
+
+```JS
+{
+  resolve: {
+    fallback: {
+      'react/jsx-runtime': 'react/jsx-runtime.js',
+      'react/jsx-dev-runtime': 'react/jsx-dev-runtime.js',
+    },
+  }
+}
+```
+
+## 0411
 
 - [Is there any difference between a GUID and a UUID? - Stack Overflow](https://stackoverflow.com/questions/246930/is-there-any-difference-between-a-guid-and-a-uuid)
   - The simple answer is: no difference, they are the same thing.

@@ -319,5 +319,9 @@ modified: 2022-10-02T20:51:30.444Z
   - a reference implementation for OT protocol described introduced in Google Wave and described in their documentation
 - https://github.com/Fleischers/OT_example /java
   - simple local console implementation of Operational Transformation
+
+
+- https://github.com/microsoft/FluidFramework/tree/main/experimental/dds/ot/ot /202404/ts
+  - fluid-experimental/ot
 # more-ot
 - [I'm looking for a library that would allow me to synchronize text in real-time between multiple users (ala Google Docs).](https://stackoverflow.com/questions/2043165)

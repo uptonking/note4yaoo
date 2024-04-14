@@ -180,6 +180,12 @@ modified: 2022-02-05T18:45:34.558Z
 
 - https://github.com/allain/zuite /202205/js/inactive
   - A toolkit for building modern zoomable user interfaces
+# gesture
+- https://github.com/lyonbot/interactive-blocks /MIT/202301/ts/inactive
+  - https://lyonbot.github.io/interactive-blocks/
+  - Make interactive selectable, drag-and-drop, copy-and-paste ready, Block and Slot components easily! 
+  - Works with Vue, React and any MV* framework.
+  - 支持嵌套的卡片拖拽
 # more
 - sortablejs /21.1kStar/MIT/202203/js/NoDeps/代码少/inactive
   - https://github.com/SortableJS/sortablejs

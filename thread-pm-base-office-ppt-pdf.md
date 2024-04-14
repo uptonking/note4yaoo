@@ -69,7 +69,9 @@ modified: 2024-01-11T15:57:32.182Z
 
 - ## 
 
-- ## 
+- ## what if you could capture frames in a video and then slice them up / re-arrange them?
+- https://twitter.com/JungleSilicon/status/1779281315696656785
+  - 图片被切成几条的效果
 
 - ## [Powerpoint shapes/diagrams to Draw.io? : powerpoint_202310](https://www.reddit.com/r/powerpoint/comments/16yreii/powerpoint_shapesdiagrams_to_drawio/)
   - I made diagrams family tree in powerpoint and wanted to edit in draw.io and then edit again in powerpoint.

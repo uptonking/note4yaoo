@@ -123,9 +123,11 @@ modified: 2023-09-13T20:24:13.701Z
   - https://github.com/automerge/pixelpusher
   - bringing a Figma-like real-time experience to Javier Valencia’s Pixel Art to CSS.
 - PushPin
-  - https://github.com/automerge/pushpin
+  - https://github.com/automerge/pushpin /BSD/202101/ts/inactive
   - a mixed media canvas workspace similar to Miro or Milanote.
   - A local-first collaborative corkboard app. 
+  - Built with Electron, React, automerge and hypermerge.
+  - 依赖automerge、quill
 
 - Our goal in developing the three prototypes Trellis, PixelPusher and PushPin was to evaluate the technology viability, user experience, and developer experience of local-first software and CRDTs. 
   - CRDT technology works.

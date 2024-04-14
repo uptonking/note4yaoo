@@ -34,7 +34,7 @@ modified: 2022-08-21T10:16:52.004Z
   - editablejs, 自绘光标
   - https://github.com/big-camel
 
-- 胡文召 /univer
+- 胡文召/hullis /univer/slate/飞书表格
   - [slate 架构与设计分析](https://github.com/wzhudev/blog/issues/36)
   - [vscode 源码解析](https://github.com/wzhudev/blog/issues/29)
 
@@ -93,13 +93,13 @@ modified: 2022-08-21T10:16:52.004Z
   - [我的2021-从在线教育到新能源汽车](https://juejin.cn/post/7043089265575591949)
   - [基于CRDT的一种文档冲突算法 YATA/yjs](https://juejin.cn/post/7064236095440961550)
 
+-  WindrunnerMax /slate/quill
+  - https://github.com/WindrunnerMax
+  - https://github.com/WindrunnerMax/EveryDay/blob/master/CATALOG.md /富文本
+
 - jacwright
   - typewriter, json-patch
   - https://github.com/jacwright
-
-- Tuffy/hullis
-  - 字节, excel, slate
-  - https://github.com/hullis
 # editor-oriented-teams
 - [emergence engine blog](https://emergence-engineering.com/blog)
   - [Collaborative text editor with ProseMirror and a syncing database](https://emergence-engineering.com/blog/prosemirror-sync-1_202007)

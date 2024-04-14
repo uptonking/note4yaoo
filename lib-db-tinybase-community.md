@@ -123,7 +123,21 @@ modified: 2023-04-21T11:42:46.575Z
 
 - The sync protocol is for two (or more) MergeableStores to chat about what changes need to be sent over the wire.
   - The scaffolding for this is in place and hopefully the magic will hide behind the same `Persister` interface you know and love from TinyBase today.
+# discuss-not-yet
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Tinybase is a memory database, while my database may contains large amounts of data. 
+- https://twitter.com/imsingee/status/1779267973666205937
+  - Is it possible to instruct Tinybase to only read/write a part of  (partitioned by a column) the data of the electricsql db? 
+
+- ['Pagination' for SQLite persistence ](https://github.com/tinyplex/tinybase/issues/143)
 # discuss
+- ## 
+
 - ## 
 
 - ## 
