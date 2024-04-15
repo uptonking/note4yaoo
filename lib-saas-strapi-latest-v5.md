@@ -103,6 +103,9 @@ npx create-strapi-app@5.0.0-beta.0 strapi5-app-beta0 --quickstart --ts
 - Introduce typed imperative APIs to inject DocumentActions, SideBarPanels and DocumentHeaderActions as opposed to InjectionZones in V5.
 
 - I like the idea but why remove the InjectionZones and not build this feature on top of InjectionZones. so it can be an InjectionZones or documentActions, SideBarPanels and DocumentHeaderActions
+
+## 🎨 [RFC: Design System V2 ](https://github.com/strapi/design-system/discussions/1687)
+
 # discuss-v5-breaking-changes
 - ## 
 

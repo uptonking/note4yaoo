@@ -617,6 +617,12 @@ modified: 2023-11-21T10:17:34.596Z
 
 - https://github.com/mitchmindtree/elmesque /201512/rust
   - An attempt at porting Elm's incredibly useful, purely functional std graphics modules.
+
+- https://github.com/linebender/xilem /apache2/202404/rust
+  - experimental Rust native UI framework
+  - it combines ideas from Flutter, SwiftUI, and Elm. Like all of these, it uses lightweight view objects, diffing them to provide minimal updates to a retained UI. Like SwiftUI, it is strongly typed.
+  - Like Elm, the app logic contains centralized state. 
+  - A major goal is to support React-like components, where modules that build UI for some fragment of the overall app state are composed together.
 # more
 - https://github.com/jah2488/elm-companies
   - A list of companies using Elm in production

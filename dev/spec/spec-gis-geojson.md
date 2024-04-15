@@ -79,6 +79,13 @@ modified: 2021-09-30T07:43:15.350Z
 
 - ## 
 
+- ## 
+
+- ## new geojson 'extensions' proposal dropped / adds support for other projections, json schema, and some other stuff
+- https://twitter.com/tmcw/status/1779848625457172888
+  - initial reaction: i fear it
+  - [OGC Requests Public Comment on Features and Geometries JSON - Part 1: Core Standard - Open Geospatial Consortium](https://www.ogc.org/requests/ogc-requests-public-comment-on-features-and-geometries-json-part-1-core-standard/)
+
 - ## Geojson is the worst geospatial file format.
 - https://twitter.com/MapMakinMeyers/status/1775621983939510448
   - Shapefile is better eight days outta the week compared to geojson.

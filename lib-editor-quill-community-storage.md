@@ -20,7 +20,15 @@ modified: 2023-11-27T15:57:01.179Z
 
 - ## 
 
-- ## 
+- ## [How to save in database??](https://github.com/quilljs/quill/issues/3421)
+
+```JS
+// I'm doing something like this to store the content in a hidden input field:
+quill.on('text-change', () => {
+  const { ops } = quill.getContents();
+  $(`input[name="richContent"]`).val(JSON.stringify(ops));
+});
+```
 
 - ## [which format of content should be stored into database postgresql? _201904](https://github.com/quilljs/quill/issues/2590)
 - You should store the Delta returned from getContents(). 

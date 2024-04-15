@@ -18,10 +18,10 @@ modified: 2022-11-08T19:03:33.865Z
   - 依赖react、eventemitter3
   - 支持配置markdown-parser, 示例使用markdown-it
 
-- https://github.com/inokawa/rich-textarea
+- https://github.com/inokawa/rich-textarea /MIT/202404/ts
   - https://inokawa.github.io/rich-textarea/
-  - A small customizable textarea for React to colorize, highlight, decorate texts, offer autocomplete and much more.
-  - designed to behave as native textarea as much as possible. Supports formik and react-hook-form. 
+  - A small customizable textarea for React to colorize, highlight, decorate texts, offer autocomplete and much more
+  - designed to behave as native textarea as much as possible. Supports formik and react-hook-form
   - IME composition handling: IME related events have some cross browser problems. This library handles them for easy to use.
 
 - https://github.com/uiwjs/react-textarea-code-editor

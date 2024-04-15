@@ -103,6 +103,12 @@ modified: 2023-12-15T17:50:41.213Z
 - https://github.com/ThaddeusJiang/Projectify /202206/js
   - https://thaddeusjiang.github.io/Projectify/
   - a project management app for TiddlyWiki, inspired by products like Todoist and Basecamp.
+
+- https://github.com/tiddly-gittly/tiddlywiki-whiteboard /MIT/202403/ts
+  - https://tiddly-gittly.github.io/tiddlywiki-whiteboard/
+  - Tiny little drawing app in TW, using tldraw. 
+  - Providing diagram widget and whiteboard view.
+  - This project is based on TLDraw, and some of its components are inspired by toeverything/AFFiNE. I choose TLDraw because it is DOM based, which makes integration with tiddlywiki much easier.
 # sync/collab
 - https://github.com/qiushihe/tiddlywiki-remote-filesystem-syncadaptor /202201/ts
   - A `syncadaptor` module for TiddlyWiki to synchronize tiddlers with remote filesystem (i.e. AWS S3).

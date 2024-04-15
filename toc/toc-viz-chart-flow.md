@@ -31,8 +31,10 @@ modified: 2020-10-22T10:22:55.878Z
     - https://jgraph.github.io/mxgraph/
   - https://jgraph.github.io/mxgraph/docs/manual.html
   - https://jgraph.github.io/mxgraph/docs/js-api/files/view/mxGraph-js.html
+  - https://jgraph.github.io/mxgraph/javascript/index.html
   - https://github.com/gelvidge/maxGraph
   - maxGraph is a fully client side JavaScript diagramming library
+  - 基于svg实现
   - It provides many of the diagramming features which would be expected by a piece of presentation software like Microsoft® PowerPoint™ or LibreOffice® Impress such as being able to resize, move or rotate nodes, but has a stronger focus on automatic layout algorithms and applications of Graph Theory.
   - 🐛 未提供开箱即用的app，如编辑形状属性和文本
   - [mxgraph 系列【2】：项目结构说明 - 掘金](https://juejin.cn/post/6844904153873924110)
@@ -225,16 +227,14 @@ modified: 2020-10-22T10:22:55.878Z
   - 提供了多种编辑场景示例
   - 实现了多种react-render-target: canvas, svg, webgl
 
-
 - https://gitee.com/wfeng0/svg-flow-editor-mvp /apache2/202402/ts
   - 一款自研流程图编辑器，提供了一系列流程图交互、编辑所必需的功能，计划支持前端研发自定义开发各种逻辑编排场景，如流程图、ER 图、BPMN 流程等
   - 项目使用typescript与svg、canvas等技术进行搭建，脱离vue、react等框架的限制
   - 底层依赖了svg对项目元件库的基础元件进行创作，同时使用了canvas对背景网格、水印等进行绘制，使用html进行页面布局
-
 # uml
-- https://github.com/jgraph/mxgraph
-  - /6.1kStar/Apache2/202011/archived
+- https://github.com/jgraph/mxgraph /6.1kStar/Apache2/202011/archived
   - mxGraph is a fully client side JavaScript diagramming library that uses SVG and HTML for rendering.
+  - 基于svg实现
   - [Future of types after mxgraph EOL announcement](https://github.com/typed-mxgraph/typed-mxgraph/issues/12)
 
 - https://github.com/hikerpig/pintora /MIT/ts

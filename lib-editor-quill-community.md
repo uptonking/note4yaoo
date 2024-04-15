@@ -39,6 +39,8 @@ modified: 2023-02-09T18:23:43.486Z
 
 - ## 
 
+- ## 
+
 - ## [I started rewriting using hooks and React 17 compatible APIs _201911](https://github.com/zenoamaro/react-quill/issues/547)
 - Do you have something you would recommend for inclusion? Eg. code or documentation about Katex?
   - I think polling window.katex works well with async CDN script tags.

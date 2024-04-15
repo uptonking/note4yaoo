@@ -33,8 +33,10 @@ modified: 2023-02-09T18:32:06.240Z
     - 依赖@reedsy/quill-delta、eventemitter3、parchment、rfdc
     - https://github.com/reedsy/delta
     - https://github.com/reedsy/parchment
-  - https://github.com/reedsy/rich-text
-    - Rich Text uses quill-delta on the back end.
+    - https://github.com/reedsy/rich-text /Rich Text uses quill-delta
+  - https://github.com/welkinwong/superdocs-quill /202311/ts/inactive
+    - https://github.com/welkinwong/superdocs-rsuite
+    - a fork of quill, inactive
 
 - typewriter /347Star/MIT/202311/ts
   - https://github.com/typewriter-editor/typewriter
@@ -78,20 +80,21 @@ modified: 2023-02-09T18:32:06.240Z
 - https://github.com/TonyYu2015/GEditor /202309/js/inactive
   - https://g-editor-fawn.vercel.app/
   - rich-text base on Quill, 非react
-  - 典型的单页文档编辑器
-
-- https://github.com/KID-1912/quill-js-editor /202312/js
-  - Custom JavaScript editor built on quill
-  - 不依赖react, 提供了工具条，示例类似在线文档布局
-
-- https://github.com/coach-K/custom-quill-editor /202312/ts
-  - https://coach-k.github.io/custom-quill-editor/demo/
-  - a WYSIWYG Editor build on top of the open source library Quill
-  - To test the Video and Social Embed
+  - 典型的单页文档编辑器, 工具条按钮丰富
 
 - https://github.com/domilin/media-quill /202011/ts/inactive
   - Rich text editor based on Quill
   - Built in vanilla JS, typescript support, so it can be used on React, Vue, Angular as well
+  - 功能较丰富
+
+- https://github.com/coach-K/custom-quill-editor /202312/ts/实现简单
+  - https://coach-k.github.io/custom-quill-editor/demo/
+  - a WYSIWYG Editor build on top of the open source library Quill
+  - To test the Video and Social Embed
+
+- https://github.com/KID-1912/quill-js-editor /202312/js/实现简单
+  - Custom JavaScript editor built on quill
+  - 不依赖react, 提供了工具条，示例类似在线文档布局
 
 - https://github.com/BobaBoard/boba-editor /MIT/202203/ts/deprecated
   - An advanced text editor based on QuillJS, vaguely inspired by Tumblr's
@@ -107,12 +110,8 @@ modified: 2023-02-09T18:32:06.240Z
   - 多人协同编辑器开发 MPOE（Multi person online edit）
   - node采用较强的模块化思想，每个单独的模块都会独立导出 index.js ，因此，node有很多的 index.js，注意区分; 
   - 使用Yjs、Quill、LuckySheet 等技术实现的markdown、txt、excel 等文件的多人在线协同编辑，支持以 websocket、webRTC、组合API等形式实现通信
-  - [Luckysheet 实现excel多人在线协同编辑 - 掘金](https://juejin.cn/post/7298170736480485376)
   - [Yjs + Quill 实现文档多人协同编辑器开发（基础+实战） - 掘金 _202309](https://juejin.cn/post/7273432426772070457)
-
-- https://github.com/welkinwong/superdocs-quill /202311/ts/inactive
-  - https://github.com/welkinwong/superdocs-rsuite
-  - a fork of quill, inactive
+  - [Luckysheet 实现excel多人在线协同编辑 - 掘金](https://juejin.cn/post/7298170736480485376)
 
 - https://github.com/shenmaxg/quill-imitate-shimo /202110/ts/inactive
   - 基于 quill 的富文本编辑器，react, 模仿石墨风格的富文本编辑器
@@ -126,7 +125,11 @@ modified: 2023-02-09T18:32:06.240Z
 - https://github.com/zenoamaro/react-quill /202208/ts/单文件
   - https://zenoamaro.github.io/react-quill/
   - https://codepen.io/alexkrolick/pen/xgyOXQ
-  - A Quill component for React.
+  - A Quill component for React
+  - ReactQuill 2 brings a full port to TypeScript and React 16+, a refactored build system, and a general tightening of the internal logic
+    - it removes support for long-deprecated props, the ReactQuill Mixin, and the Toolbar component
+  - If you frequently need to manipulate the DOM or use the Quill APIs imperatively, you might consider switching to fully uncontrolled mode.
+  - If you instantiate ReactQuill without children, it will create a `<div>` for you, to be used as the editing area for Quill.
   - [React-Quill Custom Format w/Parchment Demo](https://gist.github.com/alexkrolick/8ec0de512c97b363c02a38db60623c29)
   - https://github.com/adrianhelvik/react-quill /202110/js/inactive
     - it can be used as a basis for the next version of react-quill
@@ -134,6 +137,9 @@ modified: 2023-02-09T18:32:06.240Z
     - [I started rewriting using hooks and React 17 compatible APIs _201911](https://github.com/zenoamaro/react-quill/issues/547)
   - 🍴 forks
     - https://github.com/yata-corp/react-quill-patched
+    - https://github.com/abrarhayat/react-quill-abrarhayat
+    - https://github.com/shareefalis/react-quill
+    - https://github.com/miketalbot/react-quill
 
 - https://github.com/gtgalone/react-quilljs /MIT/202209/ts/单文件/inactive
   - React Hook Wrapper for Quill, powerful rich text editor.
@@ -184,16 +190,24 @@ modified: 2023-02-09T18:32:06.240Z
   - codepen可以直接查看delta内容
   - table通过给\n添加attributes控制单元格内容
   - https://github.com/liuyisnake/quill-better-table
+  - 🍴 forks
+    - https://github.com/clool/quill-better-table /202306/js
+      - support table cell vertical align
+    - https://github.com/Scholar-6/quill-better-table /202106/js
+    - https://github.com/ddunny/quill-better-table /202304/js
+    - https://github.com/Tobias-Braun/quill-better-table /202007/js
+      - Add support for background color in table cells 
 
 - https://github.com/volser/quill-table-ui /202007/ts
   - https://codepen.io/volser/pen/QWWpOpr
   - A module for table UI in Quill
   - quilljs v2.0.0-dev.3
-  - 功能太少
+  - 功能太少, 每个单元格都有悬浮菜单
 
 - https://github.com/zzxming/quill-table /202403/js
   - https://zzxming.github.io/quill-table/demo/index.html
   - A table module used in QuillJS@1.3.7
+  - 实现了在工具条选择表格行列数
 
 - https://github.com/dost/quilljs-table /201703/js/archived
   - Test lab for creating TABLE functionality in QuillJS using Containers.
@@ -911,6 +925,7 @@ modified: 2023-02-09T18:32:06.240Z
 - https://github.com/WindrunnerMax/Collab /202308/ts/inactive
   - 初探富文本之OT协同实例 sharedb+quill
   - 初探富文本之CRDT协同实例 yjs+quill
+
 - https://github.com/F-star/yjs-quill-simple-demo /202310/ts/inactive
   - HOST=localhost PORT=1234 npx y-websocket
 
@@ -1055,6 +1070,9 @@ modified: 2023-02-09T18:32:06.240Z
 
 - https://github.com/Orange-Murker/quill_delta_pdf 202403/rust
   - Parse and convert Quill's Deltas to PDF documents.
+
+- https://github.com/slab/delta-elixir /BSD/202312/elixir
+  - Simple yet expressive format to describe contents and changes 
 # utils
 - https://github.com/andrewanthro/quilljs-parser /202101/ts
   - Parse a QuillJS delta

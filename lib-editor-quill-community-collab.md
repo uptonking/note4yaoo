@@ -23,6 +23,11 @@ modified: 2023-11-27T15:55:06.815Z
 
 - ## 
 
+- ## 
+
+- ## [Multiple Cursors Module ](https://github.com/quilljs/quill/issues/918)
+- I'm having success with the quill-cursors module
+
 - ## 🔀 [Quill Track Changes _201912](https://github.com/quilljs/quill/issues/2858)
 - 
 - 

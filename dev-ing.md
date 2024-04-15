@@ -328,6 +328,12 @@ betterdiscordctl -i flatpak install
 
 ## 041
 
+## 0415
+
+- [HTML : Is there any way to show images in a textarea? - Stack Overflow](https://stackoverflow.com/questions/3793090/html-is-there-any-way-to-show-images-in-a-textarea)
+  - Use a div with contentEditable attribute which acts like a textarea. That's how wysiwyg editors are created.
+  - you can use css to set an background image for textarea, and js to set the text
+
 ## 0414
 
 - [react-dnd 16.0.0 is causing "Module not found: Error: Can't resolve 'react/jsx-runtime'" · Issue #3423 · react-dnd/react-dnd](https://github.com/react-dnd/react-dnd/issues/3423)

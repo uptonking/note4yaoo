@@ -10,7 +10,7 @@ modified: 2021-04-23T17:10:52.920Z
 # guide
 
 # editor-events
-- beforeinput 这个事件会在 `<input>, <select> 或 <textarea> 或者 contenteditable` 的值即将被修改前触发，这样我们可以获取到输入框更新之前的值
+- `beforeinput` 这个事件会在 `<input>, <select> 或 <textarea> 或者 contenteditable` 的值即将被修改前触发，这样我们可以获取到输入框更新之前的值
   - [Should the HTML `<select>` element dispatch `beforeinput` events? - Stack Overflow](https://stackoverflow.com/questions/72688184/should-the-html-select-element-dispatch-beforeinput-events)
     - The beforeinput event isn't supposed to fire on `<select>`, just like it doesn't fire on non textual inputs
 # faq
@@ -143,13 +143,13 @@ modified: 2021-04-23T17:10:52.920Z
   - ref
     - https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event
   - change events fire when user commits a value change to a form control
-  - change event is fired for `<input>` ,  `<select>` , and `<textarea>` element when an alteration to the element's value is committed by user 
+  - change event is fired for `<input>/<select>` , and `<textarea>` element when an alteration to the element's value is committed by user 
   - Unlike the input event, the change event is not necessarily fired for each alteration to an element's value
   - change event fires at a different moment Depending on the kind of element
   - For some elements, including `<input type="text">` , the change event doesn't fire until the control loses focus. 
     - onChange事件只有在文本框失去焦点的时候才能触发
   - onBlur event is fired when you have moved away from an object without necessarily having changed its value.
-  - onChange event is only called when you have changed the value of the field and it loses focus.
+  - `onChange` event is only called when you have changed the value of the field and it loses focus.
   - React组件主要使用onChange合成事件，作为文本输入框(input)或文字输入区(textarea)触发文字输入时的事件，这个事件用起来很直觉，理应当是如此
   - onChange在浏览器上，只要在这个文本输入框上，有任何的键盘动作它都会触发，也就是如果你是使用了中文、日文、韩文输入法(IME)，不论是哪一种，拼音的、笔划的还是其他的，只要有按下一个键盘的动作，就会触发一次浏览器上这个元素的change事件   
   - React attaches listeners for Component.onChange to the DOM element.oninput event. 

@@ -31,7 +31,6 @@ modified: 2023-12-26T19:10:48.719Z
   - Let's implement JS bundler from scratch with Rust step by step
   - [MYOX: Javascript bundler](https://kakoc.blog/blog/myox-js-bundler/)
 
-
 - https://github.com/goto-bus-stop/prototype-rs /201806/rust/inactive
   - A basic JS bundler in Rust, using esprit and node-resolve.
   - It's a bit similar to browserify but without all the features.
@@ -62,4 +61,9 @@ modified: 2023-12-26T19:10:48.719Z
 
 - https://github.com/rmanoka/webundle /archived
   - Web bundler written in Rust
+# used-loaders
+- https://github.com/Epimodev/svg-sprite-html-webpack /202301/js/inactive
+  - Webpack loader and plugin to generate a SVG sprite with `<symbol>` elements and inject it in html built by `html-webpack-plugin`
+# used-plugins
+
 # more

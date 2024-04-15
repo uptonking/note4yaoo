@@ -28,8 +28,9 @@ modified: 2023-09-01T03:56:10.056Z
   - https://github.com/rars/diff-match-patch-ts
   - https://github.com/nonoroazoro/diff-match-patch-typescript
 
-- https://github.com/jhchen/fast-diff /202305/js
+- https://github.com/jhchen/fast-diff /apache2/202305/js
   - a simplified import of the excellent diff-match-patch library into the Node.js environment
+  - The match and patch parts are removed, as well as all the extra diff options. What remains is incredibly fast diffing between two strings.
   - The diff function is an implementation of "An O(ND) Difference Algorithm and its Variations" (Myers, 1986) with the suggested divide and conquer strategy along with several optimizations Neil added.
 
 - https://github.com/NPCDW/HtmlDiff

@@ -9,6 +9,11 @@ modified: 2023-06-16T02:53:00.115Z
 
 # guide
 
+- textarea的缺点
+  - textarea中回车换行后元素高度不会自动增加，可能会出现滚动条，但contenteditable会自动增加高度
+  - 不支持格式化文本如bold/italic
+  - 不支持插入图片等非文本元素
+  - getSelection() doesn't work on the content of `<textarea>` and `<input>` elements in Firefox, Edge (Legacy) and Internet Explorer
 # discuss-selection-caret
 - ## 
 

@@ -238,3 +238,5 @@ modified: 2021-04-30T20:14:17.669Z
   - Each "slide" is a JS function that can do *anything*.
   - Let you jump to any slide by number in the url hash
 # more
+- https://github.com/nimeshnayaju/tlslides /202204/ts/inactive
+  - Create slides using tldraw (Unmaintained)

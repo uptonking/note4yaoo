@@ -108,7 +108,9 @@ modified: 2023-10-26T15:02:47.068Z
 
 - ## 
 
-- ## 
+- ## Redis re-implemented with SQLite, I tweet it not because it's on the front page of HN, but it's actually a good Golang code base at a glance
+- https://twitter.com/ohmypy/status/1779736598164431246
+- YugabyteDB had a redis-like API. The problem was that people expected same performance as in-memory key-value but on ACID distributed DB. Now deprecated and people use SQL
 
 - ## 说来真巧，在 Redis 改协议之前 DHH 就决定 Rails 8 要去掉 Redis 依赖了，理由是基于数据库的缓存/队列/订阅对于小应用已经足够好
 - https://twitter.com/chloerei/status/1774303359547347297

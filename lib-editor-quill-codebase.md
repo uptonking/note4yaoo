@@ -11,10 +11,36 @@ modified: 2023-02-09T18:24:31.494Z
 - delta
   - 内容元素: block, inline-text, inline-non-text
   - 更新操作: insert, delete, retain, format
+# not-yet
+- why eventemitter3?
+
+- 
+- 
+- 
+
 # codebase
 - 整体class风格
 
 - 通过全局instances支持多实例 `WeakMap<HTMLElement, Quill>`
+
+- quill/core只注册了核心模块
+  - blots: block, inline, embed, text, container, break, cursor, scroll
+  - modules: uiNode, input, keyboard, history, clipboard, uploader 
+- quill完整版注册了很多模块
+  - attributors: align, color, font
+  - formats: align, color, font, size, blockquote, code, list, link, formula, image, video
+  - modules: table, toolbar
+  - themes
+  - ui: icons, picker, tooltip
+
+- 语法高亮使用 highlight.js
+
+- `Quill.import()` doesn't load scripts over the network, it just returns the corresponding module from the Quill library without causing any side-effects.
+
+- 
+- 
+- 
+
 # 🏘️ architecture
 - 用户输入时如何更新dom
   - 通过mutationObserver获取变更，然后更新model-delta
@@ -35,6 +61,7 @@ modified: 2023-02-09T18:24:31.494Z
 - this.selection = new Selection(this.scroll, this.emitter); 
 - addModule input/uiNode/keyboard/clipboard/history/uploader
 - this.theme.init(); 
+  - 初始化内置或自定义的module: `new ModuleClass()`.
 - this.emitter.on `EDITOR_CHANGE/SCROLL_UPDATE` 注册事件
   - 注册事件监听器，当注册的事件触发时，仅触发model更新
 # model-delta
@@ -80,6 +107,9 @@ this.stack[dest].push({
 this.quill.updateContents(item.delta, Quill.sources.USER);
 ```
 
+# modules
+- toolbar
+  - 用户定义的工具条配置会保存到`container`属性名
 # keywords
 
 # more

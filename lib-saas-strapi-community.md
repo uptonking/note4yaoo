@@ -288,7 +288,9 @@ modified: 2023-12-15T17:04:36.589Z
 
 - ## 
 
-- ## 
+- ## [Customize Save button in content-manager plugin _202106](https://forum.strapi.io/t/customize-save-button-in-content-manager-plugin/5663)
+- I would not recommend to modify it with extensions. Since you will have conflicts with feature updates. 
+  - As you said, you need to do additional work in another database, in that case you can use lifecycles
 
 - ## [Custom Fields not showing in version 4.0.0 _202112](https://forum.strapi.io/t/custom-fields-not-showing-in-version-4-0-0/13057)
 - app.addFields({ type: 'lineItems', Component: MyComponent }); 

@@ -212,7 +212,7 @@ observer.observe(div, config);
 - CodeMirror is normally much faster for big documents, 
   - but from the context, I suspect that in this case the magic layered on top to make CodeMirror behave like a rich text editor is the source of the slowness.
 
-- ## Why is CodeMirror not based on or replaced by ProseMirror?
+- ## 🆚️ Why is CodeMirror not based on or replaced by ProseMirror?
 - https://twitter.com/tjconceptdk/status/1035585261198041088
 - They solve different problems -- `structured rich text with configurable schema` versus `plain text with syntax highlighting and lazy rendering` . 
   - On the web you don't want to ship big, overly general code for a smaller problem

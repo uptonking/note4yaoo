@@ -36,6 +36,9 @@ modified: 2021-01-13T19:30:59.508Z
     - 示例使用mobx-react-lite作为状态管理
   - https://github.com/justjake/tlshot
     - Take screenshots and edit them with tldraw.
+  - 🍴 forks
+  - https://github.com/DallasCarraher/compound
+    - This fork of tldraw is focused on providing a free-for-commercial-use white boarding tool
 
 - excalidraw /15.3kStar/MIT/202101/ts
   - https://github.com/excalidraw/excalidraw

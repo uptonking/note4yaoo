@@ -206,7 +206,7 @@ modified: 2021-08-30T07:01:09.493Z
 - ## [Why people still compare Observables as "better" than promise as a primitive?](https://www.reddit.com/r/angular/comments/w9ipf4/why_people_still_compare_observables_as_better/)
 - Because observables are much more powerful.
 
-- ## 💡 [Why the Microtask queued after chained promises are executed after the first promise resolution ignoring the chained ones? - Stack Overflow](https://stackoverflow.com/questions/75373806/why-the-microtask-queued-after-chained-promises-are-executed-after-the-first-pro)
+- ## 🤔🔢 [Why the Microtask queued after chained promises are executed after the first promise resolution ignoring the chained ones? - Stack Overflow](https://stackoverflow.com/questions/75373806/why-the-microtask-queued-after-chained-promises-are-executed-after-the-first-pro)
 
 ```JS
 function tasksAndMicroTasks() {
@@ -237,6 +237,9 @@ tasksAndMicroTasks()
 - For the purposes of your experiment,  `Promise.resolve().then(fn)` is doing the same thing as `queueMicrotask(fn)`. 
   - The Promise is already resolved, so the callback function is queued.
 - When you chain .then() callbacks, you're adding callbacks to the returned Promises from the calls to .then(). Those Promise objects will not resolve until each .then() resolves in sequence.
+
+- A promise returned by `.then()` is resolved with the result of the callback, so it fulfills only after the callback has been called. 
+  - Only at this point, the promise handlers of the chained promise are scheduled on the microtask queue - after all the ones that had initially been scheduled on the already fulfilled promise or by `queueMicrotask`.
 
 - ## [What are the advantages of async.js over native Promises](https://github.com/caolan/async/issues/1714)
 - Promises add a caching layer for results and errors and state machine around your function calls which makes things more stateful and somewhat slower than necessary 
