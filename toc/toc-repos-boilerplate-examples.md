@@ -558,7 +558,7 @@ modified: 2023-11-16T15:00:11.503Z
   - https://plainadmin.com/
   - open-source Vanilla JS admin dashboard template based on Bootstrap 5
 
-- https://github.com/mostafizurhimself/admintoolkit-html /202307/js
+- https://github.com/mostafizurhimself/admintoolkit-html /MIT/202403/js
   - https://getadmintoolkit.com/
   - Admin template based on TailwindCSS and Vanilla JavaScript
 

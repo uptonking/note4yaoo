@@ -35,7 +35,9 @@ modified: 2021-01-08T17:13:43.392Z
 
 - ## 
 
-- ## 
+- ## Quick HTML tip: ordered lists come with a "start" property.
+- https://twitter.com/stefanjudis/status/1780140328487727597
+- My favorite is the `reversed` attribute
 
 - ## TIL the `<option>` element has a "label" attribute.
 - https://twitter.com/RogersKonnor/status/1769034451370082344

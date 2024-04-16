@@ -71,20 +71,19 @@ modified: 2021-05-06T09:58:23.803Z
   - The Mono icon font is a simple, consistent open-source icon set
   - You can download the whole set of SVG icons or selected items
 
-- https://github.com/tailwindlabs/heroicons
-  - https://heroicons.com/
-  - A set of free MIT-licensed high-quality SVG icons for UI development
-
 - https://iconpark.oceanengine.com/home
   - IconPark图标库是一个通过技术驱动矢量图标样式的开源图标库
 # icons
 - tabler-icons
   - https://github.com/tabler/tabler-icons
-  - https://tabler-icons.io/
-  - A set of 2925 free MIT-licensed high-quality SVG icons
+  - https://tabler.io/icons 
+  - A set of 5200 free MIT-licensed high-quality SVG icons
   - Each icon is designed on a 24x24 grid and a 2px stroke.
+  - 默认粗细2px，样式风格有点圆润
+  - 图标数量多
+  - 在网站提供下载多种格式svg/png/pdf, 但不提供粗细
 
-- feather /MIT/16kStar/201908
+- feather /MIT/16kStar/201908/样式好/图标少
   - https://github.com/feathericons/feather
   - https://github.com/feathericons/react-feather
   - https://feathericons.com/
@@ -102,6 +101,26 @@ modified: 2021-05-06T09:58:23.803Z
   - https://iconpark.oceanengine.com/official
   - Transform an SVG icon into multiple themes, and generate React icons，Vue icons，svg icons
   - more than 2000 high-quality icons
+  - 默认提供分好类的图标文件夹，部分有色
+  - 在网站支持批量下载svg，图标名包含中文，下载时可配置风格、拐点、端点
+
+- phosphor-icons /212Star/MIT/202112/易用性高
+  - https://github.com/phosphor-icons/web
+  - https://phosphoricons.com/
+  - 提供6套图标6x1248个，包括不同粗细和风格，thin/light/regular/fill/bold/duotone
+  - 可下载svg/png/iconfonts
+  - available for web, React, Vue, Flutter, Elm
+  - [Release v2.0.0](https://github.com/phosphor-icons/homepage/releases/tag/v2.0.0)
+    - All icons use currentColor for instead of #000000 for fills and strokes to ease styling of icons
+  - providing icons as a webfont that uses Unicode's Private Use Area character codes to map normally non-rendering characters to icons. 
+  - Since the icons are just text under the hood, they can be colored and styled with CSS
+
+- https://github.com/tailwindlabs/heroicons /MIT/202403/js
+  - https://heroicons.com/
+  - Beautiful hand-crafted SVG icons, by the makers of Tailwind CSS.
+  - Available as basic SVG icons and via first-party React and Vue libraries.
+  - 样式风格有点圆润
+  - github下载的图标数量少
 
 - simple-icons /CC0-1.0/svg/主流产品的logo图标
   - https://github.com/simple-icons/simple-icons
@@ -109,15 +128,6 @@ modified: 2021-05-06T09:58:23.803Z
   - SVG icons for popular brands
   - Creative Commons Zero v1.0 Universal 无著作权，可商用
     - 500+ icons
-
-- phosphor-icons /212Star/MIT/202112
-  - https://github.com/phosphor-icons/web
-  - https://phosphoricons.com/
-  - 总共6套图标6282=6x1047个，包括thin/light/regular/fill/bold/duotone，可下载svg
-  - [Release v2.0.0](https://github.com/phosphor-icons/homepage/releases/tag/v2.0.0)
-    - All icons use currentColor for instead of #000000 for fills and strokes to ease styling of icons
-  - providing icons as a webfont that uses Unicode's Private Use Area character codes to map normally non-rendering characters to icons. 
-  - Since the icons are just text under the hood, they can be colored and styled with CSS
 
 - font-awesome  /MIT/60kStar/201610
   - https://github.com/FortAwesome/Font-Awesome/tree/v4.7.0

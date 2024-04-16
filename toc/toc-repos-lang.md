@@ -155,3 +155,10 @@ modified: 2020-11-03T06:56:19.448Z
 - https://github.com/zkat/cacache-rs /apache2/202402/rust
   - A high-performance, concurrent, content-addressable disk cache, with support for both sync and async APIs
   - First-class async support, using either async-std or tokio as its runtime. Sync APIs are available but secondary.
+
+## rust-patterns
+
+- https://github.com/rust-unofficial/patterns /MPLv2/202403/Handlebars
+  - https://rust-unofficial.github.io/patterns/
+  - An open source book about design patterns and idioms in the Rust programming language
+# more

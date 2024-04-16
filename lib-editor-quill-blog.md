@@ -28,7 +28,14 @@ modified: 2023-02-09T18:30:19.001Z
 
 - [How does Quill describe editor content?2/10](https://dev.to/kagol/how-does-quill-describe-editor-content-1i5g)
 - [How does Quill convert Delta to DOM? 3/10_202104](https://dev.to/kagol/how-does-quill-convert-delta-to-dom-2664)
-# blogs-dev
+
+## [Quill internals and the jumping cursor + the Selection and Cursor classes _202112](https://billauer.co.il/blog/2021/12/quill-cursor-jump/)
+
+- Everything in this post relates to Quill v1.3.7. I don’t do web tech for a living, and my knowledge on Quill is merely based upon reading its sources.
+- I can suggest one thing to do: With your browser’s JavaScript debugger (Google Chrome recommended), put a breakpoint on the Selection class’ setNativeRange() method, and an additional breakpoint on the return statement marked below in read. 
+- 
+
+# blogs-internals
 - [Quill源码初探 - 掘金 _202105](https://juejin.cn/post/6957219459421437966)
   - quill实例化的过程
   - 选区文字加粗流程

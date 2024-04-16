@@ -171,6 +171,11 @@ modified: 2022-08-21T10:03:52.222Z
 
 - https://github.com/bryanjtc/text-extraction-app /js
   - Web app that performs automated extraction of structured data from images and converts them to excel files.
+
+- https://github.com/ludejun/excel-web /202207/js/inactive
+  - 比较在web端打开excel的两种流行方法
+  - 第一个sdk在线例子（json见源码）：https://myliang.github.io/x-spreadsheet/
+  - 第二个sdk的在线普通json例子 https://bossanova.uk/jspreadsheet/v4/examples/import-data
 # examples
 - table /463Star/BSD/202009/js
   - https://github.com/gajus/table

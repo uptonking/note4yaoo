@@ -133,7 +133,6 @@ modified: 2023-06-03T14:43:26.987Z
   - The total order is equivalent to a tree walk over a binary-ish tree; concurrently-inserted sequences end up in different subtrees, which don't interleave.
   - **You do pay for this with longer strings**, though: "averaging" two neighboring strings adds a UID (~13 chars) instead of a single bit, except when the in-order optimization kicks in.
 
-
 - Is there an approach with fractional indices that does not require tombstones for character removals?
   - You don't need tombstones - just the positions of present characters. It's okay to call d = source.createBetween(a, b) even if there used to some other a < c < b where c was deleted. You can even "restore" c later and it will compare to d in a reasonable way (though I'm not sure about non-interleaving).
   - Fractional indexing in general also shouldn't need tombstones, except for the usual uniqueness issues.
@@ -155,6 +154,19 @@ modified: 2023-06-03T14:43:26.987Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## What would be a fair set of benchmarks to compare a reactive database to a request response db like SQLite?
+- https://twitter.com/tantaman/status/1779617181036081537
+- What are you interested in measuring and why?
+  - If I were to answer my own question: reactive dbs trade off write throughput for faster reads as well as trading off memory for always up to date queries. So: write throughput and memory usage as # maintained queries increase and read perf (presumably instant) of those queries.
+
+- Why not a benchmark between cr-sqlite and local-first db like rxdb/pouchdb 
+  - It’s a separate project. General incremental view maintenance for JavaScript. 2-3 orders of magnitude faster than SQLite for the reactive query case for arbitrarily complex queries.
+- Everything that has to pass main-thread<->wasm<->main-thread<->opfs will be way slower then just using indexeddb (with or without RxDB). Wasm cannot access any persistend storage directly and sending data between realms is just slow by definition.
 
 - ## 🔁 A browser extension has many different execution contexts (content/site, background) that don't have access to the same apis and permissions.
 - https://discord.com/channels/989870439897653248/1195787026499371158/1195787028726566953

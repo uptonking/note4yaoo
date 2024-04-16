@@ -147,6 +147,9 @@ modified: 2023-12-19T17:31:23.259Z
 - https://github.com/tykoth/ra-data-dexie
   - Experimental React-Admin data provider using Dexie (IndexedDB)
 
+- https://github.com/DeepBlueCLtd/RA-Soul /EPLv2/202404/ts
+  - The purpose of this project is to demonstrate how to run a React-admin client using Soul as a REST API service. 
+
 - https://github.com/codeledge/ra-data-simple-prisma
   - Prisma tools and Data Adapter for React Admin
 

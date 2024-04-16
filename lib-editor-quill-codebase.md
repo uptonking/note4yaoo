@@ -33,7 +33,7 @@ modified: 2023-02-09T18:24:31.494Z
   - themes
   - ui: icons, picker, tooltip
 
-- 语法高亮使用 highlight.js
+- 语法高亮使用 `highlight.js`.
 
 - `Quill.import()` doesn't load scripts over the network, it just returns the corresponding module from the Quill library without causing any side-effects.
 
@@ -82,6 +82,14 @@ modified: 2023-02-09T18:24:31.494Z
 
 - Quill 只用 mutation observer 监听文本改动。其他的 enter delete 等，都还是劫持 keydown，修改 model
 # view
+
+# selection
+
+- 
+- 
+- 
+- 
+- 
 
 # command
 - 没有单独的command设计，insertText/formatText直接定义在quill编辑器实例上

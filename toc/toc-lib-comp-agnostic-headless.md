@@ -68,6 +68,14 @@ modified: 2021-04-11T06:17:51.318Z
   - [Framework-agnostic architecture for examples](https://github.com/ariakit/ariakit/issues/1854)
   - [Ariakit newsletter](https://newsletter.ariakit.org/archive)
 
+- https://github.com/ocavue/aria-ui /MIT/202404/ts
+  - https://github.com/ocavue/aria-ui/tree/master/packages/core
+  - open-source collection of unstyled Web Components and tools that helps you build accessible user interface.
+  - Uses signals to manage state reactively and automatically update the DOM in response to state changes. powered by `@preact/signals-core`.
+  - Shares signals easily across widely nested HTML elements through context.
+  - https://github.com/dddstack/ariatype
+    - TypeScript type definition for WAI-ARIA accessibility.
+
 - AdaptUI/renderlesskit-react /197Star/MIT/202207/ts
   - https://github.com/adaptui/react
   - https://github.com/adaptui/react-tailwind

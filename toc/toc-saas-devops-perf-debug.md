@@ -27,4 +27,8 @@ modified: 2024-02-11T15:13:27.696Z
   - Detect circular dependencies in your TypeScript projects.
 - https://github.com/pahen/madge
   - Create graphs from your CommonJS, AMD or ES6 module dependencies
+# latency
+- https://github.com/colin-scott/interactive_latencies /MIT/202403/js
+  - https://colin-scott.github.io/personal_website/research/interactive_latency.html
+  - Latency Numbers Every Programmer Should Know
 # more

@@ -328,6 +328,27 @@ betterdiscordctl -i flatpak install
 
 ## 041
 
+## 0416
+
+- [Prohibition against prefixing interfaces with "I" ](https://github.com/microsoft/TypeScript-Handbook/issues/121)
+  - I-prefix violates encapsulation principle. Let's assume you get some black-box. You get some type reference that allows you to interact with that box. You should not care if it is an interface or a class. You just use its interface part (I from SOLID principle). Demanding to know what is it (interface, specific implementation or abstract class) is a violation of encapsulation.
+  - Conformance. When in Rome principle. Major ts-based frameworks like Angular discorage using I prefix for interfaces. Rxjs also do not use I prefix.
+  - I think thats because in TypeScript the interface is not just an pure object interface but it can be used to define interface to ctors, call signatures, indexable objects and maybe more I can't imaigine right now
+
+- [Confused about the Interface and Class coding guidelines for TypeScript - Stack Overflow](https://stackoverflow.com/questions/31876947/confused-about-the-interface-and-class-coding-guidelines-for-typescript)
+  - Protection from bad naming: you should not not define an ICar interface and an associated Car class. Car is an abstraction and it should be the one used for the contract. Implementations should have descriptive, distinctive names e.g. SportsCar, SuvCar, HollowCar.
+  - If not, maybe the Java style of `SomeThing` (interface) with `SomeThingImpl` (implementation) then by all means use that.
+  - I personally quite like the idea of turning a noun into an adjective by adding the `-able` suffix. It sounds very impropper, but I love it!
+
+- [Width of stroke in an SVG icon - User Experience Stack Exchange](https://ux.stackexchange.com/questions/126020/width-of-stroke-in-an-svg-icon)
+  - I'd like to use the "material" icons. Their design guidelines say, for outlined icons, To maintain legibility, the recommended stroke weight is 2dp for most icons. 2dp outlined icons remain readable across sizes and applications.
+
+- [Icon Sizes and why SVG is not the Solution – Part 3/3 – SGrottel.de](https://www.sgrottel.de/?p=2079&lang=en)
+  - we should go the extra mile also optimizing the graphics for exactly those sizes we aim for: 16×16, 24×24, 32×32, 48×48, and 64×64, traditionally.
+  - 16×16 is very very small, and as written above looses it’s importance in the age of high resolution displays. Similar to the abstraction from a logo to and icon, as written in my first article of this series, many icons simplify and remove details when they go down from 32×32 pixel sized versions to the 16×16 pixel sized versions
+  - the second reason are the in between sizes, infamously the 24×24 pixels. It’s a scaling factor of 1.5x from the 16×16 version. Any line might end up again in between pixels and blurry if you just scale up.
+  - Personally, I usually try to design icons at 32×32 pixels. The 64×64 pixel and 256×256 pixel versions are then automatic upscales
+
 ## 0415
 
 - [HTML : Is there any way to show images in a textarea? - Stack Overflow](https://stackoverflow.com/questions/3793090/html-is-there-any-way-to-show-images-in-a-textarea)

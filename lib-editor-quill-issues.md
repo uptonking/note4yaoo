@@ -46,3 +46,7 @@ modified: 2024-04-15T16:03:16.853Z
 - ## 
 
 - ## 
+
+- ## [Drag and Drop event within editor will be supported? _202004](https://github.com/quilljs/quill/issues/3019)
+  - I found it that quill prevent default the drag start in core/quill.js and scroll.js.
+  - But I want to realize drag the text within editor, any suggestions?

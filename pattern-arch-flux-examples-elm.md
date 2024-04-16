@@ -598,7 +598,7 @@ modified: 2023-11-21T10:17:34.596Z
   - inspired by elm-lang and is following The Elm Architecture.
   - [Show HN: Sauron – A web framework in Rust that adheres to the Elm architecture | Hacker News_201904](https://news.ycombinator.com/item?id=19756505)
 
-- https://github.com/iced-rs/iced /202311/rust
+- https://github.com/iced-rs/iced /MIT/202311/rust
   - A cross-platform GUI library for Rust, inspired by Elm
   - Modular ecosystem split into reusable parts: runtime, renderer, shell
   - Inspired by The Elm Architecture, Iced expects you to split user interfaces into four different concepts: state/msg/view/update-logic

@@ -14,7 +14,19 @@ modified: 2023-10-06T16:26:57.557Z
 
 - ## 
 
-- ## 
+- ## 🔢 tldr: JSON 中的数字类型长度为 53bit，所以存入一个 `u64` 会产生神秘 bug
+- https://twitter.com/roifex/status/1779879331378118918
+  - 群友：Rust 应该立马整一个 u53 类型
+- 不是 53 位整数，而是 double-precision 64-bit binary format IEEE 754 value，这是标准规定了的。
+  - 如果你有一个 64 位数，如果它的用途是 ID 或 hash 而非数值，在 JSON 和 JavaScript 当中你应该用字符串存储。
+- js 的 number 应该对应到 f64, 它恰好有 53 位二进制有效数字(小数部分 52bit + normal value 默认整数部分为 1)（其实比 u53 多个可以表示正负
+
+- 因为这个锅，本来准备用json的structure HTTP header改了别的形式
+- JSON 本身应该只规定了数字长啥样，没有规定它怎么存/怎么用。这个限制应该来自 js？ 
+  - 不过 lsp 最重要的客户端 vscode 是 js 实现，那也就只能去兼容它。
+  - 如果 lsp 的两端都能够正确处理 u64 大小的 JSON，它应该没有问题的。
+
+- 这个东西在写 go grpc gateway 的时候有痛到， 一开始我写了一堆 Unmarshaler 后来意识到可以用 第三方的 json 库比官方机灵多了
 
 - ## 还是 Rust 高级，测试默认是并行跑的。
 - https://twitter.com/yfractal/status/1776906689549082843

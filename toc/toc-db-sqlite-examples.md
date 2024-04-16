@@ -68,10 +68,16 @@ modified: 2022-06-03T22:07:49.519Z
   - Write in the plain textarea without any burden
   - It has no external dependency.
 
-- https://github.com/thevahidal/soul /js
+- https://github.com/thevahidal/soul /1.4kStar/MIT/202404/js
+  - https://thevahidal.github.io/soul/
   - A SQLite REST and realtime server
   - Soul is command line tool, after installing it, Run soul -d sqlite.db -p 8000 and it'll start a REST API on http://localhost:8000 and a Websocket server on ws://localhost:8000.
-  - Soul Studio provides a GUI to work with your database.
+  - run Soul in auth mode, allowing login and signup features with authorization capabilities in your database tables
+  - https://github.com/thevahidal/soul-studio /MIT/202403/js/svelte
+    - Soul Studio provides a GUI to work with your database.
+    - Web GUI for Soul
+  - https://github.com/DeepBlueCLtd/RA-Soul /EPLv2/202404/ts
+    - The purpose of this project is to demonstrate how to run a React-admin client using Soul as a REST API service. 
 
 - https://github.com/assafmo/SQLiteProxy
   - A simple HTTP JSON proxy for SQLite.

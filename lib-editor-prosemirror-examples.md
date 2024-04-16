@@ -30,6 +30,9 @@ modified: 2022-08-18T16:57:46.405Z
   - pageboard/client(页面搭建), noteworthy(solidjs)
   - 建站编辑器应该参考gutenberg、wix
   - [npmtrends for pme](https://npmtrends.com/@remirror/react-vs-@tiptap/core-vs-lexical-vs-prosemirror-view-vs-remirror-vs-slate)
+
+- examples
+  - https://prosekit.dev/examples/drop-cursor
 # popular
 - tiptap /16.1kStar/MIT/202208/ts
   - https://github.com/ueberdosis/tiptap
@@ -86,16 +89,20 @@ modified: 2022-08-18T16:57:46.405Z
   - Great support for mobile devices.
   - Out-of-the-box editors, or create own by composing extensions.
   - Collaborative editing with yjs or prosemirror-collab.
+
 - https://github.com/ocavue/prosekit /101Star/MIT/202404/ts
   - https://prosekit.dev/
+  - https://prosekit.dev/guide/integrations/react
   - Framework agnostic and headless rich text editor based on ProseMirror
+  - 整体采用ContextProvider模式，`<ProseKit editor={editor}>` 编辑器实例放在顶层
   - why not keep developing remirror?
-  - I’ll continue maintaining Remirror. The api change is just too big that I cannot base on the Remirror codebase.
+    - I’ll continue maintaining Remirror. The api change is just too big that I cannot base on the Remirror codebase.
 
-- prosemirror-adapter /65Star/MIT/202311/ts
+- prosemirror-adapter /65Star/MIT/202402/ts
   - https://github.com/Saul-Mirone/prosemirror-adapter
   - Universal adapter to create prosemirror nodeview from modern UI frameworks.
   - 支持react/vue/lit/svelte
+  - 支持node-view, plugin-view, widget-decoration
   - not on the plan: no ui, no hotkeys, no schema
 
 - @atlaskit/editor-core /8Star/Apache2/202208/ts
@@ -122,7 +129,7 @@ modified: 2022-08-18T16:57:46.405Z
   - 支持跨block选择部分文字
   - 支持拖拽block修改顺序，但list item不支持拖入拖出
 
-- tui.editor.v3 /15.1kStar/MIT/202208/ts/几乎无依赖/生态丰富
+- tui.editor.v3 /15.1kStar/MIT/202302/ts/inactive/几乎无依赖/生态丰富
   - https://github.com/nhn/tui.editor
   - https://ui.toast.com/tui-editor
   - https://nhn.github.io/tui.editor/latest/tutorial-example01-editor-basic
@@ -138,7 +145,7 @@ modified: 2022-08-18T16:57:46.405Z
     - [example: Editor with Chart Plugin](https://nhn.github.io/tui.editor/latest/tutorial-example07-editor-with-chart-plugin)
     - https://github.com/QinHongZhe/hongzhe-tui.editor
 
-- wax-prosemirror /9Star/MIT/202208/js/react
+- wax-prosemirror /9Star/MIT/202403/js/react
   - https://gitlab.coko.foundation/wax/wax-prosemirror
   - https://waxjs.net/docs/wax/
   - http://wax-demo.coko.foundation/
@@ -174,7 +181,7 @@ modified: 2022-08-18T16:57:46.405Z
     - Each Element is made up of Fields, which represent a data type – for example, text, rich text, or custom data types.
   - [How prosemirror-elements works](https://github.com/guardian/prosemirror-elements/blob/main/docs/how-it-works.md)
 
-- bangle.dev-editor /527Star/MIT/202208/ts
+- bangle.dev-editor /527Star/MIT/202310/ts/inactive
   - https://github.com/bangle-io/bangle-editor
   - https://github.com/bangle-io/bangle.dev
   - https://bangle.dev/docs/examples/markdown-editor
@@ -189,7 +196,7 @@ modified: 2022-08-18T16:57:46.405Z
     - 提供了 indexed-db-storage-provider, fs
     - A web only WYSIWYG note taking app that saves notes locally in markdown format
 
-- curvenote-editor /140Star/MIT/202208/ts
+- curvenote-editor /140Star/MIT/202309/ts/inactive
   - https://github.com/curvenote/editor
   - https://curvenote.github.io/editor/
   - https://curvenote.com/
@@ -225,11 +232,12 @@ modified: 2022-08-18T16:57:46.405Z
   - 依赖prosemirror, hightlight.js、markdown-it、@lezer/markdown、stacks-ui，不依赖react
   - 全部基于es6 class，[new EditorView()](https://github.com/StackExchange/Stacks-Editor/blob/main/src/rich-text/editor.ts#L105)的过程非常标准，无封装
 
-- syllepsis /187Star/MIT/202208/ts/字节/参考中文支持
+- syllepsis /187Star/MIT/202304/ts/字节/inactive/参考中文支持
   - https://github.com/bytedance/syllepsis
   - https://bytedance.github.io/syllepsis/#/zh-cn/about
   - [编辑器在线例子](https://bytedance.github.io/syllepsis/#/zh-cn/playground)
   - 支持格式刷、调整文字间距、段落间距
+  - 大多vanillajs，不依赖react
   - 支持[Card或Block插件](https://bytedance.github.io/syllepsis/#/zh-cn/chapters/card-plugin)，但不支持拖拽，块比卡片拥有更广的定义，但我们无意增加开发者的心智负担，也可以认为卡片是一种块
   - 设计了占位插件，可实现左侧加号按钮
   - rich text editor compatible with mainstream modern browsers.
@@ -237,7 +245,7 @@ modified: 2022-08-18T16:57:46.405Z
   - https://github.com/lastnigtic/syllepsis-collab
     - Example of `Syllepsis` collaborative editing using `prosemirror-collab`
 
-- zotero-note-editor /16Star/AGPLv3/202208/js
+- zotero-note-editor /16Star/AGPLv3/202404/js
   - https://github.com/zotero/note-editor
   - 依赖 prosemirror、katex、react、react-intl
   - Note editor for Zotero 6
@@ -274,7 +282,7 @@ modified: 2022-08-18T16:57:46.405Z
     - I don't have prior experience with building word processors, much of the project's design has been trial and error.
     - There are 2 features that I'm still trying to figure out, with no satisfactory solution so far: Pasting, Text formatting 
 
-- manuscript-editor /7Star/apache2/202208/ts/react
+- manuscript-editor /7Star/apache2>CPAL/202208/ts/react
   - https://github.com/Atypon-OpenSource/manuscripts-article-editor
   - the editor package of Manuscripts app to be used in a react application.
   - 数据保存支持 pouchdb-adapter-idb

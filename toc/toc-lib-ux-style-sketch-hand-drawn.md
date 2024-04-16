@@ -10,6 +10,7 @@ modified: 2021-01-13T19:30:59.508Z
   - paper, reading, reader, document
 
 - whiteboard-solutions
+  - 🆚️ 技术栈基于svg容易实现缩放，基于dom不容易缩放
   - [Excalidraw白板调研文档](http://wangxiang.website/docs/work/excalidraw.html)
     - npm 包目前不支持：多人协作、共享链接等，不过 Excalidraw 团队已经在规划当中，不久就会以插件的形式支持。
 # popular

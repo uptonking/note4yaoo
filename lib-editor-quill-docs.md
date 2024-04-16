@@ -144,6 +144,20 @@ modified: 2023-02-09T18:24:06.718Z
 - delta
   - Support for the deprecated delta format, where embeds had integer values and list attributes had different keys, is now removed
 
+- APIs causing text to change may also be called with a "silent" source, in which case `text-change` event will not be emitted. 
+  - This is not recommended as it will likely break the undo stack and other functions that rely on a full record of text changes.
+- Changes to text may cause changes to the selection (ex. typing advances the cursor), however during the text-change handler, the selection is not yet updated, and native browser behavior may place it in an inconsistent state. 
+  - Use `selection-change` or `editor-change` for reliable selection updates.
+- You can also use `selection-change` event as a focus change event by just checking if the emitted range is `null` or not.
+  - APIs causing the selection to change may also be called with a "silent" source, in which case selection-change will not be emitted. 
+  - This is useful if selection-change is a side effect. For example, typing causes the selection to change but would be very noisy to also emit a selection-change event on every character.
+
+- 
+- 
+- 
+- 
+- 
+- 
 - 
 - 
 - 

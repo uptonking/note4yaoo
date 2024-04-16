@@ -17,6 +17,9 @@ modified: 2020-10-22T10:22:55.878Z
 - usecase
   - 自动化任务
 
+- tips
+  - 🆚️ 技术栈基于svg容易实现缩放，基于dom不容易缩放
+
 - resources
   - [diagram-js vs gojs vs jointjs vs jsplumb vs mxgraph | npm trends](https://npmtrends.com/diagram-js-vs-gojs-vs-jointjs-vs-jsplumb-vs-mxgraph)
   - [流程图制作: BPMN流程图在线绘制](https://segmentfault.com/a/1190000019385581)

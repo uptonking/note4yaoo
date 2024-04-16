@@ -14,6 +14,15 @@ modified: 2022-08-30T22:09:32.804Z
 
 - ## 
 
+- ## [Question about drop cursor's position - discuss. ProseMirror](https://discuss.prosemirror.net/t/question-about-drop-cursors-position/5891)
+- The drop cursor has nothing to do with `state.selection` . It is just an indicator displayed to show where the dragged content will be dropped.
+  - There is currently no way to find the position of the drop cursor.
+
+- ondragstart: `e.dataTransfer.setData("text/html", "<img src='xxx.png'/>")` the html will insert into the pos cursor drop
+
+- ## [Drag a node with custom data out of text editor - discuss. ProseMirror](https://discuss.prosemirror.net/t/drag-a-node-with-custom-data-out-of-text-editor/5397/4)
+- You’ll have to create a plugin that handles the drag events before the view does
+
 - ## [Support for Multiple, Discontinuous Selections?](https://discuss.prosemirror.net/t/support-for-multiple-discontinuous-selections/1560)
   - Is there a clean, established way to create multiple selections and/or a selection with multiple, discontinuous ranges?
   - I notice that `Selection` contains a `ranges` array, but I don’t see any constructors or static helper methods for creating multiple ranges.

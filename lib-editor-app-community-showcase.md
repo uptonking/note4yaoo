@@ -16,6 +16,13 @@ modified: 2023-05-21T15:45:54.844Z
 
 - ## 
 
+- ## 
+
+- ## ✏️ [Bike: Innovative Rich Text Editing | Hacker News _202211](https://news.ycombinator.com/item?id=33489123)
+- The "affinity cursor" is a really lovely innovation. Most HTML/DOM/contenteditable based rich text editors end up adding support for virtual cursors that enable you to have the insertion cursor somewhere that the native browser cursor hasn't got support for (next to a floating image, end of a table row). Effectively this is what this is doing.
+
+- Text affinity and the command pallet is innovative. Could probably bundle this up as a Objective-C library that acts as a drop in replacement for UITextView/NSTextView. Perhaps a JS/WebComponent library for `<textarea>` as well. I’m sure you could extract some revenue with licensing those libraries or tech support.
+
 - ## 🤝🏻 Version history as chat: what if you could chat about editing progress with your collaborators right in the history timeline of a document?
 - https://twitter.com/geoffreylitt/status/1773423061938708839
   - That's the idea of our latest Patchwork experiment...

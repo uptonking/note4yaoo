@@ -39,7 +39,12 @@ modified: 2022-03-18T20:56:35.254Z
 
 - ## 
 
-- ## 
+- ## Which latency numbers should a developer know?
+- https://twitter.com/Franc0Fernand0/status/1779853436604805379
+  - I found a website where you can visualize how those numbers changed. 
+  - [Numbers Every Programmer Should Know By Year](https://colin-scott.github.io/personal_website/research/interactive_latency.html)
+
+- As you rightly pointed out the data is questionable but nice visualization of how numbers have evolved over time.
 
 - ## Terminal flamegraph tools feel under-appreciated.
 - https://twitter.com/eatonphil/status/1764992041602187296
@@ -63,9 +68,9 @@ modified: 2022-03-18T20:56:35.254Z
 
 - I've seen stuff like this, but I'm always curious, how is it actionable? With log statements, you'd be able to look back through the history, and see which things took the most out of your time budget
 - I'm using it like this:
-  01.  I play with my components.
-  02.  I take a note of which interactions cause the lag radar to show me some red.
-  03.  Lastly I turn on the profiler and see exactly what's going on.
+  01.   I play with my components.
+  02.   I take a note of which interactions cause the lag radar to show me some red.
+  03.   Lastly I turn on the profiler and see exactly what's going on.
   - The radar is good for knowing when to profile, it's not a replacement for it.
 
 - ## If importing an SVG is the best thing for you ergonomically, choose a solution that returns a URL for use with `<img>` , or extracts them into `<defs>` for use with `<use href="#">` .  

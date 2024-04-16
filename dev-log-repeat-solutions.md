@@ -70,7 +70,7 @@ modified: 2021-07-20T13:50:23.433Z
 - 💎 editor/WYSIWYG
   - collaborative, block-style, virtualized-render
   - modular/extensible; collaborative; easy-pivotable
-  - 📌 prosemirror/tiptap, quill/typewriter, slate/wang, lexical, etherpad ; cms/outline
+  - 📌 prosemirror/tiptap/rich-md, quill/typewriter, slate/wang, lexical; cms/outline
   - block-editor with slash-menu/backlinks
   - pdf
 - 💎 excel/data-grid
@@ -81,7 +81,7 @@ modified: 2021-07-20T13:50:23.433Z
   - scripting/themeable/canvas/viztable/apache-arrow
   - ~~excel-like~~/~~headless~~
 - 💎 collab
-  - crdt: logux, automerge, yjs, rga, fluid-framework, hlc
+  - crdt: yjs, automerge, logux, rga, fluid-framework, hlc
   - log-based: p/couchdb, kappa-db, event-sourcing
   - eav: triplitdb
 
@@ -91,7 +91,7 @@ modified: 2021-07-20T13:50:23.433Z
   - 👉🏻 outline (apache2/sequelize+prosemirror)
   - 👉🏻 strapi      (MIT/knex+slate)
   - 👉🏻 directus   (AGPL/knex+vue3+tinymce5)
-  - 👉🏻 nocobase(apache2/sequelize+umi)
+  - nocobase   (apache2/sequelize+umi)
   - payloadcms     (MIT/mongoose+slate)
 - ✨ airtable-like(data-mgmt)
   - 👉🏻 nocodb     (AGPL/knex+nuxt3)

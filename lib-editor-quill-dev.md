@@ -26,6 +26,7 @@ modified: 2023-02-09T18:23:23.288Z
   - 石墨文档
   - slab, Reedsy
   - ERPNext
+  - devextreme-quill
   - Grammarly Editor
   - 若依管理系统(quill.v1)
   - [vaadin rich-text-editor is built with Quill](https://vaadin.com/docs/latest/components/rich-text-editor)

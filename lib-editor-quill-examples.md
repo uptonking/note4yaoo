@@ -10,7 +10,7 @@ modified: 2023-02-09T18:32:06.240Z
 # guide
 
 - tips
-  - 核心模块: image, table, toolbar
+  - 核心模块: image, table, toolbar, mention
   - resize: image, table, video, iframe
 
 - resources
@@ -23,7 +23,7 @@ modified: 2023-02-09T18:32:06.240Z
 - quill /37.5kStar/BSD/202311/ts
   - https://github.com/quilljs/quill
   - https://quilljs.com/
-  - https://quilljs.com/playground/
+  - https://quilljs.com/playground/  /提供了vanillajs、react、form
   - a modern WYSIWYG editor built for compatibility and extensibility
   - https://github.com/quilljs/delta
   - https://github.com/quilljs/parchment
@@ -37,6 +37,13 @@ modified: 2023-02-09T18:32:06.240Z
   - https://github.com/welkinwong/superdocs-quill /202311/ts/inactive
     - https://github.com/welkinwong/superdocs-rsuite
     - a fork of quill, inactive
+  - https://github.com/revolist/quill
+
+- https://github.com/DevExpress/devextreme-quill /BSD/202403/js
+  - https://js.devexpress.com/React/Demos/WidgetsGallery/Demo/HtmlEditor/Tables/MaterialBlueLight/
+  - a fork of Quill, based on the 2.0 branch
+  - supports basic table operations and enhances lists rendering
+  - https://github.com/DevExpress/DevExtreme/tree/24_1/packages/devextreme/js/ui/html_editor
 
 - typewriter /347Star/MIT/202311/ts
   - https://github.com/typewriter-editor/typewriter
@@ -60,7 +67,7 @@ modified: 2023-02-09T18:32:06.240Z
   - https://ludejun.github.io/quill-react-commercial/
   - 多功能的、可面向商业化的quill富文本编辑器，主要模块包括图片、表格、工具条
   - 使用最新的quill@2.0.0-rc.4，方便向后兼容
-  - 使用React Hooks实现wrapper，modules的实现都基于vanillajs
+  - 使用React Hooks实现wrapper，大部分代码包括modules的实现都基于vanillajs
   - 微信小程序的富文本编辑器也使用的Quill底层和数据结构，可以和quill-react-commercial打通编辑和展示
   - 图片支持本地上传和图片Url插入，可以限制上传图片格式和大小
   - 参考quill-better-table
@@ -77,20 +84,38 @@ modified: 2023-02-09T18:32:06.240Z
   - 编辑器实时diff的虚拟图层实现。
   - delta to docx/html/pdf
 
+- https://github.com/Alec-Aldrine-Lakra/Track-Changes-quill /202001/js/inactive
+  - This is a demo version of track changes in quill, It is still incomplete and major features are missing
+  - I am highlighting text changes for every user and storing all their highlighted text in web storage api.
+  - https://github.com/openevocracy/quill-track-changes /202003/js/空文件
+
 - https://github.com/TonyYu2015/GEditor /202309/js/inactive
   - https://g-editor-fawn.vercel.app/
   - rich-text base on Quill, 非react
-  - 典型的单页文档编辑器, 工具条按钮丰富
+  - 典型的单页文档编辑器, 功能丰富
+  - 集成了sharedb
+
+- https://github.com/BugCreators/ql-quill /MIT/202403/ts
+  - 关于 Quill.js 一些公共配置的封装、支持使用 KityFormula 公式插件，供内部使用
+  - 依赖quill.v1
+  - PasteFromWord基于worker实现
+  - `class QlQuill extends Quill` 大部分自定义逻辑放在子类上，项目结构模仿quill
 
 - https://github.com/domilin/media-quill /202011/ts/inactive
   - Rich text editor based on Quill
   - Built in vanilla JS, typescript support, so it can be used on React, Vue, Angular as well
   - 功能较丰富
+  - `class MediaQuill extends Quill`，模块不多
 
 - https://github.com/coach-K/custom-quill-editor /202312/ts/实现简单
   - https://coach-k.github.io/custom-quill-editor/demo/
   - a WYSIWYG Editor build on top of the open source library Quill
   - To test the Video and Social Embed
+
+- https://github.com/balmjs/balm-ui/blob/main/src/scripts/components/editor/quill/core/index.js /202309/js
+  - const quill = new Quill(editorEl, options); 
+  - 设计了自定义useExtension()
+  - A modular and customizable UI library based on Material Design
 
 - https://github.com/KID-1912/quill-js-editor /202312/js/实现简单
   - Custom JavaScript editor built on quill
@@ -105,6 +130,15 @@ modified: 2023-02-09T18:32:06.240Z
   - 支持ssr
   - https://github.com/FujoWebDev/astrolabe
     - 最新转向tiptap
+
+- https://github.com/cloverhearts/quilljs-markdown /MIT/202207/js/inactive
+  - https://cloverhearts.github.io/quilljs-markdown
+  - Plugin for advanced Markdown. 书写时会自动转换成md样式
+  - https://github.com/doc22940/quill.markdown
+- https://github.com/patleeman/quill-markdown-shortcuts /201910/js
+  - module that converts markdown to rich text formatting while typing.
+  - https://github.com/sswatson/quill-markdown-shortcuts /202103/js
+  - https://github.com/rogeriomq/quill-markdown-shortcuts /202208/js
 
 - https://gitee.com/wfeng0/mpoe /apache2/202402/js/vue
   - 多人协同编辑器开发 MPOE（Multi person online edit）
@@ -212,6 +246,7 @@ modified: 2023-02-09T18:32:06.240Z
 - https://github.com/dost/quilljs-table /201703/js/archived
   - Test lab for creating TABLE functionality in QuillJS using Containers.
   - https://github.com/Shatiger/quill-table /202305/js
+  - https://github.com/dclement8/quill1-table /202309/js
 - https://github.com/unzld/quill-better-table-picker /202110/js
   - An extension of the table module for Quill, with support for toolbar table picker.
   - v2.0.0-dev.3
@@ -228,6 +263,7 @@ modified: 2023-02-09T18:32:06.240Z
   - 不依赖react
   - https://github.com/uragirii/Notion-Clone /202012/js
 - https://github.com/tzhangchi/quill-menu-module /202201/ts
+  - https://jsfiddle.net/zhangchi/2dyafg67/1/
   - Notion-like style quill menu module based on Quill.js
   - 斜杠菜单，非react
 
@@ -271,6 +307,13 @@ modified: 2023-02-09T18:32:06.240Z
   - A publishing CMS developed using NodeJS, TypeScript and MongoDB. 
   - 不依赖quilljs，编辑器使用SimpleMDE
 
+- https://github.com/scriptype/writ-cms /GPLv3/202404/js
+  - https://enes.in/writ-cms
+  - https://github.com/scriptype/writ-cms/blob/master/packages/expansion-content-editor/static/editor/quill.js
+  - The timeless SSG + CMS
+  - I should be able to just use GUI from start to end
+  - I should get automated index pages, pagination, sitemap, rss, search etc. without touching code
+
 - https://github.com/netless-io/netless-app/tree/master/packages/app-quill /MIT/202312/ts/svelte
   - Netless App for rich-text collaborative editing, powered with Yjs (a CRDT implementation) and Quill.
   - https://github.com/netless-io/netless-app /MIT/202312/ts
@@ -291,6 +334,11 @@ modified: 2023-02-09T18:32:06.240Z
   - Applicable version: Quill v1.3.7
   - 简单的分页效果
 # quill-based-editors
+- https://github.com/immense/quill-drag-and-drop-module /MIT/201708/js
+  - https://immense.js.org/quill-drag-and-drop-module/
+  - module to add drag-and-drop support to the Quill container
+  - You can specify a container to enable dragging and dropping
+
 - https://github.com/asturgeon123/quill-drag-and-drop-demo /202401/js
   - Demo drag-and-droppable tokens into a Quill rich text editor
   - 类似拖拽变量
@@ -317,6 +365,15 @@ modified: 2023-02-09T18:32:06.240Z
 - https://github.com/wellspr/react-quill-editor /202402/ts
   - a react typescript wrapper for Quill JS
 
+- https://github.com/opensquare-network/rich-text-editor /MIT/202402/ts
+  - OpenSquare Team Rich Text Editor
+  - 依赖react、quill、marked、prismjs
+  - wysiwyg基于quill, markdown基于textarea
+
+- https://github.com/yxy199399/react-quill-style /202401/ts
+  - 将原有功能基于react-quill的基础，将所有（公式除外，公式用到其它依赖）转换成行内样式，在移动端等地方使用可不用单独引入样式 11种行内格式
+  - 依赖quill.v1
+
 - https://github.com/ChrisMayor/D365RichTextEditor /202012/ts
   - Dynamics 365 Rich text editor for Unified Interface / Based on PowerApps component framework, React and quill
 
@@ -342,11 +399,26 @@ modified: 2023-02-09T18:32:06.240Z
   - https://markdown-editor-six-mu.vercel.app/
   - A simple Nextjs, Quill based markdown Editor
 
+- https://github.com/KillerCodeMonkey/stencil-quill /MIT/202402/ts
+  - https://killercodemonkey.github.io/stencil-quill/
+  - Native web components for the Quill Rich Text Editor
+  - do not forget to install quill v2! and include it + theme css in your buildprocess, module or index.html
+
 - https://github.com/moonshine-software/quill /MIT/202402/js
   - Quill field for MoonShine Laravel admin panel
 # client-mobile
 - https://github.com/cdcrft/quill-mobile-view /201909/js
   - module to add a button inside the toolbar that will allow you to change the editor width to adapt it to a mobile view
+
+- https://github.com/kanso-team/typeskill-typer /MIT/202402/ts
+  - Typeskill, the Operational-Transform Based (React) Native Rich Text Library.
+  - No bloated/clumsy WebView ; this library only relies on (React) Native components; 
+  - Fully controlled components
+  - Based on the reliable Delta operational transform library from quilljs.
+  - https://github.com/typeskill/typer /202002/ts/archived
+  - https://github.com/meliorence/react-native-render-html /BSD/202306/ts
+    - https://meliorence.github.io/react-native-render-html/
+    - iOS/Android pure javascript react-native component that renders your HTML into 100% native views
 
 - https://github.com/imnapo/react-native-cn-quill /202306/ts
   - a rich-text editor for react-native. 
@@ -354,8 +426,12 @@ modified: 2023-02-09T18:32:06.240Z
 - https://github.com/LuudJanssen/react-native-webview-quill /201912/ts
   - Quill component for React Native built using `postMessage` communication and a WebView.
 
-- https://github.com/YipitBeijing/RN-edison-editor /202305/ts
+- https://github.com/YipitBeijing/RN-edison-editor /202305/ts/inactive
   - react-native quill rich-text-editor
+
+- https://github.com/tonisantosbalbi/react-native-quill-editor /MIT/202208
+  - React Native Quill Rich Text Editor Wrapper
+  - Make sure you installed react-native-webview
 
 - https://github.com/artiely/quill-vue-mobile /202004/js/vue
   - 一个 quill 的封装，用于移动端 webview 的跨平台富文本编辑器, 类似知乎移动端富文本
@@ -374,15 +450,17 @@ modified: 2023-02-09T18:32:06.240Z
 - https://github.com/quill-mention/quill-mention /635Star/MIT/202311/js/inactive
   - https://quill-mention.com/
   - a module to provide @mentions or #hashtag functionality for the Quill rich text editor.
+  - https://github.com/devdcodes9/quill-mentionjs /202401/js
 
 - https://github.com/xie392/quill-mention-react /MIT/202403/ts
   - https://quill-mention-react.vercel.app/
   - Quill 富文本编辑器的 @mentions
 
-- https://github.com/raphaelM-sudo/quill-emoji-mart-picker /202006/ts
+- https://github.com/raphaelM-sudo/quill-emoji-mart-picker /MIT/202006/ts
   - https://quill-emoji-mart-picker.netlify.com/
   - Module and Blot for Quill.js that supports Emoji Mart Picker and Emoji Mart.
   - converts unicode emojis, emoticons and emoji names into emoji images from Apple, Google, Twitter, EmojiOne, Facebook Messenger or Facebook.
+  - https://github.com/mr04vv/quill-emoji-mart-picker /202108/ts
 
 - https://github.com/benoitlahoz/quill-emoji-parser /MIT/202401/ts
   - https://benoitlahoz.github.io/quill-emoji-parser/
@@ -390,9 +468,19 @@ modified: 2023-02-09T18:32:06.240Z
   - inspired by quill-magic-url 
   - Default map is taken from Smile2Emoji
 
+- https://github.com/artknight/quill-emoji /MIT/202310/ts
+  - Module extension for Quill.js that handles emojis in the toolbar.
+  - https://github.com/xingw-z/quill2-emoji /202305/ts
+- https://github.com/devdcodes9/quill-emojijs /202402/js
+  - Module extension for Quill.js version 2.0 that handles emojis in the toolbar
+
 - https://github.com/contentco/quill-emoji /202111/js
   - Module extension for Quill.js that handles emojis in the toolbar.
   - you can add emojis through the toolbar at the top, or by typing the emoji code.
+  - https://github.com/adtribute/quill-emoji /202402/js
+    - remove the sprites, remove the css rules that use sprite
+  - https://github.com/FuseDesk/quill-emoji /202310/js
+    - dropped node-sass, moved to sass
 
 - https://github.com/koffeinfrei/quill-task-list /201806/js
   - Adds a task/todo list to the quill editor. Includes a toolbar item.
@@ -407,12 +495,14 @@ modified: 2023-02-09T18:32:06.240Z
   - https://zaffnet.github.io/quill_spellcheck_demo/
   - Spellcheck in a WYSIWYG Editor. I have modified the Tooltip provided by Quill to suggest words.
 
-- https://github.com/cloverhearts/quilljs-markdown /MIT/202207/js/inactive
-  - https://cloverhearts.github.io/quilljs-markdown
-  - Plugin for advanced Markdown. 书写时会自动转换成md样式
-  - https://github.com/doc22940/quill.markdown
-- https://github.com/patleeman/quill-markdown-shortcuts /201910/js
-  - module that converts markdown to rich text formatting while typing.
+- https://github.com/mithya-team/rte-quill-plugin /MIT/202401/ts
+  - a plugin for integrating Quill rich text editor with your form library
+  - provides an easy-to-use interface for creating rich text content within forms handled by popular form libraries like React Hook Form, Formik, or Redux Form.
+
+- https://github.com/mindroute/quill-form /201809/js
+  - Module for form bindings and input fields in Quill
+  - Automatically creates hidden input fields for a form and adds submit handling and submit by key (⌘/Ctrl+S). 
+  - It creates fields for text, html and delta.
 
 - https://github.com/lukevp/quill-fire /202305/ts
   - Extend Quill JS editor to fire events as soon as matching text is entered
@@ -422,7 +512,11 @@ modified: 2023-02-09T18:32:06.240Z
   - Requires Quill 2.0
 
 - https://github.com/T-vK/DynamicQuillTools /201911/js
+  - https://t-vk.github.io/DynamicQuillTools/example.html
   - allows you to dynamically add or remove new custom elements to/from a Quill Editor's toolbar
+
+- https://github.com/rain0002009/quill-divider /202207/ts
+  - Module extension for Quill.js that handles divider in the toolbar.
 
 - https://github.com/HimasRafeek/quilljs-floating-toolbar /202402/js
   - plugin adds a floating toolbar to the Quill editor. 
@@ -450,6 +544,7 @@ modified: 2023-02-09T18:32:06.240Z
 - https://github.com/jspaine/quill-placeholder-module /201807/ts
   - https://codepen.io/jspaine/pen/MozyNp
   - Quill module for adding placeholders
+  - https://github.com/kathirr007/quill-placeholder-module-forked /202312/ts
 - https://github.com/Datananas/quill-placeholder-autocomplete /201809/js
   - brings autocomplete to quill-placeholder-module
 
@@ -463,14 +558,6 @@ modified: 2023-02-09T18:32:06.240Z
   - based on quill-magic-url
 - https://github.com/kyoncy/quill-linkify /202209/ts
   - plugin that converts URL, mail address, phone number to link.
-
-- https://github.com/rain0002009/quill-divider /202207/ts
-  - Module extension for Quill.js that handles divider in the toolbar.
-
-- https://github.com/mindroute/quill-form /201809/js
-  - Module for form bindings and input fields in Quill
-  - Automatically creates hidden input fields for a form and adds submit handling and submit by key (⌘/Ctrl+S). 
-  - It creates fields for text, html and delta.
 
 - https://github.com/brettimus/quill-local-storage /201506/js
   - a local storage module for restoring "drafted" text to the quilljs editor
@@ -490,7 +577,7 @@ modified: 2023-02-09T18:32:06.240Z
   - Attachments plugin for Quill rich text editor
   - https://github.com/Shatiger/quill-attachments /202310/js
 
-- https://github.com/nvt-ak/quill-upload /22403/js
+- https://github.com/nvt-ak/quill-upload /202403/js
   - A plugin for uploading image, video, attachment in Quill 
   - upload a image, video, attachment when it is inserted, and then replace the base64-url with a http-url
   - preview the image, video, attachment which is uploading with a loading animation
@@ -498,10 +585,19 @@ modified: 2023-02-09T18:32:06.240Z
 - https://github.com/lw1995/quill-video-image-module /202008/js
   - 整合视频上传，图片上传到服务器模块，用video标签替换iframe，中文提示框，中文描述
 
+- https://github.com/NoelOConnell/quill-image-uploader /218Star/MIT/202305/js/inactive
+  - allow images to be uploaded to a server instead of being base64 encoded
+  - Adds a button to the toolbar for users to click, also handles drag, dropped and pasted images
+  - https://github.com/fxmontigny/quill-image-upload /201812/js
+  - https://github.com/dragonwong/quill-plugin-image-upload /201811/js
+  - https://github.com/xiangchuifeng/quill-image-upload-v2 /202304/js
+
 - https://github.com/xeger/quill-image /202310/ts
   - provide resizable, floatable images that cleanly "round trip" between HTML and JSON.
   - a fork and rewrite of quill-blot-formatter
+  - https://github.com/redTreeOnWall/quill-image
   - https://github.com/UMN-LATIS/quill-better-image-module
+
 - https://github.com/portive/quill-images /202311/ts
   - https://codepen.io/scottward/pen/RwvjOVJ
   - Add image uploads with click to upload, drag and drop and paste support.
@@ -517,12 +613,6 @@ modified: 2023-02-09T18:32:06.240Z
 
 - https://github.com/Nelwhix/quill-image-uploader /202303/ts
   - plugin that uploads images inserted, drag/dropped or pasted into the quill editor to a server instead of being base64 encoded.
-
-- https://github.com/NoelOConnell/quill-image-uploader /218Star/MIT/202305/js/inactive
-  - allow images to be uploaded to a server instead of being base64 encoded
-  - Adds a button to the toolbar for users to click, also handles drag, dropped and pasted images
-  - https://github.com/fxmontigny/quill-image-upload /201812/js
-  - https://github.com/dragonwong/quill-plugin-image-upload /201811/js
 
 - https://github.com/kensnyder/quill-image-drop-module /201703/js
   - A module for Quill rich text editor to allow images to be pasted and drag/dropped into the editor.
@@ -548,9 +638,16 @@ modified: 2023-02-09T18:32:06.240Z
 
 - https://github.com/kensnyder/quill-image-resize-module /201807/js
   - A module for Quill rich text editor to allow images to be resized.
+  - https://github.com/kensnyder/quill-image-resize-module /202311/js
 - https://github.com/mild-blue/even-better-quill /202402/ts
   - imageResize - originaly based on quill-image-resize-module
   - https://github.com/mild-blue/quill-even-better-image /202307/ts
+
+- https://github.com/CracKerMe/quill-format-img /202305/js/inactive
+  - a module for the Quill text editor to allow blots to be reformatted. 
+  - Built in formatters: resize and realign. 
+  - Built in blot support: images. and add image open link
+  - Heavily inspired by quill-image-resize-module. 
 
 - https://github.com/agendaedu/quill-image-resize-module-react-mobile /202101/js
   - A module for Quill rich text editor to allow images to be resized.
@@ -594,7 +691,7 @@ modified: 2023-02-09T18:32:06.240Z
   - adds support for rich math authoring to the Quill editor.
   - depends on MathQuill, Quill and KaTeX
 
-- https://github.com/vieyama/quill-editor-math /202304/ts
+- https://github.com/vieyama/quill-editor-math /202304/ts/inactive
   - Rich text editor with react quill, mathquill4quill, katex, and image resizer. you can use formula with this.
 
 - https://github.com/manaragr/mathTextEditor /202307/js
@@ -619,6 +716,7 @@ modified: 2023-02-09T18:32:06.240Z
 
 - https://github.com/devaman/quill-selection /202403/js
   - a module to provide selection and show dropdown functionality for the Quill rich text editor.
+  - Disabled items are shown but not selectable with the mouse or keyboard.
 
 - https://github.com/amiller-gh/quill-hr /202004/js
   - module for horizontal rules.
@@ -626,7 +724,19 @@ modified: 2023-02-09T18:32:06.240Z
 - https://github.com/MeccaMedialight/quillwrap /201912/js
   - Module for converting textareas into Quill-powered editors
   - https://github.com/luke-mml/quillwrap-demo
+
+- https://github.com/vantezzen/quill-languagetool /202312/ts
+  - https://vantezzen.github.io/quill-languagetool
+  - LanguageTool integration for Quill.js editors
+- https://github.com/anderneath/react-quill-spell-checker /MIT/202310/ts
+  - Integrate any spell checker on Quill.js editor
+  - Custom server support
+  - Using this module will change the contents of the editor to add control elements for spell checking and grammar checking.
 # starter
+- https://github.com/darriwil/quill-delta-generator /MIT/202402/ts
+  - https://quill-delta-generator.netlify.app/
+  - 单文件编辑器示例
+
 - https://github.com/quilljs/webpack-example /202403/ts/单文件
   - A working example of building Quill as part of a larger application build pipeline using Webpack.
 
@@ -670,6 +780,10 @@ modified: 2023-02-09T18:32:06.240Z
 - https://github.com/mushfiqweb/mybl-cms /202311/ts/仅前端/样式友好/inactive
   - MyBL CMS React Template
   - 依赖redux-toolkit、tanstack-table、fullcalendar、apexcharts、quill、formik
+
+- https://github.com/aniruddha-jafa/notes-app /202110/js/inactive
+  - A fullstack web app based around the open-source quill.js text editor
+  - back-end uses Express & mongoDB、ejs
 
 - https://github.com/vuquangpham/boilcms /MIT/202311/js
   - A CMS that has been built with Node.js and Express.js
@@ -860,6 +974,12 @@ modified: 2023-02-09T18:32:06.240Z
   - This is the official repository for Penit, a blog application.
   - 依赖next-auth、swr、react-quill、firebase、@prisma/client
 
+- https://github.com/VedanthB/bloggingly-frontend /202210/ts/inactive
+  - https://github.com/VedanthB/bloggingly-backend
+  - a blogging platform, where you can upload and view blogs and create your own blog page
+  - Client: TypeScript, React, Redux Toolkit, TailwindCSS, React Quill Markdown Editor
+  - Server: Node, Express, TypeScript
+
 - https://github.com/Top-Ranger/writergo /202403/go/js
   - A simple collaborative editing software
 
@@ -1000,7 +1120,7 @@ modified: 2023-02-09T18:32:06.240Z
 - https://github.com/Glissen/StarDocs2 /202212/ts/yjs
   - client + server
 # delta
-- https://github.com/vincentdchan/delta-es /202311/ts
+- https://github.com/vincentdchan/delta-es /BSD/202311/ts
   - a forked version to quill-delta
   - es module for tree shaking.
   - unit tests are rewritten using Vitest.
@@ -1035,11 +1155,23 @@ modified: 2023-02-09T18:32:06.240Z
 - https://github.com/buu700/quill-markdown /202301/ts/inactive
   - Converts between Quill deltas and Markdown
 
-- https://github.com/joelcolucci/node-quill-converter /202001/js
-  - Convert HTML to a Quill Delta or a Quill Delta to HTML
+- https://github.com/frysztak/markdown-to-quill-delta /202205/ts
+  - Converts Markdown to Quill Delta using remark.
+- https://github.com/volser/md-to-quill-delta /201911/ts
+  - `import { MarkdownToQuill } from 'md-to-quill-delta';`
 
-- https://github.com/nozer/quill-delta-to-html /202204/ts
+- https://github.com/yucheng-Li/quill-converter-xp /202308/js
+  - Convert HTML to a Quill Delta or a Quill Delta to HTML
+  - 去掉 fs 模块
+  - https://github.com/joelcolucci/node-quill-converter /202001/js
+    - Convert HTML to a Quill Delta or a Quill Delta to HTML
+
+- https://github.com/nozer/quill-delta-to-html /MIT/202204/ts/inactive
   - Converts Quill's delta ops to HTML
+  - https://github.com/wirechunk/quill-delta-to-react /202404/ts
+    - Render Quill's Delta ops in React
+    - we take performance seriously. You can have many instances of a RenderDelta component on a page, and it will render quickly and efficiently.
+    - In addition to providing custom HTML element tags, classes, styles, and any other attribute, you can define custom Op types and provide a rendering function for these types with a `customRenderer` prop.
   - https://github.com/sudowrite/quill-delta-to-html-fork
     - Although it's open source, it's not intended for general use
   - https://github.com/microcmsio/quill-delta-to-object
@@ -1056,11 +1188,6 @@ modified: 2023-02-09T18:32:06.240Z
 - https://github.com/casetext/quill-render /201510/js
   - Renders a sequence of quill insert-only deltas (operational transforms) into HTML with no browser dependencies.
   - using cheerio to build a DOM from the delta sequence.
-
-- https://github.com/frysztak/markdown-to-quill-delta /202205/ts
-  - Converts Markdown to Quill Delta using remark.
-- https://github.com/volser/md-to-quill-delta /201911/ts
-  - `import { MarkdownToQuill } from 'md-to-quill-delta';`
 
 - https://github.com/FPG-Alan/quill-delta-parser /202210/rust/inactive
   - parse delta of quill to html(only insert)
@@ -1086,7 +1213,7 @@ modified: 2023-02-09T18:32:06.240Z
 - https://github.com/andrewanthro/quill-to-pdf /202102/ts
   - Create a PDF from a QuillJS delta object
   - Convert a QuillJS delta object into a `.pdf` BLOB
-  - https://github.com/thebadge/quill-to-pdf
+  - https://github.com/thebadge/quill-to-pdf /202307/ts
 - https://github.com/andrewanthro/quill-to-word /202101/ts
   - Convert a QuillJS delta object into a `.docx` file
 
@@ -1112,7 +1239,7 @@ modified: 2023-02-09T18:32:06.240Z
 - https://github.com/12Ahn22/quill-multer /202205/js
   - react-quill, multer
 
-- https://github.com/angelaki/quill-get-text /202311/js
+- https://github.com/angelaki/quill-get-text /MIT/202311/js
   - Quill module to control how contents get serialized in Quill's getText()-method
 
 - https://github.com/payz0/quill-base64-to-file-location /202104/js
@@ -1127,7 +1254,7 @@ modified: 2023-02-09T18:32:06.240Z
   - a rich text editor and a Quill component for Flutter.
   - editor built for the modern Android, iOS, web and desktop platforms
 
-- https://github.com/visual-space/visual-editor /245Star/MIT/202311/dart
+- https://github.com/visual-space/visual-editor /245Star/MIT/202402/dart
   - a Rich Text editor for Flutter originally forked from Flutter Quill.
   - The editor is built around the powerful Quilljs Delta document format originally developed by QuillJs
 # more
@@ -1140,3 +1267,10 @@ modified: 2023-02-09T18:32:06.240Z
   - Offline personal note-taking simplified.
   - All notes are stored locally on the device. All pages are static files, there simply is no backend.
   - 依赖next、react-hook-form
+
+- https://github.com/rwth-acis/syncmeta /202311/js
+  - Near real-time collaborative modeling framework
+
+- https://github.com/mostafizurhimself/admintoolkit-html /MIT/202403/js
+  - https://getadmintoolkit.com/
+  - Admin template based on TailwindCSS and Vanilla JavaScript
