@@ -267,9 +267,6 @@ modified: 2021-03-03T21:48:48.379Z
   - http://khan.github.io/live-editor/demos/simple/
   - This is the live coding environment developed for the Khan Academy Computer Programming curriculum. 
   - It gives learners an editor on the left (either ACE or our Blocks-based drag-and-drop editor) and an output on the right (either JS+ProcessingJS, HTML, or SQL).
-- https://github.com/sofish/pen /201809
-  - https://sofish.github.io/pen
-  - enjoy live editing (+markdown)
 
 - openchakra /MIT/1.6kStar/202008
   - https://github.com/premieroctet/openchakra

@@ -54,11 +54,6 @@ modified: 2021-01-13T19:30:59.508Z
   - https://github.com/UreekaBiz/svg-poc
     - An Excalidraw-like SVG Proof-of-Concept
 
-- react-design-editor /1.6kStar/MIT/202304/ts
-  - https://github.com/layerhub-io/react-design-editor
-  - https://editor.layerhub.io/
-  - Image, Presentation and Video editor. Canva clone
-  - React design editor using fabric.js. 
 
 - https://github.com/phedkvist/whiteboard
   - https://whiteboard-umber.vercel.app/

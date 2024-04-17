@@ -103,6 +103,11 @@ modified: 2021-07-27T15:12:39.959Z
 - https://github.com/test-it-edu/notebook-dev /ts
   - Notebook is a simple Markdown and LaTeX Math editor build in React. 
   - The goal of this project is to create a modular / extensible editor for the web
+
+- https://github.com/sofish/pen /201809/js/inactive
+  - https://sofish.github.io/pen
+  - enjoy live editing (+markdown)
+  - used by Teambition
 # editor-electron
 - https://github.com/pulsar-edit/pulsar /MIT/202401/js
   - https://pulsar-edit.dev/
@@ -203,3 +208,6 @@ modified: 2021-07-27T15:12:39.959Z
 
 - https://github.com/oidoid/linear-text
   - Linear Text is a graphical line-oriented text editor
+
+- https://github.com/benjamn/kix-standalone /201007/js/archived
+  - A standalone version of Google's new rich text editor, Kix

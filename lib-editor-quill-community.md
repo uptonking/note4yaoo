@@ -25,7 +25,14 @@ modified: 2023-02-09T18:23:43.486Z
 
 - ## 
 
-- ## 
+- ## [Handle text replacements explicitly _202306](https://github.com/quilljs/quill/pull/3807)
+- Definition of Text Replacements
+  - The most common scenario occurs when a range of text is selected, and the user presses any keystrokes.
+  - Additionally, built-in spell checks and some platform-specific operations (e.g., emoji picker, text replacement settings on macOS) can also be considered as text replacements.
+  - It's important to note that the selection does not necessarily need to encompass the text that is about to be replaced. for example, floating toolbar
+- In the case of text replacements, we currently rely on the browser's default behavior and then utilize MutationObserver to synchronize DOM changes with the model. Sometimes, this approach doesn't work well, as browsers may generate unexpected mutations that Quill is unable to process.
+  - At Slab, we handle text replacements explicitly with Input Event
+  - This PR mostly moves the code to Quill but also handles IME as well.
 
 - ## [Support OT for table _202205](https://github.com/quilljs/quill/pull/3590)
 - This adds the OT ability for table format and also supports nested scrolls.

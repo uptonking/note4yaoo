@@ -22,6 +22,17 @@ modified: 2023-11-27T20:19:50.947Z
 
 ## v2.0
 
+- [v2.0.0_20240417](https://github.com/quilljs/quill/releases/tag/v2.0.0)
+  - Quill is now a valid ESM package for better ecosystem (e.g. bundlers) and tree-shaking support
+  - Migrated to TypeScript
+  - Nested Quill support: adds the OT ability for table format and also supports nested scrolls
+  - Improved IME and spell corrector using input event instead of MutationObserver
+  - Auto detect scrolling container
+  - Semantic cleanups for TEXT_CHANGE event to generate better delta diff
+  - History: Record selection in history module
+  - Clipboard: Improve support for pasting from Google Docs and Microsoft Word
+  - 2.0 includes many performance optimizations, the most important of which is the improved rendering speed for large content
+
 - [v2.0.0-beta.0_2023-12-08](https://github.com/quilljs/quill/releases/tag/v2.0.0-beta.0)
   - Quill has been significantly modernized. 
   - Leveraging the latest browser-supported APIs, Quill now delivers a more efficient and reliable editing experience.

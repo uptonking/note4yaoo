@@ -10,6 +10,7 @@ modified: 2022-06-03T21:34:54.893Z
 # guide
 
 - 想要分析notion的block架构设计，可以参考clone示例
+  - 扩展思路，前端的block通常对应后端的field字段
 
 - 考虑使用epub/docx/docbook这类规范格式存储内容，方便迁移
   - 支持导入通用格式 markdown/csv

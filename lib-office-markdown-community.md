@@ -216,7 +216,9 @@ export default FrontPage
 
 - ## 
 
-- ## 
+- ## Learned about quadtruple backticks in Markdown yesterday and... okay, well, it might not be life-saving, but it sure is handy.
+- https://twitter.com/thorstenball/status/1780155196196196490
+  - 4个反引号，内部可包含3个反引号
 
 - ## Why are there no built-in tabs in markdown?
 - https://twitter.com/artalar_dev/status/1721228826296889517

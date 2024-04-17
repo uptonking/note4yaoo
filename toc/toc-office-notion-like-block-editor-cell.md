@@ -15,7 +15,11 @@ modified: 2022-08-14T16:26:48.558Z
   - 是否支持拖拽block修改顺序 (重要)
   - 支持协作
 
-- 想要分析notion的block架构设计，可以参考clone示例
+- 想要分析notion的block架构设计，可参考clone示例
+  - 扩展思路，前端的block通常对应后端的field字段
+
+- resources
+  - https://github.com/wenerme/wener/blob/master/notes/web/editor/editor-awesome.md
 # block-style-editor
 - plate /1.6kStar/MIT/202208/ts
   - https://github.com/udecode/plate
@@ -106,6 +110,14 @@ modified: 2022-08-14T16:26:48.558Z
   - The Block Editor project for WordPress and beyond
   - 依赖react
   - 第三方的插件特别丰富
+  - https://github.com/Automattic/isolated-block-editor /js
+    - Repackages Gutenberg's editor playground as a full-featured multi-instance editor that does not require WordPress.
+    - Examples: Plain Text Editor, Blocks Everywhere, Gutenberg Desktop
+    - Allows multiple onscreen instances with seperate data stores and keyboard handlers
+    - Undo history
+    - Dynamic switching of data stores for compatability with third-party blocks
+    - Gutenberg already provides a playground which allows it to be used outside of WordPress. This is actually used as the basis for the Isolated Block Editor.
+    - The Isolated Block Editor is a full editor that handles a lot of these complexities. It should not be considered a replacement for the Gutenberg playground, but more of an opinionated layer on top.
   - https://github.com/gambitph/Stackable
     - a beautiful collection of ready-to-use blocks for Gutenberg
   - https://github.com/CakeWP/block-options /js

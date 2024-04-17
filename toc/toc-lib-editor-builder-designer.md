@@ -111,10 +111,12 @@ modified: 2020-11-17T13:38:19.107Z
   - 海报模板也可以使用模版引擎来简化生成逻辑，只不过操作的是设计元素而不是 html 标签。
   - 可以通过创建、websocket 转发、应用 json patch 的方式，实现简单的多人协同编辑模板功能。
 
-- brick-design/react-visual-editor /MIT/2.3kStar/202310/ts/inactive
+- brick-design/react-visual-editor /2.3kStar/MIT/202310/ts/inactive
   - https://github.com/brick-design/brick-design
   - https://brick-design.github.io/brick-design/
   - 组件可视化拖拽，页面搭建，源码生成工具, 自由拖拽嵌套
+  - 低代码框架，支持流式布局与自由布局拖拽编排，可视化拖拽、随意嵌套组合
+  - 拖拽不流畅
   - 基于antd
   - old-repo
     - https://github.com/brick-design/react-visual-editor
@@ -159,7 +161,7 @@ modified: 2020-11-17T13:38:19.107Z
 - react-page /8.3kStar/MIT/202304/ts/redux/inactive
   - https://github.com/react-page/react-page
   - https://react-page.github.io/
-  - 画布编辑区全部基于dom实现
+  - 画布编辑区全部基于dom实现，拖拽不够流畅
   - content editor for the browser - based on React and Redux and written in TypeScript. WYSIWYG on steroids.
   - 依赖react-redux、redux-undo、mui.v5、react-dnd、uniforms
   - 12-column grid responsive grid layout
@@ -186,17 +188,32 @@ modified: 2020-11-17T13:38:19.107Z
 - react-design-editor /1.4kStar/MIT/202401/ts
   - https://github.com/salgum1114/react-design-editor
   - https://salgum1114.github.io/react-design-editor/
+  - a module for React, written in Javascript/Typescript which provides two primary features: image-editor, bpm-workflow
   - 画布区是canvas，其余地方是dom，直接导出图片或json
   - developed direct manipulation of editable design tools like Powerpoint
-  - We've developed it with reactjs, ant.design, fabricjs
-  - https://github.com/bharathreddyza/react-design-editor /202105/ts
-    - React Design Editor using Fabric.js
-    - https://github.com/bazooka720/scenify-editor /202110
-- react-designer /1.7kStar/MIT/201906/js
+  - primarily uses the Ant Design, Fabric.js and React, React-Ace
+- https://github.com/bharathreddyza/react-design-editor /MIT/202105/ts/inactive
+  - React Design Editor using Fabric.js
+  - provides functionality similar to canva.com
+  - 很多功能未完成
+  - https://github.com/bazooka720/scenify-editor /MIT/202110/ts/inactive
+- react-design-editor /1.6kStar/MIT/202304/ts
+  - https://github.com/layerhub-io/react-design-editor
+  - https://editor.layerhub.io/
+  - https://github.com/layerhub-io/layerhub-io/tree/main/packages
+  - Image, Presentation and Video editor. Canva clone
+  - React design editor using fabric.js. 
+  - [Show HN: Open Source Canva Clone | Hacker News _202208](https://news.ycombinator.com/item?id=32568423)
+    - Reposting my comment here for better visibility. To put it gently, this is a fork of other people's work without proper attribution. 
+    - Looks like this project was derivative work 
+    - All you need to create/customize your graphic/presentation editor should be there. There are some other private packages that are optional: Exporting content in server side: PNG, pdf, etc.
+
+- react-designer /1.7kStar/MIT > CC-BY/201905/js/inactive
   - https://github.com/react-designer/react-designer
   - http://react-designer.github.io/react-designer/
   - Editable vector graphics in your react apps
   - 形状基于svg
+  - 依赖react-color、lodash
   - https://github.com/fritz-c/react-shape-editor
     - /49Star/MIT/202002
     - Simple shape editor component with React and SVG
@@ -204,13 +221,15 @@ modified: 2020-11-17T13:38:19.107Z
 - antd-visual-editor /443SStar/201904
   - https://github.com/yu-tou/antd-visual-editor
   - https://yu-tou.github.io/antd-visual-editor/index.html
-- pagedraw /MIT/2.8kStar/201906/CoffeeScript/inactive
+
+- pagedraw /2.8kStar/MIT/201906/CoffeeScript/inactive
   - https://github.com/Pagedraw/pagedraw
   - https://pagedraw.io/
   - a UI builder for React web apps
+  - It works like a Sketch or Figma style design tool, but emits good quality JSX code. 
   - Pagedraw is shutting down. Ultimately, we think Pagedraw is the wrong product. 
   - We think you can get 90% of the benefits of Pagedraw by just using JSX better. 
-  - 产品的ui类似codepen的三栏编辑器，分别是入口处源码、可拖拽组件编辑器、预览视图
+  - 产品的ui类似codepen的三栏编辑器，分别是可拖拽组件编辑器editor、入口处源码code、预览视图preview, 其中code和preview都基于stackblitz实现
 - misc
   - https://github.com/cerner/kaiju
     - A drag and drop web editor for React components.
@@ -232,7 +251,8 @@ modified: 2020-11-17T13:38:19.107Z
 - Framer /MIT/5.6kStar/201905
   - https://github.com/koenbok/Framer
   - We are in the process of open sourcing our new Framer Library for React. Come back soon.
-- https://github.com/penpot/penpot
+
+- https://github.com/penpot/penpot /MPLv2/202404/Clojure
   - https://penpot.app/
   - The open-source solution for design and prototyping. 
   - Penpot works with SVG, a standard format, for all your designs and prototypes . 
@@ -249,24 +269,42 @@ modified: 2020-11-17T13:38:19.107Z
     - Requires PHP: 5.6
   - 稿定设计
     - 在线PS、自动抠图、海量素材
+
+- https://github.com/Imam-Abubakar/mural /MIT/202304/ts/inactive
+  - https://mural-one.vercel.app/
+  - a simple design editor built using FabricJS and React
+  - offers features akin to canva.com 
+  - Fabric: provides interactive object model on top of canvas element
+  - Scenify: for rich features added atop the image designer
+  - Base-UI(From MUI) and Styletron: for styling
+
+- https://github.com/lidojs/canva-clone /202311/ts/inactive/paid
+  - https://demo.lidojs.com/
+  - a design tool based on Reactjs. UX almost the same canva.
+  - developed from scratch with ReactJS
+  - 依赖dnd-kit、prosemirror、immer、html-to-image、react-responsive-masonry
+  - 画布基于dom实现，支持缩放
+  - 支持下载png
+  - to run lidojs you have to get pro license
 # page/site/ui-builder
+- https://github.com/measuredco/puck /MIT/202404/ts
+  - https://puckeditor.com/
+  - https://demo.puckeditor.com/edit
+  - The visual editor for React.
+  - 不能直接在预览图上修改，需要在侧边栏属性上修改
+  - 依赖react-spinners、@measured/dnd、auto-frame-component
+  - https://github.com/measuredco/auto-frame-component
+    - An iframe component that automatically syncs styles from the host.
+    - An implementation of react-frame-component.
+    - Shares an API with react-frame-component, and exposes some additional props.
+  - https://github.com/measuredco/dnd
+    - fork of hello-pangea/dnd
+
 - page-builder /NALic/77Star/202008
   - https://github.com/cqm1994617/page-builder
   - 依赖：antd4, braft-editor, koa, react-dnd, redux-thunk2, styled-components, swiper 
   - 一个页面构建平台demo，项目以展示思路为主，只有打包和预览部分运用了node，并未使用数据库
   - 当前项目中所包含的页面以及页面中的组件和组件中的状态，均以json格式存在redux store当中
-
-- amis /12.4kStar/Apache2/202211/ts
-  - https://github.com/baidu/amis
-  - https://baidu.github.io/amis/
-  - 前端低代码框架，通过 JSON 配置就能生成各种页面。
-  - core依赖react-json-view、uncontrollable、mobx-state-tree
-  - ui依赖codemirror5、echarts5、froala-editor、monaco-editor
-- amis-editor /1.6kStar/NotOpen/202210/ts
-  - https://github.com/fex-team/amis-editor
-  - http://fex-team.github.io/amis-editor
-  - 可视化编辑器在线工具 
-  - 目前 amis-editor 未开源，但可以免费使用（包括商用）。
 # h5-editor
 - h5-dooring /7kStar/GPLv3/202312/ts
   - https://github.com/MrXujiang/h5-Dooring
@@ -301,7 +339,7 @@ modified: 2020-11-17T13:38:19.107Z
   - Since React UI Builder is based on a visual Web application builder - Webcodesk
   - we use Webcodesk to create the component library locally.
 # d2c/design-to-code
-- https://github.com/BigFishTeam/dream-builder /202205/ts/inactive
+- https://github.com/BigFishTeam/dream-builder /MIT/202205/ts/inactive
   - 轻量级中后台前端可视化搭建平台，不限制任何组件库和框架，插件化集成，拥有强大的页面编排能力
   - 不限制任何 react 组件库，默认内置常用业务组件: sui-components、antd
   - core: 底层数据结构，主要包括：AST 树、执行引擎、request 请求等基类

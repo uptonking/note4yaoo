@@ -11,6 +11,7 @@ modified: 2021-04-30T20:14:17.669Z
 - tips
   - 商业化的演示更偏向类似tableau的图形编辑器，而不是文字
   - 侧重信息的ppt上更多的是文字数字，而不是花里胡哨的图形，此时pdf比ppt更合适，很多pdf由ppt转换得到
+  - 技术栈基于svg容易实现缩放，基于dom不容易缩放, ppt需要缩放吗
 
 - dev-xp
   - ui组件都可分为state、view2部分，editor框架的核心是通过view更新state
@@ -154,6 +155,14 @@ modified: 2021-04-30T20:14:17.669Z
   - An Impress.js and Bespoke.js Presentation Editor
   - 依赖lexical、vlcn、remark.v10、react-draggable
   - The original project is ancient (2011/2013) and dated. It is now coming back with a facelift, collaborative editing
+
+- react-design-editor /1.4kStar/MIT/202401/ts
+  - https://github.com/salgum1114/react-design-editor
+  - https://salgum1114.github.io/react-design-editor/
+  - a module for React, written in Javascript/Typescript which provides two primary features: image-editor, bpm-workflow
+  - 画布区是canvas，其余地方是dom，直接导出图片或json
+  - developed direct manipulation of editable design tools like Powerpoint
+  - primarily uses the Ant Design, Fabric.js and React, React-Ace
 
 - deckdeckgo /1kStar/AGPLv3+MIT/202301/ts/web-comp/stencil/inactive
   - https://github.com/deckgo/deckdeckgo

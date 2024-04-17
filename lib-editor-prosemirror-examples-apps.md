@@ -329,9 +329,10 @@ modified: 2022-08-18T16:57:15.296Z
   - https://github.com/isle-project/isle-server
   - https://github.com/isle-project/isle-dashboard
 
-- https://github.com/blinkk/editor.dev-ui
+- https://github.com/blinkk/editor.dev-ui /MIT/202202/ts/inactive
   - https://editor.dev/example/
   - Provides a rich UI for editing structured data with live previews.
+  - 依赖@toast-ui/editor、quill.v1、codemirror5、marked
 
 - https://github.com/salmenf/webwriter
   - Web-based authoring tool for open explorables

@@ -66,6 +66,10 @@ modified: 2023-02-07T09:22:03.120Z
 - https://github.com/wenet-e2e/wenet
   - Production Ready End-to-End Speech Recognition Toolkit
 # text-to-speech
+- https://github.com/frostming/tetos /apache2/202404/python
+  - A unified interface for multiple Text-to-Speech (TTS) providers
+  - Supported: OpenAI, Edge-TTS, 火山引擎
+
 - https://github.com/collabora/WhisperSpeech /MIT/202401/jupyter
   - https://collabora.github.io/WhisperSpeech/
   - Open Source text-to-speech system built by inverting Whisper.

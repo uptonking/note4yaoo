@@ -14,7 +14,18 @@ modified: 2023-04-05T16:54:58.153Z
 
 - ## 
 
-- ## 
+- ## Meta现在是靠什么在盈利？facebook几乎没什么人用了吧？
+- https://twitter.com/yangzhou301/status/1780294745488531721
+- 哈? facebook 月活近30亿吧, 广告月收入每年也过百亿, 是世界头部广告平台之一, 和 google/amazon 同级别, 怎么就没人用了?
+  - 感觉ins和WhatsApp才是现金奶牛
+- 说好听点卖广告，说难听点卖用户隐私
+- Facebook、Instagram、Messenger、Threads，说Meta垄断了北美IM和social media的半壁江山也不为过吧
+  - ins高居浏览量前三，reel日活直追tiktok，thread 在抢X的流量
+  - Instagram, threads 都是年青人的世界
+- 拼多多每天在 meta 上投三千万刀广告费
+- fb年轻人用得少，但中年人用得多？以及消费主力是中年人，所以fb的数据和利润还都不错？
+
+- 2023年年报显示全年总收入为1349.02亿美元，主要分为广告和现实实验室两部分。其中广告收入为1319.48亿美元，其余为现实实验室收入。税后净利润为391.0亿美元，同比增长68.53％。
 
 - ## 英文区最大的 AI newsletter，也只有 100k 的订阅而已。 主广告价格是2000美金。
 - https://twitter.com/oran_ge/status/1734368446551642545

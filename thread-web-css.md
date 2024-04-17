@@ -40,7 +40,13 @@ modified: 2021-01-08T17:15:13.906Z
 
 - ## 
 
-- ## 
+- ## I just spent an hour debugging a CSS issue which I ultimately fixed by replacing `overflow: hidden` with `overflow: clip` .
+- https://twitter.com/diegohaz/status/1780367584560394563
+  - Is there still any reason to use `overflow: hidden` these days?
+
+- One reason would be supporting Safari versions before 16. 15.x still has a non-neglible percentage of users for what it's worth.
+
+- i use it with `text-overflow: ellipsis`. Not sure, if this is bad practise that has better alternative.
 
 - ## CSS 提供给了一个 :modal pseudo-class 
 - https://twitter.com/ThaddeusJiang/status/1778346187495760339

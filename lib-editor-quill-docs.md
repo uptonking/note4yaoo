@@ -129,6 +129,18 @@ modified: 2023-02-09T18:24:06.718Z
 - Finally, we arrive at the Delta format, as it exists today.
 # docs-blog
 
+## 🎯 [Announcing Quill 2.0 - Knock Down Silos by Slab _202404](https://slab.com/blog/announcing-quill-2-0/)
+
+- What's New
+  - Quill's source has fully transitioned to TypeScript
+  - new `registry` feature allows multiple editors with their own formatting configurations to coexist on the same page
+  - Auto Scrolling Container Detection
+  - Using InputEvent. Users' actions are now captured first to update the internal document model before syncing the resulting changes to the DOM.
+
+- Quill is supported by a profitable company where the key people are the same and the incentives are aligned.
+  - We continue to develop and support Quill's underlying model in Parchment and its data format in Delta. 
+  - Slab has further open-sourced our backend Elixir implementation of Delta and other libraries for the Elixir ecosystem. 
+
 ## 🎯 [Upgrading to 2.0 - Quill Rich Text Editor](https://quilljs.com/guides/upgrading-to-2-0)
 
 - The Quill repository has been rewritten in TypeScript

@@ -196,10 +196,25 @@ modified: 2023-04-04T22:39:45.442Z
 - https://github.com/vikdevelop/photopea_app
   - Photopea Desktop App for Flatpak (Electron + WebKitGTK wrapper)
 
-- https://github.com/viliusle/miniPaint /js/Photoshop-alternative
+- https://github.com/viliusle/miniPaint /MIT/202404/js/ps-alternative
   - http://viliusle.github.io/miniPaint/
   - Online image editor lets you create, edit images using HTML5 technologies.
   - miniPaint operates directly in the browser. Nothing will be sent to any server.
+
+- https://github.com/chase-manning/react-photo-studio /MIT/202310/ts/inactive
+  - https://reactphotostudio.app/
+  - a free online photo editor for photography and design
+
+- https://github.com/steffest/DPaint-js /MIT/202404/js/NoDeps/类似ps
+  - https://www.stef.be/dpaint/
+  - Webbased image editor, modeled after the legendary Deluxe Paint with a focus on retro Amiga file formats: read and write Amiga icon files and IFF ILBM images
+  - It runs in your browser, works on any system and works fine on touch-screen devices like iPads. no data is sent to any server.
+  - It is written in 100% plain JavaScript and has no dependencies.
+  - The only part that is not included in this repository is the Amiga Emulator Files. (The emulator is based on the Scripted Amiga Emulator)
+  - https://github.com/naTmeg/ScriptedAmigaEmulator
+    - https://scriptedamigaemulator.net/
+    - amiga emulator in pure HTML5 and JavaScript.
+    - based on winuae and use the aros-kickstart replacement
 
 - https://github.com/iyadahmed/AwesomeImageEditor3 /python
   - open-source, user friendly and high-performance image editor made from scratch with Python and Qt

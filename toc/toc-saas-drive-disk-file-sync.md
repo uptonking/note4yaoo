@@ -427,7 +427,14 @@ modified: 2024-03-31T17:45:16.789Z
 - https://github.com/Peergos/Peergos /AGPLv3/202402/java
   - https://peergos.org/
   - A p2p, secure file storage, social network and application protocol
-  - 
+
+
+# files-preview
+
+- https://github.com/musama619/react-files-preview /MIT/202311/ts
+  - https://react-files-preview.netlify.app/
+  - A file view component for React apps with image editor, and a sleek design powered by Tailwind CSS
+  - 偏向图片
 
 # more-drive
 - https://github.com/FazioNico/dDrive

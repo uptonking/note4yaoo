@@ -328,6 +328,28 @@ betterdiscordctl -i flatpak install
 
 ## 041
 
+## 0417
+
+- [TypeScript "Not a constructor function type" error after casting - Stack Overflow](https://stackoverflow.com/questions/59583659/typescript-not-a-constructor-function-type-error-after-casting)
+
+```ts
+class ClassA {
+  field1: any;
+}
+
+const SomeClassAsA = diContainer.get('SomeClass') as ClassA;
+
+class ClassB extends ClassA {} // works
+class ClassB extends SomeClassAsA {} // error: Type ClassA is not a constructor function type
+
+const SomeClassAsA = diContainer.get('SomeClass') as typeof ClassA; // ✅
+```
+
+- [How to assert a type of an HTMLElement in TypeScript? - Stack Overflow](https://stackoverflow.com/questions/12686927/how-to-assert-a-type-of-an-htmlelement-in-typescript)
+  - Do not type cast. Never. Use type guards `if ((e instanceof HTMLScriptElement)) `; 
+  - Rather than using a type assertion, type guard, or any to work around the issue, a more elegant solution would be to use generics to indicate the type of element you're selecting.
+  - Unfortunately,  `getElementsByName` is not generic, but `querySelector` and `querySelectorAll` are. (querySelector and querySelectorAll are also far more flexible, and so might be preferable in most cases.)
+
 ## 0416
 
 - [Prohibition against prefixing interfaces with "I" ](https://github.com/microsoft/TypeScript-Handbook/issues/121)

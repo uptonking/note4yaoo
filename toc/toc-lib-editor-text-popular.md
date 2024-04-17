@@ -26,7 +26,8 @@ modified: 2022-11-08T19:04:00.289Z
   - 国内: wangEditor, editablejs/am-editor, textbus, vditor, ueditor
   - 国外: prosemirror, slate, quill/typewriter, lexical, tinymce, etherpad, ckeditor
 
-- ref
+- resources
+  - https://github.com/wenerme/wener/blob/master/notes/web/editor/editor-awesome.md
   - https://github.com/JefMari/awesome-wysiwyg
   - https://github.com/xjh22222228/awesome-web-editor
   - [Rich Text Editors](https://gist.github.com/stormwild/044e184f8ef9bf3062a1ca950d6c0569)

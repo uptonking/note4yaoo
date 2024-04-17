@@ -51,7 +51,7 @@ modified: 2023-02-05T19:03:12.722Z
   - markdown解析与转换
   - 根据外部数据源更新编辑器内容数据
   - 恢复focus
-# dev-slate
+# dev-editing
 - event-order
   - 改变点击光标的位置 onChange
   - 键盘在编辑器内输入文字 onKeyDown > beforeinput > onChange
@@ -63,4 +63,6 @@ modified: 2023-02-05T19:03:12.722Z
     - 输入中文时 keyup > keydown > beforeinput > input > keyup
       - 输入中文拼音字母时，触发的是keyup，选完词后时keydown
       - 👉🏻 keydown > compositionstart > beforeinput > compositionupdate > input > keyup
-# editing-spec
+# dev-slate
+- prosekit和slate的api设计类似，顶层provider，编辑层useEditor
+# more

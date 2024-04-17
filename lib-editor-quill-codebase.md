@@ -43,7 +43,7 @@ modified: 2023-02-09T18:24:31.494Z
 
 # 🏘️ architecture
 - 用户输入时如何更新dom
-  - 通过mutationObserver获取变更，然后更新model-delta
+  - 通过 mutationObserver 获取变更，然后更新model-delta
 
 - 外部工具条按钮的逻辑
   - 先计算op，再更新model和view

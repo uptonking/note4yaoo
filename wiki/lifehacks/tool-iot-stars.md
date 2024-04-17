@@ -549,6 +549,9 @@ N
 
 ## [coros pace2](https://cn.coros.com/pace2)
 
+- usage-xp
+  - 手表连接暗影精灵8plus充电时，笔记本键盘出现局部失灵的问题，拔下手表后笔记本键盘恢复正常
+
 - pros
   - 轻便
   - 续航高

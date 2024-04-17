@@ -263,6 +263,15 @@ modified: 2023-10-26T19:04:00.318Z
 
 - ## 
 
+- ## 
+
+- ## 🤔❓ Modern distributed databases require scaling in two axis. Lots of small objects and small number of large objects.
+- https://twitter.com/sunbains/status/1780293307861737643
+  - In concrete terms, 100’s of millions of small tables and 10’s of thousands of very large tables.
+
+- Often the way to solve for both is to turn one into the other somehow, then solve for that
+  - The example I was thinking of was chopping one big table into multiple ranges to effectively get "many small tables" (I know not 1:1) that are easy to distribute over many machines
+
 - ## Eventual Consistency (EC) means it’s impossible to diverge (a safety invariant: if all messages are sent, states are equal). 
 - https://twitter.com/_Felipe/status/1777667242403999970
   - SEC(Strong EC) means the messages will, in fact, be eventually sent (a liveness property).

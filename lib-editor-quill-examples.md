@@ -112,14 +112,24 @@ modified: 2023-02-09T18:32:06.240Z
   - a WYSIWYG Editor build on top of the open source library Quill
   - To test the Video and Social Embed
 
-- https://github.com/balmjs/balm-ui/blob/main/src/scripts/components/editor/quill/core/index.js /202309/js
+- https://github.com/balmjs/balm-ui/blob/main/src/scripts/components/editor/quill/core/index.js /MIT/202309/js
+  - https://material.balmjs.com/text-inputs/editor
   - const quill = new Quill(editorEl, options); 
   - 设计了自定义useExtension()
-  - A modular and customizable UI library based on Material Design
+  - A modular and customizable UI library based on Material Design and vue3
+  - BalmUI Pro is a front-end scaffolding. it introduces higher level components
 
 - https://github.com/KID-1912/quill-js-editor /202312/js/实现简单
   - Custom JavaScript editor built on quill
   - 不依赖react, 提供了工具条，示例类似在线文档布局
+
+- https://github.com/NSFI/ppfish-components /MIT/202208/ts/js/inactive
+  - https://github.com/NSFI/ppfish-components/blob/master/source/components/RichEditor/src/editor.tsx
+  - https://nsfi.github.io/ppfish-components/#/components/richEditor
+  - 一种可内嵌于浏览器，所见即所得的文本编辑器。
+  - 插入不可编辑的文本
+  - 拖拽编辑器改变大小
+  - 默认情况下，使用编辑器内置的插入、拖入/粘贴图片功能时，图片将以Data URL的形式嵌入到页面中，此时后端保存该图片将占用较大的空间，因此推荐使用自定义的方式将图片上传到服务器并设置图片的URL
 
 - https://github.com/BobaBoard/boba-editor /MIT/202203/ts/deprecated
   - An advanced text editor based on QuillJS, vaguely inspired by Tumblr's
@@ -174,6 +184,8 @@ modified: 2023-02-09T18:32:06.240Z
     - https://github.com/abrarhayat/react-quill-abrarhayat
     - https://github.com/shareefalis/react-quill
     - https://github.com/miketalbot/react-quill
+    - https://github.com/Grewer/react-quill2 /202211/ts
+      - 手动升级v2, 本文选择了 `quill-table-ui` 作为接入方案
 
 - https://github.com/gtgalone/react-quilljs /MIT/202209/ts/单文件/inactive
   - React Hook Wrapper for Quill, powerful rich text editor.
@@ -313,6 +325,7 @@ modified: 2023-02-09T18:32:06.240Z
   - The timeless SSG + CMS
   - I should be able to just use GUI from start to end
   - I should get automated index pages, pagination, sitemap, rss, search etc. without touching code
+  - 依赖jquery、quill
 
 - https://github.com/netless-io/netless-app/tree/master/packages/app-quill /MIT/202312/ts/svelte
   - Netless App for rich-text collaborative editing, powered with Yjs (a CRDT implementation) and Quill.
@@ -334,6 +347,15 @@ modified: 2023-02-09T18:32:06.240Z
   - Applicable version: Quill v1.3.7
   - 简单的分页效果
 # quill-based-editors
+- https://github.com/mostafizurhimself/admintoolkit-html /MIT/202403/js
+  - https://getadmintoolkit.com/
+  - https://www.getadmintoolkit.com/editor.html
+  - Admin template based on TailwindCSS and Vanilla JavaScript
+  - 典型的tailwind样式
+
+- https://github.com/Uclusion/uclusion_web_ui/blob/master/src/components/TextEditors/QuillEditor2.js /202311/js
+  - 依赖quill-table-ui、quill-image-resize-module
+
 - https://github.com/immense/quill-drag-and-drop-module /MIT/201708/js
   - https://immense.js.org/quill-drag-and-drop-module/
   - module to add drag-and-drop support to the Quill container
@@ -352,6 +374,11 @@ modified: 2023-02-09T18:32:06.240Z
   - 类似页面编辑器，将左侧元素拖拽到quill编辑器中
   - It supports text drag, picture drag, canvas drag, table, HTML and other data drag formats.
   - quill-image-drop-module: v1.0.3
+
+- https://github.com/takitakit/block-editor-vue /MIT/201906/js/vue
+  - https://codepen.io/takitakit/pen/RmpVKL
+  - a block editor that allows you to stack any combination of block elements, such as paragraphs, headings, lists, and so on.
+  - 依赖quill.v1、vuex
 
 - https://github.com/brsloan/warewoolf /MIT/202403/js
   - A minimalist novel-writing system/rich text editor designed to be usable without a mouse.
@@ -551,7 +578,7 @@ modified: 2023-02-09T18:32:06.240Z
 - https://github.com/jmquigley/quill-markup /201912/ts
   - A markup highlighting module for the Quill text editor
 
-- https://github.com/visualjerk/quill-magic-url /202208/ts
+- https://github.com/visualjerk/quill-magic-url /MIT/202208/ts/inactive
   - Automatically convert URLs to links in Quill
 - https://github.com/juyeong1260/quill-auto-detect-url /202105/ts
   - transform the url of the url as the user types.
@@ -749,6 +776,17 @@ modified: 2023-02-09T18:32:06.240Z
   - 依赖use-gesture、fuse.js、react-dnd-cjs、react-quill、react-sortable-hoc、react-zoom-pan-pinch、react-window、recharts
   - 示例丰富，支持preview/ppt/print
 
+- https://github.com/form-js/forms.js /MIT/202404/ts
+  - https://formsjs.io/
+  - Fully featured javascript form builder
+  - core依赖tom-select、filepond、flatpickr
+  - 其他依赖quill.v1
+  - Field Types: Includes text, file, date/time, rich text, and more
+  - Conditional Logic & Validation
+  - Simplified event management for dynamic user experiences
+  - Deigned for customization and extension.
+  - Clean API: ease of use for developers and accessibility for users
+
 - https://github.com/jado66/reactive-site-creator /CC-BY-NC/202303/js/inactive
   - https://jado66.github.io/reactive-site-creator-live/
   - A website creator for React.
@@ -785,7 +823,7 @@ modified: 2023-02-09T18:32:06.240Z
   - A fullstack web app based around the open-source quill.js text editor
   - back-end uses Express & mongoDB、ejs
 
-- https://github.com/vuquangpham/boilcms /MIT/202311/js
+- https://github.com/vuquangpham/boilcms-ec /MIT/202311/js
   - A CMS that has been built with Node.js and Express.js
   - 依赖express、ejs、mongoose、quill
   - https://github.com/vuquangpham/boilcms-ec
@@ -1270,7 +1308,3 @@ modified: 2023-02-09T18:32:06.240Z
 
 - https://github.com/rwth-acis/syncmeta /202311/js
   - Near real-time collaborative modeling framework
-
-- https://github.com/mostafizurhimself/admintoolkit-html /MIT/202403/js
-  - https://getadmintoolkit.com/
-  - Admin template based on TailwindCSS and Vanilla JavaScript

@@ -18,14 +18,15 @@ modified: 2021-05-14T10:08:51.423Z
 
 - ## 
 
-- ## 
+- ## Design System Generator (Figma Plugin), a neat little helper for a quick design system setup with Figma variables 
+- https://twitter.com/vitalyf/status/1780565410510758010
+  - — to generate basic color, typography, spacing, grids, radius and shadows.
 
 - ## Biggest @figma change that no one’s talking about:
 - https://twitter.com/kirillz/status/1524835280565456907
   - #c4c4c4  ->  #d9d9d9
 - Yes, their default grey #C4C4C4 was changed truly. They didn't mention it probably due to negligence or they didn't deem it fit. I like the #D9D9D9 shade better tho. It's lighter.
 - I often do #808080, the most neutral of the neutral
-
 
 - ## When I started building the Headless #DesignSystem I decided to move to a single @figma file per component.
 - https://twitter.com/EstherCheran/status/1497669972826681344
@@ -38,17 +39,12 @@ modified: 2021-05-14T10:08:51.423Z
   - Less likely to run into large file performance issues
   - Tasks in Jira are linked to a specific component Figma file; reviews, approval and publishing becomes easier.
 
-
-
-
-
 - ## Consistent Border-Radius
 - https://twitter.com/d__raptis/status/1437410390149931008
   - Round images usually look weird when they're included in a card with a small border-radius. 
   - Use the simple rule of thumb: 𝙊𝙪𝙩𝙚𝙧 𝙍𝙖𝙙𝙞𝙪𝙨 = 2 * 𝙄𝙣𝙣𝙚𝙧 𝙍𝙖𝙙𝙞𝙪𝙨
 - I got really curious whether avatars MUST be circular or not since traditional frames are rectangular.
   - It seems that UI trends make them circular & it's a way to bring the focus on the face
-
 
 - ## why don't more people talk about asian typographic design!!! the latin alphabet could never
 - https://twitter.com/milkjuus/status/1410034123662532608

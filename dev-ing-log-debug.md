@@ -15,7 +15,14 @@ modified: 2023-06-14T00:53:15.226Z
 
 ## 
 
-## 
+## Module '"parchment"' has no exported member 'Bolt'
+
+- 排查了很久，import名称错误，是 Blot, 而不是Bolt
+
+- [typescript - Module has no exported member error in angular module - Stack Overflow](https://stackoverflow.com/questions/57234220/module-has-no-exported-member-error-in-angular-module)
+  - Make sure the names are matching.
+
+
 
 ## [rspack serve 热加载慢到200s，若执行rspack build会慢到70s, ，，我还用webpack试了都没有这么慢](https://discord.com/channels/977448667919286283/1219528136543440988/1219619268987977770)
 
