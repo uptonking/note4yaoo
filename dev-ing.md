@@ -328,6 +328,15 @@ betterdiscordctl -i flatpak install
 
 ## 041
 
+## 0418
+
+- [TS 2540: Cannot assign to style because it is a read-only property - Stack Overflow](https://stackoverflow.com/questions/64243292/ts-2540-cannot-assign-to-style-because-it-is-a-read-only-property)
+  - `style` property is immutable, use `setProperty` method
+  - `element.style.setProperty(propName, propValue)`
+
+- [Remove all child elements of a DOM node in JavaScript - Stack Overflow](https://stackoverflow.com/questions/3955229/remove-all-child-elements-of-a-dom-node-in-javascript)
+  - container.replaceChildren(); 
+
 ## 0417
 
 - [TypeScript "Not a constructor function type" error after casting - Stack Overflow](https://stackoverflow.com/questions/59583659/typescript-not-a-constructor-function-type-error-after-casting)

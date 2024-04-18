@@ -14,9 +14,11 @@ modified: 2023-02-05T19:03:12.722Z
   - easy to start
   - super flexible plugins
   - transfrom/operation 默认异步batch
+  - 支持类似transaction的withoutNormalizing
 
 - cons
-  - core精简，但编辑器周边功能参考较少
+  - core精简，但编辑器相关最佳实践较少
+  - view层与react绑定
   - 不支持 selective undo
   - 未提供comment示例
 

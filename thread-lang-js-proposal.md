@@ -16,6 +16,12 @@ modified: 2023-11-10T08:05:25.474Z
 
 - ## 
 
+- ## promise.unthen(cb) would be pretty useful
+- https://twitter.com/justinfagnani/status/1422783049159221250
+- Nowadays so many things are  Promises / async/await that EventEmitters and such have almost been forgotten.
+  - It’s an interesting thing to remind oneself of: That Promises may not always be the better choice, sometimes events are preferable, like in this case 
+- `Abort` works with fetch fine. But generic promises is a no go currently. Lots of holdup on exactly how to handle and expose aborting inside a custom executor.
+
 - ## JSR - the JavaScript Registry - is now available in public beta.
 - https://twitter.com/deno_land/status/1763556854716661961
   - Works across runtimes (Node, Deno, Bun, workerd and more) and alongside npm/yarn/pnpm

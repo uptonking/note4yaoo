@@ -9,7 +9,7 @@ modified: 2023-02-09T18:24:31.494Z
 
 # guide
 - delta
-  - 内容元素: block, inline-text, inline-non-text
+  - 内容元素: block, inline-text, embed/inline-non-text
   - 更新操作: insert, delete, retain, format
 # not-yet
 - why eventemitter3?
@@ -43,10 +43,10 @@ modified: 2023-02-09T18:24:31.494Z
 
 # 🏘️ architecture
 - 用户输入时如何更新dom
-  - 通过 mutationObserver 获取变更，然后更新model-delta
+  - 用户输入时通过 `MutationObserver` 获取dom变更并触发顶层ScrollBlot的`SCROLL_UPDATE`事件，然后触发Quill更新model-delta
 
 - 外部工具条按钮的逻辑
-  - 先计算op，再更新model和view
+  - 先计算op和delta，再更新model和view
 
 ## init-dataflow
 
@@ -56,19 +56,18 @@ modified: 2023-02-09T18:24:31.494Z
   - this.observer = new MutationObserver
   - 🧐 this.observer.observe(this.domNode, OBSERVER_CONFIG); 
   - 每次检测到dom变化，会遍历变化，找到对应bolt并执行blot.update
-  - bolt.update的末尾，会触发`SCROLL_UPDATE`事件，来更新model/delta
+  - bolt.update的末尾，会触发`SCROLL_UPDATE`事件，来更新model-delta
 - this.editor = new Editor(this.scroll)
 - this.selection = new Selection(this.scroll, this.emitter); 
-- addModule input/uiNode/keyboard/clipboard/history/uploader
-- this.theme.init(); 
-  - 初始化内置或自定义的module: `new ModuleClass()`.
+- addModule: 初始化内置module input/uiNode/keyboard/clipboard/history/uploader
+- this.theme.init(): 初始化自定义的module: `new ModuleClass()`.
 - this.emitter.on `EDITOR_CHANGE/SCROLL_UPDATE` 注册事件
   - 注册事件监听器，当注册的事件触发时，仅触发model更新
 # model-delta
 
-## update
+## update: model > view
 
-- quill.setContents(delta) 未使用emitter，直接先更新dom，再更新delta
+- `quill.setContents(delta)` 未使用emitter，直接先更新dom，再更新delta
   - this.editor.deleteText // set empty editor to \n
   - this.editor.insertContents(0, delta); 
   - this.scroll.insertContents(index, normalizedDelta); // 更新bolt
@@ -85,9 +84,16 @@ modified: 2023-02-09T18:24:31.494Z
 
 # selection
 
-- 
-- 
-- 
+- range-to-dom
+- `setNativeRange(startNode,startOffset,endNode,endOffset)`; 
+  - range = document.createRange(); 
+  - selection = document.getSelection(); 
+  - range.setStart(startNode, startOffset); 
+  - range.setEnd(endNode, endOffset); 
+  - selection.addRange(range); 
+  - 未使用 `setBaseAndExtent`
+
+- dom-to-range
 - 
 - 
 

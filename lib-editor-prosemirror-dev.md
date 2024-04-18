@@ -20,11 +20,11 @@ modified: 2021-05-06T09:39:53.522Z
   - selection支持多个ranges
 
 - cons
-  - 复杂度高(功能丰富)
+  - 实现逻辑(model/view)复杂度高、功能丰富
   - 数据结构层的设计不够通用, step/transform不是典型的ot operation
+  - 数据层和示例没有优先使用json, 不如slate的数据层直观
   - 不支持动态改变schema
   - 编辑器的多个插件存在依赖关系时如何处理
-  - 示例没有强调json优先，不如slate的数据直观
   - 与其他框架的集成不是很完美，ReactNodeView用不用portal的最佳实践不明确
 
 - features

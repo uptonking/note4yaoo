@@ -49,6 +49,7 @@ modified: 2023-02-09T18:30:19.001Z
 
 - [现代富文本编辑器Quill的内容渲染机制 - 知乎 _202005](https://zhuanlan.zhihu.com/p/139533735)
   - [Quill富文本编辑器的实践 - DevUI - 知乎 _202105](https://zhuanlan.zhihu.com/p/375896194)
+  - [对富文本编辑器的探索 - 掘金 _202104](https://juejin.cn/post/6952115345968594974)
 
 - [富文本编辑器 Quill.js 系列一：Delta 文档结构 - 掘金 _202211](https://juejin.cn/post/7166159151880486925)
 - [富文本编辑器 Quill.js 系列二：Parchment 文档模型 - 掘金](https://juejin.cn/post/7166160927128043528)
@@ -58,6 +59,16 @@ modified: 2023-02-09T18:30:19.001Z
   - [富文本编辑器 quill.js 开发(三): 光标和选区 - Grewer - 博客园](https://www.cnblogs.com/Grewer/p/17074202.html)
   - [富文本编辑器 quill.js 开发(四): 自定义格式扩展 format - Grewer - 博客园](https://www.cnblogs.com/Grewer/p/17430021.html)
   - [富文本编辑器 quill.js 开发(五): 自定义插件 Modules - Grewer - 博客园](https://www.cnblogs.com/Grewer/p/17627630.html)
+
+- [quill深入浅出 - 前端技术杂谈 - SegmentFault 思否 _201905](https://segmentfault.com/a/1190000019114688)
+  - vue-quill-practice 中的src/components/RichTextEditor/index.vue提供一些示例, 但是因为是从业务代码中拿出来的
+  - dom修改后，如何同步到delta?
+    - ScrollBlot会创建一个 MutationObserver, 用来监控DOM更新。DOM更新时会调用ScrollBlot的update方法。在Quill的scroll blot中重写了update方法，其中对外抛出SCROLL_UPDATE事件和mutations参数。
+    - editor会监听SCROLL_UPDATE事件，然后触发editor的update方法
+    - 在editor的update方法中，会依据mutations构建出对应的delta数组，与已有的delta合并，使当前delta保持最新
+  - delta修改后，如何同步到dom?
+    - setContents传入delta后，会遍历delta数组, 生成相应的Blot, Attributor， 然后生成DOM结构，然后进行format
+    - quill.setContents -> this.editor.applyDelta -> this.scroll.formatAt
 # blogs-vendors
 
 ## 🌰 [appflowy: How we built a highly customizable rich-text editor for Flutter _202212](https://blog.appflowy.io/how-we-built-a-highly-customizable-rich-text-editor-for-flutter/)

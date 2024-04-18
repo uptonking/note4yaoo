@@ -14,7 +14,9 @@ modified: 2023-02-05T19:03:12.722Z
 
 - ## 
 
-- ## 
+- ## [Consider replacing immutableJs with immer _201809](https://github.com/ianstormtaylor/slate/issues/2190)
+- Slate is excellent. But it's old school OOP. I would love to have a pure and typed functional Slate API. No instance methods, no classes. Just objects, types, and pure edit helpers. Much easier to write, maintain, learn, and use.
+  - Immer can help a lot. The only potential issues I see is its write performance. But huge documents should be rendered with some kind of pagination or windowing anyway, so maybe it's not a real issue anyway.
 
 - ## Is there an efficient way of getting the path of an element inside the element component itself?
 - https://slate-js.slack.com/archives/C1RH7AXSS/p1703968430668249

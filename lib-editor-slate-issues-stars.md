@@ -9,9 +9,51 @@ modified: 2023-02-05T19:03:12.723Z
 
 # guide
 
-# issues
+# issues-undo-history
+- ## 
 
-## 
+- ## 
+
+- ## [Feature suggestion: isolated/atomic operation groups in HistoryEditor _202009](https://github.com/ianstormtaylor/slate/issues/3874)
+- When developing an editor with rich functionality, it is occasionally necessary to implement high-level actions that comprise many low-level operations. perhaps you need to manipulate multiple blocks independently in order to, say, change indentation levels or create/remove lists.
+  - For the user, these are single actions that should be undone with a single stroke of Ctrl+Z or Cmd+Z, and they should not be folded into previous interactions. Undoing a link insertion should not undo text that was entered before making the link, e.g.
+  - One way to accomplish this is to use HistoryEditor.withoutMerging(), which prevents the next operation from being merged into the previous, effectively forcing a new history state. Unfortunately, it also creates new history states for all operations performed inside the callback. A workaround is to call withoutMerging() only for the first operation, if you need to perform many, but this quickly gets messy and it can be hard to track what operations have even been emitted.
+  - Proposed solution In addition to HistoryEditor.withoutMerging(), perhaps we can introduce a new HistoryEditor.atomic() (or asAtomic(), or isolated(), or asSingleState(), or whatever you want to call it), which always combines all of its operations into a single undoable state, and never merges with anything before or after it.
+
+- My question here is how is this different than just using `Editor.withoutNormalizing`, which basically batches a set of Operations into an "atomic" unit anyways (and, as a consequence, makes the history state include that batch of operations)? I think `Editor.withoutNormalizing` could be renames to `Editor.transaction` really and it might be more descriptive.
+
+- when you use `Editor.withoutNormalizing` and multiple Operations are submitted within the callback, then all those Operations are merged into a single array in the history stack.
+  - When we want to ensure a given "user action" is 1 history event, we wrap it in Editor.withoutNormalizing. This works for wrapping/unwrapping links, etc. in our codebase as it stands now.
+  - I am actually in favor of renaming `Editor.withoutNormalizing` to `Editor.transaction` as that is more descriptive of what it actually does.
+
+- If you want to batch Operations, defer normalization and onChange and have those batched operations show up in the history stack in a single array, that is what Editor.withoutNormalizing is for.
+
+- Operations are batched (per event tick) automatically; that's what the Promise.resolve in createEditor() does.
+  -  I assume this exists so onChange doesn't fire for every single operation. 
+
+- Your change to how onChange gets called is interesting (synchronously instead of like currently on next tick), do you think it could be a reasonable default? Also renaming `withoutNormalizing` to something like `Transaction` seems like a great idea!
+  - Yes, we have been using it for 12 months at Aline and it works very well. Just wrap anything you don't want to synchronously normalize in withoutNormalizing and you're good.
+
+- We have found with @gtluszcz that a pseudo-implementation of HistoryEditor.atomic could be
+
+- 
+- 
+- 
+
+- ## [slate-history `shouldMerge` is not accurate _202008](https://github.com/ianstormtaylor/slate/issues/3838)
+- 202304: The problem is not in the shouldMerge function. In the current implementation, a HistoryEditor will always merge the new operation if the BaseEditor has any pending unflushed operations. This becomes a problem when any `set_selection` operation is applied (e.g. called by onDOMBeforeInput) before any saved operations are applied. The operations are flushed only after all operations in the batch are applied. While applying the saved operation, set_selection operations exist in the operations array of the BaseEditor and therefore, HistoryEditor assumes the next non-set_selection operation should merge with it. But set_selection operations are no longer saved after #4717, so the next operation gets wrongly merged with the previous batch.
+  - I think the fix should be to filter out all set_selection operations from the operations array before doing anything else in HistoryEditor's apply function. I'm just not sure what else this affects or breaks.
+
+- ## [slate-history does not correctly undo selection movement _202007](https://github.com/ianstormtaylor/slate/issues/3756)
+- I've gained a lot of Slate knowledge in the last 5 months, and I can now answer my own question. This tends to happen when a core Slate action does not generate a valid document and built-in normalization fixes it. That unfortunately means the solution is probably not easy (my workaround is now causing a bug).
+- You're right about it being quite complex to determine the selection state given the ops.
+
+# issues
+- ## 
+
+- ## 
+
+- ## 
 
 ## [Editor crashes with redux](https://github.com/ianstormtaylor/slate/issues/3478)
 
@@ -30,25 +72,10 @@ modified: 2023-02-05T19:03:12.723Z
 
 - did you read the advice in the thread and make dispatch to the redux store a one way operation? Or are you also consuming the value updates asynchronously from the redux store? Doing the latter is going to cause a delay in slate receiving value updates and is going to make it not work correctly.
 
-## [Introduce `editor.transaction()` to replace `without*` functions](https://github.com/ianstormtaylor/slate/issues/2658)
+## 🔀 [Introduce `editor.transaction()` to replace `without*` functions](https://github.com/ianstormtaylor/slate/issues/2658)
 
 - But it seems to me like in the most recent version `Editor.withoutNormalizing` pretty much does what is suggested here and the withoutSaving and withoutMerging functions seem to not exist anymore.
-
-## [Feature suggestion: isolated/atomic operation groups in HistoryEditor](https://github.com/ianstormtaylor/slate/issues/3874)
-
-- My question here is how is this different than just using `Editor.withoutNormalizing`, which basically batches a set of Operations into an "atomic" unit anyways (and, as a consequence, makes the history state include that batch of operations)? I think `Editor.withoutNormalizing` could be renames to `Editor.transaction` really and it might be more descriptive.
-
-- when you use `Editor.withoutNormalizing` and multiple Operations are submitted within the callback, then all those Operations are merged into a single array in the history stack.
-  - When we want to ensure a given "user action" is 1 history event, we wrap it in Editor.withoutNormalizing. This works for wrapping/unwrapping links, etc. in our codebase as it stands now.
-  - I am actually in favor of renaming `Editor.withoutNormalizing` to `Editor.transaction` as that is more descriptive of what it actually does.
-
-- If you want to batch Operations, defer normalization and onChange and have those batched operations show up in the history stack in a single array, that is what Editor.withoutNormalizing is for.
-
-- Operations are batched (per event tick) automatically; that's what the Promise.resolve in createEditor() does.
-  -  I assume this exists so onChange doesn't fire for every single operation. 
-
-- Your change to how onChange gets called is interesting (synchronously instead of like currently on next tick), do you think it could be a reasonable default?
-  - Yes, we have been using it for 12 months at Aline and it works very well. Just wrap anything you don't want to synchronously normalize in withoutNormalizing and you're good.
+- I agree that `withoutNormalizing` has effectively become what was proposed, so I'm closing this
 
 ## [Selection is null after editor loses focus](https://github.com/ianstormtaylor/slate/issues/3412)
 

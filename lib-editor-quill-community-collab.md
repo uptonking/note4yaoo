@@ -40,9 +40,21 @@ quill.on(Quill.events.TEXT_CHANGE, () => {
 - ## [Multiple Cursors Module ](https://github.com/quilljs/quill/issues/918)
 - I'm having success with the quill-cursors module
 
+- ## 🆚️ [Way to render diff between two document versions ? _201611](https://github.com/quilljs/quill/issues/1125)
+  - Do you know if it exist a solution to render the difference between two versions of the same document ?
+
+- You can use the diff() function provided in the Delta library.
+- For example, here's a quick pen that uses diff() and compose():
+  - https://codepen.io/percipient24/pen/eEBOjG
+
+- thanks a lot for the diff()/compose() example code. I just get one more question. Do anyone know how to handle the text with format change instead of insertion and deletion? 
+
+- I have a comparative view implemented through a virtual layer DEMO. 
+  - https://codesandbox.io/p/sandbox/quill-diff-view-369jt6
+  - This virtual layer refers to applying markers not directly to the document, but overlaying them using DOM structures. This is useful in scenarios that require simultaneous editing and diffing, similar to the "find and replace" feature. 
+
 - ## 🔀 [Quill Track Changes _201912](https://github.com/quilljs/quill/issues/2858)
-- 
-- 
+- not-yet
 
 - ## [How do I perform track changes in the quill editor just like Google docs? - Stack Overflow](https://stackoverflow.com/questions/58887843/how-do-i-perform-track-changes-in-the-quill-editor-just-like-google-docs)
 - We tried to implement track changes / suggestions with QuillJS and came relatively far. But in the end it did not really work, since OT (Operational Transform, the format for syncing the changes) does not support hierarchical structures. The

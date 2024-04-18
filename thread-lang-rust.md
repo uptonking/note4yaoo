@@ -144,6 +144,13 @@ modified: 2023-10-06T16:26:57.557Z
 2. `Vec<Box<dyn SomeTrait>>` will be good enough for now
 3. `macro_rules` to derive SomeTrait on n-ary tuples up to 16 so you never allocate
 
+- ## The thing I appreciate the most from @rustlang is its mentality that it explicitly shows all possible problems and race conditions in your code. 
+- https://twitter.com/CompuIves/status/1387830838792970243
+  - You have to decide how to handle it, and you can decide to ignore it, but then you made that as a conscious decision.
+- An example of this is parsing a string. 
+  - Many languages would implicitly handle invalid strings by throwing an error, or worse, by returning something unexpected.
+  - In Rust, the return type specifies that this can go wrong, and you can decide to handle the error or to let it panic.
+
 - ## 刚刚搜索Rust怎么实现双链表。Rust的某reddit社区坚持认为，Rust不需要双链表，因为XX性能原因，所以你写不出双链表也不是大问题，Rust把这个弄得很难写，不是大问题。
 - https://twitter.com/JXQNHZr1yUAj5Be/status/1710474773954768987
   - 但这问题是在双链表上吗？人家是抛砖引玉，问有cyclic引用的数据结构在Rust怎么处理的一般问题。
@@ -222,3 +229,7 @@ modified: 2023-10-06T16:26:57.557Z
 - One that hasn’t been mentioned is that it borrows some ideas from functional languages (sum types, monads, etc.) which makes it more elegant for AST manipulation. Same reason compiler devs love OCaml.
 
 - I think it actually wasn’t Rust. It was esbuild showing the way. SWC existed years before but didn’t really catch on until later. It wasn’t end to end (no bundler). ESBuild showed how fast native tools could be and others had to follow to keep up.
+
+- ## 🆚️ rust vs js toolchain
+- https://twitter.com/kiyov09/status/1712126491402645878
+- Now we need to ship a 'Make' with rules that that implicitly detect the language and based on the folder structure and call the appropriate commands

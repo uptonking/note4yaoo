@@ -50,6 +50,9 @@ modified: 2023-02-09T18:32:06.240Z
   - A rich text editor based off of Quill.js and Ultradom, and using Svelte for UI
   - 依赖 svelte、popperjs2、typewriter/delta
   - Built on the same data model as Quill.js, the Delta format, and using a tiny virtual DOM, Superfine, Typewriter aims to make custom rich text editors faster, easier, and more powerful
+  - Typewriter modifies `Delta` to provide better memory usage with an immutable approach and adds a layer on top `TextDocument`, which splits a Delta document into lines to add even more memory benefits for large documents. It also paves the way for document virtualization 
+  - It also paves the way for document virtualization 
+  - Typewriter adds Decorations like ProseMirror which support changes to how the document is displayed without changing the document. This is used for features like highlighting find-replace words or inserting a collaborator's cursor.
 
 - blocky-editor /150Star/MIT/202208/ts
   - https://github.com/vincentdchan/blocky-editor

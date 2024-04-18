@@ -34,7 +34,7 @@ modified: 2023-02-09T18:23:43.486Z
   - At Slab, we handle text replacements explicitly with Input Event
   - This PR mostly moves the code to Quill but also handles IME as well.
 
-- ## [Support OT for table _202205](https://github.com/quilljs/quill/pull/3590)
+- ## 🔀 [pr已合并: Support OT for table _202205](https://github.com/quilljs/quill/pull/3590)
 - This adds the OT ability for table format and also supports nested scrolls.
 
 # discuss

@@ -232,6 +232,21 @@ modified: 2023-10-26T19:04:00.318Z
 
 - ## 
 
+- ## 
+
+- ## There are two main ways to partition a table.
+- https://twitter.com/Franc0Fernand0/status/1780571942438818192
+  - Vertical partitioning moves columns to different tables. It's simple to understand and keeps data about certain features together. However, a new partition will be required in case of further data growth.
+  - Horizontal partitioning divides a table into new tables with the same columns but fewer rows. Each new table represents a different data store.
+
+- There are 3 popular ways to partition a table horizontally:
+  1. Hash-based maps rows to new tables by applying a hash function to one or more columns.
+  2. Range-based splits the data using ranges of values in one or more columns.
+  3. Directory-based uses a dedicated lookup service to store the partition schema.
+
+- It's flexible because it abstracts the schema and the number of machines from the application.
+  - But it's more complex, and connecting to the service slows the performance.
+
 - ## 🆚️ Sharding is overloaded, do you mean table partitioning, page partitioning, node partitioning or something else? Ignoring hash/range partition trade offs, separate discussion.
 - https://twitter.com/sunbains/status/1769017995664437733
 - Table partitioning is on the same node and consistency is preserved but problems with global indexes and foreign keys. 
@@ -259,8 +274,6 @@ modified: 2023-10-26T19:04:00.318Z
 - Consistent hashing is another pattern... Sharding is just preferred because you can shard per account. A single account will (typically) never access another account's data.
   - Okay, okay... You have to split up the data to scale horizontally, of course. I guess ANOTHER scaling pattern would be MemSQL in order to process more/faster on a single instance.
 # discuss
-- ## 
-
 - ## 
 
 - ## 

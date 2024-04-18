@@ -12,7 +12,14 @@ modified: 2021-08-06T08:32:26.142Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## How do you debug something that consistently fails 0.02% of the time, at random?
+- https://twitter.com/ekzhang1/status/1780647022044832174
+  - update on the 0.02% bug: it was because nginx, by default drops connections every 1000 HTTP requests.
+  - https://twitter.com/ekzhang1/status/1780738364364214623
+  - [Module ngx\_http\_core\_module](https://nginx.org/en/docs/http/ngx_http_core_module.html#keepalive_requests)
+  - Sets the maximum number of requests that can be served through one keep-alive connection. After the maximum number of requests are made, the connection is closed.
+  - Closing connections periodically is necessary to free per-connection memory allocations. Therefore, using too high maximum number of requests could result in excessive memory usage and not recommended.
+  - Prior to version 1.19.10, the default value was 100. 1000 since then
 
 - ## 🤔 This will forever bother me: await (await fetch(url)).json()
 - https://twitter.com/wesleytodd/status/1757555080897646595
