@@ -328,6 +328,24 @@ betterdiscordctl -i flatpak install
 
 ## 041
 
+## 0419
+
+- [How can I clear an HTML file input with JavaScript? - Stack Overflow](https://stackoverflow.com/questions/1703228/how-can-i-clear-an-html-file-input-with-javascript)
+  - input.value = '' or input.value = null; 
+
+- [Make some properties optional in a TypeScript type - Stack Overflow](https://stackoverflow.com/questions/52703321/make-some-properties-optional-in-a-typescript-type)
+
+```ts
+type OptionalExceptFor<T, TRequired extends keyof T> = Partial<T> & Pick<T, TRequired>
+
+// F - the fields that should be made optional
+export type PartialPick<T, F extends keyof T> = Omit<T, F> & Partial<Pick<T, F>>;
+
+// make some properties required 
+type RequiredPick<T, F extends keyof T> = Omit<T, F> & Required<Pick<T, F>>;
+
+```
+
 ## 0418
 
 - [TS 2540: Cannot assign to style because it is a read-only property - Stack Overflow](https://stackoverflow.com/questions/64243292/ts-2540-cannot-assign-to-style-because-it-is-a-read-only-property)

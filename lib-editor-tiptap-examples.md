@@ -146,7 +146,8 @@ modified: 2023-02-05T19:03:27.730Z
   - 还支持在基于tiptap v2的编辑器中编辑内容，提供了draftToTiptap()转换方法，将ricos-draft的json格式转换成tiptap支持的json格式
   - 内部插件大多严重依赖自研ui库和基础库，如wix-rich-content-ui-components、ricos-content
 
-- https://github.com/thematters/matters-editor /apache2/202403/ts
+- https://github.com/thematters/matters-editor /apache2/202404/ts/react
+  - https://thematters.github.io/matters-editor/
   - Rich editor for matters.town, built on top of Tiptap/ProseMirror
 
 - nextcloud-text /366Star/AGPLv3/202208/js/tiptap/php

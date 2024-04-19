@@ -148,6 +148,8 @@ npx create-strapi-app@5.0.0-beta.0 strapi5-app-beta0 --quickstart --ts
 # discuss-v5-changelog
 - ## wip
 
+- [feat: webhooks ](https://github.com/strapi/strapi/pull/20129)
+
 - [feat(i18n): non localized fields ](https://github.com/strapi/strapi/pull/19720)
   - Implement non localized fields in v5 using document service middlewares
 

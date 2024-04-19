@@ -39,11 +39,21 @@ modified: 2024-04-15T16:03:16.853Z
 
 - ## 
 
-- ## 
+- ## [How to drag and drop blocks in quill _202112](https://github.com/quilljs/quill/issues/3507)
+- 
+
 # issues-done
 - ## 
 
-- ## 
+- ## 🐛🤼🏻 [2.0.0-dev quill drag text not working how make it drag text - Stack Overflow _202401](https://stackoverflow.com/questions/77725637/2-0-0-dev-quill-drag-text-not-working-how-make-it-drag-text)
+- First of all, Quill intentionally blocked the dragging, so it is important to ensure that you have a proper use case before enabling it.
+  - [Allow optional drag event enabling _201904](https://github.com/quilljs/quill/pull/2579)
+  - Quill 2.0 disabled drag events by calling e.preventDefault() in the dragstart event handler ( `handleDragStart` ). 
+  - This handler used to be in the Quill class, but has been moved to `Scroll` to allow overwriting. 
+  - Note that this change applies only after 2.0.0-dev.4 (and 2.0.0-beta.0), so you can't use 2.0.0-dev.3.
+- Once you've addressed the 'drag' issue, you also need to fix the 'drop' part. 
+  - Method 1: Have the browser handle the insertion like Quill 1.3
+  - Method 2: Instead of having the browser handle the elements' insertion, you could create a dragend/drop event handler that moves the dragged elements to their dropped position. (I don't know how, so I'll leave it for someone else who knows how to implement a correct one.)
 
 - ## [Supporting selection of blocks in Quill (like Slab) _202104](https://github.com/quilljs/quill/issues/3324)
 

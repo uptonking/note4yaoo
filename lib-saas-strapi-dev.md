@@ -220,6 +220,10 @@ modified: 2023-12-15T16:51:56.101Z
 
 - ~~draft/publish的实现似乎只在api层面，admin界面的显示状态有问题~~, v5已解决
 
+## dev-editor
+
+- 替换或新增编辑器的思路类似受控组件， fieldName-value-onchange
+
 ## dev-version-history
 
 - features

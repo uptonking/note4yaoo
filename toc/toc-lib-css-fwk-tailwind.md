@@ -27,7 +27,8 @@ modified: 2023-02-26T18:25:01.328Z
 - tailwind-css-classes
   - [Tailwind CSS Cheat Sheet - Flowbite](https://flowbite.com/tools/tailwind-cheat-sheet/)
 # preline
-- design-tokens-from-figma 从figma中找token太慢了，直接在demo中找
+- design-tokens-from-figma 从figma中找token太慢了，直接在`demo`中找
+  - https://preline.co/figma.html
   - brand-color用的blue-600
   - 文章内容的颜色 gray-800 #1f2937
   - 暗色内容的颜色
@@ -37,6 +38,7 @@ modified: 2023-02-26T18:25:01.328Z
   - input中提交按钮背景色默认blue-500
   - palette
     - Fuchsia: 50-#fdf4ff 100-#fae8ff 500-#d946ef 600-#c026d3 700-#a21caf 800-#86198f 900-#701a75
+    - emerald: #ecfdf5 #d1fae5 #a7f3d0 #6ee7b7 #34d399 #10b981 #059669 #047857 #065f46 #064e3b
 
 - https://github.com/htmlstreamofficial/preline /3.4kStar/MIT/202401/ts
   - https://preline.co/examples.html

@@ -23,7 +23,6 @@ modified: 2023-02-08T07:20:48.475Z
   - an open source alternative to ChatGPT that runs 100% offline on your computer
   - Nitro is a high-efficiency C++ inference engine for edge computing. It is lightweight and embeddable
 # LLM
-
 - https://github.com/songquanpeng/one-api /MIT/202404/go/js
   - https://openai.justsong.cn/
   - OpenAI 接口管理 & 分发系统，支持 Azure、Anthropic Claude、Google PaLM 2 & Gemini、智谱 ChatGLM、百度文心一言、讯飞星火认知、阿里通义千问

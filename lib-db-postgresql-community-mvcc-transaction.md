@@ -29,6 +29,20 @@ modified: 2024-02-18T13:52:07.926Z
 
 - ## 
 
+- ## 
+
+- ## 🔒📝 Postgres locks are interesting. e.g. CREATE INDEX allows reads but blocks Writes, while VACUUM FULL blocks all queries.
+- https://twitter.com/hnasr/status/1781129355286229229
+  - In this article I explore all locks in Postgres and show my http://pglocks.org tool which identifies conflicting commands.
+  - [Postgres Locks — A Deep Dive _202303](https://medium.com/@hnasr/postgres-locks-a-deep-dive-9fc158a5641c)
+
+- What about existing running queries ser?
+  - existing running queries will also obtain locks and hold them until they commit or rollback
+
+- Does Vaccum wait for the lock release that is acquired by other queries? Postgres execute query in order?
+  - It depends on the query and whether it’s conflicting. regular vacuum can run concurrently with all queries (select/updates) except for ddls 
+  - but full vacuum cannot run if there is an existing running select query, the select needs to finish, and if a vacuum full starts it blocks all reads and writes.
+
 - ## 🆚️ PostgreSQL MVCC has one well-known➖: vacuum and only two➕often mentioned: simpler indexes, fast rollback
 - https://twitter.com/FranckPachot/status/1770214536261386477
   - IMO the HUGE ➕of PostgreSQL MVCC compared to Oracle is the ability to do unlogged DML on a table. 

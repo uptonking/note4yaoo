@@ -277,10 +277,22 @@ modified: 2023-02-09T18:32:06.240Z
   - table的delta通过给\n添加attributes为row来区分行
   - 不依赖react
   - https://github.com/uragirii/Notion-Clone /202012/js
+  - https://codesandbox.io/p/sandbox/notion-clone-v3-g3pey
 - https://github.com/tzhangchi/quill-menu-module /202201/ts
   - https://jsfiddle.net/zhangchi/2dyafg67/1/
   - Notion-like style quill menu module based on Quill.js
   - 斜杠菜单，非react
+
+- https://github.com/denvudd/cypress /202404/ts
+  - https://cypress-r2o0.onrender.com/
+  - SaaS Notion Clone with Realtime cursors, Nextjs 13, Stripe, Drizzle ORM, Tailwind, Supabase, Sockets
+  - Real-time cursors, text selection
+  - Supabase Row level policy
+  - 不支持斜杠菜单
+  - 不支持拖拽block
+  - https://github.com/Ulrich-Tonmoy/nextjs-web-apps/tree/main/notion
+  - https://github.com/anjalipal2001/QuillSync
+  - https://github.com/TobCraft3521/notion-clone
 
 - https://github.com/imtiaz101325/quill-fold-example /202008/ts/archived
   - A simple quill.js base WYSIWYG editor with an added feature of collapsable bullet points
@@ -825,6 +837,11 @@ modified: 2023-02-09T18:32:06.240Z
 - https://github.com/aniruddha-jafa/notes-app /202110/js/inactive
   - A fullstack web app based around the open-source quill.js text editor
   - back-end uses Express & mongoDB、ejs
+
+- https://github.com/lisnyaknikita/mini-notion /202305/ts/inactive
+  - https://mi-notion.netlify.app/
+  - Redux Toolkit, RTK Query; React quill(editor for notes and journaling); 
+  - 不支持拖拽
 
 - https://github.com/vuquangpham/boilcms-ec /MIT/202311/js
   - A CMS that has been built with Node.js and Express.js

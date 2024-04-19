@@ -26,6 +26,14 @@ modified: 2022-11-06T11:21:27.612Z
   - 版本管理：每个需求与变动，都可以生成版本；每个版本之间可以比对差异
   - 可将所有表结构，自动生成 word、html、md 文档，便于线下流动
 
+- https://github.com/findyourmagic/dber /MIT/202311/js/inactive
+  - https://dber.tech/
+  - 基于实体连接图的数据库设计工具
+  - 拖拽生成模型引用关系
+  - 一键导出 SQL 语句
+  - 依赖SVG、Next.js、DBML、ArcoDesign、Dexie(indexDB)、Soul CLI(sqlite)
+  - 实现有些粗糙，但胜在免费的，也没有表数量限制
+
 - https://github.com/PieterjanDeClippel/DragDropOrderingDatabase /202111/csharp/inactive
   - How to reorder items at database level using the Stern-Brocot technique
 
@@ -89,6 +97,14 @@ modified: 2022-11-06T11:21:27.612Z
 - https://github.com/sensedeep/onetable-migrate /js/参考kv存储的迁移
   - This library provides migrations support for DynamoDB OneTable.
 # utils
+- https://github.com/holistics/dbml /2.4kStar/apache2/202404/js
+  - https://dbml.dbdiagram.io/
+  - Database Markup Language (DBML), designed to define and document database structures
+  - a simple, readable DSL language designed to define database structures.
+  - simple, flexible and highly human-readable
+  - database agnostic, focusing on the essential database structure definition without worrying about the detailed syntaxes of each database
+  - Comes with a free, simple database visualiser at dbdiagram.io
+
 - https://github.com/Qovery/Replibyte /rust
   - https://www.replibyte.com/
   - fast tool to seed your databases with your production data while keeping sensitive data safe

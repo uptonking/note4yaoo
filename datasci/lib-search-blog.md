@@ -184,6 +184,8 @@ modified: 2023-01-03T14:52:51.355Z
 - OpenGrok (https://github.com/oracle/opengrok /CDDL(MPL-like)) is a wonderful tool to search a codebase. It runs on-prem and handles lots of popular programming languages.
 # blogs
 
+## [Navigating search results: pagination vs infinite scroll vs load more _202212](https://blog.meilisearch.com/pagination-vs-infinite-scroll-vs-load-more/)
+
 ## [Introducing DoorDash’s In-House Search Engine - DoorDash Engineering Blog _202402](https://doordash.engineering/2024/02/27/introducing-doordashs-in-house-search-engine/)
 
 - 

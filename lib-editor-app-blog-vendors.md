@@ -458,8 +458,9 @@ modified: 2023-10-26T18:14:17.037Z
 
 ## [TinyMCE: Dangerous examples of technical debt in rich text editors](https://www.tiny.cloud/blog/technical-debt-examples/)
 
-- [Using HTML Contententeditable to build a RTE | TinyMCE](https://www.tiny.cloud/blog/using-html-contenteditable/)
-  - 完全使用浏览器提供的方案 contenteditable + document.execCommand
+## 🌰 [Using HTML Contententeditable to build a RTE | TinyMCE _202204](https://www.tiny.cloud/blog/using-html-contenteditable/)
+
+- 完全使用浏览器提供的方案 contenteditable + document.execCommand
 # more
 - [语雀电子表格自研之路 - 知乎](https://zhuanlan.zhihu.com/p/344556228)
 - [菜鸟业务从 Excel 到 WebExcel 的探索之路 - 知乎](https://zhuanlan.zhihu.com/p/345780841)

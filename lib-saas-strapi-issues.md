@@ -86,7 +86,9 @@ const Component = () => {
 # issues-not-yet
 - ## 
 
-- ## 
+- ## [TypeError: Cannot read property 'mutations' of undefined _202006](https://github.com/quilljs/parchment/issues/87)
+  - This error is occurring in Quill when the list of nodes are, somehow, problematic.
+  - Because what happens is that this particular node doesn't exists, so a mutation property is, of course, undefined.
 
 - ## [Pagination parameters not working in Users endpoint ](https://github.com/strapi/strapi/issues/12911)
 

@@ -46,7 +46,17 @@ modified: 2023-02-09T18:23:43.486Z
 
 - ## 
 
-- ## 
+- ## 🗑️ [Destroy editor instance _201605](https://github.com/quilljs/quill/issues/662)
+- An explicit destroy is no longer necessary as Quill no longer keeps track of all editor instances. Just remove references to the instance and remove from the DOM and it will be garbage collected.
+
+- If you looking for more shorter solution i would wrap the editor-container in an other container (#mainContainer). Then you can clear these conatiner like that: #mainContainer.innerHTML = ''. If you wish a new clean instance afterwards you create a new editor element and appended to your #mainContainer. Then you can init a new quill instance again.
+
+```JS
+// I logged the entire quill object and went through all instances of toolbar, tooltip and clipboard in order to find a cleaner way to remove these from the DOM. I discovered that the right paths to be as follows
+quill.theme.modules.toolbar.container.remove();
+quill.theme.modules.clipboard.container.remove();
+quill.theme.tooltip.root.remove();
+```
 
 - ## [I started rewriting using hooks and React 17 compatible APIs _201911](https://github.com/zenoamaro/react-quill/issues/547)
 - Do you have something you would recommend for inclusion? Eg. code or documentation about Katex?

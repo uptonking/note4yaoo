@@ -517,7 +517,7 @@ modified: 2022-08-18T16:57:46.405Z
   - Prosemirror based richtext implementation for the humhub social network
   - 依赖 prosemirror-example-setup、markdown-it
 
-- kangxi-editor /2Star/MIT/202208/ts
+- kangxi-editor /2Star/MIT/202312/ts
   - https://github.com/mgenware/kangxi-editor
   - https://mgenware.github.io/kangxi-editor/
   - Another web-based rich text editor.
