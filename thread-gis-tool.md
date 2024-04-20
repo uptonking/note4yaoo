@@ -16,7 +16,10 @@ modified: 2021-05-25T08:40:27.880Z
 
 - ## 
 
-- ## 
+- ## [A POI Database in One Line | Drew Breunig _202404](https://www.dbreunig.com/2024/04/18/a-poi-database-in-one-line.html)
+  - This week, the Overture Maps Foundation released a handy command-line tool for downloading a subset of the Overture dataset.
+  - This command downloads a GeoJSON file containing all the Overture buildings in a chunk of Boston. We’re outputting GeoJSON to a local file named boston.geojson.
+  - we can pipe to Simon Willison’s geojson-to-sqlite
 
 - ## Two people are claiming to be an expert in your field, one is and one is faking. What question do you ask to find the imposter?
 - https://twitter.com/bdon/status/1520306344318095361

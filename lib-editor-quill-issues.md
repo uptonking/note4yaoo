@@ -37,7 +37,11 @@ modified: 2024-04-15T16:03:16.853Z
 # issues
 - ## 
 
-- ## 
+- ## [Window is scrolled to top after paste ](https://github.com/zenoamaro/react-quill/issues/394)
+- This is not a react-quill issue, its a Quill issue. A simple search will show lots of threads on this across github and SO. There are 2 connected issues: scroll and flicker.
+
+- 
+- 
 
 - ## [How to drag and drop blocks in quill _202112](https://github.com/quilljs/quill/issues/3507)
 - 

@@ -41,7 +41,7 @@ modified: 2023-02-09T18:30:19.001Z
   - 选区文字加粗流程
   - 输入和删除文本的流程: ScrollBlot作为所有blots的根节点, 使用了MutationObserver监听dom结点的变化
 
-- [QuillJS 编辑器源码学习 - 知乎 _202105](https://zhuanlan.zhihu.com/p/374592382)
+- [QuillJS编辑器源码学习 - 知乎 _202105](https://zhuanlan.zhihu.com/p/374592382)
   - 描述文档内容的时候，为什么都是insert？
     - insert比text更通用，因为富文本编辑器里面不仅仅有文字，还有图片、视频等元素
   - 描述文档内容的时候为什么最后要有一个换行（\n）?
@@ -52,11 +52,12 @@ modified: 2023-02-09T18:30:19.001Z
   - [对富文本编辑器的探索 - 掘金 _202104](https://juejin.cn/post/6952115345968594974)
 
 - [富文本编辑器 Quill.js 系列一：Delta 文档结构 - 掘金 _202211](https://juejin.cn/post/7166159151880486925)
-- [富文本编辑器 Quill.js 系列二：Parchment 文档模型 - 掘金](https://juejin.cn/post/7166160927128043528)
-- [富文本编辑器 Quill.js 系列三：架构与扩展 - 掘金](https://juejin.cn/post/7166171572372242463)
+  - [富文本编辑器 Quill.js 系列二：Parchment 文档模型 - 掘金](https://juejin.cn/post/7166160927128043528)
+  - [富文本编辑器 Quill.js 系列三：架构与扩展 - 掘金](https://juejin.cn/post/7166171572372242463)
 
 - [富文本编辑器 quill.js 开发(二): 升级与表格功能 - Grewer - 博客园 _202211](https://www.cnblogs.com/Grewer/p/16853103.html)
   - [富文本编辑器 quill.js 开发(三): 光标和选区 - Grewer - 博客园](https://www.cnblogs.com/Grewer/p/17074202.html)
+    - selection/scroll-events > getNativeRange > normalizedToRange
   - [富文本编辑器 quill.js 开发(四): 自定义格式扩展 format - Grewer - 博客园](https://www.cnblogs.com/Grewer/p/17430021.html)
   - [富文本编辑器 quill.js 开发(五): 自定义插件 Modules - Grewer - 博客园](https://www.cnblogs.com/Grewer/p/17627630.html)
 

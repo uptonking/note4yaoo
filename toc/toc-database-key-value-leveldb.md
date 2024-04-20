@@ -346,6 +346,10 @@ modified: 2022-11-03T04:14:00.563Z
 
 - https://github.com/mafintosh/multi-master-merge /201511/js
   - A database with multi master replication and merge support based on leveldb, fwdb and scuttleup
+
+- https://github.com/dominictarr/level-replicate /MIT/201406/js
+  - master-master replication with levelup. 
+  - Implements scuttlebutt style handshake and then syncs data, then replicates real time changes.
 # level-utils
 - https://github.com/fergiemcdowall/pumbledb /201308/js
   - a Node.js key-value server that uses LevelDB

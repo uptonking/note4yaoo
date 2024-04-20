@@ -246,6 +246,14 @@ modified: 2024-01-04T06:55:12.542Z
   - We're storing engineering documents (as attachments) and using map/reduce (CouchDB views) to segment the documents by the metadata stored in the fields. 
   - The only downside is that adding a view with trillions of rows can take quite a while.
 
+# discuss-couch-sharding
+- ## 
+
+- ## [Shards per node _201612](https://groups.google.com/g/couchdb-user-archive/c/4hpv8LDZUDI)
+  - I’ve been looking into CouchDB 2’s clustering works, and have a question about performance characteristics of sharding.
+
+- As I understand it, when you first configure a cluster you pick the number of shards. Each node has to have at least one shard on it, and each shard can be duplicated N times, where N best practice is considered 2-3x. How many shards you have is decided on DB creation time, and if you need more later (because maxnodes = shards * replicas) you need to replicate into a new cluster.
+  - Default N 8 (your N here is q in CouchDB/Dynamo parlance)
 # discuss-couch
 - ## 
 
@@ -631,3 +639,15 @@ modified: 2024-01-04T06:55:12.542Z
   - CouchDB's security is per-database (since you assume you will be replicating a complete database to the end-user, the concept of cell-level security doesn't make sense).
 - Cell-level security would never make sense, which is why you need an application layer to perform queries and return and modify only data that a client has permission for. Am I right that the database would be shared by all clients and that the application layer is essentially moved into the client? If so, this seems like a pretty silly architecture.
 - yes the application runs entirely on the client, but validation functions are run on replication, so I can change my copy of your blog post, but you won't let me change it via replication. That would be silly.
+
+- ## 🆚️🌵 [CouchDB vs RethinkDB _201311](https://lists.apache.org/thread/wb4lc2t1kn4b4brv1mz6gch4c0drx3hm)
+- The immediate difference that jumped out at me (and the ultimate reason I chose couch over rethink) is that rethink does not and will never support master-master replication
+  - Both databases are "distributed" but in different respects. 
+  - CouchDB is"distributed" in the same way git is "distributed" (eg we're all equals).
+  - RethinkDB is "distributed" in the scaling sense (sharding / cluster-widequeries) but there is always an authoritative master.
+
+- CouchDB replication supports a fully P2P mesh model with no masters, no permanent connections, and arbitrary connection topology. New revisions will propagate between the peers until everyone has a copy.
+
+- That's essentially what PouchDB has done, yeah?
+  - Yes, but you need to add a significant amount of metadata to each document/record/row since you need to track its revision tree
+  - There are a couple of re-implementations of the CouchDB replication protocol: PouchDB and Couchbase Lite (in both Objective-C and Java implementations).

@@ -40,7 +40,12 @@ modified: 2023-02-09T18:23:23.288Z
   - 视图层的实现可参考: wangEditor/typewriter/blocky/autocomplete, 库和应用层有不同
   - 富文本编辑器可看做重设计而不是重逻辑的低代码
   - 定制ui通过bolt/format，定制功能api通过module
+
+- lazy-loading的另一种思路
+  - partial-load只加载部分类似redux的actions/ops
 # not-yet
+- 按下Enter键时，为何selection-change没触发
+
 - y-quill中`quill.setContents(type.toDelta(), this);`第2个参数不能设为ts类型中的`silent`
 # draft
 
@@ -56,6 +61,8 @@ modified: 2023-02-09T18:23:23.288Z
 - 
 - 
 
+- 长文本优化
+  - 结合 虚拟渲染 + 数据库sharding
 # dev
 
 ```JS
@@ -63,6 +70,11 @@ modified: 2023-02-09T18:23:23.288Z
 ql.theme.modules
 ql.constructor.imports
 ```
+
+- 按下文本字符键，会先触发selection-change，再触发text-change
+- 按下方向键，会触发selection-change, 不会触发text-change
+- 按下Enter键，会触发text-change，不会触发selection-change
+- Changes to text may cause changes to the selection (ex. typing advances the cursor), however during the `text-change` handler, the selection is not yet updated, and native browser behavior may place it in an inconsistent state. Use `selection-change` or `editor-change` for reliable selection updates.
 
 - 注意子类Blot的`domNode`属性会覆盖父类属性，ts该使用 `declare domNode`
 
@@ -103,16 +115,22 @@ ql.constructor.imports
 }
 ```
 
+- 鼠标点击时，光标无法定位到表格左右
+
 ## dev-image
 
 - roadmap
   - fix caption add/remove
+
+- firefox
 
 - 
 - 
 
 - 优化
   - 优化大量数据的场景，特别是idGenerator
+
+- 鼠标点击时，光标可以定位到图片左右，但chrome的光标高度为图片高，firefox高度为普通文本高
 
 ### img-notes
 

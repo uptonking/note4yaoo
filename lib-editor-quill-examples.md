@@ -1226,7 +1226,7 @@ modified: 2023-02-09T18:32:06.240Z
 
 - https://github.com/nozer/quill-delta-to-html /MIT/202204/ts/inactive
   - Converts Quill's delta ops to HTML
-  - https://github.com/wirechunk/quill-delta-to-react /202404/ts
+  - https://github.com/wirechunk/quill-delta-to-react /MIT/202404/ts
     - Render Quill's Delta ops in React
     - we take performance seriously. You can have many instances of a RenderDelta component on a page, and it will render quickly and efficiently.
     - In addition to providing custom HTML element tags, classes, styles, and any other attribute, you can define custom Op types and provide a rendering function for these types with a `customRenderer` prop.

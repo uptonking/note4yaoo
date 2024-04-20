@@ -77,7 +77,12 @@ modified: 2023-10-28T17:52:17.942Z
 
 - ## 
 
-- ## 
+- ## How much has everyone's favorite open source query optimizer, PostgreSQL, improved over the last 10 years? Turns out, quite a lot!
+- https://twitter.com/RyanMarcus/status/1778835012927774732
+- i love this! though my unfounded inclination would be that it's more likely the execution engine improved than the optimizer (because it's often easier to find pareto-efficient changes there). would definitely be curious to see this done controlling for various factors
+
+- How much of this improvement do you think come from the more algorithmic side of things? Like better join algorithms etc.
+  - I don't think V8 - V16 has any new join algorithms (hash, merge, and loop are in all 3). If I had to guess, I'd say the gains are coming from improved cardinality estimation (better stats, better models) and engine improvements (JIT, parallel workers).
 
 - ## Postgres doesn’t support hints
 - https://twitter.com/denismagda/status/1768411154651718087

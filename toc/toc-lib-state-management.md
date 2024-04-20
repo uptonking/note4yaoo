@@ -309,6 +309,8 @@ modified: 2020-07-14T11:03:53.196Z
   - [Proposal: Multi-value Signal using bitmaps (bit arrays)](https://github.com/preactjs/signals/pull/217)
   - [Reasoning for using prototype over classes](https://github.com/preactjs/signals/issues/216)
     - It performed better in benchmarks, and avoided cruft resulting from transpiled TypeScript classes
+  - https://gitlab.com/kevindoughty/undo-manager /MIT/202404/js
+    - Undo and redo management for Preact Signals
 - https://github.com/luisherranz/deepsignal
   - Preact signals, but using regular JavaScript objects
   - DeepSignal works by wrapping the object with a `Proxy` that intercepts all property accesses and returns the signal value by default.

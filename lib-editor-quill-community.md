@@ -44,7 +44,12 @@ modified: 2023-02-09T18:23:43.486Z
 
 - ## 
 
-- ## 
+- ## [Single line only ](https://github.com/quilljs/quill/issues/1432)
+  - Is it possible to setup Quill to only allow for one line of text, and no line breaks? I'd also like to get rid of the wrapping paragraph tag if possible.
+- You cannot get rid of the wrapping tag (though you can change it to some other wrapper other than paragraph). There is no configuration to limit the number of lines, though you can use keyboard listeners to prevent the possible inputs. You can also just listen on `text-change` and if a newline is inserted, use `deleteText` to reverse it.
+
+- Is there a way to block `enter`? 
+  - keyboard: { bindings: { enter: { key: 13, handler: function() { return false; } } }
 
 - ## 🗑️ [Destroy editor instance _201605](https://github.com/quilljs/quill/issues/662)
 - An explicit destroy is no longer necessary as Quill no longer keeps track of all editor instances. Just remove references to the instance and remove from the DOM and it will be garbage collected.
@@ -74,6 +79,19 @@ quill.setContents({
 quill.clipboard.dangerouslyPasteHTML("<p>here is some <strong>awesome</strong> text</p>");
 quill.pasteHTML(YOUR_HTML_HERE, 'silent');
 ```
+
+- ## 🎯 [Quill v2 – Rich text editor | Hacker News _202404](https://news.ycombinator.com/item?id=40089460)
+- I've used prosemirror enough to have written custom nodes, commands, and custom code around its collaboration model. 
+  - I got good results with all of this and I don't know any other platform that could have matched it. The docs are thoughtful. 
+  - There's an up-front learning curve to understand the architecture. When doing highly customized things, I referred to the source when needed. 
+  - For standard rich text, there are a lot of options. Prosemirror shines when you want to build on it as a platform.
+
+- I will never use Quill for a production project again. We started using Quill 1.x around 2016, I initially liked it a lot.
+  - Fast forward to 2019, we were running into some bugs, Quill 1.x was in maintenance mode, and 2.0 was effectively undocumented
+  - 5 years later, Quill v2 is finally live. I'm glad to see Slab is still around, and I hope they have the bandwidth to publicly maintain Quill going forward.
+
+- TinyMCE just changed their licensing from MIT to GPL(202402), which may impact your decision. 
+  - Fun fact - TinyMCE and CKEditor are both owned by the same holding company (Tiugo Technologies).
 
 - ## 🎯 [What Quill version to use?](https://github.com/quilljs/quill/issues/3356)
   - 1.3.7 which is installed from npm by npm install quill and was published 2 years ago.

@@ -324,9 +324,9 @@ betterdiscordctl -i flatpak install
     - 2个编辑器同一页面协同的示例未完成
     - cursor光标位置经常对不上
   - [x] streaming infinite-list/tree
-# dev-04-strapi-preview-versions-&-yjs-codebase
+# dev-04-strapi-preview-versions-&-yjs-quill-codebase
 
-## 041
+## 042
 
 ## 0419
 

@@ -24,6 +24,8 @@ modified: 2023-11-27T15:55:06.815Z
 - ## 
 
 - ## [What is the best way to modify text on a text-change event in Quill? _201904](https://github.com/quilljs/quill/issues/2558)
+- You actually can't do that. Quill uses contenteditable and DOM mutation listeners (as far as I know). So DOM updates first and mutation events trigger Delta model updates. In some cases you can use keyboard bindings to prevent DOM changes and change Delta first. I think we need pretty complex input interceptor.
+
 - Before Quill officially supports this, a workaround could be perform the changes with `queueMicrotask`
 
 ```JS

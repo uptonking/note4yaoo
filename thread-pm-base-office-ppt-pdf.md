@@ -67,7 +67,12 @@ modified: 2024-01-11T15:57:32.182Z
 
 - ## 
 
-- ## 
+- ## 大家用 AI 阅读长 PDF 的时候, 都会选择用哪家服务呀? 似乎支持 PDF 阅读的服务似乎文件大小都限制在20MB.
+- https://twitter.com/hylarucoder/status/1781623406330626154
+- Perplexity，它接受无限个数的pdf，并且如果你在一个模型上的上下文累积的很长，你可以切换模型，然后问题又大概率得到解决(可能需要重发一遍文件)。
+  - 如果你要一次性处理这么大的文档的话，效果可能没有分页去传若干个小文档好诶。
+  - 当然文档大也可能是图片多，那只能自己去压缩画质了，或者切换到本地的什么模型吧
+- 主要是想快速检索文档中的一些点方便跳转. 如果是读研究报告的话, 这个还是挺刚需的
 
 - ## what if you could capture frames in a video and then slice them up / re-arrange them?
 - https://twitter.com/JungleSilicon/status/1779281315696656785

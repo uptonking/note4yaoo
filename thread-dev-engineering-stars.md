@@ -101,6 +101,17 @@ Validate it to ensure it meets the method's requirements.
 
 - Where does Rust belong?
 
+- ## Apollo Client is full of Barrel File poison. 
+- https://twitter.com/_developit/status/1780046213284253935
+- Barrel files are fine. Bundlers should be able to code split and tree shake them just fine. If they don’t, then it’s a bad bundler, not bad code.
+  - this is incorrect. you cannot tree shake arbitrary javascript, pitching folks on it is misleading
+
+- `export * from './other.js'` means you have to include any side-effectful code in other.js, regardless of whether any of the exports are used, no?
+  - Most libraries use `sideEffects: false` in their package.json, which opts out of this. I believe all bundlers support it. When enabled, you can rewrite the imports to point to their final destination, through all re-exports. That's what Parcel implements anyway.
+- sideEffects:false does nothing _within_ modules. It's okay for passing through a barrel file, but the second that barrel file contains a side effect you're into "configure bundler to make packages not suck" territory
+
+- My personal experience with the sideEffects key is it seems to introduce breaking behavior because people don't have a solid grasp of what a side effect actually is. Maintaining an array of files with sideEffects is brittle. I never use it because I've always had bad experience
+
 - ## Avoid Barrels (A barrel is a file that exports code from other files)
 - https://twitter.com/housecor/status/1730993597862780976
 - Barrel benefits:
@@ -149,7 +160,11 @@ Validate it to ensure it meets the method's requirements.
 
 - ## 
 
-- ## 
+- ## our tiered storage engine keeps getting better, seamlessly letting you navigate cost/latency tradeoffs. not benchmarks, but in production, on real workloads.
+- https://twitter.com/Sirupsen/status/1781340525494231329
+  - query once in a while? Object storage
+  - query sometimes? NVMe
+  - query a lot? NVMe/memory
 
 - ## I really like the “code” property Node adds to Error objects I wish this was standardized for browsers & JS
 - https://twitter.com/jarredsumner/status/1773783996272726505

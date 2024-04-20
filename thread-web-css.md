@@ -38,7 +38,12 @@ modified: 2021-01-08T17:15:13.906Z
 
 - ## 
 
-- ## 
+- ## Here is a great use case for #CSS container queries, inspired by LinkedIn's feed.
+- https://twitter.com/shadeed9/status/1781344755332382921
+  - Show or hide each post action label (e.g: 'Like' or 'Comment') based on the container width
+  - [An Interactive Guide to CSS Container Queries _202404](https://ishadeed.com/article/css-container-query-guide)
+- It’s unfortunate that we can’t really know if elements would fit in the container at a given width when we have more than one language
+  - Yes, we can't. Though this is still better than media queries. In the worst case scneriao, we can force to truncate the text as it's not logical to wrap into a new line.
 
 - ## I just spent an hour debugging a CSS issue which I ultimately fixed by replacing `overflow: hidden` with `overflow: clip` .
 - https://twitter.com/diegohaz/status/1780367584560394563

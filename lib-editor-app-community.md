@@ -16,6 +16,13 @@ modified: 2022-08-21T10:11:19.219Z
 
 - ## 
 
+- ## 
+
+- ## TIL Google Docs has a "code block" that you can paste code into and it'll highlight it correctly, but Google Slides does not have that feature, 
+- https://twitter.com/seldo/status/1781463622109298988
+  - BUT you can paste the highlighted code from a doc to a slide. Our seamless technological future continues.
+- I’m guessing this is because Slides supports html pasting and parses the styles into styled spans, similar to how if you copy paste from VSCode into Docs, it kinda works?
+
 - ## 请问大家有什么办法在复制页面文本时不copy格式吗？
 - https://twitter.com/geniusvczh/status/1779482089194398169
 - 这个思路不对，因为复制的时候操作系统的剪贴板里面是同时拥有不同格式的数据的，你应该问如何粘贴的时候选择plain text格式。答案就简单了，app做了就行，不做就不行，一般都会放在很显眼的地方，比如office

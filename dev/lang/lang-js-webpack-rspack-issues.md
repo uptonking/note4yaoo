@@ -45,9 +45,10 @@ modified: 2024-01-03T16:14:25.702Z
 - ## 
 
 - ## 
-# discuss
+# issues-done
 - ## 
 
 - ## 
 
-- ## 
+- ## [[Bug]: Default identifiers not transformed in constructor parameters ](https://github.com/web-infra-dev/rspack/issues/6197)
+  - Identifiers that are used as default values of a constructor's parameters are not being transformed properly.

@@ -6,19 +6,19 @@ modified: 2020-12-08T13:53:36.730Z
 ---
 
 # tmpl-starter-monorepo
-
 - 快速开始开发项目的模板
-
 # popular
-
 - [Create React App](https://github.com/facebook/create-react-app)
   - Create React apps with no build configuration by running one command 
 - [electron-webpack](https://github.com/electron-userland/electron-webpack)
   - The primary aim of electron-webpack is to eliminate all preliminary setup with one simple install so you can get back to developing your application.
   - HMR for both renderer and main processes
-
+# mono-nostalgia-studio
+- 全局依赖 
+  - typescript, ts-node, react, @types/node
+  - nanoid
+  - 暂不解决: rollup-[plugin]
 # frontend-starter
-
 - monorepo
   - 基于workspace、lerna、nx
   - 优点

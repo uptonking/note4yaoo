@@ -141,10 +141,12 @@ modified: 2022-11-08T19:04:00.289Z
   - 大量使用es6 class
   - 自己实现了依赖注入，设计了model/service/component
 
-- tinymce /12kStar/MIT/202209/ts
+- tinymce /12kStar/MIT > GPL/202209/ts
   - https://github.com/tinymce/tinymce
   - https://www.tiny.cloud/
   - web-based WYSIWYG editor. Available for React, Vue and Angular
+  - [What happened to TinyMCE's license? _20240301](https://github.com/tinymce/tinymce/issues/9453)
+    - It looks like the license was changed from MIT to GPLv2 yesterday.
 
 - quill /37.5kStar/BSD/202311/ts
   - https://github.com/quilljs/quill
