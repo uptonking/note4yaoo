@@ -77,3 +77,5 @@ modified: 2024-02-05T09:44:21.665Z
   - raft 2
 # more
 - [An intuition(直觉感知的事, 直觉知识) for distributed consensus in OLTP systems _202402](https://notes.eatonphil.com/2024-02-08-an-intuition-for-distributed-consensus-in-oltp-systems.html)
+
+- [分布式系统工程实践.pdf_杨传辉_201010](https://github.com/zouhuigang/book/blob/master/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5.pdf)

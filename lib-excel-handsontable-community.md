@@ -19,13 +19,13 @@ modified: 2023-12-21T20:07:29.584Z
   - What is the best/proper way to reload the hands on table data with the data source that has come back from an API call to the server. 
 
 - From what I know, I can think of 3 options:
-  - Use hot.updateSettings({data: updatedData}); 
-  - Use hot.loadData(updatedData); 
+  - Use `hot.updateSettings({data: updatedData})`; 
+  - Use `hot.loadData(updatedData)`; 
   - Use code to update the existing data collection which Handsontable is configured to reference to have all of the updates from the server. 
 
 - there’s one more method (but if you load more than a few cells it is too overwhelming for the browser) - it’s the `setDataAtCell` method. It also triggers the `render()` method but it won’t change the sorting or filtering that is already applied.
-  - Besides that the `loadData()` and updateSettings > data already call the render() method.
-  - The same rules apply when you change the data via reference - the `loadData` for the same variable reloads the table without an additional render() call 
+  - Besides that the `loadData()` and `updateSettings` > data already call the `render()` method.
+  - The same rules apply when you change the data via reference - the `loadData` for the same variable reloads the table without an additional `render()` call 
 
 - ## 🐛 [Redux/Immutability issues _202005](https://github.com/handsontable/handsontable/issues/6909)
 - The data provided to Handsontable is mutated on plugin instead of being only updated in the internal structure when using redux we need to block using Immutable data structures, this is not good to deal with.
@@ -51,37 +51,8 @@ modified: 2023-12-21T20:07:29.584Z
 - The `contenteditable` works for DIV but Handsontable works on TD elements.
   - 如果添加了，那hot的事件拦截逻辑要进行很大的修改
 
-- ## [Handsontable v6.2.2 doc is removed _202403](https://forum.handsontable.com/t/handsontable-v6-2-2-doc-is-removed/7490)
+- ## 📄🗑️ [Handsontable v6.2.2 doc is removed _202403](https://forum.handsontable.com/t/handsontable-v6-2-2-doc-is-removed/7490)
 
-# issues-done
-- ## 
-
-- ## 
-
-- ## [How to trigger a click on a handsontable row/cell? - Stack Overflow _202004](https://stackoverflow.com/questions/61325139/how-to-trigger-a-click-on-a-handsontable-row-cell)
-- handsontable can't listen to click because the click is fired after a full click action occurs; that is, the mouse button is pressed and released
-  - mousedown is fired the moment the button is initially pressed. 
-
-- [Can I trigger a click event on a cell manually? _202004](https://github.com/handsontable/handsontable/issues/6822)
-  - A single click on a cell only results in a cell selection. You do not need to fake the click event to achieve this goal - you can call instance.selectCell(row_index, column_index). 
-# issues-not-yet
-- ## 
-
-- ## 
-
-- ## [Is partial rendering possible? _202101](https://forum.handsontable.com/t/is-partial-rendering-possible/4921)
-- We are planning to add an ability to partially render cells, but this hasn’t been finished yet. Maybe you can try to
-  - save the editor value
-  - re-render the table to change the background
-  - open editor again
-  - place the saved value into the editor
-
-- batch doesn’t allow us to rerender only a single cell but it allows us to block the whole rendering process for some particular task.
-- ## [Grouping and ungrouping of rows or columns _201405](https://github.com/handsontable/handsontable/issues/1463)
-- Grouping and ungrouping of rows or columns - in the same way as availabe in Excel
-  - Released in Handsontable 0.11.4 
-
-- 201711: We have abandoned the grouping feature. Now we use only nested headers and rows. If you want to collapse columns you can use collapsing.
 # discuss-collab
 - ## 
 
@@ -105,17 +76,6 @@ modified: 2023-12-21T20:07:29.584Z
   - I’m working on a collaborative sheet, basically someone could change the data of his sheet and broadcast the change to everyone else, and I’m using setDataAtCell to do that.
   - And the problem occurs when you are editing a cell, meanwhile `setDataAtCell` triggered to set the value of another cell, then you’ll lost focus on the cell and what you’ve been editing.
 
-# discuss-perf
-- ## 
-
-- ## 
-
-- ## [Alternative of setDataAtCell  _202008](https://forum.handsontable.com/t/alternative-of-setdataatcell/4641)
-- If you are running the `setDataAtCell` method 1000 times in the run I recommend changing the source data and use `loadData()` afterwards. It will result in 1 call to Handsontable instead of 1000.
-
-- ## [Performance issue: splicing source data with observeChanges/columnSorting triggers "observe change" on all data that comes after the spliced index ](https://github.com/handsontable/handsontable/issues/5274)
-- It looks like the `observeChanges` is used to perform proper sorting after adding or removing rows. It fires for `afterCreateRow` and `afterRemoveRow` hooks.
-
 # discuss-server
 - ## 
 
@@ -129,6 +89,37 @@ modified: 2023-12-21T20:07:29.584Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [Constraining HandsOnTable to the size of its parent container - Stack Overflow _201705](https://stackoverflow.com/questions/30739926/constraining-handsontable-to-the-size-of-its-parent-container)
+- use `width:100%` if the parent has a width. That would take up the whole width. The height is a little harder.
+
+- ## [add column dynamically to handsontable - Stack Overflow](https://stackoverflow.com/questions/15538626/add-column-dynamically-to-handsontable)
+- Have you tried use `handsontable('alter', 'insert_col', index, amount)` method? 
+  - You can add and remove columns and rows using `alter` method
+
+- A temporarily solution is to maintain a data table dynamically. When a new column is required, update the data structure and reinitiate the whole table. 
+
+- ## ["setData..." methods are asynchronous _201909](https://github.com/handsontable/handsontable/issues/6245)
+  - Executing one of the "getData..." methods such as getDataAtCell or getDataAtRowProp immediately after setDataAtCell or setDataAtRowProp does not return the data that was set with the "setData..." methods. Instead, the old data is returned. This unexpected behavior is not documented in the API Reference (at least not under the methods' references).
+  - Wrapping the "getData..." methods in a setInterval allows the new value to be obtained (not included in the fiddle). Of course, an afterChange hook could be used as well.
+
+- 
+- 
+- 
+
+- ## [How do I get the full data from a Handsontable instance that has been modified and filtered? _201907](https://forum.handsontable.com/t/how-do-i-get-the-full-data-from-a-handsontable-instance-that-has-been-modified-and-filtered/3496/2)
+- I guess it is by design, but `getSourceData()` does not participate in column/row reordering. 
+  - If I were trying to retrieve all of the data in the table, with reordering rows/columns and cell changes, but without the filters
+
+- ## [Can I manipulate the table with an external button event? _202108](https://forum.handsontable.com/t/can-i-manipulate-the-table-with-an-external-button-event/5485)
+- I would like to sort it out with an external button.
+
+- ## [Instantiate Handsontable with no data - Stack Overflow](https://stackoverflow.com/questions/28050150/instantiate-handsontable-with-no-data)
+- You can use `minRows` and `minCols` to instantiate an empty Handsontable instance. Also, the `data` arguments expects an array of arrays, so in your case when you receive an empty array, just wrap it in another one: `data : Array of Arrays (default [ [] ])` .
 
 - ## [Click event swallowed after redraw of custom cell renderer ](https://github.com/handsontable/handsontable/issues/3436)
 - I recommend you to use renderer only to render elements. 
@@ -152,7 +143,7 @@ modified: 2023-12-21T20:07:29.584Z
 - ## 🤔 [WTF is a Walkontable?_201508](https://github.com/handsontable/handsontable/issues/2716)
 - Walkontable is for internal use only. It used to be a separate library, but now it is included to HOT repository and it's core functionality is to render HTML table.
 
-- ## 💰 [Handsontable drops open source for a non-commercial license | Hacker News_201903](https://news.ycombinator.com/item?id=19488642)
+- ## 💰 [Handsontable drops open source for a non-commercial license | Hacker News _201903](https://news.ycombinator.com/item?id=19488642)
 
 > "Essentially, [Handsontable] was kept running thanks to the money earned from Handsontable Pro. Unfortunately, our observation is that the ratio of commercial to free users is about 1 to 25. Hence, the only way for us to keep investing in the product is to convert more free users into paying."
 
@@ -166,6 +157,9 @@ modified: 2023-12-21T20:07:29.584Z
   - To "convert" users, you need to offer something above and beyond what is available in the open source offering.
   - Unless you have something compelling, people won't "convert" out of altruistic desires. 
   - Unfortunately that's not how business works. 
+
+- After having worked with DataTables, ag-Grid and having evaluated a couple of others I'd say that ag-Grid Enterprise is the best general purpose grid library at the moment.
+  - Only for the use case where you really need exactly some kind of Excel look-alike/Excel web viewer, Handsontable Pro or SpreadJS will probably be better for you, as ag-Grid does not really offer a finished solution here and also misses a couple of minor features at the moment.
 
 - ## 🚀 [Handsontable - Excel-like table editor in HTML & jQuery | Hacker News_201206](https://news.ycombinator.com/item?id=4162808)
 - There is also Dan Bricklin's socialcalc https://github.com/DanBricklin/socialcalc which has some relatively active forks including audreyt's ethercalc

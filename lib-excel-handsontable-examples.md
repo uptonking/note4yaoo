@@ -105,6 +105,9 @@ modified: 2023-12-21T20:06:13.700Z
 - https://github.com/tinper-acs/ac-hand-table /201911/js/inactive
   - https://tinper-acs.github.io/ac-hand-table/
   - ac-hand-table 是基于 handsontable.v7 的适用于 React 框架的电子表格，它提供了数据绑定、数据验证、行过滤、列排序、表格多选、表格样式、表头交互、表头拖拽、行高拖拽、行交换等操作
+- https://github.com/tinper-acs/ac-spreadsheet /201905/js/v5
+  - https://tinper-acs.github.io/ac-spreadsheet
+  - 在线电子表格组件, 依赖于handsontable. 该组件提供了列宽拖拽、列交换、排序、在线编辑、增减行、动态获取焦点行数据等操作。
 
 - https://gitee.com/bomwu/xlsx2handson /202205/js/inactive
   - 一个将XLSX文件转换为Handsontable配置的工具, 可参考dist/index.html
@@ -197,10 +200,6 @@ modified: 2023-12-21T20:06:13.700Z
   - 依赖hot.v7
   - Wildcard is a platform that empowers anyone to build browser extensions and modify websites to meet their own specific needs.
   - Wildcard shows a simplified view of the data in a web page as a familiar table view. People can directly manipulate the table to sort/filter content, add annotations, and even use spreadsheet-style formulas to pull in data from other websites.
-
-- https://github.com/tinper-acs/ac-spreadsheet /201905/js/v5
-  - https://tinper-acs.github.io/ac-spreadsheet
-  - 在线电子表格组件, 依赖于handsontable. 该组件提供了列宽拖拽、列交换、排序、在线编辑、增减行、动态获取焦点行数据等操作。
 
 - https://github.com/artbels/mongo-table-admin /201801/js
   - Work with mongo collection as a table. Inline edit or pivot. Filter documents with json query.

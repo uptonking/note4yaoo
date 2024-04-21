@@ -66,6 +66,13 @@ modified: 2022-08-21T10:37:01.349Z
 - https://github.com/proofgeist/mantine-tanstack-table /202311/ts
   - opinionated table component with default styling for Mantine 7 and TanStack Table 8
 
+- https://github.com/sadmann7/shadcn-table /MIT/202404/ts
+  - https://table.sadmn.com/
+  - A shadcn table component with server-side sorting, filtering, and pagination.
+  - Shadcn/UI，Tanstack/react-table，DrizzleORM 以及 Zod
+  - 我很喜欢的一点是所有筛选条件都是持久在 URL
+  - 我还发现它居然是直接接入数据库的，用的是：https://neon.tech 这个 Serverless Postgres，也有开源版本，又了解了一个工具，现在这个云数据库也太卷了。
+
 - https://github.com/bgrins/data-ui-tests /202303/js
   - https://bgrins.github.io/data-ui-tests/
   - benchmarks with vanilla-table/handsontable, revo-grid

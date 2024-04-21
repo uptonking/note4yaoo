@@ -15,7 +15,7 @@ modified: 2020-12-29T11:27:41.474Z
 # glassmorphism
 - [Float UI - Modern UI Components & Templates](https://www.floatui.com/)
 
-## 渐变颜色字体
+## 渐变色文字
 
 - [mirrorful - open-source design system framework](https://mirrorful.com/)
 

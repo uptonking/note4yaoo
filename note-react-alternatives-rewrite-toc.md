@@ -179,8 +179,10 @@ modified: 2021-09-20T20:12:38.499Z
   - /3.1kStar/MIT/202002/js
   - the React16-compat library with hooks
 
-- https://github.com/MrWangJustToDo/MyReact  /js
+- https://github.com/MrWangJustToDo/MyReact  /MIT/202404/ts
+  - https://mrwangjusttodo.github.io/MyReact/
   - 实现自己的react框架 了解fiber架构 函数组件 hook 异步更新 等react的基础功能
+  - A React like framework. can be used to replace all of the react/react-dom api for test、learn、debug 
 - https://github.com/MuYunyun/cpreact  /js
   - Build React from Scratch
   - [从0到1实现React](http://muyunyun.cn/blog/React/%E4%BB%8E0%E5%88%B01%E5%AE%9E%E7%8E%B0React/0.%E5%89%8D%E7%BD%AE%E5%87%86%E5%A4%87)

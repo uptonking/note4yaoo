@@ -258,6 +258,10 @@ modified: 2022-10-05T04:57:38.647Z
 
 - https://github.com/booktype/BookJS /AGPLv3/201804/js
   - BookJS was an effort to use the page formatting functions present in certain Chromium versions to convert a webpage into a set of pages formatted for printing
+# 中英文
+- https://github.com/CyC2018/Text-Typesetting /201902/js/inactive
+  - https://cyc2018.github.io/Text-Typesetting
+  - 中英混排文档在线排版工具
 # more
 - https://github.com/wecatch/markdown-css
   - http://wecatch.me/markdown-css/
@@ -290,6 +294,7 @@ modified: 2022-10-05T04:57:38.647Z
 - https://github.com/Apostolique/apos-docs
   - https://apostolique.github.io/apos-docs/markdown/
   - 依赖eleventy，右侧toc无法高亮
+
 # discuss
 - ## 
 

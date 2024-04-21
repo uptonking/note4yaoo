@@ -266,9 +266,11 @@ modified: 2020-12-19T13:04:40.865Z
 - https://github.com/childrentime/island-architecture
   - a demo of implementing the Island Architecture in React.
 
-- https://github.com/MrWangJustToDo/react-ssr-setup
+- https://github.com/MrWangJustToDo/react-ssr-setup /MIT/202403/ts
   - React ssr setup, new ssr for react-18
-  - 灵活的渲染方式 SSR CSR
+  - 灵活的渲染方式 SSR CSR, CSR 回退
+  - page level 代码分割
+  - 静态页面生成 build:static 标记静态页面 export isStatic = true; (目前只支持 webpack)
 # ssr-non-js
 - https://github.com/floodfx/undead /202312/java/js
   - LiveView server implementation for the JVM

@@ -41,6 +41,11 @@ modified: 2023-12-15T18:02:24.488Z
 - https://github.com/cwida/ivm-extension /MIT/202309/cpp
   - Incremental View Maintenance support for DuckDB
 # examples
+- https://github.com/incentius-foss/WhatTheDuck /MIT/202403/js/vue
+  - https://whattheduck.incentius.com/
+  - WhatTheDuck is an open-source web application built on DuckDB. 
+  - It allows users to upload CSV files, store them in tables, and perform SQL queries on the data.
+
 - https://github.com/holdenmatt/duckdb-wasm-kit /202311/ts
   - Hooks and utilities to make it easier to use duckdb-wasm in React apps.
 # utils

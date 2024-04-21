@@ -186,6 +186,13 @@ modified: 2022-06-03T21:34:54.893Z
   - 模型数据全在本地，可断网使用
   - Support selecting multiple knowledge bases for Q&A
   - Currently supported formats include: PDF(pdf), Word(docx), PPT(pptx), XLS(xlsx), Markdown(md), Email(eml), TXT(txt), Image(jpg，jpeg，png), CSV(csv), Web links(html) and more
+
+- https://github.com/mayneyao/eidos-wiki
+  - https://wiki.eidos.space/
+  - Eidos 是一个开源的、本地优先的 Web App ，完全运行在浏览器中，无需安装，也不依赖于任何服务器
+  - 拥有和 Notion 类似的文档和表格，你可以理解为离线版的 Notion，所有数据都在本地
+  - [Roadmap | Eidos Wiki](https://wiki.eidos.space/roadmap)
+    - 在 EA 测试后，主体功能稳定的情况下，会开放源码并且公测。我不是那么喜欢 build in public，预期和实现不一致容易消磨耐心
 # confluence-like
 - MrDoc /2.1kStar/GPLv3/202403/js/python/Django/仅网页版
   - https://github.com/zmister2016/MrDoc

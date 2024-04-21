@@ -65,7 +65,18 @@ modified: 2023-09-01T03:56:10.056Z
   - It improves text-based diff tools in two important ways
   - We already deal with a wide range of languages: C, Java, JavaScript, Python, R, Ruby
 
-- https://github.com/praneshr/react-diff-viewer /MIT/202007/ts
+- https://github.com/MrWangJustToDo/git-diff-view /MIT/202404/ts
+  - https://mrwangjusttodo.github.io/git-diff-view/
+  - A Diff View component for React / Vue, just like Github
+  - core只依赖lowlight
+  - https://github.com/wooorm/lowlight /MIT/202310/js
+    - Virtual syntax highlighting for virtual DOMs and non-HTML things
+    - This package uses `highlight.js` for syntax highlighting and outputs objects (ASTs) instead of a string of HTML.
+    - This package is useful when you want to perform syntax highlighting in a place where serialized HTML wouldn’t work or wouldn’t work well. 
+    - You can use the similar `refractor` if you want to use `Prism` grammars instead. 
+    - If you’re looking for a really good (but rather heavy) alternative, use `starry-night`.
+
+- https://github.com/praneshr/react-diff-viewer /MIT/202007/ts/inactive
   - https://praneshravi.in/react-diff-viewer/
   - simple and beautiful text diff viewer component made with jsdiff and React.
   - Inspired from Github diff viewer, it includes features like split view, inline view, word diff, line highlight and more. It is highly customizable and it supports almost all languages.

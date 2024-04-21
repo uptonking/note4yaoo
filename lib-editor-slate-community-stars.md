@@ -290,7 +290,7 @@ return (
 )
 ```
 
-- ## Dynamic Rendering Feature (performance improvement); only render visible blocks and not render blocks hidden within the y-overflow.__201705
+- ## 🧐 Dynamic Rendering Feature (performance improvement); only render visible blocks and not render blocks hidden within the y-overflow.__201705
 - https://github.com/ianstormtaylor/slate/issues/790
 - The Ace Editor: ajaxorg/ace does this by rendering two divs: 
   - a full height "scroller" div and then a "content" div that dynamic adjusts based on scrolls while updating it's content (removing hidden dom nodes and adding newly shown dom nodes).

@@ -275,4 +275,32 @@ hot1.render();
 - 
 - 
 
+# blogs-dev
+
+## 
+
+# blogs-ui
+
+## [A Complete Guide to Changing the Size of Handsontable _201603](https://handsontable.com/blog/a-complete-guide-to-changing-size-of-handsontable)
+
+- One of the basic things you can do with Handsontable is adjusting it to the existing layout.
+- Handsontable was created with performance in mind, therefore it supports relatively large data sets, even those exceeding 100k rows. To navigate effectively within such an amount of information you may need to limit the container’s width and height.
+- 📏 Handsontable by default fills its nearest parent element which has a defined width, height and the CSS `overflow` property set to `hidden`.
+  - Having that, you can expand your Handsontable to the window’s dimension and use the native scrollbars to navigate through the grid
+- 1. Fixed width and height
+  - You can enter a certain width and height of Handsontable directly in the configuration, ultimately before initializing it
+  - You can also define the size using pure CSS
+- 2. Fixed height only (Coming soon)
+- 3. Fixed width only
+  - If you set only the table’s width, it won’t render properly until you use the `preventOverflow` option
+- 4. No width and height
+  - If there are no height and width settings passed in the configuration, the table will vertically and horizontally fill the entire window (again, or any parent element with defined dimensions and overflow: hidden).
 # more
+- [7 leading JavaScript data grids in 2023](https://handsontable.com/blog/7-leading-javascript-data-grids-in-2023)
+  - Handsontable
+  - Bryntum Grid
+  - Wijmo FlexGrid
+  - Kendo UI
+  - DHTMLX Grid
+  - DevExpress Data Grid
+  - AG Grid

@@ -63,6 +63,14 @@ modified: 2023-11-10T07:10:19.089Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## I've rewritten the Node.js task runner (node run --test) in C++. 
+- https://twitter.com/yagiznizipli/status/1781682054393966900
+  - It's 50% faster than the JavaScript implementation.
+
 - ## 🌰 With fs.readFile I can't easily determine the mime type in Node, right? (I don't want to use a libary.)
 - https://twitter.com/_mql/status/1759890585949720687
   - We need it as fallback for "default" assets (like icons) that are not overridden in the database. So I guess in this case I can keep the mime type mapping in sync.

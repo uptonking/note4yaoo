@@ -7,12 +7,14 @@ modified: 2021-01-09T16:56:35.339Z
 
 # toc-work-portfolio-resume
 
-# nice
+# guide
 
+# intro-stars
 - [Kent C. Dodds: react consultant](https://kentcdodds.com/)
 # resume-markdown
 - https://github.com/youngyangyang04/Markdown-Resume-Template
   - BAT程序员自己的简历模板分享出来了。技术简历追求简单明了
+  - 好的简历是敲门砖，同时也不要在简历上花费过多的精力，好的简历以及面试技巧都是锦上添花，真的求得心得的offer靠的还是真才实学。
 
 - https://github.com/mdnice/markdown-resume
   - https://resume.mdnice.com/
@@ -34,8 +36,8 @@ modified: 2021-01-09T16:56:35.339Z
   - https://github.com/anuraghazra/github-readme-stats
     - 可自动生成和更新github统计数据，生成卡片
 
-- https://github.com/iRaul/creative-portfolios
-- https://github.com/resume/resume.github.com
+- https://github.com/iRaul/creative-portfolios /inactive
+  - A curated list of Creative Portfolios
 # portfolio-amazing
 - https://github.com/caglarturali/caglarturali.github.io
   - https://turali.js.org/
@@ -108,8 +110,6 @@ modified: 2021-01-09T16:56:35.339Z
   - https://khang-nd.github.io/
   - A window-styled portfolio (hence the name Winport) built with ReactJS, fully responsive, mobile first
   - multiple themes are integrated: classic, flat, neumorphism
-- https://github.com/LekoArts/portfolio
-  - My personal portfolio & blog. Built with Gatsby.js.
 # resume-builder
 - https://github.com/sadanandpai/resume-builder
   - https://e-resume.vercel.app/builder
@@ -124,6 +124,10 @@ modified: 2021-01-09T16:56:35.339Z
 - https://github.com/timoschwarzer
 - https://github.com/mrdoob
 - https://github.com/Renovamen
+
+- https://github.com/MrWangJustToDo/MrWangJustToDo.io 
+  - https://mrwangjusttodo.github.io/MrWangJustToDo.io/
+  - 根据github操作记录自动生成
 # glassmorphism-linear-like
 - https://github.com/srikarsams/linear-clone
   - https://linear-clone.vercel.app/

@@ -51,7 +51,6 @@ modified: 2022-08-21T09:57:32.451Z
   - Scroll: Use native scrollbars to navigate within the table
   - Internationalization
 
-
 - who is using #handsontable
   - growi(hot.v6)
 
@@ -60,22 +59,80 @@ modified: 2022-08-21T09:57:32.451Z
 # draft
 - handsontable该如何与使用contenteditable的文本编辑器结合
   - 需要改造事件的dispatch机制
+
+- 当container的height未设置时, 若设置了minRows/minCols，尝试为container设置默认高度和overflow:hidden
 # dev
 
 # changelog
 
-## v8.0
+## v14.0.0_20231130
+
+- [What’s new in Handsontable 14: Improvements to accessibility](https://handsontable.com/blog/whats-new-in-handsontable-14-improvements-to-accessibility)
+  - In this release, we’ve introduced features to enhance the overall accessibility of Handsontable, ensuring it meets WCAG 2.1 AA standards
+  - A big update is that you can now use your keyboard to navigate through row and column headers
+  - We’ve also improved support for screen readers like JAWS, NVDA, and VoiceOver by expanding the HTML markup with ARIA attributes.
+
+## v13.0.0_20230622
+
+- [Handsontable 13.0.0: Support for Angular 16, and new frameworks-support policy](https://handsontable.com/blog/handsontable-13-0-0-support-for-angular-16-and-new-frameworks-support-policy)
+  - This version adds support for Angular 16, cleans up a few long-deprecated methods, and introduces a more transparent policy toward older versions of supported frameworks.
+  - When a maintainer drops support for an old framework version, we will drop it in the nearest major or minor release of Handsontable – we won’t treat it as a breaking change.
+  - When we drop support for an old version of any framework, we’ll provide 18 months of long-term support (LTS) for it
+
+## v12.0.0_20220428
+
+- [Handsontable 12.0.0: RTL support, and a new keyboard shortcuts API _202204](https://handsontable.com/blog/handsontable-12.0.0-data-grid-rtl-support-and-a-new-keyboard-shortcuts-api)
+  - This version adds support for right-to-left (RTL) languages, introduces a new API for managing keyboard shortcuts, and improves the behavior of the `updateSettings()` method.
+  - The RTL direction is applied automatically through the inheritance of the `dir` attribute from the HTML element. You can also control it programmatically, using a new configuration option: `layoutDirection`.
+
+## v11.0.0_20211117
+
+- [Handsontable 11.0.0: Modularization for React, Angular, and Vue _202111](https://handsontable.com/blog/handsontable-11.0.0-modularization-for-react-angular-and-vue)
+  - This version adds modularization features to the framework wrappers, improves the monorepo structure, adds a new locale option, and more.
+  - Since Handsontable 8.3.0, you’ve been able to use modules with the vanilla JavaScript version of Handsontable. 
+  - Now, you can use modules with each of Handsontable’s framework versions (React, Angular, and Vue) as well.
+  - Ever since we introduced modularization in Handsontable 8.3.0, we wanted to give every module full TypeScript support.
+
+## v10.0.0_20210929
+
+- [Handsontable 10.0.0: Improved performance and consistency](https://handsontable.com/blog/handsontable-10.0.0-improved-performance-and-consistency)
+  - One of the biggest changes in Handsontable 10.0.0 is the improved performance of the `getCellMeta()` method.
+  - Because getCellMeta() gets called very often from different parts of Handsontable’s source code, and its performance may impact the overall efficiency of your grid.
+  - To achieve this, we introduced an additional cache layer that gets cleared once every slow render cycle.
+  - While working on the getCellMeta() cache layer, we noticed an inconsistency in some of the related hooks: beforeRender and afterRender. To clear things out, we decided to rename them, and add two new hooks along the way
+
+## v9.0.0_20210601
+
+- [Handsontable 9.0.0: New formula plugin _202106](https://handsontable.com/blog/handsontable-9.0.0-new-formula-plugin)
+  - The new formula plugin is now out! It integrates our powerful calculation engine – HyperFormula
+  - Up to version 8.4.0 there was a formula plugin that was built by us based on two other projects: our own formula parser, and an external library of spreadsheet functions, called formula.js. The problem with this solution was that we couldn’t easily extend or improve it.
+  - We also ran into some performance issues which required a completely different approach in the way we parse formulas and build AST, as well as calculate and recalculate input data.
+  - In 2018 we started working on a new formula engine. We named it HyperFormula and, once it was ready, published it on GitHub under an open-source license. At that point, we started to incorporate it into Handsontable
+
+## v8.0.0_20200805
 
 - One of the breaking changes in 8.0.0 is:
-  - Modifying the table’s data by reference and calling `render()` will not work as it used to anymore. 
+  - 🚨 Modifying the table’s data by reference and calling `render()` will not work as it used to anymore. 
   - From this point onward, all the data-related operations need to be performed using the API methods, such as `populateFromArray` or `setDataAtCell`.
 
+- Handsontable 8.3.2: Introducing monorepo
+
+- Ever since we introduced modularization in Handsontable 8.3.0, we wanted to give every module full TypeScript support.
+
+- [The new Handsontable 8 is now available](https://handsontable.com/blog/the-new-handsontable-8-is-now-available)
+  - We redesigned the internal data flow, which determines the flawlessness and speed of the core engine and plugins. Thanks to the new architecture, the library is now less error-prone and provides a solid foundation for future developments.
+  - Even though the functionality has been extended by new methods and hooks, we added zero new features. New features are great, but no matter how hard you try, it’s almost impossible to make them bug-free. That is why we decided to take a break from the feature creep and focus solely on improving the existing features.
+  - The new management system for translating the physical indexes to visual indexes stabilizes the way that plugins exchange information about the order and states of the records in the data set.
+  - Since the dependency of callbacks was removed, the plugins are more independent and easier to use.
+  - We added the `setSourceDataAtCell` method and `modifySourceData` hooks, and thanks to that modifying the data by reference is no longer necessary.
+  - The `ObserveChanges` plugin is now deprecated and we plan to remove it in the future. It performs a deep comparison of two objects in a loop and attempts to find the differences between them. However, this operation is inefficient and prone to errors. The same results can be now achieved by using the API methods, which are much more efficient.
+
 - [Need a way to update source data in filtered state ](https://github.com/handsontable/handsontable/issues/6680)
-  - v8.0.0 from beta.2 introduces setSourceDataAtCell to modify source data and it's using physical indexes / object props.
+  - v8.0.0 from beta.2 introduces `setSourceDataAtCell` to modify source data and it's using physical indexes / object props.
 
 ## v7.0.0_20190306
 
-- Starting with version 7.0.0, there is only one Handsontable, as Handsontable Pro has been merged with Handsontable Community Edition.
+- 💰 Starting with version 7.0.0, there is only one Handsontable, as Handsontable Pro has been merged with Handsontable Community Edition.
   - Handsontable is now "source-available" instead of "open source". 
   - **The MIT license has been replaced with custom, free for non-commercial license**.
 
@@ -109,9 +166,9 @@ modified: 2022-08-21T09:57:32.451Z
   - Moved the fixedRowsBottom functionality to Handsontable CE
   - Introduced a new functionality to the Copy/Paste plugin. From version 6.1.0, it supports the text/html data type alongside text/plain
 - 6.0.0-20180927
-  - This release contains changes to the ColumnSorting plugin exclusively
+  - This release contains changes to the `ColumnSorting` plugin exclusively
   - refactored and rewrote parts of the ColumnSorting plugin in order for it to work seamlessly with the new MultiColumnSorting plugin
-  - Added a new plugin - MultiColumnSorting
+  - Added a new plugin - `MultiColumnSorting`.
   - Added a possibility to disable the action of sorting by clicking on the headers, using the headerAction option
 
 ## v5.0.0_20180711

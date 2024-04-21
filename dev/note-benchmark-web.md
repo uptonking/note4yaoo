@@ -65,7 +65,7 @@ modified: 2020-07-14T09:28:43.976Z
   - tachometer is a tool for running benchmarks in web browsers. 
   - It uses repeated sampling and statistics to reliably identify even the smallest differences in timing.
 # js
-- https://github.com/bryntum/siesta
+- https://github.com/bryntum/siesta /202203/ts/inactive
   - Siesta is a stress-free, ubiquitous, open-source JavaScript/TypeScript testing tool
 
 - [JS: Benchmarking Lazy Getters](https://webreflection.medium.com/js-benchmarking-lazy-getters-9b132f45c15e)

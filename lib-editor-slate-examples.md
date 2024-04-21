@@ -79,6 +79,31 @@ modified: 2023-02-05T19:03:12.723Z
   - [有计划整合slate-yjs插件吗？ _202204](https://github.com/wangeditor-team/wangEditor/issues/4033)
     - 暂时没有开发多人协同功能的计划。多人协同是一个非常复杂的工程，不是集成一个插件就可以解决的，还需要服务端做很多配合。
 
+- https://github.com/sagemathinc/cocalc /1.1kStar/AGPL3+NonCommercial/202311/ts/python
+  - https://cocalc.com/
+  - https://github.com/sagemathinc/cocalc/tree/master/src/packages/frontend/editors/slate
+  - CoCalc is web-based software that enables collaboration in research, teaching, and scientific publishing.
+  - It includes Jupyter Notebooks, Sage Worksheets, a LaTeX Editor and a Linux Terminal to help people work together in real time
+  - 前端依赖antd5、dnd-kit、slate-core.v.90、d3、react-redux
+  - 后端依赖express-session、passport
+  - 基于slate-core实现了virtualized-render, 魔改后的slate-react协议是MIT，EditableMarkdown协议是AGPLv3
+  - selectionToText的实现just directly using DOM API, not slatejs, so could run into a subtle problem e.g., due to windowing.
+    - we use it here usually for small snippets of visible text, so it tends to be OK
+  - It is also possible to run CoCalc on your own infrastructure.
+  - You can easily use CoCalc on your own computer for free by running a Docker image.
+  - [202107: I ended up forking only the React part of Slate, and massively rewriting it to support virtualized windowing, so we can work with very large possibly complicated to render documents](https://news.ycombinator.com/item?id=28003677)
+    - I have no plans to switch from Slate to Prosemirror. Getting virtualized windowing to work with Slate was quite difficult, but it's really table stakes for what I plan on doing longterm, and I don't even know where to begin to do virtualized windowing in Prosemirror.
+  - https://github.com/sagemathinc/cocalc/tree/master/src/packages/sync /ts
+    - [Collaborative Editing › CoCalc Blog_201810](https://blog.cocalc.com/2018/10/11/collaborative-editing.html)
+    - This is an implementation of realtime synchronization. 
+    - It has been used heavily in production on https://CoCalc.com for over 5 years. 
+    - This is a Javascript library that helps provide collaborative multiuser editing for text files, Jupyter notebooks, and much more.
+    - In particular, does this use CRDT or OT?
+    - No. This is a realtime sync algorithm for document editing that does not use the same algorithm as literally all the other realtime sync projects. I made up with a different -- vastly simpler -- algorithm, inspired a little by "differential sync" and lot by how distributed databases work
+    - This approach works for any document with a notion of "diff" and "patch".
+    - I've used it heavily for everything from plain text, to Jupyter notebook, to WYSIWYG markdown editing (on top of Slate).
+    - The algorithm itself is ridiculously easy to understand.Each user contributes a stream of patches to a big ordered list. The definition of the current state of the document is the result of applying all the patches in order on a "best effort" basis.
+
 - rich-block-editor /2Star/ISC/202306/ts
   - https://github.com/rgbui/rich
   - https://shy.live/
@@ -120,7 +145,7 @@ modified: 2023-02-05T19:03:12.723Z
     - 如何协作，改哪个页面的socketUrl
     - webpack.native/prod.js 使用的是 indexDemo.html
 
-- https://github.com/JokerLHF/mini-slate /202304/ts
+- https://github.com/JokerLHF/mini-slate /202304/ts/inactive
   - 使用 ts 实现 slate 富文本
 
 - https://github.com/Darginec05/Yoopta-Editor /MIT/202310/ts
@@ -417,7 +442,6 @@ modified: 2023-02-05T19:03:12.723Z
 
 - https://github.com/bipboy/rich-slate-editor /202305/ts
   - A small react implementation of a text editor based on Slate and Baseweb(css-in-js)
-
 
 - https://github.com/ncqwer/lla-editor /202403/ts
   - 本项目使用 Slate 作为基础。旨在打造 React 友好的富文本编辑器
@@ -812,8 +836,9 @@ modified: 2023-02-05T19:03:12.723Z
 - tips
   - 甚至可参考notion-render
 
-- https://github.com/rockettomatooo/slate-react-presentation /MIT/202311/ts
+- https://github.com/rockettomatooo/slate-react-presentation /MIT/202311/ts/inactive
   - a small package that lets you render a slate.js document without the overhead of the actual editor.
+  - [static renderer _202012](https://github.com/ianstormtaylor/slate/issues/4025)
 
 - https://github.com/dxiaoqi/slate-render-tool /ts
   - slate render tool
@@ -882,31 +907,6 @@ modified: 2023-02-05T19:03:12.723Z
   - Mawe writer's editor with ElectronJS, React and NodeJS. 
   - Third generation of the editors I have written for my own use.
   - I needed a tool for myself, that's why I wrote Mawe with Python/GTK, and now with ElectronJS, Javascript and React.
-
-- https://github.com/sagemathinc/cocalc /1.1kStar/AGPL3+NonCommercial/202311/ts/python
-  - https://cocalc.com/
-  - https://github.com/sagemathinc/cocalc/tree/master/src/packages/frontend/editors/slate
-  - CoCalc is web-based software that enables collaboration in research, teaching, and scientific publishing.
-  - It includes Jupyter Notebooks, Sage Worksheets, a LaTeX Editor and a Linux Terminal to help people work together in real time
-  - 前端依赖antd5、dnd-kit、slate-core.v.90、d3、react-redux
-  - 后端依赖express-session、passport
-  - 基于slate-core实现了virtualized-render, 魔改后的slate-react协议是MIT，EditableMarkdown协议是AGPLv3
-  - selectionToText的实现just directly using DOM API, not slatejs, so could run into a subtle problem e.g., due to windowing.
-    - we use it here usually for small snippets of visible text, so it tends to be OK
-  - It is also possible to run CoCalc on your own infrastructure.
-  - You can easily use CoCalc on your own computer for free by running a Docker image.
-  - [202107: I ended up forking only the React part of Slate, and massively rewriting it to support virtualized windowing, so we can work with very large possibly complicated to render documents](https://news.ycombinator.com/item?id=28003677)
-    - I have no plans to switch from Slate to Prosemirror. Getting virtualized windowing to work with Slate was quite difficult, but it's really table stakes for what I plan on doing longterm, and I don't even know where to begin to do virtualized windowing in Prosemirror.
-  - https://github.com/sagemathinc/cocalc/tree/master/src/packages/sync /ts
-    - [Collaborative Editing › CoCalc Blog_201810](https://blog.cocalc.com/2018/10/11/collaborative-editing.html)
-    - This is an implementation of realtime synchronization. 
-    - It has been used heavily in production on https://CoCalc.com for over 5 years. 
-    - This is a Javascript library that helps provide collaborative multiuser editing for text files, Jupyter notebooks, and much more.
-    - In particular, does this use CRDT or OT?
-    - No. This is a realtime sync algorithm for document editing that does not use the same algorithm as literally all the other realtime sync projects. I made up with a different -- vastly simpler -- algorithm, inspired a little by "differential sync" and lot by how distributed databases work
-    - This approach works for any document with a notion of "diff" and "patch".
-    - I've used it heavily for everything from plain text, to Jupyter notebook, to WYSIWYG markdown editing (on top of Slate).
-    - The algorithm itself is ridiculously easy to understand.Each user contributes a stream of patches to a big ordered list. The definition of the current state of the document is the result of applying all the patches in order on a "best effort" basis.
 
 - https://github.com/RealRong/Rendevoz
   - open-source knowledge management application built with React and TypeScript

@@ -85,6 +85,8 @@ modified: 2023-01-01T13:24:35.994Z
     - Each language exists of 5 definitions, Charset(Encoder, RTL), Language(Matcher, Stemmer, Filter)
   - [whether this library supports reading from IndexedDb instead of memory](https://github.com/nextapps-de/flexsearch/issues/289)
     - This is actually not supported(202210). Supporting interfaces may be provided in future. Since the "flat index" instance hold the whole data structure of one index, it has a good chance to make interfaces for every database.
+  - https://github.com/beekeeper-studio/flexsearch
+    - FlexSearch v0.7.0 is a modern re-implementation and was newly developed from the ground up
 
 - orama/lyra /5.1kStar/apache2/202311/ts
   - https://github.com/oramasearch/orama

@@ -198,6 +198,17 @@ modified: 2023-11-24T18:41:26.906Z
   - enables developers to record snapshots of application state, jump between and inspect state snapshots, and monitor performance metrics such as component render time and render frequency.
   - Whenever the state is changed (whenever setState, useState is called), this extension will create a snapshot of the current state tree and record it
   - jump to any previously recorded snapshots
+# diff
+- https://github.com/MrWangJustToDo/git-diff-view /MIT/202404/ts
+  - https://mrwangjusttodo.github.io/git-diff-view/
+  - A Diff View component for React / Vue, just like Github
+  - core只依赖lowlight
+  - https://github.com/wooorm/lowlight /MIT/202310/js
+    - Virtual syntax highlighting for virtual DOMs and non-HTML things
+    - This package uses `highlight.js` for syntax highlighting and outputs objects (ASTs) instead of a string of HTML.
+    - This package is useful when you want to perform syntax highlighting in a place where serialized HTML wouldn’t work or wouldn’t work well. 
+    - You can use the similar `refractor` if you want to use `Prism` grammars instead. 
+    - If you’re looking for a really good (but rather heavy) alternative, use `starry-night`.
 # utils/undo
 - https://github.com/philipmendels/undomundo /202204/ts/依赖fp-ts
   - https://github.com/philipmendels/undomundo-multiplayground

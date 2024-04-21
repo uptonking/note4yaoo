@@ -328,6 +328,14 @@ betterdiscordctl -i flatpak install
 
 ## 042
 
+## 0421
+
+- [max-height - CSS: Cascading Style Sheets | MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/max-height)
+  - `max-height` overrides `height`, but `min-height` overrides `max-height`.
+
+- [max-width - CSS: Cascading Style Sheets | MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/max-width)
+  - `max-width` overrides `width`, but `min-width` overrides `max-width`.
+
 ## 0419
 
 - [How can I clear an HTML file input with JavaScript? - Stack Overflow](https://stackoverflow.com/questions/1703228/how-can-i-clear-an-html-file-input-with-javascript)

@@ -108,6 +108,13 @@ modified: 2023-09-02T09:17:22.992Z
     - Each compartment shares the intrinsics of a realm, but a different set of evaluators (eval, Function, and a new evaluator, Module) and a global object. 
     - Having a separate global object allows each compartment to be granted access to only those powerful objects it needs, its own isolated evaluators, powerless constructors, and shared prototypes.
 
+- https://github.com/XGHeaven/jsscript /202404/js
+  - A flexible JavaScript engine running on another JavaScript engine.
+  - Inspired by QuickJS
+  - Only support strict mode and modern JavaScript feature.
+  - Not implement with, eval, var, label etc.
+  - 尝试性的把微任务在 jsscript 里面实现了一下，发现比我预想的简单，也没有八股文中那么多弯弯绕的东西。 又有了新的理解，微任务其实就是 JS 标准内的，而宏任务则是外部 IO 环境的任务。
+
 ## iframe-sandbox
 
 - https://github.com/dabbott/javascript-playgrounds /ts

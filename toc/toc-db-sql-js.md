@@ -89,6 +89,17 @@ modified: 2021-08-30T18:56:14.863Z
 - https://github.com/datawan-labs/pg /MIT/202404/ts
   - https://pg.datawan.id/
   - In Browser PostgreSQL Playground, no server, just client and pglite (postgresql wasm)
+
+- https://github.com/beekeeper-studio/beekeeper-studio /15.3kStar/GPLv3/202404/ts/vue
+  - https://www.beekeeperstudio.io/
+  - a cross-platform SQL editor and database manager available for Linux, Mac, and Windows.
+  - 依赖electron、flexsearch、knex、codemirror5、tabulator、typeorm、vue2、vuex
+  - paid
+    - Team Workspaces
+    - export multiple table
+    - cloud sync
+    - sqlite extentions
+  - https://github.com/beekeeper-studio/tabulator
 # examples
 - https://github.com/prostgles/ui
   - https://prostgles.com/ui
