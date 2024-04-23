@@ -328,6 +328,12 @@ betterdiscordctl -i flatpak install
 
 ## 042
 
+## 0423
+
+- [How do I make Git ignore file mode (chmod) changes? - Stack Overflow](https://stackoverflow.com/questions/1580596/how-do-i-make-git-ignore-file-mode-chmod-changes)
+  - git config core.fileMode false
+  - git config --global core.filemode false
+
 ## 0421
 
 - [max-height - CSS: Cascading Style Sheets | MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/max-height)

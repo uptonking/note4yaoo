@@ -16,7 +16,7 @@ modified: 2021-10-05T15:35:15.751Z
 - [发布-订阅模式 - 知食记](https://mind.ricky.moe/other/she-ji-mo-shi-1/guan-cha-zhe-mo-shi)
 - [观察者模式 - 知食记](https://mind.ricky.moe/other/she-ji-mo-shi-1/guan-cha-zhe-mo-shi-1)
 - [观察者模式与发布-订阅模式的区别是什么？ - 知食记](https://mind.ricky.moe/other/she-ji-mo-shi-1/guan-cha-zhe-mo-shi-yu-fa-bu-ding-yue-mo-shi-de-qu-bie-shi-shen-me)
-  - 区别在于是否存在第三方、发布者能否直接感知订阅者
+  - 区别在于是否存在第三方register、发布者能否直接感知订阅者
   - 发布-订阅模式下，实现了完全地解耦。
 
 - [手写Redux/React-Redux核心API - 掘金](https://juejin.cn/post/7040748250516684814)

@@ -56,4 +56,8 @@ modified: 2024-03-08T05:29:35.446Z
 
 - ## 
 
-- ## 
+- ## The challenges of determining if {x, y} is actually inside an element.
+- https://twitter.com/alexandereardon/status/1782249591796347072
+  - From the (closed) Chrome bug
+
+- We demand rigidly(严格的；坚强的；) defined z-ordering

@@ -98,6 +98,9 @@ modified: 2022-11-07T10:26:22.510Z
   - wps note/google keep
   - netdisk
   - emarket
+# im-wechat
+- [微信为什么不弄个文字转语音？ - 知乎](https://www.zhihu.com/question/607788362)
+  - 这个功能已经出了，需要更新到版本。操作步骤：`我→设置→关怀模式→开启→打开“听文字消息”`开启后，点一下聊天中的文字消息就能听到了
 # search
 - 网盘搜索
   - [有哪些好用不火的网盘资源搜索工具，求推荐？ - 知乎](https://www.zhihu.com/question/449835465/answers/updated)

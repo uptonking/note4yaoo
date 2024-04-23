@@ -12,13 +12,12 @@ modified: 2021-09-21T19:45:01.472Z
 # instanceof
 
 ```JS
-function _instanceof(a, b) {
-  const bPrototype = b.prototype;
+function _instanceof(a, Cls) {
 
   let aProto = Object.getPrototypeOf(a);
 
   while (aProto) {
-    if (aProto === bPrototype) {
+    if (aProto === Cls.prototype) {
       return true;
     }
 
@@ -29,7 +28,7 @@ function _instanceof(a, b) {
 }
 ```
 
-## [setTimeout的原理和实现](https://github.com/sisterAn/JavaScript-Algorithms/issues/98)
+# [setTimeout的原理和实现](https://github.com/sisterAn/JavaScript-Algorithms/issues/98)
 
 > 思路是基于 `requestAnimationFrame` 和计算时间差实现
 

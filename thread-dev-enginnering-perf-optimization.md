@@ -79,7 +79,7 @@ modified: 2022-03-18T20:56:35.254Z
   - SVG in HTML is fine - it gets parsed and rendered once by the browser. 
   - SVG in JSX requires the JS to download & execute first, generate VDOM for the SVG, render that to DOM
 
-- ## #最最简单的性能改善方法
+- ## 最最简单的性能改善方法
 - https://twitter.com/ThaddeusJiang/status/1511151150095298560
   01. frontend 分页请求数据
   02. frontend 不要重复请求相同 API

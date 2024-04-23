@@ -61,6 +61,9 @@ function cloneDeep(value) {
     } else {
       return val;
     }
+  }else{
+      return val;
+    
   }
 
   return _cloneDeep(value);

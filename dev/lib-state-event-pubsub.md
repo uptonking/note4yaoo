@@ -76,18 +76,22 @@ modified: 2021-05-13T03:13:45.375Z
 
 - ## 
 
-
-- ## 🆚️ Non-RxJS Observables in the wild... tanstack edition _202305
+- ## 🆚️🌰 Non-RxJS Observables in the wild... tanstack edition _202305
 - https://twitter.com/BenLesh/status/1656746366553452573
 - Yes, yes, it's more of a "Subject"... which is an observable.
+
 - Incidentally, @tannerlinsley , I don't know all of the usage here, but as a pro-tip, *if* you can move away from an array of listeners to a `Set` it will help perf a lot. (But comes with idempotent listener adds, obviously)
   - (I've been wanting to do that to RxJS Subjects, but it would be too broad of a breaking change for us)
   - Prior art is `EventTarget` , though: `addEventListener` is idempotent.
-- ⚡️ heh, I actually did the `array->Map` switch for the Redux core in v5 alpha
+- 🌰⚡️ heh, I actually did the `array->Map` switch for the Redux core in v5 alpha
+  - [Replace listeners array with a Map for better performance · reduxjs/redux _202301](https://github.com/reduxjs/redux/pull/4476)
+  - Redux has always used an array of listener callbacks internally. However, as we found out with React-Redux, using `listeners.findIndex(callback)` is bad for performance
+  - I initially tried `Set<ListenerCallback>`, but found that one test failed. A `Set` compares by reference, so the callback got removed in the first `unsubscribe()` call and was no longer around for the second.
+  - We don't have a formal statement that we support passing in the same callback more than once, but that's the implicit semantics thus far.
+  - Given that, a `Map<number, ListenerCallback>` works equivalently, and we'll just have an incrementing counter for the key.
+
 - Ooh do XState next (we love our bespoke artisanal handcrafted observables)
   - All ActorRefs (what is returned from interpret(...)) are observable
-
-
 
 - ## I wrote up a bit about the different types of cancellation/unregistration that exist, and why AbortSignal is a solid choice for DOM Observables in JavaScript.
 - https://twitter.com/BenLesh/status/1729970596715376698

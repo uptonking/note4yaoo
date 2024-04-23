@@ -9,7 +9,7 @@ modified: 2023-06-19T06:34:21.124Z
 
 # guide
 
-# com-positions
+# com-leaderboard
 - [上海独角兽企业排序](https://maimai.cn/web/gossip_detail?gid=32177458&egid=ba6da75f77bc49d887bfea0d9ab820d9)
   1、小红书
   2、得物

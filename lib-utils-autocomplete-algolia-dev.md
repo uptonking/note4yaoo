@@ -276,7 +276,12 @@ export interface AutocompleteState<TItem extends BaseItem> {
 
 - ## 
 
-- ## 
+- ## I've spent the last month or so evaluating Comboboxes. 
+- https://twitter.com/RogersKonnor/status/1782255191120625834
+  - ReactAria and Ariakit have really good implementations in terms of accessibility and my quick perusings with screenreaders.
+  - [ComboBox – React Aria](https://react-spectrum.adobe.com/react-aria/ComboBox.html)
+  - [Combobox - Ariakit](https://ariakit.org/components/combobox)
+- I was looking for one of these and ended up using TomSelect, but it took a lot of tweaking and customization to get working right.
 
 - ## [instantsearch.js without Algolia possible?](https://github.com/algolia/instantsearch/issues/2205)
 

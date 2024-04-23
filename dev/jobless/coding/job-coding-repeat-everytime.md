@@ -84,7 +84,7 @@ function debounce2(fn, wait, immediate) {
 - 使用场景
   - resize/scroll 事件，每隔一秒计算一次位置信息等
   - 浏览器播放事件，每个一秒计算一次进度信息等
-  - input框实时搜索并发送请求展示下拉列表，没隔一秒发送一次请求 (也可做防抖)
+  - input框实时搜索并发送请求展示下拉列表，每隔一秒发送一次请求 (也可做防抖)
 
 ```JS
 /**
@@ -103,7 +103,7 @@ function throttle(fn, wait) {
 
       fn.apply(that, args);
 
-      // 节流重在开关锁 timer=null
+      // 节流要点在开关锁 timer=null
       timer = null;
     }, wait)
 

@@ -7,7 +7,12 @@ modified: 2021-05-13T03:19:30.464Z
 
 # lib-state-redux-blog
 
-# [redux, koa, express 中间件实现对比解析](https://segmentfault.com/a/1190000016386740)
+# guide
+
+# blogs
+
+## 🆚️ [redux, koa, express 中间件实现对比解析](https://segmentfault.com/a/1190000016386740)
+
 - 本文主要对比redux, koa, express 的中间件实现，为了更直观，我会抽取出三者中间件相关的核心代码，精简化，写出模拟示例。
   - https://github.com/nanjixiong218/analys-middlewares
 
@@ -112,7 +117,9 @@ modified: 2021-05-13T03:19:30.464Z
 - koa 1.x的时候支持了generator，现在支持了async函数，
   - 所以现在的koa的中间件系统是“洋葱圈”式的处理方式，也就是上面的先执行每个中间件的before，再倒叙执行xxx函数。
   - 值得一提的点就是koa为async函数特制的compose函数，async函数的awiat需要每次异步都是一个promise，如果为值，那就是同步处理。所以返回的middleware都被包了一层Promise.resolve。
-# [Redux without React — State Management in Vanilla JavaScript_201610](https://www.sitepoint.com/redux-without-react-state-management-vanilla-javascript/)
+
+## [Redux without React — State Management in Vanilla JavaScript_201610](https://www.sitepoint.com/redux-without-react-state-management-vanilla-javascript/)
+
 - https://github.com/morkro/tetrys
 
 - What makes Redux great is that it forces you to think ahead and get an early picture of your application design. 
@@ -208,7 +215,9 @@ const tetrisGame = new TetrisGame(store)
   - I took me a while to realize this, as I started off thinking I have to do things differently, but eventually I figured this is not necessary.
 - What is different however, is the way you initialize your modules, your store, and how much awareness a component can have of the overall application state. 
   - The concepts stay the same, but the implementation and amount of code is suited to exactly your needs.
-# [Life after Redux: React’s new APIs can provide pause as to whether or not it is a necessity in your next app](https://itnext.io/life-after-redux-21f33b7f189e)
+
+## [Life after Redux: React’s new APIs can provide pause as to whether or not it is a necessity in your next app](https://itnext.io/life-after-redux-21f33b7f189e)
+
 - There are many benefits to using Redux.
   - It allows developers to easily share state data between different components throughout an application via the use of helper libs such as react-redux.
   - You get control flow, a middleware pattern and the resulting ecosystem of middleware extensions available.
@@ -297,3 +306,11 @@ const tetrisGame = new TetrisGame(store)
   - due to Redux’s tendency towards becoming a global dependency, 
   - new or smaller apps should think carefully about whether or not their needs can be served by selecting an appropriate event bus and using in-built React state management 
   - as this will lead to a cleaner and more flexible architecture.
+
+## [Why you should use an object, and not an array, for lists in Redux _201905](https://javascript.plainenglish.io/https-medium-com-javascript-in-plain-english-why-you-should-use-an-object-not-an-array-for-lists-bee4a1fbc8bd)
+
+- With object solution you won’t get duplicated items.
+- Using an object will save your future self some time and bugs.
+- CRUD operations do not iterate over all items each time.
+- If you need an array of items, just add selector that will convert object to array.
+# more-blogs
