@@ -161,6 +161,16 @@ modified: 2023-03-13T08:05:09.453Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 简单看了下公司内的渲染引擎还不少，不说 lynx，单论 js 实现的 web canvas 渲染器，就有三个。
+- https://twitter.com/XGHeaven/status/1783023772771270919
+  - 但感觉大体思路基本一致，都是以 flutter 这种父节点决定位置，子节点决定大小的布局方式
+- lynx是字节内部的吧
+  - 是的
+
 - ## [用 SVG 实现的富文本编辑器有什么优势？DOM 和 Canvas 实现又有什么劣势？ - 知乎](https://www.zhihu.com/question/367165828/answers/updated)
 - iCloud Pages 和 WPS（web 端）的核心编辑区域直接用 SVG 渲染
 

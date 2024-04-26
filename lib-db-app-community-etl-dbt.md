@@ -27,7 +27,11 @@ modified: 2023-12-15T18:03:33.503Z
 
 - ## 
 
-- ## 
+- ## At this point in time, I’d recommend sqlmesh over dbt and it’s not even close.
+- https://twitter.com/neelesh_salian/status/1783585925093830733
+- I think it's similar to Airflow vs. Dagster. One brings more to the table but not enough "yet" to warrant an expensive migration for most companies.
+  - However one difference here is that dbt Labs practically gave up on the open-source project, unlike Astronomer + Airflow community.
+- our dbt adapter is pretty good which means you can run your dbt project on sqlmesh without having to do an expensive migration. we’re always looking to improve it to reduce the friction.
 
 - ## 最近在计划一个全新的 #OpenDAL 子项目：oay，OpenDAL Gateway，允许用户使用最熟悉的 API 来访问不同的存储后端。
 - https://twitter.com/AFutureD/status/1648685933330599936

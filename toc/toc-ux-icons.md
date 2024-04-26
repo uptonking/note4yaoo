@@ -162,8 +162,10 @@ modified: 2021-05-06T09:58:23.803Z
 # brand-icons
 - https://github.com/pheralb/svgl /MIT/202312/ts/svelte
   - https://svgl.vercel.app/
+  - https://svgl.app/
   - most popular SaaS logos in SVG format, with lightning-fast search
   - Built with @sveltejs & @tailwindcss
+  - All svgs provides the link to the product or company that owns it, please contact them if you are going to use their logo. If you are the owner of an svg and do not want it to appear here, please create an issue on Github.
 # font icons
 - catalog
   - https://getbootstrap.com/docs/4.0/extend/icons/

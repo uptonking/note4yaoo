@@ -759,7 +759,21 @@ modified: 2023-08-29T10:13:31.070Z
 # disccuss-git-usage/cli
 - ## 
 
-- ## 
+- ## git rebase 是干什么用的，可以在master 分支使用嘛？squash merge 又是做什么的，有什么缺点？
+- https://twitter.com/nextify2024/status/1783071318013059135
+- 我通常的做法非常简单，如果本地branch还没有push到remote，用git rebase把自己的branch移至main前，否则就git merge
+- rebase在本地多个commits合并成一个commit 这样提交到合作分支上，就是一次。很容易维护个人的提交。撤销，cherry pick都很方便。
+
+- 只用rebase不用merge，本地开自己的开发分支，这条分支永远不会push。提交代码前切到远程分支，pull，然后cherry pick本地开发分支，有冲突这个时候要自己解决，然后无痛push。再switch回自己本地开发分支，rebase一下开发分支。
+
+- rebase 可以保持主分支干净，并且保留了在其他分支最后一个提交的信息
+  - squash 可以保持主分支干净，但是最后一个提交是命令执行人，而不是其他分支的真实提交人
+  - 我用rebase，一定要先合并主分支，推送的时候一定加上 --force-with-lease
+
+- merge commit也有好处。同样是解决冲突，merge就一次。rebase 恶心的地方在于，根据新分支上提交的commit数量，你有可能要多次解决冲突，没记错的话rebase会给每个commit给rebase一下。
+
+- 
+- 
 
 - ## git log searcher, as a webapp. Took me 1 hr to assemble with clj-git + clojure's datafy/nav + hyperfiddle datagrid + @ElectricClojure .
 - https://twitter.com/dustingetz/status/1773035945379484041

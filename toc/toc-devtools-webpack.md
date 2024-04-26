@@ -13,15 +13,22 @@ modified: 2023-12-26T19:10:48.719Z
 
 # plugins
 
-- https://github.com/godaddy/radpack /js
+- https://github.com/godaddy/radpack /MIT/202312/js
   - Radpack fuses the best of both worlds by taking advantage of build-time bundling, with graph-based run-time loading to prevent wasteful waterfalls.
+  - Bundlers like Webpack do a great job at providing a toolset needed to deliver an optimal out-of-the-box delivery solution for your end-users. 
+  - Most loaders on the other hand, are focused on delivering only the requested assets, as they are needed. 
+  - Radpack fuses the best of both worlds by taking advantage of build-time bundling, with graph-based run-time loading.
 
 ## webpack-rewrite
 
-- https://github.com/JinJieTan/mini-webpack
+- https://github.com/JinJieTan/mini-webpack /201909/js
   - 本文会先介绍webpack的打包流程，运行原理，然后去实现一个简单的webpack
+  - 识别入口文件，逐级递归识别依赖，构建依赖图谱，将代码转化成AST抽象语法树，把AST抽象语法树变成浏览器可以识别的代码， 然后输出
 
-- https://github.com/yangyfeng/mypack
+- https://github.com/romanticu/simple_webpack /201904/js
+  - [理解webpack原理，手写一个100行的webpack - 知乎](https://zhuanlan.zhihu.com/p/58151131)
+
+- https://github.com/yangyfeng/mypack /202012/js
   - 0、读取webpack.config.js
   - 1、解析文件依赖
   - 2、替换require为__webpack_require__
@@ -41,7 +48,7 @@ modified: 2023-12-26T19:10:48.719Z
   - The goal is to transform Javascript source files into a browser compatible format (Babel.js), minify them (uglify.js) and then bundle them for optimized use in the browser
 
 - webpack
-  - https://github.com/dykily/simple_webpack /js
+  - https://github.com/dykily/simple_webpack /201904/js
   - https://github.com/gracehui88/HMR
   - https://github.com/pmmmwh/react-refresh-webpack-plugin
 - https://github.com/jgraph/drawio

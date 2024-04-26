@@ -19,19 +19,33 @@ modified: 2020-07-14T11:58:47.593Z
 
 ## [Fiber架构的心智模型](https://react.iamkasong.com/process/fiber-mental.html)
 
-- 代数效应能够将副作用（例子中为请求图片数量）从函数逻辑中分离，使函数关注点保持纯粹。
+- 代数效应是函数式编程中的一个概念，用于将副作用从函数调用中分离。
+  - 代数效应能够将副作用（例子中为请求图片数量）从函数逻辑中分离，使函数关注点保持纯粹。
+
 - 从React15到React16，协调器（Reconciler）重构的一大目的是：将老的同步更新的架构变为异步可中断更新。
-- 异步可中断更新可以理解为：更新在执行过程中可能会被打断（浏览器时间分片用尽或有更高优任务插队），当可以继续执行时恢复之前执行的中间状态。
+  - 异步可中断更新可以理解为：更新在执行过程中可能会被打断（浏览器时间分片用尽或有更高优任务插队），当可以继续执行时恢复之前执行的中间状态。
 
 - 其实，浏览器原生就支持类似的实现，这就是Generator。
-- 但是**Generator的一些缺陷使React团队放弃了他**：
+- 🐛 但是**Generator的一些缺陷使React团队放弃了他**：
   - 类似async，Generator也是传染性的，使用了Generator则上下文的其他函数也需要作出改变。这样心智负担比较重。
   - Generator执行的中间状态是上下文关联的。
-- 只考虑“单一优先级任务的中断与继续”情况下Generator可以很好的实现异步可中断更新。
-
-- 但是当我们考虑“高优先级任务插队”的情况，如果此时已经完成doExpensiveWorkA与doExpensiveWorkB计算出x与y。
-  - 如果通过全局变量保存之前执行的中间状态，又会引入新的复杂度。
+    - 每当浏览器有空闲时间都会依次执行其中一个doExpensiveWork，当时间用尽则会中断，当再次恢复时会从中断位置继续执行。
+    - 只考虑“单一优先级任务的中断与继续”情况下Generator可以很好的实现异步可中断更新。
+    - 但是当我们考虑“高优先级任务插队”的情况，如果此时已经完成doExpensiveWorkA与doExpensiveWorkB计算出x与y。此时B组件接收到一个高优更新，由于Generator执行的中间状态是上下文关联的，所以计算y时无法复用之前已经计算出的x，需要重新计算。
+    - 如果通过全局变量保存之前执行的中间状态，又会引入新的复杂度。
 - 基于这些原因，React没有采用Generator实现协调器。
+  - [Fiber Principles: Contributing To Fiber · facebook/react _201610](https://github.com/facebook/react/issues/7942)
+
+```JS
+function* doWork(A, B, C) {
+  var x = doExpensiveWorkA(A);
+  yield;
+  var y = x + doExpensiveWorkB(B);
+  yield;
+  var z = y + doExpensiveWorkC(C);
+  return z;
+}
+```
 
 - 每个任务更新单元为React Element对应的Fiber节点。
 
@@ -60,7 +74,7 @@ modified: 2020-07-14T11:58:47.593Z
 
 - https://twitter.com/acdlite/status/978696799757086720
   - So much of React's architecture is based on stuff game developers figured out decades ago.
-  - Like double buffering. React has a current tree and a work-in-progress tree. When the WIP tree is finished rendering, we swap. The WIP becomes current.
+  - 💡 Like double buffering. React has a current tree and a work-in-progress tree. When the WIP tree is finished rendering, we swap. The WIP becomes current.
   - Is it true that the entire WIP tree is rebuilt on every component render call?
     - No, we reuse the parts that don’t change
   - Interesting. The caveat about having two buffers, could structural sharing help with that on low memory devices or would that strategy itself use too much memory?
@@ -217,6 +231,17 @@ modified: 2020-07-14T11:58:47.593Z
   - Iterator返回一次，断点就会变更为下一个，这样的话等你渲染完，还怎么返回hook断点来异步更新。
   - 而Fiber是链表上的节点，组件可以记录当前执行位置用于后续返回。
   - React保持组件纯度和副作用隔离一部分原因是为了SSR。
+
+## [谈谈对React Fiber架构的理解 - Kelen _202111](https://www.kelen.cc/posts/react-fiber-algorithm)
+
+- Stack Reconciler 在渲染和更新过程，使用递归来遍历。
+  - 由于依赖于内置调用栈，当协调工作开始执行，就会一直执行下去，直到协调工作结束，整个过程无法中断。
+  - 而js线程和渲染线程互斥，随着应用规模增大，如果在协调算法耗时过长，就会导致应用卡顿，掉帧，影响用户体验。
+
+- 为了可以实现运行时可中断，恢复，停止等操作，React Fiber 底层协调算法引入的一个新的数据结构（链表），基于 Fiber 新的协调算法叫做 Fiber Reconciler 。
+  - Fiber Reconciler 将组件的更新任务分解为更小的任务单元，赋予不同的优先级，根据任务的重要性来安排其执行顺序，可以更加高效处理更新任务，实现可中断，可恢复，避免占用 JS 线程导致渲染卡顿。
+
+- 这里重点说明，`return，sibling，child` 指针三者的关系
 # dev
 - The Fiber architecture can solve blocking (and a host of other problems) because Fiber made it possible to split reconciliation and rendering to the DOM into two separate phases.
   - Phase 1 is called Render/Reconciliation.

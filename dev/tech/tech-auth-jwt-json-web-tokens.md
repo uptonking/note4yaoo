@@ -214,6 +214,42 @@ HMACSHA256(
 # discuss
 - ## 
 
+- ## 
+
+- ## 权限验证时你更倾向使用 JWT 还是基于 Cookie 的验证方式，可以分享下原因吗？
+- https://twitter.com/nextify2024/status/1782786516403831079
+- Cookie，因为 JWT 在复杂场景也要做中心化，比如做 forbidden list。而且 JWT 无法做到 session 级别管理。
+  - 有些场景，比如安全系统通知用户登录异常，需要剔除所有的 login session，JWT 只有两种办法：基于 fingerprint 追踪 OR payload 添加 id（这又违背初心了）。 
+  - 当然如果是简单场景，随便选。
+
+- cookie，jwt其实也放cookie里面了，一般大型项目是需要多个模块和用户中心脱耦的，否则做秒杀的业务会灭了全站
+
+- 我cookie存jwt阁下又该如何应对
+  - 企业应用基本都用服务端存储状态的方式，这样可以实现很多变态的和登录账户相关的控制，比如：踢人，同一账号是否允许同时登录，多设备多客户端登录等等精细控制。
+  - JWT客户端存状态和身份信息的话扩展性会更好，登录状态身份鉴权永远不会成为性能瓶颈。
+  - 总之，还得是看需求，脱离场景谈架构都是耍流氓。
+
+- jwt，分布式友好，与系统更解耦，无状态以及更灵活，session的话服务端要存状态比较麻烦，然后其实jwt一般也是放cookie里的
+  - 我渗透测试过几百个项目，jwt 70%以上是单独字段，即便有些会同时放在cookie里，也不验证（删掉cookie不影响登陆认证
+
+- 都有，jwt无法解决及时撤销权限的问题，所以id型token也会有，纯粹使用idtoken将会给授权服务造成很大的压力，所以cookie也会用于自身系统，jwt和oidc只是补充OAuth不是最终解
+  - Jwt有平台扩展性。除了web还可以在小程序，app里用。
+  - jwt是token么，jwt最主要的特点是携带了用户信息不需要去数据库查询吧，但是jwt解码也会对服务器产生压力的
+
+- JWT 好处是标准化，存储下会话ID和不变主项信息是可以的
+
+- JSON Web Token 做手机程式或者中国特色小程序 / 快应用有明显优势，而 Web 环境还是 session / cookie 更有优势。 也可以把 JSON Web Token 存在 Cookie 里，还能存点别的。与此同时，JSON Web Token 跨端也很灵活。 安全的登录校验，JSON Web Token 不输给任何。
+
+- 我觉得可以JWT带userId和epoch，先不管epoch让它登录成功，反正业务还是要查数据库的，查的时候发现epoch小于数据库记录值就返回错误，然后最敏感的业务肯定还是需要二次验证（无论是用户名密码还是SMS/passkey）
+
+- 如果需要注销 token 这一功能，则必须使用 cookies，否则用 jwt。
+
+- 浏览器环境看担不担心XSS吧。较真的话那就是服务端写Secure+HttpOnly Cookie + 另外的CSRF Token。
+
+- 
+- 
+- 
+
 - ## 🤼🏻 Please stop using middleware to protect your routes
 - https://twitter.com/pilcrowonpaper/status/1774251864743449019
   - I see middleware and wrappers as different things. One's a library level abstraction while one's an application/dev level

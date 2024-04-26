@@ -289,3 +289,7 @@ $if($gt(%totaldiscs%,1),%discnumber%-,)$if($and(%albumartist%,%tracknumber%),$nu
   - 20240127: 100? = 房租858 + 日用品
   - 总计 12140 - 950 = 8050
   - > 新工作新城市预计 1500
+
+- 王安迪
+  - andywangkingluckii@outlook.com
+  - AnDy.20080313

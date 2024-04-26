@@ -197,6 +197,35 @@ modified: 2023-04-19T07:30:34.872Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Bin Packing Algorithm for "Small File" Issue in Lakehouses.
+- https://twitter.com/Dipankartnt/status/1781168361545589151
+  - Small File problem is one of the critical problems in a data lake that impacts query performance when reading files using compute engines.
+  - The problem occurs when writing data in smaller chunks
+
+- One classic example is streaming workloads
+  - Engines like Flink ingest continuous data streams into data lake table formats like @apachehudi .
+  - This would involve writing continuous, high frequency small batches of data to the lake, leading to the creation of many small files.
+
+- With too many small files, the query performance can be hurt significantly as there is an I/O cost every single time to open, read & close these small files.
+  - With too many small files, the query performance can be hurt significantly as there is an I/O cost every single time to open, read & close these small files.
+
+- All of the 3 open table format (Apache Hudi, Iceberg & Delta Lake) uses the "Bin-packing" algorithm to deal with small files.
+  - It is an optimization problem where items of different sizes must be packed into a finite number of bins, in a way that minimizes the number of bins used
+
+- How the formats implement bin-packing, could be a bit different but the idea is the same.
+  - Hudi is one such format that *automatically* manages file sizes, eliminating the need for users to manually maintain tables.
+
+- During ingestion, Hudi allows you to automatically adjusts file sizes using configs:
+  - Max File
+  - Small File size
+  - Insert Split size
+- Let’s say the Max File Size is 120 MB & Small File is 100 MB, Hudi ingests new data to each file during ingestion to max up that limit of 120 MB
+  - This brings all the file sizes to the optimum one. Important to note that this process is followed during every ingestion to ensure there are no small files in the Hudi tables
+
 - ## Everything you ever wanted to know about data catalogs in @ApacheFlink SQL
 - https://twitter.com/Decodableco/status/1759992559353430415
   - [Catalogs in Flink SQL—Hands On](https://www.decodable.co/blog/catalogs-in-flink-sql-hands-on)
@@ -217,11 +246,11 @@ modified: 2023-04-19T07:30:34.872Z
 
 - ## In ascending order of importance for Data Engineering:
 - https://twitter.com/Ubunta/status/1718275186074730997
-  01. Data Format
-  02. Mutability (Mutable vs. Immutable Data)
-  03. Logging Mechanisms
-  04. Infrastructure Management
-  05. Rapid Data Access with Governance
+  01.   Data Format
+  02.   Mutability (Mutable vs. Immutable Data)
+  03.   Logging Mechanisms
+  04.   Infrastructure Management
+  05.   Rapid Data Access with Governance
   - Each has become an industry in itself now
 
 - ## nice talk about Umbra: A Disk-Based System with In-Memory Performance, 

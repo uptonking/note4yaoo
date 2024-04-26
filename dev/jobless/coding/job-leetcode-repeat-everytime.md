@@ -76,9 +76,9 @@ function fibonacciRecursive(n, cache = []) {
 ```JS
 /**
  * * 两数之和。
- * * 思路：用映射表存储 [元素值，元素索引]，然后求差找元素
  * 给定整数数组nums和整数目标值target，在该数组中找出和为目标值target的那两个整数，并返回它们的下标
  * 假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。返回顺序任意
+ * * 思路：用映射表存储 [元素值，元素索引]，然后求差找元素
  * https://leetcode-cn.com/problems/two-sum/
  * https://github.com/sisterAn/JavaScript-Algorithms/issues/4
  */

@@ -15,7 +15,7 @@ modified: 2024-01-02T07:53:38.401Z
 - 同时支持browser和nodejs的打包方式参考
   - 打包到node可基于tsc/babel，打包到browser可基于bundler
   - 还可用browserify将cjs代码直接转换到browser环境
-  - 前端demo测试项目可先watch某个或某些lib的output，再start测试项目
+  - 前端demo测试项目热加载可先watch某个或某些lib的output，再start测试项目
   - webpack
     - https://github.com/seald/nedb/blob/master/webpack.config.js /源码js默认可直接在nodejs使用，browser单独打包
     - https://github.com/fergiemcdowall/search-index/blob/master/webpack.config.js /js
