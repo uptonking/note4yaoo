@@ -15,11 +15,20 @@ modified: 2024-04-23T06:43:12.988Z
 
 ## 技术栈
 
-* 熟练掌握 React/Redux/Mobx 的原理和生态，能够快速开发组件库、web/h5 app，了解Nextjs、Vue的开发
+* 熟练掌握 React/Redux/Mobx/JS/CSS/HTML 的原理和生态，能够快速开发组件库、Web/H5应用，了解Nextjs、Vue的开发
 * 熟悉 Slate/Quill/ProseMirror 的原理和富文本编辑器的研发，了解基于OT/CRDT的协作算法及开发
-* 熟悉 Nodejs 的CRUD，了解Strapi CMS的原理，能快速开发内容管理、用户权限、低代码平台
+* 熟悉 Nodejs 和 PostgreSQL/SQLite 的CRUD，了解Strapi CMS的原理，能够快速开发内容管理、用户权限、低代码平台
 * 熟练使用 JS/TS，了解 Java、Python
 * 对编辑器和表格领域的技术仍具有很高的热情，还会继续投入精力
+
+## 工作及教育经历
+
+* 个人项目 CRDT/Noseditor编辑器/StrapiCMS &nbsp; &nbsp; 2022.09~2024.04 &emsp; 全栈工程师 
+* 投光编辑器 Affine协同办公  &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &nbsp; &nbsp; 2021.10~2022.07 &emsp; 全栈工程师(偏前端) 
+* 个人项目 React/Dashboard/Knowledgebase  &emsp; 2019.12~2021.08 &emsp;   前端工程师(偏React) 
+* 湖北地信科技 实习+工作 &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &nbsp; 2015.09~2019.10 &emsp; GIS地图研发工程师 
+* 武汉大学 硕士&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &nbsp; 2015.09~2017.07 &emsp; 测绘工程 
+* 武汉大学 本科&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &nbsp; 2011.09~2015.07 &emsp; 资源环境与城乡规划管理 
 
 ## 项目经历
 
@@ -40,7 +49,7 @@ modified: 2024-04-23T06:43:12.988Z
    - 维护基于CKEditor的投光编辑器，开发学术版相关功能，包括数学公式、BibTeX参考文献等，并交付业务项目
    - 参与新产品Affine编辑器的研发，负责富文本模块，开发了图片、工具条、评论相关功能，交付demo帮助公司拿到融资
 
-5. Materials 资料库 - 2021.05~2021.09 
+5. Materials 资料库/知识库 - 2021.05~2021.09 
    * 基于Markdown/MDX的在线文档资料库系统，对标语雀、飞书知识库
    * 基于ProseMirror实现了文档查看器，为实现文档编辑做好了准备，文档渲染到DOM后，会在右侧自动创建toc标题目录，监听滚动事件，在右侧高亮当前标题
 
@@ -51,13 +60,6 @@ modified: 2024-04-23T06:43:12.988Z
 7. 其他项目或玩具(详见 GitHub)
    * Prospect Garden Design 组件库 (2020.09～2021.01): themeable, design-token based design system
    * 其他玩具：tanstack-table，ag-grid, handsontable, electron, echarts
-
-## 工作及教育经历
-
-* 投光编辑器(Affine协同办公)  &emsp; 2021.10~2022.07 &emsp; &emsp; &emsp; &nbsp; &nbsp; 全栈工程师(偏前端/富文本编辑器)
-* 湖北地信科技 实习&emsp; &emsp; &emsp; &emsp; &nbsp; 2015.09~2017.10&emsp; &emsp; &emsp; &emsp; GIS地图研发工程师    
-* 武汉大学 硕士&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; 2015.09~2017.07&emsp; &emsp; &emsp; &emsp; 测绘工程     
-* 武汉大学 本科&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; 2011.09~2015.07&emsp; &emsp; &emsp; &emsp; 资源环境与城乡规划管理
 
 ## 项目展示
 

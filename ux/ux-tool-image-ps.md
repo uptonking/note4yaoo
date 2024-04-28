@@ -12,6 +12,7 @@ modified: 2021-04-08T09:19:36.626Z
 # svg
 - 在线编辑
   - https://www.svgviewer.dev/
+  - 这类工具已经很多了，不过这个还有点不一样，图标很全，中间可以直接编辑SVG 代码，以及做一些简单的操作（缩放，旋转，直接编辑源代码），右侧可以使用不同格式。
 # ps-ike
 - https://www.photopea.com/
 # pieces

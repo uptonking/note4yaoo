@@ -14,7 +14,10 @@ modified: 2021-01-08T17:13:53.965Z
 
 - ## 
 
-- ## 
+- ## 🆚️ An awesome website for comparing component syntax 
+- https://twitter.com/localhost_5173/status/1784255350805549247
+  - https://component-party.dev/
+- To reduce amount of line, you can also use v-text directive
 
 - ## 大佬提到飞冰 http://ice.work 了，同时又提到交给新同学负责后会好很多（之前是我负责），不确定是在喷飞冰还是在喷我（可能都是？）
 - https://twitter.com/imsobear/status/1763055473161535871
