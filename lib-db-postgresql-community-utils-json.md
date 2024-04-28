@@ -41,6 +41,17 @@ modified: 2024-03-01T09:19:11.669Z
 
 - If you need indexing capabilities for specific keys within your JSON data, JSONB is better suited for this purpose.
 - If you want to ensure strict data validation and enforcement of data types, JSONB allows you to define JSON schemas to some extent.
+# discuss-postgis
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Postgres is more than a relational database. The PostGIS extension turns Postgres into a geo database. 
+- https://twitter.com/denismagda/status/1783892446050504934
+  - @openstreetmap uses Postgres with PostGIS to let you use the map of the entire world for free
+
 # discuss
 - ## 
 

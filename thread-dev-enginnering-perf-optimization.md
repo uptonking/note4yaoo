@@ -39,6 +39,21 @@ modified: 2022-03-18T20:56:35.254Z
 
 - ## 
 
+- ## 
+
+- ## JSON parsing is nearly ALWAYS the final boss when fighting bottlenecks in web apps
+- https://twitter.com/wesleytodd/status/1783844714287972697
+- It’s not really the JSON that’s the issue… it’s dumping a crap ton of data over the wire *as* JSON, so the parsing step is the bottleneck. Do that with almost any interchange format & you’ll end up in the same place.
+- What would you suggest when fighting that boss in nodejs ?
+  - Find other ways to parse less json (and no not like the other person said with binary formats). There are tons of well known ways to cache and optimize network optimizations and avoid unnecessary json parsing.
+  - The best perf optimization is *always* remove the code. Remember that, no matter how fast you make the code, it is *always* slower than not running the code at all.
+- Do you have some links to read about the best ways to "optimize network operations" ?
+  - I dont have any. But a good place to start is just capturing a HAR file of your app and seeing how much data you are receiving over the wire. Look to reduce this, either via safe caching, slimming down response bodies, etc. Gotta measure it for it to improve!
+- Back in the early days of microservices popularity someone told me over half of their compute was spent parsing and serializing JSON.
+
+- ## 不是指数级的优化, 其实不用在意. 都是草台班子....
+- https://twitter.com/hylarucoder/status/1783777605805629600
+
 - ## Which latency numbers should a developer know?
 - https://twitter.com/Franc0Fernand0/status/1779853436604805379
   - I found a website where you can visualize how those numbers changed. 
@@ -68,9 +83,9 @@ modified: 2022-03-18T20:56:35.254Z
 
 - I've seen stuff like this, but I'm always curious, how is it actionable? With log statements, you'd be able to look back through the history, and see which things took the most out of your time budget
 - I'm using it like this:
-  01.   I play with my components.
-  02.   I take a note of which interactions cause the lag radar to show me some red.
-  03.   Lastly I turn on the profiler and see exactly what's going on.
+  01.    I play with my components.
+  02.    I take a note of which interactions cause the lag radar to show me some red.
+  03.    Lastly I turn on the profiler and see exactly what's going on.
   - The radar is good for knowing when to profile, it's not a replacement for it.
 
 - ## If importing an SVG is the best thing for you ergonomically, choose a solution that returns a URL for use with `<img>` , or extracts them into `<defs>` for use with `<use href="#">` .  

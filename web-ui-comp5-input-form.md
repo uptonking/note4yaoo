@@ -49,6 +49,16 @@ modified: 2021-07-28T20:11:24.350Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## TIL ElementInternals doesn't listen call `reportValidity()` when you submit a form, instead it just checks that you already have `setValidity()` called with an anchor attached. 
+- https://twitter.com/RogersKonnor/status/1783922512549609599
+  - If the anchor is invisible, it wont show the popup.
+  - `form.addEventListener("invalid", () => {}, true)` ; 
+  - Whats fascinating is you need to use event capturing to grab it the "invalid" event.
+
 - ##  `<select>` 标签里面可以塞一个 `<hr>` 作为选项分割线，不过只支持比较新的 Safari 17+ 和 Chrome 119+
 - https://twitter.com/hal__lee/status/1734180106476900846
 

@@ -76,10 +76,10 @@ function fibonacciRecursive(n, cache = []) {
 ```JS
 /**
  * * 两数之和。
- * 给定整数数组nums和整数目标值target，在该数组中找出和为目标值target的那两个整数，并返回它们的下标
+ * 给定整数数组nums和整数目标值target，在该数组中找出和为目标值target的那两个整数，并返回它们的下标索引。
  * 假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。返回顺序任意
- * * 思路：用映射表存储 [元素值，元素索引]，然后求差找元素
- * https://leetcode-cn.com/problems/two-sum/
+ * * 思路：用映射表存储 [元素值，元素索引]，然后求差找元素，再找索引
+ * https://leetcode.cn/problems/two-sum/
  * https://github.com/sisterAn/JavaScript-Algorithms/issues/4
  */
 
@@ -120,12 +120,12 @@ function twoSum2(nums, target) {
 ```js
 /**
  * * 三数之和
- * * 思路：先排序 + 双指针夹逼相遇。
- * 判断 nums 中是否存在三个元素 a，b，c ，请找出所有和为0且不重复的三元组。
- * https://leetcode-cn.com/problems/3sum/
+ * * 思路：先排序 + 遍历元素curr(寻找curr+next+last的和为target的情况) 双指针夹逼相遇
+ * 判断 nums 中是否存在三个元素 a，b，c ，请找出所有和为0且不重复的三元组。 答案中不可以包含重复的三元组。
+ * https://leetcode.cn/problems/3sum/
  * https://github.com/sisterAn/JavaScript-Algorithms/issues/31
  */
-function threeSum(nums, target) {
+function threeSum(nums, target=0) {
   nums.sort((a, b) => a - b);
 
   const ret = [];
@@ -145,11 +145,11 @@ function threeSum(nums, target) {
     while (second < last) {
       const sum = nums[i] + nums[second] + nums[last];
 
-      if (sum < 0) {
+      if (sum < target) {
         second++;
         continue;
       }
-      if (sum > 0) {
+      if (sum > target) {
         last--;
         continue;
       }

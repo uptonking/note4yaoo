@@ -15,11 +15,11 @@ modified: 2024-04-23T06:43:12.988Z
 
 ## 技术栈
 
-* 熟练掌握 React/Redux/Mobx 的原理和生态，能够快速开发组件库、前端应用，了解Nextjs、Vue的开发
+* 熟练掌握 React/Redux/Mobx 的原理和生态，能够快速开发组件库、web/h5 app，了解Nextjs、Vue的开发
 * 熟悉 Slate/Quill/ProseMirror 的原理和富文本编辑器的研发，了解基于OT/CRDT的协作算法及开发
 * 熟悉 Nodejs 的CRUD，了解Strapi CMS的原理，能快速开发内容管理、用户权限、低代码平台
 * 熟练使用 JS/TS，了解 Java、Python
-* 对编辑器领域的技术仍具有较高热情，还会继续投入精力
+* 对编辑器和表格领域的技术仍具有很高的热情，还会继续投入精力
 
 ## 项目经历
 

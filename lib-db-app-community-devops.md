@@ -75,6 +75,16 @@ modified: 2023-10-26T18:47:22.664Z
 
 - ## 
 
+- ## Every field being optional in Protobufs is actually the only scalable solution for schema migrations
+- https://twitter.com/ChShersh/status/1783873173190009168
+- Making a field required only means clients will fail the whole parsing operation. “required” should be enforced at the application layer, not at the transport layer.
+
+- It just moves the problem somewhere else. Bytes are always optional.
+  - At some point your code is going to need to assert the existence of a field (probably).
+  - If you don't do it in the schema, then you have to do it somewhere else.
+- protoc can’t generate the code that deals gracefully with missing required fields
+  - Alright I see the point. I'd argue the problem is protoc then, not the required field, but now I'm with you! Point being: The field is no less required, you just get better errors.
+
 - ## 我在探探当 PostgreSQL DBA时，10分钟故障弄不好奖金泡汤，再久Job没了
 - https://twitter.com/GobeUncleWang/status/1724677788811264261
   - 软件故障基本没有，数据库变更发布由我们自己在工作时间窗口内处理，更主要还是研发同事给力靠谱。有全局监控（https://demo.pigsty.cc），别说28分钟，2.8分钟都不用就够定位绝大多数故障根因了。
