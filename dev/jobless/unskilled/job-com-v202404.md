@@ -19,8 +19,79 @@ modified: 2024-04-23T15:38:13.307Z
 
 # 面试记录
 
-## 沃尔玛外包-failed
+# com-深圳君璟科技
+- [深圳君璟科技有限公司 - 天眼查](https://www.tianyancha.com/company/6147670320)
+  - 成立日期：2023-05-11
+  - 法定代表人：李镇
+  - 位于广东省深圳市，是一家以从事软件和信息技术服务业为主的企业
+  - [深圳君璟科技有限公司 - 爱企查](https://aiqicha.baidu.com/company_detail_43931763153659)
+- [海口君诺科技有限公司 - 天眼查](https://www.tianyancha.com/company/5621585281)
+  - 成立日期：2022-07-21
+  - 法定代表人：李镇
+  - [海口君诺科技有限公司 - 爱企查](https://aiqicha.baidu.com/company_detail_87619388628567)
 
+- [「君璟科技招聘」2024年君璟科技招聘信息-BOSS直聘](https://www.zhipin.com/gongsi/job/7c0df181113fa1ca1XN53967F1M~.html)
+
+- 面试
+- 第三方支付的接口容易变动，是完全自己实现，还是用的开源的
+
+- 
+- 
+- 
+
+# com-至简天成
+- 结果
+
+- 一面
+- showMeBug的代码编辑器是根据codesandbox的sandpack修改得到的吗
+  - 不是，根据codemirror自研
+- 协作基于codemirror内置？
+  - 协作基于yjs
+- 版本回放为什么不基于内置功能去做
+  - 基于rrweb实现很快
+- 代码内容是不是存在数据库的一个字段
+  - 待深入
+- daopass sdk 是纯前端的吗
+  - 是很薄的一层封装
+
+- 二面
+- 产品大类划分，与研发人力投入
+- 产品市场以tob为主，还是以toc为主
+- 新产品方向：为什么选择ai-agent，为什么不研发类似linear的issue管理系统，为什么不做招聘市场、在线会议
+- 研发人员的一般离职时间
+
+- 面试结果一拖再拖，已放弃
+
+## 简介
+
+- [深圳至简天成科技有限公司 - 天眼查](https://www.tianyancha.com/company/3202670111)
+  - 法定代表人：李亚飞
+  - 注册时间：2018-06-19
+  - 分公司: 上海、北京、杭州、广州
+  - [深圳至简天成科技有限公司 - 爱企查](https://aiqicha.baidu.com/company_detail_10142142014981)
+
+- 融资信息
+  - 2021-07-07	A轮	1亿元
+  - 2021-01-27	Pre-A轮	1000万元
+  - 2020-09-03	天使轮	数百万元
+
+- [1024paas.com](https://www.1024paas.com/)
+  - Create accessible Rapps with speed, modular and accessible component library that gives you the building blocks you need to build your Editor applications.
+  - 基础应用
+  - 分享协作
+  - 跟随模式
+  - 切换题目
+  - 测试用例
+  - 操作回放
+  - 编辑器配置
+  - [DaoPaaS API Options](https://www.1024paas.com/sdk/docs/index.html)
+    - 本文是DaoPaaS的一个简单使用示例。
+    - [主要流程 - 1024PaaS-租户业务接口](https://apifox.com/apidoc/shared-c0c0ebad-15b3-4605-896e-e39879fe6e47/doc-952073)
+
+- 创建实例
+  - dao = new DaoPaaS()
+  - dao.onMessage
+# com-沃尔玛外包-failed
 - 低代码实施工程师 base地: 福田区 偏前端(不需要搭建应用)、偏前端6年以上经验，至少两年以上React开发经验，技术型
   - VIJAYAN VENKATESHAN 邀请你加入沃飞书视频会议 会议主题：面试-金瑶 会议时间：4月24日 (明天) 14:00 - 14:30 (GMT+8) 会议 ID：309 167 225 会议链接：https://vc.feishu.cn/j/309167225
   - 沃尔玛这个低代码前端开发是在平台上进行二次开发的，是用明道云。
@@ -62,32 +133,4 @@ modified: 2024-04-23T15:38:13.307Z
 
 - webpack打包编译输出的原理
   - 识别入口文件，逐级递归识别依赖，构建依赖图谱，将代码转化成AST抽象语法树，把AST抽象语法树变成浏览器可以识别的代码， 然后输出
-# com-至简天成
-- 简介
-  - 成立于2018年6月，
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-
-- [1024paas.com](https://www.1024paas.com/)
-  - Create accessible Rapps with speed, modular and accessible component library that gives you the building blocks you need to build your Editor applications.
-  - 基础应用
-  - 分享协作
-  - 跟随模式
-  - 切换题目
-  - 测试用例
-  - 操作回放
-  - 编辑器配置
-  - [DaoPaaS API Options](https://www.1024paas.com/sdk/docs/index.html)
-    - 本文是DaoPaaS的一个简单使用示例。
-    - [主要流程 - 1024PaaS-租户业务接口](https://apifox.com/apidoc/shared-c0c0ebad-15b3-4605-896e-e39879fe6e47/doc-952073)
-
-- 创建实例
-  - dao = new DaoPaaS()
-  - dao.onMessage
 # more
