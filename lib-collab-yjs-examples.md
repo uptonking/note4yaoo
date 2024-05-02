@@ -206,9 +206,12 @@ modified: 2022-09-21T15:47:41.340Z
 - https://github.com/YousefED/reactive-crdt
   - It's built on top of Yjs, a proven, high performance CRDT implementation.
 
-- https://github.com/yjs/y-codemirror.next
+- https://github.com/yjs/y-codemirror.next /MIT/202403/js
   - https://demos.yjs.dev/codemirror/codemirror.html
   - Collaborative extensions for CodeMirror6
+  - This binding binds a `Y.Text` to a CodeMirror editor.
+  - Awareness: Render remote selection ranges and cursors - as a separate plugin
+  - Shared Undo/Redo (each client has its own undo-/redo-history) - as a separate plugin
 # collab-non-yjs
 - https://github.com/hypercore-protocol/hypercore /202211/js
   - a secure, distributed append-only log.

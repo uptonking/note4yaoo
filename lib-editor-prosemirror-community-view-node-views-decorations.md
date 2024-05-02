@@ -12,6 +12,36 @@ modified: 2022-09-05T02:20:41.366Z
 # discuss
 - ## 
 
+- ## [Show caret on readonly mode _201904](https://discuss.prosemirror.net/t/show-caret-on-readonly-mode/1896)
+- readonly mode sets `contenteditable` to `false` , which causes browsers to not show a cursor.
+
+- Is it possible to manage selection in readonly mode ?
+  - The editor does that to certain degree—it will notice range selections on the content and update its state.selection accordingly.
+
+- Is it possible to apply marks (bold, italic…) on a selection in readonly mode ?
+  - Yes, that should work.
+
+- On a readonly mode, do you think that i can display a blinking cursor and move it programatically using marks/nodes/…etc ? (just to give the impression that the user is editing)
+  - You should be able to use a widget decoration to do that.
+
+- ## [What does a read-only editor even mean? _201603](https://discuss.prosemirror.net/t/what-does-a-read-only-editor-even-mean/221)
+- Several people have asked for a read-only feature to ProseMirror. Today, I spent some time thinking about how this should work. My conclusion was that I have no idea how this should work, and that the different people asking for it probably have different ideas in mind. 
+- Here are some possible use cases:
+  - Simply show a document in a page, as plain content
+  - Show a document in a page in such a way that it looks exactly like it would look inside of a ProseMirror editor, but without any editor functionality.
+  - Have a regular editor, including menus and non-editing commands, but disallow all editing. Still allow updating the document through the API.
+  - Have a regular editor, but disallow some kinds of editing.
+- The top two should probably stay entirely outside of ProseMirror. 
+  - You can render the HTML of your document, and show that in your page, optionally applying ProseMirror’s stylesheets by wrapping it in a ProseMirror-content element.
+- The third one is unexpectedly hard to implement because distinguishing between user actions and API calls is not something you can easily do, since most user editing actions will go through API calls. 
+  - Also, for ProseMirror’s approach to managing DOM and selection to make any sense, contentEditable needs to be enabled, which means the browser will consider the content to be editable and give you cut and paste menu items, etc (even if we end up intercepting and discarding their effect).
+- I am not really interested in going down the road I went with CodeMirror, which is full of checks and hacks to suppress user editing in read-only mode. It makes the code ugly, and has led to a whole string of bugs where a case was missed and users would be able to edit read-only content in some cases.
+
+- The last case, disallowing only some kinds of edits, is kind of like the third, but even messier.
+
+- ## [Readonly mode (Peer Review) _201603](https://discuss.prosemirror.net/t/readonly-mode-peer-review/214)
+- Ranges are a better fit for annotation/comment style data than marks are (for example, if your annotated content spans blocks, or even differently marked up text, it’ll produce multiple separate marks, and it’s easy to end up with the marks being spread out over the document without any coherence(连贯性；一致性)).
+
 - ## [What is the best way to replace emojis with custom inline image format?](https://discuss.prosemirror.net/t/what-is-the-best-way-to-replace-emojis-with-custom-inline-image-format/2882)
 - The best way to figure out which regions a step replaced is to iterate over its step map (stepMap.forEach). You may also not need to invert and replay the steps—iterating over the new ranges (the stepmap’s ranges mapped forward over any further steps that come after them) and checking those for the pattern you’re interested in should make it possible to just directly patch only the parts of the document that need updating.
   - Have you considered just leaving them as plain-text emoji in the document, and having a plugin replace them with image widgets through decorations? Text seems to be a suitable format for representing emoji.

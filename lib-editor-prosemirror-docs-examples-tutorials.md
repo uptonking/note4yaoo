@@ -129,7 +129,7 @@ modified: 2022-09-05T03:48:18.133Z
 - The first thing we need is a way to track the commit history. 
   - An editor plugin works well for this, since it can observe changes as they come in. 
 
-## [Collaborative editing](https://prosemirror.net/examples/collab/#edit-Example)
+## 🔀 [Collaborative editing](https://prosemirror.net/examples/collab/#edit-Example)
 
 - The editor below talks to a simple server-side service to allow real-time collaborative editing.
 - The demo also (crudely) shows how ProseMirror can be used to implement something like out-of-line annotations. 

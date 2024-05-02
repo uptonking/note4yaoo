@@ -29,17 +29,19 @@ modified: 2023-11-30T06:56:24.809Z
 
 - ## 
 
-- ## [Possible performance enhancement for very long rows - v5 - discuss. CodeMirror](https://discuss.codemirror.net/t/possible-performance-enhancement-for-very-long-rows/4897)
-- Yes. And it’s not going to be implemented in version 5, since it would be complicated and invasive(侵袭的, 扩散的) to retrofit(更新；改型；改装).
+- ## ⚡️ [Possible performance enhancement for very long rows - v5 _202208](https://discuss.codemirror.net/t/possible-performance-enhancement-for-very-long-rows/4897)
+  - If one were to change this to use such a “windowing” solution to ultimately improve the performance, one would wrap every character into a div too. The one thing that makes this Codemirror such a perfect candidate for this solution is that it works with characters. Each character is roughly the same width (look at VS Code for instance) and height, and so calculations to achieve windowing would not be that expensive.
 
-- ## [Overlay scrollbars in CM6 - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/overlay-scrollbars-in-cm6/4644)
-  - Content in CM6 is virtualized so I’m not sure how third party scrollbars libraries would go.
+- Is something like this in Version 6?
+  - Yes. And it’s not going to be implemented in version 5, since it would be complicated and invasive(侵袭的, 扩散的) to retrofit(更新；改型；改装).
+
+- ## 🤔 [Overlay scrollbars in CM6 - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/overlay-scrollbars-in-cm6/4644)
+- Content in CM6 is virtualized so I’m not sure how third party scrollbars libraries would go.
 
 - ## [editor lines out of sync in merge view - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/editor-lines-out-of-sync-in-merge-view/7138)
 - Thanks, I managed to reproduce it now (it only showed up for me when I scrolled back up from the bottom). This patch overhauls how spacers are handled, and seems to help
 
-- ## how does codemirror stay so fast even on thousands of lines of code
-- https://twitter.com/RogersKonnor/status/1730043499850977383
+- ## [how does codemirror stay so fast even on thousands of lines of code _20231130](https://twitter.com/RogersKonnor/status/1730043499850977383)
   - TIL it actually virtualizes the viewable nodes. Well, that makes sense, also not looking forward to virtualized scrolling in `<light-editor>` ...
   - I'll probably have to find a way to virtualize the syntax highlighting for `<light-editor>` to not tank performance
 
@@ -50,7 +52,7 @@ modified: 2023-11-30T06:56:24.809Z
 
 - ## 
 
-- ## 📝🏘️ [Slate – A completely customizable framework for building rich text editors | Hacker News_202107](https://news.ycombinator.com/item?id=28000086)
+- ## 📝🏘️ [Slate – A completely customizable framework for building rich text editors | Hacker News _202107](https://news.ycombinator.com/item?id=28000086)
 - The recent changes to the API in 0.50 look good. The number of iteration passes really shows. Out of the available open source editor frameworks, 🆚️ Slate is probably most similar to Notion’s internal editor system. If I had to rebuild on a framework tomorrow, it’d be Slate or ProseMirror. Still if I used Slate it would be with the expectation that I’d end up owning an aging fork of a forgotten version at some point.
 - I've been using Slate heavily this year. I'm not a Slate developer, but I've read a lot of the source code, follow all the Github issues, etc., and I'm "owning an aging fork".
   - I ended up forking only the React part of Slate, which is officially a plugin, and massively rewriting it to support virtualized windowing, so we can work with very large possibly complicated to render documents. I also added fairly generic realtime collaboration support. This is currently used in https://cocalc.com for WYSIWYG editing of Markdown documents. I also have plans to extend my use of Slate with windowing to Jupyter notebooks and other document types.

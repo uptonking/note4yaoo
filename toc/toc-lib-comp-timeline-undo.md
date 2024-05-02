@@ -201,7 +201,7 @@ modified: 2023-11-24T18:41:26.906Z
 # diff
 - https://github.com/MrWangJustToDo/git-diff-view /MIT/202404/ts
   - https://mrwangjusttodo.github.io/git-diff-view/
-  - A Diff View component for React / Vue, just like Github
+  - A Diff View component for React/Vue, just like Github
   - core只依赖lowlight
   - https://github.com/wooorm/lowlight /MIT/202310/js
     - Virtual syntax highlighting for virtual DOMs and non-HTML things

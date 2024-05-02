@@ -92,15 +92,22 @@ modified: 2022-08-18T11:29:26.644Z
   - CodeStream helps dev teams discuss, review, and understand code. 
   - Discussing code is now as simple as commenting on a Google Doc — select the code and type your question.
 
-- https://github.com/vizhub-core/vizhub
-  - https://vizhub.community/
-  - Self Hosted CMS for Web-based Dataviz
-  - VizHub 2 has been used in Data Visualization Course 2018, Datavis 2020
+- https://github.com/vizhub-core/vzcode /MIT/202405/ts
+  - VZCode: Multiplayer Code Editor
+  - VZCode offers a multiplayer code editing environment that caters to a real-time collaborative development experience. It's the code editor component of VizHub, and can also be used independently from VizHub.
+  - Browser-based editing environment
+  - Real-time collaboration via LAN or using services like NGrok
+  - A known shortcoming of VZCode is that it does not (yet) watch for changes from the file system. VZCode assumes that no other programs are modifying the same files.
+  - You can also expose your VZCode instance publicly using a tunneling service such as NGrok.
+  - Auto-save, debounced after code changes
+  - https://github.com/vizhub-core/vizhub
+    - https://vizhub.community/
+    - Self Hosted CMS for Web-based Dataviz
+    - VizHub 2 has been used in Data Visualization Course 2018, Datavis 2020
     - iFrame-based code execution environment.
   - VizHub 3
     - possible to self-host your own instance
     - possible to extend the core with plugins
-  - https://github.com/vizhub-core/vzcode
 # collab
 - https://github.com/tanwarAalok/Code-Sync
   - A Realtime collaboration Code editor using codemirror5

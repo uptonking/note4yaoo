@@ -1,18 +1,17 @@
 ---
-title: lib-editor-codemirror-collab
-tags: [codemirror, collaboration, editor]
+title: lib-editor-codemirror-blog-collab
+tags: [blog, codemirror, collaboration]
 created: 2021-10-14T17:12:36.915Z
-modified: 2021-10-14T17:13:04.791Z
+modified: 2024-05-02T05:51:42.507Z
 ---
 
-# lib-editor-codemirror-collab
+# lib-editor-codemirror-blog-collab
 
 # guide
 
-
 # blogs
 
-## [Collaborative Editing in CodeMirror_202005](https://marijnhaverbeke.nl/blog/collaborative-editing-cm.html)
+## [Collaborative Editing in CodeMirror _202005](https://marijnhaverbeke.nl/blog/collaborative-editing-cm.html)
 
 - This post describes the considerations that came up in designing the document-change data structure and built-in collaborative editing feature in the upcoming version of CodeMirror 6
 - **the design I ended up with is a very boring non-distributed operational transformation**.
@@ -74,3 +73,4 @@ modified: 2021-10-14T17:13:04.791Z
 
 - This is a large part of the reason why I spent weeks researching CRDTs even though my document convergence needs are well covered by OT. 
   - If you have a more fine-grained way to address positions (specifically, one that can refer to deleted positions), and you define position mapping in terms of that, you do not have this problem.
+# more

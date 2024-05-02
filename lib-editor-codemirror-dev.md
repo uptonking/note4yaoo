@@ -10,17 +10,46 @@ modified: 2021-05-06T09:38:31.520Z
 # guide
 
 - pros
-  - ?
+  - MIT
+  - 官方支持collab, 基于ot算法
+  - v6实现了 virtualized-render
 
 - cons
   - ?
 
 - features
-  - ?
+  - Mobile Support: Use the platform's native selection and editing features on phones.
+  - Accessibility: Works well with screen readers and keyboard-only users
+  - Bidirectional Text: ltr, rtl
+  - Syntax Highlighting
+  - Line Numbers
+  - Autocompletion
+  - Code Folding
+  - Search/Replace
+  - Full Parsing
+  - Extension Interface
+  - Modularity
+  - Speed: Remains responsive even on huge documents and long lines
+  - Bracket Closing
+  - Linting
+  - Flexible Styling
+  - Theming
+  - Collaborative Editing
+  - Undo History
+  - Multiple Selections: Select and edit multiple ranges of the document at once
+  - Internationalization
 
 - who is using #codemirror6
   - observable-notebook
   - obsidian
+  - codesandbox
+  - codepen
+  - replit
+  - sourcegraph
+
+- 代码编辑器要点
+  - incremental syntax highlighting
+  - virtualized render
 
 - dev-xp
   - 在github页面，每行代码的行号是确定的，不会显示软换行
@@ -45,6 +74,11 @@ modified: 2021-05-06T09:38:31.520Z
 
 - resources
   - [Ace, CodeMirror, and Monaco: A Comparison of the Code Editors You Use in the Browser__202112](https://blog.replit.com/code-editors)
+# draft
+- features
+  - diff with magic-code-animation
+# dev
+
 # examples
 - https://github.com/MyoniM/mirror-code-react-js
   - https://mirror-code.web.app/
