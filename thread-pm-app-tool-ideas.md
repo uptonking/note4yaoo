@@ -56,6 +56,9 @@ modified: 2022-11-07T10:58:24.512Z
 
 - 数据整理
   - [2023各平台年终报告](https://www.yuque.com/paidaxin/dkopg8/gqpfgysdw0wiqwmh)
+
+- 公共数据的衍生产品
+  - 地铁线路图上添加 租房价格/美食, 再提供给第三方社交平台如知乎/小红书
 # 国内替代
 - algolia
   - MeiliSearch
