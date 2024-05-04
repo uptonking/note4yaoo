@@ -15,7 +15,26 @@ modified: 2022-12-31T20:13:33.307Z
   - [Node.js ES2015/ES6, ES2016 and ES2017 support](https://node.green/)
 # changelog
 
-## v22.0.0_202404
+## v
+
+## v22.0.0_20240424
+
+- ### v22.0.0_20240424
+  - [Node.js — Node v22.0.0 (Current)](https://nodejs.org/en/blog/release/v22.0.0)
+
+- Highlights include require()ing ESM graphs, WebSocket client, updates of the V8 JavaScript engine, and more
+- module: support require()ing synchronous ESM graphs 
+- 🚨 esm: drop support for import assertions
+- cli: implement `node --run` .
+- improve perf of `AbortSignal` creation
+- watch: mark as stable
+- enable WebSocket by default
+- stream: bump default highWaterMark
+- update V8 to 12.4.254.14
+- v8: enable maglev on supported architectures
+- fs: expose glob and globSync
+- fs: runtime deprecate `fs.Stats` constructor
+- stream: support typed arrays
 
 - ### v21.0.0_20231017
   - [Node.js 21 is now available! | Node.js](https://nodejs.org/en/blog/announcements/v21-release-announce)

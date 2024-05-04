@@ -18,11 +18,19 @@ modified: 2021-01-01T22:14:19.469Z
 - Old but gold tip for Chrome and Firefox: To select part of a hyperlinked text, hold `Alt` while click-dragging the cursor.
 # utils
 
+```shell
+npm cache clean --force
+# Remove both the global cache files and the local cache files of the current project
+yarn cache clean --all
+# Removes unreferenced packages from the store
+pnpm store prune
+```
+
 ```JS
 // 随机整数，在区间[0, N]之间，包含两端
 Math.round(Math.random() * 20)
 // [1,N]
-Math.round(Math.random() * (20-1))+1
+Math.round(Math.random() * (20 - 1)) + 1
 
 // 创建指定范围长度的数组
 

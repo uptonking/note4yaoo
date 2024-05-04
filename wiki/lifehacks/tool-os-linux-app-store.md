@@ -115,6 +115,13 @@ modified: 2023-06-22T07:22:04.591Z
   - [Umbrel — The ultimate home server and OS for self-hosting](https://umbrel.com/)
   - Use umbrelOS from your browser.
   - Run umbrelOS on Ubuntu or Debian on any hardware (or a VM on Mac or Windows) 
+
+- https://gitlab.gnome.org/GNOME/gnome-software /GPL/clang
+  - https://apps.gnome.org/Software/
+  - Software allows you to find and install new apps and system extensions and remove existing installed apps.
+  - A plugin system is used to access software from different sources.
+  - Plugins are provided for: debian/rpm/Flatpak/Snap
+  - Ratings and reviews using ODRS(GNOME Open Desktop Ratings).
 # discuss
 - ## 
 

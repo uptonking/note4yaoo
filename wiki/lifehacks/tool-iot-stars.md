@@ -663,3 +663,13 @@ N
   - /storage/emulated/0/Android/data/com.huami.watch.huamiwatchmanager/files/zepp/gpx/Zepp20220223231809.gpx
 
 - gpx
+# kitchen
+- 长虹迷你电煮锅
+  - 黄色, 1.5L
+
+- 长虹电水壶
+  - 白色, 2L
+
+- 
+- 
+- 

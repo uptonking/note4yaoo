@@ -289,10 +289,17 @@ sudo apt-get install -y libgstreamer1.0-0 gstreamer1.0-plugins-base gstreamer1.0
 
 ## upgrade-ubuntu
 
+- do-release-upgrade会卡在 installing snap firmware-updater
+  - 多等一会儿就会提示 System upgrade is complete.
+
 - [How to Upgrade Ubuntu 22.04 to 24.04 LTS: A Complete Guide - nixCraft](https://www.cyberciti.biz/faq/how-to-upgrade-from-ubuntu-22-04-lts-to-ubuntu-24-04-lts/)
   - sudo gedit /etc/update-manager/release-upgrades
   - 设置 Prompt=normal 
   - `sudo do-release-upgrade` 可先升级到 23.10， `sudo do-release-upgrade -d` 会提示未检测到新版本
+
+- [升级 ubuntu，从 18.04 到 22.04](https://www.cnblogs.com/violeshnv/p/18091996)
+  - `sudo do-release-upgrade -c` 检查新系统是否已经准备好了，-c 代表 check 也就是只检查，不实际进行更新
+  - sudo do-release-upgrade
 
 - [2 Ways to Upgrade Ubuntu 20.04 To Ubuntu 22.04 (Graphical & Terminal)](https://www.linuxbabe.com/ubuntu/upgrade-ubuntu-20-04-to-ubuntu-22-04)
 # desktop-gnome
@@ -402,6 +409,13 @@ sudo apt install -y  sqlite3 libsqlite3-dev sqlitebrowser
 ## guide
 
 ## os-starter
+
+- [图吧工具箱，是开源、免费、绿色、纯净的硬件检测工具合集](http://www.tbtool.cn/)
+
+- win 11 & pro
+  - https://www.microsoft.com/software-download/windows11
+
+- [Office 2021官方镜像下载安装激活一条龙](https://www.cnblogs.com/hushaojun/p/15967885.html)
 
 - pe安装系统需要鼠标，键盘操作太困难
   - 需要pe系统支持12代触摸板才可以

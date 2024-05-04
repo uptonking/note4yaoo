@@ -19,8 +19,8 @@ modified: 2021-01-01T22:26:57.773Z
 # usage
 - 查看各程序网络带宽占用
   - sudo apt-get install nethogs
-  - sudo nethogs  查看网速
-  - sudo nethogs -v 3   查看消耗总流量
+  - sudo nethogs         查看网速
+  - sudo nethogs -v 3    查看消耗总流量
   - https://github.com/GyulyVGC/sniffnet
     - Cross-platform application to comfortably monitor and analyse network traffic
 
@@ -35,13 +35,6 @@ modified: 2021-01-01T22:26:57.773Z
 # ubuntu-starter
 - ubuntu查看序列号（serial number）和产品型号（product number）
   - sudo dmidecode | less
-
-- [图吧工具箱，是开源、免费、绿色、纯净的硬件检测工具合集](http://www.tbtool.cn/)
-
-- win 11 & pro
-  - https://www.microsoft.com/software-download/windows11
-
-- [Office 2021官方镜像下载安装激活一条龙](https://www.cnblogs.com/hushaojun/p/15967885.html)
 # ubuntu-cons
 
 ## input-method
@@ -199,12 +192,12 @@ modified: 2021-01-01T22:26:57.773Z
   - 图形桌面环境。比如Gnome、KDE、Mate，用户直接接触是桌面环境，包括面板、桌面(Shell)、登陆管理器、窗口管理器、文件资源浏览器等，需要整个桌面环境都支持Wayland，而这些组件原本都严重依赖于Xorg，要切换，那相应的移植工作量可不是一点点
   - 硬件驱动。这里主要指显卡，在原有的Xorg架构中，显卡驱动通常由两部分组成：位于Xorg中DDX层的用户态驱动和位于内核的drm驱动，切换至Wayland后，看似不需要用户态驱动了，但其实由于绘图操作转由客户应用程序完成，用户态驱动仍然是需要的
 
-- ## [Mir 和 Wayland 等 X11 替代品，相比 X11 有哪些具体的优点？ - 知乎](https://www.zhihu.com/question/22052356)
+- ## 🆚️ [Mir 和 Wayland 等 X11 替代品，相比 X11 有哪些具体的优点？ - 知乎](https://www.zhihu.com/question/22052356)
 - X 系统非常复杂。而且这个复杂度的设计目的是为了灵活性而不是为了可靠性。所谓的灵活性就是可以提供很多策略：比如 Window Manager 可以更换，可以支持远端桌面。
 - X 系统的灵活性到了今天，很多都是屠龙之技。于是又不得不加上各种 hack。比如说，为了保持原来的标准，支持远端桌面的传统协议还要支持，同时为了显卡硬件加速，又加了一套平行的本地优化。整个系统最初的设计初衷已经被改得乱七八糟。
 - 因为 X 开发者的时间并没有像 BSD 或者 Linux 内核那样，始终集中在提高稳定性上，而是在做很多无用功 —— **先花大笔的 performance overhead 来实现一个过于灵活的 framework**，然后又再上面打补丁取消 performance overhead，同时还要保持向后兼容。这种悠久的历史，反而是稳定性的毒药。
 
-- 什么是over-designed，Xwindow就是典型的例子。很可惜Wayland也好不到哪儿去。
+- 🤔 什么是over-designed，Xwindow就是典型的例子。很可惜Wayland也好不到哪儿去。
 
 - ## [Boycott Wayland. It breaks everything!](https://gist.github.com/probonopd/9feb7c20257af5dd915e3a9f2d1f2277)
   - Wayland does not work properly on NVidia hardware?
