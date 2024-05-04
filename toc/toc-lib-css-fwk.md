@@ -149,7 +149,7 @@ modified: 2021-01-28T21:14:14.667Z
   - /9.2kStar/MIT/202006/css
   - 文档单页，文档也支持多页，基于pug实现
   - A minimalist CSS framework.
-- vanilla-framework /438Star/LGPLv3/202009/scss
+- vanilla-framework /438Star/LGPLv3/202009/scss/ubuntu
   - https://github.com/canonical-web-and-design/vanilla-framework
   - https://vanillaframework.io/
   - a simple extensible CSS framework, built using Sass

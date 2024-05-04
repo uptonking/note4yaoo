@@ -289,6 +289,11 @@ sudo apt-get install -y libgstreamer1.0-0 gstreamer1.0-plugins-base gstreamer1.0
 
 ## upgrade-ubuntu
 
+- [How to Upgrade Ubuntu 22.04 to 24.04 LTS: A Complete Guide - nixCraft](https://www.cyberciti.biz/faq/how-to-upgrade-from-ubuntu-22-04-lts-to-ubuntu-24-04-lts/)
+  - sudo gedit /etc/update-manager/release-upgrades
+  - 设置 Prompt=normal 
+  - `sudo do-release-upgrade` 可先升级到 23.10， `sudo do-release-upgrade -d` 会提示未检测到新版本
+
 - [2 Ways to Upgrade Ubuntu 20.04 To Ubuntu 22.04 (Graphical & Terminal)](https://www.linuxbabe.com/ubuntu/upgrade-ubuntu-20-04-to-ubuntu-22-04)
 # desktop-gnome
 - https://github.com/G-dH/overview-feature-pack
