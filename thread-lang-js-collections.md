@@ -16,7 +16,8 @@ modified: 2023-11-10T07:38:26.990Z
 
 - ## 
 
-- ## 
+- ## Learn about JavaScript array methods cheat sheet 
+- https://twitter.com/davidm_ml/status/1787056238196392392
 
 - ## i actually didn't knew that mutating while looping on a `forEach` would skip indexes
 - https://twitter.com/meijer_s/status/1676506116736397312

@@ -16,7 +16,10 @@ modified: 2021-05-18T19:33:51.768Z
 
 - ## 
 
-- ## 
+- ## 看了几个开源CV项目，发现Money is all you need。
+- https://twitter.com/JXQNHZr1yUAj5Be/status/1787114369534365909
+  - 因为它们根本没有优化，直接torch的Dataloader调了几个prefetch和num_worker参数。
+  - 但在我的电脑上只用这些参数效果不好，我之前的hack就是一次性堆进GPU里，但现在数据集大了就不行了，而且集群里也不知道到底什么配置，弄cache手动算大小也不方便
 
 - ## 📏 OpenRouter，它将所有 AI 模型统一为一个 API 接口，集中供应
 - https://twitter.com/JohnWmm/status/1769225457378152795

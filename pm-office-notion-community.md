@@ -370,8 +370,30 @@ modified: 2023-11-28T14:48:45.910Z
 - ## [Logseq 为什么用 clojure 写? - 知乎](https://www.zhihu.com/question/610034256)
 - 作者的高度决定了项目语言的选择。工程师选clojure没毛病
 
+# discuss-news-linear
+- ## 
+
+- ## 
+
+- ## Introducing the next evolution of projects in Linear. Close the gap between planning and building. _202405
+- https://twitter.com/linear/status/1786059513235177480
+- New in Linear Projects:
+  › New Project Overview page
+  › Collaborative, rich-text project descriptions
+  › Milestones with descriptions
+  › Turn text into issues and documents
+  › Attached views
+
 # discuss-news-notion
 - ## 
+
+- ## 
+
+- ## 
+
+- ## Notion 2.39: Getting back to the basics _202405
+- https://twitter.com/NotionHQ/status/1786157773673415061
+  - Many of you love Notion because of our rich feature set. But we've also heard your feedback. So, we did a little spring cleaning and tidied up the most used parts of the product
 
 - ## A story in 2 parts: Crop image, Mask image _202403
 - https://twitter.com/NotionHQ/status/1773739884077105516

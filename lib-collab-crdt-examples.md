@@ -1085,6 +1085,10 @@ modified: 2022-04-05T10:08:25.947Z
 - https://github.com/disordinary/crdt_tree
   - A CRDT String represented as a binary tree
   - Rather than the WOOT approach to CRDT (With Out Operational Transformations) in which every character has it's own ID this approach only splits the string as required for the CRDT operation.
+
+- https://github.com/mweidner037/git-rich-text /MIT/202404/ts
+  - Collaborative rich text editing over git, with conflict-free (GDocs-style) merging and cherry-picking.
+  - Made with list-positions / @list-positions/formatting, Quill, and Electron.
 # crdt-json
 - https://github.com/carlreinecken/legible-mergeable
   - basic JSON / Javascript Object CRDT

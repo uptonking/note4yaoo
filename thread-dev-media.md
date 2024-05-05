@@ -27,7 +27,28 @@ modified: 2023-04-12T08:40:44.109Z
 # discuss
 - ## 
 
-- ## 
+- ## [我们一群独立开发者，甚至还有大厂兼职人员，大家在卷infuse，突然出来一个网易，这领域有这么大市场吗？](https://twitter.com/okasupportgroup/status/1786774180291371430)
+  - 惊呆了，今天，完全看不懂，这领域一年收入能养活两个大厂员工吗？
+- 网易还有个 1KPlayer，感觉现在这个是一个分支
+  - 刚去看了1kplayer，似乎是刚收进网易的，不知道网易爸爸还能不能收了vidhub，求收购。
+- 先用着infuse，毕竟现在这个还是最强大的！而且我是apple tv
+
+- 这玩哟居然只在果区上架，还只有iOS端可用
+  - 官网有安卓
+  - 最重要的tvOS居然没有上
+
+- 腾讯已经彻底下架了qq影音
+  - 所以我对大厂搞这种项目不抱希望。迟早项目组完蛋就下架了。
+- 这些大厂就是先占领，做不做得好那又是一回事
+  - 战略意义
+- 谁做的好用谁的，这样竞争，才有好产品
+- 大厂不都这样，小众产品打磨的差不多他们都省的调研直接开发竞争，要钱有钱要资源有资源先把坑占了反正耗得起
+  - 然后如果收益不高可能就直接就扔了
+- 大厂的操行就是一个只要不快速盈利，过不了多久就直接取消项目了
+
+- 特意体验了一下，暂时只能导入阿里云盘和百度网盘的资源
+
+- 对于既有Apple TV又有Android TV的用户，强烈建议有双平台的产品。网易filmly目前貌似不支持NAS..
 
 - ## [视频制作软件 Wondershare Filmora | Kdenlive | Capcut 选择 - V2EX_202310](https://fast.v2ex.com/t/986902)
 - [DaVinci Resolve vs. Filmora vs. Kdenlive vs. Lightworks Comparison](https://sourceforge.net/software/compare/DaVinci-Resolve-vs-Filmora-vs-Kdenlive-vs-Lightworks/)

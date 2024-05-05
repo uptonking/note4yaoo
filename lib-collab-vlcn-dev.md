@@ -105,6 +105,25 @@ modified: 2023-06-03T14:43:26.987Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 
+
+- ## An interesting thing about generating query plans from a query builder is that you could put the developer in control of the plan. 
+- https://twitter.com/tantaman/status/1786871918487863521
+  - Eg if where is before join, evaluate it first. The first where seen for a table picks the index for that table. ‘Foo.where(..).join(..).where(..)’
+- the @convex_dev philosophy of "no query planners" leads to a different APIs for indexed queries vs unindexed queries along with very explicit queries in other ways
+  - Clever. Guide the dev to the right behavior by changing the api based on available indices.
+
+- Datomic is like this. Presumably(据推测; 大概), a good query planner picks the best plan though.
+  - I would focus more on how to define and maintain indexes rather than query planning. Most applications run the same queries over and over again which kind of defeats the purpose of the query planner.
+
+- Only downside to committing to that behavior explicitly is that it would make backwards compatibility annoying if anyone depends on it working that way. A `.hint(...)` method might be easier to maintain
+
+- 
+- 
+- 
+
 - ## 🌰📝 A user hacked together a proof of concept for rich text merging in vulcan / cr-sqlite._202303
 - https://discord.com/channels/989870439897653248/1084822114302967909/1084822114302967909
 - Thats really cool! Do they use a separate text-crdt encoded into a column, or have they built one in sqlite?

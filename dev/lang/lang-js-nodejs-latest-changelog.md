@@ -57,7 +57,7 @@ modified: 2022-12-31T20:13:33.307Z
 - Support for globs in the Node.js test runner
 - updates of the V8 JavaScript engine to 11.8, which is part of Chromium 118
 
-## v20.0.0_20230418
+## v20.0.0_20230418_特性不多可考虑v22
 
 - [v20.12.0_2024-03-26](https://nodejs.org/en/blog/release/v20.12.0)
   - implement `crypto.hash()`, 1.2-2x faster than the object-based `createHash()` for smaller inputs (<= 5MB) 
@@ -114,9 +114,9 @@ modified: 2022-12-31T20:13:33.307Z
   - events: allow safely adding listener to abortSignal 
   - fs, stream: initial Symbol.dispose and Symbol.asyncDispose support
   - net: add autoSelectFamily global getter and setter
-  - child_process: use addAbortListener 
+  - child_process: use `addAbortListener`; 
 
-- v18.17.0_20230718
+- [v18.17.0_20230718](https://nodejs.org/en/blog/release/v18.17.0)
   - comes with the latest version of the URL parser, Ada
   - Web Crypto API functions' arguments are now coerced and validated as per their WebIDL definitions 
     - This further improves interoperability with other implementations of Web Crypto API.

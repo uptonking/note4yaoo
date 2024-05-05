@@ -27,7 +27,10 @@ modified: 2021-08-28T11:49:05.730Z
 
 - ## 
 
-- ## 
+- ## Apisix looks pretty interesting. It builds on top of nginx and adds pretty much every feature you'd expect from a modern API gateway.
+- https://twitter.com/ohmypy/status/1786687116937707703
+  - And you can try it in the browser without installing anything!
+  - Also, you'll definitely love it if you're into Lua
 
 - ## it is interesting to watch how every project that adopts some form of simulation testing chooses to model the network using a completely different mental model (all equally valid)
 - https://twitter.com/AlexMillerDB/status/1764136495429107729

@@ -83,6 +83,17 @@ modified: 2023-11-07T16:47:11.499Z
 
 - ## 
 
+- ## 
+
+- ## This paper from 2022 was compelling. Right now, databases are separating storage and compute. 
+- https://twitter.com/reneeshah123/status/1785735682297901387
+  - In the future, databases may separate memory and compute
+
+- ## database forums are the craziest places on the internet
+- https://twitter.com/agarcia_me/status/1786080101802860865
+  - like bro what do you mean "create table is 1000x slower when the table name starts with a number, in v3.43.3 compared to  v3.45.2." how did you even notice that
+- It wouldn't be too hard for certain CI/CD approaches to catch.  Pull the repo, compile, performance test, freak out when it takes 1000x as long.
+
 - ## pg里的 Function 与 Trigger 互相配合，能干好多事，之前要写多个API才能完成的事儿，现在一个就行了
 - https://twitter.com/wsygc/status/1777141917291311516
 - 我印象中应该尽量少用 db funcyions ，因为不容易编写测试。 我个人的实践是在编程语言里写逻辑，便于编写自动化测试

@@ -84,6 +84,15 @@ modified: 2023-10-28T13:38:46.522Z
 
 - ## 
 
+- ## 
+
+- ## Modern SQLite #1: STRICT Tables
+- https://twitter.com/ohmypy/status/1786733812346450422
+  - SQLite's type system is very flexible (some people even call SQLite the JavaScript of databases) — you can store any value in any column type (e.g. create an INTEGER column and store text values there, or a REAL with blob values).
+  - at some point the SQLite authors introduced STRICT tables. They check types the same way other DBMS do
+  - Even with strict tables, you can still explicitly declare a column as ANY — such columns can hold values of any type. So you can have the best of both worlds — strict type checking and type flexibility.
+- I wasn't aware of this but always validated data before sending it to SQLite so that I wasn't abusing the DB type system. 
+
 - ## 因为没有 network latency，SQLite 不需要优化 N+1 Query，但这玩意写入容易成为瓶颈...
 - https://twitter.com/Hooopo/status/1774372573222236582
 - 但凡 sql 场景，explain analyze 保命

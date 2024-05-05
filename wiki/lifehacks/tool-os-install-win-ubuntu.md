@@ -146,7 +146,11 @@ modified: 2023-04-11T02:24:25.572Z
 - nvm 国内安装
   - https://gitee.com/RubyKids/nvm-cn
   - bash -c "$(curl -fsSL https://gitee.com/RubyKids/nvm-cn/raw/master/install.sh)"
-  - nvm alias default 18.13.0
+
+```shell
+nvm alias default 18.13.0
+npm i -g yarn pnpm rimraf serve http-server tsm npm-run-all prettier
+```
 
 - pip 安装的包在用户目录
   - /home/yaoo/.local/lib/python3.10/site-packages/meson-0.63.2.dist-info/

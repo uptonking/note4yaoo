@@ -48,7 +48,12 @@ npm run develop
 # issues-not-yet-vip
 - ## 
 
-- ## 
+- ## [fix: document service find many pagination ](https://github.com/strapi/strapi/pull/20178)
+  - We allowed page & pageSize parameters on find Many, but those params were not properly converted to the offset & limit database params.
+  - This PR proposes a fix, which always converts pagination params to offset and limit, so both page & pagesize, and start & limit works on the findMany method, or any other that accepts pagination.
+
+- 
+- 
 
 - ## 🔌 [Disable Email and Upload plugins _202208](https://forum.strapi.io/t/disable-email-and-upload-plugins/21128/2)
 - I would like to know this as well. I tried setting `enabled: false` for the upload plugin in my plugins.js, but it does not do the trick.

@@ -328,6 +328,11 @@ betterdiscordctl -i flatpak install
 
 ## 050
 
+## 0505
+
+- Resolve error: Can't resolve '@datalking/codemirror-react'
+  - 方法是移除package.json中的`exports`字段
+
 ## 0502
 
 # dev-04-strapi-preview-versions-&-yjs-quill-codebase

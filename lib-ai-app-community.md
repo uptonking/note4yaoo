@@ -22,6 +22,24 @@ modified: 2023-02-08T06:56:54.945Z
   5. Operations
   6. Structured data
 
+# discuss-cv
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 大家做CV一般怎么读入图片的？譬如像FFHQ和ImageNet这样的超大数据集。感觉V100/A100这样有I/O瓶颈。。。
+- https://twitter.com/JXQNHZr1yUAj5Be/status/1786553056273768723
+- 各个dataloader不是有现成的机制，一个prefetch基本解决了。imagenet也不咋大啊…
+  - prefetch没解决啊，CPU做图片解码和编码赶不上V100/A100过模型的速度，我自己测过torch dataloader，num_worker和prefetch，效果都不行。
+- 可以简单看一下tensorflow的dataloader的机制。就是先把数据处理完。你搞一个生产消费模型用消息队列供应量也行，生产端加特效。
+
+- 对于硬盘到内存，存数据用 webdataset 或者 h5py，充分利用顺序读写优势
+  - 对于内存到显存，直接传uint8 tensor到gpu，再在gpu做augmentation
+  - 内存够大建议放数据集到shm或者设计一个shared memory，把整个或者部分数据集放进去。
+
+- 把jpg数据直接load到dynamic memory，然后硬件解码到gpu memory，一个producer，consumer队列，jpg解码和gpu独立开来
 # discuss
 - ## 
 
