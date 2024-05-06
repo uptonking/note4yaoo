@@ -328,6 +328,9 @@ betterdiscordctl -i flatpak install
 
 ## 050
 
+## 0506
+
+
 ## 0505
 
 - Resolve error: Can't resolve '@datalking/codemirror-react'

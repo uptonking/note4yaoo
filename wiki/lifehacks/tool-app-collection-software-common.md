@@ -99,6 +99,9 @@ modified: 2022-11-07T10:26:22.510Z
   - netdisk
   - emarket
 # im-wechat
+- https://github.com/lovechoudoufu/wechat_for_linux
+  - 安装包丢在Releases中了，一共三个版本：wechat-beta_1.0.0.145_amd64.deb, wechat-beta_1.0.0.150_arm64.deb, wechat-beta_1.0.1.212_loongarch64.deb
+
 - [微信为什么不弄个文字转语音？ - 知乎](https://www.zhihu.com/question/607788362)
   - 这个功能已经出了，需要更新到版本。操作步骤：`我→设置→关怀模式→开启→打开“听文字消息”`开启后，点一下聊天中的文字消息就能听到了
 # search

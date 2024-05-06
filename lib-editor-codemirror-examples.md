@@ -17,6 +17,9 @@ modified: 2023-06-23T12:46:53.288Z
   - Expressive Code is an engine for presenting source code on the web, aiming to make your code easy to understand and visually stunning.
   - On top of accurate syntax highlighting powered by the same engine as VS Code, Expressive Code allows you to annotate code blocks using text markers, diff highlighting, code editor & terminal window frames, and more.
   - All annotations are based on a powerful plugin architecture 
+
+- https://github.com/exuanbo/codemirror-toolkit /MIT/202312/ts
+  - A batteries-included toolset for efficient development of CodeMirror 6 based editors (w/o React).
 # collab
 - https://github.com/yjs/y-codemirror.next /MIT/202403/js
   - https://demos.yjs.dev/codemirror/codemirror.html

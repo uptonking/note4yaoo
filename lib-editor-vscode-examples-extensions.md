@@ -73,7 +73,6 @@ modified: 2023-01-21T19:02:58.833Z
   - A VSCode toolbar and context menu extension
   - Modifies the VSCode toolbar and context menu to include a few useful commands
 
-
 - https://github.com/estruyf/vscode-front-matter /MIT/202312/ts
   - https://frontmatter.codes/
   - Front Matter is a CMS running straight in Visual Studio Code. 
@@ -103,4 +102,10 @@ modified: 2023-01-21T19:02:58.833Z
   - https://vscodethemes.com/
   - Search and preview themes from the Visual Studio Marketplace.
   - built with Remix and Cloudflare Workers.
+# ai
+- https://github.com/unit-mesh/auto-dev-vscode /apache2/202405/ts
+  - https://vscode.unitmesh.cc/
+  - [AutoDev for VSCode 预览版：精准 AI 编程提示词与编辑器的完美融合 - 知乎](https://zhuanlan.zhihu.com/p/696080970)
+  - 将 AutoDev for Intellij IDEA 平台的非凡开发者体验带到了 VSCode 平台。在 IDEA 版本中通过构建非常精准的提示词，以及与编辑器的完美融合， 以帮助开发者更好地编写代码。
+  - 设计理念示例：一键精准测试生成
 # more
