@@ -292,7 +292,11 @@ modified: 2023-10-26T19:04:00.318Z
 # discuss
 - ## 
 
-- ## 
+- ## Byzantine failures only come up in crypto conversations. Never in distributed databases or other distributed system projects. 
+- https://twitter.com/sunbains/status/1787376127708696928
+  - Non-crypto  seem to care only about fail-stop.
+- I don't think it's true that non-crypto distributed systems only care about fail-stop. Omission faults, authentication-detectable corruption, latency-related reorderings, and faults caused by failure recovery are typically considered.
+  - I omitted the  faults you mention only for brevity. I agree they are considered. The Red Panda article you posted also says that the fsync issue  is a small part of Byzantine failures and in my understanding is related to the point above.
 
 - ## 🤔❓ Modern distributed databases require scaling in two axis. Lots of small objects and small number of large objects.
 - https://twitter.com/sunbains/status/1780293307861737643

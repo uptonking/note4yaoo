@@ -168,6 +168,36 @@ modified: 2023-12-08T15:49:56.046Z
 # discuss-json
 - ## 
 
+- ## 
+
+- ## On-demand JSON: A better way to parse documents?
+- https://twitter.com/lemire/status/1787494558122574019
+  - JSON is a popular standard for data interchange on the Internet. 
+  - Ingesting JSON documents can be a performance bottleneck. 
+  - A popular parsing strategy consists in converting the input text into a tree-based data structure—sometimes called a Document Object Model or DOM. 
+  - We designed and implemented a novel JSON parsing interface—called On-Demand—that appears to the programmer like a conventional DOM-based approach. 
+  - However, the underlying implementation is a pointer iterating through the content, only materializing the results (objects, arrays, strings, numbers) lazily. 
+  - On recent commodity processors, an implementation of our approach provides superior performance in multiple benchmarks. 
+  - To ensure reproducibility, our work is freely available as open source software. 
+  - Several systems use On Demand: for example, Apache Doris, the Node.js JavaScript runtime, Milvus, and Velox.
+- StAX for JSON ?
+  -  No. That's not what this is. I invite you to check the paper out 
+
+- This sounds like it is sacrificing latency for throughput. What is the latency on this approach for any individual piece of data?
+  - It is not sacrificing latency.
+- “Only materializing the results lazily” sounds like sacrificing latency to me.
+  - Only doing the work that needs doing does not sacrifice latency, it improves latency. The benchmarks report the total time spent…
+- It improves initialization latency, but sacrifices fields access latency as you need to parse and create objects JIT instead of pre-parsing everything AOT and serving pre-built objects.
+
+- The fundamental question is why is JSON so popular when proto/flat buffers exist.
+  - Why is node popular on the backend when languages that isn't JS exist?
+
+- How about using binary format instead of JSON?
+  - It seems like a popular binary format protobuf may be slower to parse than json for comparable documents.
+- Better to use binary serialization without copying data.
+
+- There was a proposal by Joe Armstrong of Erlang fame to make a universal binary format which can be converted to text, somehow like how #UnrealEngine shows its UObjects as text when you diff them. Unfortunately he gave a talk in a conference about it and it never took off
+
 - ## On-demand JSON: A better way to parse documents?
 - https://twitter.com/lemire/status/1748361177359425556
   - Ingesting JSON documents can be a performance bottleneck. 

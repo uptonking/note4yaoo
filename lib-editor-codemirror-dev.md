@@ -39,12 +39,11 @@ modified: 2021-05-06T09:38:31.520Z
   - Multiple Selections: Select and edit multiple ranges of the document at once
   - Internationalization
 
-- who is using #codemirror6
-  - observable-notebook
-  - obsidian
-  - codesandbox
-  - codepen
+- who is using #codemirror
+  - observablehq-notebook, val-town
+  - codesandbox, codepen
   - replit
+  - obsidian
   - sourcegraph
 
 - 代码编辑器要点

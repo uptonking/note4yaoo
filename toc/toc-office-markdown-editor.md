@@ -77,12 +77,15 @@ modified: 2022-11-09T11:53:13.093Z
   - MDXEditor is a rich, client-side component that does not benefit from server-side rendering. To use it in your server components, you should use next/dynamic
   - 依赖lexical、codemirror6、radix-ui、hast、mdast、react-diff-view、react-hook-form
 
-- https://github.com/uiwjs/react-md-editor
+- https://github.com/uiwjs/react-md-editor /MIT/202403/ts
+  - https://uiwjs.github.io/react-md-editor
   - A simple markdown editor with preview, implemented with React.js and TypeScript.
-  - This is based on textarea encapsulation, so it does not depend on any modern code editors such as Acs, CodeMirror, Monaco etc.
-- https://github.com/uiwjs/react-markdown-editor
+  - This is based on `textarea` encapsulation, so it does not depend on any modern code editors such as Acs, CodeMirror, Monaco etc.
+  - 依赖rehype-prism-plus、@uiw/react-markdown-preview
+- https://github.com/uiwjs/react-markdown-editor /MIT/202404/ts
+  - https://uiwjs.github.io/react-markdown-editor
   - A markdown editor with preview, implemented with React.js and TypeScript.
-  - 依赖react-markdown、codemirror、highlight.js
+  - 依赖codemirror6、@uiw/react-markdown-preview、highlight.js
 
 - vditor /1.3kStar/MIT/202009
   - https://github.com/Vanessa219/vditor

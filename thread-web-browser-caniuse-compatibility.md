@@ -50,6 +50,13 @@ modified: 2021-07-29T11:15:44.100Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 每日 CSS 一小坑：用了 container 后所有 position: fixed 的后代的坐标都会相对于该元素而不是 viewport。类似的属性还有 transform
+- https://twitter.com/luinlee/status/1787325824661942741
+
 - ## View Transitions are now in Safari Tech Preview 191
 - https://twitter.com/dannymoerkerke/status/1773392919002525954
   - https://codepen.io/dannymoerkerke/pen/ExMEPaW

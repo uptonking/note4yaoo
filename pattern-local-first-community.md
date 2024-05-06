@@ -103,7 +103,10 @@ modified: 2023-09-13T20:24:41.516Z
 
 - ## 
 
-- ## 
+- ## "Distributed versus coordinated collaborative editing" has the same distinction as local-first and offline-first architectures.
+- https://twitter.com/evoluhq/status/1787513314269934014
+  - Local-first isn't (yet) for everyone, and it will not be in the next few years, at least. A lot of ephemeral data doesn't have to be stored forever. Storing data forever is expensive, as is E2E encryption. Having no central server is even more expensive.
+  - Long story short, local-first is expensive and should be used only for precious data.
 
 - ## 我很怀疑 local-first 软件在文件数量大了之后的易用性，如果不限制空间大小的话，对用户和服务商来说都是很大的负担，你能想象一个永远全量下载的云盘么
 - https://twitter.com/kk_shinkai/status/1768454538259001723

@@ -145,10 +145,10 @@ modified: 2022-10-02T20:51:30.444Z
   - https://github.com/DonaldY/ot.js-demo /202109
     - [ot.js demo解析，仅服务端](https://juejin.cn/post/7027113667107749918)
 
-- https://github.com/YingshanDeng/SharedPen  /js
+- https://github.com/YingshanDeng/SharedPen /MIT/201802/js/inactive
   - 包含了otjs源码和针对SharedPen的修改版，转换成了es6 class版
   - 关于扩展 ot.js 支持富文本属性，可以参考文件 TextAction.js 和 TextOperation.js
-  - A (web-based) rich-text real-time collaborative editor using CodeMirror and ot.js
+  - A (web-based) rich-text real-time collaborative editor using CodeMirror5 and ot.js
   - [SharedPen 之 Operational Transformation](http://objcer.com/2018/03/05/SharePen-Operational-Transformation/)
   - https://github.com/YingshanDeng/ot.js-demo
 

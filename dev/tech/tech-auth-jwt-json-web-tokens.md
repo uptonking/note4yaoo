@@ -216,7 +216,20 @@ HMACSHA256(
 
 - ## 
 
-- ## 权限验证时你更倾向使用 JWT 还是基于 Cookie 的验证方式，可以分享下原因吗？
+- ## 
+
+- ## 
+
+- ## 搞定鉴权系统，不再使用jwt，而是基于redis的session，前端存储在cookie，便于管理失效时间。
+- https://twitter.com/chenbimo/status/1787218708815024461
+- jwt确实有缺陷，实际应用中，你还是要从存储中查blacklist表。所以，反正都要查，不如直接读session。不过区别是session量比blacklist要大，blacklist能缓存session不太能。
+  - black list通常是在 refresh 的时候检查，access token 为满足效率和分布式不应该做这个操作，缺点是在 refresh 之前无法吊销，但是这个时间也不应该很长。
+- 不做分布式部署共享 session 数据是没有什么问题的。
+- cookie 存储就是一个 唯一 session id 而已，session 主要的数据还是在服务器中，redis 自带过期删除的，但是如果你使用内存存储你还需要手动管理。
+  - 嗯嗯，对，我就是准备用这个方案，这样对于管理来说，更加可控
+- 这也搞得太费劲了，随便搞个auth server，free quota都用不完。okta，auth0, cognito，firebase
+
+- ## 🆚️ 权限验证时你更倾向使用 JWT 还是基于 Cookie 的验证方式，可以分享下原因吗？
 - https://twitter.com/nextify2024/status/1782786516403831079
 - Cookie，因为 JWT 在复杂场景也要做中心化，比如做 forbidden list。而且 JWT 无法做到 session 级别管理。
   - 有些场景，比如安全系统通知用户登录异常，需要剔除所有的 login session，JWT 只有两种办法：基于 fingerprint 追踪 OR payload 添加 id（这又违背初心了）。 

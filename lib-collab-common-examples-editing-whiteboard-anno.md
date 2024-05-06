@@ -128,10 +128,15 @@ modified: 2022-11-07T17:36:22.236Z
   - Collaborative document editing using Markdown
   - 依赖tiptap.v2, yjs, @_ueberdosis/prosemirror-tables.v1.1.3, markdown-it、vue2、vuex3
 
-- https://github.com/munshkr/flok /GPLv3/202401/ts
+- https://github.com/munshkr/flok /GPLv3/202404/ts
   - https://flok.cc/
   - Web-based P2P collaborative editor for live coding sounds and images
   - Similar to Etherpad, but focused on code evaluation for livecoding.
+  - REPL plugins: allows user to locally evaluate code from interpreters (like Haskell, Ruby, Python, etc.)
+  - Web Plugins, for languages embedded in editor
+  - Use CodeMirror 6
+  - Use Yjs for collaborative editor
+  - nice to have Import external JS libraries dynamically, instead of bundling them with Flok
 
 - https://github.com/hivejs/hive /GPLv3/201608/js
   - https://github.com/hivejs/hive-core /GPLv2
@@ -158,11 +163,12 @@ modified: 2022-11-07T17:36:22.236Z
     - I’m working on a realtime data processing pipeline / event sourcing system lately called statecraft. Over the last few days I’ve added foundationdb backend support.
     - The current code also re-stores the whole text document with every edit, but this is just because I haven’t tuned it. 
 
-- https://github.com/Rishabh-malhotraa/caucus
+- https://github.com/Rishabh-malhotraa/caucus /MIT/202405/ts
+  - https://caucus.rishabhmalhotra.in/
   - Realtime Collaborate Editor with Embedded Compiler
   - 类似协作codepen
   - Built With React Material UI yjs Written in TypeScript
-  - 依赖knex、pg、yjs、codemirror5
+  - 依赖knex、pg、yjs、codemirror5、mui.v4
 
 - mute /96Star/AGPLv3/202302/ts/rxjs
   - https://github.com/coast-team/mute

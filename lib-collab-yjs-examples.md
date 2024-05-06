@@ -132,12 +132,12 @@ modified: 2022-09-21T15:47:41.340Z
   - All the rooms are publicly accessible (only protected by a random unique id, thanks nanoid)
   - Since a room is basically a shared document, any user could eventually rewrite the whole document by writing their own client application
 
-- https://github.com/Rishabh-malhotraa/caucus
+- https://github.com/Rishabh-malhotraa/caucus /MIT/202405/ts
+  - https://caucus.rishabhmalhotra.in/
   - Realtime Collaborate Editor with Embedded Compiler
   - 类似协作codepen
   - Built With React Material UI yjs Written in TypeScript
-  - 依赖knex、pg、yjs、codemirror5
-
+  - 依赖knex、pg、yjs、codemirror5、mui.v4
 - https://github.com/Motif-Archived/yfs /MIT/202301/ts/inactive
   - https://yfs.vercel.app/
   - Synchronize text files between the browser and the file system using the File System Access API and Yjs.
