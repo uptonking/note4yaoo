@@ -93,12 +93,17 @@ modified: 2022-05-15T18:35:39.272Z
   - May I know whether you have hosted the endpoint on some domain or did you have to write all the functions in an HTML file ?
   - i hosted in my web app and simply just render that uri with webview. after all that it's just a website with a lexical editor in it
 
-- ## Lexical is now open-source (web text-editor)
-- https://news.ycombinator.com/item?id=31017943
+- ## 🚀 [Lexical is now open-source (web text-editor) _202204](https://news.ycombinator.com/item?id=31017943)
+- Why write Lexical over using something like ProseMirror or CodeMirror 6? 
+  - Lexical is a different take compared to ProseMirror and CodeMirror. 
+  - We took a lot of inspiration from them, but we felt that having a source-of-truth that wasn't the DOM was a better approach. 
+  - We also looked to improve on code-size, performance and accessibility, which are often forced on the user to implement in those editors.
+
+- Could you elaborate on what you mean by "source-of-truth that wasn't the DOM" and "performance and accessibility"?
 - They are intentionally similar, ProseMirror has some great ideas. 
-- We tried to tackle those ideas from an extensible angle where nodes themselves, which form part of a tree, are the core to everything in Lexical. 
-- There are no "marks", instead you just use properties on the given nodes and treat them in an immutable sense. 
-- Nodes also present a set of createDOM/updateDOM methods, that allow you to define you DOM element, and its properties, to be passed back to Lexical's DOM reconciler.
+  - We tried to tackle those ideas from an extensible angle where nodes themselves, which form part of a tree, are the core to everything in Lexical. 
+  - There are no "marks", instead you just use properties on the given nodes and treat them in an immutable sense. 
+  - Nodes also present a set of createDOM/updateDOM methods, that allow you to define you DOM element, and its properties, to be passed back to Lexical's DOM reconciler.
 - You can imagine the EditorState in Lexical as not only the source-of-truth for your editor's data, but also the virtual DOM for your view. 
   - Lexical diff's both and applies delta based on dirty node logic to improve performance. 
   - Furthermore, any mutations to the DOM outside of Lexical and reverted back to Lexical's EditorState – to preserver source of truth.

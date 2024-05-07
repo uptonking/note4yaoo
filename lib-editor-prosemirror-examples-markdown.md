@@ -19,6 +19,8 @@ modified: 2023-11-28T14:42:16.738Z
   - A plugin-driven WYSIWYG markdown Editor, inspired by Typora, built on top of prosemirror and remark.
   - 不同于其他prosemirror项目，可配置支持的markdown特性
   - ⚠️️breaking: @milkdown/core@4.4.0(date202107) migrate from markdown-it to remark
+  - https://github.com/Milkdown/vscode
+    - vscode-ext: Edit markdown in a WYSIWYG way, powered by milkdown
   - https://github.com/alexwkleung/Iris
     - Iris is a WYSIWYG Markdown note-taking app. 
     - Created with TypeScript and Tauri.
@@ -64,6 +66,11 @@ modified: 2023-11-28T14:42:16.738Z
   - Built-in ChatGpt
   - based on tauri and has a volume of less than 10MB and better performance.
   - uses the remirror editor
+
+
+- https://github.com/microvoid/marktion /MIT/202403/ts
+  - https://marktion.io/
+  - a WYSIWYG Markdown editor based on ProseMirror, dedicated to enhancing the editing experience of Markdown.
 # markdown-apps
 - tiny-write /4Star/NALic/202208/ts/prosemirror/markdown-it/web版+桌面版
   - https://github.com/dennis84/tiny-write

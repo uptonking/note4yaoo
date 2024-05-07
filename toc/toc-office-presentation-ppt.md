@@ -130,10 +130,12 @@ modified: 2021-04-30T20:14:17.669Z
   - https://freeshow.app/
   - free software with a user-friendly interface that offers powerful features for creating and editing slideshows. 
 
-- https://github.com/shikijs/shiki-magic-move /MIT/202403/ts/vue
+- https://github.com/shikijs/shiki-magic-move /MIT/202405/ts
   - https://shiki-magic-move.netlify.app/
   - Smoothly animated code blocks with Shiki.
-  - 依赖shiki、vue3
+  - The package provides framework-agnostic core and renderer and framework wrappers for Vue and React.
+  - 依赖diff-match-patch-es、ohash
+  - [The Magic in Shiki Magic Move _202403](https://antfu.me/posts/shiki-magic-move)
 # ppt-editor
 - PPTist /apache2 > AGPLv3/202401/ts/vue
   - https://github.com/pipipi-pikachu/PPTist

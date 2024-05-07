@@ -10,7 +10,6 @@ modified: 2021-08-16T06:56:58.774Z
 # guide
 
 # discuss
-
 - ## 
 
 - ## 
@@ -20,10 +19,10 @@ modified: 2021-08-16T06:56:58.774Z
 - ## Alright, you pay for a Pro version of a WYSIWYG, what would you expect to be supported?
 - https://twitter.com/RogersKonnor/status/1610404340837105666
 - Image galleries. Edit as html/markdown. Works on mobile. Extend-your-own-element things. Liquid templating/variables.
-- I would pay for a trix-compatible editor supporting all header levels, images, and inserting pre-defined liquid-based values like {{ http://recipient.name }}. Basically let me define a list and allow auto completion from it after typing “{“ That would be a killer feature.
+- I would pay for a trix-compatible editor supporting all header levels, images, and inserting pre-defined liquid-based values like `{{ http://recipient.name }}` . Basically let me define a list and allow auto completion from it after typing “{“ That would be a killer feature.
 - the basic formatting things plus tables, image upload, emoji picker, autocomplete hooks (e.g. @-mentions), theming system, versioning/undo, event hooks
 
-- ## Markdown has built in support for showing differences. Very useful for showing required code changes.
+- ## 💡⌛️ Markdown has built in support for showing differences. Very useful for showing required code changes.
 - https://twitter.com/SCooperDev/status/1534872488269824000
   - markdown 的code block语法高亮显示diff
 
@@ -37,15 +36,6 @@ modified: 2021-08-16T06:56:58.774Z
   - Notion 这么做了，新版的飞书也这么做了，除了性能上的考虑，还有其他的好处吗？目前发现的好处有：
   1. 可以实现类似 word 的分栏效果。
   2. 性能可能会好点？
-
-- ## Ace, CodeMirror, and Monaco: A Comparison of the Code Editors You Use in the Browser__202112
-- https://blog.replit.com/code-editors
-- In late 2018 Marijn announced a rewrite for CodeMirror to modernize the editor, CodeMirror version 6 with an excellent design doc. 
-- **One of the primary motivators for the rewrite was adding support for touch devices**. 
-- If you want a code editor that supports mobile, you should use CodeMirror 6. 
-  - Ace has not-bad support but does not come close, and Monaco is unusable on mobile.
-  - I'd go as far as saying that CodeMirror is probably suitable even for native applications as a webview component. 
-  - Most things in CodeMirror are serializable so you can interop with the webview from your native code.
 
 - ## It'd be neat if we could reference other files/lines of code in comments, and tooling would let you jump into and out of those links. Add `#135` at the end of a comment and you could jump to that line
 - https://twitter.com/jlongster/status/1437423113139101701

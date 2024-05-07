@@ -48,11 +48,18 @@ modified: 2021-05-06T09:38:31.520Z
   - overleaf
   - obsidian
   - sourcegraph
-  - more: tagspaces
+  - chrome-devtools
+  - more: tagspaces, hedgedoc
 
 - 代码编辑器要点
   - incremental syntax highlighting
   - virtualized render
+
+- code-editor vs text-editor
+  - syntax-highlighting
+  - auto-closing brackets
+  - indentation
+  - 行号
 
 - dev-xp
   - 在github页面，每行代码的行号是确定的，不会显示软换行
@@ -76,7 +83,6 @@ modified: 2021-05-06T09:38:31.520Z
     - .CodeMirror-gutters
 
 - resources
-  - [Ace, CodeMirror, and Monaco: A Comparison of the Code Editors You Use in the Browser _202112](https://blog.replit.com/code-editors)
 # draft
 - features
   - diff with magic-code-animation

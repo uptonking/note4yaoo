@@ -267,10 +267,11 @@ modified: 2022-11-08T19:04:00.289Z
   - Firepad requires Firebase in order to sync and store data. 
   - rich text editing with CodeMirror5 and code editing via Ace-c9.
 
-- SunEditor /1kStar/MIT/202210/js/核心代码不多
+- SunEditor /1kStar/MIT/202404/js/核心代码不多
   - https://github.com/JiHong88/SunEditor
   - http://suneditor.com/sample/index.html
   - Pure javscript based WYSIWYG web editor, with no dependencies
+  - Can use CodeMirror, KaTeX.
 
 - mobiledoc-kit /1.5kStar/MIT/202209/ts
   - https://github.com/bustle/mobiledoc-kit

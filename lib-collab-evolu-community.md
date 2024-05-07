@@ -55,7 +55,11 @@ modified: 2023-05-14T04:32:30.696Z
 # discuss
 - ## 
 
-- ## 
+- ## Effect reminds me of Rx. I used Rx a lot but I will not use Effect.
+- https://twitter.com/gregberge_/status/1787693851320496596
+  - Coupling your code to libraries like that is actually not a good idea. Universal JavaScript is better in the long term.
+- Agree. I'm not writing software that requires fear of uncaught errors, and Effect.ts doesn't seem to allow me to write TS with the usual syntax, so I'll use Rust instead, which has a built in Pattern Match.
+- i forget who made the take, but they said treat Effect as a different language. i agree with that take
 
 - ## evolu Switch to the official sqlite3 WASM client with a friendly MIT license
 - https://twitter.com/evoluhq/status/1622708143670042625

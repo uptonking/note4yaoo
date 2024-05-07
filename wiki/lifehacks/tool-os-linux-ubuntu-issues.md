@@ -39,7 +39,10 @@ modified: 2022-08-30T22:47:08.515Z
 
 ## 
 
-## 
+## [Touchpad stopped working 20.04 - Ask Ubuntu](https://askubuntu.com/questions/1235067/touchpad-stopped-working-20-04)
+
+- Well, all I did was to get to the “settings” and enabled the touchpad which surprisingly was disabled. 
+  - This touchpad issue happened on my ASUS N550JK and I think after I did “dist-upgrade” and my Linux distribution was upgraded.
 
 ## [The following packages have been kept back](https://askubuntu.com/questions/1399734)
 

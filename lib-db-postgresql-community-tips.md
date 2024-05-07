@@ -75,7 +75,13 @@ modified: 2023-10-28T17:52:17.942Z
 
 - ## 
 
-- ## 
+- ## 最近两天优化了下线上的数据库查询，成功把 pg 的 cpu 利用率从接近 100% 降到 30% 上下，pg 的磁盘 iops 从 1500 上下优化到 30 左右，慢查询也少了很多。
+- https://twitter.com/kk1984_/status/1787774865443057748
+  - 我之前没做过这方面的优化，只是对数据库有些基本的认识，所以这一路上对我来说还是挺有趣的，分享一些我学到的经验抛砖引玉
+  - 如果之前对怎么优化 pg 的查询性能没有经验的话，官方的 Examining Index Usage 跟 Performance Tips 文档值得一读
+  - `EXPLAIN (ANALYZE, VERBOSE) <statement>` 对于理解 pg 怎么执行 SQL 很有用，不过设置了 ANALYZE 后，语句会真的执行
+  - pg 不支持在查询的时候手动指定用什么索引，只能交给 optimizer 去选择。因此如果想知道在生产环境下 pg 会怎么查询，就得提供同等或相似规模的数据。目前我的做法是利用 AWS RDS 的 restore to point-in-time 功能 ，把当前的数据复制到另一个实例上，然后在这个新实例上做实验。
+  - 怎么优化索引得根据 EXPLAIN 给出的 query plan 来。
 
 - ## How much has everyone's favorite open source query optimizer, PostgreSQL, improved over the last 10 years? Turns out, quite a lot!
 - https://twitter.com/RyanMarcus/status/1778835012927774732

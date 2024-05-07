@@ -29,6 +29,8 @@ modified: 2023-06-23T12:46:53.288Z
     - A JupyterLab extension providing the Monaco editor.
   - [Explore monaco editor integration · jupyterlab/jupyterlab](https://github.com/jupyterlab/jupyterlab/issues/135)
   - [Update Codemirror to version 6 _202106](https://github.com/jupyterlab/jupyterlab/issues/10370)
+  - https://github.com/jupyter/nbdime
+    - Tools for diffing and merging of Jupyter notebooks.
 
 - https://github.com/sourcegraph/openctx/tree/main/client/codemirror /apache2/202405/ts
   - https://openctx.org/playground
@@ -49,12 +51,42 @@ modified: 2023-06-23T12:46:53.288Z
   - Autocomplete for HTMLTextAreaElement and more
   - 支持 textarea/contenteditable/codemirror
 
+- https://github.com/minditor/minditor /MIT/202403/ts
+  - https://minditor.dev/
+  - A plug-and-play, highly customizable block-based rich text editor. 
+  - Supports block/inlineBlock development with any framework, including React/Vue.
+  - 依赖codemirror6、eventemitter3、thememirror、@uppy/xhr-upload
+  - Minditor 目前由 Zhenyu Hou 独立开发和维护
+
 - https://github.com/replit/codemirror-minimap /202401/ts
   - Minimap extension for Codemirror 6
 
 - https://github.com/replit/codemirror-interact /202403/ts
   - https://replit.com/@util/codemirror-interact
   - A CodeMirror extension that lets you interact with different values (clicking, dragging, etc).
+
+- https://github.com/amasin76/code-motion /202404/ts
+  - https://code-motion.vercel.app/
+  - animate code changes, and export it as a video
+  - An effortless video code diff-animation tool for visualizing code changes
+  - 依赖@uiw/react-codemirror、radix-ui、framer-motion、shiki、html2canvas、zustand、react-resizable-panels
+  - canvas-based video
+  - Export video to webm
+  - in-browser code editor
+  - We're planning to move to an offline-first approach, which means there will be no servers involved, and all your work will be stored in your local storage.
+
+- https://github.com/meowtec/diffani /202307/ts
+  - https://diffani.co/
+  - Diff code and render to animation video
+  - 依赖codemirror6、jsdom、prismjs、zustand、vite
+
+- https://github.com/shikijs/shiki-magic-move /MIT/202405/ts
+  - https://shiki-magic-move.netlify.app/
+  - Smoothly animated code blocks with Shiki.
+  - The package provides framework-agnostic core and renderer and framework wrappers for Vue and React.
+  - 依赖diff-match-patch-es、ohash
+  - 不依赖codemirror
+  - [The Magic in Shiki Magic Move _202403](https://antfu.me/posts/shiki-magic-move)
 
 - https://github.com/val-town/codemirror-codeium /ISC/202404/ts
   - https://val-town.github.io/codemirror-codeium/
@@ -165,6 +197,23 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/glacambre/editor-adapter /MIT/202211/ts/inactive
   - A library to interact with in-browser JS editors like Ace, CodeMirror or Monaco
+
+- https://github.com/vizhub-core/vzcode /MIT/202405/ts
+  - VZCode: Multiplayer Code Editor
+  - VZCode offers a multiplayer code editing environment that caters to a real-time collaborative development experience. It's the code editor component of VizHub, and can also be used independently from VizHub.
+  - Browser-based editing environment
+  - Real-time collaboration via LAN or using services like NGrok
+  - A known shortcoming of VZCode is that it does not (yet) watch for changes from the file system. VZCode assumes that no other programs are modifying the same files.
+  - You can also expose your VZCode instance publicly using a tunneling service such as NGrok.
+  - Auto-save, debounced after code changes
+  - https://github.com/vizhub-core/vizhub
+    - https://vizhub.community/
+    - Self Hosted CMS for Web-based Dataviz
+    - VizHub 2 has been used in Data Visualization Course 2018, Datavis 2020
+    - iFrame-based code execution environment.
+  - VizHub 3
+    - possible to self-host your own instance
+    - possible to extend the core with plugins
 
 - https://github.com/expressive-code/expressive-code /MIT/202405/ts/不依赖codemirror
   - https://expressive-code.com/
@@ -277,10 +326,19 @@ modified: 2023-06-23T12:46:53.288Z
   - https://touchifyapp.github.io/svelte-codemirror-editor/
   - A svelte component to create a CodeMirror 6 editor.
 
-- https://github.com/PotatoGroup/code-editor /202402/ts
-  - a JS code editor based on codeMirror, support code autoCompletion, which can be used with @astii/expression-sandbox
+- https://github.com/PotatoGroup/code-editor /ISC/202402/ts
+  - a JS code editor based on codeMirror6, support code autoCompletion, which can be used with @astii/expression-sandbox
+  - 依赖react
   - https://github.com/PotatoGroup/expression-sandbox /202309/ts
     - a simple sandbox for excute js expression
+
+- https://github.com/mdx-editor/editor /MIT/202405/ts/lexical
+  - https://mdxeditor.dev/
+  - https://mdxeditor.dev/editor/demo
+  - open-source React component that allows users to author markdown documents naturally
+  - MDXEditor is a rich, client-side component that does not benefit from server-side rendering. To use it in your server components, you should use next/dynamic
+  - 依赖lexical、codemirror6、radix-ui、hast、mdast、react-diff-view、react-hook-form
+  - https://github.com/michioxd/mdxeditor-modified
 
 - https://github.com/mcnuttandrew/prong /MIT/202310/ts
   - https://prong-editor.netlify.app/
@@ -288,8 +346,22 @@ modified: 2023-06-23T12:46:53.288Z
   - These editors allow for things like drag-and-drop interactions, inline-interactive spreadsheets, in-situ recommenders and sparklines, and many more elements that would require significant engineering effort to create otherwise.
   - 依赖codemirror6、react-markdown、jsonc-parser
 
+- Starboard Notebook /889Star/MPLv2/202206/ts
+  - https://github.com/gzuidhof/starboard-notebook
+  - https://unpkg.com/starboard-notebook/dist/index.html
+  - https://starboard.gg/
+  - In-browser literal notebook runtime used in Starboard.
+  - 编辑器已分离，基于rich-markdown-editor和prosemirror
+  - 前端基于lit
+
 - https://github.com/lhlyu/pure-editor /MIT/202302/ts/inactive
   - a pure editor developed using codemirror6
+
+- https://github.com/adobe/brackets /MIT/202003/js/archived
+  - http://brackets.io/
+  - a modern open-source code editor for HTML, CSS and JavaScript that's built in HTML, CSS and JavaScript.
+  - [Notes on CodeMirror · adobe/brackets Wiki](https://github.com/adobe/brackets/wiki/Notes-on-CodeMirror)
+    - Brackets uses a fork of CodeMirror as a submodule.
 # collab
 - https://github.com/BjornTheProgrammer/react-codemirror-collab-sockets /MIT/202306/ts/inactive
   - An example of a react-codemirror implementation of the codemirror collab package, with cursor and multiple document examples.
@@ -328,6 +400,11 @@ modified: 2023-06-23T12:46:53.288Z
   - This binding binds a `Y.Text` to a CodeMirror editor.
   - Awareness: Render remote selection ranges and cursors - as a separate plugin
   - Shared Undo/Redo (each client has its own undo-/redo-history) - as a separate plugin
+
+- https://github.com/lirsacc/siren-chorus /202311/ts/inactive
+  - Multiplayer mermaid diagram editor
+  - WebRTC based collaborative MermaidJS editor.
+  - 依赖codemirror6、mermaid、y-codemirror.next
 
 - https://github.com/MyoniM/mirror-code-react-js /202210/js/inactive
   - https://mirror-code.web.app/
@@ -458,6 +535,17 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/codedownio/codemirror-compose-change /MIT/202306/ts/inactive
   - Compose two sequential CodeMirror changes
 
+- https://github.com/MrWangJustToDo/git-diff-view /MIT/202404/ts
+  - https://mrwangjusttodo.github.io/git-diff-view/
+  - 🆚️ A Diff View component for React/Vue, just like Github
+  - core只依赖lowlight, 不依赖codemirror
+  - https://github.com/wooorm/lowlight /MIT/202310/js
+    - Virtual syntax highlighting for virtual DOMs and non-HTML things
+    - This package uses `highlight.js` for syntax highlighting and outputs objects (ASTs) instead of a string of HTML.
+    - This package is useful when you want to perform syntax highlighting in a place where serialized HTML wouldn’t work or wouldn’t work well. 
+    - You can use the similar `refractor` if you want to use `Prism` grammars instead. 
+    - If you’re looking for a really good (but rather heavy) alternative, use `starry-night`.
+
 ## lint
 
 - https://github.com/KELs7/contracting-linting-codemirror6 /202405/ts
@@ -520,14 +608,6 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/replit/Codemirror-CSS-color-picker /202310/ts
   - https://replit.com/@util/Codemirror-CSS-color-picker
   - extension that adds a color picker input next to CSS color values.
-
-- https://github.com/asadm/codemirror-copilot /MIT/202401/ts
-  - https://copilot.asadmemon.com/
-  - CodeMirror extension to add GPT autocompletion like GitHub's Copilot
-
-- https://github.com/useScriba/useScriba /202308/ts
-  - https://docs.usescriba.com/
-  - Highly customizable AI completion plugin for web-based code editors.
 
 - https://github.com/saminzadeh/codemirror-extension-inline-suggestion /MIT/202402/ts
   - A CodeMirror extension to display inline suggestions
@@ -629,6 +709,9 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/wikimedia/mediawiki-extensions-CodeMirror /202405/js
   - MediaWiki extension CodeMirror
+- https://github.com/bhsd-harry/codemirror-mediawiki /GPLv2/202405/ts
+  - https://bhsd-harry.github.io/codemirror-mediawiki/
+  - Modified CodeMirror mode based on wikimedia/mediawiki-extensions-CodeMirror
 
 - https://github.com/BrianHung/tldraw-yjs /202402/ts
   - https://canvas-yjs.vercel.app/
@@ -693,6 +776,16 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/leon-kfd/OnlineCodeEditor /202311/ts/vue
   - An online code Editor like CodePen, built by Vue3.
 
+- https://github.com/live-codes/livecodes /MIT/202405/ts
+  - https://livecodes.io/
+  - A feature-rich, open-source, client-side code playground for React, Vue, Svelte, Solid, Typescript, Python, Go, Ruby, PHP and 80+ languages/frameworks.
+  - 依赖codemirror6、monaco、codejar、codejar、yjs
+  - [Why Another Playground? | LiveCodes](https://livecodes.io/docs/why/)
+    - There are great products like CodePen, JSFiddle, JS Bin, CodeSandbox, Replit and many others, which LiveCodes does not aim to replace or compete with.
+    - On the contrary, it aims to integrate with as many of these services as their APIs allow.
+    - All processing and code transformations run in the browser on the client-side.
+    - The LiveCodes app (standalone or self-hosted) can be embedded in any web page.
+
 - https://github.com/lucademenego99/icp-bundle /apache2/202307/svelte
   - Interactive Code Playgrounds Bundle is a plugin for embedding interactive code playgrounds in HTML pages.
   - The editor used in these playgrounds is CodeMirror6, an in-browser editor distributed as a collection of modules.
@@ -701,6 +794,10 @@ modified: 2023-06-23T12:46:53.288Z
   - https://github.com/lucademenego99/icp-slides /202307/html
     - https://lucademenego99.github.io/icp-slides/
     - Slides created with Reveal.js for the Interactive Code Playgrounds project, hosted directly from the repository as a Github Pages website.
+
+- https://github.com/java-sheets/java-sheets /MIT/202207/java/ts
+  - Browser Based Java REPL
+  - Jsheet lets you create and share Java snippets, ranging from single expressions to complex classes, methods and even Markdown comments.
 # starter
 - https://github.com/falk-werner/codemirror-example /202312/js/单文件
   - a brief example how to integrate Code-Mirror using vite.
@@ -730,6 +827,21 @@ modified: 2023-06-23T12:46:53.288Z
   - A comfortable note-taking app powered by Markdown
   - 依赖codemirror6、prosemirror、markdown-it、electron-window-state、remark-gfm
 
+- https://github.com/stencila/stencila /apache2/202405/rust/ts
+  - https://stenci.la/
+  - a platform for authoring, collaborating on, and publishing executable documents.
+  - This is v2 of Stencila, a rewrite in Rust focussed on the synergies between three recent and impactful innovations and trends: CRDT/LLM
+
+- https://github.com/ChromeUniverse/luccanotes /202403/ts
+  - https://luccanotes.vercel.app/
+  - A full-stack note-taking app for Markdown lovers
+  - Built with the awesome T3 stack for Next.js, deployed on Supabase and Vercel.
+  - 依赖@uiw/react-codemirror、trpc、next、prisma
+
+- https://github.com/jim-fx/notarium /202205/ts/svelte/inactive
+  - a note taking and organizing application which uses a folder as a database. 
+  - Because of this you can easily use a third party program like syncthing to keep your notes synchronised across all your devices
+
 - https://github.com/kabalage/notesz /MIT/202312/ts/vue
   - https://notesz.app/
   - Note taking PWA that stores your notes on GitHub, built with Vue 3 and TypeScript
@@ -749,31 +861,10 @@ modified: 2023-06-23T12:46:53.288Z
   - Create and share beautiful images of your source code.
   - 依赖@uiw/react-codemirror、firebase、next
 
-- https://github.com/vizhub-core/vzcode /MIT/202405/ts
-  - VZCode: Multiplayer Code Editor
-  - VZCode offers a multiplayer code editing environment that caters to a real-time collaborative development experience. It's the code editor component of VizHub, and can also be used independently from VizHub.
-  - Browser-based editing environment
-  - Real-time collaboration via LAN or using services like NGrok
-  - A known shortcoming of VZCode is that it does not (yet) watch for changes from the file system. VZCode assumes that no other programs are modifying the same files.
-  - You can also expose your VZCode instance publicly using a tunneling service such as NGrok.
-  - Auto-save, debounced after code changes
-  - https://github.com/vizhub-core/vizhub
-    - https://vizhub.community/
-    - Self Hosted CMS for Web-based Dataviz
-    - VizHub 2 has been used in Data Visualization Course 2018, Datavis 2020
-    - iFrame-based code execution environment.
-  - VizHub 3
-    - possible to self-host your own instance
-    - possible to extend the core with plugins
-
 - https://github.com/aidenlx/cm-chs-patch /MIT/202405/ts
   - 增加 Obsidian 内置编辑器的(简体)中文分词支持，使得编辑模式的双击可以选中中文，以及在 Vim 模式下可以按中文分词移动光标
   - 从 v1.8.0 开始，默认分词引擎由结巴分词更换为系统自带分词引擎，结巴分词不再是必备组件
   - 手动安装结巴分词组件：在设置中启用结巴分词后，从CDN下载得到 jieba_rs_wasm_bg.wasm 文件，将 wasm 文件放在 Obsidian 库的 .obsidian 或者其它指定的配置文件夹下后重启 Obsidian
-
-- https://github.com/mattelim/text-gpt-p5-app /MIT/202311/js
-  - A text to p5.js generative editor powered by GPT-3.5
-  - react-codemirror
 
 - https://github.com/GaganpreetKaurKalsi/SQL-Editor /202206/js/inactive
   - https://sql-editor-react.vercel.app/sql-editor
@@ -799,17 +890,10 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/ambroiseRabier/readable-js /202205/ts/inactive
   - ReadableJS is a toolkit for teachers to craft small demos that can be explored interactively.
-# diff
-- https://github.com/MrWangJustToDo/git-diff-view /MIT/202404/ts
-  - https://mrwangjusttodo.github.io/git-diff-view/
-  - ⌛️ A Diff View component for React/Vue, just like Github
-  - core只依赖lowlight, 不依赖codemirror
-  - https://github.com/wooorm/lowlight /MIT/202310/js
-    - Virtual syntax highlighting for virtual DOMs and non-HTML things
-    - This package uses `highlight.js` for syntax highlighting and outputs objects (ASTs) instead of a string of HTML.
-    - This package is useful when you want to perform syntax highlighting in a place where serialized HTML wouldn’t work or wouldn’t work well. 
-    - You can use the similar `refractor` if you want to use `Prism` grammars instead. 
-    - If you’re looking for a really good (but rather heavy) alternative, use `starry-night`.
+
+- https://github.com/StaticJsCMS/static-cms /MIT/202404/ts
+  - https://staticcms.org/
+  - A Git-based CMS for Static Site Generators
 # theme
 - https://github.com/nodetec/mirrorshades /GPLv3/202403/ts
   - A react library to create themes for codemirror
@@ -841,7 +925,7 @@ modified: 2023-06-23T12:46:53.288Z
   - Codemirror 6 Themes
   - Not perfect themes for cm6, generated from vscode themes.
 
-- https://github.com/vadimdemedes/thememirror /202206/ts
+- https://github.com/vadimdemedes/thememirror /202206/ts/inactive
   - Beautiful themes for CodeMirror
   - https://github.com/satansdeer/thememirror
 
@@ -921,7 +1005,22 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/L-Focus/cm-search-replace /202302/js
   - Implements the search and replace function of CodeMirror
+
+- https://github.com/summernote/react-summernote /MIT/202007/js/inactive
+  - Summernote (Super simple WYSIWYG editor) adaptation for react
 # code-ai
+- https://github.com/asadm/codemirror-copilot /MIT/202401/ts
+  - https://copilot.asadmemon.com/
+  - CodeMirror extension to add GPT autocompletion like GitHub's Copilot
+
+- https://github.com/useScriba/useScriba /202308/ts
+  - https://docs.usescriba.com/
+  - Highly customizable AI completion plugin for web-based code editors.
+
+- https://github.com/mattelim/text-gpt-p5-app /MIT/202311/js
+  - A text to p5.js generative editor powered by GPT-3.5
+  - react-codemirror
+
 - https://github.com/sourcegraph/cody /2kStar/apache2/202405/ts
   - https://cody.dev/
   - Cody is a free, open-source AI coding assistant that can write and fix code, provide AI-generated autocomplete, and answer your coding questions. 
@@ -934,6 +1033,16 @@ modified: 2023-06-23T12:46:53.288Z
   - https://do-me.github.io/SemanticFinder/
   - frontend-only live semantic search with transformers.js
   - Calculates the embeddings and cosine similarity client-side without server-side inferencing, using transformers.js and latest SOTA embedding models from Huggingface.
+
+- https://github.com/rvion/CushyStudio /AGPLv3/202403/ts
+  - https://docs.cushystudio.com/
+  - The AI and Generative Art platform for everyone
+
+- https://github.com/sweepai/sweep /202405/python
+  - https://sweep.dev/
+  - Sweep: open-source AI-powered Software Developer for small features and bug fixes.
+  - Sweep is an AI junior developer that turns bugs and feature requests into code changes. Sweep automatically handles devex improvements like adding typehints/improving test coverage. 
+  - Turns issues directly into pull requests (without an IDE)
 # more
 - https://github.com/datavis-tech/codearea /MIT/201908/js
   - A proof-of-concept code editor with syntax highlighting that uses

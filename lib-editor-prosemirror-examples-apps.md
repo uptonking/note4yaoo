@@ -351,9 +351,10 @@ modified: 2022-08-18T16:57:15.296Z
   - https://pipipi-pikachu.github.io/PPTist/
   - 基于 Vue3.x + TypeScript 的在线演示文稿（幻灯片）应用，还原了大部分 Office PowerPoint 常用功能，实现在线PPT的编辑、演示。支持导出PPT文件。
 
-- https://github.com/stencila/stencila
+- https://github.com/stencila/stencila /apache2/202405/rust/ts
   - https://stenci.la/
   - a platform for authoring, collaborating on, and publishing executable documents.
+  - This is v2 of Stencila, a rewrite in Rust focussed on the synergies between three recent and impactful innovations and trends: CRDT/LLM
 
 - https://github.com/xland/redredstar
   - 个人信息管理工具

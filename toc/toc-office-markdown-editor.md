@@ -70,7 +70,7 @@ modified: 2022-11-09T11:53:13.093Z
   - With React Native/DOM
   - 依赖commonmark
 
-- https://github.com/mdx-editor/editor /ts/lexical
+- https://github.com/mdx-editor/editor /MIT/202405/ts/lexical
   - https://mdxeditor.dev/
   - https://mdxeditor.dev/editor/demo
   - open-source React component that allows users to author markdown documents naturally

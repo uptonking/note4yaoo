@@ -31,7 +31,7 @@ modified: 2024-01-28T21:37:15.191Z
   - https://github.com/genneko/joplin
     - run Joplin on FreeBSD with this fork
   - https://github.com/sdip15fa/joplin /202309
-  - https://github.com/XilinJia/Xilinota /202401
+  - https://github.com/XilinJia/Xilinota /AGPL/202403
     - a fork from Joplin v2.13.4.
 
 - https://github.com/joplin/website-plugin-discovery /MIT/202401/ts/mustache

@@ -80,6 +80,11 @@ modified: 2022-08-18T11:29:26.644Z
   - lightweight and hackable open source code editor for the web
   - powering the code-editing experience on Autocode, and it's written entirely in vanilla JavaScript with only `highlight.js` and feather icons bundled as dependencies.
 
+- https://github.com/antonmedv/codejar /MIT/202401/ts/NoDeps/单文件
+  - https://medv.io/codejar/
+  - An embeddable code editor for the browser
+  - Supports undo/redo
+
 - https://github.com/ghost23/east
   - Playing around with the idea of an AST-based code editor for JavaScript.
 
