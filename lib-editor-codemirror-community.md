@@ -14,6 +14,13 @@ modified: 2023-01-29T10:52:44.183Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Markdown emoji previewing - v6 _202210](https://discuss.codemirror.net/t/markdown-emoji-previewing/5186/9)
+- Yes that can be implemented via “replacing decorations”, see Example: Decorations 
+
 - ## [Anyone Explored a Codemirror 6 Canvas/WebGL Renderer? - discuss. CodeMirror](https://discuss.codemirror.net/t/anyone-explored-a-codemirror-6-canvas-webgl-renderer/3779)
 - The Bespin 9 project in 2009 worked this way, but was given up due to, I believe, problems with the approach. Some things to keep in mind:
   - In most situations, for text layout, the DOM will be faster than a canvas

@@ -378,6 +378,8 @@ modified: 2024-01-30T20:56:45.773Z
   - [Unable to use local folder on Self hosted Web version _202311](https://github.com/tagspaces/tagspaces/issues/2000)
     - The web version support location pointing to object storage (AWS S3, minio, S3proxy, Wasabi, R2) only
     - Yes it is technical, TagSpaces is a front-end application, which can connect to S3 back ends. For you use case you can use S3Proxy to expose a shared folder for example on a NAS and connect it with TagSpaces as S3 location.
+  - https://github.com/tagspaces/tagspaces-extensions /MIT/202404/js
+    - This repository contains the viewer and editor extensions delivered by default with TagSpaces products.
 # notes-browser-extensions
 - note-it /16Star/Apache2/202208/ts/tiptap
   - https://github.com/MuhametSmaili/note-it

@@ -90,6 +90,11 @@ const CountingComponent = () => {
     - Sycamore and Leptos are both heavily influenced by SolidJS. 
     - At this point, Leptos has a larger community 
     - Sycamore uses a custom templating language for its views, while Leptos uses a JSX-like template format.
+# web-comp
+- https://github.com/lume/element /MIT/202404/ts
+  - https://lume.io/
+  - Easily create Custom Elements with simple templates and reactivity. 
+  - This is an alternative to Lit, Stencil, and Fast.
 # web-ui-framework
 - https://github.com/nanojsx/nano /MIT/202401/ts
   - http://nanojsx.io/

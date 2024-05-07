@@ -16,7 +16,7 @@ modified: 2023-01-21T18:57:47.811Z
   - supports Edge, Chrome, Firefox, Safari and Opera. 
   - The Monaco editor is not supported in mobile browsers or mobile web frameworks.
 
-- https://github.com/judge0/ide /MIT/202312/js
+- https://github.com/judge0/ide /MIT/202403/js
   - https://ide.judge0.com/
   - free and open-source online code editor that allows you to write and execute code from a rich set of languages. 
   - Judge0 IDE is using Judge0 for executing user's source code.
@@ -48,4 +48,7 @@ modified: 2023-01-21T18:57:47.811Z
   - crdt-websockets based code collaboration.
   - 服务端只转发op，没有其他逻辑
   - 客户端依赖@monaco-editor/react.v4、yjs、socket.io、zustand
+
+- https://github.com/interviewstreet/firepad-x /202401/ts
+  - We have rewritten all the modules and few extras using TypeScript while enhancing earlier implemented Adapter Pattern to integrate with external modules, such as Database (preferably Firebase) and editors (as of now only Monaco is supported, but PRs are welcomed). 
 # more

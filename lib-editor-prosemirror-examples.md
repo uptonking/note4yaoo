@@ -410,7 +410,7 @@ modified: 2022-08-18T16:57:46.405Z
   - https://teemukoivisto.github.io/prosemirror-dev-toolkit/
   - This is a rewrite of prosemirror-dev-tools
   - I took it to my own hands to rewrite it in Svelte.
-- prosemirror-dev-tools /241Star/MIT/202106/js
+- prosemirror-dev-tools /241Star/MIT/202402/ts
   - https://github.com/d4rkr00t/prosemirror-dev-tools
   - Developer Tools for ProseMirror
   - Inspect document – all nodes and marks

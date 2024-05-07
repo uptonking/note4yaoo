@@ -10,7 +10,10 @@ modified: 2024-05-06T02:54:40.374Z
 # guide
 
 # plan
-
+- 工作OKR
+  - 业务类: ai编程/pr/测试
+  - 基建类: 基座工程、代码编辑器
+  - 团队类: 测试、运营
 # more
 
 # codebase

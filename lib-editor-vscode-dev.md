@@ -10,7 +10,7 @@ modified: 2023-01-21T18:53:50.553Z
 # guide
 
 - resources
-  - ide类的参考实现包括: vscode, jupyter, jetbrains
+  - ide类的参考实现包括: vscode, jupyter(codemirror), jetbrains
   - 参考设计 capabilities
 # dev
 

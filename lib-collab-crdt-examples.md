@@ -257,6 +257,7 @@ modified: 2022-04-05T10:08:25.947Z
     - https://streamich.github.io/collaborative-input/
     - This package provides bindings for `<input>` and `<textarea>` elements to JSON CRDT data structures. 
     - It allows multiple users to edit the `<input>` and `<textarea>` elements simultaneously.
+    - 依赖json-joy、fast-diff
 
 - https://github.com/inkandswitch/peritext /MIT/ts
   - https://www.inkandswitch.com/peritext/

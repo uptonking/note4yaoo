@@ -103,7 +103,8 @@ modified: 2022-08-18T16:57:29.058Z
   - [Slash menu for ProseMirror](https://discuss.prosemirror.net/t/prosemirror-slash-menu-prosemirror-slash-menu-react-slash-menu-for-prosemirror/5629)
   - [Emergence Engineering - prosemirror-slash-menu](https://emergence-engineering.com/blog/prosemirror-slash-menu)
 
-- https://gitlab.com/emergence-engineering/prosemirror-codemirror-block
+- https://gitlab.com/emergence-engineering/prosemirror-codemirror-block /202310/ts
+  - https://emergence-engineering.com/blog/prosemirror-codemirror-block
   - CodeMirror 6 code_block in ProseMirror
     - Legacy ( CodeMirror 5 ) language support trough @codemirror/legacy-modes
   - Customizable language selector

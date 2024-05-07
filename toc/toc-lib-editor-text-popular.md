@@ -242,7 +242,7 @@ modified: 2022-11-08T19:04:00.289Z
     - AWS Cloud9: A cloud IDE for writing, running, and debugging code
   - [Ace – an embeddable code editor | Hacker News_201811](https://news.ycombinator.com/item?id=18360779)
 
-- overleaf /10.5kStar/AGPLv3/202211/js/latex/ace>codemirror
+- overleaf /12.6kStar/AGPLv3/202405/js/latex/ace>codemirror
   - https://github.com/overleaf/overleaf
   - https://github.com/overleaf/overleaf/wiki
   - https://github.com/overleaf/overleaf/tree/main/services/web/frontend/js/features/source-editor
@@ -250,7 +250,7 @@ modified: 2022-11-08T19:04:00.289Z
   - source-editor支持codemirror6、ace
   - https://github.com/overleaf/ace /Ajax.org Cloud9 Editor
   - [Compile Error and PDF Download Notifications](https://github.com/overleaf/overleaf/issues/1031)
-    - migrate from ACE to CodeMirror 6. Yes, the CM6 work will be coming to CE soon._202206
+    - migrate from ACE to CodeMirror 6. Yes, the CM6 work will be coming to CE soon. _202206
 
 - trix /18kStar/MIT/202311/js
   - https://github.com/basecamp/trix
@@ -364,6 +364,13 @@ modified: 2022-11-08T19:04:00.289Z
   - Super Editor works with any backend. Plug yours in and go
   - initiated by Superlist and is implemented and maintained by the Flutter Bounty Hunters, Superlist
   - we're not just building an editor. We're building a document editing toolkit. In fact, we're revolutionizing all text layout and editing with Flutter
+
+- https://github.com/lakejs/lake /MIT/202405/ts/示例丰富
+  - https://lakejs.org/
+  - https://lakejs.org/examples/feature-rich
+  - https://lakejs.org/examples/document /典型的单页文档
+  - Browser-based WYSIWYG editor
+  - 依赖eventemitter3、photoswipe、tinykeys
 # collab
 - https://github.com/microsoft/FluidExamples/tree/main/collaborative-text-area
   - an example to demonstrate building a collaborative text area in React using the SharedString

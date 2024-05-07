@@ -14,7 +14,7 @@ modified: 2023-01-21T18:58:29.846Z
   - https://dtstack.github.io/molecule/
   - https://dtstack.github.io/molecule-examples/
   - 受 VSCode 启发，使用 React.js 构建的 Web IDE UI 框架
-  - 我们设计了类似 VSCode 的扩展（Extension)机制，可以帮助我们使用 React 组件快速完成对 Workbench 的自定义
+  - 我们设计了类似 VSCode 的扩展(Extension)机制，可以帮助我们使用 React 组件快速完成对 Workbench 的自定义
   - 内置 React 版本的 Visual Studio Code Workbench UI
   - 内置 Monaco Editor Command Palette、Keybinding等模块，并支持扩展
   - 内置一个简单的 Settings 模块，支持在线编辑修改以及扩展
@@ -39,6 +39,9 @@ modified: 2023-01-21T18:58:29.846Z
     - Desktop IDE 场景下的窗口管理
     - Cloud IDE 场景下的容器/虚拟机管理
   - CodeBlitz主要在读、写、运行和提交等方面进行了探索，与带有容器的标准版本进行了对标。
+  - https://github.com/opensumi/codeblitz /MIT/202401/ts/inactive
+    - https://codeblitz.opensumi.com/
+    - Pure front-end IDE framework based on OpenSumi
   - [如何评价阿里 & 蚂蚁自研 IDE 研发框架 OpenSumi？ - 知乎](https://www.zhihu.com/question/519740662)
     - 高性能、高定制性的双端（Web 及 Electron）IDE 研发的框架
     - 设计之初就是要兼容 VS Code 插件生态，我们计划每三个月时间去完成一次 VS Code 插件 API 的适配工作
