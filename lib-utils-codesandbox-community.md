@@ -147,19 +147,67 @@ modified: 2024-01-25T13:33:23.267Z
 - 事件处理也是个问题，比如实现顶层菜单展开时，需要点击空白处收起，如果点到ifram则无法触发
 
 - iframe 还有一个问题就是不能改变其在 DOM 树中的位置，否则也会导致重新加载 iframe。而在以 VDOM + Router 的场景中  iframe 都会被重新加载
-# discuss-codesandbox
+# discuss-author
 - ## 
 
 - ## 
 
-- ## 
+- ## 🌰 [Codemirror 6 and Typescript LSP - v6 - discuss. CodeMirror _202107](https://discuss.codemirror.net/t/codemirror-6-and-typescript-lsp/3398?page=2)
 
-- ## [Codesandbox open sources their execution environment: Sandpack | Hacker News_202112](https://news.ycombinator.com/item?id=29417937)
+- Did https://codesandbox.io/ 4 switch away from CodeMirror to Monaco for it’s TypeScript/LSP editor? If so, is there a discussion somewhere of why? _202212
+  - 💡 Actually, CodeSandbox has always used Monaco as the default editor, except for a specific mobile version where we defaulted it to CodeMirror.
+
+- ## [Vscode.dev: Local Development with Cloud Tools | Hacker News _202307](https://news.ycombinator.com/item?id=36855517)
+- The editor on CodeSandbox runs web VSCode, and in that version we emulate Node.js in the browser to run local extensions.
+- I'm curious about the technical details. Could you elaborate on how CodeSandbox runs Node.js in the browser? Does it use a Linux VM like Alpine compiled to WASM?
+  - Nodebox is a runtime for executing Node.js modules in the browser
+
+- ## [Codesandbox open sources their execution environment: Sandpack | Hacker News _202112](https://news.ycombinator.com/item?id=29417937)
 - Does it download the dependencies on the client side, and compile the JS on the client side as well?
   - Yep, it downloads and compiles dependencies on the client side. However, it does this on a different domain for security reasons.
   - Also, while it uses the CodeSandbox bundler, you can self host it so it's not dependent on our servers
+- Is there an API to get the compiled and bundled sources into one output/result?
+  - Yes, after every compilation we send the full bundler state. This is saved on the context so you can use that to analyze the output. In one of the examples in the blog post we show the transpiled code for example.
+  - A hidden "feature" is that we automatically run tests defined (e.g. index.test.js) using jest, and dispatch the test results. So you can listen to that as well.
 
 - I'd like to see storybook with support for this.
+# discuss-csb-editor
+- ## 
+
+- ## [Feature request: Monaco Editor integration option? · codesandbox/sandpack _202201](https://github.com/codesandbox/sandpack/issues/305)
+  - Codesandbox website uses Monaco, so it would be nice to have a similar experience when cross over between the sandpack version and the codesanbox website
+- I'm curious, are there any pros & con's that come to mind when it comes to choosing codemirror vs monaco-editor? Was also curious about why you chose codemirror over vscode for prisma/text-editors 
+  - Just to add a little bit of context, the current difficulties we had facing is a little bit out of scope, the main trouble we had is the setup of typescript's language server.
+  - The Monaco editor is able to generate autocomplete based on the provided and customized d.ts files relatively easy but not for .tsx | .ts files, 
+  - so for those packages written in `.tsx` by default, I cannot find an easy way to auto generate d.ts files and bundle them for the Monaco editor.
+  - In term of UI/UX, as long as we are able to setup the environment and get the hint from the typescript server stably, it's just a matter of time to improve them gradually.
+  - In fact, using CodeMirror in this case leave a lot of flexibilities to users to craft their own hint UI
+- Although I wasn't here when this decision of CodeMirror over Monaco was made, I think I can understand some of the reasons and highlight them here:
+  - Mobile support: Monaco doesn't have great mobile support, and this is crucial for Sandpack to deliver a uniform experience throughout all types of devices; 
+  - Final bundle size: CodeMirror provides an easy way to load only the modules/extensions we want to, which gives us the possibility to lazy-loading and code-splitting the CodeEditor component. Meanwhile, Monaco is a heavy package, and that's why CodeSandbox.io/CodeSandbox Embeds also defaults to CodeMirror in the mobile version (due to the previous reason too
+  - Extensibility: TBH, I haven't had many experiences with Monaco before, but I can tell what I've heard, and Monaco makes it hard to customize and extend some configuration - and Monaco provides a great API to extensions, which pretty much solved many of our problems; 
+  - Plus, Sandpack is designed to be extensible and provide a basic (but powerful) development experience, so the initial goal was never to support any language server by default but to provide ways (API, documentation, support) for the application consumer (you) implement it by yourself.
+  - In fact, you can easily switch from CodeMirror to Monaco at your end, as Sandpack exposes all the APIs needed to implement it. 
+
+- I think Danilo nailed the reasons I also considered when I picked CodeMirror over Monaco. For me personally, the biggest one was extensibility, because we had very specific interactions in mind, and I wasn't very confident that Monaco would let me build some of them. This is more of a matter of taste, but I also preferred CodeMirror's API over Monaco's (plus CodeMirror's source code seemed a lot more approachable), so I went with it for prisma/text-editors.
+# discuss-news-csb
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Introducing CodeSandbox CDE: instant cloud development environments _202401
+- https://twitter.com/codesandbox/status/1752368702878527776
+  - Run every branch in a powerful VM
+  - Resume & fork in 2 seconds
+  - Collaborative 24/7
+  - Available now with usage-based billing
+  - DevContainer support
+  - VS Code, AI code auto-complete, automated git flow & more
+  - [Introducing CodeSandbox CDE - CodeSandbox _202401](https://codesandbox.io/blog/introducing-codesandbox-cde)
+- I think you guys are changing the game with this one, it is a step towards remote programming and who knows maybe sooner than later your service will play a huge role in the big playing field.
+
 # discuss
 - ## 
 

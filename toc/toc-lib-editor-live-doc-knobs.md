@@ -30,23 +30,38 @@ modified: 2021-03-03T21:48:48.379Z
   - We also rely on babel and babel-parser instead of buble.
   - React View aims to make documentation more interactive and useful.
 
-- react-live /2.9kStar/MIT/202011/js
+- react-live /4.1kStar/MIT/202402/ts/inactive
   - https://github.com/FormidableLabs/react-live
+  - https://commerce.nearform.com/open-source/react-live/
   - https://react-live.netlify.com/
-  - 依赖react-simple-code-editor, bubble, prism
-  - 只支持直接编辑源码
   - render React components with editable source code and live preview.
+  - 依赖use-editable、sucrase、prism-react-renderer
+  - 只支持直接编辑源码, 不支持类似storybook的knobs
+  - https://github.com/FormidableLabs/use-editable
+    - small React hook to turn elements into fully renderable & editable content surfaces, like code editors, using contenteditable (and magic)
   - https://github.com/FormidableLabs/component-playground
     - A component for rendering React components with editable source and live preview
+  - [codemirror withlive](https://github.com/FormidableLabs/react-live/issues/210)
+    - 202210: if you are using the standard LiveProvider, you can use `@uiw/react-codemirror` as a drop in replacement for LiveEditor
 
-- react-runner /25Star/MIT/201908
+- react-runner /382Star/MIT/202303/ts/inactive
   - https://github.com/nihgwu/react-runner
   - https://nihgwu.github.io/react-runner/
+  - https://react-runner.vercel.app/
   - Run your React code on the go
   - 被Autodesk/react-base-table用来展示示例
-  - react-runner is inspired by react-live heavily, I love it, but I love arrow functions for event handlers instead of bind them manually 
+  - react-runner依赖sucrase(alternative to Babel)、react
+  - react-live-runner依赖react-simple-code-editor、react-runner
+  - react-runner-codemirror依赖codemirror6、react、prism-react-renderer
+    - React wrapper of CodeMirror6 for React code editing, Live preview powered byReact Runner
+  - react-runner is inspired by `react-live` heavily, I love it, but I love arrow functions for event handlers instead of bind them manually 
   - use Sucrase instead of Bublé to transpile the code.
   - If you are using react-live and want a smooth transition, react-live-runner is there for you which provide the identical way
+  - Server Side Rendering
+  - You can even build your own async runner to support dynamic imports, try Play React
+  - [[Feature]: Add React 18 support for `react-live-runner` _202205](https://github.com/nihgwu/react-runner/issues/123)
+    - I've tried other solutions, like use-editable, but I'd say react-simple-code-editor provides the best UX and less bugs, I don't think there is anything preventing it's been used with React 18, just ignore the warnings for now, and react-live-runner aims to provide a smooth transition from react-live, 
+    - if you want to use other code editors, you are free to use theme with react-runner, like CodeMirror, CodeJar or even Monaco, I don't have the bandwidth to maintain another editor which is complicated regarding multi browsers support
 
 - https://github.com/jquense/jarle
   - https://jquense.github.io/jarle/

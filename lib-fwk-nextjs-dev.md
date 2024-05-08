@@ -39,6 +39,10 @@ modified: 2020-12-12T19:22:00.735Z
 
 - tips
   - 考虑引入nextjs的收益是否够高，适合开发应用而不适合库
+# dev-xp
+- 调试方法
+  - debugger with vscode/chrome
+  - 调试fetch或axios
 # blogs
 - ## [Gatsby vs Nextjs vs Storybook](https://component-controls.com/blogs/gatsby-vs-nextjs-vs-storybook)
 - gatsby is the original static site generator for react and continues to be a leader in this space.
@@ -50,9 +54,18 @@ modified: 2020-12-12T19:22:00.735Z
 
 - ## 
 
-- ## 
+- ## [NODE\_OPTIONS='--inspect' does not work as I expect · vercel/next.js · Discussion #46894](https://github.com/vercel/next.js/discussions/46894)
+  - node --inspect ./node_modules/next/dist/bin/next dev
 
-- ## 
+- ## ["NODE\_OPTIONS='--inspect' next dev" won't work correctly, debugging server-side not possiable · Issue #47561 · vercel/next.js](https://github.com/vercel/next.js/issues/47561)
+
+- ## ["NODE\_OPTIONS='--inspect' next dev" won't work correctly, debugging server-side not possiable · Issue #47561 · vercel/next.js](https://github.com/vercel/next.js/issues/47561)
+
+- ## [reactjs - How to debug getStaticProps (and getStaticPaths) in Next.js - Stack Overflow](https://stackoverflow.com/questions/63650473/how-to-debug-getstaticprops-and-getstaticpaths-in-next-js)
+- It turns out Next deliberately hides console.log output in getStaticProps functions (and presumably other server-side code).
+
+- ## [next.js - How to turn on NextJS FETCH debugging in console. It was available in Next 13.4.4 and is gone in Next 13.4.19 - Stack Overflow](https://stackoverflow.com/questions/77112134/how-to-turn-on-nextjs-fetch-debugging-in-console-it-was-available-in-next-13-4)
+- experimental: { logging: "verbose", }
 
 - ## Looks like we didn't learn our lesson with patching fetch. Now we're breaking built-in browser behavior by overriding the `formAction` property_202310
 - https://twitter.com/RogersKonnor/status/1717648866114171180

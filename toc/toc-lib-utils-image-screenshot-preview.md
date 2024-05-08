@@ -231,6 +231,12 @@ modified: 2023-04-16T13:34:33.706Z
   - https://hughfenghen.github.io/bloom-shadow/
   - 在浏览器中运行的录屏工具，可用于视频课程制作、直播推流工作台；
   - 基于 WebAV 实现
+
+- https://github.com/thenickdude/webm-writer-js /202110/js/inactive
+  - This is a JavaScript-based WebM video encoder based on the ideas from Whammy. 
+  - It allows you to turn a series of Canvas frames into a WebM video.
+  - This implementation allows you to create very large video files (exceeding the size of available memory), because when running in a privileged context like a Chrome extension or Electron app, it can stream chunks immediately to a file on disk using Chrome's FileWriter while the video is being constructed, instead of needing to buffer the entire video in memory before saving can begin. 
+  - Video sizes in excess of 4GB can be written. The implementation currently tops out at 32GB, but this could be extended.
 # thumbnail/preview-image
 - https://github.com/wei/socialify /MIT/202311/ts/inactive
   - Socialify helps you showcase your project to the world by generating a beautiful project image 

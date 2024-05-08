@@ -31,6 +31,30 @@ modified: 2024-05-02T07:48:04.213Z
   - a
 # examples
 
+## [CodeMirror Styling Example](https://codemirror.net/examples/styling/)
+
+- CodeMirror uses a CSS-in-JS system to be able to include its styles directly in the script files.
+  - both the editor view's own styling and any styling defined for dependencies are automatically pulled in through the JavaScript module system.
+  - Themes are simply extensions that tell the editor to mount an additional style module and add the (generated) class name that enables those styles to its outer DOM element.
+
+- The important elements in the editor have regular (non-generated) CSS class names, which can be targeted with manually written style sheets.
+-  there are limits to how you can style the editor. Things like making the editor lines `display: inline` or the cursor `position: fixed` will just break stuff. But within reasonable bounds, the library tries to be robust when it comes to styling.
+- By default, the editor adjusts to the height of its content, but you can make cm-scroller `overflow: auto`, and assign a height or max-height to cm-editor, to make the editor scrollable.
+
+- Code highlighting uses a somewhat different system from editor-wide theming. Code styles are also created with JavaScript and enabled with an editor extension. 
+  - But by default they don't use stable, non-generated class names. 
+  - A highlight style directly returns the class names for the syntactic tokens.
+
+- Without any custom styling, a CodeMirror editor grows vertically, scrolls (rather than wraps) long lines, and doesn't have any border except a focus ring when focused.
+
+- To enable line wrapping, add the EditorView.lineWrapping extension to your configuration. 
+  - It is also possible to adjust the white-space style of the content element in some other way, but only `pre` and `pre-wrap` are supported by the library, and wrapping can be unreliable if you don't also set overflow-wrap: anywhere, so it is recommended to just use this extension to enable wrapping.
+
+
+- Adjusting the vertical behavior of the editor can be done by giving its outer element a height, and setting overflow: auto on the scroller element.
+
+
+
 ## [CodeMirror Autocompletion Example](https://codemirror.net/examples/autocompletion/)
 
 - By default, the plugin will look for completions whenever the user types something, but you can configure it to only run when activated explicitly via a command.

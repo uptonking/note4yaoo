@@ -116,6 +116,73 @@ modified: 2023-01-29T10:52:44.183Z
 
 - Any thoughts on Code Server? It’s vs code in a browser, I’ve been used it for one year now and it’s great. But maybe it’s outside the scope of the article?
   - It's using monaco as the underlying editor, just like VS Code that it's based on. Code Server basically takes the VS Code codebase as is and just adds a very light server layer to do auth and static content serving. All of the frontend javascript code, etc. is the same as the desktop version of VS Code.
+# discuss-lsp
+- ## 
+
+- ## 
+
+- ## 🌰 [Codemirror 6 and Typescript LSP - v6 - discuss. CodeMirror _202107](https://discuss.codemirror.net/t/codemirror-6-and-typescript-lsp/3398?page=2)
+  - If anyone is still having problems with this, I was able to create a small demo based on @madebysid comment, you can find it here: https://github.com/okikio/codemirror 197, Demo Link: https://okikio-codemirror.netlify.app/
+
+- For the @codesanbox/sandpack-react package there was a discussion on how to integrate the language server with codemirror.
+- I’d like to share the progress I made on integrating the TypeScript LSP into Sandpack, which uses CodeMirror in the editor component. Fortunately, I could implement most of the features I had planned thanks to the amazing examples from @okikio and @madebysid.
+- Here’s the full list of feature:
+  IntelliSense; 
+  Tooltip error; 
+  Multiple files; 
+  Support tsconfig.json; 
+  Automatically dependency-types fetching (CodeSandbox CDN); 
+  In-browser dependency cache; 
+- TBH, I’m not an expert on CodeMirror even less on LSP, so I’m curious to know how I can improve this implementation and make it even better
+  - https://codesandbox.io/p/sandbox/github/danilowoz/sandpack-tsserver/tree/main/
+
+- Did https://codesandbox.io/ 4 switch away from CodeMirror to Monaco for it’s TypeScript/LSP editor? If so, is there a discussion somewhere of why? _202212
+  - 💡 Actually, CodeSandbox has always used Monaco as the default editor, except for a specific mobile version where we defaulted it to CodeMirror.
+- Not to be pedantic, but it’s worth noting that tsserver / the typescript standalone worker is not LSP compatible.
+  - Replit is working on open sourcing our LSP Client (we didn’t the microsoft packages) and a follow up to open source the LSP client + codemirror extension. Timeline TBD but should happen in 2023
+# discuss-pm-code-block-in-docs
+- ## 
+
+- ## 
+
+- ## 📖📚 [Show HN: Add live runnable code to your dev docs | Hacker News _202204](https://news.ycombinator.com/item?id=31004973)
+- Devbook is an SDK that you add to your docs website and then every time a user visits your dev docs, we spin up a VM just for that user. 
+  - The VM is ready in about 18-20 seconds. We haven't had enough time to work on optimization but from our early tests, we are fairly confident we can get this to about 1-2 seconds.
+  - In the VM you can run almost anything. Install packages, edit & save files, run binaries, services, etc.
+  - On the backend, the VM is a Firecracker microVM with our custom simple orchestrator/scheduler built on top that just gets the job done. 
+- We chose Firecracker for 4 reasons:
+  * (1) the security with a combination of their jailer
+  * (2) its snapshotting capabilities
+  * (3) quick booting times
+  * (4) option to oversubscribe the underlying server resources
+- The way Devbook works is that you use our frontend SDK on our website. The SDK pings our backend and we boot up a VM.
+
+- https://github.com/firecracker-microvm/firecracker /apache2/202405/rust/python
+  - http://firecracker-microvm.io/
+  - Firecracker is an open source virtualization technology that is purpose-built for creating and managing secure, multi-tenant container and function-based services that provide serverless operational models. 
+  - Firecracker runs workloads in lightweight virtual machines, called microVMs, which combine the security and isolation properties provided by hardware virtualization technology with the speed and flexibility of containers.
+  - The main component of Firecracker is a virtual machine monitor (VMM) that uses the Linux Kernel Virtual Machine (KVM) to create and run microVMs. 
+  - Firecracker was developed at Amazon Web Services to accelerate the speed and efficiency of services like AWS Lambda and AWS Fargate. 
+
+- Very good idea, and you're not alone. The upcoming documentation for React will have a similar feature built on Sandpack
+- We've used https://docusaurus.io/docs/markdown-features/code-blocks#int... do do this ourselves. No need to use codesandbox.
+  - Docusaurus maintainer here. Yes we like MDX and live code blocks to embed natively runnable code in your page. I don't like the idea of loading a remote iframe much (at least for most cases using JS).
+  - The StackBlitz / WebContainer approach also seems better than a remote VM + iframe
+  - We'll likely use a project called React-Runner in the future, quite similar to our current setup (real native embed) but lighter.
+
+- Since you're using Firecracker, it's hard to understand how it takes 20 seconds to boot a VM. AWS Lambda worst performer (JVM) I think takes much less than that, like 5 seconds in cold start. Why don't you offer warmed VMs? Like reserved concurrency in AWS Lambda. Preemptively increase the number of VMs (like an auto-scaler) as traffic increases.
+  - We have a few unoptimized things happening on our infra in the moment. We are working on it to make it better and it will be better soon. Most likely around 1-2 seconds.
+
+- This seems like a great alternative to passing around postman collections separate from documentation
+
+- 🤔 Isn't this something similar to Jupiter Books, where you can have executable code?
+  - Devbook allows you to integrate the "interactive code experience" natively into your docs. It's not just embedding an iframe. We can also handle use-cases like CLIs better since you can add a full emulated terminal (like RunOps did on their landing page) to your website and control it with JavaScript.
+
+- Is there a way to declare the code in the backend, instead of the frontend? Declaring the code in the frontend and having the VM execute whatever comes from it is asking for serious abuse.
+  - Yes! You can predefine the whole VM with our CLI via a simple Dockerfile
+
+- how about going the opposite way, while staying in your code editor you can interact with some documentation that guides you to integrate with their code
+  - Stay tuned to what we are building
 # discuss
 - ## 
 

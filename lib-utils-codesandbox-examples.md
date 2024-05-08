@@ -10,12 +10,27 @@ modified: 2023-09-02T09:17:22.992Z
 # guide
 
 # js-sandbox
-- https://github.com/codesandbox/codesandbox-client /GPLv3+apache2/202404/js
+- https://github.com/codesandbox/codesandbox-client /12.9kStar/GPLv3+apache2/202404/js
   - https://codesandbox.io/
   - An online IDE for rapid web development
   - CodeSandbox is licensed under GPLv3, except for `packages/common` and `packages/sandpack-core` and `packages/app/src/sandbox`, which are licensed under the Apache License, Version 2.0.
   - 🍴 forks
   - https://github.com/NetEase/codesandbox-client /tango
+- https://github.com/codesandbox/sandpack /4.5kStar/apache2/202405/ts
+  - https://sandpack.codesandbox.io/
+  - https://sandpack.codesandbox.io/docs
+  - Sandpack is a component toolkit for creating your own live running code editing experience powered by CodeSandbox.
+  - 依赖codemirror6、lz-string、react-devtools-inline
+  - Sandpack Client: This is a small foundation package that sits on top of the bundler. It is framework agnostic and facilitates the handshake between your context and the bundler iframe.
+  - Sandpack React: React components that give you the power of editable sandboxes that run in the browser
+  - https://github.com/AaronPowell96/sandpack-file-explorer /MIT/202312/ts
+    - Enhanced File Explorer for Sandpack. Providing immense flexibility to Sandpack's capabilities.
+
+- https://github.com/ameerthehacker/blazepack /LGPLv3/202106/js/inactive
+  - Blazing fast dev server powered by sandpack
+  - I always wanted the super fast feedback that codesandbox provides in my local environment, so I have built a tiny wrapper around the codesandbox bundler sandpack and it runs locally
+  - Supports private npm packages 
+  - Supports React, Vue, Angular, Preact, Svelte and more
 
 - https://github.com/mcuking/vitesandbox-client /MIT/202211/js/inactive
   - https://github.com/mcuking/vitesandbox-client-example
@@ -164,6 +179,15 @@ modified: 2023-09-02T09:17:22.992Z
 
 - https://github.com/its-devtastic/framestack /202204/ts
   - An iframe manager. Easily create, layout, animate, communicate with and clean up iframes.
+# sandbox-using-vm
+- https://github.com/firecracker-microvm/firecracker /apache2/202405/rust/python
+  - http://firecracker-microvm.io/
+  - Secure and fast microVMs for serverless computing.
+  - Firecracker is an open source virtualization technology that is purpose-built for creating and managing secure, multi-tenant container and function-based services that provide serverless operational models. 
+  - Firecracker runs workloads in lightweight virtual machines, called microVMs, which combine the security and isolation properties provided by hardware virtualization technology with the speed and flexibility of containers.
+  - The main component of Firecracker is a virtual machine monitor (VMM) that uses the Linux Kernel Virtual Machine (KVM) to create and run microVMs. 
+  - Firecracker has a minimalist design. It excludes unnecessary devices and guest-facing functionality to reduce the memory footprint and attack surface area of each microVM.
+  - Firecracker was developed at Amazon Web Services to accelerate the speed and efficiency of services like AWS Lambda and AWS Fargate. 
 # browser-emulator
 - https://github.com/jvilk/BrowserFS
   - an in-browser filesystem that emulates the Node JS filesystem API and supports storing and retrieving files from various backends.

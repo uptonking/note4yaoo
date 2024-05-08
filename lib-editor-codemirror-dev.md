@@ -53,7 +53,7 @@ modified: 2021-05-06T09:38:31.520Z
 
 - 代码编辑器要点
   - incremental syntax highlighting
-  - virtualized render
+  - virtualized render, 可提升highlighting的性能
 
 - code-editor vs text-editor
   - syntax-highlighting

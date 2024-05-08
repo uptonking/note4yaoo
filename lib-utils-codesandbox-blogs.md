@@ -9,12 +9,15 @@ modified: 2024-01-25T13:29:10.054Z
 
 # guide
 
-# blogs
+# blogs-dev-xp
 
 ## [Building a Next-Level Code Playground/Sandbox/REPL with Sandpack _202402](https://www.joshwcomeau.com/react/next-level-playground/)
 
 - I recently rebuilt this blog's playground, using Sandpack, a modern playground framework built by the folks at CodeSandbox
 - The "secret sauce" for CodeSandbox has been the in-browser bundler. It can fetch dependencies from NPM, transpile your JSX, and even supports modern quality-of-life features like hot module reloading. It does this all in-browser
+- By default, Sandpack uses CodeMirror as its code editor.
+  - This is a bit surprising; CodeSandbox uses VSCode as its editor, and so I thought for sure Sandpack would use Monaco, the editor that powers VSCode.
+  - After experimenting with it, however, I've discovered I quite like CodeMirror. It's not as fully-featured as Monaco, but then it doesn't need to be; most web-based playgrounds are meant to demonstrate a concept, not serve as a daily-driver editor.
 
 - Something interesting about the way Sandpack is architected: the bundler isn't running locally.
   - When we render a `<SandpackPreview>` component, it produces an iframe. 
@@ -111,7 +114,66 @@ Function('str', 'console.log(str, aaa)')('aaa:');
 - 
 - 
 
-# blogs-codesandbox
+# blogs-csb-internals
+
+## [CodeSandbox是如何让npm上的模块直接在浏览器端运行的 _202011](https://www.yuque.com/wangxiangzhong/aob8up/uf99c5)
+
+- [CodeSandbox - 从入门到实现原理解析](https://www.yuque.com/wangxiangzhong/aob8up)
+
+- [技术夹](https://www.yuque.com/wangxiangzhong/mvugau)
+  - [一文彻底搞懂前端沙箱](https://www.yuque.com/wangxiangzhong/mvugau/bgs3po)
+
+## [搭建一个属于自己的在线 IDE - 网易云音乐技术团队 _202010](https://juejin.cn/post/6882541950205952013)
+
+- [云音乐低代码：基于 CodeSandbox 的沙箱性能优化 - 掘金 _202205](https://juejin.cn/post/7102243774985666596)
+  - 距离发布如何私有化部署 CodeSandbox 沙箱的文章《搭建一个属于自己的在线 IDE》 已经过了一年多的时间，最开始是为了在区块复用平台上能够实时构建前端代码并预览效果。
+  - 不过在去年云音乐内部启动的基于源码的低代码平台项目中，同样有在线实时构建前端应用的需求，最初是采用从零开发沙箱的方式，不过自研沙箱存在以下几点问题：
+    - 灵活性较差
+    - 兼容性较差
+    - 未实现与平台的隔离
+  - 当然如果继续在这个自研沙箱上继续开发，上面提到的问题还是可以逐步被解决的，只是需要投入更多的人力。
+  - 而 CodeSandbox 作为目最主流且成熟度较高的在线构建沙箱，不存在上面列出的问题。而且实现代码全部开源，也不存在安全问题。于是便决定采用私有化部署的 CodeSandbox 来替换低代码平台的自研沙箱
+
+- 笔者主要研究的是 Codesandbox 以及 Stackblitz 。这两个都是商业化的项目，其中 Stackblitz 的核心部分并没有开源出来，而 CodeSandbox 绝大部分的功能都已经开源出来了，所以最终选择了 CodeSandbox。
+- CodeSandbox 最大的特点是采用在浏览器端做项目构建，也就是说打包和运行不依赖服务器。由于浏览器端并没有 Node 环境，所以 CodeSandbox 自己实现了一个可以跑在浏览器端的简化版 webpack。
+- CodeSandbox 主要包含了三个部分：
+  - Editor 编辑器：主要用于编辑代码，代码变动后会通知 Sandbox 进行转译
+  - Packager npm 在线打包器：给 Sandbox 提供 npm 包中的文件内容
+  - Sandbox 代码运行沙盒：在一个单独的 iframe 中运行，负责代码的编译 Transpiler 和运行 Evalation
+- 构建过程主要包括了三个步骤：
+  - Packager--npm 包打包阶段：下载 npm 包并递归查找所有引用到的文件，然后提供给下个阶段进行编译
+    - Packager 阶段的代码实现是在 CodeSandbox 托管在 GitHub 上的仓库 dependency-packager 里，这是一个基于 express 框架提供的服务，并且部署采用了 Serverless(基于 AWS Lambda) 方式，让 Packager 服务更具伸缩性，可以灵活地应付高并发的场景。
+    - （注：在私有化部署中如果没有 Serverless 环境，可以将源码中有关 AWS Lambda 部分全部注释掉即可 ）
+  - Transpilation--编译阶段：编译所有代码, 构建模块依赖图
+    - 当 Sandbox 从 Editor 接收到前端项目的源代码、npm 依赖以及构建模板 Preset。Sandbox 会初始化配置，然后从 Packager 服务下载 npm 依赖包对应的 manifest 文件，接着从前端项目的入口文件开始对项目进行编译，并解析 AST 递归编译被 require 的文件，形成依赖图（注：和 webpack 原理基本一致）。
+    - CodeSandbox 支持外部预定义项目的构建模板 Preset。Preset 规定了针对某一类型的文件，采用哪些 Transpiler（相当于 Webpack 的 Loader）对文件进行编译。目前可供选择的 Preset 选项有： vue-cli 、 create-react-app、create-react-app-typescript、 parcel、angular-cli、preact-cli。但是不支持修改某个 Preset 中的具体配置
+  - Evaluation--执行阶段：使用 eval 运行编译后的代码，实现项目预览
+    - 从项目入口文件对应的编译后的模块开始，递归调用 eval 执行所有被引用到的模块。
+- 如何私有化部署 CodeSandbox。
+  - 首先是 npm 在线打包服务 dependency-packager。笔者是通过镜像部署到自己的服务器上的。
+  - react-sandpack 项目，就是 CodeSandbox 提供的基于 react 实现的的编辑器项目
+  - 子组件 FileExplorer、CodeMirror、BrowserPreview 分别是左侧的文件目录树、中间的代码编辑区和右侧的项目构建后的页面预览区。
+  - SandpackProvider 还会再插入一个 iframe 标签，主要用于显示项目构建后的页面，而右侧预览区组件 BrowserPreview 中的 Preview 组件会将这个 ifame 插入到自己的节点，这样就实现了将项目构建的页面实时显示出来的目的。
+  - iframe 加载的 bundlerUrl 默认是官方提供的地址 http://sandpack-${version}.codesandbox.io ，其中这个域名对应的服务其实就是 CodeSandbox 的核心--在浏览器端构建前端项目的服务
+- 代码运行沙盒 SandBox
+  - CodeSandbox 前端构建的核心部分的目录在 CodeSandbox-client 工程中 packages/app 项目，其中的原理已经在上面阐述过了，这里只需要将该项目构建出来的 www 文件夹部署到服务器即可
+  - 注意这里采用了分阶段构建镜像，即先构建 CodeSandbox 项目，再构建镜像。但在实践中发现 CodeSandbox 项目放在服务器上构建不是很顺利，所以最终还是选择在本地构建该项目，然后将构建产物一并上传到远程 git 仓库，这样在打包机上只需要构建镜像并运行即可。
+- 为什么直接使用 CodeSandbox 提供的默认构建服务？其实就是为了对 CodeSandbox 的构建流程进行定制
+  - 替换组件样式自动引入的 babel 插件功能
+  - 添加预览区域截图功能
+  - create-react-app 模板中添加对 less 文件编译的支持
+  - 修改 CodeSandbox 请求的 npm 打包服务地址
+
+- 👥 
+
+- 文章如今看来有点过时了。基本原理是正确的，但是 csb 进化的太快了
+
+- 为什么不用theia、vscode网页版呢？这些都可以直接打包，而且可以配置私域的源呀
+  - 主要是应用场景吧，文章提到的浏览器构建的方式对于组件/区块级别已经足够了。目前的确在尝试服务端构建方式来实现实际的前端项目在 web 上开发的目的，不过这种方式如果要真正可以在实际工作中应用的话，对服务器的各方面要求比较高。 总结来说做这个方案选择主要考虑到应用场景，以及实现成本、投入产出比等等。
+
+- 可以使用 code-server 搭建一个浏览器中运行基于 HTTP 或者 SSH 协议的 VSCode
+  - 嗯 不错的思路
+# blogs-csb
 
 ## [Hosting the Bundler – Sandpack](https://sandpack.codesandbox.io/docs/guides/hosting-the-bundler)
 

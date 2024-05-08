@@ -329,8 +329,34 @@ betterdiscordctl -i flatpak install
 
 ## 050
 
-## 0506
+## 0508
 
+- dev-to
+  - withSSR的if逻辑似乎有问题，都会提前返回
+
+- [Can there be multiple request interceptors defined with axiosInstance? · Issue #4861 · axios/axios](https://github.com/axios/axios/issues/4861)
+  - Please refer to Multiple interceptors
+
+- [node.js - Logging axios request and response headers - Stack Overflow](https://stackoverflow.com/questions/70704988/logging-axios-request-and-response-headers)
+  - Here's what I usually do: In the request interceptor, I use some UUID library (or maybe the crypto core module of node) to generate a UUID, then attach it to the config object as a request ID, say config.reqId. Same config object should be accessible in response.config
+
+- https://github.com/Gerhut/axios-debug-log
+  - Axios interceptor of logging request & response with debug library.
+- https://github.com/hg-pyun/axios-logger
+  - When you send a request in nodejs, you need to show the log to the console. This library display the necessary information while communicating with the server.
+  - This package is working as Axios's interceptors.
+
+- [NEXT. JS redirect not working in getServerSideProps · vercel/next.js ](https://github.com/vercel/next.js/discussions/42405)
+  - your service worker is using the incorrect strategy. Refer to this answer. 
+  - All you gotta do is, if you are using next-pwa
+
+- [pnpm link | pnpm](https://pnpm.io/cli/link)
+
+```JS
+console.log(';; ajax-req ', config.url, isBackendURL(config.url), JSON.stringify(Token), window);
+
+console.log(';; ajax-res ', path, JSON.stringify(error));
+```
 
 ## 0505
 

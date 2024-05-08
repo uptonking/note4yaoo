@@ -104,6 +104,9 @@ modified: 2022-09-21T15:47:41.340Z
   - A Chrome DevTools formatter for Yjs.
   - It makes the Yjs data types printed in the Chrome DevTools console easier to read and inspect, allowing developers to inspect Yjs data types just as they do with primitive data types.
 
+- https://github.com/ameerthehacker/y-websocket-patch
+  - patches
+
 - https://github.com/samwillis/yjs-sqlite-test
   - http://samwillis.co.uk/yjs-sqlite-test/
   - This is a test project to combine yjs and sqlite wasm, it lets you store yjs documents in a sqlite database, update them in place and query the content. 

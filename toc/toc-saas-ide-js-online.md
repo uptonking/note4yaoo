@@ -115,6 +115,17 @@ modified: 2021-05-14T15:03:38.010Z
 
 - https://play.fe-dev.cn/
 # ide-online
+- https://github.com/SmartIDE/SmartIDE /GPLv3/202303/go/inactive
+  - https://smartide.cn/
+  - SmartIDE可以帮助你完成开发环境的一键搭建
+  - 如果你熟悉命令行操作，那么么安装我们的cli，然后你只需要学会一个命令 smartide start 就可以在自己所需要的环境中，使用自己喜欢的开发工具进行编码和开发调试了，不再需要安装任何工具，SDK，调试器，编译器，环境变量等繁琐的操作
+  - 如果不喜欢命令行操作，也可以使用 SmartIDE Server 通过网页完成全部操作。
+  - 当前SmartIDE包括4个组件：
+  - CLI: 一个简单易用的命令行工具，可以运行在Windows/MacOS/Linux上，开发者使用一个简单的指令 smartide start 即可一键搭建开发环境，直接打开环境内置的WebIDE开始进行编码和调试。
+  - Server: 支持私有部署的开源容器化开发环境管理服务。Server版继承CLI的所有能力，但是提供网页化的操作，同时针对团队使用进行扩展和支持。
+  - Marketplace: SmartIDE插件市场是 open-vsx.org 的一个fork，我们进行了汉化并提供中国本地部署和插件自动同步服务。企业也可以选择在内网部署 SmartIDE插件市场，为内部开发者提供安全可控的VSCode插件管理服务。
+  - 开发者镜像和模版: 开发者镜像是一系列预先构建好的开发环境容器，我们提供7种开发语言的开发者镜像，并且同时托管在国内的阿里云和DockerHub，方便全球的开发者使用。
+
 - https://github.com/adarshaacharya/CodeTreats /MIT/202110/ts
   - In-browser IDE for running, collaborating, saving and sharing code snippets
 # more-online-code-editor

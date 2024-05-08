@@ -81,10 +81,14 @@ modified: 2023-09-01T03:56:10.056Z
   - simple and beautiful text diff viewer component made with jsdiff and React.
   - Inspired from Github diff viewer, it includes features like split view, inline view, word diff, line highlight and more. It is highly customizable and it supports almost all languages.
 
-- https://github.com/kpdecker/jsdiff /7.4kStar/BSD/202401/js
+- https://github.com/kpdecker/jsdiff /7.4kStar/BSD/202403/js
   - http://incaseofstairs.com/jsdiff/
   - A JavaScript text differencing implementation
   - Based on the algorithm proposed in "An O(ND) Difference Algorithm and its Variations" (Myers, 1986).
+  - If you need behavior a little different to what any of the text diffing functions above offer, you can roll your own by customizing both the tokenization behavior used and the notion of equality used to determine if two tokens are equal.
+  - jsdiff deviates from the published algorithm in a couple of ways that don't affect results but do affect performance:
+    - jsdiff keeps track of the diff for each diagonal using a linked list of change objects for each diagonal, rather than the historical array of furthest-reaching D-paths on each diagonal contemplated on page 8 of Myers's paper.
+    - jsdiff skips considering diagonals where the furthest-reaching D-path would go off the edge of the edit graph. This dramatically reduces the time cost (from quadratic to linear) in cases where the new text just appends or truncates content at the end of the old text.
 # command-line
 - https://github.com/Textualize/rich /python3.7+
   - https://rich.readthedocs.io/en/latest/

@@ -15,9 +15,36 @@ modified: 2023-06-23T12:46:53.288Z
   - https://github.com/exuanbo/codemirror-toolkit
   - https://github.com/uiwjs/react-codemirror
   - https://www.npmjs.com/package/collaborative-codemirror
+  - https://news.ycombinator.com/threads?id=CompuIves
 # popular
 - https://github.com/tmcw/awesome-codemirror
   - Awesome CodeMirror plugins, themes, wrappers, and more
+
+- https://github.com/styfle/awesome-online-ide
+  - An "Online IDE" has the features mentioned above but runs in a web browser instead of installing as a native application.
+  - AWS Cloud9, codenvy, Theia
+  - https://github.com/gitpod-io/gitpod /go/java/ts
+    - The developer platform for on-demand cloud development environments to create software faster and more securely.
+    - Run any language on a full Linux VM complete with terminals, GitHub and Git integration
+
+- https://github.com/milahu/browserforge /202303
+  - run github + github-pages + codesandbox in your browser, offline-first - CONCEPT
+
+- https://github.com/codesandbox/sandpack /4.5kStar/apache2/202405/ts
+  - https://sandpack.codesandbox.io/
+  - https://sandpack.codesandbox.io/docs
+  - Sandpack is a component toolkit for creating your own live running code editing experience powered by CodeSandbox.
+  - sandpack-react依赖codemirror6、lz-string、react-devtools-inline
+  - sandpack-client依赖nodebox、static-browser-server
+  - CodeEditor支持codemirror/monaco/vscode
+  - 提供了很多示例，包括cm-DecoratorsDynamic/FileExplorer/ReactDevTools
+  - Sandpack Client: This is a small foundation package that sits on top of the bundler. It is framework agnostic and facilitates the handshake between your context and the bundler iframe.
+  - Sandpack React: React components that give you the power of editable sandboxes that run in the browser
+  - https://github.com/AaronPowell96/sandpack-file-explorer /MIT/202312/ts
+    - Enhanced File Explorer for Sandpack. Providing immense flexibility to Sandpack's capabilities.
+  - https://github.com/codeamigo/codeamigo /GPLv3/202401/ts/inactive
+    - codeamigo is a platform that helps people learn to code with an AI assistant.
+    - 依赖express、apollo-server、graphql、next.js、postgresql、redis
 
 - https://github.com/jupyterlab/jupyterlab/tree/main/packages/codemirror /202405/ts
   - A JupyterLab package which provides the default implementation of the `@jupyterlab/codeeditor` interface, using the `CodeMirror` editor.
@@ -69,16 +96,17 @@ modified: 2023-06-23T12:46:53.288Z
   - https://code-motion.vercel.app/
   - animate code changes, and export it as a video
   - An effortless video code diff-animation tool for visualizing code changes
-  - 依赖@uiw/react-codemirror、radix-ui、framer-motion、shiki、html2canvas、zustand、react-resizable-panels
+  - 依赖@uiw/react-codemirror、diff、radix-ui、framer-motion、shiki、html2canvas、zustand、react-resizable-panels
   - canvas-based video
   - Export video to webm
   - in-browser code editor
+  - App is designed to be offline-first, meaning that it does not rely on any external servers or backdoors
   - We're planning to move to an offline-first approach, which means there will be no servers involved, and all your work will be stored in your local storage.
 
 - https://github.com/meowtec/diffani /202307/ts
   - https://diffani.co/
   - Diff code and render to animation video
-  - 依赖codemirror6、jsdom、prismjs、zustand、vite
+  - 依赖codemirror6、diff、jsdom、prismjs、zustand、vite
 
 - https://github.com/shikijs/shiki-magic-move /MIT/202405/ts
   - https://shiki-magic-move.netlify.app/
@@ -582,20 +610,6 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/eivmosn/plugin-mirror /202311/ts
   - codemirror plugins
 
-- https://github.com/FurqanSoftware/codemirror-languageserver /161Star/BSD/202212/ts/inactive
-  - Language Server integration for CodeMirror 6
-  - This plugin enables code completion, hover tooltips, and linter functionality by connecting a CodeMirror 6 editor with a language server over WebSocket.
-  - [Using Language Servers with CodeMirror 6 _202103](https://hjr265.me/blog/codemirror-lsp/)
-  - 🍴 forks
-  - https://github.com/databutton/codemirror-languageserver /202309/ts
-
-- https://github.com/qualified/lsps /MIT/202206/ts/inactive
-  - Use Language Servers with in-browser editors. 
-  - Monorepo of editor agnostic packages and CodeMirror client.
-
-- https://github.com/marc2332/lsp-codemirror /ISC/202008/ts/inactive
-  - LSP integration for CodeMirror
-
 - https://github.com/replit/codemirror-vscode-keymap /202212/ts/inactive
   - Ports VSCode's keyboard shortcuts to CodeMirror 6.
 
@@ -737,6 +751,26 @@ modified: 2023-06-23T12:46:53.288Z
   - https://github.com/mindofmatthew/text.management/tree/main/packages/codemirror/evaluate
     - CodeMirror 6 extension for enabling lines of code to be evaluated
 
+## lsp
+
+- https://github.com/FurqanSoftware/codemirror-languageserver /161Star/BSD/202212/ts/inactive
+  - Language Server integration for CodeMirror 6
+  - This plugin enables code completion, hover tooltips, and linter functionality by connecting a CodeMirror 6 editor with a language server over WebSocket.
+  - [Using Language Servers with CodeMirror 6 _202103](https://hjr265.me/blog/codemirror-lsp/)
+  - 🍴 forks
+  - https://github.com/databutton/codemirror-languageserver /202309/ts
+
+- https://github.com/qualified/lsps /MIT/202206/ts/inactive
+  - Use Language Servers with in-browser editors. 
+  - Monorepo of editor agnostic packages and CodeMirror client.
+
+- https://github.com/marc2332/lsp-codemirror /ISC/202008/ts/inactive
+  - LSP integration for CodeMirror
+
+- https://github.com/okikio/codemirror /MIT/202110/ts/inactive
+  - https://okikio-codemirror.netlify.app/
+  - A minor test of Codemirror
+
 ## utils-lang
 
 - https://github.com/inspirnathan/codemirror-lang-mermaid /MIT/202309/ts
@@ -753,6 +787,39 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/neo4j/cypher-editor /apache2/202404/js
   - Codemirror editor for Cypher, with syntax awareness and auto-completion
 # code-playgrounds
+- react-runner /382Star/MIT/202303/ts/inactive
+  - https://github.com/nihgwu/react-runner
+  - https://nihgwu.github.io/react-runner/
+  - https://react-runner.vercel.app/
+  - Run your React code on the go
+  - 被Autodesk/react-base-table用来展示示例
+  - react-runner依赖sucrase(alternative to Babel)、react
+  - react-live-runner依赖react-simple-code-editor、react-runner
+  - react-runner-codemirror依赖codemirror6、react、prism-react-renderer
+    - React wrapper of CodeMirror6 for React code editing, Live preview powered byReact Runner
+  - react-runner is inspired by `react-live` heavily, I love it, but I love arrow functions for event handlers instead of bind them manually 
+  - use Sucrase instead of Bublé to transpile the code.
+  - If you are using react-live and want a smooth transition, react-live-runner is there for you which provide the identical way
+  - Server Side Rendering
+  - You can even build your own async runner to support dynamic imports, try Play React
+  - [[Feature]: Add React 18 support for `react-live-runner` _202205](https://github.com/nihgwu/react-runner/issues/123)
+    - I've tried other solutions, like use-editable, but I'd say react-simple-code-editor provides the best UX and less bugs, I don't think there is anything preventing it's been used with React 18, just ignore the warnings for now, and react-live-runner aims to provide a smooth transition from react-live, 
+    - if you want to use other code editors, you are free to use theme with react-runner, like CodeMirror, CodeJar or even Monaco, I don't have the bandwidth to maintain another editor which is complicated regarding multi browsers support
+
+- react-live /4.1kStar/MIT/202402/ts/inactive
+  - https://github.com/FormidableLabs/react-live
+  - https://commerce.nearform.com/open-source/react-live/
+  - https://react-live.netlify.com/
+  - render React components with editable source code and live preview.
+  - 依赖use-editable、sucrase、prism-react-renderer
+  - 只支持直接编辑源码, 不支持类似storybook的knobs
+  - https://github.com/FormidableLabs/use-editable
+    - small React hook to turn elements into fully renderable & editable content surfaces, like code editors, using contenteditable (and magic)
+  - https://github.com/FormidableLabs/component-playground
+    - A component for rendering React components with editable source and live preview
+  - [codemirror withlive](https://github.com/FormidableLabs/react-live/issues/210)
+    - 202210: if you are using the standard LiveProvider, you can use `@uiw/react-codemirror` as a drop in replacement for LiveEditor
+
 - https://github.com/solidjs-community/solid-playground-editor-cm /MIT/202302/ts/inactive
   - https://solidjs-community.github.io/solid-playground-editor-cm/
   - codemirror6-based editor with typescript support for the solid.js playground
@@ -798,15 +865,31 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/java-sheets/java-sheets /MIT/202207/java/ts
   - Browser Based Java REPL
   - Jsheet lets you create and share Java snippets, ranging from single expressions to complex classes, methods and even Markdown comments.
+
+- https://github.com/jsbin/jsbin /MIT/202402/js
+  - http://jsbin.com/
+  - Collaborative JavaScript Debugging App
+  - this current version of jsbin (v4.x.x) is no longer actively maintained and the new version of jsbin (v5) is currently in active development
+  - 依赖codemirror5
+  - https://github.com/jsbin/jsbin/tree/feat/next-v5 /201906/js/inactive
+
+- https://github.com/chinchang/web-maker /MIT/202405/js
+  - https://webmaker.app/
+  - A blazing fast & offline frontend playground
+  - 依赖codemirror5
 # starter
 - https://github.com/falk-werner/codemirror-example /202312/js/单文件
   - a brief example how to integrate Code-Mirror using vite.
 
 - https://github.com/RPGillespie6/codemirror-quickstart /202402/js
   - Quickstart guide and examples for those who prefer a more hands on approach to bootstrapping CodeMirror 6
+  - Example 1: a minimal example HTML page
+  - [Example 2: choose the editor theme on the fly](https://www.bryanpg.com/codemirror-quickstart/examples/example2.html)
+  - [Example 3: Try making edits above, saving state, then loading a different state.](https://www.bryanpg.com/codemirror-quickstart/examples/example3.html)
 
 - https://github.com/datacamp/codemirror-6-getting-started /202102/js
   - Getting started with CodeMirror 6, the popular code editor library
+  - [Getting started with the new CodeMirror 6 | DataCamp Engineering _202102](https://blog.datacamp.engineering/codemirror-6-getting-started-7fd08f467ed2)
 
 - https://github.com/codepen/CodeMirror-6-Needs /202208/js/inactive
   - https://objective-blackwell-d4efc9.netlify.app/
