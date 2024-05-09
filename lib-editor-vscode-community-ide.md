@@ -44,9 +44,24 @@ modified: 2024-05-09T09:35:28.467Z
 # discuss-cloud-ide
 - ## 
 
-- ## 
+- ## [Ask HN: Is anyone using cloud dev environments (e.g. Codespaces/Replit) at work? | Hacker News _202310](https://news.ycombinator.com/item?id=37934488)
+- I have not used a full blown online environment. Except maybe VSCode remote using SSH. I repeatedly find anything that requires a network call somewhere in between a serious impediment disrupting the flow of development. Sometimes I find myself in slow laggy situations with ssh to the point I prefer Mobile Shell mosh. VSCode remote (or similar) via ssh obviously becomes painful.
+  - Most cloud environments are also limited in terms of what you can do. e.g: issue sudo while running a process, attach to a process with a debugger.
 
-- ## 
+- I work on CodeSandbox, so that creates some bias :). We've been working on our own CDE solution, though we've taken a different spin to improve speed and cost.
+  - Our solution is based on Firecracker, which enables us to "pause" (& clone) a VM at any point in time and resume it later exactly where it left of, within 1.5s. This gives the benefit that you won't have to wait for your environment to spin up when you request one, or when you continue working on one after some inactivity
+  - Our solution is based on Firecracker, which enables us to "pause" (& clone) a VM at any point in time and resume it later exactly where it left of, within 1.5s. This gives the benefit that you won't have to wait for your environment to spin up when you request one, or when you continue working on one after some inactivity
+  - It also reduces cost. We can pause the VM after 5 minutes of inactivity, and when you come back, we'll resume it so it won't feel like the environment was closed at all.
+
+- I thought CDEs were a pretty cool idea years ago until I discovered Nix and specifically "nix shells".
+
+- 
+- 
+
+- ## [Microsoft Dev Box | Hacker News _202205](https://news.ycombinator.com/item?id=31493458)
+- Would this be a competitor to https://www.gitpod.io/ ?
+  - It isn't a match, because this is a full Windows desktop running over Web streams/RDP.
+  - It is a competitor to Citrix, VMWare and similar offerings.
 
 - ## [How to code, build, and deploy from an iPad using Gitlab and Gitpod | Hacker News _202204](https://news.ycombinator.com/item?id=31060363)
 - Gitpod is VSCode front running on the browser and the backend is in a Linux container on their cloud. 
@@ -107,6 +122,24 @@ modified: 2024-05-09T09:35:28.467Z
 - What would you say are the main differences between devpod and DevSpace. Do they compliment each other? Should devpod at one time in the future displace DevSpace? Would love to get your view on that.
   - Yep, as we see it they compliment each other quite well. DevPod takes your workspace to the cloud and DevSpace let's you develop against your Kubernetes cluster - potentially the same one you used to start your workspace.
   - Internally we use both in our development setup, spinning up remote workspaces using DevPod, installing DevSpace and kind into the devcontainer, then using DevSpace to develop against the cluster. See the vcluster setup as an example
+
+- ## [Show HN: DevPod – Codespaces but Open Source, Client-Only, and Unopinionated | Hacker News _202305](https://news.ycombinator.com/item?id=35964590)
+- DevPod is built on the devcontainer.json standard to create reproducible dev environments. 
+- Compared to hosted services such as Github Codespaces, JetBrains Spaces, or Google Cloud Workstations, DevPod has the following advantages:
+  - Open Source: DevPod is 100% open-source and extensible. A provider doesn’t exist? Just create your own.
+  - Client-only: No need to install a server backend. DevPod runs solely on your computer.
+  - Cross IDE support: VS Code and the full JetBrains suite is supported. Other IDEs can be connected through ssh.
+  - Rich feature set: DevPod already supports prebuilds, auto inactivity shutdown, git & docker credentials sync, with many more features to come.
+
+- Port-forwarding and using your local IDE is already working in DevPod today. We also added auto-port-forward where it watches what happens inside the container and then starts port-forwarding automagically.
+
+- File sync: That is a great idea. We got that in DevSpace already as you mentioned and we definitely think this could be super valuable in DevPod as well. Right now, a git push and then pull is required to get things from inside DevPod updated on local but with sync this would be even easier and faster.
+
+- I enjoyed using gitpod a few times, this seems similar. How do they compare?
+- There are 3 main differences: 
+  - 1) DevPod is based on GitHub/Microsoft's devcontainer.json standard while GitPod has their own file format 
+  - 2) DevPod is client-only more like Terraform where the client creates/manages things directly using cloud credentials vs GitPod is a server-side solution to manage and provision dev workspaces 
+  - 3) DevPod has a provider concept similar to Terraform that allows you to provision dev environments in ANY infra vs GitPod is mostly a hosted solution (they do have the option to host it yourself as well but it's usually you install it to one cloud and then provision in that same cloud vs DevPod is 1 client (no server, see point 2) and then you deploy the dev env in ANY cloud or even locally in Docker or local k8s)
 
 - ## [Ending support for self-hosted Gitpod and moving our source to AGPL | Hacker News _202212](https://news.ycombinator.com/item?id=33907897)
 - CEO from Gitpod here. Some background on why we moved to a managed enterprise cloud product: there are parts of Gitpod itself that are closer to a Kubelet then a Kubernetes application. We use much of the Kubernetes surface, interact with containerd, and use bleeding edge Linux features. The only way you make Cloud and Self Hosted co-exist is to have one codebase. What we deployed in SaaS we wanted to deploy in Self-Hosted. But not all Kubernetes are created equal (think GKE node label, EKS custom AMI to get Linux kernels but not other places). Today there are features in SaaS that are not available in Self-Hosted. 

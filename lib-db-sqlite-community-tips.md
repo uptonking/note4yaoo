@@ -84,7 +84,12 @@ modified: 2023-10-28T13:38:46.522Z
 
 - ## 
 
-- ## 
+- ## Generated columns are calculated based on other columns in the same table. 
+- https://twitter.com/ohmypy/status/1788193851099726311
+  - For example, we can calculate the failure rate based on the number of queries
+  - Another common use case is to extract a certain JSON path into a separate column and optionally index it (see the screenshot). This allows using SQLite as a document database
+  - Generated columns can be computed on the fly or stored on disk. Stored are rarely used in practice.
+  - Available since SQLite 3.31 (Jan 2020).
 
 - ## Modern SQLite #1: STRICT Tables
 - https://twitter.com/ohmypy/status/1786733812346450422

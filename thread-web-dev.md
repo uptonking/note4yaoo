@@ -35,6 +35,14 @@ modified: 2021-01-08T17:13:43.392Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 看起来单个 observer会更快。 这不性能优化的点就来了，以后面试官问你就可以说你是怎么优化曝光组件的了
+- https://twitter.com/wulianwen1/status/1788244518044852243
+  - 我看大家写曝光组件的时候，一般会在组件中注册一个 intersectionObserver, 这样的话有多少个曝光的地方就会 new 多少个实例。但实际上一个 intersectionObserver 就可以观察多个元素，只需要一个单例就行了。但是这样会让代码变得复杂，而且不知道性能会不会比 new 多个要强
+
 - ## Quick HTML tip: ordered lists come with a "start" property.
 - https://twitter.com/stefanjudis/status/1780140328487727597
 - My favorite is the `reversed` attribute

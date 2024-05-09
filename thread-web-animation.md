@@ -40,6 +40,17 @@ modified: 2021-01-08T17:14:34.841Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## In Framer we're making an animation engine to animate anything a designer throws at us.
+- https://twitter.com/mattgperry/status/1788296976997478689
+  - It's not 100% optimal for everything but fantastic for most and always getting better.
+  - I would be genuinely curious to see a FLIP or WAAPI implementation of this
+  - It looks simple-ish but it's deceptive. The layouts are all being animated with transforms. With the mixed spring/time transitions, rotating children,  undistorted radius, interruption. I think the way we do it is the only way possible. But perhaps there's a more performant way?
+- When you say less powerful device, do you have specs? Because it could be we do things like frame rate detection that throttles or disables animations on slow devices
+
 - ## 💫 implementing text animations with framer-motion is so fun
 - https://twitter.com/consolerod/status/1770819569654870318
 - is it motionValue that’s being animated?

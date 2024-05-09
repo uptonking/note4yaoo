@@ -378,6 +378,13 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/lhlyu/pure-editor /MIT/202302/ts/inactive
   - a pure editor developed using codemirror6
 
+- https://github.com/RaspberryPiFoundation/editor-ui /apache2/202405/js
+  - https://editor.raspberrypi.org/
+  - Code Editor frontend
+  - https://github.com/RaspberryPiFoundation/editor-api /AGPLv3/202405/ruby/python
+    - https://editor.raspberrypi.org/
+    - Code Editor backend
+
 - https://github.com/adobe/brackets /MIT/202003/js/archived
   - http://brackets.io/
   - a modern open-source code editor for HTML, CSS and JavaScript that's built in HTML, CSS and JavaScript.
@@ -936,6 +943,12 @@ modified: 2023-06-23T12:46:53.288Z
   - https://snippng.wajeshubham.in/
   - Create and share beautiful images of your source code.
   - 依赖@uiw/react-codemirror、firebase、next
+
+- https://github.com/EsperoTech/yaade /MIT/202404/ts/kotlin
+  - https://docs.yaade.io/
+  - Yaade is an open-source, self-hosted, collaborative API development environment.
+  - I was looking for a self-hosted Postman alternative 
+  - I've been using both codemirror and lezer in Yaade 
 
 - https://github.com/aidenlx/cm-chs-patch /MIT/202405/ts
   - 增加 Obsidian 内置编辑器的(简体)中文分词支持，使得编辑模式的双击可以选中中文，以及在 Vim 模式下可以按中文分词移动光标

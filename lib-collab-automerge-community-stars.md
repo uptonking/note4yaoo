@@ -12,7 +12,14 @@ modified: 2023-09-01T10:17:33.439Z
 # discuss-text-editing
 - ## 
 
-- ## 
+- ## 🌰 We shipped rich text & prosemirror support for Automerge! 
+- https://twitter.com/pvh/status/1788409904543269347
+  - It was HARD and took many combined brains, but the result is something we're proud of
+  - One really interesting and difficult challenge has been to ensure all operations -- including every possible combination of text entry and formatting -- can be done *incrementally*. This ensures stable performance even as documents get very large.
+  - Another interesting feature of this design is that again, because it is patch-based, we can perform efficient "time travel" to any possible point in time in the history of the document. In our CodeMirror implementation we use this to render highlighted diffs.
+  - The underlying rich text format is designed to be editor-agnostic. The reference implementation is ProseMirror, but we hope in time to see bindings for other platforms and editors that can interoperate. (There is a non-trivial schema problem here.)
+
+- Curious on how it differentiates itself from Tiptap and its collaboration features?
 
 - ## Is there any chance that we can eventually get an improved Text API on the roadmap?_202308
 - https://automerge.slack.com/archives/C61RJCM9S/p1692886056954899

@@ -97,6 +97,12 @@ modified: 2023-01-21T19:02:58.833Z
 - https://github.com/MichaelCurrin/auto-commit-msg /ts
   - A VS Code extension to generate a smart commit message based on file changes
   - With the explosion of AI tools, you can find alternatives to this extension which use AI - see AI tools
+
+## ext-data
+
+- https://github.com/microsoft/vscode-data-wrangler /未开源
+  - [Announcing Data Wrangler: Code-centric viewing and cleaning of tabular data in Visual Studio Code - Python](https://devblogs.microsoft.com/python/announcing-data-wrangler-code-centric-viewing-and-cleaning-of-tabular-data-in-visual-studio-code/)
+  - Data Wrangler is a free extension that offers data viewing and cleaning that is directly integrated into VS Code and the Jupyter extension
 # themes
 - https://github.com/vscodethemes/web /202303/ts/inactive
   - https://vscodethemes.com/

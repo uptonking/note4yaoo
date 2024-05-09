@@ -57,8 +57,8 @@ modified: 2021-05-06T09:38:31.520Z
   - consistent env
 
 - cloud-ide
-  - monaco: Codespaces(GitHub绑定), Gitpod(yml), theia, OpenSumi
-  - codemirror: 
+  - monaco: Codespaces(GitHub绑定), Gitpod(yml), theia, OpenSumi, StackBlitz
+  - codemirror: sandpack
   - Eclipse Che: OpenShift CDE
   - DevPod: devcontainer-spec + local-and-cloud
   - more: Coder(no-cloud/k8s), AWS Cloud9, codenvy
@@ -68,6 +68,8 @@ modified: 2021-05-06T09:38:31.520Z
 - 代码编辑器要点
   - incremental syntax highlighting
   - virtualized render, 可提升highlighting的性能
+  - LSP
+  - DAP: debug
 
 - code-editor vs text-editor
   - syntax-highlighting

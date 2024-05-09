@@ -183,6 +183,21 @@ modified: 2023-01-29T10:52:44.183Z
 
 - how about going the opposite way, while staying in your code editor you can interact with some documentation that guides you to integrate with their code
   - Stay tuned to what we are building
+# discuss-internals-cm
+- ## 
+
+- ## 
+
+- ## [Lezer: A parsing system for CodeMirror, inspired by Tree-sitter | Hacker News _202403](https://news.ycombinator.com/item?id=39805591)
+- lezer is a parser generator( which by itself is not a trivial feat with novel ideas like incremental computations applied to parsing) to power his mainstream project which is CodeMirror.
+- it would be great if CodeMirror could just work with Tree-sitter or similar. There’s a lot of ecosystem around other parsing systems, and needing to figure out Lezer stuff is a big friction for adopting CodeMirror 6 for me. There are not a lot of language packages listed
+- Unfortunately, tree-sitter is written in C, which is still awkward to run in the browser (and CodeMirrror targets non-WASM browsers). It also generates very hefty grammar files because it makes the size/speed trade-off in a different way than a web system would.
+  - Tree-sitter does run on the web. I got it working for my editor, but it did involve several days' worth of effort and getting into the weeds with emscripten.
+- I've been using both codemirror and lezer in Yaade (https://github.com/EsperoTech/yaade). Thanks to lezer I was able to write a JSON extension language that supports Yaade environment variables. Pretty cool project and very nicely documented! I love building OSS on top of OSS.
+
+
+- 
+- 
 # discuss
 - ## 
 

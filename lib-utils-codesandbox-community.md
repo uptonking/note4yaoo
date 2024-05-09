@@ -209,6 +209,18 @@ modified: 2024-01-25T13:33:23.267Z
 
 - ## 
 
+- ## We’re thrilled to announce our Storybook add-on: making every story come to life 
+- https://twitter.com/codesandbox/status/1788205375189025090
+  - Open any story as a Sandbox with a click
+
+- ## Over the past months we've received a lot of feedback about our pricing, and today we're updating the pricing of CodeSandbox to make public sandboxes free again!
+- https://twitter.com/CompuIves/status/1788596561032937720
+  - From today, our free plans will include:
+  - Unlimited public sandboxes
+  - 5 private sandboxes
+  - Private npm support
+  - Our most important goal is to make coding more accessible, so we decided to remove that friction.
+
 - ## Introducing CodeSandbox CDE: instant cloud development environments _202401
 - https://twitter.com/codesandbox/status/1752368702878527776
   - Run every branch in a powerful VM

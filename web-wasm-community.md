@@ -30,7 +30,10 @@ modified: 2022-12-24T07:31:48.493Z
 # discuss
 - ## 
 
-- ## 
+- ## I really wanted to know which libraries are bloating my WebAssembly binaries, so I wrote a visualizer.
+- https://twitter.com/DasSurma/status/1788580767410299142
+  - Throw in a .wasm file with DWARF debug symbols, and wasmphobia will generate a flame graph for you, breaking down the module by source file.
+  - [Wasmphobia](https://wasmphobia.surma.technology/)
 
 - ## Why are the Cloudflare folks so obsessed with using WASM as the runtime for Workers? 
 - https://twitter.com/auxten/status/1775554577649340830
