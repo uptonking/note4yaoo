@@ -74,6 +74,18 @@ modified: 2023-01-21T18:58:29.846Z
   - It's based on the very same architecture used by Gitpod or GitHub Codespaces at scale.
   - in 2019 the VS Code team started to refactor its architecture to support a browser-based working mode. While this architecture has been adopted by Gitpod and GitHub, the important bits have not been open-sourced, until now. As a result, many people in the community still use the old, hard to maintain and error-prone approach.
   - At Gitpod, we've been asked a lot about how we do it. So we thought we might as well share the minimal set of changes needed 
+  - [Difference to OpenVSCode Server _202109](https://github.com/coder/code-server/discussions/4267)
+    - ode-server isn't a Docker image, although Docker images for code-server exist. 
+    - Vanilla Code Server is actually an optimised server, but Code Web Server isn't. 
+    - Moreover, I'd prefer code-server since Gitpod's VS Code Web Server doesn't allow me to use sudo command
+    - since code-server is used on Coder(dev workspaces) but I don't think code-server will be dead. I think for collaborating with multiple people simultaneously, Open VS Code is best but for individuals, code-server is recommended since it has protection.
+    - ~~One little known gotcha is that OpenVSCode does not let you pre-install extensions in a non-interactive mode (e.g. during docker build to ship after security scanning for use on air-gapped servers)~~. This does not appear to be the case anymore.
+  - Here is my summary of differences:
+    - code-server support auth (protect the editor with password) while OpenVSCode doesn't
+    - OpenVSCode installs extensions from open-vsx, while code-server is in the process of switching to open-vsx
+    - TAB is working in the code-server's terminal. Doesn't work in the OpenVSCode. This difference may seem small, but significant to my day-to-day use
+    - I figured how code-server handles user account in Docker, but haven't figure out yet how OpenVSCode does it in the Docker
+
   - [VS Code in the browser for everyone - Blog _202109](https://www.gitpod.io/blog/openvscode-server-launch)
   - [FAQ](https://github.com/coder/code-server/blob/main/docs/FAQ.md)
   - 🤔 Why can't code-server use Microsoft's extension marketplace?
@@ -84,7 +96,8 @@ modified: 2023-01-21T18:58:29.846Z
     - Theia is a browser IDE loosely based on VS Code. It uses the same text editor library (Monaco) and extension API, but everything else is different. Theia also uses Open VSX for extensions.
   - 🆚️ What's the difference between code-server and OpenVSCode-Server?
     - OpenVSCode-Server is a direct fork of VS Code with changes committed directly while code-server pulls VS Code in via a submodule and makes changes via patch files.
-    - OpenVSCode-Server is scoped at only making VS Code available as-is in the web browser. code-server contains additional changes to make the self-hosted experience better 
+    - OpenVSCode-Server is scoped at only making VS Code available as-is in the web browser. 
+      - code-server contains additional changes to make the self-hosted experience better 
 
 - https://github.com/cdr/code-server /MIT/202401/ts
   - https://coder.com/

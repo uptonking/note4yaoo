@@ -20,7 +20,7 @@ modified: 2021-05-14T15:03:38.010Z
 - es module发出的http请求，是以scripts脚本加载的形式。而service worker只能拦截fetch。
   - service worker 中监听 fetch 事件当然是可以拦截脚本的请求的，不信你可以试试
   - 包括esm加载时的请求都可以被拦截
-# code-live
+# code-live/web
 - https://github.com/cdr/code-server /MIT/202401/ts
   - https://coder.com/
   - Run VS Code on any machine anywhere and access it in the browser
@@ -101,6 +101,25 @@ modified: 2021-05-14T15:03:38.010Z
   - Scrimba lets you take up an instructors demo and build it up into whatever use case you desire. 
   - In the playground mode, you can interact with the instructor's code however you please, 
   - and you can edit, copy, paste and basically perform any interactive operation you desire.
+
+## more-web
+
+- https://github.com/jsbin/jsbin /MIT/202402/js
+  - http://jsbin.com/
+  - Collaborative JavaScript Debugging App
+  - this current version of jsbin (v4.x.x) is no longer actively maintained and the new version of jsbin (v5) is currently in active development
+  - 依赖codemirror5
+  - https://github.com/jsbin/jsbin/tree/feat/next-v5 /201906/js/inactive
+
+- https://github.com/porsager/flems /MIT/202311/js/inactive
+  - https://flems.io/
+  - Flems is a static web app - no strings attached - browser code playground. 
+  - It's great for documentation, examples, presentations, issues and what not.
+
+- https://github.com/popcodeorg/popcode /MIT/202303/js/inactive
+  - a simple HTML/CSS/JavaScript editing environment for use in the classroom. 
+  - It's a lot like JSBin, JSFiddle, or CodePen, but it focuses on giving specific, immediate, human-friendly feedback when the code contains errors.
+
 # code-live-cn
 - [RunJS - 前端开发者在线代码编辑器](https://runjs.work/)
   - 轻松复制任意网站的html/css代码，并在RunJS中预览。

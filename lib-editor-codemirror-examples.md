@@ -20,13 +20,6 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/tmcw/awesome-codemirror
   - Awesome CodeMirror plugins, themes, wrappers, and more
 
-- https://github.com/styfle/awesome-online-ide
-  - An "Online IDE" has the features mentioned above but runs in a web browser instead of installing as a native application.
-  - AWS Cloud9, codenvy, Theia
-  - https://github.com/gitpod-io/gitpod /go/java/ts
-    - The developer platform for on-demand cloud development environments to create software faster and more securely.
-    - Run any language on a full Linux VM complete with terminals, GitHub and Git integration
-
 - https://github.com/milahu/browserforge /202303
   - run github + github-pages + codesandbox in your browser, offline-first - CONCEPT
 

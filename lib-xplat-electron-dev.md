@@ -20,7 +20,7 @@ modified: 2021-05-13T03:08:52.583Z
 
 - who is using #electron
   - known: qq
-  - popular: vscode/theia
+  - popular: vscode
   - open: drawio, joplin, marktext, tagspaces
   - 经典示例: file-manager, note-taking
 

@@ -51,6 +51,20 @@ modified: 2021-05-06T09:38:31.520Z
   - chrome-devtools
   - more: tagspaces, hedgedoc
 
+- why-cloud-ide
+  - easy to start and leave
+  - better collaborative editing
+  - consistent env
+
+- cloud-ide
+  - monaco: Codespaces(GitHub绑定), Gitpod(yml), theia, OpenSumi
+  - codemirror: 
+  - Eclipse Che: OpenShift CDE
+  - DevPod: devcontainer-spec + local-and-cloud
+  - more: Coder(no-cloud/k8s), AWS Cloud9, codenvy
+  - 缺点
+    - vps的性能不如本地计算机，vps很贵
+
 - 代码编辑器要点
   - incremental syntax highlighting
   - virtualized render, 可提升highlighting的性能
@@ -59,7 +73,7 @@ modified: 2021-05-06T09:38:31.520Z
   - syntax-highlighting
   - auto-closing brackets
   - indentation
-  - 行号
+  - 行号、折叠
 
 - dev-xp
   - 在github页面，每行代码的行号是确定的，不会显示软换行

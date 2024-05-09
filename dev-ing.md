@@ -329,6 +329,21 @@ betterdiscordctl -i flatpak install
 
 ## 050
 
+## 0509
+
+- dev-log
+  - 从sdk到paas
+- dev-to
+  - 将1024code的代码抽象出可复用的模块
+
+- turborepo的问题，默认使用cache，想重新构建较繁琐
+  - [Caching – Turborepo](https://turbo.build/repo/docs/core-concepts/caching)
+  - 可手动删除cache， `./node_modules/.cache/turbo`
+
+## 0509
+
+- [配置VSCode的Dev Container - 知乎](https://zhuanlan.zhihu.com/p/627102373)
+
 ## 0508
 
 - dev-to

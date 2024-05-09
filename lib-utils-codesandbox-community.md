@@ -150,7 +150,9 @@ modified: 2024-01-25T13:33:23.267Z
 # discuss-author
 - ## 
 
-- ## 
+- ## [devpod: Codespaces but open-source, client-only, and unopinionated | Hacker News _202306](https://news.ycombinator.com/item?id=36407477)
+- At CodeSandbox we're also working on this! Main focus of us is that we're running the environment in Firecracker microVMs, which allows us to snapshot and clone environments very quickly. 
+  - This enables us to create a VM for every branch, which comes with the added advantage that every branch automatically has a snapshotted preview environment that can resume in ~2 seconds.
 
 - ## 🌰 [Codemirror 6 and Typescript LSP - v6 - discuss. CodeMirror _202107](https://discuss.codemirror.net/t/codemirror-6-and-typescript-lsp/3398?page=2)
 
@@ -190,6 +192,16 @@ modified: 2024-01-25T13:33:23.267Z
   - In fact, you can easily switch from CodeMirror to Monaco at your end, as Sandpack exposes all the APIs needed to implement it. 
 
 - I think Danilo nailed the reasons I also considered when I picked CodeMirror over Monaco. For me personally, the biggest one was extensibility, because we had very specific interactions in mind, and I wasn't very confident that Monaco would let me build some of them. This is more of a matter of taste, but I also preferred CodeMirror's API over Monaco's (plus CodeMirror's source code seemed a lot more approachable), so I went with it for prisma/text-editors.
+# discuss-alternatives-stackblitz/replit
+- ## 
+
+- ## 
+
+- ## [Repl from Repo | Hacker News _201912](https://news.ycombinator.com/item?id=21765872)
+- Gitpod is awesome and a really bright team behind it. However, Repl.it is different in that we're focused on speed and minimal configuration. You don't even need to login to clone a repo and start it.
+
+- Will this change the pricing model at all? Or add a new tier? 
+  - No, not at all. Our infra costs are a lot less than most people expect.
 # discuss-news-csb
 - ## 
 
