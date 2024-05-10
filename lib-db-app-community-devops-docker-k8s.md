@@ -20,6 +20,13 @@ modified: 2023-12-07T09:33:17.608Z
 
 - ## 
 
+- ## 感觉kubesphere这个项目好鸡肋，没啥实质意义的功能点，弄了个应用商店我helm chart也能部署，弄了个啥监控我describe node也能看
+- https://twitter.com/stephenzhang233/status/1788610739881771062
+  - 多装一个组件还消耗资源，长得就跟政府项目的什么“xx智慧大屏”一样
+- 太重了，而且和已有自建k8s集群兼容问题很多，放弃了
+
+- ## 感觉kubesphere这个项目好鸡肋，没啥实质意义的功能点，弄了个应用商店我helm chart也能部署，弄了个啥监控我describe node也能看
+
 - ## 🆚️ Docker vs. containerd vs. Podman
 - https://twitter.com/iximiuz/status/1751674025191875064
   - Docker relies on `containerd` , a lower-level container runtime, to run its containers. It is possible to use containerd from the command line directly, but the UX might be quite rough at times.

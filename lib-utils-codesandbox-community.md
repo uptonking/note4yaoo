@@ -207,7 +207,10 @@ modified: 2024-01-25T13:33:23.267Z
 
 - ## 
 
-- ## 
+- ## We've hit the point that more than 150 thousand new MicroVMs get created on a monthly basis!
+- https://twitter.com/CompuIves/status/1788888447119225192
+  - The cost stays low thanks to VM cloning & snapshot/resume. 
+  - I'm writing a new post about how our memory (de)compression works, might as well become a series now
 
 - ## We’re thrilled to announce our Storybook add-on: making every story come to life 
 - https://twitter.com/codesandbox/status/1788205375189025090

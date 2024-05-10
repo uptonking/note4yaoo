@@ -10,6 +10,7 @@ modified: 2020-12-12T19:22:00.735Z
 # guide
 - meta-framework
   - 功能特性: 打包、路由、布局、请求api、ssr、mock
+  - 核心功能: routing, rendering, fetching
 
 - features
   - opinionated react framework with features for production out of the box

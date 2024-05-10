@@ -208,6 +208,7 @@ modified: 2023-06-07T14:19:18.719Z
   - https://ext.ulauncher.io/
   - Ulauncher Extensions Website
   - built using JS and React library (with CRA)
+  - 数据依赖后端
   - https://github.com/Ulauncher/ext-api.ulauncher.io /python
     - Backend for ext.ulauncher.io
     - This API server is written in Python using bottle, boto3 libraries
@@ -230,8 +231,9 @@ modified: 2023-06-07T14:19:18.719Z
 - https://github.com/deriv-com/quill-icons-park /202404/ts/依赖少
   - https://quill-icons-park.pages.dev/
   - A little park to explore Quill Icons intuitively.
-  - 图标的查看和搜索，无详情页，简洁
+  - 🪟 图标的查看和搜索，无详情页，简洁
   - 依赖react、file-saver、@tanstack/react-query.v5
+  - 似乎不依赖服务端
 
 ## package-manager
 

@@ -126,6 +126,14 @@ modified: 2023-10-27T06:54:20.487Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## in-memory database彻底失败，最近几年都从15-721除名了
+- https://twitter.com/DylanGalois/status/1788602899427455177
+- 毕竟 MemSQL 都改名 SingleStore 也不再提 in-memory 了。。现在说起 in-memory 大家想起的都是 Redis
+
 - ## 🤔 客户端直连数据库的做法，是二十年前 MIS 系统的落后做法了，首先负载上不去，只适合小单位内部用用；
 - https://twitter.com/skywind3000/status/1782191554750468555
   - 其次靠数据库本身的权限控制会导致客户端权限过大，客户端是在别人手里的，被破解或者出问题容易乱搞；

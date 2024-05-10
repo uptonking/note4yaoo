@@ -327,7 +327,23 @@ betterdiscordctl -i flatpak install
   - [x] streaming infinite-list/tree
 # dev-05-codemirror
 
-## 050
+## 051
+
+## 0510
+
+- [ENOSPC: System limit for number of file watchers reached - Stack Overflow](https://stackoverflow.com/questions/55763428/react-native-error-enospc-system-limit-for-number-of-file-watchers-reached)
+
+```sh
+sudo gedit /etc/sysctl.conf
+fs.inotify.max_user_watches=524288
+sudo sysctl -p
+```
+
+- dev-log
+  - 熟悉了1024code的整体架构
+  - 熟悉编辑器的插件
+- dev-to
+  - 1024code的代码如何复用到新产品中
 
 ## 0509
 
@@ -339,8 +355,6 @@ betterdiscordctl -i flatpak install
 - turborepo的问题，默认使用cache，想重新构建较繁琐
   - [Caching – Turborepo](https://turbo.build/repo/docs/core-concepts/caching)
   - 可手动删除cache， `./node_modules/.cache/turbo`
-
-## 0509
 
 - [配置VSCode的Dev Container - 知乎](https://zhuanlan.zhihu.com/p/627102373)
 

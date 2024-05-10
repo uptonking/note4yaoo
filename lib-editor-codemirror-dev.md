@@ -66,6 +66,8 @@ modified: 2021-05-06T09:38:31.520Z
     - vps的性能不如本地计算机，vps很贵
 
 - 代码编辑器要点
+  - tradoff: 侧重预览、协作，轻量编辑、调试
+  - features: 符号大纲
   - incremental syntax highlighting
   - virtualized render, 可提升highlighting的性能
   - LSP

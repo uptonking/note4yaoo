@@ -86,6 +86,22 @@ modified: 2023-04-07T03:10:46.225Z
   - Watch an object or array for changes
   - It works recursively, so it will even detect if you modify a deep property like `obj.a.b[0].c = true`.
   - Uses the `Proxy` API.
+# docs
+- `runInAction(fn)`: Use this utility to create a temporary action that is immediately invoked. 
+  - Can be useful in asynchronous processes. 
+  - [Mobx - runInAction() usage. Why do we need it? - Stack Overflow](https://stackoverflow.com/questions/57271153/mobx-runinaction-usage-why-do-we-need-it)
+    - The short answer is: you don't really need runInAction. You can write an application without using it, and it should work just fine.
+    - But if you're working on a larger codebase, and you want to enforce some best practices, you can use the mobx feature "enforce actions / strict mode", which basically enforces that any modification to the state must happen inside of an action. This is useful because actions make it obvious why a piece of state changed, and they provide useful debugging information in the mobx devtools.
+    - By default, MobX 6 and later require that you use actions to make changes to the state. However, you can configure MobX to disable this behavior.
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
 # blogs
 - [Cool Software | Benchmarking MobX-State-Tree Performance](https://coolsoftware.dev/blog/benchmarking-mobx-state-tree/)
 

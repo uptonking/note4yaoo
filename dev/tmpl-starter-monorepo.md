@@ -7,6 +7,39 @@ modified: 2020-12-08T13:53:36.730Z
 
 # tmpl-starter-monorepo
 - 快速开始开发项目的模板
+# frontend-spec
+- [我是如何带领团队从零到一建立前端规范的？ - 掘金](https://juejin.cn/post/7085257325165936648)
+  - 操作规范不是一开始定就行，需要在实际项目以及组员的表现进一步完善的
+  - [前端团队如何做规范 - 掘金](https://juejin.cn/post/6963549273346539527)
+  - [分享自定义前端web开发规范（命名、文本、开发、html、css、js、vue） - 掘金](https://juejin.cn/post/7052121157822054414)
+  - [前端团队代码统一规范最佳实践 - 掘金](https://juejin.cn/post/7086383019551883272)
+  - [前端团队需要的工程规范 - 掘金](https://juejin.cn/post/7091202054680985630)
+
+- [前端规范指南，让团队代码如出一辙！ESLint + Prettier + husky + lint-staged](https://www.yuque.com/itwangtian/ycsiao/pe1n3uneypxse0fq)
+  - [前端开发规范 高灯云产品前端基建小组](https://www.yuque.com/gmyoon/dfy2l5/zyhdyd)
+  - [前端开发管理规范](https://www.yuque.com/ailun-ychwc/wp9stg/ks1vhg5w8g7u3thz)
+  - [JDC 前端代码规范](https://jdf2e.github.io/jdc_fe_guide/docs/index/)
+  - [阿里最新前端规范](https://www.yuque.com/qiaoxiansheng-fevtn/abx3hp/sehudq3iz9knpgdo)
+  - [团队技术规范](https://www.yuque.com/ngcohau/pbupgq/yw1m3n)
+  - [前端开发、联调、调试工具（推荐）](https://www.yuque.com/jimmie/web-cooperation-standard/yw02pg)
+
+- [nanxiaobei/front-end-dev-guide: 前端开发行为指导规范](https://github.com/nanxiaobei/front-end-dev-guide)
+  - 以应用业界最佳实践为佳
+
+- https://github.com/alibaba/f2e-spec
+  - https://alibaba.github.io/f2e-spec/zh/
+  - 阿里巴巴集团内广泛使用的一套前端编码和工程规范，致力于通过统一编码风格、普及最佳实践和代码缺陷检查帮助团队降低协作成本、提升前端项目的可维护性和稳定性。
+  - 本规约主要包括规约文档和规约工具两部分
+
+- https://github.com/jd-antelope/s-lint
+  - [原创：如何在前端团队快速制定并落地代码规范 · zxyue25/blog](https://github.com/zxyue25/blog/issues/8)
+  - 第一步收集团队的技术栈情况，确定规范要包括的范围, 把规范梳理为三部分ESLint、StyleLint、CommitLint
+  - 靠人来保证代码规范存在不可靠，且需要人为review代码不规范，效率低
+
+- https://github.com/encode-studio-fe/fe-spec
+  - https://encode-studio-fe.github.io/fe-spec/
+  - 印客学院 前端编码规范工程化
+  - 支持对全部前端配置实现一键接入、一键扫描、一键修复、一键升级
 # popular
 - [Create React App](https://github.com/facebook/create-react-app)
   - Create React apps with no build configuration by running one command 
@@ -18,6 +51,21 @@ modified: 2020-12-08T13:53:36.730Z
   - typescript, ts-node, react, @types/node
   - nanoid
   - 暂不解决: rollup-[plugin]
+# nx-tooling
+- docs
+  - [nx:run-commands | Nx](https://nx.dev/nx-api/nx/executors/run-commands)
+
+- drawbacks
+  - 难以修改next启动的端口，查看文档3小时都改不了
+  - 不使用package.json会导致无法看清项目的deps
+  - 为了命令能统一执行，自己在定义scripts/executor上另立规范
+  - next-intl无法识别 next.config.mjs 的配置，只能用默认的cjs配置
+
+- 
+- 
+- 
+- 
+
 # frontend-starter
 - monorepo
   - 基于workspace、lerna、nx
