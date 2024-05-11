@@ -14,6 +14,12 @@ modified: 2024-01-25T13:32:35.137Z
 
 - ## 
 
+- ## 
+
+- ## 🤔 [Could you share how to build node as webassembly target using emscripten or some other tools · Sandpack/nodebox-runtime _202311](https://github.com/Sandpack/nodebox-runtime/issues/53)
+- In essence it's almost all javascript, we didn't actually compile node to wasm that would be too big and slow.
+  - Instead we use the native browser functionality and write a bunch of wrappers and polyfills to make it compatible with node, some sprinkles of wasm is used here and there to make it fast
+
 - ## [[Question] How to use nodebox-runtime in browser without any online resource's support · Sandpack/nodebox-runtime](https://github.com/Sandpack/nodebox-runtime/issues/34)
 - Unfortunately, we did not fully open-source Nodebox for a variety of reasons
 
@@ -21,8 +27,28 @@ modified: 2024-01-25T13:32:35.137Z
   - Currently nodebox takes a new domain for the preview every time you create a nodebox instance as it was the safest way to ensure consistent update logic and a single nodebox instance is connected to the preview.
   - Because of this we need a network connection for the initial render and once it's rendered you can remove internet for any additional changes.
   - We could make our caching on service workers a bit more aggressive but the core issue will remain and is really hard to fix properly without introducing more issues.
+
+- ## 🚀 [Nodebox: A Node.js runtime that runs in any browser | Hacker News _202302](https://news.ycombinator.com/item?id=34824635)
+  - Nodebox runs on any browser because it was built from the ground up with cross-browser support in mind, avoiding modern features like SharedArrayBuffer.
+- Usually you have a bundler/transpiler running on the host, with sandpack we moved that step to the browser so you can share a link with anyone and they instantly get a development friendly (JSX, TS, ...) project that works without having to install any tooling. It's also a lot faster than something like webpack as most of the bundling complexities are taken away as sandpack transpiles files on demand without the need for bundling as it also controls code execution. With nodebox we pushed this a bit further by also implementing most of the Node.js standard libraries.
+
+- The benefit is that you can use a web editor with the same dev tools (TypeScript, Babel, vite, webpack, etc) without a server VM. That saves them a lot of money in cloud instances, and speeds up things for the end user.
+  - Other than that a posible niche use case is to emulate a full-stack for prototyping or testing purposes.
+
+- Everything nodebox does is scoped to the current browser window, it has no access to any part of the hostmachine, it's not really a vm but actually a new web worker which runs the Node.js code you request. This is heavily relying on the sandboxing browsers do by default and is therefore really secure.
+  - It's very interesting. In that example with the express router, where you're creating index.js inside a filesystem inside nodebox, is that whole filesystem just stored by that one webworker? Also, when you invoke express to listen on port 3000 and get back some URL to set the previewIframe.src, is that some blob URL returned from the webworker? (in which case how would you set up sockets?) Or is that URL accessible to any other browser tab?
+
+- Nice. Stackblitz did this first and this is a killer feature all fiddles now need
 # discuss-stackblitz
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [Opt out of wasm swapping _202308](https://github.com/stackblitz/webcontainer-core/issues/1163)
+  - WebContainers interferes with npm install to swap certain packages for their wasm versions.
+  - I'm noticing this for esbuild and lightningcss as this behavior gives inaccurate results on Pkg Size
 
 - ## Today marks a big milestone: you can now self-host all of @StackBlitz . _20240125
 - https://twitter.com/ericsimons40/status/1750539087675785670
@@ -33,12 +59,11 @@ modified: 2024-01-25T13:32:35.137Z
 - https://twitter.com/ericsimons40/status/1719473082459378041
   - These machines are so powerful that most of the value add can run locally. 
   - Maybe we'll get a hybrid model, SaaS running locally, but it's clear where things are heading.
-- This is a core reason why we bet big on Wasm building http://WebContainers.io. Unlocks SaaS experiences powered entirely by (ever increasing) client side compute. 
+- 💡 This is a core reason why we bet big on Wasm building http://WebContainers.io. Unlocks SaaS experiences powered entirely by (ever increasing) client side compute. 
 
-- ## [Open-sourcing for the webplatform ? · stackblitz/webcontainer-core](https://github.com/stackblitz/webcontainer-core/issues/458)
+- ## 💡 [Open-sourcing for the webplatform ? · stackblitz/webcontainer-core _202112](https://github.com/stackblitz/webcontainer-core/issues/458)
 
 - webcontainer is a compatibility layer for node apps, similar to wine (Wine Is Not an Emulator)
-
 - so were looking for a compatibility layer between node.js apis and web apis
   - some node apis have polyfills
     - https://github.com/niksy/node-stdlib-browser

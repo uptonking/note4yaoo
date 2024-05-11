@@ -22,7 +22,7 @@ modified: 2022-08-18T11:29:26.644Z
 - top-dependents-of-codemirror.v6
   - @codemirror/collab
   - @eldonlabs/autocomplete: 也是官方扩展
-  - @codesandbox/sandpack-react: 依赖的sandpack-client(不依赖codemirror)
+  - @codesandbox/sandpack-react: sandpack-client(不依赖codemirror)
   - react-tools-codemirror: codemirror6的react组件封装
   - @writewithocto/ink: 原地预览样式的编辑器
   - markword: A WYSIWYG markdown syntax set for Codemirror 6
@@ -53,18 +53,13 @@ modified: 2022-08-18T11:29:26.644Z
     - some are more modular libraries than full editors
   - Dom-Based Editors
     - eg, tinymce,medium-editor,froala
-# codemirror
+# popular
 - https://github.com/codemirror/CodeMirror
   - /21.3kStar/MIT/202010/js
   - In-browser code editor
   - CodeMirror 6 is a rewrite of the CodeMirror code editor. 
   - The new system provides solid accessibility, touchscreen support, better content analysis
   - It is not API-compatible with the old code.
-
-- https://github.com/writewithocto/ink
-  - https://octo.app/tags/examples
-  - A plain-text javascript markdown editor library that renders formatting live and in-place without the need for a preview pane. 
-  - Built on CodeMirror 6. Powers https://octo.app/
 # code-editor
 - ace-editor /26kStar/BSD/202311/js
   - https://github.com/ajaxorg/ace

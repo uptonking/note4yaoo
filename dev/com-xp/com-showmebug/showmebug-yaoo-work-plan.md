@@ -11,7 +11,7 @@ modified: 2024-05-06T02:54:40.374Z
 
 # plan
 - 工作OKR
-  - 业务类: ai编程/pr/测试
+  - 业务类: ai编程/pr/自动测试
   - 基建类: 基座工程、代码编辑器
   - 团队类: 测试、运营
 
@@ -19,7 +19,13 @@ modified: 2024-05-06T02:54:40.374Z
   - 在6月中，初步完成生成需求、task、pr的逻辑和流程
 # more
 
-## proj-idepaas
+## proj-idepaas-sdk
+
+- resources
+  - https://develop.1024paas.com/
+  - https://www.1024paas.com/
+  - [DaoPaaS API Options](https://www.1024paas.com/sdk/docs/index.html)
+  - [1024PaaS-租户业务接口](https://apifox.com/apidoc/shared-c0c0ebad-15b3-4605-896e-e39879fe6e47/doc-952073)
 
 ### not-yet
 
@@ -30,7 +36,10 @@ modified: 2024-05-06T02:54:40.374Z
 - mapRender 有什么问题
   - 未实现按需加载FileTree/Editor/Terminal
 
-- 
+- paas平台为什么难以落地
+  - 功能又多又杂
+  - 侧重ai编辑，可以去掉非核心需求
+
 - 
 - 
 - 
@@ -39,6 +48,20 @@ modified: 2024-05-06T02:54:40.374Z
 ### draft
 
 ### roadmap
+
+- features-to-dev
+  - 多文件打开
+  - 多shell
+  - 开发多port
+
+- daopaas的框架，在clacky-ai-frontend里面，目前已初步搭建。 
+  - 已实现：简单允许和package.json 待实现可以分成两次版本迭代
+  - 第一版：原样迁移 把packages/client/src/* 的代码全部迁移到libs/d42paas-biz/client/ 中，并在apps/d42paas_playground/src/app/[locale]/(main)/ 中进行演示（重新使用tailwind+shadcn/ui写）。 
+  - 第二版：删除 mapRender 方法
+
+- embed
+- 
+- ### roadmap
 
 - daopaas的框架，在clacky-ai-frontend里面，目前已初步搭建。 
   - 已实现：简单允许和package.json 待实现可以分成两次版本迭代
@@ -49,11 +72,35 @@ modified: 2024-05-06T02:54:40.374Z
 - 
 - 
 
+- 考虑轻编辑，通过devcontainer连接远程仓库来进行本地编辑
+
+- 
+- 
+- 
+
 - 协作迁移到yjs的实现
 
 - 去掉rrweb
 
-- d42paas的code playgrounds能否用 d42paas 的sdk实现
+- d42paas的 code playgrounds 能否用 d42paas 的sdk实现
+  - 用自己的平台开发代码
+
+- 
+- 
+- 
+
+- 考虑轻编辑，通过devcontainer连接远程仓库来进行本地编辑
+
+- 
+- 
+- 
+
+- 协作迁移到yjs的实现
+
+- 去掉rrweb
+
+- d42paas的 code playgrounds 能否用 d42paas 的sdk实现
+  - 用自己的平台开发代码
 
 ### codebase
 
@@ -72,7 +119,8 @@ modified: 2024-05-06T02:54:40.374Z
   - OutputBrowser
 
 - app-init-dataflow
-  - getTicketInit > init-DaoPaaS
+  - getTicketInit
+    - init > `const dao = new DaoPaaS()`;
     - this.daoEditor = new DaoEditor();
     - this.initChannel(data.data);
   - effects
@@ -80,6 +128,34 @@ modified: 2024-05-06T02:54:40.374Z
     - updateConfig
     - daoPaasObj.onMessage
 
+### docs
+
+- 本案例的axios为封装后的axios, baseUrl默认为“www.1024paas.com”。
+
+- PART-ONE 请求获取ticket(票)流程
+  - 第一步：定义接口
+  - 第二步：封装逻辑
+  - getEnvironmentsApi
+  - getCodeZoneIdApi
+  - getPlaygroundIdApi
+  - getTicketApi
+- PART-TWO 在组件中使用
+  - 第一步：引入SDK和样式 import { DaoPaaS, Messages } from 'DaoPaaS.cjs'; 
+  - 第二步：初始化实例 
+    - const dao = new DaoPaaS({ tenantId: '租户id', ticket: '动态获取的ticket', userInfo: { username: '用户名'} }); 
+    - dao.onMessage()
+    - dao.mapRender()  // 会把dao内部组件渲染到对应的dom节点
+  - 第三步：销毁实例 dao.dispose()
+- PART-THREE SDK部分其他方法
+  - dao.activePlayground() // 激活容器
+  - dao.runPlayground() // 运行容器
+- PART-FOUR 基础案例
+
+- 
+- 
+- 
+- 
+- 
 - 
 - 
 - 
@@ -126,7 +202,7 @@ modified: 2024-05-06T02:54:40.374Z
     - daoEditor?.addHotKeys
   - this.createChatChannel(); 
   - this.createChatgptChannel(); 
-  - dao_paas = await DaoPaaS()
+  - `dao_paas = await DaoPaaS()`; 
 
 - web项目中的编辑器
   - apps/web/src/store/IDEStore.tsx  接入了daoPaas状态
@@ -145,3 +221,7 @@ modified: 2024-05-06T02:54:40.374Z
   - 测试用户是 155572695015和八个一
   - node版本不支持v22，暂时使用v20
   - 编译构建时可通过修改repo文件夹名来避免使用turborepo的cache
+
+## proj-backend
+
+- docker in docker 的权限问题

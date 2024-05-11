@@ -21,10 +21,11 @@ modified: 2021-01-04T17:26:25.032Z
   - A markdown editor written in Typescript.
   - Vite+Electron
 
-- https://github.com/ahmedsaheed/Leaflet
+- https://github.com/ahmedsaheed/Leaflet /CC-BY-NC-SA/202305/ts/inactive
+  - https://leaflet.saheed.codes/
   - A minimal distractionless markdown editor designed to quickly navigate between multiple `.md` files in a directory and its sub directories.
-  - It features a clean mathematical typesetting, chemical equation rendering, code blocks highlighting and writing statistics 
   - 依赖codemirror6、@uiw/react-codemirror、electron
+  - It features a clean mathematical typesetting, chemical equation rendering, code blocks highlighting and writing statistics 
 
 - https://github.com/foambubble/foam /14.6kStar/MIT/202401/ts
   - https://foambubble.github.io/

@@ -329,6 +329,259 @@ betterdiscordctl -i flatpak install
 
 ## 051
 
+## 0511
+
+```shell
+# 1024paas init log 日志
+https://develop.1024paas.com passDomain from demo
+Start to init SDK,with version:0.9.211
+{paasDomain: 'https://develop.1024paas.com'}
+
+closeLspServer: null null
+[messageLinstener][addMessageListener]0-1
+[messageLinstener][addErrorListener]0-1
+[messageLinstener][addMessageListener]1-2
+
+findAvailableAgentUser: 63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea
+Start to get ticket: M3w2NjA5ODIzODczNzg5MDUw
+
+[canVisit]
+[messageLinstener][addMessageListener]2-3
+[messageLinstener][addMessageListener]3-4
+[messageLinstener][addMessageListener]4-5
+[Editor]freezeCode:false,showHiddenCode:true
+[messageLinstener][addMessageListener]9-10
+
+Reciver ticket:  
+{
+  "status": "success",
+  "data": {
+    "url": "ws://localhost:3012",
+    "userId": "659227293847281664",
+    "socketParser": ""
+  }
+}
+
+findAvailableAgentUser:  true 63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea
+
+🔁 Start to connect WS  ws://localhost:3012
+
+>>>registerVisiblityChangeEvent
+Connect  WS  successfully
+
+[canVisit] undefined
+
+移除message监听
+[messageLinstener][removeMessageListener]12
+
+payload:  {debugSupport: false}
+
+{terminalUpdate: true}
+
+[canVisit] 
+[messageLinstener][trigger]followingFocusComponentUpdate-12
+```
+
+```shell
+# 运行js项目
+{ consoleUpdate: true }
+[canVisit] RUNNING
+[messageLinstener][removeMessageListener] 11[messageLinstener][addMessageListener] 11 - 12 { consoleUpdate: true }
+[canVisit] RUNNING[OutputBrowser] reload: https: //5afbc1d37ef0fb2b7257947fee0a9571-app.develop.1024paas.com
+[messageLinstener][trigger]message-12
+hello world!
+```
+
+```JS
+{
+  "paasDomain": "https://develop.1024paas.com",
+  "tenantId": "3",
+  "ticket": "M3w2NjA5ODIzOD=",
+  "defaultLspLang": [
+    "html",
+    "css",
+    "less",
+    "sass"
+  ],
+  "openLspDiagnostic": true,
+  "showModifyIcon": true,
+  "focusEditorPosition": "BOTTOM",
+  "isSplitCode": true,
+  "isInsertCrdt": true,
+  "isLegacyMarkdownMath": false,
+  "userInfo": {
+    "username": "king",
+    "avatarUrl": "https://ui-avatars.com/api/?background=3A3C40&color=fff&rounded=true&uppercase=true&bold=true&length=1&name=king"
+  },
+  "xtermStyle": {},
+  "enableSentry": false,
+  "isOpenDebugMode": false,
+  "defaultOpenFiles": [
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "specialFileHighlight": [{
+      "fileName": "paas_test",
+      "languageType": "typescript"
+    },
+    {
+      "fileName": ".java.answer",
+      "languageType": "java"
+    },
+    {
+      "fileName": "paas_test.java.answer",
+      "languageType": "yaml"
+    }
+  ],
+  "recordBrowser": false,
+  "persistenceWebData": false,
+  "customFileTreeAction": false,
+  "contextMenu": [
+    [{
+        "text": {
+          "ZH": "剪切",
+          "EN": "Cut"
+        },
+        "shortcutKey": "Ctrl/Cmd+X",
+        "actionName": "cut",
+        "className": "contextmenu-cut",
+        "textClassName": "d42 dao42__icon--create",
+        "shortcutClassName": ""
+      },
+      {
+        "text": {
+          "ZH": "复制",
+          "EN": "Copy"
+        },
+        "shortcutKey": "Ctrl/Cmd+C",
+        "actionName": "copy"
+      },
+      {
+        "text": {
+          "ZH": "粘贴",
+          "EN": "Paste"
+        },
+        "shortcutKey": "Ctrl/Cmd+V",
+        "actionName": "paste"
+      }
+    ],
+    [{
+        "text": {
+          "ZH": "撤销",
+          "EN": "Undo"
+        },
+        "shortcutKey": "Ctrl/Cmd+Z",
+        "actionName": "undo"
+      },
+      {
+        "text": {
+          "ZH": "注释代码",
+          "EN": "Comment Block"
+        },
+        "shortcutKey": "Mod-/",
+        "actionShortcutKey": "Mod-/"
+      },
+      {
+        "text": {
+          "ZH": "全选",
+          "EN": "Select All"
+        },
+        "shortcutKey": "Ctrl/Cmd+A",
+        "actionName": "selectAll"
+      },
+      {
+        "text": {
+          "ZH": "选中整行",
+          "EN": "Select Line"
+        },
+        "shortcutKey": "Ctrl/Cmd+R",
+        "actionName": "selectLine"
+      },
+      {
+        "text": {
+          "ZH": "格式化代码",
+          "EN": "Format Document"
+        },
+        "shortcutKey": "Mod-Alt-f",
+        "actionShortcutKey": "Mod-Alt-f"
+      },
+      {
+        "text": {
+          "ZH": "插入代码(自定义快捷键)",
+          "EN": "Insert Code"
+        },
+        "shortcutKey": "Mod-j",
+        "actionShortcutKey": "Mod-j"
+      }
+    ]
+  ],
+  "aiCodeMenu": [
+    [{
+        "text": {
+          "ZH": "清空内容",
+          "EN": "Cut"
+        },
+        "actionName": "remove",
+        "shortcutClassName": "",
+        "withCodeFlag": true
+      },
+      {
+        "text": {
+          "ZH": "复制代码",
+          "EN": "Copy"
+        },
+        "shortcutKey": "Ctrl/Cmd+C",
+        "actionName": "copy"
+      },
+      {
+        "text": {
+          "ZH": "取消标识",
+          "EN": "Paste"
+        },
+        "shortcutKey": "Ctrl/Cmd+V",
+        "actionName": "removeFlag"
+      }
+    ],
+    [{
+        "text": {
+          "ZH": "解释代码",
+          "EN": "Cut(Custom)"
+        },
+        "shortcutKey": "Ctrl/Cmd+X"
+      },
+      {
+        "text": {
+          "ZH": "生成代码",
+          "EN": "Cut(Custom)"
+        },
+        "shortcutKey": "Ctrl/Cmd+X"
+      },
+      {
+        "text": {
+          "ZH": "交换代码",
+          "EN": "Cut(Custom)"
+        },
+        "shortcutKey": "Ctrl/Cmd+X"
+      }
+    ]
+  ],
+  "editorBlankContent": "\n      <div class=\"blank_container\"\n      <div class=\"item\">\n        <div class=\"item-title\">Show All Commands</div>\n        <div class=\"item-shortCut\">\n          <div class=\"item-shortCut-item\">⇧1</div>\n          <div class=\"item-shortCut-item\">⌘</div>\n          <div class=\"item-shortCut-item\">P</div>\n        </div>\n      </div>\n    </div>\n    <div class=\"blank_container\"\n      <div class=\"item\">\n        <div class=\"item-title\">Open File or Folder</div>\n        <div class=\"item-shortCut\">\n          <div class=\"item-shortCut-item\">⌘</div>\n          <div class=\"item-shortCut-item\">O</div>\n        </div>\n      </div>\n\n    </div>\n  <div class=\"blank_container\"\n    <div class=\"item\">\n      <div class=\"item-title\">Open Recent</div>\n      <div class=\"item-shortCut\">\n        <div class=\"item-shortCut-item\">⌃</div>\n        <div class=\"item-shortCut-item\">R</div>\n      </div>\n    </div>\n </div>\n<div class=\"blank_container\"\n  <div class=\"item\">\n    <div class=\"item-title\">New Untitled Text File</div>\n    <div class=\"item-shortCut\">\n      <div class=\"item-shortCut-item\">⌘</div>\n      <div class=\"item-shortCut-item\">N</div>\n    </div>\n  </div>\n</div>\n<div class=\"blank_container\"\n<div class=\"item\">\n  <div class=\"item-title\">Show All Commands</div>\n  <div class=\"item-shortCut\">\n    <div class=\"item-shortCut-item\">⇧</div>\n    <div class=\"item-shortCut-item\">⌘</div>\n    <div class=\"item-shortCut-item\">P</div>\n  </div>\n</div>\n</div>\n<div class=\"blank_container\"\n</div>\n      ",
+  "globalConfig": {
+    "fontSize": "16px"
+  }
+}
+```
+
+- dev-log
+  - 迁移了编辑器的部分功能，但paas的预览功能需要一个后端
+- dev-to
+  - 将paas的server也迁移过来?
+
+- [What is RPA (Robotic Process Automation)? | Microsoft Power Automate](https://powerautomate.microsoft.com/en-us/what-is-rpa/)
+  - How robotic process automation streamlines business processes
+  - By using RPA tools as part of a larger business process automation strategy, software “robots” can easily be configured to trigger responses, manipulate data, and communicate with other digital systems
+  - When exploring RPA as a workflow automation solution, it’s helpful to consider the two different categories—attended and unattended automation—before deciding which is right for your organization.
+
 ## 0510
 
 - [ENOSPC: System limit for number of file watchers reached - Stack Overflow](https://stackoverflow.com/questions/55763428/react-native-error-enospc-system-limit-for-number-of-file-watchers-reached)

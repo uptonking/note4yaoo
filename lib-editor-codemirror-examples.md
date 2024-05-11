@@ -236,6 +236,22 @@ modified: 2023-06-23T12:46:53.288Z
     - possible to self-host your own instance
     - possible to extend the core with plugins
 
+- https://github.com/prevwong/reka.js /437Star/MIT/202404/ts/yjs/暂未用在craft
+  - https://reka.js.org/
+  - https://reka.js.org/docs/introduction
+  - ✨ Reka is a state management system for building no-code editors
+  - Reka solves this by providing an AST-powered state system that enables end-users to create UI components that are nearly as complex as ones that developers could write in code
+  - along with an interpreter to efficiently compute an output that could be rendered on the browser.
+  - core依赖mobx、nanoid, 周边依赖mobx-react-lite、codemirror6、@lezer/highlight、acorn-jsx、yjs
+
+- https://github.com/joplin/website-plugin-discovery /MIT/202401/ts/mustache
+  - https://joplinapp.org/plugins/
+  - https://joplinapp.org/help/api/get_started/plugins/
+  - The official plugin repository website
+  - 依赖codemirror.v6、highlight.js、markdown-it、mustache、webpack
+  - 详情页会显示Minimum app version、下载量
+  - 搜索没有单独的页面
+
 - https://github.com/expressive-code/expressive-code /MIT/202405/ts/不依赖codemirror
   - https://expressive-code.com/
   - A text marking & annotation engine for presenting source code on the web
@@ -319,6 +335,12 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/fsegurai/Electron-React-Markdown-Editor /MIT/202311/ts
   - Electron Markdown Editor based on React
   - 依赖codemirror6、remark-parse
+
+- https://github.com/ahmedsaheed/Leaflet /CC-BY-NC-SA/202305/ts/inactive
+  - https://leaflet.saheed.codes/
+  - A minimal distractionless markdown editor designed to quickly navigate between multiple `.md` files in a directory and its sub directories.
+  - 依赖codemirror6、@uiw/react-codemirror、electron
+  - It features a clean mathematical typesetting, chemical equation rendering, code blocks highlighting and writing statistics 
 
 - https://github.com/warmachine028/markdown-editor /MIT/202202/ts/inactive
   - A markdown editor using Electron, ReactJS, Vite, CodeMirror6, and Remark
@@ -1021,6 +1043,9 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/cossssmin/codemirror-theme-github /202102/inactive
   - A CodeMirror theme inspired by the GitHub editor.
 # v5
+- examples-v5
+  - strapi markdown editor
+
 - https://github.com/0xGG/EchoMD /AGPLv3/202103/ts/inactive
   - An experimental WYSIWYG markdown editor built on top of HyperMD with extended Widgets support
   - This WYSIWYG markdown editor is built and modified on top of @laobubu's awesome project HyperMD.

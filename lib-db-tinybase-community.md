@@ -140,7 +140,12 @@ modified: 2023-04-21T11:42:46.575Z
 
 - ## 
 
-- ## 
+- ## 💡 The docs of @tinybasejs are pretty cool. You can jump to the function's doc in any code snippet. How did you guys implement this
+- https://twitter.com/zx_loro/status/1788161816524419125
+- TypeDoc and then lots of scary regex.
+- Really cool. We did something kinda related in tldraw’s docs where we use notation like [this](?) to set up auto links into the reference docs. We first create the api docs and populate a SQLite database, then go back and replace all those ?s with their actual slugs using the database.
+  - check out the [camera#zoom](?) Gets turned into: check out the [camera](/api/tldraw/camera#zoom)
+  - As a bonus it breaks the build if it can’t find that article / heading! So no more broken deep links into the api reference.
 
 - ## 🧮 Merkle CRDTs look really interesting and I'm considering them for TinyBase. _20240203
 - https://twitter.com/jamespearce/status/1753783959417155746

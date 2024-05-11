@@ -207,22 +207,55 @@ modified: 2024-01-25T13:33:23.267Z
 
 - ## 
 
-- ## We've hit the point that more than 150 thousand new MicroVMs get created on a monthly basis!
+- ## We've hit the point that more than 150 thousand new MicroVMs get created on a monthly basis! _20240510
 - https://twitter.com/CompuIves/status/1788888447119225192
   - The cost stays low thanks to VM cloning & snapshot/resume. 
   - I'm writing a new post about how our memory (de)compression works, might as well become a series now
 
-- ## We’re thrilled to announce our Storybook add-on: making every story come to life 
-- https://twitter.com/codesandbox/status/1788205375189025090
-  - Open any story as a Sandbox with a click
-
-- ## Over the past months we've received a lot of feedback about our pricing, and today we're updating the pricing of CodeSandbox to make public sandboxes free again!
+- ## Over the past months we've received a lot of feedback about our pricing, and today we're updating the pricing of CodeSandbox to make public sandboxes free again! _20240509
 - https://twitter.com/CompuIves/status/1788596561032937720
   - From today, our free plans will include:
   - Unlimited public sandboxes
   - 5 private sandboxes
   - Private npm support
   - Our most important goal is to make coding more accessible, so we decided to remove that friction.
+
+- ## We’re thrilled to announce our Storybook add-on: making every story come to life _20240508
+- https://twitter.com/codesandbox/status/1788205375189025090
+  - Open any story as a Sandbox with a click
+
+- ## Our Web VSCode editor now has the GitHub Pull Request extension pre-installed _20240420
+- https://twitter.com/CompuIves/status/1780960480649257444
+  - Every PR will now have a development preview that resumes within 2s, which you can use to review and test code from VSCode directly.
+  - The repo needs to have the github app of CodeSandbox installed, then it should work!
+
+- ## People have asked me about the difference between CodeSandbox and other cloud/remote development environments.  _20240409
+- https://twitter.com/CompuIves/status/1777719678384910582
+  - Soo, I've written a post about the unique features we've implemented and how that creates a new powerful workflow.
+
+- ## We have just deployed the VSCode Web editor for CodeSandbox! _20240408
+- https://twitter.com/CompuIves/status/1777321064311496732
+  - Now you can install VSCode extensions and use VSCode to build on CodeSandbox. All our templates will have their language extensions pre-installed.
+  - You can turn it on in Settings under "Experiments".
+  - The editor with our own UI is already powered by a headless VSCode so to say (we don't use its UI, but we use its state and editor). So I can see that the settings of Web VSCode stick around when disabling it.
+- this using the gitpod or coder vscode-server or something else?
+  - Using pieces from https://github.com/CodinGame/monaco-vscode-api, and it's connected to VSCodium server
+  - The cool thing is that we can still render custom React UI within the VSCode UI.
+- Can you setup extensions by default into some projects? Like once you fork the OCaml template it installs the ocaml lsp, for example?
+  - Yes! You can do that in the devcontainer config
+  - It should automatically install the extensions from the config. Though I did notice a race condition that I intend to fix by tomorrow!
+
+- ## I finally got VSCode Web working together well with CodeSandbox. This way we can enable the VSCode extension marketplace! 
+- https://twitter.com/CompuIves/status/1771151980607799738
+  - It's been challenging making our existing UI/UX work well with VSCode, but I think we're finally striking a balance where we're getting best of both worlds.
+  - We're using the open vsix marketplace 
+  - We have Codeium integrated by default in the editor, so it's already enabled even now
+- which extensions are you most excited about?
+  - For me it'd be GitLens, Error Lens and GitHub PR integration. Also it would ensure that all language extensions (TS, Rust, Elixir) don't need a custom implementation anymore.
+
+- ## We use Dev Containers to make the environment setup fast and reusable, so you can get up and running in minutes, powered by our VMs _20240221
+- https://twitter.com/codesandbox/status/1759984324361760918
+  - Have you tried running your Postgres project in CodeSandbox?
 
 - ## Introducing CodeSandbox CDE: instant cloud development environments _202401
 - https://twitter.com/codesandbox/status/1752368702878527776
@@ -235,10 +268,21 @@ modified: 2024-01-25T13:33:23.267Z
   - [Introducing CodeSandbox CDE - CodeSandbox _202401](https://codesandbox.io/blog/introducing-codesandbox-cde)
 - I think you guys are changing the game with this one, it is a step towards remote programming and who knows maybe sooner than later your service will play a huge role in the big playing field.
 
+- ## Suuuper happy to finally share what we've been working on for the last year! We're introducing a new version of CodeSandbox, built with CodeSandbox itself. _20220317
+- https://twitter.com/CompuIves/status/1504479650612871170
+  - We've also grown our team from 12 to 29 people in that time, it's really really been a crazy year.
+
 # discuss
 - ## 
 
-- ## 
+- ## I like it when products append `-${id}` to the slugified post titles.
+- https://twitter.com/CompuIves/status/1757726648491798600
+  - This makes links robust to renaming, without having to permanently tombstone the previous slug.
+  - Medium and Notion do this.
+- CodeSandbox does this too! No regrets.
+- StackOverflow too. And as of last week, Maven as well
+
+- My feedback. For a news site, it's important to include the current slug in canonical, when the title changes, the slug changes, it's a major update, it will be automatically detected by the crawlers and placed in the latest news.
 
 - ## wrote about @ValDotTown 's runtime, which we've rewritten three times in the last year because sandboxing untrusted code is a hard problem
 - https://twitter.com/tmcw/status/1755616125474504960

@@ -13,6 +13,17 @@ modified: 2022-11-07T11:00:28.824Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## For the startup CTOs who think they need to handle 100k concurrent user. 
+- https://twitter.com/johncrickett/status/1788992786286469154
+  - Google does 5.9M searches per minute. That's 98.3K per second. You aren't that big.
+  - [34 Eye-Opening Google Search Statistics for 2024](https://www.semrush.com/blog/google-search-statistics/)
+- Disney’s Hotstar New Sets New Record with 59 Million Concurrent Viewers!
+  - video streaming is quite a special use-case.
+
 - ## Moat/护城河
 - https://twitter.com/0xthefool/status/1780740759416893765
 - 假的产品护城河：
@@ -215,7 +226,15 @@ modified: 2022-11-07T11:00:28.824Z
 
 - ## 
 
-- ## 
+- ## 小红书的商业逻辑也是迷，请问我不为了导流，我为什么要花钱推？
+- https://twitter.com/haozes/status/1789121185948872925
+- 这叫内循环，希望你在站内做内容然后推广自己在站内的号。就像在淘宝投直通车。
+- 给小红书交保护费了才可以
+- 所以，小红书抖音这样封闭的社区在我看来都是垃圾, 因为你产生的内容都变成了它的私有财产
+- 导流是商业行为，需要去商业性质的聚光后台投放
+- 聚光，每个月花1000，就可以光明正大地导流。变相就是要交保护费。
+- 你去开一个小红书聚光。然后每个月消费有个量，就可以倒流了，不会违规。 这个量，你要和聚光的人沟通，不同方向，额度不同，相当于每个月交个保护费，就可以了。
+- 因为小红书也是自媒体平台，你花钱它能把平台内的流量推给你这个号，而不是让你把它平台的流量带到别的地方去啊…
 
 - ## 昨天和 @gofurliu 聊到幕布和flomo。 工具产品的用户忠诚度真心好，提高了一点对AI工具产品的信心。 
 - https://twitter.com/oran_ge/status/1780029370977133000
