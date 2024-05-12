@@ -9,6 +9,8 @@ modified: 2023-09-02T09:17:22.992Z
 
 # guide
 
+- usecase
+  - csb做好了observable-notebook/d3showcase要做的事
 # js-sandbox
 - https://github.com/codesandbox/codesandbox-client /12.9kStar/GPLv3+apache2/202404/js
   - https://codesandbox.io/

@@ -182,7 +182,7 @@ Function('str', 'console.log(str, aaa)')('aaa:');
   - create your instance of sandpack with `yarn build:sandpack`.
 - We use Service Workers to download all transpilers in the background, so the next time a user visits your website they don't have to download the bundler anymore and it can be used offline. This is possible because we host the service worker externally.
 
-## 🎯 [Announcing Sandpack 2.0 and a Node.js runtime for any browser_202302](https://codesandbox.io/blog/announcing-sandpack-2)
+## 🎯 [Announcing Sandpack 2.0 and a Node.js runtime for any browser _202302](https://codesandbox.io/blog/announcing-sandpack-2)
 
 - One year ago, we introduced Sandpack, an open-source in-browser bundler that allows you to run live running code examples on your website.
 - But in version 1, the big caveat to “any JavaScript application” was that it only worked for client runtime execution. And we wanted to change that.
@@ -210,14 +210,59 @@ Function('str', 'console.log(str, aaa)')('aaa:');
   - This is okay for Nodebox because it was built to run small projects and examples, which it does really well. 
   - If you want to do full development in the browser, we recommend using our microVM technology instead.
 
-## 🎯 [Introducing Sandpack - A Toolkit for Creating In-Browser Live Coding_202112](https://codesandbox.io/blog/sandpack-announcement)
+## 🎯 [Introducing Sandpack - A Toolkit for Creating In-Browser Live Coding _202112](https://codesandbox.io/blog/sandpack-announcement)
 
 - Sandpack, the in-browser bundler that powers CodeSandbox, has been open-sourced for everyone to use
   - you can build your own CodeSandbox
 - When CodeSandbox started, it ran all projects in the browser using a primitive bundler that runs in an iframe. 
   - We’re now at the point that the bundler supports npm dependencies, hot module reloading, caching, and a whole lot more.
 
-## [What's Unique About CodeSandbox _201810](https://codesandbox.io/blog/whats-unique-about-codesandbox)
+## ✨ [What's Unique about CodeSandbox CDEs _202404](https://codesandbox.io/blog/whats-unique-about-codesandbox-cde)
+
+- Recently, we released CodeSandbox CDE, a collaborative cloud development environment (CDE) that allows you to run your full development flow in Firecracker microVMs. 
+- No Cold Starts
+  - what if you're coding in the cloud? It would be a waste to keep a server running while you're not working; 
+  - That's why all cloud solutions have an inactivity timer. After x minutes of inactivity, the server shuts down and you won't have to pay for running it.
+  - But now, when you come back, you have to wait for that server and your development environment to boot up again. It's slower than your laptop, because now you have to wait.
+  - Any time you stop coding for a while, the inactivity timer kicks in.
+  - That's why we've developed VM snapshotting for our CDE solution. Instead of shutting down the VM, we hibernate it (like your laptop!). We save all memory to disk, and the next time you come back, we'll resume that environment exactly like you left it, within 2 seconds. No need to wait for booting things up.
+  - Memory snapshots do not just save time, it also enables new workflows and experiences. We can actually snapshot many CDE environments, and they will all seem to be running 24/7 when you open them.
+- Instant Context Switching
+  - We don't only create a memory snapshot of your running environment. We create memory snapshots for every branch and PR. 
+  - Every time a new PR is opened, we spin up a development environment, check out the branch, run the dev server, and create a snapshot.
+  - If you need to switch between a branch, or even a repository, you can spin up a new environment just for that branch. Since everything is snapshotted, this only takes 2 seconds and you can instantly start coding.
+  - New environments are cloned from the snapshot of your default branch (e.g. main), or from a snapshot of the branch itself. This enables some new cool functionality like brancheable databases. 
+  - You can even run multiple branches at the same time and quickly switch between them without losing context.
+- Preview Development Environments
+  - Did you ever have to run a Pull Request locally on your laptop to review it? It's a time sink, because you need to check out the branch, install dependencies and restart the dev server.
+  - This “deployment preview” works for full-stack applications too. You can run a database, backend and frontend all at the same time by defining a docker-compose file in the .devcontainer folder.
+- Collaborative Branches
+  - On CodeSandbox, every environment is collaborative by default. When working on a branch, you can share the link with others and they will be able to see what you're working on.
+  - We implement this collaboration by giving every user their own rootless container to run their code in.
+
+- Conclusion
+  - When building CodeSandbox, we've focused on creating a product that unlocks all the values that dev environment in the cloud can give. 
+  - It resulted in a more opinionated environment, but it saves us a lot of time in our day-to-day development flows.
+
+## ✨ [What's Unique About CodeSandbox _201810](https://codesandbox.io/blog/whats-unique-about-codesandbox)
 
 - The frontend and the microservices of CodeSandbox are open source! This is the place where you can find out how CodeSandbox works
+
+- [What’s Unique About CodeSandbox ](https://medium.com/@compuives/whats-unique-about-codesandbox-f1791d867e48)
+
+- Live Collaboration
+  - When working on a sandbox you can open up a Live Session. This generates a unique URL which you can give to others to join your sandbox and collaborate live (google docs style) together with you. 
+  - you can also enable ‘Classroom Mode’, this mode allows you to specify who can edit the sandbox and who can only view.
+- GitHub Committing/Forking/PRing
+- VSCode Integration
+- Container Sandboxes
+  - Previously we would run a sandbox in the browser. This works great for many sandboxes, but imposes a limitation on what you can run. 
+  - With Container Sandboxes we actually run the code on a server, this makes it possible to eg. create a Node/GraphQL server on CodeSandbox. It also opens up the possibility to create Next/Gatsby/Nuxt projects inside CodeSandbox. 
+- Dashboard & Teams
+  - Everyone has a dashboard that they can organize their sandboxes in. In this dashboard you can create directories (like Google Docs) to categorize your sandboxes.
+- Beginner Friendly Tricks
+- Deploy Sandboxes
+- Smaller Factors
+  - Private/Unlisted Sandboxes
+  - Jest Support
 # more

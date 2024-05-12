@@ -180,12 +180,17 @@ class Plugins {
 
 - We’ll define our plugins using an abstract class that is implemented by each plugin.
 
-## [figma: How to build a plugin system on the web and also sleep well at night_201908](https://www.figma.com/blog/how-we-built-the-figma-plugin-system/)
+## 🔌🆚️ [figma: How to build a plugin system on the web and also sleep well at night _201908](https://www.figma.com/blog/how-we-built-the-figma-plugin-system/)
 
 > Since we published this blog post, we decided to **change our sandbox implementation to an alternative approach**: compiling a JavaScript VM written in C to WebAssembly. As you'll see in the blog post below, it was one of several ideas we originally weighed.
 > We decided to implement this alternative after a security vulnerability in the Realms shim (which our original approach uses) was privately disclosed to us.
 
-- [An update on plugin security_201910](https://www.figma.com/blog/an-update-on-plugin-security/)
+- [An update on plugin security _201910](https://www.figma.com/blog/an-update-on-plugin-security/)
+  - we did a lot of research to figure out how to safely run 3rd-party code on figma.com. We eventually settled on a technology called the `Realms` shim to do this.
+  - A little over two weeks ago, several independent vulnerabilities were recently discovered with the Realms shim that could have allowed code inside the sandbox to escape.
+  - We then went further and made a fundamental change to our technology stack to help prevent this type of vulnerability from happening again
+  - We no longer use the Realms shim at all. We now use QuickJS, a JavaScript VM written in C and cross-compiled to WebAssembly.
+  - Code running inside the Realms shim still uses the browser's JavaScript VM so it runs just as fast as normal JavaScript. And the browser's built-in debugger can debug plugins in the Realms shim with the same rich development experience
 
 - Figma plugins API enables third-party developers to run code directly inside our browser-based design tool, so teams can adapt Figma to their own workflows.
 
@@ -197,6 +202,8 @@ class Plugins {
   - What does it mean for eval to be dangerous?
   - Hiding the global variables
 - Attempt #2: Compile a JavaScript interpreter to WebAssembly
+  - we took Duktape, a lightweight JavaScript interpreter written in C++ and compiled it to WebAssembly.
+  - a few months later, Fabrice Bellard released QuickJS which supports ES6 natively
 - Attempt #3: Realms
   - Implementing the API using Realms securely
 - The problem is that building the Figma API directly on top of Realms makes it so that each API endpoint needs to be audited, including its input and output values. The surface area created is too large.

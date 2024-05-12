@@ -271,6 +271,31 @@ export interface AutocompleteState<TItem extends BaseItem> {
 - [fix(autocomplete-js): display warning when there are more than one instances of autocomplete](https://github.com/algolia/autocomplete/pull/1108)
   - While autocomplate can technically render multiple instances in the same document, in practice it results in inconsistent behavior when a user interacts with them.
   - This is because we currently bind pointer events on `Window` to determine whether a panel should be closed after a user clicks outside of it. This only works for one of the autocomplete added to the document.
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Autocomplete – A JavaScript library for building autocomplete experiences | Hacker News _202306](https://news.ycombinator.com/item?id=36236578)
+- If you don't need it to be clever and dynamic, and you're not too bothered about styling, then HTML's `<input>` tag has a typeahead option using `<datalist>` .
+  - [<datalist>: The HTML Data List element - HTML: HyperText Markup Language | MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist)
+  - Unfortunately its scrolling performance is kinda laggy around 200 items or so in Chrome. 
+- The cool part of `datalist` is that you can listen to input events on the field, query the server and create your options in the datalist.
+- FYI it does not work on Firefox on Android
+
+- Does this mean that every time the user types something, they have to wait a roundtrip from the server for completion? Wouldn't this make this useless for average-to-fast typers?
+  - Well, they "wait" for a fraction of a second maybe. And you put it behind a typing delay so it responds only when the user is ready.
+  - Also, many autocompletes do a round trip anyway. The htmx version just returns the html already rendered, rather than, say, JSON that requires further processing and injecting.
+- It's how any search engine does autocompletes... you can't possibly store all the queries clientside. Whether you're sending a tiny JSON or a tiny HTML snippet back doesn't really make much of a difference. It's usually fast enough, especially if you debounce/throttle the user input so you're not sending the query on every keystroke.
+- That’s how almost all autocompletes work
+  - Unless you have the data on the client side already, which isn't the case for Htmx.
+
+- You can also use this library with Typesense, which is an open source alternative to Algolia: https://github.com/typesense/typesense-autocomplete-demo
+
+- 🆚️ Do you know what approach is better for autocomplete search: fuzzy search or tf-idf? Recently I read this post about indexing Wikipedia using tf-idf. However, I've seen that fuzzy search is often used for autocomplete.
+  - It probably depends on whether you are searching a body of natural language text (use tf-idf) or a list of things (use fuzzy search).
 # discuss
 - ## 
 

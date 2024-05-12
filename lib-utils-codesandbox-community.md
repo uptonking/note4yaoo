@@ -164,6 +164,28 @@ modified: 2024-01-25T13:33:23.267Z
 - I'm curious about the technical details. Could you elaborate on how CodeSandbox runs Node.js in the browser? Does it use a Linux VM like Alpine compiled to WASM?
   - Nodebox is a runtime for executing Node.js modules in the browser
 
+- Something else I find very confusing is that vscode.dev & github.dev are both free and run the editor fully locally in your browser. 
+  - Github Codespaces on the other hand provisions a VM behind the scenes so you can run containers, build tooling and whatever else alongside the editor. That one charges by the hour.
+- You do get something like 60 hours free a month with Codespaces (with lowest CPU/memory), which is fairly generous.
+
+- Why use this - a stripped down unusable version of vscode when you can host a full instance of vscode on your linux server
+  - You can use vscode.dev to achieve something very similar
+  - Run a vscode-server on your server
+  - - Connect (tunnel) to that code-server from vscode.dev using the Remote Development extension
+
+- If you want a similar in-cloud VSCode experience, but tied more tightly to your SDLC (e.g. CI/CD, branch previews, deployments) for each project and requiring less configuration to get a dev server running alongside it (this just lets you edit code, not run it) we offer “Workspaces” at withcoherence.com.
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
 - ## [Codesandbox open sources their execution environment: Sandpack | Hacker News _202112](https://news.ycombinator.com/item?id=29417937)
 - Does it download the dependencies on the client side, and compile the JS on the client side as well?
   - Yep, it downloads and compiles dependencies on the client side. However, it does this on a different domain for security reasons.
@@ -184,7 +206,8 @@ modified: 2024-01-25T13:33:23.267Z
   - so for those packages written in `.tsx` by default, I cannot find an easy way to auto generate d.ts files and bundle them for the Monaco editor.
   - In term of UI/UX, as long as we are able to setup the environment and get the hint from the typescript server stably, it's just a matter of time to improve them gradually.
   - In fact, using CodeMirror in this case leave a lot of flexibilities to users to craft their own hint UI
-- Although I wasn't here when this decision of CodeMirror over Monaco was made, I think I can understand some of the reasons and highlight them here:
+
+- 💡 Although I wasn't here when this decision of CodeMirror over Monaco was made, I think I can understand some of the reasons and highlight them here:
   - Mobile support: Monaco doesn't have great mobile support, and this is crucial for Sandpack to deliver a uniform experience throughout all types of devices; 
   - Final bundle size: CodeMirror provides an easy way to load only the modules/extensions we want to, which gives us the possibility to lazy-loading and code-splitting the CodeEditor component. Meanwhile, Monaco is a heavy package, and that's why CodeSandbox.io/CodeSandbox Embeds also defaults to CodeMirror in the mobile version (due to the previous reason too
   - Extensibility: TBH, I haven't had many experiences with Monaco before, but I can tell what I've heard, and Monaco makes it hard to customize and extend some configuration - and Monaco provides a great API to extensions, which pretty much solved many of our problems; 
@@ -192,16 +215,6 @@ modified: 2024-01-25T13:33:23.267Z
   - In fact, you can easily switch from CodeMirror to Monaco at your end, as Sandpack exposes all the APIs needed to implement it. 
 
 - I think Danilo nailed the reasons I also considered when I picked CodeMirror over Monaco. For me personally, the biggest one was extensibility, because we had very specific interactions in mind, and I wasn't very confident that Monaco would let me build some of them. This is more of a matter of taste, but I also preferred CodeMirror's API over Monaco's (plus CodeMirror's source code seemed a lot more approachable), so I went with it for prisma/text-editors.
-# discuss-alternatives-stackblitz/replit
-- ## 
-
-- ## 
-
-- ## [Repl from Repo | Hacker News _201912](https://news.ycombinator.com/item?id=21765872)
-- Gitpod is awesome and a really bright team behind it. However, Repl.it is different in that we're focused on speed and minimal configuration. You don't even need to login to clone a repo and start it.
-
-- Will this change the pricing model at all? Or add a new tier? 
-  - No, not at all. Our infra costs are a lot less than most people expect.
 # discuss-news-csb
 - ## 
 
@@ -232,6 +245,8 @@ modified: 2024-01-25T13:33:23.267Z
 - ## People have asked me about the difference between CodeSandbox and other cloud/remote development environments.  _20240409
 - https://twitter.com/CompuIves/status/1777719678384910582
   - Soo, I've written a post about the unique features we've implemented and how that creates a new powerful workflow.
+- [What's Unique about CodeSandbox CDEs - CodeSandbox](https://codesandbox.io/blog/whats-unique-about-codesandbox-cde)
+  - 
 
 - ## We have just deployed the VSCode Web editor for CodeSandbox! _20240408
 - https://twitter.com/CompuIves/status/1777321064311496732
@@ -267,6 +282,38 @@ modified: 2024-01-25T13:33:23.267Z
   - VS Code, AI code auto-complete, automated git flow & more
   - [Introducing CodeSandbox CDE - CodeSandbox _202401](https://codesandbox.io/blog/introducing-codesandbox-cde)
 - I think you guys are changing the game with this one, it is a step towards remote programming and who knows maybe sooner than later your service will play a huge role in the big playing field.
+
+- ## [Dev Container Support in CodeSandbox | Hacker News _202310](https://news.ycombinator.com/item?id=37950384)
+
+- ## ✨🐍 [Python Support Now Available for CodeSandbox | Hacker News _202302](https://news.ycombinator.com/item?id=34870667)
+
+- ## ✨🦀 [Introducing Rust Support in CodeSandbox, start a Rust VM in one click | Hacker News _202301](https://news.ycombinator.com/item?id=34444129)
+- I'm one of the co-founders of CodeSandbox and a big fan of Rust. Rust support is something that we've been working on for a while, but the recent addition of Docker support in CodeSandbox really enabled it. 
+
+- How many developers are there who are happy using some web based IDE versus their own tools?
+  - I'm using a web based IDE for my dev, but I'm biased in that sense. The main advantage for me is that I can easily switch branches, as every branch has its own VM. + I can easily share in-progress work. I do use the VSCode integration, because I'm very used to VSCode.
+  - That said, I've also spoken with people who use a Web IDE next to their local environment. E.g. they use a Web IDE for reviewing PRs or making smaller changes, and they use their local editor for feature development.
+  - the main advantage I have here is that the dev server also stays running when I go to another branch (since it's a different VM). So I can work on one thing, share it with the team and in the meantime continue on another branch. They can see the devserver / running code, while I am working on something else.
+  - It's especially useful for things like migrations or dependency management. In one branch I could work on something that has some database migrations, and then I can still switch to other branches without having to roll back the migrations.
+
+- 🆚️ Is your biggest competitor Repl.it? What advantages do you have compared to them?
+  - I'd say that CodeSandbox has a strong focus on extending the existing workflow for developers. That's why we have a VSCode integration, a GitHub integration with a GitHub App that creates a running dev env for every branch/PR, and we make sure that generally all editor features you expect (autocomplete, go to definition, hover info, etc) are available for the languages that we support.
+
+- Are you basically reselling hosted https://github.com/coder/code-server?
+  - No, we've built our own web editor & iOS code editor. In our v1 editor we did run VSCode in the browser, but that was before code-server was released (in 2018). 
+  - Even if we wanted to run code-server, that would be impossible as we allow for multiple users to open the same sandbox/branch, which wouldn't fit the model of VSCode server (which is single user per server).
+
+- I'm not really a fan of in-browser IDEs. To me, it seems like a good way to constrain tooling environments. What I would love to see is an extension that runs all of my tests and debugger in a type 1 hypervisor that can simply send a set of instructions to setup the VM, a snapshot of the changeset, and allows a developer to run that exact environment on their machine. Combine that with LiveShare and you have something that closely mimicks the experience of handing a keyboard and mouse back and forth during pairing.
+
+- I'm hoping Codesandbox would provide for CI/CD to directly deploy to production somehow. Basically, it's a "code in cloud" dream.
+  - it is something on our radar, being able to press a button for deploy from CodeSandbox would be valuable for many people!
+
+- ## 🐳 [Docker Support in Codesandbox | Hacker News _202301](https://news.ycombinator.com/item?id=34341818)
+- Github Spaces, Gitpod, Codeserver (Coder), AWS Cloud9 (and AWS CodeCatalyst)... many bet on a workspace in the cloud. Wonder who will get the most attraction. 
+  - So far my best UX was with Codesandbox for UI (react), Gitpod for a general (=Docker) single repo, and Codeserver on a VM for multi repo setup.
+- We're now working a lot on making CodeSandbox a great experience for development, and we're now at the point that we're doing all our development of CodeSandbox on CodeSandbox as well. It's a quite opinionated experience, because every branch will have a URL that you can share, but it works really well when working together with a team. More info on that is here: https://projects.codesandbox.io/
+
+- As a long time user, it’s been a pleasure following CodeSandbox’s progress recently. It works really well on an iPad, making it a great learning tool.
 
 - ## Suuuper happy to finally share what we've been working on for the last year! We're introducing a new version of CodeSandbox, built with CodeSandbox itself. _20220317
 - https://twitter.com/CompuIves/status/1504479650612871170

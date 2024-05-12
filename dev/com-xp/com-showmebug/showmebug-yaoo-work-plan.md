@@ -63,10 +63,13 @@ modified: 2024-05-06T02:54:40.374Z
 - 
 - ### roadmap
 
-- daopaas的框架，在clacky-ai-frontend里面，目前已初步搭建。 
-  - 已实现：简单允许和package.json 待实现可以分成两次版本迭代
-  - 第一版：原样迁移 把packages/client/src/* 的代码全部迁移到libs/d42paas-biz/client/ 中，并在apps/d42paas_playground/src/app/[locale]/(main)/ 中进行演示（重新使用tailwind+shadcn/ui写）。 
-  - 第二版：删除 mapRender 方法
+- 
+- 
+- 
+
+- branching
+  - 各分支的 dev-server
+  - 各分支的 history、time-travel
 
 - embed
 - 
@@ -101,6 +104,11 @@ modified: 2024-05-06T02:54:40.374Z
 
 - d42paas的 code playgrounds 能否用 d42paas 的sdk实现
   - 用自己的平台开发代码
+
+- daopaas的框架，在clacky-ai-frontend里面，目前已初步搭建。 
+  - 已实现：简单允许和package.json 待实现可以分成两次版本迭代
+  - 第一版：原样迁移 把packages/client/src/* 的代码全部迁移到libs/d42paas-biz/client/ 中，并在apps/d42paas_playground/src/app/[locale]/(main)/ 中进行演示（重新使用tailwind+shadcn/ui写）。 
+  - 第二版：删除 mapRender 方法
 
 ### codebase
 

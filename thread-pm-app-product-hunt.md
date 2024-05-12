@@ -14,7 +14,8 @@ modified: 2022-12-04T16:34:29.342Z
 
 - ## 
 
-- ## 
+- ## [Show HN: I made a tool that turns screenshots into dramatically angled photos | Hacker News _202302](https://news.ycombinator.com/item?id=34729849)
+  - [Screenstab](https://www.screenstab.com/editor/)
 
 - ## I'm working on a new feature for http://ogstudio.app, to dynamically generate Open Graph images with custom texts
 - https://twitter.com/tomlienard/status/1771539149729747169

@@ -49,6 +49,15 @@ modified: 2021-05-14T15:06:46.615Z
   - No vendor lock-in: Choose whatever cloud provider suits you best, be it the cheapest one or the most powerful, DevPod supports all cloud providers. 
   - Cross IDE support: VSCode and the full JetBrains suite is supported, all others can be connected through simple ssh.
 
+- https://github.com/hocus-dev/hocus /Elastic/202308/ts/inactive
+  - https://hocus.dev/
+  - Hocus is a self-hosted application that spins up ready-to-code, disposable development environments on your own servers in seconds. 
+  - It's a self-hosted alternative to Gitpod and GitHub Codespaces.
+  - You define your dev environments as code and launch them instantly from your browser. 
+  - Hocus integrates with any Git provider that uses the SSH protocol, like GitHub, GitLab, BitBucket, or Gitea. 
+  - It prebuilds dev environments on every commit for all branches like a CI system, enabling your team members to start coding with fresh, fully configured dev environments right away.
+  - [hocus: We replaced Firecracker with QEMU | Hacker News _202307](https://news.ycombinator.com/item?id=36666782)
+
 - https://github.com/eclipse-theia/theia /EPLv2/202405/ts
   - http://theia-ide.org/
   - Theia is a cloud & desktop IDE framework implemented in TypeScript.
@@ -64,6 +73,19 @@ modified: 2021-05-14T15:06:46.615Z
   - We are calling this version of Eclipse Theia for Che: Che-Theia.
   - So, Che-Theia is the default Che editor provided with developer workspaces created in Eclipse Che 7
   - Che-Theia contains additional extensions and plugins which have been added based on the nature of Eclipse Che workspaces and to provide the best IDE experience of Theia within Che.
+
+- https://github.com/koding/koding /AGPLv3/201710/go/inactive
+  - https://www.koding.com/
+  - Koding is a development platform that orchestrates your dev environment. 
+  - Developers get everything they need to spin up full-stack, project-specific environments in seconds. Share them, update them, and manage infrastructure from a simple interface.
+
+- https://github.com/CodeboxIDE/codebox /apache2/201504/js/inactive
+  - https://www.codebox.io/
+  - Codebox is a complete and modular Cloud IDE. It can run on any unix-like machine (Linux, Mac OS X). 
+  - It is an open source component of codebox.io (Cloud IDE as a Service).
+  - The IDE can run on your desktop (Linux or Mac), on your server or the cloud. 
+  - Codebox is built with web technologies: node.js, javascript, html and less. The IDE possesses a very modular and extensible architecture, that allows you to build your own features with through add-ons. 
+  - Codebox is the first open and modular IDE capable of running both on the Desktop and in the cloud (with offline support).
 
 - https://github.com/wasdk/WebAssemblyStudio /MIT/201901/ts/inactive
   - http://webassembly.studio/

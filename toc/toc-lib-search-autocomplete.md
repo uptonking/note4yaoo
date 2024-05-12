@@ -261,6 +261,7 @@ modified: 2023-01-01T13:24:35.994Z
   - [Support for hugo](https://github.com/algolia/autocomplete/discussions/999)
     - There's nothing specific about the backend or static site generation that would make autocomplete not work. Can you clarify where you are stuck?
     - There's also examples here: /examples
+  - [Autocomplete – A JavaScript library for building autocomplete experiences | Hacker News _202306](https://news.ycombinator.com/item?id=36236578)
 
 - autoComplete.js /3.7kStar/apache2/202206/js/NoDeps
   - https://github.com/TarekRaafat/autoComplete.js

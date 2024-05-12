@@ -85,7 +85,7 @@ modified: 2021-01-08T11:48:16.590Z
   - Elara enables creating a Windows/MacOS like window manager experience inside a web browser. 
   - No third-party libraries or frameworks are needed to use Elara.
 
-- https://github.com/mathuo/dockview
+- https://github.com/mathuo/dockview /MIT/202405/ts/NoDeps
   - https://dockview.dev/#live-demo
   - A zero dependency layout manager built for React
 

@@ -57,6 +57,11 @@ modified: 2023-01-21T18:58:29.846Z
     - is there a definitive answer for a web version of vscodium?
   - [Switching between marketplaces](https://github.com/VSCodium/vscodium/issues/519)
     - If it helps anyone, there's a AUR (Archlinux User Repository) that adds the VSCode marketplace to VSCodium. 
+
+- https://gitlab.com/gitlab-org/gitlab-web-ide-vscode-fork /MIT/202405/ts
+  - GitLab Web IDE - VSCode Fork
+  - An internal fork of the VSCode project, used to power GitLab's Web IDE
+  - This fork is used for building tools-injector for remote development.
 # apps
 
 # vscode-web
@@ -64,20 +69,16 @@ modified: 2023-01-21T18:58:29.846Z
   - This project is aimed to build a web version of VSCode, this is not a fork, simply a web compilation of the VSCode project.
   - Microsoft recently open sourced VSCode web compilation, so I simplified the build process to use the official compilation (no more tweak needed).
 # vscode-server
-- https://github.com/coder/code-server /MIT/202401/ts
+- https://github.com/coder/code-server /MIT/202405/ts
   - https://coder.com/
   - Run VS Code on any machine anywhere and access it in the browser.
   - Requirements: Linux machine with WebSockets enabled, 1 GB RAM, and 2 vCPUs
-
-- https://github.com/gitpod-io/openvscode-server /MIT/202401/ts
-  - This project provides a version of VS Code that runs a server on a remote machine and allows access through a modern web browser. 
-  - It's based on the very same architecture used by Gitpod or GitHub Codespaces at scale.
-  - in 2019 the VS Code team started to refactor its architecture to support a browser-based working mode. While this architecture has been adopted by Gitpod and GitHub, the important bits have not been open-sourced, until now. As a result, many people in the community still use the old, hard to maintain and error-prone approach.
-  - At Gitpod, we've been asked a lot about how we do it. So we thought we might as well share the minimal set of changes needed 
+  - https://github.com/coder/coder /AGPLv3
+    - Provision remote development environments via Terraform
   - [Difference to OpenVSCode Server _202109](https://github.com/coder/code-server/discussions/4267)
-    - ode-server isn't a Docker image, although Docker images for code-server exist. 
+    - code-server isn't a Docker image, although Docker images for code-server exist. 
     - Vanilla Code Server is actually an optimised server, but Code Web Server isn't. 
-    - Moreover, I'd prefer code-server since Gitpod's VS Code Web Server doesn't allow me to use sudo command
+    - Moreover, I'd prefer code-server since Gitpod's VS Code Web Server doesn't allow me to use `sudo` command
     - since code-server is used on Coder(dev workspaces) but I don't think code-server will be dead. I think for collaborating with multiple people simultaneously, Open VS Code is best but for individuals, code-server is recommended since it has protection.
     - ~~One little known gotcha is that OpenVSCode does not let you pre-install extensions in a non-interactive mode (e.g. during docker build to ship after security scanning for use on air-gapped servers)~~. This does not appear to be the case anymore.
   - Here is my summary of differences:
@@ -85,8 +86,6 @@ modified: 2023-01-21T18:58:29.846Z
     - OpenVSCode installs extensions from open-vsx, while code-server is in the process of switching to open-vsx
     - TAB is working in the code-server's terminal. Doesn't work in the OpenVSCode. This difference may seem small, but significant to my day-to-day use
     - I figured how code-server handles user account in Docker, but haven't figure out yet how OpenVSCode does it in the Docker
-
-  - [VS Code in the browser for everyone - Blog _202109](https://www.gitpod.io/blog/openvscode-server-launch)
   - [FAQ](https://github.com/coder/code-server/blob/main/docs/FAQ.md)
   - 🤔 Why can't code-server use Microsoft's extension marketplace?
     - The core of VS code is open source, while the marketplace and many published Microsoft extensions are not. 
@@ -99,13 +98,12 @@ modified: 2023-01-21T18:58:29.846Z
     - OpenVSCode-Server is scoped at only making VS Code available as-is in the web browser. 
       - code-server contains additional changes to make the self-hosted experience better 
 
-- https://github.com/cdr/code-server /MIT/202401/ts
-  - https://coder.com/
-  - Run VS Code on any machine anywhere and access it in the browser
-  - Use cloud servers to speed up tests, compilations, downloads, and more
-  - Requirements: Linux machine with WebSockets enabled, 1 GB RAM, and 2 vCPUs
-  - https://github.com/coder/coder /AGPLv3
-    - Provision remote development environments via Terraform
+- https://github.com/gitpod-io/openvscode-server /MIT/202405/ts
+  - This project provides a version of VS Code that runs a server on a remote machine and allows access through a modern web browser. 
+  - It's based on the very same architecture used by Gitpod or GitHub Codespaces at scale.
+  - in 2019 the VS Code team started to refactor its architecture to support a browser-based working mode. While this architecture has been adopted by Gitpod and GitHub, the important bits have not been open-sourced, until now. As a result, many people in the community still use the old, hard to maintain and error-prone approach.
+  - At Gitpod, we've been asked a lot about how we do it. So we thought we might as well share the minimal set of changes needed 
+  - [VS Code in the browser for everyone - Blog _202109](https://www.gitpod.io/blog/openvscode-server-launch)
 # vscode-collab
 - https://github.com/sekassel-research/vscode-collab-plugin /ts
   - Collaborative editing plugin for VSCode/code-server/fulib.org Projects

@@ -9,6 +9,58 @@ modified: 2024-01-25T13:32:35.137Z
 
 # guide
 
+# docs-nodebox
+- Nodebox is a runtime for executing Node.js code in the browser. 
+  - Sandpack 2.0 uses Nodebox to run server-side examples directly in the browser. 
+
+## [Nodebox – Sandpack](https://sandpack.codesandbox.io/docs/advanced-usage/nodebox)
+
+- Nodebox is a runtime for executing Node.js code in the browser. 
+  - Sandpack 2.0 uses Nodebox to run server-side examples directly in the browser. 
+  - For example, you can run a Vite template such as React and Vue directly on your website.
+
+- Nodebox with out-of-the-box support for Next.js, Vite and Astro, but we’re growing to support just about any server-side framework you can imagine.
+  - However, bear in mind it can’t run napi or any other low-level C++/Rust package you can use in Node.js—only WebAssembly and JavaScript modules. 
+  - Postgres, MongoDB and MySQL are also currently not supported because of the lack of raw socket support in browsers.
+
+- Difference with WebContainers
+  - Web Containers use modern browser technologies like `SharedArrayBuffer`, which makes it impossible to run in Safari and requires the user to set additional `Cross-Origin-Isolation` headers on the server to run any code.
+  - Nodebox however, is implemented without modern browser technologies, to make it run in any browser (like iOS and Safari) with minimal setup.
+
+### [Frequently Asked Questions – Sandpack](https://sandpack.codesandbox.io/docs/resources/faq)
+
+- Why is the bundler hosted externally (iframe) and not a simple JavaScript module?
+  - 
+
+- What Node.js version does Sandpack 2.0 run?
+  - We are aiming for compatibility with the last version. Currently, this would be Node.js@18 (experimental features might be missing).
+
+- How does Nodebox work?
+  - Nodebox establishes a worker that contains an environment capable of running Node.js code. 
+  - This is achieved by polyfilling some of the Node.js standard APIs, like `fs` and `net`, which guarantees Node.js compatibility but not complete feature parity.
+
+- Does Nodebox work offline?
+  - Starting Nodebox requires a network connection to download all the node modules from the sandpack cdn https://sandpack-cdn-v2.codesandbox.io and load the preview domain for each port https://id-port.nodebox.codesandbox.io, once the previews have loaded Nodebox will work entirely offline.
+
+- Is it possible to connect to a database in Nodebox?
+  - No. Nodebox is currently unable to connect to any external databases. However, serverless databases (Supabase, DynamoDB, Google Cloud Datastore, for example) can still be used normally since these options rely on standard REST APIs.
+  - Still, we are currently exploring other alternatives for standard databases, like microVMs, which still need to be integrated into Sandpack.
+
+- How does the Nodebox compare to WebContainers?
+- While both Nodebox and WebContainers allow running Node.js on the browser, they have several fundamental differences:
+  - Nodebox runs on any browser because it was built from the ground up with cross-browser support in mind, avoiding modern features like `SharedArrayBuffer`.
+  - Nodebox does not have an install/setup step, making it faster to boot up. It installs `node_modules` in the background.
+  - Nodebox uses an internal dependency manager that is fine-tuned to deliver optimal initial load time by utilizing dependency caching via Sandpack CDN.
+  - Nodebox tends to use slightly more memory when multiple processes/workers are involved. Unfortunately, this is a trade-off for cross-browser support as the only way to optimize this is by using SharedArrayBuffers.
+  - Nodebox does not support synchronous cross-process communication as this would require Atomics and SharedArrayBuffers.
+  - Nodebox does not emulate Node.js's event loop, resulting in processes needing to be exited manually using `process.exit()` or by stopping the shell.
+  - Nodebox is not feature complete yet, some API's are still missing: `async_hooks, vm, worker_threads` and probably some more.
+
+- 
+- 
+- 
+- 
+
 # discuss-stars
 - ## 
 
@@ -44,7 +96,12 @@ modified: 2024-01-25T13:32:35.137Z
 
 - ## 
 
-- ## 
+- ## [WebContainer API | Hacker News _202302](https://news.ycombinator.com/item?id=34793858)
+- Eric (CEO of StackBlitz) here- your explanation is 100% correct regarding why & how servers need to be used to power parts of WebContainer environments (i.e. proxying npm, git, transforming binaries, amongst a handful of other things).
+  - Some of these operations can be cacheable which is ideal for scalability, but even the ones that cannot tend to be far cheaper than running VMs which incur by the minute CPU costs.
+
+- you can actually self host StackBlitz! You’ll just need our Enterprise Edition which can be run on any cloud or on-prem. 
+  - Self-hosting does require a paid license though
 
 - ## [Opt out of wasm swapping _202308](https://github.com/stackblitz/webcontainer-core/issues/1163)
   - WebContainers interferes with npm install to swap certain packages for their wasm versions.

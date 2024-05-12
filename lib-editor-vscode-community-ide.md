@@ -9,6 +9,9 @@ modified: 2024-05-09T09:35:28.467Z
 
 # guide
 
+- cloud-ide
+  - github-codespaces, gitpod, devpod, coder, codeanywhere
+  - codesandbox, stackblitz, replit
 # draft
 - 兼容现有浏览器的扩展
 # xp-file-manager
@@ -24,19 +27,72 @@ modified: 2024-05-09T09:35:28.467Z
 # discuss-cloud-ide
 - ## 
 
-- ## [Ask HN: Is anyone using cloud dev environments (e.g. Codespaces/Replit) at work? | Hacker News _202310](https://news.ycombinator.com/item?id=37934488)
-- I have not used a full blown online environment. Except maybe VSCode remote using SSH. I repeatedly find anything that requires a network call somewhere in between a serious impediment disrupting the flow of development. Sometimes I find myself in slow laggy situations with ssh to the point I prefer Mobile Shell mosh. VSCode remote (or similar) via ssh obviously becomes painful.
-  - Most cloud environments are also limited in terms of what you can do. e.g: issue sudo while running a process, attach to a process with a debugger.
+- ## 
 
-- I work on CodeSandbox, so that creates some bias :). We've been working on our own CDE solution, though we've taken a different spin to improve speed and cost.
+- ## 
+
+- ## [Show HN: Chunk – Code sandbox for back-end devs | Hacker News _202207](https://news.ycombinator.com/item?id=32267862)
+- Chunk is an all in one web editor (think of the codesandbox experience) that allows you to write, deploy and run a piece of code in the cloud from a variety of triggers: HTTP, WebHook, manual or scheduled (cron).
+
+- I really like yalls website design and UX; especially around scheduling the functions to run. I am working on the same problem in Python space at https://cdevframework.io, but I am building it first as a client side SDK. Mostly chose that way because I don't have much frontend skills! Impressive that you could getting this up and going so quickly!
+  - I really like your client side SDK approach, giving users the ability to use their own IDE / tools is always a plus. (+ building a web IDE is a pain haha)
+
+- How do you safely run untrusted user code?
+  - In nodejs you can use the `vm` module. 
+  - And for extra layers you can run node itself in a linux namespace aka container. Inside a VPS that has selinux. On a dedicated server with no LAN access besides the gateway. In a fireproof datacenter.
+
+- If we were to support more runtimes, I think I'd go for Firecracker (https://github.com/firecracker-microvm/firecracker/) which is what AWS uses for lambdas
+
+- How does this compare to glitch.com? As far as I can tell the only real difference is the support for scheduled jobs, but I feel like I'm probably missing something more fundamental. Maybe it's just trying to be better version? Looks cool none the less, will check it out!
+  - Glitch is definitely the closest in terms of usage. We in fact used Glitch ourselves quite a lot. But even running the simplest piece of code on Glitch still requires you to write all the boilerplate code (e.g. setting up a node express HTTP server).
+  - And of course, Glitch stops every instances after 5min of inactivity and it takes a solid 30sec to wake them up after.
+  - Glitch is unbeatable in the frontend part. But we want to make the backend dev experience more seamless.
+
+- ## 🤔 [Ask HN: Is anyone using cloud dev environments (e.g. Codespaces/Replit) at work? | Hacker News _202310](https://news.ycombinator.com/item?id=37934488)
+- My company switched to 100% remote dev envs a couple years ago. 
+  - When you cut a branch it spins up a VM and you can connect to it from VS Code (native or browser based) or just plain SSH. It works great. The lag is not noticeable at all. 
+  - Dev envs are fully provisioned and up to date with all tooling and dependencies so you don't need to bother with managing any of it locally. 
+  - Given a choice I don't think any dev at my company would go back.
+
+- I have not used a full blown online environment. Except maybe VSCode remote using SSH. I repeatedly find anything that requires a network call somewhere in between a serious impediment(阻碍，障碍) disrupting the flow of development. Sometimes I find myself in slow laggy situations with `ssh` to the point I prefer Mobile Shell mosh. VSCode remote (or similar) via ssh obviously becomes painful.
+  - Most cloud environments are also limited in terms of what you can do. e.g: issue `sudo` while running a process, attach to a process with a debugger.
+  - Usually when these come development environment ready, it also hides away underlying details - i.e, I no longer know the command line etc to should I need to write infrastructure code/automation later on.
+  - I guess there are domains where these are non-issues. But for a wide variety of my use-cases local development is going to be preferable, because by design there are limitations in the alternative.
+
+- 👷🏻 I work on CodeSandbox, so that creates some bias. We've been working on our own CDE solution, though we've taken a different spin to improve speed and cost.
   - Our solution is based on Firecracker, which enables us to "pause" (& clone) a VM at any point in time and resume it later exactly where it left of, within 1.5s. This gives the benefit that you won't have to wait for your environment to spin up when you request one, or when you continue working on one after some inactivity
-  - Our solution is based on Firecracker, which enables us to "pause" (& clone) a VM at any point in time and resume it later exactly where it left of, within 1.5s. This gives the benefit that you won't have to wait for your environment to spin up when you request one, or when you continue working on one after some inactivity
+  - there's another benefit to that: we can now "preload" development environments. Whenever someone opens a pull request (even from local), we create a VM for it in the background. We run the dev server/LSPs/everything you need, and then pause the VM. Now whenever you want to review that pull request, we resume that environment and you can instantly review the code or check the dev server/preview like a deployment preview.
   - It also reduces cost. We can pause the VM after 5 minutes of inactivity, and when you come back, we'll resume it so it won't feel like the environment was closed at all.
+  - It's kind of like your laptop, if you close it you don't expect it to shut down and boot the whole OS again when you open it. I've written more about how we do the pausing/cloning here
 
 - I thought CDEs were a pretty cool idea years ago until I discovered Nix and specifically "nix shells".
 
-- 
-- 
+- We've started integrating Codespaces into our team's workflow. It's been a game-changer for onboarding new devs. No more "works on my machine" issues. The ability to jump into any project without the setup hassle is pretty sweet. We're still ironing out some kinks, but overall, I'm pretty bullish on it for professional use.
+
+- Most of the CS classes at my university have moved on to an online Jupyter environment with VS Code preinstalled. It lets students spawn an environment with all the required software for their class preinstalled.
+
+- We use remote dev VMs with VS Code connected via SSH. It works a treat for a small team working on microservices. You can work from any machine while everyone has their own user account. Sharing code is a breeze. It's easy to test APIs in development (no http tunneling). Deploying to a local (on the VM) docker host for longer running services in test works well and it's super cheap to run.
+
+- I'll repost here a comment I made on another HN post about cloud dev environments and why I will never be convinced to use them.
+  - > I have never in my career seen a good implementation of cloud development. At every company I've ever worked for, "cloud development" is nothing but a Linux VM that gets provisioned for you in AWS, a file watcher that syncs your local files to the VM, and some extra CLI tools to run builds and tests on the VM. And every time I've used this, the overhead of verifying the syncing is up to date, the environment is consistent between my laptop and VM is the same, all this other mess...every time I end up just abandoning "cloud dev" and doing things on my laptop. God forbid you change a file in your cloud VM and forget to sync in the reverse direction. Not only is local development more reliable, but it's also faster (no remote network hop in the critical path of building things).
+- With VS Code remote SSH, there is no "local" you are always on the server so there is also no syncing. They do some tricks to make this seamless and perform and feel as if everything was local.
+  - But what do you do when you need to work without internet access, or with limited internet access?
+
+- It is interesting that in the comments on this thread I’m not seeing any mention of nix, which is arguably overlapping the topic at hand with the Venn diagram of “spinning up dev environments”.
+  - I've heard some reports that Nix is very painful to get working with Python/ML stack - do you know if this is this still (ever?) the case?
+
+- I thought CDEs were a pretty cool idea years ago until I discovered Nix and specifically "nix shells". Call me old school but if I can run my tooling locally I typically prefer that in most cases, and Nix does a stellar job of tracking everything deterministically, so sharing amongst the team works great too. So much so I think replit actually uses it under the hood for some of their environments iirc.
+
+- We use DevPod to work in cloud dev environments in our AWS cloud. I hate it. DevPod brings its own SSH implementation that injects itself into your server and munges CRLF, making ssh sessions to your workspace fraught with difficulty except for basic command line applications. The only terminal that seems to work is the one built in to Visual Studio Code. Maybe Microsoft Windows Terminal also works, I dunno.
+
+- Codespaces user here (I set it up for the teams), for about the last 1.5 years in a large corp setting with teams using it.
+  - My experience with is it has been wonderful for getting started and immediatly becoming productive with very complex systems. Most of those systems have 1 (or very few) experts who need to help everyone else with their setups. When problems arise, and they often do, they've become the bottleneck and Codespaces removes that. Those experts can focus on keeping just that up globally versus locally for each individual.
+  - Outside of that scenario, complex systems, I've experienced it to be overkill. The negatives that come along with using such systems haven't outweight the benefits.
+
+- Daytona is the enterprise-grade GitHub Codespaces alternative for managing self-hosted, secure and standardized development environments.
+
+- Do things like Wix, Weebly, Wordpress count as CDEs?
+  - Nope - those are website builders.
 
 - ## [Microsoft Dev Box | Hacker News _202205](https://news.ycombinator.com/item?id=31493458)
 - Would this be a competitor to https://www.gitpod.io/ ?
@@ -210,4 +266,19 @@ modified: 2024-05-09T09:35:28.467Z
 
 - ## 
 
-- ## 
+- ## [Ask HN: Is anyone using a web IDE for most of their development work? | Hacker News _201504](https://news.ycombinator.com/item?id=9457973)
+- The real benefit is not in the Web IDE per se, but the fact that your dev environment is accessible from anywhere. That is the killer feature. You don't have to setup your environment more than once if you have more than one computer; you can work even with a Chromebook/iPad, and it's easily shareable with your team.
+  - The web IDE is great if you want to make quick edits (or want to collaborate in real-time) but in most other cases, native editors have it beat.
+
+- There are 3 other reasons that I use a Web IDE now (started using Cloud9 about 9 months ago)
+  - When doing client work it's much easier to show clients what you're working on at any time. Don't need to mess around with a staging server and uploading files + DB changes etc.
+  - All client projects are in their own environment with their own config / env vars / DB. So say a client wants changes made 3 months down the line it's super easy to get the project back in the state it was then.
+  - When learning new languages can just create a new project of that type and it has everything you need ready to go. 
+
+- Founder of Codenvy. There are 400K projects built on Codenvy hundreds of on-prem cloud installations. When we look through the saas project types, about 60% are Java and the rest are scripted language types. 
+  - Our on-prem customers are enterprise. So a lot of WebSphere, WebLogic, maven, ant, node, Oracle DB, SQL Server, Postgres.
+- We also have about a dozen OEM customers that use Eclipse Che or its derivatives to create new embedded or hosted IDEs. SAP is adopting Eclipse Che at the core for building new business applications that have dev IDE built in. IBM is doing similar work with Orion on BlueMix. WSO2 is embedding cloud IDEs into their API management servers using Che.
+
+- I use [codebox](https://github.com/CodeboxIDE/codebox) on a digital ocean droplet for nearly all my development. It's a simple-to-install node app, though it's not being actively developed from what I can tell so I'd really like to switch to a local install of cloud9.
+
+- codenvy.com - because java. there is full java support, navigate, autocomplete, outline and even java debugger.

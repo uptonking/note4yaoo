@@ -9,6 +9,8 @@ modified: 2023-06-23T12:46:53.288Z
 
 # guide
 
+- 支持切换editor的方案: sandpack
+
 - fans-codemirror
   - https://github.com/yeliex/codemirror-extensions
   - https://github.com/val-town/codemirror-ts 

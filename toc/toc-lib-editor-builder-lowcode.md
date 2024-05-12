@@ -105,7 +105,7 @@ modified: 2020-12-28T12:24:09.275Z
     - sharing
   - https://github.com/drudge/n8n-nodes-puppeteer
     - n8n node for requesting webpages using Puppeteer, a Node library which provides a high-level API to control Chrome or Chromium over the DevTools Protocol.
-- https://github.com/windmill-labs/windmill /5.9kStar/AGPLv3/202309/rust/svelte/js
+- https://github.com/windmill-labs/windmill /5.9kStar/AGPLv3/22405/rust/svelte/js
   - https://windmill.dev/
   - Open-source developer platform to turn scripts into workflows and UIs. 
   - Open-source alternative to Airplane/Retool/pipedream.

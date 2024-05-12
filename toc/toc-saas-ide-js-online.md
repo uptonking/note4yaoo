@@ -7,20 +7,17 @@ modified: 2021-05-14T15:03:38.010Z
 
 # toc-saas-ide-js-online
 
-# discuss
+# guide
 
-- ## 请问 StackBlitz 和 CodeSandBox 这类 Web IDE 的技术栈是如何实现的？
-- https://www.zhihu.com/question/279268026/answers/updated
-- 我想提供一个思路：利用 es module + service worker + browser file system + 浏览器端即时编译实现不依赖服务端能力的 Web IDE.
-  - 类似于 CodeSandBox 的方案是在浏览器端实现了一套兼容于 webpack 的打包系统，这主要是为了解决前端构建过程中对模块系统的依赖。
-  - 而目前市面上所有主流浏览器（排除掉 IE）都已经很好的支持了 es module，我们其实可以充分的利用这个技术点来替代 webpack（即 bundless 构建）。
-  - 在浏览器加载 es module 的过程中会不断的发出 http 请求去获取被依赖的 es module，对于不依赖服务端能力的 Web IDE，我们需要补全这部分本该由静态资源服务器提供的能力。
-  - 所以，可以拦截请求并定制响应的 service worker 正好可以提供这个能力。
-  - 我们需要将所有的代码资源存储在浏览器端，也就是说需要实现一套 browser file system。
-- es module发出的http请求，是以scripts脚本加载的形式。而service worker只能拦截fetch。
-  - service worker 中监听 fetch 事件当然是可以拦截脚本的请求的，不信你可以试试
-  - 包括esm加载时的请求都可以被拦截
+- github-web
+  - https://github.dev/
+  - vscode.dev
+  - https://github1s.com/
 # code-live/web
+- [Playground | MDN](https://developer.mozilla.org/en-US/play)
+  - [MDN Playground | Hacker News _202307](https://news.ycombinator.com/item?id=36798157)
+  - It's something more like jsfiddle than a full-blown dev environment like codesandbox or stackblitz.
+
 - https://github.com/cdr/code-server /MIT/202401/ts
   - https://coder.com/
   - Run VS Code on any machine anywhere and access it in the browser
@@ -119,7 +116,6 @@ modified: 2021-05-14T15:03:38.010Z
 - https://github.com/popcodeorg/popcode /MIT/202303/js/inactive
   - a simple HTML/CSS/JavaScript editing environment for use in the classroom. 
   - It's a lot like JSBin, JSFiddle, or CodePen, but it focuses on giving specific, immediate, human-friendly feedback when the code contains errors.
-
 # code-live-cn
 - [RunJS - 前端开发者在线代码编辑器](https://runjs.work/)
   - 轻松复制任意网站的html/css代码，并在RunJS中预览。
@@ -134,6 +130,12 @@ modified: 2021-05-14T15:03:38.010Z
 
 - https://play.fe-dev.cn/
 # ide-online
+- https://github.com/netgusto/nodebook /ISC/202002/go/ts/inactive
+  - Nodebook - Multi-Lang Web REPL + CLI Code runner
+  - Useful to practice algorithms and datastructures for coding interviews.
+  - If `--docker` is set on the command line, each of these environments will run inside a specific docker container. Otherwise, the local toolchains will be used.
+  - Do not run the Web UI on a port open to public traffic! Doing so would allow remote code execution on your machine.
+
 - https://github.com/SmartIDE/SmartIDE /GPLv3/202303/go/inactive
   - https://smartide.cn/
   - SmartIDE可以帮助你完成开发环境的一键搭建
