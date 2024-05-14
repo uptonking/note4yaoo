@@ -40,6 +40,7 @@ modified: 2020-10-22T10:22:55.878Z
   - 基于svg实现
   - It provides many of the diagramming features which would be expected by a piece of presentation software like Microsoft® PowerPoint™ or LibreOffice® Impress such as being able to resize, move or rotate nodes, but has a stronger focus on automatic layout algorithms and applications of Graph Theory.
   - 🐛 未提供开箱即用的app，如编辑形状属性和文本
+    - 似乎不支持 pause/resume ?
   - [mxgraph 系列【2】：项目结构说明 - 掘金](https://juejin.cn/post/6844904153873924110)
   - [mxgraph 系列【4】：事务管理 - 掘金](https://juejin.cn/post/6844904193094860808)
   - https://github.com/jgraph/mxgraph
@@ -117,19 +118,25 @@ modified: 2020-10-22T10:22:55.878Z
   - core依赖 react, d3-drag, d3-selection, d3-zoom, zustand
   - library for building interactive node-based UIs, editors, flow charts and diagrams
   - React Flow Pro is not an additional library, it is a paid subscription around the React Flow
+  - 🐛 似乎不支持 pause/resume ?
+  - [Undo and redo operations _202211](https://github.com/xyflow/xyflow/issues/656)
+    - This is basically how I did it
   - [is Dynamic auto layouting using dagre possible?](https://github.com/wbkd/react-flow/issues/1113)
     - Dynamic auto layout with dagre is possible. As explained you need to re-layout your graph when you add a node. The easiest way is to have pre-defined dimensions for your nodes. If that's not possible you need to wait for the first render and then do a re-calculation of the layout.
 
 - LogicFlow /4.5kStar/apache2/202404/ts
   - https://github.com/didi/LogicFlow
   - https://docs.logic-flow.cn/examples/#/gallery
+  - http://logic-flow.org/examples/
   - 专注于业务自定义的流程图编辑框架，支持实现脑图、ER图、UML、工作流等各种图编辑场景
   - core依赖preact、mousetrap, mobx-react似乎是可选依赖
   - engine是一个可以在JavaScript环境执行的流程引擎
   - 视图层依赖preact，但使用时不要求react环境，通过instance.render()执行
   - 部分使用class组件
   - 兼容各种产品自定义的流程编辑需求，绝大部分模块以插件的形式实现，支持各模块自由插拔
-  - 支持undo/redo
+  - ⌛️ 支持undo/redo
+  - 本地开发时，使用node.v16
+  - [feat(engine): add the ability to pause and resume workflows _202307](https://github.com/didi/LogicFlow/commit/7c4e3855ad0a7af4121de6552be61f690b4e0e6c)
   - [LogicFlow案例分享](https://github.com/didi/LogicFlow/issues/716)
   - [perf: 优化layout](https://github.com/didi/LogicFlow/pull/518)
     - 自动布局这个功能后来发现有很多不足，所以放弃了，我先合并进来，但是这个插件暂时不提供对外文档。

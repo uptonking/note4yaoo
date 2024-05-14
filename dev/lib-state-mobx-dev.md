@@ -72,7 +72,20 @@ modified: 2023-04-07T03:10:46.225Z
 - https://github.com/zalmoxisus/mobx-remotedev /MIT/201902/js/inactive
   - MobX DevTools extension
   - Remote debugging for MobX with Redux DevTools extension
+  - 🍴 forks
+    - https://github.com/hlhr202/mobx-remotedev /MIT/202107/js/inactive
+  - [MobX 6 (Cannot obtain atom from undefined) ](https://github.com/zalmoxisus/mobx-remotedev/issues/55)
+    - I've switched from Redux devtools to a simple browser logger: kubk/mobx-log ; I am going to add Redux devtools support but for me it's no longer needed, because the logger already covers most of its usecases like inspecting store, calling actions and computeds.
+  - [Roadmap _201607](https://github.com/zalmoxisus/mobx-remotedev/issues/1)
+    - Support for non-browser environment (unify with remotedev)
+    - As far as I know the Slider monitor just reverts to a previous state and then reapplies actions after that point. That's all what replaying does.
   - [redux-devtools integrations for js and non-js frameworks](https://github.com/reduxjs/redux-devtools/blob/main/extension/docs/Integrations.md)
+  - https://github.com/zalmoxisus/remotedev /MIT/201812/js/inactive
+    - Remote debugging for any flux architecture.
+    - https://github.com/zalmoxisus/remotedev/tree/master/examples
+    - 示例包括 redux/flux/alt/rxjs/reflux
+  - https://github.com/zalmoxisus/remotedev-app /MIT/201812/js/inactive
+    - Web, Electron and Chrome app for monitoring remote-redux-devtools. Can be accessed on remotedev.io
 
 - https://github.com/antitoxic/mobx-redux-devtools /201607/js
   - Sync redux-devtools with mobx structure and get of all devtool goodness like time-travel (undo/redo), persistence, charts, etc.

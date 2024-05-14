@@ -21,9 +21,18 @@ modified: 2021-08-06T07:36:05.864Z
   - This package contains the Renderer and core utilities used by tldraw.
   - You can use this package to render React components in a canvas user interface.
 # discuss-stars
+- ## 
+
+- ## 
+
+- ## 上午用户朋友提了个bug，花了一个下午+晚上查问题。然后就有了这行代码，然后，问题解决了
+- https://twitter.com/ahshengchen/status/1789704540897300693
+  - 是 ASCII 控制字符（比如垂直制表符）。这东西默认不可见，但是会影响 html2canvas 生成图片失败。
+
 - ## I'm only now realizing just how much I got away with by not having shapes nest in tldraw.
 - https://twitter.com/steveruizok/status/1503156568380088320
   - I guess there's a reason you're not allowed to select a child and its parent at the same time
+
 # discuss
 - ## 
 

@@ -11,16 +11,18 @@ modified: 2023-11-24T18:41:26.906Z
 - tips
   - timeline的使用范围很广，可以是内容的变化历史，可以是独立的component时间轴组件
   - undo/history类产品的形态可参考git commits的交互和设计
+  - 考虑侧重静态展示，还是动态展示和操作
 
 - usecase-branching
   - testing/drafting
   - form editing
 # timeline
-- https://github.com/reduxjs/redux-devtools/tree/main/packages/redux-devtools-slider-monitor /202404/ts
+- https://github.com/reduxjs/redux-devtools/tree/main/packages/redux-devtools-slider-monitor /MIT/202404/ts
   - A custom monitor for use with Redux DevTools.
   - It uses a slider based on `react-slider` to slide between different recorded actions. 
   - 不依赖redux-toolkit
   - 依赖react-redux、styled-components
+  - 支持play/pause/resume, 支持设置播放倍速
   - It also features play/pause/step-through, which is inspired by some very cool Elm examples.
   - [redux-devtools integrations for js and non-js frameworks](https://github.com/reduxjs/redux-devtools/blob/main/extension/docs/Integrations.md)
   - https://github.com/calesce/redux-slider-monitor /201706/js/inactive
@@ -28,17 +30,35 @@ modified: 2023-11-24T18:41:26.906Z
     - A custom monitor for Redux DevTools to replay recorded Redux actions
     - This package was merged into redux-devtools monorepo
 
-- https://github.com/inakianduaga/redux-state-history /201608/ts
+- https://github.com/inakianduaga/redux-state-history /MIT/201608/ts/inactive
   - https://inakianduaga.github.io/redux-state-history-example/
   - Redux store enhancers for tracking and visualizing state changes
   - 依赖react-redux、jsondiffpatch、react-dropzone
   - todomvc在页面上展示op时间轴的示例，可自动播放，无需devtools，直接在页面上展示
+  - 不支持设置播放倍速
   - Inspired by the redux devtools and redux slider monitor, this package provides state recording/playback (i.e. "time travel") abilities for redux applications.
   - Only state diffs are stored for each state change (performance untested for large state/long running applications).
   - Decoupled recording/debugging code
   - Import/Export histories: Play them back locally, including realtime speed.
   - Time-travel is "pure": That is, state history changes without refiring the actual actions that produced said change (so still works for impure/async actions).
   - A store enhancer provides the history tracking on each state change, recording the state change, the timestamp of the change, and the action type that produced said change.
+
+- https://github.com/zalmoxisus/mobx-remotedev /MIT/201902/js/inactive
+  - MobX DevTools extension
+  - Remote debugging for MobX with Redux DevTools extension
+  - 🍴 forks
+    - https://github.com/hlhr202/mobx-remotedev /MIT/202107/js/inactive
+  - [MobX 6 (Cannot obtain atom from undefined) ](https://github.com/zalmoxisus/mobx-remotedev/issues/55)
+    - I've switched from Redux devtools to a simple browser logger: kubk/mobx-log ; I am going to add Redux devtools support but for me it's no longer needed, because the logger already covers most of its usecases like inspecting store, calling actions and computeds.
+  - [Roadmap _201607](https://github.com/zalmoxisus/mobx-remotedev/issues/1)
+    - Support for non-browser environment (unify with remotedev)
+    - As far as I know the Slider monitor just reverts to a previous state and then reapplies actions after that point. That's all what replaying does.
+  - https://github.com/zalmoxisus/remotedev /MIT/201812/js/inactive
+    - Remote debugging for any flux architecture.
+    - https://github.com/zalmoxisus/remotedev/tree/master/examples
+    - 示例包括 redux/flux/alt/rxjs/reflux
+  - https://github.com/zalmoxisus/remotedev-app /MIT/201812/js/inactive
+    - Web, Electron and Chrome app for monitoring remote-redux-devtools. Can be accessed on remotedev.io
 
 - https://github.com/squarechip/timeline /202002/js/NoDeps/inactive
   - https://squarechip.github.io/timeline/
@@ -67,8 +87,9 @@ modified: 2023-11-24T18:41:26.906Z
   - React component to generate a responsive vertical event timeline
   - 支持card、collapsible
 
-- https://github.com/lizashkod/react-timeline-range-slider
-  - 过于简单
+- https://github.com/lizashkod/react-timeline-range-slider /MIT/202104/js
+  - https://codesandbox.io/p/sandbox/react-timeline-range-slider-ve7w2
+  - 过于简单, 拖拽设置时间范围的边界
 
 - https://github.com/visjs/vis-timeline /1.5kStar/MIT/202311/js
   - https://visjs.github.io/vis-timeline/
@@ -102,6 +123,9 @@ modified: 2023-11-24T18:41:26.906Z
   - https://github.com/kristw/d3kit-timeline /201802/js/依赖d3-scale-axis
     - https://d3kit-timeline.vercel.app/
     - reusable timeline component built on top of D3, d3Kit and Labella.js
+
+## play-pause
+
 # gantt
 - https://github.com/guiqui/react-timeline-gantt /202112/js
   - https://guiqui.github.io/react-timeline-gantt/index.html
@@ -174,17 +198,19 @@ modified: 2023-11-24T18:41:26.906Z
   - demonstrate Loro's high performance and time travel capabilities. 
   - The entire code is only about 100 lines.
 
-- https://github.com/haydn/use-state-snapshots /201906/js
+- https://github.com/haydn/use-state-snapshots /MIT/201906/js/NoDeps/inactive
   - https://codesandbox.io/s/use-state-snapshots-i6fuq
   - A React hook to keep track of state changes for undo/redo functionality
   - Drop-in replacement for `useState` including support for functional updates and lazy initial state.
-  - Three ways to track changes:
+  - 示例是简单画板，画笔渲染使用svg，下方显示多个时刻快照
+  - ⌛️ Three ways to track changes:
     - Automatically create new snapshots at regular intervals.
     - Automatically create a snapshot for every single change to state.
     - Only create snapshots for specific changes to state.
   - Configurable limit for the number of snapshots to keep.
+  - Snapshots include timestamps and ID's so you can display a timeline of changes.
 
-- https://github.com/nytimes/ice /201402/js/NoDeps/inactive
+- https://github.com/nytimes/ice /GPLv2/201402/js/NoDeps/inactive
   - https://nytimes.github.io/ice/demo/
   - Ice is a track changes implementation, built in javascript, for anything that is `contenteditable` on the web. 
   - Conceived(想出；构思) by the CMS Group at The New York Times, ice is powering the editor used for writing articles in the newsroom.
@@ -210,16 +236,19 @@ modified: 2023-11-24T18:41:26.906Z
     - You can use the similar `refractor` if you want to use `Prism` grammars instead. 
     - If you’re looking for a really good (but rather heavy) alternative, use `starry-night`.
 # utils/undo
-- https://github.com/philipmendels/undomundo /202204/ts/依赖fp-ts
+- https://github.com/philipmendels/undomundo /202204/ts/inactive
   - https://github.com/philipmendels/undomundo-multiplayground
   - https://philipmendels.github.io/undomundo-multiplayground/
   - a library for managing an action-based undo history, with support for time travel and branching. 
-  - 🤝🏻 It can be used in a multi-user setting because it allows for modification of the history at the time of undo/redo, as visually explained in this blog article from Figma.
+  - 依赖fp-ts
+  - 🔀 It can be used in a multi-user setting because it allows for modification of the history at the time of undo/redo, as visually explained in this blog article from Figma.
   - Undomundo does not enable you to declare in advance which actions should be grouped/skipped and under which circumstances. You can however skip actions on a per-call basis
-  - https://github.com/philipmendels/use-flexible-undo
+  - https://github.com/philipmendels/use-flexible-undo /MIT/202204/ts/inactive
     - React hook that lets you use undomundo's branching undo/redo functionality independently of how you structure your application state
   - https://github.com/philipmendels/overboard
+    - https://philipmendels.github.io/overboard/
     - Example repo for using the library use-flexible-undo together with an interactive board. 
+    - 示例画布基于dom实现
     - The board itself is built from scratch in React. The list with draggable items/layers uses react-beautiful-dnd.
     - Desktop only. No touch support yet.
 
@@ -254,8 +283,9 @@ modified: 2023-11-24T18:41:26.906Z
   - It really just boils down to if your state is fat and your actions are thin or your state is thin and your actions are fat.
 - https://github.com/omnidan/redux-undo /202001/js
   - higher order reducer to add undo/redo functionality to redux state containers
-- https://github.com/StephenHaney/redux-time-travel /201809/js
-  - A scalable undo redo time travel implementation that leaves your original state intact... powered by diffs and merges.
+- https://github.com/StephenHaney/redux-time-travel /mIT/201809/js/inactive
+  - A scalable undo redo time travel implementation that leaves your original state intact... 
+  - powered by diffs and merges.
 
 - https://github.com/onceup/redux-toolkit-history-example /202211/ts
   - Simple example of history undo-redo implementation with redux-toolkit
@@ -275,7 +305,7 @@ modified: 2023-11-24T18:41:26.906Z
   - a library built for visualizing and laying out time-series data
   - currently supports line charts, scatterplots and histograms, as well as features like rug plots.
 # more
-- https://github.com/xzdarcy/react-timeline-editor /202303/ts
+- https://github.com/xzdarcy/react-timeline-editor /MIT/202401/ts
   - https://zdarcy.com/
   - 基于react开发的，用于快速搭建 时间线编辑能力的组件
   - 可用于构建动画编辑器、视频编辑器等。

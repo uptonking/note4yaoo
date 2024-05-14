@@ -28,6 +28,11 @@ if(val) // doSth
 
 - ## 
 
+- ## 为啥前端程序员特别爱用箭头函数？我看过不分情况全部用箭头函数的前端代码。
+- https://twitter.com/im2gua/status/1789938063092637809
+- 除了 DOM event handler和单行函数其他场景都推荐 function，有 hoisting 且bind灵活
+  - arrow function transpile 到 es5 会有一堆额外的 overhead 和性能损失。
+
 - ##  `Symbol()` is effectively awesome as primitive but it cannot survive cross realms serializations in any meaningful way unless really carefully orchestrated and yet impossible to reflect elsewhere: 
 - https://twitter.com/WebReflection/status/1773390355976597524
   - if your library uses Symbol() and would like to work out of Workers consider smt else

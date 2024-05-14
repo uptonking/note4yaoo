@@ -168,15 +168,12 @@ modified: 2024-05-06T02:54:40.374Z
 - 
 - 
 - 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
 
 ## proj-1024code
+
+- resources
+  - [1024Code](https://1024code.com/~)
+  - [1024Code 文档中心](https://docs.1024code.com/)
 
 ### not-yet
 

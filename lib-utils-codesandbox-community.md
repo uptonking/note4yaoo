@@ -246,9 +246,8 @@ modified: 2024-01-25T13:33:23.267Z
 - https://twitter.com/CompuIves/status/1777719678384910582
   - Soo, I've written a post about the unique features we've implemented and how that creates a new powerful workflow.
 - [What's Unique about CodeSandbox CDEs - CodeSandbox](https://codesandbox.io/blog/whats-unique-about-codesandbox-cde)
-  - 
 
-- ## We have just deployed the VSCode Web editor for CodeSandbox! _20240408
+- ## ✏️ We have just deployed the VSCode Web editor for CodeSandbox! _20240408
 - https://twitter.com/CompuIves/status/1777321064311496732
   - Now you can install VSCode extensions and use VSCode to build on CodeSandbox. All our templates will have their language extensions pre-installed.
   - You can turn it on in Settings under "Experiments".

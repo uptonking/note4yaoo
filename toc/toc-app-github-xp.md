@@ -15,6 +15,10 @@ modified: 2023-02-08T10:46:26.912Z
   - git shortlog -sn
     - 统计每人commit次数
 # github-usage
+- github邮箱帐号绑定
+  - commit的帐号
+  - npm相关
+
 - preview html
   - https://github.com/htmlpreview/htmlpreview.github.com
   - https://htmlpreview.github.io/?https://github.com/Futur3Sn0w/materialyou/blob/main/index.html

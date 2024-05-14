@@ -23,7 +23,20 @@ modified: 2023-05-30T21:36:55.391Z
 
 - ## 
 
-- ## 
+- ## What if a graph view and text editor were just two ends of a continuous spectrum? 
+- https://twitter.com/OrionReedOne/status/1790263523857019227
+  - You get consistent semantics, intermediate views, and some other benefits by blending structurally-compatible representations.
+  - Here's a 'semantic zoom' in @tldraw
+  - 类似大纲视图作为网状节点图的节点
+- This could be a great alternative to the outliner as a notetaking system ... Incidentally, I've also been playing with defining graph models from within the text itself, and linking them together ...
+
+- i want all of my code editing to be like this
+  - we are not in the stage of editing yet, currently only for code navigation, but we will be full blown editor ultimately
+  - [Spectral Beta - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=SenecaFron.spectral-beta)
+- Yes I need this in my ide
+- If only something like @orgpad_official had a free version that i could run as an app offline or sync manually, that wouldn't cost me lifetime decency on non-trustable company.
+
+- Knowledge graph? Or token linkage based on similarity?
 
 - ## 有朋友问我Miro好在什么地方。
 - https://twitter.com/PenngXiao/status/1739195961199800601

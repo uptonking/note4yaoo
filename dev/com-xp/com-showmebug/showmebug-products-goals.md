@@ -11,7 +11,7 @@ modified: 2024-05-06T02:52:41.789Z
 
 # products
 - ✨ features
-  - ai流式输出代码的动画，打字机效果
+  - ai流式输出代码的动画，打字机效果; 左右分屏，同时流式输出
   - 修改文件行号的左侧高亮
   - ai助手的交互可参考灵动岛，可缩放大小变换形状的小窗
 # products-clacky-ai
@@ -84,6 +84,7 @@ modified: 2024-05-06T02:52:41.789Z
 - plan脑图视图
   - 可修改plan内容、描述
   - 可丢弃修改
+  - [Flows | Directus Docs](https://docs.directus.io/app/flows.html)
 - 时光机/进度条
   - plan卡片只展示当前action
   - 每个小块对应一个action
@@ -129,7 +130,7 @@ modified: 2024-05-06T02:52:41.789Z
   - cloud db
   - dev container
   - deps
-- 上下文Context管理 
+- 上下文Context管理
   - code index building
   - existing code docs
   - api wiki: connected to notion
@@ -212,6 +213,31 @@ modified: 2024-05-06T02:52:41.789Z
 # pm-idx-google
 - features
   - 与gemini大模型集成
+# pm-cursor-ai
+- cmd + k : edit and write code with the AI
+- Terminal Command K
+  - write terminal commands in plain english
+  - You can use it to write sql commands, fill in argparse arguments, and parse jsons with jq.
+- Copilot++ is Cursor's native autocomplete feature
+  - suggest mid-line completions and entire diffs
+  - uses a custom model that was trained to predict the next edit
+- Chat lets you talk with an AI that sees your codebase
+  - The chat can always see your current file and cursor
+  - You can add particular blocks of code to the context with Command+Shift+L or "@."
+- @ Symbols
+  - Try typing "@" in Command+K or in in the chat to get a dropdown of all the files and code symbols in your folder.
+- Codebase Answers let you ask the AI about your entire codebase
+- Docs: This feature improves the AI's understanding of third-party libraries
+  - To have Cursor crawl custom documentation, type "@Add" in Command K or in the chat.
+- Auto-debug is an agent for fixing errors in Cursor's terminal.
+- Fix Lints: hover over any lint error and click the blue "Fix" button
+- AI Notes
+  - Hold shift to get a quick summary of the symbol under your cursor. 
+  - Notes will use both the definition of the symbol and any references to get you up to speed.
+- Vision: helpful for iterating on web UIs
+- Apply From Chat: get code suggestions from chat into your editor
+- Rules for AI
+  - use this for warning the AI of common gotchas in your codebase or for controlling its code style.
 # pm-code-ai
 - [2024 Roadmap · opensumi/core Wiki](https://github.com/opensumi/core/wiki/2024-Roadmap)
   - AI Native 模块发布：提供 AI 原生的 IDE 交互体验

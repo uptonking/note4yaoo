@@ -10,11 +10,12 @@ modified: 2023-05-29T15:09:30.865Z
 # guide
 
 - features
+  - 支持多种绘图实现，默认svg，可自己实现canvas
   - 示例丰富
 
 - pros
   - no dependencies
-  - 支持多种绘图实现，默认svg，可自己实现canvas
+  - 支持transaction
   - 可前端使用
 
 - cons

@@ -36,6 +36,26 @@ modified: 2022-12-04T16:34:29.342Z
 
 - ## [NotionApps – Convert Notion databases into beautiful apps in minutes | Hacker News_202303](https://news.ycombinator.com/item?id=35300072)
 
+# products-apple
+- ## 
+
+- ## 
+
+- ## 各位中国用户还是对 iOS 18 调低预期吧，目前看起来 Apple 的 LLM 应该是市场压力下的赶鸭子上架，所以大概率会采用与 OpenAI 或其他服务商合作的模式，完全在云端工作。
+- https://twitter.com/Blankwonder/status/1790353119408459915
+  - 这种模式下的 Siri 基本不可能会被允许在中国使用（一方面是内容审核过滤，另一方面是数据安全问题）。
+  - 可能的方案是更换为中国的 LLM 服务商，不过这太麻烦且效果可能很不理想，所以最大的可能还是直接阉割。
+  - 而且近年来 Apple 的地区锁限制越来越复杂和完善，可能不会存在能够突破的方法，甚至海外版本带回也不行。
+- Apple News就是例子
+- 之前不是有报道说跟 百度 谈？有可能会用吧，但是…这个服务估计额外收费？
+- 就算苹果突破了设备端AI技术，它也没本事能把“用户满意”的模型您们用上
+
+# products-iot
+- ## 
+
+- ## 
+
+- ## 
 # products
 - ## 
 

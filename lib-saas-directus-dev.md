@@ -27,6 +27,7 @@ modified: 2024-02-16T14:55:58.271Z
     - marketplace支持自定义地址 MARKETPLACE_REGISTRY
   - Sandboxed Extensions, ✨ 支持在线安装扩展
   - 〰️ flows
+    - 可灵活使用flow的trigger来实现op的暂停和继续
   - 🎛️ insights/dashboard
   - 用户管理
   - 通知系统
@@ -97,6 +98,10 @@ pnpm --filter app dev
   - You have to set `SERVE_APP=true` in your .env file in order to run the api in dev mode with the build app.
   - 最终发现配置server_app后要访问的是服务端:8055/admin，而不是前端:8080/admin
   - 可能是本地开发时url对应域名的localStorage或cookie存在其他开发的token
+
+## dev-flows
+
+- 可灵活使用flow的trigger来实现op的暂停和继续
 
 ## dev-revision-history
 

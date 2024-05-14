@@ -85,7 +85,11 @@ modified: 2021-01-04T19:34:22.729Z
 
 - ## 
 
-- ## 
+- ## 今天为了熟悉一个项目用了下 Vue3，发现代码里可以直接使用 this.userStore，
+- https://twitter.com/_Xheldon/status/1790214162041524474
+  - 而我并没有搜到 userStrore 的赋值和定义（包括 data 等上的属性也没有类似的值），然后我注意到有个 mapStore 心想它不会给我拼字符串吧？搜了下文档，果然，definedStore('user', {}) 后你可以 this.userStore，魔法时刻！
+- Vue3 直接用 composition api 感觉会更好，项目后期用 option api 编写的代码可读性就降低了
+- 直接 setup写法 就不存在 this 了
 
 - ## Got Vue 3 JSX working in Vite 2... with HMR!
 - https://twitter.com/youyuxi/status/1345972081025036290

@@ -200,6 +200,19 @@ modified: 2024-02-16T14:56:17.057Z
 - ## 
 
 - ## 
+# discuss-flow
+- ## 
+
+- ## 
+
+- ## ⏲️ [WANTED: Feedback on Flows _202209](https://github.com/directus/directus/discussions/15677)
+  - 提供了 pause/resume 的变通思路
+
+- With the current manual trigger, you might have one flow allowing an admin to "pause" an active customer subscription. Then you might have another to "resume" a paused subscription. Both of these involve reading/validating records, hitting a payment vault/gateway, and then updating records.
+  - Given this new "form trigger", you could then add an optional "resume date" parameter to both flows. If provided, instead of pausing indefinitely (for pause flow) or resuming the subscription immediately (for resume flow), the system could use this resume date to automatically schedule the next cycle for some arbitrary future date.
+
+- ✨ [Allow user-provided inputs in manually triggered flows _202206](https://github.com/directus/directus/discussions/14010)
+  - 🚀 This has since been implemented as part of the manual flows trigger _202305
 # discuss
 - ## 
 

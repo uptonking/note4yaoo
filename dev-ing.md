@@ -326,8 +326,28 @@ betterdiscordctl -i flatpak install
     - cursor光标位置经常对不上
   - [x] streaming infinite-list/tree
 # dev-05-codemirror
+- dev-log
+  - 
+- dev-to
+  - 
 
 ## 051
+
+## 0514
+
+- [node.js - opensslErrorStack: [ 'error:03000086:digital envelope routines::initialization error' ] - Stack Overflow](https://stackoverflow.com/questions/74726224/opensslerrorstack-error03000086digital-envelope-routinesinitialization-e)
+  - Try to uninstall Node.js version 17+ and reinstall Node.js version 16+
+
+- [Next.js Issue: useEffect Hook Running Twice in Client | by Rishabh Sharma | Medium _202401](https://rishabhsharma.bio/next-js-issue-useeffect-hook-running-twice-in-client-9fb6712f6362)
+  - When using React’s useEffect hook in a Next.js application, you might encounter a behavior where the useEffect function runs twice during the initial render in development mode. 
+
+- 测试
+  - 注意 fixture/snapshot
+
+- dev-log
+  - paas sdk精简版示例已在本地测试通过
+- dev-to
+  - 在playground测试codemirror的diff视图
 
 ## 0513
 
@@ -353,11 +373,6 @@ https://develop.1024paas.com/api/v1/sdk/environments
 - 事件风暴
   - 用户主要流程的事件时间顺序
   - 事件、操作、用户
-
-- 
-- 
-- 
-- 
 
 ## 0511
 

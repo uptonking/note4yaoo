@@ -128,6 +128,11 @@ modified: 2023-11-10T07:30:17.500Z
 
 - ## 
 
+- ## It’s a limitation of the JS language itself. There’s no way to share objects between threads cheaply, you have to serialize everything.
+- https://twitter.com/devongovett/status/1789866064399999347
+- what about SharedArrayBuffer?
+  - That's just bytes though, you can't store objects in there. We tried to build some data structures on top of it, but it's *really* difficult and you're basically re-inventing what other languages already have. JS needs higher level shared data structures
+
 - ## 💡 Fast Buffer-to-String conversion in JavaScript with a Lookup Table
 - https://twitter.com/lemire/status/1732999134280314978
   - When programming in a JavaScript environment such as Node.js, you might recover raw data from the network and need to convert the bytes into strings. In a system such as Node.js, you may represent such raw bytes using a Buffer instance.

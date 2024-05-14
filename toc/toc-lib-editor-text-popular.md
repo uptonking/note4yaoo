@@ -345,7 +345,7 @@ modified: 2022-11-08T19:04:00.289Z
   - https://github.com/substance/substance
   - JavaScript library for web-based content editing
 
-- https://github.com/nytimes/ice /GPLv3/201402/js/NoDeps/inactive
+- https://github.com/nytimes/ice /GPLv2/201402/js/NoDeps/inactive
   - https://nytimes.github.io/ice/demo/
   - Ice is a track changes implementation, built in javascript, for anything that is `contenteditable` on the web. 
   - 提供了集成tinymce.v3的示例

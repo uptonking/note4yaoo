@@ -180,7 +180,7 @@ modified: 2023-06-23T12:46:53.288Z
   - @codemirror code editor component for @vuejs
   - a new version based on CodeMirror@6 and is available to Vue3 only.
 
-- https://github.com/getcursor/old /MIT/202304/ts/inactive
+- https://github.com/getcursor/old /192Star/MIT/202304/ts/inactive
   - A Codemirror-based editor with many modern need-to-haves (e.g. LSP, Copilot, Vim, Remote SSH)
   - This is an old version of Cursor based off of the Codemirror text editing component. If you're looking to build your own code editor from the ground-up, this may serve as a useful guide. Cursor is now based on a fork of VSCodium.
   - 依赖codemirror6、@headlessui/react、@reduxjs/toolkit、electron-store、markdown-it、vscode-languageserver-protocol、xterm、xterm-addon-search
