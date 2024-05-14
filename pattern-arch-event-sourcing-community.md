@@ -12,7 +12,36 @@ modified: 2023-09-13T14:28:01.426Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 🆚️ [Event driven vs Event sourcing _202205](https://tarunjain07.medium.com/event-driven-vs-event-sourcing-a943d223299c)
+- In domain-driven design, domain events are described as something that happens in the domain and is important to domain experts.
+- Event Driven Architecture is about components communicating via publishing events rather than making (e.g.) RPC calls against each other or manipulating shared state. It’s a communication strategy (albeit one which often relies on messages being persisted for fairly long periods).
+- Event Sourcing ensures that all changes to application state are stored as a sequence of events.
+
+- The term Event driven architecture is used for any kind of software system which is based on components communicating mainly or exclusively through events. For example, almost any major GUI framework on any popular platform uses event-driven mechanics. The term "event" usually means "notification" in this context.
+- Event sourcing is a much more special term, referring to systems where the whole application state is stored as a sequence of events. 
+  - A well-known popular class of examples are transactional database systems, which store any state changes in a transaction log. Here, the term "event" refers more to "state change", not only to "notification".
+
+- ### [Where does DDD Aggregate come in under event sourcing & CQRS? : r/csharp _202403](https://www.reddit.com/r/csharp/comments/1bj6v0o/where_does_ddd_aggregate_come_in_under_event/)
+- An aggregate is effectively a transaction boundary. It contains all the things that must always remain transactionally consistent.
+  - If you aren't doing event sourcing, then it would be all the things that you would update in a single save operation. There may be other things (possibly in other services) that are eventually consistent, that get updated from messages you send at that point of performing the save. Those things are in separate aggregates.
+  - With event sourcing, that usually maps to a single event stream. Some event stores, like EventStoreDB, enforce this by only allowing a transaction to save data to a single event stream.
+  - In terms of aggregate modelling, think about what invariants you have that must always hold to help guide you towards what your aggregate boundaries could be.
+
+- In DDD, an aggregate is a cluster of domain objects that can be treated as a single unit. The aggregate root is a specific entity within the aggregate, and it's the only way to access the other objects in the aggregate. This helps maintain consistency and enforces the rules of the domain model.
+
+- ### [Domain Events vs. Event Sourcing : r/programming _201902](https://www.reddit.com/r/programming/comments/amdm95/domain_events_vs_event_sourcing/)
+- I disagree with the author. Event sourcing is a mechanism. You can store whatever kinds of events you want. Whether you call them domain events, subdomain events, or something else is semantics and irrelevant
+  - An aggregate is a time augmented state machine. You can have a hierarchy of aggregates and emit events at any level of abstraction you like. That’s entirely the point of event sourcing. That point is crucial for this article and the fact that the author missed it is a big red flag
+
+- ### [Why DDD for CQRS and Event Sourcing application? - Stack Overflow](https://stackoverflow.com/questions/70835529/why-ddd-for-cqrs-and-event-sourcing-application)
+- CQRS pattern might be useful even when you aren't doing event sourcing.
+- Event sourcing is really a pair of ideas
+  - changes should be first class citizens in our model
+  - our authoritative data model should be a sequence of changes (aka a history)
+- This kind of data model is great for writes (just append a new change on the end of the list), and has the additional benefit that edits are non-destructive; all of the information added to the system is still there, so you can easily time machine back to understand what things looked like prior to some change.
+  - But histories suck for low latency query. Therefore: caches - we'll pre-compute the answers to some questions, and stick them in a property bag.
+- Now we have two models: the history, and the cache. And what is CQRS?
+  - CQRS is simply the creation of two objects where there was previously only one -- Greg Young 2010
 
 - ## I remember this talk from Martin Fowler years ago where he described an event sourced system that kept all the application state in memory (because as we all know the DB is the log).
 - https://twitter.com/LewisCTech/status/1762786070574633046

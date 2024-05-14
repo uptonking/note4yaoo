@@ -190,6 +190,19 @@ modified: 2023-09-02T09:17:22.992Z
   - The main component of Firecracker is a virtual machine monitor (VMM) that uses the Linux Kernel Virtual Machine (KVM) to create and run microVMs. 
   - Firecracker has a minimalist design. It excludes unnecessary devices and guest-facing functionality to reduce the memory footprint and attack surface area of each microVM.
   - Firecracker was developed at Amazon Web Services to accelerate the speed and efficiency of services like AWS Lambda and AWS Fargate. 
+
+- https://github.com/Exact-Realty/lot /ISC/202405/ts
+  - Sandbox for isolating ECMAScript code
+  - Our sandbox supports multiple runtimes and allows for bidirectional communication, ensuring you have the flexibility and security to run your code in various environments.
+  - Support for multiple runtimes: browser/nodejs/worker
+  - Browser isolation using Content Security Policy (CSP)
+  - Message passing using the `MessageEvent` class and event listeners for secure communication using the structured clone algorithm
+  - Hardening of global variables, including `Function` and `eval`, to prevent direct code execution
+  - Bidirectional communication, enabling the parent to call into the sandbox and vice versa
+  - Running untrusted code in Node.js is especially risky due to its inherent platform limitations. Our sandbox relies on `node:vm`, which was not designed for running untrusted code.
+    - To mitigate these risks, we strongly recommend taking a security-in-depth approach and relying on additional security mechanisms such as process isolation, seccomp(2), pledge(2), ProcessSystemCallDisablePolicy and SELinux, to name a few. 
+    - Where feasible, we also recommend static code analysis and code reviews, as well as adequate auditing and logging.
+  - Note that the sandbox does not prevent denial-of-service attacks such as infinite loops or memory exhaustion. It's important to take appropriate measures to prevent these types of attacks, such as setting resource limits or using timeouts.
 # browser-emulator
 - https://github.com/jvilk/BrowserFS
   - an in-browser filesystem that emulates the Node JS filesystem API and supports storing and retrieving files from various backends.

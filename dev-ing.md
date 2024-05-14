@@ -329,6 +329,36 @@ betterdiscordctl -i flatpak install
 
 ## 051
 
+## 0513
+
+```shell
+# sdk-local
+https://develop.1024paas.com/demo/api/v1/tickets?playgroundId=661625642386874368&specialNameFromQueue=king
+# sdk-online
+https://www.1024paas.com/demo/api/v1/tickets?playgroundId=661631957259927552
+
+# 🐛 一直提示校验失败，且此api只在文档中提到，业务中并未使用
+https://develop.1024paas.com/api/v1/sdk/environments
+```
+
+- [How to set header and options in axios? - Stack Overflow](https://stackoverflow.com/questions/45578844/how-to-set-header-and-options-in-axios)
+
+- dev-log
+  - 迁移paas平台的功能未完成
+- dev-to
+  - 继续迁移paas平台，尝试实现业务
+
+- ddd开发
+  - domain-entity-value
+- 事件风暴
+  - 用户主要流程的事件时间顺序
+  - 事件、操作、用户
+
+- 
+- 
+- 
+- 
+
 ## 0511
 
 ```shell

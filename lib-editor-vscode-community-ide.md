@@ -10,8 +10,17 @@ modified: 2024-05-09T09:35:28.467Z
 # guide
 
 - cloud-ide
-  - github-codespaces, gitpod, devpod, coder, codeanywhere
-  - codesandbox, stackblitz, replit
+  - monaco: Codespaces(GitHub绑定), Gitpod(yml), theia, OpenSumi, StackBlitz, codesandbox-web
+  - codemirror: sandpack, replit
+  - Eclipse Che: OpenShift CDE
+  - DevPod: devcontainer-spec + local-and-cloud
+  - more: Coder(no-cloud/k8s), AWS Cloud9, codenvy
+
+- vscode功能亮点
+  - 编辑调试相关: LSP, DAP
+  - git相关: git-lens
+  - 文件系统
+  - 插件相关: 语法高亮
 # draft
 - 兼容现有浏览器的扩展
 # xp-file-manager

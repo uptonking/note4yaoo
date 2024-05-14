@@ -17,7 +17,9 @@ modified: 2023-06-14T00:53:15.226Z
 
 ## 
 
-## 
+## /code/fork 创建playgroundId的api一直显示 cancelled
+
+- 变通方法是用 staging环境 的api，而不是 dev环境 的api
 
 ## 旧代码1024paas试了很多遍不能注册和创建sandbox
 

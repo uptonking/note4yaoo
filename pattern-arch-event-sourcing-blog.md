@@ -572,3 +572,5 @@ modified: 2023-09-13T14:37:51.659Z
 - [CQRS + Event Sourcing – Step by Step](https://danielwhittaker.me/2020/02/20/cqrs-step-step-guide-flow-typical-application/)
 
 - [Event Sourcing with Apache Kafka — Trustbit](https://www.trustbit.tech/blog/2023/7/14/event-sourcing-with-apache-kafka)
+
+- [A more functional approach to Event Sourcing and DDD - DEV Community _202207](https://dev.to/n1ckdm/a-more-function-approach-to-event-sourcing-and-ddd-491d)

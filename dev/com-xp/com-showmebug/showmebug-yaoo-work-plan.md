@@ -15,8 +15,13 @@ modified: 2024-05-06T02:54:40.374Z
   - 基建类: 基座工程、代码编辑器
   - 团队类: 测试、运营
 
-- bug
+- draft
   - 在6月中，初步完成生成需求、task、pr的逻辑和流程
+
+- roadmap-研发任务拆解
+  - 主要业务流程
+  - cde
+  - 对标的目标产品不清晰
 # more
 
 ## proj-idepaas-sdk
@@ -29,13 +34,6 @@ modified: 2024-05-06T02:54:40.374Z
 
 ### not-yet
 
-- codemirror相关的代码为什么不通过npm包引入
-  - 直接修改github上的源码
-- daoPaas的初始化逻辑包含渲染dom吗? 
-  - mapRender渲染到dom
-- mapRender 有什么问题
-  - 未实现按需加载FileTree/Editor/Terminal
-
 - paas平台为什么难以落地
   - 功能又多又杂
   - 侧重ai编辑，可以去掉非核心需求
@@ -44,6 +42,13 @@ modified: 2024-05-06T02:54:40.374Z
 - 
 - 
 - 
+
+- codemirror相关的代码为什么不通过npm包引入
+  - 直接修改github上的源码
+- daoPaas的初始化逻辑包含渲染dom吗? 
+  - mapRender渲染到dom
+- mapRender 有什么问题
+  - 未实现按需加载FileTree/Editor/Terminal
 
 ### draft
 

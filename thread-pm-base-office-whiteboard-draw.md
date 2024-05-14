@@ -16,6 +16,8 @@ modified: 2023-05-30T21:36:55.391Z
   - WebGL
   - Tiling
   - While the essay concluded that the most efficient way to render things was using WebGL, the benchmark also showed that DOM+React was not that bad (3~4x slower than Raw WebGL)—small products and personal projects may not need the burden of WebGL.
+
+- [Figma已被替代, Miro还会远吗？——无限白板大全 - 知乎 _202205](https://zhuanlan.zhihu.com/p/512318494)
 # discuss-stars
 - ## 
 
