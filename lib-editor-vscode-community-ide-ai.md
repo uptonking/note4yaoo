@@ -9,6 +9,8 @@ modified: 2024-05-10T06:17:27.016Z
 
 # guide
 
+- products
+  - [Top 6 Devin AI Alternatives for Developer to Automate Codings](https://analyticsindiamag.com/top-6-devin-alternatives-to-automate-your-coding-tasks/)
 # codellama
 - https://github.com/meta-llama/codellama /202401/python
   - Code Llama is a family of large language models for code based on Llama 2 providing state-of-the-art performance among open models, infilling capabilities, support for large input contexts, and zero-shot instruction following ability for programming tasks.

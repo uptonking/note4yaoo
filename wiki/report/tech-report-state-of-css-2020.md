@@ -7,8 +7,9 @@ modified: 2021-01-06T17:00:05.478Z
 
 # tech-report-state-of-css-2020
 
-# [state of css 2020](https://2020.stateofcss.com/en-US/report/)
+# [State of CSS 2023](https://2023.stateofcss.com/en-US)
 
+# [state of css 2020](https://2020.stateofcss.com/en-US/report/)
 - **The Era Of Utility-First CSS**
   - the same HTML document could be transformed into dramatically different designs by swapping out stylesheets
   - While HTML and CSS were adequate for building medium-scale static websites that were not meant to change much over time, the old paradigm started to fail when confronted with handling large, dynamic web apps.

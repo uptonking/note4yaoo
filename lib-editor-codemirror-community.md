@@ -121,7 +121,7 @@ modified: 2023-01-29T10:52:44.183Z
 
 - ## 
 
-- ## 🌰 [Codemirror 6 and Typescript LSP - v6 - discuss. CodeMirror _202107](https://discuss.codemirror.net/t/codemirror-6-and-typescript-lsp/3398?page=2)
+- ## ✏️🆚️ [Codemirror 6 and Typescript LSP - v6 - discuss. CodeMirror _202107](https://discuss.codemirror.net/t/codemirror-6-and-typescript-lsp/3398)
   - If anyone is still having problems with this, I was able to create a small demo based on @madebysid comment, you can find it here: https://github.com/okikio/codemirror 197, Demo Link: https://okikio-codemirror.netlify.app/
 
 - For the @codesanbox/sandpack-react package there was a discussion on how to integrate the language server with codemirror.
@@ -136,10 +136,17 @@ modified: 2023-01-29T10:52:44.183Z
 - TBH, I’m not an expert on CodeMirror even less on LSP, so I’m curious to know how I can improve this implementation and make it even better
   - https://codesandbox.io/p/sandbox/github/danilowoz/sandpack-tsserver/tree/main/
 
-- Did https://codesandbox.io/ 4 switch away from CodeMirror to Monaco for it’s TypeScript/LSP editor? If so, is there a discussion somewhere of why? _202212
+- Did https://codesandbox.io/ switch away from CodeMirror to Monaco for it’s TypeScript/LSP editor? If so, is there a discussion somewhere of why? _202212
   - 💡 Actually, CodeSandbox has always used Monaco as the default editor, except for a specific mobile version where we defaulted it to CodeMirror.
 - Not to be pedantic, but it’s worth noting that tsserver / the typescript standalone worker is not LSP compatible.
   - Replit is working on open sourcing our LSP Client (we didn’t the microsoft packages) and a follow up to open source the LSP client + codemirror extension. Timeline TBD but should happen in 2023
+
+- We were able to leverage much of the learning discussed here to implement Typescript completions for our open source multiplayer code editor VZCode
+- It’s a more bit complex than the examples here because:
+  - The system supports editing multiple files
+  - The system supports remote collaborators (so their changes need to be accounted on the LSP side for in addition to local changes)
+  - There are multiple instances of the CodeMirror extension that talk to a singleton language server
+  - The singleton language server lives in a Web worker
 # discuss-pm-code-block-in-docs
 - ## 
 
@@ -195,9 +202,9 @@ modified: 2023-01-29T10:52:44.183Z
   - Tree-sitter does run on the web. I got it working for my editor, but it did involve several days' worth of effort and getting into the weeds with emscripten.
 - I've been using both codemirror and lezer in Yaade (https://github.com/EsperoTech/yaade). Thanks to lezer I was able to write a JSON extension language that supports Yaade environment variables. Pretty cool project and very nicely documented! I love building OSS on top of OSS.
 
+- 
+- 
 
-- 
-- 
 # discuss
 - ## 
 

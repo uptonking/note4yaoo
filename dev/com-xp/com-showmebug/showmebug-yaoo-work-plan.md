@@ -22,15 +22,25 @@ modified: 2024-05-06T02:54:40.374Z
   - 主要业务流程
   - cde
   - 对标的目标产品不清晰
+
+- work-xp-pros
+  - 研发进度给了开发者较多空间
+  - 产品团队的对齐比较充分
+- work-xp-cons
+  - 单人项目太多了，交接困难
+  - 研发流程cicd，lint、pr流程不完整
+  - 研发目标对开发产品都不清晰
 # more
 
 ## proj-idepaas-sdk
 
 - resources
+  - https://staging.1024paas.com/   (测试数据较多，api较稳定)
   - https://develop.1024paas.com/
   - https://www.1024paas.com/
   - [DaoPaaS API Options](https://www.1024paas.com/sdk/docs/index.html)
   - [1024PaaS-租户业务接口](https://apifox.com/apidoc/shared-c0c0ebad-15b3-4605-896e-e39879fe6e47/doc-952073)
+  - https://staging.showmebug.com/  (帐号 01test)
 
 ### not-yet
 
@@ -38,7 +48,6 @@ modified: 2024-05-06T02:54:40.374Z
   - 功能又多又杂
   - 侧重ai编辑，可以去掉非核心需求
 
-- 
 - 
 - 
 - 
@@ -50,7 +59,18 @@ modified: 2024-05-06T02:54:40.374Z
 - mapRender 有什么问题
   - 未实现按需加载FileTree/Editor/Terminal
 
+- 所有数据的通信都基于channel(websocket)?
+- 
+- 
+- 
+- 
+
 ### draft
+
+- sdk的主要组件Editor/FileTree/Shell的渲染是独立的 `createRoot(dom).render(<Editor />)`; 
+- 
+- 
+- 
 
 ### roadmap
 
@@ -97,8 +117,6 @@ modified: 2024-05-06T02:54:40.374Z
 - 
 - 
 
-- 考虑轻编辑，通过devcontainer连接远程仓库来进行本地编辑
-
 - 
 - 
 - 
@@ -115,7 +133,7 @@ modified: 2024-05-06T02:54:40.374Z
   - 第一版：原样迁移 把packages/client/src/* 的代码全部迁移到libs/d42paas-biz/client/ 中，并在apps/d42paas_playground/src/app/[locale]/(main)/ 中进行演示（重新使用tailwind+shadcn/ui写）。 
   - 第二版：删除 mapRender 方法
 
-### codebase
+### dev-xp
 
 - `d42paas_frontend` 项目启动记录
   - cp .env.local.example .env, 可不修改任何配置，但修改配置中queue的名字可方便调试
@@ -123,6 +141,29 @@ modified: 2024-05-06T02:54:40.374Z
   - cd packages/server; pnpm dev
   - 修改 packages/server/apps/entry/test/filetree_mock_test 末尾文件名为 filetree_mock
   - 在 http://localhost:3010/ api demo的用户名和手机号可随便写
+
+- ⌛️ 回放示例(环境支持sdk-staging/sdk-localhost-3010/showmebug)
+  - 在sdk demo界面，需要指定代码处理为 showmebug
+    - 在basic示例点击 录制数据 和 停止录制
+    - 复制basic示例url中的playgroundId, 可在操作回放中指定租户为 showmebug 和 playgroundId
+  - 在showmebug，测试帐号为 01test
+    - 测试案例: 不能把的笔试, 2023-12-12 17:34， 包括java/python/vue/架构图画板
+  - 🌹 亮点
+    - ✨ 不同面板的状态能够同时回放，如编辑器界面、预览界面、控制台
+    - 回放支持其他面板: 测试用例、题目评分、选择题
+    - 回放支持不编辑时的光标位置变化
+    - 回放支持shell的操作命令和输入输出
+    - 回放支持debug断点详细数据
+    - 回放支持架构图画板
+  - 🐛 缺点
+    - 文件树在用户操作不同文件时，没有高亮对应的打开文件
+    - 部分框架的预览视图面板，不支持回放
+  - ☑️ to-do
+    - 在播放进度条直接显示预览界面
+    - 播放时可并排显示多个shell的输出
+    - 录制数据只能有一个用户，如果SMB需要跟随来回切换， 如果切换到面试官录制， 候选人只能停止录制，
+
+### codebase
 
 - lazy-load的组件
   - CodeEditor
@@ -134,12 +175,64 @@ modified: 2024-05-06T02:54:40.374Z
 - app-init-dataflow
   - getTicketInit
     - init > `const dao = new DaoPaaS()`;
-    - this.daoEditor = new DaoEditor();
-    - this.initChannel(data.data);
+      - this.daoEditor = new DaoEditor(); // DaoEditor封装很少
+      - requestChannelPathFromTicket
+      - this.initChannel(data.data);
+      - window.addEventListener('message',fn)
+      - store.dao.channel().startChannel()
+    - dao.onMessage()
+    - dao.subscribe()
+    - dao.mapRender() 渲染编辑器、预览、shell面板
   - effects
     - getTicketInit
     - updateConfig
     - daoPaasObj.onMessage
+
+#### LazyEditor
+
+```JS
+// playback
+useEffect(() => {
+  if (isPlayBack) {
+    channel.subscribeForComponent(Events.Editor, {
+      onStart: () => {},
+      onData, // 监听数据变化(回放时的帧数据)
+      getPlaybackSnapshot, // 获取快照数据
+    });
+  }
+}, [channel, isPlayBack]);
+
+// 监听全局消息(处理自定义帧)
+useEffect(() => {
+  if (channelAvailable && channel) {
+    channel.removeMessageListener(handleMessageListener);
+    channel.addMessageListener(handleMessageListener);
+  }
+
+  return () => channel.removeMessageListener(handleMessageListener);
+}, [channel, channelAvailable]);
+```
+
+#### CodeEditor
+
+- CodeMirrorEditor 通过 useImperativeHandle 对外暴露方法 setState/setView
+
+- channel.addMessageListener(editorMessage); 
+  - 监听到消息时，更新编辑器 view.dispatch({changes})
+
+- 
+- 
+- 
+- 
+- 
+- 
+
+#### replay
+
+- 
+- 
+- 
+- 
 
 ### docs
 
