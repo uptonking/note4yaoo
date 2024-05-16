@@ -333,6 +333,13 @@ betterdiscordctl -i flatpak install
 
 ## 051
 
+## 0516
+
+- dev-log
+  - paas的录制和回放的实现，与时光机结合的方式
+- dev-to
+  - 执行和暂停
+
 ## 0514
 
 - [node.js - opensslErrorStack: [ 'error:03000086:digital envelope routines::initialization error' ] - Stack Overflow](https://stackoverflow.com/questions/74726224/opensslerrorstack-error03000086digital-envelope-routinesinitialization-e)
