@@ -412,3 +412,4 @@ modified: 2023-03-09T13:47:07.317Z
   - This service is part of the ScienceMesh Interoperability Platform (IOP) and implements a vendor-neutral application gateway compatible with the Web-application Open Platform Interface (WOPI) specifications.
   - It enables ScienceMesh EFSS storages to integrate Office Online platforms including Microsoft Office Online and Collabora Online.
 # more-office
+- [常见附件预览：图片、视频、音频、文本、pdf、office...](https://rapidsu.cn/articles/2745)

@@ -9,7 +9,7 @@ modified: 2024-05-02T02:01:04.255Z
 
 # guide
 
-# blogs
+# blogs-internals
 
 ## [(Re-) Implementing A Syntax-Highlighting Editor in JavaScript _201111](https://codemirror.net/5/doc/internals.html)
 
@@ -39,57 +39,20 @@ modified: 2024-05-02T02:01:04.255Z
   - Most modern browsers fire input when the composing is finished, but many don't fire anything when the character is updated during composition. 
   - So we poll, whenever the editor is focused, to provide immediate updates of the display.
 
-## [styling](https://codemirror.net/6/examples/styling/)
+## [codemirror源码阅读：history相关 | Marvin's Blog【程式人生】 _202209](https://marvinsblog.net/post/2022-09-07-codemirror-src-history/)
 
-- CodeMirror uses a CSS-in-JS system to be able to include its styles directly in the script files. 
-  - This means you don't have to include a library CSS file in your page for the editor to work—both the editor view's own styling and any styling defined for dependencies are automatically pulled in through the JavaScript module system.
-- Themes are simply extensions that tell the editor to mount an additional style module and add the (generated) class name that enables those styles to its outer DOM element.
-# blogs-vendors
+- 定义了一个annotation：fromHistory，值为{side: BranchName, rest: Branch}
+  - BranchName是redo、undo二选一，Branch是历史事件合集
+# blogs-xp
 
-## 
+## [浅尝 CodeMirror@6 – 山维空间 _202203](https://blog.meathill.com/js/note-codemirror6.html)
 
-## 
-
-## 
-
-## [Replit — Betting on CodeMirror _202203](https://blog.replit.com/codemirror)
-
-- Monaco did not support mobile, which was becoming increasingly important for us to achieve our goal of making programming more accessible.
-  - Overall, we’re excited to be placing such a huge bet on the next generation of online code editors and continuing to advance the future of writing software on the web. 
-
-## [Why we developed a code block widget in Miro _202307](https://medium.com/miro-engineering/why-we-developed-a-code-block-widget-in-miro-f6c5ec23085c)
-
-- Our code widget is a code block with a rich editing experience comparable to a native code editor. It has features like syntax highlighting, auto-closing brackets and indentations, various hotkeys, and more.
-- Miro boards are heavily based on Canvas API. 
-  - Almost everything visible on the board, except for the user interface on top of the board, is essentially a continuously updated and re-rendered image. 
-  - Our custom rendering engine consumes HTML with inline styles and draws text by using `canvasContext2D` API.
-- Option 1: Reuse existing approach — Quill Editor
-  - It is well-integrated in Miro and has a native plugin for syntax highlighting that uses the highlightjs
-  - Highlight.js, which Quill uses for syntax highlighting, isn’t the best library available
-- Option 2: Use HTML elements and syntax highlighting libraries
-  - By using various approaches based on HTML elements like this one using textarea and highlightjs/prismjs, we can make editable code blocks with real-time syntax highlightiing
-  - By using various approaches based on HTML elements like this one using textarea and highlightjs/prismjs, we can make editable code blocks with real-time syntax highlightiing
-- Option 3: Integrate a web-based code editor
-  - we used the web-based code editor CodeMirror. 
-  - we can highlight the heavy weight of the editor, which may result in a longer load time. 
-- In the end, we wanted to provide as smooth and rich of an editing experience as possible. We also wanted to future-proof our editor in case we want to support longer text (more than 6000 characters) and extend functionality, such as implementing collaboration or code execution.
-  - Considering that both Quill and HTML elements didn’t fully meet our functional requirements, we chose instead to take a risk and invest in integrating a code editor. It has all the desired features out of the box, provides very solid performance and user experience, and offers a lot of extensions.
-
-### [How we integrated a code editor on the Miro canvas _202310](https://medium.com/miro-engineering/how-we-integrated-a-code-editor-on-the-miro-canvas-a41e0eff7f21)
-
-- The scaling of the rendered widgets is managed by our canvas engine, but in Edit mode we need to scale the HTML element with the editor manually. The scale factor is a multiplication of the board scale (zoom in/out) and the widget scale (widget size). To scale the widget, we apply the CSS property on the editor container: `transform: scale($scale)`.
-  - During the prototyping with CodeMirror 5 and CodeMirror 6, we met this problem: if the editor is scaled, then the mouse events’ positions, as well as the visual elements’ sizes and positions are calculated wrong. Attempts to deal with those issues were unsuccessful: there is no easy fix or built-in support for this in CodeMirror.
-  - We discovered that the Ace and Monaco editors, on the other hand, support the CSS transformations.
-
-- To highlight the plain text, we’re using the native static highlighter extension for the Ace editor. It starts a minimal version of the Ace editor that outputs the HTML string.
-- 🤔 For us, although it was less attractive at the beginning, the Ace editor was the best and the only option. It is very lightweight, supports scale out of the box, has the static syntax highlighting extension, and has been battle-tested for more than a decade. 
-
-## [Moving to Monaco — A Journey to a Better Code Editing Experience | DataCamp Engineering _202107](https://blog.datacamp.engineering/moving-to-monaco-a-journey-to-a-better-code-editing-experience-8c2aa5360be5)
-
-- The starting point of our journey is a custom code editor built on top of the Ace Editor library. This editor had served as the reliable backbone of Campus — our interactive course application — for several years.
-  - Poor accessibility
-  - Poor abstraction
-  - Bad page performance
-- We evaluated several solutions along the way, but ultimately settled on building our editing experience on top of Monaco.
+- CodeMirror@6 是作者完全重写的，整体架构发生了非常大的变化，使用方式与上一个版本完全不同。
+  - 以前创建编辑器只需要 codemirror.fromTextarea(element) 即可，现在麻烦了很多
+- 新版本为了支持编辑代码的复杂需求，把所有变更都封装成了 transactions，通过 dispatch 告知 view 更新视图。所以修改代码就从 .setValue(code) 变成下面这种样子 this.editor.dispatch({ changes: { from: 0, to: this.editor.state.doc.length, insert: code }, }); 
+- 新版本高亮错误代码会比较麻烦。以前直接 .addLineClass() 就可以了，现在则要先生成标记，然后再把标记添加到视图中。
 # more
 - [CodeMirror Accessible](https://bgrins.github.io/codemirror-accessible/)
+
+- [Revisiting our CodeMirror 6 implementation in React after the official release _202210](https://www.codiga.io/blog/revisiting-codemirror-6-react-implementation/)
+  - [Implementing CodeMirror 6 in React with Code Snippets Autocompletion _202205](https://codiga.io/blog/implement-codemirror-6-in-react/)

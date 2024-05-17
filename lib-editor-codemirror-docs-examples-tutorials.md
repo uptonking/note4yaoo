@@ -50,10 +50,7 @@ modified: 2024-05-02T07:48:04.213Z
 - To enable line wrapping, add the EditorView.lineWrapping extension to your configuration. 
   - It is also possible to adjust the white-space style of the content element in some other way, but only `pre` and `pre-wrap` are supported by the library, and wrapping can be unreliable if you don't also set overflow-wrap: anywhere, so it is recommended to just use this extension to enable wrapping.
 
-
 - Adjusting the vertical behavior of the editor can be done by giving its outer element a height, and setting overflow: auto on the scroller element.
-
-
 
 ## [CodeMirror Autocompletion Example](https://codemirror.net/examples/autocompletion/)
 
@@ -101,5 +98,10 @@ modified: 2024-05-02T07:48:04.213Z
 - 
 - 
 
+## [styling](https://codemirror.net/6/examples/styling/)
+
+- CodeMirror uses a CSS-in-JS system to be able to include its styles directly in the script files. 
+  - This means you don't have to include a library CSS file in your page for the editor to work—both the editor view's own styling and any styling defined for dependencies are automatically pulled in through the JavaScript module system.
+- Themes are simply extensions that tell the editor to mount an additional style module and add the (generated) class name that enables those styles to its outer DOM element.
 # more
 - [Revisiting our CodeMirror 6 implementation in React after the official release _202210](https://codiga.io/blog/revisiting-codemirror-6-react-implementation/)

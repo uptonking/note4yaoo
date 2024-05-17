@@ -263,10 +263,12 @@ modified: 2021-03-03T21:48:48.379Z
   - https://mytecor.github.io/live-example/
   - 依赖sucrase-browser
   - Like react-live, but much faster, smaller and customizable
-- react-simple-code-editor /691Star/MIT/202001/js
+- react-simple-code-editor /691Star/MIT/202210/ts/inactive
   - https://github.com/satya164/react-simple-code-editor
   - http://satya164.xyz/react-simple-code-editor/
   - Simple code editor with syntax highlighting
+  - 只依赖react
+  - This library aims to provide a simple code editor with syntax highlighting support without any of the extra features, perfect for simple embeds and forms where users can submit code.
 - https://github.com/conorhastings/react-component-demo
   - A React Component To make live editable demos of other React Components
 - https://github.com/styleguidist/react-styleguidist

@@ -128,6 +128,19 @@ modified: 2023-11-10T07:30:17.500Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🆚️ What's the best way to pass slices of Uint8Arrays to functions? Uint8Array.slice() or pass the original Uint8Array + offsets?
+- https://x.com/pilcrowonpaper/status/1791438202156519567
+- Uint8Array.subarray() slices without a copy
+  - can also implement it in your own helper function by creating a second uint8array over the same arraybuffer as the first
+- depends on the size 
+  - I think for small ones, copying via slice is nicer 
+  - but for bigger ones, copying is probably becoming an issue 
+  - In the past I've created a small wrapper that holds the array and an offset, could be passed around and offers some utilities
+
 - ## It’s a limitation of the JS language itself. There’s no way to share objects between threads cheaply, you have to serialize everything.
 - https://twitter.com/devongovett/status/1789866064399999347
 - what about SharedArrayBuffer?

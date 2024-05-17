@@ -63,7 +63,12 @@ modified: 2023-11-01T10:15:06.245Z
 
 - ## 
 
-- ## 
+- ## Here's a new post walking through an implementation of MVCC and major SQL transaction isolation levels, in 400 lines of Go code.
+- https://x.com/eatonphil/status/1791225675287867742
+  - These ideas might sound esoteric, but they impact almost every developer using any database.
+  - [Implementing MVCC and major SQL transaction isolation levels | notes.eatonphil.com](https://notes.eatonphil.com/2024-05-16-mvcc.html)
+- Why do we set all the visible versions as deleted when using “set” and “delete”? The mvcc implementations I saw usually only modify the most recent value.
+  - It's a good question. I'm not sure! I decided until I knew for sure it was best to mark them all.
 
 - ## Are there any databases which do MVCC at page level granularity and have multi writer concurrency? Or any research papers on the same?
 - https://twitter.com/iavins/status/1775532839179633076

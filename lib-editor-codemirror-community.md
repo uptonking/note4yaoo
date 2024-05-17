@@ -16,7 +16,7 @@ modified: 2023-01-29T10:52:44.183Z
 
 - ## 
 
-- ## [Spike: Investigate CodeMirror as a replacement for Monaco · GitLab.org / GitLab _202301](https://gitlab.com/gitlab-org/gitlab/-/issues/387586)
+- ## [Spike(尖钉；尖刺): Investigate CodeMirror as a replacement for Monaco · GitLab.org/GitLab _202301](https://gitlab.com/gitlab-org/gitlab/-/issues/387586)
 - Monaco has served us well as a foundation for the Source Editor for the past couple of years. But some changes to our overall tech stack and the direction of our other categories warrant re-visiting the underlying editor for Source Editor.
   - Monaco continues to lack basic support for touchscreen devices. 
   - The Content Editor is maturing and the underlying combination of Tiptap and ProseMirror is proving to be a viable foundation for future development. We are looking to increase the usage of Content Editor in 2023 and it's possible that adopting CodeMirror could simplify the transition between the two editors in places where they co-exist.
@@ -337,9 +337,12 @@ modified: 2023-01-29T10:52:44.183Z
 - monaco doesn't even try to work on mobile browsers.
 
 - ## 🎯 [CodeMirror 6.0 Stable Release | Hacker News _202206](https://news.ycombinator.com/item?id=31666186)
-- Why wasn't ProseMirror a fit for Obsidian? Seems like that would be better for structured documents.
+- 🆚️ Why wasn't ProseMirror a fit for Obsidian? Seems like that would be better for structured documents.
   - For a good portion of its users, an important feature of Obsidian is the use of flat Markdown files.
   - I'm inquiring about actual implementation not Markdown. Markdown -> AST -> CodeMirror vs Markdown -> AST -> ProseMirror.
+- Obsidian uses CM6 on all platforms.
+  - A CM5 based editor is still available as "Legacy Editor" in the settings on desktop, to support older plugins.
+  - Mobile was always using a CM6 editor, while desktop only got CM6 some time after that. Which is probably the source of the confusion.
 
 - We're currently integrating CodeMirror 6 into Overleaf, and you can try it out by joining our beta program (which will give the option to select the beta source editor, which is the one built using CM6). 
 

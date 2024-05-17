@@ -73,4 +73,24 @@ modified: 2024-05-02T05:51:42.507Z
 
 - This is a large part of the reason why I spent weeks researching CRDTs even though my document convergence needs are well covered by OT. 
   - If you have a more fine-grained way to address positions (specifically, one that can refer to deleted positions), and you define position mapping in terms of that, you do not have this problem.
+
+## [[译] CodeMirror: 协同编辑 - Lewin's Blog _202109](https://lewinblog.com/blog/page/2021/210920-CodeMirror-Collaborative-Editing.md)
+
+- 在我的视野看来，接下来有两个方向的研究：一是后端方向，直接读 gorilla/websocket 的源码，把协议的各种处理细节都熟悉一遍；二是前端方向，探索更多的应用场景。
+
+- 如果不引入新的框架工具，就用手头熟悉的工具，能够实现「协同编辑」吗？
+- 实现1：全量同步
+  - textarea熟悉对吧，那每次onChange的时候，都把全文发回服务器，让服务器把全文广播给所有客户端。
+- 实现2：分行同步
+  - 假如先简化一下，假设网络是稳定且迅速的，不考虑多端用户在同一个瞬间做操作的情况。那么做起来也简单，前后端分别split一下，加不了太多工作量。
+  - 可是在现实状态下，冲突问题变得无法忽视：假如行本身发生了变化（例如删除了行），这时候怎么处理？遇到网络波动又如何确认和恢复？
+  - 为了应对这种冲突，如果只是{行数：内容数据}这样简单的数据结构显然无法满足要求，至少，要增加一个修改前的状态这个东西，才能确保不会发生误操作。
+  - 一个简单的思路，可以维护一个顺序号，服务器每次检查顺序号，对于冲突的顺序号的同步请求予以拒绝，然后客户端得知被拒绝之后，要等其他操作同步完毕之后才能提交自己的操作。
+
+- CodeMirror使用一些基于「操作转换原理 operational transformation 」的工具，以及一个用于指定所有操作的确切顺序的「认证中心（服务器）」，来解决这个协作问题。
+
+- 这个库并没有为effects封装序列化操作，所以为了与JSON一起工作你需要自己撸代码。
+
+- 其次@codemirror/collab这个协作库呢，感觉充满了黑魔法，至少我研究了一下午都还没有觉得很有信心能顺利地实现。翻译的这篇文章呢，原理讲得还行，但是操作层面上我觉得没有很好的参考价值。
+- 以及有一个重要的缺陷：服务端也要求js运行时才能使用这个库。当然，第一就算我要开一套node.js服务也就是个把小时的事情，第二我也能想到服务端不用js用其他语言加一些取巧的办法也可以实现。
 # more

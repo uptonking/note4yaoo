@@ -11,6 +11,10 @@ modified: 2023-06-23T12:46:53.288Z
 
 - 支持切换editor的方案: sandpack
 
+- examples
+  - 类似打字机动态输出文字
+  - (diff)字符渐变的动画效果
+
 - fans-codemirror
   - https://github.com/yeliex/codemirror-extensions
   - https://github.com/val-town/codemirror-ts 
@@ -18,6 +22,10 @@ modified: 2023-06-23T12:46:53.288Z
   - https://github.com/uiwjs/react-codemirror
   - https://www.npmjs.com/package/collaborative-codemirror
   - https://news.ycombinator.com/threads?id=CompuIves
+
+- resources
+  - https://codemirror.net/docs/community/
+  - [List of community extensions? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/list-of-community-extensions/4899)
 # popular
 - https://github.com/tmcw/awesome-codemirror
   - Awesome CodeMirror plugins, themes, wrappers, and more
@@ -110,6 +118,11 @@ modified: 2023-06-23T12:46:53.288Z
   - 依赖diff-match-patch-es、ohash
   - 不依赖codemirror
   - [The Magic in Shiki Magic Move _202403](https://antfu.me/posts/shiki-magic-move)
+
+- https://github.com/sergeche/codemirror-movie /MIT/202006/ts/inactive
+  - https://docs.emmet.io/
+  - A plugin for CodeMirror editor for creating code demos as on Emmet Documentation
+  - 依赖codemirror.v5
 
 - https://github.com/val-town/codemirror-codeium /ISC/202404/ts
   - https://val-town.github.io/codemirror-codeium/
@@ -291,13 +304,23 @@ modified: 2023-06-23T12:46:53.288Z
   - This package provides a CodeMirror configuration for Lake
   - Code block基于codemirror实现
 
+- https://github.com/wanglin2/markdown_editor_sync_scroll_demo /202210/js/inactive
+  - https://wanglin2.github.io/markdown_editor_sync_scroll_demo/
+  - 基于CodeMirror和unified实现的一个能精确同步滚动的Markdown编辑器
+  - 依赖codemirror5、vue3、remark-gfm
+  - [如何实现一个能精确同步滚动的Markdown编辑器 - 掘金 _202205](https://juejin.cn/post/7100562751596003342)
+
+- https://github.com/mdnice/markdown-nice /GPLv3/202109/js/inactive
+  - 支持自定义样式的 Markdown 编辑器
+  - [一款开源的Markdown转富文本编辑器的实现原理剖析 - 知乎](https://zhuanlan.zhihu.com/p/526702914)
+
 - https://github.com/emberry-org/lemon-editor /GPLv3/202208/ts/inactive
   - a Rich Text Editor build upon Codemirror for the Emberry client.
 
 - https://github.com/retronav/ixora /apache2/202305/ts/inactive
   - a CodeMirror 6 extension pack to make writing Markdown fun and beautiful.
   - Auto link detection
-  - https://codeberg.org/retronav/ixora
+  - https://codeberg.org/retronav/ixora /202305/ts/inactive
 
 - https://github.com/madeyoga/chunchunmaru-mde /MIT/202207/ts/inactive
   - https://madeyoga.github.io/chunchunmaru-mde/
@@ -902,6 +925,11 @@ modified: 2023-06-23T12:46:53.288Z
   - A blazing fast & offline frontend playground
   - 依赖codemirror5
 # starter
+- https://github.com/A99US/CM6-Browser-Wrapper /MIT/202308/js/inactive
+  - https://a99us.github.io/CM6-Browser-Wrapper/
+  - a CodeMirror 6 Wrapper for browser so you don't need to rollup a new one everytime you want to try different setting
+  - You need to include JQuery file because it needs JQuery to function
+
 - https://github.com/falk-werner/codemirror-example /202312/js/单文件
   - a brief example how to integrate Code-Mirror using vite.
 
@@ -1007,6 +1035,13 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/StaticJsCMS/static-cms /MIT/202404/ts
   - https://staticcms.org/
   - A Git-based CMS for Static Site Generators
+
+- https://github.com/blossom-editor/blossom /MIT/202404/java/vue
+  - https://www.wangyunf.com/blossom-doc/index
+  - 支持私有部署的云端存储双链笔记软件
+  - 支持 Windows，Mac，网页客户端，网页移动端。
+  - 基于 Markdown 编写，没有破坏性的语法拓展，在这里编写的内容在任何 Markdown 软件中都能正常显示。
+  - 不依赖任何三方存储和图床，其本身就是一个图床，并且提供了完善的图片管理，防勿删，以及图片和文章的双向关系绑定。
 # theme
 - https://github.com/nodetec/mirrorshades /GPLv3/202403/ts
   - A react library to create themes for codemirror
@@ -1051,7 +1086,8 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/0xGG/EchoMD /AGPLv3/202103/ts/inactive
   - An experimental WYSIWYG markdown editor built on top of HyperMD with extended Widgets support
   - This WYSIWYG markdown editor is built and modified on top of @laobubu's awesome project HyperMD.
-  - We will migrate to codemirror 6 in the future, which is going to be a complete rewrite. But for now, we will just stick to the current codemirror 5 codebase, that is what HyperMD currently uses.
+  - We will migrate to 🎯 codemirror 6 in the future, which is going to be a complete rewrite. 
+    - But for now, we will just stick to the current codemirror 5 codebase, that is what HyperMD currently uses.
   - https://github.com/laobubu/HyperMD /MIT/201810/ts/inactive
 
 - https://github.com/mirayatech/NinjaPen /202401/ts

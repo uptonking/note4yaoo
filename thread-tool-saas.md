@@ -53,9 +53,11 @@ modified: 2023-05-07T18:35:50.897Z
 
 - ## 
 
-- ## 
+- ## Another day when I miss that cloud disk storages (S3, Google Drive, Dropbox, iCloud etc.) didn't implement atomic compare-and-swap.
+- https://x.com/Horusiath/status/1791335631823712266
 
-- ## 
+- ## 在找一些网页版绘图工具时看到 Sumopaint，很简约，但是同时还有一个不需要登录就能使用的 AI 绘图 / inpaint 工具，太菩萨了
+- https://x.com/zQwQs/status/1791434868133666984
 
 - ## 做了一个在浏览器里「视频转 GIF 」的工具。
 - https://twitter.com/zQwQs/status/1779465415217066204

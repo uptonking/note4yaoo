@@ -241,6 +241,14 @@ modified: 2020-10-22T10:22:55.878Z
   - 一款自研流程图编辑器，提供了一系列流程图交互、编辑所必需的功能，计划支持前端研发自定义开发各种逻辑编排场景，如流程图、ER 图、BPMN 流程等
   - 项目使用typescript与svg、canvas等技术进行搭建，脱离vue、react等框架的限制
   - 底层依赖了svg对项目元件库的基础元件进行创作，同时使用了canvas对背景网格、水印等进行绘制，使用html进行页面布局
+# mindmap
+- https://github.com/wanglin2/mind-map /MIT/202405/js/vue/NoDeps
+  - https://wanglin2.github.io/mind-map/#/index
+  - 一个简单&强大的 Web 思维导图
+  - 一个 js 思维导图库，不依赖任何框架
+  - 基于思维导图库、Vue2.x、ElementUI 开发，可以操作电脑本地文件，可以当做一个在线版思维导图应用使用，也可以自部署和二次开发。
+  - 也提供了客户端可供下载使用，支持Windows、Mac及Linux
+  - [我开源了一个思维导图 - 掘金 _202307](https://juejin.cn/post/7257922419319406648)
 # uml
 - https://github.com/jgraph/mxgraph /6.1kStar/Apache2/202011/archived
   - mxGraph is a fully client side JavaScript diagramming library that uses SVG and HTML for rendering.

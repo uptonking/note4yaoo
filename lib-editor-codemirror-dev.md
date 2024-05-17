@@ -61,6 +61,7 @@ modified: 2021-05-06T09:38:31.520Z
   - codemirror: sandpack
   - Eclipse Che: OpenShift CDE
   - DevPod: devcontainer-spec + local-and-cloud
+  - ace: miro
   - more: Coder(no-cloud/k8s), AWS Cloud9, codenvy
   - 缺点
     - vps的性能不如本地计算机，vps很贵
@@ -106,6 +107,11 @@ modified: 2021-05-06T09:38:31.520Z
 - features
   - diff with magic-code-animation
   - highlight current selection
+
+- integrations
+  - strapi-codemirror
+
+- 尝试将prosemirror的使用场景替换为codemirror
 # dev
 
 # more
