@@ -14,7 +14,14 @@ modified: 2021-01-06T14:40:11.360Z
 
 - ## 
 
-- ## 
+- ## React Compiler 开源了，这次 fb 是搞了个真 compiler 
+- https://twitter.com/unixzii/status/1790948056244101557
+  - IR、SSA、optimization passes 都是按照正统编译器来设计的。
+  - 底层用 Rust 编写，passes 用 JS 编写，可扩展性很强，感觉想学编译器的话可以用它入门了。
+- 至今没懂 SSA 究竟是干啥的
+  - 简单讲就是剔除变量的重复赋值，会让控制流、可达性等代码分析更容易
+- 全是JS写的，rust 只是放在那，没有用
+- 如果是生成的虚拟机指令的话还行，生成的却是js代码，怪不得很多web页面性能这么差，也不完全是chrome本身的问题。
 
 - ## Slots are such a cool pattern for composition in React Aria. 
 - https://twitter.com/matt_stobbs/status/1773482640768700464
@@ -340,7 +347,7 @@ useEffect(() => {
 
 - What are your issues exactly with unserializable data in this case?
   - Specifically: Replay's codebase is 80% a copy-paste of the FF DevTools. 
-  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,                                                           `ValueFront`,                                                           `Pause`, etc. 
+  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,                                                             `ValueFront`,                                                             `Pause`, etc. 
   - We currently parse JSON and instantiate those classes, _then_ put them into Redux.
   - The Replay codebase started with very legacy Redux patterns (hand-written reducers, etc), and no Redux DevTools integration. When I added the DevTools setup, that began to choke on the class instances. So, I had to sanitize those out from being sent to the DevTools.
   - I've been modernizing our reducers to RTK's `createSlice`, which uses Immer. Immer recursively freezes all values by default. Unfortunately, those `SomeFront` instances are mutable, and _do_ get updated later. This now causes "can't update read-only field X" errors

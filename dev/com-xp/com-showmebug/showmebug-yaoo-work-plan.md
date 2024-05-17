@@ -210,6 +210,21 @@ useEffect(() => {
 
 #### replay
 
+- roadmap
+  - 回放时不支持预览视图
+  - 支持多次编辑的snapshot数据
+
+- not-yet ❓
+  - recordBrowser参数似乎未使用
+
+- snapshot数据是如何存储的
+  - const { content } = store.file.getFileBaseHistoryByPath(dockerId, openedPath); 
+  - 每次获取文件内容，并计算快照挂载到frame, 
+  - frame.snapshot = { currentDoc, selection, agentUserId: agentUserId, isChange, changes, }; 
+
+- 回放时，支持修改文件内容，但继续执行很可能失败
+  - playback状态时，支持收集操作op
+
 - [回放重构](https://www.notion.so/dao42/0ba448333b3f4740a6e569cefd40f821)
   - 回放的实现原理是sdk从服务端重新加载所有历史事件, 并分发给相应组件(在react项目中可以通过更新state来驱动各组件), 各组件接收到事件进行相应渲染
   - 对于大部分组件, 渲染时并不需要区分是否在回放模式, 只有可输入型组件需要在回放模式时禁止用户操作

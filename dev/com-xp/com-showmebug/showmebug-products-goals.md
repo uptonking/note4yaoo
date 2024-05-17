@@ -97,6 +97,48 @@ modified: 2024-05-06T02:52:41.789Z
   - 文件清单
   - 生成描述
 
+- 确定需求
+  - 选择issue: 优先选择自己的issue
+  - 自然对话
+  - think计划阶段，可以修改相关提示
+
+- 任务列表
+  - 多个任务的变更
+  - 一个issue对应一个task
+
+- 执行计划时
+  - 支持自动显示shell
+  - 制定计划、执行计划 可采用分别的ai-agent
+
+- 暂停时
+  - 询问是否撤销当前action，会取消当前编辑或在shell输入撤销命令
+  - 支持重新生成选择的代码块
+  - 若暂停时修改了文件，可按原计划执行剩下的action
+
+- 回放时
+  - 文件的只读的，不能编辑
+
+- 终止时
+  - 可撤销所有更改
+
+- code-review时
+  - edit需要是member，review只读当前分支
+  - 展示代码清单、执行计划
+  - comment评论在分支级？代码行级？
+
+- 单一的action里面，一个方法尽量只改一次，这是对ai的要求
+
+- pr的异常在终端打印出来，系统暂不详细处理异常
+
+- 文件树 暂不支持显示 变更文件
+
+- ai针对需求生成执行计划的新分支是自动创建的吗
+  - 如何合并入主分支 
+  - 针对需求，现在本地生成新分支，push到github新分支
+
+- 
+- 
+- 
 - 
 - 
 - 
@@ -214,7 +256,7 @@ modified: 2024-05-06T02:52:41.789Z
 # pm-idx-google
 - features
   - 与gemini大模型集成
-# pm-cursor-ai
+# pm-cursorai
 - cmd + k : edit and write code with the AI
 - Terminal Command K
   - write terminal commands in plain english
