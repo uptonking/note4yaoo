@@ -85,6 +85,18 @@ modified: 2023-11-01T14:13:41.390Z
   - Materialized views store query results in the database as a physical table, rather than being calculated each time the view is accessed.
 
 - [Migrating from Postgres to MySQL](https://planetscale.com/blog/migrating-from-postgres-to-mysql)
+
+## [对比MariaDB与PostgreSQL，如何选择正确的数据库？ _202405](https://huangz.blog/2024/mariadb-vs-postgresql.html)
+
+- 相似之处
+  - MariaDB和PostgreSQL都是强大的数据库系统，因其可靠性和强大的社区支持而广受认可。
+  - 两者都支持各种编程语言，比如Python、Java、C/C++和PHP，并提供诸如ACID合规性以确保事务可靠性并支持复杂的查询。
+
+- 不同之处
+  - 性能和存储引擎：MariaDB以其速度而著称，它包含多个存储引擎（包括Aria和InnoDB），每个引擎都有它们各自适合的工作负载，并且可以根据特定的性能或数据完整性需求进行微调。与此相反，PostgreSQL使用单一的默认ACID兼容存储引擎，该引擎对并发性和数据完整性进行了优化，这种做法简化了架构，但是也限制了针对特定性能场景进行微调的可能。
+  - 复杂性：与MariaDB相比，PostgreSQL提供了更高级的特性，但这些特性也带来了更陡峭的学习曲线。
+  - 高级特性：PostgreSQL经常因其特性丰富而受到表扬，比如它强大存储过程、复杂的加锁机制以及对JSON、XML和数组等“NoSQL”数据类型的支持。这些功能使得PostgreSQL成为需要复杂数据集成和强大数据完整性的应用程序的理想选择。
+  - 扩展和索引：PostgreSQL还支持更高级的索引类型和非常多的扩展，使其具有极强的可扩展性。比如PostgreSQL的GIN和GIST索引就非常适合实现全文搜索和储存地理空间数据。MariaDB虽然也提供了灵活的插件架构，但它支持的专用索引类型并不多。
 # discuss-pg-mysql
 - ## 
 

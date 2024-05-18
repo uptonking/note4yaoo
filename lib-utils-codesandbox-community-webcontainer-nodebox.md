@@ -61,9 +61,38 @@ modified: 2024-01-25T13:32:35.137Z
 - 
 - 
 
-# discuss-stars
-- ## 
+# blogs-nodebox
 
+## [How to run Node.js (apps) in the browser? | by Johannes Bader | CloudBoost _201711](https://blog.cloudboost.io/how-to-run-node-js-apps-in-the-browser-3f077f34f8a5)
+
+- There are several reasons why a JavaScript developer may want to run Node.js code in the browser, including:
+  - developed a Node.js app — now want to also offer it online
+  - found a useful npm package that relies on Node.js
+  - want to use Node.js APIs (buffer, crypto, fork, events, streams, …)
+  - prefer to write CommonJS-style modules with require
+
+- One will a number of solutions fulfilling at least some of the above wishes, such as webpack.js.org, browserify.org or nodular.js. 
+  - However, all of those approaches are based on some form of the source code transformation — either ahead of time (webpack and browserify) or at runtime (nodular).
+
+- I bootstrap the JavaScript part of Node.js inside of a web worker. 
+# blogs-webcontainer
+
+## docs-webcontainer
+
+- [Enterprise | WebContainers](https://webcontainers.io/enterprise)
+  - Licensing is required for production usage of the API in a for-profit setting (feel free to prototype as much as you like without a license). 
+  - If you're using the API to meet the needs of your customers, prospective customers, and/or employees you need a license 
+
+## 🤔 [腾讯一面：除了webContainer之外，还有什么办法能在浏览器上运行node代码🫣🫣🫣 - 掘金 _202309](https://juejin.cn/post/7281912738862841896)
+
+- 总结: 通过 web worker 的方式去启动一个虚拟机，该虚拟机模拟了一个 Node.js 环境，从而实现在浏览器上面允许 node 的代码。
+  - 那么问题来了，如何在浏览器上面运行世界上最好的语言呢？
+
+## [Stackblitz 的 WebContainer 探秘 - 知乎 _202112](https://zhuanlan.zhihu.com/p/446329929)
+
+## [Labor，首个 web container 开源实现 - 掘金 _202105](https://juejin.cn/post/6966262450878414884)
+
+# discuss-nodebox
 - ## 
 
 - ## 
@@ -91,10 +120,54 @@ modified: 2024-01-25T13:32:35.137Z
   - It's very interesting. In that example with the express router, where you're creating index.js inside a filesystem inside nodebox, is that whole filesystem just stored by that one webworker? Also, when you invoke express to listen on port 3000 and get back some URL to set the previewIframe.src, is that some blob URL returned from the webworker? (in which case how would you set up sockets?) Or is that URL accessible to any other browser tab?
 
 - Nice. Stackblitz did this first and this is a killer feature all fiddles now need
-# discuss-stackblitz
+
+- ## Do the code execute in the Browser like Stackblitz Webcontainers, or do they have to proxy to a server to process code and return a response? _202202
+- https://discord.com/channels/333980639973867521/938366408889352223/938474311495340102
+- Sandpack runs entirely in the browser, transpiling code in webworkers and executing everything inside an iframe. 
+  - The only servers sandpack uses are CDNs for fetching the `node_modules` .
+
+# discuss-webcontainer/stackblitz
 - ## 
 
 - ## 
+
+- ## 
+
+- ## Is stackblitz open source and can i self host it _202403
+- https://discord.com/channels/364486390102097930/680953097354215446/1214952721132818522
+- Portions of it is, but the product is not. You can use WebContainers to build upon though. 
+  - If you want self-hosted StackBlitz, you might consider the enterprise licensing they offer.
+
+- ## Possible to Port NodeJS to Other Languages by Compiling to WASI Supported WASM Module? _20240330
+- https://discord.com/channels/364486390102097930/1223486985981923369/1223486985981923369
+  - As far as i understand how WebContainers work, NodeJS seems to be compiled to WASM. (QuickJS maybe? WasmEdge uses QuickJS compiled to WASM too for NodeJS support in their edge workers, afaik)
+  - Although this could be considered out of scope for Stackblitz's interests, we have an interest in porting NodeJS to different programming languages through WASM and I am curious if Stackblitz's technologies could assist (in any way) in this endeavour.
+  - not sure how much more context you require for a better understanding of our needs, we have NodeJS code and we need to compile it to a WASI supported WASM module. from our research, the only other projects that successfully compiled NodeJS to WASM seem to be Stackblitz and WasmEdge
+
+- You might be interested in Javy or ComponentizeJS from BytecodeAlliance
+  - both Javy and ComponentizeJS seem to be to used to compile regular JS to WASM, but not NodeJS, 
+  - Javy specifically states that it does not support compiling NodeJS
+
+- I'm not exactly sure what y'all are doing, but Webctontainers in general does require chrome (ofc), but one way you could look at integrating is via our WebContainer API.
+
+- maybe i have a misconception here, does Stackblitz compile a JS runtime to WASM? (such as QuickJS or V8 with the --jitless flag)
+  - No we don’t compile a JS runtime and it all depends on the browser environment. 
+  - WebContainer is a NodeJS runtime for the browser that allows to execute Node apps natively if that makes sense. 
+  - What that catch phrase from our docs means is that you can compile for example Ruby or Python or any other language to a WASI compatible module and run it inside WebContainer. 
+  - The easiest way is to use the wasm command from the terminal which works similar to other Wasm runtimes like wasmtime. 
+  - But WebContainer is not a compiler but a runtime similar to how Node.js is a runtime.
+  - And WebContainer is fully closed source at this point in time.
+
+- unfortunately there are no open source projects that aid in using NodeJS through Wasm.
+  - Also doubt that TCP/UDP is something that will be exposed by browsers for security reasons, but never say never
+  - right now all of our technology is closed source and our core is not something that can be consumed except for the WebContainer public API which gives you the ability to run Node.js/JavaScript apps on your own without using it through our editor. 
+  - we can't share implementation details so we can definitely discuss on a higher level if you think that helps.
+
+- 👣 You might be interested in something similar to WebVM (CheerpX) like container2wasm (https://github.com/ktock/container2wasm). 
+  - They don't do nodejs->wasm but they can run nodejs in the container. Afaik both have some networking support.
+- that is an option, but the overhead that would add would presume quite a performance decrease, we've been talking with someone from WasmEdge too, he states that NodeJS's APIs are still mostly JS, and that compiling QuickJS to WASM (which is what i understand they are doing) to run NodeJS with WASM mostly needs networking adapted
+  - I understand that WASM does not support JIT, and that QuickJS is JITless, and V8 has a --jitless flag, but JS also has a requirement of GC, and WASM-GC is still at proposal stage as far as i understand
+- container2wasm has networking support through a socket proxy. Have you tried the online demo? It does take a minute to load but it's fast once it's loaded (tested risc python container on mobile) 
 
 - ## [WebContainer API | Hacker News _202302](https://news.ycombinator.com/item?id=34793858)
 - Eric (CEO of StackBlitz) here- your explanation is 100% correct regarding why & how servers need to be used to power parts of WebContainer environments (i.e. proxying npm, git, transforming binaries, amongst a handful of other things).
@@ -137,7 +210,7 @@ modified: 2024-01-25T13:32:35.137Z
 
 - ## 
 
-- ## [Unix in the Browser Tab | Hacker News_202201](https://news.ycombinator.com/item?id=29823022)
+- ## [Unix in the Browser Tab | Hacker News _202201](https://news.ycombinator.com/item?id=29823022)
 
 - I'm one of the authors
   - The biggest problem with Browsix today stems from Spectre mitigations: Shared Array Buffers aren't enabled by default in browsers, and static hosting sites like GitHub Pages don't let you set the right COOP/COEP headers to get them enabled AFAICT.
@@ -171,7 +244,7 @@ modified: 2024-01-25T13:32:35.137Z
 
 - Unfortunately, we did not fully open-source Nodebox for a variety of reasons, some of which are outside of our control. We believe this technology may be the future of improved DX. So, we will continue to explore whether we can open-source it in the future.
 
-- ## Introducing Sandpack 2.0 and Nodebox, a Node.js runtime for any browser._202302
+- ## 🎯 Introducing Sandpack 2.0 and Nodebox, a Node.js runtime for any browser._202302
 - https://twitter.com/codesandbox/status/1626304039251062785
   - Run Node.js in any browser, any device
   - Nodebox is the first runtime that allows you to run Node.js in any browser, any context, and any application 

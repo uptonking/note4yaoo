@@ -15,6 +15,17 @@ modified: 2023-12-15T18:55:05.385Z
 - ## 
 
 - ## 
+# discuss-airtable/excel-lowcode
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [从 Excel 到 Airtable，从 LowCode 到塞尔达 - 知乎 _202309](https://zhuanlan.zhihu.com/p/649524625)
+
+- [AppSmith 竞品调研 - 知乎 _202404](https://zhuanlan.zhihu.com/p/695067490)
+- [伙伴云产品调研 - 知乎 _202404](https://zhuanlan.zhihu.com/p/695067103)
 # discuss-lowcode
 - ## 
 

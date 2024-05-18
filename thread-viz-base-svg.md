@@ -16,7 +16,10 @@ modified: 2021-03-11T11:26:06.670Z
 
 - ## 
 
-- ## 
+- ## SVG is used on >65% of websites. Yet, browsers have been *refusing* to work on SVG, ignoring pressure and pain points from web devs.
+- https://x.com/LeaVerou/status/1791860519315419358
+  - Tons of work (SVG 2, fill & stroke, and more) has sat unimplemented for years. At this point, in standards circles, we know not to touch SVG with a barge pole.
+  - Case that prompted this post, Custom SVG elements. 7y of pressure, a cornucopia of use cases, yet “no implementer interest”
 
 - ## use CSS transforms on part of an SVG icon 
 - https://twitter.com/jh3yy/status/1716920662525116741

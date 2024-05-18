@@ -454,7 +454,7 @@ modified: 2021-08-30T18:56:09.644Z
   - Seafowl's query execution API follows HTTP cache semantics. This means you can put Seafowl behind a CDN like Cloudflare 
   - We (Splitgraph) implemented WASM UDFs in Seafowl, Users can call CREATE FUNCTION within an SQL query to create a WASM UDF.
 # db-popular
-- https://github.com/vitessio/vitess /go
+- https://github.com/vitessio/vitess /17.9kStar/apache2/202405/go
   - https://vitess.io/
   - Vitess is a database clustering system for horizontal scaling of MySQL through generalized sharding.
   - Vitess is the cloud-native, open source technology powering PlanetScale.

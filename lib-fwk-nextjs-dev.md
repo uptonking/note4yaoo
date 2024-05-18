@@ -55,6 +55,17 @@ modified: 2020-12-12T19:22:00.735Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 哭了啊，升级 nextjs13 到 14 的时候，一直碰到个编译错误，花了 2 个多小时，最后发现解决方法是 rm -rf node_modules && rm -rf ./yarn.lock && yarn install。
+- https://x.com/YuTengjing/status/1791870826029240743
+  - 我为什么要浪费这么多时间在 yarn 的 bug 上啊，碰到好几次类似的问题了，yarn 1.x 我一定要换 pnpm 了，草！
+
+- 跟我最近玩 expo 差不多, 每次升级最好是把 node_modules 和 native 的东西全都删干净重新跑，不然一堆奇怪的问题
+  - 单独删除 lockfile 还不顶用，一定要要把 node_modules 也删了，貌似不存在 lockfile 的时候会复用 node_modules，干
+
 - ## [NODE\_OPTIONS='--inspect' does not work as I expect · vercel/next.js · Discussion #46894](https://github.com/vercel/next.js/discussions/46894)
   - node --inspect ./node_modules/next/dist/bin/next dev
 

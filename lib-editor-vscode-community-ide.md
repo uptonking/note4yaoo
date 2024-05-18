@@ -10,10 +10,11 @@ modified: 2024-05-09T09:35:28.467Z
 # guide
 
 - cloud-ide
-  - monaco: Codespaces(GitHub绑定), Gitpod(yml), theia, OpenSumi, StackBlitz, codesandbox-web
+  - monaco: Codespaces(GitHub绑定), Gitpod(yml), theia, OpenSumi/云凤蝶, StackBlitz, codesandbox-web
   - codemirror: sandpack, replit
   - Eclipse Che: OpenShift CDE
   - DevPod: devcontainer-spec + local-and-cloud
+  - 计算平台的演示: jupyter
   - more: Coder(no-cloud/k8s), AWS Cloud9, codenvy
 
 - vscode-ide基础功能

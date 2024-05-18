@@ -28,6 +28,45 @@ modified: 2024-01-25T13:29:10.054Z
 - That said, I was a bit wary of having such a hard dependency on an external service. If CodeSandbox ever goes down, I don't want it to affect my playgrounds!
 - we can build + deploy the bundler code ourselves, to whatever domain we'd like.
   - You can learn how to self-host the bundler in their docs.
+
+## [这么多人用codesandbox，他服务器扛得住么？ - 掘金 _202309](https://juejin.cn/post/7277115202234761257)
+
+- 上面的例子是一个纯前端的React项目。但有些依赖服务端环境的项目没法采用上述方式运行，比如：使用了Docker的项目类似Next.js这样的全栈项目
+  - 纯前端项目：编译与执行都能在浏览器完成
+  - 全栈项目：项目编译在服务端进行，浏览器负责项目执行
+- 他们分别对应codesandbox的两种运行环境：
+  - Browser Sandbox：基于浏览器的本地运行环境
+  - Cloud Sandbox：基于MicroVM的云端运行环境
+- 对于Cloud Sandbox，他底层使用亚马逊开发的Firecracker快速启动轻量级的MicroVM，这也是AWS Lambda底层使用的库。
+- 基于Cloud Sandbox启动的项目确实会占用服务端资源。
+  - 具体来说，每个项目会分配： CPU：2个虚拟 CPU（vCPUs）, 内存：2GB, 存储：6GB
+  - 这块是codesandbox公司的核心业务。毕竟，免费试用满意后，可能就会上付费的Pro版（更多资源分配），或者团队定制版。商业模式与Vercel类似 —— 提供免费基础服务（自担部分资源费用），通过增值的云服务收费。
+- 而前端开发日常使用codesandbox创建的项目，大多数并不是基于Cloud Sandbox，而是基于Browser Sandbox启动的。这些项目并不会给codesandbox带来太多服务端压力。
+
+- 有个很直观的方式区分两种Sandbox —— 当我们新建一个codesandbox项目，在预览区域可以看到项目临时url
+- 新开页面，访问这个url，
+  - 如果请求的资源包括：项目运行所需的静态资源, webpack热更新相关代码
+    - 那代表这是个Cloud Sandbox项目。Cloud Sandbox在云端启动后端服务与当前页面通信，就类似我们本地开发时起的后端服务一样。
+  - 如果请求的资源包括：项目运行所需的静态资源, sandbox初始化相关代码
+    - 那代表这是个Browser Sandbox项目。 sandbox初始化相关代码是一个简化版的webpack，他会在浏览器执行，下载依赖、编译代码，打包并执行代码。
+
+- Browser Sandbox相关代码都是开源的，让我们按照抽象程度从上往下介绍他。
+- 首先是封装最完整的库 —— @codesandbox/sandpack-react。这个React库提供了很多开箱即用的codesandbox模块。
+  - 各个组件通过postMessage与SandackPreview渲染的iframe交互。
+- codesandbox的核心实际上包含三部分内容：
+  1. 各种编辑器相关模块的实现（比如代码编辑部分、控制台、预览）
+  2. Browser Sandpack运行环境，是一个独立的网页，在预览模块(SandackPreview)中通过iframe渲染
+  3. 1与2之间通信的协议（即页面与iframe之间的通信协议）
+  - @codesandbox/sandpack-react实现了1，他依赖的@codesandbox/sandpack-client实现了3。
+  - 2相关的源代码在codesandbox-client/packages/app中。将这个包的代码部署上线后，就能获得一个Browser Sandpack运行环境。
+
+- codesandbox有两种代码运行环境： 
+  - Browser Sandpack：针对编译与执行都能在浏览器完成的纯前端项目 
+  - Cloud Sandpack：针对需要服务端运行环境的项目 
+- 这两种环境会体现为一个独立网站，这个网站会作为iframe嵌入在codesandbox编辑器的预览模块中。 
+  - 预览模块通过定义好的通信协议与其他模块（比如代码编辑模块、控制台模块）通信。 
+  - 对于Cloud Sandpack，会占用一定服务端资源。
+  - 对于Browser Sandpack，则不会占用什么服务端资源，因为他大部分逻辑都是在前端执行的。
 # blogs-js-sandbox 🧊
 
 ## [浅析 JavaScript 沙箱 - 掘金](https://juejin.cn/post/7148335784431468551)
@@ -123,10 +162,17 @@ Function('str', 'console.log(str, aaa)')('aaa:');
 - [技术夹](https://www.yuque.com/wangxiangzhong/mvugau)
   - [一文彻底搞懂前端沙箱](https://www.yuque.com/wangxiangzhong/mvugau/bgs3po)
 
+## [搭建一个浏览器版 Vite 沙箱 · mcuking/blog _202201](https://github.com/mcuking/blog/issues/111)
+
 ## [搭建一个属于自己的在线 IDE - 网易云音乐技术团队 _202010](https://juejin.cn/post/6882541950205952013)
 
-- [云音乐低代码：基于 CodeSandbox 的沙箱性能优化 - 掘金 _202205](https://juejin.cn/post/7102243774985666596)
-  - 距离发布如何私有化部署 CodeSandbox 沙箱的文章《搭建一个属于自己的在线 IDE》 已经过了一年多的时间，最开始是为了在区块复用平台上能够实时构建前端代码并预览效果。
+- [搭建一个属于自己的在线 IDE · mcuking/blog](https://github.com/mcuking/blog/issues/86)
+
+## [云音乐低代码：基于 CodeSandbox 的沙箱性能优化 - 掘金 _202205](https://juejin.cn/post/7102243774985666596)
+
+- [云音乐低代码：基于 CodeSandbox 的沙箱性能优化 · mcuking/blog](https://github.com/mcuking/blog/issues/110)
+
+- 距离发布如何私有化部署 CodeSandbox 沙箱的文章《搭建一个属于自己的在线 IDE》 已经过了一年多的时间，最开始是为了在区块复用平台上能够实时构建前端代码并预览效果。
   - 不过在去年云音乐内部启动的基于源码的低代码平台项目中，同样有在线实时构建前端应用的需求，最初是采用从零开发沙箱的方式，不过自研沙箱存在以下几点问题：
     - 灵活性较差
     - 兼容性较差
@@ -265,4 +311,13 @@ Function('str', 'console.log(str, aaa)')('aaa:');
 - Smaller Factors
   - Private/Unlisted Sandboxes
   - Jest Support
+# bridge
+
+## [JSBridge 实现原理解析 · mcuking/blog _201904](https://github.com/mcuking/blog/issues/39)
+
+- JSBridge 项目以 js 与 android 通信为例，讲解 JSBridge 实现原理，下面提到的方法在 iOS（UIWebview 或 WKWebview）均有对应方法。
+# wasm
+
+## [WebAssembly 解释器实现篇 · mcuking/blog _202106](https://github.com/mcuking/blog/issues/96)
+
 # more

@@ -87,6 +87,11 @@ modified: 2021-05-14T15:06:46.615Z
   - Codebox is built with web technologies: node.js, javascript, html and less. The IDE possesses a very modular and extensible architecture, that allows you to build your own features with through add-ons. 
   - Codebox is the first open and modular IDE capable of running both on the Desktop and in the cloud (with offline support).
 
+- https://github.com/gcodecloud/geekcode.cloud /NonOpen
+  - https://geekcode.cloud/
+  - Cloud IDE是基于云的集成开发环境。IDE主要工作是编写、运行、调试和打包代码。传统的方式是开发者在本地的电脑上设置IDE，但Cloud IDE 允许开发者使用浏览器设置云开发环境，在浏览器中完成开发程序。
+  - 编译代码时热更新主机配置，提高CPU的数量、内存大小以提高编译速度。
+
 - https://github.com/wasdk/WebAssemblyStudio /MIT/201901/ts/inactive
   - http://webassembly.studio/
   - Run C, Rust, Wat, or AssemblyScript code as WebAssembly in the browser.

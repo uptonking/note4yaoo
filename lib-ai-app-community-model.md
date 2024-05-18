@@ -46,6 +46,19 @@ modified: 2023-10-30T07:34:03.602Z
 
 - sudo systemctl daemon-reload
 - sudo systemctl restart ollama
+# discuss-ai-api/tools
+- ## 
+
+- ## Hugging Face 宣布投入 1000 万美元用于免费共享 GPU，旨在帮助小型开发者、学术界和初创公司开发新的 AI 技术，抗衡 AI 进步的集中化。
+- https://x.com/glow1n/status/1791488036259434749
+  - CEO Clem Delangue 表示，这一举措将通过 ZeroGPU 计划实现，促进 AI 技术的去中心化发展
+  - ZeroGPU 使用 Nvidia A100 GPU 设备，提供高效的计算资源。
+  - Hugging Face 的 Spaces 平台已有超过 30 万个 AI 演示。
+
+- ## Cloudflare 的 Workers AI 每天可以免费使用 10, 000 Neurons（相当于生成100-200个LLM响应，500次翻译，500秒的语音转文字音频） ，调用方式兼容 OpenAI 
+- https://x.com/scomper/status/1791804644332908646
+- 好像都是小模型为主吧
+
 # discuss
 - ## 
 

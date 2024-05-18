@@ -432,6 +432,14 @@ modified: 2023-06-23T12:46:53.288Z
     - https://editor.raspberrypi.org/
     - Code Editor backend
 
+- https://github.com/phcode-dev/phoenix /1.3kStar/AGPLv3/202405/js
+  - https://phcode.dev/
+  - Phoenix is a modern open-source Code Editor for the web, built for the browser
+  - Extension support maintaining full compatibility with Brackets extensions (except brackets-node extensions).
+  - 依赖codemirror5、@floating-ui/dom、file-saver、marked、mustache
+  - Support for pluggable remote back-ends.
+  - Phoenix core will work from a static web server.
+  - Adobe 公司开发过一个代码编辑器 Bracket，现在将其做成了 Web 版，重新命名为 Phoenix，可以当作线上 IDE 使用。
 - https://github.com/adobe/brackets /MIT/202003/js/archived
   - http://brackets.io/
   - a modern open-source code editor for HTML, CSS and JavaScript that's built in HTML, CSS and JavaScript.

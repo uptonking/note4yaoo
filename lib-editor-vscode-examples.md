@@ -39,8 +39,12 @@ modified: 2023-01-21T18:58:29.846Z
     - Desktop IDE 场景下的窗口管理
     - Cloud IDE 场景下的容器/虚拟机管理
   - CodeBlitz主要在读、写、运行和提交等方面进行了探索，与带有容器的标准版本进行了对标。
+  - [离线部署 | OpenSumi](https://opensumi.com/zh/docs/integrate/universal-integrate-case/offline-deployment)
+    - OpenSumi 天然支持离线部署场景，只需要将内部的一些网络资源如（icon、onig-wasm）等通过浏览器端的配置替换成内网的资源地址即可
   - https://github.com/opensumi/codeblitz /MIT/202401/ts/inactive
     - https://codeblitz.opensumi.com/
+    - https://codeblitz.cloud.alipay.com/zh
+    - 基于 OpenSumi 的纯前端 IDE 基础框架
     - Pure front-end IDE framework based on OpenSumi
   - [如何评价阿里 & 蚂蚁自研 IDE 研发框架 OpenSumi？ - 知乎](https://www.zhihu.com/question/519740662)
     - 高性能、高定制性的双端（Web 及 Electron）IDE 研发的框架

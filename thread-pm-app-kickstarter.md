@@ -617,14 +617,6 @@ modified: 2021-10-29T15:02:28.882Z
   - This is my first paid content to teach the library code, Zustand.
 - [Build your own state management library for React (zustand-like)](https://rohitpotato.hashnode.dev/build-your-own-state-management-library-for-react)
 
-- ## WebVM
-- https://webvm.io/
-- https://github.com/leaningtech/webvm
-  - WebVM is a server-less virtual Linux environment running fully client-side in HTML5/WebAssembly. 
-  - In this demo, it runs an unmodified Debian distribution including many native development toolchains.
-  - WebVM is powered by the CheerpX virtualization engine, and enables safe, sandboxed client-side execution of x86 binaries on any browser.
-  - CheerpX includes an x86-to-WebAssembly JIT compiler, a virtual block-based file system, and a Linux syscall emulator.
-
 - ## ar5iv
 - https://ar5iv.org/
 - Articles from arXiv.org as responsive HTML5 web pages.

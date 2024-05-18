@@ -14,7 +14,12 @@ modified: 2022-04-05T13:25:40.892Z
 
 - ## 
 
-- ## 
+- ## Simple check if a #crdt / #sync product can be trusted
+- https://x.com/JFriedensreich/status/1791519902886465784
+  - i want to use the opportunity to raise awareness for what i call the todoMVC test.
+  - It's the simplest data modelling test to check if any implementation of CRDT / offline sync project/product is usable for a real database/backend/datastore. 
+  - 95% of the things in the "local first and CRDT sphere"  will fail this and this is what drives me crazy at least once a week.
+  - @CouchDB  is one of the few systems that gets this right.
 
 - ## Tbh. CRDTs as a domain are still pretty fresh with low barrier of entry - hence the hype to become creator. 
 - https://twitter.com/LewisCTech/status/1763797001945403455

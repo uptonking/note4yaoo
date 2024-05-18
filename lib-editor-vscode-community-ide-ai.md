@@ -98,6 +98,17 @@ modified: 2024-05-10T06:17:27.016Z
 
 - ## 
 
+- ## [AI -> Code 一些产品体验 - 知乎](https://zhuanlan.zhihu.com/p/695066426)
+
+- [AI*Lowcode 的一些结合场景 - 知乎 _202309](https://zhuanlan.zhihu.com/p/658219081)
+
+- ## [如何利用AI工具提高程序员的编码效率？ - 知乎](https://www.zhihu.com/question/645556922)
+- 推荐三个开源的AI编程工具：Devika、Open-Devin和SWE Agent。它们不仅仅是代码的生成者，更是软件工程领域的创新者。
+
+- 
+- 
+- 
+
 - ## [面向程序员的编程大模型AI | 微言码道 _202403](https://taoofcoding.tech/blogs/2024-03-10/the-code-ai-for-develope)
 - Github Copilot是一个由微软, Github以及OpenAI合作开发的专门面向编程的AI工具.
   - Github Copilot的核心功能包括:

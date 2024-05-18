@@ -10,7 +10,10 @@ modified: 2023-08-19T16:37:13.736Z
 # guide
 
 # architecture
-- [从 VSCode 看大型 IDE 技术架构 - 知乎](https://zhuanlan.zhihu.com/p/96041706)
+- [从 VSCode 看大型 IDE 技术架构 - 知乎 _201912](https://zhuanlan.zhihu.com/p/96041706)
+  - 为什么要去看 VSCode？ 因为我们团队在做的中后台快速研发平台云凤蝶也是一款类似 Web IDE 形态的产品
+  - 谈起 Web IDE，没人能绕开 VSCode，它非常流行，同时又完全开源，总共 350000 行 TypeScript 代码的巨大工程，使用了 142 个开源库。
+  - 市面上选择基于 VSCode 去修改定制的 IDE 比比皆是：Weex Studio、白鹭Egret Wing、快应用IDE
 
 - [hullis 博客系列](https://github.com/wzhudev/blog/issues?q=is%3Aissue)
   - [vscode 源码解析 - 依赖注入 · hullis/blog](https://github.com/hullis/blog/issues/25)

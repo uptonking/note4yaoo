@@ -11,6 +11,9 @@ modified: 2023-09-02T09:17:22.992Z
 
 - usecase
   - csb做好了observable-notebook/d3showcase要做的事
+
+- fans-sandbox
+  - https://github.com/mcuking/vitesandbox-client
 # js-sandbox
 - https://github.com/codesandbox/codesandbox-client /12.9kStar/GPLv3+apache2/202404/js
   - https://codesandbox.io/
@@ -261,15 +264,71 @@ modified: 2023-09-02T09:17:22.992Z
   - 依赖antd.v5、@monaco-editor/react、xterm、zustand、express、directory-tree
   - The basic layout provides a VS Code experience, wherein a user can navigate between his available files from the file manager. 
   - Integrated with this is also an iframe providing realtime feedback to changes you may make in your project. 
-  - [Made an online code editor, like CodeSandbox. Think VS Code in the browser : node_202304](https://www.reddit.com/r/node/comments/12ceajg/made_an_online_code_editor_like_codesandbox_think/)
+  - [Made an online code editor, like CodeSandbox. Think VS Code in the browser : node _202304](https://www.reddit.com/r/node/comments/12ceajg/made_an_online_code_editor_like_codesandbox_think/)
     - I've made an online code editor from scratch
-    - It uses xterm.js to give a shell to the user on the frontend, and monaco editor for editing your files, and I generate the folder structure recursively. 
-    - I've used Zustand for global state management
+    - It uses `xterm.js` to give a shell to the user on the frontend, and `monaco` editor for editing your files, and I generate the folder structure recursively. 
+    - I've used `Zustand` for global state management
     - I tried to get it as close to VS Code as possible, and there's a bunch of stuff still left to do
+
+## sandpack-examples
+
+- https://github.com/jerrywu001/sandpack-vue3 /MIT/202402/ts
+  - https://sandpack-vue3.js-bridge.com/
+  - Vue3 components that give you the power of editable sandboxes that run in the browser.
 # nodebox/webcontainer
 - https://github.com/Sandpack/nodebox-runtime
   - https://sandpack.codesandbox.io/docs/advanced-usage/nodebox
+  - Nodebox is a runtime for executing Node.js modules in the browser.
+  - For personal usage, there are no limitations on how you can use Sandpack 
+  - For commercial usage, you can freely use all Sandpack templates except: 
+    - nextjs, any vite template, astro, node.
+    - Any other sandbox that uses Nodebox as a runtime environment.
+  - If you are interested in using Sandpack 2.0 or Nodebox for commercial purposes, please contact us.
+  - Can I run Nodebox without Sandpack?
+    - Yes, we made Nodebox available as a standalone package on npm
   - [Docs don't explain how to self host a Nodebox instance?](https://github.com/Sandpack/nodebox-runtime/issues/48)
+
+- https://github.com/RealSput/Wenode /202302/js/inactive
+  - WebContainers, except it's a million times easier to use
+  - https://wenode.seven7four4.repl.co (hosted on Replit to be able to use SharedArrayBuffers)
+  - [I wrote a library called Wenode, which takes the concept of WebContainers and makes it so readable that even beginner programmers could even understand it. : r/webdev _202302](https://www.reddit.com/r/webdev/comments/11c1wao/i_wrote_a_library_called_wenode_which_takes_the/)
+
+- https://github.com/olydis/node-in-browser /202209/ts/inactive
+  - https://node-in-browser.pages.dev/
+  - An experiment to bootstrap Node.js (version 8.0.0) in the browser in order to run Node apps or npm libraries unmodified.
+  - [How to run Node.js (apps) in the browser? | by Johannes Bader | CloudBoost _201711](https://blog.cloudboost.io/how-to-run-node-js-apps-in-the-browser-3f077f34f8a5)
+
+- https://github.com/opensumi/codeblitz /MIT/202401/ts/inactive
+  - https://codeblitz.opensumi.com/
+  - https://openlab.antchain.antgroup.com/ide
+  - https://codeblitz.cloud.alipay.com/zh
+  - 基于 OpenSumi 的纯前端 IDE 基础框架
+  - Pure front-end IDE framework based on OpenSumi
+  - 除了无法运行 node 服务，在前端上体验和标准的产品是完全一致的
+  - 模拟文件服务以保持与 IDE 产品一致。提供多种文件系统服务，包括基于内存、基于 IndexedDB 和基于远程接口等文件系统
+  - 提供了基于Worker的语言服务，支持语法高亮和LSP语言服务，具备语法分析、智能补全、格式化等功能
+  - anycode扩展支持很多语言java/php
+  - https://github.com/opensumi/codeblitz-sample
+  - [会和stackblitz一样吗？特别是web container方面 _202309](https://github.com/opensumi/codeblitz/issues/16)
+    - 这次开源的是无需容器在浏览器的运行的 IDE 框架，类似于 stackblitz 提供的 IDE 产品一样，通过 codeblitz 可能做出类似于 stackblitz 一样的 IDE 产品，
+    - 但是 stackblitz 除了 IDE 还有一块就是你说的 web container 的技术，这块本次没有开源，内部还在验证中，如果你有需要也可以直接使用 stackblitz 提供的 webcontainers.io/guides/quickstart 或者用 codesandbox 提供的 codesandbox/nodebox-runtime 来和 codeblitz 集成
+  - [极速版 IDE 框架 CodeBlitz 开源啦！ - 知乎_202309](https://zhuanlan.zhihu.com/p/656515617)
+    - 在OpenSumi的基础上对文件系统、通信系统、插件机制等模块进行扩展，以更好地适用于没有容器、本地客户端环境的纯浏览器环境
+    - CodeBlitz提供了一种只需使用浏览器即可体验
+    - IDE的场景。与github.dev和vscode.dev不同的是，CodeBlitz是一个框架，通过OpenSumi模块和插件的方式，可以为上层产品量身定制符合其业务场景的WebIDE。
+  - [如何评价阿里 & 蚂蚁自研 IDE 研发框架 OpenSumi？ - 知乎](https://www.zhihu.com/question/519740662)
+    - 高性能、高定制性的双端（Web 及 Electron）IDE 研发的框架
+    - 设计之初就是要兼容 VS Code 插件生态，我们计划每三个月时间去完成一次 VS Code 插件 API 的适配工作
+  - [比快更快，极速版 IDE 框架 CodeBlitz 开源 ](https://www.sohu.com/a/719044467_355140)
+    - 文件系统：利用 BrowserFS 的能力，在浏览器实现了七种文件读写策略，可以应对不同的业务场景；如果内置的文件系统不能满足需求，集成方也可以提供 FileSystemProvider 自己实现文件系统接口
+    - 语言服务：通过和蚂蚁代码分析团队的合作，CodeBlitz 支持了 Java、TS、JS 三种语言的离线语言服务索引（LSIF）服务，可在代码提交时离线计算当前代码索引用于语言服务的展示；
+      - 同时借助于 Tree-sitter 技术，对于 Python、Go 、Rust、C++、Php 几种语言也支持简单的定义跳转、查找引用等功能
+      - 正在尝试将 OpenSumi Node.js 插件进程运行在浏览器 WASM 环境，提供与有容器版本一致的 TS/JS 语言服务能力，进一步增强语言服务体验
+    - 通信方式改造：将之前基于 WebSocket 调用的方式改造为前端 Function 直接的调用，前端无需感知环境的变化，调用后端无需修改替换前端 Provider 实现，直接通过 DI 方式替换后端模块实现即可
+  - [我们用大模型给 IDE 升了个级，这是我们总结的万字心得 ](https://www.53ai.com/news/qianyanjishu/1996.html)
+    - 尽管有补全和对话视图这样的基础 API 功能，VS Code 对于其他研发活动开放出来 AI 扩展功能非常有限，无法对运行、调试、问题面板、终端、Git 等 IDE 功能进行更多的扩展，包括最新的 Participant API 也只供给 GitHub Copilot 对话进行扩展，以至于 Anysphere 的 Cursor、字节的 MarsCode 需要 Fork VS Code 进行定制化开发，以便满足其特殊需求，但这样的分叉又不可避免地增加了后续升级和解决冲突的成本。
+    - 市面上迫切需要一个可以高度定制和扩展的 AI 原生 IDE 框架，这个框架应当能够对代码补全、问题诊断、终端操作、调试、对话、IDE 设置等功能进行 AI 封装，并提供即插即用的集成方式
+    - OpenSumi 在 2023 年 7 月份开始进行 AI 方向的改造，目标是将 OpenSumi 从传统 IDE 框架升级至 AI Native IDE Framework
 
 - browsix /3.1kStar/MIT/201904/ts/inactive
   - https://github.com/plasma-umass/browsix
@@ -283,11 +342,63 @@ modified: 2023-09-02T09:17:22.992Z
   - 🍴 forks
     - https://github.com/milahu/browsix
     - https://github.com/SamGinzburg/browsix
+
+## nodebox-examples
+
+## webcontainer-examples
+
+- https://github.com/kat-tax/vslite /MIT/202312/ts/inactive
+  - https://vslite.dev/
+  - More than Monaco, less than VSCode
+  - https://discord.com/channels/364486390102097930/681363253607006238/1115011573891735645
+    - I'm working on a lite version of VSCode 
+    - There's a file system tree, Webcontainer shell w/ terminal, docking system, and more.
+    - Eventually the plan is to be able to embed it easily into other projects and manipulate it via postMessage.
+
+- https://github.com/xun082/online-edit /MIT/202309/ts/inactive
+  - https://xun082.github.io/online-edit/
+  - 在线代码编辑器
+  - [我开源了一个能在浏览器上执行 npm 命令的在线代码编辑器 _202308](https://juejin.cn/post/7272869799960281151)
+
+- https://github.com/wangrongding/web-ide /202311/ts/vue/inactive
+  - 从零到一实现一个基于 web 的在线代码编辑器，目前正在开发阶段。
+  - terminal : 运行在 web 上的终端，基于 WebContainer 实现
+  - editor : 基于 web 的编辑器
+  - file : 基于 web 的文件管理器
+
+- https://github.com/neverUsedGithub/WebEditor /202304/js/inactive
+  - A basic online code editor using Webcontainers.
 # utils
 - https://github.com/ximing/jsvm2 /202402/ts
   - Javascript Interpreter implemented by typescript（TS实现的JS解释器）
   - https://github.com/ximing/jsvm3 /202402/ts
     - 自定义字节码的jsvm
+# wasm-based
+- https://github.com/ktock/container2wasm /apache2/202405/cpp
+  - https://ktock.github.io/container2wasm-demo/
+  - a container-to-wasm image converter that enables to run the container on WASM.
+  - Converts a container to WASM with emulation by Bochs (for x86_64 containers) and TinyEMU (for riscv64 containers).
+  - Runs on WASI runtimes (e.g. wasmtime, wamr, wasmer, wasmedge, wazero)
+  - Runs on browser
+  - contaienr2wasm creates a WASM image that runs the container and the Linux kernel on the emulated CPU.
+  - Though more and more programming languages start to support WASM, it's not easy to run the existing programs on WASM. 
+    - This sometimes requires re-implementing and re-compiling them and costs extra time for development. 
+    - This is a PoC converter tries to solve it by enabling running unmodified containers on WASM.
+# vm/docker-based
+- https://github.com/leaningtech/webvm /apache2+NonCommercial/202312/js
+  - https://webvm.io/
+  - This repository hosts the source code for https://webvm.io, a Linux virtual machine that runs in your browser.
+  - WebVM is a server-less virtual environment running fully client-side in HTML5/WebAssembly. 
+  - It's designed to be Linux ABI-compatible. It runs an unmodified Debian distribution including many native development toolchains.
+  - WebVM is powered by the CheerpX virtualization engine, and enables safe, sandboxed client-side execution of x86 binaries on any browser.
+  - CheerpX includes an x86-to-WebAssembly JIT compiler, a virtual block-based file system, and a Linux syscall emulator.
+  - This project depends on:
+    - CheerpX, made by Leaning Technologies for x86 virtualization and Linux emulation
+    - xterm.js, for providing the Web-based terminal emulator
+    - Tailscale, for the networking component
+    - lwIP, for the TCP/IP stack, compiled for the Web via Cheerp
+  - The public CheerpX deployment is provided as-is and is free to use for technological exploration, testing and non-commercial uses.
+  - If you want to build a product on top of CheerpX/WebVM, please get in touch with sales
 # more
 - https://github.com/BrowserBox/BrowserBox /AGPLv3/js
   - https://dosyago.com/
