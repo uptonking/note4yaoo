@@ -281,6 +281,23 @@ modified: 2024-05-06T02:52:41.789Z
 - Apply From Chat: get code suggestions from chat into your editor
 - Rules for AI
   - use this for warning the AI of common gotchas in your codebase or for controlling its code style.
+# pm-devin
+
+## [Introducing Devin, the first AI software engineer _20240312](https://www.cognition.ai/introducing-devin)
+
+- Meet Devin, the world’s first fully autonomous AI software engineer.
+- With our advances in long-term reasoning and planning, Devin can plan and execute complex engineering tasks requiring thousands of decisions
+  - Devin can recall relevant context at every step, learn over time, and fix mistakes.
+  - We've also equipped Devin with common developer tools including the shell, code editor, and browser within a sandboxed compute environment
+- Devin can learn how to use unfamiliar technologies.
+- Devin can build and deploy apps end to end.
+- Devin can autonomously find and fix bugs in codebases.
+- Devin can train and fine tune its own AI models.
+- Devin can address bugs and feature requests in open source repositories.
+- Devin can contribute to mature production repositories. 
+- We even tried giving Devin real jobs on Upwork and it could do those too
+
+- We evaluated Devin on SWE-bench, a challenging benchmark that asks agents to resolve real-world GitHub issues found in open source projects like Django and scikit-learn.
 # pm-code-ai
 - [2024 Roadmap · opensumi/core Wiki](https://github.com/opensumi/core/wiki/2024-Roadmap)
   - AI Native 模块发布：提供 AI 原生的 IDE 交互体验

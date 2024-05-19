@@ -59,6 +59,9 @@ modified: 2024-02-17T13:01:44.351Z
 
 - Update on 5/25/2021: The Vitess maintainer team currently has no plans to add Postgres support to Vitess.
 
+- FYI: there is Citus and it is doing something similar to Vitess.
+  - I'll probably start with Citus or Yugabyte for now, since even if Postgres support is added it is still far away.
+
 - ## [PostgreSQL support? · vitessio/vitess _201503](https://github.com/vitessio/vitess/issues/479)
 - A similar product but support postgreSQL https://github.com/citusdata/citus
 

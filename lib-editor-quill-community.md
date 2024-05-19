@@ -80,6 +80,16 @@ quill.clipboard.dangerouslyPasteHTML("<p>here is some <strong>awesome</strong> t
 quill.pasteHTML(YOUR_HTML_HERE, 'silent');
 ```
 
+- ## 🎯 开源富文本编辑器 Quill 2.0 刚刚发布了！这也是我第一个全职做的开源项目 _20240417
+- https://x.com/luinlee/status/1780428748837593472
+- 支持 markdown 输出吗
+  - 没有内置支持，因为用户可以扩展自己的格式。不过 Quill 可以导出 Delta 格式 (quill.getContents())。有一些 Delta 转 Markdown 的库，或者自己写也不麻烦
+- 希望内嵌表格能更完善一点。
+  - 目前底层已经支持表格嵌套其它 block 了，不过表格模块本身还没有用到这个特性，下一步会优化哈
+- 我们当前使用类似 ListContainer 的机制实现，数量多了性能不太好。
+  - 我们的实现是每个单元格都是一个 Quill 编辑器，不过默认不渲染编辑器，只有当用户第一次互动时才初始化。基本上是 contenteditable 的性能瓶颈了
+- 在quill上投入了2年多，不过当时看着不更新了，就基于dev分支进行二次开发，中间也踩了非常多的坑。目前正在做表格相关的事情，方案用table-embed的方式，看过slab的表格，目前还不支持单元格合并，希望做个类似飞书的表格
+
 - ## 🎯 [Quill v2 – Rich text editor | Hacker News _202404](https://news.ycombinator.com/item?id=40089460)
 - I've used prosemirror enough to have written custom nodes, commands, and custom code around its collaboration model. 
   - I got good results with all of this and I don't know any other platform that could have matched it. The docs are thoughtful. 

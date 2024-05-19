@@ -13,7 +13,10 @@ modified: 2022-11-07T11:00:28.824Z
 
 - ## 
 
-- ## 
+- ## DAU Calculator —— 日活计算器
+- https://x.com/ftium4/status/1792057840653545571
+  - https://ethonlau.github.io/dau-calculator/
+  - 产品经理工作中经常需要通过提升留存、新增这些指标，来达成 DAU（Daily Active Users 一天用户总活跃数） 目标。因此也少不了测算 DAU 的增长趋势。只要在这个网页输入几个关键数值，就可以帮你预测 DAug 和实时画曲线图。
 
 - ## 国内的独立开发者好像不会推广自己的产品，他们做了很多产品，但是仅仅放到个人简介里，不会到各大社交媒体上持续传播
 - https://twitter.com/LuoSays/status/1791019278554308999

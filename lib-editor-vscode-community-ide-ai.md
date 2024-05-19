@@ -40,18 +40,34 @@ modified: 2024-05-10T06:17:27.016Z
   - CodeShell具有70亿参数，在五千亿Tokens进行了训练，上下文窗口长度为8192。
   - 在权威的代码评估Benchmark（HumanEval与MBPP）上，CodeShell取得同等规模最好的性能。
   - CodeShell CPP：CodelShell对话模型CPP版本，支持开发者在没有GPU的个人电脑中使用。注意，CPP版本同样支持量化操作，用户可以在最小内存为8G的个人电脑中运行CodeShell。
+
+- https://github.com/princeton-nlp/SWE-bench /MIT/202405/jupyter
+  - https://www.swebench.com/
+  - [ICLR 2024] SWE-Bench: Can Language Models Resolve Real-world Github Issues?
+  - SWE-bench is a benchmark for evaluating large language models on real world software issues collected from GitHub. 
+    - Given a codebase and an issue, a language model is tasked with generating a patch that resolves the described problem.
+  - We have released SWE-agent, which sets the state-of-the-art on the full SWE-bench test set
+  - https://x.com/jyangballin/status/1775114444370051582 /20240402
+    - SWE-agent is our new system for autonomously solving issues in GitHub repos. It gets similar accuracy to Devin on SWE-bench, takes 93 seconds on avg + it's open source
+    - We designed a new agent-computer interface to make it easy for GPT-4 to edit+run code
+    - SWE-agent works by interacting with a specialized terminal, which allows it to: Open, scroll and search through files; Edit specific lines w/ automatic syntax check; Write and execute tests
+  - https://github.com/princeton-nlp/SWE-agent /MIT/202405/python
+    - https://swe-agent.com/
+    - SWE-agent takes a GitHub issue and tries to automatically fix it, using GPT-4, or your LM of choice. 
+    - It solves 12.29% of bugs in the SWE-bench evaluation set and takes just 1.5 minutes to run.
 # discuss-stars
 - ## 
 
 - ## 
 
 - ## 
-# discuss-products-ide-ai
+# discuss-ide-ai
 - ## 
 
 - ## 
 
-- ## 
+- ## AI 补全工具可能只是冲击传统编程方式的第一步。 AI 设计 / AI CodeGen / AI 文档 / AI TDD / AI Lint 可能还在路上。
+- https://x.com/hylarucoder/status/1791807537995747459
 
 - ## [大语言模型加速信创软件 IDE 技术革新 _华为_QCon全球软件开发大会 _202312](https://www.infoq.cn/article/vg9loxtgp3ehdpddec49)
 - 「智能化信创软件 IDE」专题，邀请到华为云开发工具和效率领域首席专家、华为软件开发生产线 CodeArts 首席技术总监王亚伟担任专题出品人
@@ -98,6 +114,23 @@ modified: 2024-05-10T06:17:27.016Z
 
 - ## 
 
+- ## 🎯 Devin 2.0 _20240504
+- https://x.com/itsandrewgao/status/1786613503471829485
+  - Launch Interactive mode to help Devin navigate the web. Really useful if it gets stuck on something like a CAPTCHA.
+  - One of my biggest gripes with Devin was not being able to intervene and edit code. You can now do so by launching a web VSCode. 
+  - Another super exciting update is Cookies which enables Devin to log in to websites for your account **without needing to give Devin your password**.
+  - Machine snapshots let you save the state of Devin so when the server shuts down, you can start up again
+
+- ## 👾 [Replit's new Code LLM: Open Source, 77% smaller than Codex, trained in 1 week | Hacker News _202305](https://news.ycombinator.com/item?id=35803435)
+- thank you for open sourcing this! It's a real gift to the community to have a model intended for "commercial use" that's actually licensed as such.
+
+- The model is way too small, comparing it to Codex feels disingenous. Sure it's 77% smaller, it's also 77% worse. Although, it's a cool project nonetheless.
+
+- my favorite learning is how they are pushing the state of the art - openai’s HumanEval is the industry standard benchmark for code LLMs, but Reza kindly went above and beyond to show how they use “AmjadEval” - using coder intuition to capture human preference on what output is more helpful to coders
+
+- No Clojure. No Julia. No Haskell. No Racket. No Scheme. No Common Lisp. No OCaml. And, as much as I despise Microsoft, No C#. No F#. No Swift. No Objective-C. No Perl. No Datalog. A glaringly lacking choice of languages.
+  - I hate to admit, but Python, C, Java, and JS cover most of the modern programming. But not supporting C# sounds like a bad idea.
+
 - ## [AI -> Code 一些产品体验 - 知乎](https://zhuanlan.zhihu.com/p/695066426)
 
 - [AI*Lowcode 的一些结合场景 - 知乎 _202309](https://zhuanlan.zhihu.com/p/658219081)
@@ -124,6 +157,8 @@ modified: 2024-05-10T06:17:27.016Z
 - CodeLlama 70B是700亿参数, 对GPU内存的要求非常高, 这个硬件要求, 一般人或公司整不起.
   - 如果真想部署一个本地的编程大模型, 可能starCoder2是更具可行性的选择. starcoder2的bigcode训练的开源大模型
 # discuss
+- ## 
+
 - ## 
 
 - ## 

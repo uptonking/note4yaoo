@@ -15,25 +15,6 @@ modified: 2024-05-12T15:39:22.456Z
 - ## 
 
 - ## 
-# discuss-code-ai
-- ## 
-
-- ## 
-
-- ## [Replit's new Code LLM: Open Source, 77% smaller than Codex, trained in 1 week | Hacker News _202305](https://news.ycombinator.com/item?id=35803435)
-- thank you for open sourcing this! It's a real gift to the community to have a model intended for "commercial use" that's actually licensed as such.
-
-- The model is way too small, comparing it to Codex feels disingenous. Sure it's 77% smaller, it's also 77% worse. Although, it's a cool project nonetheless.
-
-- my favorite learning is how they are pushing the state of the art - openai’s HumanEval is the industry standard benchmark for code LLMs, but Reza kindly went above and beyond to show how they use “AmjadEval” - using coder intuition to capture human preference on what output is more helpful to coders
-
-- No Clojure. No Julia. No Haskell. No Racket. No Scheme. No Common Lisp. No OCaml. And, as much as I despise Microsoft, No C#. No F#. No Swift. No Objective-C. No Perl. No Datalog. A glaringly lacking choice of languages.
-  - I hate to admit, but Python, C, Java, and JS cover most of the modern programming. But not supporting C# sounds like a bad idea.
-
-- 
-- 
-- 
-
 # discuss
 - ## 
 
@@ -54,10 +35,6 @@ modified: 2024-05-12T15:39:22.456Z
 - ## [Show HN: Strada – Cloud IDE for Connecting SaaS APIs | Hacker News _202402](https://news.ycombinator.com/item?id=39469657)
 - Look very similar to the script builder portion of https://github.com/windmill-labs/windmill, but not open-source, not self-hostable, without open-source integrations (https://hub.windmill.dev/) and without a workflow engine
 
-- ## [Replit now supports every programming language in Nix | Hacker News _202105](https://news.ycombinator.com/item?id=27269292)
-- 
-- 
-
 - ## [Launch HN: Nimbus (YC W22) – Cloud dev environments for teams | Hacker News _202208](https://news.ycombinator.com/item?id=32496462)
 - Nimbus is more like local development, we're building for teams that use a wide set of IDEs. Think of us as a "machine first" cloud environment instead of "repo first". So its like having a laptop in the cloud for every project.
   - Our differences means we've prioritized local editor integrations, use a full EC2 machine dedicated to each user, aim to be more flexible (e.g. you can schedule when your machines are active), and provide more power (right now up to 8vcpu 32gb ram, but customizable by us).
@@ -71,15 +48,6 @@ modified: 2024-05-12T15:39:22.456Z
 
 - ## [Show HN: Eleven – open-source alternative to Codespaces | Hacker News _202212](https://news.ycombinator.com/item?id=34142602)
 - Running it in a VM is a huge maintenance overhead. This at first glance looks like a great PoC. You might have to eventually support kubernetes or ecs equivalent thing on each cloud provider from production readiness point of view as well as from admin perspective, the way gitpod works.
-
-- ## [Replit Mobile App | Hacker News _202210](https://news.ycombinator.com/item?id=33263432)
-- This is one of those examples for me where the idea is far superior than the implementation. 
-  - The idea of anyone being able to quickly write code from anywhere, as the main promo video suggests, is fantastic and greatly motivating. 
-  - In practice, coding on an iPhone (even with an innovative new joystick), is gimmicky(花招; 噱头) at best, given how deeply ingrained good ergonomics are in the coding process.
-- This is mostly aimed at people who don't have the luxury of coding from a computer.
-
-- Microsoft's "Touch Develop" research project from a decade ago was actually amazingly productive and usable. It made each separate part of a line of code into a selectable element, and used predictive analysis to guess what your next entry would be with surprising accuracy. So, for example, if you've already created a variable within a specific scope like a function, when you've come to a point in a line where a variable would be useful like "a += [variable could go here]", you could just tap-select it from a list. Since the named elements were kept track of, you could select and rename a variable or function and it would automatically be changed everywhere. You could grab whole functions like this and move them around as needed.
-  - Conceptually, imagine that instead of writing out a line of code as a text sentence, you were assembling the program's syntax tree by choosing from a pile of premade items you've created, and then being able to grab whole branches at a time and manipulate them. It was an interesting experiment.
 
 - ## [Show HN: ClassroomIO – an in-browser programming environment for education | Hacker News _202404](https://news.ycombinator.com/item?id=40000022)
 - I’m excited to introduce ClassroomIO 
@@ -138,6 +106,19 @@ modified: 2024-05-12T15:39:22.456Z
 - ## 
 
 - ## 
+
+- ## 📱 [Replit Mobile App | Hacker News _202210](https://news.ycombinator.com/item?id=33263432)
+- This is one of those examples for me where the idea is far superior than the implementation. 
+  - The idea of anyone being able to quickly write code from anywhere, as the main promo video suggests, is fantastic and greatly motivating. 
+  - In practice, coding on an iPhone (even with an innovative new joystick), is gimmicky(花招; 噱头) at best, given how deeply ingrained good ergonomics are in the coding process.
+- This is mostly aimed at people who don't have the luxury of coding from a computer.
+
+- Microsoft's "Touch Develop" research project from a decade ago was actually amazingly productive and usable. It made each separate part of a line of code into a selectable element, and used predictive analysis to guess what your next entry would be with surprising accuracy. So, for example, if you've already created a variable within a specific scope like a function, when you've come to a point in a line where a variable would be useful like "a += [variable could go here]", you could just tap-select it from a list. Since the named elements were kept track of, you could select and rename a variable or function and it would automatically be changed everywhere. You could grab whole functions like this and move them around as needed.
+  - Conceptually, imagine that instead of writing out a line of code as a text sentence, you were assembling the program's syntax tree by choosing from a pile of premade items you've created, and then being able to grab whole branches at a time and manipulate them. It was an interesting experiment.
+
+- ## ✨ [Replit now supports every programming language in Nix | Hacker News _202105](https://news.ycombinator.com/item?id=27269292)
+- 
+- 
 
 - ## [Repl from Repo | Hacker News _201912](https://news.ycombinator.com/item?id=21765872)
 - Gitpod is awesome and a really bright team behind it. 

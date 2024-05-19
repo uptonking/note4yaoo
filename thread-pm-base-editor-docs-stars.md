@@ -16,7 +16,14 @@ modified: 2021-08-22T07:29:34.045Z
 
 - ## 
 
-- ## 
+- ## 🎨 Microsoft Word, redesigned
+- https://x.com/upintheozone/status/1791715466479903077
+  - 类似lowcode编辑器
+- Like the Word for Mac 2003  with properties on a side bar
+- This is basically Apple Pages. it already exists
+- Looks ok, but more form over function and looks like pages, and the design of pages is the reason I don't use pages, it's too watered down and frustrating to find things.
+- I think we have entered the Arc browsing design era
+- That looks so figma
 
 - ## 🌰🌐️ pinyin-pro速度嘎嘎快。写了一个使用 ruby 标签排版拼音的 playground
 - https://twitter.com/yisibl/status/1767492218670194896 

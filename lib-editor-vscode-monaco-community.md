@@ -12,7 +12,9 @@ modified: 2023-01-21T18:57:13.106Z
 # discuss
 - ## 
 
-- ## 
+- ## [Is it possible to create WYSIWYG editor using monaco? - Stack Overflow](https://stackoverflow.com/questions/64549041/is-it-possible-to-create-wysiwyg-editor-using-monaco)
+- Monaco is a code editor, created for helping to write source code in any form. 
+  - It has no support for multiple fonts, tables etc., nor can you draw arbitrary graphics in it (even though there are means to embed someting, but that's a different thing).
 
 - ## monaco editor is a great piece of software, I wish it was more open for customization though
 - https://twitter.com/alsugak/status/1566055190498795520

@@ -399,6 +399,14 @@ modified: 2023-09-02T09:17:22.992Z
     - lwIP, for the TCP/IP stack, compiled for the Web via Cheerp
   - The public CheerpX deployment is provided as-is and is free to use for technological exploration, testing and non-commercial uses.
   - If you want to build a product on top of CheerpX/WebVM, please get in touch with sales
+# miniprogram/小程序
+- https://github.com/yeliex/cromosjs /202310/ts/inactive
+  - 简单的小程序跨平台解决方案
+  - 实验性质的小程序web运行时
+  - 传统解决方案中, 小程序相关的跨端解决方案主要有
+    - 将web代码运行在小程序上, 低成本的比如webview, 高级的比如kbone
+    - 将web代码编译成小程序原生, 比如taro
+    - 将小程序代码编译成跨端代码, 比如morjs
 # more
 - https://github.com/BrowserBox/BrowserBox /AGPLv3/js
   - https://dosyago.com/

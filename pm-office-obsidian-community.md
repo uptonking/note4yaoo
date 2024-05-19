@@ -16,6 +16,12 @@ modified: 2024-01-23T02:52:23.932Z
 
 - features
   - ?
+# examples-plugins
+- https://github.com/tmcw/obsidian-freeform /MIT/202405/js
+  - Obsidian freeform plugin. This lets you write arbitrary JavaScript, including importing ESM modules, injecting styles, and much more
+  - This brings a taste of Observable to Obsidian. 
+  - give you an @observablehq -like experience with editable code blocks that run in isolated iframes.
+  - Based on iframes: Everything you write is run within a sandboxed iframe, making it safer to do more creative coding within Obsidian without affecting the surrounding page.
 # discuss-stars
 - ## 
 

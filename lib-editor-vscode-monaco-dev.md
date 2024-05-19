@@ -14,8 +14,8 @@ modified: 2023-01-21T18:55:29.555Z
 
 - who is using #monaco-editor
   - theia
-  - gitpod
-  - ide: molecule, opensumi, vscodium
+  - ide: codesandbox, stackblitz, gitpod, molecule, opensumi, vscodium
+  - more: PlayCanvas
 # dev
 
 # more

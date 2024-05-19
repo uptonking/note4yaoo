@@ -14,8 +14,11 @@ modified: 2023-01-13T10:28:06.306Z
 
 - [w3c/miniapp: MiniApps Standardization](https://github.com/w3c/miniapp)
   - [MiniApp Standardization White Paper version 2](https://w3c.github.io/miniapp-white-paper/)
-# blogs
 
+- comparisons
+  - https://x.com/search?q=taro%20uniapp&src=typed_query&f=live
+  - https://x.com/search?q=taro%20uni-app&src=typed_query&f=live
+# blogs
 - [微信小程序底层的实现原理是怎样的？ - 知乎](https://www.zhihu.com/question/50920642/answers/updated)
 
 ## usecase

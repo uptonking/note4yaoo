@@ -372,6 +372,12 @@ modified: 2022-11-08T19:04:00.289Z
   - https://lakejs.org/examples/document /典型的单页文档
   - Browser-based WYSIWYG editor
   - 依赖eventemitter3、photoswipe、tinykeys
+
+- https://github.com/linkeddata/dokieli /apache2/202405/js
+  - https://dokie.li/
+  - dokieli is a clientside editor for decentralised article publishing, annotations, and social interactions.
+  - 依赖medium-editor、micromark
+  - It is built with the following principles in mind: freedom of expression, decentralisation, interoperability, and accessibility. There is no root, authority, or centralisation here. Control yourself!
 # collab
 - https://github.com/microsoft/FluidExamples/tree/main/collaborative-text-area
   - an example to demonstrate building a collaborative text area in React using the SharedString

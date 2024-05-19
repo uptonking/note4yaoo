@@ -12,12 +12,16 @@ modified: 2021-05-06T09:38:31.520Z
 - pros
   - MIT
   - 可扩展性强
-  - 官方支持collab, 基于ot变体算法
+  - 官方支持collab, 基于ot算法变体
   - v6实现了 virtualized-render
   - 支持mobile
+  - accessible
 
 - cons
   - 非开箱即用，需要组装模块
+  - 协作基于ot变体，非标准ot
+  - 默认不支持ssr, 但有方案支持
+  - 顶层容器不支持CSS transform(用于画板缩放的场景)
 
 - features
   - Mobile Support: Use the platform's native selection and editing features on phones.
@@ -45,9 +49,9 @@ modified: 2021-05-06T09:38:31.520Z
   - jupyter
   - observablehq-notebook, val-town
   - codesandbox, codepen, replit
-  - overleaf
-  - obsidian
   - sourcegraph
+  - overleaf(latex-code+rich)
+  - obsidian
   - chrome-devtools
   - more: tagspaces, hedgedoc
 
@@ -74,6 +78,9 @@ modified: 2021-05-06T09:38:31.520Z
   - virtualized render, 可提升highlighting的性能
   - LSP
   - DAP: debug
+
+- ide要点
+  - 自动同步编辑器内容、代码仓库、配置
 
 - code-editor vs text-editor
   - syntax-highlighting

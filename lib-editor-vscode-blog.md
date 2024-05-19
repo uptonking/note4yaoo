@@ -37,6 +37,11 @@ modified: 2023-08-19T16:37:13.736Z
 # license
 - [Differences between the repository and Visual Studio Code](https://github.com/microsoft/vscode/wiki/Differences-between-the-repository-and-Visual-Studio-Code)
   - Visual Studio Code is a distribution of the Code - OSS repository with Microsoft specific customizations, including additional source code and extensions, released under a traditional Microsoft product license.
+# blogs-collab
+
+## [Collaborative Editing with React Monaco Editor: Best Practices _202405](https://www.dhiwise.com/post/collaborative-editing-with-react-monaco-editor) 
+
+- 没有涉及协同编辑
 # blogs
 
 # more

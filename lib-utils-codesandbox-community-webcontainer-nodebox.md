@@ -83,7 +83,7 @@ modified: 2024-01-25T13:32:35.137Z
   - Licensing is required for production usage of the API in a for-profit setting (feel free to prototype as much as you like without a license). 
   - If you're using the API to meet the needs of your customers, prospective customers, and/or employees you need a license 
 
-## 🤔 [腾讯一面：除了webContainer之外，还有什么办法能在浏览器上运行node代码🫣🫣🫣 - 掘金 _202309](https://juejin.cn/post/7281912738862841896)
+## 🤔 [除了webContainer之外，还有什么办法能在浏览器上运行node代码 - 掘金 _202309](https://juejin.cn/post/7281912738862841896)
 
 - 总结: 通过 web worker 的方式去启动一个虚拟机，该虚拟机模拟了一个 Node.js 环境，从而实现在浏览器上面允许 node 的代码。
   - 那么问题来了，如何在浏览器上面运行世界上最好的语言呢？
@@ -120,12 +120,6 @@ modified: 2024-01-25T13:32:35.137Z
   - It's very interesting. In that example with the express router, where you're creating index.js inside a filesystem inside nodebox, is that whole filesystem just stored by that one webworker? Also, when you invoke express to listen on port 3000 and get back some URL to set the previewIframe.src, is that some blob URL returned from the webworker? (in which case how would you set up sockets?) Or is that URL accessible to any other browser tab?
 
 - Nice. Stackblitz did this first and this is a killer feature all fiddles now need
-
-- ## Do the code execute in the Browser like Stackblitz Webcontainers, or do they have to proxy to a server to process code and return a response? _202202
-- https://discord.com/channels/333980639973867521/938366408889352223/938474311495340102
-- Sandpack runs entirely in the browser, transpiling code in webworkers and executing everything inside an iframe. 
-  - The only servers sandpack uses are CDNs for fetching the `node_modules` .
-
 # discuss-webcontainer/stackblitz
 - ## 
 

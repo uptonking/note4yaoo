@@ -329,7 +329,7 @@ modified: 2022-08-18T16:57:46.405Z
   - Prosemirror based text editor with markdown shortcuts and serialization
   - It is highly inspired by rich-markdown-editor, linear-app-editor
 
-- gem /10Star/MIT/202205/ts/代码量少
+- gem /10Star/MIT/202205/ts/inactive/代码量少
   - https://github.com/tanishqkancharla/gem
   - https://gem.tanishqkancharla.dev/
   - 只依赖prosemirror，不依赖react
@@ -337,7 +337,7 @@ modified: 2022-08-18T16:57:46.405Z
   - The design is very inspired by Paco Coursey's [Writer]().
   - [Gem, a plain-text editor based on prosemirror_202111](https://discuss.prosemirror.net/t/gem-a-plain-text-editor-based-on-prosemirror/4231)
     - I worked on moving to codemirror 6 
-    - https://github.com/tanishqkancharla/gem/tree/codemirror
+    - https://github.com/tanishqkancharla/gem/tree/codemirror /202112/cm6.v0.19
   - https://github.com/pacocoursey/writer /291Star/NALic/202110/js/inactive
     - https://writer.paco.sh/
     - Plain text editor from scratch, made for the web. Drag and drop files to open them.

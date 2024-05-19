@@ -9,17 +9,17 @@ modified: 2023-06-23T12:46:53.288Z
 
 # guide
 
-- 支持切换editor的方案: sandpack
+- 支持切换editor的方案: sandpack, jupyter, webix, @uiw/react-*-editor
 
 - examples
-  - 类似打字机动态输出文字
+  - 类似打字机动态输出文字, 多用于ai生成代码/文本
   - (diff)字符渐变的动画效果
 
 - fans-codemirror
-  - https://github.com/yeliex/codemirror-extensions
-  - https://github.com/val-town/codemirror-ts 
+  - https://github.com/uiwjs/react-codemirror /国内
+  - https://github.com/yeliex/codemirror-extensions /国内
+  - https://github.com/val-town/codemirror-ts
   - https://github.com/exuanbo/codemirror-toolkit
-  - https://github.com/uiwjs/react-codemirror
   - https://www.npmjs.com/package/collaborative-codemirror
   - https://news.ycombinator.com/threads?id=CompuIves
 
@@ -30,21 +30,27 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/tmcw/awesome-codemirror
   - Awesome CodeMirror plugins, themes, wrappers, and more
 
-- https://github.com/milahu/browserforge /202303
+- https://github.com/milahu/browserforge /202303/方案收集markdown
   - run github + github-pages + codesandbox in your browser, offline-first - CONCEPT
 
 - https://github.com/codesandbox/sandpack /4.5kStar/apache2/202405/ts
   - https://sandpack.codesandbox.io/
   - https://sandpack.codesandbox.io/docs
+  - https://sandpack.codesandbox.io/docs/advanced-usage/components
   - Sandpack is a component toolkit for creating your own live running code editing experience powered by CodeSandbox.
   - sandpack-react依赖codemirror6、lz-string、react-devtools-inline
   - sandpack-client依赖nodebox、static-browser-server
-  - CodeEditor支持codemirror/monaco/vscode
   - 提供了很多示例，包括cm-DecoratorsDynamic/FileExplorer/ReactDevTools
+  - CodeEditor支持codemirror/monaco/vscode
+  - `SandpackCodeEditor` component renders a wrapper over codemirror. You can extend the editor with any CodeMirror extensions
+  - `SandpackCodeViewer` renders a read-only version of codemirror
+  - `Preview` component is running the sandpack bundler, so without rendering a Preview component you will not have any bundling and evaluation of the code in sandpack
   - Sandpack Client: This is a small foundation package that sits on top of the bundler. It is framework agnostic and facilitates the handshake between your context and the bundler iframe.
   - Sandpack React: React components that give you the power of editable sandboxes that run in the browser
   - https://github.com/AaronPowell96/sandpack-file-explorer /MIT/202312/ts
     - Enhanced File Explorer for Sandpack. Providing immense flexibility to Sandpack's capabilities.
+    - Drag and drop to move files or directories
+    - Add and remove files or directories
   - https://github.com/codeamigo/codeamigo /GPLv3/202401/ts/inactive
     - codeamigo is a platform that helps people learn to code with an AI assistant.
     - 依赖express、apollo-server、graphql、next.js、postgresql、redis
@@ -57,8 +63,11 @@ modified: 2023-06-23T12:46:53.288Z
     - A JupyterLab package which defines an abstract interface to a code editor, which is used in many places in the application, including cells and the file editor.
   - https://github.com/jupyterlab/jupyterlab-monaco /BSD/201807/ts/archived
     - A JupyterLab extension providing the Monaco editor.
+    - This project has been archived by lack of maintainers
+    - merely a 'proof-of-concept' implementation 
   - [Explore monaco editor integration · jupyterlab/jupyterlab](https://github.com/jupyterlab/jupyterlab/issues/135)
   - [Update Codemirror to version 6 _202106](https://github.com/jupyterlab/jupyterlab/issues/10370)
+    - [pr已合并: Migrate to Codemirror 6 _202207](https://github.com/jupyterlab/jupyterlab/pull/11638)
   - https://github.com/jupyter/nbdime
     - Tools for diffing and merging of Jupyter notebooks.
 
@@ -76,17 +85,35 @@ modified: 2023-06-23T12:46:53.288Z
   - [Compile Error and PDF Download Notifications](https://github.com/overleaf/overleaf/issues/1031)
     - migrate from ACE to CodeMirror 6. Yes, the CM6 work will be coming to CE soon. _202206
 
+- https://github.com/glacambre/editor-adapter /MIT/202211/ts/inactive
+  - A library to interact with in-browser JS editors like Ace, CodeMirror or Monaco
+
 - https://github.com/yuku/textcomplete /MIT/202312/ts
   - https://yuku.takahashi.coffee/textcomplete/
   - Autocomplete for HTMLTextAreaElement and more
   - 支持 textarea/contenteditable/codemirror
+
+- https://github.com/davidmyersdev/ink-mde /MIT/202405/ts
+  - https://stackblitz.com/fork/github/davidmyersdev/ink-mde/tree/main/examples/template-ts
+  - A beautiful, modern, customizable Markdown editor powered by CodeMirror 6 and TypeScript
+  - This is the editor that powers https://octo.app.
+  - Inline Markdown image previews
+  - Framework agnostic, 支持vue/svelte
+  - Supports Server-Side Rendering (SSR)
+  - Wrap a native `textarea` element with the `wrap` export
+  - Plugin API (experimental)
+  - https://github.com/davidmyersdev/octo /MPLv2/202405/ts/vue
+    - https://octo.app/
+    - A local-first, progressive web app for knowledge management
+    - End-to-End Encryption (E2EE) support
 
 - https://github.com/minditor/minditor /MIT/202403/ts
   - https://minditor.dev/
   - A plug-and-play, highly customizable block-based rich text editor. 
   - Supports block/inlineBlock development with any framework, including React/Vue.
   - 依赖codemirror6、eventemitter3、thememirror、@uppy/xhr-upload
-  - Minditor 目前由 Zhenyu Hou 独立开发和维护
+  - 由 Zhenyu Hou 独立开发和维护
+  - 不支持拖拽改变block顺序
 
 - https://github.com/replit/codemirror-minimap /202401/ts
   - Minimap extension for Codemirror 6
@@ -149,6 +176,7 @@ modified: 2023-06-23T12:46:53.288Z
   - https://uiwjs.github.io/react-markdown-editor
   - A markdown editor with preview, implemented with React.js and TypeScript.
   - 依赖@uiw/react-codemirror、@uiw/react-markdown-preview
+  - 支持源码和预览同步滚动
 
 - https://github.com/uiwjs/react-codemirror /MIT/202404/ts
   - https://uiwjs.github.io/react-codemirror/
@@ -172,10 +200,6 @@ modified: 2023-06-23T12:46:53.288Z
   - https://uiwjs.github.io/react-code-preview
   - Code edit preview for React
   - 编辑代码时立刻刷新预览
-
-- https://github.com/phartenfeller/react-readonly-codemirror6 /MIT/202402/js
-  - https://phartenfeller.github.io/react-readonly-codemirror6/
-  - I use this component for server-side generated code previews (with Gatsby). It uses Codemirror 6 which is currently in preview.
 
 - https://github.com/scniro/react-codemirror2 /MIT/202108/ts/v5/inactive
   - https://scniro.github.io/react-codemirror2/
@@ -225,14 +249,15 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/remirror/remirror/tree/main/packages/remirror__extension-codemirror6
   - Add CodeMirror to your editor
 
+- https://github.com/phartenfeller/react-readonly-codemirror6 /MIT/202402/js
+  - https://phartenfeller.github.io/react-readonly-codemirror6/
+  - I use this component for server-side generated code previews (with Gatsby). It uses Codemirror 6 which is currently in preview.
+
 - https://github.com/jamischarles/codemirror-server-render /202302/js/inactive
   - Renders CodeMirror 6 syntax highlighting as a string so you can use it at build time (ie: blog) or server-side
 - https://github.com/readmeio/codemirror-node /ISC/202202/js/inactive
   - CodeMirror on the server
   - 依赖codemirror5
-
-- https://github.com/glacambre/editor-adapter /MIT/202211/ts/inactive
-  - A library to interact with in-browser JS editors like Ace, CodeMirror or Monaco
 
 - https://github.com/vizhub-core/vzcode /MIT/202405/ts
   - VZCode: Multiplayer Code Editor
@@ -276,15 +301,6 @@ modified: 2023-06-23T12:46:53.288Z
 # editors-based-on-codemirror
 - https://github.com/tagspaces/tagspaces-common/tree/develop/packages/tagspaces-codemirror /MIT/202312/ts
   - 依赖codemirror6
-
-- https://github.com/davidmyersdev/ink-mde /MIT/202404/ts
-  - A beautiful, modern, customizable Markdown editor powered by CodeMirror 6 and TypeScript
-  - This is the editor that powers https://octo.app.
-  - Inline Markdown image previews
-  - Framework agnostic, 支持vue/svelte
-  - Supports Server-Side Rendering (SSR)
-  - Wrap a native `textarea` element with the `wrap` export
-  - Plugin API (experimental)
 
 - https://github.com/sanity-io/code-input /MIT/202404/ts
   - Sanity input component for code, powered by CodeMirror
@@ -359,7 +375,7 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/fsegurai/Electron-React-Markdown-Editor /MIT/202311/ts
   - Electron Markdown Editor based on React
-  - 依赖codemirror6、remark-parse
+  - 依赖codemirror6、remark-parse、electron-builder
 
 - https://github.com/ahmedsaheed/Leaflet /CC-BY-NC-SA/202305/ts/inactive
   - https://leaflet.saheed.codes/
@@ -407,6 +423,16 @@ modified: 2023-06-23T12:46:53.288Z
   - MDXEditor is a rich, client-side component that does not benefit from server-side rendering. To use it in your server components, you should use next/dynamic
   - 依赖lexical、codemirror6、radix-ui、hast、mdast、react-diff-view、react-hook-form
   - https://github.com/michioxd/mdxeditor-modified
+
+- gem /10Star/MIT/202205/ts/inactive/代码量少
+  - https://github.com/tanishqkancharla/gem
+  - https://gem.tanishqkancharla.dev/
+  - 只依赖prosemirror，不依赖react
+  - Gem (previously called Editor) is a performant and simple plain text editor 
+  - The design is very inspired by Paco Coursey's [Writer]().
+  - [Gem, a plain-text editor based on prosemirror_202111](https://discuss.prosemirror.net/t/gem-a-plain-text-editor-based-on-prosemirror/4231)
+    - I worked on moving to codemirror 6 
+    - https://github.com/tanishqkancharla/gem/tree/codemirror /202112/cm6.v0.19
 
 - https://github.com/mcnuttandrew/prong /MIT/202310/ts
   - https://prong-editor.netlify.app/

@@ -9,7 +9,23 @@ modified: 2023-01-29T10:52:44.183Z
 
 # guide
 
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## [CodeMirror 6: Web-Worker-isolated state? _202012](https://discuss.codemirror.net/t/codemirror-6-web-worker-isolated-state/2788)
+- Considering V6’s singleton and isolated state, I think it’s possible to ‘decouple’ the EditorView instance from it’s state and instead dispatch updates through some asynchronous helper functions. 
+  - I wish to do this because, well, it’s fun, and also because I’m doing some fairly heavy lifting on the DOM on the main thread (very, very fast Markdown live-preview, which itself is already heavily web-workerized and asynchronous) and I would like to isolate the potentially parse-heavy operations into a web-worker.
+  - I know that monaco-editor already does this, so it would be a ‘competitive’ feature to have or have easily supported.
+- Not doing this is a conscious decision in this project—serializing/deserializing on worker boundaries is very limiting in the kind of data structures you can (effectively) use, 
+  - and asynchronicity everywhere makes code a lot more complex, expensive, and error-prone. 
+  - So I went with a synchronous single-heap approach that takes care not to do too much work during updates.
+
 # discuss-codemirror-🆚️-monaco
+- resources
+  - [Comparison of JavaScript-based source code editors - Wikipedia](https://en.wikipedia.org/wiki/Comparison_of_JavaScript-based_source_code_editors)
+
 - ## 
 
 - ## 
@@ -119,7 +135,11 @@ modified: 2023-01-29T10:52:44.183Z
 # discuss-lsp
 - ## 
 
-- ## 
+- ## [TypeScript integration · codesandbox/sandpack _202112](https://github.com/codesandbox/sandpack/discussions/237)
+- Vocs is solving this elegantly with Twoslash
+
+- 
+- 
 
 - ## ✏️🆚️ [Codemirror 6 and Typescript LSP - v6 - discuss. CodeMirror _202107](https://discuss.codemirror.net/t/codemirror-6-and-typescript-lsp/3398)
   - If anyone is still having problems with this, I was able to create a small demo based on @madebysid comment, you can find it here: https://github.com/okikio/codemirror 197, Demo Link: https://okikio-codemirror.netlify.app/
@@ -205,6 +225,34 @@ modified: 2023-01-29T10:52:44.183Z
 - 
 - 
 
+# discuss-issues
+- ## 
+
+- ## [Allow alternate editor components: Monaco editor, ACE · executablebooks/thebe _202402](https://github.com/executablebooks/thebe/issues/730)
+- The current editor component codemirror from jupyter, has issues with CSS transforms.
+  - CSS transforms is used by reveal.js to zoom slides from "design size" to "screen size".
+  - This causes codemirror component to be quite unusable within reveal.js slides, as the visible cursor, line indicator and similar can be complely off.
+
+- Apparently @codemirror/view 6.18.0 added some code to detect when the view component is scaled. But Thebe appears to currently use codemirror 5.
+
+- ## Why do you want to run codemirror on server side _202405
+- https://discord.com/channels/437048931827056642/437067256049172491/1238441369379405926
+- nextjs renders stuff server side
+- Since nobody fixed it before im assuming you are the first one on the planet prerendering cm6
+- It's not like this only exists with 6 though, I found an issue from 2018
+
+# discuss-used
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🤔 [Backwards compatibility of codemirror6 - JupyterLab - Jupyter Community Forum _202402](https://discourse.jupyter.org/t/backwards-compatibility-of-codemirror6/23851)
+- I was just wondering if anyone could tell me if codemirror6 is backwards compatible with JupyterLab3 or will it only work with JupyterLab4?
+  - In core, it will only work with JupyterLab 4. It’s possible someone could write an extension that would replace some renderers with codemirror 6 (e.g. notebook cell inputs), but likely not all of them (e.g. settings editor).
+  - 💡 There was an attempt to generalize the `ICodeEditor` to allow alternate implementations (e.g. to support monaco integration), but this never really worked out, and supporting two versions of the same library is particularly challenging when the breaking changes are almost total.
+
 # discuss
 - ## 
 
@@ -216,7 +264,7 @@ modified: 2023-01-29T10:52:44.183Z
 - Do you think using ProseMirror would be better than hacking CodeMirror to accomplish the same thing?
   - Probably. It’ll definitely involve less fighting against the library.
 
-- I dug into ProseMirror some more and felt like ProseMirror is a better choice for something like this, especially with NodeView for editing math and code blocks. By storing the markup in Marks expanding/folding should also be doable.
+- I dug into ProseMirror some more and felt like ProseMirror is a better choice for something like this, especially with `NodeView` for editing math and code blocks. By storing the markup in Marks expanding/folding should also be doable.
 
 - ## [Inline Codemirror inside Prosemirror? - discuss. CodeMirror _202311](https://discuss.codemirror.net/t/inline-codemirror-inside-prosemirror/7396)
 - Yes, it is, there’s even an example like that on the ProseMirror website.
@@ -228,9 +276,7 @@ modified: 2023-01-29T10:52:44.183Z
 - Could you offer any advice on how to translate between the CodeMirror and ProseMirror transactions please?
   - Not really. The way you map between rich text and plain text documents is going to involve some kind of translation, I guess, depending on the text format and ProseMirror schema used. You say nothing about how you’re doing that, but I suspect it involves some kind of parsing. Mapping changes in such a context, and especially translating text changes to structured ProseMirror steps is likely going to be non-trivial. It may be easier to compute a diff of some kind and work from that.
 
-- ## [Codemirror 6 and Typescript LSP - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/codemirror-6-and-typescript-lsp/3398?page=2)
-
-- ## [Switch from Monaco to CodeMirror and generate AST from Lezer tree - Lezer - discuss. CodeMirror](https://discuss.codemirror.net/t/switch-from-monaco-to-codemirror-and-generate-ast-from-lezer-tree/4946)
+- ## 💡 [Switch from Monaco to CodeMirror and generate AST from Lezer tree _202208](https://discuss.codemirror.net/t/switch-from-monaco-to-codemirror-and-generate-ast-from-lezer-tree/4946)
   - It seems to me that using Lezer as the parser for CodeMirror is a better option than reusing the Chevrotain parser. I wonder if I should now get rid of the Chevrotain parser completely and generate the AST tree from the Lezer tree? 
 - That depends. Lezer does not emit an abstract syntax tree, just a set of nodes with types and parent/child relations. So using that for analysis is definitely possible, but more awkward than what you’d get from a regular parser—you have to iterate through child nodes finding the one you’re interested in, and get the name of variables by reading the start/end position of the corresponding node from the document, and so on.
 
@@ -256,7 +302,7 @@ modified: 2023-01-29T10:52:44.183Z
 
 - I find myself wondering what makes the more complex approach taken by CodeMirror superior to that approach, which seems so simple by comparison.
 - I can only think of the following drawbacks to the approach taken by react-simple-code-editor:
-  - Syntax highlight requires a complete parse on each keystroke. This could be addressed by using `tree-sitter` or `lezer` for maintaing the AST.
+  - Syntax highlight requires a complete parse on each keystroke. This could be addressed by using `tree-sitter` or `lezer` for maintaining the AST.
   - The syntax-highlighted DOM tree is clobbered and regenerated on each keystroke. This could be addressed by using virtual DOM to update the DOM based on the fresh AST (e.g. using preact or react).
   - Really large files would render in full with this approach, whereas CodeMirror only renders what's visible.
 - The above problems can be ignored for use cases where the files will not be large, or syntax highlighting is not required when the amount of text is above a certain threshold.
@@ -289,7 +335,7 @@ modified: 2023-01-29T10:52:44.183Z
 - I think also http://repl.it also was working on something similar.
   - I think they are happy with CodeMirror, which is a fine choice
 
-- ## Meta: Observable editor in observable_201909
+- ## Observable editor in observable_201909
 - https://talk.observablehq.com/t/meta-observable-editor-in-observable/2376
   - One thing that I would like to do is to create a view with a nice text editor (ideally the same as the one used in observable) where users of my notebook can write some code with another linter (e.g. python) 
 - Observable’s editor is based on CodeMirror. There’s a nice and simple example of CodeMirror in this notebook

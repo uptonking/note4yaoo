@@ -11,6 +11,15 @@ modified: 2024-05-02T02:01:04.255Z
 
 # blogs-internals
 
+## [Bringing the TypeScript Language Server to Observable | Observable _202211](https://observablehq.com/blog/bringing-the-typescript-language-server-to-observable)
+
+- We represent each cell in a notebook as a separate file in the VFS, and keep the TypeScript virtual environment in sync with changes made in the CodeMirror cell editors. Then, we can query the language service for signature help and autocompletions at any position in the CodeMirror editor. 
+- Next, we moved the virtual TypeScript environment to a WebWorker. 
+
+- 
+- 
+- 
+
 ## [(Re-) Implementing A Syntax-Highlighting Editor in JavaScript _201111](https://codemirror.net/5/doc/internals.html)
 
 - CodeMirror 1 was heavily reliant on designMode or contentEditable (depending on the browser)
@@ -51,8 +60,14 @@ modified: 2024-05-02T02:01:04.255Z
   - 以前创建编辑器只需要 codemirror.fromTextarea(element) 即可，现在麻烦了很多
 - 新版本为了支持编辑代码的复杂需求，把所有变更都封装成了 transactions，通过 dispatch 告知 view 更新视图。所以修改代码就从 .setValue(code) 变成下面这种样子 this.editor.dispatch({ changes: { from: 0, to: this.editor.state.doc.length, insert: code }, }); 
 - 新版本高亮错误代码会比较麻烦。以前直接 .addLineClass() 就可以了，现在则要先生成标记，然后再把标记添加到视图中。
+
+## [Creating an Editable Textarea That Supports Syntax-Highlighted Code | CSS-Tricks _202104](https://css-tricks.com/creating-an-editable-textarea-that-supports-syntax-highlighted-code/)
+
+- 与codemirror无关
 # more
 - [CodeMirror Accessible](https://bgrins.github.io/codemirror-accessible/)
+
+- [How to make a code editor with CodeMirror 6 _202106](https://www.raresportan.com/how-to-make-a-code-editor-with-codemirror6/)
 
 - [Revisiting our CodeMirror 6 implementation in React after the official release _202210](https://www.codiga.io/blog/revisiting-codemirror-6-react-implementation/)
   - [Implementing CodeMirror 6 in React with Code Snippets Autocompletion _202205](https://codiga.io/blog/implement-codemirror-6-in-react/)

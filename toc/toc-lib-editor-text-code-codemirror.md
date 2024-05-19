@@ -74,6 +74,7 @@ modified: 2022-08-18T11:29:26.644Z
   - https://copenhagen.autocode.com/
   - lightweight and hackable open source code editor for the web
   - powering the code-editing experience on Autocode, and it's written entirely in vanilla JavaScript with only `highlight.js` and feather icons bundled as dependencies.
+  - [Copenhagen: Free, lightweight, open source and hackable code editor for the web : r/javascript _202103](https://www.reddit.com/r/javascript/comments/m6v05g/copenhagen_free_lightweight_open_source_and/)
 
 - https://github.com/antonmedv/codejar /MIT/202401/ts/NoDeps/单文件
   - https://medv.io/codejar/

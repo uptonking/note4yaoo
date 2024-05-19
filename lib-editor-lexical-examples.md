@@ -38,6 +38,12 @@ modified: 2022-05-15T18:37:27.994Z
   - MDXEditor is a rich, client-side component that does not benefit from server-side rendering. To use it in your server components, you should use next/dynamic
   - 依赖lexical、codemirror6、radix-ui、hast、mdast、react-diff-view、react-hook-form
 
+- https://github.com/Ramnath-Karthikesan/lexical-track-changes /NALic/202405/ts
+  - I've implemented a basic version of track changes in the Lexical Editor. 
+  - The concept involves creating two nodes, one for insertion and one for deletion, inspired by the structure of the link node in Lexical. 
+    - A custom plugin is then developed to listen for specific operations such as KEY_DOWN_COMMAND and KEY_BACKSPACE_COMMAND. 
+    - Based on the current user selection, the plugin executes the node insertion or deletion operation.
+
 - https://github.com/juliankrispel/lexical-workshop-playground
   - Getting started with lexical by jumping in the deep end
 

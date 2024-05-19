@@ -266,6 +266,8 @@ modified: 2023-01-15T11:41:37.722Z
   - 区块头只需包含根哈希值而不必封装所有底层数据，这使得哈希运算可以高效地运行在智能手机甚至物联网设备上
   - Merkle树可支持“简化支付验证协议”（SPV），即在不运行完整区块链网络节点的情况下，也能够对交易数据进行检验。所以，在区块链中使用Merkle树这种数据结构是非常具有意义的。
 # more
+- [Autocomplete using Trie datastructure with Typescript](https://www.pierrehedkvist.com/posts/autocomplete-using-trie-data-structure)
+
 - [java - 一文搞懂字典树](https://segmentfault.com/a/1190000040801084)
 - [Trie树 - 掘金](https://juejin.cn/post/6844903641799720974)
 - [字典树的几种实现方式以及应用 | 酱猪蹄的博客](http://jiangzhuti.me/posts/%E5%AD%97%E5%85%B8%E6%A0%91%E7%9A%84%E5%87%A0%E7%A7%8D%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F%E4%BB%A5%E5%8F%8A%E5%BA%94%E7%94%A8)

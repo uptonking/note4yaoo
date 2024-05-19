@@ -236,6 +236,9 @@ modified: 2021-04-30T20:14:17.669Z
 - https://github.com/gnab/remark /MIT/202306/js
   - http://remarkjs.com/
   - A simple, in-browser, markdown-driven slideshow tool 
+
+- https://github.com/decker-edu/decker /GPLv3/202311/js/haskell/inactive
+  - A markdown based tool for slide deck creation
 # examples
 
 # utils

@@ -184,7 +184,7 @@ modified: 2024-05-17T16:08:45.674Z
 - In the end, we wanted to provide as smooth and rich of an editing experience as possible. We also wanted to future-proof our editor in case we want to support longer text (more than 6000 characters) and extend functionality, such as implementing collaboration or code execution.
   - Considering that both Quill and HTML elements didn’t fully meet our functional requirements, we chose instead to take a risk and invest in integrating a code editor. It has all the desired features out of the box, provides very solid performance and user experience, and offers a lot of extensions.
 
-### [How we integrated a code editor on the Miro canvas _202310](https://medium.com/miro-engineering/how-we-integrated-a-code-editor-on-the-miro-canvas-a41e0eff7f21)
+### [How we integrated a code editor on the Miro canvas using Ace _202310](https://medium.com/miro-engineering/how-we-integrated-a-code-editor-on-the-miro-canvas-a41e0eff7f21)
 
 - The scaling of the rendered widgets is managed by our canvas engine, but in Edit mode we need to scale the HTML element with the editor manually. 
   - The scale factor is a multiplication of the board scale (zoom in/out) and the widget scale (widget size). 

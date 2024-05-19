@@ -460,6 +460,9 @@ modified: 2021-08-30T18:56:09.644Z
   - Vitess is the cloud-native, open source technology powering PlanetScale.
   - By encapsulating shard-routing logic, Vitess allows application code and database queries to remain agnostic to the distribution of data onto multiple shards
   - Vitess has been a core component of YouTube's database infrastructure since 2011, and has grown to encompass tens of thousands of MySQL nodes.
+  - [RFC: Postgres support · vitessio/vitess _202011](https://github.com/vitessio/vitess/issues/7084)
+    - FYI: there is Citus and it is doing something similar to Vitess.
+    - I'll probably start with Citus or Yugabyte for now, since even if Postgres support is added it is still far away.
 
 - https://github.com/dolthub/go-mysql-server /1.2kStar/apache2/202311/go
   - A MySQL compatible database engine written in pure Go

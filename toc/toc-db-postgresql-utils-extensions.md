@@ -132,7 +132,7 @@ modified: 2023-10-26T15:29:40.053Z
   - if your use-case leverages MongoDB as a distributed database, then unfortunately this project might not be for you. At least right now supporting multi-sharding and scale-out deployments is not part of the roadmap.
   - heavily inspired by FerretDB. The main difference is that there is no intention to support any database other than PostgreSQL (FerretDB is also supporting Tigris) and it's written in Rust, as opposed to Go.
 # distributed
-- https://github.com/citusdata/citus /AGPLv3/202402/c/vitess-like
+- https://github.com/citusdata/citus /AGPLv3/202404/c/vitess-like
   - https://www.citusdata.com/
   - Citus is a PostgreSQL extension that transforms Postgres into a distributed database
   - Distributed query engine routes and parallelizes SELECT, DML, and other operations on distributed tables across the cluster.

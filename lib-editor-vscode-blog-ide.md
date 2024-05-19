@@ -207,4 +207,6 @@ modified: 2024-05-09T09:39:33.338Z
     - Replace the current Web IDE, which is based on the open sourced Monaco editor, with a client-side instance of VS Code and implement custom extensions for creating commits and interacting with MRs.
 # blogs
 
+# blogs-editor
+- [Upcoming Code Editor Upgrade to Monaco! | PlayCanvas Blog _202111](https://blog.playcanvas.com/upcoming-code-editor-upgrade-to-monaco/)
 # more

@@ -26,7 +26,7 @@ modified: 2024-01-25T13:33:23.267Z
 
 - #3. is still important for me. I compile HTML templates (a PHP lookalike, containing <? js() ?>) using `new Function()` at runtime. Doing my best to avoid that pesky build step
 
-- ## 🐘 Most sandboxes in CodeSandbox are stored in a Postgres database.
+- ## 🐘🏘️ Most sandboxes in CodeSandbox are stored in a Postgres database. _202306
 - https://twitter.com/CompuIves/status/1667148424389566465
   - 40M+ sandboxes and 400M+ files stored in Postgres, and we still have performant load times.
   - When going with Postgres, I thought "this is the first thing we'll have to replace". Still didn't happen after 6 years
@@ -43,10 +43,11 @@ modified: 2024-01-25T13:33:23.267Z
 - Erlang/Elixir under load is just amazing. Incredibly resilient. One of the many reasons I became a fanboy of CouchDB. Still love Postgres but there is something beautiful about storing everything in a giant B-tree
 
 - 🤔 How is the Postgres DB structured.  Is it single node or shareded across multiple nodes?  And do you store files in Postgres as blobs?
-  - Single DB (with a R/O replica). Files are stored as text, binary files are uploaded to GCP and we store a link in the db.
-- Wow, just single DB for such huge workload!  Must be a huge machine.
+  - 💡 Single DB (with a R/O replica). Files are stored as text, binary files are uploaded to GCP and we store a link in the db.
+
+- Wow, just single DB for such huge workload! Must be a huge machine.
   - It's not huge! 4 cores and 24GiB RAM (actually I believe 16GiB would be fine too). Plus we also store sandbox pageviews (hourly, daily, weekly, monthly)/users/teams etc...
-- Incredible!  I am using a little bigger machine for a much lesser scale application.  Likely I am doing something wrong.
+- Incredible! I am using a little bigger machine for a much lesser scale application.  Likely I am doing something wrong.
 # discuss-iframe
 - ## 
 
@@ -147,6 +148,60 @@ modified: 2024-01-25T13:33:23.267Z
 - 事件处理也是个问题，比如实现顶层菜单展开时，需要点击空白处收起，如果点到ifram则无法触发
 
 - iframe 还有一个问题就是不能改变其在 DOM 树中的位置，否则也会导致重新加载 iframe。而在以 VDOM + Router 的场景中  iframe 都会被重新加载
+# discuss-csb-editor ✏️
+- ## 
+
+- ## [Feature request: Monaco Editor integration option? · codesandbox/sandpack _202201](https://github.com/codesandbox/sandpack/issues/305)
+  - Codesandbox website uses Monaco, so it would be nice to have a similar experience when cross over between the sandpack version and the codesanbox website
+- I'm curious, are there any pros & con's that come to mind when it comes to choosing codemirror vs monaco-editor? Was also curious about why you chose codemirror over vscode for prisma/text-editors 
+  - Just to add a little bit of context, the current difficulties we had facing is a little bit out of scope, the main trouble we had is the setup of typescript's language server.
+  - The Monaco editor is able to generate autocomplete based on the provided and customized d.ts files relatively easy but not for .tsx | .ts files, 
+  - so for those packages written in `.tsx` by default, I cannot find an easy way to auto generate d.ts files and bundle them for the Monaco editor.
+  - In term of UI/UX, as long as we are able to setup the environment and get the hint from the typescript server stably, it's just a matter of time to improve them gradually.
+  - In fact, using CodeMirror in this case leave a lot of flexibilities to users to craft their own hint UI
+
+- 🌹 Although I wasn't here when this decision of CodeMirror over Monaco was made, I think I can understand some of the reasons and highlight them here:
+  - Mobile support: Monaco doesn't have great mobile support, and this is crucial for Sandpack to deliver a uniform experience throughout all types of devices; 
+  - Final bundle size: CodeMirror provides an easy way to load only the modules/extensions we want to, which gives us the possibility to lazy-loading and code-splitting the CodeEditor component. Meanwhile, Monaco is a heavy package, and that's why CodeSandbox.io/CodeSandbox Embeds also defaults to CodeMirror in the mobile version (due to the previous reason too
+  - Extensibility: TBH, I haven't had many experiences with Monaco before, but I can tell what I've heard, and Monaco makes it hard to customize and extend some configuration - and Monaco provides a great API to extensions, which pretty much solved many of our problems; 
+  - Plus, Sandpack is designed to be extensible and provide a basic (but powerful) development experience, so the initial goal was never to support any language server by default but to provide ways (API, documentation, support) for the application consumer (you) implement it by yourself.
+  - In fact, you can easily switch from CodeMirror to Monaco at your end, as Sandpack exposes all the APIs needed to implement it. 
+
+- I think Danilo nailed the reasons I also considered when I picked CodeMirror over Monaco. For me personally, the biggest one was extensibility, because we had very specific interactions in mind, and I wasn't very confident that Monaco would let me build some of them. This is more of a matter of taste, but I also preferred CodeMirror's API over Monaco's (plus CodeMirror's source code seemed a lot more approachable), so I went with it for prisma/text-editors.
+# discuss-sandpack
+- ## 
+
+- ## 
+
+- ## I'm trying to implement Sandpack in Svelte, using sandpack-client. _202210
+- https://discord.com/channels/333980639973867521/913053362738573312/1031251046930067507
+  - So far i'm getting it working, but I'm trying to understand the concept with multiple files. 
+- I don't think Sandpack can help on this specific case. 
+  - Sandpack simply evaluates the code and runs it on another thread, and it doesn't capture any output execution (except the logs). 
+  - But I think you can be inspired by Sandpack and use some concepts, like running the code in an iframe or a worker (due to security and performance issues), and using codemirror to provide a pretty neat coding experience
+
+- Currently, Sandpack only supports JavaScript frameworks and those that don't have server dependencies. We're considering supporting server script in the future, but it's currently on research, and I can't make any promise when we'll have it running.
+
+- ## 🆚️ Why choose CodeMirror? I think Monaco seems better? _202202
+- https://discord.com/channels/333980639973867521/938366408889352223/938469861749825568
+- We did consider Monaco, but that's a huge project for the purpose of sandpack (integrate small code snippets/sandboxes that can in the browser). 
+  - Also, Monaco is not so easy to integrate in a simple react component library. 
+- On the other side, it is quite easy to add Monaco on top of sandpack, if you want to customize the experience. We have an example right here: https://codesandbox.io/s/sandpack-monaco-integration-citxd?file=/src/App.tsx
+
+- ## Do the code execute in the Browser like Stackblitz Webcontainers, or do they have to proxy to a server to process code and return a response? _202202
+- https://discord.com/channels/333980639973867521/938366408889352223/938474311495340102
+- Sandpack runs entirely in the browser, transpiling code in webworkers and executing everything inside an iframe. 
+  - The only servers sandpack uses are CDNs for fetching the `node_modules` .
+
+- ## 🚀 [Codesandbox open sources their execution environment: Sandpack | Hacker News _202112](https://news.ycombinator.com/item?id=29417937)
+- Does it download the dependencies on the client side, and compile the JS on the client side as well?
+  - Yep, it downloads and compiles dependencies on the client side. However, it does this on a different domain for security reasons.
+  - Also, while it uses the CodeSandbox bundler, you can self host it so it's not dependent on our servers
+- Is there an API to get the compiled and bundled sources into one output/result?
+  - Yes, after every compilation we send the full bundler state. This is saved on the context so you can use that to analyze the output. In one of the examples in the blog post we show the transpiled code for example.
+  - A hidden "feature" is that we automatically run tests defined (e.g. index.test.js) using jest, and dispatch the test results. So you can listen to that as well.
+
+- I'd like to see storybook with support for this.
 # discuss-author
 - ## 
 
@@ -174,47 +229,6 @@ modified: 2024-01-25T13:33:23.267Z
   - - Connect (tunnel) to that code-server from vscode.dev using the Remote Development extension
 
 - If you want a similar in-cloud VSCode experience, but tied more tightly to your SDLC (e.g. CI/CD, branch previews, deployments) for each project and requiring less configuration to get a dev server running alongside it (this just lets you edit code, not run it) we offer “Workspaces” at withcoherence.com.
-
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-
-- ## [Codesandbox open sources their execution environment: Sandpack | Hacker News _202112](https://news.ycombinator.com/item?id=29417937)
-- Does it download the dependencies on the client side, and compile the JS on the client side as well?
-  - Yep, it downloads and compiles dependencies on the client side. However, it does this on a different domain for security reasons.
-  - Also, while it uses the CodeSandbox bundler, you can self host it so it's not dependent on our servers
-- Is there an API to get the compiled and bundled sources into one output/result?
-  - Yes, after every compilation we send the full bundler state. This is saved on the context so you can use that to analyze the output. In one of the examples in the blog post we show the transpiled code for example.
-  - A hidden "feature" is that we automatically run tests defined (e.g. index.test.js) using jest, and dispatch the test results. So you can listen to that as well.
-
-- I'd like to see storybook with support for this.
-# discuss-csb-editor
-- ## 
-
-- ## [Feature request: Monaco Editor integration option? · codesandbox/sandpack _202201](https://github.com/codesandbox/sandpack/issues/305)
-  - Codesandbox website uses Monaco, so it would be nice to have a similar experience when cross over between the sandpack version and the codesanbox website
-- I'm curious, are there any pros & con's that come to mind when it comes to choosing codemirror vs monaco-editor? Was also curious about why you chose codemirror over vscode for prisma/text-editors 
-  - Just to add a little bit of context, the current difficulties we had facing is a little bit out of scope, the main trouble we had is the setup of typescript's language server.
-  - The Monaco editor is able to generate autocomplete based on the provided and customized d.ts files relatively easy but not for .tsx | .ts files, 
-  - so for those packages written in `.tsx` by default, I cannot find an easy way to auto generate d.ts files and bundle them for the Monaco editor.
-  - In term of UI/UX, as long as we are able to setup the environment and get the hint from the typescript server stably, it's just a matter of time to improve them gradually.
-  - In fact, using CodeMirror in this case leave a lot of flexibilities to users to craft their own hint UI
-
-- 💡 Although I wasn't here when this decision of CodeMirror over Monaco was made, I think I can understand some of the reasons and highlight them here:
-  - Mobile support: Monaco doesn't have great mobile support, and this is crucial for Sandpack to deliver a uniform experience throughout all types of devices; 
-  - Final bundle size: CodeMirror provides an easy way to load only the modules/extensions we want to, which gives us the possibility to lazy-loading and code-splitting the CodeEditor component. Meanwhile, Monaco is a heavy package, and that's why CodeSandbox.io/CodeSandbox Embeds also defaults to CodeMirror in the mobile version (due to the previous reason too
-  - Extensibility: TBH, I haven't had many experiences with Monaco before, but I can tell what I've heard, and Monaco makes it hard to customize and extend some configuration - and Monaco provides a great API to extensions, which pretty much solved many of our problems; 
-  - Plus, Sandpack is designed to be extensible and provide a basic (but powerful) development experience, so the initial goal was never to support any language server by default but to provide ways (API, documentation, support) for the application consumer (you) implement it by yourself.
-  - In fact, you can easily switch from CodeMirror to Monaco at your end, as Sandpack exposes all the APIs needed to implement it. 
-
-- I think Danilo nailed the reasons I also considered when I picked CodeMirror over Monaco. For me personally, the biggest one was extensibility, because we had very specific interactions in mind, and I wasn't very confident that Monaco would let me build some of them. This is more of a matter of taste, but I also preferred CodeMirror's API over Monaco's (plus CodeMirror's source code seemed a lot more approachable), so I went with it for prisma/text-editors.
 # discuss-news-csb
 - ## 
 
@@ -227,7 +241,7 @@ modified: 2024-01-25T13:33:23.267Z
 
 - ## Over the past months we've received a lot of feedback about our pricing, and today we're updating the pricing of CodeSandbox to make public sandboxes free again! _20240509
 - https://twitter.com/CompuIves/status/1788596561032937720
-  - From today, our free plans will include:
+- From today, our free plans will include:
   - Unlimited public sandboxes
   - 5 private sandboxes
   - Private npm support
@@ -271,7 +285,7 @@ modified: 2024-01-25T13:33:23.267Z
 - https://twitter.com/codesandbox/status/1759984324361760918
   - Have you tried running your Postgres project in CodeSandbox?
 
-- ## Introducing CodeSandbox CDE: instant cloud development environments _202401
+- ## Introducing CodeSandbox CDE: instant cloud development environments _20240131
 - https://twitter.com/codesandbox/status/1752368702878527776
   - Run every branch in a powerful VM
   - Resume & fork in 2 seconds
@@ -281,6 +295,12 @@ modified: 2024-01-25T13:33:23.267Z
   - VS Code, AI code auto-complete, automated git flow & more
   - [Introducing CodeSandbox CDE - CodeSandbox _202401](https://codesandbox.io/blog/introducing-codesandbox-cde)
 - I think you guys are changing the game with this one, it is a step towards remote programming and who knows maybe sooner than later your service will play a huge role in the big playing field.
+
+- ## 💰 I don't really understand this upcoming @codesandbox pricing/plans updates _20240116
+- https://twitter.com/tomlienard/status/1747267455767150641
+  - Sandboxes runs in the browser, they're not using any cloud RAM/CPU resources (these are Devboxes), why limit them to 20?
+
+- I want to like CodeSandbox because I know how hard they’re working and innovating. But this change might require me to move away from them, and I’m not happy about that
 
 - ## [Dev Container Support in CodeSandbox | Hacker News _202310](https://news.ycombinator.com/item?id=37950384)
 
@@ -321,6 +341,10 @@ modified: 2024-01-25T13:33:23.267Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
 - ## I like it when products append `-${id}` to the slugified post titles.
 - https://twitter.com/CompuIves/status/1757726648491798600
   - This makes links robust to renaming, without having to permanently tombstone the previous slug.
@@ -330,7 +354,7 @@ modified: 2024-01-25T13:33:23.267Z
 
 - My feedback. For a news site, it's important to include the current slug in canonical, when the title changes, the slug changes, it's a major update, it will be automatically detected by the crawlers and placed in the latest news.
 
-- ## wrote about @ValDotTown 's runtime, which we've rewritten three times in the last year because sandboxing untrusted code is a hard problem
+- ## 🧊 wrote about @ValDotTown 's runtime, which we've rewritten three times in the last year because sandboxing untrusted code is a hard problem
 - https://twitter.com/tmcw/status/1755616125474504960
   - [The first four Val Town runtimes _202402](https://blog.val.town/blog/first-four-val-town-runtimes/)
   - Val Town is a social website to write and deploy TypeScript. Build APIs and schedule functions from your browser.
@@ -341,14 +365,8 @@ modified: 2024-01-25T13:33:23.267Z
   - I just saw that the DB contains 285, 000 saved snippets, over 1GB of code!
   - originally, saved edits were stored in localStorage. Migrated to this solution maybe a year ago, since people noticed that their work wasn't following them from device to device.
 
-- ## Are there any good sandboxes for Rails apps that let you also run docker containers?
+- ## 👣 Are there any good sandboxes for Rails apps that let you also run docker containers?
 - https://twitter.com/RogersKonnor/status/1747415376768487822
   - Why docker containers (more specifically docker-compose)? Because I use it to start a MinIO container to be able to simulate direct uploads locally.
 - You could accomplish that with Codespaces for sure. Everyone gets a free amount of Codespaces usage every month, so this would be available to everyone with a GitHub account.
 - gitpod can handle docker/rails pretty easily
-
-- ## I don't really understand this upcoming @codesandbox pricing/plans updates _20240116
-- https://twitter.com/tomlienard/status/1747267455767150641
-  - Sandboxes runs in the browser, they're not using any cloud RAM/CPU resources (these are Devboxes), why limit them to 20?
-
-- I want to like CodeSandbox because I know how hard they’re working and innovating. But this change might require me to move away from them, and I’m not happy about that
