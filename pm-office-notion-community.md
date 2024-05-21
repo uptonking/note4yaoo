@@ -416,7 +416,10 @@ modified: 2023-11-28T14:48:45.910Z
 
 - ## 
 
-- ## 
+- ## 🌰 I've created a new, simple Personal Notion Dashboard using the GTD method (Get Things Done).
+- https://x.com/soltwagner/status/1792404905384382933
+  - Hey everyone, you can download the GTD Notion template for free here
+  - [Notion Get Things Done (GTD) Dashboard for Free by Solt Wagner](https://www.solt.ws/template/notion-get-things-done-dashboard)
 
 - ## [Notion API – public beta | Hacker News_202105](https://news.ycombinator.com/item?id=27144566)
 - 

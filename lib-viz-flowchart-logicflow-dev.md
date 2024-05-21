@@ -18,7 +18,7 @@ modified: 2024-05-14T19:38:08.626Z
 
 - pros
   - 支持undo/redo
-  - 支持
+  - 支持pause/resume
 
 - cons
   - LogicFlow目前不支持移动端的touch事件，所以会出现无法移动画布、节点

@@ -31,11 +31,13 @@ modified: 2023-11-28T14:48:45.910Z
   - 模块化操作：拖拽、转换、分栏
   - 内容结构化：子页面
   - 数据化
-# guide
+# gfw-notion
+- [Notion-faster](https://www.notionfaster.org/)
+  - Android: 第一步：打开 "设置" 应用，点击 "连接与共享" → 第二步：点击 "私人 DNS" 菜单选项 → 在弹出的表单中选择 "私人 DNS 提供商主机名" → 输入下方的域名 dns.jerryw.cn
+# blogs
 - [Notion保姆级公开课](https://www.bilibili.com/video/BV1EP4y1s7Bp/)
 
 - [Obsidian的保姆级公开课](https://www.bilibili.com/video/BV1H44y1n71k/)
-# blogs
 
 ## [Notion编辑器原理分析](https://zhuanlan.zhihu.com/p/359122473)
 

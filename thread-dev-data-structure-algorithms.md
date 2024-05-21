@@ -39,7 +39,35 @@ modified: 2023-03-15T08:06:35.541Z
 # discuss-data-structure
 - ## 
 
-- ## 
+- ## Arrays and Linked Lists are the most fundamental data structures.
+- https://x.com/Franc0Fernand0/status/1792544814757445855
+- Here are the 6 trade-offs you should consider: 
+- 1. Access
+  • Arrays store items in contiguous memory locations. You can access them randomly with indexes.
+  • Linked Lists store items in random memory locations connected by pointers. You can access items only sequentially.
+  Arrays are better for accessing items out of order.
+- 2. Size
+  • Linked Lists can be easily extended to include more items.
+  • The size of Arrays is fixed at declaration time. You need to know precisely the amount of memory to allocate.
+  Linked Lists are better if the number of items is unknown in advance.
+- 3. Memory usage
+  • Linked Lists require extra storage to point to the next items.
+  • Arrays have a smaller footprint since they don't need that extra storage.
+  Linked Lists are less optimal for storing small data or if the amount of memory is a concern.
+- 4. Search
+  There are two ways to search for an item:
+  • linear search where you scan all the items
+  • binary search where you discard half of the items at each step if they are sorted
+  Arrays allow the execution of both algorithms efficiently, Linked Lists only linear search.
+- 5. Updates
+  • Inserting and deleting an item in Arrays requires reallocating the whole memory. This is very expensive.
+  • Linked Lists only require allocating or releasing the memory for a single item.
+  Linked Lists are a better choice for these operations.
+- 6. Cache
+  Computers have a fast cache memory storing recently accessed blocks of data.
+  • Arrays store items contiguously and take advantage of the cache.
+  • Linked Lists receive no benefit from the cache.
+  Sequential access of items is faster on Arrays.
 
 - ## Most programming languages have arrays for their efficient random access. 
 - https://twitter.com/Franc0Fernand0/status/1761374170275893375

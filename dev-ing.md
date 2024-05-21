@@ -335,6 +335,13 @@ betterdiscordctl -i flatpak install
 
 ## 052
 
+## 0522
+
+- dev-log
+  - 初步实现多标签页但为了支持回放暂时disable多标签
+- dev-to
+  - 多标签页分三阶段实现: 阶段A单标签支持回放，阶段B多标签但不支持回放，阶段C多标签且支持回放
+
 ## 0521
 
 - cde多标签页的功能写在webapp好，还是写在sdk好
@@ -344,10 +351,6 @@ betterdiscordctl -i flatpak install
   - 多用于演示
 
 - zustood有些用法不合理，比如初始化2次
-
-- 
-- 
-- 
 
 ## 0520
 

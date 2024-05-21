@@ -135,6 +135,24 @@ modified: 2023-04-21T11:42:46.575Z
   - Is it possible to instruct Tinybase to only read/write a part of  (partitioned by a column) the data of the electricsql db? 
 
 - ['Pagination' for SQLite persistence ](https://github.com/tinyplex/tinybase/issues/143)
+# discuss-tinyhub
+- ## 
+
+- ## 
+
+- ## 
+
+- ## What's stopping you from triaging your GitHub issues like this?
+- https://x.com/jamespearce/status/1792685935068672295
+- How large is the data for a repo like React? How many repos do you keep in memory? Do you manage how many repos you keep in memory?
+  - 100 repos per org, 100 per user, and 100 starred. 100 open issues for each. Could increase but keeping API pagination simple for now
+  - All repos are in one TinyBase store. Issues sharded into one store per repo. Every store also persists to localStorage. 
+  - No bottlenecks yet!
+- GitHub is the perfect use case for local-first. Nice compartmentalization, total number of repos is generally not too high, and recency is relevant.
+- The main challenge is reconciling local changes. Bulk reads are easy, transactional or bulk writes are tricky, especially after being offline. (I would be tempted to do CRDT sync with a server that could in turn negotiate truth with GitHub - but that’s non trivial.)
+  - Yes, writes and syncing is definitely the remaining hard part. Yjs with Durable Objects seems to be a potential path. I’m curious about much larger data sets in OPFS and syncing to it. Say Tiny to SQLite?
+- I’m confident in the TinyBase v5 syncing. Would just need a server peer (kinda the ‘master’ instance) that knew what/when to write back to GitHub.
+
 # discuss
 - ## 
 

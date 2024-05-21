@@ -143,6 +143,12 @@ modified: 2023-02-08T07:20:48.475Z
 - https://github.com/rjmacarthy/twinny /995Star/MIT/202403/ts
   - The most no-nonsense locally hosted (or API hosted) AI code completion plugin for Visual Studio Code, like GitHub Copilot but 100% free and 100% private.
   - designed to work seamlessly with: Ollama
+# ollama
+- https://github.com/open-webui/open-webui /MIT/202405/svelte/python
+  - https://openwebui.com/
+  - User-friendly WebUI for LLMs (Formerly Ollama WebUI)
+  - extensible, feature-rich, and user-friendly self-hosted WebUI designed to operate entirely offline. 
+  - It supports various LLM runners, including Ollama and OpenAI-compatible APIs
 # text2image
 - https://github.com/Stability-AI/stablediffusion
   - https://github.com/CompVis/stable-diffusion

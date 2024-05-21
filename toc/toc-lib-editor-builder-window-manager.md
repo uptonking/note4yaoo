@@ -53,6 +53,7 @@ modified: 2021-01-08T11:48:16.590Z
   - Serialization/deserialization with full layout management
   - Support for split-views, grid-views and 'dockable' views
   - High test coverage
+  - Dockview was originally a React-only library which is why the React version maintains the name `dockview` after splitting the core logic into a separate package named `dockview-core`.
 
 - rc-dock /411Star/apache2/202306/ts
   - https://github.com/ticlo/rc-dock
@@ -145,9 +146,8 @@ modified: 2021-01-08T11:48:16.590Z
   - https://github.com/projectstorm/react-canvas
     - 基于canvas实现
     - A pluggable layout and graphics system aimed at powering desktop publishing as well as storm-react-diagrams
-- https://github.com/nomcopter/react-mosaic 
+- https://github.com/nomcopter/react-mosaic /2.6kStar/Apache2/202309/ts
   - https://nomcopter.github.io/react-mosaic/
-  - /2.6kStar/Apache2/202005/ts
   - A React tiling window 
   - 可以拖拽改变panel大小，支持自动平铺
 - https://github.com/arqex/react-tiles /46Star/201804

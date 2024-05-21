@@ -37,7 +37,15 @@ modified: 2021-01-08T17:13:43.392Z
 
 - ## 
 
-- ## 
+- ## Why is `cloneNode(true)` so broken in browsers today compared to `importNode(true)` ?
+- https://x.com/trueadm/status/1792590536777375841
+  - cloneNode doesn't work with lazy `<img>` elements in FF/Webkit
+  - cloneNode doesn't work with pointer events in Chrome
+  - cloneNode doesn't work properly with custom elements
+  - Yet, `cloneNode` is still around 30% faster than `importNode` in our testing.
+
+- In both the standard and in WebKit these end up calling the same underlying algorithm. Would be interesting to see some tests.
+- It’s faster because it’s missing a bunch of features
 
 - ## 看起来单个 observer会更快。 这不性能优化的点就来了，以后面试官问你就可以说你是怎么优化曝光组件的了
 - https://twitter.com/wulianwen1/status/1788244518044852243
