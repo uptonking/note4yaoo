@@ -135,6 +135,7 @@ modified: 2020-10-22T10:22:55.878Z
   - 部分使用class组件
   - 兼容各种产品自定义的流程编辑需求，绝大部分模块以插件的形式实现，支持各模块自由插拔
   - ⌛️ 支持undo/redo
+  - 支持pause/resume
   - 本地开发时，使用node.v16
   - [feat(engine): add the ability to pause and resume workflows _202307](https://github.com/didi/LogicFlow/commit/7c4e3855ad0a7af4121de6552be61f690b4e0e6c)
   - [LogicFlow案例分享](https://github.com/didi/LogicFlow/issues/716)

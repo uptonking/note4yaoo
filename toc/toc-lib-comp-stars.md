@@ -47,6 +47,15 @@ modified: 2021-01-12T18:49:07.422Z
 - https://github.com/TBear79/headless-datepicker /201801/ts/inactive
   - Provides the logic for a datepicker. Apply your own UI on top.
   - Relies on moment.js
+
+- https://github.com/jquense/react-big-calendar /MIT/202405/js
+  - http://jquense.github.io/react-big-calendar/examples/index.html
+  - gcal/outlook like calendar component
+  - An events calendar component built for React and designed for modern browsers (read: not IE) and uses flexbox over the classic tables-caption approach.
+  - Inspired by Full Calendar
+  - https://github.com/ticlo/react-big-calendar /js
+    - forked from https://github.com/jquense/react-big-calendar It's intended to be used only by the ticlo project
+
 ## calendar-heatmap
 
 - https://github.com/grubersjoe/react-activity-calendar

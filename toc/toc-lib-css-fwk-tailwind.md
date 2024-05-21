@@ -25,7 +25,12 @@ modified: 2023-02-26T18:25:01.328Z
   - tremor
 
 - tailwind-css-classes
+  - [Tailwind CSS Cheat Sheet](https://nerdcave.com/tailwind-cheat-sheet)
+  - [Tailwind CSS Cheat Sheet](https://tailwindcomponents.com/cheatsheet/)
   - [Tailwind CSS Cheat Sheet - Flowbite](https://flowbite.com/tools/tailwind-cheat-sheet/)
+
+- resources
+  - [Tailwind CSS Cheat Sheet](https://nerdcave.com/tailwind-cheat-sheet)
 # preline
 - design-tokens-from-figma 从figma中找token太慢了，直接在`demo`中找
   - https://preline.co/figma.html

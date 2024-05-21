@@ -12,17 +12,17 @@ modified: 2021-01-08T11:48:16.590Z
 - sidebar
   - 使用场景包括dashboard、doc、book、site...
   - 可以直接从使用场景的角度来分析解决方案
-  - 侧边栏过于复杂时可以考虑用窗口来代替实现(侧边栏 vs 浮动面板)
+  - 侧边栏过于复杂时可以考虑用弹窗来代替实现(侧边栏 vs 浮动面板)
   - 主流的库会碰到各种需求，可以在issues中搜索 two sidebar 查看讨论过的方案
 
-- ref
+- dev-xp
   - 几乎所有的窗口布局组件的例子，整体最外层布局都是不能下滑滚动的，但窗口内部内容可以滚动
     - 比较适合做表格，做文档要考虑跳转到锚点
 # panel-window-manager
-- ref
+- features
   - 可拖动
   - 可缩放
-  - 是否支持dock
+  - dockable
   - 卡片是否可重叠或遮挡
   - 是否支持split view
   - [search: window manager](https://github.com/search?o=desc&p=1&q=window+manager+language%3Ajavascript+language%3Atypescript&s=updated&type=Repositories)
@@ -45,39 +45,50 @@ modified: 2021-01-08T11:48:16.590Z
   - 主要用于传统分栏布局，窗口不可重叠遮挡
   - 适合实现类似vscode、notable这类编辑器或文件管理器
 
-- rc-dock /411Star/Apache2/202212/ts+js
+- https://github.com/mathuo/dockview /MIT/202405/ts/NoDeps
+  - https://dockview.dev/
+  - https://dockview.dev/demo
+  - Zero dependency layout manager supporting tabs, groups, grids and splitviews with ReactJS support written in TypeScript
+  - core实现是vanillajs，提供了框架封装
+  - Serialization/deserialization with full layout management
+  - Support for split-views, grid-views and 'dockable' views
+  - High test coverage
+
+- rc-dock /411Star/apache2/202306/ts
   - https://github.com/ticlo/rc-dock
   - https://ticlo.github.io/rc-dock/examples
   - Dock Layout for React Component
   - 卡片能随意拖动和缩放
   - 静止状态时，卡片能遮挡
   - 支持 Popup panel as new browser window
+  - 依赖rc-menu, rc-dropdown, rc-tabs, rc-new-window, lodash
 
-- https://github.com/jupyterlab/lumino /ts/PhosphorJS/jupyter
+- https://github.com/jupyterlab/lumino /BSD/202405/ts/PhosphorJS/jupyter
   - https://lumino.readthedocs.io/en/latest/examples.html
+  - https://lumino.readthedocs.io/en/latest/examples/dockpanel/index.html
   - a set of JavaScript packages, written in TypeScript, that provide a rich toolkit of widgets, layouts, events, and data structures. 
   - 提供了3个经典示例: accordion、data-grid with merged-cell、dock-panel
+  - 偏向通用前端开发，使用了自定义vdom(单文件)
   - These enable developers to construct extensible high-performance desktop-like web applications, such as JupyterLab. 
   - Lumino was formerly known as PhosphorJS.
   - https://github.com/jupyterlab/lumino/tree/main/packages/datagrid
     - 表格自研
 
-- https://github.com/node-projects/dock-spawn-ts
+- https://github.com/node-projects/dock-spawn-ts /MIT/202405/ts
   - https://node-projects.github.io/dock-spawn-ts/
   - a Typescript Docking Framework to create a Visual Studio like IDE in HTML
   - a Typescript fork of Dock Spawn, a Docking Framework for HTML.
   - 提供了ide的示例，复刻visual studio
   - 支持多实例
 
-- https://github.com/caplin/FlexLayout  /ts
+- https://github.com/caplin/FlexLayout /MIT/202311/ts
   - https://rawgit.com/caplin/FlexLayout/demos/demos/v0.7/demo/index.html
   - A multi-tab layout manager
   - 功能非常丰富，提供了类似vscode的左右侧边栏tabs，主内容区tabs，底部tabs
   - 样式陈旧
 
-- https://github.com/hlhielkema/elara 
+- https://github.com/hlhielkema/elara /5Star/MIT/202009/js/NoDeps
   - https://hlhielkema.github.io/elara/
-  - /5Star/MIT/202009/js/NoDeps
   - 卡片能随意拖动和缩放
   - 静止状态时，卡片能部分遮挡；样式非常友好，demo设计很棒
   - 注意，例子都很好看，但都没有显示竖直滚动条
@@ -85,15 +96,11 @@ modified: 2021-01-08T11:48:16.590Z
   - Elara enables creating a Windows/MacOS like window manager experience inside a web browser. 
   - No third-party libraries or frameworks are needed to use Elara.
 
-- https://github.com/mathuo/dockview /MIT/202405/ts/NoDeps
-  - https://dockview.dev/#live-demo
-  - A zero dependency layout manager built for React
-
-- https://github.com/aeagle/react-spaces
+- https://github.com/aeagle/react-spaces /MIT/202404/ts
   - https://allaneagle.com/projects/react-spaces
   - An easy to understand and nestable layout system, React Spaces allow you to divide a page or container into anchored, scrollable and resizable spaces enabling you to build desktop type user interfaces in the browser.
-- https://github.com/rlamana/Ventus
-  - /300Star/MIT/201812/js/只依赖lodash
+
+- https://github.com/rlamana/Ventus /300Star/MIT/201812/js/只依赖lodash
   - http://www.rlamana.com/ventus/code/examples/simple/
   - http://www.rlamana.com/ventus/code/examples/desktop/
   - 卡片能随意拖动和缩放，经典例子expose可以一次预览所有窗口
@@ -105,13 +112,11 @@ modified: 2021-01-08T11:48:16.590Z
   - 明显感觉比Ventus更卡顿
   - A javascript-only Window Manager
   - I used Ventus to build internal tools and editors, but I wanted a more configurable solution with a better event model that didn't rely on CSS.
-- https://github.com/nextapps-de/winbox
+- https://github.com/nextapps-de/winbox /3.7kStar/Apache2/202105/js
   - https://nextapps-de.github.io/winbox/
-  - /3.7kStar/Apache2/202105/js
   - 功能简单，但文档示例丰富
   - outstanding performance, no dependencies, fully customizable
-- https://github.com/Knossys/Proscenium 
-  - /1Star/202011
+- https://github.com/Knossys/Proscenium /1Star/202011
   - A web based window manager and user interface toolkit for cloud based applications
 - https://github.com/cezarykluczynski/simone
   - http://cezarykluczynski.github.io/simone/demos/functional/basic.html
@@ -235,14 +240,13 @@ modified: 2021-01-08T11:48:16.590Z
   - React components for resizable panel groups/layouts.
   - panel 不重叠，不可悬浮
 
-- https://github.com/nathancahill/split /js/NoDeps
+- https://github.com/nathancahill/split /MIT/202307/js/NoDeps
   - https://split.js.org/
   - Unopinionated utilities for resizeable split views
   - No overhead or attached window event listeners, uses pure CSS for resizing.
   - Split.js - The original library, maintained since 2014, works with float and flex layouts
   - Split Grid - Successor to Split.js, for grid layouts. 基于display-grid实现
-
-- https://github.com/devbookhq/splitter /ts
+- https://github.com/devbookhq/splitter /MIT/202308/ts
   - a React component that allows you to split views into resizable panels. Similar to vscode
   - inspired by Split.js and written as 100% functional component
   - All size calculation is done through CSS using `calc` with minimal JS

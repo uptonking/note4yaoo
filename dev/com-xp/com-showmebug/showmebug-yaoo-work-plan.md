@@ -45,12 +45,20 @@ modified: 2024-05-06T02:54:40.374Z
 
 ### not-yet
 
+- snapshot数据是如何存储的
+
+- 暂停/继续播放的回调事件未生效
+
 - 获取ticket的api未添加权限校验，header中没有token
 
 - 回放控制的示例，只打印了 onAvailable 事件
 
 - 所有数据的通信都基于channel(websocket)?
   - 获取回放数据没必要用websocket，因为对实时性要求不高
+
+- LSP 的server迁移到worker的方案
+
+- 支持多实例
 
 - paas平台为什么难以落地
   - 功能又多又杂
@@ -211,6 +219,7 @@ useEffect(() => {
 
 - roadmap
   - 回放时~~不支持浏览器预览面板~~, showMeBug中基于rrweb实现浏览器预览面板的回放
+  - 操作op很多时，回放性能差。 考虑snapshot
   - 支持多次编辑的snapshot数据? 多个task?
 
 - 临时方案/待优化
@@ -282,7 +291,7 @@ useEffect(() => {
 // ;; startRecordBrowser  
 // https://d6f47ebf168c8bac0d9048551a99512c-app.staging.1024paas.com null
 
-// http://localhost:3010/ide/replay/662725910453239808/showmebug?showRRwebController=1
+// http://localhost:3010/ide/replay/664529280084164608/showmebug?showRRwebController=1
 // daoPaasObj.preparePlaybackSync()
 // 客户端request getPlaybackInfo
 // 42 
@@ -291,22 +300,22 @@ const playbackInfo = [
   "playbackInfo",
   {
     "playbackSummerize": {
-      "total": 35,
-      "start": 1715831830251,
-      "end": 1715832045082,
+      "total": 49,
+      "start": 1716261783156,
+      "end": 1716261833013,
       "customize": []
     },
     "playbackData": {
       "playbackData": [{
-          "_id": "66458416e6ca87f076702c89",
-          "timestamp": 1715831830251,
-          "playgroundId": "662725910453239808",
-          "dockerId": "662725910495182848",
+          "_id": "664c1397e6ca87f076703709",
+          "timestamp": 1716261783156,
+          "playgroundId": "664529280084164608",
+          "dockerId": "664529280126107648",
           "eventName": "fileTree",
           "agentUserId": "ide",
           "data": {
             "action": "REFRESH",
-            "fileRootPath": "/app/data/codeZone/2024/3/5-16/@fad3d6d8-d302-4e29-9c2a-a02f9ca04026/source",
+            "fileRootPath": "/app/data/codeZone/2024/3/5-21/@0d04a0b4-3799-4013-9c36-396fb6187ae9/source",
             "payload": {
               "path": ".",
               "name": ".",
@@ -357,10 +366,10 @@ const playbackInfo = [
           "__v": 0
         },
         {
-          "_id": "66458418e6ca87f076702c8e",
-          "timestamp": 1715831832648,
-          "playgroundId": "662725910453239808",
-          "dockerId": "662725910495182848",
+          "_id": "664c139ae6ca87f07670370e",
+          "timestamp": 1716261786399,
+          "playgroundId": "664529280084164608",
+          "dockerId": "664529280126107648",
           "eventName": "console",
           "agentUserId": "backend",
           "data": {
@@ -369,10 +378,10 @@ const playbackInfo = [
           "__v": 0
         },
         {
-          "_id": "66458418e6ca87f076702c8f",
-          "timestamp": 1715831832649,
-          "playgroundId": "662725910453239808",
-          "dockerId": "662725910495182848",
+          "_id": "664c139ae6ca87f076703710",
+          "timestamp": 1716261786402,
+          "playgroundId": "664529280084164608",
+          "dockerId": "664529280126107648",
           "eventName": "terminal",
           "agentUserId": "backend",
           "data": {
@@ -381,10 +390,10 @@ const playbackInfo = [
           "__v": 0
         },
         {
-          "_id": "66458419e6ca87f076702c92",
-          "timestamp": 1715831833933,
-          "playgroundId": "662725910453239808",
-          "dockerId": "662725910495182848",
+          "_id": "664c139be6ca87f076703712",
+          "timestamp": 1716261787595,
+          "playgroundId": "664529280084164608",
+          "dockerId": "664529280126107648",
           "eventName": "terminal",
           "agentUserId": "backend",
           "data": {
@@ -393,10 +402,10 @@ const playbackInfo = [
           "__v": 0
         },
         {
-          "_id": "66458419e6ca87f076702c94",
-          "timestamp": 1715831833933,
-          "playgroundId": "662725910453239808",
-          "dockerId": "662725910495182848",
+          "_id": "664c139be6ca87f076703714",
+          "timestamp": 1716261787595,
+          "playgroundId": "664529280084164608",
+          "dockerId": "664529280126107648",
           "eventName": "terminal",
           "agentUserId": "backend",
           "data": {
@@ -405,58 +414,10 @@ const playbackInfo = [
           "__v": 0
         },
         {
-          "_id": "6645841fe6ca87f076702c96",
-          "timestamp": 1715831839991,
-          "playgroundId": "662725910453239808",
-          "dockerId": "662725910495182848",
-          "eventName": "terminal",
-          "agentUserId": "backend",
-          "data": {
-            "value": "\r\u001b[K\u001b[01;34m~/app\u001b[00m$ "
-          },
-          "__v": 0
-        },
-        {
-          "_id": "66458421e6ca87f076702c98",
-          "timestamp": 1715831841336,
-          "playgroundId": "662725910453239808",
-          "dockerId": "662725910495182848",
-          "eventName": "terminal",
-          "agentUserId": "backend",
-          "data": {
-            "value": "\r\u001b[K\u001b[01;34m~/app\u001b[00m$ "
-          },
-          "__v": 0
-        },
-        {
-          "_id": "66458422e6ca87f076702c9a",
-          "timestamp": 1715831842894,
-          "playgroundId": "662725910453239808",
-          "dockerId": "662725910495182848",
-          "eventName": "terminal",
-          "agentUserId": "backend",
-          "data": {
-            "value": "\r\u001b[K\u001b[01;34m~/app\u001b[00m$ "
-          },
-          "__v": 0
-        },
-        {
-          "_id": "66458439e6ca87f076702c9c",
-          "timestamp": 1715831865818,
-          "playgroundId": "662725910453239808",
-          "dockerId": "662725910495182848",
-          "eventName": "terminal",
-          "agentUserId": "backend",
-          "data": {
-            "value": "\r\u001b[K\u001b[01;34m~/app\u001b[00m$ "
-          },
-          "__v": 0
-        },
-        {
-          "_id": "66458485e6ca87f076702c9f",
-          "timestamp": 1715831941702,
-          "playgroundId": "662725910453239808",
-          "dockerId": "662725910495182848",
+          "_id": "664c13a9e6ca87f076703717",
+          "timestamp": 1716261801803,
+          "playgroundId": "664529280084164608",
+          "dockerId": "664529280126107648",
           "eventName": "focusChange",
           "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea",
           "data": {
@@ -465,22 +426,10 @@ const playbackInfo = [
           "__v": 0
         },
         {
-          "_id": "66458485e6ca87f076702ca9",
-          "timestamp": 1715831941732,
-          "playgroundId": "662725910453239808",
-          "dockerId": "662725910495182848",
-          "eventName": "editor",
-          "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea",
-          "data": {
-            "openedPath": "bs-config.js"
-          },
-          "__v": 0
-        },
-        {
-          "_id": "66458485e6ca87f076702ca8",
-          "timestamp": 1715831941732,
-          "playgroundId": "662725910453239808",
-          "dockerId": "662725910495182848",
+          "_id": "664c13a9e6ca87f076703720",
+          "timestamp": 1716261801852,
+          "playgroundId": "664529280084164608",
+          "dockerId": "664529280126107648",
           "eventName": "fileTree",
           "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea",
           "data": {
@@ -493,10 +442,22 @@ const playbackInfo = [
           "__v": 0
         },
         {
-          "_id": "66458486e6ca87f076702cae",
-          "timestamp": 1715831942203,
-          "playgroundId": "662725910453239808",
-          "dockerId": "662725910495182848",
+          "_id": "664c13a9e6ca87f076703721",
+          "timestamp": 1716261801853,
+          "playgroundId": "664529280084164608",
+          "dockerId": "664529280126107648",
+          "eventName": "editor",
+          "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea",
+          "data": {
+            "openedPath": "bs-config.js"
+          },
+          "__v": 0
+        },
+        {
+          "_id": "664c13aae6ca87f076703726",
+          "timestamp": 1716261802455,
+          "playgroundId": "664529280084164608",
+          "dockerId": "664529280126107648",
           "eventName": "editor",
           "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea",
           "data": {
@@ -530,14 +491,14 @@ const playbackInfo = [
               }
             ]
           },
-          "uuid": "d540235b-6196-44d1-8d22-2bc549f5390e",
+          "uuid": "7ca399c6-8ecb-47e7-a642-f2c2543d5411",
           "__v": 0
         },
         {
-          "_id": "66458487e6ca87f076702cb9",
-          "timestamp": 1715831943182,
-          "playgroundId": "662725910453239808",
-          "dockerId": "662725910495182848",
+          "_id": "664c13aae6ca87f076703731",
+          "timestamp": 1716261802759,
+          "playgroundId": "664529280084164608",
+          "dockerId": "664529280126107648",
           "eventName": "editor",
           "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea",
           "data": {
@@ -546,10 +507,10 @@ const playbackInfo = [
           "__v": 0
         },
         {
-          "_id": "66458487e6ca87f076702cb8",
-          "timestamp": 1715831943182,
-          "playgroundId": "662725910453239808",
-          "dockerId": "662725910495182848",
+          "_id": "664c13aae6ca87f076703730",
+          "timestamp": 1716261802759,
+          "playgroundId": "664529280084164608",
+          "dockerId": "664529280126107648",
           "eventName": "fileTree",
           "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea",
           "data": {
@@ -562,10 +523,10 @@ const playbackInfo = [
           "__v": 0
         },
         {
-          "_id": "66458487e6ca87f076702cbe",
-          "timestamp": 1715831943640,
-          "playgroundId": "662725910453239808",
-          "dockerId": "662725910495182848",
+          "_id": "664c13abe6ca87f076703736",
+          "timestamp": 1716261803225,
+          "playgroundId": "664529280084164608",
+          "dockerId": "664529280126107648",
           "eventName": "editor",
           "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea",
           "data": {
@@ -590,8 +551,8 @@ const playbackInfo = [
                 ],
                 "selection": {
                   "ranges": [{
-                    "anchor": 71,
-                    "head": 71
+                    "anchor": 272,
+                    "head": 272
                   }],
                   "main": 0
                 },
@@ -599,69 +560,156 @@ const playbackInfo = [
               }
             ]
           },
-          "uuid": "b9c7b9eb-e74b-4920-9df1-ed75aeda1d32",
+          "uuid": "fb16b3c8-c750-444c-82ea-95f9115fb67e",
           "__v": 0
         },
         {
-          "_id": "66458498e6ca87f076702cc1",
-          "timestamp": 1715831960139,
-          "playgroundId": "662725910453239808",
-          "dockerId": "662725910495182848",
-          "eventName": "terminal",
-          "agentUserId": "backend",
+          "_id": "664c13ace6ca87f07670373e",
+          "timestamp": 1716261804424,
+          "playgroundId": "664529280084164608",
+          "dockerId": "664529280126107648",
+          "eventName": "fileTree",
+          "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea",
           "data": {
-            "value": "\r\u001b[K\u001b[01;34m~/app\u001b[00m$ "
+            "action": "FOCUS",
+            "files": [{
+              "type": "FILE",
+              "name": "bs-config.js"
+            }]
           },
           "__v": 0
         },
         {
-          "_id": "664584c6e6ca87f076702cc3",
-          "timestamp": 1715832006370,
-          "playgroundId": "662725910453239808",
-          "dockerId": "662725910495182848",
+          "_id": "664c13ace6ca87f07670373f",
+          "timestamp": 1716261804425,
+          "playgroundId": "664529280084164608",
+          "dockerId": "664529280126107648",
           "eventName": "editor",
           "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea",
           "data": {
-            "revision": 3,
-            "openedPath": "index.html",
-            "updates": [{
-              "changes": [
-                272
-              ],
-              "selection": {
-                "ranges": [{
-                  "anchor": 35,
-                  "head": 35
-                }],
-                "main": 0
-              },
-              "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea"
-            }]
-          },
-          "uuid": "5dbf4085-0dcc-48af-83fa-55d1f2087b16",
-          "__v": 0
-        },
-        {
-          "_id": "664584c6e6ca87f076702cc6",
-          "timestamp": 1715832006523,
-          "playgroundId": "662725910453239808",
-          "dockerId": "662725910495182848",
-          "eventName": "focusChange",
-          "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea",
-          "data": {
-            "componentName": "Editor"
+            "openedPath": "bs-config.js"
           },
           "__v": 0
         },
         {
-          "_id": "664584dde6ca87f076702cca",
-          "timestamp": 1715832029265,
-          "playgroundId": "662725910453239808",
-          "dockerId": "662725910495182848",
+          "_id": "664c13ace6ca87f076703744",
+          "timestamp": 1716261804966,
+          "playgroundId": "664529280084164608",
+          "dockerId": "664529280126107648",
           "eventName": "editor",
           "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea",
           "data": {
             "revision": 4,
+            "openedPath": "bs-config.js",
+            "updates": [{
+                "changes": [
+                  2324
+                ],
+                "selection": {
+                  "ranges": [{
+                    "anchor": 2324,
+                    "head": 2324
+                  }],
+                  "main": 0
+                },
+                "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea"
+              },
+              {
+                "changes": [
+                  2324
+                ],
+                "selection": {
+                  "ranges": [{
+                    "anchor": 2324,
+                    "head": 2324
+                  }],
+                  "main": 0
+                },
+                "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea"
+              }
+            ]
+          },
+          "uuid": "dde48bc7-f187-45cb-85cd-0c2b8b799cb3",
+          "__v": 0
+        },
+        {
+          "_id": "664c13aee6ca87f07670374c",
+          "timestamp": 1716261806523,
+          "playgroundId": "664529280084164608",
+          "dockerId": "664529280126107648",
+          "eventName": "fileTree",
+          "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea",
+          "data": {
+            "action": "FOCUS",
+            "files": [{
+              "type": "FILE",
+              "name": "index.html"
+            }]
+          },
+          "__v": 0
+        },
+        {
+          "_id": "664c13aee6ca87f07670374d",
+          "timestamp": 1716261806524,
+          "playgroundId": "664529280084164608",
+          "dockerId": "664529280126107648",
+          "eventName": "editor",
+          "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea",
+          "data": {
+            "openedPath": "index.html"
+          },
+          "__v": 0
+        },
+        {
+          "_id": "664c13aee6ca87f076703752",
+          "timestamp": 1716261806996,
+          "playgroundId": "664529280084164608",
+          "dockerId": "664529280126107648",
+          "eventName": "editor",
+          "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea",
+          "data": {
+            "revision": 4,
+            "openedPath": "index.html",
+            "updates": [{
+                "changes": [
+                  272
+                ],
+                "selection": {
+                  "ranges": [{
+                    "anchor": 272,
+                    "head": 272
+                  }],
+                  "main": 0
+                },
+                "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea"
+              },
+              {
+                "changes": [
+                  272
+                ],
+                "selection": {
+                  "ranges": [{
+                    "anchor": 272,
+                    "head": 272
+                  }],
+                  "main": 0
+                },
+                "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea"
+              }
+            ]
+          },
+          "uuid": "449af58f-0526-48d6-8cac-5fda47739bd4",
+          "__v": 0
+        },
+        {
+          "_id": "664c13b3e6ca87f076703755",
+          "timestamp": 1716261811907,
+          "playgroundId": "664529280084164608",
+          "dockerId": "664529280126107648",
+          "eventName": "editor",
+          "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea",
+          "data": {
+            "revision": 5,
             "openedPath": "index.html",
             "updates": [{
               "changes": [
@@ -677,18 +725,30 @@ const playbackInfo = [
               "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea"
             }]
           },
-          "uuid": "6a4129fe-6a53-493d-9dbe-9c8a573eb558",
+          "uuid": "48cc1bd7-48ff-4d5c-8cc4-97ae3f95a235",
           "__v": 0
         },
         {
-          "_id": "664584dee6ca87f076702ccc",
-          "timestamp": 1715832030226,
-          "playgroundId": "662725910453239808",
-          "dockerId": "662725910495182848",
+          "_id": "664c13b4e6ca87f076703758",
+          "timestamp": 1716261812100,
+          "playgroundId": "664529280084164608",
+          "dockerId": "664529280126107648",
+          "eventName": "focusChange",
+          "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea",
+          "data": {
+            "componentName": "Editor"
+          },
+          "__v": 0
+        },
+        {
+          "_id": "664c13b4e6ca87f07670375b",
+          "timestamp": 1716261812373,
+          "playgroundId": "664529280084164608",
+          "dockerId": "664529280126107648",
           "eventName": "editor",
           "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea",
           "data": {
-            "revision": 5,
+            "revision": 6,
             "openedPath": "index.html",
             "updates": [{
               "changes": [
@@ -710,47 +770,14 @@ const playbackInfo = [
               "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea"
             }]
           },
-          "uuid": "0837fce4-4113-40ab-bf9d-978b424deb25",
+          "uuid": "b07546c6-926b-4fa6-b3ba-5f14434536ca",
           "__v": 0
         },
         {
-          "_id": "664584dee6ca87f076702cce",
-          "timestamp": 1715832030775,
-          "playgroundId": "662725910453239808",
-          "dockerId": "662725910495182848",
-          "eventName": "editor",
-          "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea",
-          "data": {
-            "revision": 6,
-            "openedPath": "index.html",
-            "updates": [{
-              "changes": [
-                62,
-                [
-                  8,
-                  "",
-                  "        "
-                ],
-                211
-              ],
-              "selection": {
-                "ranges": [{
-                  "anchor": 71,
-                  "head": 71
-                }],
-                "main": 0
-              },
-              "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea"
-            }]
-          },
-          "uuid": "ffa010a7-234b-4dea-9c2e-d32e0db31d33",
-          "__v": 0
-        },
-        {
-          "_id": "664584e1e6ca87f076702cd0",
-          "timestamp": 1715832033339,
-          "playgroundId": "662725910453239808",
-          "dockerId": "662725910495182848",
+          "_id": "664c13b5e6ca87f07670375d",
+          "timestamp": 1716261813672,
+          "playgroundId": "664529280084164608",
+          "dockerId": "664529280126107648",
           "eventName": "editor",
           "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea",
           "data": {
@@ -758,26 +785,26 @@ const playbackInfo = [
             "openedPath": "index.html",
             "updates": [{
               "changes": [
-                282
+                281
               ],
               "selection": {
                 "ranges": [{
-                  "anchor": 250,
-                  "head": 250
+                  "anchor": 249,
+                  "head": 249
                 }],
                 "main": 0
               },
               "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea"
             }]
           },
-          "uuid": "78d6a9ce-1399-406f-a63f-57e1d815c378",
+          "uuid": "b817119d-c166-4c77-9c9f-8677e79fad4a",
           "__v": 0
         },
         {
-          "_id": "664584e2e6ca87f076702cd2",
-          "timestamp": 1715832034319,
-          "playgroundId": "662725910453239808",
-          "dockerId": "662725910495182848",
+          "_id": "664c13b6e6ca87f07670375f",
+          "timestamp": 1716261814006,
+          "playgroundId": "664529280084164608",
+          "dockerId": "664529280126107648",
           "eventName": "editor",
           "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea",
           "data": {
@@ -785,11 +812,43 @@ const playbackInfo = [
             "openedPath": "index.html",
             "updates": [{
               "changes": [
-                250,
+                249,
                 [
                   0,
                   "",
                   "        "
+                ],
+                32
+              ],
+              "selection": {
+                "ranges": [{
+                  "anchor": 258,
+                  "head": 258
+                }],
+                "main": 0
+              },
+              "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea"
+            }]
+          },
+          "uuid": "140ff157-d6c1-496d-b870-0fbe8c592ca9",
+          "__v": 0
+        },
+        {
+          "_id": "664c13b6e6ca87f076703761",
+          "timestamp": 1716261814861,
+          "playgroundId": "664529280084164608",
+          "dockerId": "664529280126107648",
+          "eventName": "editor",
+          "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea",
+          "data": {
+            "revision": 9,
+            "openedPath": "index.html",
+            "updates": [{
+              "changes": [
+                258,
+                [
+                  0,
+                  "c"
                 ],
                 32
               ],
@@ -803,46 +862,14 @@ const playbackInfo = [
               "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea"
             }]
           },
-          "uuid": "5f5d6133-9231-4f9b-8450-f238835111da",
+          "uuid": "c77985cf-cde3-4ab9-b1b9-749078fb13fa",
           "__v": 0
         },
         {
-          "_id": "664584e3e6ca87f076702cd5",
-          "timestamp": 1715832035412,
-          "playgroundId": "662725910453239808",
-          "dockerId": "662725910495182848",
-          "eventName": "editor",
-          "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea",
-          "data": {
-            "revision": 9,
-            "openedPath": "index.html",
-            "updates": [{
-              "changes": [
-                259,
-                [
-                  0,
-                  "c"
-                ],
-                32
-              ],
-              "selection": {
-                "ranges": [{
-                  "anchor": 260,
-                  "head": 260
-                }],
-                "main": 0
-              },
-              "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea"
-            }]
-          },
-          "uuid": "a70924fb-7ddd-489d-8b16-c1bd227a5164",
-          "__v": 0
-        },
-        {
-          "_id": "664584e3e6ca87f076702cd7",
-          "timestamp": 1715832035884,
-          "playgroundId": "662725910453239808",
-          "dockerId": "662725910495182848",
+          "_id": "664c13b7e6ca87f076703763",
+          "timestamp": 1716261815161,
+          "playgroundId": "664529280084164608",
+          "dockerId": "664529280126107648",
           "eventName": "editor",
           "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea",
           "data": {
@@ -850,10 +877,42 @@ const playbackInfo = [
             "openedPath": "index.html",
             "updates": [{
               "changes": [
-                260,
+                259,
                 [
                   0,
                   "onsole.log("
+                ],
+                32
+              ],
+              "selection": {
+                "ranges": [{
+                  "anchor": 270,
+                  "head": 270
+                }],
+                "main": 0
+              },
+              "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea"
+            }]
+          },
+          "uuid": "9efbc495-9cd9-4b64-9897-c67ae9bf099d",
+          "__v": 0
+        },
+        {
+          "_id": "664c13b7e6ca87f076703765",
+          "timestamp": 1716261815967,
+          "playgroundId": "664529280084164608",
+          "dockerId": "664529280126107648",
+          "eventName": "editor",
+          "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea",
+          "data": {
+            "revision": 11,
+            "openedPath": "index.html",
+            "updates": [{
+              "changes": [
+                270,
+                [
+                  0,
+                  ")"
                 ],
                 32
               ],
@@ -867,27 +926,86 @@ const playbackInfo = [
               "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea"
             }]
           },
-          "uuid": "94b69841-42d1-41b4-ac5a-c457006341d2",
+          "uuid": "ec2728cb-28ce-43d8-a991-60329ea7750a",
           "__v": 0
         },
         {
-          "_id": "664584e5e6ca87f076702cd9",
-          "timestamp": 1715832037089,
-          "playgroundId": "662725910453239808",
-          "dockerId": "662725910495182848",
+          "_id": "664c13b8e6ca87f076703767",
+          "timestamp": 1716261816550,
+          "playgroundId": "664529280084164608",
+          "dockerId": "664529280126107648",
           "eventName": "editor",
           "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea",
           "data": {
-            "revision": 11,
+            "revision": 12,
+            "openedPath": "index.html",
+            "updates": [{
+              "changes": [
+                303
+              ],
+              "selection": {
+                "ranges": [{
+                  "anchor": 270,
+                  "head": 270
+                }],
+                "main": 0
+              },
+              "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea"
+            }]
+          },
+          "uuid": "09b70d89-54b7-43e7-9400-66520f352ed0",
+          "__v": 0
+        },
+        {
+          "_id": "664c13b9e6ca87f076703769",
+          "timestamp": 1716261817452,
+          "playgroundId": "664529280084164608",
+          "dockerId": "664529280126107648",
+          "eventName": "editor",
+          "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea",
+          "data": {
+            "revision": 13,
+            "openedPath": "index.html",
+            "updates": [{
+              "changes": [
+                270,
+                [
+                  0,
+                  "''"
+                ],
+                33
+              ],
+              "selection": {
+                "ranges": [{
+                  "anchor": 271,
+                  "head": 271
+                }],
+                "main": 0
+              },
+              "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea"
+            }]
+          },
+          "uuid": "875e0dfd-9ffb-4d25-b5ff-5b9656051361",
+          "__v": 0
+        },
+        {
+          "_id": "664c13b9e6ca87f07670376b",
+          "timestamp": 1716261817958,
+          "playgroundId": "664529280084164608",
+          "dockerId": "664529280126107648",
+          "eventName": "editor",
+          "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea",
+          "data": {
+            "revision": 14,
             "openedPath": "index.html",
             "updates": [{
               "changes": [
                 271,
                 [
                   0,
-                  ")"
+                  "a"
                 ],
-                32
+                34
               ],
               "selection": {
                 "ranges": [{
@@ -899,14 +1017,46 @@ const playbackInfo = [
               "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea"
             }]
           },
-          "uuid": "1febf6e2-30f0-4f7f-ba17-4648bdd748a3",
+          "uuid": "8ba26309-cc63-4393-8ff9-27d8214cc2ff",
           "__v": 0
         },
         {
-          "_id": "664584e8e6ca87f076702cdd",
-          "timestamp": 1715832040432,
-          "playgroundId": "662725910453239808",
-          "dockerId": "662725910495182848",
+          "_id": "664c13bae6ca87f07670376d",
+          "timestamp": 1716261818258,
+          "playgroundId": "664529280084164608",
+          "dockerId": "664529280126107648",
+          "eventName": "editor",
+          "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea",
+          "data": {
+            "revision": 15,
+            "openedPath": "index.html",
+            "updates": [{
+              "changes": [
+                272,
+                [
+                  0,
+                  "a"
+                ],
+                34
+              ],
+              "selection": {
+                "ranges": [{
+                  "anchor": 273,
+                  "head": 273
+                }],
+                "main": 0
+              },
+              "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea"
+            }]
+          },
+          "uuid": "a10a2d66-f09a-4cad-8f92-261dcc11171c",
+          "__v": 0
+        },
+        {
+          "_id": "664c13bce6ca87f076703771",
+          "timestamp": 1716261820277,
+          "playgroundId": "664529280084164608",
+          "dockerId": "664529280126107648",
           "eventName": "focusChange",
           "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea",
           "data": {
@@ -915,10 +1065,10 @@ const playbackInfo = [
           "__v": 0
         },
         {
-          "_id": "664584e8e6ca87f076702ce5",
-          "timestamp": 1715832040450,
-          "playgroundId": "662725910453239808",
-          "dockerId": "662725910495182848",
+          "_id": "664c13bce6ca87f076703779",
+          "timestamp": 1716261820326,
+          "playgroundId": "664529280084164608",
+          "dockerId": "664529280126107648",
           "eventName": "fileTree",
           "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea",
           "data": {
@@ -931,10 +1081,10 @@ const playbackInfo = [
           "__v": 0
         },
         {
-          "_id": "664584e8e6ca87f076702ce6",
-          "timestamp": 1715832040451,
-          "playgroundId": "662725910453239808",
-          "dockerId": "662725910495182848",
+          "_id": "664c13bce6ca87f07670377a",
+          "timestamp": 1716261820327,
+          "playgroundId": "664529280084164608",
+          "dockerId": "664529280126107648",
           "eventName": "editor",
           "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea",
           "data": {
@@ -943,14 +1093,14 @@ const playbackInfo = [
           "__v": 0
         },
         {
-          "_id": "664584e8e6ca87f076702ceb",
-          "timestamp": 1715832040854,
-          "playgroundId": "662725910453239808",
-          "dockerId": "662725910495182848",
+          "_id": "664c13bce6ca87f07670377f",
+          "timestamp": 1716261820773,
+          "playgroundId": "664529280084164608",
+          "dockerId": "664529280126107648",
           "eventName": "editor",
           "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea",
           "data": {
-            "revision": 4,
+            "revision": 6,
             "openedPath": "bs-config.js",
             "updates": [{
                 "changes": [
@@ -980,18 +1130,18 @@ const playbackInfo = [
               }
             ]
           },
-          "uuid": "9cb7a6a3-6793-4899-9e4b-5c0bbc6a8fae",
+          "uuid": "30680c65-61e8-48d2-bd47-dabf4a6b5f23",
           "__v": 0
         },
         {
-          "_id": "664584ebe6ca87f076702ced",
-          "timestamp": 1715832043138,
-          "playgroundId": "662725910453239808",
-          "dockerId": "662725910495182848",
+          "_id": "664c13bee6ca87f076703781",
+          "timestamp": 1716261822369,
+          "playgroundId": "664529280084164608",
+          "dockerId": "664529280126107648",
           "eventName": "editor",
           "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea",
           "data": {
-            "revision": 5,
+            "revision": 7,
             "openedPath": "bs-config.js",
             "updates": [{
               "changes": [
@@ -1012,64 +1162,14 @@ const playbackInfo = [
               "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea"
             }]
           },
-          "uuid": "130e90dd-7426-4b6f-ac84-caca27a3e144",
+          "uuid": "cd8dec64-430d-4228-9ebb-bcf28bfc072a",
           "__v": 0
         },
         {
-          "_id": "664584ebe6ca87f076702cf3",
-          "timestamp": 1715832043442,
-          "playgroundId": "662725910453239808",
-          "dockerId": "662725910495182848",
-          "eventName": "editor",
-          "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea",
-          "data": {
-            "revision": 7,
-            "openedPath": "bs-config.js",
-            "updates": [{
-                "changes": [
-                  2325,
-                  [
-                    0,
-                    "",
-                    ""
-                  ]
-                ],
-                "selection": {
-                  "ranges": [{
-                    "anchor": 2326,
-                    "head": 2326
-                  }],
-                  "main": 0
-                },
-                "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea"
-              },
-              {
-                "changes": [
-                  2326,
-                  [
-                    0,
-                    "c"
-                  ]
-                ],
-                "selection": {
-                  "ranges": [{
-                    "anchor": 2327,
-                    "head": 2327
-                  }],
-                  "main": 0
-                },
-                "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea"
-              }
-            ]
-          },
-          "uuid": "096b9270-c9be-4cc4-9214-046a09a09e7e",
-          "__v": 0
-        },
-        {
-          "_id": "664584ebe6ca87f076702cf5",
-          "timestamp": 1715832043910,
-          "playgroundId": "662725910453239808",
-          "dockerId": "662725910495182848",
+          "_id": "664c13c1e6ca87f076703783",
+          "timestamp": 1716261825143,
+          "playgroundId": "664529280084164608",
+          "dockerId": "664529280126107648",
           "eventName": "editor",
           "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea",
           "data": {
@@ -1077,10 +1177,72 @@ const playbackInfo = [
             "openedPath": "bs-config.js",
             "updates": [{
               "changes": [
-                2327,
+                2325,
+                [
+                  0,
+                  "c"
+                ]
+              ],
+              "selection": {
+                "ranges": [{
+                  "anchor": 2326,
+                  "head": 2326
+                }],
+                "main": 0
+              },
+              "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea"
+            }]
+          },
+          "uuid": "b3a8d82c-f025-4bc7-a66b-2965938467bd",
+          "__v": 0
+        },
+        {
+          "_id": "664c13c1e6ca87f076703785",
+          "timestamp": 1716261825701,
+          "playgroundId": "664529280084164608",
+          "dockerId": "664529280126107648",
+          "eventName": "editor",
+          "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea",
+          "data": {
+            "revision": 9,
+            "openedPath": "bs-config.js",
+            "updates": [{
+              "changes": [
+                2326,
                 [
                   0,
                   "onsole.log("
+                ]
+              ],
+              "selection": {
+                "ranges": [{
+                  "anchor": 2337,
+                  "head": 2337
+                }],
+                "main": 0
+              },
+              "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea"
+            }]
+          },
+          "uuid": "b85d43e8-9409-4442-b91a-e8bb0121b1ce",
+          "__v": 0
+        },
+        {
+          "_id": "664c13c2e6ca87f076703787",
+          "timestamp": 1716261826480,
+          "playgroundId": "664529280084164608",
+          "dockerId": "664529280126107648",
+          "eventName": "editor",
+          "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea",
+          "data": {
+            "revision": 10,
+            "openedPath": "bs-config.js",
+            "updates": [{
+              "changes": [
+                2337,
+                [
+                  0,
+                  ")"
                 ]
               ],
               "selection": {
@@ -1093,26 +1255,86 @@ const playbackInfo = [
               "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea"
             }]
           },
-          "uuid": "e2401ff6-1e7e-40e5-95fe-5ae7183fc29b",
+          "uuid": "9be2f8da-400a-4570-87cf-4ab615ff36f6",
           "__v": 0
         },
         {
-          "_id": "664584ede6ca87f076702cf7",
-          "timestamp": 1715832045082,
-          "playgroundId": "662725910453239808",
-          "dockerId": "662725910495182848",
+          "_id": "664c13c3e6ca87f076703789",
+          "timestamp": 1716261827419,
+          "playgroundId": "664529280084164608",
+          "dockerId": "664529280126107648",
           "eventName": "editor",
           "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea",
           "data": {
-            "revision": 9,
+            "revision": 11,
+            "openedPath": "bs-config.js",
+            "updates": [{
+              "changes": [
+                2338
+              ],
+              "selection": {
+                "ranges": [{
+                  "anchor": 2337,
+                  "head": 2337
+                }],
+                "main": 0
+              },
+              "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea"
+            }]
+          },
+          "uuid": "4573878a-5eca-4d76-953b-b4db179b11de",
+          "__v": 0
+        },
+        {
+          "_id": "664c13c3e6ca87f07670378b",
+          "timestamp": 1716261827857,
+          "playgroundId": "664529280084164608",
+          "dockerId": "664529280126107648",
+          "eventName": "editor",
+          "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea",
+          "data": {
+            "revision": 12,
+            "openedPath": "bs-config.js",
+            "updates": [{
+              "changes": [
+                2337,
+                [
+                  0,
+                  "''"
+                ],
+                1
+              ],
+              "selection": {
+                "ranges": [{
+                  "anchor": 2338,
+                  "head": 2338
+                }],
+                "main": 0
+              },
+              "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea"
+            }]
+          },
+          "uuid": "c54a6005-c77f-47de-bff4-0e746a25d4f3",
+          "__v": 0
+        },
+        {
+          "_id": "664c13c4e6ca87f07670378d",
+          "timestamp": 1716261828448,
+          "playgroundId": "664529280084164608",
+          "dockerId": "664529280126107648",
+          "eventName": "editor",
+          "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea",
+          "data": {
+            "revision": 13,
             "openedPath": "bs-config.js",
             "updates": [{
               "changes": [
                 2338,
                 [
                   0,
-                  ")"
-                ]
+                  "b"
+                ],
+                2
               ],
               "selection": {
                 "ranges": [{
@@ -1124,27 +1346,212 @@ const playbackInfo = [
               "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea"
             }]
           },
-          "uuid": "ea96f1b7-ccf0-4b42-b389-5dbec83eebf0",
+          "uuid": "f303e1c9-3de8-4234-a977-4a252571cc23",
+          "__v": 0
+        },
+        {
+          "_id": "664c13c4e6ca87f07670378f",
+          "timestamp": 1716261828750,
+          "playgroundId": "664529280084164608",
+          "dockerId": "664529280126107648",
+          "eventName": "editor",
+          "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea",
+          "data": {
+            "revision": 14,
+            "openedPath": "bs-config.js",
+            "updates": [{
+              "changes": [
+                2339,
+                [
+                  0,
+                  "b"
+                ],
+                2
+              ],
+              "selection": {
+                "ranges": [{
+                  "anchor": 2340,
+                  "head": 2340
+                }],
+                "main": 0
+              },
+              "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea"
+            }]
+          },
+          "uuid": "c7e34838-2958-44d7-a8a6-1a5d450977b0",
+          "__v": 0
+        },
+        {
+          "_id": "664c13c5e6ca87f076703791",
+          "timestamp": 1716261829580,
+          "playgroundId": "664529280084164608",
+          "dockerId": "664529280126107648",
+          "eventName": "editor",
+          "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea",
+          "data": {
+            "revision": 15,
+            "openedPath": "bs-config.js",
+            "updates": [{
+              "changes": [
+                2342
+              ],
+              "selection": {
+                "ranges": [{
+                  "anchor": 2324,
+                  "head": 2324
+                }],
+                "main": 0
+              },
+              "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea"
+            }]
+          },
+          "uuid": "3cf06025-31c0-4d2c-a638-d476fb3a17f6",
+          "__v": 0
+        },
+        {
+          "_id": "664c13c5e6ca87f076703794",
+          "timestamp": 1716261829770,
+          "playgroundId": "664529280084164608",
+          "dockerId": "664529280126107648",
+          "eventName": "focusChange",
+          "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea",
+          "data": {
+            "componentName": "Editor"
+          },
+          "__v": 0
+        },
+        {
+          "_id": "664c13c5e6ca87f076703797",
+          "timestamp": 1716261829906,
+          "playgroundId": "664529280084164608",
+          "dockerId": "664529280126107648",
+          "eventName": "editor",
+          "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea",
+          "data": {
+            "revision": 16,
+            "openedPath": "bs-config.js",
+            "updates": [{
+              "changes": [
+                2324,
+                [
+                  0,
+                  "",
+                  ""
+                ],
+                18
+              ],
+              "selection": {
+                "ranges": [{
+                  "anchor": 2325,
+                  "head": 2325
+                }],
+                "main": 0
+              },
+              "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea"
+            }]
+          },
+          "uuid": "4bf00752-cd3f-408a-8a41-29c2d2612d71",
+          "__v": 0
+        },
+        {
+          "_id": "664c13c8e6ca87f07670379b",
+          "timestamp": 1716261832497,
+          "playgroundId": "664529280084164608",
+          "dockerId": "664529280126107648",
+          "eventName": "focusChange",
+          "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea",
+          "data": {
+            "componentName": "Tree"
+          },
+          "__v": 0
+        },
+        {
+          "_id": "664c13c8e6ca87f0767037a3",
+          "timestamp": 1716261832554,
+          "playgroundId": "664529280084164608",
+          "dockerId": "664529280126107648",
+          "eventName": "fileTree",
+          "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea",
+          "data": {
+            "action": "FOCUS",
+            "files": [{
+              "type": "FILE",
+              "name": "index.html"
+            }]
+          },
+          "__v": 0
+        },
+        {
+          "_id": "664c13c8e6ca87f0767037a4",
+          "timestamp": 1716261832555,
+          "playgroundId": "664529280084164608",
+          "dockerId": "664529280126107648",
+          "eventName": "editor",
+          "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea",
+          "data": {
+            "openedPath": "index.html"
+          },
+          "__v": 0
+        },
+        {
+          "_id": "664c13c9e6ca87f0767037a9",
+          "timestamp": 1716261833013,
+          "playgroundId": "664529280084164608",
+          "dockerId": "664529280126107648",
+          "eventName": "editor",
+          "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea",
+          "data": {
+            "revision": 17,
+            "openedPath": "index.html",
+            "updates": [{
+                "changes": [
+                  307
+                ],
+                "selection": {
+                  "ranges": [{
+                    "anchor": 307,
+                    "head": 307
+                  }],
+                  "main": 0
+                },
+                "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea"
+              },
+              {
+                "changes": [
+                  307
+                ],
+                "selection": {
+                  "ranges": [{
+                    "anchor": 273,
+                    "head": 273
+                  }],
+                  "main": 0
+                },
+                "agentUserId": "63ba7a74-e3d4-4efd-9558-0fdd47a2d3ea"
+              }
+            ]
+          },
+          "uuid": "959cd8d9-be76-44c5-9610-010d6430809c",
           "__v": 0
         }
       ],
       "historyBaseData": [{
-          "_id": "66458485636433ffb90f3d07",
-          "dockerId": "662725910495182848",
+          "_id": "664c13a9636433ffb912046d",
+          "dockerId": "664529280126107648",
           "path": "bs-config.js",
-          "playgroundId": "662725910453239808",
+          "playgroundId": "664529280084164608",
           "__v": 0,
           "content": "// @see https://browsersync.io/docs/options/\nmodule.exports = {\n    // \"ui\": {\n    //     \"port\": 3001,\n    //     \"weinre\": {\n    //         \"port\": 8080\n    //     }\n    // },\n    \"files\": [\"**/*.css\", \"**/*.html\", \"**/*.js\"],\n    \"watchOptions\": {\n      ignore: '.*',\n      usePolling: true, // 开启轮询监听文件变化\n      interval: 200 // 轮询间隔ms\n    },\n    \"server\": {\n      // baseDir: \"src\"\n    },\n    // \"proxy\": false,\n    \"port\": 8080,\n    // \"middleware\": false,\n    // \"serveStatic\": [],\n    // \"ghostMode\": {\n    //     \"clicks\": true,\n    //     \"scroll\": true,\n    //     \"forms\": {\n    //         \"submit\": true,\n    //         \"inputs\": true,\n    //         \"toggles\": true\n    //     }\n    // },\n    // \"logLevel\": \"info\",\n    // \"logPrefix\": \"Browsersync\",\n    // \"logConnections\": false,\n    // \"logFileChanges\": true,\n    // \"logSnippet\": true,\n    // \"rewriteRules\": false,\n    \"open\": false,\n    // \"browser\": [\"google chrome\"],\n    // \"xip\": false,\n    // \"hostnameSuffix\": false,\n    // \"reloadOnRestart\": true,\n    \"notify\": false,\n    // \"scrollProportionally\": true,\n    // \"scrollThrottle\": 0,\n    // \"scrollRestoreTechnique\": \"window.name\",\n    // \"scrollElements\": [],\n    // \"scrollElementMapping\": [],\n    // \"reloadDelay\": 0,\n    // \"reloadDebounce\": 0,\n    // \"plugins\": [],\n    // \"injectChanges\": true,\n    // \"startPath\": null,\n    // \"minify\": true,\n    // \"host\": null,\n    // \"codeSync\": true,\n    // \"timestamps\": true,\n    // \"clientEvents\": [\n    //     \"scroll\",\n    //     \"scroll:element\",\n    //     \"input:text\",\n    //     \"input:toggles\",\n    //     \"form:submit\",\n    //     \"form:reset\",\n    //     \"click\"\n    // ],\n    // \"socket\": {\n    //     \"socketIoOptions\": {\n    //         \"log\": false\n    //     },\n    //     \"socketIoClientConfig\": {\n    //         \"reconnectionAttempts\": 50\n    //     },\n    //     \"path\": \"/browser-sync/socket.io\",\n    //     \"clientPath\": \"/browser-sync\",\n    //     \"namespace\": \"/browser-sync\",\n    //     \"clients\": {\n    //         \"heartbeatTimeout\": 5000\n    //     }\n    // },\n    // \"tagNames\": {\n    //     \"less\": \"link\",\n    //     \"scss\": \"link\",\n    //     \"css\": \"link\",\n    //     \"jpg\": \"img\",\n    //     \"jpeg\": \"img\",\n    //     \"png\": \"img\",\n    //     \"svg\": \"img\",\n    //     \"gif\": \"img\",\n    //     \"js\": \"script\"\n    // }\n};",
-          "createTime": 1715831941725
+          "createTime": 1716261801845
         },
         {
-          "_id": "66458487636433ffb90f3d16",
-          "dockerId": "662725910495182848",
+          "_id": "664c13aa636433ffb912047b",
+          "dockerId": "664529280126107648",
           "path": "index.html",
-          "playgroundId": "662725910453239808",
+          "playgroundId": "664529280084164608",
           "__v": 0,
           "content": "<html>\n\n<head>\n    <style>\n    h1 {\n        font-size: 30px; \n        color: red;\n    }\n    </style>\n</head>\n\n<body style=\"background-color:white\">\n    <h1>Hello HTML/CSS/JS! Hot reload!</h1>\n    <script>\n        console.log('hello world!')\n    </script>\n</body>\n\n</html>\n",
-          "createTime": 1715831943176
+          "createTime": 1716261802753
         }
       ]
     },
@@ -1155,14 +1562,14 @@ const playbackInfo = [
           "username": "king",
           "avatarUrl": "https://ui-avatars.com/api/?background=3A3C40&color=fff&rounded=true&uppercase=true&bold=true&length=1&name=king"
         },
-        "fileOpened": "bs-config.js",
+        "fileOpened": "index.html",
         "status": "online",
         "followingAgentUserId": "",
         "focusComponent": "Tree",
         "focusXterm": null,
         "editorScroll": 0,
         "cursor": {},
-        "wsClientID": "S7jW17KeCKn4rfNiABrD",
+        "wsClientID": "YQona0KWXQtJBRtvABtf",
         "color": "#3091F2"
       },
       {
@@ -1172,14 +1579,13 @@ const playbackInfo = [
           "username": "king",
           "avatarUrl": "https://ui-avatars.com/api/?background=3A3C40&color=fff&rounded=true&uppercase=true&bold=true&length=1&name=king"
         },
-        "fileOpened": null,
         "status": "online",
         "followingAgentUserId": "",
         "focusComponent": null,
         "focusXterm": null,
         "editorScroll": 0,
         "cursor": {},
-        "wsClientID": "rGC3Hlapfh762yA1ABrH",
+        "wsClientID": "i2LiXI_kHLo236lkABth",
         "color": "#5C5CE5"
       }
     ],
@@ -1189,22 +1595,6 @@ const playbackInfo = [
     }
   }
 ]
-```
-
-#### FileTree
-
-```JS
-useEffect(() => {
-  store.dao.channel().subscribeForComponent(Events.FileTree, {
-    onStart: () => {
-      actions.file.expandedFolders([]);
-      setTreeData({});
-      actions.file.setFileTree(null);
-    },
-    onData,
-    getPlaybackSnapshot,
-  });
-}, [onData]);
 ```
 
 - 切换文件时

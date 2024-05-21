@@ -53,6 +53,8 @@ https://meeting.tencent.com/p/9606972663
 # delete all node_modules folders recursively
 rm package-lock.json && find . -name 'node_modules' -type d -prune -exec rm -rf '{}' + && find . -name 'dist' -type d -prune -exec rm -rf '{}' +
 
+find . -name 'node_modules' -type d -prune -exec rm -rf '{}' + 
+
 # npm i
   DEBUG=* npm i --no-audit --loglevel silly
 DEBUG=* npm i --legacy-peer-deps --no-audit --loglevel silly
@@ -332,6 +334,20 @@ betterdiscordctl -i flatpak install
   - 
 
 ## 052
+
+## 0521
+
+- cde多标签页的功能写在webapp好，还是写在sdk好
+  - 写在webapp，优点是实现简单，缺点是可复用性低
+  - 写在sdk，缺点是切换标签页的回放没实现，但可后期实现
+- 用文件树拖文件到编辑器的场景
+  - 多用于演示
+
+- zustood有些用法不合理，比如初始化2次
+
+- 
+- 
+- 
 
 ## 0520
 
