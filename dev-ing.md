@@ -331,7 +331,15 @@ betterdiscordctl -i flatpak install
 - dev-to
   - 
 
-## 051
+## 052
+
+## 0520
+
+- dev-log
+  - 修改paas的时光机的播放逻辑，支持修改编辑文件
+  - 是否支持每个用户仅回放自己的操作
+- dev-to
+  - 本周目标: 时光机可用版，cde集成
 
 ## 0516
 
