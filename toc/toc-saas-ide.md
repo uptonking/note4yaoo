@@ -25,19 +25,25 @@ modified: 2021-05-14T15:06:46.615Z
   - VSCode和Theia用的都是Monaco editor
   - VSCode虽然也是开源的但是他对第三方的支持不是很好
 
-- https://github.com/gitpod-io/gitpod /AGPLv3/202405/go/java/ts
+- https://github.com/gitpod-io/gitpod /AGPLv3/202405/go/java/ts/不支持私有部署
   - https://www.gitpod.io/
   - The developer platform for on-demand cloud development environments to create software faster and more securely.
   - Run any language on a full Linux VM complete with terminals, GitHub and Git integration
   - 支持生态: gitlab
+  - [Introducing Gitpod Enterprise - Blog _202212](https://www.gitpod.io/blog/introducing-gitpod-enterprise)
+    - We no longer actively support self hosting Gitpod
+    - We will move all of our source code to open-source AGPL and remove the proprietary Enterprise License from our source code.
+    - The focus on Gitpod SaaS and Gitpod Enterprise enables us to ship improvements much faster
+  - [Ending support for self-hosted Gitpod and moving our source to AGPL | Hacker News _202212](https://news.ycombinator.com/item?id=33907897)
+    - Open source without self hosting capability is just crowdsourcing your engineering team. The cloud is a prison.
 
 - https://github.com/coder/coder /AGPLv3/202405/go
   - https://coder.com/
   - Coder enables organizations to set up development environments in their public or private cloud infrastructure.
+  - ⚖️ Coder/Coder is AGPL. Coder/Code-Server is MIT
   - Cloud development environments are defined with Terraform, connected through a secure high-speed Wireguard® tunnel, and are automatically shut down when not in use to save on costs.
   - Define cloud development environments in Terraform: EC2 VMs, Kubernetes Pods, Docker Containers, etc.
   - The most convenient way to try Coder is to install it on your local machine and experiment with provisioning cloud development environments using Docker (works on Linux, macOS, and Windows).
-  - Coder/Coder is AGPL. Coder/Code-Server is MIT
 
 - https://github.com/loft-sh/devpod /MPLv2/202405/go
   - https://devpod.sh/

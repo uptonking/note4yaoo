@@ -169,6 +169,10 @@ modified: 2021-01-01T22:26:57.773Z
   - 考虑浏览器、electron、系统编辑器/文件管理器
   - 变通方案: 不开启fractional scaling, 保持系统缩放比例 100%， 修改fonts-scaling-factor为1.75
 
+## issues-wayland
+
+- [touchpad - Pinch zoom in browsers on Ubuntu 20.04 with Wayland - Ask Ubuntu](https://askubuntu.com/questions/1261961/pinch-zoom-in-browsers-on-ubuntu-20-04-with-wayland)
+  - figma在touchpad的捏紧手势不缩放，需要按住ctrl键
 - ## 
 
 - ## 

@@ -137,7 +137,7 @@ modified: 2024-05-06T02:52:41.789Z
 
 - ai针对需求生成执行计划的新分支是自动创建的吗
   - 如何合并入主分支 
-  - 针对需求，现在本地生成新分支，push到github新分支
+  - 针对需求，先在本地生成新分支，push到github新分支
 
 - 
 - 
@@ -147,7 +147,7 @@ modified: 2024-05-06T02:52:41.789Z
 - 
 - 
 
-## com-meeting240506-showMeBug
+## com-meeting240506-新产品设计
 
 - 方向转移与聚焦: ai编程
 - 设计重于编码
@@ -242,6 +242,12 @@ modified: 2024-05-06T02:52:41.789Z
   - 基于vscode: marscode
   - 自研: replit
 
+- 💰 cde的商业化方向, 可参考jupyter
+  - dev
+  - 教学
+  - 测评
+  - 可降低办公电脑的配置，计算密集型的任务运行在cde
+
 - 
 - 
 - 
@@ -308,7 +314,66 @@ modified: 2024-05-06T02:52:41.789Z
   - 插件市场迁移：插件市场由阿里云迁移至支付宝小程序云，提供更稳定的服务
 # more
 
+## products-ww
+
+- GitHub Codespaces, gitlab
+- codesandbox
+- stackblitz
+- replit
+- gitpod, coder, devpod
+- more
+  - Codeanywhere, Strong Network
+  - cloud9
+
+## products-cn
+
+- 阿里 opensumi-codeblitz/云凤蝶
+- 腾讯 coding/cloud-studio
+- 华为 CodeArts
+- 字节 MarsCode
+  - [MarsCode - Code and Innovate Faster with Al](https://www.marscode.com/)
+- CSDN InsCode
+  - [InsCode - 让你的灵感立刻落地](https://inscode.csdn.net/)
+
+- 国内ide
+  - deepin ide
 # pm-sharing
+
+## v20240522-env-init-初始化开发环境-prd
+
+- 👣 和codesandbox的初始化交互高度相似
+
+- codecube类似codespace
+
+- api需求
+  - 可选的feature列表
+  - 生成建议的 setup command
+  - 获取后端启动日志的api
+
+- 定义db的方式
+  - docker compose, 作为唯一数据源
+  - devcontainer.json内置支持的feature
+  - idepaas, legacy
+
+- devcontainer, docker-compose, dockerfile
+  - docker-compose, dockerfile 支持配置环境变量
+  - devcontainer一般配置系统级的变量
+
+- 建立和更新代码索引，先提供索引给ai-agent，再提供详细源码给ai-agent，源码的上下文可能过大
+
+- 设置环境变量采用表单，而不是纯文本
+
+- 仓库的启动过程日志，将后端的log渲染在前端的xterm
+
+### later
+
+- 带secret的env环境变量要不要持久化到数据库
+
+### maybe
+
+- 提供修改os环境变量的ui，直接在ui表单添加key-value，发给后端去执行 export key=value
+
+- 暂时不支持多环境的变量，如test/production
 
 ## v20240521-cde-prd
 

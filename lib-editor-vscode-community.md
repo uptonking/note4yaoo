@@ -12,6 +12,13 @@ modified: 2023-01-21T18:53:04.519Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## [Vscode设置选项过多，是否反人类？ - 知乎](https://www.zhihu.com/question/646432493)
+- VSCode 的设置项整体是基于 JSON 的，Ctrl+, 打开的图形化界面只是一层很薄的封装而已。我认为这实际上反而是很容易配置的。我其实是建议大多数时候不要依赖于图形化界面的配置，直接去改 settings.json
+  - JetBrains IDE 的配置文件实际上是依赖于 XML 的, JetBrains 显然也知道 XML 反人类，所以全部配置项都是能够通过图形界面改的
+- VS Code 是自身设置 + 扩展设置集中在一起了，扩展安装越多，要配置的也就越多。
+
 - ## [Why VS Code should switch to CodeMirror for default text editing abilities _202105](https://github.com/microsoft/vscode/issues/123826)
 - Our plan is to continue with the monaco editor and to improve the support for mobile, this will be significant less effort than to replace the entire editor implementation.
 

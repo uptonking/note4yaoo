@@ -9,6 +9,29 @@ modified: 2021-05-13T03:12:40.723Z
 
 # state-blog
 
+## 🌰 [The History of State Management at CodeSandbox - CodeSandbox _202312](https://codesandbox.io/blog/the-history-of-state-management-at-codesandbox)
+
+- At the inception of the CodeSandbox application, Redux was the big hype. 
+  - as CodeSandbox grew it had two problems: understanding how the application works and it had subpar performance.
+  - Even though Redux allowed us to narrow down what state components require, it is impossible for a human being to infer how the scope of the state will affect the component reconciliation performance as a whole.
+
+- This led us to our second iteration: Cerebral JS. 
+  - The performance gains came from us combining Cerebral with Mobx.
+  - Cerebral JS, with its exotic declarative sequence API, would never work with TypeScript. 
+
+- Overmind was born and it was built from the ground up to be a spiritual successor to Cerebral.
+  - But one day we wanted to make TypeScript even stricter, so we turned on strictNullChecks.
+
+- Around this time, CodeSandbox had become a company and we were planning, unknowingly at the time, our move into the Cloud Development Environment space. 
+  - In the web ecosystem, state machines were the big thing and we also experimented with this
+  - we had challenges with performance again as we were relying on React contexts to share state
+
+- With our fifth approach, we embrace the fact that React has contexts to share state management across components, allowing us to initialize state closer to where it is used and take advantage of React data fetching patterns. 
+  - The only real problem with contexts is their performance. 
+  - With `Impact` we create a reactive context instead, using reactive primitives
+  - With Impact and React, the observability is tied to the component. The drawback of that is that you are not as “surgically” updating the actual element bound to a signal, but you keep your control flow in the language.
+  - as components only reconcile based on signals accessed, it is a huge performance boost regardless.
+
 ## [wordpress frontend: Our Approach to Data](https://github.com/Automattic/wp-calypso/blob/trunk/docs/our-approach-to-data.md)
 
 - [wordpress client utils](https://github.com/Automattic/wp-calypso/tree/trunk/client/lib)

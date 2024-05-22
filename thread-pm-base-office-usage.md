@@ -7,8 +7,18 @@ modified: 2023-03-01T14:10:06.993Z
 
 # thread-pm-base-office-usage
 
-# pieces
+# guide
 
+# discuss-builder
+- ## 
+
+- ## 
+
+- ## 体验了 http://Wegic.ai 的AI建站，UI设计和交互都很惊艳、简洁，整体流程丝滑，很不错的解决了多数低代码、模板库给用户带来的选择困难症、部署困难。
+- https://x.com/zQwQs/status/1793216048759754879
+  - 看实现像是预定义了少量的组件(可替换文本/图片/动画容器等)，然后让AI生成页面区块，写React组件(Hero/Gallery等)和props，用AI对话去编辑
+
+# discuss
 - ## 
 
 - ## 

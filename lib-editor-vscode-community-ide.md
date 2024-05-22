@@ -10,12 +10,12 @@ modified: 2024-05-09T09:35:28.467Z
 # guide
 
 - cloud-ide
-  - monaco: Codespaces(GitHub绑定), Gitpod(yml), theia, OpenSumi/云凤蝶, StackBlitz, codesandbox-web
-  - codemirror: sandpack, replit
+  - monaco: Codespaces(GitHub绑定), 💡 Gitpod(yml/不支持私有部署), theia, OpenSumi/云凤蝶, 💡 StackBlitz, 💡 codesandbox-web
+  - codemirror: sandpack, 💡 replit
   - Eclipse Che: OpenShift CDE
   - DevPod: devcontainer-spec + local-and-cloud
-  - 计算平台的演示: jupyter
-  - more: Coder(no-cloud/k8s), AWS Cloud9, codenvy
+  - more: 💡Coder(no-cloud/k8s), AWS Cloud9, codenvy
+  - 计算平台的演示场景: jupyter
 
 - vscode-ide基础功能
   - 编辑调试相关: LSP, DAP
@@ -78,8 +78,6 @@ modified: 2024-05-09T09:35:28.467Z
   - It also reduces cost. We can pause the VM after 5 minutes of inactivity, and when you come back, we'll resume it so it won't feel like the environment was closed at all.
   - It's kind of like your laptop, if you close it you don't expect it to shut down and boot the whole OS again when you open it. I've written more about how we do the pausing/cloning here
 
-- I thought CDEs were a pretty cool idea years ago until I discovered Nix and specifically "nix shells".
-
 - We've started integrating Codespaces into our team's workflow. It's been a game-changer for onboarding new devs. No more "works on my machine" issues. The ability to jump into any project without the setup hassle is pretty sweet. We're still ironing out some kinks, but overall, I'm pretty bullish on it for professional use.
 
 - Most of the CS classes at my university have moved on to an online Jupyter environment with VS Code preinstalled. It lets students spawn an environment with all the required software for their class preinstalled.
@@ -94,7 +92,9 @@ modified: 2024-05-09T09:35:28.467Z
 - It is interesting that in the comments on this thread I’m not seeing any mention of nix, which is arguably overlapping the topic at hand with the Venn diagram of “spinning up dev environments”.
   - I've heard some reports that Nix is very painful to get working with Python/ML stack - do you know if this is this still (ever?) the case?
 
-- I thought CDEs were a pretty cool idea years ago until I discovered Nix and specifically "nix shells". Call me old school but if I can run my tooling locally I typically prefer that in most cases, and Nix does a stellar job of tracking everything deterministically, so sharing amongst the team works great too. So much so I think replit actually uses it under the hood for some of their environments iirc.
+- I thought CDEs were a pretty cool idea years ago until I discovered Nix and specifically "nix shells". 
+  - Call me old school but if I can run my tooling locally I typically prefer that in most cases, and Nix does a stellar job of tracking everything deterministically, so sharing amongst the team works great too. 
+  - So much so I think replit actually uses it under the hood for some of their environments iirc.
 
 - We use DevPod to work in cloud dev environments in our AWS cloud. I hate it. DevPod brings its own SSH implementation that injects itself into your server and munges CRLF, making ssh sessions to your workspace fraught with difficulty except for basic command line applications. The only terminal that seems to work is the one built in to Visual Studio Code. Maybe Microsoft Windows Terminal also works, I dunno.
 
@@ -193,7 +193,7 @@ modified: 2024-05-09T09:35:28.467Z
 - ## [Ending support for self-hosted Gitpod and moving our source to AGPL | Hacker News _202212](https://news.ycombinator.com/item?id=33907897)
 - CEO from Gitpod here. Some background on why we moved to a managed enterprise cloud product: there are parts of Gitpod itself that are closer to a Kubelet then a Kubernetes application. We use much of the Kubernetes surface, interact with containerd, and use bleeding edge Linux features. The only way you make Cloud and Self Hosted co-exist is to have one codebase. What we deployed in SaaS we wanted to deploy in Self-Hosted. But not all Kubernetes are created equal (think GKE node label, EKS custom AMI to get Linux kernels but not other places). Today there are features in SaaS that are not available in Self-Hosted. 
 
-- Open source without self hosting capability is just crowdsourcing your engineering team. Documented and supported or bust. The cloud is a prison.
+- Open source without self hosting capability is just crowdsourcing your engineering team. The cloud is a prison.
 
 - Interested to see if they can successfully pivot to full SaaS. It seems like with the recent AWS announcement of CodeCatalyst and Github CodeSpaces (both of which are free with an additional easy to use paid model), Gitpod has been backed into a corner. I hope they do well, but the odds are stacked against them as the enterprise selling machines that are Amazon and Microsoft are incredibly difficult to fight as a startup. 
   - With Gitlab also apparently working on their version of CodeSpaces, it seems like maybe the best position for Gitpod is an acquisition (possibly by Atlassian).
@@ -356,6 +356,26 @@ modified: 2024-05-09T09:35:28.467Z
 - https://twitter.com/tomayac/status/1450861305108340738
   - It uses the File System Access API and the Async Clipboard API
 
+# discuss-showcase-ide
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🚀 [好多人问，必须正式介绍一下：deepin-IDE – 深度科技社区 _202309](https://www.deepin.org/zh/2023-9-4/)
+- 深度科技（deepin） 有自己的 IDE 吗？ 为什么要做自己的 IDE
+  - deepin-IDE 传承了 deepin “专注自研，贡献开源” 的技术基因，自研代码14万余行。
+  - 当然，这一产品的快速发展，是站在了“开源”这个巨人的肩膀上，为了避免重复造轮子，采用了一些开源终端组件、功能组件，在此列出该产品汲取的开源成果，感谢开源社区
+  - 在开发库方面，deepin 操作系统已经拥有了自己的 DTK（Development ToolKit）开发套件。DTK 具备4个核心模块、220+个类、2300+函数接口、11个辅助功能模块、10+个扩展接口模块，已经能够满足日常图形应用、业务应用、系统定制应用的开发需求。
+  - 目前 deepin 操作系统上自研的浏览器、音乐、邮件等 40 余款原生应用全部使用 DTK 开发。
+- deepin操作系统为了解决“一包多用”的问题，推出了“玲珑”软件包管理方案，彻底解决系统与应用、应用与应用之间因升级引起的兼容性问题。
+- deepin-IDE 和 VSCode 有关联吗？
+  - deepin-IDE根植于开源社区，它依赖于 scintilla 等开源组件，本身也使用了 GPLv3 协议开源，当然也要贡献开源。和其它的基础软件一样，IDE也需要多年的打造与完善，比如 VSCode 至今也发展了八年，所以开发 IDE 确实难度巨大。
+
+- deepin-IDE除了包含IDE常用功能，如智能编辑器、高度可扩展的命令系统、工程管理、构建管理系统、插件系统等之外，还支持多种兼容协议、多种开发语言、代码版本管理集成、低开销的实时性能分析工具等。总体而言，IDE常见功能都在表里
+
+- 支持主流版本控制系统Git、SVN。
 # discuss
 - ## 
 

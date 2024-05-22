@@ -51,6 +51,11 @@ modified: 2023-09-16T17:49:13.534Z
 
 - [Bw-Trees](https://sinsay.github.io/db/chapter_6_6_bw_trees.html)
   - Bw-Tree 是 B-Tree 的一个有趣的变种，做了许多重要的优化：写放大，非堵塞的访问以及缓存友好性。一个修改过的实现版本是 Sled，CMU 数据库组织实现了一个基于内存的 Bw-Tree 版本，称为 OpenBw-Tree
+# blogs-concepts
+
+## 🧩 [Write amplification - Wikipedia](https://en.wikipedia.org/wiki/Write_amplification)
+
+- Write amplification (WA) is an undesirable phenomenon associated with flash memory and solid-state drives (SSDs) where the actual amount of information physically written to the storage media is a multiple of the logical amount intended to be written.
 # more
 - [Linearizability versus Serializability | Peter Bailis_201409](http://www.bailis.org/blog/linearizability-versus-serializability/)
   - Linearizability and serializability are both important properties about interleavings of operations in databases and distributed systems, and it’s easy to get them confused.
@@ -70,6 +75,3 @@ modified: 2023-09-16T17:49:13.534Z
 
 - [Database Systems: 8Base, Dolt, MindsDB, Xata – SQL Rob](https://sqlrob.com/2023/04/17/database-systems-8base-dolt-mindsdb-xata/)
   - [15 futuristic databases you’ve never heard of - YouTube](https://www.youtube.com/watch?v=jb2AvF8XzII)
-
-- [Write amplification - Wikipedia](https://en.wikipedia.org/wiki/Write_amplification)
-  - Write amplification (WA) is an undesirable phenomenon associated with flash memory and solid-state drives (SSDs) where the actual amount of information physically written to the storage media is a multiple of the logical amount intended to be written.

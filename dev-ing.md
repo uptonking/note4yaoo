@@ -337,10 +337,19 @@ betterdiscordctl -i flatpak install
 
 ## 0522
 
+- [前端权限开发——设计到实践（保姆级） - 掘金](https://juejin.cn/post/7259210874446692411)
+
+- [Differences between GitHub Apps and OAuth apps - GitHub Docs](https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/differences-between-github-apps-and-oauth-apps)
+  - In general, GitHub Apps are preferred to OAuth apps because they use fine-grained permissions, give more control over which repositories the app can access, and use short-lived tokens.
+  - app 强在权限管理，OAuth 强在功能齐全
+  - Similar to OAuth apps, GitHub Apps can still use OAuth 2.0 and generate a type of OAuth token (called a user access token) and take actions on behalf of a user. 
+  - However, GitHub Apps can also act independently of a user. This is beneficial for automations that do not require user input.
+  - GitHub Apps have built-in, centralized webhooks. GitHub Apps can receive webhook events for all repositories and organizations the app can access. Conversely, OAuth apps must configure webhooks individually for each repository and organization.
+
 - dev-log
-  - 初步实现多标签页但为了支持回放暂时disable多标签
+  - 和产品和设计确认cde的交互细节，确定了多标签页的技术方案和修改paas-sdk的思路，但为了支持回放暂时disable多标签
 - dev-to
-  - 多标签页分三阶段实现: 阶段A单标签支持回放，阶段B多标签但不支持回放，阶段C多标签且支持回放
+  - 多标签页分三阶段实现: 阶段B多标签但不支持回放，阶段C多标签且支持回放
 
 ## 0521
 

@@ -29,6 +29,11 @@ modified: 2024-05-21T11:45:57.951Z
 
 - 基本架构
   - dock > groups/window > panel/tab
+
+# examples
+
+- 
+
 # issues
 - 如何处理tab中的大文件，比如大于3000行/10M
 # dev

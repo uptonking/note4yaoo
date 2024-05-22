@@ -9,6 +9,16 @@ modified: 2024-03-30T05:55:54.349Z
 
 # guide
 
+# blogs
+
+## [Building runtime-aware JavaScript packages - CodeSandbox _202306](https://codesandbox.io/blog/building-runtime-aware-js-packages)
+
+- With the addition of import paths mapping in Node version 16, we can define a dependency to use determined by whether the module is running in the browser or Node.
+
+- While bundling projects, it's a common practice to use process.env. NODE_ENV to create different builds for production and development
+  - if we import the process from `node:process`, then the bundlers and CDNs that build these packages will detect the usage of built-ins and polyfill them accordingly.
+  - Note: This is only handled in CommonJS and is generally discouraged! 
+  - It is suggested to use conditional exports and imports for branching rather than relying on code analysis.
 # discuss-stars
 - ## 
 

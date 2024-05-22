@@ -9,6 +9,9 @@ modified: 2024-01-25T13:29:10.054Z
 
 # guide
 
+- resources
+  - [codesandbox.io/blog/category/insights](https://codesandbox.io/blog/category/insights)
+  - [codesandbox.io/blog/category/engineering](https://codesandbox.io/blog/category/engineering)
 # blogs-dev-xp
 
 ## [Building a Next-Level Code Playground/Sandbox/REPL with Sandpack _202402](https://www.joshwcomeau.com/react/next-level-playground/)
@@ -153,7 +156,68 @@ Function('str', 'console.log(str, aaa)')('aaa:');
 - 
 - 
 
-# blogs-csb-internals
+# blogs-csb-internals-vm
+
+## 🛢️ [A unique database for every PR using CodeSandbox - CodeSandbox _202305](https://codesandbox.io/blog/unique-database-for-every-pr)
+
+- Ideally, you should get a new copy of your database when you change your branch.
+  - With CodeSandbox, we're making this happen. 
+  - Once your repository is imported into CodeSandbox, we give every branch and pull request a unique database.
+
+- With CodeSandbox, you get a new cloud development environment for every branch and pull request. We enable this through VM cloning.
+- This doesn't only apply to branches. We also create a microVM for every pull request. This way, you can use CodeSandbox to test your pull requests as well, without deploying to staging or running migrations locally
+- This VM cloning concept is powerful. Plus, it applies to more than just databases. You can run Redis, or maybe Elasticsearch, and every PR will get a unique copy of that service
+
+## 💡 [Cloning microVMs by sharing memory through userfaultfd - CodeSandbox _202305](https://codesandbox.io/blog/cloning-microvms-using-userfaultfd)
+
+- There have been two caveats to this approach that we've uncovered over the past months, which made us completely change our approach to cloning VMs. 
+  - The new implementation has been running in production for six months now, so we figured it's about time to write a new post about how it works.
+- Let's do a quick recap of our initial approach. We were able to clone running VMs within 2s by essentially doing three steps:
+  - We serialize the memory of the running Firecracker VM to a file.
+  - We copy that memory file.
+  - We start a new VM from the new memory file.
+  - this works really well... as long as there is not a lot of traffic. As soon as you start running more VMs (50+) on a single node, you will start to see degradation in performance. For us, this meant that we weren't be able to hit the 2 seconds marker anymore. Even worse, sometimes we would see the clone time for a VM jump up to 14 seconds under heavy load
+
+- We've seen two main causes:
+  - The first one is disk strain. The VMs actively write their memory changes back to the disk. as soon as 40-50 VMs are persisting their memory actively to disk, you start to experience limits.
+  - The second reason is the filesystem, in our case xfs. Whenever we copy a memory file for a new VM, we do a Copy-on-Write copy by running `cp —reflink=always`. When you do a reflink copy, the filesystem does not really copy the file. Instead, it creates a file that has a “reference” to the same data.
+    - Our VMs sync their memory changes eagerly to the file, which results in over 100,000 little writes at random locations. The memory file gets more and more fragmented, and it will become slower to read the file.
+- The disk strain and fragmented files led to serious performance problems. 
+
+- `fork` is widely used because it's also responsible for starting new processes. 
+  - In the early days, fork would completely copy the memory of the parent process to the child process, and then resume the child. However, since fork is such an important syscall inside Unix, this proved to be too slow for some cases. And that's why a Copy-on-Write mechanism was introduced.
+  - Instead of eagerly copying all the memory to the child, the memory pages of the parent are marked as read-only. The parent and child both read directly from these memory pages—but when they need to write to a page, the kernel traps that write, allocates a new page, and will update the reference to this new page before allowing the write.
+  - Because no unnecessary memory is copied, fork is incredibly efficient.
+  - This is exactly what we needed for our VMs! A CoW copy of the memory that the new VM can read from.
+- why don't we call fork? Well, because then we would copy the whole jungle, including disks, network devices, open file descriptors. No, we only want to copy the memory. That is why we needed to implement a custom version of fork ourselves.
+
+- Replicating the behavior of fork... is no simple task, mostly because Linux doesn't make it easy to control how memory is loaded by a process (in our case, the VM).
+  - In fact, until recently there was no official (userspace) API in Linux to control how memory is loaded by a process. 
+  - That finally changed in 2017, when Linux introduced a new API called `userfaultfd`.
+- userfaultfd is very powerful, as it gives us full control over how a VM can read memory. We could theoretically load memory directly from a compressed file or from the network, or... from another VM!
+
+- At CodeSandbox we can now clone the memory of VMs in a Copy-on-Write fashion without having to go through the filesystem, which significantly speeds up our VM clone speeds.
+  - It also opens up the opportunity to load memory from new sources, like (compressed) files, or even the network. A couple of months after enabling UFFD forks, we also enabled loading memory from compressed files directly using zstd
+
+- The possibilities of VM cloning are endless! For example, for repositories running on CodeSandbox, every branch will have its own VM. If you start a new branch, we'll clone the VM of the main branch, and connect you to that VM. This way you can work on multiple branches at the same time without having to do git checkout, or git stash or things like database migrations.
+
+- 
+- 
+
+## 🗑️ [How we clone a running VM in 2 seconds - CodeSandbox _202209](https://codesandbox.io/blog/how-we-clone-a-running-vm-in-2-seconds)
+
+- 
+- 
+- 
+
+- The unwritten details
+  - Overprovisioning on memory using `mmap` and page cache
+  - How we built an orchestrator with snapshotting/cloning in mind, and how it works
+
+- There are still improvements we can do to improve the speed of cloning. 
+  - We still do many API calls sequentially, and the speed of our filesystem (`xfs`) can be improved. 
+  - Currently files inside xfs get fragmented quickly, due to many random writes.
+# blogs-csb-internals-browser
 
 ## [CodeSandbox是如何让npm上的模块直接在浏览器端运行的 _202011](https://www.yuque.com/wangxiangzhong/aob8up/uf99c5)
 
