@@ -267,7 +267,7 @@ modified: 2023-03-11T15:37:59.134Z
 - Although CRDTs aren’t always the best solution for always-online collaborative apps, it’s still fascinating tech that has real use cases.
   - Apps that need to run offline in general are good candidates for CRDTs.
 
-## 👥 [You might not need a CRDT | Hacker News_202212](https://news.ycombinator.com/item?id=33865672)
+## 👥 [You might not need a CRDT | Hacker News _202212](https://news.ycombinator.com/item?id=33865672)
 
 - This is the most underrated problem with CRDTs:
   - > Both paths will allow us to ensure that each replica converges on the same state, but that alone does not guarantee that this state is the “correct” state from the point of view of user intent.
@@ -296,6 +296,12 @@ modified: 2023-03-11T15:37:59.134Z
   - We use logical timestamps instead of datetime.
 
 - CRDTs have been on HN a lot recently. I'm working on a database that deals in events rather than raw data. Application developers specify event handlers in JavaScript. The database layer then takes the event handlers and distributes them to the clients. Clients receive the raw stream of events and reconcile the final data state independently. The key aspect is all the event handlers are reversible. This allows clients to insert locally generated events immediately. If any remote events are received out-of-order, the client can undo events, insert the new events, and reapply everything on top of the new state.
+
+- ⚡️💥 We have used Automerge a bunch, but found that there is a threshold where beyond a given document size, performance gets exponentially worse, until even trivial updates take many seconds' worth of CPU. 
+  - That is often how it works when the document end state is exclusively the sum of all the edits that have ever happened.
+  - Our answer was to reimplement the Automerge API with different mechanics underneath that allows for a "snapshots + recent changes" paradigm, instead of "the doc is the sum of all changes". That way performance doesn't have to degrade over time as changes accumulate.
+  - Project is here: https://github.com/frameable/pigeon
+- This is an implementation problem with automerge. I wrote a blog post last year about CRDT performance. I re-ran the benchmarks a couple months ago. Automerge has improved a lot since then. I've had a chat with some of the automerge people about it. They're working on it, and I've shared the techniques I'm using in diamond types (and all the code). Its just an implementation bottleneck.
 
 - 
 - 

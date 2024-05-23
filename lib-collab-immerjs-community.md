@@ -12,6 +12,7 @@ modified: 2023-06-04T21:27:01.100Z
 - who is using #immer-patches
   - webstudio
   - luckysheet
+  - more: redux-toolkit的undo可基于patches实现
 
 - immerjs基于 copy-on-write
 - immutablejs基于 hash maps tries

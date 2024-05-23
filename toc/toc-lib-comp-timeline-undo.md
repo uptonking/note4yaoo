@@ -14,10 +14,14 @@ modified: 2023-11-24T18:41:26.906Z
   - 考虑侧重静态展示，还是动态展示和操作
   - pause/resume的方案: redux, logic-flow
 
+- time-travel的实现方案
+  - redux/event-sourcing
+  - git的实现基于snapshot，而不是es
+
 - usecase-branching
   - testing/drafting
   - form editing
-# timeline
+# redux-like
 - https://github.com/reduxjs/redux-devtools/tree/main/packages/redux-devtools-slider-monitor /MIT/202404/ts
   - A custom monitor for use with Redux DevTools.
   - It uses a slider based on `react-slider` to slide between different recorded actions. 
@@ -44,6 +48,19 @@ modified: 2023-11-24T18:41:26.906Z
   - Time-travel is "pure": That is, state history changes without refiring the actual actions that produced said change (so still works for impure/async actions).
   - A store enhancer provides the history tracking on each state change, recording the state change, the timestamp of the change, and the action type that produced said change.
 
+- https://github.com/joshwcomeau/redux-vcr /MIT/201610/js/inactive
+  - A Redux devtool that lets you replay user sessions in real-time
+  - ReduxVCR consists of 4 individual packages:
+    - Capture The capture layer is responsible for watching the stream of actions, selecting the ones that you'd like to record, and augmenting them with timestamps and metadata.
+    - Persist The persist layer receives the data from Capture and persists it to Firebase. It handles all anonymous authentication concerns.
+    - Retrieve The retrieve layer, meant to be used in development only, fetches the data from Firebase, and handles all admin authentication concerns.
+    - Replay Finally, the replay layer is your interface to navigating and watching the recorded cassettes.
+  - [Introducing ReduxVCR. The adorable tool that lets you record and re-watch user sessions _201610](https://medium.com/@joshuawcomeau/introducing-redux-vcr-cad57b37540a)
+  - https://github.com/joshwcomeau/redux-vcr-todomvc /201609/js
+    - ReduxVCR integrated into TodoMVC.
+  - https://github.com/joshwcomeau/key-and-pad /201803/js
+    - Fun experiment with the Web Audio API 
+
 - https://github.com/zalmoxisus/mobx-remotedev /MIT/201902/js/inactive
   - MobX DevTools extension
   - Remote debugging for MobX with Redux DevTools extension
@@ -61,6 +78,41 @@ modified: 2023-11-24T18:41:26.906Z
   - https://github.com/zalmoxisus/remotedev-app /MIT/201812/js/inactive
     - Web, Electron and Chrome app for monitoring remote-redux-devtools. Can be accessed on remotedev.io
 
+- https://github.com/klauspaiva/redux-replayable /GPLv3/202010/ts
+  - A small Redux utility to collect actions for replaying and logging, with built-in whitelisting and GDPR-friendly controls
+- https://github.com/ezefattori/redux-replay /MIT/201905/js/inactive
+  - A Redux middleware that records and replays actions in a timely manner. 
+  - Works with the local storage of the browser or with a remote server.
+  - 和replay产品结合使用的示例
+- https://github.com/danislu/redux-action-replay-middleware /201608/js
+  - Middleware for storing redux actions in localstorage and replaying them later. Usefull for QA reproducing bugs etc.
+
+- https://github.com/JannicBeck/undox /MIT/202103/ts/inactive
+  - Redux Implementation of Undo/Redo based on storing actions instead of states.
+  - Actions are stored in an array named history. 
+  - 🐛🆚️ The most popular and used library to add undo/redo functionality to redux is without a doubt `redux-undo`. It stores whole states instead of actions. This is great for small states and fat actions, but does not scale well if the state tree grows and especially if state is persisted.
+  - It really just boils down to if your state is fat and your actions are thin or your state is thin and your actions are fat.
+- https://github.com/omnidan/redux-undo /202001/js
+  - higher order reducer to add undo/redo functionality to redux state containers
+- https://github.com/StephenHaney/redux-time-travel /MIT/201809/js/inactive
+  - A scalable undo redo time travel implementation that leaves your original state intact
+  - powered by diffs and merges.
+
+- https://github.com/onceup/redux-toolkit-history-example /202211/ts
+  - Simple example of history undo-redo implementation with redux-toolkit
+
+- https://github.com/recruit-tech/redux-action-replay /201710/js
+  - Replay your redux actions in your application by puppeteer. 
+  - Get renderer metrics and take screenshots.
+  - good way to integrate test. This is a weak e2e
+
+- https://github.com/clarus/redux-ship /MIT/201710/js
+  - https://clarus.github.io/redux-ship-devtools/
+  - Redux Ship is a side effects handler for Redux with a built-in system of snapshots for: 
+    - live debugging thanks to a graphical visualization of the side effects;
+    - simpler unit tests with snapshot testing.
+  - 多用于测试
+# timeline
 - https://github.com/squarechip/timeline /202002/js/NoDeps/inactive
   - https://squarechip.github.io/timeline/
   - vanilla JavaScript horizontal/vertical timeline
@@ -276,20 +328,6 @@ modified: 2023-11-24T18:41:26.906Z
   - 示例参考 https://www.cssscript.com/demo/undo-redo-history/
   - simple JavaScript library provides a history for undo/redo functionality
   - 示例用的textarea，一次undo会删除多个文字
-
-- https://github.com/JannicBeck/undox /202103/ts/inactive
-  - Redux Implementation of Undo/Redo based on storing actions instead of states.
-  - Actions are stored in an array named history. 
-  - 🐛🆚️ The most popular and used library to add undo/redo functionality to redux is without a doubt `redux-undo`. It stores whole states instead of actions. This is great for small states and fat actions, but does not scale well if the state tree grows and especially if state is persisted.
-  - It really just boils down to if your state is fat and your actions are thin or your state is thin and your actions are fat.
-- https://github.com/omnidan/redux-undo /202001/js
-  - higher order reducer to add undo/redo functionality to redux state containers
-- https://github.com/StephenHaney/redux-time-travel /mIT/201809/js/inactive
-  - A scalable undo redo time travel implementation that leaves your original state intact... 
-  - powered by diffs and merges.
-
-- https://github.com/onceup/redux-toolkit-history-example /202211/ts
-  - Simple example of history undo-redo implementation with redux-toolkit
 
 - https://github.com/propero-oss/action-history /202201/ts
   - Extensible history for reversible actions (undo/redo)

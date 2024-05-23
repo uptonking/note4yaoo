@@ -30,7 +30,7 @@ quill.updateContents(delta);
 
 - We've actually started exploring alternative solutions, while just dealing with the slow load. A new version may be coming out soon, and perhaps this will resolve it.
 
-- ## ⚡️🤔 [Initial rendering of long document performance _201604](https://github.com/quilljs/quill/issues/627)
+- ## ⚡️💥 [Initial rendering of long document performance _201604](https://github.com/quilljs/quill/issues/627)
 - The rendering is a problem if you give editor.setContents directly an array of operations. The following fiddle will demonstrate the speed of the setContents for large operations (500 operations takes around 3 seconds and 1000 operations take around 10 seconds).
   - 💡 The solution to this is compose the deltas into one either on the client side before applying or server side before storing. The following fiddle demonstrates the performance with composed operations which takes 20 milliseconds to set.
   - https://jsfiddle.net/battuashwik/hf047xo7/
@@ -44,7 +44,7 @@ quill.updateContents(delta);
   - This way atleast the browser will not freeze and hence better UI experience. 
   - You can also implement batching of operations instead of using setTimeout on every operation. Unfortunately to get the right number for batching you need to run some tests to figure out what is the exact threshold that updateContents starts to perform slow.
   - 这种方法可能的问题
-    - 随着op分批执行文章内容会显示动态更新，一开始看到的内容陈旧、样式陈旧
+    - 随着op分批执行文章内容会显示动态更新，~~一开始看到的内容陈旧、样式陈旧~~, (浏览器刷新很快应该感知不到)
     - 拆分op的粒度错误，比如只看到一半的表格
   - 可结合 懒加载、先compose再apply
 

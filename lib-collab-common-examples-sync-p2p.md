@@ -262,10 +262,19 @@ modified: 2023-01-17T19:13:01.845Z
   - Eventually consistent state between all clients
   - limitations: This is experimental code and therefore likely to break between versions, causing data loss across all clients when a new minisync version is deployed!
 
-- https://github.com/frameable/pigeon /js
+- https://github.com/frameable/pigeon /MIT/202212/js/inactive
+  - https://github.com/frameable/pigeon/wiki/Benchmarks
   - Diff, patch, merge, and synchronize JSON documents with an Automerge-compatible interface
   - While Automerge optimizes for working offline and merging changes periodically, Pigeon is optimized for online real-time collaboration.
   - Change sets use JSON-Patch-esque paths, and so are more easily introspectable using existing tools
+  - By default, history will grow only to 1000 items in length, after which oldest entries will be jettisoned(抛扔, 扔弃)
+  - Changes are computed across entire data structures, rather than tracing via proxies
+  - Changes may be made in-place for situations where performance is critical
+  - Documents need not have a direct common ancestor for patches from one to apply to another
+  - Unix timestamps and client ids are used instead of vector clocks to ensure order and determinism
+  - https://news.ycombinator.com/item?id=33865672
+    - We have used Automerge a bunch, but found that there is a threshold where beyond a given document size, performance gets exponentially worse, until even trivial updates take many seconds' worth of CPU. That is often how it works when the document end state is exclusively the sum of all the edits that have ever happened
+    - Our answer was to reimplement the Automerge API with different mechanics underneath that allows for a "snapshots + recent changes" paradigm, instead of "the doc is the sum of all changes". That way performance doesn't have to degrade over time as changes accumulate.
 
 - https://github.com/privatenumber/reactive-json-file
   - Reactively sync JSON mutations to disk

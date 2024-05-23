@@ -226,7 +226,7 @@ state1.state.deniz = 11; // nothing
 
 - I liked the concept of "actions up ☝️ data down👇" from the ember world.
 
-- ## [What Are Signals?_202303](https://news.ycombinator.com/item?id=35009417)
+- ## 🧩 [What Are Signals?_202303](https://news.ycombinator.com/item?id=35009417)
 - I used a signals-like reactive programming model in VueJS a while ago and hated that you could never be sure exactly where things were being changed. 
   - Thankfully it seems that the React creators and maintainers are not hopping on the signals train and are instead adamant about unidirectional dataflow with explicit mapping of state to UI, which, as has been the reason for why React had been invented in the first place, makes reasoning about the application much easier
 

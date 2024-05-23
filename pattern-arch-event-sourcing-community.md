@@ -315,14 +315,14 @@ that commit position, thus providing "read your own writes" semantics.
   - Having a CDC system to publish events and record those can give the biggest benefits and sit alongside a much simpler system. 
   - A downside is that the real-time feature goes away.
 
-- ## [Event Sourcing is Hard | Hacker News_201902](https://news.ycombinator.com/item?id=19072850)
+- ## 💡 [Event Sourcing is Hard | Hacker News _201902](https://news.ycombinator.com/item?id=19072850)
 - I worked on a fairly large system using event sourcing, it was a never-ending nightmare.
   - Events are pretty much a database commit log. This is extremely space innefficient to keep around. And not nearly use useful as you might think.
   - it eventually took DAYS to re-run the events. 
   - De-centralizing your data storage is a bad idea. We ended up not only with a stupidly huge event log, but multiple copies of data floating around at each service. Not fun to deal with changes to common objects like User. Sometimes you would have to update the "projection" in 5-10 different projects.
   - Some of these problems are fixable in theory. Perhaps a framework to manage projection updates, something to prune old events by taking snapshots, a DB migration style tool to "fixup" mistakes that are otherwise immortalized in the event stream.
 
-- Event Sourcing = everything that happens is an event. 
+- 🧩 Event Sourcing = everything that happens is an event. 
   - Save all the events and you can always get to the latest state, as well as what things look like at any time in the past. 
   - This concept is used pretty much everywhere. 
   - Redux is event sourcing front-end state for React. 
@@ -356,7 +356,27 @@ that commit position, thus providing "read your own writes" semantics.
 - Vector Clock, which is a good solution for where it's usually applied, but I think this is different. Having everything bottlenecks through your vector clock isn't going to be feasible.
 - Exact order of events should be guaranteed for one DDD aggregate, it is doable with simple **optimistic locking**. So unless your system consists of one aggregate - you should not have scalability issues.
 
-- If you want to do event sourcing. Look at persistent actors from akka (jvm and clr). It solve a lot of feaures as discussed here with replay, snapshotting, event upgrades etc.
+- If you want to do event sourcing. Look at persistent actors from akka (jvm and clr). It solve a lot of features as discussed here with replay, snapshotting, event upgrades etc.
+
+- EventSourcing is not a Framework, but a concept. The idea is to store not the current state of your app, but the transitions (events) that derive into the current state. In theory it is a beautiful idea; in the real world, it is hard to implement.
+  - In fact, git stores a full snapshot of your entire repo with every commit. It does not store diffs from the previous commit. When you do `git show <COMMIT_SHA>` it generates a diff from the parent commit on the fly.
+  - There's a huge optimization though: it uses a content-addressed blob store, where everything is referenced by the sha1 of its contents. So if a file's contents is exactly the same between two commits, it ends up using the same blob. They don't have to be sequential commits, or it could even be two different file paths in the same commit. Git doesn't care - it's a "dumb content tracker". If one character of a file is different, git stores a whole separate copy of the file for it. But every once in a while it packs all blobs into a single file, and compresses the whole thing at once, and the compression can take advantage of blobs which are very similar.
+
+- 
+- 
+- 
+
+- ## [Event Sourcing made Simple | Hacker News _201805](https://news.ycombinator.com/item?id=17061019)
+- If you're already using react/redux, there's one really nice pattern to make eventsourcing easy to implement. I learned it from the boardgame.io google project
+  - Basically redux is more or less already doing eventsourcing on the client. You have actions("events") that tells your global state what the next state should be, and replaying the history of all actions will deterministically get you to your current state. The only thing you need to do is persist that history of actions in your state also (which is already commonly done for implementing undo and time-travel).
+  - Then all that is left is to make your server use these same events too! This means whenever you save to the server, rather than doing GraphQL/REST-style per resource updates, you just sync any unsaved redux actions from the client. The server will save these actions and optionally replay them to get a snapshot of current state
+  - Afterwards realtime collaboration, undo/time-traveling, history/audit logging, etc all come for free.
+  - This is a really nice way to unify event shape design that is consistent on client and server.
+  - I am making it sound a little simpler than it is. There's a lot of details to get right with state design, tagging actions as relevant to be persisted, multiplayer conflict resolution, app versioning issues, event queue compaction, serverside permissions validation, etc. But to get a prototype up and running quickly what I said above will work. Boardgame.io didn't worry about those details but it's still a nice codebase to study
+
+- The event sourcing pattern (or something akin to it) can also be applied on the data structure level to create very resilient and flexible CRDTs: http://archagon.net/blog/2018/03/24/data-laced-with-history/
+
+- See cloud event spec https://github.com/cloudevents/spec
 
 - ## [Ask HN: When should event-driven architecture be avoided? | Hacker News](https://news.ycombinator.com/item?id=30206046)
 - No concurrency? No events. 

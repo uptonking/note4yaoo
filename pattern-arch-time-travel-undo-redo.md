@@ -15,11 +15,44 @@ modified: 2023-09-12T09:36:25.608Z
   - undo/history类产品的形态可参考git commits的交互和设计
 # dev
 
-# blogs
+# products-replay
 
+- [Replay - Time Travel Browser DevTools](https://www.replay.io/)
+
+- etherpad timeline
+  - [Getting Started with Etherpad _201305](https://archive.flossmanuals.net/etherpad/getting-started-with-etherpad.html)
+
+- [Replit File History](https://docs.replit.com/replit-workspace/workspace-features/file-history)
+  - To make sure you never lose any of your work, Replit auto-saves your code as you write
+  - view previous versions of a file by using the scroll bar, the arrow buttons, or the left and right arrow keys
+  - Comparing previous versions to the current file
+  - Restoring a previous version of a file
+  - use the playback feature of File History to watch your file change over time like a movie
+
+- [Revision History for Google Docs](https://www.revisionhistory.com/)
+  - Revision History is an extension for Chrome and Edge browsers, enabling educators to see the edit history of students' assignments in Google Docs
+  - adds a bar to the top of Google Docs with basic statistics like time spent writing, number of deletions and copy/pastes
+  - The replay feature (in beta) lets you watch a video of the student writing their paper
+  - Click on the details button to open a sidebar with more information about revsion history
+
+- [Draftback for google docs](https://chromewebstore.google.com/detail/draftback/nnajoiemfpldioamchanognpjmocgkbg)
+  - [How I reverse-engineered Google Docs to play back any document's keystrokes _201411](https://features.jsomers.net/how-i-reverse-engineered-google-docs/)
+    - we have the complete history of every single character. Draftback is aware of this history, and assigns each character a persistent unique ID
+    - The playback is an epiphenomenon(附带现象：因另一现象而发生或伴随的次要现象) of real-time collaboration, as it was with Etherpad.
+
+- 
+- 
+- 
+
+# blogs
 - [Making Data Structures Persistent_1986](http://www.cs.cmu.edu/~sleator/papers/Persistence.htm)
 
-## [Text Editor Data Structures: Rethinking Undo](https://cdacamar.github.io/data%20structures/algorithms/benchmarking/text%20editors/c++/rethinking-undo/)
+## 🔡 [Time-Travel Debugging Production Code | Hacker News _202308](https://news.ycombinator.com/item?id=37037130)
+
+- from the article: "Being able to debug any past production code is a huge step up..." this is pretty epic. but it also means you need to keep track of what version of your code ran every past workflow because you need to run it the exact same way when you replay it, right? 
+  - You do need to run it on the same code version. There are different ways deploy code changes. If you use one of our in-built versioning systems, the version is recorded in the workflow history (and you can either keep track of version-sha mapping or use a sha as the version). Otherwise, you can add code that adds the current code version as workflow metadata.
+
+## ✏️ [Text Editor Data Structures: Rethinking Undo](https://cdacamar.github.io/data%20structures/algorithms/benchmarking/text%20editors/c++/rethinking-undo/)
 
 - There are a few properties of undo that are very nice to have:
   - The undo operation should create a corresponding redo operation, more on redo later.
@@ -152,7 +185,65 @@ modified: 2023-09-12T09:36:25.608Z
 - [Immutable Data Structures - DEV Community](https://dev.to/martinhaeusler/immutable-data-structures-2m70)
 # discuss-stars
 - ## 
+
+- ## 
+
+- ## ✏️ [How does Etherpad's timeline feature work? - Stack Overflow _201206](https://stackoverflow.com/questions/11242188/how-does-etherpads-timeline-feature-work)
+  - I am very much interested in understanding the JSON response and how it works. Also what database is most suitable for such apps (etherpad, google docs, etc.). Nosql (like mongodb) or sql (like mysql).
+
+- When you drag on the timeslider, the relevant changes are sent from the server to the client as you've discovered.
+- Changes are encoded as instructions that edit the existing document contents to become the new document contents. See https://github.com/ether/etherpad-lite/wiki/Changeset-Library
+- Etherpad runs on SQL primarily. 
+  - Maybe there is experiments with other DB:s, but most important for etherpad is reading/writing raw tables of changesets. A relational DB is probably the best choice for performance and sanity. 
+  - MySQL is the default for etherpad. Postgres has been worked on. 
+
+- any thoughts on mongodb ? actually i am making a similar application that will record other things apart from text changes. i thought maybe just storing the json object sent from client while creating the pad inside mongodb (its api is json based, so you just sent/retrieve jsons) would be a good idea. 
+  - Don't use MongoDB for changesets. (Or do, but then promise to write back when it fails so help others avoid the mistake :-). Use MongoDB for complicated documents/objects to avoid creating hundreds of relational tables. If you wanted MongoDB to be buzzword compliant, I recommend instead an in-memory database. HSQLDB and VoltDB are cooler than Mongo. And much much faster.
+# discuss-db-history
+- ## 
+
+- ## 
+
+- ## [How to version control a record in a database - Stack Overflow](https://stackoverflow.com/questions/323065/how-to-version-control-a-record-in-a-database)
+- A good starting point might be looking at some database model that uses revision tracking.
+  - The best example that comes to mind is MediaWiki, the Wikipedia engine. Compare the database diagram here, particularly the revision table.
+  - Depending on what technologies you're using, you'll have to find some good diff/merge algorithms.
+
+- Two options:
+  - Have a history table - insert the old data into this history table whenever the original is updated.
+  - Audit table - store the before and after values - just for the modified columns in an audit table along with other information like who updated and when.
+
+- another way is to make a version column and keep all your versions in the same table. For one table approach you either:
+  - Use a flag to indicate the latest ala Word Press
+  - OR do a nasty greater than version outer join.
+# discuss-redux-like
+- ## 
+
+- ## 
+
+- ## [Huge performance issue when dispatching hundreds of actions · reduxjs/react-redux _201601](https://github.com/reduxjs/react-redux/issues/263)
+- On boot, the app I'm building gets a stream of data from a server. This stream can have hundreds of messages and entities and each message is handled separately.
+  - It takes a tremendous amount of time to dispatch actions after UI has rendered, because every state change re-renders the @connected component.
+
+- Try this: Collect those those messages into an array and flush it with store.dispatch in a single tick with every 50ms (or whatever is required). You must use redux-batched-updates to avoid rendering on every dispatch on the tick.
+- https://github.com/acdlite/redux-batched-updates /201507/js
+  - redux-batched-updates uses deprecated api
+- https://github.com/tappleby/redux-batched-subscribe /MIT/201604/js
+  - Store enhancer for redux which allows batching of subscribe notifications that occur as a result of dispatches.
+
+- I'm glad it solved your issue but you should note that debouncing and update batching are completely different things.
+  - With debouncing you end up just completely ignoring most of the messages. That can be ok but if your store state requires to see every message, for example you need sum up some numbers from them, that will not work as expected.
+  - React update batching and the `setInterval` trick I presented will dispatch every message to the store but will only do it batches to avoid excessive rendering.
+
+- ## [How to implement Replay functionality in a React based game? : r/reactjs](https://www.reddit.com/r/reactjs/comments/i9ga7n/how_to_implement_replay_functionality_in_a_react/)
+- If you want to go for "wow factor", use the `patches` features from Immer with Redux to track changes to the store and be able to undo.
+  - Redux Toolkit already used Immer internally, so it's not much more work to track each patch as it's applied to the store. 
+  - When any Redux action modifies the game state, you listen for the patch using Immer, and push it into an array of the game moves. When you need to replay, you just iterate through the array. To undo, just pop items off the array.
+  - If you want to do this without Immer, Redux has some docs that describe history and undo functionality with code examples
+
 # discuss
+- ## 
+
 - ## 
 
 - ## 

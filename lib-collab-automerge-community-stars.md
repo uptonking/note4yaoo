@@ -9,6 +9,18 @@ modified: 2023-09-01T10:17:33.439Z
 
 # guide
 
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## [You might not need a CRDT | Hacker News _202212](https://news.ycombinator.com/item?id=33865672)
+
+- ⚡️💥 We have used Automerge a bunch, but found that there is a threshold where beyond a given document size, performance gets exponentially worse, until even trivial updates take many seconds' worth of CPU. 
+  - That is often how it works when the document end state is exclusively the sum of all the edits that have ever happened.
+  - Our answer was to reimplement the Automerge API with different mechanics underneath that allows for a "snapshots + recent changes" paradigm, instead of "the doc is the sum of all changes". That way performance doesn't have to degrade over time as changes accumulate.
+  - Project is here: https://github.com/frameable/pigeon
+- This is an implementation problem with automerge. I wrote a blog post last year about CRDT performance. I re-ran the benchmarks a couple months ago. Automerge has improved a lot since then. I've had a chat with some of the automerge people about it. They're working on it, and I've shared the techniques I'm using in diamond types (and all the code). Its just an implementation bottleneck.
 # discuss-text-editing
 - ## 
 

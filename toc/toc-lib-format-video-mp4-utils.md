@@ -20,4 +20,9 @@ modified: 2024-04-14T12:19:52.096Z
 
 # utils
 
+- https://github.com/patrick-s-young/react-video-scrubber /202303/ts
+  - React canvas-enabled video frame scrubber.
+  - This React component is a locally-based solution for generating still frames from a video source. 
+  - This method is an alternative to a server-side, Node.js/FFmpeg solution where video frames would be extracted and returned to the client as a sequence of images.
+  - Redux Toolkit 
 # more
