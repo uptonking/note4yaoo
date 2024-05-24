@@ -271,7 +271,10 @@ npx create-strapi-app@5.0.0-beta.0 strapi5-app-beta0 --quickstart --ts
 
 - ## 
 
-- ## 
+- ## as part of v5 migration of our plugins (Navigation, Comments, Reactions) we're thinking of merging them into the monorepo to be able to extract shared package used in all of them. 
+- https://discord.com/channels/811989166782021633/1095091586452426824/1242416611047243830
+  - Any objections to do that in context of publication to Marketplace?
+- I’ve done the same for our Webtools plugin. See on the marketplace https://market.strapi.io/plugins/@pluginpal-webtools-core and the monorepo on github https://github.com/pluginpal/strapi-webtools
 
 - ## what are the actual improvements of Strapi v5? _20240327
 - https://discord.com/channels/811989166782021633/1095091586452426824/1222274834952622081

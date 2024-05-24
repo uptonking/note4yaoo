@@ -12,7 +12,20 @@ modified: 2023-03-01T14:10:06.993Z
 # discuss-builder
 - ## 
 
-- ## 
+- ## Webflow 目前在全球拥有超过 350w 的用户，估值达 40 亿美金，有超过 2000 份用户创作的网站模板。_202405
+- https://x.com/tuturetom/status/1793859950772650423
+- 非常适合用来做创业公司的官网，或者活动的宣发页面
+  - Webflow制作前端，Airtable负责后端数据库，甚至连嘉宾提交申请的流程都是自动化。这种生意，只需要Webflow的设计师，加上Airtable的技术专家支持就够了。
+- 网站模板本质上就是一种Learn by Example的代码重用软件工程方法吧
+- 要拖拉，不一定比code简单
+- framer有点要赶超的感觉
+- 这个应该是和wordpress+elementor一样的，elementor也是至少百万级用户了。
+
+- https://x.com/bearbig/status/1629437792727203840
+- 吐槽下本公司用的Adobe Experience Manager, 难用的一B啊，
+- 国内也有类似的无代码设计工具，如zion，更符合国内需求，如能生成小程序等等
+- 
+- 
 
 - ## 体验了 http://Wegic.ai 的AI建站，UI设计和交互都很惊艳、简洁，整体流程丝滑，很不错的解决了多数低代码、模板库给用户带来的选择困难症、部署困难。
 - https://x.com/zQwQs/status/1793216048759754879

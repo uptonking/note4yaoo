@@ -38,6 +38,12 @@ modified: 2023-12-15T19:30:23.094Z
   - A curated list of awesome things related to Strapi
   - https://github.com/strapi/design-system
 
+- https://github.com/Stun3R/isstrapiready
+  - https://isstrapiready.com/
+  - Discover the advancement of Strapi for the latest Strapi version and the list of compatible plugins. (Current: v4)
+  - https://github.com/strapi-community/isstrapiready
+    - v5
+
 - https://github.com/strapi/strapi-examples /202311
   - List of examples using Strapi
   - https://github.com/strapi/nextjs-corporate-starter /202312/ts

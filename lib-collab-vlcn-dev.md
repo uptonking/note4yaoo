@@ -107,7 +107,10 @@ modified: 2023-06-03T14:43:26.987Z
 
 - ## 
 
-- ## 
+- ## 🔁 one of the main things I've been looking for in all these CRDT/storage libraries is partial replication, and that hasn't been done well yet by anyone _20240108
+- https://discord.com/channels/989870439897653248/989870440585494530/1193879630495633419
+- You could technically implement this strategy in cr-sqlite for partial replication: https://doc.replicache.dev/strategies/row-version
+  - Although it isn't the easiest thing in the world to get right so it should be something just baked into cr-sqlite.
 
 - ## An interesting thing about generating query plans from a query builder is that you could put the developer in control of the plan. 
 - https://twitter.com/tantaman/status/1786871918487863521

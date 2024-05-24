@@ -269,7 +269,7 @@ modified: 2023-12-06T15:59:01.332Z
 - Datomic-ClojureScript in the browser backed by PouchDB would be killer.
   - Datomic already has a CouchDB-compatible datastore via its support for Couchbase. That would mean Datomic-ClojureScript on PouchDB could run in the browser and sync with Datomic-Clojure backed by CouchDB/Couchbase on the the server -- that would be killer and give Datomic massive reach.
 
-- 🤔 PouchDB's replication capability is interesting, but is there a way to make it **lazy load to the local DB instead of doing everything up front**? I hesitate to use it for a web project with 10+ MB of docs where it would otherwise be ideal.
+- 🔁 PouchDB's replication capability is interesting, but is there a way to make it **lazy load to the local DB instead of doing everything up front**? I hesitate to use it for a web project with 10+ MB of docs where it would otherwise be ideal.
   - You can provide a **server-side filter function** to replication and progressively filter partial replications until eventually everything gets replicated. At that point it becomes a question of architecture of your documents: how much is needed to replicate before a user may be productive?
   - You can also explore `pouchdb-replication-stream` to build bundles that PouchDB can bootstrap from a little bit faster than a chatty replication.
   - That said, I've found initial replications of large databases (one I've worked with this week is a 25+ MB CouchDB database full of photos) is **quick enough** (and mostly bandwidth constrained) that I haven't had much in the way of concern over it.

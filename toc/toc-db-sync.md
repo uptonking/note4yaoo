@@ -319,13 +319,12 @@ modified: 2022-11-25T15:41:47.534Z
 
 - https://github.com/arj03/ssb-partial-replication /202003/js
   - A collection of functions useful for replicating a part of the log instead of everything. 
-  - This is superseeded by SSB secure partial replication.
+  - This is superseeded by [SSB secure partial replication](https://github.com/ssbc/ssb-subset-replication-spec).
   - https://github.com/arj03/ssb-secure-partial-feed
-
 - https://github.com/ssbc/ssb-replication-scheduler /LGPLv3/202305/js
   - Plugin to trigger replication of feeds identified as friendly in the social graph
   - 依赖ssb-db2
-  - [RequestManager for partial replication 已实现并合并](https://github.com/ssbc/ssb-replication-scheduler/pull/5)
+  - [RequestManager for partial replication 实现pr已合并](https://github.com/ssbc/ssb-replication-scheduler/pull/5)
 
 - https://github.com/nichoth/eventual-gram-ssb-old /202102/js/inactive
   - A social app designed for sharing photographs. Heavily influenced by patchwork, but with a UI designed for photos

@@ -10,12 +10,12 @@ modified: 2023-12-08T15:49:56.046Z
 # guide
 
 - alternatives/solutions
+  - triplitdb
   - ElectricSQL
   - PowerSync
   - ditto
   - scuttlebutt/ssb
   - hypercore
-  - triplitdb
   - filter: p/couchdb
   - ?: peerdb
 

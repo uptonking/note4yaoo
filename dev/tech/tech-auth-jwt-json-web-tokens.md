@@ -218,7 +218,31 @@ HMACSHA256(
 
 - ## 
 
-- ## 
+- ## 👨🏻‍🏫 JWTs make authentication stateless and super-scalable.
+- https://x.com/ProgressiveCod2/status/1793895187090985016
+  - A single JWT can contain all the required information about an entity, making it an ideal candidate for authentication.
+- There are 3 main components of a JWT.
+- Header
+  - Every JWT carries a header with claims about itself. 
+  - These claims specify the algorithms used for signing and/or encrypting the JWT.
+  - Also, other claims mention the type of the token or the content type.
+- Payload
+  - Payload contains the claims and the user data.
+  - There are different types of claims such as registered claims, public claims and private claims.
+- Signature
+  - The signature part of the JWT is created by taking the encoded header, encoded payload, a secret key and the algorithm specified in the header and signing it.
+  - Signature is to verify that the message wasn't changed along the way.
+- how do JWTs support the authentication workflow?
+  [1] The user makes a login request
+  [2] The authentication server verifies the credentials and issues a JWT. This JWT is signed using a private key. No database call is made
+  [3] The JWT is passed to the browser using a cookie.
+  [4] For every subsequent request to the server, the browser sends the cookie containing the JWT.
+  [5] The server can use the secret private key to validate the JWT and get the user information. No database call is needed
+
+- Love JWT simplicity...until you don't dig deeper on how to make it really secure with a SPA
+- No Jwt yet, sessions and tokens stored in redis
+- Sending JWT as a cookie is better or sending in one of response header is better so that UI can save in session storage ?
+  - Both approaches have their pros and cons. Cookies are automatically included with every request so that's a plus. With the response header, the client has to include the JWT. But cookies have size restrictions. Then, there are also security aspects to both approaches.
 
 - ## 搞定鉴权系统，不再使用jwt，而是基于redis的session，前端存储在cookie，便于管理失效时间。
 - https://twitter.com/chenbimo/status/1787218708815024461

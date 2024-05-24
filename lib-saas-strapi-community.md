@@ -246,7 +246,9 @@ modified: 2023-12-15T17:04:36.589Z
 
 - ## 
 
-- ## 
+- ## We did a major refactoring of the cors middleware in 4.24.0 I believe _20240503
+- https://discord.com/channels/811989166782021633/1095091586452426824/1235981764208623636
+  - [Make cors middleware compliant with the intended spec _20240405](https://github.com/strapi/strapi/pull/20044)
 
 - ## 🔒 [Custom Roles & Permissions Available for Free in Strapi v4.8 | Strapi _202303](https://medium.com/strapi/custom-roles-permissions-available-for-free-in-strapi-v4-8-140f664b328c)
 - Before Strapi v4.8, the free Community Edition RBAC was limited to only three predefined roles: SuperAdmin, Editor, and Author. 

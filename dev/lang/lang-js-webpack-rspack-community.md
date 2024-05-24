@@ -45,7 +45,10 @@ modified: 2024-01-03T16:14:53.804Z
 # discuss-rolldown
 - ## 
 
-- ## 
+- ## Bootstrapping achieved! Rolldown is now bundling its JS CLI with itself _20240524
+- https://x.com/youyuxi/status/1793938789968351646
+  - Currently it's transforming TS using a simple esbuild plugin. 
+  - With OXC TS transforms landing later this year, TS transform will become built-in and no longer require plugins.
 
 - ## Rolldown is open source! The Rust-based bundler designed for the future of Vite. It is still a work in progress, _20240308
 - https://twitter.com/youyuxi/status/1766014404666245582

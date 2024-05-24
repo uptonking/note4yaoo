@@ -29,7 +29,12 @@ modified: 2024-01-06T13:48:42.969Z
 
 - ## 
 
-- ## 
+- ## 1Panel 竟然还提供一键安装 AI 大模型
+- https://x.com/kuizuo/status/1793608153734746186
+- 对我这个4核8g的轻量应用服务器来说，跑大模型还是太吃力了，十几秒出一个字
+- MaxKB  就是  1Panel 官方出品的，再加一些其他常用的
+- 这是docker镜像。
+  - 对，提供了一键安装，但是对于绝大部分机器根本用不起来
 
 - ## Interesting, @intellijidea built block based terminal in 2024.1 like @warpdotdev
 - https://twitter.com/OnlyXuanwo/status/1776791869848231993
