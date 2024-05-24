@@ -335,6 +335,42 @@ betterdiscordctl -i flatpak install
 
 ## 052
 
+## 0524
+
+- dev-log
+  - 修改sdk的CodeEditor组件，支持多标签页
+- dev-to
+  - 驾驶舱、制订计划ui还原
+  - 继续完善cde的功能，完善任务执行和回放的ui交互逻辑
+
+## 0523
+
+- [Tasks — Airflow Documentation](https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/tasks.html)
+- The possible states for a Task Instance are:
+  - none: The Task has not yet been queued for execution (its dependencies are not yet met)
+  - scheduled: The scheduler has determined the Task’s dependencies are met and it should run
+  - queued: The task has been assigned to an Executor and is awaiting a worker
+  - running: The task is running on a worker (or on a local/synchronous executor)
+  - success: The task finished running without errors
+  - restarting: The task was externally requested to restart when it was running
+  - failed: The task had an error during execution and failed to run
+  - skipped: The task was skipped due to branching, LatestOnly, or similar.
+  - upstream_failed: An upstream task failed and the Trigger Rule says we needed it
+  - up_for_retry: The task failed, but has retry attempts left and will be rescheduled.
+  - up_for_reschedule: The task is a Sensor that is in reschedule mode
+  - deferred: The task has been deferred to a trigger
+  - removed: The task has vanished from the DAG since the run started
+
+- dev-log
+  - repo初始化逻辑
+  - 修改sdk的CodeEditor组件，支持多标签页
+  - 回放逻辑有了新的修改思路
+- dev-to
+  - 继续完善cde的功能，完善任务执行和回放的ui交互逻辑
+
+- [css - Center a position:fixed element - Stack Overflow](https://stackoverflow.com/questions/2005954/center-a-positionfixed-element)
+  - if your div has a dynamic/undefined width and/or height, then instead of the `margin`, set the `transform` to the negative half of the div's relative width and height.
+
 ## 0522
 
 - [前端权限开发——设计到实践（保姆级） - 掘金](https://juejin.cn/post/7259210874446692411)
