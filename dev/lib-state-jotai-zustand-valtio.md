@@ -9,11 +9,12 @@ modified: 2022-01-05T14:36:28.057Z
 
 # guide
 
-- ref
+- resources
   - [npm trends: jotai vs recoil vs valtio vs zustand](https://www.npmtrends.com/jotai-vs-recoil-vs-valtio-vs-zustand)
 
 - zustand  /12.6kStar/MIT/202201/ts/NoDeps/Flux
   - https://github.com/pmndrs/zustand
+  - https://zustand-demo.pmnd.rs/
   - https://zustand.surge.sh/
   - A small, fast and scalable bearbones state-management solution using simplified flux principles.
   - Why zustand over redux?
@@ -27,6 +28,24 @@ modified: 2022-01-05T14:36:28.057Z
     - Centralized, action-based state management
   - deal with common pitfalls, like the dreaded zombie child problem, react concurrency, and context loss between mixed renderers
   - Zustand's core(`zustand/vanilla`) can be imported and used without the React dependency. 
+  - [changelog](https://github.com/pmndrs/zustand/releases)
+    - v4.5.0 2024-01-20
+      - feat: `getInitialState` by @TkDodo, adds a new capability for SSR/Hydration https://github.com/pmndrs/zustand/pull/2277
+      - fix: Add deprecation notice for getServerState() in WithReact type
+    - v4.4.0 2023-08-01
+      - adds new zustand/traditional entry point and deprecates equalityFn
+      - deprecate equalityFn and add createWithEqualityFn
+    - v4.3.8 2023-05-04
+      - For persist middleware, a new option for `createJSONStorage` in introduced
+    - v4.3.0 2023-01-10
+      - Throughout past years of development, we've learned the (mis)usage of the library. One of our goal is to provide smallest possible APIs. To go further, this version deprecates some features. 
+      - deprecate default export
+      - fix(middleware/persist): hydrate in sync (new impl with storage option)
+    - v4.1.0 2022-08-19 
+      - This supports non-object state. It's probably one of the biggest changes in API design throughout the zustand development history. But, probably 99.9% of users won't use it
+    - v4.0.0 2022-07-26 🎯
+      - v4 API is completely backward compatible, so it's just nothing to update if you are JS users
+      - One note is v4 depends on `useSyncExternalStore`.
 
 - jotai  /6.7kStar/MIT/202201/ts/Atoms
   - https://github.com/pmndrs/jotai
@@ -43,6 +62,29 @@ modified: 2022-01-05T14:36:28.057Z
   - Valtio makes proxy-state simple for React and Vanilla
   - Rule of thumb: read from snapshots, mutate the source.
   - 依赖 proxy-compare
+
+- zustood/zustand-x  /301Star/MIT/202404/ts
+  - https://github.com/udecode/zustand-x
+  - https://zustand-x.udecode.dev/
+  - zustand-x, built on top of zustand, is providing a powerful store factory
+  - zustand 4.5.0+ is not yet supported. 
+  - Why zustand-x in addition to zustand?
+    - Much less boilerplate
+    - Modular state management: Derived selectors, Derived actions
+    - immer, devtools and persist middlewares
+    - react-tracked support
+  - [changelog](https://github.com/udecode/zustand-x/releases)
+    - @udecode/zustood@1.1.0 2022-04-22
+      - react-tracked support
+    - @udecode/zustood@2.0.0 2023-07-09 🎯
+      - Upgraded zustand to v4
+      - Upgraded immer to the v10
+    - zustand-x@3.0.0 2023-12-08 🎯
+      - Rename @udecode/zustood package to zustand-x
+    - zustand-x@3.0.2 2023-12-29
+      - Replace lodash with lodash.mapvalues
+    - zustand-x@3.0.3 2024-04-19
+      - Support partial state objects in the persist typings
 # comparison
 
 ## [When I Use Valtio and When I Use Jotai ?](https://blog.axlight.com/posts/when-i-use-valtio-and-when-i-use-jotai/)

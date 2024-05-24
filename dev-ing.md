@@ -55,6 +55,8 @@ rm package-lock.json && find . -name 'node_modules' -type d -prune -exec rm -rf 
 
 find . -name 'node_modules' -type d -prune -exec rm -rf '{}' + 
 
+# 格式化当前包，注意在子文件夹执行命令也会从package.json目录开始格式化整个包
+prettier --write '**/*.{js,jsx,ts,tsx,json}' --ignore-unknown
 # npm i
   DEBUG=* npm i --no-audit --loglevel silly
 DEBUG=* npm i --legacy-peer-deps --no-audit --loglevel silly
@@ -327,7 +329,7 @@ betterdiscordctl -i flatpak install
     - 2个编辑器同一页面协同的示例未完成
     - cursor光标位置经常对不上
   - [x] streaming infinite-list/tree
-# dev-05-codemirror
+# dev-05-codemirror-&-cde-&-replay-&-tailwind
 - dev-log
   - 
 - dev-to

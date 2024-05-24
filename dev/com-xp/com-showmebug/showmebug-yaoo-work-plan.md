@@ -230,7 +230,12 @@ useEffect(() => {
     - 是否支持每个用户仅回放自己的操作，或者回放时设置仅回放自己的op
 
 - not-yet ❓
-  - recordBrowser参数似乎未使用
+- recordBrowser参数似乎未使用
+- 回放时拖动进度，是否存在快照来加速拖动
+  - 拖动进度时，似乎没有用专门的快照来加速，但 ❓ 已播放过的frame被缓存了
+  - this.playbackEngine!.movePosition(start); 
+  - findFrameByTimeStamp会查找拖动的进度目标祯
+  - 若目标祯不存在，则 this.preFrameTime = Date.now(); + step()
 
 - snapshot数据是如何存储的
   - const { content } = store.file.getFileBaseHistoryByPath(dockerId, openedPath); 
