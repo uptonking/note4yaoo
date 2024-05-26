@@ -324,10 +324,10 @@ modified: 2024-05-06T02:52:41.789Z
 
 ## products-ww
 
-- GitHub Codespaces, gitlab
+- Microsoft GitHub Codespaces, gitlab
 - codesandbox
 - stackblitz
-- replit
+- replit(ai)
 - gitpod, coder, devpod
 
 - more

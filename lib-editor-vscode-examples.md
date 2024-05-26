@@ -10,13 +10,71 @@ modified: 2023-01-21T18:58:29.846Z
 # guide
 
 # popular
-- https://github.com/DTStack/molecule /811Star/MIT/202312/ts
+- https://github.com/opensumi/core /2.7kStar/MIT/202405/ts
+  - https://opensumi.com/
+  - https://preview.opensumi.com/
+  - https://opensumi.com/zh/docs/develop/basic-design/core-idea
+  - https://opensumi.com/zh/docs/develop/module-samples
+  - 一款帮助你快速搭建 CloudIDE 及 桌面端IDE 产品的底层框架
+  - 示例使用node.v16, 切换文件内容时，websocket会send当前内容数据文本
+    - ❓ 或许是先receive二进制数据，再send文本数据
+    - id:"CLIENT_ID_vEVx63rFu_uSoPAc2q4kt:ExtMainThreadConnection"
+  - 提供了一个强大的插件生态系统，兼容 VS Code 的插件系统，支持 LSP/DAP 等主流协议，我们也有着自己的 OpenSumi API 用于进一步拓展 IDE 界面及能力
+  - OpenSumi 是前后端分离的设计，不论是在 Web 还是 Electron 环境下，浏览器/窗口中展示的界面部分我们称之为 OpenSumi 的前端，
+    - 而对于文件读写、终端连接、插件进程等功能则运行在 OpenSumi 的后端。
+    - 与传统的 B/S、C/S 架构不同的是，OpenSumi 前后端之间的通信仅由一个长链接连接实现。
+    - 在 Web 环境下，前后端会建立一条 WebSocket 连接
+    - 在 Electron 环境下，则会建立一条 Socket 连接进行进程间通信(IPC)
+    - 核心功能的代码都是可以在 Web/Electron 端复用的，因为 connection 模块屏蔽了大部分平台、底层通信协之间的差异, connection 模块基于 JSON-RPC 2.0 实现了一个 RPC 框架，将 Web 与 Electron 端通信过程通过 RPC 协议来封装起来
+  - 支持使用 3-way merge editor 新交互来解决代码冲突
+  - 提供了ai模块
+  - 协同编辑模块目前只支持 Browser + Node 的 Cloud IDE 场景
+    - 不支持纯前端与 Electron 平台
+    - 不支持 IDE 编辑器外的协同编辑功能（如终端）
+    - 不支持 IDE 内跨文件的修改（如使用 vscode 插件进行变量重命名重构）
+  - 不提供针对特定端的以下能力
+    - Desktop IDE 场景下的窗口管理
+    - Cloud IDE 场景下的容器/虚拟机管理
+  - 前端与后端通过 RPC 的方式通信，与调用一个异步方法没有太大区别
+    - 我们将模块划分为 核心模块 、功能模块。核心模块是指组成 IDE 核心功能的一些必选模块，如layout、browser、node
+    - 功能模块一般是可插拔的，也就是在集成代码中可以将这些模块去除，或者重新替换实现，并不会影响其他功能
+  - OpenSumi 插件系统是 VS Code 插件的超集，除了兼容 VS Code 官方的 API 之外，我们还有自己扩展的一些插件 API，以及包括前端、WebWorker 的插件等
+    - 插件可以有 3 个入口，分别是 main 、browserMain 以及 workerMain
+    - Browser 插件是 OpenSumi 特有的，通过 Contributes 来声明注册点，代码中导出对应的 React 组件来实现的
+  - 贡献点这一概念源自 VS Code 中的一个设计理念，即通过一个基础的贡献点定义，可以让一个能力的完整实现，分散到各个子模块的贡献点文件之中。
+    - 可以在公共模块中只进行 贡献点 机制下逻辑的执行
+    - 通常我们在使用贡献点实现相应功能后，需要通过在模块内进行声明，同时在集成侧引入才能生效
+  - CodeBlitz主要在读、写、运行和提交等方面进行了探索，与带有容器的标准版本进行了对标
+  - [chore: add NOTICE.md ](https://github.com/opensumi/core/pull/558)
+    - EPL2.0 属于文件级别的Copyleft许可证，即 EPL-ed 代码具有Copyleft 属性的，其“衍生作品”的包围也比较明确。EPL2.0追求的是EPL-ed代码的Copyleft和代码开源，且 MIT和EPL2.0许可证兼容。OpenSumi 本身是开源的，同时并未改变EPL2.0组件的许可，项目符合MIT和EPL2.0各自要求。
+  - [离线部署 | OpenSumi](https://opensumi.com/zh/docs/integrate/universal-integrate-case/offline-deployment)
+    - OpenSumi天然支持离线部署场景，只需要将内部的一些网络资源如（icon、onig-wasm）等通过浏览器端的配置替换成内网的资源地址即可
+  - [如何评价阿里 & 蚂蚁自研 IDE 研发框架 OpenSumi？ - 知乎](https://www.zhihu.com/question/519740662)
+    - 高性能、高定制性的双端（Web 及 Electron）IDE 研发的框架
+    - 设计之初就是要兼容 VS Code 插件生态，我们计划每三个月时间去完成一次 VS Code 插件 API 的适配工作
+  - [vscode扩展放进去后webview不能正常显示 _202311](https://github.com/opensumi/core/discussions/3315)
+    - 我自己修改编写的vscode插件放进去extensions后，图标和相关的webview都没有显示
+    - 我们的 webview 是基于 iframe 做的，因为 iframe 的一些通信的限制，我们需要通过加载 /webview/index.html 来包裹一层 webview，你这里的报错看起来是加载不到这个地址。
+  - 📡 待实现 [[FEATURE] 支持离线安装插件 _202307](https://github.com/opensumi/core/issues/2873)
+    - 增加导入本地插件的功能，类似于theia
+  - https://github.com/opensumi/codeblitz /MIT/202401/ts/inactive
+    - https://codeblitz.opensumi.com/
+    - https://codeblitz.cloud.alipay.com/zh
+    - 基于 OpenSumi 的纯前端 IDE 基础框架
+    - Pure front-end IDE framework based on OpenSumi
+  - [极速版 IDE 框架 CodeBlitz 开源啦！ - 知乎_202309](https://zhuanlan.zhihu.com/p/656515617)
+    - 在OpenSumi的基础上对文件系统、通信系统、插件机制等模块进行扩展，以更好地适用于没有容器、本地客户端环境的纯浏览器环境
+    - CodeBlitz提供了一种只需使用浏览器即可体验IDE的场景。与github.dev和vscode.dev不同的是，CodeBlitz是一个框架，通过OpenSumi模块和插件的方式，可以为上层产品量身定制符合其业务场景的WebIDE。
+
+- molecule /811Star/MIT/202312/ts/仅web/不支持桌面
+  - https://github.com/DTStack/molecule
   - https://dtstack.github.io/molecule/
   - https://dtstack.github.io/molecule-examples/
   - 受 VSCode 启发，使用 React.js 构建的 Web IDE UI 框架
   - 我们设计了类似 VSCode 的扩展(Extension)机制，可以帮助我们使用 React 组件快速完成对 Workbench 的自定义
   - 依赖tapable、tsyringe、react-dnd、monaco-editor、immer、rc-menu
   - 不依赖antd，总体依赖不多
+  - 示例采用c/s架构, fileTree请求的响应内容包含文件列表和文件具体内容
   - 内置 React 版本的 Visual Studio Code Workbench UI
   - 内置 Monaco Editor Command Palette、Keybinding等模块，并支持扩展
   - 内置一个简单的 Settings 模块，支持在线编辑修改以及扩展
@@ -25,6 +83,8 @@ modified: 2023-01-21T18:58:29.846Z
     - 有没有什么方法可以比较方便的移植vscode的插件，或者考虑后面的版本中增加对vscode插件进行支持
     - 并没有，考虑到大部分的 vscode 的插件增强的是 vscode 所实现的功能。其相关逻辑强依赖于 vscode。所以针对大部分的 vscode 插件无法做到方便的移植。
     - 而针对除此之外的小部分 vscode 插件，诸如 icons，themes 倒是可以参考 文档
+  - [Write a Molecule demo with Electron ](https://github.com/DTStack/molecule/discussions/709)
+    - great idea
   - [我们开源了一个轻量的 Web IDE UI 框架 - 知乎 _202112](https://zhuanlan.zhihu.com/p/446147101)
   - [我们开源了一个轻量的 Web IDE UI 框架 - Molecule - V2EX_202112](https://www.v2ex.com/t/823289)
     - 与其他开源的 Web IDE 的区别？
@@ -38,33 +98,10 @@ modified: 2023-01-21T18:58:29.846Z
       - 新增 Search 组件
     - [Feat/folder tree 2.x dilu ](https://github.com/DTStack/molecule/pull/873)
       - 新增 FolderTree 组件; 重写拖拽逻辑，不限制拖拽文件，交给用户去限制
-    - https://github.com/DTStack/dt-react-monaco-editor
-      - https://dtstack.github.io/dt-react-monaco-editor/
-      - 基于开源 monaco-editor，根据业务使用场景进行二次封装
-      - 支持通过 props 传递的方式自定义自动补全项和需要高亮的关键字
-
-- https://github.com/opensumi/core /2.7kStar/MIT/202405/ts
-  - https://opensumi.com/
-  - https://preview.opensumi.com/
-  - 一款帮助你快速搭建 CloudIDE 及 桌面端IDE 产品的底层框架
-  - 提供了一个强大的插件生态系统，兼容 VS Code 的插件系统，支持 LSP/DAP 等主流协议，我们也有着自己的 OpenSumi API 用于进一步拓展 IDE 界面及能力
-  - 不提供针对特定端的以下能力
-    - Desktop IDE 场景下的窗口管理
-    - Cloud IDE 场景下的容器/虚拟机管理
-  - CodeBlitz主要在读、写、运行和提交等方面进行了探索，与带有容器的标准版本进行了对标
-  - [离线部署 | OpenSumi](https://opensumi.com/zh/docs/integrate/universal-integrate-case/offline-deployment)
-    - OpenSumi 天然支持离线部署场景，只需要将内部的一些网络资源如（icon、onig-wasm）等通过浏览器端的配置替换成内网的资源地址即可
-  - https://github.com/opensumi/codeblitz /MIT/202401/ts/inactive
-    - https://codeblitz.opensumi.com/
-    - https://codeblitz.cloud.alipay.com/zh
-    - 基于 OpenSumi 的纯前端 IDE 基础框架
-    - Pure front-end IDE framework based on OpenSumi
-  - [如何评价阿里 & 蚂蚁自研 IDE 研发框架 OpenSumi？ - 知乎](https://www.zhihu.com/question/519740662)
-    - 高性能、高定制性的双端（Web 及 Electron）IDE 研发的框架
-    - 设计之初就是要兼容 VS Code 插件生态，我们计划每三个月时间去完成一次 VS Code 插件 API 的适配工作
-  - [极速版 IDE 框架 CodeBlitz 开源啦！ - 知乎_202309](https://zhuanlan.zhihu.com/p/656515617)
-    - 在OpenSumi的基础上对文件系统、通信系统、插件机制等模块进行扩展，以更好地适用于没有容器、本地客户端环境的纯浏览器环境
-    - CodeBlitz提供了一种只需使用浏览器即可体验IDE的场景。与github.dev和vscode.dev不同的是，CodeBlitz是一个框架，通过OpenSumi模块和插件的方式，可以为上层产品量身定制符合其业务场景的WebIDE。
+  - https://github.com/DTStack/dt-react-monaco-editor
+    - https://dtstack.github.io/dt-react-monaco-editor/
+    - 基于开源 monaco-editor，根据业务使用场景进行二次封装
+    - 支持通过 props 传递的方式自定义自动补全项和需要高亮的关键字
 
 - https://github.com/VSCodium/vscodium
   - https://vscodium.com/

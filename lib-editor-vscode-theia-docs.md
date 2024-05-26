@@ -51,6 +51,15 @@ modified: 2024-05-25T16:57:45.541Z
 - Theia uses the Eclipse Open VSX Registry, an open-source alternative to the Microsoft Visual Studio marketplace.
   - the extensions available in this free marketplace can be used in VS Code as well as in Theia.
 
+## [Eclipse Theia技术揭秘——初识Theia _202209](https://xie.infoq.cn/article/ef9d31c5165a5d5bdccd5e372)
+
+- Theia被设计成一个桌面应用程序，也可以在浏览器和远程服务器的环境中工作。
+  - 为了支持这两种情况，Theia 在两个单独的进程中运行。这些进程分别称为前端和后端，它们通过 WebSocket 上的 JSON-RPC 消息或 HTTP 上的 REST API 进行通信。
+  - 对于 Electron，后端和前端都在本地运行，而在远程上下文中，后端将在远程主机上运行。前端和后端进程都有它们的依赖注入（DI）容器方便扩展功能。
+- 插件开发：VS Code 提供扩展注册命令、菜单、视图、语言服务器等相关功能，目前只能通过 VS Code 提供的 API 进行扩展，无法更换 logo，移除默认菜单、命令，创建复杂视图等功能。
+  - 💡 而 Theia 其实提供了两种插件机制，一种是类似于 VS Code 的插件开发机制， Plugin，它依赖于 Theia 提供的 API 进行插件开发，用户可在 IDE 运行时进行插件的安装、卸载。
+  - 另外一种是 extension，这是直接构建在了我们工具当中，用户无法进行修改，它可以访问 Theia 内部的所有方法，我们可以对 Theia 所有的功能进行个性化开发。这种插件开发的缺点是，对开发人员要求相对而言比较高，需要了解 Theia 的内部机制，现有文档基本上也无法满足高定制化的开发需求。
+
 ## 🌰 [如何在团队内快速落地WebIDE - 知乎 _202109](https://zhuanlan.zhihu.com/p/411030285)
 
 - 在云音乐团队内部的WebIDE终于落地了。目前功能上覆盖前端正常的业务开发已无问题，期间也踩了不少坑，故写此篇文章

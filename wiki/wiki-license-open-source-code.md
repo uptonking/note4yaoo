@@ -349,6 +349,10 @@ modified: 2021-09-14T18:58:58.275Z
   - You may also license binaries under a proprietary license, as long as the source code is available under EPL.
 - must include copyright/license/original, disclose source, compensate for damages
 
+- [EPL 许可证人话翻译-百度开发者中心](https://developer.baidu.com/article/detail.html?id=293496)
+  - 1、EPL是弱copyleft的，也即“传染性”较弱，通常情况下，如果链接或调用EPL程序，并不构成传染；但如果你修改了EPL程序，分发时就要按EPL要求公开源码。
+  - 2、EPL有个第二许可证，就是GPLv2及以后版本（本文简称GPL）。在满足一定条件下，EPL程序可以按照GPL发布。
+
 - EPL1.0 特点
   - 较弱的版权约束（受限于软件“模块”）
   - 项目作品适合商业用途
@@ -356,11 +360,6 @@ modified: 2021-09-14T18:58:58.275Z
   - 如果你修改了作品，则**必须以相同的条款发布修改后的作品**
   - 如果你使用了作品，无需以相同的条款发布衍生作品
   - 软件的商业分销商必须在因商业用途导致的诉讼/损害中保护或赔偿原始EPL贡献者
-
-- 对商用友好
-  - 要求 公开源码、协议和版权信息
-  - 允许 商用、分发、修改、专利授权、私用、附加协议
-  - 禁止 责任承担
 
 - ## [The Eclipse Public License - FOSSA](https://fossa.com/blog/open-source-software-licenses-101-eclipse-public-license/)
 - As a weak copyleft license, the EPL is a middle ground of sorts between permissive options (like the MIT License or Apache License 2.0) and strong copyleft licenses (like GPL v2 and GPL v3.)

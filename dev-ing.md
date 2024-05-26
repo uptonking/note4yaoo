@@ -343,7 +343,7 @@ betterdiscordctl -i flatpak install
   - 升级了paas-sdk的状态管理zustood，暂时不改变
   - cde演示demo
 - dev-to
-  - 现在sdk的实现方式过于随意, 拆分为editor/workbench/extension三部分
+  - 现在sdk的实现方式过于随意, 拆分为 editor/workbench/extension 三部分
   - sdk的api设计，参考vscode/theia，设计workbench界面布局的api
 
 ## 0524
