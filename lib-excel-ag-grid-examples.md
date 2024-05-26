@@ -31,6 +31,8 @@ modified: 2022-08-21T10:39:10.445Z
     - Datagrid has been moved to a private repository.
     - previous commit id: 904dd6c27973e161c2f41a07a4ca1cfa8067598b
     - https://github.com/Talend/ui/tree/904dd6c27973e161c2f41a07a4ca1cfa8067598b
+  - [Talend Open Studio: Open-source ETL and Free Data Integration | Talend](https://www.talend.com/products/talend-open-studio/)
+    - As of January 31, 2024, the open-source version of Talend Studio has been retired and will no longer be hosted or updated by Qlik and Talend
 
 - https://github.com/linz/step-ag-grid /202312/ts
   - https://linz.github.io/step-ag-grid/

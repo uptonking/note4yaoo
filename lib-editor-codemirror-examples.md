@@ -9,7 +9,7 @@ modified: 2023-06-23T12:46:53.288Z
 
 # guide
 
-- 支持切换editor的方案: sandpack, jupyter, webix, @uiw/react-*-editor
+- 支持切换editor的方案: sandpack, jupyter, @uiw/react-*-editor
 
 - examples
   - 类似打字机动态输出文字, 多用于ai生成代码/文本
@@ -73,7 +73,11 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/sourcegraph/openctx/tree/main/client/codemirror /apache2/202405/ts
   - https://openctx.org/playground
-  - implements a CodeMirror extension that shows OpenCtx items in the editor.
+  - implements a CodeMirror extension that shows OpenCtx items in the editor
+  - https://github.com/sourcegraph/codeintellify /MIT/202111/ts/archived
+    - Adds code intelligence to code views on the web
+    - This library manages all of the inputs (mouse/keyboard events, location changes, hover information, and hover actions) necessary to display hover tooltips on with a code view.
+    - 依赖rxjs、sourcegraph
 
 - overleaf /12.6kStar/AGPLv3/202405/js/latex/ace>codemirror
   - https://github.com/overleaf/overleaf
@@ -607,7 +611,7 @@ modified: 2023-06-23T12:46:53.288Z
   - A simple code editor to share code and collab with other developers
 
 - https://github.com/lucafabbian/firepad /202208/js/inactive
-  - Firepad is an open-source library for adding collaborative capabilities into text and code editors. Firepad uses Google Firebase as a backend, so it requires no server-side code. It supports out of the box popular web editors such as Codemirror, Ace and Monaco.
+  - 🔥 Firepad is an open-source library for adding collaborative capabilities into text and code editors. Firepad uses Google Firebase as a backend, so it requires no server-side code. It supports out of the box popular web editors such as Codemirror, Ace and Monaco.
   - new adapter to add compatibility with Codemirror6, arguably one of the best web editor out there. Check the demo here
   - https://github.com/lucafabbian/codemirror6-firepad-demo /202206/js
     - Demo of Codemirror6 using the Google Firebase service to achieve real time collaboration with minimal setup.
@@ -990,6 +994,11 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/greeenboi/vscodex /202402/ts
   - Vs code Clone
   - 依赖codemirror6、tauri
+
+- https://github.com/Bilal-Belli/Basic-IDE /MIT/202403/js
+  - This is a basic Desktop IDE made using ElectronJS NodeJS CodeMirror and JsTree, jquery
+- https://github.com/RAGHAV-N5/CodeIt /202312/js
+  - a React Project with NodeJs and expressJs using CodeMirror5 and compilex libraries
 # examples
 - https://github.com/alexwkleung/Iris /MIT/202312/ts/inactive
   - https://irisnotes.vercel.app/
@@ -1176,6 +1185,8 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/Yash-Singh1/monkeyide /MIT/202105/js
   - A lightweight multi-tab IDE based on CodeMirror5
+- https://github.com/praveen4463/out-front-end /202212/js/inactive
+  - The front end for Outomated aka browser based IDE   and platform to write, run, debug and scale e2e tests
 
 - https://github.com/youwol/rx-code-mirror-editors /MIT/202401/ts
   - Code editors (typescript, python) using codemirror & flux-view.

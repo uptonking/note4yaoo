@@ -170,7 +170,9 @@ modified: 2023-10-10T14:20:13.855Z
 
 - ## 
 
-- ## 
+- ## My iOSClub buddy @tingwoooo did this super intuitive UI and didn't know how cool it is!! Please help me tell him this is awesome
+- https://x.com/janechao_dev/status/1793859771164164367
+  - 触屏计算器，特别是公式编辑器的触摸交互
 
 - ## 国内的这种办公协作软件都是all-in-one的，然后每个功能都做到六七十分。
 - https://x.com/pingchn/status/1792722509365944450

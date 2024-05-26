@@ -338,6 +338,25 @@ modified: 2024-01-25T13:33:23.267Z
 - https://twitter.com/CompuIves/status/1504479650612871170
   - We've also grown our team from 12 to 29 people in that time, it's really really been a crazy year.
 
+# discuss-csb
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [CodeSandbox | Hacker News _201808](https://news.ycombinator.com/item?id=17814006)
+- Ives van Hoorne (of CodeSandbox) got Visual Studio code to run in the browser
+  - Very cool. We (Sourcegraph) could never get VS Code fast enough to be the right fit for code browsing and search, which is what we're targeting. So we built our own components
+
+- ## [Show HN: CodeSandbox – A React editor built for easy sharing and reusability | Hacker News _201704](https://news.ycombinator.com/item?id=14022860)
+- For now a quick summary of what we use now:
+  1. Phoenix/Elixir for the API
+  2. Node for bundling NPM packages
+  3. Postgres for SQL
+  4. Redis for caching NPM package metadata
+- The editor itself is written in React (hah!) and uses styled-components, redux, redux-thunk and react-router@4.0.0 as most used libraries. I code split every optional preference a user may have (like autocomplete, vim or prettify) using webpack 2.
+
 # discuss
 - ## 
 

@@ -10,7 +10,7 @@ modified: 2024-05-09T09:35:28.467Z
 # guide
 
 - cloud-ide
-  - monaco: Codespaces(GitHub绑定), 💡 Gitpod(yml/不支持私有部署), theia, OpenSumi/云凤蝶, 💡 StackBlitz, 💡 codesandbox-web
+  - monaco: Codespaces(GitHub绑定), 💡 Gitpod(yml/不支持私有部署), theia(华为CodeArts), OpenSumi/云凤蝶, 💡 StackBlitz, 💡 codesandbox-web
   - codemirror: sandpack, 💡 replit
   - Eclipse Che: OpenShift CDE
   - DevPod: devcontainer-spec + local-and-cloud
@@ -315,7 +315,7 @@ modified: 2024-05-09T09:35:28.467Z
   - Eclipse Theia 支持 Debug Adapter Protocol（DAP）
   - Eclipse Theia 支持运行 VS Code 的插件（支持大部分的 VS Code 插件 API）
 
-- 为什么大家做 Cloud IDE 的时候都会基于 VSCode/类 VSCode 这一套体系？
+- 为什么大家做 Cloud IDE 的时候都会基于 VSCode/类VSCode 这一套体系？
   - 因为 VS Code 丰富的生态（Monaco Editor、LSP、DAP 和插件生态）。
 
 - ## 🆚️ [如何评价阿里 & 蚂蚁自研 IDE 研发框架 OpenSumi？ - 知乎](https://www.zhihu.com/question/519740662)

@@ -28,8 +28,6 @@ modified: 2024-05-09T09:39:33.338Z
 
 ## 
 
-## 
-
 ## [李亚飞: 我这 5 年技术创业对云端 IDE 的理解与预测 _202402](https://new.qq.com/rain/a/20240222A04Z3B00)
 
 - IDE 是指本地集成开发环境，也就是包罗开发人员所需要的、与编写代码相关联的一系列环境及配置。 
@@ -97,7 +95,7 @@ modified: 2024-05-09T09:39:33.338Z
 - CDE 是一个极其技术密度的工程复杂度很高的项目。注定了它的发展周期比想像的要长不少，比如上述提到的技术测评产品大多在 2012-2013 年成立，像 Replit 也是 2013 年成立。只有深刻思考上述问题并提出更优解决方案，才有可能做出成功的产品
   - 首先，我这十年的创业经历告诉我，核心能力一定自主可控，所以从一开始，我们便立志自研完全属于自己全协同的云端 IDE（CDE），首先就是放弃了 VSCode 二次的思路，从零开始构建自己的云 IDE 引擎。
 - 我们在 2021 年下半年开始组建自己的 CDE 研发团队，从以下几个关键点进行了架构设计：
-  - PaaS 架构，提供 SDK，让应用层充分响应各种需求。极速冷启动，采用分布式 COW 存储架构，双阶段（ready_1 和 ready_2）分阶段加载代码和容器环境，启动进入理论极限：2S。甚至切换环境速度被优化的更快，平均只有 700ms。这超出了世界上最优秀的 CDE 的表现。
+  - PaaS架构，提供 SDK，让应用层充分响应各种需求。极速冷启动，采用分布式 COW 存储架构，双阶段（ready_1 和 ready_2）分阶段加载代码和容器环境，启动进入理论极限：2S。甚至切换环境速度被优化的更快，平均只有 700ms。这超出了世界上最优秀的 CDE 的表现。
   - 全协同性，天然支持多人实时协同，不等同于传统 IDE 只能协同编辑区，我们还有文件树、终端、控制台、甚至浏览器均默认协同与共享，并特有视角跟随功能。
   - 可控的成本和低延迟设计，全自研可控的容器调控技术，容器随启随关不影响到用户使用，整体的成本与延迟要比同类低 50% 以上。
 - 我非常同意前 Coding 创始人张海龙的那句话：“机会很可能不是简单的把 IDE 上云，机会更可能来自全新的云端编程体验”。目前来看最可能的方式是 AI 原生的在线编程体验，提供 L3 甚至 L4 以上辅助编程能力，并且需要把 CI/CD、Review 等流程结合 AI 更好的协同起来，创造一个超出目前本地编程几倍的全新体验
@@ -143,7 +141,7 @@ modified: 2024-05-09T09:39:33.338Z
 - The success of DevPod is indeed not unexpected, given the track record of the team at Loft Labs and their previous involvement in the open-source community. 
   - Their prior projects, such as vCluster and DevSpace, have been highly successful and have contributed significantly to the developer ecosystem.
 
-## [Thanks Microsoft for open-sourcing VS Code Server _202111](https://www.gitpod.io/blog/vscode-server)
+## [gitpod: Thanks Microsoft for open-sourcing VS Code Server _202111](https://www.gitpod.io/blog/vscode-server)
 
 - After Gitpod launched OpenVSCode Server in September, Microsoft now open-sourced the server code powering VS Code remote development and GitHub Codespaces
   - Within a few days we switched Gitpod VS Code and OpenVSCode Server Insiders builds to the upstream implementation
@@ -196,7 +194,7 @@ modified: 2024-05-09T09:39:33.338Z
   - Unlimited Prebuilds (making ephemeral dev environments possible)
   - Admin Dashboard
 
-## [A first look at the new GitLab Web IDE and remote development experience _202212](https://about.gitlab.com/blog/2022/12/15/get-ready-for-new-gitlab-web-ide/)
+## [Gitlab: A first look at the new GitLab Web IDE and remote development experience _202212](https://about.gitlab.com/blog/2022/12/15/get-ready-for-new-gitlab-web-ide/)
 
 - A little while back I wrote about the future of the GitLab Web IDE and our decision to rebuild the Web IDE on top of the open source VS Code project
   - Today, I am happy to announce that we are preparing to launch the new Web IDE experience as a beta
@@ -207,6 +205,73 @@ modified: 2024-05-09T09:39:33.338Z
     - Replace the current Web IDE, which is based on the open sourced Monaco editor, with a client-side instance of VS Code and implement custom extensions for creating commits and interacting with MRs.
 # blogs
 
+## [WebIDE技术方案调研 _202303](https://www.iceyao.com.cn/post/2023-03-09-webide_learning_note/)
+
+- coder-server、opensumi、theia 都支持VS Code扩展，但只有微软产品可以使用并连接到微软的扩展市场。
+
+## [The Online IDEs Ecosystem _202111](https://www.dlvhdr.me/posts/online-ides-ecosystem)
+
+- As part of my work in Wix on an online IDE, I wanted to research the field of online IDEs.
+  - the product I'm working on is Velo.
+  - Velo is a full-stack development platform that empowers you to rapidly build, manage and deploy professional web apps.
+
+- What's at the core of modern IDEs?
+  - LSP - the Language Server Protocol (LSP) - JSON based
+    - Language Server - a process that provides language features
+    - Language Clients - are extensions that add support for a language by running a Language Server and forwarding messages to the IDE
+  - DAP - the Debug Adapter Protocol (DAP) defines the abstract protocol used between a development tool (e.g. IDE or editor) and a debugger.
+  - Code Editor - the panel where the code is written
+  - Workbench - all the UI that surrounds the code editor: file explorer, debug panel, source control panel etc.
+  - Extensions - ability to add extra functionality to the IDE in the form of plugins
+
+- Monaco started as a browser based editor and later was pivoted to VSCode which started off as a desktop app. 
+  - Monaco is extracted directly from the vscode codebase and exposed as a separate package.
+  - Monaco is single file scoped. It wasn't meant for projects and never will be. This means that a you can't open multiple files with Monaco or have it report errors on the whole project. It's just aware of the current file.
+
+- VSCode is roughly divided into:
+  - The workbench - the surrounding UI
+  - The editor - Monaco
+  - The extensions host - a separate node process to run the extensions
+  - uses xterm.js for its terminal
+- The extensions host provides an isolated environment for extensions and doesn't block the UI. 
+- The VSCode Workbench itself is written in a very Microsoft-y way.
+  - It doesn't use a UI framework like React but rather calls web APIs directly: document.createElement("div")
+  - Uses dependency Injection
+  - Has an MVVM like architecture
+
+- Codesandbox is an instantly ready, fully-featured online IDE for web development on any device with a browser.
+  - Its creator dug heavily into the vscode repo and created a custom build that takes apart vscode and only uses what it needs. 
+  - Emulate accessing the filesystem using BrowserFS
+  - Writing complex build scripts that separates vscode to different parts and uses only what it needs (using gulp.js)
+
+- Code-server runs VS Code on any machine anywhere and allows accessing it in the browser. 
+
+- Theia was built by the guys at Gitpod - another company that provides a browser IDE as a service.
+  - Around 2017, VSCode was far away from being able to run in a browser. It relied heaily on Electron which only runs in the Desktop.
+  - The guys at Gitpod decided to build their own browser based IDE. They started Theia around Monaco
+  - The entire workbench and extensions system was built from scratch - this involved A LOT of stuff. A terminal, debugger, file tree, etc. 
+  - Contrary to VSCode, it uses React. It also uses dependency injection, namely InversifyJS.
+  - At 2018, Gitpod gave the ownership of Theia to the Eclipse 
+  - Theia is more customizable than VSCode.
+  - Even the `workbench` itself is a collection of extentions
+  - They expose core services using DI
+
+- Gitpod announced that they are moving away from Theia to VSCode
+
+- StackBlitz is an online IDE
+  - It automatically takes care of installing dependencies, compiling, bundling, and hot reloading as you type. Runs fully in the browser - can work offline
+
+- Conclusion
+  - Online IDEs have become a valid option for editing code
+  - Feature parity between desktop and online IDEs very close
+  - VSCode is insanely popular and provides a familiar user experience for web developers
+  - All (with minor exceptions) cloud/web-based IDEs are based on it
+
+- which online IDE would I integrate into Velo?
+  - Gitpod's vscode based openvscode-server
+  - Theia's highly customizable vscode-like IDE
+  - Both can run in the Desktop or the Browser and are fully open sourced
 # blogs-editor
 - [Upcoming Code Editor Upgrade to Monaco! | PlayCanvas Blog _202111](https://blog.playcanvas.com/upcoming-code-editor-upgrade-to-monaco/)
 # more
+- [OpenSumi团队 的个人主页 - 文章 - 掘金](https://juejin.cn/user/352260198524910/posts)

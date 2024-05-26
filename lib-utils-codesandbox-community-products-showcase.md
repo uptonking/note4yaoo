@@ -92,14 +92,23 @@ modified: 2024-05-12T15:39:22.456Z
 
 - ## 
 
+- ## [Our architecture is based entirely on SystemJS & Unpkg and uses no code from CodeSandbox _201708](https://medium.com/@ericsimons/our-goal-was-to-port-vs-code-npm-and-webpack-loaders-to-run-entirely-in-your-browser-and-still-8751f39e5b0f)
+- Our architecture is based entirely on SystemJS & Unpkg and uses no code from CodeSandbox or the Webpack bundling service ya’ll made.
+- From the start, our goal was to port VS Code, NPM, and Webpack loaders to run entirely in your browser and still work offline. With StackBlitz, the browser is installing, bundling, and serving everything — our servers don’t do any of that.
+- We’re attempting to build the first fully in-browser IDE.
+
 - ## [Stackblitz – Online VS Code Editor for Angular and React | Hacker News _201708](https://news.ycombinator.com/item?id=14925957)
-- Could you please explain what is the difference between your project and csb
+- 🆚️Could you please explain what is the difference between your project and csb
   - From the start, our goal was to port VS Code, NPM, and Webpack loaders to run entirely in your browser and still work offline. With StackBlitz, the browser is installing, bundling, and serving everything — our servers don’t do any of that.
   - While CodeSandbox is a nice playground for React apps specifically, we have never intended (nor have any aspiration) to compete in the online playground space. We’re attempting to build the first fully in-browser IDE.
 
 - CodeSandbox does almost everything in the browser however. The only thing it doesn't do in the browser is dependency bundling, which StackBlitz does in this case.
 
-- Essentially CodeSandbox can work offline if you already had the website open while you're online, then you can still continue offline. StackBlitz has the advantage that the tab where your application is can also be opened initially offline, which is handy for showing your application when you have no connection, but if I'm not wrong you cannot continue developing offline
+- Essentially CodeSandbox can work offline if you already had the website open while you're online, then you can still continue offline. 
+  - StackBlitz has the advantage that the tab where your application is can also be opened initially offline, which is handy for showing your application when you have no connection, but if I'm not wrong you cannot continue developing offline
+
+- Is there Source Control integration?
+  - Not yet, but that's absolutely on the near-term roadmap
 # discuss-alternatives-replit
 - ## 
 

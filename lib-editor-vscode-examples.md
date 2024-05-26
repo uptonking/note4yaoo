@@ -15,6 +15,8 @@ modified: 2023-01-21T18:58:29.846Z
   - https://dtstack.github.io/molecule-examples/
   - 受 VSCode 启发，使用 React.js 构建的 Web IDE UI 框架
   - 我们设计了类似 VSCode 的扩展(Extension)机制，可以帮助我们使用 React 组件快速完成对 Workbench 的自定义
+  - 依赖tapable、tsyringe、react-dnd、monaco-editor、immer、rc-menu
+  - 不依赖antd，总体依赖不多
   - 内置 React 版本的 Visual Studio Code Workbench UI
   - 内置 Monaco Editor Command Palette、Keybinding等模块，并支持扩展
   - 内置一个简单的 Settings 模块，支持在线编辑修改以及扩展
@@ -23,22 +25,33 @@ modified: 2023-01-21T18:58:29.846Z
     - 有没有什么方法可以比较方便的移植vscode的插件，或者考虑后面的版本中增加对vscode插件进行支持
     - 并没有，考虑到大部分的 vscode 的插件增强的是 vscode 所实现的功能。其相关逻辑强依赖于 vscode。所以针对大部分的 vscode 插件无法做到方便的移植。
     - 而针对除此之外的小部分 vscode 插件，诸如 icons，themes 倒是可以参考 文档
+  - [我们开源了一个轻量的 Web IDE UI 框架 - 知乎 _202112](https://zhuanlan.zhihu.com/p/446147101)
   - [我们开源了一个轻量的 Web IDE UI 框架 - Molecule - V2EX_202112](https://www.v2ex.com/t/823289)
     - 与其他开源的 Web IDE 的区别？
-    - 🧐 Molecule 只是一个单纯的 Web IDE UI 交互框架，不涉及例如文件系统、版本管理、 LSP、DAP、Terminal 等更复杂的 IDE 功能，需要开发者自己手动实现
+    - 🧐 Molecule只是一个单纯的 Web IDE UI 交互框架，不涉及例如文件系统、版本管理、LSP、DAP、Terminal 等更复杂的 IDE 功能，需要开发者自己手动实现
     - React.js 应用无缝接入, 基于 React.js 的组件库，更好的 UI 自定义能力
     - 基本兼容了 VS Code 上千种 ColorTheme 扩展
     - 有类似交互场景的 Web 应用，如果搞不懂 VS Code 可以试试这个，比较简单一些
     - 和 jupyter lab 比如何？我还是比较期待 jupyter lab 演化出的 IDE 的扩展，像 jupyterlab-lsp 之类的
+  - https://github.com/DTStack/molecule/tree/2.x
+    - [feat: 2.x search ](https://github.com/DTStack/molecule/pull/872)
+      - 新增 Search 组件
+    - [Feat/folder tree 2.x dilu ](https://github.com/DTStack/molecule/pull/873)
+      - 新增 FolderTree 组件; 重写拖拽逻辑，不限制拖拽文件，交给用户去限制
+    - https://github.com/DTStack/dt-react-monaco-editor
+      - https://dtstack.github.io/dt-react-monaco-editor/
+      - 基于开源 monaco-editor，根据业务使用场景进行二次封装
+      - 支持通过 props 传递的方式自定义自动补全项和需要高亮的关键字
 
-- https://github.com/opensumi/core /2.7kStar/MIT/202401/ts
+- https://github.com/opensumi/core /2.7kStar/MIT/202405/ts
   - https://opensumi.com/
-  - 一款帮助你快速搭建 CloudIDE 及 桌面端 IDE 产品的底层框架
+  - https://preview.opensumi.com/
+  - 一款帮助你快速搭建 CloudIDE 及 桌面端IDE 产品的底层框架
   - 提供了一个强大的插件生态系统，兼容 VS Code 的插件系统，支持 LSP/DAP 等主流协议，我们也有着自己的 OpenSumi API 用于进一步拓展 IDE 界面及能力
   - 不提供针对特定端的以下能力
     - Desktop IDE 场景下的窗口管理
     - Cloud IDE 场景下的容器/虚拟机管理
-  - CodeBlitz主要在读、写、运行和提交等方面进行了探索，与带有容器的标准版本进行了对标。
+  - CodeBlitz主要在读、写、运行和提交等方面进行了探索，与带有容器的标准版本进行了对标
   - [离线部署 | OpenSumi](https://opensumi.com/zh/docs/integrate/universal-integrate-case/offline-deployment)
     - OpenSumi 天然支持离线部署场景，只需要将内部的一些网络资源如（icon、onig-wasm）等通过浏览器端的配置替换成内网的资源地址即可
   - https://github.com/opensumi/codeblitz /MIT/202401/ts/inactive
@@ -81,12 +94,11 @@ modified: 2023-01-21T18:58:29.846Z
     - Provision remote development environments via Terraform
   - [Difference to OpenVSCode Server _202109](https://github.com/coder/code-server/discussions/4267)
     - code-server isn't a Docker image, although Docker images for code-server exist. 
-    - Vanilla Code Server is actually an optimised server, but Code Web Server isn't. 
-    - Moreover, I'd prefer code-server since Gitpod's VS Code Web Server doesn't allow me to use `sudo` command
+    - I'd prefer code-server since Gitpod's VS Code Web Server doesn't allow me to use `sudo` command
     - since code-server is used on Coder(dev workspaces) but I don't think code-server will be dead. I think for collaborating with multiple people simultaneously, Open VS Code is best but for individuals, code-server is recommended since it has protection.
     - ~~One little known gotcha is that OpenVSCode does not let you pre-install extensions in a non-interactive mode (e.g. during docker build to ship after security scanning for use on air-gapped servers)~~. This does not appear to be the case anymore.
   - Here is my summary of differences:
-    - code-server support auth (protect the editor with password) while OpenVSCode doesn't
+    - 🔒 code-server support auth (protect the editor with password) while OpenVSCode doesn't
     - OpenVSCode installs extensions from open-vsx, while code-server is in the process of switching to open-vsx
     - TAB is working in the code-server's terminal. Doesn't work in the OpenVSCode. This difference may seem small, but significant to my day-to-day use
     - I figured how code-server handles user account in Docker, but haven't figure out yet how OpenVSCode does it in the Docker

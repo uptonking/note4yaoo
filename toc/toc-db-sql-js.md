@@ -149,7 +149,7 @@ modified: 2021-08-30T18:56:14.863Z
   - Helps with SQL statements, database migration, and bulk execution
   - `sql` function is a tagged template function to write SQL statements and include parameters in the correct places.
 # sql-parser
-- https://github.com/DTStack/dt-sql-parser /ts
+- https://github.com/DTStack/dt-sql-parser /MIT/202404/ts
   - SQL Parsers for BigData, built with antlr4.
   - We have provided a monaco-sql-languages package, you can integrate with monaco-editor easily.
 # more

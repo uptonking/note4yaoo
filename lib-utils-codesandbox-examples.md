@@ -21,6 +21,11 @@ modified: 2023-09-02T09:17:22.992Z
   - CodeSandbox is licensed under GPLv3, except for `packages/common` and `packages/sandpack-core` and `packages/app/src/sandbox`, which are licensed under the Apache License, Version 2.0.
   - 🍴 forks
   - https://github.com/NetEase/codesandbox-client /tango
+  - [Does it use codemirror or monaco ? _202102](https://github.com/codesandbox/codesandbox-client/discussions/5495)
+    - we use VSCode that uses Monaco, the only part we use codemirror is the embedded because it's lighter to load
+    - react-sandpack uses codemirror but we're looking into having monaco as an option as well
+- [Add a collaborative mode _201709](https://github.com/codesandbox/codesandbox-client/issues/206)
+  - it's here now _201803
 - https://github.com/codesandbox/sandpack /4.5kStar/apache2/202405/ts
   - https://sandpack.codesandbox.io/
   - https://sandpack.codesandbox.io/docs

@@ -164,4 +164,8 @@ SQL>SET AUTOCOMMIT ON；
 
 - 对于这类问题，ORM 其实为我们提供了相应的方案，那就是使用『预加载功能』。
   - 使用with()方法指定想要预加载的关联
+# blogs-sql
+
+## [How we built Text-to-SQL at Pinterest _202404](https://medium.com/pinterest-engineering/how-we-built-text-to-sql-at-pinterest-30bad30dabff)
+
 # more

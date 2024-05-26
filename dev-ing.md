@@ -329,13 +329,22 @@ betterdiscordctl -i flatpak install
     - 2个编辑器同一页面协同的示例未完成
     - cursor光标位置经常对不上
   - [x] streaming infinite-list/tree
-# dev-05-codemirror-&-cde-&-replay-&-tailwind
+# dev-05-codemirror-&-cde-&-replay-&-dockview
 - dev-log
   - 
 - dev-to
   - 
 
 ## 052
+
+## 0526
+
+- dev-log
+  - 升级了paas-sdk的状态管理zustood，暂时不改变
+  - cde演示demo
+- dev-to
+  - 现在sdk的实现方式过于随意, 拆分为editor/workbench/extension三部分
+  - sdk的api设计，参考vscode/theia，设计workbench界面布局的api
 
 ## 0524
 

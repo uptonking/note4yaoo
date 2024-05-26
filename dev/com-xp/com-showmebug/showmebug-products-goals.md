@@ -219,7 +219,16 @@ modified: 2024-05-06T02:52:41.789Z
 - 
 - 
 
-# pm
+# pm-ide/cde
+- 💰 cde的商业化方向
+  - dev
+  - 教育
+  - 科学计算, 可参考jupyter
+  - 数据类ide，如dbt，但更偏向低代码的流程调度
+  - 测评
+  - 代码平台: github, gitlab, coding
+  - 可降低办公电脑的配置，计算密集型的任务运行在cde
+
 - 字节marscode，亮点在于ide的自定义能力强，以及类似cursor的交互能力
   - 在L3需求到代码上没有过多的创新
 
@@ -246,12 +255,6 @@ modified: 2024-05-06T02:52:41.789Z
 - cde的厂商和产品
   - 基于vscode: marscode
   - 自研: replit
-
-- 💰 cde的商业化方向, 可参考jupyter
-  - dev
-  - 教学
-  - 测评
-  - 可降低办公电脑的配置，计算密集型的任务运行在cde
 
 - 
 - 
@@ -326,15 +329,18 @@ modified: 2024-05-06T02:52:41.789Z
 - stackblitz
 - replit
 - gitpod, coder, devpod
+
 - more
   - Codeanywhere, Strong Network
   - cloud9
 
+- [looop.dev](https://looop.dev/)
+
 ## products-cn
 
-- 阿里 opensumi-codeblitz/云凤蝶
+- 阿里 opensumi-codeblitz, 云凤蝶
 - 腾讯 coding/cloud-studio
-- 华为 CodeArts
+- 华为 CodeArts(基于theia)
 - 字节 MarsCode
   - [MarsCode - Code and Innovate Faster with Al](https://www.marscode.com/)
 - CSDN InsCode

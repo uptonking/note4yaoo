@@ -45,12 +45,12 @@ modified: 2023-02-08T10:25:14.173Z
   - a dx-first API development platform that helps developers design, develop, test, and document their APIs
   - multi-protocol testing capabilities with Rest, GraphQL, Websocket, and SocketIO APIs.
 
-- https://github.com/usebruno/bruno /MIT/202403/js/tauri
+- https://github.com/usebruno/bruno /MIT/202405/js/tauri
   - https://www.usebruno.com/
   - Opensource IDE For Exploring and Testing Api's (lightweight alternative to postman/insomnia)
   - Bruno stores your collections directly in a folder on your filesystem. 
   - We use a plain text markup language, Bru, to save information about API requests.
-  - Bruno is offline-only. There are no plans to add cloud-sync to Bruno, ever. 
+  - 🧐 Bruno is offline-only. There are no plans to add cloud-sync to Bruno, ever. 
 
 - https://github.com/kubeshop/tracetest /go/ts
   - Generate end-to-end tests automatically from your traces. For QA, Dev, & Ops.

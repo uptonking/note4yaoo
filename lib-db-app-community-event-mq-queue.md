@@ -45,7 +45,9 @@ For more stable, defined workflows, queues offer simplicity and directness.
 
 - ## 
 
-- ## 
+- ## FWIW, Kafka may be closer to a filesystem than a database. 
+- https://x.com/felixgv/status/1794298921470333057
+  - You can create and delete directories (topics), files within them (partitions), append to files, tail files, scan files and… that’s about it 
 
 - ## Why is everyone suddenly talking about rabbitmq?
 - https://twitter.com/isamlambert/status/1777344945017471156

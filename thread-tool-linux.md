@@ -24,7 +24,24 @@ modified: 2024-01-06T13:48:42.969Z
 
 - tmux a -t stamhe
   - tmux new -s stamhe
+# discuss-windows
+- ## 
+
+- ## 
+
+- ## 
+
+- ## sudo, for Windows
+- https://github.com/microsoft/sudo
+  - Sudo for Windows allows users to run elevated commands directly from unelevated terminal windows.
+  - The "Inbox" version of sudo is available for Windows 11 builds 26045 and later.
+  - This project is not a fork of the Unix/Linux sudo project, nor is it a port of that sudo project. Instead, Sudo for Windows is a Windows-specific implementation of the sudo concept.
+
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

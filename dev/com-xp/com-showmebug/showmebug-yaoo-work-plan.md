@@ -43,6 +43,10 @@ modified: 2024-05-06T02:54:40.374Z
   - https://staging.showmebug.com/  (帐号 01test)
   - [ShowMeBug字节级回放在线笔面试过程实现思路 - 掘金 _202107](https://juejin.cn/post/6985068859099201544)
 
+- sdk设计参考
+  - vscode, theia, opensumi
+  - [Running the SDK](https://cloud9-sdk.readme.io/docs/running-the-sdk)
+
 ### not-yet
 
 - snapshot数据是如何存储的
@@ -119,6 +123,8 @@ modified: 2024-05-06T02:54:40.374Z
 
 - d42paas的 code playgrounds 能否用 d42paas 的sdk实现
   - 用自己的平台开发代码
+
+- preview react/vue components
 
 - 
 - 

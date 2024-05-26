@@ -48,7 +48,7 @@ modified: 2021-05-06T09:38:31.520Z
 - who is using #codemirror 🌰
   - jupyter
   - observablehq-notebook, val-town
-  - codesandbox, codepen, replit
+  - codesandbox-sandpack, codepen, replit, glitch(cm5)
   - sourcegraph
   - overleaf(latex-code+rich)
   - obsidian
@@ -61,12 +61,11 @@ modified: 2021-05-06T09:38:31.520Z
   - consistent env
 
 - cloud-ide
-  - monaco: Codespaces(GitHub绑定), Gitpod(yml), theia, OpenSumi, StackBlitz
-  - codemirror: sandpack
+  - monaco: Codespaces(GitHub绑定), Gitpod(yml), Coder(no-cloud/k8s), theia, OpenSumi, StackBlitz, codesandbox
   - Eclipse Che: OpenShift CDE
   - DevPod: devcontainer-spec + local-and-cloud
   - ace: miro
-  - more: Coder(no-cloud/k8s), AWS Cloud9, codenvy
+  - more: AWS Cloud9
   - 缺点
     - vps的性能不如本地计算机，vps很贵
 
@@ -115,8 +114,10 @@ modified: 2021-05-06T09:38:31.520Z
   - diff with magic-code-animation
   - highlight current selection
 
-- integrations
+- web
   - strapi-codemirror
+- electron
+  - obsidian-plugin
 
 - 尝试将prosemirror的使用场景替换为codemirror
 # dev

@@ -120,7 +120,19 @@ modified: 2024-05-12T17:20:03.132Z
 
 - They're using firecracker, which is a KVM-backed VM manager.
 
-- ## 🤼🏻 [hocus: We replaced Firecracker with QEMU | Hacker News _202307](https://news.ycombinator.com/item?id=36666782)
+- ## 📝 [Why We Replaced Firecracker with QEMU | Hocus Blog _202307](https://hocus.dev/blog/qemu-vs-firecracker/)
+- 
+- 
+
+- 📝 [Virtualizing Development Environments in 2023 | Hocus Blog _202308](https://hocus.dev/blog/virtualizing-development-environments/)
+  - There was no silver bullet we could use to virtualize development environments. VMs are not very memory-efficient, and containers can't isolate all workloads. 
+  - Many of our users would not need the virtualization capabilities of VMs, and could save costs by putting more containers on a single machine. 
+  - However, Hocus itself depends on low-level kernel features, and can't be fully developed inside a container. We wanted to use Hocus to develop Hocus as soon as we could, so the first version of Hocus uses VMs 🎯. 
+  - However, we designed the system in a way that allows us to add container support later.
+  - Hocus is a work in progress, a proof of concept, and we want to finish it in collaboration with people who need it.
+  - if you're just interested in what we've built so far, you can check out the alpha version on GitHub.
+
+- ## 🤼🏻 [hocus: Why We replaced Firecracker with QEMU | Hacker News _202307](https://news.ycombinator.com/item?id=36666782)
 - At CodeSandbox we use Firecracker for hosting development environments, and I agree with the points. Though I don't think that means you should not use Firecracker for running long-lived workloads.
   - We reclaim memory with a memory balloon device, for the disk trimming we discard (& compress) the disk, and for i/o speed we use io_uring (which we only use for scratch disks, the project disks are network disks).
   - It's a tradeoff. It's more work and does require custom implementations. For us that made sense, because in return we get a lightweight VMM that we can more easily extend with functionality like memory snapshotting and live VM cloning.

@@ -11,18 +11,25 @@ modified: 2022-01-05T14:36:28.057Z
 
 - resources
   - [npm trends: jotai vs recoil vs valtio vs zustand](https://www.npmtrends.com/jotai-vs-recoil-vs-valtio-vs-zustand)
-
+# zustand
+- pros
+  - ?
+- cons
+  - ?
+- features
+  - store对象里面保存了方法, redux的createStore返回的store对象也有方法
+# comparison
 - zustand  /12.6kStar/MIT/202201/ts/NoDeps/Flux
   - https://github.com/pmndrs/zustand
   - https://zustand-demo.pmnd.rs/
   - https://zustand.surge.sh/
   - A small, fast and scalable bearbones state-management solution using simplified flux principles.
-  - Why zustand over redux?
+  - 🆚️ Why zustand over redux?
     - Simple and un-opinionated
-    - Makes hooks the primary means of consuming state
     - Doesn't wrap your app in context providers
+    - Makes hooks the primary means of consuming state
     - Can inform components transiently (without causing render)
-  - Why zustand over context?
+  - 🆚️ Why zustand over context?
     - Less boilerplate
     - Renders components only on changes
     - Centralized, action-based state management
@@ -38,12 +45,12 @@ modified: 2022-01-05T14:36:28.057Z
     - v4.3.8 2023-05-04
       - For persist middleware, a new option for `createJSONStorage` in introduced
     - v4.3.0 2023-01-10
-      - Throughout past years of development, we've learned the (mis)usage of the library. One of our goal is to provide smallest possible APIs. To go further, this version deprecates some features. 
+      - 🗑️ Throughout past years of development, we've learned the (mis)usage of the library. One of our goal is to provide smallest possible APIs. To go further, this version deprecates some features. 
       - deprecate default export
       - fix(middleware/persist): hydrate in sync (new impl with storage option)
-    - v4.1.0 2022-08-19 
+    - v4.1.0 2022-08-19
       - This supports non-object state. It's probably one of the biggest changes in API design throughout the zustand development history. But, probably 99.9% of users won't use it
-    - v4.0.0 2022-07-26 🎯
+    - v4.0.0 2022-07-26 🎯 /ts重写
       - v4 API is completely backward compatible, so it's just nothing to update if you are JS users
       - One note is v4 depends on `useSyncExternalStore`.
 
@@ -85,7 +92,6 @@ modified: 2022-01-05T14:36:28.057Z
       - Replace lodash with lodash.mapvalues
     - zustand-x@3.0.3 2024-04-19
       - Support partial state objects in the persist typings
-# comparison
 
 ## [When I Use Valtio and When I Use Jotai ?](https://blog.axlight.com/posts/when-i-use-valtio-and-when-i-use-jotai/)
 
@@ -147,7 +153,7 @@ modified: 2022-01-05T14:36:28.057Z
 - One thing I suggest most of the time: if someone use zustand + immer, my recommendation is to try valtio instead.
   - I suggest considering valtio if they haven't, for people who consider zustand with immer middleware. 
   - If people prefer the mutable state model, it's a built-in feature in valtio, whereas zustand is basically on the immutable state model. 
-# discuss
+# discuss-zustand
 - ## 
 
 - ## 
@@ -155,6 +161,11 @@ modified: 2022-01-05T14:36:28.057Z
 - ## 🔡🎯 Want to read the entire code of Zustand v5-alpha? Here you go!
 - https://twitter.com/dai_shi/status/1748635607402967154
   - One file
+
+# discuss
+- ## 
+
+- ## 
 
 - ## We have three state management libraries at Poimandres. What's in common is they prefer simpler APIs
 - https://twitter.com/dai_shi/status/1681514924173037569

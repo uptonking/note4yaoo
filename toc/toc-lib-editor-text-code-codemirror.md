@@ -69,6 +69,8 @@ modified: 2022-08-18T11:29:26.644Z
   - Our goal is to create a browser based editor that matches and extends the features, usability and performance of existing native editors such as TextMate, Vim or Eclipse
   - Ace is developed as the primary editor for Cloud9 IDE
     - AWS Cloud9: A cloud IDE for writing, running, and debugging code
+  - [Cloud9 web based IDE v3.0 now open source : r/programming _201502](https://www.reddit.com/r/programming/comments/2vvs7i/cloud9_web_based_ide_v30_now_open_source/)
+    - Worth noting that Codiad and Codebox both uses Ace as their editor, which is maintained by Cloud9 (successor of Mozilla Skywriter/Bespin).
 
 - https://github.com/acode/copenhagen /202110/js/inactive
   - https://copenhagen.autocode.com/
