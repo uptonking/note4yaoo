@@ -9,6 +9,10 @@ modified: 2021-03-29T19:29:15.528Z
 
 # not-yet
 
+- next刷新ide界面时， GET http://localhost:3000/thread?id=sdhfjlds 500 (Internal Server Error)
+  - No resource with given identifier found
+  - 刷新页面时，这个get请求发生在最开始的时刻
+
 - vscode 的 quick fix 偶尔会缺少
   - Add all missing members
 

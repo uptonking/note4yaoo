@@ -86,6 +86,7 @@ modified: 2021-05-06T09:38:31.520Z
   - auto-closing brackets
   - indentation
   - 行号、折叠
+  - 代码编辑器通常commit会包含多个文件，而文本编辑器一般单文件操作
 
 - dev-xp
   - 在github页面，每行代码的行号是确定的，不会显示软换行

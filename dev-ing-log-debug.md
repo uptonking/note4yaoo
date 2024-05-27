@@ -15,7 +15,11 @@ modified: 2023-06-14T00:53:15.226Z
 
 ## 
 
-## 
+## 20240527: Warning: Each child in a list should have a unique "key" prop.
+
+- [Unable to see key value in React or Chrome devtools - Stack Overflow](https://stackoverflow.com/questions/65552907/unable-to-see-key-value-in-react-or-chrome-devtools)
+  - Solved by changing settings. In React devtools: Components tab -> settings symbol -> components -> remove or disable the filter type equals host (e.g. `<div>`)
+- 可以在react devtools里面查看基本dom元素，上面就可以看到具体dom元素的key值冲突
 
 ## /code/fork 创建playgroundId的api一直显示 cancelled
 

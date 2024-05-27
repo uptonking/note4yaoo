@@ -27,6 +27,8 @@ modified: 2023-08-29T10:24:09.136Z
 - Git only allows us to use the optimistic approach. When you try to “push” your object version by updating the reference in the origin repo you will get an error if the reference (branch) was already changed.
 # blogs-git-usage
 - [Git从入门到应付日常工作](https://jumpshare.com/s/P42MV2FmKfnzSLXjaFUk)
+
+- [示意图多 Git Branching and Merging: A Step-By-Step Guide](https://www.varonis.com/blog/git-branching)
 # blogs-fossil
 - [Fossil Versus Git](https://fossil-scm.org/home/doc/trunk/www/fossil-v-git.wiki)
 # blog-git-version-history

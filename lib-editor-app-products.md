@@ -11,6 +11,13 @@ modified: 2022-08-21T10:16:45.637Z
 
 - 类似ruby的ActionText
 
+- text-editor vs code-editor
+  - 代码编辑器通常commit会包含多个文件，而文本编辑器一般单文件操作
+
+- 
+- 
+- 
+
 - resources
   - [Historical inventory of collaborative editors_201806](https://anarc.at/blog/2018-06-26-collaborative-editors-history/)
 # popular

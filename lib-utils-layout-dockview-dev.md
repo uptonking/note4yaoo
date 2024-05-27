@@ -1,11 +1,11 @@
 ---
-title: lib-utils-layout-docview-dev
-tags: [docview, ui-components, window-layout]
+title: lib-utils-layout-dockview-dev
+tags: [dockview, ui-components, window-layout]
 created: 2024-05-21T11:44:15.311Z
-modified: 2024-05-21T11:45:57.951Z
+modified: 2024-05-27T11:39:14.886Z
 ---
 
-# lib-utils-layout-docview-dev
+# lib-utils-layout-dockview-dev
 
 # guide
 

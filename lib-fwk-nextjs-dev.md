@@ -41,6 +41,9 @@ modified: 2020-12-12T19:22:00.735Z
 - tips
   - 考虑引入nextjs的收益是否够高，适合开发应用而不适合库
 # dev-xp
+- monorepo的paths别名不依赖webpack的打包方案
+  - 在顶层tsconfig.json添加 `"~/*": ["libs/d42paas-biz/client/src/*"]`
+
 - 调试方法
   - debugger with vscode/chrome
   - 调试fetch或axios

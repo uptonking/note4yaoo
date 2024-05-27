@@ -51,6 +51,10 @@ modified: 2023-08-29T10:11:26.348Z
 
 - resources
   - [精通Git | 汪图南](https://wangtunan.github.io/blog/books/git/)
+# draft
+- git的commit-message经常查看，但修改不方便
+
+- git checkout在敏感操作前需确认
 # rewrite
 - 在实现branching时使用structural sharing，尽可能复用数据
 
@@ -75,4 +79,13 @@ modified: 2023-08-29T10:11:26.348Z
 - [Chisel - Fossil SCM Hosting，类似github](http://chiselapp.com/)
 # dev
 
+# git-usage
+
+- 假设repo已存在main和br1两个分支，且内容完全相同
+  - 在main分支修改文件后，不add且不commit，checkout到br1后修改会自动带到br1分支
+  - 🚨 在修改后且不commit的条件下执行`git checkout b1`，会用当前分支内容替换b1分支内容
+
+- man git-checkout
+  - git checkout (-p|--patch) [<tree-ish>] [--] [<pathspec>…​]
+  - Git checkout will overwrite files if you specify pathspec.
 # more

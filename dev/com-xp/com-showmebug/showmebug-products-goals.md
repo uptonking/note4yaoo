@@ -350,6 +350,25 @@ modified: 2024-05-06T02:52:41.789Z
   - deepin ide
 # pm-sharing
 
+## v20240527-thread-mgmt-&-cde
+
+- git checkout时要不要自动commit
+  - 如果commit，要不要自动在remote执行
+  - 切换分支时，要不要自动添加修改文件
+
+- 协作agent的头像可以一直显示
+  - ai可后台操作
+- 权限包含 workspace、仓库、thread
+  - 外部人员默认只读
+
+- 文件树
+  - 经典网盘操作
+  - 显示用户头像
+  - 回放时显示变更文件列表
+  - 支持search，不支持replace
+
+- console是软件级，shell是系统级
+
 ## v20240523-chat-natural-prd
 
 - api需求

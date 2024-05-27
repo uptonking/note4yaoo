@@ -337,6 +337,11 @@ betterdiscordctl -i flatpak install
 
 ## 052
 
+## 0527
+
+
+
+
 ## 0526
 
 - dev-log
