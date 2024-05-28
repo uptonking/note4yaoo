@@ -463,6 +463,3 @@ sudo apt install -y  sqlite3 libsqlite3-dev sqlitebrowser
 
 - windows update很容易卡住不动
   - 可以点击暂停到7天后更新，然后立即取消暂停，如果顺利就会立即检查并下载更新
-# mac
-- [macos 如何实现 windows 的双击触摸板进行拖动 - V2EX](https://v2ex.com/t/846111)
-  - 触控板拖动有三种方式可以设置。

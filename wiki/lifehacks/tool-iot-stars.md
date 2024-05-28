@@ -471,18 +471,37 @@ CPU主频	2.3GHz
 
 ## MacBook M1 Pro
 
+- mac-apps-loved
+  - appstore: localsend
+
 ### 全局快捷键
 
-- 隐藏窗口 cmd + h
+- Command-H：隐藏最前方 App 的窗口。要查看最前方的 App 但隐藏所有其他 App，请按 Option-Command-H。
+- cmd + tab 切换程序时，松开tab然后按q，可退出程序
+- Command-M：将最前方的窗口最小化至程序坞。要最小化最前方 App 的所有窗口，请按 Option-Command-M。
 - 截屏 cmd + shift + 3/4
 - 截指定窗口 cmd +shift + 4 + space
-- cmd + tab 切换程序时，松开tab然后按q，可退出程序
 - Control-Command-F 全屏
+- Option-Command-Esc：强制退出 App。
 
-- 回到桌面
+- 回到桌面 四指上移手势
   - cmd + f3
   - fn + f11
 - 类似win的delete键向后删，fn + backspace
+
+- Command-W：关闭最前方的窗口。 
+  - 要关闭App 的所有窗口，请按下Option-Command-W
+
+- 显示Finder/访达: cmd+option+space
+  - Shift-Command-N：在“访达”中创建一个新文件夹。
+
+- 按住Command，可以选择并移动顶部菜单栏图标
+
+- [Mac新手使用技巧——设置Finder(访达)快捷键](https://blog.51cto.com/u_15127651/4081089)
+  - 系统偏好设置，点击键盘，快捷键选项卡，在左侧找到聚焦，看到右侧的显示访达
+
+- [Mac 键盘快捷键 - 官方 Apple 支持 (中国)](https://support.apple.com/zh-cn/102650)
+- [Use Multi-Touch gestures on your Mac - Apple Support](https://support.apple.com/en-us/102482)
 
 ### 文件管理器
 
@@ -491,8 +510,8 @@ CPU主频	2.3GHz
   - 输入～，可直接打开 /Users/yaoo
 - 进入文件夹 cmd + arrow-down
 - 返回上级文件夹 cmd + arrow-up
-- 重命名 回车
 - 切换到列表视图 cmd + 2
+- 重命名 回车
 - 删除文件 cmd + delete
 - 文件路径查看 cmd + i
 - 文件路径复制 cmd + opt + c
@@ -524,7 +543,6 @@ CPU主频	2.3GHz
   - Linux: Ctrl + Alt + - ; 
   - Mac: Ctrl + -
 - 左右括号之间跳转： ctrl + shift + \
-N
 
 ## HP ENVY - 15-as109tu
 

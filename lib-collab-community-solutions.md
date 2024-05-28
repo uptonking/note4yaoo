@@ -8,7 +8,9 @@ modified: 2024-01-28T09:05:12.586Z
 # lib-collab-community-solutions
 
 # guide
-
+- 协同的使用场景非常广泛
+  - 包括多人操作
+  - 包括在线面试的画板
 # discuss-stars
 - ## 
 

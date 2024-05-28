@@ -337,10 +337,26 @@ betterdiscordctl -i flatpak install
 
 ## 052
 
+## 0528
+
+- dev-log
+  - 
+- dev-to
+  - ~~在sdk仓库新建分支开发clacky功能，保留合并到main分支的可能~~
+  - 在clacky业务侧实现cde的分屏交互
+
 ## 0527
 
+- 待确认
+  - 对于clacky新产品, ide-server的数据库和api的部署和1024/showmebug是分开的吗
+  - 获取github仓库数据的api和sdk的逻辑
 
-
+- dev-log
+  - 参与了2个需求评审, thread创建流程和cde主要界面交互
+  - 优化了cde的初始化为懒加载
+- dev-to
+  - 还原cde界面交互的细节
+  - 导入github仓库的流程
 
 ## 0526
 
