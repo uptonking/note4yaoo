@@ -252,3 +252,24 @@ modified: 2021-07-20T13:50:23.433Z
   - immutable: prosemirror, slate, wangeditor, typewriter, ospreadsheet, maxgraph
   - functional: wangeditor, typewriter
   - 数据层: ivm-crsqlite
+# topic-replay/playback
+- usecase
+  - replayable workspace
+- solutions
+  - redux
+  - event-sourcing
+# topic-collab
+- usecase
+  - meetings-whiteboard
+- solutions
+  - ot
+  - crdt
+# topic-collab-git
+- usecase
+  - branching
+- solutions
+  - fossil
+# topic-db-airtable
+- usecase
+  - cms/lowcode
+  - notion

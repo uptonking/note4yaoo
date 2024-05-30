@@ -13,6 +13,9 @@ modified: 2021-05-14T14:44:14.720Z
   - auto-ref是优点，也是缺点，kibana最新版在鼓励by-value而不是by-reference，折中方案是snapshot+auto-update-option
   - view + collapsible d3js + collapse data/dataseeds，类似html/css/js的面板
   - 文字和代码的切换交互过于偏向代码，更合适的方式是类似组件库的ui示例文档，上面是示例效果，下面的源码可折叠
+
+- dev-xp
+  - npm打包分发的方式，不如docker/ollama-run方便，但jspm在线源的设计就很方便了
 # notebook-usecase
 - [官方数据分析：国家统计局 统计数据，开放性高，但分析不深、体系不全](http://www.stats.gov.cn/tjsj/)
   - 商业性质的报告质量较高，但大多存在版权问题

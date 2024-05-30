@@ -79,6 +79,7 @@ modified: 2021-05-06T09:38:31.520Z
   - DAP: debug
 
 - ide要点
+  - 主要组件：editor， fileTree, workbench-layout， extension
   - 自动同步编辑器内容、代码仓库、配置
 
 - code-editor vs text-editor
@@ -92,6 +93,7 @@ modified: 2021-05-06T09:38:31.520Z
   - 在github页面，每行代码的行号是确定的，不会显示软换行
     - 方便实现高亮搜索结果、查找引用
   - 协作示例官方使用ot，社区有使用crdt如yjs
+  - 代码的ast和block编辑器的ast处理方式是类似的
 
 - 区分codemirror是v5和v6的方法
   - 6️⃣ cm6的默认css，样式名小写

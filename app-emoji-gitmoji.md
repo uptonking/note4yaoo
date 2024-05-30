@@ -17,6 +17,7 @@ modified: 2024-01-21T07:46:00.256Z
 
 - emoji-resources
   - [EmojiDB](https://emojidb.org/)
+  - [Emoji大全 | EmojiAll中文官方网站](https://www.emojiall.com/zh-hans)
   - https://www.emojiall.com/en/all-emojis
   - [Emoji cheat sheet for GitHub, Basecamp, Slack & more](https://www.webfx.com/tools/emoji-cheat-sheet/)
   - [Unicode Full Emoji List](https://unicode.org/emoji/charts/full-emoji-list.html)

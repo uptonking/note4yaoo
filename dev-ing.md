@@ -337,13 +337,24 @@ betterdiscordctl -i flatpak install
 
 ## 052
 
-## 0528
+## 0529
 
 - dev-log
   - 
 - dev-to
   - ~~在sdk仓库新建分支开发clacky功能，保留合并到main分支的可能~~
   - 在clacky业务侧实现cde的分屏交互
+
+## 0528
+
+- 为什么需要 RAG？
+    - 私有数据只能用 RAG
+    - 动态上下文构建：不同 task 看到不同的内容
+    - long context 为什么还需要 RAG？ 始终需要从外界获取信息
+
+- 难以提出通用方案
+    - 推荐系统可以自我闭环
+    - 但 RAG 是基于文本的概率选择
 
 ## 0527
 

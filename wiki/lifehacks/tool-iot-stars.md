@@ -472,19 +472,20 @@ CPU主频	2.3GHz
 ## MacBook M1 Pro
 
 - mac-apps-loved
+  - pkg-manager: homebrew
   - appstore: localsend
 
 ### 全局快捷键
 
 - Command-H：隐藏最前方 App 的窗口。要查看最前方的 App 但隐藏所有其他 App，请按 Option-Command-H。
-- cmd + tab 切换程序时，松开tab然后按q，可退出程序
+- cmd + tab 切换程序时，松开tab然后按q，可退出程序; 包含隐藏窗口的app
 - Command-M：将最前方的窗口最小化至程序坞。要最小化最前方 App 的所有窗口，请按 Option-Command-M。
 - 截屏 cmd + shift + 3/4
 - 截指定窗口 cmd +shift + 4 + space
 - Control-Command-F 全屏
 - Option-Command-Esc：强制退出 App。
 
-- 回到桌面 四指上移手势
+- 回到桌面 四指抓拢手势
   - cmd + f3
   - fn + f11
 - 类似win的delete键向后删，fn + backspace
@@ -494,6 +495,7 @@ CPU主频	2.3GHz
 
 - 显示Finder/访达: cmd+option+space
   - Shift-Command-N：在“访达”中创建一个新文件夹。
+  - cmd+[/]是后退或前进上一个文件夹
 
 - 按住Command，可以选择并移动顶部菜单栏图标
 

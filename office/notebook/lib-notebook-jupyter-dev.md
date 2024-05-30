@@ -12,6 +12,9 @@ modified: 2021-05-17T11:53:13.568Z
 - who is using #jupyter
   - fwk:
   - app: cocalc
+
+- dev-xp
+  - npm打包分发的方式，不如docker/ollama-run方便，但jspm在线源的设计就很方便了
 # faq
 - ## vote: if you do exploratory data analysis or build machine learning models, what tool do you reach for first?
   - local, Jupyter notebook

@@ -9,8 +9,6 @@ modified: 2023-07-23T07:05:19.441Z
 
 # guide
 
-- mac-apps-loved
-  - appstore: localsend
 # usage
 
 # blogs-tips

@@ -79,7 +79,7 @@ modified: 2023-03-03T08:06:36.592Z
   - Quora 通过人工智能聊天应用程序Poe 向用户提供Claude的对话能力。
   - Claude 与 Notion 合作以提高工作和学习场景中的生产力。
 
-## [通向AGI之路：大型语言模型（LLM）技术精要 - 知乎](https://zhuanlan.zhihu.com/p/597586623)
+## 📝 [通向AGI之路：大型语言模型（LLM）技术精要 - 知乎](https://zhuanlan.zhihu.com/p/597586623)
 
 - 通用人工智能 （AGI，Artificial General Intelligence）
 

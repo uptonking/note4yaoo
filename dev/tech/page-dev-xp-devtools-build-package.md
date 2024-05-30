@@ -6,7 +6,11 @@ modified: 2021-09-14T19:36:26.597Z
 ---
 
 # page-dev-xp-devtools-build-package
+# guide
 
+# packaging
+
+- npm打包分发的方式，不如docker/ollama-run方便，但jspm在线源的设计就很方便了
 # [5 Things I Learned Building Snowpack to 20, 000 Stars](https://dev.to/fredkschott/5-things-i-learned-while-building-snowpack-to-20-000-stars-b9d)
 
 ## Background

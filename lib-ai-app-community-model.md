@@ -9,6 +9,9 @@ modified: 2023-10-30T07:34:03.602Z
 
 # guide
 
+- tips
+  - 大模型相关的产品研发，原理的可解释性很差，效果的可解释性也差
+
 - [大规模语言模型：从理论到实践](https://intro-llm.github.io/)
   - 复旦大学张奇教授团队写了一本在线免费的电子书，大概有 300 页篇幅，将大模型从理论到实战的每个阶段都描述的较为清楚
 # discuss-stars
@@ -22,10 +25,12 @@ modified: 2023-10-30T07:34:03.602Z
 - https://twitter.com/FinanceYF5/status/1730912502312296935
   - [国产大模型188个list - Feishu Docs](https://zw73xyquvv.feishu.cn/wiki/WXLmwBbYuiTobkkJ6Ojc2cxqnj0?sheet=2XjJlJ&table=tblS2Jv7isKtSODz&view=vewfCdOf0U)
 
-# discuss-llama2
+# discuss-llama
 - ## 
 
-- ## 
+- ## 🐛 [Error: pull model manifest · ollama/ollama](https://github.com/ollama/ollama/issues/3434)
+  - Error: pull model manifest: Get "https://registry.ollama.ai/v2/library/codellama/manifests/70b": read tcp 192.168.3.79:64976->172.67.182.229:443: read: operation timed out
+- Error: max retries exceeded: Get "https://dd20bb891979d25aebc8bec07b2b3bbc.r2.cloudflarestorage.com/ollama/docker/registry/v2/blobs/sha256/14/1436d66b69757a245f02d000874c670507949d11ad5c188a623652052c6aa508/data?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=66040c77ac1b787c3af820529859349a%! F(MISSING)20240529%! F(MISSING)auto%! F(MISSING)s3%! F(MISSING)aws4_request&X-Amz-Date=20240529T155900Z&X-Amz-Expires=1200&X-Amz-SignedHeaders=host&X-Amz-Signature=cd4472bad19931e399f39a352a4a1b0902857996b7b784b8138f168d70532277": dial tcp 104.18.8.90:443: i/o timeout
 
 - ## [为什么Llama2大模型可以在个人电脑上部署 ？ - 知乎](https://zhuanlan.zhihu.com/p/646939066)
 - 我在Meat的官网上看到 llama2 是构建在PyTorch之上的，而ChatGPT是基于TensorFlow Probability框架的，本文里面就简称TFP。
@@ -95,7 +100,7 @@ modified: 2023-10-30T07:34:03.602Z
 - 为了拉资金而已，钱申请到了论文就没啥用了……处理屎山留给巨头的程序员就行了，还轮不到学术圈来指点江山
 - 这种局限于函数的反混淆啥用都没有，对付点三脚猫功夫的混淆还差不多
 
-- ## 研究了一下本地大模型的场景：
+- ## 🪧 研究了一下本地大模型的场景：
 - https://twitter.com/changmingY/status/1773336179296887162
   1. 不能联网的国内用户
   2. 一般用户机器配置达不到，效率太差

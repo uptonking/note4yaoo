@@ -43,7 +43,7 @@ modified: 2023-04-11T02:24:25.572Z
   - [Support for plugins](https://github.com/oliverschwendener/ueli/issues/96)
     - in each plugin there is a plugin.json specifies all the basic metadata.This idea gives user full control of the functionality they want
     - In my opinion implementing a plugin manager is too overkill for now and will complicate stuff too much. If someone wants to implement a new plugin/feature it can be integrated directly to the app by making a pull request.
-# ubuntu
+# ubuntu 💡
 
 ## guide
 
@@ -408,7 +408,7 @@ sudo apt install -y  sqlite3 libsqlite3-dev sqlitebrowser
   - https://github.com/rbenv/ruby-build
   - 要先更新build中的元数据，再安装最新ruby
   - [rbenv can't change global ruby version - Stack Overflow](https://stackoverflow.com/questions/24736204)
-# win
+# win 💡
 
 ## guide
 
@@ -463,3 +463,47 @@ sudo apt install -y  sqlite3 libsqlite3-dev sqlitebrowser
 
 - windows update很容易卡住不动
   - 可以点击暂停到7天后更新，然后立即取消暂停，如果顺利就会立即检查并下载更新
+# macos 💡
+
+## guide
+
+## os-starter
+
+- 在 settings 关闭 开机声音
+
+- mac-apps-loved
+  - pkg-manager: homebrew
+  - appstore: localsend
+
+- brew install gedit
+  - 安装gedit后，能够直接在terminal执行gedit filename
+
+- cut and paste
+  - cmd+c cmd+option+v
+
+- [macos - Keyboard shortcut for Control Center - Ask Different](https://apple.stackexchange.com/questions/436464/keyboard-shortcut-for-control-center)
+  - fn+c
+
+- 打开terminal的快捷键
+  - [Is there a keyboard shortcut (hotkey) to open Terminal in macOS? - Stack Overflow](https://stackoverflow.com/questions/35954184/is-there-a-keyboard-shortcut-hotkey-to-open-terminal-in-macos)
+
+- 在当前文件夹打开terminal的方法
+  - https://github.com/Ji4n1ng/OpenInTerminal
+  - https://github.com/Ji4n1ng/OpenInTerminal/blob/master/Resources/README-Lite.md
+  - On your Mac, open a Finder window, then navigate to the folder you want to use. If you don't see the path bar at the bottom of the Finder window, choose View > Show Path Bar. Control-click the folder in the path bar, then do one of the following. Open a new window: Choose Open in Terminal
+  - [How can I open a Terminal window directly from my current Finder location? - Ask Different](https://apple.stackexchange.com/questions/11323/how-can-i-open-a-terminal-window-directly-from-my-current-finder-location)
+
+## software
+
+- chrome
+  - 打开devtools cmd+option+i
+
+- vscode
+  - [Visual Studio Code Tips and Tricks](https://code.visualstudio.com/docs/getstarted/tips-and-tricks)
+  - 切换tab使用 ctrl+1/2/3
+  - 跳转到定义和返回使用 f12， ctrl+-
+
+- clementine
+  - [MP3 support on Mac? _202205](https://github.com/clementine-player/Clementine/issues/7173)
+
+## more-macos
