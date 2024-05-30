@@ -13,11 +13,13 @@ modified: 2024-05-27T11:39:14.886Z
   - Choose from a simple splitview, gridview, collapsable panes or a full docking solution. Combine multiple for complex layouts.
   - Built-in support for floating groups and groups in new windows with a supporting api for progmatic control.
   - Drag and Drop tab to position your layout as well as interacting with external drag events.
+  - dockview doesn't interfer with any drag and drop logic for other controls
   - 支持跨group的keyboard快捷键
   - 支持Nested Dockviews, 即支持多实例、嵌套实例
   - framework-agnostic, 支持react/vue
 
 - cons
+  - drag拖拽体验差，拖拽结束到视图更新的等待时间太长
   - 不支持rtl
 
 - features
@@ -27,13 +29,44 @@ modified: 2024-05-27T11:39:14.886Z
   - high test coverage
   - Exposes native support for both ReactJS components and Vanilla TypeScript
 
-- 基本架构
-  - dock > groups/window > panel/tab
+- examples
+  - [Dockview demos](https://dockview.dev/demo/)
+  - [Floating Groups | Dockview](https://dockview.dev/docs/core/groups/floatingGroups)
+  - 最大化 最小化 [Maximized Groups | Dockview](https://dockview.dev/docs/core/groups/maxmizedGroups)
+  - [Window-like mananger with tabs | Dockview](https://dockview.dev/docs/advanced/)
+  - [iframes | Dockview](https://dockview.dev/docs/advanced/iframe)
+  - [Nested Instances | Dockview](https://dockview.dev/docs/advanced/nested)
+  - [External Dnd Events | Dockview](https://dockview.dev/docs/core/dnd/external)
 
-# examples
+- 基本架构
+  - dock > groups/window > panels/tab
+
+- resources
+  - https://github.com/search?type=code&q=dockview+path%3Apackage.json%20NOT%20is:fork
+# dev-xp
+- toggle groups的处理
+
+- panel的渲染模式需要采用onlyWhenVisible/always的组合
+  - 根据业务场景的需求
+  - 兼顾内存占用和渲染性能
 
 - 
+- 
+- 
+- 
+- 
 
+# examples
+- https://github.com/kosaj/dockview-iframe-plugin /202308/ts/inactive
+  - iframe
+
+- https://github.com/prashantpaddune/CDE /202310/ts/inactive
+  - CDE powered by StackBlitz's WebContainer
+
+- https://github.com/Oneirocom/Magick /apache2/202405/ts
+  - https://magickml.com/
+  - a cutting-edge toolkit for a new kind of AI builder
+  - Magick is a groundbreaking visual AIDE (Artificial Intelligence Development Environment) for no-code data pipelines and multimodal agents.
 # issues
 - 如何处理tab中的大文件，比如大于3000行/10M
 # dev
@@ -45,7 +78,20 @@ modified: 2024-05-27T11:39:14.886Z
 
 - ## 
 
-- ## 
+- ## [Save group restrictions as a part of layout object ](https://github.com/mathuo/dockview/issues/493)
+- Group constraints currently come with quite a few limitations including the fact they are not persisted. It would need some careful though into how this might work if it was added.
+
+- ## [Unable to persist fullscreen / maximized mode ](https://github.com/mathuo/dockview/issues/494)
+
+- ## [Implement default width and height for Dockview panels ](https://github.com/mathuo/dockview/issues/589)
+
+- ## [Linking the states of nested dock instances ](https://github.com/mathuo/dockview/issues/532)
+- When we dynamically add a panel inside a nested dockview, it cannot save to local storage.
+  - I guess the problem is because when we create a nested dockview, it will create a new API instance. However when we save the state by calling toJson we just handled the parent/container API. But I'm not sure how to merge/combine these apis into one and save to localstorage.
+
+- By creating another dock within the panel of an existing dock you are creating a new instance of the dock component. They are not linked internally in any way and do not know about each other.
+  - Currently it is expected that the if the user creates a nested dock, they save that nested dock state seperately and use their application state (perhaps associate that nested layout with the `id` of the panel it's nested within) to link everything back together. 
+  - Think of the nested dock JSON as just some application state you would associate with that panel within your application.
 
 - ## 🤔 [Mention how to manage shared state that isn't "params" _202403](https://github.com/mathuo/dockview/issues/543)
 - I got something to work using React `Context` . I think this might be the simplest way to do it. Wrap the `<DockviewReact>` in a context that is specifically for that Dockview, and then any prop based data you want to pass down to panels can exist there.
@@ -59,7 +105,18 @@ modified: 2024-05-27T11:39:14.886Z
 
 - ## 
 
-- ## 
+- ## [Possible to stop floating windows being dragged outside visible dockview area? · mathuo/dockview · Discussion #325](https://github.com/mathuo/dockview/discussions/325)
+- You can include both snap and priority when adding items to the Gridview through .addPanel(). Those flags don't exist on the Dockview since they don't make sense in that context. I will make sure I add all this to the gridview docs.
+
+- ## [Possible to stop floating windows being dragged outside visible dockview area? · mathuo/dockview · Discussion #325](https://github.com/mathuo/dockview/discussions/325)
+
+- ## 💡 [[BUG] dockview craches when changing from excalidraw ](https://github.com/mathuo/dockview/issues/317)
+- When you switch tabs in dockview the panel that becomes hidden is removed from the dom but the React component remains active (so that if you was to return to that panel the component would be as left) however this only works if some assumptions are obeyed, one of which being that component doesn't try to access the window because whilst hidden it has been removed from the window and has no access to it.
+- If you find that you do not want to destory the component and you want it to remain active even when not visible, it may be worth reading how dockview allows you to work with iframes too here since this would allow a particular component to remain attached to the dom even when not visible.
+  - This approach is suitable when you are ok with the underlying React component being unmouted when the panel is hidden.
+
+- and another link using a similar approach where the panel is absolutely positioned and hidden as required but never removed from the dom, based on the iframe examples found on dockview.dev
+  - This approach keeps the panel attached to the dom at all times but will hide the element as and when required.
 
 - ## [Need an easy to to know if a panel/group is floating ](https://github.com/mathuo/dockview/issues/583)
 - Both the panel and group `api` object expose a `location` property as an object 

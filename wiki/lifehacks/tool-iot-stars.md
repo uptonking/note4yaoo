@@ -477,12 +477,19 @@ CPU主频	2.3GHz
 
 ### 全局快捷键
 
+- cmd + tab 切换程序时，松开tab然后按q，可退出程序
+  - 此时可恢复隐藏窗口的app
 - Command-H：隐藏最前方 App 的窗口。要查看最前方的 App 但隐藏所有其他 App，请按 Option-Command-H。
-- cmd + tab 切换程序时，松开tab然后按q，可退出程序; 包含隐藏窗口的app
 - Command-M：将最前方的窗口最小化至程序坞。要最小化最前方 App 的所有窗口，请按 Option-Command-M。
+  - 此时 cmd+tab 无法恢复
+- 最大化当前窗口没有快捷键
+  - fn+f 可全屏当前窗口
+  - Control-Command-F 全屏
+  - [macos - Keyboard Shortcut to maximize a window? - Ask Different](https://apple.stackexchange.com/questions/421443/keyboard-shortcut-to-maximize-a-window)
+  - [How do you maximize windows in MacOS? : r/MacOS](https://www.reddit.com/r/MacOS/comments/15t7gdc/how_do_you_maximize_windows_in_macos/)
+
 - 截屏 cmd + shift + 3/4
 - 截指定窗口 cmd +shift + 4 + space
-- Control-Command-F 全屏
 - Option-Command-Esc：强制退出 App。
 
 - 回到桌面 四指抓拢手势

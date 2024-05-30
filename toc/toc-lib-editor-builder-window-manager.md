@@ -82,7 +82,7 @@ modified: 2021-01-08T11:48:16.590Z
   - 提供了ide的示例，复刻visual studio
   - 支持多实例
 
-- https://github.com/caplin/FlexLayout /MIT/202311/ts
+- https://github.com/caplin/FlexLayout /MIT/202311/ts/inactive
   - https://rawgit.com/caplin/FlexLayout/demos/demos/v0.7/demo/index.html
   - A multi-tab layout manager
   - 功能非常丰富，提供了类似vscode的左右侧边栏tabs，主内容区tabs，底部tabs

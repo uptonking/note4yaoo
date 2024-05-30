@@ -382,7 +382,7 @@ modified: 2023-01-29T10:52:44.183Z
   - The fact that it works on mobile is the biggest advantage imho. We use it for that reason.
 - monaco doesn't even try to work on mobile browsers.
 
-- ## 🎯 [CodeMirror 6.0 Stable Release | Hacker News _202206](https://news.ycombinator.com/item?id=31666186)
+- ## 🎯🤔 [CodeMirror 6.0 Stable Release | Hacker News _202206](https://news.ycombinator.com/item?id=31666186)
 - 🆚️ Why wasn't ProseMirror a fit for Obsidian? Seems like that would be better for structured documents.
   - For a good portion of its users, an important feature of Obsidian is the use of flat Markdown files.
   - I'm inquiring about actual implementation not Markdown. Markdown -> AST -> CodeMirror vs Markdown -> AST -> ProseMirror.

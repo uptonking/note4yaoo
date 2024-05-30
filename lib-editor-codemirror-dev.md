@@ -52,7 +52,7 @@ modified: 2021-05-06T09:38:31.520Z
   - sourcegraph
   - overleaf(latex-code+rich)
   - obsidian
-  - chrome-devtools
+  - chrome-devtools(开源代码中使用v6)
   - more: tagspaces, hedgedoc
 
 - why-cloud-ide
@@ -111,6 +111,9 @@ modified: 2021-05-06T09:38:31.520Z
       - .CodeMirror-line 
     - .CodeMirror-gutters
 
+- poi
+  - ast
+
 - resources
 # draft
 - features
@@ -119,10 +122,15 @@ modified: 2021-05-06T09:38:31.520Z
 
 - web
   - strapi-codemirror
+  - quill/slate-codemirror
 - electron
   - obsidian-plugin
 
 - 尝试将prosemirror的使用场景替换为codemirror
 # dev
+- 多标签页的实现思路和单标签差别不大，视觉上只有1个visible的editor，上方是tab
 
+- 
+- 
+- 
 # more

@@ -350,6 +350,9 @@ modified: 2024-05-06T02:52:41.789Z
   - deepin ide
 # pm-sharing
 
+- ide
+  - tab是否支持pin
+
 ## v20240529-task-plan-and-exectuting
 
 - 调整计划不再扣减积分

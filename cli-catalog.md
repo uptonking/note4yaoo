@@ -24,6 +24,8 @@ python2 -m SimpleHTTPServer 8000
 - prettier
 
 ```shell
+npx prettier --write '**/*.{js,jsx,ts,tsx,json}'
+
 prettier --config ./.prettierrc.js --write '**/*.{js,jsx,ts,tsx,json}' --ignore-unknown
 
 prettier --loglevel debug --config ./.prettierrc.js --write '**/*.*' --ignore-path=./.prettierignore --ignore-unknown

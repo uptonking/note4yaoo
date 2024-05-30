@@ -467,6 +467,10 @@ sudo apt install -y  sqlite3 libsqlite3-dev sqlitebrowser
 
 ## guide
 
+## not-yet
+
+- 文件大小显示采用2^12，而不是2^10
+
 ## os-starter
 
 - 在 settings 关闭 开机声音
@@ -495,6 +499,9 @@ sudo apt install -y  sqlite3 libsqlite3-dev sqlitebrowser
 
 ## software
 
+- safari
+  - 打开devtools，用 cmd+option+C
+
 - chrome
   - 打开devtools cmd+option+i
 
@@ -502,8 +509,10 @@ sudo apt install -y  sqlite3 libsqlite3-dev sqlitebrowser
   - [Visual Studio Code Tips and Tricks](https://code.visualstudio.com/docs/getstarted/tips-and-tricks)
   - 切换tab使用 ctrl+1/2/3
   - 跳转到定义和返回使用 f12， ctrl+-
+  - 显示隐藏终端 ctrl+反引号
 
 - clementine
   - [MP3 support on Mac? _202205](https://github.com/clementine-player/Clementine/issues/7173)
+  - 记录last.fm需要创建文件夹 /Users/yaoo/Library/Application Support/Last.fm
 
 ## more-macos

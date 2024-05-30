@@ -337,10 +337,26 @@ betterdiscordctl -i flatpak install
 
 ## 052
 
-## 0529
+## 0530
+
+
+- 标签页结构(从上到下)
+  - header: icon、title、pin、close；new-tab、max
+  - breadcum
+  - editor
+
+- 
+- 
+- 
+- 
 
 - dev-log
-  - 
+  - 参与了制定计划、执行计划、时光机回放、cde编辑器细节的需求评审，优化了cde的界面交互
+- dev-to
+  - 测试github仓库的数据的拉取和编辑保存
+
+## 0529
+
 - dev-to
   - ~~在sdk仓库新建分支开发clacky功能，保留合并到main分支的可能~~
   - 在clacky业务侧实现cde的分屏交互
