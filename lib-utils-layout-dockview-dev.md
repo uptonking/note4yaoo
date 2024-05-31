@@ -11,7 +11,7 @@ modified: 2024-05-27T11:39:14.886Z
 
 - pros
   - Choose from a simple splitview, gridview, collapsable panes or a full docking solution. Combine multiple for complex layouts.
-  - Built-in support for floating groups and groups in new windows with a supporting api for progmatic control.
+  - Built-in support for floating groups and groups in new windows with a supporting api for pragmatic control.
   - Drag and Drop tab to position your layout as well as interacting with external drag events.
   - dockview doesn't interfer with any drag and drop logic for other controls
   - 支持跨group的keyboard快捷键
@@ -36,6 +36,7 @@ modified: 2024-05-27T11:39:14.886Z
   - [Window-like mananger with tabs | Dockview](https://dockview.dev/docs/advanced/)
   - [iframes | Dockview](https://dockview.dev/docs/advanced/iframe)
   - [Nested Instances | Dockview](https://dockview.dev/docs/advanced/nested)
+  - 🌲 文件树的拖拽 [Dnd | Dockview](https://dockview.dev/docs/core/dnd/dragAndDrop)
   - [External Dnd Events | Dockview](https://dockview.dev/docs/core/dnd/external)
 
 - 基本架构
@@ -43,6 +44,18 @@ modified: 2024-05-27T11:39:14.886Z
 
 - resources
   - https://github.com/search?type=code&q=dockview+path%3Apackage.json%20NOT%20is:fork
+# draft
+- tab内容懒加载的最佳实践
+
+- 未实现将折叠面板中的文件拖拽到编辑区的交互
+
+- panel的滚动条自动显示隐藏
+
+- replace watermark with placeholder
+
+- 
+- 
+
 # dev-xp
 - toggle groups的处理
 
@@ -57,11 +70,21 @@ modified: 2024-05-27T11:39:14.886Z
 - 
 
 # examples
+- https://github.com/lyonbot/onebox /MIT/202401/ts/inactive
+  - https://lyonbot.github.io/onebox/
+  - a Draft Notebook for Developers
+  - Run JS/TS in Browser: Execute JavaScript and TypeScript code directly in your browser, supporting ES modules import/export. Integrated a Chrome DevTools Frontend for inspecting.
+  - 支持创建html/js并执行js，但打开打开的chrome-devtools不支持预览html
+  - 支持从文件树拖拽文件到标签页
+  - 嵌入了chrome-devtools
+  - 依赖monaco-editor、dexie、localforage、solid-js、markdown-it
+
 - https://github.com/kosaj/dockview-iframe-plugin /202308/ts/inactive
   - iframe
 
 - https://github.com/prashantpaddune/CDE /202310/ts/inactive
   - CDE powered by StackBlitz's WebContainer
+  - Monaco + DockView + Xterm + YJS + React Complex Tree
 
 - https://github.com/Oneirocom/Magick /apache2/202405/ts
   - https://magickml.com/
@@ -78,12 +101,17 @@ modified: 2024-05-27T11:39:14.886Z
 
 - ## 
 
+- ## [How can i prevent group from removing after the last panel was closed? ](https://github.com/mathuo/dockview/discussions/587)
+
 - ## [Save group restrictions as a part of layout object ](https://github.com/mathuo/dockview/issues/493)
 - Group constraints currently come with quite a few limitations including the fact they are not persisted. It would need some careful though into how this might work if it was added.
 
 - ## [Unable to persist fullscreen / maximized mode ](https://github.com/mathuo/dockview/issues/494)
 
 - ## [Implement default width and height for Dockview panels ](https://github.com/mathuo/dockview/issues/589)
+  - When adding a new panel to the top/right/bottom/left of a panel in a Dockview component, the available space is evenly distributed between the two panels. This is not always a desirable default.
+  - I see that the underlying GridView can handle fixed widths/heights when adding panels.
+  - It should be nice if we could define default widths and/or heights for panels. 
 
 - ## [Linking the states of nested dock instances ](https://github.com/mathuo/dockview/issues/532)
 - When we dynamically add a panel inside a nested dockview, it cannot save to local storage.
@@ -100,15 +128,41 @@ modified: 2024-05-27T11:39:14.886Z
   - The purpose of the params that you can provide to each panel are more for static purposes, something you may wish to persist with layout
   - Under the hood though each panel is added to React through React Portals so things like React Context and the React DOM Tree are well preserved.
   - If you have any good examples of sending through application state without using a full state mananger (redux, mobx etc) I would be more than happy to accept PRs - the more examples and docs the better in my opinion.
+
+- ## [How can I share data between panels? ](https://github.com/mathuo/dockview/discussions/593)
+- I managed to solve it myself using React Context
+
 # discuss
 - ## 
 
 - ## 
 
-- ## [Possible to stop floating windows being dragged outside visible dockview area? · mathuo/dockview · Discussion #325](https://github.com/mathuo/dockview/discussions/325)
-- You can include both snap and priority when adding items to the Gridview through .addPanel(). Those flags don't exist on the Dockview since they don't make sense in that context. I will make sure I add all this to the gridview docs.
+- ## 
 
-- ## [Possible to stop floating windows being dragged outside visible dockview area? · mathuo/dockview · Discussion #325](https://github.com/mathuo/dockview/discussions/325)
+- ## 🌰 [Horizontally spanned panel ](https://github.com/mathuo/dockview/discussions/478)
+- you can provide a position object which takes a couple of arguments which help position the panel. You can position the new panel relative to an existing panel by providing referencePanel or an existing group by providing referenceGroup. 
+
+- ## [Gready rendering mode  ](https://github.com/mathuo/dockview/issues/397)
+- The standard behaviour of dockview is to "de-render" any hidden panels (those panels that are not active). 
+  - This is and will remain the default behaviour however there are some circumstances where it would be more beneficial to leave all panels rendered but hidden (display: none) to preserve certain DOM specific state such as scroll position.
+  - If you want to change the default behaviour you can specify a defaultRenderer at the component level. This information is not persisted as a part of any serialized layout.
+
+- ## [Option to prevent closing tabs ](https://github.com/mathuo/dockview/issues/563)
+- You can use custom tab components and, in that way, remove the close icon
+
+- [Add 'hideClose' to DockviewDefaultTab component ](https://github.com/mathuo/dockview/issues/321)
+
+- ## [How to remove a panel programmatically ? ](https://github.com/mathuo/dockview/discussions/292)
+- There actually isn't a removePanel method directly exposed currently so to pragmatically remove you would need to do this via the panels api methods. For example you can close a panel by calling .close().
+
+- ## [Set exact width in addPanel ](https://github.com/mathuo/dockview/discussions/339)
+- I discovered that I can do it inside the component itself with the API, and I think I can also do
+
+- ## [Move between tabs ](https://github.com/mathuo/dockview/discussions/343)
+- There is support to switch the active panel pragmatically in the dockview api.
+
+- ## [Possible to stop floating windows being dragged outside visible dockview area? ](https://github.com/mathuo/dockview/discussions/325)
+- You can include both `snap` and `priority` when adding items to the Gridview through `.addPanel()` . Those flags don't exist on the Dockview since they don't make sense in that context. I will make sure I add all this to the gridview docs.
 
 - ## 💡 [[BUG] dockview craches when changing from excalidraw ](https://github.com/mathuo/dockview/issues/317)
 - When you switch tabs in dockview the panel that becomes hidden is removed from the dom but the React component remains active (so that if you was to return to that panel the component would be as left) however this only works if some assumptions are obeyed, one of which being that component doesn't try to access the window because whilst hidden it has been removed from the window and has no access to it.

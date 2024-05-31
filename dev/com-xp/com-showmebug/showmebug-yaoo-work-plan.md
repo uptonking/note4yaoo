@@ -161,6 +161,9 @@ modified: 2024-05-06T02:54:40.374Z
     - 播放时可并排显示多个shell的输出
     - 录制数据只能有一个用户，如果SMB需要跟随来回切换， 如果切换到面试官录制， 候选人只能停止录制
 
+- paas平台的注册只需要name和token就会返回token
+  - 甚至校验时只需要ticket，不需要token
+
 ### codebase-sdk
 
 - lazy-load的组件

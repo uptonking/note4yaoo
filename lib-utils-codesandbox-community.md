@@ -11,6 +11,7 @@ modified: 2024-01-25T13:33:23.267Z
 
 # codesandbox-news
 - 在预览界面集成了react-devtools和chrome-devtools，支持在不打开浏览器控制台的条件下inspect预览界面的元素并高亮定位到源码位置
+  - 原理是远程调试
   - https://codesandbox.io/p/chrome-devtool/app/index.html
   - https://github.com/browserless/browserless
   - https://github.com/ChromeDevTools/devtools-frontend

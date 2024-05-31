@@ -20,6 +20,7 @@ modified: 2022-06-03T21:34:54.893Z
   - memex, xanadu, bulletjournal, zettelkasten
   - 参考github，实现 repo + issues-forum + gitter-im + proj-mgmt + pr + cicd
   - npm的优点，支持各版本的文档分别显示
+  - 用代码搜索的思路来实现知识库的搜索
 
 - resources
   - search: knowledge-base/workspace/wiki/Personal Information Manager (PIM)

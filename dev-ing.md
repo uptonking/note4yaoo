@@ -335,20 +335,24 @@ betterdiscordctl -i flatpak install
 - dev-to
   - 
 
-## 052
+## 0531
+
+- cde整体布局
+  - 左侧可隐藏
+  - 中间可max
+  - 右侧可浮动
+
+- 获取文件树数据的websocket事件名是 syncPlaygroundInfo
+  - fileRootId
+  - fileRootPath
+  - fileTree
 
 ## 0530
 
-
-- 标签页结构(从上到下)
+- cde标签页结构(从上到下)
   - header: icon、title、pin、close；new-tab、max
   - breadcum
   - editor
-
-- 
-- 
-- 
-- 
 
 - dev-log
   - 参与了制定计划、执行计划、时光机回放、cde编辑器细节的需求评审，优化了cde的界面交互

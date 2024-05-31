@@ -407,7 +407,9 @@ modified: 2023-08-29T10:13:31.070Z
 
 - ## 
 
-- ## 
+- ## [Git 远程代码执行漏洞（CVE-2024-32002）复现 - starnight\_cyber - 博客园 _202405](https://www.cnblogs.com/Hi-blog/p/18224773/git_rce_CVE-2024-32002)
+- [【已复现】Git存在远程代码执行漏洞（CVE-2024-32002）](https://mp.weixin.qq.com/s/BRr5PCTgYkfPkvHwDckVMQ)
+- 原理是 利用 git submodule --recursive 将恶意代码注入到子项目的.git目录的git-hooks
 
 - ## Git is and has always been local first, distributed model. 
 - https://twitter.com/oleg008/status/1778716391488598085

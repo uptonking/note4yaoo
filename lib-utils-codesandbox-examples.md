@@ -355,6 +355,7 @@ modified: 2023-09-02T09:17:22.992Z
 - https://github.com/kat-tax/vslite /MIT/202312/ts/inactive
   - https://vslite.dev/
   - More than Monaco, less than VSCode
+  - 依赖@monaco-editor/react、@webcontainer/api、dockview
   - https://discord.com/channels/364486390102097930/681363253607006238/1115011573891735645
     - I'm working on a lite version of VSCode 
     - There's a file system tree, Webcontainer shell w/ terminal, docking system, and more.

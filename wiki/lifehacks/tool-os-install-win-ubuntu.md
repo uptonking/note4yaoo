@@ -490,6 +490,7 @@ sudo apt install -y  sqlite3 libsqlite3-dev sqlitebrowser
 
 - 打开terminal的快捷键
   - [Is there a keyboard shortcut (hotkey) to open Terminal in macOS? - Stack Overflow](https://stackoverflow.com/questions/35954184/is-there-a-keyboard-shortcut-hotkey-to-open-terminal-in-macos)
+- terminal上的link默认点击无操作，需要 cmd+dbClick 才会在浏览器打开
 
 - 在当前文件夹打开terminal的方法
   - https://github.com/Ji4n1ng/OpenInTerminal
@@ -498,6 +499,9 @@ sudo apt install -y  sqlite3 libsqlite3-dev sqlitebrowser
   - [How can I open a Terminal window directly from my current Finder location? - Ask Different](https://apple.stackexchange.com/questions/11323/how-can-i-open-a-terminal-window-directly-from-my-current-finder-location)
 
 ## software
+
+- fileExplorer/finder
+  - cmd+双击，在新标签页打开相同文件夹
 
 - safari
   - 打开devtools，用 cmd+option+C
