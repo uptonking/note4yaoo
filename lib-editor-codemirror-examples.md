@@ -118,6 +118,7 @@ modified: 2023-06-23T12:46:53.288Z
   - 依赖codemirror6、eventemitter3、thememirror、@uppy/xhr-upload
   - 由 Zhenyu Hou 独立开发和维护
   - 不支持拖拽改变block顺序
+  - [开源富文本编辑器，支持用 React/Vue 或任何框架开发 Block/InlineBlock。 - V2EX _202403](https://v2ex.com/t/1019749)
 
 - https://github.com/replit/codemirror-minimap /202401/ts
   - Minimap extension for Codemirror 6

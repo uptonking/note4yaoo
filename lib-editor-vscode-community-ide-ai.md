@@ -55,6 +55,15 @@ modified: 2024-05-10T06:17:27.016Z
     - https://swe-agent.com/
     - SWE-agent takes a GitHub issue and tries to automatically fix it, using GPT-4, or your LM of choice. 
     - It solves 12.29% of bugs in the SWE-bench evaluation set and takes just 1.5 minutes to run.
+
+# code-ai-ide
+
+- https://github.com/ishaan1013/sandbox /MIT/202406/ts
+  - A cloud-based code editing environment with an AI copilot and real-time collaboration.
+  - It's an OSS code editor with AI code autocompletion and real-time multiplayer collaboration (powered by @liveblocks )
+  - Built with @nextjs + @clerkdev + @shadcn UI by @ishaandey_ and it's fully self-hostable via @docker
+  - https://x.com/steventey/status/1796352490100896149
+    - How is it fully self-hostable if it relies on three SaaS services? Seems more like partially self-hostable?
 # discuss-stars
 - ## 
 

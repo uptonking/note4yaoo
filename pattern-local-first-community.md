@@ -101,7 +101,10 @@ modified: 2023-09-13T20:24:41.516Z
 # discuss
 - ## 
 
-- ## 
+- ## Tech stack doesn't matter but the user experience does matter. 
+- https://x.com/karrisaarinen/status/1796992391834206518
+  - "...but local-first is slow to open": Opening up our 5yo @linear workspace with 50k issues
+- Linear team is just goated.
 
 - ## "Distributed versus coordinated collaborative editing" has the same distinction as local-first and offline-first architectures.
 - https://twitter.com/evoluhq/status/1787513314269934014

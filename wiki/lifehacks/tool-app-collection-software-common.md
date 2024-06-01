@@ -156,6 +156,8 @@ modified: 2022-11-07T10:26:22.510Z
     - 木兰词
 
 - 音乐资源aac/mp3
+  - [无损生活 - 音乐搜索,音乐在线试听,下载,在线解析网](https://flac.life/)
+- 音乐资源-album
   - [CD包音乐网 - 专业的无损音乐论坛, APE, FLAC, WAV, CD, MP3专辑网站！](https://www.cdbao.net/)
   - [易音 - SACDR. NET](https://sacdr.net/)
   - [91flac](https://www.91flac.com/album_list)

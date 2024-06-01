@@ -524,7 +524,23 @@ modified: 2023-01-01T13:24:35.994Z
   - Each Vectra index is a folder on disk. There's an index.json file in the folder that contains all the vectors for the index along with any indexed metadata.
   - When queryng Vectra you'll be able to use the same subset of Mongo DB query operators that Pinecone supports and the results will be returned sorted by simularity
   - Keep in mind that your entire Vectra index is loaded into memory
+  - https://x.com/tuturetom/status/1796168541395194100
+    - 开源了 Perplexity 企业版和 Glean 的平替产品
+    - 企业级搜索和最近 Perplexity 公布的企业级动作以及 Glean 产品非常像
+    - Ocular AI 产品的核心初衷是因为目前各种 SaaS 软件信息查找很困难，这个领域的用户诉求是：
+    1. 在工作中快速找到需要的信息：比如任务、文档、Slack threads
+    2. 管理复杂的工程工具：比如很多软件、程序的使用文档、日志等
 # search-ai-gpt
+- https://github.com/OcularEngineering/ocular /Elastic/202406/ts
+  - https://www.useocular.com/
+  - AI Powered Search and Chat for Orgs - Think ChatGpt meets Google Search but powered by your data.
+  - Ocular is a set of modules and tools that allow you to build rich, reliable, and performant Generative AI-Powered Search Platforms without the need to reinvent Search Architecture.
+  - Google Like Search Interface - Find what you need
+  - App MarketPlace - Connect to all of your favorite Apps
+  - Custom Connectors - Build your own connectors to proprietary data sources.
+  - Customizable Modular Infrastructure - Bring your own custom LLM's, Vector DB and more into Ocular
+  - Governance Engine - Role Based Access Control, Audit Logs etc.
+
 - https://github.com/leptonai/search_with_lepton /apache2/202401/python/ts
   - https://search.lepton.run/
   - Build your own conversational search engine using less than 500 lines of code.

@@ -10,12 +10,13 @@ modified: 2024-05-27T11:39:14.886Z
 # guide
 
 - pros
-  - Choose from a simple splitview, gridview, collapsable panes or a full docking solution. Combine multiple for complex layouts.
+  - 🪟 Choose from a simple splitview, gridview, collapsable panes or a full docking solution. Combine multiple for complex layouts.
   - Built-in support for floating groups and groups in new windows with a supporting api for pragmatic control.
-  - Drag and Drop tab to position your layout as well as interacting with external drag events.
   - dockview doesn't interfer with any drag and drop logic for other controls
-  - 支持跨group的keyboard快捷键
-  - 支持Nested Dockviews, 即支持多实例、嵌套实例
+    - Drag and Drop tab to position your layout as well as interacting with external drag events
+  - 支持keyboard快捷键
+    - 导航到其他group的tab
+  - ✨ 支持Nested Dockviews, 即支持多实例、嵌套实例
   - framework-agnostic, 支持react/vue
 
 - cons
@@ -28,6 +29,14 @@ modified: 2024-05-27T11:39:14.886Z
   - Customize header to add additional icons or custom tab
   - high test coverage
   - Exposes native support for both ReactJS components and Vanilla TypeScript
+  - ✨ 内置丰富的拖拽功能: 可折叠面板accordion支持拖拽改变顺序，tab支持改变顺序
+
+- dev-xp 简单场景没必要上复杂的库
+  - 基本架构: dock > groups/window > panels/tab
+  - 容易实现dock标签页元素的交互效果
+  - 💡 dockview最适合的场景是标签页拖拽，不需要拖拽的场景使用简单sidebar即可
+    - 容易实现将标签页拖到左中右的位置，左中右位置一般是并列关系
+    - 适合实现将浮动面板的标签拖拽到主区域, 如果不需要刻意不用
 
 - examples
   - [Dockview demos](https://dockview.dev/demo/)
@@ -38,9 +47,6 @@ modified: 2024-05-27T11:39:14.886Z
   - [Nested Instances | Dockview](https://dockview.dev/docs/advanced/nested)
   - 🌲 文件树的拖拽 [Dnd | Dockview](https://dockview.dev/docs/core/dnd/dragAndDrop)
   - [External Dnd Events | Dockview](https://dockview.dev/docs/core/dnd/external)
-
-- 基本架构
-  - dock > groups/window > panels/tab
 
 - resources
   - https://github.com/search?type=code&q=dockview+path%3Apackage.json%20NOT%20is:fork
@@ -90,6 +96,13 @@ modified: 2024-05-27T11:39:14.886Z
   - https://magickml.com/
   - a cutting-edge toolkit for a new kind of AI builder
   - Magick is a groundbreaking visual AIDE (Artificial Intelligence Development Environment) for no-code data pipelines and multimodal agents.
+
+- https://github.com/DB-Insight/DBInsight /MIT/202402/ts
+  - open source database management tool
+
+- https://github.com/umstek/listen-next /202402/ts
+  - https://listen-next.vercel.app/
+  - A simple web based audio player for offline files.
 # issues
 - 如何处理tab中的大文件，比如大于3000行/10M
 # dev

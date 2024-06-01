@@ -479,8 +479,9 @@ sudo apt install -y  sqlite3 libsqlite3-dev sqlitebrowser
   - pkg-manager: homebrew
   - appstore: localsend
 
-- brew install gedit
-  - 安装gedit后，能够直接在terminal执行gedit filename
+- brew install
+  - gedit: 安装gedit后，能够直接在terminal执行gedit filename
+  - git
 
 - cut and paste
   - cmd+c cmd+option+v
@@ -502,6 +503,7 @@ sudo apt install -y  sqlite3 libsqlite3-dev sqlitebrowser
 
 - fileExplorer/finder
   - cmd+双击，在新标签页打开相同文件夹
+  - 前进后退 
 
 - safari
   - 打开devtools，用 cmd+option+C

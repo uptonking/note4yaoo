@@ -217,6 +217,10 @@ modified: 2021-05-14T15:06:46.615Z
 - https://github.com/zhblue/hustoj /GPL/202405/js/php
   - http://www.hustoj.com/?cat=2
   - 开源OJ系统
+
+- https://github.com/devarend/mina-playground
+  - https://minaplayground.com/
+  - Mina Playground, an innovative interactive learning platform that allows you to follow step-by-step tutorials, run zkApps and Smart Contracts directly in your browser
 # ide-ai
 - https://github.com/e2b-dev/e2b /apache2/202405/ts/python
   - https://e2b.dev/docs

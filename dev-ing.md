@@ -329,6 +329,20 @@ betterdiscordctl -i flatpak install
     - 2个编辑器同一页面协同的示例未完成
     - cursor光标位置经常对不上
   - [x] streaming infinite-list/tree
+# dev-06-
+
+
+## 060
+## 0601
+
+- [unicode - Text encoding in ID3v2.3 tags - Stack Overflow](https://stackoverflow.com/questions/9857727/text-encoding-in-id3v2-3-tags)
+  - for the text encoding code:
+  - 00 – ISO-8859-1 (ASCII).
+  - 01 – UCS-2 (UTF-16 encoded Unicode with BOM), in ID3v2.2 and ID3v2.3.
+  - 02 – UTF-16BE encoded Unicode without BOM, in ID3v2.4.
+  - 03 – UTF-8 encoded Unicode, in ID3v2.4.
+
+
 # dev-05-codemirror-&-cde-&-replay-&-dockview
 - dev-log
   - 

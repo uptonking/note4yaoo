@@ -194,6 +194,12 @@ npm unlink
   - You can create a workspace to unite multiple projects inside a single repository.
   - A workspace must have a pnpm-workspace.yaml file in its root.
 # mirror/proxy
+- https://github.com/Pana/nrm /MIT/202111/js/inactive
+  - NPM registry manager, fast switch between different registries: npm, cnpm, nj, taobao
+
+- https://github.com/zjunbin1286/npm-registry-nrs /202404/js
+  - npm 源管理器，允许你快速地在 npm 源间切换
+
 - https://github.com/cnpm/binary-mirror-config
   - Binary mirror config for prebuild and node-pre-gyp
 
