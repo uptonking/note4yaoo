@@ -168,8 +168,8 @@ modified: 2023-11-28T14:48:45.911Z
   - https://github.com/factly/dega /go
     - lightweight, scalable & high performant CMS written in Go & React
 # notion-block-api/self-hosted
-- https://github.com/dragonman225/nast
-  - A block-based intermediate representation for document-like content.
+- https://github.com/dragonman225/nast /MIT/202211/ts/inactive
+  - ✨ A block-based intermediate representation for document-like content.
   - `nast-types`: A TypeScript type definition module to specify data models for intermediate representation of data.
   - `nast-util-from-notionapi`: Import data from a Notion page.
   - `nast-util-to-react`: Render data to JSX. Element or HTML. (Preferred)

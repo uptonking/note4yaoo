@@ -546,6 +546,11 @@ modified: 2023-01-01T13:24:35.994Z
   - Build your own conversational search engine using less than 500 lines of code.
   - Built-in support for LLM
   - Shareable, cached search results
+
+- https://github.com/Nutlope/turboseek /202406/ts
+  - https://www.turboseek.io/
+  - AI search engine inspired by Perplexity
+  - An open source AI search engine. Powered by Together.ai.
 # more-search
 - https://github.com/typicode/json-server
   - Get a full fake REST API with zero coding

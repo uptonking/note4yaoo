@@ -272,11 +272,29 @@ const AppWithProviders = () => (
 
 - ## 🤼🏻 [Avoid Provider wrapping hell in React.](https://twitter.com/_georgemoller/status/1736915583856165154)
 - This seems like a useless abstraction. You typically never need to touch that nest so adding all of that extra code to achieve the same result seems pointless. What am I missing?
-  - Agree and instead if there is a lot of providers maybe the better solution is to make it into groups like UIGroupProvider that's include UI related provider like `ThemeProvider`,   `LocaleProvider`
+  - Agree and instead if there is a lot of providers maybe the better solution is to make it into groups like UIGroupProvider that's include UI related provider like `ThemeProvider`,    `LocaleProvider`
 
 - By doing this you are increasing lines of code, complexity and bug surface area and reducing readability and plus if you are using typescript, there will be lots of extra things to handle compare to original one.
 
 - This makes your code even harder to read and maintain, not to mention an unnecessary loop. Just move all providers into a separate component and call it a day
+
+- ## 🤼 how to waste your time with useless refactor:
+- https://x.com/goenning/status/1796994001536516304
+  - 将嵌套的provider重构为数组
+- And what happens if provider needs a prop ?
+  - spend another hour tweaking this useless abstraction to accept props
+
+- Never use Context outside of whole-tree modifications like themeing, auth, or request cache setup
+  - yeah, let's replace it with the dependency injection system in the react, oh wait, there's none
+- Context just for theming, auth state or i18n.
+
+- The thing is that the root problem is not even in the refactored code, it's somewhere in the "why do you need all these providers on the same one level in the same component but still separated?" And if you dig deeper into it, you might solve an actual architectural issue.
+
+- Which is why I keep providers as close to their children as possible, none of this providers all nesting the app garbage
+
+- Stop using Context and use Zustand thats it
+
+- I’m sorry you react folks have to deal with context and provider bullshit. What a messy pattern. I swear I don’t understand how you got here
 # [4 Common Patterns You Can Easily Focus On In Your React Code Reviews](https://www.chakshunyu.com/blog/4-common-patterns-you-can-easily-focus-on-in-your-react-code-reviews/)
 - Prop Drilling
 - A common (anti-)pattern to solve this issue is to pass the value from the parent component all the way to the child component that needs it. 

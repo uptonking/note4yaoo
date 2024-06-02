@@ -331,8 +331,8 @@ betterdiscordctl -i flatpak install
   - [x] streaming infinite-list/tree
 # dev-06-
 
-
 ## 060
+
 ## 0601
 
 - [unicode - Text encoding in ID3v2.3 tags - Stack Overflow](https://stackoverflow.com/questions/9857727/text-encoding-in-id3v2-3-tags)
@@ -341,8 +341,6 @@ betterdiscordctl -i flatpak install
   - 01 – UCS-2 (UTF-16 encoded Unicode with BOM), in ID3v2.2 and ID3v2.3.
   - 02 – UTF-16BE encoded Unicode without BOM, in ID3v2.4.
   - 03 – UTF-8 encoded Unicode, in ID3v2.4.
-
-
 # dev-05-codemirror-&-cde-&-replay-&-dockview
 - dev-log
   - 

@@ -287,7 +287,15 @@ modified: 2023-02-08T10:46:26.912Z
 # discuss-xp-github
 - ## 
 
-- ## 
+- ## 分享一个做过的小工具：github star统计（https://stars.yangerxiao.com）。
+- https://x.com/wsygc/status/1797163494170918985
+  - 当时有个小需求：想知道某个 github 项目下每日新增多少 star，网上找了一通，没找到，于是自己就做了个，算是填补了某个需求的空白。
+  - 因为要分页拉取数据，所以会多次调用Github API，而Github API每天是有调用次数限制的，有一天有人联系上我，说这个小工具出bug啦，真是又惊又喜：嘿，还真有人用，而且还把API次数用完了。不过这个限制避免不了，于是就“贴心”地加了个“API余额”小飘窗
+
+- 为什么不是付费增加限额的 pop windows?
+  - 因为付费也增加不了限额, 代码都是开源的, 可以自己部署一个
+
+- https://star-history.com 这个好像很早了吧
 
 - ## 今天知道了 github 有个用 https 的 443 端口使用 ssh 协议的服务 http://ssh.github.com。
 - https://twitter.com/_a_wing/status/1750177058872054083

@@ -98,7 +98,48 @@ modified: 2020-12-08T13:40:02.577Z
 # discuss
 - ## 
 
-- ## 
+- ## 25+ ways to handle state in a React app in 2024:
+- https://x.com/housecor/status/1796889591972061515
+- React:
+useState
+useReducer
+useRef
+useContext (to share useState, useReducer, etc)
+useOptimistic
+useSyncExternalStore
+useActionState
+React Server component (just return fetch result)
+
+- General:
+Redux
+Jotai
+Zustand
+Valtio
+Mobx
+Recoil
+XState
+
+- Remote state:
+Tanstack query
+swr
+Apollo
+RTK query
+
+- Forms:
+Formik
+React Hook Form
+
+- Routers:
+React Router loader
+Remix loader
+Tanstack Router loader
+
+- Web platform:
+URL
+Cookie
+localStorage
+sessionStorage
+indexDB
 
 - ## Prediction: Third-party React state libraries will become less relevant in 2024.
 - https://twitter.com/housecor/status/1763919937481973801

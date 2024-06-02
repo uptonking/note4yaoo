@@ -62,4 +62,10 @@ modified: 2023-02-07T09:43:01.972Z
     - there are many mentions of netflix moving away from falcor. while they certainly have their reasons falcor still has its place and has no real alternative in many usecases where graphQL is not a good fit!
     - graphQL is too complex to automatically map to simple plain old js object interactions plus i dont want to write schemas for everything up front 
     - falcor has the same scaling capabilities as graphQL. They neeeded to raplace their monolithic falcor backend with a new architecture and happened to chose graphQL, they could also have rewritten a new falcor server with a different architecture and solved those issues. So falcor is not inherently less scalable.
+# cache
+- https://github.com/yfractal/ccache /202406/rust/ruby
+  - Ccache is a Redis client-side caching based on Etag for providing a better consistency guarantee
+  - Ccache, short for Conditional Cache, works like HTTP conditional requests, providing client-side caching without sacrificing consistency.
+  - Ccache caches data locally, and for subsequent requests, it sends the key with the cached data's ETag to Redis. If the key's data in Redis hasn't changed, Redis returns "no change" and Ccache uses the locally cached data.
+  - Redis offers client-side caching to reduce latency and Redis load. However, it only guarantees weak consistency. For example, when clients request different backend servers, they can receive inconsistent data.
 # more

@@ -408,7 +408,10 @@ modified: 2023-10-26T19:04:00.318Z
 - Check clickhouse-local.
   - Apart from clickhouse, if you use compute engine agnostic storage format (e.g. delta) and compute engine agnostic transformations engine (e.g. dbt), migration should be as easy as swapping?
 
-- ## 6 Load Balancing ALGORITHMS you Must Know
+- ## 🪧 快速了解下负载均衡6大算法
+- https://x.com/qloog/status/1797255930905776240
+
+- ## 🪧 6 Load Balancing ALGORITHMS you Must Know
 - https://twitter.com/AmigosCode/status/1725507946950344949
 1. Round Robin
  - Allocates incoming requests to each server in a circular sequence. It ensures an equal distribution of the workload among servers.

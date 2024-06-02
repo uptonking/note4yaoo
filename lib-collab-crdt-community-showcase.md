@@ -14,7 +14,19 @@ modified: 2023-11-01T03:15:20.195Z
 
 - ## 
 
-- ## 
+- ## 📓 My presentation about "Collaborative editing in Jupyter" at PyData Paris has been accepted _202406
+- https://x.com/davidbrochart/status/1796838314386866396
+  - I'll talk about the latest developments and how CRDTs are making their way and redefining the architecture of Jupyter(Lab): chat system, server-side execution...
+
+- I'm not sure how collaboration plays with JupyterHub, since you get a dedicated Jupyter Server/Lab instance for each user. I don't know if there is a way to share a server between multiple users with JupyterHub?
+- Interested to know how collaborative editing in jupyter can play a roller in a jupyter hub
+  - If it's not possible now, I think we should find a way to fund the dev work to bring this to jupyterhub. It feels like a no brainer since the hub is the most common multi-user technology in the jupyter ecosystem. Would have a huge impact
+- RTC on JupyterHub is documented here 
+  - [Real-time collaboration without impersonation — JupyterHub documentation](https://jupyterhub.readthedocs.io/en/stable/tutorial/collaboration-users.html)
+
+- https://x.com/davidbrochart/status/1796138236516991392
+  - CRDTs are making their way into JupyterLab, with a new collaborative input widget
+  - This allows multiple users to type into the input box, and to recover the widget after closing/reopening the window, preventing the notebook from deadlocking.
 
 - ## A long-standing issue in Jupyter is about to get fixed: getting back a notebook state when reconnecting.
 - https://twitter.com/davidbrochart/status/1722564382813516093

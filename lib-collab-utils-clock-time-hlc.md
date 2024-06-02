@@ -406,6 +406,20 @@ else {
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## I am unaware of Chandy-Lamport snapshot implemented in any real distributed system. 
+- https://x.com/muratdemirbas/status/1796902695963361592
+  - I think snapshotting by hybrid logical clocks or TrueTime is the prevalent approach. 
+
+- Another advantage of snapshotting with HLC or TT over Chandy-Lamport is that, they can be initiated/calculated post hoc. 
+  - Chandy-Lamport is available only if you initiate it at that time. 
+  - With HLC/TT, you can look at historical logs & calculate consistent snapshots at any point
+
+- Hazelcast implements a variant of C-L
+
 - ## Impact of clock uncertainty:
 - https://twitter.com/FranckPachot/status/1725912119898521787
   * Spanner delays writes to wait out max drift

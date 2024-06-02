@@ -28,6 +28,24 @@ modified: 2023-10-30T07:34:03.602Z
 # discuss-llama
 - ## 
 
+- ## 
+
+- ## 
+
+- ## So this is an LLM running locally? `ollama run llama3` .
+- https://x.com/eatonphil/status/1797039865470570942
+  - Asking it to help me with some Postgres C code. It's complete nonsense, but it's impressive complete nonsense
+  - `ollama run codestral` looks about right though.
+- How much RAM am I supposed to have for the 70B model?
+  - B × Q / 8 → RAM requirement for llm inference in GB
+  - B: number of parameters
+  - Q: quantization (16 = no quantization)
+  - useful rule of thumb for RAM requirement for llm inference via hn user CobaltFire
+- 3bit quantized should work with 32 GB RAM with other apps closed
+
+- based on the download size that looks like the 7b model (smallest), which are pretty hopeless at anything beyond basic coding in my experience (codestral is a 22b iirc)
+  - also if you like using models from the command line i highly rec @simonw 's `llm` cli! i believe it supports ollama
+
 - ## 🐛 [Error: pull model manifest · ollama/ollama](https://github.com/ollama/ollama/issues/3434)
   - Error: pull model manifest: Get "https://registry.ollama.ai/v2/library/codellama/manifests/70b": read tcp 192.168.3.79:64976->172.67.182.229:443: read: operation timed out
 - Error: max retries exceeded: Get "https://dd20bb891979d25aebc8bec07b2b3bbc.r2.cloudflarestorage.com/ollama/docker/registry/v2/blobs/sha256/14/1436d66b69757a245f02d000874c670507949d11ad5c188a623652052c6aa508/data?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=66040c77ac1b787c3af820529859349a%! F(MISSING)20240529%! F(MISSING)auto%! F(MISSING)s3%! F(MISSING)aws4_request&X-Amz-Date=20240529T155900Z&X-Amz-Expires=1200&X-Amz-SignedHeaders=host&X-Amz-Signature=cd4472bad19931e399f39a352a4a1b0902857996b7b784b8138f168d70532277": dial tcp 104.18.8.90:443: i/o timeout

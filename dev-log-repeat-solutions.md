@@ -25,7 +25,7 @@ modified: 2021-07-20T13:50:23.433Z
   - data-app: 输入数据input-data-table, 开放数据api，开放应用app-builder
   - 产品方向: 偏设计、偏业务逻辑
 
-- 技术方向js: 前端版/流式版/oplog; 编辑器，多维表格，协作/gitdb; dnd，floating
+- 技术方向js: 前端版/流式版/oplog; 编辑器/ide，多维表格/excel，协作/gitdb; dnd，floating
 - 技术扩展js/py: 可拖拽的页面编辑器/lowcode, Excel/kanban, 图表
 - 技术产品: client/server版; cms/wiki, airtable/table, db
 - 技术可选1: 画板, pdf/ppt-editor, 图形编辑器

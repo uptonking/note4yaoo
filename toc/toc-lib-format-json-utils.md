@@ -45,6 +45,10 @@ modified: 2022-11-06T15:45:36.913Z
   - https://github.com/madonoharu/ts-norm
   - https://github.com/napolab/normalizr_ts
 
+- https://github.com/klis87/normy /MIT/202404/ts
+  - Automatic normalization and data updates for data fetching libraries (react-query, swr, rtk-query and more)
+  - The core of normy - namely @normy/core library, which is not meant to be used directly in applications, has logic inside which allows an easily integration with your favourite data fetching libraries. There are already official integrations with react-query, swr and RTK Query. 
+
 - https://github.com/krispo/simplifr /201607/js
   - Simplifies JSON into a flat single-level path-value structure.
   - It's designed for React/Redux/Flux apps. Inspired by Normalizr.
