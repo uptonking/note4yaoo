@@ -87,7 +87,16 @@ modified: 2023-10-30T07:34:03.602Z
 
 - ## 
 
-- ## 
+- ## 🌰 Firefox will use Transformers.js to power on-device features
+- https://x.com/osanseviero/status/1797291569348751848
+  - In their PDF Editor to generate alt text for images
+  - Improve translations
+  - Fully offline, open-source and with <200M models
+- [Experimenting with local alt text generation in Firefox Nightly - Mozilla Hacks - the Web developer blog _202405](https://hacks.mozilla.org/2024/05/experimenting-with-local-alt-text-generation-in-firefox-nightly/)
+  - https://huggingface.co/Mozilla
+    - 提供了数据集和模型
+
+- Offline and open-source is a big win for privacy-focused tools
 
 - ## [langchain到底该怎么使用，大家在项目中实践有成功的案例吗? - 知乎](https://www.zhihu.com/question/609483833)
 - LangChain之所以大火，是因为它提供了一系列方便的工具、组件和接口，大大降低了 AI 应用开发的门槛，也极大简化了大模型应用程序的开发过程。

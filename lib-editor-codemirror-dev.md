@@ -87,7 +87,7 @@ modified: 2021-05-06T09:38:31.520Z
   - auto-closing brackets
   - indentation
   - 行号、折叠
-  - 定义跳转与跳回
+  - symbol跳转定义与查找引用
   - 代码编辑器通常commit会包含多个文件，而文本编辑器一般单文件操作
 
 - dev-xp
@@ -134,4 +134,5 @@ modified: 2021-05-06T09:38:31.520Z
 - 
 - 
 - 
+
 # more

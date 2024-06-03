@@ -237,6 +237,169 @@ modified: 2023-02-08T10:24:11.422Z
 
 - https://github.com/ngti/svg-grabber /MIT/201803/js/inactive
   - Open source chrome extension to quickly preview, download or copy inline or embedded SVG images from a website
+# userscripts
+- registry/sources
+  - [Greasy Fork - safe and useful user scripts](https://greasyfork.org/en)
+
+## github
+
+- 
+- 
+- 
+- 
+
+- [GitHub Useful Forks](https://greasyfork.org/zh-CN/scripts/496406-github-useful-forks)
+  - Adds a button to GitHub repositories to see useful forks of the repo.
+- [Github 快捷查找活跃的Forks列表](https://greasyfork.org/zh-CN/scripts/494365-github-%E5%BF%AB%E6%8D%B7%E6%9F%A5%E6%89%BE%E6%B4%BB%E8%B7%83%E7%9A%84forks%E5%88%97%E8%A1%A8)
+
+- [Github加速](https://greasyfork.org/zh-CN/scripts/495513-github%E5%8A%A0%E9%80%9F)
+- [Github 增强 - 高速下载](https://greasyfork.org/zh-CN/scripts/412245-github-%E5%A2%9E%E5%BC%BA-%E9%AB%98%E9%80%9F%E4%B8%8B%E8%BD%BD)
+
+- [复制 GitHub 仓库名](https://greasyfork.org/zh-CN/scripts/494749-copy-github-repo-name)
+  - 在 GitHub 页面上添加一个按钮，点击后可以复制仓库名（owner/repo）
+
+## twitter
+
+- 
+- 
+
+- [Twitter: view more replies and remove useless sections](https://greasyfork.org/zh-CN/scripts/429224-twitter-view-more-replies-and-remove-useless-sections)
+  - View more replies and remove useless sections from twitter
+- [X.com (Twitter) - Auto Show More Replies](https://greasyfork.org/zh-CN/scripts/486830-x-com-twitter-auto-show-more-replies)
+
+- [Twitter Block Porn](https://greasyfork.org/zh-CN/scripts/470359-twitter-block-porn)
+  - 受不了评论区黄推了? 打开共享黑名单，用 Twitter-Block-Porn 插件一键批量拉黑黄推，手机上也能生效，普通人拉黑受益的是自己，大V拉黑受益的是所有人。
+
+- [在推特上显示正常的日期和时间](https://greasyfork.org/zh-CN/scripts/462064-show-date-normally-on-twitter)
+  - 看起来是这样的。70/12/31(Th) 23:59:59。
+
+- [Twitter Bookmark Shortcut](https://greasyfork.org/zh-CN/scripts/489289-twitter-bookmark-shortcut)
+  - Add a bookmark shortcut to Twitter's home page
+- [X Bookmarks Organizer](https://greasyfork.org/zh-CN/scripts/496107-x-bookmarks-organizer)
+  - Organize your X bookmarks into folders for free.
+  - Data of script can be imported and exported.
+- [Twitter Bookmark Extractor](https://greasyfork.org/zh-CN/scripts/493568-twitter-bookmark-extractor)
+  - Extracts bookmarked tweets from Twitter bookmarks page
+  - You can find the downloaded JSON file in your download directory and open it with any text editor.
+- [Twitter Web Exporter](https://greasyfork.org/zh-CN/scripts/492218-twitter-web-exporter)
+  - 从 Twitter(X) 网页版导出推文、书签、列表等各种数据，支持导出 JSON/CSV/HTML。
+
+- [Twitter Direct](https://greasyfork.org/zh-CN/scripts/404632-twitter-direct)
+  - Remove t.co tracking links from Twitter
+
+- [Twitter Zoom Cursor](https://greasyfork.org/zh-CN/scripts/413963-twitter-zoom-cursor)
+  - Distinguish between images and links on Twitter
+
+- [Twitterᴾˡᵘˢ](https://greasyfork.org/zh-CN/scripts/387969-twitter%E1%B4%BE%CB%A1%E1%B5%98%CB%A2)
+  - 增强 X(Twitter) 使用体验。读取原始画质的图片，移除广告与垃圾推文。
+
+- [twitter-promotion-remover](https://greasyfork.org/zh-CN/scripts/453503-twitter-promotion-remover)
+
+- 
+- 
+- [显示转发的日期和时间。](https://greasyfork.org/zh-CN/scripts/462070-show-ctime-of-retweets)
+
+## 知乎/掘金/小红书/csdn
+
+- [知乎修改器🤜持续更新🤛努力实现功能最全的知乎配置插件](https://greasyfork.org/zh-CN/scripts/423404-%E7%9F%A5%E4%B9%8E%E4%BF%AE%E6%94%B9%E5%99%A8-%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0-%E5%8A%AA%E5%8A%9B%E5%AE%9E%E7%8E%B0%E5%8A%9F%E8%83%BD%E6%9C%80%E5%85%A8%E7%9A%84%E7%9F%A5%E4%B9%8E%E9%85%8D%E7%BD%AE%E6%8F%92%E4%BB%B6)
+  - 页面模块自定义隐藏，列表及回答内容过滤，保存浏览历史记录，推荐页内容缓存
+- [ZhiHuNock-Q](https://greasyfork.org/zh-CN/scripts/494300-zhihunock-q)
+  - 一个固执己见的知乎问答的脚本，致力于提升问答审阅的信息可见性
+- [ZhiHuNock](https://greasyfork.org/zh-CN/scripts/493979-zhihunock)
+  - 一个固执己见的知乎的脚本，致力于提升文章审阅的信息可见性
+
+- [JueJinNock](https://greasyfork.org/zh-CN/scripts/494579-juejinnock)
+  - 一个固执己见的掘金的脚本，致力于提升文章审阅的信息可见性
+
+- [CnBlogsNock](https://greasyfork.org/zh-CN/scripts/494487-cnblogsnock)
+  - 一个固执己见的博客园的脚本，致力于提升文章审阅的信息可见性
+
+- 
+- 
+
+- [博客网站的精简和宽屏处理](https://greasyfork.org/zh-CN/scripts/482865-%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E7%9A%84%E7%B2%BE%E7%AE%80%E5%92%8C%E5%AE%BD%E5%B1%8F%E5%A4%84%E7%90%86)
+
+- [CSDNock](https://greasyfork.org/zh-CN/scripts/493011-csdnock)
+  - 一个固执己见的 CSDN 的脚本，致力于提升文章审阅的信息可见性
+
+## b站
+
+- [B站封面获取](https://greasyfork.org/zh-CN/scripts/395575-b%E7%AB%99%E5%B0%81%E9%9D%A2%E8%8E%B7%E5%8F%96)
+  - 获取B站各播放页及直播间封面，支持手动及实时预览等多种模式，支持点击下载、封面预览、快速复制，可高度自定义
+
+- [bilibili 页面净化大师](https://greasyfork.org/zh-CN/scripts/479861-bilibili-%E9%A1%B5%E9%9D%A2%E5%87%80%E5%8C%96%E5%A4%A7%E5%B8%88)
+  - 净化 B站/哔哩哔哩 页面，支持「精简功能、播放器净化、过滤视频、过滤评论、全站黑白名单」，提供 300+ 功能，定制自己的 B 站
+
+- 
+- 
+- 
+- [下载 bilibili 原图](https://greasyfork.org/zh-CN/scripts/494018-%E4%B8%8B%E8%BD%BD-bilibili-%E5%8E%9F%E5%9B%BE)
+  - 以原来的格式右键下载 bilibili 动态和评论区中的图片，而不是 webp 或 avif
+
+## sites(single)
+
+- 
+- 
+- 
+- 
+- 
+
+- [Discord Get Your Token](https://greasyfork.org/zh-CN/scripts/437442-discord-get-your-token)
+  - [Discord Login with Token](https://greasyfork.org/zh-CN/scripts/483983-discord-login-with-token)
+
+- [▲V2EX Polish - 体验更现代化的 V2EX 🟢](https://greasyfork.org/zh-CN/scripts/459848-v2ex-polish-%E4%BD%93%E9%AA%8C%E6%9B%B4%E7%8E%B0%E4%BB%A3%E5%8C%96%E7%9A%84-v2ex)
+  - 一款专为 V2EX 用户设计的浏览器插件，提供了丰富的扩展功能，让原生页面焕然一新
+
+- [MoreMovieRatings](https://greasyfork.org/zh-CN/scripts/7687-moremovieratings)
+  - 豆瓣和IMDb互相显示评分
+
+- [arxiv论文下载重命名工具](https://greasyfork.org/zh-CN/scripts/479524-arxiv-download-rename-tool)
+  - 当您从arxiv.org下载论文时，它可以将pdf重命名为【日期+论文标题】的形式
+
+## userscripts-mgr
+
+- [Magic Userscript+ ：显示站点所有 UserJS](https://greasyfork.org/zh-CN/scripts/421603-magic-userscript-show-site-all-userjs)
+  - 为当前网页查找可用的用户脚本。
+
+- 
+- 
+- 
+- 
+
+## devtools
+
+- 
+- 
+- 
+
+- [网页调试](https://greasyfork.org/zh-CN/scripts/475228-%E7%BD%91%E9%A1%B5%E8%B0%83%E8%AF%95)
+  - 内置多种网页调试工具，包括：Eruda、vConsole、PageSpy、Chii，可在设置菜单中进行详细配置
+
+## utils
+
+- 
+- 
+- 
+- 
+
+- [翻译机](https://greasyfork.org/zh-CN/scripts/378277-%E7%BF%BB%E8%AF%91%E6%9C%BA)
+  - 该脚本用于翻译各类常用社交网站为中文，不会经过中间服务器。
+
+- [Picviewer CE+](https://greasyfork.org/zh-CN/scripts/24204-picviewer-ce)
+  - 在线看图工具，支持图片翻转、旋转、缩放、弹出大图、批量保存
+
+- [HTML5视频播放工具](https://greasyfork.org/zh-CN/scripts/30545-html5%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE%E5%B7%A5%E5%85%B7)
+  - 视频截图；切换画中画；缓存视频；万能网页全屏；添加快捷键：快进、快退、暂停/播放、音量、下一集、切换(网页)全屏、上下帧、播放速度。支持视频站点：油管、TED、优. 土、QQ、B站、西瓜视频、爱奇艺、A站、PPTV、芒果TV、咪咕视频、新浪、微博、网易[娱乐、云课堂、新闻]、搜狐、风行、百度云视频等；直播：twitch、斗鱼、YY、虎牙、龙珠、战旗。可增加自定义站点
+- [HTML5视频播放器增强脚本](https://greasyfork.org/zh-CN/scripts/381682-html5%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE%E5%99%A8%E5%A2%9E%E5%BC%BA%E8%84%9A%E6%9C%AC)
+  - 视频增强脚本，支持所有H5视频网站，例如：B站、抖音、腾讯视频、优酷、爱奇艺、西瓜视频、油管（YouTube）、微博视频、知乎视频、搜狐视频、网易公开课、百度网盘、阿里云盘、ted、instagram、twitter等。全程快捷键控制，支持：倍速播放/加速播放、视频画面截图、画中画、网页全屏、调节亮度、饱和度、对比度、自定义配置功能增强等功能，为你提供愉悦的在线视频播放体验。还有视频广告快进、在线教程/教育视频倍速快学、视频文件下载等能力
+
+- [视频全屏显示时间](https://greasyfork.org/zh-CN/scripts/452520-%E8%A7%86%E9%A2%91%E5%85%A8%E5%B1%8F%E6%98%BE%E7%A4%BA%E6%97%B6%E9%97%B4)
+  - 这个脚本的作用只有一个，就是在视频左上角显示一个系统时间，方便全屏看视频期间随时了解时间。
+
+- [中文字体优化](https://greasyfork.org/zh-CN/scripts/399547-%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93%E4%BC%98%E5%8C%96)
+
+- [杀死水印（Kill Watermark）](https://greasyfork.org/zh-CN/scripts/459646-%E6%9D%80%E6%AD%BB%E6%B0%B4%E5%8D%B0-kill-watermark)
+  - 杀死水印（移除烦人的水印，还你一个干净清爽的页面）；已适配360 智脑、腾讯文档、飞书、FreeBuf 网络安全行业门户、稿定设计、爱奇艺播放页（右上角 logo、暂停时的广告）、腾讯课堂播放页漂浮水印、哔哩哔哩直播左上角 logo、CSDN C 知道、腾讯视频播放页（右上角 logo、暂停时的弹窗广告）、优酷视频播放页（右上角 logo、暂停时的弹窗广告）、语雀
 # more-extensions
 - https://github.com/SanderRonde/CustomRightClickMenu
   - A browser extension to add links and run scripts/stylesheets all from your right-click menu

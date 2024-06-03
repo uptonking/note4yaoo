@@ -24,7 +24,14 @@ modified: 2024-05-27T09:12:06.925Z
 
 - ## 
 
-- ## 
+- ## [Difference between stash vs stage files in GIT - Stack Overflow](https://stackoverflow.com/questions/31596869/difference-between-stash-vs-stage-files-in-git)
+- Stash will move your modified files into a stack. So, later in the same or in another branch, you will be able to bring them back and see those modifications in your project.
+  - you stash your files with $git stash
+- Stage is the step before to make a commit, you add modified files to "Staged files" to create your next commit.
+  - you add files (stage) with $git add
+
+- You can not checkout to another branch before commit or stash current changes.
+  - Therefore, if you want to not commit your changes, and also want to checkout to another branch, solution is to stash current changes, checkout to another branch. And after returning to first branch, you can apply stashed changes.
 
 - ## 🆚️ [What's the difference between `'git switch' and 'git checkout' <branch>` ? - Stack Overflow](https://stackoverflow.com/questions/57265785/whats-the-difference-between-git-switch-and-git-checkout-branch)
 - The `switch` command indeed does the same thing as `checkout` , but only for those usages that switch branches. 

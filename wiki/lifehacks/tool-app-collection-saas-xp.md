@@ -397,6 +397,8 @@ sudo systemctl start minidlna
   - 主要支持 `git clone` 场景
   - 本服务已屏蔽 .(zip|rar|7z|apk|ipa|exe|msi|m3u|m3u8|mp4|mp3) 等文件类型的加速，以及部分滥用本服务的仓库内容的加速，详情请查看此页面。
 
+- [Github 文件加速 | 7ED](https://www.7ed.net/gitmirror/hub.html)
+
 - mirrors
   - https://gh.mlsub.net/
 

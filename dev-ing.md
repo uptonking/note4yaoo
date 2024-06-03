@@ -333,6 +333,25 @@ betterdiscordctl -i flatpak install
 
 ## 060
 
+- dev-log
+  - 
+- dev-to
+  - 
+
+## 0603
+
+- dev-log
+  - 优化cde
+- dev-to
+  - mock执行计划的前端数据
+  - 登陆 > 授权仓库 > 导入仓库数据 > 创建thread > 初始化环境
+
+## 0602
+
+- [How to set DOM element as first child? - Stack Overflow](https://stackoverflow.com/questions/2007357/how-to-set-dom-element-as-first-child)
+  - parent.prepend(newChild)  // [newChild, child1, child2]
+  - parent.append(newChild)  // [child1, child2, newChild]
+
 ## 0601
 
 - [unicode - Text encoding in ID3v2.3 tags - Stack Overflow](https://stackoverflow.com/questions/9857727/text-encoding-in-id3v2-3-tags)
@@ -342,10 +361,6 @@ betterdiscordctl -i flatpak install
   - 02 – UTF-16BE encoded Unicode without BOM, in ID3v2.4.
   - 03 – UTF-8 encoded Unicode, in ID3v2.4.
 # dev-05-codemirror-&-cde-&-replay-&-dockview
-- dev-log
-  - 
-- dev-to
-  - 
 
 ## 0531
 

@@ -214,7 +214,7 @@ modified: 2024-05-27T11:39:14.886Z
 - Both are valid use-cases therefore the dock allows you to choose your rendering mode, the default however is the first option since this is the most memory efficient solution.
 - By default `DockviewReact` only adds to the DOM those panels that are visible, if a panel is not the active tab and not shown the contents of the hidden panel will be removed from the DOM.
 
-- The panel instance is only ever destroyed when it is removed from the dock allowing you to still run code associated with the panel when it is not visible. 
+- > The panel instance is only ever destroyed when it is removed from the dock allowing you to still run code associated with the panel when it is not visible. 
   - The renderer only affects what happens to the DOM element.
 
 - Each dock contains groups and each group contains panels. 
