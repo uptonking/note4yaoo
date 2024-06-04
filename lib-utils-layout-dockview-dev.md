@@ -36,7 +36,8 @@ modified: 2024-05-27T11:39:14.886Z
   - 容易实现dock标签页元素的交互效果
   - 💡 dockview最适合的场景是标签页拖拽，不需要拖拽的场景使用简单sidebar即可
     - 容易实现将标签页拖到左中右的位置，左中右位置一般是并列关系
-    - 适合实现将浮动面板的标签拖拽到主区域, 如果不需要刻意不用
+    - 适合实现将浮动面板的标签拖拽到主区域, 如果不需要可不用dockview
+    - splitpanel容易实现拖拽调整宽度
 
 - examples
   - [Dockview demos](https://dockview.dev/demo/)
@@ -199,9 +200,9 @@ modified: 2024-05-27T11:39:14.886Z
   - The panel also has access the group api and the container api.
 - To open a panel requires a unique id and the name of the component to render.
   - To render a custom tab component you should specify the tabComponent.
-- You can position a panel relative to an existing panel, group using direction. 
-  - If you do not provide a reference panel or group then the panel will be positioned to the edge of the dock in the specified direction.
-
+- 💡 You can position a panel relative to an existing panel, group using `direction`. 
+  - If you do not provide a reference panel or group, then the panel will be positioned to the edge of the dock in the specified direction.
+ 
 - You can update a panel through the Panel API.
   - Use this feature sparingly: Anything you assign to the params options of a panel will be saved when calling api.toJSON(). Only use this to store small amounts of static view data. Do not use this to store application state or dynamic panel state.
 

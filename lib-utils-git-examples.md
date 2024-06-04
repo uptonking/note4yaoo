@@ -43,7 +43,11 @@ modified: 2023-08-29T10:12:22.345Z
   - an implementation of git written in Rust
   - for the most part, git operations are heavily reliant on memory mapped IO as well as CPU to decompress data, which doesn't lend itself well to async IO out of the box.
 - https://github.com/chrisdickinson/git-rs
-  - Implementing git in rust for fun and education!
+  - Implementing git in rust for fun and education
+- https://github.com/web3infra-foundation/mega/tree/main/libra /202406/rust
+  - a partial implementation of a Git client, developed using Rust.
+  - Our goal is not to create a 100% replica of Git (for those interested in such a project, please refer to the gitoxide)
+  - A key feature of libra is the replacement of the original Git internal storage architecture with SQLite.
 
 - https://github.com/aergoio/litetree /202003/c/inactive
   - It is a modification of the SQLite engine to support branching, like git!
