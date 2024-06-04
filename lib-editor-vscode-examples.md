@@ -26,7 +26,7 @@ modified: 2023-01-21T18:58:29.846Z
     - 在 Web 环境下，前后端会建立一条 WebSocket 连接
     - 在 Electron 环境下，则会建立一条 Socket 连接进行进程间通信(IPC)
     - 核心功能的代码都是可以在 Web/Electron 端复用的，因为 connection 模块屏蔽了大部分平台、底层通信协之间的差异, connection 模块基于 JSON-RPC 2.0 实现了一个 RPC 框架，将 Web 与 Electron 端通信过程通过 RPC 协议来封装起来
-  - 支持使用 3-way merge editor 新交互来解决代码冲突
+  - 🔀 支持使用 3-way merge editor 新交互来解决代码冲突
   - 提供了ai模块
   - 协同编辑模块目前只支持 Browser + Node 的 Cloud IDE 场景
     - 不支持纯前端与 Electron 平台

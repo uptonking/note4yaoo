@@ -665,9 +665,12 @@ modified: 2020-12-28T12:24:09.275Z
 - https://github.com/krn0x2/microflow
   - Microservice orchestration inspired by AWS Step functions and Apache Airflow
 
-- https://github.com/dataplane-app/dataplane /go
+- https://github.com/dataplane-app/dataplane /BSL/202310/go/js/inactive
+  - https://dataplane.app/
   - an Airflow inspired data platform with additional data mesh capability to automate, schedule and design data pipelines and workflows.
   - Written in Golang and compiled to machine code to achieve extreme performance with a low memory and CPU footprint.
+  - Built in Python code editor.
+  - Drag drop data pipeline builder.
 
 - https://github.com/jitsucom/jitsu /MIT/202401/ts
   - a tool for collecting event data from your websites, apps and stream them to your data warehouse or other services. 

@@ -20,6 +20,22 @@ modified: 2021-09-10T18:35:00.465Z
   - https://github.com/fr3fou/discord-mutual-friends /202404/go/ts
   - In order to start the visualisation, you need to enter your personal Discord token
 
+# discuss-workflow-engine
+- ## 
+
+- ## 
+
+- ## [What are event driven alternatives to Apache Airflow? : r/dataengineering _202209](https://www.reddit.com/r/dataengineering/comments/x9jlqn/what_are_event_driven_alternatives_to_apache/)
+- Exactly how quickly do you need this done? I ask because in my nearly ten years of experience, everyone wants real-time but don't want the costs and batch ends up just fine, even if hourly or even daily.
+
+- Lambda as triggers with glue for processing and just using airflow for orchestration.
+
+- 
+- 
+- 
+- 
+- 
+
 # discuss
 - ## 
 

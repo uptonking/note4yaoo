@@ -329,7 +329,7 @@ betterdiscordctl -i flatpak install
     - 2个编辑器同一页面协同的示例未完成
     - cursor光标位置经常对不上
   - [x] streaming infinite-list/tree
-# dev-06-
+# dev-06-dockview-floating
 
 ## 060
 
@@ -360,7 +360,7 @@ betterdiscordctl -i flatpak install
   - 01 – UCS-2 (UTF-16 encoded Unicode with BOM), in ID3v2.2 and ID3v2.3.
   - 02 – UTF-16BE encoded Unicode without BOM, in ID3v2.4.
   - 03 – UTF-8 encoded Unicode, in ID3v2.4.
-# dev-05-codemirror-&-cde-&-replay-&-dockview
+# dev-05-codemirror-&-cde-&-replay-&-dockview-views
 
 ## 0531
 

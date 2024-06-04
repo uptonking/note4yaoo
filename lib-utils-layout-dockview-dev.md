@@ -47,7 +47,7 @@ modified: 2024-05-27T11:39:14.886Z
   - [iframes | Dockview](https://dockview.dev/docs/advanced/iframe)
   - [Nested Instances | Dockview](https://dockview.dev/docs/advanced/nested)
   - 🌲 文件树的拖拽 [Dnd | Dockview](https://dockview.dev/docs/core/dnd/dragAndDrop)
-  - [External Dnd Events | Dockview](https://dockview.dev/docs/core/dnd/external)
+  - 将外部元素拖到dockview [External Dnd Events | Dockview](https://dockview.dev/docs/core/dnd/external)
 
 - resources
   - https://github.com/search?type=code&q=dockview+path%3Apackage.json%20NOT%20is:fork
@@ -234,6 +234,7 @@ modified: 2024-05-27T11:39:14.886Z
 - Dockview has built-in support for floating groups. 
   - Each floating container can contain a single group with many panels and you can have as many floating containers as needed. 
   - You cannot dock multiple groups together in the same floating container.
+- 🧐 `addFloatingGroup` only accepts existing panels and groups
 
 - Locking a group will disable all drop events for this group ensuring no additional panels can be added to the group through drop events. 
   - You can still add groups to a locked panel programatically using the API though.

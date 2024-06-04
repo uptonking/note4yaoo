@@ -22,6 +22,7 @@ modified: 2024-05-06T02:54:40.374Z
   - 主要业务流程
   - cde
   - 对标的目标产品不清晰
+  - 参考1024code实现聊天对话
 
 - work-xp-pros
   - 产研团队的对齐非常充分
@@ -70,6 +71,8 @@ modified: 2024-05-06T02:54:40.374Z
   - 侧重ai编辑，可以去掉非核心需求
 
 - 给定仓库的url，类似 `/user/repo?task=desc`, 可以访问url查看ai创建pr的过程
+
+- 行级 code-comment
 
 - 
 - 

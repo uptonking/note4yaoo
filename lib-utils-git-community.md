@@ -402,6 +402,19 @@ modified: 2023-08-29T10:13:31.070Z
   - Nope! It has cache structures, etc, that are not thread-safe. The core git code was only designed to run in a single-threaded manner as command line tools, after all.
 
 - [Git: the NoSQL Database - Speaker Deck](https://speakerdeck.com/bkeepers/git-the-nosql-database)
+# discuss-collab/crdt
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Is the git data model a CRDT? If not, would a CRDT make for a "better git"?
+- https://x.com/francesc/status/794647418222448640
+- git objects are immutable and append-only so I believe so.  The main thing that isn't are repo-specific git refs
+  - the commit graph itself is conflict free; it's only if you choose to try to merge the content of the tree you get conflicts
+  - but if you don't (like with tracking refs or `git merge -s ours` ), the storage, replication, etc are all conflict free.
+
 # discuss
 - ## 
 
@@ -610,7 +623,7 @@ modified: 2023-08-29T10:13:31.070Z
   - I like that I'm seeing that Pijul's patch operations are associative, I like at first glance what I'm seeing it say about merges, but it's not making it clear to me what the downsides are.
 - There's no reason you can't cache tree snapshots in a pijul/darcs setting. That's just an implementation detail. The difference is more in how a rebase or merge operation works internally, and how essential the particular history is to the current workplace state.
 
-- Pijul has a number of stated strengths over Git, and looks like the version history is implemented as a CRDT from my first impression. Some of the statements make me wonder how many conflicts occur in real use. If they are equal to or less than the number it produces, great. If more than what Git produces, that's a barrier to adoption, as merge conflicts are one of the biggest pains when using Git.
+- 🆚 Pijul has a number of stated strengths over Git, and looks like the version history is implemented as a CRDT from my first impression. Some of the statements make me wonder how many conflicts occur in real use. If they are equal to or less than the number it produces, great. If more than what Git produces, that's a barrier to adoption, as merge conflicts are one of the biggest pains when using Git.
   - 🐛 Git compatibility is a key missing feature. Git had this with Subversion, and I think it's a big reason why Git won over many of the Subversion crowd.
 
 - I'm watching this (and Jujitsu, Sapling, etc.) with interest, but I wish there was more focus on Git's real weak areas. Yes it sometimes makes merge conflicts more difficult than it could, but you can generally deal with that. 
