@@ -40,19 +40,24 @@ modified: 2024-05-27T11:39:14.886Z
     - splitpanel容易实现拖拽调整宽度
 
 - examples
+  - 经典ide三栏布局 GridviewReact https://github.com/mathuo/dockview/tree/master/packages/docs/sandboxes/editor-gridview
   - [Dockview demos](https://dockview.dev/demo/)
-  - [Floating Groups | Dockview](https://dockview.dev/docs/core/groups/floatingGroups)
-  - 最大化 最小化 [Maximized Groups | Dockview](https://dockview.dev/docs/core/groups/maxmizedGroups)
-  - [Window-like mananger with tabs | Dockview](https://dockview.dev/docs/advanced/)
-  - [iframes | Dockview](https://dockview.dev/docs/advanced/iframe)
-  - [Nested Instances | Dockview](https://dockview.dev/docs/advanced/nested)
-  - 🌲 文件树的拖拽 [Dnd | Dockview](https://dockview.dev/docs/core/dnd/dragAndDrop)
-  - 将外部元素拖到dockview [External Dnd Events | Dockview](https://dockview.dev/docs/core/dnd/external)
+  - [Floating Groups DockviewReact ](https://dockview.dev/docs/core/groups/floatingGroups)
+  - 最大化 ~~最小化~~ [Maximized Groups DockviewReact ](https://dockview.dev/docs/core/groups/maxmizedGroups)
+  - [Window-like mananger with tabs ](https://dockview.dev/docs/advanced/)
+  - [iframes ](https://dockview.dev/docs/advanced/iframe)
+  - [Nested Instances ](https://dockview.dev/docs/advanced/nested)
+  - 🌲 文件树的拖拽 [Dnd ](https://dockview.dev/docs/core/dnd/dragAndDrop)
+  - 将外部元素拖到dockview [External Dnd Events ](https://dockview.dev/docs/core/dnd/external)
+  - [Dockview Framework Wrappers (Vue.js, Angular, JavaScript etc.) ](https://github.com/mathuo/dockview/issues/562)
+  - https://codesandbox.io/u/mathuo
+  - [Search - CodeSandbox](https://codesandbox.io/search?query=dockview&page=1&configure%5BhitsPerPage%5D=12&refinementList%5Bnpm_dependencies.dependency%5D%5B0%5D=dockview)
 
 - resources
   - https://github.com/search?type=code&q=dockview+path%3Apackage.json%20NOT%20is:fork
 # draft
 - tab内容懒加载的最佳实践
+- maximize-panel时，支持占满指定元素的宽高，而不是占满整个Dockview(避免挡住标题栏)
 
 - 未实现将折叠面板中的文件拖拽到编辑区的交互
 
@@ -113,7 +118,7 @@ modified: 2024-05-27T11:39:14.886Z
 # issues-not-yet
 - ## 
 
-- ## 
+- ## [How to set constraints for floating groups? ](https://github.com/mathuo/dockview/discussions/568)
 
 - ## [How can i prevent group from removing after the last panel was closed? ](https://github.com/mathuo/dockview/discussions/587)
 
@@ -126,6 +131,17 @@ modified: 2024-05-27T11:39:14.886Z
   - When adding a new panel to the top/right/bottom/left of a panel in a Dockview component, the available space is evenly distributed between the two panels. This is not always a desirable default.
   - I see that the underlying GridView can handle fixed widths/heights when adding panels.
   - It should be nice if we could define default widths and/or heights for panels. 
+
+- ## [Set exact width in addPanel ](https://github.com/mathuo/dockview/discussions/339)
+
+```JS
+event.api.addPanel({
+  id: 'default',
+  component: 'default'
+}).api.setSize({
+  width: 250
+})·
+```
 
 - ## [Linking the states of nested dock instances ](https://github.com/mathuo/dockview/issues/532)
 - When we dynamically add a panel inside a nested dockview, it cannot save to local storage.
@@ -151,7 +167,12 @@ modified: 2024-05-27T11:39:14.886Z
 
 - ## 
 
-- ## 
+- ## 🪟 [Is it possible to create a "grid" layout programmatically with add panel? ](https://github.com/mathuo/dockview/discussions/420)
+- There are some docs on the `addPanel` method you may find useful here
+  - you can provide a position object which takes a couple of arguments which help position the panel. 
+  - You can position the new panel relative to an existing panel by providing `referencePanel` or an existing group by providing `referenceGroup` . 
+  - You can also provide a `direction` which will be relative to the referencePanel or referenceGroup if provided and if not provided the direction is absolute
+- you could achieve the same layout with many alternative positioning configurations 
 
 - ## 🌰 [Horizontally spanned panel ](https://github.com/mathuo/dockview/discussions/478)
 - you can provide a position object which takes a couple of arguments which help position the panel. You can position the new panel relative to an existing panel by providing referencePanel or an existing group by providing referenceGroup. 
@@ -191,6 +212,8 @@ modified: 2024-05-27T11:39:14.886Z
   - For example `api.location.type` for floating groups should be equal to `floating` . this may not be well documented
 
 # docs
+- v1.10.0 has a few substancial changes around how events are fired and how things are made "active" and focused.
+
 - Dockview was originally a React-only library which is why the React version maintains the name `dockview` after splitting the core logic into a separate package named `dockview-core`.
 
 - dockview-theme-abyss: Based on Visual Studio Code abyss theme
@@ -200,7 +223,7 @@ modified: 2024-05-27T11:39:14.886Z
   - The panel also has access the group api and the container api.
 - To open a panel requires a unique id and the name of the component to render.
   - To render a custom tab component you should specify the tabComponent.
-- 💡 You can position a panel relative to an existing panel, group using `direction`. 
+- 💡 You can position a panel relative to an existing panel, group using `direction`. 会在direction指定的方向添加一个group。
   - If you do not provide a reference panel or group, then the panel will be positioned to the edge of the dock in the specified direction.
  
 - You can update a panel through the Panel API.

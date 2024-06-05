@@ -31,28 +31,28 @@ modified: 2024-05-02T07:48:04.213Z
   - a
 # examples
 
-## [CodeMirror Styling Example](https://codemirror.net/examples/styling/)
+## [Styling Example](https://codemirror.net/examples/styling/)
 
 - CodeMirror uses a CSS-in-JS system to be able to include its styles directly in the script files.
   - both the editor view's own styling and any styling defined for dependencies are automatically pulled in through the JavaScript module system.
   - Themes are simply extensions that tell the editor to mount an additional style module and add the (generated) class name that enables those styles to its outer DOM element.
 
 - The important elements in the editor have regular (non-generated) CSS class names, which can be targeted with manually written style sheets.
--  there are limits to how you can style the editor. Things like making the editor lines `display: inline` or the cursor `position: fixed` will just break stuff. But within reasonable bounds, the library tries to be robust when it comes to styling.
+- there are limits to how you can style the editor. Things like making the editor lines `display: inline` or the cursor `position: fixed` will just break stuff. But within reasonable bounds, the library tries to be robust when it comes to styling.
 - By default, the editor adjusts to the height of its content, but you can make cm-scroller `overflow: auto`, and assign a height or max-height to cm-editor, to make the editor scrollable.
 
-- Code highlighting uses a somewhat different system from editor-wide theming. Code styles are also created with JavaScript and enabled with an editor extension. 
+- 👉 Code highlighting uses a somewhat different system from editor-wide theming. Code styles are also created with JavaScript and enabled with an editor extension. 
   - But by default they don't use stable, non-generated class names. 
   - A highlight style directly returns the class names for the syntactic tokens.
 
 - Without any custom styling, a CodeMirror editor grows vertically, scrolls (rather than wraps) long lines, and doesn't have any border except a focus ring when focused.
 
-- To enable line wrapping, add the EditorView.lineWrapping extension to your configuration. 
+- To enable line wrapping, add the `EditorView.lineWrapping` extension to your configuration. 
   - It is also possible to adjust the white-space style of the content element in some other way, but only `pre` and `pre-wrap` are supported by the library, and wrapping can be unreliable if you don't also set overflow-wrap: anywhere, so it is recommended to just use this extension to enable wrapping.
 
 - Adjusting the vertical behavior of the editor can be done by giving its outer element a height, and setting overflow: auto on the scroller element.
 
-## [CodeMirror Autocompletion Example](https://codemirror.net/examples/autocompletion/)
+## [Autocompletion Example](https://codemirror.net/examples/autocompletion/)
 
 - By default, the plugin will look for completions whenever the user types something, but you can configure it to only run when activated explicitly via a command.
 
@@ -60,7 +60,7 @@ modified: 2024-05-02T07:48:04.213Z
 - 
 - 
 
-## [CodeMirror Tooltip Example](https://codemirror.net/examples/tooltip/)
+## [Tooltip Example](https://codemirror.net/examples/tooltip/)
 
 - The @codemirror/view package provides functionality for displaying tooltips over the editor—widgets floating over the content, aligned to some position in that content.
 
@@ -70,7 +70,7 @@ modified: 2024-05-02T07:48:04.213Z
 - 
 - 
 
-## ⌛️ [CodeMirror Undoable Effects Example](https://codemirror.net/examples/inverted-effect/)
+## ⌛️ [Undoable Effects Example](https://codemirror.net/examples/inverted-effect/)
 
 - By default, the history extension only tracks changes to the document and selection, and undoing will only roll back those, not any other part of the editor state.
 - Sometimes, you do need other actions on that state to be undoable. 
@@ -82,7 +82,7 @@ modified: 2024-05-02T07:48:04.213Z
 - 
 - 
 
-## 🔀 [CodeMirror Collaborative Example](https://codemirror.net/examples/collab/)
+## 🔀 [Collaborative Example](https://codemirror.net/examples/collab/)
 
 - Real-time collaborative editing is a technique where multiple people on different machines can edit the same document at the same time.
   - The main difficulty with this style of editing is handling of conflicting edits—since network communication isn't instantaneous, it is possible for people to make changes at the same time, which have to be reconciled in some way when synchronizing everybody up again.
@@ -98,10 +98,5 @@ modified: 2024-05-02T07:48:04.213Z
 - 
 - 
 
-## [styling](https://codemirror.net/6/examples/styling/)
-
-- CodeMirror uses a CSS-in-JS system to be able to include its styles directly in the script files. 
-  - This means you don't have to include a library CSS file in your page for the editor to work—both the editor view's own styling and any styling defined for dependencies are automatically pulled in through the JavaScript module system.
-- Themes are simply extensions that tell the editor to mount an additional style module and add the (generated) class name that enables those styles to its outer DOM element.
 # more
 - [Revisiting our CodeMirror 6 implementation in React after the official release _202210](https://codiga.io/blog/revisiting-codemirror-6-react-implementation/)

@@ -62,7 +62,7 @@ modified: 2021-06-02T17:13:37.692Z
   - 鼠标相关事件，如拖拽mightDrag
   - focus事件
 
-- ## decoration与NodeView的理解
+- ## 🆚 decoration与NodeView的理解
 - 装饰集是作用于文档内容的，而不是作用于文档模型的。
 - Decoration与编辑器模型/Node/Mark并无直接关系，可以用于高亮文档之类的目的
 

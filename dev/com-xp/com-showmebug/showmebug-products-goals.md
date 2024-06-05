@@ -338,6 +338,8 @@ modified: 2024-05-06T02:52:41.789Z
 
 - [looop.dev](https://looop.dev/)
 
+- [Gru.ai - Hire your first coding guru](https://babelcloud.ai/)
+
 ## products-cn
 
 - 阿里 opensumi-codeblitz, 云凤蝶
@@ -355,6 +357,25 @@ modified: 2024-05-06T02:52:41.789Z
   - tab是否支持pin
 - 多标签
   - 切换标签时，支持恢复滚动位置、lint状态
+- chat
+  - 是否支持允许代码片段
+
+## v20240605-pm-cde-states
+
+- 时光机的live模式需要持久化，方便刷新页面
+
+- 时光机的进度条显示隐藏由用户手动控制，与ai工作状态无关
+
+- ai修改时，默认显示diff视图动态修改
+
+- 只能通过暂停按钮来暂停plan，不能单独暂停step/action
+
+- pr的描述第一句是 `fix issue #number`，这样github平台在pr合并后会自动关闭issue
+
+- 
+- 
+- 
+- 
 
 ## v20240604-events-storm-cde-time-machine
 

@@ -21,6 +21,7 @@ modified: 2022-06-03T21:34:54.893Z
   - 参考github，实现 repo + issues-forum + gitter-im + proj-mgmt + pr + cicd
   - npm的优点，支持各版本的文档分别显示
   - 用代码搜索的思路来实现知识库的搜索
+  - 代码的ast和block编辑器的ast处理方式类似，代码symbol跳转和双链类似
 
 - resources
   - search: knowledge-base/workspace/wiki/Personal Information Manager (PIM)

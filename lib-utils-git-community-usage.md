@@ -22,7 +22,30 @@ modified: 2024-05-27T09:12:06.925Z
 
 - ## 
 
-- ## 
+- ## [git pull on a different branch - Stack Overflow](https://stackoverflow.com/questions/34344034/git-pull-on-a-different-branch)
+- If I'm working on a branch and then realize I need to merge another branch into mine here is my current workflow
+
+```sh
+git stash
+git checkout master
+git pull
+git checkout my-branch
+git merge master
+git stash pop
+```
+
+```sh
+# you want to pull in changes from branch1 to branch2
+git checkout branch2
+git pull origin branch1
+# git rebase master
+
+# git fetch <remote> <src>:<dst>
+git fetch origin master:master
+git merge master
+```
+
+- [Pull another Git branch without switching - Super User](https://superuser.com/questions/163033/pull-another-git-branch-without-switching)
 
 - ## [Difference between stash vs stage files in GIT - Stack Overflow](https://stackoverflow.com/questions/31596869/difference-between-stash-vs-stage-files-in-git)
 - Stash will move your modified files into a stack. So, later in the same or in another branch, you will be able to bring them back and see those modifications in your project.

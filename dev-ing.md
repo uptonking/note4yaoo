@@ -338,6 +338,13 @@ betterdiscordctl -i flatpak install
 - dev-to
   - 
 
+## 0605
+
+- dev-log
+  - 事件风暴 制定计划、时光机
+- dev-to
+  - 调整cde的交互
+
 ## 0603
 
 - dev-log

@@ -258,7 +258,9 @@ modified: 2023-01-29T10:52:44.183Z
 
 - ## 
 
-- ## 
+- ## 💡 [Nested editors, kind of. - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/nested-editors-kind-of/4654)
+- This should be possible (if somewhat messy) using a technique similar to the split view example. 
+  - But you’ll have to offset your change sets by the current position of the sub-document when forwarding them between the cell editors and the main editor (which should be possible by iterating over them with iterChanges and building up a new changeset with the same insertions but offset position).
 
 - ## 🆚️ [Implementing WYSIWYG Markdown editor in CodeMirror - discuss. CodeMirror _202005](https://discuss.codemirror.net/t/implementing-wysiwyg-markdown-editor-in-codemirror/2403)
 - Do you think using ProseMirror would be better than hacking CodeMirror to accomplish the same thing?

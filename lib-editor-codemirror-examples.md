@@ -14,6 +14,7 @@ modified: 2023-06-23T12:46:53.288Z
 - examples
   - 类似打字机动态输出文字, 多用于ai生成代码/文本
   - (diff)字符渐变的动画效果, 🤔 和时间旅行的回放过程有何区别
+    - diff只需初始结束状态, 而时间旅行支持中间状态
 
 - fans-codemirror
   - https://github.com/uiwjs/react-codemirror /国内
