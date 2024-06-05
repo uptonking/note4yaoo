@@ -21,10 +21,19 @@ modified: 2021-05-14T14:46:37.026Z
   - Support for real-time collaboration (using Yjs)
   - Runs on top of Matrix using Matrix-CRDT.
 
-- Data-Forge Notebook
-- https://www.data-forge-notebook.com/#/
+- Data-Forge Notebook /MIT/202401/ts
+  - https://github.com/data-forge-notebook/data-forge-notebook
+  - https://www.data-forge-notebook.com/
   - https://data-forge-notebook.github.io/visualization-examples/
+  - a cross-platform notebook application for JavaScript and TypeScript
   - 作者 Ashley Davis，专注于数据处理与可视化
+  - [Release history](https://github.com/data-forge-notebook/data-forge-notebook/wiki/Release-history)
+    - v2.0.0_202401
+      - now fully open source
+      - Markdown cells
+      - Multi-window application
+      - Plugin-based visualization systems: HTML/text, ApexCharts, Leaflet
+      - Notebooks are now stored in markdown files for easy of reading (without DFN) and merging code changes.
 - https://github.com/data-forge/data-forge-ts
   - http://www.data-forge-js.com/
   - /988Star/MIT/202102/ts

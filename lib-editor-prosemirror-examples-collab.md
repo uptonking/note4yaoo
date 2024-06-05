@@ -41,11 +41,12 @@ modified: 2022-10-04T23:32:30.824Z
 - https://github.com/TeemuKoivisto/prosemirror-react-typescript-example/tree/master/packages/api-collab
   - an example collaboration server based on prosemirror-collab
 # collab-examples
-- https://github.com/stepwisehq/prosemirror-collab-commit /MIT/202308/ts
-  - Commit-based collaborative editing plugin for ProseMirror.
+- https://github.com/stepwisehq/prosemirror-collab-commit /MIT/202307/ts/inactive
+  - 💡 Commit-based collaborative editing plugin for ProseMirror.
   - This solves two key problems with `prosemirror-collab` through server-side rebasing without the use of CRDTs:
     - Throughput: 200 active clients per 1s of commit delay is feasible depending on backend implementation and edit characteristics.
     - Fairness: Users with high latencies will not have their edits blocked by users with low latencies. This will greatly smooth the collab experience on documents with high levels of concurrent edits.
+  - [ProseMirror Collab Performance | Blog _202307](https://stepwisehq.com/blog/2023-07-25-prosemirror-collab-performance/)
 
 - https://github.com/TeemuKoivisto/prosemirror-track-changes-example
   - https://teemukoivisto.github.io/prosemirror-track-changes-example/
@@ -151,6 +152,10 @@ modified: 2022-10-04T23:32:30.824Z
   - https://github.com/FleekHQ/crdt-text-editor
   - A p2p decentralized text-editor based on CRDTs
   - 依赖y-prosemirror、lit-html
+
+- https://github.com/mweidner037/list-positions-demos/tree/master/websocket-prosemirror-log /MIT/202404/ts
+  - A basic collaborative rich-text editor using list-positions, a WebSocket server, and ProseMirror. 
+  - It supports arbitrary schemas and works similarly to ProseMirror's built-in collaboration system, using a server-authoritative log of changes.
 
 - https://github.com/pamphlets/editorial
   - https://github.com/pamphlets/pamphlet /pm-editor

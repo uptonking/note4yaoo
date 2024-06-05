@@ -15,6 +15,20 @@ modified: 2021-05-13T16:08:15.067Z
   - https://starboard.gg/
   - In-browser literal notebook runtime used in Starboard.
 
+- Data-Forge Notebook /MIT/202401/ts
+  - https://github.com/data-forge-notebook/data-forge-notebook
+  - https://www.data-forge-notebook.com/
+  - https://data-forge-notebook.github.io/visualization-examples/
+  - a cross-platform notebook application for JavaScript and TypeScript
+  - 作者 Ashley Davis，专注于数据处理与可视化
+  - [Release history](https://github.com/data-forge-notebook/data-forge-notebook/wiki/Release-history)
+    - v2.0.0_202401
+      - now fully open source
+      - Markdown cells
+      - Multi-window application
+      - Plugin-based visualization systems: HTML/text, ApexCharts, Leaflet
+      - Notebooks are now stored in markdown files for easy of reading (without DFN) and merging code changes.
+
 - https://github.com/ottomatica/docable-notebooks
   - https://docable.cloud/ottomatica/docable-examples/script.md
   - /286Star/Apache2/202105/js
@@ -45,6 +59,14 @@ modified: 2021-05-13T16:08:15.067Z
 - https://github.com/purocean/yn
   - 一款面向程序员的 Markdown 笔记应用。
   - 支持加密文档，代码片段运行，内置终端，图表嵌入，HTML 小工具。
+
+- https://github.com/jaked/programmable-matter /202112/ts
+  - A dynamic data-driven document development environment (DDDDDE)
+  - Did you ever wish your document editor were more like an IDE? Your IDE more like a spreadsheet? Your spreadsheet more like a database? No?
+  - Programmable Matter is a "document development environment": a rich text document editor that supports embedded code. You can use code to assemble documents from components, generate documents from structured data, and even build simple UIs.
+  - Like an IDE, it provides live feedback about your code (syntax highlighting, error reporting, code suggestions) and navigation of the document and code structure.
+  - Like a spreadsheet, it provides live update of results as you make changes to documents, data, and code; and in the presence of code errors, the correct parts still run.
+  - Like a database, it provides means of defining structured data tables and working with them through a uniform interface.
 
 - [interactive notebooks](https://nteract.io/)
   - We build SDKs, applications, and libraries that help you and your team make the most of interactive (particularly Jupyter) notebooks and REPLs.

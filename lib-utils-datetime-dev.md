@@ -15,13 +15,33 @@ modified: 2023-10-13T16:44:29.825Z
 
 - ## 
 
-- ## I'm in the middle of replacing date-fns with temporal-polyfill.
-- https://twitter.com/evoluhq/status/1749545877545378011
+- ## 
+
+- ## [What is your favorite date and time format in a file name? - Stack Overflow](https://stackoverflow.com/questions/1248747/what-is-your-favorite-date-and-time-format-in-a-file-name)
+- Double dashes to separate the pieces, making each piece easy to see
+
+- ## [Which Date-Time formats do humans prefer to read? - User Experience Stack Exchange](https://ux.stackexchange.com/questions/56646/which-date-time-formats-do-humans-prefer-to-read)
+- This is about UX and the best UX is to let the user choose the one they are most familiar and comfortable with.
+
+# discuss-date-ux
+- ## 
+
+- ## 
+
+- ## 
 
 - ## 🌰 Just built a mini video generator and shipped it to Vercel in less than 100 minutes!
 - https://twitter.com/JNYBGR/status/1715035990446723101
   - github日历热力图的动画
 - That’s a simple square div with background. Nothing fancy
+
+# discuss-date-utils
+- ## 
+
+- ## 
+
+- ## I'm in the middle of replacing date-fns with temporal-polyfill.
+- https://twitter.com/evoluhq/status/1749545877545378011
 
 - ## No need for `moment` or `date-fns` .
 - https://twitter.com/cpojer/status/1712697130589344192

@@ -116,6 +116,15 @@ modified: 2023-08-29T10:12:22.345Z
 - https://github.com/facebook/sapling /rust
   - Sapling SCM is a cross-platform, highly scalable, Git-compatible source control system.
 
+- https://github.com/web3infra-foundation/mega /apache2/202406/rust
+  - https://gitmega.dev/
+  - Mega is an unofficial open source implementation of Google Piper.
+  - It is a monorepo & monolithic codebase management system that supports Git. 
+  - Mega is designed to manage large-scale codebases, streamline development, and foster collaboration.
+  - Google Piper is not open source
+  - When it comes to managing large codebases in a centralized manner, trunk-based development is the way to go. 
+  - Mega is working on build a decentralized open source collaboration model with ZTM(Zero Trust Model) and decentralized social network like Nostr, Matrix and Mastodon.
+
 - https://github.com/drhsqlite/fossil-mirror /c
   - https://fossil-scm.org/home/dir?ci=trunk&type=tree
   - https://fossil-scm.org/

@@ -67,12 +67,16 @@ modified: 2023-09-02T09:17:22.992Z
   - 基于 TypeScript 编写的 JavaScript 解释器，支持完整 ES5 语法
   - 支持浏览器、node.js、小程序等 JavaScript 运行环境
 
-- https://github.com/sablejs/sablejs /js
+- https://github.com/sablejs/sablejs /LGPL/202209/js/inactive
   - The safer and faster ECMA5.1 interpreter written by JavaScript
   - covered ~95% test262 es5-tests cases
   - it can be used:
     - Sandbox (like Figma Plugin Sandbox, but better and easier to use);
     - Protect JavaScript source code via AOT compiling to opcode.
+  - [plan to charge or be free? _202011](https://github.com/sablejs/sablejs/issues/1)
+    - 类似tinypng，分为免费/会员收费，免费有上传次数限制和代码大小限制，会员没有此类限制。
+    - 编译器闭源，解释器混淆后公开，客户端本地执行编译
+    - 协议有调整
 
 - https://github.com/NeilFraser/JS-Interpreter /js
   - https://neil.fraser.name/software/JS-Interpreter/
@@ -379,6 +383,9 @@ modified: 2023-09-02T09:17:22.992Z
   - Javascript Interpreter implemented by typescript（TS实现的JS解释器）
   - https://github.com/ximing/jsvm3 /202402/ts
     - 自定义字节码的jsvm
+  - https://x.com/XGHeaven/status/1797982601569058816
+    - 笑死了，原本想看看自己的 jsvm 性能好不好，一开始发现跑不起来，辛辛苦苦补了一堆缺失的 API 后跑起来了（才发现连 while 都没支持），终于跑起来了。
+    - 结果，只能到 sablejs 的 10%，我就知道，一开始没把性能作为主要目标是对的。
 # wasm-based
 - https://github.com/ktock/container2wasm /apache2/202405/cpp
   - https://ktock.github.io/container2wasm-demo/

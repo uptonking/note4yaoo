@@ -586,6 +586,14 @@ modified: 2023-08-29T10:13:31.070Z
 # discuss-git-alternatives 🆚️
 - ## 
 
+- ## 
+
+- ## 要想实现 Google 代码管理方案，目前开源解决方案只有 Meta 的 Sapling ，但是对 Git 兼容不太好；
+- https://x.com/genedna/status/1797927349624901967
+  - 我在做一个 Git 兼容开源方案 Mega， 实现确实很复杂，但是慢慢能看到雏形，争取今年能 Release 一个版本。 
+- FYI：我们正在给 Sapling 加 .git 的支持，这样用户可以既可以用 sl 命令也可以用 git 命令
+  - Mega is an unofficial open source implementation of Google Piper.
+
 - ## [为什么很多大企业都在用收费的perforce而不是免费的svn或者git？ - 知乎](https://www.zhihu.com/question/23930380)
 - 主要还是SVN和GIT都对二进制文件支持很差. GITHUB还特别针对大型文件做了GIT-LFS插件用来支持这种超大文件.
   - 而大型研发公司. 特别是做3D软件的. 分分钟容量爆棚

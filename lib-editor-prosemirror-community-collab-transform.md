@@ -13,7 +13,37 @@ modified: 2022-10-22T18:47:16.228Z
   - https://atlaskit.atlassian.com/examples/editor/editor-core/collab
   - https://github.com/jure/pubsweet-blogger/tree/master/server/component-atlaskit-collab
   - [How to implement real time collaboration in atlaskit editor? 参考 yjs-atlaskit](https://stackoverflow.com/questions/59622112)
-# discuss-collab-transform-operation
+# discuss-collab-crdt
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [CRDT-inspired adaptation of prosemirror-collab _202404](https://discuss.prosemirror.net/t/crdt-inspired-adaptation-of-prosemirror-collab/6383)
+  - I’ve been working on a “CRDT-inspired” adaptation of prosemirror-collab, which you can find here, with the interesting code in prosemirror_wrapper.ts. It is just a prototype for now, but I wanted to share it and would be happy to hear any feedback.
+  - The architecture is almost the same as `prosemirror-collab` , with a central server that totally orders all changes to the document. 
+  - The difference is in how it rebases on top of concurrent changes: instead of mapping ProseMirror positions through the concurrent changes (OT-style), it annotates the original steps with immutable IDs (CRDT-style), then looks up where those IDs belong in the current document. The IDs (confusingly also called “Positions”) come from my list-positions library.
+  - Relative to prosemirror-collab, this eliminates the need for clients to resubmit changes to the server: the server can append changes to the log as-is, and the IDs will still “make sense”, even if there were intervening concurrent changes.
+  - Relative to y-prosemirror, the server’s authoritative log makes it easy to reject/modify changes on the server. Additionally, clients always apply remote changes using native ProseMirror steps, which can be useful for plugins/decorations (cf y-prosemirror issue 113).
+  - I also found implementing this a lot easier than trying to figure out a “ProseMirror CRDT” that somehow makes all concurrent updates commute.
+- In experiments on a predecessor of list-positions (Collabs), we were able to shove 100+ active users into a rich-text document without overwhelming a simple NodeJS server running on an AWS t2.medium. The main bottleneck was client-side Quill rendering; I ought to try again with list-positions + ProseMirror and see what happens.
+
+
+
+- Interesting approach. I guess the server keeps some kind of map that stores these IDs for every ProseMirror-style document position?
+  - Yes, the server and clients each store a tree describing the order on IDs, plus an “Outline” describing which IDs are currently present in the ProseMirror document.
+  - For compactness, the tree groups sequential insertions by the same user into “bunches” of IDs, which are internally represented with a single object (instead of one object per ID). 
+
+- I’d be curious to hear about your experience with prosemirror-collab-commit 4, since it nominally addresses the same question - how to avoid client-side op resubmission while still working with native ProseMirror steps. Are there particular challenges you ran into while implementing it, or additional problems that it solves?
+  - I have also created a fully featured(edit history, spashots, branches, etc) backend based on YJS and have heavily customized the official ProseMirror bindings. This experience led me to believe that, for my requirements, CRDTs added an extra unneeded layer of complexity and abstraction.
+
+- I’ve come to a half-way conclusion that if you’re doing anything more complicated than read-write for documents and need to customize the sync server either way CRDTs are perhaps a bit too much. Only problem with collab has been perf with many users but if these implementations fix them, I am intrigued to try them out.
+  - So these IDs are client-generated for each step? One particular problem with ProseMirror docs is the lack of global IDs for nodes which many resolve to add manually for linking purposes and just to prevent constant remapping & iterating of the doc. This in theory maps nicely with CRDTs as the blocks have unique IDs but afaik they are not used at least by default libraries. But it’d be nice if this was easily achievable since IDs are so commonly used.
+  - One benefit of CRDTs is the added bonus of optimized implementations which probably are an order of magnitude faster than any NodeJS server can do. But in scale most people operate, it’s cheaper to just buy a bigger server.
+
+
+# discuss-collab-ot
 - ## 
 
 - ## 

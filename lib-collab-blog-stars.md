@@ -31,6 +31,7 @@ modified: 2022-04-05T10:10:22.091Z
 # 🔀🌵 [GitHub Next | Realtime GitHub - Multiplayer collaboration for your whole repo](https://githubnext.com/projects/rtgh/)
 - At GitHub Next we’ve been exploring this question for some time: 
   - In the Collaborative Workspaces concept design, we imagined cloud workspaces that integrate different modes of development (ideation, design, coding, etc.) into a single interface, and provide realtime multiplayer collaboration in all these modes. 
+  - [GitHub Next | Collaborative Workspaces](https://githubnext.com/projects/workspaces/)
   - And in the GitHub Blocks prototype, we made the GitHub repository page customizable, with interactive blocks to tailor it to your team’s development process.
 
 - With Realtime GitHub, you can share a link (“meet me in this branch!”) and instantly edit repository files together with your team. 
@@ -40,7 +41,7 @@ modified: 2022-04-05T10:10:22.091Z
   - So we’ve focused so far on workflows involving editing rich-text documents: taking meeting notes, drafting site copy, writing design documents, and so on.
 - Realtime GitHub provides a rich-text editor like Google Docs, built on the excellent ProseMirror and Tiptap projects. 
   - Documents are stored as JSON files in your project's GitHub repo—so they can be edited on a branch and included in PRs, searched along with other files, backed up, or used in other ways.
-- Realtime GitHub is collaborative like Google Docs, providing realtime multiplayer editing, cursor and selection presence, and threaded comments (with emoji reactions, a critical feature 😻!)
+- Realtime GitHub is collaborative like Google Docs, providing realtime multiplayer editing, cursor and selection presence, and threaded comments (with emoji reactions, a critical feature!)
   - But it also supports GitHub-style async collaboration: a branch in your repository becomes a distinct "room" for multiplayer collaboration; you can work privately or with others, and merge it back to the main branch when you're ready.
 
 - There are many approaches to collaborative editing, of which CRDTs are perhaps the best known, with well-engineered implementations like Yjs and Automerge available off the shelf. 
@@ -114,7 +115,7 @@ modified: 2022-04-05T10:10:22.091Z
   - We had a lot of trouble until we settled on a principle to help guide us: if you undo a lot, copy something, and redo back to the present (a common operation), the document should not change. 
   - This is why in Figma an undo operation modifies redo history at the time of the undo, and likewise a redo operation modifies undo history at the time of the redo.
 
-## 🧮 [Realtime Editing of Ordered Sequences | Figma Blog _201703](https://www.figma.com/blog/realtime-editing-of-ordered-sequences/)
+## [figma: Realtime Editing of Ordered Sequences | Figma Blog _201703](https://www.figma.com/blog/realtime-editing-of-ordered-sequences/)
 
 - Instead of OT, Figma uses a trick that’s often used to implement reordering on top of a database. 
   - Every object has a real number as an index and the order of the children for an element of the tree is determined by sorting all children by their index.
@@ -136,7 +137,7 @@ modified: 2022-04-05T10:10:22.091Z
 - We’ve been using fractional indexing for multiplayer editing in Figma from the beginning and it’s worked out really well for us. 
   - Even though OT provides some additional benefits around performance and interleaving, it’s much more beneficial for the Figma platform to use simple algorithms that are easy to understand and implement than to use the most advanced algorithms out there. 
   - It means more people can work on Figma, the implementation is more stable, and we can develop and ship features faster.
-# [figma: LiveGraph: real-time data fetching at Figma | Figma Blog_202110](https://www.figma.com/blog/livegraph-real-time-data-fetching-at-figma/)
+# 🌰 [figma: LiveGraph: real-time data fetching at Figma | Figma Blog_202110](https://www.figma.com/blog/livegraph-real-time-data-fetching-at-figma/)
 - how do we empower our product engineers to build these real-time views easily, while abstracting away the complexity of pushing data back and forth?
   - 👉🏻 To provide a general solution to this fundamental business need, we developed LiveGraph, **a data fetching layer on top of Postgres that allows our frontend code to request real-time data subscriptions expressed with GraphQL**. 
   - It issues queries directly to the database and provides live updates in the order of(~of/in the order of sth, 大约、数量级) milliseconds by reading the database replication stream.
@@ -180,9 +181,47 @@ modified: 2022-04-05T10:10:22.091Z
 - A correct OT transform, yes. But I'm not using OT's invariants, so this is not something my transforms do. For example, in my system, if you have "insert X at pos 5" and "insert Y at pos 5", the document will contain "XY" or "YX", depending on which arrived first.
 
 - A minimal backend can be extremely simple, just relaying changes, but if you want it to keep a running snapshot of the current document, you'll need the capacity to apply those changes to document, so you'd need to use the module used by the client, or a port of that.
-# blogs-ot-crdt
+# blogs-ot-crdt 🔀🆚️
 
-## [tinymce: To OT or CRDT, that is the question_202001](https://www.tiny.cloud/blog/real-time-collaboration-ot-vs-crdt/)
+## 🆚️ [Architectures for Central Server Collaboration - Matthew Weidner _202406](https://mattweidner.com/2024/06/04/server-architectures.html)
+
+- 提供了对比表格
+
+- This blog post records some thoughts on how to architect a real-time collaborative app when you do have a central server.
+
+- Here are three common solutions to the server-side rebasing challenge.
+- Serialization
+  - I call this approach “Serialization” by analogy with SQL’s serializable isolation level.
+  - The server rejects Bob’s operation. His client must download the new state S + A and then retry with an updated operation B'.
+  - The ProseMirror rich-text editor’s built-in collaborative editing system rejects operations like B. Upon learning of this rejection, Bob’s client will compute a rebased operation B' that “does the same thing” to the new document state, using ProseMirror’s built-in rebasing function, then submit B' to the server.
+  - In git, if you git push to a remote branch that has more commits (= operations) than your local branch, the remote branch will reject your push. You can then use git pull --rebase && git push to download the new state, rebase your local commits, and retry. Note that unlike in most real-time collaborative apps, this might require human input.
+  - Note that serialization does not actually solve the rebasing problem; it just defers it to clients, who must rebase the operations themselves. Also, in apps with many active users, frequent rejections can lead to performance issues and even lock out users—see StepWise’s ProseMirror blog post.
+- CRDT-ish
+  - Operations are designed to “make sense” as-is, even when applied to a slightly newer state. 
+  - I call this approach “CRDT-ish” because CRDTs also use operations that can be applied as-is to newer states. Thus studying CRDT techniques can help you design operations that “make sense” like in the examples above.
+  - Note that you don’t need to use literal CRDTs, which are often overkill in a central server app. In particular, your operations don’t need to satisfy CRDTs’ strict algebraic requirements (commutativity / lattice axioms). Whether operations “make sense” in new states is instead a fuzzy, app-specific question: it depends on your app’s business logic and what users expect to happen, and it’s okay to be imperfect.
+  - I personally find designing CRDT-ish operations a lot of fun, though it can require a special way of thinking. From the server’s perspective, it just needs to apply operations to its state in serial order, which is dead simple.
+  - Performance-wise, literal CRDTs were historically criticized for storing lots of metadata. This is less of a problem with modern implementations, and the central server can help if needed.
+- OT-ish
+  - the server transforms B against A, computing a new operation B' that is actually applied to the state. More generally, the server applies a transformation function T to each intervening concurrent operation in order
+  - I call this approach “OT-ish” because Operational Transformation (OT) systems also transform each operation against intervening concurrent operations. As in the previous section, literal OT algorithms are probably overkill. In particular, your transformation function doesn’t need to satisfy OT’s strict algebraic requirements (the Transformation Properties).
+  - OT-ish systems are well established in practice. In particular, Google Docs is a literal OT system. However, most published info about OT focuses on text editing, which is difficult but only a small part of many apps.
+  - Performance-wise, OT-ish systems can struggle in the face of many simultaneous active users: the server ends up doing O(# active users) transformations per operation, hence O((# active users)^2) transformations per second. Also, the server needs to store a log of past operations for transformations, not just the current state. You can garbage collect this log, but then you lose the ability to process delayed operations (e.g., users’ offline edits).
+
+- There is one case where server-side rebasing is especially tricky, no matter which of the three above solutions you use: editing text and lists. (Extensions to text, like rich text and wiki pages, are likewise hard.)
+  - This “index rebasing” challenge is best known for real-time collaborative apps like Google Docs, but technically, it can also affect non-real-time apps—e.g., a web form that inserts items into a list. The problem can even appear in single-threaded local apps, which need to transform text/list indices for features like annotations and edit histories.
+- Solutions to the index-rebasing problem fall into two camps:
+  - Immutable Positions (CRDT-ish). Assign each character / list element an immutable ID that is ordered and moves around together with the character. I call these positions.
+    - Fractional indexing is a simple example: assign each character a real number like 0.5, 0.75, 0.8, …; to insert a character between those at 0.5 and 0.75, use an operation like “add character 'x' at position 0.625”, which will end up in the right place even if the array index changes. Text/list CRDTs implement advanced versions of fractional indexing that avoid its main issues.
+  - Index Transformations (OT-ish). Directly transform index 17 to 22 in situations like Figure 2, by noticing that a concurrent operation inserted 5 characters in front of it. This is normal OT-ish server-side rebasing, but it is hard because there are a lot of edge cases—e.g., how do you transform an insert operation against a delete operation at the same index?
+- Typically, solutions to the index-rebasing problem are implemented as literal CRDT/OT algorithms inside of a full-stack CRDT/OT collaboration system. This can be quite restrictive, if you need the algorithms for text editing but otherwise want to make your own collaboration system (for custom server-side business logic, more control over the network and storage subsystems, etc.).
+- To alleviate these restrictions, I’m interested in tools that solve the index-rebasing problem using local data structures, independent of a specific collaboration system:
+  - For CRDT-ish systems, I created the list-positions library.
+  - For OT-ish systems, ProseMirror’s built-in rebasing function is a good example. ProseMirror’s author provides some perspective on why literal OT is overkill here.
+
+- To incorporate optimistic local updates into our earlier abstract model, let us assume that each client has access to a reducer function à la Redux.
+
+## 🆚️ [tinymce: To OT or CRDT, that is the question_202001](https://www.tiny.cloud/blog/real-time-collaboration-ot-vs-crdt/)
 
 - At a very high level, this is what we're dealing with:
   - OT relies on an active server connection (not quite correct but we'll get to that in a moment) to coordinate and guarantee all clients operate correctly.
@@ -233,7 +272,7 @@ modified: 2022-04-05T10:10:22.091Z
   - Collaboration control (transforms, cursors, server interaction)
   - Hooks in the TinyMCE core to relinquish control of ContentEditable and redirect all model APIs to the external RTC code
 
-## [ckeditor5: Lessons learned from creating a rich-text editor with real-time collaboration_201802](https://ckeditor.com/blog/Lessons-learned-from-creating-a-rich-text-editor-with-real-time-collaboration/)
+## 🆚️ [ckeditor5: Lessons learned from creating a rich-text editor with real-time collaboration_201802](https://ckeditor.com/blog/Lessons-learned-from-creating-a-rich-text-editor-with-real-time-collaboration/)
 
 - Our take on Operational Transformation
   - CKEditor 5 uses OT to make sure it is able to resolve conflicts. 
