@@ -14,7 +14,35 @@ modified: 2023-04-25T17:48:06.146Z
 
 - ## 
 
-- ## 
+- ## I don't understand why people prefer to store log lines as text vs structured data. 
+- https://x.com/matteocollina/status/1798385291016737264
+  - The latter is easier to post-process, search, filter, etc. Why would you not do it?
+- Easier for tools to do those things, harder for humans to do so. Many projects are single individuals with a small number of users. Setting up tooling for logging is overkill and time not spent implementing features. Plain text is fine for such environments.
+- Scraping text is so inbuilt into Linux/Unix mindset that people don't even realise it's scraping.
+- Because any sizeable infra will have logs centralized and that is their already solved problem.
+- force of habit
+
+- Because the number of times I had to go through the logs for anything but exceptions/error is zero
+- Depends on if/how often you need to search, filter, etc. A lot of logs are never read and just get deleted after a period of time.
+
+- Unstructured (aka classic) log files, although less sophisticated, require less specific tooling, are well known and documented, and present sometimes fewer caveats (e.g. structured log drain(下水管；下水道) incompatibilities between a source and a remote sink are more likely).
+
+- structured data take more storage than text based, search/filter is not something we do frequently so we let cpu/disk handle that load couple of times/day
+
+- What do you consider to be structured data? I feel like it’s pretty common to do something in-between, e.g. storing logs as “structured data” in a format like JSONL, which I would also consider to be storing log lines as text.
+
+- I use debug flags to log it as a readable text line in local development and JSON structure in production.
+
+- Requires a structure and logging is often used for debugging, so it changes often. Updating the structure is harder than simply adding a log statement.
+- Cost of storage, is that not obvious?
+
+- Text files are much easier for quick consumption in a text editor. It doesn't preclude injesting into a DB but writing a sql statement is much less convenient that doing a find in a text editor.
+
+- 
+- 
+- 
+- 
+- 
 
 - ## Tried to explain why OpenTelemetry format for metrics is bloated and over-engineered, and why Prometheus remote_write format is better 
 - https://twitter.com/valyala/status/1779061261524775371

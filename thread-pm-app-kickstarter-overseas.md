@@ -12,7 +12,14 @@ modified: 2023-03-31T16:22:00.794Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 2023: Shein and Temu become the world's #1 and #2 clothing retailers
+- https://x.com/levelsio/status/1792156378783453430
+  - 2024: US now discussing ban of Shein and Temu
+- There are interesting parallels to Japan in the 80s. In some sense Japan won manufacturing wise in cars. We just forced the. To build plants in the US with tariffs. Other companies is like consumer tech just lost over time like Sony. Not sure of the lessons but am curious to dig in more.
+  - Japan failed mostly due to the Plaza Accord making Japan overnight way more expensive and US cheaper
+- The key difference is that the CPC expelled all foreign military from mainland China in 1949
+
+- This is the age of deglobalization.
 
 - ## 都说纽约是科创圈FinTech之城，我之前还没有什么感知。
 - https://twitter.com/0xthefool/status/1772865660097294553

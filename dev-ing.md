@@ -63,7 +63,7 @@ DEBUG=* npm i --legacy-peer-deps --no-audit --loglevel silly
 
 $$('[contenteditable]')
 
-flatpak run com.discordapp.Discord --proxy-server="socks5://127.0.0.1:1080"
+flatpak run com.discordapp.Discord --proxy-server="socks5://127.0.0.1:7897"
 betterdiscordctl -i flatpak install
 ```
 

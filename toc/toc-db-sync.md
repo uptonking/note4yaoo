@@ -309,6 +309,13 @@ modified: 2022-11-25T15:41:47.534Z
   - An operation-log based approach for data replication.
   - implement concurrent and replicated versions of (single-threaded) data structures by combining ap set of different concurrency techniques: flat combining, operation logging, readers-writer locks, and partitioning.
 # partial-sync/replication
+- https://github.com/powersync-ja/powersync-service /FSL/202406/ts
+  - https://www.powersync.com/
+  - The backend PowerSync Service responsible for data replication.
+  - PowerSync is a Postgres-SQLite sync layer, which helps developers to create local-first real-time reactive apps that work seamlessly both online and offline.
+  - https://github.com/powersync-ja/powersync-js /apache2/202406/ts
+    - SDK that enables local-first and real-time reactive apps with embedded SQLite for JavaScript clients, including React Native and Web
+
 - https://github.com/pietgeursen/bamboo-rs /202108/rust
   - Rust implementation of bamboo
   - bamboo-rs aspires to be portable, fast and correct.

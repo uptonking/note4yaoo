@@ -9,6 +9,9 @@ modified: 2024-02-12T03:22:45.261Z
 
 # guide
 
+- license
+  - [PowerSync Licensing](https://www.powersync.com/legal/overview)
+  - [PowerSync Pricing for open/enterprise edition](https://www.powersync.com/pricing)
 # dev
 
 # examples

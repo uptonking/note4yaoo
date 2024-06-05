@@ -163,9 +163,18 @@ modified: 2023-03-13T08:05:09.453Z
 
 - ## 
 
-- ## 
+- ## For the last couple months, our team has been working hard on a few paradigm-changing features for HTML Canvas.
+- https://x.com/JungleSilicon/status/1798424695068569766
+  - One of them is the ability to have HTML elements in a canvas.
+  - Here's a ThreeJS demo with a live HTML texture.
 
-- ## 简单看了下公司内的渲染引擎还不少，不说 lynx，单论 js 实现的 web canvas 渲染器，就有三个。
+- Does this mean apps like Google Docs can now simplify their code that renders documents to canvas? Earlier it was all DOM but they moved to canvas with their own rendering pipeline. Does this mean they could use their DOM rendering pipeline itself to render onto canvas?
+  - i don't think it would help for their use case.
+  - google docs does their own rendering engine so they have more control of the outputs, by rendering the dom to the canvas you would still need to obey the rules of the dom.
+  - i'm hoping this means we can save images of portions of the dom for use in things like 3d scenes without needing to use hacks.
+- That's a great usecase. I'm also hoping this will somehow help headless PDF generation from HTML. Is this a separate HTML renderer with canvas draw instructions as output or is this just the browser's DOM renderer tuned to play nicely with canvas? I guess it's the latter.
+
+- ## 简单看了下字节公司内的渲染引擎还不少，不说 lynx，单论 js 实现的 web canvas 渲染器，就有三个。
 - https://twitter.com/XGHeaven/status/1783023772771270919
   - 但感觉大体思路基本一致，都是以 flutter 这种父节点决定位置，子节点决定大小的布局方式
 - lynx是字节内部的吧
