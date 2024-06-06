@@ -40,7 +40,7 @@ modified: 2024-05-27T11:39:14.886Z
     - splitpanel容易实现拖拽调整宽度
 
 - examples
-  - 经典ide三栏布局 GridviewReact https://github.com/mathuo/dockview/tree/master/packages/docs/sandboxes/editor-gridview
+  - [经典ide三栏布局 GridviewReact ](https://github.com/mathuo/dockview/tree/master/packages/docs/sandboxes/editor-gridview)
   - [Dockview demos](https://dockview.dev/demo/)
   - [Floating Groups DockviewReact ](https://dockview.dev/docs/core/groups/floatingGroups)
   - 最大化 ~~最小化~~ [Maximized Groups DockviewReact ](https://dockview.dev/docs/core/groups/maxmizedGroups)
@@ -56,6 +56,9 @@ modified: 2024-05-27T11:39:14.886Z
 - resources
   - https://github.com/search?type=code&q=dockview+path%3Apackage.json%20NOT%20is:fork
 # draft
+- 浏览器窗口resize时，自动更新各panel宽度
+- Gridview不支持floating-panels, 仅Dockview支持floating-panels
+
 - tab内容懒加载的最佳实践
 - maximize-panel时，支持占满指定元素的宽高，而不是占满整个Dockview(避免挡住标题栏)
 
@@ -65,18 +68,20 @@ modified: 2024-05-27T11:39:14.886Z
 
 - replace watermark with placeholder
 
-- 
-- 
-
-# dev-xp
-- toggle groups的处理
-
 - panel的渲染模式需要采用onlyWhenVisible/always的组合
   - 根据业务场景的需求
   - 兼顾内存占用和渲染性能
 
 - 
 - 
+
+# dev-xp
+- toggle groups的处理 ?
+
+- ide示例基于Gridview实现， 编辑区面板的初始数据 `size: 100` 很重要, 若注释掉，则无法显示left/right
+  - Gridview暂不支持floating，实现floating推荐使用Dockview
+  - Dockview也可以实现Gridview的分屏拖拽的效果
+
 - 
 - 
 - 
@@ -111,8 +116,6 @@ modified: 2024-05-27T11:39:14.886Z
   - A simple web based audio player for offline files.
 # issues
 - 如何处理tab中的大文件，比如大于3000行/10M
-# dev
-
 # more
 
 # issues-not-yet

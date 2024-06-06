@@ -264,6 +264,9 @@ modified: 2021-07-20T13:50:23.433Z
 - solutions
   - ot
   - crdt
+
+- why crdt is hard
+- u not need crdt
 # topic-collab-git
 - usecase
   - branching
@@ -273,3 +276,7 @@ modified: 2021-07-20T13:50:23.433Z
 - usecase
   - cms/lowcode
   - notion
+
+- 树形数据结构的4种表示
+# topic-pm
+- 飞书功能的子集
