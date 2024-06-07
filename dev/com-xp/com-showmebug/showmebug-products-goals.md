@@ -357,6 +357,9 @@ modified: 2024-05-06T02:52:41.789Z
   - tab是否支持pin
 - 多标签
   - 切换标签时，支持恢复滚动位置、lint状态
+- 评论
+  - 代码行级评论
+  - thread自动显示github上的评论，在cde评论后先通过api发送到github再跳转到github-pr
 - chat
   - 是否支持允许代码片段
 
@@ -385,9 +388,6 @@ modified: 2024-05-06T02:52:41.789Z
   - 用量统计
   - 付费点
 
-- 
-- 
-- 
 
 ## v20240605-pm-cde-states
 
@@ -400,11 +400,6 @@ modified: 2024-05-06T02:52:41.789Z
 - 只能通过暂停按钮来暂停plan，不能单独暂停step/action
 
 - pr的描述第一句是 `fix issue #number`，这样github平台在pr合并后会自动关闭issue
-
-- 
-- 
-- 
-- 
 
 ## v20240604-events-storm-cde-time-machine
 
@@ -667,17 +662,6 @@ modified: 2024-05-06T02:52:41.789Z
 - 用户如何修改计划
   - 点击铅笔图标
 
-- 
-- 
-- 
-- 
-
-### maybe
-
-- 
-- 
-- 
-- 
 
 ## v20240522-env-init-初始化开发环境-prd
 

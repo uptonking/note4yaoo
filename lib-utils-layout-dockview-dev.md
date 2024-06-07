@@ -56,10 +56,12 @@ modified: 2024-05-27T11:39:14.886Z
 - resources
   - https://github.com/search?type=code&q=dockview+path%3Apackage.json%20NOT%20is:fork
 # draft
+- tab内容懒加载的最佳实践
+  - gridview的面板逐个懒加载
+
 - 浏览器窗口resize时，自动更新各panel宽度
 - Gridview不支持floating-panels, 仅Dockview支持floating-panels
 
-- tab内容懒加载的最佳实践
 - maximize-panel时，支持占满指定元素的宽高，而不是占满整个Dockview(避免挡住标题栏)
 
 - 未实现将折叠面板中的文件拖拽到编辑区的交互
@@ -170,9 +172,15 @@ event.api.addPanel({
 
 - ## 
 
-- ## 
+- ## [Actions in paneview ](https://github.com/mathuo/dockview/issues/335)
+- 
+- 
+- 
 
-- ## 
+- ## [How to keep group remain after last child has been removed?  ](https://github.com/mathuo/dockview/issues/402)
+- 
+- 
+- 
 
 - ## [Incorrect Positioning of floating Panel in addPanel and fromJson Methods ](https://github.com/mathuo/dockview/issues/318)
 - I've got a sandbox below which is a dockview-core example creating some floating and non-floating groups. 

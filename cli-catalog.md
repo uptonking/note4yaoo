@@ -107,6 +107,7 @@ git push origin -f
 - merge相关
 
 ```shell
+git rebase --abort
 # merge时出现冲突且未处理冲突，如何取消merge
 git merge --abort         >= 1.7.4
 git reset --merge         >= 1.6.1
