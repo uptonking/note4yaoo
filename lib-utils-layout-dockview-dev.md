@@ -170,6 +170,14 @@ event.api.addPanel({
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Incorrect Positioning of floating Panel in addPanel and fromJson Methods ](https://github.com/mathuo/dockview/issues/318)
+- I've got a sandbox below which is a dockview-core example creating some floating and non-floating groups. 
+  - https://codesandbox.io/s/broken-tdd-7jd9v7?file=/src/app.ts
+
 - ## 🪟 [Is it possible to create a "grid" layout programmatically with add panel? ](https://github.com/mathuo/dockview/discussions/420)
 - There are some docs on the `addPanel` method you may find useful here
   - you can provide a position object which takes a couple of arguments which help position the panel. 

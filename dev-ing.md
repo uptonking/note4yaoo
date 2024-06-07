@@ -342,6 +342,7 @@ betterdiscordctl -i flatpak install
 
 - [NPM stuck giving the same error EISDIR: Illegal operation on a directory, read at error (native) - Stack Overflow](https://stackoverflow.com/questions/34959038/npm-stuck-giving-the-same-error-eisdir-illegal-operation-on-a-directory-read-a)
   - EISDIR stands for "Error, Is Directory". This means that NPM is trying to do something to a file but it is a directory. In your case, NPM is trying to "read" a file which is a directory (Line: 4). Since the operation cannot be done the error is thrown.
+  - 解决方法是 将import的路径从 cm/file-up 改为 cm/file-up/index.js
 
 - [tsc with allowJs reports TS9005 error for anonymous constructor functions · Issue #55172 · microsoft/TypeScript](https://github.com/microsoft/TypeScript/issues/55172)
 
