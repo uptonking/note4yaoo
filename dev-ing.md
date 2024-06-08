@@ -333,10 +333,17 @@ betterdiscordctl -i flatpak install
 
 ## 060
 
+- diff-view to time-machine
+
 - dev-log
   - 
 - dev-to
   - 
+
+## 0608
+
+- [B站11年，这 10 个技巧还有很多人不知道！ - 哔哩哔哩](https://www.bilibili.com/read/cv7767304/)
+  - 将视频的链接复制到视频的评论区，接着在链接后面加上 /?t=0h1m59s ，这里的英文字母 h、m、s 分别代表 时、分、秒 ，字母前面的数字对应跳转到的时间点，即跳转到视频的 1 分 59 秒处。 
 
 ## 0606
 

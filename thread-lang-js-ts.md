@@ -9,7 +9,42 @@ modified: 2021-01-28T14:34:20.579Z
 
 # guide
 
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## 🆚️ Trying to write an exhaustive pro's/cons list for three different approaches to TS monorepos.
+- https://x.com/mattpocockuk/status/1799055070274986098
+  - But slowly realising that they're all kind of bad in different ways.
+
+- [Live types in a TypeScript monorepo](https://colinhacks.com/essays/live-types-typescript-monorepo)
+  - wasn't satisfied by the 'paths' thing, it has its own downsides.
+  - "Need to make sure that packages are correctly ordered inside references in the root tsconfig.json" 
+    - Or, each project lists it's dependencies and then TSC automatically figures the order for you (we do this in the Babel monorepo)
+
+- I tried #3 but migrated to #1 at Remotion. 
+  - We have 40 packages in one repo and pretty happy with Project References! 
+  - Listing all references is a confirmed drawback, but once that is done, it's much faster than invoking tsc many times.
+
+- How common is it that people actually use tsc for building? I'd be very surprised if it was a majority of monorepos/packages. My guess is rollup and esbuild are much more popular
+
+
+- Not to mention many of them break once you add Metro and React Native.
+
+- I feel most people use monopod because they wanna share types between frontend and backend and in such a case not using a monorepo (having just one package.json) is the way.
+
+
+- 
+- 
+- 
+- 
+
 # discuss-examples
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 🌰 Here's how to get a fully type-safe fetch function in just a few lines

@@ -270,9 +270,11 @@ modified: 2023-02-05T19:03:27.730Z
   - Currently this package does so using TipTap but will most likely include another integration for ProseMirror to allow for both Markdown + WYSIWYG editing.
   - A drop-in Trix replacement which creates ActionText compatible HTML and can parse your existing Trix views allowing a seamless migration without updating any existing db columns
 
-- https://github.com/afomera/richer-text.js /js
-  - A Richer Text Editor experience based on Tiptap
-  - written in React, using the TipTap libraries and extensions, compiled into a web component
+- https://github.com/afomera/richer-text.js /MIT/202406/js
+  - https://www.richer-text.com/
+  - ✨ open-source text editor based on TipTap and ProseMirror for the modern age
+  - ~~written in React, using the TipTap libraries and extensions, compiled into a web component~~
+  - written with Lit, using the TipTap libraries and extensions with a few of our own added
   - RicherText aims to provide a richer text editing experience than what comes out of the box with ActionText in Rails. 
   - It is however a separate thing from ActionText and is not backwards compatible.
   - 依赖@rails/activestorage、tiptap、react-to-webcomponent
@@ -283,6 +285,10 @@ modified: 2023-02-05T19:03:27.730Z
   - https://github.com/afomera/richer_text /ruby
     - provide a richer text editing experience than what comes out of the box with ActionText in Rails
     - there's currently a hard requirement for ActiveStorage
+  - https://x.com/afomera/status/1799103684791746684
+    - RicherText.js v2.0.0-beta.1 is out 
+    - It's not ActionText compatible, but the backend solution is very similar to ActionText so you'll feel at home.
+    - If you need an ActionText compatible solution, look at Rhino Editor
 
 - https://github.com/decidim/decidim
   - a participatory democracy framework, written in Ruby on Rails, originally developed for the Barcelona City government online and offline participation website

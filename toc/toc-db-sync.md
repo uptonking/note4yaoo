@@ -309,7 +309,7 @@ modified: 2022-11-25T15:41:47.534Z
   - An operation-log based approach for data replication.
   - implement concurrent and replicated versions of (single-threaded) data structures by combining ap set of different concurrency techniques: flat combining, operation logging, readers-writer locks, and partitioning.
 # partial-sync/replication
-- https://github.com/powersync-ja/powersync-service /FSL/202406/ts
+- https://github.com/powersync-ja/powersync-service /FSL-1.1-Apache-2.0(2y)/202406/ts
   - https://www.powersync.com/
   - The backend PowerSync Service responsible for data replication.
   - PowerSync is a Postgres-SQLite sync layer, which helps developers to create local-first real-time reactive apps that work seamlessly both online and offline.

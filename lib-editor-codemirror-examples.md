@@ -1243,7 +1243,15 @@ modified: 2023-06-23T12:46:53.288Z
   - Sweep is an AI junior developer that turns bugs and feature requests into code changes. Sweep automatically handles devex improvements like adding typehints/improving test coverage. 
   - Turns issues directly into pull requests (without an IDE)
 # more
-- https://github.com/datavis-tech/codearea /MIT/201908/js
+- https://github.com/replit/desktop /202406/ts
+  - Replit desktop app for MacOS, Windows, and Linux
+  - 可作为将网站打包为pc-app的模版
+  - developed using Electron and packaged and distributed using Electron Forge.
+  - You can then launch a packaged version of the app (needed to test certain features like auto-updating) by running the outputted binary locally 
+  - To test your changes on other platforms, we recommend using a Virtual Machine host like UTM.
+  - The app supports deeplinks with the `replit://` protocol which can be used to open specific pages or flows directly, launching the app if it's not already running.
+
+- https://github.com/datavis-tech/codearea /MIT/201908/js/inactive
   - A proof-of-concept code editor with syntax highlighting that uses
     - highlighted-pre-over-textarea approach (like react-simple-code-editor)
     - web-tree-sitter for incremental parsing

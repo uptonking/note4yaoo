@@ -11,6 +11,7 @@ modified: 2020-12-12T19:22:00.735Z
 - meta-framework
   - 功能特性: 打包、路由、布局、请求api、ssr、mock
   - 核心功能: routing, rendering, fetching
+  - hot-reload
 
 - features
   - opinionated react framework with features for production out of the box

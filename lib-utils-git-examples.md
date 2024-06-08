@@ -66,7 +66,7 @@ modified: 2023-08-29T10:12:22.345Z
   - It's written in Rust and uses Protocol Buffers/gRPC for communication
   - We've also implemented a UI for the database server, which can be found at: GQL-Project/gql_client.
 
-- https://github.com/gitbutlerapp/gitbutler /FSL-1.0-MIT/202402/rust/ts/svelte
+- https://github.com/gitbutlerapp/gitbutler /FSL-1.0-MIT(2y)/202406/rust/ts/svelte
   - https://gitbutler.com/
   - The GitButler version control client, backed by Git, powered by Tauri/Rust/Svelte
   - Git branch management tool, built from the ground up for modern workflows

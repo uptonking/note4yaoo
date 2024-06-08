@@ -122,6 +122,11 @@ modified: 2020-10-05T06:18:29.671Z
   - a javascript library for reactive, 3D mathematical visualization (data visualization capabilities coming sometime)
   - Built on top of WebGL (via Three.js)
 
+- https://github.com/dgreenheck/tree-js /MIT/202406/js
+  - https://dgreenheck.github.io/tree-js/
+  - Procedural tree generator written with JavaScript and Three.js
+  - 可调整参数来查看不同的生长状态
+
 ## r3f
 
 - https://github.com/try-triplex/triplex

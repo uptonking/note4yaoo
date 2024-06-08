@@ -100,6 +100,10 @@ modified: 2020-12-08T13:40:02.577Z
 
 - ## 25+ ways to handle state in a React app in 2024:
 - https://x.com/housecor/status/1796889591972061515
+
+- https://x.com/housecor/status/1799435036736778364
+  - There are over 30 different ways to handle React state. Here's how I decide.
+
 - React:
 useState
 useReducer

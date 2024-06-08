@@ -82,7 +82,7 @@ modified: 2022-10-04T23:32:30.824Z
   - 依赖milkdown.v6、vue2、bootstrap-vue.v2、remark-directive、three、yjs
   - https://github.com/scenaristeur/noosphere2 /202306/js/vue
     - A simple example for using milkdown with vue.
-# versions
+# versioning
 - https://github.com/inkandswitch/upwelling-code /ts
   - https://upwelling-prototype.netlify.app/
   - [Upwelling: Combining real-time collaboration with version control for writers](https://www.inkandswitch.com/upwelling/)
@@ -169,6 +169,16 @@ modified: 2022-10-04T23:32:30.824Z
 
 - https://github.com/tororosoba0534/collab-note-yjs-wsserver
   - Collab-Note-YJS is a multi-repo project which divided by two repositories (frontend and backend). 
+
+- https://github.com/loro-dev/loro-prosemirror /MIT/202406/ts
+  - Prosemirror Binding for Loro
+  - Sync document state with Loro
+  - Sync cursors with Loro's Awareness and Cursor
+  - https://x.com/loro_dev/status/1798722084342018282
+    - I have a question regarding Loro - and maybe CRDTs in general: Is it common to have (whatever kind of) state handling that then syncs with Loro and back (that's how you do it for the tldraw example, but of course that's because that's "on top" of an existing app) or would you recommend building your state with Loro from the get go?
+    - For example, I'm working on an image editor that uses mobx-state-tree - that has support for listening to, replaying and applying patches following the JSON Patch spec, which should, I think, work well with Loro (haven't tried yet, though). 
+    - I think both modes are feasible. However, if I had to choose, I would prefer to use Loro CRDT as the source of truth, with writes also being made directly to Loro CRDT.  This would establish a unidirectional data flow from CRDTs to other application states.
+    - Currently, we don't have more complex open-source projects based on Loro to refer to; the most complex one at the moment seems to be this ProseMirror binding.
 
 - https://github.com/saranrapjs/prosemirror-automerge /201904/js/inactive
   - experiment with wiring automerge up to ProseMirror

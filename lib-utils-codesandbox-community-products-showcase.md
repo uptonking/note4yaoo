@@ -90,7 +90,12 @@ modified: 2024-05-12T15:39:22.456Z
 # discuss-alternatives-stackblitz
 - ## 
 
-- ## 
+- ## 🚀 We are introducing TutorialKit by @stackblitz _202406
+- https://x.com/elmd_/status/1798765386118373487
+  - [TutorialKit | Create interactive coding tutorials](https://tutorialkit.dev/)
+  - that allows you create highly interactive tutorials in no time powered by the WebContainer API 
+- I think it may have pretty big potential for internal education. You often have tooling not publicly available where your "go to dev setup" for new projects involves many plugins and configs that can be hard to explain.
+  - Yes! This can for sure be used internally for onboarding und internal education. TutorialKit allows you to authenticate so you can install private packages as well. You can also get it entirely on-prem and have WC run in your own infra and then deploy it all internally.
 
 - ## [Our architecture is based entirely on SystemJS & Unpkg and uses no code from CodeSandbox _201708](https://medium.com/@ericsimons/our-goal-was-to-port-vs-code-npm-and-webpack-loaders-to-run-entirely-in-your-browser-and-still-8751f39e5b0f)
 - Our architecture is based entirely on SystemJS & Unpkg and uses no code from CodeSandbox or the Webpack bundling service ya’ll made.

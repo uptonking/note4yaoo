@@ -63,4 +63,18 @@ modified: 2024-02-12T03:23:39.026Z
   - Requires read-only permissions to your database (only the SELECT and replication privileges) 
 - ElectricSQL’s architecture makes it tightly-coupled to your Postgres schema and configuration
 - PowerSync is loosely coupled to Postgres, creating a layer of flexibility between your Postgres schema and configuration and the client-side SQLite schema.
+# blogs-collab-crdt/ot
+
+## [Introducing PowerSync v1.0: Postgres<>SQLite sync layer _202311](https://www.powersync.com/blog/introducing-powersync-v1-0-postgres-sqlite-sync-layer)
+
+- One of the (perhaps surprising) key decisions about the PowerSync architecture was not to use CRDTs to merge changes. 
+  - A quick primer just in case: CRDTs are data structures where all operations are commutative, meaning they can be applied in any order on different replicas of the data, and each replica converges to the same state. This is useful for syncing data peer-to-peer, but the downside is that CRDTs come with significant overhead and more complexity
+  - an alternative to CRDTs is to keep a global ordered list of operations/events. By applying operations in the same order on each replica, they converge to the same state.
+  - having an authoritative server in a system architecture means that a global ordering of operations can be enforced, typically without adding much complexity to the system.
+  - With PowerSync, writes are sent through the developers’ own application backend, allowing them to apply their own business logic, fine-grained authorization, validations and server-side integrations.
+  - While PowerSync does not use CRDTs for its internal protocol, it can leverage another important strength of CRDTs: very fine-grained collaboration like document/text editing. CRDTs can actually be implemented on top of PowerSync + Postgres for collaborative document editing: For example, using Yjs and storing its CRDT data structure in Postgres using blobs, and keeping it in sync between clients in real-time
+# blogs-tutorials
+- [The Easiest Way to Build Reactive Local-First Apps with TinyBase and PowerSync - bndkt](https://bndkt.com/blog/2024/the-easiest-way-to-build-reactive-local-first-apps-with-tinybase-and-powersync)
+
+- [Postgres and Yjs CRDT Collaborative Text Editing, Using PowerSync _202401](https://www.powersync.com/blog/postgres-and-yjs-crdt-collaborative-text-editing-using-powersync)
 # more

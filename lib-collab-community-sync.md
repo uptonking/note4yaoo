@@ -38,6 +38,51 @@ modified: 2022-11-29T20:41:25.566Z
 
 - realtime的方案参考
   - supabase realtime(Elixir): Broadcast, Presence, and Postgres Changes via WebSockets
+# 🆚️ [Best Realtime Sync Engine _202405](https://robotist.com/realtime-sync-engine)
+- We dive deep into every local-first sync engine so you don’t have to. 
+  - This is our technical research of the best realtime sync services available.
+  - Replicache vs Powersync vs InstantDB vs ElectricSQL
+
+- Replicache
+- Pros
+  - Ridiculously performant in-memory store on top of IndexDB. 
+    - Having built identical prototypes with all the sync engines, Replicache’s speed is mind blowing.
+  - Control of synching in code for both how and what syncs. 
+  - Undo/Redo out of the box
+  - Open-source, production-ready applications at scale (SST, BaseHub)
+  - Experienced, helpful team and public advocates (CEO Aaron, Dax)
+- Cons
+  - Dataset limitations at 100mb. 
+    - Aaron the CEO shared that the Reflect (hosted version of Replicache) model works best in document based applications like a spreadsheet, presentation, or Figma file because of the 64mb data constraint. 
+    - While Replicache is able to handle 100mb, it does require selectively syncing and active management.
+  - Quite a bit of boilerplate code. This can be offset using hosted Reflect and/or writing scaffolding scripts.
+
+- Powersync
+- Pros
+  - Postgres and SQLite are tried and true foundations
+  - Spin-off technology from large industrial software use cases which needed offline sync. These applications have been in production for years so you can trust the sync engine’s robustness. 
+  - Very active Discord with engineers answering questions, shipping bug fixes, features, sdks, etc
+  - SQLite in the browser means your customers can write SQL-based reports
+- Cons
+  - Fast but not quite Replicache fast
+  - Cumbersome UI for writing sync rules
+  - A lot of resources are dedicated to mobile frameworks (Flutter, Swift, Kotlin) which means javascript might have less focus
+
+- InstantDB
+- Pros
+  - Super easy to get started—similar to Firebase in speed to working code
+  - Data modeling and relationships are simple to construct on the fly. I had 10 tables with multiple relationships and connections created in 30min.
+  - Their UI is the best of the bunch.
+  - Thoughtful approach to data architecture using triples.
+  - Permissions using CEL expressions is clear and straightforward.
+  - The founders are incredibly hands-on at this stage. Fixed a bug that I reported in a couple of hours. 
+- Cons
+  - You have to trust a startup to be around for a while and also be your primary store of data
+  - 🤔🐛 A triple as a store is brilliant but also non-standard. Will likely need custom tooling for any data analysis
+  - Early stages so not a bunch of examples in production to see what pitfalls you may run into.
+
+- ElectricSQL
+  - Currently ElectricSQL is in alpha while it works out the permissions model.
 # sync-protocols
 - [Building an offline realtime sync engine references](https://gist.github.com/pesterhazy/3e039677f2e314cb77ffe3497ebca07b)
   - figma, linear

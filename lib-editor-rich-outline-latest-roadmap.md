@@ -24,7 +24,9 @@ modified: 2021-09-09T18:31:39.852Z
   - v0.50.0_202011, NA202311, [Sessions are now synced across browser tabs](https://github.com/outline/outline/releases/tag/v0.50.0)
   - v0.51.0_202012, NA202312, [the first community translation，git发版记录](https://github.com/outline/outline/tags?after=v0.57.0)
   - v0.55.0_202104, NA202404， pluggable authentication, Collection Permissions & Viewers
+    - https://github.com/outline/outline/tree/v0.55.0/LICENSE
   - v0.59.0_202109, NA202509, Generic OIDC authentication provider; history侧边栏能显示修改、移动、删除
+    - https://github.com/outline/outline/tree/v0.59.0/LICENSE
   - v0.60.0_202111, NA202511, ✨🔀 支持collab
   - v0.61.0_202111, NA202511, Move to Typescript
   - v0.62.1-202203, NA202603, Move editor into codebase

@@ -87,7 +87,7 @@ modified: 2020-12-28T12:24:09.275Z
   - [Roadmap Discussions](https://github.com/payloadcms/payload/discussions/categories/roadmap)
   - [Roadmap: Multiple Database Support](https://github.com/payloadcms/payload/discussions/287)
 
-- n8n /28kStar/FairCode/202301/ts/vue/依赖少
+- n8n /28kStar/apache2+CC > FairCode/202301/ts/vue/依赖少
   - https://github.com/n8n-io/n8n
   - https://n8n.io/
   - Easily automate tasks across different services.
@@ -103,6 +103,8 @@ modified: 2020-12-28T12:24:09.275Z
     - tags
     - templates
     - sharing
+  - [Change to the Sustainable Use License _202203](https://github.com/n8n-io/n8n/commit/521cf51e7cfb73ad60650b72206083d4c2666d29)
+    - [n8n is not open source and your project is gaslighting its users _201910](https://github.com/n8n-io/n8n/issues/40)
   - https://github.com/drudge/n8n-nodes-puppeteer
     - n8n node for requesting webpages using Puppeteer, a Node library which provides a high-level API to control Chrome or Chromium over the DevTools Protocol.
 - https://github.com/windmill-labs/windmill /5.9kStar/AGPLv3/22405/rust/svelte/js

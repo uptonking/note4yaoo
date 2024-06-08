@@ -154,7 +154,20 @@ modified: 2023-12-12T08:45:31.670Z
 # discuss
 - ## 
 
-- ## 
+- ## After working with WebSockets for a while I'm wondering why devs don't use them more.
+- https://x.com/jamonholmgren/status/1798803384541302814
+- Great technology but I always opt for SSE + a good API kind of achieves everything you need, easier to maintain and feels cleaner
+- Market data providers like @AlpacaHQ use websockets, there’s no other way 
+  - http://HawkAlpha.com uses websockets to stream and place trades in real time
+- Elixir/Phoenix/LiveView is the on true way.
+
+- Compensating for data loss on disconnect / reconnect
+- typical cookie based Authentication isn't as straightforward with web sockets because cookies only get sent once on initial connect
+- Scaling tends to be much harder with web  sockets due to no caching and more resources
+
+- To me the big two things are:
+  - 1) Event-driven architecture is unfamiliar to most and generally harder to reason about 
+  - 2) scaling/deployment requires extra work
 
 - ## 🆚️ Server-sent events, WebSocket, and Webhooks. How do they differ?
 - https://twitter.com/Franc0Fernand0/status/1777675213729136987

@@ -14,6 +14,14 @@ modified: 2021-01-06T14:40:11.360Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## TIL React changes a component in a Suspense context to `display: none !important` until data fetching completes.
+- https://x.com/cpojer/status/1798912741383844237
+  - Quite unexpected in my case where the transition from being offline to online triggers a data refetch, not an initial load, and makes all content on the page flash.
+
 - ## React Compiler 开源了，这次 fb 是搞了个真 compiler 
 - https://twitter.com/unixzii/status/1790948056244101557
   - IR、SSA、optimization passes 都是按照正统编译器来设计的。
@@ -347,7 +355,7 @@ useEffect(() => {
 
 - What are your issues exactly with unserializable data in this case?
   - Specifically: Replay's codebase is 80% a copy-paste of the FF DevTools. 
-  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,                                                             `ValueFront`,                                                             `Pause`, etc. 
+  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,                                                              `ValueFront`,                                                              `Pause`, etc. 
   - We currently parse JSON and instantiate those classes, _then_ put them into Redux.
   - The Replay codebase started with very legacy Redux patterns (hand-written reducers, etc), and no Redux DevTools integration. When I added the DevTools setup, that began to choke on the class instances. So, I had to sanitize those out from being sent to the DevTools.
   - I've been modernizing our reducers to RTK's `createSlice`, which uses Immer. Immer recursively freezes all values by default. Unfortunately, those `SomeFront` instances are mutable, and _do_ get updated later. This now causes "can't update read-only field X" errors

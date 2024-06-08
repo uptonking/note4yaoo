@@ -443,7 +443,7 @@ modified: 2023-01-01T13:24:35.994Z
   - https://github.com/dosyago/DownloadNet
   - An internet on yer disk. Full text search archive from your browsing and bookmarks.
 
-- https://github.com/answeroverflow/answeroverflow /ts
+- https://github.com/answeroverflow/answeroverflow /FSL-1.1-MIT/202406/ts
   - https://www.answeroverflow.com/
   - Indexing Discord Help Channel Questions into Google
   - Powerful analytics - Learn what questions are asked the most, who is most helpful, and other community insights

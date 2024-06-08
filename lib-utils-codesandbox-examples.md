@@ -256,7 +256,7 @@ modified: 2023-09-02T09:17:22.992Z
 - https://github.com/unjs/jiti /ts
   - Runtime Typescript and ESM support for Node.js
 # playground
-- https://github.com/nalgeon/codapi /apache2/202312/go
+- https://github.com/nalgeon/codapi /1.2kStar/apache2/202406/go
   - https://codapi.org/
   - Embeddable code playgrounds for education, documentation, and fun.
   - Codapi is a platform for embedding interactive code snippets directly into your product documentation, online course, or blog post.

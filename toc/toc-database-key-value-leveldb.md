@@ -242,6 +242,9 @@ modified: 2022-11-03T04:14:00.563Z
   - For RB-Tree and B-Tree, all data operations are in-place. That is to say, when you update the value corresponding to the key, the value will be overwritten at its original memory or disk space. 
   - But in an LSM Tree, all write operations, i.e., insertions, updates, deletions, are performed in somewhere else. These operations will be batched into SST (sorted string table) files and be written to the disk. Once written to the disk, the file will not be changed. These operations are applied lazily on disk with a special task called compaction. The compaction job will merge multiple SST files and remove unused data.
 
+- https://github.com/redixhumayun/mini-lsm /apache2/202406/rust
+  - This is my implementation of the mini LSM in a week tutorial. 
+
 - https://github.com/adambcomer/database-engine /rust
   - LSM-Tree Key-Value Store based on RocksDB
   - [Build a Database Pt. 1: Motivation & Design | Adam Comer](https://adambcomer.com/blog/simple-database/motivation-design/)

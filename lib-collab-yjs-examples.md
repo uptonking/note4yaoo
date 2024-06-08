@@ -120,6 +120,7 @@ modified: 2022-09-21T15:47:41.340Z
 
 - https://github.com/jupyter-server/pycrdt /MIT/202312/python/rust
   - https://davidbrochart.github.io/pycrdt
+  - https://jupyter-server.github.io/pycrdt
   - CRDTs based on Yrs
 # apps
 - https://github.com/cybersemics/em /ts/yjs/web/ios/android
@@ -215,10 +216,6 @@ modified: 2022-09-21T15:47:41.340Z
   - This binding binds a `Y.Text` to a CodeMirror editor.
   - Awareness: Render remote selection ranges and cursors - as a separate plugin
   - Shared Undo/Redo (each client has its own undo-/redo-history) - as a separate plugin
-# yjs-non-js
-- https://github.com/jupyter-server/pycrdt /MIT/202406/python/rust
-  - https://jupyter-server.github.io/pycrdt
-  - CRDTs based on Yrs
 # collab-non-yjs
 - https://github.com/hypercore-protocol/hypercore /202211/js
   - a secure, distributed append-only log.

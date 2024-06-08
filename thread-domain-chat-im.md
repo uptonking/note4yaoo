@@ -140,7 +140,11 @@ modified: 2024-01-04T01:28:58.097Z
 
 - ## 
 
-- ## 
+- ## 我对 telegram channel 的新看法
+- https://x.com/ThaddeusJiang/status/1798904722373664775
+  1. 单向信息传递：所有者发布内容，订阅者消费内容。不适合我，我更喜欢相互碰撞，而不是单方面输出。
+  2. 不够开放，对公共社区提供价值受限，甚至不如 http://X.com。http://X.com 上发布的内容可以在搜索引擎中找到。
+  3. 有通知。我讨厌一切通知，我更喜欢异步生活和工作，我更喜欢 email 和 RSS。
 
 - ## 🤔 近期在纠结 #Slack 和 #Discord 作为社群 IM 平台的选型。
 - https://twitter.com/tison1096/status/1763774282914742550

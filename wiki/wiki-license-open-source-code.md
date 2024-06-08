@@ -70,7 +70,7 @@ modified: 2021-09-14T18:58:58.275Z
   - If anyone is interested in using a source-available license for their own code, the Polyform Project has a set of standardized, source-available licenses. 
   - PolyForm Shield would probably achieve the same result as the Timescale License
 
-## [Fair-code](https://faircode.io/)
+## 💰 [Fair-code](https://faircode.io/)
 
 - Fair-code is not a software license. 
 - It describes a software model where software:
@@ -84,6 +84,13 @@ modified: 2021-09-14T18:58:58.275Z
   - Elastic License 2.0 (ELv2)
   - Confluent Community License
   - Sustainable Use License
+
+## more-non-commercial
+
+- [Fair Source](https://fair.io/)
+  - Fair Source was created by Sourcegraph and drafted by Heather Meeker.
+  - https://github.com/fairsource/fair.io
+  - https://fair.io/legacy.html
 
 ## non-commercial-faq
 

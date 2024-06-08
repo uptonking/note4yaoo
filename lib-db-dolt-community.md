@@ -98,7 +98,21 @@ modified: 2023-08-25T21:17:11.979Z
   - The thing Dolt does that splitgraph does not do is support branches, diffs, merges and conflicts on data and schema. Dolt has its own storage engine to do this efficiently whereas Splitgraph relies on Postgres.
   - Having native Postgres with a versioning layer on top has other advantages so we're excited to see how Splitgraph's approach works in practice. Excited to play with it. We love to see more tools in this underserved space.
   - There aren't many places where Splitgraph intersects with Dolt. Dolt aims to build a database from the ground up to have Git semantics and a real commit graph, whereas Splitgraph works on top of an existing RDBMS (PostgreSQL) and performs its operations by manipulating database tables. Here's a quick overview of differences where we do intersect.
+# discuss-news-dolt
+- ## 
+
+- ## 
+
+- ## Pandas Dataframes simplify data manipulation and analysis. _202406
+- https://x.com/DoltHub/status/1799156471634296963
+  - Dolt simplifies data sharing and collaboration. 
+  - Combining the two, a user can write and read data and diff any data changes made by Pandas Dataframes functions.
+
 # discuss-dolt
+- ## 
+
+- ## 
+
 - ## 
 
 - ## [Launch HN: Quilt (YC W16) – A versioned data portal for S3_201909](https://news.ycombinator.com/item?id=21062977)

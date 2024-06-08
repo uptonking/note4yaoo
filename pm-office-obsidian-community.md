@@ -153,7 +153,10 @@ modified: 2024-01-23T02:52:23.932Z
 
 - ## 
 
-- ## 
+- ## Obsidian is local, offline, and privacy-first, so we won't consider adding AI features until they can fit with the principles in our Manifesto. _202406
+- https://x.com/kepano/status/1799165623395881129
+  - In the meantime, there are dozens of awesome @obsdmd plugins that allow you to work with LLMs
+  - I have lots of ideas about how AI could fit in, I shared a few in "Photoshop for text". But local inference is still very challenging to implement across OSes. For now I prefer to remain conservative and leave experimentation to plugins.
 
 - ## 了解并同时使用 Obsidian 和 Logseq 已经有好几年了，刚开始的时候我同样看好 Obsidian 和 Logseq 的生态和未来
 - https://twitter.com/realexblue/status/1761049182893449374

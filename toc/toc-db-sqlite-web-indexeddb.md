@@ -102,6 +102,16 @@ modified: 2022-11-06T03:19:28.284Z
   - Indexed DB Implementation
   - 单文件测试idea
 # wasm
+
+
+- https://github.com/sqlite/sqlite-wasm /202406/js
+  - SQLite Wasm conveniently wrapped as an ES Module.
+  - This project wraps the code of SQLite Wasm with no changes, apart from added TypeScript types. 
+  - 🍴 forks
+  - https://github.com/livestorejs/sqlite-wasm
+
+
+
 - https://github.com/overtone-app/sqlite-wasm-esm
   - The new SQLite WASM build is rather hard to use in modern JS apps, so this wrapper package tries to make this easier.
   - Currently only tested with Vite. 

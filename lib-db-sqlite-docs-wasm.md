@@ -15,9 +15,19 @@ modified: 2022-11-27T15:36:13.148Z
 
 # blogs
 
-## ⏰ [The Current State of SQLite Persistence on the Web_202307](https://www.powersync.co/blog/sqlite-persistence-on-the-web)
+## ⏰ [The Current State of SQLite Persistence on the Web_202307](https://www.powersync.com/blog/sqlite-persistence-on-the-web)
 
 - various implementations of sqlite-wasm, wa-sqlite and sql.js with a summary table to compare them all
+
+- PowerSync uses wa-sqlite with IDBBatchAtomicVFS which is the approach we recommend in that post
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 
 ## [From Web SQL to SQLite Wasm: the database migration guide - Chrome Developers](https://developer.chrome.com/blog/from-web-sql-to-sqlite-wasm/)
 
@@ -113,7 +123,7 @@ modified: 2022-11-27T15:36:13.148Z
 ### Cross-thread Communication via OPFS
 
 - sqlite3 over OPFS opens up a possibility in JS which does not otherwise readily exist: communication between arbitrary threads.
-- There are no mechanisms in JS to share state between two threads except `postMessage()`,             `SharedArrayBuffer`, and (to a very limited extent) `Atomics`. 
+- There are no mechanisms in JS to share state between two threads except `postMessage()`,              `SharedArrayBuffer`, and (to a very limited extent) `Atomics`. 
   - localStorage, sessionStorage, and the long-defunc (but still extant) WebSQL, are main-thread only. 
   - Presumably WebSQL was not permitted in Workers for the very reason that it would open up a communication channel between arbitrary threads.
 - However, if a client loads the sqlite3 module from multiple threads, they can communicate freely via an OPFS-hosted database. 

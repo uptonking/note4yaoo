@@ -36,7 +36,11 @@ modified: 2023-09-19T06:35:28.278Z
 # discuss-alternatives-gitbook
 - ## 
 
-- ## 
+- ## 有没有什么像gitbook一样的文档托管平台，gitbook就是不太好看，而且编辑文档慢，页面打开速度慢，想换一下
+- https://x.com/tvytlx/status/1799099262875427148
+- 喜欢 md 可以考虑 vitepress
+  - SaaS 服务最好是，它这个不用写代码也不用自己部署
+- 推荐 nuxt content 模板 + https://nuxt.studio 
 
 - ## [ReStructuredText vs. Markdown for documentation | Hacker News_201606](https://news.ycombinator.com/item?id=11922485)
 - I prefer Markdown. It's readable and easy to start writing by non-technical folk.

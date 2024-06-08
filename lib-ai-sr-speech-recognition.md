@@ -99,7 +99,14 @@ modified: 2023-02-07T09:22:03.120Z
 
 - ## 
 
-- ## 
+- ## real-time in-browser speech recognition with OpenAI Whisper
+- https://x.com/xenovacom/status/1799110540700078422
+  - The model runs fully on-device using Transformers.js and ONNX Runtime Web, and supports multilingual transcription across 100 different languages
+  - https://github.com/xenova/transformers.js/tree/v3/examples/webgpu-whisper
+- here is a whisper example on Android
+  - https://x.com/micksabox/status/1799136239683248555
+- This uses Transformers.js (+ ONNX Runtime Web) vs. @fleetwood___ 's Ratchet library. His version would certainly be able to run in real-time too though... and is still on his TODO list I'm sure
+- The universal translator: real-time, multilingual communication like in star trek
 
 - ## #声音clone产品推荐 开源的实现：
 - https://twitter.com/leeoxiang/status/1766700987627327683

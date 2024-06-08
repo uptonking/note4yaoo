@@ -21,6 +21,16 @@ modified: 2022-11-23T17:49:54.052Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## JavaScript proxies that just trap everything to forward somewhere else (like a worker or a server) are starting to seem like a really bad idea to me.
+- https://x.com/justinfagnani/status/1798939691313758706
+  - They interact really badly with all kinds of duck-typing / brand-checking code because they behave like they have every property.
+  - I suppose that private fields (and ergonomic brand checks) could help here, if you or your library code can adopt them.
+  - But I think I'd rather just define a real client class, maybe with decorators, that only forwards known properties and methods.
+
 - ## [Vue3.0里为什么要用 Proxy API 替代 defineProperty API ？](https://vue3js.cn/interview/vue3/proxy.html)
 - Object.defineProperty只能遍历对象属性进行劫持
   - Proxy直接可以劫持整个对象，并返回一个新对象

@@ -137,12 +137,6 @@ modified: 2023-12-01T09:08:18.316Z
 - Currently SQLSync moves the entire database to every client and keeps them all in sync. This means that it's suited for smallish sets of relational data - ideally per-user or per-document. This is made easier as each db is very cheap to create.
   - this model works very well with @tursodatabase , since we can offer 10k databases for $29 - and more on enterprise plans. We are drooling for an integration here!
 
-- ## [PowerSync - Show HN: Bi-directional sync between Postgres and SQLite | Hacker News_202311](https://news.ycombinator.com/item?id=38473743)
-- PowerSync Service handles the complexities of dynamic partial replication of the database to different users. In our announcement blog post we wrote a bit more about the trade-offs and design considerations
-  - see section "A scalable dynamic partial replication system"
-
-- You can try Watermelon DB. It is local first disconnected framework. And it has a sync framework as well, but you have to create your own backend (using any DB) for syncing.
-- Watermelon has its limitations for an offline applicationFirst, if you really want to make use of the application completely offline, you will have to build a synchronizer like CRDT by hand and manage the request queues. With powersync all of this is managed by them, and with a simple code I can choose which information from the database I will sync for each user. In my first tests with WatermelonDB, synchronization proved to be unfeasible due to the amount of synchronized data. In short, Powersync has proven to be a wonderful tool that has allowed my company to move forward with offline services.
 
 - ## for @recall_wiki we are going with WatermelonDB.
 - https://twitter.com/paulrchds/status/1483416223425650691
