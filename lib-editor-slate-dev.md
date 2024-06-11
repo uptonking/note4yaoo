@@ -30,6 +30,7 @@ modified: 2023-02-05T19:03:12.722Z
   - Intuitive commands
   - Collaboration-ready data model
   - Clear "core" boundaries
+  - model层的修改基于immer
 
 - who is using #slatejs
   - tinymce collab

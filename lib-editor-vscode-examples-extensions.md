@@ -79,9 +79,13 @@ modified: 2023-01-21T19:02:58.833Z
   - Can be used with static site generators like Hugo, Jekyll, Hexo, NextJs, Gatsby, and many more
   - Preview your site/content straight in Visual Studio Code
 # utils
-
+- https://github.com/KermanX/reactive-vscode /MIT/202406/ts
+  - https://kermanx.github.io/reactive-vscode/
+  - Develop VSCode extension with Vue Reactivity API
+  - This library wraps most of the VSCode APIs into Vue Composables.
+  - built on top of `@vue/reactivity`, and ported some code from `@vue/runtime-core` .
+  - This library is not designed for using Vue in a webview.
 # vscode-browser
-
 - https://github.com/antfu/vscode-browse-lite /ts
   - Embedded browser in VS Code
 # extensions

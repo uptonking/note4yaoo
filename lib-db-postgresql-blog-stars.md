@@ -23,6 +23,8 @@ modified: 2023-10-26T18:11:42.676Z
   - Postgres avoids performance regressions from old to new versions. This is excellent.
   - Postgres 16.0 is mostly faster than 11.21 on read-only benchmark steps
   - Postgres 16.0 and 11.21 have similar throughput on read-write and write-only benchmark steps
+# blogs-indexing
+- [A Practical Guide to PostgreSQL Indexes _202406](https://www.percona.com/blog/a-practical-guide-to-postgresql-indexes/)
 # blogs-internals
 
 ## [PostgreSQL Internals Part 1: Understanding Database Cluster, Database and Tables - Stormatics _202403](https://stormatics.tech/blogs/postgresql-internals-part-1-understanding-database-cluster-database-and-tables)

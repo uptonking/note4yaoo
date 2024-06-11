@@ -267,6 +267,7 @@ modified: 2023-02-26T18:26:07.198Z
 
 - https://github.com/amir2mi/flatifycss
   - Modern flat design framework for the web — inspired by Duolingo design system
+
 ## glass ui/mac/blur
 
 - https://github.com/heypoom/glassmorphic-ui
@@ -369,6 +370,9 @@ modified: 2023-02-26T18:26:07.198Z
   - https://github.com/raphamorim/origami.js
     - https://raphamorim.io/origamijs/
     - Origami began as a project to teach javascript and geometry to children and today has been used to simplify the way we work with canvas
+
+- samples-origami
+  - https://x.com/samdape/status/1799843696751325304
 # more-themes
 - https://github.com/yashdiniz/FRUI
   - Flat & Round User Interface, is a minimalistic and professional UI framework 

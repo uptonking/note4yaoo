@@ -587,9 +587,6 @@ modified: 2021-01-08T17:15:13.906Z
   - You could give Twind a try. It is a tailwind-first CSS-in-JS solution
 - css prop generates a styled component under the hood. I'm just wanting to generate class names without the component.
 - My approach is to use a classes prop
-  - https://twitter.com/pomber/status/1362125599607820290
-  - https://github.com/code-hike/codehike/tree/v0.3/packages/classer
-  - to make React component libraries interoperable with most styling solutions
 
 - ## Braid uses arrays for responsive props, but I've realised objects are much better:
 - https://twitter.com/markdalgleish/status/1362779695683543041

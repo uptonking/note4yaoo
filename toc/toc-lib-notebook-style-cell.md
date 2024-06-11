@@ -29,6 +29,12 @@ modified: 2021-05-13T16:08:15.067Z
       - Plugin-based visualization systems: HTML/text, ApexCharts, Leaflet
       - Notebooks are now stored in markdown files for easy of reading (without DFN) and merging code changes.
 
+- https://github.com/githubnext/vitale /202406/ts
+  - vitale is a VS Code notebook implementation for Node.js + TypeScript.
+  - automatic re-execution of dependent cells
+  - rendering React components
+  - It uses vite for compilation and hot-reloading
+
 - https://github.com/ottomatica/docable-notebooks
   - https://docable.cloud/ottomatica/docable-examples/script.md
   - /286Star/Apache2/202105/js

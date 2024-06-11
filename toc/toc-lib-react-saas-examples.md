@@ -103,7 +103,7 @@ modified: 2022-08-13T06:59:54.741Z
   - Opinionated React starter template using TypeScript, Redux, React Router, Redux Saga, SCSS, PostCSS and more, offering PWA and offline capabilities and many more.
 - https://github.com/monstar-lab-oss/reactjs-boilerplate
   - A starter kit for easily customized when you start developing with React
-  - 各项可选，状态管理使用 zustand
+  - 各项可选
 
 - https://github.com/alan2207/bulletproof-react
   - 依赖 react-query.v3, headless-ui, zustand

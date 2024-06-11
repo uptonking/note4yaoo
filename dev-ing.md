@@ -249,7 +249,6 @@ betterdiscordctl -i flatpak install
       - 拖拽指示线
     - 拖拽到页面顶部或底部时，自动滚动
     - 拖拽时原布局不变，只显示预期位置的指示线
-    - remove zustand
     - [x] 支持向左拖动更新层级
     - [x] 支持方向键向左更新层级
   - toolbar
@@ -334,6 +333,9 @@ betterdiscordctl -i flatpak install
 ## 060
 
 - diff-view to time-machine
+  - workflow progress
+  - diff
+- chat ui: typewriter
 
 - dev-log
   - 

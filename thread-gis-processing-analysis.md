@@ -7,7 +7,41 @@ modified: 2021-05-25T08:41:18.938Z
 
 # thread-gis-processing-analysis
 
-# pieces
+# guide
+
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## 
+# discuss-geo-indexing
+- ## 
+
+- ## 
+
+- ## 🧮 Space Filling Curves & their application in Lakehouse Table Formats.
+- https://x.com/Dipankartnt/status/1799960729862259062
+  - In mathematical analysis & computer science, functions such as Z-order, Hilbert curves etc. maps multidimensional data to 1 dimension.
+  - The catch is that these space filling curves preserve the “locality” of points when projecting from high to low dimension.
+- Space filling curves have been widely used in database systems to better optimize queries when dealing with large multi dim data.
+- Z-Order:
+  - Interleaving binary representation of the points
+  - The sequence of z-values is influenced by all attributes
+- Hilbert Curve:
+  - Improved sorting capabilities in higher dimensions.
+  - Costlier to construct for higher orders
+- Today’s lakehouse table formats such as @apachehudi applies these space filling curves to optimize the storage layout and improve performance.
+- 2 major focus:
+  - Optimizing Query Performance: By applying the space-filling curves Hudi significantly reduce the time needed for a query.
+  - Improving Data Locality: Space-filling curves help maintain locality by ensuring data points that are close in a multi-dimensional space remain close in the storage layer, thus optimizing both storage efficiency & access speed.
+- @DeltaLakeOSS offers both Z-order & Hilbert (liquid clustering uses) 
+  - #ApacheIceberg offers Z-ordering.
+
+# discuss
+- ## 
+
+- ## 
 
 - ## 
 

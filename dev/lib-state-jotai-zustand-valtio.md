@@ -18,6 +18,12 @@ modified: 2022-01-05T14:36:28.057Z
   - ?
 - features
   - store对象里面保存了方法, redux的createStore返回的store对象也有方法
+
+- who is using #zustand
+  - editablejs, plate-legacy, code-motion/diffani
+  - csv-import, teable
+  - xyflow, easyboards
+  - tailchat, notesnook, strapi-curator
 # comparison
 - zustand  /12.6kStar/MIT/202201/ts/NoDeps/Flux
   - https://github.com/pmndrs/zustand

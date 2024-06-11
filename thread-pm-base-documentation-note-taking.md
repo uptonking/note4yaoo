@@ -71,6 +71,18 @@ modified: 2021-08-16T06:56:53.061Z
 
 - @RoamResearch is block-first, even in a way that Notion is not (I think you're right to call Notion "Document-first") 
   - It then *composes* the three approaches you list here by combining together the same underlying items in different forms (slightly different than "adding on")
+# discuss-academic
+- ## 
+
+- ## 
+
+- ## 
+
+- ## love that apple just ripped off @inkandswitch with the math notes thing. 
+- https://x.com/max__drake/status/1800225633286737966
+  - the computation and annotation existing on the same layer is Very Cool
+  - ["Programmable Ink" by Szymon Kaliski (Strange Loop 2022) - YouTube _202210](https://www.youtube.com/watch?v=ifYuvgXZ108)
+
 # discuss
 - ## 
 

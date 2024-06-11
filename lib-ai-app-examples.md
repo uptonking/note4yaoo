@@ -98,10 +98,20 @@ modified: 2023-02-08T07:20:48.475Z
 
 - [Open Prompt](https://openprompt.co/)
 
+- https://github.com/verazuo/jailbreak_llms
+  - A dataset consists of 15, 140 ChatGPT prompts from Reddit, Discord, websites, and open-source datasets (including 1, 405 jailbreak prompts).
+  - 开源了论文中使用的 15, 140 个 ChatGPT 提示，其中包括 1, 405 个越狱提示，收集于 Reddit、Discord、网站和开源数据集。
+
 ## gpt-impl
 
 - https://github.com/newhouseb/potatogpt
   - Pure Typescript, dependency free, ridiculously slow implementation of GPT2 for educational purposes
+
+- https://github.com/openai/gpt-2 /MIT/201908/python
+  - https://openai.com/blog/better-language-models/
+  - Code for the paper "Language Models are Unsupervised Multitask Learners"
+- https://github.com/openai/gpt-3 /202009/仅数据
+  - GPT-3: Language Models are Few-Shot Learners
 # chat
 - https://github.com/PKU-YuanGroup/ChatLaw
   - https://chatlaw.cloud/lawchat/

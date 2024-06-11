@@ -318,6 +318,8 @@ modified: 2024-05-06T02:52:41.789Z
 
 - We evaluated Devin on SWE-bench, a challenging benchmark that asks agents to resolve real-world GitHub issues found in open source projects like Django and scikit-learn.
 # pm-code-ai
+- [stackblitz: In-browser code execution for AI | WebContainers](https://webcontainers.io/ai)
+
 - [2024 Roadmap · opensumi/core Wiki](https://github.com/opensumi/core/wiki/2024-Roadmap)
   - AI Native 模块发布：提供 AI 原生的 IDE 交互体验
   - 通信层改造：去除 jsonrpc 协议，使用 fury 压缩后的二进制方式协议提高 IDE 通信性能
@@ -387,7 +389,6 @@ modified: 2024-05-06T02:52:41.789Z
 - 用户行为收集统计
   - 用量统计
   - 付费点
-
 
 ## v20240605-pm-cde-states
 
@@ -661,7 +662,6 @@ modified: 2024-05-06T02:52:41.789Z
 
 - 用户如何修改计划
   - 点击铅笔图标
-
 
 ## v20240522-env-init-初始化开发环境-prd
 

@@ -34,6 +34,11 @@ modified: 2022-11-04T14:20:37.172Z
     - To make MongoDB Server database size smaller (like from 800 GB tIo 10 GB), store files elsewhere, and have files visible in upcoming version of WeKan.
     - Meteor WeKan will continue using MongoDB for text data. Files can be stored outside of MongoDB.
     - Upcoming WeKan will use SQLite database for text data. Files are stored outside of SQLite.
+
+- https://github.com/simonw/sqlite-diffable /apache2/202208/python/inactive
+  - Tools for dumping/loading a SQLite database to diffable directory structure
+  - https://github.com/simonw/simonwillisonblog-backup
+    - Uses db-to-sqlite and sqlite-diffable to pull a backup of the Heroku PostgreSQL database running https://simonwillison.net/ and store it as newline-delimited JSON in this GitHub repository.
 # http
 - https://github.com/proofrock/sqliterg /apache2/202312/go/rust
   - https://docs.sqliterg.dev/

@@ -133,9 +133,10 @@ modified: 2021-08-23T05:27:08.068Z
   - 依赖 nprogress、react-window
   - File tree extension for GitHub on Chrome & Firefox & Edge
 
-- https://github.com/brumm/tako
+- https://github.com/brumm/tako /MIT/202306/js/inactive
   - 依赖react-query、styled-components、rehype-dom-parse、zustand
   - Tako replaces the default Github repository file list with an expandable file tree and file preview
+  - Get it on the Chrome Webstore
 - https://github.com/ineo6/git-master
   - 依赖jquery、jquery-ui、jstree
   - Git file tree (GitHub && GitLab && Gitee && Gitea && Gogs)

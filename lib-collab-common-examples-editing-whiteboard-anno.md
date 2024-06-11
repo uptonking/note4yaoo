@@ -190,7 +190,7 @@ modified: 2022-11-07T17:36:22.236Z
   - Used the react-use-websocket hook/library instead of directly using the inbuilt WebSockets browser API.
   - 依赖 react-simple-wysiwyg
 
-- https://github.com/SkyGuardian42/piko.space
+- https://github.com/SkyGuardian42/piko.space /202406/ts
   - Collaborate at the speed of light and seamlessly sync offline work
   - tiptap的协作示例
   - redis、yjs、tiptap

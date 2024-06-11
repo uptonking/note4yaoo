@@ -91,9 +91,17 @@ modified: 2023-04-04T03:59:40.928Z
 # discuss
 - ## 
 
-- ## 
+- ## macOS 上 AI 没有跑马灯效果，Apple 还特意给我留了条活路
+- https://x.com/YukiHakarigoto/status/1800234933215994058
+  - 铁锤哥的去背景功能也迎来劲敌了
 
-- ## 
+- ## 5 new market maps in AI
+- https://x.com/chiefaioffice/status/1799766662746398851
+  01.  AI code generation tools from Greylock
+  02.  AI legal tools from Battery Ventures
+  03.  AI agent infrastructure from Madrona
+  04.  AI marketing tools from a16z
+  05.  Conversational AI from Cobus Greyling
 
 - ## Google 最近新出了两个 Code 相关的 Agent 非常有意思：
 - https://x.com/tuturetom/status/1798350275314581670
@@ -325,9 +333,9 @@ modified: 2023-04-04T03:59:40.928Z
 - https://twitter.com/buaaxhm/status/1690559087216578560
   - 感觉他们觉得大模型能干所有事情
 - 在谈的合作里都有哪些需求呢？
-  01.                                你们能不能弄个大模型，解决一下演唱会结束交通拥堵的问题
-  02.                                你们能不能弄个养老大模型
-  03.                                你们弄不能弄一个养猪大模型
+  01.                                 你们能不能弄个大模型，解决一下演唱会结束交通拥堵的问题
+  02.                                 你们能不能弄个养老大模型
+  03.                                 你们弄不能弄一个养猪大模型
 - 这对你们公司是好事，他们要拿这些大概念去申请经费，至于有没有实际效果那是排在第二等级。做政府项目跟纯互联网有很多不同，不只是技术问题
   - 做政府项目其实不怎么赚钱 回款很慢的
   - 能回款就不错了，3年5年都行。现在也已经过了互联网大爆发的时代了，企业要活命，没得选，腾讯，阿里要去做政府项目他们可以签1元钱的合同

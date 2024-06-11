@@ -235,21 +235,31 @@ modified: 2022-06-13T02:57:07.648Z
     - In cases where it's not feasible to break up a state object and just write the minimal change-set, breaking up the data into sub-trees and only writing those is still preferable to always writing the entire state tree. 
   - The same is true if you store large items like images, music, or video in IndexedDB.
 - Lastly, you should always be measuring the performance impact of the code you write.
-# firefox: indexeddb
+# 🧭 firefox: indexeddb
 - mozilla-firefox-indexeddb - sqlite
   - https://hg.mozilla.org/mozilla-central/file/default/dom/indexedDB
+  - https://hg.mozilla.org/mozilla-central/file/default/dom/indexedDB/IndexedDatabase.cpp
 
 - Mozilla objected to the Web SQL interface as having no alternative implementation available. 
-  - So IndexedDB, an API with less surface, was chosen instead. Ironically, IndexedDB is internally implemented based on SQLite in Firefox (Chrome uses the simpler LevelDB instead).
+  - So IndexedDB, an API with less surface, was chosen instead. 
+  - Ironically, IndexedDB is internally implemented based on SQLite in Firefox (Chrome uses the simpler LevelDB instead).
+
+- https://github.com/laenion/Firefox-OS-Data-Exporter
+  - 🧐 Firefox stores the contents of a IndexedDB database into a SQLite database, but unfortunately only serialized data representations. 
+  - As a result you cannot just view this database with SQLite itself, but you will need Firefox to deserialize those strings again to make any sense of it - which is exactly what this page does.
 
 - [Firefox uses SQLite to implement IDB, while Chrome uses leveldb. SQLite wins again.](https://twitter.com/jlongster/status/1425833031068180481)
-# safari-webkit: indexeddb
+# 🧭 safari-webkit: indexeddb
 - webkit的indexeddb基于sqlite实现
   - 提供了 SQLiteIDBBackingStore.cpp、MemoryIDBBackingStore.cpp
   - https://github.com/WebKit/WebKit/blob/main/Source/WebCore/Modules/indexeddb/server/SQLiteIDBBackingStore.cpp
-# chrome: indexeddb
-- chromium/blink - backendStore没找到leveldb
+# 🧭  chrome: indexeddb
+- [chromium IndexedDB](https://chromium.googlesource.com/chromium/src/+/master/content/browser/indexed_db/docs/README.md)
+
+- chromium/blink
+  - https://chromium.googlesource.com/chromium/src/+/refs/heads/main/content/browser/indexed_db/
   - https://chromium.googlesource.com/chromium/blink/+/refs/heads/main/Source/modules/indexeddb/
+    - backendStore没找到leveldb
 
 - linux位置
 

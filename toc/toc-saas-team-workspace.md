@@ -337,8 +337,9 @@ modified: 2023-02-07T17:38:05.336Z
   - https://github.com/lxerxa/actionview-fe
     - ActionView front-end source code, based on Reactjs＋Redux.
 
-- https://github.com/TiagoDiass/easyboards
+- https://github.com/TiagoDiass/easyboards /202307/ts/inactive
   - front-end app similar to Trello
+  - useBoardStore基于zustand
   - 依赖zustand、next、react-beautiful-dnd
 
 - https://github.com/Pedro0505/project-manager-frontend
@@ -412,9 +413,11 @@ modified: 2023-02-07T17:38:05.336Z
 
 ## kanban-fullstack
 
-- https://github.com/ApelsinU/KanbanBoard /ts
+- https://github.com/ApelsinU/KanbanBoard /202402/ts
   - Fetch, Custom hook for Http
-  - Zustand State Manager
+  - Zustand 
+  - Fetch, Custom hook for Http
+  - Express
   - MongoDB
 
 - https://github.com/MukulSethi123/mini-jira /ts

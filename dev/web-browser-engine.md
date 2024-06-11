@@ -8,7 +8,8 @@ modified: 2020-12-21T07:44:53.873Z
 # web-browser-engine
 
 # guide
-
+- resources
+  - [Web Browser Engineering book](https://browser.engineering/)
 # discuss-stars
 - ## 准备把《手写简易的浏览器》掏出来。
 - https://www.zhihu.com/pin/1382344579656626176
@@ -28,7 +29,7 @@ modified: 2020-12-21T07:44:53.873Z
   - 现有的架构对并行处理的支持非常困难，Google也认为必须对WebCore进行整体架构上的大改才能更好的支持并行处理，更充分利用多核CPU的能力，避免主线程过度拥挤
   - 为了避免单项任务长时间阻塞主线程，WebCore目前是用延时Timer的方式将一个复杂任务分解成多段来顺序执行，这种方式即不优雅，更无法充分利用多核的能力
 - WebCore为了可以同时支持不同的JS虚拟机（如JSC和V8）导致了额外的性能开销和妨碍了对JS性能更多的改进
-# pieces
+# browser-engine-overview
 - 苹果曾经使用Gecko，嫌弃Gecko曾经有段时间太臃肿，就把KDE的HTML引擎KHTML、JavaScript引擎KJS加工过来，发布了WebCore+JavaScriptCore的WebKit并开源。
 - 后来Google加入使用WebCore引擎，再后来Chromium又分支出去Blink引擎，JavaScript引擎是Google开源的V8。
 

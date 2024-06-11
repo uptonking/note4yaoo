@@ -9,7 +9,27 @@ modified: 2023-04-25T17:48:06.146Z
 
 # guide
 
+# discuss-OpenTelemetry
+- ## 
+
+- ## 
+
+- ## I've learned today that OpenTelemetry is literally unable to implement traditional traces 
+- https://x.com/zeeg/status/1778456223010169228
+  - (for example, long running operations), and has duct taped it by adding random edges (span links) as if a trace has become a graph database.
+- OTEL has a long way to go. I hope the industry adoption accelerates some stuff. Even “simple” stuff like a logging implementation for JS is still experimental
+  - I should clarify when I say OTel I'm only focused on tracing. Metrics/Logs are never gonna see mainstream adoption. You'll find startups and economy players latch onto them, but there's little to no value for most folks as logging adapters, metrics are solved problems.
+- what stops you from creating long-running operations with OTel? You can absolutely do that and I'm not aware of anything in the spec that prevents it. Links are necessary evil when you already have more than one trace-id. What else can you do?
+  - Nothing stops you, except you dont control the instrumentation. The best example of this is in HTTP requests in the frontend. Thats gonna be instrumented by upstream, so you're beholden to their decisions on e.g. link vs continuation of trace.
+- I suppose many organizations just have not reached the level of tech stack maturity to require a trace to be more than a graph DB. I guess everyone can't live on the edge
+- Just discovered this the other day. Was attempting to associate an async worker task to the span that triggered it. Even that wasn't supported (caused the API to crash) and their solution was just to disable recording that kind of link.
+  - That's a very common usecase, and does work. I've written blogs on how to do it in . NET... doesn't happen out of the box, but that's the same for any implementation.
+- [Understanding Distributed Tracing with a Message Bus | Honeycomb _202302](https://www.honeycomb.io/blog/understanding-distributed-tracing-message-bus)
+  - That's the blog I wrote for .net and servicebus, but the process is the same for others.
+
 # discuss
+- ## 
+
 - ## 
 
 - ## 
@@ -37,12 +57,6 @@ modified: 2023-04-25T17:48:06.146Z
 - Cost of storage, is that not obvious?
 
 - Text files are much easier for quick consumption in a text editor. It doesn't preclude injesting into a DB but writing a sql statement is much less convenient that doing a find in a text editor.
-
-- 
-- 
-- 
-- 
-- 
 
 - ## Tried to explain why OpenTelemetry format for metrics is bloated and over-engineered, and why Prometheus remote_write format is better 
 - https://twitter.com/valyala/status/1779061261524775371

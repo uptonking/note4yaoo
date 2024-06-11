@@ -157,6 +157,12 @@ modified: 2023-06-23T12:46:53.288Z
   - A plugin for CodeMirror editor for creating code demos as on Emmet Documentation
   - 依赖codemirror.v5
 
+- https://github.com/code-hike/examples/tree/main/with-remotion
+  - https://x.com/pomber/status/1800108854459715864
+  - 不依赖codemirror
+  - you can use Remotion's `useFrame` inside any Code Hike annotation to animate most of the examples from the docs
+  - wondering if it can also display twoslash annotations, but I don't think remotion supports React Server Components
+
 - https://github.com/val-town/codemirror-codeium /ISC/202404/ts
   - https://val-town.github.io/codemirror-codeium/
   - Codeium code completion integration for CodeMirror 6
@@ -1242,7 +1248,13 @@ modified: 2023-06-23T12:46:53.288Z
   - Sweep: open-source AI-powered Software Developer for small features and bug fixes.
   - Sweep is an AI junior developer that turns bugs and feature requests into code changes. Sweep automatically handles devex improvements like adding typehints/improving test coverage. 
   - Turns issues directly into pull requests (without an IDE)
-# more
+# products-coding
+- https://github.com/code-hike/codehike /MIT/202307/ts/inactive
+  - https://codehike.org/
+  - Build first-class code walkthroughs for the web
+  - 依赖react、@codesandbox/sandpack-client、@mdx-js/mdx.v2、diff
+  - https://github.com/code-hike/examples
+
 - https://github.com/replit/desktop /202406/ts
   - Replit desktop app for MacOS, Windows, and Linux
   - 可作为将网站打包为pc-app的模版
@@ -1250,7 +1262,7 @@ modified: 2023-06-23T12:46:53.288Z
   - You can then launch a packaged version of the app (needed to test certain features like auto-updating) by running the outputted binary locally 
   - To test your changes on other platforms, we recommend using a Virtual Machine host like UTM.
   - The app supports deeplinks with the `replit://` protocol which can be used to open specific pages or flows directly, launching the app if it's not already running.
-
+# more
 - https://github.com/datavis-tech/codearea /MIT/201908/js/inactive
   - A proof-of-concept code editor with syntax highlighting that uses
     - highlighted-pre-over-textarea approach (like react-simple-code-editor)

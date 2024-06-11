@@ -710,6 +710,21 @@ modified: 2022-08-21T10:02:27.788Z
     - post to ethercalc ok
   - https://github.com/davidbwaikato/cbh-ethercalc /202111/js
     - Cell Block HTML fork of Ethercal to support rich HTML representation along with text analysis in a spreadsheet
+
+- https://github.com/githubocto/flat-ui /MIT/202206/ts/inactive
+  - https://githubnext.com/projects/flat-data
+  - a React component that will render your flat dataset (an array of objects) in a table view
+  - 依赖radix-ui、d3、downshift、react-window、zustand
+  - auto-detect types
+  - show a distribution of each quantitative column
+  - calculate a diff between the main dataset and a `diffData` dataset
+  - flatgithub.com will automatically re-build and deploy when changes are pushed to the main branch.
+  - https://github.com/githubocto/flat-viewer /MIT/202202/ts/inactive
+    - https://flatgithub.com/
+    - a tool to view un-nested data (CSV & JSON files) in an interactive table
+  - https://github.com/githubocto/flat-demo-covid-dashboard /MIT/202406/ts
+    - https://octo.github.com/projects/flat-data
+    - A Flat Data GitHub Action demo repo
 # async/concurrency/worker
 - https://github.com/Magnithor/CanvasTable /202201/ts/inactive
   - https://magni.strumpur.net/CanvasTable/
@@ -904,12 +919,6 @@ modified: 2022-08-21T10:02:27.788Z
   - https://www.zinggrid.com/
   - Our main focus is on fast, responsive, and customizable grids utilizing ES6 and native web components.
   - Our goal is to solve the problem of creating a CRUD grid in under five minutes.
-
-- https://github.com/githubocto/flat-ui /ts
-  - a React component that will render your flat dataset (an array of objects) in a table view
-  - 依赖radix-ui、d3、downshift、react-window、zustand
-  - https://github.com/githubocto/flat-viewer
-    - a tool to view un-nested data (CSV & JSON files) in an interactive table
 # list-grid-canvas
 - x-spreadsheet/wolf-table /10.1kStar/MIT/202112/ts
   - https://github.com/wolf-table/table /ts

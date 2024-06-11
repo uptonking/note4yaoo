@@ -102,7 +102,15 @@ modified: 2023-11-01T14:13:41.390Z
 
 - ## 
 
-- ## 
+- ## the implementation of btree in PG is also more refined. 
+- https://x.com/baotiao/status/1799557033555116035
+  - For example, it includes features like suffix compression, blink-tree, and deduplication. 
+  - In comparison, up to now, the btree in upstream InnoDB still has a big lock
+- InnoDB internal nodes are also linked making them b-link trees. The problem you are referring to is the dict_index_t::lock which tries to solve another problem. Covering the change of the root page.  It’s indeed a bottleneck.
+  - I don't think that InnoDB's btree is a blink-tree. In my opinion, it needs to include link pages and support the process where child nodes do not need to link back to parent nodes during structure modification operations (SMO) to be considered a blink-tree.
+- Child nodes do not link back to parent nodes. Why do you think that? The nodes at all levels below the root link both ways. To reinforce the point, InnoDB SMO operations are redo logged atomically using the minimal number of latches required on the pages. What is different is that it doesn’t follow the latching protocol of Lehman & Yao (they coined the term B-link tree as part of their latching protocol).
+  - NO, I think InnoDB is not doing enough in this area. During SMO, it locks the subtree and does not guarantee locking only two levels. With blink-tree and lock coupling, it can achieve locking only two levels. I have wrote a article about the evolvetion of btree index.
+- Sure, it doesn’t follow the L&Y protocol, and could be improved , the point is that it’s physically a B-link tree  
 
 - ## pg可以创建自定义的range类型也可以用内置的daterange类型存储范围类型 然后使用@>, *, +, -等运算符进行范围查询 例如交集 差集 左右开闭区间包含等
 - https://twitter.com/changwei1006/status/1769657994030281210

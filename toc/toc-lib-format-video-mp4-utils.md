@@ -11,6 +11,11 @@ modified: 2024-04-14T12:19:52.096Z
 
 # popular
 
+- https://github.com/remotion-dev/remotion /NonCommercial/202406/ts
+  - https://remotion.dev/
+  - creating videos programmatically using React.
+  - [Remotion 5.0 license change _202404](https://github.com/remotion-dev/remotion/pull/3750)
+
 # apps
 - https://github.com/lyonbot/video-to-gif /202404/ts
   - https://lyonbot.github.io/video-to-gif/

@@ -14,7 +14,8 @@ modified: 2021-03-11T11:26:06.670Z
 
 - ## 
 
-- ## 
+- ## TIL `document.createElementNS()` for SVGs while debugging Wordpress...if you call `document.createElement("svg")` you get an HTMLUnknownElement
+- https://x.com/RogersKonnor/status/1800228594561818666
 
 - ## SVG is used on >65% of websites. Yet, browsers have been *refusing* to work on SVG, ignoring pressure and pain points from web devs.
 - https://x.com/LeaVerou/status/1791860519315419358

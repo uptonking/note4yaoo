@@ -27,7 +27,25 @@ modified: 2022-12-24T07:31:48.493Z
 - But for some reason they don't work as in regular JS. When I browse wasm pages from my phone the touch feels like lagging
 
 - The Flutter demo runs terribly on Firefox Nightly - an absolute jank fest.
+# discuss-toolchain-wasm
+- ## 
+
+- ## 
+
+- ## I just found a bizarre way to embed WASM modules within JS files
+- https://x.com/WebReflection/status/1800112953926312101 /202406/js
+  - https://github.com/WebReflection/buffer-to-base64
+  - This module produces a compressed base64 version of any file and it decompress it "at speed light" in browsers.
+  - I'm already using this technique with my re-packaging of the awesome sql.js which in turns open worlds for embedded runtimes without foreign CDN dependencies ... 
+  - here an automated bootstrap example created via the original WASM file
+  - last, but not least, this works in browsers, NodeJS, Deno, and hopefully soon in @bunjavascript too, it's literally one code base64 pack/unpack 'em all via standard primitives
+  - [How to embed your WASM blob _202406](https://webreflection.medium.com/how-to-embed-your-wasm-blob-c29692119039)
+
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## I really wanted to know which libraries are bloating my WebAssembly binaries, so I wrote a visualizer.

@@ -21,20 +21,25 @@ modified: 2022-11-06T15:46:05.676Z
 - https://github.com/fabiospampinato/csv-simple-parser /ts
   - A simple, fast and configurable CSV parser.
 # examples
-- https://github.com/UgnisSoftware/react-spreadsheet-import /MIT/202401/ts
+- https://github.com/UgnisSoftware/react-spreadsheet-import /403Star/MIT/202401/ts/inactive
   - https://ugnissoftware.github.io/react-spreadsheet-import
   - Import flow for Excel (.xlsx) and CSV file with automated column matching and validation.
   - A component used for importing XLS / XLSX / CSV documents built with Chakra UI.
+  - 上传流程 upload-file > set-header > match > validate
+  - 依赖react-data-grid.v7-beta13、react-data-grid、xlsx-ugnis、@chakra-ui/react.v2、framer-motion、lodash
 
-- https://github.com/tableflowhq/csv-import /MIT/202404/ts/react
+- https://github.com/tableflowhq/csv-import /1.6kStar/MIT/202404/ts/react
   - https://tableflow.com/
   - Open-source CSV and XLS/XLSX file importer for React and JavaScript
   - Embed the CSV Importer in your app with the React or JavaScript SDK
   - 依赖react、@chakra-ui/react.v2、papaparse、xlsx、react-dropzone、zustand
+  - 上传流程 upload > review > complete
   - https://www.npmjs.com/package/csv-import-js
 
-- https://github.com/beamworks/react-csv-importer /ts/依赖少
+- https://github.com/beamworks/react-csv-importer /MIT/202305/ts/仅csv无xlsx
+  - https://codesandbox.io/s/github/beamworks/react-csv-importer/tree/master/demo-sandbox
   - This library combines an uploader + CSV parser + raw file preview + UI for custom user column mapping, all in one.
+  - 依赖papaparse、react-dropzone、@use-gesture/react
   - drag-drop UI to remap input columns as needed
   - 1GB+ CSV file size (true streaming support without crashing browser)
   - automatically strip leading BOM character in data

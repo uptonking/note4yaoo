@@ -361,9 +361,11 @@ modified: 2024-05-09T09:35:28.467Z
 
 - ## 
 
-- ## 
+- ## 💫 `<AnimatedIDE />` has been achieved internally.
+- https://x.com/delba_oliveira/status/1800211372078141623
+  - 行级动画，非字符级动画
 
-- ## 🚀 [好多人问，必须正式介绍一下：deepin-IDE – 深度科技社区 _202309](https://www.deepin.org/zh/2023-9-4/)
+- ## 🚀 [必须正式介绍一下: deepin-IDE – 深度科技社区 _202309](https://www.deepin.org/zh/2023-9-4/)
 - 深度科技（deepin） 有自己的 IDE 吗？ 为什么要做自己的 IDE
   - deepin-IDE 传承了 deepin “专注自研，贡献开源” 的技术基因，自研代码14万余行。
   - 当然，这一产品的快速发展，是站在了“开源”这个巨人的肩膀上，为了避免重复造轮子，采用了一些开源终端组件、功能组件，在此列出该产品汲取的开源成果，感谢开源社区

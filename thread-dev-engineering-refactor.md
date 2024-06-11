@@ -23,7 +23,10 @@ modified: 2023-11-15T08:20:46.678Z
 
 - ## 
 
-- ## 
+- ## 对一个curd 的部分进行 batch  化改造，原理很简单，过程很麻烦，最后还要写一篇设计文档
+- https://x.com/suohawking/status/1800096913997660317
+- batch 后再并行，并行后再分布式并行，分布式并行后再并发，并发后再限制并发，限制并发后再动态调整并行度和并发度，这辈子的工作量有了
+- 我在对一个 polling 实现的 batch 的 curd，用 message queue 进行实时化改造
 
 - ## 今天看到有人转发一个关于维护 Oracle database 💩山代码的文章
 - https://twitter.com/beihuo/status/1729624234585108518

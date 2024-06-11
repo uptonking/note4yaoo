@@ -61,6 +61,14 @@ modified: 2023-02-07T09:22:03.120Z
   - Advancing Speech-to-Text Processing
   - 实现了从 Youtube 下视频，对于下载完的视频，还提供了， openai 的 whisper v3 直接转录成文本的代码 
 
+- https://github.com/xenova/whisper-web /MIT/202405/ts
+  - https://hf.co/spaces/Xenova/whisper-web
+  - ML-powered speech recognition directly in your browser
+  - Built with Transformers.js.
+  - https://github.com/xenova/whisper-web/tree/experimental-webgpu
+    - https://x.com/xenovacom/status/1799858691639796089
+    - It would be perfect if there was a Whisper implementation that could handle real-time voice streaming
+
 ## more-asr
 
 - https://github.com/wenet-e2e/wenet

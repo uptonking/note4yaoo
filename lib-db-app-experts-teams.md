@@ -43,7 +43,7 @@ modified: 2023-02-02T03:22:07.941Z
   - https://www.zhihu.com/people/bohutang
 
 - wubx /databend
-  - Datafuse Labs · Databend 架构师 & 联合创始人
+  - Databend 架构师 & 联合创始人
   - https://www.zhihu.com/people/wubx
 
 - xuanwo /databend /opendal
@@ -74,6 +74,10 @@ modified: 2023-02-02T03:22:07.941Z
   - https://github.com/baotiao
   - http://baotiao.github.io/archive.html
   - https://www.zhihu.com/people/chenzongzhi
+  - https://x.com/baotiao
+
+- 鸣嵩 /polardb创始人
+  - https://www.zhihu.com/people/wei_cao
 
 - 温正湖
   - https://www.zhihu.com/people/wen-zheng-hu

@@ -206,6 +206,14 @@ modified: 2022-11-07T10:25:12.034Z
   - [telegram群组-电报群大全- Telghub](https://www.telghub.com/)
   - [电报telegram群全网检索 - TgSql.com](https://tgsql.com/search)
 
+- 64Gram
+  - https://github.com/TDesktop-x64/tdesktop
+  - https://flathub.org/apps/io.github.tdesktop_x64.TDesktop
+  - 64Gram (unofficial Telegram Desktop), Based on Telegram Desktop
+  - source code is published under GPLv3 with OpenSSL exception
+  - support win/linux/macos
+  - 下载的视频在本地目录 ~/.var/app/io.github.tdesktop_x64. TDesktop/data/64Gram/tdata/temp_data
+
 - https://github.com/morethanwords/tweb /webk
   - Telegram Web K, GPL v3
 - https://github.com/Ajaxy/telegram-tt /webz/weba
@@ -431,6 +439,9 @@ sudo systemctl start minidlna
     - 免费节点一直在被墙，没有可用性保障，会尽力维护
     - 每天 00:00-13:00 为无人值守时间，免费节点如果用不了就是被墙了，属正常情况
 
+- https://github.com/Pawdroid/Free-servers
+  - 免费订阅地址，免费节点，6小时更新一次，共享节点
+
 - 机场gfw
   - [VPS虚拟主机测评_IDC主机测评](https://shuziren.github.io/ssrvps/)
   - [FlowerCloud - 产品套餐](https://huacloud.dev/product.html)
@@ -458,6 +469,9 @@ sudo systemctl start minidlna
   - [一元机场节点安全吗，不会是钓鱼吧 - V2EX](https://www.v2ex.com/t/913781)
 
 ## proxy-cli-for-apps
+
+- 代理配置软件
+  - 可在github搜索主流的代理配置v2ray/ss gui, 然后在flathub/snapstore搜索正式包或测试包
 
 - git最近更新了socks5的语法，去掉了引号，git config --global http.proxy socks5://127.0.0.1:10808配合V2RayN可用
   - #只对github.com
