@@ -18,7 +18,9 @@ modified: 2022-11-08T10:34:34.820Z
 
 - ## 
 
-- ## 
+- ## A very short post, but something I've wanted to write down somewhere for years
+- https://x.com/max_leiter/status/1800320653553524913
+  - [Ship something every day _202406](https://maxleiter.com/blog/ship-every-day)
 
 - ## 为什么没必要关注「技术网红」
 - https://x.com/WildCat_zh/status/1799800591180562535

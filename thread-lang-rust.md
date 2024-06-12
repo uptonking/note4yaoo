@@ -12,7 +12,14 @@ modified: 2023-10-06T16:26:57.557Z
 # discuss
 - ## 
 
-- ## 
+- ## Rust really makes it hard to move out. You get:
+- https://x.com/Horusiath/status/1800411588660502855
+  - docs with compile-verified snippets
+  - test & benchmark tools
+  - code formatter
+  - good abstractions at stdlib level
+  - solid compile-time safety mechanisms
+- You try other PL and realise, these things are not to be taken for granted.
 
 - ## 🔢 tldr: JSON 中的数字类型长度为 53bit，所以存入一个 `u64` 会产生神秘 bug
 - https://twitter.com/roifex/status/1779879331378118918

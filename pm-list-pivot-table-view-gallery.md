@@ -16,3 +16,12 @@ modified: 2022-12-16T01:56:23.292Z
 # examples-
 
 # more
+
+# discuss-gallery/card
+- ## 
+
+- ## 
+
+- ## task widget disclosure interaction
+- https://x.com/nitishkmrk/status/1800462001782829213
+  - 列表渐变卡片的动画效果
