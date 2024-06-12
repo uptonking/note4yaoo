@@ -139,6 +139,11 @@ modified: 2023-10-26T15:29:40.053Z
   - Columnar storage compresses data, speeds up scans, and supports fast projections, both on regular and distributed tables.
   - You can use these Citus superpowers to make your Postgres database scale-out ready on a single Citus node. Or you can build a large cluster 
   - You can use these Citus superpowers to make your Postgres database scale-out ready on a single Citus node. Or you can build a large cluster 
+
+- https://github.com/pg-sharding/spqr /PSQL/202406/go
+  - Stateless Postgres Query Router
+  - SPQR is a production-ready system for horizontal scaling of PostgreSQL via sharding
+  - PostgreSQL is awesome, but it's hard to manage a single database with some terabytes of data and 105+ queries per second. Current sharding solutions focus on analytical and hybrid workloads (OLAP, HTAP). Moreover, most of those solutions do not provide a smooth path for monolith to sharded transitions, which is why Yandex Cloud's Data Platform team developed SPQR.
 # pref
 - https://github.com/le0pard/pgtune /1.9kStar/MIT/202401/js
   - https://pgtune.leopard.in.ua/

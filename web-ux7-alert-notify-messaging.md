@@ -10,14 +10,12 @@ modified: 2021-07-29T20:37:31.690Z
 # alert
 
 - 偏向于消息通知，可交互操作
-
 # callout/note
-
 - 偏向于醒目提示，不可操作
   - 提供了左右结构，可选heading/icon/textContents
-
+# progress-bar/stepper
+- [PatternFly • Progress stepper](https://www.patternfly.org/components/progress-stepper/design-guidelines/)
 # ref
-
 - ## [Choosing the right UI component for communication with your users](https://medium.com/@adamshriki/choosing-the-right-ui-component-for-communication-with-your-users-523499c39490)
 - Callouts are text excerpts, used as a visual cue to draw attention to the text.
 - Callouts can contain an icon, a title and a message. 

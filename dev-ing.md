@@ -329,23 +329,50 @@ betterdiscordctl -i flatpak install
     - cursor光标位置经常对不上
   - [x] streaming infinite-list/tree
 # dev-06-dockview-floating
-
-## 060
-
-- diff-view to time-machine
+- CDE集成
+- diff-view
+  - red + green
+  - cursor
+- time-machine
   - workflow progress
-  - diff
+  - playback
 - chat ui: typewriter
+
+## 061
 
 - dev-log
   - 
 - dev-to
   - 
+## 0612
+
+- dev-log
+  - 根据prd更新时光机进度条的实现，在ui层实现简单暂停和继续
+- dev-to
+  - 继续cde的集成，在前端模拟ai的action
+
+## 0611
+
+- 制定计划、执行计划
+  - ai-server
+  - 制定计划agent与执行计划agent不是同一个角色
+  - 驾驶舱聊天数据持久化
+  - cde中回放数据持久化
+- diff-view
+  - 模型
+  - 视图
+  - 选区光标
+
+- dev-log
+  - cde新布局的发布
+- dev-to
+  - 继续完善cde的布局和交互逻辑
+  - 根据linear的任务拆分，推进clacky的发布，主要包括 制定计划、diff-view的逻辑、驾驶舱ai对话的ui(不包括逻辑)
 
 ## 0608
 
 - [B站11年，这 10 个技巧还有很多人不知道！ - 哔哩哔哩](https://www.bilibili.com/read/cv7767304/)
-  - 将视频的链接复制到视频的评论区，接着在链接后面加上 /?t=0h1m59s ，这里的英文字母 h、m、s 分别代表 时、分、秒 ，字母前面的数字对应跳转到的时间点，即跳转到视频的 1 分 59 秒处。 
+  - 将视频的链接复制到视频的评论区，接着在链接后面加上 `/?t=0h1m59s` ，这里的英文字母 h、m、s 分别代表 时、分、秒 ，字母前面的数字对应跳转到的时间点，即跳转到视频的 1 分 59 秒处。 
 
 ## 0606
 

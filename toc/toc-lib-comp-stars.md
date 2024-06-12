@@ -207,7 +207,61 @@ modified: 2021-01-12T18:49:07.422Z
 
 - https://github.com/timekit-io/booking-js
   - version 2 of booking.js that supports the new projects model and uses App Widget Key for authentication
-# more-components
+# progress
+- https://github.com/kimmobrunfeldt/progressbar.js /MIT/202310/js/svg
+  - https://kimmobrunfeldt.github.io/progressbar.js
+  - Responsive and slick progress bars with animated SVG paths
+  - Use built-in shapes or create your own paths
+  - 🍴 forks
+  - https://github.com/hiro0209/progressbar.js
+  - https://github.com/OldTownIT/progressbar.js
+
+- https://github.com/tanem/react-nprogress /MIT/202308/ts
+  - https://codesandbox.io/s/github/tanem/react-nprogress/tree/master/examples/multiple-instances
+  - a React port of rstacruz's nprogress module. 
+  - It exposes an API that encapsulates the logic of nprogress and renders nothing, giving you complete control over rendering
+- https://github.com/rstacruz/nprogress /MIT/202004/js/inactive
+  - https://rstacruz.github.io/nprogress/
+  - Slim progress bars for Ajax'y applications. Inspired by Google, YouTube, and Medium.
+  - 🍴 forks
+  - https://github.com/KyriakosMilad/nprogress-rtl
+  - https://github.com/RamyRais/multi-nprogress
+  - https://github.com/Sachin-Rungta/nprogress
+  - https://github.com/GerHobbelt/nprogress
+    - This version has the ability to display a progress message next to the spinner (top right corner).
+    - a pure JS version of rsantacruz's NProgress
+
+- https://github.com/saini-g/react-step-progress /MIT/202010/ts/archived
+  - Dynamic multi-step progress indicator for React
+  - 🍴 forks
+  - https://github.com/gboksm11/react-step-progress
+    - added skip btn functionality; modified for Nexus
+  - https://github.com/r-bt/react-stepz /202105/ts
+    - uses React Contexts to share the current step between components
+    - useStepProgress Hook, StepProgressContext, StepProgress, & Step
+  - https://github.com/biswajit-k/react-stepz /202209/ts
+    - https://codesandbox.io/s/react-stepz-demo-43byr
+    - expose currentStep/setCurrentStep
+
+- https://github.com/pierreericgarcia/react-step-progress-bar /MIT/202111/js/inactive
+  - https://pierreericgarcia.github.io/react-step-progress-bar/examples
+  - create stunning progress bars with steps in React
+  - 基于div实现进度条和step节点
+- https://github.com/vimercati-samir/react-progress-stepper /MIT/202108/js/archived
+  - react progress stepper
+
+- https://github.com/skt-t1-byungi/rsup-progress /MIT/202404/ts/vanillajs
+  - https://skt-t1-byungi.github.io/rsup-progress/
+  - A lightweight (1KB) progress bar with promise support
+
+- https://github.com/badrap/bar-of-progress /MIT/202310/ts/NoDeps/vanillajs
+  - A small, easy & zero-dependency progress bar component
+  - We consider this package to be feature-complete, and as such we're not taking in any new feature requests 
+
+- https://github.com/react-component/progress /MIT/202403/ts
+  - https://progress-react-component.vercel.app/demo/steps
+  - Progress Bar, 示例以环形为主
+# more
 - https://github.com/ashwinbabus/react_comments /js
   - https://hardcore-cray-d3cab1.netlify.app/
   - A simple react-app (no backend) that demonstrates nested comments feature.

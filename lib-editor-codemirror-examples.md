@@ -864,6 +864,12 @@ modified: 2023-06-23T12:46:53.288Z
   - https://okikio-codemirror.netlify.app/
   - A minor test of Codemirror
 
+- https://github.com/SilasMarvin/lsp-ai /MIT/202406/rust
+  - LSP-AI is an open source language server that serves as a backend for performing completion with large language models and soon other AI powered functionality. 
+  - Because it is a language server, it works with any editor that has LSP support.
+  - LSP-AI can work as an alternative to Github Copilot.
+  - The goal of LSP-AI is to assist and empower software engineers by integrating with the tools they already know and love not replace software engineers.
+
 ## utils-lang
 
 - https://github.com/inspirnathan/codemirror-lang-mermaid /MIT/202309/ts

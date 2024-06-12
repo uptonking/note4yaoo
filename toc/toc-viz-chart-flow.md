@@ -344,8 +344,17 @@ modified: 2020-10-22T10:22:55.878Z
   - https://eurostat.github.io/gridviz/
   - a JavaScript library to visualise gridded data (or any tabular dataset with x/y position) in the browser in a large variety of advanced cartographic styles
   - a JavaScript library to visualise gridded data (or any tabular dataset with x/y position) in the browser in a large variety of advanced cartographic styles
+# flow-ai
+- https://github.com/FlowiseAI/Flowise /apache2/202406/ts
+  - https://flowiseai.com/
+  - https://docs.flowiseai.com/
+  - Drag & drop UI to build your customized LLM flow
+  - Open source low-code tool for developers to build customized LLM orchestration flow & AI agents
+  - 支持langchain的各种组件
 # more
 - https://github.com/aislelabs/react-flowchart-editor
   - http://data.aislelabs.com/demo/index.html
   - A windowed flow chart editor in React
   - 只依赖react
+
+- [flowith - Node-Based GPT-4o and Claude-3 Opus Driven AI Productivity Tool](https://flowith.io/)

@@ -184,9 +184,8 @@ event.api.addPanel({
 - ## 
 
 - ## [Actions in paneview ](https://github.com/mathuo/dockview/issues/335)
-- 
-- 
-- 
+- I've tried with little time to do an example here: codesandbox.io/s/simple-paneview-forked-qrklqh?file=/src/app.tsx
+  - It works, but I have my doubts about the performance of passing a component to `updateParameters` .
 
 - ## [How to keep group remain after last child has been removed?  ](https://github.com/mathuo/dockview/issues/402)
 - 
