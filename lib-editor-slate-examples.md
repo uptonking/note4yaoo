@@ -328,7 +328,7 @@ modified: 2023-02-05T19:03:12.723Z
 - https://github.com/seafileltd/seafile-editor /RepoNA
   - 项目是基于 react-slate 组件库的二次封装, 用于满足公司富文本编辑器的使用需求
 
-- slate portive
+- slate portive /202310/ts/inactive
   - https://github.com/portive/wysimark
     - Wysiwyg Editor for Markdown: 100% CommonMark + GFM with Uploads and Image Resizing
     - 依赖slate-react

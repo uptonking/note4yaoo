@@ -344,12 +344,40 @@ betterdiscordctl -i flatpak install
   - 
 - dev-to
   - 
+
 ## 0612
 
+- 系统状态管理如何支持同时执行多个任务
+
+- [React setInterval and useState - Stack Overflow](https://stackoverflow.com/questions/71172632/react-setinterval-and-usestate)
+  - What if you want to start, stop, reset timer using functions ?
+  - Make sure you use `useRef()`, because `useState()` will cause render.
+
+```css
+// 简单无分段的进度条动画效果
+
+.grad {
+  width: 10rem;
+  height: 4rem;
+  color: #fff;
+  background: linear-gradient(to right, red, blue);
+  background: linear-gradient(to left, #3F3F46 50%, #047857 50%);
+  background-size: 200% 100%;
+  background-position: right;
+  transition: background-position 200ms ease-in-out;
+}
+
+.grad:hover {
+  background-position: left
+}
+```
+
+- [Why you don't need every CSS pseudo-selector in Tailwind CSS - DEV Community](https://dev.to/wheelmaker24/why-you-don-t-need-every-css-pseudo-selector-in-tailwind-css-3kn1)
+
 - dev-log
-  - 根据prd更新时光机进度条的实现，在ui层实现简单暂停和继续
+  - 根据prd更新时光机进度条的实现，实现了一个最小版的验证，在ui层实现简单暂停和继续
 - dev-to
-  - 继续cde的集成，在前端模拟ai的action
+  - 继续cde的集成，在前端模拟ai的对文件树的操作action
 
 ## 0611
 

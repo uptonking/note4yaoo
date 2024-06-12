@@ -22,6 +22,9 @@ modified: 2023-03-18T09:44:00.939Z
   - 类似vscode像codepen的实时预览扩展
 # office-industry
 
+
+- [葫芦笔记 - 知乎](https://www.zhihu.com/people/hulunote/)
+
 ## [峥研软件](https://www.peerup.work/)
 
 - 创始人 & CEO: 李严峰

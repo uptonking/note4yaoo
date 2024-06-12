@@ -52,7 +52,9 @@ modified: 2021-07-29T11:15:44.100Z
 
 - ## 
 
-- ## 
+- ## Surprised to see browser support for Custom States (`ElementInternals.states`) already at 87%
+- https://x.com/claviska/status/1800680936998076439
+  - https://caniuse.com/mdn-api_customstateset
 
 - ## 每日 CSS 一小坑：用了 container 后所有 position: fixed 的后代的坐标都会相对于该元素而不是 viewport。类似的属性还有 transform
 - https://twitter.com/luinlee/status/1787325824661942741

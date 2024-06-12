@@ -320,6 +320,8 @@ modified: 2023-02-26T18:25:01.328Z
 
 - https://github.com/rahmanda/tailwindscss /201905/inactive
   - SCSS version of Tailwind CSS for people who don't use modern module bundler.
+# utils
+- [CSS to Tailwind Converter | Loopple](https://www.loopple.com/tools/css-to-tailwind-converter)
 # more-tailwind
 - https://github.com/zendeskgarden/tailwindcss
   - A Tailwind CSS plugin for generating CSS based on the Garden theme object.

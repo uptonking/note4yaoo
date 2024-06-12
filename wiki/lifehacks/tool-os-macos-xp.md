@@ -28,7 +28,21 @@ modified: 2023-07-23T07:05:19.441Z
 
 - ## 
 
-- ## 
+- ## 新买了一台新的 Mac 电脑，配置新电脑是非常开心的一个过程，分享几个我认为工程师必装的软件
+- https://x.com/vikingmute/status/1800341873179111456
+- zed现在支持插件吗？有兼容vscode插件的计划吗
+  - 目前没有兼容计划
+
+- HomeBrew、Wezterm、fzf、Neovim...
+- DBeaver、TablePlus、Medis，数据库管理
+- VMware Fusion，虚拟机
+- Microsoft Remote Desktop
+- RapidAPI，接口调试
+
+- Replit 桌面客户端，作为各种语言的  Playground； 
+- Kap 录制视频和 gif 的轻量工具；
+- SwitchKey  自动在各个应用之间切换中英输入法；
+- Linear 项目管理的好工具。
 
 - ## 忽然想起来，Apple 主推自己的芯片之后，以后就没有for x86的macOS系统了吧？那么，以后也就没有黑苹果咧？
 - https://twitter.com/choicky/status/1682953718004858882
