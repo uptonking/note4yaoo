@@ -330,6 +330,7 @@ betterdiscordctl -i flatpak install
   - [x] streaming infinite-list/tree
 # dev-06-dockview-floating
 - CDE集成
+  - lift layout state up to global
 - diff-view
   - red + green
   - cursor

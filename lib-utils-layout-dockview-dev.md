@@ -14,8 +14,7 @@ modified: 2024-05-27T11:39:14.886Z
   - Built-in support for floating groups and groups in new windows with a supporting api for pragmatic control.
   - dockview doesn't interfer with any drag and drop logic for other controls
     - Drag and Drop tab to position your layout as well as interacting with external drag events
-  - 支持keyboard快捷键
-    - 导航到其他group的tab
+  - 支持keyboard快捷键，导航到其他group的tab
   - ✨ 支持Nested Dockviews, 即支持多实例、嵌套实例
   - framework-agnostic, 支持react/vue
 
@@ -29,7 +28,7 @@ modified: 2024-05-27T11:39:14.886Z
   - Customize header to add additional icons or custom tab
   - high test coverage
   - Exposes native support for both ReactJS components and Vanilla TypeScript
-  - ✨ 内置丰富的拖拽功能: 可折叠面板accordion支持拖拽改变顺序，tab支持改变顺序
+  - ✨ 内置丰富的拖拽功能: 可折叠面板accordion拖拽改变顺序，tab改变顺序
 
 - dev-xp 简单场景没必要上复杂的库
   - 基本架构: dock > groups/window > panels/tab
@@ -37,7 +36,7 @@ modified: 2024-05-27T11:39:14.886Z
   - 💡 dockview最适合的场景是标签页拖拽，不需要拖拽的场景使用简单sidebar即可
     - 容易实现将标签页拖到左中右的位置，左中右位置一般是并列关系
     - 适合实现将浮动面板的标签拖拽到主区域, 如果不需要可不用dockview
-    - splitpanel容易实现拖拽调整宽度
+    - dockview/splitpanel容易实现拖拽调整宽度
 
 - examples
   - [经典ide三栏布局 GridviewReact ](https://github.com/mathuo/dockview/tree/master/packages/docs/sandboxes/editor-gridview)
@@ -47,8 +46,8 @@ modified: 2024-05-27T11:39:14.886Z
   - [Window-like mananger with tabs ](https://dockview.dev/docs/advanced/)
   - [iframes ](https://dockview.dev/docs/advanced/iframe)
   - [Nested Instances ](https://dockview.dev/docs/advanced/nested)
+  - 💡 将外部元素拖到dockview [External Dnd Events ](https://dockview.dev/docs/core/dnd/external)
   - 🌲 文件树的拖拽 [Dnd ](https://dockview.dev/docs/core/dnd/dragAndDrop)
-  - 将外部元素拖到dockview [External Dnd Events ](https://dockview.dev/docs/core/dnd/external)
   - [Dockview Framework Wrappers (Vue.js, Angular, JavaScript etc.) ](https://github.com/mathuo/dockview/issues/562)
   - https://codesandbox.io/u/mathuo
   - [Search - CodeSandbox](https://codesandbox.io/search?query=dockview&page=1&configure%5BhitsPerPage%5D=12&refinementList%5Bnpm_dependencies.dependency%5D%5B0%5D=dockview)
@@ -56,6 +55,8 @@ modified: 2024-05-27T11:39:14.886Z
 - resources
   - https://github.com/search?type=code&q=dockview+path%3Apackage.json%20NOT%20is:fork
 # draft
+- default-width
+
 - tab内容懒加载的最佳实践
   - gridview的面板逐个懒加载
 
@@ -70,18 +71,19 @@ modified: 2024-05-27T11:39:14.886Z
 
 - replace watermark with placeholder
 
-- panel的渲染模式需要采用onlyWhenVisible/always的组合
-  - 根据业务场景的需求
+- 根据业务场景的需求，panel的渲染模式需要采用onlyWhenVisible/always的组合
   - 兼顾内存占用和渲染性能
 
 - 
 - 
 
 # dev-xp
-- toggle groups的处理 ?
+- 🤔 显示隐藏groups的处理 ?
+  - toggle
+  - 默认使用 display: none
 
 - ide示例基于Gridview实现， 编辑区面板的初始数据 `size: 100` 很重要, 若注释掉，则无法显示left/right
-  - Gridview暂不支持floating，实现floating推荐使用Dockview
+  - 🧐 Gridview暂不支持floating，实现floating推荐使用Dockview
   - Dockview也可以实现Gridview的分屏拖拽的效果
 
 - 
@@ -183,7 +185,7 @@ event.api.addPanel({
 
 - ## 
 
-- ## [Actions in paneview ](https://github.com/mathuo/dockview/issues/335)
+- ## 🌰 [Actions in paneview ](https://github.com/mathuo/dockview/issues/335)
 - I've tried with little time to do an example here: codesandbox.io/s/simple-paneview-forked-qrklqh?file=/src/app.tsx
   - It works, but I have my doubts about the performance of passing a component to `updateParameters` .
 
