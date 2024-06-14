@@ -328,7 +328,7 @@ betterdiscordctl -i flatpak install
     - 2个编辑器同一页面协同的示例未完成
     - cursor光标位置经常对不上
   - [x] streaming infinite-list/tree
-# dev-06-dockview-floating
+# dev-06-dockview-floating-&-progressbar-animation-&-cm-diff-&-cm-typewriter
 - CDE集成
   - lift layout state up to global
 - diff-view
@@ -338,6 +338,11 @@ betterdiscordctl -i flatpak install
   - workflow progress
   - playback
 - chat ui: typewriter
+- ui
+  - dark theme for dockview
+
+- not-yet
+  - 删除未使用的 workbench2 组件失败，会导致样式混乱
 
 ## 061
 
@@ -440,7 +445,7 @@ betterdiscordctl -i flatpak install
   - 01 – UCS-2 (UTF-16 encoded Unicode with BOM), in ID3v2.2 and ID3v2.3.
   - 02 – UTF-16BE encoded Unicode without BOM, in ID3v2.4.
   - 03 – UTF-8 encoded Unicode, in ID3v2.4.
-# dev-05-codemirror-&-cde-&-replay-&-dockview-views
+# dev-05-codemirror-docs-&-cde-pm-&-replay-&-dockview-views
 
 ## 0531
 

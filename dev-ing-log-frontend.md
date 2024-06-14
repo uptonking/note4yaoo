@@ -9,6 +9,19 @@ modified: 2023-06-14T00:53:02.797Z
 
 > about web development
 
+## 0614
+
+- https://almanac.io/  这个文档产品，用的也是 Prosemirror，看着设计挺不错的
+  - 可以通过它的 DOM 显示和文档交互，窥一下它对于一些交互的处理逻辑
+  - 前端不就这点好，没有秘密
+
+- [Next.js attempted import error: 'useLayoutEffect' is not exported from 'react' (imported as 'React') - Stack Overflow](https://stackoverflow.com/questions/77885952/next-js-attempted-import-error-uselayouteffect-is-not-exported-from-react)
+  - 需要在引用第三方可疑组件(特别是使用了useLayoutEffect)时，在使用位置加上 'use client'
+
+- dev-log
+  - 优化了cde的交互细节，分析了获取paas中op状态数据的方法
+- dev-to
+  - 尝试单个action对应文件的 diff视图-静态版
 # logging
 
 ## [jsx相比模板有什么优点？ - 知乎](https://www.zhihu.com/question/411745998)
@@ -641,7 +654,7 @@ parseInt("0xf", 10) === 0; //true. This is supposed to be 15
 
 - node.value
   - This one depends on the element that you've targeted.
-  - For the above example, `x` returns an HTMLDivElement object, which does not have a `value` property defined.
+  - For the above example,  `x` returns an HTMLDivElement object, which does not have a `value` property defined.
   - Input tags, for example, do define a `value` property, which refers to the "current value in the control".
   - for certain input types the returned value might not match the value the user has entered. For example, if the user enters a non-numeric value into an `<input type="number">` , the returned value might be an empty string instead.
 

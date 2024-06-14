@@ -316,6 +316,9 @@ useEffect(() => {
 // 客户端request getPlaybackInfo
 // 42 
 
+// 回放拖动卡顿的问题示例如下
+// https://www.1024paas.com/ide/replay/672251935319277568/showmebug?showRRwebController=1
+
 const playbackInfo = [
   "playbackInfo",
   {

@@ -56,14 +56,12 @@ modified: 2024-05-27T11:39:14.886Z
   - https://github.com/search?type=code&q=dockview+path%3Apackage.json%20NOT%20is:fork
 # draft
 - default-width
-
-- tab内容懒加载的最佳实践
-  - gridview的面板逐个懒加载
-
+  - 宽度要在所有panel都addPanel后再统一设置，不能addPanel后立即设置
 - 浏览器窗口resize时，自动更新各panel宽度
-- Gridview不支持floating-panels, 仅Dockview支持floating-panels
 
 - maximize-panel时，支持占满指定元素的宽高，而不是占满整个Dockview(避免挡住标题栏)
+
+- Gridview不支持floating-panels, 仅Dockview支持floating-panels
 
 - 未实现将折叠面板中的文件拖拽到编辑区的交互
 
@@ -74,10 +72,15 @@ modified: 2024-05-27T11:39:14.886Z
 - 根据业务场景的需求，panel的渲染模式需要采用onlyWhenVisible/always的组合
   - 兼顾内存占用和渲染性能
 
+- tab内容懒加载的最佳实践
+  - gridview的面板逐个懒加载
+
 - 
 - 
 
 # dev-xp
+- 💡 旧版文档中包含更多的api使用示例
+
 - 🤔 显示隐藏groups的处理 ?
   - toggle
   - 默认使用 display: none
