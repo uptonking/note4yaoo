@@ -14,7 +14,7 @@ modified: 2023-01-29T10:52:44.183Z
 
 - ## 
 
-- ## [CodeMirror 6: Web-Worker-isolated state? _202012](https://discuss.codemirror.net/t/codemirror-6-web-worker-isolated-state/2788)
+- ## 🤔 [CodeMirror 6: Web-Worker-isolated state? _202012](https://discuss.codemirror.net/t/codemirror-6-web-worker-isolated-state/2788)
 - Considering V6’s singleton and isolated state, I think it’s possible to ‘decouple’ the EditorView instance from it’s state and instead dispatch updates through some asynchronous helper functions. 
   - I wish to do this because, well, it’s fun, and also because I’m doing some fairly heavy lifting on the DOM on the main thread (very, very fast Markdown live-preview, which itself is already heavily web-workerized and asynchronous) and I would like to isolate the potentially parse-heavy operations into a web-worker.
   - I know that monaco-editor already does this, so it would be a ‘competitive’ feature to have or have easily supported.
@@ -172,7 +172,7 @@ modified: 2023-01-29T10:52:44.183Z
 
 - ## 
 
-- ## 📖📚 [Show HN: Add live runnable code to your dev docs | Hacker News _202204](https://news.ycombinator.com/item?id=31004973)
+- ## 📖📚 [Devbook - Show HN: Add live runnable code to your dev docs | Hacker News _202204](https://news.ycombinator.com/item?id=31004973)
 - Devbook is an SDK that you add to your docs website and then every time a user visits your dev docs, we spin up a VM just for that user. 
   - The VM is ready in about 18-20 seconds. We haven't had enough time to work on optimization but from our early tests, we are fairly confident we can get this to about 1-2 seconds.
   - In the VM you can run almost anything. Install packages, edit & save files, run binaries, services, etc.
@@ -192,7 +192,7 @@ modified: 2023-01-29T10:52:44.183Z
   - Firecracker was developed at Amazon Web Services to accelerate the speed and efficiency of services like AWS Lambda and AWS Fargate. 
 
 - Very good idea, and you're not alone. The upcoming documentation for React will have a similar feature built on Sandpack
-- We've used https://docusaurus.io/docs/markdown-features/code-blocks#int... do do this ourselves. No need to use codesandbox.
+- We've used https://docusaurus.io/docs/markdown-features/code-blocks do this ourselves. No need to use codesandbox.
   - Docusaurus maintainer here. Yes we like MDX and live code blocks to embed natively runnable code in your page. I don't like the idea of loading a remote iframe much (at least for most cases using JS).
   - The StackBlitz / WebContainer approach also seems better than a remote VM + iframe
   - We'll likely use a project called React-Runner in the future, quite similar to our current setup (real native embed) but lighter.
@@ -253,10 +253,34 @@ modified: 2023-01-29T10:52:44.183Z
   - In core, it will only work with JupyterLab 4. It’s possible someone could write an extension that would replace some renderers with codemirror 6 (e.g. notebook cell inputs), but likely not all of them (e.g. settings editor).
   - 💡 There was an attempt to generalize the `ICodeEditor` to allow alternate implementations (e.g. to support monaco integration), but this never really worked out, and supporting two versions of the same library is particularly challenging when the breaking changes are almost total.
 
+# discuss-cm-view-render
+- ## 
+
+- ## 
+
+- ## 
+
+- ## pleased w/ this CSS solution for a Datagrip-like contiguous border around the last-run selection in CodeMirror
+- https://x.com/hamiltonulmer/status/1800939237329731718
+  - 代码的不规则边框效果
+  - making CodeMirror work for serious editing is largely about stacking decorations & compositing them visually in the right ways. Which is yet another thing that should be familiar to anyone who does dataviz
+  - .cm-previously-run is a child of .cm-line, wraps text as selection. Use pseudoelements w/ z-index to draw bg + left/right (::before) and top/bottom (::after)
+  - make sure this is below .cm-selectionLayer so you can apply mix-blend-mode: multiply and darken the selection
+  - by putting the pseudoelements in explicit stacking order, you kind of "cover up" the top & bottom borders, giving the outline effect. So it's a hack, but is much nicer to do this w/ just CSS than to wrangle contiguous borders with JS or something
+
 # discuss
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## Hey @discord what do you use for syntax highlighting codefences? _202406
+- https://x.com/nullvoxpopuli/status/1801288055334027417
+  - in the @emberjs server, we use gjs and gts extensions / tags, and the language is supported on GitHub, but it just shows up as un-highlighted.
+- Monaco and VSCode typically use different highlighters. Though that’s probably not applicable to Discord.
 
 - ## 💡 [Nested editors, kind of. - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/nested-editors-kind-of/4654)
 - This should be possible (if somewhat messy) using a technique similar to the split view example. 
@@ -395,3 +419,29 @@ modified: 2023-01-29T10:52:44.183Z
 - We're currently integrating CodeMirror 6 into Overleaf, and you can try it out by joining our beta program (which will give the option to select the beta source editor, which is the one built using CM6). 
 
 - CodeMirror is also much more usable on touch devices than Monaco (VS Code’s editor component).
+# discuss-showcase-cm
+- ## 
+
+- ## 
+
+- ## why  didn't Svelte include Monaco editor into the playground like Vue did. _202406
+- https://x.com/Rich_Harris/status/1801212903552401428
+  - This way you can run TS worker and have similar to VSCode editing experience with typescript enabled
+- We prefer CodeMirror to Monaco - it's smaller, more accessible, more extensible and works on mobile devices. But you don't get as much stuff 'for free' out of the box
+
+- ## joplin: The new Markdown editor is based on CodeMirror 6 _202312
+- https://x.com/joplinapp/status/1732067094903050470
+  - Joplin 2.13 is now available
+  - New beta Markdown editor 
+  - The new Markdown editor is based on CodeMirror 6! This means a consistent editor experience across desktop and mobile apps, paving the way for future mobile plugin support. 
+
+- ## At @Replit , we're placing a big bet on CodeMirror 6, a new code editor that's fast, minimal, and extensible. _202201
+- https://x.com/SergeiChestakov/status/1486025274240090114
+  - Unlike CM6, Monaco is bloated, difficult to customize, and doesn't support mobile (which is becoming increasingly important).
+
+- 
+- 
+- 
+- 
+- 
+- 

@@ -47,7 +47,9 @@ modified: 2020-12-20T12:36:17.694Z
 
 - ## 
 
-- ## 
+- ## 刚学习到一个新词 ASO，ASO 是应用商店优化（App Store Optimization）的缩写。
+- https://x.com/jaywcjlove/status/1786377317960597691
+  - 类似于 SEO（搜索引擎优化），是专门针对应用商店，如苹果的 App Store 和谷歌的 Google Play Store
 
 - ## 今天将网站提交到各个搜索引擎，说下体验：
 - https://twitter.com/YuTengjing/status/1757751907530289573

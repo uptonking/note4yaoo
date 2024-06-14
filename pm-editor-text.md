@@ -36,6 +36,10 @@ modified: 2021-05-14T14:33:52.786Z
 - 编辑器文内拖动有什么用
   - 这是word很早就提供的特性，也是浏览器contenteditable默认支持的特性
   - 但浏览器实现得并不好，如拖动blockquote的p标签内的文本时，chrome会添加新标签span，但firefox不会
+
+- 难点
+  - 渲染wysiwyg时采用virtual render
+  - 支持可缩放的编辑器，用于将编辑器嵌入画板/设计工具的场景
 # 协作相关
 
 # track-changes 和 评论在UI上具有相似性

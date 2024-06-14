@@ -161,6 +161,8 @@ modified: 2020-11-11T13:16:24.994Z
   - 数据大多数是csv，少部分是json
 # ww
 - https://github.com/public-apis/public-apis
+  - [Public APIs — A directory of free and public apis](https://publicapis.io/)
+  - [A Collaborative List Of 1400+ Public APIs For Developers](https://publicapis.dev/)
 
 - https://github.com/algolia/hn-search /MIT/202403/ruby/ts
   - https://hn.algolia.com/api

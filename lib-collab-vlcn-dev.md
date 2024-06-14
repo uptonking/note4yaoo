@@ -82,6 +82,12 @@ modified: 2023-06-03T14:43:26.987Z
 
 - ## 
 
+- ## 
+
+- ## Matt Wonlaw ( @tantaman ) on building his own local-first tools (cr-sqlite, Materialite) and comparing syncing mechanisms. _202406
+- https://x.com/localfirstfm/status/1800874211998867633
+  - 时长1h的视频
+
 - ## 🚀🔀 [Crsql – Multi-writer and CRDT support for SQLite | Hacker News _202211](https://news.ycombinator.com/item?id=33606311)
 - Does this support CRDTs other than last-write-wins registers?
   - Not yet. I was thinking of collaborating with Seph to bring DiamondTypes in for sequence crdt support. If that is even possible -- just an idea at the moment.

@@ -69,6 +69,10 @@ modified: 2022-08-21T10:16:52.004Z
   - https://github.com/lastnigtic/syllepsis-collab
   - https://discuss.prosemirror.net/u/lastnigtic
 
+- xheldon/曹旭东 /prosemirror中文文档
+  - https://www.xheldon.com/
+  - https://github.com/xheldon-prosemirror
+
 - vivaxy
   - https://www.zhihu.com/people/vivaxy
 
@@ -180,7 +184,7 @@ modified: 2022-08-21T10:16:52.004Z
 
 - YU, WEIHAI
   - https://en.uit.no/ansatte/weihai.yu
-# prosemirror
+# prosemirror/codemirror
 - https://github.com/marduke182
   - https://www.npmjs.com/package/@marduke182/prosemirror-react-view
   - https://jquintanab.com/resume/
@@ -216,6 +220,13 @@ modified: 2022-08-21T10:16:52.004Z
 
 - https://github.com/herrdu
   - https://github.com/herrdu/DEditor
+
+## codemirror
+
+- 小弟调调 /react-codemirror
+  - https://github.com/jaywcjlove
+  - https://wangchujiang.com/#/app
+  - https://x.com/jaywcjlove
 # lowcode
 - Water. Licodebdy /rxdrag
   - https://github.com/codebdy/rxdrag

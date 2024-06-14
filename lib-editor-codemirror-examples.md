@@ -16,6 +16,10 @@ modified: 2023-06-23T12:46:53.288Z
   - (diff)字符渐变的动画效果, 🤔 和时间旅行的回放过程有何区别
     - diff只需初始结束状态, 而时间旅行支持中间状态
 
+- diff视图
+  - 上下版: 参考 code-editor-angular
+  - 左右版: 参考 mdxeditor
+
 - fans-codemirror
   - https://github.com/uiwjs/react-codemirror /国内
   - https://github.com/yeliex/codemirror-extensions /国内
@@ -311,6 +315,22 @@ modified: 2023-06-23T12:46:53.288Z
   - On top of accurate syntax highlighting powered by the same engine as VS Code, Expressive Code allows you to annotate code blocks using text markers, diff highlighting, code editor & terminal window frames, and more.
   - All annotations are based on a powerful plugin architecture 
 # editors-based-on-codemirror
+- https://github.com/inkandswitch/tiny-essay-editor /NALic/202405/ts
+  - https://tee.inkandswitch.com/
+  - simple markdown editor w inline comments, on latest automerge stack
+  - a simple collaborative Markdown editor built in React, with inline format preview and inline commenting.
+  - built on automerge and automerge-repo for CRDT-based storage and sync. 
+  - 依赖automerge2、codemirror6、@lezer/highlight、@radix-ui、tldraw2、@xstate/react、cmdk
+  - https://x.com/geoffreylitt/status/1752379702377873894
+    - Just gave a talk about Tiny Essay Editor, a collaborative markdown editor we're using at @inkandswitch based on Automerge _202401
+    - We wanted a nice local-first editor for writing our research essays, so we built one
+    - automerge as core CRDT
+    - automerge-repo for networking/storage
+    - codemirror for markdown editing, automerge-codemirror for editor integration
+    - For TEE we just store a string for the contents, plus some JSON data for comments.
+    - One feature that's *lovely* to build w/ Automerge: attaching comments to text.
+    - TEE is local-first, meaning clients are source of truth and there's no central authority.
+
 - https://github.com/tagspaces/tagspaces-common/tree/develop/packages/tagspaces-codemirror /MIT/202312/ts
   - 依赖codemirror6
 
@@ -417,6 +437,10 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/riccardoperra/solid-codemirror /MIT/202305/ts/inactive
   - A library of SolidJS primitives to build code editors using CodeMirror 6
   - https://github.com/nimeshnayaju/solid-codemirror /202207/ts/inactive
+- https://github.com/acrodata/code-editor /MIT/202405/ts
+  - https://acrodata.github.io/code-editor/
+  - CodeMirror 6 wrapper for Angular
+  - 实现了diff视图
 
 - https://github.com/touchifyapp/svelte-codemirror-editor /MIT/202405/ts
   - https://touchifyapp.github.io/svelte-codemirror-editor/
@@ -434,6 +458,7 @@ modified: 2023-06-23T12:46:53.288Z
   - open-source React component that allows users to author markdown documents naturally
   - MDXEditor is a rich, client-side component that does not benefit from server-side rendering. To use it in your server components, you should use next/dynamic
   - 依赖lexical、codemirror6、radix-ui、hast、mdast、react-diff-view、react-hook-form
+  - diff分屏视图基于codemirror实现，左边不可编辑，右边可编辑，左右都是codemirror的md源码
   - https://github.com/michioxd/mdxeditor-modified
 
 - gem /10Star/MIT/202205/ts/inactive/代码量少
@@ -536,7 +561,7 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/ekzhang/rushlight /MIT/202306/ts/inactive  
   - https://github.com/ekzhang/cm-collab /ts
-  - A tiny collaborative Markdown editor based on CodeMirror, communicating with a minimal server and database.
+  - ✏️ A tiny collaborative Markdown editor based on CodeMirror, communicating with a minimal server and database.
   - Make collaborative code editors that run on your own infrastructure: just Redis and a database.
   - Supports multiple real-time documents, with live cursors. 
   - 🔀 Based on CodeMirror 6 and operational transformation, so all changes are resolved by server code.
@@ -628,6 +653,21 @@ modified: 2023-06-23T12:46:53.288Z
   - We have rewritten all the modules and few extras using TypeScript while enhancing earlier implemented Adapter Pattern to integrate with external modules, such as Database (preferably Firebase) and editors (as of now only Monaco is supported, but PRs are welcomed). 
 
 ## diff
+
+- https://github.com/acrodata/code-editor /MIT/202405/ts
+  - https://acrodata.github.io/code-editor/
+  - CodeMirror 6 wrapper for Angular
+  - 实现了diff上下视图
+
+- https://github.com/mdx-editor/editor /MIT/202405/ts/lexical
+  - https://mdxeditor.dev/
+  - https://mdxeditor.dev/editor/d
+  - 
+  - emo
+  - open-source React component that allows users to author markdown documents naturally
+  - MDXEditor is a rich, client-side component that does not benefit from server-side rendering. To use it in your server components, you should use next/dynamic
+  - 依赖lexical、codemirror6、radix-ui、hast、mdast、react-diff-view、react-hook-form
+  - diff左右分屏视图基于codemirror实现，左边不可编辑，右边可编辑，左右都是codemirror的md源码
 
 - https://github.com/codemirror/merge /MIT/202403/ts
   - https://codemirror.net/try/?example=Merge%20View
@@ -782,6 +822,9 @@ modified: 2023-06-23T12:46:53.288Z
   - CodeMirror 6 as a custom element (web component)
   - https://github.com/markwylde/codemirror-element
 
+- https://github.com/0xdevalias/userscripts/tree/main/userscripts/github-gist-codemirror-resizer
+  - Makes the CodeMirror editor resizable when creating/editing a gist on GitHub
+
 - https://github.com/JackieScorpio/convert-json-to-ts /MIT/202404/ts
   - use codemirror and vscode webview to achieve a vscode extension
   - Convert Json to Typescript
@@ -860,9 +903,11 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/marc2332/lsp-codemirror /ISC/202008/ts/inactive
   - LSP integration for CodeMirror
 
-- https://github.com/okikio/codemirror /MIT/202110/ts/inactive
+- https://github.com/okikio/codemirror/tree/lsp-dev /MIT/202110/ts/inactive
   - https://okikio-codemirror.netlify.app/
   - A minor test of Codemirror
+  - https://x.com/SergeiChestakov/status/1486025274240090114
+    - I now have a ~relatively~ functional lsp adapter for Codemirror 6, you may want to take a look. The main limitation is recreating a monaco esque environment for Codemirror, e.g. autocomplete doesn't work the same way on Codemirror that it did on Monaco
 
 - https://github.com/SilasMarvin/lsp-ai /MIT/202406/rust
   - LSP-AI is an open source language server that serves as a backend for performing completion with large language models and soon other AI powered functionality. 
@@ -919,6 +964,11 @@ modified: 2023-06-23T12:46:53.288Z
   - [codemirror withlive](https://github.com/FormidableLabs/react-live/issues/210)
     - 202210: if you are using the standard LiveProvider, you can use `@uiw/react-codemirror` as a drop in replacement for LiveEditor
 
+- https://github.com/reddit/play /BSD/202406/ts/lit
+  - https://developers.reddit.com/play
+  - A little playground for building apps on Reddit
+  -  We open-sourced a little playground for building apps on Reddit. It's all Lit web components, CodeMirror, CSS, TypeScript, and esbuild
+
 - https://github.com/solidjs-community/solid-playground-editor-cm /MIT/202302/ts/inactive
   - https://solidjs-community.github.io/solid-playground-editor-cm/
   - codemirror6-based editor with typescript support for the solid.js playground
@@ -952,6 +1002,14 @@ modified: 2023-06-23T12:46:53.288Z
     - All processing and code transformations run in the browser on the client-side.
     - The LiveCodes app (standalone or self-hosted) can be embedded in any web page.
 
+- https://github.com/oxc-project/oxc/tree/main/website /202306/js/inactive
+  - https://oxc-project.github.io/oxc/playground
+  - Oxc has a playground now. Need more knobs but it works.
+  - I built it with CodeMirror in plain JavaScript without any frameworks
+  - https://x.com/TheLarkInn/status/1667266703745757184
+    - Awesome now do the “click on AST on right to highlight code on left” like astexplorer does!
+    - https://ast-grep.github.io/playground.html
+
 - https://github.com/lucademenego99/icp-bundle /apache2/202307/svelte
   - Interactive Code Playgrounds Bundle is a plugin for embedding interactive code playgrounds in HTML pages.
   - The editor used in these playgrounds is CodeMirror6, an in-browser editor distributed as a collection of modules.
@@ -976,6 +1034,12 @@ modified: 2023-06-23T12:46:53.288Z
   - https://webmaker.app/
   - A blazing fast & offline frontend playground
   - 依赖codemirror5
+
+- https://github.com/ast-grep/ast-grep /MIT/202406/rust
+  - https://ast-grep.github.io/
+  - https://ast-grep.github.io/playground.html
+  - A CLI tool for code structural search, lint and rewriting. Written in Rust
+  - playground的diff视图基于monaco实现
 # starter
 - https://github.com/A99US/CM6-Browser-Wrapper /MIT/202308/js/inactive
   - https://a99us.github.io/CM6-Browser-Wrapper/
@@ -1255,11 +1319,17 @@ modified: 2023-06-23T12:46:53.288Z
   - Sweep is an AI junior developer that turns bugs and feature requests into code changes. Sweep automatically handles devex improvements like adding typehints/improving test coverage. 
   - Turns issues directly into pull requests (without an IDE)
 # products-coding
+
 - https://github.com/code-hike/codehike /MIT/202307/ts/inactive
   - https://codehike.org/
   - Build first-class code walkthroughs for the web
   - 依赖react、@codesandbox/sandpack-client、@mdx-js/mdx.v2、diff
   - https://github.com/code-hike/examples
+- https://github.com/code-hike/examples/tree/main/with-remotion
+  - https://x.com/pomber/status/1800108854459715864
+  - 不依赖codemirror
+  - you can use Remotion's `useFrame` inside any Code Hike annotation to animate most of the examples from the docs
+  - wondering if it can also display twoslash annotations, but I don't think remotion supports React Server Components
 
 - https://github.com/replit/desktop /202406/ts
   - Replit desktop app for MacOS, Windows, and Linux

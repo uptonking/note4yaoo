@@ -165,6 +165,12 @@ modified: 2020-07-17T10:54:16.341Z
 # discuss
 - ## 
 
+- ## 
+
+- ## Windows 中的 Chrome 准备将默认字体设置为 Noto CJK，这会影响中日韩三种语言的用户。主要是为了开启标点挤压来提升排版效果。
+- https://x.com/yisibl/status/1801182673634750806
+  - 当网页没有明确设置 font-family 时，简体中文的默认字体将会是 Noto Sans SC
+
 - ## 💡 Why does the browser's find-in-page treat the Chinese character 〇 and the Arabic numeral 0 as the same character? 
 - https://twitter.com/yisibl/status/1770691638219726914
   - I was shocked to learn that both Chrome and Firefox have this bug.

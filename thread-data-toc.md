@@ -21,6 +21,15 @@ modified: 2021-01-31T08:40:11.675Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 发现 700 多个公共和免费 API 的庞大集合，以增强您的项目! 兼容JavaScript, PHP, Ruby和任何编程语言兼容。
+- https://x.com/jaywcjlove/status/1786718404327673891
+  - [Public APIs — A directory of free and public apis](https://publicapis.io/)
+  - [A Collaborative List Of 1400+ Public APIs For Developers](https://publicapis.dev/)
+
 - ## Very excited to publish our new project, http://realtimeinequality.org 
 - https://twitter.com/gabriel_zucman/status/1488151132161523714
   - Fulfilling an old dream: being able to know in real time who benefits from economic growth

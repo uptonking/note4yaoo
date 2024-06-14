@@ -13,25 +13,9 @@ modified: 2023-02-26T15:30:04.261Z
   - 统计概念: 标准差、协方差
 # dev-log
 
-## 0613
-
-- dev-log
-  - 整理了执行计划的代码，在ui层mock计划op做了简单实现，提交了pr
-- dev-to
-  - 尝试将执行计划的op转换到paas中对编辑器的操作
-
-- 每周分享-大数据中台 /黄茂俊/20240613
-  - 从你的经历中，处理过的大数据的数据量有多大tb级别，文本、二进制数据
-  - 运营商的书仓，pb级别的数据，日常的日志是1-2tb
-    - 数据源较复杂，使用了第三方工具和平台
-    - 还有些excel文件，使用python解析入库
-  - 数据清理的工作量大
-    - 主动对接和采集几百家停车场的数据，提供api和文档
-    - 对不同业务域建模
 # dev-to
 
 # dev-later
-
 - mergeable-table
   - insertAbove能执行，inertBelow不能执行
   - Cannot resolve a Slate point from DOM point

@@ -9,6 +9,8 @@ modified: 2021-03-29T19:30:08.250Z
 
 # dev
 
+- nextjs的 `reactStrictMode: true` 时，导致时光机动画播放速度加快一倍
+
 - useLayoutEffect用vanillajs如何实现
 
 - js的generator可中断函数，如果在call site执行一半就不需要了，那原函数执行上下文是否存在内存泄露

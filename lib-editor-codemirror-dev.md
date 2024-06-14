@@ -130,6 +130,10 @@ modified: 2021-05-06T09:38:31.520Z
   - obsidian-plugin
 
 - 尝试将prosemirror的使用场景替换为codemirror
+
+- 难点
+  - 渲染wysiwyg时采用virtual render
+  - 支持可缩放的编辑器，用于将编辑器嵌入画板/设计工具的场景
 # dev
 - 多标签页的实现思路和单标签差别不大，视觉上只有1个visible的editor，上方是tab
 

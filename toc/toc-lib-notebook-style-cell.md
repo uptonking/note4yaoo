@@ -57,6 +57,10 @@ modified: 2021-05-13T16:08:15.067Z
   - https://javascript-notebook.netlify.app/
   - 和上面的ui相同，功能可用
 
+- https://github.com/inkandswitch/potluck /202211/ts/inactive
+  - https://potluck-sheets.vercel.app/
+  - Potluck: Dynamic Documents as Personal Software
+
 - https://github.com/jtpio/p5-notebook
   - https://p5-notebook.vercel.app/
   - A minimal Jupyter notebook UI for p5.js kernels.
@@ -84,8 +88,11 @@ modified: 2021-05-13T16:08:15.067Z
   - [The Jupyter Notebook Introduction](https://jupyter-notebook.readthedocs.io/en/latest/notebook.html)
 
 - https://github.com/ales-tsurko/cells
-- Live coding environment. 
-- Use SuperCollider, Python, TidalCycles, Node.js etc. in the same project.
+  - Live coding environment. 
+  - Use SuperCollider, Python, TidalCycles, Node.js etc. in the same project.
+
+- https://github.com/inkandswitch/livebook /201704/python
+  - IPython notebook-compatible live coding experiment
 # ref
 - https://github.com/jsvine/notebookjs
   - Notebook.js parses raw Jupyter/IPython notebooks, and lets you render them as HTML
