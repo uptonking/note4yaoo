@@ -106,3 +106,5 @@ modified: 2023-10-26T17:28:41.701Z
 - [StackOverflow的开发者调研 PostgreSQL is the Linux of Database](https://mp.weixin.qq.com/s/xewE87WEaZHp-K5hjuk65A)
 
 - [A Comprehensive Overview of PostgreSQL Query Processing Stages _202401](https://www.highgo.ca/2024/01/26/a-comprehensive-overview-of-postgresql-query-processing-stages/)
+
+- [Overcoming Pitfalls of Postgres Logical Decoding _202406](https://blog.peerdb.io/overcoming-pitfalls-of-postgres-logical-decoding)

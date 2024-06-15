@@ -9,7 +9,32 @@ modified: 2023-11-10T08:05:12.852Z
 
 # guide
 
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+# discuss-dynamic-import
+- ## 
+
+- ## 
+
+- ## 
+
+- ## in ESM, imports had too much boilerplate, so now I await d
+- https://x.com/nullvoxpopuli/status/1802011355534274803
+- it removes the type information 
+  - The types for fastify seems goofy(愚蠢的；傻的；疯的) to begin with so I'm ignoring them
+- I think the issue is more bundling than goofy typings. Anyway, for me the types of Fastify works good for most plugins
+
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

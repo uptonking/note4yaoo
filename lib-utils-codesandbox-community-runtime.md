@@ -14,6 +14,25 @@ modified: 2024-05-12T17:20:03.132Z
 
 - ## 
 
+- ## 🆚️🐳 [Docker vs. containerd vs. Nabla vs. Kata vs. Firecracker and more | by Benjamin | Medium _202303](https://benriemer.medium.com/docker-vs-containerd-vs-nabla-vs-kata-vs-firecracker-and-more-108f7f107d8d)
+- Containerd is a container runtime originally part of Docker but has since been spun off into its project. 
+  - It provides a powerful and flexible way to manage containers at scale, with features such as image distribution, container execution, and network and storage management. 
+  - In addition, Containerd is designed to be lightweight and fast, making   it a good choice for large-scale deployments.
+
+- Nabla is a secure container runtime designed to provide isolation and protection for containerized workloads. 
+  - It uses a microkernel-based architecture to minimize attack surfaces and prevent container escape. 
+  - As a result, Nabla is ideal for running untrusted code or sensitive workloads that require high security
+
+- Kata Containers is a container runtime that uses hardware virtualization to provide substantial isolation between containers. 
+  - It combines the lightweight and fast nature of containers with the security and isolation of virtual machines. 
+  - As a result, Kata Containers is a good choice for running multi-tenant applications or workloads that require strict isolation.
+
+- Firecracker is a lightweight, fast virtual machine manager designed to run serverless workloads. 
+  - It uses a minimalist approach to virtualization, creating microVMs that are lightweight and efficient. 
+  - Firecracker is ideal for running serverless functions in a secure and isolated environment.
+
+- Whether you need scalability, security, isolation, or efficiency, a container runtime can meet your needs. By understanding the strengths of each runtime, you can choose the one best suited for your specific use case.
+
 - ## 🆚️ [My VM is lighter (and safer) than your container (2017) | Hacker News _202209](https://news.ycombinator.com/item?id=32764501)
 - stuff like Kata Containers exist exactly because containers alone is not enough. WebAssembly on the cloud is only re-inventing what other bytecode based platforms have been doing for decades, but VC need ideas to invest into apparently.
 
@@ -100,8 +119,6 @@ modified: 2024-05-12T17:20:03.132Z
   - 包括esm加载时的请求都可以被拦截
 
 # discuss-runtime-vm
-- ## 
-
 - ## 
 
 - ## 
@@ -252,6 +269,50 @@ modified: 2024-05-12T17:20:03.132Z
 - ## 
 
 - ## 
+# discuss-kata-containers
+- ## 
+
+- ## [Kata Containers: Virtual Machines that feel and perform like containers | Hacker News _202307](https://news.ycombinator.com/item?id=36757688)
+- Kata used “Linux kernel Direct Access filesystem (DAX)” to directly share access of the host filesystem to the guest kernel. I thought this was pretty interesting, but it sounds like a possible spot to start a jailbreak. I’m guessing these kinds of optimizations along with using super simple virtualized devices is what gives Kata its almost-cgroups-like performance.
+
+- Is it possible to add kata containers in eks or gke?
+  - Not in EKS. EC2 doesn't support nested virtualization today.
+- Peer pods are meant to solve this (one day) by running the "containers" (ie VMs) to the side as regular AWS instances and peering the communications
+  - AWS already has an implementation of this, namely, Nitro Enclaves. A Nitro Enclave is an isolated VM used for confidential computing purposes. You provide the Enclave an EIF file, which is basically an OCI image with cryptographic measurements. The Nitro hypervisor launches the VM and allows communications with its parent VM only over a Linux vsock connection.
+  - Also, AWS has Fargate, which is basically containers-as-VMs. Every ECS task or EKS Pod is launched as a separate EC2 instance under the hood. This obviates a lot of the need for a solution like Kata there.
+
+- So why would you use this over regular containers? Is this for people who think containers are insecure?
+  - Containers are not appropriate for some scenarios. If your threat model is "attacker has arbitrary code execution" you should be very wary of a container holding them for long - you're one kernel privesc away from a container escape.
+  - By contrast, running attacker code in Firecracker is much safer - for one thing, the attacker needs to escalate within the VM in order to then expose the necessary primitives to then escape the VM. So it immediately adds an additional required vuln. But also, instead of the entire Linux kernel being the attack surface (it is for the first vuln, but...) you have to attack a much smaller codebase that implements the VM.
+
+- ## [Kata Containers: The speed of containers, the security of VMs | Hacker News _202310](https://news.ycombinator.com/item?id=37762380)
+- What I don't like about Docker is that it spews stuff all over the place. After installation, it is constantly running.
+  - I was on a train in Germany recently and could not use the Wifi because of that. Turned out the docker daemon occupied the IP range the Train Wifi uses. While I was not using docker at all.
+- Podman is probably close to what you want. It runs "daemonless" - while no containers are running, podman doesn't have a running process either. Also, as long as the containers are run in rootless mode, podman creates no virtual network interfaces. Rootless Podman makes use of network namespaces instead to separate the processes in the container from the host network. Processes on the host cannot see Podman's network namespaces and therefore are completely unaffected by any IP configuration therein.
+- Podman is what Docker should have been, for me. Security first, no daemon, more Linux-like behavior (You can manage them with SystemD unit files if you wish) and it supports the same, usual container images you build/use with Docker. The main part it was lacking is the compose equivalent, but that too is coming along.
+- You can use docker-compose with podman using podman's docker compatibility API.
+
+- Is it coming along? Last I saw they were moving away from the compose Schema to a k8s manifest and... Those are absolutely disgusting.
+- Podman has docker-compatible CLI, Dockerfiles and even docker-compose compatibility. It won't be as painful as you worry. So just give it a try. And besides the advantages already mentioned (rootless, no-daemon and isolated network namespaces), podman has some additional nifty features like pods (like in K8s), quadlets (containers managed by systemd), compatibility with k8s manifests, etc.
+
+- Isn’t podman just IBMs version of docker?
+
+- We use Kata Containers to create Firecracker VMs from Kubernetes. Works really well for us. Though I am hoping there will be a more specific solution for Firecracker, as we don't need any other runtimes (which kind of ruins the purpose of Kata).
+
+- Is there a good reason why kata containers don't seem widely adopted?
+  - TBH their docs aren't that great. There should probably be a 'curl | sh' solution to install it at the top of the readme followed by a `<run this command and you're in an ubuntu shell in kata!>` command right after.
+  - Another issue is the lack of nested virtualization in EC2 instances that aren't the very expensive i3 metals. That turns this from a "it's a drop in replacement" to "I'm spending thousands of dollars on this".
+- The proposed solution to the nested virtualization problem (apart from somehow persuading Amazon to switch that on) is something called peer pods, where the containers run in separate AWS instances. Arranging the traffic between the peer pods and the instance which is acting as host is quite challenging and I've never seen this successfully deployed in production
+
+- Amazon’s Firecracker, another project with similar goals, has seen a lot of adoption however.
+  - To add, firecracker is an alternative to qemu like katacontainers are an alternative to containerd or runc. But both focus of security by isolation, as you mentioned.
+
+- "Like VMs but containers" doesnt tell me anything
+  - By running the containers in VMs, and attempting to make the VMs boot very quickly by carefully tuning qemu (or Firecracker) and the guest kernel. The main problem with this approach is surprisingly not the time overhead - Kubernetes is fscking slow at scheduling regular containers - but the memory overhead, since you need to allocate sufficient memory up front for the largest possible memory usage of the container. Most containers expect to get more memory from the system simply by doing sbrk/mmap, and VMs simply don't work this way.
+
+- LXC does it better, you can even have virtualization
+  - The difference here is that katacontainers are OCI and CRI complaint - meaning that it can immediately be used with K8s, Nomad and possibly others. You get all the features of these orchestration platforms. LXC doesn't have that (it actually predates OCI and CRI).
+  - There are other orchestration systems that can use LXC - LXD, libvirt, Proxmox, and may be others. Also, LXC doesn't have traditional virtualization - that's a feature of LXD using KVM. (Do you mean system containers, as opposed to regular app containers?)
 # discuss
 - ## 
 

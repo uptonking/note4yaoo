@@ -93,7 +93,13 @@ modified: 2023-09-13T20:24:41.516Z
 
 - ## 
 
-- ## 
+- ## Why can’t the killer category for local-first be e-commerce?
+- https://x.com/bidah/status/1801960144089026714
+  - Why all revolves on SSR as the fastest experience when it’s not?
+- The only piece that is consistently local-first in e-commerce is the shopping cart experience. For the rest of the experience, i.e. browsing content, you wouldn't get that much benefit from client-side storage tbh (coming from a local-first evangelist)
+- e-commerce tends to be short sessions where most users never come back. less benefit of upfront cost of syncing - even with partial progressive sync it’s just different user behavior
+  - Right. Maybe native mobile that tends to get already  that initial load cost be a good candidate for local first ecom instead of the web.
+- Just because local first solutions never solved the two biggest problems: automatic partial sync, and small bundle size. Most today sacrifice both, or at least one. But ecomm and most sites need both.
 
 - ## 不要用导出微信读书笔记之类的浏览器插件, 可能会被判定为爬虫违规抓取内容，会封号的。最近看到几个封号的分享了。
 - https://twitter.com/plusyip/status/1751450228656582752

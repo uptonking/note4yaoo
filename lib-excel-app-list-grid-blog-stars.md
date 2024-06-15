@@ -16,7 +16,7 @@ modified: 2022-08-21T10:14:58.104Z
 - [Canvas 渲染优化策略](https://juejin.cn/post/6924171842483650574)
 # blogs
 
-## 📈🌰🌲 [Building a High Performance Spreadsheet in the Browser_202306](https://wraptext.equals.com/high-performance-spreadsheets-in-the-browser/)
+## 📈🌰🌲🧮 [equals: Building a High Performance Spreadsheet in the Browser _202306](https://wrap-text.equals.com/p/building-a-high-performance-spreadsheet)
 
 - Before getting to the problem though—let's clarify what we mean by Formats.
   - The word might conjure up colours, bold text, etc
@@ -57,7 +57,7 @@ modified: 2022-08-21T10:14:58.104Z
 
 - Every system has limits; at some point, I'm sure we'll have to replace this one too. But based on our projections, it should serve us long enough to scale into the millions of rows of data that we're targeting for the next generation of the app.
 
-## 📈🌲 [We built a spreadsheet engine from scratch. Here’s what we learned. | GRID_202206](https://medium.grid.is/we-built-a-spreadsheet-engine-from-scratch-heres-what-we-learned-e4800ab9edf1)
+## 📈🌲🧮 [GRID: We built a spreadsheet engine from scratch. Here’s what we learned. | GRID_202206](https://medium.grid.is/we-built-a-spreadsheet-engine-from-scratch-heres-what-we-learned-e4800ab9edf1)
 
 - we’d need a lightning-fast spreadsheet engine, compatible with Excel and Google Sheets and capable of running entirely in the browser
 
@@ -102,7 +102,7 @@ modified: 2022-08-21T10:14:58.104Z
   - Compatibility mode: Our Excel-first approach has served us well, but the Google Sheets audience is also important to us, and currently we don’t offer them quite the same level of compatibility as Excel users. We plan to solve this by making our engine aware of which software a model originated in and simply doing “the right thing” for each.
   - Our own functions: We already have a set of functions in our engine that are specific to GRID, yet none have been exposed externally.many opportunities on that front have to do with the unique nature of GRID’s engine running as a part of a web document. Our — currently experimental — canvas element (see it in action here) will also come with a set of unique functions that will allow spreadsheet users to dynamically draw and make graphical representations they’ve up until now never even dreamt of.
 
-## [Fastest Way to Read Excel in Python | Haki Benita_202401](https://hakibenita.com/fast-excel-python)
+## 🆚️ [Fastest Way to Read Excel in Python | Haki Benita_202401](https://hakibenita.com/fast-excel-python)
 
 - What are we Testing?
   - Speed

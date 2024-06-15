@@ -39,6 +39,11 @@ modified: 2021-08-28T11:49:05.730Z
   - Cassandra: The network is a network.
   - Resonate: The network is actually a queue of requests and completions.
 
+- ## Limitations of property based testing: wrote this transactional, in-memory index for looking up disk offsets. 
+- https://x.com/LewisCTech/status/1802093559174353125
+  - (think a multiplayer version of the KeyDir from bitcask).  Wrote it to have transaction semantics in mind. Tried to write a property test for it - either all writes succeed or the DB remains unchanged - and the test passed!
+  - Except it only passed because I was unable to actually generate a valid key to be inserted. Meaning it never even gets modified. So I haven't actually tested the case I wanted to test - ie that nothing non-atomic happens.
+
 - ## I may have been wrong about property based testing.
 - https://twitter.com/LewisCTech/status/1752061962681553170
   - Love it in theory. But every library I've used has been complicated and confusing. Which  suggests it's just a complicated and confusing thing to implement.

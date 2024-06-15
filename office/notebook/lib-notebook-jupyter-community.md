@@ -27,7 +27,12 @@ modified: 2023-01-23T15:57:32.786Z
 
 - ## 
 
-- ## 
+- ## I think notebook-like UIs are the best medium for generative AI rn. 
+- https://x.com/sh_reya/status/1801626846364058110
+  - Notebooks are rich in context & context-aware by design, familiar, and inherently exploratory
+- One very cool piece of AI-UI that departs a bit from the notebook paradigm is Infinite Tech: https://infinite.tech
+  - Kind of like a mutable notebook grid, where you can connect different cells/panels to different agents/datasets and setup an agent system geometrically.
+- Built an open-source Jupyter Notebook that brings the power of @OpenAI's code interpreter into your local Python development environment.
 
 - ## 👣 jupyter notebook/livebook but focused entirely on SQL - who is gonna build this
 - https://x.com/thdxr/status/1798422000320602496

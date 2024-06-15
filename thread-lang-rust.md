@@ -12,6 +12,17 @@ modified: 2023-10-06T16:26:57.557Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Do you still use .env files in your #rustlang project?
+- https://x.com/5422m4n/status/1801362925141246118
+  - TIL: the `env` section in your workspace `.cargo/config.toml` can be a drop-in replacement
+
+- At first I thought "cool", but I'm not a big fan of asymmetry. cargo run and running the binary directly should both do the same. I guess it's more for build scripts and rustc variables.
+- Yeah. This is awesome but I want to commit my config while I wouldn’t want to commit my secrets.
+
 - ## Rust really makes it hard to move out. You get:
 - https://x.com/Horusiath/status/1800411588660502855
   - docs with compile-verified snippets

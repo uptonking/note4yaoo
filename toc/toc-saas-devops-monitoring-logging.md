@@ -149,6 +149,13 @@ modified: 2024-02-11T15:11:31.598Z
   - log.io has no persistence layer. File inputs are informed of file changes via inotify, and log messages hop from input to server to web client via TCP and socket.io, respectively.
   - Users can watch adhoc log streams by activating inputs and binding them to multiple screens via the web UI.
   - log.io uses a stateless TCP API to receive log messages.
+# cloudflare-like-integration
+- https://github.com/benvinegar/counterscale /MIT/202406/ts
+  - https://counterscale.dev/
+  - Counterscale is a simple web analytics tracker and dashboard that you self-host on Cloudflare.
+  - designed to be easy to deploy and maintain, and should cost you near-zero to operate – even at high levels of traffic (Cloudflare's free tier could hypothetically support up to 100k hits/day).
+
+
 # more
 - https://github.com/anthonygauthier/jmeter-es-backendlistener-dashboard /201810/js
   - Dashboard to visualize JMeter results generated via the ElasticSearch Backend Listener. 

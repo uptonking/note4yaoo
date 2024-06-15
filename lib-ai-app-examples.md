@@ -159,6 +159,13 @@ modified: 2023-02-08T07:20:48.475Z
   - User-friendly WebUI for LLMs (Formerly Ollama WebUI)
   - extensible, feature-rich, and user-friendly self-hosted WebUI designed to operate entirely offline. 
   - It supports various LLM runners, including Ollama and OpenAI-compatible APIs
+
+- https://github.com/pamelafox/ollama-python-playground /jupyter
+  - A dev container with ollama and ollama examples with the Python OpenAI SDK
+  - This project is designed to be opened in GitHub Codespaces as an easy way for anyone to try out SLMs (small language models) entirely in the browser.
+  - https://x.com/pamelafox/status/1801678164969853034
+    - To make it super easy for anyone to try out Ollama (esp teachers/students)
+    - I've included an example notebook that walks through completions, prompt eng, few-shots, and RAG
 # text2image
 - https://github.com/Stability-AI/stablediffusion
   - https://github.com/CompVis/stable-diffusion

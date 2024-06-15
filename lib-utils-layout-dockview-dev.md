@@ -51,6 +51,7 @@ modified: 2024-05-27T11:39:14.886Z
   - [Dockview Framework Wrappers (Vue.js, Angular, JavaScript etc.) ](https://github.com/mathuo/dockview/issues/562)
   - https://codesandbox.io/u/mathuo
   - [Search - CodeSandbox](https://codesandbox.io/search?query=dockview&page=1&configure%5BhitsPerPage%5D=12&refinementList%5Bnpm_dependencies.dependency%5D%5B0%5D=dockview)
+  - dockview + codemirror
 
 - resources
   - https://github.com/search?type=code&q=dockview+path%3Apackage.json%20NOT%20is:fork

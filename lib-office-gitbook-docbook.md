@@ -50,6 +50,7 @@ modified: 2023-09-19T07:53:59.349Z
   - emacs-orgmode
   - wikipedia zim: 高压缩，为只读设计
   - O'Reilly HTMLBook Specification: rarely
+  - 主流notebook: jupyter
 
 - who is using #markdown-markup
   - gitbook, rust-docs

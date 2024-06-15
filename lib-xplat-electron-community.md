@@ -60,6 +60,18 @@ modified: 2023-01-02T10:30:19.459Z
   - Forge receives new features for application building as soon as they are supported in Electron. These features are built with first-party Electron tooling in mind, so Forge receives them as soon as they are released.
   - Forge's multi-package architecture makes it easier to understand and extend. Since Forge is made up of many smaller packages with clear responsibilities, it is easier to follow the flow of the code. 
 
+# discuss-builder/forge
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Flatpak packaging · gristlabs/grist-desktop](https://github.com/gristlabs/grist-desktop/issues/16)
+- 20240615: We use `electron-builder` to build Grist Desktop. 
+  - Unfortunately, it currently doesn't support publishing to Flatpak repositories. 
+  - We will consider adding a Flatpak build once electron-builder supports it.
+
 # discuss
 - ## 
 

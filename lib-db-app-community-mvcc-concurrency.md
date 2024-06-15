@@ -63,6 +63,44 @@ modified: 2023-11-01T10:15:06.245Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🌵 Are there databases which let you continue the execution of a transaction on connection failures or machine restarts? 
+- https://x.com/iavins/status/1801450141993628092
+  - Why don’t databases support such a feature?
+- This is doable once your client-commit is entirely optimistic. My stuff does this, so it supports what you're asking for without actively doing it.
+- WAL integrity checks might be able to do this fr
+
+- Such a design would imply in-memory transaction state actually gets persisted somewhere. Git is an example of a “database” that does this, in the form of branches. @DoltHub extends the idea to a proper structured database. A branch is just a long-lived transaction.
+
+- Technically such databases exist: Git or really any DVCS.
+  - The idea requires 2 assumptions to make them feasible:
+  1. Outdated reads are acceptable.
+  2. Transactions don't rollback on write conflicts.
+  - Apply to CRDTs and local-first systems - but few of them support transactions.
+
+- FWIW, I’ve seen this implemented in a proprietary database that I worked on. It used an optimistic commit protocol. It worked just fine, there is technical barrier.
+  - There is “no technical barrier”, it’s just that people are more used to pessimistic commit and therefore see everything through that lens.
+  - The problem is on the db side, not about whether the client’s operation completed on the db or not. The latter is easy to resolve by rollback by default. The real problem is that the db can’t tell if the client will retry or resume. The db can’t keep holding resources on behalf of the client forever. There is usually timeout mechanism before the db will release any resources that were held on behalf of the client.
+- A distributed database can do this partially, if a storage node goes down. A query that needs data from that node will retry from the new leader. Not the same thing exactly but at least in spirit. If a client fails over to another node because of a SQL node crash, XA IIRC does support this for transactions that are in XA Prepared state.
+
+- Oracle has this feature - called Application Continuity. Client-side logic adds a lot here.
+- Oracle RAC has transparent application failover since 2017 and application continuity but it seems too much money for avoiding optimizing application code making it re-run friendly.
+
+- Very interesting question. The whole Distributed SQL was invented because we didn't want to solve this problem. But if we go back to on Prem database days, Tandem used to sell "bulletproof" DBs back in the day. Let me check if their architecture supported such failures
+
+- One argument against building out such a feature in the distributed database or as some proxy layer on top of it is that its as or more likely that the code running the transaction dies. The system needs to do something reasonable in that case too.
+  - If there’s way more db nodes, then the complexity might be worth it. But how do you even recover? Ideally the client recover, but getting db client drivers to be more sophisticated is hard work. Low risk tolerance, legacy code and many langs.
+  - If an http-based, request-response oriented protocol sat underneath your sql drivers, then maybe you’d see more such recovery protocols built into transaction protocols. Tl; dr to do it right it’s probably gotta be in the driver, and that’s a hard place to innovate
+- For many distributed databases, you won’t see a failure unless the transaction coordinator node dies. It’d be unreasonable if any node dying lead to all transactions failing, but it’s hard to do better than that and it’s arguably not so bad given the app can die too.
+
+- To get good performance, transactions (both read-only and read-write) must "flow".  They need to be "short" (time-wise) and "small" (data-wise).  With this in mind, failing-fast is a better option than allowing "resumable" transactions. 
+  - There might be use-case for "resumable" transactions, but to me, and with the information I have, this is not a feature I would invest much in
+
+- Not the full support but Redshift with scheduling queries does something similar. You can schedule query have a event bridge and then use that to get the query execution status.
+
 - ## Here's a new post walking through an implementation of MVCC and major SQL transaction isolation levels, in 400 lines of Go code.
 - https://x.com/eatonphil/status/1791225675287867742
   - These ideas might sound esoteric, but they impact almost every developer using any database.

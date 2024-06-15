@@ -21,6 +21,21 @@ modified: 2021-09-22T04:13:22.341Z
   - But then turning off either the JS animation or the opacity WAAPI animation made things normal again. 
   - the performance returns to normal when you remove either the `requestAnimationFrame` animation OR the second `WAAPI` animation. But when both are running performance tanks.
 
+# discuss-comparison 🆚️
+- ## 
+
+- ## 
+
+- ## Left: Web Animations API (21 FPS) vs Right: Anime.js v4 (59 FPS)
+- https://x.com/JulianGarnier/status/1801603790719562047
+  - Running animations on the main thread isn't always as bad as it may seem.
+
+- In my tests I found that performance is generally fine as long as you only create a fixed amount of looped animations. But if you keep creating new animations with new values (like in the video) the performance drops considerably.
+  - Might be related to parsing the values of the previously running animation 
+
+- WAAPI seems to struggle after a certain amount of animations have been created. But I don't really know what exactly causes this performance drop.
+
+- https://x.com/JulianGarnier/status/1801983161892475390
 # discuss
 - ## 
 

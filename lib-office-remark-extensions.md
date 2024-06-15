@@ -190,6 +190,11 @@ modified: 2021-06-02T16:49:11.370Z
 
 - https://github.com/tmcw/remark-devim
   - removes newlines from paragraphs in order to make Markdown render the same between Jekyll and GitHub.
+
+- https://github.com/nuxtlabs/remark-mdc /MIT/202406/ts
+  - https://remark-mdc.nuxt.space/
+  - Remark plugin to parse Markdown Components syntax
+  - 用于nuxt cms
 # more-remark
 - https://github.com/djm/remark-shortcodes
   - A custom Markdown syntax parser for remark that adds support for shortcodes.

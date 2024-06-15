@@ -424,7 +424,7 @@ modified: 2023-01-29T10:52:44.183Z
 
 - ## 
 
-- ## why  didn't Svelte include Monaco editor into the playground like Vue did. _202406
+- ## why didn't Svelte include Monaco editor into the playground like Vue did. _202406
 - https://x.com/Rich_Harris/status/1801212903552401428
   - This way you can run TS worker and have similar to VSCode editing experience with typescript enabled
 - We prefer CodeMirror to Monaco - it's smaller, more accessible, more extensible and works on mobile devices. But you don't get as much stuff 'for free' out of the box

@@ -111,7 +111,7 @@ ctx.fillText('中', 0, 0)
 - WOPI协议约定了Office Online服务和集成业务侧之间的通信协议，协议约定了一组接口操作，指明怎么从集成业务方获取和改变文件，该操作基于REST协议，这样对集成方而言只要提供了这些接口实现即可，开发成本可控。
 
 - 在文档编辑器领域微软是业界的标杆，它设计了好几种开放协议，包括本文讨论的WOPI协议，还有后来者Vscode为了支持多语言的语法补全功能提出了LSP协议等，这些平台设计思路是类似的：希望开发者能基于协议共建平台的生态，放大平台的价值和产品生命力
-# blogs
+# blogs-vendors
 
 ## 📝📈 [Making GRID's spreadsheet engine 10% faster_202310](https://alexharri.com/blog/grid-engine-performance)
 
@@ -230,7 +230,7 @@ ctx.fillText('中', 0, 0)
 
 - 
 
-## 👥 [Scaling our spreadsheet engine from thousands to billions of cells | Hacker News_202207](https://news.ycombinator.com/item?id=32000400)
+## 👥 [causal: Scaling our spreadsheet engine from thousands to billions of cells | Hacker News _202207](https://news.ycombinator.com/item?id=32000400)
 
 - This brings me back to when I worked on Excel. The formatting structs (and most cell related ones) are so tightly packed and the byte code VM for the formulas is pretty neat.
 
@@ -346,7 +346,7 @@ ctx.fillText('中', 0, 0)
 - Article shows that Cassandra is slow to retrieve data, so they added Redis as a cache to fetch recent events from there.
   - It is now planet scale! Proper database design and indexes be damned!
 
-## 📈 [Building a modular software toolkit | The Airtable Engineering Blog | Medium_202102](https://medium.com/airtable-eng/building-a-modular-software-toolkit-ce4efd06e75c)
+## 📈 [airtable: Building a modular software toolkit | The Airtable Engineering Blog | Medium _202102](https://medium.com/airtable-eng/building-a-modular-software-toolkit-ce4efd06e75c)
 
 - At Airtable, we’re building a toolkit that anybody can use to build their own software.
   - You can combine the many different building blocks provided in Airtable to create software that is truly tailored to your needs, rather than having to force your workflows into a one-size-fits-all solution that only vaguely applies to your problem.
@@ -360,7 +360,7 @@ ctx.fillText('中', 0, 0)
   - As we design new features or improve existing ones, we must think very critically about the interface that each feature exposes
 - Addressing these challenges at Airtable
 
-## [The data model behind Notion's flexibility_202105](https://www.notion.so/blog/data-model-behind-notion)
+## 🧮 [notion: The data model behind Notion's flexibility_202105](https://www.notion.so/blog/data-model-behind-notion)
 
 - 
 - 

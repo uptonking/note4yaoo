@@ -199,7 +199,9 @@ modified: 2023-04-19T07:30:34.872Z
 
 - ## 
 
-- ## 
+- ## 🆚️ not an exhaustive list of current table format support _202406
+- https://x.com/mim_djo/status/1801597909148012631
+  - iceberg vs delta
 
 - ## Bin Packing Algorithm for "Small File" Issue in Lakehouses.
 - https://twitter.com/Dipankartnt/status/1781168361545589151
@@ -246,11 +248,11 @@ modified: 2023-04-19T07:30:34.872Z
 
 - ## In ascending order of importance for Data Engineering:
 - https://twitter.com/Ubunta/status/1718275186074730997
-  01.   Data Format
-  02.   Mutability (Mutable vs. Immutable Data)
-  03.   Logging Mechanisms
-  04.   Infrastructure Management
-  05.   Rapid Data Access with Governance
+  01.    Data Format
+  02.    Mutability (Mutable vs. Immutable Data)
+  03.    Logging Mechanisms
+  04.    Infrastructure Management
+  05.    Rapid Data Access with Governance
   - Each has become an industry in itself now
 
 - ## nice talk about Umbra: A Disk-Based System with In-Memory Performance, 

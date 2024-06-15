@@ -15,6 +15,7 @@ modified: 2023-06-23T12:46:53.288Z
   - 类似打字机动态输出文字, 多用于ai生成代码/文本
   - (diff)字符渐变的动画效果, 🤔 和时间旅行的回放过程有何区别
     - diff只需初始结束状态, 而时间旅行支持中间状态
+  - codemirror + dockview/fileTree
 
 - diff视图
   - 上下版: 参考 code-editor-angular
@@ -661,9 +662,7 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/mdx-editor/editor /MIT/202405/ts/lexical
   - https://mdxeditor.dev/
-  - https://mdxeditor.dev/editor/d
-  - 
-  - emo
+  - https://mdxeditor.dev/editor/demo
   - open-source React component that allows users to author markdown documents naturally
   - MDXEditor is a rich, client-side component that does not benefit from server-side rendering. To use it in your server components, you should use next/dynamic
   - 依赖lexical、codemirror6、radix-ui、hast、mdast、react-diff-view、react-hook-form

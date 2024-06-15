@@ -16,11 +16,30 @@ modified: 2024-05-27T09:12:06.925Z
 
 - ## 
 
-- ## 
+- ## Pinterest decreased clone times by 99% (40min -> 30 sec) with a one-line change.
+- https://x.com/ryanlpeterman/status/1801285133200482346
+  - Pinterest's largest monorepo had more than 350k commits and was 20GB in size.
+  - Their continuous build pipelines (Jenkins) took 40 minutes to clone that massive repo.
+  - What was odd was that they were telling Git to do a shallow clone.
+  - Digging into the script that used Git, they realized they left off the `refspec` option. If you leave that off, the default is to tell Git to fetch all refspecs (e.g. "+refs/heads/*:refs/remotes/origin/*") In their case, this fetched more than 2500 branches.
+  - To fix this, they added one line to their build config which specified that they only cared about master (e.g. "+refs/heads/master:refs/remotes/origin/master")
+  - Specifying this decreased cloning times from 40 minutes to 30 seconds.
+  - [How a one line change decreased our clone times by 99% | by Pinterest Engineering _202010](https://medium.com/pinterest-engineering/how-a-one-line-change-decreased-our-build-times-by-99-b98453265370)
+
+- they could have just used `git clone --depth 1`; 
+  - Not everyone knows about this trick, unfortunately
 # disccuss
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## interactive rebase
+- https://x.com/b0rk/status/1801944634936926362
+  - (this is #bonuscomic #1 for How Git Works http://wizardzines.com/zines/git, covering some topics that didn't make it into the zine!)
 
 - ## [git pull on a different branch - Stack Overflow](https://stackoverflow.com/questions/34344034/git-pull-on-a-different-branch)
 - If I'm working on a branch and then realize I need to merge another branch into mine here is my current workflow

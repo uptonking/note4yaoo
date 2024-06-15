@@ -35,6 +35,18 @@ modified: 2023-12-15T18:01:43.992Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## The modern data stack has been trending towards the convergence of open standards across all the layers of the stack:
+- https://x.com/JayChia5/status/1801687117283922247
+  1. Storage: Parquet file format in S3
+  2. Table Format: Iceberg/Delta
+  3. Catalog: (as of yesterday) Unity
+  + your favorite Query Engine here
+  - There are now multi-language clients to interact with these systems
+
 - ## This is a longer post that goes in-depth on new query engine layers like @ApacheArrow Data Fusion and Velox.
 - https://twitter.com/criccomini/status/1751998894857453657
   - [Databases Are Falling Apart: Database Disassembly and Its Implications _202401](https://materializedview.io/p/databases-are-falling-apart)
