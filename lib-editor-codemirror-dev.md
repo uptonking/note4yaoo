@@ -16,17 +16,18 @@ modified: 2021-05-06T09:38:31.520Z
   - v6实现了 virtualized-render
   - 支持mobile
   - accessible
-  - 支持split-view，可在同一页面渲染多个编辑器
-  - 支持nested-editor
+  - 基于contenteditable(而不是textarea)实现，具备富文本的能力
+  - 支持split-view
+  - 支持nested-editor，可在同一页面渲染多个编辑器
 
 - cons
   - 非开箱即用，需要组装模块
   - 协作基于ot变体，非标准ot
   - 默认不支持ssr, 但有方案支持
-  - 顶层容器不支持CSS transform(用于画板缩放的场景)
+  - 顶层容器不支持CSS transform(用于画板缩放的场景, 但ace/monaco支持)
 
 - features
-  - Mobile Support: Use the platform's native selection and editing features on phones.
+  - Mobile Support: Use the platform's native selection and editing features on phones
   - Accessibility: Works well with screen readers and keyboard-only users
   - Bidirectional Text: ltr, rtl
   - Syntax Highlighting
@@ -48,7 +49,7 @@ modified: 2021-05-06T09:38:31.520Z
   - Internationalization
 
 - who is using #codemirror 🌰
-  - jupyter
+  - jupyter-notebook
   - observablehq-notebook, val-town
   - codesandbox-sandpack, codepen, replit, glitch(cm5)
   - sourcegraph
@@ -56,6 +57,7 @@ modified: 2021-05-06T09:38:31.520Z
   - obsidian
   - chrome-devtools(开源代码中使用v6)
   - more: tagspaces, hedgedoc
+  - 参考这些公司在开源项目中的用法
 
 - why-cloud-ide
   - easy to start and leave

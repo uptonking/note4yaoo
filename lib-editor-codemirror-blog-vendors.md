@@ -44,7 +44,7 @@ modified: 2024-05-17T16:08:45.674Z
 - [Replit — A New Code Editor for Mobile - CodeMirror 6 _202109](https://blog.replit.com/codemirror-mobile)
 # blogs-vendors
 
-## 🆚️ [编辑器探索 - 带你全面了解 Web Editor 架构设计、技术选型 _202309](https://rapidsu.cn/articles/4239)
+## 🆚️💡 [编辑器探索 - 带你全面了解 Web Editor 架构设计、技术选型 _202309](https://rapidsu.cn/articles/4239)
 
 - 目前开源市场使用较多的编辑器主要有 3 个，分别是 Monaco Editor、Ace 和 Code Mirror(主要指Code Mirror6)。
 
@@ -95,14 +95,14 @@ modified: 2024-05-17T16:08:45.674Z
   - 高性能，体积小。支持了超过120种语言的语法高亮，超过20个不同风格的主题，与 Sublime 等本地编辑器的功能和性能相匹配。
   - 面向对象
   - 事件驱动, Ace 中提供了丰富的事件系统，以供使用者直接使用或者自定义，并且通过对事件的触发和响应来进行内部数据通信实现代码检查，数据更新等等
-  - Ace编辑器将解析代码的任务交给 Web Worker 处理，以提高代码解析的速度并避免阻塞用户界面。在 Web Worke r中，Ace 使用 Acorn库来解析 JavaScript 代码，并将解析结果发送回主线程进行处理
+  - Ace编辑器将解析代码的任务交给 Web Worker 处理，以提高代码解析的速度并避免阻塞用户界面。在 Web Worker中，Ace 使用 Acorn库来解析 JavaScript 代码，并将解析结果发送回主线程进行处理
   - Ace将编辑器的不同功能分离成不同的类，并使用组合的方式将它们组合在一起。使代码更加模块化、易于维护和扩展。从目录结构可见。
   - 整体 DOM 设计与 Monaco 差不多，都是基于 textarea 实现输入效果。
   - 合并了行背景高亮与代码背景高亮的 DOM 设计。
 
 - CodeMirror6
   - 核心思想是模块化和函数式，支持超过 14 种语言的语法高亮，亮点是高性能、可扩展性高以及支持移动端。
-  - 使用 MVVM架构
+  - 使用 MVVM 架构
   - 函数式编程
   - 单线程
   - 同步增量解析的方式提升性能，每次仅解析视口内（viewport）的代码，从而提升解析性能。
@@ -152,7 +152,7 @@ modified: 2024-05-17T16:08:45.674Z
   - 主要应用在 移动端，功能要求相对简单，要求高扩展性，建议选择 CodeMirror
   - Ace 因为代码设计、UI等比较久远，会比较过时，并且该库后续也不会再进行更新，不建议选择，但若寻求更高的兼容性与稳定性，那它仍然是一个不错的选择。
 
-## 🌰 [Towards the future: a new source editor - Overleaf, Online LaTeX Editor _202211](https://www.overleaf.com/blog/towards-the-future-a-new-source-editor)
+## 🌰 [overleaf: Towards the future: a new source editor - Overleaf, Online LaTeX Editor _202211](https://www.overleaf.com/blog/towards-the-future-a-new-source-editor)
 
 - As of June 14 2023, the legacy editor has been retired for all users.
 - Overleaf now uses CodeMirror 6, a different underlying technology, to power its source editor.
@@ -166,7 +166,7 @@ modified: 2024-05-17T16:08:45.674Z
   - Better support for non-latin text – including mixing of right-to-left and left-to-right text and special characters (such as those with diacritics).
   - Faster development of new features and fewer issues – having multiple editors means any change we make to our platform has to be done multiple times. This slows down new development and creates more places for problems to arise. By moving to the new editor, we can develop features and deploy them once, seriously speeding up the process of delivering the features you want.
 
-## [Why we developed a code block widget in Miro _202307](https://medium.com/miro-engineering/why-we-developed-a-code-block-widget-in-miro-f6c5ec23085c)
+## 🎨 [miro: Why we developed a code block widget using ace editor in Miro _202307](https://medium.com/miro-engineering/why-we-developed-a-code-block-widget-in-miro-f6c5ec23085c)
 
 - Our code widget is a code block with a rich editing experience comparable to a native code editor. It has features like syntax highlighting, auto-closing brackets and indentations, various hotkeys, and more.
 - Miro boards are heavily based on Canvas API. 

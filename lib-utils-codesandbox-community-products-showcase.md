@@ -90,6 +90,15 @@ modified: 2024-05-12T15:39:22.456Z
 # discuss-alternatives-stackblitz
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Made some progress using your js-wasm-tools package and tutorialkit 
+- https://x.com/elmd_/status/1800053726075310249
+- we currently don’t have syntax highlighting for WAT or Wasm but it’s easy to add. It uses Codemirror and if you want you can submit a PR to add CM highlighting for Wasm but it’s different from text mate grammar as it uses lezer.
+  - A language server isn’t part of TK or WC itself and if you wanted something like that you need to spawn a node process and run such language server yourself and wire it up manually.
+
 - ## 🚀 We are introducing TutorialKit by @stackblitz _202406
 - https://x.com/elmd_/status/1798765386118373487
   - [TutorialKit | Create interactive coding tutorials](https://tutorialkit.dev/)

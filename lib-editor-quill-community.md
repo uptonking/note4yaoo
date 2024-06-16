@@ -42,7 +42,13 @@ modified: 2023-02-09T18:23:43.486Z
 
 - ## 
 
-- ## 
+- ## The popular editor Quill v1 uses a deprecated API that will break in July. _202404
+- https://x.com/kevin_jahns/status/1782779684805062773
+  - Quill v2 just got released and fixes the issue.
+  - I already upgraded the Yjs bindings for Quill v2
+
+- Will this also affect other Yjs based libs?
+  - I don't think so. None of my libraries use mutation events. The API was already deprecated when I started Yjs. It is used to listen to DOM manipulations. Prosemirror and Codemirror should be fine.
 
 - ## [Single line only ](https://github.com/quilljs/quill/issues/1432)
   - Is it possible to setup Quill to only allow for one line of text, and no line breaks? I'd also like to get rid of the wrapping paragraph tag if possible.

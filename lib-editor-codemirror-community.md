@@ -41,7 +41,7 @@ modified: 2023-01-29T10:52:44.183Z
 - considering the PoC for consolidating SE and CE (video), I think the value and urgency of this issue should be lowered. We can get to it eventually, but it should not be seen as a helper or blocker for x-editors' communication.
   - 100% agreed. I only see mobile support as a key differentiator and that may actually be in a better place than we assumed.
 
-- ## [sourcegraph: Migrating from Monaco Editor to CodeMirror _202210](https://sourcegraph.com/blog/migrating-monaco-codemirror)
+- ## 🆚️ [sourcegraph: Migrating from Monaco Editor to CodeMirror _202210](https://sourcegraph.com/blog/migrating-monaco-codemirror)
   - 主要考虑可定制性、体积
 
 - We recently migrated Sourcegraph.com away from Monaco, the code editor component that powers VS Code, to CodeMirror. 
@@ -273,9 +273,17 @@ modified: 2023-01-29T10:52:44.183Z
 
 - ## 
 
-- ## 
+- ## In CM, there are two ways to decorate a piece or text: _20240422
+- https://x.com/antiflasher/status/1782079526740062328
+  1. Apply some style to the piece;
+  2. Replace the piece with a composed span (widget).
+  - I want the backticks to disappear when the style gets applied
+  - Сombine them together! I apply Decoration.mark() first, then replace backtick signs with placeholders—a zero-width span.
+  - [CodeMirror Code Tokens - Combined Decoration Improved](https://codepen.io/Anton-Lovchikov/full/ExJOBKp)
 
-- ## 
+- ## how do y'all like the new val share images?
+- https://x.com/tmcw/status/1782842681267232926
+  - we were running our codemirror language mode headlessly and turned that into the very particular subset of html that satori supports, then to svg to png
 
 - ## Hey @discord what do you use for syntax highlighting codefences? _202406
 - https://x.com/nullvoxpopuli/status/1801288055334027417

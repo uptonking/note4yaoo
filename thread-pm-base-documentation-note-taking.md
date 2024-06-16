@@ -88,7 +88,19 @@ modified: 2021-08-16T06:56:53.061Z
 
 - ## 
 
-- ## 
+- ## ✨🧪 On the Patchwork project at @inkandswitch we've been exploring _202404
+- https://x.com/geoffreylitt/status/1784717448207274073
+  - [Patchwork lab notebook](https://www.inkandswitch.com/patchwork/notebook/)
+  - What are powerful, ergonomic version control UIs that support all kinds of collaboration workflows? And how can that support both human + AI collab?
+  - That's why on Patchwork we're interested in universal version control: What if all your creative tools (writing, drawing, spreadsheets, ...) could share one version control system, managed by the OS? And what if AI could hook in at that layer, to collab in any app?
+  - Eg, in a world of universal versioning, imagine you ask an AI to update an app design, and it proposes tweaks to the mockups, the code, and the docs... all together in a branch!
+
+- Thankfully a few libraries seem to have won out that are adjacent to version control: Yjs for collaborative editing, TipTap/Prosemirror for text editing, React Flow for structured diagramming, tldraw for unstructured diagramming, etc
+  - The Yjs+TipTap+Prosemirror combination that’s currently the easiest way to implement collaborative text editing, has an UndoManager for local undo/redo but no version control or comments system
+  - Hopefully Patchwork will become mature enough soon to fill the gap
+- yep that's the eventual goal!
+  - our starting point was markdown editing in codemirror, but a good automerge + prosemirror integration is finally landing soon so we wanna expand to rich text as well.
+  - surprising how big a deal comments is across all these domains
 
 - ## 记笔记是生产力游戏里面最基础的部分。有点像玩 RPG，记笔记只是每天下副本刷材料的日常任务。
 - https://twitter.com/mayneyao/status/1776114010859139122

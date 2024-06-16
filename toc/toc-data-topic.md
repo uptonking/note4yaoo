@@ -99,6 +99,9 @@ modified: 2020-06-22T09:23:56.117Z
   - View Survey Results • Download Full Data Set (CSV)
   - https://github.com/brianhuynh27/pandas_data_analysis
 
+- https://github.com/curran/data /202308
+  - A collection of public data sets for testing out visualization methods. These data sets are at various stages of preparation, some are just raw data, some are CSV files, and some are exposed as AMD modules. This collection is messy, but with some digging you may find hidden gems.
+
 ## marketing
 
 - 胡润百富 Under30s创业领袖 2020

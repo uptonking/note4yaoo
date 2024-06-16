@@ -19,6 +19,23 @@ modified: 2023-09-01T10:13:59.044Z
 - Removing the compressed change chunk option
 - Define limits on op/change counts
 
+# discuss-news
+- ## 
+
+- ## 
+
+- ## ✏️ We shipped rich text & prosemirror support for Automerge _20240509
+- https://x.com/pvh/status/1788409904543269347
+  - It was HARD and took many combined brains (from @geoffreylitt and @sliminality on Peritext to @martinkl , @orionspeaks and @alex_jg figuring out blocks)
+  - [Automerge 2.2: Rich Text | Automerge CRDT](https://automerge.org/blog/2024/04/06/richtext/)
+- A few notes on the implementation -- since many others have claimed to support rich text. We write in the blog post about blocks, which we believe to be an essential extension to Peritext for correct function.
+  - One really interesting and difficult challenge has been to ensure all operations -- including every possible combination of text entry and formatting -- can be done *incrementally*. This ensures stable performance even as documents get very large.
+  - Another interesting feature of this design is that again, because it is patch-based, we can perform efficient "time travel" to any possible point in time in the history of the document. In our CodeMirror implementation we use this to render highlighted diffs.
+  - The underlying rich text format is designed to be editor-agnostic. The reference implementation is ProseMirror, but we hope in time to see bindings for other platforms and editors that can interoperate. (There is a non-trivial schema problem here.)
+- I will try to add Automerge into @evoluhq , and because http://evolu.me is using @lexicaljs , I will also try to port bindings.
+
+- I'm curious what inspired to keep block markers inside text sequences, instead of formatting spans which are kept outside. How conceptually close is this to a Markdown StreamParser? The formats naively feel very similar.
+  - inline formatting spans can overlap with one another, but blocks can't -- two paragraphs can't overlap. this means that in a local-first setting where people might be concurrently adding formatting, you need to take a different approach to the two cases
 # discuss
 - ## 
 

@@ -57,4 +57,9 @@ modified: 2023-01-21T18:57:47.811Z
 
 - https://github.com/interviewstreet/firepad-x /202401/ts
   - We have rewritten all the modules and few extras using TypeScript while enhancing earlier implemented Adapter Pattern to integrate with external modules, such as Database (preferably Firebase) and editors (as of now only Monaco is supported, but PRs are welcomed). 
+# playground
+- https://github.com/romannurik/SlidesCodeHighlighter /apache2/202205/js/inactive
+  - https://romannurik.github.io/SlidesCodeHighlighter/
+  - A little web app that helps you copy+paste syntax-highlighted code into slide decks
+  - 依赖monaco、jquery、webfontloader
 # more

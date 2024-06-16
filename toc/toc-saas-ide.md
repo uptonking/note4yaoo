@@ -234,6 +234,10 @@ modified: 2021-05-14T15:06:46.615Z
 # ide-paid
 - sublime text
 - ultra edit
+# oj-judge
+- https://github.com/judge0/judge0 /GPLv3/202404/ruby
+  - https://judge0.com/
+  - The most advanced open-source online code execution system in the world
 # examples-ide
 - https://github.com/withfig/autocomplete
   - https://fig.io/

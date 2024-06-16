@@ -276,7 +276,7 @@ modified: 2023-06-23T12:46:53.288Z
   - CodeMirror on the server
   - 依赖codemirror5
 
-- https://github.com/vizhub-core/vzcode /MIT/202405/ts
+- https://github.com/vizhub-core/vzcode /MIT/202406/ts
   - VZCode: Multiplayer Code Editor
   - VZCode offers a multiplayer code editing environment that caters to a real-time collaborative development experience. It's the code editor component of VizHub, and can also be used independently from VizHub.
   - Browser-based editing environment
@@ -284,6 +284,9 @@ modified: 2023-06-23T12:46:53.288Z
   - A known shortcoming of VZCode is that it does not (yet) watch for changes from the file system. VZCode assumes that no other programs are modifying the same files.
   - You can also expose your VZCode instance publicly using a tunneling service such as NGrok.
   - Auto-save, debounced after code changes
+  - [VSCode-ish: Jump to Definition of Variable ](https://github.com/vizhub-core/vzcode/issues/177)
+    - [202406已合并pr](https://github.com/vizhub-core/vzcode/pull/717)
+    - I also have a history of working with CodeMirror 5 + ShareDB for the real-time integration, and was able to "unlock" that CodeMirror 6 + ShareDB integration successfully
   - https://github.com/vizhub-core/vizhub
     - https://vizhub.community/
     - Self Hosted CMS for Web-based Dataviz
@@ -713,13 +716,15 @@ modified: 2023-06-23T12:46:53.288Z
   - Only few linting rules have been implemented
   - 示例lint python2代码
 # extensions
-- https://github.com/val-town/codemirror-ts /ISC/202402/ts
+- https://github.com/val-town/codemirror-ts /ISC/2024025/ts
   - https://val-town.github.io/codemirror-ts/
   - a set of extensions for CodeMirror 6 that add support for TypeScript
   - lint, hover, and autocomplete extensions for CodeMirror + TypeScript
   - Hover hints for types 
   - Autocomplete 
   - Diagnostics (lints, in CodeMirror's terminology)
+  - [Go to definition · val-town/codemirror-ts _202311](https://github.com/val-town/codemirror-ts/issues/8)
+    - This module currently uses TypeScript, but not the extra language server. It'd probably use the language server if this adopted more of a client-server architecture, or maybe it should in general, but for now, it's integrating with TypeScript, and we'll need to figure out what's under the hood of the LSP adapter's implementation.
 
 - https://github.com/yeliex/codemirror-extensions /MIT/202403/ts
   - https://cm.yeliex.dev/
@@ -1039,6 +1044,21 @@ modified: 2023-06-23T12:46:53.288Z
   - https://ast-grep.github.io/playground.html
   - A CLI tool for code structural search, lint and rewriting. Written in Rust
   - playground的diff视图基于monaco实现
+
+- https://github.com/monis07/logicloom /202405/ts
+  - https://logicloom-client.vercel.app/
+  - a platform where you can test your coding skills by solving numerous data structures and algorithms
+  - Judge0 code execution system is used to execute the codebase submitted by the user.
+  - https://x.com/MonisAzeem/status/1786281021354479950
+    - a platform where you can test your coding skills by solving numerous data structures and algorithms
+    - Backend: I have used Express and MongoDB. Fetched everything like problem list and details of particular problem like title, description and testcases from MongoDB.
+    - Frontend: I have used React. 
+    - Whenever Submit button is pressed, function code from the editor goes to backend, got integrated with the driver code and passed to @judge0_official server. It returns you with output, id and status.
+    - Judge0 also has a limit of 50 api request per day on the basic plan which means you can run 50 testcases at max.
+
+- https://github.com/judge0/judge0 /GPLv3/202404/ruby
+  - https://judge0.com/
+  - The most advanced open-source online code execution system in the world
 # starter
 - https://github.com/A99US/CM6-Browser-Wrapper /MIT/202308/js/inactive
   - https://a99us.github.io/CM6-Browser-Wrapper/
@@ -1344,3 +1364,6 @@ modified: 2023-06-23T12:46:53.288Z
     - web-tree-sitter for incremental parsing
     - `diff-match-patch` via `json0-ot-diff` for computing text diffs (needed for using tree-sitter)
     - React for DOM updates
+
+- [CodeMirror extension to detect and fix missing JSX Pragma](https://gist.github.com/tmcw/fefe8b5c0a63b51bc8a303c8a3553fac)
+  - detects the lack of a pragma and the presence of JSX syntax, by using CodeMirror's existing syntax tree

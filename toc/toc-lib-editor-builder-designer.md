@@ -353,6 +353,12 @@ modified: 2020-11-17T13:38:19.107Z
   - 基于React技术栈构建一个可视化搭建平台，通过拖拽的方式构建中台
   - 代码自动生成底层技术原理是AST, DSL做功能辅助
   - 很多大的平台在开始做这样的可视化搭建平台，节约项目开发成本。在目前来看，没有特别好的系统解决方案。微软的power，阿里云的云凤蝶，金蝉等
+# json-ui-editor
+- https://github.com/acrodata/gui /MIT/202406/ts/angular
+  - https://acrodata.github.io/gui/
+  - JSON powered GUI for configurable panels
+  - Built on top of Angular Reactive Forms
+  - Uses Angular Material as basic UI library
 # more
 - react-drag-drop-layout-builder /NALic/172Star/201904/ts
   - https://github.com/chriskitson/react-drag-drop-layout-builder
@@ -378,5 +384,5 @@ modified: 2020-11-17T13:38:19.107Z
   - https://sql.ophir.dev/
   - SQL-only webapp builder, empowering data analysts to build websites and applications quickly
   - you write simple .sql files containing queries to your database to select, group, update, insert, and delete your data, and you get good-looking clean webpages 
-# discussion
+
 - [List of drag & drop React UI builders_202003](https://www.reddit.com/r/reactjs/comments/flz4t9/list_of_drag_drop_react_ui_builders/)
