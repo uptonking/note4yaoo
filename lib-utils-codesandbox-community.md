@@ -308,6 +308,13 @@ modified: 2024-01-25T13:33:23.267Z
 
 - I want to like CodeSandbox because I know how hard they’re working and innovating. But this change might require me to move away from them, and I’m not happy about that
 
+- ## I'm very excited to announce that the CodeSandbox editor is now powered by VSCode _202311
+- https://x.com/CompuIves/status/1727745935814349125
+  - This makes CodeSandbox both faster & more familiar, where you can use your own keybindings, settings & themes from VSCode.
+
+- Wasn't it the case in the original version of CodeSandbox (with Monaco)?
+  - Yeah we've had quite a journey, from codemirror to monaco to a forked vscode to monaco and now finally the real vscode
+
 - ## [Dev Container Support in CodeSandbox | Hacker News _202310](https://news.ycombinator.com/item?id=37950384)
 
 - ## ✨🐍 [Python Support Now Available for CodeSandbox | Hacker News _202302](https://news.ycombinator.com/item?id=34870667)

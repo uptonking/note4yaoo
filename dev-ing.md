@@ -351,6 +351,24 @@ betterdiscordctl -i flatpak install
 - dev-to
   - 
 
+## 0616
+
+- [gvm安装及go版本管理 - 逢生博客 - 博客园](https://www.cnblogs.com/wufengsheng/p/17755310.html)
+
+- ERROR: Invalid or corrupt Go version
+  - 原因：gvm未指定默认环境。
+  - gvm use go1.19 --default
+  - [gvm 安装教程及 终端出现ERROR: Invalid or corrupt Go version解决方案-CSDN博客](https://blog.csdn.net/IT_admin/article/details/136263880)
+
+- dev-log
+  - 优化了cde的交互细节图标菜单宽度，实现了执行计划在前端的进度条效果
+- dev-to
+  - cde-tools 集成paas现有功能
+  - ai自然对话
+  - layout状态优化
+  - 尝试单个action对应文件的 diff视图-静态版、持久化数据库层
+  - 业务staging分支使用paas的staging
+
 ## 0614
 
 - https://almanac.io/  这个文档产品，用的也是 Prosemirror，看着设计挺不错的

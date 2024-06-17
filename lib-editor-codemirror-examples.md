@@ -9,13 +9,13 @@ modified: 2023-06-23T12:46:53.288Z
 
 # guide
 
-- 支持切换editor的方案: sandpack, jupyter, @uiw/react-*-editor
+- 支持切换editor的方案: sandpack, jupyter, livecodes, @uiw/react-*-editor
 
 - examples
   - 类似打字机动态输出文字, 多用于ai生成代码/文本
   - (diff)字符渐变的动画效果, 🤔 和时间旅行的回放过程有何区别
     - diff只需初始结束状态, 而时间旅行支持中间状态
-  - codemirror + dockview/fileTree
+  - codemirror + dockview/fileTree, partykit
 
 - diff视图
   - 上下版: 参考 code-editor-angular
@@ -95,6 +95,17 @@ modified: 2023-06-23T12:46:53.288Z
   - [Compile Error and PDF Download Notifications](https://github.com/overleaf/overleaf/issues/1031)
     - migrate from ACE to CodeMirror 6. Yes, the CM6 work will be coming to CE soon. _202206
 
+- Zettlr /9.3kStar/GPLv3/202401/ts/vue/偏学术
+  - https://github.com/Zettlr/Zettlr
+  - https://www.zettlr.com/
+  - https://docs.zettlr.com/
+  - Your One-Stop Publication Workbench
+  - 依赖electron-forge、codemirror.v6、@lezer/highlight、d3.v7、katex、remark-math、vue3、vuex4、pinia
+  - exports with Pandoc, LaTeX, and Textbundle
+  - support LaTeX and Word template
+  - Citations made easy: Tight and ever-growing integration with your favourite reference manager (Zotero, JabRef, and many others)
+  - Support for state of the art knowledge management techniques (Zettelkasten)
+
 - https://github.com/glacambre/editor-adapter /MIT/202211/ts/inactive
   - A library to interact with in-browser JS editors like Ace, CodeMirror or Monaco
 
@@ -167,6 +178,16 @@ modified: 2023-06-23T12:46:53.288Z
   - 不依赖codemirror
   - you can use Remotion's `useFrame` inside any Code Hike annotation to animate most of the examples from the docs
   - wondering if it can also display twoslash annotations, but I don't think remotion supports React Server Components
+
+- https://github.com/wix-incubator/codio /MIT/202101/ts/kotlin/inactive
+  - A media format to record and playback the process of programming
+  - Codio is a media format for recording the process of programming.
+  - The format is composed of code editor operations and audio/video.
+  - Create interactive tutorials, code messages and embedded documentation with a media format that turns your IDE to a media player.
+  - 🍴 forks
+  - https://github.com/rbrisita/codio-sui
+    - A media format for VS Code to record and playback the process of programming.
+    - Record VS Code events with an audio commentary and subtitles to play back at a later time.
 
 - https://github.com/val-town/codemirror-codeium /ISC/202404/ts
   - https://val-town.github.io/codemirror-codeium/
@@ -287,6 +308,7 @@ modified: 2023-06-23T12:46:53.288Z
   - [VSCode-ish: Jump to Definition of Variable ](https://github.com/vizhub-core/vzcode/issues/177)
     - [202406已合并pr](https://github.com/vizhub-core/vzcode/pull/717)
     - I also have a history of working with CodeMirror 5 + ShareDB for the real-time integration, and was able to "unlock" that CodeMirror 6 + ShareDB integration successfully
+  - [Intelligent Autocompletions ](https://github.com/vizhub-core/vzcode/pull/305)
   - https://github.com/vizhub-core/vizhub
     - https://vizhub.community/
     - Self Hosted CMS for Web-based Dataviz
@@ -345,6 +367,11 @@ modified: 2023-06-23T12:46:53.288Z
   - Reusable Compass editor component based on codemirror editor, themes, and autocompleters
   - 依赖codemirror6、react
 
+- https://github.com/evinowen/tome /MIT/202406/ts/vue
+  - https://tome.evinowen.net/
+  - 🌵 git integrated cross-platform markdown editor
+  - 依赖codemirror6、marked、nodegit、vue3、@electron/rebuild
+
 - https://github.com/yanthink/pingfan.ts /202204/ts/inactive
   - 基于 codemirror6 的 markdown 编辑器
 
@@ -361,6 +388,12 @@ modified: 2023-06-23T12:46:53.288Z
   - 基于CodeMirror和unified实现的一个能精确同步滚动的Markdown编辑器
   - 依赖codemirror5、vue3、remark-gfm
   - [如何实现一个能精确同步滚动的Markdown编辑器 - 掘金 _202205](https://juejin.cn/post/7100562751596003342)
+
+- https://github.com/wangpin34/wxformat /MIT/202311/ts
+  - https://wangpin34.github.io/wxformat/
+  - Markdown For Weixin 是一款用于生成兼容微信公众号图文素材内容的 Markdown 编辑器
+  - 依赖codemirror6、daisyui
+  - 示例是分屏视图，支持同步滚动
 
 - https://github.com/mdnice/markdown-nice /GPLv3/202109/js/inactive
   - 支持自定义样式的 Markdown 编辑器
@@ -656,6 +689,13 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/interviewstreet/firepad-x /202401/ts
   - We have rewritten all the modules and few extras using TypeScript while enhancing earlier implemented Adapter Pattern to integrate with external modules, such as Database (preferably Firebase) and editors (as of now only Monaco is supported, but PRs are welcomed). 
 
+- https://github.com/jupyter-server/pycrdt /MIT/202312/python/rust
+  - https://davidbrochart.github.io/pycrdt
+  - https://jupyter-server.github.io/pycrdt
+  - CRDTs based on Yrs
+  - https://github.com/jupyter-server/pycrdt-websocket /python
+    - async WebSocket connector for pycrdt
+
 ## diff
 
 - https://github.com/acrodata/code-editor /MIT/202405/ts
@@ -723,6 +763,7 @@ modified: 2023-06-23T12:46:53.288Z
   - Hover hints for types 
   - Autocomplete 
   - Diagnostics (lints, in CodeMirror's terminology)
+  - Running typescript in a web worker for perf
   - [Go to definition · val-town/codemirror-ts _202311](https://github.com/val-town/codemirror-ts/issues/8)
     - This module currently uses TypeScript, but not the extra language server. It'd probably use the language server if this adopted more of a client-server architecture, or maybe it should in general, but for now, it's integrating with TypeScript, and we'll need to figure out what's under the hood of the LSP adapter's implementation.
 
@@ -838,6 +879,8 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/PuruVJ/neocodemirror /202311/ts
   - Aims to provide Codemirror 6 as an easy to use codemirror action.
+  - https://x.com/puruvjdev/status/1780560310547436002
+    - Anytime you change documentId, it stores the state in a map, and when the documentID changes back to the one stored, we apply the history
 
 - https://github.com/acao/codemirror-json-schema /MIT/202404/ts
   - Codemirror 6 extensions that provide full JSON Schema support for @codemirror/lang-json & codemirror-json5 language modes
@@ -849,6 +892,8 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/thetrevorharmon/zephyr-demo /202402/ts
   - https://zephyr-demo.netlify.app/
   - CodeMirror 6 🤝 ANTLR
+  - [Connecting ANTLR to CodeMirror 6: Building a Language Server _202402](https://thetrevorharmon.com/blog/connecting-antlr-to-codemirror-6-building-a-language-server/)
+    - I spent *a lot* of time trying to get operability between CM6 and ANTLR as part of my work on the ShopifyQL code editor (which I've written about before). I didn't have any guide for how to do any of this before working on it, so my hope is that these help somebody
 - https://github.com/RuslanZh/codemirror-antlr4 /202208/ts/inactive
   - This project shows example of integration Antlr 4 grammar tool with Codemirror editor.
 
@@ -890,6 +935,11 @@ modified: 2023-06-23T12:46:53.288Z
   - In its initial form, this is an editor for the Tidal language. It requires Tidal to be installed independently.
   - https://github.com/mindofmatthew/text.management/tree/main/packages/codemirror/evaluate
     - CodeMirror 6 extension for enabling lines of code to be evaluated
+
+- https://github.com/Monkatraz/cm-tarnation /MPLv2/202207/ts/inactive
+  - An alternative parser for CodeMirror 6
+  - Tarnation is not line-based. It is capable of reusing both previous and ahead data when parsing, making it fully incremental
+  - Tarnation can do things that Lezer (the parser you'd usually use for CodeMirror) can't. For example, Tarnation can parse something like Markdown, and other weird esoteric markup/formatting languages.
 
 ## lsp
 
@@ -993,6 +1043,15 @@ modified: 2023-06-23T12:46:53.288Z
   - An online code-editor
   - 依赖@uiw/react-codemirror、next
 
+- https://github.com/badass-courses/course-builder /MIT/202406/ts
+  - https://www.coursebuilder.dev/
+  - experimental platform for building Badass Courses
+  - Course Builder is a real-time multiplayer CMS for building and deploying the opinionated data structures of developer education products
+  - [feat: codemirror + partykit markdown editor _202312](https://github.com/badass-courses/course-builder/pull/35)
+    - used this Liveblocks guide to get this running with partykit.
+  - [feat: collaborative codemirror editor _202401](https://github.com/badass-courses/course-builder/issues/54)
+    - We've set up the basics for the collaborative editor, but the results are mixed and kind of janky where the text sometimes doubles up and it doesn't feel right in terms of the syncing between the CMS (Sanity) and the Partykit connection.
+
 - https://github.com/leon-kfd/OnlineCodeEditor /202311/ts/vue
   - An online code Editor like CodePen, built by Vue3.
 
@@ -1000,6 +1059,9 @@ modified: 2023-06-23T12:46:53.288Z
   - https://livecodes.io/
   - A feature-rich, open-source, client-side code playground for React, Vue, Svelte, Solid, Typescript, Python, Go, Ruby, PHP and 80+ languages/frameworks.
   - 依赖codemirror6、monaco、codejar、codejar、yjs
+  - https://x.com/hatem_hosny_/status/1753930554540499064
+    - Check this where I dynamically select the editor and load it (e.g. on desktop -> monaco, on mobile -> codemirror, user preference, etc.)
+    - Also unified the interface of loading and communicating with the editor
   - [Why Another Playground? | LiveCodes](https://livecodes.io/docs/why/)
     - There are great products like CodePen, JSFiddle, JS Bin, CodeSandbox, Replit and many others, which LiveCodes does not aim to replace or compete with.
     - On the contrary, it aims to integrate with as many of these services as their APIs allow.
@@ -1034,6 +1096,11 @@ modified: 2023-06-23T12:46:53.288Z
   - 依赖codemirror5
   - https://github.com/jsbin/jsbin/tree/feat/next-v5 /201906/js/inactive
 
+- https://github.com/lewdev/extext /202302/js/inactive
+  - https://lewdev.github.io/apps/extext
+  - Fast web development now in your browser using CodeMirror.
+  - This project started off from my tiny-code-editor which was inspired by Mini Code Editor by xem.
+
 - https://github.com/chinchang/web-maker /MIT/202405/js
   - https://webmaker.app/
   - A blazing fast & offline frontend playground
@@ -1059,6 +1126,20 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/judge0/judge0 /GPLv3/202404/ruby
   - https://judge0.com/
   - The most advanced open-source online code execution system in the world
+
+- https://github.com/rin-yato/miracle-diagram /202312/ts
+  - https://miracle-diagram.vercel.app/
+  - A code first database diagram design tool. 
+  - 依赖codemirror、lezer、shadcn、reactflow
+
+- https://github.com/google/playground-elements /202405/ts
+  - Serverless coding environments for the web.
+  - still CodeMirror 5
+
+- https://github.com/kazzkiq/CodeFlask /MIT/202006/js/inactive
+  - https://kazzkiq.github.io/CodeFlask/
+  - A micro code-editor for awesome web pages
+  - 依赖prismjs
 # starter
 - https://github.com/A99US/CM6-Browser-Wrapper /MIT/202308/js/inactive
   - https://a99us.github.io/CM6-Browser-Wrapper/
@@ -1087,6 +1168,7 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/craftzdog/electron-markdown-editor-tutorial /MIT/202108/ts/inactive
   - A tutorial for building a beautiful Markdown editor
   - electron + vite + CodeMirror 6 + remark
+  - [How to build a Markdown editor using Electron, ReactJS, Vite, CodeMirror, and Remark - YouTube ](https://www.youtube.com/watch?v=gxBis8EgoAg)
 
 - https://github.com/greeenboi/vscodex /202402/ts
   - Vs code Clone
@@ -1131,6 +1213,13 @@ modified: 2023-06-23T12:46:53.288Z
   - Create your code images by choosing different themes and visual settings.
   - Next.js
 
+- https://github.com/riccardoperra/codeimage /MIT/202405/ts
+  - https://codeimage.dev/
+  - A tool to beautify your code screenshots. Built with SolidJS
+  - SSG+Partial hydration
+  - https://x.com/riccardoperra0/status/1603412081054810112
+    - lazy load @codemirror and motion without blocking rendering and losing performance.
+
 - https://github.com/wajeshubham/snippng /MIT/202306/ts/inactive
   - https://snippng.wajeshubham.in/
   - Create and share beautiful images of your source code.
@@ -1151,6 +1240,11 @@ modified: 2023-06-23T12:46:53.288Z
   - https://sql-editor-react.vercel.app/sql-editor
   - A frontend application for running SQL queries.
   - Note : For now only SELECT queries on given tables are supported. Will increase it's application in future.
+
+- https://github.com/prisma/text-editors /apache2/202211/ts/inactive
+  - https://qc.prisma-adp.vercel.app/
+  - these editors were built for the Prisma Data Platform's Query Console
+  - This is only a demo of Prisma's text editors. To try out the query console, head over to the Prisma Data Platform
 
 - https://github.com/shahenalgoo/snippad /MIT/202306/ts/inactive
   - https://www.snippad.io/
@@ -1214,7 +1308,9 @@ modified: 2023-06-23T12:46:53.288Z
   - Not perfect themes for cm6, generated from vscode themes.
 
 - https://github.com/vadimdemedes/thememirror /202206/ts/inactive
+  - https://thememirror.net/
   - Beautiful themes for CodeMirror
+  - [Making CodeMirror themes look nice with shadcn/ui _202312](https://www.zackrw.com/cbz/codemirror-themes-with-shadcn-ui)
   - https://github.com/satansdeer/thememirror
 
 - https://github.com/cossssmin/codemirror-theme-github /202102/inactive
@@ -1302,6 +1398,18 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/summernote/react-summernote /MIT/202007/js/inactive
   - Summernote (Super simple WYSIWYG editor) adaptation for react
+
+- https://github.com/carbon-app/carbon /MIT/202403/js
+  - https://carbon.now.sh/
+  - Create and share beautiful images of your source code
+  - 对源码生成截图时支持多种theme
+  - 依赖codemirror5、puppeteer-core、morphmorph
+
+- https://github.com/massCodeIO/massCode /AGPLv3/202401/ts/vue
+  - https://masscode.io/
+  - A free and open source code snippets manager for developers
+  - 依赖codemirror5、d3、dom-to-image、electron-store、marked
+  - 202208: I am excited that v3.0.0-beta.1 is out which now uses Codemirror instead of Ace
 # code-ai
 - https://github.com/asadm/codemirror-copilot /MIT/202401/ts
   - https://copilot.asadmemon.com/
@@ -1337,6 +1445,13 @@ modified: 2023-06-23T12:46:53.288Z
   - Sweep: open-source AI-powered Software Developer for small features and bug fixes.
   - Sweep is an AI junior developer that turns bugs and feature requests into code changes. Sweep automatically handles devex improvements like adding typehints/improving test coverage. 
   - Turns issues directly into pull requests (without an IDE)
+
+- https://github.com/do-me/SemanticFinder /MIT/202405/js
+  - https://do-me.github.io/SemanticFinder/
+  - Frontend-only live semantic search with transformers.js
+  - Calculates the embeddings and cosine similarity client-side without server-side inferencing, using a quantized version of sentence-transformers/all-MiniLM-L6-v2.
+  - https://x.com/DomeGIS/status/1646198509425639426
+    - A browser-based semantic search engine you can use to query your own texts
 # products-coding
 
 - https://github.com/code-hike/codehike /MIT/202307/ts/inactive
@@ -1358,6 +1473,13 @@ modified: 2023-06-23T12:46:53.288Z
   - To test your changes on other platforms, we recommend using a Virtual Machine host like UTM.
   - The app supports deeplinks with the `replit://` protocol which can be used to open specific pages or flows directly, launching the app if it's not already running.
 # more
+- https://github.com/leaverou/rety /MIT/202302/js/inactive
+  - https://rety.verou.me/
+  - Record typing on one or more editors and replay it at will, to simulate live coding
+  - Rety is a library that allows you to record the edits you make on one or more pieces of text (usually code) and replay them later to recreate the same typing flow.
+  - It does not come with any particular UI, the UI is up to you. The UI you see in some of the demos in these docs is not part of Rety.
+  - Rety is designed to work well with the code editors of Prism Live and CodeFlask but it should work with any `<input>, <textarea>` or even compatible custom elements.
+
 - https://github.com/datavis-tech/codearea /MIT/201908/js/inactive
   - A proof-of-concept code editor with syntax highlighting that uses
     - highlighted-pre-over-textarea approach (like react-simple-code-editor)

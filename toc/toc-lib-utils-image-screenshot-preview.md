@@ -156,14 +156,18 @@ modified: 2023-04-16T13:34:33.706Z
     - notion、github、onenote、joplin
   - https://chrome.google.com/webstore/detail/web-clipper/mhfbofiokmppgdliakminbgdgcmbhbac
 # source-code-screenshot
-- https://github.com/riccardoperra/codeimage /ts
+- https://github.com/riccardoperra/codeimage /MIT/202405/ts
   - https://codeimage.dev/
   - A tool to beautify your code screenshots. Built with SolidJS
+  - SSG+Partial hydration
+  - https://x.com/riccardoperra0/status/1603412081054810112
+    - lazy load @codemirror and motion without blocking rendering and losing performance.
 
 - https://github.com/carbon-app/carbon /MIT/202403/js
   - https://carbon.now.sh/
   - Create and share beautiful images of your source code
   - 对源码生成截图时支持多种theme
+  - 依赖codemirror5、puppeteer-core、morphmorph
 
 - https://github.com/Idered/chalk.ist /ts/vue
   - https://chalk.ist/

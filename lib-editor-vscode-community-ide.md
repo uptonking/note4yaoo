@@ -383,6 +383,8 @@ modified: 2024-05-09T09:35:28.467Z
 
 - ## 
 
+- ## 
+
 - ## [Ask HN: Is anyone using a web IDE for most of their development work? | Hacker News _201504](https://news.ycombinator.com/item?id=9457973)
 - The real benefit is not in the Web IDE per se, but the fact that your dev environment is accessible from anywhere. That is the killer feature. You don't have to setup your environment more than once if you have more than one computer; you can work even with a Chromebook/iPad, and it's easily shareable with your team.
   - The web IDE is great if you want to make quick edits (or want to collaborate in real-time) but in most other cases, native editors have it beat.

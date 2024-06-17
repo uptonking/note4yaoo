@@ -16,7 +16,10 @@ modified: 2022-08-21T10:11:19.219Z
 
 - ## 
 
-- ## 
+- ## Once again: if your LLM chat system has access to untrusted content (in this case GitHub Copilot Chat can see the content of text files in your editor), do NOT include support for rendering markdown images from arbitrary domains, or you'll have a data exfiltration security hole
+- https://x.com/simonw/status/1802133988469084369
+  - Added a new markdownexfiltration tag to my blog to track these, we've seen this exact same attack (LLM private data exfiltration via Markdown images) in ChatGPT itself, Google Bard, Writer-com, Amazon Q, Google NotebookLM and now GitHub Copilot Chat 
+  - To clarify: all of those products have now (I believe) put mitigations in place to protect against these attacks - the usual mitigation is to drop support for embedding images in Markdown from untrusted domains
 
 - ## TIL Google Docs has a "code block" that you can paste code into and it'll highlight it correctly, but Google Slides does not have that feature, 
 - https://twitter.com/seldo/status/1781463622109298988

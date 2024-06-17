@@ -55,9 +55,7 @@ modified: 2024-05-10T06:17:27.016Z
     - https://swe-agent.com/
     - SWE-agent takes a GitHub issue and tries to automatically fix it, using GPT-4, or your LM of choice. 
     - It solves 12.29% of bugs in the SWE-bench evaluation set and takes just 1.5 minutes to run.
-
 # code-ai-ide
-
 - https://github.com/ishaan1013/sandbox /MIT/202406/ts
   - A cloud-based code editing environment with an AI copilot and real-time collaboration.
   - It's an OSS code editor with AI code autocompletion and real-time multiplayer collaboration (powered by @liveblocks )
@@ -73,7 +71,8 @@ modified: 2024-05-10T06:17:27.016Z
 # discuss-ide-ai
 - ## 
 
-- ## 
+- ## 🌰 [AI Assisted Coding · vizhub-core/vzcode _202303](https://github.com/vizhub-core/vzcode/issues/73)
+- First pass done in #282
 
 - ## AI 补全工具可能只是冲击传统编程方式的第一步。 AI 设计 / AI CodeGen / AI 文档 / AI TDD / AI Lint 可能还在路上。
 - https://x.com/hylarucoder/status/1791807537995747459
@@ -175,6 +174,7 @@ modified: 2024-05-10T06:17:27.016Z
   - 看实现像是预定义了少量的组件(可替换文本/图片/动画容器等)，然后让AI生成页面区块，写React组件(Hero/Gallery等)和props，用AI对话去编辑
   - 基于这个想法，使用 gpt-4o + tailwind + Vue + esbuild-wasm 做了个「网页生成器」，还有按区块调整的能力。。 属于是低配山寨版 wegic 了（纯做着玩儿的PoC
   - 还有一个告诉ai接口，然后自动写页面的
+
 # discuss
 - ## 
 

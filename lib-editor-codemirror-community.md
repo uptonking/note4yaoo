@@ -14,6 +14,22 @@ modified: 2023-01-29T10:52:44.183Z
 
 - ## 
 
+- ## 
+
+- ## n his #BOBkonf2023 talk "State Transitions in Complex Systems", @MarijnJH shows how CodeMirror uses persistent state values & first-class transactions to more easily keep all the interdependent data involved in a full-featured editor coherent.
+- https://x.com/BOBKonf/status/1613845939361398784
+  - [BOB - State Transitions in Complex Systems](https://bobkonf.de/2023/haverbeke.html)
+
+- ## 💡 给一段代码，自动检测编程语言，了解到了以下几个方案：
+- https://x.com/wsygc/status/1761928319111684431
+  - 1. 微软出品的 https://github.com/microsoft/vscode-languagedetection 似乎vscode就是用的这个包，基于机器学习，给出概率列表，但是只支持nodejs运行时，无法在浏览器运行，而且在nextjs API route里也跑不通，暂时不考虑。
+  - 2. Github在使用的 https://github.com/github-linguist/linguist  这个主要用于分析Github Repo代码组成，和Github生态绑定比较深，而且使用的是Python，不太符合我的技术栈和小需求
+  - 3. Google的 https://github.com/google/magika （ @hi_yggd 推荐）和微软那个类似，也是基于机器深度学习，给出概率性列表，试了试web demo（https://google.github.io/magika/），准确率还行，支持浏览器运行（https://npmjs.com/package/magika），挺符合我的小需求，唯一有点犹豫的是Google出品，而且处于实验品阶段
+  - 4. highlight.js的自带API https://highlightjs.readthedocs.io/en/latest/api.html#highlightauto 这个是自己找的，算是目前为止符合需求的最轻量级的解决方式了，不过准确度如何，有待实践验证
+  - 5. 最后一种方式是一个思路（ @KunhaiY 推荐）：扔给AI，直接让它给出答案。至于prompt怎么写，宝玉老师（ @dotey ）推荐让GPT-4给prompt，是个比较新颖的解决方案，效果如何，有待探索验证。
+  - 综上，我准备先试试hightlight.js API，这个验证起来最快，效果不太满意的话，再试试google的magika，如果还是不满意，再走AI思路
+- 我记得 codemirror v6 是有自动检测编程语言这个功能的。大致原理通过关键字判断。
+
 - ## 🤔 [CodeMirror 6: Web-Worker-isolated state? _202012](https://discuss.codemirror.net/t/codemirror-6-web-worker-isolated-state/2788)
 - Considering V6’s singleton and isolated state, I think it’s possible to ‘decouple’ the EditorView instance from it’s state and instead dispatch updates through some asynchronous helper functions. 
   - I wish to do this because, well, it’s fun, and also because I’m doing some fairly heavy lifting on the DOM on the main thread (very, very fast Markdown live-preview, which itself is already heavily web-workerized and asynchronous) and I would like to isolate the potentially parse-heavy operations into a web-worker.
@@ -30,7 +46,15 @@ modified: 2023-01-29T10:52:44.183Z
 
 - ## 
 
-- ## 
+- ## We spent two weeks exploring whether a lightweight IDE (using VSCode or  Eclipse Theia) would meet our requirements, 
+- https://x.com/NyahMacklinDev/status/1642302520444739587
+- Monaco and CodeMirror 6 are both browser-only solutions, without  infrastructure requirements or much user interface out of the box. These  solutions allow for the most customization, which was something the team found appealing.
+
+- ## What code editor would you use for your site? Monaco, CodeMirror, PrismJS, or something else? 
+- https://x.com/meijer_s/status/1726978119947694527
+  - Not just syntax highlighting, editing with suggestions.
+- Haha as someone who has used a ton of v5 and a now exclusively v6, facets are your friend! Feels way more composable.
+- If you want a powerful editor with support for completion, hover, navigation, formatting, basically everything VS Code supports, I recommend Monaco. I also strongly recommend monaco-editor over some wrapper library. But Monaco is quite a heavy dependency
 
 - ## [Spike(尖钉；尖刺): Investigate CodeMirror as a replacement for Monaco · GitLab.org/GitLab _202301](https://gitlab.com/gitlab-org/gitlab/-/issues/387586)
 - Monaco has served us well as a foundation for the Source Editor for the past couple of years. But some changes to our overall tech stack and the direction of our other categories warrant re-visiting the underlying editor for Source Editor.
@@ -215,6 +239,12 @@ modified: 2023-01-29T10:52:44.183Z
 
 - ## 
 
+- ## Looking for examples on how to use @codemirror / Lezer's incremental parsing mode.
+- https://x.com/MarijnJH/status/1582604809718202368
+  - I see ensureSyntaxTree() takes a max line number param, but I'm not sure how it expects you to save+restore state between calls.
+
+- That's automatic. Parsing work is kept in a mutable cache and reused when possible on the next editor state update (and on further calls to that function).
+
 - ## [Lezer: A parsing system for CodeMirror, inspired by Tree-sitter | Hacker News _202403](https://news.ycombinator.com/item?id=39805591)
 - lezer is a parser generator( which by itself is not a trivial feat with novel ideas like incremental computations applied to parsing) to power his mainstream project which is CodeMirror.
 - it would be great if CodeMirror could just work with Tree-sitter or similar. There’s a lot of ecosystem around other parsing systems, and needing to figure out Lezer stuff is a big friction for adopting CodeMirror 6 for me. There are not a lot of language packages listed
@@ -241,7 +271,7 @@ modified: 2023-01-29T10:52:44.183Z
 - Since nobody fixed it before im assuming you are the first one on the planet prerendering cm6
 - It's not like this only exists with 6 though, I found an issue from 2018
 
-# discuss-used
+# discuss-compatibility
 - ## 
 
 - ## 
@@ -269,6 +299,10 @@ modified: 2023-01-29T10:52:44.183Z
   - by putting the pseudoelements in explicit stacking order, you kind of "cover up" the top & bottom borders, giving the outline effect. So it's a hack, but is much nicer to do this w/ just CSS than to wrangle contiguous borders with JS or something
 
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 
@@ -431,6 +465,24 @@ modified: 2023-01-29T10:52:44.183Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## ☄️ My another challenge this year: a sponsorware project "Code Animate" _202202
+- https://x.com/dai_shi/status/1493213723150131205
+  - I have been thinking about building this tool since last year to help my creating coding tutorials. 
+  - https://code-animate.axlight.com/
+  - One of the tools inspired me is asciinema, so it definitely seems interesting. 
+  - On the otherhand, my goal is not to play back. I want something like what I did with Excalidraw-Animate
+- Not to be a pessimist but I don't think this would be an enjoyable experience for tutorials. I personally would prefer the text never move. Diff style tutorials are good for this IMO. It's also not great for accessibility.
+  - Maybe, maybe not. It's more for making it like a live session. I agree the final code should be some sort of texts.
+- I love the idea. I experimented with something similar last year, a different diff animation for 
+@codehike_
+: https://x.com/pomber/status//pomber/status/1383524087331393550. But I haven't used it yet.
+
+- ## It can Record then and then Replay text editing actions you take on a `<textarea>` . "Live coding without the stress"
+- https://x.com/LeaVerou/status/1584250066029928449
+- It would be so cool if @codePen supported recording scripts and replaying them — I've checked and Rety *could* support CodeMirror with some tweaking, as it does produce the necessary events.
 
 - ## why didn't Svelte include Monaco editor into the playground like Vue did. _202406
 - https://x.com/Rich_Harris/status/1801212903552401428

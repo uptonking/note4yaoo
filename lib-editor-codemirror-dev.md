@@ -14,6 +14,7 @@ modified: 2021-05-06T09:38:31.520Z
   - 可扩展性强
   - 官方支持collab, 基于ot算法变体
   - v6实现了 virtualized-render
+  - ❓ incremental syntax highlighting
   - 支持mobile
   - accessible
   - 基于contenteditable(而不是textarea)实现，具备富文本的能力
@@ -54,9 +55,11 @@ modified: 2021-05-06T09:38:31.520Z
   - codesandbox-sandpack, codepen, replit, glitch(cm5)
   - sourcegraph
   - overleaf(latex-code+rich)
-  - obsidian
+  - obsidian, zettlr, joplin-markdown-editor
   - chrome-devtools(开源代码中使用v6)
+  - known: mdn
   - more: tagspaces, hedgedoc
+  - ?: replay.io
   - 参考这些公司在开源项目中的用法
 
 - why-cloud-ide

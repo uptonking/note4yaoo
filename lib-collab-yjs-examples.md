@@ -122,6 +122,8 @@ modified: 2022-09-21T15:47:41.340Z
   - https://davidbrochart.github.io/pycrdt
   - https://jupyter-server.github.io/pycrdt
   - CRDTs based on Yrs
+  - https://github.com/jupyter-server/pycrdt-websocket /python
+    - async WebSocket connector for pycrdt
 # apps
 - https://github.com/cybersemics/em /ts/yjs/web/ios/android
   - minimalistic note-taking app for personal sensemaking.

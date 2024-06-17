@@ -52,7 +52,23 @@ modified: 2024-05-02T02:01:04.255Z
 
 - 定义了一个annotation：fromHistory，值为{side: BranchName, rest: Branch}
   - BranchName是redo、undo二选一，Branch是历史事件合集
+
+## [Connecting ANTLR to CodeMirror 6: Building a Language Server _202402](https://thetrevorharmon.com/blog/connecting-antlr-to-codemirror-6-building-a-language-server/)
+
+- For the past couple of years, I’ve worked on ShopifyQL Notebooks, a data exploration tool offered by Shopify.
+  - The tool enables Shopify merchants to query their data in a Jupiter-esque notebook using ShopifyQL
+  - One of the biggest challenges in creating ShopifyQL Notebooks was building a functional code editor with all of the bells and whistles you’d expect from a world class editor.
+- The primary way to use Lezer is to use its grammar engine. 
+- Lezer takes in a grammar file and then exports extensions that CodeMirror uses to create parse trees. Those parse trees are then used by CodeMirror to provide various features like syntax highlighting, linting, tooltips, etc.
+- 
+- 
+- 
+
 # blogs-xp
+
+## [Advanced state management with React and CodeMirror _202403](https://thetrevorharmon.com/blog/advanced-state-management-with-react-and-codemirror/)
+
+## [Learning CodeMirror _202309](https://thetrevorharmon.com/blog/learning-codemirror/)
 
 ## [浅尝 CodeMirror@6 – 山维空间 _202203](https://blog.meathill.com/js/note-codemirror6.html)
 
@@ -71,3 +87,10 @@ modified: 2024-05-02T02:01:04.255Z
 
 - [Revisiting our CodeMirror 6 implementation in React after the official release _202210](https://www.codiga.io/blog/revisiting-codemirror-6-react-implementation/)
   - [Implementing CodeMirror 6 in React with Code Snippets Autocompletion _202205](https://codiga.io/blog/implement-codemirror-6-in-react/)
+
+- [How to create Zenn's Markdown editor with CodeMirror v6 _202402](https://zenn.dev/team_zenn/articles/zenn-markdown-editor-by-cm6)
+
+- [CodeMirror Search | by Evin Owen | Medium _202311](https://evinowen.medium.com/codemirror-search-84bc73b1b1ee)
+  - [CodeMirror Decorations — Underline Example | by Evin Owen | Medium](https://evinowen.medium.com/codemirror-decorations-underline-example-dafd4ca4bda6)
+
+- [富文本编辑器：TinyMCE、Editor.js、Lexical、CKEditor与CodeMirror对比 - ercwang](https://0x763ad28bc4436590fd61998561730b0f7790e955.xlog.app/TinyMCEEditorjsLexicalCKEditorCodeMirror)

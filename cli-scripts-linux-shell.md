@@ -47,6 +47,12 @@ resolvectl statistics
 
 # file
 
+```shell
+
+cp -r source_folder /path/to/destination_folder/
+
+```
+
 ## file-cli
 
 - `ln -s fileOrFolder softLinkName`

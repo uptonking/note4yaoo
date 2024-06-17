@@ -65,7 +65,11 @@ modified: 2024-05-12T15:39:22.456Z
 
 - ## 
 
-- ## 
+- ## What would be the best platform to use? @stackblitz @codesandbox @CodePen or go custom with @codemirror ?
+- https://x.com/YTCodeAntonio/status/1753088267346379111
+- Why not both: use CodeMirror and WebContainer API (https://webcontainers.io), like e.g. SvelteKit tutorial does https://learn.svelte.dev/tutorial/pages – this way your users run the live app, but you don't have to worry about VMs compute
+
+- Custom with codemirror and make it way better than other platform.
 
 - ## [Show HN: Codebox - Cloud IDE as a Service | Hacker News _201312](https://news.ycombinator.com/item?id=6864052)
 - This looks nice but it's missing one feature that's stopped me from adopting services like this after having tried a couple of them - let me download the VM!
