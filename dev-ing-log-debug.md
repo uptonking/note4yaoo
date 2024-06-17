@@ -15,6 +15,18 @@ modified: 2023-06-14T00:53:15.226Z
 
 ## 
 
+## 
+
+## 
+
+## 20240617: nextjs react strictMode 导致的问题
+
+- 计划执行进度条的动画播放速度变为2倍
+  - 基于setInterval实现的进度条
+
+- ai-plan-steps-tree的折叠效果失败
+  - debug调试时，nextjs在严格模式下，onClick的handleCollapse里面setState后计算最新数据第一次为最新可折叠数据，连着的第二次为旧数据
+
 ## 20240527: Warning: Each child in a list should have a unique "key" prop.
 
 - [Unable to see key value in React or Chrome devtools - Stack Overflow](https://stackoverflow.com/questions/65552907/unable-to-see-key-value-in-react-or-chrome-devtools)

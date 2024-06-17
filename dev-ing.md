@@ -338,8 +338,10 @@ betterdiscordctl -i flatpak install
   - workflow progress
   - playback
 - chat ui: typewriter
+  - chatbox: 分开处理 dock和float 的场景
 - ui
   - dark theme for dockview
+  - tailwind child selector
 
 - not-yet
   - 删除未使用的 workbench2 组件失败，会导致样式混乱

@@ -32,6 +32,29 @@ input[type="button"] {
 - https://twitter.com/stefanjudis/status/1730179947820700032
 - I believe WebKit has it too. Unfortunately Chromium doesn't yet. Really would have come in handy when implementing scrollbar styling in the engine.
 
+  # discuss-issues-not-yet
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [NextJS Compatibility? _202206](https://github.com/clauderic/dnd-kit/issues/801)
+- First issue was nextjs not allowing global selectors in css modules. I solved that by using a saas compiler to give me pure css. Now facing issues like
+  - keyframes() function not found
+  - document not found
+  - webpack_require.a is not a function
+
+- The library should work with NextJS. The issues you are mentioning seem to be related to trying to copy examples to NextJS and not the core library.
+  - Oh sorry you are right. 
+# discuss-issues
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
 # discuss
 - ## 
 
