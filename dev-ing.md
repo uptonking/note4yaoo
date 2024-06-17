@@ -351,6 +351,18 @@ betterdiscordctl -i flatpak install
 - dev-to
   - 
 
+## 0617
+
+- [How to access all the direct children of a div in tailwindcss? - Stack Overflow](https://stackoverflow.com/questions/67119992/how-to-access-all-the-direct-children-of-a-div-in-tailwindcss)
+
+```HTML
+<!-- Since 4th of july 2022, Tailwind added an ad-hoc approach to target specific elements.  -->
+<div class="[&>*]:text-gray-200 [&>*:hover]:text-blue-500">...</div>
+
+<!-- Since 19th of december 2023, Tailwind added child selectors -->
+<div class="*:text-gray-200 hover:*:text-blue-500">...</div>
+```
+
 ## 0616
 
 - [gvm安装及go版本管理 - 逢生博客 - 博客园](https://www.cnblogs.com/wufengsheng/p/17755310.html)
