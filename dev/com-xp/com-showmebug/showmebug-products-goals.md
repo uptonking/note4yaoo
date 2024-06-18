@@ -301,6 +301,8 @@ modified: 2024-05-06T02:52:41.789Z
 - Rules for AI
   - use this for warning the AI of common gotchas in your codebase or for controlling its code style.
 # pm-devin
+- [Devin June '24 Product Update](https://www.cognition.ai/blog/june-24-product-update)
+  - playbook
 
 ## [Introducing Devin, the first AI software engineer _20240312](https://www.cognition.ai/introducing-devin)
 

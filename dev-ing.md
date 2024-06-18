@@ -342,9 +342,13 @@ betterdiscordctl -i flatpak install
 - ui
   - dark theme for dockview
   - tailwind child selector
+  - steps-tree: deprecate id in favor of content
 
 - not-yet
+  - refactor-cde-state-to-zustand
+  - 实现了偏静态的ui交互，优化cde集成、状态管理、单元测试
   - 删除未使用的 workbench2 组件失败，会导致样式混乱
+  - 不稳定复线的内存泄漏
 
 ## 061
 
@@ -352,6 +356,24 @@ betterdiscordctl -i flatpak install
   - 
 - dev-to
   - 
+
+## 0618
+
+- sharing20240618-ai金融需求
+  - 需求在业务各方传递时会丢失上下文
+  - all-in-one的知识库产品，会保存上下文，减少重复工作
+  - all-in-one的产品存在权限问题，还涉及利益问题、信息隔离，市场上的公司大多都自己给自己建立了信息隔离
+  - 解决方法之一是内容转化，如将figma的图像转换为文字
+  - 信息浓缩，类似figma/jira这样的抽象，大模型就可以理解，类似人的理解过程
+  - ai会话的历史会保存，甚至ai能模拟公司中的人(根据记录、日志)
+  - 产品、研发、销售一起积累数据，解决问题更快； 非研发也可以积累数据
+  - 先尝试新技术，方便成熟时上手
+  - 对ai的需求: ai能不能将需求直接生成代码
+  - 💰 通义千问做了私有化部署，但chatgpt没做私有化部署； 客户会短暂采购私有版本，当效果匹配得上商用版时就会加大采购范围
+  - 敏感数据的隐私安全问题
+    - 敏感数据清洗过吗
+    - 可以通过私有化部署解决信息隔离的问题，开源模型效果差一点
+    - 通用场景、特定场景的问题，定制的模型
 
 ## 0617
 

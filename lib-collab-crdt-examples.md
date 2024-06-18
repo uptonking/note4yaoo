@@ -354,7 +354,7 @@ modified: 2022-04-05T10:08:25.947Z
   - 依赖subleveldown、unordered-materialized-kv、randombytes
   - 测试用例使用kappa-core、memdb、random-access-memory
 
-- https://github.com/partykit/partykit /MIT/202401/ts
+- https://github.com/partykit/partykit /MIT/202406/ts
   - https://partykit.io/
   - partykit is an SDK designed for creating real-time collaborative applications.
   - The fundamental components of a partykit application are the server and the client. 
