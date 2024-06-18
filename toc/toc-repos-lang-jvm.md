@@ -211,6 +211,10 @@ modified: 2021-05-14T15:05:02.456Z
   - Framework for Java Pointer and Taint Analysis (using P/Taint)
   - Doop is a collection of various analyses expressed in the form of Datalog rules
   - The currently maintained version targets Soufflé, an open-source Datalog engine for program analysis
+# toolchain
+- https://github.com/apache/maven-mvnd /apache2/202406/java
+  - This project aims at providing faster Maven builds using techniques known from Gradle and Takari.
+  - used @GitHub Actions to compile all binaries for Linux, macOS (Apple Silicon+Intel), and Windows with @GraalVM
 # java-starter
 - https://github.com/release-the-kraken/java-servlet-crud-web-app /java/js
   - Dynamic CRUD webb app using MongoDB; Java backend; VanillaJS, HTML, CSS frontend.

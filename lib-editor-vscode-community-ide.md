@@ -36,7 +36,37 @@ modified: 2024-05-09T09:35:28.467Z
 
 - ## 
 
-- ## 
+- ## 👣 Since git is trending again, what does your ideal VCS tool look like?
+- https://x.com/LewisCTech/status/1802581515391647750
+  - I'd like a git minus minus. No staging area, no editing the history. Also purely whitelist/blacklist based, no manually adding files to the repo like a peasant.
+  - And of course a  CLI that made sense. Consistent use of commands, --, - etc.
+
+- There are at least two (Git-compatible) VCS's without a staging area: https://github.com/martinvonz/jj and https://gitless.com
+
+- core interactive smart smartlog equivalent ( tui does not count)
+- no staging
+- support for use without branches
+- scalable refs db
+- native large file/ bin support that does not suck
+- lazy and fast by default
+- default sane “rebase all” with conflict reresultion 
+- native pluggable review system integration
+- native pluggable check runner integration
+- native sane pluggable conflict resolutions with simple to add type plugins
+- native monorepo support without 4 competing alternatives that are all broken in a different way
+- native sdk that is used by all tooling instead of split between core and @libgit2
+- use of sqlite as storage db everywhere for everything except blobs
+- native commit identity separate from from the commit hash
+- native file move and hunk move match overrides with native storage
+- native api for ref log with sync access to force push history
+- native permissions
+- native branch/ protections and rules
+- native differentiation between tracking and non tracking fork
+
+- hg is git minus the staging area， you commit whatever is changed in your working directory, not whatever changes were git added
+  - HG's immutable history is fantastic
+
+- git, but where there's only one way to merge (no git rebase), and where merge always deletes the branch. No branches from branches. Instead, something like "little commits", kept on the server, but they're squashed when merged - basically creating one commit per merge.
 # discuss-cloud-ide
 - ## 
 
