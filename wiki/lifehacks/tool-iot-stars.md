@@ -553,6 +553,11 @@ CPU主频	2.3GHz
   - Mac: Ctrl + -
 - 左右括号之间跳转： ctrl + shift + \
 
+## macbook pro 2019 intel
+
+- [MacBook Pro (16 英寸，2019) - 技术规格 - 官方 Apple 支持 (中国)](https://support.apple.com/zh-cn/111932)
+- [MacBook Pro 16 i9 9980H/16GB/1TB/4G独显笔记本电脑参数\_规格\_性能\_功能-ZOL中关村在线](https://detail.zol.com.cn/1258/1257076/param.shtml)
+
 ## HP ENVY - 15-as109tu
 
 - Product Name: HP ENVY Notebook

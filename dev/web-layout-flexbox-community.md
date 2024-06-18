@@ -1,11 +1,11 @@
 ---
-title: web-layout-flexbox-dev
-tags: [flexbox, layout]
+title: web-layout-flexbox-community
+tags: [community, flexbox, layout]
 created: 2020-08-17T13:31:05.254Z
-modified: 2020-12-21T07:46:20.408Z
+modified: 2024-06-18T02:45:42.107Z
 ---
 
-# web-layout-flexbox-dev
+# web-layout-flexbox-community
 
 # guide
 

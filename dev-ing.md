@@ -343,6 +343,7 @@ betterdiscordctl -i flatpak install
   - dark theme for dockview
   - tailwind child selector
   - steps-tree: deprecate id in favor of content
+  - 处理floating的滚动条
 
 - not-yet
   - refactor-cde-state-to-zustand
