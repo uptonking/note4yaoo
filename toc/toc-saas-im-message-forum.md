@@ -9,10 +9,16 @@ modified: 2021-05-14T15:04:15.333Z
 
 # guide
 
-- tips
+- tips-chat sdk
+  - usecase: 聊天消息、多人协作
+  - 主流im应用倾向于在chat流程中embed和操作其他平台的内容
+  - 在chat-room内操作 doc/code
+  - chat sdk的设计考虑支持多种主流im应用
+
+- tips-forum
   - forum的核心也是ugc内容，所以和blog功能相似度高
-  - 商城app-store类产品的开发和imdb类似，偏向搜索
   - 💡 cms中的内容评论也可以作为forum
+  - 商城app-store类产品的开发和imdb类似，偏向搜索
 
 - 论坛选型参考
   - 尽量选择开源产品，方便自定义
@@ -25,8 +31,7 @@ modified: 2021-05-14T15:04:15.333Z
   - handsontable
   - yjs
   - tidb-tug
-  - observablehq-notebook
-  - tiddlywiki
+  - observablehq-notebook, tiddlywiki
   - openstreetmap
 
 - forum-open
@@ -37,9 +42,11 @@ modified: 2021-05-14T15:04:15.333Z
 
 - chat-open
   - mattermost
-  - Zulip
+  - zulip
   - gitter
   - telegram的client都是开源的, webK/webA
+  - rocketChat(meteor)
+  - Spacebar(discord-like)
   - [5 open source alternatives to Slack for team chat | Opensource.com](https://opensource.com/alternatives/slack)
 # forum-popular
 - https://github.com/discourse/discourse /GPLv2/202401/ruby/js
@@ -82,7 +89,7 @@ modified: 2021-05-14T15:04:15.333Z
   - 全功能论坛：板块/楼中楼/角色权限/审核/富文本编辑/个性化配置/邮件通知 等
   - 自带授权登录：免开发支持 QQ/微信/支付宝 授权登录
 
-- ddd-forum /1.8kStar/ISC/202306/ts
+- ddd-forum /1.8kStar/ISC/202306/ts/inactive
   - https://github.com/stemmlerjs/ddd-forum
   - https://dddforum.com/
   - Hacker news-inspired forum app built with TypeScript using DDD practices from solidbook.io.
@@ -113,6 +120,8 @@ modified: 2021-05-14T15:04:15.333Z
 - https://github.com/heybereket/oasis /202107/inactive
   - The chat and forums platform for communities
   - 后端依赖 express、typeorm、passport
+  - Backend and GraphQL API
+  - React GraphQL Hooks
 
 - https://github.com/matevsh/web-forum /ts/代码少
   - SPA full-stack app mainly focused on forum functionality
@@ -147,7 +156,7 @@ modified: 2021-05-14T15:04:15.333Z
   - https://github.com/LemmyNet/lemmyBB
     - A Lemmy frontend based on phpBB 3.3.
 
-- https://github.com/freedit-org/freedit /MIT/202402/rust
+- https://github.com/freedit-org/freedit /MIT/202406/rust
   - https://freedit.eu/
   - The safest and lightest forum, powered by rust
   - 依赖axum、cached、captcha、jieba-rs、tower
@@ -204,7 +213,7 @@ modified: 2021-05-14T15:04:15.333Z
   - Server: Scala and Play Framework. OpenResty, some Lua. React.js in Java's Nashorn Javascript engine.
   - Databases: PostgreSQL, Redis, ElasticSearch.
 
-- https://github.com/carbon-bond/carbonbond
+- https://github.com/carbon-bond/carbonbond /202304/rust/ts/inactive
   - 一個次世代的論壇。它在文章之間的交互作用
   - 前端：使用 typescript + React
   - 后端：使用 Rust
@@ -310,7 +319,7 @@ modified: 2021-05-14T15:04:15.333Z
   - Engage with your customers with voice or messaging with a single, easy-to-use platform.
   - Multitenancy
 
-- https://github.com/chatwoot/chatwoot /202402/ruby/js/vue
+- https://github.com/chatwoot/chatwoot /MIT/202402/ruby/js/vue
   - https://www.chatwoot.com/help-center
   - Customer engagement suite, an open-source alternative to Intercom, Zendesk, Salesforce Service Cloud etc.
 # im-instant-messaging-chat
@@ -331,10 +340,13 @@ modified: 2021-05-14T15:04:15.333Z
   - We aim to reverse engineer and add additional features to the Discord backend, while remaining completely backwards compatible with existing bots, applications, and clients.
   - You should be able to use any client designed for Discord.com to connect to a Spacebar instance. However, some incompatibilities still exist between Spacebar and Discord. 
   - 🐛 Currently there is no voice or video support in any Spacebar instance. This is a very difficult feature to get working, especially given that we must implement it the exact same way as Discord.com for client compatibility
+  - [Embeds - Spacebar Documentation](https://docs.spacebar.chat/setup/server/configuration/embeds/)
+    - Embeds in Spacebar are external content that is displayed within your messages when linked to. 
   - https://github.com/spacebarchat/client /AGPLv3/202312/ts
     - https://app.spacebar.chat/
     - Open source, themeable and extendable discord-compatible native Spacebar client
     - 依赖mobx-react-lite、react-markdown、react-virtualized
+    - [Roadmap · spacebarchat/client _202209](https://github.com/spacebarchat/client/issues/94)
   - https://github.com/spacebarchat/fosscord-web-client /archived
   - https://github.com/SpacingBat3/WebCord /MIT/202402/ts
     - A Discord and SpaceBar-based client implemented without Discord API.
@@ -342,6 +354,14 @@ modified: 2021-05-14T15:04:15.333Z
   - https://github.com/morroid/Morroid /MIT/202306/ts/archived
     - A reverse-engineered discord server written in typescript
   - https://github.com/spacebarchat/spacebarchat /仅文档
+
+- Linen /1.2kStar/AGPLv3/202404/ts/discord-like
+  - https://github.com/Linen-dev/linen.dev
+  - https://www.linen.dev/
+  - https://slack-chats.kotlinlang.org/
+  - Linen is a Google-searchable community chat tool. 
+  - Linen was built as an alternative to closed tools like Slack and Discord.
+  - 依赖headlessui、tanstack-query、nextjs、swr、prisma、express、zod
 
 - tailchat /2.4kStar/apache2/202403/ts
   - https://github.com/msgbyte/tailchat
@@ -361,16 +381,16 @@ modified: 2021-05-14T15:04:15.333Z
     - 聊天系统
     - 插件系统
     - 开放平台
+  - [feat: add AI Assistant plugin for Tailchat _202305](https://github.com/msgbyte/tailchat/commit/060d07ae8ee36dcf088ad253a18e6cabcd80f4d7)
+  - [期望可以支持和机器人进行私信聊天 (已支持) _202402](https://github.com/msgbyte/tailchat/issues/212)
+  - [可以像ChatGPT一样消息可以流式加载吗 _202311](https://github.com/msgbyte/tailchat/issues/185)
+    - 可以有替代方案实现。默认没有
+  - [希望添加后台权限组功能和内置新的语音插件 _202307](https://github.com/msgbyte/tailchat/issues/117)
+    - 没有计划去做更加细分的权限控制。欢迎pr
+    - websocket 开放平台sdk正在开发中
 
 - https://github.com/xiweicheng/tms /MIT/202309/js/vue2/java/inactive
   - TMS是基于频道模式的团队沟通协作+轻量级任务看板，支持mardown、富文本、在线表格和思维导图的团队博文wiki，i18n国际化翻译管理的响应式web开源团队协作系统。
-
-- Linen /1.2kStar/AGPLv3/202311/ts/discord-like
-  - https://github.com/Linen-dev/linen.dev
-  - https://www.linen.dev/
-  - Linen is a Google-searchable community chat tool. 
-  - Linen was built as an alternative to closed tools like Slack and Discord.
-  - 依赖headlessui、tanstack-query、nextjs、swr、prisma、express、zod
 
 - https://github.com/Privoce/vocechat-web /GPLv3/202403/ts
   - Private Hosted IM and Social Channels, Easy Integration to Your Site or App
@@ -378,6 +398,13 @@ modified: 2021-05-14T15:04:15.333Z
   - 依赖react、redux-toolkit、plate、tui-editor、localforage
   - https://github.com/Privoce/vocechat-server-rust /202303/rust/inactive
     - superlight rust written social server.
+
+- https://github.com/revoltchat/backend /1.1kStar/AGPLv3/202406/rust
+  - https://revolt.chat/
+  - https://developers.revolt.chat/api/
+  - Monorepo for Revolt backend services
+  - https://github.com/revoltchat/revite
+    - Revolt client built with Preact
 
 - https://github.com/yinxin630/fiora /MIT/202207/ts/inactive
   - https://yinxin630.github.io/fiora/
@@ -398,20 +425,23 @@ modified: 2021-05-14T15:04:15.333Z
   - A new compiled version is released under an MIT license every month on the 16th.
   - You are licensed to use compiled versions of the Mattermost platform produced by Mattermost, Inc. under an MIT LICENSE
 
+- https://github.com/juravlevdima/PERN-chat /ISC/202212/ts/inactive
+  - Chat made with PERN Stack & Socket. IO
+  - PostgreSQL | Sequelize
+  - React | React Router | Redux Toolkit
+
 - https://github.com/sdelements/lets-chat /MIT/201708/js/inactive
   - https://sdelements.github.io/lets-chat/
   - Self-hosted chat app for small teams
   - 依赖express.oi、mongoose、nunjucks、passport
+  - https://github.com/RahulM4/LetsChat /202310/js/fe+be
+    - https://github.com/RahulM4/letschat-vercel-api /202311/js
 
 - https://github.com/RocketChat/Rocket.Chat /MIT+EE/ts/meteor
   - https://rocket.chat/
   - fully customizable communications platform developed in JavaScript for organizations with high standards of data protection.
   - We are a MERN based application enabling real-time conversations
-
-- https://github.com/juravlevdima/PERN-chat
-  - Chat made with PERN Stack & Socket. IO
-  - React | React Router | Redux Toolkit
-  - Real-time chat using web-sockets
+  - Rocket. Chat uses the Meteor open-source framework, and the data is typically stored in MongoDB
 
 - https://gitlab.com/gitterHQ/webapp /MIT/202302/js/archived/gitlab
   - https://gitter.im/
@@ -459,15 +489,6 @@ modified: 2021-05-14T15:04:15.333Z
   - built with the MERN stack and Socket. IO
   - 依赖express-fileupload、mongoose、socket.io、bcryptjs、react-scrollable-feed、mui.v4
   - It supports features like user authentication, one-on-one chat, group chat, user profile management, and more.
-  - https://github.com/RahulM4/letschat-vercel-api /202311/js
-  - https://github.com/RahulM4/LetsChat /202310/js/fe+be
-
-- https://github.com/revoltchat/backend /AGPLv3/202402/rust
-  - https://revolt.chat/
-  - https://developers.revolt.chat/api/
-  - Monorepo for Revolt backend services
-  - https://github.com/revoltchat/revite
-    - Revolt client built with Preact
 
 - https://github.com/teamgram/teamgram-server /apache2/202402/go
   - https://teamgram.net/
@@ -483,6 +504,16 @@ modified: 2021-05-14T15:04:15.333Z
     - Unofficial, FOSS-friendly fork of the original Telegram client for Android
   - https://github.com/TGX-Android/Telegram-X /GPLv3/202402/java
     - alternative Telegram client for Android
+
+- https://github.com/balzack/databag /761Star/apache2/202406/go/js
+  - A federated messenger for self-hosting
+  - Decentralized (direct communication between app and server node)
+  - Federated (accounts on different nodes can communicate)
+  - Public-Private key based identity (not bound to any blockchain or hosting domain)
+  - End-to-End encryption (the hosting admin cannot view topics if sealed)
+  - Audio and Video Calls (nat traversal requires separate relay server)
+  - Topic based threads (messages organized by topic not contacts)
+  - Lightweight (server can run on a raspberry pi zero v1.3)
 
 ## chatbot
 

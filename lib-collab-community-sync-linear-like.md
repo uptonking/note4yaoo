@@ -178,6 +178,8 @@ modified: 2023-12-08T16:02:26.515Z
   - parent: `CachedPromise<Issue>`, if fullfilled, it will has value prop
   - hydrate(): `Promise<Hydrated<Issue>>`, value is set after hydrated
 
+- [Unexpected benefits of going local-first - Tuomas Artman (Local-First Conf) - YouTube _202406](https://www.youtube.com/watch?v=VLgmjzERT08)
+
 ## 🎞️ [cs-repeat: linear sync__202002](https://www.youtube.com/watch?v=WxK11RsLqp4&t=2169s)
 
 - object graph

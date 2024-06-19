@@ -329,6 +329,11 @@ betterdiscordctl -i flatpak install
     - cursor光标位置经常对不上
   - [x] streaming infinite-list/tree
 # dev-06-dockview-floating-&-progressbar-animation-&-cm-diff-&-cm-typewriter
+- architecture
+  - 实现了偏静态的ui交互，优化cde集成、状态管理、单元测试
+  - websocket chat/room, progress
+  - refactor-cde-state-to-zustand
+  - cde页面不稳定复线的内存泄漏
 - CDE集成
   - lift layout state up to global
 - diff-view
@@ -337,19 +342,18 @@ betterdiscordctl -i flatpak install
 - time-machine
   - workflow progress
   - playback
-- chat ui: typewriter
-  - chatbox: 分开处理 dock和float 的场景
+- chat ui
+  - typewriter
+  - 分开处理 dock和float 的场景
 - ui
+  - editor: typewriter
   - dark theme for dockview
   - tailwind child selector
   - steps-tree: deprecate id in favor of content
   - 处理floating的滚动条
 
 - not-yet
-  - refactor-cde-state-to-zustand
-  - 实现了偏静态的ui交互，优化cde集成、状态管理、单元测试
   - 删除未使用的 workbench2 组件失败，会导致样式混乱
-  - 不稳定复线的内存泄漏
 
 ## 061
 

@@ -23,9 +23,12 @@ modified: 2023-01-12T16:33:34.413Z
 
 - features
   - Fast: Leveraging a unique architecture, Feathers lets you focus on building your APIs and real-time applications quickly. 
+    - You automatically get scalable HTTP and real-time APIs
   - Universal: Feathers can be used with NodeJS, in the browser, with React Native or with any other API client. 
+    - You can use any database with many supported out of the box
   - Flexible: a large ecosystem of plugins 
   - No decorators, no modules or DI for small or medium project
+  - [Feathers vs Nest | feathers](https://feathersjs.com/feathers-vs-nest.html)
 
 - ecosystem
   - feathers-authentication-management

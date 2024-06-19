@@ -54,6 +54,9 @@ modified: 2020-12-19T13:04:40.865Z
   - Lightweight WebSocket-based protocols 
   - Built-in locale support (language and timezone)
   - Inspired from Phoenix LiveView, htmx
+  - https://github.com/tylerbarker/phoenix_ts /202405/ts
+    - The unofficial TypeScript client for the Phoenix web framework - WIP
+    - [LiveView Is Not a Zero-JS Framework, It’s a Zero-Boring-JS Framework - Tyler Barker _202406](https://tylerbarker.com/posts/liveview-is-not-a-zero-js-framework-it-s-a-zero-boring-js-framework)
 
 - https://github.com/floodfx/liveviewjs /646Star/MIT/202303/ts/inactive
   - https://www.liveviewjs.com/docs/overview/introduction

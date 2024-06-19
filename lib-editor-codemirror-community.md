@@ -305,7 +305,11 @@ modified: 2023-01-29T10:52:44.183Z
 
 - ## 
 
-- ## 
+- ## today @ValDotTown got its own little code-writing ai-assistant _202406
+- https://x.com/tmcw/status/1803132938269175956
+  - we built this from scratch using a novel backpropagation algorithm combined with a new concept similar to attention that supports large context windows
+
+- the very first user request for improvement was to stream the openai answers, which will cause this whole nice form/request/response/model to fall apart(破碎; 破裂; 解体; 崩溃)
 
 - ## In CM, there are two ways to decorate a piece or text: _20240422
 - https://x.com/antiflasher/status/1782079526740062328

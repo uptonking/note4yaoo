@@ -27,7 +27,7 @@ modified: 2024-05-02T06:02:37.181Z
 - ## [CM5: inputStyle contenteditable, cursor display after goLineRight (wrapped line) - discuss. CodeMirror](https://discuss.codemirror.net/t/cm5-inputstyle-contenteditable-cursor-display-after-golineright-wrapped-line/3911)
 - CodeMirror 6 works around this by drawing its own cursor while still using contentEditable _202201.
 
-- ## 🤔🆚️ [is the `textarea` inputStyle going to be deprecated in the future? - discuss. CodeMirror](https://discuss.codemirror.net/t/is-the-textarea-inputstyle-going-to-be-deprecated-in-the-future/1278)
+- ## 🤔🆚️🎯 [is the `textarea` inputStyle going to be deprecated in the future? - discuss. CodeMirror](https://discuss.codemirror.net/t/is-the-textarea-inputstyle-going-to-be-deprecated-in-the-future/1278)
 - If there’s ever a major rewrite of CodeMirror (the codebase is showing its age), it’s likely that it will only do contentEditable-style input. But until then, I don’t expect to completely drop textarea support.
 
 - 👉🏻 Actually, we are now working on that rewrite and only implement contenteditable as input method for v6.
