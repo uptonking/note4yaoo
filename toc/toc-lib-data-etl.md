@@ -37,6 +37,9 @@ modified: 2023-10-27T15:39:10.466Z
   - **Every job can have as many destinations (outputs)** as needed. For example, one job can load processed data into a **database**, **log** this data to stdout and post it by **HTTP** simultaneously.
   - New processors and destinations can be made by extending existing ones.
 
+- https://github.com/otto-etl/otto /202308/js/inactive
+  - open-source, web-based and automated ETL workflow manager that orchestrates the gathering, transforming, and loading of data at scheduled intervals.
+
 - https://github.com/cloudquery/cloudquery /go
   - https://cloudquery.io/
   - high-performance data integration framework built for developers.
@@ -58,7 +61,6 @@ modified: 2023-10-27T15:39:10.466Z
   - https://coollabs.io/coolify
   - An open-source, hassle-free, self-hostable Heroku & Netlify alternative
 # dbt
-
 - https://github.com/godatadriven/dbt-excel /apache2/202306/python/deprecated
   - https://dbt-excel.com/
   - A dbt adapter for Excel.

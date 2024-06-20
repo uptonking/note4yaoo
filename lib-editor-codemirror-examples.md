@@ -1452,6 +1452,15 @@ modified: 2023-06-23T12:46:53.288Z
   - Calculates the embeddings and cosine similarity client-side without server-side inferencing, using a quantized version of sentence-transformers/all-MiniLM-L6-v2.
   - https://x.com/DomeGIS/status/1646198509425639426
     - A browser-based semantic search engine you can use to query your own texts
+
+## coding-toolchain-ai
+- https://github.com/codefuse-ai/codefuse-chatbot /apache2/202405/python
+  - CodeFuse-ChatBot是由蚂蚁CodeFuse团队开发的开源AI智能助手，致力于简化和优化软件开发生命周期中的各个环节。
+  - 该项目结合了Multi-Agent的协同调度机制，并集成了丰富的工具库、代码库、知识库和沙盒环境，使得LLM模型能够在DevOps领域内有效执行和处理复杂任务
+  - 可实现基于开源模型的离线私有部署, 也支持 OpenAI API 的调用
+  - 本项目基于langchain-chatchat和codebox-api
+
+
 # products-coding
 
 - https://github.com/code-hike/codehike /MIT/202307/ts/inactive

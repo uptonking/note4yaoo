@@ -12,6 +12,9 @@ modified: 2021-08-29T16:06:25.175Z
 - checkbox对使用css修改样式支持度很有限
   - 就算自己修改了checkbox的样式，也很难保证跨平台的一致性
   - 不如一开始就不使用浏览器native默认样式，完全自定义
+
+- dev-xp
+  - 尝试用chat代替表单
 # discuss
 - ## 
 

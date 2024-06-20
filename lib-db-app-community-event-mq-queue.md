@@ -43,7 +43,16 @@ For more stable, defined workflows, queues offer simplicity and directness.
 
 - ## 
 
-- ## 
+- ## 🆚 [RabbitMQ vs Kafka - Difference Between Message Queue Systems - AWS](https://aws.amazon.com/compare/the-difference-between-rabbitmq-and-kafka/)
+- Kafka and RabbitMQ are message queue systems you can use in stream processing. 
+- RabbitMQ and Apache Kafka allow producers to send messages to consumers. 
+  - Producers are applications that publish information, while consumers are applications that subscribe to and process information.
+- Producers and consumers interact differently in RabbitMQ and Kafka. 
+  - In RabbitMQ, the producer sends and monitors if the message reaches the intended consumer. 
+  - On the other hand, Kafka producers publish messages to the queue regardless of whether consumers have retrieved them.
+
+- 
+- 
 
 - ## FWIW, Kafka may be closer to a filesystem than a database. 
 - https://x.com/felixgv/status/1794298921470333057
@@ -54,7 +63,7 @@ For more stable, defined workflows, queues offer simplicity and directness.
 - Dunno but I had to migrate to bullmq pretty quickly
 - Everyone needs a bus for their micro service based todo apps.
 
-- ## [如何评价nats这套信息系统（对比于kafka) ？ - 知乎](https://www.zhihu.com/question/267769248)
+- ## 🆚 [如何评价nats这套信息系统（对比于kafka) ？ - 知乎](https://www.zhihu.com/question/267769248)
 - 
 
 - [nats消息队列 - 知乎](https://zhuanlan.zhihu.com/p/666658170)
@@ -77,7 +86,17 @@ For more stable, defined workflows, queues offer simplicity and directness.
 
 - Please take a look at docs [Manually processing jobs - BullMQ](https://docs.bullmq.io/patterns/manually-fetching-jobs)
 
-- ## basecamp is using their MySQL database as a queue running millions of jobs each day.
+- ## 🧱 Just curious, why no one has used Redis streams to build a queue system? 
+- https://twitter.com/AmanVirk1/status/1739538111485358269
+  - Especially with Consumer groups, it seems to be a great solution.
+- Because they are similar to Kafka Consumer Groups. You need to name each consumer (process), meaning that scaling this requires some level of manual intervention to guarantee at-least-once semantics. Essentially… SQS is a killer for all possible queues. Phenomenal DX.
+  - Yeah, this is how it went for us - we used an in-house solution utilising Redis as it was already part of our stack and let us move forward. Ultimately we switched to Amazon SQS for our critical products, but redis is in our back pocket for non-critical/temporary products
+- Symfony has it well implemented 
+- I do. Quite simple to implement.
+
+- Last I checked, both bull and bullmq weren't using Streams
+
+- ## 🐬 basecamp is using their MySQL database as a queue running millions of jobs each day.
 - https://twitter.com/tobias_petry/status/1753408067578773710
   - But you say that a database couldn't handle your (tiny) load and you have to use something more complex?
   - Blindly following the architectures of some FAANG companies (e.g. using Kafka when not needed) will just make your stack more complicated.
@@ -87,13 +106,7 @@ For more stable, defined workflows, queues offer simplicity and directness.
 
 - Millions of queries per day is tiny. I have databases that do millions of queries a minute.
 
-- ## Just curious, why no one has used Redis streams to build a queue system? 
-- https://twitter.com/AmanVirk1/status/1739538111485358269
-  - Especially with Consumer groups, it seems to be a great solution.
-- Symfony has it well implemented 
-- I do. Quite simple to implement.
-
-- ## Seeing several #Postgres-based queue implementations lately, 
+- ## 🐘 Seeing several #Postgres-based queue implementations lately, 
 - https://twitter.com/gunnarmorling/status/1733245970341646742
   - one thing I've been wondering: could vacuuming become an issue here, with lots of potentially short-lived records in high volume/through-put scenarios?
 - Bloat needs to be managed. Autovacuum can be tuned aggressively to deal with it, but it is not free. We wrote about that

@@ -9,6 +9,9 @@ modified: 2023-04-16T10:02:58.738Z
 
 # guide
 
+- pm-ai-chat
+  - 与ai或bot的对话可参考类似产品的设计和api，如chatgpt、copilot
+
 - HuggingFace
   - [魔搭社区](https://modelscope.cn/home)
     - 汇聚各领域最先进的机器学习模型，提供模型探索体验、推理、训练、部署和应用的一站式服务

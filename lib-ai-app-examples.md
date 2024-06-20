@@ -117,8 +117,9 @@ modified: 2023-02-08T07:20:48.475Z
   - https://chatlaw.cloud/lawchat/
   - 中文法律大模型
 
-- https://github.com/LAION-AI/Open-Assistant
+- https://github.com/LAION-AI/Open-Assistant /apache2/202401/python
   - OpenAssistant is a chat-based assistant that understands tasks, can interact with third-party systems, and retrieve information dynamically to do so.
+  - OpenAssistant is completed, and the project is now finished. The final published oasst2 dataset can be found on HuggingFace at OpenAssistant/oasst2
 
 ## chat-excel
 
@@ -138,6 +139,22 @@ modified: 2023-02-08T07:20:48.475Z
   - 依赖prisma, shadcn-ui, react-pdf, AWS S3 buckets
   - https://github.com/khaledmk20/quill
     - Quill redefines PDF interaction with intelligent conversations.
+
+## chat-coding-toolchain
+
+- https://github.com/lobehub/lobe-chat /MIT/202406/ts
+  - https://chat-preview.lobehub.com/
+  - An open-source, modern-design ChatGPT/LLMs UI/Framework.
+  - Supports speech-synthesis, multi-modal, and extensible (function call) plugin system.
+  - One-click FREE deployment of your private
+  - https://github.com/lobehub/chat-plugin-sdk
+    - https://chat-plugin-sdk.lobehub.com/
+    - SDK for LobeChat function calling plugins
+
+- https://github.com/sqlchat/sqlchat /BSL/202406/ts
+  - https://sqlchat.ai/
+  - Chat-based SQL Client and Editor for the next decade
+  - built by Next.js
 # coding-copilot
 - products
   - https://copilot.microsoft.com/

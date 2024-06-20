@@ -612,6 +612,14 @@ modified: 2023-02-07T17:38:05.336Z
   - Works out of the box, no configuration required. 
   - You have full control of your data, with no concerns about security. 
   - You can use our rendezvous/relay server, set up your own, or write your own rendezvous/relay server.
+# team-ai
+
+- https://github.com/Teamlinker/Teamlinker /GPLv3/202406/ts/vue
+  - https://team-linker.com/
+  - Teamlinker is a team collaboration platform that integrates multi-functional modules,such as contact, task management, meeting, IM,Wiki and file management.
+  - Teamlinker is developed based on the TeamOS system. It is a web operating system that allows users to process different tasks in parallel
+
+
 # more
 - https://github.com/avisek-official/simple-notes /ts
   - https://next-simple-notes.vercel.app/

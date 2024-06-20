@@ -354,6 +354,7 @@ betterdiscordctl -i flatpak install
 
 - not-yet
   - 删除未使用的 workbench2 组件失败，会导致样式混乱
+  - trpc请求过多的问题
 
 ## 061
 
@@ -362,9 +363,37 @@ betterdiscordctl -i flatpak install
 - dev-to
   - 
 
+## 0620
+
+- 导入仓库进度问题
+  - 等github-repo导入完了，后端才返回结果
+
+- dev-log
+  - 导入github仓库的逻辑更新到了新的api，但还ui上还不work
+- dev-to
+  - run按钮运行前需要激活
+  - 明天需要演示驾驶舱交互功能的话，今晚就将mock的制定计划数据、执行计划集成下
+
+## 0619
+
+- template表的env存放项目自身配置和系统配置.1024code
+- 进入cde的代码拉取流程
+  - importRepo > codezone_id
+  - playground > playgroundId
+  - ticket > ticketId
+  - jssdk > serverUrl
+
+- [Environment to disable NxCloud · nrwl/nx _202209](https://github.com/nrwl/nx/issues/12319)
+  - `--skip-nx-cache` now prevents the task runner from connecting to Nx Cloud at all, as of @nrwl/nx-cloud@15.2.0.
+  - This has been released in Nx Cloud 16.0.2 with the env variable `NX_NO_CLOUD=true`.
+
+- [GitHub action failing when disconnected from Nx cloud · nrwl/nx _202403](https://github.com/nrwl/nx/issues/22444)
+  - You can add set the `NX_NO_CLOUD` environment variable to true in your pipelines, to disable Nx Cloud.
+  - You can add `--no-cloud` to your Nx Commands, to disable Nx Cloud.
+
 ## 0618
 
-- sharing20240618-ai金融需求
+- 👥👥 sharing20240618-ai金融需求
   - 需求在业务各方传递时会丢失上下文
   - all-in-one的知识库产品，会保存上下文，减少重复工作
   - all-in-one的产品存在权限问题，还涉及利益问题、信息隔离，市场上的公司大多都自己给自己建立了信息隔离

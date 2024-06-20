@@ -252,6 +252,27 @@ modified: 2023-04-04T22:36:31.529Z
   - Event backed job queue that you can hook into.
   - Mongo backed persistence layer.
   - Agenda-rest: optional standalone REST API.
+  - originally a fork of agenda.js
+  - https://github.com/agenda/agendash /MIT/202304/js/inactive
+    - A Dashboard for Agenda.
+    - Job status auto-refreshes: 60-second polling by default.
+
+- https://github.com/jhuckaby/Cronicle /MIT/202406/js
+  - https://cronicle.net/
+  - Cronicle is a multi-server task scheduler and runner, with a web based front-end UI.
+  - It handles both scheduled, repeating and on-demand jobs, targeting any number of 🧐 slave servers, with real-time stats and live log viewer.
+  - https://github.com/jhuckaby/Cronicle/pull/621
+    - Cronicle v0.x is in maintenance-only mode. We are no longer adding any new features, because we are hard at work on the next major version of Cronicle (called Orchestra)
+    - It is a complete ground-up rewrite from scratch, and will have MANY of the requested features 
+  - https://github.com/jhuckaby/performa
+    - a multi-server monitoring system with a web based front-end UI
+
+- https://github.com/breejs/bree /MIT/202405/js
+  - https://jobscheduler.net/
+  - Bree is a Node.js and JavaScript job task scheduler with worker threads, cron, Date, and human syntax
+  - uses worker threads (Node.js) to spawn sandboxed processes, and supports async/await, retries, throttling, concurrency, and cancelable jobs with graceful shutdown. 
+  - Made for Forward Email and Lad.
+  - Built for @ladjs, @forwardemail, @spamscanner, @cabinjs.
 
 - https://github.com/hajnalben/embedded-queue /MIT/202311/ts
   - embedded-queue is job/message queue for any platform. 

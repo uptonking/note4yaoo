@@ -14,6 +14,8 @@ modified: 2021-05-14T15:04:15.333Z
   - 主流im应用倾向于在chat流程中embed和操作其他平台的内容
   - 在chat-room内操作 doc/code
   - chat sdk的设计考虑支持多种主流im应用
+  - 与ai或bot的对话可参考类似产品的设计和api，如chatgpt、copilot
+  - chat stream返回响应
 
 - tips-forum
   - forum的核心也是ugc内容，所以和blog功能相似度高
@@ -322,7 +324,7 @@ modified: 2021-05-14T15:04:15.333Z
 - https://github.com/chatwoot/chatwoot /MIT/202402/ruby/js/vue
   - https://www.chatwoot.com/help-center
   - Customer engagement suite, an open-source alternative to Intercom, Zendesk, Salesforce Service Cloud etc.
-# im-instant-messaging-chat
+# chat-im-instant-messaging-chat
 - https://github.com/42wim/matterbridge /202212/go
   - bridge between mattermost, IRC, gitter, xmpp, slack, discord, telegram, rocketchat, twitch, ssh-chat, zulip, whatsapp, keybase, matrix, microsoft teams, nextcloud, mumble, vk and more with REST API
   - Mattermost isn't required to run matterbridge
@@ -536,6 +538,62 @@ modified: 2021-05-14T15:04:15.333Z
 - https://github.com/mckaywrigley/chatbot-ui
   - https://www.chatbotui.com/
   - Chatbot UI is an advanced chatbot kit for OpenAI's chat models built on top of Chatbot UI Lite using Next.js, TypeScript, and Tailwind CSS.
+
+## chat-solutions
+
+- https://github.com/agnaistic/agnai /AGPLv3/202406/ts
+  - https://agnai.chat/
+  - AI Agnostic (Multi-user and Multi-bot) Chat with Fictional Characters. 
+  - Designed with scale in mind.
+  - AI Roleplay Chat with Personalised Characters with your favorite AI services.
+  - Based upon the early work of https://github.com/PygmalionAI/galatea-ui /AGPLv3/202302/ts/inactive
+  - MongoDB and Redis are optional! Agnaistic will run in "Guest Only" mode if MongoDB is not available.
+  - Group Conversations: Multiple users with multiple bots
+  - Multiple AI services: Support for Kobold, Novel, AI Horde, Goose, OpenAI, Claude, Replicate, OpenRouter, Mancer
+  - Memory/Lore books
+  - Optional: Wikipedia Article and PDF embedding
+  - MongoDB for persistence
+  - Redis for distributed messaging for websockets.
+  - SolidJS for interactivity
+  - redux
+
+## chat-sdk
+
+- https://github.com/lobehub/lobe-chat /32.8kStar/MIT/202406/ts/国内团队
+  - https://chat-preview.lobehub.com/
+  - https://lobehub.com/docs/usage/start
+  - An open-source, modern-design ChatGPT/LLMs UI/Framework.
+  - Supports speech-synthesis, multi-modal, and extensible (function call) plugin system.
+  - https://github.com/lobehub/chat-plugin-sdk
+    - https://chat-plugin-sdk.lobehub.com/
+    - SDK for LobeChat function calling plugins
+  - https://github.com/lobehub/lobe-chat-plugins
+    - https://chat-plugins.lobehub.com/
+    - This is the plugin index for LobeChat. It accesses `index.json` from this repository to display a list of available plugins for LobeChat to the user.
+
+- https://github.com/vercel/ai /apache2/202406/ts
+  - https://sdk.vercel.ai/docs
+  - Build AI-powered applications with React, Svelte, Vue, and Solid
+  - Vercel AI SDK abstracts away the differences between model providers, eliminates boilerplate code for building chatbots
+- https://github.com/steven-tey/chathn
+  - Chat with Hacker News using natural language. Built with OpenAI Functions and Vercel AI SDK.
+- https://github.com/rajeshdavidbabu/pdf-chat-ai-sdk /MIT/202403/ts
+  - AI powered Next.js app to chat with your PDF files and get a streamed response using Vercel's AI SDK, Langchain and PineconeDB
+
+- https://github.com/lucgagan/completions /MIT/202310/ts
+  - https://ray.run/
+  - Node.js SDK for interacting with OpenAI Chat Completions API.
+  - This SDK makes it simple to: Implement chat in Node.js and browser
+
+- https://github.com/howdyai/botkit /MIT/202204/ts/inactive
+  - Botkit is an open source developer tool for building chat bots, apps and custom integrations for major messaging platforms
+  - Botkit is part of the Microsoft Bot Framework 
+
+- https://github.com/microsoft/botframework-sdk
+  - https://github.com/Microsoft/botbuilder-js /MIT/202406/ts
+  - Bot Framework provides the most comprehensive experience for building conversation applications.
+  - With the Bot Framework SDK, developers can build bots that converse free-form or with guided interactions including using simple text or rich cards that contain text, images, and action buttons.
+  - https://github.com/LuciaHarcekova/ChatGPTMSBotFrameworkWithOpenAI /202304/c#/inactive
 # mastodon
 - resources
   - https://joinmastodon.org/apps

@@ -351,6 +351,11 @@ modified: 2020-10-22T10:22:55.878Z
   - Drag & drop UI to build your customized LLM flow
   - Open source low-code tool for developers to build customized LLM orchestration flow & AI agents
   - 支持langchain的各种组件
+
+- https://github.com/Tiledesk/tiledesk-dashboard /MIT/202406/ts
+  - https://www.tiledesk.com/
+  - full-stack Open Source Live Chat with built-in Chatbots, written in Node.js and Angular.
+  - This repository is dedicated to the WebApp dashboard to manage Tiledesk
 # more
 - https://github.com/aislelabs/react-flowchart-editor
   - http://data.aislelabs.com/demo/index.html

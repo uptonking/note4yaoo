@@ -212,6 +212,23 @@ modified: 2023-10-06T16:26:57.557Z
 - also note that both Deno and Sveltekit moved from TypeScript to JSDoc
 
 - Cloudflare made Pingora (Rust) to use instead of NGINX (C) though idk if that meets the rewrite criteria.
+# discuss-axum-actix 🆚
+- ## 
+
+- ## [Axum or Actix in 2024 : r/rust _202403](https://www.reddit.com/r/rust/comments/1bj9rc3/axum_or_actix_in_2024/)
+- They're both very similar now, it doesn't matter much for most things. The only thing is that Actix Web has its own ecosystem for middleware and such while Axum uses the Tower ecosystem.
+- it's based on the tokio + hyper ecosystem, which is definitely production-ready. axum is also macro-less, which is a plus for me
+  - Actix Web can also be used without macros similarly to Axum and others, just so you know.
+
+- I have a slight preference for actix because of better OpenAPI integration.
+
+- ## [Axum vs Actix : r/rust _202402](https://www.reddit.com/r/rust/comments/1b216bf/axum_vs_actix/)
+- actix uses a pool of single thread tokio runtimes and axum just uses the multithread runtime. The multithread runtime does add a litte big overhead but in situations where the endpoints in the backend do generate not even loads when executing that can be better then a bunch of single thread runtimes.
+
+- Go with axum, i's a lot easier to get into and the performance difference is negligible. Most Benchmarks are gamed because you can skip a lot of checks you want in a real life scenario. The main factor is that actix is essentially single threading tasks so it gains a bit on that front.
+
+- If you're just looking for performance, , there's a fork of Actix you should look into named ntex. It currently sets on the throne of synthetic benchmarks.
+- Actix docs are way better.
 # discuss-rs-js
 - ## 
 
