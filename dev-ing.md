@@ -353,6 +353,7 @@ betterdiscordctl -i flatpak install
   - 处理floating的滚动条
 
 - not-yet
+  - ide滚动失败
   - 删除未使用的 workbench2 组件失败，会导致样式混乱
   - trpc请求过多的问题
 
@@ -364,6 +365,8 @@ betterdiscordctl -i flatpak install
   - 
 
 ## 0620
+
+
 
 - 导入仓库进度问题
   - 等github-repo导入完了，后端才返回结果

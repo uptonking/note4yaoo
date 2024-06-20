@@ -83,7 +83,7 @@ modified: 2021-07-20T13:50:23.433Z
   - ~~excel-like~~/~~headless~~
 - 💎 collab
   - crdt: yjs, automerge, logux, rga, fluid-framework, hlc
-  - log-based: p/couchdb, kappa-db, event-sourcing
+  - log-based: p/couchdb, powersync, kappa-db, event-sourcing
   - eav: triplitdb
 
 ## solutions: inter(re)active knowledge-base/wiki
@@ -151,8 +151,9 @@ modified: 2021-07-20T13:50:23.433Z
   - 腾讯文档
   - 类似outline集成slack
   - 类似superset支持各种数据源
-# ideas
-- kibana for meilisearch
+
+- to-try
+  - kibana for meilisearch
 # editor
 - tips
   - live edit
@@ -193,19 +194,10 @@ modified: 2021-07-20T13:50:23.433Z
 - marijn /prosemirror/codemirror
   - forum
 
-- Tanner Linsley
-  - info
+- Tanner Linsley /tanstack-table
     - https://twitter.com/tannerlinsley
     - https://github.com/tannerlinsley
-  - works
-    - react-table, nozzle
-  - artwork1: react-table
-    - build fast and extendable tables and datagrids for React
     - https://github.com/tannerlinsley/react-table
-  - artwork2: chartjs
-    - Simple yet flexible js charting for designers & developers
-    - https://www.chartjs.org/
-    - https://github.com/chartjs/Chart.js
 
 - 胡文召
   - https://x.com/wzhudev
@@ -226,15 +218,18 @@ modified: 2021-07-20T13:50:23.433Z
 - Geoffrey Litt /peritext
   - https://x.com/geoffreylitt
 
-- tinybase-crdt
-  - discord
-
 - powersync-partial
   - discord
 
 - Matt Wonlaw /cr-sqlite
   - https://x.com/tantaman
   - https://github.com/tantaman
+
+- tinybase-crdt
+  - discord
+
+- triplitdb-eav
+  - discord
 
 - 
 - 
