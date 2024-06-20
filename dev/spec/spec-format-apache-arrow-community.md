@@ -13,7 +13,9 @@ modified: 2021-07-24T08:16:41.076Z
 
 - ## 
 
-- ## 
+- ## Vortex is an Apache Arrow-compatible toolkit for working with compressed array data. 
+- https://x.com/fredine/status/1803525967174049962
+  - We are using Vortex to develop a next-generation columnar file format for multidimensional arrays.
 
 - ## Arrow 每次发版都跳一个大版本
 - https://twitter.com/OnlyXuanwo/status/1675803368856633345

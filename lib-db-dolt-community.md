@@ -101,7 +101,11 @@ modified: 2023-08-25T21:17:11.979Z
 # discuss-news-dolt
 - ## 
 
-- ## 
+- ## Dolt implements a Git-style commit graph on top of a Prolly-tree-based storage engine. 
+- https://x.com/DoltHub/status/1803450164671291857
+  - This architecture makes Dolt a version controlled SQL database. 
+  - A major capability Dolt provides is 3 way merge. 
+  - What is 3 way merge and how does it work?
 
 - ## Pandas Dataframes simplify data manipulation and analysis. _202406
 - https://x.com/DoltHub/status/1799156471634296963

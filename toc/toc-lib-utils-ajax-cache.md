@@ -21,6 +21,11 @@ modified: 2023-02-07T09:43:01.972Z
   - redux-db uses internal indexes to speed up lookups and is quite fast at the current state.
   - inspired by libraries such as normalizr and redux-orm.
 # query-react
+- https://github.com/tantaman/vanilla-fetch /202310/js/inactive
+  - fetch then render via async generators
+  - The frequent pattern for data fetching is "fetch-on-render" which leads to an awful waterfalling user experience.
+  - Microtasks complete in the same browser frame but do not complete in the same React frame which causes these flickering issues.
+
 - https://github.com/data-client/rest-hooks
   - Normalized state management for async data. Safe. Fast. Reusable.
 # fetch/axios

@@ -41,6 +41,14 @@ modified: 2021-01-21T17:52:13.333Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Debouncing everything externally is a pain. Debouncing by default internally would make realtime laggy. 
+- https://x.com/gaforres/status/1803137618063868361
+  - One usability issue I've discovered with Verdant here is dragging things. With direct manipulation, you get a ton of little changes. 
+
 - ## 最近 10 年，后端 breaking techs 好像并不多。
 - https://x.com/yfractal/status/1799662451040092603
   - Docker/Kubernetes，io_uring，eBPF，OpenTelemetry，HTTP2，GRPC。
@@ -190,9 +198,9 @@ modified: 2021-01-21T17:52:13.333Z
 
 - 这里可能有个悖论, 自己造轮子 研发成本高, 不自己造轮子 显不出技术“高明”, 结果是 996 劣质轮子 遍地都是…
 
-01.            大概率没有开源的好
-02.            造轮子就要维护一个轮子迭代维保团队
-03.            迭代维保团队和其他团队无限的撕逼
+01.             大概率没有开源的好
+02.             造轮子就要维护一个轮子迭代维保团队
+03.             迭代维保团队和其他团队无限的撕逼
 
 - ## Five terms I avoid when naming things:
 - https://twitter.com/housecor/status/1742197661837476018

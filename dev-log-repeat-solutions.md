@@ -189,6 +189,60 @@ modified: 2021-07-20T13:50:23.433Z
   - x-spreadsheet
   - tabulator 
   - frappe-datatable /frappe
+# creators
+- marijn /prosemirror/codemirror
+  - forum
+
+- Tanner Linsley
+  - info
+    - https://twitter.com/tannerlinsley
+    - https://github.com/tannerlinsley
+  - works
+    - react-table, nozzle
+  - artwork1: react-table
+    - build fast and extendable tables and datagrids for React
+    - https://github.com/tannerlinsley/react-table
+  - artwork2: chartjs
+    - Simple yet flexible js charting for designers & developers
+    - https://www.chartjs.org/
+    - https://github.com/chartjs/Chart.js
+
+- 胡文召
+  - https://x.com/wzhudev
+
+- davidbrochart /jupyter
+  - https://x.com/davidbrochart
+
+- Kevin Jahns /yjs
+  - https://x.com/kevin_jahns
+
+- Bartosz Sypytkowski /yjs
+  - https://x.com/Horusiath
+
+- mweidner037 /fugue
+  - https://github.com/mweidner037
+  - https://x.com/MatthewWeidner3
+
+- Geoffrey Litt /peritext
+  - https://x.com/geoffreylitt
+
+- tinybase-crdt
+  - discord
+
+- powersync-partial
+  - discord
+
+- Matt Wonlaw /cr-sqlite
+  - https://x.com/tantaman
+  - https://github.com/tantaman
+
+- 
+- 
+- 
+
+- watching
+  - notion
+  - linear
 # wishlist
 - charting-viz
   - leading
