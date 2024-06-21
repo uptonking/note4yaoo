@@ -1,7 +1,7 @@
 ---
 title: web-layout-flexbox
 tags: [flexbox, layout, style, web]
-created: 1970-01-01T00:00:00.000Z
+created: 2024-05-28T12:37:59.522Z
 modified: 2020-12-21T07:46:17.578Z
 ---
 

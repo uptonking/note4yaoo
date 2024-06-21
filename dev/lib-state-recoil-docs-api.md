@@ -1,7 +1,7 @@
 ---
 title: lib-state-recoil-docs-api
 tags: [api, docs, react, recoil, state]
-created: 1970-01-01T00:00:00.000Z
+created: 2024-05-28T12:37:59.455Z
 modified: 2020-12-08T13:27:07.981Z
 ---
 

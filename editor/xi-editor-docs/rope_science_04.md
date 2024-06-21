@@ -1,6 +1,6 @@
 ---
 title: Rope science, part 4 - parenthesis matching
-created: 1970-01-01T00:00:00.000Z
+created: 2024-05-28T12:37:59.582Z
 modified: 2023-03-11T18:21:35.122Z
 layout: page
 site_nav_category_order: 211

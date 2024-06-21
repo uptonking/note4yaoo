@@ -1,7 +1,7 @@
 ---
 title: tech-bi-dev
 tags: [bi]
-created: 1970-01-01T00:00:00.000Z
+created: 2024-05-28T12:37:59.504Z
 modified: 2021-01-01T20:20:18.269Z
 ---
 

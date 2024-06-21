@@ -12,9 +12,12 @@ modified: 2023-11-28T14:48:45.910Z
 
 # guide(for notable/noter/paper)
 - features
-  - versioning and branching: 基于oplog/events实现, draft/public
+  - animated-text-code sharingversioning and branching: 基于oplog/events实现, draft/public
   - collaboration-ready: 基于crdt
   - end-user database: 支持用户自定义数据和流程
+  - mobile-editor: phone, pad
+  - animated-text/code sharing
+  - 小市场：多文件知识库，移动优先的markdown知识库
   - github修改文档要提pr很繁琐; 可协作的workspace可直接改或用审阅修订模式
   - mobile-app-generator
   - local-first data storage with optional syncing: 兼容git的commits

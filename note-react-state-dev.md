@@ -1,7 +1,7 @@
 ---
 title: note-react-state-dev
 tags: [blog, react, state]
-created: 1970-01-01T00:00:00.000Z
+created: 2024-06-11T01:58:50.510Z
 modified: 2020-12-08T13:40:02.577Z
 ---
 

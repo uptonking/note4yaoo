@@ -1,7 +1,7 @@
 ---
 title: web-ui-comp-design-react-in-action
 tags: [components, in-action, react, web]
-created: 1970-01-01T00:00:00.000Z
+created: 2024-05-28T12:38:00.155Z
 modified: 2021-04-23T17:15:27.072Z
 ---
 

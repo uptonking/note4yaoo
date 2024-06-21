@@ -10,12 +10,16 @@ modified: 2024-04-14T12:19:52.096Z
 # guide
 
 # popular
+- https://github.com/liqvidjs/liqvid /MIT/202406/ts
+  - https://liqvidjs.org/
+  - a library for creating interactive videos in React
+  - https://github.com/liqvidjs/plugins
+    - While these were built for Liqvid, they are compatible with other animation libraries.
 
 - https://github.com/remotion-dev/remotion /NonCommercial/202406/ts
   - https://remotion.dev/
   - creating videos programmatically using React.
   - [Remotion 5.0 license change _202404](https://github.com/remotion-dev/remotion/pull/3750)
-
 # apps
 - https://github.com/lyonbot/video-to-gif /202404/ts
   - https://lyonbot.github.io/video-to-gif/

@@ -1,7 +1,7 @@
 ---
 title: toc-lib-state-management
 tags: [lib, state, toc]
-created: 1970-01-01T00:00:00.000Z
+created: 2024-05-28T12:38:00.092Z
 modified: 2020-07-14T11:03:53.196Z
 ---
 

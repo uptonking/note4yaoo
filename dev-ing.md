@@ -331,7 +331,7 @@ betterdiscordctl -i flatpak install
 # dev-06-dockview-floating-&-progressbar-animation-&-cm-diff-&-cm-typewriter
 - architecture
   - 实现了偏静态的ui交互，优化cde集成、状态管理、单元测试
-  - websocket chat/room, progress
+  - websocket scalable chat/room, progress
   - refactor-cde-state-to-zustand
   - cde页面不稳定复线的内存泄漏
 - CDE集成
@@ -353,9 +353,10 @@ betterdiscordctl -i flatpak install
   - 处理floating的滚动条
 
 - not-yet
-  - ide滚动失败
+  - ide滚动条失败
   - 删除未使用的 workbench2 组件失败，会导致样式混乱
   - trpc请求过多的问题
+  - 每次打开cde都会重新import，要实现skip
 
 ## 061
 
@@ -364,9 +365,20 @@ betterdiscordctl -i flatpak install
 - dev-to
   - 
 
+- 前端cde的研发功能拆分
+  - 初始化流程
+  - ai对话
+  - 时光机回放
+
+## 0621
+
+- [Why is there no same-origin policy for WebSockets? Why can I connect to ws://localhost? - Stack Overflow](https://stackoverflow.com/questions/23674199/why-is-there-no-same-origin-policy-for-websockets-why-can-i-connect-to-ws-loc)
+  - WebSockets can cross domain communication, and they are not limited by the SOP (Same Origin Policy).
+
+- [Is it possible to chain pseudo classes using Tailwind CSS? - Stack Overflow](https://stackoverflow.com/questions/70855897/is-it-possible-to-chain-pseudo-classes-using-tailwind-css)
+  - `focus:hover:bg-black`
+
 ## 0620
-
-
 
 - 导入仓库进度问题
   - 等github-repo导入完了，后端才返回结果

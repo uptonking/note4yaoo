@@ -470,6 +470,7 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/geometryzen/stemcstudio-codemirror /MIT/202401/ts
   - Bundle of CodeMirror Editor
+  - A wrapper around the CodeMirror editor for use in STEMCstudio.
 
 - https://github.com/riccardoperra/solid-codemirror /MIT/202305/ts/inactive
   - A library of SolidJS primitives to build code editors using CodeMirror 6
@@ -911,6 +912,7 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/bhsd-harry/codemirror-mediawiki /GPLv2/202405/ts
   - https://bhsd-harry.github.io/codemirror-mediawiki/
   - Modified CodeMirror mode based on wikimedia/mediawiki-extensions-CodeMirror
+  - The goal is to support a standalone integration between CodeMirror and Wikitext, without the need for a MediaWiki environment
 
 - https://github.com/BrianHung/tldraw-yjs /202402/ts
   - https://canvas-yjs.vercel.app/
@@ -1140,6 +1142,10 @@ modified: 2023-06-23T12:46:53.288Z
   - https://kazzkiq.github.io/CodeFlask/
   - A micro code-editor for awesome web pages
   - 依赖prismjs
+
+- https://github.com/codepod-io/codepod /MIT/202311/ts/inactive
+  - Codepod provides the interactive coding experience popularized by Jupyter, but with scalability and production-readiness
+  - 画板上的代码沙盒，使用monaco而不是codemirror
 # starter
 - https://github.com/A99US/CM6-Browser-Wrapper /MIT/202308/js/inactive
   - https://a99us.github.io/CM6-Browser-Wrapper/
@@ -1454,13 +1460,12 @@ modified: 2023-06-23T12:46:53.288Z
     - A browser-based semantic search engine you can use to query your own texts
 
 ## coding-toolchain-ai
+
 - https://github.com/codefuse-ai/codefuse-chatbot /apache2/202405/python
   - CodeFuse-ChatBot是由蚂蚁CodeFuse团队开发的开源AI智能助手，致力于简化和优化软件开发生命周期中的各个环节。
   - 该项目结合了Multi-Agent的协同调度机制，并集成了丰富的工具库、代码库、知识库和沙盒环境，使得LLM模型能够在DevOps领域内有效执行和处理复杂任务
   - 可实现基于开源模型的离线私有部署, 也支持 OpenAI API 的调用
   - 本项目基于langchain-chatchat和codebox-api
-
-
 # products-coding
 
 - https://github.com/code-hike/codehike /MIT/202307/ts/inactive
@@ -1498,3 +1503,9 @@ modified: 2023-06-23T12:46:53.288Z
 
 - [CodeMirror extension to detect and fix missing JSX Pragma](https://gist.github.com/tmcw/fefe8b5c0a63b51bc8a303c8a3553fac)
   - detects the lack of a pragma and the presence of JSX syntax, by using CodeMirror's existing syntax tree
+
+- https://github.com/scalar/scalar /MIT/202406/ts/vue
+  - https://scalar.com/swagger-editor
+  - Beautiful API references from OpenAPI/Swagger files
+  - Edit your OpenAPI/Swagger specification with a live preview
+  - https://github.com/scalar/scalar/tree/main/packages/use-codemirror
