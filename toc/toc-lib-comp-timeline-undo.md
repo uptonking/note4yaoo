@@ -12,6 +12,7 @@ modified: 2023-11-24T18:41:26.906Z
   - timeline的使用范围很广，可以是内容的变化历史，可以是独立的component时间轴组件
   - undo/history类产品的形态可参考git commits的交互和设计
   - 考虑侧重静态展示，还是动态展示和操作
+  - playback回放一般考虑支持倍速
   - pause/resume的方案: redux, logic-flow
 
 - time-travel的实现方案

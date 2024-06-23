@@ -80,6 +80,14 @@ modified: 2024-05-02T02:01:04.255Z
 ## [Creating an Editable Textarea That Supports Syntax-Highlighted Code | CSS-Tricks _202104](https://css-tricks.com/creating-an-editable-textarea-that-supports-syntax-highlighted-code/)
 
 - 与codemirror无关
+
+## [(PrismJS || HighlightJS || CodeMirror 6) + CodeDetectionAPI _202203](https://tsavo.medium.com/prismjs-highlightjs-codemirror-6-codedetectionapi-%EF%B8%8F-af99dc13d83b)
+
+- In search of a solution, HighlightJS stood out — it has Automatic Language Detection and Multi-Language Code Highlighting. That’s perfect, right!?
+  - Problem 1: You still need to know if the user input is code / technical language vs plain text / natural language. (This turns out to be quite difficult to solve, but there’s a solution below.)
+  - Problem 2: If it’s code, you need to know what language it is, and then, of course, syntax highlight it!
+  - HighlightJS does not solve Problem 1, and for Problem 2, HighlightJS can attempt to determine the coding language but at an expensive network and compute cost.
+- Given HighlightJS’s limitations, my team at Pieces built and published the CodeDetectionAPI to solve Problems 1 and 2 in our app with machine learning while achieving optimal network and compute performance.
 # more
 - [CodeMirror Accessible](https://bgrins.github.io/codemirror-accessible/)
 

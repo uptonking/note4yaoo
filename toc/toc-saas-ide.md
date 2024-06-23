@@ -214,9 +214,17 @@ modified: 2021-05-14T15:06:46.615Z
 - https://github.com/adarshaacharya/CodeTreats /MIT/202110/ts
   - In-browser IDE for running, collaborating, saving and sharing code snippets
 
+- https://github.com/hydro-dev/Hydro /AGPLv3/202406/ts
+  - https://hydro.js.org/
+  - 新一代高效强大的信息学在线测评系统 (a.k.a. vj5)
+  - 设计了一套模块化的插件系统，可以方便地扩展系统功能
+  - 提供了单系统多空间支持，可以方便地为不同的班级/年级/院校等创建独立的空间
+  - Hydro 系统本身是无状态的，这意味着你可以随意增删服务节点，而不会影响系统的正常运行。 评测队列会自动在当前在线的所有评测机间均衡分配
+  - 支持所有题型。无论是传统题型，Special Judge，还是文件输入输出，提交答案题，IO 交互，函数交互，乃至选择填空题等
+
 - https://github.com/zhblue/hustoj /GPL/202405/js/php
   - http://www.hustoj.com/?cat=2
-  - 开源OJ系统
+  - 流行的OJ系统，跨平台、易安装、有题库
 
 - https://github.com/devarend/mina-playground
   - https://minaplayground.com/

@@ -279,6 +279,10 @@ modified: 2020-10-05T06:22:02.107Z
 - https://github.com/michalzalobny/plain-page-transition
   - https://zesty-cocada-b5eb44.netlify.app/
   - Transition between pages made from scratch with plain JavaScript and no external libraries
+# math
+- https://github.com/3b1b/manim /MIT/202405/python
+  - Animation engine for explanatory math videos
+  - System requirements are FFmpeg, OpenGL and LaTeX (optional, if you want to use LaTeX). For Linux, Pango along with its development headers are required
 # more
 - awesome-web-animation /202006
   - https://github.com/sergey-pimenov/awesome-web-animation

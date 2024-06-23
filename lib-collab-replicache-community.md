@@ -19,6 +19,43 @@ modified: 2024-01-07T05:09:14.413Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Just got off stage* at @localfirstconf where I shared Zero: https://zerosync.dev
+- https://x.com/aboodman/status/1796238294017085593
+  - Zero introduces "hybrid queries" – queries that start locally and fall back to the server automatically – to make sync genuinely easy, and scalable enough to handle all kinds of apps.
+
+- I noticed that it says "Reflect will be open sourced...once Zero is ready, we will encourage users to move." Does this mean that Zero is providing the same transactional conflict resolution under the hood?
+  - Yeah it does. We have built-in crud mutators because they are so common but we will still support Replicache-style custom mutators for more interesting cases.
+
+- Interesting approach. Thoughts on CouchDB (comes to mind as the pillar database that sync)? I've used it quite extensively with @PouchDB to sync data to devices and works quite nicely. How's Zero different?
+  - Zero is not a database. It's a cache that sits in front of a standard relational database like Postgres. No need to adopt a new DB.
+  - Zero's hybrid search enables a really intuitive way to partially replicate for perf, then fall back to the server when necessary.
+  - This is dramatically more difficult to implement than Replicache. We were scared.
+
+- How does this compare to @ElectricSQL ?
+  - Hybrid Queries: Rather than having to tell the system what to sync with shapes (or sync rules as in @powersync_ ) we plan to imply what to sync based on queries. We will keep a 100MB persistent client-side cache and manage it automatically. Queries bridge to the server automatically when necessary. We expect this to be a really nice DX but it also enables things like: (a) searching over a dataset that can't be entirely synced to the client, (b) ~instant startup without having to sync a large amount of data, (c) server-side rendering
+  - Not SQLite. Sort of uniquely among the local-first solutions, we use our own custom data layer rather than SQLite. This has pros and cons. Of course SQLite is super flexible and has a huge amount of engineering invested. But given hybrid queries, we don't need (or even want) to store a huge amt of data client-side. We're just storing 100MB. SQLite is designed for far, far, more. Something more purpose-built has advantages: we can run it on the main-thread in memory so it's always instantaneous. We can also build reactivity into it from the ground up which is hard to retrofit into existing applications. We think this enables a different programming model centered on super fine-grained reactivity.
+  - custom mutators. I always forget that one. Zero is going to have support for Replicache-style transactional/server-authoritative mutators. Electric advocates a "client-side mutations are final" approach that is more CRDT-style.
+
+- Solid is both a view layer and state management. local-first is an alternative to state management and APIs.  
+
+- 
+- 
+- 
+
+- https://x.com/matthew_linkous/status/1796548406514761924
+  - I want this to work but I’m skeptical, because it’s not a new idea. Every time people get excited but it fails to catch on.
+  1. Original Meteor.js was this but with Mongo instead of SQL
+  2. There is pouchDB that syncs with couchDB
+  - Will this time be different?
+- This time is different. PouchDB + CouchDB was bad for collaboration because you would end up with conflicted documents constantly. Plus there was no support for relational querying and no hosted service . @triplit_dev on the other hand has all of that plus great TS support
+  - It's already a success in many companies like Linear, Whatsapp, FB Messenger, Superhuman, Google Maps, etc. This is just the beginning of out-of-the-box solutions being good enough
 # discuss
 - ## 
 

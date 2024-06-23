@@ -336,6 +336,9 @@ modified: 2023-02-08T10:24:11.422Z
 - [下载 bilibili 原图](https://greasyfork.org/zh-CN/scripts/494018-%E4%B8%8B%E8%BD%BD-bilibili-%E5%8E%9F%E5%9B%BE)
   - 以原来的格式右键下载 bilibili 动态和评论区中的图片，而不是 webp 或 avif
 
+- [B站评论区开盒](https://greasyfork.org/zh-CN/scripts/448434-b%E7%AB%99%E8%AF%84%E8%AE%BA%E5%8C%BA%E5%BC%80%E7%9B%92)
+  - [BiliBili 评论区/空间显示IP属地 BiliBili IP Geolocation](https://greasyfork.org/zh-CN/scripts/462151-bilibili-%E8%AF%84%E8%AE%BA%E5%8C%BA-%E7%A9%BA%E9%97%B4%E6%98%BE%E7%A4%BAip%E5%B1%9E%E5%9C%B0-bilibili-ip-geolocation)
+
 ## sites(single)
 
 - 

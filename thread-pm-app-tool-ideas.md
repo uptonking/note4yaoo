@@ -67,6 +67,9 @@ modified: 2022-11-07T10:58:24.512Z
 - algolia
   - MeiliSearch
   - algolia是纯做SaaS服务的吧，跟es还是有定位上的区别。
+# sync-setttins
+- vscode-config
+- greasyfork-scripts
 # sharing
 - 规避版权问题的内容讨论平台
   - 科技分享，类似hacker-news
@@ -82,6 +85,8 @@ modified: 2022-11-07T10:58:24.512Z
 
 - b站很多视频是带人读文章/公告、读论文
 # integrations
+- search-filters
+
 - ModelScope魔搭社区，主打中文的 AI 模型开源社区，
   - 魔搭社区经过半年左右的发展，拥有开发者数量超过160万，模型下载量超过2500万，但演示应用程序才41个，下载应用比例是百万分之一，严重不符合实际
   - 希望国内这种平台有朝一日可以互通，比如百度AIStudio和魔搭。

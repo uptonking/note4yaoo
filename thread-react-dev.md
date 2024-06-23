@@ -16,7 +16,11 @@ modified: 2021-01-06T14:40:11.360Z
 
 - ## 
 
-- ## 
+- ## 活久见，使用 useRef 缓存过的 VDom，居然还会触发重渲染，而且重渲染使用的还是缓存时的 props。
+- https://x.com/YuTengjing/status/1803435159645200623
+  - 一直以来的认知都是只有父组件重新染，setState, context api 会触发重渲染，没想到这里 vdom tree 上的一个节点由 null 变为缓存的 vDom 也会触发重渲染
+- 组件被卸载了又挂载肯定会执行render的
+  - 除了 props 还有 hooks 呀，hook 可能包含副作用的
 
 - ## TIL React changes a component in a Suspense context to `display: none !important` until data fetching completes.
 - https://x.com/cpojer/status/1798912741383844237
@@ -355,7 +359,7 @@ useEffect(() => {
 
 - What are your issues exactly with unserializable data in this case?
   - Specifically: Replay's codebase is 80% a copy-paste of the FF DevTools. 
-  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,                                                              `ValueFront`,                                                              `Pause`, etc. 
+  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,                                                               `ValueFront`,                                                               `Pause`, etc. 
   - We currently parse JSON and instantiate those classes, _then_ put them into Redux.
   - The Replay codebase started with very legacy Redux patterns (hand-written reducers, etc), and no Redux DevTools integration. When I added the DevTools setup, that began to choke on the class instances. So, I had to sanitize those out from being sent to the DevTools.
   - I've been modernizing our reducers to RTK's `createSlice`, which uses Immer. Immer recursively freezes all values by default. Unfortunately, those `SomeFront` instances are mutable, and _do_ get updated later. This now causes "can't update read-only field X" errors

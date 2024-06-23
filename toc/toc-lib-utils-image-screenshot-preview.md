@@ -250,6 +250,18 @@ modified: 2023-04-16T13:34:33.706Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Here's a lovely trick for getting all the event handlers from a component's props.
+- https://x.com/mattpocockuk/status/1804100225964855644
+  - 类型示例使用代码动画展示
+- [How are you doing those animations?](https://gist.github.com/mattpocock/ce7cf1d0df62c72aa3b58bb7e4e4fdce)
+  - building in a private repo, based on Remotion and Code Hike
+- Any reason why intersection instead of Extract?
+  - Fewer characters
+
 - ## React tip: Use a custom hook to handle array states in your components 
 - https://twitter.com/_georgemoller/status/1734738304698884575
   - 代码动画效果

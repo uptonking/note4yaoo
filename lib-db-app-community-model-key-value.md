@@ -37,7 +37,22 @@ modified: 2023-10-26T15:02:47.068Z
 
 - ## 
 
-- ## 
+- ## Here are some Redis use cases
+- https://x.com/systemdesign42/status/1803766225815658860
+- Database query caching and web page caching
+- Message queueing for asynchronous processing
+- Distributed locking to orchestrate access on a shared resource
+- Throttling requests to smoothen the load
+- Session store for quick retrieval and update of user data
+- Rate limiting requests to the web server
+- Real time leaderboard using Sorted sets
+- Approximate the cardinality of a large set using HyperLogLog
+- Real time messaging using Pub-Sub
+- Find nearby points using the Geospatial index
+- Data analytics using Time series data type
+- Social network timeline using the List data type
+- Full text search using RedisSearch module
+- Storing nested JSON without re-serialization costs using RedisJSON
 
 - ## Why is Redis Fast? Redis is fast for in-memory data storage.
 - https://twitter.com/sahnlam/status/1766345407045767559

@@ -331,7 +331,7 @@ betterdiscordctl -i flatpak install
 # dev-06-dockview-floating-&-progressbar-animation-&-cm-diff-&-cm-typewriter
 - architecture
   - 实现了偏静态的ui交互，优化cde集成、状态管理、单元测试
-  - websocket scalable chat/room, progress
+  - websocket scalable chat/room, progress: 参考zulip-sdk, firebase-sdk
   - refactor-cde-state-to-zustand
   - cde页面不稳定复线的内存泄漏
 - CDE集成

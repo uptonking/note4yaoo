@@ -241,6 +241,18 @@ modified: 2022-11-07T10:26:22.510Z
 
 - [ip138.com iP地址查询--手机号码查询归属地](https://www.ip138.com/)
   - [iP测漏 - 全方位检测您的IP地址](https://ipcelou.com/)
+# download
+- https://github.com/agalwood/Motrix
+  - https://motrix.app/
+  - Motrix 是一款全能的下载工具，支持下载 HTTP、FTP、BT、磁力链等资源。它的界面简洁易用，希望大家喜欢 
+  - 我是个兴趣使然的桌面应用开发者，利用搬砖之余开发了 Motrix
+  - 建议使用安装包（Motrix-Setup-x.y.z.exe）安装 Motrix 以确保完整的体验，例如关联 torrent 文件，捕获磁力链等。
+  - 支持BT和磁力链任务
+  - 单任务最高支持 64 线程下载
+  - UPnP & NAT-PMP 端口映射
+  - [关于资源分享](https://github.com/agalwood/Motrix/discussions/1221)
+    - 我在资源分享里面看到其他客户端分享给我们的资源，唯独迅雷在线 (Xunlei) 只有上传数据，没有下载数据，我们是不是在某个地方设置个屏蔽某些客户端或者某些IP。 迅雷违背了BT协议，只索取，不付出。迅雷不具备有分享精神，我们也应该拒绝分享资源给他，没有奉献精神。
+    - 你可以尝试使用qbittorrent，那个可以开反吸血
 # more
 - https://github.com/coolshou/dukto
   - /cpp

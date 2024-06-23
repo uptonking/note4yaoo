@@ -14,9 +14,15 @@ modified: 2022-11-08T10:34:34.820Z
 
 - ## 
 
-- ## 
+- ## I turn 40 today! A thread of everything I've learned in life
+- https://x.com/jlongster/status/1803823079916736624
+- go touch grass and talk to people
 
-- ## 
+- ## one thing I felt in the past year after graduating from college is that no adult has many real friends. 
+- https://x.com/ekzhang1/status/1804321756246622647
+  - it seems like we all have just a few. some have more, others less, but there's a human factor there
+  - still, I cross paths with a lot of people, and I hope I can be kind to them
+- Making new acquaintances(相识而非密友者；泛泛之交) is easier than ever if you go to events/meetups but, you're right, it is hard to make close friends without putting in time and effort 
 
 - ## A very short post, but something I've wanted to write down somewhere for years
 - https://x.com/max_leiter/status/1800320653553524913

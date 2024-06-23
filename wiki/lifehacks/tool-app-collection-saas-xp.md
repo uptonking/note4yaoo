@@ -483,6 +483,18 @@ sudo systemctl start minidlna
   - hpts -s 127.0.0.1:1081 -p 8002
   - npm config set proxy http://127.0.0.1:8002
   - npm config set https-proxy http://127.0.0.1:8002
+
+## v2ray
+
+- https://github.com/v2rayA/v2rayA /AGPLv3/202406/go/js
+  - https://v2raya.org/en/docs/prologue/introduction/
+  - https://v2raya.org/docs/prologue/quick-start/
+  - v2rayA is a V2Ray client supporting global transparent proxy on Linux and system proxy on Windows and macOS
+  - it is compatible with SS, SSR, Trojan(trojan-go), Tuic and Juicity protocols. 
+  - 截至 2021 年 8 月 27 日，xray 尚未支持基于观测的负载均衡，因此在 v2rayA 中连接多个节点为 v2fly/v2ray-core 所独有
+  - 默认情况下 v2rayA 会通过核心开放 20170(socks5), 20171(http), 20172(带分流规则的http) 端口
+  - [v2raya该使用什么样的订阅链接？ _202406](https://github.com/v2rayA/v2rayA/discussions/1418)
+    - 在debian系统中配置了DNS之后，导入就成功了
 # law
 - [中国执行信息公开网](http://zxgk.court.gov.cn/index.jsp)
 

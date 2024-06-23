@@ -16,7 +16,9 @@ modified: 2021-08-05T04:31:02.298Z
 
 - ## 
 
-- ## 
+- ## Could someone remind me what the syntax is for setting the version of types in the TS playground?
+- https://x.com/mattpocockuk/status/1803011608072855553
+- `import { xy } from "xyz" // types: beta`
 
 - ## 🤼🏻 My biggest gripe(牢骚；怨言；不满) with @TypeScript is that while it should follow API design, it often drives it. 
 - https://twitter.com/LeaVerou/status/1762884918281994281
@@ -140,7 +142,15 @@ modified: 2021-08-05T04:31:02.298Z
 
 - ## 
 
-- ## 
+- ## Here's a lovely bit of TS code to turn an object type into an object of getters
+- https://x.com/mattpocockuk/status/1802707952303825130
+- even though its okay, too much abstraction is sometimes bad
+
+- ## 💫 Here's a lovely trick for getting all the event handlers from a component's props.
+- https://x.com/mattpocockuk/status/1804100225964855644
+  - 类型示例使用代码动画展示
+- Any reason why intersection instead of Extract?
+  - Fewer characters
 
 - ## Are there any TypeScript wizards that can tell me if I should use `readonly` more often? Or can I not worry about it?
 - https://twitter.com/KevinVanCott/status/1774603530331885977

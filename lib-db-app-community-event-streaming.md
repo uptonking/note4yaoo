@@ -80,7 +80,7 @@ modified: 2023-10-27T07:02:42.391Z
 - https://twitter.com/dunithd/status/1727941660053504454
   - 📝 [“Change Data Capture Breaks Encapsulation”. Does it, though?_202311](https://www.decodable.co/blog/change-data-capture-breaks-encapsulation-does-it-though)
 
-- ## IBM MQ -> RabbitMQ -> Kafka ->Pulsar, How do message queue architectures evolve? 
+- ## ⌛️ IBM MQ -> RabbitMQ -> Kafka ->Pulsar, How do message queue architectures evolve? 
 - https://twitter.com/bytebytego/status/1726861680880304638
 - IBM MQ was launched in 1993. It was originally called MQSeries and was renamed WebSphere MQ in 2002. It was renamed to IBM MQ in 2014. 
   - IBM MQ is a very successful product widely used in the financial sector. 

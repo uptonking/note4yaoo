@@ -9,7 +9,25 @@ modified: 2023-11-21T15:41:26.460Z
 
 # guide
 
+# discuss-cdn
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Cached content is no longer shared between domains. This is the default in Chrome, Firefox, and Safari.
+- https://x.com/ohmypy/status/1804172910489407997
+  - The primary benefit of shared public CDNs is no longer relevant for modern browsers.
+
+- content addressable caching seems overdue(到期未付的，未还的; 早该有的)
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 
 
 - ## Have to admit designing my own read cache, in the absence of a kernel page cache, is absolutely kicking my ass.

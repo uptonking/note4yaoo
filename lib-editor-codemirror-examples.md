@@ -144,51 +144,6 @@ modified: 2023-06-23T12:46:53.288Z
   - https://replit.com/@util/codemirror-interact
   - A CodeMirror extension that lets you interact with different values (clicking, dragging, etc).
 
-- https://github.com/amasin76/code-motion /202404/ts
-  - https://code-motion.vercel.app/
-  - animate code changes, and export it as a video
-  - An effortless video code diff-animation tool for visualizing code changes
-  - 依赖@uiw/react-codemirror、diff、radix-ui、framer-motion、shiki、html2canvas、zustand、react-resizable-panels
-  - canvas-based video
-  - Export video to webm
-  - in-browser code editor
-  - App is designed to be offline-first, meaning that it does not rely on any external servers or backdoors
-  - We're planning to move to an offline-first approach, which means there will be no servers involved, and all your work will be stored in your local storage.
-
-- https://github.com/meowtec/diffani /202307/ts
-  - https://diffani.co/
-  - Diff code and render to animation video
-  - 依赖codemirror6、diff、jsdom、prismjs、zustand、vite
-
-- https://github.com/shikijs/shiki-magic-move /MIT/202405/ts
-  - https://shiki-magic-move.netlify.app/
-  - Smoothly animated code blocks with Shiki.
-  - The package provides framework-agnostic core and renderer and framework wrappers for Vue and React.
-  - 依赖diff-match-patch-es、ohash
-  - 不依赖codemirror
-  - [The Magic in Shiki Magic Move _202403](https://antfu.me/posts/shiki-magic-move)
-
-- https://github.com/sergeche/codemirror-movie /MIT/202006/ts/inactive
-  - https://docs.emmet.io/
-  - A plugin for CodeMirror editor for creating code demos as on Emmet Documentation
-  - 依赖codemirror.v5
-
-- https://github.com/code-hike/examples/tree/main/with-remotion
-  - https://x.com/pomber/status/1800108854459715864
-  - 不依赖codemirror
-  - you can use Remotion's `useFrame` inside any Code Hike annotation to animate most of the examples from the docs
-  - wondering if it can also display twoslash annotations, but I don't think remotion supports React Server Components
-
-- https://github.com/wix-incubator/codio /MIT/202101/ts/kotlin/inactive
-  - A media format to record and playback the process of programming
-  - Codio is a media format for recording the process of programming.
-  - The format is composed of code editor operations and audio/video.
-  - Create interactive tutorials, code messages and embedded documentation with a media format that turns your IDE to a media player.
-  - 🍴 forks
-  - https://github.com/rbrisita/codio-sui
-    - A media format for VS Code to record and playback the process of programming.
-    - Record VS Code events with an audio commentary and subtitles to play back at a later time.
-
 - https://github.com/val-town/codemirror-codeium /ISC/202404/ts
   - https://val-town.github.io/codemirror-codeium/
   - Codeium code completion integration for CodeMirror 6
@@ -198,6 +153,9 @@ modified: 2023-06-23T12:46:53.288Z
   - A batteries-included toolset for efficient development of CodeMirror 6 based editors (w/o React).
   - https://github.com/code4mk/codemirror-toolkit /202208/ts/inactive
     - easily use codemirror editor with codemirror-toolkit on react , vue , svelte
+  - [@codemirror-toolkit/react - A small and flexible solution for binding CodeMirror 6 to React : r/reactjs](https://www.reddit.com/r/reactjs/comments/107to4j/codemirrortoolkitreact_a_small_and_flexible/)
+    - I always wanted to use such a library when I was developing my Assembler Simulator in React. But all I could find at the moment was like @uiw/react-codemirror, it's "badly written" (e.g. reading a ref's current value during rendering) and contains too many dependencies I don't need, which cannot be tree-shaked so that you can toggle them in props.
+    - So I decided to write it my self and here it is! The API design is inspired by zustand btw
 
 - https://github.com/sachinraja/rodemirror /MIT/202112/ts/inactive
   - React component for CodeMirror 6
@@ -340,6 +298,56 @@ modified: 2023-06-23T12:46:53.288Z
   - Expressive Code is an engine for presenting source code on the web, aiming to make your code easy to understand and visually stunning.
   - On top of accurate syntax highlighting powered by the same engine as VS Code, Expressive Code allows you to annotate code blocks using text markers, diff highlighting, code editor & terminal window frames, and more.
   - All annotations are based on a powerful plugin architecture 
+
+## code-animation
+
+- https://github.com/amasin76/code-motion /202404/ts
+  - https://code-motion.vercel.app/
+  - animate code changes, and export it as a video
+  - An effortless video code diff-animation tool for visualizing code changes
+  - 依赖@uiw/react-codemirror、diff、radix-ui、framer-motion、shiki、html2canvas、zustand、react-resizable-panels
+  - canvas-based video
+  - Export video to webm
+  - in-browser code editor
+  - App is designed to be offline-first, meaning that it does not rely on any external servers or backdoors
+  - We're planning to move to an offline-first approach, which means there will be no servers involved, and all your work will be stored in your local storage.
+
+- https://github.com/meowtec/diffani /202307/ts
+  - https://diffani.co/
+  - Diff code and render to animation video
+  - 依赖codemirror6、diff、jsdom、prismjs、zustand、vite
+
+- https://github.com/shikijs/shiki-magic-move /MIT/202405/ts
+  - https://shiki-magic-move.netlify.app/
+  - Smoothly animated code blocks with Shiki.
+  - The package provides framework-agnostic core and renderer and framework wrappers for Vue and React.
+  - 依赖diff-match-patch-es、ohash
+  - 不依赖codemirror
+  - [The Magic in Shiki Magic Move _202403](https://antfu.me/posts/shiki-magic-move)
+
+- https://github.com/sergeche/codemirror-movie /MIT/202006/ts/inactive
+  - https://docs.emmet.io/
+  - A plugin for CodeMirror editor for creating code demos as on Emmet Documentation
+  - 依赖codemirror.v5
+
+- https://github.com/code-hike/examples/tree/main/with-remotion
+  - https://x.com/pomber/status/1800108854459715864
+  - 不依赖codemirror
+  - you can use Remotion's `useFrame` inside any Code Hike annotation to animate most of the examples from the docs
+  - wondering if it can also display twoslash annotations, but I don't think remotion supports React Server Components
+
+- https://github.com/wix-incubator/codio /MIT/202101/ts/kotlin/inactive
+  - A media format to record and playback the process of programming
+  - Codio is a media format for recording the process of programming.
+  - The format is composed of code editor operations and audio/video.
+  - Create interactive tutorials, code messages and embedded documentation with a media format that turns your IDE to a media player.
+  - 🍴 forks
+  - https://github.com/rbrisita/codio-sui
+    - A media format for VS Code to record and playback the process of programming.
+    - Record VS Code events with an audio commentary and subtitles to play back at a later time.
+
+- products-code-animation
+  - [Beautiful code animations - AnimateCode](https://www.animate-code.com/)
 # editors-based-on-codemirror
 - https://github.com/inkandswitch/tiny-essay-editor /NALic/202405/ts
   - https://tee.inkandswitch.com/
@@ -1025,6 +1033,12 @@ modified: 2023-06-23T12:46:53.288Z
   - A little playground for building apps on Reddit
   -  We open-sourced a little playground for building apps on Reddit. It's all Lit web components, CodeMirror, CSS, TypeScript, and esbuild
 
+- https://github.com/abhirampai/CodeBoost /MIT/202304/js/inactive
+  - https://codeboost.vercel.app/
+  - CodeBoost is a code runner that allows you to refactor and run your code in one convenient location.
+  - [CodeBoost _202303](https://medium.com/geekculture/codeboost-where-you-can-run-and-refactor-your-code-abe449cc1063)
+    - run code using Judge0CE API
+
 - https://github.com/solidjs-community/solid-playground-editor-cm /MIT/202302/ts/inactive
   - https://solidjs-community.github.io/solid-playground-editor-cm/
   - codemirror6-based editor with typescript support for the solid.js playground
@@ -1128,6 +1142,10 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/judge0/judge0 /GPLv3/202404/ruby
   - https://judge0.com/
   - The most advanced open-source online code execution system in the world
+- https://github.com/judge0/ide /MIT/202403/js/monaco
+  - https://ide.judge0.com/
+  - free and open-source online code editor that allows you to write and execute code from a rich set of languages. 
+  - Judge0 IDE is using Judge0 for executing user's source code.
 
 - https://github.com/rin-yato/miracle-diagram /202312/ts
   - https://miracle-diagram.vercel.app/

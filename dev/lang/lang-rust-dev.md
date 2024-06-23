@@ -112,6 +112,8 @@ modified: 2022-11-11T06:57:09.670Z
 ## why rust
 
 - [Why Turborepo is migrating from Go to Rust – Vercel](https://vercel.com/blog/turborepo-migration-go-rust)
+
+- [Why Discord is switching from Go to Rust _202002](https://discord.com/blog/why-discord-is-switching-from-go-to-rust)
 # changelog
 - v1.39
   - [Are we async yet?](https://areweasyncyet.rs/)

@@ -12,11 +12,11 @@ modified: 2023-11-28T14:48:45.910Z
 
 # guide(for notable/noter/paper)
 - features
-  - animated-text-code sharingversioning and branching: 基于oplog/events实现, draft/public
+  - versioning and branching: 基于oplog/events实现, draft/public
   - collaboration-ready: 基于crdt
   - end-user database: 支持用户自定义数据和流程
   - mobile-editor: phone, pad
-  - animated-text/code sharing
+  - animated-text/code sharing: playback with different speed
   - 小市场：多文件知识库，移动优先的markdown知识库
   - github修改文档要提pr很繁琐; 可协作的workspace可直接改或用审阅修订模式
   - mobile-app-generator
@@ -117,7 +117,6 @@ modified: 2023-11-28T14:48:45.910Z
 
 - 文本优先版编辑器会丢失部分数据
 - 标准版会导出所有编辑数据，以sqlite格式
-
 # mobile
 - 移动端的缩放
 # premium

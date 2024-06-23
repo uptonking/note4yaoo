@@ -27,6 +27,16 @@ modified: 2023-01-23T15:57:32.786Z
 
 - ## 
 
+- ## 
+
+- ## 有没有除了 colab 之外也可以在线运行 jupyper notebook 的服务，发现了 jetbrains 家的 datalore 
+- https://x.com/lewangdev/status/1642551706486489088
+  - 相较于 colab 和 jupyter，别人家是 notebook，他家的是 IDE，连代码自动补全，重构等常用功能都有，个人和4人以下小团队可以免费使用，而且不用翻墙
+- 120小时，每次运行小脚本是不是只算几秒钟？
+  - 对，运行有时间统计的，这个 notebook 全部执行完，估计只用几十秒的时间
+
+- datalore 免费版没有 GPU，但是跑下 Python 脚本还是挺好的
+
 - ## I think notebook-like UIs are the best medium for generative AI rn. 
 - https://x.com/sh_reya/status/1801626846364058110
   - Notebooks are rich in context & context-aware by design, familiar, and inherently exploratory

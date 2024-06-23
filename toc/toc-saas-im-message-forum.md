@@ -11,11 +11,10 @@ modified: 2021-05-14T15:04:15.333Z
 
 - tips-chat sdk
   - usecase: 聊天消息、多人协作
+  - 🧐💡 聊天社交应用通常具有巨大的先发优势，特别是数据格式和导入导出，主流参考zulip/mattermost
   - 主流im应用倾向于在chat流程中embed和操作其他平台的内容
   - 在chat-room内操作 doc/code
-  - chat sdk的设计考虑支持多种主流im应用
-  - 与ai或bot的对话可参考类似产品的设计和api，如chatgpt、copilot
-  - chat stream返回响应
+  - chat-sdk的设计考虑支持多种主流im应用
 
 - tips-forum
   - forum的核心也是ugc内容，所以和blog功能相似度高
@@ -342,6 +341,8 @@ modified: 2021-05-14T15:04:15.333Z
   - We aim to reverse engineer and add additional features to the Discord backend, while remaining completely backwards compatible with existing bots, applications, and clients.
   - You should be able to use any client designed for Discord.com to connect to a Spacebar instance. However, some incompatibilities still exist between Spacebar and Discord. 
   - 🐛 Currently there is no voice or video support in any Spacebar instance. This is a very difficult feature to get working, especially given that we must implement it the exact same way as Discord.com for client compatibility
+  - [Plugin system _202208](https://github.com/spacebarchat/server/issues/840)
+    - A server plugin may be used to control controlled accounts and bots. This would also be useful to subject them to policies as if they were users.
   - [Embeds - Spacebar Documentation](https://docs.spacebar.chat/setup/server/configuration/embeds/)
     - Embeds in Spacebar are external content that is displayed within your messages when linked to. 
   - https://github.com/spacebarchat/client /AGPLv3/202312/ts
@@ -440,9 +441,10 @@ modified: 2021-05-14T15:04:15.333Z
     - https://github.com/RahulM4/letschat-vercel-api /202311/js
 
 - https://github.com/RocketChat/Rocket.Chat /MIT+EE/ts/meteor
-  - https://rocket.chat/
+  - https://rockhttps://github.com/RocketChat/Rocket.Chatet.chat/
   - fully customizable communications platform developed in JavaScript for organizations with high standards of data protection.
   - We are a MERN based application enabling real-time conversations
+  - 依赖meteor、mongodb
   - Rocket. Chat uses the Meteor open-source framework, and the data is typically stored in MongoDB
 
 - https://gitlab.com/gitterHQ/webapp /MIT/202302/js/archived/gitlab
@@ -541,6 +543,12 @@ modified: 2021-05-14T15:04:15.333Z
 
 ## chat-solutions
 
+- https://github.com/Libera-Chat/sable /AGPLv3/202405/rust
+  - https://libera.chat/
+  - Sable is an experimental chat server designed to address many of the fundamental limitations of legacy IRC server software. 
+  - Server nodes communicate using a Gossip-like protocol, removing the need for a spanning-tree routing and making netsplits
+  - Events are propagated between servers via a gossip protocol.
+
 - https://github.com/agnaistic/agnai /AGPLv3/202406/ts
   - https://agnai.chat/
   - AI Agnostic (Multi-user and Multi-bot) Chat with Fictional Characters. 
@@ -594,6 +602,13 @@ modified: 2021-05-14T15:04:15.333Z
   - Bot Framework provides the most comprehensive experience for building conversation applications.
   - With the Bot Framework SDK, developers can build bots that converse free-form or with guided interactions including using simple text or rich cards that contain text, images, and action buttons.
   - https://github.com/LuciaHarcekova/ChatGPTMSBotFrameworkWithOpenAI /202304/c#/inactive
+
+- https://github.com/glowing-bear/glowing-bear /GPLv3/202404/js
+  - https://www.glowing-bear.org/
+  - A web client for WeeChat
+  - a web frontend for the WeeChat IRC client and strives to be a modern interface. 
+  - https://github.com/weechat/weercd /python
+    - WeeChat IRC testing server.
 # mastodon
 - resources
   - https://joinmastodon.org/apps

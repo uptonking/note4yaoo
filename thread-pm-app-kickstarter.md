@@ -228,6 +228,21 @@ modified: 2021-10-29T15:02:28.882Z
   - 原始内容和衍生内容都受到版权保护。所以如果开发一个 podcast 工具，那么分析总结内容是合法的。但是转译成文本，或者翻译，是违反版权法的。
   - 但是即使是分析和总结，也不一定安全。如果你的产品收录了很多 podcast 并且做了 summary。那么你就是以“衍生作品”盈利，法律风险非常高。
 
+# ideas-todev
+- ## 
+
+- ## 
+
+- ## In my recent attempt to fund my open-source projects, I reached ≈10, 000 people and raised $13 in one-time donations (thank you, folks!)
+- https://x.com/ohmypy/status/1804139763303076124
+- Donations from individuals who use your software never works. The only way to make money that is not through a direct business is by becoming critical to companies roadmap.
+  - My favorite story about that is the KVM Hypervisor, who exited for 100M with zero revenue, and being still a nascent project, circa 2010. Red Hat had a commercial product called RHEV (V was for Virtualization) running the Xen Hypervisor. Citrix, which was not very OSS oriented, bought Xensource, and Red Hat got spooked that if anybody else would acquire KVM as well, they'd be left without any alternatives. Because Virtualization was critical to the roadmap - survival-level critical, they didn't want to play any games and just acquired the company.
+  - Part of that is always luck, but another large part is just increasing the surface area of your potential for luck, by inserting yourself into techs that have the potential to become that critical.
+  - As an example, we, at Turso, sponsor 3 OSS projects at the moment. I can make the business case on my sleep of why each of those projects is business critical for us. There are other projects that we rely on way more heavily than those 3, but they don't have the same level of criticality, and would suck to see them go, but the company would survive.
+- Seems to work for V and Gleam, for example.
+  - We have a similar example, with Drizzle. If Drizzle would disappear tomorrow, we'd be in a very, very bad place. We sponsor them, and if you look at their list of sponsors, it's all businesses that likely have a similar calculation.
+
+- I maintain an open source browser extension with thousands of users. Yet, the donations I get from sponsorships, around $100 a year, can't realistically cover my expenses.
 # ideas
 - ## 
 

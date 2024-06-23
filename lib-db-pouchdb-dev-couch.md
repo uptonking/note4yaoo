@@ -145,6 +145,11 @@ modified: 2024-01-04T06:53:04.003Z
 # dev
 - > By design, CouchDB and PouchDB do not support transactions. A document is the smallest unit of operations.
 # changelog-pouchdb
+- [v9.0.0_20240524](https://pouchdb.com/2024/05/24/pouchdb-9.0.0.html)
+  - Massively improved the stability and performance of the `indexeddb` adapter
+  - Introduce a default limit (of 25) to the `.find()` method. This constitutes a backwards incompatible change
+  - move in-browser testing to Playwright
+  - Continue to update the codebase to ES6
 - [v8.0.0_202212](https://pouchdb.com/2022/12/14/pouchdb-8.0.0.html)
   - ✨ Embracing modern ES6 + JS syntax
   - PouchDB now has `activeTasks` like couchdb

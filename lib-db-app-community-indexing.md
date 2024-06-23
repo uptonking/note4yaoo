@@ -20,6 +20,18 @@ modified: 2023-09-17T17:38:11.187Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🆚️ For an in memory database if you were to design an indexing structure to support both point and range queries, 
+- https://x.com/debasishg/status/1803394530571383015
+  - is trie the most optimal data structure with respect to query time complexity, space usage and cache line friendliness ?
+- in my opinion, a B-tree with a high k-value works pretty well. I have been evaluating the same for @thedicedb and it is serving us well for most of our use cases (point plus range).
+  - again, we have not done the stress test yet, but from the initial development, we are inclined towards B-trees.
+- This Cassandra memtables paper (https://vldb.org/pvldb/vol15/p3359-lambov.pdf) has some comparisons with comparison-based data structures. But I agree that with a larger k, the height of the tree goes down that will lead to better cache alignment. But as the memtables paper indicates, tries may be easier to cache friendliness than comparison based trees .. The ART paper (https://db.in.tum.de/~leis/papers/ART.pdf) also indicates similar thoughts ..
+- I don't know the answer but I'd bet on trie too. The Adaptive Radix Tree: ARTful Indexing for Main-Memory Databases
+
 - ## why you always need a multi-column index
 - https://twitter.com/tobias_petry/status/1777985940302032975
   - An index with more columns can check more of a query's conditions. So fewer rows are loaded and the query is faster

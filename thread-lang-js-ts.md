@@ -29,11 +29,9 @@ modified: 2021-01-28T14:34:20.579Z
 
 - How common is it that people actually use tsc for building? I'd be very surprised if it was a majority of monorepos/packages. My guess is rollup and esbuild are much more popular
 
-
 - Not to mention many of them break once you add Metro and React Native.
 
 - I feel most people use monopod because they wanna share types between frontend and backend and in such a case not using a monorepo (having just one package.json) is the way.
-
 
 - 
 - 
@@ -70,8 +68,6 @@ modified: 2021-01-28T14:34:20.579Z
   - No, it won't - a possible addition for the future.
 
 # discuss
-- ## 
-
 - ## 
 
 - ## 

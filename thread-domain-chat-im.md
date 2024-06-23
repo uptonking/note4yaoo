@@ -140,9 +140,27 @@ modified: 2024-01-04T01:28:58.097Z
 
 - ## 
 
-- ## 
+- ## [Please don't use Slack for FOSS projects (2015) | Hacker News _201911](https://news.ycombinator.com/item?id=21415463)
+- What's wrong with Discord?
+- Everything that's wrong with slack, and more.
+  No IRC gateway.
+  Developers are extremely hostile to 3rd party clients.
+  Centralized control.
+  Ownership of your data.
+- Slack has no public API for 3rd party clients; it's strictly for bots. The EULA says they can ban you if you use a 3rd party client. The clients I've seen require you to open browser web dev tools in the browser and copy your API key from the browser session. Even browser CSS modifications are apparently frowned upon.
 
-- ## 
+- I think one often overlooked alternative is riot.im, basically discord/slack but with the ability to host custom servers and an emphasis on security.
+
+- ## [Looking for a rocketchat alternative : r/selfhosted _202402](https://www.reddit.com/r/selfhosted/comments/1arc7wi/looking_for_a_rocketchat_alternative/)
+- is there a user limit to mattermost for the free self hosted option?
+  - No, but there's a setting for max users per team. It's set to 50 by default but you can change it.
+  - but for both options, no sso included in the free version
+
+- You can self host matrix/synapse (apache2 > AGPL)
+
+- We use Zulip and it's great, we picked it over all main alternative (slack an the like). Fully open source so free self hosting
+
+- "Nextcloud Talk is a fully self hosted, on-premises audio/video and chat communication service."
 
 - ## 淘宝：钉钉，抖音：飞书，拼多多：knock，腾讯：企业微信，京东：咚咚，美团：大象，苏宁：豆芽。。。每个大厂都要把IM放在可控环境里
 - https://x.com/ken_xu/status/1801577638961811562
@@ -222,6 +240,88 @@ modified: 2024-01-04T01:28:58.097Z
 - Asking users to run mongo, es, neo4j, and redis is a tall order. Mattermost just needs (AFAIK) a relational database.
   - Gitter is not intended to be a replacement for Mattermost, Slack or other team collaboration tools. We see Gitter as a community instead.
   - we use neo4j for suggesting rooms.
+# discuss-zulip/mattermost
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Slack Alternatives, broken trust : r/selfhosted _202405](https://www.reddit.com/r/selfhosted/comments/1cv2gpd/slack_alternatives_broken_trust/)
+- Rocket.chat did some shady licensing shiningas not so long time ago, they backed out, buuuuut, i wouldn't trust them.
+- Mattermost has weird licensing too. They have two releases, a binary MIT one, binary only, and an agpl source one
+
+- I wanted to use Mattermost, but they charge for oidc. Ended up doing matrix with element.
+- The free version can be used with Gitlab authentication (only the auth module, not full Gitlab). We use our >400 person Mattermost instance with that to attach it to an AD.
+  - Same here. One can either setup a docker oauth server making the connection to ldap / ad or use Keycloak.
+
+- ## [Now that RocketChat 6.5 limits to 25 users or less what are you moving to? : r/selfhosted _202312](https://www.reddit.com/r/selfhosted/comments/18a2624/now_that_rocketchat_65_limits_to_25_users_or_less/)
+- Zulip. They are open source and even offer an importer for RocketChat
+- We run zulip and mattermost. The tech behind zulip is nice, but the user interface needs work. Most people prefer the mm interface. Think this is the main issue it is lacking popularity.
+
+- Mattermost has no 2FA and SSO in the free version, you also can't change the ToU from default, and a bunch of other restrictions (unless I'm wrong)
+
+- ## [After Slack made it's last pricing change... : r/ProgrammerHumor _202209](https://www.reddit.com/r/ProgrammerHumor/comments/xedo3k/after_slack_made_its_last_pricing_change/)
+- Zulip is the only text comm tool I know of which supports topics in channels (streams) and I think it’s pretty cool. I haven’t tested it enough yet though.
+
+- GitLab bundles Mattermost in their Omnibus installation/package. You can take that as an indicator of quality, and/or probable good maintenance in the future. (I can not personally attest to either though.)
+
+- I have to use zoom
+
+- ## [Mattermost – open-source platform for secure collaboration | Hacker News _202206](https://news.ycombinator.com/item?id=31858829)
+- They decided to up their price per user by a significant amount not too long ago... our self-hosted instance suddenly became more expensive than Slack but with an obviously not nearly as polished product as Slack. So we moved over to Zulip because at least they do their own thing, we haven't had any regrets over the switch to Zulip.
+
+- My former company adopted Zulip because we were in the cybersecurity space and needed an on-prem solution. When I first saw it I thought "oh god this is going to be awful" - very ugly UI compared to Slack and others. But after getting used to it, I found that the UX is excellent.
+  - When everyone on the team learn to use Topics, it's life changer.
+- And not only that, Zulip is 100% FOSS, whereas Mattermost is Open Core, so the Open Source portion is missing key features.
+
+- Zulip has a "public access" view, which I wish more open source projects would adopt (:eyes: kubernetes.slack.com) since it allows search engines to index into the threads
+  - > Web-public streams do not yet support search engine indexing. You can use zulip-archive to create an archive of a Zulip organization that can be indexed by search engines.
+  - 202406仍不支持
+- You can export all message types and none of them require any special licensing or payment: https://docs.mattermost.com/manage/bulk-export-tool.html.
+
+- Mattermost v7 was released on Thursday and includes video conferencing functionality! 
+
+- Mattermost does not provide a good way to archive topics. 
+  - Another wishlist would be to be able to hide or block people.
+
+- Mattermost is nice in that communication and project management is all in one tool, but doing anything within Mattermost is very sluggish (even on a very overspecced server with only 1 Mattermost user online). Using their Focalboard plugin resulted in multiple seconds of wait time between various actions like modifying a task. 
+  - On the other hand, Zulip has been consistently snappy even as we've onboarded users onto our instance. 
+  - Seeing it in use at large organizations such as Rust's Zulip instance instilled confidence that it'll continue to perform well even well beyond our scale.
+- Zulip's threading model is really nice to use once you and your team gets the hang of topic separation
+
+- ## [We Switched to Mattermost | Hacker News _202108](https://news.ycombinator.com/item?id=28044235)
+- Mattermost is great, but I wish they natively supported the Matrix protocol to enable federation. Or — at least — made it possible to integrate a "natively-looking" third-party bridge, similarly to how Gitter does it.
+- There is Matterbridge that supports many different protocols including Matrix.
+  - Yes, but it’s not the same as native or near-native experience.
+
+- A couple things stand out to me about Mattermost:
+  1. It's the most expensive chat out there, at $10/month and no free plan.
+  2. Focalboard is being integrated to be part of the chat. Focalboard doesn't currently do much that I find interesting, but I have hope that it will with time.
+
+- It's open core. There's a bunch of features that aren't in the open source version, such as LDAP authentication and 2FA enforcement.
+- Mattermost is open core. There are features that aren't available in the open source version and which you have to pay for
+
+- We used MM in the past and switched to Zulip. The docker upgrade path of MM is a pain and lacks support. (They switched to a new postgres version without providing any upgrade tutorial.) But honestly if you like to use a team chat to get work done Zulip works the best. The thread tagging inside a group and the keyboard support makes it easy to follow different conversations in a stream.
+
+- The only gripe I have now (besides collapsed threads looking awful: which seems to be fixed in the latest beta!) is that the data (i.e. chats) is stored unencrypted in our MySQL database. Being a tech company lots of ours engineer 'theoretically' have access to this database. I believe MM suggests to some higher level db encryption to solve this, but this is not ideal.
+
+- The only thing I missed is FOSS LDAP connector, I am strong believer that at least in some basic form it should come in such products - after all, you don't use such tools if you are not in enterprise and not having at least login is seriously problematic. We finished using Gitlab auth instead of it but I don't like that we are coupled to it.
+
+- ## 🎯 [Mattermost 1.0 released – open-source Slack alternative | Hacker News _201510](https://news.ycombinator.com/item?id=10386847)
+- The takeaway I'm getting from this story, and Mattermost, is: 1. Export your critical data from SaaS services if you're business cannot exists without them. 2. Test that this works before putting years of data into a service.
+
+- > Every conversation in Zulip has a topic, so it’s easy to keep conversations straight.
+
+- Overall I like it because they closely follow Slack's UI. However I question the choice of fully supporting Markdown. A comment isn't supposed to be documentation. Supporting things like bold, italic makes sense for emphasis or making code easier to read. But headings? When would one ever want really large text in a comment?
+  - Mattermost team here, We had dozens of community members upvote a feature to add markdown and we added it because it made sense. Now we really love it and can't go back
+
+- The main issue with IRC is that you have to stay connected all the time to receive messages, and you have to leave your IRC client to see and search the logs (unless you have some intermediate IRC client server that runs all the time). It's just not as nice.
+
+- ## [Trying to decide between open source web chat platforms such as Mattermost, Zulip, Matrix etc. in 2022 : r/selfhosted _202209](https://www.reddit.com/r/selfhosted/comments/x8dsma/trying_to_decide_between_open_source_web_chat/)
+- I would recommend using zulip over mattermost. While mattermost community edition might be suitable for most, but if lacks some of the most basic features and requires license to enable them. It's fucking ridiculous lol.
+
+- There's Nextcloud with Nextcloud Talk.
 # discuss-slack/discord/telegram
 - ## 
 

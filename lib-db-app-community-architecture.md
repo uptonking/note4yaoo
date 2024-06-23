@@ -116,6 +116,19 @@ modified: 2023-09-17T17:37:19.913Z
 # discuss-db-per-user 👣
 - ## 
 
+- ## 
+
+- ## 
+
+- ## The idea of having a separate database per tenant in a multi-tenant application always felt way too complicated to me.
+- https://x.com/marcelpociot/status/1802942305143296136 
+  - But now I'm thinking: doesn't SQLite make this a lot easier?
+
+- We use separate DBs per tenant and it's a lifesaver, for a couple reasons:
+  - you can bill tenants for their DB Usage
+  - you don't have noisy neighbours
+- The core issues with it (we use it for HelpSpot for legacy reasons) is schema changes are burdensome as things may go wrong in one account, but not another etc. On the other hand, it does mean things only go wrong with one customer in that case and not all the customers! So overall for our scale and desired stress level I do like it. 
+
 - ## 🐛 read this before you go do the “db per user” pattern
 - https://twitter.com/thdxr/status/1766450800425865279
   - it makes a lot of things harder

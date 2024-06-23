@@ -89,7 +89,7 @@ modified: 2024-02-11T15:11:31.598Z
   - 夜莺 Nightingale 是中国计算机学会接受捐赠并托管的第一个开源项目，是一个 All-in-One 的云原生监控工具，
   - 集合了 Prometheus 和 Grafana 的优点，你可以在 WebUI 上管理和配置告警策略，也可以对分布在多个 Region 的指标、日志、链路追踪数据进行统一的可视化和分析。
 # google-analytics-like
-- https://github.com/umami-software/umami /19.3kStar/MIT/202403/ts
+- https://github.com/umami-software/umami /19.3kStar/MIT/202406/ts
   - https://umami.is/
   - a simple, fast, privacy-focused alternative to Google Analytics.
   - supports MySQL and Postgresql databases.

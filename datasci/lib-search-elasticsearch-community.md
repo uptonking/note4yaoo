@@ -65,6 +65,15 @@ modified: 2023-01-02T08:49:39.114Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## BM25+Embedding 混合检索是在不增加latency的情况下的无脑优化方法之一
+- https://x.com/9hills/status/1803159879512891876
+  - 不要低估BM25，在检索场景BM25是一个不错的基线。中文需配合jieba分词。
+  - 无脑优化的意思是不担心性能和效果问题直接上，相比来说Rerank、HyDE等都得权衡。
+
 - ## Reminder: Elasticsearch *is* a vector database (and has been for a long time) and has a great @testcontainers module (and has for a long time)
 - https://twitter.com/bluxte/status/1760936516329615795
 - it is, and the Elasticsearch module is proudly presented in the "Vector database" category in the Testcontainers module catalog
