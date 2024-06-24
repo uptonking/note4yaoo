@@ -69,11 +69,13 @@ modified: 2023-01-17T19:13:01.845Z
   - Why use a central relay service?
     - The main reason is to exchange data asynchronously.
 
-- https://github.com/deepstreamIO/deepstream.io /MIT/202310/ts
+- https://github.com/deepstreamIO/deepstream.io /MIT/202403/ts
   - https://deepstreamio.github.io/
   - open source server inspired by concepts behind financial trading technology. 
   - It allows clients and backend services to sync data, send messages and make rpcs at very high speed and scale.
   - Deepstream and Socket.io actually both use engine.io for browser communication
+  - The server itself is configurable and uses permission files to validate incoming messages, but doesn’t hold any custom logic other than that. 
+  - It is not an HTTP server, so won’t be able to serve images, HTML or CSS files. 
   - [Show HN: Deepstream.io – open-source real-time server with pub/sub and data sync | Hacker News_201602](https://news.ycombinator.com/item?id=11071916)
   - What is the algorithm used for JSON synchronization? Operational Transformation, CRDT, diff/patch?
     - Currently if a conflict occurs it’s reported back to the client that triggered it and its up to it to resolve it. We are currently working on configurable merge strategies on a per record level

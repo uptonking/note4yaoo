@@ -331,7 +331,7 @@ betterdiscordctl -i flatpak install
 # dev-06-dockview-floating-&-progressbar-animation-&-cm-diff-&-cm-typewriter
 - architecture
   - 实现了偏静态的ui交互，优化cde集成、状态管理、单元测试
-  - websocket scalable chat/room, progress: 参考zulip-sdk, firebase-sdk
+  - websocket scalable chat/room, progress: 参考zulip-sdk, firebase/supabase-sdk
   - refactor-cde-state-to-zustand
   - cde页面不稳定复线的内存泄漏
 - CDE集成
@@ -351,6 +351,8 @@ betterdiscordctl -i flatpak install
   - tailwind child selector
   - steps-tree: deprecate id in favor of content
   - 处理floating的滚动条
+- ai-integration
+  - https://staging.agent.clacky.ai/demo
 
 - not-yet
   - ide滚动条失败
@@ -366,9 +368,28 @@ betterdiscordctl -i flatpak install
   - 
 
 - 前端cde的研发功能拆分
-  - 初始化流程
+  - cde的初始化流程优化
+  - 制定计划、执行计划: 时光会产生新action吗机回放
   - ai对话
-  - 时光机回放
+  - pr提交
+
+## 0624
+
+- cde状态设计
+
+- 时光机的用户编辑, 每个action对应的文件是否一定不同，是否存在多个action对应同一个文件
+  - 追加步骤的action可能会与前面的action对应同一文件，对于此场景，前面action对应的文件默认不可编辑，点击时跳到最新文件进行编辑
+
+- 测试cde
+  - http://localhost:3000/thread?tid=019039f0-20f4-74c0-b3cd-3060ea57f4d3
+
+```JS
+// 获取变更文件列表数据的api
+// stt.dao.get.playgroundInfo().fileChangeLogs
+// stt.dao.store.getState().playgroundInfo.fileChangeLogs
+// 🐛 不包含修改的内容/行号，被删除的文件不包含在返回的数组
+['README.md', 'package.json', 'src/app.tsx']
+```
 
 ## 0621
 

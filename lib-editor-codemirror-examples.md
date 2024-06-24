@@ -1527,3 +1527,13 @@ modified: 2023-06-23T12:46:53.288Z
   - Beautiful API references from OpenAPI/Swagger files
   - Edit your OpenAPI/Swagger specification with a live preview
   - https://github.com/scalar/scalar/tree/main/packages/use-codemirror
+
+- https://github.com/replit/crosis /MIT/202406/ts
+  - A JavaScript client that speaks Replit's container protocol
+  - You should probably familiarize yourself with the protocol before trying to use it. Crosis is just a client that helps you connect and communicate with the container using the protocol.
+  - The central concept is a "channel" that you can send commands to and receive commands from. 
+
+
+
+
+
