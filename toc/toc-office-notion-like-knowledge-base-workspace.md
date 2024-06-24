@@ -189,12 +189,22 @@ modified: 2022-06-03T21:34:54.893Z
   - Support selecting multiple knowledge bases for Q&A
   - Currently supported formats include: PDF(pdf), Word(docx), PPT(pptx), XLS(xlsx), Markdown(md), Email(eml), TXT(txt), Image(jpg，jpeg，png), CSV(csv), Web links(html) and more
 
-- https://github.com/mayneyao/eidos-wiki
+- https://github.com/mayneyao/eidos /AGPLv3/202406/ts
+  - https://github.com/mayneyao/eidos-wiki
   - https://wiki.eidos.space/
   - Eidos 是一个开源的、本地优先的 Web App ，完全运行在浏览器中，无需安装，也不依赖于任何服务器
   - 拥有和 Notion 类似的文档和表格，你可以理解为离线版的 Notion，所有数据都在本地
+  - 依赖sqlite-wasm、glide-data-grid、lexical
   - [Roadmap | Eidos Wiki](https://wiki.eidos.space/roadmap)
     - 在 EA 测试后，主体功能稳定的情况下，会开放源码并且公测。我不是那么喜欢 build in public，预期和实现不一致容易消磨耐心
+  - [Show HN: Eidos – Offline alternative to Notion | Hacker News _202406](https://news.ycombinator.com/item?id=40746773)
+    - built based on sqlite-wasm and runs entirely in the browser
+    - A block-styled document editor and an Airtable-like table, built on top of SQLite, where each table is a real SQLite table.
+    - A powerful extension system inspired by Figma plugin and Cloudflare worker. You can write scripts in TypeScript directly in the browser. It is easy to manipulate data in docs, tables, and the file system. It also supports API.
+    - Eidos deeply integrated with LLM. You can translate, summarize, talk to your data
+    - 🛢️ A key idea of Eidos is to make each table a real SQLite table, so users can view and modify it through other software or visualize it with tools like Metabase
+    - You can make some adjustments in the settings to store data in a local folder. Then, use iCloud, Git, or your preferred service to back up your data. Just like the web version of VSCode, it can handle local files. The web is just an app and doesn't hold any data.
+    - I carefully designed the architecture, which is very flexible. The "backend" is currently running on web worker & service worker. It should be possible to deploy it to a web-standard runtime environment for self-hosting. P2P synchronization based on CRDT is on the roadmap.
 # confluence-like
 - MrDoc /2.1kStar/GPLv3/202403/js/python/Django/仅网页版
   - https://github.com/zmister2016/MrDoc

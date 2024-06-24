@@ -336,6 +336,47 @@ modified: 2023-11-28T14:48:45.910Z
 # discuss-notion-like
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 📈 [Show HN: Eidos – Offline alternative to Notion | Hacker News _202406](https://news.ycombinator.com/item?id=40746773)
+
+- A key idea of Eidos is to make each table a real SQLite table, so users can view and modify it through other software or visualize it with tools like Metabase
+
+- I feel like the sqlite-based thing is, if anything, kind of a downside. Use it for caching and calculation, sure, but I want the source of truth to be just plain markdown files I can take into other apps in 5 years when whatever I'm using now inevitably dies.
+  - I think plain text has its limitations. There are many other types of structured data in life. Just like Word and Excel, they have different responsibilities. No one worries that Excel will not work in a few decades because it's just an offline software. Similarly, no one worries that SQLite will be unable to open or view because it has already been running with billions of instances, becoming part of the infrastructure.
+
+- My general answer to this is to make sure whatever thing I'm building understands Pg COPY TSV syntax - specified by https://www.postgresql.org/docs/current/sql-copy.html under 'text format' - and export to/import from that. It's nice to have something that plays nicely with awk/cut/diff/etc. and can be committed into a git (or elsevcs) repo. (I'm not specifically wed to COPY as the form, but given it's well known and documented I've found it a good default)
+
+- What logseq is going to do is just dump documents to markdown (right now they use markdown), I think something along these lines is the way to go, store in sqlite and have a constant background process creating markdown files for everything
+- good idea. all documents are currently stored in the eidos__docs table. The `content` field is used to store the state of lexical documents in JSON format. Additionally, there is also a `markdown` field. This can be viewed by any sqlite software. Every time a document is updated, both fields are updated simultaneously, making it easy to convert to a file.
+
+- SQLite won't stop working but your format is proprietary. A markdown can be understood even without rendering to HTML but your tables are useless for an user without your app.
+  - This is why I use RTF. It is considerably more flexible than Markdown (which can't do basic stuff like making text red), but not a proprietary format. The application I use (DEVONthink) supports a number of formats including Markdown, HTML and RTF, and documents how to get at the raw files if the application ever becomes unavailable. No use of a proprietary database format. This is for my 30-year files.
+  - I also use RTFD in the same application. This is a variant of RTF which can have embedded images. It's not universally supported like RTF, but there are sufficient third-party editors to leave me confident that I will be able to get at the information. This is for my 5-year files.
+
+- I have tried quite many such apps and keep returning to Tiddlywiki (https://tiddlywiki.com/). It is not perfect, and the lack of hierarchy can be both a blessing and a curse. It uses flat-files which can impact performance and be more cumbersome than a database. Also, the integration with external files is a bit clumsy.
+  - However, the main strength is customizability. Various data is best presented in various ways, and separating data/content and presentation/template/layout while keeping them tightly integrated is incredibly powerful.
+
+- You can make some adjustments in the settings to store data in a local folder. Then, use iCloud, Git, or your preferred service to back up your data. Just like the web version of VSCode, it can handle local files. The web is just an app and doesn't hold any data.
+
+- How do you deal with iOS deleting PWA data when unused? I'm building an app that relies on indexedDB, which afaik is the only persistent storage a PWA can access.
+  - Currently, it can only run on high-version chromium-based browsers, and it's compatible with Android, but not iOS. Apple is killing web apps.
+
+- The lack of note linking is a deal breaker for me. Also when it comes to LLM stuff, I would like to hook up AI's via a OpenAI Compatible LLM such as LiteLLM and Ollama
+  - I'm not a fan of 2-way links, but this is on the roadmap and can be easily added . It can work with Ollama.
+
+- Eidos has an Airtable-like table, but Obsidian does not. 
+  - Eidos and Obsidian are both file-based. 
+  - Eidos is based on SQLite, and Obsidian is based on Markdown.
+
+- Please provide a feature to load data from notion export
+  - I developed an extension to implement the import function, it's still in development and lacking documentation. 
+
+- Apple Notes has sync issues with large collections, and backing up to anything except iCloud is a pain.
+
+
 - ## [decipad: Show HN: A Notion-like platform for building interactive models | Hacker News _202307](https://news.ycombinator.com/item?id=36940514)
 - Not sure if this was the feedback you were looking for but I spent about a year in a similar field trying to build out a product before we successfully pivoted. The product was very similar to grid.is
   - Ours was really tough sell as a product because it wasn't really a product. It was kind of a no code platform that worked with excel models. 

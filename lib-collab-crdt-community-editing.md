@@ -81,7 +81,8 @@ modified: 2023-10-28T09:00:45.811Z
 
 - ## 
 
-- ## 
+- ## 🧮 CRDT: Text Buffer
+- https://news.ycombinator.com/item?id=40414435
 
 - ## Using "index" to denote cursor positions can be unstable, as positions may shift with document edits. 
 - https://twitter.com/zxch3n/status/1777341492467847650

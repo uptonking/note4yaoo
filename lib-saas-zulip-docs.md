@@ -8,7 +8,9 @@ modified: 2024-06-23T02:10:01.601Z
 # lib-saas-zulip-docs
 
 # guide
-
+- resources
+  - [Zulip overview — Zulip 9.0-dev+git documentation](https://zulip.readthedocs.io/en/latest/overview/readme.html)
+  - [Zulip help center](https://zulip.com/help/)
 # docs
 
 ## overview

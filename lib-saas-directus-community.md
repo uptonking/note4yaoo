@@ -19,7 +19,7 @@ modified: 2024-02-16T14:56:17.057Z
   - 💡 In general, Directus converts requests coming in (through rest/graphql or soon websockets) into a generic `AST` which is then parsed through the data pipeline to be queried/modified. 
   - That allows all of these interfaces to support the same feature sets and generally have the same performance
 
-- ## 🌰〰️ [Explanation on transmitting data inside flows _202308](https://github.com/directus/directus/discussions/19471)
+- ## 🌰⛓️ [Explanation on transmitting data inside flows _202308](https://github.com/directus/directus/discussions/19471)
 - [directus flows - How to all field value pass in payload when record update in direct us - Stack Overflow](https://stackoverflow.com/questions/76613284/how-to-all-field-value-pass-in-payload-when-record-update-in-direct-us)
 
 - Choose the collection Support and set the IDs to `"{{$trigger.keys[0]}}"` (be aware of In Read Data operation flow IDs stays blank despite the Raw value)

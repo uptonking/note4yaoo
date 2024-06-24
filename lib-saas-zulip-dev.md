@@ -9,13 +9,20 @@ modified: 2024-06-23T02:09:33.877Z
 
 # guide
 - pros
-  - ?
+  - 100% open-source, not open-core
+  - export支持html
+    - import支持mattermost/RocketChat
+  - guest mode with login
+  - unlimited message history search
+  - unlimited file sharing and storage
+  - Voice and video calls (1on1/group): Choose a call provider (Zoom, Jitsi, etc.)
+  - client-apps: mobile, pc, terminal
 
 - cons
-  - ?
+  - ui seems outdated
 
 - features
-  - ?
+  - designed around conversations that are labeled with topics, to make communication organized and efficient
 
 - who is using #zulip
   - ?

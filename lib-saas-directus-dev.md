@@ -26,12 +26,13 @@ modified: 2024-02-16T14:55:58.271Z
   - 🔌 Extensions and marketplace
     - marketplace支持自定义地址 MARKETPLACE_REGISTRY
   - Sandboxed Extensions, ✨ 支持在线安装扩展
-  - 〰️ flows
+  - ⛓️ flows
     - 可灵活使用flow的trigger来实现op的暂停和继续
   - 🎛️ insights/dashboard
   - 用户管理
   - 通知系统
-  - 支持realtime data, 包括rest/graphql
+  - 〰️ 支持realtime data, 包括rest/graphql
+    - sdk支持通过参数配置启用websocket
   - 支持i18n, 偏向于简单翻译，提供了translations类型的字段，会自动建立关联表
     - lang/content表需要用户自己创建和配置，自动化程度不高
 

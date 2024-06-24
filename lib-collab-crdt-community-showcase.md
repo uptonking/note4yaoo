@@ -12,7 +12,12 @@ modified: 2023-11-01T03:15:20.195Z
 # discuss
 - ## 
 
-- ## 
+- ## Architectures for Central Server Collaboration
+- https://news.ycombinator.com/item?id=40579892
+- 
+- 
+- 
+- 
 
 - ## 📓 My presentation about "Collaborative editing in Jupyter" at PyData Paris has been accepted _202406
 - https://x.com/davidbrochart/status/1796838314386866396

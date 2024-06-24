@@ -28,7 +28,7 @@ modified: 2023-12-15T16:52:28.937Z
   - This segment deals with the CRUD operations defined by the content types.
   - It consists of controllers that handle the routing and processing of requests, services that encapsulate the business logic, and the entity service that interacts with the database layer.
 
-- 〰️ The flow within Strapi begins at the route, guiding requests to their respective policies. 
+- ⛓️ The flow within Strapi begins at the route, guiding requests to their respective policies. 
   - After passing through any Route Policies that apply, the request is handled by Route Middleware for tasks such as authentication or payload processing. 
   - The request is then handed off to the Controller, specifically a Koa handler, to orchestrate the next steps.
   - Inside the Controller, the logic unfolds, tasking the Service to manage business-specific actions. 

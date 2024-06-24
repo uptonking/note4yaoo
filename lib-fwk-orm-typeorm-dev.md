@@ -31,4 +31,8 @@ modified: 2023-01-20T18:42:28.952Z
   - Left and inner joins.
   - Follows all possible best practices.
   - You can use QueryBuilder to build SQL queries of almost any complexity. 
+
+- who is using #typeorm
+  - grist
+  - spacebar(discord-like)
 # dev

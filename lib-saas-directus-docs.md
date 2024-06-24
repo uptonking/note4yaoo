@@ -35,7 +35,7 @@ modified: 2024-03-02T15:21:17.619Z
 - Directus is plug-and-play. Once linked, it doesn't own your data or file assets, but it does create about 20 new data tables which are required for platform operation. 
   - These tables do not intermingle(混合) with the rest of your data, so you can remove Directus without a trace.
 
-- 〰️ Webhooks are configured within the App (no code required) and send HTTP requests to an external service when a specific event is triggered.
+- ⛓️ Webhooks are configured within the App (no code required) and send HTTP requests to an external service when a specific event is triggered.
   - 🗑️ Webhooks are a deprecated feature and will be removed from the platform. 
   - This functionality has been fully replaced by Flows
 
@@ -176,7 +176,7 @@ modified: 2024-03-02T15:21:17.619Z
 - There is no difference in the functionality available between the REST and GraphQL endpoints. 
   - The functionality available in both is mapped to the same set of core services, meaning that you don't lose any performance or capabilities by choosing one or the other.
 
-## 〰️ [Flows | Directus Docs](https://docs.directus.io/app/flows.html)
+## ⛓️ [Flows | Directus Docs](https://docs.directus.io/app/flows.html)
 
 - Flows enable custom, event-driven data processing and task automation within Directus. 
 
