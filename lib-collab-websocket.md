@@ -10,11 +10,45 @@ modified: 2022-10-11T09:02:26.869Z
 # guide
 
 - feathers框架为实时类应用而设计
+
+- who is using #websocket
+  - NodeBB
+# draft
+- 跨标签页共享ws连接，模拟共享的效果
+  - 基于 BroadcastChannel
+- 多分析，不一定要共享，不同页面展示不同产品也许是特色
+  - 共享的不一定要是连接，可以是数据
+# docs
+- [Introduction | Socket. IO](https://socket.io/docs/v4/)
+  - `socket.emit("hello", "world")` will be sent as a single WebSocket frame containing `42["hello","world"]` with:
+  - 4 being Engine. IO "message" packet type
+  - 2 being Socket. IO "message" packet type
+  - `["hello", "world"]` being the `JSON.stringify()`-ed version of the arguments array
+  - a few additional bytes for each message, which can be further reduced by the usage of a custom parser
+
+- [Emit cheatsheet | Socket.IO](https://socket.io/docs/v4/emit-cheatsheet/)
 # blogs
 - [Pushpin | Generic Realtime Intermediary Protocol](https://pushpin.org/docs/protocols/grip/)
   - GRIP makes it possible for a web service to delegate realtime push behavior to a proxy component
 
-## [都2022年了，实时更新数据你还只会用短轮询? - 掘金](https://juejin.cn/post/7139684620777291807)
+## [My tips for using Socket.io _201803](https://www.ux-republic.com/en/my-tips-for-using-socket-io/)
+
+- The first step before you start anything is to develop a standard for naming your socket events. 
+  - For my part, I use the format domain:action
+  - This format allows initially to avoid duplicates and especially to have a better readability on the role of the event. 
+  - Splitting events into Domaine also makes it possible to logically divide its functions into several files corresponding to their respective domains.
+
+- handlers are neither more nor less than files where we will implement the logic of events. 
+  - The goal is to separate your code by respecting the same logic as for the naming (i.e., by creating a file by Domaine). 
+
+- Validate your events: Joi to the rescue
+
+- create helpers in another file
+  - we are not going to rewrite our whole piece of code each time we are going to create an event.
+  - we are going to create a helper which will allow us to create an event and validate the payload of the event with a Joi schema
+  - `bindEvent` allows you to create the event on the socket, to check the payload (if a schema has been passed to it), to return an error if it is not valid, and finally to call the callback by adding the socket current in it.
+
+## 🪧 [都2022年了，实时更新数据你还只会用短轮询? - 掘金](https://juejin.cn/post/7139684620777291807)
 
 - 分析思路
   - 连接创建和销毁次数

@@ -144,6 +144,12 @@ modified: 2023-09-02T09:17:22.992Z
   - Not implement with, eval, var, label etc.
   - 尝试性的把微任务在 jsscript 里面实现了一下，发现比我预想的简单，也没有八股文中那么多弯弯绕的东西。 又有了新的理解，微任务其实就是 JS 标准内的，而宏任务则是外部 IO 环境的任务。
 
+- https://github.com/jonathan-fielding/nodejs-runner /202005/ts
+  - A docker based Node.js code runner which will execute JavaScript sent to it
+  - This Node.js runner is a docker container designed to run Node.js within the docker sandbox.
+  - To use this docker container first connect to it using websockets, you can then send the JavaScript code you want to execute to the container and it will stream back the output.
+  - https://github.com/jonathan-fielding/use-node-runner
+
 ## iframe-sandbox
 
 - https://github.com/dabbott/javascript-playgrounds /ts

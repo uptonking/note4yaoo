@@ -38,4 +38,9 @@ modified: 2023-11-23T09:58:47.558Z
     - Schema-driven code generation (continually-generated classes w/the getter/setter/relation boilerplate)
     - Guaranteed N+1 safe, pervasive use of Facebook's dataloader
     - All relations are async/await (with an ergonomic, type-safe escape hatch)
+# event
+- https://github.com/RubaXa/wormhole
+  - It's better EventEmitter for communication between tabs with supporting Master/Slave.
+
+
 # more

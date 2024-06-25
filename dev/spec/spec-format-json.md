@@ -127,7 +127,8 @@ modified: 2020-10-15T13:41:01.275Z
 - https://github.com/tedeh/jayson /js
   - a simple but featureful JSON-RPC 2.0/1.0 client and server for node.js
 
-- https://github.com/k8w/tsrpc
+- https://github.com/k8w/tsrpc /MIT/202304/ts
+  - https://tsrpc.cn/
   - 专为 TypeScript 设计的 RPC 框架
   - 支持在 JSON 中传输更多数据类型，例如 ArrayBuffer、Date、ObjectId
   - 同时支持 HTTP/WebSocket

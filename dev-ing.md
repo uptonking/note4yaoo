@@ -57,6 +57,8 @@ find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +
 
 # 格式化当前包，注意在子文件夹执行命令也会从package.json目录开始格式化整个包
 prettier --write '**/*.{js,jsx,ts,tsx,json}' --ignore-unknown
+eslint --ext .js,.ts,.tsx --quiet --fix . 
+
 # npm i
   DEBUG=* npm i --no-audit --loglevel silly
 DEBUG=* npm i --legacy-peer-deps --no-audit --loglevel silly
@@ -367,11 +369,18 @@ betterdiscordctl -i flatpak install
 - dev-to
   - 
 
-- 前端cde的研发功能拆分
-  - cde的初始化流程优化
-  - 制定计划、执行计划: 时光会产生新action吗机回放
-  - ai对话
-  - pr提交
+## 0625
+
+- [Add a prefix to each type in a string union type - Stack Overflow](https://stackoverflow.com/questions/73135992/add-a-prefix-to-each-type-in-a-string-union-type)
+
+```JS
+type Prefix < P extends string, S extends string > = `${P}${S}`;
+
+type Prefix < K > = K extends string ? `on${K}` : K;
+```
+
+- [const enum in Typescript - Stack Overflow](https://stackoverflow.com/questions/40227401/const-enum-in-typescript)
+  - const in an enum means the enum is fully erased during compilation. Const enum members are inlined at use sites. You can't index it by an arbitrary value.
 
 ## 0624
 
@@ -390,6 +399,12 @@ betterdiscordctl -i flatpak install
 // 🐛 不包含修改的内容/行号，被删除的文件不包含在返回的数组
 ['README.md', 'package.json', 'src/app.tsx']
 ```
+
+- 前端cde的研发功能拆分
+  - cde的初始化流程优化
+  - 制定计划、执行计划: 时光会产生新action吗机回放
+  - ai对话
+  - pr提交
 
 ## 0621
 

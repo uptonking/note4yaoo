@@ -76,8 +76,9 @@ modified: 2024-05-06T02:54:40.374Z
 
 - fileTree
   - 大文件无法打开， 如package-lock.json
+  - 文件树未实现懒加载， 点击时再请求文件夹的数据而不是一次请求整棵树
   - 部分文件再次打开会记住文件尾的位置
-  - 文件树未实现懒加载，点击时再请求文件夹的数据
+  - fileChangeLogs的变更列表无法区别修改删除
 
 - 
 - 
@@ -105,6 +106,7 @@ modified: 2024-05-06T02:54:40.374Z
   - 多shell
   - 开发启动支持多port
   - 考虑2套agent: 前端agent, 后端agent，可切换来节省资源
+  - 支持统一浏览器不同标签页打开不同ide
 
 - embed
 
@@ -1674,19 +1676,10 @@ const playbackInfo = [
 
 ### codebase
 
-- 左侧图标菜单: fileTree, search, git
-  - ActivityPane: 左侧图标菜单对应的面板
-  - .tree-section
-- Editor: 编辑区 .editor-section
-  - EditorPane > `CodeEditor`; 
-- Preview: 预览区
-  - OpenBrowser
-  - Terminal
-  - Console
-
 - init-app-dataflow
   - StoreProvider > createStore
     - new CodecubeStore
+    - 初始化socket连接，基于rails-action-cable
 - init-ide-dataflow
   - codecube.mount()
   - this.ideStore?.mount()
@@ -1699,6 +1692,29 @@ const playbackInfo = [
   - this.createChatChannel(); 
   - this.createChatgptChannel(); 
   - `dao_paas = await DaoPaaS()`; 
+
+- OpenAIStream
+  - new ReadableStream
+
+```JS
+// stream response (SSE) from OpenAI may be fragmented into multiple chunks
+// this ensures we properly read chunks and invoke an event for each SSE event stream
+const parser = createParser(onParse);
+// https://web.dev/streams/#asynchronous-iteration
+for await (const chunk of res.body as any) {
+  parser.feed(decoder.decode(chunk));
+}
+```
+
+- 左侧图标菜单: fileTree, search, git
+  - ActivityPane: 左侧图标菜单对应的面板
+  - .tree-section
+- Editor: 编辑区 .editor-section
+  - EditorPane > `CodeEditor`; 
+- Preview: 预览区
+  - OpenBrowser
+  - Terminal
+  - Console
 
 - web项目中的编辑器
   - apps/web/src/store/IDEStore.tsx  接入了daoPaas状态

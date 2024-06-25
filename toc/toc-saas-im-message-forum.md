@@ -73,9 +73,10 @@ modified: 2021-05-14T15:04:15.333Z
 
 - https://github.com/NodeBB/NodeBB /GPLv3/202401/js
   - https://nodebb.org/
+  - https://community.nodebb.org/
   - Node.js based forum software built for the modern web
   - powered by Node.js and supports either Redis, MongoDB, or a PostgreSQL database
-  - It utilizes web sockets for instant interactions and real-time notifications
+  - 〰️ It utilizes web sockets for instant interactions and real-time notifications
   - Hosting NodeBB for a few years with custom sso plugin. NodeBb is awesome but the plug-in ecosystem is hell, as most plugins don't get regular updates and break on new versions (break like you can no longer activate them because semver rules mismatch)
   - [Local development should use non-daemonised DB](https://github.com/NodeBB/NodeBB/issues/1094)
     - We're definitely fans of re-use, and we do use existing modules, though in certain cases (DBAL and template engine), we roll our own for performance and workflow purposes.
@@ -565,6 +566,10 @@ modified: 2021-05-14T15:04:15.333Z
   - SolidJS for interactivity
   - redux
 
+- https://github.com/justadudewhohacks/websocket-chat /201802/js
+  - Websocket based group chat app built with socket.io and react.
+
+
 ## chat-sdk
 
 - https://github.com/lobehub/lobe-chat /32.8kStar/MIT/202406/ts/国内团队
@@ -587,6 +592,12 @@ modified: 2021-05-14T15:04:15.333Z
   - Chat with Hacker News using natural language. Built with OpenAI Functions and Vercel AI SDK.
 - https://github.com/rajeshdavidbabu/pdf-chat-ai-sdk /MIT/202403/ts
   - AI powered Next.js app to chat with your PDF files and get a streamed response using Vercel's AI SDK, Langchain and PineconeDB
+
+- https://github.com/slackapi/node-slack-sdk /MIT/202406/ts
+  - https://slack.dev/node-slack-sdk
+  - Slack Developer Kit for Node.js
+  - This SDK is a collection of single-purpose packages. The packages are aimed at making building Slack apps easy, performant, secure, and scalable.
+  - 
 
 - https://github.com/lucgagan/completions /MIT/202310/ts
   - https://ray.run/

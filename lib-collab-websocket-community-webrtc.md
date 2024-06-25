@@ -13,21 +13,39 @@ modified: 2023-12-12T08:45:31.670Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## [Custom event naming convention · Issue #1571 · socketio/socket.io](https://github.com/socketio/socket.io/issues/1571)
+- I have seen examples with 1) lower case and underscore and 2) camelcase, Altso, should I use present tense or past?
 
-- ## 
+- ## [Sharing websocket across browser tabs? - Stack Overflow](https://stackoverflow.com/questions/9554896/sharing-websocket-across-browser-tabs)
+- 
+- 
 
-- ## Blink:  Intent to Ship: WebSocketStream. Someone should do a benchmark comparing message throughput versus WebSocket.
+- [How does websockets deal with for two tabs of the same browser - Stack Overflow](https://stackoverflow.com/questions/23300615/how-does-websockets-deal-with-for-two-tabs-of-the-same-browser)
+- There's a separate websocket for each tab.
+  - You don't need to create a separate cookie per tab because the websocket itself already serves as the unique id for each tab.
+
+- [proper way to share a single WebSocket connection across multiple tabs - Stack Overflow](https://stackoverflow.com/questions/72081821/best-proper-way-to-share-a-single-websocket-connection-across-multiple-tabs)
+- Unfortunately is not a straightforward task. But because many browsers are limiting the number of connections to the same origin it is an issue I faced a few times.
+- Assuming you are forced to share the connection and other options are not feasible, these are the possibilities:
+  - SharedWorker (33.17% support). Allows you to share the connection as you already discovered.
+  - BroadcastChannel (91.23% support). Allows you to communicate between tabs.
+  - SessionStorage (97.25%). Allows you to communicate between tabs. This is a bit of a hack see but worked well for me.
+
+- 
+- 
+- 
+
+- ## 🧭 Blink: Intent to Ship: WebSocketStream. Someone should do a benchmark comparing message throughput versus WebSocket.
 - https://twitter.com/jarredsumner/status/1755136727415681407
   - If this becomes adopted by other browsers, it is inevitable that Bun and Node will end up supporting it eventually
 - isn't it already addressed by webtransport?
 - I’m a benchmark guy for Redis Enterpise, write benchmarks for CPUs, Fpgas, ASICS, Embedded platforms. Opposite of fake geek bench . Specify what exactly you would like to benchmark in a real life use case.
 
 - ## [websocket一般会用在什么实际的场合？](https://www.zhihu.com/question/269060103/answer/2399818045)
-1. websocket即时通信、社交订阅
-2. websocket多玩家游戏
-3. websocket协同编辑/编程
-4. websocket收集点击流数据
+1. 即时通信、社交订阅
+2. 多玩家游戏
+3. 编程
+4. 收集点击流数据
 5. 股票基金报价
 6. 体育实况更新
 7. 多媒体聊天
@@ -153,6 +171,34 @@ modified: 2023-12-12T08:45:31.670Z
 
 # discuss
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 🏹 [Deepstream 5.0: Resurrected using MIT license | Hacker News _201910](https://news.ycombinator.com/item?id=21371658)
+- Generally deepstream is an alternative to using firebase, socket.io, featherJS and meteor. However rather than putting the logic within the server you instead run them as microservices and allow deepstream to handle load-balancing for you.
+- The two main things deepstream offers are: 
+  - Events: pubsub mechanism
+  - Records: Records is events with persistence. They are more heavy weight objects that persist their content in a cache + db and across all connected devices without the user/developer having to actually do anything. The also support offline support if you want to be able to get/set data while offline.
+- It's a real-time pub/sub messaging system (competitive to NATS), with built in messaging patterns like request/response.
+  - Also supports persistence of data records (JSON docs) and syncing changes to those docs (competitive to Firebase, etc), backed by Redis.
+  - Works with different protocols (websocket, MQTT, HTTP) and has client libraries for popular languages.
+
+- The biggest pain point I've experienced with these pubsub services is how to negotiate client connections so that all the subscribers to a topic are directly connected to the same machine. 
+  - In other words, clients' messages do not have to ever be relayed at the networking level. 
+  - This means providing some reconnecting or connection-info data for the client, and it's why I think most of these frameworks fail to improve on home cooked solutions: you have to touch the message to help squeeze out efficiency.
+  - A non-IP based routing mechanism requires some kind of header/parsing/deserialization of the message being passed. In application level code this is quite slow, you have to query some kind of map synchronized about cluster nodes. This is especially shitty if message addresses are ephemeral, especially per RPC call (which is the default behaviour in most cluster-based RPC frameworks), because then your near cache of the cluster map is never populated. Alternatively you can just broadcast to everyone (skip the cluster map) but then why cluster?
+  - It would be great if we just had IPv6 adoption though. Then you could just uh, route. The DNS based routing in stuff like Kubernetes is close but not for external Internet facing clients. The whole point is to avoid a bastion host.
+- I totally agree. Having a single point of entry gives us some small benefits like a single connection/simplified deployments but it isn't efficient to have a provider connected on one node in a cluster and have to forward data to subscribers on another just because of how they were distributed by a load-balancer. Theres actually an action in the handshake protocol which allows a node in a cluster to redirect a connection to a different/more optimal node. It was used for multi-tenancy clusters previously. In theory you can run multiple isolated clusters (or individual nodes) and have multiple connections from the client, routed based on which subscription lives where. It's a pattern I have been talking about with a couple of users but it hasn't been required by anyone yet. It isn't as efficient as doing it on a network layer but it at least reduced intercluster traffic dramatically.
+- I used to be really concerned about this, but one day I sat down and did the math and realized that the worst case scenario is that I'd have no more than two times as many messages, which means this isn't a scalability issue: if a topic has N subscribers, at bare minimum you are going to have N+1 messages to send a given event (one to receive it into the cluster, and N to dispatch it to the subscribers); if everyone is connected to some random machine, then you need to take the incoming event and send it to the right internal machine that is storing that topic (which is one extra message) and then that machine will need to indirectly send the message to the connecting computers of the subscribers (which is one extra message per subscriber), so you end up with 2N+2 messages. The alternative, where users cluster themselves based on topic with their entry connections, is that these individual end users have to maintain a ton of separate connections for inbound messages for each of the topics they are interested in, which is often going to work out to be much worse for everyone involved.
+
+- 
+- 
+- 
+- 
+- 
+- 
 
 - ## After working with WebSockets for a while I'm wondering why devs don't use them more.
 - https://x.com/jamonholmgren/status/1798803384541302814
