@@ -199,6 +199,13 @@ modified: 2024-05-06T02:54:40.374Z
     - updateConfig
     - daoPaasObj.onMessage
 
+- 各视图组件都可以从全局状态中拿到socket状态 发送消息
+  - store.dao.channel().send('updateAiCodeInfo', {})
+  - store.dao.channel().send('syncOTUpdates', {})
+- 各视图组件都可以从全局状态中拿到socket状态 注册事件
+  - store.dao.channel().on('removeAiCodeInfo', cb)
+
+
 #### LazyEditor/CodeEditor
 
 ```JS

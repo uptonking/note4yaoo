@@ -159,10 +159,48 @@ modified: 2022-01-05T14:36:28.057Z
 - One thing I suggest most of the time: if someone use zustand + immer, my recommendation is to try valtio instead.
   - I suggest considering valtio if they haven't, for people who consider zustand with immer middleware. 
   - If people prefer the mutable state model, it's a built-in feature in valtio, whereas zustand is basically on the immutable state model. 
+# docs-zustand
+- Because React handles setState synchronously if it's called outside an event handler, updating the state outside an event handler will force react to update the components synchronously. 
+  - Therefore, there is a risk of encountering the zombie-child effect. 
+  - In order to fix this, the action needs to be wrapped in `unstable_batchedUpdates`.
+
+- [flux-inspired-practice](https://github.com/pmndrs/zustand/blob/main/docs/guides/flux-inspired-practice.md)
+- Single store
+  - If you have a large application, Zustand supports splitting the store into slices.
+- Use set / setState to update the store
+  - set (and setState) ensures the described update is correctly merged and listeners are appropriately notified. 
+- Another way to update the store could be through functions wrapping the state functions. These could also handle side-effects of actions. For example, with HTTP-calls.
+- Colocate store actions
+  - store actions can be added directly to the store
+- If you can't live without Redux-like reducers, you can define a `dispatch` function on the root level of the store
+
+
+- 
+- 
+- 
 # discuss-zustand
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 💥⚡️ [How to batch multiple store updates? ](https://github.com/pmndrs/zustand/discussions/2275)
+- For frequent updates, we shouldn't trigger React for each update. One technique is known as transient update.
+  - There might be another way, but we shouldn't use useStore directly in all such cases.
+
+- another idea would be batching updates outside of Zustand.
+
+- 💡 I would put those updates in a queue, save them in an object, within 60/120 seconds an agent would be responsible to check that object and set the data to the you’re using currently — that’s important so your whole UI don’t keep being updated.
+
+- ## [Best way to integrate a websocket? ](https://github.com/pmndrs/zustand/discussions/1651)
+  - I resulted in initialising the WebSocket connection within the store, then in the components dispatch a message which hits a reducer within the store that has reference to the web socket and then sends the message natively over web socket. 
+
+- ## [Sync datas between multiple tabs · pmndrs/zustand](https://github.com/pmndrs/zustand/discussions/1141)
+- Just searched for "zustand broadcast channel" and found Tom-Julux/shared-zustand.
+
+- [How to get updated data from localStorage / sync tabs? ](https://github.com/pmndrs/zustand/discussions/1614)
+  - I think `BroadcastChannel` is the right solution for syncing between tabs. If you want to refresh the store, you could use useState and put the result of createStore.
 
 - ## 🔡🎯 Want to read the entire code of Zustand v5-alpha? Here you go!
 - https://twitter.com/dai_shi/status/1748635607402967154

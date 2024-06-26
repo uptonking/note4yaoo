@@ -356,6 +356,9 @@ modified: 2024-05-06T02:52:41.789Z
 - CSDN InsCode
   - [InsCode - 让你的灵感立刻落地](https://inscode.csdn.net/)
 
+- [探索AI Agent：从大模型到智能应用的演进之路 - 掘金](https://juejin.cn/post/7377208894550736905)
+  - 各大厂的ide产品
+
 - 国内ide
   - deepin ide
 # pm-sharing

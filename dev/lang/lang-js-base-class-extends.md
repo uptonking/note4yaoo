@@ -15,13 +15,21 @@ modified: 2022-11-23T17:48:48.839Z
   - As such, unlike their private counterparts, **they participate in ~~prototype~~ inheritance**.
 # blogs
 
+## mixins
+
+- [TypeScript: Documentation - Mixins](https://www.typescriptlang.org/docs/handbook/mixins.html)
 # discuss
-
 - ## 
 
-- ## 
+- ## [the "Alternative Pattern" Mixin in TypeScript - Stack Overflow](https://stackoverflow.com/questions/67593721/using-the-alternative-pattern-mixin-in-typescript)
+- This pattern does not take property initialisation into account, i.e. it ignores the constructors of the mixins. This is why mixins should not have constructors at all, and ideally not use class syntax.
+  - To use this pattern, provide a mixin-specific initialisation method instead
 
-- ## 
+- ## 🆚 [what is an elegant mixin/composition syntax for ES6 classes? - Stack Overflow](https://stackoverflow.com/questions/56083157/what-is-an-elegant-mixin-composition-syntax-for-es6-classes)
+- As an alternative to using mixins you can use inheritance using `extends` to override methods on a class.
+  - The disadvantage of inheritance compared to mixins is you can only extend one class at a time, but you can use multiple mixins. So it depends on what your use case is for which one you use.
+
+- Mixins are generally used for "multiple inheritance", you can only inherit a single prototype using the extends keyword
 
 - ## Here's what I love about using classes for data modeling:
 - https://twitter.com/kettanaito/status/1736125001638482039

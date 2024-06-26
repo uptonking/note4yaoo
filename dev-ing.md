@@ -357,10 +357,11 @@ betterdiscordctl -i flatpak install
   - https://staging.agent.clacky.ai/demo
 
 - not-yet
-  - ide滚动条失败
+  - ~~ide滚动条失败~~
   - 删除未使用的 workbench2 组件失败，会导致样式混乱
-  - trpc请求过多的问题
+  - ~~trpc请求过多的问题~~
   - 每次打开cde都会重新import，要实现skip
+  - 如何复用idepaas-sdk的编辑器组件，一种思路是使用readonly版本
 
 ## 061
 
@@ -368,6 +369,19 @@ betterdiscordctl -i flatpak install
   - 
 - dev-to
   - 
+
+## 0626
+
+- state与socket的初始化逻辑
+  - state的set方法需要socket，不可以delay
+  - ✅ socket的初始化需要state的set方法，但可以delay
+  - > 结论: 先初始化socket，再初始化state，然后注册state更新事件到socket.on
+
+- dev-log
+  - cde的状态重构
+- dev-to
+  - 将部分现有状态提升到全局
+  - 时光机回放模式的状态在全局的存储
 
 ## 0625
 

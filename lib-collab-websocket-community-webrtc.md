@@ -174,7 +174,8 @@ modified: 2023-12-12T08:45:31.670Z
 
 - ## 
 
-- ## 
+- ## [Proper way of using React hooks + WebSockets - Stack Overflow](https://stackoverflow.com/questions/60152922/proper-way-of-using-react-hooks-websockets)
+- As you are only setting the web socket once, I think a better approach is to use a ref instead of a state
 
 - ## 🏹 [Deepstream 5.0: Resurrected using MIT license | Hacker News _201910](https://news.ycombinator.com/item?id=21371658)
 - Generally deepstream is an alternative to using firebase, socket.io, featherJS and meteor. However rather than putting the logic within the server you instead run them as microservices and allow deepstream to handle load-balancing for you.

@@ -26,7 +26,11 @@ modified: 2022-10-11T09:02:26.869Z
   - `["hello", "world"]` being the `JSON.stringify()`-ed version of the arguments array
   - a few additional bytes for each message, which can be further reduced by the usage of a custom parser
 
-- [Emit cheatsheet | Socket.IO](https://socket.io/docs/v4/emit-cheatsheet/)
+- [Emit cheatsheet | Socket. IO](https://socket.io/docs/v4/emit-cheatsheet/)
+
+- [How to use with React | Socket. IO](https://socket.io/how-to/use-with-react)
+  - We strongly advise against registering event listeners in your child components, because it ties the state of the UI with the time of reception of the events: if the component is not mounted, then some messages might be missed.
+  - you will need to properly handle the temporary disconnections, in order to provide a great experience to your users.
 # blogs
 - [Pushpin | Generic Realtime Intermediary Protocol](https://pushpin.org/docs/protocols/grip/)
   - GRIP makes it possible for a web service to delegate realtime push behavior to a proxy component

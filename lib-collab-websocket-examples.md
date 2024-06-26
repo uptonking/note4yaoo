@@ -55,6 +55,9 @@ modified: 2023-01-23T19:27:46.948Z
   - Handles reconnect logic
   - No more waiting for the WebSocket to open before messages can be sent. Pre-connection messages are queued up and sent on connection
   - Seamlessly works with server-sent-events and the EventSource API
+  - [Send/Emit to socketIO with useSocketIO ](https://github.com/robtaussig/react-use-websocket/issues/173)
+    - sendMessage(`42["chat_type",${JSON.stringify(payload)}]`);
+    - [Cannot JSON.parse received data when using socket.io ](https://github.com/robtaussig/react-use-websocket/issues/8)
   - [Blocks UI thread ](https://github.com/robtaussig/react-use-websocket/issues/234)
     - When someone sends a lot of events to the socket (~ 5-10 per second), it locks the main thread completely, until messages stop. Consider using webworkers.
     - the library is just calling setState whenever a message is received, which is necessary in order for your components to react to changes. I don’t think WebWorkers can help here as the the heavy lifting will still be performed on the main thread.
@@ -66,7 +69,7 @@ modified: 2023-01-23T19:27:46.948Z
   - [Possible to send Authorization header? ](https://github.com/robtaussig/react-use-websocket/issues/69)
     - My understanding is the JS implementation of WebSockets does not support additional headers -- see here for a discussion. That said, the library gives you access to the optional protocols param through options.protocols
 
-- https://github.com/itaylor/redux-socket.io /201810/js
+- https://github.com/itaylor/redux-socket.io /MIT/201810/js
   - An opinionated connector between socket.io and redux.
   - Socket.io client->server messages should be sent by dispatching actions to redux's store, where the action is the payload.
   - Socket.io server->client messages should be dispatched as actions when received.
