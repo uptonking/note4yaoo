@@ -430,7 +430,9 @@ modified: 2023-11-28T14:48:45.910Z
 
 - ## 
 
-- ## 
+- ## Introducing Notion Sites—the easiest way to make a website _202406
+- https://x.com/NotionHQ/status/1805619535330132425
+- Its $10 per month for plus plan and $10 per month for supporting one custom domain as an add on. So basically $20 per month for having custom domain on notion. charging monthly price for custom domain feels like charging per sms.
 
 - ## Notion 2.39: Getting back to the basics _202405
 - https://twitter.com/NotionHQ/status/1786157773673415061

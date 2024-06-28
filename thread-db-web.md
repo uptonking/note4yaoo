@@ -7,8 +7,18 @@ modified: 2022-02-19T10:25:22.934Z
 
 # thread-db-web
 
-# discuss
+# guide
 
+# discuss-db-saas-usable
+- ## 
+
+- ## 
+
+- ## Now that Planetscale Hobby is gone, what's a good knockabout database for a Next.js/Prisma project? 
+- https://x.com/mattgperry/status/1806018608591499403
+- @neondatabase , @supabase for postgres or @tursodatabase if you're fine with using SQLite
+
+# discuss
 - ## 
 
 - ## 

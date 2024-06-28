@@ -17,6 +17,32 @@ modified: 2023-10-27T06:54:20.487Z
   - For applications, most queries are static and the data is dynamic
 - What you really want is a database where a query is the same things as an index, is the same thing as a subscription... These are all the same underlying mechanic.
 
+- ## should database ids be numbers or strings or what
+- https://x.com/RoxCodes/status/1805296920648106381
+- i have several long threads about this over the past month
+  - most straightforward is to use incrementing integers
+  - these do not work well if you have optimistic updates since the client needs to be able to generate IDs
+  - one solution is to use an `id` and `external_id` column on every table where the external_id is a randomly generated string ID
+  - i tried this out and it turns out to create all kinds of complexity i'd rather avoid. so then you look into why you can't just use strings as IDs
+  - the tldr of that is use a sortable ID like ULID (my choice) or UUIDv7 - there's a lot of debate on how much a sortable ID vs a non sortable id (cuid2) matters but i finally found some good metrics on this and landed on sorted ID as a pk
+  - the worst part is that's what i had been doing all along before i looked deeper into this and confused myself
+- Are you actually storing these prefixes in the db or is that something that you prepend after fetching? Bc typically I use a binary column for uuid, and unless I’m missing something this would require a varchar or something
+  - You can even use binary prefixes. Salesforce does that with their IDs
+
+- Uuid7 or sortable uuids is the way to go.
+  - Yes, I had started looking into this a while back and definitely drawbacks for the earlier UUID versions depending on how your database is indexing the values.
+
+- If you're using postgres, you have a uuid datatype, which works great with uuidv7 for primary key. There's several pg extensions that can generate the uuidv7 as well.
+
+- As a data engineer and developer of 20+ years optimistic IDs might be the dumbest thing I have ever seen, sequences and transactions are better. 99% of use cases are fine with bigint as the ID column, distributed use some form of UUID as well as an easier ID
+
+- mongoDB’s objectId might be a good choice, then? (Includes timestamp and is also compact)
+  - ObjectID type that can be used in any DB that supports programable custom types.
+
+- 
+- 
+- 
+
 - ## 🆔️ GUID做主键的弊病：
 - https://twitter.com/geniusvczh/status/1772367461091795070
   - 1、guid生成是随机的离散的，主键通常会生成主键索引，为了优化搜索、插入、删除操作的效率，显然主键有序更好，这是其一；

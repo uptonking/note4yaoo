@@ -24,6 +24,15 @@ modified: 2021-05-10T04:06:02.843Z
 # examples
 - ## 
 
+- ## 
+
+- ## 
+
+- ## for those who are wondering how to create this effect, its basically a simple trick using `view transitions api` . 
+- https://x.com/rds_agi/status/1804864383136497938
+  - https://theme-toggle.rdsx.dev/
+  - https://github.com/rudrodip/theme-toggle-effect
+
 - ## 🔍 有人知道怎么做出类似下面这种"放大镜" 效果吗?
 - https://twitter.com/ivyliner/status/1767379407025689083
 - 有一个 Figma 插件，如果你用 Figma 的话

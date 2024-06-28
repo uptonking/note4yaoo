@@ -53,6 +53,19 @@ modified: 2024-01-06T15:37:08.031Z
 
 - ## 
 
+- ## 
+
+- ## For this meetup, we built this demo of importing the whole @loro_dev git repository into a single Loro document. 
+- https://x.com/zx_loro/status/1805095256461115623
+  - It contains 1300+ commits and 10M operations in CRDT history, and we can switch to any version in the history.
+  - Every switch will trigger the diff calculation from the start version to the target version. It's not optimized yet, so it's kind of slow. And it's still in memory, so it cannot hold an enormous repo.
+  - But it's a proof of concept that we may be able to build a better git for everyone and everything on top of CRDTs.
+  - It's for everyone because we can combine the async collab with the real-time collab and make it much easier for entry-level usage. It's for everything because it's now not limited to plain text.
+
+- 
+- 
+- 
+
 - ## [[LORO-300] Fractional index _202311](https://github.com/loro-dev/loro/issues/140)
 - 👷🏻202401: It's dropped. The fractional index suffers from interleaving problems. We will try building a movable list this season that can avoid this problem while remaining efficient. We hope to integrate it into tree as well.
   - The other reason we drop it is that the fractional index the solution can be implemented in the application code. It doesn't require special CRDT behaviors(LLW register is enough), so we can already use it with the current movable trees.
