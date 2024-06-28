@@ -161,7 +161,7 @@ modified: 2023-01-17T19:14:47.611Z
     - In CoCalc, the backend server is written in Javascript, so only one implementation of RTC is required.
     - The entire algorithmic approach and data structures used in JupyterLab's RTC implementation are completely different than what's used in CoCalc. There are significant pro's and con's to each approach.
 
-- https://github.com/colyseus/colyseus /MIT/202401/ts
+- https://github.com/colyseus/colyseus /5.6kStar/MIT/202406/ts
   - https://colyseus.io/
   - an Authoritative Multiplayer Framework for Node.js, with clients available for the Web, Unity3d, Defold, Haxe, and Cocos
   - The project focuses on providing synchronizable data structures for realtime and turn-based games, matchmaking, and ease of usage both on the server-side and client-side.
@@ -263,11 +263,6 @@ modified: 2023-01-17T19:14:47.611Z
   - Geckos.io offers real-time client/server communication over UDP using WebRTC and Node.js
   - People who have never build a multiplayer game, should probably use a library like socket.io instead, since there are way more examples/tutorial available.
   - Socket.io and geckos.io use a similar API. The switch from socket.io to geckos.io should be easy.
-
-- https://github.com/deepstreamIO/deepstream.io /MIT/202310/ts
-  - https://deepstreamio.github.io/
-  - open source server inspired by concepts behind financial trading technology. 
-  - It allows clients and backend services to sync data, send messages and make rpcs at very high speed and scale.
 # cursor
 - https://github.com/mskelton/cursed /202402/ts
   - Multiplayer live cursors

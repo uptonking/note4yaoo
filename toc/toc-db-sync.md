@@ -79,7 +79,8 @@ modified: 2022-11-25T15:41:47.534Z
   - Uses Foca to manage cluster membership using a SWIM protocol
   - Periodically synchronizes with a subset of other cluster nodes, to ensure consistency
 
-- https://github.com/drifting-in-space/driftdb /ts/rust
+- https://github.com/drifting-in-space/driftdb /MIT/202308/ts/rust/inactive
+  - https://github.com/jamsocket/driftdb
   - https://driftdb.com/
   - A real-time data backend for browser-based applications.
   - core Rust driftdb implementation.

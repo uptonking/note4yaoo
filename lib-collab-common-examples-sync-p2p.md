@@ -303,20 +303,6 @@ modified: 2023-01-17T19:13:01.845Z
   - Simple ExpressJS HTTP server that allows all clients to sync (read or update) a single JSON object. 
 # sync-state
 
-# websocket
-
-- https://github.com/soketi/soketi /AGPL3/202310/ts
-  - https://soketi.app/
-  - Next-gen, Pusher-compatible, open-source WebSockets server
-  - built on top of uWebSockets.js - a C application ported to Node.js
-  - soketi implements the Pusher Protocol v7. Therefore, any Pusher-maintained or compatible client can connect to it
-  - Soketi is capable to hold thousands of active connections with high traffic on less than 1 GB and 1 CPU in the cloud
-
-- https://github.com/Rolands-Laucis/Socio /MIT/202312/ts
-  - A WebSocket based realtime duplex Front-End and Back-End syncing API paradigm framework
-  - This lets you write SQL in your frontend code, that automagically refreshes on all clients when a resource is changed on any (optionally) connected DB. 
-  - Additionally, create any generic JS variables on your server to be realtime synced across all clients using "Server Props".
-  - Agnostic of framework, build tool, server lib and SQL database.
 # decentralized/p2p
 
 # more

@@ -59,6 +59,13 @@ modified: 2021-08-30T18:56:14.863Z
   - https://sqlectron.github.io/
   - lightweight SQL client desktop with cross database and platform support.
 
+- https://github.com/frectonz/sql-studio /MIT/202406/rust/ts
+  - https://sql-studio.frectonz.io/
+  - SQL Database Explorer [SQLite, libSQL, PostgreSQL, MySQL/MariaDB, DuckDB]
+  - Single binary, single command SQL database explorer. 
+  - Infinite scroll rows view.
+  - Tables page with each table's metadata, including the disk size being used by each table.
+
 - https://github.com/dblens/app /202202/ts
   - database client that helps you to explore database with automatic ER diagrams, visualise and analyse internal DB metrics such as index utilisation sequential scans, slow running queries, storage and many more.
 

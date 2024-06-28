@@ -104,6 +104,12 @@ modified: 2023-01-23T19:27:46.948Z
 
 - https://github.com/diy/intercom.js /201802/js
   - UNMAINTAINED: A client-side cross-window message broadcast library built on top of the HTML5 localStorage API.
+
+- https://github.com/Rolands-Laucis/Socio /MIT/202312/ts
+  - A WebSocket based realtime duplex Front-End and Back-End syncing API paradigm framework
+  - This lets you write SQL in your frontend code, that automagically refreshes on all clients when a resource is changed on any (optionally) connected DB. 
+  - Additionally, create any generic JS variables on your server to be realtime synced across all clients using "Server Props".
+  - Agnostic of framework, build tool, server lib and SQL database.
 # realtime
 - https://github.com/nodefluent/kafka-streams
   - equivalent to kafka-streams for nodejs
@@ -167,6 +173,30 @@ modified: 2023-01-23T19:27:46.948Z
     - More succinct: Event streams can be easily chained, filtered and combined using a declarative syntax (e.g. using async generators).
     - More manageable: No need to remember to unbind listeners with removeListener(...); just break out of the for-await-of loop to stop consuming
     - Less error-prone: Each event/RPC/message can be processed sequentially in the same order that they were sent without missing any data
+
+- https://github.com/colyseus/colyseus /5.6kStar/MIT/202406/ts
+  - https://colyseus.io/
+  - an Authoritative Multiplayer Framework for Node.js, with clients available for the Web, Unity3d, Defold, Haxe, and Cocos
+  - The project focuses on providing synchronizable data structures for realtime and turn-based games, matchmaking, and ease of usage both on the server-side and client-side.
+  - WebSocket-based communication
+  - Automatic state synchronization from server-to-client (delta compressed)
+
+- https://github.com/jamsocket/plane /MIT/202406/rust
+  - https://plane.dev/
+  - A distributed system for running WebSocket services at scale.
+  - 💡 heavily inspired by Figma’s mulitplayer infrastructure, which dynamically spawns a process for each active document.
+  - You can think of Plane as a distributed hashmap, but instead of storing data, it stores running processes.
+  - When you ask Plane for the process associated with a key (via an HTTP API), it either returns a URL to an existing process, or starts a new process and returns a URL to that.
+  - Plane will keep the process running for as long as there is an open connection (usually a WebSocket connection) to it. Once all connections to a process have been closed for some time threshold, Plane will shut down the process.
+  - Plane guarantees that only one process will be running for each key at any given time, allowing that process to act as an authoritative source of document state for as long as it is running.
+  - [Plane vs. Jamsocket – Plane](https://plane.dev/plane-vs-jamsocket)
+    - Jamsocket is a managed platform for session backends, built on Plane. Jamsocket is a proprietary commercial product, while Plane is MIT-licensed open source.
+    - Jamsocket’s goal is to be to Plane akin to what GitHub is to Git
+  - https://github.com/jamsocket/stateroom /MIT/202405/rust
+    - lightweight framework for building WebSocket-based application backends
+    - a minimalist framework for building lightweight, single-threaded services that send and receive messages through WebSockets.
+    - Stateroom has a modular architecture. 
+    - stateroom-server provides an Axum-based WebSocket server that runs a Stateroom service.
 # more
 - https://github.com/well-known-components/template-server
   - Template Node.js server using well-known-components library.

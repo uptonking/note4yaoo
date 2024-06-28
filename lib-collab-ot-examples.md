@@ -158,6 +158,12 @@ modified: 2022-10-02T20:51:30.444Z
   - This package is heavily based on firepad's OT operations, which were in turn based on ot.js. 
   - This package is a conversion of their masterful work into Typescript + ES6
 
+- https://github.com/fanout/editor /201912/js
+  - http://editor.fanoutapp.com/
+  - Collaborative text editor using operational transformations
+  - OT algorithms and code based on Tim Baumann's project. Client textarea uses CodeMirror.
+  - Server is a Django app. Updates are sent over Fanout Cloud or Pushpin.
+
 - https://github.com/abucraft/operational-transform
   - https://abucraft.github.io/operational-transform/
   - 效果和ot.js相同，但ts重写了，仅前端展示无需服务端
@@ -319,7 +325,6 @@ modified: 2022-10-02T20:51:30.444Z
   - a reference implementation for OT protocol described introduced in Google Wave and described in their documentation
 - https://github.com/Fleischers/OT_example /java
   - simple local console implementation of Operational Transformation
-
 
 - https://github.com/microsoft/FluidFramework/tree/main/experimental/dds/ot/ot /202404/ts
   - fluid-experimental/ot

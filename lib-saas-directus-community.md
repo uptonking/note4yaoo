@@ -213,6 +213,16 @@ modified: 2024-02-16T14:56:17.057Z
 
 - ✨ [Allow user-provided inputs in manually triggered flows _202206](https://github.com/directus/directus/discussions/14010)
   - 🚀 This has since been implemented as part of the manual flows trigger _202305
+# discuss-not-yet
+- ## 
+
+- ## 
+
+- ## [Websocket based live-preview _202306](https://github.com/directus/directus/discussions/18792)
+- Directus just got a "live-preview" and I am really happy about it, but it is not as live as it could be. Directus live-preview is only live in terms of when the save button is clicked. Other Headless-CMSs use Websockets instead. e.g. Storyblok. This way the live-preview could truly be live and every written letter would immediately show. So we can see how our updated page looks like before saving it.
+
+- FWIW, the live preview implementation in Payload 2 is quite clever and simple.
+  - The admin panel sends data to the preview endpoint iframe via window.postMessage triggered by field input events. The nicest part about this is that it allows you to preview the changes in realtime prior to saving the document. Also, the preview endpoint can load with initial date pulled from the database prior to establishing the inter window connection so you can share the preview url with saved content.
 # discuss
 - ## 
 

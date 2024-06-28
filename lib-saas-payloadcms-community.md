@@ -111,7 +111,12 @@ modified: 2023-12-15T17:05:49.576Z
 
 - ## 
 
-- ## 
+- ## [WebSockets · payloadcms/payload _202311](https://github.com/payloadcms/payload/discussions/4191)
+- PayloadCMS and FeathersJS are my go-to Node.js frameworks, the last for Real-time Apps. I'd love to see how this will be implemented and the API you'll provide to interact with events and subscriptions.
+
+- I'm having a good time using socket.io with payload. You can use Payloads local API in the socket.io handlers and the socket.io instance in Payload CMS hooks. With socket.io client libraries in your frontend, you can do whatever you want. With adapters, you can connect socket.io to your DB to scale this approach to multiple server instances, leveraging MongoDB change streams.
+
+- Next.js has no WebSocket support. There are a couple of tickets open and discussions. Next.js upgrades the HTTP connection itself and does not support a custom handling there.
 
 - ## 🤔🎯 Should Payload move to @nextjs from Express?_20231027
 - https://twitter.com/payloadcms/status/1717643250201219245

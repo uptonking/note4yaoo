@@ -9,10 +9,13 @@ modified: 2022-10-11T09:02:26.869Z
 
 # guide
 
-- feathers框架为实时类应用而设计
-
 - who is using #websocket
   - NodeBB
+  - feathers框架为实时类应用而设计
+  - more: 
+
+- tips
+  - usecase: realtime, collaborative, multiplayer
 # draft
 - 跨标签页共享ws连接，模拟共享的效果
   - 基于 BroadcastChannel
@@ -31,9 +34,12 @@ modified: 2022-10-11T09:02:26.869Z
 - [How to use with React | Socket. IO](https://socket.io/how-to/use-with-react)
   - We strongly advise against registering event listeners in your child components, because it ties the state of the UI with the time of reception of the events: if the component is not mounted, then some messages might be missed.
   - you will need to properly handle the temporary disconnections, in order to provide a great experience to your users.
+- [Emit cheatsheet | Socket.io](https://socket.io/docs/v4/emit-cheatsheet/)
 # blogs
 - [Pushpin | Generic Realtime Intermediary Protocol](https://pushpin.org/docs/protocols/grip/)
   - GRIP makes it possible for a web service to delegate realtime push behavior to a proxy component
+
+- [Scaling WebSocket in Go and beyond | Centrifugo _202011](https://centrifugal.dev/blog/2020/11/12/scaling-websocket)
 
 ## [My tips for using Socket.io _201803](https://www.ux-republic.com/en/my-tips-for-using-socket-io/)
 
