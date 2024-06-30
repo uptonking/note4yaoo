@@ -299,7 +299,7 @@ modified: 2022-08-18T16:57:15.296Z
   - Browser based notes.
   - 依赖solidjs
 
-- https://github.com/NoteHub-official/RetroFlux
+- https://github.com/NoteHub-official/RetroFlux /GPL/202201/ts/inactive
   - fully-customizable collaborative knowledge management app featuring note-taking, note-sharing, community, knowledge graph functionalities.
 
 - https://github.com/ShenQingchuan/HeteroDoc

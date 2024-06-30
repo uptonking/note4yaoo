@@ -122,7 +122,7 @@ modified: 2022-09-21T15:47:41.340Z
 - https://github.com/JonnysCode/y-solid
   - An experimental Solid protocol provider for Yjs
 
-- https://github.com/jupyter-server/pycrdt /MIT/202312/python/rust
+- https://github.com/jupyter-server/pycrdt /MIT/202406/python/rust
   - https://davidbrochart.github.io/pycrdt
   - https://jupyter-server.github.io/pycrdt
   - CRDTs based on Yrs

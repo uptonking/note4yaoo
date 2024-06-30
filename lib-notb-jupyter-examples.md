@@ -27,6 +27,17 @@ modified: 2024-06-30T03:20:21.444Z
     - BinderHub is built with Python, kubernetes, tornado, npm, webpack, and sphinx.
     - A JupyterHub server will host your repository's contents. We offer you a reusable link and badge to your live repository that you can easily share with others.
 
+- https://github.com/jupyter-server/jupyverse /BSD/202406/python
+  - https://jupyter-server.github.io/jupyverse
+  - A Jupyter server based on FastAPI
+  - A set of Asphalt components implementing a Jupyter server.
+  - 202207: Jupyverse and FPS generally embrace modern Python technologies such as ASGI, and an ecosystem built around uvicorn/Starlette/FastAPI, which we see as the future of web development. In the near future, Jupyverse may take a different path than JupyterHub for a multi-user scenario.
+    - JupyterHub is basically a server of servers. Each individually spawned Jupyter server is quite independent. We might scale Jupyverse differently, so that it remains the only server.
+  - [Jupyverse may take a different path than JupyterHub for a multi-user scenario? _202208](https://github.com/jupyter-server/jupyverse/issues/201)
+    - I mean that we will probably not scale Jupyverse by launching a server for each user, but by using other techniques such as replication.
+    - I have had some practice in this area, similar to Deepnote, where splitting the kernel, file system, and RTC into individual services.
+    - In this respect, jupyverse and FPS would bring a better architecture in a cloud environment (a true WEB IDE architecture), where users would be able to edit code directly without starting any compute resources 
+
 - https://github.com/jupyter/jupyterlab
   - JupyterLab: The next generation user interface for Project Jupyter
   - notebook、editor、console、terminal
@@ -164,6 +175,17 @@ modified: 2024-06-30T03:20:21.444Z
   - A system for assigning and grading notebooks
   - Instructor toolbar extension for Jupyter notebooks
   - Instructor "formgrader" extension for Jupyter notebooks
+# collab
+- https://github.com/jupyterlab/jupyter-collaboration /BSD/202406/python
+  - https://jupyterlab-realtime-collaboration.readthedocs.io/en/latest/
+  - A Jupyter Server Extension Providing Support for Y Documents
+  - JupyterLab Real-Time Collaboration is a Jupyter Server Extension and JupyterLab extensions providing support for Y documents and adding collaboration UI elements in JupyterLab.
+- https://github.com/jupyter-server/pycrdt /MIT/202406/python/rust
+  - https://davidbrochart.github.io/pycrdt
+  - https://jupyter-server.github.io/pycrdt
+  - CRDTs based on Yrs
+  - https://github.com/jupyter-server/pycrdt-websocket /python
+    - async WebSocket connector for pycrdt
 # utils
 - https://github.com/nteract/papermill /BSD/202404/python
   - https://papermill.readthedocs.io/en/latest/
@@ -176,8 +198,6 @@ modified: 2024-06-30T03:20:21.444Z
   - This began as a generalization of mkgilbert's batchspawner which in turn was inspired by Andrea Zonca's blog post where he explains his implementation for a spawner that uses SSH and Torque. 
   - https://github.com/NERSC/sshspawner
     - Spawn JupyterHub single-user servers with ssh
-
-
 
 - https://github.com/minrk/allthekernels /MIT/202208/python
   - A Jupyter kernel that multiplexes all the kernels you have installed.

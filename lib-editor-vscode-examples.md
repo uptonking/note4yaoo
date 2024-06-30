@@ -28,7 +28,7 @@ modified: 2023-01-21T18:58:29.846Z
     - 核心功能的代码都是可以在 Web/Electron 端复用的，因为 connection 模块屏蔽了大部分平台、底层通信协之间的差异, connection 模块基于 JSON-RPC 2.0 实现了一个 RPC 框架，将 Web 与 Electron 端通信过程通过 RPC 协议来封装起来
   - 🔀 支持使用 3-way merge editor 新交互来解决代码冲突
   - 提供了ai模块
-  - 协同编辑模块目前只支持 Browser + Node 的 Cloud IDE 场景
+  - 协同编辑模块目前只支持 Browser + Node 的 Cloud IDE 场景,当前的设计考虑的是客户端(Browser)/服务端(Node)一对一的架构
     - 不支持纯前端与 Electron 平台
     - 不支持 IDE 编辑器外的协同编辑功能（如终端）
     - 不支持 IDE 内跨文件的修改（如使用 vscode 插件进行变量重命名重构）
@@ -49,6 +49,8 @@ modified: 2023-01-21T18:58:29.846Z
     - EPL2.0 属于文件级别的Copyleft许可证，即 EPL-ed 代码具有Copyleft 属性的，其“衍生作品”的包围也比较明确。EPL2.0追求的是EPL-ed代码的Copyleft和代码开源，且 MIT和EPL2.0许可证兼容。OpenSumi 本身是开源的，同时并未改变EPL2.0组件的许可，项目符合MIT和EPL2.0各自要求。
   - [离线部署 | OpenSumi](https://opensumi.com/zh/docs/integrate/universal-integrate-case/offline-deployment)
     - OpenSumi天然支持离线部署场景，只需要将内部的一些网络资源如（icon、onig-wasm）等通过浏览器端的配置替换成内网的资源地址即可
+  - [[FEATURE] 关于多用户 · Issue #560 · opensumi/core](https://github.com/opensumi/core/issues/560)
+    - 202203: 我们有在做一些多人协作的探索，比如 sumi-collaboration 是基于 Yjs 的一个简单的多人协作模块，现在处于调研阶段，后面会逐步完善
   - [如何评价阿里 & 蚂蚁自研 IDE 研发框架 OpenSumi？ - 知乎](https://www.zhihu.com/question/519740662)
     - 高性能、高定制性的双端（Web 及 Electron）IDE 研发的框架
     - 设计之初就是要兼容 VS Code 插件生态，我们计划每三个月时间去完成一次 VS Code 插件 API 的适配工作
@@ -163,6 +165,19 @@ modified: 2023-01-21T18:58:29.846Z
   - This extension is designed to work with code-server and allows for real-time synchronization of work on projects. 
   - However, it's important to note that this synchronization only works when users are working on the same directory. 
   - The extension does not support synchronization between different directories or projects
+
+- https://github.com/kainzpat14/code-collab /202107/ts/inactive
+  - provides collaboration via Teletype and YJS to vscode and code-server.
+  - Only YJS-Websocket is supported, all other YJS communication methods are not supported
+  - Teletype support is limited, it can only share one editor at a time. I do not recommend using it
+  - https://github.com/kainzpat14/code-server-collab
+
+- https://github.com/PeerCodeProject/PeerCode /MIT/202402/ts
+  - Realtime Collaborative Code Editor extension for vscode
+  - Extension is based on CRDT`s concrete implementation YJS.
+  - For peer to peer connection is used webRTC
+
+
 # vscode-integrations
 - https://github.com/betatim/vscode-binder /python
   - VS Code on Binder, because sometimes you need a real editor.

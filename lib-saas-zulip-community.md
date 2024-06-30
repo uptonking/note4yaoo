@@ -14,6 +14,17 @@ modified: 2024-06-23T02:09:51.024Z
 
 - ## 
 
+- ## 
+
+- ## [Zulip Server 1.9: HipChat import and much more | Hacker News _201811](https://news.ycombinator.com/item?id=18400988)
+- How do you handle high availability for Zulip? Last I looked that was a problem for it.
+  - If you're self-hosting, our commercial support offerings will help you setup your servers in a way that achieves your uptime goals; because Zulip is so stable, usually folks just go with a hot spare (our enterprise customers generally only report downtime related to server upgrades, which is usually avoidable).
+
+- ## [Document story regarding horizontally scalability  _201509](https://github.com/zulip/zulip/issues/54)
+- Anyway to horizontally scale for both high availability and high performance purposes?
+- Yeah, we haven't written up documentation on scalability stuff. The short story is:
+  - If you're hosting multiple realms on the same server like we do with zulip.com, you can scale horizontally without any real code changes by adding additional frontends -- two frontends only need to talk to each other if they have users that exchange messages.
+
 - ## [how does zulip scale _202104](https://github.com/zulip/zulip/issues/18291)
   - I am looking for solutions to handle multiple concurrent connections, but django does not natively support websocket - the way it is built cannot support it anyway. 
   - As zulip is built with django, I am curious how you're handling multiple websocket connections per organization.

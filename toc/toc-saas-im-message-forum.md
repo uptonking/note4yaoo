@@ -421,6 +421,9 @@ modified: 2021-05-14T15:04:15.333Z
   - open-source team collaboration tool with unique topic-based threading that combines the best of email and chat to make remote work productive and delightful.
   - Zulip is the only modern team chat app that is designed for both live and asynchronous conversations.
   - The Zulip Botserver is a Python (Flask) server that implements Zulip's outgoing webhooks API
+  - https://github.com/zulip/docker-zulip
+    - This image is not designed to make it easy to run multiple copies of the zulip application server container (and you need to know a lot about Zulip to do this sort of thing successfully). 
+    - If you're interested in running a high-availability Zulip installation, your best bet is to get in touch with the Zulip support team at support@zulip.com.
 
 - https://github.com/mattermost/mattermost /AGPLv3/202402/go/ts
   - https://mattermost.com/
@@ -568,7 +571,6 @@ modified: 2021-05-14T15:04:15.333Z
 
 - https://github.com/justadudewhohacks/websocket-chat /201802/js
   - Websocket based group chat app built with socket.io and react.
-
 
 ## chat-sdk
 

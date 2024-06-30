@@ -12,7 +12,8 @@ modified: 2024-06-23T02:09:33.877Z
   - 100% open-source, not open-core
   - export支持html
     - import支持mattermost/RocketChat
-  - guest mode with login
+  - guest mode without login
+  - 支持多团队/org、多用户
   - unlimited message history search
   - unlimited file sharing and storage
   - Voice and video calls (1on1/group): Choose a call provider (Zoom, Jitsi, etc.)

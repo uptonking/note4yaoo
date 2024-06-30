@@ -19,6 +19,14 @@ modified: 2024-06-30T03:59:03.615Z
 - In addition to the notebook file format (.ipynb), JupyterLab also supports other file formats like markdown (.md), JavaScript (.js), JSON (.json), HTML (.html), CSS (.css), and more. This makes JupyterLab a more versatile tool for working with different types of files and projects.
 # blogs-collab
 
+## 📔 [How we made Jupyter Notebooks collaborative with Yjs _202106](https://blog.jupyter.org/how-we-made-jupyter-notebooks-collaborative-with-yjs-b8dff6a9d8af)
+
+- the first collaborative Jupyter Notebook implementation, Colaboratory (or Colab), was created by Google engineers. They rewrote the UI for Jupyter Notebooks and gave it a collaborative notebook model via Google’s Realtime API, which was deprecated in 2017. 
+- In 2013 William Stein launched CoCalc, a Jupyter notebook service with collaborative editing support right from the beginning. Like Colaboratory, CoCalc wrote a new UI for Jupyter Notebooks, while reusing other parts of the Jupyter architecture. They made different choices and implemented a custom solution for conflict resolution
+- In 2017, Chris Colbert started the ambitious endeavor to build high-performance CRDT data structures that can be used as an observable data model.
+- In 2019, Vidar Tonaas Fauske, Ian Rose, and Saul Shanabrook started work to integrate the Lumino CRDT into JupyterLab. Their work lived for a time in JupyterLab#6871 and has later been moved to a separate repository JupyterLab/rtc.
+- While the Lumino CRDT is pretty awesome, in 2020 Brian Granger created a Lumino CRDT performance benchmark that revealed critical performance and algorithm issues (such as the so-called interleaving anomoly). In the process, Brian discovered my CRDT implementation Yjs and the two of us began to discuss CRDT implementations and Yjs in particular.
+- After many discussions with Eric, we finally came up with a compromise that I’m now really excited about. Yjs and ModelDB only provide raw data structures to build collaborative applications. Our plan was to build a notebook model with an easy-to-use API to manipulate, observe, and synchronize changes on the notebook.
 # blogs-vendors
 
 ## [Overview of JupyterHub Ecosystem _202307](https://engineeringblog.yelp.com/2023/07/overview-of-jupyterhub-ecosystem.html)

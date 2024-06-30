@@ -13,7 +13,9 @@ modified: 2024-06-30T03:19:11.399Z
   - ?
 
 - cons
-  - ?
+  - jupyterhub的架构设计不支持ha，内存中共享了数据库相关状态
+    - jupyverse 的实现还不成熟
+  - 协作实现在单个server，而不是hub，架构问题多
 
 - features
   - ?

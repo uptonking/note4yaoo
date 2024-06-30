@@ -147,6 +147,26 @@ modified: 2021-05-25T09:40:55.797Z
   - https://jampyapplicationbuilder.com/
     - https://jampyapp.pythonanywhere.com/
     - https://northwind.pythonanywhere.com/
+# ha/high-availability
+- https://github.com/dashersw/cote /MIT/202406/js
+  - http://cote.js.org/
+  - A Node.js library for building zero-configuration microservices.
+  - cote lets you write zero-configuration microservices in Node.js without nginx, haproxy, redis, rabbitmq or anything else. 
+  - Zero-configuration: No IP addresses, no ports, no routing to configure
+  - Decentralized: No fixed parts, no "manager" nodes, no single point of failure
+  - Scalable: Horizontally scale to any number of machines
+  - Typically, in a microservices system, the application is broken into smaller chunks that communicate with each other.
+  - It replaces queue protocols and service registry software by clever use of IP broadcast/IP multicast systems. cote needs an environment that allows the use of IP broadcast or multicast, in order to scale beyond a single machine. 
+
+- https://github.com/ValentinBELYN/OnionHA /GPL/202009/python
+  - a simple way to add high availability to a cluster.
+  - Scalable: Onion HA can operate on a large number of nodes. Whether you have two nodes or ten nodes, Onion HA will work the same way.
+
+- https://github.com/caprover/caprover /202406/ts
+  - https://caprover.com/
+  - CapRover is an extremely easy to use app/database deployment & web server manager for your NodeJS, Python, PHP, ASP. NET, Ruby, MySQL, MongoDB, Postgres, WordPress (and etc...) applications!
+  - It's blazingly fast and very robust as it uses Docker, nginx, LetsEncrypt and NetData under the hood behind its simple-to-use interface
+  - Docker Swarm under the hood for containerization and clustering
 # more
 - https://github.com/nils-simons/spackoDB /202206/js/starter
   - Firestore Alternative

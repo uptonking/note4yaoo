@@ -39,6 +39,24 @@ modified: 2023-08-19T16:37:13.736Z
   - Visual Studio Code is a distribution of the Code - OSS repository with Microsoft specific customizations, including additional source code and extensions, released under a traditional Microsoft product license.
 # blogs-collab
 
+## [Common Use Cases - Visual Studio Live Share | Microsoft Learn](https://learn.microsoft.com/en-us/visualstudio/liveshare/reference/use-cases)
+
+Quick assistance
+Office Hours
+Pair Programming
+Mob Programming
+Coding Competitions / Hack-A-Thons
+School Group Projects
+Developer Streaming
+Prototyping / Project Inception
+Interactive Education
+Peer Mentoring / Onboarding
+Team Brown Bags
+Classroom Lectures
+Code Reviews
+Technical Interviews
+Working Remotely
+
 ## [Collaborative Editing with React Monaco Editor: Best Practices _202405](https://www.dhiwise.com/post/collaborative-editing-with-react-monaco-editor) 
 
 - 没有涉及协同编辑

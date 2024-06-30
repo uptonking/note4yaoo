@@ -233,6 +233,15 @@ modified: 2023-12-15T16:52:28.937Z
     - While Strapi does provide a permissions management interface for roles, Directus takes it to the next level by allowing extensive customization of access conditions and per-field access.
   - Directus’ Geospatial Advantage: PostGIS Support
   - Directus Flows
+# blogs-devops
+- [How to Deploy and Scale Strapi on a Kubernetes Cluster 1/2 _202302](https://strapi.io/blog/how-to-deploy-and-scale-strapi-on-a-kubernetes-cluster-1-2)
+  - [How to Deploy and Scale Strapi on a Kubernetes Cluster 2/2](https://strapi.io/blog/how-to-deploy-and-scale-strapi-on-a-kubernetes-cluster-2-2)
+  - https://github.com/chepeftw/strapi-k8s-blog-post
+  - We currently have our DB and app running with a single replica and nothing that provides high availability. 
+  - For the DB, it's highly recommended that, once again, a cloud provider solution is used or a HA DB self-hosted.
+  - An initial step for HA is and will always be: let's have more replicas of our application.
+  - we can create a Horizontal Pod Autoscaler (HPA). Basically, it's a K8s object that will create more replicas of our Pod based on a defined property such as CPU or memory. We will rely on the CPU, and it's important to highlight that the HPA uses a percentage of the equivalent of the requested resources.
+  - The HPA will use by default only basic metrics like CPU and memory. If you implement your own metrics, you might want to switch the autoscaling to use those metrics instead. To achieve this, the most recommended tool would be to rely on the KEDA controller. 
 # more
 - [Strapi vs Nest.js: A Tale of Simplicity and Flexibility in Back-end Development_202306](https://medium.com/@inni.chang95/strapi-vs-nest-js-a-tale-of-simplicity-and-flexibility-in-back-end-development-640f3a506289)
   - In conclusion, Strapi shines in its simplicity for straightforward use cases, while Nest.js offers a more comprehensive and flexible framework for developers comfortable with TypeScript. 

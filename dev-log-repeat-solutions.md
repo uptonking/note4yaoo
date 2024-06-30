@@ -140,6 +140,13 @@ modified: 2021-07-20T13:50:23.433Z
   - templates
   - es search-ui experience, algolia-docsearch/autocomplete
 
+- 多文件的app, 或多或少有点类似知识库
+  - 可以参考给普通数据库表添加crdt支持的场景
+
+- high-availability
+  - strapi, nocobase
+  - manual: zulip
+
 - byproduct-apps
   - live/reactive-notebook
     - cell-style/nonlinear; reproducible/computational; math

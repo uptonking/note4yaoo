@@ -607,6 +607,14 @@ modified: 2023-06-23T12:46:53.288Z
   - https://github.com/MyoniM/mirror-code-backend /202208/js
     - 基于express、socket.io
 
+- https://github.com/cpinitiative/ide /MPLv2/202406/ts/js
+  - https://ide.usaco.guide/
+  - A realtime collaborative IDE with code execution, intellisense, mobile support, and built-in USACO submissions.
+  - Designed primarily for Competitive Programming and USACO, with mobile support for coding on the go.
+  - 依赖@uiw/react-codemirror、y-codemirror.next、firebase、monaco-editor、next、
+  - https://github.com/cpinitiative/ide-yjs
+  - https://github.com/cpinitiative/ide-lsp
+
 - https://github.com/ekzhang/rushlight /MIT/202306/ts/inactive  
   - https://github.com/ekzhang/cm-collab /ts
   - ✏️ A tiny collaborative Markdown editor based on CodeMirror, communicating with a minimal server and database.
@@ -706,6 +714,12 @@ modified: 2023-06-23T12:46:53.288Z
   - CRDTs based on Yrs
   - https://github.com/jupyter-server/pycrdt-websocket /python
     - async WebSocket connector for pycrdt
+
+- https://github.com/TypeFox/open-collaboration-tools /MIT/202406/ts
+  - https://www.open-collab.tools/
+  - Open Collaboration Tools: live-sharing solution for Eclipse Theia, VS Code and other editors and IDEs
+  - A public instance of the collaboration server is available at open-collab.tools.
+  - This is how it works: one person starts a collaboration session as host and invites others to join. The IDE extension distributes the contents of the hostʼs workspace and highlights text selections and cursor positions of other participants. 
 
 ## diff
 
@@ -1534,8 +1548,3 @@ modified: 2023-06-23T12:46:53.288Z
   - A JavaScript client that speaks Replit's container protocol
   - You should probably familiarize yourself with the protocol before trying to use it. Crosis is just a client that helps you connect and communicate with the container using the protocol.
   - The central concept is a "channel" that you can send commands to and receive commands from. 
-
-
-
-
-

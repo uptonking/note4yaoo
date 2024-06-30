@@ -94,6 +94,18 @@ modified: 2021-05-14T15:06:46.615Z
   - Theia is a cloud & desktop IDE framework implemented in TypeScript.
   - Eclipse Theia is an extensible framework to develop full-fledged multi-language Cloud & Desktop IDE-like products with state-of-the-art web technologies.
   - Support VS Code Extension protocol
+  - [Support collaboration feature _202401](https://github.com/eclipse-theia/theia/pull/13309)
+    - Makes use of the newly designed open-collaboration-protocol (source code here) to enable collaboration across users on the same workspace. 
+    - All guests will work on the host workspace and all edits to a file will be shared across all users.
+  - [Collaboration mode _201809](https://github.com/eclipse-theia/theia/issues/2842)
+  - [Thoughts about multi-user support _201906](https://github.com/eclipse-theia/theia/issues/5573)
+    - Theia is designed under a single user scenario, that is back-end should run in a sandboxed environment like docker. 
+
+- https://github.com/TypeFox/open-collaboration-tools /MIT/202406/ts
+  - https://www.open-collab.tools/
+  - Open Collaboration Tools: live-sharing solution for Eclipse Theia, VS Code and other editors and IDEs
+  - A public instance of the collaboration server is available at open-collab.tools.
+  - This is how it works: one person starts a collaboration session as host and invites others to join. The IDE extension distributes the contents of the hostʼs workspace and highlights text selections and cursor positions of other participants. 
 
 - https://github.com/c9/core /NonCommercial/201802/js/archived
   - https://c9.github.io/core/
