@@ -79,6 +79,7 @@ modified: 2022-09-21T15:47:41.340Z
   - Operational Transformation Client-Server Branch using `@codemirror/collab` OT, based on Codemirror Collab Website Example for code editor
 
 - https://github.com/drifting-in-space/y-sweet /MIT/rust/ts
+  - https://github.com/jamsocket/y-sweet
   - https://y-sweet.dev/
   - A standalone yjs server with persistence to S3 or filesystem.
   - building on the excellent y-crdt library

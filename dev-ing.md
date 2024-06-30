@@ -372,6 +372,13 @@ betterdiscordctl -i flatpak install
 - dev-to
   - 
 
+## 0630
+
+- dev-log
+  - 重构cde-state，对接agent通信
+- dev-to
+  - 先mock时光机的编辑op，再对接agent的编辑
+
 ## 0628
 
 - [React Custom Hooks fetch data globally and share across components? - Stack Overflow](https://stackoverflow.com/questions/57602715/react-custom-hooks-fetch-data-globally-and-share-across-components)

@@ -233,6 +233,9 @@ git merge b
 # 将master分支合并到feature分支
 git merge master feature
 
+# 使用rebase而不是merge合并
+git rebase origin/main
+
 # count commits in a branch
 git rev-list --count main/master
 

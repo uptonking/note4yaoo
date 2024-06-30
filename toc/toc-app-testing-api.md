@@ -45,6 +45,10 @@ modified: 2023-02-08T10:25:14.173Z
   - a dx-first API development platform that helps developers design, develop, test, and document their APIs
   - multi-protocol testing capabilities with Rest, GraphQL, Websocket, and SocketIO APIs.
 
+- https://github.com/flawiddsouza/Restfox /MIT/202406/ts/vue
+  - https://restfox.dev/
+  - Offline-First Minimalistic HTTP & Socket Testing Client for the Web & Desktop
+
 - https://github.com/usebruno/bruno /MIT/202405/js/tauri
   - https://www.usebruno.com/
   - Opensource IDE For Exploring and Testing Api's (lightweight alternative to postman/insomnia)

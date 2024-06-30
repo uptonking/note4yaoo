@@ -35,4 +35,5 @@ modified: 2023-01-20T18:42:28.952Z
 - who is using #typeorm
   - grist
   - spacebar(discord-like)
+  - hedgedoc
 # dev

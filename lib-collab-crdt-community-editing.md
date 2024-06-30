@@ -81,6 +81,12 @@ modified: 2023-10-28T09:00:45.811Z
 
 - ## 
 
+- ## 
+
+- ## [Cola: A text CRDT for real-time collaborative editing | Hacker News _202309](https://news.ycombinator.com/item?id=37373796)
+
+- ## [Overleaf: An open-source online real-time collaborative LaTeX editor | Hacker News](https://news.ycombinator.com/item?id=40832930)
+
 - ## 🧮 CRDT: Text Buffer
 - https://news.ycombinator.com/item?id=40414435
 
