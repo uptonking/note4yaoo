@@ -280,6 +280,14 @@ modified: 2023-04-04T22:36:31.529Z
   - 支持in-memory/nedb/custom
   - https://www.npmjs.com/package/@abtnode/queue
     - A simple job queue built on top of nedb and fastq
+
+- https://github.com/lance-gg/lance /apache2/202405/ts
+  - https://lance-gg.github.io/
+  - Multiplayer game server based on Node. JS
+  - It provides an extendible Node. JS based server, on which game logic runs, as well as a client-side library which synchronizes the client's game state with the server game state. 
+  - In order to provide a smooth visual experience for each connected client, Lance implements efficient networking methods, position interpolation and extrapolation, user input coordination, shadow objects, physics and pseudo-physical movement, automatic handling of network spikes.
+  - Communication is packed and serialized into binary
+  - Replay saving
 # concurrency/async
 - https://github.com/sindresorhus/p-queue
   - Promise queue with concurrency control

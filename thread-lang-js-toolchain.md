@@ -64,4 +64,8 @@ modified: 2024-03-17T15:24:20.824Z
 
 - ## 
 
-- ## 
+- ## JavaScript compilers today are fixated on compiling individual modules. 
+- https://x.com/trueadm/status/1806470121604419969
+  - That is a sensible and deterministic property but really the true power of compilation is cross-module.
+  - You could even argue that there would be no need for something like RSC as a highly intelligent compiler could do all that work for you and remove the limitations by refactoring your code to make it work.
+  - The drawback is always going to be the debugging experience. The more the compiler does work that the developer doesn’t expect, the harder it is to reason about some bugs. This is solvable though, as has been shown in other languages.

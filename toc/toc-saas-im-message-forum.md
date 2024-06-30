@@ -588,6 +588,9 @@ modified: 2021-05-14T15:04:15.333Z
   - https://sdk.vercel.ai/docs
   - Build AI-powered applications with React, Svelte, Vue, and Solid
   - Vercel AI SDK abstracts away the differences between model providers, eliminates boilerplate code for building chatbots
+  - https://x.com/nicoalbanese10/status/1806680358093541401
+    - this is all you need to use chrome's built in ai model with the vercel ai sdk
+    - no api keys, no configuration, running locally in the browser
 - https://github.com/steven-tey/chathn
   - Chat with Hacker News using natural language. Built with OpenAI Functions and Vercel AI SDK.
 - https://github.com/rajeshdavidbabu/pdf-chat-ai-sdk /MIT/202403/ts

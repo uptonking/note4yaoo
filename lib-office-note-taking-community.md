@@ -14,7 +14,16 @@ modified: 2024-01-29T17:21:25.476Z
 
 - ## 
 
-- ## 
+- ## [Evernote to be acquired by Bending Spoons | Hacker News _202211](https://news.ycombinator.com/item?id=33623402)
+- I learned three things watching EN snatch defeat from the jaws of victory:
+  1) There is almost never a case for a total ground up rewrite of your core product. Just don’t do it.
+  2) Don’t abandon the users who made you successful in the first place. They’re the ones who advocate for you and get your foot in the door.
+  3) real time google docs style collaborative editing is table stakes for this software category. Build your V1 with it in mind. Otherwise you’ll have to do a rewrite later. See 1.
+- "Collaborative editing" is table stakes for a modern note editor because even in a single user scenario you will have the same user editing the same note from multiple devices with different levels of connectivity. The product needs a reputation that it will not lose its user's edits, nor will it make annoying branch-style merge conflicts.
+- Agreed on point 3 for modern editors in 2022, as real-time collaboration and collaborative editing are table stakes today if you want to compete. 
+  - We started with OT in mind for V1 of Taskade with the intention to make our editor collaborative, but it was still a bumpy road before we were able to iterate on the product and speed up our dev cycle, . It continues to be a challenge to support the various use cases and customers, as improvements for offline editing, cross-device syncing, and recovery never ends.
+
+- Google docs didn't exist when Evernote started. Their competitor was OneNote.
 # discuss
 - ## 
 

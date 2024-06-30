@@ -225,7 +225,7 @@ modified: 2021-05-25T09:41:29.066Z
   - NodeJS + MongoDB API for User Management, Authentication and Registration
   - [NodeJS + MongoDB - Simple API for Authentication, Registration and User Management | Jason Watmore's Blog](https://jasonwatmore.com/post/2018/06/14/nodejs-mongodb-simple-api-for-authentication-registration-and-user-management)
 # ide-like
-- https://github.com/labring/laf /ts
+- https://github.com/labring/laf /7kStar/apache2/202406/ts
   - https://laf.dev/
   - laf 是开源的云开发平台，提供云函数、云数据库、云存储等开箱即用的应用资源。
   - 让开发者专注于业务开发，无需折腾服务器，快速释放创意。

@@ -90,6 +90,16 @@ modified: 2023-04-16T10:02:58.738Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## chrome is bringing ai directly to your browser with `window.ai` ! it runs locally, works offline, & it's fast
+- https://x.com/nicoalbanese10/status/1806377270518391177
+  - it's compatible with @vercel AI SDK, so you can start building with it today
+  - try it out with our open-source @nextjs chatbot
+- Just use Page assistant from Ollama repository on chrome white Powerfull features
+
 - ## gpt 4估计小调了一些agent场景，最近一些本来就需要交互的问题上，它开始表现的更像一个agent。
 - https://x.com/SuJinYan123/status/1801839116189110590
   - 比如我让它写一个python读取csv然后用lru跑命中率，它没有直接给我代码，先问我数据文件路径，然后缓存大小。

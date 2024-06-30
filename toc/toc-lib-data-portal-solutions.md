@@ -107,7 +107,7 @@ modified: 2021-01-01T16:02:50.598Z
     - MySQL 8.x to store Metadata (Guinsoo is coming)
     - ElasticSearch/OpenElasticsearch 7.x to index Metadata and power
 
-- https://github.com/GeoNode/geonode
+- https://github.com/GeoNode/geonode /GPL/202405/python/js
   - GeoNode is an open source platform that facilitates the creation, sharing, and collaborative use of geospatial data.
 # more
 - https://github.com/feup-infolab/dendro /202006/js/inactive

@@ -172,6 +172,20 @@ modified: 2023-12-12T08:45:31.670Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Web Sockets are not efficient and hard to scale, change my view. : r/reactjs _202312](https://www.reddit.com/r/reactjs/comments/18ogc0o/web_sockets_are_not_efficient_and_hard_to_scale/)
+- Socket.io internally uses ws library as one of their transport options. socket.io provides a lot of options like retries, polling, disconnection detection, multiplexing, retry options etc etc lot of configurations which you may need in real applications sooner or later . You can also check by providing ws as first option as socket.io transports . Better check socket.io performance tuning guide.
+
+- I saw it mentioned in another comment, but definitely look into Server-Sent Events (SSE) using something like Event Source.
+
+- We use websocket for chats and notifications and we can dynamically scale up and down because backend is containerized and we are storing the socket session’s on redis
+  - Socket.io has documentation on how to scale the app you can follow that. Or just store the socket session when client join the app thats it
+
+- Web sockets just use TCP. It's pretty lightweight, you can have a metric shit-ton of active TCP connections with no issues.
+
 - ## [The WebSocket Handbook | Hacker News _202201](https://news.ycombinator.com/item?id=29893242)
 - We use WebSockets in two regards: handling live page updates via Phoenix Live View for users (eg: real time chat messages, viewer count, etc) and as a transport medium for our real time API. The former is very easy to handle because for the most part users are navigating around pages which can terminate the ws connection and creates a new one (though most of the times not). The advantages Live View provides us is not having to write duplicated logic in the client & server, and instead just push data to users and their browser automatically reflects the changes.
 

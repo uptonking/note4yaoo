@@ -14,7 +14,9 @@ modified: 2021-08-22T07:29:34.045Z
 
 - ## 
 
-- ## 
+- ## ✨ Did you know you can add section headers to the minimap of @code ? 
+- https://x.com/CSSWeekly/status/1806625178878619984
+  - Use `MARK:` in the comment, and the designation will be clearly visible in the minimap, which will help you quickly scan and navigate your files.
 
 - ## 🎨 Microsoft Word, redesigned
 - https://x.com/upintheozone/status/1791715466479903077

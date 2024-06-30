@@ -22,6 +22,28 @@ modified: 2023-02-08T07:20:48.475Z
   - https://jan.ai/
   - an open source alternative to ChatGPT that runs 100% offline on your computer
   - Nitro is a high-efficiency C++ inference engine for edge computing. It is lightweight and embeddable
+
+- https://github.com/vercel/ai /apache2/202406/ts
+  - https://sdk.vercel.ai/docs
+  - Build AI-powered applications with React, Svelte, Vue, and Solid
+  - Vercel AI SDK abstracts away the differences between model providers, eliminates boilerplate code for building chatbots
+  - https://x.com/nicoalbanese10/status/1806680358093541401
+    - this is all you need to use chrome's built in ai model with the vercel ai sdk
+    - no api keys, no configuration, running locally in the browser
+
+- https://github.com/Doriandarko/maestro /202406/python
+  - A framework for Claude Opus to intelligently orchestrate subagents.
+  - This Python script demonstrates an AI-assisted task breakdown and execution workflow using the Anthropic API. 
+  - It utilizes two AI models, Opus and Haiku, to break down an objective into sub-tasks, execute each sub-task, and refine the results into a cohesive final output.
+  - Run locally with LMStudio or Ollama
+  - Breaks down an objective into manageable sub-tasks using the Opus model
+  - Executes each sub-task using the Haiku model
+  - Refines the sub-task results into a final output using the Opus model
+  - Generates a detailed exchange log capturing the entire task breakdown and execution process
+  - Required Python packages: anthropic and rich
+  - https://x.com/tuturetom/status/1805823266671775875
+    - 基于 Claude 3.5 Sonnet 实现的「多 Agent 调度」框架
+    - 同时提供了 Python flask 应用支持 UI Demo 完成多 Agent 演示
 # LLM
 - https://github.com/songquanpeng/one-api /MIT/202404/go/js
   - https://openai.justsong.cn/

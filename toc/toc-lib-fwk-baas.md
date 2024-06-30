@@ -12,16 +12,21 @@ modified: 2021-05-25T09:40:55.797Z
 - 比较了parse、firebase、couchdb、kuzzle、remoteStorage、Hoodie
   - [How does Kinto compare to other solutions?](https://docs.kinto-storage.org/en/stable/faq.html)
 # firebase-like
-- supabase /41.1kStar/apache2/202211/ts
+- supabase /68.1kStar/apache2/202406/ts
   - https://github.com/supabase/supabase
   - https://supabase.com/
   - an open source Firebase alternative.
   - Hosted Postgres Database
-    - PostgREST is a web server that turns your PostgreSQL database directly into a RESTful API
+    - `PostgREST` is a web server that turns your PostgreSQL database directly into a RESTful API
   - Realtime subscriptions
-    - Realtime is an Elixir server that allows you to listen to PostgreSQL inserts, updates, and deletes using websockets. 
+    - Realtime is an `Elixir` server that allows you to listen to PostgreSQL inserts, updates, and deletes using websockets. 
+    - broadcasts the JSON over websockets to authorized clients.
   - Authentication and authorization
-  - Auto-generated APIs
+    - GoTrue is a JWT based API for managing users and issuing JWT tokens.
+  - Auto-generated APIs: rest, graphql
+  - File Storage
+    - Storage provides a RESTful interface for managing Files stored in S3, using Postgres to manage permissions.
+  - AI + Vector/Embeddings Toolkit
   - Dashboard
 
 - parse-server /20.5kStar/apache2/202401/js

@@ -16,6 +16,14 @@ modified: 2021-05-14T15:06:46.615Z
 - eclipse
 - geany
 - jedit
+
+- https://github.com/zed-industries/zed /GPL/202406/rust
+  - https://zed.dev/
+  - Zed is a high-performance, multiplayer code editor from the creators of Atom and Tree-sitter
+  - [Zed is now open source_20240124](https://zed.dev/blog/zed-is-now-open-source)
+    - GPL for the editor, AGPL for server-side components
+    - GPUI, the UI framework that powers Zed, is distributed under the Apache 2 
+
 - qt-creator
   - https://github.com/mervick/Qt-Creator-Darcula
 - hbuilder

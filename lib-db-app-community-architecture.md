@@ -194,7 +194,16 @@ modified: 2023-09-17T17:37:19.913Z
 
 - ## 
 
-- ## 
+- ## 🎞️ How Zoom supports 300 million video calls a day:
+- https://x.com/systemdesign42/status/1806551695331139635
+  - They use scalable video coding (SVC) to stream video
+  - SVC scales well because it sends only a single video stream
+  - They separate video stream processing from stream routing
+  - The client processes the video streams to reduce server load
+  - They send separate video streams from each participant to the client
+  - They do multimedia routing to send streams at low latency
+  - They set up the client to check the stream quality
+  - They use UDP to send video data
 
 - ## 根据我个人 10 几年的企业应用经验，总结出的企业信息化系统的设计规范描述方法论：
 - https://twitter.com/xqliu/status/1789127844435521880

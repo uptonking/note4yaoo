@@ -14,7 +14,10 @@ modified: 2023-10-06T16:26:57.557Z
 
 - ## 
 
-- ## 
+- ## io_uring是不是可以看成kernel和user space通过两个channel完成同步？
+- https://x.com/JXQNHZr1yUAj5Be/status/1807001570258845819
+- 可以，而且还可以用 provided buffer 做一个 spsc ringbuffer 用 atomic 同步
+- aio 是不是也是
 
 - ## Do you still use .env files in your #rustlang project?
 - https://x.com/5422m4n/status/1801362925141246118

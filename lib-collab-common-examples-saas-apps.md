@@ -16,7 +16,7 @@ modified: 2023-01-17T19:14:47.611Z
 - 协作方案参考
   - Liveblocks, synced-store, FluidFramework, gun
   - automerge (2017), yjs (2015), sharedb (2013)
-  - search-keywords: collaborative, multiplayer
+  - search-keywords: collaborative-workspace, multiplayer(game), realtime, socket-room, lowcode-socket
 # collab-platform
 - growi /1.1kStar/MIT/202301/ts/remark
   - https://github.com/weseek/growi
@@ -116,11 +116,12 @@ modified: 2023-01-17T19:14:47.611Z
     - By using y.js we are using CRDTs now.
   - [fork history](https://hedgedoc.org/history/): HedgeDoc is the community-driven fork of CodiMD
 
-- https://github.com/plankanban/planka /AGPLv3/js
+- https://github.com/plankanban/planka /AGPLv3/202406/js
   - https://plankanban.github.io/planka/
   - The realtime kanban board for workgroups built with React and Redux.
   - React, Redux, Redux-Saga, Redux-ORM, Semantic UI React, react-beautiful-dnd
   - Sails.js, Knex.js, PostgreSQL
+  - Single sign-on via OpenID Connect
 
 - https://github.com/MicroHealthLLC/mSuite /202404/ruby/vue
   - Real Time Collaboration Made Simple for concept maps, kanban, documents and spreadsheets.
@@ -137,7 +138,7 @@ modified: 2023-01-17T19:14:47.611Z
 - https://github.com/atharmohammad/Code-N-Collab /202110/js/inactive
   - a Collaborative Website for developers and competitive coders who likes to code and discuss about topics , problems or issues
 
-- https://github.com/sagemathinc/cocalc /1.1kStar/AGPL3+NonCommercial/202311/ts/python
+- https://github.com/sagemathinc/cocalc /1.1kStar/AGPLv3+NonCommercial/202311/ts/python
   - https://cocalc.com/
   - CoCalc is web-based software that enables collaboration in research, teaching, and scientific publishing.
   - It includes Jupyter Notebooks, Sage Worksheets, a LaTeX Editor and a Linux Terminal to help people work together in real time
@@ -167,6 +168,14 @@ modified: 2023-01-17T19:14:47.611Z
   - The project focuses on providing synchronizable data structures for realtime and turn-based games, matchmaking, and ease of usage both on the server-side and client-side.
   - WebSocket-based communication
   - Automatic state synchronization from server-to-client (delta compressed)
+
+- https://github.com/lance-gg/lance /apache2/202405/ts
+  - https://lance-gg.github.io/
+  - Multiplayer game server based on Node. JS
+  - It provides an extendible Node. JS based server, on which game logic runs, as well as a client-side library which synchronizes the client's game state with the server game state. 
+  - In order to provide a smooth visual experience for each connected client, Lance implements efficient networking methods, position interpolation and extrapolation, user input coordination, shadow objects, physics and pseudo-physical movement, automatic handling of network spikes.
+  - Communication is packed and serialized into binary
+  - Replay saving
 
 - https://github.com/clockworklabs/SpacetimeDB /3.4kStar/BSL(AGPLv3)/202401/rust/game
   - https://spacetimedb.com/

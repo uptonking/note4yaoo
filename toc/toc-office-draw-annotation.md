@@ -17,7 +17,6 @@ modified: 2023-11-03T17:43:01.518Z
   - The goal is to help developers of annotation tools create their applications without having to reinvent the wheel, while applying a standards-driven approach based on the W3C’s Web Annotation data model, in order to facilitate an ecosystem of interoperable annotation tools 
   - [Web Annotation Protocol Server](https://github.com/apache/incubator-annotator/issues/70)
 
-
 - https://github.com/rough-stuff/rough-notation /MIT/202010/ts
   - https://roughnotation.com/
   - Create and animate hand-drawn annotations on a web page
@@ -50,6 +49,11 @@ modified: 2023-11-03T17:43:01.518Z
   - made with asciinema, svg-term-cli, and svgembed
   - Gooseberry provides a command-line interface for Hypothesis (a tool to annotate the web) and lets you generate a knowledge-base wiki without you having to actually type your knowledge out.
   - Gooseberry combines the ease of annotation offered by Hypothesis, bulk tagging and organization support in the command line, and a customizable plaintext wiki with HandleBars templating.
+
+- https://github.com/UniversalDataTool/universal-data-tool /MIT/202205/js/inactive
+  - Collaborate & label any type of data, images, text, or documents, in an easy web interface or desktop app.
+  - a web/desktop app for editing and annotating images, text, audio, documents and to view and edit any data defined in the extensible `.udt.json/.udt.csv` standard.
+  - Usable on web or as Windows, Mac or Linux desktop application
 
 ## anno-server
 

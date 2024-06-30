@@ -28,7 +28,9 @@ modified: 2023-10-26T22:04:11.502Z
 
 - ## 
 
-- ## 
+- ## The story I hear repeatedly from database developers I look up to is that they weren't always database developers. 
+- https://x.com/eatonphil/status/1806497245849649637
+  - Almost always, they got their start in web development, and at some point started working for a database company on the database.
 
 - ## I think `io_uring` allows reimagining how the database IO can be redesigned.
 - https://twitter.com/sunbains/status/1764358289809371588

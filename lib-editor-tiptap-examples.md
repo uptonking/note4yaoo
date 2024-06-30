@@ -289,6 +289,7 @@ modified: 2023-02-05T19:03:27.730Z
     - RicherText.js v2.0.0-beta.1 is out 
     - It's not ActionText compatible, but the backend solution is very similar to ActionText so you'll feel at home.
     - If you need an ActionText compatible solution, look at Rhino Editor
+  - [Announcing Richer Text v2 _202406](https://www.richer-text.com/2024/06/28/announcing-version-two)
 
 - https://github.com/decidim/decidim
   - a participatory democracy framework, written in Ruby on Rails, originally developed for the Barcelona City government online and offline participation website

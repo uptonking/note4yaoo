@@ -17,7 +17,7 @@ modified: 2023-02-08T10:25:14.173Z
   - Install as a PWA on your device.
   - Offline support
   - WebSocket: Establish full-duplex communication channels over a single TCP connection.
-- https://github.com/EsperoTech/yaade /Kotlin
+- https://github.com/EsperoTech/yaade /1.5kStar/MIT/202406/ts/Kotlin
   - self-hosted, collaborative API development environment.
   - Even though popular solutions like Hoppscotch exist, their self-hosted app does not come with authentication and relies on Firebase for persistency. 
   - Yaade is developed from the ground up with self-hosting and security in mind.
