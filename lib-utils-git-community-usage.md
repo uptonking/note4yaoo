@@ -16,6 +16,8 @@ modified: 2024-05-27T09:12:06.925Z
 
 - ## 
 
+- ## 
+
 - ## Pinterest decreased clone times by 99% (40min -> 30 sec) with a one-line change.
 - https://x.com/ryanlpeterman/status/1801285133200482346
   - Pinterest's largest monorepo had more than 350k commits and was 20GB in size.
@@ -33,9 +35,51 @@ modified: 2024-05-27T09:12:06.925Z
 
 - ## 
 
-- ## 
+- ## 📝 [git rebase，看这一篇就够了 - 掘金](https://juejin.cn/post/6969101234338791432)
+- 先放上建议
+  - git merge：当需要保留详细的合并信息的时候建议使用，特别是需要将分支合并进入master分支时
+  - git rebase：当发现自己修改某个功能时，频繁进行了git commit提交时，发现其实过多的提交信息没有必要时使用，分支多，内容多时也可以考虑使用
+- 假设现在有基于远程分支“origin/master”，更新至本地最新“master”，创建一个叫“feature/mywork”的分支进行说明
+  - master和feature/mywork这两个分支各自"前进"了
+  - 你可以用pull命令把master分支上的修改拉下来并且和你的修改合并；结果看起来就像一个新的"合并的提交"(merge commit)
+- git rebase会把feature/mywork分支里的每个提交(commit)取消掉，并且把它们临时保存为补丁(patch)，然后把feature/mywork分支更新到最新的master分支，最后把保存的这些补丁应用到feature/mywork分支上
+  - 在rebase的过程中，也许会出现冲突(conflict)。在这种情况，Git会停止rebase并会让你去解决冲突；
+  - 在解决完冲突后，用git add命令去更新这些内容的索引(index)，然后，你无需执行 git commit，只要执行：`git rebase --continue` , 这样git会继续应用(apply)余下的补丁
 
-- ## 
+- 在任何时候，你可以终止rebase的行动，并且feature/mywork分支会回到rebase开始前的状态。 git rebase --abort
+  - 在命令行使用git rebase存在多个commit、多个冲突时需要我们多次解决同一个地方的冲突，然后执行git rebase --continue，反复，直到冲突解决为止，稍显麻烦，可以使用IDE辅助进行
+
+- 有过git rebase经验的同学都知道，多人协作并行开发时刚解决完一堆冲突后，松了一口气，push时又提示拒绝，什么情况？？？然后一查，用-f或者--force参数强制推送
+  - 推荐 --force-with-lease 参数，让我们可以更安全地进行强制推送
+
+- ## [git rebase 用法详解与工作原理 | Shall We Code?](https://waynerv.com/posts/git-rebase-intro/)
+
+- git rebase 命令的文档描述是 Reapply commits on top of another base tip
+  - rebase 的执行过程是首先找到这两个分支（即当前分支 Feature、 rebase 操作的目标基底分支 Master） 的最近共同祖先提交 A，然后对比当前分支相对于该祖先提交的历次提交（D 和 E），提取相应的修改并存为临时文件，然后将当前分支指向目标基底 Master 所指向的提交 C, 最后以此作为新的基端将之前另存为临时文件的修改依序应用。
+
+- 另使用 rebase 的常见场景是在推送到远程进行合并之前执行 rebase，一般这样做的目的是为了确保提交历史的整洁。
+  - 我们首先在自己的功能分支里进行开发，当开发完成时需要先将当前功能分支 rebase 到最新的主分支上，提前解决可能出现的冲突，然后再向远程提交修改
+
+- git pull 时也可以通过 rebase 来进行合并，这是因为 git pull 实际上等于 git fetch + git merge ，我们可以在第二步直接用 git rebase 替换 git merge来合并 fetch 取得的变更，作用同样是避免额外的 merge 提交以保持线性的提交历史。
+
+- 如果涉及到已经推送过的提交，需要强制推送才能将本地 rebase 后的提交推送到远程。因此绝对不要在一个公共分支（也就是说还有其他人基于这个分支进行开发）执行 rebase，否则其他人之后执行 git pull 会合并出一条令人困惑的本地提交历史，进一步推送回远程分支后又会将远程的提交历史打乱（详见Rebase and the golden rule explained），较严重的情况下可能会对你的人身安全带来风险。
+
+- [5.1 代码合并：Merge、Rebase 的选择 · geeeeeeeeek/git-recipes Wiki](https://github.com/geeeeeeeeek/git-recipes/wiki/5.1-%E4%BB%A3%E7%A0%81%E5%90%88%E5%B9%B6%EF%BC%9AMerge%E3%80%81Rebase-%E7%9A%84%E9%80%89%E6%8B%A9)
+
+- ## 🤔 [When should I use git pull --rebase? - Stack Overflow](https://stackoverflow.com/questions/2472254/when-should-i-use-git-pull-rebase)
+- pull = fetch + merge
+  - pull --rebase = fetch + rebase
+- I think you should use git pull --rebase when collaborating with others on the same branch. 
+
+- [Difference between git pull and git pull --rebase - Stack Overflow](https://stackoverflow.com/questions/18930527/difference-between-git-pull-and-git-pull-rebase)
+  - git pull = git fetch + git merge   against tracking upstream branch
+  - git pull --rebase = git fetch + git rebase   against tracking upstream branch
+  - 注意默认的base分支
+
+- ## [Duplicate commits after rebase have been merged into the develop branch - Stack Overflow](https://stackoverflow.com/questions/40551486/duplicate-commits-after-rebase-have-been-merged-into-the-develop-branch)
+- "Copy commits" is just what git rebase does. It copies some commits, then shuffles the branch pointers around so as to "forget" or "abandon" the original commits. 
+- You will encounter this problem whenever you copy commits that you or someone else made, and both you and the "someone else" (perhaps the "other you") are also still using the originals.
+  - Hence the standard advice is to rebase only private (unpublished) commits, since you know who is using them—it's just you of course—and you can check with yourself and make sure you're not using them
 
 - ## interactive rebase
 - https://x.com/b0rk/status/1801944634936926362

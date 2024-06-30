@@ -33,6 +33,10 @@ modified: 2024-05-06T02:54:40.374Z
   - ~~研发目标对开发产品都不清晰~~
 # more
 
+## proj-coding-ai
+
+- agent初始化失败时，不影响页面上其他业务的正常使用
+
 ## proj-idepaas-sdk
 
 - resources
@@ -204,7 +208,6 @@ modified: 2024-05-06T02:54:40.374Z
   - store.dao.channel().send('syncOTUpdates', {})
 - 各视图组件都可以从全局状态中拿到socket状态 注册事件
   - store.dao.channel().on('removeAiCodeInfo', cb)
-
 
 #### LazyEditor/CodeEditor
 

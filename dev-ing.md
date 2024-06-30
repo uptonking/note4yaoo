@@ -355,6 +355,7 @@ betterdiscordctl -i flatpak install
   - 处理floating的滚动条
 - ai-integration
   - https://staging.agent.clacky.ai/demo
+  - wss://staging.agent.clacky.ai/socket.io/? EIO=4&transport=websocket
 
 - not-yet
   - ~~ide滚动条失败~~
@@ -362,6 +363,7 @@ betterdiscordctl -i flatpak install
   - ~~trpc请求过多的问题~~
   - 每次打开cde都会重新import，要实现skip
   - 如何复用idepaas-sdk的编辑器组件，一种思路是使用readonly版本
+  - clacky read_file TODO.md
 
 ## 061
 
@@ -369,6 +371,17 @@ betterdiscordctl -i flatpak install
   - 
 - dev-to
   - 
+
+## 0628
+
+- [React Custom Hooks fetch data globally and share across components? - Stack Overflow](https://stackoverflow.com/questions/57602715/react-custom-hooks-fetch-data-globally-and-share-across-components)
+  - Whenever you use a custom hook, there will be separate instances of the hook within your App and they won't share the data unless you are using context API within them
+
+- dev-log
+  - cde state的 get/set/socket通信 的架构及代码实现
+  - 优化了事件注册的设计
+- dev-to
+  - 新增api: 获取回放所需的operations，获取变更文件列表，fileChangeLogs的变更列表无法区别修改删除
 
 ## 0627
 
@@ -397,10 +410,6 @@ betterdiscordctl -i flatpak install
 - 不必盯着暂时的热股，多年的涨势和趋势更有参考性
 - trading和invest不同
   - 开奶茶店的收益也是有的
-
-- 
-- 
-- 
 
 ## 0626
 
