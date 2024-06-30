@@ -1,28 +1,13 @@
 ---
-title: devops-docker
-tags: [devops, docker]
-created: 2023-02-09T19:18:57.376Z
-modified: 2023-02-09T19:19:11.265Z
+title: devops-docker-community
+tags: [comunity, docker, k8s]
+created: 2024-06-30T11:17:15.672Z
+modified: 2024-06-30T11:17:28.971Z
 ---
 
-# devops-docker
+# devops-docker-community
 
 # guide
-
-- resources
-  - [Portainer architecture](https://docs.portainer.io/start/architecture)
-# cli
-
-```shell
-# 显示正在运行的img，加上 -a 显示所有img
-docker ps
-docker container ls
-
-# 禁止docker自动启动
-docker update --restart=no containerId
-
-docker stop containerId
-```
 
 # discuss-stars
 - ## 
@@ -47,18 +32,19 @@ docker stop containerId
 
 - ## 🆚️ [虚拟化软件Docker、Wine、Qemu、KVM有什么区别？ - 知乎](https://www.zhihu.com/question/540942002)
 - 你把模拟和虚拟混淆掉，OS级别和软件级别也混淆了，当然傻傻分不清了。
-- Docker不存在模拟，也不存在虚拟。
+- 💡 Docker不存在模拟，也不存在虚拟。
   - 它是隔离工具，需要运行特定的image，就是你想运行的软件大集合。不同image帮你隔离开互相不可见。 
   - 这一切让你误以为是OS级别，**其实是软件级别**。
-- **Wine也是软件级别的模拟**，只模拟windows，让Linux也能运行win程序，
+- 💡 **Wine也是软件级别的模拟**，只模拟windows，让Linux也能运行win程序，
   - 这个和微软提供WSL提供windows上模拟Linux道理是一样的，只是正好相反。
-- KVM是虚拟硬件的，非常底层。但是它是内核的一部分，所以强绑Linux平台。
+- 💡 KVM是虚拟硬件的，非常底层。但是它是内核的一部分，所以强绑Linux平台。
   - Qemu在中层配合KVM使用。上层的客户OS可以完全不知道自己在哪，是谁。
 - **KVM和Qemu都是用在OS级别的模拟或者虚拟**。他们都支持。 到底是哪个，决定在于你怎么使用他们。
   - 你可以单独使用Qemu进行OS模拟。这个时候就无所谓底层是什么操作系统了。但是实现不了完全虚拟化。
-- Linux系列，kvm负责cpu虚拟化+内存虚拟化，实现了cpu和内存的虚拟化，但kvm不能模拟其他设备；qemu是模拟IO设备（网卡，磁盘），kvm加上qemu之后就能实现真正意义上服务器虚拟化。因为用到了上面两个东西，所以一般都称之为qemu-kvm。
-  - libvirt则是调用kvm虚拟化技术的接口用于管理的，用libvirt管理方便，直接用qemu-kvm的接口太繁琐。
-  - 对应Windows的，大概就是Hyper-V，还有一个就是开源的VirtualBox，比较轻量；另外一个独立发展的就是VMWare ESXi。
+- 💡 Linux系列，kvm负责cpu虚拟化+内存虚拟化，实现了cpu和内存的虚拟化，但kvm不能模拟其他设备；
+  - qemu是模拟IO设备（网卡，磁盘），kvm加上qemu之后就能实现真正意义上服务器虚拟化。因为用到了上面两个东西，所以一般都称之为qemu-kvm。
+- libvirt则是调用kvm虚拟化技术的接口用于管理的，用libvirt管理方便，直接用qemu-kvm的接口太繁琐。
+- 对应Windows的，大概就是Hyper-V，还有一个就是开源的VirtualBox，比较轻量；另外一个独立发展的就是VMWare ESXi。
 - wine和wsl1差别还挺大的，wsl是自己搞了套和windows系统调用平级的linux系统调用，wine是加了个api中间层，用的系统调用还是linux自己的。
 
 - 👉🏻 准确来说，qemu是模拟器，换句话说qemu模拟的环境里不依赖硬件平台。
@@ -77,7 +63,7 @@ docker stop containerId
   - Wine是一款用于在Linux上运行Windows程序的运行时，既不提供虚拟化也不提供容器化（除非你使用包含容器功能的第三方wine发行版）。
 - KVM是Linux的一个内核模块，提供内核级的虚拟化支持。
 - Qemu是一款虚拟机软件。在Linux上通常和KVM配合使用。
-# discuss-container-dev
+# discuss-container
 - ## 
 
 - ## 发现同节点的两个容器之间的吞吐量只有跨节点的 30%，
@@ -86,35 +72,34 @@ docker stop containerId
   - 试了下调大 udp_mem 吞吐量上升了不少，不过profile瓶颈还是在这块，应该是buffer多大最终都被占满了。估计是同主机通信数据包进了接收队列就等另一边去拿了，另一侧处理不过来buf就满了，跨主机直接扔出去buf就不会满了
 - 在uds dgram也碰到过类似的情况 多个客户端通过uds dgram往服务端写数据 当recv buf满的时候客户端会加到sock waitq上, 这个过程会拿锁 因为conetless 没有建连 都在一个sock上导致竞争 后来就改成了stream
 
-# discuss-k8s
+# discuss-gui-manager
 - ## 
 
 - ## 
 
 - ## 
 
-- ## K8s的kubelet默认的maxPods是110个，不知道这样设计的缘由是什么
-- https://twitter.com/stephenzhang233/status/1773648671940149460
-- 早期版本 kubelet 有个本地的 kube API burst 和 qps 5 还是10的限制，这也会导致节点pod 太多，同步状态都会卡住。这也是为了减小apiserver压力， 一个节点qps5，kube qps 1000只能支撑 200个节点。而最初kube设计可能是几百个节点，～10000pod的数量级。才会有这些限制。
-- 不希望集群太大了，规模太大了的话会各种组件都要魔改
+- ## 
 
-- ## Google 当时的Borg 是没做网络虚拟化的，服务启动后前分配随机端口，启动后注册端口。这些都是在SDK里实现的。
-- https://twitter.com/9hills/status/1730829030239117766
-  - 这套方案社区根本接受不了。上下游全都要对接服务发现，否则你端口号都拿不到！至于负载均衡直接在SDK中实现。
-  - 不是说Google藏着内部基建不愿意开源，而是内部基建别人根本就用不起来。
-  - 所以说当年K8s 竟然能仅依靠现有的条件糊出一层虚拟网络加LB，大家都觉得真厉害。 当然现在都有各种方案了，以VxLAN 为主。
+- ## [OrbStack 1.0 is here! Fast, light, easy way to run Docker containers and Linux | Hacker News _202309](https://news.ycombinator.com/item?id=37599549)
+- I recently installed docker, podman, Colima, and Orbstack. Orbstack was the only one that overwrote the docker socket instead of connecting to the docker socket. The containerization on my Mac is locked into using Orbstack because no other container engine can bind to that, now overridden, socket.
+  - you can actually use `docker context` to choose which system you want to use for all of your tools. That docker socket you're referencing is just for the default context if you never chose anything
 
-- ## k8s的黑点不在于那套实现 实现都能改，无非多花几个人月。
-- https://twitter.com/ayanamist/status/1729942162249543996
-  - 在于那套API，不管用go用java，甚至从零用C艹把apiserver重写一遍，你为了保证其它人用起来像个k8s，就得保留那套渣到爆炸的API
-  - 没有精细的权限控制，workload+pod的设计导致防御面放在pod维度就要接受workload controller的ddos，而放workload维度就要穷举各种workload，哪天有人新弄了个workload就又要爆炸。
+- orbstack provides a docker engine and sets the socket to point at that. It's a complete system, it's not "just a gui for an existing docker instance".
+  - You can use Docker contexts to run OrbStack and Colima side-by-side
 
+- It is not open source like Lima.
+  - The goal is that OrbStack is just a lot nicer to use. Better performance, lower resource usage, and many DX features (several of which are covered) that go together to create a delightful experience.
+  - Orbstack even comes with working ipv6 out of the box unlike Docker Desktop for Mac which STILL doesnt have support for ipv6
+  - You're paying a premium because it's designed specifically for MacOS systems. Docker desktop is terrible on Mac, but Orbstack is awesome for this group of users.
 # discuss
 - ## 
 
 - ## 
 
-- ## 
+- ## [macos - Docker command not found when running on Mac - Stack Overflow](https://stackoverflow.com/questions/64009138/docker-command-not-found-when-running-on-mac)
+- Inside Docker desktop, go to Settings > Advanced Settings
+  - I changed it from User to System. It resolved the issue for me.
 
 - ## 如果不用docker咋给mac/linux/win的用户统一开发环境啊?
 - https://twitter.com/hylarucoder/status/1775365292459499625

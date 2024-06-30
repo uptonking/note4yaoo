@@ -114,7 +114,7 @@ modified: 2020-12-09T09:30:24.694Z
   - a web-based spreadsheet application with full integration of the Python programming language.
   - 依赖Flask、golang、plotly、jquery
 
-- panel /2.5kStar/BSD/202301/python
+- panel /2.5kStar/BSD/202406/python
   - https://github.com/holoviz/panel
   - https://panel.holoviz.org/
   - the most flexible data app framework for Python

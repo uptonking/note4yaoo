@@ -225,13 +225,6 @@ modified: 2024-01-04T01:28:58.097Z
 - Telegram now is more akin to Discord and Twitter with bots, channels and public groups. It's been some time Telegram has moved from personal chatting app as WhatsApp.
   - The problem is just that Telegram still advertises itself, and people expect it to be a messaging app.
 
-- ## [Zulip 4.0: Threaded open source team chat | Hacker News_202105](https://news.ycombinator.com/item?id=27149123)
-- I was skeptical about Zulip when I first tried it. What is it supposed to be? A chat? A forum? Why is the UI so ugly?
-  - But after using it a while I now really dislike Slack et al, both in professional teams and for open source communities.
-  - Zulip can give you the best of both worlds. It's a regular chat. But the threading model also encourages long-form, more forum or email like discussions.
-  - Threads are easily discoverable and it's trivial to catch up on all the relevant discussions that you missed, while skipping everything that doesn't concern you.
-  - The only downside is the very subpar UX when compared to Discord or even Slack.
-
 - ## [Gitter is open source | Hacker News_201707](https://news.ycombinator.com/item?id=14694283)
 - Gitter is a great idea in theory. In practice it's just been a place for my questions to go unanswered.
 

@@ -16,7 +16,8 @@ modified: 2023-01-17T19:14:47.611Z
 - 协作方案参考
   - Liveblocks, synced-store, FluidFramework, gun
   - automerge (2017), yjs (2015), sharedb (2013)
-  - search-keywords: collaborative-workspace, multiplayer(game), realtime, socket-room, lowcode-socket
+  - usecase: 实时场景案例，如 聊天/游戏
+  - search-keywords: collaborative-workspace, multiplayer(game), realtime, socket-room, chat, lowcode-socket
 # collab-platform
 - growi /1.1kStar/MIT/202301/ts/remark
   - https://github.com/weseek/growi

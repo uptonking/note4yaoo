@@ -19,6 +19,7 @@ modified: 2024-06-23T02:09:33.877Z
   - client-apps: mobile, pc, terminal
 
 - cons
+  - widget服务端相关功能未提供plugin api，需要fork代码手动修改
   - ui seems outdated
 
 - features

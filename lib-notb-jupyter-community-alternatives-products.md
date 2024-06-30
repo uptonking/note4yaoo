@@ -9,6 +9,14 @@ modified: 2024-06-30T03:32:45.893Z
 
 # guide
 
+
+# pm-jupyter
+
+- [Deepnote: Analytics and data science notebook for teams.](https://deepnote.com/)
+
+
+- [DataLab](https://www.datacamp.com/datalab)
+  - an AI-enabled data notebook to allow anyone to go from data to insight regardless of technical skill. 
 # discuss-stars
 - ## 
 
@@ -16,7 +24,18 @@ modified: 2024-06-30T03:32:45.893Z
 
 - ## 
 
-- ## 
+- ## [What is the difference between Jupyter Notebook and JupyterLab? - Stack Overflow](https://stackoverflow.com/questions/50982686/what-is-the-difference-between-jupyter-notebook-and-jupyterlab)
+- At this time (mid 2019), with JupyterLab 1.0 release, as a user, I think we should adopt JupyterLab for daily use
+  - JupyterLab will eventually replace the classic Jupyter Notebook
+  - in the old days, there is just one Jupyter Notebook, and now with JupyterLab (and in the future), Notebook is just one of the core applications in JupyterLab (along with others like code Console, command-line Terminal, and a Text Editor).
+
+- Update regarding Jupyter Notebook (Aug 2023)
+  - Several posts have mentioned that JupyterLab will eventually replace Jupyter Notebook (for good reason, Project Jupyter told us so). 
+  - However, this is no longer quite the case. 
+  - Jupyter Notebook v7 is the next fully supported version of Jupyter Notebook. It is based on RetroLab (formerly JupyterLab classic), which means it shares the same internals as Jupyter Lab, but aims to preserve the classic Jupyter Notebook experience.
+  - Notebook v7 will continue to provide the document-centric experience preferred by many users, where each individual notebook opens in a separate browser tab and the visible tools and menus are focused on the open document. 
+- Highlighted features in Notebook v7: 
+  - debugger, real time collaboration, table of contents rendering, theming and dark mode, internationalization, accessibility improvements, support for many JupyterLab extensions, and compact view on mobile devices
 
 - ## vote: if you do exploratory data analysis or build machine learning models, what tool do you reach for first?
   - local, Jupyter notebook

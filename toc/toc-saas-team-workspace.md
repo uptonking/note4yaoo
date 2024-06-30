@@ -12,7 +12,8 @@ modified: 2023-02-07T17:38:05.336Z
 
 # guide
 - tips-team
-  - 与team结合紧密的是chat、project
+  - team结合紧密的是chat、project
+  - 实时场景案例，如 聊天/游戏
 
 - kanban
   - 看板的ui状态和样式很容易实现

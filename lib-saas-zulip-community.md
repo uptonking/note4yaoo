@@ -14,7 +14,11 @@ modified: 2024-06-23T02:09:51.024Z
 
 - ## 
 
-- ## 
+- ## [how does zulip scale _202104](https://github.com/zulip/zulip/issues/18291)
+  - I am looking for solutions to handle multiple concurrent connections, but django does not natively support websocket - the way it is built cannot support it anyway. 
+  - As zulip is built with django, I am curious how you're handling multiple websocket connections per organization.
+
+- [Performance and scalability — Zulip 9.0-dev+git documentation](https://zulip.readthedocs.io/en/latest/subsystems/performance.html)
 # discuss
 - ## 
 
@@ -47,6 +51,16 @@ modified: 2024-06-23T02:09:51.024Z
 
 - Zulip is 100% open source. In open core products, those specific features just don't exist at all in the open source version. For example, Mattermost requires the proprietary Mattermost Professional at $10/user/month if you want to use SSO, LDAP sync, user groups, read receipts, etc.
   - If you compare Zulip's pricing options to Mattermost's, our offering is substantially more generous. It would be even if we went open core and moved a few dozen features of Zulip to a proprietary version. But we're not going to do that: we really do care about being an 100% open source project.
+
+- Maintaining an open TCP/IP or even UDP/IP network socket to receive incoming notification messages requires sending a packet back and forth every so often to confirm the socket is live and keep it open, even while the socket is idle and there are no notifications.
+  - You can technically open a socket without doing this, and this does work on parts of the internet. It often works between devices on your LAN. But many modern networks have unreliable connectivity, handovers between base stations (i.e. mobile or wifi), often one or more layers of NAT and/or firewalls, and more. 
+  - 👀 The only generally reliable solution to get real-time inbound notifications to a device, is for the device to open an outbound socket and the protocol to send a packet occasioally in each direction. The packets confirm liveness to the receiving endpoint, as well as telling other parts of the network the socket is still live.
+  - When your device hasn't received a confirmation after a configurable timeout, it's time to open a new socket from the device, because the original socket may have stopped working.
+  - That's three technical reasons to have a single, centrally managed notification service per device.
+
+- 
+- 
+- 
 
 - ## [Why Zulip will not get on the blockchain bandwagon | Hacker News _202111](https://news.ycombinator.com/item?id=29205346)
 - the ONE and ONLY thing a public blockchain is useful for is censorship-resistant payments.
@@ -177,6 +191,12 @@ modified: 2024-06-23T02:09:51.024Z
   - It's also not very high-value to optimize; that database write is 10-20% of the total time to process sending a message to everyone in a large open community like chat.zulip.org (with 18K total users).
 
 - Zulip uses standard HTTPS encryption for traffic and Argon2 for passwords.
+
+- I was skeptical about Zulip when I first tried it. What is it supposed to be? A chat? A forum? Why is the UI so ugly?
+  - But after using it a while I now really dislike Slack et al, both in professional teams and for open source communities.
+  - Zulip can give you the best of both worlds. It's a regular chat. But the threading model also encourages long-form, more forum or email like discussions.
+  - Threads are easily discoverable and it's trivial to catch up on all the relevant discussions that you missed, while skipping everything that doesn't concern you.
+  - The only downside is the very subpar UX when compared to Discord or even Slack.
 
 - ## 🚀 [Dropbox has open-sourced Zulip | Hacker News _201509](https://news.ycombinator.com/item?id=10279961)
 - We've used IRC and Jabber, looked at Slack and Hipchat and Skype and Lync, and somehow keep coming back to Zulip. It lets us have real, ongoing, and substantive conversations, with a large number of participants, without being overwhelmed.

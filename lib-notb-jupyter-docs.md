@@ -13,7 +13,11 @@ modified: 2024-06-30T03:27:25.387Z
   - Project Jupyter exists to develop open-source software, open-standards, and services for interactive computing across dozens of programming languages.
 
 - [The Jupyter Notebook](https://jupyter-notebook.readthedocs.io/en/stable/notebook.html)
-# docs
+# docs-jupyterlab
+- [Jupyter and the future of IPython — IPython](https://ipython.org/)
+  - IPython 3.x was the last monolithic release of IPython, containing the notebook server, qtconsole, etc. 
+  - As of IPython 4.0, the language-agnostic parts of the project: the notebook format, message protocol, qtconsole, notebook web application, etc. have moved to new projects under the name Jupyter. 
+  - IPython itself is focused on interactive Python, part of which is providing a Python kernel for Jupyter.
 
 ## [Jupyter Notebook](https://jupyter.org/)
 
@@ -304,3 +308,52 @@ modified: 2024-06-30T03:27:25.387Z
 - [Extending the Notebook — Jupyter Notebook 7.1.0](https://jupyter-notebook.readthedocs.io/en/stable/extending/index.html)
   - ⚠️ Please note that the extension system for Notebook 7 is radically different from the one used in Notebook 6.5.x and earlier.
   - With Notebook 7 being developed on top of JupyterLab and Jupyter Server, the frontend extension system is now based on the same extension system used by JupyterLab.
+# docs-jupyterhub
+
+- 
+- 
+- 
+- 
+
+## [Institutional FAQ — JupyterHub documentation](https://jupyterhub.readthedocs.io/en/stable/faq/institutional-faq.html)
+
+- the core JupyterHub application recently reached 1.0 status, and is considered stable and performant for most institutions
+- JupyterHub has been used at-scale for large pools of users, as well as complex and high-performance computing
+
+- For interactive computing sessions, JupyterHub controls computational resources via a spawner. 
+  - Spawners define how a new user session is created, and are customized for particular kinds of infrastructure.
+
+- JupyterHub works well at both a small scale (e.g., a single VM or machine) as well as a high scale (e.g., a scalable Kubernetes cluster).
+  - The scalability of JupyterHub largely depends on the infrastructure on which it is deployed.
+
+- For JupyterHubs that are deployed in a containerized environment (e.g., Kubernetes), it is possible to configure the JupyterHub to be fairly resistant to failures in the system.
+
+- Jupyter is a polyglot project, and there are over 40 community-provided kernels for a variety of languages (the most common being Python, Julia, and R).
+
+## 🐳 [Zero to JupyterHub with Kubernetes ](https://z2jh.jupyter.org/en/stable/)
+
+- 
+- 
+- 
+- 
+
+- JupyterHub services (not to be confused with Kubernetes Service objects) are processes that interact with the JupyterHub API. nbgrader and culling idle Notebooks are examples of production services
+  - Services can be run externally from the Hub, meaning they are started and stopped independently of the Hub and must know about things like their Hub authentication token on their own. 
+  - Alternatively, a service can be Hub-managed, where the Hub starts and stops the process and passes key information to the service via environment variables.
+
+- [The JupyterHub Architecture ](https://z2jh.jupyter.org/en/stable/administrator/architecture.html)
+  - Major releases of Z2JH may include a major release of JupyterHub that requires an upgrade of the database schema. 
+  - If you are using the default database provider (SQLite), then the required db upgrades will be performed automatically when you do a helm upgrade. 
+  - A backup of the old database is automatically created on the hub volume.
+
+- [FAQ ](https://z2jh.jupyter.org/en/stable/administrator/troubleshooting.html)
+- I thought I had deleted my cloud resources, but they still show up. Why?
+  - You probably deleted the specific nodes, but not the Kubernetes cluster that was controlling those nodes. 
+  - Kubernetes is designed to make sure that a specific set of resources is available at all times. 
+  - This means that if you only delete the nodes, but not the Kubernetes instance, then it will detect the loss of computers and will create two new nodes to compensate
+
+- 
+- 
+- 
+
+# more

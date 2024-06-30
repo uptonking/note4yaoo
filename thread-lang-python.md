@@ -17,6 +17,19 @@ modified: 2024-02-14T12:35:31.547Z
 - ## 
 
 - ## 
+# discuss-web-fwk
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Which Python Web Framework to Choose for 2023: Django, Flask, FastAPI or Tornado? | by PrimerPy | Medium _202302](https://primerpy.medium.com/which-python-web-framework-to-choose-for-2023-django-flask-fastapi-or-tornado-9d05860adfe3)
+- If you’re building a traditional, monolithic web application with a relational database, Django might be the best choice.
+- If you’re building a small, simple API, Flask might be a good option.
+- FastAPI is a relatively new framework that’s designed for building high-performance APIs. It’s based on Starlette for the web parts, and Pydantic for the data parts. It is a great option if you want to build fast and modern APIs.
+- Tornado is a mature, non-blocking web framework that’s well suited to building real-time applications, such as chat applications and online games.
+
 # discuss
 - ## 
 
