@@ -572,6 +572,14 @@ modified: 2021-05-14T15:04:15.333Z
 - https://github.com/justadudewhohacks/websocket-chat /201802/js
   - Websocket based group chat app built with socket.io and react.
 
+- https://github.com/featherscloud/chat /MIT/202406/ts
+  - https://featherscloud.github.io/chat
+  - A local-first chat application with user login
+  - A local-first chat application built with different frameworks.
+  - Works offline
+  - Does not need a server, Can be deployed like any static website
+  - 依赖 @featherscloud/auth、@automerge/automerge-repo
+
 ## chat-sdk
 
 - https://github.com/lobehub/lobe-chat /32.8kStar/MIT/202406/ts/国内团队

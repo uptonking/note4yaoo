@@ -29,6 +29,10 @@ modified: 2023-12-15T16:52:36.718Z
 
 - 🔒 plugin uses JWTs to authenticate users
 
+- [most frequently asked questions on the Strapi website](https://strapi.io/blog/strapi-support-most-frequently-asked-questions-on-the-website)
+  - Strapi is a product made of: a Node.js application, a database, and a React admin UI. As long as these three components can scale, you shouldn't be concerned by Strapi's performances.
+  - Strapi doesn’t support multi-tenancy yet. a workaround is possible
+
 - 
 - 
 - 
@@ -186,7 +190,6 @@ modified: 2023-12-15T16:52:36.718Z
   - Only the Upload and Email plugins are currently designed to work with providers.
 
 - A provider can be configured to be private to ensure asset URLs will be signed for secure access.
-
 # server
 - The request's context can also be accessed from anywhere in the code with the `strapi.requestContext` function with v4.3.9+.
   - You should only use this inside of functions that will be called in the context of an HTTP request.
@@ -216,7 +219,6 @@ modified: 2023-12-15T16:52:36.718Z
 - 
 - 
 - 
-
 
 # content-manager
 - Content Manager is a core plugin of Strapi. 

@@ -35,6 +35,33 @@ modified: 2022-10-11T09:02:26.869Z
   - We strongly advise against registering event listeners in your child components, because it ties the state of the UI with the time of reception of the events: if the component is not mounted, then some messages might be missed.
   - you will need to properly handle the temporary disconnections, in order to provide a great experience to your users.
 - [Emit cheatsheet | Socket.io](https://socket.io/docs/v4/emit-cheatsheet/)
+# blogs-socket-ha/scalable
+
+## [How to scale WebSocket – horizontal scaling with WebSocket _202307](https://tsh.io/blog/how-to-scale-websocket/)
+
+- The horizontal scalability approach allows us to scale almost infinitely. Nowadays it’s even possible to have dynamic scaling – instances are being added and removed depending on a current load
+  - On the other hand, it requires a little bit more configuration, since you need at least one additional piece – load balancer, something responsible for request distribution to a specific instance – and for some systems we need to introduce additional services, for example messaging. 
+
+- Horizontal scaling with WebSocket Issue #1: State
+- the load balancer redirects traffic to the available server if a given server goes down. Each time a new WebSocket server shows up, the load balancer is there to begin even traffic distribution.
+- HAProxy is an example of a load balancer. All we need is to provide a simple configuration.
+  - The frontend will be public (this is the address used for communication with our backends).
+  - By default, HAProxy is using a round-robin strategy – each request is forwarded to the next backend on the list and then we iterate from the start.
+- Most REST APIs are stateless. It means that nothing related to a single user making a request is saved on an instance itself. The thing is, it is not the same case with WebSockets.
+- Each socket connection is bound to a specific instance, so we need to make sure that all the requests from specific users are forwarded to a particular backend.
+- The solution: sticky sessions(sticky connection)
+  - Thankfully, we are using HAProxy, so the only thing that needs to be done is some configuration tweaks
+- First of all, we’ve changed the balancing strategy. Instead of using round-robin, we decided to go with leastconn
+  - The second change is to sign every request from a single user with a cookie. It will contain the name of the backend to be used.
+  - After that, the only thing that is left is to tell which backend should be used for a given cookie value.
+
+- Horizontal scaling with WebSocket Issue #2: Broadcasting
+- The WebSocket Server knows only about clients connected to this specific instance. This means we’re sending a message from the same server only to a set of connected clients, not all of them
+- The solution: Pub/Sub
+- The easiest option is to introduce communication between different instances. For example, all of them could be subscribed to a specific channel and handle upcoming messages.
+- This is what we call publish-subscriber or pub/sub. There are many ready-to-go solutions, like Redis, Kafka, or Nats.
+- instead of sending messages to the WebSocket client right now, we’re publishing them on a channel and then handle them separately
+  - By doing this, we’re sure that the message is published to every instance and then sent to users.
 # blogs
 - [Pushpin | Generic Realtime Intermediary Protocol](https://pushpin.org/docs/protocols/grip/)
   - GRIP makes it possible for a web service to delegate realtime push behavior to a proxy component

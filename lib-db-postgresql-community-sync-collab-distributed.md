@@ -42,6 +42,28 @@ modified: 2023-10-28T17:52:51.915Z
 - It’s pretty great once it’s going. One issue I’ve had is for large tables, the initial copy never finishes. We’ve worked around this using the RDS snapshot technique described by Instacart
 
 - Useful for usecases like data warehousing, provenance, integration, time travel debugging and so on. However beware of those replication slots ... running out of space.
+# discuss-ha
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Why PostgreSQL High Availability Matters and How to Achieve It | Hacker News _202306](https://news.ycombinator.com/item?id=36328148)
+- It’s amazing that this isn’t a solved problem, but we have all of this crazy language model stuff.
+  - Unfortunately Spanner isn’t open source. Yugabyte and Citus are close but have annoying issues. Cockroach isn’t 100% compatible (and has its own issues) and things like FoundationDB which are truly HA and comparable to Spanner in terms of consistency and fault tolerance are not easily plugged into Postgres as the underlying storage engine since sadly it’s only a key value store.
+- Citus is not close to Spanner. No global secondary indexes, no cross-shard ACID (the commit status is eventually consistent). No auto-resharding. Yugabyte and Cockroach have a spanner-like architecture, but different open-source model and postgres-compatibility
+
+- one of the solutions which made it pretty simple for us to run postgresql in a ha environment (mostly in k8s, but works standalone as well) is zalandos patroni: https://github.com/zalando/patroni it's really solid and worked for us for a few years already. (it also comes with a haproxy config to have a single leader connection)
+- How does patroni can do some self healing after primary db gets down and then up again? Or is manual intervention required? How does it look?
+  - manual intervention is not required. Patroni will just use a Standby as the new master. If the old master will be alive again it will be started as a backup. Of course there might be dataloss if it was used with async replication.
+  - Patroni has great docs for this here
+
+- I just implemented master with read replica with the bitnami postgres-repmgr image. It's not perfect, but it works and running my own instances in aws instead of rds is going to save me close to 80% when i also add in purchasing a savings plan. By setting this up I've learned more about postgres than i ever ever wanted too. lol
+
+- What's the self-hosted Postgres HA story these days?
+  - pg_auto_failover makes it an absolute breeze. I cannot understand how it's not mentioned in the article.
+- On self-hosted you can use the same as what cloud vendors are doing. Patroni or pg_auto_failover to manage single-primary + replicas. Maybe Neon to run an Aurora-like. CitusData... Azure did a lot around to get elasticity. Not easy to do the same. YugabyteDB on Kubernetes can be a cloud-native self-hosted solution
 # discuss
 - ## 
 

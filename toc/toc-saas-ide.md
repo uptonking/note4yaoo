@@ -37,11 +37,6 @@ modified: 2021-05-14T15:06:46.615Z
   - An "Online IDE" has the features mentioned above but runs in a web browser instead of installing as a native application.
   - AWS Cloud9, codenvy, Theia
 
-- eclipse-theia-ide
-  - https://theia-ide
-  - VSCode和Theia用的都是Monaco editor
-  - VSCode虽然也是开源的但是他对第三方的支持不是很好
-
 - https://github.com/gitpod-io/gitpod /AGPLv3/202405/go/java/ts/不支持私有部署
   - https://www.gitpod.io/
   - The developer platform for on-demand cloud development environments to create software faster and more securely.
@@ -148,6 +143,16 @@ modified: 2021-05-14T15:06:46.615Z
   - We are calling this version of Eclipse Theia for Che: Che-Theia.
   - So, Che-Theia is the default Che editor provided with developer workspaces created in Eclipse Che 7
   - Che-Theia contains additional extensions and plugins which have been added based on the nature of Eclipse Che workspaces and to provide the best IDE experience of Theia within Che.
+  - [Live collaboration capabilities · eclipse-che/che _201801](https://github.com/eclipse-che/che/issues/8286)
+    - We starting a new approach to avoid running webrtc in node: running the whole teletype client in a webview. I hope it will work
+  - [Pair programming using VS Code | Eclipse Che Blog _202204](https://che.eclipseprojects.io/2022/04/01/@florent.benoit-pair-programming-using-vscode-editor.html)
+    - One of Eclipse Che most requested feature is to be able to do pair programming.
+    - This blog post describes how it is possible to achieve that by using CodeTogether, a third-party VS Code extension
+  - [Sunset Che Theia as a built-in Che editor · Issue · eclipse-che/che _202210](https://github.com/eclipse-che/che/issues/21771)
+    - Based on a survey among our (Red Hat) customers, we have started supporting VS Code OSS and JetBrains IDEs as built-in editors too.
+    - [已合并pr: Switch to VS Code as the default Eclipse Che editor _202211](https://github.com/eclipse-che/che-operator/pull/1551)
+  - https://github.com/che-incubator/vscode-teletype-guest /202008/ts/archived
+    - vscode ext to be used as guest with Atom Teletype
 - https://github.com/codenvy/codenvy /EPL/201802/java/inactive
   - Cloud workspaces for development teams. One-click Docker environments to create workspaces with production runtimes. 
   - Codenvy is customized using Eclipse Che including stacks, templates, commands, IDE extensions, server-side extensions plugins, assemblies, RESTful APIs, and editors.

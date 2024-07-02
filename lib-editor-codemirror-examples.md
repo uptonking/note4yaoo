@@ -916,7 +916,7 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/thetrevorharmon/zephyr-demo /202402/ts
   - https://zephyr-demo.netlify.app/
-  - CodeMirror 6 🤝 ANTLR
+  - CodeMirror 6 + ANTLR
   - [Connecting ANTLR to CodeMirror 6: Building a Language Server _202402](https://thetrevorharmon.com/blog/connecting-antlr-to-codemirror-6-building-a-language-server/)
     - I spent *a lot* of time trying to get operability between CM6 and ANTLR as part of my work on the ShopifyQL code editor (which I've written about before). I didn't have any guide for how to do any of this before working on it, so my hope is that these help somebody
 - https://github.com/RuslanZh/codemirror-antlr4 /202208/ts/inactive

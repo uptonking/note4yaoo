@@ -41,18 +41,26 @@ modified: 2023-08-19T16:37:13.736Z
 
 ## [Common Use Cases - Visual Studio Live Share | Microsoft Learn](https://learn.microsoft.com/en-us/visualstudio/liveshare/reference/use-cases)
 
+- [Visual Studio Live Share: Real-Time Code Collaboration Tool](https://visualstudio.microsoft.com/services/live-share/)
+  - Live editing
+  - Focus and Follow
+  - Text chat
+  - Group debugging
+  - Shared servers
+  - Shared terminals
+
 Quick assistance
-Office Hours
+  Office Hours
 Pair Programming
-Mob Programming
-Coding Competitions / Hack-A-Thons
-School Group Projects
-Developer Streaming
-Prototyping / Project Inception
+  Mob Programming
+  Coding Competitions / Hack-A-Thons
+  School Group Projects
+  Developer Streaming
+  Prototyping / Project Inception
 Interactive Education
-Peer Mentoring / Onboarding
-Team Brown Bags
-Classroom Lectures
+  Peer Mentoring / Onboarding
+  Team Brown Bags
+  Classroom Lectures
 Code Reviews
 Technical Interviews
 Working Remotely

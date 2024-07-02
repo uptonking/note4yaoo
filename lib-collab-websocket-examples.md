@@ -197,6 +197,48 @@ modified: 2023-01-23T19:27:46.948Z
     - a minimalist framework for building lightweight, single-threaded services that send and receive messages through WebSockets.
     - Stateroom has a modular architecture. 
     - stateroom-server provides an Axum-based WebSocket server that runs a Stateroom service.
+
+## socket-k8s
+
+- [kubernetes-ingress websockets with nodejs](https://gist.github.com/jsdevtom/7045c03c021ce46b08cb3f41db0d76da)
+
+- https://github.com/sw360cab/websockets-scaling /MIT/202211/js/inactive
+  - A tutorial to scale Websockets both via Docker Swarm and Kubernetes
+  - Purpose of this is achieving a scalable environment when WebSocket are involved. The pattern to reproduce is a Multi-Server to Multi-client communication via websocket.
+  - The result should be a client connected to a specific server host and keeping its connection bound to it (`sticky` connection). Whereas the server hosts will broadcast messages in turn and all the connected clients should receive them. The latter will be achieved leveraging the pub/sub paradigm of Redis.
+  - The application is made of server and client part. Both are based `socket.io` library.
+
+- https://github.com/cnych/k8s-socketio-cluster-demo /201711/js
+  - 在kubernetes下部署多节点socket.io服务，查看原文：kubernetes 下实现socket.io 的集群模式
+
+- https://github.com/va1da5/xtermjs-for-k8s-pods /202010/js
+  - PoC for communicating with Kubernetes websocket for executing shell commands in pods
+  - This is a proof-of-concept (PoC) attempt to communicate directly with Kubernetes/OpenShift Websocket, proxy the requests and expose it using xterm.js terminal emulator.
+
+- https://github.com/manavendrasen/scalable-chat-app /202402/go
+  - Scaling Go web socket chat app using Redis + Docker + K8s
+  - This Proof of Concept (POC) project demonstrates the scaling capabilities of a WebSocket server implemented in Golang, utilizing the Gorilla WebSocket library. 
+  - The project includes containerization with Docker and deployment on Kubernetes with features like load balancing, preventing direct client communication, and integrating Redis Pub/Sub for efficient message broadcasting.
+  - Kubernetes cluster set up (Minikube for local development)
+  - Goroutines are used to handle concurrent connections efficiently.
+  - The WebSocket server is deployed on Minikube with three replicas and a LoadBalancer service, showcasing horizontal scaling and load balancing. Clients are isolated from direct communication.
+  - Redis Pub/Sub is integrated to enable broadcasting messages on a specific channel. This feature enhances real-time communication across WebSocket server instances. Without redis all the pods were independent and Clients connected to different pods could not connect to each other. Redis acts as a store for chats.
+
+- https://github.com/piyushgarg-dev/Scaleable-WebSockets /202312/ts
+  - [Build Scaleable Realtime Chat App with NextJS and NodeJS Tutorial - YouTube](https://www.youtube.com/watch?v=CQQc8QyIGl0)
+  - In this video, we will build a scaleable socket real-time application using Redis on Aiven cloud. We'll see how to use Redis PubSub architecture to scale our web sockets.
+
+- https://github.com/hnasr/javascript_playground/tree/master/ws-live-chat-system /202007/js
+  - [Scaling Websockets with Redis, HAProxy and Node JS - High-availability Group Chat Application - YouTube](https://www.youtube.com/watch?v=gzIcGhJC8hA)
+  - In this video I want to demonstrate how to scale websockets connection to multiple servers using a load balancer such as HAProxy.
+
+- https://github.com/ramank775/chat-server /MIT/202311/js
+  - A chat server based on the microservice architecture to ensure high availability, high throughput, horizontal scalability
+  - Prerequisites Apache Kafka / Nats Mongodb Nginx Firebase project Redisl
+  - 使用了firebase的auth/notify
+  - [Vartalap: Open Source Personal Messaging App | One9x _202106](https://blog.one9x.org/vartalap/2021/04/04/vartalap-personal-messaging-app.html)
+
+
 # more
 - https://github.com/well-known-components/template-server
   - Template Node.js server using well-known-components library.

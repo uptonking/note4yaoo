@@ -16,6 +16,24 @@ modified: 2024-06-23T02:09:51.024Z
 
 - ## 
 
+- ## 🤔 Had a few questions around availability of scalability of Zulip service. _202404
+- https://chat.zulip.org/#narrow/stream/3-backend/topic/Availability.20of.20Zulip.20service/near/1775659
+  - From the docs and code, I could understand that we can shard the tornado server per realm or at a user level as well.
+  - Is it possible to have multiple tornado servers for a single realm/user combination to ensure higher availability for a single realm/user?
+  - And also, is it possible to run multiple replicas of Django server and other components for a single realm to achieve higher availability? (Basically, is Django server stateless and requests can be served from any of the available instances?)
+- Tornado servers maintain state in-memory, so a user can only be served by a single Tornado process. Multiple Tornado servers are for scaling, not for HA.
+  - The Django service itself is stateless, but it relies on shared state via PostgreSQL, RabbitMQ, Memcached, and Redis. So in practice having multiple nginx + uwsgi (Django) servers actually likely decreases availability if you still have single PostgreSQL, RabbitMQ, Memcached and Redis servers on another host(s)
+
+- Wondering if anyone in the community has tried to scale out Django servers with a sharded tornado server, that can help us achieve a higher availability
+  - Zulip Cloud runs a more complicated sharded deployment. You're welcome to drop an email to sales@zulip.com to set up some time to talk about your HA needs and how they can best be addressed.
+
+- ## 🤔 [Is it feasible to store data on cloud services? _202405](https://github.com/zulip/zulip/issues/30112)
+  - pl redis memcache is connected to the cloud service, then the remaining part of zulip becomes a stateless service. When the number of users increases rapidly, automatic expansion can be performed. Is this idea feasible?
+
+- OK. Well in any case, it is feasible to use cloud services, though not an option that we recommend, because it's more work to set up. You can see documentation here:
+  - Or look at docker-zulip if you prevent that style of splitting up systems.
+  - However, there are some algorithms/data flow issues that do not make it trivial to scale to millions of users, especially in a single organization through such techniques, so don't expect that just doing those things will dramatically change Zulip's scaling characteristics.
+
 - ## [Zulip Server 1.9: HipChat import and much more | Hacker News _201811](https://news.ycombinator.com/item?id=18400988)
 - How do you handle high availability for Zulip? Last I looked that was a problem for it.
   - If you're self-hosting, our commercial support offerings will help you setup your servers in a way that achieves your uptime goals; because Zulip is so stable, usually folks just go with a hot spare (our enterprise customers generally only report downtime related to server upgrades, which is usually avoidable).

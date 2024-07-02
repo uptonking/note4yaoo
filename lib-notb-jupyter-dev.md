@@ -27,6 +27,8 @@ modified: 2024-06-30T03:19:11.399Z
 
 - dev-xp
   - npm打包分发的方式，不如docker/ollama-run方便，但jspm在线源的设计就很方便了
+# draft
+- jupyterhub实现支持ha/多实例
 # dev-xp
 
 # more

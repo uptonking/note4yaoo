@@ -15,9 +15,6 @@ modified: 2024-05-06T02:54:40.374Z
   - 基建类: 基座工程、代码编辑器
   - 团队类: 测试、运营
 
-- draft
-  - 在6月中，初步完成生成需求、task、pr的逻辑和流程
-
 - roadmap-研发任务拆解
   - 主要业务流程
   - cde
@@ -26,12 +23,12 @@ modified: 2024-05-06T02:54:40.374Z
 
 - work-xp-pros
   - 产研团队的对齐非常充分
-  - 研发进度给了开发者较多空间
+  - ~~研发进度给了开发者较多空间~~
 - work-xp-cons
   - 单人项目太多了，维护困难，比如paas和1024code，浪费了很多研发资源
   - 研发流程cicd，lint、pr流程不完整
   - ~~研发目标对开发产品都不清晰~~
-# more
+# proj
 
 ## proj-coding-ai
 
@@ -49,7 +46,7 @@ modified: 2024-05-06T02:54:40.374Z
   - [ShowMeBug字节级回放在线笔面试过程实现思路 - 掘金 _202107](https://juejin.cn/post/6985068859099201544)
 
 - sdk设计参考
-  - vscode, theia, opensumi
+  - vscode, theia, opensumi, replit, codesandbox
   - [Running the SDK](https://cloud9-sdk.readme.io/docs/running-the-sdk)
 
 ### not-yet
@@ -57,26 +54,17 @@ modified: 2024-05-06T02:54:40.374Z
 - ❓ snapshot数据是如何存储的
   - 切换分支后的回放还能执行吗
 
-- 暂停/继续播放的回调事件未生效
+- 回放的示例，暂停/继续播放的回调事件未生效
+- 回放的示例，只打印了 onAvailable 事件
+- 回放更适合纯前端实现
 
 - 获取ticket的api未添加权限校验，header中没有token
 
-- 回放控制的示例，只打印了 onAvailable 事件
+- sdk的主要组件Editor/FileTree/Browser/Shell的渲染是独立的 `createRoot(dom).render(<Editor />)`; 
 
-- 所有数据的通信都基于channel(websocket)?
-  - 获取回放数据没必要用websocket，因为对实时性要求不高
-
-- LSP 的server迁移到worker的方案
-
-- 支持多实例
-
-- paas平台为什么难以落地
-  - 功能又多又杂
-  - 侧重ai编辑，可以去掉非核心需求
-
-- 给定仓库的url，类似 `/user/repo?task=desc`, 可以访问url查看ai创建pr的过程
-
-- 行级 code-comment
+- editor
+  - 支持多实例
+  - 行级 code-comment
 
 - fileTree
   - 大文件无法打开， 如package-lock.json
@@ -90,11 +78,20 @@ modified: 2024-05-06T02:54:40.374Z
 
 ### draft
 
-- sdk的主要组件Editor/FileTree/Shell的渲染是独立的 `createRoot(dom).render(<Editor />)`; 
+- 
+- 
+- 
 
-- 
-- 
-- 
+- 所有数据的通信都基于channel(websocket)?
+  - 获取回放数据没必要用websocket，因为对实时性要求不高
+
+- LSP的server迁移到worker的方案
+
+- 给定仓库的url，类似 `/user/repo?task=desc`, 可以访问url查看ai创建pr的过程
+
+- paas平台为什么难以落地
+  - 功能又多又杂
+  - 可以去掉非核心需求
 
 - codemirror相关的代码为什么不通过npm包引入
   - 直接修改github上的源码
@@ -152,7 +149,7 @@ modified: 2024-05-06T02:54:40.374Z
   - cd packages/demo; pnpm dev
   - cd packages/server; pnpm dev
   - 修改 packages/server/apps/entry/test/filetree_mock_test 末尾文件名为 filetree_mock
-  - 在 http://localhost:3010/ api demo的用户名和手机号可随便写
+  - 在 http://localhost:3010/ demo的用户名和手机号可随便写
 
 - ⌛️ 回放示例(环境支持sdk-staging/sdk-localhost-3010/showmebug)
   - 在sdk demo界面，需要指定代码处理为 showmebug
@@ -210,6 +207,9 @@ modified: 2024-05-06T02:54:40.374Z
   - store.dao.channel().on('removeAiCodeInfo', cb)
 
 #### LazyEditor/CodeEditor
+
+- CodeEditor 编辑器初始化时计算配置和插件，注册外部事件
+  - CodeMirrorEditor(useCodeMirror) 编辑器初始化时注册各类菜单事件
 
 ```JS
 // playback
@@ -279,6 +279,9 @@ useEffect(() => {
   - 回放的实现原理是sdk从服务端重新加载所有历史事件, 并分发给相应组件(在react项目中可以通过更新state来驱动各组件), 各组件接收到事件进行相应渲染
   - 对于大部分组件, 渲染时并不需要区分是否在回放模式, 只有可输入型组件需要在回放模式时禁止用户操作
   - 现在FileTree和Editor组件中直接注册事件, 不利于实现统一的回放消息重播. 故需要对Dao中的channel做出修改, 关闭on函数不允许组件自己注册事件. 统一由 MessageDispatcher 来分发事件
+  - 有两种subscriber, 一种是播放控制组件的subscriber叫PlayControlSubscriber, 另一种是普通数据组件的subscriber叫 ComponentSubscriber
+  - 可以在组件初始化时调用DaoPaaS的方法订阅相应的事件
+- 新增浏览器协同和回放功能（RRWEB）v0.9.159
 
 - syncPlaygroundInfo
   - fileRootPath: /app/data/codeZone/2024/3/5-16/@fad3d6d8-d302-4e29-9c2a-a02f9ca04026/source

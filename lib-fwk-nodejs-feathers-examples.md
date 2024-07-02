@@ -32,6 +32,14 @@ modified: 2023-01-20T00:18:44.282Z
   - A Feathers real-time chat application
   - initialize an SQLite database in the feathers-chat.sqlite file.
 
+- https://github.com/featherscloud/chat /MIT/202406/ts
+  - https://featherscloud.github.io/chat
+  - A local-first chat application with user login
+  - A local-first chat application built with different frameworks.
+  - Works offline
+  - Does not need a server, Can be deployed like any static website
+  - 依赖 @featherscloud/auth、@automerge/automerge-repo
+
 - https://github.com/josx/ra-data-feathers /202202/js/inactive
   - Feathers data provider for react-admin. 
   - A feathers rest client for react-admin
@@ -68,12 +76,6 @@ modified: 2023-01-20T00:18:44.282Z
   - Distribute your Feathers services as microservices
 - https://github.com/mosaiqo/feathers-microservices
   - This is my humble opinionated approach to connect different microservices written in Feathers JS.
-
-- https://github.com/feathersjs-ecosystem/feathers-sync
-  - Synchronize service events between Feathers application instances
-  - When running multiple instances of your Feathers application (e.g. on several Heroku Dynos), service events (created, updated, patched, removed and any custom defined events) do not get propagated to other instances.
-  - feathers-sync uses a messaging mechanism to propagate all events to all application instances. 
-  - It currently supports redis, amqp/RabbitMQ
 
 - https://github.com/feathersjs-ecosystem/feathers-permissions
   - Simple role and service method permissions for Feathers
@@ -177,6 +179,30 @@ modified: 2023-01-20T00:18:44.282Z
 
 - https://github.com/lwhiteley/feathers-lowdb
   - a database service adapter for Lowdb, a small JSON database for Node, Electron and the browser powered by Lodash.
+# cluster
+- https://github.com/feathersjs-ecosystem/feathers-sync /MIT/202305/js/inactive
+  - Synchronize service events between Feathers application instances
+  - When running multiple instances of your Feathers application (e.g. on several Heroku Dynos), service events (created, updated, patched, removed and any custom defined events) do not get propagated to other instances.
+  - feathers-sync uses a messaging mechanism to propagate all events to all application instances. 
+  - It currently supports redis, amqp/RabbitMQ
+  - This allows to scale real-time websocket connections to any number of clients.
+  - With feathers-sync enabled all events are going to get propagated to every application instance. 
+    - This means, that any event listeners registered on the server should not perform any actions that change the global state (e.g. write something into the database or call to an external API) because it will end up running multiple times (once on each instance). 
+    - Instead, event listeners should only be used to update the local state (e.g. a local cache) and send real-time updates to all its clients.
+  - [Scale server on kubernetes ](https://github.com/feathersjs-ecosystem/feathers-sync/issues/55)
+    - With your setup I would force Socket.io to only use Websockets and not polling
+
+- https://github.com/polst/feathers-socketcluster /MIT/201701/js
+  - The Feathers SocketCluster real-time API provider
+  - This provider exposes Feathers services through a SocketCluster real-time API. It is compatible with Feathers 2.x (1.x not tested).
+
+- https://github.com/dekelev/feathers-http-distributed /MIT/202008/js
+  - Distribute FeathersJS apps over the network with inter-service communication using HTTP protocol
+  - https://github.com/feathersjs/feathers/issues/939
+    - The feathers-http-distributed module was built as preparation for migrating all our FeathersJS services to Kubernetes, though it can be used for a broad range of use cases besides Kubernetes.
+
+- https://github.com/codeanker/feathers-kubernetes /201808/js
+  - this package can expose 2 endpoint that are good for the use of a kubernetes cluster. The healthz endpoint for kubernetes pod lifecycle. And the metrics endpoint a Prometheus endpoint to collect feathers service metrics.
 # utils
 - https://github.com/feathersjs-ecosystem/feathers-hooks-common
   - Useful hooks for use with FeathersJS services.

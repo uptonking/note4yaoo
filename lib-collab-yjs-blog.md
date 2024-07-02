@@ -41,6 +41,15 @@ modified: 2022-10-22T18:45:00.382Z
   - YArray 的操作对应remove_node和insert_node原子操作；
   - YText 的操作对应 remove_text和insert_text原子操作。
   - YMap 是健值结构，对他的更改包含在 event.changes.keys 中，对应set_node原子操作。
+
+## [Hocuspocus with Supabase _202306](https://emergence-engineering.com/blog/hocuspocus-with-supabase)
+
+- prosemirror-colab will resolve conflicts for you, but you have to implement the backend yourself
+  - Hocuspocus is a standalone server library for synchronizing Ydocs from Y.js across multiple clients. It was developed by the amazing engineers at TipTap. If you want collaborative editing in your application, you will probably come across Yjs and CRDT
+- 
+- 
+- 
+
 # yjs-usecase
 
 ## [深入浅出 OpenSumi 协同编辑的原理 - SegmentFault 思否 _202304](https://segmentfault.com/a/1190000043721913)

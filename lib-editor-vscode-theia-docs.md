@@ -44,9 +44,9 @@ modified: 2024-05-25T16:57:45.541Z
   - The main differentiator between Theia and VS Code is that Theia is specifically intended to be adopted by other companies and communities to build and deploy a modern web-based developer experience. VS
   - Code is great, but it is only ever going to be a Microsoft product.
 - Theia is intended to be modified, extended, and distributed by folks who want to create developer tools that look as great as VS Code (including using the same Monaco Editor) and can make use of the VS Code extension ecosystem.
-- Theia’s architecture is designed to be more modular and extensible than the VS Code so developers have a greater ability to customize their solutions for specific requirements. 
+- 🆚 Theia’s architecture is designed to be more modular and extensible than the VS Code so developers have a greater ability to customize their solutions for specific requirements. 
   - VS Code enables a great extension ecosystem. Theia goes beyond that and is designed to be modified and extended at all levels of its architecture.
-- Theia is designed from the ground up to run in both desktop environments as well as in browser and remote server environments. 
+- ✨ Theia is designed from the ground up to run in both desktop environments as well as in browser and remote server environments. 
   - IDE developers can write the source code for their development environment once, then build a desktop IDE, a cloud IDE, or both, without rewriting any code.
 - Theia uses the Eclipse Open VSX Registry, an open-source alternative to the Microsoft Visual Studio marketplace.
   - the extensions available in this free marketplace can be used in VS Code as well as in Theia.

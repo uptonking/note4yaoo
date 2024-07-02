@@ -20,15 +20,15 @@ modified: 2023-01-21T18:58:29.846Z
     - ❓ 或许是先receive二进制数据，再send文本数据
     - id:"CLIENT_ID_vEVx63rFu_uSoPAc2q4kt:ExtMainThreadConnection"
   - 提供了一个强大的插件生态系统，兼容 VS Code 的插件系统，支持 LSP/DAP 等主流协议，我们也有着自己的 OpenSumi API 用于进一步拓展 IDE 界面及能力
-  - OpenSumi 是前后端分离的设计，不论是在 Web 还是 Electron 环境下，浏览器/窗口中展示的界面部分我们称之为 OpenSumi 的前端，
+  - OpenSumi是前后端分离的设计，不论是在 Web 还是 Electron 环境下，浏览器/窗口中展示的界面部分我们称之为 OpenSumi 的前端，
     - 而对于文件读写、终端连接、插件进程等功能则运行在 OpenSumi 的后端。
     - 与传统的 B/S、C/S 架构不同的是，OpenSumi 前后端之间的通信仅由一个长链接连接实现。
-    - 在 Web 环境下，前后端会建立一条 WebSocket 连接
-    - 在 Electron 环境下，则会建立一条 Socket 连接进行进程间通信(IPC)
+      - ✨ 在 Web 环境下，前后端会建立一条 WebSocket 连接
+      - 在 Electron 环境下，则会建立一条 Socket 连接进行进程间通信(IPC)
     - 核心功能的代码都是可以在 Web/Electron 端复用的，因为 connection 模块屏蔽了大部分平台、底层通信协之间的差异, connection 模块基于 JSON-RPC 2.0 实现了一个 RPC 框架，将 Web 与 Electron 端通信过程通过 RPC 协议来封装起来
   - 🔀 支持使用 3-way merge editor 新交互来解决代码冲突
   - 提供了ai模块
-  - 协同编辑模块目前只支持 Browser + Node 的 Cloud IDE 场景,当前的设计考虑的是客户端(Browser)/服务端(Node)一对一的架构
+  - 🤝 协同编辑模块目前只支持 Browser + Node 的 Cloud IDE 场景, 当前的设计考虑的是客户端(Browser)/服务端(Node)一对一的架构
     - 不支持纯前端与 Electron 平台
     - 不支持 IDE 编辑器外的协同编辑功能（如终端）
     - 不支持 IDE 内跨文件的修改（如使用 vscode 插件进行变量重命名重构）
@@ -49,7 +49,7 @@ modified: 2023-01-21T18:58:29.846Z
     - EPL2.0 属于文件级别的Copyleft许可证，即 EPL-ed 代码具有Copyleft 属性的，其“衍生作品”的包围也比较明确。EPL2.0追求的是EPL-ed代码的Copyleft和代码开源，且 MIT和EPL2.0许可证兼容。OpenSumi 本身是开源的，同时并未改变EPL2.0组件的许可，项目符合MIT和EPL2.0各自要求。
   - [离线部署 | OpenSumi](https://opensumi.com/zh/docs/integrate/universal-integrate-case/offline-deployment)
     - OpenSumi天然支持离线部署场景，只需要将内部的一些网络资源如（icon、onig-wasm）等通过浏览器端的配置替换成内网的资源地址即可
-  - [[FEATURE] 关于多用户 · Issue #560 · opensumi/core](https://github.com/opensumi/core/issues/560)
+  - [[FEATURE] 关于多用户](https://github.com/opensumi/core/issues/560)
     - 202203: 我们有在做一些多人协作的探索，比如 sumi-collaboration 是基于 Yjs 的一个简单的多人协作模块，现在处于调研阶段，后面会逐步完善
   - [如何评价阿里 & 蚂蚁自研 IDE 研发框架 OpenSumi？ - 知乎](https://www.zhihu.com/question/519740662)
     - 高性能、高定制性的双端（Web 及 Electron）IDE 研发的框架
@@ -71,16 +71,17 @@ modified: 2023-01-21T18:58:29.846Z
 - molecule /811Star/MIT/202312/ts/仅web/不支持桌面
   - https://github.com/DTStack/molecule
   - https://dtstack.github.io/molecule/
+  - https://dtstack.github.io/molecule/zh-CN/docs/introduction
   - https://dtstack.github.io/molecule-examples/
   - 受 VSCode 启发，使用 React.js 构建的 Web IDE UI 框架
-  - 我们设计了类似 VSCode 的扩展(Extension)机制，可以帮助我们使用 React 组件快速完成对 Workbench 的自定义
+  - 设计了类似 VSCode 的扩展(Extension)机制，可以帮助我们使用 React 组件快速完成对 Workbench 的自定义
   - 依赖tapable、tsyringe、react-dnd、monaco-editor、immer、rc-menu
   - 不依赖antd，总体依赖不多
   - 示例采用c/s架构, fileTree请求的响应内容包含文件列表和文件具体内容
   - 内置 React 版本的 Visual Studio Code Workbench UI
   - 内置 Monaco Editor Command Palette、Keybinding等模块，并支持扩展
-  - 内置一个简单的 Settings 模块，支持在线编辑修改以及扩展
   - 内置默认的 Explorer, Search 等组件，并支持扩展
+  - 内置一个简单的 Settings 模块，支持在线编辑修改以及扩展
   - ⚖️ [vscode插件市场支持](https://github.com/DTStack/molecule/issues/879)
     - 有没有什么方法可以比较方便的移植vscode的插件，或者考虑后面的版本中增加对vscode插件进行支持
     - 并没有，考虑到大部分的 vscode 的插件增强的是 vscode 所实现的功能。其相关逻辑强依赖于 vscode。所以针对大部分的 vscode 插件无法做到方便的移植。
@@ -176,8 +177,6 @@ modified: 2023-01-21T18:58:29.846Z
   - Realtime Collaborative Code Editor extension for vscode
   - Extension is based on CRDT`s concrete implementation YJS.
   - For peer to peer connection is used webRTC
-
-
 # vscode-integrations
 - https://github.com/betatim/vscode-binder /python
   - VS Code on Binder, because sometimes you need a real editor.

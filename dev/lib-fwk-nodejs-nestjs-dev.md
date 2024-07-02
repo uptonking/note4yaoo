@@ -6,14 +6,22 @@ modified: 2022-12-19T01:49:27.545Z
 ---
 
 # lib-fwk-nodejs-nestjs-dev
-
 - Node.js framework for building scalable server-side applications.
-
 # guide
+- pros
+  - 支持horizontal scaling
+
+- cons
+  - ?
 
 - features
   - scalable architecture for server-side applications
   - ioc container
+
+- who is using #nestjs
+  - adidas: as our backend to retrieve GitHub metadata and contents from our CMS.
+  - more
+    - [Who is using Nest in production?](https://github.com/nestjs/nest/issues/1006)
 
 - usecase
   - crud
@@ -21,18 +29,12 @@ modified: 2022-12-19T01:49:27.545Z
   - architecture and platform
     - microservice
 
-- who is using #nestjs
-  - adidas: as our backend to retrieve GitHub metadata and contents from our CMS.
-  - more
-    - [Who is using Nest in production?](https://github.com/nestjs/nest/issues/1006)
-
 - examples
   - libs
   - [nestjs-template](https://github.com/Saluki/nestjs-template)
     - goal of this project is to provide a clean and up-to-date "starter pack" for REST API projects
 
 - tips
-
 # pieces
 
 # module
@@ -45,7 +47,5 @@ modified: 2022-12-19T01:49:27.545Z
 - would grouping everything in one module and name it global help you? 
   - It could help, but would still need to be imported everywhere is used and for every test, etc.
 - Interesting idea. Would be helpful especially for lazy loaded angular apps where every module is importing common module.
-
 # ref
-
 - [Modern Full-Stack Development with Nest.js, React, TypeScript, and MongoDB](https://auth0.com/blog/modern-full-stack-development-with-nestjs-react-typescript-and-mongodb-part-1/)

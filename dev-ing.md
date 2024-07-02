@@ -45,9 +45,10 @@ https://meeting.tencent.com/p/9606972663
   - more-editor
     - https://demo.grammarly.com/
 # dev-review
-- 解释代码
+- coding-tools
   - https://denigma.app/#demo
   - https://code-mentor.ai/
+  - [TypeScript to plain JavaScript](https://transform.tools/typescript-to-javascript)
 
 ```shell
 # delete all node_modules folders recursively
@@ -330,7 +331,7 @@ betterdiscordctl -i flatpak install
     - 2个编辑器同一页面协同的示例未完成
     - cursor光标位置经常对不上
   - [x] streaming infinite-list/tree
-# dev-06-dockview-floating-&-progressbar-animation-&-cm-diff-&-cm-typewriter
+# dev-07
 - architecture
   - 实现了偏静态的ui交互，优化cde集成、状态管理、单元测试
   - websocket scalable chat/room, progress: 参考zulip-sdk, firebase/supabase-sdk
@@ -365,12 +366,29 @@ betterdiscordctl -i flatpak install
   - 如何复用idepaas-sdk的编辑器组件，一种思路是使用readonly版本
   - clacky read_file TODO.md
 
-## 061
+## 070
 
 - dev-log
   - 
 - dev-to
   - 
+
+## 0702
+
+- dev-log
+  - 尝试复用paas编辑器的插件和逻辑，实现一个最小的diff编辑器组件，思路可行，但不符合产品需求
+- dev-to
+  - 将最小diff编辑器完善下，尝试将diff逻辑抽象为codemirror插件
+## 0701
+
+- dev-log
+  - 上周重构cde状态管理与对接agent
+  - 熟悉了codemirror官方diff示例的原理，尝试从视图层提取出编辑op
+- dev-to
+  - 最小可用版的时光机播放和回放
+  - 完善agent相关的制定计划/执行计划的实现细节
+
+# dev-06-dockview-floating-&-progressbar-animation-&-trpc-thread-id-&-zustand-socketio
 
 ## 0630
 

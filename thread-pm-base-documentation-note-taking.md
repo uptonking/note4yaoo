@@ -12,6 +12,15 @@ modified: 2021-08-16T06:56:53.061Z
 # discuss-stars
 - ## 
 
+- ## ✨🤝🏻 Version history as chat: what if you could chat about editing progress with your collaborators right in the history timeline of a document?
+- https://twitter.com/geoffreylitt/status/1773423061938708839
+  - That's the idea of our latest Patchwork experiment...
+  - The goal of this timeline view is to give structure and legibility to the document history.
+  - All edits get an AI-generated summary and you can also leave little notes annotating the history in a super informal way
+
+- is chat the right framing here? is it more a timeline? i like this approach.
+  - Yeah it’s kinda both depending on how you look at it I think
+
 - ## 🆚️ It seems that there are just three approaches that "knowledge management" apps take:
 - https://twitter.com/jessmartin/status/1710261497786413516
   - Document-first (Notion, Obsidian, etc)

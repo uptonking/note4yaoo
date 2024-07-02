@@ -22,10 +22,19 @@ modified: 2021-07-20T13:50:23.433Z
     - roadmap, open-issues, alternatives
     - 开放能力: extensions, scripts, marketplace
     - pref: 索引、缓存、分库分表、读写分离
+  - architecture-early 需要尽早考虑的架构设计，没有完美的架构
+    - 核心架构考虑 server/db/socket
+    - 早期不要将系统架构设计得过于复杂，会影响开发进度, 甚至产品终止都用不上
+    - sqlite的流行表明scaling要考虑场景
+    - collaborative的数据结构，冲突处理算法，客户端中心还是服务端中心
+    - horizontal scaling, 水平扩展/多实例/多租户; http更适合scale
+    - 数据通信，http/websocket
+    - 没有完美的架构，优先支持迭代，不要执着于当下的问题，也许以后就突然想清楚了
   - 抽空在线体验，工作专注代码
-  - specification for pivot table
-  - data-app: 输入数据input-data-table, 开放数据api，开放应用app-builder
-  - 产品方向: 偏设计、偏业务逻辑
+  - data-app
+    - specification for pivot table
+    - 输入数据input-data-table, 开放数据api，开放应用app-builder
+    - 产品方向: 偏设计布局， 偏业务逻辑
 
 - 技术方向js: 前端版/流式版/oplog; 编辑器/ide，多维表格/excel，协作/gitdb; dnd，floating
 - 技术扩展js/py: 可拖拽的页面编辑器/lowcode, Excel/kanban, 图表
@@ -143,8 +152,9 @@ modified: 2021-07-20T13:50:23.433Z
 - 多文件的app, 或多或少有点类似知识库
   - 可以参考给普通数据库表添加crdt支持的场景
 
-- high-availability
+- high-availability / horizontal-scaling
   - strapi, nocobase
+  - fwk: nestjs, feathers-sync
   - manual: zulip
 
 - byproduct-apps

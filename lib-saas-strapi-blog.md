@@ -234,8 +234,10 @@ modified: 2023-12-15T16:52:28.937Z
   - Directus’ Geospatial Advantage: PostGIS Support
   - Directus Flows
 # blogs-devops
-- [How to Deploy and Scale Strapi on a Kubernetes Cluster 1/2 _202302](https://strapi.io/blog/how-to-deploy-and-scale-strapi-on-a-kubernetes-cluster-1-2)
-  - [How to Deploy and Scale Strapi on a Kubernetes Cluster 2/2](https://strapi.io/blog/how-to-deploy-and-scale-strapi-on-a-kubernetes-cluster-2-2)
+
+## [How to Deploy and Scale Strapi on a Kubernetes Cluster 1/2 _202302](https://strapi.io/blog/how-to-deploy-and-scale-strapi-on-a-kubernetes-cluster-1-2)
+
+- [How to Deploy and Scale Strapi on a Kubernetes Cluster 2/2](https://strapi.io/blog/how-to-deploy-and-scale-strapi-on-a-kubernetes-cluster-2-2)
   - https://github.com/chepeftw/strapi-k8s-blog-post
   - We currently have our DB and app running with a single replica and nothing that provides high availability. 
   - For the DB, it's highly recommended that, once again, a cloud provider solution is used or a HA DB self-hosted.

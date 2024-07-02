@@ -10,10 +10,11 @@ modified: 2023-01-21T18:53:50.553Z
 # guide
 
 - pros
-  - ?
+  - 完善的编辑器和ide功能，包括 editor/workbench/files/search/ext/cmd-palette
+  - theia is licensed under EPL, not as friendly as vscode/MIT
 
 - cons
-  - theia is licensed under EPL, not as friendly as vscode/MIT
+  - vscode插件市场归微软所有，第三方不可用
 
 - features
   - ?

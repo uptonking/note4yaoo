@@ -21,6 +21,7 @@ modified: 2024-06-23T02:09:33.877Z
 
 - cons
   - widget服务端相关功能未提供plugin api，需要fork代码手动修改
+  - ha/拆分服务部署需要额外工作/付费咨询
   - ui seems outdated
 
 - features

@@ -22,6 +22,22 @@ modified: 2024-06-30T11:15:28.002Z
 
 - ## 
 
+- ## [Isn't a load balancer a single point of failure - Stack Overflow](https://stackoverflow.com/questions/21981514/isnt-a-load-balancer-a-single-point-of-failure)
+- The point in avoiding a load balancer as a single point of failure is the load balancer(s) will run in a high availability cluster with hardware backup.
+- I believe the answer to this question is redundancy. The load balancer, instead of being a single computer/service/module/whatever, should be several instances of that computer/service/whatever.l
+
+- ## [Kubernetes HA and single point of failure - General Discussions - Discuss Kubernetes](https://discuss.kubernetes.io/t/kubernetes-ha-and-single-point-of-failure/8434)
+  - By reading HA configuration doc, I’m a little confused as although multiple control plane nodes provides HA for cluster orchestratio, if the load balancer fails, the worker nodes can no longer communicate with control plane nodes. Isn’t the SPOF just shifted from control plane to the load balancer?
+  - Does this mean I need to make load balancer redundant as well?
+
+- Yes. The way we’ve done this in our own deployment was to run an LB on each of the control plane nodes and use keepalived 28/VRRP 15 for failover for a shared Virtual IP.
+
+- ## [Kubernetes single point of failure and load balancing - Stack Overflow](https://stackoverflow.com/questions/37929770/kubernetes-single-point-of-failure-and-load-balancing)
+- If Kubernetes service is a single point of failure or because it is supported by multiple pods on which kube-proxy is configured and services is just a virtual layer, it cannot be considered as single point of failure?
+  - It will be single point of failure if Load balancer (LB) is mapped to single node IP as failure of that VM / Physical server will bring down the entire application. Hence point LB to at least 2 different node IPs.
+
+- There is a guide on how to set up the k8s cluster in HA mode
+
 - ## K8s的kubelet默认的maxPods是110个，不知道这样设计的缘由是什么
 - https://twitter.com/stephenzhang233/status/1773648671940149460
 - 早期版本 kubelet 有个本地的 kube API burst 和 qps 5 还是10的限制，这也会导致节点pod 太多，同步状态都会卡住。这也是为了减小apiserver压力， 一个节点qps5，kube qps 1000只能支撑 200个节点。而最初kube设计可能是几百个节点，～10000pod的数量级。才会有这些限制。

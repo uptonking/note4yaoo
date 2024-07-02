@@ -174,7 +174,9 @@ modified: 2023-12-12T08:45:31.670Z
 
 - ## 
 
-- ## 
+- ## [address horizontal scalability in documentation · Issue · ueberdosis/hocuspocus _202304](https://github.com/ueberdosis/hocuspocus/issues/575)
+- It's not clear to me the guarantees hocuspocus tries to achieve around horizontal scaling. #178 and #279 both talk about horizontal scaling, but I'm hoping for something explicit in the code that yes, hocuspocus supports multiple instances behind a load balancer, if all features (eg stateless messaging) are expected to work, etc. I think the answer is yes, but I'd love more explicit confirmation somewhere!
+- [Redis Scaling  · ueberdosis/hocuspocus](https://github.com/ueberdosis/hocuspocus/issues/178)
 
 - ## [Web Sockets are not efficient and hard to scale, change my view. : r/reactjs _202312](https://www.reddit.com/r/reactjs/comments/18ogc0o/web_sockets_are_not_efficient_and_hard_to_scale/)
 - Socket.io internally uses ws library as one of their transport options. socket.io provides a lot of options like retries, polling, disconnection detection, multiplexing, retry options etc etc lot of configurations which you may need in real applications sooner or later . You can also check by providing ws as first option as socket.io transports . Better check socket.io performance tuning guide.

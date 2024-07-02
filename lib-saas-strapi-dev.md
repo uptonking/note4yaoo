@@ -48,9 +48,12 @@ modified: 2023-12-15T16:51:56.101Z
   - 大版本的breaking-changes很多
   - media-lib可能存在大量未被使用的media，如何清理
   - user用户管理功能弱，不支持分组, 类似multi-tenancy
+    - Strapi doesn’t support multi-tenancy yet. a workaround is possible
   - 前端旧版本的依赖难以升级，如react-router
   - 编辑内容点击save后，插件中的组件不会rerender更新，需要 location.reload
   - 未实现通知/notification
+  - Strapi is not well suited for serverless environments due to how the application is structured
+    - ❓ 多实例， multi instance
   - plugins
     - 🚨 plugin disable后再启动，plugin的db表数据、配置、自定义api会被删除，如builder
     - 纯前端的plugin不方便直接预览

@@ -290,6 +290,15 @@ modified: 2023-12-15T17:04:36.589Z
 
 - ## 
 
+- ## 
+
+- ## [Race condition for relational reordering · Issue · strapi/strapi](https://github.com/strapi/strapi/issues/15558)
+- Currently, if you are only running 1 Strapi instance the race conditions only arise if you are doing something like promise.all where you are running the relation increment code concurrently. This means that good code can prevent these race conditions. However, if you are horizontally scaling strapi i.e more than 1 instance you can trigger race conditions even from the content API.
+
+- ## [Requirements for horizontal scaling? _202310](https://forum.strapi.io/t/requirements-for-horizontal-scaling/32920)
+- 1 all strapi instances need to be in sync content-type wise so you get no DB fights.
+  - 2 you can’t use cron jobs unless you have red lock plugin.
+
 - ## [Customize Save button in content-manager plugin _202106](https://forum.strapi.io/t/customize-save-button-in-content-manager-plugin/5663)
 - I would not recommend to modify it with extensions. Since you will have conflicts with feature updates. 
   - As you said, you need to do additional work in another database, in that case you can use lifecycles

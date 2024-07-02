@@ -167,7 +167,7 @@ modified: 2024-02-16T14:56:17.057Z
 - ## 🔀 [Users overwrite each others changes if they save the same collection item _202101](https://github.com/directus/directus/issues/3558)
 - In this case, your reported situation feels like the expected behavior here. If user A is setting title to "Hello", while user B is making it "Hello World", whoever saves last is the one that becomes the saved value.
 
-- ## 🤝🏻 [Realtime App Updates _202011](https://github.com/directus/directus/discussions/3221)
+- ## 〰️ [Realtime App Updates _202011](https://github.com/directus/directus/discussions/3221)
 - Next to websockets, also worth looking into MQTT support (needs more research
 
 - 🚀 This was implemented in version 10.3 _202306

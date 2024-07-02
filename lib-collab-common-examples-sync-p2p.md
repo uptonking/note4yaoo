@@ -187,11 +187,12 @@ modified: 2023-01-17T19:13:01.845Z
   - karyon base: A lightweight, extensible database that operates with karyon crdt.
   - Big thanks to Ink & Switch team, smol async runtime, and zmq.rs for the inspiration!.
 
-- https://github.com/feathersjs-ecosystem/feathers-sync /MIT/202305/js
+- https://github.com/feathersjs-ecosystem/feathers-sync /MIT/202305/js/inactive
   - Synchronize service events between Feathers application instances
   - When running multiple instances of your Feathers application (e.g. on several Heroku Dynos), service events (created, updated, patched, removed and any custom defined events) do not get propagated to other instances.
   - feathers-sync uses a messaging mechanism to propagate all events to all application instances. 
   - It currently supports redis, amqp/RabbitMQ
+  - This allows to scale real-time websocket connections to any number of clients.
 
 - https://github.com/yomorun/presencejs
   - a JavaScript library that allows you to build real-time web applications . 

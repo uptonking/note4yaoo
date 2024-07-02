@@ -18,13 +18,14 @@ modified: 2024-05-09T09:35:28.467Z
   - 计算平台的演示场景: jupyter
 
 - vscode-ide基础功能
-  - 编辑调试相关: LSP, DAP
   - 代码浏览: symbols, sticky-header
-  - git相关: git-lens
-  - 文件系统
+  - 
+  - 编辑调试: LSP, DAP
+  - 文件系统: local/remote
+  - git版本控制: git-lens
+  - 插件扩展: 语法高亮
   - remote repo/ssh
   - test
-  - 插件相关: 语法高亮
 # draft
 - 兼容现有浏览器的扩展
 # xp-file-manager

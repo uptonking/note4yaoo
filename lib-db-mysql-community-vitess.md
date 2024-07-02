@@ -65,6 +65,33 @@ modified: 2024-02-17T13:01:44.351Z
 - ## [PostgreSQL support? · vitessio/vitess _201503](https://github.com/vitessio/vitess/issues/479)
 - A similar product but support postgreSQL https://github.com/citusdata/citus
 
+# discuss-ha
+- ## 
+
+- ## 
+
+- ## [MySQL High Availability at GitHub | Hacker News _201806](https://news.ycombinator.com/item?id=17357319)
+
+- [MySQL High Availability Solutions | by Ganesh Joshi | Medium _202307](https://medium.com/@ganeshchamp39/mysql-high-availability-solutions-ec0f06f455ee)
+  - MySQL InnoDB Cluster: An integrated solution offering built-in HA and automatic failover capabilities.
+  - Percona XtraDB Cluster: An open-source solution with synchronous replication for enhanced data consistency.
+
+- I feel like this article stabs at a kind of interesting tradeoff in distributed databases: using consensus to store your data, or using consensus to point at the master for the data.
+  - A lot of the bleeding-edge DBMS out there (e.g. CockroachDB, TiDB) use the former probably because of the Spanner influence, but maybe the latter is good enough for almost everyone.
+
+- Vitess is another system for horizontally scaling MySQL that they use at YouTube https://vitess.io/
+  - Another cool one is ProxySQL. We opted towards that rather than Vitess because it allowed a crawl, walk, run approach. Vitess came across as all or nothing.
+
+- Why not InnoDB Cluster with single primary?
+  - That's only practical for a single datacenter. You still really need asyc replication across geographic boundaries with a failover mechanism.
+
+- TiDB is relevant because it is distributed and protocol-compatible with MySQL.
+  - protocol-compatible doesn't directly imply API-compatible (I'm thinking of very very subtle differences between things like datatypes or isolation level behavior). I know a bit more about CockroachDB, which consciously does some things differently from Postgres.
+
+- 
+- 
+- 
+
 # discuss
 - ## 
 
