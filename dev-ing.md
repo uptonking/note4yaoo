@@ -132,6 +132,7 @@ betterdiscordctl -i flatpak install
   - 基于oplog的研发方向, 架构设计时考虑放在数据库层解决还是应用层解决
     - 实现db，还是sourcing based framework
     - 基于log能提升write性能，基于materialized-view能提升read性能
+    - 基于oplog实现partial-sync
   - pijul: crdt + vcs
 
 - long-term-support
@@ -141,24 +142,21 @@ betterdiscordctl -i flatpak install
   - 样式片段也可在线尝试: codepen, w3schools.com 
 
 - separate storage compute example
-  - Lovefield uses a plug-in architecture for data stores. All data stores implement `lf.BackStore` interface so that query engine can be decoupled from actual storage technology.
+  - `Lovefield` uses a plug-in architecture for data stores. All data stores implement `lf.BackStore` interface so that query engine can be decoupled from actual storage technology.
 
 - cache/stream for web storage
-  - 参考 tanstack-query, localforage
+  - 参考 tanstack-query, falcor, localforage
 
 - 🤔 支持切换内存和异步数据源的示例
   - tanstack-table external data; ag-grid server-side row model
   - abstract-level, localforage
   - tupledb, tinybase
   - tiddlywiki, react-admin
-  - falcor
-  - service worker
+  - service worker, falcor
 
 - collab-sync, partial-sync
   - string-crdt: ? list-crdt
-  - logux
-    - sqlite-persistor
-    - collab-data-structure: lww-with-hlc
+  - logux: sqlite-persistor, lww-with-hlc
   - verdant/lo-fi: hlc + websocket, no-merkle
   - harika: hlc + sqlite + absurd-sql, no-merkle
   - jaredly/local-first: hlc + rga
@@ -169,7 +167,6 @@ betterdiscordctl -i flatpak install
   - 结合hlc+crdt: idbsidesync, evolu, rga-crdt
   - 结合hlc+db: piratedb, tinybase, kappa-db-stream, linvodb
   - hypercore: partial-sync
-- event-sourcing
 
 - undo/redo与branching可拆分实现
   - undo与versioning/history基于persistent data structure
@@ -190,7 +187,7 @@ betterdiscordctl -i flatpak install
   - 如何保持path和key同步，参考 getKeysToPathsTable, getByKey实现上基于getByPath
   - 优化方向可参考tree的crud及协作
   - 协作时还应该考虑 json patch + last-write-win
-  - Node定义采用unist
+  - Node定义采用ast, 如 unist
   - lww的字符串改为针对crdt优化的类型
 - flat-data-model的示例
   - frontend/in-memory database，如rxdb/pouchdb/tupledb
@@ -206,25 +203,26 @@ betterdiscordctl -i flatpak install
   - 将编辑器的计算密集部分的数据模型不使用普通json对象，而直接用类似数据库模型的设计
   - 为了性能，尽量不要直接读写持久化数据源，要使用缓存object pool
 
-- log2023 编辑器、表格、协作、cms
-  - 01-pouchdb
-
+- functional-codebase: slate, tanstack-table, feathersjs
 - why use es6 class
   - 运行时类型检查，instanceof
   - 既包含类型定义，又包含逻辑工具方法
     - 注意class有时也采用先定义interface再实现，此时ts type也合理了
     - 但应用层业务代码一般不需要定义单独interface
   - 方便调试，可直接log到对象及方法，函数里面的闭包变量更新难以定位
-    - 也可以提前将需要调试的属性或方法添加到闭包暴露的对象上
+    - 也可提前将需要调试的属性或方法添加到闭包暴露的对象或window上
+    - 闭包实现的私有属性更安全
 
 - dev-xp-editor
   - 不仅要保持编辑器内容和视图同步，还要保持选区和内容同步
+  - 编辑器外部相关面板的协同产品较少，如评论
 
 - dev-later
   - crdt tutorials
   - 默认 last-write-win, 出现冲突时，提示用户选择版本
   - 离屏渲染, keep-alive
   - 分层渲染
+  - 测试文档系统未登录的流程和mock
 
 ## ing
 
@@ -233,7 +231,6 @@ betterdiscordctl -i flatpak install
   - branching/versioned-doc
   - pouchdb + kappa-crdt + eav => pouchdb-crdt-eav
   - todo remove hashId在编辑器model中有什么作用
-  - 处理初试
   - 做完tailwind-table就面试
 
 - dev-to 提炼核心`需求+产出`工作流，不能在产品中检验的技术不玩
@@ -328,17 +325,15 @@ betterdiscordctl -i flatpak install
   - drag
     - paragraph的drag handle有时无法选中
   - collab
-    - 2个编辑器同一页面协同的示例未完成
+    - ✨ 2个编辑器同一页面协同的示例未完成
     - cursor光标位置经常对不上
   - [x] streaming infinite-list/tree
 # dev-07
 - architecture
   - 实现了偏静态的ui交互，优化cde集成、状态管理、单元测试
   - websocket scalable chat/room, progress: 参考zulip-sdk, firebase/supabase-sdk
-  - refactor-cde-state-to-zustand
   - cde页面不稳定复线的内存泄漏
-- CDE集成
-  - lift layout state up to global
+  - ~~refactor-cde-state-to-zustand~~
 - diff-view
   - red + green
   - cursor
@@ -351,20 +346,28 @@ betterdiscordctl -i flatpak install
 - ui
   - editor: typewriter
   - dark theme for dockview
-  - tailwind child selector
-  - steps-tree: deprecate id in favor of content
+  - stepsTree: deprecate id in favor of content
   - 处理floating的滚动条
+  - ~~tailwind child selector~~
 - ai-integration
   - https://staging.agent.clacky.ai/demo
   - wss://staging.agent.clacky.ai/socket.io/? EIO=4&transport=websocket
 
 - not-yet
   - ~~ide滚动条失败~~
-  - 删除未使用的 workbench2 组件失败，会导致样式混乱
   - ~~trpc请求过多的问题~~
-  - 每次打开cde都会重新import，要实现skip
-  - 如何复用idepaas-sdk的编辑器组件，一种思路是使用readonly版本
+  - ~~删除未使用的 workbench2 组件失败，会导致样式混乱~~
+  - threadName variable
   - clacky read_file TODO.md
+  - 需要记住cde各侧边栏面板的宽度/高度
+
+- 根据thread状态优化cde启动速度
+  - 每次打开cde都会重新import，要实现skip
+  - 若是empty，则需要导入仓库
+  - 若是initialized，则直接创建playgroundId
+  - 若是inProgress, 则直接创建ticket
+
+
 
 ## 070
 
@@ -373,11 +376,12 @@ betterdiscordctl -i flatpak install
 - dev-to
   - 
 
-- todo
-- 根据thread状态优化cde启动速度
-  - 若是empty，则需要导入仓库
-  - 若是initialized，则直接创建playgroundId
-  - 若是inProgress, 则直接创建ticket
+## 0703
+
+- dev-log
+  - 熟悉codemirror的文档和源码， 探索切换diff视图的插件化实现方式
+- dev-to
+  - 静态版diff视图编辑器
 
 ## 0702
 

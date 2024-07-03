@@ -74,6 +74,7 @@ modified: 2024-05-06T02:54:40.374Z
   - 行级 code-comment
 - ❓ 为什么要将editorView对象挂在全局state的file下
   - actions.file.editorView(view)
+- 如何复用idepaas-sdk的编辑器组件，一种思路是使用readonly版本
 
 - fileTree
   - 大文件无法打开， 如package-lock.json

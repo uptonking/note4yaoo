@@ -33,7 +33,16 @@ modified: 2024-05-27T09:12:06.925Z
 # disccuss
 - ## 
 
-- ## 
+- ## 🆚 [Git - see changes across multiple commits? : r/vscode](https://www.reddit.com/r/vscode/comments/y6oti0/git_see_changes_across_multiple_commits/)
+  - Jetbrains IDEs have a feature where you can select multiple commits and you can see the files and changes that were made in the selected commits.
+  - Can this be actieved in vscode? Thanks.
+
+- I'd recommend using a proper git gui like Fork. It says it's paid, but you can just keep clicking a button every month to keep using it free forever.
+
+- I use the git graph plugin, it will allow you to do exactly what you are asking
+- I tried using GitGraph extension: you can only select 2 commits and it does a diff between commit 1 until commit 2, showing changes in all commits between commit 1 and 2.
+
+- Git in VSCode is messy. I suggest getting comfortable with the CLI as it works everywhere and does anything you ever need. You can use things like delta to make the experience better. If you want to avoid the terminal at all costs and prefer working through a GUI, check git clients like Fork, Sourcetree, TortoiseGit etc.
 
 - ## 📝 [git rebase，看这一篇就够了 - 掘金](https://juejin.cn/post/6969101234338791432)
 - 先放上建议
@@ -44,7 +53,7 @@ modified: 2024-05-27T09:12:06.925Z
   - 你可以用pull命令把master分支上的修改拉下来并且和你的修改合并；结果看起来就像一个新的"合并的提交"(merge commit)
 - git rebase会把feature/mywork分支里的每个提交(commit)取消掉，并且把它们临时保存为补丁(patch)，然后把feature/mywork分支更新到最新的master分支，最后把保存的这些补丁应用到feature/mywork分支上
   - 在rebase的过程中，也许会出现冲突(conflict)。在这种情况，Git会停止rebase并会让你去解决冲突；
-  - 在解决完冲突后，用git add命令去更新这些内容的索引(index)，然后，你无需执行 git commit，只要执行：`git rebase --continue` , 这样git会继续应用(apply)余下的补丁
+  - 在解决完冲突后，用git add命令去更新这些内容的索引(index)，然后，你无需执行 git commit，只要执行： `git rebase --continue` , 这样git会继续应用(apply)余下的补丁
 
 - 在任何时候，你可以终止rebase的行动，并且feature/mywork分支会回到rebase开始前的状态。 git rebase --abort
   - 在命令行使用git rebase存在多个commit、多个冲突时需要我们多次解决同一个地方的冲突，然后执行git rebase --continue，反复，直到冲突解决为止，稍显麻烦，可以使用IDE辅助进行

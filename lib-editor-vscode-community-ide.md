@@ -19,7 +19,6 @@ modified: 2024-05-09T09:35:28.467Z
 
 - vscode-ide基础功能
   - 代码浏览: symbols, sticky-header
-  - 
   - 编辑调试: LSP, DAP
   - 文件系统: local/remote
   - git版本控制: git-lens

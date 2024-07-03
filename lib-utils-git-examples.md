@@ -348,6 +348,11 @@ modified: 2023-08-29T10:12:22.345Z
   - Self-hosted pastebin powered by Git
   - All snippets are stored in a Git repository and can be read and/or modified using standard Git commands, or with the web interface. 
   - It is similiar to GitHub Gist, but open-source and could be self-hosted.
+# integrations
+- https://github.com/mhutchie/vscode-git-graph /NonCommercial/202109/ts/inactive
+  - https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph
+  - View a Git Graph of your repository in Visual Studio Code, and easily perform Git actions from the graph.
+  - Compare any two commits by clicking on a commit, and then CTRL/CMD clicking on another commit
 # apps
 - https://github.com/creationix/wheaty /201512/js
   - JS-Git based application hosting platform

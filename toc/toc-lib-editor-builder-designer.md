@@ -59,6 +59,7 @@ modified: 2020-11-17T13:38:19.107Z
   - Reka solves this by providing an AST-powered state system that enables end-users to create UI components that are nearly as complex as ones that developers could write in code
   - along with an interpreter to efficiently compute an output that could be rendered on the browser.
   - core依赖mobx、nanoid, 周边依赖mobx-react-lite、codemirror6、@lezer/highlight、acorn-jsx、yjs
+  - 示例使用unist-ast
   - It's primarily built to serve as the new state management system to power `Craft.js` and its page builders.
   - Reka computes a Component instance from its State by generating a `View` tree
     - Whenever there's a change made to the State, Reka efficiently recomputes the updated View.

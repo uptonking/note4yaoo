@@ -285,6 +285,9 @@ modified: 2023-06-23T12:46:53.288Z
   - Reka solves this by providing an AST-powered state system that enables end-users to create UI components that are nearly as complex as ones that developers could write in code
   - along with an interpreter to efficiently compute an output that could be rendered on the browser.
   - core依赖mobx、nanoid, 周边依赖mobx-react-lite、codemirror6、@lezer/highlight、acorn-jsx、yjs
+  - 示例使用unist-ast
+  - https://github.com/prevwong/reka.js/tree/main/packages/codemirror
+    - Contains the CodeMirror extension that provides syntax highlighting for Reka code
 
 - https://github.com/joplin/website-plugin-discovery /MIT/202401/ts/mustache
   - https://joplinapp.org/plugins/

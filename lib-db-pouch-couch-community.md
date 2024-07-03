@@ -157,6 +157,17 @@ modified: 2024-01-04T06:55:12.542Z
 # discuss-couch-big-data
 - ## 
 
+- ## 
+
+- ## [How to compute secondary indexes faster _201507](https://groups.google.com/g/pouchdb/c/enYAKsUPpis?pli=1)
+- If each of those 150 databases were simultaneously live-syncing to a remote CouchDB, then yes, that would be a problem
+  - BTW instead of 150 databases, another option is the relational-pouch style of overloading IDs, which would allow you to use one single database while still using only allDocs() instead of query(). 
+  - Another option entirely is to use another database. For highly relational data, constantly changing data, or data that needs lots of secondary indexes, a database closer to the metal like Dexie (with IndexedDB shim for Safari) would probably be best. However, if you can overload IDs or use many separate databases, then you can stick with PouchDB and have much better performance.
+
+- 
+- 
+- 
+
 - ## [CouchDB vs HBase - Stack Overflow](https://stackoverflow.com/questions/3847849/couchdb-vs-hbase)
 - they share many similarities:
   - Schema-free data-model
