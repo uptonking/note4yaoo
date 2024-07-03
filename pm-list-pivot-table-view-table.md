@@ -25,6 +25,9 @@ modified: 2022-12-16T01:52:33.729Z
   - [Bootstrap Table Examples - Sub Table](https://examples.bootstrap-table.com/#welcomes/sub-table.html)
 
 - search-view
+
+# usecase
+- 文件列表及搜索，很适合切换为多维表格的交互
 # table-in-editor
 - [CKEditor 5 table](https://ckeditor.com/docs/ckeditor5/latest/features/table.html)
   - 行列操作在悬浮工具条的二级菜单

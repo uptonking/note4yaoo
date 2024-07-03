@@ -167,4 +167,15 @@ modified: 2024-05-02T02:00:47.318Z
 - what do you do when the different instances of the extension got different configurations?
   - Sometimes, that's just an error. But often, it is possible to define a strategy for reconciling them. Facets work well for this. You can put the configuration in a module-private facet, and have its combining function either reconcile configurations or thow an error when this is impossible. Then code that needs access to the current configuration can read that facet.
   - See the `zebra` stripes example for an illustration of this approach.
+# api
+- Annotations are tagged values that are used to add metadata to transactions in an extensible way. 
+  - They should be used to model things that effect the entire transaction (such as its time stamp or information about its origin). 
+  - For effects that happen alongside the other changes made by the transaction, state effects are more appropriate.
+- State effects can be used to represent additional effects associated with a transaction. 
+  - They are often useful to model changes to custom state fields, when those changes aren't implicit in document or selection changes.
+
+- 
+- 
+- 
+
 # more

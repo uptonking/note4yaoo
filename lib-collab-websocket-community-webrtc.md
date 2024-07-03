@@ -174,6 +174,14 @@ modified: 2023-12-12T08:45:31.670Z
 
 - ## 
 
+- ## 
+
+- ## [Where to hold my socket in my redux store? - Stack Overflow](https://stackoverflow.com/questions/65940957/where-to-hold-my-socket-in-my-redux-store)
+- Websockets should typically go in a Redux middleware, where they have access to dispatch and getState
+
+- ## [Socket.io-client on recieving event running useEffect two times - Stack Overflow](https://stackoverflow.com/questions/75250544/socket-io-client-on-recieving-event-running-useeffect-two-times)
+- the problem is that you are removing the wrong listener--you have to pass the exact same function that you want to remove (because you can have two listeners on an event). 
+
 - ## [address horizontal scalability in documentation · Issue · ueberdosis/hocuspocus _202304](https://github.com/ueberdosis/hocuspocus/issues/575)
 - It's not clear to me the guarantees hocuspocus tries to achieve around horizontal scaling. #178 and #279 both talk about horizontal scaling, but I'm hoping for something explicit in the code that yes, hocuspocus supports multiple instances behind a load balancer, if all features (eg stateless messaging) are expected to work, etc. I think the answer is yes, but I'd love more explicit confirmation somewhere!
 - [Redis Scaling  · ueberdosis/hocuspocus](https://github.com/ueberdosis/hocuspocus/issues/178)

@@ -373,12 +373,19 @@ betterdiscordctl -i flatpak install
 - dev-to
   - 
 
+- todo
+- 根据thread状态优化cde启动速度
+  - 若是empty，则需要导入仓库
+  - 若是initialized，则直接创建playgroundId
+  - 若是inProgress, 则直接创建ticket
+
 ## 0702
 
 - dev-log
   - 尝试复用paas编辑器的插件和逻辑，实现一个最小的diff编辑器组件，思路可行，但不符合产品需求
 - dev-to
   - 将最小diff编辑器完善下，尝试将diff逻辑抽象为codemirror插件
+
 ## 0701
 
 - dev-log

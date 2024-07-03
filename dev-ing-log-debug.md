@@ -17,7 +17,22 @@ modified: 2023-06-14T00:53:15.226Z
 
 ## 
 
-## 
+## 🤔 是否要将socket连接方法放在全局state里面
+
+- ai-agent的socket连接与state结合的问题
+  - 💡 不要直接暴露socket连接对象， 暴露socket的on/emit方法即可
+  - 创建连接conn的逻辑是effect，若使用全局工具方法获取conn对象，则effect范围太大
+  - 考虑 依赖注入取值 vs 全局工具方法取值
+
+- pros
+  - 可在状态更新方法中直接发送socket消息
+  - state持有socket操作方法，就不存在类似fetch的外部依赖
+- cons
+  - 状态中的socket方法无法持久化
+
+- 现有方案
+  - redux将socket放在middleware
+  - zustand
 
 ## 20240617: nextjs react strictMode 导致的问题
 
@@ -26,7 +41,7 @@ modified: 2023-06-14T00:53:15.226Z
 
 - 🤔 ai-plan-steps-tree的折叠效果失败
   - debug调试时，nextjs在严格模式下，onClick的handleCollapse里面setState后计算最新数据第一次为最新可折叠数据，紧连着的第二次为旧数据
-  - 💡 原因是strict模式下执行2次render导致 `setState(v=>!v)` 执行2次，由于没有setState的参数没有close over原始值，所有boolean会复原
+  - 💡 原因是strict模式下执行2次render导致 `setState(v=>!v)` 执行2次，由于setState的参数没有close over原始值，所有boolean会复原
   - 🧐 逐步仔细分析异常的位置
 
 ## 20240527: Warning: Each child in a list should have a unique "key" prop.
@@ -48,7 +63,7 @@ modified: 2023-06-14T00:53:15.226Z
 
 ## Module '"parchment"' has no exported member 'Bolt'
 
-- 排查了很久，import名称错误，是 Blot, 而不是Bolt
+- 排查了很久，import名称错误，是 Blot, 而不是 Bolt
 
 - [typescript - Module has no exported member error in angular module - Stack Overflow](https://stackoverflow.com/questions/57234220/module-has-no-exported-member-error-in-angular-module)
   - Make sure the names are matching.

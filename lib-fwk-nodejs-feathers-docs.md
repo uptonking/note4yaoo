@@ -11,6 +11,12 @@ modified: 2023-01-20T00:13:00.927Z
 
 # docs
 
+## overview
+
+- The Feathers application does not use a complicated dependency injection mechanism. 
+  - Instead, the application is wired together using configure functions to split things up into individual files. 
+  - They are functions that are exported from a file and that take the Feathers `app` object and then use it to e.g. register services. Those functions are then passed to `app.configure`.
+
 ## [Scaling | feathers](https://feathersjs.com/cookbook/general/scaling)
 
 - feathers application may need to provide high availability. Feathers is designed to scale.

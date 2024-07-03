@@ -19,13 +19,20 @@ modified: 2023-01-12T16:33:34.413Z
   - ?
 
 - features
+  - No decorators, no modules or DI for small or medium project
+    - 函数式风格
   - Fast: Leveraging a unique architecture, Feathers lets you focus on building your APIs and real-time applications quickly. 
     - You automatically get scalable HTTP and real-time APIs
   - Universal: Feathers can be used with NodeJS, in the browser, with React Native or with any other API client. 
     - You can use any database with many supported out of the box
   - Flexible: a large ecosystem of plugins 
-  - No decorators, no modules or DI for small or medium project
-  - [Feathers vs Nest | feathers](https://feathersjs.com/feathers-vs-nest.html)
+- [Feathers vs Nest | feathers](https://feathersjs.com/feathers-vs-nest.html)
+  - Nest uses dependency injection system and a module based architecture, 
+    - Feathers uses service based architecture with a more functional approach.
+  - Feathers can generate client code for its server, Nest can't.
+  - Nest uses RxJS for running interceptors, guards, filters or validation pipes. 
+    - Feathers uses before, after and around hooks.
+  - Nest can only be written in TypeScript whereas Feathers supports JavaScript and TypeScript.
 
 - usecase
   - 实时协作的编辑器

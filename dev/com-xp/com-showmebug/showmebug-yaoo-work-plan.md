@@ -56,7 +56,14 @@ modified: 2024-05-06T02:54:40.374Z
 
 - 回放的示例，暂停/继续播放的回调事件未生效
 - 回放的示例，只打印了 onAvailable 事件
-- 回放更适合纯前端实现
+- 回放更适合纯前端实现? 
+  - 纯前端的回放不支持协同调试，所以需要
+- 回放要支持其他面板: terminal/browser
+
+- 为什么不需要创建单独的回放编辑器
+  - 回放时需要在快照的基础上支持直接编辑
+- 回放及播放控制需要实现在服务端吗
+  - 为了协同调试，需要
 
 - 获取ticket的api未添加权限校验，header中没有token
 
@@ -65,12 +72,15 @@ modified: 2024-05-06T02:54:40.374Z
 - editor
   - 支持多实例
   - 行级 code-comment
+- ❓ 为什么要将editorView对象挂在全局state的file下
+  - actions.file.editorView(view)
 
 - fileTree
   - 大文件无法打开， 如package-lock.json
   - 文件树未实现懒加载， 点击时再请求文件夹的数据而不是一次请求整棵树
   - 部分文件再次打开会记住文件尾的位置
   - fileChangeLogs的变更列表无法区别修改删除
+  - 搜索排除了node_modules目录吗
 
 - 
 - 

@@ -30,13 +30,26 @@ modified: 2021-03-29T19:18:55.989Z
 
 # 
 
-# 
+# [What is a simple explanation of Decorators in JavaScript and how useful is it in functional programming - Stack Overflow](https://stackoverflow.com/questions/50168239/what-is-a-simple-explanation-of-decorators-in-javascript-and-how-useful-is-it-in)
+- testing becomes super easy because you have to test individual functions and while coding in react, it saves a lot of your time and energy. 
+  - I use recompose all the time and don't even use the class keyword.
+  - You have to take care that all the functions are pure and the state is immutable. 
+# class vs factory
+- class-pros
+  - 通过原型链共享方法定义，更节省内存
+- class-cons
+  - private属性仍可被访问
+  - mixin缺少最佳实践，一般用来实现多重继承，可复用多个方法
 
-# 
-
-# class的实例方法 vs class中值为箭头函数的实例属性
-- 实例属性f不在原型上
-  - 无法继承、super.f
+- factory-pros
+  - hoc方便复用，跨框架复用
+  - 纯函数容易test
+  - 闭包中的游离变量无法访问，更安全
+- factory-cons
+  - hoc函数导致更多的方法创建，更占用内存
+# 🆚 class的实例方法 vs class中值为箭头函数的实例属性
+- 实例属性f不在原型对象上
+  - 无法继承、无法使用super.f
   - 内存消耗更大
 
 - You should avoid using arrow functions in class as they won't be the part of prototype and thus not shared by every instance.
@@ -111,8 +124,6 @@ new C().handleClick() // ;; click-A 没有click-C
 
 - Our savior will be the autobind-decorator, unfortunately it’s only available with babel as it’s still a proposal at stage 2.  /inactive
   - https://github.com/andreypopp/autobind-decorator
-- 
-
 # .js vs .jsx
 - The distinction between .js and .jsx files was useful before Babel, but it’s not that useful anymore.
   - There are other syntax extensions (e.g. Flow). What would you call a JS file that uses Flow? .flow.js? What about JSX file that uses Flow? .flow.jsx? What about some other experimental syntax? .flow.stage-1.jsx?

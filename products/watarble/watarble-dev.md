@@ -25,6 +25,9 @@ modified: 2022-11-24T11:39:26.000Z
 - ~~将ClientId改为actorId~~，client更通用
 # dev-maybe
 
+# usecase
+
+- 文件列表及搜索，很适合切换为多维表格的交互
 # codebase
 - 数据库第一次构建索引会很慢
   - 思路1: 持久化索引来快速还原，参考BST的序列化和反序列化

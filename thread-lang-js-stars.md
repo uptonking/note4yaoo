@@ -26,7 +26,21 @@ if(val) // doSth
 
 - ## 
 
-- ## 
+- ## [Accessing variables trapped by closure - Stack Overflow](https://stackoverflow.com/questions/4472529/accessing-variables-trapped-by-closure)
+- Variables within a closure aren't directly accessible from the outside by any means. However, closures within that closure that have the variable in scope can access them, and if you make those closures accessible from the outside, it's almost as good.
+
+- Redefining the function with the getter methods will do the task. You can do it dynamically.
+  - 重定义fn: eval(newFun); 
+
+- If none of the above is possible in your script, a very hacky solution is to store it in a hidden html-object:
+  - document.getElementById("hiddenStore").innerHTML
+
+- [Access variable in function closure from outside - Stack Overflow](https://stackoverflow.com/questions/53163755/javascript-access-variable-in-function-closure-from-outside)
+  - The only way to do this would be to declare count as a global, or create another function just for accessing count, nested within counter
+
+- [Is it possible to gain access to the closure of a function? - Stack Overflow](https://stackoverflow.com/questions/11192875/is-it-possible-to-gain-access-to-the-closure-of-a-function)
+  - That's (one of) the purpose(s) of a closure - to keep information private. Since the function already has been executed its scope variables are no longer available from outside (and have never been) - only the functions executed in it's scope (still) have access.
+  - If you're in a front-end environment, and if you can execute your own Javascript in a prior script tag, an option is to attach a MutationObserver, wait for the script tag you want to spy on to be inserted into the document, and right when it's inserted, change its code so that the functionality you want to examine or change gets exposed
 
 - ## 为啥前端程序员特别爱用箭头函数？我看过不分情况全部用箭头函数的前端代码。
 - https://twitter.com/im2gua/status/1789938063092637809

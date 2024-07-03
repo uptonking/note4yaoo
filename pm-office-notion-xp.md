@@ -24,8 +24,12 @@ modified: 2023-11-28T14:48:45.910Z
 - notion不支持左中右对齐
   - [How to center text alignment like this?__202201](https://www.reddit.com/r/Notion/comments/rry43b)
 
-## block操作类
+## blocks
 
+### codeblock
+
+- codeblock未使用框架，自研实现
+  - ❓ codeblock内所有元素都是span，换行是如何实现的
 # notion教程-沙牛清单
 - notion三大特性
   - 模块化操作：拖拽、转换、分栏

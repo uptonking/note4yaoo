@@ -213,6 +213,20 @@ modified: 2021-01-06T14:40:03.364Z
 
 - ## 
 
+- ## [Is it a good idea to use React. Context to inject UI-Components? - Stack Overflow](https://stackoverflow.com/questions/66693915/is-it-a-good-idea-to-use-react-context-to-inject-ui-components)
+- overall the idea to pass component trough context is a bit of misuse of that concept.
+  - If you need to pass some specific things to your components you can have a custom provider as you did there, but as far as the component themselves, there is no common sense to use context.
+  - If you end goal is to shorten the list of imports of component with custom context hook and just getting them like that, I think that is a bad tradeoff overall.
+
+- Still I think that is not the right way to use context, that is why we have importing of components from packages or simple components/atoms folder (collections), not passing them in context and getting them from context. 
+  - Well I cant think of another way to "inject" components like this. I am familiar with only making a package that you just import components from. In your case context should only be used to pass some common stuff. In Material UI for example you got theme provider that passes stuff that components will use as styles. So in your case if you need to pass something like that but not the components themselfs do that. I think that you should just think about changing your mindset on this topic, and not try to find a way to do injection
+
+- ## [Store hooks in React Context API as dependency injection. Is it a good pattern? - Stack Overflow](https://stackoverflow.com/questions/73151467/store-hooks-in-react-context-api-as-dependency-injection-is-it-a-good-pattern)
+- Although DI reduced the code for importing custom hooks in each component, the code for the context provider was added to the test code.
+- Besides, putting every common hook in context value and passing them down violate interface-segregation principles. The context interface is very large, but each component only wants to know about the hooks that are of interest to them
+  - Of course, you can split the large context into smaller contexts. It will increase code and the need to define these role interfaces. 
+  - We also need to decide how to compose these context providers with our components. Put all context providers in the root App component(application level) or page component(page-level) or module level. This adds complexity
+
 - ## HTMX 2.3 will be rolling out a brand new, immutable state management layer, as well as it own serialization protocols for faster time across the wire
 - https://twitter.com/WarrenInTheBuff/status/1773799884820296138
 - plus a runtime to execute hyperscript on the server, making all that as performance as it can possibly be
