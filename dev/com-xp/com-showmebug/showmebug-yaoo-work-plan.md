@@ -34,12 +34,22 @@ modified: 2024-05-06T02:54:40.374Z
 
 - agent初始化失败时，不影响页面上其他业务的正常使用
 
+- 后端封装api的原因
+  - 减少前端的需要传递的参数
+  - 减少前端的请求数量
+  - disable其他系统的鉴权
+
+- 
+- 
+- 
+
 ## proj-idepaas-sdk
 
 - resources
   - https://staging.1024paas.com/   (测试数据较多，api较稳定)
   - https://develop.1024paas.com/
   - https://www.1024paas.com/
+  - https://app.apifox.com/project/3335675
   - [DaoPaaS API Options](https://www.1024paas.com/sdk/docs/index.html)
   - [1024PaaS-租户业务接口](https://apifox.com/apidoc/shared-c0c0ebad-15b3-4605-896e-e39879fe6e47/doc-952073)
   - https://staging.showmebug.com/  (帐号 01test)

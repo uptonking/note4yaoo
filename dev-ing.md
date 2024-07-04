@@ -359,15 +359,11 @@ betterdiscordctl -i flatpak install
   - ~~删除未使用的 workbench2 组件失败，会导致样式混乱~~
   - threadName variable
   - clacky read_file TODO.md
+
+- cde调整
   - 需要记住cde各侧边栏面板的宽度/高度
-
-- 根据thread状态优化cde启动速度
-  - 每次打开cde都会重新import，要实现skip
-  - 若是empty，则需要导入仓库
-  - 若是initialized，则直接创建playgroundId
-  - 若是inProgress, 则直接创建ticket
-
-
+  - 隐藏editor头部 FileHeader， 文件树头部 
+  - cde初始化迁移到paas-api
 
 ## 070
 
@@ -375,6 +371,22 @@ betterdiscordctl -i flatpak install
   - 
 - dev-to
   - 
+
+## 0705
+
+- 根据thread状态优化cde启动速度
+  - ~~每次打开cde都会重新import，要实现skip~~
+  - 若是empty，则需要import仓库
+  - 若是initialized，则直接创建playgroundId
+  - 若是inProgress, 则直接创建ticket
+
+- dev-log
+  - 重构了workbench布局相关的状态
+  - 更新了cde的初始化逻辑到最新api，但最后一步请求ide-server url失败
+  - cde-tools分屏面板添加
+- dev-to
+  - 分别优化第一个thread/普通thread的cde初始化逻辑
+  - cde-tools面板按钮隐藏及调整
 
 ## 0703
 

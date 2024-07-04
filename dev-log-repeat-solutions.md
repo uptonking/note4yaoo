@@ -22,6 +22,7 @@ modified: 2021-07-20T13:50:23.433Z
     - roadmap, open-issues, alternatives
     - 开放能力: extensions, scripts, marketplace
     - pref: 索引、缓存、分库分表、读写分离
+    - 文档产品: editor + fileTree + workbenchLayout + search + cmdKeys + settings
   - architecture-early 需要尽早考虑的架构设计，没有完美的架构
     - 核心架构考虑 server/db/socket
     - 早期不要将系统架构设计得过于复杂，会影响开发进度, 甚至产品终止都用不上
