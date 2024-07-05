@@ -374,6 +374,10 @@ betterdiscordctl -i flatpak install
 
 ## 0705
 
+- [Error: The externalDependency 'webpack-cli' for 'server:build' could not be found · Issue · nrwl/nx](https://github.com/nrwl/nx/issues/22871)
+  - Issue has nothing to do with pnpm. it also reproduced with npm, when using nx 19.0.1. After downgrade to 18.3.4, issue goes away.
+  - Nx doesn't support pnpm 9 yet
+
 - 根据thread状态优化cde启动速度
   - ~~每次打开cde都会重新import，要实现skip~~
   - 若是empty，则需要import仓库
@@ -387,6 +391,23 @@ betterdiscordctl -i flatpak install
 - dev-to
   - 分别优化第一个thread/普通thread的cde初始化逻辑
   - cde-tools面板按钮隐藏及调整
+
+## 0704
+
+- 如何获取clerk的cookie，传到header的Authorization
+
+- [What is the shortest function for reading a cookie by name in JavaScript? - Stack Overflow](https://stackoverflow.com/questions/5639346/what-is-the-shortest-function-for-reading-a-cookie-by-name-in-javascript)
+  - await cookieStore.get('cookieName'); 
+  - It's 2022, everything except Internet Explorer supports the URLSearchParams API (^1) and String.prototype.replaceAll API (^2), so we can horribly (ab)use them
+
+```JS
+const cookies = new URLSearchParams(document.cookie.replaceAll('&', '%26').replaceAll('; ', '&'));
+cookies.get('cookie name'); // returns undefined if not set, string otherwise
+
+const getCookieValue = (name) => (
+  document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)')?.pop() || ''
+)
+```
 
 ## 0703
 
