@@ -162,8 +162,8 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/sachinraja/rodemirror /MIT/202112/ts/inactive
   - React component for CodeMirror 6
   - Efficient, only renders when necessary and uses StateEffect to update the editor state on prop changes. The view and state are never recreated.
-  - https://github.com/atassis/react-codemirror-ts /MIT/202206/ts/inactive
-    - Codemirror react wrapper made with typescript
+- https://github.com/atassis/react-codemirror-ts /MIT/202206/ts/inactive
+  - Codemirror react wrapper made with typescript
 
 - https://github.com/azu/codemirror-console /202404/js
   - https://codemirror-console.netlify.com/
@@ -388,13 +388,17 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/yanthink/pingfan.ts /202204/ts/inactive
   - 基于 codemirror6 的 markdown 编辑器
 
-- https://github.com/scalar/scalar/tree/main/packages/use-codemirror /202305/ts
-  - CodeMirror + vue3
-
 - https://github.com/lakejs/lake-codemirror /MIT/202404/ts
   - https://lakejs.org/
   - This package provides a CodeMirror configuration for Lake
   - Code block基于codemirror实现
+
+- https://github.com/gravity-ui/markdown-editor /MIT/202407/ts
+  - https://preview.gravity-ui.com/md-editor/
+  - a powerful tool for working with Markdown, which combines WYSIWYG and Markup modes
+  - Support for the basic Markdown and YFM syntax.
+  - Extensibility through the use of ProseMirror and CodeMirror engines.
+  - 依赖 @diplodoc/transform, react, react-dom, @gravity-ui/uikit, @gravity-ui/components 
 
 - https://github.com/wanglin2/markdown_editor_sync_scroll_demo /202210/js/inactive
   - https://wanglin2.github.io/markdown_editor_sync_scroll_demo/
@@ -455,7 +459,7 @@ modified: 2023-06-23T12:46:53.288Z
   - ChordPro, a simple text format for the notation of lyrics with chords. Although initially intended for guitarists, it can be used for all kinds of musical purposes.
   - https://github.com/chordbook/codemirror-lang-chordpro
 
-- https://github.com/fsegurai/Electron-React-Markdown-Editor /MIT/202311/ts
+- https://github.com/fsegurai/Electron-React-Markdown-Editor /MIT/202310/ts
   - Electron Markdown Editor based on React
   - 依赖codemirror6、remark-parse、electron-builder
 
@@ -481,7 +485,7 @@ modified: 2023-06-23T12:46:53.288Z
   - Highly configurable web-based text editor based on codemirror primarily designed for editing markdown, LaTeX, and html files with live-updating html and pdf previews.
   - it can be used to edit other plain text files as well, including subsidiary files (css, javascript, csv, json, pandoc templates, etc.) and see their effects live-update in their chosen root markdown/LaTeX/html document. 
 
-- https://github.com/geometryzen/stemcstudio-codemirror /MIT/202401/ts
+- https://github.com/geometryzen/stemcstudio-codemirror /MIT/202406/ts
   - Bundle of CodeMirror Editor
   - A wrapper around the CodeMirror editor for use in STEMCstudio.
 
@@ -536,6 +540,13 @@ modified: 2023-06-23T12:46:53.288Z
   - 编辑器已分离，基于rich-markdown-editor和prosemirror
   - 前端基于lit
 
+- https://github.com/wikimedia/mediawiki-extensions-CodeMirror /GPL/202405/js
+  - MediaWiki extension CodeMirror
+- https://github.com/bhsd-harry/codemirror-mediawiki /GPLv2/202405/ts
+  - https://bhsd-harry.github.io/codemirror-mediawiki/
+  - Modified CodeMirror mode based on wikimedia/mediawiki-extensions-CodeMirror
+  - The goal is to support a standalone integration between CodeMirror and Wikitext, without the need for a MediaWiki environment
+
 - https://github.com/lhlyu/pure-editor /MIT/202302/ts/inactive
   - a pure editor developed using codemirror6
 
@@ -576,6 +587,11 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/JohnnyAir/codemirror-collab-extension /202401/ts
   - Real-time collaboration plugin for CodeMirror 6
+  - 依赖@codemirror/collab
+
+- https://github.com/akashahmad/codemirror-collab-example-react /202406/ts
+  - https://codemirror-collab-example-react.vercel.app/
+  - React + TypeScript + Vite
   - 依赖@codemirror/collab
 
 - https://github.com/MINERVA-MD/minerva /GPLv3/202302/ts/vue/inactive
@@ -809,6 +825,9 @@ modified: 2023-06-23T12:46:53.288Z
   - https://github.com/overleaf/codemirror-autocomplete
   - https://github.com/overleaf/codemirror-search
 
+- https://github.com/ShadowWolf308/codemirror-indent-wrapped-line /MIT/202406/ts
+  - An extension to CodeMirror to indent wrapped newlines
+
 - https://github.com/jmkng/sen /MIT/202310/ts
   - Simple, reusable CodeMirror (v6+) extensions.
   - The extensions are exported as functions that return an array of extensions that you can apply to your view.
@@ -846,6 +865,9 @@ modified: 2023-06-23T12:46:53.288Z
   - a demo implementation of the CodeMirror spreadsheet language package.
   - https://github.com/luizzappa/codemirror-lang-spreadsheet /MIT/202304/ts
     - Spreadsheet language support for CodeMirror
+
+- https://github.com/AlbertArakelyan/collaborative-markdown-editor-example /202405/ts
+  - Collaborative Markdown Editor built on modern and simple web technologies with markdown editing libraries integrations
 
 - https://github.com/andrebnassis/codemirror-readonly-ranges /202311/ts
   - https://andrebnassis.github.io/codemirror-readonly-ranges
@@ -934,13 +956,6 @@ modified: 2023-06-23T12:46:53.288Z
     - The plugin adds the CodeMirror 6 editor to TiddlyWiki
   - https://github.com/oeyoews/tiddlywiki-codemirror6
 
-- https://github.com/wikimedia/mediawiki-extensions-CodeMirror /202405/js
-  - MediaWiki extension CodeMirror
-- https://github.com/bhsd-harry/codemirror-mediawiki /GPLv2/202405/ts
-  - https://bhsd-harry.github.io/codemirror-mediawiki/
-  - Modified CodeMirror mode based on wikimedia/mediawiki-extensions-CodeMirror
-  - The goal is to support a standalone integration between CodeMirror and Wikitext, without the need for a MediaWiki environment
-
 - https://github.com/BrianHung/tldraw-yjs /202402/ts
   - https://canvas-yjs.vercel.app/
   - An example of using tldraw together with yjs with codemirror and prosemirror.
@@ -971,6 +986,11 @@ modified: 2023-06-23T12:46:53.288Z
   - Tarnation can do things that Lezer (the parser you'd usually use for CodeMirror) can't. For example, Tarnation can parse something like Markdown, and other weird esoteric markup/formatting languages.
 
 ## lsp
+
+- https://github.com/coder0107git/codemirror-web-workers-lsp-demo /202404/ts
+  - https://codemirror-web-workers-lsp-demo.coder0107git.v6.rocks/
+  - Demo of using a Web Worker LSP in CodeMirror 6
+  - https://gitlab.com/aedge/codemirror-web-workers-lsp-demo
 
 - https://github.com/FurqanSoftware/codemirror-languageserver /161Star/BSD/202212/ts/inactive
   - Language Server integration for CodeMirror 6
@@ -1197,6 +1217,12 @@ modified: 2023-06-23T12:46:53.288Z
   - Example 1: a minimal example HTML page
   - [Example 2: choose the editor theme on the fly](https://www.bryanpg.com/codemirror-quickstart/examples/example2.html)
   - [Example 3: Try making edits above, saving state, then loading a different state.](https://www.bryanpg.com/codemirror-quickstart/examples/example3.html)
+- https://github.com/paul-norman/codemirror6-prebuilt /MIT/202406/js
+  - Pre-built bundles for CodeMirror 6 languages
+  - Building from Bryan Gillespie's CodeMirror Quickstart, this project adds simpler functions to work with HTML textareas, automatically syncing their values to the codemirror editor's value upon blur and providing placeholder support by default.
+
+- https://github.com/SeonJun-Hwang/rspack-codemirror /202406/ts
+  - ts
 
 - https://github.com/datacamp/codemirror-6-getting-started /202102/js
   - Getting started with CodeMirror 6, the popular code editor library
@@ -1319,6 +1345,9 @@ modified: 2023-06-23T12:46:53.288Z
   - 支持 Windows，Mac，网页客户端，网页移动端。
   - 基于 Markdown 编写，没有破坏性的语法拓展，在这里编写的内容在任何 Markdown 软件中都能正常显示。
   - 不依赖任何三方存储和图床，其本身就是一个图床，并且提供了完善的图片管理，防勿删，以及图片和文章的双向关系绑定。
+
+- https://github.com/KyleleeSea/codemirror-experiments /202406/ts
+  - penrose-editor
 # theme
 - https://github.com/nodetec/mirrorshades /GPLv3/202403/ts
   - A react library to create themes for codemirror
@@ -1546,6 +1575,7 @@ modified: 2023-06-23T12:46:53.288Z
   - Beautiful API references from OpenAPI/Swagger files
   - Edit your OpenAPI/Swagger specification with a live preview
   - https://github.com/scalar/scalar/tree/main/packages/use-codemirror
+  - https://github.com/scalar/scalar/tree/main/packages/use-codemirror /202305/ts/vue3
 
 - https://github.com/replit/crosis /MIT/202406/ts
   - A JavaScript client that speaks Replit's container protocol

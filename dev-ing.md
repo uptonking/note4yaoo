@@ -337,6 +337,8 @@ betterdiscordctl -i flatpak install
 - diff-view
   - red + green
   - cursor
+- cde
+  - 跟随模式，体现ai编辑的动画, 及ai的知识和智能
 - time-machine
   - workflow progress
   - playback
@@ -364,6 +366,15 @@ betterdiscordctl -i flatpak install
   - 需要记住cde各侧边栏面板的宽度/高度
   - 隐藏editor头部 FileHeader， 文件树头部 
   - cde初始化迁移到paas-api
+  - repo隔一段时间会自动失活
+
+- dev-to
+  - cde配置启动命令和运行, 继续优化初始化速度，支持编辑器配置
+  - cde面板优化: 3个面板隐藏后能恢复到正确的位置
+  - ai相关功能
+  - 跟随模式，跟随ai工作，让用户看见进度
+  - cmd+k 与ai对话
+  - ai执行计划同步底部时光机进度条
 
 ## 070
 
@@ -378,6 +389,11 @@ betterdiscordctl -i flatpak install
   - Issue has nothing to do with pnpm. it also reproduced with npm, when using nx 19.0.1. After downgrade to 18.3.4, issue goes away.
   - Nx doesn't support pnpm 9 yet
 
+## 0704
+
+- [Migrate to @xterm org on npm · xtermjs/xterm.js _](https://github.com/xtermjs/xterm.js/issues/4859)
+  - Publish 5.4 to new scope
+
 - 根据thread状态优化cde启动速度
   - ~~每次打开cde都会重新import，要实现skip~~
   - 若是empty，则需要import仓库
@@ -391,8 +407,6 @@ betterdiscordctl -i flatpak install
 - dev-to
   - 分别优化第一个thread/普通thread的cde初始化逻辑
   - cde-tools面板按钮隐藏及调整
-
-## 0704
 
 - 如何获取clerk的cookie，传到header的Authorization
 
