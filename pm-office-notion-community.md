@@ -376,7 +376,6 @@ modified: 2023-11-28T14:48:45.910Z
 
 - Apple Notes has sync issues with large collections, and backing up to anything except iCloud is a pain.
 
-
 - ## [decipad: Show HN: A Notion-like platform for building interactive models | Hacker News _202307](https://news.ycombinator.com/item?id=36940514)
 - Not sure if this was the feedback you were looking for but I spent about a year in a similar field trying to build out a product before we successfully pivoted. The product was very similar to grid.is
   - Ours was really tough sell as a product because it wasn't really a product. It was kind of a no code platform that worked with excel models. 
@@ -428,7 +427,9 @@ modified: 2023-11-28T14:48:45.910Z
 # discuss-news-notion
 - ## 
 
-- ## 
+- ## Take collaboration up a notch with new suggested edits _202407
+- https://x.com/NotionHQ/status/1807819016729460894
+  - Switch to suggestion mode to effortlessly co-create and refine content with your team.  
 
 - ## Introducing Notion Sites—the easiest way to make a website _202406
 - https://x.com/NotionHQ/status/1805619535330132425

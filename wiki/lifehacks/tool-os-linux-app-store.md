@@ -122,10 +122,25 @@ modified: 2023-06-22T07:22:04.591Z
   - A plugin system is used to access software from different sources.
   - Plugins are provided for: debian/rpm/Flatpak/Snap
   - Ratings and reviews using ODRS(GNOME Open Desktop Ratings).
+# wine
+- [Wine 9.0 · wine / wine · GitLab](https://gitlab.winehq.org/wine/wine/-/releases/wine-9.0)
+  - 202401, This release represents a year of development effort and over 7, 000 individual changes. It contains a large number of improvements that are listed below. 
+  - The main highlights are the new WoW64 architecture and the experimental Wayland driver.
+  - The new WoW64 mode is not yet enabled by default. 
+  - The Wayland driver is not yet enabled by default. It
 # discuss
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [wine和crossover有什么本质区别？ - 知乎](https://www.zhihu.com/question/41884034)
+- 两者运行的Windows程序的效果是一致的，如果纯属靠Wine的能力去运行Windows，Wine是优于CrossOver的，CrossOver用的是暂时认为稳定的Wine，而Wine是最新版。两者的功能区别在于，CrossOver提供能基本正常运行某些应用程序的保证和一套解决方案，比如某个wine实现的dll已知有暂时无法的bug，CrossOver会提供该dll原版(即Windows里面的原版dll)的安装程序下载，而直接用Wine的用户则可能不知道Wine对该应用程序的兼容性，而CrossOver提供解决方案。说白了CrossOver是用来自动解决Windows程序的“依赖”的。CrossOver还提供以下功能:1. 容器2. 打包已经解决兼容性问题的容器3. Steam优化
 
 - ## If you're going to offer an offline-capable Linux app then no-one wants to use Snap. AppImage or Flatpak is the way.
 - https://news.ycombinator.com/item?id=38905605

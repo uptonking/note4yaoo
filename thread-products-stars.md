@@ -14,7 +14,12 @@ modified: 2024-04-04T06:42:20.344Z
 
 - ## 
 
-- ## 
+- ## 海棠诗社，古诗词的数字桃源。 海棠诗社开源啦！
+- https://x.com/javayhu/status/1808903295651697117
+  - Frontend: Astro + Tailwind + Shadcn/ui
+  - Analytics: Umami + Google Analytics
+  - Database: SQLite + Drizzle
+  - Comment: Giscus
 
 - ## 海棠诗社是一个古诗词学习和创作相关的网站，诗词丰富，界面干净，
 - https://twitter.com/javayhu/status/1780410734993908095

@@ -12,7 +12,10 @@ modified: 2023-10-06T16:26:57.557Z
 # discuss
 - ## 
 
-- ## 
+- ## In Rust when you see `let y = x.clone();` You don’t know if it’s a cheap reference count increment or an expensive allocation and memcopy.
+- https://x.com/fredine/status/1808654410660393457
+  - You can do this instead: `let y = Arc::clone(x)` ; 
+  - And enforce it with a clippy lint: #![deny(clippy::clone_on_ref_ptr)]
 
 - ## io_uring是不是可以看成kernel和user space通过两个channel完成同步？
 - https://x.com/JXQNHZr1yUAj5Be/status/1807001570258845819

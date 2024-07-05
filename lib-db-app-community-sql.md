@@ -72,8 +72,8 @@ modified: 2023-09-17T17:35:27.024Z
 - ## Some people dislike SQL. But I think there are two completely separate reasons. 
 - https://twitter.com/eatonphil/status/1742933165130559602
   - (Ignore a third which is just that "declarative languages are weird".)
-  1. It's not static/safe enough for app code.
-  2. But it's also not even dynamic (or succinct) enough for interactive querying.
+  01. It's not static/safe enough for app code.
+  02. But it's also not even dynamic (or succinct) enough for interactive querying.
   - Most people I see commenting about SQL are focused on the first point.
   - That said, for interactive queries, being too dynamic can be a problem too. SQLite's syntax is TOO flexible for my liking. Too often it lets me write a nonsense query and returns confusing results.
 
@@ -120,6 +120,31 @@ modified: 2023-09-17T17:35:27.024Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## Top 20 SQL query optimization techniques
+- https://x.com/milan_milanovic/status/1808141926907920502
+01. Create an index on huge tables (>1.000.000) rows
+02. Use EXIST() instead of COUNT() to find an element in the table
+03. SELECT fields instead of using SELECT *
+04. Avoid Subqueries in WHERE Clause
+05. Avoid SELECT DISTINCT where possible
+06. Use WHERE Clause instead of HAVING
+07. Create joins with INNER JOIN (not WHERE)
+08. Use LIMIT to sample query results
+09. Use UNION ALL instead of UNION wherever possible
+10. Use UNION where instead of WHERE ... or ... query.
+11. Run your query during off-peak hours
+12. Avoid using OR in join queries
+14. Choose GROUP BY over window functions
+15. Use derived and temporary tables
+16. Drop the index before loading bulk data
+16. Use materialized views instead of views
+17. Avoid != or <> (not equal) operator
+18. Minimize the number of subqueries
+19. Use INNER join as little as possible when you can get the same output using LEFT/RIGHT join.
+20. Frequently try to use temporary sources to retrieve the same dataset.
 
 - ## Neumann把SQL批判一顿，说SQL语法顺序和语义顺序不一致不利于初学者学习，CTE的抽象不好用不利于数据分析人士使用，SQL越来越复杂要累死数据库开发者了。
 - https://twitter.com/DylanGalois/status/1776906328348217387

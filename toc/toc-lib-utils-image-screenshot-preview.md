@@ -169,6 +169,13 @@ modified: 2023-04-16T13:34:33.706Z
   - 对源码生成截图时支持多种theme
   - 依赖codemirror5、puppeteer-core、morphmorph
 
+- https://github.com/raycast/ray-so /MIT/202407/ts
+  - https://ray.so/
+  - Create code snippets, browse AI prompts, create extension icons and more.
+  - Code Images: Create beautiful images of your code.
+  - Snippet Explorer: Browse and import Raycast Snippets.
+  - Built with @nextjs , @tailwindcss , @dubdotco and obviously @radix_ui
+
 - https://github.com/Idered/chalk.ist /ts/vue
   - https://chalk.ist/
   - Create beautiful images of your source code
@@ -252,7 +259,10 @@ modified: 2023-04-16T13:34:33.706Z
 
 - ## 
 
-- ## 
+- ## Hackreels —— 代码动画制作工具
+- https://x.com/ftium4/status/1807508945071964607
+  - https://www.hackreels.com/
+  - 支持多种语言和字体格式，让你的代码展示效果更炫酷。
 
 - ## Here's a lovely trick for getting all the event handlers from a component's props.
 - https://x.com/mattpocockuk/status/1804100225964855644

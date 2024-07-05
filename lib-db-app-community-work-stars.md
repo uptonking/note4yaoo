@@ -17,7 +17,15 @@ modified: 2023-10-27T06:54:20.487Z
   - For applications, most queries are static and the data is dynamic
 - What you really want is a database where a query is the same things as an index, is the same thing as a subscription... These are all the same underlying mechanic.
 
-- ## should database ids be numbers or strings or what
+- ## 🆔️ The effect of switching id for new records from UUID v4 to UUID v7 on INSERT to a 24 GB PostgreSQL table with 116M rows
+- https://x.com/maciejwalkowiak/status/1809164757959938376
+  - Results vary from table to table - depending on number and type of indexes - I can see improvements on INSERTS from 20 to 80%
+  - Note that this happened on a large database, where indexes are much larger than available memory. 
+  - In a smaller database, results will be likely less impressive.
+- What did you do with older records that already had UUIDv4?
+  - Nothing. Since UUID is used as a primary key, there's not much you can do.
+
+- ## 🆔️ should database ids be numbers or strings or what
 - https://x.com/RoxCodes/status/1805296920648106381
 - i have several long threads about this over the past month
   - most straightforward is to use incrementing integers

@@ -32,7 +32,7 @@ modified: 2023-02-08T07:20:48.475Z
     - no api keys, no configuration, running locally in the browser
 
 - https://github.com/Doriandarko/maestro /202406/python
-  - A framework for Claude Opus to intelligently orchestrate subagents.
+  - ⛓️ A framework for Claude Opus to intelligently orchestrate subagents.
   - This Python script demonstrates an AI-assisted task breakdown and execution workflow using the Anthropic API. 
   - It utilizes two AI models, Opus and Haiku, to break down an objective into sub-tasks, execute each sub-task, and refine the results into a cohesive final output.
   - Run locally with LMStudio or Ollama
@@ -44,6 +44,7 @@ modified: 2023-02-08T07:20:48.475Z
   - https://x.com/tuturetom/status/1805823266671775875
     - 基于 Claude 3.5 Sonnet 实现的「多 Agent 调度」框架
     - 同时提供了 Python flask 应用支持 UI Demo 完成多 Agent 演示
+    - orchestrator 拆解任务，全局视野调度 sub_agent 
 # LLM
 - https://github.com/songquanpeng/one-api /MIT/202404/go/js
   - https://openai.justsong.cn/
@@ -180,6 +181,18 @@ modified: 2023-02-08T07:20:48.475Z
 # coding-copilot
 - products
   - https://copilot.microsoft.com/
+
+- https://github.com/Codium-ai/pr-agent /apache2/202407/python
+  - CodiumAI PR-Agent: An AI-Powered Tool for Automated Pull Request Analysis, Feedback, Suggestions
+  - aims to help efficiently review and handle pull requests, by providing AI feedbacks and suggestions
+  - Our JSON prompting strategy enables to have modular, customizable tools. 
+  - We support multiple git providers (GitHub, Gitlab, Bitbucket), multiple ways to use the tool (CLI, GitHub Action, GitHub App, Docker, ...), and multiple models (GPT-4, GPT-3.5, Anthropic, Cohere, Llama2).
+  - PR-Agent Pro is a hosted version of PR-Agent, provided by CodiumAI
+    - Extra features - emphasize more customization, and the usage of static code analysis, in addition to LLM logic, to improve results. See here for a list of features available in PR-Agent Pro.
+  - https://x.com/tuturetom/status/1809053337825989009
+    - 自动基于你提交的代码进行分析，给于评论反馈与意见，生成 PR 描述
+    - 支持私有化部署和开源模型
+    - 针对大的 PR 设计了 PR Compression 策略，可以极大的处理几百个文件的场景
 
 - https://github.com/TabbyML/tabby
   - https://tabbyml.github.io/tabby

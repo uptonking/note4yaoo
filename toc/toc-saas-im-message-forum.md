@@ -593,6 +593,20 @@ modified: 2021-05-14T15:04:15.333Z
   - https://github.com/lobehub/lobe-chat-plugins
     - https://chat-plugins.lobehub.com/
     - This is the plugin index for LobeChat. It accesses `index.json` from this repository to display a list of available plugins for LobeChat to the user.
+  - https://x.com/arvin17x/status/1803761433714507850
+    - 目前 #LobeChat 1.0 的技术栈：
+    - 应用框架：React 18 + NextJS 14 App Router
+    - UI： Ant Design V5 和 Lobe UI
+    - 样式库：和 antd 搭配的 CSSinJS 方案 antd-style
+    - 前端状态管理： zustand
+    - 前端请求库： swr
+    - 前端数据库： IndexedDB 与 dexie.js（ORM）
+    - 服务端用户鉴权： Clerk 为主，也支持 NextAuth
+    - 服务端数据库： Postgres （Serverless 和 普通都支持）
+    - ORM: Drizzle ORM
+    - 服务端请求框架： tRPC
+    - 感觉上面这一套，还能优化就是 Dexie.js 了，希望今年底之前能迁移到 pglite + electric-sql 的新方案，实现真正的 Local First 完全体
+    - 现阶段用 pg 就是有一个全套的 auth + 服务端数据库，数据按用户维度保存。不用 pg 走前端db，消息按浏览器维度保存 (换个浏览器数据就没了) 未来个人知识库(文件上传)的功能只会做在 pg 版本上。因为社区不存在纯前端的生产级的 RAG 解决方案。
 
 - https://github.com/vercel/ai /apache2/202406/ts
   - https://sdk.vercel.ai/docs
