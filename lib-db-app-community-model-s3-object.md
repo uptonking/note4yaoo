@@ -35,7 +35,11 @@ modified: 2024-03-13T14:26:26.220Z
 
 - ## 
 
-- ## 
+- ## Why are Object Databases not mainstream and we still waste gigawatts of electricity to convert to tables and relations back and forth?
+- https://x.com/bercut2000/status/1809141678013387080
+- Because modern SQL adopted NOSQL features, we can store and index JSONs in SQLite.
+
+- Normalisation is a core capability of the relational model. The good parts of object databases were integrated in SQL's ORDBMS extensions, just like the good parts of XML and JSON dbs were integrated in SQL/XML and SQL/JSON.
 
 - ## Are there any databases which use S3 / S3 Express One Zone as primary storage?
 - https://x.com/iavins/status/1801799034455396669

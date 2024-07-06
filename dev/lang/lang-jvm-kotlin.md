@@ -96,8 +96,23 @@ modified: 2020-12-08T13:20:20.680Z
 - New ways to improve IDE performance and stability
 - New core libraries features
 - Community assets with the new style
-# ref
+# more
 - [谈编程语言互操作-Java/Kotlin互操作机制](https://zhuanlan.zhihu.com/p/299669161)
   - kotlin语言可以被编译成多种形态，如kotlin-native, kotlin-jvm, kotlin-js
   - Java/Kotlin互操作完全依赖kotlinc编译器产生javac可以识别的统一的字节码*.class文件
   - 尽管Kotlin语言引入了大量简化编程的高级语法（语法糖），最终都会被转为字节码文件，javac可以识别对应的字节码文件，实现编译层面的互相调用
+# discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Unpopular opinion: #Kotlin is cool, but I'm not sure I need all of this "code sugar". 
+- https://x.com/bercut2000/status/1808838538441482477
+  - @Java is enough in 99.99% of cases.
+- Technically almost any language is enough in 99% cases (maybe mot INTERCALL). Does not mean it is efficient to use it.
+
+- Even if Java catches up, I guess it can’t stop developers coding in legacy/archaic style. Kotlin is “design type safe” language which Java can’t match. JVM should focus on runtime performance and not compete with kids.
+
+- Another motivation to stay with Kotlin is that Google is strongly backing it, they are already replacing Java with Kotlin in documentation, API samples, Android Studio IDE, etc., future versions will see less to no support for Java.

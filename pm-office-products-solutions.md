@@ -268,7 +268,12 @@ modified: 2021-07-11T08:31:00.660Z
   - https://gitlab.coko.foundation/pubsweet/pubsweet
   - The open toolkit for building publishing workflows
   - a server and client that work together, components that can modify or extend the functionality of the server and/or client
+
+# docs/journals
+- [AsPoem | 现代化诗词学习网站](https://aspoem.com/zh-Hans)
 # more-products
+- [Diffchecker - Compare text online to find the difference between two text files](https://www.diffchecker.com/)
+
 - [9 products you can build with TinyMCE](https://www.tiny.cloud/blog/tinymce-examples-products-you-can-build-wysiwyg-editor/)
   1. Blogging platforms
   2. Real-time chat apps

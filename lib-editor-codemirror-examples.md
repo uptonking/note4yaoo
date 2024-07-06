@@ -353,6 +353,10 @@ modified: 2023-06-23T12:46:53.288Z
 
 - products-code-animation
   - [Beautiful code animations - AnimateCode](https://www.animate-code.com/)
+
+- https://github.com/pomber/code-surfer /MIT/202003/ts/js/inactive
+  - https://codesurfer.pomb.us/
+  - Code Surfer adds code highlighting, code zooming, code scrolling, code focusing, code morphing, and fun to MDX Deck slides.
 # editors-based-on-codemirror
 - https://github.com/inkandswitch/tiny-essay-editor /NALic/202405/ts
   - https://tee.inkandswitch.com/
@@ -1203,6 +1207,12 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/codepod-io/codepod /MIT/202311/ts/inactive
   - Codepod provides the interactive coding experience popularized by Jupyter, but with scalability and production-readiness
   - 画板上的代码沙盒，使用monaco而不是codemirror
+
+- https://github.com/lucademenego99/icp-editor /MIT/202307/ts/svelte/inactive
+  - https://lucademenego99.github.io/icp-editor/
+  - A web application used to create Reveal.js slides with Interactive Code Playgrounds
+  - The editor exposes predefined slide templates, in which the user can add text, code playgrounds or images.
+  - The text editor is powered by Quilljs
 # starter
 - https://github.com/A99US/CM6-Browser-Wrapper /MIT/202308/js/inactive
   - https://a99us.github.io/CM6-Browser-Wrapper/

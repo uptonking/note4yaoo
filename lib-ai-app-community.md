@@ -40,6 +40,12 @@ modified: 2023-02-08T06:56:54.945Z
   - 内存够大建议放数据集到shm或者设计一个shared memory，把整个或者部分数据集放进去。
 
 - 把jpg数据直接load到dynamic memory，然后硬件解码到gpu memory，一个producer，consumer队列，jpg解码和gpu独立开来
+# discuss-ml-algorithms
+- ## 
+
+- ## K-Nearest Neighbours (KNN), implemented from scratch in Python:
+- https://x.com/Sumanth_077/status/1809228777748418809
+
 # discuss
 - ## 
 

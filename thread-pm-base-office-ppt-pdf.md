@@ -79,7 +79,11 @@ modified: 2024-01-11T15:57:32.182Z
 
 - ## 
 
-- ## 
+- ## [what are some good ai tools to create powerpoint presentations? : r/powerpoint _202310](https://www.reddit.com/r/powerpoint/comments/176sxbp/what_are_some_good_ai_tools_to_create_powerpoint/)
+- I would also recommend https://chatslide.ai/. I am a student tutor and has weekly lecture materials, I feed those materials into chatslide and they give me well structured ppt, even with a Q&A section at the end. It's free, give it a shot!!!
+
+- You can create PowerPoint slides with a prompt on SlidesGPT.com which is a free ai ppt maker. It's free to create and share presentations and does not require a registration. It's pay-per-use if you want to download a presentation as PowerPoint, PDF, or Google Slide.
+- You can use ChatGPT to create presentations as well on chat.slidesgpt.com . This is with a conversational approach - so instead of using a single prompt as on SlidesGPT, you can now have multi-turn conversations to create slides within ChatGPT.
 
 - ## 我觉得 https://ia.net/presenter 才是理想的演示文档工具，让你专注思考想要表达的是什么，忘掉样式和排版。
 - https://twitter.com/chloerei/status/1785511604978917731

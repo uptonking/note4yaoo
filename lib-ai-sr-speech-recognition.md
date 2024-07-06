@@ -107,6 +107,17 @@ modified: 2023-02-07T09:22:03.120Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 阿里通义语音团队开源了语音基座大模型：SenseVoice和CosyVoice，语音方向卷起来了。
+- https://x.com/leeoxiang/status/1809174787861925933
+  - SenseVoice多语言音频理解大模型：多语言语音识别在中文和粤语上相比Whisper相对提升+50%，推理速度快15倍，并且支持SOTA的情绪识别。
+  - CosyVoice多语言音频生成大模型：支持多语言、音色和情感控制，在多语言语音生成、零样本语音生成、跨语言声音合成和指令执行能力方面表现卓越。
+  - https://github.com/FunAudioLLM/SenseVoice /MIT/python
+  - https://github.com/FunAudioLLM/CosyVoice /apache2/python
+
 - ## real-time in-browser speech recognition with OpenAI Whisper
 - https://x.com/xenovacom/status/1799110540700078422
   - The model runs fully on-device using Transformers.js and ONNX Runtime Web, and supports multilingual transcription across 100 different languages

@@ -45,6 +45,18 @@ modified: 2023-02-08T07:20:48.475Z
     - 基于 Claude 3.5 Sonnet 实现的「多 Agent 调度」框架
     - 同时提供了 Python flask 应用支持 UI Demo 完成多 Agent 演示
     - orchestrator 拆解任务，全局视野调度 sub_agent 
+
+- https://github.com/run-llama/llama-agents /MIT/202407/python
+  - llama-agents is an async-first framework for building, iterating, and productionizing multi-agent systems, including multi-agent communication, distributed tool execution, human-in-the-loop, and more!
+  - each agent is seen as a service, endlessly processing incoming tasks. Each agent pulls and publishes messages from a message queue.
+  - At the top of a llama-agents system is the control plane. The control plane keeps track of ongoing tasks, which services are in the network, and also decides which service should handle the next step of a task using an orchestrator.
+  - https://x.com/tuturetom/status/1809445355832111312
+    - 多 Agent 框架，使用 Docker/K8S 部署
+
+- https://github.com/dstackai/dstack /MPL/202407/python
+  - https://dstack.ai/
+  - open-source container orchestration engine designed for running AI workloads across any cloud or data center. 
+  - It simplifies dev environments, running tasks on clusters, and deployment.
 # LLM
 - https://github.com/songquanpeng/one-api /MIT/202404/go/js
   - https://openai.justsong.cn/
@@ -205,6 +217,11 @@ modified: 2023-02-08T07:20:48.475Z
 - https://github.com/rjmacarthy/twinny /995Star/MIT/202403/ts
   - The most no-nonsense locally hosted (or API hosted) AI code completion plugin for Visual Studio Code, like GitHub Copilot but 100% free and 100% private.
   - designed to work seamlessly with: Ollama
+# agents
+- https://github.com/om-ai-lab/OmAgent /apache2/202407/python
+  - OmAgent是一个多模态智能体系统，专注于利用多模态大语言模型能力以及其他多模态算法来做一些有趣的事
+  - 包含一个专为解决多模态任务而设计的轻量级智能体框架omagent_core。我们利用这个框架搭建了超长复杂视频理解系统——OmAgent，当然你可以利用它实现你的任何想法。
+  - DnCLoop: 受到经典算法思想Divide and Conquer启发，我们设计了一个递归的通用任务处理逻辑，它将复杂的问题不断细化形成任务树，并最终使复杂任务变成一组可解得简单任务。
 # ollama
 - https://github.com/open-webui/open-webui /MIT/202405/svelte/python
   - https://openwebui.com/

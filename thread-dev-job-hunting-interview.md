@@ -9,6 +9,8 @@ modified: 2024-01-07T15:00:50.079Z
 
 # guide
 
+# jd-xp
+- 企业招聘ide研发的hc比文本编辑器多很多
 # discuss-stars
 - ## 
 

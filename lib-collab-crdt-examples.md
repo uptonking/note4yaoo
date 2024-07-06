@@ -394,7 +394,7 @@ modified: 2022-04-05T10:08:25.947Z
   - ElectricSQL gives you instant local-first for your Postgres. 
   - Elixir sync service that manages active-active replication between Postgres and SQLite
 
-- liveblocks /1.5kStar/apache2/202302/ts/服务端未开源
+- liveblocks /1.5kStar/apache2/202407/ts/服务端未开源
   - https://github.com/liveblocks/liveblocks
   - https://liveblocks.io/
   - The all-in-one toolkit to build collaborative products like Figma, Notion, and more.

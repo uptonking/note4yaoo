@@ -21,7 +21,7 @@ modified: 2021-04-30T20:14:17.669Z
   - 很多ppt的每页是一张图片
   - 只需ppt的viewer，presentation常是各个系统的核心功能
   - ✨ pdf-editor与ppt-editor的相似点: 支持批注、左侧页面缩略图
-  - 可参考: svg-editor, pdf-editor
+  - 可参考: svg-editor, pdf-editor, drawio
 # popular
 - https://github.com/gitbrent/PptxGenJS /MIT/202305/ts/inactive
   - https://gitbrent.github.io/PptxGenJS/
@@ -180,7 +180,10 @@ modified: 2021-04-30T20:14:17.669Z
   - Drag and drop Spectacle editor.
   - An Electron based app for creating, editing, saving, and publishing Spectacle presentations. 
   - With integrated Plotly support.
-# page-viewer 偏向页面展示
+# ppt-viewer 偏向页面展示
+- viewer
+  - [zettlr slides.md](https://zettlr.com/slides.revealjs.htm)
+
 - slidev /4.8kStar/MIT/202105/ts
   - https://github.com/slidevjs/slidev
   - https://sli.dev/
@@ -251,6 +254,8 @@ modified: 2021-04-30T20:14:17.669Z
   - Create powerful slideshows for talks and presentations. 
   - Each "slide" is a JS function that can do *anything*.
   - Let you jump to any slide by number in the url hash
+# ai-slides
+- [ChatSlide | Build your Slides and Videos from Documents in one click](https://chatslide.ai/landing)
 # more
 - https://github.com/nimeshnayaju/tlslides /202204/ts/inactive
   - Create slides using tldraw (Unmaintained)

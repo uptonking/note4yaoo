@@ -127,6 +127,22 @@ modified: 2023-12-15T19:30:23.094Z
   - https://www.strapify.dev/docs/
   - Strapify is a javascript tool for the automatic client side injection of Strapi CMS data into a website.
   - The goal of the Strapify project is to enable the integration of a free open source CMS (Strapi) into an otherwise static website, without requiring additional code
+
+- https://github.com/meetqy/aspoem /AGPLv3/202407/ts
+  - https://github.com/meetqy/aspoem/tree/v1/admin
+  - https://github.com/meetqy/aspoem-strapi /MIT/202405/ts
+  - https://aspoem.com/
+  - 现代化诗词学习网站，一个更加注重 UI和阅读体验 的诗词网站
+  - https://x.com/meetqy
+  - https://github.com/javayhu/haitang /MIT/202407/ts/astro
+    - https://haitang.vercel.app/
+    - https://haitang.app/
+    - 海棠诗社，古诗词的数字桃源
+    - 海棠诗社按诗集、朝代、诗人、诗词等方式检索，内容丰富，信息齐全
+    - Frontend: Astro + Tailwind + Shadcn/ui
+    - Analytics: Umami + Google Analytics
+    - Database: SQLite + Drizzle
+    - Comment: Giscus
 # integrations
 - https://github.com/ONLYOFFICE/onlyoffice-strapi /MIT/202211/js/inactive
   - The app which enables the users to edit office documents from Strapi using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to Strapi

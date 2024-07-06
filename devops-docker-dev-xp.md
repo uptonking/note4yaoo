@@ -1,6 +1,6 @@
 ---
 title: devops-docker-dev-xp
-tags: [devops, dev-xp, docker]
+tags: [dev-xp, devops, docker]
 created: 2023-02-09T19:18:57.376Z
 modified: 2024-06-30T11:16:43.565Z
 ---

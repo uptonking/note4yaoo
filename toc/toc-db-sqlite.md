@@ -203,6 +203,19 @@ modified: 2021-08-30T18:56:18.632Z
   - [What would SQLite look like if written in Rust? — Part 3_202104](https://medium.com/the-polyglot-programmer/what-would-sqlite-look-like-if-written-in-rust-part-3-edd2eefda473)
   - [Column or row oriented store](https://github.com/sqlrite/design/discussions/6)
 
+- https://github.com/penberg/limbo /MIT/202407/rust
+  - Limbo is a work-in-progress, in-process OLTP database management system, compatible with SQLite.
+  - In-process OLTP database engine library
+  - Asynchronous I/O support with io_uring
+  - https://x.com/penberg/status/1809295488933384615 _202407
+    - Sounds similar to the goals of libsql. Are there any other differences?
+      - The two projects have different goals. libSQL extends SQLite with things like replication and vector search, but is SQLite at the core. This is a project to write a SQLite compatible library from scratch.
+    - doesn’t durability go to toss when using io_uring (any async primitive)? 
+      - Async means you have the opportunity to do other things while I/O is on flight. You don’t lose durability with io_uring because transaction commit won’t happen until I/O is complete
+      - The architecture of Limbo is designed for asynchronous I/O like io_uring, but with durability in mind.
+    - This sounds very similar to Sled? Minus SQLite compat
+      - Sled is a more advanced storage engine than what we have because we’re focusing on reproducing SQLite’s storage model and will improve later.
+
 - https://github.com/cstack/db_tutorial /clang
   - Writing a sqlite clone from scratch in C
   - B-Tree Leaf Node Format

@@ -165,6 +165,14 @@ modified: 2024-06-30T03:20:21.444Z
   - Fast Datagrid widget for the Jupyter Notebook and JupyterLab
   - 依赖@lumino/datagrid、d3-scale、vega-format/expression
   - [I see some cons using Web Workers like it is done in ipysheet](https://github.com/bloomberg/ipydatagrid/issues/3)
+# publish
+- https://github.com/quarto-dev/quarto-cli /MIT/202407/ts
+  - https://quarto.org/
+  - Open-source scientific and technical publishing system built on Pandoc
+  - Author using Jupyter notebooks or with plain text markdown in your favorite editor.
+  - Create dynamic content with Python, R, Julia, and Observable.
+  - https://github.com/quarto-dev/quarto
+    - Quarto documents are authored using markdown
 # examples
 - https://github.com/sspaeti-com/practical-data-engineering
   - This is a practical example of a data engineering project with real-estates.

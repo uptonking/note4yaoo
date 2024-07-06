@@ -130,6 +130,11 @@ modified: 2023-01-20T21:59:47.792Z
   - editor包不依赖solid-js
   - Built-in Kanban dashboard for managing content production and delivery; 
   - Versitile API and Extension System for customizing your experience and delivering content to any frontend; 
+  - https://x.com/vriteio/status/1809492361086451846
+    - 202407: v0.4.4 introduces version history to Vrite
+    - Version snapshots are taken automatically and stored for up to 30 days
+    - You can preview, restore, and assign labels to specific versions;
+    - You can use the diff view to see differences between different versions
 
 - tinacms /8.3kStar/apache2/202301/ts/git
   - https://github.com/tinacms/tinacms

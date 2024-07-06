@@ -105,7 +105,11 @@ modified: 2023-04-21T11:42:46.575Z
 
 - ## 
 
-- ## 
+- ## 🎯 TinyBase v5.0 🎉 We are thrilled to unveil this major new release - "The One You Can Sync" _20240706
+- https://x.com/tinybasejs/status/1809369908662399466
+- what tool for you use to create that animation?
+  - Apple Keynote
+- TinyBase previously integrated with Yjs and Automerge, as well as some sync-oriented database vendors. But now it's built-in!
 
 - ## v5 is going to be a big release. The whole idea is that TinyBase becomes a CRDT and you can merge stores together.
 - https://twitter.com/tinybasejs/status/1769781789403300020

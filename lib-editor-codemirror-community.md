@@ -298,6 +298,17 @@ modified: 2023-01-29T10:52:44.183Z
   - make sure this is below .cm-selectionLayer so you can apply mix-blend-mode: multiply and darken the selection
   - by putting the pseudoelements in explicit stacking order, you kind of "cover up" the top & bottom borders, giving the outline effect. So it's a hack, but is much nicer to do this w/ just CSS than to wrangle contiguous borders with JS or something
 
+# discuss-code-animation
+- ## 
+
+- ## 
+
+- ## 
+
+- ## second attempt to generate slide deck for a paper with @Google Gemini 1.5 Pro in @revealjs .
+- https://x.com/algo_diver/status/1769614261616251150
+  - I tried to add colors and animations, and I also tried to guide on the structure of the presentation
+
 # discuss
 - ## 
 

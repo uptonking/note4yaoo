@@ -14,7 +14,13 @@ modified: 2024-05-14T19:38:26.376Z
 
 - ## 
 
-- ## 
+- ## "use client" marks a boundary between the server and client code on the module dependency tree.
+- https://x.com/asidorenko_/status/1766904296031842493
+  - 流程图的动态效果
+- This is an awesome visualization of the distinction between parent/child vs. owner/ownee relationships!
+- how do you create such tutorial?. I like your style of explaining these concepts.
+  - remotion
+
 # discuss-not-yet
 - ## 
 
