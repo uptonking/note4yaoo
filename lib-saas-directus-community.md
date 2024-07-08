@@ -223,12 +223,71 @@ modified: 2024-02-16T14:56:17.057Z
 
 - FWIW, the live preview implementation in Payload 2 is quite clever and simple.
   - The admin panel sends data to the preview endpoint iframe via window.postMessage triggered by field input events. The nicest part about this is that it allows you to preview the changes in realtime prior to saving the document. Also, the preview endpoint can load with initial date pulled from the database prior to establishing the inter window connection so you can share the preview url with saved content.
+# discuss-scaling-k8s
+- ## 
+
+- ## 
+
+- ## [Directus on multi core server _202306](https://github.com/directus/directus/discussions/18920)
+- NodeJS / JavaScript in general are designed around a single-thread event-loop. Making that setup multi-threaded is no small feat. I'd normally recommend horizontally scaling across multiple 1vCPU containers
+
+- 
+- 
+
+- ## [Docker-Compose Scaling Example _202405](https://github.com/directus/directus/discussions/22505)
+- I feel this is somewhat outside the scope of Directus itself since there are various methods of hosting and scaling dockers with their own ways of working and drawbacks none of which are unique to Directus. Could you add some more detail to this like what technologies / architectures you'd like to see such a guide for?
+  - For horizontal scaling a redis instance is required to synchronize events / crons / and such
+
+- ## 💠 [Performance _202202](https://github.com/directus/directus/discussions/11563)
+  - How many QPS directus can support?
+  - How many concurrent user can access the APP?
+
+- The answer to those first questions really depends on what database vendor you use, what type of data you request, whether or not you're gonna use authenticated users, whether or not you have caching enabled etc etc etc. I don't think there's going to be a realistic answer to the first two questions.
+  - That being said, I do highly recommend horizontally scaling your Directus instance if you're planning on running it at scale. Make sure you use Redis for caches / rate limiter, and S3 or another shared file storage for the file storage. At that point, the bottleneck will become the amount of allowed connections and the overall server performance of the database. That being said, there's a lot of database services nowadays that scale virtually endless, like Amazon Aurora or CockroachDB
+- By "horizontally scaling your Directus instance", do you mean setting up multiple directus instances connecting to one central database?
+  - 💡 That's exactly it! And yes, as long as you make sure you rely on a shared solution for cache/rate-limit/database/storage, it will just work
+  - Auth is based on JWT so it's scalable on multiple servers, no special setup.
+
+- ## [Support redis cluster _202303](https://github.com/directus/directus/discussions/17743)
+- Working on it! This PR #20514 replaces our current keyv based setup for caching etc which in turn allows us to start relying on more powerful redis specific features, including adding support for proper clustering / read-write split etc
+- [已合并pr: Add `@directus/memory` package _202312](https://github.com/directus/directus/pull/20514)
+  - Aims to replace keyv, and consolidate the synchronization and messenger classes
+
+- ## [Performance and scaling _202202](https://github.com/directus/directus/discussions/11891)
+- I also saw, that Directus does not create any indexes on foreign keys, even in translations.
+
+- [Replace union query approach with updated table scan _202203](https://github.com/directus/directus/pull/11246)
+
+- ## [Scalability _202111](https://github.com/directus/directus/discussions/9781)
+- When I run Directus for a project, I tend to run Directus containerized, and horizontally scale based on the number of containers. This allows Directus to scale horizontally without any limits on the service itself (the limit will be based on the amount connections your database can handle, or how many targets your load balancer can have etc). 
+  - By combining this with vertical scaling on the containers itself, the Node service should never really be the bottleneck. 
+  - For anything stateful in Directus (like tracking rate limiters, file uploads, caches etc) there's configuration available to use shared managed resources, like Redis or S3/Azure/GCS storage etc. 
+  - There's no plan to currently do any clustering through Worker nodes within the Node process itself, as reliant multi-threading is incredibly finicky(高度注重细节的, 难做的) to get just right within Node, and doesn't really offer any benefits that scaling on the infrastructure layer doesn't already provide 
+- Is it possible to use cron job hooks when scaling horizontally? wouldn’t the jobs run at the same time and be redundant?
+  - yes that's true, they will indeed be redundant in that case. Although there's no native support for it now, you should be able to use something like bullmq to prevent that from happening in your cron job hooks
+
+- ## [Does Directus 9 supports scaling? _202106](https://github.com/directus/directus/discussions/6426)
+  - Does Directus 9 supports scaling using Kubernetes? 
+- You can easily use the docker image in a k8s env. Just make sure to rely on a shared storage (eg redis) for cache/rate-limiting/file-storage
+
 # discuss
 - ## 
 
 - ## 
 
 - ## 
+
+- ## [Multi-tenancy out-of-the-box _202004](https://github.com/directus/directus/discussions/2687)
+- Directus has multi-tenancy in that you can create different projects that each have their own database. Within each project you have the ability to create different roles to manage specific access.
+  - There is no "single-database-multi-tenancy" where you can have something like nested roles to separate "tenants" and have sub-roles for groups within these tenants if that's what you're referring to.
+
+- If you run multiple copies of Directus, you'd probably run those copies against different databases, in which case everything would be isolated for everybody 
+
+- ## [Best approach for multi-site with Docker _202107](https://github.com/directus/directus/discussions/6941)
+- How could I configure multiple Directus containers with a singular compose?
+  - The way you described it is how I would've done it. That being said, I'm sure there's a smart DevOps person out there somewhere that would be able to optimize this somehow
+
+- I host several docker instances for Directus using Portainer on Digital Ocean's droplet. Multisite would be nice but runs the risk of one instance crashing multiple sites if something happens.
 
 - ## [Collection folders as route _202209](https://github.com/directus/directus/discussions/15772)
 - I think one "roadblock" for this structure is it's not possible to have 2 collections (or more precisely, 2 database tables) of the same name, as your example would require 2 articles tables and 2 news tables.

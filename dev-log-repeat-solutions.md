@@ -15,7 +15,7 @@ modified: 2021-07-20T13:50:23.433Z
   - 涉猎saas解决方案，积累算法、库、框架、模版项目、生态
     - 尝试将算法和技术转化为可复用的产品, 参考yjs+hocuspocus
     - 工具型框架离商业化应用太远, 直接从主流cms/saas中寻找参考
-  - 深入一个项目，开发需要精力，建立生态更需要精力
+  - 🌰 深入一个项目，开发需要精力，建立生态更需要精力
     - 视图+持久化，前端分析model/view/dataflow, 后端分析数据库设计和优化
     - 分析api的设计，包括扩展ui、api，插件开发，热加载
     - src-code, issues, pr, forks, extensions, most-commented-issues
@@ -23,12 +23,13 @@ modified: 2021-07-20T13:50:23.433Z
     - 开放能力: extensions, scripts, marketplace
     - pref: 索引、缓存、分库分表、读写分离
     - 文档产品: editor + fileTree + workbenchLayout + search + cmdKeys + settings
-  - architecture-early 需要尽早考虑的架构设计，没有完美的架构
-    - 核心架构考虑 server/db/socket
+  - 💠 architecture-early 需要尽早考虑的架构问题，没有完美的架构
+    - 核心架构考虑 server/db/network-socket
     - 早期不要将系统架构设计得过于复杂，会影响开发进度, 甚至产品终止都用不上
     - collaborative的数据结构，冲突处理算法，客户端中心还是服务端中心
-    - scale水平扩展/多实例/多租户; http更适合scale; 需要serverless？
+    - scale水平扩展/多实例/多租户; http更适合scale; 配置、缓存
     - 数据通信，http/websocket
+    - 读多？ 写多？
     - sqlite的流行表明scaling要考虑场景, zulip/jupyterhub私有部署默认支持几千用户但不scale
     - 没有完美的架构，优先支持迭代，不要执着于当下的问题，也许以后就突然想清楚了
   - 抽空在线体验，工作专注代码

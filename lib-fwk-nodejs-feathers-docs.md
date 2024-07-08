@@ -9,6 +9,8 @@ modified: 2023-01-20T00:13:00.927Z
 
 # guide
 
+# blogs
+- [Exposing a Feathers. JS HTTP API in Kubernetes using Ingress - DEV Community _201808](https://dev.to/andrejus/exposing-a-feathersjs-http-api-in-kubernetes-using-ingress-ai1)
 # docs
 
 ## overview

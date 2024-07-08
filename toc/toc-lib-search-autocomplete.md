@@ -293,6 +293,11 @@ modified: 2023-01-01T13:24:35.994Z
     - a Rust library with the interface of the Annoy Python library to search for vectors in space that are close to a given query vector.
     - It is based on LMDB, a memory-mapped key-value store, so many processes may share the same data and atomically modify the vectors.
     - There are some other libraries to do nearest neighbor search. However, most of them are memory-bound, and none use LMDB for their storage
+  - [Scalability _202203](https://github.com/meilisearch/meilisearch/discussions/2240)
+    - 202404: We don't have horizontal scaling yet on the open-source side. However, we will put it on our Cloud offering
+    - Note that we already have high availability by using high disk availability from our current provider and leveraging the quick boot time of Meilisearch (<100ms).
+    - What will happen if we try to enable HPA on K8s and supply AWS EFS as a shared file system via Persistent Volume Claim to all Meilisearch replicas?
+      - Highly unrecommended. Meilisearch uses LMDB internally, our ACID and transactional memory-mapped key-value store. It relies on filesystem principals such as locks to maintain the integrity of the data. Using multiple engines on the same database works but not particularly well on network file systems. You can do that at your own risk. 
 - https://github.com/riccox/meilisearch-ui /apache2/202401/ts
   - https://meilisearch-ui.riccox.com/
   - fast meilisearch admin dashboard UI for managing your meilisearch instances

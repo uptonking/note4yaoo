@@ -386,6 +386,11 @@ modified: 2023-01-22T19:52:59.120Z
 
 - https://github.com/benjamin-chavez/express-api-auth0 /MIT/202309/ts/inactive
   - Backend Express API Template using Knex, PostgreSQL, Passport, and Typescript.
+
+- https://github.com/sombriks/simple-knex-koa-example /MIT/202312/js/inactive
+  - http://example.sombriks.org/books
+  - sample application touring API, tests, continuous integration, continuous deployments, image publishing and so on
+  - Kubernetes is how people put things in production nowadays and sometimes it can be tricky to test because it's heavy. By using kind as kubernetes runtime, part of this issue is solved and the developer can be more confident on how the application will behave inside the belly of the beast.
 # examples
 - https://github.com/franzon/postgres-rls-example /202006/js
   - This application is an example of how RLS can be used in an express app, using a middleware for getting the correct connection for each tenant.

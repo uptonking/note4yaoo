@@ -77,7 +77,10 @@ modified: 2023-01-12T16:33:52.048Z
 
 - ## 
 
-- ## 
+- ## [Help in deciding between ExpressJs and FeatherJs. : r/node _202401](https://www.reddit.com/r/node/comments/191g3cx/help_in_deciding_between_expressjs_and_featherjs/)
+- Ultimately, all backend frameworks are doing the same thing so the underlying concepts are transferable across many platforms, tbh, but I'm definitely on Express side of things for this one. Sooooo easy to use and unopinionated. Lots of flexibility, too. My go to, for sure.
+- Feathers uses express (or koa). You'd probably want to compare feathers vs nestjs vs adonis.
+  - Feathers is my go to for building service based backends. It's reliable, conceptually simple, leverages existing packages as much as possible without adding additional abstraction layers, and gives you direct access to their apis.
 
 - ## [Feathers 4: A framework for Real-Time apps and REST APIs | Hacker News _201909](https://news.ycombinator.com/item?id=20977475)
 - The real time feature is 2-fold:

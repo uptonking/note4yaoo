@@ -462,6 +462,7 @@ modified: 2023-12-15T19:30:23.094Z
   - provides a custom field for Strapi that lets you use and configure GrapeJs in no time.
 - https://github.com/wisdomwebsolution/strapi-grapesjs-plugin /202210/js/inactive
   - Strapi plugin for GrapesJS web builder custom field
+  - https://github.com/landofcoder/strapi-pagebuilder /202112/js/GrapesJS
 - https://github.com/JensUweB/strapi-plugin-page-builder /MIT/202208/ts/inactive
   - Web page builder for strapi 4.3 or later
 
@@ -878,7 +879,7 @@ modified: 2023-12-15T19:30:23.094Z
   - Manage and monitor cron jobs from Strapi admin panel.
   - tasks scheduling tool incorporating start/end dates and iterations counter
 
-- https://github.com/excl-networks/strapi-plugin-redcron /202311/js
+- https://github.com/excl-networks/strapi-plugin-redcron /MIT/202311/js/inactive
   - A drop in replacement for the Strapi cron plugin that uses Redlock to prevent multiple instances of Strapi from running the same cron job at the same time.
 
 - https://github.com/Fekide/strapi-plugin-translate /202311/js
@@ -1275,6 +1276,7 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/praveen-1995/strapi-submenus-react-project-v2 /202309/js
   - https://react-strapi-submenus-v2-prod.netlify.app/
   - 纯前端介绍页
+  - https://github.com/glitton/strapi-submenus /202311/js
 
 - https://github.com/mparramont/strapi-starter /202404/ts
   - Strapi Starter with PostgreSQL, Typescript and test setup
@@ -1444,6 +1446,11 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/dhzdhd/bidwave /GPLv3/202311/ts/svelte
   - https://bidwave.vercel.app/
   - A realtime auction platform built on SvelteKit and Strapi
+
+- https://github.com/RocketChat/RC4Community /apache2/202406/js
+  - https://community.rocket.chat/
+  - Full-stack components for building, engaging, and growing your massive on-line community
+  - During development, our data provider is a headless CMS, strapi.
 # realtime/collab
 - https://github.com/strapi-community/strapi-plugin-io /MIT/202312/js
   - https://strapi-plugin-io.netlify.app/
@@ -1601,6 +1608,26 @@ modified: 2023-12-15T19:30:23.094Z
   - Simple command line utility for replicating and migrating persistent tables or collections for Strapi applications
   - The main goal is to simplify development with Strapi and enable easy and automated deployment.
   - Supported databases: MySQL, MongoDB (3.x.x)
+
+- https://github.com/chepeftw/strapi-k8s-blog-post /202302
+  - [How to Deploy and Scale Strapi on a Kubernetes Cluster 1/2 _202302](https://strapi.io/blog/how-to-deploy-and-scale-strapi-on-a-kubernetes-cluster-1-2)
+
+- https://github.com/TaitoUnited/strapi-template /2202401
+  - https://taitounited.github.io/taito-cli/templates
+  - Template for Strapi CMS running on Kubernetes or Docker Compose.
+  - This template is a subset of full-stack-template. Use the full-stack-template instead, if you need more than just a Strapi CMS.
+  - https://github.com/TaitoUnited/full-stack-template
+    - Template for cloud-native applications and microservices running as containers/functions on Kubernetes, Docker Compose, or cloud. 
+    - The template can be used with both public cloud and on-premise private cloud.
+    - The example implementation is based on React, Node.js, PostgreSQL, and S3 compatible storage, but you can choose the stack during project creation from multiple alternatives, or just write the implementation from scratch.
+
+- https://github.com/ryuheiyokokawa/strapi-helm /202003
+  - An example of how you might deploy Strapi to Kubernetes (just an example!)
+  - Strapi doesn't exactly deploy super well on Kubernetes without a persistent storage so this shows how you can do it with an NFS mount. BTW, this is mostly for demo use so use with your own caution.
+
+- https://github.com/joellord/strapi /202104
+  - Running Strapi with containers
+  - To use Strapi in a containerized development environment, you will need three independent containers. One will run the database, another one will have Strapi, and finally, the front-end will have its own container.
 # more
 - https://github.com/mgmgpyaesonewin/strapi-upptime
   - https://upptime.github.io/upptime

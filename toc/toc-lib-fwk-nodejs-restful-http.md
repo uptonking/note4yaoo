@@ -198,6 +198,11 @@ modified: 2022-12-19T01:51:01.389Z
   - The core of Connect is "using" middleware. Middleware are added as a "stack" where incoming requests will execute each middleware one-by-one until a middleware does not call `next()` within it.
   - These middleware and libraries are officially supported by the Connect/Express team
 # rest-starter
+- https://github.com/vagnercardosoweb/nodejs-structure-with-typescript /202401/ts/inactive
+  - Structure already configured to start any API in NODE with Typescript
+  - 未使用orm
+  - https://github.com/vcwebnetworks/nodejs-skeleton
+
 - https://github.com/criscunas/todo-server
   - Backend API for Todo App built with Node & Express.
   - Data is stored in an empty JSON file.

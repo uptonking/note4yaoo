@@ -15,12 +15,34 @@ modified: 2024-06-30T11:15:28.002Z
 - ## 
 
 - ## 
+# discuss-scaling
+- ## 
+
+- ## [How do you guys move nodejs applications to k8s with cluster module? : r/node](https://www.reddit.com/r/node/comments/15qwkrg/how_do_you_guys_move_nodejs_applications_to_k8s/)
+- I would say its not recommended because you don't get the granularity in scaling. We ran some sidecars in k8 for the message queue.. and that was about all the dependent scaling I have ever done with cloud.
+  - I think the clusters would lead to over scaling. If one cluster is busy while the others are idle could lead to 3x the resources being consumed unnecessarily replicate this 3/4 times and you definitely over scaled.
+
+- Clustering in containers is a bad idea. You are layering virtualization. While programmatically it's fine, it's also inefficient as all hell. Better to remove the clustering and scale up your container count by 4.
+
+- 
+- 
+
+- ## [How to prepare my app to scale horizontally? : r/node _202208](https://www.reddit.com/r/node/comments/x0i7rp/how_to_prepare_my_app_to_scale_horizontally/)
+- Just to add, other than about server architecture, your app itself have to be aware of horizontal scaling. It has to be stateless or make it shared across instances. E.g. configure cache in Redis instead of in memory only, No local file, commit all data into db.
+  - If you do care about lengthy processing or background processing, it's better to be done in queue.
+  - If you have websocket connection, you have to link those instances so listener connected at instance B can be notified from changes made on instance A.
+
+- the key thing is: measure. Don't assume you need to scale big, but measure what your system can do, how you can increase it with simple measures and identify the pain points. (Often the real scaling problem is in your backend database or whatever you are using)
 # discuss
 - ## 
 
 - ## 
 
-- ## 
+- ## [Show HN: Simplenetes – I replaced Kubernetes with 17k lines of shell script | Hacker News _202104](https://news.ycombinator.com/item?id=26661223)
+- k3s (https://k3s.io), which is Rancher's awesome and lightweight Kubernetes distribution.
+  - I use k3s in production, and it is great. But as far as daily use, it is not any simpler than kuberenetes. Initial setup and clustering is a breeze with k3s. But after that, you are mostly just working with the same k3s api as a full kuberenetes setup.
+
+- 
 
 - ## [Isn't a load balancer a single point of failure - Stack Overflow](https://stackoverflow.com/questions/21981514/isnt-a-load-balancer-a-single-point-of-failure)
 - The point in avoiding a load balancer as a single point of failure is the load balancer(s) will run in a high availability cluster with hardware backup.

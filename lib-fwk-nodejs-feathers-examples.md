@@ -72,8 +72,6 @@ modified: 2023-01-20T00:18:44.282Z
     - An example client and server showcasing FeathersJS offline-first realtime support for own-data and own-net protocols as described in the docs here.
     - https://github.com/feathersjs-offline/owndata-ownnet /202112/js/inactive
 
-- https://github.com/kalisio/feathers-distributed
-  - Distribute your Feathers services as microservices
 - https://github.com/mosaiqo/feathers-microservices
   - This is my humble opinionated approach to connect different microservices written in Feathers JS.
 
@@ -117,7 +115,7 @@ modified: 2023-01-20T00:18:44.282Z
 - https://github.com/KleitonBarone/feathersjs-crud-api
   - Simple Crud Api using FeatherJs Framework
 
-- https://github.com/bervProject/FeathersJS-Boilerplate
+- https://github.com/bervProject/FeathersJS-Boilerplate /MIT/202308/ts
   - FeathersJS Boilerplate for my own project
   - Upload into Google Cloud Storage
 
@@ -179,7 +177,13 @@ modified: 2023-01-20T00:18:44.282Z
 
 - https://github.com/lwhiteley/feathers-lowdb
   - a database service adapter for Lowdb, a small JSON database for Node, Electron and the browser powered by Lodash.
-# cluster
+# cluster/scaling
+- https://github.com/kalisio/feathers-distributed /MIT/202407/js
+  - Distribute your Feathers services as microservices
+  - 依赖cote(微服务)
+  - cote requires your cloud provider to support IP broadcast or multicast.
+  - Please note that the underlying architecture has been changed from one requester/publisher and responder/subscriber per service to one requester/publisher and responder/subscriber per application between v0.7 and v1.x. 
+
 - https://github.com/feathersjs-ecosystem/feathers-sync /MIT/202305/js/inactive
   - Synchronize service events between Feathers application instances
   - When running multiple instances of your Feathers application (e.g. on several Heroku Dynos), service events (created, updated, patched, removed and any custom defined events) do not get propagated to other instances.
@@ -214,6 +218,10 @@ modified: 2023-01-20T00:18:44.282Z
 - https://github.com/feathersjs-ecosystem/dataloader
   - Reduce requests to backend services by batching calls and caching records.
 
+- https://gitlab.com/lpgroup/lpgroup /MIT/202407/js
+  - We are an organisation involved in several startups. This is our main monorepo for javascript npms:s that are used in some of our projects
+  - 依赖feathers.v4
+
 - https://github.com/mkalus/self-cleaning-blob-storage-example
   - [Create a Self-Cleaning Blob Storage using Express, FeathersJS, MongoDB, and Abstract Blob Storage | by Max Kalus | The Startup | Medium](https://medium.com/swlh/create-a-self-cleaning-blob-storage-using-express-feathersjs-mongodb-and-abstract-blob-storage-7840e4f78682)
 
@@ -234,6 +242,13 @@ modified: 2023-01-20T00:18:44.282Z
 
 - https://github.com/gobengo/activitypub-server
   - 依赖 activitystreams2
+
+- https://github.com/litsdm/feather-fastify /202105/js/inactive
+  - Feather BE re-made using fastify
+  - [What's New in v5 | feathers](https://feathersjs.com/guides/whats-new)
+    - Feathers just got a huge speed upgrade, now including its own Radix Trie router. This means that the algorithm behind Fastify's speed is now built into Feathers, and it works no matter which framework transport you use under the hood
+- https://github.com/Sieabah/feathers-fastify /201806/js/archived
+  - This plugin turns a Feathers v3+ application into a drop-in replacement for any Express application
 # auth
 - https://www.npmjs.com/package/@admitad-x3/feathers-rbac
   - 几乎无依赖

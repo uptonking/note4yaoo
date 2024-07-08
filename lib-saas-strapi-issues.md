@@ -178,14 +178,6 @@ const Component = () => {
 
 - ## [Sharp - Media Upload Memory Leak](https://github.com/strapi/strapi/issues/14417)
 
-- ## [Dissatisfaction with Strapi: Stability, Scalability, and Support - General - Strapi Community Forum _202301](https://forum.strapi.io/t/dissatisfaction-with-strapi-stability-scalability-and-support/24854)
-- After spending 3 weeks on the customization of a large-scale e-commerce application, I ultimately decided to move away from Strapi permanently.
-  - the lack of basic transaction rollback capabilities was a significant limitation for my use case.
-  - the exception handling in the lifecycle hooks was not an effective solution and often resulted in a “400” error.
-- For most large-scale projects, we have our users going for the enterprise edition that provides access to solution engineers. 
-
-- I was also very surprised by the very heavy changes made from V3 to V4. Is ok to introduce breaking changes, but V4 broke everything. If you do the same for V5 I’m not switching.
-
 - ## 🐛 [Inconsistency between responses gotten from the REST API and the Entity service API_202401](https://forum.strapi.io/t/inconsistency-between-responses-gotten-from-the-rest-api-and-the-entity-service-api/34975)
 - strapi-plugin-transformer plugin was what I was going to recommend. Another approach you can use, is to write a transformer function to flatten the response.
 

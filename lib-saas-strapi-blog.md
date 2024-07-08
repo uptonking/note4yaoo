@@ -135,6 +135,15 @@ modified: 2023-12-15T16:52:28.937Z
 - [Implementing i18n for Static Sites with Strapi](https://strapi.io/blog/i18n-for-static-sites-with-strapi)
 
 - [How to Build a Pseudo Multi-Tenant Application in Strapi? | Strapi](https://medium.com/strapi/how-to-build-a-pseudo-multi-tenant-application-in-strapi-5b877e2b2951)
+
+## [Introduction to JWT and Cookie storage _202404](https://strapi.io/blog/introduction-to-jwt-and-cookie-storage)
+
+- Stateless Authentication: Stateless nature eliminating reliance upon central databases. This will enable the scaling and load balancing easier because the server does not have to keep track of the session status of each user
+
+- JWT is Stateless, while the cookies are Stateful
+
+- [Guide on authenticating requests with the REST API _202403](https://strapi.io/blog/guide-on-authenticating-requests-with-the-rest-api)
+  - Unlike API tokens, JWT tokens are stateless and eliminate the need for server-side management.
 # blog-stars
 
 ## 💡 [Schemaless platforms. Architectural considerations _202002](https://medium.com/samanvay-on-tech/schemaless-platforms-e6bbf0a64a24)

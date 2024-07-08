@@ -98,6 +98,21 @@ sequelize.getQueryInterface().QueryGenerator.getWhereConditions({ a: 1, b: 2, c:
 - ## [Status of merge with sequelize-typescript _202211](https://github.com/sequelize/sequelize/issues/15334)
 - /wip/202403
 
+# discuss-scaling-k8s
+- ## 
+
+- ## [SequelizeConnectionAcquireTimeoutError randomly DB connections pool error _201910](https://github.com/sequelize/sequelize/issues/10858)
+- It's very important to tell that I have different apps that run on the same K8s cluster with the same DB, same auth, and it's not crashing.
+  - My bad, eventually the number of connections was not read correctly from env variables and acquire timeout was too low. Hope it will help anyone else who faces this issue.
+
+- I'm also using the default pooling config with PostgreSQL, but I'm managing my transactions manually. If you're letting Sequelize handle the transactions, it might be due to a bug in Sequelize. A good starting point for troubleshooting the issue would be switching to manual transaction handling and seeing if the issue still occurs.
+
+- make sure all TRANSACTIONS contain a ROLLBACK or COMMIT
+
+- ## [Is there a better way than this to handle sequelize seeding and migration in a production grade multi stage dockerfile? : r/node _202304](https://www.reddit.com/r/node/comments/12lp1pv/is_there_a_better_way_than_this_to_handle/)
+- it should be part of your deployment. If it successfully deploys run the migration. Your seeds & migrations would run everytime the docker builds. Which is not ideal as you can have start issues... and you already migrated your DB. This could also kick off parallel migrations while you scale on a cloud provider; luckily they are done in transactions so they can be rolled back for applying the changes. Ideally... you would deploy using a CI; after the deployment step you would have a migration step.
+
+- Usual pattern is to create a container just for seeding . That way when you deploy the app in prod you can add it as a proper init container
 # discuss
 - ## 
 

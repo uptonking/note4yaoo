@@ -285,19 +285,86 @@ modified: 2023-12-15T17:04:36.589Z
   - But there's nothing built-in to handle row-level permissions (eg. specify that a field is only accessible to users respecting certain conditions)
 - Yes, so this would be handled in a policy right, for example lets say that a user can only edit a collection item that is related to his user id 
   - yep
-# discuss
+# discuss-scaling
 - ## 
 
 - ## 
 
-- ## 
+- ## 💠 [Data Loss in Content-Type Table After Schema Modification _202401](https://github.com/strapi/strapi/issues/19141)
+- Rolling deploys have always been difficult for many many reasons and I'm probably the biggest supporter of horizontally scaling Strapi in production (I practically wrote all of the documentation and guides about this when I was just a community member before Strapi hired me).
+- 💡 The best way I explain it to our customers to do proper horizontal scaled deployments is either one of two ways:
+  - Blue/Green deployments (difficult if you have a very noisy write application)
+  - Scale back the cluster to a single node, update, scale back up (this is generally what most of our enterprise customers do)
+- Something else many of our customers do is they run two cluster with the same code/database where you have the primary "traffic cluster" with the auto-migration system turned off and you have a separate "master cluster" (which is actually just one node) that does all of the database migration. 
+- We have a fairly wide enterprise customer base where many are using very large horizontally scaled instances (of course I can't name them for many reasons but those that I can are listed on our website) and what we have currently works fairly decent for them. Most generally just opt for the "15 minute downtime window" option usually on a Sunday morning at like 3am when their traffic would be the lowest.
 
-- ## [Race condition for relational reordering · Issue · strapi/strapi](https://github.com/strapi/strapi/issues/15558)
+- 
+- 
+
+- ## [[SUBMIT] Strapi Cron Jobs Best Practices _202309](https://github.com/strapi/community-content/issues/1243)
+- Native Strapi Cron jobs issues and workarounds
+  - What is horizontal scaling
+  - Why it's an issue for native Strapi Cron jobs
+  - Solution 1: External lock
+  - Solution 2: External Cron Job
+
+- https://github.com/BraydenGirard/strapi-cron-best-practices /202304/js
+  - This article will cover the required steps to setup a Cron Job nativally in Strapi and then also how to setup a Cron that is external to Strapi using both GitHub actions and Linux Crontab.
+
+- ## [Deploying and scaling Strapi on a Kubernetes Cluster _202208](https://github.com/strapi/community-content/issues/939)
+- [How to Deploy and Scale Strapi on a Kubernetes Cluster 1/2 _202302](https://strapi.io/blog/how-to-deploy-and-scale-strapi-on-a-kubernetes-cluster-1-2)
+
+- [Deploying and Scaling the Official Strapi Demo App “FoodAdvisor” with Kubernetes and Docker _202209](https://strapi.io/blog/deploying-and-scaling-the-official-strapi-demo-app-food-advisor-with-kubernetes-and-docker)
+
+- ## [Webhooks don't play nicely with horizontal scaling _202102](https://github.com/strapi/strapi/issues/9525)
+
+- [Tables are poorly-designed for even small scale, resulting in poor performance _202107](https://github.com/strapi/strapi/issues/10571)
+  - Fixed in v4, marking as closed
+
+- ## [Strapi Scaling issues due to DB Write on GET calls to REST API _202306](https://github.com/strapi/strapi/issues/17089)
+- you are completely right on this and we should not do writes on DB on every authenticated request.
+  - 已修复
+
+- ## [Dissatisfaction with Strapi: Stability, Scalability, and Support - General - Strapi Community Forum _202301](https://forum.strapi.io/t/dissatisfaction-with-strapi-stability-scalability-and-support/24854)
+- After spending 3 weeks on the customization of a large-scale e-commerce application, I ultimately decided to move away from Strapi permanently.
+  - the lack of basic transaction rollback capabilities was a significant limitation for my use case.
+  - the exception handling in the lifecycle hooks was not an effective solution and often resulted in a “400” error.
+- For most large-scale projects, we have our users going for the enterprise edition that provides access to solution engineers. 
+
+- I was also very surprised by the very heavy changes made from V3 to V4. Is ok to introduce breaking changes, but V4 broke everything. If you do the same for V5 I’m not switching.
+
+- ## [Save permissions and plugin settings to a file _201907](https://github.com/strapi/strapi/issues/3628)
+- Strapi itself defines the project as a "headless cms" specifically a stateless one to allow for scaling (not defined by them this way, but that's how it's built) as much as I and others in the community view it as much more than that, and more like a framework (API framework) that is not how it is designed.
+
+- ## [Content and Content Types Wiped After Strapi Container build _202202](https://github.com/strapi/strapi/issues/12412)
+  - Each time I rebuild and deploy the app, the entries for content and content types (including their tables) get removed. My login information and internationalization settings remain however.
+
+- Docker should not be used for development without having a persistent filesystem, content-types are saved on the filesystem not the database.
+  - Irregardless this isn't a bug specifically, I would advise taking a look at this blog post for docker related info but functionally Strapi is not entirely stateless while in development mode as it was never intended to be
+  - [Docker with Strapi V4 _202201](https://blog.dehlin.dev/docker-with-strapi-v4)
+
+- ## [Containerise Strapi with Docker for your Kubernetes Cluster](https://www.sabbaticaldev.co.uk/post/containerise-strapi)
+- I was amazed at how simple it was to get Strapi containerised and ready for my Kubernetes cluster.
+  - I use MongoDB Atlas for my database so I just needed to containerise the main project and overall this was an extremely painless process.
+
+- ## 💠 [Multiple Backend Pods in Kubernetes - Questions and Answers / Strapi Backend - Strapi Community Forum _202204](https://forum.strapi.io/t/multiple-backend-pods-in-kubernetes/18119)
+  - If I run Strapi on Kubernetes. Can I spin up multiple pods for the back end or will that cause conflicts?
+
+- 💡 I never had problems running multiple replicas of a Strapi application, in both AWS ECS and Kubernetes, since Strapi backend and admin are stateless applications.
+  - My only concern the database autoupdate, when some content type is changed. All the replicas will try to update the database at same time. I’m still trying to find some way to disable this autoupdate, and trigger it manually, like some kind of migration.
+- You can disable migration on startup
+
+- ## [Race condition for relational reordering ](https://github.com/strapi/strapi/issues/15558)
 - Currently, if you are only running 1 Strapi instance the race conditions only arise if you are doing something like promise.all where you are running the relation increment code concurrently. This means that good code can prevent these race conditions. However, if you are horizontally scaling strapi i.e more than 1 instance you can trigger race conditions even from the content API.
 
 - ## [Requirements for horizontal scaling? _202310](https://forum.strapi.io/t/requirements-for-horizontal-scaling/32920)
 - 1 all strapi instances need to be in sync content-type wise so you get no DB fights.
   - 2 you can’t use cron jobs unless you have red lock plugin.
+
+# discuss
+- ## 
+
+- ## 
 
 - ## [Customize Save button in content-manager plugin _202106](https://forum.strapi.io/t/customize-save-button-in-content-manager-plugin/5663)
 - I would not recommend to modify it with extensions. Since you will have conflicts with feature updates. 

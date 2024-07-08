@@ -14,6 +14,7 @@ modified: 2023-01-12T16:33:34.413Z
   - websocket优先, 支持多种provider如socketio/primus
   - 支持horizontal scaling
   - a unified approach for HTTP and real-time APIs
+  - node-server支持切换express/koa
 
 - cons
   - ?

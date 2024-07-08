@@ -105,6 +105,18 @@ The problem is that the read replica of mysql server are updated by the master s
   - Objection was designed before typescript was widely adopted
 
 - If you like knex's query builder and objection.js's relation capabilities, sutando is a better alternative
+# discuss-scaling-k8s
+- ## 
+
+- ## 
+
+- ## [How to configure Knex for a horizontally scaled system? - Stack Overflow](https://stackoverflow.com/questions/71760396/how-to-configure-knex-for-a-horizontally-scaled-system)
+- As per your configuration it looks like you expect 4 node instances max (25*4 = 100). If you want to scale to more processes either reduce the max number of connections per process or increase the max total connection on your db/pooler. It's all just math. There is no magic, everything is a compromise.
+  - Yes, we ended up reducing the max number of DB connections per process. And we are planning to use a pooler that can avoid pinning all requests made through Knex. Looks like AWS RDS Proxy made some improvements to make this possible
+
+- ## [How to use a docker container name instead of IP for DB connection with knex - Stack Overflow](https://stackoverflow.com/questions/56299533/how-to-use-a-docker-container-name-instead-of-ip-for-db-connection-with-knex)
+- The Docker DNS resolution with container names only works from within containers but you could publish the port to the hosts IP/localhost and connect to that
+
 # discuss
 - ## 
 

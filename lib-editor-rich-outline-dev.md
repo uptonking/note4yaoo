@@ -21,6 +21,7 @@ modified: 2021-09-09T18:29:47.681Z
 - cons
   - 文章内容存储到数据库的格式是文本字符串，参考payloadcms保存json
   - [~~不支持评论~~](https://github.com/outline/outline/issues/457), 已支持_v0.69_202304
+  - k8s的部署没有官方支持
 
 - features
   - blazing fast editor with markdown support, slash commands, embeds

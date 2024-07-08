@@ -12,6 +12,16 @@ modified: 2023-10-26T18:42:55.635Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Stonebraker and I examine the last 20 years in databases and discuss why relational databases + SQL will continue to remain on top.
+- https://x.com/andy_pavlo/status/1807799839616614856
+  - The catalyst for the paper was this 2021 HackerNews post about somebody wondering why people use relational databases instead of graph databases: https://news.ycombinator.com/item?id=28736405
+
+- Cool. But the Graph db take is so-so: you cited DuckPGQ, but they compared their system to the problematic Neo4j. And there is a claim there that graph algorithms cannot scale. You mention TigerGraph in your paper, but there is no comparison, while TG is really good on MPP cases
+
 - ## 🛢️🔥 [How and why the Relational Model works for databases | Hacker News_202201](https://news.ycombinator.com/item?id=29963448)
 - 
 - 

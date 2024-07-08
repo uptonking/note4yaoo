@@ -9,6 +9,14 @@ modified: 2021-03-11T11:26:06.670Z
 
 # guide
 
+# discuss-stars
+- ## 
+
+- ## threadsvg: Instantly convert any SVG logo to 3D
+- https://x.com/MalayVasa/status/1809627318308032827
+  - https://www.threedsvg.com/
+- it would be sick if we could download the three.js render you have on the right as a webpage with a few different environments
+
 # discuss
 - ## 
 

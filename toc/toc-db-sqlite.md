@@ -208,6 +208,7 @@ modified: 2021-08-30T18:56:18.632Z
   - In-process OLTP database engine library
   - Asynchronous I/O support with io_uring
   - https://x.com/penberg/status/1809295488933384615 _202407
+    - Me and @Peristocles1 have been hacking on an in-process database in Rust that aims for SQLite compatibility, but with an asynchronous architecture (but no Tokio) to support things like io_uring
     - Sounds similar to the goals of libsql. Are there any other differences?
       - The two projects have different goals. libSQL extends SQLite with things like replication and vector search, but is SQLite at the core. This is a project to write a SQLite compatible library from scratch.
     - doesn’t durability go to toss when using io_uring (any async primitive)? 

@@ -80,6 +80,16 @@ modified: 2024-06-30T11:15:15.860Z
 - 
 - 
 
+# blogs-scaling
+
+- [Load balancing, threading, and scaling in Node.js | Red Hat Developer _202310](https://developers.redhat.com/articles/2023/10/09/load-balancing-threading-and-scaling-nodejs)
+  - the team recommends delegating load balancing and scaling to the highest layer possible instead of using the Cluster API. For example, if you deploy the application to Kubernetes, use the load balancing and scaling built into Kubernetes. In our experience, this has been just as efficient or more efficient than trying to manage it at a lower level through tools like the Cluster API.
+
+- [Scaling Your Node.js Application on Kubernetes: Unlocking the Full Potential of Your App | by Amit Cohen | Medium _202303](https://medium.com/@amitcohen_dev/scaling-your-node-js-application-on-kubernetes-unlocking-the-full-potential-of-your-app-46f0bf5efbcd#:~:text=Horizontal%20scaling%20involves%20adding%20more,js%20application%20based%20on%20demand.)
+
+- [Horizontal Autoscaling in Kubernetes #1 – An Introduction - DEV Community _202005](https://dev.to/cdennig/horizontal-autoscaling-in-kubernetes-1-an-introduction-ab2)
+  - [Horizontal Autoscaling in Kubernetes #2 – Custom Metrics - DEV Community](https://dev.to/cdennig/horizontal-autoscaling-in-kubernetes-2-custom-metrics-549k)
+  - [Horizontal Autoscaling in Kubernetes #3 – KEDA - DEV Community _202005](https://dev.to/cdennig/horizontal-autoscaling-in-kubernetes-3-keda-24l6)
 # blogs-concepts
 - [什么是 Kubernetes 集群？— K8s 集群详解 — AWS](https://aws.amazon.com/cn/what-is/kubernetes-cluster/)
   - Kubernetes 将容器放入容器组中并在节点上运行。Kubernetes 集群具有至少一个运行容器组的主节点和一个管理集群的控制面板。

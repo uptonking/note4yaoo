@@ -39,7 +39,7 @@ modified: 2023-11-23T18:01:59.304Z
 - https://github.com/final-form/react-final-form /js/vanillajs
   - https://github.com/final-form/final-form
   - react binding 代码也挺多
-  -  The author of Redux Form took all of the lessons he learned about form use cases from maintaining Redux Form and built React Final Form
+  - The author of Redux Form took all of the lessons he learned about form use cases from maintaining Redux Form and built React Final Form
 
 - https://github.com/ivan-dalmet/formiz
   - https://formiz-react.com/
@@ -59,13 +59,22 @@ modified: 2023-11-23T18:01:59.304Z
 - https://github.com/charlzyx/da
   - https://charlzyx.github.io/da/
 
-
 - https://github.com/formkit/formkit /MIT/202403/ts
   - https://formkit.com/
   - FormKit is a form-authoring framework for Vue
   - supports its whole feature set for native HTML inputs (like select, checkbox, and textarea) 
-# form-elements
 
+- https://github.com/heyform/heyform /AGPLv3/202407/ts
+  - https://heyform.net/
+  - an open-source form builder that allows anyone to create engaging conversational forms for surveys, questionnaires, quizzes, and polls.
+  - Smart Logic: Conditional logic and URL redirections for dynamic, adaptable forms.
+  - powerful Integrations: Connect with webhooks, analytics, marketing platforms, and tools like Zapier and Make.com.
+  - [Show HN: I just made my profitable online form builder open-sourced | Hacker News _202404](https://news.ycombinator.com/item?id=39895960)
+    - Grist has the ability to create forms that are automatically connected to their spreadsheets. Though it doesn't seem like you can create sophisticated forms (with some logic in them for example) just yet.
+    - As someone that built a 20m ARR survey product... The only difference between this and something making millions is a sales team.
+    - I really like that you are using nestjs, idk why some devs hate it
+    - Best makes JavaScript look like Java, it’s needlessly complex and just encourages vast amounts of boilerplate. Awful stuff.
+# form-elements
 - tom-select /947Star/apache2/202212/ts/vanillajs
   - https://github.com/orchidjs/tom-select
   - https://tom-select.js.org/examples/remote/
@@ -75,9 +84,7 @@ modified: 2023-11-23T18:01:59.304Z
   - https://github.com/orchidjs/sifter.js
     - A library for textually searching arrays and hashes of objects by property (or multiple properties). 
     - Designed specifically for autocomplete.
-
 # utils
-
 - https://github.com/fabian-hiller/decode-formdata /ts
   - When the values of your form are encoded to FormData, for example to send them to a server via HTTP, some information is lost. 
   - Using this library, you can decode FormData into a JavaScript object and supplement the information that was lost during encoding.
@@ -91,4 +98,3 @@ modified: 2023-11-23T18:01:59.304Z
   - the API server for ODK. It's built with Node.js and Postgres.
   - https://github.com/getodk/central-frontend /js/vue
 # more
-

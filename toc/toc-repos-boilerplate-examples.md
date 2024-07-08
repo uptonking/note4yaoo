@@ -167,7 +167,7 @@ modified: 2023-11-16T15:00:11.503Z
 - https://github.com/romansndlr/react-vite-realworld-example-app /202204/js
   - 依赖valtio、react-query.v3
 
-### api-realworld
+### rw-api
 
 - https://github.com/cirosantilli/node-express-sequelize-nextjs-realworld-example-app /202208/后端js+前端ts
   - Node.js + Express.js + Sequelize + SQLite/PostgreSQL + Next.js fullstack static/SSG/ISG Example Realworld App
@@ -209,10 +209,6 @@ modified: 2023-11-16T15:00:11.503Z
   - This project uses Hexagonal Architecture (Ports & Adapters) with Functional Programming.
   - 依赖newtype-ts、monocle-ts、fp-ts、express、fastify
 
-- https://github.com/launchbadge/realworld-axum-sqlx /202203/rust
-  - A Rust implementation of the Realworld demo app spec using Axum and SQLx(sea-orm)
-  - Best practices are always in flux, and a major point of this project was to experiment with project architecture and suss out what those best practices might look like.
-
 - https://github.com/hseeberger/realworld-backend /202311/rust
   - RealWorld backend implementations in Rust, using different frameworks (enabled via respective features)
   - axum
@@ -245,6 +241,16 @@ modified: 2023-11-16T15:00:11.503Z
 
 - https://github.com/socar-foden/react-realworld /202106/js/提交多
   - react-realworld, 韩语, 프로젝트 목적
+
+### rw-docker/k8s
+
+- https://github.com/shekhargulati/conduit-on-kubernetes /201902/java/js
+  - conduit: An example application of The Kubernetes Guide
+  - [The Kubernetes Guide For Java Developers: Part 1: Learn Kubernetes by deploying a real-world application on it – Shekhar Gulati _201902](https://shekhargulati.com/2019/02/02/the-kubernetes-guide-part-1-learn-kubernetes-by-deploying-a-real-world-application-on-it/)
+
+- https://github.com/launchbadge/realworld-axum-sqlx /AGPLv3/202203/rust/inactive
+  - A Rust implementation of the Realworld demo app spec using Axum and SQLx(sea-orm)
+  - Best practices are always in flux, and a major point of this project was to experiment with project architecture and suss out what those best practices might look like.
 # vanillajs
 - https://github.com/aman-maharshi/vanilla-js /202304/js
   - Projects using pure JavaScript without any external libraries or frameworks

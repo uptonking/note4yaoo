@@ -131,17 +131,29 @@ modified: 2023-04-04T03:59:40.928Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Google的“We Have No Moat, And Neither Does OpenAI”说的很有道理呐，最后全都开源，AI模型最后卷来卷去就只剩下机器成本，根本没有可行的商业模式。
+- https://x.com/JXQNHZr1yUAj5Be/status/1809699908968165808
+  - 总不能互联网公司卖服务吧，那没有规模效应
+  - 所以Stable AI估计最后也是凉凉的，都拿GPU去服务用户了->没GPU炼大模型->模型质量不如开源社区自己微调。
+  - 突然想到这个，是因为最近一直在想为啥Google/Meta之类的大公司没卷视频生成了，虽然貌似也搞了几个图像或者视频大模型，但好像不如Luma/Runaway初创公司一样积极的推广，拉着用户免费使用。可能就是纯当AI技术储备了，没想着靠这些服务挣钱，而且太占用GPU了
+
 - ## macOS 上 AI 没有跑马灯效果，Apple 还特意给我留了条活路
 - https://x.com/YukiHakarigoto/status/1800234933215994058
   - 铁锤哥的去背景功能也迎来劲敌了
 
 - ## 5 new market maps in AI
 - https://x.com/chiefaioffice/status/1799766662746398851
-  01.  AI code generation tools from Greylock
-  02.  AI legal tools from Battery Ventures
-  03.  AI agent infrastructure from Madrona
-  04.  AI marketing tools from a16z
-  05.  Conversational AI from Cobus Greyling
+  01.   AI code generation tools from Greylock
+  02.   AI legal tools from Battery Ventures
+  03.   AI agent infrastructure from Madrona
+  04.   AI marketing tools from a16z
+  05.   Conversational AI from Cobus Greyling
 
 - ## Google 最近新出了两个 Code 相关的 Agent 非常有意思：
 - https://x.com/tuturetom/status/1798350275314581670

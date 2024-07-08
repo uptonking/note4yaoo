@@ -34,9 +34,11 @@ modified: 2022-11-11T11:04:29.007Z
   - With Omni you can use your browser like a pro. 
   - Manage tabs, bookmarks, your browser history, perform all sorts of actions and more with a simple command interface.
 
-- https://github.com/pawelmalak/flame /MIT/202307/ts
+- https://github.com/pawelmalak/flame /MIT/202307/ts/inactive
   - Flame is self-hosted startpage for your server. inspired (heavily) by SUI.
   - Easily manage your apps and bookmarks with built-in editors.
+  - Sequelize ORM + SQLite
+  - Redux + react
 
 - https://github.com/kormyen/memex /202210/js
   - https://kormyen.github.io/memex/
@@ -192,7 +194,6 @@ modified: 2022-11-11T11:04:29.007Z
   - Vue动态导航是采用的单页面方式，非常不利于 SEO 优化，所以改用了 Nuxt SSR 的方式，这也是这个版本最大的改动。
   - V3.0版本，最大的改动就是把项目拆分为三个子项目: Nuxt后台 -> Ant Design Pro后台, Express -> Eggjs
   - [强烈推荐建议适配chrome书签json结构，方便一键导出生成](https://github.com/geekape/geek-navigation/issues/101)
-
 
 - https://github.com/codeverland/codever
   - Bookmarks and Snippets Manager for Developers & Co

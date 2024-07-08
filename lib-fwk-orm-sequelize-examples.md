@@ -45,6 +45,7 @@ modified: 2023-02-05T18:50:32.900Z
   - Documentation with Swagger，但测试create user失败
   - 还提供了typeorm、mongoose版本
   - v5_20230404: improve apps with service pattern, 将工具lib拆分到了单独仓库
+  - 运维使用docker，未使用k8s
   - https://github.com/masb0ymas/expresso
     - Library for expresso Template: core, hooks, query, provider
     - 💡📡 可参考实现knex版
@@ -245,6 +246,12 @@ modified: 2023-02-05T18:50:32.900Z
 - https://github.com/yuedun/issue-tracking-system /202005/ts/inactive
   - 基于Koa框架，layui，Sequelize.js5.x版本，使用TypeScript开发的事务跟踪系统
 
+- https://github.com/pawelmalak/flame /MIT/202307/ts/inactive
+  - Flame is self-hosted startpage for your server. inspired (heavily) by SUI.
+  - Easily manage your apps and bookmarks with built-in editors.
+  - Sequelize ORM + SQLite
+  - Redux + react
+
 - https://github.com/raphaelalmeidamartins/fullstack-bank /202309/ts
   - Digital wallet full stack application developed with Next.js and Node.js
 
@@ -355,6 +362,14 @@ modified: 2023-02-05T18:50:32.900Z
   - Use this repository to create an SSCCE for your issue
   - Short, Self Contained, Correct (Compilable), Example
 
+- https://github.com/anthonybudd/Express-ts-API-Template /MIT/202407/ts
+  - Production-ready minimal REST API boilerplate using Express.js, Sequelize and MySQL.
+  - Auth using JWT's with Passport.js
+  - production-ready OpenApiSpec.yml & Kubernetes files
+  - designed to work with AnthonyBudd/Vuetify-SPA-Template
+  - https://github.com/anthonybudd/express-api-boilerplate /js旧版
+  - https://github.com/anthonybudd/Vuetify3-SaaS-Template /202406/vue3/js
+
 - https://github.com/TonyMckes/conduit-realworld-example-app /MIT/202303/js/inactive/be+fe/依赖少
   - https://conduit-realworld-example-app.fly.dev/
   - created to demonstrate a fully fledged fullstack application 
@@ -436,9 +451,10 @@ modified: 2023-02-05T18:50:32.900Z
   - TypeORM | Sequelize Typescript | Mongoose
   - 简单示例，代码混乱
 
-- https://github.com/SamuelMarks/restify-orm-scaffold /202402/ts
+- https://github.com/SamuelMarks/restify-orm-scaffold /MIT/202402/ts
   - Simple baseline scaffold to get you started using TypeORM and/or Sequelize and/or Waterline on restify with TypeScript.
   - 无架构，仅实现了user/auth api
+  - 🐳 支持 Docker / Podman， k8s
 
 - https://github.com/felipecal/Api-Sequelize /MIT/202402/ts/提交多
   - This is a simple CRUD api in TypeScript, sequelize, aws rds or docker database.
