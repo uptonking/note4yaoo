@@ -158,7 +158,13 @@ Validate it to ensure it meets the method's requirements.
 # discuss
 - ## 
 
-- ## 
+- ## How do you implement feature flags in your application? Do you use any apps or have any approaches?
+- https://x.com/wesbos/status/1810687151794962558
+- Boolean in .env with a default in config
+- What about turning them on per user?
+  - Never needed that, but i'd add something to the user profile table that could override its own flags upon login, save it to session
+- Vercel flags currently.
+- I've been using @posthog . It's straightforward and pretty quick and painless. @LaunchDarkly Is good, but a bit heavy handed for most of my use cases.
 
 - ## our tiered storage engine keeps getting better, seamlessly letting you navigate cost/latency tradeoffs. not benchmarks, but in production, on real workloads.
 - https://twitter.com/Sirupsen/status/1781340525494231329

@@ -209,6 +209,7 @@ modified: 2021-08-30T18:56:18.632Z
   - Asynchronous I/O support with io_uring
   - https://x.com/penberg/status/1809295488933384615 _202407
     - Me and @Peristocles1 have been hacking on an in-process database in Rust that aims for SQLite compatibility, but with an asynchronous architecture (but no Tokio) to support things like io_uring
+    - I am not using async Rust because I want more control over memory allocations, for example. With futures, it becomes hard because you end up creating bunch of closures implicitly.
     - Sounds similar to the goals of libsql. Are there any other differences?
       - The two projects have different goals. libSQL extends SQLite with things like replication and vector search, but is SQLite at the core. This is a project to write a SQLite compatible library from scratch.
     - doesn’t durability go to toss when using io_uring (any async primitive)? 
@@ -216,6 +217,11 @@ modified: 2021-08-30T18:56:18.632Z
       - The architecture of Limbo is designed for asynchronous I/O like io_uring, but with durability in mind.
     - This sounds very similar to Sled? Minus SQLite compat
       - Sled is a more advanced storage engine than what we have because we’re focusing on reproducing SQLite’s storage model and will improve later.
+    - Curious what's the major challenge here? Can you share some insights?
+      - The major challenge is compatibility and the volume of the work. The beauty of SQLite is that the core architecture is simple, yet efficient and fast, and as such pretty straight-forward to reimplement, but there's just a lot of it.
+    - Are you planning for the library to be for single thread usage only? I see Rc being used instead of Arc.
+      - Single-threaded because it allows the application to figure out locking scheme and it makes deterministic simulation testing easy. The current performance numbers suggest you can get to 500k reads per second easily, which should be plenty for the types of workloads SQLite runs
+
 
 - https://github.com/cstack/db_tutorial /clang
   - Writing a sqlite clone from scratch in C

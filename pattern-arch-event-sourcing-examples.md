@@ -39,6 +39,8 @@ modified: 2023-09-12T09:37:22.608Z
   - I already have samples of Event Versioning and Snapshots in my sample repo. 
   - [Introduction to Event Sourcing - Self Paced Kit_202203](https://event-driven.io/en/introduction_to_event_sourcing/)
   - https://github.com/oskardudycz/EventSourcing.JVM
+- https://github.com/oskardudycz/emmett /ts/wip/inactive
+  - This project aims to deliver an opinionated event store based on my experience working on Marten and EventStoreDB.
 
 - https://github.com/sugarandmagic/sequelize-mv-support /MIT/ts
   - This package adds support for Views and Materialized Views in Sequelize.
@@ -60,6 +62,11 @@ modified: 2023-09-12T09:37:22.608Z
 
 - https://github.com/JamesKyburz/level-eventstore /apache2/202008/js/inactive
   - eventstore implemented using leveldb-mount, leveldb and level-logs
+
+- https://github.com/event-driven-io/emmett /NALic/202407/ts
+  - https://event-driven-io.github.io/emmett/
+  - Event Sourcing development made simple
+  - This project aims to experiment with an opinionated Event Sourcing framework based on my experience working on Marten and EventStoreDB.
 
 - https://github.com/reimagined/resolve /MIT/202212/ts/提供了很多示例
   - https://reimagined.github.io/resolve/
@@ -1090,9 +1097,6 @@ modified: 2023-09-12T09:37:22.608Z
   - designed to help you interactively explore your streaming data, perform analytics against live relational data, or increase data freshness while reducing the load of your dashboard and monitoring tasks. 
   - Whenever Materialize answers a query, that answer is the correct result on some specific (and recent) version of your data. Materialize does all of this by recasting your SQL queries as dataflows, which can react efficiently to changes in your data as they happen.
   - Materialize can read data from Kafka (and other Kafka API-compatible systems like Redpanda), directly from a PostgreSQL replication stream, or from SaaS applications via webhooks. It also supports regular database tables to which you can insert, update, and delete rows.
-
-- https://github.com/oskardudycz/emmett /ts/wip/inactive
-  - This project aims to deliver an opinionated event store based on my experience working on Marten and EventStoreDB.
 
 - https://github.com/eventsauce/eventsauce /201601/js
   - an event-sourcing/CQRS Framework in Javascript, using ES6 language features.

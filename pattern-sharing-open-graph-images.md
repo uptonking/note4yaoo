@@ -62,6 +62,13 @@ modified: 2023-02-03T05:55:22.102Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 如果你不知道 Open Graph Image 怎么设计可以去 OGImage Gallery 找找灵感，这边收集了上千个网站的 OGImage
+- https://x.com/ccbikai/status/1810106528088674673
+
 - ## 昨天上线的自动生成 og image 功能使用了这个项目。
 - https://twitter.com/chloerei/status/1730854404461568313
   - 通过把 chromium 依赖独立成一个服务，现在主应用不需要为了应对启动 chromium 预留很多内存。

@@ -396,6 +396,16 @@ modified: 2022-11-03T04:14:11.987Z
   - Embeddable JSON Database engine C library. 
   - Simple XPath like query language (JQL).
 
+- https://github.com/event-driven-io/Pongo /MIT/202407/ts
+  - https://event-driven-io.github.io/Pongo/
+  - Mongo but on Postgres and with strong consistency benefits
+  - How does it work?
+    - Pongo treats PostgreSQL as a Document Database benefiting from JSONB support
+    - Pongo takes MongoDB api and translates it to the native PostgreSQL queries
+  - How is it different than FerretDB?
+    - FerretDB plugs into the native MongoDB protocol, which allows it to be used as MongoDB and connect to tools like Mongo UI, etc
+    - Pongo operates on a different layer, translating the MongoDB API directly into SQL in the library code
+
 - https://github.com/FerretDB/FerretDB /8.2kStar/apache2/202402/go
   - https://www.ferretdb.io/
   - FerretDB (previously MangoDB) was founded to become the de-facto open-source substitute to MongoDB

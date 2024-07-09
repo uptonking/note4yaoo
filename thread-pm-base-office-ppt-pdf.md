@@ -29,6 +29,14 @@ modified: 2024-01-11T15:57:32.182Z
 
 - ## 
 
+- ## 有什么文档解析库推荐吗？（从PDF, doc等文件提取文本用于RAG）
+- https://x.com/wong2_x/status/1810206825515782455
+- 首选 RAGFlow：https://github.com/infiniflow/ragflow 。这家在数据清洗上面做了很多工作。
+- libreoffice 无头模式（cli）看看呢
+
+- ## PDF格式解析我觉得写一本书都不过分
+- https://x.com/xiaoymin/status/1810119527629484084
+
 - ## PDF 是一种非常难以解析的格式。 很多人发明了很多方法去解析 PDF。 这些人所花费的时间足以定义一种新的好用的文件标准。
 - https://twitter.com/oran_ge/status/1774602216202240029
 - pdf 的问题在于把上下文拆成一个个行了，只有每行的二维位置，其他信息都丢失了。

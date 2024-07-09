@@ -135,7 +135,11 @@ modified: 2023-04-04T03:59:40.928Z
 
 - ## 
 
-- ## 
+- ## 互联网公司不适合把这个当做一个营业项目。Midjourney也不是因为AI模型更牛批，而是因为社区和周边服务，最后就是比营销和服务业。
+- https://x.com/JXQNHZr1yUAj5Be/status/1809985294139277459  
+  - 估计到最后视频生成和具身智能也变成这样，反正谁要赚钱我就开源，但我自己的业务能用上，你想要只靠这个赚钱没可能
+
+- 要说社区，显然是SD强太多
 
 - ## Google的“We Have No Moat, And Neither Does OpenAI”说的很有道理呐，最后全都开源，AI模型最后卷来卷去就只剩下机器成本，根本没有可行的商业模式。
 - https://x.com/JXQNHZr1yUAj5Be/status/1809699908968165808
@@ -149,11 +153,11 @@ modified: 2023-04-04T03:59:40.928Z
 
 - ## 5 new market maps in AI
 - https://x.com/chiefaioffice/status/1799766662746398851
-  01.   AI code generation tools from Greylock
-  02.   AI legal tools from Battery Ventures
-  03.   AI agent infrastructure from Madrona
-  04.   AI marketing tools from a16z
-  05.   Conversational AI from Cobus Greyling
+  01.    AI code generation tools from Greylock
+  02.    AI legal tools from Battery Ventures
+  03.    AI agent infrastructure from Madrona
+  04.    AI marketing tools from a16z
+  05.    Conversational AI from Cobus Greyling
 
 - ## Google 最近新出了两个 Code 相关的 Agent 非常有意思：
 - https://x.com/tuturetom/status/1798350275314581670

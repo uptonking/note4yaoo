@@ -30,7 +30,10 @@ modified: 2023-10-30T07:34:03.602Z
 
 - ## 
 
-- ## 
+- ## Ollama 0.2 is here! Concurrency is now enabled by default.  _20240709
+- https://x.com/ollama/status/1810480544976626159
+  - Parallel requests: Ollama can now serve multiple requests at the same time, using only a little bit of additional memory for each request.
+  - Run multiple models: Ollama now supports loading different models at the same time
 
 - ## So this is an LLM running locally? `ollama run llama3` .
 - https://x.com/eatonphil/status/1797039865470570942
@@ -94,6 +97,7 @@ modified: 2023-10-30T07:34:03.602Z
   - Fully offline, open-source and with <200M models
 - [Experimenting with local alt text generation in Firefox Nightly - Mozilla Hacks - the Web developer blog _202405](https://hacks.mozilla.org/2024/05/experimenting-with-local-alt-text-generation-in-firefox-nightly/)
   - https://huggingface.co/Mozilla
+
     - 提供了数据集和模型
 
 - Offline and open-source is a big win for privacy-focused tools

@@ -29,6 +29,20 @@ modified: 2024-04-05T06:34:05.602Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 修了一个有趣的 bug。之前 CI 一直稳过，还以为自己代码写得好呢，今天发现是有问题，挂了ci也认为过了。
+- https://x.com/laixintao/status/1810629972715020606
+  - 出问题的地方是 ci 脚本开子进程，子进程如果失败，直接用子进程的 return code 来 sys.exit()。 实际上如果code大于255 Python 就用0退出，神奇。
+
+- 在我的 Linux 上，返回的值范围是 0 到 255，实际上的返回值是 result & 0xFF，而不是大于 255 返回 0
+- 和python好像没关系，bash也是这样的 bash -c 'exit 257'; echo $?
+- 你再测试下 257 和 258， 就会发现是 code & 0xFF
+
 - ## 把静态网站，next.js 网站部署在 Cloudflare 上，和部署在 Vercel 上相比，有什么优势呢？
 - https://twitter.com/xqliu/status/1775874477538320521
 1. 大体上体验非常接近，包括 GitHub 导入、构建脚本支持、版本预览等等
