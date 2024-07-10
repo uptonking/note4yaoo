@@ -57,34 +57,35 @@ modified: 2024-05-27T11:39:14.886Z
   - https://github.com/search?type=code&q=dockview+path%3Apackage.json%20NOT%20is:fork
 # draft
 - default-width
-  - 宽度要在所有panel都addPanel后再统一设置，不能addPanel后立即设置
+  - 👀 宽度要在所有panel都addPanel后再统一设置，不能addPanel后立即设置
 - 浏览器窗口resize时，自动更新各panel宽度
 
 - maximize-panel时，支持占满指定元素的宽高，而不是占满整个Dockview(避免挡住标题栏)
 
-- Gridview不支持floating-panels, 仅Dockview支持floating-panels
+- 动态添加/关闭面板的数据驱动方式，官方示例使用的是api.addPanel命令式操作
+
+- floating-panel
+  - 支持设置默认width/height
+  - Floating groups cannot be maximized
+  - `addFloatingGroup` only accepts existing panels and groups
 
 - 未实现将折叠面板中的文件拖拽到编辑区的交互
 
 - panel的滚动条自动显示隐藏
 
+- Gridview不支持floating-panels, 仅Dockview支持floating-panels
+
 - replace watermark with placeholder
 
-- 根据业务场景的需求，panel的渲染模式需要采用onlyWhenVisible/always的组合
-  - 兼顾内存占用和渲染性能
-
-- tab内容懒加载的最佳实践
-  - gridview的面板逐个懒加载
 
 - 
 - 
 
 # dev-xp
-- 💡 旧版文档中包含更多的api使用示例
+- 💡 旧版文档中包含更多的api使用示例, 可在github仓库查看旧版文档markdown
 
-- 🤔 显示隐藏groups的处理 ?
-  - toggle
-  - 默认使用 display: none
+- 显示隐藏groups的处理
+  - ✅ 官方api已支持
 
 - ide示例基于Gridview实现， 编辑区面板的初始数据 `size: 100` 很重要, 若注释掉，则无法显示left/right
   - 🧐 Gridview暂不支持floating，实现floating推荐使用Dockview
@@ -93,6 +94,13 @@ modified: 2024-05-27T11:39:14.886Z
 - 
 - 
 - 
+- 
+
+- 根据业务场景的需求，panel的渲染模式需要采用onlyWhenVisible/always的组合
+  - 兼顾内存占用和渲染性能
+
+- tab内容懒加载的最佳实践
+  - gridview的面板逐个懒加载
 
 # codebase 🔡🧮
 
@@ -149,10 +157,13 @@ modified: 2024-05-27T11:39:14.886Z
 
 - ## [Unable to persist fullscreen / maximized mode ](https://github.com/mathuo/dockview/issues/494)
 
-- ## [Implement default width and height for Dockview panels ](https://github.com/mathuo/dockview/issues/589)
+- ## 💡 [Implement default width and height for Dockview panels ](https://github.com/mathuo/dockview/issues/589)
   - When adding a new panel to the top/right/bottom/left of a panel in a Dockview component, the available space is evenly distributed between the two panels. This is not always a desirable default.
   - I see that the underlying GridView can handle fixed widths/heights when adding panels.
   - It should be nice if we could define default widths and/or heights for panels. 
+- @mathuo created an experiment in PR #592 for it.
+  - [feat: priority experiments _202404](https://github.com/mathuo/dockview/pull/592)
+  - preferredWidth and preferredHeight works very-very well, but priority seemingly did not work. And it breaks down when two or more panels are grouped together, the preferredWidth/preferredHeight info is lost.
 
 - ## [Set exact width in addPanel ](https://github.com/mathuo/dockview/discussions/339)
 
@@ -187,7 +198,19 @@ event.api.addPanel({
 # discuss
 - ## 
 
-- ## 
+- ## [Feature request: Adding a gap around panels ](https://github.com/mathuo/dockview/issues/447)
+- 
+
+- ## [Enhance onDidLayoutChange Behavior ](https://github.com/mathuo/dockview/issues/520)
+- I'm using the onDidLayoutChange change from DockviewApi to detect changes in my layout so I can persist the layout to a database. 
+  - It looks like onDidLayoutChange gets fired even when the layout itself hasn't necessarily changed, but the active panel has. The result is that the user gets many spurious calls-to-action to save their layout, even though the only thing that's changed is which panel is currently active.
+
+- 202403: In version 1.10.0 several enhanements have been make to the events dockview fires, reducing duplicate events substancially. 
+
+- ## [Adding element/icon to title ](https://github.com/mathuo/dockview/discussions/423)
+- There are currently two ways to alter the behaviour of the header tabs. 
+  - You can provide an alternative default template which will be used instead of the provided one 
+  - or you can provide a template per panel when adding those panels.
 
 - ## 🌰 [Actions in paneview ](https://github.com/mathuo/dockview/issues/335)
 - I've tried with little time to do an example here: codesandbox.io/s/simple-paneview-forked-qrklqh?file=/src/app.tsx

@@ -12,6 +12,31 @@ modified: 2021-05-11T14:36:13.256Z
 - resources
   - [Hooks Pattern](https://www.patterns.dev/posts/hooks-pattern)
   - [JavaScript Patterns Workshop | JavaScript Patterns](https://javascriptpatterns.vercel.app/patterns)
+# slot pattern
+- [TypeScript + React dynamically chose component to render - Stack Overflow](https://stackoverflow.com/questions/70490154/typescript-react-dynamically-chose-component-to-render)
+  - Instead of chaining widget types you can use React. FC casting:
+  - const ComponentToRender = componentMap[type] as React. FC
+
+- [Using React, how do I render components based on a type? - Stack Overflow](https://stackoverflow.com/questions/31907251/using-react-how-do-i-render-components-based-on-a-type)
+  - a more sophisticated way of solving it would have a ComponentFactory in which you register a type and a component
+
+## [Building Component Slots in React | Sandro Roth](https://sandroroth.com/blog/react-slots/)
+
+Default slot (children)
+Multiple slot props
+Compound components
+Slots by type
+Generic slot component
+Slots with Context API: 🌰 github-primer
+Fake DOM: 🌰 react-aria
+React Slots RFC
+Slots in other frameworks
+Vue
+Angular
+Summary
+
+- [Best way to change vue slots pattern into React? - Stack Overflow](https://stackoverflow.com/questions/73416124/best-way-to-change-vue-slots-pattern-into-react)
+  - Function as child and function as prop patterns serve the same purpose but allow to replace slots with slotProps.
 # conditional rendering: switch-case vs map
 - [Which is the react way of complex conditional rendering?](https://stackoverflow.com/questions/50901604)
   - 👍 `{ this.state.err ? <Err /> : <Main /> }` 数据驱动视图
@@ -19,7 +44,10 @@ modified: 2021-05-11T14:36:13.256Z
     - `<div className="App"> {comp} </div>` 将comp提取成变量更好
 - 不要直接写组件，可以先定义一个组件变量
 
-- [React conditional rendering: 9 methods with examples - LogRocket Blog](https://blog.logrocket.com/react-conditional-rendering-9-methods/)
+- [React / JSX Dynamic Component Name - Stack Overflow](https://stackoverflow.com/questions/29875869/react-jsx-dynamic-component-name)
+  - Component map, Barrel module
+
+- 🌰 [React conditional rendering: 9 methods with examples - LogRocket Blog](https://blog.logrocket.com/react-conditional-rendering-9-methods/)
 
 ## [Which has better performance in JavaScript: a switch or a lookup table?](https://twitter.com/kadikraman/status/1680886385010528256)
 
@@ -189,7 +217,7 @@ const ConditionalMovie = ({type})=>{
   - do not mistake your lack of experience for an issue with React
 
 ```jsx
-const nestChild = (Child, Parent) => <Parent> <Child /></Parent>;
+const nestChild = (Child, Parent) => <Parent> <Child /> </Parent>;
 
 const ComposedComp = [Provider1, Provider2].reduce(nestChild, App)
 
@@ -272,7 +300,7 @@ const AppWithProviders = () => (
 
 - ## 🤼🏻 [Avoid Provider wrapping hell in React.](https://twitter.com/_georgemoller/status/1736915583856165154)
 - This seems like a useless abstraction. You typically never need to touch that nest so adding all of that extra code to achieve the same result seems pointless. What am I missing?
-  - Agree and instead if there is a lot of providers maybe the better solution is to make it into groups like UIGroupProvider that's include UI related provider like `ThemeProvider`,    `LocaleProvider`
+  - Agree and instead if there is a lot of providers maybe the better solution is to make it into groups like UIGroupProvider that's include UI related provider like `ThemeProvider`,           `LocaleProvider`
 
 - By doing this you are increasing lines of code, complexity and bug surface area and reducing readability and plus if you are using typescript, there will be lots of extra things to handle compare to original one.
 

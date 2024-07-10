@@ -30,6 +30,17 @@ modified: 2023-01-21T18:53:04.519Z
 - Fleet 的远程开发体验特别好。高延迟下效果比idea好很多，而且plugin不需额外开发就支持远程
 - WebStorm next 重写了 Typescript engine。
 
+# discuss-usage-vscode
+- ## 
+
+- ## [Process explorer as a separate renderer window ](https://github.com/microsoft/vscode/issues/41045)
+- Move the vscode-process extension inside of VSCode. Like the process reporter, launch it as a separate window.
+
+- ## [macos - Code Helper process by VS Code eating my cpu - Stack Overflow](https://stackoverflow.com/questions/74851227/code-helper-process-by-vs-code-eating-my-cpu)
+- I disabled all extensions installed and the problem is gone. So i enabled one by one until i found the culprit. In my case the problem was the extension "Settings sync". I will leave it disabled for a while until a new update is out.
+
+- [VS Code - Code Helper process using more than 100% CPU on macOS - Ask Different](https://apple.stackexchange.com/questions/351761/vs-code-code-helper-process-using-more-than-100-cpu-on-macos)
+  - I suggesting disabling extensions, one by one, until you find the problematic one.
 # discuss-electron
 - ## 
 

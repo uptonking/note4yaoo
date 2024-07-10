@@ -30,7 +30,21 @@ modified: 2024-05-27T09:12:06.925Z
 
 - they could have just used `git clone --depth 1`; 
   - Not everyone knows about this trick, unfortunately
+# disccuss-usage-github
+- ## 
+
+- ## 
+
+- ## [Getting permanent links to files - GitHub Docs](https://docs.github.com/en/repositories/working-with-files/using-files/getting-permanent-links-to-files)
+- When viewing a file on GitHub.com, you can press the "y" key to update the URL to a permalink to the exact version of the file you see.
+- [Creating a permanent link to a code snippet - GitHub Docs](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-a-permanent-link-to-a-code-snippet)
+  - You can create a permanent link to a specific line or range of lines of code in a specific version of a file or pull request.
+
 # disccuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 🆚 [Git - see changes across multiple commits? : r/vscode](https://www.reddit.com/r/vscode/comments/y6oti0/git_see_changes_across_multiple_commits/)

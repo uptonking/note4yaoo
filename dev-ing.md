@@ -332,7 +332,7 @@ betterdiscordctl -i flatpak install
 - architecture
   - 实现了偏静态的ui交互，优化cde集成、状态管理、单元测试
   - websocket scalable chat/room, progress: 参考zulip-sdk, firebase/supabase-sdk
-  - cde页面不稳定复线的内存泄漏
+  - ~~cde页面不稳定复线的内存泄漏~~
   - ~~refactor-cde-state-to-zustand~~
 - diff-view
   - red + green
@@ -344,29 +344,23 @@ betterdiscordctl -i flatpak install
   - playback
 - chat ui
   - typewriter
-  - 分开处理 dock和float 的场景
+  - ~~分开处理 dock和float 的场景~~
 - ui
   - editor: typewriter
-  - dark theme for dockview
   - stepsTree: deprecate id in favor of content
-  - 处理floating的滚动条
+  - dark theme for dockview
+  - ~~处理floating的滚动条~~
   - ~~tailwind child selector~~
 - ai-integration
   - https://staging.agent.clacky.ai/demo
   - wss://staging.agent.clacky.ai/socket.io/? EIO=4&transport=websocket
 
-- not-yet
-  - ~~ide滚动条失败~~
-  - ~~trpc请求过多的问题~~
-  - ~~删除未使用的 workbench2 组件失败，会导致样式混乱~~
-  - threadName variable
-  - clacky read_file TODO.md
-
 - cde调整
   - 需要记住cde各侧边栏面板的宽度/高度
   - 隐藏editor头部 FileHeader， 文件树头部 
-  - cde初始化迁移到paas-api
+  - ~~cde初始化迁移到paas-api~~
   - repo隔一段时间会自动失活
+  - dynamic add panel for plans/steps
 
 - dev-to
   - cde配置启动命令和运行, 继续优化初始化速度，支持编辑器配置
@@ -378,7 +372,7 @@ betterdiscordctl -i flatpak install
 
 ## 公测就绪条件（草稿）
 
-- 产品故事就绪范围：
+- 产品故事就绪范围
   - [ ] 连接并获取 issue 详情
   - [ ] 基于issue生成计划与canvas预览
   - [ ] NextJS项目初始化过程清晰、可用
@@ -394,7 +388,7 @@ betterdiscordctl -i flatpak install
   - 多用户协作协同（邀请用户协作、分享链接等）
   - 自由会话质量和能力（快捷指令、RAG配置等）
 
-- 质量要求：
+- 质量要求
   - NextJS 限制、清晰的需求描述（人类直接可理解，没有歧义）的前提下：
     - S需求一次性成功率达到 70%，不成功的修改步骤不超过 30%
     - M需求一次性成功率达到 30%，不成功的修改步骤不超过 50%
@@ -416,17 +410,48 @@ betterdiscordctl -i flatpak install
 ## 070
 
 - dev-log
-  - 
+  - ?
 - dev-to
-  - 
+  - ?
 
-- 将tenantCode代码放在state
+- 将tenantCode代码放在state, 放在环境变量
+
+- ide的自动prettier
+
+- 支持添加新tab页，如settings/hotkeys/search/plugin-details/preview-web/problems-or-warnings
+  - 添加的通常是临时页面，不需要alwaysVisible
+  - 思路1，先让使用方注册comp1，再根据DefaultPanel组件中的type渲染comp1
+    - 优点是不需要改动comp1，方便接入
+    - 缺点是使用分2步，且注册的位置不好选，一般放在顶层组件的props
+  - 思路2，直接将comp1放在state中
+    - 优点是使用只有1步，`setState({comp1: ()=><Comp1 />, props} )` 立即work
+    - 缺点是comp放入state不是最佳实践，comp1的内部的全局state要单独处理(在多实例的场景，思路1也存在此问题)
+
+## 0710
+
+- [reactjs - Is it a good idea to store components in state? - Stack Overflow](https://stackoverflow.com/questions/66919014/is-it-a-good-idea-to-store-components-in-state)
+  - I would not recommend it. But not for the reason that those instances would somehow add too much size to the state (which I don't think they would).
+  - The strongest argument in my opinion is: the instantiated components are stale; their properties will only have those values that were assigned when they were instantiated.
+
+- dev-log
+  - code review并调整了重构cde初始化的pr
+  - 将cde tools面板布局组件的实现调整了下，又提取了一些state
+- dev-to
+  - cde-tools面板宽度持久化到localStorage
+  - 重构paas初始化的逻辑，提取paas相关状态并注册事件
 
 ## 0705
 
 - [Error: The externalDependency 'webpack-cli' for 'server:build' could not be found · Issue · nrwl/nx](https://github.com/nrwl/nx/issues/22871)
   - Issue has nothing to do with pnpm. it also reproduced with npm, when using nx 19.0.1. After downgrade to 18.3.4, issue goes away.
   - Nx doesn't support pnpm 9 yet
+
+- dev-done
+  - ~~ide滚动条失败~~
+  - ~~trpc请求过多的问题~~
+  - ~~删除未使用的 workbench2 组件失败，会导致样式混乱~~
+  - ~~threadName variable~~
+  - ~~clacky read_file TODO.md~~
 
 ## 0704
 
@@ -484,7 +509,6 @@ const getCookieValue = (name) => (
 - dev-to
   - 最小可用版的时光机播放和回放
   - 完善agent相关的制定计划/执行计划的实现细节
-
 # dev-06-dockview-floating-&-progressbar-animation-&-trpc-thread-id-&-zustand-socketio
 
 ## 0630

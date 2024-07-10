@@ -71,7 +71,7 @@ modified: 2023-10-26T14:57:07.218Z
 
 - 
 
-- 
+- ⚠️ react组件中变量或state使用 []/{}/()=>{} 作为默认值时, 注意每次render都是新的默认值对象
 
 - [react 16: setState() in render()](https://reactjs.org/blog/2017/09/26/react-v16.0.html)
   - Calling `setState` directly in `render` always causes an update. This was not previously the case. Regardless, you should not be calling setState from render.
