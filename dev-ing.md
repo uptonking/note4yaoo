@@ -423,7 +423,7 @@ betterdiscordctl -i flatpak install
   - 思路1，先让使用方注册comp1，再根据DefaultPanel组件中的type渲染comp1
     - 优点是不需要改动comp1，方便接入
     - 缺点是使用分2步，且注册的位置不好选，一般放在顶层组件的props
-  - 思路2，直接将comp1放在state中
+  - 思路2，直接将comp1放在state中，comp1无法rerender更新，除非做成纯展示组件
     - 优点是使用只有1步，`setState({comp1: ()=><Comp1 />, props} )` 立即work
     - 缺点是comp放入state不是最佳实践，comp1的内部的全局state要单独处理(在多实例的场景，思路1也存在此问题)
 

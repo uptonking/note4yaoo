@@ -77,6 +77,7 @@ modified: 2024-05-27T11:39:14.886Z
 
 - replace watermark with placeholder
 
+- props.api.getParameters() 无法获取到参数, 但 props.params可以
 
 - 
 - 
@@ -101,7 +102,6 @@ modified: 2024-05-27T11:39:14.886Z
 
 - tab内容懒加载的最佳实践
   - gridview的面板逐个懒加载
-
 # codebase 🔡🧮
 
 - 
