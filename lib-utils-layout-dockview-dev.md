@@ -57,7 +57,7 @@ modified: 2024-05-27T11:39:14.886Z
   - https://github.com/search?type=code&q=dockview+path%3Apackage.json%20NOT%20is:fork
 # draft
 - default-width
-  - 👀 宽度要在所有panel都addPanel后再统一设置，不能addPanel后立即设置
+  - 👀 宽度要在所有panel都addPanel后再统一设置，不能addPanel后立即设置, 且要在setVisible后设置
 - 浏览器窗口resize时，自动更新各panel宽度
 
 - maximize-panel时，支持占满指定元素的宽高，而不是占满整个Dockview(避免挡住标题栏)
@@ -68,6 +68,9 @@ modified: 2024-05-27T11:39:14.886Z
   - 支持设置默认width/height
   - Floating groups cannot be maximized
   - `addFloatingGroup` only accepts existing panels and groups
+
+- tab
+  - disable dnd
 
 - 未实现将折叠面板中的文件拖拽到编辑区的交互
 

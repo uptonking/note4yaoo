@@ -416,14 +416,41 @@ betterdiscordctl -i flatpak install
 
 - 将tenantCode代码放在state, 放在环境变量
 
-- ide的自动prettier
+- ide内自动prettier
+
+- 异常toast弹窗
+```JS
+console.log(`接到到PaaS消息：`, name, dao.playgroundInfo.status, dao.dockerStatus, payload)
+
+console.log(';; cde-page ', ticketId, username, daoPaas)
+console.log(' ;; cde-layout ', username, createTicketMutate.data)
+
+
+```
+
+## 0712
+
+## 0711
+
+
+
+- 👥👥 sharing-how-to-use-ai-agent-in-work
+  - Dify自动流程
+  - rpa
+  - 使用场景: 测试用例， 技术文档， 产品介绍
+
+- dev-log
+  - cde面板去掉一些暂时没用的button，存储了各个面板的宽度
+  - 实现了简单的添加新tab页面的api
+- dev-to
+  - 将paas相关状态再整理下，今天先提交一版pr
 
 - 支持添加新tab页，如settings/hotkeys/search/plugin-details/preview-web/problems-or-warnings
   - 添加的通常是临时页面，不需要alwaysVisible
   - 思路1，先让使用方注册comp1，再根据DefaultPanel组件中的type渲染comp1
     - 优点是不需要改动comp1，方便接入
     - 缺点是使用分2步，且注册的位置不好选，一般放在顶层组件的props
-  - 思路2，直接将comp1放在state中，comp1无法rerender更新，除非做成纯展示组件
+  - 思路2，直接将comp1放在state中，~~comp1无法rerender更新，除非做成纯展示组件~~
     - 优点是使用只有1步，`setState({comp1: ()=><Comp1 />, props} )` 立即work
     - 缺点是comp放入state不是最佳实践，comp1的内部的全局state要单独处理(在多实例的场景，思路1也存在此问题)
 
@@ -531,7 +558,7 @@ const getCookieValue = (name) => (
 
 ## 0627
 
-- 💬💰 team-sharing-rich-slowly
+- 👥👥 sharing-how-to-get-rich-slowly 💰
 - 美股的优势
   - 持续几十年的增长
   - 最好的公司
@@ -645,7 +672,7 @@ type Prefix < K > = K extends string ? `on${K}` : K;
 
 ## 0618
 
-- 👥👥 sharing20240618-ai金融需求
+- 👥👥 sharing-ai金融需求
   - 需求在业务各方传递时会丢失上下文
   - all-in-one的知识库产品，会保存上下文，减少重复工作
   - all-in-one的产品存在权限问题，还涉及利益问题、信息隔离，市场上的公司大多都自己给自己建立了信息隔离
