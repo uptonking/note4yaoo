@@ -419,20 +419,23 @@ betterdiscordctl -i flatpak install
 - ide内自动prettier
 
 - 异常toast弹窗
+  - ~~playgroundId可能取旧值~~, 通过当前组件的state解决
+  - 第二个thread无法打开文件
+
 ```JS
 console.log(`接到到PaaS消息：`, name, dao.playgroundInfo.status, dao.dockerStatus, payload)
 
 console.log(';; cde-page ', ticketId, username, daoPaas)
 console.log(' ;; cde-layout ', username, createTicketMutate.data)
-
-
 ```
 
 ## 0712
 
+- dev-to
+  - 迁移组件和状态
+  - 增加loading页面
+
 ## 0711
-
-
 
 - 👥👥 sharing-how-to-use-ai-agent-in-work
   - Dify自动流程
