@@ -358,9 +358,9 @@ betterdiscordctl -i flatpak install
 - cde调整
   - 需要记住cde各侧边栏面板的宽度/高度
   - 隐藏editor头部 FileHeader， 文件树头部 
+  - ~~repo隔一段时间会自动失活~~
   - ~~cde初始化迁移到paas-api~~
-  - repo隔一段时间会自动失活
-  - dynamic add panel for plans/steps
+  - ~~dynamic add panel for plans/steps~~
 
 - dev-to
   - cde配置启动命令和运行, 继续优化初始化速度，支持编辑器配置
@@ -369,6 +369,50 @@ betterdiscordctl -i flatpak install
   - 跟随模式，跟随ai工作，让用户看见进度
   - cmd+k 与ai对话
   - ai执行计划同步底部时光机进度条
+
+- dev-to-demo
+  - cde的 push/commit
+  - userStatusUpdated
+  - 跟随模式、打字机效果
+  - 驾驶舱添加滚动css， console/terminal的内容高度有时异常
+  - run前端项目才需要打开浏览器
+  - 激活的时机要修改
+  - 有时布局混乱的原因是shell的宽度高度过大
+  - cde-tools需要点2次才生效
+  - 带着issue进入cde
+  - 时光机回放模式
+
+## demo-feedback0714
+
+- 操作流程：
+  0001. 访问官网
+  0002. 展示 [进入控制台] 按钮 -> 点击后有登录进入dashboard ，没登录进入登录页
+  0003. 登录后  -> 进入Workspace - project列表页面 （不应进入个人中心）
+  0004. 仓库连接 -> 创建项目 -> 初始化环境（项目支持Next）
+  0005. 进入 CDE （运行、Terminal、Console、浏览器、文件树 OK）
+  0006. 驾驶舱：自由对话 OK
+  0007. 提出需求 -> 需求分析 -> 制定计划 -> AI 执行计划写入代码
+  0008. 创建Thread - 连接Issue - 设置Thread名称和分支（默认代入初始值）
+
+- 问题 及 未完成功能：
+  0001. 连接仓库 - 报500问题
+  0002. 项目列表 - 假数据（项目类型、协同者、Thread数量）
+  0003. 初始化环境：仅支持Next项目
+  0004. CDE假数据（协同者、邀请、Thread状态、CPU、内存）
+  0005. CDE 窗口布局问题
+  0006. 驾驶舱 - 内部滚动
+  0007. plan 内容和格式
+  0008. Thread已执行计划后， 无法继续执行下一计划（追加步骤应能继续启动任务）
+  0009. Thread中返回Dashboard 报500
+  0010. agent IDE server 连接问题
+  0011. GIthub 仓库授权 限制数量 ???
+  0012. 多人协同
+  0013. 视角跟随
+  0014. 执行计划中 - AI 流式输出
+  0015. 推分支
+  0016. 需求识别：确认issue是否可行
+  0017. diff
+  0018. command + K
 
 ## 公测就绪条件（草稿）
 
@@ -414,25 +458,16 @@ betterdiscordctl -i flatpak install
 - dev-to
   - ?
 
-- ~~将tenantCode代码放在state, 放在环境变量~~
-
-- dev-done
-  - 异常toast弹窗
-- ~~playgroundId可能取旧值~~, 通过当前组件的state解决
-
 - not-yet
   - 第二个thread创建后, 是否要调用api通知clacky后端
-
-- 有时thread无法打开文件, 临时方案是~~ready后才渲染~~
-  - 可能是上个页面的组件及状态未清空导致
-  - 原因是cm-editor-dom的container渲染多次, 且dom值不一样，setContainer
-  - 解决方法是，限制cm-editor-dom的更新
+  - 异常toast弹窗
+  - 刷新页面，恢复面板状态
+  - paas的断线恢复问题
 
 ```JS
 console.log(`接到到PaaS消息：`, name, dao.playgroundInfo.status, dao.dockerStatus, payload)
 
-console.log(';; cde-page ', ticketId, username, daoPaas)
-console.log(' ;; cde-layout ', username, createTicketMutate.data)
+console.log(';; playgroundId ', isRepoPrepared, playgroundId, params.id)
 ```
 
 ## 0714
@@ -442,10 +477,15 @@ console.log(' ;; cde-layout ', username, createTicketMutate.data)
   - 目前cde基本可以运行项目代码，我的测试以前端项目为主
   - cde面板优化交互
   - cde初始化的准备repo和激活paas 2个loading状态
-- dev-to
-  - 带着issue进入cde
-  - 跟随模式
-  - 时光机回放模式
+
+- dev-done
+  - ~~将tenantCode代码放在state, 放在环境变量~~
+  - ~~playgroundId可能取旧值~~, 通过reset+当前组件的useState解决
+
+- 有时thread无法打开文件, 临时方案是~~ready后才渲染~~
+  - 可能是上个页面的组件及状态未清空导致
+  - ~~原因是cm-editor-dom的container渲染多次, 且dom值不一样，setContainer~~
+  - ~~解决方法是，限制cm-editor-dom的更新~~
 
 ## 0712
 
