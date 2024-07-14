@@ -266,7 +266,7 @@ modified: 2023-09-12T09:37:22.608Z
 - https://github.com/assafg/osiris /ts
   - Simple event sourcing for nodejs
 
-- https://github.com/equinox-project/equinox-js /ts
+- https://github.com/equinox-project/equinox-js /apache2/202407/ts
   - https://equinox-project.github.io/equinox-js/
   - Event sourcing library for JavaScript
   - a JS port of jet's Equinox

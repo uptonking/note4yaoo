@@ -414,13 +414,19 @@ betterdiscordctl -i flatpak install
 - dev-to
   - ?
 
-- 将tenantCode代码放在state, 放在环境变量
+- ~~将tenantCode代码放在state, 放在环境变量~~
 
-- ide内自动prettier
+- dev-done
+  - 异常toast弹窗
+- ~~playgroundId可能取旧值~~, 通过当前组件的state解决
 
-- 异常toast弹窗
-  - ~~playgroundId可能取旧值~~, 通过当前组件的state解决
-  - 第二个thread无法打开文件
+- not-yet
+  - 第二个thread创建后, 是否要调用api通知clacky后端
+
+- 有时thread无法打开文件, 临时方案是~~ready后才渲染~~
+  - 可能是上个页面的组件及状态未清空导致
+  - 原因是cm-editor-dom的container渲染多次, 且dom值不一样，setContainer
+  - 解决方法是，限制cm-editor-dom的更新
 
 ```JS
 console.log(`接到到PaaS消息：`, name, dao.playgroundInfo.status, dao.dockerStatus, payload)
@@ -428,6 +434,18 @@ console.log(`接到到PaaS消息：`, name, dao.playgroundInfo.status, dao.docke
 console.log(';; cde-page ', ticketId, username, daoPaas)
 console.log(' ;; cde-layout ', username, createTicketMutate.data)
 ```
+
+## 0714
+
+- dev-log
+  - 重构cde初始化流程到paas-api, 重构cde页面的状态管理技术栈并迁移现有组件
+  - 目前cde基本可以运行项目代码，我的测试以前端项目为主
+  - cde面板优化交互
+  - cde初始化的准备repo和激活paas 2个loading状态
+- dev-to
+  - 带着issue进入cde
+  - 跟随模式
+  - 时光机回放模式
 
 ## 0712
 

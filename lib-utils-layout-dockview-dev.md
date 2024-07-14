@@ -82,6 +82,10 @@ modified: 2024-05-27T11:39:14.886Z
 
 - props.api.getParameters() 无法获取到参数, 但 props.params可以
 
+- drag
+  - how to disable drag of a tab or group, not drop
+
+- 
 - 
 - 
 
@@ -200,6 +204,21 @@ event.api.addPanel({
 
 # discuss
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [Locked mode: prevent all mouse resizing _202401](https://github.com/mathuo/dockview/issues/460)
+- I guess there are two features here:
+- Disable mouse-interaction based resizing
+  - I think this could be achieved entirely through CSS making it a fairly small change that is required.
+- Disable the dnd drop functionality
+  - This one is more involved but actually seems to be fairly similar to an existing issue here which I have been doing some work on which is to expose a function allowing control of whether dnd overlays are shown, in your case this function would just disable all overlays.
+
+- 
+- 
+- 
 
 - ## [Feature request: Adding a gap around panels ](https://github.com/mathuo/dockview/issues/447)
 - 

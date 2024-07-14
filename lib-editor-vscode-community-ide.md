@@ -408,6 +408,18 @@ modified: 2024-05-09T09:35:28.467Z
 - deepin-IDE除了包含IDE常用功能，如智能编辑器、高度可扩展的命令系统、工程管理、构建管理系统、插件系统等之外，还支持多种兼容协议、多种开发语言、代码版本管理集成、低开销的实时性能分析工具等。总体而言，IDE常见功能都在表里
 
 - 支持主流版本控制系统Git、SVN。
+# discuss-zed
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [[linux] Vulkan ERROR_INITIALIZATION_FAILED _202402](https://github.com/zed-industries/zed/issues/8168)
+
+- ## [run zed error on Ubuntu 24.04 : blade_graphics::hal::init Surface formats are incompatible _202405](https://github.com/zed-industries/zed/issues/11716)
+- Update: this error is on WayLand Mode, switch to X11 , zed works!
+
 # discuss
 - ## 
 

@@ -825,7 +825,7 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/overleaf/codemirror-tree-view /MIT/202311/ts
   - A CodeMirror 6 extension providing an interactive view of a document's syntax tree
-  - 更偏向于作为codemirror的devtools
+  - ⛏ 更偏向于作为codemirror的devtools
   - https://github.com/overleaf/codemirror-autocomplete
   - https://github.com/overleaf/codemirror-search
 

@@ -39,6 +39,11 @@ modified: 2024-05-06T02:54:40.374Z
   - 减少前端的请求数量
   - disable其他系统的鉴权
 
+- 系统慢的原因
+  - clerk认证的token是其他api的前置请求
+  - paas 获取ide-server url的api也慢
+  - paas旧状态导致渲染异常
+
 - 
 - 
 - 
@@ -95,6 +100,7 @@ modified: 2024-05-06T02:54:40.374Z
   - fileChangeLogs的变更列表无法区别修改删除
   - 搜索排除了node_modules目录吗
 
+- 
 - 
 - 
 - 
@@ -231,6 +237,11 @@ modified: 2024-05-06T02:54:40.374Z
 
 #### LazyEditor/CodeEditor
 
+- 三层editor结构
+  - LazyEditor: 注册socket事件
+  - CodeEditor: 计算content, 准备extensions， LSP
+  - CodeMirrorEditor: 初始化codemirror, 设置menu
+
 - CodeEditor 编辑器初始化时计算配置和插件，注册外部事件
   - CodeMirrorEditor(useCodeMirror) 编辑器初始化时注册各类菜单事件
 
@@ -266,6 +277,8 @@ useEffect(() => {
   - 对于syncOTUpdates，会强制执行 this.handleUpdate(true)，发送op到server
   - viewPlugin的update方法，在view更新dom前执行，collab插件这里会push数据到server
 
+- 
+- 
 - 
 - 
 - 
