@@ -330,57 +330,57 @@ betterdiscordctl -i flatpak install
   - [x] streaming infinite-list/tree
 # dev-07
 - architecture
-  - 实现了偏静态的ui交互，优化cde集成、状态管理、单元测试
-  - websocket scalable chat/room, progress: 参考zulip-sdk, firebase/supabase-sdk
+  - ~~实现了偏静态的ui交互，优化cde集成、状态管理~~
+  - ~~websocket scalable chat/room, progress: 参考zulip-sdk, firebase/supabase-sdk~~
   - ~~cde页面不稳定复线的内存泄漏~~
   - ~~refactor-cde-state-to-zustand~~
-- diff-view
-  - red + green
-  - cursor
-- cde
-  - 跟随模式，体现ai编辑的动画, 及ai的知识和智能
-- time-machine
-  - workflow progress
-  - playback
-- chat ui
-  - typewriter
-  - ~~分开处理 dock和float 的场景~~
 - ui
   - editor: typewriter
   - stepsTree: deprecate id in favor of content
-  - dark theme for dockview
+  - ~~dark theme for dockview~~
   - ~~处理floating的滚动条~~
   - ~~tailwind child selector~~
 - ai-integration
-  - https://staging.agent.clacky.ai/demo
   - wss://staging.agent.clacky.ai/socket.io/? EIO=4&transport=websocket
 
-- cde调整
-  - 需要记住cde各侧边栏面板的宽度/高度
-  - 隐藏editor头部 FileHeader， 文件树头部 
-  - ~~repo隔一段时间会自动失活~~
-  - ~~cde初始化迁移到paas-api~~
-  - ~~dynamic add panel for plans/steps~~
-
-- dev-to
-  - cde配置启动命令和运行, 继续优化初始化速度，支持编辑器配置
-  - cde面板优化: 3个面板隐藏后能恢复到正确的位置
-  - ai相关功能
-  - 跟随模式，跟随ai工作，让用户看见进度
+- ai相关开发
   - cmd+k 与ai对话
   - ai执行计划同步底部时光机进度条
 
 - dev-to-demo
   - cde的 push/commit
+  - cde的 分享、邀请、进入权限
+  - cde设置页面
+  - cde环境变量、中间件
   - userStatusUpdated
-  - 跟随模式、打字机效果
-  - 驾驶舱添加滚动css， console/terminal的内容高度有时异常
-  - run前端项目才需要打开浏览器
-  - 激活的时机要修改
-  - 有时布局混乱的原因是shell的宽度高度过大
-  - cde-tools需要点2次才生效
+  - 测试跟随模式
+  - paas激活的时机要修改
   - 带着issue进入cde
   - 时光机回放模式
+  - paas异常处理
+  - paas的断线恢复问题
+  - 删除废弃的代码
+  - ~~异常toast弹窗, 异常处理~~
+  - NEXT_PUBLIC_PAAS_CLIENT_TENANT_CODE=1
+
+- 跟随模式
+  - followUser时会自动打开面板
+  - 同一个用户在不同浏览器打开同一个playground的cde时，用户头像显示几个
+  - ai头像的位置顺序
+  - cde页面无法区分自己和其他用户
+
+- cde布局开发
+  - 难点: 隐藏侧边栏的头部
+  - 难点: disable tab页拖动，有时不work有时work
+  - 紧急: 拖动改变浏览器宽度时，布局会混乱
+  - 驾驶舱添加滚动css， SecondarySidebarContainer overflow-auto
+  - run前端项目才需要打开浏览器，其他项目不需要，前端项目执行时上方是editor+browser下方是console
+  - console/terminal的内容高度有时异常，有时布局混乱的原因是shell的宽度高度过大
+  - cde-tools需要点2次才生效
+  - later: 布局持久化和刷新页面恢复
+
+- not-yet
+  - 第二个thread创建后, 是否要调用api通知clacky后端
 
 ## demo-feedback0714
 
@@ -458,17 +458,24 @@ betterdiscordctl -i flatpak install
 - dev-to
   - ?
 
-- not-yet
-  - 第二个thread创建后, 是否要调用api通知clacky后端
-  - 异常toast弹窗
-  - 刷新页面，恢复面板状态
-  - paas的断线恢复问题
+ 
 
 ```JS
 console.log(`接到到PaaS消息：`, name, dao.playgroundInfo.status, dao.dockerStatus, payload)
 
 console.log(';; playgroundId ', isRepoPrepared, playgroundId, params.id)
 ```
+
+## 0715
+
+- [node.js - try/catch blocks with async/await - Stack Overflow](https://stackoverflow.com/questions/40884153/try-catch-blocks-with-async-await)
+  - Due to the fact that every async function is technically a promise
+  - You can add catches to functions when calling them with await
+  - No need for try catch, as all promises errors are handled, and you have no code errors, you can omit that in the parent
+
+- dev-log
+  - code review cde页面内的组件和逻辑的pr
+  - 添加跟随模式相关状态
 
 ## 0714
 
@@ -481,6 +488,9 @@ console.log(';; playgroundId ', isRepoPrepared, playgroundId, params.id)
 - dev-done
   - ~~将tenantCode代码放在state, 放在环境变量~~
   - ~~playgroundId可能取旧值~~, 通过reset+当前组件的useState解决
+  - ~~repo隔一段时间会自动失活~~
+  - ~~cde初始化迁移到paas-api~~
+  - ~~dynamic add panel for plans/steps~~
 
 - 有时thread无法打开文件, 临时方案是~~ready后才渲染~~
   - 可能是上个页面的组件及状态未清空导致

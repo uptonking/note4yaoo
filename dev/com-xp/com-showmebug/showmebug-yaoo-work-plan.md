@@ -48,6 +48,10 @@ modified: 2024-05-06T02:54:40.374Z
 - 
 - 
 
+### draft
+
+- docker in docker 的权限问题
+
 ## proj-idepaas-sdk
 
 - resources
@@ -99,6 +103,9 @@ modified: 2024-05-06T02:54:40.374Z
   - 部分文件再次打开会记住文件尾的位置
   - fileChangeLogs的变更列表无法区别修改删除
   - 搜索排除了node_modules目录吗
+
+- collab
+  - 在有用户上下线时会全量广播当前协作的所有用户信息，存在数据量大且频次高的问题
 
 - 
 - 
@@ -1709,7 +1716,7 @@ const playbackInfo = [
 ## proj-1024code
 
 - resources
-  - [1024Code](https://1024code.com/~)
+  - [1024Code](https://1024code.com/)
   - [1024Code 文档中心](https://docs.1024code.com/)
 
 ### not-yet
@@ -1722,6 +1729,14 @@ const playbackInfo = [
 - 在ide中修改文件后，更新预览太慢
 
 ### draft
+
+### dev-xp
+
+- `1024code` 注册时要先点击发送验证码，然后在验证码输入框填入6个0就可以注册成功
+  - 邀请码测试: hs8MQf, Ukycbf
+  - 测试用户是 155572695015和八个一
+  - node版本不支持v22，暂时使用v20
+  - 编译构建时可通过修改repo文件夹名来避免使用turborepo的cache
 
 ### codebase
 
@@ -1774,15 +1789,3 @@ for await (const chunk of res.body as any) {
 - 
 - 
 - 
-- 
-- 
-
-- `1024code` 注册时要先点击发送验证码，然后在验证码输入框填入6个0就可以注册成功
-  - 邀请码测试: hs8MQf, Ukycbf
-  - 测试用户是 155572695015和八个一
-  - node版本不支持v22，暂时使用v20
-  - 编译构建时可通过修改repo文件夹名来避免使用turborepo的cache
-
-## proj-backend
-
-- docker in docker 的权限问题

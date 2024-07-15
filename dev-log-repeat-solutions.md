@@ -32,6 +32,7 @@ modified: 2021-07-20T13:50:23.433Z
     - 读多？ 写多？
     - sqlite的流行表明scaling要考虑场景, zulip/jupyterhub私有部署默认支持几千用户但不scale
     - 没有完美的架构，优先支持迭代，不要执着于当下的问题，也许以后就突然想清楚了
+    - 先实现业务核心功能， 再考虑如何以sdk/paas的方式提供给使用方，再优化性能
   - 抽空在线体验，工作专注代码
   - data-app
     - specification for pivot table
@@ -210,6 +211,11 @@ modified: 2021-07-20T13:50:23.433Z
   - x-spreadsheet
   - tabulator 
   - frappe-datatable /frappe
+# collab
+- 协同类产品要考虑数据和配置是否都要同步的问题
+  - 表格的过滤条件
+  - 回放操作的进度
+  - 搜索
 # creators
 - marijn /prosemirror/codemirror
   - forum
