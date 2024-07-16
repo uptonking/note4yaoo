@@ -348,12 +348,11 @@ betterdiscordctl -i flatpak install
   - ai执行计划同步底部时光机进度条
 
 - dev-to-demo
-  - cde的 push/commit
+  - cde的 push/commit/pr
   - cde的 分享、邀请、进入权限
   - cde设置页面
   - cde环境变量、中间件
-  - userStatusUpdated
-  - 测试跟随模式
+  - ~~userStatusUpdated~~
   - paas激活的时机要修改
   - 带着issue进入cde
   - 时光机回放模式
@@ -361,13 +360,8 @@ betterdiscordctl -i flatpak install
   - paas的断线恢复问题
   - 删除废弃的代码
   - ~~异常toast弹窗, 异常处理~~
+  - LSP补全
   - NEXT_PUBLIC_PAAS_CLIENT_TENANT_CODE=1
-
-- 跟随模式
-  - followUser时会自动打开面板
-  - 同一个用户在不同浏览器打开同一个playground的cde时，用户头像显示几个
-  - ai头像的位置顺序
-  - cde页面无法区分自己和其他用户
 
 - cde布局开发
   - 难点: 隐藏侧边栏的头部
@@ -380,7 +374,16 @@ betterdiscordctl -i flatpak install
   - later: 布局持久化和刷新页面恢复
 
 - not-yet
-  - 第二个thread创建后, 是否要调用api通知clacky后端
+  - 第二个thread创建后, 是否要调用 api通知clacky后端
+  - 私有项目的导入
+
+- 跟随模式
+  - agent是每个用户一个，还是每个playground一个
+    - 目前是一个playground一个agent
+  - 同一个用户在不同浏览器打开同一个playground的cde时，用户头像显示几个
+  - followUser时会自动打开console面板
+  - ai头像的位置顺序
+  - cde页面无法区分自己和其他用户
 
 ## demo-feedback0714
 
@@ -465,6 +468,14 @@ console.log(`接到到PaaS消息：`, name, dao.playgroundInfo.status, dao.docke
 
 console.log(';; playgroundId ', isRepoPrepared, playgroundId, params.id)
 ```
+
+## 0716
+
+- dev-log
+  - cde页面基本的异常处理
+  - 跟随其他用户测试通过
+- dev-to
+  - 测试跟随ai的功能
 
 ## 0715
 
