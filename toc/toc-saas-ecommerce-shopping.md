@@ -44,6 +44,7 @@ modified: 2023-06-07T14:19:18.719Z
   - 可考虑基于npm发布插件，参考Cerebro-launcher
   - npm的优点，支持各版本的文档分别显示
   - 可考虑类似ckan，但版本管理功能弱
+  - 支持迁移deprecate-app到new-app，一键迁移
   - search: made-with, product-hunt
 
 - 收集聚合类

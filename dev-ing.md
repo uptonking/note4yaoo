@@ -364,26 +364,29 @@ betterdiscordctl -i flatpak install
   - NEXT_PUBLIC_PAAS_CLIENT_TENANT_CODE=1
 
 - cde布局开发
-  - 难点: 隐藏侧边栏的头部
-  - 难点: disable tab页拖动，有时不work有时work
   - 紧急: 拖动改变浏览器宽度时，布局会混乱
-  - 驾驶舱添加滚动css， SecondarySidebarContainer overflow-auto
-  - run前端项目才需要打开浏览器，其他项目不需要，前端项目执行时上方是editor+browser下方是console
-  - console/terminal的内容高度有时异常，有时布局混乱的原因是shell的宽度高度过大
-  - cde-tools需要点2次才生效
+    - ~~console/terminal的内容高度有时异常，有时布局混乱的原因是shell的宽度高度过大~~
+  - ~~难点: 隐藏侧边栏的头部~~
+  - ~~难点: disable tab页拖动，有时不work有时work~~
+  - ~~驾驶舱添加滚动css， SecondarySidebarContainer overflow-auto~~
+  - ~~run前端项目才需要打开浏览器，其他项目不需要，前端项目执行时上方是editor+browser下方是console~~
+  - ~~cde-tools需要点2次才生效~~
   - later: 布局持久化和刷新页面恢复
 
 - not-yet
   - 第二个thread创建后, 是否要调用 api通知clacky后端
   - 私有项目的导入
+  - 前端提供agent相关事件
+    - 让agent获取issue相关信息
+    - 让agent提交pr
 
 - 跟随模式
-  - agent是每个用户一个，还是每个playground一个
-    - 目前是一个playground一个agent
-  - 同一个用户在不同浏览器打开同一个playground的cde时，用户头像显示几个
   - followUser时会自动打开console面板
   - ai头像的位置顺序
   - cde页面无法区分自己和其他用户
+  - 同一个用户在不同浏览器打开同一个playground的cde时，用户头像显示几个
+  - agent是每个用户一个，还是每个playground一个
+    - 目前是一个playground一个agent
 
 ## demo-feedback0714
 
@@ -468,6 +471,19 @@ console.log(`接到到PaaS消息：`, name, dao.playgroundInfo.status, dao.docke
 
 console.log(';; playgroundId ', isRepoPrepared, playgroundId, params.id)
 ```
+
+## 0717
+
+- [[🐛 Bug]: Using Clerk on Cloudflare Pages: Unhandled ‘default’ Property TypeError Leading to HTTP 500 · cloudflare/next-on-pages _202406](https://github.com/cloudflare/next-on-pages/issues/800)
+  - If I understand correctly, issue is happening when navigating between routes which have client components being rendered, with Clerk installed and hosted on Pages.
+
+- dev-log
+  - code review 跟随模式代码，已合并pr
+  - 讨论邀请跟随的实现，跟随链接不是cde页面的url，跟随者不是使用guest身份而是使用member身份
+  - 删除废弃代码
+- dev-to
+  - 优化布局，下午提pr
+  - 开始时光机的回放模式，先复习一下codemirror的文档，尝试
 
 ## 0716
 

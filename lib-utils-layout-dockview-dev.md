@@ -88,6 +88,7 @@ modified: 2024-05-27T11:39:14.886Z
 - 
 - 
 - 
+- 
 
 # dev-xp
 - 💡 旧版文档中包含更多的api使用示例, 可在github仓库查看旧版文档markdown
@@ -95,12 +96,20 @@ modified: 2024-05-27T11:39:14.886Z
 - 显示隐藏groups的处理
   - ✅ 官方api已支持
 
+- disableDnd={true}
+  - tab能drag, 不能drop
+- locked={true}
+  - 宽度不能resize
+- panel.group.locked = 'no-drop-target'
+  - 不能drop
+
 - ide示例基于Gridview实现， 编辑区面板的初始数据 `size: 100` 很重要, 若注释掉，则无法显示left/right
   - 🧐 Gridview暂不支持floating，实现floating推荐使用Dockview
   - Dockview也可以实现Gridview的分屏拖拽的效果
 
-- 
-- 
+- left-sidebar最好不要放在DockviewReact里面实现，因为实现below不好实现
+  - 变通思路是先创建中间区域的panels，再通过左右方向添加2个侧边栏
+
 - 
 - 
 
@@ -207,7 +216,10 @@ event.api.addPanel({
 
 - ## 
 
-- ## 
+- ## [setConstraints on gridview / enable size locking _202303](https://github.com/mathuo/dockview/issues/210)
+  - Im not sure if i understand the setConstraints method from here, but it does seem not to work - no restrictions applied. setSize works, but to keep the group's size in required range, i need to call it repeatedly.
+
+- When using the DockviewReact component a user adds panels which are added to groups. Internally what's being resized when you drag the resize handles is the group, the group resizes which then forces the panel to resize with the group.
 
 - ## [Locked mode: prevent all mouse resizing _202401](https://github.com/mathuo/dockview/issues/460)
 - I guess there are two features here:

@@ -13,6 +13,7 @@ modified: 2023-06-22T07:22:04.591Z
   - GNOME的Software和KDE的Discover都有snap/flatpak的插件
   - 优先级: flathub(可镜像), snap-store, appimage, ppa/custom-repo/synaptic, apt/yum/dnf
   - 考虑支持用户自定义仓库和搜索 https://launchpad.net/ubuntu/+ppas
+  - 支持迁移deprecate-app到new-app，一键迁移
 # web-apps
 - https://github.com/tauri-webapps
 # linux-apps
