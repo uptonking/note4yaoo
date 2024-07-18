@@ -356,22 +356,13 @@ betterdiscordctl -i flatpak install
   - paas激活的时机要修改
   - 带着issue进入cde
   - 时光机回放模式
-  - paas异常处理
   - paas的断线恢复问题
-  - 删除废弃的代码
+  - ~~paas异常处理~~
+  - ~~删除废弃的代码~~
   - ~~异常toast弹窗, 异常处理~~
   - LSP补全
-  - NEXT_PUBLIC_PAAS_CLIENT_TENANT_CODE=1
+  - 优化issue
 
-- cde布局开发
-  - 紧急: 拖动改变浏览器宽度时，布局会混乱
-    - ~~console/terminal的内容高度有时异常，有时布局混乱的原因是shell的宽度高度过大~~
-  - ~~难点: 隐藏侧边栏的头部~~
-  - ~~难点: disable tab页拖动，有时不work有时work~~
-  - ~~驾驶舱添加滚动css， SecondarySidebarContainer overflow-auto~~
-  - ~~run前端项目才需要打开浏览器，其他项目不需要，前端项目执行时上方是editor+browser下方是console~~
-  - ~~cde-tools需要点2次才生效~~
-  - later: 布局持久化和刷新页面恢复
 
 - not-yet
   - 第二个thread创建后, 是否要调用 api通知clacky后端
@@ -387,6 +378,21 @@ betterdiscordctl -i flatpak install
   - 同一个用户在不同浏览器打开同一个playground的cde时，用户头像显示几个
   - agent是每个用户一个，还是每个playground一个
     - 目前是一个playground一个agent
+
+- dev-done-cde布局开发
+  - 紧急: 拖动改变浏览器宽度时，布局会混乱
+    - ~~console/terminal的内容高度有时异常，有时布局混乱的原因是shell的宽度高度过大~~
+  - ~~难点: 隐藏侧边栏的头部~~
+  - ~~难点: disable tab页拖动，有时不work有时work~~
+  - ~~驾驶舱添加滚动css， SecondarySidebarContainer overflow-auto~~
+  - ~~run前端项目才需要打开浏览器，其他项目不需要，前端项目执行时上方是editor+browser下方是console~~
+  - ~~cde-tools需要点2次才生效~~
+  - later: 布局持久化和刷新页面恢复
+  - editor默认提示文本 删除
+  - cde tools 最小高度
+  - 驾驶舱拖拽
+  - 文件树 keydown事件传到了编辑器
+  - 浏览器滚动禁用
 
 ## demo-feedback0714
 
@@ -472,6 +478,23 @@ console.log(`接到到PaaS消息：`, name, dao.playgroundInfo.status, dao.docke
 console.log(';; playgroundId ', isRepoPrepared, playgroundId, params.id)
 ```
 
+## 0718
+
+- dev-log
+  - disable cde布局的大部分拖拽问题
+  - 切换console/shell
+- dev-to
+  - 开始时光机的回放模式
+  - terminal组件 重复渲染和无法使用
+  - cde-tools状态联动
+  - ~~CDE Tools 不用支持拖~~
+  - ~~CDE Tools 下方空白~~
+  - 编辑器有时候出不来
+  - 获取thread对应的issue，提供给agent
+    - threadIssue
+    - threadIssueOk
+
+
 ## 0717
 
 - [[🐛 Bug]: Using Clerk on Cloudflare Pages: Unhandled ‘default’ Property TypeError Leading to HTTP 500 · cloudflare/next-on-pages _202406](https://github.com/cloudflare/next-on-pages/issues/800)
@@ -484,6 +507,7 @@ console.log(';; playgroundId ', isRepoPrepared, playgroundId, params.id)
 - dev-to
   - 优化布局，下午提pr
   - 开始时光机的回放模式，先复习一下codemirror的文档，尝试
+  - 创建git分支，放在第一个loading
 
 ## 0716
 
