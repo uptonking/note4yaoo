@@ -136,6 +136,10 @@ modified: 2023-12-15T16:52:28.937Z
 
 - [How to Build a Pseudo Multi-Tenant Application in Strapi? | Strapi](https://medium.com/strapi/how-to-build-a-pseudo-multi-tenant-application-in-strapi-5b877e2b2951)
 
+## [Build Offline-First Applications With Flutter and Strapi _202407](https://strapi.io/blog/how-to-build-offline-first-applications-with-flutter-and-strapi)
+
+- https://github.com/Claradev32/offline_first_app
+
 ## [Introduction to JWT and Cookie storage _202404](https://strapi.io/blog/introduction-to-jwt-and-cookie-storage)
 
 - Stateless Authentication: Stateless nature eliminating reliance upon central databases. This will enable the scaling and load balancing easier because the server does not have to keep track of the session status of each user

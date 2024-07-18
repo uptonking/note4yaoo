@@ -71,6 +71,10 @@ modified: 2023-12-09T10:03:55.375Z
 
 - ## 
 
+- ## How Notion uses Sqlite WASM.
+- https://x.com/evoluhq/status/1813874658619601205
+  - Evolu do that without Shared Workers which are not supported on Android.
+
 - ## [Cloud Backed SQLite | Hacker News_202307](https://news.ycombinator.com/item?id=36610595)
 - I've just been exploring serving large SQLite databases in chunks and querying them with http range requests to prevent downloading the entire database. It's pretty awesome! I found a really interesting library called sql.js-httpvfs that does pretty much all the work. I chunked up my 350Mb sqlite db into 43 x 8Mb pieces with the included script and uploaded them with my static files to GitHub, which gets deployed via GitHub Pages
 

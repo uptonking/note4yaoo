@@ -397,3 +397,16 @@ modified: 2021-01-04T17:26:43.784Z
 - OpenViewerFX  /LGPL/
   - https://github.com/qwertme/OpenViewerFX
   - now part of JDeli
+# pdf-doc
+- https://github.com/opendatalab/PDF-Extract-Kit /apache2/202407/python
+  - 布局检测：使用LayoutLMv3模型进行区域检测，如图像，表格, 标题, 文本等；
+  - 公式检测：使用YOLOv8进行公式检测，包含行内公式和行间公式；
+  - 公式识别：使用UniMERNet进行公式识别；
+  - 光学字符识别：使用PaddleOCR进行文本识别
+
+- https://github.com/opendatalab/MinerU /AGPLv3/202407/python
+  - MinerU 是一款一站式、开源、高质量的数据提取工具
+  - Magic-PDF 是一款将 PDF 转化为 markdown 格式的工具。支持转换本地文档或者位于支持S3协议对象存储上的文件。
+  - Magic-Doc 是一款支持将网页或多格式电子书转换为 markdown 格式的工具。
+    - 支持176种语言的准确识别
+# more-pdf

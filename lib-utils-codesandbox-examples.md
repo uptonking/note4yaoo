@@ -273,6 +273,13 @@ modified: 2023-09-02T09:17:22.992Z
 
 - https://github.com/voronianski/esnextbin /201905/js
   - Prototype JavaScript apps in the browser with ES2015's latest features and importing modules directly from NPM.
+
+- https://github.com/langgenius/dify-sandbox /apache2/202407/go
+  - https://docs.dify.ai/development/backend/sandbox
+  - 我们开源了 Dify Sandbox，这是一个从 Dify 中衍生出的代码运行时项目。安全，安全，还是为了安全
+  - Dify-Sandbox offers a simple way to run untrusted code in a secure environment. It is designed to be used in a multi-tenant environment, where multiple users can submit code to be executed. 
+  - The code is executed in a sandboxed environment, which restricts the resources and system calls that the code can access.
+  - DifySandbox currently only supports Linux, as it's designed for docker containers
 # codesandbox-like
 - https://github.com/rajatmaheshwari2512/codefiddle /202308/ts
   - This project is a take on how a site like CodeSandbox could be built.

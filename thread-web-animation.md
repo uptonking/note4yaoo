@@ -12,7 +12,10 @@ modified: 2021-01-08T17:14:34.841Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 🌰 What is the Figma of motion design?
+- https://x.com/_CryptoDesigner/status/1812785446063329593
+- Adobe After Effects is still THE king for traditional, non-interactive motion design. New tools come and gone, but tbh nothing beats AE in terms of possibilities
+- The best for straight up motion design is @fable_motion . Jitter is pretty good. @rive_app is cool because it is motion and interactive - different thing, and I'm just getting started with it (exciting!).
 
 - ## Learn how to make your own layout animation library using the FLIP animation technique and the Web Animations API to create impossible layout animations.
 - https://twitter.com/joyofcodedev/status/1773817479019593914

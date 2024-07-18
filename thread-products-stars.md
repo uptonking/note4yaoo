@@ -20,6 +20,7 @@ modified: 2024-04-04T06:42:20.344Z
   - Analytics: Umami + Google Analytics
   - Database: SQLite + Drizzle
   - Comment: Giscus
+  - 海棠诗社 开源，所有数据都在一个sqlite文件中。
 
 - ## 海棠诗社是一个古诗词学习和创作相关的网站，诗词丰富，界面干净，
 - https://twitter.com/javayhu/status/1780410734993908095

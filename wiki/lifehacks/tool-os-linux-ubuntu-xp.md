@@ -33,6 +33,14 @@ modified: 2021-01-01T22:26:57.773Z
   - only works with Xorg and XWayland.
   - If you are on Wayland and app won't run through XWayland you can force it via command: `GDK_BACKEND=x11 app_name`
 # ubuntu-starter
+
+- https://github.com/ohmybash/oh-my-bash
+  - https://ohmybash.github.io/
+  - A delightful community-driven framework for managing your bash configuration
+
+- https://github.com/magicmonty/bash-git-prompt /不推荐，功能少，直接用ohmybash
+  - An informative and fancy bash prompt for Git users
+
 - ubuntu查看序列号（serial number）和产品型号（product number）
   - sudo dmidecode | less
 # ubuntu-cons
@@ -216,7 +224,17 @@ modified: 2021-01-01T22:26:57.773Z
 
 - ## 
 
-- ## 
+- ## 🆚️ [Those of you who prefer ZSH to BASH, why? : r/linuxquestions _202108](https://www.reddit.com/r/linuxquestions/comments/p50jvl/those_of_you_who_prefer_zsh_to_bash_why/)
+- tab completion and colors
+
+- For interactive use, it is close to 100% compatible with bash syntax, but the interface has various quality of life improvements. Here are a few:
+  - The main features involve things like tab completion, which zsh can do by picking items from a menu (bash displays the options, but doesn't let you pick one, you just keep typing and try again).
+
+- For one, due to its licensing zsh is less invasive and therefor not only the prevalent shell in FreeBSD but also for example in macOS, and some other Unix Systems. So there’s that. Other than that I am still myself getting to know zsh better.
+
+- So core feature I like in zsh (and it probably is available in bash) is proper reverse search. Like when you do ctrl-r in bash, and then type in "abc" it finds commands with "abc" in it. If you type in "abc" in my zsh, and then tap "up", it would find the last command starting with "abc" in my history.
+
+- Zsh can compare floats, whereas bash cannot
 
 - ## [Is there any way I could fix or mitigate the blur on applications using XWayland caused by fractional scaling? - Desktop - GNOME Discourse](https://discourse.gnome.org/t/is-there-any-way-i-could-fix-or-mitigate-the-blur-on-applications-using-xwayland-caused-by-fractional-scaling/17052)
 - the blurriness for X11 applications running with fractional scaling is expected, and it cannot really be fixed without porting those applications away from X11.

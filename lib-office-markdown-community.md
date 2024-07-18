@@ -14,7 +14,12 @@ modified: 2021-06-02T15:26:39.741Z
 
 - ## 
 
-- ## 
+- ## 💫 [Fine-grained Markdown | Code Hike _202407](https://v1.codehike.org/blog/fine-grained-markdown)
+- You want a richer medium to present your content. Let me show you what I mean, and how Code Hike can help you solve this problem.
+
+- https://x.com/pomber/status/1813553314652627118
+- Great work! I remember codehike not working with Astro, has this changed since?
+  - still not working
 
 - ## I am looking for a broken link checker tool that I can run against localhost.
 - https://twitter.com/alexandereardon/status/1758252484165025931

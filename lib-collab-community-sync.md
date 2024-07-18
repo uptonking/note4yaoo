@@ -210,7 +210,16 @@ modified: 2022-11-29T20:41:25.566Z
 
 - ## 
 
-- ## 
+- ## 这就是 local first 业界现在关注通用 sync engine 的原因。
+- https://x.com/ewind1994/status/1813251125694623775
+  - 像 ZeroSync 最近演示的就是靠约 100M 的本地缓存做了个 linear，大部分 UI 本地秒出，剩下的数据从服务端串流过来，API 也是带响应式的 Rx/LINQ 风格。这效果很惊艳，相当于把 data fetching 这件事从 imperative 变成 declarative 了
+  - 1. 设想你的新 linear/notion/figma……都直接做在本地 DB 上，换句话说全量数据都像 git 那样存在本地。这样 DX 非常爽，因为更新 UI 的 reactivity 都能直接源于本地 DB，那些糊前后端接口的中间层全部不用管，你的 view 去订阅 DB 的 query 语句就能按需更新了。
+  - 2. 但光有本地 DB 还不够，卖 SaaS 恰饭得有服务端啊。于是就有了所谓的 sync engine，跟你承诺本地 DB 里放什么都能自动同步到服务端。它往往会在 DB 层用到 CRDT，但对上层基本是透明的，比如 @ElectricSQL 干的就是这个。
+  - 3. 但你肯定还是不爽，因为首先如果我只分享 repo 里的一篇文档给你，凭什么要 clone 整个 DB 下来才能读？其次服务端数据量可能无限大，但网页和移动端里的存储能力都很有限。所以这基本是对 local first 最大的质疑之一了。
+  - 4. 但是别急，如果这个 sync engine 一等公民地内建了 partial sync 和分布式执行 query 的能力呢？这样 web 端无非就是系统里存储上限很低（比如 100M）的 peer，始终按 LRU 之类策略存最热的数据就行，本地跑不完的 query 就一起在服务端查了送回来呗，反正各端都同构，UI 还是只管订阅更新就好。
+  - 5. 这样一来，不论是强调 lazy loading 的 web 还是强调持有全量数据的 native client，大家的数据层就都是同构的，只是同步数据量的上限不同而已。从而不管在哪，都能获得最优的加载行为和源自本地 DB 的响应式 DX。
+
+- 我是相信只要 UX 和 DX 都能更好，各种 SaaS 应用（而不仅是文档类）就没理由不用 local first 栈了呀。
 
 - ## 💡 Hashes in version control systems have some great properties.
 - https://twitter.com/JungleSilicon/status/1737692594459824504

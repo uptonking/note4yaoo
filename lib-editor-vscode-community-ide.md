@@ -419,6 +419,8 @@ modified: 2024-05-09T09:35:28.467Z
 
 - ## [run zed error on Ubuntu 24.04 : blade_graphics::hal::init Surface formats are incompatible _202405](https://github.com/zed-industries/zed/issues/11716)
 - Update: this error is on WayLand Mode, switch to X11 , zed works!
+- I can run zed in x11 mode in wayland using `WAYLAND_DISPLAY='' zed` ; 
+  - zed在ubuntu本地的安装地址在 `/home/yaoo/.local/zed.app/bin/zed`
 
 # discuss
 - ## 

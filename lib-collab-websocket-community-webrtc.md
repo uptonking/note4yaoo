@@ -174,7 +174,8 @@ modified: 2023-12-12T08:45:31.670Z
 
 - ## 
 
-- ## 
+- ## Web trivia: Chrome has its own IPC protocol called Mojo that's also used in part by Firefox and is similar in design to how MessageChannels work in JS user land, which are implemented on top of it.
+- https://x.com/qwtel/status/1813126057073254690
 
 - ## [Where to hold my socket in my redux store? - Stack Overflow](https://stackoverflow.com/questions/65940957/where-to-hold-my-socket-in-my-redux-store)
 - Websockets should typically go in a Redux middleware, where they have access to dispatch and getState

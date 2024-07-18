@@ -232,6 +232,13 @@ modified: 2022-11-11T11:04:29.007Z
   - It organizes your bookmarks in a wiki format.
   - NestJS, Apollo, TypeORM
 
+
+- https://github.com/Pintree-io/pintree /MIT/202407/html
+  - https://app.pintree.io/
+  - Pintree 是一个开源项目，旨在将浏览器书签导出成导航网站
+  - 将书签文件转换成JSON格式, 生成静态导航网站
+  - 使用插件导出浏览器书签，并保存 JSON 文件到本地。替换 JSON 文件
+
 ## offline
 
 - https://github.com/dosyago/DiskerNet /js
@@ -267,6 +274,8 @@ modified: 2022-11-11T11:04:29.007Z
 
 - https://github.com/deweyapp/dewey /201603/js/inactive
   - a Chrome app for tagging, searching and sorting your Chrome bookmarks.
+
+
 # tag
 - https://github.com/FelipeCortez/bmarks /django2
   - https://bmarks.net/felipecortez

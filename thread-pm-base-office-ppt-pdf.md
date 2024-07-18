@@ -27,7 +27,17 @@ modified: 2024-01-11T15:57:32.182Z
 
 - ## 
 
-- ## 
+- ## RAG 数据清洗关键组件，独创 PDF 内容抽取的 「布局识别」和 「公式识别」模型，达到 SOTA！PDF-Extract-Kit 开源
+- https://x.com/tuturetom/status/1813468361202057521
+  - 在学术论文、电子书、研究报告、金融报告等领域取得高准确性抽取效果
+  - 支持表格、图片、公式识别和抽取
+  - 构建易用 PDF 内容抽取 Pipeline
+
+- https://github.com/opendatalab/PDF-Extract-Kit /apache2/202407/python
+  - 布局检测：使用LayoutLMv3模型进行区域检测，如图像，表格, 标题, 文本等；
+  - 公式检测：使用YOLOv8进行公式检测，包含行内公式和行间公式；
+  - 公式识别：使用UniMERNet进行公式识别；
+  - 光学字符识别：使用PaddleOCR进行文本识别
 
 - ## 有什么文档解析库推荐吗？（从PDF, doc等文件提取文本用于RAG）
 - https://x.com/wong2_x/status/1810206825515782455

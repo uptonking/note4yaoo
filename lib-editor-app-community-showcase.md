@@ -16,7 +16,11 @@ modified: 2023-05-21T15:45:54.844Z
 
 - ## 
 
-- ## 
+- ## height: calc-size(auto); 
+- https://x.com/jh3yy/status/1812970312407130397
+  - This gives you the ability to animate to/from content size (auto, fit-content, etc.) without knowing that size in CSS
+- You can also do grid row 0fr to 1fr to animate height
+  - With other elements, yes
 
 - ## ✏️ [Bike: Innovative Rich Text Editing | Hacker News _202211](https://news.ycombinator.com/item?id=33489123)
 - The "affinity cursor" is a really lovely innovation. Most HTML/DOM/contenteditable based rich text editors end up adding support for virtual cursors that enable you to have the insertion cursor somewhere that the native browser cursor hasn't got support for (next to a floating image, end of a table row). Effectively this is what this is doing.

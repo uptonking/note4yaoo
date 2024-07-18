@@ -135,6 +135,14 @@ modified: 2023-04-04T03:59:40.928Z
 
 - ## 
 
+- ## 最近一直在练习使用 AI 创作插画，整了个插画分享网站，陆陆续续更新了 500 多张
+- https://x.com/janilychen/status/1813076703809577164
+  - 全部免费可商用，提供 SVG 和 PNG 格式下载
+  - https://vectorcraftr.com/
+- 请教一下，SVG 是怎么生成的呢？ 是 AI 直接生成的，还是 AI 生成位图再矢量化出来的？
+  - 是生成之后，再用其它工具矢量化的
+- 还有一个coco material 也是免费的
+
 - ## 互联网公司不适合把这个当做一个营业项目。Midjourney也不是因为AI模型更牛批，而是因为社区和周边服务，最后就是比营销和服务业。
 - https://x.com/JXQNHZr1yUAj5Be/status/1809985294139277459  
   - 估计到最后视频生成和具身智能也变成这样，反正谁要赚钱我就开源，但我自己的业务能用上，你想要只靠这个赚钱没可能
@@ -153,11 +161,11 @@ modified: 2023-04-04T03:59:40.928Z
 
 - ## 5 new market maps in AI
 - https://x.com/chiefaioffice/status/1799766662746398851
-  01.    AI code generation tools from Greylock
-  02.    AI legal tools from Battery Ventures
-  03.    AI agent infrastructure from Madrona
-  04.    AI marketing tools from a16z
-  05.    Conversational AI from Cobus Greyling
+  01.     AI code generation tools from Greylock
+  02.     AI legal tools from Battery Ventures
+  03.     AI agent infrastructure from Madrona
+  04.     AI marketing tools from a16z
+  05.     Conversational AI from Cobus Greyling
 
 - ## Google 最近新出了两个 Code 相关的 Agent 非常有意思：
 - https://x.com/tuturetom/status/1798350275314581670

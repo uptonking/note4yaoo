@@ -15,6 +15,21 @@ modified: 2024-06-21T09:53:44.956Z
 - ## 
 
 - ## 
+# discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 求问，录屏或录 gif 的时候，那个“局部放大”的效果是怎么实现的，需要用什么 app？我一直用 Gifox，但它没有这个功能
+- https://x.com/laike9m/status/1812350033712546288
+- Screen Studio 早买早享受
+- 剪映，放大镜特效，可以调节参数控制放大范围
+- 微软官方的zoomit
+
 # discuss-vid-img-avif
 - ## 
 

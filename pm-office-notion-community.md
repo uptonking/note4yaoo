@@ -42,7 +42,9 @@ modified: 2023-11-28T14:48:45.910Z
 
 - ## 
 
-- ## 
+- ## How Notion uses Sqlite WASM.
+- https://x.com/evoluhq/status/1813874658619601205
+  - Evolu do that without Shared Workers which are not supported on Android.
 
 - ## [How Notion pulled itself back from the brink of failure (2019) | Hacker News_202106](https://news.ycombinator.com/item?id=27540471)
 - 

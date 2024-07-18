@@ -154,6 +154,8 @@ modified: 2021-07-20T13:50:23.433Z
 
 - 多文件的app, 或多或少有点类似知识库
   - 可以参考给普通数据库表添加crdt支持的场景
+- version-history
+  - 不仅是文档级别的history，还支持项目级别的history，采用branch+merge策略
 
 - high-availability / horizontal-scaling
   - strapi, nocobase
