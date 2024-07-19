@@ -457,6 +457,9 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/dyq086/formula-editor /202303/ts/vue/inactive
   - 基于vue3+codeMirror 6 公式表达式编辑器
 
+- https://github.com/amoayun/amoayun-vue-codemirror /202407/ts/vue
+  - 其他的属性你们就可以直接参考 vue-codemirror6 了，我就是个二道贩子，哈哈哈，基于 vue-codemirror6 做的一层封装，让大家感觉更方便用一点
+
 - https://github.com/chordbook/editor /GPLv3/202404/ts
   - https://chordbook.github.io/editor/
   - A web-based editor for editing chord sheets in the ChordPro format, built on CodeMirror.
@@ -546,7 +549,7 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/wikimedia/mediawiki-extensions-CodeMirror /GPL/202405/js
   - MediaWiki extension CodeMirror
-- https://github.com/bhsd-harry/codemirror-mediawiki /GPLv2/202405/ts
+- https://github.com/bhsd-harry/codemirror-mediawiki /GPLv2/202407/ts
   - https://bhsd-harry.github.io/codemirror-mediawiki/
   - Modified CodeMirror mode based on wikimedia/mediawiki-extensions-CodeMirror
   - The goal is to support a standalone integration between CodeMirror and Wikitext, without the need for a MediaWiki environment
@@ -1022,6 +1025,10 @@ modified: 2023-06-23T12:46:53.288Z
   - LSP-AI can work as an alternative to Github Copilot.
   - The goal of LSP-AI is to assist and empower software engineers by integrating with the tools they already know and love not replace software engineers.
 
+- https://github.com/craftzdog/react-codemirror-runmode /MIT/202405/ts
+  - Syntax highlighting for react, utilizing CodeMirror's parser
+  - Syntax highlighter for React, using CodeMirror 6. It automatically loads the language metadata and dynamically loads language parser modules based on the specified language.
+
 ## utils-lang
 
 - https://github.com/inspirnathan/codemirror-lang-mermaid /MIT/202309/ts
@@ -1038,7 +1045,7 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/neo4j/cypher-editor /apache2/202404/js
   - Codemirror editor for Cypher, with syntax awareness and auto-completion
 # code-playgrounds
-- react-runner /382Star/MIT/202303/ts/inactive
+- react-runner /382Star/MIT/202406/ts/inactive
   - https://github.com/nihgwu/react-runner
   - https://nihgwu.github.io/react-runner/
   - https://react-runner.vercel.app/
@@ -1397,6 +1404,10 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/cossssmin/codemirror-theme-github /202102/inactive
   - A CodeMirror theme inspired by the GitHub editor.
+
+- https://github.com/ntnyq/codemirror-theme-vitesse /MIT/202407/ts
+  - https://codemirror-theme-vitesse.ntnyq.com/
+  - Codemirror theme in vitesse style, light + dark
 # v5
 - examples-v5
   - strapi markdown editor

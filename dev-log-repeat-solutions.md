@@ -156,6 +156,8 @@ modified: 2021-07-20T13:50:23.433Z
   - 可以参考给普通数据库表添加crdt支持的场景
 - version-history
   - 不仅是文档级别的history，还支持项目级别的history，采用branch+merge策略
+- collab-framework
+  - 所有的操作可由用户执行，也可由ai执行
 
 - high-availability / horizontal-scaling
   - strapi, nocobase

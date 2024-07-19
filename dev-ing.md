@@ -329,20 +329,6 @@ betterdiscordctl -i flatpak install
     - cursor光标位置经常对不上
   - [x] streaming infinite-list/tree
 # dev-07
-- architecture
-  - ~~实现了偏静态的ui交互，优化cde集成、状态管理~~
-  - ~~websocket scalable chat/room, progress: 参考zulip-sdk, firebase/supabase-sdk~~
-  - ~~cde页面不稳定复线的内存泄漏~~
-  - ~~refactor-cde-state-to-zustand~~
-- ui
-  - editor: typewriter
-  - stepsTree: deprecate id in favor of content
-  - ~~dark theme for dockview~~
-  - ~~处理floating的滚动条~~
-  - ~~tailwind child selector~~
-- ai-integration
-  - wss://staging.agent.clacky.ai/socket.io/? EIO=4&transport=websocket
-
 - ai相关开发
   - cmd+k 与ai对话
   - ai执行计划同步底部时光机进度条
@@ -353,23 +339,22 @@ betterdiscordctl -i flatpak install
   - cde设置页面
   - cde环境变量、中间件
   - ~~userStatusUpdated~~
+  - editor: typewriter
   - paas激活的时机要修改
-  - 带着issue进入cde
   - 时光机回放模式
   - paas的断线恢复问题
   - ~~paas异常处理~~
   - ~~删除废弃的代码~~
+  - ~~带着issue进入cde~~
   - ~~异常toast弹窗, 异常处理~~
   - LSP补全
-  - 优化issue
-
 
 - not-yet
-  - 第二个thread创建后, 是否要调用 api通知clacky后端
   - 私有项目的导入
-  - 前端提供agent相关事件
-    - 让agent获取issue相关信息
-    - 让agent提交pr
+
+- 前端提供agent相关事件
+  - 让agent获取issue相关信息
+  - 让agent提交pr
 
 - 跟随模式
   - followUser时会自动打开console面板
@@ -378,21 +363,14 @@ betterdiscordctl -i flatpak install
   - 同一个用户在不同浏览器打开同一个playground的cde时，用户头像显示几个
   - agent是每个用户一个，还是每个playground一个
     - 目前是一个playground一个agent
-
-- dev-done-cde布局开发
-  - 紧急: 拖动改变浏览器宽度时，布局会混乱
-    - ~~console/terminal的内容高度有时异常，有时布局混乱的原因是shell的宽度高度过大~~
-  - ~~难点: 隐藏侧边栏的头部~~
-  - ~~难点: disable tab页拖动，有时不work有时work~~
-  - ~~驾驶舱添加滚动css， SecondarySidebarContainer overflow-auto~~
-  - ~~run前端项目才需要打开浏览器，其他项目不需要，前端项目执行时上方是editor+browser下方是console~~
-  - ~~cde-tools需要点2次才生效~~
-  - later: 布局持久化和刷新页面恢复
-  - editor默认提示文本 删除
-  - cde tools 最小高度
-  - 驾驶舱拖拽
   - 文件树 keydown事件传到了编辑器
-  - 浏览器滚动禁用
+  - 浏览器panel滚动禁用
+  - 修复文件树无法创建文件和文件夹的问题
+  - 测试跟随ai
+  - 刷新完页面恢复面板显示隐藏状态
+  - ai工作时自动打开面板状态
+  - 发送readfile指令或切换文件，渲染editor失败
+  - `/playground`路由页面不需要知道issue信息
 
 ## demo-feedback0714
 
@@ -474,9 +452,31 @@ betterdiscordctl -i flatpak install
 
 ```JS
 console.log(`接到到PaaS消息：`, name, dao.playgroundInfo.status, dao.dockerStatus, payload)
-
-console.log(';; playgroundId ', isRepoPrepared, playgroundId, params.id)
 ```
+
+## 0719
+
+- 第二个thread创建后, 是否要调用 api通知clacky后端
+  - 是的
+
+- dev-log
+  - 与后端联调获取threadIssue的api，简单实现了发送issue给agent，缺少测试ui
+  - 修复cde-tools拖拽的问题、移除空白区域
+- dev-to
+  - 配合演示修复问题
+  - 测试跟随ai
+
+- dev-done-cde布局开发
+  - 紧急: 拖动改变浏览器宽度时，布局会混乱
+    - ~~console/terminal的内容高度有时异常，有时布局混乱的原因是shell的宽度高度过大~~
+  - ~~难点: 隐藏侧边栏的头部~~
+  - ~~难点: disable tab页拖动，有时不work有时work~~
+  - ~~驾驶舱添加滚动css， SecondarySidebarContainer overflow-auto~~
+  - ~~run前端项目才需要打开浏览器，其他项目不需要，前端项目执行时上方是editor+browser下方是console~~
+  - ~~cde-tools需要点2次才生效~~
+  - ~~editor默认提示文本 删除~~
+  - ~~cde tools 最小高度~~
+  - later: 布局持久化和刷新页面恢复
 
 ## 0718
 
@@ -491,9 +491,6 @@ console.log(';; playgroundId ', isRepoPrepared, playgroundId, params.id)
   - ~~CDE Tools 下方空白~~
   - 编辑器有时候出不来
   - 获取thread对应的issue，提供给agent
-    - threadIssue
-    - threadIssueOk
-
 
 ## 0717
 

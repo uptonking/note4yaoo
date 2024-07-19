@@ -174,6 +174,8 @@ modified: 2024-05-06T02:54:40.374Z
 
 - preview react/vue components
 
+- 持久化用户安装的包可以快速fork和复用，一个用户安装了，其他用户可直接用
+
 - 
 - 
 - 
