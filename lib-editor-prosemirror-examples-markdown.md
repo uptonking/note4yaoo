@@ -62,7 +62,7 @@ modified: 2023-11-28T14:42:16.738Z
 
 - https://github.com/drl990114/MarkFlowy /202311/ts/remirror
   - https://markflowy.vercel.app/
-  - Modern markdown editor application
+  - Modern markdown editor application, Build fast and efficient workflows.
   - Built-in ChatGpt
   - based on tauri and has a volume of less than 10MB and better performance.
   - uses the remirror editor

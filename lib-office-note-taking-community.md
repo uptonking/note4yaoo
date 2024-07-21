@@ -39,7 +39,11 @@ modified: 2024-01-29T17:21:25.476Z
 # discuss-files-first
 - ## 
 
-- ## 
+- ## [Show HN: Supernotes 3 – Offline-Ready, Collaborative and Cross-Platform Notes | Hacker News _202309](https://news.ycombinator.com/item?id=37403444)
+- One thing that always comes up with posts about CRDT is how they typically don't handle formatting markers when resolving edits. How is this (and CRDT) handled in SN?
+  - First off, that is one reason we decided to stay with Markdown and picked YJs for our CRDT library. Markdown because it is plaintext, and in our testing we found it was a lot easier to conserve user intent when merging plain text than actual rich text (i.e. JSON). YJs because the CRDTs are already fairly robust and designed with intent-preservation in mind.
+  - That being said, we did end up writing a somewhat large system around our editor (we're using CodeMirror, which is also great to work with), because we wanted to take things further by excessively labeling transactions with additional context not included in the plaintext which allows us to batch certain types of transactions together and better preserve intent that way. We also use fractional indexing for some things (like lists) which generally do a good job of preserving multi-user intent.
+  - Finally, in cases where sending edits over WebSockets via our own servers is suitable, we actually prefer that to sending them peer-to-peer (via WebRTC) as certain types of atomic operations become difficult in P2P scenarios. This kinda reduces one of the key benefits of CRDTs (over OT), but the P2P is still possible (and works), it's just sometimes not as good at intent preservation.
 
 - ## 📓🎯 [Typora 1.0 | Hacker News _202111](https://news.ycombinator.com/item?id=29360720)
 - Document editing is only a part of maintaining a system of notes and there are so many competitors in this market compared to just a few years ago. And with Obsidian soon to release their live preview I don't know how competitive Typora with such a small feature set.

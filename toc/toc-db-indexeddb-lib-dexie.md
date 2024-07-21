@@ -139,3 +139,15 @@ modified: 2022-11-25T17:19:08.656Z
   - I would not recommend coding against the raw indexedDB API unless you really have to. 
   - Performance is also a reason to use a wrapper library like dexie that can do multiple operations in a single transaction without sacrificing code readability and error handling.
   - [IndexedDB: When to close a connection](https://stackoverflow.com/questions/34915581)
+# discuss
+- ## 
+
+- ## [Rich-text collaboration _202403](https://github.com/dexie/Dexie.js/issues/1926)
+- Dexie Cloud already support syncing text properties, but we lack specific conflict-free CRDT support for collaborative text editing of same document.
+  - 202406: Dexie + Y.js support is almost done. Kevin (Y.js author) has been very helpful with actively supporting me in API questions. The dexie-cloud support is still to be implemented but the design for it is done.
+
+- ## [Consistent Appends _202407](https://github.com/dexie/Dexie.js/discussions/2036)
+- I'm trying to think through the best way to store the content of a text document from CodeMirror.
+- For rich-text collaboration, I'm currently building support for Y.js so I suggest to use y-codemirror once #1926 has been completed and released (which would be within some weeks).
+  - Basically, Dexie.js will support Y. Doc instances to be stored in props just like we support Blob, Date, etc. There will be a new DexieYProvider() available that can be used for syncing and awareness. 
+  - In the examples of y-codemirror, the difference will be that the Y. Doc instance will be fetched from your Dexie database instead of being new:ed and that you will use DexieYProvider instead of any other kind of provider.

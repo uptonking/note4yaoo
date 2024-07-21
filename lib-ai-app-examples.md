@@ -235,6 +235,12 @@ modified: 2023-02-08T07:20:48.475Z
   - https://x.com/pamelafox/status/1801678164969853034
     - To make it super easy for anyone to try out Ollama (esp teachers/students)
     - I've included an example notebook that walks through completions, prompt eng, few-shots, and RAG
+
+- https://github.com/fmaclen/hollama /MIT/202407/ts/svelte
+  - https://hollama.fernando.is/
+  - A minimal web-UI for talking to Ollama servers
+  - Markdown parsing w/syntax highlighting
+
 # text2image
 - https://github.com/Stability-AI/stablediffusion
   - https://github.com/CompVis/stable-diffusion

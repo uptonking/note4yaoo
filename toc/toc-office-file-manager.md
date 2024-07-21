@@ -209,6 +209,11 @@ modified: 2021-08-23T05:27:08.068Z
   - Offline-first note taking and knowledge management application 
 - https://github.com/Merlin04/multipad
   - Notepad for the future - a swiss army knife file editor/viewer.
+
+## tauri
+
+- https://github.com/Coordinate-Cat/Flanker /GPLv3/202407/ts
+  - New Age File Explorer
 # filesystem-utils
 - https://github.com/flystorage/flystorage /202312/ts
   - a file storage abstraction for NodeJS and TypeScript

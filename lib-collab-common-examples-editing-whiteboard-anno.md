@@ -262,6 +262,10 @@ modified: 2022-11-07T17:36:22.236Z
 
 - https://github.com/tajpure/TextSync /201606/js/inactive
   - Synchronize text from client to server based on the rsync algorithm
+
+- https://github.com/nelsonic/amemo /GPLv2/202311/elixir/inactive
+  - https://amemo.fly.dev/
+  - Adventures in Markdown / Rich Text Editing & Rendering in Phoenix LiveView
 # more
 - EtherSheet /201Star/BSD/201708/js
   - https://github.com/ethersheet-collective/EtherSheet

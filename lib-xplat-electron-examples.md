@@ -136,6 +136,9 @@ modified: 2024-01-31T19:13:11.286Z
 - https://github.com/opensumi/ide-electron /MIT/202401/ts
   - https://opensumi.com/
   - OpenSumi Electron Version
+
+- https://github.com/pd4d10/debugtron /MIT/202407/ts
+  - Debugtron is an app to debug in-production Electron based app. It is also built with Electron.
 # examples-starter
 - https://github.com/electron-react-boilerplate/electron-react-boilerplate /MIT/202309/ts
   - https://electron-react-boilerplate.js.org/

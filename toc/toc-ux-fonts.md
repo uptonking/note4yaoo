@@ -151,6 +151,12 @@ modified: 2020-07-17T10:54:16.341Z
   - LXGW WenKai / 霞鹜文楷, 一款开源中文字体，基于 FONTWORKS 出品字体 Klee One 衍生。
   - FONTWORKS是一款有着日本教科书体风格的字体，兼有仿宋和楷体的特点
   - https://github.com/CMBill/lxgw-wenkai-web
+
+- https://github.com/supernotes/sn-pro /ofl1/202403
+  - SN Pro is a friendly sans serif typeface optimized for use with Markdown. 
+  - It is based on Nunito by Vernon Adams, and each character has been re-worked to improve readability and usability within a Markdown context. Originally designed by and for Supernotes.
+  - SN Pro is available in .otf, .woff and .woff2 formats, with weights ranging from Thin to Black
+  - open source and free for both personal and commercial use.
 # fonts-cn
 
 ## utils-cn

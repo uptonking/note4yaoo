@@ -20,7 +20,7 @@ modified: 2022-08-18T16:57:46.405Z
     - react indexeddb， 编辑器数据频繁的更新可参考编辑器实时协作的更新
 
 - vanillajs-first
-  - tiptap/dante/wix, guardian, tui.editor.v3, stacks-editor, bangle.dev
+  - tiptap/blocknote/novel/dante/wix, guardian, tui.editor.v3, stacks-editor, bangle.dev
   - milkdown(Typora), jcmnunes-bc-editor(md)
 - react-first
   - nytimes, remirror, @atlaskit/editor-core, yandex-yfm, syllepsis(字节)
@@ -483,6 +483,22 @@ modified: 2022-08-18T16:57:46.405Z
 - https://github.com/equinor/fusion-components/tree/master/src/customElements/components/markdown-editor
   - https://equinor.github.io/fusion-components/?path=/story/general-markdown-editor--default
   - 依赖prosemirror、prosemirror-markdown、lit
+
+# ai-editor
+
+- ai-editors
+  - novel
+
+- https://github.com/aieditor-team/AiEditor /LGPLv2/202407/ts
+  - https://aieditor.dev/
+  - https://aieditor.dev/versions.html
+  - http://aieditor1.jpress.cn 现代风格（类腾讯文档）
+  - https://aieditor.dev/demo.html 经典/传统风格
+  - a next-generation rich text editor for AI
+  - 开箱即用、支持所有前端框架、支持 Markdown 书写模式
+  - 基于 Web Component，因此支持 Layui、Vue、React、Angular 等几乎任何前端框架
+  - 目标是打造一个完全由 AI 驱动的富文本编辑器，同时支持对接任意大模型，包括私有的大模型。允许用户使用自己私有的大模型 ApiKey
+  - 还提供了功能更加强大的商业，商业版不限制用户量、不限制应用数量
 # editors-collection
 - licit /33Star/MIT/202208/js
   - https://github.com/MO-Movia/licit

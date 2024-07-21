@@ -64,6 +64,10 @@ modified: 2023-02-08T10:25:14.173Z
   - 命令行工具
   - Mock Servers: Life-like mock servers from any API Specification Document.
   - Comprehensive API Specification Support: OpenAPI v3.1, OpenAPI v3.0, OpenAPI v2.0 (formerly Swagger) and Postman Collections.
+
+- https://github.com/rookie-luochao/openapi-ui /MIT/202407/ts
+  - http://www.openapi-ui.com/
+  - 基于 OpenAPI/Swagger 规范的接口文档，快速模拟请求参数并调用接口，也是简化版 postman 工具
 # api-utils
 
 ## openapi

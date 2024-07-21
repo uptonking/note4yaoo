@@ -304,6 +304,9 @@ modified: 2023-06-23T12:46:53.288Z
   - On top of accurate syntax highlighting powered by the same engine as VS Code, Expressive Code allows you to annotate code blocks using text markers, diff highlighting, code editor & terminal window frames, and more.
   - All annotations are based on a powerful plugin architecture 
 
+- https://github.com/Sagargupta16/ai-code-translator /202311/ts
+  - https://ai-code-translator-delta-six.vercel.app/
+  - Use AI to translate code from one language to another
 ## code-animation
 
 - https://github.com/amasin76/code-motion /202404/ts
@@ -329,6 +332,11 @@ modified: 2023-06-23T12:46:53.288Z
   - 依赖diff-match-patch-es、ohash
   - 不依赖codemirror
   - [The Magic in Shiki Magic Move _202403](https://antfu.me/posts/shiki-magic-move)
+
+- https://github.com/uxiew/codemirror-shiki /202407/ts/vue
+  - A code editor based on CodeMirror that using Shiki highlighting. 
+  - codemirror highlighting using shiki
+  - support custom themes and custom languages.
 
 - https://github.com/sergeche/codemirror-movie /MIT/202006/ts/inactive
   - https://docs.emmet.io/
@@ -357,6 +365,10 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/pomber/code-surfer /MIT/202003/ts/js/inactive
   - https://codesurfer.pomb.us/
   - Code Surfer adds code highlighting, code zooming, code scrolling, code focusing, code morphing, and fun to MDX Deck slides.
+
+- https://github.com/SymphonyIceAttack/code-animation /MIT/202405/ts
+  - https://www.codeanimations.top/
+  - code-animation
 # editors-based-on-codemirror
 - https://github.com/inkandswitch/tiny-essay-editor /NALic/202405/ts
   - https://tee.inkandswitch.com/
@@ -377,6 +389,14 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/tagspaces/tagspaces-common/tree/develop/packages/tagspaces-codemirror /MIT/202312/ts
   - 依赖codemirror6
 
+- https://github.com/rookie-luochao/json-schema-editor /MIT/202406/ts
+  - https://json-schema-enhanced-editor.vercel.app/
+  - A lightweight json editor based on codemirror, providing smart prompts and verification based on json-schema
+  - A json-schema-editor collection, support react、vue framework, will support svelte
+
+
+
+
 - https://github.com/sanity-io/code-input /MIT/202404/ts
   - Sanity input component for code, powered by CodeMirror
 
@@ -389,6 +409,17 @@ modified: 2023-06-23T12:46:53.288Z
   - 🌵 git integrated cross-platform markdown editor
   - 依赖codemirror6、marked、nodegit、vue3、@electron/rebuild
 
+- https://github.com/imzbf/md-editor-rt /MIT/202407/ts
+  - https://imzbf.github.io/md-editor-rt
+  - https://imzbf.github.io/md-editor-rt/en-US/demo
+  - react 版本的 Markdown 编辑器
+  - 源码与预览同步滚动
+  - 支持切换预览风格、代码风格主题
+  - 当使用服务端渲染时，请务必设置editorId为固定值。
+  - 自定义 markdown-it 核心库扩展、属性等。
+
+
+
 - https://github.com/yanthink/pingfan.ts /202204/ts/inactive
   - 基于 codemirror6 的 markdown 编辑器
 
@@ -397,12 +428,12 @@ modified: 2023-06-23T12:46:53.288Z
   - This package provides a CodeMirror configuration for Lake
   - Code block基于codemirror实现
 
-- https://github.com/gravity-ui/markdown-editor /MIT/202407/ts
+- https://github.com/gravity-ui/markdown-editor /MIT/202407/ts/设计系统中的一个组件
   - https://preview.gravity-ui.com/md-editor/
   - a powerful tool for working with Markdown, which combines WYSIWYG and Markup modes
   - Support for the basic Markdown and YFM syntax.
   - Extensibility through the use of ProseMirror and CodeMirror engines.
-  - 依赖 @diplodoc/transform, react, react-dom, @gravity-ui/uikit, @gravity-ui/components 
+  - 依赖 prosemirror, @diplodoc/transform, react, react-dom, @gravity-ui/uikit, @gravity-ui/components 
 
 - https://github.com/wanglin2/markdown_editor_sync_scroll_demo /202210/js/inactive
   - https://wanglin2.github.io/markdown_editor_sync_scroll_demo/
@@ -432,6 +463,11 @@ modified: 2023-06-23T12:46:53.288Z
   - https://madeyoga.github.io/chunchunmaru-mde/
   - Markdown editor based on codemirror 6
 
+- https://github.com/s-zeid/MarkupChisel /BSD/202407/js
+  - https://code.s.zeid.me/markdownchisel
+  - A minimal Markdown editor based on CodeMirror 6
+  - Extra features (can be disabled by using the MarkupChiselBaseView class):
+
 - https://github.com/segphault/codemirror-rich-markdoc /202301/ts/inactive
   - https://markdoc-hybrid-editor.netlify.app/
   - This is a plugin for CodeMirror 6 that adds a hybrid rich-text editing mode for Markdown content. 
@@ -456,6 +492,9 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/dyq086/formula-editor /202303/ts/vue/inactive
   - 基于vue3+codeMirror 6 公式表达式编辑器
+- https://github.com/gkf442573575/formula-editor-vue3 /MIT/202406/ts/vue
+  - https://gkf442573575.github.io/formula-editor-vue3/
+  - Formula Editor for Vue3 Built with vue-codemirror + codemirror6
 
 - https://github.com/amoayun/amoayun-vue-codemirror /202407/ts/vue
   - 其他的属性你们就可以直接参考 vue-codemirror6 了，我就是个二道贩子，哈哈哈，基于 vue-codemirror6 做的一层封装，让大家感觉更方便用一点
@@ -478,6 +517,11 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/warmachine028/markdown-editor /MIT/202202/ts/inactive
   - A markdown editor using Electron, ReactJS, Vite, CodeMirror6, and Remark
+
+- https://github.com/voyagegroup/photon-editor /apache2/202304/ts/inactive
+  - https://lighthouse-studio.voyage/
+  - A full featured markdown editor by Lighthouse Studio
+  - 依赖codemirror6、@lezer/highlight
 
 - https://github.com/croxydeveloper/croxy-editor /202309/js/inactive
   - Minimal code editor made with Nextron (Next. JS + Electron) and CodeMirror
@@ -538,6 +582,10 @@ modified: 2023-06-23T12:46:53.288Z
   - Prong (PRojectional jsON Gui) is an editor framework for creating bespoke in-browser editors for JSON-based domain-specific languages (such as Vega, Vega-Lite, Tracery, and many others). 
   - These editors allow for things like drag-and-drop interactions, inline-interactive spreadsheets, in-situ recommenders and sparklines, and many more elements that would require significant engineering effort to create otherwise.
   - 依赖codemirror6、react-markdown、jsonc-parser
+
+- https://github.com/festerduck/codemirror-markdown /202406/ts
+  - https://composr-omega.vercel.app/
+  - Composr is a markdown writer with real-time compiler for the web.
 
 - Starboard Notebook /889Star/MPLv2/202206/ts
   - https://github.com/gzuidhof/starboard-notebook
@@ -747,12 +795,21 @@ modified: 2023-06-23T12:46:53.288Z
   - A public instance of the collaboration server is available at open-collab.tools.
   - This is how it works: one person starts a collaboration session as host and invites others to join. The IDE extension distributes the contents of the hostʼs workspace and highlights text selections and cursor positions of other participants. 
 
+- https://github.com/codersgyan/realtime-code-editor /202203/js
+  - 依赖codemirror5、socket.io
 ## diff
 
 - https://github.com/acrodata/code-editor /MIT/202405/ts
   - https://acrodata.github.io/code-editor/
   - CodeMirror 6 wrapper for Angular
   - 实现了diff上下视图
+
+- https://github.com/gaelj/BlazorCodeMirror6 /MIT/202407/csharp/ts
+  - https://gaelj.github.io/BlazorCodeMirror6/
+  - Blazor CodeMirror 6 brings the power of the CodeMirror 6 code editor to Blazor, offering a comprehensive . NET 6 / . NET 7 / . NET 8 component.
+  - Markdown editor for Blazor
+  - 实现了diff上下视图
+  - 支持编辑器中渲染图片
 
 - https://github.com/mdx-editor/editor /MIT/202405/ts/lexical
   - https://mdxeditor.dev/
@@ -876,6 +933,9 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/AlbertArakelyan/collaborative-markdown-editor-example /202405/ts
   - Collaborative Markdown Editor built on modern and simple web technologies with markdown editing libraries integrations
 
+- https://github.com/personalizedrefrigerator/joplin-plugin-extra-editor-settings /MIT/202407/ts
+  - This plugin exposes several CodeMirror 6 settings, including line numbers and code folding.
+
 - https://github.com/andrebnassis/codemirror-readonly-ranges /202311/ts
   - https://andrebnassis.github.io/codemirror-readonly-ranges
   - Codemirror extension for read-only ranges
@@ -939,6 +999,11 @@ modified: 2023-06-23T12:46:53.288Z
   - https://x.com/puruvjdev/status/1780560310547436002
     - Anytime you change documentId, it stores the state in a map, and when the documentID changes back to the one stored, we apply the history
 
+
+- https://github.com/jsonnext/codemirror-json-schema /MIT/202406/ts
+  - https://codemirror-json-schema.netlify.app/
+  - A JSONSchema enabled mode for codemirror 6, for json4 and json5, inspired by monaco-json
+  - Codemirror 6 extensions that provide full JSON Schema support for @codemirror/lang-json & codemirror-json5 language modes
 - https://github.com/acao/codemirror-json-schema /MIT/202404/ts
   - Codemirror 6 extensions that provide full JSON Schema support for @codemirror/lang-json & codemirror-json5 language modes
 - https://github.com/acao/json-schema-workbench /202311/ts
@@ -992,6 +1057,11 @@ modified: 2023-06-23T12:46:53.288Z
   - Tarnation is not line-based. It is capable of reusing both previous and ahead data when parsing, making it fully incremental
   - Tarnation can do things that Lezer (the parser you'd usually use for CodeMirror) can't. For example, Tarnation can parse something like Markdown, and other weird esoteric markup/formatting languages.
 
+- https://github.com/realdennis/md2pdf /MIT/202407/js
+  - https://realdennis.github.io/md2pdf/
+  - https://md2pdf.netlify.com/
+  - Offline markdown to pdf, choose -> edit -> transform
+
 ## lsp
 
 - https://github.com/coder0107git/codemirror-web-workers-lsp-demo /202404/ts
@@ -1031,6 +1101,10 @@ modified: 2023-06-23T12:46:53.288Z
 
 ## utils-lang
 
+- https://github.com/mattmundell/codemirror-lang-git-log /MIT/202406/ts
+  - https://git.sr.ht/~mattmundell/codemirror-lang-git-log
+  - CodeMirror language for 'git log' output
+
 - https://github.com/inspirnathan/codemirror-lang-mermaid /MIT/202309/ts
   - Mermaid language support for CodeMirror 6
   - This package implements Mermaid language support for the CodeMirror code editor. 
@@ -1044,6 +1118,13 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/neo4j/cypher-editor /apache2/202404/js
   - Codemirror editor for Cypher, with syntax awareness and auto-completion
+
+- https://github.com/JerryI/wljs-editor /202407/js
+  - https://jerryi.github.io/wljs-editor/
+  - A cell editor & supporting packages for wolfram-frontend project written in JS with Codemirror 6. Support mathematical expressions rendered inline, Mathematica's boxes and many more...
+  - This is a core component of Wolfram JS Frontend project
+  - https://github.com/JerryI/wolfram-js-frontend
+    - Dynamic Notebook Environment for Wolfram Language written in Javascript
 # code-playgrounds
 - react-runner /382Star/MIT/202406/ts/inactive
   - https://github.com/nihgwu/react-runner
@@ -1121,10 +1202,11 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/leon-kfd/OnlineCodeEditor /202311/ts/vue
   - An online code Editor like CodePen, built by Vue3.
 
-- https://github.com/live-codes/livecodes /MIT/202405/ts
+- https://github.com/live-codes/livecodes /MIT/202407/ts
   - https://livecodes.io/
   - A feature-rich, open-source, client-side code playground for React, Vue, Svelte, Solid, Typescript, Python, Go, Ruby, PHP and 80+ languages/frameworks.
   - 依赖codemirror6、monaco、codejar、codejar、yjs
+  - Powerful SDK (available for vanilla JavaScript, TypeScript, React, Vue and Svelte)
   - https://x.com/hatem_hosny_/status/1753930554540499064
     - Check this where I dynamically select the editor and load it (e.g. on desktop -> monaco, on mobile -> codemirror, user preference, etc.)
     - Also unified the interface of loading and communicating with the editor
@@ -1264,6 +1346,12 @@ modified: 2023-06-23T12:46:53.288Z
   - This is a basic Desktop IDE made using ElectronJS NodeJS CodeMirror and JsTree, jquery
 - https://github.com/RAGHAV-N5/CodeIt /202312/js
   - a React Project with NodeJs and expressJs using CodeMirror5 and compilex libraries
+
+- https://github.com/pelevesque/codemirror_implementations /202407/js
+  - A collection of Code Mirror implementations.
+
+- https://github.com/GiorgiKumelashvili/codemirror-6-playground /202407/ts
+  - Nextjs Shadcn Codemirror 6 Examples
 # examples
 - https://github.com/alexwkleung/Iris /MIT/202312/ts/inactive
   - https://irisnotes.vercel.app/
@@ -1418,6 +1506,7 @@ modified: 2023-06-23T12:46:53.288Z
   - We will migrate to 🎯 codemirror 6 in the future, which is going to be a complete rewrite. 
     - But for now, we will just stick to the current codemirror 5 codebase, that is what HyperMD currently uses.
   - https://github.com/laobubu/HyperMD /MIT/201810/ts/inactive
+  - https://github.com/jsimonrichard/HyperMD /MIT/202407
 
 - https://github.com/mirayatech/NinjaPen /202401/ts
   - https://ninja-pen.vercel.app/
@@ -1526,8 +1615,10 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/do-me/SemanticFinder /MIT/202405/js
   - https://do-me.github.io/SemanticFinder/
-  - frontend-only live semantic search with transformers.js
-  - Calculates the embeddings and cosine similarity client-side without server-side inferencing, using transformers.js and latest SOTA embedding models from Huggingface.
+  - Frontend-only live semantic search with transformers.js
+  - Calculates the embeddings and cosine similarity client-side without server-side inferencing, using a quantized version of sentence-transformers/all-MiniLM-L6-v2.
+  - https://x.com/DomeGIS/status/1646198509425639426
+    - A browser-based semantic search engine you can use to query your own texts
 
 - https://github.com/rvion/CushyStudio /AGPLv3/202403/ts
   - https://docs.cushystudio.com/
@@ -1538,13 +1629,6 @@ modified: 2023-06-23T12:46:53.288Z
   - Sweep: open-source AI-powered Software Developer for small features and bug fixes.
   - Sweep is an AI junior developer that turns bugs and feature requests into code changes. Sweep automatically handles devex improvements like adding typehints/improving test coverage. 
   - Turns issues directly into pull requests (without an IDE)
-
-- https://github.com/do-me/SemanticFinder /MIT/202405/js
-  - https://do-me.github.io/SemanticFinder/
-  - Frontend-only live semantic search with transformers.js
-  - Calculates the embeddings and cosine similarity client-side without server-side inferencing, using a quantized version of sentence-transformers/all-MiniLM-L6-v2.
-  - https://x.com/DomeGIS/status/1646198509425639426
-    - A browser-based semantic search engine you can use to query your own texts
 
 ## coding-toolchain-ai
 
@@ -1602,3 +1686,6 @@ modified: 2023-06-23T12:46:53.288Z
   - A JavaScript client that speaks Replit's container protocol
   - You should probably familiarize yourself with the protocol before trying to use it. Crosis is just a client that helps you connect and communicate with the container using the protocol.
   - The central concept is a "channel" that you can send commands to and receive commands from. 
+
+- https://github.com/FriendsOfREDAXO/aceeditor /MIT/202407/php/js
+  - Ace-Editor - The high performance code editor for REDAXO - Replacement for codemirror

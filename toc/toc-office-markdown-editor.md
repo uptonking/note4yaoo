@@ -153,12 +153,15 @@ modified: 2022-11-09T11:53:13.093Z
 - https://github.com/pandao/editor.md
   - The open source embeddable online markdown editor (component).
 
-- https://github.com/bytedance/bytemd /202210/ts/svelte
+- https://github.com/bytedance/bytemd /202312/ts/svelte/inactive
   - https://bytemd.js.org/
   - https://bytemd.js.org/playground/
   - Markdown editor component built with Svelte.
   - ByteMD could be used in the Server-side rendering(SSR) environment without extra config.
   - ByteMD uses remark and rehype ecosystem to process Markdown
+  - https://github.com/pd4d10/hashmd /MIT/202311/ts/inactive
+    - Hackable Markdown Editor and Viewer
+    - 依赖codemirror6、lit3、remark-rehype
 
 - https://github.com/Tencent/cherry-markdown /3kStar/apache2/202311/js
   - https://tencent.github.io/cherry-markdown/examples/index.html
@@ -172,6 +175,7 @@ modified: 2022-11-09T11:53:13.093Z
     - 无工具栏模式（极简编辑模式）
     - 移动端预览模式
   - Editor supports most commonly used markdown syntax (such as title, TOC, flowchart, formula, etc.) by default.
+  - 依赖codemirror5
 
 - https://github.com/voracious/ink-mde
   - The flexible TypeScript Markdown editor that powers https://octo.app
