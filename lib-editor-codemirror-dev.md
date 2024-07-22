@@ -11,15 +11,17 @@ modified: 2021-05-06T09:38:31.520Z
 
 - pros
   - MIT
-  - 可扩展性强
+  - 可扩展性强, ext支持设置优先级
   - 官方支持collab, 基于ot算法变体
-  - ✨ v6实现了 virtualized-render
-  - ❓ incremental syntax highlighting
+  - ✨ v6实现了 virtualized-render, 可结合visible ranges进一步提高性能
+  - ❓ incremental syntax highlighting, 可结合visible ranges
   - 支持mobile
   - accessible
   - 基于contenteditable(而不是textarea)实现，具备✨富文本的能力
   - 支持split-view
   - 支持nested-editor，可在同一页面渲染多个编辑器
+  - simpler than prosemirror
+    - position uses numeric index, index-by-lines
 
 - cons
   - 非开箱即用，需要组装模块
@@ -55,7 +57,7 @@ modified: 2021-05-06T09:38:31.520Z
   - codesandbox-sandpack, codepen, replit, glitch(cm5)
   - sourcegraph
   - overleaf(latex-code+rich)
-  - obsidian, zettlr, joplin-markdown-editor,supernotes
+  - obsidian, zettlr, joplin-markdown-editor, supernotes
   - chrome-devtools(开源代码中使用v6)
   - known: mdn
   - more: tagspaces, hedgedoc
@@ -129,20 +131,37 @@ modified: 2021-05-06T09:38:31.520Z
   - diff with magic-code-animation
   - highlight current selection
 
-- web
+- integrations
   - strapi-codemirror
+- web
   - quill/slate-codemirror
+  - 尝试将prosemirror的使用场景替换为codemirror
 - electron
   - obsidian-plugin
 
-- 尝试将prosemirror的使用场景替换为codemirror
-
 - 难点
-  - 渲染wysiwyg时采用virtual render
+  - 渲染wysiwyg时采用 virtual render
   - 支持可缩放的编辑器，用于将编辑器嵌入画板/设计工具的场景
-# dev
+# dev-xp
 - 多标签页的实现思路和单标签差别不大，视觉上只有1个visible的editor，上方是tab
 
+- 难以完全使用state对象控制的状态
+  - screen-coordinates
+  - scroll, focus
+  - cursor
+  - text-dir
+
+- commands
+  - hotkeys
+  - menu-item
+  - command-palette
+
+- Querying coordinates for positions outside of the current viewport will not work (since they are not rendered, and thus have no layout).
+
+- 
+- 
+- 
+- 
 - 
 - 
 - 

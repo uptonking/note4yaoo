@@ -19,9 +19,21 @@ modified: 2024-01-11T15:57:32.182Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## [Are all PDF files compressed? - Stack Overflow](https://stackoverflow.com/questions/10547890/are-all-pdf-files-compressed)
+- PDFs in general use internal compression for the objects they contain. But this compression is by no means compulsory(必须做的，规定的) according to the file format specifications. All (or some) objects may appear completely uncompressed, and they would still make a valid PDF.
 
-- ## 
+- ## [When PDF Beats ZIP: Everything You Need to Know | Foxit _201502](https://www.foxit.com/blog/when-pdf-beats-zip/)
+- PDF software allows you to insert images and drawings into the document, encrypt sensitive files, redact confidential information, and even use digital signatures for validation.
+  - the ability to embed file attachments into the document itself. 
+  - Attaching the PDF document to an email or saving multiple documents to a portfolio allows you to easily send the files off to someone else.
+- There are issues with the zip file format, though. For one, many email filters block files that have the .zip extension as phishers often use this format to send malicious files
+  - Another issue that’s common with zipped files is that the process might cause files to become corrupt. Whenever someone modifies a file, in this case by compressing and then expanding it, there’s a risk of corrupting the file contents and rendering it unusable.
+
+- While PDF software doesn’t compress files the way the zip format does, it does provide an alternative to packaging multiple files for transfer. Acting as an envelope, the PDF document can have files attached to it in one of two ways.
+  - In Foxit PDF Editor software, select COMMENT > Pin > File and place the cursor where the file should be in the document.
+  - The other method: EDIT > Insert > File attachment
+
+- PDF Portfolios combine multiple files together into a single PDF package.  
 # discuss-pdf
 - ## 
 

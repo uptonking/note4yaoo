@@ -328,6 +328,13 @@ modified: 2024-05-06T02:52:41.789Z
   - AI Native 模块发布：提供 AI 原生的 IDE 交互体验
   - 通信层改造：去除 jsonrpc 协议，使用 fury 压缩后的二进制方式协议提高 IDE 通信性能
   - 插件市场迁移：插件市场由阿里云迁移至支付宝小程序云，提供更稳定的服务
+
+
+- [Announcing Supermaven 1.0 _202407](https://supermaven.com/blog/announcing-supermaven-1.0)
+  - Four months ago, we launched Supermaven with the goal of creating the fastest and most context-aware copilot
+  - recently we added in-editor chat, our most requested feature, which lets you use models like GPT-4o and Claude 3.5 Sonnet to write code in your editor
+  - Today, we're announcing the most significant update yet to our inline completions. We've trained Babble, a new model, which is 2.5x larger than our previous model and expands its context window from 300,000 to 1 million tokens.
+  - Supermaven Pro users will be able to use its 1 million token context window moving forward
 # more
 
 ## products-ww

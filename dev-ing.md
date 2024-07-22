@@ -328,6 +328,8 @@ betterdiscordctl -i flatpak install
     - ✨ 2个编辑器同一页面协同的示例未完成
     - cursor光标位置经常对不上
   - [x] streaming infinite-list/tree
+
+- [Scrum Poker Online - Free Tool for Planning Poker](https://www.scrumpoker-online.org/en/room/64881797/scrum-poker)
 # dev-07
 - ai相关开发
   - cmd+k 与ai对话
@@ -371,6 +373,11 @@ betterdiscordctl -i flatpak install
   - ai工作时自动打开面板状态
   - 发送readfile指令或切换文件，渲染editor失败
   - `/playground`路由页面不需要知道issue信息
+
+- 时光机
+  - 上下布局diff视图
+  - 播放控制逻辑，op的内容和时机
+  - 回放模式支持编辑，内容和光标选区的变化
 
 ## demo-feedback0714
 
@@ -441,7 +448,7 @@ betterdiscordctl -i flatpak install
   - cde loading
   - 基础交互、首次加载
 
-## 070
+## 072
 
 - dev-log
   - ?
@@ -453,6 +460,21 @@ betterdiscordctl -i flatpak install
 ```JS
 console.log(`接到到PaaS消息：`, name, dao.playgroundInfo.status, dao.dockerStatus, payload)
 ```
+
+## 0722
+
+
+- 需求分解
+  - 游客也是member，游客是member的一种身份
+  - 游客也走clerk用户系统
+
+- dev-log
+  - 修复了跟随模式用户异常的问题
+  - 与后端和agent联调发送issue
+- dev-to
+  - 先修复演示反馈的明显问题
+  - LSP补全
+  - 时光机
 
 ## 0719
 

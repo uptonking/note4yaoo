@@ -43,4 +43,26 @@ modified: 2021-09-30T07:44:05.964Z
   - 如果将 DOCX 扩展名替换为 ZIP，则可以使用任何 zip 压缩软件轻松打开它并查看或更改 XML 文档。
   - DOCX和DOC相比，同样的文件体积更小，对复杂对象的处理也更好
   - Microsoft Word 2007之前的版本不支持打开阅读，在共享文件方面具有劣势，需要安装微软推出的Office兼容性补丁包
+# pdf
+
+## [PDF - Wikipedia](https://en.wikipedia.org/wiki/PDF)
+
+- Portable Document Format (PDF), standardized as ISO 32000, is a file format developed by Adobe in 1992 to present documents, including text formatting and images, in a manner independent of application software, hardware, and operating systems.
+  - Based on the PostScript language, each PDF file encapsulates a complete description of a fixed-layout flat document, including the text, fonts, vector graphics, raster images and other information needed to display it.
+  - PDF was a proprietary format controlled by Adobe until it was released as an open standard on July 1, 2008
+  - A PDF file is often a combination of vector graphics, text, and bitmap graphics. 
+  - In later PDF revisions, a PDF document can also support links (inside document or web page), forms, JavaScript (initially available as a plugin for Acrobat 3.0), or any other types of embedded contents that can be handled using plug-ins.
+  - PostScript is a page description language run in an interpreter to generate an image.
+    - PDF is a subset of PostScript, simplified to remove such control flow features, while graphics commands remain.
+- A PDF file is organized using ASCII characters, except for certain elements that may have binary content. The file starts with a header containing a magic number (as a readable string) and the version of the format, for example %PDF-1.7. 
+- There are two layouts to the PDF files: non-linearized (not "optimized") and linearized ("optimized"). 
+
+## [The Structure of a PDF File. Introduction | by Jay Berkenbilt | Medium](https://medium.com/@jberkenbilt/the-structure-of-a-pdf-file-6f08114a58f6)
+
+- A PDF file is an indexed collection of objects. A PDF object is a chunk of structured data
+  - A PDF file consists of a header, a bunch of object definitions, a cross-reference table, and a trailer. The cross-reference table is a lookup-table that provides the location of each numbered object as a byte offset within the file. The trailer provides information about the root object, or document catalog, which is the starting point for interpreting the PDF file. At the end of the file, there is a byte offset to the cross reference table.
+
+- a PDF file must be seekable — that is, the reader must be able to read a portion of the file starting from a given byte offset into the file. The PDF file format is designed such that you can immediately display the part of the file you’re interested in without having to read the parts you’re not interested. This is one of the most important goals of the PDF format.
+
+- When a PDF viewer interprets a PDF file, it starts by going to the end of the file. The last thing in the PDF file is the byte offset to the cross-reference table. The cross-reference table contains the location in the file of each object along with the trailer dictionary
 # ref

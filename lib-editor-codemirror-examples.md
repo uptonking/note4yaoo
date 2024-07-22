@@ -277,6 +277,8 @@ modified: 2023-06-23T12:46:53.288Z
   - VizHub 3
     - possible to self-host your own instance
     - possible to extend the core with plugins
+  - https://github.com/vizhub-core/codemirror-6-experiments /MIT/201811/js
+    - [Codemirror 6 Experiments _201811](https://currankelleher.medium.com/codemirror-6-experiments-a3930bf03781)
 
 - https://github.com/prevwong/reka.js /437Star/MIT/202404/ts/yjs/暂未用在craft
   - https://reka.js.org/
@@ -702,6 +704,7 @@ modified: 2023-06-23T12:46:53.288Z
   - Real-time collaboration plugin for CodeMirror 6.
   - Overhauled in May 2022 to work with the latest CodeMirror 6 APIs and JSON1. A fully functioning collaborative editor that leverages this library can be found in VZCode.
   - At its core this library is a translator between Operational Transformation and CodeMirror 6. This is one piece of the puzzle for enabling real-time collaboration on text documents using CodeMirror and ShareDB.
+  - 依赖sharedb、ot-json1
 
 - https://github.com/qwikcollab/qwikcollab /202306/ts/inactive
   - https://qwikcollab.netlify.app/
@@ -1026,7 +1029,8 @@ modified: 2023-06-23T12:46:53.288Z
   - https://github.com/BurningTreeC/tiddlywiki-codemirror-6 /202403/js
     - https://burningtreec.github.io/tiddlywiki-codemirror-6/
     - The plugin adds the CodeMirror 6 editor to TiddlyWiki
-  - https://github.com/oeyoews/tiddlywiki-codemirror6
+  - https://github.com/oeyoews/tiddlywiki-codemirror6 /MIT/202407/ts
+    - The tiddlywiki-codemirror-6 plugin has entered maintenance status
 
 - https://github.com/BrianHung/tldraw-yjs /202402/ts
   - https://canvas-yjs.vercel.app/

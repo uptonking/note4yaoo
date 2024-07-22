@@ -26,9 +26,10 @@ modified: 2024-05-02T02:00:47.318Z
 
 - The library handles updates in a way inspired by approaches like Redux or Elm. 
   - With a few exceptions (like composition and drag-drop handling), the state of the view is entirely determined by the `EditorState` value in its `state` property.
-- Changes to that state happen in functional code, by creating a transaction that describes the changes to document, selection, or other state fields. 
+- 💡 Changes to that state happen in functional code, by creating a transaction that describes the changes to document, selection, or other state fields. 
   - Such a transaction can then be dispatched, which tells the view to update its state, at which point it'll synchronize its DOM representation with the new state.
 - The data flow during typical user interaction looks something like this:
+  - ⛓️ event -> transaction -> newState -> newView
   - The view listens for events. When DOM events come in, it (or a command bound to a key, or an event handler registered by an extension) translates them into state transactions and dispatches them. This builds up a new state. When that new state is given to the view, it'll update itself.
 
 - Since the core library is rather minimal and generic, a lot of functionality is implemented in system extensions. 

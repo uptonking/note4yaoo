@@ -21,6 +21,7 @@ modified: 2023-02-05T19:03:12.722Z
   - view层与react绑定
   - 不支持 selective undo
   - 未提供comment示例
+  - 替换内容使用赋值`editor.children=[]`，不够functional
 
 - features
   - First-class plugins

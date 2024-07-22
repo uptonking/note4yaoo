@@ -16,7 +16,7 @@ modified: 2023-01-29T10:52:44.183Z
 
 - ## 
 
-- ## n his #BOBkonf2023 talk "State Transitions in Complex Systems", @MarijnJH shows how CodeMirror uses persistent state values & first-class transactions to more easily keep all the interdependent data involved in a full-featured editor coherent.
+- ## 👷 In his #BOBkonf2023 talk "State Transitions in Complex Systems", @MarijnJH shows how CodeMirror uses persistent state values & first-class transactions to more easily keep all the interdependent data involved in a full-featured editor coherent.
 - https://x.com/BOBKonf/status/1613845939361398784
   - [BOB - State Transitions in Complex Systems](https://bobkonf.de/2023/haverbeke.html)
 
@@ -30,7 +30,7 @@ modified: 2023-01-29T10:52:44.183Z
   - 综上，我准备先试试hightlight.js API，这个验证起来最快，效果不太满意的话，再试试google的magika，如果还是不满意，再走AI思路
 - 我记得 codemirror v6 是有自动检测编程语言这个功能的。大致原理通过关键字判断。
 
-- ## 🤔 [CodeMirror 6: Web-Worker-isolated state? _202012](https://discuss.codemirror.net/t/codemirror-6-web-worker-isolated-state/2788)
+- ## 🤔🫧 [CodeMirror 6: Web-Worker-isolated state? _202012](https://discuss.codemirror.net/t/codemirror-6-web-worker-isolated-state/2788)
 - Considering V6’s singleton and isolated state, I think it’s possible to ‘decouple’ the EditorView instance from it’s state and instead dispatch updates through some asynchronous helper functions. 
   - I wish to do this because, well, it’s fun, and also because I’m doing some fairly heavy lifting on the DOM on the main thread (very, very fast Markdown live-preview, which itself is already heavily web-workerized and asynchronous) and I would like to isolate the potentially parse-heavy operations into a web-worker.
   - I know that monaco-editor already does this, so it would be a ‘competitive’ feature to have or have easily supported.
@@ -309,7 +309,57 @@ modified: 2023-01-29T10:52:44.183Z
 - https://x.com/algo_diver/status/1769614261616251150
   - I tried to add colors and animations, and I also tried to guide on the structure of the presentation
 
+# discuss-chinese-input-method
+- ## 
+
+- ## 
+
+- ## [Replace chinese character with other input, someting strange _202405](https://discuss.codemirror.net/t/replace-chinese-character-with-other-input-someting-strange/8265)
+- I suspect the Chinese input method uses composition 1 in this case. Unfortunately, browsers do odd buggy things if you interfere with the text around the cursor during composition, including duplicating text.
+  - Your options are to not respond to composition-based input (for example by checking tr.isUserEvent("input.type.compose")), or to set things so that the replacement happens after composition finishes (in a view plugin listening to compositionend events).
+
+- ## 🐛 [codemirror/view 6.28.2 version will cause abnormal input of Chinese input method _202406](https://github.com/codemirror/dev/issues/1396)
+- 
+- 
+
+- [Mac OS native chinese IME, prompt pos not right _202407](https://github.com/codemirror/dev/issues/1409)
+  - This is a Chrome issue, which I've already reported here, but so far no competent person seems to have picked it up. Sometimes multiple pressing the +1 button on that issue page (might require logging in) helps getting attention to it.
+
+- [EditContext displays the IME interface in the wrong place for IME at the start of a line [351029417] - Chromium](https://issues.chromium.org/issues/351029417)
+# discuss-emoji
+- ## 
+
+- ## [Backspace on some multi-codepoint glyphs deletes characters separately - v6 - discuss. CodeMirror _202311](https://discuss.codemirror.net/t/backspace-on-some-multi-codepoint-glyphs-deletes-characters-separately/7403)
+  - Left and right arrow keys move around multi-codepoint glyphs, such as :arrow_left: and :running_woman:t2:, atomically. Forward delete similarly works on the glyphs atomically.
+  - However, pressing backspace after these multi-codepoint glyphs seems to delete the characters separately. Is the latter behavior controlled by CM itself, and if so, is it intended?
+
+- This is intentional behavior and matches how many editors (for example Firefox’s native edit controls and VS Code) behave.
+
+- 
+- 
+- 
+
+- ## [For some emojis, it takes 2 keystrokes to delete - Bug graveyard - Obsidian Forum _202206](https://forum.obsidian.md/t/for-some-emojis-it-takes-2-keystrokes-to-delete/39500)
+- Obsidian does not seem to handle combining codepoints like these well. Instead, it treats these as two individual grapheme clusters, meaning that text editing gives them separate boundaries. But really they should have a single combined boundary
+
+- [backspace on Emoji does not remove whole grapheme cluster _202106](https://github.com/codemirror/dev/issues/516)
+  - This was intentional behavior, but on closer look it indeed seems that other editors don't work like that, so attached patch drops it.
+
+- ## [Some emoji don't show up as emoji, but instead unicode alternates _202206](https://github.com/codemirror/dev/issues/883)
+- That seems to be your browser's native rendering of those—at least, in Firefox and Chrome on Linux, I'm seeing the same — putting "\u26a0 \u{1f631}" in HTML causes the browser to render the first as a monochrome glyph, and the second as a colored emoji (unless I add a \ufe0f after the warning character). So this is expected behavior, as far as I'm concerned.
+  - It'd be possible to write a plugin similar to highlightSpecialChars that replaces anything that looks like an Emoji without a variant selector with an Emoji that has a color variant selector, if that's what you want to do.
+
+- ## [Markdown emoji previewing - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/markdown-emoji-previewing/5186)
+- Yes that can be implemented via “replacing decorations”, see Example: Decorations 
+
+- ## [Challenges on implementing operational transformation server in Golang due to javascript unicode string length - v6 - discuss. CodeMirror _202210](https://discuss.codemirror.net/t/challenges-on-implementing-operational-transformation-server-in-golang-due-to-javascript-unicode-string-length/5124)
+  - Everything works pretty well when Golang server implements codemirror/state text.ts in Go language and uses utf8. RuneCountInString, which counts how many characters there are in a string.
+  - ‘:+1:’.length is 2 and that doesn’t any longer match with rune length in Go that is 1 and applying ChangeSet fails.
+- CodeMirror intentionally uses UTF16 code point counts throughout, in order to be able to use String.length. If you are using another convention in the OT system, you’ll have to make sure you convert to and from that when going between CodeMirror and that system. Forking @codemirror/state is not going to be needed.
+
 # discuss
+- ## 
+
 - ## 
 
 - ## 
