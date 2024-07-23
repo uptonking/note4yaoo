@@ -353,6 +353,7 @@ betterdiscordctl -i flatpak install
 
 - not-yet
   - 私有项目的导入
+  - 如何在一个store里面使用另一个store的值
 
 - 前端提供agent相关事件
   - 让agent获取issue相关信息
@@ -360,17 +361,15 @@ betterdiscordctl -i flatpak install
 
 - 跟随模式
   - followUser时会自动打开console面板
+  - ai工作时自动打开面板状态
   - ai头像的位置顺序
   - cde页面无法区分自己和其他用户
   - 同一个用户在不同浏览器打开同一个playground的cde时，用户头像显示几个
-  - agent是每个用户一个，还是每个playground一个
-    - 目前是一个playground一个agent
   - 文件树 keydown事件传到了编辑器
   - 浏览器panel滚动禁用
   - 修复文件树无法创建文件和文件夹的问题
   - 测试跟随ai
   - 刷新完页面恢复面板显示隐藏状态
-  - ai工作时自动打开面板状态
   - 发送readfile指令或切换文件，渲染editor失败
   - `/playground`路由页面不需要知道issue信息
 
@@ -379,7 +378,54 @@ betterdiscordctl -i flatpak install
   - 播放控制逻辑，op的内容和时机
   - 回放模式支持编辑，内容和光标选区的变化
 
-## demo-feedback0714
+## 072
+
+- dev-log
+  - ?
+- dev-to
+  - ?
+
+ 
+
+```JS
+console.log(`接到到PaaS消息：`, name, dao.playgroundInfo.status, dao.dockerStatus, payload)
+```
+
+## 0723
+
+- [How to remove all duplicates from an array of objects? - Stack Overflow](https://stackoverflow.com/questions/2218999/how-to-remove-all-duplicates-from-an-array-of-objects)
+  - One liners with filter() (Preserves order)
+  - myArr.filter((obj1, i, arr) => arr.findIndex(obj2 => (obj2.id === obj1.id)) === i )
+
+- [What would be the Unicode character for big bullet in the middle of the character? - Stack Overflow](https://stackoverflow.com/questions/12971187/what-would-be-the-unicode-character-for-big-bullet-in-the-middle-of-the-characte)
+  - You can use a span/div with 50% border radius. I like this solution, slower but you can control position and size or color more directly.
+  - 考虑a11y
+
+- dev-log
+  - 研发任务分解
+  - 跟随模式的样式优化
+- dev-to
+  - ai执行shell时，自动打开面板
+  - ai邀请
+
+## 0722
+
+- 需求分解
+  - 游客也是member，游客是member的一种身份
+  - 游客也走clerk用户系统
+
+- agent是每个用户一个，还是每个playground一个
+  - 目前是一个playground一个agent
+
+- dev-log
+  - 修复了跟随模式用户异常的问题
+  - 与后端和agent联调发送issue
+- dev-to
+  - 先修复演示反馈的明显问题
+  - LSP补全
+  - 时光机
+
+### demo-feedback0714
 
 - 操作流程：
   0001. 访问官网
@@ -411,7 +457,7 @@ betterdiscordctl -i flatpak install
   0017. diff
   0018. command + K
 
-## 公测就绪条件（草稿）
+### 公测就绪条件（草稿）
 
 - 产品故事就绪范围
   - [ ] 连接并获取 issue 详情
@@ -447,34 +493,6 @@ betterdiscordctl -i flatpak install
   - 快捷键
   - cde loading
   - 基础交互、首次加载
-
-## 072
-
-- dev-log
-  - ?
-- dev-to
-  - ?
-
- 
-
-```JS
-console.log(`接到到PaaS消息：`, name, dao.playgroundInfo.status, dao.dockerStatus, payload)
-```
-
-## 0722
-
-
-- 需求分解
-  - 游客也是member，游客是member的一种身份
-  - 游客也走clerk用户系统
-
-- dev-log
-  - 修复了跟随模式用户异常的问题
-  - 与后端和agent联调发送issue
-- dev-to
-  - 先修复演示反馈的明显问题
-  - LSP补全
-  - 时光机
 
 ## 0719
 

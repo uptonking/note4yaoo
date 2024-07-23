@@ -107,6 +107,9 @@ modified: 2024-05-06T02:54:40.374Z
 - collab
   - 在有用户上下线时会全量广播当前协作的所有用户信息，存在数据量大且频次高的问题
 
+- 跟随模式，假设用户A正在跟随用户B
+  - 用户A自己切换文件时，头像仍停留在用户B的文件
+
 - 
 - 
 - 
@@ -1727,7 +1730,7 @@ const playbackInfo = [
 ### not-yet
 
 - questions
-  - /ide路由的 CloudIDEPage组件没有在react-devtools显示出来
+  - /ide路由的 CloudIDEPage组件没有在react-devtools显示出来, 因为懒加载？ 
 
 - 前端项目在打开ide时没有实现运行预览，需要手动点击运行
 
@@ -1740,7 +1743,7 @@ const playbackInfo = [
 - `1024code` 注册时要先点击发送验证码，然后在验证码输入框填入6个0就可以注册成功
   - 邀请码测试: hs8MQf, Ukycbf
   - 测试用户是 155572695015和八个一
-  - node版本不支持v22，暂时使用v20
+  - ⚠️ node版本不支持v22，暂时使用v20
   - 编译构建时可通过修改repo文件夹名来避免使用turborepo的cache
 
 ### codebase
