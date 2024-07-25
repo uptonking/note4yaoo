@@ -255,7 +255,7 @@ modified: 2024-05-06T02:54:40.374Z
 - 三层editor结构
   - LazyEditor: 注册socket事件
   - CodeEditor: 计算content, 准备extensions， LSP
-  - CodeMirrorEditor: 初始化codemirror, 设置menu
+  - CodeMirrorEditor: 初始化codemirror, 设置menu, 不关心filePath
 
 - CodeEditor 编辑器初始化时计算配置和插件，注册外部事件
   - CodeMirrorEditor(useCodeMirror) 编辑器初始化时注册各类菜单事件

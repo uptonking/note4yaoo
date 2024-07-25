@@ -391,6 +391,15 @@ betterdiscordctl -i flatpak install
 console.log(`接到到PaaS消息：`, name, dao.playgroundInfo.status, dao.dockerStatus, payload)
 ```
 
+·
+## 0724
+
+- dev-log
+  - 尝试修复跟随模式下切换文件渲染编辑器异常的问题
+- dev-to
+  - 继续修复这个问题
+  - ai邀请跟随
+
 ## 0723
 
 - [How to remove all duplicates from an array of objects? - Stack Overflow](https://stackoverflow.com/questions/2218999/how-to-remove-all-duplicates-from-an-array-of-objects)
