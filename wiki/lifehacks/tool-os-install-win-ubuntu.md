@@ -463,7 +463,7 @@ sudo apt install -y  sqlite3 libsqlite3-dev sqlitebrowser
 
 - windows update很容易卡住不动
   - 可以点击暂停到7天后更新，然后立即取消暂停，如果顺利就会立即检查并下载更新
-# macos 💡
+# macos 🍎
 
 ## guide
 
@@ -497,6 +497,8 @@ sudo apt install -y  sqlite3 libsqlite3-dev sqlitebrowser
   - https://github.com/Ji4n1ng/OpenInTerminal
   - https://github.com/Ji4n1ng/OpenInTerminal/blob/master/Resources/README-Lite.md
   - On your Mac, open a Finder window, then navigate to the folder you want to use. If you don't see the path bar at the bottom of the Finder window, choose View > Show Path Bar. Control-click the folder in the path bar, then do one of the following. Open a new window: Choose Open in Terminal
+  - brew install --cask openinterminal-lite
+  - brew install --cask openineditor-lite
   - [How can I open a Terminal window directly from my current Finder location? - Ask Different](https://apple.stackexchange.com/questions/11323/how-can-i-open-a-terminal-window-directly-from-my-current-finder-location)
 
 ## software
@@ -506,10 +508,10 @@ sudo apt install -y  sqlite3 libsqlite3-dev sqlitebrowser
   - 前进后退 
 
 - safari
-  - 打开devtools，用 cmd+option+C
+  - 打开devtools, cmd+option+C
 
 - chrome
-  - 打开devtools cmd+option+i
+  - 打开devtools, cmd+option+i
 
 - vscode
   - [Visual Studio Code Tips and Tricks](https://code.visualstudio.com/docs/getstarted/tips-and-tricks)
@@ -520,5 +522,6 @@ sudo apt install -y  sqlite3 libsqlite3-dev sqlitebrowser
 - clementine
   - [MP3 support on Mac? _202205](https://github.com/clementine-player/Clementine/issues/7173)
   - 记录last.fm需要创建文件夹 /Users/yaoo/Library/Application Support/Last.fm
+  - [Release 1.4.0rc1-777-g24a766d0e _202201 · clementine-player/Clementine](https://github.com/clementine-player/Clementine/releases/tag/1.4.0rc1-777-g24a766d0e)
 
 ## more-macos

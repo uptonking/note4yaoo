@@ -540,8 +540,6 @@ CPU主频	2.3GHz
   - shift+cmd+[
   - shift+cmd+←：显示上一个标签页，其中箭头对空tab无效。
 
-- 定位到地址栏： cmd + L
-
 ### vscode
 
 - 跳转到定义
