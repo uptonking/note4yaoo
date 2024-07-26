@@ -377,6 +377,7 @@ betterdiscordctl -i flatpak install
   - 上下布局diff视图
   - 播放控制逻辑，op的内容和时机
   - 回放模式支持编辑，内容和光标选区的变化
+  - changed-files-list
 
 ## 072
 
@@ -396,8 +397,8 @@ console.log(`接到到PaaS消息：`, name, dao.playgroundInfo.status, dao.docke
 - diff数据流
   - agent > ideServer > paas-sdk > fe
   - diff接口: 输入新的全文，渲染上下格式的diff视图
-## 0725
 
+## 0725
 
 - [npm run build is failing due to typescript or lodash uncompatibility - Stack Overflow](https://stackoverflow.com/questions/78682996/npm-run-build-is-failing-due-to-typescript-or-lodash-uncompatibility)
 

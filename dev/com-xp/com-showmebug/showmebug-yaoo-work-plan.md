@@ -23,7 +23,6 @@ modified: 2024-05-06T02:54:40.374Z
 
 - work-xp-pros
   - 产研团队的对齐非常充分
-  - ~~研发进度给了开发者较多空间~~
 - work-xp-cons
   - 单人项目太多了，维护困难，比如paas和1024code，浪费了很多研发资源
   - 研发流程cicd，lint、pr流程不完整
@@ -303,7 +302,7 @@ useEffect(() => {
 
 - roadmap
   - 回放时~~不支持浏览器预览面板~~, showMeBug中基于rrweb实现浏览器预览面板的回放
-  - 操作op很多时，回放性能差。 考虑snapshot
+  - 若操作op很多，则回放性能差。 考虑snapshot
   - 支持多次编辑的snapshot数据? 多个task?
 
 - 临时方案/待优化
@@ -1694,6 +1693,20 @@ const playbackInfo = [
 
 - 切换文件时
   - 会收到 ["selectedUpdated", {"mapSelection":{}, "path":"bs-config.js"}]
+
+- 
+- 
+- 
+
+### codebase-ide-server
+
+- paas-sdk-client通过manager动态获取到ide-server的url，不是固定的
+  - manager负责docker容器的管理和分配
+
+- 什么时候用本地ide-server
+  - 本地ide-server启动时会向manager注册id/code，manager收到sdk请求ide-server的url时，会检查code，若存在则返回本地ide-server连接ws://localhost:3012，否则返回线上ide-server连接
+- 录制用户操作，什么时候开始
+  - 整个playground的期间
 
 - 
 - 

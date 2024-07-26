@@ -505,7 +505,8 @@ sudo apt install -y  sqlite3 libsqlite3-dev sqlitebrowser
 
 - fileExplorer/finder
   - cmd+双击，在新标签页打开相同文件夹
-  - 前进后退 
+  - 前进后退
+  - Add a file to the sidebar: Press and hold the Command key, then drag the file to the Favorites section.
 
 - safari
   - 打开devtools, cmd+option+C
@@ -521,7 +522,8 @@ sudo apt install -y  sqlite3 libsqlite3-dev sqlitebrowser
 
 - clementine
   - [MP3 support on Mac? _202205](https://github.com/clementine-player/Clementine/issues/7173)
-  - 记录last.fm需要创建文件夹 /Users/yaoo/Library/Application Support/Last.fm
-  - [Release 1.4.0rc1-777-g24a766d0e _202201 · clementine-player/Clementine](https://github.com/clementine-player/Clementine/releases/tag/1.4.0rc1-777-g24a766d0e)
+    - [Release 1.4.0rc1-777-g24a766d0e _202201 · clementine-player/Clementine](https://github.com/clementine-player/Clementine/releases/tag/1.4.0rc1-777-g24a766d0e)
+  - [last.fm plugin not submitting scrobbles when track has finished](https://github.com/clementine-player/Clementine/issues/6829)
+    - 记录last.fm需要创建文件夹,注意文件名中的空格 /Users/yaoo/Library/Application\ Support/Last.fm
 
 ## more-macos
