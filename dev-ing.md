@@ -391,7 +391,20 @@ betterdiscordctl -i flatpak install
 console.log(`接到到PaaS消息：`, name, dao.playgroundInfo.status, dao.dockerStatus, payload)
 ```
 
-·
+## 0725
+
+
+- [npm run build is failing due to typescript or lodash uncompatibility - Stack Overflow](https://stackoverflow.com/questions/78682996/npm-run-build-is-failing-due-to-typescript-or-lodash-uncompatibility)
+
+- 是否要发布新的单独的npm包，还是沿用旧的包名增加版本号
+- 什么操作逻辑会持久化到mongodb
+
+- dev-log
+  - 修复了跟随模式下切换文件渲染编辑器异常的问题
+- dev-to
+  - 迁移paas-sdk到单独的仓库
+  - 梳理时光机和diff视图的实现细节，明天和产品确认业务细节
+
 ## 0724
 
 - dev-log

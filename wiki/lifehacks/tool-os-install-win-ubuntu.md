@@ -476,7 +476,7 @@ sudo apt install -y  sqlite3 libsqlite3-dev sqlitebrowser
 - 在 settings 关闭 开机声音
 
 - mac-apps-loved
-  - pkg-manager: homebrew
+  - pkg-manager: [Homebrew/Linuxbrew 镜像使用帮助](https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/)
   - appstore: localsend
 
 - brew install

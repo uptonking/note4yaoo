@@ -189,6 +189,7 @@ modified: 2024-05-06T02:54:40.374Z
 ### dev-xp
 
 - `d42paas_frontend` 项目启动记录
+  - pnpm的版本必须是v9，不能是v8
   - cp .env.local.example .env, 可不修改任何配置，但修改配置中queue的名字可方便调试
   - cd packages/demo; pnpm dev
   - cd packages/server; pnpm dev
