@@ -152,18 +152,6 @@ modified: 2021-07-20T13:50:23.433Z
   - templates
   - es search-ui experience, algolia-docsearch/autocomplete
 
-- 多文件的app, 或多或少有点类似知识库
-  - 可以参考给普通数据库表添加crdt支持的场景
-- version-history
-  - 不仅是文档级别的history，还支持项目级别的history，采用branch+merge策略
-- collab-framework
-  - 所有的操作可由用户执行，也可由ai执行
-
-- high-availability / horizontal-scaling
-  - strapi, nocobase
-  - fwk: nestjs, feathers-sync
-  - manual: zulip
-
 - byproduct-apps
   - live/reactive-notebook
     - cell-style/nonlinear; reproducible/computational; math
@@ -179,6 +167,26 @@ modified: 2021-07-20T13:50:23.433Z
 
 - to-try
   - kibana for meilisearch
+# collab
+- 多文件的app, 或多或少有点类似知识库
+  - 可以参考给普通数据库表添加crdt支持的场景
+
+- version-history
+  - 不仅是文档级别的history，还支持项目级别的history，采用branch+merge策略
+
+- collab-framework
+  - 所有的操作可由用户执行，也可由ai执行
+
+- high-availability / horizontal-scaling
+  - yjs-hocuspocus, y-redis, fluid-routerlicious 🤔 使用websocket通信是错误的架构
+  - strapi, nocobase
+  - fwk: nestjs, feathers-sync
+  - manual: zulip
+
+- 协同类产品要考虑数据和配置是否都要同步的问题
+  - 表格的过滤条件
+  - 回放操作的进度
+  - 搜索
 # editor
 - tips
   - live edit
@@ -215,11 +223,6 @@ modified: 2021-07-20T13:50:23.433Z
   - x-spreadsheet
   - tabulator 
   - frappe-datatable /frappe
-# collab
-- 协同类产品要考虑数据和配置是否都要同步的问题
-  - 表格的过滤条件
-  - 回放操作的进度
-  - 搜索
 # creators
 - marijn /prosemirror/codemirror
   - forum

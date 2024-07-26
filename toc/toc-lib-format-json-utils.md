@@ -76,6 +76,10 @@ modified: 2022-11-06T15:45:36.913Z
 - https://github.com/TexteaInc/json-viewer
   - a React component for displaying and editing JavaScript/TypeScript arrays and JSON objects.
   - https://github.com/mac-s-g/react-json-view
+- https://github.com/HuolalaTech/react-json-view /MIT/202407/ts
+  - https://huolalatech.github.io/react-json-view/
+  - a react component for displaying serializable data
+  - 特别适合控制台打印json的场景
 
 - https://github.com/blitlabs/online-json-diff
   - https://json-diff.com/

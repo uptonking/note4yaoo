@@ -121,7 +121,9 @@ modified: 2024-05-12T17:20:03.132Z
 # discuss-runtime-vm
 - ## 
 
-- ## 
+- ## 浏览器中运行的 Linux 虚拟机环境 https://webvm.io
+- https://x.com/geekbb/status/1816265787113627786
+  - 通过 HTML5 和 WebAssembly 技术实现客户端执行 x86 二进制文件，支持网络功能，并提供了部署和定制的指南。
 
 - ## [csb: We clone a running VM in 2 seconds | Hacker News _202312](https://news.ycombinator.com/item?id=38651805)
 - Firecracker is the same VM technology used by Fly.io although they don’t have memory cloning as seen here. 

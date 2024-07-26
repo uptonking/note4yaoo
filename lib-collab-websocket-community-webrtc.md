@@ -183,7 +183,7 @@ modified: 2023-12-12T08:45:31.670Z
 - ## [Socket.io-client on recieving event running useEffect two times - Stack Overflow](https://stackoverflow.com/questions/75250544/socket-io-client-on-recieving-event-running-useeffect-two-times)
 - the problem is that you are removing the wrong listener--you have to pass the exact same function that you want to remove (because you can have two listeners on an event). 
 
-- ## [address horizontal scalability in documentation · Issue · ueberdosis/hocuspocus _202304](https://github.com/ueberdosis/hocuspocus/issues/575)
+- ## 🌰 [address horizontal scalability in documentation · Issue · ueberdosis/hocuspocus _202304](https://github.com/ueberdosis/hocuspocus/issues/575)
 - It's not clear to me the guarantees hocuspocus tries to achieve around horizontal scaling. #178 and #279 both talk about horizontal scaling, but I'm hoping for something explicit in the code that yes, hocuspocus supports multiple instances behind a load balancer, if all features (eg stateless messaging) are expected to work, etc. I think the answer is yes, but I'd love more explicit confirmation somewhere!
 - [Redis Scaling  · ueberdosis/hocuspocus](https://github.com/ueberdosis/hocuspocus/issues/178)
 
@@ -230,7 +230,7 @@ modified: 2023-12-12T08:45:31.670Z
 - 
 - 
 
-- ## [Millions of active WebSockets with Node.js | Hacker News _202302](https://news.ycombinator.com/item?id=34876935)
+- ## 💥 [Millions of active WebSockets with Node.js | Hacker News _202302](https://news.ycombinator.com/item?id=34876935)
 - > The theoretical limit is 65k connections per IP address but the actual limit is often more like 20k, so we use multiple addresses to connect 20k to each (50 * 20k = 1 mil).
   - The 65k limit is because of the port limit. WebSocket is using the “trick” of opening a port without answering before the server have any news to give, this way the messages are more push-like.
 

@@ -180,6 +180,20 @@ modified: 2023-11-24T18:41:26.906Z
 
 ## play-pause
 
+- https://github.com/HuolalaTech/page-spy-web /MIT/202407/ts
+  - https://www.pagespy.org/
+  - Debug remotely and easily like chrome devtools
+  - PageSpy 是一款兼容 Web / 小程序 / React Native / 鸿蒙 App 等平台项目的开源调试平台
+  - 基于对原生 API 的封装，它将调用原生方法时的参数进行过滤、转化，整理成格式规范的消息供调试端消费；调试端收到消息数据，提供类控制台可交互式的功能界面将数据呈现出来。
+  - 任何无法在本地使用控制台调试的场景，都是 PageSpy 可以大显身手的时候
+  - 用于连接客户端和调试端、并转发两端之间消息的服务是 PageSpy 的核心能力之一。
+  - 在 1.7.3 版本中提供了离线日志回放, DataHarborPlugin 本身只收集数据、提供数据处理的功能，PageSpy 另外还提供了 RRWebPlugin: 使用 rrweb 记录 DOM 更新，在调试端的「日志回放」面板左侧用户可以看到页面的操作轨迹；
+  - 插件实现案例 参考 DataHarborPlugin 和 RRWebPlugin
+  - https://github.com/HuolalaTech/page-spy-api
+    - backend service for HuolalaTech/page-spy-web, which includes static resource serving, HTTP service, and WebSocket service.
+  - https://github.com/HuolalaTech/page-spy
+    - SDKs for PageSpy
+    - SDKs collects information and HuolalaTech/page-spy-web consumes and filters, organizes, and converts information into a standardized format, which is then showed on the page.
 # gantt
 - https://github.com/guiqui/react-timeline-gantt /202112/js
   - https://guiqui.github.io/react-timeline-gantt/index.html

@@ -29,7 +29,7 @@ modified: 2022-11-25T15:50:48.226Z
   - An in memory postgres DB instance for your unit tests
   - It works both in Node or in the browser.
   - 依赖immutable.v4、functional-red-black-tree、json-stable-stringify、lru-cache、moment、pgsql-ast-parser、@mikro-orm/core~pg
-  - adapter支持pg-native,node-postgres,knex,typeorm
+  - adapter支持pg-native, node-postgres, knex, typeorm
   - The sql syntax parser is home-made. Which means that some features are not implemented, and will be considered as invalid syntaxes.
   - limitations
     - Materialized views are implemented as views (meaning that they are always up-to-date, without needing them to refresh)
@@ -369,6 +369,14 @@ modified: 2022-11-25T15:50:48.226Z
     - Its a real DB! Here it's using a local minio instance. Might try backblaze next.
     - Oh I have to expose the ETag header in the CORS config thats improved things to 400ms sometimes but I still have too many preflight requests
     - The sync protocol was designed using object versioning so that the logical names intuitively map to storage names, but then I realised R2, my favourite s3-like doesn't do versions. So now I had to redo it with timestamped suffixes. Total redesign with tricky clock skew defenses
+
+- https://github.com/akirarika/creamdb /202406/ts
+  - CreamDB 是一个轻量级的客户端 "数据库"，可以运行在任何能够运行 JavaScript 的地方。
+  - 它是为包括 Electron、VS Code Extension、React Native、Capacitor、Taro、MiniProgram 等环境而设计的
+  - 基于内存的，这意味着它很快，但同时也不适合海量的数据的用例
+  - CreamDB 会在持续 256 毫秒都没有新的数据更改时，将数据从内存中持久化到硬盘中
+  - CreamDB 假设你只有一个 "标签页"。当你同时打开多个"标签页"时，CreamDB 。这意味着，如果你使用 Electron 时，需要限制用户只能打开一个进程，且你的 CreamDB 位于主进程中
+  - 如果你需要处理多"标签页"间数据同步的情况，这种情况下，RxDB 是一个更好的选择，CreamDB 创作的初衷，是因为 RxDB 使用起来较为繁琐，并且，目前 RxDB 不支持 React Native、Capacitor、Taro、MiniProgram 等环境。
 # db-json
 - https://github.com/datopian/markdowndb /MIT/202401/ts/sqlite
   - https://markdowndb.com/

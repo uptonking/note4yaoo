@@ -167,8 +167,31 @@ modified: 2022-04-05T13:25:40.892Z
   - Walltime still comes in handy a surprising amount of cases.
 - Lol. Reminded me of spanner and true time
 
-- ## [Supabase – Realtime: Multiplayer Edition | Hacker News](https://news.ycombinator.com/item?id=32510405)
-- after thinking it through, I'm not clear on what Supabase is calling multiplayer.
+- ## [Supabase – Realtime: Multiplayer Edition | Hacker News _202208](https://news.ycombinator.com/ithttps://news.ycombinator.com/item?id=32510405em?id=32510405)
+- supabase ceo here
+  - Realtime is built with Elixir and Phoenix
+  - We've moved to a single, global cluster - We're using Phoenix. Tracker to globally distribute the Erlang PIDs of all of our Postgres connections. This guarantees there is only a single connection to each database.
+
+- For a collaborative text editor, you need two things: (1) a full-stack system that maintains a running list of data events such that everyone sees everyone else's events eventually, and (2) frontend code that adapts that set of events, along with your text cursor position and current changes, into a cohesive view of a document at any moment in time.
+  - Supabase and Replicache can absolutely help with (1). But for (2) you will need OT or CRDT.
+
+- Anyone from Supabase here, do you have any plans to build in support for CRDT toolkits such as Yjs or AutoMerge for these features?
+  - It's definitely something we'll support. We'll extend this service so that it works well with WebRTC, and we have a few ideas for making it easy for development.
+
+- > difference between Supabase open-source and the paid versions
+  - Yes, you can self host and everything is open source (including the Dashboard). Everything is either MIT, Apache2, or PostgreSQL licensed.
+  - On the paid version we handle some of additional database management (like daily backups, PITR, etc). These are technically available for self-hosting too, because the database is just a Postgres database, but I point it out here because it's not something you'll get "out of the box" from the Docker setup.
+  - 💰 Our philosophy with open source is "offer everything" and then charge for usage. There aren't any features completely gated. Our Enterprise plan just adds additional SLAs and support packages for our cloud platform.
+
+- What happens over an unreliable network connection such as mobile?
+  - Client will seek to continuously reconnect to the WebSocket when there's a connection issue and server must receive at least one heartbeat in a 60 second window; otherwise it will clean up the WebSocket connection.
+  - We built Supabase Realtime on top of Phoenix Channel, and along with our clients, handles unreliable network connections gracefully, including on mobile.
+
+- Fluid Framework looks interesting. Since it's open source you can either use a cloud service (Azure Fluid Relay) or run it on Kubernetes with Routerlicious
+
+- 
+- 
+- 
 
 - ## Most CRDTs are optimized for text editing which isn't really our primary usecase.
 - https://twitter.com/zack_overflow/status/1603402929586769925

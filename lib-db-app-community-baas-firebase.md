@@ -22,27 +22,14 @@ modified: 2024-01-06T07:02:42.007Z
 
 - ## 
 
-- ## [Supabase – Realtime: Multiplayer Edition | Hacker News_202208](https://news.ycombinator.com/item?id=32510405)
+- ## [Supabase – Realtime: Multiplayer Edition | Hacker News _202208](https://news.ycombinator.com/item?id=32510405)
 - supabase ceo here
   - Realtime is built with Elixir and Phoenix
   - We've moved to a single, global cluster - We're using Phoenix. Tracker to globally distribute the Erlang PIDs of all of our Postgres connections. This guarantees there is only a single connection to each database.
 
-- For a collaborative text editor, you need two things: (1) a full-stack system that maintains a running list of data events such that everyone sees everyone else's events eventually, and (2) frontend code that adapts that set of events, along with your text cursor position and current changes, into a cohesive view of a document at any moment in time.
-  - Supabase and Replicache can absolutely help with (1). But for (2) you will need OT or CRDT.
+- after thinking it through, I'm not clear on what Supabase is calling multiplayer.
 
-- Anyone from Supabase here, do you have any plans to build in support for CRDT toolkits such as Yjs or AutoMerge for these features?
-  - It's definitely something we'll support. We'll extend this service so that it works well with WebRTC, and we have a few ideas for making it easy for development.
-
-- > difference between Supabase open-source and the paid versions
-  - Yes, you can self host and everything is open source (including the Dashboard). Everything is either MIT, Apache2, or PostgreSQL licensed.
-  - On the paid version we handle some of additional database management (like daily backups, PITR, etc). These are technically available for self-hosting too, because the database is just a Postgres database, but I point it out here because it's not something you'll get "out of the box" from the Docker setup.
-  - 💰 Our philosophy with open source is "offer everything" and then charge for usage. There aren't any features completely gated. Our Enterprise plan just adds additional SLAs and support packages for our cloud platform.
-
-- What happens over an unreliable network connection such as mobile?
-  - Client will seek to continuously reconnect to the WebSocket when there's a connection issue and server must receive at least one heartbeat in a 60 second window; otherwise it will clean up the WebSocket connection.
-  - We built Supabase Realtime on top of Phoenix Channel, and along with our clients, handles unreliable network connections gracefully, including on mobile.
-
-- ## [Supabase (YC S20) – An open source Firebase alternative | Hacker News_202005](https://news.ycombinator.com/item?id=23319901)
+- ## [Supabase (YC S20) – An open source Firebase alternative | Hacker News _202005](https://news.ycombinator.com/item?id=23319901)
 - As a Firebase user, I find it invaluable. Their free plan and limits are very generous. The fact they offer not only a database, but authentication, hosting and perhaps one of their biggest features besides authentication: Firebase Functions. 
 
 - I've been using Firebase since 2016 in production and after all these years I find the service quite lacking.

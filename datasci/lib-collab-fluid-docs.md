@@ -163,6 +163,43 @@ modified: 2023-02-11T11:07:05.558Z
   - DDSes are low-level data structures, while Data Objects are composed of DDSes and other shared objects. 
   - Data Objects are used to organize DDSes into semantically meaningful groupings for your scenario, as well as providing an API surface to your app’s data.
 
+## [Routerlicious (MIT License)](https://github.com/microsoft/FluidFramework/blob/main/server/routerlicious/README.md)
+
+- Routerlicious handles the receiving of delta operations and is responsible for the ordering and assignment of a sequence number to them. Once assigned it is also responsible for notifying connected clients of a new sequence number.
+  - This repository splits the code into two separate sections. The core API is contained within src/api. This section contains the core routerlicious code. But stubs out connections to external services behind provided interfaces. This code is shared between clients and services.
+
+- Routerlicious as a whole is a collection of microservices. These microservices are designed to handle a single task and have clear input and output characteristics. Many can be run as serverless lambdas and in fact we have our own lambda framework. 
+  - We chose this path to have greater control over the throughput and latency characteristics of our message processing. But could be also be run with Azure Functions, AWS Lambdas, Fission, etc...
+- Alfred is the entry point to the system. Clients connect to Alfred to join the operation stream. 
+  - Joining the stream allows them to receive push notifications for new operations, retrieve old operations, as well as create new ones. 
+  - We make use of Redis for push notifications. New operations are placed inside of Apache Kafka for processing.
+- Deli retrieves unsequenced messages from Kafka and then attaches a new sequence number to them. 
+  - Sequence numbers are per-document monotonically increasing numbers. Sequenced messages are placed back into Apache Kafka for processing. 
+  - The Deli microservice also runs the Broadcaster lambda that directly put sequenced message into redis so that alfred can listen and broadcast back to the clients.
+- Scriptorium retrieves sequenced messages from Kafka. 
+  - It then writes the message to a database for storage. 
+  - We currently make use of Redis for broadcasting and MongoDB for storage.
+- Scribe is responsible for listening to inbound summary ops and then writing them to the public record in the Historian
+- Historian is in charge of storing document snapshots. 
+  - It itself is a cached proxy to an underlying content-addressable file system represented via the Git REST API. 
+  - Storage providers that implement this interface are then able to plug into the system as a whole. Currently we have support for GitHub and Git.
+
+- Copier directly reads the raw (unticketed) operations and store it in the database. The data can later be retrieved via alfred for testing and verification.
+
+- Git is used to store document snapshots and provide revision history. 
+  - The git storage model maps well to our own stream of delta messages. 
+  - And git semantics as applied to document collaboration provide interesting areas for further exploration (i.e. branching, forking, merging documents).
+  - To view the git stored snapshots simply run `git clone ssh://git@localhost:3022/home/git/fluid/fluid`
+
+- Routerlicious uses a token based authentication model. 
+  - Tenants are registered to routerlicious first and a secret key is generated for each tenant. 
+  - Apps are expected to pass `<secret-key>, <tenant-id>, and <user-info>` as a signed token to routerlicious. 
+  - Tenants are given a symmetric-key beforehand to sign the token.
+
+- 
+- 
+- 
+
 ## [Containers](https://fluidframework.com/docs/build/containers/)
 
 - It allows a group of clients to access the same set of shared objects and co-author changes on those objects. 
@@ -310,7 +347,7 @@ modified: 2023-02-11T11:07:05.558Z
 
 - Optimistic DDSes apply Fluid operations locally before they are sequenced by the Fluid service. 
   - The local changes are said to be applied optimistically in that they are applied before receiving confirmation from the Fluid service, hence the name optimistic DDSes.
-  - Many of the most commonly used DDSes are optimistic, including `SharedMap`,          `SharedSequence`, and `SharedString`.
+  - Many of the most commonly used DDSes are optimistic, including `SharedMap`,             `SharedSequence`, and `SharedString`.
 
 - Consensus-based DDSes are different from optimistic DDSes because they wait for confirmation from the Fluid service before applying operations – even local operations. 
   - These data structures offer additional behavior guarantees and can be used when you need atomicity or synchronous behavior.

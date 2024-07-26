@@ -63,9 +63,11 @@ modified: 2023-09-02T09:17:22.992Z
   - Nodebox is a runtime for executing Node.js modules in the browser
   - we did not fully open-source Nodebox for a variety of reasons
 
-- https://github.com/bplok20010/eval5 /ts
+- https://github.com/bplok20010/eval5 /MIT/202110/ts/inactive
+  - https://bplok20010.github.io/eval5/
   - 基于 TypeScript 编写的 JavaScript 解释器，支持完整 ES5 语法
   - 支持浏览器、node.js、小程序等 JavaScript 运行环境
+  - https://github.com/HuolalaTech/eval5
 
 - https://github.com/sablejs/sablejs /LGPL/202209/js/inactive
   - The safer and faster ECMA5.1 interpreter written by JavaScript
