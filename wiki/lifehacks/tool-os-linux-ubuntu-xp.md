@@ -26,6 +26,7 @@ modified: 2021-01-01T22:26:57.773Z
 
 - window
   - 窗口无法拖拽缩放的原因，可能是自定义themes的cursor不支持，注意要慎用自定义cursor图标
+  - To take a screenshot of the active window in Ubuntu, you can use the keyboard shortcut `Alt + Print`.
 # gnome-extensions
 - [Tray Icons: Reloaded](https://extensions.gnome.org/extension/2890/tray-icons-reloaded/)
   - https://github.com/MartinPL/Tray-Icons-Reloaded
