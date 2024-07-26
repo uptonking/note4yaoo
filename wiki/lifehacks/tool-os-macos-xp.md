@@ -11,6 +11,30 @@ modified: 2023-07-23T07:05:19.441Z
 
 # usage
 
+## devtools
+
+```shell
+
+# git/github
+brew install gnupg
+# passphrase 1123
+
+gpg --armor --export 74CC24A0E78125DD
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+mDMEZqNCsxYJKwYBBAHaRw8BAQdAEYetEWDc8OJtwDY5uG2tGxn1DnvEH/uwY4dr
+cw+Ul0W0Lmppbnlhb28gKGdtYWlsIGZvciB5YW9vKSA8amlueWFvbzg2QGdtYWls
+LmNvbT6IkwQTFgoAOxYhBGp+pD+b7/gpuBnOeXTMJKDngSXdBQJmo0KzAhsDBQsJ
+CAcCAiICBhUKCQgLAgQWAgMBAh4HAheAAAoJEHTMJKDngSXdGu8BAMCCBPx/r7qX
+NPB7xLzQokw5wk5rBptquuJTjYwlMW0SAPwJJyTInWterPJzwf8S5g+6vvbQ8TLW
+kr1/+Es38Nh7Brg4BGajQrMSCisGAQQBl1UBBQEBB0DzgrXG8oNqdDqy2fM068uu
+y/23h0rhn+3OXZmHX782dQMBCAeIeAQYFgoAIBYhBGp+pD+b7/gpuBnOeXTMJKDn
+gSXdBQJmo0KzAhsMAAoJEHTMJKDngSXdOtoA/1LeTu+cgBnSNT3aL3ES+v2/90Ta
++RPNCVf9f1pdKVNyAP0TmDb1zjuoDnexxtwbMdSCz51iAxLA0N6yWmgpjS2GBQ==
+=4gwC
+-----END PGP PUBLIC KEY BLOCK-----
+```
+
 # blogs-tips
 
 ## [Mac使用技巧大整合：基础篇+进阶篇 - 知乎](https://zhuanlan.zhihu.com/p/89987302)
@@ -57,5 +81,3 @@ modified: 2023-07-23T07:05:19.441Z
   - 使用拖移锁定的意思是，拖移之后放开，重新移动手指还会继续拖移，直到你重新点击一下才会取消这个拖移的状态。
   - 不使用拖移锁定的意思是，单指轻轻双击之后（不用按下去）进行拖移，拖移之后放开一下立即移动还可以拖移，如果这个时间间隔稍长一点就不能在继续拖移了。
   - 三指拖移的意思是只要三个手指在触控板上移动就会触发拖移的状态。
-
-

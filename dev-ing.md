@@ -391,6 +391,11 @@ betterdiscordctl -i flatpak install
 console.log(`接到到PaaS消息：`, name, dao.playgroundInfo.status, dao.dockerStatus, payload)
 ```
 
+## 0726
+
+- diff数据流
+  - agent > ideServer > paas-sdk > fe
+  - diff接口: 输入新的全文，渲染上下格式的diff视图
 ## 0725
 
 
