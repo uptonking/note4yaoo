@@ -164,6 +164,18 @@ modified: 2022-11-07T10:26:22.510Z
     - 主页无法访问，但二级页面可访问
   - ❌ 已倒闭
     - [mixrnb](http://www.mixrnb.com/)
+
+
+- https://github.com/lyswhut/lx-music-desktop /apache2/202406/ts/vue
+  - https://lyswhut.github.io/lx-music-doc/
+  - 洛雪音乐助手桌面版, 基于 Electron + Vue 开发的音乐软件
+  - [洛雪音乐助手+六音自定义音源 v1.2.0-六音](https://www.sixyin.com/8498.html)
+  - [自己收集的几个可用源 _202402](https://github.com/lyswhut/lx-music-desktop/issues/1769)
+  - [LX Music 项目发展调整与新项目计划 _202405](https://github.com/lyswhut/lx-music-desktop/issues/1912)
+    - 最初 LX 的开发线路是抱着对技术的学习与研究的目的，集成国内常用音乐平台以解决音乐查找与播放问题，但随着大家对音乐版权的重视，以及来自官方音乐平台的压力，这条路已难以走下去
+    - 我决定发起一个全新的项目，用于提供一套面向个人用户的个人私有云音乐解决方案。
+  - [LX 以后的发展方向 _202310](https://github.com/lyswhut/lx-music-desktop/issues/1643)
+    - LX于2023年10月18日收到了腾讯的警告信，要求停止提供软件内置的连接到他们平台的在线播放及下载服务，所以我们决定关停内置的“临时接口”与“测试接口”。
 # calendar
 - https://github.com/lwlsw/Chinese-Lunar-Calendar-ics
   - 现成的中国农历ics文件 2015-2100
