@@ -59,6 +59,11 @@ modified: 2024-03-17T15:24:20.824Z
 - The only reason to use jest is to support React component testing, and that's still not a great reason because there are solutions to this problem now that use mocha. Mocha is soo much faster and less complicated. The testing support that Jest provides that Mocha does not can be added in through the use of Sinon and other packages if needed. Jest tries to support too many test needs and does none of them well. I'll never use jest in a project again. Mocha is always the right choice.
 
 - mocha and native assert
+# discuss-tsc
+- ## 
+
+- ## [How to compile a specific file with tsc using the paths compiler option - Stack Overflow](https://stackoverflow.com/questions/44676944/how-to-compile-a-specific-file-with-tsc-using-the-paths-compiler-option)
+- what you can do is overwrite the include property of your tsconfig with something like this: `"include": [ "src/root/index.ts" ]`
 # discuss
 - ## 
 
