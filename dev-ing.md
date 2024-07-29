@@ -336,10 +336,10 @@ betterdiscordctl -i flatpak install
   - ai执行计划同步底部时光机进度条
 
 - dev-to-demo
-  - cde的 push/commit/pr
-  - cde的 分享、邀请、进入权限
-  - cde设置页面
-  - cde环境变量、中间件
+  - ~~cde的 push/commit/pr~~
+  - ~~cde的 分享、邀请、进入权限~~
+  - ~~cde设置页面~~
+  - ~~cde环境变量、中间件~~
   - ~~userStatusUpdated~~
   - editor: typewriter
   - paas激活的时机要修改
@@ -353,24 +353,24 @@ betterdiscordctl -i flatpak install
 
 - not-yet
   - 私有项目的导入
-  - 如何在一个store里面使用另一个store的值
+  - zustandx如何在一个store里面使用另一个store的值
 
 - 前端提供agent相关事件
-  - 让agent获取issue相关信息
-  - 让agent提交pr
+  - ~~让agent获取issue相关信息~~
+  - ~~让agent提交pr~~
 
 - 跟随模式
   - followUser时会自动打开console面板
   - ai工作时自动打开面板状态
-  - ai头像的位置顺序
+  - ~~ai头像的位置顺序~~, 按进入room的顺序
   - cde页面无法区分自己和其他用户
   - 同一个用户在不同浏览器打开同一个playground的cde时，用户头像显示几个
-  - 文件树 keydown事件传到了编辑器
+  - ~~文件树 keydown事件传到了编辑器~~
   - 浏览器panel滚动禁用
-  - 修复文件树无法创建文件和文件夹的问题
-  - 测试跟随ai
+  - ~~修复文件树无法创建文件和文件夹的问题~~
+  - ~~测试跟随ai~~
   - 刷新完页面恢复面板显示隐藏状态
-  - 发送readfile指令或切换文件，渲染editor失败
+  - ~~发送readfile指令或切换文件，渲染editor失败~~
   - `/playground`路由页面不需要知道issue信息
 
 - 时光机

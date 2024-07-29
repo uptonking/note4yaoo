@@ -51,6 +51,40 @@ modified: 2024-05-06T02:54:40.374Z
 
 - docker in docker 的权限问题
 
+### arch-features
+
+- 时光机
+  - 上下布局diff视图
+  - 播放控制逻辑，op的内容和时机
+  - 回放模式支持编辑，内容和光标选区的变化
+  - changed-files-list
+
+- 协同编辑的数据结构
+  - 目前基于ot
+  - agent编辑
+  - 用户编辑
+
+- 基于indexeddb存储编辑op的问题
+  - 需要实现同步到其他协作者
+  - 同步op
+  - 同步进度
+
+- 回放
+  - 是否支持协同回放
+
+- 本地llm架构
+
+- 是否要支持内部cde仓库的合并
+  - git有冲突
+  - crdt无冲突
+
+- 
+- 
+- 
+- 
+- 
+- 
+
 ## proj-idepaas-sdk
 
 - resources
