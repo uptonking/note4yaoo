@@ -118,6 +118,26 @@ modified: 2024-05-27T11:39:14.886Z
 
 - tab内容懒加载的最佳实践
   - gridview的面板逐个懒加载
+
+
+```JS
+// 动态添加任意panel组件
+layoutApi.current?.addPanel({
+  id: panel.id,
+  component: 'default',
+  title: panel.tabTitle || `Untitled`,
+  tabComponent: 'tabEphemeral',
+  params: {
+    type: panel.panelType || 'general',
+    renderType: panel.renderType,
+    panelId: panel.id,
+  },
+  position: {
+    referencePanel: 'mainEditor',
+  },
+})
+```
+
 # codebase 🔡🧮
 
 - 

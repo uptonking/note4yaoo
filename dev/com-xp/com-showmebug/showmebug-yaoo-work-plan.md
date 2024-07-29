@@ -229,6 +229,10 @@ modified: 2024-05-06T02:54:40.374Z
   - 修改 packages/server/apps/entry/test/filetree_mock_test 末尾文件名为 filetree_mock
   - 在 http://localhost:3010/ demo的用户名和手机号可随便写
 
+
+- pros-paas 🌹
+  - 在业务中使用时，可通过单独的playgroundId在demo页面进行测试，隔离性较好，且不影响业务
+
 - ⌛️ 回放示例(环境支持sdk-staging/sdk-localhost-3010/showmebug)
   - 在sdk demo界面，需要指定代码处理为 showmebug
     - 在basic示例点击 录制数据 和 停止录制

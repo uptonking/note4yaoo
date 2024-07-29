@@ -64,7 +64,13 @@ eslint --ext .js,.ts,.tsx --quiet --fix .
   DEBUG=* npm i --no-audit --loglevel silly
 DEBUG=* npm i --legacy-peer-deps --no-audit --loglevel silly
 
+npm --registry https://registry.npmmirror.com install axios
+yarn add axios --registry=https://registry.npmjs.org/
+pnpm --registry https://registry.npmmirror.com install axios
+
+
 $$('[contenteditable]')
+
 
 flatpak run com.discordapp.Discord --proxy-server="socks5://127.0.0.1:7897"
 betterdiscordctl -i flatpak install
@@ -391,6 +397,10 @@ betterdiscordctl -i flatpak install
 ```JS
 console.log(`接到到PaaS消息：`, name, dao.playgroundInfo.status, dao.dockerStatus, payload)
 ```
+
+## 0728
+
+- ai分析任务描述用plan，ai分析任务的结果用task
 
 ## 0726
 
