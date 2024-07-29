@@ -370,6 +370,14 @@ modified: 2024-01-25T13:33:23.267Z
   4. Redis for caching NPM package metadata
 - The editor itself is written in React (hah!) and uses styled-components, redux, redux-thunk and react-router@4.0.0 as most used libraries. I code split every optional preference a user may have (like autocomplete, vim or prettify) using webpack 2.
 
+# discuss-collab
+- ## 
+
+- ## 
+
+- ## [[Feature Request] Multi-user support _202203](https://github.com/codesandbox/sandpack/issues/405)
+- I was able to get it working with firepad. It gives live text updates, and cursor positions, and I am able to see the changes in the iframe as well.
+
 # discuss
 - ## 
 

@@ -9,6 +9,10 @@ modified: 2023-06-16T10:52:44.183Z
 
 # guide
 
+# solutions-highlight
+- [Twoslash Code Samples](https://www.typescriptlang.org/dev/twoslash/)
+  - A markup format for TypeScript code, ideal for creating self-contained code samples which let the TypeScript compiler do the extra leg-work.
+  - [Twoslash – Vocs: extract/completion/highlight](https://vocs.dev/docs/guides/twoslash)
 # discuss-stars
 - ## 
 

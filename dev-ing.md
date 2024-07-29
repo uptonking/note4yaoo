@@ -68,9 +68,7 @@ npm --registry https://registry.npmmirror.com install axios
 yarn add axios --registry=https://registry.npmjs.org/
 pnpm --registry https://registry.npmmirror.com install axios
 
-
 $$('[contenteditable]')
-
 
 flatpak run com.discordapp.Discord --proxy-server="socks5://127.0.0.1:7897"
 betterdiscordctl -i flatpak install
@@ -380,6 +378,7 @@ betterdiscordctl -i flatpak install
   - `/playground`路由页面不需要知道issue信息
 
 - 时光机
+  - 打字机效果
   - 上下布局diff视图
   - 播放控制逻辑，op的内容和时机
   - 回放模式支持编辑，内容和光标选区的变化
@@ -397,6 +396,17 @@ betterdiscordctl -i flatpak install
 ```JS
 console.log(`接到到PaaS消息：`, name, dao.playgroundInfo.status, dao.dockerStatus, payload)
 ```
+
+## 0729
+
+- idepaas提供了打字机效果的参考实现
+  - 1024code的ai编辑几乎都使用paas的能力
+
+- dev-log
+  - 合并了迁移paas的pr，提供了本地调试的文档放在clacky仓库，迁移测试不充分，有问题反馈
+- dev-to
+  - 交付上下布局的diff视图，暂时可能是只读版，编辑相关的问题看能处理到什么程度
+  - 探索一个可支撑业务的前端持久化数据结构
 
 ## 0728
 

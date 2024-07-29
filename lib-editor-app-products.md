@@ -20,6 +20,29 @@ modified: 2022-08-21T10:16:45.637Z
 
 - resources
   - [Historical inventory of collaborative editors_201806](https://anarc.at/blog/2018-06-26-collaborative-editors-history/)
+# edit-features
+
+## track-changes
+
+- [CKEditor 5 Track changes](https://ckeditor.com/docs/ckeditor5/latest/features/collaboration/track-changes/track-changes.html)
+
+- [Wax Editor Demo: suggesting mode](https://demo.waxjs.net/)
+
+- 
+- 
+- 
+
+## version-history
+
+- [CKEditor 5 Revision history](https://ckeditor.com/docs/ckeditor5/latest/features/collaboration/revision-history/revision-history.html)
+
+- [Replit File History](https://docs.replit.com/replit-workspace/workspace-features/file-history)
+  - view, compare, restore, playback
+  - When you restore to a previous version, it is added as a new version to the file's history
+
+- 
+- 
+
 # popular
 - [RichTextEditor](https://richtexteditor.com/)
   - 可以参考主题设计，纯白简洁设计

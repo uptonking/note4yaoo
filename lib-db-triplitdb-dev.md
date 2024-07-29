@@ -27,6 +27,7 @@ modified: 2023-10-11T21:37:11.168Z
   - 似乎不支持undo，但可参考quill的例子
 
 - features
+  - 未直接采用sqlite，支持多种存储
   - Real-time sync with incremental updates and conflict resolution at the property level
   - Offline-mode with automatic reconnection and consistency guarantees
   - Rollback and retry management on failed updates

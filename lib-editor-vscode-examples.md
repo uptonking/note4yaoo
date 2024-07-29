@@ -13,12 +13,14 @@ modified: 2023-01-21T18:58:29.846Z
 - https://github.com/opensumi/core /2.7kStar/MIT/202405/ts
   - https://opensumi.com/
   - https://preview.opensumi.com/
+  - https://opensumi.github.io/ide-startup-lite/
   - https://opensumi.com/zh/docs/develop/basic-design/core-idea
   - https://opensumi.com/zh/docs/develop/module-samples
   - 一款帮助你快速搭建 CloudIDE 及 桌面端IDE 产品的底层框架
   - 示例使用node.v16, 切换文件内容时，websocket会send当前内容数据文本
     - ❓ 或许是先receive二进制数据，再send文本数据
     - id:"CLIENT_ID_vEVx63rFu_uSoPAc2q4kt:ExtMainThreadConnection"
+  - web和lite示例都不使用http通信，web示例使用socket，lite纯前端，web和lite的数据都存在localStorage
   - 提供了一个强大的插件生态系统，兼容 VS Code 的插件系统，支持 LSP/DAP 等主流协议，我们也有着自己的 OpenSumi API 用于进一步拓展 IDE 界面及能力
   - OpenSumi是前后端分离的设计，不论是在 Web 还是 Electron 环境下，浏览器/窗口中展示的界面部分我们称之为 OpenSumi 的前端，
     - 而对于文件读写、终端连接、插件进程等功能则运行在 OpenSumi 的后端。
@@ -49,6 +51,9 @@ modified: 2023-01-21T18:58:29.846Z
     - EPL2.0 属于文件级别的Copyleft许可证，即 EPL-ed 代码具有Copyleft 属性的，其“衍生作品”的包围也比较明确。EPL2.0追求的是EPL-ed代码的Copyleft和代码开源，且 MIT和EPL2.0许可证兼容。OpenSumi 本身是开源的，同时并未改变EPL2.0组件的许可，项目符合MIT和EPL2.0各自要求。
   - [离线部署 | OpenSumi](https://opensumi.com/zh/docs/integrate/universal-integrate-case/offline-deployment)
     - OpenSumi天然支持离线部署场景，只需要将内部的一些网络资源如（icon、onig-wasm）等通过浏览器端的配置替换成内网的资源地址即可
+  - [快速开始（纯前端） | OpenSumi](https://opensumi.com/zh/docs/integrate/quick-start/lite)
+    - 纯前端版本使用 BrowserFsProvider 替换 OpenSumi 内的 DiskFileSystemProvider, 改动在于由原来的本地文件服务改成 http 接口服务。
+    - 代码修改后，会先调用对应方法同步到集成方的服务端，之后浏览器端也会在内存中缓存一份新的代码，刷新后失效。
   - [[FEATURE] 关于多用户](https://github.com/opensumi/core/issues/560)
     - 202203: 我们有在做一些多人协作的探索，比如 sumi-collaboration 是基于 Yjs 的一个简单的多人协作模块，现在处于调研阶段，后面会逐步完善
   - [如何评价阿里 & 蚂蚁自研 IDE 研发框架 OpenSumi？ - 知乎](https://www.zhihu.com/question/519740662)

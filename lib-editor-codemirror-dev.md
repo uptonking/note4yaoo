@@ -65,6 +65,13 @@ modified: 2021-05-06T09:38:31.520Z
   - apps: desmos-classroom
   - 参考这些公司在开源项目中的用法
 
+- who is using #highlightjs
+  - stackoverflow
+  - discord
+- who is using #prismjs
+  - mozilla
+  - stripe, drupal
+
 - why-cloud-ide
   - easy to start and leave
   - better collaborative editing

@@ -10,6 +10,7 @@ modified: 2024-02-12T03:22:45.261Z
 # guide
 
 - pros
+  - 支持partial sync，同步引擎研发多年
   - 充分利用现有技术的生态，包括 pg/sqlite
 
 - cons

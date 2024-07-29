@@ -20,14 +20,14 @@ modified: 2023-06-23T12:46:53.288Z
   - codemirror + dockview/fileTree, partykit
 
 - diff视图
-  - 上下版: 参考 code-editor-angular
-  - 左右版: 参考 mdxeditor
+  - 上下版: 参考 BlazorCodeMirror6, code-editor-angular
+  - 左右版: 参考 mdxeditor, jupyter-nbdime
 
 - fans-codemirror
-  - https://github.com/uiwjs/react-codemirror /国内
-  - https://github.com/yeliex/codemirror-extensions /国内
   - https://github.com/val-town/codemirror-ts
-  - https://github.com/exuanbo/codemirror-toolkit
+  - https://github.com/uiwjs/react-codemirror /华人
+  - https://github.com/yeliex/codemirror-extensions /华人
+  - https://github.com/exuanbo/codemirror-toolkit /华人
   - https://www.npmjs.com/package/collaborative-codemirror
   - https://news.ycombinator.com/threads?id=CompuIves
 
@@ -62,6 +62,10 @@ modified: 2023-06-23T12:46:53.288Z
   - https://github.com/codeamigo/codeamigo /GPLv3/202401/ts/inactive
     - codeamigo is a platform that helps people learn to code with an AI assistant.
     - 依赖express、apollo-server、graphql、next.js、postgresql、redis
+  - https://github.com/danilowoz/sandpack-tsserver
+    - https://github.com/aboveyunhai/playground-ts
+    - [TypeScript integration · codesandbox/sandpack _202112](https://github.com/codesandbox/sandpack/discussions/237)
+      - once you start to edit the code or change tab (trig render basically), ts-server will start to kick in
 
 - https://github.com/jupyterlab/jupyterlab/tree/main/packages/codemirror /202405/ts
   - A JupyterLab package which provides the default implementation of the `@jupyterlab/codeeditor` interface, using the `CodeMirror` editor.
@@ -309,6 +313,7 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/Sagargupta16/ai-code-translator /202311/ts
   - https://ai-code-translator-delta-six.vercel.app/
   - Use AI to translate code from one language to another
+
 ## code-animation
 
 - https://github.com/amasin76/code-motion /202404/ts
@@ -396,9 +401,6 @@ modified: 2023-06-23T12:46:53.288Z
   - A lightweight json editor based on codemirror, providing smart prompts and verification based on json-schema
   - A json-schema-editor collection, support react、vue framework, will support svelte
 
-
-
-
 - https://github.com/sanity-io/code-input /MIT/202404/ts
   - Sanity input component for code, powered by CodeMirror
 
@@ -419,8 +421,6 @@ modified: 2023-06-23T12:46:53.288Z
   - 支持切换预览风格、代码风格主题
   - 当使用服务端渲染时，请务必设置editorId为固定值。
   - 自定义 markdown-it 核心库扩展、属性等。
-
-
 
 - https://github.com/yanthink/pingfan.ts /202204/ts/inactive
   - 基于 codemirror6 的 markdown 编辑器
@@ -711,6 +711,12 @@ modified: 2023-06-23T12:46:53.288Z
   - open source collaborative code editor you have been searching for
   - Qwikcollab uses operational transformation for managing document versions when multiple people edit it, it uses codemirror which is an extensible code editor package and also helps in merging changes from different clients. The changes are transferred using websockets.
 
+- https://github.com/hussamkhatib/Real-time-collaborative-sandpack /MIT/202207/js
+  - https://real-time-collaborative-sandpack.vercel.app/
+  - This example shows how you can use Sandpack and firepad-x to build a collbrative text editor.
+  - [[Feature Request] Multi-user support · Issue · codesandbox/sandpack _202203](https://github.com/codesandbox/sandpack/issues/405)
+  - I was able to get it working with firepad. It gives live text updates, and cursor positions, and I am able to see the changes in the iframe as well.
+
 - https://github.com/biomousavi/live-code /202312/ts/vue/inactive
   - https://code.biomousavi.com/
   - A real-time collaborative code editor in your browser.
@@ -800,6 +806,7 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/codersgyan/realtime-code-editor /202203/js
   - 依赖codemirror5、socket.io
+
 ## diff
 
 - https://github.com/acrodata/code-editor /MIT/202405/ts
@@ -1001,7 +1008,6 @@ modified: 2023-06-23T12:46:53.288Z
   - Aims to provide Codemirror 6 as an easy to use codemirror action.
   - https://x.com/puruvjdev/status/1780560310547436002
     - Anytime you change documentId, it stores the state in a map, and when the documentID changes back to the one stored, we apply the history
-
 
 - https://github.com/jsonnext/codemirror-json-schema /MIT/202406/ts
   - https://codemirror-json-schema.netlify.app/

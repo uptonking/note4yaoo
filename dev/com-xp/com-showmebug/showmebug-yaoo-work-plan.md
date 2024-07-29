@@ -59,15 +59,20 @@ modified: 2024-05-06T02:54:40.374Z
   - 回放模式支持编辑，内容和光标选区的变化
   - changed-files-list
 
-- 协同编辑的数据结构
-  - 目前基于ot
-  - agent编辑
-  - 用户编辑
-
 - 基于indexeddb存储编辑op的问题
   - 需要实现同步到其他协作者
-  - 同步op
+  - 同步编辑op，计算plan时间段文件的全部改动
   - 同步进度
+
+- indexeddb的存储逻辑放在业务层还是paas层
+  - 业务层-pros
+    - 可绕过paas直接与agent通信, agent > web > idb
+  - 业务层-cons
+    - 业务代码的复杂度会变高
+  - paas层-pros
+    - 与agent通信的逻辑会变复杂，业务触发action，接着 agent > ideServer > paas > web
+  - paas层-cons
+    - 部分通用性不强的功能不适合放在paas，不适合的如review评论，适合的如变更文件列表、diff
 
 - 回放
   - 是否支持协同回放
@@ -78,12 +83,32 @@ modified: 2024-05-06T02:54:40.374Z
   - git有冲突
   - crdt无冲突
 
+- Editor
+  - 切换diff视图的api
+
 - 
 - 
 - 
 - 
-- 
-- 
+
+#### 业务数据结构设计
+
+- 业务操作
+  - 撤销文件
+  - 切换文件
+
+- 协同编辑的数据结构
+  - 目前基于ot
+  - agent编辑、用户编辑
+  - 用户编辑行号范围、agent编辑范围
+
+- 操作op
+  - 所属文档id，执行时间
+  - ❓ 所属步骤，
+
+- 变更文件列表
+  - 文件类型、文件名、文件路径、变更代码行数、操作类型、操作人头像和用户名
+  - 所属步骤
 
 ## proj-idepaas-sdk
 
@@ -228,7 +253,6 @@ modified: 2024-05-06T02:54:40.374Z
   - cd packages/server; pnpm dev
   - 修改 packages/server/apps/entry/test/filetree_mock_test 末尾文件名为 filetree_mock
   - 在 http://localhost:3010/ demo的用户名和手机号可随便写
-
 
 - pros-paas 🌹
   - 在业务中使用时，可通过单独的playgroundId在demo页面进行测试，隔离性较好，且不影响业务
@@ -1793,8 +1817,7 @@ const playbackInfo = [
 ### dev-xp
 
 - `1024code` 注册时要先点击发送验证码，然后在验证码输入框填入6个0就可以注册成功
-  - 邀请码测试: hs8MQf, Ukycbf
-  - 测试用户是 155572695015和八个一
+  - 已注册用户可直接在发送验证码后输入6个0
   - ⚠️ node版本不支持v22，暂时使用v20
   - 编译构建时可通过修改repo文件夹名来避免使用turborepo的cache
 
@@ -1846,6 +1869,7 @@ for await (const chunk of res.body as any) {
   - apps/web/src/ui/Codecubes/hooks/AtEditor/index.tsx
   - apps/web/src/pages/community/publish/AtEditor/index.tsx
 
+- ai聊天是输出的代码使用highlightjs高亮
 - 
 - 
 - 

@@ -26,7 +26,7 @@ modified: 2023-09-12T09:36:25.608Z
   - To make sure you never lose any of your work, Replit auto-saves your code as you write
   - view previous versions of a file by using the scroll bar, the arrow buttons, or the left and right arrow keys
   - Comparing previous versions to the current file
-  - Restoring a previous version of a file
+  - Restoring a previous version of a file: When you restore to a previous version, it is added as a new version to the file's history
   - use the playback feature of File History to watch your file change over time like a movie
 
 - [Revision History for Google Docs](https://www.revisionhistory.com/)

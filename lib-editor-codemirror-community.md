@@ -276,7 +276,12 @@ modified: 2023-01-29T10:52:44.183Z
 
 - ## 
 
-- ## 
+- ## 💡 [Focus behavior issue - Editor doesn't lose focus when you click above it - discuss. CodeMirror _202407](https://discuss.codemirror.net/t/focus-behavior-issue-editor-doesnt-lose-focus-when-you-click-above-it/8468)
+- Is this in Chrome? That browser has some weird behavior around what focus does when clicking near editable content. You’ll see the same with a plain `contentEditable` div. There’s not a lot CodeMirror can do about this, without aggressively interfering with the browser’s focus behavior.
+- Yes it is in Chrome, I checked in Firefox and it works fine, but I could not reproduce it with a plain `contenteditable` div that I tested in Chrome
+  - Likely some of the styles or wrapper elements we use influence the behavior. I’m not invested enough in this to try and isolate which, but you could try if you have the time.
+- 💡 I found out that to ensure proper flex child behavior for the editor content, such as flex-grow and flex-shrink, you need to encapsulate the contenteditable element within an additional div. This approach appears to resolve the focusing and blurring issues of contenteditable elements when they are direct children of a flex container in Chrome browsers.
+
 
 - ## 🤔 [Backwards compatibility of codemirror6 - JupyterLab - Jupyter Community Forum _202402](https://discourse.jupyter.org/t/backwards-compatibility-of-codemirror6/23851)
 - I was just wondering if anyone could tell me if codemirror6 is backwards compatible with JupyterLab3 or will it only work with JupyterLab4?
