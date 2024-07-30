@@ -397,12 +397,20 @@ betterdiscordctl -i flatpak install
 console.log(`接到到PaaS消息：`, name, dao.playgroundInfo.status, dao.dockerStatus, payload)
 ```
 
+## 0730
+
+- dev-log
+  - 确认回放的实现细节
+  - 尝试添加自定义帧的事件到ideServer
+
 ## 0729
 
 - idepaas提供了打字机效果的参考实现
   - 1024code的ai编辑几乎都使用paas的能力
 
 - dev-log
+  - nbdime diff
+  - idepaas的打字机效果实现, 支持一次性将ai的修改全撤销
   - 合并了迁移paas的pr，提供了本地调试的文档放在clacky仓库，迁移测试不充分，有问题反馈
 - dev-to
   - 交付上下布局的diff视图，暂时可能是只读版，编辑相关的问题看能处理到什么程度

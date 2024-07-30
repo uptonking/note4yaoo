@@ -9,24 +9,16 @@ modified: 2024-05-06T02:54:40.374Z
 
 # guide
 
-# plan
+# personal
 - 工作OKR
   - 业务类: ai编程/pr/自动测试
   - 基建类: 基座工程、代码编辑器
   - 团队类: 测试、运营
 
-- roadmap-研发任务拆解
-  - 主要业务流程
-  - cde
-  - 对标的目标产品不清晰
-  - 参考1024code实现聊天对话
-
 - work-xp-pros
   - 产研团队的对齐非常充分
 - work-xp-cons
   - 单人项目太多了，维护困难，比如paas和1024code，浪费了很多研发资源
-  - 研发流程cicd，lint、pr流程不完整
-  - ~~研发目标对开发产品都不清晰~~
 # proj
 
 ## proj-coding-ai
@@ -41,7 +33,7 @@ modified: 2024-05-06T02:54:40.374Z
 - 系统慢的原因
   - clerk认证的token是其他api的前置请求
   - paas 获取ide-server url的api也慢
-  - paas旧状态导致渲染异常
+  - ~~paas旧状态导致渲染异常~~
 
 - 
 - 
@@ -54,14 +46,39 @@ modified: 2024-05-06T02:54:40.374Z
 ### arch-features
 
 - 时光机
-  - 上下布局diff视图
-  - 播放控制逻辑，op的内容和时机
+  - 上下布局的diff视图
+  - 执行计划时计算diff-op，op的内容和时机
+  - ~~回放~~模式获取diff-op
   - 回放模式支持编辑，内容和光标选区的变化
   - changed-files-list
+
+- ❓ 待确认
+  - 如何获取agent返回的修改后的代码
+    - ❓ agent切换并打开文件时，paas检查isAgentWriting，然后计算diff-op, 渲染diff
+  - 如何获取2个帧之间的所有op, 需要测试自定义帧
+  - 支持打开已删除的文件，显示diff
+  - 如何确认op是来自ai还是真实用户，agentUserId
+
+- agent执行时，动态计算agent返回内容对应的op，渲染diff
+  - 回放时，直接从ideServer获取op，渲染diff
+
+- 由AI负责插入数据帧(考虑插入快照内容), 如果有新的action, 也是正常插入帧
+  - 自定义事件帧可通过自定义eventName添加
+
+- 快照文件什么时候显示
+  - 只有追加步骤修改同一文件才显示只读的快照文件，否则显示可编辑的diff视图
+
+- ai变更文件列表 不显示非计划内的文件更改
+
+- 
+- 
+- 
+- 
 
 - 基于indexeddb存储编辑op的问题
   - 需要实现同步到其他协作者
   - 同步编辑op，计算plan时间段文件的全部改动
+  - 新增删除文件的op
   - 同步进度
 
 - indexeddb的存储逻辑放在业务层还是paas层
@@ -76,8 +93,9 @@ modified: 2024-05-06T02:54:40.374Z
 
 - 回放
   - 是否支持协同回放
-
-- 本地llm架构
+  - 回放模式仅展示已完成的action，未完成的不展示，追加步骤的action会展示
+  - 撤销后的文件要支持取消撤回
+  - 撤销后的文件进度条上的action会变灰，取消撤回会变绿
 
 - 是否要支持内部cde仓库的合并
   - git有冲突
@@ -85,6 +103,8 @@ modified: 2024-05-06T02:54:40.374Z
 
 - Editor
   - 切换diff视图的api
+
+- 本地llm架构
 
 - 
 - 
@@ -104,11 +124,174 @@ modified: 2024-05-06T02:54:40.374Z
 
 - 操作op
   - 所属文档id，执行时间
-  - ❓ 所属步骤，
+  - 🤔 所属步骤，根据time确认
 
 - 变更文件列表
   - 文件类型、文件名、文件路径、变更代码行数、操作类型、操作人头像和用户名
-  - 所属步骤
+
+- paas现有持久化数据结构(mongodb的表)
+
+```JS
+[
+  // fileTree
+  {
+    "_id": {
+      "$oid": "66a38107fabfd7026f68dfd8"
+    },
+    "timestamp": 1721991431081,
+    "playgroundId": "688546823149174784",
+    "dockerId": "688546823174340608",
+    "eventName": "fileTree",
+    "agentUserId": "ide",
+    "data": {
+      "action": "REFRESH",
+      "fileRootPath": "/Users/yaoo/Documents/repos/com2024-showmebug/clacky-ai-paas-frontend/packages/server/apps/entry/test/filetree_mock",
+      "url": "becbf0df199be859138c5a5d6778d595-app.develop.clackypaas.com",
+      "payload": {
+        "path": ".",
+        "name": ".",
+        "type": "DIRECTORY",
+        "children": [{
+            "type": "FILE",
+            "name": "hello.c",
+            "path": "hello.c",
+            "children": [],
+            "hide": false,
+            "lock": false,
+            "unittest": false,
+            "isRetainedFile": false
+          },
+          {
+            "type": "FILE",
+            "name": "hello.go",
+            "path": "hello.go",
+            "children": [],
+            "hide": false,
+            "lock": false,
+            "unittest": false,
+            "isRetainedFile": false
+          },
+          {
+            "type": "FILE",
+            "name": "hello.rb",
+            "path": "hello.rb",
+            "children": [],
+            "hide": false,
+            "lock": false,
+            "unittest": false,
+            "isRetainedFile": false
+          },
+          {
+            "type": "FILE",
+            "name": "index.html",
+            "path": "index.html",
+            "children": [],
+            "hide": false,
+            "lock": false,
+            "unittest": false,
+            "isRetainedFile": false
+          },
+          {
+            "type": "FILE",
+            "name": "index.js",
+            "path": "index.js",
+            "children": [],
+            "hide": false,
+            "lock": false,
+            "unittest": false,
+            "isRetainedFile": false
+          },
+          {
+            "type": "DIRECTORY",
+            "name": "root",
+            "path": "root",
+            "children": [{
+              "type": "FILE",
+              "name": "1.txt",
+              "path": "root/1.txt",
+              "children": [],
+              "hide": false,
+              "lock": false,
+              "unittest": false,
+              "isRetainedFile": false
+            }],
+            "hide": false,
+            "lock": false,
+            "unittest": false,
+            "isRetainedFile": false
+          }
+        ]
+      }
+    },
+    "__v": 0
+  },
+
+  // editor
+  {
+    "_id": {
+      "$oid": "66a3840ffabfd7026f68dffa"
+    },
+    "timestamp": 1721992207807,
+    "playgroundId": "688546823149174784",
+    "dockerId": "688546823174340608",
+    "eventName": "editor",
+    "agentUserId": "9cc647d3-e2f1-4dde-ae3b-8b97680b1ee7",
+    "data": {
+      "openedPath": "index.html"
+    },
+    "__v": 0
+  }
+
+  // editor-
+  {
+    "_id": {
+      "$oid": "66a38413fabfd7026f68e005"
+    },
+    "timestamp": 1721992211304,
+    "playgroundId": "688546823149174784",
+    "dockerId": "688546823174340608",
+    "eventName": "editor",
+    "agentUserId": "9cc647d3-e2f1-4dde-ae3b-8b97680b1ee7",
+    "data": {
+      "revision": 3,
+      "openedPath": "index.html",
+      "updates": [{
+        "changes": [
+          280
+        ],
+        "selection": {
+          "ranges": [{
+            "anchor": 109,
+            "head": 109
+          }],
+          "main": 0
+        },
+        "agentUserId": "9cc647d3-e2f1-4dde-ae3b-8b97680b1ee7"
+      }]
+    },
+    "uuid": "0340dc0b-ec3d-4294-b3d4-a1d407264621",
+    "__v": 0
+  }
+
+  // focusChange
+  {
+    "_id": {
+      "$oid": "66a38411fabfd7026f68e002"
+    },
+    "timestamp": 1721992209938,
+    "playgroundId": "688546823149174784",
+    "dockerId": "688546823174340608",
+    "eventName": "focusChange",
+    "agentUserId": "9cc647d3-e2f1-4dde-ae3b-8b97680b1ee7",
+    "data": {
+      // "componentName": "Editor"
+      "componentName": "Tree"
+    },
+    "__v": 0
+  }
+
+]
+```
 
 ## proj-idepaas-sdk
 
@@ -278,8 +461,12 @@ modified: 2024-05-06T02:54:40.374Z
     - 播放时可并排显示多个shell的输出
     - 录制数据只能有一个用户，如果SMB需要跟随来回切换， 如果切换到面试官录制， 候选人只能停止录制
 
-- paas平台的注册只需要name和token就会返回token
+- paas平台的注册只需要name和任意secret就会返回token
   - 甚至校验时只需要ticket，不需要token
+
+- 变更文件列表之前通过在服务端跑 `git status` 命令获取，但对服务器性能影响太大
+
+- idepaas的打字机效果实现, 支持一次将ai的修改全撤销
 
 ### codebase-sdk
 
