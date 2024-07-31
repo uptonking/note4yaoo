@@ -51,6 +51,11 @@ gSXdBQJmo0KzAhsMAAoJEHTMJKDngSXdOtoA/1LeTu+cgBnSNT3aL3ES+v2/90Ta
 - 按住Option，点按小三角，自动展开访达文件夹内的所有子文件夹，所有文件一览无余
 # discuss-macos
 
+# discuss-not-yet
+- ## 
+
+- ## [node.js - Create directory "/dotenv" on MacOs, Read-only file system - Stack Overflow](https://stackoverflow.com/questions/60469031/create-directory-dotenv-on-macos-read-only-file-system)
+- If you really want to, you can disable the read-only file system in Catalina 
 # discuss-hardware
 - ## 
 

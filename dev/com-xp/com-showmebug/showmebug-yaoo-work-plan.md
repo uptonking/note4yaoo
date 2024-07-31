@@ -43,22 +43,34 @@ modified: 2024-05-06T02:54:40.374Z
 
 - docker in docker 的权限问题
 
-### arch-features
+### ai-writing-features
 
 - 时光机
   - 上下布局的diff视图
   - 执行计划时计算diff-op，op的内容和时机
   - ~~回放~~模式获取diff-op
-  - 回放模式支持编辑，内容和光标选区的变化
+  - ~~回放~~模式支持编辑，内容和光标选区的变化
   - changed-files-list
 
-- ❓ 待确认
-  - 如何获取agent返回的修改后的代码
-    - ❓ agent切换并打开文件时，paas检查isAgentWriting，然后计算diff-op
-    - 然后通过**类似**封装replayCodeByRange的modifyCode方法，以打字机的效果渲染diff，支持一次性将ai的修改全撤销
-  - 如何获取2个帧之间的所有op, 需要测试自定义帧
-  - 支持打开已删除的文件，显示diff
-  - 如何确认op是来自ai还是真实用户，agentUserId
+- preOpenFile
+  - 检查参数 diffMode, originalContent，newContent，title
+
+- 技术实现确认0731
+- 如何获取agent返回的修改后的代码并开始编辑
+  - ~~agent切换并打开文件时，paas检查isAgentWriting，然后计算diff-op~~
+  - ~~然后通过**类似**封装replayCodeByRange的modifyCode方法，以打字机的效果渲染diff，支持一次性将ai的修改全撤销~~
+  - action进度条处于激活时，且用户打开了这个文件
+- agent执行计划时，暂停播放后，停止在哪个字符
+  - 暂停也是写全文
+- 等待ai返回或计算diff很慢时，需要loading
+  - 提示用户，限制大小
+- 支持打开已删除的文件，显示diff
+  - originalContent
+- 如何判断op是来自ai还是真实用户，agentUserId
+  - 由业务方判断，paas不关心agent
+- 何时以及如何获取2个帧之间的所有op, 需要测试自定义帧
+- 插入自定义帧的时机是执行计划或追加步骤开始前，存储十几个文件快照的数据量可能很大，确定要存吗
+  - agent写代码时一个action一个自定义帧，数据量不大
 
 - agent执行时，动态计算agent返回内容对应的op，渲染diff
   - 回放时，直接从ideServer获取op，渲染diff
@@ -134,6 +146,24 @@ modified: 2024-05-06T02:54:40.374Z
 
 ```JS
 [
+  // custom event/frame
+  {
+    "_id": {
+      "$oid": "66a9bdf2cc8eccde2db14a2e"
+    },
+    "data": {
+      "action": "beforeSteps",
+      "value": "steps1416",
+      "uuid": "1722400242698"
+    },
+    "eventName": "customize",
+    "playgroundId": "690273537138839552",
+    "__v": 0,
+    "agentUserId": "9cc647d3-e2f1-4dde-ae3b-8b97680b1ee7",
+    "dockerId": "690273537168199680",
+    "timestamp": 1722400242699
+  }
+
   // fileTree
   {
     "_id": {

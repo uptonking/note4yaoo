@@ -397,6 +397,10 @@ betterdiscordctl -i flatpak install
 console.log(`接到到PaaS消息：`, name, dao.playgroundInfo.status, dao.dockerStatus, payload)
 ```
 
+## 0731
+
+- paas的事件监听，缺少 resourceMonitoring
+
 ## 0730
 
 - dev-log
