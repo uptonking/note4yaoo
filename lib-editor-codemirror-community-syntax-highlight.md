@@ -9,6 +9,9 @@ modified: 2023-06-16T10:52:44.183Z
 
 # guide
 
+# solutions-docs
+- [Get started | OpenCtx](https://openctx.org/docs/start)
+  - OpenCtx shows you contextual info about code from your dev tools, in your editor, in code review, and anywhere else you read code
 # solutions-highlight
 - [Twoslash Code Samples](https://www.typescriptlang.org/dev/twoslash/)
   - A markup format for TypeScript code, ideal for creating self-contained code samples which let the TypeScript compiler do the extra leg-work.

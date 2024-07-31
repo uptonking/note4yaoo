@@ -19,7 +19,7 @@ modified: 2024-05-06T02:54:40.374Z
   - 产研团队的对齐非常充分
 - work-xp-cons
   - 单人项目太多了，维护困难，比如paas和1024code，浪费了很多研发资源
-# proj
+# projects
 
 ## proj-coding-ai
 
@@ -54,7 +54,8 @@ modified: 2024-05-06T02:54:40.374Z
 
 - ❓ 待确认
   - 如何获取agent返回的修改后的代码
-    - ❓ agent切换并打开文件时，paas检查isAgentWriting，然后计算diff-op, 渲染diff
+    - ❓ agent切换并打开文件时，paas检查isAgentWriting，然后计算diff-op
+    - 然后通过**类似**封装replayCodeByRange的modifyCode方法，以打字机的效果渲染diff，支持一次性将ai的修改全撤销
   - 如何获取2个帧之间的所有op, 需要测试自定义帧
   - 支持打开已删除的文件，显示diff
   - 如何确认op是来自ai还是真实用户，agentUserId

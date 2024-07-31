@@ -86,6 +86,7 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/sourcegraph/openctx/tree/main/client/codemirror /apache2/202405/ts
   - https://openctx.org/playground
   - implements a CodeMirror extension that shows OpenCtx items in the editor
+  - OpenCtx shows you contextual info about code from your dev tools, in your editor, in code review, and anywhere else you read code
   - https://github.com/sourcegraph/codeintellify /MIT/202111/ts/archived
     - Adds code intelligence to code views on the web
     - This library manages all of the inputs (mouse/keyboard events, location changes, hover information, and hover actions) necessary to display hover tooltips on with a code view.
