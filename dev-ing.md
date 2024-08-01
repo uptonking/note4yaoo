@@ -334,48 +334,44 @@ betterdiscordctl -i flatpak install
   - [x] streaming infinite-list/tree
 
 - [Scrum Poker Online - Free Tool for Planning Poker](https://www.scrumpoker-online.org/en/room/64881797/scrum-poker)
-# dev-07
+# dev-08
 - ai相关开发
   - cmd+k 与ai对话
   - ai执行计划同步底部时光机进度条
 
 - dev-to-demo
+  - editor: typewriter
+  - 时光机回放模式
+  - paas激活的时机要修改
+  - paas的断线恢复问题
+  - LSP补全
   - ~~cde的 push/commit/pr~~
   - ~~cde的 分享、邀请、进入权限~~
   - ~~cde设置页面~~
   - ~~cde环境变量、中间件~~
   - ~~userStatusUpdated~~
-  - editor: typewriter
-  - paas激活的时机要修改
-  - 时光机回放模式
-  - paas的断线恢复问题
   - ~~paas异常处理~~
   - ~~删除废弃的代码~~
   - ~~带着issue进入cde~~
   - ~~异常toast弹窗, 异常处理~~
-  - LSP补全
 
 - not-yet
-  - 私有项目的导入
-  - zustandx如何在一个store里面使用另一个store的值
-
-- 前端提供agent相关事件
-  - ~~让agent获取issue相关信息~~
-  - ~~让agent提交pr~~
+  - ~~私有项目的导入~~
+  - zustandx如何在一个store里面使用另一个store的值, 或重新架构store的内容
 
 - 跟随模式
   - followUser时会自动打开console面板
   - ai工作时自动打开面板状态
-  - ~~ai头像的位置顺序~~, 按进入room的顺序
   - cde页面无法区分自己和其他用户
   - 同一个用户在不同浏览器打开同一个playground的cde时，用户头像显示几个
+  - 刷新完页面恢复面板显示隐藏状态
+  - ~~ai头像的位置顺序~~, 按进入room的顺序
   - ~~文件树 keydown事件传到了编辑器~~
-  - 浏览器panel滚动禁用
+  - ~~浏览器panel滚动禁用~~
   - ~~修复文件树无法创建文件和文件夹的问题~~
   - ~~测试跟随ai~~
-  - 刷新完页面恢复面板显示隐藏状态
   - ~~发送readfile指令或切换文件，渲染editor失败~~
-  - `/playground`路由页面不需要知道issue信息
+  - ~~`/playground`路由页面不需要知道issue信息~~
 
 - 时光机
   - 打字机效果
@@ -384,7 +380,7 @@ betterdiscordctl -i flatpak install
   - 回放模式支持编辑，内容和光标选区的变化
   - changed-files-list
 
-## 072
+## 080
 
 - dev-log
   - ?
@@ -396,6 +392,23 @@ betterdiscordctl -i flatpak install
 ```JS
 console.log(`接到到PaaS消息：`, name, dao.playgroundInfo.status, dao.dockerStatus, payload)
 ```
+
+## 0801
+
+
+- [How to set background color on terminal · xtermjs/xterm.js](https://github.com/xtermjs/xterm.js/issues/1719)
+  - term.setOption('theme', { background: '#fdf6e3' });
+- [Release 5.0.0 · xtermjs/xterm.js](https://github.com/xtermjs/xterm.js/releases/tag/5.0.0)
+  - The deprecated getOption and setOption APIs have been removed in favor of options assignment
+  - term.options.scrollback = 1000;
+  - term.options.theme = { background: '#ccc' } 注意这里更新是replace而不是merge
+
+- dev-log
+  - 讨论了diff-view接入使用场景的状态数据流，以及产品细节
+  - 修改paas的编辑器，增加了diff-view相关api
+- dev-to
+  - 实现与agent无关的上下布局的diff编辑器
+# dev-07
 
 ## 0731
 

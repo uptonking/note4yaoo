@@ -13,6 +13,11 @@ modified: 2020-11-13T07:28:27.824Z
   - 基于css，但未解决a11y
   - 基于web-components，但仍未解决状态与视图的同步问题
 
+- 支持多种前端框架的实现
+  - tanstack-table/virtual
+  - slate-editor, wangEditor, editablejs
+  - tiptap-editor, prosekit
+
 - 没必要执着于render agnostic
   - 具体场景需求不同，如ui组件、图表、动画
   - 考虑和现有资源集成的场景，如figma、tldraw、excalidraw

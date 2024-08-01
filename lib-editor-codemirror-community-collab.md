@@ -77,7 +77,13 @@ modified: 2024-05-02T05:51:12.370Z
 # discuss-undo/history
 - ## 
 
-- ## 
+- ## 💡 [editor.setHistory(), clearHistory() equivalent in Codemirror #6 - v6 - discuss. CodeMirror _202304](https://discuss.codemirror.net/t/editor-sethistory-clearhistory-equivalent-in-codemirror-6/6291/1)
+  - each file has its own undo-redo history. We store history of each file by calling editor.getHistory() and storing in a Map. Whenever you switch the files, we load the history for that file and call editor.setHistory. This worked well in CM 5
+- Usually, in situations like this, you just want to store the entire editor state (either as a JS object, or, if you need to serialize it, via EditorState.toJSON) rather than storing the document and history separately.
+  - You can’t clear history. Just create a new state. When creating a new state with fromJSON, you can provide your serialized history in the JSON object.
+
+- https://x.com/puruvjdev/status/1780560310547436002  
+  - Anytime you change documentId, it stores the state in a map, and when the documentID changes back to the one stored, we apply the history. It's quite neat
 
 - ## [More conventional undo behaviour? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/more-conventional-undo-behaviour/5565)
 - I don’t think there is anything like a consensus on that. This forum seems to rely on the browser’s native behavior, which for (tried Firefox and Chrome Linux) seems to undo all text typed together in one go. 

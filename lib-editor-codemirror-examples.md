@@ -41,6 +41,48 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/milahu/browserforge /202303/方案收集markdown
   - run github + github-pages + codesandbox in your browser, offline-first - CONCEPT
 
+- overleaf /12.6kStar/AGPLv3/202407/js/ts/latex/ace>codemirror
+  - https://github.com/overleaf/overleaf
+  - https://github.com/overleaf/overleaf/wiki
+  - https://github.com/overleaf/overleaf/tree/main/services/web/frontend/js/features/source-editor
+  - A web-based collaborative LaTeX editor
+  - CodeEditor和VisualEditor都基于codemirror6实现
+  - source-editor支持codemirror6、ace
+  - https://github.com/overleaf/ace /202108/js/inactive/Ajax.org Cloud9 Editor
+  - [Compile Error and PDF Download Notifications](https://github.com/overleaf/overleaf/issues/1031)
+    - migrate from ACE to CodeMirror 6. Yes, the CM6 work will be coming to CE soon. _202206
+  - https://github.com/overleaf/overleaf/tree/main/services/document-updater/app/js/sharejs /202205/MIT/js
+    - 🔀 协作基于sharejs.v0.5修改实现
+  - https://github.com/overleaf/overleaf/blob/main/services/web/frontend/js/features/source-editor/extensions/track-changes.ts
+    - 基于codemirror6实现track-changes的示例
+    - 在生产环境编辑器的track-changes试用入口播放了添加和删除文字的动画，没有直接实现删除线但效果类似
+    - [Track changes and commenting in LaTeX - Overleaf, Online LaTeX Editor](https://www.overleaf.com/track-changes-and-comments-in-latex)
+    - [Track Changes in Overleaf intro](https://www.overleaf.com/learn/how-to/Track_Changes_in_Overleaf)
+    - [Tracking changes in LaTeX with "changes" package _201908](https://www.overleaf.com/latex/examples/tracking-changes-in-latex-with-changes-package/fnpkpytjjwhj)
+  - [Horizontal Scaling: Starting with version 3.5.6 Server Pro supports horizontal scaling _202305](https://github.com/overleaf/overleaf/wiki/Horizontal-Scaling)
+    - A deployment of Server Pro with horizontal scaling involves a set of external components, such as a Load Balancer and an S3-compatible backend
+  - [Is it possible to include the commenting feature in the Community Edition? _202402](https://github.com/overleaf/overleaf/issues/1193)
+    - You can try to develop it by yourself, or purchase server pro. Btw, I think commenting feature is not something difficult to imply, the core code is open-source, just need a proxy.
+    - I created a new branch, which includes only the code for enabling comments and changes tracking features. 
+  - 🍴 forks
+  - https://github.com/yu-i-i/overleaf-cep /202408/AGPL
+    - extended CE with changes tracking and LDAP authentication
+    - 作者一直跟着官方上游更新
+    - I'm not a programmer, just a LaTeX user with basic programming knowledge, and I don't plan to further develop this code. The current patched version meets my needs
+    - https://github.com/yu-i-i/overleaf-cep/tree/track-changes
+      - I created a new branch, which includes only the code for enabling comments and changes tracking features.
+  - https://github.com/ayaka-notes/overleaf /202405
+    - 如果你想用我开发的overleaf pro，你需要2c 4g以上的服务器，甚至更高配置的服务器才能运行
+    - 2c 4g甚至只够几个人同时编辑，如果你需要更多，还需要更高昂的服务器配置。最低服务器的价格可能在720元
+    - 进阶功能比如git、github同步，还有引文搜索，都无法使用
+    - 此外，overleaf的API变化频繁，花时间去猜测他们修改了什么代码，查找API，没有任何意义而且浪费时间。哪怕我能维护一年两年，未来可能也不会一直跟进。
+    - 同样的价格，甚至足以拿下overleaf学生版（600多一年），所以通过逆向API开发所谓的overleaf pro，并没有意义。此项目宣布终止维护。
+    - [运行./dev.sh后编译论文报错 ](https://github.com/ayaka-notes/overleaf/issues/5)
+  - https://github.com/ertuil/overleaf
+    - a quick implication of review panel
+  - https://github.com/smhaller/ldap-overleaf-sl
+    - Free LDAP and OAuth2 Authentication and Authorisation for Sharelatex / Overleaf (Community Edition)
+
 - https://github.com/codesandbox/sandpack /4.5kStar/apache2/202405/ts
   - https://sandpack.codesandbox.io/
   - https://sandpack.codesandbox.io/docs
@@ -69,6 +111,7 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/jupyterlab/jupyterlab/tree/main/packages/codemirror /202405/ts
   - A JupyterLab package which provides the default implementation of the `@jupyterlab/codeeditor` interface, using the `CodeMirror` editor.
+  - cm编辑器及ext相关代码不多
   - https://github.com/jupyterlab/jupyterlab/tree/main/packages/codemirror-extension
     - A JupyterLab package which provides an entry point, commands, and keyboard shortcuts for the `@jupyterlab/codemirror` package.
   - https://github.com/jupyterlab/jupyterlab/tree/main/packages/codeeditor
@@ -83,25 +126,6 @@ modified: 2023-06-23T12:46:53.288Z
   - https://github.com/jupyter/nbdime
     - Tools for diffing and merging of Jupyter notebooks.
 
-- https://github.com/sourcegraph/openctx/tree/main/client/codemirror /apache2/202405/ts
-  - https://openctx.org/playground
-  - implements a CodeMirror extension that shows OpenCtx items in the editor
-  - OpenCtx shows you contextual info about code from your dev tools, in your editor, in code review, and anywhere else you read code
-  - https://github.com/sourcegraph/codeintellify /MIT/202111/ts/archived
-    - Adds code intelligence to code views on the web
-    - This library manages all of the inputs (mouse/keyboard events, location changes, hover information, and hover actions) necessary to display hover tooltips on with a code view.
-    - 依赖rxjs、sourcegraph
-
-- overleaf /12.6kStar/AGPLv3/202405/js/latex/ace>codemirror
-  - https://github.com/overleaf/overleaf
-  - https://github.com/overleaf/overleaf/wiki
-  - https://github.com/overleaf/overleaf/tree/main/services/web/frontend/js/features/source-editor
-  - A web-based collaborative LaTeX editor
-  - source-editor支持codemirror6、ace
-  - https://github.com/overleaf/ace /Ajax.org Cloud9 Editor
-  - [Compile Error and PDF Download Notifications](https://github.com/overleaf/overleaf/issues/1031)
-    - migrate from ACE to CodeMirror 6. Yes, the CM6 work will be coming to CE soon. _202206
-
 - Zettlr /9.3kStar/GPLv3/202401/ts/vue/偏学术
   - https://github.com/Zettlr/Zettlr
   - https://www.zettlr.com/
@@ -112,6 +136,51 @@ modified: 2023-06-23T12:46:53.288Z
   - support LaTeX and Word template
   - Citations made easy: Tight and ever-growing integration with your favourite reference manager (Zotero, JabRef, and many others)
   - Support for state of the art knowledge management techniques (Zettelkasten)
+
+- https://github.com/sourcegraph/openctx/tree/main/client/codemirror /apache2/202405/ts
+  - https://openctx.org/playground
+  - implements a CodeMirror extension that shows OpenCtx items in the editor
+  - OpenCtx shows you contextual info about code from your dev tools, in your editor, in code review, and anywhere else you read code
+  - https://github.com/sourcegraph/codeintellify /MIT/202111/ts/archived
+    - Adds code intelligence to code views on the web
+    - This library manages all of the inputs (mouse/keyboard events, location changes, hover information, and hover actions) necessary to display hover tooltips on with a code view.
+    - 依赖rxjs、sourcegraph
+
+- https://github.com/vizhub-core/vzcode /MIT/202406/ts
+  - VZCode: Multiplayer Code Editor
+  - VZCode offers a multiplayer code editing environment that caters to a real-time collaborative development experience. It's the code editor component of VizHub, and can also be used independently from VizHub.
+  - Browser-based editing environment
+  - Real-time collaboration via LAN or using services like NGrok
+  - A known shortcoming of VZCode is that it does not (yet) watch for changes from the file system. VZCode assumes that no other programs are modifying the same files.
+  - You can also expose your VZCode instance publicly using a tunneling service such as NGrok.
+  - Auto-save, debounced after code changes
+  - [VSCode-ish: Jump to Definition of Variable ](https://github.com/vizhub-core/vzcode/issues/177)
+    - [202406已合并pr](https://github.com/vizhub-core/vzcode/pull/717)
+    - I also have a history of working with CodeMirror 5 + ShareDB for the real-time integration, and was able to "unlock" that CodeMirror 6 + ShareDB integration successfully
+  - [Intelligent Autocompletions ](https://github.com/vizhub-core/vzcode/pull/305)
+  - https://github.com/vizhub-core/vizhub
+    - https://vizhub.community/
+    - Self Hosted CMS for Web-based Dataviz
+    - VizHub 2 has been used in Data Visualization Course 2018, Datavis 2020
+    - iFrame-based code execution environment.
+  - VizHub 3
+    - possible to self-host your own instance
+    - possible to extend the core with plugins
+  - https://github.com/vizhub-core/codemirror-6-experiments /MIT/201811/js
+    - [Codemirror 6 Experiments _201811](https://currankelleher.medium.com/codemirror-6-experiments-a3930bf03781)
+
+- https://github.com/prevwong/reka.js /437Star/MIT/202404/ts/yjs/暂未用在craft
+  - https://reka.js.org/
+  - https://reka.js.org/docs/introduction
+  - ✨ Reka is a state management system for building no-code editors
+  - Reka solves this by providing an AST-powered state system that enables end-users to create UI components that are nearly as complex as ones that developers could write in code
+  - along with an interpreter to efficiently compute an output that could be rendered on the browser.
+  - core依赖mobx、nanoid, 周边依赖mobx-react-lite、codemirror6、@lezer/highlight、acorn-jsx、yjs
+  - 示例使用unist-ast
+  - https://github.com/prevwong/reka.js/tree/main/packages/codemirror
+    - Contains the CodeMirror extension that provides syntax highlighting for Reka code
+  - https://github.com/prevwong/reka.js/tree/main/packages/react-code-editor /202404/ts
+    - Codemirror editor for editing Reka AST in code
 
 - https://github.com/glacambre/editor-adapter /MIT/202211/ts/inactive
   - A library to interact with in-browser JS editors like Ace, CodeMirror or Monaco
@@ -174,6 +243,8 @@ modified: 2023-06-23T12:46:53.288Z
   - https://codemirror-console.netlify.com/
   - Web Console UI for JavaScript.
   - 依赖codemirror5、in-browser-language
+  - https://github.com/aliyun/alibabacloud-console-base /MIT/202311/ts
+    - 阿里云控制台基座, CodeMirror 5 的 React 封装，适用于极简的场景
 
 - https://github.com/uiwjs/react-markdown-editor /MIT/202404/ts
   - https://uiwjs.github.io/react-markdown-editor
@@ -262,42 +333,6 @@ modified: 2023-06-23T12:46:53.288Z
   - CodeMirror on the server
   - 依赖codemirror5
 
-- https://github.com/vizhub-core/vzcode /MIT/202406/ts
-  - VZCode: Multiplayer Code Editor
-  - VZCode offers a multiplayer code editing environment that caters to a real-time collaborative development experience. It's the code editor component of VizHub, and can also be used independently from VizHub.
-  - Browser-based editing environment
-  - Real-time collaboration via LAN or using services like NGrok
-  - A known shortcoming of VZCode is that it does not (yet) watch for changes from the file system. VZCode assumes that no other programs are modifying the same files.
-  - You can also expose your VZCode instance publicly using a tunneling service such as NGrok.
-  - Auto-save, debounced after code changes
-  - [VSCode-ish: Jump to Definition of Variable ](https://github.com/vizhub-core/vzcode/issues/177)
-    - [202406已合并pr](https://github.com/vizhub-core/vzcode/pull/717)
-    - I also have a history of working with CodeMirror 5 + ShareDB for the real-time integration, and was able to "unlock" that CodeMirror 6 + ShareDB integration successfully
-  - [Intelligent Autocompletions ](https://github.com/vizhub-core/vzcode/pull/305)
-  - https://github.com/vizhub-core/vizhub
-    - https://vizhub.community/
-    - Self Hosted CMS for Web-based Dataviz
-    - VizHub 2 has been used in Data Visualization Course 2018, Datavis 2020
-    - iFrame-based code execution environment.
-  - VizHub 3
-    - possible to self-host your own instance
-    - possible to extend the core with plugins
-  - https://github.com/vizhub-core/codemirror-6-experiments /MIT/201811/js
-    - [Codemirror 6 Experiments _201811](https://currankelleher.medium.com/codemirror-6-experiments-a3930bf03781)
-
-- https://github.com/prevwong/reka.js /437Star/MIT/202404/ts/yjs/暂未用在craft
-  - https://reka.js.org/
-  - https://reka.js.org/docs/introduction
-  - ✨ Reka is a state management system for building no-code editors
-  - Reka solves this by providing an AST-powered state system that enables end-users to create UI components that are nearly as complex as ones that developers could write in code
-  - along with an interpreter to efficiently compute an output that could be rendered on the browser.
-  - core依赖mobx、nanoid, 周边依赖mobx-react-lite、codemirror6、@lezer/highlight、acorn-jsx、yjs
-  - 示例使用unist-ast
-  - https://github.com/prevwong/reka.js/tree/main/packages/codemirror
-    - Contains the CodeMirror extension that provides syntax highlighting for Reka code
-  - https://github.com/prevwong/reka.js/tree/main/packages/react-code-editor /202404/ts
-    - Codemirror editor for editing Reka AST in code
-
 - https://github.com/joplin/website-plugin-discovery /MIT/202401/ts/mustache
   - https://joplinapp.org/plugins/
   - https://joplinapp.org/help/api/get_started/plugins/
@@ -316,6 +351,15 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/Sagargupta16/ai-code-translator /202311/ts
   - https://ai-code-translator-delta-six.vercel.app/
   - Use AI to translate code from one language to another
+
+## typewriter/Text Generate Effect
+
+- https://stackblitz.com/edit/react-ts-yiu185
+  - [How To Create A Text Generate Effect In React | Algochurn _202209](https://www.algochurn.com/blog/how-to-create-a-text-generate-effect-in-react)
+  - https://www.algochurn.com/frontend/text-generate-effect
+  - create a Typewriter Effect from scratch using native React and/or Javascript functions
+  - 动画打字完undo会撤销所有字
+  - 依赖codemirror6、@uiw/react-codemirror
 
 ## code-animation
 
@@ -357,11 +401,19 @@ modified: 2023-06-23T12:46:53.288Z
   - A plugin for CodeMirror editor for creating code demos as on Emmet Documentation
   - 依赖codemirror.v5
 
-- https://github.com/code-hike/examples/tree/main/with-remotion
-  - https://x.com/pomber/status/1800108854459715864
-  - 不依赖codemirror
-  - you can use Remotion's `useFrame` inside any Code Hike annotation to animate most of the examples from the docs
-  - wondering if it can also display twoslash annotations, but I don't think remotion supports React Server Components
+- https://github.com/Jisuanke/CodeMirror-Record /202112/js/inactive
+  - https://codemirror-record.haoranyu.com/
+  - https://codemirror-record.haoranyu.com/demo/
+  - ⌛️ It is a project for recording and playing back activities in the CodeMirror 5 editor and the surrounding environment
+  - version 6.x is not yet supported by this library.
+
+- https://github.com/liqvidjs/plugins /MIT/202309/ts
+  - This is a monorepo for a suite of plugins for recording interactive videos. While these were built for Liqvid, they are compatible with other animation libraries.
+  - [CodeMirror | Liqvid](https://liqvidjs.org/docs/plugins/codemirror/)
+    - @lqv/codemirror package allows you to record and replay CodeMirror typing.
+  - https://github.com/ysulyma/rp-codemirror
+    - CodeMirror recording/playing for Liqvid
+    - This packages has been superseded by @lqv/codemirror. This repository is no longer used.
 
 - https://github.com/wix-incubator/codio /MIT/202101/ts/kotlin/inactive
   - A media format to record and playback the process of programming
@@ -369,12 +421,18 @@ modified: 2023-06-23T12:46:53.288Z
   - The format is composed of code editor operations and audio/video.
   - Create interactive tutorials, code messages and embedded documentation with a media format that turns your IDE to a media player.
   - 🍴 forks
-  - https://github.com/rbrisita/codio-sui
+  - https://github.com/rbrisita/codio-sui /202207/ts/inactive
     - A media format for VS Code to record and playback the process of programming.
     - Record VS Code events with an audio commentary and subtitles to play back at a later time.
 
 - products-code-animation
   - [Beautiful code animations - AnimateCode](https://www.animate-code.com/)
+
+- https://github.com/code-hike/examples/tree/main/with-remotion
+  - https://x.com/pomber/status/1800108854459715864
+  - 不依赖codemirror
+  - you can use Remotion's `useFrame` inside any Code Hike annotation to animate most of the examples from the docs
+  - wondering if it can also display twoslash annotations, but I don't think remotion supports React Server Components
 
 - https://github.com/pomber/code-surfer /MIT/202003/ts/js/inactive
   - https://codesurfer.pomb.us/
@@ -445,20 +503,21 @@ modified: 2023-06-23T12:46:53.288Z
   - Extensibility through the use of ProseMirror and CodeMirror engines.
   - 依赖 prosemirror, @diplodoc/transform, react, react-dom, @gravity-ui/uikit, @gravity-ui/components 
 
-- https://github.com/wanglin2/markdown_editor_sync_scroll_demo /202210/js/inactive
-  - https://wanglin2.github.io/markdown_editor_sync_scroll_demo/
-  - 基于CodeMirror和unified实现的一个能精确同步滚动的Markdown编辑器
-  - 依赖codemirror5、vue3、remark-gfm
-  - [如何实现一个能精确同步滚动的Markdown编辑器 - 掘金 _202205](https://juejin.cn/post/7100562751596003342)
-
 - https://github.com/wangpin34/wxformat /MIT/202311/ts
   - https://wangpin34.github.io/wxformat/
   - Markdown For Weixin 是一款用于生成兼容微信公众号图文素材内容的 Markdown 编辑器
   - 依赖codemirror6、daisyui
   - 示例是分屏视图，支持同步滚动
 
+- https://github.com/wanglin2/markdown_editor_sync_scroll_demo /202210/js/inactive
+  - https://wanglin2.github.io/markdown_editor_sync_scroll_demo/
+  - 基于CodeMirror和unified实现的一个能精确同步滚动的Markdown编辑器
+  - 依赖codemirror5、vue3、remark-gfm
+  - [如何实现一个能精确同步滚动的Markdown编辑器 - 掘金 _202205](https://juejin.cn/post/7100562751596003342)
+
 - https://github.com/mdnice/markdown-nice /GPLv3/202109/js/inactive
   - 支持自定义样式的 Markdown 编辑器
+  - 依赖@uiw/react-codemirror.v1、antd.v3
   - [一款开源的Markdown转富文本编辑器的实现原理剖析 - 知乎](https://zhuanlan.zhihu.com/p/526702914)
 
 - https://github.com/emberry-org/lemon-editor /GPLv3/202208/ts/inactive
@@ -599,7 +658,7 @@ modified: 2023-06-23T12:46:53.288Z
   - https://unpkg.com/starboard-notebook/dist/index.html
   - https://starboard.gg/
   - In-browser literal notebook runtime used in Starboard.
-  - 编辑器已分离，基于rich-markdown-editor和prosemirror
+  - 编辑器已分离，基于rich-markdown-editor和prosemirror、codemirror6
   - 前端基于lit
 
 - https://github.com/wikimedia/mediawiki-extensions-CodeMirror /GPL/202405/js
@@ -846,20 +905,6 @@ modified: 2023-06-23T12:46:53.288Z
 - https://codepen.io/GwapongProgrammer/pen/yLXqWMK
   - 依赖codemirror6
 
-- https://github.com/Jisuanke/CodeMirror-Record /202112/js/inactive
-  - https://codemirror-record.haoranyu.com/
-  - https://codemirror-record.haoranyu.com/demo/
-  - ⌛️ It is a project for recording and playing back activities in the CodeMirror 5 editor and the surrounding environment
-  - version 6.x is not yet supported by this library.
-
-- https://github.com/liqvidjs/plugins /MIT/202309/ts
-  - This is a monorepo for a suite of plugins for recording interactive videos. While these were built for Liqvid, they are compatible with other animation libraries.
-  - [CodeMirror | Liqvid](https://liqvidjs.org/docs/plugins/codemirror/)
-    - @lqv/codemirror package allows you to record and replay CodeMirror typing.
-  - https://github.com/ysulyma/rp-codemirror
-    - CodeMirror recording/playing for Liqvid
-    - This packages has been superseded by @lqv/codemirror. This repository is no longer used.
-
 - https://github.com/ngalaiko/codemirror-lang-diff /MIT/202304/ts/inactive
   - This is a CodeMirror 6 extension that adds support for `.diff` files syntax.
 
@@ -884,7 +929,7 @@ modified: 2023-06-23T12:46:53.288Z
   - Only few linting rules have been implemented
   - 示例lint python2代码
 # extensions
-- https://github.com/val-town/codemirror-ts /ISC/2024025/ts
+- https://github.com/val-town/codemirror-ts /ISC/202405/ts
   - https://val-town.github.io/codemirror-ts/
   - a set of extensions for CodeMirror 6 that add support for TypeScript
   - lint, hover, and autocomplete extensions for CodeMirror + TypeScript
@@ -1014,7 +1059,7 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/A99US/codemirror-6-snippetbuilder /MIT/202304/js
   - This is a function for CodeMirror 6 to convert a standard array of snippet (like this one) and turn it into snippet array that is ready to use in CodeMirror 6 extension.
 
-- https://github.com/PuruVJ/neocodemirror /202311/ts
+- https://github.com/PuruVJ/neocodemirror /202407/ts/svelte
   - Aims to provide Codemirror 6 as an easy to use codemirror action.
   - https://x.com/puruvjdev/status/1780560310547436002
     - Anytime you change documentId, it stores the state in a map, and when the documentID changes back to the one stored, we apply the history
@@ -1073,7 +1118,7 @@ modified: 2023-06-23T12:46:53.288Z
     - CodeMirror 6 extension for enabling lines of code to be evaluated
 
 - https://github.com/Monkatraz/cm-tarnation /MPLv2/202207/ts/inactive
-  - An alternative parser for CodeMirror 6
+  - 🧮 An alternative parser for CodeMirror 6
   - Tarnation is not line-based. It is capable of reusing both previous and ahead data when parsing, making it fully incremental
   - Tarnation can do things that Lezer (the parser you'd usually use for CodeMirror) can't. For example, Tarnation can parse something like Markdown, and other weird esoteric markup/formatting languages.
 
@@ -1146,6 +1191,14 @@ modified: 2023-06-23T12:46:53.288Z
   - https://github.com/JerryI/wolfram-js-frontend
     - Dynamic Notebook Environment for Wolfram Language written in Javascript
 # code-playgrounds
+- https://github.com/mdn/bob /MIT/202407/ts
+  - Builder of Bits aka The MDN Web Docs interactive examples, example builder
+  - [Migrate to CodeMirror v6 _202208](https://github.com/mdn/bob/issues/851)
+  - https://developer.mozilla.org/en-US/play
+  - [Introducing the MDN Playground: Bring your code to life! | MDN Blog _202306](https://developer.mozilla.org/en-US/blog/introducing-the-mdn-playground/)
+  - features: Instant prototyping, Live interaction, collaborative
+  - We decided to go with CodeMirror. We considered Monaco, but decided for a more lightweight approach
+
 - react-runner /382Star/MIT/202406/ts/inactive
   - https://github.com/nihgwu/react-runner
   - https://nihgwu.github.io/react-runner/
@@ -1254,6 +1307,11 @@ modified: 2023-06-23T12:46:53.288Z
   - https://github.com/lucademenego99/icp-slides /202307/html
     - https://lucademenego99.github.io/icp-slides/
     - Slides created with Reveal.js for the Interactive Code Playgrounds project, hosted directly from the repository as a Github Pages website.
+  - https://github.com/lucademenego99/icp-editor /MIT/202307/ts/svelte/inactive
+    - https://lucademenego99.github.io/icp-editor/
+    - A web application used to create Reveal.js slides with Interactive Code Playgrounds
+    - The editor exposes predefined slide templates, in which the user can add text, code playgrounds or images.
+    - The text editor is powered by Quilljs
 
 - https://github.com/java-sheets/java-sheets /MIT/202207/java/ts
   - Browser Based Java REPL
@@ -1308,7 +1366,7 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/google/playground-elements /202405/ts
   - Serverless coding environments for the web.
-  - still CodeMirror 5
+  - 依赖CodeMirror5
 
 - https://github.com/kazzkiq/CodeFlask /MIT/202006/js/inactive
   - https://kazzkiq.github.io/CodeFlask/
@@ -1318,12 +1376,6 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/codepod-io/codepod /MIT/202311/ts/inactive
   - Codepod provides the interactive coding experience popularized by Jupyter, but with scalability and production-readiness
   - 画板上的代码沙盒，使用monaco而不是codemirror
-
-- https://github.com/lucademenego99/icp-editor /MIT/202307/ts/svelte/inactive
-  - https://lucademenego99.github.io/icp-editor/
-  - A web application used to create Reveal.js slides with Interactive Code Playgrounds
-  - The editor exposes predefined slide templates, in which the user can add text, code playgrounds or images.
-  - The text editor is powered by Quilljs
 # starter
 - https://github.com/A99US/CM6-Browser-Wrapper /MIT/202308/js/inactive
   - https://a99us.github.io/CM6-Browser-Wrapper/

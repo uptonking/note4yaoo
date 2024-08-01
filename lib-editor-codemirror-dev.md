@@ -20,8 +20,7 @@ modified: 2021-05-06T09:38:31.520Z
   - 基于contenteditable(而不是textarea)实现，具备✨富文本的能力
   - 支持split-view
   - 支持nested-editor，可在同一页面渲染多个编辑器
-  - simpler than prosemirror
-    - position uses numeric index, index-by-lines
+  - ~~simpler than prosemirror~~
 
 - cons
   - 非开箱即用，需要组装模块
@@ -35,6 +34,7 @@ modified: 2021-05-06T09:38:31.520Z
   - Bidirectional Text: ltr, rtl
   - Syntax Highlighting
   - Line Numbers
+  - position uses numeric index, index-by-lines
   - Autocompletion
   - Code Folding
   - Search/Replace
@@ -52,14 +52,13 @@ modified: 2021-05-06T09:38:31.520Z
   - Internationalization
 
 - who is using #codemirror 🌰
-  - jupyter-notebook
-  - observablehq-notebook, val-town
+  - overleaf(latex-code+rich)
+  - jupyter-notebook, observablehq-notebook, val-town
   - codesandbox-sandpack, codepen, replit, glitch(v5), phoenix-brackets(v5)
   - sourcegraph
-  - overleaf(latex-code+rich)
   - obsidian, zettlr, joplin-markdown-editor, supernotes
   - chrome-devtools(开源代码中使用v6)
-  - known: mdn
+  - known: mdn-bob
   - more: tagspaces, hedgedoc
   - ?: replay.io
   - apps: desmos-classroom
@@ -87,7 +86,7 @@ modified: 2021-05-06T09:38:31.520Z
     - vps的性能不如本地计算机，vps很贵
 
 - ide要点
-  - 主要组件：editor， fileTree, workbench-layout， extension
+  - 主要组件: editor, fileTree, workbench-layout, extension
   - 自动同步编辑器内容、代码仓库、配置
 
 - 代码编辑器要点

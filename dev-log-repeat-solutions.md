@@ -178,10 +178,11 @@ modified: 2021-07-20T13:50:23.433Z
   - 所有的操作可由用户执行，也可由ai执行
 
 - high-availability / horizontal-scaling
-  - yjs-hocuspocus, y-redis, fluid-routerlicious 🤔 使用websocket通信是错误的架构
+  - yjs-hocuspocus, y-redis, fluid-routerlicious 🤔 使用websocket通信是否是错误的架构
   - strapi, nocobase
   - fwk: nestjs, feathers-sync
   - manual: zulip
+  - more: overleaf
 
 - 协同类产品要考虑数据和配置是否都要同步的问题
   - 表格的过滤条件
@@ -209,7 +210,12 @@ modified: 2021-07-20T13:50:23.433Z
   - google-docs-like-editor
   - monaco-editor
     - code editor that powers desktop vscode
-    - not supported in mobile browsers. not for IE.
+    - not supported in mobile browsers. not for IE
+
+- 支持多种前端框架的实现
+  - tanstack-table/virtual
+  - slate-editor, wangEditor, editablejs
+  - tiptap-editor, prosekit
 # excel
 - tips
 

@@ -14,7 +14,7 @@ modified: 2024-06-30T03:27:25.387Z
 
 - [The Jupyter Notebook](https://jupyter-notebook.readthedocs.io/en/stable/notebook.html)
 # docs-jupyterlab
-- [Jupyter and the future of IPython — IPython](https://ipython.org/)
+- 🆚 [Jupyter and the future of IPython — IPython](https://ipython.org/)
   - IPython 3.x was the last monolithic release of IPython, containing the notebook server, qtconsole, etc. 
   - As of IPython 4.0, the language-agnostic parts of the project: the notebook format, message protocol, qtconsole, notebook web application, etc. have moved to new projects under the name Jupyter. 
   - IPython itself is focused on interactive Python, part of which is providing a Python kernel for Jupyter.
