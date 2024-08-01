@@ -54,7 +54,7 @@ modified: 2021-05-06T09:38:31.520Z
 - who is using #codemirror 🌰
   - jupyter-notebook
   - observablehq-notebook, val-town
-  - codesandbox-sandpack, codepen, replit, glitch(cm5)
+  - codesandbox-sandpack, codepen, replit, glitch(v5), phoenix-brackets(v5)
   - sourcegraph
   - overleaf(latex-code+rich)
   - obsidian, zettlr, joplin-markdown-editor, supernotes

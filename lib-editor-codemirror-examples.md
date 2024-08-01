@@ -116,12 +116,12 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/glacambre/editor-adapter /MIT/202211/ts/inactive
   - A library to interact with in-browser JS editors like Ace, CodeMirror or Monaco
 
-- https://github.com/yuku/textcomplete /MIT/202312/ts
+- https://github.com/yuku/textcomplete /1.7kStar/MIT/202312/ts/inactive
   - https://yuku.takahashi.coffee/textcomplete/
   - Autocomplete for HTMLTextAreaElement and more
   - 支持 textarea/contenteditable/codemirror
 
-- https://github.com/davidmyersdev/ink-mde /MIT/202405/ts
+- https://github.com/davidmyersdev/ink-mde /206Star/MIT/202405/ts
   - https://stackblitz.com/fork/github/davidmyersdev/ink-mde/tree/main/examples/template-ts
   - A beautiful, modern, customizable Markdown editor powered by CodeMirror 6 and TypeScript
   - This is the editor that powers https://octo.app.
@@ -160,7 +160,7 @@ modified: 2023-06-23T12:46:53.288Z
   - A batteries-included toolset for efficient development of CodeMirror 6 based editors (w/o React).
   - https://github.com/code4mk/codemirror-toolkit /202208/ts/inactive
     - easily use codemirror editor with codemirror-toolkit on react , vue , svelte
-  - [@codemirror-toolkit/react - A small and flexible solution for binding CodeMirror 6 to React : r/reactjs](https://www.reddit.com/r/reactjs/comments/107to4j/codemirrortoolkitreact_a_small_and_flexible/)
+  - [@codemirror-toolkit/react - A small and flexible solution for binding CodeMirror 6 to React : r/reactjs _202301](https://www.reddit.com/r/reactjs/comments/107to4j/codemirrortoolkitreact_a_small_and_flexible/)
     - I always wanted to use such a library when I was developing my Assembler Simulator in React. But all I could find at the moment was like @uiw/react-codemirror, it's "badly written" (e.g. reading a ref's current value during rendering) and contains too many dependencies I don't need, which cannot be tree-shaked so that you can toggle them in props.
     - So I decided to write it my self and here it is! The API design is inspired by zustand btw
 
@@ -198,11 +198,11 @@ modified: 2023-06-23T12:46:53.288Z
   - A simple markdown editor with preview, implemented with React.js and TypeScript.
   - This is based on `textarea` encapsulation, so it does not depend on any modern code editors such as Acs, CodeMirror, Monaco etc.
   - 依赖rehype-prism-plus、@uiw/react-markdown-preview
-
 - https://github.com/uiwjs/react-code-preview /MIT/202403/ts
-  - https://uiwjs.github.io/react-code-preview
+  - https://uiwjs.github.io/react-code-preview/
   - Code edit preview for React
   - 编辑代码时立刻刷新预览
+  - 依赖@uiw/react-codesandbox、@uiw/react-codemirror
 
 - https://github.com/scniro/react-codemirror2 /MIT/202108/ts/v5/inactive
   - https://scniro.github.io/react-codemirror2/
@@ -213,8 +213,8 @@ modified: 2023-06-23T12:46:53.288Z
   - CodeMirror component for Vue3
   - https://github.com/cloudacy/vue-markdown-edit /202112/ts
     - simple markdown editor based on CodeMirror built for VueJS.
-  - https://github.com/logue/vue-codemirror6
-    - @codemirror 6 component for @vuejs. Vue2 & Vue3 both supported.
+- https://github.com/logue/vue-codemirror6 /MIT/202407/ts
+  - @codemirror 6 component for @vuejs. Vue2 & Vue3 both supported.
 
 - https://github.com/surmon-china/vue-codemirror /MIT/202208/ts/vue/inactive
   - @codemirror code editor component for @vuejs
@@ -295,6 +295,8 @@ modified: 2023-06-23T12:46:53.288Z
   - 示例使用unist-ast
   - https://github.com/prevwong/reka.js/tree/main/packages/codemirror
     - Contains the CodeMirror extension that provides syntax highlighting for Reka code
+  - https://github.com/prevwong/reka.js/tree/main/packages/react-code-editor /202404/ts
+    - Codemirror editor for editing Reka AST in code
 
 - https://github.com/joplin/website-plugin-discovery /MIT/202401/ts/mustache
   - https://joplinapp.org/plugins/
@@ -327,6 +329,10 @@ modified: 2023-06-23T12:46:53.288Z
   - in-browser code editor
   - App is designed to be offline-first, meaning that it does not rely on any external servers or backdoors
   - We're planning to move to an offline-first approach, which means there will be no servers involved, and all your work will be stored in your local storage.
+- https://github.com/SymphonyIceAttack/code-animation /MIT/202405/ts
+  - https://www.codeanimations.top/
+  - code-animation
+  - 依赖@uiw/react-codemirror、shiki-magic-move、zustand、next、dnd-kit
 
 - https://github.com/meowtec/diffani /202307/ts
   - https://diffani.co/
@@ -373,12 +379,8 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/pomber/code-surfer /MIT/202003/ts/js/inactive
   - https://codesurfer.pomb.us/
   - Code Surfer adds code highlighting, code zooming, code scrolling, code focusing, code morphing, and fun to MDX Deck slides.
-
-- https://github.com/SymphonyIceAttack/code-animation /MIT/202405/ts
-  - https://www.codeanimations.top/
-  - code-animation
 # editors-based-on-codemirror
-- https://github.com/inkandswitch/tiny-essay-editor /NALic/202405/ts
+- https://github.com/inkandswitch/tiny-essay-editor /2023Star/NALic/202406/ts
   - https://tee.inkandswitch.com/
   - simple markdown editor w inline comments, on latest automerge stack
   - a simple collaborative Markdown editor built in React, with inline format preview and inline commenting.
@@ -422,6 +424,11 @@ modified: 2023-06-23T12:46:53.288Z
   - 支持切换预览风格、代码风格主题
   - 当使用服务端渲染时，请务必设置editorId为固定值。
   - 自定义 markdown-it 核心库扩展、属性等。
+  - https://github.com/imzbf/md-editor-v3 /MIT/202407/ts
+    - https://imzbf.github.io/md-editor-v3
+    - vue3 环境的 Markdown 编辑器
+  - https://github.com/imzbf/md-editor-extension
+    - Common extensions for md-editor-v3 and md-editor-rt.
 
 - https://github.com/yanthink/pingfan.ts /202204/ts/inactive
   - 基于 codemirror6 的 markdown 编辑器
@@ -490,9 +497,6 @@ modified: 2023-06-23T12:46:53.288Z
   - A plain javascript web component based on codemirror. 
   - It adds support for toolbars, XML-specific shortcuts, linting for XML and XQuery, and helpers for the transcription of epigraphic documents.
 
-- https://github.com/prevwong/reka.js/tree/main/packages/react-code-editor /202404/ts
-  - Codemirror editor for editing Reka AST in code
-
 - https://github.com/dyq086/formula-editor /202303/ts/vue/inactive
   - 基于vue3+codeMirror 6 公式表达式编辑器
 - https://github.com/gkf442573575/formula-editor-vue3 /MIT/202406/ts/vue
@@ -549,7 +553,7 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/acrodata/code-editor /MIT/202405/ts
   - https://acrodata.github.io/code-editor/
   - CodeMirror 6 wrapper for Angular
-  - 实现了diff视图
+  - 实现了上下布局的diff视图
 
 - https://github.com/touchifyapp/svelte-codemirror-editor /MIT/202405/ts
   - https://touchifyapp.github.io/svelte-codemirror-editor/
@@ -568,7 +572,7 @@ modified: 2023-06-23T12:46:53.288Z
   - MDXEditor is a rich, client-side component that does not benefit from server-side rendering. To use it in your server components, you should use next/dynamic
   - 依赖lexical、codemirror6、radix-ui、hast、mdast、react-diff-view、react-hook-form
   - diff分屏视图基于codemirror实现，左边不可编辑，右边可编辑，左右都是codemirror的md源码
-  - https://github.com/michioxd/mdxeditor-modified
+  - https://github.com/michioxd/mdxeditor-modified /202310/inactive
 
 - gem /10Star/MIT/202205/ts/inactive/代码量少
   - https://github.com/tanishqkancharla/gem
@@ -580,7 +584,7 @@ modified: 2023-06-23T12:46:53.288Z
     - I worked on moving to codemirror 6 
     - https://github.com/tanishqkancharla/gem/tree/codemirror /202112/cm6.v0.19
 
-- https://github.com/mcnuttandrew/prong /MIT/202310/ts
+- https://github.com/mcnuttandrew/prong /MIT/202310/ts/inactive
   - https://prong-editor.netlify.app/
   - Prong (PRojectional jsON Gui) is an editor framework for creating bespoke in-browser editors for JSON-based domain-specific languages (such as Vega, Vega-Lite, Tracery, and many others). 
   - These editors allow for things like drag-and-drop interactions, inline-interactive spreadsheets, in-situ recommenders and sparklines, and many more elements that would require significant engineering effort to create otherwise.
@@ -619,10 +623,10 @@ modified: 2023-06-23T12:46:53.288Z
   - https://phcode.dev/
   - Phoenix is a modern open-source Code Editor for the web, built for the browser
   - Extension support maintaining full compatibility with Brackets extensions (except brackets-node extensions).
+  - Adobe 公司开发过一个代码编辑器 Bracket，现在将其做成了 Web 版，重新命名为 Phoenix，可以当作线上 IDE 使用。
   - 依赖codemirror5、@floating-ui/dom、file-saver、marked、mustache
   - Support for pluggable remote back-ends.
   - Phoenix core will work from a static web server.
-  - Adobe 公司开发过一个代码编辑器 Bracket，现在将其做成了 Web 版，重新命名为 Phoenix，可以当作线上 IDE 使用。
 - https://github.com/adobe/brackets /MIT/202003/js/archived
   - http://brackets.io/
   - a modern open-source code editor for HTML, CSS and JavaScript that's built in HTML, CSS and JavaScript.
@@ -801,25 +805,30 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/TypeFox/open-collaboration-tools /MIT/202406/ts
   - https://www.open-collab.tools/
-  - Open Collaboration Tools: live-sharing solution for Eclipse Theia, VS Code and other editors and IDEs
+  - ⚖️ Open Collaboration Tools: live-sharing solution for Eclipse Theia, VS Code and other editors and IDEs
   - A public instance of the collaboration server is available at open-collab.tools.
   - This is how it works: one person starts a collaboration session as host and invites others to join. The IDE extension distributes the contents of the hostʼs workspace and highlights text selections and cursor positions of other participants. 
 
 - https://github.com/codersgyan/realtime-code-editor /202203/js
   - 依赖codemirror5、socket.io
 
+- https://github.com/himanshugoyal77/codeSync-realtime-code-editor /202407/js
+  - https://code-sync-realtime-coding.vercel.app/
+  - Realtime code collaboration tool with code editor, compiler and realtime cursors
+  - 依赖codemirror5, socket.io-client, react
+
 ## diff
 
 - https://github.com/acrodata/code-editor /MIT/202405/ts
   - https://acrodata.github.io/code-editor/
   - CodeMirror 6 wrapper for Angular
-  - 实现了diff上下视图
+  - 实现了diff上下视图、左右视图，支持高亮线
 
 - https://github.com/gaelj/BlazorCodeMirror6 /MIT/202407/csharp/ts
   - https://gaelj.github.io/BlazorCodeMirror6/
   - Blazor CodeMirror 6 brings the power of the CodeMirror 6 code editor to Blazor, offering a comprehensive . NET 6 / . NET 7 / . NET 8 component.
   - Markdown editor for Blazor
-  - 实现了diff上下视图
+  - 实现了diff上下视图，支持打开关闭diff视图，支持高亮线，支持accept/reject
   - 支持编辑器中渲染图片
 
 - https://github.com/mdx-editor/editor /MIT/202405/ts/lexical
@@ -941,7 +950,7 @@ modified: 2023-06-23T12:46:53.288Z
   - https://github.com/luizzappa/codemirror-lang-spreadsheet /MIT/202304/ts
     - Spreadsheet language support for CodeMirror
 
-- https://github.com/AlbertArakelyan/collaborative-markdown-editor-example /202405/ts
+- https://github.com/AlbertArakelyan/collaborative-markdown-editor-example /MIT/202405/ts
   - Collaborative Markdown Editor built on modern and simple web technologies with markdown editing libraries integrations
 
 - https://github.com/personalizedrefrigerator/joplin-plugin-extra-editor-settings /MIT/202407/ts
@@ -1173,7 +1182,9 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/reddit/play /BSD/202406/ts/lit
   - https://developers.reddit.com/play
   - A little playground for building apps on Reddit
-  -  We open-sourced a little playground for building apps on Reddit. It's all Lit web components, CodeMirror, CSS, TypeScript, and esbuild
+  - We open-sourced a little playground for building apps on Reddit. 
+  - It's all Lit web components, CodeMirror, CSS, TypeScript, and esbuild
+  - 依赖codemirror6、devvit/ui-renderer、lit3
 
 - https://github.com/abhirampai/CodeBoost /MIT/202304/js/inactive
   - https://codeboost.vercel.app/
