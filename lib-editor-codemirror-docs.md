@@ -15,27 +15,32 @@ modified: 2024-05-02T02:00:47.318Z
 
 ## overview
 
-- CodeMirror is set up as a collection of separate modules that, together, provide a full-featured text and code editor. 
+- CodeMirror is set up as a collection of separate modules that, together, provide a full-featured text and code editor.
+  - @codemirror/state, which defines data structures that represent the editor state and changes to that state.
+  - @codemirror/view, a display component that knows how to show the editor state to the user, and translates basic editing actions into state updates.
+  - @codemirror/commands defines a lot of editing commands and some key bindings for them.
 - Many things that you'd expect in an editor, such as the line number gutter or undo history, are implemented as extensions to the generic core, and need to be explicitly added to a configuration to be enabled. 
-- To make it easy to get started, the `codemirror` package pulls in most of the things you need for a baseline editor (except a language package).
+  - To make it easy to get started, the `codemirror` package pulls in most of the things you need for a baseline editor (except a language package).
 
-- An attitude that guides the architecture of CodeMirror is that functional (pure) code, which creates new values instead of having side effects, is much easier to work with than imperative code
+- An attitude that guides the architecture of CodeMirror is that functional (pure-相同输入输出相同) code, which creates new values instead of having side effects, is much easier to work with than imperative code
 - the library's state representation is strictly functional—the document and state data structures are immutable, and operations on them are pure functions, whereas the view component and command interface wrap these in an imperative interface.
   - This means that an old state value stays intact even when the editor moves on to a new state.
   - as a general rule, unless explicitly described in the docs, reassignment of properties in objects created by the library is just not supported.
 
 - The library handles updates in a way inspired by approaches like Redux or Elm. 
   - With a few exceptions (like composition and drag-drop handling), the state of the view is entirely determined by the `EditorState` value in its `state` property.
-- 💡 Changes to that state happen in functional code, by creating a transaction that describes the changes to document, selection, or other state fields. 
+- 🌟 Changes to that state happen in functional code, by creating a transaction that describes the changes to document, selection, or other state fields. 
   - Such a transaction can then be dispatched, which tells the view to update its state, at which point it'll synchronize its DOM representation with the new state.
 - The data flow during typical user interaction looks something like this:
   - ⛓️ event -> transaction -> newState -> newView
   - The view listens for events. When DOM events come in, it (or a command bound to a key, or an event handler registered by an extension) translates them into state transactions and dispatches them. This builds up a new state. When that new state is given to the view, it'll update itself.
 
 - Since the core library is rather minimal and generic, a lot of functionality is implemented in system extensions. 
-  - Extensions can do all kinds of things, from merely configuring some option, to defining new fields in the state object, to styling the editor, to injecting custom imperative components into the view. The system takes care to allow extensions to compose without unexpected conflicts.
+  - Extensions can do all kinds of things, from merely configuring some option, to defining new fields in the state object, to styling the editor, to injecting custom imperative components into the view. 
+  - The system takes care to allow extensions to compose without unexpected conflicts.
 - The set of active extensions is kept in the editor state (and can be changed by a transaction). 
-  - Extensions are provided as values (usually imported from some package), or arrays of such values. They can be arbitrarily nested (an array containing more arrays is also a valid extension), and are deduplicated during the configuration process. Thus, it is okay for extensions to pull in other extensions—if the same one gets included multiple times, it'll only take effect once.
+  - Extensions are provided as values (usually imported from some package), or arrays of such values. They can be arbitrarily nested (an array containing more arrays is also a valid extension), and are deduplicated during the configuration process. 
+  - Thus, it is okay for extensions to pull in other extensions—if the same one gets included multiple times, it'll only take effect once.
 - When relevant, the precedence of extensions is determined first by explicitly set precedence category, and within that, by the position the extension has in the (flattened) collection of extensions passed to the state.
 
 - Document Offsets
@@ -48,22 +53,23 @@ modified: 2024-05-02T02:00:47.318Z
 
 - Data Model
 - CodeMirror, being a text editor, treats the document as a flat string. 
-  - It stores this in a tree-shaped data structure to allow cheap updates anywhere in the document (and efficient indexing by line number).
+  - It stores this in a 🌲 tree-shaped data structure to allow cheap updates anywhere in the document (and efficient indexing by line number).
 - Document changes are themselves `ChangeSet` values, describing precisely which ranges of the old document are being replaced by which bits of new text. 
   - This allows extensions to track precisely what happens to the document, allowing things like an undo history and collaborative editing to be implemented outside the library core.
-- When creating a change set, all changes are described in terms of the original document—they conceptually all happen at once. (If you really need to combine lists of changes where later changes refer to the document created by earlier ones, you can use the change set `compose` method.)
+- 🌟 When creating a change set, all changes are described in terms of the original document—they conceptually all happen at once. 
+  - (If you really need to combine lists of changes where later changes refer to the document created by earlier ones, you can use the change set `compose` method.)
 
 - Alongside the document, an editor state stores a current `selection`. 
   - Selections may consist of multiple ranges, each of which can be a cursor (empty) or cover a range between its anchor and head).
   - Overlapping ranges are automatically merged, and ranges are sorted, so that a selection's ranges property always holds a sorted, non-overlapping array of ranges.
-- One of these ranges is marked as the main one. This is the one that the browser's DOM selection will reflect. The others are drawn and handled entirely by the library.
+- One of these ranges is marked as the `main` one. This is the one that the browser's DOM selection will reflect. The others are drawn and handled entirely by the library.
 - By default a state will only accept selections with a single range. 
   - To get support for multiple selections, you have to include an extension like `drawSelection` that is able to draw them, and set an option to enable them.
 
 - Each editor state also has a (private) reference to its configuration, which is determined by the extensions that are active for that state. During regular transactions, the configuration stays the same. 
   - But it is possible to reconfigure the state using compartments or effects that add to or replace the current configuration.
 
-- A facet is an extension point. Different extension values can provide values for the facet. And anyone with access to the state and the facet can read its output value. 
+- 🧩 A facet is an extension point. Different extension values can provide values for the facet. And anyone with access to the state and the facet can read its output value. 
 - The idea behind facets is that most types of extension allow multiple inputs, but want to compute some coherent combined value from those. How that combining works may differ.
   - For something like tab size, you need a single output value. So that facet takes the value with the highest precedence and uses that.
   - When providing event handlers, you want the handlers as an array, sorted by precedence, so that you can try them one at a time until one of them handles the event.
@@ -73,7 +79,7 @@ modified: 2024-05-02T02:00:47.318Z
   - But it is also possible to have facet values computed from other aspects of the state.
 - Facet values are only recomputed when necessary, so you can use an object or array identity test to cheaply check whether a facet changed.
 
-- Transactions, created with the state's `update` method, combine a number of effects (all optional):
+- 🧩 Transactions, created with the state's `update` method, combine a number of effects (all optional):
   - It can apply document changes.
   - It can explicitly move the selection. 
   - It can have any number of annotations, which store additional metadata that describes the (entire) transaction.
@@ -100,9 +106,11 @@ modified: 2024-05-02T02:00:47.318Z
 - Long lines (when not wrapped) or chunks of folded code can still make the viewport rather huge. The editor also provides a list of visible ranges, which won't include such invisible content. This can be useful when, for example, highlighting code, where you don't want to do work for text that isn't visible anyway.
 
 - CodeMirror's view makes a serious effort to minimize the amount of DOM reflows it causes. 
-- Dispatching a transaction will generally only cause the editor to write to the DOM, without reading layout information. 
+- 🌟 Dispatching a transaction will generally only cause the editor to write to the DOM, without reading layout information. 
   - The reading (to check whether the viewport is still valid, whether the cursor needs to be scrolled into view, and so on) is done in a separate measure phase, scheduled using `requestAnimationFrame`. This phase will, if necessary, follow up with another write phase.
 - You can schedule your own measure code using the `requestMeasure` method.
+- To avoid weird reentrancy situations, the view will raise an error when a new update is initiated while another update is in the process of being (synchronously) applied. 
+  - Multiple updates applied while a measure phase is still pending are not a problem—those will just cause their measure phases to be combined.
 
 - The editor's DOM structure looks something like this:
 
@@ -125,7 +133,7 @@ modified: 2024-05-02T02:00:47.318Z
 - To manage editor-related styles, CodeMirror uses a `style-mod` system to inject styles from JavaScript. Styles can be registered with a facet, which will cause the view to make sure they are available.
 - A theme declaration defines any number of CSS rules using style-mod notation. 
 
-- Commands are functions with a specific signature. 
+- 🧩 Commands are functions with a specific signature. 
   - Their main use is key bindings, but they could also be used for things like menu items or command palettes. 
 - A command function represents a user action. 
   - It takes a `view` and returns a boolean,  `false` to indicate it doesn't apply in the current situation, and `true` to indicate that it successfully executed. 
@@ -134,7 +142,7 @@ modified: 2024-05-02T02:00:47.318Z
 - Commands that only act on the state, not the entire view, can use the `StateCommand` type instead, which is a subtype of `Command` that just expects its argument to have `state` and `dispatch` properties. 
   - This is mostly useful for being able to test such commands without creating a view.
 
-- There are a number of different ways to extend CodeMirror, and picking the proper way for a given use case isn't always obvious. 
+- 🔌 There are a number of different ways to extend CodeMirror, and picking the proper way for a given use case isn't always obvious. 
 - State Fields
   - Extensions often need to store additional information in the state. The undo history needs to store undoable changes, the code folding extension needs to track what has been folded, and so on.
   - For this purpose, extensions can define additional state fields. State fields, living inside the purely functional state data structure, must store immutable values.

@@ -365,6 +365,8 @@ modified: 2024-05-06T02:54:40.374Z
 - editor
   - 支持多实例
   - 行级 code-comment
+  - ai切换文件时，没有销毁中间层CodeEditor
+
 - ❓ 为什么要将editorView对象挂在全局state的file下
   - actions.file.editorView(view)
 - 如何复用idepaas-sdk的编辑器组件，一种思路是使用readonly版本
@@ -470,6 +472,7 @@ modified: 2024-05-06T02:54:40.374Z
 
 - pros-paas 🌹
   - 在业务中使用时，可通过单独的playgroundId在demo页面进行测试，隔离性较好，且不影响业务
+  - 后端业务通过tenantCode隔离，方便测试人员、其他项目组单独测试
 
 - ⌛️ 回放示例(环境支持sdk-staging/sdk-localhost-3010/showmebug)
   - 在sdk demo界面，需要指定代码处理为 showmebug

@@ -29,6 +29,7 @@ modified: 2021-05-06T09:38:31.520Z
   - 顶层容器不支持CSS transform(用于画板缩放的场景, 但ace/monaco支持)
 
 - features
+  - dispatch高性能，只写不读
   - Mobile Support: Use the platform's native selection and editing features on phones
   - Accessibility: Works well with screen readers and keyboard-only users
   - Bidirectional Text: ltr, rtl
@@ -109,8 +110,8 @@ modified: 2021-05-06T09:38:31.520Z
 - dev-xp
   - 在github页面，每行代码的行号是确定的，不会显示软换行
     - 方便实现高亮搜索结果、查找引用
-  - 协作示例官方使用ot，社区有使用crdt如yjs
-  - 代码的ast和block编辑器的ast处理方式类似，代码symbol跳转和双链类似
+  - codemirror协作官方示例使用ot，社区有使用crdt如yjs
+  - 代码的ast和block编辑器的ast处理方式类似，代码的symbol跳转和双链类似
 
 - 区分codemirror是v5和v6的方法
   - 6️⃣ cm6的默认css，样式名小写
@@ -145,6 +146,10 @@ modified: 2021-05-06T09:38:31.520Z
 - electron
   - obsidian-plugin
 
+
+- discuss
+  - 简化ast的设计和实现
+
 - 难点
   - 渲染wysiwyg时采用 virtual render
   - 支持可缩放的编辑器，用于将编辑器嵌入画板/设计工具的场景
@@ -161,6 +166,8 @@ modified: 2021-05-06T09:38:31.520Z
   - hotkeys
   - menu-item
   - command-palette
+
+- To completely reset a state—for example to load a new document—it is recommended to create a new state instead of a transaction. That will make sure no unwanted state (such as undo history events) sticks around.
 
 - Querying coordinates for positions outside of the current viewport will not work (since they are not rendered, and thus have no layout).
 

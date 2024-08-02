@@ -342,8 +342,8 @@ betterdiscordctl -i flatpak install
 - dev-to-demo
   - editor: typewriter
   - 时光机回放模式
-  - paas激活的时机要修改
   - paas的断线恢复问题
+  - paas激活的时机要修改
   - LSP补全
   - ~~cde的 push/commit/pr~~
   - ~~cde的 分享、邀请、进入权限~~
@@ -392,6 +392,11 @@ betterdiscordctl -i flatpak install
 ```JS
 console.log(`接到到PaaS消息：`, name, dao.playgroundInfo.status, dao.dockerStatus, payload)
 ```
+
+## 0802
+
+- demoDay240802
+  - 自动跟随ai工作
 
 ## 0801
 
