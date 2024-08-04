@@ -9,6 +9,14 @@ modified: 2022-06-13T03:01:05.956Z
 
 # guide
 
+# discuss-not-yet
+- ## 
+
+- ## Incremental View Maintenance in PG. Not implemented, but a neat page. PG really is going to eat everything, isn't it?
+- https://x.com/criccomini/status/1814351383715590382
+- Last time I looked into it, it wasn't really useful yet. Limited support for which SQL is supported in incrementally materialized views, and very locking-heavy.
+
+- Its actively being worked on. The development is currently happening as the `pg_ivm` extension already supported by some cloud providers. The plan is to merge it into PG one day when it has high feature completeness for most SQL operations.
 # discuss
 - ## 
 

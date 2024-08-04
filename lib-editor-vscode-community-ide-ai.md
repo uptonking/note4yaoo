@@ -71,6 +71,29 @@ modified: 2024-05-10T06:17:27.016Z
 # discuss-ide-ai
 - ## 
 
+- ## 
+
+- ## @LangChainAI 宣布推出第一个本地的 Agent IDE - LangGraph Studio
+- https://x.com/tuturetom/status/1819190219788447805
+  - 基于 LangGraph Studio 在本地运行，基于代码开发 Agentic Workflow 并可视化交互运行、调试
+  - 与 LangSmith 集成，追踪 Agent 运行堆栈
+  - 支持 JS/Python，提供持久化层
+
+- 大量程序员使用vim和Emacs，甚至markdown的广泛使用，已经说明高产程序员根本不需要这种可视化
+
+- ## we are launching @wordware_ai ! Wordware is the first IDE solely focused on building your AI with Natural Language Programming
+- https://x.com/kozerafilip/status/1819302298944000142
+  - Having built a bunch of AI agents 🤖 we realised three things:
+  1. It’s prompts all the way down
+  2. Making AI Apps work requires a bunch of iterations
+  3. It’s much faster when the person developing the agent can judge the quality of the outputs
+  - So, having spent the last ten years building in AI with my co-founder, we thought from first principles: “If prompting is the new programming, what should the tools be?”
+  - The results: A user-friendly, beautiful editor that enables the user to use simple natural language to create complex AI Agents and iterate on them 20x faster than in code.
+
+- what is the added value compared to using the chat apps for all kinds of llms?
+  - We are more focused on building the flow once and then having an ability to call into it via an API
+  - So it a little like you don't have to have the same conversation with the chatbot every time and you get to make the inside info on how to lead that convo into a product.
+
 - ## 🌰 [AI Assisted Coding · vizhub-core/vzcode _202303](https://github.com/vizhub-core/vzcode/issues/73)
 - First pass done in #282
 

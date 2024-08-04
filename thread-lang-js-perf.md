@@ -94,6 +94,13 @@ modified: 2023-11-10T08:05:19.107Z
   - That .has() undefined bullshit pissed me off for a whole day I ended up abandoning Map permanently
 - Copy before update to prevent state changes that can be read before re-rendering.
   - Considering objects, in Chrome/V8 the hidden class is preserved when a new prop with an integer key is added to the object. This speeds up the lookup since such props are stored as elements.
+# discuss-gc
+- ## 
+
+- ## JavaScript garbage collection doesn't work how I expected when it comes to closures
+- https://x.com/buildsghost/status/1818346107766030584
+- A different design of timeouts could fix this problem, definitely more libraries need to be aware that they need to release scopes like this
+
 # discuss
 - ## 
 

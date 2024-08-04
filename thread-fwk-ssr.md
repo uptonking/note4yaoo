@@ -50,7 +50,10 @@ modified: 2021-04-24T08:29:02.272Z
 
 - ## 
 
-- ## 
+- ## Twitter(x) 的 web 端也做的很好，首次加载用 SSR 保 SEO、TTI、FCP，之后其他页面 router 用 CSR 保证切换流畅体验，客户端 API Request 减少 SSR 服务开销。
+- https://x.com/zhdsuperman/status/1818660691710238878
+  - 至今我还不知如何用 nextjs 实现类似体验，怎么做到只有首次加载是 RSC，但是之后切换为 CSR？
+- 很简单啊后续的屏幕用layout套一下然后用react query的provider包住的在client side fetch
 
 - ## ⌛️ History strikes back. HTMX, and Hotwire to add dynamic behavior are getting a lot of traction lately. 
 - https://twitter.com/simas_ch/status/1768918127008477382
@@ -94,12 +97,12 @@ modified: 2021-04-24T08:29:02.272Z
 
 - ## [How single-page application works in SSR (React) - Stack Overflow](https://stackoverflow.com/questions/57243697/how-single-page-application-works-in-ssr-react)
 - When implementing Server Side Rendering (SSR), the server knows how to generate a full page with markup so the user gets a fully rendered page and from that moment, when the js resources get downloaded, the application will be live (event listeners will be enabled, the react lifecycle will be active and so on).
-01.        Get a request for a specific path
-02.        Initiate a new store instance for the request
-03.        In case of using react router (or other router solution), fill the state with the requested route
-04.        Render the app, but instead of rendering and mounting the App, render the App to string (with renderToString)
-05.        Dehydrate the state - take the latest state snapshot and append it to the result (after escaping it and wrapping it with script tag for example)
-06.        Return the markup as a response. The markup can look similar to the following: 
+01.         Get a request for a specific path
+02.         Initiate a new store instance for the request
+03.         In case of using react router (or other router solution), fill the state with the requested route
+04.         Render the app, but instead of rendering and mounting the App, render the App to string (with renderToString)
+05.         Dehydrate the state - take the latest state snapshot and append it to the result (after escaping it and wrapping it with script tag for example)
+06.         Return the markup as a response. The markup can look similar to the following: 
 
 ```HTML
 <html>

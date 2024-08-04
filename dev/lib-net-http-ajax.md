@@ -224,6 +224,20 @@ modified: 2023-02-06T09:14:40.114Z
   - In HTTP2, normally, a browser opens a new connection for every new domain it sees. (So if your site loads via www. but serves images from img., that’d be 2 connections.)
   - Making domains use the same IP address and HTTPS certificate is an *implicit* way to enable connection coalescing; the control is on the browser’s side, and it’s not always great. (Plus sharing IPs is tricky.) But (TIL!) there’s also an *explicit* way.
 
+# discuss-polling
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 最近把一个 polling based 的任务调度系统改造成 push based，观察到 scheduling delay 从分钟级别降到到了毫秒级别
+- https://x.com/_foreverbell/status/1819003908083400923
+- 被拒绝了吗？答：polling based也够用了
+- 要是我就直接把 poll 间隔改短点 
+  - 底层存 event 的 storage 压力会很大
+- 底层 event sourcer 系统 bookkeeping message 的成本会上去，不过比起轮询对系统造成的压力来说，这个代价基本上算是 net win 
+
 # discuss
 - ## 
 

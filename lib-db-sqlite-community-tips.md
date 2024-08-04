@@ -16,7 +16,13 @@ modified: 2023-10-28T13:38:46.522Z
 
 - ## 
 
-- ## 
+- ## 看 SQLite 的介绍从数据库读小文件性能比从文件系统直接读要提升 35%，因为小文件读取大部分时间都消耗在了 open 和 close 的调用，而数据库只用一次 open 就够了
+- https://x.com/liumengxinfly/status/1818514354196955539
+- 大量小数据肯定要拼接然后自己维护 metadata 去索引的，前有 css sprites，后有 sstable
+- 说起css sprites，自从前端模块化后这个就没再见到用了。
+  - 说起css sprites，自从前端模块化后这个就没再见到用了。
+- 类似 tcp 多路复用
+
 # discuss-license-sqlite
 - ## 
 

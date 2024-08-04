@@ -21,6 +21,8 @@ modified: 2023-10-30T07:34:03.602Z
 
 - ## 
 
+- ## 
+
 - ## 国产188个大模型的excel文档： 北京69 上海22 杭州15 广东26个 江苏15个
 - https://twitter.com/FinanceYF5/status/1730912502312296935
   - [国产大模型188个list - Feishu Docs](https://zw73xyquvv.feishu.cn/wiki/WXLmwBbYuiTobkkJ6Ojc2cxqnj0?sheet=2XjJlJ&table=tblS2Jv7isKtSODz&view=vewfCdOf0U)
@@ -89,6 +91,36 @@ modified: 2023-10-30T07:34:03.602Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 如果想要让 LLM 稳定生成 JSON 对象，最简单的方式就是使用 zod 定义 schema 并配合 @vercel ai sdk的 generateObject使用，比如这里我想要从网页文本内容提取结构化的信息。
+- https://x.com/FeigelC35583/status/1819558128297648412
+  - 这种方式和当初 langchain 在 prompt 里写一大堆json 定义有本质区别，在于使用了 function call 的能力
+  - 从请求中可以看到，本质上是在调用模型的时候，构建了一个名为 json 的 函数, 描述是 respond with a json object, 其中参数是自己定义的 schema，然后在 tool_choice 中限制必须要使用这个 json 函数，那么模型就会返回调用json 函数的参数，即你定义的 schema
+  - 示例代码来自于https://github.com/DiscovAI/DiscovAI-crawl 我正在 building 的一个面向 RAG 应用的爬虫平台
+- 应该只有GPT系列能用吧
+  - 支持function call就可以，deepseek应该也可以的
+- 在这基础上。我会考虑使用jsonrepair这个包，手动修复下，增加容错
+- 如果大模型没有没有返回对应要求的字段数据，或者返回错了类型，它会怎么样，会自己补充空的，或者自动转换类型吗？
+  - 不会补充，会throw error，也可以用上面推友推荐的jsonrepair手动fix
+
+- 能支持开源模型吗
+  - 取决于模型支不支持function call，支持的话就可以，效果的话要看模型的能力
+- 用 function call 感觉模型的能力降了一个维度，不如直接给文本，我还是更喜欢用xml自己提取。
+
+- 我是用伪代码➕类型声明, 也是一样的稳定输出 json
+- langchain框架中有Pydantic json 解析器可以直接用，本质也是生成schema，再配合重试解析器也可以稳定生成json格式
+
+- ## 💡 LLMs are literally the most unreliable technology of all time (followed by **ing bluetooth)
+- https://x.com/Steve8708/status/1819448686424084892
+  - After an absurd amount of trial and error, we've internally created a set of rules for make LLMs considerably more reliable
+  - our secrets: restrict the llm to only what rag provides
+
+- what's your stance on AI for no-code? Do people prefer drag-and-drop vs prompting?
+  - i think the winning move is combining both
+
+- Bluetooth is hell and causes frustration daily.
 
 - ## 🌰 Firefox will use Transformers.js to power on-device features
 - https://x.com/osanseviero/status/1797291569348751848

@@ -14,8 +14,6 @@ modified: 2023-01-29T10:52:44.183Z
 
 - ## 
 
-- ## 
-
 - ## 👷 In his #BOBkonf2023 talk "State Transitions in Complex Systems", @MarijnJH shows how CodeMirror uses persistent state values & first-class transactions to more easily keep all the interdependent data involved in a full-featured editor coherent.
 - https://x.com/BOBKonf/status/1613845939361398784
   - [BOB - State Transitions in Complex Systems](https://bobkonf.de/2023/haverbeke.html)
@@ -282,7 +280,6 @@ modified: 2023-01-29T10:52:44.183Z
   - Likely some of the styles or wrapper elements we use influence the behavior. I’m not invested enough in this to try and isolate which, but you could try if you have the time.
 - 💡 I found out that to ensure proper flex child behavior for the editor content, such as flex-grow and flex-shrink, you need to encapsulate the contenteditable element within an additional div. This approach appears to resolve the focusing and blurring issues of contenteditable elements when they are direct children of a flex container in Chrome browsers.
 
-
 - ## 🤔 [Backwards compatibility of codemirror6 - JupyterLab - Jupyter Community Forum _202402](https://discourse.jupyter.org/t/backwards-compatibility-of-codemirror6/23851)
 - I was just wondering if anyone could tell me if codemirror6 is backwards compatible with JupyterLab3 or will it only work with JupyterLab4?
   - In core, it will only work with JupyterLab 4. It’s possible someone could write an extension that would replace some renderers with codemirror 6 (e.g. notebook cell inputs), but likely not all of them (e.g. settings editor).
@@ -309,6 +306,13 @@ modified: 2023-01-29T10:52:44.183Z
 - ## 
 
 - ## 
+
+- ## 💫 Staggered Animation - CSS 逐行显示动画， 与codemirror无关
+- https://x.com/alirdev/status/1817923525002530819
+- I once recorded a video for a text reveal using this same approach
+  - [JS Text Reveal Effect - YouTube](https://www.youtube.com/watch?v=PMiVFXZpYQo&t=140s)
+- I made a video a while ago that explains this technique
+  - [Css: Scoped variables - YouTube](https://www.youtube.com/watch?v=cXM0SZeWjd4)
 
 - ## second attempt to generate slide deck for a paper with @Google Gemini 1.5 Pro in @revealjs .
 - https://x.com/algo_diver/status/1769614261616251150
@@ -367,7 +371,17 @@ modified: 2023-01-29T10:52:44.183Z
 
 - ## 
 
-- ## 
+- ## 🆚️ Problem: You want to compare two files.
+- https://x.com/housecor/status/1817554130782568927
+  - Solution: Use VS Code.
+  - Right click file 1 and “Select for compare”
+  - Right click file 2 and “Compare with selected”
+  - A side-by-side diff displays
+
+- I’ve also used BeyondCompare which has the ability to compare folders as well.
+- Jetbrains IDEs also have a "compare selection with clipboard" option I found quite helpful
+- Command + Shift + P -> Compare active file with.. also works
+- code --diff file1 file2
 
 - ## 🔀 [Should dispatched transactions be added to a queue? - v6 _202206](https://discuss.codemirror.net/t/should-dispatched-transactions-be-added-to-a-queue/4610)
 - I was slightly surprised to find that the dispatch method doesn’t put transactions on a queue for processing.

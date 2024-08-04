@@ -19,6 +19,12 @@ modified: 2024-01-11T15:57:32.182Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## pdf.js from @mozilla cannot show multiple PDFs in one page as pdf.js use global namespace. 
+- https://x.com/xiaohanyu1988/status/1819575393252163866
+  - The only solution is to embed each pdf.js in an `<iframe>` .
+
 - ## [Are all PDF files compressed? - Stack Overflow](https://stackoverflow.com/questions/10547890/are-all-pdf-files-compressed)
 - PDFs in general use internal compression for the objects they contain. But this compression is by no means compulsory(必须做的，规定的) according to the file format specifications. All (or some) objects may appear completely uncompressed, and they would still make a valid PDF.
 
@@ -37,7 +43,24 @@ modified: 2024-01-11T15:57:32.182Z
 # discuss-pdf
 - ## 
 
-- ## 
+- ## PDF转Markdown 方案选型
+- https://x.com/dotey/status/1817072212316135776
+01. document-convert（开源）：https://github.com/multimodal-art-projection/MAP-NEO/tree/main/Matrix/document-convert
+02. Ragflow（开源）：https://github.com/infiniflow/ragflow
+03. gptpdf（开源）：https://github.com/CosmosShadow/gptpdf
+04. 百度云Textmind（闭源）：https://cloud.baidu.com/product/textmind.html
+05. doc2x（闭源）：https://doc2x.noedgeai.com
+06. 腾讯云文档解析（闭源）：https://cloud.tencent.com/document/product/1759/107504
+07. marker（开源）：https://github.com/VikParuchuri/marker
+08. PDF-Extract-Kit（开源）：https://github.com/opendatalab/PDF-Extract-Kit
+09. zerox（开源）：https://github.com/getomni-ai/zerox
+10. OminiParse（开源）：https://github.com/adithya-s-k/omniparse
+11. MinerU（开源）：https://github.com/opendatalab/MinerU
+
+- 评估指标：人工评估
+- 评估数据集：
+   * 数字PDF：论文、财报（含图片、表格和文字）
+   * 扫描PDF：书籍（含图片、表格和文字）、模拟试卷、水印文档、教辅习题、复杂合并单元格表格、财报图片格式（含复杂表格）、含图片的表格。
 
 - ## RAG 数据清洗关键组件，独创 PDF 内容抽取的 「布局识别」和 「公式识别」模型，达到 SOTA！PDF-Extract-Kit 开源
 - https://x.com/tuturetom/status/1813468361202057521

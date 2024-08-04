@@ -13,7 +13,13 @@ modified: 2021-10-29T15:05:07.897Z
 
 - ## 
 
-- ## 
+- ## Telegram launched a simple app store for their Mini Apps (basically little JS/HTML apps that run inside Telegram)
+- https://x.com/jamespotterdev/status/1819542020538704173
+  - They claim 500 million MAUs across all apps
+  - [Telegram Browser, Mini App Store, Gifting Stars and More _20240731](https://telegram.org/blog/w3-browser-mini-app-store)
+  - [Telegram Mini Apps docs](https://core.telegram.org/bots/webapps)
+- hope they keep the playbook and introduce the payments like in WeChat eventually
+- Indiehacker heaven
 
 - ## Spatial browser prototypes are always fun to make, but I am still not convinced
 - https://twitter.com/raunofreiberg/status/1737541893028741498

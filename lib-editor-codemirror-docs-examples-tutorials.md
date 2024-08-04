@@ -102,6 +102,17 @@ modified: 2024-05-02T07:48:04.213Z
 - 
 - 
 
+## 💥 [CodeMirror Huge Doc Demo](https://codemirror.net/examples/million/)
+
+- This page loads a document of a few million lines
+  - You'll notice that highlighting stops at some point if you scroll down far enough. The parser contains logic that limits the amount of work it does to avoid wasting too much battery and memory. 
+  - If the editor is inactive, it'll stop doing work entirely. Otherwise, it should eventually get to your scroll position.
+
+- 
+- 
+- 
+- 
+
 ## ⌛️ [Undoable Effects Example](https://codemirror.net/examples/inverted-effect/)
 
 - By default, the history extension only tracks changes to the document and selection, and undoing will only roll back those, not any other part of the editor state.

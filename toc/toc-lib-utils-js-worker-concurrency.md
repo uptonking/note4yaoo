@@ -152,6 +152,11 @@ modified: 2024-01-30T14:41:38.742Z
 
 - https://github.com/AlloyTeam/alloy-worker
   - 面向事务的高可用 Web Worker 通信框架
+
+
+- https://github.com/michaelficarra/proposal-concurrency-control /202407/ts
+  - interfaces and data structures for concurrency control and integration into async iterator helpers
+  - This proposal subsumes(把…包括在内, 包含; 把…并入) Luca's Semaphore proposal
 # worker-nodejs
 - [Support Web Workers · nodejs/node](https://github.com/nodejs/node/issues/43583)
   - Node.js does have `worker_threads`, but the API differs in many ways and it's really difficult to properly bridge them. 

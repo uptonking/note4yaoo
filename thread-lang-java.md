@@ -63,13 +63,24 @@ modified: 2023-12-15T19:40:39.912Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Java devs, writing FP code:
+- https://x.com/lukaseder/status/1816349744043630840
+  - A monad is just a MonoidFactoryBuilder in the CategoryProxyDelegate of EndofunctorDiscoveryHelperClasses
+
+- I once saw a whole project in Java written by FP devs. Exactly the same level of horror, just in the other direction. Hundreds of bizarrely named single-method interfaces and every class would implement at least a dozen.
+  - Wait until you see jOOQ's complete type hierarchy
+
 - ## When it comes to reading / writing ARRAY / OBJECT / STRUCT types, really every JDBC driver does it differently, it seems.
 - https://twitter.com/lukaseder/status/1773285403727925288
-  - Some support java.sql.Array
+  - Some support java.sql. Array
   - Some support Object[] types
   - Some support List<?> types
-  - Some support java.sql.Struct
-  - Some support java.sql.SQLData
+  - Some support java.sql. Struct
+  - Some support java.sql. SQLData
 - Luckily, thanks to jOOQ and jOOQ's code generator, you really don't need to worry about any of that.
 
 - ## today's hell: jar wants to load jar, but different versions of jackson. can someone get these people json in their stdlib its 2024

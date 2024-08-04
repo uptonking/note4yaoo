@@ -47,6 +47,45 @@ modified: 2023-10-28T17:31:26.535Z
 - 
 
 - [libSQL: Diving Into a Database Engineering Epic _202307](https://compileralchemy.substack.com/p/libsql-diving-into-a-database-engineering)
+# discuss-author
+- ## 
+
+- ## 
+
+- ## 
+
+- ## SQLite’s read and write paths are slower than they need to be because SQLite supports multiple processes accessing the same database file concurrently.
+- https://x.com/penberg/status/1819779262511018068
+  - Because of the work on Limbo, the SQLite compatible in-process OLTP database, I have been digging into the SQLite read and write paths. And they're much more slower than you’d think by design.
+  - SQLite supports reads and writes from multiple concurrent processes. Every read transaction has to take a POSIX advisory lock on the database file (kernel-crossing overhead) to make sure reads are consistent and to coordinate with writers.
+  - This means that read transactions take a microsecond or so whereas with pure in-process (like in Limbo) you can get to hundred nanoseconds.
+  - Writes has similar problems too. To support multiple processes writing to the WAL, every write transaction has to take a a lock to get exclusive access to the WAL. The lock uses shared memory via `mmap` , but checkpointing takes the same exclusive lock blocking all writers for the duration of the checkpoint operation, which can take a while.
+  - 🤔 tl; dr; once you stop supporting multiple processes writing to the same database file, you can make things much faster, which is the path we’re taking for Limbo.
+
+- How would locking work then, given that other processes can in fact access the file? Would it silently corrupt? Would you keep a lock the entire life of the process?
+  - We lock for the lifetime of the process.
+- What’s the timeline on removing the process lock? Do you have benchmarks that show the results? Very interested in this.
+  - You can get 2x read performance out of SQLite if you use "pragma locking_mode=EXCLUSIVE". It still leaves some performance on the table, not sure why yet.
+- The problem of allowing more than one process to access the DB is that you cannot cache things in RAM: the file becomes the channel through which different processes communicate.
+  - For instance, ‘single process + multiple threads’ is the trade off taken by @duckdb . RAM caching is even more relevant for OLAP as the files tend to be much larger than SQLite files.
+- How does that compare to SQLite's exclusive locking mode that locks for the lifetime of the process?
+  - Essentially the same
+  - Good to know. We enabled it for most of Firefox's SQLite databases many many moons ago and saw a decent perf boost from it. Entirely possible things have changed since we last measured it though.
+
+- does this mean only one instance of a REST API would be able to interact with a Limbo DB? As in, in a Kubernetes instance with 2 pods, only one would be able access it because they’re each a different process?
+  - Yes, right now that's exactly how it would work. For shared databases, you probably want storage disaggregation (a separate "page server" process), which should be more efficient too. (That's one reason why I/O in Limbo is async.)
+  - If there is a page server process, then access does not even have to be exclusive. You can have data cached in your client memory space, but also shared between multiple clients. At least that’s the theory, did not build it yet 
+
+- Multi-process is always going to be slower than multi-threaded, which SQLite already supports. And if you switch to exclusive file locking, you can get something like 0.5 million reads per second on a single core. If your traffic is heavier than that, you probably want sharding.
+
+- What are the pros/cons of synchronizing via:
+  1. lock on some mutex in a MAP_SHARED mmap region
+  2. using an external flock
+  3. using a posix semaphore
+  - Any idea why sqlite synchronizes reads via flock (2) but writes via shared lock (1)?
+- Shared memory is faster because it does not require a kernel crossing. Of course, using a POSIX mutex means that you enter the kernel on contention, but still better. Don’t know the reason for different schemes, likely historical
+- If shared memory lock is faster, then doesn't synchronizing reads via flocking make no sense?
+  - Yeah, so I don't know why SQLite is so heavy on the advisory lock by default. Maybe just historical.
 # discuss-news
 - ## 
 

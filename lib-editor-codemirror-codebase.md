@@ -9,6 +9,8 @@ modified: 2024-05-02T06:41:19.983Z
 
 # guide
 
+# draft
+- port to server side lang like prosemirror
 # overview
 
 # architecture

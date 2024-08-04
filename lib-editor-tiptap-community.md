@@ -64,6 +64,28 @@ modified: 2023-02-05T19:03:27.730Z
   - And sure, you’re not using pub/sub per say although one could think of editor transactions that change the plugin state as published events. 
   - But any state that would not be inside plugin state and still be relevant, eg API/UI stuff, you would have to engineer your own method of triggering changes somehow and relaying them forward.
   - Using React context for that purpose sucks.
+# discuss-news
+- ## 
+
+- ## 
+
+- ## we're working on something... What should we call it? Track changes? _202407
+- https://x.com/tiptap_editor/status/181537635366484  7993
+  - The first version is just tracking changes, laying the basis for suggestions like you described coming in the next version.
+
+- Will change diffing work with pure TipTap/ProseMirror documents as well? or is it tied to the live documents in your cloud offering?
+  - It is stored in Y.doc, so it does not run on pure Tiptap/PM.
+
+- Any ideas yet on what a "version" would be. In Yjs it's sometimes difficult to properly group changes and not end up with loads of versions
+  - Actually, ours is mostly based on Yjs snapshots.
+# discuss-not-yet 🐛
+- ## 
+
+- ## 
+
+- ## [Github like `diff` extension to compare two versions _202401](https://github.com/ueberdosis/tiptap/discussions/4800)
+- the diff view is on our Q1 roadmap and we're working on a POC. Things escalated a bit because a diff view in combination with version history was more complex to solve than we thought 
+
 # discuss
 - ## 
 

@@ -41,6 +41,8 @@ modified: 2024-05-06T02:54:40.374Z
 
 ### draft
 
+- 端侧大模型辅助coding，如浏览器api
+
 - docker in docker 的权限问题
 
 ### ai-writing-features

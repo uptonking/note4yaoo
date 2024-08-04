@@ -11,7 +11,11 @@ modified: 2021-08-16T06:45:51.370Z
 
 - ## 
 
-- ## 
+- ## What might our concept map look like at different zoom levels?
+- https://x.com/Wattenberger/status/1819387683581710749
+  - 不同zoom level下元素的模糊背景
+- is this using SVG filters to get that effect?
+  - Yep! Using a blur and gooey filler like this one
 
 - ## 折纸效果的地图
 - https://x.com/samdape/status/1799843696751325304

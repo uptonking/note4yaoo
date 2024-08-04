@@ -50,9 +50,14 @@ modified: 2021-07-29T11:15:44.100Z
 
 - ## 
 
-- ## 
+- ## 自从知道 Chrome 有能实时捕获网页内的媒体流的 tabCapture API 后，对我这个常年开发 iOS App 的良民来说受到了文化冲击，这个 API 简直是外挂
+- https://x.com/kevinzhow/status/1818562695026950216
+- 这个 API 的目的是…… 录制网页内的视频？
+  - 比如截图
+- 甚至不需要是浏览器插件，网页页可以
+- 有一个叫 Fugu Plan 的计划，旨在为浏览器实现更多 native app 的能力
 
-- ## Surprised to see browser support for Custom States (`ElementInternals.states`) already at 87%
+- ## Surprised to see browser support for Custom States ( `ElementInternals.states` ) already at 87%
 - https://x.com/claviska/status/1800680936998076439
   - https://caniuse.com/mdn-api_customstateset
 

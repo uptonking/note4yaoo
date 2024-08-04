@@ -36,7 +36,12 @@ modified: 2024-06-30T11:15:28.002Z
 # discuss
 - ## 
 
-- ## 
+- ## Why Kubernetes uses Pods instead of Containers
+- https://x.com/iximiuz/status/1816522606834786540
+  - A container is an isolated and restricted "box" to run (a single instance of) your app. 
+  - But what if this single instance consists of multiple processes - the main one and some helpers? Pods to the rescue
+  - You can indeed run multiple processes in one container. Nginx and Postgres, for instance, are multi-process apps, and they run perfectly in containers. But all these processes constitute a single app - they start and exit together and produce only one stream of logs. 
+  - However, there are cases when you need to have two sets of processes in one "deployment unit" - for instance, the main app and its reverse proxy. And while technically it's possible to have such a setup inside a container, it's rarely practical. That's where Pods come to the rescue.
 
 - ## [Show HN: Simplenetes – I replaced Kubernetes with 17k lines of shell script | Hacker News _202104](https://news.ycombinator.com/item?id=26661223)
 - k3s (https://k3s.io), which is Rancher's awesome and lightweight Kubernetes distribution.

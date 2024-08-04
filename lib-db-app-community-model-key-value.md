@@ -35,7 +35,8 @@ modified: 2023-10-26T15:02:47.068Z
 # discuss-redis
 - ## 
 
-- ## 
+- ## 🧮 Redis uses skip-list to implement Sorted Set, but @dragonflydbio switched their implementation to B+ Trees
+- https://x.com/arpit_bhayani/status/1816810704223002628
 
 - ## Here are some Redis use cases
 - https://x.com/systemdesign42/status/1803766225815658860

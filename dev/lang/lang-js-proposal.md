@@ -46,6 +46,15 @@ modified: 2020-07-07T08:10:16.774Z
   - This proposal intends to address a common pattern in software development regarding the lifetime and management of various resources (memory, I/O, etc.). 
   - This pattern generally includes the allocation of a resource and the ability to explicitly release critical resources.
   - `DisposableStack`
+
+- https://github.com/tc39/proposal-iterator-helpers /s3
+  - https://tc39.es/proposal-iterator-helpers
+  - help with general usage and consumption of iterators in ECMAScript.
+
+- https://github.com/tc39/proposal-async-iterator-helpers /s2
+  - https://tc39.es/proposal-async-iterator-helpers/
+  - Methods for working with async iterators in ECMAScript
+  - This proposal was split out from proposal-iterator-helpers to resolve design questions related to concurrency
 # proposals-finished
 - https://github.com/tc39/proposal-class-static-block
   - provide a mechanism to perform additional static initialization during class definition evaluation.

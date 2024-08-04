@@ -38,6 +38,12 @@ modified: 2023-09-17T18:17:41.377Z
 
 - ## 
 
+- ## 
+
+- ## G-Trees: a probabilistic data-structure that generalizes zip-trees and dense skip-trees while also providing history independence and allowing for performant IO/cache optimizations.
+- https://x.com/carlsverre/status/1819817856722509991
+  - https://g-trees.github.io/g_trees/
+
 - ## Interested in sorted maps? (Binary Search Trees, AVL Trees, RB Trees, B Trees, etc.)
 - https://twitter.com/eatonphil/status/1728890043438395712
 - 2-3 trees is all you need, saying as a long AVL follower.

@@ -156,6 +156,9 @@ modified: 2023-02-08T07:20:48.475Z
   - OpenAssistant is a chat-based assistant that understands tasks, can interact with third-party systems, and retrieve information dynamically to do so.
   - OpenAssistant is completed, and the project is now finished. The final published oasst2 dataset can be found on HuggingFace at OpenAssistant/oasst2
 
+- https://github.com/microsoft/TypeChat /MIT/202405/python/ts
+  - https://microsoft.github.io/TypeChat/
+  - TypeChat is a library that makes it easy to build natural language interfaces using types
 ## chat-excel
 
 - https://github.com/weijunext/smart-excel-ai /MIT/202312/ts
@@ -240,7 +243,6 @@ modified: 2023-02-08T07:20:48.475Z
   - https://hollama.fernando.is/
   - A minimal web-UI for talking to Ollama servers
   - Markdown parsing w/syntax highlighting
-
 # text2image
 - https://github.com/Stability-AI/stablediffusion
   - https://github.com/CompVis/stable-diffusion
@@ -308,4 +310,11 @@ modified: 2023-02-08T07:20:48.475Z
 
 - https://github.com/mljs/ml /js
   - Machine learning tools in JavaScript
+# audio
+- https://github.com/myshell-ai/OpenVoice /MIT/202407/python
+  - https://research.myshell.ai/open-voice
+  - Instant voice cloning by MyShell
+  - Free Commercial Use. Starting from April 2024, both V2 and V1 are released under MIT License. 
+  - OpenVoice has been powering the instant voice cloning capability of myshell.ai since May 2023. 
+  - 即时语音克隆工具，只需从参考资料中截取一段简短的音频即可实现克隆。可详细控制语音风格，包括情感、口音、节奏、停顿和语调。生成多种语言的语音。
 # more

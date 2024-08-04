@@ -37,7 +37,13 @@ modified: 2023-11-10T08:05:12.852Z
 
 - ## 
 
-- ## 
+- ## how to catch error when using fetch
+- https://x.com/WarrenInTheBuff/status/1815440867936948371
+- You mean where you have a try/catch and all the catch does is throw the error? Yeah, that's useless
+  - Not to mention that there is no response.ok check
+
+- Needs a `.catch(e => throw e)` on fetch and json() to make sure all the errors get handled
+- You don't like the "rethrow with vigor" pattern?
 
 - ## Btw the takeaway here isn't "never use objects rather than N args" but to profile. 
 - https://twitter.com/Jack_Franklin/status/1764245242079834142

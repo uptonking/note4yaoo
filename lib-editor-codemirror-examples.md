@@ -1334,11 +1334,13 @@ modified: 2023-06-23T12:46:53.288Z
   - A blazing fast & offline frontend playground
   - 依赖codemirror5
 
-- https://github.com/ast-grep/ast-grep /MIT/202406/rust
+- https://github.com/ast-grep/ast-grep /MIT/202408/rust
   - https://ast-grep.github.io/
   - https://ast-grep.github.io/playground.html
   - A CLI tool for code structural search, lint and rewriting. Written in Rust
   - playground的diff视图基于monaco实现
+  - https://github.com/ast-grep/tree-sitter-wasm
+  - https://github.com/ast-grep/ast-grep.github.io
 
 - https://github.com/monis07/logicloom /202405/ts
   - https://logicloom-client.vercel.app/

@@ -69,6 +69,16 @@ modified: 2023-10-26T22:12:54.831Z
 - This is cool. There are a tonne of options for local KV stores that likely outperform this by a large margin, but the obvious benefit here is that SQLite is really simple to configure and operate!
 
 - We currently use Realm for this use case. It’s a local database just like SQLite, but with native support for documents and listeners. Did you try that out?
+# discuss-search
+- ## 
+
+- ## 
+
+- ## sqlite-vec is a new vector search SQLite extension written entirely in C with no dependencies, MIT/Apache-2.0 dual licensed.  
+- https://x.com/_philschmid/status/1819276123433263115
+  - I am big fan of SQLite for small and on-device/edge Applications. With @tursodatabase and libSQL it became server native. Big Kudos to @agarcia_me for  bringing AI features to SQLite.
+- Storing the data encoded is my issue.
+
 # discuss
 - ## 
 

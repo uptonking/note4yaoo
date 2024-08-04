@@ -13,7 +13,28 @@ modified: 2021-08-10T03:51:01.891Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 十多年前，有段时间，我很鄙视开源项目，因为我所阅读的，号称全世界最优秀的开源项目，其代码质量在我眼里几乎都是不及格的。
+- https://x.com/syeerzy/status/1814101767149224132
+  - 包括Linux的内核（2.0时代）、包括Hadoop的文件系统（1.x时代）、包括Lucene的文档计分模块（1.x时代）等等。这些都是号称那个年代最成功的开源项目
+  - 后来我理解了越成功的开源项目，参与者越多，贡献者越多，就会越良莠不齐，可能项目中某些模块代码质量很高，而另外一些模块则“勉强能用”而已。
+  - 开源的一个麻烦在于只要代码能正确运行，基本上就没什么人去动它了，尤其是艰辛难懂的最底层部分（恰恰这部分经常贡献者是在校学生，缺少工程经验）
+
+- 这时候就会有看不下去的人fork，然后大改一番把质量差的模块修复了，接着开始下一次循环。
+
+- 实际公司里面也是哦 谁动谁负责 能用没人动
+
+- 其实闭源项目大部分质量也不行，只是大家看不到
+- 商业软件更垃圾，只是你看不到代码而已！
+
+- PHP领域的wordpress，discuz，dedecms，以及和他搭配使用的MySQL，甚至包括PHP本身都是十年前最成功最火的开源项目，直到现在还有很多网站在用他们的系统
+  - 但是身为开发者来看，他们的代码都是屎山中的屎山，作为用户，使用他们的功能时也能发现非常多的缺陷
+  - 所以“成功的开源项目”!=“高质量的代码/设计”
+
+- 即使在英文社区，你提个问题：有哪些代码值得读（不限制在开源），能收获的答案也极其有限。Lua 算公认的一个。另外，我不相信闭源软件质量可以更高。这个世界上可以被称为整体都是高质量的软件代码肯定一只手就能数出来，开源一定占多数。
+
+- 我觉得优秀的软件架构设计就是要做到哪怕代码质量不够好，软件也能做到保质保量。
+
+- 完成比完美更重要，为爱发电也不能要求太多
 
 - ## 又开发后端接口，又写前端页面的话。
 - https://twitter.com/Justin1024go/status/1773628313950466521
@@ -100,6 +121,12 @@ Validate it to ensure it meets the method's requirements.
   - I'll treat ML & the movement to make programmers obsolete the same way.
 
 - Where does Rust belong?
+
+- ## Wrote a new article, outlining why I think using barrel files in application code is a bad idea
+- https://x.com/TkDodo/status/1816890514160935417
+  - [Please Stop Using Barrel Files | TkDodo's blog _202407](https://tkdodo.eu/blog/please-stop-using-barrel-files)
+- How do you handle a case where you have a monorepo with a package that has hundreds of icons? 
+  - seems unavoidable, like a 3rd party lib. Unless you want to list each icon separately in package.json exports
 
 - ## Apollo Client is full of Barrel File poison. 
 - https://twitter.com/_developit/status/1780046213284253935

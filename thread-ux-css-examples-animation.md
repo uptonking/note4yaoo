@@ -16,6 +16,13 @@ modified: 2022-11-21T15:27:20.974Z
 
 - ## 
 
+- ## 💫 Staggered Animation - CSS 逐行显示动画
+- https://x.com/alirdev/status/1817923525002530819
+- I once recorded a video for a text reveal usiwng this same approach
+  - [JS Text Reveal Effect - YouTube](https://www.youtube.com/watch?v=PMiVFXZpYQo&t=140s)
+- I made a video a while ago that explains this technique
+  - [Css: Scoped variables - YouTube](https://www.youtube.com/watch?v=cXM0SZeWjd4)
+
 - ## fab 浮动菜单按钮 
 - https://x.com/Ibelick/status/1799787095462236612
   - Made in the browser with SVG filters, linear() easing function, and (Tailwind) CSS  

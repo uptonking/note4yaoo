@@ -51,9 +51,22 @@ modified: 2024-01-06T15:37:08.031Z
 # discuss
 - ## 
 
-- ## 
+- ## Synchronizing tree structure movements (like moving folders) has always been a challenging problem
+- https://x.com/zx_loro/status/1817926647338983555
+- Any reasons why you chose to use 128 as a "terminator" element instead of 255? I believe the article Bartosz talks about uses 255 as the maximal element (which seems to make sense when you are operating on the raw bytes level).
+  - We forked https://github.com/jamsocket/fractional_index and made some extensions. This implementation is also 256 base. Uses 128 as the terminator because 128 will always be at the "end" of each fractional index. 
 
-- ## 
+- ## 🆔️ An idea for storing the mapping between PeerID and application-level User ID in Loro documents:
+- https://x.com/zx_loro/status/1818247647830081607
+  - Since each PeerID in Loro is 64 bits, we could lock the first 32 bits to a specific user, for example, by calculating this value using a collision-resistant hash based on the user's email. The remaining 32 bits would be random. This would allow us to store the mapping between PeerID and application-level user ID at a very low cost.
+  - However, this reduces randomness and increases the possibility of collisions of PeerIDs
+  - The main issue I'm trying to solve is how to best map application-layer user IDs to CRDT PeerIDs. This information is important when developing related tools. One good option might be to create a dedicated CRDT type for this purpose.
+
+- I would strongly advise against using identifiers that short. You really want astronomically low chances of conflict even with 1000s of participants - and no extra coordination.
+  - @jazz_tools / CoJSON uses 19 byte account IDs + 8 byte session IDs
+- Why 19 bytes for account ID? The most widely used UUID formats use 16 bytes with very low chance of collisions. Have you found 128 bits to be not enough in practice with Jazz?
+  - IDs double as a cryptographic hash as well (truncated BLAKE3). Doesn’t need full blown preimage resistance because there are other checks, but just in case I went over the recommended 128bits as an absolute minimum there, without going full 32bytes, which is annoyingly long
+- Oh, I see. Makes sense.
 
 - ## For this meetup, we built this demo of importing the whole @loro_dev git repository into a single Loro document. 
 - https://x.com/zx_loro/status/1805095256461115623

@@ -14,7 +14,13 @@ modified: 2023-01-13T10:47:36.755Z
 
 - ## 
 
-- ## 
+- ## base64 可能包含 / + 等特殊字符，在作为文件路径时可能产生 bug。
+- https://x.com/ThaddeusJiang/status/1815734590570725701
+  - 推荐使用 base16 或者 base32 ，它们不包含特殊字符。
+
+- Base32 和 Base16 这些会比 Base64 长。用现成的 base64url 就行（RFC 4648），只把唯二有问题的 + 和 / 换成了 URL 和 Path Safe 的 - 和 _
+
+- urlsafe-base64
 
 - ## Very excited about OPFS support in browsers but performance still has a long time to go. 
 - https://twitter.com/schickling/status/1712883575354171795
