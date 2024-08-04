@@ -84,32 +84,98 @@ modified: 2024-05-02T07:48:04.213Z
 
 - Adjusting the vertical behavior of the editor can be done by giving its outer element a height, and setting overflow: auto on the scroller element.
 
+## [Document Change Example](https://codemirror.net/examples/change/)
+
+- Initiating an editor state change from a program is done by dispatching a transaction.
+- When dispatching a transaction, you can also pass an array of changes. 
+  - The from/to in each of these changes refer to positions in the start document, not to the document created by previously listed changes.
+
+- When acting on the selection, you'll often want to create your transaction spec using the `replaceSelection` method. 
+  - `view.dispatch(view.state.replaceSelection("★"))`; 
+  - This replaces each selection range with a given string, and moves the selection ranges to the end of that string (by default, they'd stay in front of it)
+
+## [Selection Example](https://codemirror.net/examples/selection/)
+
+- Like any editor state change, moving the selection is done by dispatching a transaction
+- When a transaction makes a document change as well as setting the selection, the new selection should point into the document as it is after the change
+- When writing commands that act on the selection, you have to take some care to support multiple ranges.
+
+## [Decoration Example](https://codemirror.net/examples/decoration/)
+
+- Decorations are provided to the editor using the RangeSet data structure, which stores a collection of values (in this case the decorations) with ranges (start and end positions) associated with them.
+- Decorations are provided to the editor view through a facet. 
+- There are two ways to provide them—directly, or though a function that will be called with a view instance to produce a set of decorations. 
+  - Decorations that significantly change the vertical layout of the editor, for example by replacing line breaks or inserting block widgets, must be provided directly, since indirect decorations are only retrieved after the viewport has been computed.
+- Indirect decorations are appropriate for things like syntax highlighting or search match highlighting, where you might want to just render the decorations inside the viewport or the current visible ranges, which can help a lot with performance.
+
+- Widget decorations don't directly contain their widget DOM. Apart from helping keep mutable objects out of the editor state, this additional level of indirection also makes it possible to recreate widgets without redrawing the DOM for them. 
+
+- `EditorView.atomicRanges` facet can be provided range sets (usually the same set that we're using for the decorations) and will make sure cursor motion skips the ranges in that set.
+
+## [Split View Example](https://codemirror.net/examples/split/)
+
+- to keep the content of two views in sync, you'll have to forward changes made in one view to the other. 
+- A good place to do this is either an overridden `dispatch` function, or an `update` listener. In this example, we'll use the former.
+- In order to be able to distinguish between regular transactions caused by the user and synchronizing transactions from the other editor, we define an annotation that will be used to tag such transactions.
+- Whenever a transaction that makes document changes and isn't a synchronizing transaction comes in, it is also dispatched to the other editor.
+
+- Note that non-document state (like selection) isn't shared between the editors. For most such state, it wouldn't be appropriate to share it.
+
+- 
+- 
+- 
+
 ## [Autocompletion Example](https://codemirror.net/examples/autocompletion/)
 
 - By default, the plugin will look for completions whenever the user types something, but you can configure it to only run when activated explicitly via a command.
 
-- 
-- 
-- 
+- The default completion keymap binds Ctrl-Space to start completion, arrows to select a completion, Enter to pick it, and Escape to close the tooltip. 
+  - It is activated by default when you add the extension, but you can disable that if you want to provide your own bindings.
+
+- Some sources need to recompute their results on every keypress, but for many of them, this is unnecessary and inefficient. They return a full list of completions for a given construct, and as long as the user is typing (or backspacing) inside that construct, that same list can be used (filtered for the currently typed input) to populate the completion list.
+  - This is why it is very much recommended to provide a `validFor` property on your completion result.
+
+- it is often useful to inspect the syntax tree around the completion point, and use that to get a better picture of what kind of construct is being completed.
 
 ## [Tooltip Example](https://codemirror.net/examples/tooltip/)
 
 - The @codemirror/view package provides functionality for displaying tooltips over the editor—widgets floating over the content, aligned to some position in that content.
 
 - tooltips are not added and removed to an editor through side effects, but instead controlled by the content of a facet. 
+  - by directly tying the tooltips to the state they reflect we avoid a whole class of potential synchronization problems.
+
+- Tooltips are represented as objects that provide the position of the tooltip, its orientation relative to that position, whether to show a triangle-arrow on the tooltip, and a function that draws it.
+
+- Active tooltips are displayed as fixed-position elements. 
+
+- hoverTooltip can be used to define tooltips that show up when the user hovers over the document
+
+## [Gutter Example](https://codemirror.net/examples/gutter/)
+
+- The simplest use of gutters is to simply dump lineNumbers() into your configuration to get a line number gutter.
+- To add a gutter, call the gutter function and include the result in your state configuration.
+- As with decorations, gutter markers are represented by lightweight immutable values that know how to render themselves to DOM nodes, in order to allow updates to be represented in a declarative way without recreating a lot of DOM nodes on every transaction. 
+
+## [Panel Example](https://codemirror.net/examples/panel/)
+
+- A “panel”, as supported by the @codemirror/view package, is a UI element shown above or below the editor.
+  - They will sit inside the editor's vertical space for editors with fixed height. 
+  - When the editor is partially scrolled out of view, panels will be positioned to stay in view.
+
+## 🌰 [Zebra Stipes Example](https://codemirror.net/examples/zebra/)
+
+- This example defines an extension that styles every Nth line with a background.
 
 - 
 - 
 - 
 
-## 💥 [CodeMirror Huge Doc Demo](https://codemirror.net/examples/million/)
+## 💥 [Huge Doc Demo](https://codemirror.net/examples/million/)
 
 - This page loads a document of a few million lines
   - You'll notice that highlighting stops at some point if you scroll down far enough. The parser contains logic that limits the amount of work it does to avoid wasting too much battery and memory. 
   - If the editor is inactive, it'll stop doing work entirely. Otherwise, it should eventually get to your scroll position.
 
-- 
-- 
 - 
 - 
 
@@ -122,24 +188,28 @@ modified: 2024-05-02T07:48:04.213Z
 
 - 
 - 
-- 
-- 
 
-## 🔀 [Collaborative Example](https://codemirror.net/examples/collab/)
+## [Lint Example](https://codemirror.net/examples/lint/)
+
+- The @codemirror/lint package provides a way to display errors and warnings in your editor. 
+  - If you give it a source function that, when given an editor, produces an array of problems, it will call this function when changes are made to the document, and display its result.
+
+## 🤝🏻🔀 [Collaborative Example](https://codemirror.net/examples/collab/)
 
 - Real-time collaborative editing is a technique where multiple people on different machines can edit the same document at the same time.
   - The main difficulty with this style of editing is handling of conflicting edits—since network communication isn't instantaneous, it is possible for people to make changes at the same time, which have to be reconciled in some way when synchronizing everybody up again.
-- CodeMirror comes with utilities for collaborative editing based on operational transformation with a central authority (server) that assigns a definite order to the changes. 
+- 🧮 CodeMirror comes with utilities for collaborative editing based on `operational transformation` with a central authority (server) that assigns a definite order to the changes. 
+
+- By default, the only thing that is shared through such a collaborative-editing channel is document changes (the `changes` field in the update objects). 
+- Sometimes it is useful to also use this mechanism to share other information that should be distributed between clients.
+  - To do that, when calling the `collab` extension constructor, you can pass a `sharedEffects` function which produces an array of “shared effects” from a transaction. 
+  - Shared effects are instances of `StateEffect` that should be applied in other peers as well. 
+- The library doesn't provide any utilities for serializing effects, so in order to send them around as JSON you need your own custom serialization code for the effects field in updates.
 
 - It is also possible to wire up different collaborative editing algorithms to CodeMirror. See for example Yjs.
 
 - There is one thing to keep in mind though. As described in more detail in the collaborative-editing blog post, the kind of position mapping done in the effect's `map` function is not guaranteed to converge to the same positions when applied in different order by different peers. 
   - For some use cases (such as showing other people's cursor), this may be harmless. 
   - For others, you might need to set up a separate mechanism to periodically synchronize the positions.
-
-- 
-- 
-- 
-
 # more
 - [Revisiting our CodeMirror 6 implementation in React after the official release _202210](https://codiga.io/blog/revisiting-codemirror-6-react-implementation/)
