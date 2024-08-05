@@ -146,7 +146,6 @@ modified: 2021-05-06T09:38:31.520Z
 - electron
   - obsidian-plugin
 
-
 - discuss
   - 简化ast的设计和实现
 
@@ -171,12 +170,17 @@ modified: 2021-05-06T09:38:31.520Z
 
 - Querying coordinates for positions outside of the current viewport will not work (since they are not rendered, and thus have no layout).
 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-
+- deco-mark
+  - Syntax highlighting
+  - add some attributes or wrapping DOM element 
+- deco-widget
+  - can be inline elements or blocks
+  - insert a DOM element in the editor content
+- deco-replacing
+  - code folding or replacing an element in the text with something else
+  - possible to display a widget instead of the replaced text
+- deco-line
+  - influence the attributes of the DOM element that wraps the line
+- Decorations that significantly change the vertical layout of the editor, for example by replacing line breaks or inserting block widgets, must be provided directly, since indirect decorations are only retrieved after the viewport has been computed.
+  - Indirect decorations are appropriate for things like syntax highlighting or search match highlighting, where you might want to just render the decorations inside the viewport or the current visible ranges
 # more

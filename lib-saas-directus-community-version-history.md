@@ -32,6 +32,12 @@ modified: 2024-03-29T14:00:38.977Z
 
 - I'd want it to be possible to create both simple and advanced branches on the same item
 
+- ## ⏳ [Support activity/revisions/logs retention _202408 ](https://github.com/directus/directus/issues/23166)
+  - We need to add a set of new environment variables to control the maximum retention of activity/revision/flow logs rows: ACTIVITY_RETENTION, REVISIONS_RETENTION, FLOWS_LOG_RETENTION
+
+- 
+- 
+
 - ## 🐛⚡️ [Performance issues with revisions and activity _202303](https://github.com/directus/directus/issues/17894)
 - There is a problem with the revisions and activity queries.
   - When I navigate in my directus instance, I regularly get a popup that says that a request failed with status 504.

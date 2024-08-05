@@ -340,6 +340,8 @@ betterdiscordctl -i flatpak install
   - ai执行计划同步底部时光机进度条
 
 - dev-to-demo
+  - 通过minimap快速定位diff视图位置
+  - tab自动补全
   - editor: typewriter
   - 时光机回放模式
   - paas的断线恢复问题
@@ -393,6 +395,20 @@ betterdiscordctl -i flatpak install
 console.log(`接到到PaaS消息：`, name, dao.playgroundInfo.status, dao.dockerStatus, payload)
 ```
 
+## 0805
+
+- dev-log
+  - 调研及研发diff-view
+- dev-to
+  - 交付diff-view, cmd+k的代码生成部分, 对接agent的播放控制
+
+- 需求评审
+- 时光机进度条点击到中间位置，会自动吸附到进度条小节的开始位置
+  - 第一期只做点击，不做拖拽
+- 终止计划后，ai的变更文件列表暂时不做，暂时使用文件变更列表
+
+- agent侧使用goal/detail, 业务侧使用issue/desc
+
 ## 0802
 
 - demoDay240802
@@ -400,12 +416,11 @@ console.log(`接到到PaaS消息：`, name, dao.playgroundInfo.status, dao.docke
 
 ## 0801
 
-
 - [How to set background color on terminal · xtermjs/xterm.js](https://github.com/xtermjs/xterm.js/issues/1719)
-  - term.setOption('theme', { background: '#fdf6e3' });
+  - term.setOption('theme', { background: '#fdf6e3' }); 
 - [Release 5.0.0 · xtermjs/xterm.js](https://github.com/xtermjs/xterm.js/releases/tag/5.0.0)
   - The deprecated getOption and setOption APIs have been removed in favor of options assignment
-  - term.options.scrollback = 1000;
+  - term.options.scrollback = 1000; 
   - term.options.theme = { background: '#ccc' } 注意这里更新是replace而不是merge
 
 - dev-log

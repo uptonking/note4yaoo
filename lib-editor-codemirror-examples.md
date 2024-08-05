@@ -881,14 +881,25 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/acrodata/code-editor /MIT/202405/ts
   - https://acrodata.github.io/code-editor/
   - CodeMirror 6 wrapper for Angular
-  - 实现了diff上下视图、左右视图，支持高亮线
+  - 实现了diff上下视图、✨左右视图，支持高亮变更内容及gutter，支持撤销变更action
+    - 亮变更内容的粒度是整行，太粗了，但适合代码编辑场景
+  - 支持a2b/b2a正反向计算
 
 - https://github.com/gaelj/BlazorCodeMirror6 /MIT/202407/csharp/ts
   - https://gaelj.github.io/BlazorCodeMirror6/
   - Blazor CodeMirror 6 brings the power of the CodeMirror 6 code editor to Blazor, offering a comprehensive . NET 6 / . NET 7 / . NET 8 component.
   - Markdown editor for Blazor
-  - 实现了diff上下视图，支持打开关闭diff视图，支持高亮线，支持accept/reject
+  - 支持编辑时开启/关闭diff-view，✨ diff视图下accept变更后立即撤销会先回到diff视图
+  - 实现了diff上下视图，支持高亮变更及gutter，支持accept/reject变更action
+    - 亮变更内容的粒度是字符，但未突出删除字符的样式
   - 支持编辑器中渲染图片
+  - markdown编辑体验支持行内切换md代码和预览，类似typora
+  - 依赖
+  - manual resizing of the editor (similar to html textarea)
+  - custom linting
+  - allow undo / redo toolbar buttons
+  - CSV mode: add column paddings for alignment, navigate columns with tab / shift-tab; 支持markdown-table 📈
+  - 支持emoji
 
 - https://github.com/mdx-editor/editor /MIT/202405/ts/lexical
   - https://mdxeditor.dev/
