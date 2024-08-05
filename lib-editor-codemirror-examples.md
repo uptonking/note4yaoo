@@ -19,7 +19,7 @@ modified: 2023-06-23T12:46:53.288Z
     - diff只需初始结束状态, 而时间旅行支持中间状态
   - codemirror + dockview/fileTree, partykit
 
-- diff视图
+- diff视图 unifiedMergeView
   - 上下版: 参考 BlazorCodeMirror6, code-editor-angular
   - 左右版: 参考 mdxeditor, jupyter-nbdime
 
@@ -450,7 +450,7 @@ modified: 2023-06-23T12:46:53.288Z
     - automerge as core CRDT
     - automerge-repo for networking/storage
     - codemirror for markdown editing, automerge-codemirror for editor integration
-    - For TEE we just store a string for the contents, plus some JSON data for comments.
+    - 💡 For TEE we just store a string for the contents, plus some JSON data for comments.
     - One feature that's *lovely* to build w/ Automerge: attaching comments to text.
     - TEE is local-first, meaning clients are source of truth and there's no central authority.
 

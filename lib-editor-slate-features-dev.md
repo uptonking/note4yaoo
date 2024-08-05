@@ -33,6 +33,7 @@ modified: 2023-03-16T16:29:47.610Z
 - 判断数据存放在marks还是编辑器外
   - 需要支持collab的放在marks，如highlight
   - 不需要协作的放在编辑器外，如comment
+  - 复制文本时不需要带上评论数据
 
 - editor-ecosystem
   - data-grid

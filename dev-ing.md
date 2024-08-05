@@ -395,6 +395,12 @@ betterdiscordctl -i flatpak install
 console.log(`接到到PaaS消息：`, name, dao.playgroundInfo.status, dao.dockerStatus, payload)
 ```
 
+## 0806
+
+- [GnuTLS recv error (-110): The TLS connection was non-properly terminated ](https://github.com/argoproj/argo-cd/issues/3994)
+  - apt-get install gnutls-bin
+  - git config --global http.sslVerify false
+
 ## 0805
 
 - dev-log

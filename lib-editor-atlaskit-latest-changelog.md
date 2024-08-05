@@ -36,7 +36,6 @@ modified: 2021-07-14T15:38:06.614Z
 
 - v127.0.0
 - Remove deprecated flag `allowUnsupportedContent` and enable by default
--  avoid toolbar layout shift in comment appearance
 
 - v126.0.0
 - avoid toolbar layout shift in comment appearance

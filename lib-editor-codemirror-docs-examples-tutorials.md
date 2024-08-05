@@ -112,6 +112,26 @@ modified: 2024-05-02T07:48:04.213Z
 
 - `EditorView.atomicRanges` facet can be provided range sets (usually the same set that we're using for the decorations) and will make sure cursor motion skips the ranges in that set.
 
+## 🌵 [Merge View](https://github.com/codemirror/merge)
+
+- A merge view manages two editors side-by-side, highlighting the difference between them and vertically aligning unchanged lines. 
+  - If you want one of the editors to be read-only, you have to configure that in its extensions.
+  - By default, views are not scrollable. Style them (.cm-mergeView) with a height and `overflow: auto` to make them scrollable.
+
+- Side-by-side Merge View
+  - config
+    - collapseUnchanged⁠: When given, long stretches of unchanged text are collapsed
+
+- Unified Merge View
+  - Create an extension that causes the editor to display changes between its content and the given original document. 
+  - Changed chunks will be highlighted, with uneditable widgets displaying the original text displayed above the new text.
+  - config
+    - mergeControls: Controls whether accept/reject buttons are displayed for each changed chunk. Defaults to true.
+
+- A chunk describes a range of lines which have changed content in them. 
+  - Either side (a/b) may either be empty (when its `to` is equal to its `from`), or points at a range starting at the start of the first changed line, to 1 past the end of the last changed line. 
+  - Note that to positions may point past the end of the document. Use endA/endB if you need an end position that is certain to be a valid document position.
+
 ## [Split View Example](https://codemirror.net/examples/split/)
 
 - to keep the content of two views in sync, you'll have to forward changes made in one view to the other. 

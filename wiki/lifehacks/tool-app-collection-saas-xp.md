@@ -498,6 +498,7 @@ sudo systemctl start minidlna
   - 默认情况下 v2rayA 会通过核心开放 20170(socks5), 20171(http), 20172(带分流规则的http) 端口
   - [v2raya该使用什么样的订阅链接？ _202406](https://github.com/v2rayA/v2rayA/discussions/1418)
     - 在debian系统中配置了DNS之后，导入就成功了
+  - [最佳代理实践之 v2raya (2023-06-23)](https://manateelazycat.github.io/2023/06/23/best-proxy/)
 # law
 - [中国执行信息公开网](http://zxgk.court.gov.cn/index.jsp)
 

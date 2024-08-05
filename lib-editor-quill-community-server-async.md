@@ -1,6 +1,6 @@
 ---
 title: lib-editor-quill-community-server-async
-tags: [comment, quill, server]
+tags: [quill, server]
 created: 2024-04-15T15:50:36.128Z
 modified: 2024-04-15T15:51:05.131Z
 ---

@@ -9,15 +9,24 @@ modified: 2023-11-01T12:33:20.763Z
 
 # guide
 
-# discuss-formats-comments
+# discuss-formats-comments 💬
 - ## 
 
-- ## 
+- ## Is there any system that allows commenting on specific parts of a webpage? E.g. selecting text and leaving a comment, GDocs style, but on any arbitrary webpage. 
+- https://x.com/LeaVerou/status/1820549863815233799
+- https://web.hypothes.is might be relevant? I think their core product is a browser extension that does this, but it looks like it can be embedded as well 
+- I don't know the implementation status, but the data Model is specified here: https://w3.org/TR/annotation-model/
+
+- Where are the comments stored? Who can see them? What happens if the web content changes? Our comments always on text, or arbitrary selectable area as well using some sort of marquee tool?
+
+- There have been quite a few over the years, but they tend to become harassment(骚扰) vectors
+- I remember that there was a chrome plugin but it got removed because it deemed to promote hate speech
 
 - ## The representation of comments in rich text Delta is awkward, 
 - https://twitter.com/zxch3n/status/1746451105188569188
   - because multiple styles cannot be merged like bold/link. 
-  - Which solution do you prefer? commentsArray vs userIdKeyCommentsVals
+  - Which solution do you prefer? 
+  - commentsArray vs userIdKeyCommentsVals
 - Any specific reason you don't wish to create nested props?
   - The behavior will be consistent across all different rich text types. It's based on delta
   - the delta format currently is the most compatible format to describe the doc state and the changes

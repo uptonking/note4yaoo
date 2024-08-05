@@ -66,7 +66,7 @@ modified: 2023-03-02T14:25:34.817Z
   * State-based CRDT isn't great when you want a central authority in the mix anyway and are fundamentally trying to work with operations
   * The exchange rate between ProseMirror's currency, steps, and some other replication strategies building blocks is too high
   * ProseMirror should add the concept of range-relocation to its mappings; this is a bit of an aside but it would help retain user intent when reconciling concurrent edits involved in block relocations
-# [Prosemirror: Highlights & Comments_202205](https://medium.com/collaborne-engineering/prosemirror-highlights-comments-20ce820149ed)
+# 💬 [Prosemirror: Highlights & Comments_202205](https://medium.com/collaborne-engineering/prosemirror-highlights-comments-20ce820149ed)
 
 > Model highlights/comments as marks instead of annotations to allow for collaborative editing
 > We open sourced our annotation feature as a Remirror extension
@@ -110,7 +110,7 @@ modified: 2023-03-02T14:25:34.817Z
   - Instead, we define for each highlight field what the source of truth is. 
   - For the color, we store in the mark only an ID identifying the highlight but the color itself is stored directly in the database.
 
-## [If I want to implement the comment function, is mark the best way?](https://discuss.prosemirror.net/t/if-i-want-to-implement-the-comment-function-is-mark-the-best-way/3831)
+## 💬 [If I want to implement the comment function, is mark the best way?](https://discuss.prosemirror.net/t/if-i-want-to-implement-the-comment-function-is-mark-the-best-way/3831)
 
 - Keeping the comments in a data structure outside of the doc and showing them as decorations might make them easier to manage when they can cross block boundaries. 
   - But using marks should also work, especially if you want them to be part of the document and automatically included in collaborative editing and the undo history.

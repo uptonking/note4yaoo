@@ -111,7 +111,7 @@ modified: 2023-02-05T19:03:12.722Z
   - 对中文输入支持不足，详见此 链接
   - 社区驱动开发，问题可能得不到及时修复
 
-## [Adding A Commenting System To A WYSIWYG Editor/Slate](https://www.smashingmagazine.com/2021/05/commenting-system-wysiwyg-editor/)
+## 💬 [Adding A Commenting System To A WYSIWYG Editor/Slate](https://www.smashingmagazine.com/2021/05/commenting-system-wysiwyg-editor/)
 
 - https://github.com/shalabhvyas/wysiwyg-editor
   - /202106
