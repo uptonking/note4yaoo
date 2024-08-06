@@ -933,6 +933,12 @@ modified: 2023-06-23T12:46:53.288Z
     - You can use the similar `refractor` if you want to use `Prism` grammars instead. 
     - If you’re looking for a really good (but rather heavy) alternative, use `starry-night`.
 
+- https://github.com/BearToCode/mismerge /MIT/202402/ts/svelte
+  - https://beartocode.github.io/mismerge/
+  - Mismerge is a modern two-way and one-way merge editor for the web, built with Svelte
+  - It is also available in React and Vue.
+  - 示例是基于textarea实现合并代码
+
 ## lint
 
 - https://github.com/KELs7/contracting-linting-codemirror6 /202405/ts

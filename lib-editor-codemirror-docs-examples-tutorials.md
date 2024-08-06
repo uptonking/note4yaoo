@@ -112,7 +112,7 @@ modified: 2024-05-02T07:48:04.213Z
 
 - `EditorView.atomicRanges` facet can be provided range sets (usually the same set that we're using for the decorations) and will make sure cursor motion skips the ranges in that set.
 
-## 🌵 [Merge View](https://github.com/codemirror/merge)
+## 🆚️ [Merge View](https://github.com/codemirror/merge)
 
 - A merge view manages two editors side-by-side, highlighting the difference between them and vertically aligning unchanged lines. 
   - If you want one of the editors to be read-only, you have to configure that in its extensions.
@@ -131,6 +131,10 @@ modified: 2024-05-02T07:48:04.213Z
 - A chunk describes a range of lines which have changed content in them. 
   - Either side (a/b) may either be empty (when its `to` is equal to its `from`), or points at a range starting at the start of the first changed line, to 1 past the end of the last changed line. 
   - Note that to positions may point past the end of the document. Use endA/endB if you need an end position that is certain to be a valid document position.
+
+### v5 [CodeMirror: merge view demo](https://www.bardavon.org/wp-content/plugins/wp-views/embedded/res/js/codemirror/demo/merge.html)
+
+- This addon depends on the google-diff-match-patch library to compute the diffs.
 
 ## [Split View Example](https://codemirror.net/examples/split/)
 
