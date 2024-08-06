@@ -11,7 +11,7 @@ modified: 2021-05-06T09:38:31.520Z
 
 - pros
   - MIT
-  - 可扩展性强, ext支持设置优先级
+  - 支持强大的扩展, ext支持设置优先级
   - 官方支持collab, 基于ot算法变体
   - ✨ v6实现了 virtualized-render, 可结合visible ranges进一步提高性能
   - ❓ incremental syntax highlighting, 可结合visible ranges
@@ -26,7 +26,7 @@ modified: 2021-05-06T09:38:31.520Z
   - 非开箱即用，需要组装模块
   - 协作基于ot变体，非标准ot
   - 默认不支持ssr, 但有方案支持
-  - 顶层容器不支持CSS transform(用于画板缩放的场景, 但ace/monaco支持)
+  - 顶层容器不支持CSS transform 3d，但支持transform2d(用于画板缩放的场景, 但ace/monaco支持)
 
 - features
   - dispatch高性能，只写不读
@@ -56,10 +56,9 @@ modified: 2021-05-06T09:38:31.520Z
   - overleaf(latex-code+rich)
   - jupyter-notebook, observablehq-notebook, val-town
   - codesandbox-sandpack, codepen, replit, glitch(v5), phoenix-brackets(v5)
-  - sourcegraph
   - obsidian, zettlr, joplin-markdown-editor, supernotes
   - chrome-devtools(开源代码中使用v6)
-  - known: mdn-bob
+  - known: mdn-bob, sourcegraph
   - more: tagspaces, hedgedoc
   - ?: replay.io
   - apps: desmos-classroom
@@ -76,7 +75,6 @@ modified: 2021-05-06T09:38:31.520Z
   - easy to start and leave
   - better collaborative editing
   - consistent env
-
 - cloud-ide
   - monaco: Codespaces(GitHub绑定), Gitpod(yml), Coder(no-cloud/k8s), theia, OpenSumi, StackBlitz, codesandbox
   - Eclipse Che: OpenShift CDE
@@ -85,6 +83,11 @@ modified: 2021-05-06T09:38:31.520Z
   - more: AWS Cloud9
   - 缺点
     - vps的性能不如本地计算机，vps很贵
+
+- ide类产品 vs 文档类产品 🆚
+  - ide一般支持远程连接代码仓库，本地仓库和远程仓库的文件通过git同步
+  - ide的数据源多是远程git仓库，其他系统S可能会支持git命令绕过S直接修改远程仓库
+    - 而文档类产品的数据源一般是数据库，只能通用系统S的ui修改
 
 - ide要点
   - 主要组件: editor, fileTree, workbench-layout, extension
@@ -99,8 +102,8 @@ modified: 2021-05-06T09:38:31.520Z
   - LSP
   - DAP: debug
 
-- code-editor vs text-editor
-  - syntax-highlighting, 包括对新的自定义语言的支持
+- code-editor vs text-editor 🆚
+  - syntax-highlighting, 对新的自定义语言的支持
   - auto-closing brackets
   - indentation
   - 行号、折叠
@@ -110,7 +113,7 @@ modified: 2021-05-06T09:38:31.520Z
 - dev-xp
   - 在github页面，每行代码的行号是确定的，不会显示软换行
     - 方便实现高亮搜索结果、查找引用
-  - codemirror协作官方示例使用ot，社区有使用crdt如yjs
+  - codemirror协作官方示例使用ot变体，社区有使用crdt如yjs
   - 代码的ast和block编辑器的ast处理方式类似，代码的symbol跳转和双链类似
 
 - 区分codemirror是v5和v6的方法
@@ -179,7 +182,7 @@ modified: 2021-05-06T09:38:31.520Z
   - Syntax highlighting
   - add some attributes or wrapping DOM element 
 - deco-widget
-  - can be inline elements or blocks
+  - inline elements or blocks
   - insert a DOM element in the editor content
 - deco-replacing
   - code folding or replacing an element in the text with something else
@@ -188,4 +191,25 @@ modified: 2021-05-06T09:38:31.520Z
   - influence the attributes of the DOM element that wraps the line
 - Decorations that significantly change the vertical layout of the editor, for example by replacing line breaks or inserting block widgets, must be provided directly, since indirect decorations are only retrieved after the viewport has been computed.
   - Indirect decorations are appropriate for things like syntax highlighting or search match highlighting, where you might want to just render the decorations inside the viewport or the current visible ranges
+
+## dev-ai-coding
+
+- diff视图的结果是红色删除行在上、绿色增加行在下
+
+### cursor交互细节
+
+- 修改单行代码
+  - ai即将修改第10行
+  - 旧代码被挤到第11行，ai在第10行写入新代码
+  - 新代码写完后，立即交换新旧代码行，使得最终符合diff视图习惯，但存在视图跳动，体验不好
+
+- 修改多行代码
+  - 类似修改单行代码，ai先写新代码
+  - 新代码写完后，将下面的旧代码换上去，体验差
+  - 修改多行代码的提示词示例: 先选中递归版本的quickSort方法，然后cmd+k输入 change quickSort to not using recursive function
+
+- 
+- 
+- 
+
 # more

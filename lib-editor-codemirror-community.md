@@ -300,6 +300,15 @@ modified: 2023-01-29T10:52:44.183Z
   - make sure this is below .cm-selectionLayer so you can apply mix-blend-mode: multiply and darken the selection
   - by putting the pseudoelements in explicit stacking order, you kind of "cover up" the top & bottom borders, giving the outline effect. So it's a hack, but is much nicer to do this w/ just CSS than to wrangle contiguous borders with JS or something
 
+# discuss-coding-ai
+- ## 
+
+- ## 
+
+- ## Parallel cmd-k’s are becoming unexpectedly popular
+- https://x.com/cursor_ai/status/1765512112200151391
+- didn't see programmers liking parallel processing and async multitasking capabilities? or didn't realize that you built the thing that is actively building the thing... AI-Powered Devs.  of course that'd be popular, once it found some hype-men
+
 # discuss-code-animation
 - ## 
 

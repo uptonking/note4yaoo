@@ -62,9 +62,10 @@ eslint --ext .js,.ts,.tsx --quiet --fix .
 
 # npm i
   DEBUG=* npm i --no-audit --loglevel silly
-DEBUG=* npm i --legacy-peer-deps --no-audit --loglevel silly
+DEBUG=* npm i --legacy-peer-deps --no-audit --loglevel=silly
+DEBUG=* npm i --legacy-peer-deps --no-audit --loglevel=silly --registry=https://registry.npmmirror.com
 
-npm --registry https://registry.npmmirror.com install axios
+npm --registry=https://registry.npmmirror.com install axios
 yarn add axios --registry=https://registry.npmjs.org/
 pnpm --registry https://registry.npmmirror.com install axios
 
@@ -396,6 +397,8 @@ console.log(`接到到PaaS消息：`, name, dao.playgroundInfo.status, dao.docke
 ```
 
 ## 0806
+
+- ai-coding编码效果
 
 - [GnuTLS recv error (-110): The TLS connection was non-properly terminated ](https://github.com/argoproj/argo-cd/issues/3994)
   - apt-get install gnutls-bin

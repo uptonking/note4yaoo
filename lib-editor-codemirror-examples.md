@@ -29,10 +29,10 @@ modified: 2023-06-23T12:46:53.288Z
   - https://github.com/yeliex/codemirror-extensions /华人
   - https://github.com/exuanbo/codemirror-toolkit /华人
   - https://www.npmjs.com/package/collaborative-codemirror
-  - https://news.ycombinator.com/threads?id=CompuIves
 
 - resources
   - https://codemirror.net/docs/community/
+  - https://news.ycombinator.com/threads?id=CompuIves
   - [List of community extensions? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/list-of-community-extensions/4899)
 # popular
 - https://github.com/tmcw/awesome-codemirror
@@ -204,14 +204,19 @@ modified: 2023-06-23T12:46:53.288Z
     - A local-first, progressive web app for knowledge management
     - End-to-End Encryption (E2EE) support
 
-- https://github.com/minditor/minditor /MIT/202403/ts
-  - https://minditor.dev/
-  - A plug-and-play, highly customizable block-based rich text editor. 
-  - Supports block/inlineBlock development with any framework, including React/Vue.
-  - 依赖codemirror6、eventemitter3、thememirror、@uppy/xhr-upload
-  - 由 Zhenyu Hou 独立开发和维护
-  - 不支持拖拽改变block顺序
-  - [开源富文本编辑器，支持用 React/Vue 或任何框架开发 Block/InlineBlock。 - V2EX _202403](https://v2ex.com/t/1019749)
+- https://github.com/imzbf/md-editor-rt /MIT/202407/ts
+  - https://imzbf.github.io/md-editor-rt
+  - https://imzbf.github.io/md-editor-rt/en-US/demo
+  - react版本的 Markdown 编辑器
+  - 源码与预览同步滚动
+  - 支持切换预览风格、代码风格主题
+  - 当使用服务端渲染时，请务必设置editorId为固定值
+  - 自定义 markdown-it 核心库扩展、属性等
+  - https://github.com/imzbf/md-editor-v3 /MIT/202407/ts
+    - https://imzbf.github.io/md-editor-v3
+    - vue3 环境的 Markdown 编辑器
+  - https://github.com/imzbf/md-editor-extension
+    - Common extensions for md-editor-v3 and md-editor-rt.
 
 - https://github.com/replit/codemirror-minimap /202401/ts
   - Minimap extension for Codemirror 6
@@ -474,34 +479,19 @@ modified: 2023-06-23T12:46:53.288Z
   - 🌵 git integrated cross-platform markdown editor
   - 依赖codemirror6、marked、nodegit、vue3、@electron/rebuild
 
-- https://github.com/imzbf/md-editor-rt /MIT/202407/ts
-  - https://imzbf.github.io/md-editor-rt
-  - https://imzbf.github.io/md-editor-rt/en-US/demo
-  - react 版本的 Markdown 编辑器
-  - 源码与预览同步滚动
-  - 支持切换预览风格、代码风格主题
-  - 当使用服务端渲染时，请务必设置editorId为固定值。
-  - 自定义 markdown-it 核心库扩展、属性等。
-  - https://github.com/imzbf/md-editor-v3 /MIT/202407/ts
-    - https://imzbf.github.io/md-editor-v3
-    - vue3 环境的 Markdown 编辑器
-  - https://github.com/imzbf/md-editor-extension
-    - Common extensions for md-editor-v3 and md-editor-rt.
+- https://github.com/minditor/minditor /MIT/202403/ts
+  - https://minditor.dev/
+  - A plug-and-play, highly customizable block-based rich text editor. 
+  - Supports block/inlineBlock development with any framework, including React/Vue.
+  - 未使用react/vue, 使用自研视图框架axii
+  - 依赖codemirror6、highlight.js、eventemitter3、thememirror、@uppy/xhr-upload
+  - 由 Zhenyu Hou 独立开发和维护
+  - 不支持拖拽改变block顺序
+  - [开源富文本编辑器，支持用 React/Vue 或任何框架开发 Block/InlineBlock。 - V2EX _202403](https://v2ex.com/t/1019749)
+    - 保存的是 json 。类似的有 editor.js ，quilljs 。他们好像不支持 inlineBlock ，写复杂插件缺少了一些系统应该提供的 reactive state ，要自己注册各种事件监听。比较麻烦，所以我自己写了这个编辑器。
 
 - https://github.com/yanthink/pingfan.ts /202204/ts/inactive
   - 基于 codemirror6 的 markdown 编辑器
-
-- https://github.com/lakejs/lake-codemirror /MIT/202404/ts
-  - https://lakejs.org/
-  - This package provides a CodeMirror configuration for Lake
-  - Code block基于codemirror实现
-
-- https://github.com/gravity-ui/markdown-editor /MIT/202407/ts/设计系统中的一个组件
-  - https://preview.gravity-ui.com/md-editor/
-  - a powerful tool for working with Markdown, which combines WYSIWYG and Markup modes
-  - Support for the basic Markdown and YFM syntax.
-  - Extensibility through the use of ProseMirror and CodeMirror engines.
-  - 依赖 prosemirror, @diplodoc/transform, react, react-dom, @gravity-ui/uikit, @gravity-ui/components 
 
 - https://github.com/wangpin34/wxformat /MIT/202311/ts
   - https://wangpin34.github.io/wxformat/
@@ -518,7 +508,19 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/mdnice/markdown-nice /GPLv3/202109/js/inactive
   - 支持自定义样式的 Markdown 编辑器
   - 依赖@uiw/react-codemirror.v1、antd.v3
-  - [一款开源的Markdown转富文本编辑器的实现原理剖析 - 知乎](https://zhuanlan.zhihu.com/p/526702914)
+  - [一款开源的Markdown转富文本编辑器的实现原理剖析 - 知乎_202206](https://zhuanlan.zhihu.com/p/526702914)
+
+- https://github.com/gravity-ui/markdown-editor /MIT/202407/ts/设计系统中的一个组件
+  - https://preview.gravity-ui.com/md-editor/
+  - a powerful tool for working with Markdown, which combines WYSIWYG and Markup modes
+  - Support for the basic Markdown and YFM syntax.
+  - Extensibility through the use of ProseMirror and CodeMirror engines.
+  - 依赖 prosemirror, @diplodoc/transform, react, react-dom, @gravity-ui/uikit, @gravity-ui/components 
+
+- https://github.com/lakejs/lake-codemirror /MIT/202404/ts
+  - https://lakejs.org/
+  - This package provides a CodeMirror configuration for Lake
+  - Code block基于codemirror实现
 
 - https://github.com/emberry-org/lemon-editor /GPLv3/202208/ts/inactive
   - a Rich Text Editor build upon Codemirror for the Emberry client.
@@ -535,7 +537,7 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/s-zeid/MarkupChisel /BSD/202407/js
   - https://code.s.zeid.me/markdownchisel
   - A minimal Markdown editor based on CodeMirror 6
-  - Extra features (can be disabled by using the MarkupChiselBaseView class):
+  - Extra features (can be disabled by using the MarkupChiselBaseView class)
 
 - https://github.com/segphault/codemirror-rich-markdoc /202301/ts/inactive
   - https://markdoc-hybrid-editor.netlify.app/
@@ -1209,7 +1211,7 @@ modified: 2023-06-23T12:46:53.288Z
     - Dynamic Notebook Environment for Wolfram Language written in Javascript
 # code-playgrounds
 - https://github.com/mdn/bob /MIT/202407/ts
-  - Builder of Bits aka The MDN Web Docs interactive examples, example builder
+  - ✨ Builder of Bits aka The MDN Web Docs interactive examples, example builder
   - [Migrate to CodeMirror v6 _202208](https://github.com/mdn/bob/issues/851)
   - https://developer.mozilla.org/en-US/play
   - [Introducing the MDN Playground: Bring your code to life! | MDN Blog _202306](https://developer.mozilla.org/en-US/blog/introducing-the-mdn-playground/)
@@ -1685,7 +1687,7 @@ modified: 2023-06-23T12:46:53.288Z
   - A free and open source code snippets manager for developers
   - 依赖codemirror5、d3、dom-to-image、electron-store、marked
   - 202208: I am excited that v3.0.0-beta.1 is out which now uses Codemirror instead of Ace
-# code-ai
+# coding-ai
 - https://github.com/asadm/codemirror-copilot /MIT/202401/ts
   - https://copilot.asadmemon.com/
   - CodeMirror extension to add GPT autocompletion like GitHub's Copilot
@@ -1719,7 +1721,7 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/sweepai/sweep /202405/python
   - https://sweep.dev/
-  - Sweep: open-source AI-powered Software Developer for small features and bug fixes.
+  - open-source AI-powered Software Developer for small features and bug fixes.
   - Sweep is an AI junior developer that turns bugs and feature requests into code changes. Sweep automatically handles devex improvements like adding typehints/improving test coverage. 
   - Turns issues directly into pull requests (without an IDE)
 
@@ -1730,7 +1732,7 @@ modified: 2023-06-23T12:46:53.288Z
   - 该项目结合了Multi-Agent的协同调度机制，并集成了丰富的工具库、代码库、知识库和沙盒环境，使得LLM模型能够在DevOps领域内有效执行和处理复杂任务
   - 可实现基于开源模型的离线私有部署, 也支持 OpenAI API 的调用
   - 本项目基于langchain-chatchat和codebox-api
-# products-coding
+# coding-products
 
 - https://github.com/code-hike/codehike /MIT/202307/ts/inactive
   - https://codehike.org/
@@ -1772,7 +1774,6 @@ modified: 2023-06-23T12:46:53.288Z
   - https://scalar.com/swagger-editor
   - Beautiful API references from OpenAPI/Swagger files
   - Edit your OpenAPI/Swagger specification with a live preview
-  - https://github.com/scalar/scalar/tree/main/packages/use-codemirror
   - https://github.com/scalar/scalar/tree/main/packages/use-codemirror /202305/ts/vue3
 
 - https://github.com/replit/crosis /MIT/202406/ts

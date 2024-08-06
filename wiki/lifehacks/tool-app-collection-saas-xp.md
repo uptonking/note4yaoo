@@ -272,6 +272,9 @@ flatpak run com.discordapp.Discord --proxy-server="socks5://127.0.0.1:1080"
   - vlc
   - smplayer
 
+- [How do I vary the playback speed in VLC using keyboard shortcuts? - Ask Different](https://apple.stackexchange.com/questions/127386/how-do-i-vary-the-playback-speed-in-vlc-using-keyboard-shortcuts)
+  - To increase/decrease playback speed on VLC/Mac use command+= and command+-
+  - On Linux at least, + doesn't increase speed beyond 1x. ] does
 ## stream
 
 - [Universal Media Server](https://www.universalmediaserver.com/)
