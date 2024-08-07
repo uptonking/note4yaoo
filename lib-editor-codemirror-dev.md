@@ -141,6 +141,17 @@ modified: 2021-05-06T09:38:31.520Z
   - diff with magic-code-animation
   - highlight current selection
 
+- diff-view左右布局
+  - 默认示例是左边旧代码可编辑，右边新代码不可编辑，与vscode相反
+
+- diff-view上下布局
+  - 高亮变更内容的粒度是整行，太粗了，但适合代码编辑场景
+  - 已经实现了字符级的添加和删除，能高亮新插入的空格，但修改单个字符有时会高亮整个单词(符合左右布局)
+  - 不支持 collapseUnchanged
+  - 未实现行内渲染change和操作
+  - 在红色部分前面的行末尾回车，有时新行会跑到红色之下，其实也符合预期
+  - 插入换行符时会高亮整行作为新增，不符合预期，但这个是通过api修改的方式，通过ui修改是符合预期的
+
 - integrations
   - strapi-codemirror
 - web

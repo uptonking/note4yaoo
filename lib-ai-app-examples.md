@@ -68,6 +68,15 @@ modified: 2023-02-08T07:20:48.475Z
   - [宝玉 on Twitter: "这有必要吗？"](https://twitter.com/dotey/status/1643801825580122115)
     - 毕竟浏览器有沙盒，相对在本地运行一个没审计过的程序放心一点，但现在浏览器对gpu硬件支持还是拉胯。
     - 这是分布式算力啊，这不就是挖矿嘛
+
+- https://github.com/outlines-dev/outlines /apache2/202408/python
+  - https://outlines-dev.github.io/outlines/
+  - Robust (structured) text generation.
+  - The first step towards reliability of systems that include large language models is to ensure that there is a well-defined interface between their output and user-defined code. Outlines provides ways to control the generation of language models to make their output more predictable.
+  - Multiple model integrations: OpenAI, transformers, llama.cpp, exllama2, mamba
+  - Simple and powerful prompting primitives based on the Jinja templating engine
+  - Fast JSON generation following a JSON schema or a Pydantic model
+  - Interleave completions with loops, conditionals, and custom Python functions
 # chatgpt
 - app-site
   - https://github.com/LiLittleCat/awesome-free-chatgpt
@@ -159,6 +168,7 @@ modified: 2023-02-08T07:20:48.475Z
 - https://github.com/microsoft/TypeChat /MIT/202405/python/ts
   - https://microsoft.github.io/TypeChat/
   - TypeChat is a library that makes it easy to build natural language interfaces using types
+
 ## chat-excel
 
 - https://github.com/weijunext/smart-excel-ai /MIT/202312/ts

@@ -135,6 +135,11 @@ modified: 2022-11-11T10:46:41.519Z
   - The actual LaTeX to HTML conversion (the interesting bit) is done by Engrafo.
   - https://github.com/arxiv-vanity/engrafo
     - Convert LaTeX documents into beautiful responsive web pages using LaTeXML.
+# doc-parser-ai-llm
+- https://github.com/QuivrHQ/MegaParse /apache2/202408/python
+  - a powerful and versatile parser that can handle various types of documents with ease
+  - Files: ✅ PDF ✅ Powerpoint ✅ Word
+  - Content: ✅ Tables ✅ TOC ✅ Headers ✅ Footers ✅ Images
 # more
 - [PDF to JSON (by PDFLite.co)](https://chrome.google.com/webstore/detail/pdf-to-json-by-pdfliteco/aapoejhdejkncgnbpngckmddecnfjiob)
   - Extract PDF To JSON with 100% privacy for your files and no uploads to Internet, works offline.

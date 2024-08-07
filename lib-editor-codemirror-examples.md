@@ -9,7 +9,7 @@ modified: 2023-06-23T12:46:53.288Z
 
 # guide
 
-- 支持切换editor的方案: sandpack, jupyter, livecodes, @uiw/react-*-editor
+- 支持切换editor的方案: overleaf(ace/src/visual), sandpack, jupyter, livecodes, @uiw/react-*-editor
 
 - examples
   - 类似打字机动态输出文字, 多用于ai生成代码/文本
@@ -59,7 +59,7 @@ modified: 2023-06-23T12:46:53.288Z
     - [Track changes and commenting in LaTeX - Overleaf, Online LaTeX Editor](https://www.overleaf.com/track-changes-and-comments-in-latex)
     - [Track Changes in Overleaf intro](https://www.overleaf.com/learn/how-to/Track_Changes_in_Overleaf)
     - [Tracking changes in LaTeX with "changes" package _201908](https://www.overleaf.com/latex/examples/tracking-changes-in-latex-with-changes-package/fnpkpytjjwhj)
-  - [Horizontal Scaling: Starting with version 3.5.6 Server Pro supports horizontal scaling _202305](https://github.com/overleaf/overleaf/wiki/Horizontal-Scaling)
+  - 🫧 [Horizontal Scaling: Starting with version 3.5.6 Server Pro supports horizontal scaling _202305](https://github.com/overleaf/overleaf/wiki/Horizontal-Scaling)
     - A deployment of Server Pro with horizontal scaling involves a set of external components, such as a Load Balancer and an S3-compatible backend
   - [Is it possible to include the commenting feature in the Community Edition? _202402](https://github.com/overleaf/overleaf/issues/1193)
     - You can try to develop it by yourself, or purchase server pro. Btw, I think commenting feature is not something difficult to imply, the core code is open-source, just need a proxy.
@@ -126,7 +126,7 @@ modified: 2023-06-23T12:46:53.288Z
   - https://github.com/jupyter/nbdime
     - Tools for diffing and merging of Jupyter notebooks.
 
-- Zettlr /9.3kStar/GPLv3/202401/ts/vue/偏学术
+- Zettlr /9.3kStar/GPLv3/202401/ts/vue/偏学术编辑器
   - https://github.com/Zettlr/Zettlr
   - https://www.zettlr.com/
   - https://docs.zettlr.com/
@@ -262,6 +262,8 @@ modified: 2023-06-23T12:46:53.288Z
   - https://uiwjs.github.io/react-codemirror/#/merge/document
   - CodeMirror 6 component for React
   - Versions after `@uiw/react-codemirror@v4` use codemirror 6.
+    - 从v4开始使用cm6，v3.0 cannot be upgraded to 4.0+
+    - [Codemirror 6 ](https://github.com/uiwjs/react-codemirror/issues/88)
   - 提供了很多示例和ext，包括theme-editor/mention/merge
   - The bundled version supports use directly in the browser
   - Support theme customization, provide theme editor.
@@ -483,23 +485,20 @@ modified: 2023-06-23T12:46:53.288Z
   - https://minditor.dev/
   - A plug-and-play, highly customizable block-based rich text editor. 
   - Supports block/inlineBlock development with any framework, including React/Vue.
-  - 未使用react/vue, 使用自研视图框架axii
+  - 未使用react/vue, 🐛 使用自研未开源的视图框架axii
   - 依赖codemirror6、highlight.js、eventemitter3、thememirror、@uppy/xhr-upload
   - 由 Zhenyu Hou 独立开发和维护
   - 不支持拖拽改变block顺序
   - [开源富文本编辑器，支持用 React/Vue 或任何框架开发 Block/InlineBlock。 - V2EX _202403](https://v2ex.com/t/1019749)
     - 保存的是 json 。类似的有 editor.js ，quilljs 。他们好像不支持 inlineBlock ，写复杂插件缺少了一些系统应该提供的 reactive state ，要自己注册各种事件监听。比较麻烦，所以我自己写了这个编辑器。
 
-- https://github.com/yanthink/pingfan.ts /202204/ts/inactive
-  - 基于 codemirror6 的 markdown 编辑器
-
-- https://github.com/wangpin34/wxformat /MIT/202311/ts
+- https://github.com/wangpin34/wxformat /MIT/202408/ts
   - https://wangpin34.github.io/wxformat/
   - Markdown For Weixin 是一款用于生成兼容微信公众号图文素材内容的 Markdown 编辑器
-  - 依赖codemirror6、daisyui
+  - 依赖codemirror6、daisyui、react-hook-form、recoil、remark-rehype
   - 示例是分屏视图，支持同步滚动
 
-- https://github.com/wanglin2/markdown_editor_sync_scroll_demo /202210/js/inactive
+- https://github.com/wanglin2/markdown_editor_sync_scroll_demo /202210/js/vue/inactive
   - https://wanglin2.github.io/markdown_editor_sync_scroll_demo/
   - 基于CodeMirror和unified实现的一个能精确同步滚动的Markdown编辑器
   - 依赖codemirror5、vue3、remark-gfm
@@ -516,6 +515,9 @@ modified: 2023-06-23T12:46:53.288Z
   - Support for the basic Markdown and YFM syntax.
   - Extensibility through the use of ProseMirror and CodeMirror engines.
   - 依赖 prosemirror, @diplodoc/transform, react, react-dom, @gravity-ui/uikit, @gravity-ui/components 
+
+- https://github.com/yanthink/pingfan.ts /202204/ts/inactive
+  - 基于 codemirror6 的 markdown 编辑器
 
 - https://github.com/lakejs/lake-codemirror /MIT/202404/ts
   - https://lakejs.org/
@@ -884,12 +886,11 @@ modified: 2023-06-23T12:46:53.288Z
   - https://acrodata.github.io/code-editor/
   - CodeMirror 6 wrapper for Angular
   - 实现了diff上下视图、✨左右视图，支持高亮变更内容及gutter，支持撤销变更action
-    - 亮变更内容的粒度是整行，太粗了，但适合代码编辑场景
   - 支持a2b/b2a正反向计算
 
 - https://github.com/gaelj/BlazorCodeMirror6 /MIT/202407/csharp/ts
   - https://gaelj.github.io/BlazorCodeMirror6/
-  - Blazor CodeMirror 6 brings the power of the CodeMirror 6 code editor to Blazor, offering a comprehensive . NET 6 / . NET 7 / . NET 8 component.
+  - Blazor CodeMirror 6 brings the power of the CodeMirror 6 code editor to Blazor, offering a comprehensive . NET6/7/8 component
   - Markdown editor for Blazor
   - 支持编辑时开启/关闭diff-view，✨ diff视图下accept变更后立即撤销会先回到diff视图
   - 实现了diff上下视图，支持高亮变更及gutter，支持accept/reject变更action
@@ -914,6 +915,7 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/codemirror/merge /MIT/202403/ts
   - https://codemirror.net/try/?example=Merge%20View
   - Merge view for CodeMirror
+  - 左边旧代码可编辑，右边新代码不可编辑，与vscode相反
 
 - https://codepen.io/GwapongProgrammer/pen/yLXqWMK
   - 依赖codemirror6
@@ -1209,6 +1211,9 @@ modified: 2023-06-23T12:46:53.288Z
   - This is a core component of Wolfram JS Frontend project
   - https://github.com/JerryI/wolfram-js-frontend
     - Dynamic Notebook Environment for Wolfram Language written in Javascript
+
+- [CodeMirror extension to detect and fix missing JSX Pragma](https://gist.github.com/tmcw/fefe8b5c0a63b51bc8a303c8a3553fac)
+  - detects the lack of a pragma and the presence of JSX syntax, by using CodeMirror's existing syntax tree
 # code-playgrounds
 - https://github.com/mdn/bob /MIT/202407/ts
   - ✨ Builder of Bits aka The MDN Web Docs interactive examples, example builder
@@ -1380,10 +1385,11 @@ modified: 2023-06-23T12:46:53.288Z
   - free and open-source online code editor that allows you to write and execute code from a rich set of languages. 
   - Judge0 IDE is using Judge0 for executing user's source code.
 
-- https://github.com/rin-yato/miracle-diagram /202312/ts
+- https://github.com/rin-yato/miracle-diagram /202312/ts/inactive
   - https://miracle-diagram.vercel.app/
   - A code first database diagram design tool. 
-  - 依赖codemirror、lezer、shadcn、reactflow
+  - 依赖codemirror6、lezer、shadcn、reactflow、dexie
+  - 功能似乎无法正常使用
 
 - https://github.com/google/playground-elements /202405/ts
   - Serverless coding environments for the web.
@@ -1424,7 +1430,7 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/codepen/CodeMirror-6-Needs /202208/js/inactive
   - https://objective-blackwell-d4efc9.netlify.app/
-  - An exploration of CodeMirror 6 to integrate everything CodePen needs to use it in the future.
+  - An exploration of CodeMirror 6 to integrate everything 🏭 CodePen needs to use it in the future.
   - It's a Next.js app as that is the context we hope to be using CodeMirror 6 in.
   - 提供了yjs示例
 
@@ -1766,9 +1772,6 @@ modified: 2023-06-23T12:46:53.288Z
     - web-tree-sitter for incremental parsing
     - `diff-match-patch` via `json0-ot-diff` for computing text diffs (needed for using tree-sitter)
     - React for DOM updates
-
-- [CodeMirror extension to detect and fix missing JSX Pragma](https://gist.github.com/tmcw/fefe8b5c0a63b51bc8a303c8a3553fac)
-  - detects the lack of a pragma and the presence of JSX syntax, by using CodeMirror's existing syntax tree
 
 - https://github.com/scalar/scalar /MIT/202406/ts/vue
   - https://scalar.com/swagger-editor

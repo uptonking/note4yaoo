@@ -136,6 +136,11 @@ modified: 2022-11-07T10:25:12.034Z
 
 - tweetdeck-alternatives
 
+- [Twitter Personality - AI Agent by Wordware](https://twitter.wordware.ai/)
+  - ai对用户进行整体评价，语言偏向骂人
+  - https://github.com/wordware-ai/twitter
+    - AI Agent for Twitter Personality Analysis
+
 ## download-video/image
 
 - 浏览器扩展经常失效，更好的方式是在github查找下载工具的源码，自己修改
@@ -275,6 +280,7 @@ flatpak run com.discordapp.Discord --proxy-server="socks5://127.0.0.1:1080"
 - [How do I vary the playback speed in VLC using keyboard shortcuts? - Ask Different](https://apple.stackexchange.com/questions/127386/how-do-i-vary-the-playback-speed-in-vlc-using-keyboard-shortcuts)
   - To increase/decrease playback speed on VLC/Mac use command+= and command+-
   - On Linux at least, + doesn't increase speed beyond 1x. ] does
+
 ## stream
 
 - [Universal Media Server](https://www.universalmediaserver.com/)

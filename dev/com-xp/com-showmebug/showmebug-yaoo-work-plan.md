@@ -56,11 +56,25 @@ modified: 2024-05-06T02:54:40.374Z
 ### ai-writing-features
 
 - 时光机
-  - 上下布局的diff视图
+  - 开启关闭diff视图, 配置在业务层
+  - 切换diff视图的布局，上下、左右，配置在业务层
   - 执行计划时计算diff-op，op的内容和时机
   - ~~回放~~模式获取diff-op
   - ~~回放~~模式支持编辑，内容和光标选区的变化
   - changed-files-list
+
+
+- ai-coding的动画编码效果的技术方案
+  - 不能使用纯css实现打字效果，css难以控制暂停继续
+  - 思路1: 修改unifiedMergeView的源码，默认只渲染红色旧代码，新代码先通过decoration隐藏再通过逐个插入字符实现
+  - 思路2: 逐个插入行
+  - 其他思路
+    - ~~不断传入newDoc，不断计算diff~~
+  - 参考案例
+    - folded-code也是隐藏代码的一种思路
+    - 控制进度需要自动移动到下一个changedLine
+- diff视图开启关闭动画的配置放在业务层还是state-field
+  - 动画执行的进度可以放在state-field, 因为会随着editorState的更新而更新
 
 - preOpenFile
   - 检查参数 diffMode, originalContent，newContent，title
