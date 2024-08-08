@@ -30,6 +30,27 @@ modified: 2023-06-19T12:33:38.006Z
 # discuss-collab
 - ## 
 
+- ## 
+
+- ## 
+
+- ## tldraw sync is a fast, production-ready library for collaborative whiteboards built with tldraw. _202408
+- https://x.com/_adamwiggins_/status/1820787793242558494
+- There are many choices for sync engines now, but IMO none are ideal for the whiteboard/canvas use case:
+  - Automerge and Yjs are general-purpose CRDTs with tons of complex logic for resolving (for example) text editing conflicts, which is a lot more than you need for a non-text-heavy canvas
+  - Liveblocks, Firebase, and other such cloud vendors are expensive, slow, and/or too much vendor lock-in
+  - …plus tons of up-and-comers including in the local-first space, but most of these are still pretty early in their life and maybe a bit soon to trust in production use
+- In the meantime, http://tldraw.com (flagship app for the tldraw SDK) has a custom-built sync engine exactly made for the “shared whiteboard” use case. Over the last year it has hosted ~200k multiplayer whiteboards, so def production ready.
+  - The tldraw team had the idea just to extract that into its own library, and thus tldraw sync was born!
+- The hardest part of this was how to package the backend. tldraw is in the business of selling libraries, not hosted services. But you need a backend service for live collaboration. The answer was a template (using CloudFlare durable objects) extracted from the production backend for tldraw dot com
+- Lots of folks have already built their own sync layer for their tldraw-based app using Yjs or other options. This release isn’t implying anyone should switch. Integrations with all the great sync engines out there is and will be an ongoing goal. But tldraw sync will make a good default for new folks coming in that just want to quickly add fast, canvas-focused sync without a lot of hassle.
+
+- 
+- 
+- 
+- 
+- 
+
 - ## [Self Hosting the webapp?_202111](https://github.com/tldraw/tldraw-v1/discussions/547)
 - the real-time collaboration features of tldraw seem to rely on Liveblocks
   - This situation is known and a reflection is in progress by @steveruizok to address this aspect.

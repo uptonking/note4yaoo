@@ -106,9 +106,12 @@ modified: 2024-07-29T11:49:33.248Z
 
 - ## 
 
-- ## 
+- ## 🌰 [Adding widgets between lines instead of inside lines - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/adding-widgets-between-lines-instead-of-inside-lines/4772)
+  - We’re working on a CodeMirror side-by-side diff viewer similar to github’s view
+- Is it possible to add dom nodes/breaks between cm-lines instead of inside using decorations
+  - Yes, use block widgets, either at the end of the line above with side: 1, or at the beginning of the line below, with side: -1.
 
-- ## 
+- https://replit.com/@util/CodeMirror-diff-view
 
 - ## [Styling the outline of a merge view editor - discuss. CodeMirror](https://discuss.codemirror.net/t/styling-the-outline-of-a-merge-view-editor/7417)
 - Themes passed to CodeMirror are scoped to the editor itself, so you’ll have to use raw CSS to style the `.cm-mergeView` element around them.
@@ -119,3 +122,15 @@ modified: 2024-07-29T11:49:33.248Z
 
 - ## [[CM Merge] how to programmatically focus on line that has code changes - discuss. CodeMirror _202211](https://discuss.codemirror.net/t/cm-merge-how-to-programmatically-focus-on-line-that-has-code-changes/5366)
 - @codemirror/merge 0.1.2 exports `MergeView.chunks` and documents the objects used in there.
+
+- ## 🆚️ Problem: You want to compare two files.
+- https://x.com/housecor/status/1817554130782568927
+  - Solution: Use VS Code.
+  - Right click file 1 and “Select for compare”
+  - Right click file 2 and “Compare with selected”
+  - A side-by-side diff displays
+
+- I’ve also used BeyondCompare which has the ability to compare folders as well.
+- Jetbrains IDEs also have a "compare selection with clipboard" option I found quite helpful
+- Command + Shift + P -> Compare active file with.. also works
+- code --diff file1 file2

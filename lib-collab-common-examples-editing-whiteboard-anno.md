@@ -15,6 +15,18 @@ modified: 2022-11-07T17:36:22.236Z
   - 研发编辑器不仅要考虑协作，其他功能如find、syntax-highlight对用户体验甚至更重要
   - 所以还是要参考成熟编辑器的可复用功能，如copy-paste、import-export、word-excel
 # whiteboard/annotation
+- https://github.com/tldraw/tldraw-sync-cloudflare /MIT/202408/ts
+  - This is a production-ready backend for tldraw sync.
+  - Your client-side tldraw-based app can be served from anywhere you want.
+  - This backend uses Cloudflare Workers, and will need to be deployed to your own Cloudflare account.
+  - Each whiteboard is synced via WebSockets to a Cloudflare Durable Object.
+  - Whiteboards and any uploaded images/videos are stored in a Cloudflare R2 bucket.
+  - Although unreliated to tldraw sync, this server also includes a component to fetch link previews for URLs added to the canvas.
+  - This is a minimal setup of the same system that powers multiplayer collaboration for hundreds of thousands of rooms & users on www.tldraw.com
+  - https://x.com/_adamwiggins_/status/1820787800603533568
+    - http://tldraw.com (flagship app for the tldraw SDK) has a custom-built sync engine exactly made for the “shared whiteboard” use case. Over the last year it has hosted ~200k multiplayer whiteboards, so def production ready.
+    - The tldraw team had the idea just to extract that into its own library, and thus tldraw sync was born
+
 - https://github.com/feakin/feakin-web /MPLv2/202211/ts/inactive
   - Feakin是一个架构资产可视化管理工具。
   - 基于 图表即代码 的思想体系，支持导入 Mermaid, PlantUML, Excalidraw, Dot 等图形资产格式。

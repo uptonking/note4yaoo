@@ -171,6 +171,15 @@ modified: 2021-05-06T09:38:31.520Z
   - 渲染wysiwyg时采用 virtual render
   - 支持可缩放的编辑器，用于将编辑器嵌入画板/设计工具的场景
 # dev-xp
+- 隐藏diff-view绿色行的实现方案
+  - 思路0: 通过line-decoration给绿色行按条件添加隐藏、动画样式类
+  - ~~思路0: 通过widget-decoration直接替换元素，但需要手动实现atomicRanges~~
+  - 思路1: 自定义 cold-folding 组件的显示元素，使得fold后显示空
+  - 思路2: 通过replace-decoration隐藏元素
+  - 其他
+    - mark-decoration的粒度过细，计算繁琐
+    - 通过cold-fold实现隐藏元素的思路是否正确
+
 - 多标签页的实现思路和单标签差别不大，视觉上只有1个visible的editor，上方是tab
 
 - 难以完全使用state对象控制的状态

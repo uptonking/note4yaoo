@@ -36,6 +36,16 @@ modified: 2023-01-29T10:52:44.183Z
   - and asynchronicity everywhere makes code a lot more complex, expensive, and error-prone. 
   - So I went with a synchronous single-heap approach that takes care not to do too much work during updates.
 
+# discuss-perf
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Replace the entire doc performance - v6 - discuss. CodeMirror _202211](https://discuss.codemirror.net/t/replace-the-entire-doc-performance/5289)
+  - when I use the dispatch function to insert a huge text, codemirror will create ten-thousands of dom nodes in the background and freeze the page for a while.
+
 # discuss-codemirror-🆚️-monaco
 - resources
   - [Comparison of JavaScript-based source code editors - Wikipedia](https://en.wikipedia.org/wiki/Comparison_of_JavaScript-based_source_code_editors)
@@ -285,48 +295,6 @@ modified: 2023-01-29T10:52:44.183Z
   - In core, it will only work with JupyterLab 4. It’s possible someone could write an extension that would replace some renderers with codemirror 6 (e.g. notebook cell inputs), but likely not all of them (e.g. settings editor).
   - 💡 There was an attempt to generalize the `ICodeEditor` to allow alternate implementations (e.g. to support monaco integration), but this never really worked out, and supporting two versions of the same library is particularly challenging when the breaking changes are almost total.
 
-# discuss-cm-view-render
-- ## 
-
-- ## 
-
-- ## 
-
-- ## pleased w/ this CSS solution for a Datagrip-like contiguous border around the last-run selection in CodeMirror
-- https://x.com/hamiltonulmer/status/1800939237329731718
-  - 代码的不规则边框效果
-  - making CodeMirror work for serious editing is largely about stacking decorations & compositing them visually in the right ways. Which is yet another thing that should be familiar to anyone who does dataviz
-  - .cm-previously-run is a child of .cm-line, wraps text as selection. Use pseudoelements w/ z-index to draw bg + left/right (::before) and top/bottom (::after)
-  - make sure this is below .cm-selectionLayer so you can apply mix-blend-mode: multiply and darken the selection
-  - by putting the pseudoelements in explicit stacking order, you kind of "cover up" the top & bottom borders, giving the outline effect. So it's a hack, but is much nicer to do this w/ just CSS than to wrangle contiguous borders with JS or something
-
-# discuss-coding-ai
-- ## 
-
-- ## 
-
-- ## Parallel cmd-k’s are becoming unexpectedly popular
-- https://x.com/cursor_ai/status/1765512112200151391
-- didn't see programmers liking parallel processing and async multitasking capabilities? or didn't realize that you built the thing that is actively building the thing... AI-Powered Devs.  of course that'd be popular, once it found some hype-men
-
-# discuss-code-animation
-- ## 
-
-- ## 
-
-- ## 
-
-- ## 💫 Staggered Animation - CSS 逐行显示动画， 与codemirror无关
-- https://x.com/alirdev/status/1817923525002530819
-- I once recorded a video for a text reveal using this same approach
-  - [JS Text Reveal Effect - YouTube](https://www.youtube.com/watch?v=PMiVFXZpYQo&t=140s)
-- I made a video a while ago that explains this technique
-  - [Css: Scoped variables - YouTube](https://www.youtube.com/watch?v=cXM0SZeWjd4)
-
-- ## second attempt to generate slide deck for a paper with @Google Gemini 1.5 Pro in @revealjs .
-- https://x.com/algo_diver/status/1769614261616251150
-  - I tried to add colors and animations, and I also tried to guide on the structure of the presentation
-
 # discuss-chinese-input-method
 - ## 
 
@@ -380,17 +348,10 @@ modified: 2023-01-29T10:52:44.183Z
 
 - ## 
 
-- ## 🆚️ Problem: You want to compare two files.
-- https://x.com/housecor/status/1817554130782568927
-  - Solution: Use VS Code.
-  - Right click file 1 and “Select for compare”
-  - Right click file 2 and “Compare with selected”
-  - A side-by-side diff displays
+- ## 
 
-- I’ve also used BeyondCompare which has the ability to compare folders as well.
-- Jetbrains IDEs also have a "compare selection with clipboard" option I found quite helpful
-- Command + Shift + P -> Compare active file with.. also works
-- code --diff file1 file2
+- ## [Make decoration editable within non-editable instance - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/make-decoration-editable-within-non-editable-instance/5190)
+- I guess you could simply use a transaction filter. See the single-line editor example
 
 - ## 🔀 [Should dispatched transactions be added to a queue? - v6 _202206](https://discuss.codemirror.net/t/should-dispatched-transactions-be-added-to-a-queue/4610)
 - I was slightly surprised to find that the dispatch method doesn’t put transactions on a queue for processing.
@@ -602,9 +563,6 @@ modified: 2023-01-29T10:52:44.183Z
 - https://x.com/SergeiChestakov/status/1486025274240090114
   - Unlike CM6, Monaco is bloated, difficult to customize, and doesn't support mobile (which is becoming increasingly important).
 
-- 
-- 
-- 
 - 
 - 
 - 

@@ -14,7 +14,8 @@ modified: 2022-11-21T15:27:20.974Z
 
 - ## 
 
-- ## 
+- ## 滑块滑动跳跃
+- https://codepen.io/ste-vg/pen/OEbYqZ
 
 - ## 💫 Staggered Animation - CSS 逐行显示动画
 - https://x.com/alirdev/status/1817923525002530819
