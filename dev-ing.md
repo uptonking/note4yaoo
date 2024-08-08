@@ -383,6 +383,40 @@ betterdiscordctl -i flatpak install
   - 回放模式支持编辑，内容和光标选区的变化
   - changed-files-list
 
+- 测试集成-to
+  - 前端未控制member/owner的按钮、路由访问权限
+  - agent生成thread名称限制长度
+  - think流程支持stop
+  - 在驾驶舱的plan文件列表打开文件，think/plan, 聊天时的
+  - think卡片打开文件，滚动到文件的行数
+  - ❓ 打开删除文件
+  - think结束没有confirm
+  - 聊天搜索 未实现
+  - 驾驶舱还原设计稿
+  - agent计划只给到文件名，暂时没做到方法粒度
+  - 追加步骤的上限控制
+  - ❓ 驾驶舱里面的think流程与外面有不同，补充表单
+  - 插入代码块到文件中
+  - 引用历史聊天的内容，未实现
+  - 引用terminal的异常信息
+  - 聊天上传图片未上传，暂时先关闭
+  - 聊天点赞，先隐藏
+  - 重新生成内容， 前端再调一次
+  - 计划agent和聊天agent不是一个
+  - ❓ 执行计划时，其他人能看到进度吗
+  - 终止二次确认前ai还会继续执行
+  - ai执行计划后，用户将文件删了，action显示异常
+  - 取消置顶的按钮，待确认，人工可以取消置顶吗
+    - 暂停时切换action，置顶也要变
+  - 回放时，也会执行卡片
+  - 任务执行时，多人的暂停与恢复
+  - 人工删除ai需要的文件，ai会执行异常，整个计划失败
+  - ai修改后的文件，人工再修改，然后撤销人工修改，进度条从绿色变成黄色吗？
+  - 执行过程中澄清补充需求，暂时不做
+  - 回放模式也需要置顶
+  - 回放模式可以删除文件吗？  待确认。 确认修改文件
+  - 回放模式取消diff时，直接展示最新代码
+
 ## 080
 
 - dev-log
@@ -395,6 +429,12 @@ betterdiscordctl -i flatpak install
 ```JS
 console.log(`接到到PaaS消息：`, name, dao.playgroundInfo.status, dao.dockerStatus, payload)
 ```
+
+## 0808
+
+- 自由对话code-review
+  - ~~create pr的task和其他task如创建thread的流程有结构设计和ui设计吗~~
+  - 分析需求时需求规模的获取有方案了吗
 
 ## 0807
 

@@ -84,7 +84,7 @@ modified: 2024-05-02T07:48:04.213Z
 
 - Adjusting the vertical behavior of the editor can be done by giving its outer element a height, and setting overflow: auto on the scroller element.
 
-## [Document Change Example](https://codemirror.net/examples/change/)
+## 🌟 [Document Change Example](https://codemirror.net/examples/change/)
 
 - Initiating an editor state change from a program is done by dispatching a transaction.
 - When dispatching a transaction, you can also pass an array of changes. 
@@ -97,7 +97,7 @@ modified: 2024-05-02T07:48:04.213Z
 ## [Selection Example](https://codemirror.net/examples/selection/)
 
 - Like any editor state change, moving the selection is done by dispatching a transaction
-- When a transaction makes a document change as well as setting the selection, the new selection should point into the document as it is after the change
+- 💡 When a transaction makes a document change as well as setting the selection, the new selection should point into the document as it is after the change
 - When writing commands that act on the selection, you have to take some care to support multiple ranges.
 
 ## [Decoration Example](https://codemirror.net/examples/decoration/)

@@ -63,12 +63,12 @@ modified: 2024-05-06T02:54:40.374Z
   - ~~回放~~模式支持编辑，内容和光标选区的变化
   - changed-files-list
 
-
 - ai-coding的动画编码效果的技术方案
   - 不能使用纯css实现打字效果，css难以控制暂停继续
   - 思路1: 修改unifiedMergeView的源码，默认只渲染红色旧代码，新代码先通过decoration隐藏再通过逐个插入字符实现
-  - 思路2: 逐个插入行
+  - 思路2: 逐个插入行, 插入行可以使用 line-decoration
   - 其他思路
+    - 先通过类似code-fold隐藏代码，当需要显示时，渲染打字机效果的文本
     - ~~不断传入newDoc，不断计算diff~~
   - 参考案例
     - folded-code也是隐藏代码的一种思路

@@ -137,6 +137,10 @@ modified: 2021-05-06T09:38:31.520Z
 
 - resources
 # draft
+- not-yet
+  - lezer-highlight vs highlightjs
+  - codemirror devtools
+
 - features
   - diff with magic-code-animation
   - highlight current selection
