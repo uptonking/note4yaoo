@@ -107,7 +107,10 @@ modified: 2024-08-08T20:49:11.571Z
 
 - ## 
 
-- ## 
+- ## What code editor theme do you use?
+- https://x.com/vladyslavmoroz/status/1821469348977918139
+- Was a Solarized user for a decade. Recently switched to Nord.
+- zed
 
 - ## pleased w/ this CSS solution for a Datagrip-like contiguous border around the last-run selection in CodeMirror
 - https://x.com/hamiltonulmer/status/1800939237329731718

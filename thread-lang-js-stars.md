@@ -24,7 +24,12 @@ if(val) // doSth
 # discuss
 - ## 
 
-- ## 
+- ## 💡 import { thing } from './file'; Do I really need to manually specify all file extensions to work with node?
+- https://x.com/alexandereardon/status/1821018505678127130
+- Yes, and I'm a huge convert to it. It's weird at first but it makes your code more portable and easier to debug
+- It also makes it more performant, which I believe is the primary driver behind explicit extensions. Node/TS/whomever doesn't have to guess if "/foo" means "/foo.js" or "foo/index.js", and it does have a tangible impact on projects.
+
+- 100% add the .js extension, having to convert some packages now and it’s a real pain, save yourself the migration in the future
 
 - ## [Accessing variables trapped by closure - Stack Overflow](https://stackoverflow.com/questions/4472529/accessing-variables-trapped-by-closure)
 - Variables within a closure aren't directly accessible from the outside by any means. However, closures within that closure that have the variable in scope can access them, and if you make those closures accessible from the outside, it's almost as good.

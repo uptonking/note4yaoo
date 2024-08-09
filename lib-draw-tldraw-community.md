@@ -34,7 +34,7 @@ modified: 2023-06-19T12:33:38.006Z
 
 - ## 
 
-- ## tldraw sync is a fast, production-ready library for collaborative whiteboards built with tldraw. _202408
+- ## 🌰 tldraw sync is a fast, production-ready library for collaborative whiteboards built with tldraw. _202408
 - https://x.com/_adamwiggins_/status/1820787793242558494
 - There are many choices for sync engines now, but IMO none are ideal for the whiteboard/canvas use case:
   - Automerge and Yjs are general-purpose CRDTs with tons of complex logic for resolving (for example) text editing conflicts, which is a lot more than you need for a non-text-heavy canvas

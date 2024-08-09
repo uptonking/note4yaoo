@@ -49,7 +49,7 @@ modified: 2024-05-06T02:54:40.374Z
 
 ### draft
 
-- 端侧大模型辅助coding，如浏览器api
+- 端侧大模型辅助coding，如浏览器内置的ai-api
 
 - docker in docker 的权限问题
 
@@ -64,7 +64,7 @@ modified: 2024-05-06T02:54:40.374Z
   - changed-files-list
 
 - ai-coding的动画编码效果的技术方案
-  - 不能使用纯css实现打字效果，css难以控制暂停继续
+  - 不能使用纯css实现打字效果，css难以控制暂停继续，但符合ai按行写代码的主流实现方式
   - 思路1: 修改unifiedMergeView的源码，默认只渲染红色旧代码，新代码先通过decoration隐藏再通过逐个插入字符实现
   - 思路2: 逐个插入行, 插入行可以使用 line-decoration
   - 其他思路

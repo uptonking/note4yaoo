@@ -30,6 +30,16 @@ modified: 2023-08-28T04:43:22.738Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Async is the final boss in Rust. _202408
+- https://x.com/fredine/status/1821048270711615936
+- Mutex, Macros, Traits and multithread stuff are also mini bosses
+
 - ## So http://tokio.rs is Spring? 
 - https://twitter.com/criccomini/status/1775277749537792059
 - it is netty and its associated projects. 

@@ -18,6 +18,11 @@ modified: 2020-07-14T09:27:30.503Z
 - who is using #python
   - 国内: 
   - .
+
+- python-versions
+  - [Status of Python versions](https://devguide.python.org/versions/)
+  - [Download Python | Python.org](https://www.python.org/downloads/)
+  - https://github.com/pyenv/pyenv
 # python3
 
 # python2

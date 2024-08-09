@@ -14,6 +14,15 @@ modified: 2022-11-21T15:27:20.974Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 多列卡片分别滚动
+- https://x.com/lostdoesart/status/1821491304192229720
+  - I made it with @jittervideo
+  - Jitter to make a proof of concept, then I'll use Rive to add it to the site
+
 - ## 滑块滑动跳跃
 - https://codepen.io/ste-vg/pen/OEbYqZ
 

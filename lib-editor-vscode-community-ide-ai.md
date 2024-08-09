@@ -73,6 +73,24 @@ modified: 2024-05-10T06:17:27.016Z
 
 - ## 
 
+- ## 
+
+- ## Introducing LlamaCoder! An open source Claude Artifacts app that can generate full React apps and components with Llama 3.1 405B. 100% free and open source.
+- https://x.com/nutlope/status/1819445838705578091
+- https://x.com/nutlope/status/1820299682331107371
+  - Just put together an architecture diagram for how LlamaCoder works!
+
+- ## 我已经是第二 tier 的付费用户好久好久了，见人就安利 cursor。
+- https://x.com/wey_gu/status/1820678802646978674
+  - copilot ++ 特别快
+  - block selection 之后的逐行change/apply 执行是第一个碾压的创新，非常好用
+  - chat 中的灵活引用上下文是 sota 的
+  - 用了 sonnet 替换 gpt-4 之后 chat 中的答案直接 apply 到代码，提升了一个台阶
+  - 最近的 composer（需要开启）又推向了一个新的水平，直接跨文件改东西
+
+- 这个功能绑定编辑器吗？
+  - 是，neovim 没发用，如果原来 vscode 好一点
+
 - ## @LangChainAI 宣布推出第一个本地的 Agent IDE - LangGraph Studio
 - https://x.com/tuturetom/status/1819190219788447805
   - 基于 LangGraph Studio 在本地运行，基于代码开发 Agentic Workflow 并可视化交互运行、调试
