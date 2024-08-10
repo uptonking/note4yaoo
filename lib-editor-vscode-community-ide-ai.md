@@ -101,7 +101,7 @@ modified: 2024-05-10T06:17:27.016Z
 
 - ## we are launching @wordware_ai ! Wordware is the first IDE solely focused on building your AI with Natural Language Programming
 - https://x.com/kozerafilip/status/1819302298944000142
-  - Having built a bunch of AI agents 🤖 we realised three things:
+  - 👾 Having built a bunch of AI agents we realised three things:
   1. It’s prompts all the way down
   2. Making AI Apps work requires a bunch of iterations
   3. It’s much faster when the person developing the agent can judge the quality of the outputs

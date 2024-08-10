@@ -316,6 +316,12 @@ modified: 2023-11-17T10:12:06.357Z
   - Use ArchiveBox as a command-line package and/or self-hosted web app on Linux, macOS, or in Docker.
   - It saves snapshots of the URLs you feed it in several redundant formats.
   - It uses normal filesystem folders to organize archives (no complicated proprietary formats), and offers a CLI + web UI.
+
+- https://github.com/fullstackedorg/editor /GPLv3/202407/ts
+  - https://fullstacked.org/
+  - Create local-first web-like apps on any platform.
+  - RN/Flutter translates your codebase when built/compiled vs FullStacked is a prebuilt environment ready to run web-like apps.
+  - FullStacked has and will always have an offline-first/local-first approach.
 # sync/collab
 - https://github.com/YousefED/Matrix-CRDT
   - Use Matrix as a backend for local-first applications with the Matrix-CRDT Yjs provider.

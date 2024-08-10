@@ -13,6 +13,18 @@ modified: 2024-08-08T20:49:11.571Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## experimenting with a canvas-driven CodeMirror cursor
+- https://x.com/hamiltonulmer/status/1822274427142525210
+  - will need to try a gradient polygon rather than a trail of thin lines
+
+- the long-awaited feature for every rich text editor
+
+- https://x.com/hamiltonulmer/status/1822120260910383419
+  - thinking about experimenting with a canvas-driven layer for CodeMirror (for cursors and selections, not text). 
+  - Goal would be to enable richer animations not achievable with css e.g. show cursor motion blur when jumping around
 # discuss-coding-ai
 - ## 
 
@@ -34,13 +46,29 @@ modified: 2024-08-08T20:49:11.571Z
 - https://x.com/cursor_ai/status/1765512112200151391
 - didn't see programmers liking parallel processing and async multitasking capabilities? or didn't realize that you built the thing that is actively building the thing... AI-Powered Devs.  of course that'd be popular, once it found some hype-men
 
-# discuss-code-animation
+# discuss-code-animation 💫
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [A scalable CSS only Typewriter Effect - DEV Community _202108](https://dev.to/afif/a-scalable-css-only-typewriter-effect-2opn)
+- Here is a simple typewriter effect with only a few lines of CSS where you don't need to deal with any js code.
+  - Doesn't require monospace fonts
+  - Can use any font
+- 
+- 
+
+- ## Achieve CSS Typewriter effect under 1 minutes.
+- https://x.com/Prathkum/status/1693598454092808544
+  - https://codepen.io/prathkum/pen/qBqGepq
+  - This method is great, the thing is that it's only good for monospace fonts, and only works on a solid color background
+- Here's a different method that allows the use of any font, on any background.
+  - https://codepen.io/amit_sheen/pen/YzZYoMV
+- https://codepen.io/denic/pen/GRoOxbM
 
 - ## [A Multi-line CSS only Typewriter effect - DEV Community _202204](https://dev.to/afif/a-multi-line-css-only-typewriter-effect-3op3)
-- 
 - 
 
 - ## [Typewriter Effect | CSS-Tricks _201607](https://css-tricks.com/snippets/css/typewriter-effect/)

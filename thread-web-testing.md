@@ -27,6 +27,16 @@ modified: 2021-08-28T11:49:05.730Z
 
 - ## 
 
+- ## 
+
+- ## 🔒 This is THE way to test any UI behind authentication. 
+- https://x.com/kettanaito/status/1821828346780516619
+  - Storing and loading any set of cookies in Playwright is so powerful. What we did in one of my previous projects was create a few different set of cookies based on different user roles, and used those as the input to the test suite.
+
+- I have been using this feature for at least 2 years already. Impossible to do e2e without it
+
+- Works great with auth! I wasn't able to make it work with 3rd party GDPR dialog, though, maybe because it's an `<iframe>` so perhaps not really possible… But storageState() is cool AF, I use it all around!
+
 - ## Apisix looks pretty interesting. It builds on top of nginx and adds pretty much every feature you'd expect from a modern API gateway.
 - https://twitter.com/ohmypy/status/1786687116937707703
   - And you can try it in the browser without installing anything!

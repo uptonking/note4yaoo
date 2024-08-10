@@ -14,7 +14,16 @@ modified: 2021-08-05T04:31:02.298Z
 # discuss-stars
 - ## 
 
-- ## 
+- ##  `type Color = 'primary' | 'secondary' | (string & {})` autocomplete trick
+- https://x.com/mattpocockuk/status/1821926395380986219
+  - This works because of a quirk of the TypeScript compiler.
+  - When you create a union between a string literal type and `string` , TypeScript will eagerly widen the type to `string` . 
+  - by intersecting `string` with an empty object, we trick TypeScript into retaining the string literal types for a bit longer.
+
+- `{}` is actually 'any non-nullish value'
+- I would rather use a template for hex Colors such as `type Color = “primary“ | “secondary“ | ‘#${string}’` in this case
+
+- hear me out, I think good design for this is to `type Default<T> = T & {}` as the type has some narrow types and if None of them matches it will "default" to that broader type
 
 - ## Could someone remind me what the syntax is for setting the version of types in the TS playground?
 - https://x.com/mattpocockuk/status/1803011608072855553

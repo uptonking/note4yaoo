@@ -94,6 +94,11 @@ modified: 2023-02-02T03:22:07.941Z
   - https://www.zhihu.com/people/guo-zhong-ming-26
   - https://gitee.com/wlmqgzm/libhaisqlmalloc
     - Libhaisqlmalloc高性能内存分配库，管理堆内存，主要接口是malloc和free，用于降低频繁分配、释放内存造成的性能损耗，并且有效地控制内存浪费和内存碎片 
+
+- Hamilton Ulmer /duckdb
+  - https://www.hamiltonulmer.com/
+  - I'm currently helping build MotherDuck, a new type of DuckDB-powered data warehouse. 
+  - I was previously the head of application engineering at Rill, a highly-opinionated conversation-fast BI tool. 
 # db-sqlite
 - Anton Zhiyanov /sqlean/redka/codapi
   - https://x.com/ohmypy

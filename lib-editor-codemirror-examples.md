@@ -9,7 +9,7 @@ modified: 2023-06-23T12:46:53.288Z
 
 # guide
 
-- 支持切换editor的方案: overleaf(ace/src/visual), sandpack, jupyter, livecodes, @uiw/react-*-editor
+- 支持切换editor的方案: overleaf(ace/src/visual), sandpack, jupyter(只接口), @uiw/react-*-editor
 
 - examples
   - 类似打字机动态输出文字, 多用于ai生成代码/文本
@@ -47,8 +47,8 @@ modified: 2023-06-23T12:46:53.288Z
   - https://github.com/overleaf/overleaf/tree/main/services/web/frontend/js/features/source-editor
   - A web-based collaborative LaTeX editor
   - CodeEditor和VisualEditor都基于codemirror6实现
-  - source-editor支持codemirror6、ace
-  - https://github.com/overleaf/ace /202108/js/inactive/Ajax.org Cloud9 Editor
+  - source-editor支持codemirror6、ace(deprecated)
+    - https://github.com/overleaf/ace /202108/js/inactive/Ajax.org Cloud9 Editor
   - [Compile Error and PDF Download Notifications](https://github.com/overleaf/overleaf/issues/1031)
     - migrate from ACE to CodeMirror 6. Yes, the CM6 work will be coming to CE soon. _202206
   - https://github.com/overleaf/overleaf/tree/main/services/document-updater/app/js/sharejs /202205/MIT/js
@@ -61,9 +61,10 @@ modified: 2023-06-23T12:46:53.288Z
     - [Tracking changes in LaTeX with "changes" package _201908](https://www.overleaf.com/latex/examples/tracking-changes-in-latex-with-changes-package/fnpkpytjjwhj)
   - 🫧 [Horizontal Scaling: Starting with version 3.5.6 Server Pro supports horizontal scaling _202305](https://github.com/overleaf/overleaf/wiki/Horizontal-Scaling)
     - A deployment of Server Pro with horizontal scaling involves a set of external components, such as a Load Balancer and an S3-compatible backend
+    - [We do a customer-taylored capacity planning as part of our Enterprise Solution, Overleaf Server Pro _202009](https://github.com/overleaf/overleaf/issues/784)
   - [Is it possible to include the commenting feature in the Community Edition? _202402](https://github.com/overleaf/overleaf/issues/1193)
     - You can try to develop it by yourself, or purchase server pro. Btw, I think commenting feature is not something difficult to imply, the core code is open-source, just need a proxy.
-    - I created a new branch, which includes only the code for enabling comments and changes tracking features. 
+    - 💬 I created a new branch, which includes only the code for enabling **comments and changes tracking** features. 
   - 🍴 forks
   - https://github.com/yu-i-i/overleaf-cep /202408/AGPL
     - extended CE with changes tracking and LDAP authentication
@@ -88,15 +89,15 @@ modified: 2023-06-23T12:46:53.288Z
   - https://sandpack.codesandbox.io/docs
   - https://sandpack.codesandbox.io/docs/advanced-usage/components
   - Sandpack is a component toolkit for creating your own live running code editing experience powered by CodeSandbox.
-  - sandpack-react依赖codemirror6、lz-string、react-devtools-inline
   - sandpack-client依赖nodebox、static-browser-server
+  - sandpack-react依赖sandpack-client、codemirror6、@lezer/highlight、lz-string、react-devtools-inline
   - 提供了很多示例，包括cm-DecoratorsDynamic/FileExplorer/ReactDevTools
   - CodeEditor支持codemirror/monaco/vscode
   - `SandpackCodeEditor` component renders a wrapper over codemirror. You can extend the editor with any CodeMirror extensions
-  - `SandpackCodeViewer` renders a read-only version of codemirror
-  - `Preview` component is running the sandpack bundler, so without rendering a Preview component you will not have any bundling and evaluation of the code in sandpack
+    - `SandpackCodeViewer` renders a read-only version of codemirror
+    - `Preview` component is running the sandpack bundler, so without rendering a Preview component you will not have any bundling and evaluation of the code in sandpack
   - Sandpack Client: This is a small foundation package that sits on top of the bundler. It is framework agnostic and facilitates the handshake between your context and the bundler iframe.
-  - Sandpack React: React components that give you the power of editable sandboxes that run in the browser
+    - Sandpack React: React components that give you the power of editable sandboxes that run in the browser
   - https://github.com/AaronPowell96/sandpack-file-explorer /MIT/202312/ts
     - Enhanced File Explorer for Sandpack. Providing immense flexibility to Sandpack's capabilities.
     - Drag and drop to move files or directories
@@ -104,10 +105,11 @@ modified: 2023-06-23T12:46:53.288Z
   - https://github.com/codeamigo/codeamigo /GPLv3/202401/ts/inactive
     - codeamigo is a platform that helps people learn to code with an AI assistant.
     - 依赖express、apollo-server、graphql、next.js、postgresql、redis
-  - https://github.com/danilowoz/sandpack-tsserver
-    - https://github.com/aboveyunhai/playground-ts
+  - https://github.com/danilowoz/sandpack-tsserver  /202203/ts/inactive
+    - https://github.com/aboveyunhai/playground-ts /202303/ts/inactive
     - [TypeScript integration · codesandbox/sandpack _202112](https://github.com/codesandbox/sandpack/discussions/237)
       - once you start to edit the code or change tab (trig render basically), ts-server will start to kick in
+      - Vocs is solving this elegantly with Twoslash
 
 - https://github.com/jupyterlab/jupyterlab/tree/main/packages/codemirror /202405/ts
   - A JupyterLab package which provides the default implementation of the `@jupyterlab/codeeditor` interface, using the `CodeMirror` editor.
@@ -126,7 +128,7 @@ modified: 2023-06-23T12:46:53.288Z
   - https://github.com/jupyter/nbdime
     - Tools for diffing and merging of Jupyter notebooks.
 
-- Zettlr /9.3kStar/GPLv3/202401/ts/vue/偏学术编辑器
+- Zettlr /9.3kStar/GPLv3/202408/ts/vue/偏学术编辑器
   - https://github.com/Zettlr/Zettlr
   - https://www.zettlr.com/
   - https://docs.zettlr.com/
@@ -157,8 +159,8 @@ modified: 2023-06-23T12:46:53.288Z
   - [VSCode-ish: Jump to Definition of Variable ](https://github.com/vizhub-core/vzcode/issues/177)
     - [202406已合并pr](https://github.com/vizhub-core/vzcode/pull/717)
     - I also have a history of working with CodeMirror 5 + ShareDB for the real-time integration, and was able to "unlock" that CodeMirror 6 + ShareDB integration successfully
-  - [Intelligent Autocompletions ](https://github.com/vizhub-core/vzcode/pull/305)
-  - https://github.com/vizhub-core/vizhub
+  - [pr已合并_Intelligent Autocompletions _202311](https://github.com/vizhub-core/vzcode/pull/305)
+  - https://github.com/vizhub-core/vizhub-legacy /202206/js/inactive
     - https://vizhub.community/
     - Self Hosted CMS for Web-based Dataviz
     - VizHub 2 has been used in Data Visualization Course 2018, Datavis 2020
@@ -228,15 +230,8 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/val-town/codemirror-codeium /ISC/202404/ts
   - https://val-town.github.io/codemirror-codeium/
   - Codeium code completion integration for CodeMirror 6
-  - 🤖 Copilot-like ghost text code from modeling-app by Jess Frazelle and based on Cursor.
-
-- https://github.com/exuanbo/codemirror-toolkit /MIT/202312/ts
-  - A batteries-included toolset for efficient development of CodeMirror 6 based editors (w/o React).
-  - https://github.com/code4mk/codemirror-toolkit /202208/ts/inactive
-    - easily use codemirror editor with codemirror-toolkit on react , vue , svelte
-  - [@codemirror-toolkit/react - A small and flexible solution for binding CodeMirror 6 to React : r/reactjs _202301](https://www.reddit.com/r/reactjs/comments/107to4j/codemirrortoolkitreact_a_small_and_flexible/)
-    - I always wanted to use such a library when I was developing my Assembler Simulator in React. But all I could find at the moment was like @uiw/react-codemirror, it's "badly written" (e.g. reading a ref's current value during rendering) and contains too many dependencies I don't need, which cannot be tree-shaked so that you can toggle them in props.
-    - So I decided to write it my self and here it is! The API design is inspired by zustand btw
+  - 👾 Copilot-like ghost text code from modeling-app by Jess Frazelle and based on Cursor.
+  - This makes requests against the Codeium hosted product, using their Protocol Buffer-based interface
 
 - https://github.com/sachinraja/rodemirror /MIT/202112/ts/inactive
   - React component for CodeMirror 6
@@ -314,8 +309,11 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/0xsuk/agitcms /MIT/202212/ts/inactive
   - A hackable headless CMS for markdown blogs
-  - Agit CMS is a simple web frontend interface that utilizes filesystem to manage markdown/media contents. Built for markdown-based static site generators, like Hugo and Jekyll.
+  - Agit CMS is a simple web frontend interface that utilizes filesystem to manage markdown/media contents. 
   - 依赖codemirror6、mui5、remark-gfm、remark-parse、xterm
+  - Built for markdown-based static site generators, like Hugo and Jekyll.
+  - vertical split style markdown editor 左右分屏
+  - reads from and writes to your filesystem
 
 - https://gitlab.com/emergence-engineering/prosemirror-codemirror-block /202310/ts
   - https://emergence-engineering.com/blog/prosemirror-codemirror-block
@@ -353,7 +351,10 @@ modified: 2023-06-23T12:46:53.288Z
   - A text marking & annotation engine for presenting source code on the web
   - Expressive Code is an engine for presenting source code on the web, aiming to make your code easy to understand and visually stunning.
   - On top of accurate syntax highlighting powered by the same engine as VS Code, Expressive Code allows you to annotate code blocks using text markers, diff highlighting, code editor & terminal window frames, and more.
+    - @expressive-code/plugin-shiki - Adds syntax highlighting to your code blocks, using the same engine as VS Code.
   - All annotations are based on a powerful plugin architecture 
+  - Zero dependencies on React, Vue, or any other front-end framework.
+    - Works with popular site generators like Astro and Next.js, as well as plain markdown and MDX
 
 - https://github.com/Sagargupta16/ai-code-translator /202311/ts
   - https://ai-code-translator-delta-six.vercel.app/
@@ -367,6 +368,13 @@ modified: 2023-06-23T12:46:53.288Z
   - create a Typewriter Effect from scratch using native React and/or Javascript functions
   - 动画打字完undo会撤销所有字
   - 依赖codemirror6、@uiw/react-codemirror
+
+### typewriter-css-only
+
+- https://github.com/Mikulew/css-typewriter-effect /202112/css
+  - https://mikulew.github.io/css-typewriter-effect/
+  - Typewriter effect using CSS animation only
+  - Pure CSS3 typing animation with steps()
 
 ## code-animation
 
@@ -476,6 +484,15 @@ modified: 2023-06-23T12:46:53.288Z
   - Reusable Compass editor component based on codemirror editor, themes, and autocompleters
   - 依赖codemirror6、react
 
+- https://github.com/mcnuttandrew/prong /MIT/202310/ts/inactive
+  - https://prong-editor.netlify.app/
+  - https://prong-editor.netlify.app/#/vega-lite
+  - Prong (PRojectional jsON Gui) is an editor framework for creating bespoke in-browser editors for JSON-based domain-specific languages (such as Vega, Vega-Lite, Tracery, and many others). 
+  - These editors allow for things like drag-and-drop interactions, inline-interactive spreadsheets, in-situ recommenders and sparklines, and many more elements that would require significant engineering effort to create otherwise.
+  - 依赖codemirror6、react-markdown、jsonc-parser
+  - 支持在编辑器内渲染 table
+  - This system isn't really for interacting with data. There are lots of other great systems for wrangling JSON data of various kinds (such as JSON Crack, jq, and many others), it's just for DSL style usage. 
+
 - https://github.com/evinowen/tome /MIT/202406/ts/vue
   - https://tome.evinowen.net/
   - 🌵 git integrated cross-platform markdown editor
@@ -567,7 +584,7 @@ modified: 2023-06-23T12:46:53.288Z
   - Formula Editor for Vue3 Built with vue-codemirror + codemirror6
 
 - https://github.com/amoayun/amoayun-vue-codemirror /202407/ts/vue
-  - 其他的属性你们就可以直接参考 vue-codemirror6 了，我就是个二道贩子，哈哈哈，基于 vue-codemirror6 做的一层封装，让大家感觉更方便用一点
+  - 其他的属性你们就可以直接参考 vue-codemirror6 了，我就是个二道贩子，基于 vue-codemirror6 做的一层封装，让大家感觉更方便用一点
 
 - https://github.com/chordbook/editor /GPLv3/202404/ts
   - https://chordbook.github.io/editor/
@@ -646,12 +663,6 @@ modified: 2023-06-23T12:46:53.288Z
   - [Gem, a plain-text editor based on prosemirror_202111](https://discuss.prosemirror.net/t/gem-a-plain-text-editor-based-on-prosemirror/4231)
     - I worked on moving to codemirror 6 
     - https://github.com/tanishqkancharla/gem/tree/codemirror /202112/cm6.v0.19
-
-- https://github.com/mcnuttandrew/prong /MIT/202310/ts/inactive
-  - https://prong-editor.netlify.app/
-  - Prong (PRojectional jsON Gui) is an editor framework for creating bespoke in-browser editors for JSON-based domain-specific languages (such as Vega, Vega-Lite, Tracery, and many others). 
-  - These editors allow for things like drag-and-drop interactions, inline-interactive spreadsheets, in-situ recommenders and sparklines, and many more elements that would require significant engineering effort to create otherwise.
-  - 依赖codemirror6、react-markdown、jsonc-parser
 
 - https://github.com/festerduck/codemirror-markdown /202406/ts
   - https://composr-omega.vercel.app/
@@ -960,6 +971,9 @@ modified: 2023-06-23T12:46:53.288Z
   - Running typescript in a web worker for perf
   - [Go to definition · val-town/codemirror-ts _202311](https://github.com/val-town/codemirror-ts/issues/8)
     - This module currently uses TypeScript, but not the extra language server. It'd probably use the language server if this adopted more of a client-server architecture, or maybe it should in general, but for now, it's integrating with TypeScript, and we'll need to figure out what's under the hood of the LSP adapter's implementation.
+- https://github.com/modderme123/codemirror-extension-typescript /202312/ts/inactive
+  - https://typescript-codemirror.netlify.app/
+  - A codemirror extension providing useful features for typescript, such as a language server with autocomplete and error reporting
 
 - https://github.com/yeliex/codemirror-extensions /MIT/202403/ts
   - https://cm.yeliex.dev/
@@ -969,14 +983,19 @@ modified: 2023-06-23T12:46:53.288Z
   - codemirror-markdown-image
   - codemirror-toolbar
 
+- https://github.com/exuanbo/codemirror-toolkit /MIT/202312/ts
+  - A batteries-included toolset for efficient development of CodeMirror 6 based editors (w/o React).
+  - https://github.com/code4mk/codemirror-toolkit /202208/ts/inactive
+    - easily use codemirror editor with codemirror-toolkit on react , vue , svelte
+  - [@codemirror-toolkit/react - A small and flexible solution for binding CodeMirror 6 to React : r/reactjs _202301](https://www.reddit.com/r/reactjs/comments/107to4j/codemirrortoolkitreact_a_small_and_flexible/)
+    - I always wanted to use such a library when I was developing my Assembler Simulator in React. But all I could find at the moment was like @uiw/react-codemirror, it's "badly written" (e.g. reading a ref's current value during rendering) and contains too many dependencies I don't need, which cannot be tree-shaked so that you can toggle them in props.
+    - So I decided to write it my self and here it is! The API design is inspired by zustand btw
+
 - https://github.com/overleaf/codemirror-tree-view /MIT/202311/ts
   - A CodeMirror 6 extension providing an interactive view of a document's syntax tree
   - ⛏ 更偏向于作为codemirror的devtools
   - https://github.com/overleaf/codemirror-autocomplete
   - https://github.com/overleaf/codemirror-search
-
-- https://github.com/ShadowWolf308/codemirror-indent-wrapped-line /MIT/202406/ts
-  - An extension to CodeMirror to indent wrapped newlines
 
 - https://github.com/jmkng/sen /MIT/202310/ts
   - Simple, reusable CodeMirror (v6+) extensions.
@@ -985,11 +1004,19 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/eivmosn/plugin-mirror /202311/ts
   - codemirror plugins
 
+- https://github.com/saminzadeh/codemirror-extension-inline-suggestion /MIT/202402/ts
+  - 👾 A CodeMirror extension to display inline suggestions
+  - https://github.com/rizerphe/codemirror-companion-extension /MIT/202311/ts
+    - a backward-compatible fork of saminzadeh's project that allows the user to display text different than that being accepted, and to instantly trigger the completion function upon accepting the previous completion.
+
 - https://github.com/replit/codemirror-vscode-keymap /202212/ts/inactive
   - Ports VSCode's keyboard shortcuts to CodeMirror 6.
 
 - https://github.com/replit/codemirror-indentation-markers /MIT/202403/ts
   - extension that renders indentation markers using a heuristic similar to what other popular editors, like Ace and Monaco, use.
+
+- https://github.com/ShadowWolf308/codemirror-indent-wrapped-line /MIT/202406/ts
+  - An extension to CodeMirror to indent wrapped newlines
 
 - https://github.com/fauzi9331/codemirror-wrapped-line-indent /MIT/202403/ts
   - An extension for CodeMirror that adds indentation for wrapped lines.
@@ -997,10 +1024,6 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/replit/Codemirror-CSS-color-picker /202310/ts
   - https://replit.com/@util/Codemirror-CSS-color-picker
   - extension that adds a color picker input next to CSS color values.
-
-- https://github.com/saminzadeh/codemirror-extension-inline-suggestion /MIT/202402/ts
-  - A CodeMirror extension to display inline suggestions
-  - https://github.com/rizerphe/codemirror-companion-extension
 
 - https://github.com/emmetio/codemirror6-plugin /202404/ts/Emmet
   - CodeMirror 6 extension that adds Emmet support to text editor.
@@ -1012,6 +1035,7 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/luizzappa/codemirror-app-spreadsheet /202304/ts/inactive
   - https://luizzappa.github.io/codemirror-app-spreadsheet/
+  - 📈 Excel formula editor
   - a demo implementation of the CodeMirror spreadsheet language package.
   - https://github.com/luizzappa/codemirror-lang-spreadsheet /MIT/202304/ts
     - Spreadsheet language support for CodeMirror
@@ -1026,10 +1050,6 @@ modified: 2023-06-23T12:46:53.288Z
   - https://andrebnassis.github.io/codemirror-readonly-ranges
   - Codemirror extension for read-only ranges
   - This library aims to help you dealing with read-only ranges on CodeMirror 6.
-
-- https://github.com/modderme123/codemirror-extension-typescript /202312/ts/inactive
-  - https://typescript-codemirror.netlify.app/
-  - A codemirror extension providing useful features for typescript, such as a language server with autocomplete and error reporting
 
 - https://github.com/dimfeld/codemirror-json5 /MIT/202306/ts
   - This package implements JSON5 support for Codemirror 6.
@@ -1149,6 +1169,8 @@ modified: 2023-06-23T12:46:53.288Z
   - Offline markdown to pdf, choose -> edit -> transform
 
 ## lsp
+
+- https://stackblitz.com/edit/codemirror-6-typescript
 
 - https://github.com/coder0107git/codemirror-web-workers-lsp-demo /202404/ts
   - https://codemirror-web-workers-lsp-demo.coder0107git.v6.rocks/
@@ -1697,6 +1719,7 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/asadm/codemirror-copilot /MIT/202401/ts
   - https://copilot.asadmemon.com/
   - CodeMirror extension to add GPT autocompletion like GitHub's Copilot
+  - This code is based on codemirror-extension-inline-suggestion
 
 - https://github.com/useScriba/useScriba /202308/ts
   - https://docs.usescriba.com/

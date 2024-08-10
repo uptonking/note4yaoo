@@ -29,7 +29,7 @@ modified: 2022-04-23T18:48:32.550Z
 
 - ## 
 
-- ## 🤖 who’s working on the spreadsheet for generative ai?
+- ## 👾 who’s working on the spreadsheet for generative ai?
 - https://twitter.com/JungleSilicon/status/1771196431115710496
   - i’m not talking llm’s helping you with formulas. i mean feature detection, style transfer, addition of concepts, etc.
   - should work across modalities (text, images, video, audio)

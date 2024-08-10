@@ -49,6 +49,19 @@ modified: 2023-12-15T18:02:01.825Z
 - And vacuum delete was merged just yesterday 
 - [DuckDB -- table的存储格式 | Tangdh's Blog_202307](https://tangdh.life/posts/database/duckdb-file/)
 
+# discuss-news
+- ## 
+
+- ## 
+
+- ## 📈 We just released MotherDuck's first dataviz feature: the Column Explorer _202402
+- https://x.com/hamiltonulmer/status/1757793824649478149
+  - Never again will you need to write boilerplate SQL to find null %s, unique values, top n, histograms and basic time series!
+  - Under the hood, the Column Explorer runs DuckDB queries to generate its distributions and statistics.
+  - We do this by batching the queries; for larger datasets, it hits a nice balance between reducing network latency and giving UI updates.
+  - Thanks to MotherDuck's hybrid execution model, we can dynamically choose whether to run the same query locally against cached data. Same exact batched queries, just using DuckDB-WASM. This removes the network latency and opens the door for much cooler interactions in the future
+  - For this first release, we've focused on making it easy to copy values out of the Column Explorer.
+
 # discuss
 - ## 
 
