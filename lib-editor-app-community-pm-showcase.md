@@ -1,11 +1,11 @@
 ---
-title: lib-editor-app-community-showcase
+title: lib-editor-app-community-pm-showcase
 tags: [community, editor, showcase]
 created: 2023-05-21T15:45:36.685Z
-modified: 2023-05-21T15:45:54.844Z
+modified: 2024-08-11T07:21:05.619Z
 ---
 
-# lib-editor-app-community-showcase
+# lib-editor-app-community-pm-showcase
 
 # guide
 

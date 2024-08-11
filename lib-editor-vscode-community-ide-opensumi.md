@@ -75,3 +75,9 @@ modified: 2024-07-29T03:05:19.877Z
 - ## 
 
 - ## 
+# discuss-zed
+- ## 
+
+- ## 
+
+- ## 🐛 [Allow to pin tab _202301](https://github.com/zed-industries/zed/issues/5046)

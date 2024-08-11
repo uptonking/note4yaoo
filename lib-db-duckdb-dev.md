@@ -9,6 +9,8 @@ modified: 2023-12-15T18:02:11.745Z
 
 # guide
 
+- resources
+  - [VU DB Course - SQL](https://duckdb.org/docs/sql/tutorial/)
 # blogs
 - [DuckDB -- table的存储格式 | Tangdh's Blog_202307](https://tangdh.life/posts/database/duckdb-file/)
 

@@ -178,7 +178,7 @@ modified: 2021-07-20T13:50:23.433Z
   - 所有的操作可由用户执行，也可由ai执行
 
 - high-availability / horizontal-scaling
-  - yjs-hocuspocus, y-redis, fluid-routerlicious 🤔 使用websocket通信是否是错误的架构
+2  - yjs-hocuspocus, y-redis, fluid-routerlicious 🤔 使用websocket通信是否是错误的架构
   - strapi, nocobase
   - fwk: nestjs, feathers-sync
   - manual: zulip
@@ -328,6 +328,13 @@ modified: 2021-07-20T13:50:23.433Z
   - webgl
   - animation
     - FLIP
+# dev-xp
+- 针对具体业务的前端开发流程
+  - 分析需求的主要属性和状态变化临界点
+  - 定义数据结构和updateState方法，可以使用主流第三方库提供的api结构
+  - 设置初始值
+  - 设计action/op/cmd来触发updateState
+  - 更新视图
 # pm
 - ai的能力擅长在翻译 语言 转换
 # more

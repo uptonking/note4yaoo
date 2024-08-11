@@ -1,11 +1,11 @@
 ---
-title: lib-editor-prosemirror-community-products-showcase
+title: lib-editor-prosemirror-community-pm-showcase-trending
 tags: [community, editor, pm, products, prosemirror]
 created: 2022-09-01T18:51:39.578Z
-modified: 2024-06-30T03:34:50.340Z
+modified: 2024-08-11T07:22:35.502Z
 ---
 
-# lib-editor-prosemirror-community-products-showcase
+# lib-editor-prosemirror-community-pm-showcase-trending
 
 # guide
 

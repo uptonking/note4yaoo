@@ -1,11 +1,11 @@
 ---
-title: lib-editor-prosemirror-community-showcase
+title: lib-editor-prosemirror-community-pm-showcase
 tags: [community, editor, prossemirror, showcase]
 created: 2023-06-11T07:07:28.594Z
-modified: 2023-06-11T07:07:55.724Z
+modified: 2024-08-11T07:21:57.759Z
 ---
 
-# lib-editor-prosemirror-community-showcase
+# lib-editor-prosemirror-community-pm-showcase
 
 # guide
 

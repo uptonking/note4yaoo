@@ -1,11 +1,11 @@
 ---
-title: lib-db-app-community-showcase
+title: lib-db-app-community-pm-showcase
 tags: [community, database, showcase]
 created: 2023-10-26T17:12:46.541Z
-modified: 2023-10-26T17:12:59.665Z
+modified: 2024-08-11T07:20:47.398Z
 ---
 
-# lib-db-app-community-showcase
+# lib-db-app-community-pm-showcase
 
 # guide
 

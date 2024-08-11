@@ -1,11 +1,11 @@
 ---
-title: lib-editor-codemirror-community-syntax-highlight
+title: lib-editor-codemirror-community-lang-syntax-highlight
 tags: [code-editor, codemirror, community]
 created: 2023-06-16T10:52:26.160Z
-modified: 2023-06-16T10:52:44.183Z
+modified: 2024-08-11T07:59:35.617Z
 ---
 
-# lib-editor-codemirror-community-syntax-highlight
+# lib-editor-codemirror-community-lang-syntax-highlight
 
 # guide
 

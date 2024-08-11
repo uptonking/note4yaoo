@@ -59,8 +59,9 @@ modified: 2021-05-06T09:38:31.520Z
   - obsidian, zettlr, joplin-markdown-editor, supernotes
   - chrome-devtools(开源代码中使用v6)
   - known: mdn-bob, sourcegraph
+  - libfwk: svelte-playground
   - more: tagspaces, hedgedoc
-  - ?: replay.io
+  - ?: replay.io, duckdb
   - apps: desmos-classroom
   - 参考这些公司在开源项目中的用法
 
@@ -70,6 +71,9 @@ modified: 2021-05-06T09:38:31.520Z
 - who is using #prismjs
   - mozilla
   - stripe, drupal
+
+- who is using #xtermjs
+  - duckdb-shell
 
 - why-cloud-ide
   - easy to start and leave
@@ -141,6 +145,8 @@ modified: 2021-05-06T09:38:31.520Z
   - lezer-highlight vs highlightjs
   - codemirror devtools
 
+- port to server side lang like prosemirror
+
 - features
   - diff with magic-code-animation
   - highlight current selection
@@ -208,10 +214,10 @@ modified: 2021-05-06T09:38:31.520Z
 - deco-widget
   - inline elements or blocks
   - insert a DOM element in the editor content
-- deco-replacing
+- deco-replacing 可以修改多行
   - code folding or replacing an element in the text with something else
   - possible to display a widget instead of the replaced text
-- deco-line
+- deco-line 修改一行
   - influence the attributes of the DOM element that wraps the line
 - Decorations that significantly change the vertical layout of the editor, for example by replacing line breaks or inserting block widgets, must be provided directly, since indirect decorations are only retrieved after the viewport has been computed.
   - Indirect decorations are appropriate for things like syntax highlighting or search match highlighting, where you might want to just render the decorations inside the viewport or the current visible ranges

@@ -1,11 +1,11 @@
 ---
-title: lib-excel-app-list-grid-community-showcase
+title: lib-excel-app-list-grid-community-pm-showcase
 tags: [community, data-grid, excel, showcase]
 created: 2023-05-21T15:43:54.248Z
-modified: 2023-05-21T15:44:39.196Z
+modified: 2024-08-11T07:22:03.920Z
 ---
 
-# lib-excel-app-list-grid-community-showcase
+# lib-excel-app-list-grid-community-pm-showcase
 
 # guide
 

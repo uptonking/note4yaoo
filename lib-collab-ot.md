@@ -7,7 +7,7 @@ modified: 2022-04-05T10:09:36.436Z
 
 # lib-collab-ot
 
-# guide
+# guide22
 
 - who is using #ot
   - ckeditor, tinymce, typewriter
@@ -20,7 +20,7 @@ modified: 2022-04-05T10:09:36.436Z
   - 就算使用ot，大多产品都会使用定制的ot或变体，如ckeditor, prosemirror
   - 除了ot冲突处理逻辑，对op的存储、同步、业务实体抽象逻辑也很重要
 
-- ☑️ not-yet
+- 🔲 not-yet
   - otjs示例
     - ❓ undo/redo未分析计算逻辑，以及ot里undo和cm组件undo的执行流程
     - codemirror内容的变更changes事件转换为TextOperation的流程

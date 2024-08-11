@@ -1,11 +1,11 @@
 ---
-title: lib-db-postgresql-community-showcase
+title: lib-db-postgresql-community-pm-showcase
 tags: [community, examples, postgresql, showcase]
 created: 2023-10-26T16:45:28.359Z
-modified: 2023-10-26T16:45:47.318Z
+modified: 2024-08-11T07:21:48.172Z
 ---
 
-# lib-db-postgresql-community-showcase
+# lib-db-postgresql-community-pm-showcase
 
 # guide
 

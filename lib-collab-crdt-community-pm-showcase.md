@@ -1,11 +1,11 @@
 ---
-title: lib-collab-crdt-community-showcase
+title: lib-collab-crdt-community-pm-showcase
 tags: [community, crdt, showcase]
 created: 2023-11-01T03:15:08.731Z
-modified: 2023-11-01T03:15:20.195Z
+modified: 2024-08-11T07:21:11.986Z
 ---
 
-# lib-collab-crdt-community-showcase
+# lib-collab-crdt-community-pm-showcase
 
 # guide
 

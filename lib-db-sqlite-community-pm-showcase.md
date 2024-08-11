@@ -1,11 +1,11 @@
 ---
-title: lib-db-sqlite-community-showcase
+title: lib-db-sqlite-community-pm-showcase
 tags: [community, showcase, sqlite]
 created: 2023-04-30T16:50:54.098Z
-modified: 2023-05-21T14:54:15.817Z
+modified: 2024-08-11T07:21:27.549Z
 ---
 
-# lib-db-sqlite-community-showcase
+# lib-db-sqlite-community-pm-showcase
 
 # guide
 

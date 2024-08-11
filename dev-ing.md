@@ -363,6 +363,7 @@ npx create-strapi@rc strapi5-play-202408 --use-npm --quickstart --ts --skip-clou
 - not-yet
   - ~~私有项目的导入~~
   - zustandx如何在一个store里面使用另一个store的值, 或重新架构store的内容
+  - 多标签打开同一个cde，文件树的头像会显示2个
 
 - 跟随模式
   - followUser时会自动打开console面板
@@ -429,6 +430,18 @@ npx create-strapi@rc strapi5-play-202408 --use-npm --quickstart --ts --skip-clou
 ```JS
 console.log(`接到到PaaS消息：`, name, dao.playgroundInfo.status, dao.dockerStatus, payload)
 ```
+
+## 0811
+
+- 💬🎨 [`<u>`: The Unarticulated Annotation (Underline) element - HTML: HyperText Markup Language | MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/u)
+  - To underline text, you should instead apply a style that includes the CSS `text-decoration` property set to `underline`
+  - the original HTML Underline (`<u>`) element was deprecated in HTML 4; however,  `<u>` was restored in HTML 5 with a new, semantic, meaning: to mark text as having some form of non-textual annotation applied.
+  - Valid use cases for the `<u>` element include annotating spelling errors, applying a proper name mark to denote proper names in Chinese text, and other forms of annotation.
+  - You should not use `<u>` to underline text for presentation purposes, or to denote titles of books.
+
+- [Zed is not opening _202403](https://github.com/zed-industries/zed/issues/9623)
+  - try to give permission to your user to the folder ~/.cache/zed
+  - `sudo chmod 700 ~/.cache/zed`
 
 ## 0809
 

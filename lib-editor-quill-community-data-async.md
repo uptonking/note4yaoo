@@ -1,11 +1,11 @@
 ---
-title: lib-editor-quill-community-server-async
-tags: [quill, server]
+title: lib-editor-quill-community-data-async
+tags: [data-sync, quill, server]
 created: 2024-04-15T15:50:36.128Z
-modified: 2024-04-15T15:51:05.131Z
+modified: 2024-08-11T03:35:49.698Z
 ---
 
-# lib-editor-quill-community-server-async
+# lib-editor-quill-community-data-async
 
 # guide
 

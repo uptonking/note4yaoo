@@ -165,17 +165,17 @@ modified: 2023-12-15T16:51:56.101Z
   - 🚨 plugin disable后再启动，plugin的db表数据、配置、自定义api会被删除，如builder
 
 - export
-  - ☑️ 不支持选择指定字段导出
+  - 🔲 不支持选择指定字段导出
 
 - media
-  - ☑️ media-preview 只生成缩略图却没有使用
+  - 🔲 media-preview 只生成缩略图却没有使用
 
 - upload
   - 支持在不用建表或配置字段的情况下，导入导出excel/csv
   - 处理大文件的上传
 
 - navigation
-  - ☑️ 跳转到content item的路由失效
+  - 🔲 跳转到content item的路由失效
 
 - 
 - 
@@ -210,7 +210,7 @@ modified: 2023-12-15T16:51:56.101Z
   - 同一文章会自动建立关联，支持切换语言时立即显示
   - 🧐 删除文章时会同时删除其他语言的内容
   - 支持将表的部分字段禁止多语言，即共享部分字段
-  - ☑️ 不支持并排显示多语言的内容
+  - 🔲 不支持并排显示多语言的内容
 
 - 不要直接在afterCreate/afterUpdate中修改response，这样admin界面不会显示修改
   - ❓ 通过route middleware可以更新admin界面的显示

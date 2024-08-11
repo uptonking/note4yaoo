@@ -1,11 +1,11 @@
 ---
-title: toc-app-examples-showcase
-tags: [app, examples, products, showcase]
+title: toc-app-examples-demo
+tags: [app, examples, products]
 created: 2020-09-25T07:50:19.733Z
-modified: 2023-11-16T14:57:02.071Z
+modified: 2024-08-11T07:26:35.101Z
 ---
 
-# toc-app-examples-showcase
+# toc-app-examples-demo
 
 # guide
 

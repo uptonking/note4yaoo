@@ -11,16 +11,7 @@ modified: 2024-05-02T02:01:04.255Z
 
 # blogs-internals
 
-## [Bringing the TypeScript Language Server to Observable | Observable _202211](https://observablehq.com/blog/bringing-the-typescript-language-server-to-observable)
-
-- We represent each cell in a notebook as a separate file in the VFS, and keep the TypeScript virtual environment in sync with changes made in the CodeMirror cell editors. Then, we can query the language service for signature help and autocompletions at any position in the CodeMirror editor. 
-- Next, we moved the virtual TypeScript environment to a WebWorker. 
-
-- 
-- 
-- 
-
-## [(Re-) Implementing A Syntax-Highlighting Editor in JavaScript _201111](https://codemirror.net/5/doc/internals.html)
+## 👷 [(Re-) Implementing A Syntax-Highlighting Editor in JavaScript _201111](https://codemirror.net/5/doc/internals.html)
 
 - CodeMirror 1 was heavily reliant on designMode or contentEditable (depending on the browser)
   - Neither of these are well specified (HTML5 tries to specify their basics), and, more importantly, they tend to be one of the more obscure and buggy areas of browser functionality
@@ -52,6 +43,16 @@ modified: 2024-05-02T02:01:04.255Z
 
 - 定义了一个annotation：fromHistory，值为{side: BranchName, rest: Branch}
   - BranchName是redo、undo二选一，Branch是历史事件合集
+# blogs-lsp
+
+## [Bringing the TypeScript Language Server to Observable | Observable _202211](https://observablehq.com/blog/bringing-the-typescript-language-server-to-observable)
+
+- We represent each cell in a notebook as a separate file in the VFS, and keep the TypeScript virtual environment in sync with changes made in the CodeMirror cell editors. Then, we can query the language service for signature help and autocompletions at any position in the CodeMirror editor. 
+- Next, we moved the virtual TypeScript environment to a WebWorker. 
+
+- 
+- 
+- 
 
 ## [Connecting ANTLR to CodeMirror 6: Building a Language Server _202402](https://thetrevorharmon.com/blog/connecting-antlr-to-codemirror-6-building-a-language-server/)
 

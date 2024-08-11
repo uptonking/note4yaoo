@@ -25,7 +25,7 @@ modified: 2024-08-08T20:49:11.571Z
 - https://x.com/hamiltonulmer/status/1822120260910383419
   - thinking about experimenting with a canvas-driven layer for CodeMirror (for cursors and selections, not text). 
   - Goal would be to enable richer animations not achievable with css e.g. show cursor motion blur when jumping around
-# discuss-coding-ai
+# discuss-autocomplete
 - ## 
 
 - ## 
@@ -41,11 +41,6 @@ modified: 2024-08-08T20:49:11.571Z
 
 - [Hiding widget buffers for better text wrapping - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/hiding-widget-buffers-for-better-text-wrapping/7512)
   - My understanding is that widget buffers exist to work around browser bugs with contenteditable
-
-- ## Parallel cmd-k’s are becoming unexpectedly popular
-- https://x.com/cursor_ai/status/1765512112200151391
-- didn't see programmers liking parallel processing and async multitasking capabilities? or didn't realize that you built the thing that is actively building the thing... AI-Powered Devs.  of course that'd be popular, once it found some hype-men
-
 # discuss-code-animation 💫
 - ## 
 
@@ -129,6 +124,49 @@ modified: 2024-08-08T20:49:11.571Z
 - ## second attempt to generate slide deck for a paper with @Google Gemini 1.5 Pro in @revealjs .
 - https://x.com/algo_diver/status/1769614261616251150
   - I tried to add colors and animations, and I also tried to guide on the structure of the presentation
+
+- ## ☄️ My another challenge this year: a sponsorware project "Code Animate" _202202
+- https://x.com/dai_shi/status/1493213723150131205
+  - I have been thinking about building this tool since last year to help my creating coding tutorials. 
+  - https://code-animate.axlight.com/
+  - One of the tools inspired me is asciinema, so it definitely seems interesting. 
+  - On the otherhand, my goal is not to play back. I want something like what I did with Excalidraw-Animate
+- Not to be a pessimist but I don't think this would be an enjoyable experience for tutorials. I personally would prefer the text never move. Diff style tutorials are good for this IMO. It's also not great for accessibility.
+  - Maybe, maybe not. It's more for making it like a live session. I agree the final code should be some sort of texts.
+- I love the idea. I experimented with something similar last year, a different diff animation for 
+@codehike_
+: https://x.com/pomber/status//pomber/status/1383524087331393550. But I haven't used it yet.
+
+# discuss-emoji
+- ## 
+
+- ## [Backspace on some multi-codepoint glyphs deletes characters separately - v6 - discuss. CodeMirror _202311](https://discuss.codemirror.net/t/backspace-on-some-multi-codepoint-glyphs-deletes-characters-separately/7403)
+  - Left and right arrow keys move around multi-codepoint glyphs, such as :arrow_left: and :running_woman:t2:, atomically. Forward delete similarly works on the glyphs atomically.
+  - However, pressing backspace after these multi-codepoint glyphs seems to delete the characters separately. Is the latter behavior controlled by CM itself, and if so, is it intended?
+
+- This is intentional behavior and matches how many editors (for example Firefox’s native edit controls and VS Code) behave.
+
+- 
+- 
+- 
+
+- ## [For some emojis, it takes 2 keystrokes to delete - Bug graveyard - Obsidian Forum _202206](https://forum.obsidian.md/t/for-some-emojis-it-takes-2-keystrokes-to-delete/39500)
+- Obsidian does not seem to handle combining codepoints like these well. Instead, it treats these as two individual grapheme clusters, meaning that text editing gives them separate boundaries. But really they should have a single combined boundary
+
+- [backspace on Emoji does not remove whole grapheme cluster _202106](https://github.com/codemirror/dev/issues/516)
+  - This was intentional behavior, but on closer look it indeed seems that other editors don't work like that, so attached patch drops it.
+
+- ## [Some emoji don't show up as emoji, but instead unicode alternates _202206](https://github.com/codemirror/dev/issues/883)
+- That seems to be your browser's native rendering of those—at least, in Firefox and Chrome on Linux, I'm seeing the same — putting "\u26a0 \u{1f631}" in HTML causes the browser to render the first as a monochrome glyph, and the second as a colored emoji (unless I add a \ufe0f after the warning character). So this is expected behavior, as far as I'm concerned.
+  - It'd be possible to write a plugin similar to highlightSpecialChars that replaces anything that looks like an Emoji without a variant selector with an Emoji that has a color variant selector, if that's what you want to do.
+
+- ## [Markdown emoji previewing - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/markdown-emoji-previewing/5186)
+- Yes that can be implemented via “replacing decorations”, see Example: Decorations 
+
+- ## [Challenges on implementing operational transformation server in Golang due to javascript unicode string length - v6 - discuss. CodeMirror _202210](https://discuss.codemirror.net/t/challenges-on-implementing-operational-transformation-server-in-golang-due-to-javascript-unicode-string-length/5124)
+  - Everything works pretty well when Golang server implements codemirror/state text.ts in Go language and uses utf8. RuneCountInString, which counts how many characters there are in a string.
+  - ‘:+1:’.length is 2 and that doesn’t any longer match with rune length in Go that is 1 and applying ChangeSet fails.
+- CodeMirror intentionally uses UTF16 code point counts throughout, in order to be able to use String.length. If you are using another convention in the OT system, you’ll have to make sure you convert to and from that when going between CodeMirror and that system. Forking @codemirror/state is not going to be needed.
 
 # discuss-cm-view-render
 - ## 
