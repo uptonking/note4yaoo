@@ -433,7 +433,9 @@ console.log(`接到到PaaS消息：`, name, dao.playgroundInfo.status, dao.docke
 
 ## 0812
 
-- 动画要考虑进入场景和退出场景
+- [How to have multiple CSS transitions on an element? - Stack Overflow](https://stackoverflow.com/questions/7048313/how-to-have-multiple-css-transitions-on-an-element)
+  - Transition properties are comma delimited 
+  - transition: color .2s, text-shadow .2s; 
 
 - [CSS animation to make div appear smoothly from bottom - Stack Overflow](https://stackoverflow.com/questions/74165073/css-animation-to-make-div-appear-smoothly-from-bottom)
 

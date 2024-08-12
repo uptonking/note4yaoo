@@ -53,6 +53,16 @@ modified: 2024-05-06T02:54:40.374Z
 
 - docker in docker 的权限问题
 
+### dev-log
+
+- 底部面板的时光机显示隐藏动画
+  - 思路1: 使用css transition修改transform
+    - 若隐藏前后使用2个面板组件，则需要在动画结束后手动移除dom
+  - 思路2: height先减为0再加为新内容高度
+    - 可以只用1个面板组件，但效果可能不符设计稿
+  - 减少layout计算，面板上方部分元素尽可能减少重绘
+  - 动画要考虑进入场景和退出场景
+
 ### ai-writing-features
 
 - 时光机
@@ -191,27 +201,25 @@ modified: 2024-05-06T02:54:40.374Z
 
   // delete file
   {
-  "_id": {
-    "$oid": "66ba003949c463e87f872df0"
-  },
-  "timestamp": 1723465785685,
-  "playgroundId": "694744266697789440",
-  "dockerId": "694744266731343872",
-  "eventName": "fileTree",
-  "agentUserId": "2d7317e4-ec19-4f27-b7bd-ba92b9750af4",
-  "data": {
-    "action": "DELETE",
-    "files": [
-      {
+    "_id": {
+      "$oid": "66ba003949c463e87f872df0"
+    },
+    "timestamp": 1723465785685,
+    "playgroundId": "694744266697789440",
+    "dockerId": "694744266731343872",
+    "eventName": "fileTree",
+    "agentUserId": "2d7317e4-ec19-4f27-b7bd-ba92b9750af4",
+    "data": {
+      "action": "DELETE",
+      "files": [{
         "type": "FILE",
         "name": "hello.go"
-      }
-    ],
-    "fileRootId": "@dfbbaecc-27a0-4545-a986-c259e4a6ede0",
-    "result": true
+      }],
+      "fileRootId": "@dfbbaecc-27a0-4545-a986-c259e4a6ede0",
+      "result": true
+    },
+    "__v": 0
   },
-  "__v": 0
-},
 
   // fileTree
   {
