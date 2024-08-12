@@ -187,7 +187,31 @@ modified: 2024-05-06T02:54:40.374Z
     "agentUserId": "9cc647d3-e2f1-4dde-ae3b-8b97680b1ee7",
     "dockerId": "690273537168199680",
     "timestamp": 1722400242699
-  }
+  },
+
+  // delete file
+  {
+  "_id": {
+    "$oid": "66ba003949c463e87f872df0"
+  },
+  "timestamp": 1723465785685,
+  "playgroundId": "694744266697789440",
+  "dockerId": "694744266731343872",
+  "eventName": "fileTree",
+  "agentUserId": "2d7317e4-ec19-4f27-b7bd-ba92b9750af4",
+  "data": {
+    "action": "DELETE",
+    "files": [
+      {
+        "type": "FILE",
+        "name": "hello.go"
+      }
+    ],
+    "fileRootId": "@dfbbaecc-27a0-4545-a986-c259e4a6ede0",
+    "result": true
+  },
+  "__v": 0
+},
 
   // fileTree
   {
@@ -409,6 +433,9 @@ modified: 2024-05-06T02:54:40.374Z
 - 跟随模式，假设用户A正在跟随用户B
   - 用户A自己切换文件时，头像仍停留在用户B的文件
 
+- ideServer无法检测并广播file-delete事件
+
+- 
 - 
 - 
 - 

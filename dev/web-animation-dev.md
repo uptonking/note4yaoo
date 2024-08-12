@@ -18,6 +18,7 @@ modified: 2021-01-01T20:12:36.651Z
   - 偏重线划勾勒，如逐字书写效果、[形状勾勒效果](https://dai-shi.github.io/excalidraw-animate/#library=https://libraries.excalidraw.com/libraries/pclainchard/it-logos.excalidrawlib)
 
 - 根据应用场景和已有实现，选择最合适的动画实现方式
+  - 动画要考虑进入场景和退出场景
   - 对于普通ui切换效果，使用css transition或animation
   - 对于连续执行，或依次执行，或包含3种以上效果的动画，采用js动画
   - 从长期维护的角度，还要考虑svg、canvas、webgl等元素实现动画的方式

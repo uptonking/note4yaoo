@@ -1754,6 +1754,22 @@ modified: 2023-06-23T12:46:53.288Z
   - Sweep is an AI junior developer that turns bugs and feature requests into code changes. Sweep automatically handles devex improvements like adding typehints/improving test coverage. 
   - Turns issues directly into pull requests (without an IDE)
 
+- https://github.com/e2b-dev/code-interpreter /apache2/202407/python/ts
+  - https://e2b.dev/
+  - Python & JS/TS SDK for adding code interpreting to your AI app
+  - The code interpreter runs inside the E2B Sandbox - an open-source secure sandbox made for running untrusted AI-generated code and AI agents.
+  - https://github.com/e2b-dev/e2b /apache2/202407/python/ts
+    - Secure open source cloud runtime for AI apps & AI agents
+    - The E2B sandbox can be connected to any LLM and any AI agent or app.
+  - https://github.com/e2b-dev/infra /apache2/202408/go
+    - Infrastructure powering E2B - Secure Runtime for AI Agents & Apps
+    - there are several components written in Go and a Terraform configuration for the deployment.
+  - [E2B Code Interpreter Sandbox _202311](https://medium.com/e-two-b/e2b-sandbox-bb146264f4c4)
+    - You can create your own Custom Sandboxes for different purposes, from data analysis through AI internet browsing to very popular code execution.
+    - The E2B Code Interpreter Sandbox is just a sandbox — without any LLM “connected” to it. 
+    - Our Sandbox can be controlled with SDK (run_code, install_pkg, create_file, etc) and gives you the freedom to connect it to (any) LLM.
+    - OpenAI Code Interpreter is controlled by talking to an AI assistant.
+
 ## coding-toolchain-ai
 
 - https://github.com/codefuse-ai/codefuse-chatbot /apache2/202405/python

@@ -431,6 +431,24 @@ npx create-strapi@rc strapi5-play-202408 --use-npm --quickstart --ts --skip-clou
 console.log(`接到到PaaS消息：`, name, dao.playgroundInfo.status, dao.dockerStatus, payload)
 ```
 
+## 0812
+
+- 动画要考虑进入场景和退出场景
+
+- [CSS animation to make div appear smoothly from bottom - Stack Overflow](https://stackoverflow.com/questions/74165073/css-animation-to-make-div-appear-smoothly-from-bottom)
+
+- [How can I transition height: 0; to height: auto; using CSS? - Stack Overflow](https://stackoverflow.com/questions/3508605/how-can-i-transition-height-0-to-height-auto-using-css)
+
+- [Make HTML element disappear with CSS animation - Stack Overflow](https://stackoverflow.com/questions/39513705/make-html-element-disappear-with-css-animation)
+
+- [CSS border bottom animation - YouTube](https://www.youtube.com/watch?v=lvS8KDTo67k)
+  - 从单词正中间向两个划线
+
+- [Animation using Keyframes in tailwind css | Medium](https://medium.com/@sandhyasrinivasan.1502/animation-using-keyframes-in-tailwind-css-9003a7a62c33)
+  - theme: { extend: { keyframes: { rubberband: {
+  - animation: { "rubber-band": "rubberband 1s linear 1 ", 
+  - className='animate-rubber-band'
+
 ## 0811
 
 - 💬🎨 [`<u>`: The Unarticulated Annotation (Underline) element - HTML: HyperText Markup Language | MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/u)
