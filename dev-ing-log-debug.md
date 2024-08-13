@@ -17,10 +17,34 @@ modified: 2023-06-14T00:53:15.226Z
 
 ## 
 
-## flex-col布局，切换底部时光机面板时要保持底部面板内容高度变化时始终可见
+## 🎨 flex-col布局，切换底部时光机面板时要保持底部面板内容高度变化时始终可见
 
-- 底部面板的dom元素使用同一个，然后根据状态切换内容dom
-  - 不能根据状态渲染2个不同的dom，比如div和footer，这样底部面板内容可能看不见
+- 上中下布局中间是`flex-1`的场景，有时底部高度变大时中间高度不变且底部下面会被遮挡(预期是底部可见中间变短)
+  - 解决方法是 `flex-1`的元素加上 ~~`overflow-hidden`~~ `min-height:0px`
+
+- ~~底部面板的dom元素使用同一个，然后根据状态切换内容dom~~
+  - ~~不能根据状态渲染2个不同的dom，比如div和footer，这样底部面板内容可能看不见~~
+
+- [Why is overflow hidden required to make this flex layout work properly? - Stack Overflow](https://stackoverflow.com/questions/66907438/why-is-overflow-hidden-required-to-make-this-flex-layout-work-properly)
+  - to be more accurate, you need `min-height:0` but `overflow:hidden` is doing the same
+
+- [min-height: 0 or min-width: 0](https://x.com/argyleink/status/1354467081878560780?lang=en)
+  - my least favorite (easiest to forget because they're unintuitive) CSS "solutions" to layout issues
+  - the minimum width of a grid and flex children is `auto`. setting it explicitly to 0 removes the intrinsic size, unlocking various things
+
+- ### 💡 [Why don't flex items shrink past content size? - Stack Overflow](https://stackoverflow.com/questions/36247140/why-dont-flex-items-shrink-past-content-size)
+- A flex item cannot be smaller than the size of its content along the main axis. 
+  - The defaults are `min-width: auto` or `min-height: auto` for flex items in row-direction and column-direction, respectively.
+  - You can override these defaults by setting flex items to: `min-width: 0` or `min-height: 0` or `overflow: hidden` (or any other value, except visible)
+
+- To provide a more reasonable default minimum size for flex items, this specification introduces a new `auto` value as the initial value of the min-width and min-height properties defined in CSS 2.1.
+  - The `min-width: auto and min-height: auto` defaults apply only when `overflow` is `visible`.
+  - If the overflow value is not visible, the value of the min-size property is 0.
+  - Hence, overflow: hidden can be a substitute for min-width: 0 and min-height: 0.
+- You've applied min-width: 0 and the item still doesn't shrink?
+  - Basically, a higher level flex item with `min-width: auto` can prevent shrinking on items nested below with `min-width: 0`.
+  - If you're dealing with flex items on multiple levels of the HTML structure, it may be necessary to override the default min-width: auto / min-height: auto on items at higher levels.
+- I'm finding this has bitten me repeatedly over the years for both flex and grid, so I'm going to suggest the following: `* { min-width: 0; min-height: 0; }`
 
 ## 调试cde的跟随模式渲染编辑器异常，即无法渲染
 

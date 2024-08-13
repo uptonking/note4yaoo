@@ -431,6 +431,17 @@ npx create-strapi@rc strapi5-play-202408 --use-npm --quickstart --ts --skip-clou
 console.log(`接到到PaaS消息：`, name, dao.playgroundInfo.status, dao.dockerStatus, payload)
 ```
 
+## 0813
+
+- cde设计稿背景色
+  - header是   #18181B
+  - panel是    #27272A   bg-background-subtle
+  - machine是  background: linear-gradient(270deg, #18181B 0%, #27272A 50%, #18181B 100%);
+- tailwind
+  - bg-background #09090b
+- machine
+  - border-radius: 12px 12px 0 0
+
 ## 0812
 
 - [How to have multiple CSS transitions on an element? - Stack Overflow](https://stackoverflow.com/questions/7048313/how-to-have-multiple-css-transitions-on-an-element)

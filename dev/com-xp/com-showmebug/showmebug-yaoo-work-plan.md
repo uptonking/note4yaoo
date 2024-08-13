@@ -106,6 +106,7 @@ modified: 2024-05-06T02:54:40.374Z
 - 何时以及如何获取2个帧之间的所有op, 需要测试自定义帧
 - 插入自定义帧的时机是执行计划或追加步骤开始前，存储十几个文件快照的数据量可能很大，确定要存吗
   - agent写代码时一个action一个自定义帧，数据量不大
+  - 快照数据是否保存在historyBaseData更合理
 
 - agent执行时，动态计算agent返回内容对应的op，渲染diff
   - 回放时，直接从ideServer获取op，渲染diff
@@ -180,6 +181,7 @@ modified: 2024-05-06T02:54:40.374Z
 - paas现有持久化数据结构(mongodb的表)
 
 ```JS
+// mongodb的historycrdts表存储编辑器、文件树的操作数据
 [
   // custom event/frame
   {
@@ -431,17 +433,16 @@ modified: 2024-05-06T02:54:40.374Z
 - fileTree
   - 大文件无法打开， 如package-lock.json
   - 文件树未实现懒加载， 点击时再请求文件夹的数据而不是一次请求整棵树
-  - 部分文件再次打开会记住文件尾的位置
+  - 部分文件再次打开光标会跳到文件尾
   - fileChangeLogs的变更列表无法区别修改删除
   - 搜索排除了node_modules目录吗
+- ideServer无法检测并广播file-delete事件
 
 - collab
   - 在有用户上下线时会全量广播当前协作的所有用户信息，存在数据量大且频次高的问题
 
 - 跟随模式，假设用户A正在跟随用户B
   - 用户A自己切换文件时，头像仍停留在用户B的文件
-
-- ideServer无法检测并广播file-delete事件
 
 - 
 - 
@@ -482,7 +483,7 @@ modified: 2024-05-06T02:54:40.374Z
   - 多文件打开
   - 多shell
   - 开发启动支持多port
-  - 考虑2套agent: 前端agent, 后端agent，可切换来节省资源
+  - 考虑2套agent: 前端agent, 后端agent，可切换来节省资源，类似apple的3级llm架构
   - 支持统一浏览器不同标签页打开不同ide
 
 - embed
@@ -509,7 +510,7 @@ modified: 2024-05-06T02:54:40.374Z
 
 - 去掉rrweb
 
-- d42paas的 code playgrounds 能否用 d42paas 的sdk实现
+- d42paas的 demo playgrounds 能否用 d42paas 的sdk实现
   - 用自己的平台开发代码
 
 - preview react/vue components
@@ -532,7 +533,8 @@ modified: 2024-05-06T02:54:40.374Z
 
 - pros-paas 🌹
   - 在业务中使用时，可通过单独的playgroundId在demo页面进行测试，隔离性较好，且不影响业务
-  - 后端业务通过tenantCode隔离，方便测试人员、其他项目组单独测试
+  - 后端业务通过tenantCode隔离，方便测试人员、agent组、其他项目组单独测试
+  - 以websocket作为主要数据通信方式
 
 - ⌛️ 回放示例(环境支持sdk-staging/sdk-localhost-3010/showmebug)
   - 在sdk demo界面，需要指定代码处理为 showmebug
@@ -559,8 +561,13 @@ modified: 2024-05-06T02:54:40.374Z
   - 甚至校验时只需要ticket，不需要token
 
 - 变更文件列表之前通过在服务端跑 `git status` 命令获取，但对服务器性能影响太大
+  - 编辑器系统若支持外部命令行的git push/pull操作，则必须以git仓库数据作为唯一数据源，不能以web系统的数据作为代码数据源
 
 - idepaas的打字机效果实现, 支持一次将ai的修改全撤销
+
+- 🏠 paas的diff视图开启方式，通过配置属性diffConfig无法支持自身文件树打开时是否开启diff
+  - 可将配置属性diffConfig变为配置方法detectDiff，这样支持文件树，还能在业务侧定制具体的开启细节和请求其他数据
+  - 为了支持添加和取消，不建议初始化时传入配置，通过registerDetectDiff和unregister方法可以更灵活地实现
 
 ### codebase-sdk
 
@@ -666,6 +673,34 @@ useEffect(() => {
   - 每次获取文件内容，并计算快照挂载到frame, 
   - frame.snapshot = { currentDoc, selection, agentUserId: agentUserId, isChange, changes, }; 
 
+```JS
+{
+  // 会触发store.dao.channel().getPlaybackInfo()获取所有事件数据
+  const res = await daoPaasObj.preparePlaybackSync();
+  messageBox.info('通过同步事件收到回放数据');
+  setQuestionsData(res.questionsData);
+  if (res.total > 0) {
+    setPlayable(true);
+    setPlaybackDuration(res.end - res.start);
+  }
+}
+
+// ;; startRecordBrowser  
+// https://d6f47ebf168c8bac0d9048551a99512c-app.staging.1024paas.com null
+
+// http://localhost:3010/ide/replay/664529280084164608/showmebug?showRRwebController=1
+// daoPaasObj.preparePlaybackSync()
+// 客户端request getPlaybackInfo
+// 42 
+
+// 插入自定义帧
+const res: any = await daoPaasObj?.appendCustomizeFrameDataSync({
+  action: 'startQuestion',
+  value: id,
+  uuid,
+});
+```
+
 - 回放时，支持修改文件内容，但继续执行很可能失败
   - playback状态时，支持收集操作op
 
@@ -692,7 +727,7 @@ useEffect(() => {
       - editor: openedPath
       - editor: revision, openedPath, updates(changes/sel)
       - fileTree: focus
-  - historyBaseData
+  - historyBaseData 
     - 各文件内容数据 path, content(内容快照)
 
 - PlaybackEngine
@@ -711,25 +746,6 @@ useEffect(() => {
 ```
 
 ```JS
-{
-  // 会触发store.dao.channel().getPlaybackInfo()获取所有事件数据
-  const res = await daoPaasObj.preparePlaybackSync();
-  messageBox.info('通过同步事件收到回放数据');
-  setQuestionsData(res.questionsData);
-  if (res.total > 0) {
-    setPlayable(true);
-    setPlaybackDuration(res.end - res.start);
-  }
-}
-
-// ;; startRecordBrowser  
-// https://d6f47ebf168c8bac0d9048551a99512c-app.staging.1024paas.com null
-
-// http://localhost:3010/ide/replay/664529280084164608/showmebug?showRRwebController=1
-// daoPaasObj.preparePlaybackSync()
-// 客户端request getPlaybackInfo
-// 42 
-
 // 回放拖动卡顿的问题示例如下
 // https://www.1024paas.com/ide/replay/672251935319277568/showmebug?showRRwebController=1
 
@@ -2043,6 +2059,12 @@ const playbackInfo = [
 
 ### codebase-ide-server
 
+- init-dataflow
+  - AppService发送heartBeat到manager
+  - AppGateway初始化 new PlaygroundChannel(this.i18n, client, this.server, ）
+  - AgentUserService
+  - PlaygroundManagerService
+
 - paas-sdk-client通过manager动态获取到ide-server的url，不是固定的
   - manager负责docker容器的管理和分配
 
@@ -2051,6 +2073,11 @@ const playbackInfo = [
 - 录制用户操作，什么时候开始
   - 整个playground的期间
 
+- PlaygroundChannel 监听getPlaybackInfo
+  - 从mongodb表获取编辑操作数据 playgroundHistoryCRDT.loadAllData(); 
+  - 获取代码文件数据 playgroundHistoryBase.findSourceByPlaygroundId()
+
+- 
 - 
 - 
 - 

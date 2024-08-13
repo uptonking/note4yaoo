@@ -40,6 +40,11 @@ modified: 2022-11-07T10:26:22.510Z
 - vim你们都:wq保存退出么，听说过直接按 shift zz 保存退出么
   - 一直用:x。x跟wq是不同的。如果內容沒有改變，x不會刷新文件時間。而wq是寫入和關閉兩個命令，無論內容是否改變都會執行寫入並刷新文件時間。
   - 原推里的 ZZ 跟 :x 一样的行为
+
+## figma
+
+- 有时原型稿形状的背景色很难选到准确的图形来查看
+  - 解决方法是在pages下方的layers点击相近的父层或子层来确认
 # pc-dir
 - 网易云音乐
   - /home/yaoo/.cache/netease-cloud-music/CachedSongs
@@ -164,7 +169,6 @@ modified: 2022-11-07T10:26:22.510Z
     - 主页无法访问，但二级页面可访问
   - ❌ 已倒闭
     - [mixrnb](http://www.mixrnb.com/)
-
 
 - https://github.com/lyswhut/lx-music-desktop /apache2/202406/ts/vue
   - https://lyswhut.github.io/lx-music-doc/
