@@ -45,7 +45,9 @@ modified: 2024-05-06T02:54:40.374Z
 
 - 
 - 
-- 
+
+- resources
+  - https://staging.agent.clacky.ai/demo
 
 ### draft
 

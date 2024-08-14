@@ -431,12 +431,67 @@ npx create-strapi@rc strapi5-play-202408 --use-npm --quickstart --ts --skip-clou
 console.log(`接到到PaaS消息：`, name, dao.playgroundInfo.status, dao.dockerStatus, payload)
 ```
 
+## 0814
+
+- 插入自定义帧并搜索
+
+```JS
+// 自定义帧的内容
+{
+  path: 'src/index.ts',
+  content: 'export const vv = 11',
+  actionType:'delete_file',
+  // 存储时数据来源于打开文件时file事件的响应内容， 用来获取追加步骤场景下的文件快照，
+  fileTime: 1723635429480
+}
+```
+
+
+```JS
+// task_steps
+[
+  {
+    "id": "1",
+    "title": "Set the run_command in the .1024 configuration file",
+    "task_actions": [
+      {
+        "id": "1-1",
+        "title": "Set run_command with HOST and PORT",
+        "action": "modify_file",
+        "path": ".1024",
+        "target": "",
+        "status": "inited",
+        "detailed_requirement": "The run_command in the .1024 file should be set to HOST=0.0.0.0 PORT=8080 npm run dev. This ensures that the web service runs on the correct host and port.",
+        "result": ""
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "title": "Install necessary dependencies",
+    "task_actions": [
+      {
+        "id": "2-1",
+        "title": "Run npm install to install project dependencies",
+        "action": "run_command",
+        "path": "",
+        "target": "npm install",
+        "status": "inited",
+        "detailed_requirement": "",
+        "result": ""
+      }
+    ]
+  }
+]
+```
+
+
 ## 0813
 
 - cde设计稿背景色
   - header是   #18181B
   - panel是    #27272A   bg-background-subtle
-  - machine是  background: linear-gradient(270deg, #18181B 0%, #27272A 50%, #18181B 100%);
+  - machine是  background: linear-gradient(270deg, #18181B 0%, #27272A 50%, #18181B 100%); 
 - tailwind
   - bg-background #09090b
 - machine
