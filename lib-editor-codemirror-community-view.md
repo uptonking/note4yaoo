@@ -14,7 +14,23 @@ modified: 2024-08-08T20:49:11.571Z
 
 - ## 
 
-- ## 
+- ## 🌰 [Dynamic light mode / dark mode - how? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/dynamic-light-mode-dark-mode-how/4709)
+- `this.view.dispatch({ effects: this.editorTheme.reconfigure( selectedTheme === "light" ? oneLight : oneDark ) })` ; 
+
+```JS
+this.view.dispatch({
+  effects: this.editorTheme.reconfigure(selectedTheme === "light" ? oneLight : oneDark)
+});
+
+window.matchMedia('(prefers-color-scheme: dark)')
+  .addEventListener('change', event => {
+    if (event.matches) {
+      //dark mode
+    } else {
+      //light mode
+    }
+  })
+```
 
 - ## experimenting with a canvas-driven CodeMirror cursor
 - https://x.com/hamiltonulmer/status/1822274427142525210

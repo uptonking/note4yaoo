@@ -144,6 +144,11 @@ modified: 2021-05-06T09:38:31.520Z
 - not-yet
   - lezer-highlight vs highlightjs
   - codemirror devtools
+  - 迁移v5的示例到v6
+
+- experimental
+  - lazy
+  - load new document 
 
 - port to server side lang like prosemirror
 
