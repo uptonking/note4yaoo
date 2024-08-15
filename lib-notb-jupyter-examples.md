@@ -58,6 +58,17 @@ modified: 2024-06-30T03:20:21.444Z
   - JavaScript kernel running in a Web Worker
   - View hosted example Notebooks and other files, then edit, save, and download from the browser's IndexDB (or localStorage)
 
+- https://github.com/pretzelai/pretzelai /AGPL/202408/ts/python
+  - https://withpretzel.com/
+  - Modern, open-source Jupyter alternative
+  - 🍴 Pretzel is a fork of Jupyter with the goal to improve Jupyter's capabilities. We've added AI code generation and editing, inline tab completion, sidebar chat and error fixing to Jupyter for now with a lot more to come.
+  - 依赖codemirror
+  - To use your own model (OpenAI, Anthropic/Claude, Ollama or Groq), see the Configuration section
+  - Inline Tab Completion
+    - Wait for 1 second to trigger completions. 
+    - The default Pretzel AI Server uses Mistral's Codestral but you can switch the inline completion model in Settings
+  - We DO NOT store any code or data you send to the Pretzel AI Server.
+
 - https://github.com/executablebooks/jupyter-book /BSD/202406/python
   - http://jupyterbook.org/
   - Create beautiful, publication-quality books and documents from computational content
@@ -121,6 +132,13 @@ modified: 2024-06-30T03:20:21.444Z
   - 后端依赖express-session、passport
   - 基于slate-core实现了virtualized-render
   - It is also possible to run CoCalc on your own infrastructure.
+
+- https://github.com/srcbookdev/srcbook /apache2/202408/ts
+  - interactive notebooks for JavaScript & TypeScript. They allow you to create, run and share reproduceable programs and ideas.
+  - runs locally on your machine and is fully open-source
+  - 依赖codemirror
+  - Srcbook creates folders on your local machine and provides a web interface (also running locally) as a programming environment.
+  - Srcbooks export to markdown using the `.src.md` extension
 # jupyter-gis
 - https://github.com/GispoCoding/geoviz-notebooks /MIT/202406/jupyter
   - Python tool for analyzing geospatial data in cities.

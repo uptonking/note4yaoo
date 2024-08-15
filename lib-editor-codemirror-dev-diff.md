@@ -62,7 +62,10 @@ modified: 2024-07-29T11:49:33.248Z
 # discuss-diff/track-changes
 - ## 
 
-- ## 
+- ## [MergeView matching regression (example) _202408](https://github.com/codemirror/dev/issues/1418)
+- It's likely 6.6.2 caused this change, which reduces diffing accuracy in situations where it looks like computing the precise diff will be expensive. 
+  - You can still configure this via the `diffConfig` option (adding diffConfig: `{scanLimit: 5000}` to your example seems to help). 
+  - But note that you will for some documents be increasing edit latency. The default is intentionally biased towards performance over accuracy.
 
 - ## [CodeMirror Merge Slow Diff - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/codemirror-merge-slow-diff/7005)
 - Seems at some document size, even the fast path is still too slow. Attached patch adds an even faster path (just treat the entire range as unchanged) for situations like this.

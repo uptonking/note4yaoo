@@ -127,6 +127,16 @@ modified: 2023-06-23T12:46:53.288Z
     - [pr已合并: Migrate to Codemirror 6 _202207](https://github.com/jupyterlab/jupyterlab/pull/11638)
   - https://github.com/jupyter/nbdime
     - Tools for diffing and merging of Jupyter notebooks.
+- https://github.com/pretzelai/pretzelai /AGPL/202408/ts/python
+  - https://withpretzel.com/
+  - Modern, open-source Jupyter alternative
+  - 🍴 Pretzel is a fork of Jupyter with the goal to improve Jupyter's capabilities. We've added AI code generation and editing, inline tab completion, sidebar chat and error fixing to Jupyter for now with a lot more to come.
+  - 依赖codemirror
+  - To use your own model (OpenAI, Anthropic/Claude, Ollama or Groq), see the Configuration section
+  - Inline Tab Completion
+    - Wait for 1 second to trigger completions. 
+    - The default Pretzel AI Server uses Mistral's Codestral but you can switch the inline completion model in Settings
+  - We DO NOT store any code or data you send to the Pretzel AI Server.
 
 - Zettlr /9.3kStar/GPLv3/202408/ts/vue/偏学术编辑器
   - https://github.com/Zettlr/Zettlr
@@ -497,6 +507,14 @@ modified: 2023-06-23T12:46:53.288Z
   - https://tome.evinowen.net/
   - 🌵 git integrated cross-platform markdown editor
   - 依赖codemirror6、marked、nodegit、vue3、@electron/rebuild
+
+- https://github.com/ralismark/ibis-wiki /202406/ts
+  - http://www.ralismark.xyz/ibis-wiki/
+  - personal wiki, built to fit a personal niche
+  - inspired by the likes of TiddlyWiki and Logseq
+  - This wiki is a purely static site, and does not have its own backend
+  - notes are stored via an external storage provider -- the only kind supported at the moment is S3-like
+  - 依赖codemirror
 
 - https://github.com/minditor/minditor /MIT/202403/ts
   - https://minditor.dev/
@@ -915,6 +933,8 @@ modified: 2023-06-23T12:46:53.288Z
   - CSV mode: add column paddings for alignment, navigate columns with tab / shift-tab; 支持markdown-table 📈
   - 支持emoji
 
+
+
 - https://github.com/mdx-editor/editor /MIT/202405/ts/lexical
   - https://mdxeditor.dev/
   - https://mdxeditor.dev/editor/demo
@@ -953,6 +973,9 @@ modified: 2023-06-23T12:46:53.288Z
   - Mismerge is a modern two-way and one-way merge editor for the web, built with Svelte
   - It is also available in React and Vue.
   - 示例是基于textarea实现合并代码
+
+- https://github.com/personalizedrefrigerator/joplin-plugin-diff-tool /MIT/202407/ts
+  - Diff and conflict resolution tool that supports Joplin Mobile
 
 ## lint
 
@@ -1475,6 +1498,9 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/GiorgiKumelashvili/codemirror-6-playground /202407/ts
   - Nextjs Shadcn Codemirror 6 Examples
+
+- examples
+  - [editor | calculang metal](https://finding-calculang-foc.netlify.app/editor)
 # examples
 - https://github.com/alexwkleung/Iris /MIT/202312/ts/inactive
   - https://irisnotes.vercel.app/
@@ -1528,15 +1554,21 @@ modified: 2023-06-23T12:46:53.288Z
   - I was looking for a self-hosted Postman alternative 
   - I've been using both codemirror and lezer in Yaade 
 
-- https://github.com/aidenlx/cm-chs-patch /MIT/202405/ts
-  - 增加 Obsidian 内置编辑器的(简体)中文分词支持，使得编辑模式的双击可以选中中文，以及在 Vim 模式下可以按中文分词移动光标
-  - 从 v1.8.0 开始，默认分词引擎由结巴分词更换为系统自带分词引擎，结巴分词不再是必备组件
-  - 手动安装结巴分词组件：在设置中启用结巴分词后，从CDN下载得到 jieba_rs_wasm_bg.wasm 文件，将 wasm 文件放在 Obsidian 库的 .obsidian 或者其它指定的配置文件夹下后重启 Obsidian
+- https://github.com/tidbcloud/tisqleditor /MIT/202408/ts
+  - https://tisqleditor.vercel.app/
+  - CodeMirror6 based SQL code editor which is used in TiDB Cloud Console
+  - Supply React component and Vue component
+  - 提供了ai-widget
 
 - https://github.com/GaganpreetKaurKalsi/SQL-Editor /202206/js/inactive
   - https://sql-editor-react.vercel.app/sql-editor
   - A frontend application for running SQL queries.
   - Note : For now only SELECT queries on given tables are supported. Will increase it's application in future.
+
+- https://github.com/aidenlx/cm-chs-patch /MIT/202405/ts
+  - 增加 Obsidian 内置编辑器的(简体)中文分词支持，使得编辑模式的双击可以选中中文，以及在 Vim 模式下可以按中文分词移动光标
+  - 从 v1.8.0 开始，默认分词引擎由结巴分词更换为系统自带分词引擎，结巴分词不再是必备组件
+  - 手动安装结巴分词组件：在设置中启用结巴分词后，从CDN下载得到 jieba_rs_wasm_bg.wasm 文件，将 wasm 文件放在 Obsidian 库的 .obsidian 或者其它指定的配置文件夹下后重启 Obsidian
 
 - https://github.com/prisma/text-editors /apache2/202211/ts/inactive
   - https://qc.prisma-adp.vercel.app/
@@ -1576,6 +1608,9 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/KyleleeSea/codemirror-experiments /202406/ts
   - penrose-editor
+
+- https://github.com/yerlantemir/vimracing /202308/ts/inactive
+  - Vimracing is a minimalistic vim arena. It allows you to compete on code refactoring speed by using vim hotkeys.
 # theme
 - https://github.com/nodetec/mirrorshades /GPLv3/202403/ts
   - A react library to create themes for codemirror

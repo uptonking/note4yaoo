@@ -15,7 +15,7 @@ modified: 2024-05-02T06:51:34.217Z
 
 - 202305
   - merge: [Add support for unified diff interface](https://github.com/codemirror/merge/commit/5916d24de61511fe687d485e45706e897967cf78)
-  - The new `unifiedMergeView` extension can be used to display a diff inside a single editor, by inserting deleted content as widgets in the document.
+  - The new `unifiedMergeView` extension can be used to display a diff inside a single editor, by **inserting deleted content as widgets** in the document.
 # discuss-changes
 - ## [CodeMirror 6 Status Update _201908](https://marijnhaverbeke.nl/blog/codemirror-6-progress.html)
 - It has been almost a year since we officially announced the CodeMirror 6 project, which aims to rewrite CodeMirror (a code editor for in the browser) to align its design with the technological realities and fashions of the late 2010s.

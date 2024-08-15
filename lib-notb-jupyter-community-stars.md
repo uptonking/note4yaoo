@@ -17,11 +17,47 @@ modified: 2024-06-30T03:28:19.638Z
 - ## 
 
 - ## 
+# discuss-server
+- ## 
+
+
+- ## 
+
+
+
+- ## 
+
+
+
+- ## 
+
+
+- ## 
+
+
+
+
+- ## [Make jupyterlab_server optional _202109](https://github.com/jupyterlab/jupyterlab/issues/11101)
+- JupyterLab currently depends on jupyterlab server. For alternative servers to the JupyterLab frontend, such as jupyverse, this dependency is really not necessary, and makes the installation more problematic.
+
+
+- 
+- 
+- 
+
+
 # discuss-cluster
 - ## 
 
+
+- ## 
+
+
+
+
+
 - ## [Jupyter hub pod autoscaler (HPA) · Issue · jupyterhub/zero-to-jupyterhub-k8s _201811](https://github.com/jupyterhub/zero-to-jupyterhub-k8s/issues/1019)
-- 202010: The original issue was about using a horisontal pod autoscaler, which is about creating more and more pods as they get busier. This is not plausible for any pod in our Helm chart currently though because we cannot support High Availability
+- 202010: The original issue was about using a horizontal pod autoscaler, which is about creating more and more pods as they get busier. This is not plausible for any pod in our Helm chart currently though because we cannot support High Availability
 
 - ## [moving state out of BaseHandler · jupyterhub/jupyterhub _202112](https://github.com/jupyterhub/jupyterhub/issues/3699)
 - Right now, the architecture of JupyterHub is such that a large fraction of functionality is implemented in BaseHandler. This ties us rather tightly to tornado, but also impacts testing because most of our logic cannot be easily instantiated without making an HTTP request.
