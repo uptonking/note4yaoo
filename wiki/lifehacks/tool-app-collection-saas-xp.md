@@ -508,6 +508,13 @@ sudo systemctl start minidlna
   - [v2raya该使用什么样的订阅链接？ _202406](https://github.com/v2rayA/v2rayA/discussions/1418)
     - 在debian系统中配置了DNS之后，导入就成功了
   - [最佳代理实践之 v2raya (2023-06-23)](https://manateelazycat.github.io/2023/06/23/best-proxy/)
+
+- [When I use proxy, it tells me Unable to connect to 127.0.0.1:7890 · Issue #3416 · kubernetes-sigs/kind](https://github.com/kubernetes-sigs/kind/issues/3416)
+
+```shell
+export https_proxy=http://127.0.0.1:7890;export http_proxy=http://127.0.0.1:7890;export all_proxy=socks5://127.0.0.1:7890
+```
+
 # law
 - [中国执行信息公开网](http://zxgk.court.gov.cn/index.jsp)
 
