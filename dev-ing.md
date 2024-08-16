@@ -385,6 +385,7 @@ npx create-strapi@rc strapi5-play-202408 --use-npm --quickstart --ts --skip-clou
   - ~~播放控制逻辑，op的内容和时机~~
   - ~~回放模式支持编辑，内容和光标选区的变化~~
   - changed-files-list
+  - 处理 打开已删除文件、新增文件
 
 - 测试集成-to
   - 前端未控制member/owner的按钮、路由访问权限
@@ -392,7 +393,6 @@ npx create-strapi@rc strapi5-play-202408 --use-npm --quickstart --ts --skip-clou
   - think流程支持stop，设计稿有设计
   - 在驾驶舱的plan文件列表打开文件，think/plan, 聊天时的
   - think卡片打开文件，滚动到文件的行数
-  - 打开已删除文件
   - 聊天搜索 未实现
   - 驾驶舱还原设计稿
   - agent计划只给到文件名，暂时没做到方法粒度
