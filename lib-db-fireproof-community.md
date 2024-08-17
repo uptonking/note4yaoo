@@ -49,7 +49,8 @@ modified: 2023-12-24T10:49:01.941Z
 # discuss-author
 - ## 
 
-- ## 
+- ##refactored Fireproof's core database engine, enhanced our TypeScript structure to support dynamic runtimes, implemented a pluggable storage system, and worked on a new connector gateway!
+- https://x.com/FireproofStorge/status/1823056776352391387
 
 - ## We extracted the core storage functionality from Fireproof so now anyone with an immutable content addressed IPFS workload can use the replication capabilities._20240107
 - https://twitter.com/jchris/status/1745489065322094599

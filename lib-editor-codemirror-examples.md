@@ -933,8 +933,6 @@ modified: 2023-06-23T12:46:53.288Z
   - CSV mode: add column paddings for alignment, navigate columns with tab / shift-tab; 支持markdown-table 📈
   - 支持emoji
 
-
-
 - https://github.com/mdx-editor/editor /MIT/202405/ts/lexical
   - https://mdxeditor.dev/
   - https://mdxeditor.dev/editor/demo
@@ -1791,7 +1789,7 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/e2b-dev/code-interpreter /apache2/202407/python/ts
   - https://e2b.dev/
-  - Python & JS/TS SDK for adding code interpreting to your AI app
+  - 🧊 Python & JS/TS SDK for adding code interpreting to your AI app
   - The code interpreter runs inside the E2B Sandbox - an open-source secure sandbox made for running untrusted AI-generated code and AI agents.
   - https://github.com/e2b-dev/e2b /apache2/202407/python/ts
     - Secure open source cloud runtime for AI apps & AI agents

@@ -17,7 +17,23 @@ modified: 2022-06-13T03:01:05.956Z
 - Last time I looked into it, it wasn't really useful yet. Limited support for which SQL is supported in incrementally materialized views, and very locking-heavy.
 
 - Its actively being worked on. The development is currently happening as the `pg_ivm` extension already supported by some cloud providers. The plan is to merge it into PG one day when it has high feature completeness for most SQL operations.
+# discuss-pg-olap
+- ## 
+
+- ## 
+
+- ## Lots of buzz lately around the idea of baking OLAP query engines into Postgres. Is anyone working on making this possible on read replicas (only)? 
+- https://x.com/gunnarmorling/status/1824521817811226997
+  - By definition, analytics workloads don't require ms range data freshness, so I think it's better to offload these queries to separate nodes and keep the precious CPU cycles on the primary for OLTP transactions.
+- OLAP on row-based storage will be unimpressive.
+  - 🤔 Data would be stored twice, in columnar form for efficient OLAP usage.
+- Couldn’t you just run your OLAP queries on the replicas?
+  - Sure, but just propagating any data changes to the OLAP engine on the primary will cost CPU and disk I/O.
+- Yes, the product I work on, Postgres Distributed (pgd), is coming out with analytics via Delta Lake and using DataFusion. While you can run these analytics queries from any Postgres node, pgd has a concept of a writer leader and read-only routing to avoid the write leader
+
 # discuss
+- ## 
+
 - ## 
 
 - ## 

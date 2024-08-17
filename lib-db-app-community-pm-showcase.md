@@ -22,7 +22,9 @@ modified: 2024-08-11T07:20:47.398Z
 # discuss
 - ## 
 
-- ## 
+- ## Wanna work on/around databases? Here's ~216 database companies Alex Miller curated for you.
+- https://x.com/eatonphil/status/1824505089303720119
+  - this is a conservative list. This does not include companies with major database divisions like DataDog, Apple, Microsoft, Meta, Google, Bloomberg, etc. etc. etc.
 
 - ## PlanetScale 取消了免费套餐，最便宜的付费计划是每月39美元，裁掉了所有 DevRel… _202403
 - https://twitter.com/Hooopo/status/1765510587365142928

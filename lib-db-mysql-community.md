@@ -133,7 +133,8 @@ modified: 2022-06-13T03:00:06.041Z
 # discuss
 - ## 
 
-- ## 
+- ## Interesting to compare how Uber and GitHub approached their upgrades of MySQL to 8.0 differently
+- https://x.com/rmoff/status/1824510857293811765
 
 - ## Grouping transaction effects together in #MySQL Ndb Cluster epoch transactions improves the computation 2 communication ratio per Binlog transaction, improving compression, storage + communication, increasing apply parallelism + optimising commit processing. 
 - https://twitter.com/frazerclement/status/1763275358663541190

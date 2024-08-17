@@ -16,7 +16,11 @@ modified: 2022-11-21T15:27:20.974Z
 
 - ## 
 
-- ## 
+- ## tooltip timing - a button concept
+- https://x.com/argyleink/status/1824479024254685308
+  - 先出现hover动画，结束后再出现tootlip，纯css实现
+  - https://codepen.io/argyleink/pen/bGPaxVp
+  - animated conic gradients with at-property
 
 - ## 多列卡片分别滚动
 - https://x.com/lostdoesart/status/1821491304192229720

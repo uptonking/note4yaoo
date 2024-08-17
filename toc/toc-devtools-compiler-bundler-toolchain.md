@@ -97,9 +97,14 @@ modified: 2022-11-01T01:05:07.873Z
   - 开源免费的数据库模型建模工具
   - 是PowerDesigner之外，更好的免费的替代方案
 # mobile
-
 - https://github.com/Tencent/vConsole /MIT/202306/svelte
   - A lightweight, extendable front-end developer tool for mobile web page
+# devtools
+- https://github.com/coryhouse/react-switchboard /MIT/202408/ts
+  - Quickly create custom DevTools for your React app
+  - https://x.com/housecor/status/1823182847902912730
+    - Configure mock APIs
+    - Simulate slowness for specific HTTP requests
 # site
 - https://github.com/jbake-org/jbake
   - Java based open source static site/blog generator

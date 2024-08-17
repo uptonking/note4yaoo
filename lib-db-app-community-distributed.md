@@ -190,7 +190,10 @@ modified: 2023-10-26T19:04:00.318Z
 
 - ## 
 
-- ## 
+- ## Oracle Sharding uses Raft for replication. Writes are local on the executing shard. 
+- https://x.com/FranckPachot/status/1823621723129802935
+  - YugabyteDB reads and writes are distributed, with flush optimization occurring at a higher level between the stateless query layer and distributed storage 
+  - #DistributedSQL vs #Sharding
 
 - ## Log stacking can happen when using Raft/Paxos to replicate DBs w/ their own WALs. 
 - https://twitter.com/strlen/status/1762933075783405649

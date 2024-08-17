@@ -18,7 +18,9 @@ modified: 2024-05-27T09:12:06.925Z
 
 - ## 
 
-- ## 
+- ## 有 Fork 这样的可视化，什么 squash，普通 merge 之争都是浮云了。
+- https://x.com/middlefeng/status/1824595077345448074
+- fork是我用过最好的git可视化工具，尤其是他的merge 功能
 
 - ## Pinterest decreased clone times by 99% (40min -> 30 sec) with a one-line change.
 - https://x.com/ryanlpeterman/status/1801285133200482346
@@ -46,7 +48,7 @@ modified: 2024-05-27T09:12:06.925Z
 - ## 
 
 - ## [Git Status Takes a Long Time to Complete - Stack Overflow](https://stackoverflow.com/questions/1183769/git-status-takes-a-long-time-to-complete)
-- For me, the slowness was due to having a lot of untracked files (temporary and output files from scripts.) Running `git status -uno`, which excludes the untracked files, ran much faster, and meets my requirements
+- For me, the slowness was due to having a lot of untracked files (temporary and output files from scripts.) Running `git status -uno` , which excludes the untracked files, ran much faster, and meets my requirements
 
 - ## [Ways to improve git status performance - Stack Overflow](https://stackoverflow.com/questions/4994772/ways-to-improve-git-status-performance)
 - To be more precise, git depends on the efficiency of the lstat(2) system call, so tweaking your client’s “attribute cache timeout” might do the trick.
@@ -55,7 +57,6 @@ modified: 2024-05-27T09:12:06.925Z
 
 - git config --global core.preloadIndex true
   - This is now enabled by default already.
-
 
 - 
 - 

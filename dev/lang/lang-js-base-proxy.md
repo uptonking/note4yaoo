@@ -21,9 +21,24 @@ modified: 2022-11-23T17:49:54.052Z
 # discuss
 - ## 
 
-- ## 
+- ## structuredClone doesn’t support proxies which means Vue’s ref or reactive values cannot be cloned.
+- https://x.com/logaretm/status/1821882058718757278
+  - toRaw won’t work either because of deep objects.
+  - I started to like shallowRef more recently because of this among other things but you lose the deep reactivity that is usually (sometimes?) desired.
 
-- ## 
+- ## One thing about Vue's Proxy-based reactivity system is that because it relies on replacing the `this` value *internally* to objects, it doesn't just break on private fields, but it breaks on arrow functions too.
+- https://x.com/justinfagnani/status/1823564891049091414
+  - this wasn't to pick on Vue, but to point out that proxies have some really sharp edges and fundamental limitations.
+  - Private fields got a bad rap recently because of their interaction with some proxy-based systems, but I think proxies themselves are the main culprit.
+  - And it'll break in many other cases where the original `this` value and the proxied `this` value can be confused, like if `this` is passed out of the constructor.
+  - So don't blame private fields here, there's a more fundamental problem with this type of proxy system.
+
+- The fundamental issue is that what we really need is Object.observe(), and instead we got proxies.
+- Array, Map, & Set if not special-cased, but any collection especially useralnd. Mutable closure state. 
+  - And any API backed by mutable state where you don't have a reference to the mutable object itself.
+  - Closure state can't be observed by Vue-style proxies or Object.observe()
+
+- The DOM is a big source of non-observable state that won't be fully signalized...
 
 - ## JavaScript proxies that just trap everything to forward somewhere else (like a worker or a server) are starting to seem like a really bad idea to me.
 - https://x.com/justinfagnani/status/1798939691313758706

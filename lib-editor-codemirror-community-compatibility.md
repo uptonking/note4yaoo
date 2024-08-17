@@ -45,7 +45,9 @@ modified: 2024-08-11T06:40:41.476Z
 
 - ## 
 
-- ## 
+- ## 才知道 pointermove 事件会按照屏幕刷新率，合并手写笔/鼠标的输入事件。
+- https://x.com/zQwQs/status/1822331239740666306
+  - 需要通过 `event.getCoalescedEvents()` 捞出来那些被隐藏的事件。
 
 - ## 💡 [Focus behavior issue - Editor doesn't lose focus when you click above it - discuss. CodeMirror _202407](https://discuss.codemirror.net/t/focus-behavior-issue-editor-doesnt-lose-focus-when-you-click-above-it/8468)
 - Is this in Chrome? That browser has some weird behavior around what focus does when clicking near editable content. You’ll see the same with a plain `contentEditable` div. There’s not a lot CodeMirror can do about this, without aggressively interfering with the browser’s focus behavior.

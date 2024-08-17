@@ -46,6 +46,21 @@ modified: 2023-10-26T19:56:12.974Z
 - Text search is effectively my entire product, so not typical or representative. But I use Vespa. Would switch to any search product that nicely implemented end to end retrieval with Colbert though.
 
 - Actually building my own right now. wouldn’t recommend it for most people, inverse indexes are a bitch to work with
+# discuss-pm-search
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 11 种语言，700GB 数据，1.44 亿个向量，索引整个维基百科
+- https://x.com/tuturetom/status/1824265560483570115
+  - @upstash 开源 「Semantic Search on Wikipedia」并提供在线体验地址
+- https://github.com/upstash/wikipedia-semantic-search /MIT/202408/ts
+  - https://wikipedia-semantic-search.vercel.app/
+  - Semantic Search on Wikipedia with Upstash Vector
+- 这类的数据和embedding开源意义更大. 看了下是bge-m3的embedding model (看重多语言) 具体chunk是用的自然段, 然后过滤掉过短的.
+
 # discuss
 - ## 
 

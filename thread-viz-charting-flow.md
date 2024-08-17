@@ -9,7 +9,7 @@ modified: 2021-09-10T18:35:00.465Z
 
 # guide
 
-# discuss
+# discuss-stars
 - ## 
 
 - ## 
@@ -41,7 +41,8 @@ modified: 2021-09-10T18:35:00.465Z
 
 - ## 
 
-- ## 
+- ## 节点伸手求链接的效果
+- https://x.com/Datou/status/1824261977247711333
 
 - ## http://roadmap.sh architecture
 - https://twitter.com/kamrify/status/1720598139491516679

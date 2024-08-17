@@ -35,7 +35,14 @@ modified: 2023-11-10T08:05:12.852Z
 
 - ## 
 
-- ## 
+- ## Symbols is a neat way to have internals that can only be accessed if you have access to the symbol. 
+- https://x.com/kettanaito/status/1824021118354702836
+  - "private" is sugar, those properties aren't really private. 
+  - "#" has some issues as well. 
+  - Symbols are battle-proof for actually private properties.
+  - The only struggle I have with symbols is typing them. Naturally, TS wouldn't know about your custom symbols, you have to tell it. But once you do, it keeps showing them in the thing's type definition, which defies the whole purpose of them being internal.
+- Symbols are public, because of `Object.getOwnPropertySymbols` . Only # fields are truly private.
+  - Yup, they do get used and are public API points for runtimes like Node or JS itself meant to be able to be modified and as DI. Closures / private are what you want if you don't want people to modify/accidentally copy stuff.
 
 - ## how to catch error when using fetch
 - https://x.com/WarrenInTheBuff/status/1815440867936948371

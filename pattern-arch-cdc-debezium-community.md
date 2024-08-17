@@ -38,6 +38,25 @@ modified: 2024-02-12T17:47:34.152Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## The number one cause of production database outages I see these day is because of CDC tools. 
+- https://x.com/craigkerstiens/status/1824114371737616794
+  - Enter CDC (change data capture) basically taking each record/update to data that happens to your database and replicating it over to a data warehouse. 
+  - In almost every case I've seen this increases the issues on the production database and causes outages–not an exaggeration. 
+  - Several tools recommend polling for updates and changes which is absolutely terrible. All can hold up replication slots at times to unhealthy levels and quickly fill up a disk. 
+
+- Since PG 13 or so, you can configure a max size a slot can hold on to, at the price of course that consumers need to re-snapshot when being offline for too long.
+- one culprit is the IMO unfortunate design that Postgres replication slots are bound to one database, while the WAL is global for the entire host. This can trigger WAL pile-up when combining high/low traffic DBs on one host.
+- Tl; dr CDC is actually a hard category of problems within distributed systems. It’s not as simple as polling an API or cron jobs to copy files around. The WAL is vital to the database’s O. S. level operations so extracting business events from it is not trivial.
+- That's what max_slot_wal_keep_size is for
+- I think those issues are due to lack of system understanding by Management who priorize CDC over production OLTP. You can always drop your CDC pipeline in case of a Wal pile up.
+- So, the CDC applications you have seen were poorly implemented or with tools that do not perform CDC correctly. I have applied CDC in large retail companies, banks, and education companies that buy dozens of smaller colleges, and I have never had any problems.
+  - #Debezium with Oracle, SQL Server and now DB2 Z/OS. Everyone is happy, and little OPEX
+- For Oracle, it polls the LogMiner views (not the actual data tables), the overhead for Postgres and most other connectors is much lower.
+
 - ## Seven Ways to Put CDC to Work
 - https://twitter.com/gunnarmorling/status/1720468080281702888
   - [Seven Ways to Put CDC to Work](https://www.decodable.co/blog/seven-ways-to-put-cdc-to-work)

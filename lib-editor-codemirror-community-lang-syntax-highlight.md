@@ -27,6 +27,14 @@ modified: 2024-08-11T07:59:35.617Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🎨 Heikki Lotvonen 魔改了一款字体，Colr Fonts ，原生就支持语法高亮，不需要任何 JS 的处理，任何的语法高亮被直接内置在这款字体中，就是 plain text。
+- https://x.com/vikingmute/status/1824253104625422699
+  - 支持暗黑模式，目前支持 CSS/HTML/JS
+
 - ## Can you Syntax Highlight a code snippet on the web without overloading the DOM with a ton of `<span>` elements wrapped around the tokens?
 - https://x.com/RogersKonnor/status/1758318286633091467
   - Thanks to the Custom Highlight API, you can!

@@ -9,6 +9,7 @@ modified: 2022-12-14T18:26:38.588Z
 
 # guide
 
+# examples
 - tuple-database /219Star/NALic/202209/ts
   - https://github.com/ccorcos/tuple-database
   - 依赖fs-extra, lodash, fractional-indexing
@@ -20,6 +21,11 @@ modified: 2022-12-14T18:26:38.588Z
     - A database for storing triples, also know as facts with tooling for querying and indexing
   - https://github.com/ccorcos/triplestore-repl
     - a simple application with a DSL for playing with the triple-database
+
+- https://github.com/ccorcos/chet-stack /202408/ts
+  - A boilerplate, not a framework.
+  - The goal of this repo is to make it easy to start a new full-stack application
+  - This architecture is very similar to the one I built for Notion and is designed so that everything can run in a single process on a single server, while still being easy to scale up by breaking pieces out into separate services.
 # docs
 - 👉🏻 The local-first, "end-user database" database.
   - When users own all of their data on their devices, it's a natural way of sharding a database and scaling up a platform.

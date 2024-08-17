@@ -81,6 +81,13 @@ modified: 2021-05-13T16:08:15.067Z
 - [interactive notebooks](https://nteract.io/)
   - We build SDKs, applications, and libraries that help you and your team make the most of interactive (particularly Jupyter) notebooks and REPLs.
   - nteract provides a client-side SDK for integrating notebook and REPL UIs into your software. 
+
+- https://github.com/srcbookdev/srcbook /apache2/202408/ts
+  - TypeScript & JavaScript notebooks.
+  - Create, run, and share reproducible programs and ideas
+  - Export to valid markdown format (.src.md)
+  - Local execution with a web interface
+  - Powered by Node.js
 # python-notebook
 - https://github.com/jupyter/notebook
   - a web-based notebook environment for interactive computing.

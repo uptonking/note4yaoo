@@ -457,6 +457,14 @@ modified: 2023-11-28T14:48:45.910Z
   • escalating issues
 - I love buttons. But what I love more is forms. Create a way to build a form that populates a database and you might just go next level.
 - The only missing feature now is: connect Notion to external databases (read and write).
+# discuss-like-eidos
+- ## 
+
+- ## 代理模式太好用了，深刻理解了依赖抽象而不是实现。
+- https://x.com/mayneyao/status/1822712428133785875
+  - 最开始把服务端代码搬到 web worker 实现，client-server 一体放在 web 中，实现了离线可用。
+  - 现在把 web worker 的代码复用，port 到边缘环境（Cloudflare worker/ Deno deploy ）公网可访问，实现发布服务，只需要少量的适配就行了。 设计模式真伟大
+
 # discuss-showcase
 - ## 
 
