@@ -19,6 +19,7 @@ modified: 2022-11-07T10:25:12.034Z
 
 - tips
   - 详细的领域知识很多都在pdf中，而不是零散的blog，可直接搜索 关键词+.pdf
+  - 由华人或国人发起或主导的热门技术项目，包括vue/electron/tidb
 
 - https://github.com/iamadamdev/bypass-paywalls-chrome
   - help bypass paywalls for selected sites.
@@ -86,6 +87,7 @@ modified: 2022-11-07T10:25:12.034Z
 # 数据库/pingcap
 - [TiDB 社区](https://asktug.com/)
   - [TiDB Internals](https://internals.tidb.io/)
+  - [TiDB Forum/community](https://ask.pingcap.com/)
 # hacker-news
 - usage-xp
   - 有时网站无法登录或内容无法显示，可能不是网络原因而是服务器宕机了，可在twitter社交平台搜索 `hacker news down` 按时间倒序判断最新状态

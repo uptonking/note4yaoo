@@ -213,7 +213,7 @@ modified: 2021-01-04T17:26:43.784Z
   - https://github.com/zeay/pdfmaker
     - Pdf maker electron and phantomjs
 
-- https://github.com/CMOISDEAD/next-library /js
+- https://github.com/CMOISDEAD/next-library /GPLv3/202307/js/inactive
   - Next Library is an innovative virtual library application that offers a seamless and personalized way to manage your book collection
   - Custom PDF Viewer Tool: Open and view PDF files directly within the virtual library program using a customized PDF viewer tool.
 

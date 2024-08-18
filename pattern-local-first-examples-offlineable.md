@@ -66,11 +66,14 @@ modified: 2023-11-17T10:12:06.357Z
   - You can think of Aphrodite as an ORM of sorts that is designed for the needs of Local-First applications and P2P data transfer.
   - everything in Aphrodite begins with a schema. This schema encodes the application's data
 
-- dxos /20Star/MIT/202312/ts
+- dxos /20Star/MIT/202408/ts
   - https://github.com/dxos/dxos
   - https://www.dxos.org/
   - TypeScript implementation of the DXOS protocols, SDK, and toolchain.
   - A decentralized alternative to the commercial cloud for privacy preserving software.
+  - https://github.com/dxos/dxos/tree/main/packages/ui/react-ui-editor
+    - Document editing experience within a DXOS shell
+    - 依赖codemirror6、react-dropzone
   - https://github.com/dxos/editor  /1Star/AGPLv3/202101/js/archived
     - Collaborative editor
     - 依赖 react、material-ui、remark-rehype、yjs、prosemirror、hightlight.js

@@ -512,7 +512,7 @@ function useRef < T > (initialValue: T | null): RefObject < T > ;
 
 ## 0529
 
-- [eslint - Is there a way to automatically fix \`import type\` errors on TypeScript when using "importsNotUsedAsValues": "error"? - Stack Overflow](https://stackoverflow.com/questions/71080256/is-there-a-way-to-automatically-fix-import-type-errors-on-typescript-when-usin)
+- [eslint - Is there a way to automatically fix `import type` errors on TypeScript when using "importsNotUsedAsValues": "error"? - Stack Overflow](https://stackoverflow.com/questions/71080256/is-there-a-way-to-automatically-fix-import-type-errors-on-typescript-when-usin)
   - I found ESLint rule consistent-type-imports which basically ensure the same as "importsNotUsedAsValues": "error" TypeScript compiler flag but on ESLint level.
 
 ## 0528

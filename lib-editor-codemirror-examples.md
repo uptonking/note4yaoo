@@ -181,6 +181,20 @@ modified: 2023-06-23T12:46:53.288Z
   - https://github.com/vizhub-core/codemirror-6-experiments /MIT/201811/js
     - [Codemirror 6 Experiments _201811](https://currankelleher.medium.com/codemirror-6-experiments-a3930bf03781)
 
+- https://github.com/KittyCAD/modeling-app /MIT/202408/rust/ts
+  - https://kittycad.io/modeling-app/download
+  - https://app.zoo.dev/
+  - https://zoo.dev/diff-viewer
+  - The KittyCAD modeling app
+  - 依赖codemirror6、Custom WASM LSP Server、codemirror-lsp-client-kcl、xstate4、threejs、@headlessui/react、fortawesome、@tweenjs/tween.js、fuse.js、json-rpc-2.0
+  - ZMA is an open-source CAD application for creating accurate 3D models for use in manufacturing. It is built on top of KittyCAD, the design API from Zoo. 
+  - Modeling App and Diff Viewer are currently free.
+  - Modeling App is a hybrid user interface for CAD modeling. 
+    - You can point-and-click to design parts (and soon assemblies), but everything you make is really just kcl code under the hood. 
+    - All of your CAD models can be checked into source control such as GitHub and responsibly versioned, rolled back, and more.
+  - The 3D view in Modeling App is just a video stream from our hosted geometry engine. 
+    - The app sends new modeling commands to the engine via WebSockets, which returns back video frames of the view within the engine.
+
 - https://github.com/prevwong/reka.js /437Star/MIT/202404/ts/yjs/暂未用在craft
   - https://reka.js.org/
   - https://reka.js.org/docs/introduction
@@ -416,7 +430,7 @@ modified: 2023-06-23T12:46:53.288Z
   - 不依赖codemirror
   - [The Magic in Shiki Magic Move _202403](https://antfu.me/posts/shiki-magic-move)
 
-- https://github.com/uxiew/codemirror-shiki /202407/ts/vue
+- https://github.com/uxiew/codemirror-shiki /202408/ts
   - A code editor based on CodeMirror that using Shiki highlighting. 
   - codemirror highlighting using shiki
   - support custom themes and custom languages.
@@ -619,6 +633,10 @@ modified: 2023-06-23T12:46:53.288Z
   - A minimal distractionless markdown editor designed to quickly navigate between multiple `.md` files in a directory and its sub directories.
   - 依赖codemirror6、@uiw/react-codemirror、electron
   - It features a clean mathematical typesetting, chemical equation rendering, code blocks highlighting and writing statistics 
+
+- https://github.com/dxos/dxos/tree/main/packages/ui/react-ui-editor /MIT/202408/ts
+  - Document editing experience within a DXOS shell
+  - 依赖codemirror6、react-dropzone
 
 - https://github.com/warmachine028/markdown-editor /MIT/202202/ts/inactive
   - A markdown editor using Electron, ReactJS, Vite, CodeMirror6, and Remark
@@ -911,6 +929,9 @@ modified: 2023-06-23T12:46:53.288Z
 
 ## diff
 
+- https://github.com/OrgFlow/codemirror-conflicts /MIT/202408/ts
+  - A CodeMirror extension that displays Git conflict markers (`<<<<<<<` syntax) as side-by-side pieces of conflicting code, and provides an interface for accepting, copying, and deleting the chunks, with a top toolbar that shows information about remaining conflicts.
+
 - https://github.com/acrodata/code-editor /MIT/202405/ts
   - https://acrodata.github.io/code-editor/
   - CodeMirror 6 wrapper for Angular
@@ -989,7 +1010,7 @@ modified: 2023-06-23T12:46:53.288Z
   - Hover hints for types 
   - Autocomplete 
   - Diagnostics (lints, in CodeMirror's terminology)
-  - Running typescript in a web worker for perf
+  - This is the simplest way to use this code: you'll be running the TypeScript server on the same processing as the rest of the web application. To run the TypeScript server in a worker (which can yield performance benefits, at the cost of complexity), see the next section.
   - [Go to definition · val-town/codemirror-ts _202311](https://github.com/val-town/codemirror-ts/issues/8)
     - This module currently uses TypeScript, but not the extra language server. It'd probably use the language server if this adopted more of a client-server architecture, or maybe it should in general, but for now, it's integrating with TypeScript, and we'll need to figure out what's under the hood of the LSP adapter's implementation.
 - https://github.com/modderme123/codemirror-extension-typescript /202312/ts/inactive
@@ -1046,8 +1067,10 @@ modified: 2023-06-23T12:46:53.288Z
   - https://replit.com/@util/Codemirror-CSS-color-picker
   - extension that adds a color picker input next to CSS color values.
 
-- https://github.com/emmetio/codemirror6-plugin /202404/ts/Emmet
+- https://github.com/emmetio/codemirror6-plugin /202408/ts/Emmet
   - CodeMirror 6 extension that adds Emmet support to text editor.
+  - Emmet extension can track abbreviations that user enters in some known syntaxes like HTML and CSS. When abbreviation becomes complex (expands to more that one element), it displays abbreviation preview
+  - Currently, CodeMirror API doesn’t provide viable option to get document syntax to allow plugins to understand how to work with document. So you have to specify document syntax manually in Emmet plugin.
   - Extension development is sponsored by Replit
 
 - https://github.com/val-town/codemirror-continue /202401/ts
@@ -1098,6 +1121,11 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/eriknewland/rainbowbrackets /202304/js/inactive
   - https://codepengpt.netlify.app/
   - This is a working attempt at a rainbowBracket extension for CodeMirror6.
+
+- https://github.com/cloudflypeng/codemirror-ext /202408/ts
+  - an image upload plugin for CodeMirror that supports pasting or dragging and dropping images and uploading them to a server. 
+  - allows using either a default fetch upload logic or custom upload logic.
+  - feat: 添加 CodeMirror 的图片转换base64 插件
 # utils
 - https://github.com/lume/code-mirror-el /MIT/202405/ts
   - https://codepen.io/trusktr/pen/poGZYOy?editors=1000
@@ -1198,6 +1226,15 @@ modified: 2023-06-23T12:46:53.288Z
   - Demo of using a Web Worker LSP in CodeMirror 6
   - https://gitlab.com/aedge/codemirror-web-workers-lsp-demo
 
+- https://github.com/remcohaszing/codemirror-languageservice /MIT/202408/ts
+  - https://codemirror-languageservice.js.org/
+  - Integrate a Language Server Protocol compatible language service into CodeMirror
+  - This demo shows how you can integrate an LSP based language service into CodeMirror.
+    - The completion source autocompletes words based on the words in the document and the character typed.
+    - The hover tooltip source shows a tooltip which displays the word you’re hovering over.
+    - The lint source shows diagnostics for the words hint, info, warning, error, unnecessary, and deprecated.
+  - Since LSP uses markdown, you need to provide a function to convert markdown to DOM. A good option is to combine hast-util-to-dom, mdast-util-from-markdown, and mdast-util-to-hast
+
 - https://github.com/FurqanSoftware/codemirror-languageserver /161Star/BSD/202212/ts/inactive
   - Language Server integration for CodeMirror 6
   - This plugin enables code completion, hover tooltips, and linter functionality by connecting a CodeMirror 6 editor with a language server over WebSocket.
@@ -1242,6 +1279,9 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/eliasfeijo/codemirror-lang-ejs /MIT/202302/ts
   - EJS templating language implementation for CodeMirror v6
 
+- https://github.com/orionlee/codemirror-js-mixed /MIT/202008/js/inactive
+  - A language mode for CodeMirror, support highlighting HTML/CSS in javascript codes.
+
 - https://github.com/n8n-io/codemirror-lang-n8n /MIT/202404/ts
   - n8n expression language support for CodeMirror 6
 
@@ -1257,6 +1297,12 @@ modified: 2023-06-23T12:46:53.288Z
 
 - [CodeMirror extension to detect and fix missing JSX Pragma](https://gist.github.com/tmcw/fefe8b5c0a63b51bc8a303c8a3553fac)
   - detects the lack of a pragma and the presence of JSX syntax, by using CodeMirror's existing syntax tree
+
+- https://github.com/Juexro/codemirror-iecst /MIT/202408/js
+  - https://demo.jsmile.top/codemirror-iecst-editor
+  - Structured Text language support, includes syntax highlight based on IEC 61131-3.
+  - This package implements iecst language support for the CodeMirror code editor.
+  - https://github.com/Juexro/livedemo
 # code-playgrounds
 - https://github.com/mdn/bob /MIT/202407/ts
   - ✨ Builder of Bits aka The MDN Web Docs interactive examples, example builder
@@ -1446,6 +1492,13 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/codepod-io/codepod /MIT/202311/ts/inactive
   - Codepod provides the interactive coding experience popularized by Jupyter, but with scalability and production-readiness
   - 画板上的代码沙盒，使用monaco而不是codemirror
+
+- https://github.com/gravity-ui/markdown-editor /MIT/202408/js
+  - An implementation of "codemirror.net" designed for easy access to coding for kids and schools
+
+- https://github.com/thexeromin/webcode /202408/ts
+  - https://webcode-client.netlify.app/
+  - a web-based C compiler and terminal, allowing you to write, compile, and run C code directly in your browser with no installation needed.
 # starter
 - https://github.com/A99US/CM6-Browser-Wrapper /MIT/202308/js/inactive
   - https://a99us.github.io/CM6-Browser-Wrapper/
@@ -1499,6 +1552,9 @@ modified: 2023-06-23T12:46:53.288Z
 
 - examples
   - [editor | calculang metal](https://finding-calculang-foc.netlify.app/editor)
+
+- https://github.com/PlayerMiller109/obsidian-cm-decorations /202408/js
+  - a codemirror 6 learning case in Obsidian, create static and dynamic decorations
 # examples
 - https://github.com/alexwkleung/Iris /MIT/202312/ts/inactive
   - https://irisnotes.vercel.app/
@@ -1557,6 +1613,13 @@ modified: 2023-06-23T12:46:53.288Z
   - CodeMirror6 based SQL code editor which is used in TiDB Cloud Console
   - Supply React component and Vue component
   - 提供了ai-widget
+
+- https://github.com/surrealdb/surrealist /MIT/202408/ts
+  - https://surrealist.app/
+  - Surrealist is the ultimate way to visually manage your SurrealDB database. 
+  - Effortlessly connect to any SurrealDB database and execute queries
+  - 依赖codemirror、tauri
+  - The Surrealist web app provides a fully functional database management experience with support for multiple connections and an integrated sandbox environment.
 
 - https://github.com/GaganpreetKaurKalsi/SQL-Editor /202206/js/inactive
   - https://sql-editor-react.vercel.app/sql-editor
@@ -1686,6 +1749,11 @@ modified: 2023-06-23T12:46:53.288Z
   - https://darrowv.github.io/JsLogs/
   - Online JS Code Console
 
+- https://github.com/worktile/ng-codemirror /202408/ts
+  - codemirror component for Angular（^8.0+）
+  - 依赖codemirror5、ng-zorro-antd、rxjs
+  - support all options by codemirror（^5.52.0）.
+
 - https://github.com/bootstrapworld/codemirror-blocks /202301/ts/inactive
   - A library for building language-specific, CodeMirror-friendly editors that are a11y-friendly.
 
@@ -1748,7 +1816,17 @@ modified: 2023-06-23T12:46:53.288Z
   - A free and open source code snippets manager for developers
   - 依赖codemirror5、d3、dom-to-image、electron-store、marked
   - 202208: I am excited that v3.0.0-beta.1 is out which now uses Codemirror instead of Ace
-# coding-ai
+# pm-code-docs
+- https://github.com/wagmi-dev/vocs /MIT/202408/ts
+  - https://vocs.dev/
+  - Minimal Documentation Framework, powered by React + Vite
+  - Vocs is a minimal static documentation generator designed to supercharge your documentation workflow
+  - Write your content in Markdown or MDX, and Vocs will generate a static site with a default theme.
+  - Code Snippets in Vocs come in two forms: a virtual file snippet in your Markdown code (Virtual File Snippets), or a physical file snippet in your file system (Physical File Snippets)
+  - [Twoslash – Vocs](https://vocs.dev/docs/guides/twoslash)
+    - TypeScript Twoslash can be seen as a pre-processor that enhances your code-samples. It is a markup language for JavaScript and TypeScript.
+    - It leverages the compiler APIs used by text editors to offer type-driven hover information, precise error messages, and type callouts.
+# pm-coding-ai
 - https://github.com/asadm/codemirror-copilot /MIT/202401/ts
   - https://copilot.asadmemon.com/
   - CodeMirror extension to add GPT autocompletion like GitHub's Copilot
@@ -1759,8 +1837,10 @@ modified: 2023-06-23T12:46:53.288Z
   - Highly customizable AI completion plugin for web-based code editors.
 
 - https://github.com/mattelim/text-gpt-p5-app /MIT/202311/js
+  - https://text-gpt-p5.vercel.app/
   - A text to p5.js generative editor powered by GPT-3.5
   - react-codemirror
+  - A Next.js full-stack app (React, Next API routes).
 
 - https://github.com/sourcegraph/cody /2kStar/apache2/202405/ts
   - https://cody.dev/
@@ -1858,3 +1938,6 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/FriendsOfREDAXO/aceeditor /MIT/202407/php/js
   - Ace-Editor - The high performance code editor for REDAXO - Replacement for codemirror
+
+- https://github.com/hiterusrk/codemirror.next /202009/ts
+  - This code is dual-licensed under the MIT and GPL-v3 licenses

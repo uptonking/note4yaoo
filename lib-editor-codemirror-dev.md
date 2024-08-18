@@ -148,7 +148,8 @@ modified: 2021-05-06T09:38:31.520Z
 
 - experimental
   - lazy
-  - load new document 
+  - load new document
+  - conflict
 
 - port to server side lang like prosemirror
 
