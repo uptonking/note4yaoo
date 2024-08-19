@@ -19,10 +19,6 @@ modified: 2023-06-23T12:46:53.288Z
     - diff只需初始结束状态, 而时间旅行支持中间状态
   - codemirror + dockview/fileTree, partykit
 
-- diff视图 unifiedMergeView
-  - 上下版: 参考 BlazorCodeMirror6, code-editor-angular
-  - 左右版: 参考 mdxeditor, jupyter-nbdime
-
 - fans-codemirror
   - https://github.com/val-town/codemirror-ts
   - https://github.com/uiwjs/react-codemirror /华人
@@ -137,6 +133,12 @@ modified: 2023-06-23T12:46:53.288Z
     - Wait for 1 second to trigger completions. 
     - The default Pretzel AI Server uses Mistral's Codestral but you can switch the inline completion model in Settings
   - We DO NOT store any code or data you send to the Pretzel AI Server.
+- https://github.com/srcbookdev/srcbook /apache2/202408/ts
+  - TypeScript & JavaScript notebooks.
+  - Create, run, and share reproducible programs and ideas
+  - Export to valid markdown format (.src.md)
+  - Local execution with a web interface
+  - Powered by Node.js
 
 - Zettlr /9.3kStar/GPLv3/202408/ts/vue/偏学术编辑器
   - https://github.com/Zettlr/Zettlr
@@ -521,14 +523,6 @@ modified: 2023-06-23T12:46:53.288Z
   - https://tome.evinowen.net/
   - 🌵 git integrated cross-platform markdown editor
   - 依赖codemirror6、marked、nodegit、vue3、@electron/rebuild
-
-- https://github.com/ralismark/ibis-wiki /202406/ts
-  - http://www.ralismark.xyz/ibis-wiki/
-  - personal wiki, built to fit a personal niche
-  - inspired by the likes of TiddlyWiki and Logseq
-  - This wiki is a purely static site, and does not have its own backend
-  - notes are stored via an external storage provider -- the only kind supported at the moment is S3-like
-  - 依赖codemirror
 
 - https://github.com/minditor/minditor /MIT/202403/ts
   - https://minditor.dev/
@@ -928,6 +922,10 @@ modified: 2023-06-23T12:46:53.288Z
   - 依赖codemirror5, socket.io-client, react
 
 ## diff
+
+- diff视图
+  - 上下版: 参考 BlazorCodeMirror6, code-editor-angular
+  - 左右版: 参考 mdxeditor, jupyter-nbdime
 
 - https://github.com/OrgFlow/codemirror-conflicts /MIT/202408/ts
   - A CodeMirror extension that displays Git conflict markers (`<<<<<<<` syntax) as side-by-side pieces of conflicting code, and provides an interface for accepting, copying, and deleting the chunks, with a top toolbar that shows information about remaining conflicts.
@@ -1556,6 +1554,17 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/PlayerMiller109/obsidian-cm-decorations /202408/js
   - a codemirror 6 learning case in Obsidian, create static and dynamic decorations
 # examples
+- https://github.com/ralismark/ibis-wiki /202406/ts
+  - http://www.ralismark.xyz/ibis-wiki/
+  - personal wiki, built to fit a personal niche
+  - inspired by the likes of TiddlyWiki and Logseq
+  - 依赖codemirror6、wink-nlp
+  - 实现了diff上下视图，The merge plugin doesn't really have a way to have it conditionally enabled -- it has to be always enabled.
+  - This wiki is a purely static site, and does not have its own backend
+  - notes are stored via an external storage provider -- the only kind supported at the moment is S3-like
+  - there are [[internal-links]] a la Roam Research, 类似双链
+  - https://github.com/ralismark/ibis-wiki/blob/main/src/codemirror/merge.ts
+
 - https://github.com/alexwkleung/Iris /MIT/202312/ts/inactive
   - https://irisnotes.vercel.app/
   - A comfortable note-taking app powered by Markdown
@@ -1610,6 +1619,7 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/tidbcloud/tisqleditor /MIT/202408/ts
   - https://tisqleditor.vercel.app/
+  - https://tisqleditor.vercel.app/examples?ex=all&theme=default
   - CodeMirror6 based SQL code editor which is used in TiDB Cloud Console
   - Supply React component and Vue component
   - 提供了ai-widget

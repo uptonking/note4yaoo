@@ -514,6 +514,7 @@ sudo systemctl start minidlna
 - [When I use proxy, it tells me Unable to connect to 127.0.0.1:7890 · Issue #3416 · kubernetes-sigs/kind](https://github.com/kubernetes-sigs/kind/issues/3416)
 
 ```shell
+# 用来安装npm依赖特别快
 export https_proxy=http://127.0.0.1:7890;export http_proxy=http://127.0.0.1:7890;export all_proxy=socks5://127.0.0.1:7890
 ```
 
