@@ -433,7 +433,15 @@ npx create-strapi@rc strapi5-play-202408 --use-npm --quickstart --ts --skip-clou
 console.log(`接到到PaaS消息：`, name, dao.playgroundInfo.status, dao.dockerStatus, payload)
 ```
 
-## 0817
+## 0820
+
+- dev-log
+  - 本次cycle的需求评审
+  - 隐藏diff-view中的绿色部分，探索动画的实现方式
+- dev-to
+  - 初步实现diff视图的打字机效果
+
+## 0819
 
 - dev-log
   - 时光机基本的播放控制

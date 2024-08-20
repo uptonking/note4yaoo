@@ -55,7 +55,7 @@ window.matchMedia('(prefers-color-scheme: dark)')
 - ## [why with codemirror6 @codemirror/autocomplete auto create hidden img? - discuss. CodeMirror _202304](https://discuss.codemirror.net/t/why-with-codemirror6-codemirror-autocomplete-auto-create-hidden-img/6173)
 - This avoids a number of browser bugs caused by editing next to uneditable elements such as widgets.
 
-- [Hiding widget buffers for better text wrapping - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/hiding-widget-buffers-for-better-text-wrapping/7512)
+- [Hiding widget buffers for better text wrapping - v6 - discuss. CodeMirror _202312](https://discuss.codemirror.net/t/hiding-widget-buffers-for-better-text-wrapping/7512)
   - My understanding is that widget buffers exist to work around browser bugs with contenteditable
 # discuss-code-animation 💫
 - ## 
@@ -79,7 +79,7 @@ window.matchMedia('(prefers-color-scheme: dark)')
   - https://codepen.io/amit_sheen/pen/YzZYoMV
 - https://codepen.io/denic/pen/GRoOxbM
 
-- ## [A Multi-line CSS only Typewriter effect - DEV Community _202204](https://dev.to/afif/a-multi-line-css-only-typewriter-effect-3op3)
+- ## ☄️ [A Multi-line CSS only Typewriter effect - DEV Community _202204](https://dev.to/afif/a-multi-line-css-only-typewriter-effect-3op3)
 - 
 
 - ## [Typewriter Effect | CSS-Tricks _201607](https://css-tricks.com/snippets/css/typewriter-effect/)
@@ -189,6 +189,11 @@ window.matchMedia('(prefers-color-scheme: dark)')
 
 - ## 
 
+- ## 
+
+- ## [Getting the DOM Rect(s) of a text range that may be split across lines? - discuss. CodeMirror](https://discuss.codemirror.net/t/getting-the-dom-rect-s-of-a-text-range-that-may-be-split-across-lines/6777)
+- The equivalent to charCoords is coordsAtPos, and you can use moveToLineBoundary to find the visual start/end of a line. Or use the built-in tooltip feature and let that manage tooltip positioning.
+
 - ## What code editor theme do you use?
 - https://x.com/vladyslavmoroz/status/1821469348977918139
 - Was a Solarized user for a decade. Recently switched to Nord.
@@ -204,6 +209,21 @@ window.matchMedia('(prefers-color-scheme: dark)')
 
 # discuss-view-decoration-code-folding/hide/replace
 - ## 
+
+- ## 
+
+- ## [Decoration.mark() has lower precedense over styleTags()? - discuss. CodeMirror](https://discuss.codemirror.net/t/decoration-mark-has-lower-precedense-over-styletags/7397)
+- Wrapping your decoration extension in Prec.highest should probably fix this.
+
+- ## 💡 [Composing multiple DecorationSets - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/composing-multiple-decorationsets/2922)
+- State-level decorations can be provided in bulk with `computeN` , something like…
+  - `EditorView.decorations.computeN(s => s.field(f))`
+
+- You could also create a view plugin providing multiple decoration sets by providing an array of plugin field providers for `PluginField.decorations` via the `provide` option in the plugin spec, but that only works if the number of sets is known in advance.
+
+- ## [a display bug - discuss. CodeMirror](https://discuss.codemirror.net/t/a-display-bug/4074)
+  - i find that when i set parent node’s style display to none of CodeMirror, then use the replaceSelection() API to replace some contents, and then i set parent node’s style display to block, the contents of CodeMirror didn’t change until after i click the editor area. is this a bug?
+- No, refresh() is the way to solve this. The editor has no way to notice that it became visible.
 
 - ## 💡 [Replacing keywords in text as they are written - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/replacing-keywords-in-text-as-they-are-written/4123)
   - my question is not so much about how to perform the text replacements but about what is the best way to trigger those replacements as the content is edited.
@@ -225,14 +245,15 @@ window.matchMedia('(prefers-color-scheme: dark)')
 - I think what’s going wrong is that you’re using the line number, instead of the line offset (doc.line(lineNumber).from) when calling .range.
   - 基于Decoration.line实现
 
-- ## [Easily track & remove content with decorations - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/easily-track-remove-content-with-decorations/4606)
+- ## 🤔 [Easily track & remove content with decorations - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/easily-track-remove-content-with-decorations/4606)
 - The way to do something like bookmarks would be to create a state field that tracks the positions you are interested in, and on any transaction where `!tr.changes.empty` , map all those positions to their new equivalent with `tr.changes.mapPos` . Using a range set might be an optimization for this (it is more clever about mapping large numbers of positions without looking at every single one of them).
 
 - ## [Are these styles all right, or is this intervening too much into the editor? - discuss. CodeMirror](https://discuss.codemirror.net/t/are-these-styles-all-right-or-is-this-intervening-too-much-into-the-editor/5071)
 - Mark decorations can only style content, so if there’s no content, they don’t appear, no.
 
 - ## [How to add `Decoration.line()` for multiple lines at once? - discuss. CodeMirror](https://discuss.codemirror.net/t/how-to-add-decoration-line-for-multiple-lines-at-once/4156)
-- You can also use RangeSet.of with a second argument of true if you can’t sort the ranges
+- You can also use `RangeSet.of` with a second argument of true if you can’t sort the ranges
+  - Or keep using a builder and add some extra logic to make sure you insert them in order.
 
 - ## [Conditionally showing Widgets using a StateField - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/conditionally-showing-widgets-using-a-statefield/6020)
   - I’m trying to make sure those decorations only show when the cursor is NOT within the image tag. The idea is to have inline images throughout the document that are only visible when the user is not actively editing the image tag itself.
@@ -265,12 +286,12 @@ window.matchMedia('(prefers-color-scheme: dark)')
 - I’ve used DecorationSet.between to iterate the decorations in the set
 
 - ## [Hide StateField decorations when replaced code is selected - v6 - discuss. CodeMirror _202310](https://discuss.codemirror.net/t/hide-statefield-decorations-when-replaced-code-is-selected/7219)
-  - I’ve achieved the same effect using a ViewPlugin and listening to update.selectionSet to determine the decorations that should no longer be displayed and provide a filtered decoration set; however I am a) not sure that this is a good solution and b) how to achieve the same with a StateField.
+  - I’ve achieved the same effect using a `ViewPlugin` and listening to `update.selectionSet` to determine the decorations that should no longer be displayed and provide a filtered decoration set; however I am a) not sure that this is a good solution and b) how to achieve the same with a StateField.
 
 - State fields should be able to react to updates in much the same way — they see every transaction that comes through, and can look at the selection of the new state.
 
 - this introduces a new issue. Since the widget influences the vertical layout, hiding it, sometimes influences the ongoing selection (because the lines get moved around and the cursor finds itself on top of a different line). This sometimes deselects the underlying code, making the widget appear again, only to change the vertical layout once more, and so on. A simple solution would be to wait until the user is “done” selecting before hiding/showing widgets; but I think there is no such event in CodeMirror to listen to, or is there?
-  - Not on the state level. You can of course listen to mouse and touch events on the view.
+  - Not on the state level. 💡 You can of course listen to mouse and touch events on the view.
 
 - ## [How to replace content with widget? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/how-to-replace-content-with-widget/4288)
 - You have to provide your decorations from a state field, not a view plugin, if they are able to change the vertical structure of the editor content (because the viewport depends on that structure, and view plugins update after the viewport has been computed). 
