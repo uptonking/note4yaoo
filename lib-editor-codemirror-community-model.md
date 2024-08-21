@@ -21,6 +21,14 @@ modified: 2024-08-11T03:29:17.282Z
 - ## 
 
 - ## 
+# discuss-state-field
+- ## 
+
+- ## 
+
+- ## [Using `EditorView.scrollIntoView` in `transactionExtender` breaks `StateField` updates - discuss. CodeMirror](https://discuss.codemirror.net/t/using-editorview-scrollintoview-in-transactionextender-breaks-statefield-updates/7476)
+- Editor states, including any values attached to them, should be immutable.
+
 # discuss
 - ## 
 

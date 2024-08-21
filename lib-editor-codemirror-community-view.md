@@ -14,6 +14,8 @@ modified: 2024-08-08T20:49:11.571Z
 
 - ## 
 
+- ## 
+
 - ## 🌰 [Dynamic light mode / dark mode - how? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/dynamic-light-mode-dark-mode-how/4709)
 - `this.view.dispatch({ effects: this.editorTheme.reconfigure( selectedTheme === "light" ? oneLight : oneDark ) })` ; 
 
@@ -215,6 +217,42 @@ window.matchMedia('(prefers-color-scheme: dark)')
   - make sure this is below .cm-selectionLayer so you can apply mix-blend-mode: multiply and darken the selection
   - by putting the pseudoelements in explicit stacking order, you kind of "cover up" the top & bottom borders, giving the outline effect. So it's a hack, but is much nicer to do this w/ just CSS than to wrangle contiguous borders with JS or something
 
+# discuss-event-scroll
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Smooth scroll to selection position? - discuss. CodeMirror _202208](https://discuss.codemirror.net/t/smooth-scroll-to-selection-position/4875)
+- You can get the current scroll position with `view.scrollDOM.scrollTop` . The desired scroll position you’d have to compute based on the position you want to see ( `view.coordsAtPos` ) and the editor rectangle ( `view.scrollDOM.getBoundingClientRect` ).
+
+- `view.lineBlockAt` should work for out-of-viewport positions, though it may be an estimate, rather than a precise value if they (or other content between them and the current scroll position) haven’t been drawn before.
+
+```JS
+const f = view.state.doc.line(lineNumber);
+const { qq } = view.coordsAtPos(f.from); // can return null
+
+view.scrollDOM.scrollTo({ qq, behavior: 'smooth' });
+```
+
+- ## 💡 [CM6 Scroll To Middle? - discuss. CodeMirror _202102](https://discuss.codemirror.net/t/cm6-scroll-to-middle/2924)
+  - Is there a way to configure the “scrollIntoView” option in a transaction update to scroll the selection to the middle of the screen rather than the bottom?
+
+- Not currently. 
+  - I think the best way forward would be to write your own view plugin that does this. Something like…
+
+- Got this working. The math here was a bit off because `coordsAtPos` gets the scrolled position, not the absolute one, so you have to add the scroller’s `scrollTop` to it. Also I had to add a timeout of 1ms so that it doesn’t interfere with CM’s native scrolling.
+
+- 💡 Using a transaction extender that adds a scroll effect to transactions that scroll the cursor into view will cause less DOM reflows (and allow you to use the existing centering code).
+# discuss-event-drag
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
 # discuss-view-decoration-code-folding/hide/replace
 - ## 
 
@@ -223,7 +261,6 @@ window.matchMedia('(prefers-color-scheme: dark)')
 - ## 
 
 - ## 
-
 
 - ## [Creating a Decoration that updates on an interval - v6 - discuss. CodeMirror _202210](https://discuss.codemirror.net/t/creating-a-decoration-that-updates-on-an-interval/5121)
   - I realized that view.dispatch() will refresh the gutters. I put that on an interval in my ViewPlugin and now my gutters update on an interval as I had hoped.

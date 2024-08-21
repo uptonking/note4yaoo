@@ -7,7 +7,6 @@ modified: 2024-08-11T03:39:54.012Z
 
 # lib-editor-codemirror-community-perf-optimization
 
-
 # guide
 
 # discuss-stars
@@ -31,6 +30,16 @@ modified: 2024-08-11T03:39:54.012Z
 - ## 
 
 - ## 
+# discuss-big-document
+- ## 
+
+- ## 
+
+- ## [Text not highlighted after EditorView.scrollIntoView - v6 - discuss. CodeMirror _202309](https://discuss.codemirror.net/t/text-not-highlighted-after-editorview-scrollintoview/7073)
+- Parsing work is throttled so as to not slow down the UI and not waste too much cpu/battery/power. That means that if you are way down a big document, it may take a while to catch up, and if the editor isn’t active, it may stop doing work altogether on the assumption that the user isn’t working with it.
+
+- is there an official way to increase the time budget or trigger a refresh programmatically?
+  - I think `forceParsing` is what you are looking for.
 # discuss
 - ## 
 

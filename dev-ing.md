@@ -420,6 +420,8 @@ console.log(`接到到PaaS消息：`, name, dao.playgroundInfo.status, dao.docke
 
 ## 0821
 
+- 在setInterval中更新操作行号，那么自动滚动到dom需要~~在下次渲染前触发，不能在setInterval触发~~
+
 ```shell
 # fileTreeIgnore
 .git/;.1024.nix;.1024feature*;.nfs*;*.dll;*.swp;.paas-unit-*;core.*;.breakpoints;.idea/;.vscode/;node_modules/

@@ -15,7 +15,10 @@ modified: 2023-06-14T00:53:15.226Z
 
 ## 
 
-## 
+## codemirror打字机动画
+
+- 为什么先dispatch(scrollIntoView)再typing-line的执行结果是先动态打字，再滚动
+- 在setInterval中更新操作行号，那么自动滚动到dom需要~~在下次渲染前触发，先滚动到下一块再打字机  ~~
 
 ## 🎨 flex-col布局，切换底部时光机面板时要保持底部面板内容高度变化时始终可见
 
