@@ -234,7 +234,7 @@ npx create-strapi@rc strapi5-play-202408 --use-npm --quickstart --ts --skip-clou
 ## ing
 
 - not-yet
-  - elmesque-editor
+  - ~~elmesque-editor~~, 基于immutable思想实现的编辑器大多采用redux/elm风格
   - branching/versioned-doc
   - pouchdb + kappa-crdt + eav => pouchdb-crdt-eav
   - todo remove hashId在编辑器model中有什么作用
@@ -384,41 +384,26 @@ npx create-strapi@rc strapi5-play-202408 --use-npm --quickstart --ts --skip-clou
   - ~~上下布局diff视图~~
   - ~~播放控制逻辑，op的内容和时机~~
   - ~~回放模式支持编辑，内容和光标选区的变化~~
+  - ~~处理打开已删除文件、新增文件~~
   - changed-files-list
-  - 处理 打开已删除文件、新增文件
-
-- 测试集成-to
-  - 前端未控制member/owner的按钮、路由访问权限
-  - agent生成thread名称限制长度
-  - think流程支持stop，设计稿有设计
-  - 在驾驶舱的plan文件列表打开文件，think/plan, 聊天时的
-  - think卡片打开文件，滚动到文件的行数
-  - 聊天搜索 未实现
-  - 驾驶舱还原设计稿
-  - agent计划只给到文件名，暂时没做到方法粒度
-  - 追加步骤的上限控制
-  - 驾驶舱里面的think流程与外面有不同，补充表单
-  - 插入代码块到文件中，未实现
-  - 引用历史聊天的内容，未实现
-  - 引用terminal的异常信息
-  - 聊天上传图片未上传，暂时先关闭
-  - 聊天点赞，先隐藏
-  - 重新生成内容， 前端再调一次
-  - 计划agent和聊天agent不是一个
-  - ❓ 执行计划时，其他人能看到进度吗
-  - 终止二次确认前ai还会继续执行
-  - ai执行计划后，用户将文件删了，action显示异常
-  - 取消置顶的按钮，待确认，人工可以取消置顶吗
-    - 暂停时切换action，置顶也要变
-  - 回放时，也会置顶卡片
-  - 任务执行时，多人的暂停与恢复
-  - 人工删除ai需要的文件，ai会执行异常，整个计划失败
-  - ai修改后的文件，人工再修改，然后撤销人工修改，进度条从绿色变成黄色吗？
-  - 执行过程中澄清补充需求，暂时不做
-  - 回放模式可以删除文件吗？  待确认。 确认修改文件
-  - 回放模式取消diff时，直接展示最新代码
 
 - ❓ 计划终止后，如何清理action，需要agent提供api
+
+- 进度条打开时的focus状态
+  - 去掉重播时收起的动画
+
+- diffView
+  - 隐藏绿色部分后，红色部分是否显示行号
+
+- cmd+k
+  - 发送到驾驶舱的消息接口， agent做什么响应
+  - 消息后再显示需要恢复吗
+
+- paas
+  - 显示部分隐藏文件，如 .gitignore
+
+- 
+- 
 
 ## 080
 
@@ -433,11 +418,27 @@ npx create-strapi@rc strapi5-play-202408 --use-npm --quickstart --ts --skip-clou
 console.log(`接到到PaaS消息：`, name, dao.playgroundInfo.status, dao.dockerStatus, payload)
 ```
 
+## 0821
+
+```shell
+# fileTreeIgnore
+.git/;.1024.nix;.1024feature*;.nfs*;*.dll;*.swp;.paas-unit-*;core.*;.breakpoints;.idea/;.vscode/;node_modules/
+```
+
+- [Can a number returned by setTimeout() in javascript be negative? - Stack Overflow](https://stackoverflow.com/questions/52179772/can-a-number-returned-by-settimeout-in-javascript-be-negative)
+  - The returned `timeoutID` is a positive integer value which identifies the timer created by the call to setTimeout(). This value can be passed to clearTimeout() to cancel the timeout.
+  - The returned `intervalID` is a numeric, non-zero value which identifies the timer created by the call to setInterval(); this value can be passed to clearInterval() to cancel the interval.
+
+- [Is calling setTimeout with a negative delay ok? - Stack Overflow](https://stackoverflow.com/questions/8430966/is-calling-settimeout-with-a-negative-delay-ok)
+  - the specification requires that there is a minimum timeout.
+  - If you provide something less than this (HTML5 spec says 4ms) then the browser will just ignore your delay and use the minimum.
+  - So negatives should be fine, since it'll just be less than the minimum.
+
 ## 0820
 
 - dev-log
   - 本次cycle的需求评审
-  - 隐藏diff-view中的绿色部分，探索动画的实现方式
+  - 隐藏diffView中的绿色部分，探索动画的实现方式
 - dev-to
   - 初步实现diff视图的打字机效果
 
@@ -454,8 +455,8 @@ console.log(`接到到PaaS消息：`, name, dao.playgroundInfo.status, dao.docke
 
 - 🔡 requirements-review-v20240819
 - 代码工具条的出现场景
-  - 光标在diff-view里面就出现
-  - 光标在非diff-view代码块需要选中代码才出现，只有edit和chat
+  - 光标在diffView里面就出现
+  - 光标在非diffView代码块需要选中代码才出现，只有edit和chat
 - action的修改操作
   - 只支持删除不支持添加，不支持细粒度修改
   - 每修改一个action都发送消息给agent，不是修改完后一起发送
@@ -576,6 +577,37 @@ console.log(`接到到PaaS消息：`, name, dao.playgroundInfo.status, dao.docke
 - dev-to
   - 时光机执行打开文件
 
+- 测试集成-to
+  - 前端未控制member/owner的按钮、路由访问权限
+  - agent生成thread名称限制长度
+  - think流程支持stop，设计稿有设计
+  - 在驾驶舱的plan文件列表打开文件，think/plan, 聊天时的
+  - think卡片打开文件，滚动到文件的行数
+  - 聊天搜索 未实现
+  - 驾驶舱还原设计稿
+  - agent计划只给到文件名，暂时没做到方法粒度
+  - 追加步骤的上限控制
+  - 驾驶舱里面的think流程与外面有不同，补充表单
+  - 插入代码块到文件中，未实现
+  - 引用历史聊天的内容，未实现
+  - 引用terminal的异常信息
+  - 聊天上传图片未上传，暂时先关闭
+  - 聊天点赞，先隐藏
+  - 重新生成内容， 前端再调一次
+  - 计划agent和聊天agent不是一个
+  - ❓ 执行计划时，其他人能看到进度吗
+  - 终止二次确认前ai还会继续执行
+  - ai执行计划后，用户将文件删了，action显示异常
+  - 取消置顶的按钮，待确认，人工可以取消置顶吗
+    - 暂停时切换action，置顶也要变
+  - 回放时，也会置顶卡片
+  - 任务执行时，多人的暂停与恢复
+  - 人工删除ai需要的文件，ai会执行异常，整个计划失败
+  - ai修改后的文件，人工再修改，然后撤销人工修改，进度条从绿色变成黄色吗？
+  - 执行过程中澄清补充需求，暂时不做
+  - 回放模式可以删除文件吗？  待确认。 确认修改文件
+  - 回放模式取消diff时，直接展示最新代码
+
 ### 时光机执行与回放的细节确认
 
 - diff视图显示的场景
@@ -603,9 +635,9 @@ console.log(`接到到PaaS消息：`, name, dao.playgroundInfo.status, dao.docke
 ## 0805
 
 - dev-log
-  - 调研及研发diff-view
+  - 调研及研发diffView
 - dev-to
-  - 交付diff-view, cmd+k的代码生成部分, 对接agent的播放控制
+  - 交付diffView, cmd+k的代码生成部分, 对接agent的播放控制
 
 - 需求评审
 - 时光机进度条点击到中间位置，会自动吸附到进度条小节的开始位置
@@ -629,8 +661,8 @@ console.log(`接到到PaaS消息：`, name, dao.playgroundInfo.status, dao.docke
   - term.options.theme = { background: '#ccc' } 注意这里更新是replace而不是merge
 
 - dev-log
-  - 讨论了diff-view接入使用场景的状态数据流，以及产品细节
-  - 修改paas的编辑器，增加了diff-view相关api
+  - 讨论了diffView接入使用场景的状态数据流，以及产品细节
+  - 修改paas的编辑器，增加了diffView相关api
 - dev-to
   - 实现与agent无关的上下布局的diff编辑器
 # dev-07
@@ -1246,7 +1278,7 @@ type Prefix < K > = K extends string ? `on${K}` : K;
   - 制定计划agent与执行计划agent不是同一个角色
   - 驾驶舱聊天数据持久化
   - cde中回放数据持久化
-- diff-view
+- diffView
   - 模型
   - 视图
   - 选区光标
@@ -1255,7 +1287,7 @@ type Prefix < K > = K extends string ? `on${K}` : K;
   - cde新布局的发布
 - dev-to
   - 继续完善cde的布局和交互逻辑
-  - 根据linear的任务拆分，推进clacky的发布，主要包括 制定计划、diff-view的逻辑、驾驶舱ai对话的ui(不包括逻辑)
+  - 根据linear的任务拆分，推进clacky的发布，主要包括 制定计划、diffView的逻辑、驾驶舱ai对话的ui(不包括逻辑)
 
 ## 0608
 

@@ -14,6 +14,26 @@ modified: 2023-01-29T10:52:44.183Z
 
 - ## 
 
+- ## 
+
+- ## 🆚 [Difference between state field and facet? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/difference-between-state-field-and-facet/3650)
+- How do you update the facet’s content? The way these are designed, fields are useful for independent bits of state, and facets are more applicable for derived state and inter-module communication.
+
+- ## [Expose API for browser extensions - v6 - discuss. CodeMirror _202303](https://discuss.codemirror.net/t/expose-api-for-browser-extensions/5864)
+  - Browser extensions that act on editable content, such as Grammarly or LanguageTool, currently cannot fully work on CodeMirror 6 because of viewporting. 
+  - Would you be open to exposing some kind of (possibly read-only) API for such extensions? Specifically, as a minimum, some way of obtaining the full editable document text from a CM6 editor root DOM node
+  - Being able to add something like an `updateListener` would also be useful.
+
+- I feel browser extensions that insert themselves into the page’s script are fundamentally incompatible with the kind of closed-world model that page authors need to actually write reliable software
+  - I can imagine browsers eventually supporting some kind of interface for this kind of editing helper, or even something being standardized in JavaScript, in a way that is well-defined and that page scripts can work with. But until that exists, I don’t really want to encourage the invasive monkey-patching that these extensions are doing.
+
+- 202303: In the case of Grammarly, I’m not sure whether you’re aware that its approach changed fundamentally around a year ago. The short version is that its decorations are now drawn in a separate layer outside the editor content, and it doesn’t touch the content itself. It already works reasonably well with CM6, but without access to the full document text, it can’t, for example, provide an accurate number of how many suggestions it wants to give you. It also doesn’t pick up viewport changes accurately, which it would be better able to do with access to an update listener.
+
+- ## [Listen to text changes of an existing state/view - v6 - discuss. CodeMirror _202303](https://discuss.codemirror.net/t/listen-to-text-changes-of-an-existing-state-view/5952)
+  - Is there a way to attach a listener to an existing item on the page? I need to do this from an extension so I want to make sure I don’t break the 3rd-party editor by recreating the whole state.
+
+- There is a way to attach extensions, but for that you do need StateEffect.appendConfig 
+
 - ## 👷 In his #BOBkonf2023 talk "State Transitions in Complex Systems", @MarijnJH shows how CodeMirror uses persistent state values & first-class transactions to more easily keep all the interdependent data involved in a full-featured editor coherent.
 - https://x.com/BOBKonf/status/1613845939361398784
   - [BOB - State Transitions in Complex Systems](https://bobkonf.de/2023/haverbeke.html)
@@ -178,6 +198,13 @@ modified: 2023-01-29T10:52:44.183Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [Read-only Facets? - discuss. CodeMirror](https://discuss.codemirror.net/t/read-only-facets/7175)
+- Perhaps like a wrapper class
+- Regarding computed values, given that defining an extra facet for them already allows you to do that, I don’t think that really warrants another library feature.
+  - Introduce `FacetReader`
 
 - ## [Make decoration editable within non-editable instance - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/make-decoration-editable-within-non-editable-instance/5190)
 - I guess you could simply use a transaction filter. See the single-line editor example

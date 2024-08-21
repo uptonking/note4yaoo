@@ -46,6 +46,11 @@ window.matchMedia('(prefers-color-scheme: dark)')
 
 - ## 
 
+- ## 
+
+- ## [How to append to existing JavaScript autocompletions and snippets? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/how-to-append-to-existing-javascript-autocompletions-and-snippets/5587)
+- Just define another completion source through language data 80, and its result will be combined with other sources.
+
 - ## [Render autocomplete outside of editor container - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/render-autocomplete-outside-of-editor-container/7283)
 - You can configure tooltips() to do this, but that will affect all tooltips.
 
@@ -64,7 +69,7 @@ window.matchMedia('(prefers-color-scheme: dark)')
 
 - ## 
 
-- ## [A scalable CSS only Typewriter Effect - DEV Community _202108](https://dev.to/afif/a-scalable-css-only-typewriter-effect-2opn)
+- ## 💡 [A scalable CSS only Typewriter Effect - DEV Community _202108](https://dev.to/afif/a-scalable-css-only-typewriter-effect-2opn)
 - Here is a simple typewriter effect with only a few lines of CSS where you don't need to deal with any js code.
   - Doesn't require monospace fonts
   - Can use any font
@@ -79,7 +84,10 @@ window.matchMedia('(prefers-color-scheme: dark)')
   - https://codepen.io/amit_sheen/pen/YzZYoMV
 - https://codepen.io/denic/pen/GRoOxbM
 
-- ## ☄️ [A Multi-line CSS only Typewriter effect - DEV Community _202204](https://dev.to/afif/a-multi-line-css-only-typewriter-effect-3op3)
+- ## 💫 [A Multi-line CSS only Typewriter effect - DEV Community _202204](https://dev.to/afif/a-multi-line-css-only-typewriter-effect-3op3)
+  - The effect relies on using a Monospace font and knowing the number of characters. 
+  - Yes, I am starting with the drawbacks but that was the price for a generic and easy-to-use code.
+- 
 - 
 
 - ## [Typewriter Effect | CSS-Tricks _201607](https://css-tricks.com/snippets/css/typewriter-effect/)
@@ -211,6 +219,20 @@ window.matchMedia('(prefers-color-scheme: dark)')
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+
+- ## [Creating a Decoration that updates on an interval - v6 - discuss. CodeMirror _202210](https://discuss.codemirror.net/t/creating-a-decoration-that-updates-on-an-interval/5121)
+  - I realized that view.dispatch() will refresh the gutters. I put that on an interval in my ViewPlugin and now my gutters update on an interval as I had hoped.
+
+- Decorations aren’t stateful and don’t do imperative things. You’ll want the interval to be managed by a view plugin, which just replaces the decoration with a new one. 
+  - If you really need to keep the existing DOM of your widget and just update it, you can give your widget type an `updateDOM` method that takes a different widget instance and updates the DOM representation.
+- Can I use this technique with gutters? That is, can a view plugin provide gutters and/or update/replace gutters?
+  - Yes, you can do something similar with gutter markers.
+  - your plugin’s `provide` option can create a gutter that has access to the plugin, in order to read marks from it.
 
 - ## [Decoration.mark() has lower precedense over styleTags()? - discuss. CodeMirror](https://discuss.codemirror.net/t/decoration-mark-has-lower-precedense-over-styletags/7397)
 - Wrapping your decoration extension in Prec.highest should probably fix this.

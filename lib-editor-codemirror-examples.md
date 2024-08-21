@@ -34,6 +34,9 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/tmcw/awesome-codemirror
   - Awesome CodeMirror plugins, themes, wrappers, and more
 
+- https://github.com/nothingislost/obsidian-cm6-attributes /202112/ts/inactive
+  - This reference plugin implements a ViewPlugin which will parse the markdown syntaxTree and add various Decorations to enhance the editor.
+
 - https://github.com/milahu/browserforge /202303/方案收集markdown
   - run github + github-pages + codesandbox in your browser, offline-first - CONCEPT
 
@@ -1682,6 +1685,11 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/yerlantemir/vimracing /202308/ts/inactive
   - Vimracing is a minimalistic vim arena. It allows you to compete on code refactoring speed by using vim hotkeys.
+
+- https://github.com/fregante/GhostText /MIT/202408/js
+  - https://ghosttext.fregante.com/
+  - Use your text editor to write in your browser. Everything you type in the editor will be instantly updated in the browser (and vice versa).
+  - 提供了浏览器插件和ide插件
 # theme
 - https://github.com/nodetec/mirrorshades /GPLv3/202403/ts
   - A react library to create themes for codemirror

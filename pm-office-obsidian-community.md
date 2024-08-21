@@ -22,6 +22,10 @@ modified: 2024-01-23T02:52:23.932Z
   - This brings a taste of Observable to Obsidian. 
   - give you an @observablehq -like experience with editable code blocks that run in isolated iframes.
   - Based on iframes: Everything you write is run within a sandboxed iframe, making it safer to do more creative coding within Obsidian without affecting the surrounding page.
+
+- https://github.com/PlayerMiller109/obsidian-sheets-basic /202408/js
+  - merge markdown table cells after Obsidian v1.5.0
+  - [小插件 Sheets Basic：合并 Markdown 表格单元格 - 经验分享 - Obsidian 中文论坛 _202405](https://forum-zh.obsidian.md/t/topic/35091)
 # discuss-stars
 - ## 
 

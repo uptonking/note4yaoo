@@ -11,6 +11,20 @@ modified: 2024-05-02T02:01:04.255Z
 
 # blogs-internals
 
+## 👷 [Facets as Composable Extension Points _202206](https://marijnhaverbeke.nl/blog/facets.html)
+
+- A good extensible system also makes sure multiple extensions that don't know anything about each other can be combined, and compose in ways that don't cause problems.
+- The problem has several aspects.
+  - Composition, Precedence, Grouping, Change
+
+- A facet, in this system, defines an extension point. It takes any number of input values and produces an output value. 
+- Examples of facets are
+  - Event handlers, configuration, 
+  - The set of markers to style the content with, 
+  - The set of gutters to show next to the content
+- Facets are defined as values and (optionally) exported so that third-party code can provide inputs. 
+  - The core system defines a number of facets, but facets defined outside it work exactly the same as those defined by the core.
+
 ## 👷 [(Re-) Implementing A Syntax-Highlighting Editor in JavaScript _201111](https://codemirror.net/5/doc/internals.html)
 
 - CodeMirror 1 was heavily reliant on designMode or contentEditable (depending on the browser)
@@ -63,13 +77,19 @@ modified: 2024-05-02T02:01:04.255Z
 - Lezer takes in a grammar file and then exports extensions that CodeMirror uses to create parse trees. Those parse trees are then used by CodeMirror to provide various features like syntax highlighting, linting, tooltips, etc.
 - 
 - 
+
+### https://thetrevorharmon.com/blog/connecting-antlr-to-code-mirror-6-connecting-a-language-server/
+
+- 
 - 
 
 # blogs-xp
 
-## [Advanced state management with React and CodeMirror _202403](https://thetrevorharmon.com/blog/advanced-state-management-with-react-and-codemirror/)
+## 🧑‍🏫 [Advanced state management with React and CodeMirror _202403](https://thetrevorharmon.com/blog/advanced-state-management-with-react-and-codemirror/)
 
-## [Learning CodeMirror _202309](https://thetrevorharmon.com/blog/learning-codemirror/)
+- https://thetrevorharmon.com/blog/codemirror-and-react/
+
+## 🧑‍🏫 [Learning CodeMirror _202309](https://thetrevorharmon.com/blog/learning-codemirror/)
 
 ## [浅尝 CodeMirror@6 – 山维空间 _202203](https://blog.meathill.com/js/note-codemirror6.html)
 

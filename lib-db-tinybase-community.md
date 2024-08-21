@@ -132,7 +132,8 @@ modified: 2023-04-21T11:42:46.575Z
 
 - ## 
 
-- ## 
+- ## [Want help generating ideas for adding full-text search _202301](https://github.com/tinyplex/tinybase/discussions/42)
+  - TinyBase doesn't really have a listener for knowing if individual rows in a table have been added, updated or deleted. My mind goes to SQLite's CREATE TRIGGER. 
 
 - ## Tinybase is a memory database, while my database may contains large amounts of data. 
 - https://twitter.com/imsingee/status/1779267973666205937

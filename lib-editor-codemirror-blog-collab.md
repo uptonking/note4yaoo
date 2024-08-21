@@ -95,4 +95,18 @@ modified: 2024-05-02T05:51:42.507Z
 
 - 其次@codemirror/collab这个协作库呢，感觉充满了黑魔法，至少我研究了一下午都还没有觉得很有信心能顺利地实现。翻译的这篇文章呢，原理讲得还行，但是操作层面上我觉得没有很好的参考价值。
 - 以及有一个重要的缺陷：服务端也要求js运行时才能使用这个库。当然，第一就算我要开一套node.js服务也就是个把小时的事情，第二我也能想到服务端不用js用其他语言加一些取巧的办法也可以实现。
+
+## [Building a Multiplayer Markdown Editor with LunaDB - LunaDB _202407](https://www.lunadb.io/blog/multiplayer-code-editor)
+
+- https://github.com/lunadb-io/lunadb-examples/blob/main/src/codemirror.js /202407/js
+
+- Our CodeMirror integration should do the following:
+  - Track edits as they occur in CodeMirror
+  - Convert those edits into LunaDB’s delta format
+  - Occasionally transmit those deltas and receive concurrent deltas
+  - Convert concurrent deltas into CodeMirror Changesets
+  - Apply changesets in a consistent way across peers
+- We can accomplish this via a CodeMirror view plugin + setInterval
+
+- A CodeMirror `ViewPlugin` is a standard way of intercepting updates to the editor’s view, which is perfect for tracking edits.  
 # more
