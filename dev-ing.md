@@ -67,11 +67,13 @@ DEBUG=* npm i --legacy-peer-deps --no-audit --loglevel=silly --registry=https://
 
 npm --registry=https://registry.npmmirror.com install axios
 yarn add axios --registry=https://registry.npmjs.org/
-pnpm --registry=https://registry.npmmirror.com install axios
+pnpm install --registry=https://registry.npmmirror.com  axios
+
+export https_proxy=http://127.0.0.1:7890;export http_proxy=http://127.0.0.1:7890;export all_proxy=socks5://127.0.0.1:7890
 
 $$('[contenteditable]')
 
-flatpak run com.discordapp.Discord --proxy-server="socks5://127.0.0.1:7897"
+flatpak run com.discordaspp.Discord --proxy-server="socks5://127.0.0.1:7897"
 betterdiscordctl -i flatpak install
 
 npx create-strapi@rc strapi5-play-202408 --use-npm --quickstart --ts --skip-cloud
@@ -418,6 +420,18 @@ npx create-strapi@rc strapi5-play-202408 --use-npm --quickstart --ts --skip-clou
 console.log(`接到到PaaS消息：`, name, dao.playgroundInfo.status, dao.dockerStatus, payload)
 ```
 
+## 0822
+
+- diff-animation-to-do
+  - 不用写右侧空白部分
+
+- diff-animation-issues
+  - agent删除文字是什么效果
+  - 按行写代码时，一行代码的时间间隔
+
+
+- [How to catch dynamic import error in JavaScript? - Stack Overflow](https://stackoverflow.com/questions/75295514/how-to-catch-dynamic-import-error-in-javascript)
+  - `await import('path-to-module').catch(reason => { })`
 ## 0821
 
 - 在setInterval中更新操作行号，那么自动滚动到dom需要~~在下次渲染前触发，不能在setInterval触发~~

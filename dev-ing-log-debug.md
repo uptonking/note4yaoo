@@ -15,6 +15,15 @@ modified: 2023-06-14T00:53:15.226Z
 
 ## 
 
+## 
+
+## 
+
+## nextjs项目集成clerk后无法正常打开页面
+
+- 因为刷新页面需要获取clerk的token，对网络要求很高
+  - 解决方法是开启代理的增强模式，然后使用全局代理而不是rule
+
 ## codemirror打字机动画
 
 - 为什么先dispatch(scrollIntoView)再typing-line的执行结果是先动态打字，再滚动

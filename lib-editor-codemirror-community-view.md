@@ -69,7 +69,18 @@ window.matchMedia('(prefers-color-scheme: dark)')
 
 - ## 
 
-- ## 
+- ## [How to add animation, keyframes in the basetheme? - v6 - discuss.CodeMirror](https://discuss.codemirror.net/t/how-to-add-animation-keyframes-in-the-basetheme/3561)
+
+```JS
+{
+   '@keyframes blink' : {
+      from: {backgroundColor: 'aliceblue'},
+      to: {backgroundColor: 'black'}
+    }
+}
+
+```
+
 
 - ## 💡 [A scalable CSS only Typewriter Effect - DEV Community _202108](https://dev.to/afif/a-scalable-css-only-typewriter-effect-2opn)
 - Here is a simple typewriter effect with only a few lines of CSS where you don't need to deal with any js code.

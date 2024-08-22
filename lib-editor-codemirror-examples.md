@@ -274,6 +274,9 @@ modified: 2023-06-23T12:46:53.288Z
   - 依赖codemirror5、in-browser-language
   - https://github.com/aliyun/alibabacloud-console-base /MIT/202311/ts
     - 阿里云控制台基座, CodeMirror 5 的 React 封装，适用于极简的场景
+- https://github.com/hostilefork/replpad-js /LGPLv3/202206/js
+  - Interactive Web Console for Rebol language (Ren-C branch)
+  - This project is an effort to build an interactive GUI console that runs in a web browser, for the Ren-C branch of Rebol3
 
 - https://github.com/uiwjs/react-markdown-editor /MIT/202404/ts
   - https://uiwjs.github.io/react-markdown-editor
@@ -787,6 +790,9 @@ modified: 2023-06-23T12:46:53.288Z
   - Multiplayer mermaid diagram editor
   - WebRTC based collaborative MermaidJS editor.
   - 依赖codemirror6、mermaid、y-codemirror.next
+- https://github.com/dinavinter/y-block /202407/ts
+  - https://dinavinter.github.io/y-block/
+  - YJS in custom elements, simple collabrative components powered by YJS.
 
 - https://github.com/MyoniM/mirror-code-react-js /202210/js/inactive
   - https://mirror-code.web.app/
@@ -1790,7 +1796,7 @@ modified: 2023-06-23T12:46:53.288Z
     - Web editor used in Cloud Commander based on Monaco.
   - https://github.com/coderaiser/cloudcmd /MIT/202405/js
     - https://cloudcmd.io/
-    - Cloud Commander file manager for the web with console and editor.
+    - Cloud Commander file manager for the web with console and editor
 
 - https://github.com/starwiz-7/codestream /MIT/202204/js/inactive
   - https://codestream.vercel.app/
