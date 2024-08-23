@@ -108,7 +108,7 @@ modified: 2023-11-17T10:12:06.357Z
 - SingleFile /9.5kStar/AGPLv3/202211/js
   - https://github.com/gildas-lormeau/SingleFile
   - a Web Extension (and a CLI tool) compatible with Chrome, Firefox to save a complete web page into a single HTML file.
-  - 比较了各种格式：singleFile、mhtml、webarchive、html-folder
+  - 🆚 比较了各种格式：singleFile、mhtml、webarchive、html-folder
   - For security reasons, SingleFile is sometimes unable to save the image representation of canvas and snapshots of video elements.
   - [File name doesn't match the page title when saving a page](https://github.com/gildas-lormeau/SingleFile/issues/1106)
     - Please, uncheck "save pages in background" in options (Misc) than you will get the correct title name!
@@ -145,7 +145,20 @@ modified: 2023-11-17T10:12:06.357Z
     - Offline-first for the next billion users or New York City Subway. Logux saves Redux actions to IndexedDB and has a lot of features to merge changes from different users.
     - Compatible with modern stack: Redux, Vuex and pure JS API, works with any back-end language and any database.
 
-- https://github.com/anita-app/anita /ts/暂不支持同步
+- https://github.com/instantdb/instant /apache2/202408/clojure/ts
+  - https://instantdb.com/
+  - a client-side database that makes it easy to build real-time and collaborative apps like Notion or Figma.
+  - You write relational queries in the shape of the data you want and Instant handles all the data fetching, permission checking, and offline caching
+  - We also support ephemeral updates, like cursors, or who's online. 
+  - Currently we have SDKs for Javascript, React, and React Native.
+  - 🛢️ Under the hood, we store all user data as triples in one big Postgres database. A multi-tenant setup lets us offer a free tier that never pauses.
+    - A sync server written in Clojure talks to Postgres. We wrote a query engine that understands `datalog` and `InstaQL`, a relational language that looks a lot like GraphQL
+    - Taking inspiration from Asana’s WorldStore and Figma’s LiveGraph, we tail postgres’ WAL to detect novelty(新鲜事、与众不同) and invalidate relevant queries.
+  - 🛢️ For the frontend, we wrote a client-side triple store. 
+    - The SDK handles persisting a cache of recent queries to IndexedDB on web, and AsyncStorage in React Native.
+  - All data goes through a permission system powered by Google's CEL library.
+
+- https://github.com/anita-app/anita /CC-BY-NC/202303/ts/inactive/暂不支持同步
   - https://anita-app.com/
   - Anita is a private, no-server, powerful and fully customizable data management solution
   - Your data is stored on your computer in a JSON file and/or on a remote database of your choice: flexible, open & no lock-in. Stay independent from servers that will go away, sooner or later.
@@ -188,7 +201,7 @@ modified: 2023-11-17T10:12:06.357Z
 - https://github.com/milahu/browserforge
   - run github + github-pages + codesandbox in your browser, offline-first - CONCEPT
 
-- https://github.com/andymatuschak/orbit /1.5kStar/apache2/202305/ts
+- https://github.com/andymatuschak/orbit /1.5kStar/apache2+GPL/202406/ts
   - https://withorbit.com/
   - Orbit is an experimental platform for publishing and engaging with small tasks repeatedly over time.
   - [Project: data architecture improvements_202104](https://github.com/andymatuschak/orbit/issues/192)
@@ -213,7 +226,7 @@ modified: 2023-11-17T10:12:06.357Z
   - Atreyu is an edge- and serviceworker first metaframework for personal, data centric web applications. 
   - 依赖pouchdb
   - It supports real time data sync, offline usage and values minimal boilerplate with opt in to most features.
-  - Falcor is used for state management, caching, batching and data sharing. 
+  - `Falcor` is used for state management, caching, batching and data sharing. 
   - Svelte views are bound to a virtual data object with a js proxy based store implementation.
   - ipfs as a local asset server and content adressable storage system, ipfs is not required for production sites and is not required to run in a p2p mode
   - https://github.com/Netflix/falcor
@@ -290,7 +303,7 @@ modified: 2023-11-17T10:12:06.357Z
   - localForage improves the offline experience of your web app by using asynchronous storage (IndexedDB or WebSQL) with a simple `localStorage`-like API.
   - localForage uses `localStorage` in browsers with no IndexedDB or WebSQL support.
 
-- https://github.com/hoodiehq/hoodie
+- https://github.com/hoodiehq/hoodie /apache2/202101/js/inactive
   - A generic backend with a client API for Offline First applications
 
 - https://github.com/lana-k/sqliteviz /apache2/js/vue

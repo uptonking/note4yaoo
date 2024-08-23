@@ -42,6 +42,7 @@ modified: 2023-03-05T08:55:03.696Z
   - automatically optimizes performance by caching the results, deduplicating fetches
 # changelog
 - [RFC: remove callbacks from useQuery_202304](https://github.com/TanStack/query/discussions/5279)
+  - [Breaking React Query's API on purpose | TkDodo's blog _202304](https://tkdodo.eu/blog/breaking-react-querys-api-on-purpose)
 
 - [v5.0.0-alpha.0_20230227](https://twitter.com/TkDodo/status/1630159547405877249)
   - 🔁 better infinite queries
@@ -75,15 +76,15 @@ modified: 2023-03-05T08:55:03.696Z
 - ### We will very likely be removing the onSuccess / onError / onSettled callbacks from `useQuery` in v5
 - https://twitter.com/TkDodo/status/1647341498227097600
 
-### [Breaking React Query's API on purpose | TkDodo's blog](https://tkdodo.eu/blog/breaking-react-querys-api-on-purpose)
+### 🤔🤼 [Breaking React Query's API on purpose | TkDodo's blog _202304](https://tkdodo.eu/blog/breaking-react-querys-api-on-purpose)
 
-- `useQuery` has three callback functions: `onSuccess`,  `onError` and `onSettled`, which will be called when the Query ran either successfully or had an error (or in both cases). 
+- `useQuery` has three callback functions: `onSuccess, onError and onSettled`, which will be called when the Query ran either successfully or had an error (or in both cases). 
   - You can (apparently) use them to execute side effects, like showing error notifications
-  - Users like this API because it's intuitive. Without those callbacks, you would seemingly need the dreaded useEffect hook to perform such a side effect
+  - Users like this API because it's intuitive. Without those callbacks, you would seemingly need the dreaded `useEffect` hook to perform such a side effect
   - Many users see it as a huge selling point of React Query that they don't need to write `useEffect` anymore. 
   - In this example, the effect clearly shows the **drawback** of this approach: If we call useTodos() two times in our App, we will get two error notifications!
 
-- 👉🏻 The best way to address this problem is to use the global cache-level callbacks when setting up your QueryClient
+- 💡 The best way to address this problem is to use the global cache-level callbacks when setting up your QueryClient
   - This callback will only be invoked once per Query. 
   - It also exists outside the component that called useQuery, so we don't have a closure problem.
 - Just add an onDataChanged callback then that will fire whenever data changes.💡 I initially thought this to be a good idea, but then again, how would we implement that callback? 
