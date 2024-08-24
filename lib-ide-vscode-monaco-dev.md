@@ -1,11 +1,11 @@
 ---
-title: lib-editor-vscode-monaco-dev
+title: lib-ide-vscode-monaco-dev
 tags: [code-editor, monaco-editor, vscode]
 created: 2021-05-06T09:44:17.064Z
-modified: 2023-01-21T18:55:29.555Z
+modified: 2024-08-24T16:16:15.959Z
 ---
 
-# lib-editor-vscode-monaco-dev
+# lib-ide-vscode-monaco-dev
 
 # guide
 

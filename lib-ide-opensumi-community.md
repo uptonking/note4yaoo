@@ -1,11 +1,11 @@
 ---
-title: lib-editor-vscode-community-ide-opensumi
+title: lib-ide-opensumi-community
 tags: [community, opensumi, vscode]
 created: 2024-07-29T03:05:10.429Z
-modified: 2024-07-29T03:05:19.877Z
+modified: 2024-08-24T16:17:55.032Z
 ---
 
-# lib-editor-vscode-community-ide-opensumi
+# lib-ide-opensumi-community
 
 # guide
 
@@ -28,56 +28,50 @@ modified: 2024-07-29T03:05:19.877Z
 
 - lite纯前端，无socket和http通信，数据都存在localStorage
 
-- 
-- 
-- 
-- 
+-
+-
+-
+-
 
 # dev-xp
 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
+-
+-
+-
+-
+-
+-
+-
 
 # docs
 
-- 
-- 
-- 
-- 
-- 
+-
+-
+-
+-
+-
 
 # discuss-stars
-- ## 
+- ##
 
-- ## 
+- ##
 
-- ## 
+- ##
 # discuss-collab 🔀
-- ## 
+- ##
 
-- ## 
+- ##
 
-- ## 
+- ##
 # discuss-storage 💾
-- ## 
+- ##
 
-- ## 
+- ##
 
-- ## 
+- ##
 # discuss
-- ## 
+- ##
 
-- ## 
+- ##
 
-- ## 
-# discuss-zed
-- ## 
-
-- ## 
-
-- ## 🐛 [Allow to pin tab _202301](https://github.com/zed-industries/zed/issues/5046)
+- ##

@@ -1,11 +1,11 @@
 ---
-title: lib-editor-vscode-community-vendors
+title: lib-ide-app-community-vendors
 tags: [ide, monaco-editor, vendors, vscode]
 created: 2024-05-09T10:20:03.010Z
-modified: 2024-05-09T10:20:17.984Z
+modified: 2024-08-24T16:28:27.099Z
 ---
 
-# lib-editor-vscode-community-vendors
+# lib-ide-app-community-vendors
 
 # guide
 

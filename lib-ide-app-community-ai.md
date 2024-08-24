@@ -1,11 +1,11 @@
 ---
-title: lib-editor-vscode-community-ide-ai
+title: lib-ide-app-community-ai
 tags: [ai, community, ide, pm]
 created: 2024-05-10T06:17:15.244Z
-modified: 2024-05-10T06:17:27.016Z
+modified: 2024-08-24T16:28:20.515Z
 ---
 
-# lib-editor-vscode-community-ide-ai
+# lib-ide-app-community-ai
 
 # guide
 
@@ -15,7 +15,7 @@ modified: 2024-05-10T06:17:27.016Z
 - https://github.com/meta-llama/codellama /202401/python
   - Code Llama is a family of large language models for code based on Llama 2 providing state-of-the-art performance among open models, infilling capabilities, support for large input contexts, and zero-shot instruction following ability for programming tasks.
   - We provide multiple flavors to cover a wide range of applications: foundation models (Code Llama), Python specializations (Code Llama - Python), and instruction-following models (Code Llama - Instruct) with 7B, 13B and 34B parameters each.
-  - Code Llama was developed by fine-tuning Llama 2 using a higher sampling of code. 
+  - Code Llama was developed by fine-tuning Llama 2 using a higher sampling of code.
   - Our model and weights are licensed for both researchers and commercial entities, upholding(维护，支持) the principles of openness.
 
 - [Introducing Code Llama, a state-of-the-art large language model for coding _202308](https://ai.meta.com/blog/code-llama-large-language-model-coding/)
@@ -44,7 +44,7 @@ modified: 2024-05-10T06:17:27.016Z
 - https://github.com/princeton-nlp/SWE-bench /MIT/202405/jupyter
   - https://www.swebench.com/
   - [ICLR 2024] SWE-Bench: Can Language Models Resolve Real-world Github Issues?
-  - SWE-bench is a benchmark for evaluating large language models on real world software issues collected from GitHub. 
+  - SWE-bench is a benchmark for evaluating large language models on real world software issues collected from GitHub.
     - Given a codebase and an issue, a language model is tasked with generating a patch that resolves the described problem.
   - We have released SWE-agent, which sets the state-of-the-art on the full SWE-bench test set
   - https://x.com/jyangballin/status/1775114444370051582 /20240402
@@ -53,7 +53,7 @@ modified: 2024-05-10T06:17:27.016Z
     - SWE-agent works by interacting with a specialized terminal, which allows it to: Open, scroll and search through files; Edit specific lines w/ automatic syntax check; Write and execute tests
   - https://github.com/princeton-nlp/SWE-agent /MIT/202405/python
     - https://swe-agent.com/
-    - SWE-agent takes a GitHub issue and tries to automatically fix it, using GPT-4, or your LM of choice. 
+    - SWE-agent takes a GitHub issue and tries to automatically fix it, using GPT-4, or your LM of choice.
     - It solves 12.29% of bugs in the SWE-bench evaluation set and takes just 1.5 minutes to run.
 # code-ai-ide
 - https://github.com/ishaan1013/sandbox /MIT/202406/ts
@@ -63,17 +63,17 @@ modified: 2024-05-10T06:17:27.016Z
   - https://x.com/steventey/status/1796352490100896149
     - How is it fully self-hostable if it relies on three SaaS services? Seems more like partially self-hostable?
 # discuss-stars
-- ## 
+- ##
 
-- ## 
+- ##
 
-- ## 
+- ##
 # discuss-ide-ai
-- ## 
+- ##
 
-- ## 
+- ##
 
-- ## 
+- ##
 
 - ## Introducing LlamaCoder! An open source Claude Artifacts app that can generate full React apps and components with Llama 3.1 405B. 100% free and open source.
 - https://x.com/nutlope/status/1819445838705578091
@@ -147,7 +147,7 @@ modified: 2024-05-10T06:17:27.016Z
 
 - ## [花了四个月，打造了一个满意的大模型 IDE 智能插件 - 知乎 _202308](https://zhuanlan.zhihu.com/p/648598153)
 - 围绕开发者体验，设计三种辅助模式
-- 自动模式：规范化的代码生成 
+- 自动模式：规范化的代码生成
   - 触发方式：自动模式都在 Context Actions 下，即与上下文相关的 actions。方式自然是那个那能的快捷键：⌥⏎ (macOS) 或者 Alt+Enter (Windows/Linux)。
   - 自动 CRUD。
   - 自动生成测试。
@@ -159,7 +159,7 @@ modified: 2024-05-10T06:17:27.016Z
 - AutoDev 的思想是将 LLM（Large Language Model）作为辅助开发者的 Copilot，通过提供辅助工具来解决一些繁琐的任务，让工程师能够更专注于有创造性的设计和思考。
 
 # discuss-code-ai
-- ## 
+- ##
 
 - ## devv.ai 的 GitHub Mode 已经支持前端仓库了。 _202406
 - https://x.com/forrestzh_/status/1802871846871920676
@@ -171,7 +171,7 @@ modified: 2024-05-10T06:17:27.016Z
 - ## 🎯 Devin 2.0 _20240504
 - https://x.com/itsandrewgao/status/1786613503471829485
   - Launch Interactive mode to help Devin navigate the web. Really useful if it gets stuck on something like a CAPTCHA.
-  - One of my biggest gripes with Devin was not being able to intervene and edit code. You can now do so by launching a web VSCode. 
+  - One of my biggest gripes with Devin was not being able to intervene and edit code. You can now do so by launching a web VSCode.
   - Another super exciting update is Cookies which enables Devin to log in to websites for your account **without needing to give Devin your password**.
   - Machine snapshots let you save the state of Devin so when the server shuts down, you can start up again
 
@@ -192,9 +192,9 @@ modified: 2024-05-10T06:17:27.016Z
 - ## [如何利用AI工具提高程序员的编码效率？ - 知乎](https://www.zhihu.com/question/645556922)
 - 推荐三个开源的AI编程工具：Devika、Open-Devin和SWE Agent。它们不仅仅是代码的生成者，更是软件工程领域的创新者。
 
-- 
-- 
-- 
+-
+-
+-
 
 - ## [面向程序员的编程大模型AI | 微言码道 _202403](https://taoofcoding.tech/blogs/2024-03-10/the-code-ai-for-develope)
 - Github Copilot是一个由微软, Github以及OpenAI合作开发的专门面向编程的AI工具.
@@ -211,9 +211,9 @@ modified: 2024-05-10T06:17:27.016Z
 - CodeLlama 70B是700亿参数, 对GPU内存的要求非常高, 这个硬件要求, 一般人或公司整不起.
   - 如果真想部署一个本地的编程大模型, 可能starCoder2是更具可行性的选择. starcoder2的bigcode训练的开源大模型
 # discuss-ai-lowcode
-- ## 
+- ##
 
-- ## 
+- ##
 
 - ## 体验了 http://Wegic.ai 的AI建站，UI设计和交互都很惊艳、简洁，整体流程丝滑，很不错的解决了多数低代码、模板库给用户带来的选择困难症、部署困难。
 - https://x.com/zQwQs/status/1793216048759754879
@@ -222,10 +222,10 @@ modified: 2024-05-10T06:17:27.016Z
   - 还有一个告诉ai接口，然后自动写页面的
 
 # discuss
-- ## 
+- ##
 
-- ## 
+- ##
 
-- ## 
+- ##
 
-- ## 
+- ##

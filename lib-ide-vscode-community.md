@@ -1,11 +1,11 @@
 ---
-title: lib-editor-vscode-community
+title: lib-ide-vscode-community
 tags: [community, editor, ide, vscode]
 created: 2023-01-21T18:49:01.333Z
-modified: 2023-01-21T18:53:04.519Z
+modified: 2024-08-24T16:15:47.613Z
 ---
 
-# lib-editor-vscode-community
+# lib-ide-vscode-community
 
 # guide
 
@@ -30,47 +30,20 @@ modified: 2023-01-21T18:53:04.519Z
 - Fleet 的远程开发体验特别好。高延迟下效果比idea好很多，而且plugin不需额外开发就支持远程
 - WebStorm next 重写了 Typescript engine。
 
-# discuss-usage-vscode
-- ## 
 
-- ## 
-
-- ## 🐛 [Extremely High RAM and CPU usage · Issue · microsoft/vscode-eslint _202109](https://github.com/microsoft/vscode-eslint/issues/1336)
-- I am pretty sure that this is caused by `@typescript-eslint/eslint-plugin` and the fact that some rules more or less require a full TS type checker run
-  - Your analysis is correct that the eslint server very likely crashes (with OOM) and the extension restarts it.
-
-- The issue seems to be resolved by adding the following ignore pattern to the .eslintrc.json file: `"ignorePatterns": [ "node_modules*/", "e2e/", "dist/" ]`
-
-- [high ram/memory usage _201910](https://github.com/microsoft/vscode-eslint/issues/782)
-
-- ## [Process explorer as a separate renderer window ](https://github.com/microsoft/vscode/issues/41045)
-- Move the vscode-process extension inside of VSCode. Like the process reporter, launch it as a separate window.
-
-- ## [macos - Code Helper process by VS Code eating my cpu - Stack Overflow](https://stackoverflow.com/questions/74851227/code-helper-process-by-vs-code-eating-my-cpu)
-- I disabled all extensions installed and the problem is gone. So i enabled one by one until i found the culprit. In my case the problem was the extension "Settings sync". I will leave it disabled for a while until a new update is out.
-
-- [VS Code - Code Helper process using more than 100% CPU on macOS - Ask Different](https://apple.stackexchange.com/questions/351761/vs-code-code-helper-process-using-more-than-100-cpu-on-macos)
-  - I suggesting disabling extensions, one by one, until you find the problematic one.
 # discuss-electron
-- ## 
+- ##
 
-- ## 
+- ##
 
-- ## 
-# discuss-feat-not-yet
-- ## 
-
-- ## 
-
-- ## [Allow to change the font size and font of the workbench](https://github.com/microsoft/vscode/issues/519)
-- We're approaching 9 years since this issue was opened! Can we get to 10?
+- ##
 
 # discuss
-- ## 
+- ##
 
-- ## 
+- ##
 
-- ## 
+- ##
 
 - ## [微软研发并开源 vscode 的动力是什么？ - 知乎](https://www.zhihu.com/question/519996636/answers/updated)
 - 有利于巩固Windows生态。

@@ -1,11 +1,11 @@
 ---
-title: lib-editor-vscode-theia-docs
+title: lib-ide-theia-docs
 tags: [docs, theia]
 created: 2024-05-25T16:57:05.004Z
-modified: 2024-05-25T16:57:45.541Z
+modified: 2024-08-24T16:16:25.433Z
 ---
 
-# lib-editor-vscode-theia-docs
+# lib-ide-theia-docs
 
 # guide
 

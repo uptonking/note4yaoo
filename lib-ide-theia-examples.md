@@ -1,11 +1,11 @@
 ---
-title: lib-editor-vscode-theia-examples
+title: lib-ide-theia-examples
 tags: [examples, theia]
 created: 2024-05-25T17:07:54.471Z
-modified: 2024-05-25T17:08:01.942Z
+modified: 2024-08-24T16:16:43.426Z
 ---
 
-# lib-editor-vscode-theia-examples
+# lib-ide-theia-examples
 
 # guide
 

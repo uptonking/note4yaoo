@@ -1,11 +1,11 @@
 ---
-title: lib-editor-vscode-examples
+title: lib-ide-vscode-examples
 tags: [examples, monaco-editor, toc, vscode]
 created: 2023-01-21T18:57:55.760Z
-modified: 2023-01-21T18:58:29.846Z
+modified: 2024-08-24T16:15:54.137Z
 ---
 
-# lib-editor-vscode-examples
+# lib-ide-vscode-examples
 
 # guide
 

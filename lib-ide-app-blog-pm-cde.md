@@ -1,11 +1,11 @@
 ---
-title: lib-editor-vscode-blog-ide
-tags: [blog, ide, vscode]
+title: lib-ide-app-blog-pm-cde
+tags: [blog, cde, ide, pm, vscode]
 created: 2024-05-09T09:39:24.099Z
-modified: 2024-05-09T09:39:33.338Z
+modified: 2024-08-24T16:29:44.029Z
 ---
 
-# lib-editor-vscode-blog-ide
+# lib-ide-app-blog-pm-cde
 
 # guide
 

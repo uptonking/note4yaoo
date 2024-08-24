@@ -109,7 +109,7 @@ modified: 2021-07-27T15:12:39.959Z
   - enjoy live editing (+markdown)
   - used by Teambition
 # editor-electron
-- https://github.com/pulsar-edit/pulsar /MIT/202401/js
+- https://github.com/pulsar-edit/pulsar /MIT/202408/js
   - https://pulsar-edit.dev/
   - A Community-led Hyper-Hackable Text Editor, Forked from Atom, built on Electron.
   - Designed to be deeply customizable, but still approachable using the default configuration.

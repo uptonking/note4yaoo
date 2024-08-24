@@ -1,11 +1,11 @@
 ---
-title: lib-editor-vscode-dev
+title: lib-ide-vscode-dev
 tags: [editor, ide, vscode]
 created: 2023-01-21T18:53:37.366Z
-modified: 2023-01-21T18:53:50.553Z
+modified: 2024-08-24T16:15:11.456Z
 ---
 
-# lib-editor-vscode-dev
+# lib-ide-vscode-dev
 
 # guide
 

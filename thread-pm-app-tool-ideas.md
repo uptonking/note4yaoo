@@ -84,6 +84,14 @@ modified: 2022-11-07T10:58:24.512Z
 # sync-setttins
 - vscode-config
 - greasyfork-scripts
+
+- [Settings Sync · zed-industries/zed · Discussion _202302](https://github.com/zed-industries/zed/discussions/6569)
+  - I really like the "settings repository" plugin for CLion. I point it to a git repo and it does the rest.
+  - I appreciate the simplicity of the VScode sync, but it's also a bit shady(靠不住的; 不正当的) isn't it. (Yes, I'm aware of the JetBrains sync plugin that works similarly to VSCode as well).
+  - The reason I prefer settings sync that's sort of built-in vs a third party is two parts, the first part is trust, the second part is support.
+    - By trust I mean, I'm perhaps a paying customer of Zed and I can trust that the feature is implemented by the company and I'm trusting a single entity in this situation (I don't have to worry about a rogue update to the extension that starts to siphon off secrets from my computer).
+    - By support I mean, since it's a tier 1 product feature and so will support sync'ing all relevant settings, extensions, and themes. I don't have to worry about it getting abandoned (like I worry about most of the Sublime ecosystem).
+  - I would be happy even to be able to change the location of the settings json file to a shared folder (dropbox or google drive or apple cloud or whatever) to be able to keep the settings in sync between my two machines.
 # sharing
 - 规避版权问题的内容讨论平台
   - 科技分享，类似hacker-news
