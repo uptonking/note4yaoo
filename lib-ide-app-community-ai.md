@@ -75,6 +75,11 @@ modified: 2024-08-24T16:28:20.515Z
 
 - ##
 
+- ##Introducing Zed AI, in collaboration with @anthropicAI . _20240821
+- https://x.com/zeddotdev/status/1825967812629631034
+  - Zed AI brings LLMs directly into your editor with an extensible, text-centric approach.
+  - We're also piloting @anthropicAI 's new Fast Edit mode for Claude 3.5 Sonnet with a small set of Zed users.
+
 - ## Introducing LlamaCoder! An open source Claude Artifacts app that can generate full React apps and components with Llama 3.1 405B. 100% free and open source.
 - https://x.com/nutlope/status/1819445838705578091
 - https://x.com/nutlope/status/1820299682331107371
@@ -220,6 +225,32 @@ modified: 2024-08-24T16:28:20.515Z
   - 看实现像是预定义了少量的组件(可替换文本/图片/动画容器等)，然后让AI生成页面区块，写React组件(Hero/Gallery等)和props，用AI对话去编辑
   - 基于这个想法，使用 gpt-4o + tailwind + Vue + esbuild-wasm 做了个「网页生成器」，还有按区块调整的能力。。 属于是低配山寨版 wegic 了（纯做着玩儿的PoC
   - 还有一个告诉ai接口，然后自动写页面的
+
+# discuss-devin-like
+- ##
+
+- ##
+
+- ##
+
+- ##
+# discuss-cursor-like
+- ##
+
+- ##
+
+- ##
+
+- ## 拆解如何实现一个 Cursor
+- https://x.com/tuturetom/status/1827007055137571032
+  - 如何设计一个能够生成「全栈 App」的 AI Editor 架构 - Townie
+  - 使用 CodeMirror 作为编辑器，AI 生成代码、处理 Diff、人类 Review，生成预览，处理多模型与成本控制，甚至包括评测
+  - [How we built Townie – an app that generates fullstack apps _202408](https://blog.val.town/blog/codegen/)
+
+- ## 🔡 Just for the record, I recently found out that most of Cursor's core is based on this open-source project
+- https://x.com/arpagon/status/1827315413950046225
+  - And now, http://trypear.ai by @not_nang and @CodeFryingPan is trying to achieve parity of functionality with Cursor, but in a more transparent and, of course, open-source way.
+- Yes, Cursor is based on Continue.
 
 # discuss
 - ##

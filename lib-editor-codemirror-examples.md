@@ -1385,6 +1385,13 @@ modified: 2023-06-23T12:46:53.288Z
   - An online code-editor
   - 依赖@uiw/react-codemirror、next
 
+- https://github.com/ronit-ghosh/Dev-Sandbox /202407/js
+  - https://dev-sandbox-three.vercel.app/
+  - A web application for rendering HTML, CSS, and JavaScript
+  - https://x.com/ronit__ghosh/status/1817939216778850699
+    - a web application designed to render HTML, CSS, and JavaScript. 
+    - Built with React.js and used CodeMirror and react-codemirror2 for the code editor functionality, and Tailwind CSS for styling.
+
 - https://github.com/badass-courses/course-builder /MIT/202406/ts
   - https://www.coursebuilder.dev/
   - experimental platform for building Badass Courses

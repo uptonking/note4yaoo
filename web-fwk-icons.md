@@ -13,7 +13,23 @@ modified: 2021-07-28T19:22:07.339Z
 - ## heroicons
 - https://github.com/tailwindlabs/heroicons
 - @heroicons/react
+# discuss-figma-icon
+- ## 
+
+- ## 
+
+- ## 
+
+- ## What's the best practice in 2024 to get SVG icons from a Figma design into a Vite web app with minimal impact on app bundle size?
+- https://x.com/schickling/status/1825836159244599452
+
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 
 
 - ## How to add 500kb+ of JS to all pages? 

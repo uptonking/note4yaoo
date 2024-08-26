@@ -30,10 +30,42 @@ modified: 2023-11-10T08:05:12.852Z
   - The types for fastify seems goofy(愚蠢的；傻的；疯的) to begin with so I'm ignoring them
 - I think the issue is more bundling than goofy typings. Anyway, for me the types of Fastify works good for most plugins
 
+# discuss-fp-functional-programming
+- ## 
+
+- ## 
+
+- ## 
+
+- ## People say FP style is slow because you do filter, map, map, filter, reduce, etc, doing a million passes through an array and creating intermediate arrays.
+- https://x.com/wollantine/status/1826903703753793699
+  - If you have small arrays, that is no problem. If they are enormous, or streams that you can't know when they end, what?
+
+- Notice that maps and filters can be implemented as reducers, reduce allows "everything".
+
+- You can't compose a filter with a reduce.
+  - A filter is of type a -> Bool, a reducer is b -> a -> b. They don't compose because they have different arity. If you make them able to compose, good job, you are implementing transducers.
+
+- This a limitation of how FP is often done in JS. e.g. append(arr, el) creates a whole new array. If it were a linked list, it would just return an object containing el and a pointer to the existing array.
+
+- laziness solves this (also if you work in a real FP language with a decent compiler it’ll do optimizations like stream fusion that eliminate many redundant operations)
+
+- You can compose folds; see Haskell’s FoldL library or streamly. Or recursion-schemes for folding on arbitrary, recursive ADTs.
+
+- fusion (haskell) or transducers (clojure), problem solved
 # discuss
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## People hate reducers because they get convoluted code that is hard to decompose. Transducers also solve this
+- https://x.com/wollantine/status/1826903720698769453
+- this ancient knowledge will disappear into the past along with the release of Iterator helpers
+- I’m one of the few who wrote about the memory issues of chaining multiple JS native functions on arrays.
 
 - ## Symbols is a neat way to have internals that can only be accessed if you have access to the symbol. 
 - https://x.com/kettanaito/status/1824021118354702836

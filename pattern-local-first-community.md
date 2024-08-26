@@ -107,6 +107,17 @@ modified: 2023-09-13T20:24:41.516Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## The more I play with local-first tech, the more I question everything for web apps.
+- https://x.com/BHolmesDev/status/1827482864176206231
+  - “Why not SSR?” - So you can boot up state from Indexeddb instantly without waiting
+  - “Why not RPC actions?” - So you can write to Indexeddb instantly without waiting
+
+- I already use CSR with react for everything behind a login and SSG with Astro for everything static/SEO. Adding SSR would only save some requests at the cost of increasing complexity.
+
 - ## Tech stack doesn't matter but the user experience does matter. 
 - https://x.com/karrisaarinen/status/1796992391834206518
   - "...but local-first is slow to open": Opening up our 5yo @linear workspace with 50k issues

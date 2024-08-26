@@ -92,6 +92,10 @@ modified: 2023-10-11T21:37:25.329Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
 - ## 🗑️ is it possible to delete a database?
 - https://discord.com/channels/1138467878623006720/1138467879113728033/1197135462607888465
 - If you're running locally and using the SQLite adapter, you can just delete the SQLite files. 
@@ -251,3 +255,21 @@ await client.transact(async (tx) => {
   - There is a limit on how much you can store on a client device. If you need to store gigabytes of data, it will just not work. You are right at that point.
 - > How do you handle backups? How do you handle exports?
   - live backups; json export/import  
+# discuss-instantdb
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Instant is now open source! 2 years, YC, 5 team members, and 2000 commits _20240823
+- https://x.com/stopachka/status/1826674372175900724
+  - Instant is modern Firebase. You write relational queries in the shape of the data you want and Instant handles all the data fetching, permission checking, and offline caching
+  - At a high level, we're a relational sync engine. Our architecture is inspired by Asana's Luna, Figma's LiveGraph, and Datomic. 
+  - Under the hood, we store all user data as triples in one big Postgres database. A multi-tenant setup lets us offer a free tier that never pauses.
+
+- working with indexdb i have found it to be a bad foundation. once something goes wrong there is no option but to close entire browser it affects everything despite no fault of the app/lib.
+
+- Congrats on the launch. Got a few questions: 1. How are schema changes handled? 2. Is this easy to self-host?

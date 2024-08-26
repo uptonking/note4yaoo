@@ -50,7 +50,7 @@ modified: 2024-08-11T07:19:29.817Z
   - All the logs are saved to a postgres db, enabling you to do cool analytics and projects on top
   - Started with Python, doing UI was messy, switched to Node for some performance improvements, but ended up with @nextjs 
 
-- ## LLMs are bad at returning code in JSON. They write worse code in structured JSON responses. Even gpt-4o-2024-08-06's strict JSON mode.
+- ## 🐛 LLMs are bad at returning code in JSON. They write worse code in structured JSON responses. Even gpt-4o-2024-08-06's strict JSON mode.
 - https://x.com/paulgauthier/status/1824442504290374061
 - This is literally why we wrote a self healing json parser
   - The problem isn’t the json. That’s fine. The code inside is worse and has syntax errors.

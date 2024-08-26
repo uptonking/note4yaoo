@@ -82,6 +82,18 @@ modified: 2023-10-29T02:09:26.414Z
 
 - It's crucial for engineers to build performant, scalable, and cost-optimized data systems. Your book clearly guides me through the 'what' and 'why' of my work. But when I write code it’s a different ball game , connecting the theory and implementation is the goal.
 
+## 🦀 [Build your own SQLite, Part 1: Listing tables _202407](https://blog.sylver.dev/build-your-own-sqlite-part-1-listing-tables)
+
+- https://github.com/geoffreycopin/rqlite /202408/rust
+
+- As developers, we use databases all the time. But how do they work? In this series, we'll try to answer that question by building our own SQLite-compatible database from scratch.
+  - Source code examples will be provided in Rust, but you are encouraged to follow along using your language of choice, as we won't be relying on many language-specific features or libraries.
+
+- As an introduction, we'll implement the simplest version of the tables command, which lists the names of all the tables in a database
+
+- 
+- 
+
 ## 🐭 [Writing a SQL database from scratch in Go](https://notes.eatonphil.com/tags/databases.html)
 
 - [1. SELECT, INSERT, CREATE and a REPL](https://notes.eatonphil.com/database-basics.html)

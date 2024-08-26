@@ -10,6 +10,7 @@ modified: 2021-05-25T09:41:29.066Z
 # software-as-a-service
 
 - https://github.com/get-convex/convex-backend /FSL/202406/rust
+  - https://www.convex.dev/
   - https://docs.convex.dev/
   - Convex is the backend-as-a-service for fullstack app development
   - Convex replaces your database, server functions, scheduling, storage, vector search, etc.

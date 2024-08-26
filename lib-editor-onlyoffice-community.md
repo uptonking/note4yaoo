@@ -20,6 +20,15 @@ modified: 2024-01-19T18:27:51.917Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## #OnlyOffice无意间发现了这么个产品，刚开始我以为是LibreOffice的一个商业版本的fork，看了一下wiki发现不是，这是个纯网页版本的办公软件和office兼容。
+- https://x.com/imwsl90/status/1826470133835141274
+- 比LibreOffice有一个好，有pdf编辑工具
+- 这个结合nextcloud就可以私有化一个百度网盘加腾讯文档，非常合适小公司做私有化的云办公。
+
 - ## [OnlyOffice: Free open source office suite with business productivity tools | Hacker News_202309](https://news.ycombinator.com/item?id=37701884)
 - My only serious gripe with OnlyOffice is that when opening a CSV, you have to choose an encoding and delimiter, and there is no way to set a default. You must click twice, in two places, every single time you open a CSV.
   - You have to do this with Excel as well to avoid your data automagically being formatted and/or truncated.

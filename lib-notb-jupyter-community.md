@@ -16,7 +16,12 @@ modified: 2024-06-30T03:20:13.304Z
 
 - ## 
 
-- ## 
+- ## I just released Jupyter Shared Drive _20240824
+- https://x.com/davidbrochart/status/1827087377086513330
+  - This is a new way of collaborating in real-time in JupyterLab. Unlike Jupyter Collaboration, it is separate from your local files. See it as a scratch disk where you temporarily share files with colleagues.
+  - pip install jupyter-shared-drive
+  - The shared files don't live in a central place, but in each browser. This is a distributed architecture, think of it as a peer-to-peer application like BitTorrent. 
+  - And since it's based on WebRTC, it will also work in JupyterLite! A signaling server is needed for connecting users.
 
 - ## We bring a modern #SQL experience to #Jupyter! 
 - https://twitter.com/ploomber/status/1617522816441778177

@@ -75,6 +75,15 @@ modified: 2023-10-28T17:52:17.942Z
 
 - ## 
 
+- ## 
+
+- ## 🧐 Each Postgres server can host multiple databases, but be careful! An important note is all databases on the same server share the Write-Ahead Log (WAL)
+- https://x.com/qianl_cs/status/1826314526431871476
+  - This means if you perform a point-in-time recovery or rollback, it must be done for all databases on the server. So you cannot selectively restore a single database. 
+  - Therefore, if you have multiple loosely coupled services each connecting to a separate database, it's better to put them on different Postgres database servers.
+
+- If you have such loosely coupled services that you want them each to have their own Postgres server, it's also worth considering if you even need that infrastructure. Maybe your services would be fine with SQLite or DuckDB.
+
 - ## 最近两天优化了下线上的数据库查询，成功把 pg 的 cpu 利用率从接近 100% 降到 30% 上下，pg 的磁盘 iops 从 1500 上下优化到 30 左右，慢查询也少了很多。
 - https://twitter.com/kk1984_/status/1787774865443057748
   - 我之前没做过这方面的优化，只是对数据库有些基本的认识，所以这一路上对我来说还是挺有趣的，分享一些我学到的经验抛砖引玉
