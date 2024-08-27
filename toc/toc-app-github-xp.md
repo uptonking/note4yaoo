@@ -223,13 +223,18 @@ modified: 2023-02-08T10:46:26.912Z
 
 - github-mirrors
   - https://kkgithub.com/
+    - https://kkgithub.com/search?q=clash&type=repositories
+  - https://git.homegu.com/
   - https://hub.nuaa.cf/
   - https://github.wuyanzheshui.workers.dev/
+  - http://github.hscsec.cn/
+  - http://521github.com/
 
 - git-only
   - https://github.zhlh6.cn/
     - git clone git@git.zhlh6.cn:tinyplex/tinybase.git
   - https://gitclone.com/
+  - https://githubfast.com/
 - github proxy(解决下载慢的问题)
   - http://g.widyun.com/
   - https://d.serctl.com/

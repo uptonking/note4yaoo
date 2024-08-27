@@ -1003,6 +1003,9 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/personalizedrefrigerator/joplin-plugin-diff-tool /MIT/202407/ts
   - Diff and conflict resolution tool that supports Joplin Mobile
 
+- https://konnorrogers.github.io/diff-view-element/components/diff-view-element/
+  - A diff viewer complete with PrismJS for syntax highlighting
+
 ## lint
 
 - https://github.com/KELs7/contracting-linting-codemirror6 /202405/ts

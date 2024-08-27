@@ -485,7 +485,7 @@ sudo systemctl start minidlna
 ## proxy-cli-for-apps
 
 - 代理配置软件
-  - 可在github搜索主流的代理配置v2ray/ss gui, 然后在flathub/snapstore搜索正式包或测试包
+  - 可在github搜索主流的代理配置v2ray/ss/clash gui, 然后在flathub/snapstore搜索正式包或测试包
 
 - git最近更新了socks5的语法，去掉了引号，git config --global http.proxy socks5://127.0.0.1:10808配合V2RayN可用
   - #只对github.com
@@ -518,7 +518,11 @@ export https_proxy=http://127.0.0.1:7890;export http_proxy=http://127.0.0.1:7890
     - 在debian系统中配置了DNS之后，导入就成功了
   - [最佳代理实践之 v2raya (2023-06-23)](https://manateelazycat.github.io/2023/06/23/best-proxy/)
 
-
+- https://github.com/clash-verge-rev/clash-verge-rev /GPLv3/202408/ts/rust
+  - https://clash-verge-rev.github.io/
+  - Continuation of Clash Verge - A Clash Meta GUI based on Tauri (Windows, MacOS, Linux)
+  - Since the clash core has been removed. The project no longer maintains the clash core, but only the Clash Meta core.
+  - Built-in support Clash. Meta(mihomo) core.
 # law
 - [中国执行信息公开网](http://zxgk.court.gov.cn/index.jsp)
 
