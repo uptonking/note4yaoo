@@ -17,7 +17,10 @@ modified: 2023-06-14T00:53:15.226Z
 
 ## 
 
-## 
+## figma的sparkling-fill icon无法在驾驶舱渲染
+
+- 但在页面header部分渲染icon后，驾驶舱groupHeader的图标也能正常渲染
+  - 在groupHeader先隐藏再通过条件变为true也能让它渲染
 
 ## nextjs项目集成clerk后无法正常打开页面
 

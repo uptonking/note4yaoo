@@ -64,7 +64,8 @@ modified: 2024-06-18T02:45:42.107Z
 
 - ## 
 
-- ## 
+- ## [Absolutely positioned flex item is not removed from the normal flow in IE11 - Stack Overflow](https://stackoverflow.com/questions/32991051/absolutely-positioned-flex-item-is-not-removed-from-the-normal-flow-in-ie11)
+- 💡 an absolutely-positioned child of a flex container does not participate in flex layout
 
 - ## Basically every layout overflow bug ever boils down to some flex or grid child needing `min-width: 0` ; 
 - https://twitter.com/adamwathan/status/1734696245015494711

@@ -96,6 +96,9 @@ modified: 2024-05-27T11:39:14.886Z
 - 显示隐藏groups的处理
   - ✅ 官方api已支持
 
+- ⚠️ 使用dockview首先要确定布局的位置逻辑和最大化窗口的显示范围
+  - 如果左侧边栏不希望被最大化挡住，那么左侧边栏就不必用dockview实现
+
 - disableDnd={true}
   - tab能drag, 不能drop
 - locked={true}
@@ -118,7 +121,6 @@ modified: 2024-05-27T11:39:14.886Z
 
 - tab内容懒加载的最佳实践
   - gridview的面板逐个懒加载
-
 
 ```JS
 // 动态添加任意panel组件

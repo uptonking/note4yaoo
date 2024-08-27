@@ -13,6 +13,11 @@ modified: 2020-12-21T07:46:58.910Z
   - 浏览器本身支持svg使用WAAPI实现动画
   - 但可能只支持一部分，如Edge对svg transform支持不完善
   - [Animating strokeWidth doesn't work in Safari](https://github.com/web-animations/web-animations-js/issues/217)
+# tools-svg
+- online-editor
+  - https://www.svgviewer.dev/
+
+- online-viewer
 # pieces
 - Not all svg attributes can be manipulated with CSS. Only those designated as "properties" can be changed with CSS and animated.
 - Do not try manipulate the properties of SVG elements until SVG 2.0 standard release. (working only Chrome correctly)
