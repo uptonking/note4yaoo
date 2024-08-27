@@ -414,6 +414,10 @@ npx create-strapi@rc strapi5-play-202408 --use-npm --quickstart --ts --skip-clou
 - agent
   - 系统token达到上限后，不能再制定计划，但现有计划也无法显示
 
+- animation
+  - time machine show/hide
+  - action bar working/replaying
+
 - 
 - 
 - 
@@ -427,6 +431,26 @@ npx create-strapi@rc strapi5-play-202408 --use-npm --quickstart --ts --skip-clou
 
  
 
+```JS
+console.log(
+  ';; snap ',
+  openedActionIndex,
+  openedAction,
+  currentSnapshotFrame,
+  nextSnapshotFrame,
+  snapshotFrameResult?.data,
+)
+
+console.log(';; steps ', taskState, currentOpenedActionId, currentPlayedActionId, steps)
+```
+
+## 0827
+
+- dev-log
+  - 驾驶舱置顶卡片还原设计稿
+- dev-to
+  - 测试时光机的live/playback模式的播放控制和动画播放逻辑
+
 ## 0826
 
 - 计划终止后
@@ -439,7 +463,7 @@ npx create-strapi@rc strapi5-play-202408 --use-npm --quickstart --ts --skip-clou
   - 思路2: 查询path对应的op，计算op执行compose后是否变化
 
 - 置顶卡片
-  - 执行完成后立即进入playback模式，是否显示还置顶卡片，改显示什么action
+  - 执行完成后立即进入playback模式，是否显示还置顶卡片，该显示什么action
 
 - dev-log
   - 修复了diff视图的只读编辑器的功能，时光机进度条还原设计稿

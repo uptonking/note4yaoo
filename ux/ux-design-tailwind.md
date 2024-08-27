@@ -25,6 +25,18 @@ modified: 2021-01-03T17:11:47.916Z
     - 虽然在初次编写的时候使用预置的 token 很方便，但是第二次就麻烦了。上次用的颜色是什么
     - 怀念以前的做法，用 button--primary form__field 等样式可以确保整站的样式一致
   - Tailwind 的一大串样式很难阅读
+# discuss-usage-xp
+- ## 
+
+- ## 
+
+- ## [How to use calc() in tailwind CSS? - Stack Overflow](https://stackoverflow.com/questions/65976223/how-to-use-calc-in-tailwind-css)
+- Don't put space in calc
+  - Or you can use underscores _ instead of whitespaces
+  - class="w-[calc(100%+2rem)]"
+  - class="h-20 w-[calc(100%_-_10rem)]
+
+- border-[rgba(16,_24,_40,_0.1)]
 # discuss
 - ## 
 
@@ -146,7 +158,6 @@ modified: 2021-01-03T17:11:47.916Z
     - 它没有自以为是的帮你封装一层样式，降低你的定制性。
 
   - 很多集成的大框架都有这种缩写性质的css，然而一次性样式不如直接写style来的直接，也不好维护
-
 # tailwind-examples
 - https://github.com/tailwindlabs/tailwindcss
   - /28kStar/MIT/202009
