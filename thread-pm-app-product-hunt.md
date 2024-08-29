@@ -61,9 +61,33 @@ modified: 2022-12-04T16:34:29.342Z
 
 - ## 
 
-- ## 
+- ## for every paid SaaS, there is a free open-source self-hosted alternative:
+- https://x.com/fireship_dev/status/1828485695029260356
 
-- ## #这网站不错 包含有 279 个真实 App 完整截图
+```mermaid
+Notion -> Appflowy
+Zoom -> Jitsi
+Jira -> Plane
+Airtable -> NocoDB
+Vercel -> Coolify
+Heroku -> Dokku
+Firebase -> Pocketbase/Appwrite/Convex/Supabase
+Shopify -> Prestashop
+GitHub -> GitLab
+Slack -> Mattermost
+Salesforce CRM -> ERPNext
+Dropbox -> NextCloud
+Mailchimp -> Mautic
+Trello -> Wekan
+Docusign -> Docuseal
+Calendly -> Cal dot com
+Datadog -> Prometheus
+Google Analytics -> Matomo
+Microsoft Office 365 -> LibreOffice
+Asana -> OpenProject
+```
+
+- ## 这网站不错 包含有 279 个真实 App 完整截图
 - https://twitter.com/austinit/status/1767873308354351557
   - 特别适合用于UI方面的学习。
 

@@ -227,19 +227,44 @@ modified: 2024-08-24T16:28:20.515Z
   - 还有一个告诉ai接口，然后自动写页面的
 
 # discuss-devin-like
-- ##
+- ## 
 
-- ##
+- ## 
 
-- ##
+- ## 
 
-- ##
+- ## 
+
 # discuss-cursor-like
-- ##
+- ## 
 
-- ##
+- ## 
 
-- ##
+- ## Free and open source Alternative to Cursor's composer feature directly in Replit
+- https://x.com/itsPaulAi/status/1828472273260683627
+  - Cursor's composer is getting a lot of buzz because it lets anyone create apps using just English.
+- There is also ClaudeEngineer
+
+- Can we do SQL?  
+  - Yes you can.aider .chat/docs/languages.html
+
+- Set up the free open-source alternative to Cursor Composer in less than 3 minutes in Replit _202408
+- https://x.com/itsPaulAi/status/1828834199597633724
+  - Steps to use Aider chat:
+  - Create a new Python Repl
+  - Generate your Anthropic API key
+  - Paste it into the “Integrations” section
+  - Install and run the aider-chat package
+  - I also recommend that you take a look at Aider's extensive documentation if you need to.
+
+- so this only works for python repls?
+  - Yes but you can make it write any language and run with Flask. 
+
+- 
+- 
+- 
+- 
+- 
 
 - ## 拆解如何实现一个 Cursor
 - https://x.com/tuturetom/status/1827007055137571032

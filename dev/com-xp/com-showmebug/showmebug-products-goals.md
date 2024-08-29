@@ -277,12 +277,17 @@ modified: 2024-05-06T02:52:41.789Z
 # pm-idx-google
 - features
   - 与gemini大模型集成
-# pm-cursorai
+# pm-cursorai ⛳️
+- resources
+  - [Cursor](https://www.cursor.com/)
+
 - cmd + k : edit and write code with the AI
+  - select some code, click "Edit, " and describe how the code should be changed
+  - To generate completely new code, just type ⌘ K without selecting anything.
 - Terminal Command K
   - write terminal commands in plain english
   - You can use it to write sql commands, fill in argparse arguments, and parse jsons with jq.
-- Copilot++ is Cursor's native autocomplete feature
+- TAB: Copilot++ is Cursor's native autocomplete feature
   - suggest mid-line completions and entire diffs
   - uses a custom model that was trained to predict the next edit
 - Chat lets you talk with an AI that sees your codebase
@@ -302,7 +307,7 @@ modified: 2024-05-06T02:52:41.789Z
 - Apply From Chat: get code suggestions from chat into your editor
 - Rules for AI
   - use this for warning the AI of common gotchas in your codebase or for controlling its code style.
-# pm-devin
+# pm-devin ⛳️
 - [Devin June '24 Product Update](https://www.cognition.ai/blog/june-24-product-update)
   - playbook
 
@@ -321,6 +326,30 @@ modified: 2024-05-06T02:52:41.789Z
 - We even tried giving Devin real jobs on Upwork and it could do those too
 
 - We evaluated Devin on SWE-bench, a challenging benchmark that asks agents to resolve real-world GitHub issues found in open source projects like Django and scikit-learn.
+# pm-pair-programming
+
+## 
+
+
+## [Aider is AI pair programming in your terminal](https://aider.chat/)
+
+- Aider lets you pair program with LLMs, to edit code in your local git repository.
+  - Aider works best with GPT-4o & Claude 3.5 Sonnet and can connect to almost any LLM.
+- Aider automatically git commits changes with a sensible commit message.
+- Aider can edit multiple files at once for complex requests.
+- Aider uses a concise(简洁的；简要的) map of your whole git repository that includes the most important classes and functions along with their types and call signatures.
+  - Aider sends a repo map to the LLM along with each change request from the user
+  - The repo map contains a list of the files in the repo, along with the key symbols which are defined in each file
+- aider will show you some diffs of the changes it is making to complete you request. 
+
+- for large repositories even just the repo map might be too large for the LLM
+  - Aider solves this problem by sending just the most relevant portions of the repo map. It does this by analyzing the full repo map using a graph ranking algorithm, computed on a graph where each source file is a node and edges connect files which have dependencies. 
+  - Aider optimizes the repo map by selecting the most important parts of the codebase which will fit into the active token budget.
+
+- 
+- 
+- 
+
 # pm-code-ai
 - [stackblitz: In-browser code execution for AI | WebContainers](https://webcontainers.io/ai)
 
@@ -329,11 +358,10 @@ modified: 2024-05-06T02:52:41.789Z
   - 通信层改造：去除 jsonrpc 协议，使用 fury 压缩后的二进制方式协议提高 IDE 通信性能
   - 插件市场迁移：插件市场由阿里云迁移至支付宝小程序云，提供更稳定的服务
 
-
 - [Announcing Supermaven 1.0 _202407](https://supermaven.com/blog/announcing-supermaven-1.0)
   - Four months ago, we launched Supermaven with the goal of creating the fastest and most context-aware copilot
   - recently we added in-editor chat, our most requested feature, which lets you use models like GPT-4o and Claude 3.5 Sonnet to write code in your editor
-  - Today, we're announcing the most significant update yet to our inline completions. We've trained Babble, a new model, which is 2.5x larger than our previous model and expands its context window from 300,000 to 1 million tokens.
+  - Today, we're announcing the most significant update yet to our inline completions. We've trained Babble, a new model, which is 2.5x larger than our previous model and expands its context window from 300, 000 to 1 million tokens.
   - Supermaven Pro users will be able to use its 1 million token context window moving forward
 # more
 
@@ -368,6 +396,15 @@ modified: 2024-05-06T02:52:41.789Z
 
 - 国内ide
   - deepin ide
+
+- [TitanIDE -行云创新](https://www.cloudtogo.cn/ide)
+  - 力图在“安全、高效、体验”这三个维度取得平衡。现推出TitanIDE（社区版），对十人及以下团队全面免费开放
+
+- [Lightly：轻量且功能强大的集成开发工具(IDE)](https://lightly.teamcode.com/)
+  - 上海玖标网络科技有限公司
+  - 支持客户端 & Cloud IDE 两种模式
+  - 支持debug模式
+  - [TeamCode - Cloud Collaborative Dev Platform](https://www.teamcode.com/)
 # pm-sharing
 - ide
   - tab是否支持pin

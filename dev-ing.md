@@ -395,7 +395,7 @@ npx create-strapi@rc strapi5-play-202408 --use-npm --quickstart --ts --skip-clou
   - 去掉重播时收起的动画
 
 - editor
-  - readonly属性不生效
+  - ~~readonly属性不生效~~
 
 - diffView
   - ~~隐藏绿色部分后，红色部分是否显示行号~~，打字太快了，不用看行号
@@ -406,9 +406,10 @@ npx create-strapi@rc strapi5-play-202408 --use-npm --quickstart --ts --skip-clou
 
 - paas
   - 显示部分隐藏文件，如 .gitignore
+  - openFile处理异常 File does not exist
 
 - cde
-  - 快照文件编辑器的提示条
+  - 💡 快照文件编辑器的提示条
   - 重写驾驶舱侧边栏的header，让置顶卡片位置水平居中
 
 - agent
@@ -416,8 +417,14 @@ npx create-strapi@rc strapi5-play-202408 --use-npm --quickstart --ts --skip-clou
 
 - animation
   - time machine show/hide
-  - action bar working/replaying
+  - ~~action bar working/replaying~~
 
+- time-machine
+  - 时光机终止后，驾驶舱如何反馈，终止状态如何清理
+  - live模式下暂停时支持终止
+  - ~~machine组件unmount要手动清理时光机的定时器~~
+
+- 
 - 
 - 
 - 
@@ -443,6 +450,22 @@ console.log(
 
 console.log(';; steps ', taskState, currentOpenedActionId, currentPlayedActionId, steps)
 ```
+
+## 0829
+
+- dev-log
+  - 实现了时光机的terminate，review并且合并了时光机主要功能的pr，时光机可以开始测试
+- dev-to
+  - 解决paas的openFile处理异常 File does not exist
+  - 实现diff-view显示快照文件时编辑器显示不可编辑的提示条
+  - 开始设计cmd+k功能的状态和逻辑
+
+## 0828
+
+- dev-log
+  - action bar点击时显示三角形指针
+- dev-to
+  - 测试时光机的new/delete-file， terminate
 
 ## 0827
 

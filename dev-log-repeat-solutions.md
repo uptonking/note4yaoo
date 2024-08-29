@@ -99,6 +99,8 @@ modified: 2021-07-20T13:50:23.433Z
   - log-based: p/couchdb, powersync, kappa-db, event-sourcing
   - eav: triplitdb
 
+- 通用的features
+  - collab， realtime， ai
 ## solutions: inter(re)active knowledge-base/wiki
 
 - ✨ cms(content-mgmt)

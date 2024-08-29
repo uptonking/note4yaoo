@@ -120,9 +120,9 @@ modified: 2022-11-07T10:58:24.512Z
   - 因为discord前端升级而不可用了，要等待作者更新
   - 可参考 betterdiscord 的 favorite media 插件
 # saas
-
+- Grammarly 只做英语市场，所以大部分人并不了解：从不起眼的语法检查起家，这家公司已有百亿美金级别的估值
+  - [Neo Zhang on X: "Grammarly：生于技术曲线左侧" / X](https://x.com/neozhang/status/1828953389016945049)
 # tools/productivity
-
 - obsidian open source version
 
 - office许可过期

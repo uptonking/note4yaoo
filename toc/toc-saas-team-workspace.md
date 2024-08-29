@@ -135,6 +135,11 @@ modified: 2023-02-07T17:38:05.336Z
   - https://github.com/ever-co/ever-gauzy /ts
     - https://gauzy.co/
     - Open-Source Business Management Platform (ERP/CRM/HRM)
+
+- https://github.com/monicahq/monica /AGPLv3/202406/php/vue/inactive
+  - https://www.monicahq.com/
+  - Open source personal CRM
+  - https://www.officelife.io/
 # project-management
 - https://github.com/jacobrdz77/selfwork /MIT/202402/ts
   - https://selfwork.vercel.app/

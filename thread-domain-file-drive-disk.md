@@ -15,6 +15,14 @@ modified: 2024-08-03T20:00:33.414Z
 - ## 
 
 - ## 
+# discuss-pm
+- ## 
+
+- ## 
+
+- ## [File storage server alternative to Nextcloud : r/selfhosted _202403](https://www.reddit.com/r/selfhosted/comments/1bpqfkk/file_storage_server_alternative_to_nextcloud/)
+- I ended up with Tailscale to VPN back to my home, Samba to expose my storage on my network and Restic as my backup solution. The Finder app on MAC and Files app on iPhone are decent UI. This may not be fancy enough but get the job done for me.
+
 # discuss
 - ## 
 

@@ -179,6 +179,10 @@ modified: 2024-03-31T17:45:16.789Z
 - https://github.com/haiwen/seafile /AGPLv3/202402/c
   - http://seafile.com/
   - open source cloud storage system with privacy protection and teamwork features. 
+
+- https://github.com/pydio/cells /AGPLv3/202408/go
+  - https://pydio.com/
+  - Pydio Cells is an open-source, self-hosted Document Sharing and Collaboration platform specifically designed for organizations that need advanced document-sharing and collaboration without security trade-offs or compliance issues.
 # cloud-drive-sync
 - https://github.com/reruin/sharelist
   - ShareList 是一个易用的网盘工具，支持快速挂载 GoogleDrive、OneDrive
@@ -272,6 +276,11 @@ modified: 2024-03-31T17:45:16.789Z
 - https://github.com/theoephraim/node-google-spreadsheet
   - Google Sheets API (v4) wrapper for Node.js
 # dropbox
+- https://github.com/mickael-kerjean/filestash /AGPLv3/202408/go/js
+  - https://www.filestash.app/
+  - A Dropbox-like file manager that let you manage your data anywhere it is located: FTP • FTPS • SFTP • WebDAV • Git • S3 • LDAP • Mysql CardDAV • CalDAV • Backblaze B2 • Minio Dropbox • Google Drive
+  - Multiple cloud providers and protocols, easily extensible
+
 - https://github.com/psi-4ward/psitransfer /1.4kStar/BSD/202311/js/vue/inactive
   - Simple open source self-hosted file sharing solution.
   - alternative to paid services like Dropbox, WeTransfer.
@@ -427,15 +436,11 @@ modified: 2024-03-31T17:45:16.789Z
 - https://github.com/Peergos/Peergos /AGPLv3/202402/java
   - https://peergos.org/
   - A p2p, secure file storage, social network and application protocol
-
-
 # files-preview
-
 - https://github.com/musama619/react-files-preview /MIT/202311/ts
   - https://react-files-preview.netlify.app/
   - A file view component for React apps with image editor, and a sleek design powered by Tailwind CSS
   - 偏向图片
-
 # more-drive
 - https://github.com/FazioNico/dDrive
   - An alternative storage solution to Google Drive

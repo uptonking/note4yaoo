@@ -44,8 +44,8 @@ modified: 2024-08-24T16:28:27.099Z
   - Was a happy VSCode user for years but not very comfortable with how they’re starting to push more and more proprietary pieces, so started looking for alternatives. Neovim fits the bill perfectly.
 - the community can just switch to VSCodium
 
-- VScode’s killer feature is its remote development capability.
-  - VSCode's remote plugin is proprietary, and FOSS is explicitly forbidden from using it. So we're back at "they pretend to care for OSS" and "Microsoft is in the embrace phase".
+- ✨ VScode’s killer feature is its remote development capability.
+  - 💰 VSCode's remote plugin is proprietary, and FOSS is explicitly forbidden from using it. So we're back at "they pretend to care for OSS" and "Microsoft is in the embrace phase".
 - The default Python extension is already proprietary.
 
 - 
@@ -55,9 +55,11 @@ modified: 2024-08-24T16:28:27.099Z
 - ## 🌰 [Gitlab: The Future of the Gitlab Web IDE | Hacker News _202205](https://news.ycombinator.com/item?id=31487079)
 - > we asked ourselves the question: Do we want to continue to invest in implementing custom features for the Web IDE that ultimately deliver the same value as those already available in VS Code? Or do we embrace VS Code inside GitLab, and invest in extending the experience to more tightly integrate with GitLab and the DevOps workflow?
   - 👷🏻 GitLab PM and author of the OP here. We have faith in the future of VS Code as an open source project but I'll also say that this isn't a one-way door. If things change in the future, we're not so heavily leveraged that we couldn't replace the Web IDE's underlying editor again.
-- GitLab team member here. We have considered Theia in the past. Here are a couple of related epics/issues: - https://gitlab.com/groups/gitlab-org/-/epics/1619 - https://gitlab.com/gitlab-org/gitlab-foss/-/issues/56812
+- GitLab team member here. We have considered Theia in the past. Here are a couple of related epics/issues: 
+  - https://gitlab.com/groups/gitlab-org/-/epics/1619 
+  - https://gitlab.com/gitlab-org/gitlab-foss/-/issues/56812
 
-- I would argue that the best thing to come out of VS Code isn't even "VS Code" the overall environment, it's LSP, and MS has given that back to the community such that anybody can use it in a competing editor. I don't really think "VS Code" the product has a "moat" here and (up to now, at least) MS hasn't demonstrated much intent on creating one.
+- ✨ I would argue that the best thing to come out of VS Code isn't even "VS Code" the overall environment, it's LSP, and MS has given that back to the community such that anybody can use it in a competing editor. I don't really think "VS Code" the product has a "moat" here and (up to now, at least) MS hasn't demonstrated much intent on creating one.
   - yet they failed. Remember Atom or Brackets
 - As a small anecdote as someone who switched from atom, the killer feature for VS Code is being extendable AND performant. I used to use atom for a flexible text editor, and then still have to use sublime text if I wanted to open a large file 
 

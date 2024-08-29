@@ -15,7 +15,14 @@ modified: 2024-08-24T16:30:20.218Z
 
 # code-playgrounds
 
-# coding-ai
+# coding-engineer
+
+- https://github.com/paul-gauthier/aider /apache2/202408/python
+  - https://aider.chat/
+  - aider is AI pair programming in your terminal
+  - Aider works best with GPT-4o & Claude 3.5 Sonnet and can connect to almost any LLM.
+  - Aider uses a map of your entire git repo, which helps it work well in larger codebases.
+  - Aider has one of the top scores on SWE Bench
 
 - https://github.com/All-Hands-AI/OpenHands /MIT/202408/python
   - https://docs.all-hands.dev/
@@ -23,6 +30,10 @@ modified: 2024-08-24T16:30:20.218Z
   - OpenHands agents collaborate with human developers to write code, fix bugs, and ship features.
   - OpenHands works best with Docker version 26.0.0+ (Docker Desktop 4.31.0+). You must be using Linux, Mac OS, or WSL on Windows.
 
+- https://github.com/Doriandarko/claude-engineer /202408/python
+  - Claude Engineer is an interactive command-line interface (CLI) that leverages the power of Anthropic's Claude-3.5-Sonnet model to assist with software development tasks
+  - Comprehensive file system operations (create folders, files, read/write files)
+# coding-ai
 - https://github.com/artmoskvin/hide /MIT/202408/go
   - https://hide.sh/
   - Headless IDE for Coding Agents

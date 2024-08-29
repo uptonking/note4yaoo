@@ -87,7 +87,22 @@ modified: 2023-10-30T07:34:03.602Z
 - https://x.com/scomper/status/1791804644332908646
 - 好像都是小模型为主吧
 
-# discuss
+# discuss-ai-knowledgebase
+- ## 
+
+- ## 
+
+- ## Excited to share Latticework, a text-editing environment aimed to help synthesize freeform, unstructured documents _202408
+- https://x.com/andy_matuschak/status/1828928979656683581 
+  - It aims to help with making sense of messy piles of unstructured documents. 
+  - The key idea is unifying annotation (direct reaction in context) w/ freeform text-editing (for fluid sensemaking).
+- sorry, the PDF story doesn’t really exist in this prototype, but I think the design applies without alteration—just need someone to build it
+
+- https://x.com/MatthewWSiu/status/1828929032718872734
+- I explored some closely related ideas with @MagicPaperAI . You guys have pulled off the synthesis of highlights and copied fragments. I’d posit that the next key synthesis is between copied fragments and revisions of a document. Edits are partial copies.
+- Great work! I like the flow of adding & organizing snippets -> augmented synthesis. The more snippets you grab under a heading, the clearer a cluster forms. That then generates 'what you're getting at' summaries & gives AI bounds to forage for related snippets. Good loop there.
+
+ # discuss
 - ## 
 
 - ## 
