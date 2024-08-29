@@ -62,6 +62,26 @@ modified: 2024-07-29T11:49:33.248Z
 # discuss-diff/track-changes
 - ## 
 
+- ## 
+
+- ## 
+
+- ## ✨🤔🌰 @cursor_ai 发布了他们的「Tab 补全」魔法背后的模型技术细节
+- https://x.com/tuturetom/status/1828464855826997295
+  - [Near-Instant Full-File Edits _202405](https://www.cursor.com/blog/instant-apply)
+  - 微调 Llama-3-70B 模型，在 Coding 能力上匹敌 gpt-4o 和 claude 3 opus
+  - 定制推理解码算法，提升速度 4～5x
+  - 基于合成数据集训练
+
+- 不是用的 Claude 吗
+  - Tab 补全不是，需要速度还有兼容成本
+- 一对一的场景优化，需要花很大的精力。
+
+- https://x.com/tuturetom/status/1828604514922045874
+  - 模型重写整个文件而不是写 Diff（性能更好）
+  - Diff 格式参考开源项目 aider，完整 CodeBlock Diff 
+  - 启发式修改：修改整个文件，9x 速度
+
 - ## [MergeView matching regression (example) _202408](https://github.com/codemirror/dev/issues/1418)
 - It's likely 6.6.2 caused this change, which reduces diffing accuracy in situations where it looks like computing the precise diff will be expensive. 
   - You can still configure this via the `diffConfig` option (adding diffConfig: `{scanLimit: 5000}` to your example seems to help). 

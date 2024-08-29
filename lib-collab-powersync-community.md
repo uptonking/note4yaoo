@@ -90,6 +90,19 @@ modified: 2024-02-12T03:23:17.007Z
   - [Postgres Conf 2024: Local-first apps using Postgres logical replication - YouTube](https://www.youtube.com/watch?v=mPrM6lnd5wU)
   - [Inside logical replication in PostgreSQL: How it works _202303](https://www.postgresql.fastware.com/blog/inside-logical-replication-in-postgresql)
 
+# discuss-internals
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Decoupling the write path from the read path is NB for flexibility.
+- https://x.com/powersync_/status/1829145650564378777
+  - Writes are applied directly to the local SQLite db, then also placed into an upload queue.
+  - Our client SDK sequentially processes writes in the upload queue using an `uploadData()` function defined by the developer.
+  - So, developers control how writes are applied to Postgres, typically via their backend API.
+
 # discuss
 - ## 
 

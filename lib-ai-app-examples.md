@@ -219,7 +219,7 @@ modified: 2023-02-08T07:20:48.475Z
     - 支持私有化部署和开源模型
     - 针对大的 PR 设计了 PR Compression 策略，可以极大的处理几百个文件的场景
 
-- https://github.com/TabbyML/tabby
+- https://github.com/TabbyML/tabby /apache2/202408/rust
   - https://tabbyml.github.io/tabby
   - Self-hosted AI coding assistant. 
   - An opensource / on-prem alternative to GitHub Copilot.

@@ -916,11 +916,15 @@ modified: 2023-06-23T12:46:53.288Z
   - https://github.com/jupyter-server/pycrdt-websocket /python
     - async WebSocket connector for pycrdt
 
-- https://github.com/TypeFox/open-collaboration-tools /MIT/202406/ts
+- https://github.com/TypeFox/open-collaboration-tools /MIT/202408/ts
   - https://www.open-collab.tools/
   - ⚖️ Open Collaboration Tools: live-sharing solution for Eclipse Theia, VS Code and other editors and IDEs
   - A public instance of the collaboration server is available at open-collab.tools.
   - This is how it works: one person starts a collaboration session as host and invites others to join. The IDE extension distributes the contents of the hostʼs workspace and highlights text selections and cursor positions of other participants. 
+  - [Announcing the Open Collaboration Tools | TypeFox _202407](https://www.typefox.io/blog/open-collaboration-tools-announcement/)
+    - Itʼs a collection of libraries and tools for live-sharing of IDE contents, designed to boost remote teamwork with open technologies.
+    - The basic idea is simple: one person starts a collaboration session as host and invites others to join. The IDE extension distributes the contents of the hostʼs workspace and highlights text selections and cursor positions of other participants. 
+    - A VS Code Extension available on Open VSX and the VS Code Marketplace
 
 - https://github.com/codersgyan/realtime-code-editor /202203/js
   - 依赖codemirror5、socket.io

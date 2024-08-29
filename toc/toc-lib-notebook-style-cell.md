@@ -66,10 +66,6 @@ modified: 2021-05-13T16:08:15.067Z
   - A minimal Jupyter notebook UI for p5.js kernels.
   - This notebook interface is built using components from the JupyterLab computational environment.
 
-- https://github.com/purocean/yn
-  - 一款面向程序员的 Markdown 笔记应用。
-  - 支持加密文档，代码片段运行，内置终端，图表嵌入，HTML 小工具。
-
 - https://github.com/jaked/programmable-matter /202112/ts
   - A dynamic data-driven document development environment (DDDDDE)
   - Did you ever wish your document editor were more like an IDE? Your IDE more like a spreadsheet? Your spreadsheet more like a database? No?

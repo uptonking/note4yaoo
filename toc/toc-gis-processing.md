@@ -50,6 +50,18 @@ modified: 2021-01-04T16:21:40.119Z
   - Shapes may be organized into Planar(二维平面的) Set - searchable container which support spatial queries.
   - flatten-js provides a lot of useful methods and algorithms like finding intersections, checking inclusion, calculating distance, applying affine transformations, performing boolean operations and more.
 # spatial-index
+- https://github.com/missinglink/s2js /apache2/202408/ts
+  - https://missinglink.github.io/s2js/
+  - Javascript port of the S2 Geometry library for {browser, node}
+  - Module s1 implements types and functions for working with geometry in S¹ (circular geometry).
+  - Module s2 is a library for working with geometry in S² (spherical geometry).
+    - The S2 cell hierarchy is a hierarchical decomposition of the surface of a unit sphere (S²) into “cells”; it is highly efficient, scales from continental size to under 1 cm² and preserves spatial locality (nearby cells have close IDs).
+  - [S2 Geometry | S2Geometry](https://s2geometry.io/)
+    - A unique feature of the S2 library is that unlike traditional geographic information systems, which represent data as flat two-dimensional projections (similar to an atlas), the S2 library represents all data on a three-dimensional sphere (similar to a globe). 
+    - Flexible support for spatial indexing, including the ability to approximate arbitrary regions as collections of discrete S2 cells. 
+    - Fast in-memory spatial indexing of collections of points, polylines, and polygons.
+    - Extensive testing on Google’s vast collection of geographic data.
+
 - https://github.com/mourner/flatbush
   - A really fast static spatial index for 2D points and rectangles in JavaScript.
   - An efficient implementation of the packed Hilbert R-tree algorithm.

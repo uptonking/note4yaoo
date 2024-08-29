@@ -72,6 +72,10 @@ modified: 2022-10-02T20:51:30.444Z
 
 - https://github.com/ryankaplan/pattern-based-ot /201601/ts
   - A server/client for the Pattern-Based Operational Transform algorithm
+
+- https://github.com/Jeffail/leaps /MIT/202102/go/js/inactive
+  - A pair programming service using operational transforms
+  - Leaps is a service for collaboratively editing your local files over a web UI, using operational transforms to ensure zero-collision synchronization across any number of editing clients.
 # sharedb
 - sharedb /5.9kStar/MIT/202402/js/代码少
   - https://github.com/share/sharedb

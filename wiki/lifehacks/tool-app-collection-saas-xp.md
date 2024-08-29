@@ -523,6 +523,14 @@ export https_proxy=http://127.0.0.1:7890;export http_proxy=http://127.0.0.1:7890
   - Continuation of Clash Verge - A Clash Meta GUI based on Tauri (Windows, MacOS, Linux)
   - Since the clash core has been removed. The project no longer maintains the clash core, but only the Clash Meta core.
   - Built-in support Clash. Meta(mihomo) core.
+  - [[BUG]局域网无法连接7890端口 _202312](https://github.com/clash-verge-rev/clash-verge-rev/issues/159)
+    - 新版本换端口了，看设置里有端口显示。是7897
+  - [[BUG]](https://github.com/clash-verge-rev/clash-verge-rev/issues/1379)
+    - 请确保你的提供商提供的是clash的yaml格式订阅,这里不负责提供商导致的问题
+
+- https://github.com/tindy2013/subconverter /GPLv3/202408/cpp
+  - https://github.com/tindy2013/subconverter/blob/master/README-cn.md
+  - 在各种订阅格式之间进行转换的实用程序
 # law
 - [中国执行信息公开网](http://zxgk.court.gov.cn/index.jsp)
 

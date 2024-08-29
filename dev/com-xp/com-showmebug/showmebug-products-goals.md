@@ -391,6 +391,10 @@ modified: 2024-05-06T02:52:41.789Z
 - CSDN InsCode
   - [InsCode - 让你的灵感立刻落地](https://inscode.csdn.net/)
 
+- [有大厂开始抄 cursor 了](https://x.com/oran_ge/status/1827629820957929754)
+  - cursor只是过渡形态，不如更进一步推出零代码的AI Code Editor
+  - 国内marscode 通义灵码 codegeex deepcode 这类产品各家都在做 有的做得还蛮早的
+
 - [探索AI Agent：从大模型到智能应用的演进之路 - 掘金](https://juejin.cn/post/7377208894550736905)
   - 各大厂的ide产品
 

@@ -240,6 +240,19 @@ modified: 2024-08-24T16:28:20.515Z
 
 - ## 
 
+- ## 
+
+- ## 🤔 很高兴看到 Cursor 越来越火， 因为这是必然的趋势： AI 的代码能力，推理能力，数学能力，是可预期的稳定提升
+- https://x.com/oran_ge/status/1828547354812916130
+  - 这件事的影响深远，不仅是程序员写的代码，还有产品经理做的原型，最终是用户需求直接构建产品
+- 产品经理直接通过代码生成原型吗？
+  - 不是原型是mvp
+- 一年前同样很多人在OpenAI, 疯狂程度选比如今的Cursor
+  - 但是现在公开说OpenAI看起来不行了已经不会被鄙视了。很有可能只要1年后，新宠一样的结局
+  - 创新很难，能提前整个行业几年看到正确的方向，说出来都没人信
+
+- AI在生产力和创造力上的价值是帮助人们高效地使用工具，在Cursor的场景下coding、API、运行环境就是工具，可以让那些有想法的人快速实践。
+
 - ## Free and open source Alternative to Cursor's composer feature directly in Replit
 - https://x.com/itsPaulAi/status/1828472273260683627
   - Cursor's composer is getting a lot of buzz because it lets anyone create apps using just English.
@@ -263,10 +276,8 @@ modified: 2024-08-24T16:28:20.515Z
 - 
 - 
 - 
-- 
-- 
 
-- ## 拆解如何实现一个 Cursor
+- ## 拆解如何实现一个 Cursor _202408
 - https://x.com/tuturetom/status/1827007055137571032
   - 如何设计一个能够生成「全栈 App」的 AI Editor 架构 - Townie
   - 使用 CodeMirror 作为编辑器，AI 生成代码、处理 Diff、人类 Review，生成预览，处理多模型与成本控制，甚至包括评测

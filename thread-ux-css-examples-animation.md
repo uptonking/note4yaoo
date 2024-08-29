@@ -9,6 +9,24 @@ modified: 2022-11-21T15:27:20.974Z
 
 # guide
 
+# examples-loading/progress
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 💫 I love this cool effect with CSS Conic gradients
+- https://x.com/wesbos/status/1828528779544719707
+  - https://codepen.io/wesbos/pen/PoraMVV
+- No need for any nesting/ pseudos. Make the `conic-gradient()` relative to `border-box` and restrict main button background layer to `padding-box` .
+
+- ## progress bar, infinite
+- https://codepen.io/LauraBizzle/pen/wvEMqVN
+- https://codepen.io/artboardartisan/pen/VLzKVN
+
+- non-infinite
+  - https://codepen.io/pixelsultan/pen/ZKqvyx
 # ux-examples
 - ## 
 
