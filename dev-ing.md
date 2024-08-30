@@ -422,12 +422,22 @@ npx create-strapi@rc strapi5-play-202408 --use-npm --quickstart --ts --skip-clou
 - time-machine
   - 时光机终止后，驾驶舱如何反馈，终止状态如何清理
   - live模式下暂停时支持终止
+  - 关闭machine再打开时，会强制再次打开editor
   - ~~machine组件unmount要手动清理时光机的定时器~~
+- 未执行的时光机
+  - 状态会变成pause
+  - actions和plan在刷新页面后会丢失、重置
+- 回放模式
+  - 最后一个action播放时进度条未显示loading
+  - .pnpm-store文件夹应该默认隐藏，被ignore的文件不要显示，不要出现在changedFiles
+    - 文件树打不开.pnpm-store文件夹
+  - .gitignore文件无法显示，需要在ideServer放开
+  - 第一个action有时会转起来
+  - 只读编辑器光标改为禁用箭头
+  - 回放时高亮对应面板边框
+  - diff效果有时显示不出来
+  - 新增文件未显示A图标，显示的是M
 
-- 
-- 
-- 
-- 
 
 ## 080
 
@@ -449,6 +459,57 @@ console.log(
 )
 
 console.log(';; steps ', taskState, currentOpenedActionId, currentPlayedActionId, steps)
+```
+
+## 0830
+
+- dev-log
+  - 实现diff-view显示快照文件时编辑器显示不可编辑的提示条
+- dev-to
+  - 修复时光机的暂停继续问题
+
+- 时光机暂停event时不需要参数
+  - 时光机恢复时，旧的数据不会更新
+
+- cmd+k api需要支持 uRemakeFile, uStopRemakingFile, uRegenerateAlternative?
+  - sdk和前端的通信方式
+  - 需要单独发送selectedContent对应的代码字符串吗
+  - accept/reject在前端给用户操作, 用户reject后agent需要知道吗，目前操作的粒度是全部
+    - 修改粒度为每个变更块
+  - 追加修改需要新增单独的uFollowUpRemakeFile事件吗，追加的范围默认是上次修改的范围
+    - 追加需要追加的提示词
+  - 需要新增单独的uRegenerateAlternative的事件吗，也可以不要这个事件, 可以一次返回多个
+  - regenerate是否需要切换回旧版代码的ui 
+    - 暂时不做新的ui交互
+
+```JS
+// uRemakeFile request parameters, 'uRemakeFile'
+{
+  prompt,
+  filePath,
+  // { lines, offset }, lines是1-based行号如[4,5]/[4,4], offset是光标位置
+  selectedRange,
+  // meta可包含用于生成代码的其他信息如代码注释/当前行变量或方法的声明或引用
+  meta = {},
+  selectedContent = '',
+  isFollowUp,
+  // isRegenerate
+}
+// uRemakeFile response
+{
+  filePath: '',
+  remakeContent: '',
+  // alternatives: []
+}
+
+// uStopRemakingFile request
+{
+  filePath: '',
+}
+// uStopRemakingFile response
+{
+  stopped: true
+}
 ```
 
 ## 0829

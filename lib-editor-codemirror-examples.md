@@ -1520,6 +1520,9 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/thexeromin/webcode /202408/ts
   - https://webcode-client.netlify.app/
   - a web-based C compiler and terminal, allowing you to write, compile, and run C code directly in your browser with no installation needed.
+
+- code-play
+  - https://github.com/xorazmiy-dev/code-mirror /js
 # starter
 - https://github.com/A99US/CM6-Browser-Wrapper /MIT/202308/js/inactive
   - https://a99us.github.io/CM6-Browser-Wrapper/
@@ -1593,6 +1596,10 @@ modified: 2023-06-23T12:46:53.288Z
   - A comfortable note-taking app powered by Markdown
   - 依赖codemirror6、prosemirror、markdown-it、electron-window-state、remark-gfm
 
+- https://github.com/danielgolden/volon /202408/ts/vue
+  - https://volon.app/
+  - a plain text, markdown-focused, local-first notes app with text-editing keyboard shortcuts
+
 - https://github.com/stencila/stencila /apache2/202405/rust/ts
   - https://stenci.la/
   - a platform for authoring, collaborating on, and publishing executable documents.
@@ -1647,12 +1654,14 @@ modified: 2023-06-23T12:46:53.288Z
   - Supply React component and Vue component
   - 提供了ai-widget
 
-- https://github.com/surrealdb/surrealist /MIT/202408/ts
-  - https://surrealist.app/
-  - Surrealist is the ultimate way to visually manage your SurrealDB database. 
-  - Effortlessly connect to any SurrealDB database and execute queries
-  - 依赖codemirror、tauri
-  - The Surrealist web app provides a fully functional database management experience with support for multiple connections and an integrated sandbox environment.
+- https://github.com/surrealdb/codemirror /apache2/202408/ts/js
+  - This library provides full support for the SurrealQL language within your CodeMirror editors.
+  - https://github.com/surrealdb/surrealist /MIT/202408/ts
+    - https://surrealist.app/
+    - Surrealist is the ultimate way to visually manage your SurrealDB database. 
+    - Effortlessly connect to any SurrealDB database and execute queries
+    - 依赖codemirror、tauri
+    - The Surrealist web app provides a fully functional database management experience with support for multiple connections and an integrated sandbox environment.
 
 - https://github.com/GaganpreetKaurKalsi/SQL-Editor /202206/js/inactive
   - https://sql-editor-react.vercel.app/sql-editor
