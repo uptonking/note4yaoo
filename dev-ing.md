@@ -339,7 +339,10 @@ npx create-strapi@rc strapi5-play-202408 --use-npm --quickstart --ts --skip-clou
   - [x] streaming infinite-list/tree
 
 - [Scrum Poker Online - Free Tool for Planning Poker](https://www.scrumpoker-online.org/en/room/64881797/scrum-poker)
-# dev-08
+# dev-09
+- yaoo-proj
+  - codemirror-devtools
+
 - ai相关开发
   - cmd+k 与ai对话
   - ai执行计划同步底部时光机进度条
@@ -437,7 +440,6 @@ npx create-strapi@rc strapi5-play-202408 --use-npm --quickstart --ts --skip-clou
   - 回放时高亮对应面板边框
   - diff效果有时显示不出来
   - 新增文件未显示A图标，显示的是M
-
 
 ## 080
 

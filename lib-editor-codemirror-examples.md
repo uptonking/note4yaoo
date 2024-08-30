@@ -30,6 +30,9 @@ modified: 2023-06-23T12:46:53.288Z
   - https://codemirror.net/docs/community/
   - https://news.ycombinator.com/threads?id=CompuIves
   - [List of community extensions? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/list-of-community-extensions/4899)
+  - https://www.npmjs.com/search?ranking=maintenance&q=codemirror
+    - https://github.com/search?type=registrypackages&q=codemirror&s=created&o=desc
+    - https://x.com/search?q=codemirror&src=typed_query&f=live
 # popular
 - https://github.com/tmcw/awesome-codemirror
   - Awesome CodeMirror plugins, themes, wrappers, and more
@@ -1284,6 +1287,10 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/mattmundell/codemirror-lang-git-log /MIT/202406/ts
   - https://git.sr.ht/~mattmundell/codemirror-lang-git-log
   - CodeMirror language for 'git log' output
+
+- https://github.com/Juexro/codemirror-iecst /MIT/202408/js
+  - Structured Text language support, includes syntax highlight based on IEC 61131-3
+  - This package implements iecst language support for the CodeMirror code editor.
 
 - https://github.com/inspirnathan/codemirror-lang-mermaid /MIT/202309/ts
   - Mermaid language support for CodeMirror 6
