@@ -111,6 +111,21 @@ modified: 2023-09-13T20:24:41.516Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Local First, Forever | Hacker News _202406](https://news.ycombinator.com/item?id=40786425)
+- I think an important requirement for making the "forever" aspect of local-first possible is to make the backend sync server available for local self-hosting.
+  - If there's an app-specific backend sync server it's not going to be "forever." Why can't syncing data be commodified via a dumb cloud that just syncs blobs? If you want privacy locally encrypt everything.
+
+- https://remotestorage.io/ was a protocol intended for this. IIRC the visison was that all applications could implement this and you could provide that application with your remotestorage URL, which you could self host.
+  - I used remoteStorage.js for a while for an app, but the JS SDK was too limited
+
+- The thing about local first syncing options like this is that they mostly do not work on mobile. For example iPhones cannot handle dropbox syncing random text files in the background as a regular filesystem for an app to deal with.
+
+- Matthew Weidner's blog post has been enlightening. When a centralised server is involved, CRDTs and OT are merely optimisations over server reconciliation so yes CRDTs aren't always the best approach. It is a compelling approach for text editing though.
+
 - ## The more I play with local-first tech, the more I question everything for web apps.
 - https://x.com/BHolmesDev/status/1827482864176206231
   - “Why not SSR?” - So you can boot up state from Indexeddb instantly without waiting
@@ -201,7 +216,7 @@ modified: 2023-09-13T20:24:41.516Z
 - 
 - 
 
-- ## [Show HN: ElectricSQL, Postgres to SQLite active-active sync for local-first apps | Hacker News_202309](https://news.ycombinator.com/item?id=37584049)
+- ## ✨ [Show HN: ElectricSQL, Postgres to SQLite active-active sync for local-first apps | Hacker News _202309](https://news.ycombinator.com/item?id=37584049)
 - Conceptually sounds like this is what Firebase, Couchbase Lite, and Mongo Reach do in the NoSQL world.
 
 - 🤔 I want to be able to have a Postgres database as the central source of truth for all data and user accounts, but then have each users private content to be siloed and synced to their own SQLite database which they alone have access to. Is this possible with electricSQL?

@@ -144,6 +144,17 @@ modified: 2022-04-05T10:09:51.343Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## ⚡️ [Making CRDTs More Efficient | Hacker News _202310](https://news.ycombinator.com/item?id=37915934)
+- OP implements their own RLE-based compression scheme. I bet you'd get better results from emitting an uncompressed binary format, and then passing the whole thing through a general-purpose compressor like zstd.
+- General compression algorithms like zstd will do way, way better on previously encoded data. Sorting, RLE, etc, are all going to lead to a smaller resulting binary after going through the generalized algorithm.
+  - You're also going to be relying on heuristics that may fail. Zstd has no idea that your UUIDs are going to repeat, it doesn't know to dictionary encode them or to create frequency mappings. What it ends up doing is unlikely to be as effective as doing the work ahead of time, then allowing zstd to find the interesting and complex patterns that arise out of your encoded format.
+
+- Given equivalent data stored in both JSON and BSON format I would expect them both to compress down to blobs of roughly equivalent sizes. This is because both encode roughly the same amount of information, so the compression algorithm will tend to compress down to the same final result. I haven't run this as an experiment though..that would be fun.
+
 - ## I think I will stop using the term "CRDTs".
 - https://twitter.com/LewisCTech/status/1759148577174204815
   - I'm interested systems that can be written to w/o coordination and sync predictably. 

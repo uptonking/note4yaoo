@@ -158,6 +158,17 @@ modified: 2023-04-21T11:42:46.575Z
   - Yes, writes and syncing is definitely the remaining hard part. Yjs with Durable Objects seems to be a potential path. I’m curious about much larger data sets in OPFS and syncing to it. Say Tiny to SQLite?
 - I’m confident in the TinyBase v5 syncing. Would just need a server peer (kinda the ‘master’ instance) that knew what/when to write back to GitHub.
 
+# discuss-collab
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [TinyBase v5: CRDTs for the rest of us | Hacker News _202407](https://news.ycombinator.com/item?id=40887064)
+- the ui-react (and in turn ui-react-dom) modules are optional so you can run it with full ReactDom, with abstract React (eg React Native), or without React at all.
+  - For SQLite, a variety of flavors are supported including things like ElectricSQL, Turso, and PowerSync - which all let you sync back to a server. You might also consider running a ‘client’ on a server that can listen to changes coming through web sockets and persist itself to server storage - but I haven’t written that pattern up yet.
+
 # discuss
 - ## 
 

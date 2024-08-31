@@ -20,6 +20,7 @@ modified: 2022-04-05T10:10:59.826Z
   - network-agnostic
   - bindings for editors/apps
   - persistence
+  - delete支持不保留tombstone
 
 - cons
   - yata冲突处理算法不如rga/fractional-index/logoot/lseq主流

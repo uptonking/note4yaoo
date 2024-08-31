@@ -12,6 +12,20 @@ modified: 2024-08-11T07:21:11.986Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Show HN: Briefer – Multiplayer notebooks with schedules, SQL, and built-in LLMs | Hacker News _202407](https://news.ycombinator.com/item?id=41045834)
+- Can you tell me how it compares to Deepnote.com please?
+  - The products are similar in the sense that both are cloud-based notebooks, but we have different approaches to building them.
+  - 1. We want to go beyond just notebooks. We want to centralize all data tasks in Briefer, including traditional BI so we’re building specific features for that, like dashboarding and everything that comes with it.
+  - 2. We’ll enable people to use their own compute for the notebooks.
+  - 3. We want to allow people to manage notebooks, dashboards, and apps “as code” so they can version it whenever necessary.
+  - We unfortunately didn’t finish items 2 and 3 yet because we’ve only started working on Briefer six months ago, but we’re fast and we’ll get there soon.
+
 - ## Architectures for Central Server Collaboration
 - https://news.ycombinator.com/item?id=40579892
 - 

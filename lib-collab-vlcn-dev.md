@@ -82,7 +82,10 @@ modified: 2023-06-03T14:43:26.987Z
 
 - ## 
 
-- ## 
+- ## [Matt Wonlaw: cr-sqlite, syncing strategies and incremental view maintenance - YouTube _202406](https://www.youtube.com/watch?v=oGGAehNQuG0)
+- 
+- 
+- 
 
 - ## Matt Wonlaw ( @tantaman ) on building his own local-first tools (cr-sqlite, Materialite) and comparing syncing mechanisms. _202406
 - https://x.com/localfirstfm/status/1800874211998867633

@@ -84,6 +84,13 @@ modified: 2023-10-28T09:00:45.811Z
 - ## 
 
 - ## [Cola: A text CRDT for real-time collaborative editing | Hacker News _202309](https://news.ycombinator.com/item?id=37373796)
+- I would guess a G-tree is still a B-tree with additional parent pointers, the fact that it is stored in an array is a matter of representation but does not fundamentally change the structure. This still stores pointers, they are just in units of the node size instead of bytes and relative to the first array element instead of the beginning of the address space. A complete binary tree stored in a array without any explicit references, i.e. an implicit representation with the children of the node at index x stored at indices 2x + 1 and 2x + 2, is still referred to as a binary tree, just with an implicit representation.
+  - A quite clever representation of a tree that I read about is to store nodes in DFS order in a flat array. Given that it’s read only and the readers want to traverse it depth first anyway, this can be quite efficient. S-expressions and HTML come to mind.
+
+- This doesn’t appear to support rich text formatting ranges like bold, italic, etc - unless I’m missing something in the API. AFAIK Peritext is still the state of the art in rich text CRDT algorithms 
+- 
+- 
+- 
 
 - ## [Overleaf: An open-source online real-time collaborative LaTeX editor | Hacker News](https://news.ycombinator.com/item?id=40832930)
 

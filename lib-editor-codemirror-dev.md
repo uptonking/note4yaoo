@@ -152,6 +152,7 @@ modified: 2021-05-06T09:38:31.520Z
   - conflict
 
 - port to server side lang like prosemirror
+  - hocuspocus for codemirror
 
 - features
   - diff with magic-code-animation

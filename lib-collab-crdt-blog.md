@@ -24,12 +24,16 @@ modified: 2022-10-13T08:00:21.260Z
 - There is another class of CRDTs: Merkle CRDTs.
 - Merkle-DAG CRDTs
 - Merkle Search Tree CRDTs
-
-- [Trade-offs between Different CRDTs | Hacker News](https://news.ycombinator.com/item?id=38916647)
 # 👥 [CRDTs Turned Inside Out | Hacker News _202401](https://news.ycombinator.com/item?id=39130945)
+- As the main author of the Merkle Search Tree paper, I'm really glad to see the design become more known and start to be used. 
+  - At Martin Kleppman's recommendation, we adopted MSTs for AT Protocol's data repository structures. This isn't my specialty so I wasn't deeply involved in evaluating or implementing them, but my understanding is that the self-balancing was a deciding factor and that everyone has been very happy with the outcomes. 
+
+- 
+- 
+- 
+- 
 
 # 👨🏻‍🏫 [Understanding CRDTs: A Gentle Introduction (Chapter 1) _202401](https://federicoterzi.com/blog/understanding-crdts-a-gentle-introduction-chapter-1/)
-
 - https://github.com/federico-terzi/crdt-experiments /MIT/202402/rust
   - An experimental, high-performance CRDT JSON data structure in Rust
 

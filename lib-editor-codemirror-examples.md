@@ -1007,6 +1007,17 @@ modified: 2023-06-23T12:46:53.288Z
   - It is also available in React and Vue.
   - 示例是基于textarea实现合并代码
 
+- https://github.com/Wilfred/difftastic /MIT/202408/rust
+  - https://difftastic.wilfred.me.uk/
+  - a structural diff tool that compares files based on their syntax
+  - Difftastic supports over 30 programming languages
+  - 🐛 issues
+    - Difftastic output is intended for human consumption, and it does not generate patches that you can apply later. Use diff if you need a patch.
+      - AST merging is a hard problem that difftastic does not address.
+    - Difftastic scales relatively poorly on files with a large number of changes, and can use a lot of memory.
+    - Difftastic has a side-by-side display which usually works well, but can be confusing.
+    - Difftastic regularly has releases that fix crashes.
+
 - https://github.com/personalizedrefrigerator/joplin-plugin-diff-tool /MIT/202407/ts
   - Diff and conflict resolution tool that supports Joplin Mobile
 

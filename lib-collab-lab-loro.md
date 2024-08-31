@@ -30,6 +30,26 @@ modified: 2024-01-06T15:37:08.031Z
 
 - ## 
 
+- ## 
+
+- ## [Movable tree CRDTs and Loro's implementation | Hacker News _202407](https://news.ycombinator.com/item?id=41099901)
+- https://thymer.com We're building a new multiplayer editor for tasks/notes which supports both text and outliner operations. Although it behaves like a flat text document, the outliner features essentially turn the document into a large tree under the hood. We do something similar to the highly-available move operation to sync changes
+  - There is one operation to change the tree, called insmov (move-or-insert). Whenever a client is online it can sync changes C to a server.
+  - We don't use any fractional indices though. Instead, our insmov tuple not only contains a parent P, but also a previous sibling guid A. Because all tree ops will eventually be applied in the global linear order as determined by the server, "sorting" is handled by just using the insmov operation.
+- For what it's worth, this sounds equivalent to the RGA list CRDT, using the server's global linear order as a logical timestamp (in place of e.g. Lamport timestamps).
+
+- I have open sourced React Table Library with the focus on tree operations. They are handling a folder/file tree structure of 100 thousands nodes where it is possible to move folders/files, clone them, lazy load them on a top and nested level, etc. And all of it in the same table structure. After I finished the project, I kinda knew why Google Drive only allows to display and modify on the same hierarchical level. There are so many constraints that you have to consider when implementing this in a nested view with many nodes.
+
+- When working with formatted text content like in Google Docs / Zoho Writer: moving a list item down or adding a new column or any table/list operation is essentially a tree manipulation op. Concurrent conflicts in such cases are notoriously hard to converge without contextual special handling. Does this implementation generalize a solution for such use-cases? 
+  - I guess it should be possible to combine a list(or string) CRDT for leaf nodes (i.e text blocks) and use this tree CRDT for structural nodes (lists & tables). But that will make augmenting every op with two-dimensional address (parent-id, index_offset_into_that_parent)
+- 🤔💡🌲 That’s always how I’ve imagined it. Rich text is plain text with 2 additions: Annotation ranges (for bolded regions and such) and non-character elements (Eg a table or embedded image). A text crdt is fundamentally just a list crdt that happens to contain character data. So embedded elements can easily be modelled as a special item (the embedded child node), and with size of 1 like any other item in the string. And then with the right approach, you can mix and match different CRDTs in a tree as needed. (Rich text, contains a table, and one of the cells has an image and so on).
+  - Augmenting every op with a parent-crdt-id field is unfortunate but I think unavoidable. Thankfully I suspect that in most real world use cases, it would be very common for runs of operations to share the same parent crdt. As such, I think those ID fields would run-length encode very well.
+
+- The implementation can indeed combine multiple different CRDTs. Within Loro's internal implementation, each op does need to store a parent ID. However, as Seph mentioned, consecutive operations under the same parent can be effectively compressed, so the amortized overhead of these parent IDs is often not significant.
+
+- I wonder if there has been any practical CRDT for data dense applications, such as images (pixels) and 3D models?
+  - With any collaborative application, you need to start with a conceptual framework for the edits a user may perform, and how to best preserve the intention of the user (1) and the coherency of the resulting document (2) when any such edits may occur asynchronously. 
+
 - ## [Loro's rich text CRDT | Hacker News _202401](https://news.ycombinator.com/item?id=39102577)
 - I invented replayable event graphs. 
 - If you remove these ops from history, does that remove the ability to time travel
@@ -49,6 +69,12 @@ modified: 2024-01-06T15:37:08.031Z
 - 
 
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 
 
 - ## Synchronizing tree structure movements (like moving folders) has always been a challenging problem

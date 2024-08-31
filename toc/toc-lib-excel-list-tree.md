@@ -361,11 +361,6 @@ modified: 2022-08-21T10:02:41.845Z
   - stores a small index for every entry in the log, meaning no external indexing is required to model the tree. 
   - Also means that you can perform fast lookups on sparsely replicated logs.
 
-- https://github.com/jlxw/static-json-db
-  - A NoSQL key-value database stored as a directory tree of small JSON files which can be deployed as part of a static website and queried from client browsers in an efficient manner.
-  - Data is stored in JSON files which are branched into smaller JSON files as size tresholds are met.
-  - static-json-db can be a lower-cost alternative to traditional databases that do not need to be updated frequently.
-
 - https://github.com/mihneadb/node-directory-tree
   - Creates a JavaScript object representing a directory tree.
 
@@ -378,16 +373,12 @@ modified: 2022-08-21T10:02:41.845Z
   - Parse JSON into similar, traversable trees, or mix with XML.
   - Generate L3, a lightweight, flat representation of XML or JSON trees (or mixed) for fast storage and retrieval.
 
-- https://github.com/qwertie/btree-typescript
-  - fast in-memory B+ tree with a powerful API based on the standard Map.
-  - B+ trees are ordered collections of key-value pairs, sorted by key.
-  - data structures in JavaScript tend to be slower than the built-in Array and Map data structures in typical cases, because the built-in data structures are mostly implemented in a faster language such as C++
 - https://github.com/w8r/splay-tree
   - This tree is based on top-down splaying algorithm by D. Sleator.
 
 - https://github.com/mikolalysenko/functional-red-black-tree /js
   - A fully persistent red-black tree written 100% in JavaScript. Works both in node.js and in the browser
-  - 被使用在pg-mem, leveljs-memory
+  - 🌰 被使用在pg-mem, leveljs-memory
   - Functional (or fully persistent) data structures allow for non-destructive updates.
   - Functional (or fully persistent) data structures allow for non-destructive updates. So if you insert an element into the tree, it returns a new tree with the inserted element rather than destructively updating the existing tree in place. Doing this requires using extra memory
   - this data structure saves some memory by recycling references to previously allocated subtrees. This requires using only O(log(n)) additional memory per update instead of a full O(n) copy.
@@ -455,6 +446,12 @@ modified: 2022-08-21T10:02:41.845Z
   - not goroutine-safe - calling any methods on it from a different goroutine without synchronization is not safe and might lead to data corruption
 
 ## btree
+
+- https://github.com/qwertie/btree-typescript /MIT/202203/ts/inactive
+  - fast in-memory B+ tree with a powerful API based on the standard Map.
+  - B+ trees are ordered collections of key-value pairs, sorted by key.
+  - data structures in JavaScript tend to be slower than the built-in Array and Map data structures in typical cases, because the built-in data structures are mostly implemented in a faster language such as C++
+  - 🌰 ms-fluid使用了
 
 - https://github.com/loro-dev/generic-btree /rust
   - a pure safe BTree that can be used to build your own special-purpose btree data structure

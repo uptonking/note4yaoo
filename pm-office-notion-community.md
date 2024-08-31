@@ -25,7 +25,11 @@ modified: 2023-11-28T14:48:45.910Z
 # discuss-author
 - ## 
 
-- ## 
+- ## [Faster CRDTs (2021) | Hacker News _202408](https://news.ycombinator.com/item?id=41372833)
+
+- 👷🏻 jitl: Today(202408) Notion is a last-write-wins system with limited intention-preserving operations for list data (like block ordering). Text is last-write-wins, each block text or property is a last-write-wins register. We're working on a new CRDT format for block text.
+- Do you use last-write-wins using the received order of operations on the server or using a logical clock?
+  - No clocks on the write side
 
 - ## 🔀 [You Might Not Need a CRDT: Document Sync in the Wild [video] | Hacker News _202403](https://news.ycombinator.com/item?id=39615987)
 - 👷🏻 jitl: Maybe you don’t need it for shapes and what not, but for collaborative text documents it’s really hard to have a good experience without convergent intention preserving async merges on text - you’re gonna want OT or CRDT for collaborative text editing eventually.

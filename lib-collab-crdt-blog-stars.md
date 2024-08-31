@@ -149,6 +149,24 @@ modified: 2023-03-11T15:37:59.134Z
 - 
 - 
 
+# blogs-comparison
+
+## [A comparison of JS CRDTs - (not my) ideas _202403](https://blog.notmyidea.org/a-comparison-of-javascript-crdts.html)
+
+- The goal here is not to tell which one of these libraries is the best one. They’re all great and have their strenghs. None of them implement the high-level API I was expecting, where the clients talk with each other and the server just relays messages, but maybe it’s because it’s better in general to have the server have the representation of the data, saving a roundtrip for the clients.
+
+- 
+- 
+- 
+
+## 🆚️🔀 [Trade-offs between Different CRDTs | Hacker News](https://news.ycombinator.com/item?id=38916647)
+
+- This is a clear and crisp way of differentiating delta based vs state based CRDTs.
+  - But I don't think it's accurate enough. For example, the article claims delta based CRDTs don't use vector clocks. But even to decide if a set of events are concurrent it's necessary to attach vector stamps to every event. Maybe the author meant something else when he says vector clocks are not needed for op based CRDTs.
+  - Also as mentioned in article it's true evergrowing event log is not such a bad idea with compression techniques and cheaper disks. But the problem with evergrowing datastructures is not just disk space. This data has to be loaded onto main memory to do anything useful with it. This data has to be transmitted across network to power SaaS apps. So stating that disks are cheaper hence evergrowing datastructures are fine - is an oversimplification.
+
+- I don't recall if it was git itself or github that bragged about inverting the storage structure so that it was simplest to read the current state, and HEAD~3 was determined by substracting the last 3 patches rather than fast forwarding from root to length - 3.
+  - There absolutely is. I’m writing a paper at the moment about how we’ve done this in diamond types. The core idea is to store the original operations and the versions. And then reconstruct the crdt state on each peer as needed. Because most editing histories are mostly linear, it usually ends up faster than CRDTs in practice anyway. But you can then just send the latest document state and send historical operations on demand for merging and to access old document states.
 # blogs
 
 ## [Store the history and the state of CRDTs in a KV store _202403](https://twitter.com/zxch3n/status/1772864473348653162)

@@ -61,6 +61,45 @@ modified: 2024-08-24T16:14:04.119Z
   - It already has a backing server powering the collaboration feature, and so the stitching to GitHub also already done.
   - So for sure first class settings sync, would be sick!
   - I use 2 machines, work and personal laptop, would be sick to have the setting synced, and possibly also a "workspace" specific settings too? 
+# discuss-git
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Show visual diff/rollback options when clicking changed lines indicator ](https://github.com/zed-industries/zed/issues/4630)
+- Zed now can show the diff inline and we have a few options for reverting the hunk(大块、大片) or the full file
+
+- ## [History commit _202404](https://github.com/zed-industries/zed/issues/10807)
+- 
+I really like how this vscode extension does git support: marketplace.visualstudio.com/items?itemName=mhutchie.git-graph
+
+- ## [Source control view panel _202311](https://github.com/zed-industries/zed/issues/4367)
+- Something like JetBrain's solution would be amazing.
+
+- [Version Control System on Zed Editor _202401](https://github.com/zed-industries/zed/issues/6785)
+  - now we can only see which files the changes appear in, not what the change is
+
+- ## [git changes tab like webstorm/VSCode? : r/ZedEditor _202403](https://www.reddit.com/r/ZedEditor/comments/1b7u56e/git_changes_tab_like_webstormvscode/)
+- A "source control" tab including visual diffing would be very appreciated!
+  - In the meantime, maybe check out GitUI.
+
+- You can also try Fork for some GUI experience https://git-fork.com/
+
+- ## [Add a diff view _202308](https://github.com/zed-industries/zed/issues/4523)
+  - Add support for showing the diff between different files, similarly to VSCode's code -d/--diff.
+
+- I'm currently using this as a workaround: extrawurst/gitui
+
+- ## [Tracking Issue: git integration _202403](https://github.com/zed-industries/zed/issues/8665)
+- Many users are asking for more git integration:
+  - A "git panel" similar to the VS Code
+  - A diff view for things that changed
+  - Ability to interact with git status gutter and undo changes
+
 # discuss
 - ## 
 

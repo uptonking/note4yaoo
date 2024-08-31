@@ -14,7 +14,16 @@ modified: 2024-06-30T11:17:28.971Z
 
 - ## 
 
-- ## 
+- ## ⌛️ 容器技术经历了几个历史阶段：
+- https://x.com/HappyQQ_CN/status/1829217593946669360
+  1、隔离文件：chroot
+  2、隔离访问：名称空间
+  3、隔离资源：cgroups
+  4、封装系统：LXC
+  5、封装应用：Docker
+  6、封装集群：Kubernetes
+
+- 在我看来是作业控制，进程管理机制的进步。
 
 - ## 🆚️ What is the difference between Virtual Machines and Containers?
 - https://twitter.com/Franc0Fernand0/status/1768614813335208237

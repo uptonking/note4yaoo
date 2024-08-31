@@ -190,6 +190,9 @@ modified: 2023-08-29T10:12:22.345Z
   - https://corylus.dev/
   - Corylus is a graphical user interface for Git. 
   - It aims to offer much of the power and flexibility of Git without having to remember CLI commands.
+
+- https://github.com/extrawurst/gitui /MIT/202408/rust
+  - fast terminal-ui for git written in rust
 # git-server/gitlab-like
 - github-alternatives
   - ruby: gitlab

@@ -99,7 +99,7 @@ modified: 2023-02-11T11:07:43.781Z
   - I think the piece I got working during my internship hits most of the memory efficiency goals like using a Rope and segment list representation. 
   - 👉🏻 However we put off some of the speed optimizations you've done, like using a range tree instead of a Vec of ranges. I think it also uses a different style of algorithm without any parents.
 
-- The problem with trees is usually that people don't pack enough data into each node in the tree. I implemented a skip list in C a few years ago[1]. 
+- The problem with trees is usually that people don't pack enough data into each node in the tree. I implemented a skip list in C a few years ago. 
   - For a lark I benchmarked its performance against the C++ SGI rope class which was shipped in the C++ header directory somewhere. My skip list was 20x faster - which was suspicious. 
   - I looked into what the SGI rope does and it turns out it was only putting one character into each leaf node in the tree it constructed. 
   - Benchmarking showed the optimal number was ~120 or so characters per leaf. 

@@ -129,6 +129,54 @@ await client.transact(async (tx) => {
   - The key reason we can make this so nice and concise is actually our direct support for Sets as attributes (look at 'postIds'). 
   - In SQL world, you'd need an extra table like `user_posts` and a three-way join to make this relation possible
 
+- ## 🚀 [Show HN: Triplit – Open-source syncing database that runs on server and client | Hacker News _202406](https://news.ycombinator.com/item?id=40788648)
+- We implement our own query engine for Triplit and use a fork of tuple-database for storage which is low level database that can store to SQLite (we do on the server) but in the browser it uses either an in-memory btree or IndexedDB.
+  - Regarding compatibility with our databases, we do have some internal experiments of running a Triplit Server in front of existing databases as almost like a syncing cache. Still very experimental but maybe you'd be more into that use case.
+- What's the reason for the fork?
+  - No real reason other than we wanted to customize it and move quickly. I'm sure Chet, the maintainer, wouldn't oppose any of the changes we've made.
+
+- I've been using Triplit in one of my projects
+  - Server side/self-hosted: Triplit server requires a token for authentication. Triplit's documentation has a section about how to start the server without explicitly showing how to generate the token, which is mildly inconvenient
+  - Query language: I find their custom query DSL not as expressive as a full-fledged query language (lacking UNIQUE and COUNT like SQL is on the top of my mind). You'll have to do a bit of data aggregating yourself.
+- Recently, I found Evolu
+  - Triplit have `.subscribe()` , while Evolu don't
+  - Evolu's querying is more familiar/advanced (typed SQL via Kysely)
+  - In the browser, Evolu seems to use SQLite on top of OPFS, while Triplit uses IndexedDB
+- Evolu has subscribe with useQuery or separated.
+
+- Related question: when you're using databases with great offline sync protocols like this, how do you do schema evolution of your DB, especially in the face of different client versions that you cannot upgrade in lockstep?
+  - Only create new tables, don't make breaking changes to existing tables. If needed dual write both versions. Looks a lot like a live migration (zero downtime) due breaking change to a SQL DB, except you have to keep the logic longer because you're at the customer's mercy of when the switchover happens.
+  - Also it's important to have a table that is used to coordinate latest version. If you make a breaking change have the client that is behind to ask the user to upgrade. You can also tie this into how long you keep the dual write/read around with a min version supported across all clients.
+- The short answer is by maintaining backwards compatibility in your schema--it's basically the easiest way to guarantee compatibility.
+
+- Our hope with the AGPL license is that it will make Triplit easily self-hostable while ensuring that anyone who makes modifications contributes those back to the community.
+  - For the backend, that makes some sense. However, your frontend libraries and bindings are AGPL too, which means any site or app using them must be AGPL as well
+  - MySQL is GPL not AGPL. Very different.
+
+- 🔀 Since this is LWW, does it mean the amount of information on the client scale linearly with the number of operations? (meaning: the more users modify a database, the more the operations log grows)? Or do you do checkpoints? How does it scale space-wise when the user does millions of ops per day?
+  - Triplit does persist the history of edits to a given attribute but indexes on the latest values makes querying stay fast. However, LWW Registers by nature doesn't actually require storing the history that's just our current implementation that allows clients to sync efficiently even after being offline for a while.
+  - In terms of scaling to a million-ops per day we are probably not quite there yet but one advantage to having the server be the authority is that, in the future, the Triplit server could track the timestamps that each client last synced at and progressively prune the history similar to how Postgres handles VACUUM'ing dead tuples.
+
+- So it’s not possible to use this with an existing postgresql database?
+  - Not currently but we have an internal tool that does bi-directional syncing using Postgres's replication protocol and WAL2JSON. It's not quite ready for prime time but we're hoping to get it into people's hands soon.
+- Look into ElectricSQL which works with existing Postgres, it is what I'm leaning towards using too.
+  - I work on PowerSync which may be worth looking at too, for Postgres-SQLite sync https://www.powersync.com/
+
+- It's not currently possible to use MongoDB with Triplit, you would use Triplit's server instead
+
+- > The server supports different storage adapters, such as SQLite
+  - There are adapters for LevelDB, LMDB, and File storage. We just use SQLite out of the box because it's fast and reliable. We'll make those other adapters more accessible in the future.
+
+- Would this be pluggable to any backend? Like say, Ruby on Rails or ASP. NET?
+  - Triplit uses its own standalone server (similar to other database servers) which you can talk to via HTTP https://www.triplit.dev/docs/http-api
+
+- I'd like to mention the Meteor.js framework (https://www.meteor.com/) too, which is in a bit of a transitioning phase right now to Meteor version 3, but is a really amazing full-stack app building solution I and many others have been working with for ~10 years.
+  - It's based on a really pretty simple syncing strategy for years:
+  - It's original client side data provisioning layer is based on having a) MongoDB on the Server and b) a javascript-native implementation of a subset of MongoDB in the Client.
+  - Using a publish / subscribe mechanism the client can subscribe to the subset of data relevant to his current view, eg. dependent on the current user & view.
+
+- Looks like it could be a more batteries-included/opinionated alternative to RxDB (https://rxdb.info). The relational queries might help some people who tend to think in SQL as opposed to documents (as in CouchDB or MongoDB) and the WebSockets for synchronization will help people get started more quickly. (RxDB provides interfaces for those who want to implement their own storage engine and/or synchronization backend.)
+
 - ## 🚀 [Triplit: Open-source DB that syncs data between server and browser in real-time | Hacker News_202401](https://news.ycombinator.com/item?id=38977516)
 - I use pouchdb/couchdb right now and I think my biggest issue at the moment is the amount of time it takes to sync up the app when you open it. It's possible to load the app straight from local data, but then it might be out of sync which could be jarring/confusing for the user.
   - Is this named after a triple store (e.g EAV) like in datomic? If so this is looking very close to my dream database.
