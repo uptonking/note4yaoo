@@ -79,11 +79,12 @@ modified: 2021-05-13T16:08:15.067Z
   - nteract provides a client-side SDK for integrating notebook and REPL UIs into your software. 
 
 - https://github.com/srcbookdev/srcbook /apache2/202408/ts
-  - TypeScript & JavaScript notebooks.
+  - Srcbook (”source-book”) is an open-source TypeScript notebook that runs locally, powered by Node.js. 
+    - It shines for rapid prototyping, code exploration, and collaborating on ideas. 
+    - It’s inspired by Python’s Jupyter and Elixir’s Livebook.
   - Create, run, and share reproducible programs and ideas
   - Export to valid markdown format (.src.md)
   - Local execution with a web interface
-  - Powered by Node.js
 # python-notebook
 - https://github.com/jupyter/notebook
   - a web-based notebook environment for interactive computing.

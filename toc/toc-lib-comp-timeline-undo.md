@@ -62,6 +62,23 @@ modified: 2023-11-24T18:41:26.906Z
   - https://github.com/joshwcomeau/key-and-pad /201803/js
     - Fun experiment with the Web Audio API 
 
+- https://github.com/HeyPuter/Oops.js /MIT/202408/js
+  - Add powerful undo/redo capabilities to your app
+  - Oops.js provides a robust implementation of the command pattern, allowing you to easily add advanced undo and redo functionality to your projects
+  - Command Pattern: Implements the command pattern for easy extensibility and operation encapsulation.
+  - Transaction Support: Allows grouping multiple commands into a single, atomic operation.
+  - Automatic Command Merging: Intelligently merges commands executed within a specified time window.
+  - Snapshot System: Creates and recovers from snapshots for enhanced error handling and state preservation.
+  - History Compression: Optimizes memory usage by compressing the command history when it exceeds a threshold.
+  - Event Notification System: Provides a robust event system for state change notifications.
+  - UI Integration: Easily integrates with UI components through canUndo and canRedo properties.
+  - Dual Execution Modes: Supports both object-based and string-based command execution for flexibility.
+  - [Oops.js | Hacker News _202408](https://news.ycombinator.com/item?id=41214587)
+    - After reviewing the ~600 lines of code, I have to ask what about this undo/redo manager is "advanced"? This seems like a naive implementation of a snapshot collection that is selected via array index. It's not event sourcing, OT or CRDT. With every event, the entire object is serialized and put into the heap. I can't even imagine what this does for performance when you deal with any object of significant size. What if you wanted to do something like type? Thousands of copies of the same thing.
+      - Why not https://github.com/yjs/yjs? Event sourcing is cool. Operational transformation is awesome. But Conflict Free Replicated Data Types are king.
+    - you end up with something like this, which looks like a polished and approachable library of a "standard" command pattern. But if you use patterns modeled after single user / local-only apps, you will code yourself into a corner.
+      - I've had much more success with a more functional method based on diffs and patches, i.e. mutations as data. 
+
 - https://github.com/zalmoxisus/mobx-remotedev /MIT/201902/js/inactive
   - MobX DevTools extension
   - Remote debugging for MobX with Redux DevTools extension

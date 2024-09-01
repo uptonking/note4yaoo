@@ -27,6 +27,16 @@ modified: 2022-08-21T10:02:05.129Z
   - 参考apitable/directus实现以oplog/delta为数据源的业务数据层
   - 基于oplog实现业务的案例: redux, event-store
 
+- airtable-like产品的数据库设计
+  - 一张用户自定义业务表对应db一张表
+    - nocodb, grist, undb, eidos, nocobase
+  - 一张用户自定义业务表对应db表的一行，🌹 此方案优点是方便基于纯内存实现
+    - focalboard, apitable
+  - 业务表通过view视图创建
+    - locokit
+  - ❓ 待确认
+    - eidos
+
 - 🤔 要点
   - 🆚️ notion database 的设计思路是先填写数据再设置类型，而不是大多数cms的先设置类型再填写数据
   - 动态修改数据类型或schema，可用eav或jsonb, 但大多方案是用户建表时同时在db建表

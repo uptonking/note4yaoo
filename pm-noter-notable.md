@@ -84,6 +84,8 @@ modified: 2023-11-28T14:48:45.910Z
 - inspirations
   - 高频需求，网盘分享
 
+- markdown block diff
+
 ## text-editing
 
 - 选择一段文字，将其中的空格替换成`-`，方便区分比较双方，如 a-bvs c-d

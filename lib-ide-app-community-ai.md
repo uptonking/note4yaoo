@@ -226,6 +226,28 @@ modified: 2024-08-24T16:28:20.515Z
   - 基于这个想法，使用 gpt-4o + tailwind + Vue + esbuild-wasm 做了个「网页生成器」，还有按区块调整的能力。。 属于是低配山寨版 wegic 了（纯做着玩儿的PoC
   - 还有一个告诉ai接口，然后自动写页面的
 
+# discuss-codebase-search/rag
+- ## 
+
+- ## 
+
+- ## 
+
+# discuss-debug
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Launch HN: Patchwork (YC S24) – Automatically add structured logs to your code | Hacker News _202408](https://news.ycombinator.com/item?id=41391931)
+  - Big picture: we are building a next generation logging and observability platform which gives engineers the rich debugging context they need.
+
+- On the topic of structured logs, can anyone point me towards where I might learn more about what people have learned over time? I'm new to the world of querying through my logs, but I can already see a benefit to logging with JSON...
+  - Structured/JSON saves a tonne of time building regex parsers. The regex parsing at query-time is also pretty expensive. This is where Splunk excels - dealing with the noise with powerful querying. ClickHouse is also very performant at this, we hear. It's an expensive task though (computationally and cost wise)
+  - Charity, CTO of Honeycomb has strong views (which we enjoy a lot): https://charity.wtf/tag/observability-2-0/ - they come at it from a tracing/OT angle which is Honeycomb's forte, but we agree a lot on the intended outcomes - actionable (not spammy/noisy) + make it easy to gather the variable/state context in the context of a single event.
+
+- OneUptime.com already does it with the copilot feature. It also fixes exceptions, add structured logs, optimizes functions / spans that take a long time to complete and integrates with OpenTelemetry natively. It's also 100% open-source.
 # discuss-devin-like
 - ## 
 
@@ -240,7 +262,66 @@ modified: 2024-08-24T16:28:20.515Z
 
 - ## 
 
-- ## 
+- ## 💰🆚️ [Cursor Has Raised $60M | Hacker News _202408](https://news.ycombinator.com/item?id=41325543)
+
+- > Why Not an Extension?
+  - As a standalone application, Cursor has more control over the UI of the editor, enabling greater AI integration. Some of our features, like Cursor Tab and CMD-K, are not possible as plugins to existing coding environments.
+
+- 🪧 For reference, here is a list of the current main code assistants:
+  - GitHub Copilot
+  - Cursor.sh
+  - Cody
+  - Codeium
+  - Amazon Q (formerly CodeWhisperer)
+  - Pieces (This team is from Cincinnati, deserving a special mention from a fellow Cincinnatian)
+  - Tabnine
+  - Supermaven
+  - Zencoder (waitlist)
+  - Replit's Ghostwriter (not sure if it can be used outside of Replit)
+- There are also tools that provide a UI for LLM models. While there are many, here are the main ones:
+  - Continue.dev
+  - Tabby
+  - Aider
+  - Double.bot
+- Additionally, there is "Project IDX" from Google, though I am unsure how to classify it.
+
+- 🤔 I've been using Cursor for many months now. The biggest feature it had that I wanted when I first used it was searching your own repository. It indexes all of your code in a vector DB so that it can then use RAG to make suggestions against your own codebase. That was the "killer feature" for me - I don't get a ton of value from inline code completions, but I get LOTS of value if I can ask "Is there a utility function in this repo that does XYZ?" when working in a large codebase with lots of developers.
+
+- Not that many people use Copilot Chat, anecdotally. We've focused on codebase chat when building Cody (https://cody.dev), since we can use a lot of the code search stuff we've built before. It's hard to build, esp. cross-repo where you can't just rely on what's accessible to your editor. 
+  - Ollama models show up in the chat model dropdown in Cody, if Ollama is running on your machine.
+  - Cody can use Ollama for both chat and autocomplete
+
+- I know that Copilot can see open tabs as context.
+
+- I’m sure this is great for some people. (Really, I’m sure it is.)
+  - But whenever I’ve tried Copilot I can’t stand it for more than a minute. Because sometimes it’s magical. And when it is, it is!
+  - But then way more often it’s like having someone looking over my shoulder, telling me what they think I want to do, disrupting my thoughts.
+
+- Genuine question: how do the economics work to raise $60M, for a product that costs at most $40/month?
+  - Assuming $60M for 20%, that's a $300M valuation ($60M/20%).  估值大约是五倍融资
+  - Assuming a 10x multiple on revenue, that requires $30M in ARR ($300M/10). 估值大约是十倍ARR
+  - Cursor only needs 83k paying users to hit that ARR.
+  - Github has over 100M users. Copilot has 1M users.
+  - It's a new, growing market.
+- My napkin math is your valuation is usually 5 x raise amount and 10x annual revenue.
+  - So valuation is 5*60m = 300m And expected annual revenue is 30m.
+  - At 40/month they are expecting roughly 1M monthly actives. So I am guessing their pitch is with the vc money they will get to this number and beyond before the next funding round.
+  - Reality is more like the founders got to cash "something" for their troubles and ability to sell the dream to others. Who knows may be they will hit it out of the park before the next round.
+- interesting...and if you have this type of revenue who do you approach
+  - If you have this kind of revenue, you don't approach anyone, they approach you.
+- So the funding is usually for a "future" revenue. Ie to hit this goal. Imo if they had this revenue they'd be aiming for 10x that with a much higher valuation. VC funding is all about a growth story. If you can keep selling vision you never have to worry about revenues or hitting them. There's even a name for such schemes!
+- what happens to the founders if they dont hit it
+  - They either run out funding (so be forced to do layoffs, liquidations etc) or they have to find someone who can bail them out at unfavorable terms (read dilutions) or be really really good at story telling
+
+- Considering Zed introduced AI and it's so much faster than Cursor or VSCode, I think the competition will be much harder than they sold to the investors.
+  - Zed's approach of building the context manually with files and text and then asking for stuff is way more direct and less "magic". It works consistently.
+
+- i think cursor is the only player that forked vscode. i've been using cursor for a week and i really like it. it's able to auto complete/correct code in multiple places at the same time. other copilot extensions in vscode were not able to do this. but i assume microsoft will quickly add this feature in vscode and others will catch up soon. 
+
+- [Cursor: We Raised $60M | Hacker News _202408](https://news.ycombinator.com/item?id=41321996)
+  - It's its own editor (albeit[虽然；尽管] forked from VS Code), it's not a VS Code extension.
+  - This is the problem with this industry and this appears to be a acquisition vehicle rather than an actual sustainable business.
+  - They probably know they don't have a moat(壕沟；护城河), but once again; all for the better to take advantage of the AI bubble and exit out quickly once it collapses.
 
 - ## 🤔 很高兴看到 Cursor 越来越火， 因为这是必然的趋势： AI 的代码能力，推理能力，数学能力，是可预期的稳定提升
 - https://x.com/oran_ge/status/1828547354812916130

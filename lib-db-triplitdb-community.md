@@ -310,7 +310,156 @@ await client.transact(async (tx) => {
 
 - ## 
 
-- ## 
+- ## 🚀🤔 [Show HN: InstantDB – A Modern Firebase | Hacker News _202408](https://news.ycombinator.com/item?id=41322281)
+- 👷🏻 [Firebase founder] The thing I'm excited about w/Instant is the quad-fecta of offline + real-time + relational queries + open source. The amount of requests we had for relational queries was off-the-charts (and is a hard engineering problem), and, while the Firebase clients are OSS, I failed to open source a reference backend (a longer story).
+
+- Do you see InstantDB as a drop in replacement ? To be honest I don't want to have to worry about my backend. I want a place to effectively drop JSON docs and retract them later.
+  - For what it's worth, we designed Instant with this in mind. Schema is optional, and you can save JSON data into a column if you like.
+
+- For those looking for alternatives to the offline first model, I settled on PowerSync. Runner up was WatermelonDB (don't let the name fool you.) ElectricSQL is still too immature, they announced a rewrite this month. CouchDB / PocketDB aren't really up to date anymore.
+
+- The biggest "source" of vibes that CouchDB/PouchDB is "dead/maintenance mode" is the corporate ecosystem/contributors around it:
+  - Couchbase has been increasingly moving away from CouchDB compatibility
+  - Cloudant was one of the more active contributors until it got eaten by IBM and put into a maintenance spiral (what mother can love what IBM "Blue Mix" has done to Cloudant?)
+  - In general the still growing number of document DBs that are Mongo-compatible but not CouchDB-compatible (AWS and Azure document DB offerings, for instance)
+
+- I'm wary of stuff like this, probably really useful to rapidly iterate.... but what a maintence nightmare after 10 years and your schema has evolved 100 times, but you have existing customers in various state of completeness. I avoided firebase when it came out for this reason.
+
+- Does Instant have a way to merge many frequent updates into fewer Postgres transactions while maintaining high frequency for multiplayer?
+  - We do indeed batch frequent updates! Still many opportunities for improvements there, but we have a working demo of a team-oriented tldraw
+  - https://github.com/jsventures/instldraw
+
+- What's the short summary of how the authorization system works for this?
+  - We built a permission system on top of Google's CEL. Every object returned in a query is filtered by a 'view' rule. Similarly, every modification of an object goes through a 'create/update/delete' rule.
+  - The experience is similar to Firebase in three ways
+
+- 🛢️📈 I've found triple stores to have pretty poor performance when most of your queries fetch full objects, or many fields of the same object, which in the real world seems to be very common. Postgres also isn't terrible, but also not brilliant for that use case. How has your experience been in that regard?
+- 👷🏻 jitl:(20240823) I built a EAV secondary index system on top of Postgres to accelerate Notion’s user-defined-schema “Databases” feature about a year ago. 
+  - By secondary index, I mean the EAV table was used for queries that returned IDs, and we hydrated the full objects from another store.
+  - We’d heard that “EAV in Postgres is bad” but wanted to find out for ourselves. Our strategy was to push the whole query down to Postgres and avoid doing query planning in our application code.
+  - It worked great if you want to filter and sort on the same single attribute. The problem queries were when we tried to query and sort on multiple different attributes. We spent a few weeks fixing the most obviously broken classes of query and learned a lot about common table expressions, all the different join types, and strategies for hinting the Postgres query planner. Performance up to p95 was looking good, but after p95 we still had a lot of timeout queries.
+  - It turns out using an EAV table means Postgres statistics system is totally oblivious(不注意的；未察觉的) to the shape of objects, so the query planner will be very silly sometimes when you JOIN. Things like forget about the Value index and just use a primary key scan for some arms of the join because the index doesn’t look effective enough.
+  - It was clear we’d need to move a lot of query planning to the application, maintain our own “table” statistics, and do app joins instead of Postgres joins if Postgres was going to mess it up. That last part was the last nail in the coffin - we really couldn’t lean on join in PG at all because we had no way to know when the query planner was going to be silly.
+  - It was worth doing for the learning! I merged a PR deleting the EAV code about a month ago, and we rolled out a totally different design to production last week
+- I really love Postgres, but I'll never not laugh at the fact that duplicating a CTE caused my query to go faster... (60s to 5s)
+  - Sometimes you can fix it with "(not) materialized" hints, but a lot of the time you just have to create materialized views or de-normalize your data into manual materialized views managed by the application
+- 🐛 Does postgres not have the ability to hint or force indexes? long time ago, I found that quite helpful with MySQL.
+  - It does not, and that fact is the #1 downside of Postgres. It is not predictable or controllable at scale, and comes with inherent risk because you cannot “lock into” a good query plan. I have been paged at 3 am a few times because Postgres decided it didn’t like a perfectly reasonable index anymore and wanted to try a full table scan instead
+- Nope, weirdly Postgres still doesn't have that ability even today.
+  - It’s not in core, but there are multiple extensions that provide this functionality
+- I've also found triple stores to have terrible performance, but it looks like the intended use-case for this (like Firebase) is rapid development, prototyping, and startups. You aren't going to generate enough traffic when you're building an MVP for this to be an issue.
+- So far we haven't hit intractable problems with query performance. One approach that we could evolving too down the road is similar to Tao. In Tao, there are two tables: objects and references. This has scaled well for Facebook.
+  - We're also working on an individual Postgres adapter. This would replace the underlying triple store with a fully relational Postgres database.
+- That's a rather tremendous oversimplification, unless something major changed in recent years. When I worked on database infra at FB, MySQL-backed TAO objects and associations were mapped to distinct underlying tables for each major type of entity or relationship. In other words, each UDB shard had hundreds of tables. Also each MySQL instance had a bunch (few dozen?) of shards, and each physical host had multiple MySQL instances. So the end result of that is that each individual table was kept to a quite reasonable size.
+  - Nor was it an EAV / KV pattern at all, since each row represented a full object or association, rather than just a single attribute. And the read workload for associations typically consisted of range scans across an index, which isn't really a thing with EAV.
+
+- 🔀 Why would I use this over Yjs or Automerge?
+  - Yjs is great if you sharing a single data structure, like a document. It doesn't work as well if you are sharing relational data, like 'documents for a workspace'.
+  - We are thinking about supporting Yjs for document editing inside Instant
+
+- > we tail postgres’ WAL to detect novelty and use last-write-win semantics to handle conflicts
+  - We use the concept of 'topics'. A topic encodes: 'The part of the index a query cares about'.
+  - For example, given a query like "fetch user where id = 1", there could be a topic like "users:id:1"
+  - When a WAL record comes in, we find queries by their topics, and invalidate them. This triggers a refresh.
+  - This is inspired by Figma's LiveGraph, which in turn is inspired by Asana's Luna
+- I worked on LiveGraph for a long time at Figma. We went through our own evolution:
+  1. first we would use the WAL records to invalidate queries that could be affected (with optimizations for fast matching) and requery the data
+  2. then we used the info from the WAL record to update the query in-memory without asking the DB for the new result, it worked for majority of the queries that can be reliably modeled outside of the DB
+  3. I believe after I left the team reverted to the re-query approach, as managing a system that replicates the DB behavior was not something they were excited to maintain, and as the DB layer got scaled out, extra DB queries were less of a downside
+
+- 🔍 Instant uses a declarative syntax for querying. It's like GraphQL without the configuration. Our initial intuition was to expose a language like SQL in the frontend. We decided against this approach for 3 reasons:
+  1. Adding SQL would mean we would have to bundle SQLite, which would add a few hundred kilobytes to a bundle
+  2. SQL itself has a large spec, and would be difficult to make reactive
+  3. What's worst: most of the time on the frontend you want to make tree-like queries (users -> posts -> comments). Writing queries that like that is relatively difficult in SQL
+  - We wanted a language that felt intuitive on the frontend. We ended up gravitating towards something like GraphQL. But then, why not use GraphQL itself? Mainly because it's a separate syntax from javascript.
+  - We wanted to use data structures instead of strings when writing apps. Datastructures let you manipulate and build new queries.
+  - We programatically generate queries for the Instant Explorer itself
+
+- Is the datalog engine exposed? Is there any way to cache parsed queries?
+  - We don't currently expose the datalog engine. You _technically_ could use it, but that part of the query system changes much more quickly.
+  - Queries results are also cached by default on the client.
+
+- Other datalog engines support recursive queries, which makes my life so much easier. Can I do that now with this?
+  - There's no shorthand for recursive queries yet, but it's on the roadmap. Today if you had a data model like 'blocks have child blocks', you wanted to get 3 levels deep, you could write
+
+- Given that it's implemented clojure and some other datalog engines are in clojure, can you say anything about antecedents?
+  - Datalog and triples were critical for shipping Instant. The datalog syntax was simple enough that we could write a small query engine for the client. Triples were flexible enough to let us support relations. 
+
+- The datalog syntax has me curious. It looks like a JavaScript "port" of Datomic's Datalog syntax. Have you considered using other forms of Datalog that are seemingly more compatible with JavaScript?
+  - We are clojure programmers, so our introduction to Datalog was actually though Datomic in 2014. We are fans of other query syntaxes (SparQL looks cool too), but we find Datomic's flavor the most ergonomic for us, and it's an added win for us that we can express queries as plain data structures
+
+- 🐛 Is it correct to assume that if your existing application has lots of data stored in standard PostgreSQL tables, you can't have InstantDB sync with it?
+  - We're currently working on a Postgres adapter. 
+  - The way the Postgres adapter would work: You give us your database url, and Instant handles the real-time sync.
+
+- 🆚️ what are the main differences relative to Zero?
+  - Zero is by the Replicache team 
+  - Replicache is a bit hard to grasp at first but the nice thing is you bring your own DB (vs. use a service). 
+
+- 🆚️ What isn’t modern about Firebase and what makes this modern in comparison?
+  - When Firebase was first built, using a document store was a great choice for building a local abstraction that enabled optimistic updates and offline mode. But the lack of relations makes it a real schlep to change your data model when you start adding new features to your app. You end up hand-rolling joins or duplicating your data to avoid complete re-writes.
+  - With Instant, you get a relational Firebase.
+  - We take a lot of inspiration from them for our write api. Hand-rolling joins was often a pain point though and we thought a graphql-like interface was a better experience
+
+- 🆚️ what would you say are pros/cons vs. supabase?
+  - We provide support for optimistic updates and offline mode out of the box. Our idea is to give you the best of both worlds in terms of Firebase and Supabase.
+
+- 🆚️ Would anyone have thoughts on comparisons to Meteor?
+  - Instant's main advantage is that we support relations. This means you can create data models like 'users -> comments -> apps'.
+  - Meteor did a lot of these things, and they worked fine for toy examples. But if you started to do something of any scale meteor choked. To be fair, maybe it was unrealistic to expect Meteor to do real-time communication for my game.
+
+- 🆚️ How does InstantDB compare with Electric SQL?
+  - one fundamental difference between InstantDB and ElectricSQL is that InstantDB does not sync with standard PostgreSQL tables. ElectricSQL does.
+  - We're working on a feature where you bring an existing Postgres database, and use Instant as the sync layer
+  - Electric SQL had a different design. Instant is more inspired by systems like LiveGraph, which power apps as big as Figma. LiveGraph was itself inspired by Luna, which powers Asana.
+
+- 🆚️ how this compares to convex
+  - Both convex and Instant let you build apps quickly without worrying about the backend. Where Instant differs, is that queries and transactions can run on the client: you get optimistic updates and offline mode by default. On the other hand, convex lets you define queries as functions that can run on the edge. I haven't used convex deeply, but this is my understanding.
+
+- 🆚️ How does it compare with Liveblocks?
+  - Both Instant and Liveblocks support ephemeral data: like cursors, activity indicators, and presence.
+  - The difference comes to storing data: Liveblocks persists data based on 'room'. 
+  - Instant supports full relations, so you can create a query like: "listen for items in these 3 rooms"
+
+- Why clojure (and by proxy Java?)
+  - Clojure was made with databases and concurrency in mind. We've used it at previous startups, projects, and find it a productive language.
+
+- How do you prevent the user from uploading a 5gb string to one of the fields?
+  - If the field is indexed, we limit the size to 1 kilobyte. If it isn't indexed, the maximum size is 250 mb
+
+- Is there a plan to make it self-hostable?
+  - You can already self-host! We have instructions on standing up the server on our github 
+
+- if it’s possible to make 100% offline app and what would be the limits of storage in the browser
+  - queries are cached locally on IndexedDB
+  - The limits are set by IndexedDB, which are a bit esoteric (it depends on how much space the user has available on their hard drive). It could reach into the GBs, but then the browser can sometimes choose to delete it.
+  - You could theoretically make a 'fetch all' query, and replicate a completely offline experience. However, Instant is designed for hybrid use cases.
+
+- How is the migration story when schema changes are needed?
+  - We have an admin API you can use to write migration scripts. The process is a bit manual though, and a more integrated solution is on the roadmap
+- How do you deal with old clients?
+  - 🛢️ Instant treats the the backend the source of truth. If there's an inconsistent cache, we drop the cache and fill it from scratch. We tend to write code that's backwards compatible, and suggest the GraphQL ethos: make sure when changing schema that active clients won't break
+
+- Tailing the WAL is an interesting approach. How do you handle the potential increased load on the database from constant WAL reads?
+  - We use PG replication slots and listen to updates. This doesn't add much load to the database -- it's similar to having a read replica. Adding more servers would mean more replication slots, and could slow down PG. When this happens, we'll likely replicate PG's WAL onto Something like Kafka. This is what LiveGraph does
+
+- Hey this is great. But this should be pay per pricing model instead of $30/month upfront. I don't think with this pricing model it can be compete with cloudflare suite of products like durable objects, kv etc.
+  - We offer a generous free tier which doesn't limit your number of projects, never pauses, and available for commercial use. The pro plan is $30/mo and then pay for usage.
+
+- I saw the `db.useQuery` function, quite good for people who are familiar with react-query, but is there a `useMutation` equivlent? It seems that `db.transact` does not return anything stateful.
+  - `db.transact` returns a promise. It 'resolves' when the transaction is guaranteed by the server, or if you are offline, if it's been enqueued. 
+
+- Any plans to support other backends besides javascript?
+  - We have an unofficial HTTP api, will add it to the docs but we've already had folks use it for non-js backends
+
+- Do you have clients for Android, iOS, Mac apps, Flutter, Rust? If not, how hard do you think it is to implement a client for an additional language?
+  - The core client SDK is pretty small -- it's about 10K LOC. We want to get the core abstractions right in JS-based environments, than expand. We really like Mitchel Hashimoto's post about how he built Ghostty on different platforms
+
+- This is awesome, and in a way the reverse of HTMX
+  - Yes, our bet with Instant is that browsers have become so powerful, that we can run many computations locally, and don't need to wait for the server all the time.
+
+- How is async storage limit is handled ?
+  - We designed Instant so that the client store works as a cache: it only stores a partial amount of data: just the queries you need to load the page. The server is responsible for storing all the data.
 
 - ## Instant is now open source! 2 years, YC, 5 team members, and 2000 commits _20240823
 - https://x.com/stopachka/status/1826674372175900724
@@ -321,3 +470,8 @@ await client.transact(async (tx) => {
 - working with indexdb i have found it to be a bad foundation. once something goes wrong there is no option but to close entire browser it affects everything despite no fault of the app/lib.
 
 - Congrats on the launch. Got a few questions: 1. How are schema changes handled? 2. Is this easy to self-host?
+
+- ## This month Instant grew a little bigger - two big updates, data explorer and a refreshed landing page. _202403
+- https://twitter.com/stopachka/status/1763618042225860728
+  - Similar to Firebase, we’ve added a data explorer to the dashboard so you can easily see your app’s data
+  - We also spent this month laying the ground-work for some exciting features next month. In March we’re going to give you a schema editor, more powerful query capabilities, and support for ephemeral data

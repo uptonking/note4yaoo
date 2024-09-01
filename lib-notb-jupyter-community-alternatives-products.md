@@ -9,11 +9,8 @@ modified: 2024-06-30T03:32:45.893Z
 
 # guide
 
-
 # pm-jupyter
-
 - [Deepnote: Analytics and data science notebook for teams.](https://deepnote.com/)
-
 
 - [DataLab](https://www.datacamp.com/datalab)
   - an AI-enabled data notebook to allow anyone to go from data to insight regardless of technical skill. 
@@ -92,3 +89,38 @@ modified: 2024-06-30T03:32:45.893Z
 - JetBrains DataSpell?
 
 - Feel like DBeaver is pretty close to this already. I use it to run, test, and store SQL queries.
+
+- ## 📖 [Show HN: Srcbook – A TypeScript notebook for rapid prototyping | Hacker News _202408](https://news.ycombinator.com/item?id=41291700)
+  - We built this because we needed a Jupyter-like environment for TypeScript
+
+- how do you run the code? is it securely sandboxed?
+  - The code runs locally on your machine. 
+  - Right now the architecture is that each Srcbook has 2 representations:
+  - a markdown encoding that we use when you export. Easier to share, serialize, etc...
+  - on disk, Srcbooks are actually directories under ~/.srcbook/srcbooks. The files and code is all there, and runs with your local node executable. You therefore need to be careful to not run any arbitrary srcbook you download, but there is no code ever leaving your machine
+
+- Observable is a great notebook env for dataviz, but the bespoke js + observability patterns can feel obtuse for non-dataviz stuff.
+  - Likewise, the Jupyter js kernels feel second-class and require python dependencies.
+- How does it compare with Observable?
+  - Observable is highly specialized in data visualizations (graphs, plots, etc...) and runs in the browser.
+  - Srcbook is built for different use cases: we focus on a backend runtime (node) and want to solve for non-data-visualizations workflows. Use cases like prototyping with a third party npm library, running a script to test your app's behavior, or building an AI agent.
+  - Compared to Observable, it's apache-2 licensed and it's self-hostable. The d3, p5 and database access you have to add yourself. With Observable user, workspace, diagramming and template management is built-in.
+
+- I think this is more like Google Colab, where the UI renders in the browser, but offloads computation to a kernel running elsewhere.
+  - As I recall, Observable uses the browser's JS runtime for computation.
+
+- Love that this is local. I've messed around trying to get Node on Jupyter with custom kernels, but never got close to a working setup with TypeScript.
+  - Two features would be huge:
+  1. Web cells for intermixing UI components alongside NodeJS cells. Would be cool if there was a bridge API to call code in the Node cells as well.
+  2. VSCode extension to render this all in there directly.
+
+- This is a cool idea! I often end up just using replit to play with a library, something more like Livebook makes a lot of sense. I like that you're using markdown too, makes these files much more useful than Jupyter ones.
+  - The Markdown is a really neat idea borrowed from Livebook. It allows for really good diffing if you want to version control them, and makes reviewing diffs easier. As a bonus a lot of things can read markdown and render it nicely for you.
+
+- I wish there was also a "browser" cell, so that the execution wouldn’t be happening in the node.
+
+- how do you plan to monetize this?
+  - The plan is to have a cloud offering which runs Srcbooks as infrastructure. There are a couple of directions are considering, but essentially they boil down to helping you build an app quickly and iteratively, then serve it in production.
+
+- why this is advantageous over just dumping a bunch of HTML files into a folder
+  - Presumably this runs in node, rather than the browser, which might have implications for your dependencies (I know esm.sh shims node core dependencies and does fancy transpilation stuff, but why deal with that if you can just run direct on node).

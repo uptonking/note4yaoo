@@ -55,8 +55,6 @@ modified: 2024-08-24T16:30:20.218Z
   - Argilla can be used for collecting human feedback for a wide variety of AI projects like traditional NLP (text classification, NER, etc.), LLMs (RAG, preference tuning, etc.), or multimodal models (text to image, etc.). Argilla's programmatic approach lets you build workflows for continuous evaluation and model improvement. 
   - Take control of your data and models
 
-
-
 - https://github.com/TabbyML/tabby /apache2/202408/rust
   - https://tabbyml.github.io/tabby
   - Self-hosted AI coding assistant. 
@@ -65,16 +63,29 @@ modified: 2024-08-24T16:30:20.218Z
   - OpenAPI interface, easy to integrate with existing infrastructure (e.g Cloud IDE).
   - Tabby 是一个自我托管的 #GitHub #Copliot 开源替代品，自带可视化界面与 #OpenAPI 接口，还支持消费者级别的 #GPU，具有 FP-16 重量加载和各种优化功能，提供了 #Docker 镜像
 
-
 - https://github.com/SilasMarvin/lsp-ai /MIT/202408/rust
   - LSP-AI is an open-source language server that serves as a backend for AI-powered functionality, designed to assist and empower software engineers, not replace them.
   - It offers features like in-editor chatting with LLMs and code completions. Because it is a language server, it works with any editor that has LSP support.
   - In-Editor Chatting
   - Note that speed for completions is entirely dependent on the backend being used. For the fastest completions we recommend using either a small local model or Groq
 
-
 - https://github.com/morph-labs/rift /apache2/202310/python/inactive
   - https://morph.so/
   - Rift: an AI-native language server for your personal AI software engineer
   - The Rift Code Engine implements an AI-native extension of the language server protocol. The Rift VSCode extension implements a client and end-user interface which is the first step into that future.
+
+## vscode-ext-ai
+
+- https://github.com/continuedev/continue /apache2/202408/ts
+  - https://docs.continue.dev/
+  - Continue is the leading open-source AI code assistant. You can connect any models and any context to build custom autocomplete and chat experiences inside VS Code and JetBrains
+  - Tab to autocomplete code suggestions
+
+- https://github.com/twinnydotdev/twinny /MIT/202408/ts
+  - https://twinny.dev/
+  - The most no-nonsense, locally or API-hosted AI code completion plugin for Visual Studio Code - like GitHub Copilot but completely free and 100% private
+  - Operates online or offline
+  - Conforms to the OpenAI API standard
+  - Chat conversations are preserved
+  - Compatible with Ollama, llama.cpp, oobabooga, and LM Studio APIs
 # more
