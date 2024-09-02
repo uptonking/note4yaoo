@@ -127,8 +127,8 @@ modified: 2023-06-23T12:46:53.288Z
   - [Explore monaco editor integration · jupyterlab/jupyterlab](https://github.com/jupyterlab/jupyterlab/issues/135)
   - [Update Codemirror to version 6 _202106](https://github.com/jupyterlab/jupyterlab/issues/10370)
     - [pr已合并: Migrate to Codemirror 6 _202207](https://github.com/jupyterlab/jupyterlab/pull/11638)
-  - https://github.com/jupyter/nbdime
-    - Tools for diffing and merging of Jupyter notebooks.
+  - https://github.com/jupyter/nbdime /BSD/202408/python/ts
+    - 🆚️ Tools for diffing and merging of Jupyter notebooks.
 - https://github.com/pretzelai/pretzelai /AGPL/202408/ts/python
   - https://withpretzel.com/
   - Modern, open-source Jupyter alternative
@@ -138,8 +138,10 @@ modified: 2023-06-23T12:46:53.288Z
   - Inline Tab Completion
     - Wait for 1 second to trigger completions. 
     - The default Pretzel AI Server uses Mistral's Codestral but you can switch the inline completion model in Settings
-  - We DO NOT store any code or data you send to the Pretzel AI Server.
+  - We DO NOT store any code or data you send to the Pretzel AI Server
+
 - https://github.com/srcbookdev/srcbook /apache2/202408/ts
+  - https://srcbook.com/
   - TypeScript & JavaScript notebooks.
   - Create, run, and share reproducible programs and ideas
   - Export to valid markdown format (.src.md)
@@ -981,6 +983,9 @@ modified: 2023-06-23T12:46:53.288Z
   - Merge view for CodeMirror
   - 左边旧代码可编辑，右边新代码不可编辑，与vscode相反
 
+- https://github.com/jupyterlab/jupyterlab-git /BSD/202407/python/ts
+  - A JupyterLab extension for version control using Git
+
 - https://codepen.io/GwapongProgrammer/pen/yLXqWMK
   - 依赖codemirror6
 
@@ -1023,6 +1028,9 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://konnorrogers.github.io/diff-view-element/components/diff-view-element/
   - A diff viewer complete with PrismJS for syntax highlighting
+
+- https://github.com/hisashim/docdiff /BSD/202106/ruby
+  - Compares two text files by word, by character, or by line
 
 ## lint
 

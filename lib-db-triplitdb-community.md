@@ -323,7 +323,7 @@ await client.transact(async (tx) => {
   - Cloudant was one of the more active contributors until it got eaten by IBM and put into a maintenance spiral (what mother can love what IBM "Blue Mix" has done to Cloudant?)
   - In general the still growing number of document DBs that are Mongo-compatible but not CouchDB-compatible (AWS and Azure document DB offerings, for instance)
 
-- I'm wary of stuff like this, probably really useful to rapidly iterate.... but what a maintence nightmare after 10 years and your schema has evolved 100 times, but you have existing customers in various state of completeness. I avoided firebase when it came out for this reason.
+- I'm wary of stuff like this, probably really useful to rapidly iterate.... but what a maintenance nightmare after 10 years and your schema has evolved 100 times, but you have existing customers in various state of completeness. I avoided firebase when it came out for this reason.
 
 - Does Instant have a way to merge many frequent updates into fewer Postgres transactions while maintaining high frequency for multiplayer?
   - We do indeed batch frequent updates! Still many opportunities for improvements there, but we have a working demo of a team-oriented tldraw

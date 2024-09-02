@@ -114,7 +114,7 @@ modified: 2020-10-05T09:12:01.565Z
   - Servers host segments on locally attached storage and process queries on those segments.
   - A Pinot minion is an optional cluster component that executes background tasks on table data apart from the query processes performed by brokers and servers
 
-- querybook /1.3kStar/apache2/202301/ts/python
+- querybook /1.3kStar/apache2/202408/ts/python
   - https://github.com/pinterest/querybook
   - https://www.querybook.org/
   - Querybook is a Big Data Querying UI, combining collocated table metadata and a simple notebook interface.

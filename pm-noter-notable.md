@@ -14,10 +14,10 @@ modified: 2023-11-28T14:48:45.910Z
 - features
   - versioning and branching: 基于oplog/events实现, draft/public
   - collaboration-ready: 基于crdt
-  - end-user database: 支持用户自定义数据和流程
+  - end-user database: 支持用户自定义数据和流程, multi views
   - mobile-editor: phone, pad
   - animated-text/code sharing: playback with different speed
-  - 小市场：多文件知识库，移动优先的markdown知识库
+  - features: 多文件知识库(ide), 移动优先的markdown知识库
   - github修改文档要提pr很繁琐; 可协作的workspace可直接改或用审阅修订模式
   - mobile-app-generator
   - local-first data storage with optional syncing: 兼容git的commits
@@ -33,11 +33,11 @@ modified: 2023-11-28T14:48:45.910Z
     - 备选方案参考git，将文本与git工具绑定
     - sync: 本地文件自动生成delta
   - mdbook/gitbook: text + actions/workflows
-  - open folder as site
+  - ~~open folder as site~~, 一般发布的站点都会多次处理内容，任意文件夹无意义
   - office editor
   - encrypted elements: 有权限的用户或有密码的用户才可看到的数据
+    - paid-only paragraphs/sentences
   - 文章段落查重，也可用于论文查重、评论查重
-  - paid-only paragraphs/sentences
   - 视频笔记
     - 针对视频的笔记，如历史片/纪录片
     - 针对视频的搜索

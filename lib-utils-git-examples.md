@@ -49,24 +49,7 @@ modified: 2023-08-29T10:12:22.345Z
   - Our goal is not to create a 100% replica of Git (for those interested in such a project, please refer to the gitoxide)
   - A key feature of libra is the replacement of the original Git internal storage architecture with SQLite.
 
-- https://github.com/aergoio/litetree /202003/c/inactive
-  - It is a modification of the SQLite engine to support branching, like git!
-  - Each database transaction is saved as a commit, and each commit has an incremental number
-  - We cannot write to the database when we are in a defined commit, writing is only possible at the head of each branch. If you want to make modifications to some previous commit you must create a new branch that starts at that commit.
-  - not-yet: merge
-
-- https://github.com/inlang/inlang /apache2/202311/ts
-  - https://inlang.com/
-  - globalization infrastructure for software && version control for apps
-  - [Ask HN: Apps that are built with Git as the back end? | Hacker News_202210](https://news.ycombinator.com/item?id=33261862)
-  - [discussion about reactivity architecture](https://github.com/inlang/inlang/issues/1122)
-
-- https://github.com/GQL-Project/gql_db /202212/rust/inactive
-  - gql-db is an SQL database server with version control integrated into the database itself. 
-  - It's written in Rust and uses Protocol Buffers/gRPC for communication
-  - We've also implemented a UI for the database server, which can be found at: GQL-Project/gql_client.
-
-- https://github.com/gitbutlerapp/gitbutler /FSL-1.0-MIT(2y)/202406/rust/ts/svelte
+- https://github.com/gitbutlerapp/gitbutler /FSL-1.0-MIT(2y)/202409/rust/ts/svelte
   - https://gitbutler.com/
   - The GitButler version control client, backed by Git, powered by Tauri/Rust/Svelte
   - Git branch management tool, built from the ground up for modern workflows
@@ -77,6 +60,29 @@ modified: 2023-08-29T10:12:22.345Z
     - GitButler allows you to work with multiple branches in parallel in the same working directory.
     - GitButler is aware of changes before they are committed. This allows it to keep a record of which virtual branch each individual diff belongs to.
     - while in Git it is preferable that you create your desired branch ahead of time, using GitButler you can move changes between virtual branches at any point during development.
+
+- https://github.com/jupyterlab/jupyterlab-git /BSD/202407/python/ts
+  - A JupyterLab extension for version control using Git
+
+- https://github.com/aergoio/litetree /202003/c/inactive
+  - It is a modification of the SQLite engine to support branching, like git
+  - Each database transaction is saved as a commit, and each commit has an incremental number
+  - We cannot write to the database when we are in a defined commit, writing is only possible at the head of each branch. If you want to make modifications to some previous commit you must create a new branch that starts at that commit.
+  - not-yet: merge
+
+- https://github.com/opral/monorepo /apache2/202311/ts
+  - https://github.com/inlang/inlang
+  - https://inlang.com/
+  - https://opral.com/
+  - globalization infrastructure for software && version control for apps
+  - Inlang is an ecosystem of interoperable lix apps to globalize software.
+  - [Ask HN: Apps that are built with Git as the back end? | Hacker News _202210](https://news.ycombinator.com/item?id=33261862)
+  - [discussion about reactivity architecture](https://github.com/inlang/inlang/issues/1122)
+
+- https://github.com/GQL-Project/gql_db /202212/rust/inactive
+  - gql-db is an SQL database server with version control integrated into the database itself. 
+  - It's written in Rust and uses Protocol Buffers/gRPC for communication
+  - We've also implemented a UI for the database server, which can be found at: GQL-Project/gql_client.
 
 - https://github.com/MichaelMure/git-bug /GPLv3/202310/go
   - Distributed, offline-first bug tracker embedded in git, with bridges

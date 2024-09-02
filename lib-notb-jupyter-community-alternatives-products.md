@@ -101,7 +101,7 @@ modified: 2024-06-30T03:32:45.893Z
 
 - Observable is a great notebook env for dataviz, but the bespoke js + observability patterns can feel obtuse for non-dataviz stuff.
   - Likewise, the Jupyter js kernels feel second-class and require python dependencies.
-- How does it compare with Observable?
+- 🆚️ How does it compare with Observable?
   - Observable is highly specialized in data visualizations (graphs, plots, etc...) and runs in the browser.
   - Srcbook is built for different use cases: we focus on a backend runtime (node) and want to solve for non-data-visualizations workflows. Use cases like prototyping with a third party npm library, running a script to test your app's behavior, or building an AI agent.
   - Compared to Observable, it's apache-2 licensed and it's self-hostable. The d3, p5 and database access you have to add yourself. With Observable user, workspace, diagramming and template management is built-in.

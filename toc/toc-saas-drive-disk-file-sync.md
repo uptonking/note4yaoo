@@ -184,6 +184,13 @@ modified: 2024-03-31T17:45:16.789Z
   - https://pydio.com/
   - Pydio Cells is an open-source, self-hosted Document Sharing and Collaboration platform specifically designed for organizations that need advanced document-sharing and collaboration without security trade-offs or compliance issues.
 # cloud-drive-sync
+- https://github.com/qiniu/kodo-browser /apache2/202406/ts
+  - 为七牛对象存储（Kodo）提供类似 Windows 资源管理器的功能。用户可以很方便的浏览文件，上传下载文件，支持断点续传等。
+  - 参考 阿里 OSS Browser 设计
+  - 使用开源框架 React + Electron
+  - https://github.com/aliyun/oss-browser /apache2/202406/js
+    - 提供类似windows资源管理器功能。用户可以很方便的浏览文件，上传下载文件，支持断点续传等。
+
 - https://github.com/reruin/sharelist
   - ShareList 是一个易用的网盘工具，支持快速挂载 GoogleDrive、OneDrive
 

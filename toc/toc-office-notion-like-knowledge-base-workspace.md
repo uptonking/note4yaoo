@@ -215,6 +215,7 @@ modified: 2022-06-03T21:34:54.893Z
   - 后端依赖: Python、Django; 后端代码量很少
   - 前端依赖: LayUI、JQuery、vditor、luckysheet.v2
   - 功能特性: 文档资源管理、书写编辑、阅读分享、站点管理
+  - 依赖luckysheet、vditor、editor.md、docdiff-codemirror5
 
 - https://github.com/gitwonk/gitwonk /AGPLv3/202308/ts/inactive
   - The open source GitBook, Confluence, and Archbee alternative. 

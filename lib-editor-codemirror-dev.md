@@ -60,7 +60,7 @@ modified: 2021-05-06T09:38:31.520Z
   - obsidian, zettlr, joplin-markdown-editor, supernotes
   - chrome-devtools(开源代码中使用v6)
   - known: mdn-bob, sourcegraph
-  - libfwk: svelte-playground
+  - libfwk: svelte-playground, gitbutler
   - more: tagspaces, hedgedoc
   - ?: replay.io, duckdb
   - apps: desmos-classroom
@@ -142,20 +142,24 @@ modified: 2021-05-06T09:38:31.520Z
 
 - resources
 # draft
+- nostable
+  - block-style
+  - virtualized
+  - table/database: multi views
+
 - not-yet
-  - lezer-highlight vs highlightjs
   - codemirror devtools
-  - noseditor
   - autocomplete
   - 迁移v5的示例到v6
+  - lezer-highlight vs highlightjs
+
+- port to server side lang like prosemirror
+  - hocuspocus for codemirror
 
 - experimental
   - lazy
   - load new document
   - conflict
-
-- port to server side lang like prosemirror
-  - hocuspocus for codemirror
 
 - features
   - diff with magic-code-animation
@@ -167,8 +171,8 @@ modified: 2021-05-06T09:38:31.520Z
 - diff-view上下布局
   - 使用打字机动画修改unchanged的行时，先修改再交换行，避免视图跳跃
   - 高亮变更内容的粒度是整行，太粗了，但适合代码编辑场景
-  - 已经实现了字符级的添加和删除，能高亮新插入的空格，但修改单个字符有时会高亮整个单词(符合左右布局)
-  - 不支持 collapseUnchanged
+  - 已经实现了字符级的添加和删除，能高亮新插入的字符，但修改单个字符有时会高亮整个单词(符合左右布局)
+  - ~~不支持 collapseUnchanged~~
   - 未实现行内渲染change和操作
   - 在红色部分前面的行末尾回车，有时新行会跑到红色之下，其实也符合预期
   - 插入换行符时会高亮整行作为新增，不符合预期，但这个是通过api修改的方式，通过ui修改是符合预期的
@@ -210,8 +214,8 @@ modified: 2021-05-06T09:38:31.520Z
   - menu-item
   - command-palette
 
-- 实现评论时考虑是否支持评论协作、undo/redo， 一般将评论数据内容放在编辑器内容doc之外
-  - 减少doc体积，方便支持自定义形状颜色
+- 💬 实现评论时考虑是否支持评论协作、undo/redo， 一般将评论数据内容放在编辑器内容doc之外
+  - 减少doc体积，方便支持自定义评论的形状颜色
   - 方便实现非行内的跨block的评论，行内评论和块级评论
   - 复制文本时不需要带上评论数据, 处理复制粘贴更简单
 
@@ -223,8 +227,7 @@ modified: 2021-05-06T09:38:31.520Z
   - Syntax highlighting
   - add some attributes or wrapping DOM element 
 - deco-widget
-  - inline elements or blocks
-  - insert a DOM element in the editor content
+  - insert a DOM element in editor: inline elements or blocks
 - deco-replacing 可以修改多行
   - code folding or replacing an element in the text with something else
   - possible to display a widget instead of the replaced text

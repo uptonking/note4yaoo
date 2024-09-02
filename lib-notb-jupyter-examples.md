@@ -183,6 +183,15 @@ modified: 2024-06-30T03:20:21.444Z
   - Fast Datagrid widget for the Jupyter Notebook and JupyterLab
   - 依赖@lumino/datagrid、d3-scale、vega-format/expression
   - [I see some cons using Web Workers like it is done in ipysheet](https://github.com/bloomberg/ipydatagrid/issues/3)
+
+- https://github.com/jku-vds-lab/loops /BSD/202408/python/ts
+  - https://jku-vds-lab.at/publications/2024_loops/
+  - extension to support iterative and exploratory data analysis in computational notebooks.
+  - Loops automatically tracks the notebook's history and visualizes it next to the notebook.
+  - Loops visualizes differences in code, markdown, tables, visualizations, and images
+
+- https://github.com/jupyterlab/jupyterlab-git /BSD/202407/python/ts
+  - A JupyterLab extension for version control using Git
 # publish
 - https://github.com/quarto-dev/quarto-cli /MIT/202407/ts
   - https://quarto.org/

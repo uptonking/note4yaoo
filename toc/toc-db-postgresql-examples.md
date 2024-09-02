@@ -20,6 +20,11 @@ modified: 2023-10-26T15:18:22.207Z
 - https://github.com/graphile/starter /MIT/202311/ts
   - Opinionated SaaS quick-start with pre-built user account and organization system for full-stack application development in React, Node.js, GraphQL and PostgreSQL. 
   - Powered by PostGraphile, TypeScript, Apollo Client, Graphile Worker, Graphile Migrate, GraphQL Code Generator, Ant Design and Next.js
+
+## client
+
+- https://github.com/Paxa/postbird /MIT/202211/js/inactive
+  - Open source PostgreSQL GUI client for macOS, Linux and Windows
 # more
 - https://github.com/miguelpinto128/Wix-like-DataBase /js
   - A PostGreSQL database for a "Wix" like website. Contains all database structure.
