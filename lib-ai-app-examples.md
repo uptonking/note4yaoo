@@ -77,6 +77,15 @@ modified: 2023-02-08T07:20:48.475Z
   - Simple and powerful prompting primitives based on the Jinja templating engine
   - Fast JSON generation following a JSON schema or a Pydantic model
   - Interleave completions with loops, conditionals, and custom Python functions
+
+## benchmarks-llm
+
+- https://github.com/bigcode-project/bigcodebench /apache2/202408/python
+  - https://bigcode-bench.github.io/
+  - BigCodeBench is an easy-to-use benchmark for code generation with practical and challenging programming tasks
+  - It aims to evaluate the true programming capabilities of large language models (LLMs) in a more realistic setting.
+  - The package is built on top of the EvalPlus framework, which is a flexible and extensible evaluation framework for code generation tasks.
+  - [2024-06-18] We release BigCodeBench, a new benchmark for code generation with 1140 software-engineering-oriented programming tasks. Preprint is available here
 # chatgpt
 - app-site
   - https://github.com/LiLittleCat/awesome-free-chatgpt

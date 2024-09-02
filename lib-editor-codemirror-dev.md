@@ -21,6 +21,7 @@ modified: 2021-05-06T09:38:31.520Z
   - 支持split-view
   - 支持nested-editor，可在同一页面渲染多个编辑器
   - ~~simpler than prosemirror~~
+  - 内置支持folded-code
 
 - cons
   - 非开箱即用，需要组装模块
@@ -144,6 +145,8 @@ modified: 2021-05-06T09:38:31.520Z
 - not-yet
   - lezer-highlight vs highlightjs
   - codemirror devtools
+  - noseditor
+  - autocomplete
   - 迁移v5的示例到v6
 
 - experimental

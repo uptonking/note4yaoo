@@ -2076,6 +2076,13 @@ const playbackInfo = [
 - 录制用户操作，什么时候开始
   - 整个playground的期间
 
+
+- fileTree
+  - playgroundItem.getPlaygroundInfo()
+    - 直接使用playgroundItem.fileTree缓存，未做重新计算
+  - registerFileTreeEvent
+    - 每次都去构建文件树, 操作过重, 需要细分
+
 - PlaygroundChannel 监听getPlaybackInfo
   - 从mongodb表获取编辑操作数据 playgroundHistoryCRDT.loadAllData(); 
   - 获取代码文件数据 playgroundHistoryBase.findSourceByPlaygroundId()

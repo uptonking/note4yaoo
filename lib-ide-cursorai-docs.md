@@ -1,11 +1,11 @@
 ---
-title: lib-editor-code-cursorai-docs
+title: lib-ide-cursorai-docs
 tags: [cursorai, docs]
 created: 2024-05-14T03:18:24.947Z
-modified: 2024-05-14T03:18:59.670Z
+modified: 2024-09-02T02:28:53.820Z
 ---
 
-# lib-editor-code-cursorai-docs
+# lib-ide-cursorai-docs
 
 # guide
 

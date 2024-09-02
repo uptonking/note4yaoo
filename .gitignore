@@ -1,5 +1,4 @@
 # ignored
-
 yaoo/
 yaoo-*
 me/
@@ -9,3 +8,4 @@ work-*
 pmgr-*
 
 # auto-generated
+.DS_Store

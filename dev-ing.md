@@ -345,59 +345,16 @@ npx create-strapi@rc strapi5-play-202408 --use-npm --quickstart --ts --skip-clou
 
 - ai相关开发
   - cmd+k 与ai对话
-  - ai执行计划同步底部时光机进度条
-
-- dev-to-demo
-  - 通过minimap快速定位diff视图位置
-  - tab自动补全
-  - editor: typewriter
-  - 时光机回放模式
-  - paas的断线恢复问题
-  - paas激活的时机要修改
-  - LSP补全
-  - ~~cde的 push/commit/pr~~
-  - ~~cde的 分享、邀请、进入权限~~
-  - ~~cde设置页面~~
-  - ~~cde环境变量、中间件~~
-  - ~~userStatusUpdated~~
-  - ~~paas异常处理~~
-  - ~~删除废弃的代码~~
-  - ~~带着issue进入cde~~
-  - ~~异常toast弹窗, 异常处理~~
+  - ~~ai执行计划同步底部时光机进度条~~
 
 - not-yet
-  - ~~私有项目的导入~~
   - zustandx如何在一个store里面使用另一个store的值, 或重新架构store的内容
-  - 多标签打开同一个cde，文件树的头像会显示2个
-
-- 跟随模式
-  - followUser时会自动打开console面板
-  - ai工作时自动打开面板状态
-  - cde页面无法区分自己和其他用户
-  - 同一个用户在不同浏览器打开同一个playground的cde时，用户头像显示几个
-  - 刷新完页面恢复面板显示隐藏状态
-  - ~~ai头像的位置顺序~~, 按进入room的顺序
-  - ~~文件树 keydown事件传到了编辑器~~
-  - ~~浏览器panel滚动禁用~~
-  - ~~修复文件树无法创建文件和文件夹的问题~~
-  - ~~测试跟随ai~~
-  - ~~发送readfile指令或切换文件，渲染editor失败~~
-  - ~~`/playground`路由页面不需要知道issue信息~~
-
-- 时光机
-  - ~~打字机效果~~
-  - ~~上下布局diff视图~~
-  - ~~播放控制逻辑，op的内容和时机~~
-  - ~~回放模式支持编辑，内容和光标选区的变化~~
-  - ~~处理打开已删除文件、新增文件~~
-  - changed-files-list
-
-- ❓ 计划终止后，如何清理action，需要agent提供api
-
-- 进度条打开时的focus状态
-  - 去掉重播时收起的动画
+  - ~~私有项目的导入~~
+  - ~~多标签打开同一个cde，文件树的头像会显示2个~~
 
 - editor
+  - tab自动补全
+  - 通过minimap快速定位diff视图位置
   - ~~readonly属性不生效~~
 
 - diffView
@@ -405,27 +362,31 @@ npx create-strapi@rc strapi5-play-202408 --use-npm --quickstart --ts --skip-clou
 
 - cmd+k
   - 发送到驾驶舱的消息接口， agent做什么响应
-  - 消息后再显示需要恢复吗
+  - ~~消息后再显示需要恢复吗~~
 
 - paas
-  - 显示部分隐藏文件，如 .gitignore
+  - ~~显示部分隐藏文件，如 .gitignore~~
   - openFile处理异常 File does not exist
+  - agent新建文件后文件树未显示
 
 - cde
-  - 💡 快照文件编辑器的提示条
   - 重写驾驶舱侧边栏的header，让置顶卡片位置水平居中
+  - changed-files-list
+  - cde页面无法区分自己和其他用户
+  - ~~快照文件编辑器的提示条~~
 
 - agent
   - 系统token达到上限后，不能再制定计划，但现有计划也无法显示
+  - 计划终止后，如何清理action，需要agent提供api
 
 - animation
   - time machine show/hide
   - ~~action bar working/replaying~~
 
 - time-machine
-  - 时光机终止后，驾驶舱如何反馈，终止状态如何清理
   - live模式下暂停时支持终止
   - 关闭machine再打开时，会强制再次打开editor
+  - 时光机终止后，驾驶舱如何反馈，终止状态如何清理
   - ~~machine组件unmount要手动清理时光机的定时器~~
 - 未执行的时光机
   - 状态会变成pause
@@ -434,7 +395,7 @@ npx create-strapi@rc strapi5-play-202408 --use-npm --quickstart --ts --skip-clou
   - 最后一个action播放时进度条未显示loading
   - .pnpm-store文件夹应该默认隐藏，被ignore的文件不要显示，不要出现在changedFiles
     - 文件树打不开.pnpm-store文件夹
-  - .gitignore文件无法显示，需要在ideServer放开
+  - ~~.gitignore文件无法显示，需要在ideServer放开~~
   - 第一个action有时会转起来
   - 只读编辑器光标改为禁用箭头
   - 回放时高亮对应面板边框
@@ -462,6 +423,24 @@ console.log(
 
 console.log(';; steps ', taskState, currentOpenedActionId, currentPlayedActionId, steps)
 ```
+
+## 0902
+
+- dev-log
+  - 交付了时光机的主要功能和ui设计稿还原
+  - 设计了cmd+k的主要状态和实现流程
+- dev-to
+  - 本周前2天，修复agent和clacky前端的状态，agent工作时没有预留打字动画的时间，agent暂停后action状态的改变
+  - 本周后3天，实现cmd+k的主要功能，唤起和accept/reject
+  - .gitignore 文件在文件树无法显示
+  - .pnpm-store 文件夹（被 .gitignore忽略掉的文件）不应标记“Modified”
+
+- aws创业论坛分享
+  - ai产品: coding大概3个，视频几个
+  - ai ppt及操作word/excel的效果很好
+  - 业内融资，cursor的A轮60m，codeium的C轮0.12b
+  - 大厂不容易垄断，大厂会与私有agent绑定，代码privacy问题
+# dev-08
 
 ## 0830
 
@@ -513,6 +492,42 @@ console.log(';; steps ', taskState, currentOpenedActionId, currentPlayedActionId
   stopped: true
 }
 ```
+
+- dev-to-demo
+  - ~~editor: typewriter~~
+  - ~~时光机回放模式~~
+  - paas的断线恢复问题
+  - paas激活的时机要修改
+  - ~~LSP补全~~
+  - ~~cde的 push/commit/pr~~
+  - ~~cde的 分享、邀请、进入权限~~
+  - ~~cde设置页面~~
+  - ~~cde环境变量、中间件~~
+  - ~~userStatusUpdated~~
+  - ~~paas异常处理~~
+  - ~~删除废弃的代码~~
+  - ~~带着issue进入cde~~
+  - ~~异常toast弹窗, 异常处理~~
+
+- 跟随模式
+  - ~~followUser时会自动打开console面板~~
+  - ~~ai工作时自动打开面板状态~~
+  - ~~同一个用户在不同浏览器打开同一个playground的cde时，用户头像显示几个~~
+  - ~~刷新完页面恢复面板显示隐藏状态~~
+  - ~~ai头像的位置顺序~~, 按进入room的顺序
+  - ~~文件树 keydown事件传到了编辑器~~
+  - ~~浏览器panel滚动禁用~~
+  - ~~修复文件树无法创建文件和文件夹的问题~~
+  - ~~测试跟随ai~~
+  - ~~发送readfile指令或切换文件，渲染editor失败~~
+  - ~~`/playground`路由页面不需要知道issue信息~~
+
+- 时光机
+  - ~~打字机效果~~
+  - ~~上下布局diff视图~~
+  - ~~播放控制逻辑，op的内容和时机~~
+  - ~~回放模式支持编辑，内容和光标选区的变化~~
+  - ~~处理打开已删除文件、新增文件~~
 
 ## 0829
 
