@@ -101,6 +101,7 @@ modified: 2021-07-20T13:50:23.433Z
 
 - 通用的features
   - collab， realtime， ai
+
 ## solutions: inter(re)active knowledge-base/wiki
 
 - ✨ cms(content-mgmt)
@@ -169,6 +170,12 @@ modified: 2021-07-20T13:50:23.433Z
 
 - to-try
   - kibana for meilisearch
+
+- 视图层的实现可参考: wangeditor/typewriter/autocomplete, 库和应用层不同在于ajax
+- 架构参考
+  - immutable: prosemirror, slate, wangeditor, typewriter, ospreadsheet, maxgraph
+  - functional: wangeditor, typewriter
+  - 数据层: ivm-crsqlite
 # collab
 - 多文件的app, 或多或少有点类似知识库
   - 可以参考给普通数据库表添加crdt支持的场景
@@ -347,17 +354,11 @@ modified: 2021-07-20T13:50:23.433Z
 - ai的能力擅长在翻译 语言 转换
 # more
 - 20240406: 想做的事情有 灵活的cms、协作系统、支持大量数据的编辑器
-  - cms需要在架构层支持配置和存储表和字段元数据
+  - cms需要在架构层支持 配置和存储 表和字段 的元数据
   - 协作系统需要对文本使用特殊的数据结构，还要考虑版本历史/yjs/权限
   - 编辑器在模型层要考虑db架构和更新op采用ot/crdt, 系统中编辑器大多可替换
   - 协作只有部分文本需要YText这类复杂的crdt，表格使用llw-map足够
   - 富文本编辑器和页面编辑器的区别，主要在是否使用conetenteditable、选区
-
-- 视图层的实现可参考: wangeditor/typewriter/autocomplete, 库和应用层不同在于ajax
-- 架构参考
-  - immutable: prosemirror, slate, wangeditor, typewriter, ospreadsheet, maxgraph
-  - functional: wangeditor, typewriter
-  - 数据层: ivm-crsqlite
 # topic-replay/playback
 - usecase
   - replayable workspace

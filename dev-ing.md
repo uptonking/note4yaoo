@@ -347,10 +347,6 @@ npx create-strapi@rc strapi5-play-202408 --use-npm --quickstart --ts --skip-clou
   - cmd+k 与ai对话
   - ~~ai执行计划同步底部时光机进度条~~
 
-- not-yet
-  - zustandx如何在一个store里面使用另一个store的值, 或重新架构store的内容
-  - ~~私有项目的导入~~
-  - ~~多标签打开同一个cde，文件树的头像会显示2个~~
 
 - editor
   - tab自动补全
@@ -384,6 +380,8 @@ npx create-strapi@rc strapi5-play-202408 --use-npm --quickstart --ts --skip-clou
   - ~~action bar working/replaying~~
 
 - time-machine
+  - 终止需要二次确认
+  - 终止后未执行的action在进度条仍然显示，状态时cancelled
   - live模式下暂停时支持终止
   - 关闭machine再打开时，会强制再次打开editor
   - 时光机终止后，驾驶舱如何反馈，终止状态如何清理
@@ -402,7 +400,15 @@ npx create-strapi@rc strapi5-play-202408 --use-npm --quickstart --ts --skip-clou
   - diff效果有时显示不出来
   - 新增文件未显示A图标，显示的是M
 
-## 080
+- not-yet
+  - agent工作时自动跟随失效
+  - 打开已删除的文件未实现
+  - zustandx如何在一个store里面使用另一个store的值, 或重新架构store的内容
+  - ~~演示之前测试cpu、内存~~
+  - ~~私有项目的导入~~
+  - ~~多标签打开同一个cde，文件树的头像会显示2个~~
+
+## 090
 
 - dev-log
   - ?
@@ -423,6 +429,38 @@ console.log(
 
 console.log(';; steps ', taskState, currentOpenedActionId, currentPlayedActionId, steps)
 ```
+
+## 0903
+
+- [Composition – Radix Primitives](https://www.radix-ui.com/primitives/docs/guides/composition)
+
+```JSX
+// dialog和tooltip的trigger顺序
+<Dialog.Root>
+  <Tooltip.Root>
+    <Tooltip.Trigger asChild>
+      <Dialog.Trigger asChild>
+        <MyButton>Open dialog</MyButton>
+      </Dialog.Trigger>
+    </Tooltip.Trigger>
+    <Tooltip.Portal>…</Tooltip.Portal>
+  </Tooltip.Root>
+
+  <Dialog.Portal>...</Dialog.Portal>
+</Dialog.Root>
+```
+
+```JS
+// resourceMonitoring
+{
+  "memoryCurrent": 370,
+  "memoryMax": 1024,
+  "cpuPercent": 0.22
+}
+```
+
+- [What is the difference between parseInt() and Number()? - Stack Overflow](https://stackoverflow.com/questions/4090518/what-is-the-difference-between-parseint-and-number)
+  - they are semantically different, the Number constructor called as a function performs type conversion and parseInt performs parsing
 
 ## 0902
 

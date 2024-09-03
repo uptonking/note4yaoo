@@ -97,6 +97,7 @@ modified: 2021-05-06T09:38:31.520Z
 - ide要点
   - 主要组件: editor, fileTree, workbench-layout, extension
   - 自动同步编辑器内容、代码仓库、配置
+  - cursor的代码修改使用了aider的codeblock diff格式
 
 - 代码编辑器要点
   - tradoff: 侧重预览、协作，轻量编辑、调试

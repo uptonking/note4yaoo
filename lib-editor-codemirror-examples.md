@@ -944,6 +944,7 @@ modified: 2023-06-23T12:46:53.288Z
 - diff视图
   - 上下版: 参考 BlazorCodeMirror6, code-editor-angular
   - 左右版: 参考 mdxeditor, jupyter-nbdime
+  - cursor的代码修改使用了aider的codeblock diff格式
 
 - https://github.com/OrgFlow/codemirror-conflicts /MIT/202408/ts
   - A CodeMirror extension that displays Git conflict markers (`<<<<<<<` syntax) as side-by-side pieces of conflicting code, and provides an interface for accepting, copying, and deleting the chunks, with a top toolbar that shows information about remaining conflicts.
