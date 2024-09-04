@@ -65,9 +65,9 @@ eslint --ext .js,.ts,.tsx --quiet --fix .
 DEBUG=* npm i --legacy-peer-deps --no-audit --loglevel=silly
 DEBUG=* npm i --legacy-peer-deps --no-audit --loglevel=silly --registry=https://registry.npmmirror.com
 
-npm --registry=https://registry.npmmirror.com install axios
-yarn add axios --registry=https://registry.npmjs.org/
-pnpm install --registry=https://registry.npmmirror.com  axios
+npm --registry=https://registry.npmmirror.com install   axios
+yarn add axios --registry=https://registry.npmjs.org/  
+pnpm install --registry=https://registry.npmmirror.com  
 
 export https_proxy=http://127.0.0.1:7890;export http_proxy=http://127.0.0.1:7890;export all_proxy=socks5://127.0.0.1:7890
 
@@ -416,7 +416,7 @@ npx create-strapi@rc strapi5-play-202408 --use-npm --quickstart --ts --skip-clou
   - 需要新增单独的uRegenerateAlternative的事件吗, 可以一次返回多个
   - regenerate是否需要切换回旧版代码的ui 
     - 暂时不做新的ui交互
-  - sdk和前端的通信方式
+  - sdk和前端的通信方式，弹出框如何让paas和agent通信
 
 - diff工具条
   - regenerate 什么
@@ -483,6 +483,16 @@ console.log(';; steps ', taskState, currentOpenedActionId, currentPlayedActionId
 
 console.log(';; machine ', taskState, runningTaskAction, task?.task_steps)
 ```
+
+## 0906
+
+- dev-log
+  - 改进cde的功能与体验，修复时光机状态变化时底部action和驾驶舱action状态不一致的问题
+  - 讨论了agent工作时打字动画优化的方案，以后会转向动态更新编辑器的配置而不是强制刷新文件
+  - 尝试cmd+k的弹窗实现，探索 paas和agent通信的架构
+- dev-to
+  - 需要和agent、产品、设计确认cmd+k及diff工具条的功能细节和交互细节
+  - 如何让paas和agent通信
 
 ## 0905
 
