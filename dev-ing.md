@@ -347,7 +347,6 @@ npx create-strapi@rc strapi5-play-202408 --use-npm --quickstart --ts --skip-clou
   - cmd+k 与ai对话
   - ~~ai执行计划同步底部时光机进度条~~
 
-
 - editor
   - tab自动补全
   - 通过minimap快速定位diff视图位置
@@ -355,10 +354,6 @@ npx create-strapi@rc strapi5-play-202408 --use-npm --quickstart --ts --skip-clou
 
 - diffView
   - ~~隐藏绿色部分后，红色部分是否显示行号~~，打字太快了，不用看行号
-
-- cmd+k
-  - 发送到驾驶舱的消息接口， agent做什么响应
-  - ~~消息后再显示需要恢复吗~~
 
 - paas
   - ~~显示部分隐藏文件，如 .gitignore~~
@@ -380,8 +375,8 @@ npx create-strapi@rc strapi5-play-202408 --use-npm --quickstart --ts --skip-clou
   - ~~action bar working/replaying~~
 
 - time-machine
-  - 终止需要二次确认
-  - 终止后未执行的action在进度条仍然显示，状态时cancelled
+  - ~~终止需要二次确认~~
+  - 终止后未执行的action在进度条仍然显示，状态是cancelled
   - live模式下暂停时支持终止
   - 关闭machine再打开时，会强制再次打开editor
   - 时光机终止后，驾驶舱如何反馈，终止状态如何清理
@@ -390,9 +385,9 @@ npx create-strapi@rc strapi5-play-202408 --use-npm --quickstart --ts --skip-clou
   - 状态会变成pause
   - actions和plan在刷新页面后会丢失、重置
 - 回放模式
-  - 最后一个action播放时进度条未显示loading
   - .pnpm-store文件夹应该默认隐藏，被ignore的文件不要显示，不要出现在changedFiles
     - 文件树打不开.pnpm-store文件夹
+  - ~~最后一个action播放时进度条未显示loading~~
   - ~~.gitignore文件无法显示，需要在ideServer放开~~
   - 第一个action有时会转起来
   - 只读编辑器光标改为禁用箭头
@@ -400,8 +395,65 @@ npx create-strapi@rc strapi5-play-202408 --use-npm --quickstart --ts --skip-clou
   - diff效果有时显示不出来
   - 新增文件未显示A图标，显示的是M
 
+- root thread
+  - 初始化环境计划执行完后，create pr时必须在前端打开terminal，否则 Got an error from agent event, Failed to find the prompt when use ctrl+c command
+
+- cmd+k， 主流程是用户输入需求，agent返回建议的代码
+  - 对于不清晰的用户需求，cmd+k如何处理，需不需要澄清, ui交互是否要补充
+  - agent工作编辑时是否禁用cmd+k快捷键
+  - 用户点击下面的部分接受时，上面是否出现 accept selected数量，类似3/5
+  - 部分accept的接受拒绝，和diff工具条同时出现吗？
+  - 点击Stop停止生成后，仍保持diff视图，显示未写完的代码，此时accept是否显示消耗积分
+  - 部分accept后，cmd+z回到原文件与最新文件的diff，还是回到原文件与agent返回的文件的diff视图
+  - addToChat发送到驾驶舱的消息接口，agent做什么响应
+  - 对话框消失后再显示需要恢复prompt吗
+- cmd+k api需要支持 uRemakeFile, uStopRemakingFile, uRegenerateAlternative?
+  - 需要单独发送selectedContent对应的代码字符串吗
+  - accept/reject在前端给用户操作, 用户reject后agent需要知道吗，目前操作的粒度是全部
+    - 由前端接受拒接且agent不需要知道， 修改粒度为每个变更块suggestedBlock
+  - 追加修改需要新增单独的uFollowUpRemakeFile事件吗，追加的范围默认是上次修改的范围
+    - 追加需要追加的提示词
+  - 需要新增单独的uRegenerateAlternative的事件吗, 可以一次返回多个
+  - regenerate是否需要切换回旧版代码的ui 
+    - 暂时不做新的ui交互
+  - sdk和前端的通信方式
+
+- diff工具条
+  - regenerate 什么
+  - edit
+  - undo
+
+```JS
+// uRemakeFile request parameters, 'uRemakeFile'
+{
+  prompt,
+  filePath,
+  // { lines, offset }, lines是1-based行号如[4,5]/[4,4], offset是光标位置
+  selectedRange,
+  // meta可包含用于生成代码的其他信息如代码注释/当前行变量或方法的声明或引用
+  meta = {},
+  selectedContent = '',
+  isFollowUp,
+  // isRegenerate
+}
+// uRemakeFile response
+{
+  filePath: '',
+  remakeContent: '',
+  // alternatives: []
+}
+
+// uStopRemakingFile request
+{
+  filePath: '',
+}
+// uStopRemakingFile response
+{
+  stopped: true
+}
+```
+
 - not-yet
-  - agent工作时自动跟随失效
   - 打开已删除的文件未实现
   - zustandx如何在一个store里面使用另一个store的值, 或重新架构store的内容
   - ~~演示之前测试cpu、内存~~
@@ -428,7 +480,19 @@ console.log(
 )
 
 console.log(';; steps ', taskState, currentOpenedActionId, currentPlayedActionId, steps)
+
+console.log(';; machine ', taskState, runningTaskAction, task?.task_steps)
 ```
+
+## 0905
+
+- agent工作时的diff动画问题
+  - 有时写字的文件会错乱，action依次是a3/a4, 先写a4，再写a3，不能稳定复现
+  - 会意外打开.gitignore文件
+
+## 0904
+
+- Error: onCancelTask error, "Can't trigger event cancel_task from state PAUSE_STATE!"
 
 ## 0903
 
@@ -471,9 +535,8 @@ console.log(';; steps ', taskState, currentOpenedActionId, currentPlayedActionId
   - 本周前2天，修复agent和clacky前端的状态，agent工作时没有预留打字动画的时间，agent暂停后action状态的改变
   - 本周后3天，实现cmd+k的主要功能，唤起和accept/reject
   - .gitignore 文件在文件树无法显示
-  - .pnpm-store 文件夹（被 .gitignore忽略掉的文件）不应标记“Modified”
 
-- aws创业论坛分享
+- 👥 aws创业论坛分享
   - ai产品: coding大概3个，视频几个
   - ai ppt及操作word/excel的效果很好
   - 业内融资，cursor的A轮60m，codeium的C轮0.12b
@@ -489,47 +552,6 @@ console.log(';; steps ', taskState, currentOpenedActionId, currentPlayedActionId
 
 - 时光机暂停event时不需要参数
   - 时光机恢复时，旧的数据不会更新
-
-- cmd+k api需要支持 uRemakeFile, uStopRemakingFile, uRegenerateAlternative?
-  - sdk和前端的通信方式
-  - 需要单独发送selectedContent对应的代码字符串吗
-  - accept/reject在前端给用户操作, 用户reject后agent需要知道吗，目前操作的粒度是全部
-    - 修改粒度为每个变更块
-  - 追加修改需要新增单独的uFollowUpRemakeFile事件吗，追加的范围默认是上次修改的范围
-    - 追加需要追加的提示词
-  - 需要新增单独的uRegenerateAlternative的事件吗，也可以不要这个事件, 可以一次返回多个
-  - regenerate是否需要切换回旧版代码的ui 
-    - 暂时不做新的ui交互
-
-```JS
-// uRemakeFile request parameters, 'uRemakeFile'
-{
-  prompt,
-  filePath,
-  // { lines, offset }, lines是1-based行号如[4,5]/[4,4], offset是光标位置
-  selectedRange,
-  // meta可包含用于生成代码的其他信息如代码注释/当前行变量或方法的声明或引用
-  meta = {},
-  selectedContent = '',
-  isFollowUp,
-  // isRegenerate
-}
-// uRemakeFile response
-{
-  filePath: '',
-  remakeContent: '',
-  // alternatives: []
-}
-
-// uStopRemakingFile request
-{
-  filePath: '',
-}
-// uStopRemakingFile response
-{
-  stopped: true
-}
-```
 
 - dev-to-demo
   - ~~editor: typewriter~~
