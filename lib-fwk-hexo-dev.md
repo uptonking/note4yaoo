@@ -30,6 +30,7 @@ modified: 2024-02-09T10:53:39.813Z
 - alternatives
   - hugo, jekyll
   - gitbook, mdBook-rust
+  - jupyter-book 生态
   - vuepress, docusaurus, rspress, docsify
 
 - tips

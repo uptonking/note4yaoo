@@ -75,6 +75,9 @@ modified: 2024-06-30T03:20:21.444Z
   - write their content in markdown files or Jupyter notebooks
   - include computational elements (e.g., code cells) in either type, 
   - using a simple command, run the embedded code cells, cache the outputs and convert this content into: a web-based interactive book and a publication-quality PDF.
+  - [Allow alternate editor components: Monaco editor, ACE · jupyter-book/thebe _202402](https://github.com/jupyter-book/thebe/issues/730)
+    - The current editor component codemirror from jupyter, has issues with CSS transforms.
+    - Apparently @codemirror/view 6.18.0 added some code to detect when the view component is scaled. But Thebe appears to currently use codemirror 5.
 
 - https://github.com/mwouts/jupytext /MIT/202405/python
   - https://jupytext.readthedocs.io/

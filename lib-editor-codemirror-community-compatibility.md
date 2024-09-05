@@ -27,15 +27,16 @@ modified: 2024-08-11T06:40:41.476Z
 - ## 
 
 - ## [Replace chinese character with other input, someting strange _202405](https://discuss.codemirror.net/t/replace-chinese-character-with-other-input-someting-strange/8265)
-- I suspect the Chinese input method uses composition 1 in this case. Unfortunately, browsers do odd buggy things if you interfere with the text around the cursor during composition, including duplicating text.
-  - Your options are to not respond to composition-based input (for example by checking tr.isUserEvent("input.type.compose")), or to set things so that the replacement happens after composition finishes (in a view plugin listening to compositionend events).
+- I suspect the Chinese input method uses composition in this case. Unfortunately, browsers do odd buggy things if you interfere with the text around the cursor during composition, including duplicating text.
+  - Your options are to not respond to composition-based input (for example by checking `tr.isUserEvent("input.type.compose")`) , or to set things so that the replacement happens after composition finishes (in a view plugin listening to compositionend events).
 
 - ## 🐛 [codemirror/view 6.28.2 version will cause abnormal input of Chinese input method _202406](https://github.com/codemirror/dev/issues/1396)
 - 
 - 
 
-- [Mac OS native chinese IME, prompt pos not right _202407](https://github.com/codemirror/dev/issues/1409)
-  - This is a Chrome issue, which I've already reported here, but so far no competent person seems to have picked it up. Sometimes multiple pressing the +1 button on that issue page (might require logging in) helps getting attention to it.
+- ## [Mac OS native chinese IME, prompt pos not right _202407](https://github.com/codemirror/dev/issues/1409)
+  - 只有中文输入法的S键会触发，其他按键不会触发
+- This is a Chrome issue, which I've already reported here, but so far no competent person seems to have picked it up. Sometimes multiple pressing the +1 button on that issue page (might require logging in) helps getting attention to it.
 
 - [EditContext displays the IME interface in the wrong place for IME at the start of a line [351029417] - Chromium](https://issues.chromium.org/issues/351029417)
 # discuss

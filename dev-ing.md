@@ -343,9 +343,12 @@ npx create-strapi@rc strapi5-play-202408 --use-npm --quickstart --ts --skip-clou
 - yaoo-proj
   - codemirror-devtools
 
-- ai相关开发
-  - cmd+k 与ai对话
-  - ~~ai执行计划同步底部时光机进度条~~
+- frontend
+  - think卡片打开文件，滚动到文件的行数
+  - 计划画布展示、修改及对话
+  - 付费订阅和积分扣减
+  - ai控制台前端
+  - 前端未控制member/owner的按钮、路由访问权限
 
 - editor
   - tab自动补全
@@ -356,9 +359,9 @@ npx create-strapi@rc strapi5-play-202408 --use-npm --quickstart --ts --skip-clou
   - ~~隐藏绿色部分后，红色部分是否显示行号~~，打字太快了，不用看行号
 
 - paas
-  - ~~显示部分隐藏文件，如 .gitignore~~
   - openFile处理异常 File does not exist
   - agent新建文件后文件树未显示
+  - ~~显示部分隐藏文件，如 .gitignore~~
 
 - cde
   - 重写驾驶舱侧边栏的header，让置顶卡片位置水平居中
@@ -375,11 +378,11 @@ npx create-strapi@rc strapi5-play-202408 --use-npm --quickstart --ts --skip-clou
   - ~~action bar working/replaying~~
 
 - time-machine
-  - ~~终止需要二次确认~~
   - 终止后未执行的action在进度条仍然显示，状态是cancelled
-  - live模式下暂停时支持终止
   - 关闭machine再打开时，会强制再次打开editor
   - 时光机终止后，驾驶舱如何反馈，终止状态如何清理
+  - ~~终止需要二次确认~~
+  - ~~live模式下暂停时支持终止~~
   - ~~machine组件unmount要手动清理时光机的定时器~~
 - 未执行的时光机
   - 状态会变成pause
@@ -398,60 +401,14 @@ npx create-strapi@rc strapi5-play-202408 --use-npm --quickstart --ts --skip-clou
 - root thread
   - 初始化环境计划执行完后，create pr时必须在前端打开terminal，否则 Got an error from agent event, Failed to find the prompt when use ctrl+c command
 
-- cmd+k， 主流程是用户输入需求，agent返回建议的代码
-  - 对于不清晰的用户需求，cmd+k如何处理，需不需要澄清, ui交互是否要补充
-  - agent工作编辑时是否禁用cmd+k快捷键
-  - 用户点击下面的部分接受时，上面是否出现 accept selected数量，类似3/5
-  - 部分accept的接受拒绝，和diff工具条同时出现吗？
-  - 点击Stop停止生成后，仍保持diff视图，显示未写完的代码，此时accept是否显示消耗积分
-  - 部分accept后，cmd+z回到原文件与最新文件的diff，还是回到原文件与agent返回的文件的diff视图
-  - addToChat发送到驾驶舱的消息接口，agent做什么响应
-  - 对话框消失后再显示需要恢复prompt吗
-- cmd+k api需要支持 uRemakeFile, uStopRemakingFile, uRegenerateAlternative?
-  - 需要单独发送selectedContent对应的代码字符串吗
-  - accept/reject在前端给用户操作, 用户reject后agent需要知道吗，目前操作的粒度是全部
-    - 由前端接受拒接且agent不需要知道， 修改粒度为每个变更块suggestedBlock
-  - 追加修改需要新增单独的uFollowUpRemakeFile事件吗，追加的范围默认是上次修改的范围
-    - 追加需要追加的提示词
-  - 需要新增单独的uRegenerateAlternative的事件吗, 可以一次返回多个
-  - regenerate是否需要切换回旧版代码的ui 
-    - 暂时不做新的ui交互
-  - sdk和前端的通信方式，弹出框如何让paas和agent通信
-
-- diff工具条
-  - regenerate 什么
-  - edit
-  - undo
-
-```JS
-// uRemakeFile request parameters, 'uRemakeFile'
-{
-  prompt,
-  filePath,
-  // { lines, offset }, lines是1-based行号如[4,5]/[4,4], offset是光标位置
-  selectedRange,
-  // meta可包含用于生成代码的其他信息如代码注释/当前行变量或方法的声明或引用
-  meta = {},
-  selectedContent = '',
-  isFollowUp,
-  // isRegenerate
-}
-// uRemakeFile response
-{
-  filePath: '',
-  remakeContent: '',
-  // alternatives: []
-}
-
-// uStopRemakingFile request
-{
-  filePath: '',
-}
-// uStopRemakingFile response
-{
-  stopped: true
-}
-```
+- cmd+k实现计划
+  - [ ] 工具条或快捷键唤起、隐藏
+  - [ ] 输入提示器，agent返回时显示diff
+  - [ ] accept/reject后， cmd+z回到diff
+  - [ ] stop/cancel， 注意agent返回内容的时机
+  - [ ] 部分accept
+  - [ ] diff工具条
+  - [ ] followup
 
 - not-yet
   - 打开已删除的文件未实现
@@ -486,6 +443,11 @@ console.log(';; machine ', taskState, runningTaskAction, task?.task_steps)
 
 ## 0906
 
+- taskState的append状态
+  - 追加步骤时，agent后端自动设置append状态
+  - 进入回放模式，从哪个action开始播放
+    - 默认最后一个追加的
+
 - dev-log
   - 改进cde的功能与体验，修复时光机状态变化时底部action和驾驶舱action状态不一致的问题
   - 讨论了agent工作时打字动画优化的方案，以后会转向动态更新编辑器的配置而不是强制刷新文件
@@ -493,6 +455,61 @@ console.log(';; machine ', taskState, runningTaskAction, task?.task_steps)
 - dev-to
   - 需要和agent、产品、设计确认cmd+k及diff工具条的功能细节和交互细节
   - 如何让paas和agent通信
+
+- ✨ cmd+k， 主流程是用户输入需求，agent返回建议的代码
+  - 对于不清晰的用户需求，cmd+k如何处理，需不需要澄清, ui交互是否要补充
+  - agent工作编辑时是否禁用cmd+k快捷键
+  - 用户点击下面的部分接受时，上面是否出现 accept selected数量，类似3/5
+  - 部分accept的接受拒绝，和diff工具条同时出现吗？
+  - 点击Stop停止生成后，仍保持diff视图，显示未写完的代码，此时accept是否显示消耗积分
+  - 部分accept后，cmd+z回到原文件与最新文件的diff，还是回到原文件与agent返回的文件的diff视图
+  - addToChat发送到驾驶舱的消息接口，agent做什么响应
+  - 对话框消失后再显示需要恢复prompt吗
+- cmd+k api需要支持 uRemakeFile, uStopRemakingFile, uRegenerateAlternative?
+  - 需要单独发送selectedContent对应的代码字符串吗
+  - accept/reject在前端给用户操作, 用户reject后agent需要知道吗，目前操作的粒度是全部
+    - 由前端接受拒接且agent不需要知道， 修改粒度为每个变更块suggestedBlock
+  - 追加修改需要新增单独的uFollowUpRemakeFile事件吗，追加的范围默认是上次修改的范围
+    - 追加需要追加的提示词
+  - 需要新增单独的uRegenerateAlternative的事件吗, 可以一次返回多个
+  - regenerate是否需要切换回旧版代码的ui 
+    - 暂时不做新的ui交互
+  - sdk和前端的通信方式，弹出框如何让paas和agent通信
+
+- diff工具条显示的条件时机和位置
+  - regenerate 什么
+  - edit
+  - undo
+
+```JS
+// uRemakeFile request parameters, 'uRemakeFile'
+{
+  prompt,
+  filePath,
+  // { lines, offset }, lines是1-based行号如[4,5]/[4,4], offset是光标位置
+  selectedRange,
+  // meta可包含用于生成代码的其他信息如代码注释/当前行变量或方法的声明或引用
+  meta = {},
+  selectedContent = '',
+  isFollowUp,
+  // isRegenerate
+}
+// uRemakeFile response
+{
+  filePath: '',
+  remakeContent: '',
+  // alternatives: []
+}
+
+// uStopRemakingFile request
+{
+  filePath: '',
+}
+// uStopRemakingFile response
+{
+  stopped: true
+}
+```
 
 ## 0905
 
@@ -551,14 +568,14 @@ console.log(';; machine ', taskState, runningTaskAction, task?.task_steps)
   - ai ppt及操作word/excel的效果很好
   - 业内融资，cursor的A轮60m，codeium的C轮0.12b
   - 大厂不容易垄断，大厂会与私有agent绑定，代码privacy问题
-# dev-08
+# dev-08-diff-view-with-animation-&-codemirror-typewriter-&-stepped-progressbar
 
 ## 0830
 
 - dev-log
   - 实现diff-view显示快照文件时编辑器显示不可编辑的提示条
 - dev-to
-  - 修复时光机的暂停继续问题
+  - 使用hack修复时光机的暂停继续问题
 
 - 时光机暂停event时不需要参数
   - 时光机恢复时，旧的数据不会更新
@@ -628,7 +645,7 @@ console.log(';; machine ', taskState, runningTaskAction, task?.task_steps)
   - 未执行的action是否会丢失，因为默认进入playback模式且无法回到live模式
   - 如何彻底删除actions
 
-- 用户介入action的实现思路
+- ✨ 用户介入action的实现思路
   - 确认需求: 只要最后一个action有介入，同一文件都会介入
   - 思路1: agent修改内容后也插入自定义帧fAfterAgent，查询快照action的fAfterAgent与最新内容做比较
   - 思路2: 查询path对应的op，计算op执行compose后是否变化
@@ -827,7 +844,7 @@ console.log(';; machine ', taskState, runningTaskAction, task?.task_steps)
 - dev-to
   - 时光机执行打开文件
 
-- 测试集成-to
+- 测试集成-dev-to
   - 前端未控制member/owner的按钮、路由访问权限
   - agent生成thread名称限制长度
   - think流程支持stop，设计稿有设计
@@ -915,7 +932,7 @@ console.log(';; machine ', taskState, runningTaskAction, task?.task_steps)
   - 修改paas的编辑器，增加了diffView相关api
 - dev-to
   - 实现与agent无关的上下布局的diff编辑器
-# dev-07
+# dev-07-dockview-ephemeral-panel-&-init-thread-playground-&-paas-custom-frame
 
 ## 0731
 

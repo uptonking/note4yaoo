@@ -17,8 +17,11 @@ modified: 2024-09-02T02:28:53.820Z
 
 # docs
 
-# changelog
+## [Cmd K](https://docs.cursor.com/cmdk/overview)
 
+- If no code is selected when you press Ctrl/Cmd K, Cursor will generate new code based on the prompt you type in the prompt bar.
+- For in-place edits, you can simply select the code you want to edit and type into the prompt bar
+# changelog
 - resources
   - [changelog](https://changelog.cursor.sh/)
 

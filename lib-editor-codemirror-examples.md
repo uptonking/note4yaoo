@@ -21,9 +21,9 @@ modified: 2023-06-23T12:46:53.288Z
 
 - fans-codemirror
   - https://github.com/val-town/codemirror-ts
-  - https://github.com/uiwjs/react-codemirror /华人
-  - https://github.com/yeliex/codemirror-extensions /华人
-  - https://github.com/exuanbo/codemirror-toolkit /华人
+  - https://github.com/uiwjs/react-codemirror 
+  - https://github.com/yeliex/codemirror-extensions 
+  - https://github.com/exuanbo/codemirror-toolkit 
   - https://www.npmjs.com/package/collaborative-codemirror
 
 - resources

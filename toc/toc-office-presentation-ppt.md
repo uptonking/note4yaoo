@@ -242,6 +242,7 @@ modified: 2021-04-30T20:14:17.669Z
 
 - https://github.com/decker-edu/decker /GPLv3/202311/js/haskell/inactive
   - A markdown based tool for slide deck creation
+  - reveal.js MathJax and Font-Awesome dependencies are tracked via submodules
 # examples
 
 # utils
