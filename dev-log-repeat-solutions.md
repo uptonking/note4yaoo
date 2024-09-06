@@ -287,6 +287,10 @@ modified: 2021-07-20T13:50:23.433Z
   - notion
   - linear
 # wishlist
+- job-hunting
+  - codemirror
+  - jupyter
+
 - charting-viz
   - leading
     - echarts

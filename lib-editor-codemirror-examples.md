@@ -37,13 +37,10 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/tmcw/awesome-codemirror
   - Awesome CodeMirror plugins, themes, wrappers, and more
 
-- https://github.com/nothingislost/obsidian-cm6-attributes /202112/ts/inactive
-  - This reference plugin implements a ViewPlugin which will parse the markdown syntaxTree and add various Decorations to enhance the editor.
-
 - https://github.com/milahu/browserforge /202303/方案收集markdown
   - run github + github-pages + codesandbox in your browser, offline-first - CONCEPT
 
-- overleaf /12.6kStar/AGPLv3/202407/js/ts/latex/ace>codemirror
+- overleaf /12.6kStar/AGPLv3/202407/js/ts(codemirror)/latex/ace>codemirror
   - https://github.com/overleaf/overleaf
   - https://github.com/overleaf/overleaf/wiki
   - https://github.com/overleaf/overleaf/tree/main/services/web/frontend/js/features/source-editor
@@ -51,13 +48,22 @@ modified: 2023-06-23T12:46:53.288Z
   - CodeEditor和VisualEditor都基于codemirror6实现
   - source-editor支持codemirror6、ace(deprecated)
     - https://github.com/overleaf/ace /202108/js/inactive/Ajax.org Cloud9 Editor
+  - 线上体验xp
+    - 版本历史类似github的仓库快照，能查看某一时刻的所有文件状态，支持显示每个文件的修改数量
+    - 版本会隔一段时间自动保存，支持添加label
+    - 版本历史的内容差异未使用官方的diff视图，自定义渲染行内diff，history界面的内容差异视图支持显示删除线
+  - 实现的codemirror ext包括100多个 codemirrorDevTools, trackChanges, bracketSelection, mathjax, thirdPartyExtensions
+  - 编辑器体验xp
+    - 💬 支持comment，但实现方式不是extension
+    - collab基于sharejs实现，未使用官方collab插件
+    - latex出现语法错误时，编辑器会将对应的部分渲染为纯文本
   - [Compile Error and PDF Download Notifications](https://github.com/overleaf/overleaf/issues/1031)
     - migrate from ACE to CodeMirror 6. Yes, the CM6 work will be coming to CE soon. _202206
   - https://github.com/overleaf/overleaf/tree/main/services/document-updater/app/js/sharejs /202205/MIT/js
     - 🔀 协作基于sharejs.v0.5修改实现
   - https://github.com/overleaf/overleaf/blob/main/services/web/frontend/js/features/source-editor/extensions/track-changes.ts
     - 基于codemirror6实现track-changes的示例
-    - 在生产环境编辑器的track-changes试用入口播放了添加和删除文字的动画，没有直接实现删除线但效果类似
+    - 在生产环境编辑器的track-changes试用入口播放了添加和删除文字的动画，没有直接实现删除线但效果类似； history界面的内容差异视图支持显示删除线
     - [Track changes and commenting in LaTeX - Overleaf, Online LaTeX Editor](https://www.overleaf.com/track-changes-and-comments-in-latex)
     - [Track Changes in Overleaf intro](https://www.overleaf.com/learn/how-to/Track_Changes_in_Overleaf)
     - [Tracking changes in LaTeX with "changes" package _201908](https://www.overleaf.com/latex/examples/tracking-changes-in-latex-with-changes-package/fnpkpytjjwhj)
@@ -66,7 +72,7 @@ modified: 2023-06-23T12:46:53.288Z
     - [We do a customer-taylored capacity planning as part of our Enterprise Solution, Overleaf Server Pro _202009](https://github.com/overleaf/overleaf/issues/784)
   - [Is it possible to include the commenting feature in the Community Edition? _202402](https://github.com/overleaf/overleaf/issues/1193)
     - You can try to develop it by yourself, or purchase server pro. Btw, I think commenting feature is not something difficult to imply, the core code is open-source, just need a proxy.
-    - 💬 I created a new branch, which includes only the code for enabling **comments and changes tracking** features. 
+    - 🌵 I created a new branch, which includes only the code for enabling **comments and changes tracking** features. 
   - 🍴 forks
   - https://github.com/yu-i-i/overleaf-cep /202408/AGPL
     - extended CE with changes tracking and LDAP authentication
@@ -94,6 +100,7 @@ modified: 2023-06-23T12:46:53.288Z
   - sandpack-client依赖nodebox、static-browser-server
   - sandpack-react依赖sandpack-client、codemirror6、@lezer/highlight、lz-string、react-devtools-inline
   - 提供了很多示例，包括cm-DecoratorsDynamic/FileExplorer/ReactDevTools
+  - 自定义实现的codemirror ext很少
   - CodeEditor支持codemirror/monaco/vscode
   - `SandpackCodeEditor` component renders a wrapper over codemirror. You can extend the editor with any CodeMirror extensions
     - `SandpackCodeViewer` renders a read-only version of codemirror
@@ -116,6 +123,9 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/jupyterlab/jupyterlab/tree/main/packages/codemirror /202405/ts
   - A JupyterLab package which provides the default implementation of the `@jupyterlab/codeeditor` interface, using the `CodeMirror` editor.
   - cm编辑器及ext相关代码不多
+    - 协作基于yjs实现
+  - 仓库代码整体用了很多class和namespace
+    - 很多配置和扩展都采用了registry的设计
   - https://github.com/jupyterlab/jupyterlab/tree/main/packages/codemirror-extension
     - A JupyterLab package which provides an entry point, commands, and keyboard shortcuts for the `@jupyterlab/codemirror` package.
   - https://github.com/jupyterlab/jupyterlab/tree/main/packages/codeeditor
@@ -140,6 +150,18 @@ modified: 2023-06-23T12:46:53.288Z
     - The default Pretzel AI Server uses Mistral's Codestral but you can switch the inline completion model in Settings
   - We DO NOT store any code or data you send to the Pretzel AI Server
 
+- https://github.com/difizen/libro /MIT/202409/ts
+  - https://libro.difizen.net/
+  - 大模型时代的 notebook 产品方案, 灵活定制、轻松集成的 Notebook 产品方案
+  - 定义大模型工作流，内置大模型交互和辅助开发能力
+  - 更优雅的交互体验，兼容 jupyter notebook
+  - 可以在自己的工作流中使用 prompt cell，快速完成与大模型的交互，生成的结果也可以在上下文中继续访问
+  - 支持 Cell 级别的版本 Diff 能力，方便更好的进行版本管理、CR
+  - https://github.com/difizen/libro-server /202404/python
+    - 基于 jupyter-server 开发
+    - 您至少需要安装 jupyter-server 来支持 libro 运行，此时您可以使用 jupyter notebook 的能力，如果需要使用更多 libro 定义的能力，您需要安装 libro-server。
+    - 使用 rye 来管理多 python 包组成 monorepo，多个包会共享同一个虚拟环境 venv
+
 - https://github.com/srcbookdev/srcbook /apache2/202408/ts
   - https://srcbook.com/
   - TypeScript & JavaScript notebooks.
@@ -158,6 +180,8 @@ modified: 2023-06-23T12:46:53.288Z
   - support LaTeX and Word template
   - Citations made easy: Tight and ever-growing integration with your favourite reference manager (Zotero, JabRef, and many others)
   - Support for state of the art knowledge management techniques (Zettelkasten)
+  - https://github.com/Zettlr/Zettlr/tree/develop/source/common/modules/markdown-editor/plugins
+    - ext实现了typewriter(当前行居中),contextMenu,statistics-fields,toc
 
 - https://github.com/sourcegraph/openctx/tree/main/client/codemirror /apache2/202405/ts
   - https://openctx.org/playground
@@ -168,11 +192,12 @@ modified: 2023-06-23T12:46:53.288Z
     - This library manages all of the inputs (mouse/keyboard events, location changes, hover information, and hover actions) necessary to display hover tooltips on with a code view.
     - 依赖rxjs、sourcegraph
 
-- https://github.com/vizhub-core/vzcode /MIT/202406/ts
+- https://github.com/vizhub-core/vzcode /MIT/202406/ts/js(server)
   - VZCode: Multiplayer Code Editor
   - VZCode offers a multiplayer code editing environment that caters to a real-time collaborative development experience. It's the code editor component of VizHub, and can also be used independently from VizHub.
   - Browser-based editing environment
   - Real-time collaboration via LAN or using services like NGrok
+  - 自定义的ext不多
   - A known shortcoming of VZCode is that it does not (yet) watch for changes from the file system. VZCode assumes that no other programs are modifying the same files.
   - You can also expose your VZCode instance publicly using a tunneling service such as NGrok.
   - Auto-save, debounced after code changes
@@ -226,7 +251,7 @@ modified: 2023-06-23T12:46:53.288Z
   - Autocomplete for HTMLTextAreaElement and more
   - 支持 textarea/contenteditable/codemirror
 
-- https://github.com/davidmyersdev/ink-mde /206Star/MIT/202405/ts
+- https://github.com/davidmyersdev/ink-mde /206Star/MIT/202405/ts/函数式
   - https://stackblitz.com/fork/github/davidmyersdev/ink-mde/tree/main/examples/template-ts
   - A beautiful, modern, customizable Markdown editor powered by CodeMirror 6 and TypeScript
   - This is the editor that powers https://octo.app.
@@ -244,10 +269,11 @@ modified: 2023-06-23T12:46:53.288Z
   - https://imzbf.github.io/md-editor-rt
   - https://imzbf.github.io/md-editor-rt/en-US/demo
   - react版本的 Markdown 编辑器
-  - 源码与预览同步滚动
-  - 支持切换预览风格、代码风格主题
+  - 源码与预览同步滚动, 预览组件非codemirror
+  - 支持切换预览风格、代码风格主题、emoji、prettier
   - 当使用服务端渲染时，请务必设置editorId为固定值
   - 自定义 markdown-it 核心库扩展、属性等
+  - 功能丰富，示例丰富
   - https://github.com/imzbf/md-editor-v3 /MIT/202407/ts
     - https://imzbf.github.io/md-editor-v3
     - vue3 环境的 Markdown 编辑器
@@ -294,7 +320,7 @@ modified: 2023-06-23T12:46:53.288Z
   - https://uiwjs.github.io/react-codemirror/#/merge/document
   - CodeMirror 6 component for React
   - Versions after `@uiw/react-codemirror@v4` use codemirror 6.
-    - 从v4开始使用cm6，v3.0 cannot be upgraded to 4.0+
+    - 从v4(202109)开始使用cm6，v3.0 cannot be upgraded to 4.0+
     - [Codemirror 6 ](https://github.com/uiwjs/react-codemirror/issues/88)
   - 提供了很多示例和ext，包括theme-editor/mention/merge
   - The bundled version supports use directly in the browser
@@ -336,14 +362,6 @@ modified: 2023-06-23T12:46:53.288Z
   - 依赖codemirror6、@headlessui/react、@reduxjs/toolkit、electron-store、markdown-it、vscode-languageserver-protocol、xterm、xterm-addon-search
   - AI Features: auto-generated inline diffs and completions, a ChatGPT-style embedded chat, on-hover documentation suggestions
 
-- https://github.com/difizen/libro /MIT/202404/ts
-  - 大模型时代的 notebook 产品方案
-  - 定义大模型工作流，内置大模型交互和辅助开发能力
-  - 更优雅的交互体验，兼容 jupyter notebook
-  - 您可以在自己的工作流中使用 prompt cell，快速完成与大模型的交互，生成的结果也可以在上下文中继续访问
-  - https://github.com/difizen/libro-server /202404/python
-    - 使用 rye 来管理多 python 包组成 monorepo，多个包会共享同一个虚拟环境 venv
-
 - https://github.com/0xsuk/agitcms /MIT/202212/ts/inactive
   - A hackable headless CMS for markdown blogs
   - Agit CMS is a simple web frontend interface that utilizes filesystem to manage markdown/media contents. 
@@ -383,7 +401,7 @@ modified: 2023-06-23T12:46:53.288Z
   - 详情页会显示Minimum app version、下载量
   - 搜索没有单独的页面
 
-- https://github.com/expressive-code/expressive-code /MIT/202405/ts/不依赖codemirror
+- https://github.com/expressive-code/expressive-code /MIT/202408/ts/不依赖codemirror
   - https://expressive-code.com/
   - A text marking & annotation engine for presenting source code on the web
   - Expressive Code is an engine for presenting source code on the web, aiming to make your code easy to understand and visually stunning.
@@ -396,6 +414,7 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/Sagargupta16/ai-code-translator /202311/ts
   - https://ai-code-translator-delta-six.vercel.app/
   - Use AI to translate code from one language to another
+  - 依赖@uiw/react-codemirror、next
 
 ## typewriter/Text Generate Effect
 
@@ -430,10 +449,10 @@ modified: 2023-06-23T12:46:53.288Z
   - code-animation
   - 依赖@uiw/react-codemirror、shiki-magic-move、zustand、next、dnd-kit
 
-- https://github.com/meowtec/diffani /202307/ts
+- https://github.com/meowtec/diffani /ISC/202307/ts/inactive
   - https://diffani.co/
   - Diff code and render to animation video
-  - 依赖codemirror6、diff、jsdom、prismjs、zustand、vite
+  - 依赖codemirror6、diff、d3-ease、jsdom、prismjs、zustand、webm-writer、vite
 
 - https://github.com/shikijs/shiki-magic-move /MIT/202405/ts
   - https://shiki-magic-move.netlify.app/
@@ -748,6 +767,32 @@ modified: 2023-06-23T12:46:53.288Z
   - [Notes on CodeMirror · adobe/brackets Wiki](https://github.com/adobe/brackets/wiki/Notes-on-CodeMirror)
     - Brackets uses a fork of CodeMirror as a submodule.
 # collab
+- https://github.com/lucafabbian/firepad /202208/js/inactive
+  - 🔥 Firepad is an open-source library for adding collaborative capabilities into text and code editors. Firepad uses Google Firebase as a backend, so it requires no server-side code. It supports out of the box popular web editors such as Codemirror, Ace and Monaco.
+  - new adapter to add compatibility with Codemirror6, arguably one of the best web editor out there. Check the demo here
+  - https://github.com/lucafabbian/codemirror6-firepad-demo /202206/js
+    - Demo of Codemirror6 using the Google Firebase service to achieve real time collaboration with minimal setup.
+
+- https://github.com/interviewstreet/firepad-x /202401/ts
+  - We have rewritten all the modules and few extras using TypeScript while enhancing earlier implemented Adapter Pattern to integrate with external modules, such as Database (preferably Firebase) and editors (as of now only Monaco is supported, but PRs are welcomed). 
+
+- https://github.com/jupyter-server/pycrdt /MIT/202312/python/rust
+  - https://davidbrochart.github.io/pycrdt
+  - https://jupyter-server.github.io/pycrdt
+  - CRDTs based on Yrs
+  - https://github.com/jupyter-server/pycrdt-websocket /python
+    - async WebSocket connector for pycrdt
+
+- https://github.com/TypeFox/open-collaboration-tools /MIT/202408/ts
+  - https://www.open-collab.tools/
+  - ⚖️ Open Collaboration Tools: live-sharing solution for Eclipse Theia, VS Code and other editors and IDEs
+  - A public instance of the collaboration server is available at open-collab.tools.
+  - This is how it works: one person starts a collaboration session as host and invites others to join. The IDE extension distributes the contents of the hostʼs workspace and highlights text selections and cursor positions of other participants. 
+  - [Announcing the Open Collaboration Tools | TypeFox _202407](https://www.typefox.io/blog/open-collaboration-tools-announcement/)
+    - Itʼs a collection of libraries and tools for live-sharing of IDE contents, designed to boost remote teamwork with open technologies.
+    - The basic idea is simple: one person starts a collaboration session as host and invites others to join. The IDE extension distributes the contents of the hostʼs workspace and highlights text selections and cursor positions of other participants. 
+    - A VS Code Extension available on Open VSX and the VS Code Marketplace
+
 - https://github.com/BjornTheProgrammer/react-codemirror-collab-sockets /MIT/202306/ts/inactive
   - An example of a react-codemirror implementation of the codemirror collab package, with cursor and multiple document examples.
   - 依赖codemirror6、@uiw/react-codemirror
@@ -904,32 +949,6 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/chakri68/codeCollab /202306/js
   - A simple code editor to share code and collab with other developers
-
-- https://github.com/lucafabbian/firepad /202208/js/inactive
-  - 🔥 Firepad is an open-source library for adding collaborative capabilities into text and code editors. Firepad uses Google Firebase as a backend, so it requires no server-side code. It supports out of the box popular web editors such as Codemirror, Ace and Monaco.
-  - new adapter to add compatibility with Codemirror6, arguably one of the best web editor out there. Check the demo here
-  - https://github.com/lucafabbian/codemirror6-firepad-demo /202206/js
-    - Demo of Codemirror6 using the Google Firebase service to achieve real time collaboration with minimal setup.
-
-- https://github.com/interviewstreet/firepad-x /202401/ts
-  - We have rewritten all the modules and few extras using TypeScript while enhancing earlier implemented Adapter Pattern to integrate with external modules, such as Database (preferably Firebase) and editors (as of now only Monaco is supported, but PRs are welcomed). 
-
-- https://github.com/jupyter-server/pycrdt /MIT/202312/python/rust
-  - https://davidbrochart.github.io/pycrdt
-  - https://jupyter-server.github.io/pycrdt
-  - CRDTs based on Yrs
-  - https://github.com/jupyter-server/pycrdt-websocket /python
-    - async WebSocket connector for pycrdt
-
-- https://github.com/TypeFox/open-collaboration-tools /MIT/202408/ts
-  - https://www.open-collab.tools/
-  - ⚖️ Open Collaboration Tools: live-sharing solution for Eclipse Theia, VS Code and other editors and IDEs
-  - A public instance of the collaboration server is available at open-collab.tools.
-  - This is how it works: one person starts a collaboration session as host and invites others to join. The IDE extension distributes the contents of the hostʼs workspace and highlights text selections and cursor positions of other participants. 
-  - [Announcing the Open Collaboration Tools | TypeFox _202407](https://www.typefox.io/blog/open-collaboration-tools-announcement/)
-    - Itʼs a collection of libraries and tools for live-sharing of IDE contents, designed to boost remote teamwork with open technologies.
-    - The basic idea is simple: one person starts a collaboration session as host and invites others to join. The IDE extension distributes the contents of the hostʼs workspace and highlights text selections and cursor positions of other participants. 
-    - A VS Code Extension available on Open VSX and the VS Code Marketplace
 
 - https://github.com/codersgyan/realtime-code-editor /202203/js
   - 依赖codemirror5、socket.io
@@ -1551,6 +1570,9 @@ modified: 2023-06-23T12:46:53.288Z
 - code-play
   - https://github.com/xorazmiy-dev/code-mirror /js
 # starter
+- https://github.com/nothingislost/obsidian-cm6-attributes /202112/ts/inactive
+  - This reference plugin implements a ViewPlugin which will parse the markdown syntaxTree and add various Decorations to enhance the editor.
+
 - https://github.com/A99US/CM6-Browser-Wrapper /MIT/202308/js/inactive
   - https://a99us.github.io/CM6-Browser-Wrapper/
   - a CodeMirror 6 Wrapper for browser so you don't need to rollup a new one everytime you want to try different setting

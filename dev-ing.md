@@ -77,6 +77,9 @@ flatpak run com.discordaspp.Discord --proxy-server="socks5://127.0.0.1:7897"
 betterdiscordctl -i flatpak install
 
 npx create-strapi@rc strapi5-play-202408 --use-npm --quickstart --ts --skip-cloud
+
+stt.message.channel().send('uResetTask')
+stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorithm')
 ```
 
 - dev-goals 不能在产品中检验的技术不玩，注意产品化
@@ -441,6 +444,15 @@ console.log(';; steps ', taskState, currentOpenedActionId, currentPlayedActionId
 console.log(';; machine ', taskState, runningTaskAction, task?.task_steps)
 ```
 
+## 0907
+
+- 昨日：
+  1、讨论了cmd+k和diff工具条的需求细节，确认了clacky cmd+k与cursor的差异
+  2、探索嵌入到代码中间的卡片元素的实现方式
+- 今日：
+  1、实现cmd+k输入框的唤起与隐藏
+  2、输入指令后，先显示静态版diff-view
+
 ## 0906
 
 - taskState的append状态
@@ -475,6 +487,11 @@ console.log(';; machine ', taskState, runningTaskAction, task?.task_steps)
   - regenerate是否需要切换回旧版代码的ui 
     - 暂时不做新的ui交互
   - sdk和前端的通信方式，弹出框如何让paas和agent通信
+
+- cmd+k交互细节
+  - diff内容滚动到窗口之外时，会作为悬浮框固定显示在顶部
+  - 打字动画的diff，不会滚动页面
+  - followup不是按钮，而是输入框
 
 - diff工具条显示的条件时机和位置
   - regenerate 什么

@@ -27,7 +27,7 @@ modified: 2021-05-06T09:38:31.520Z
   - 非开箱即用，需要组装模块
   - 协作基于ot变体，非标准ot
   - 默认不支持ssr, 但有方案支持
-  - 顶层容器不支持CSS transform 3d，但支持transform2d(用于画板缩放的场景, 但ace/monaco支持)
+  - 顶层容器不支持CSS transform 3d，但支持transform2d(用于画板缩放的场景, 但ace/monaco支持，有改进)
 
 - features
   - dispatch高性能，只写不读
@@ -97,7 +97,6 @@ modified: 2021-05-06T09:38:31.520Z
 - ide要点
   - 主要组件: editor, fileTree, workbench-layout, extension
   - 自动同步编辑器内容、代码仓库、配置
-  - cursor的代码修改使用了aider的codeblock diff格式
 
 - 代码编辑器要点
   - tradoff: 侧重预览、协作，轻量编辑、调试
@@ -143,9 +142,9 @@ modified: 2021-05-06T09:38:31.520Z
 
 - resources
 # draft
-- nostable
-  - block-style
+- nostable-editor
   - virtualized
+  - draggable block-style
   - table/database: multi views
 
 - not-yet
@@ -156,15 +155,27 @@ modified: 2021-05-06T09:38:31.520Z
 
 - port to server side lang like prosemirror
   - hocuspocus for codemirror
+  - codemirror-rust
 
 - experimental
   - lazy
   - load new document
   - conflict
 
-- features
+- extensions-to
+  - katex
+
+- integrations
+  - strapi-codemirror
+- web
+  - quill/slate-codemirror
+  - 尝试将prosemirror的使用场景替换为codemirror
+- electron
+  - obsidian-plugin
+
+- diff-to
+  - cursor的代码修改使用了aider的codeblock diff格式
   - diff with magic-code-animation
-  - highlight current selection
 
 - diff-view左右布局
   - 默认示例是左边旧代码可编辑，右边新代码不可编辑，与vscode相反
@@ -178,14 +189,6 @@ modified: 2021-05-06T09:38:31.520Z
   - 在红色部分前面的行末尾回车，有时新行会跑到红色之下，其实也符合预期
   - 插入换行符时会高亮整行作为新增，不符合预期，但这个是通过api修改的方式，通过ui修改是符合预期的
 
-- integrations
-  - strapi-codemirror
-- web
-  - quill/slate-codemirror
-  - 尝试将prosemirror的使用场景替换为codemirror
-- electron
-  - obsidian-plugin
-
 - discuss
   - 简化ast的设计和实现
 
@@ -193,6 +196,9 @@ modified: 2021-05-06T09:38:31.520Z
   - 渲染wysiwyg时采用 virtual render
   - 支持可缩放的编辑器，用于将编辑器嵌入画板/设计工具的场景
 # dev-xp
+- 自定义元素widget
+  - 可参考replit
+
 - 隐藏diff-view绿色行的实现方案
   - 思路0: 通过line-decoration给绿色行按条件添加隐藏、动画样式类
   - ~~思路0: 通过widget-decoration直接替换元素，但需要手动实现atomicRanges~~
