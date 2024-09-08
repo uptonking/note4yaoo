@@ -15,7 +15,23 @@ modified: 2021-04-30T11:10:26.083Z
 - ## 
 
 - ## 
-# discuss
+# discuss-ruby
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 看最近 ruby on rails 更新，居然连 cache 和 queue 的 client 和 server 端都内置了，这就是我最最喜欢的做事方式啊
+- https://x.com/xqliu/status/1832305066730049540
+- 不好招人确实是个挺大的问题~ 不过对于小团队或者甚至个人创业者来说，我觉得这个问题应该还好，比大公司或者大团队的影响应该小得多，你觉得呢？
+  - 不好招人的另一个点生态差，别人都git clone copy paste 跑起来上线验证完需求了，你还在读ruby的语法以及rails 内部 patch 了那些 ruby 语法。
+
+- gitlab, openproject 等等我见到很多大型多人协作工具都是ruby on rails搭建的，确实很棒。 但用ruby on rails搭建的软件总有种老后端开发的感觉
+  - 说到老，我们平台是 Jvm 的，国内企业客户大部分要求要用java，老开发用老后端，完美
+# discuss-lisp/elixir
 - ## 
 
 - ## 

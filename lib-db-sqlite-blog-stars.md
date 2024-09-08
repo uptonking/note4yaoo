@@ -45,7 +45,7 @@ modified: 2023-10-26T17:33:04.929Z
   1. They do not work on `without rowid` tables
   2. They do not provide notifications if other connections make a write
   3. They do not provide notifications if other processes make a write
-  4. They only tell you the `rowid`,       `table`,       `db`, and `operation` of the change. It is your job to figure out what queries that would impact.
+  4. They only tell you the `rowid/table/db`, and `operation` of the change. It is your job to figure out what queries that would impact.
   5. They don't contain the data that changed meaning you need to re-query to get the new values
 
 - The data change notification callbacks are what Vulcan-web currently use to provide reactivity (as well as other projects like [GRDB](https://github.com/groue/GRDB.swift)). 
@@ -278,6 +278,8 @@ modified: 2023-10-26T17:33:04.929Z
 # blogs
 
 # blogs-internals
+
+- 🎞️ [SQLite: How it works, by Richard Hipp - YouTube _202407](https://www.youtube.com/watch?v=ZSKLA81tBis)
 
 ## 📝 [SQLite Internals: How The World's Most Used Database Works](https://www.compileralchemy.com/books/sqlite-internals/)
 

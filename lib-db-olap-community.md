@@ -32,6 +32,16 @@ modified: 2023-12-15T18:01:43.992Z
   - How fast can YOU aggregate 1B rows using modern #Java? Grab your threads, flex your SIMD, and kick off 2024 true coder style by joining this friendly little competition
   - Submissions must be written in #Java (see FAQ: https://github.com/gunnarmorling/1brc#faq), so JNI won't work as you'd need some C glue code. But there might be more modern alternatives which may let you do what you're after
 
+# discuss-databend
+- ## 
+
+- ## 
+
+- ## 👷🏻 Databend originated from [Vectorsql](https://github.com/vectorengine/vectorsql/), initially written in Go 
+- https://x.com/BohuTANG/status/1832305718512513274
+  - Due to Go’s memory GC issues, I rewrote it in [Rust](https://github.com/vectorengine/vectordb)
+  - Then we founded DatabendLabs (formerly DatafuseLabs), and based on Vectordb, we built what is now #Databend—the best open-source alternative to #Snowflake. 
+
 # discuss
 - ## 
 

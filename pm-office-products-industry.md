@@ -21,9 +21,11 @@ modified: 2023-03-18T09:44:00.939Z
   - 类似script-lab/react-live/mdx-live
   - 类似vscode像codepen的实时预览扩展
 # office-industry
-
-
 - [葫芦笔记 - 知乎](https://www.zhihu.com/people/hulunote/)
+
+- [Mintlify - The modern standard for documentation](https://mintlify.com/)
+  - 在程序员眼里文档生成这种东西没有任何技术含量，开源项目一大堆，但是人家就是这么厉害，能把这件事做到极致，A 轮 A16Z 能给他投 1800 万美金
+  - [Mintlify raises $18M Series A led by Andreessen Horowitz - Mintlify _202409](https://mintlify.com/blog/series-a)
 
 ## [峥研软件](https://www.peerup.work/)
 

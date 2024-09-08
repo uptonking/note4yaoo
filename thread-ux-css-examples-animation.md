@@ -14,7 +14,13 @@ modified: 2022-11-21T15:27:20.974Z
 
 - ## 
 
-- ## 
+- ## 🚝 css Marquee 火车移动效果
+- https://x.com/anatudor/status/1832819142061154486
+  - requires knowing number of items + all items having same width with a fixed minimum
+  - uses an SVG filter and doesn't have any of the restrictions above, but hits 
+  - [Marquee! - Ko-fi](https://ko-fi.com/post/Marquee-M4M0132D70)
+  - https://codepen.io/thebabydino/pen/bGPzdaM
+  - https://codepen.io/t_afif/pen/MWZxXWB
 
 - ## 💫 I love this cool effect with CSS Conic gradients
 - https://x.com/wesbos/status/1828528779544719707

@@ -243,6 +243,18 @@ modified: 2023-02-06T09:14:40.114Z
 
 - ## 
 
+- ## 
+
+- ## node-fetch-server Write servers for Node.js using the web fetch API primitives, like Request and Response
+- https://x.com/mjackson/status/1831746987517264056
+  - The main API is a createRequestListener() function you can use to create a http. RequestListener that seamlessly integrates with http.createServer() and https.createServer().
+  - You can use this to power your Remix app *today* if you aren’t using any special features of Express
+  - This is how the web evolves. The people who wrote the spec weren't thinking about server applications for it, but it happened. And now that it has (and we're not going back) it'll improve and adapt.
+- I have been saying this for years, this needs to be added to nodejs itself. Looks promising really nice job !
+  - There's an effort in the Node.js committee to redesign the http module. I believe that will include the way servers are created. Fingers crossed!
+- Very nice. If you still need advanced APIs (express like) use hono instead. Still all web APIs are there.
+  - I wish that were true, but they have a bunch of bespoke APIs as well like: request.headers is not a Headers object, but a function you use to get headers (like request.headers('content-type') for example).
+
 - ## [国内 dns 解析国外域名竟然这么慢 - V2EX _202409](https://v2ex.com/t/1069396)
   - 本来用的 AdGuardHome 白名单模式分流国内外域名，腾讯系域名用的 dnspod ，国内其他域名用的 alidns ，其他域名用的 quad9 、cloudflare 、opendns 等国外 dns ，今天突然改成黑名单模式，少数域名用国外 dns ，剩下的腾讯系继续用 dnspod ，其他的都用 alidns 。
   - 结果发现打开很多国外网站特别慢，一看查询日志，原来 alidns 解析很多国外域名都是 1000ms+，这不慢才怪了，看来还是白名单模式更适合，虽然会存在部分错杀（部分国内域名由于用了默认的国外 dns 解析到了非最优的国内 ip 上）。

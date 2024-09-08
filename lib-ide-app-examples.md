@@ -43,6 +43,10 @@ modified: 2024-08-24T16:30:20.218Z
   - https://gptengineer.app/
   - Specify what you want it to build, the AI asks for clarification, and then builds it.
   - gptengineer.app is a commercial project for the automatic generation of web apps. It features a UI for non-technical users connected to a git-controlled codebase. The gptengineer.app team is actively supporting the open source community.
+
+- products
+  - https://x.com/0xrandomlabs
+    - https://www.ycombinator.com/launches/Lnp-random-labs-an-open-source-agent-that-deeply-understands-you
 # coding-ai
 - https://github.com/artmoskvin/hide /MIT/202408/go
   - https://hide.sh/
@@ -62,6 +66,12 @@ modified: 2024-08-24T16:30:20.218Z
   - Self-contained, with no need for a DBMS or cloud service
   - OpenAPI interface, easy to integrate with existing infrastructure (e.g Cloud IDE).
   - Tabby 是一个自我托管的 #GitHub #Copliot 开源替代品，自带可视化界面与 #OpenAPI 接口，还支持消费者级别的 #GPU，具有 FP-16 重量加载和各种优化功能，提供了 #Docker 镜像
+
+- https://github.com/meltylabs/melty /MIT/202409/ts
+  - https://docs.google.com/forms/d/e/1FAIpQLSc6uBe0ea26q7Iq0Co_q5fjW2nypUl8G_Is5M_6t8n7wZHuPA/viewform
+  - Melty, an open source AI code editor for 10x engineers
+  - Melty is the first AI code editor that's aware of what you're doing from the terminal to GitHub, and collaborates with you to write production-ready code
+  - 两位来自 Replicate 和 Netflix 的工程师开发了 Melty，第一个能够在多个文件中进行大规模修改并与整个工作流程集成的 AI 代码编辑器。
 
 - https://github.com/SilasMarvin/lsp-ai /MIT/202408/rust
   - LSP-AI is an open-source language server that serves as a backend for AI-powered functionality, designed to assist and empower software engineers, not replace them.

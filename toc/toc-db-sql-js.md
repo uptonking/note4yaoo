@@ -44,6 +44,12 @@ modified: 2021-08-30T18:56:14.863Z
 # db-sql-tools
 - [SQL Workbench - Rapid prototyping SQL Queries & Data Visualizations](https://sql-workbench.com/)
 
+- https://github.com/chartdb/chartdb /AGPLv3/202409/ts
+  - https://chartdb.io/
+  - Open-source database diagrams editor, visualize and design your DB with a single query.
+  - Supported: pg, mysql, sqlite
+  - Use the cloud version or deploy locally
+
 - https://github.com/sqlpad/sqlpad
   - A web app for writing and running SQL queries and visualizing the results. 
   - Supports Postgres, MySQL, SQL Server, ClickHouse, Crate, Vertica, Trino, Presto, SAP HANA, Cassandra, Snowflake, Google BigQuery, SQLite

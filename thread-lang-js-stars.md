@@ -24,7 +24,20 @@ if(val) // doSth
 # discuss
 - ## 
 
-- ## 💡 import { thing } from './file'; Do I really need to manually specify all file extensions to work with node?
+- ## 
+
+- ## 
+
+- ## 🌐️ Javascript Internationalization Methods
+- https://x.com/csaba_kissi/status/1832677217253339218
+- Any example how to cope with current  Date-time in different time zones?
+
+```JS
+const currentDate = new Date();
+const newYorkTime = currentDate.toLocaleString('en-US', { timeZone: 'America/New_York' });
+```
+
+- ## 💡 `import { thing } from './file';` Do I really need to manually specify all file extensions to work with node?
 - https://x.com/alexandereardon/status/1821018505678127130
 - Yes, and I'm a huge convert to it. It's weird at first but it makes your code more portable and easier to debug
 - It also makes it more performant, which I believe is the primary driver behind explicit extensions. Node/TS/whomever doesn't have to guess if "/foo" means "/foo.js" or "foo/index.js", and it does have a tangible impact on projects.

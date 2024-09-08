@@ -109,7 +109,11 @@ modified: 2023-02-07T09:22:03.120Z
 
 - ## 
 
-- ## 
+- ## 现在最好的语音转文本大模型还是 Whisper 吗？
+- https://x.com/tualatrix/status/1830467181504520202
+- 中文的话, 应该是 SenseVoice  MIT license, 可以自己部署. 
+  - 英文的话, 应该还是 Whisper
+- whisper 在中文识别方面并不好用，可能用的语料库是YouTube的居多，在音源不清晰时会出现幻觉，中文识别还是国内的好用些，速度和准确度方面都要好
 
 - ## 阿里通义语音团队开源了语音基座大模型：SenseVoice和CosyVoice，语音方向卷起来了。
 - https://x.com/leeoxiang/status/1809174787861925933

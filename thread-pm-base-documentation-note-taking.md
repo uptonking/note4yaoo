@@ -101,6 +101,7 @@ modified: 2021-08-16T06:56:53.061Z
 
 - ## 缩略卡片放大成文档的动画交互
 - https://x.com/henrikruscon/status/1821475322929324078
+  - https://x.com/Gomila_club/status/1832013063446212698
 
 - ## This has got to be one of the coolest product changelogs I've ever seen 
 - https://x.com/steventey/status/1809347539176657188

@@ -267,7 +267,11 @@ SecretOps:
 # discuss-payment-overseas
 - ## 
 
-- ## 
+- ## 有实时更新、货币齐全的汇率 API 服务推荐吗？付费的也行。
+- https://x.com/waylybaye/status/1831261104359571586
+- 你可以Windows添加个微软官方的汇率桌面小程序… 抓一下包就知道API了， 而且这类随便每台Windows电脑都能调用的API肯定是public的而且吞吐量充足的….
+- 老牌 Bloomberg REUTERS 
+  - 时髦 TradingView
 
 - ## 推友们了，作为freelancer，当跨国客户要求我开具发票以便收款时，我应该怎么操作呢？
 - https://twitter.com/JonyChen95/status/1789990315639607631

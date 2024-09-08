@@ -421,6 +421,12 @@ modified: 2023-11-28T14:48:45.910Z
 
 - ## 
 
+- ## 
+
+- ## New: Parent & sub-issue automations _202409
+- https://x.com/linear/status/1832093481088815493
+  - parent issue auto close
+
 - ## Introducing the next evolution of projects in Linear. Close the gap between planning and building. _202405
 - https://twitter.com/linear/status/1786059513235177480
 - New in Linear Projects:

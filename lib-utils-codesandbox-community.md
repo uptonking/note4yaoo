@@ -18,6 +18,18 @@ modified: 2024-01-25T13:33:23.267Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 🤔 if you want to eval some untrusted js in the browser, try quickjs-emscripten. 
+- https://x.com/jitl/status/1832520899766915354
+  - if you want to eval some untrusted js in your untrusted js, try quickjs-for-quickjs.
+- why not add wasn support to quickjs-emscripten instead
+- what do you mean; like an API that the host can expose to the guest to allow the guest to instantiate wasm modules using the host's wasm runtime? or compile a wasm runtime to wasm? or compile/implement a wasm runtime in js?
+  - I think I meant the first one. maybe my second best approach would probably be some wasm-to-wasm translation if you want to do things like prevent infinite loops
+- The host can implement that in user-space already, no need for it to be first party. Another building-to-js advantage is you can now use quickjs in hosts that don't support wasm at all. Eg for iOS Safari Lockdown Mode, fall back to the js variant
+  - binaryen wasm2js mite b cool tho! then you can have the memory limit & cpu interrupt API of quickjs to govern a wasm.
+  - or possibly this madlad, same name, independent pure-js impl
+
 - ## The fastest way to restore an environment is to take a memory snapshot and restore it. 
 - https://twitter.com/Vjeux/status/1777721284345930088
   - It’s pretty wild that CodeSandbox made it happen at scale!

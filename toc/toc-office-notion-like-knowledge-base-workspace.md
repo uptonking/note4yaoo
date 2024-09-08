@@ -570,7 +570,13 @@ modified: 2022-06-03T21:34:54.893Z
   - Themes (light, dark, sepia, slate, black)
   - view history (quickly jump to articles you've previously viewed)
   - [chrome-ext](https://chrome.google.com/webstore/detail/modern-for-wikipedia/emdkdnnopdnajipoapepbeeiemahbjcn)
-# ai/chatgpt
+# kb-ai/chatgpt
+- https://github.com/mintlify/writer /MIT/202305/ts/inactive
+  - https://www.mintlify.com/writer
+  - AI powered documentation writer
+  - We never store your code, but your code does leave your machine.
+  - [Mintlify raises $18M Series A led by Andreessen Horowitz - Mintlify _202409](https://mintlify.com/blog/series-a)
+
 - https://github.com/KnowledgeCanvas/knowledge /apache2/202401/ts
   - a tool for saving, searching, accessing, exploring and chatting with all of your favorite websites, documents and files.
 
@@ -582,6 +588,17 @@ modified: 2022-06-03T21:34:54.893Z
   - Khoj is open-source, self-hostable. Always.
   - 支持私有化部署、本地模型、与 Obsidian 无缝整合
   - 支持 github、pdf/markdown、notion 等内容源
+
+- https://github.com/RapidAI/RapidLayoutRecover /apache2/202409/python
+  - 针对文档类图像，整合版面分析、文字识别、表格识别和公式识别结果，还原版面布局信息。
+  - 输入：文档类图像, 输出：TXT或Word
+  - A[/文档图像/] --> B([文档方向分类 rapid_orientation]) --> C([版面分析 rapid_layout])
+
+- https://github.com/Cinnamon/kotaemon /apache2/202409/python
+  - https://cinnamon.github.io/kotaemon/
+  - https://huggingface.co/spaces/cin-model/kotaemon-demo
+  - open-source clean & customizable RAG UI for chatting with your documents. Built with both end users and developers in mind.
+  - This project serves as a functional RAG UI for both end users who want to do QA on their documents and developers who want to build their own RAG pipeline.
 # more
 - https://github.com/notea-org/notea
   - Self hosted note taking app stored on S3

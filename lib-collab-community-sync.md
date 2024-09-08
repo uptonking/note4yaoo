@@ -143,6 +143,21 @@ modified: 2022-11-29T20:41:25.566Z
 - Briar Bramble
 - Matrix
 - Secure Scuttlebutt (SSB)
+# discuss-git-sync
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## git as app sync engine
+- https://x.com/schickling/status/1832706699594965357
+  - While thinking more about app syncing it occurred to me that git, the sync engine we use on a daily basis could also be used as a data sync system for some "small apps".
+  - I want to explore this idea for @livestoredev to sync the eventlog via git.
+
+- i'm currently building an offline and local first note taking app called chaos which uses git and github to store the data. also you don't get any cors issue while using github api from browser, so basically 0 loc of backend is required
 # discuss-external-sync
 - ## 
 

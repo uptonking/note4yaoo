@@ -348,7 +348,7 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
 
 - frontend
   - think卡片打开文件，滚动到文件的行数
-  - 计划画布展示、修改及对话
+  - 🎨 计划画布展示、修改及对话
   - 付费订阅和积分扣减
   - ai控制台前端
   - 前端未控制member/owner的按钮、路由访问权限
@@ -404,7 +404,7 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
 - root thread
   - 初始化环境计划执行完后，create pr时必须在前端打开terminal，否则 Got an error from agent event, Failed to find the prompt when use ctrl+c command
 
-- cmd+k实现计划
+- cmdk实现计划
   - [ ] 工具条或快捷键唤起、隐藏
   - [ ] 输入提示器，agent返回时显示diff
   - [ ] accept/reject后， cmd+z回到diff
@@ -412,8 +412,12 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
   - [ ] 部分accept
   - [ ] diff工具条
   - [ ] followup
+  - more
+    - cmdk后直接编辑，是否立即更新文档，特别是多人协作的场景
+    - message chunk stop
 
 - not-yet
+  - 处理驾驶舱列表打开文件
   - 打开已删除的文件未实现
   - zustandx如何在一个store里面使用另一个store的值, 或重新架构store的内容
   - ~~演示之前测试cpu、内存~~
@@ -443,6 +447,21 @@ console.log(';; steps ', taskState, currentOpenedActionId, currentPlayedActionId
 
 console.log(';; machine ', taskState, runningTaskAction, task?.task_steps)
 ```
+
+## 0908
+
+- 🆚️ replit-agent
+- pros
+  - 相同点: 支持配置开发环境、数据库
+  - 更多的面向非开发者用户，快速开发和部署产品
+  - 移动端查看ai编辑器和terminal的体验很亮眼
+- cons
+  - 仅付费用户可用，并且core-plan很容易达到每日上限
+  - 示例场景几乎都是从零开始创建app，而不是基于现有仓库开发feat和维护
+    - clacky的优势是更贴近开发者的习惯
+    - 但clacky必须提前创建github仓库
+  - Why does the agent only allow building with Flask, VanillaJS and PostgreSQL? 
+    - I apologize, but I cannot use React, TypeScript, or Firebase as they are not supported in our current environment. These technologies are on our blocklist. Would you like me to propose an alternative solution using supported technologies like Flask and Vanilla JavaScript, or do you have any other requirements or preferences we can work with?
 
 ## 0907
 

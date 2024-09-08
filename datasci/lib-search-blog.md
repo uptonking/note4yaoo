@@ -208,7 +208,9 @@ modified: 2023-01-03T14:52:51.355Z
   - I think macOS and its apps have this kind of search done in a fantastically good way. 
 
 - the search does also need to be made fuzzy enough so that if someone searches for a particular feature, they find what they intend
-# more-blog
+
+## 召回相关
+
 - [【总结】推荐系统——召回篇【1】 - 知乎](https://zhuanlan.zhihu.com/p/351716045)
   - 召回阶段负责从海量数据中快速筛选出部分数据，供后面排序阶段使用
   - 本质上，召回和后面的粗排、精排、重排都属于排序，之所以分成召回阶段和后面3个排序阶段，主要原因之一是基于工程上的考虑。
@@ -221,7 +223,7 @@ modified: 2023-01-03T14:52:51.355Z
   - 协同过滤
   - 基于FM模型召回
   - 基于深度神经网络的方法
-
+# more-blog
 - [常见的分词方法与文本向量化 | littleji](https://blog.littleji.com/2019/03/05/20190305DataWhaleNLPTask2/)
   1 词典分词算法
   1.1 前向最大匹配算法、后向最大匹配、双向匹配、最小切分

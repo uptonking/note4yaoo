@@ -16,7 +16,14 @@ modified: 2024-05-27T09:12:06.925Z
 
 - ## 
 
-- ## 
+- ## 在一个分支下本地有改动，又需要拉远端代码时，以前总是手动 stash 后再拉，比较繁琐
+- https://x.com/cosmtrek/status/1831965619706872051
+  - 现在只需要 `git pull --autostash` ，好方便
+  - 推薦同時上 rebase 和 autoStash
+- 求稳，diff出patch，再stash，再pull，最后apply diff
+- 我是写一个alias执行: 
+  - git pull --rebase origin --autostash branch
+- 其实，如果你用fork或者sourcetree之类的客户端，点击pull按钮会全自动做这个操作。
 
 - ## 有 Fork 这样的可视化，什么 squash，普通 merge 之争都是浮云了。
 - https://x.com/middlefeng/status/1824595077345448074
@@ -60,6 +67,19 @@ modified: 2024-05-27T09:12:06.925Z
 
 - 
 - 
+
+# disccuss-git-ui
+- ## 
+
+- ## 
+
+- ## UGit：腾讯自研Git客户端
+- https://x.com/javayhu/status/1831348801032081527
+  - [UGit - Making Git easy for everyone](https://ugit.qq.com/en/)
+  - 这个是真的好用，我们的代码量很大，用过很多Git GUI工具基本上都卡住了，但是公司自研的这个却没有，非常值得推荐。其他工具都有点缺点，例如GithubDesktop功能太少，SourceTree/Tower卡住了，SublimeMerge显示和操作没卡但是用不习惯。
+- 我用的GitButler，分支管理很方便
+- 我用过fork，感觉很丝滑，之前直接开Android的Repo下面的一些源码提交记录也是非常多，一点都不卡。
+- 我给公司的技术经理推荐过这个…他只说了一句：企鹅的尿性很可能未来收费，鉴于这点…选择开源…
 
 # disccuss
 - ## 

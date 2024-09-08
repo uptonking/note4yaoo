@@ -328,8 +328,16 @@ modified: 2024-05-06T02:52:41.789Z
 - We evaluated Devin on SWE-bench, a challenging benchmark that asks agents to resolve real-world GitHub issues found in open source projects like Django and scikit-learn.
 # pm-pair-programming
 
-## 
+## replit
 
+- 🆚️ replit-agent
+- pros
+  - 更多的面向非开发者用户，快速开发和部署产品
+- cons
+  - 仅付费用户可用
+  - 示例场景几乎都是从零开始创建app，而不是基于现有仓库开发feat和维护
+  - Why does the agent only allow building with Flask, VanillaJS and PostgreSQL? 
+    - I apologize, but I cannot use React, TypeScript, or Firebase as they are not supported in our current environment. These technologies are on our blocklist. Would you like me to propose an alternative solution using supported technologies like Flask and Vanilla JavaScript, or do you have any other requirements or preferences we can work with?
 
 ## [Aider is AI pair programming in your terminal](https://aider.chat/)
 

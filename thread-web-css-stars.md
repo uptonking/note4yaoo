@@ -12,6 +12,12 @@ modified: 2021-07-25T12:49:10.410Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
 - ## Create hover gallery effect using flex grow 
 - https://twitter.com/davidm_ml/status/1778436043781341443
   - 卡片点击后会展开当前卡片，压缩其他卡片
@@ -35,6 +41,13 @@ modified: 2021-07-25T12:49:10.410Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## I wrote an interactive article about `display: contents` in CSS
+- https://x.com/shadeed9/status/1832053021557321871
+  - [CSS display contents _202409](https://ishadeed.com/article/display-contents/)
+  - 可以通过css去掉父元素，然后子元素提升为父元素
 
 - ## Use CSS relative color syntax to darken/lighten colors for borders, backgrounds, etc.
 - https://twitter.com/jh3yy/status/1770948509933445269

@@ -185,6 +185,17 @@ modified: 2022-12-19T01:51:01.389Z
   - https://pratikdai404.gitbook.io/adminetic/
   - Admin starter kit with user, role and permission, activity, settings and preference management along with CRUD, ACL, BREAD Permission, Repo Pattern, SuperAdmin Generator
 # web-framework
+- https://github.com/mjackson/remix-the-web/tree/main/packages/node-fetch-server /MIT/202409/ts/单文件
+  - node-fetch-server allows you to build servers for Node.js that use the web Fetch API primitives (namely `Request` and `Response`) instead of the traditional `req/res` API used in libraries like Express.
+  - This web standard API is already used in many places across the JavaScript ecosystem: Bun.serve, Cloudflare Workers, Deno.serve, Fastly Compute
+  - When you write servers using the Request and Response APIs, you maximize the chances that your code will be portable across these different JavaScript runtimes.
+  - https://x.com/mjackson/status/1831746987517264056
+    - The main API is a createRequestListener() function you can use to create a http.RequestListener that seamlessly integrates with http.createServer() and https.createServer().
+    - You can use this to power your Remix app *today* if you aren’t using any special features of Express
+    - This is how the web evolves. The people who wrote the spec weren't thinking about server applications for it, but it happened. And now that it has (and we're not going back) it'll improve and adapt.
+    - I have been saying this for years, this needs to be added to nodejs itself. Looks promising really nice job !
+      - There's an effort in the Node.js committee to redesign the http module. I believe that will include the way servers are created. Fingers crossed!
+
 - https://github.com/plantain-00/protocol-first-design-demo
   - API 协议优先，相关数据只需要相对集中地、相对方便地定义一次，其它信息由此派生或生成出来
   - graphql 的一个特点是，用户可以控制需要返回哪些字段，而 RESTful API 一般默认不会实现这个。

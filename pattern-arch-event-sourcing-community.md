@@ -444,7 +444,15 @@ that commit position, thus providing "read your own writes" semantics.
 
 - ## 
 
-- ## 
+- ## 🆚️ Choosing the right architecture will make or break your systems. EDA vs. REST
+- https://x.com/RaulJuncoV/status/1832413686964551708
+- Event-Driven Architecture (EDA)
+  - EDA uses asynchronous communication, where components interact by emitting and consuming events. 
+  - This design is particularly effective for systems that demand high scalability, real-time responsiveness, and loose coupling among services. 
+- REST
+  - It is a popular choice for building web services that require synchronous, request-response communication over HTTP. 
+  - It's ideal for applications where strong consistency, simplicity, and standard CRUD operations are necessary. 
+- Many modern systems benefit from a hybrid approach. Choose wisely
 
 - ## If you like logs and databases and event sourcing stuff, definitely check out this article from @PatHelland .
 - https://twitter.com/LewisCTech/status/1762034969243943107

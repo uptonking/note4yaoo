@@ -574,3 +574,5 @@ modified: 2023-09-13T14:37:51.659Z
 - [Event Sourcing with Apache Kafka — Trustbit](https://www.trustbit.tech/blog/2023/7/14/event-sourcing-with-apache-kafka)
 
 - [A more functional approach to Event Sourcing and DDD - DEV Community _202207](https://dev.to/n1ckdm/a-more-function-approach-to-event-sourcing-and-ddd-491d)
+
+- [Event-Driven Core, Request-Response Shell](https://www.reactivesystems.eu/2024/08/31/event-driven-core-request-response-shell.html)

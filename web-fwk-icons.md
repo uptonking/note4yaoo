@@ -30,7 +30,10 @@ modified: 2021-07-28T19:22:07.339Z
 
 - ## 
 
-- ## 
+- ## 🆚️ Article greatly explains strategies to load SVGs + tradeoffs. Then introduce a toolchain to make SVG use convenient
+- https://x.com/sebastienlorber/status/1831291514070122593
+- [Introducing @svg-use | Fotis _202408](https://fotis.xyz/posts/introducing-svg-use/)
+  - This post introduces @svg-use, a set of tools and bundler plugins, to ergonomically load SVG files as components, via SVG’s `<use href>` mechanism.
 
 - ## How to add 500kb+ of JS to all pages? 
 - https://twitter.com/TkDodo/status/1729806516893389155

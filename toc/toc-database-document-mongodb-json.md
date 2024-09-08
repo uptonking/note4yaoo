@@ -248,6 +248,17 @@ modified: 2022-11-03T04:14:11.987Z
   - A fake S3 server written in NodeJs
   - It is extremely useful for testing S3 in a sandbox environment without actually making calls to Amazon.
 
+- https://github.com/slatedb/slatedb /apache2/202409/rust
+  - https://slatedb.io/
+  - A cloud native embedded storage engine built on object storage
+  - SlateDB is an embedded storage engine built as a log-structured merge-tree. 
+  - Unlike traditional LSM-tree storage engines, SlateDB writes data to object storage (S3, GCS, ABS, MinIO, Tigris, and so on). 
+    - Leveraging object storage allows SlateDB to provide bottomless storage capacity, high durability, and easy replication. 
+  - 🆚️ The trade-off is that object storage has a higher latency and higher API cost than local disk.
+    - To mitigate high write API costs (PUTs), SlateDB batches writes. 
+    - To mitigate write latency, SlateDB provides an async put method.
+    - To mitigate write latency, SlateDB provides an async put method.
+
 - https://github.com/sanity-io/groq-store
   - In-memory GROQ store. Streams all available documents from Sanity into an in-memory database and allows you to query them there.
 # tree-like/nested

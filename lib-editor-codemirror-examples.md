@@ -1567,6 +1567,10 @@ modified: 2023-06-23T12:46:53.288Z
   - https://webcode-client.netlify.app/
   - a web-based C compiler and terminal, allowing you to write, compile, and run C code directly in your browser with no installation needed.
 
+- https://github.com/rxliuli/typescript-console /MIT/202409/ts/svelte
+  - Run and debug TypeScript code in the Chrome DevTools
+  - 依赖@swc/wasm-web、esbuild-wasm、bits-ui
+
 - code-play
   - https://github.com/xorazmiy-dev/code-mirror /js
 # starter

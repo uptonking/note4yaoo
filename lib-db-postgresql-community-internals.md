@@ -31,6 +31,16 @@ modified: 2023-10-28T13:46:14.957Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Like most databases, Postgres work with fixed size pages. 
+- https://x.com/hnasr/status/1832071246051446991
+  - Those pages are 8K in size, each page will have the rows, or index tuples and a fixed header. The pages are just bytes in files and they are read and cached in the buffer pool.
+  - If a table has 100 pages, to do a full table scan, we would be making close to 100 system read calls, taking kernel read-ahead in to consideration. 
+  - Postgres 17 now combines I/Os to retrieve multiple pages at once. This leads to fewer system calls and lower read latency.
+
 - ## Postgres code has this habit of making some code 1-based indexed and some 0-based indexed.
 - https://twitter.com/eatonphil/status/1725572175292158096
   - For example, in a query: to find the relation (table, in simple cases) being referred to, you get a 1-based index. To look up that relation in the list of relations it's 0-based.

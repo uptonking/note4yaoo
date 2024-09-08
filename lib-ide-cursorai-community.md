@@ -73,6 +73,39 @@ modified: 2024-09-02T02:28:27.398Z
 
 - ## 
 
+- ## Introducing AI Codex: the self-improving system for @cursor_ai .
+- https://x.com/zbeyens/status/1832079140083687671
+  - codex.md: Error and learning repository.
+  - learn.md: Auto-save new insights.
+  - split-codex.md: Smart categorization.
+  - Free. Open Source. Ready-to-use template.
+  - All my AI prompts are now at https://github.com/udecode/dotai, feel free to use and contribute!
+
+- Codex idea is cool, I think all Ai could use that.
+  - Yes that’s why I didn’t call it Cursor Codex.
+
+- I had a similar idea with `knowledge.md` files: 
+  - I like how you've refined the learning into clear algorithms.
+  - [Manicode YC application](https://manifoldmarkets.notion.site/Manicode-YC-application-d748f8e890f24a3ba4b5308821a34351)
+
+- Does this really work or is it just a waste of tokens?
+
+- what's your workflow after using split-codex? Do you alter learn.md to account for there being multiple codex files?
+  - You can add all the codex files in the composer Project, or tag the codex folder
+
+- ## Introducing Dotai: a template to supercharge all @cursor_ai projects.
+- https://x.com/zbeyens/status/1832345581617926231
+  - codex: Error and learning repository
+  - session: Project memory management
+  - blueprints: Tech stack setup guides
+  - plugins: Tool integrations like http://v0.dev
+
+- Have you seen: https://cursor.directory
+  - Pretty cool, but I think these prompts hardly fit real-world projects. I’ll think about a solution.
+- Yeah, it’s not complete. But it’s nice to system prompt your tech stack and coding style.
+
+- Oh nice, so you have a running context file for a project as you use cursor and it answers questions and edits code, and you have a second file that tells the first file how to update itself as you code. Am I getting the gist of this approach correct?
+
 - ## 💰🆚️ [Cursor Has Raised $60M | Hacker News _202408](https://news.ycombinator.com/item?id=41325543)
 
 - > Why Not an Extension?

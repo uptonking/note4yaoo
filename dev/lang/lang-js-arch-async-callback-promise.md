@@ -149,6 +149,12 @@ modified: 2021-08-30T07:01:09.493Z
 
 - ## 
 
+- ## 
+
+- ## if you need a pretty simple Queue in JS/TS just use a `TransformStream` . 
+- https://x.com/okikio_dev/status/1830083868596036095
+  - With the web stream api supporting back pressure, `ReadableStream.tee()` for multiple reads over the Queued data and the fact that TransformStreams are transferable across Workers and the main thread
+
 - ## 前端的发展还是很快的，对语言设计来说可以很快落地试验一些 feature, 
 - https://twitter.com/codeworm96/status/1775764265695322438
   - Javascript以很快的速度走过了 callback -> promise -> async/await 的路（而 async rust 和 c++...）而且现在前端也足够工程化了，完全足以观察在大项目中的表现

@@ -164,7 +164,64 @@ modified: 2024-08-24T16:28:20.515Z
 - AutoDev 的思想是将 LLM（Large Language Model）作为辅助开发者的 Copilot，通过提供辅助工具来解决一些繁琐的任务，让工程师能够更专注于有创造性的设计和思考。
 
 # discuss-code-ai
-- ##
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [What's the different between replit agent which is just released and cursor? : r/replit _202409](https://www.reddit.com/r/replit/comments/1fabsow/whats_the_different_between_replit_agent_which_is/)
+- ReplitAgents is a MVP builder. Don't expect any sophisticated from it
+
+- Replit agents seem to be limited to a few technologies - Python, Flask, vanilla JavaScript, Postgres, etc. in the Flask ecosystem. It can quickly stub app ideas out, but isn't advanced enough to do complex apps so far. 
+  - Cursor doesn't try to act as a full agent, but gives AI tools to move quickly in the development process.
+
+- Replit Agent stops working after 20 minutes. I assume that is the main difference.
+
+- ## Could Replit Agent potentially 30x Replit's market size? 
+- https://x.com/taratan/status/1832102411856703795
+  - It's idea-to-deployment in minutes. While still buggy at the moment (my app was caught in a pesky OAuth error that it couldn't get out of ), it points to a world where Replit’s customers grow beyond developers (20M today) into truly, anyone with an idea. 
+  - This positions Replit closer to a Canva (general public) with 185M users versus a Figma (professional/ semi-professional) with 4M users.
+  - As @lennysan notes, Canva generates more revenue than Figma, Miro, and Webflow combined.
+  - There has been a number of new players in the battle for AI code generation — like Copilot, Codeium, Claude, Cursor AI. 
+  - But Replit has a unique insight that gives them an edge: a great user experience. Experience might just be the differentiator that gives them the winning edge.
+- Replit has the potential to become a "Canva for coding" by lowering the barrier to entry for non-developers who have ideas but lack the technical skills to execute them. Much like Canva did for design, Replit can simplify the creation process for apps, offering intuitive tools
+
+- i am pretty sure @github copilot will have something similar once this catches on. @Replit needs to ship and ship fast.
+
+- We all have seen this movie before. It goes no where because AI agents don’t work. The moment you leave the “getting started” project it blows in your face. We need at least 2 more generations of AI models with more comprehensive coding capabilities to make it work as promised.
+
+- ## 🚀 Announcing Replit Agent in early access—available today for subscribers _20240906
+- https://x.com/amasad/status/1831730911685308857
+  - AI is incredible at writing code. But that's not enough to create software. You need to set up a dev environment, install packages, configure DB, and, if lucky, deploy. It's time to automate all this.
+  - idea to software all on your phone
+  - Replit clone w/ Agent
+
+- Aider in Replit is still super useful as they serve slightly different use cases.
+
+- ## after using replit's coding agent i think...its over for a lot of traditional saas
+- https://x.com/SullyOmarr/status/1832102375257178290
+  - wanted slack notifications when customers subscribed/cancelled, Zapier was 30/mo JUST to add a price filter
+  - instead replit's agent built & deployed one in < 5 mins, with tests. 1/10 of the cost
+- their Agent is only available for the same $20 ($30 CAD)/mo
+
+- Yep, software or SaaS is race to the bottom. There is going to lots of new software that will be built. I doubt we will ever get to 8B people building their own software, but in a decade  20-30M people will be building it. Relevant comment from another discussion.
+  - similiar to youtube probably
+
+- I think you forget that most businesses don’t want to go and build their own things. They just want to grab something off the shelf and move on with their core product
+- It’s over for no code
+
+- Yes can you even build a software moat anymore?
+  - data moat tbh
+
+- fine for toys, but when it gets confused or does bad things you have to fix it
+
+- replit only for multiplay like Google docs for code. Toy usage for me and pair programming
+
+- The average Zapier user has no clue how to code nor prompt. That’s why Zapier exists
+  - Would you recommend Replit's tech over Zapier for automation?
 
 - ## devv.ai 的 GitHub Mode 已经支持前端仓库了。 _202406
 - https://x.com/forrestzh_/status/1802871846871920676

@@ -336,4 +336,18 @@ modified: 2023-02-08T07:20:48.475Z
   - Free Commercial Use. Starting from April 2024, both V2 and V1 are released under MIT License. 
   - OpenVoice has been powering the instant voice cloning capability of myshell.ai since May 2023. 
   - 即时语音克隆工具，只需从参考资料中截取一段简短的音频即可实现克隆。可详细控制语音风格，包括情感、口音、节奏、停顿和语调。生成多种语言的语音。
+# search-rag
+- https://github.com/Cinnamon/kotaemon /apache2/202409/python
+  - https://cinnamon.github.io/kotaemon/
+  - https://huggingface.co/spaces/cin-model/kotaemon-demo
+  - open-source clean & customizable RAG UI for chatting with your documents. Built with both end users and developers in mind.
+  - This project serves as a functional RAG UI for both end users who want to do QA on their documents and developers who want to build their own RAG pipeline.
+# ai-examples
+- https://github.com/Zeyi-Lin/HivisionIDPhotos /apache2/202409/python
+  - https://swanhub.co/ZeYiLin/HivisionIDPhotos/demo
+  - 一个轻量级的AI证件照制作算法
+  - 旨在开发一种实用、系统性的证件照智能制作算法, 利用一套完善的AI模型工作流程，实现对多种用户拍照场景的识别、抠图与证件照生成
+  - SwanLab：训练人像抠图模型全程用它来分析和监控，以及和实验室同学协作交流，大幅提升了训练效率。
+  - 支持 纯离线 或 端云 推理
+
 # more

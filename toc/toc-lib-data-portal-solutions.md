@@ -52,12 +52,12 @@ modified: 2021-01-01T16:02:50.598Z
   - https://github.com/awslabs/open-data-registry-browser
     - a simple, web-based visualization of the data in registry
 
-- https://github.com/simonw/datasette /python
+- https://github.com/simonw/datasette /apache2/202409/python
   - https://datasette.io/
   - https://global-power-plants.datasettes.com/global-power-plants/global-power-plants
+  - open source multi-tool for exploring and publishing data
   - 不依赖flask和django
   - 依赖jinjia2、hupper、pint、pluggy、uvicorn、janus、asgiref、asyncinject
-  - a tool for exploring and publishing data. 
   - It helps people take data of any shape or size and publish that as an interactive, explorable website and accompanying API.
   - https://lite.datasette.io/
     - Datasette Lite is Datasette packaged using WebAssembly so that it runs entirely in your browser, no Python web application server required

@@ -31,7 +31,9 @@ modified: 2021-03-10T11:38:16.053Z
 
 - ## 
 
-- ## 
+- ## Assisted password confirmation. Made with Tailwind and Framer Motion.
+- https://x.com/wickedmishra/status/1831361580396884190
+  - 输入确认密码时，显示匹配字符为绿色
 
 - ## 今天从设计师朋友那学到了排版四原则：
 - https://twitter.com/moeimiku/status/1768326203197555196
