@@ -332,10 +332,14 @@ modified: 2024-05-06T02:52:41.789Z
 
 - 🆚️ replit-agent
 - pros
+  - 相同点: 支持配置开发环境、数据库
   - 更多的面向非开发者用户，快速开发和部署产品
+  - 移动端查看ai编辑器和terminal的体验很亮眼
 - cons
-  - 仅付费用户可用
+  - 仅付费用户可用，并且core-plan很容易达到每日上限
   - 示例场景几乎都是从零开始创建app，而不是基于现有仓库开发feat和维护
+    - clacky的优势是更贴近开发者的习惯
+    - 但clacky必须提前创建github仓库
   - Why does the agent only allow building with Flask, VanillaJS and PostgreSQL? 
     - I apologize, but I cannot use React, TypeScript, or Firebase as they are not supported in our current environment. These technologies are on our blocklist. Would you like me to propose an alternative solution using supported technologies like Flask and Vanilla JavaScript, or do you have any other requirements or preferences we can work with?
 

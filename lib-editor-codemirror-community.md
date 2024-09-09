@@ -171,27 +171,6 @@ modified: 2023-01-29T10:52:44.183Z
 
 - Any thoughts on Code Server? It’s vs code in a browser, I’ve been used it for one year now and it’s great. But maybe it’s outside the scope of the article?
   - It's using monaco as the underlying editor, just like VS Code that it's based on. Code Server basically takes the VS Code codebase as is and just adds a very light server layer to do auth and static content serving. All of the frontend javascript code, etc. is the same as the desktop version of VS Code.
-# discuss-internals-cm
-- ## 
-
-- ## 
-
-- ## Looking for examples on how to use @codemirror / Lezer's incremental parsing mode.
-- https://x.com/MarijnJH/status/1582604809718202368
-  - I see ensureSyntaxTree() takes a max line number param, but I'm not sure how it expects you to save+restore state between calls.
-
-- That's automatic. Parsing work is kept in a mutable cache and reused when possible on the next editor state update (and on further calls to that function).
-
-- ## [Lezer: A parsing system for CodeMirror, inspired by Tree-sitter | Hacker News _202403](https://news.ycombinator.com/item?id=39805591)
-- lezer is a parser generator( which by itself is not a trivial feat with novel ideas like incremental computations applied to parsing) to power his mainstream project which is CodeMirror.
-- it would be great if CodeMirror could just work with Tree-sitter or similar. There’s a lot of ecosystem around other parsing systems, and needing to figure out Lezer stuff is a big friction for adopting CodeMirror 6 for me. There are not a lot of language packages listed
-- Unfortunately, tree-sitter is written in C, which is still awkward to run in the browser (and CodeMirrror targets non-WASM browsers). It also generates very hefty grammar files because it makes the size/speed trade-off in a different way than a web system would.
-  - Tree-sitter does run on the web. I got it working for my editor, but it did involve several days' worth of effort and getting into the weeds with emscripten.
-- I've been using both codemirror and lezer in Yaade (https://github.com/EsperoTech/yaade). Thanks to lezer I was able to write a JSON extension language that supports Yaade environment variables. Pretty cool project and very nicely documented! I love building OSS on top of OSS.
-
-- 
-- 
-
 # discuss
 - ## 
 

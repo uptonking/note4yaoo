@@ -252,6 +252,22 @@ modified: 2024-01-25T13:33:23.267Z
 
 - ## 
 
+- ## 
+
+- ## 🤖 [Introducing AI Code Autocomplete Powered by Codeium - CodeSandbox _202311](https://codesandbox.io/blog/introducing-ai-code-autocomplete-powered-by-codeium)
+- Today, AI takes a huge leap forward in CodeSandbox with code autocomplete powered by Codeium.
+  - This is the result of a months-long collaboration with the fantastic team behind Codeium
+  - Plus, we are making this available for free for everyone coding in our Devboxes 
+
+- ## 🤖 [Meet Boxy, Your New AI Coding Assistant - CodeSandbox _202305](https://codesandbox.io/blog/meet-boxy-ai-coding-assistant?via=topaitools)
+- I am Boxy, your new AI coding companion
+  - I've been designed to thrive within the CodeSandbox environment, and that gives me a unique advantage. By having access to your entire codebase, I can understand your app's context like no other.
+
+- Intuitive code refactoring
+- Contextual code generation
+- Automatic, meaningful commit messages
+- Making learning more accessible
+
 - ## We've hit the point that more than 150 thousand new MicroVMs get created on a monthly basis! _20240510
 - https://twitter.com/CompuIves/status/1788888447119225192
   - The cost stays low thanks to VM cloning & snapshot/resume. 

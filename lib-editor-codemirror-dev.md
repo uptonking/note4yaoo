@@ -146,6 +146,7 @@ modified: 2021-05-06T09:38:31.520Z
   - virtualized
   - draggable block-style
   - table/database: multi views, user-defined
+  - markdown sync scroll
 
 - not-yet
   - codemirror devtools
@@ -164,6 +165,9 @@ modified: 2021-05-06T09:38:31.520Z
 
 - extensions-to
   - katex
+
+- lang
+  - replace lezer with Tree-sitter
 
 - integrations
   - strapi-codemirror
@@ -198,6 +202,9 @@ modified: 2021-05-06T09:38:31.520Z
 # dev-xp
 - 自定义元素widget
   - 可参考replit
+  - blazor编辑器的image/mermaid都会在文本上渲染一个contenteditable为false的元素
+  - overleaf-visual编辑器的image/table会渲染一个contenteditable为false的元素
+  - ink-mde的image会渲染一个contenteditable为false的元素
 
 - 隐藏diff-view绿色行的实现方案
   - 思路0: 通过line-decoration给绿色行按条件添加隐藏、动画样式类
@@ -207,6 +214,8 @@ modified: 2021-05-06T09:38:31.520Z
   - 其他
     - mark-decoration的粒度过细，计算繁琐
     - 通过cold-fold实现隐藏元素的思路是否正确
+  - 实现细节
+    - 每个变更块的红色部分(可能包含多行)都是一个 `<div class="cm-deletedChunk" contenteditable="false">`, 多行红色会直接在TextNode里面换行文本，没有额外的html标签元素, deletedChunk.textContent会返回类似`four cups\nhello`
 
 - 多标签页的实现思路和单标签差别不大，视觉上只有1个visible的editor，上方是tab
 

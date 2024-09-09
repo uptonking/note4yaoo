@@ -19,6 +19,10 @@ modified: 2024-05-06T02:54:40.374Z
   - 产研团队的对齐非常充分
 - work-xp-cons
   - 单人项目太多了，维护困难，比如paas和1024code，浪费了很多研发资源
+
+- 研发流程
+  - backlog > todo > doing(dev分支) > readyForTest(staging分支) > done
+  - 研发负责添加任务，测试负责减少； review属于doing的开发或联调状态
 # projects
 
 ## proj-coding-ai
@@ -2075,7 +2079,6 @@ const playbackInfo = [
   - 本地ide-server启动时会向manager注册id/code，manager收到sdk请求ide-server的url时，会检查code，若存在则返回本地ide-server连接ws://localhost:3012，否则返回线上ide-server连接
 - 录制用户操作，什么时候开始
   - 整个playground的期间
-
 
 - fileTree
   - playgroundItem.getPlaygroundInfo()

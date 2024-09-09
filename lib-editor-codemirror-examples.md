@@ -48,11 +48,11 @@ modified: 2023-06-23T12:46:53.288Z
   - CodeEditor和VisualEditor都基于codemirror6实现
   - source-editor支持codemirror6、ace(deprecated)
     - https://github.com/overleaf/ace /202108/js/inactive/Ajax.org Cloud9 Editor
+  - 🔌 实现的codemirror ext包括100多个 codemirrorDevTools, trackChanges, bracketSelection, mathjax, thirdPartyExtensions
   - 线上体验xp
     - 版本历史类似github的仓库快照，能查看某一时刻的所有文件状态，支持显示每个文件的修改数量
     - 版本会隔一段时间自动保存，支持添加label
     - 版本历史的内容差异未使用官方的diff视图，自定义渲染行内diff，history界面的内容差异视图支持显示删除线
-  - 实现的codemirror ext包括100多个 codemirrorDevTools, trackChanges, bracketSelection, mathjax, thirdPartyExtensions
   - 编辑器体验xp
     - 💬 支持comment，但实现方式不是extension
     - collab基于sharejs实现，未使用官方collab插件
@@ -120,7 +120,7 @@ modified: 2023-06-23T12:46:53.288Z
       - once you start to edit the code or change tab (trig render basically), ts-server will start to kick in
       - Vocs is solving this elegantly with Twoslash
 
-- https://github.com/jupyterlab/jupyterlab/tree/main/packages/codemirror /202405/ts
+- https://github.com/jupyterlab/jupyterlab/tree/main/packages/codemirror /BSD/202405/ts
   - A JupyterLab package which provides the default implementation of the `@jupyterlab/codeeditor` interface, using the `CodeMirror` editor.
   - cm编辑器及ext相关代码不多
     - 协作基于yjs实现
@@ -181,7 +181,7 @@ modified: 2023-06-23T12:46:53.288Z
   - Citations made easy: Tight and ever-growing integration with your favourite reference manager (Zotero, JabRef, and many others)
   - Support for state of the art knowledge management techniques (Zettelkasten)
   - https://github.com/Zettlr/Zettlr/tree/develop/source/common/modules/markdown-editor/plugins
-    - ext实现了typewriter(当前行居中),contextMenu,statistics-fields,toc
+    - 🔌 ext实现了typewriter(当前行居中),contextMenu,statistics-fields,toc
 
 - https://github.com/sourcegraph/openctx/tree/main/client/codemirror /apache2/202405/ts
   - https://openctx.org/playground
@@ -198,6 +198,7 @@ modified: 2023-06-23T12:46:53.288Z
   - Browser-based editing environment
   - Real-time collaboration via LAN or using services like NGrok
   - 自定义的ext不多
+  - 协作基于自定义codemirror-ot及sharedb
   - A known shortcoming of VZCode is that it does not (yet) watch for changes from the file system. VZCode assumes that no other programs are modifying the same files.
   - You can also expose your VZCode instance publicly using a tunneling service such as NGrok.
   - Auto-save, debounced after code changes
@@ -251,21 +252,37 @@ modified: 2023-06-23T12:46:53.288Z
   - Autocomplete for HTMLTextAreaElement and more
   - 支持 textarea/contenteditable/codemirror
 
-- https://github.com/davidmyersdev/ink-mde /206Star/MIT/202405/ts/函数式
+- https://github.com/davidmyersdev/ink-mde /206Star/MIT/202405/ts/函数式/typora风格
   - https://stackblitz.com/fork/github/davidmyersdev/ink-mde/tree/main/examples/template-ts
   - A beautiful, modern, customizable Markdown editor powered by CodeMirror 6 and TypeScript
   - This is the editor that powers https://octo.app.
   - Inline Markdown image previews
-  - Framework agnostic, 支持vue/svelte
+  - Framework agnostic, 支持vue/svelte; 👀 但部分ui及示例使用了solidjs
   - Supports Server-Side Rendering (SSR)
   - Wrap a native `textarea` element with the `wrap` export
-  - Plugin API (experimental)
+  - 🔌 Plugin API (experimental): blockquote, image, codeblock
   - https://github.com/davidmyersdev/octo /MPLv2/202405/ts/vue
     - https://octo.app/
     - A local-first, progressive web app for knowledge management
     - End-to-End Encryption (E2EE) support
 
-- https://github.com/imzbf/md-editor-rt /MIT/202407/ts
+- https://github.com/gaelj/BlazorCodeMirror6 /MIT/202407/csharp/ts/typora风格
+  - https://gaelj.github.io/BlazorCodeMirror6/
+  - Blazor CodeMirror 6 brings the power of the CodeMirror 6 code editor to Blazor, offering a comprehensive . NET6/7/8 component
+  - Markdown editor for Blazor
+  - 支持编辑时开启/关闭diff-view，✨ diff视图下accept变更后立即撤销会先回到diff视图
+  - 实现了diff上下视图，支持高亮变更及gutter，支持accept/reject变更action
+    - 亮变更内容的粒度是字符，但未突出删除字符的样式
+  - markdown编辑体验支持行内切换md代码和预览，✨ 类似typora
+  - 支持图片、emoji
+  - 依赖thememirror、emojilib
+  - manual resizing of the editor (similar to html textarea)
+  - custom linting
+  - allow undo/redo toolbar buttons
+  - CSV mode: add column paddings for alignment, navigate columns with tab / shift-tab; 支持markdown-table 📈
+  - 支持emoji
+
+- https://github.com/imzbf/md-editor-rt /MIT/202407/ts/非及时预览
   - https://imzbf.github.io/md-editor-rt
   - https://imzbf.github.io/md-editor-rt/en-US/demo
   - react版本的 Markdown 编辑器
@@ -278,7 +295,19 @@ modified: 2023-06-23T12:46:53.288Z
     - https://imzbf.github.io/md-editor-v3
     - vue3 环境的 Markdown 编辑器
   - https://github.com/imzbf/md-editor-extension
-    - Common extensions for md-editor-v3 and md-editor-rt.
+    - Common extensions for md-editor-v3 and md-editor-rt
+
+- https://github.com/getcursor/old /192Star/MIT/202304/ts/inactive
+  - https://github.com/fovi-llc/cursor-codemirror/blob/main/src/components/codemirrorHooks/extensions.ts
+  - A Codemirror-based editor with many modern need-to-haves (e.g. LSP, Copilot, Vim, Remote SSH)
+  - This is an old version of Cursor based off of the Codemirror text editing component. If you're looking to build your own code editor from the ground-up, this may serve as a useful guide. Cursor is now based on a fork of VSCodium.
+  - 依赖codemirror6、@headlessui/react、@reduxjs/toolkit、electron-store、markdown-it、vscode-languageserver-protocol、xterm、xterm-addon-search
+  - 🔌 扩展多，包括diffExtension, hackDiff, rejectSuggestionCommand, copilotStatus, updateCommentsEffect
+  - AI Features: auto-generated inline diffs and completions, a ChatGPT-style embedded chat, on-hover documentation suggestions
+  - 🍴 forks
+  - https://github.com/abdulrahman305/cursor
+  - https://github.com/fovi-llc/cursor-codemirror
+  - https://github.com/kumar045/cursor-codemirror
 
 - https://github.com/replit/codemirror-minimap /202401/ts
   - Minimap extension for Codemirror 6
@@ -355,12 +384,6 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/surmon-china/vue-codemirror /MIT/202208/ts/vue/inactive
   - @codemirror code editor component for @vuejs
   - a new version based on CodeMirror@6 and is available to Vue3 only.
-
-- https://github.com/getcursor/old /192Star/MIT/202304/ts/inactive
-  - A Codemirror-based editor with many modern need-to-haves (e.g. LSP, Copilot, Vim, Remote SSH)
-  - This is an old version of Cursor based off of the Codemirror text editing component. If you're looking to build your own code editor from the ground-up, this may serve as a useful guide. Cursor is now based on a fork of VSCodium.
-  - 依赖codemirror6、@headlessui/react、@reduxjs/toolkit、electron-store、markdown-it、vscode-languageserver-protocol、xterm、xterm-addon-search
-  - AI Features: auto-generated inline diffs and completions, a ChatGPT-style embedded chat, on-hover documentation suggestions
 
 - https://github.com/0xsuk/agitcms /MIT/202212/ts/inactive
   - A hackable headless CMS for markdown blogs
@@ -554,17 +577,6 @@ modified: 2023-06-23T12:46:53.288Z
   - 🌵 git integrated cross-platform markdown editor
   - 依赖codemirror6、marked、nodegit、vue3、@electron/rebuild
 
-- https://github.com/minditor/minditor /MIT/202403/ts
-  - https://minditor.dev/
-  - A plug-and-play, highly customizable block-based rich text editor. 
-  - Supports block/inlineBlock development with any framework, including React/Vue.
-  - 未使用react/vue, 🐛 使用自研未开源的视图框架axii
-  - 依赖codemirror6、highlight.js、eventemitter3、thememirror、@uppy/xhr-upload
-  - 由 Zhenyu Hou 独立开发和维护
-  - 不支持拖拽改变block顺序
-  - [开源富文本编辑器，支持用 React/Vue 或任何框架开发 Block/InlineBlock。 - V2EX _202403](https://v2ex.com/t/1019749)
-    - 保存的是 json 。类似的有 editor.js ，quilljs 。他们好像不支持 inlineBlock ，写复杂插件缺少了一些系统应该提供的 reactive state ，要自己注册各种事件监听。比较麻烦，所以我自己写了这个编辑器。
-
 - https://github.com/wangpin34/wxformat /MIT/202408/ts
   - https://wangpin34.github.io/wxformat/
   - Markdown For Weixin 是一款用于生成兼容微信公众号图文素材内容的 Markdown 编辑器
@@ -581,6 +593,17 @@ modified: 2023-06-23T12:46:53.288Z
   - 支持自定义样式的 Markdown 编辑器
   - 依赖@uiw/react-codemirror.v1、antd.v3
   - [一款开源的Markdown转富文本编辑器的实现原理剖析 - 知乎_202206](https://zhuanlan.zhihu.com/p/526702914)
+
+- https://github.com/minditor/minditor /MIT/202403/ts/inactive
+  - https://minditor.dev/
+  - A plug-and-play, highly customizable block-based rich text editor. 
+  - Supports block/inlineBlock development with any framework, including React/Vue.
+  - 未使用react/vue, 🐛 使用自研未开源的视图框架axii
+  - 依赖codemirror6、highlight.js、eventemitter3、thememirror、@uppy/xhr-upload
+  - 由 Zhenyu Hou 独立开发和维护
+  - 不支持拖拽改变block顺序
+  - [开源富文本编辑器，支持用 React/Vue 或任何框架开发 Block/InlineBlock。 - V2EX _202403](https://v2ex.com/t/1019749)
+    - 保存的是 json 。类似的有 editor.js ，quilljs 。他们好像不支持 inlineBlock ，写复杂插件缺少了一些系统应该提供的 reactive state ，要自己注册各种事件监听。比较麻烦，所以我自己写了这个编辑器。
 
 - https://github.com/gravity-ui/markdown-editor /MIT/202407/ts/设计系统中的一个组件
   - https://preview.gravity-ui.com/md-editor/
@@ -683,27 +706,17 @@ modified: 2023-06-23T12:46:53.288Z
   - Highly configurable web-based text editor based on codemirror primarily designed for editing markdown, LaTeX, and html files with live-updating html and pdf previews.
   - it can be used to edit other plain text files as well, including subsidiary files (css, javascript, csv, json, pandoc templates, etc.) and see their effects live-update in their chosen root markdown/LaTeX/html document. 
 
-- https://github.com/geometryzen/stemcstudio-codemirror /MIT/202406/ts
+- https://github.com/geometryzen/stemcstudio-codemirror /MIT/202406/ts/单文件
   - Bundle of CodeMirror Editor
   - A wrapper around the CodeMirror editor for use in STEMCstudio.
 
 - https://github.com/riccardoperra/solid-codemirror /MIT/202305/ts/inactive
   - A library of SolidJS primitives to build code editors using CodeMirror 6
   - https://github.com/nimeshnayaju/solid-codemirror /202207/ts/inactive
-- https://github.com/acrodata/code-editor /MIT/202405/ts
-  - https://acrodata.github.io/code-editor/
-  - CodeMirror 6 wrapper for Angular
-  - 实现了上下布局的diff视图
 
 - https://github.com/touchifyapp/svelte-codemirror-editor /MIT/202405/ts
   - https://touchifyapp.github.io/svelte-codemirror-editor/
   - A svelte component to create a CodeMirror 6 editor.
-
-- https://github.com/PotatoGroup/code-editor /ISC/202402/ts
-  - a JS code editor based on codeMirror6, support code autoCompletion, which can be used with @astii/expression-sandbox
-  - 依赖react
-  - https://github.com/PotatoGroup/expression-sandbox /202309/ts
-    - a simple sandbox for excute js expression
 
 - https://github.com/mdx-editor/editor /MIT/202405/ts/lexical
   - https://mdxeditor.dev/
@@ -974,22 +987,6 @@ modified: 2023-06-23T12:46:53.288Z
   - 实现了diff上下视图、✨左右视图，支持高亮变更内容及gutter，支持撤销变更action
   - 支持a2b/b2a正反向计算
 
-- https://github.com/gaelj/BlazorCodeMirror6 /MIT/202407/csharp/ts
-  - https://gaelj.github.io/BlazorCodeMirror6/
-  - Blazor CodeMirror 6 brings the power of the CodeMirror 6 code editor to Blazor, offering a comprehensive . NET6/7/8 component
-  - Markdown editor for Blazor
-  - 支持编辑时开启/关闭diff-view，✨ diff视图下accept变更后立即撤销会先回到diff视图
-  - 实现了diff上下视图，支持高亮变更及gutter，支持accept/reject变更action
-    - 亮变更内容的粒度是字符，但未突出删除字符的样式
-  - 支持编辑器中渲染图片
-  - markdown编辑体验支持行内切换md代码和预览，类似typora
-  - 依赖
-  - manual resizing of the editor (similar to html textarea)
-  - custom linting
-  - allow undo / redo toolbar buttons
-  - CSV mode: add column paddings for alignment, navigate columns with tab / shift-tab; 支持markdown-table 📈
-  - 支持emoji
-
 - https://github.com/mdx-editor/editor /MIT/202405/ts/lexical
   - https://mdxeditor.dev/
   - https://mdxeditor.dev/editor/demo
@@ -1051,6 +1048,30 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/hisashim/docdiff /BSD/202106/ruby
   - Compares two text files by word, by character, or by line
+
+- https://github.com/github/semantic /202405/haskell
+  - semantic is a Haskell library and command line tool for parsing, analyzing, and comparing source code
+  - [How we parse source code into ASTs](https://github.com/github/semantic/blob/main/docs/why-tree-sitter.md)
+  - Why we use tree-sitter
+    - Reusability and ease of implementation
+    - We want to parse all versions of a language
+    - We parse comments and have them in the AST
+    - Decoupled from a specific grammar format
+    - Performance is decoupled from specific algorithm
+    - There isn’t a universally accepted format for grammar specification
+    - Language specifications are complex
+    - Multiple algorithms for handling ambiguity. Precedence annotations at compile time, GLR at runtime
+    - We have full control over the shape and productions of trees
+    - Incremental parsing and error recovery
+    - External scanner support. In case you need to parse a context-sensitive gramma
+  - Drawbacks of tree-sitter
+    - Error-recovery is sometimes opaque
+    - External scanners also allow you to write custom C code for the purpose of handling lexical rules. This means running arbitrary C code
+    - Though not unique to tree-sitter, grammar development is often a tedious task.
+    - Convenient usage of a grammar often requires something like parser combinators, again tying the grammar specification to a single language. 
+    - Generated C programs can be quite large.
+    - Parsing can be extremely slow for pathological inputs such as infinite loops, sometimes taking hours and even days.
+    - Support for unicode is currently lagging.
 
 ## lint
 
@@ -1259,7 +1280,7 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/mindofmatthew/text.management /GPLv3/202404/ts
   - Experimental Live Code Editor
-  - In its initial form, this is an editor for the Tidal language. It requires Tidal to be installed independently.
+  - this is an editor for the Tidal language. It requires Tidal to be installed independently.
   - https://github.com/mindofmatthew/text.management/tree/main/packages/codemirror/evaluate
     - CodeMirror 6 extension for enabling lines of code to be evaluated
 
@@ -1364,6 +1385,12 @@ modified: 2023-06-23T12:46:53.288Z
   - This package implements iecst language support for the CodeMirror code editor.
   - https://github.com/Juexro/livedemo
 # code-playgrounds
+- https://github.com/PotatoGroup/code-editor /ISC/202402/ts
+  - a JS code editor based on codeMirror6, support code autoCompletion, which can be used with @astii/expression-sandbox
+  - 依赖react
+  - https://github.com/PotatoGroup/expression-sandbox /202309/ts
+    - a simple sandbox for excute js expression
+
 - https://github.com/mdn/bob /MIT/202407/ts
   - ✨ Builder of Bits aka The MDN Web Docs interactive examples, example builder
   - [Migrate to CodeMirror v6 _202208](https://github.com/mdn/bob/issues/851)
@@ -1635,11 +1662,10 @@ modified: 2023-06-23T12:46:53.288Z
 # examples
 - https://github.com/ralismark/ibis-wiki /202406/ts
   - http://www.ralismark.xyz/ibis-wiki/
-  - personal wiki, built to fit a personal niche
-  - inspired by the likes of TiddlyWiki and Logseq
+  - personal wiki, built to fit a personal niche, inspired by the likes of TiddlyWiki and Logseq
+  - This wiki is a purely static site, and does not have its own backend
   - 依赖codemirror6、wink-nlp
   - 实现了diff上下视图，The merge plugin doesn't really have a way to have it conditionally enabled -- it has to be always enabled.
-  - This wiki is a purely static site, and does not have its own backend
   - notes are stored via an external storage provider -- the only kind supported at the moment is S3-like
   - there are [[internal-links]] a la Roam Research, 类似双链
   - https://github.com/ralismark/ibis-wiki/blob/main/src/codemirror/merge.ts

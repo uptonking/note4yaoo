@@ -381,6 +381,7 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
   - ~~action bar working/replaying~~
 
 - time-machine
+  - 追加step
   - 终止后未执行的action在进度条仍然显示，状态是cancelled
   - 关闭machine再打开时，会强制再次打开editor
   - 时光机终止后，驾驶舱如何反馈，终止状态如何清理
@@ -412,13 +413,19 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
   - [ ] 部分accept
   - [ ] diff工具条
   - [ ] followup
-  - more
-    - cmdk后直接编辑，是否立即更新文档，特别是多人协作的场景
+  - dev-discuss
+    - cmdk后直接编辑，是否立即更新文档，特别是多人协作的场景是否支持diff-view协作
+      - 用户ua在cmdk后显示doc2(与原文档doc1进行diff)，编辑在doc2；用户ub仍显示和编辑doc1
     - message chunk stop
+    - 输入框与editor绑定，这样能支持多editor
+    - 大多数cmdk的变更块只有1个，此时diff-view的实现可采用简化版实现单红单绿
+      - 若cmdk的变更块超过1个，上下布局的diff-view方便确定范围，但agent返回不是多个范围
 
 - not-yet
-  - 处理驾驶舱列表打开文件
-  - 打开已删除的文件未实现
+  - 驾驶舱action列表支持打开文件
+    - 打开已删除的文件未实现
+  - 驾驶舱聊天后直接apply代码到编辑器
+  - regenerate plan/task/action
   - zustandx如何在一个store里面使用另一个store的值, 或重新架构store的内容
   - ~~演示之前测试cpu、内存~~
   - ~~私有项目的导入~~
@@ -449,19 +456,6 @@ console.log(';; machine ', taskState, runningTaskAction, task?.task_steps)
 ```
 
 ## 0908
-
-- 🆚️ replit-agent
-- pros
-  - 相同点: 支持配置开发环境、数据库
-  - 更多的面向非开发者用户，快速开发和部署产品
-  - 移动端查看ai编辑器和terminal的体验很亮眼
-- cons
-  - 仅付费用户可用，并且core-plan很容易达到每日上限
-  - 示例场景几乎都是从零开始创建app，而不是基于现有仓库开发feat和维护
-    - clacky的优势是更贴近开发者的习惯
-    - 但clacky必须提前创建github仓库
-  - Why does the agent only allow building with Flask, VanillaJS and PostgreSQL? 
-    - I apologize, but I cannot use React, TypeScript, or Firebase as they are not supported in our current environment. These technologies are on our blocklist. Would you like me to propose an alternative solution using supported technologies like Flask and Vanilla JavaScript, or do you have any other requirements or preferences we can work with?
 
 ## 0907
 

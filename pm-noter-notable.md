@@ -27,13 +27,13 @@ modified: 2023-11-28T14:48:45.910Z
 
 - selling-point-knowledge-base
   - 通用或单一的builder价值不大，但针对业务平台特别是app-store的builder对平台方和开发者的价值都很大
+  - 搜索: rag, code-search, ai-chat
   - markdown support with git-like database
     - widely used, enterprise-loved(易盈利)
     - text files works well with existing tooling
     - 备选方案参考git，将文本与git工具绑定
     - sync: 本地文件自动生成delta
   - mdbook/gitbook: text + actions/workflows
-  - ~~open folder as site~~, 一般发布的站点都会多次处理内容，任意文件夹无意义
   - office editor
   - encrypted elements: 有权限的用户或有密码的用户才可看到的数据
     - paid-only paragraphs/sentences
@@ -51,6 +51,7 @@ modified: 2023-11-28T14:48:45.910Z
   - integrations
     - jupyter-notebook
     - whisper-editor
+  - ~~open folder as site~~, 通常发布的站点都会多次处理内容，任意文件夹无意义, 只是toc显示不同内容而已
 
 - 难点
   - 对于嵌入到note中的本地媒体资源如图片、视频、音频，如何解析、存储、渲染更好

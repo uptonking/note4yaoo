@@ -110,6 +110,15 @@ modified: 2023-01-23T19:27:46.948Z
   - This lets you write SQL in your frontend code, that automagically refreshes on all clients when a resource is changed on any (optionally) connected DB. 
   - Additionally, create any generic JS variables on your server to be realtime synced across all clients using "Server Props".
   - Agnostic of framework, build tool, server lib and SQL database.
+
+- https://github.com/replit/river /MIT/202409/ts
+  - River provides a framework for long-lived streaming Remote Procedure Calls (RPCs) in modern web applications, featuring advanced error handling and customizable retry policies to ensure seamless communication between clients and servers.
+  - River provides a framework similar to tRPC and gRPC but with additional features:
+    - JSON Schema Support + run-time schema validation
+    - full-duplex streaming
+    - snappy DX (no code generation)
+    - transparent reconnect support for long-lived sessions
+    - over any transport (WebSockets and Unix Domain Socket out of the box)
 # realtime
 - https://github.com/nodefluent/kafka-streams
   - equivalent to kafka-streams for nodejs
@@ -237,8 +246,6 @@ modified: 2023-01-23T19:27:46.948Z
   - Prerequisites Apache Kafka / Nats Mongodb Nginx Firebase project Redisl
   - 使用了firebase的auth/notify
   - [Vartalap: Open Source Personal Messaging App | One9x _202106](https://blog.one9x.org/vartalap/2021/04/04/vartalap-personal-messaging-app.html)
-
-
 # more
 - https://github.com/well-known-components/template-server
   - Template Node.js server using well-known-components library.
