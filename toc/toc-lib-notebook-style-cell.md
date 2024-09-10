@@ -97,6 +97,12 @@ modified: 2021-05-13T16:08:15.067Z
 
 - https://github.com/inkandswitch/livebook /201704/python
   - IPython notebook-compatible live coding experiment
+# reactive-doc
+- https://github.com/worrydream/Tangle /201111/js/inactive
+  - https://worrydream.com/Tangle/
+  - Tangle is a JavaScript library for creating reactive documents. Your readers can interactively explore possibilities, play with parameters, and see the document update immediately. Tangle is super-simple and easy to learn.
+- https://github.com/rexgarland/Entangle /MIT/202302/js/inactive
+  - Another attempt at writing Tangle.js documents in markdown.
 # ref
 - https://github.com/jsvine/notebookjs
   - Notebook.js parses raw Jupyter/IPython notebooks, and lets you render them as HTML

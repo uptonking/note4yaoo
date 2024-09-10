@@ -9,23 +9,38 @@ modified: 2024-05-02T06:02:37.181Z
 
 # guide
 
+# discuss-5to6
+- ## 
+
+- ## 
+
+- ## [the block widget disappeared after add or remove a new line - discuss. CodeMirror](https://discuss.codemirror.net/t/the-block-widget-disappeared-after-add-or-remove-a-new-line/4855)
+- I tried to simulate the onchange event here but don’t know how to do it properly. I am using a react version of CM
+  - If by onChange you mean updateListener, that’s expected. If you need to track state for changes, and use that for rendering, you’re probably going to have a better time keeping it in a state field.
+
+- ## 💡 [CM5: inputStyle contenteditable, cursor display after goLineRight (wrapped line) - discuss. CodeMirror](https://discuss.codemirror.net/t/cm5-inputstyle-contenteditable-cursor-display-after-golineright-wrapped-line/3911)
+- CodeMirror 6 works around this by drawing its own cursor while still using contentEditable _202201.
+
+# discuss-stars-v5
+- ## 
+
+- ## 
+
+- ## 
 # discuss-v5
-- ##
+- ## 
 
-- ##
+- ## 
 
-- ##
+- ## 
 
-- ## `inputStyle: string` config prop
+- ## 🤔 `inputStyle: string` config prop
 - https://codemirror.net/5/doc/manual.html
 - Selects the way CodeMirror handles input and focus. 
   - The core library defines the "textarea" and "contenteditable" input models. 
   - On mobile browsers, the default is "contenteditable". 
   - On desktop browsers, the default is "textarea". 
   - Support for IME and screen readers is better in the "contenteditable" model. The intention is to make it the default on modern desktop browsers in the future
-
-- ## [CM5: inputStyle contenteditable, cursor display after goLineRight (wrapped line) - discuss. CodeMirror](https://discuss.codemirror.net/t/cm5-inputstyle-contenteditable-cursor-display-after-golineright-wrapped-line/3911)
-- CodeMirror 6 works around this by drawing its own cursor while still using contentEditable _202201.
 
 - ## 🤔🆚️🎯 [is the `textarea` inputStyle going to be deprecated in the future? - discuss. CodeMirror](https://discuss.codemirror.net/t/is-the-textarea-inputstyle-going-to-be-deprecated-in-the-future/1278)
 - If there’s ever a major rewrite of CodeMirror (the codebase is showing its age), it’s likely that it will only do contentEditable-style input. But until then, I don’t expect to completely drop textarea support.

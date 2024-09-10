@@ -240,19 +240,6 @@ modified: 2021-05-06T09:38:31.520Z
 
 - Querying coordinates for positions outside of the current viewport will not work (since they are not rendered, and thus have no layout).
 
-- deco-mark
-  - Syntax highlighting
-  - add some attributes or wrapping DOM element 
-- deco-widget
-  - insert a DOM element in editor: inline elements or blocks
-- deco-replacing 可以修改多行
-  - code folding or replacing an element in the text with something else
-  - possible to display a widget instead of the replaced text
-- deco-line 修改一行
-  - influence the attributes of the DOM element that wraps the line
-- Decorations that significantly change the vertical layout of the editor, for example by replacing line breaks or inserting block widgets, must be provided directly, since indirect decorations are only retrieved after the viewport has been computed.
-  - Indirect decorations are appropriate for things like syntax highlighting or search match highlighting, where you might want to just render the decorations inside the viewport or the current visible ranges
-
 ## dev-ai-coding
 
 - diff视图的结果是红色删除行在上、绿色增加行在下

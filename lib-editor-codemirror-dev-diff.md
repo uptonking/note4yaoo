@@ -129,7 +129,7 @@ modified: 2024-07-29T11:49:33.248Z
 
 - ## 
 
-- ## 🌰 [Adding widgets between lines instead of inside lines - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/adding-widgets-between-lines-instead-of-inside-lines/4772)
+- ## 🌰🆚 [Adding widgets between lines instead of inside lines - v6 - discuss. CodeMirror _202207](https://discuss.codemirror.net/t/adding-widgets-between-lines-instead-of-inside-lines/4772)
   - We’re working on a CodeMirror side-by-side diff viewer similar to github’s view
 - Is it possible to add dom nodes/breaks between cm-lines instead of inside using decorations
   - Yes, use block widgets, either at the end of the line above with side: 1, or at the beginning of the line below, with side: -1.

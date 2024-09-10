@@ -69,12 +69,12 @@ modified: 2024-05-06T02:54:40.374Z
   - 减少layout计算，面板上方部分元素尽可能减少重绘
   - 动画要考虑进入场景和退出场景
 
-### ai-writing-features
+### ✨ feat-ai-writing-with-diff
 
 - 时光机
   - ~~开启关闭diff视图, 配置在业务层~~
-  - ~~切换diff视图的布局，上下、左右，配置在业务层~~
-  - 执行计划时计算diff-op，op的内容和时机
+  - ~~切换diff视图的布局, 上下、左右，配置在业务层~~
+  - ~~执行计划时计算diff-op，op的内容和时机~~
   - ~~回放~~模式获取diff-op
   - ~~回放~~模式支持编辑，内容和光标选区的变化
   - changed-files-list
@@ -389,6 +389,38 @@ modified: 2024-05-06T02:54:40.374Z
 
 ]
 ```
+
+### ✨ feat-cmdk
+
+- ✨ cmd+k， 主流程是用户输入需求，agent返回建议的代码
+  - 对于不清晰的用户需求，cmd+k如何处理，需不需要澄清, ui交互是否要补充
+  - agent工作编辑时是否禁用cmd+k快捷键
+  - 用户点击下面的部分接受时，上面是否出现 accept selected数量，类似3/5
+  - 部分accept的接受拒绝，和diff工具条同时出现吗？
+  - 点击Stop停止生成后，仍保持diff视图，显示未写完的代码，此时accept是否显示消耗积分
+  - 部分accept后，cmd+z回到原文件与最新文件的diff，还是回到原文件与agent返回的文件的diff视图
+  - addToChat发送到驾驶舱的消息接口，agent做什么响应
+  - 对话框消失后再显示需要恢复prompt吗
+- cmd+k api需要支持 uRemakeFile, uStopRemakingFile, uRegenerateAlternative?
+  - 需要单独发送selectedContent对应的代码字符串吗
+  - accept/reject在前端给用户操作, 用户reject后agent需要知道吗，目前操作的粒度是全部
+    - 由前端接受拒接且agent不需要知道， 修改粒度为每个变更块suggestedBlock
+  - 追加修改需要新增单独的uFollowUpRemakeFile事件吗，追加的范围默认是上次修改的范围
+    - 追加需要追加的提示词
+  - 需要新增单独的uRegenerateAlternative的事件吗, 可以一次返回多个
+  - regenerate是否需要切换回旧版代码的ui 
+    - 暂时不做新的ui交互
+  - sdk和前端的通信方式，弹出框如何让paas和agent通信
+
+- cmd+k交互细节
+  - diff内容滚动到窗口之外时，会作为悬浮框固定显示在顶部
+  - 打字动画的diff，不会滚动页面
+  - followup不是按钮，而是输入框
+
+- diff工具条显示的条件时机和位置
+  - regenerate 什么
+  - edit
+  - undo
 
 ## proj-idepaas-sdk
 

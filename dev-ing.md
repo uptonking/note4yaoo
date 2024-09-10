@@ -416,10 +416,15 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
   - dev-discuss
     - cmdk后直接编辑，是否立即更新文档，特别是多人协作的场景是否支持diff-view协作
       - 用户ua在cmdk后显示doc2(与原文档doc1进行diff)，编辑在doc2；用户ub仍显示和编辑doc1
+      - cursor支持直接编辑最新doc2
     - message chunk stop
     - 输入框与editor绑定，这样能支持多editor
     - 大多数cmdk的变更块只有1个，此时diff-view的实现可采用简化版实现单红单绿
       - 若cmdk的变更块超过1个，上下布局的diff-view方便确定范围，但agent返回不是多个范围
+    - more
+      - 💡 悬浮状态的指令输入框实现时应该使用单独的dom，这样可以减少reflow, 还可以解决输入框因文档长导致输入框元素未被viewport渲染时不能作为sticky元素
+      - 指令输入框与diff-view无关，在diff下触发cmdk会聚焦到输入框
+      - cursor的指令输入框可以被del键删掉
 
 - not-yet
   - 驾驶舱action列表支持打开文件
@@ -455,7 +460,34 @@ console.log(';; steps ', taskState, currentOpenedActionId, currentPlayedActionId
 console.log(';; machine ', taskState, runningTaskAction, task?.task_steps)
 ```
 
-## 0908
+## 0910
+
+- 刚我排查了点击时光机已执行成功的action打开编辑器一直显示骨架屏未显示diff视图的问题
+  - 原因是staging.app.clackyai.com环境下queryCustomizeFrameData没有返回快照数据，staging.app.clacky.ai环境下能正常返回快照数据因而不存在这个问题
+  - 明天需要检查下ideServer的部署，我之后会在前端补充打开文件时的异常处理
+
+昨天：
+- 解决cmd+k指令输入框无法获取focus的问题
+- 处理agent的返回，并渲染diff视图 (40%)
+
+今天：
+- 实现并测试cmd+k主流程的逻辑，并提交pr
+- 开始实现部分accept
+
+## 0909
+
+上周：
+- 修复时光机的播放控制，暂停和恢复
+- 修复时光机进度条和驾驶舱action状态的一致性
+- 基本实现了cmd+k快捷键的唤起隐藏
+
+本周：
+- 交付cmd+k的主要功能和打字效果，尽量对齐cursor的cmd+k的体验
+- action的rerun
+- 实现diff工具条
+
+今日：
+- 交付cmd+k的主要功能，并提pr
 
 ## 0907
 
@@ -480,36 +512,6 @@ console.log(';; machine ', taskState, runningTaskAction, task?.task_steps)
 - dev-to
   - 需要和agent、产品、设计确认cmd+k及diff工具条的功能细节和交互细节
   - 如何让paas和agent通信
-
-- ✨ cmd+k， 主流程是用户输入需求，agent返回建议的代码
-  - 对于不清晰的用户需求，cmd+k如何处理，需不需要澄清, ui交互是否要补充
-  - agent工作编辑时是否禁用cmd+k快捷键
-  - 用户点击下面的部分接受时，上面是否出现 accept selected数量，类似3/5
-  - 部分accept的接受拒绝，和diff工具条同时出现吗？
-  - 点击Stop停止生成后，仍保持diff视图，显示未写完的代码，此时accept是否显示消耗积分
-  - 部分accept后，cmd+z回到原文件与最新文件的diff，还是回到原文件与agent返回的文件的diff视图
-  - addToChat发送到驾驶舱的消息接口，agent做什么响应
-  - 对话框消失后再显示需要恢复prompt吗
-- cmd+k api需要支持 uRemakeFile, uStopRemakingFile, uRegenerateAlternative?
-  - 需要单独发送selectedContent对应的代码字符串吗
-  - accept/reject在前端给用户操作, 用户reject后agent需要知道吗，目前操作的粒度是全部
-    - 由前端接受拒接且agent不需要知道， 修改粒度为每个变更块suggestedBlock
-  - 追加修改需要新增单独的uFollowUpRemakeFile事件吗，追加的范围默认是上次修改的范围
-    - 追加需要追加的提示词
-  - 需要新增单独的uRegenerateAlternative的事件吗, 可以一次返回多个
-  - regenerate是否需要切换回旧版代码的ui 
-    - 暂时不做新的ui交互
-  - sdk和前端的通信方式，弹出框如何让paas和agent通信
-
-- cmd+k交互细节
-  - diff内容滚动到窗口之外时，会作为悬浮框固定显示在顶部
-  - 打字动画的diff，不会滚动页面
-  - followup不是按钮，而是输入框
-
-- diff工具条显示的条件时机和位置
-  - regenerate 什么
-  - edit
-  - undo
 
 ```JS
 // uRemakeFile request parameters, 'uRemakeFile'

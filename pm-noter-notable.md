@@ -53,6 +53,18 @@ modified: 2023-11-28T14:48:45.910Z
     - whisper-editor
   - ~~open folder as site~~, 通常发布的站点都会多次处理内容，任意文件夹无意义, 只是toc显示不同内容而已
 
+- 特色功能点
+  - localizable note file(not local-first)
+  - keyboard shortcuts(accessible): 参考office、vscode、浏览器不冲突
+  - api doc，生成openapi/swagger ui风格的文档
+    - 针对开发者的文档也有市场和融资，支持swagger/postman
+  - hero block，类似在一页ppt上只显示一个大号的单词/短语，以醒目突出
+  - examples as notes
+  - instant-preview
+    - 类似typora的即时预览，可选择 行内/上下 两种结构
+    - 类似observable-notebook的上下结构可减少页面reflow
+  - dev-tools, instead of wrapper like react-ag-grid，需要大量时间，可跨平台
+
 - 难点
   - 对于嵌入到note中的本地媒体资源如图片、视频、音频，如何解析、存储、渲染更好
 
@@ -61,17 +73,6 @@ modified: 2023-11-28T14:48:45.910Z
     - 复刻vscode的文件管理器
     - 支持多个sidebar
     - 支持多种排序，包括创建时间、修改时间、tag
-
-- 特色功能点
-  - localizable note file(not local-first)
-  - keyboard shortcuts(accessible): 参考office、vscode、浏览器不冲突
-  - api doc，生成openapi/swagger ui风格的文档
-  - hero block，类似在一页ppt上只显示一个大号的单词/短语，以醒目突出
-  - examples as notes
-  - instant-preview
-    - 类似typora的即时预览，可选择 行内/上下 两种结构
-    - 类似observable-notebook的上下结构可减少页面reflow
-  - dev-tools, instead of wrapper like react-ag-grid，需要大量时间，可跨平台
 
 - interactive-doc
   - wysiwyg + codesandbox 编辑类

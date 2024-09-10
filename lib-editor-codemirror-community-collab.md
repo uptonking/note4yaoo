@@ -18,6 +18,15 @@ modified: 2024-05-02T05:51:12.370Z
 # discuss-undo/history
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Disable CTRL-Z (undo) for the very first change - v6 - discuss. CodeMirror _202203](https://discuss.codemirror.net/t/disable-ctrl-z-undo-for-the-very-first-change/4202)
+  - The problem I have is that if a user presses CTRL-Z after the initial setting of the value, the whole content disappears. 
+- If you create the new state with the content already in it, instead of firing a separate transaction that sets it, undo won’t delete it.
+- You can also annotate your transaction with an `AddToHistory.of(false)` , can be any change.
+
 - ## 💡 [editor.setHistory(), clearHistory() equivalent in Codemirror #6 - v6 - discuss. CodeMirror _202304](https://discuss.codemirror.net/t/editor-sethistory-clearhistory-equivalent-in-codemirror-6/6291/1)
   - each file has its own undo-redo history. We store history of each file by calling editor.getHistory() and storing in a Map. Whenever you switch the files, we load the history for that file and call editor.setHistory. This worked well in CM 5
 - Usually, in situations like this, you just want to store the entire editor state (either as a JS object, or, if you need to serialize it, via EditorState.toJSON) rather than storing the document and history separately.

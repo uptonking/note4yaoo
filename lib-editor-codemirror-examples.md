@@ -137,6 +137,8 @@ modified: 2023-06-23T12:46:53.288Z
   - [Explore monaco editor integration · jupyterlab/jupyterlab](https://github.com/jupyterlab/jupyterlab/issues/135)
   - [Update Codemirror to version 6 _202106](https://github.com/jupyterlab/jupyterlab/issues/10370)
     - [pr已合并: Migrate to Codemirror 6 _202207](https://github.com/jupyterlab/jupyterlab/pull/11638)
+  - https://github.com/osscar-org/widget-code-input /BSD/202406/python/js
+    - A jupyter widget to allow input of a python function, with syntax highlighting
   - https://github.com/jupyter/nbdime /BSD/202408/python/ts
     - 🆚️ Tools for diffing and merging of Jupyter notebooks.
 - https://github.com/pretzelai/pretzelai /AGPL/202408/ts/python
@@ -183,14 +185,15 @@ modified: 2023-06-23T12:46:53.288Z
   - https://github.com/Zettlr/Zettlr/tree/develop/source/common/modules/markdown-editor/plugins
     - 🔌 ext实现了typewriter(当前行居中),contextMenu,statistics-fields,toc
 
-- https://github.com/sourcegraph/openctx/tree/main/client/codemirror /apache2/202405/ts
-  - https://openctx.org/playground
-  - implements a CodeMirror extension that shows OpenCtx items in the editor
-  - OpenCtx shows you contextual info about code from your dev tools, in your editor, in code review, and anywhere else you read code
-  - https://github.com/sourcegraph/codeintellify /MIT/202111/ts/archived
-    - Adds code intelligence to code views on the web
-    - This library manages all of the inputs (mouse/keyboard events, location changes, hover information, and hover actions) necessary to display hover tooltips on with a code view.
-    - 依赖rxjs、sourcegraph
+- https://github.com/tidbcloud/tisqleditor /MIT/202408/ts
+  - https://tisqleditor.vercel.app/
+  - https://tisqleditor.vercel.app/playground
+  - https://tisqleditor.vercel.app/examples?ex=all&theme=default
+  - old-eg
+    - https://tisqleditor-playground.netlify.app/
+  - CodeMirror6 based SQL code editor which is used in TiDB Cloud Console
+  - Supply React component and Vue component
+  - 提供了ai-widget
 
 - https://github.com/vizhub-core/vzcode /MIT/202406/ts/js(server)
   - VZCode: Multiplayer Code Editor
@@ -216,6 +219,15 @@ modified: 2023-06-23T12:46:53.288Z
     - possible to extend the core with plugins
   - https://github.com/vizhub-core/codemirror-6-experiments /MIT/201811/js
     - [Codemirror 6 Experiments _201811](https://currankelleher.medium.com/codemirror-6-experiments-a3930bf03781)
+
+- https://github.com/sourcegraph/openctx/tree/main/client/codemirror /apache2/202405/ts
+  - https://openctx.org/playground
+  - implements a CodeMirror extension that shows OpenCtx items in the editor
+  - OpenCtx shows you contextual info about code from your dev tools, in your editor, in code review, and anywhere else you read code
+  - https://github.com/sourcegraph/codeintellify /MIT/202111/ts/archived
+    - Adds code intelligence to code views on the web
+    - This library manages all of the inputs (mouse/keyboard events, location changes, hover information, and hover actions) necessary to display hover tooltips on with a code view.
+    - 依赖rxjs、sourcegraph
 
 - https://github.com/KittyCAD/modeling-app /MIT/202408/rust/ts
   - https://kittycad.io/modeling-app/download
@@ -1725,13 +1737,6 @@ modified: 2023-06-23T12:46:53.288Z
   - Yaade is an open-source, self-hosted, collaborative API development environment.
   - I was looking for a self-hosted Postman alternative 
   - I've been using both codemirror and lezer in Yaade 
-
-- https://github.com/tidbcloud/tisqleditor /MIT/202408/ts
-  - https://tisqleditor.vercel.app/
-  - https://tisqleditor.vercel.app/examples?ex=all&theme=default
-  - CodeMirror6 based SQL code editor which is used in TiDB Cloud Console
-  - Supply React component and Vue component
-  - 提供了ai-widget
 
 - https://github.com/surrealdb/codemirror /apache2/202408/ts/js
   - This library provides full support for the SurrealQL language within your CodeMirror editors.
