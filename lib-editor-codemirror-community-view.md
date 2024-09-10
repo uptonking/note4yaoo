@@ -14,7 +14,9 @@ modified: 2024-08-08T20:49:11.571Z
 
 - ## 
 
-- ## 
+- ## [codemirror 6 and textareas _202011](https://discuss.codemirror.net/t/codemirror-6-and-textareas/2731)
+  - With codemirror 5 you can use CodeMirror.fromTextArea() to create an editor from a tag which I really like since it lets users without JS still do things and makes it easier to send data with an html form.
+- This was always a dodgy hack (it involves replacing the surrounding form’s submit method, among other things) that leaks quite a bit (for example if you expect your textarea’s value to be kept in sync with the editor content), so I’m kind of happy to get away from it. It’d be easy to write something similar as a separate module, of course.
 
 - ## 🌰 [Dynamic light mode / dark mode - how? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/dynamic-light-mode-dark-mode-how/4709)
 - `this.view.dispatch({ effects: this.editorTheme.reconfigure( selectedTheme === "light" ? oneLight : oneDark ) })` ; 
@@ -43,6 +45,35 @@ window.matchMedia('(prefers-color-scheme: dark)')
 - https://x.com/hamiltonulmer/status/1822120260910383419
   - thinking about experimenting with a canvas-driven layer for CodeMirror (for cursors and selections, not text). 
   - Goal would be to enable richer animations not achievable with css e.g. show cursor motion blur when jumping around
+# discuss-readonly
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Switch between editor being editable or not - v6 ](https://discuss.codemirror.net/t/switch-between-editor-being-editable-or-not/2745)
+- reuse the Compartment instance to alter the editable state
+  - Looking more into Configuration example
+
+- [Implement some kind of read-only mode ](https://github.com/codemirror/dev/issues/173)
+  - By default, if the editor isn't focusable, it also won't receive key events, so you can't ctrl-v on it. But I guess if you add a `tabindex` attribute to make it focusable you will have key bindings firing on the editor.
+  - Since @codemirror/state 0.19.2, there's also a `readOnly` facet, on the state, which controls whether the content is supposed to be read-only (and is respected by commands and such). This is separate from the editable facet, which only controls whether the DOM for the content is focusable/editable.
+# discuss-void/form
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 💡 [Focusing inputs within widgets - v6 _202210](https://discuss.codemirror.net/t/focusing-inputs-within-widgets/5178)
+- Widgets intentionally always get set to `contenteditable=false` , or they would become part of CodeMirror’s editable content element. 
+  - You should be able to introduce new `contenteditable=true` child elements inside of them.
+
 # discuss-autocomplete
 - ## 
 
@@ -69,18 +100,16 @@ window.matchMedia('(prefers-color-scheme: dark)')
 
 - ## 
 
-- ## [How to add animation, keyframes in the basetheme? - v6 - discuss.CodeMirror](https://discuss.codemirror.net/t/how-to-add-animation-keyframes-in-the-basetheme/3561)
+- ## [How to add animation, keyframes in the basetheme? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/how-to-add-animation-keyframes-in-the-basetheme/3561)
 
 ```JS
 {
-   '@keyframes blink' : {
-      from: {backgroundColor: 'aliceblue'},
-      to: {backgroundColor: 'black'}
-    }
+  '@keyframes blink': {
+    from: { backgroundColor: 'aliceblue' },
+    to: { backgroundColor: 'black' }
+  }
 }
-
 ```
-
 
 - ## 💡 [A scalable CSS only Typewriter Effect - DEV Community _202108](https://dev.to/afif/a-scalable-css-only-typewriter-effect-2opn)
 - Here is a simple typewriter effect with only a few lines of CSS where you don't need to deal with any js code.

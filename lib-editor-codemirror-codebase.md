@@ -10,7 +10,7 @@ modified: 2024-05-02T06:41:19.983Z
 # guide
 
 # not-yet
-
+- document是否总以换行符结尾
 # overview
 
 # architecture

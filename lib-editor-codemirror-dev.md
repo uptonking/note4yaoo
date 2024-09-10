@@ -235,7 +235,8 @@ modified: 2021-05-06T09:38:31.520Z
   - 方便实现非行内的跨block的评论，行内评论和块级评论
   - 复制文本时不需要带上评论数据, 处理复制粘贴更简单
 
-- To completely reset a state—for example to load a new document—it is recommended to create a new state instead of a transaction. That will make sure no unwanted state (such as undo history events) sticks around.
+- To completely reset a state—for example to load a new document—it is recommended to create a new state instead of a transaction. 
+  - That will make sure no unwanted state (such as undo history events) sticks around.
 
 - Querying coordinates for positions outside of the current viewport will not work (since they are not rendered, and thus have no layout).
 

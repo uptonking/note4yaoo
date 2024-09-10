@@ -10,7 +10,7 @@ modified: 2024-05-02T02:00:47.318Z
 > CodeMirror is a code editor component for the web.
 
 # guide
-- codemirror的架构主要分3方面: model, view, extension
+- codemirror的架构主要分3方面: model/state, view, extension
 # docs
 
 ## overview
@@ -60,7 +60,7 @@ modified: 2024-05-02T02:00:47.318Z
   - (If you really need to combine lists of changes where later changes refer to the document created by earlier ones, you can use the change set `compose` method.)
 
 - Alongside the document, an editor state stores a current `selection`. 
-  - Selections may consist of multiple ranges, each of which can be a cursor (empty) or cover a range between its anchor and head).
+  - Selections may consist of multiple ranges, each of which can be a cursor (empty) or cover a range between its anchor and head.
   - Overlapping ranges are automatically merged, and ranges are sorted, so that a selection's ranges property always holds a sorted, non-overlapping array of ranges.
 - One of these ranges is marked as the `main` one. This is the one that the browser's DOM selection will reflect. The others are drawn and handled entirely by the library.
 - By default a state will only accept selections with a single range. 
@@ -170,23 +170,12 @@ modified: 2024-05-02T02:00:47.318Z
 - Extension Architecture
 - To create a given piece of editor functionality you often need to combine different kinds of extension: a state field to keep state, a base theme to provide styling, a view plugin to manage in- and output, some commands, maybe a facet for configuration.
 - A common pattern is to export a function that returns the extension values necessary for your feature to work. 
-  - Making this a function, even if it doesn't (yet) take parameters is a good idea—it makes it possible to add configuration options later, without breaking backwards compatiblity.
+  - Making this a function, even if it doesn't (yet) take parameters is a good idea—it makes it possible to add configuration options later, without breaking backwards compatibility.
 - Since extensions can pull in other extensions, it can be useful to consider what happens when your extension is included multiple times. 
 - It is usually possible to make multiple uses of an extension just do the right thing by relying on the deduplication of identical extension values—if you make sure you create your static extension values (themes, state fields, view plugins, etc) only once, and always return the same instance from your extension constructor function, you'll only get one copy of them in the editor.
 - what do you do when the different instances of the extension got different configurations?
-  - Sometimes, that's just an error. But often, it is possible to define a strategy for reconciling them. Facets work well for this. You can put the configuration in a module-private facet, and have its combining function either reconcile configurations or thow an error when this is impossible. Then code that needs access to the current configuration can read that facet.
+  - Sometimes, that's just an error. But often, it is possible to define a strategy for reconciling them. Facets work well for this. You can put the configuration in a module-private facet, and have its combining function either reconcile configurations or throw an error when this is impossible. Then code that needs access to the current configuration can read that facet.
   - See the `zebra` stripes example for an illustration of this approach.
-# api
-- Annotations are tagged values that are used to add metadata to transactions in an extensible way. 
-  - They should be used to model things that effect the entire transaction (such as its time stamp or information about its origin). 
-  - For effects that happen alongside the other changes made by the transaction, state effects are more appropriate.
-- State effects can be used to represent additional effects associated with a transaction. 
-  - They are often useful to model changes to custom state fields, when those changes aren't implicit in document or selection changes.
-
-- 
-- 
-- 
-
 # v5
 - [CodeMirror 5 v5.61.0](https://int-heuristweb-prod.intersect.org.au/HEURIST/HEURIST_SUPPORT/external_h7/codemirror-5.61.0/)
 - [CodeMirror: User Manual v5.25.1](https://www-sop.inria.fr/teams/marelle/coq-18/jscoq/ui-external/CodeMirror/doc/manual.html)
