@@ -436,6 +436,19 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
   - ~~私有项目的导入~~
   - ~~多标签打开同一个cde，文件树的头像会显示2个~~
 
+- develop环境：
+  - paas url: https://develop.clackypaas.com
+  - agent: https://develop.agent.clacky.ai
+  - backend: https://develop.api.clacky.ai
+  - app: https://develop.app.clacky.ai
+  - website: https://develop.clacky.ai
+- staging:
+  - paas url: https://staging.clackypaas.com
+  - agent: https://staging.agent.clackyai.com
+  - backend: https://staging.api.clackyai.com
+  - app: https://staging.app.clackyai.com
+  - website: https://staging.clackyai.com
+
 ## 090
 
 - dev-log
@@ -444,6 +457,12 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
   - ?
 
  
+
+```
+NEXT_PUBLIC_AGENT_SOCKET_URL=wss://develop.agent.clacky.ai
+NEXT_PUBLIC_PAAS_MANAGER_API_ORIGIN=https://develop.clackypaas.com
+BACKEND_API_URL=https://develop.api.clacky.ai
+```
 
 ```JS
 console.log(
@@ -459,6 +478,16 @@ console.log(';; steps ', taskState, currentOpenedActionId, currentPlayedActionId
 
 console.log(';; machine ', taskState, runningTaskAction, task?.task_steps)
 ```
+
+## 0911
+
+昨日：
+- 继续实现cmd+k，处理agent的返回，并渲染diff视图
+- 排查clacky在新环境下部分功能不work的问题
+
+今日：
+- 继续处理clacky在新环境下部分功能不work的问题
+- 实现cmd+k的undo
 
 ## 0910
 

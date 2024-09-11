@@ -12,17 +12,24 @@ modified: 2024-09-10T11:29:46.166Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 💡 [Modifying decorations from another plugin - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/modifying-decorations-from-another-plugin/4728)
+- No, that’s not something the library makes possible, you’d have to somehow arrange for the code that creates the decorations to add a hook (facet, probably) for this.
+- Is there a way to list all the facets? Unfortunately they do not provide a comprehensive API or reference.
+  - No. Facets are just values, and not registered anywhere centrally.
 
-- ## 
+- ## [Conflicting widget and mark decorations on empty line in CM6 - v6 - discuss. CodeMirror _202108](https://discuss.codemirror.net/t/conflicting-widget-and-mark-decorations-on-empty-line-in-cm6/3487)
+- Marks will wrap around widgets (and other marks) with higher precedence. So wrapping your extension in a `Prec.fallback` to make sure it has lower precedence than the lint marks might help in this case.
+- I see what’s happening now—the lint module uses EditorView.decorations to provide decorations from the state, and you use a view plugin providing them through a plugin field. 🤔 Plugin decorations currently always have a higher precedence than facet decorations. Which is problematic, I guess. I’ll spend some time thinking about how to better handle that — it seems this is a good illustration of the fact that client code needs full control over the ordering of decoration precedence.
+  - I have a design for providing better control over precedence, but it’d be hard to pull off in a backwards-compatibly way, so it’ll have to wait until the next major version. 
 
-- ## [add class to gutter of line - discuss. CodeMirror](https://discuss.codemirror.net/t/add-class-to-gutter-of-line/4602)
-- Creating space between lines should definitely not be done in the gutter — the gutter element positioning is based on the heights of the block elements in the content, not the other way around. A line decoration should be able to add extra padding to a line (margins on block elements are not supported), or, possibly cleaner, use a block widget decoration to add an element between the lines.
+- ## 💡 [add class to gutter of line - discuss. CodeMirror](https://discuss.codemirror.net/t/add-class-to-gutter-of-line/4602)
+- Creating space between lines should definitely not be done in the gutter — the gutter element positioning is based on the heights of the block elements in the content, not the other way around. 
+  - A line decoration should be able to add extra padding to a line (margins on block elements are not supported), or, possibly cleaner, use a block widget decoration to add an element between the lines.
 
 - ## 🤔💡 [Preferred way to create multi-line widget? - discuss. CodeMirror _202208](https://discuss.codemirror.net/t/preferred-way-to-create-multi-line-widget/4865)
 - Directly via EditorView.decorations. Put the decorations in a state field, not a plugin, so that they are available before the viewport is computed.
 
-- If you want to render widgets that are guaranteed to be only inline (i.e. Markdown links), then you should define a ViewPlugin. Those get called after the viewport has been created and are therefore much cheaper. Also, you can make use of the view.visibleRanges-property which enables you to only render those widgets for any actually visible ranges (i.e. must be within the viewport and additionally not be folded).
+- If you want to render widgets that are guaranteed to be only inline (i.e. Markdown links), then you should define a ViewPlugin. Those get called after the viewport has been created and are therefore much cheaper. Also, you can make use of the `view.visibleRanges`-property which enables you to only render those widgets for any actually visible ranges (i.e. must be within the viewport and additionally not be folded).
   - The example for inline-only-widgets is the Boolean Toggle Widgets example
 - If you have widgets that may also be block-level and not just inline you have to, as Marijn said, call StateField.define(). You can – more or less – provide the same logic to compute the widgets, but since StateFields are computed prior to rendering, you can also provide block-level widgets.
   - The example for the inline and block widgets is the Underline command example. (The trick is to understand that you can also underline pieces of text that span line breaks, even if you don’t underline full lines. To me, for the past weeks, it always seemed to me inline-only just as well.)
@@ -30,6 +37,45 @@ modified: 2024-09-10T11:29:46.166Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 💡 [the block widget disappeared after add or remove a new line - discuss. CodeMirror](https://discuss.codemirror.net/t/the-block-widget-disappeared-after-add-or-remove-a-new-line/4855)
+- I tried to simulate the onchange event here but don’t know how to do it properly. I am using a react version of CM
+  - If by onChange you mean updateListener, that’s expected. If you need to track state for changes, and use that for rendering, you’re probably going to have a better time keeping it in a state field.
+
+- ## 🌰 [Cursor to skip Decoration.replace - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/cursor-to-skip-decoration-replace/3902)
+- You may be looking for atomicRanges
+- I’ve been following the boolean toggle widget example but building a replace decoration instead of a widget and I want to make them atomic.
+
+- ## [How to get folded source code inside foldWidget.toDOM() from @codemirror/fold - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/how-to-get-folded-source-code-inside-foldwidget-todom-from-codemirror-fold/3527)
+- toDOM should just render the data that’s already in the widget object, not access anything external.
+
+- ## [How to wrap a range in an element - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/how-to-wrap-a-range-in-an-element/8341)
+  - When I traverse the snytax tree and come across Frontmatter, I would like to wrap the entire Frontmatter range in a div. is this possible?
+- No, it’s not possible to wrap a bunch of lines in a DOM element. You can style the lines with line decorations, but you cannot create any structure bigger than a line, except if you replace the entire set of lines with an (uneditable) block widget decoration.
+
+- ## [Recomputing gutter heights for line widgets - discuss. CodeMirror](https://discuss.codemirror.net/t/recomputing-gutter-heights-for-line-widgets/4351)
+- You can call `EditorView.requestMeasure` to ask the view to measure its content again when something changes dynamically.
+
+- ## [Best way to update widgets live while typing? - discuss. CodeMirror](https://discuss.codemirror.net/t/best-way-to-update-widgets-live-while-typing/3691)
+  - What’s the best way to update those widgets as the user is typing in the document
+- You could use `transaction.changes` to determine which range is changed, and only re-scan lines around that, using `RangeSet.update` to update the set of widget decorations.
+
+- ## [How to recognise if a widget is removed ? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/how-to-recognise-if-a-widget-is-removed/8180)
+- You could do a check where you see if the range set’s size changed after mapping, and if so, do a scan through it to figure out which widget that you still have in your outside data was removed.
+  - i was able to do it how you suggested, the Decoration as RangeSet got everything I needed
+
+- ## [How to use decoration widget as a function arguments - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/how-to-use-decoration-widget-as-a-function-arguments/7793)
+- You could add a `mousedown` handler to the widget that causes its extent to be selected, and set up the plugin that displays these to render those that are precisely selected as highlighted.
+
+- ## 🌰 [Link widget is clicked only if editor is out of focus - v6 - discuss. CodeMirror _202311](https://discuss.codemirror.net/t/link-widget-is-clicked-only-if-editor-is-out-of-focus/7433)
+- The issue is that your widget doesn’t define an eq method (and generally isn’t set up to be easily comparable), causing the editor to re-render it every time you recreate your decorations. This causes the link you’re clicking to disappear as the editor loses focus, breaking the browser’s native behavior.
+
+- ## [Atomic widget example - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/atomic-widget-example/4986)
+- You’re not including any key bindings, so you’re getting the browser’s native cursor motion and deletion behavior, which doesn’t know about the atomic ranges. Include the default keymap.
 
 - ## [Gutter marker next to decoration-replaced lines with a widget - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/gutter-marker-next-to-decoration-replaced-lines-with-a-widget/7075)
   - I want to show my own gutter marker next to block widget that’s created through Decoration.replace
@@ -84,42 +130,37 @@ modified: 2024-09-10T11:29:46.166Z
 
 - Widgets intentionally always get set to `contenteditable=false` , or they would become part of CodeMirror’s editable content element. 
   - You should be able to introduce new `contenteditable=true` child elements inside of them.
-# discuss-decoration-folding/hide/replace
+# discuss-markdown
 - ## 
 
-- ## [How to add classes to lines? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/how-to-add-classes-to-lines/3039)
-- after digging in a bit more, the piece I’m struggling with now is figuring out how to dig into the markdown parser to determine whether a given line is part of a code block
-  - Iterating over the syntax tree is probably the easiest approach.
+- ## 🌰 [Conditionally-rendered block replace decoration breaks selection rendering and gutter · Issue · codemirror/dev _202407](https://github.com/codemirror/dev/issues/1406)
+- I can see it behaving weirdly that way. This was an update issue where some parts of the view state didn't get recomputed though they should, for decoration changes like that, even if the resulting block heights didn't change. Attached patch should help with that.
 
-- ## 🌰 [How to define highlighting styles for blocks? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/how-to-define-highlighting-styles-for-blocks/4029)
-  - Is there any way to define styles for blocks (e.g., blockquote, codeblock)?
-- Not without defining an additional extension that adds some class to the lines that contain a code block (using `Decoration.line` ).
+- ## 🤔 [Conditionally showing Widgets using a StateField - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/conditionally-showing-widgets-using-a-statefield/6020)
+  - I’m trying to make sure those decorations only show when the cursor is NOT within the image tag. The idea is to have inline images throughout the document that are only visible when the user is not actively editing the image tag itself.
+  - I started writing code the StateField’s update method to update/filter the RangeSet that’s returned based on cursor position, but it’s not working as expected. Is there a better way to accomplish this?
 
-- ## 💡 [unable to decorate codeblocks/fenced code - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/unable-to-decorate-codeblocks-fenced-code/7585)
-  - I want to decorate the whole code block or fencedCode
-- You’d have to iterate over the lines touched by a given code block and add a decoration at the start of each.
+- No, this seems reasonable. As an optimization, you might be able to keep both the ‘full’ range set and the filtered one — have update logic that checks if the cursor is inside a range in the full set, returns the full set if not, and a filtered version if so.
 
-- ## 🌐️ [Translate block of text between view and state - v6 - discuss. CodeMirror _202308](https://discuss.codemirror.net/t/translate-block-of-text-between-view-and-state/6913)
-- You can replace pieces of the document with other content (using `Decoration.replace` ), but that content won’t be editable, so this doesn’t sound like it would do what you want. 
-  - I think you’ll need to do something like this at another level than the editor-view level—i.e. put the translated content in the editor state, possibly along with information about the position and origin of translated blocks, and do the translation outside of it.
+- ## [Using a Decoration instead of a markdown code block postprocessor - Developers: Plugin & API - Obsidian Forum _202404](https://forum.obsidian.md/t/using-a-decoration-instead-of-a-markdown-code-block-postprocessor/79718)
+  - I’ve developed a plugin that postprocesses Markdown code blocks that have an iframe language tagged on them, and then runs any JavaScript in that code block inside of an iframe.
+  - It looks like Obsidian has its own Markdown flavor, hypermarkdown, and the syntaxTree that you get if you write a ViewPlugin or StateField is that, and there doesn’t seem to be an actual element type for code blocks.
+  - Are there any plugins that do this, or documentation for it? Meaning, a plugin that exposes a ViewPlugin or StateField and uses the syntax tree generated in order to get the code within a code block?
 
-- ## [Creating a Decoration that updates on an interval - v6 - discuss. CodeMirror _202210](https://discuss.codemirror.net/t/creating-a-decoration-that-updates-on-an-interval/5121)
-  - I realized that view.dispatch() will refresh the gutters. I put that on an interval in my ViewPlugin and now my gutters update on an interval as I had hoped.
+- are you using: registerMarkdownCodeBlockProcessor ? That works in both reading mode and live preview.
 
-- Decorations aren’t stateful and don’t do imperative things. You’ll want the interval to be managed by a view plugin, which just replaces the decoration with a new one. 
-  - If you really need to keep the existing DOM of your widget and just update it, you can give your widget type an `updateDOM` method that takes a different widget instance and updates the DOM representation.
-- Can I use this technique with gutters? That is, can a view plugin provide gutters and/or update/replace gutters?
-  - Yes, you can do something similar with gutter markers.
-  - your plugin’s `provide` option can create a gutter that has access to the plugin, in order to read marks from it.
+- ## [Hide markdown syntax - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/hide-markdown-syntax/7602)
+- that’s what atomicRanges does—causes the whole range to be treated as a single thing for the purpose of cursor motion and backspacing. Some systems like this show the marks as text again when the cursor is on/near them.
 
-- ## [Decoration.mark() has lower precedense over styleTags()? - discuss. CodeMirror](https://discuss.codemirror.net/t/decoration-mark-has-lower-precedense-over-styletags/7397)
-- Wrapping your decoration extension in Prec.highest should probably fix this.
+# discuss-folding/hide/replace
+- ## 
 
-- ## 💡 [Composing multiple DecorationSets - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/composing-multiple-decorationsets/2922)
-- State-level decorations can be provided in bulk with `computeN` , something like…
-  - `EditorView.decorations.computeN(s => s.field(f))`
+- ## 
 
-- You could also create a view plugin providing multiple decoration sets by providing an array of plugin field providers for `PluginField.decorations` via the `provide` option in the plugin spec, but that only works if the number of sets is known in advance.
+- ## 
+
+- ## [Code folding for PostgreSQL doesn't work as expected. - v6 - discuss. CodeMirror _202403](https://discuss.codemirror.net/t/code-folding-for-postgresql-doesnt-work-as-expected/7993)
+- You can use `foldService` to provide custom, non-syntax-tree-based fold ranges if you want.
 
 - ## [a display bug - discuss. CodeMirror](https://discuss.codemirror.net/t/a-display-bug/4074)
   - i find that when i set parent node’s style display to none of CodeMirror, then use the replaceSelection() API to replace some contents, and then i set parent node’s style display to block, the contents of CodeMirror didn’t change until after i click the editor area. is this a bug?
@@ -155,12 +196,6 @@ modified: 2024-09-10T11:29:46.166Z
 - You can also use `RangeSet.of` with a second argument of true if you can’t sort the ranges
   - Or keep using a builder and add some extra logic to make sure you insert them in order.
 
-- ## 🤔 [Conditionally showing Widgets using a StateField - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/conditionally-showing-widgets-using-a-statefield/6020)
-  - I’m trying to make sure those decorations only show when the cursor is NOT within the image tag. The idea is to have inline images throughout the document that are only visible when the user is not actively editing the image tag itself.
-  - I started writing code the StateField’s update method to update/filter the RangeSet that’s returned based on cursor position, but it’s not working as expected. Is there a better way to accomplish this?
-
-- No, this seems reasonable. As an optimization, you might be able to keep both the ‘full’ range set and the filtered one — have update logic that checks if the cursor is inside a range in the full set, returns the full set if not, and a filtered version if so.
-
 - ## [Updating block-widgets // What is the order of the state update cycle, exactly? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/updating-block-widgets-what-is-the-order-of-the-state-update-cycle-exactly/8365)
 - I suspect, from your message, that you’re mutating your decorations, and expecting the method to run then? That’s not how these work—they are immutable like everything else you store in your state. You replace them with a widget of the same type to have updateDOM called.
 
@@ -193,10 +228,6 @@ modified: 2024-09-10T11:29:46.166Z
 
 - ## [Widget reuse between Decoration.replace and Decoration.widget - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/widget-reuse-between-decoration-replace-and-decoration-widget/6504)
 - This seems unproblematic to support. See this patch. _202305
-
-- ## [Cursor to skip Decoration.replace - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/cursor-to-skip-decoration-replace/3902)
-- You may be looking for atomicRanges
-- I’ve been following the boolean toggle widget example but building a replace decoration instead of a widget and I want to make them atomic.
 
 - ## [Decoration.replace side - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/decoration-replace-side/3682/3)
 - The inclusive options control the side. Replace widgets that are inclusive on a given side will cover any regular widgets at that position, whereas non-inclusive replacements won’t.
@@ -232,3 +263,67 @@ modified: 2024-09-10T11:29:46.166Z
 
 - ## [Custom Code Folding - v6 - discuss. CodeMirror _202206](https://discuss.codemirror.net/t/custom-code-folding/4643)
 - The general approach for that would be to iterate the parse tree scanning for nodes you want to fold (might have to read from the document to figure out property names), collect a bunch of fold effects, and dispatch those.
+
+# discuss-decoration
+- ## 
+
+- ## 
+
+- ## [Make decoration editable within non-editable instance - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/make-decoration-editable-within-non-editable-instance/5190)
+- I guess you could simply use a transaction filter. See the single-line editor example
+
+- ## [How to retain higher-order highlight style with Decoration.replace() - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/how-to-retain-higher-order-highlight-style-with-decoration-replace/3279)
+- Decorations with lower precedence now produce parent nodes wrapping the nodes created by decorations with higher precedence.
+  - I think the best way to find the bold text would be to iterate through the syntax tree—and that should also give you information about the text’s parent nodes, making it relatively straightforward to add classes for those.
+
+- ## 🗑️ [how to delete widget decoration when I press delete key? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/how-to-delete-widget-decoration-when-i-press-delete-key/3753)
+- The editor itself won’t do that (the command bound to delete by default just deletes text in the document, and isn’t aware of any non-document elements you may be showing), so you’d have to bind a custom command that notices the cursor is before such a decoration and somehow instructs the extension managing the decoration to remove it to delete (at a higher precedence than the default binding).
+
+- ## 🗑️ [Prevent user to delete decoration - discuss. CodeMirror](https://discuss.codemirror.net/t/prevent-user-to-delete-decoration/5793)
+- A change filter can be used to block certain kinds of changes. I’m not sure about preventing copying. Possibly a transaction filter that prevents the first character from ever being selected is what you want.
+
+- ## 🗑️ [Backspace on decoration with atomic ranges not working correctly - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/backspace-on-decoration-with-atomic-ranges-not-working-correctly/6641)
+- atomicRanges affects keyboard cursor motion and deletion, but does not prevent selections that point into the ranges in general. You could use a transaction filter if you want to guarantee that no functionality ever puts a selection end at some position.
+
+- ## [Prevent cursor position before a widget at the start of a line - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/prevent-cursor-position-before-a-widget-at-the-start-of-a-line/5745)
+- is it possible to place a widget decoration at the start of a line in such a way that the cursor can only be positioned on the line after the widget, not before it?
+  - A transaction filter is probably the best way to do this.
+
+- ## [Conflicting widget and mark decorations on empty line in CM6 - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/conflicting-widget-and-mark-decorations-on-empty-line-in-cm6/3487)
+- 
+
+- ## 🆚 [Detect cursor motion into atomicRanges widget - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/detect-cursor-motion-into-atomicranges-widget/6399)
+  - I tried transactionFilter it works by its own flawlessly. However, I don’t know how to prioritize it over atomicRange features.
+
+- If you don’t want the atomic range treatment, it seems you could just avoid marking your ranges as atomic, no?
+  - After two days, I have realized, I probably need to implement a custom version of atomicRanges where one could control this behavior, then there is no need in making more complicated version of atomic ranges.
+
+- ## [How to add classes to lines? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/how-to-add-classes-to-lines/3039)
+- after digging in a bit more, the piece I’m struggling with now is figuring out how to dig into the markdown parser to determine whether a given line is part of a code block
+  - Iterating over the syntax tree is probably the easiest approach.
+
+- ## 💡 [unable to decorate codeblocks/fenced code - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/unable-to-decorate-codeblocks-fenced-code/7585)
+  - I want to decorate the whole code block or fencedCode
+- You’d have to iterate over the lines touched by a given code block and add a decoration at the start of each.
+
+- ## 🌐️ [Translate block of text between view and state - v6 - discuss. CodeMirror _202308](https://discuss.codemirror.net/t/translate-block-of-text-between-view-and-state/6913)
+- You can replace pieces of the document with other content (using `Decoration.replace` ), but that content won’t be editable, so this doesn’t sound like it would do what you want. 
+  - I think you’ll need to do something like this at another level than the editor-view level—i.e. put the translated content in the editor state, possibly along with information about the position and origin of translated blocks, and do the translation outside of it.
+
+- ## ⏱️ [Creating a Decoration that updates on an interval - v6 - discuss. CodeMirror _202210](https://discuss.codemirror.net/t/creating-a-decoration-that-updates-on-an-interval/5121)
+  - I realized that view.dispatch() will refresh the gutters. I put that on an interval in my ViewPlugin and now my gutters update on an interval as I had hoped.
+
+- Decorations aren’t stateful and don’t do imperative things. You’ll want the interval to be managed by a view plugin, which just replaces the decoration with a new one. 
+  - If you really need to keep the existing DOM of your widget and just update it, you can give your widget type an `updateDOM` method that takes a different widget instance and updates the DOM representation.
+- Can I use this technique with gutters? That is, can a view plugin provide gutters and/or update/replace gutters?
+  - Yes, you can do something similar with gutter markers.
+  - your plugin’s `provide` option can create a gutter that has access to the plugin, in order to read marks from it.
+
+- ## [Decoration.mark() has lower precedense over styleTags()? - discuss. CodeMirror](https://discuss.codemirror.net/t/decoration-mark-has-lower-precedense-over-styletags/7397)
+- Wrapping your decoration extension in Prec.highest should probably fix this.
+
+- ## 💡 [Composing multiple DecorationSets - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/composing-multiple-decorationsets/2922)
+- State-level decorations can be provided in bulk with `computeN` , something like…
+  - `EditorView.decorations.computeN(s => s.field(f))`
+
+- You could also create a view plugin providing multiple decoration sets by providing an array of plugin field providers for `PluginField.decorations` via the `provide` option in the plugin spec, but that only works if the number of sets is known in advance.

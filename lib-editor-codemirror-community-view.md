@@ -47,6 +47,22 @@ window.matchMedia('(prefers-color-scheme: dark)')
 - https://x.com/hamiltonulmer/status/1822120260910383419
   - thinking about experimenting with a canvas-driven layer for CodeMirror (for cursors and selections, not text). 
   - Goal would be to enable richer animations not achievable with css e.g. show cursor motion blur when jumping around
+# discuss-blocks/notion-like
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Multiple Editable Columns with CodeMirror 6 - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/multiple-editable-columns-with-codemirror-6/8514)
+  - My north star goal is to provide a Layout experience similar to that of Confluence/Notion
+- I had a very positive experience with just replacing decoration widgets (width:100%). One can make them mutable (they can change the content on the covered ranges using basic transactions) and provide a transaction filter or something similar so that if a cursor goes into the region of the widget, it will move the focus into the nested codemirror editor.
+
+- 
+- 
+- 
+- 
+
 # discuss-readonly
 - ## 
 
@@ -67,6 +83,13 @@ window.matchMedia('(prefers-color-scheme: dark)')
 - ## 
 
 - ## 
+
+- ## [Access Decorations from tooltip (or vise versa) - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/access-decorations-from-tooltip-or-vise-versa/5462)
+- The callback given to `hoverTooltip` could use the range set holding the decorations to figure out whether there’s a match at the hovered position, if hover tooltips are what you are trying to implement. If these are always-visible things, I guess you could use the decorate option to generate both mark decorations and widgets for a given match
+- Supposedly you’re storing the range set produced by `MatchDecorator` in some view plugin, which you could access in the callback, so that you don’t have to look at all decorations, only the relevant ones.
+
+- ## [Is it possible to add a Widget Decoration instead of text while selecting a variable from auto complete? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/is-it-possible-to-add-a-widget-decoration-instead-of-text-while-selecting-a-variable-from-auto-complete/6751)
+- Roughly, you’d want to set up an extension that manages these widget decorations, and dispatch a transaction (probably with a custom effect attached) that creates the widget.
 
 - ## 🤔 [Implement a code hinting style in CodeMirror 6 similar to the GitHub Copilot extension in VSCode - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/implement-a-code-hinting-style-in-codemirror-6-similar-to-the-github-copilot-extension-in-vscode/6058)
 - Since that only shows a single suggestion, rather than a list of them, I think it is different enough from what the autocompletion package is doing to go with a completely separate implementation.
@@ -226,7 +249,16 @@ window.matchMedia('(prefers-color-scheme: dark)')
   - ‘:+1:’.length is 2 and that doesn’t any longer match with rune length in Go that is 1 and applying ChangeSet fails.
 - CodeMirror intentionally uses UTF16 code point counts throughout, in order to be able to use String.length. If you are using another convention in the OT system, you’ll have to make sure you convert to and from that when going between CodeMirror and that system. Forking @codemirror/state is not going to be needed.
 
-# discuss-cm-view-render
+# discuss-styling
+- ## 
+
+- ## 
+
+- ## [Inline Codemirror inside Prosemirror? - discuss. CodeMirror _202311](https://discuss.codemirror.net/t/inline-codemirror-inside-prosemirror/7396)
+- Is it possible to embed an inline CodeMirror view inside ProseMirror? I was thinking as an inline node, meaning instead of being a full width div, it just expands as the user types.
+  - no, CodeMirror assumes it is a block element, so for this you’d have to wrap it in some kind of `inline-block` container and add a kludge that constantly resizes it to match its content size. It won’t work as a regular content-fitting inline element.
+
+# discuss-view-render
 - ## 
 
 - ## 
@@ -248,6 +280,16 @@ window.matchMedia('(prefers-color-scheme: dark)')
   - .cm-previously-run is a child of .cm-line, wraps text as selection. Use pseudoelements w/ z-index to draw bg + left/right (::before) and top/bottom (::after)
   - make sure this is below .cm-selectionLayer so you can apply mix-blend-mode: multiply and darken the selection
   - by putting the pseudoelements in explicit stacking order, you kind of "cover up" the top & bottom borders, giving the outline effect. So it's a hack, but is much nicer to do this w/ just CSS than to wrangle contiguous borders with JS or something
+
+# discuss-event-focus/blur
+- ## 
+
+- ## 
+
+- ## 📱 [What is the purpose of settimeout of 10ms in updateForFocusChange? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/what-is-the-purpose-of-settimeout-of-10ms-in-updateforfocuschange/8369)
+  - codemirror’s blur happens after a 10ms timeout, making it the last event, occurring after my event
+- There are several types of interactions that will cause the editor to lose and then immediately regain focus (people implementing buttons that steal focus on mousedown but then immediately move it back to the editor, our own kludge for dealing with Android inappropriately closing the virtual keyboard in some situations). This timeout tries to isolate code tracking focus state from that kind of phantom(幽灵；幻觉) focus changes.
+  - If you want to directly track DOM focus state, I’d recommend using a DOM event observer rather than an update listener. Those get the raw DOM events.
 
 # discuss-event-scroll
 - ## 
@@ -282,6 +324,13 @@ view.scrollDOM.scrollTo({ qq, behavior: 'smooth' });
 
 - ## 
 
-- ## 
+- ## [Implement draggable ranges/object through mouse curser. - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/implement-draggable-ranges-object-through-mouse-curser/4655)
+- Is this dropCursor?
 
-- ## 
+- ## [Drag & Drop Widget Decorator - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/drag-drop-widget-decorator/7338)
+  - I have made the widget dom draggable and set the dropCursor extension in my cm configuration. My approach would to read the dropped cursor effect that the dropCursor dispatches and use that to move my widget, but two issues arise
+  - In short, I want to drag a widget and when dropped read the cursorDrop anchor position, then dispatch the widget update.
+  - It’s a Widget that replaces some text and I want to drag the resulting dom. So far dragging the widget is not a problem, but dropping it and making sense of it after.
+
+- ~~You can add a `dragstart` handler on the widget, and do `event.dataTransfer.setData("text/plain", ...)` in your handler to set the content. (`dragstart` doesn’t propagate, so the editor’s drag handler doesn’t even fire in this situation)~~
+  - Looking at this more closely, it seems that `dragstart` does bubble, and there’s a better solution for this. 

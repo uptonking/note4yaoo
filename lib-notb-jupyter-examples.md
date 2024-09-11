@@ -102,6 +102,14 @@ modified: 2024-06-30T03:20:21.444Z
   - Quickly explore dataframes, and run pandas commands via a GUI. 
   - Works inside the jupyter notebook.
   - When you run `import buckaroo` in a Jupyter notebook, Buckaroo becomes the default display method for Pandas and Polars DataFrames
+
+- https://github.com/pyodide/pyodide /12kStar/MPLv2/202409/python/c/ts
+  - https://pyodide.org/en/stable/
+  - Pyodide is a Python distribution for the browser and Node.js based on WebAssembly
+  - Pyodide is a port of CPython to WebAssembly/Emscripten.
+  - Pyodide makes it possible to install and run Python packages in the browser with micropip. Any pure Python package with a wheel available on PyPi is supported. 
+  - Pyodide comes with a robust Javascript ⟺ Python foreign function interface so that you can freely mix these two languages in your code with minimal friction
+  - [Related Projects](https://github.com/pyodide/pyodide/blob/main/docs/project/related-projects.md)
 # notebooks-like
 - https://github.com/pennant-notebook
   - https://pennant-notebook.github.io/

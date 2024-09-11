@@ -37,6 +37,18 @@ view.dispatch({ changes: { from: line.from, to: line.to, insert: 'New text for t
 
 - ## 
 
+- ## 
+
+- ## [Nested editors, kind of. - v6 - discuss. CodeMirror _202207](https://discuss.codemirror.net/t/nested-editors-kind-of/4654)
+- This should be possible (if somewhat messy) using a technique similar to the split view example. But you’ll have to offset your change sets by the current position of the sub-document when forwarding them between the cell editors and the main editor (which should be possible by iterating over them with iterChanges and building up a new changeset with the same insertions but offset position).
+
+- ## [Syntax Highlighting inside widget decoration - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/syntax-highlighting-inside-widget-decoration/6160)
+- Is it possible to apply syntax highlighting inside the widget’s content?
+  - Not directly using the editor’s syntax highlighting. Though I guess you could run `highlightTree` on the subtree for the text inside the widget, feeding it the same highlighters that your editor uses, and then construct the highlighted DOM directly and put that in the widget.
+- You could apply marker widgets to the content you want to alter, and put empty replace widgets on the stuff you want to hide, skiping the whole need to redecorate it inside a new widget.
+
+- To fully support the recursion for widgets I was thinking, would it be a bad idea to start a separate instances of CM6 view inside the widget? For example of I have a widget of a matrix, where each cell is a separate CM6 editor. Then I can make matrixes inside matrixes and so one. I tried, not too bad I would say
+
 - ## [Dispatch changes without redrawing the widget - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/dispatch-changes-without-redrawing-the-widget/6320)
   - 3 levels of CM6 is working
 - updateDOM should be called if a widget of the same type (but non-eq) appears in the same position in the document
@@ -62,6 +74,14 @@ view.dispatch({ changes: { from: line.from, to: line.to, insert: 'New text for t
 
 # discuss-gutter/line-number
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [Custom gutter for specific lines only? - discuss. CodeMirror](https://discuss.codemirror.net/t/custom-gutter-for-specific-lines-only/5530)
+- you really don’t want to be doing that much work in formatNumber (or lineMarker, for that matter). 
+  - The best approach here would probably be to not use lineNumbers at all, but create a custom gutter, with markers only at the lines where you need them, and only recompute them when necessary.
 
 - ## 💡 [Line number height problem. - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/line-number-height-problem/6146)
 - Try calling requestMeasure on your editor when the animation that pops it up finishes should help.

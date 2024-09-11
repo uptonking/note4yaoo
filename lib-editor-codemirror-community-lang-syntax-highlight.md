@@ -22,6 +22,12 @@ modified: 2024-08-11T07:59:35.617Z
 - ## 
 
 - ## 
+# discuss-sql
+- ## 
+
+- ## 
+
+- ## 
 # discuss-lezer
 - resources
   - [Comparison of Leading Language Parsers – ANTLR, JavaCC, SableCC, Tree-sitter, Yacc, Bison _202310](https://www.researchgate.net/publication/376883410_Comparison_of_Leading_Language_Parsers_-_ANTLR_JavaCC_SableCC_Tree-sitter_Yacc_Bison)
@@ -57,7 +63,16 @@ modified: 2024-08-11T07:59:35.617Z
 
 - ## 
 
-- ## 
+- ## 🌰 [How to define highlighting styles for blocks? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/how-to-define-highlighting-styles-for-blocks/4029)
+  - Is there any way to define styles for blocks (e.g., blockquote, codeblock)?
+- Not without defining an additional extension that adds some class to the lines that contain a code block (using `Decoration.line` ).
+
+- ## [Syntax Highlighting inside widget decoration - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/syntax-highlighting-inside-widget-decoration/6160)
+- Is it possible to apply syntax highlighting inside the widget’s content?
+  - Not directly using the editor’s syntax highlighting. Though I guess you could run `highlightTree` on the subtree for the text inside the widget, feeding it the same highlighters that your editor uses, and then construct the highlighted DOM directly and put that in the widget.
+- You could apply marker widgets to the content you want to alter, and put empty replace widgets on the stuff you want to hide, skiping the whole need to redecorate it inside a new widget.
+
+- To fully support the recursion for widgets I was thinking, would it be a bad idea to start a separate instances of CM6 view inside the widget? For example of I have a widget of a matrix, where each cell is a separate CM6 editor. Then I can make matrixes inside matrixes and so one. I tried, not too bad I would say
 
 - ## 🎨 Heikki Lotvonen 魔改了一款字体，Colr Fonts ，原生就支持语法高亮，不需要任何 JS 的处理，任何的语法高亮被直接内置在这款字体中，就是 plain text。
 - https://x.com/vikingmute/status/1824253104625422699

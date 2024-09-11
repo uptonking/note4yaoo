@@ -50,7 +50,11 @@ modified: 2023-11-30T06:56:24.809Z
 
 - ## 
 
-- ## 
+- ## [Preventing Widget deletion - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/preventing-widget-deletion/7002)
+  - I have a widget which adds a Google Maps embedding. The problem is that when I scroll below and the map goes out of the viewport, the DOM node gets deleted, and recreated when back in view so the zoom level I set is gone.
+  - Is there any way to prevent widgets of a certain widget type from getting deleted?
+
+- No. Content outside of the viewport is removed from the DOM. You may, if the maps widget can handle being detached and reattached, be able to set up something like a caching layer where you reuse the same rendered DOM on a re-render, but the editor itself won’t keep out-of-view content in the DOM.
 
 - ## 📝🏘️ [Slate – A completely customizable framework for building rich text editors | Hacker News _202107](https://news.ycombinator.com/item?id=28000086)
 - The recent changes to the API in 0.50 look good. The number of iteration passes really shows. Out of the available open source editor frameworks, 🆚️ Slate is probably most similar to Notion’s internal editor system. If I had to rebuild on a framework tomorrow, it’d be Slate or ProseMirror. Still if I used Slate it would be with the expectation that I’d end up owning an aging fork of a forgotten version at some point.

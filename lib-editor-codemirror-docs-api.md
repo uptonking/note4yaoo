@@ -13,17 +13,19 @@ modified: 2024-09-10T00:43:36.318Z
 
 # api-view
 
-- deco-mark
+- deco-mark 多是inline
+  - add some attributes or wrapping DOM element to a given range
   - Syntax highlighting
-  - add some attributes or wrapping DOM element 
 - deco-widget
-  - insert a DOM element in editor: inline elements or blocks
+  - insert a inline/blocks DOM element at a given position
   - block-level decorations should not have vertical margins, and if you dynamically change their height, you should make sure to call requestMeasure, so that the editor can update its information about its vertical layout.
 - deco-replacing 可以修改多行
+  - hide or replace part of the document with a given DOM node
   - code folding or replacing an element in the text with something else
   - possible to display a widget instead of the replaced text
 - deco-line 修改一行
-  - influence the attributes of the DOM element that wraps the line
+  - add attributes to a line's wrapping element
+
 - Decorations that significantly change the vertical layout of the editor, for example by replacing line breaks or inserting block widgets, must be provided directly, since indirect decorations are only retrieved after the viewport has been computed.
   - Indirect decorations are appropriate for things like syntax highlighting or search match highlighting, where you might want to just render the decorations inside the viewport or the current visible ranges
 

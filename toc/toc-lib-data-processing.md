@@ -49,11 +49,12 @@ modified: 2021-05-13T16:14:15.415Z
 - https://github.com/yifanwu/diel
   - a declarative framework for scaling up your interactive visualizations with... SQL! (and some timesteps)
 # data-wasm
-- https://github.com/pyodide/pyodide
+- https://github.com/pyodide/pyodide /12kStar/MPLv2/202409/python/c/ts
   - https://pyodide.org/en/stable/
-  - /5.4kStar/MPLv2/202105/python
-  - Python with the scientific stack, compiled to WebAssembly.
   - Pyodide is a Python distribution for the browser and Node.js based on WebAssembly
+  - Pyodide is a port of CPython to WebAssembly/Emscripten.
+  - Pyodide makes it possible to install and run Python packages in the browser with micropip. Any pure Python package with a wheel available on PyPi is supported. 
+  - Pyodide comes with a robust Javascript ⟺ Python foreign function interface so that you can freely mix these two languages in your code with minimal friction
   - [Related Projects](https://github.com/pyodide/pyodide/blob/main/docs/project/related-projects.md)
     - https://github.com/jupyterlite/jupyterlite
     - https://github.com/gzuidhof/starboard-notebook

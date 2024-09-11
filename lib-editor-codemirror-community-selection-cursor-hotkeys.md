@@ -21,7 +21,10 @@ modified: 2024-08-11T06:46:39.843Z
 
 - ## 
 
-- ## 
+- ## [searchKeymap: own handling of "Escape" key - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/searchkeymap-own-handling-of-escape-key/8538)
+  - I have the problem that I have a widget that surrounds the cm6 editor and it handles the Escape key. I want to change the handling within the search addon so that the event doesn’t bubble up the DOM if I press the Escape key while focus is within the search panel’s input fields
+- The recommended approach is to check for `event.defaultPrevented` in your outer handlers, and ignore events that have already been prevented. If that’s not practical, add a (low precedence) keydown handler to your editor that calls stopPropagation on all events that have their default behavior prevented.
+
 # discuss-cursor
 - ## 
 

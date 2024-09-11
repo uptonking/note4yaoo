@@ -185,8 +185,6 @@ modified: 2023-01-29T10:52:44.183Z
 - Regarding computed values, given that defining an extra facet for them already allows you to do that, I don’t think that really warrants another library feature.
   - Introduce `FacetReader`
 
-- ## [Make decoration editable within non-editable instance - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/make-decoration-editable-within-non-editable-instance/5190)
-- I guess you could simply use a transaction filter. See the single-line editor example
 
 - ## 🔀 [Should dispatched transactions be added to a queue? - v6 _202206](https://discuss.codemirror.net/t/should-dispatched-transactions-be-added-to-a-queue/4610)
 - I was slightly surprised to find that the dispatch method doesn’t put transactions on a queue for processing.

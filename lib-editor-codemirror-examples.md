@@ -1216,6 +1216,16 @@ modified: 2023-06-23T12:46:53.288Z
   - allows using either a default fetch upload logic or custom upload logic.
   - feat: 添加 CodeMirror 的图片转换base64 插件
 # utils
+- https://github.com/JerryI/wljs-editor /202407/js
+  - https://jerryi.github.io/wljs-editor/
+  - A cell editor & supporting packages for wolfram-frontend project written in JS with Codemirror 6. Support mathematical expressions rendered inline, Mathematica's boxes and many more...
+  - This is a core component of Wolfram JS Frontend project
+  - 多个编辑器nested示例
+  - [Multiple Editable Columns with CodeMirror 6 - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/multiple-editable-columns-with-codemirror-6/8514)
+    - here is an example with even ~10 nested editor, which can perfectly work with all updates and mutations and cursor movements
+  - https://github.com/JerryI/wolfram-js-frontend
+    - Dynamic Notebook Environment for Wolfram Language written in Javascript
+
 - https://github.com/lume/code-mirror-el /MIT/202405/ts
   - https://codepen.io/trusktr/pen/poGZYOy?editors=1000
   - A customizeable `<code-mirror>` element that makes a code editor powered by CodeMirror 
@@ -1380,13 +1390,6 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/neo4j/cypher-editor /apache2/202404/js
   - Codemirror editor for Cypher, with syntax awareness and auto-completion
-
-- https://github.com/JerryI/wljs-editor /202407/js
-  - https://jerryi.github.io/wljs-editor/
-  - A cell editor & supporting packages for wolfram-frontend project written in JS with Codemirror 6. Support mathematical expressions rendered inline, Mathematica's boxes and many more...
-  - This is a core component of Wolfram JS Frontend project
-  - https://github.com/JerryI/wolfram-js-frontend
-    - Dynamic Notebook Environment for Wolfram Language written in Javascript
 
 - [CodeMirror extension to detect and fix missing JSX Pragma](https://gist.github.com/tmcw/fefe8b5c0a63b51bc8a303c8a3553fac)
   - detects the lack of a pragma and the presence of JSX syntax, by using CodeMirror's existing syntax tree

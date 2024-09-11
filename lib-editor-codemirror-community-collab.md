@@ -20,7 +20,9 @@ modified: 2024-05-02T05:51:12.370Z
 
 - ## 
 
-- ## 
+- ## [Is there a way to customize the undo history list? - v6 - discuss. CodeMirror _202310](https://discuss.codemirror.net/t/is-there-a-way-to-customize-the-undo-history-list/7343)
+  - I don’t want to add this insert operation to the undo history list. When using “Mod-z” for an undo operation, I want to skip this text insertion and directly return to an earlier historical state. What should I do?
+- There’s an annotation you can add to transactions to get this effect.
 
 - ## [Disable CTRL-Z (undo) for the very first change - v6 - discuss. CodeMirror _202203](https://discuss.codemirror.net/t/disable-ctrl-z-undo-for-the-very-first-change/4202)
   - The problem I have is that if a user presses CTRL-Z after the initial setting of the value, the whole content disappears. 
@@ -82,6 +84,14 @@ modified: 2024-05-02T05:51:12.370Z
 - ## 
 
 - ## 
+# discuss-cursor
+- ## 
+
+- ## 
+
+- ## [How to show peers' cursors on CM6 collab editor? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/how-to-show-peers-cursors-on-cm6-collab-editor/3996)
+- This isn’t a feature that any of the core modules provides—you’ll have to implement it yourself, by sharing the cursor positions over the network and displaying some widget or tooltip at those locations.
+
 # discuss
 - ## 
 

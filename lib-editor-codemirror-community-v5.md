@@ -14,7 +14,9 @@ modified: 2024-05-02T06:02:37.181Z
 
 - ## 
 
-- ## [the block widget disappeared after add or remove a new line - discuss. CodeMirror](https://discuss.codemirror.net/t/the-block-widget-disappeared-after-add-or-remove-a-new-line/4855)
+- ## 
+
+- ## 💡 [the block widget disappeared after add or remove a new line - discuss. CodeMirror](https://discuss.codemirror.net/t/the-block-widget-disappeared-after-add-or-remove-a-new-line/4855)
 - I tried to simulate the onchange event here but don’t know how to do it properly. I am using a react version of CM
   - If by onChange you mean updateListener, that’s expected. If you need to track state for changes, and use that for rendering, you’re probably going to have a better time keeping it in a state field.
 
