@@ -403,6 +403,7 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
   - 新增文件未显示A图标，显示的是M
 
 - root thread
+  - 体验和反馈很差
   - 初始化环境计划执行完后，create pr时必须在前端打开terminal，否则 Got an error from agent event, Failed to find the prompt when use ctrl+c command
 
 - cmdk实现计划
@@ -424,7 +425,8 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
     - more
       - 💡 悬浮状态的指令输入框实现时应该使用单独的dom，这样可以减少reflow, 还可以解决输入框因文档长导致输入框元素未被viewport渲染时不能作为sticky元素
       - 指令输入框与diff-view无关，在diff下触发cmdk会聚焦到输入框
-      - cursor的指令输入框可以被del键删掉
+      - cursor的指令输入框不能被del键删掉；
+      - cursor的空行会显示cmd+k/l的指令提示
 
 - not-yet
   - 驾驶舱action列表支持打开文件
@@ -438,10 +440,10 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
 
 - develop环境：
   - paas url: https://develop.clackypaas.com
-  - agent: https://develop.agent.clacky.ai
-  - backend: https://develop.api.clacky.ai
-  - app: https://develop.app.clacky.ai
-  - website: https://develop.clacky.ai
+  - agent: https://develop.agent.clackyai.com
+  - backend: https://develop.api.clackyai.com
+  - app: https://develop.app.clackyai.com
+  - website: https://develop.clackyai.com
 - staging:
   - paas url: https://staging.clackypaas.com
   - agent: https://staging.agent.clackyai.com
@@ -478,6 +480,16 @@ console.log(';; steps ', taskState, currentOpenedActionId, currentPlayedActionId
 
 console.log(';; machine ', taskState, runningTaskAction, task?.task_steps)
 ```
+
+## 0912
+
+昨日：
+- 修复developer环境下ideServer连接相关问题
+- cmd+k的undo (40%)
+
+今日：
+- 修复新环境下现有功能的问题
+- cmd+k的undo/redo
 
 ## 0911
 

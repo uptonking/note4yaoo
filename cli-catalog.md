@@ -72,6 +72,9 @@ git checkout -b new_branch 6e559cb
 git checkout -b new_branch HEAD~4
 # 将某个文件回退到某个commit，常用来处理package.json/lock-file的依赖冲突
 git checkout c5f567 -- file1/to/restore file2/to/restore
+
+git branch --set-upstream-to=origin/my_branch
+git branch -u origin/my_branch
 ```
 
 - commit相关

@@ -200,7 +200,9 @@ modified: 2021-05-06T09:38:31.520Z
   - 渲染wysiwyg时采用 virtual render
   - 支持可缩放的编辑器，用于将编辑器嵌入画板/设计工具的场景
 # dev-xp
-- 自定义元素widget
+- 💄 自定义元素widget
+  - codemirror会在widget最外层渲染一个contenteditable为false的元素
+  - 💡 block widget前面默认没行号，inline widget会使用原行的行号，无论有没有使用Decoration.replace渲染
   - 可参考replit
   - blazor编辑器的image/mermaid都会在文本上渲染一个contenteditable为false的元素
   - overleaf-visual编辑器的image/table会渲染一个contenteditable为false的元素

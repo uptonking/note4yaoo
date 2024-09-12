@@ -19,11 +19,17 @@ modified: 2024-08-11T06:46:39.843Z
 # discuss-hotkeys
 - ## 
 
-- ## 
+- ## 💡 [Shortcut mode starting with ESC - v6 - discuss. CodeMirror _202204](https://discuss.codemirror.net/t/shortcut-mode-starting-with-esc/4246)
+  - I am looking for a general idea of how to go about implementing a shortcut mode where you press ESC and then another key to trigger a function. I currently see that ESC is used as a trigger to switch between indent and focus change.
+- You can use multi-stroke key bindings for something like this, but I don’t recommend using escape for this purpose because, indeed, it’ll mess with the tab handling.
 
-- ## [searchKeymap: own handling of "Escape" key - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/searchkeymap-own-handling-of-escape-key/8538)
+- Is there a good way to create a binding for escape that doesn’t mess with the tab handling? Or to selectively handle escape based on some editor state?
+  - You could provide another way to move focus out of the editor. Or, if your esc binding only applies in certain situations, it will be usable with tab in cases where your handler returns false.
+
+- ## [searchKeymap: own handling of "Escape" key - v6 - discuss. CodeMirror _202408](https://discuss.codemirror.net/t/searchkeymap-own-handling-of-escape-key/8538)
   - I have the problem that I have a widget that surrounds the cm6 editor and it handles the Escape key. I want to change the handling within the search addon so that the event doesn’t bubble up the DOM if I press the Escape key while focus is within the search panel’s input fields
-- The recommended approach is to check for `event.defaultPrevented` in your outer handlers, and ignore events that have already been prevented. If that’s not practical, add a (low precedence) keydown handler to your editor that calls stopPropagation on all events that have their default behavior prevented.
+- The recommended approach is to check for `event.defaultPrevented` in your outer handlers, and ignore events that have already been prevented. 
+  - If that’s not practical, add a (low precedence) keydown handler to your editor that calls stopPropagation on all events that have their default behavior prevented.
 
 # discuss-cursor
 - ## 
