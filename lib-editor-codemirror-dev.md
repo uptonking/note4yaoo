@@ -262,4 +262,13 @@ modified: 2021-05-06T09:38:31.520Z
 - 
 - 
 
+# styling
+
+```CSS
+/* 选区在页面失焦后显示灰色 */
+.cm-selectionBackground {
+  background: #d9d9d9;
+}
+```
+
 # more

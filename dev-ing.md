@@ -407,24 +407,34 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
   - 初始化环境计划执行完后，create pr时必须在前端打开terminal，否则 Got an error from agent event, Failed to find the prompt when use ctrl+c command
 
 - cmdk实现计划
-  - [ ] 工具条或快捷键唤起、隐藏
-  - [ ] 输入提示器，agent返回时显示diff
+  - [-] 工具条或快捷键唤起、隐藏
+  - [x] 输入提示器，agent返回时显示diff
   - [ ] accept/reject后， cmd+z回到diff
   - [ ] stop/cancel， 注意agent返回内容的时机
   - [ ] 部分accept
   - [ ] diff工具条
   - [ ] followup
+  - bugs
+    - ~~if input box is visible, cursor cannot be put in editor~~
+    - diff anime gray bg
+    - replace initial lines on ai responses
+    - ~~disable cmd+k in diff-view(cursor支持多次cmdk唤起多个输入框)~~
+    - loading时限制send
   - dev-discuss
     - cmdk后直接编辑，是否立即更新文档，特别是多人协作的场景是否支持diff-view协作
       - 用户ua在cmdk后显示doc2(与原文档doc1进行diff)，编辑在doc2；用户ub仍显示和编辑doc1
       - cursor支持直接编辑最新doc2
-    - message chunk stop
-    - 输入框与editor绑定，这样能支持多editor
     - 大多数cmdk的变更块只有1个，此时diff-view的实现可采用简化版实现单红单绿
       - 若cmdk的变更块超过1个，上下布局的diff-view方便确定范围，但agent返回不是多个范围
+    - message chunk stop
     - more
+      - 输入框与editor绑定，这样能支持多editor
+      - 输入框内容很多时，是否支持换行  => 不换行
       - 💡 悬浮状态的指令输入框实现时应该使用单独的dom，这样可以减少reflow, 还可以解决输入框因文档长导致输入框元素未被viewport渲染时不能作为sticky元素
       - 指令输入框与diff-view无关，在diff下触发cmdk会聚焦到输入框
+    - impl
+      - input出现后且发送prompt到ai前，若用户光标位置变化然后再发送prompt到ai，生成代码的位置仍在原选区的位置且在input输入框之下
+    - cursor
       - cursor的指令输入框不能被del键删掉；
       - cursor的空行会显示cmd+k/l的指令提示
 
@@ -440,13 +450,13 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
 
 - develop环境：
   - paas url: https://develop.clackypaas.com
-  - agent: https://develop.agent.clackyai.com
+  - agent: https://develop.agent.clackyai.com/demo
   - backend: https://develop.api.clackyai.com
   - app: https://develop.app.clackyai.com
   - website: https://develop.clackyai.com
 - staging:
   - paas url: https://staging.clackypaas.com
-  - agent: https://staging.agent.clackyai.com
+  - agent: https://staging.agent.clackyai.com/demo
   - backend: https://staging.api.clackyai.com
   - app: https://staging.app.clackyai.com
   - website: https://staging.clackyai.com
@@ -480,6 +490,19 @@ console.log(';; steps ', taskState, currentOpenedActionId, currentPlayedActionId
 
 console.log(';; machine ', taskState, runningTaskAction, task?.task_steps)
 ```
+
+## 0913
+
+- Got an error from agent event, Failed to find the prompt when use ctrl +c command
+
+昨日：
+- 修复develop/staging新环境相关的问题
+- 处理cmd+k的diff视图的undo/redo，包括初次生成和用户accept后 (60%)
+- 整理了一下cmd+k相关的extension
+
+今日：
+- 处理cmd+k与agent通信与状态，测试cmd+k主流程
+- 继续处理undo/redo
 
 ## 0912
 
