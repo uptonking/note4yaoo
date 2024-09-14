@@ -12,7 +12,7 @@ modified: 2024-08-11T03:29:17.282Z
 # discuss-stars
 - ## 
 
-- ## [how to get selected content in v6](https://discuss.codemirror.net/t/how-to-get-selected-content-in-v6/4888)
+- ## 🌰 [how to get selected content in v6 _202208](https://discuss.codemirror.net/t/how-to-get-selected-content-in-v6/4888)
 
 ```JS
 view.state.sliceDoc(v.state.selection.main.from, v.state.selection.main.to)

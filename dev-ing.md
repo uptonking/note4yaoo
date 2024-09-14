@@ -359,6 +359,7 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
   - ~~readonly属性不生效~~
 
 - diffView
+  - 流式更新的文档内容，需要流式更新diff-view
   - ~~隐藏绿色部分后，红色部分是否显示行号~~，打字太快了，不用看行号
 
 - paas
@@ -406,20 +407,26 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
   - 体验和反馈很差
   - 初始化环境计划执行完后，create pr时必须在前端打开terminal，否则 Got an error from agent event, Failed to find the prompt when use ctrl+c command
 
-- cmdk实现计划
+- cmdk实现计划 implement quick sort algorithm and add 2 test cases
   - [-] 工具条或快捷键唤起、隐藏
-  - [x] 输入提示器，agent返回时显示diff
-  - [ ] accept/reject后， cmd+z回到diff
-  - [ ] stop/cancel， 注意agent返回内容的时机
+  - [x] 输入提示词，agent返回时显示diff
+  - [ ] undo: cmd+z回到diff
+  - [-] 部分stop/cancel， 注意agent返回内容的时机
   - [ ] 部分accept
-  - [ ] diff工具条
   - [ ] followup
+  - [ ] diff工具条
+  - [ ] agent写代码时的输入框显示动画边框
+  - [ ] 悬浮输入框
+  - explain an elegant word in one sentence
+    - rename to an elegant variable name
   - bugs
-    - ~~if input box is visible, cursor cannot be put in editor~~
-    - diff anime gray bg
-    - replace initial lines on ai responses
+    - sdk如何不使用sleep来获取chunk返回完成时的数据
+    - cmdk若在ai写代码时或写完后但未accept时刷新页面，是否会丢失状态数据
+    - 等待ai返回结果时，禁止send，允许esc键取消输入框
+    - ~~replace initial lines on ai responses~~
+    - ~~diff anime gray bg~~
     - ~~disable cmd+k in diff-view(cursor支持多次cmdk唤起多个输入框)~~
-    - loading时限制send
+    - ~~if input box is visible, cursor cannot be put in editor~~
   - dev-discuss
     - cmdk后直接编辑，是否立即更新文档，特别是多人协作的场景是否支持diff-view协作
       - 用户ua在cmdk后显示doc2(与原文档doc1进行diff)，编辑在doc2；用户ub仍显示和编辑doc1
@@ -489,6 +496,8 @@ console.log(
 console.log(';; steps ', taskState, currentOpenedActionId, currentPlayedActionId, steps)
 
 console.log(';; machine ', taskState, runningTaskAction, task?.task_steps)
+
+stt.message.channel().send('uCmdK', 'README.md', 2, 2, 'explain an elegant word in one sentence')
 ```
 
 ## 0913
