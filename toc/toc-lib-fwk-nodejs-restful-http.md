@@ -316,4 +316,10 @@ modified: 2022-12-19T01:51:01.389Z
   - Nitro provides a built-in storage layer that can abstract filesystem or database or any other data source.
   - Nitro is a framework to build web servers with a lot more features than H3 and a larger scope. 
   - it's build on top of H3
+
+- https://github.com/nksaraf/vinxi /MIT/202409/ts
+  - https://vinxi.vercel.app/
+  - The JavaScript toolkit to build full stack apps and frameworks with your own opinions
+  - Compose full stack applications (and frameworks) using Vite, the versatile bundler and dev server, and Nitro, the universal production server. The core primitive in vinxi is a router.
+  - There are currently two frameworks actively being developed on vinxi: SolidStart, TanstackStart
 # more

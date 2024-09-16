@@ -60,7 +60,9 @@ modified: 2023-11-10T08:05:12.852Z
 
 - ## 
 
-- ## 
+- ## TIL, you cant catch errors thrown in setTimeout and requestIdleCallback from outside the setTimeout
+- https://x.com/okikio_dev/status/1834663298173702518
+- Add process.nextTick and queueMicrotask to the list.
 
 - ## People hate reducers because they get convoluted code that is hard to decompose. Transducers also solve this
 - https://x.com/wollantine/status/1826903720698769453

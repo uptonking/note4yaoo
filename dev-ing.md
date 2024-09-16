@@ -359,6 +359,7 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
   - ~~readonly属性不生效~~
 
 - diffView
+  - 关闭diff后也支持显示打字动画
   - 流式更新的文档内容，需要流式更新diff-view
   - ~~隐藏绿色部分后，红色部分是否显示行号~~，打字太快了，不用看行号
 
@@ -407,7 +408,7 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
   - 体验和反馈很差
   - 初始化环境计划执行完后，create pr时必须在前端打开terminal，否则 Got an error from agent event, Failed to find the prompt when use ctrl+c command
 
-- cmdk实现计划 implement quick sort algorithm and add 2 test cases
+- 🚧 cmdk实现计划 
   - [-] 工具条或快捷键唤起、隐藏
   - [x] 输入提示词，agent返回时显示diff
   - [ ] undo: cmd+z回到diff
@@ -419,15 +420,23 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
   - [ ] 悬浮输入框
   - explain an elegant word in one sentence
     - rename to an elegant variable name
+    - implement quick sort algorithm and add 2 test cases
   - bugs
-    - sdk如何不使用sleep来获取chunk返回完成时的数据
+    - paas ver for cmdk
+    - hotkey to cmdk
     - cmdk若在ai写代码时或写完后但未accept时刷新页面，是否会丢失状态数据
     - 等待ai返回结果时，禁止send，允许esc键取消输入框
+    - sdk如何不使用sleep来获取chunk返回完成时的数据
     - ~~replace initial lines on ai responses~~
     - ~~diff anime gray bg~~
     - ~~disable cmd+k in diff-view(cursor支持多次cmdk唤起多个输入框)~~
     - ~~if input box is visible, cursor cannot be put in editor~~
-  - dev-discuss
+  - 🤼🏻 dev-discuss
+    - 🤔 agent返回chunkMsg的时机是确定的吗，测试是在ok消息后等6s才返回chunkMsg且chunkMsg会在1s(或2s)内快速流式返回完
+      - 为了让sdk编辑器及时获取更新内容，需要sleep大于6s才能开始打字动画
+    - 👾 对同一选区第一次cmdk后reject, 第二次cmdk会保留第一次的修改
+      - 就算第一次reject了点击光标到其他位置再将光标回到原位置，cmdk也会返回对旧内容的修改
+    - 多人cmdk的返回代码会冲突吗
     - cmdk后直接编辑，是否立即更新文档，特别是多人协作的场景是否支持diff-view协作
       - 用户ua在cmdk后显示doc2(与原文档doc1进行diff)，编辑在doc2；用户ub仍显示和编辑doc1
       - cursor支持直接编辑最新doc2
@@ -499,6 +508,11 @@ console.log(';; machine ', taskState, runningTaskAction, task?.task_steps)
 
 stt.message.channel().send('uCmdK', 'README.md', 2, 2, 'explain an elegant word in one sentence')
 ```
+
+## 0915
+
+- [Overriding shortcut keys in Firefox and Chrome - Stack Overflow](https://stackoverflow.com/questions/15911785/overriding-shortcut-keys-in-firefox-and-chrome)
+  - `if (event.ctrlKey && event.key === 'k') event.preventDefault()`
 
 ## 0913
 

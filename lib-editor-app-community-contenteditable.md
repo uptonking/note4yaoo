@@ -37,7 +37,24 @@ modified: 2023-06-16T02:53:00.115Z
 - this fancy design remind me of another great job from bike editor
   - Yeah! This was another approach I saw, altho its for the selection caret. I just show the formatting of the stored marks for the anchor caret (so wider if bold, slanted if italic, etc)
 
+# discuss-textarea
+- ## 
+
+- ## 
+
+- ## 
+
+- ## TIL about `field-sizing: content` in css
+- https://x.com/destroytoday/status/1835405977316655563
+  - 支持自动增加高度为内容高度
+  - it’s on by default on Chrome vs behind a flag. I read a post that said Safari committed to implement it
+  - firefox probably never will lol... i hate firefox so much
+
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## [Rich text editors and rendering engines | Hacker News_202307](https://news.ycombinator.com/item?id=36600434)

@@ -38,7 +38,20 @@ modified: 2023-09-17T18:17:41.377Z
 high-concurrency B-tree management algorithm 
 
 # blogs
-- [How does B-tree make your queries fast?_202311](https://blog.allegro.tech/2023/11/how-does-btree-make-your-queries-fast.html)
+
+## [B-trees and database indexes _202409](https://planetscale.com/blog/btrees-and-database-indexes)
+
+- 
+- 
+- 
+
+### [This piece not only *describes* how B-trees and database indexes work, but gives you the opportunity to interact with them](https://x.com/BenjDicken/status/1833173334953234628)
+
+- 
+- 
+
+## [How does B-tree make your queries fast?_202311](https://blog.allegro.tech/2023/11/how-does-btree-make-your-queries-fast.html)
+
 # more
 - Hackreels 这个动画效果真不错
   - https://twitter.com/Hooopo/status/1736743804810768784

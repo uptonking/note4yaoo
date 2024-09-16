@@ -288,6 +288,13 @@ modified: 2023-04-04T22:36:31.529Z
   - In order to provide a smooth visual experience for each connected client, Lance implements efficient networking methods, position interpolation and extrapolation, user input coordination, shadow objects, physics and pseudo-physical movement, automatic handling of network spikes.
   - Communication is packed and serialized into binary
   - Replay saving
+
+- https://github.com/poppinss/defer /MIT/202409/ts/adonis
+  - A managed deferred queue to run async operations in the background
+  - @poppinss/defer package allows you to run async operations in the background using an in-memory queue.
+  - Think of it as setImmediate but with support for monitoring, error handling, and the ability to gracefully shutdown process by flushing the queue.
+  - You may pause the queue from processing tasks using the queue.pause method and resume it using the queue.resume method.
+  - By default, 10 tasks are processed concurrently
 # concurrency/async
 - https://github.com/sindresorhus/p-queue
   - Promise queue with concurrency control

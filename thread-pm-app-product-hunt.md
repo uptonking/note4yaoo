@@ -59,7 +59,11 @@ modified: 2022-12-04T16:34:29.342Z
 # products
 - ## 
 
-- ## 
+- ## 励志语录网站，月入60万美元，赚这么多真是没想到。
+- https://x.com/indiehackercase/status/1833124077151932542
+  - [Motivation - Home](https://motivation.app/)
+- 你咋知道赚了多少？
+  - indiehacker类网站上有
 
 - ## for every paid SaaS, there is a free open-source self-hosted alternative:
 - https://x.com/fireship_dev/status/1828485695029260356

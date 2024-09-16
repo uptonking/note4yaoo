@@ -22,7 +22,9 @@ modified: 2023-04-05T19:35:14.347Z
   - there is this new native way to save files to the HD:
     - https://github.com/whatwg/fs
   - I also built native-file-system-adapter so you can have it in all Browsers, Deno, and NodeJS with different storages
-    - https://github.com/jimmywarting/native-file-system-adapter
+- https://github.com/jimmywarting/native-file-system-adapter /MIT/202407/js
+  - This is a file system API that follows the File System Access specification. 
+  - Thanks to it we can have a unified way of handling data in all browsers and even in NodeJS & Deno in a more secure way.
 
 - https://github.com/streamich/memfs /apache2/ts
   - JavaScript file system utilities for Node.js and browser.

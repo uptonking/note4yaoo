@@ -12,6 +12,10 @@ modified: 2024-09-02T02:28:27.398Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 
+
 - ## [为什么我觉得 AI 写代码纯属添乱? - 知乎](https://www.zhihu.com/question/590636216)
 - 首先我是Copilot重度用户, 有Copilot的白嫖使用资格, 在仅支持VSCode时使用的比较少, 在Visual Studio 2022有copilot插件后, 基本是每次代码必用, 我日常基本使用C语言，总结一下copilot写C代码的一些特点:
   - 第一、如果说Copilot的代码能用，当且仅当Copilot写的代码刚好是你想写，想这么写，你写出来和Copilot的生成的代码基本一样的情况，你必须审计并清楚的知道生成代码每一行的所有细节及意义，这个代码才能够使用。如果靠给注释直接生成稍微长一点点的功能代码，翻车几率极高。
@@ -33,8 +37,42 @@ modified: 2024-09-02T02:28:27.398Z
 - 更喜欢cursor聊天式帮忙生成代码。
 
 - 做工程不会拿着ai一路问到底的，cursor 就项目初开的时候用得多，路走顺了，就一个copilot帮补一下。
+# discuss-examples-cursorai-like
+- ## 
+
+- ## Replit Agent just dropped, and it's about to completely change the app development game...  from idea to deploy, even from your mobile
+- https://x.com/minchoi/status/1832759069733482680
+
+- ## 🌰 You probably missed these new Cursor projects? 10 wild examples:
+- https://x.com/imrat/status/1832805131626180747
+
+- ## 🌰 someone just adapted cursor-party and added (among other features) teeny eyes to the cursors that point to where you're going
+- https://x.com/genmon/status/1833973123894346219
+  - [elle's homepage](https://ellesho.me/page/)
+  - [Cozyroom](https://cozyroom.xyz/)
+
+# discuss-issues
+- ## 
+
+- ## 
+
+- ## As an early adopter and heavy user of cursor (at least 1, 000 hours so far), here are 3 major issues I've noticed over the past couple of months:
+- https://x.com/mayowaoshin/status/1833557628401627245
+  1. The first generated output(s) often contains subtle bugs that could cost you a ton of time and money. 1. The first generated output(s) often contains subtle bugs that could cost you a ton of time and money
+  2. Inconsistent quality of outputs. In addition, if you ask the AI any questions that contain suggestions or alternative solutions, it will apologize and refactor the entire code again.
+  3. It can significantly increase technical debt
+  - TLDR: Cursor AI (or AI coding in general) is a useful autocompletion tool that can boost your development productivity in the short run, but in the long run, it can waste significant time and energy IF you don't thoroughly review generated outputs.
+
 # discuss
 - ## 
+
+- ## 
+
+- ## 又用了 1 周 Cursor，目前感觉它优于 Codeium + VSCode 有以下几方面：
+- https://x.com/chenenpei/status/1833421862233379139
+  1. 能建议多行代码的修改
+  2. 能更方便地使用 Claude3.5
+  3. Chat 结果提供了 accept 按钮，减少复制粘贴的动作
 
 - ## [集成 GPT-4 的代码生成器 Cursor 使用体验如何？怎么用更高效？ - 知乎](https://www.zhihu.com/question/590152131)
 - Cursor 之所以能火起来，就是因为它主打一个亮点：通过 GPT-4 来辅助你编程，完成 AI 智能生成代码、修改 Bug、生成测试等操作。
@@ -72,6 +110,25 @@ modified: 2024-09-02T02:28:27.398Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## Cursor 对于公共领域的代码理解能力是很不错的，比如每个语言的基本库，常用的开源库。
+- https://x.com/waylybaye/status/1834944111817978345
+  - 但是自己写的代码，它的幻觉很大。比如你在其它模块中写了一个类，它在写代码时并不会将其带入 context 中。
+  - 从这一点来看我觉得 JetBrains 潜力很大，JB 有强大的静态分析能力，可以有效的低成本消除此类幻觉。
+- cursor在ai辅助交互上已经算是登峰造极了，现在最大的瓶颈还是模型不够聪明(即便是claude)：
+  1. 让它实现一个比较完美的raf节流它老实现成防抖
+  2. 还是经常会修改一些和需求无关的代码
+  3. 对于不知名的第三方库老是编一些不存在的 api
+  4. 剪切一段代码，新建一个函数，提示的居然不是剪切的代码而是编的
+
+- jb 必须得加速跟上才行，现在他们的 ai 需要一个产品经理对着 cursor 抄
+  - jb动作慢的像是那种过日子的国企
+
+- 我现在特别希望这些代码工具可以把在Linux下能够编译完成的项目，进行一个跨平台的改变，变成Windows可编译和执行的。
 
 - ## Introducing AI Codex: the self-improving system for @cursor_ai .
 - https://x.com/zbeyens/status/1832079140083687671

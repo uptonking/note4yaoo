@@ -24,7 +24,8 @@ modified: 2024-08-24T16:52:53.996Z
 
 - ## 
 
-- ## 
+- ## vscode 准备支持内置 terminal 的 zsh/bash 补全列表了
+- https://x.com/YuTengjing/status/1834076948089454896
 
 - ## 🐛 [Extremely High RAM and CPU usage · Issue · microsoft/vscode-eslint \_202109](https://github.com/microsoft/vscode-eslint/issues/1336)
 - I am pretty sure that this is caused by `@typescript-eslint/eslint-plugin` and the fact that some rules more or less require a full TS type checker run

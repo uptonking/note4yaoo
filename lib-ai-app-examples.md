@@ -178,6 +178,10 @@ modified: 2023-02-08T07:20:48.475Z
   - https://microsoft.github.io/TypeChat/
   - TypeChat is a library that makes it easy to build natural language interfaces using types
 
+- https://github.com/jorge-armando-navarro-flores/chat_with_your_docs /MIT/202409/python
+  - ChatWithYourDocs Chat App is a Python application that allows you to chat with multiple Docs formats like PDF, WEB pages and YouTube videos. 
+  - This app utilizes a language model to generate accurate answers to your queries
+
 ## chat-excel
 
 - https://github.com/weijunext/smart-excel-ai /MIT/202312/ts
@@ -349,5 +353,24 @@ modified: 2023-02-08T07:20:48.475Z
   - 旨在开发一种实用、系统性的证件照智能制作算法, 利用一套完善的AI模型工作流程，实现对多种用户拍照场景的识别、抠图与证件照生成
   - SwanLab：训练人像抠图模型全程用它来分析和监控，以及和实验室同学协作交流，大幅提升了训练效率。
   - 支持 纯离线 或 端云 推理
+# assistant-ai
+- https://github.com/mem0ai/mem0 /apache2/202409/python
+  - https://mem0.ai/
+  - Mem0 (pronounced as "mem-zero") enhances AI assistants and agents with an intelligent memory layer, enabling personalized AI interactions. 
+  - Mem0 remembers user preferences, adapts to individual needs, and continuously improves over time, making it ideal for customer support chatbots, AI assistants, and autonomous systems.
+  - Multi-Level Memory: User, Session, and AI Agent memory retention
+  - Mem0 leverages a hybrid database approach to manage and retrieve long-term memories for AI agents and assistants. 
+    - Each memory is associated with a unique identifier, such as a user ID or agent ID, allowing Mem0 to organize and access memories specific to an individual or context.
+    - 🛢️ When a message is added to the Mem0 using add() method, the system extracts relevant facts and preferences and stores it across data stores: a vector database, a key-value database, and a graph database. 
+    - This hybrid approach ensures that different types of information are stored in the most efficient manner, making subsequent searches quick and effective.
+    - Mem0 performs search across these data stores, retrieving relevant information from each source
+
+- https://github.com/getzep/zep /apache2/202409/go
+  - https://docs.getzep.com/
+  - a long-term memory service for AI Assistant apps. 
+  - With Zep, you can provide AI assistants with the ability to recall past conversations, no matter how distant, while also reducing hallucinations, latency, and cost.
+  - Zep persists and recalls chat histories, and automatically generates summaries and other artifacts from these chat histories. 
+  - Zep also provides a simple, easy to use abstraction for document vector search called Document Collections. This is designed to complement Zep's core memory features, but is not designed to be a general purpose vector database.
+# ui-ai
 
 # more

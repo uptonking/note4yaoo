@@ -599,6 +599,11 @@ modified: 2022-06-03T21:34:54.893Z
   - https://huggingface.co/spaces/cin-model/kotaemon-demo
   - open-source clean & customizable RAG UI for chatting with your documents. Built with both end users and developers in mind.
   - This project serves as a functional RAG UI for both end users who want to do QA on their documents and developers who want to build their own RAG pipeline.
+
+- https://github.com/PragmaticMachineLearning/docai /MIT/202409/python
+  - Extract structured data from unstructured documents using Answer. AI's Byaldi, OpenAI gpt-4o, and Langchain's structured output.
+  - 基于Answer. AI的Byaldi、OpenAI的gpt-4o和Langchain 做结构化数据输出
+  - 支持从PDF等非结构化文档中提取结构化信息，比如损失历史记录、基本应用程序信息等
 # more
 - https://github.com/notea-org/notea
   - Self hosted note taking app stored on S3

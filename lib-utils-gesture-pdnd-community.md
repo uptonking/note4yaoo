@@ -15,6 +15,15 @@ modified: 2024-03-08T05:29:35.446Z
 - ## 
 
 - ## 
+# discuss-compatibility
+- ## 
+
+- ## 
+
+- ## "pointercancel" is not published after a "dragstart" in Safari. This violates the pointer event and drag and drop specs _202409
+- https://x.com/alexandereardon/status/1835546754818675094
+  - it was already raised in 2021
+
 # discuss-news-pdnd
 - ## 
 

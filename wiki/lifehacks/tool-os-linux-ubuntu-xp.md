@@ -34,7 +34,6 @@ modified: 2021-01-01T22:26:57.773Z
   - only works with Xorg and XWayland.
   - If you are on Wayland and app won't run through XWayland you can force it via command: `GDK_BACKEND=x11 app_name`
 # ubuntu-starter
-
 - https://github.com/ohmybash/oh-my-bash
   - https://ohmybash.github.io/
   - A delightful community-driven framework for managing your bash configuration
@@ -44,6 +43,15 @@ modified: 2021-01-01T22:26:57.773Z
 
 - ubuntu查看序列号（serial number）和产品型号（product number）
   - sudo dmidecode | less
+# network
+- [Ubuntu 18.04 永久修改DNS的方法 - 姚红 - 博客园](https://www.cnblogs.com/yaohong/p/14817914.html)
+  - sudo gedit /etc/systemd/resolved.conf
+
+- [Ubuntu22.04修改dns - 厚礼蝎 - 博客园](https://www.cnblogs.com/guangdelw/p/17493919.html)
+  - 通常我们知道，修改dns的几个途径/etc/resolv.conf/etc/netplan/01-netcfg.yaml修改上面两个文件，一般情况下，可以解决，但是在一次使用新安装的ubuntu22.04的时候，发现，无论怎么修改，dig解析域名都是往127.0.0.53发送，哪怕在缓存中的已经生效
+  - 如何查看缓存中生效的配置呢 cat /run/systemd/resolve/resolv.conf
+  - 需要删掉或者修改 /etc/resolv.conf 文件名
+- [Ubuntu 20.04 设置 DNS 的方法 - 刘应杰 - 博客园](https://www.cnblogs.com/mouseleo/p/14976527.html)
 # ubuntu-cons
 
 ## input-method

@@ -44,6 +44,10 @@ modified: 2024-08-24T16:30:20.218Z
   - Specify what you want it to build, the AI asks for clarification, and then builds it.
   - gptengineer.app is a commercial project for the automatic generation of web apps. It features a UI for non-technical users connected to a git-controlled codebase. The gptengineer.app team is actively supporting the open source community.
 
+- https://github.com/saoudrizwan/claude-dev /MIT/202409/ts
+  - Autonomous coding agent right in your IDE, capable of creating/editing files, executing commands, and more with your permission every step of the way
+  - Claude Dev uses an autonomous task execution loop with chain-of-thought prompting and access to powerful tools that give him the ability to accomplish nearly any task
+
 - products
   - https://x.com/0xrandomlabs
     - https://www.ycombinator.com/launches/Lnp-random-labs-an-open-source-agent-that-deeply-understands-you

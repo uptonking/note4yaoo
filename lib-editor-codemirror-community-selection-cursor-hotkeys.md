@@ -19,6 +19,14 @@ modified: 2024-08-11T06:46:39.843Z
 # discuss-hotkeys
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+
+
 - ## 💡 [Shortcut mode starting with ESC - v6 - discuss. CodeMirror _202204](https://discuss.codemirror.net/t/shortcut-mode-starting-with-esc/4246)
   - I am looking for a general idea of how to go about implementing a shortcut mode where you press ESC and then another key to trigger a function. I currently see that ESC is used as a trigger to switch between indent and focus change.
 - You can use multi-stroke key bindings for something like this, but I don’t recommend using escape for this purpose because, indeed, it’ll mess with the tab handling.

@@ -97,11 +97,17 @@ modified: 2021-08-16T06:56:53.061Z
 
 - ## 
 
-- ## 
+- ## 按钮放大为卡片
+- https://x.com/vaunblu/status/1833548581342487020
+  - Made with React and Tailwind, Framer Motion
+  - https://github.com/vaunblu/lab/blob/main/src/app/create-new/page.tsx
 
 - ## 缩略卡片放大成文档的动画交互
 - https://x.com/henrikruscon/status/1821475322929324078
   - https://x.com/Gomila_club/status/1832013063446212698
+
+- https://x.com/tonilijic/status/1834344409992765865
+  - 卡片切换效果， stacked card interaction
 
 - ## This has got to be one of the coolest product changelogs I've ever seen 
 - https://x.com/steventey/status/1809347539176657188

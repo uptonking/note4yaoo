@@ -188,7 +188,8 @@ modified: 2023-11-28T14:48:45.910Z
 
 - ## 
 
-- ## 
+- ##  If we have 5 employees in the agency, and for example we want two to see all the data in Notion, and the others to have access only to tasks and projects, what is the safest way to do it?
+- https://x.com/typeoneerror/status/1834260004414644558
 
 - ## Notion and Slack have so many rough edges in terms of UX.
 - https://twitter.com/tantaman/status/1764647109897154815

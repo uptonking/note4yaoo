@@ -67,6 +67,9 @@ modified: 2022-11-07T10:25:12.034Z
 - common
   - [猫狸盘搜 - 阿里云盘搜索神器](https://www.alipansou.com/)
   - [DBREE - Simple Cloud Storage](https://dbree.org/)
+
+- dev-search
+  - [百度开发者搜索-Beta-让技术搜索更简单高效](https://kaifa.baidu.com/)
 # 知乎/掘金/v2ex/链滴
 - 有时候评论的内容比回答的内容更有意思
 
