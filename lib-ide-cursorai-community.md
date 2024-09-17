@@ -66,7 +66,9 @@ modified: 2024-09-02T02:28:27.398Z
 # discuss
 - ## 
 
-- ## 
+- ## Cursor started with the CodeMirror editor, not with VSCode
+- https://x.com/carloslfu/status/1835713381090599247
+  - There is a simple case for extension of VSCode vs forking it. Being an extension would be too limiting. The CMD+K magic, which was one of the main things that initially got Cursor so much attention, wasn't possible as a VSCode extension, afaik. VSCodium is much more flexible.
 
 - ## 又用了 1 周 Cursor，目前感觉它优于 Codeium + VSCode 有以下几方面：
 - https://x.com/chenenpei/status/1833421862233379139

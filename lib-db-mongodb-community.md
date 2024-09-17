@@ -17,6 +17,16 @@ modified: 2022-06-13T02:59:04.350Z
 - ## 
 
 - ## 
+# discuss-news-mongo
+- ## 
+
+- ## 
+
+- ## 🗑️ [MongoDB deprecates Atlas Device sync | Hacker News _202409](https://news.ycombinator.com/item?id=41489636)
+- Really devastating. I think the rename from Realm is why people haven't noticed this, but I guess also its popularity really has dwindled. Even though I only use local RealmSwift, I don't trust that the community will be able to keep it going even in maintenance mode.
+
+- Adam (CEO of Ditto) here, Mongo is transitioning to a partner-first strategy for mobile and edge applications. We are working closely with Mongo to create a cohesive product experience between Ditto and Mongo Atlas. High-level that is a supported bidirectional connector between Atlas and Ditto's Edge Sync platform.
+  - Furthermore, we are working with customers of Atlas Device Sync to help and support them in the transition. There are aspects of Ditto different than Realm - most prominent is that we are schema-less. This will mean some client-side code transition, but longer-term a tighter alignment with Mongo Atlas. We are excited as well to introduce more to Ditto's unique capability of P2P device sync.
 # discuss-usecase-xp
 - ## 
 

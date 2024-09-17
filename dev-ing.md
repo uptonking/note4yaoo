@@ -509,6 +509,15 @@ console.log(';; machine ', taskState, runningTaskAction, task?.task_steps)
 stt.message.channel().send('uCmdK', 'README.md', 2, 2, 'explain an elegant word in one sentence')
 ```
 
+## 0917
+
+- [Fatal error in, line 0 -- Fatal JavaScript invalid size error 171211145 - Stack Overflow](https://stackoverflow.com/questions/76587029/fatal-error-in-line-0-fatal-javascript-invalid-size-error-171211145)
+  - There could be several reasons why the error occurs.
+  - Node version. Ask friends what version they are on, and try to use the same
+  - Broken node_modules. Delete the node_modules directory and run npm install (or yarn install or pnpm install)
+  - Broken git. Delete the local project directory and clone it again. Remember to save all your changes (i.e. git branch -b stage && git add . && git commit -m "stage changes" && git push -u origin stage)
+  - One cure for all diseases - restart your computer
+
 ## 0915
 
 - [Overriding shortcut keys in Firefox and Chrome - Stack Overflow](https://stackoverflow.com/questions/15911785/overriding-shortcut-keys-in-firefox-and-chrome)

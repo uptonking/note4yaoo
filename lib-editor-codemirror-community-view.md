@@ -14,29 +14,18 @@ modified: 2024-08-08T20:49:11.571Z
 
 - ## 
 
-- ## 
+- ## 👾 Finished up a simple AI edit gen feature. a nice pattern is to pull a CodeMirror widget DOM element out into a React portal and then just writing the component with React. 
+- https://x.com/hamiltonulmer/status/1829287750253916369
+  - Way easier to integrate & mix the two types of state
+  - I bet it can be made better w/ AST / position info
+  - we also have schema & locally-cached data to enrich the prompt
+
+- for this, I tried out Cursor, which did a great job of helping me scaffold in a few critical parts of the CodeMirror side. I could have done this myself but it probably ended up saving me a few hours 
+  - I'm finding that Cursor is an excellent tool for people that already know how to build products – it's a real force multiplier. For me, it felt like some kind of prompt-driven autocomplete that I could verify myself.
 
 - ## [codemirror 6 and textareas _202011](https://discuss.codemirror.net/t/codemirror-6-and-textareas/2731)
   - With codemirror 5 you can use CodeMirror.fromTextArea() to create an editor from a tag which I really like since it lets users without JS still do things and makes it easier to send data with an html form.
 - This was always a dodgy hack (it involves replacing the surrounding form’s submit method, among other things) that leaks quite a bit (for example if you expect your textarea’s value to be kept in sync with the editor content), so I’m kind of happy to get away from it. It’d be easy to write something similar as a separate module, of course.
-
-- ## 🌰 [Dynamic light mode / dark mode - how? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/dynamic-light-mode-dark-mode-how/4709)
-- `this.view.dispatch({ effects: this.editorTheme.reconfigure( selectedTheme === "light" ? oneLight : oneDark ) })` ; 
-
-```JS
-this.view.dispatch({
-  effects: this.editorTheme.reconfigure(selectedTheme === "light" ? oneLight : oneDark)
-});
-
-window.matchMedia('(prefers-color-scheme: dark)')
-  .addEventListener('change', event => {
-    if (event.matches) {
-      //dark mode
-    } else {
-      //light mode
-    }
-  })
-```
 
 - ## experimenting with a canvas-driven CodeMirror cursor
 - https://x.com/hamiltonulmer/status/1822274427142525210
@@ -252,7 +241,35 @@ window.matchMedia('(prefers-color-scheme: dark)')
 # discuss-styling
 - ## 
 
-- ## 
+- ## [Dynamically changing theme in MergeView - v6 - discuss.CodeMirror](https://discuss.codemirror.net/t/dynamically-changing-theme-in-mergeview/8620)
+- Define a compartment
+
+- ## [How does CM6 decide whether dark mode is on/off? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/how-does-cm6-decide-whether-dark-mode-is-on-off/8397)
+- This is determined by the `dark` option of the active theme. The library itself does no detection of `prefers-color-scheme` .
+  - If you’re not using a theme, you get the `&light` base theme rules. If any of the themes you’re using set the editor to dark, you get &dark.
+
+- ## [Inconsistency in EditorView.theme - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/inconsistency-in-editorview-theme/7290)
+- `&light/&dark` are supported only in `baseTheme` , not in theme.
+
+- ## 🌰💄 [Dynamic light mode / dark mode - how? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/dynamic-light-mode-dark-mode-how/4709)
+  - Previously, handling this was quite straightforward; we’d simply define alternate colors for the relevant classes within a prefers-color-scheme block, in our SCSS
+  - I’m struggling to understand how one handles this type of thing in v6’s themes and syntax highlighting
+
+```JS
+this.view.dispatch({
+  effects: this.editorTheme.reconfigure(selectedTheme === "light" ? oneLight : oneDark)
+});
+
+// listen for the media change
+window.matchMedia('(prefers-color-scheme: dark)')
+  .addEventListener('change', event => {
+    if (event.matches) {
+      //dark mode
+    } else {
+      //light mode
+    }
+  })
+```
 
 - ## [Inline Codemirror inside Prosemirror? - discuss. CodeMirror _202311](https://discuss.codemirror.net/t/inline-codemirror-inside-prosemirror/7396)
 - Is it possible to embed an inline CodeMirror view inside ProseMirror? I was thinking as an inline node, meaning instead of being a full width div, it just expands as the user types.

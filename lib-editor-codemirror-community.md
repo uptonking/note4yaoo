@@ -54,7 +54,10 @@ modified: 2023-01-29T10:52:44.183Z
 
 - ## 
 
-- ## 
+- ## For Livebook, we use CodeMirror plus phx-hook, and then use LiveView's push/reply events to exchange the relevant information. It works like a charm
+- https://x.com/josevalim/status/1834265447769809225
+- Did livebook use to use monaco, or am I getting that wrong? If so, why the switch?
+  - Yes, we were used to. I'd need to dig up in the issues tracker the reasons but CodeMirror is quite more lightweight.
 
 - ## why didn't Svelte include Monaco editor into the playground like Vue did. _202406
 - https://x.com/Rich_Harris/status/1801212903552401428
@@ -178,13 +181,13 @@ modified: 2023-01-29T10:52:44.183Z
 
 - ## 
 
-- ## 
+- ## [SyntaxNode not exported by @lezer/common - Lezer - discuss. CodeMirror](https://discuss.codemirror.net/t/syntaxnode-not-exported-by-lezer-common/7600)
+- This is a type (interface) export. You can import it in TypeScript, but not regular JavaScript.
 
 - ## [Read-only Facets? - discuss. CodeMirror](https://discuss.codemirror.net/t/read-only-facets/7175)
 - Perhaps like a wrapper class
 - Regarding computed values, given that defining an extra facet for them already allows you to do that, I don’t think that really warrants another library feature.
   - Introduce `FacetReader`
-
 
 - ## 🔀 [Should dispatched transactions be added to a queue? - v6 _202206](https://discuss.codemirror.net/t/should-dispatched-transactions-be-added-to-a-queue/4610)
 - I was slightly surprised to find that the dispatch method doesn’t put transactions on a queue for processing.

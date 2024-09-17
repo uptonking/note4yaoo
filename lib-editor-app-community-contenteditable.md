@@ -55,7 +55,8 @@ modified: 2023-06-16T02:53:00.115Z
 
 - ## 
 
-- ## 
+- ## [Ask HN: Why is working with contenteditable is so hard? | Hacker News _202409](https://news.ycombinator.com/item?id=41462298)
+- Because different browsers insert the content in a different fashions. The reliable way to use contenteditable is to intercept keypresses and modify the inner HTML yourself, i.e. use contenteditable only to use the cursor affordance.
 
 - ## [Rich text editors and rendering engines | Hacker News_202307](https://news.ycombinator.com/item?id=36600434)
 

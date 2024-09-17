@@ -55,7 +55,7 @@ modified: 2021-05-06T09:38:31.520Z
 
 - who is using #codemirror 🌰
   - overleaf(latex-code+rich)
-  - jupyter-notebook, observablehq-notebook, val-town
+  - jupyter-notebook, observablehq-notebook, val-town, livebook(Elixir)
   - codesandbox-sandpack, codepen, replit, glitch(v5), phoenix-brackets(v5)
   - obsidian, zettlr, joplin-markdown-editor, supernotes
   - chrome-devtools(开源代码中使用v6)

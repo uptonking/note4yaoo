@@ -320,6 +320,7 @@ modified: 2023-06-23T12:46:53.288Z
   - https://github.com/abdulrahman305/cursor
   - https://github.com/fovi-llc/cursor-codemirror
   - https://github.com/kumar045/cursor-codemirror
+  - https://github.com/carloslfu/cursor-old
 
 - https://github.com/replit/codemirror-minimap /202401/ts
   - Minimap extension for Codemirror 6
@@ -1327,6 +1328,7 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/remcohaszing/codemirror-languageservice /MIT/202408/ts
   - https://codemirror-languageservice.js.org/
+  - https://codemirror-languageservice.js.org/typescript
   - Integrate a Language Server Protocol compatible language service into CodeMirror
   - This demo shows how you can integrate an LSP based language service into CodeMirror.
     - The completion source autocompletes words based on the words in the document and the character typed.
