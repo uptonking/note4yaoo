@@ -15,7 +15,14 @@ modified: 2023-06-14T00:53:15.226Z
 
 ## 
 
-## 
+## cmdk的弹出框的右上角关闭按钮位置错误
+
+- 输入卡片容器是 relative定位， flex-column布局
+  - 关闭按钮 display-block, absolute定位
+    - 按钮图标svg， 默认display-block
+- 问题上svg显示在按钮的下方，而不是在button里面
+  - 🤔 解决方案是将关闭按钮调整为 display-flex，这样svg就会显示在button里面
+  - 又debug了几小时，发现现在的布局实现会让关闭按钮被overflow-hidden挡住，需要调整元素的位置和层次来显示完整的关闭按钮，也变向解决了问题
 
 ## figma的sparkling-fill icon无法在驾驶舱渲染
 

@@ -221,6 +221,8 @@ modified: 2021-05-06T09:38:31.520Z
 
 - 多标签页的实现思路和单标签差别不大，视觉上只有1个visible的editor，上方是tab
 
+- baseTheme的specificity比theme低，且能使用&dark
+
 - 难以完全使用state对象控制的状态
   - screen-coordinates
   - scroll, focus

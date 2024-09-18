@@ -455,6 +455,7 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
       - cursor的空行会显示cmd+k/l的指令提示
 
 - not-yet
+  - tab-key; chat-apply; aiCannotCreateThread
   - 驾驶舱action列表支持打开文件
     - 打开已删除的文件未实现
   - 驾驶舱聊天后直接apply代码到编辑器
