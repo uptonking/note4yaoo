@@ -21,10 +21,13 @@ modified: 2024-08-11T07:21:18.707Z
 - ## 
 
 - ## 
-# discuss-pm-code-block-in-docs
+# discuss-pm-code-docs
 - ## 
 
-- ## 
+- ## Google's NotebookLM is truly the best AI second brain.
+- https://x.com/itsPaulAi/status/1836445715968725180
+  - You can easily learn, memorize, generate new ideas, and more.
+  - There's virtually no limit to the number of things you can feed it: the context window is huge (1M tokens?).
 
 - ## 📖 [Show HN: Srcbook – A TypeScript notebook for rapid prototyping | Hacker News _202408](https://news.ycombinator.com/item?id=41291700)
   - We built this because we needed a Jupyter-like environment for TypeScript

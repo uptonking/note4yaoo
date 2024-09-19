@@ -61,8 +61,30 @@ modified: 2023-01-09T15:44:42.139Z
 - Several React Spectrum components include pre-defined layouts that you can insert elements into via slots. 
   - Slots are named areas in a component that receive children and provide style and layout for them. 
   - This often occurs automatically through the use of semantic elements like Header, Content, and Footer, which include default slots out of the box.
-
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🆚️ What’s a better DX for you all, asChild in Radix or a render prop like in Ariakit?
+- https://x.com/vladyslavmoroz/status/1836383274429473193
+- render by far:
+  - easier to refactor, it's a prop that can by added/removed versus having to manipulate a tree. with `asChild` , you can't pass `children` to the component because `props.children` is already occupied by the render target
+  - can still pass children to the component
+  - supports callback API too for advanced use cases
+
+- with asChild you have to deal with open and close tags, while with render you select a single string and can remove it or move it somewhere else
+
+- The only thing I dislike about asChild is seeing an additional nesting level. My brain thinks two elements are being rendered until I realize an asChild prop is present.
+
+- both render and asChild rely on cloning if you want to pass additional props, so if that's the goal - both are bad, cloning is terrible
+- What’s terrible about cloning exactly?
+  - perf overhead and also the basic idea, when you try to pass something to the child without it being actively accepting what you are passing, you are basically shoveling props into component's throat
+  - cloning as a way to move an instance from one place to nother in some rare cases, might be acceptable, depending on the overhead react currently has on that, but generally its a hack, we need to avoid that
+
+- render is good when you can take it as is, without passing props
 
 - ## [Theme, States, Modifiers, and Overrides](https://github.com/souporserious/jsxui/discussions/16)
 - Problem

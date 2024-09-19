@@ -372,5 +372,7 @@ modified: 2023-02-08T07:20:48.475Z
   - Zep persists and recalls chat histories, and automatically generates summaries and other artifacts from these chat histories. 
   - Zep also provides a simple, easy to use abstraction for document vector search called Document Collections. This is designed to complement Zep's core memory features, but is not designed to be a general purpose vector database.
 # ui-ai
-
+- https://github.com/kangfenmao/cherry-studio /NonCommercial/202409/ts
+  - https://cherry-ai.com/
+  - a desktop client that supports for multiple LLM providers, available on Windows, Mac and Linux
 # more

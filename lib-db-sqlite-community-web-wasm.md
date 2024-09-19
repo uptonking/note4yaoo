@@ -13,6 +13,14 @@ modified: 2023-12-09T10:03:55.375Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 🆚️ SQLite WASM is much slower than the in-memory better-sqlite3, but still, the new Evolu CRDT algorithm can handle approximately 1666 mutations per second
+- https://x.com/evoluhq/status/1836518784539980248
+  - I developed and tuned it with the in-memory better-sqlite3, where you can get around 25k mutations per second
+  - Note: Don't expect that one mutation will be exactly 1 / 1666; that's not how Just in Time (JIT) compilation works. 
+  - The start is always slower before it picks up speed 
+
 - ## 💡 Would anyone believe me if I said I can get IndexedDB to read and write faster than a fully in-memory SQLite DB in the browser?
 - https://twitter.com/tantaman/status/1743031911092564338
 - that is pretty hard to believe... Are you treating IDB entries like nodes in a btree or something like that?

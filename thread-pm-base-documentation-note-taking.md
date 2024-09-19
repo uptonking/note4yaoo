@@ -97,6 +97,18 @@ modified: 2021-08-16T06:56:53.061Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 微软推出了将web + work + Page结合在一起的新型办公工具：Copilot Pages，工作协作起来方便很多
+- https://x.com/aigclink/status/1835931927658029442
+  - 一个为多人 AI 协作设计的动态、持久的画布，能够将 AI 生成的内容转化为可编辑、可分享的资源
+  - 1、Excel中的Copilot： 支持 Python，支持用自然语言进行高级数据分析，无需编写代码
+  - 2、PowerPoint中的Copilot： 通过“叙事构建器”，可以与 Copilot协作，快速构建演示文稿
+  - 3、Teams中的Copilot： 可以分析会议记录和聊天内容，提供全面的会议讨论概览
+  - 4、Word中的Copilot： 将能够引用网络数据、工作数据、电子邮件和会议内容，帮助用户快速完成初稿
+
 - ## 按钮放大为卡片
 - https://x.com/vaunblu/status/1833548581342487020
   - Made with React and Tailwind, Framer Motion

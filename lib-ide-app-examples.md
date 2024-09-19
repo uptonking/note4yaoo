@@ -10,13 +10,25 @@ modified: 2024-08-24T16:30:20.218Z
 # guide
 
 # popular
-
+- https://github.com/voideditor/void /MIT/202409/ts
+  - https://voideditor.com/
+  - the open-source Cursor alternative，主打隐私安全
+  - Void is a fork of the of vscode
+  - Write code with the best AI tools, retain full control over your data, and access powerful AI features
+  - https://x.com/shao__meng/status/1835850141527601330
+    - 可基于 @ollama 加载运行本地模型，让自己的代码不会被提交到服务器，实现本地隐私安全；也预留了在线模型 API 模式，在不涉及到隐私时选择，可直接使用任意 LLM。
+    - Code Editor: VSCode 
+    - Local LLM: Ollama 
+    - Codebase chat: Greptile 
+    - Doc Search: DocSearch 
+    - 如果是在本地运行，模型参数量级确实不能选太大，性能和速度很难兼得。不过如果是企业内部服务器，还是有机会兼顾性能和安全。
+    - cursor的代码补全/提示太迅速及时了 这个能做到吗 除了ai的修改代码功能 我最喜欢就是cursor这个功能了 已经依赖了
+    - 用cursor的时候我就找过其他开源的竞品（例如http://continue.dev），大部分步骤（例如embedding、apply、llm）在本地跑都不得劲。或许是我机器太差了？而这些还是相当重要的，例如apply这个在chat完成后自动填入代码这个直接使用普通的llm完成度都太差了。
 # ide/cde
 
 # code-playgrounds
 
 # coding-engineer
-
 - https://github.com/paul-gauthier/aider /17kStar/apache2/202408/python
   - https://aider.chat/
   - aider is AI pair programming in your terminal
@@ -52,6 +64,17 @@ modified: 2024-08-24T16:30:20.218Z
   - https://x.com/0xrandomlabs
     - https://www.ycombinator.com/launches/Lnp-random-labs-an-open-source-agent-that-deeply-understands-you
 # coding-ai
+- https://github.com/nutlope/llamacoder /202409/ts
+  - https://www.llamacoder.io/
+  - open source Claude Artifacts – generate small apps with one prompt. 
+  - Powered by Llama 3 405B & Together.ai.
+  - Llama 3.1 405B from Meta for the LLM
+  - Together AI for LLM inference
+  - Sandpack for the code sandbox
+  - Next.js app router with Tailwind
+  - Helicone for observability
+  - [Generate an entire app from a prompt using Together AI’s LlamaCoder _20240918](https://ai.meta.com/blog/together-ai-llamacoder/)
+
 - https://github.com/artmoskvin/hide /MIT/202408/go
   - https://hide.sh/
   - Headless IDE for Coding Agents

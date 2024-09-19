@@ -22,9 +22,14 @@ modified: 2022-11-21T15:27:20.974Z
   - https://codepen.io/thebabydino/pen/bGPzdaM
   - https://codepen.io/t_afif/pen/MWZxXWB
 
+- ## Create this beautiful button with SVG animation using HTML and CSS
+- https://x.com/davidm_ml/status/1835613558664495571
+  - 围绕边框的亮线动画
+
 - ## 💫 I love this cool effect with CSS Conic gradients
 - https://x.com/wesbos/status/1828528779544719707
   - https://codepen.io/wesbos/pen/PoraMVV
+  - 围绕边框的亮线动画
 - No need for any nesting/ pseudos. Make the `conic-gradient()` relative to `border-box` and restrict main button background layer to `padding-box` .
 
 - ## progress bar, infinite

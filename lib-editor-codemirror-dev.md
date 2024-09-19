@@ -59,7 +59,7 @@ modified: 2021-05-06T09:38:31.520Z
   - codesandbox-sandpack, codepen, replit, glitch(v5), phoenix-brackets(v5)
   - obsidian, zettlr, joplin-markdown-editor, supernotes
   - chrome-devtools(开源代码中使用v6)
-  - known: mdn-bob, sourcegraph
+  - known: mdn-bob, sourcegraph, odoo
   - libfwk: svelte-playground, gitbutler
   - more: tagspaces, hedgedoc
   - ?: replay.io, duckdb

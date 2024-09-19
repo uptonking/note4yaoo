@@ -893,6 +893,18 @@ modified: 2023-06-23T12:46:53.288Z
   - 🔀 Based on CodeMirror 6 and operational transformation, so all changes are resolved by server code.
   - The backend is stateless, and you can bring your own transport; even a single HTTP handler is enough.
   - Unlike most toy examples, Rushlight supports persistence in any durable database you choose. Real-time updates are replicated in-memory by Redis, with automatic log compaction.
+- https://github.com/ekzhang/rustpad /MIT/202409/rust
+  - https://rustpad.io/
+  - an efficient and minimal open-source collaborative text editor based on the operational transformation algorithm. 
+  - It lets users collaborate in real time while writing code in their browser. 
+  - Rustpad is completely self-hosted and fits in a tiny Docker image, no database required.
+  - client-side code communicates via WebSocket with a central server that stores in-memory data structures. 
+    - The tradeoff is that documents are transient and lost between server restarts, or after 24 hours of inactivity
+  - The server is written in Rust using the warp web server framework and the operational-transform library.
+    - warp builds on top of hyper
+  - We use wasm-bindgen to compile text operation logic to WebAssembly code, which runs in the browser. 
+  - The frontend is written in TypeScript using React and interfaces with Monaco
+  - [Rustpad is an efficient and minimal open-source collaborative text editor | Hacker News](https://news.ycombinator.com/item?id=41573866)
 
 - https://github.com/vizhub-core/codemirror-ot /MIT/202403/js
   - Real-time collaboration plugin for CodeMirror 6.

@@ -56,6 +56,17 @@ modified: 2022-12-04T16:34:29.342Z
 - ## 
 
 - ## 
+# products-developer
+- ## 
+
+- ## 
+
+- ## Introducing http://npm.chart.dev 
+- https://x.com/Atinux/status/1836418652293525706
+  - Transform npm downloads into stunning charts you can save (PNG or SVG) and share with your community.
+  - made with @nuxt_js and @nuxt_hub (for the edge hosting & caching).
+  - https://github.com/atinux/npm-chart /MIT/202409/vue/nuxt
+
 # products
 - ## 
 

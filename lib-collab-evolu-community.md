@@ -14,6 +14,12 @@ modified: 2023-05-14T04:32:30.696Z
 
 - ## 
 
+- ## 🆚️ SQLite WASM is much slower than the in-memory better-sqlite3, but still, the new Evolu CRDT algorithm can handle approximately 1666 mutations per second
+- https://x.com/evoluhq/status/1836518784539980248
+  - I developed and tuned it with the in-memory better-sqlite3, where you can get around 25k mutations per second
+  - Note: Don't expect that one mutation will be exactly 1 / 1666; that's not how Just in Time (JIT) compilation works. 
+  - The start is always slower before it picks up speed 
+
 - ## I completely refactored Evolu and am finally satisfied with the code structure. Why? Because of @EffectTS_ Layer._202308
 - https://twitter.com/evoluhq/status/1692221690388885886
   - The Effect Layer is just a functional constructor. 

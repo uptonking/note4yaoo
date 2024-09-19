@@ -481,6 +481,17 @@ modified: 2023-11-28T14:48:45.910Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## New Notion AI template! I've built an open-source editor using @vercel AI SDK + Liveblocks, Lexical, and Next.js.
+- https://x.com/ctnicholasdev/status/1836783322103763011
+  - [Liveblocks Notion-like AI Editor – Vercel](https://vercel.com/templates/next.js/liveblocks-notion-like-ai-editor)
+  - you can select text and ask AI to simplify, add detail, translate, change style. 
+  - You can also chat to AI and ask it to generate a new document.
+  - It generates markdown, and allows you to create a new @liveblocks text editor document from it, which is powering the collaboration.
+
 - ## 🌰 I've created a new, simple Personal Notion Dashboard using the GTD method (Get Things Done).
 - https://x.com/soltwagner/status/1792404905384382933
   - Hey everyone, you can download the GTD Notion template for free here

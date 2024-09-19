@@ -243,6 +243,12 @@ modified: 2023-04-04T22:39:45.442Z
 - https://github.com/hiroi-sora/Umi-OCR /MIT/202403/python/qml
   - 开源、免费的离线OCR软件。
   - 支持截屏/批量导入图片，PDF文档识别，排除水印/页眉页脚，扫描/生成二维码。内置多国语言库。
+# qrcode
+- https://github.com/sz3/libcimbar /MPL/202407/cpp
+  - https://cimbar.org/
+  - Optimized implementation for color-icon-matrix barcodes
+  - cimbar is a high-density 2D barcode format. Data is stored in a grid of colored tiles
+  - 一般二维码只能容纳 2.9KB 的数据，用来放超链接和文本足够了。libcimbar 开发了一个特殊的压缩和解压算法。可以把小于 33MB 的文件直接压缩到特殊的二维码里，用他们提供的 App 扫码解压即可得到文件。
 # more
 - https://github.com/ascorbic/unpic-img
   - This library uses unpic to detect the image CDN, and then uses the CDN's URL API to resize and format images. 

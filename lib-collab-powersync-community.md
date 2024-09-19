@@ -112,7 +112,8 @@ modified: 2024-02-12T03:23:17.007Z
 
 - ## 
 
-- ## 
+- ## 🆚️ Electric has changed its approach and trying to do it similar to powersync now(pg + pglite). They've depreciated their original repo _202409
+- https://x.com/AkshitBanta/status/1836363683762454587
 
 - ## What developers/owners fear is vendor lock-in and technical debt. 
 - https://x.com/powersync_/status/1742206272676475324

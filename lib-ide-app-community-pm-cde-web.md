@@ -72,11 +72,18 @@ modified: 2024-08-24T16:28:35.538Z
 
 - git, but where there's only one way to merge (no git rebase), and where merge always deletes the branch. No branches from branches. Instead, something like "little commits", kept on the server, but they're squashed when merged - basically creating one commit per merge.
 # discuss-cloud-ide
-- ##
+- ## 
 
-- ##
+- ## 
 
-- ##
+- ## kinda crazy that google didn't respond to vs code by building a vs code competitor inside of chrome on top of devtools
+- https://x.com/tmcw/status/1836486556577640585
+  - project idx is based on microsoft's vs code codebase, and, afaict, not really differentiated from the many other vs code-in-the-cloud offerings from other companies
+  - google's really been sidelined for front-end tech across the board: it's all written in microsoft's language, in microsoft's editor, with facebook's framework, whereas dart, clojure compiler, angular are all withering away. does not seem like google wants to compete.
+
+- I really really really want to fork chrome and build a design tool. But I’d also have to write C++ and I don’t know if I’m emotionally ready for that.
+
+- It's ironic that Google hasn't been great at developer tools. Google APIs are hard to work with, GCP isn't as intuitive as other cloud providers are, Angular and TensorFlow never picked up, Android app development is a mess, and they added Flutter to the mix.
 
 - ## [Show HN: Chunk – Code sandbox for back-end devs | Hacker News \_202207](https://news.ycombinator.com/item?id=32267862)
 - Chunk is an all in one web editor (think of the codesandbox experience) that allows you to write, deploy and run a piece of code in the cloud from a variety of triggers: HTTP, WebHook, manual or scheduled (cron).

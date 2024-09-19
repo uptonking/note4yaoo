@@ -142,6 +142,12 @@ modified: 2021-05-25T09:41:29.066Z
   - https://github.com/logto-io/js
     - The monorepo for SDKs and working samples written in JavaScript (Well, mostly in TypeScript).
 
+- https://github.com/oslo-project/jwt /MIT/202409/ts
+  - https://jwt.oslojs.dev/
+  - https://oslojs.dev/
+  - Oslo is an open-source project that aims to provide high-quality auth packages for server-side JS. 
+  - Runtime agnostic. Zero third-party dependencies. Fully typed.
+
 - https://github.com/lucia-auth/lucia /6.8kStar/MIT/202403/ts
   - https://lucia-auth.com/
   - a simple and flexible user and session management library that provides an abstraction layer between your app and your database. 
