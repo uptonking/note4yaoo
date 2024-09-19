@@ -149,7 +149,17 @@ modified: 2021-08-30T07:01:09.493Z
 
 - ## 
 
-- ## 
+- ## 💡 [Is it an anti-pattern to use async/await inside of a new Promise() constructor? - Stack Overflow](https://stackoverflow.com/questions/43036229/is-it-an-anti-pattern-to-use-async-await-inside-of-a-new-promise-constructor)
+- You're effectively using promises inside the promise constructor executor function, so this is the Promise constructor anti-pattern.
+  - Your code is a good example of the main risk: not propagating all errors safely
+  - In addition, the use of async/await can make the same traps even more surprising.
+  - any immediate exception in a `Promise` constructor executor function conveniently rejects the newly constructed promise (but inside any `.then` you're on your own).
+  - any immediate exception in an `async` function rejects the implicit promise returned by the async function itself.
+
+- 
+- 
+- 
+- 
 
 - ## if you need a pretty simple Queue in JS/TS just use a `TransformStream` . 
 - https://x.com/okikio_dev/status/1830083868596036095

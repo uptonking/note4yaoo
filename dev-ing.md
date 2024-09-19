@@ -510,6 +510,11 @@ console.log(';; machine ', taskState, runningTaskAction, task?.task_steps)
 stt.message.channel().send('uCmdK', 'README.md', 2, 2, 'explain an elegant word in one sentence')
 ```
 
+## 0919
+
+- [Resolving a promise inside a callback - Stack Overflow](https://stackoverflow.com/questions/55185103/resolving-a-promise-inside-a-callback)
+  - Never mix up callback/promise.
+
 ## 0917
 
 - [Fatal error in, line 0 -- Fatal JavaScript invalid size error 171211145 - Stack Overflow](https://stackoverflow.com/questions/76587029/fatal-error-in-line-0-fatal-javascript-invalid-size-error-171211145)
