@@ -14,11 +14,23 @@ modified: 2024-05-02T05:51:12.370Z
 
 - ## 
 
-- ## 
+- ## [CRDTs & Positions in CodeMirror 6 - discuss.CodeMirror _202008](https://discuss.codemirror.net/t/crdts-positions-in-codemirror-6/2571)
+- 
+- 
+- 
 # discuss-undo/history
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [Detect history undo - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/detect-history-undo/7653)
+  - Is it possible to detect wether an update was dispatched via undo (or redo)?
+  - My use case: I want to react to document changes, but not if undo is dispatched.
+- You can use `Transaction.isUserEvent` for this, passing "undo" or "redo".
 
 - ## [Is there a way to customize the undo history list? - v6 - discuss. CodeMirror _202310](https://discuss.codemirror.net/t/is-there-a-way-to-customize-the-undo-history-list/7343)
   - I don’t want to add this insert operation to the undo history list. When using “Mod-z” for an undo operation, I want to skip this text insertion and directly return to an earlier historical state. What should I do?
@@ -37,10 +49,14 @@ modified: 2024-05-02T05:51:12.370Z
 - https://x.com/puruvjdev/status/1780560310547436002  
   - Anytime you change documentId, it stores the state in a map, and when the documentID changes back to the one stored, we apply the history. It's quite neat
 
-- ## [More conventional undo behaviour? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/more-conventional-undo-behaviour/5565)
+- ## 🤔 [More conventional undo behaviour? - v6 - discuss. CodeMirror _202301](https://discuss.codemirror.net/t/more-conventional-undo-behaviour/5565)
+  - I noticed the undo behaviour is based on grouping events after an idle delay. For example if I start typing a lot of text (quickly), make a typo and press Ctrl+Z it will delete all of the text that I typed.
+  - Other editors tend to make Ctrl+Z either delete one character at a time (for example this forum) or one word at a time (VS Code, Mousepad etc.). The former behaviour can be achieved in CodeMirror by setting `newGroupDelay` to a small value such as 50. But I was wondering if undoing by word is possible?
 - I don’t think there is anything like a consensus on that. This forum seems to rely on the browser’s native behavior, which for (tried Firefox and Chrome Linux) seems to undo all text typed together in one go. 
   - Google Docs seems to use a similar system to CodeMirror.
-  - This patch adds such a configuration option.
+  - Would an option that allows you to specify a function taking two changesets (the current history event and the new changes) and allows you to determine whether they should be combined work for you?
+  - This patch adds such a configuration option `joinToEvent` .
+- That approach sounds great. So I could choose not to combine if the user is adding whitespace to a non-whitespace string.
 
 # discuss-crdt
 - ## 

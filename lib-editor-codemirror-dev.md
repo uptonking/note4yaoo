@@ -159,6 +159,7 @@ modified: 2021-05-06T09:38:31.520Z
   - codemirror-rust
 
 - experimental
+  - undo/addToHistory
   - lazy
   - load new document
   - conflict

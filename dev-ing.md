@@ -422,11 +422,10 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
     - rename to an elegant variable name
     - implement quick sort algorithm and add 2 test cases
   - bugs
-    - paas ver for cmdk
-    - hotkey to cmdk
-    - cmdk若在ai写代码时或写完后但未accept时刷新页面，是否会丢失状态数据
-    - 等待ai返回结果时，禁止send，允许esc键取消输入框
-    - sdk如何不使用sleep来获取chunk返回完成时的数据
+    - disable cmdk in readonly
+    - 若在ai写代码时或写完后但未accept时刷新页面，是否会丢失状态数据
+    - 等待ai返回结果时，禁止send，允许esc键取消输入框和丢弃ai返回结果
+    - ~~sdk如何不使用sleep来获取chunk返回完成时的数据~~
     - ~~replace initial lines on ai responses~~
     - ~~diff anime gray bg~~
     - ~~disable cmd+k in diff-view(cursor支持多次cmdk唤起多个输入框)~~
@@ -455,7 +454,9 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
       - cursor的空行会显示cmd+k/l的指令提示
 
 - not-yet
+  - 文件系统只读时，在前端提醒用户
   - tab-key; chat-apply; aiCannotCreateThread
+  - 防抖: cmdk， chat
   - 驾驶舱action列表支持打开文件
     - 打开已删除的文件未实现
   - 驾驶舱聊天后直接apply代码到编辑器
