@@ -404,6 +404,13 @@ modified: 2023-08-29T10:12:22.345Z
   - Offline-first Database that Syncs with Git
   - GitDocumentDB is compatible with Git that brings us distributed multi-primary databases and efficient CI/CD.
   - The throughput of GitDocumentDB is about the same as Git. It is not as fast as typical databases. Storage size grows when managing many revisions of a document. These are a trade-off for Git features.
+
+## git-diff
+
+- https://github.com/nodejs/branch-diff /MIT/202407/js
+  - A tool to list print the commits on one git branch that are not on another using loose comparison
+  - The output is the same as changelog-maker 
+  - The commit list is very close to running: `git log main..next`; But the comparison isn't quite as strict, generally leading to a shorter list of commits.
 # git-data
 - https://github.com/CodeForPhilly/jawn /js
   - a node.js module that allows distributed version control of Tabular Data. 

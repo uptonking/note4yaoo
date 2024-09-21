@@ -53,6 +53,7 @@ modified: 2024-07-29T11:49:33.248Z
 
 - ## ✨ [Suggestion: Support true inline diff in unified merge view _202408](https://github.com/codemirror/dev/issues/1419)
   - VS Code just added this in the July 2024 update
+- I don't intend to work on this.
 
 - ## [FR: Three-way comparison for the V6 merge plugin - v6 - discuss. CodeMirror _202402](https://discuss.codemirror.net/t/fr-three-way-comparison-for-the-v6-merge-plugin/7879)
   - I am curious whether there’s a chance that the CodeMirror 6 merge plugin would support three-way diffs one day. 

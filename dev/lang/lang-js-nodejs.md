@@ -18,7 +18,13 @@ modified: 2022-12-19T01:48:17.115Z
 - https://practica.dev/
   - https://github.com/practicajs/practica
   - https://github.com/goldbergyoni/nodebestpractices
-  - The Node.js best practices list 
+  - The Node.js best practices list
+# docs-nodejs
+- [Node.js 中文网](https://nodejs.cn/en)
+  - [Node.js api 文档](https://nodejs.cn/api/)
+
+- 
+
 # 深入浅出Node.js
 - Ryan Dahl最初的目标是写一个基于事件驱动、非阻塞I/O的web服务器，以达到更高的性能，提供Apache服务器之外的选择
   - js在后端一直没有市场，引入非阻塞I/O库没有额外阻力

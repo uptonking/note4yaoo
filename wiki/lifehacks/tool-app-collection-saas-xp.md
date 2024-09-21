@@ -431,6 +431,13 @@ sudo systemctl start minidlna
   - https://search.gitee.com/?skin=rec&type=repository&q=GitHub520&sort=updated_at
   - https://gitee.com/monkeycc/GitHub520
     - https://raw.hellogithub.com/hosts
+  - [怎么解决从github下载资源慢的问题？ - 知乎](https://www.zhihu.com/question/276143842/answers/updated)
+
+- https://mirrors.tuna.tsinghua.edu.cn/github-release/
+  - https://mirrors.sdu.edu.cn/github-release/
+  - https://mirrors.nju.edu.cn/github-release/
+
+- [GitHub 文件加速](https://github.moeyy.xyz/)
 
 ## apps-mirrors
 

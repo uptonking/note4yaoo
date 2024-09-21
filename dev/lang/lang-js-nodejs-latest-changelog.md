@@ -13,18 +13,38 @@ modified: 2022-12-31T20:13:33.307Z
   - [Node.js Release Blog Posts](https://nodejs.org/en/blog/release)
   - [Node.js Previous Releases with dates](https://nodejs.org/en/download/releases/)
   - [Node.js ES2015/ES6, ES2016 and ES2017 support](https://node.green/)
+  - [Releases · nodejs/node](https://github.com/nodejs/node/releases)
 # changelog
 
 ## v
 
 ## v22.0.0_20240424
 
+- 
+- 
+- 
+
+- [v22.7.0_20240821](https://github.com/nodejs/node/releases/tag/v20.17.0)
+  - With the new flag `--experimental-transform-types` it is possible to enable the transformation of TypeScript-only syntax into JavaScript code.
+    - This feature allows Node.js to support TypeScript syntax such as Enum and namespace
+  - Module syntax detection (the `--experimental-detect-module` flag) is now enabled by default. 
+
+- [v22.6.0_20240806](https://github.com/nodejs/node/releases/tag/v22.6.0)
+  - introduces the `--experimental-strip-types` flag for initial TypeScript support
+    - This feature strips type annotations from .ts files, allowing them to run without transforming TypeScript-specific syntax.
+    - Supports only inline type annotations, not features like enums or namespaces.
+    - Requires explicit file extensions in import and require statements.
+    - Enforces the use of the `type` keyword for type imports to avoid runtime errors.
+    - Disabled for TypeScript in node_modules by default.
+  - introduces the initial support for network inspection in Node.js, using the `--experimental-network-inspection` flag
+    - Network inspection is limited to the http and https modules only.
+
 - ### v22.0.0_20240424
   - [Node.js — Node v22.0.0 (Current)](https://nodejs.org/en/blog/release/v22.0.0)
 
 - Highlights include require()ing ESM graphs, WebSocket client, updates of the V8 JavaScript engine, and more
 - module: support require()ing synchronous ESM graphs 
-- 🚨 esm: drop support for import assertions
+- 🗑️ esm: drop support for import assertions
 - cli: implement `node --run` .
 - improve perf of `AbortSignal` creation
 - watch: mark as stable
@@ -58,6 +78,9 @@ modified: 2022-12-31T20:13:33.307Z
 - updates of the V8 JavaScript engine to 11.8, which is part of Chromium 118
 
 ## v20.0.0_20230418_特性不多可考虑v22
+
+- [v20.17.0_20240821](https://github.com/nodejs/node/releases/tag/v20.17.0)
+  - adds require() support for synchronous ESM graphs under the flag `--experimental-require-module`.
 
 - [v20.12.0_2024-03-26](https://nodejs.org/en/blog/release/v20.12.0)
   - implement `crypto.hash()`, 1.2-2x faster than the object-based `createHash()` for smaller inputs (<= 5MB) 

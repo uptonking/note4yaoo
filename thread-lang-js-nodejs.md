@@ -58,6 +58,46 @@ modified: 2023-11-10T07:10:19.089Z
   - defacto standard at this point
 - their firecracker(爆竹，鞭炮; 杰出或激动人心、有吸引力的人或事物) vm is worth looking into if you want to get further back there in the backend and look at infra. i would imagine they are designing something purpose-built for it.
 - IMO WinterCG should eventually work on standardizing the subset of the Node API that runtimes can implement to get “enough” compatibility. Maybe not time yet though
+# discuss-nodejs-ts
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Node.js adds experimental support for TypeScript | Hacker News _202407](https://news.ycombinator.com/item?id=41064351)
+- One thing to note is that it is impossible to strip types from TypeScript without a grammar of TypeScript. Stripping types is not a token-level operation, and the TypeScript grammar is changing all the time.
+  - Node bundles a version of npm that can upgraded separately, we could do the same with our TypeScript transpiler.
+
+- If Node.js can run TypeScript files directly, then the TypeScript compiler won't need to strip types and convert to JavaScript - it could be used solely as a type checker. This would be similar to the situation in Python, where type checkers check types and leave them intact, and the Python interpreter just ignores them.
+  - It's interesting, though, that this approach in Python has led to several (4?) different popular type checkers, which AFAIK all use the same type hint syntax but apply different semantics. However for JavaScript, TypeScript seems to have become the one-and-only popular type checker.
+  - In Python, I've even heard of people writing types in source code but never checking them, essentially using type hints as a more convenient syntax for comments. Support for ignoring types in Node.js would make that approach possible in JavaScript as well.
+
+- I personally would very much prefer if NPM modules that have their original code in TS and are currently transpiling would stop shipping dist/.cjs
+  - We dont support running .ts files in node_modules, this is one of the main constraints to avoid breaking the ecosystem
+
+- It's one reason to consider a switch to Deno or Bun, but at least to maybe at least check JSR before NPM these days. The ecosystem for server-side ESM exists and is growing at a rapid pace
+
+- ## [Roadmap for experimental TypeScript support · Issue · nodejs/loaders _202407](https://github.com/nodejs/loaders/issues/217)
+- Step 1: Initial implementation
+- Step 2: Decoupling
+- Step 3: Make it fast
+  - We could vendor SWC in Rust, build our own wasm, or compile it to static libraries that we could use in core, c++ rust FFI, etc.
+
+- ## ✨ [module: add --experimental-strip-types · nodejs/node _202407](https://github.com/nodejs/node/pull/53725)
+- It is possible to execute TypeScript files by setting the experimental flag --experimental-strip-types.
+  - Node.js will transpile TypeScript source code into JavaScript source code.
+  - During the transpilation process, no type checking is performed, and types are discarded.
+- 🤔 Why I chose @swc/wasm-typescript
+  - Because of simplicity. I have considered other tools but they require either rust or go to be added to the toolchain. 
+  - @swc/wasm-typescript its a small package with a wasm and a js file to bind it. Swc is currently used by Deno for the same purpose, it's battle tested. 
+  - In the future I see this being implemented in native layer. Massive shoutout to @kdy1 for releasing a swc version for us.
+
+- Not supporting extension-less imports is by-design
+
+- users should write their import specifiers with .ts extensions, like import './file.ts', and there’s typescriptlang.org/tsconfig#allowImportingTsExtensions allowImportingTsExtensions to support this via tsconfig.json. Such behavior also aligns us with Deno.
 # discuss
 - ## 
 
