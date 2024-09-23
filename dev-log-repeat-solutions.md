@@ -14,20 +14,20 @@ modified: 2021-07-20T13:50:23.433Z
   - ~~paas/rendering/web~~ may be the future
   - 涉猎saas解决方案，积累算法、库、框架、模版项目、生态
     - 尝试将算法和技术转化为可复用的产品, 参考yjs+hocuspocus
-    - 工具型框架离商业化应用太远, 直接从主流cms/saas中寻找参考
-  - 🌰 深入一个项目，开发需要精力，建立生态更需要精力
+    - 工具型框架离商业化应用太远, 直接从主流cms/saas中寻找架构或框架参考
+  - ⚒️🌰 深入一个项目，开发需要精力，建立生态更需要精力
     - 视图+持久化，前端分析model/view/dataflow, 后端分析数据库设计和优化
     - 分析api的设计，包括扩展ui、api，插件开发，热加载
     - src-code, issues, pr, forks, extensions, most-commented-issues
-    - roadmap, open-issues, alternatives
+    - roadmap, open-issues, alternatives, 竞品
     - 开放能力: extensions, scripts, marketplace
     - pref: 索引、缓存、分库分表、读写分离
-    - 文档产品: editor + fileTree + workbenchLayout + search + cmdKeys + settings
+    - 典型产品: editor + fileTree + workbenchLayout + search + cmdKeys + settings
   - 💠 architecture-early 需要尽早考虑的架构问题，没有完美的架构
     - 核心架构考虑 server/db/network-socket
     - 早期不要将系统架构设计得过于复杂，会影响开发进度, 甚至产品终止都用不上
     - collaborative的数据结构，冲突处理算法，客户端中心还是服务端中心
-    - scale水平扩展/多实例/多租户; http更适合scale; 配置、缓存
+    - scale水平扩展/多实例/多租户; http更适合scale; shared配置、缓存
     - 数据通信，http/websocket
     - 读多？ 写多？
     - sqlite的流行表明scaling要考虑场景, zulip/jupyterhub私有部署默认支持几千用户但不scale
@@ -41,20 +41,21 @@ modified: 2021-07-20T13:50:23.433Z
 
 - 技术方向js: 前端版/流式版/oplog; 编辑器/ide，多维表格/excel，协作/gitdb; dnd，floating
 - 技术扩展js/py: 可拖拽的页面编辑器/lowcode, Excel/kanban, 图表
+- 技术扩展ai: rag, search, vector, 知识库搜索与对话
 - 技术产品: client/server版; cms/wiki, airtable/table, db
 - 技术可选1: 画板, pdf/ppt-editor, 图形编辑器
 - 技术可选2: olap-bi, 大数据系统, 数据库
 - 技术可选3: vscode，可参考架构 extensions、capabilities
 - 技术可选4: 侧重版本控制的数据库，如dolt, SirixDB, git-like-db
 - 玩具尝试1: git+crdt+table+branch/version, 参考类似ckan的data-portal
-- roadmap: 
-  - 📝 虚拟渲染, 分支版本, 协作冲突, undo/redo
+- roadmap: virtualized-draggable-table, cm-devtools, cm-noseditor, cm-hocus
+  - 📝 编辑器，协作同步，版本分支，~~虚拟渲染, 分支版本, 协作冲突, undo/redo~~
   - 🔀🛢️ crdt版本历史, partial-replica、ivm, delta-db, dynamic-schema/eav, 实时架构
-- file-first: notable, hexo
+- file-first: obsidian, notable, hexo
 - db-first: joplin, siyuan, nocodb
 
 - 🚀 产品落地
-  - 表格类cms, 内容创作与管理
+  - 侧重表格的cms, 内容创作与管理
   - 运营数据仪表板
   - sharing table/data pieces/snippets
   - 个人数据管理，开放api，允许其他app获取，参考ckan
@@ -71,11 +72,11 @@ modified: 2021-07-20T13:50:23.433Z
   - ocr
 
 - 团队版/企业版-features
+  - 移动端优化的表格
   - 表单/投票收集与统计，如features
   - 编辑器内的时间变化动态表格
   - 类似多个图表facet的多个表格
   - table in table
-  - 移动端优化的表格
 
 ## techstacks: rich-editor/builder
 
@@ -100,7 +101,7 @@ modified: 2021-07-20T13:50:23.433Z
   - eav: triplitdb
 
 - 通用的features
-  - collab， realtime， ai
+  - collab, realtime, ai
 
 ## solutions: inter(re)active knowledge-base/wiki
 
@@ -247,7 +248,7 @@ modified: 2021-07-20T13:50:23.433Z
     - https://github.com/tannerlinsley
     - https://github.com/tannerlinsley/react-table
 
-- 胡文召
+- 胡文召 /univer
   - https://x.com/wzhudev
 
 - davidbrochart /jupyter

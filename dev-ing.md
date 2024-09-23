@@ -511,6 +511,11 @@ console.log(';; machine ', taskState, runningTaskAction, task?.task_steps)
 stt.message.channel().send('uCmdK', 'README.md', 2, 2, 'explain an elegant word in one sentence')
 ```
 
+## 0923
+
+- team-to
+  - 确定本次迭代的最后一天及demoday是周五还是放假前最后一天9月30号
+
 ## 0919
 
 - [Resolving a promise inside a callback - Stack Overflow](https://stackoverflow.com/questions/55185103/resolving-a-promise-inside-a-callback)

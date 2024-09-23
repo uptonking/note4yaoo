@@ -39,6 +39,23 @@ modified: 2024-07-07T11:43:43.228Z
 
 ## [Horizontal scaling WebSockets on Kubernetes and Node.js _202102](https://www.shebanglabs.io/horizontal-scaling-websocket-on-kubernetes-and-nodejs/)
 
+# blogs-perf-ws ⚡️
+
+## [How Discord Reduced Websocket Traffic by 40% _202409](https://discord.com/blog/how-discord-reduced-websocket-traffic-by-40-percent)
+
+- When your client connects to Discord, it receives real-time updates about what’s happening through a service that we call the “gateway.” 
+  - Since late 2017, the client’s gateway connection has been compressed using zlib, making messages anywhere from 2 to 10 times smaller.
+  - Since then, zstandard (originally released in 2015) has gained enough traction to become a viable replacement for zlib. Zstandard offers higher compression ratios and shorter compression times and supports dictionaries
+  - We attempted to use zstandard in the past, but, at the time, the benefits weren’t worth the costs. Our testing in 2019 was desktop-only and used too much RAM. 
+  - The graph below further illustrates that zstandard performed worse than zlib
+  - It turns out that one of the key differences between our zlib and zstandard implementations was that zlib was using streaming compression, while zstandard wasn’t. 
+  - Our gateway service is written in elixir, and while zstandard supports streaming compression, the various zstandard bindings for elixir/erlang we looked at didn’t.
+  - We ultimately settled on using ezstd as it had dictionary support (more on that later). While it didn’t support streaming at the time, in the spirit of open source we forked ezstd to add support for streaming, which we later contributed back upstream.
+- While the original plan was to only consider zstandard for mobile users, the bandwidth improvements were significant enough for us to ship to desktop users as well
+- We employ passive sessions to avoid sending most messages that a server generates to clients that may not even open the server. For example, a Discord server could be very active sending thousands of messages per minute, but if a user isn’t actually reading those messages, it doesn’t make sense to send them and waste their bandwidth. 
+
+- Through the combined effects of Passive Sessions v2 and zstandard, we were able to reduce the gateway bandwidth used by our clients by almost 40%. 
+  - While the passive sessions optimization was an unintended side-effect of the zstandard experimentation, it shows that with the right instrumentation and by looking at graphs with a critical eye, big savings can be achieved with a reasonable amount of effort.
 # blogs
 - [Pushpin | Generic Realtime Intermediary Protocol](https://pushpin.org/docs/protocols/grip/)
   - GRIP makes it possible for a web service to delegate realtime push behavior to a proxy component

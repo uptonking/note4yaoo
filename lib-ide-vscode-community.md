@@ -30,20 +30,30 @@ modified: 2024-08-24T16:15:47.613Z
 - Fleet 的远程开发体验特别好。高延迟下效果比idea好很多，而且plugin不需额外开发就支持远程
 - WebStorm next 重写了 Typescript engine。
 
-
 # discuss-electron
-- ##
+- ## 
 
-- ##
+- ## 
 
-- ##
+- ## 
+# discuss-news
+- ## 
 
+- ## 
+
+- ## Visualize your repo's history... now directly built into @code
+- https://x.com/code/status/1837540563710615757
+- Turned this feature off because it made the entire git history tab insanely slow and unusable... If your history is rather large it's slow and distracting.
+
+- there's an extension called "Git Graph"
+
+- To all terminal users, I couldn't recommend lazygit enough. If you prefer not to leave your editor, there's also a plugin that integrates it directly into VS Code
 # discuss
-- ##
+- ## 
 
-- ##
+- ## 
 
-- ##
+- ## 
 
 - ## [微软研发并开源 vscode 的动力是什么？ - 知乎](https://www.zhihu.com/question/519996636/answers/updated)
 - 有利于巩固Windows生态。
