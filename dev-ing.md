@@ -78,6 +78,8 @@ betterdiscordctl -i flatpak install
 
 npx create-strapi@rc strapi5-play-202408 --use-npm --quickstart --ts --skip-cloud
 
+npx create-strapi@latest --ts --use-npm --no-git-init  --example --skip-cloud --skip-db    --quickstart 
+
 stt.message.channel().send('uResetTask')
 stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorithm')
 ```
@@ -422,9 +424,9 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
     - rename to an elegant variable name
     - implement quick sort algorithm and add 2 test cases
   - bugs
-    - disable cmdk in readonly
-    - 若在ai写代码时或写完后但未accept时刷新页面，是否会丢失状态数据
+    - disable cmdk in readonly and diff-view
     - 等待ai返回结果时，禁止send，允许esc键取消输入框和丢弃ai返回结果
+    - 若在ai写代码时或写完后但未accept时刷新页面，是否会丢失状态数据
     - ~~sdk如何不使用sleep来获取chunk返回完成时的数据~~
     - ~~replace initial lines on ai responses~~
     - ~~diff anime gray bg~~
@@ -455,6 +457,7 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
 
 - not-yet
   - 文件系统只读时，在前端提醒用户
+  - rag在terminal或文件编辑时的防抖, rag卡死的处理
   - tab-key; chat-apply; aiCannotCreateThread
   - 防抖: cmdk， chat
   - 驾驶舱action列表支持打开文件
@@ -513,8 +516,13 @@ stt.message.channel().send('uCmdK', 'README.md', 2, 2, 'explain an elegant word 
 
 ## 0923
 
+- 🤔 如何让一个clacky thread的playground里面的多个用户都能够在vscode打开cde的文件
+  - 需要有一个thread是否已添加ssh密钥的api让前端直接获取
+  - 👥💡 讨论后不需要后端添加api或新开发，前端若能在刷新页面后能展示ssh-key，就已添加
+
 - team-to
   - 确定本次迭代的最后一天及demoday是周五还是放假前最后一天9月30号
+    - 27号
 
 ## 0919
 

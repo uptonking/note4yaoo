@@ -169,6 +169,47 @@ modified: 2023-12-12T08:45:31.670Z
 - 是啊，现在能成为 ChatGPT/LLM 等的基础技术或软件都会再起飞
 - 还是有不少公司业务在用 SSE 的，电商 feeds, sku 多的场景都挺适合的
 
+# discuss-ssh/tunnel
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [What os difference websocket vs ssh-tunnel? - Stack Overflow](https://stackoverflow.com/questions/55685980/what-os-difference-websocket-vs-ssh-tunnel)
+- WebSocket is a protocol designed for 2-way real-time communication between browsers and servers to replace hacky solutions like long polling and XHR streaming.
+
+- SSH is a protocol designed for operating network services securely over an insecure network. 
+  - Usually it's used for remote logins, file transfers, however it can be used for any protocol, however a few modifications need to be made.
+
+- The difference between them is, well, WebSocket is designed to be used for the browser and has support there. 
+  - However, SSH is a more general protocol and can be used for more however it is not supported by browsers directly, but through proxies which bridge WebSocket to SSH.
+
+- ## [what is more secure -- Data transfer using socket programming OR SSH/SCP/FTP - Stack Overflow](https://stackoverflow.com/questions/2642808/what-is-more-secure-data-transfer-using-socket-programming-or-ssh-scp-ftp)
+- Just using sockets doesn't give you any security at all. The right choice depends on the application, the systems you're using
+
+- SSH/SFTP/SCP all makes use of sockets under socket programming. Unless you have a better algorithm (for security) than what SSH provides, use a SSH module for Perl.
+
+- Out of the box sockets aren't secure. The data is transmitted in raw form from point A to point B. 
+  - Adding SSL adds security. Many protocols support SSL. In particular several flavors of FTP and HTTP support SSL.
+
+- If I were to start from scratch on such a system I would use FTPS.
+
+- SSH is a remote shell protocol and itself it is not used for file transfer (like FTP). 
+- SCP file transfer protocol was part of SSH1 but as SSH1 is outdated and flawed, SCP is not recommended for use. 
+  - In SSH2 (used in all modern systems) SFTP (SSH File Transfer Protocol) is used.
+
+- FTP (RFC 959) by itself doesn't provide any security. There exist extensions that let you run FTP over SSL/TLS (either implicitly, over pre-encrypted channel, or explicitly, via TLS as a part of FTP protocol). FTP over SSL is called FTPS (don't mix it with SFTP).
+
+- FTPS (FTP over SSL/TLS) - it's equivalent of HTTPS which in simple terms means it's encrypted version of the ordinary FTP protocol. 
+  - I think it's great for downloading over the Internet from remote and possibly public machines. It offers superior authentication mechanism in the form of X.509 certificates. 
+  - There is some trouble with firewalls because it uses, as FTP does, two connections. 
+  - If your goal is to prevent anyone from seeing what you're downloading this is IMHO perfect solution. I tend to use this protocol to access machines that I don't control.
+- SFTP (SSH FTP) - it's good protocol, maybe bit superior to the FTPS, but in my opinion it's better suited for controlled environment. 
+  - I will use this protocol when I want to download a file from my account on one machine to another. Or when I want to upload new script to a server. 
+  - It's for me remote equivalent of me going to the machine with flash drive and logging on the machine.
+- VPN - if those machines are fixed so to speak - you are always connecting to the same machines - I would consider using VPN to deliver the security. 
+  - The transmissions are protected from outsiders, the server behaves like it's in the same network and I can use any protocol I want.
 # discuss
 - ## 
 
