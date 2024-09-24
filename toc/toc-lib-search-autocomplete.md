@@ -366,7 +366,7 @@ modified: 2023-01-01T13:24:35.994Z
 - Faceted Search ui
   - [Tailwind CSS Faceted Search Drawers](https://flowbite.com/blocks/application/faceted-search-drawers/)
 
-- elastic-search-ui /1.8kStar/apache2/202212/ts
+- elastic-search-ui /1.8kStar/apache2/202212/ts/vanillajs/headless
   - https://github.com/elastic/search-ui
   - https://docs.elastic.co/search-ui/overview
   - https://docs.elastic.co/search-ui/solutions/ecommerce
@@ -407,10 +407,15 @@ modified: 2023-01-01T13:24:35.994Z
 - https://github.com/appbaseio/dejavu /8.3kStar/MIT/202301/js/inactive
   - https://dejavu.reactivesearch.io/
   - The Missing Web UI for Elasticsearch: Import, browse and edit data with rich filters
-
 - https://github.com/appbaseio/reactivesearch /apache2/202401/js
   - https://opensource.appbase.io/reactivesearch
   - Search UI components for React and Vue: powered by appbase.io / Elasticsearch
+
+- https://github.com/aralroca/search-engine-wc /MIT/202409/ts
+  - https://search-engine-wc.vercel.app/
+  - This Web Component allows you to have a search engine similar to Vitepress easily in any framework (React, Brisa, Vue, Solid.js, Svelte, Vanilla JS, etc).
+  - MiniSearch, Mark.js, Signals, Declarative Shadow DOM
+  - [Brisa Framework](https://brisa.build/)
 
 - https://github.com/hemantwasthere/GitHub-Clone
   - search any github authorized user in this app and checkout there profile

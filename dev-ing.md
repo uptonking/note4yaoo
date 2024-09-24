@@ -78,7 +78,7 @@ betterdiscordctl -i flatpak install
 
 npx create-strapi@rc strapi5-play-202408 --use-npm --quickstart --ts --skip-cloud
 
-npx create-strapi@latest --ts --use-npm --no-git-init  --example --skip-cloud --skip-db    --quickstart 
+npx create-strapi@latest --ts --use-npm --no-git-init  --example --skip-cloud --skip-db    --quickstart ./emptyFolder
 
 stt.message.channel().send('uResetTask')
 stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorithm')

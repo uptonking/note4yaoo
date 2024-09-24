@@ -13,24 +13,70 @@ modified: 2024-05-02T05:51:12.370Z
 - ## 
 
 - ## 
+# discuss-compatibility
+- ## 
 
-- ## [CRDTs & Positions in CodeMirror 6 - discuss.CodeMirror _202008](https://discuss.codemirror.net/t/crdts-positions-in-codemirror-6/2571)
-- 
-- 
-- 
+- ## [What is the browser undoing when the editor is unfocused? - v6 - discuss. CodeMirror _202207](https://discuss.codemirror.net/t/what-is-the-browser-undoing-when-the-editor-is-unfocused/4645)
+  - What steps is the browser running through when the user presses Undo while the editor isn’t focused?
+
+- Chrome (and possibly Safari? you didn’t mention what you’re testing with) has some weird page-global undo history concept, which as far as I know no one uses or expects, but that seems to be what’s kicking in here. 
+  - Because focus isn’t on the editor, keys are handled by the native browser history feature, which then mutates the editor content. 
+  - To make things worse, it inexplicably doesn’t fire a `beforeInput` the way it normally does for history actions, so I haven’t found a way for the library to recognize or capture these.
+
+- ## 🤼 [More conventional undo behaviour? - v6 - discuss. CodeMirror _202301](https://discuss.codemirror.net/t/more-conventional-undo-behaviour/5565)
+  - I noticed the undo behaviour is based on grouping events after an idle delay. For example if I start typing a lot of text (quickly), make a typo and press Ctrl+Z it will delete all of the text that I typed.
+  - Other editors tend to make Ctrl+Z either delete one character at a time (for example this forum) or one word at a time (VS Code, Mousepad etc.). The former behaviour can be achieved in CodeMirror by setting `newGroupDelay` to a small value such as 50. But I was wondering if undoing by word is possible?
+- I don’t think there is anything like a consensus on that. 
+  - This forum seems to rely on the browser’s native behavior, which for (tried Firefox and Chrome Linux) seems to undo all text typed together in one go. 
+  - Google Docs seems to use a similar system to CodeMirror.
+  - Would an option that allows you to specify a function taking two changesets (the current history event and the new changes) and allows you to determine whether they should be combined work for you?
+  - This patch adds such a configuration option `joinToEvent` .
+- That approach sounds great. So I could choose not to combine if the user is adding whitespace to a non-whitespace string.
+
 # discuss-undo/history
 - ## 
 
-- ## 
+- ## [Problems with redoing an effect - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/problems-with-redoing-an-effect/5283)
+- `invertedEffects` functions should be called for every transaction that doesn’t have `addToHistory` set to false. Maybe your effects being mapped to nothing by going through the change-invertedchange steps? 
+  - I’d recommend using a transaction filter, rather than a separately created transaction that reverts the previous one, for this. 
+  - Or, possibly even less problematic, don’t keep deleted text in the document, but store it alongside it and display it as widgets.
 
-- ## 
+- ## [Serialize and save undo history? - discuss. CodeMirror](https://discuss.codemirror.net/t/serialize-and-save-undo-history/4254)
+  - Has anyone had success serializing the undo and redo histories to save and load along with the document?
+- Use the last argument to `EditorState.toJSON/fromJSON` , with a value like `{history: historyField}` .
 
-- ## 
+- ## [How to undo on button press? - v6 - discuss. CodeMirror _202103](https://discuss.codemirror.net/t/how-to-undo-on-button-press/3034)
+
+```JS
+import { undo } from "@codemirror/history"
+
+myButton.onmousedown = e => {
+  undo(view)
+  e.preventDefault()
+}
+```
+
+- Uncaught RangeError: Trying to update state with a transaction that doesn't start from the previous state.
+  - I’m not really sure why the error happend, but it seems it was due to Vue. EditorView was reactive, after I made it not reactive, everything worked again
+- I got the same problem in vue, and finally solved it using `shallowRef`.
 
 - ## [Detect history undo - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/detect-history-undo/7653)
   - Is it possible to detect wether an update was dispatched via undo (or redo)?
   - My use case: I want to react to document changes, but not if undo is dispatched.
 - You can use `Transaction.isUserEvent` for this, passing "undo" or "redo".
+
+```ts
+const detectChangeWithoutUndoRedo = StateField.define<boolean>({
+    create: (_state: EditorState) => false,
+    update: (v: boolean, tr: Transaction) => {
+        if (tr.docChanged && !tr.isUserEvent("undo") && !tr.isUserEvent("redo")) {
+            console.log("changed");
+        }
+        return v;
+    }
+});
+// use `detectChangeWithoutUndoRedo.extension`
+```
 
 - ## [Is there a way to customize the undo history list? - v6 - discuss. CodeMirror _202310](https://discuss.codemirror.net/t/is-there-a-way-to-customize-the-undo-history-list/7343)
   - I don’t want to add this insert operation to the undo history list. When using “Mod-z” for an undo operation, I want to skip this text insertion and directly return to an earlier historical state. What should I do?
@@ -43,27 +89,21 @@ modified: 2024-05-02T05:51:12.370Z
 
 - ## 💡 [editor.setHistory(), clearHistory() equivalent in Codemirror #6 - v6 - discuss. CodeMirror _202304](https://discuss.codemirror.net/t/editor-sethistory-clearhistory-equivalent-in-codemirror-6/6291/1)
   - each file has its own undo-redo history. We store history of each file by calling editor.getHistory() and storing in a Map. Whenever you switch the files, we load the history for that file and call editor.setHistory. This worked well in CM 5
+  - in CM 6, the history API changed, and I’m not sure how to do it anymore. 
 - Usually, in situations like this, you just want to store the entire editor state (either as a JS object, or, if you need to serialize it, via EditorState.toJSON) rather than storing the document and history separately.
   - You can’t clear history. Just create a new state. When creating a new state with fromJSON, you can provide your serialized history in the JSON object.
 
 - https://x.com/puruvjdev/status/1780560310547436002  
   - Anytime you change documentId, it stores the state in a map, and when the documentID changes back to the one stored, we apply the history. It's quite neat
-
-- ## 🤔 [More conventional undo behaviour? - v6 - discuss. CodeMirror _202301](https://discuss.codemirror.net/t/more-conventional-undo-behaviour/5565)
-  - I noticed the undo behaviour is based on grouping events after an idle delay. For example if I start typing a lot of text (quickly), make a typo and press Ctrl+Z it will delete all of the text that I typed.
-  - Other editors tend to make Ctrl+Z either delete one character at a time (for example this forum) or one word at a time (VS Code, Mousepad etc.). The former behaviour can be achieved in CodeMirror by setting `newGroupDelay` to a small value such as 50. But I was wondering if undoing by word is possible?
-- I don’t think there is anything like a consensus on that. This forum seems to rely on the browser’s native behavior, which for (tried Firefox and Chrome Linux) seems to undo all text typed together in one go. 
-  - Google Docs seems to use a similar system to CodeMirror.
-  - Would an option that allows you to specify a function taking two changesets (the current history event and the new changes) and allows you to determine whether they should be combined work for you?
-  - This patch adds such a configuration option `joinToEvent` .
-- That approach sounds great. So I could choose not to combine if the user is adding whitespace to a non-whitespace string.
-
-# discuss-crdt
+# discuss-crdt/yjs 🔀
 - ## 
 
 - ## 
 
-- ## 
+- ## [How is UndoManager being used? - Yjs Community _202305](https://discuss.yjs.dev/t/how-is-undomanager-being-used/1851)
+- We are using y-codemirror.next 5. We want each client to be able to undo only their own input. Is there a good way to add origin?
+  - How to do each client to be able to undo only their own input. Still undoes another client’s changes also. I am wondering if YSyncConfig is the cause.
+  - I had been using react-codemirror and it seemed to conflict with the history feature of react-codemirror, so I disabled the history feature of `react-codemirror` and used `Y.UndoManager` , so it worked as expected.
 
 - ## 🔀 [CRDTs & Positions in CodeMirror 6 __202008](https://discuss.codemirror.net/t/crdts-positions-in-codemirror-6/2571)
 
@@ -100,7 +140,7 @@ modified: 2024-05-02T05:51:12.370Z
 - ## 
 
 - ## 
-# discuss-cursor
+# discuss-user-cursor
 - ## 
 
 - ## 

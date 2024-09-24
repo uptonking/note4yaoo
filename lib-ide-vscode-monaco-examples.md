@@ -19,10 +19,10 @@ modified: 2024-08-24T16:17:47.677Z
   - The Monaco editor is not supported in mobile browsers or mobile web frameworks.
 
 - https://github.com/judge0/ide /MIT/202403/js
-
   - https://ide.judge0.com/
   - free and open-source online code editor that allows you to write and execute code from a rich set of languages.
   - Judge0 IDE is using Judge0 for executing user's source code.
+  - 依赖monaco-editor
 
 - https://github.com/ast-grep/ast-grep /MIT/202406/rust
   - https://ast-grep.github.io/

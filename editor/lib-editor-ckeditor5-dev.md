@@ -10,6 +10,13 @@ modified: 2021-10-25T09:33:39.528Z
 # 2022
 
 # guide
+- pros
+  - 功能、示例、文档都很丰富
+  - 支持selective undo
+
+- cons
+  - AGPL
+
 - features
   - perfect wysiwyg ux
     - Written in ES6 with MVC architecture, custom data model, virtual DOM.

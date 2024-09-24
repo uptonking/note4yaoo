@@ -12,7 +12,7 @@ modified: 2022-04-05T10:10:59.826Z
 - pros
   - good ecosystem: docs, bindings, examples
   - common data types
-  - undo/redo
+  - undo/redo: undoManager支持selective undo
   - versions/revision-history
   - track-changes(suggestion mode)
   - offline-editing

@@ -245,6 +245,22 @@ modified: 2021-05-06T09:38:31.520Z
 
 - Querying coordinates for positions outside of the current viewport will not work (since they are not rendered, and thus have no layout).
 
+## dev-cde
+
+- 基于文件系统实现的cde不适合实时协作
+  - 协作难点：git，ssh
+  - 集成和限制第三方服务: github，ai-token
+  - playground容器在(无心跳3min)失活后，ssh无法打开, 所以要保持cde页面打开
+
+- 通过本地vscode打开ssh-url的方式打开cde文件后，在cde修改文件会同步到vscode，但在vscode修改文件不会立即在cde更新，cde需要手动刷新文件内容
+  - 需要针对ssh协议更新协同编辑的逻辑
+
+- 通过在命令行执行git pull的方式更新cde的文件，cde需要手动刷新文件内容
+  - 需要针对git pull/rebase更新协同编辑的逻辑
+
+- 在cde的xterm terminal执行命令，docker的cpu是正常的
+  - 在vscode ssh的terminal执行命令，docker的cpu一般在100%之上
+
 ## dev-ai-coding
 
 - diff视图的结果是红色删除行在上、绿色增加行在下

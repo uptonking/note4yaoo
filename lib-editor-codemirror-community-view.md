@@ -12,7 +12,8 @@ modified: 2024-08-08T20:49:11.571Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## [Force a layout pass programmatically - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/force-a-layout-pass-programmatically/5914)
+- Could it be that your fonts or styles are loading after the editor initializes? A `view.requestMeasure()` should cause it to re-measure its layout. Sometimes it helps to do this on a "load" event.
 
 - ## 👾 Finished up a simple AI edit gen feature. a nice pattern is to pull a CodeMirror widget DOM element out into a React portal and then just writing the component with React. 
 - https://x.com/hamiltonulmer/status/1829287750253916369
@@ -41,16 +42,12 @@ modified: 2024-08-08T20:49:11.571Z
 
 - ## 
 
-- ## 
+- ## [Editor on multiple columns - discuss. CodeMirror _202208](https://discuss.codemirror.net/t/editor-on-multiple-columns/4908)
+- Just setting the editor CSS to create columns will definitely not work. The editor expects a lines to appear below each other, in order. You might be able to build something out of multiple editors by having your own code split and divide the content, but getting things like the undo history and cursor motion to work smoothly like that would probably be a lot of work.
 
 - ## [Multiple Editable Columns with CodeMirror 6 - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/multiple-editable-columns-with-codemirror-6/8514)
   - My north star goal is to provide a Layout experience similar to that of Confluence/Notion
 - I had a very positive experience with just replacing decoration widgets (width:100%). One can make them mutable (they can change the content on the covered ranges using basic transactions) and provide a transaction filter or something similar so that if a cursor goes into the region of the widget, it will move the focus into the nested codemirror editor.
-
-- 
-- 
-- 
-- 
 
 # discuss-readonly
 - ## 
@@ -71,7 +68,10 @@ modified: 2024-08-08T20:49:11.571Z
 # discuss-autocomplete
 - ## 
 
-- ## 
+- ## 🌰 [Replace default search panel with my own component - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/replace-default-search-panel-with-my-own-component/5885)
+- my solution customizes search in a CodeMirror editor by removing the default panel, enabling case insensitivity, and scrolling to match occurrences
+  - the code includes functions for replacing the next occurrence of the search query (replaceNext) and replacing all occurrences (replaceAll). 
+  - Additionally, there are functions for undoing (undoEditor) and redoing (redoEditor) changes in the editor.
 
 - ## [Access Decorations from tooltip (or vise versa) - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/access-decorations-from-tooltip-or-vise-versa/5462)
 - The callback given to `hoverTooltip` could use the range set holding the decorations to figure out whether there’s a match at the hovered position, if hover tooltips are what you are trying to implement. If these are always-visible things, I guess you could use the decorate option to generate both mark decorations and widgets for a given match
@@ -241,7 +241,7 @@ modified: 2024-08-08T20:49:11.571Z
 # discuss-styling
 - ## 
 
-- ## [Dynamically changing theme in MergeView - v6 - discuss.CodeMirror](https://discuss.codemirror.net/t/dynamically-changing-theme-in-mergeview/8620)
+- ## [Dynamically changing theme in MergeView - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/dynamically-changing-theme-in-mergeview/8620)
 - Define a compartment
 
 - ## [How does CM6 decide whether dark mode is on/off? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/how-does-cm6-decide-whether-dark-mode-is-on-off/8397)

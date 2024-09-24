@@ -12,6 +12,42 @@ modified: 2024-08-11T03:29:17.282Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 🤔 [Request: View plugin method that runs at the same phase as update listeners - v6 - discuss. CodeMirror _202404](https://discuss.codemirror.net/t/request-view-plugin-method-that-runs-at-the-same-phase-as-update-listeners/8113)
+  - At Replit, we have this pattern which is used in a lot of our plugins
+  - postUpdate is helpful in a lot of situations. It enables you to make update listeners that have internal state, without using something like closures.
+  - For us, it’s often needed because an extension needs to manage some part of the editor’s state, but that management logic just can’t go into something like a StateField.
+  - This is our most common use case, e.g. our inline AI suggestions use this. Most of the suggestion state is in a StateField, but most of the logic for updating that field lives in a view plugin because that’s the only reasonable place to do asynchronous requests.
+  - Another use case for us is updating things outside the editor, which then may have reactive effects which cause editor dispatches. It is desirable to avoid this entirely, but for our React-inside-of-CodeMirror library, we definitely needs this, or at least workarounds similar to this.
+  - We could do something like `queueMicrotask(() => view.dispatch({ ... })` instead of using an update listener, but this has issues with making view updates sort of slightly asynchronous. 
+  - if you called view.dispatch, and then immediately accessed view.state afterwards, that state won’t yet reflect anything queued up by queueMicrotask yet. 
+  - Using update listeners avoids this, by basically letting a single dispatch turn into multiple dispatches.
+  - So, our request here is pretty simple: add a method very similar to update that runs after update and only when it is safe to do dispatches to the view, just like update listeners. The only real drawback I can think of to adding this method is maybe confusion about what method to use when learning the API, and the possibility of infinite update loops. The latter is already possible with update listeners, so IMO it’s fine.
+
+- In my own code I’ve been pretty successful at avoiding this pattern where a dispatch immediately triggers another dispatch. 
+  - Cascading updates are a bit wasteful, in that they run through the view update logic multiple times for what should be an atomic update. 
+  - You can often set things up so that the state update plans the asynchronous actions, and a plugin update method actually activates/schedules them, without updating the state. 
+  - Or in some cases you can dispatch multiple transaction at once by passing them to dispatch as an array.
+  - Note that even though the code after the dispatch would see the updated state if you had this feature, the update listeners or postUpdate hooks will have situations where the update they are looking at is not actually the most recent update anymore, because another such listener dispatched a transaction. I sort of feel that doing this kind of cascading dispatch asynchronously might be less error-prone than doing it synchronously.
+
+- You can usually avoid it, and you should if you can. But it’s still useful for us. It feels like a missing lifecycle method with view plugins. I will say not every use case we have for this is just about dispatching.
+
+- 
+- 
+- 
+- 
+
+- ## [Filtering input characters - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/filtering-input-characters/3968)
+  - For legacy reasons, our OT algorithm doesn’t support characters outside the Basic Multilingual Plane (BMP) 
+  - We plan to fix this limitation in the future, but this would require significant work. 
+  - For now, we would like to migrate across our existing solution which replaces such characters with another dummy character.
+  - It seems like a transactionFilter is the right tool for this and I’ve attempted it in this codesandbox. The replacement works as expected but it inserts in reverse and I’m not sure why.
+
+- This approach where you replace all local transactions with a fresh one that has similar changes will strip all effects and annotations from the transactions, so that is probably not going to work (it’ll mess up the undo history, for example).
+  - But I think the problem here is that the changes are all interpreted in the original document’s coordinate system. 
+  - A filter that adds the the existing transaction by appending a change that deletes the astral characters, using sequential so that its coordinates are interpreted in the in-between coordinate system, might work (return [tr, {changes: ..., sequential: true}]).
+
 - ## 🌰 [how to get selected content in v6 _202208](https://discuss.codemirror.net/t/how-to-get-selected-content-in-v6/4888)
 
 ```JS
@@ -28,9 +64,6 @@ view.dispatch({ changes: { from: line.from, to: line.to, insert: 'New text for t
 
 - ## [Updating block-widgets // What is the order of the state update cycle, exactly? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/updating-block-widgets-what-is-the-order-of-the-state-update-cycle-exactly/8365)
 - I suspect, from your message, that you’re mutating your decorations, and expecting the method to run then? That’s not how these work—they are immutable like everything else you store in your state. You replace them with a widget of the same type to have updateDOM called.
-
-- 
-- 
 
 # discuss-cm-nested/multi
 - ## 
@@ -58,12 +91,44 @@ view.dispatch({ changes: { from: line.from, to: line.to, insert: 'New text for t
 - ## 🌰 [Strange cursor behavior when nesting editors - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/strange-cursor-behavior-when-nesting-editors/7101)
 - I found this behavior to be due to bad CSS settings for the Dom in the widget, so it’s an oops. I’m sorry if this wasted your time.
 
+# discuss-switch-files
+- ## 
+
+- ## 
+
+- ## [Programmatically clear the content? - v6 - discuss. CodeMirror _202202](https://discuss.codemirror.net/t/programmatically-clear-the-content/3967)
+- You should usually just create a new state and use setState to reset the view to that. 
+  - But if you really want to replace the content, keeping the old undo history and such intact, pass `{from: 0, to: editorView.current.state.doc.length, insert: value}` under changes.
+
+- ## [Preserving state when switching between files - v6 - discuss. CodeMirror _202102](https://discuss.codemirror.net/t/preserving-state-when-switching-between-files/2946)
+  - I’m trying to find the best way to switch between files so that changes and undo history are preserved. The goal is to emulate what you would expect form a traditional editor.
+  - My initial approach was to reuse the same EditorView instance and keep and EditorState map in memory for each file and call view.setState(fileStateMap[filename]) when the file is changed. But it looks like setState resets the state itself.
+  - Another approach could be to create an EditorView instance for each file and attach/detach to the DOM when the file is changed. Not sure how this would scale if many files are opened.
+  - Another approach is to store the text content and the history extension in a map for each file and dispatch a ReconfigurationSpec with a tagged history extensions and changes to replace the text content.
+  - Is there a “right” approach here or is there another approach that I’m missing?
+- The technique of keeping a state per ‘buffer’ is how I’d approach this myself.
+
+- ## 💡 [Document Changes in CM6 - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/document-changes-in-cm6/3284)
+  - I want to replace all the code that is in the editor with another code. What is the best way to do this in CM6? 
+- The recommended way to do this is to create a completely new state and call `setState` on the view.
+  - If you’re moving to a new document that has nothing to do with the old, definitely do use `setState` . 
+  - If you are just making changes to the existing document, `dispatch` transactions that make those changes.
+- why not use dispatch to replace the entire content
+  - Do keep in mind that that’ll mess up the undo history and any other metadata that’s being kept about the document content (marks, mapped positions). If practical, you could compute a minimal diff and just update the changed ranges.
+
 # discuss-transaction
 - ## 
 
 - ## 
 
-- ## 
+- ## [Keep original's annotation to an updated transaction - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/keep-originals-annotation-to-an-updated-transaction/4218)
+  - How can I update a transaction keeping its annotation’s origin value?
+  - How can I detect the current transaction’s annotation? 
+
+- I just realized that if I use annotations:` Transaction.userEvent.of('delete.selection')` it works.
+
+- You can’t copy all annotations when replacing a selection, currently. But I think that actually is a reasonable thing, since doing that wouldn’t be safe anyway (for example, the transactions created by undo/redo will include a new undo history object in an annotation, which would not be valid for a transaction that has different changes). 
+  - You may be able to do what you’re trying to do with a change filter, or just add only userEvent and hope you’re not dropping any important annotations.
 # discuss-state-field
 - ## 
 

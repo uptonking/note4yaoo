@@ -127,9 +127,6 @@ modified: 2021-07-27T15:12:39.959Z
   - It is built on Draft.js, ReactiveX (RxJS) and MobX.
   - Most features are currently not implemented; the main purpose of this demo currently is to show how pagination can be achieved in a web-based word processor. 
 # editor-server
-
-## non-js
-
 - https://github.com/huacnlee/actiontext-lite /202002/ruby/inactive
   - [我终于受不了 ActionText，做了一个 Lite 版本 · Ruby China](https://ruby-china.org/topics/39130)
   - ActionText 默认高度集成了 Trix，但实际情况是 Trix 在 90% 的项目情况下都不符合实际的需求，我们的用户、后台编辑人员不喜欢它
@@ -138,19 +135,26 @@ modified: 2021-07-27T15:12:39.959Z
   - 类似 ActiveText 的存储 API，兼容 ActionText 的 Model API，你可以保持那个好的东西
   - 数据存储依然保持在 ActionText 那个 action_text_rich_texts 表里面，所以引入它，只是会让 ActionText 没了 Trix 和 ActiveStorage 的集成
   - 你存什么进去，就拿什么出来，不做任何 sanitize 处理，把规则交给你自己处理
-
+# editor-non-js
 - https://github.com/helix-editor/helix /MPLv2/202402/rust
   - https://helix-editor.com/
   - A Kakoune/Neovim inspired editor, written in Rust.
+  - The editing model is very heavily based on Kakoune
+  - Although it's primarily a terminal-based editor, I am interested in exploring a custom renderer (similar to Emacs) using wgpu or skulpin.
+  - Vim-like modal editing
+  - Multiple selections
+  - Built-in language server support
+  - Smart, incremental syntax highlighting and code editing via tree-sitter
   - [Plugin system](https://github.com/helix-editor/helix/discussions/3806)
   - [WebAssembly plugins system](https://github.com/helix-editor/helix/issues/122)
+  - [Feature request: selective undo _202208](https://github.com/helix-editor/helix/issues/3364)
 # editor-utils
 - https://github.com/juliankrispel/react-text-selection-popover
   - https://juliankrispel.github.io/react-text-selection-popover
   - A react component that lets you render a popover in relation to the current text selection.
 
-- https://github.com/ktsn/selective-undo-text
-  - https://codepen.io/ktsn/pen/qZxdaY
+- https://github.com/ktsn/selective-undo-text /MIT/201612/ts/inactive
+  - https://codepen.io/ktsn/pen/qZxdaY /示例使用codemirror5
   - A Selective Undo library for text editing
   - [Undo for selection/emacs · Issue · microsoft/vscode](https://github.com/microsoft/vscode/issues/108098)
     - When there is an active region, any use of undo performs selective undo: 

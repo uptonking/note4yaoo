@@ -23,9 +23,10 @@ modified: 2024-08-11T06:46:39.843Z
 
 - ## 
 
-- ## 
-
-
+- ## [How does the autocomplete module prevent default key effects? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/how-does-the-autocomplete-module-prevent-default-key-effects/5439)
+  - what should preventDefault do in the case run returns false?
+  - preventDefault⁠: When set to true (the default is false), this will always prevent the further handling for the bound key, even if the command(s) return false.
+- It prevents the browser’s default behavior, not any other handlers from running.
 
 - ## 💡 [Shortcut mode starting with ESC - v6 - discuss. CodeMirror _202204](https://discuss.codemirror.net/t/shortcut-mode-starting-with-esc/4246)
   - I am looking for a general idea of how to go about implementing a shortcut mode where you press ESC and then another key to trigger a function. I currently see that ESC is used as a trigger to switch between indent and focus change.

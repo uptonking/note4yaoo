@@ -228,6 +228,7 @@ modified: 2023-06-23T12:46:53.288Z
     - Adds code intelligence to code views on the web
     - This library manages all of the inputs (mouse/keyboard events, location changes, hover information, and hover actions) necessary to display hover tooltips on with a code view.
     - 依赖rxjs、sourcegraph
+  - [Changelog - Sourcegraph docs](https://sourcegraph.com/docs/CHANGELOG)
 
 - https://github.com/KittyCAD/modeling-app /MIT/202408/rust/ts
   - https://kittycad.io/modeling-app/download
@@ -849,6 +850,16 @@ modified: 2023-06-23T12:46:53.288Z
   - https://github.com/MINERVA-MD/minerva-collab /GPLv3/202204/ts/inactive
     - 🔀 A socket server using the codemirror 6 collab library, allowing for real-time collaborative document editing.
 
+- https://github.com/sahilatahar/Code-Sync /MIT/202409/ts
+  - https://code-sync-live.vercel.app/
+  - A real-time collaborative code editor featuring unique room generation, syntax highlighting, and auto-suggestions. 
+  - 依赖@uiw/react-codemirror、react-split、tldraw2、socket.io
+  - Users can seamlessly edit, save, and download files while communicating through group chat
+  - Real-time collaboration on code editing across multiple files
+  - Create, open, edit, save, delete, and organize files and folders
+  - Code Execution: Users can execute the code directly within the collaboration environment, providing instant feedback and results.
+  - Collaborative Drawing: Enable users to draw and sketch collaboratively in real-time
+
 - https://www.npmjs.com/package/collaborative-codemirror /202312/crdt
   - Makes a plain Codemirror editor instance collaborative by binding it to a JSON CRDT document str node. 
   - This allows multiple users to edit the same document `json-joy` JSON CRDT document concurrently through the Codemirror editor.
@@ -995,6 +1006,25 @@ modified: 2023-06-23T12:46:53.288Z
   - https://code-sync-realtime-coding.vercel.app/
   - Realtime code collaboration tool with code editor, compiler and realtime cursors
   - 依赖codemirror5, socket.io-client, react
+
+## undo
+
+- yjs undoManager支持selective undo
+
+- https://github.com/ktsn/selective-undo-text /MIT/201612/ts/inactive
+  - https://codepen.io/ktsn/pen/qZxdaY /示例使用codemirror5
+  - A Selective Undo library for text editing
+  - [Undo for selection/emacs · Issue · microsoft/vscode](https://github.com/microsoft/vscode/issues/108098)
+    - When there is an active region, any use of undo performs selective undo: 
+    - it undoes the most recent change within the region, instead of the entire buffer.
+
+- [Undo/Redo | CKEditor 5 Documentation](https://ckeditor.com/docs/ckeditor5/latest/features/undo-redo.html)
+  - The undo feature lets you withdraw recent changes to your content as well as bring them back. 
+  - You can also selectively revert past changes, not just the latest ones.
+  - The selective undo is heavily used in real-time collaboration environments. In such a scenario, a specific user should only be able to revert their changes, while keeping the changes made by other users intact
+
+- [Undo (GNU Emacs Manual)](https://www.gnu.org/software/emacs/manual/html_node/emacs/Undo.html)
+  - When there is an active region, any use of undo performs selective undo: it undoes the most recent change within the region, instead of the entire buffer
 
 ## diff
 
@@ -1596,6 +1626,7 @@ modified: 2023-06-23T12:46:53.288Z
   - https://ide.judge0.com/
   - free and open-source online code editor that allows you to write and execute code from a rich set of languages. 
   - Judge0 IDE is using Judge0 for executing user's source code.
+  - 依赖monaco-editor
 
 - https://github.com/rin-yato/miracle-diagram /202312/ts/inactive
   - https://miracle-diagram.vercel.app/
@@ -1992,6 +2023,7 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/sourcegraph/cody /2kStar/apache2/202405/ts
   - https://cody.dev/
+  - https://sourcegraph.com/cody
   - Cody is a free, open-source AI coding assistant that can write and fix code, provide AI-generated autocomplete, and answer your coding questions. 
   - Cody fetches relevant code context from across your entire codebase to write better code that uses more of your codebase's APIs, impls, and idioms, with less hallucination.
   - Cody is currently in Beta and available for VS Code and JetBrains.
@@ -2030,6 +2062,12 @@ modified: 2023-06-23T12:46:53.288Z
     - The E2B Code Interpreter Sandbox is just a sandbox — without any LLM “connected” to it. 
     - Our Sandbox can be controlled with SDK (run_code, install_pkg, create_file, etc) and gives you the freedom to connect it to (any) LLM.
     - OpenAI Code Interpreter is controlled by talking to an AI assistant.
+
+- https://github.com/Exafunction/codeium-react-code-editor /MIT/202402/ts/inactive
+  - https://codeium.com/playground
+  - open-source code editor as a React component with unlimited AI autocomplete. 
+  - Brought to you by the team at Codeium. Free with no account required.
+  - Customizable API extended from Monaco React
 
 ## coding-toolchain-ai
 

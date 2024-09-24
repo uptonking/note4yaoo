@@ -38,7 +38,11 @@ modified: 2024-08-11T07:59:35.617Z
 
 - ## 
 
-- ## 
+- ## [How to reprocess syntax tree? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/how-to-reprocess-syntax-tree/6083)
+  - I’m creating a language package for Excel functions. How can I force a reprocess so that highlighting works when switching idiom?
+- Pass the language as a parameter to whatever creates the parser, and update your configuration to use a new parser whenever the language setting is changed.
+  - You can use dialects or reconfigured external tokenizers to make small changes 
+  - Recompiling the grammar should never be necessary at run-time.
 
 - ## Looking for examples on how to use @codemirror / Lezer's incremental parsing mode.
 - https://x.com/MarijnJH/status/1582604809718202368
