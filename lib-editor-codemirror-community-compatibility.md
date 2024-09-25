@@ -28,7 +28,7 @@ modified: 2024-08-11T06:40:41.476Z
 
 - ## [Replace chinese character with other input, someting strange _202405](https://discuss.codemirror.net/t/replace-chinese-character-with-other-input-someting-strange/8265)
 - I suspect the Chinese input method uses composition in this case. Unfortunately, browsers do odd buggy things if you interfere with the text around the cursor during composition, including duplicating text.
-  - Your options are to not respond to composition-based input (for example by checking `tr.isUserEvent("input.type.compose")`) , or to set things so that the replacement happens after composition finishes (in a view plugin listening to compositionend events).
+  - Your options are to not respond to composition-based input (for example by checking `tr.isUserEvent("input.type.compose")` ) , or to set things so that the replacement happens after composition finishes (in a view plugin listening to compositionend events).
 
 - ## 🐛 [codemirror/view 6.28.2 version will cause abnormal input of Chinese input method _202406](https://github.com/codemirror/dev/issues/1396)
 - 
@@ -44,7 +44,12 @@ modified: 2024-08-11T06:40:41.476Z
 
 - ## 
 
-- ## 
+- ## [Experimental support for EditContext - discuss. CodeMirror _202404](https://discuss.codemirror.net/t/experimental-support-for-editcontext/8144)
+  - Chrome has started shipping edit context, a feature that allows JavaScript to intercept editing actions, including composition-based ones, in a way that isn’t as problematic as the old ‘just see how the DOM changes and hope for the best’ approach. 
+  - Mozilla is considering the proposal but hasn’t put out a position yet. 
+  - Apple is responding with deafening silence as usual.
+  - I’m generally a bit wary of Blink-only APIs, but since this may help tame the endless mess of virtual keyboard behavior on Andoid, I built a proof-of-concept implementation that uses this feature, when available, to capture text input. The interface was surprisingly pleasant to use, and fits into CodeMirror rather well. 
+  - @codemirror/view 6.28.0 ships with EditContext support. I’ve disabled EditContext use by default in 6.28.1 again until I work those out.
 
 - ## 才知道 pointermove 事件会按照屏幕刷新率，合并手写笔/鼠标的输入事件。
 - https://x.com/zQwQs/status/1822331239740666306

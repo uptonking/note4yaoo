@@ -13,6 +13,21 @@ modified: 2024-05-02T05:51:12.370Z
 - ## 
 
 - ## 
+
+- ## 💡 [Reconfigure doesn't re-run `StateField` 's `create` - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/reconfigure-doesnt-re-run-statefield-s-create/8548)
+  - “state field create” is only printed once, and “state field recreate” is never printed, even though the reconfigure effect is being dispatched.
+
+- I am still curious if excluding StateField create from reconfiguration is intended.
+  - Yes. Reconfiguring the editor preserves the value of state fields that are present in both the old and new configuration (so that you don’t, say, lose your undo history every time you reconfigure something).
+
+- ## 🌰 [CodeMirror 6: How to set up collaborative editing with clients and server? - discuss. CodeMirror _202008](https://discuss.codemirror.net/t/codemirror-6-how-to-set-up-collaborative-editing-with-clients-and-server/2583)
+  - In the end I sidestepped the collab extension, and used a system similar to the split view example (except sending the ChangeSets over the network), using the map function on the ChangeSets as necessary and using the EditorView.dispatch() function to apply the change sets.
+
+- I think I have the collab module working. Here’s some (partial) example code and some refelections.
+  - Overall the collab module is very helpful. It’s awesome that undo just works, for example!
+  - Update: After some more testing, it turns out that the above approach is not sound, because our OT and CodeMirror’s OT resolve at least one class of conflicts differently.
+
+- I think if you’re not going to use the OT built into ChangeSet, you will indeed have a hard time using the collab module, and setting up something separate is the way to go, yes.
 # discuss-compatibility
 - ## 
 
@@ -36,7 +51,16 @@ modified: 2024-05-02T05:51:12.370Z
 # discuss-undo/history
 - ## 
 
-- ## 
+- ## [Cannot get history depth and serialized historyField - v6 - discuss. CodeMirror _202301](https://discuss.codemirror.net/t/cannot-get-history-depth-and-serialized-historyfield/5597)
+  - I’m trying to serialize historyField in update method of ViewPlugin class
+- The problem was that history methods were imported from @codemirror/history, which is deprecated package that comes from @emmetio/codemirror6-plugin dependencies.
+  - this package is deprecated and would conflict with @codemirror/commands imports (where all the history related stuff should be actually imported from).
+
+- `undoDepth` gives you the amount of undoable edits in the state. So after some changes have been made, it will yield a non-zero value.
+  - undoDepth is tested in the test suite and known to work. If it’s returning 0 for your state, I suspect that state has no undo events.
+
+- 
+- 
 
 - ## 🤔 [How to detect whether an update comes from history - v6 - discuss. CodeMirror _ 202107](https://discuss.codemirror.net/t/how-to-detect-whether-an-update-comes-from-history/3393)
   - I am trying to integrate the CM6 history with an outer app undo stack.
@@ -180,4 +204,5 @@ const detectChangeWithoutUndoRedo = StateField.define<boolean>({
 
 - ## 
 
-- ## 
+- ## [Adding new line for other users - v6 - discuss. CodeMirror _202404](https://discuss.codemirror.net/t/adding-new-line-for-other-users/8077)
+- You’ll want to follow this example if you want robust collaborative editing. Input handlers are indeed a terrible place to try and capture document changes. Update listeners work better, but you’ll still have issues with concurrent edits if you use those the naive way. This is why @codemirror/collab exists.

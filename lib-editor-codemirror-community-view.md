@@ -68,6 +68,12 @@ modified: 2024-08-08T20:49:11.571Z
 # discuss-autocomplete
 - ## 
 
+- ## 
+
+- ## [How to add custom completions before language completions? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/how-to-add-custom-completions-before-language-completions/7790)
+- These are sorted first by how well they match the typed input, and then by `boost` , and finally by `localeCompare` . 
+  - In this case, because you typed a lower-case b, the word break is considered a better match than Banana, because its case matches. There’s no real way to override match-quality ordering.
+
 - ## 🌰 [Replace default search panel with my own component - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/replace-default-search-panel-with-my-own-component/5885)
 - my solution customizes search in a CodeMirror editor by removing the default panel, enabling case insensitivity, and scrolling to match occurrences
   - the code includes functions for replacing the next occurrence of the search query (replaceNext) and replacing all occurrences (replaceAll). 
@@ -238,7 +244,7 @@ modified: 2024-08-08T20:49:11.571Z
   - ‘:+1:’.length is 2 and that doesn’t any longer match with rune length in Go that is 1 and applying ChangeSet fails.
 - CodeMirror intentionally uses UTF16 code point counts throughout, in order to be able to use String.length. If you are using another convention in the OT system, you’ll have to make sure you convert to and from that when going between CodeMirror and that system. Forking @codemirror/state is not going to be needed.
 
-# discuss-styling
+# discuss-styling/theming
 - ## 
 
 - ## [Dynamically changing theme in MergeView - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/dynamically-changing-theme-in-mergeview/8620)
@@ -274,6 +280,12 @@ window.matchMedia('(prefers-color-scheme: dark)')
 - ## [Inline Codemirror inside Prosemirror? - discuss. CodeMirror _202311](https://discuss.codemirror.net/t/inline-codemirror-inside-prosemirror/7396)
 - Is it possible to embed an inline CodeMirror view inside ProseMirror? I was thinking as an inline node, meaning instead of being a full width div, it just expands as the user types.
   - no, CodeMirror assumes it is a block element, so for this you’d have to wrap it in some kind of `inline-block` container and add a kludge that constantly resizes it to match its content size. It won’t work as a regular content-fitting inline element.
+
+- ## 💄 [Styling and theming design discussion - v6 - discuss. CodeMirror _202102](https://discuss.codemirror.net/t/styling-and-theming-design-discussion/2958)
+- We’re not going to “just use” plain CSS files
+- please keep any knee-jerk hostility to CSS-in-JS out of the thread
+  - Styles will be distributed over various packages. Users can not be expected to manually include the styles for all the packages they (transitively) load, and bundlers don’t (yet) provide a standardized way to bundle styles.
+  - I’d really like to have proper isolation/scoping on CSS class names. Something like that is necessary for themes in any case. Being able to load multiple versions of the library without those interfering with each other is a plus.
 
 # discuss-view-render
 - ## 

@@ -21,7 +21,14 @@ modified: 2024-08-11T07:59:35.617Z
 
 - ## 
 
-- ## 
+- ## [Language parser/syntax tree performance and debouncing - v6 - discuss. CodeMirror _202202](https://discuss.codemirror.net/t/language-parser-syntax-tree-performance-and-debouncing/3976)
+  - I’ve been investigating the performance differences between CodeMirror 5 and CodeMirror 6, 
+  - and one major difference I’ve noticed with respect to parsing the syntax tree is that in CM5, parsing is debounced while in CM6 it is done synchronously for each `docChanged` transaction/update.
+  - This has an interesting effect where typing quickly (or holding down a key for repeated character insertion) causes CM6 to use up a ton more CPU to repeatedly re-parse the syntax tree whereas in CM5 it’s only re-parsed once.
+
+- 👷 CodeMirror 5 also eagerly parses the lines it redraws, but I guess that ends up not drawing attention in the profile because it is generally limited to a single line.
+  - Various bits of state (highlighting, folding information, bracket matching, etc) in version 6 rely on the tree to be available whenever the editor is updated. As such, ‘debouncing’ parsing would incur a rather high complexity cost.
+  - The idea is that, at least once warmed up, the incremental parser is fast enough to create a new tree in about 1 millisecond. 
 # discuss-sql
 - ## 
 

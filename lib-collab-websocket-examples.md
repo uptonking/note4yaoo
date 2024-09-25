@@ -112,13 +112,20 @@ modified: 2023-01-23T19:27:46.948Z
   - Agnostic of framework, build tool, server lib and SQL database.
 
 - https://github.com/replit/river /MIT/202409/ts
+  - [River protocol v2.0](https://github.com/replit/river/blob/main/PROTOCOL.md)
   - River provides a framework for long-lived streaming Remote Procedure Calls (RPCs) in modern web applications, featuring advanced error handling and customizable retry policies to ensure seamless communication between clients and servers.
+  - The primary goal of the River protocol is to simplify the development of long-lived client-server systems by abstracting the complexities of network programming, like connection management, message serialization/deserialization, and error handling.
   - River provides a framework similar to tRPC and gRPC but with additional features:
     - JSON Schema Support + run-time schema validation
     - full-duplex streaming
     - snappy DX (no code generation)
     - transparent reconnect support for long-lived sessions
     - over any transport (WebSockets and Unix Domain Socket out of the box)
+  - The River protocol enables communication between clients and servers via remote procedure calls (RPCs). 
+    - A 'client' can initiate remote procedure calls to the server
+    - A 'server' can execute remote procedure calls and return the result to the requesting client
+    - River handles disconnections and reconnections in a transparent manner wherever possible when explicitly requested. To do this, it uses a combination of a send buffer, heartbeats, acknowledgements, and sequence numbers. This metadata is tracked within the Session object.
+    - Though this is very TCP inspired, River has the benefit of assuming the underlying transport is an ordered byte stream which simplifies the protocol significantly.
 # realtime
 - https://github.com/nodefluent/kafka-streams
   - equivalent to kafka-streams for nodejs

@@ -33,7 +33,9 @@ modified: 2024-08-11T03:39:54.012Z
 # discuss-big-document
 - ## 
 
-- ## 
+- ## [Is reseting huge document costly? - discuss. CodeMirror](https://discuss.codemirror.net/t/is-reseting-huge-document-costly/3834)
+- It’s likely going to be costly because the editor has to re-split the lines and re-generate the internal data structure for each line. It will also require re-parsing of the document for syntax highlighting. On top of that, you will also lose some states in relation to the old document because those don’t map very well to the “this entire document has been replaced” change that you’re dispatching. For example, any folding states will be lost.
+  - I’ve dealt with a similar situation previously and the best way here is to write some kind of diffing algorithm to narrow down the changed section to as little as much as possible.
 
 - ## [Text not highlighted after EditorView.scrollIntoView - v6 - discuss. CodeMirror _202309](https://discuss.codemirror.net/t/text-not-highlighted-after-editorview-scrollintoview/7073)
 - Parsing work is throttled so as to not slow down the UI and not waste too much cpu/battery/power. That means that if you are way down a big document, it may take a while to catch up, and if the editor isn’t active, it may stop doing work altogether on the assumption that the user isn’t working with it.

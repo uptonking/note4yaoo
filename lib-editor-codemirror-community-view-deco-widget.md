@@ -12,6 +12,14 @@ modified: 2024-09-10T11:29:46.166Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 🌰 [remove decoration - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/remove-decoration/6696)
+  - I am also trying to understand how this is done. I adapted the code from Decorations example
+- Are you trying to clear it? In which case you can just set it to `Decoration.none` . Or are you trying to clear a specific range? If so, you’ll want to actually compare the ranges to the from and to values in the effect.
+- I do want to clear a specific range ideally. Though I am not sure how to store the range of the original effect that was used to set the style in the first place. To be clear, I am not seeking to undo the last transaction, but merely capture the range of the last transaction and remove its styling. Can I store the range in the EditorState and retrieve it later?
+  - You can, if you define a StateField for it. But you can also iterate over the ranges in the set, if you can somehow recognize the proper one
+
 - ## 💡 [Modifying decorations from another plugin - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/modifying-decorations-from-another-plugin/4728)
 - No, that’s not something the library makes possible, you’d have to somehow arrange for the code that creates the decorations to add a hook (facet, probably) for this.
 - Is there a way to list all the facets? Unfortunately they do not provide a comprehensive API or reference.
@@ -268,6 +276,13 @@ modified: 2024-09-10T11:29:46.166Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [How to add decoration without focusing the editor on dispatch? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/how-to-add-decoration-without-focusing-the-editor-on-dispatch/6283)
+- What was going on was that the DOM changes needed to apply that update messed up the DOM selection, which was still in the editor despite it no longer having focus. And restoring a proper DOM selection apparently randomly moves focus back into the editor. This patch tries to detect and undo this phenomenon.
 
 - ## [Make decoration editable within non-editable instance - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/make-decoration-editable-within-non-editable-instance/5190)
 - I guess you could simply use a transaction filter. See the single-line editor example

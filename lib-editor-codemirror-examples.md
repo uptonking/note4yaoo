@@ -1035,6 +1035,7 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/OrgFlow/codemirror-conflicts /MIT/202408/ts
   - A CodeMirror extension that displays Git conflict markers (`<<<<<<<` syntax) as side-by-side pieces of conflicting code, and provides an interface for accepting, copying, and deleting the chunks, with a top toolbar that shows information about remaining conflicts.
+  - [Feasability Assessment: Extension to decorate conflict markers - v6 - discuss. CodeMirror _202407](https://discuss.codemirror.net/t/feasability-assessment-extension-to-decorate-conflict-markers/8459)
 
 - https://github.com/acrodata/code-editor /MIT/202405/ts
   - https://acrodata.github.io/code-editor/
@@ -1353,6 +1354,7 @@ modified: 2023-06-23T12:46:53.288Z
   - 🧮 An alternative parser for CodeMirror 6
   - Tarnation is not line-based. It is capable of reusing both previous and ahead data when parsing, making it fully incremental
   - Tarnation can do things that Lezer (the parser you'd usually use for CodeMirror) can't. For example, Tarnation can parse something like Markdown, and other weird esoteric markup/formatting languages.
+  - [Showing off: cm-tarnation, an alternative parser - v6 - discuss. CodeMirror _202109](https://discuss.codemirror.net/t/showing-off-cm-tarnation-an-alternative-parser/3558)
 
 - https://github.com/realdennis/md2pdf /MIT/202407/js
   - https://realdennis.github.io/md2pdf/

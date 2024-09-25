@@ -469,18 +469,6 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
   - ~~私有项目的导入~~
   - ~~多标签打开同一个cde，文件树的头像会显示2个~~
 
-- develop环境：
-  - paas url: https://develop.clackypaas.com
-  - agent: https://develop.agent.clackyai.com/demo
-  - backend: https://develop.api.clackyai.com
-  - app: https://develop.app.clackyai.com
-  - website: https://develop.clackyai.com
-- staging:
-  - paas url: https://staging.clackypaas.com
-  - agent: https://staging.agent.clackyai.com/demo
-  - backend: https://staging.api.clackyai.com
-  - app: https://staging.app.clackyai.com
-  - website: https://staging.clackyai.com
 
 ## 090
 
@@ -491,26 +479,7 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
 
  
 
-```
-NEXT_PUBLIC_AGENT_SOCKET_URL=wss://develop.agent.clacky.ai
-NEXT_PUBLIC_PAAS_MANAGER_API_ORIGIN=https://develop.clackypaas.com
-BACKEND_API_URL=https://develop.api.clacky.ai
-```
-
 ```JS
-console.log(
-  ';; snap ',
-  openedActionIndex,
-  openedAction,
-  currentSnapshotFrame,
-  nextSnapshotFrame,
-  snapshotFrameResult?.data,
-)
-
-console.log(';; steps ', taskState, currentOpenedActionId, currentPlayedActionId, steps)
-
-console.log(';; machine ', taskState, runningTaskAction, task?.task_steps)
-
 stt.message.channel().send('uCmdK', 'README.md', 2, 2, 'explain an elegant word in one sentence')
 ```
 

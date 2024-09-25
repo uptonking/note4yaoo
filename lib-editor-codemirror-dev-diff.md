@@ -65,7 +65,17 @@ modified: 2024-07-29T11:49:33.248Z
 
 - ## 
 
-- ## 
+- ## 🔀🌰 [Feasability Assessment: Extension to decorate conflict markers - v6 - discuss. CodeMirror _202407](https://discuss.codemirror.net/t/feasability-assessment-extension-to-decorate-conflict-markers/8459)
+  - this is not about building a three-way merge editor as many others have suggested already. This proposal is something much simpler (presumably) but related
+  - When using git merge there are sometimes conflicts that Git cannot automatically resolve.
+  - In a basic real-world conflict resolution scenario, the user would inspect this file and its remaining conflict markers, choose how to resolve each one
+  - A full-fledged merge editor such as Beyond Compare or Kaleidoscope will typically disregard the conflict markers left by Git in the target file, and instead extract the ours, theirs and base versions from Git, and perform a three-way merge from scratch based on these three files, and then overwrite the target file with the resulting merged file.
+  - In the scenario we want to target, by contrast, Git has already performed the merge of the file is question, and the file already contains the changes from both sides that did not conflict (let’s call these the non-conflicting changes ) along with conflict sections for anything Git was not able to resolve automatically.
+  - We simply want to visualize those remaining conflict sections, and provide actions for a user to interact with them. There is only a single file to consider, and only a single editor is needed to resolve the remaining conflicts inside it.
+
+- 
+- 
+- 
 
 - ## ✨🤔🌰 @cursor_ai 发布了他们的「Tab 补全」魔法背后的模型技术细节
 - https://x.com/tuturetom/status/1828464855826997295

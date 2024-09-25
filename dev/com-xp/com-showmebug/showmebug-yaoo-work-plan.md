@@ -27,12 +27,25 @@ modified: 2024-05-06T02:54:40.374Z
 
 ## proj-coding-ai
 
-- 代码修改或变更的场景, 👀 不能以web系统的数据作为代码数据源，因为外部git系统会修改
+- develop环境：
+  - paas url: https://develop.clackypaas.com
+  - agent: https://develop.agent.clackyai.com/demo
+  - backend: https://develop.api.clackyai.com
+  - app: https://develop.app.clackyai.com
+  - website: https://develop.clackyai.com
+- staging:
+  - paas url: https://staging.clackypaas.com
+  - agent: https://staging.agent.clackyai.com/demo
+  - backend: https://staging.api.clackyai.com
+  - app: https://staging.app.clackyai.com
+  - website: https://staging.clackyai.com
+
+- 代码修改或变更的场景, 👀 不能以web系统的数据作为代码数据源，因为外部git系统、ssh、直接在命令行执行命令 也会修改文件内容
   - clacky-webapp操作代码仓库时只会记录当前系统的op
   - vscode-ssh连接代码仓库，操作op未记录
   - git clone + push 直接通过git协议操作代码仓库，操作op未记录
 - 在code review或提交pr的场景， 经常需要git pull/rebase远程代码
-  - 此时远程修改代码的action在本地无法获取
+  - 此时远程修改代码的op在本地无法获取
   - 🤔 变更文件列表必须以git仓库数据为唯一数据源，业务前端变成git的web客户端？
 
 - agent初始化失败时，不影响页面上其他业务的正常使用

@@ -12,7 +12,9 @@ modified: 2024-08-11T06:46:39.843Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 🌰 [Triple click behavior - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/triple-click-behavior/4051)
+  - I’m dealing with a case where triple clicking a line will select everything on the line + the newline character at the very end.
+  - It seems that this deviation from standard text selection behavior is generally intended for code editors because it helps with workflows involving copy-pasting blocks of code.
 
 - ## [Codemirror 6: Move cursor to specific line and mark its text - discuss. CodeMirror](https://discuss.codemirror.net/t/codemirror-6-move-cursor-to-specific-line-and-mark-its-text/4388)
 
@@ -22,6 +24,20 @@ modified: 2024-08-11T06:46:39.843Z
 - ## 
 
 - ## 
+
+- ## 💡 [Codemirror shortcut capturing - discuss. CodeMirror _202405](https://discuss.codemirror.net/t/codemirror-shortcut-capturing/8236)
+- CodeMirror does not preventDefault or stopPropagation keyboard events that it doesn’t have a keymap binding for. So it shouldn’t interfere with other shortcuts, if you listen for the keys on the outer DOM elements or the window, even when the editor is focused.
+
+- 🧐 It was the hotkeysjs blocking shortcut in input/textarea
+
+- ## [overriding certain default keymaps - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/overriding-certain-default-keymaps/6181)
+  - I’d like to keep majority of the default keymaps and override some of them. 
+- You can tweak the precedence of your keymap using `Prec` to tweak the order of execution of your key bindings
+
+- ## [stopPropagation doesn't work if key Ctrl is used instead of Mod - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/stoppropagation-doesnt-work-if-key-ctrl-is-used-instead-of-mod/7990)
+- custom commands has to return true to make stopPropagation work
+- Will Compartment() work for dynamic keymaps also? I’ve a scenario where I want to reconfigure the shortcuts dynamically based on user preference.
+  - Yes, compartments work for all types of extensions.
 
 - ## [How does the autocomplete module prevent default key effects? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/how-does-the-autocomplete-module-prevent-default-key-effects/5439)
   - what should preventDefault do in the case run returns false?
@@ -40,7 +56,7 @@ modified: 2024-08-11T06:46:39.843Z
 - The recommended approach is to check for `event.defaultPrevented` in your outer handlers, and ignore events that have already been prevented. 
   - If that’s not practical, add a (low precedence) keydown handler to your editor that calls stopPropagation on all events that have their default behavior prevented.
 
-# discuss-cursor
+# discuss-selection/cursor
 - ## 
 
 - ## 
@@ -53,9 +69,19 @@ modified: 2024-08-11T06:46:39.843Z
 
 - ## 
 
-- ## 
+- ## 🌰 [Is it possible deleteTab command - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/is-it-possible-deletetab-command/4453)
+  - I want delete tab when I use Shift-Tab shortcut. But I can’t find any StateCommand
+  - indentMore and indentLess command affects line. It doesn’t help me.
 
-- ## [Determine if selection is inside of markdown code block - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/determine-if-selection-is-inside-of-markdown-code-block/4272)
+- Commands are just functions. Writing one that deletes a tab before the cursor shouldn’t be hard.
+
+- ## [RangeError after setting the initial selection via dispatch - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/rangeerror-after-setting-the-initial-selection-via-dispatch/3688)
+- The new `centerOn` effect should make scrolling something into the middle of the view easier.
+
+- ## [Moving of cursor with different size mark decoration and replace decoration issues - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/moving-of-cursor-with-different-size-mark-decoration-and-replace-decoration-issues/4198)
+- Arrow key motion is implemented with regular key bindings in defaultKeymap, so you can create custom commands that implement this type of vertical motion and bind them to the arrow keys (don’t forget to also create a selection-extending version for when shift is held down).
+
+- ## 🌰 [Determine if selection is inside of markdown code block - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/determine-if-selection-is-inside-of-markdown-code-block/4272)
 - https://replit.com/@replitfaris/is-in-codeblock#index.ts
 
 - ## [Line background color and selection layering - v6 - discuss. CodeMirror _202212](https://discuss.codemirror.net/t/line-background-color-and-selection-layering/5413)

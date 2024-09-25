@@ -184,11 +184,6 @@ modified: 2023-01-29T10:52:44.183Z
 - ## [SyntaxNode not exported by @lezer/common - Lezer - discuss. CodeMirror](https://discuss.codemirror.net/t/syntaxnode-not-exported-by-lezer-common/7600)
 - This is a type (interface) export. You can import it in TypeScript, but not regular JavaScript.
 
-- ## [Read-only Facets? - discuss. CodeMirror](https://discuss.codemirror.net/t/read-only-facets/7175)
-- Perhaps like a wrapper class
-- Regarding computed values, given that defining an extra facet for them already allows you to do that, I don’t think that really warrants another library feature.
-  - Introduce `FacetReader`
-
 - ## 🔀 [Should dispatched transactions be added to a queue? - v6 _202206](https://discuss.codemirror.net/t/should-dispatched-transactions-be-added-to-a-queue/4610)
 - I was slightly surprised to find that the dispatch method doesn’t put transactions on a queue for processing.
   - While it would be easy enough to add a queue in a custom dispatch function, I’m wondering whether that would be a bad idea for any reason, particularly in a way that explains why it isn’t implemented as a queue by default.

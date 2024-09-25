@@ -12,7 +12,8 @@ modified: 2024-08-11T03:29:17.282Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## [Example of onchange for CodeMirror6? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/example-of-onchange-for-codemirror6/3151)
+- `let updateListenerExtension = EditorView.updateListener.of((update) => { if (update.docChanged) { // Handle the event here } });`
 
 - ## 🏘️🤔 [Request: View plugin method that runs at the same phase as update listeners - v6 - discuss. CodeMirror _202404](https://discuss.codemirror.net/t/request-view-plugin-method-that-runs-at-the-same-phase-as-update-listeners/8113)
   - At Replit, we have this pattern which is used in a lot of our plugins
@@ -88,9 +89,13 @@ view.dispatch({ changes: { from: line.from, to: line.to, insert: 'New text for t
 
 - To fully support the recursion for widgets I was thinking, would it be a bad idea to start a separate instances of CM6 view inside the widget? For example of I have a widget of a matrix, where each cell is a separate CM6 editor. Then I can make matrixes inside matrixes and so one. I tried, not too bad I would say
 
-- ## [Dispatch changes without redrawing the widget - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/dispatch-changes-without-redrawing-the-widget/6320)
+- ## [Dispatch changes without redrawing the widget - v6 - discuss. CodeMirror _202304](https://discuss.codemirror.net/t/dispatch-changes-without-redrawing-the-widget/6320)
   - 3 levels of CM6 is working
-- updateDOM should be called if a widget of the same type (but non-eq) appears in the same position in the document
+  - a new instance of CM6 is embedded into replacing decoration.
+  - How to mutate the data without recreating the widget?
+  - Here one child editor mutate the data, which is covered by the replacement decoration (atomic). However, it causes each time dispatch, that destroys everything and creates again.
+  - I was wondering, if there is a way to mutate the text underneath without redrawing, but just reassigning the widget range to a new one (if a new text is larger or shorter).
+- `updateDOM` should be called if a widget of the same type (but non-eq) appears in the same position in the document
 
 - [Remove blinking cursor inside the widget with CM instance - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/remove-blinking-cursor-inside-the-widget-with-cm-instance/6284)
 
@@ -172,7 +177,25 @@ view.dispatch({ changes: { from: line.from, to: line.to, insert: 'New text for t
 
 - ## 
 
-- ## 
+- ## 🏠 [Codemirror 6: reference to EditorView from EditorState - discuss. CodeMirror](https://discuss.codemirror.net/t/codemirror-6-reference-to-editorview-from-editorstate/2554)
+- This might work better at a level above the view/state, since it needs to orchestrate between multiple views.
+  - The editor state intentionally lives in its own ‘world’, away from the view, so there is no function that takes a state and returns a view. 
+  - But you can pass in something like a view getter function when creating a state, and arrange things so that that gets access to the view when one has been created.
+- I figured out how to give the state a facet that I can populate with a reference to the view. This seems to be working so far.
 
 - ## [line background layer - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/line-background-layer/7666)
 - It looks like the newlines are not part of the LineBlock items returned by view.viewportLineBlocks. I’ve verified that by looking at view.state.doc.toString().slice(block.from, block.to)
+
+- ## [How to make certain ranges readonly in CodeMirror6 - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/how-to-make-certain-ranges-readonly-in-codemirror6/3400)
+  - I just released codemirror-readonly-ranges extension that easy allow to work with read-only ranges on CodeMirror6.
+
+- The recommended way to do this is to create a transaction filter that stops transactions which affect those ranges.
+- don’t use undocumented properties like RangeSet.chunk, those may break on any release. Also, you’ll want to use a consistent coordinate system, so using the read-only ranges from tr.startState and the original-document coordinates in the change set seems safer. 
+
+- ## 🧩 [Read-only Facets? - discuss. CodeMirror _202310](https://discuss.codemirror.net/t/read-only-facets/7175)
+  - Somewhere else in the codebase I want to read the value of MySpecialNumber. But I don’t want anywhere else in the codebase to register MySpecialNumber.of(...). Its value should be defined internally in this module only.
+  - Perhaps like a wrapper class
+- There is also the use case of values which are just derived from something else
+
+- Regarding computed values, given that defining an extra facet for them already allows you to do that, I don’t think that really warrants another library feature.
+  - As for facet handles that don’t allow you to set the facet, this patch adds something like that purely on the type level. Introduce `FacetReader`
