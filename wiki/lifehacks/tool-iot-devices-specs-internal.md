@@ -1,11 +1,11 @@
 ---
-title: tool-iot-stars
-tags: [iot, laptop, phone, yaoo]
+title: tool-iot-devices-specs-internal
+tags: [iot, laptop, pad, phone, watch, yaoo]
 created: 2020-01-12T12:32:03.096Z
-modified: 2021-01-12T18:49:22.746Z
+modified: 2024-09-25T15:17:42.743Z
 ---
 
-# tool-iot-stars
+# tool-iot-devices-specs-internal
 
 # guide
 
@@ -31,6 +31,9 @@ modified: 2021-01-12T18:49:22.746Z
 - resources
   - [Redmi Note 12 6GB+128GB手机参数](https://detail.zol.com.cn/1433/1432228/param.shtml)
   - [Redmi Note 12 5G](https://www.mi.com/redminote12/specs)
+
+- xp
+  - 🛒 购买日期202312，💣 摔坏日期202409
 
 - tips
   - 不支持NFC
@@ -469,88 +472,6 @@ CPU主频	2.3GHz
 
 ### discussion
 
-## MacBook M1 Pro
-
-- mac-apps-loved
-  - pkg-manager: homebrew
-  - appstore: localsend
-
-### 全局快捷键
-
-- cmd + tab 切换程序时，松开tab然后按q，可退出程序
-  - 此时可恢复隐藏窗口的app
-- Command-H：隐藏最前方 App 的窗口。要查看最前方的 App 但隐藏所有其他 App，请按 Option-Command-H。
-- Command-M：将最前方的窗口最小化至程序坞。要最小化最前方 App 的所有窗口，请按 Option-Command-M。
-  - 此时 cmd+tab 无法恢复
-- 最大化当前窗口没有快捷键
-  - fn+f 可全屏当前窗口
-  - Control-Command-F 全屏
-  - [macos - Keyboard Shortcut to maximize a window? - Ask Different](https://apple.stackexchange.com/questions/421443/keyboard-shortcut-to-maximize-a-window)
-  - [How do you maximize windows in MacOS? : r/MacOS](https://www.reddit.com/r/MacOS/comments/15t7gdc/how_do_you_maximize_windows_in_macos/)
-
-- 截屏 cmd + shift + 3/4
-- 截指定窗口 cmd +shift + 4 + space
-- Option-Command-Esc：强制退出 App。
-
-- 回到桌面 四指抓拢手势
-  - cmd + f3
-  - fn + f11
-- 类似win的delete键向后删，fn + backspace
-
-- Command-W：关闭最前方的窗口。 
-  - 要关闭App 的所有窗口，请按下Option-Command-W
-
-- 显示Finder/访达: cmd+option+space
-  - Shift-Command-N：在“访达”中创建一个新文件夹。
-  - cmd+[/]是后退或前进上一个文件夹
-
-- 按住Command，可以选择并移动顶部菜单栏图标
-
-- [Mac新手使用技巧——设置Finder(访达)快捷键](https://blog.51cto.com/u_15127651/4081089)
-  - 系统偏好设置，点击键盘，快捷键选项卡，在左侧找到聚焦，看到右侧的显示访达
-
-- [Mac 键盘快捷键 - 官方 Apple 支持 (中国)](https://support.apple.com/zh-cn/102650)
-- [Use Multi-Touch gestures on your Mac - Apple Support](https://support.apple.com/en-us/102482)
-
-### 文件管理器
-
-- 打开文件夹 cmd + N
-- 打开目录，根据输入路径 cmd + shift +g
-  - 输入～，可直接打开 /Users/yaoo
-- 进入文件夹 cmd + arrow-down
-- 返回上级文件夹 cmd + arrow-up
-- 切换到列表视图 cmd + 2
-- 重命名 回车
-- 删除文件 cmd + delete
-- 文件路径查看 cmd + i
-- 文件路径复制 cmd + opt + c
-- 移动文件 cmd + opt + v
-
-- 在finder显示文件路径
-  - defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES
-
-### 浏览器
-
-- command+L/option(alt)+command+F/fn＋control+F5：定位地址栏/聚焦搜索栏
-- command+点按：新标签页后台打开链接
-- shift+command+点按：新标签页前台打开链接
-- control+tab/shift+command+]/shift+command+→：显示下一个标签页，其中箭头对空tab无效。
-- 前后切换标签页导航
-  - ctrl+shift+tab
-  - shift+cmd+[
-  - shift+cmd+←：显示上一个标签页，其中箭头对空tab无效。
-
-### vscode
-
-- 跳转到定义
-  - cmd + 点击
-  - cmd + f12 + fn
-- 返回上一个位置
-  - Windows: Alt + ← ; 或者 鼠标侧键
-  - Linux: Ctrl + Alt + - ; 
-  - Mac: Ctrl + -
-- 左右括号之间跳转： ctrl + shift + \
-
 ## macbook pro 2019 intel
 
 - [MacBook Pro (16 英寸，2019) - 技术规格 - 官方 Apple 支持 (中国)](https://support.apple.com/zh-cn/111932)
@@ -685,7 +606,7 @@ CPU主频	2.3GHz
   - 支持多种健康指标，如心率、睡眠
 - cons
   - 导出数据功能不够强大，且默认导出格式只支持gpx
-  - 首次开机使用时，必须先用app扫码绑定手表，手表才可正常使用
+  - 首次开机使用时，必须先用app扫码绑定手表，手表才可正常使用，(很多产品也这样)
   - 价格小贵
 
 - 手表的数据线只有2个金属触点，仅支持充电，不支持数据传输
