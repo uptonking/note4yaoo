@@ -36,6 +36,29 @@ modified: 2024-05-02T05:51:12.370Z
 # discuss-undo/history
 - ## 
 
+- ## 
+
+- ## 🤔 [How to detect whether an update comes from history - v6 - discuss. CodeMirror _ 202107](https://discuss.codemirror.net/t/how-to-detect-whether-an-update-comes-from-history/3393)
+  - I am trying to integrate the CM6 history with an outer app undo stack.
+  - For that purpose, I am looking for a way to detect whether a view update is coming from an undo/redo command.
+- Not currently, but it would probably be a good idea to make the history annotate the transactions it produces. Would having a `userEvent` annotation for this be useful for you?
+  - So the view would automatically set the userEvent to type "undo" or "redo", right? That would make a lot of sense, and solve the problem I am facing.
+
+- I saw that this change landed in 0.19, so thanks a lot!
+  - I wonder why you opted not to prefix the undo and redo events with history, so that we could more easily match using transaction.isUserEvent('history'). It works well as is, but a prefixed version would’ve been a bit more convenient.
+  - I just saw that you also added select.undo and select.redo, which would explain why there’s no history. prefix.
+
+- ## [An event emitted for undo. - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/an-event-emitted-for-undo/4753)
+- You can check for transactions with an "undo" user event, but you can’t modify undo transactions, since that would break the history state.
+
+- ## [Undo History for Widgets - v6 - discuss. CodeMirror _202105](https://discuss.codemirror.net/t/undo-history-for-widgets/3200)
+  - I am building a rich-media code editor where users can insert images, video
+  - I am trying to use CM6 to achieve this, via a StateField and StateEffects. 
+  - To insert an image for example, I create a transaction with the appropriate StateEffect to create the image. This transaction also inserts a character at the location to insert the image. Then, I construct a replacement widget and replace the character I just inserted. This is done so that the cursor can correctly move around the image.
+  - The problem I am having is integrating this with CM6’s undo history. I have tried using the invertedEffects facet to generate the appropriate inverse effect to add/remove the widget.
+  - when the widget is deleted the user must press undo twice to recover the widget. Once to undo the deleted character and once again to undo the deleted widget.
+- Effects and changes created by a single transaction should always be grouped together into the same history ‘event’. So this might be a bug. 
+
 - ## [Problems with redoing an effect - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/problems-with-redoing-an-effect/5283)
 - `invertedEffects` functions should be called for every transaction that doesn’t have `addToHistory` set to false. Maybe your effects being mapped to nothing by going through the change-invertedchange steps? 
   - I’d recommend using a transaction filter, rather than a separately created transaction that reverts the previous one, for this. 
@@ -87,7 +110,7 @@ const detectChangeWithoutUndoRedo = StateField.define<boolean>({
 - If you create the new state with the content already in it, instead of firing a separate transaction that sets it, undo won’t delete it.
 - You can also annotate your transaction with an `AddToHistory.of(false)` , can be any change.
 
-- ## 💡 [editor.setHistory(), clearHistory() equivalent in Codemirror #6 - v6 - discuss. CodeMirror _202304](https://discuss.codemirror.net/t/editor-sethistory-clearhistory-equivalent-in-codemirror-6/6291/1)
+- ## 💡 [editor.setHistory(), clearHistory() equivalent in Codemirror #6 - v6 - discuss. CodeMirror _202304](https://discuss.codemirror.net/t/editor-sethistory-clearhistory-equivalent-in-codemirror-6/6291)
   - each file has its own undo-redo history. We store history of each file by calling editor.getHistory() and storing in a Map. Whenever you switch the files, we load the history for that file and call editor.setHistory. This worked well in CM 5
   - in CM 6, the history API changed, and I’m not sure how to do it anymore. 
 - Usually, in situations like this, you just want to store the entire editor state (either as a JS object, or, if you need to serialize it, via EditorState.toJSON) rather than storing the document and history separately.

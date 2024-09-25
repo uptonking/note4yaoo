@@ -13,6 +13,7 @@ modified: 2021-05-06T09:38:31.520Z
   - MIT
   - 支持强大的扩展, ext支持设置优先级
   - 官方支持collab, 基于ot算法变体
+  - 支持selective undo
   - ✨ v6实现了 virtualized-render, 可结合visible ranges进一步提高性能
   - ❓ incremental syntax highlighting, 可结合visible ranges
   - 支持mobile

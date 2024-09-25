@@ -14,7 +14,7 @@ modified: 2024-08-11T03:29:17.282Z
 
 - ## 
 
-- ## 🤔 [Request: View plugin method that runs at the same phase as update listeners - v6 - discuss. CodeMirror _202404](https://discuss.codemirror.net/t/request-view-plugin-method-that-runs-at-the-same-phase-as-update-listeners/8113)
+- ## 🏘️🤔 [Request: View plugin method that runs at the same phase as update listeners - v6 - discuss. CodeMirror _202404](https://discuss.codemirror.net/t/request-view-plugin-method-that-runs-at-the-same-phase-as-update-listeners/8113)
   - At Replit, we have this pattern which is used in a lot of our plugins
   - postUpdate is helpful in a lot of situations. It enables you to make update listeners that have internal state, without using something like closures.
   - For us, it’s often needed because an extension needs to manage some part of the editor’s state, but that management logic just can’t go into something like a StateField.
@@ -70,7 +70,13 @@ view.dispatch({ changes: { from: line.from, to: line.to, insert: 'New text for t
 
 - ## 
 
-- ## 
+- ## [Partial views of documents - v6 - discuss. CodeMirror _202105](https://discuss.codemirror.net/t/partial-views-of-documents/3160)
+  - In codemirror 5 you can use `linkedDoc` to link two documents together so that changes to one document are reflected in the linked document automatically. 
+  - Is there a way to achieve this behaviour in codemirror 6?
+- I haven’t concretely tried something like that, but the idea would be to do it very differently from the CM5 approach. 
+  - The split view example already points in the right direction. 
+  - To provide only a subview of a document, you’d have to filter the changes so that only the parts that apply to the sub-range are applied to that view. In the process, you’d have to adjust your information about the line number where the subview starts, when the changes affect that. 
+  - Actually changing the numbering of lines in a document isn’t going to be supported, but you can configure the line number gutter to show different numbers via the formatNumber option, and you could reconfigure that when the base number changes.
 
 - ## [Nested editors, kind of. - v6 - discuss. CodeMirror _202207](https://discuss.codemirror.net/t/nested-editors-kind-of/4654)
 - This should be possible (if somewhat messy) using a technique similar to the split view example. But you’ll have to offset your change sets by the current position of the sub-document when forwarding them between the cell editors and the main editor (which should be possible by iterating over them with iterChanges and building up a new changeset with the same insertions but offset position).
