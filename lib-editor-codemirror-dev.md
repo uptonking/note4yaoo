@@ -205,7 +205,7 @@ modified: 2021-05-06T09:38:31.520Z
 - 💄 自定义元素widget
   - codemirror会在widget最外层渲染一个contenteditable为false的元素
   - 💡 block widget前面默认没行号，inline widget会使用原行的行号，无论有没有使用Decoration.replace渲染
-  - 可参考replit
+  - 可参考replit官方开源示例实现widget
   - blazor编辑器的image/mermaid都会在文本上渲染一个contenteditable为false的元素
   - overleaf-visual编辑器的image/table会渲染一个contenteditable为false的元素
   - ink-mde的image会渲染一个contenteditable为false的元素
@@ -220,6 +220,9 @@ modified: 2021-05-06T09:38:31.520Z
     - 通过cold-fold实现隐藏元素的思路是否正确
   - 实现细节
     - 每个变更块的红色部分(可能包含多行)都是一个 `<div class="cm-deletedChunk" contenteditable="false">`, 多行红色会直接在TextNode里面换行文本，没有额外的html标签元素, deletedChunk.textContent会返回类似`four cups\nhello`
+
+- codemirror和cursor的undo实现
+  - 默认只undo内容更改并移动光标到更改位置，不会触发undo仅仅移动光标
 
 - 多标签页的实现思路和单标签差别不大，视觉上只有1个visible的editor，上方是tab
 
@@ -237,7 +240,7 @@ modified: 2021-05-06T09:38:31.520Z
   - command-palette
 
 - 💬 实现评论时考虑是否支持评论协作、undo/redo， 一般将评论数据内容放在编辑器内容doc之外
-  - 减少doc体积，方便支持自定义评论的形状颜色
+  - ~~减少doc体积，~~方便支持自定义评论的形状颜色
   - 方便实现非行内的跨block的评论，行内评论和块级评论
   - 复制文本时不需要带上评论数据, 处理复制粘贴更简单
 

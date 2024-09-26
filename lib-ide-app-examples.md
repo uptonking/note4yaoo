@@ -10,6 +10,15 @@ modified: 2024-08-24T16:30:20.218Z
 # guide
 
 # popular
+- https://github.com/trypear/pearai-app /apache2/202409/ts
+  - https://trypear.ai/
+  - Open Source AI-Powered Code Editor. 
+  - A fork of VSCode and Continue
+  - Pear has context on your codebase so you can ask questions directly (code is stored locally on your computer).
+  - PearAI is in TypeScript/Electron.js
+  - PearAI backend is a Python Flask server with Supabase database
+  - Logging/Telemetry is done with Axiom
+
 - https://github.com/voideditor/void /MIT/202409/ts
   - https://voideditor.com/
   - the open-source Cursor alternative，主打隐私安全

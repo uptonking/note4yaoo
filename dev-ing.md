@@ -433,30 +433,30 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
     - ~~disable cmd+k in diff-view(cursor支持多次cmdk唤起多个输入框)~~
     - ~~if input box is visible, cursor cannot be put in editor~~
   - 🤼🏻 dev-discuss
-    - 🤔 agent返回chunkMsg的时机是确定的吗，测试是在ok消息后等6s才返回chunkMsg且chunkMsg会在1s(或2s)内快速流式返回完
+    - 🤔 ~~agent返回chunkMsg的时机是确定的吗，测试是在ok消息后等6s才返回chunkMsg且chunkMsg会在1s(或2s)内快速流式返回完~~
       - 为了让sdk编辑器及时获取更新内容，需要sleep大于6s才能开始打字动画
     - 👾 对同一选区第一次cmdk后reject, 第二次cmdk会保留第一次的修改
       - 就算第一次reject了点击光标到其他位置再将光标回到原位置，cmdk也会返回对旧内容的修改
-    - 多人cmdk的返回代码会冲突吗
     - cmdk后直接编辑，是否立即更新文档，特别是多人协作的场景是否支持diff-view协作
       - 用户ua在cmdk后显示doc2(与原文档doc1进行diff)，编辑在doc2；用户ub仍显示和编辑doc1
       - cursor支持直接编辑最新doc2
     - 大多数cmdk的变更块只有1个，此时diff-view的实现可采用简化版实现单红单绿
-      - 若cmdk的变更块超过1个，上下布局的diff-view方便确定范围，但agent返回不是多个范围
+      - 若cmdk的变更块超过1个，上下布局的diff-view方便确定范围，agent返回不是多个范围
     - message chunk stop
+      - 多人cmdk的返回代码会冲突吗
     - more
       - 输入框与editor绑定，这样能支持多editor
       - 输入框内容很多时，是否支持换行  => 不换行
       - 💡 悬浮状态的指令输入框实现时应该使用单独的dom，这样可以减少reflow, 还可以解决输入框因文档长导致输入框元素未被viewport渲染时不能作为sticky元素
-      - 指令输入框与diff-view无关，在diff下触发cmdk会聚焦到输入框
+      - 指令输入框与diff-view无关，在diff下触发cmdk~~会聚焦到输入框~~会提示关闭diff
     - impl
       - input出现后且发送prompt到ai前，若用户光标位置变化然后再发送prompt到ai，生成代码的位置仍在原选区的位置且在input输入框之下
-    - cursor
-      - cursor的指令输入框不能被del键删掉；
+    - cursor的cmdk实现细节
+      - cmdk后先修改绿色代码再accept后再修改，连续undo的表现是，先正常undo，然后undo到diff-view，然后保持在diff-view下undo，然后undo到原代码和输入框
+      - cursor的指令输入框不能被del键删掉, cmdk后按backspace时输入框会显示在上一行之上
       - cursor的空行会显示cmd+k/l的指令提示
 
 - not-yet
-  - 文件系统只读时，在前端提醒用户
   - rag在terminal或文件编辑时的防抖, rag卡死的处理
   - tab-key; chat-apply; aiCannotCreateThread
   - 防抖: cmdk， chat
@@ -468,7 +468,6 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
   - ~~演示之前测试cpu、内存~~
   - ~~私有项目的导入~~
   - ~~多标签打开同一个cde，文件树的头像会显示2个~~
-
 
 ## 090
 

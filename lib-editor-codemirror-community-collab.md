@@ -59,9 +59,6 @@ modified: 2024-05-02T05:51:12.370Z
 - `undoDepth` gives you the amount of undoable edits in the state. So after some changes have been made, it will yield a non-zero value.
   - undoDepth is tested in the test suite and known to work. If it’s returning 0 for your state, I suspect that state has no undo events.
 
-- 
-- 
-
 - ## 🤔 [How to detect whether an update comes from history - v6 - discuss. CodeMirror _ 202107](https://discuss.codemirror.net/t/how-to-detect-whether-an-update-comes-from-history/3393)
   - I am trying to integrate the CM6 history with an outer app undo stack.
   - For that purpose, I am looking for a way to detect whether a view update is coming from an undo/redo command.
