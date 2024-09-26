@@ -12,32 +12,17 @@ modified: 2024-08-11T03:29:17.282Z
 # discuss-stars
 - ## 
 
-- ## [Example of onchange for CodeMirror6? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/example-of-onchange-for-codemirror6/3151)
+- ## 
+
+- ## 
+
+- ## 🌰 [Example of onchange for CodeMirror6? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/example-of-onchange-for-codemirror6/3151)
 - `let updateListenerExtension = EditorView.updateListener.of((update) => { if (update.docChanged) { // Handle the event here } });`
 
-- ## 🏘️🤔 [Request: View plugin method that runs at the same phase as update listeners - v6 - discuss. CodeMirror _202404](https://discuss.codemirror.net/t/request-view-plugin-method-that-runs-at-the-same-phase-as-update-listeners/8113)
-  - At Replit, we have this pattern which is used in a lot of our plugins
-  - postUpdate is helpful in a lot of situations. It enables you to make update listeners that have internal state, without using something like closures.
-  - For us, it’s often needed because an extension needs to manage some part of the editor’s state, but that management logic just can’t go into something like a StateField.
-  - This is our most common use case, e.g. our inline AI suggestions use this. Most of the suggestion state is in a StateField, but most of the logic for updating that field lives in a view plugin because that’s the only reasonable place to do asynchronous requests.
-  - Another use case for us is updating things outside the editor, which then may have reactive effects which cause editor dispatches. It is desirable to avoid this entirely, but for our React-inside-of-CodeMirror library, we definitely needs this, or at least workarounds similar to this.
-  - We could do something like `queueMicrotask(() => view.dispatch({ ... })` instead of using an update listener, but this has issues with making view updates sort of slightly asynchronous. 
-  - if you called view.dispatch, and then immediately accessed view.state afterwards, that state won’t yet reflect anything queued up by queueMicrotask yet. 
-  - Using update listeners avoids this, by basically letting a single dispatch turn into multiple dispatches.
-  - So, our request here is pretty simple: add a method very similar to update that runs after update and only when it is safe to do dispatches to the view, just like update listeners. The only real drawback I can think of to adding this method is maybe confusion about what method to use when learning the API, and the possibility of infinite update loops. The latter is already possible with update listeners, so IMO it’s fine.
-
-- In my own code I’ve been pretty successful at avoiding this pattern where a dispatch immediately triggers another dispatch. 
-  - Cascading updates are a bit wasteful, in that they run through the view update logic multiple times for what should be an atomic update. 
-  - You can often set things up so that the state update plans the asynchronous actions, and a plugin update method actually activates/schedules them, without updating the state. 
-  - Or in some cases you can dispatch multiple transaction at once by passing them to dispatch as an array.
-  - Note that even though the code after the dispatch would see the updated state if you had this feature, the update listeners or postUpdate hooks will have situations where the update they are looking at is not actually the most recent update anymore, because another such listener dispatched a transaction. I sort of feel that doing this kind of cascading dispatch asynchronously might be less error-prone than doing it synchronously.
-
-- You can usually avoid it, and you should if you can. But it’s still useful for us. It feels like a missing lifecycle method with view plugins. I will say not every use case we have for this is just about dispatching.
-
-- 
-- 
-- 
-- 
+- 🌰 [CodeMirror 6: Proper way to listen for changes - discuss. CodeMirror](https://discuss.codemirror.net/t/codemirror-6-proper-way-to-listen-for-changes/2395)
+  - See `EditorView.updateListener` for a shorthand way to do this.
+  - You provide EditorView.updateListener.of(update => ...) as an extension, and your function gets called with a view update object every time the view is updated.
+  - There’s only a single type of editor state update in version 6, so you use an `updateListener` and inspect the updates/transactions to see if they match the kind of change you are looking for (‘cursorActivity’ is roughly equivalent to update.docChanged || update.selectionSet).
 
 - ## [Filtering input characters - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/filtering-input-characters/3968)
   - For legacy reasons, our OT algorithm doesn’t support characters outside the Basic Multilingual Plane (BMP) 
@@ -66,12 +51,21 @@ view.dispatch({ changes: { from: line.from, to: line.to, insert: 'New text for t
 - ## [Updating block-widgets // What is the order of the state update cycle, exactly? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/updating-block-widgets-what-is-the-order-of-the-state-update-cycle-exactly/8365)
 - I suspect, from your message, that you’re mutating your decorations, and expecting the method to run then? That’s not how these work—they are immutable like everything else you store in your state. You replace them with a widget of the same type to have updateDOM called.
 
+- ## 🆚 [Difference between state field and facet? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/difference-between-state-field-and-facet/3650)
+- How do you update the facet’s content? The way these are designed, fields are useful for independent bits of state, and facets are more applicable for derived state and inter-module communication.
+
 # discuss-cm-nested/multi
 - ## 
 
-- ## 
+- ## [Problems when binding with codemirror6 - discuss. ProseMirror _202111](https://discuss.prosemirror.net/t/problems-when-binding-with-codemirror6/4214)
+  - I am trying to bind codemirror6 to prosemirror and I’ve had some complicated problems
 
-- ## [Partial views of documents - v6 - discuss. CodeMirror _202105](https://discuss.codemirror.net/t/partial-views-of-documents/3160)
+- Don’t use history stack of codemirror. So we can’t directly use @codemirror/basic-setup.
+- When the content or selection of codemirror change, synchronize them to prosemirror. Check the forwardSelection and handleValueChange function.
+- When execute redo or undo, the changes will synchronize to codemirror through the update method of CodemirrorView.
+- When the codemirror lose focus, reset its selection to zero position.
+
+- ## 🏠 [Partial views of documents - v6 - discuss. CodeMirror _202105](https://discuss.codemirror.net/t/partial-views-of-documents/3160)
   - In codemirror 5 you can use `linkedDoc` to link two documents together so that changes to one document are reflected in the linked document automatically. 
   - Is there a way to achieve this behaviour in codemirror 6?
 - I haven’t concretely tried something like that, but the idea would be to do it very differently from the CM5 approach. 
@@ -105,7 +99,8 @@ view.dispatch({ changes: { from: line.from, to: line.to, insert: 'New text for t
 # discuss-switch-files
 - ## 
 
-- ## 
+- ## [Cursor isn't behaving when saving and reloading states - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/cursor-isnt-behaving-when-saving-and-reloading-states/3913)
+- Doing preventDefault will cause the editor to not further handle the event. It doesn’t look at stopPropagation.
 
 - ## [Programmatically clear the content? - v6 - discuss. CodeMirror _202202](https://discuss.codemirror.net/t/programmatically-clear-the-content/3967)
 - You should usually just create a new state and use setState to reset the view to that. 
@@ -127,10 +122,22 @@ view.dispatch({ changes: { from: line.from, to: line.to, insert: 'New text for t
 - why not use dispatch to replace the entire content
   - Do keep in mind that that’ll mess up the undo history and any other metadata that’s being kept about the document content (marks, mapped positions). If practical, you could compute a minimal diff and just update the changed ranges.
 
+- ## 💡 [swapDoc v6 equivalent - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/swapdoc-v6-equivalent/5973)
+- Store the editor states of the docs not in the view, and use `setState` to put a new state into an editor view.
+
 # discuss-transaction
 - ## 
 
-- ## 
+- ## [How to Compress transactions - discuss. CodeMirror _202409](https://discuss.codemirror.net/t/how-to-compress-transactions/8624)
+  - I’m using the collab feature from CodeMirror and I’m saving the transactions in one of my DBs. I’m running into an issue where the amount of data being read and stored into my DB is excessive and I’m trying to see how to cut back. 
+  - One thing I thought of instantly is that there should be a way to compress the transactions. 
+  - Another idea I had was to have a way to eliminate non-critical transactions from the array list like cursor transactions. Or even is there a way to easily take an array of transactions and say that we want to combine the first 100 transactions into a single transaction? I’m also open to any other way to make the whole system more efficient/compressed.
+
+- What you need to save depends entirely on what you are doing with the data. If you want collab clients to be able to re-sync from any point in history, you do need precise changes since the point where they last synced. 
+  - But it is entirely reasonable to disallow that for old points in history, and keep less fine-grained information (or no information at all) for older updates.
+  - Changesets can be combined with `compose` , if you want to reduce the number of checkpoints you save.
+- I see, you’re storing a shared effect to track remote selections, and then just directly dumping the JSON (which adds the useless `{"type":{"map":{}}` property to the output, since StateEffect objects don’t implement a toJSON method) and, I guess, using a custom deserializer to parse that back to an effect.
+  - So I guess you can already cut down on JSON size by being more careful about how you serialize these objects.
 
 - ## [Keep original's annotation to an updated transaction - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/keep-originals-annotation-to-an-updated-transaction/4218)
   - How can I update a transaction keeping its annotation’s origin value?
@@ -175,8 +182,6 @@ view.dispatch({ changes: { from: line.from, to: line.to, insert: 'New text for t
 
 - ## 
 
-- ## 
-
 - ## 🏠 [Codemirror 6: reference to EditorView from EditorState - discuss. CodeMirror](https://discuss.codemirror.net/t/codemirror-6-reference-to-editorview-from-editorstate/2554)
 - This might work better at a level above the view/state, since it needs to orchestrate between multiple views.
   - The editor state intentionally lives in its own ‘world’, away from the view, so there is no function that takes a state and returns a view. 
@@ -185,6 +190,19 @@ view.dispatch({ changes: { from: line.from, to: line.to, insert: 'New text for t
 
 - ## [line background layer - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/line-background-layer/7666)
 - It looks like the newlines are not part of the LineBlock items returned by view.viewportLineBlocks. I’ve verified that by looking at view.state.doc.toString().slice(block.from, block.to)
+
+# discuss-readonly
+- ## 
+
+- ## 
+
+- ## [Switch between editor being editable or not - v6 ](https://discuss.codemirror.net/t/switch-between-editor-being-editable-or-not/2745)
+- reuse the Compartment instance to alter the editable state
+  - Looking more into Configuration example
+
+- [Implement some kind of read-only mode ](https://github.com/codemirror/dev/issues/173)
+  - By default, if the editor isn't focusable, it also won't receive key events, so you can't ctrl-v on it. But I guess if you add a `tabindex` attribute to make it focusable you will have key bindings firing on the editor.
+  - Since @codemirror/state 0.19.2, there's also a `readOnly` facet, on the state, which controls whether the content is supposed to be read-only (and is respected by commands and such). This is separate from the editable facet, which only controls whether the DOM for the content is focusable/editable.
 
 - ## [How to make certain ranges readonly in CodeMirror6 - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/how-to-make-certain-ranges-readonly-in-codemirror6/3400)
   - I just released codemirror-readonly-ranges extension that easy allow to work with read-only ranges on CodeMirror6.

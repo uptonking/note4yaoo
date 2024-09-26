@@ -160,10 +160,11 @@ modified: 2021-05-06T09:38:31.520Z
   - codemirror-rust
 
 - experimental
-  - undo/addToHistory
+  - stateField invertedEffects
   - lazy
-  - load new document
   - conflict
+  - ~~undo/addToHistory~~
+  - ~~load new document~~
 
 - extensions-to
   - katex
@@ -201,6 +202,8 @@ modified: 2021-05-06T09:38:31.520Z
 - 难点
   - 渲染wysiwyg时采用 virtual render
   - 支持可缩放的编辑器，用于将编辑器嵌入画板/设计工具的场景
+
+- 如何在undo时恢复编辑器内容之外的数据，如cmdk的输入框的内容，思路是将自定义stateField的数据也加入history
 # dev-xp
 - 💄 自定义元素widget
   - codemirror会在widget最外层渲染一个contenteditable为false的元素

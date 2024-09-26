@@ -29,6 +29,21 @@ modified: 2024-08-11T07:59:35.617Z
 - 👷 CodeMirror 5 also eagerly parses the lines it redraws, but I guess that ends up not drawing attention in the profile because it is generally limited to a single line.
   - Various bits of state (highlighting, folding information, bracket matching, etc) in version 6 rely on the tree to be available whenever the editor is updated. As such, ‘debouncing’ parsing would incur a rather high complexity cost.
   - The idea is that, at least once warmed up, the incremental parser is fast enough to create a new tree in about 1 millisecond. 
+# discuss-lint
+- ## 
+
+- ## 
+
+- ## [How to actually use eslint in Codemirror 6 - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/how-to-actually-use-eslint-in-codemirror-6/4184/6)
+- CodeMirror 6 can use eslint-linter-browserify
+
+- What if there’s no working linter in browser or the bundle is too big to bundle? I think using remotely lint is an option too.
+  - No additional bundle size, even if you have tens of linters on one page.
+  - Stay updated with the latest versions of linters without waiting for updates to an npm package.
+
+- ## [How to do async lint - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/how-to-do-async-lint/7110)
+- A lint source can return a promise. So just make your function async and make sure you only return after you have the actual result, and everything should work.
+
 # discuss-sql
 - ## 
 
@@ -41,9 +56,14 @@ modified: 2024-08-11T07:59:35.617Z
 
 - ## 
 
-- ## 
+- ## [Some thoughts (and requests) about how CM6 schedules parsing - v6 - discuss. CodeMirror _202103](https://discuss.codemirror.net/t/some-thoughts-and-requests-about-how-cm6-schedules-parsing/3045)
+- 
+- 
+- 
 
-- ## 
+- ## [Iterating skipped/whitespace nodes in a SyntaxTree - Lezer - discuss. CodeMirror _202406](https://discuss.codemirror.net/t/iterating-skipped-whitespace-nodes-in-a-syntaxtree/8283)
+- Typically, whitespace isn’t encoded in the tree (as a lower-case node name), so there’s no way to see where it was matched. 
+  - `isSkipped` is often used for comment nodes, so that they can be highlighted.
 
 - ## [How to reprocess syntax tree? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/how-to-reprocess-syntax-tree/6083)
   - I’m creating a language package for Excel functions. How can I force a reprocess so that highlighting works when switching idiom?

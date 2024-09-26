@@ -49,22 +49,6 @@ modified: 2024-08-08T20:49:11.571Z
   - My north star goal is to provide a Layout experience similar to that of Confluence/Notion
 - I had a very positive experience with just replacing decoration widgets (width:100%). One can make them mutable (they can change the content on the covered ranges using basic transactions) and provide a transaction filter or something similar so that if a cursor goes into the region of the widget, it will move the focus into the nested codemirror editor.
 
-# discuss-readonly
-- ## 
-
-- ## 
-
-- ## 
-
-- ## 
-
-- ## [Switch between editor being editable or not - v6 ](https://discuss.codemirror.net/t/switch-between-editor-being-editable-or-not/2745)
-- reuse the Compartment instance to alter the editable state
-  - Looking more into Configuration example
-
-- [Implement some kind of read-only mode ](https://github.com/codemirror/dev/issues/173)
-  - By default, if the editor isn't focusable, it also won't receive key events, so you can't ctrl-v on it. But I guess if you add a `tabindex` attribute to make it focusable you will have key bindings firing on the editor.
-  - Since @codemirror/state 0.19.2, there's also a `readOnly` facet, on the state, which controls whether the content is supposed to be read-only (and is respected by commands and such). This is separate from the editable facet, which only controls whether the DOM for the content is focusable/editable.
 # discuss-autocomplete
 - ## 
 

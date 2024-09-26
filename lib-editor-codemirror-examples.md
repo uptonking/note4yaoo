@@ -25,6 +25,7 @@ modified: 2023-06-23T12:46:53.288Z
   - https://github.com/yeliex/codemirror-extensions 
   - https://github.com/exuanbo/codemirror-toolkit 
   - https://www.npmjs.com/package/collaborative-codemirror
+  - [Monkatraz - discuss. CodeMirror](https://discuss.codemirror.net/u/Monkatraz/summary)
 
 - resources
   - https://codemirror.net/docs/community/
@@ -1411,6 +1412,10 @@ modified: 2023-06-23T12:46:53.288Z
   - Syntax highlighter for React, using CodeMirror 6. It automatically loads the language metadata and dynamically loads language parser modules based on the specified language.
 
 ## utils-lang
+
+- https://github.com/zweifisch/lezer-ast-explorer /MIT/202308/ts
+  - https://zweifisch.github.io/lezer-ast-explorer/
+  - [I've made an AST explorer for lezer - discuss. CodeMirror _202308](https://discuss.codemirror.net/t/ive-made-an-ast-explorer-for-lezer/6986)
 
 - https://github.com/mattmundell/codemirror-lang-git-log /MIT/202406/ts
   - https://git.sr.ht/~mattmundell/codemirror-lang-git-log

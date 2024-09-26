@@ -279,7 +279,9 @@ modified: 2024-09-10T11:29:46.166Z
 
 - ## 
 
-- ## 
+- ## [How to insert text with decorations? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/how-to-insert-text-with-decorations/7704)
+- If you use `view.state.changes` to create a `ChangeSet` object for your changes (which you can also `dispatch` ), you can use that to map positions from the document space before the change to after. 
+  - Also probably makes sense to dispatch both the changes and the decorations in a single transaction.
 
 - ## [How to add decoration without focusing the editor on dispatch? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/how-to-add-decoration-without-focusing-the-editor-on-dispatch/6283)
 - What was going on was that the DOM changes needed to apply that update messed up the DOM selection, which was still in the editor despite it no longer having focus. And restoring a proper DOM selection apparently randomly moves focus back into the editor. This patch tries to detect and undo this phenomenon.

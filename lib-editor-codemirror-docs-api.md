@@ -54,7 +54,9 @@ modified: 2024-09-10T00:43:36.318Z
 - 🧩 State effects can be used to represent additional effects associated with a transaction. 
   - They are often useful to model changes to custom state fields, when those changes aren't implicit in document or selection changes.
 
-- 
+- 🧩 A ChangeSet represents a group of modifications to a document. 
+  - It stores the document length, and can only be applied to documents with exactly that length.
+
 - 
 - 
 - 

@@ -16,9 +16,6 @@ modified: 2023-01-29T10:52:44.183Z
 
 - ## 
 
-- ## 🆚 [Difference between state field and facet? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/difference-between-state-field-and-facet/3650)
-- How do you update the facet’s content? The way these are designed, fields are useful for independent bits of state, and facets are more applicable for derived state and inter-module communication.
-
 - ## [Expose API for browser extensions - v6 - discuss. CodeMirror _202303](https://discuss.codemirror.net/t/expose-api-for-browser-extensions/5864)
   - Browser extensions that act on editable content, such as Grammarly or LanguageTool, currently cannot fully work on CodeMirror 6 because of viewporting. 
   - Would you be open to exposing some kind of (possibly read-only) API for such extensions? Specifically, as a minimum, some way of obtaining the full editable document text from a CM6 editor root DOM node

@@ -379,6 +379,7 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
 - agent
   - 系统token达到上限后，不能再制定计划，但现有计划也无法显示
   - 计划终止后，如何清理action，需要agent提供api
+  - 跟随模式似乎不需要高亮边框
 
 - animation
   - time machine show/hide
@@ -424,7 +425,8 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
     - rename to an elegant variable name
     - implement quick sort algorithm and add 2 test cases
   - bugs
-    - disable cmdk in readonly and diff-view
+    - 🚨 disable cmdk in readonly and diff-view
+    - 🚨 去掉diff视图开关
     - 等待ai返回结果时，禁止send，允许esc键取消输入框和丢弃ai返回结果
     - 若在ai写代码时或写完后但未accept时刷新页面，是否会丢失状态数据
     - ~~sdk如何不使用sleep来获取chunk返回完成时的数据~~
@@ -440,8 +442,10 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
     - cmdk后直接编辑，是否立即更新文档，特别是多人协作的场景是否支持diff-view协作
       - 用户ua在cmdk后显示doc2(与原文档doc1进行diff)，编辑在doc2；用户ub仍显示和编辑doc1
       - cursor支持直接编辑最新doc2
+      - 用户ua在cmdk后未accept时，若用户ub删除了选区行，那么内容如何变化，输入框显示在哪里
     - 大多数cmdk的变更块只有1个，此时diff-view的实现可采用简化版实现单红单绿
       - 若cmdk的变更块超过1个，上下布局的diff-view方便确定范围，agent返回不是多个范围
+    - 在undo时恢复编辑器内容之外的数据，如cmdk的输入框的内容，思路是将自定义stateField的数据也加入history
     - message chunk stop
       - 多人cmdk的返回代码会冲突吗
     - more
@@ -453,15 +457,19 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
       - input出现后且发送prompt到ai前，若用户光标位置变化然后再发送prompt到ai，生成代码的位置仍在原选区的位置且在input输入框之下
     - cursor的cmdk实现细节
       - cmdk后先修改绿色代码再accept后再修改，连续undo的表现是，先正常undo，然后undo到diff-view，然后保持在diff-view下undo，然后undo到原代码和输入框
+      - 多次cmdk后连续undo，能恢复上一次cmdk的提示词prompt
       - cursor的指令输入框不能被del键删掉, cmdk后按backspace时输入框会显示在上一行之上
       - cursor的空行会显示cmd+k/l的指令提示
 
 - not-yet
-  - rag在terminal或文件编辑时的防抖, rag卡死的处理
+  - ai写代码打字效果的时机
+  - 支持撤销ai写的代码
   - tab-key; chat-apply; aiCannotCreateThread
   - 防抖: cmdk， chat
   - 驾驶舱action列表支持打开文件
     - 打开已删除的文件未实现
+    - 点击actionBar打开文件时，文件树对应文件会被选中
+    - 在文件树ui创建文件夹和命令行mkdir创建文件夹的permission不同
   - 驾驶舱聊天后直接apply代码到编辑器
   - regenerate plan/task/action
   - zustandx如何在一个store里面使用另一个store的值, 或重新架构store的内容
@@ -480,6 +488,15 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
 
 ```JS
 stt.message.channel().send('uCmdK', 'README.md', 2, 2, 'explain an elegant word in one sentence')
+```
+
+## 0926
+
+- 在paas的文件树创建文件时，ideServer会返回fileTree事件和fileOp事件数据用来更新文件树
+  - FileTree组件会根据fileOp数据更新文件列表视图
+
+```JS
+["fileTree", { "eventName": "fileTree", "agentUesrId": "shell", "playgroundId": "711049437866319872", "dockerId": "711049437891485696", "data": { "action": "CREATE", "files": [{ "type": "FILE", "name": "aa3.js" }], "result": true }, "timestamp": 1727354351292 }]
 ```
 
 ## 0923

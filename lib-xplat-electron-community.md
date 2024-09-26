@@ -79,7 +79,9 @@ modified: 2023-01-02T10:30:19.459Z
 
 - ## 
 
-- ## 
+- ## [为什么用 electron 开发的桌面应用那么多？ - 知乎](https://www.zhihu.com/question/509656170/answer/3176126664)
+- 飞书和钉钉肯定不是，他俩用的CEF。Electron和CEF底下其实都是chromium内核。
+  - 确实大家都喜欢用前端开发桌面端软件，只能说前端开发圈的强大吧。最近二十几岁的QQ也发布了electron版本，足见electron的厉害了
 
 - ## I learned that you can load multiple "BrowserViews" inside one "BrowserWindow" in @electronjs
 - https://twitter.com/hhg2288/status/1769708139182449041
