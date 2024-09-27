@@ -161,6 +161,7 @@ modified: 2021-05-06T09:38:31.520Z
 
 - experimental
   - stateField invertedEffects
+  - Cascading dispatch triggers another dispatch
   - lazy
   - conflict
   - ~~undo/addToHistory~~

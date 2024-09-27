@@ -292,7 +292,7 @@ modified: 2023-06-23T12:46:53.288Z
   - 依赖thememirror、emojilib
   - manual resizing of the editor (similar to html textarea)
   - custom linting
-  - allow undo/redo toolbar buttons
+  - allow undo/redo toolbar buttons, 实现了UndoSelection
   - CSV mode: add column paddings for alignment, navigate columns with tab / shift-tab; 支持markdown-table 📈
   - 支持emoji
 
@@ -1132,6 +1132,11 @@ modified: 2023-06-23T12:46:53.288Z
 
 ## lint
 
+- https://github.com/3fuyang/zhlint-demo /202409/ts
+  - https://zhlint-playground.netlify.app/
+  - An intuitive playground for zhlint.
+  - The diffing is provided by diff.
+
 - https://github.com/KELs7/contracting-linting-codemirror6 /202405/ts
   - Demo: Contracting Linting in Codemirror6
   - Only few linting rules have been implemented
@@ -1260,6 +1265,10 @@ modified: 2023-06-23T12:46:53.288Z
   - an image upload plugin for CodeMirror that supports pasting or dragging and dropping images and uploading them to a server. 
   - allows using either a default fetch upload logic or custom upload logic.
   - feat: 添加 CodeMirror 的图片转换base64 插件
+
+- https://github.com/ficristo/codemirror-addon-toggle-comment /MIT/202409/tsc
+  - CodeMirror 5 does come with a comment addon, but I wanted to use the same algorithm used in Brackets
+  - I ported the code related to commenting code from Brackets and experimented a bit, integrating features of the original one
 # utils
 - https://github.com/JerryI/wljs-editor /202407/js
   - https://jerryi.github.io/wljs-editor/
@@ -1387,6 +1396,9 @@ modified: 2023-06-23T12:46:53.288Z
   - [Using Language Servers with CodeMirror 6 _202103](https://hjr265.me/blog/codemirror-lsp/)
   - 🍴 forks
   - https://github.com/databutton/codemirror-languageserver /202309/ts
+- https://github.com/lbb00/codemirror-typespec /202409/js
+  - This project is a demo of useing Typespec with Codemirror.
+  - A Node.js server is running the Typespec compiler language server, connected via codemirror-languageserver, because the @typespec/compiler does not support browser environments.
 
 - https://github.com/qualified/lsps /MIT/202206/ts/inactive
   - Use Language Servers with in-browser editors. 
@@ -1412,6 +1424,11 @@ modified: 2023-06-23T12:46:53.288Z
   - Syntax highlighter for React, using CodeMirror 6. It automatically loads the language metadata and dynamically loads language parser modules based on the specified language.
 
 ## utils-lang
+
+- https://github.com/cookshack/codemirror-lang-lezer-tree /MIT/202409/js
+  - Language support for Lezer trees, for CodeMirror 6
+  - https://github.com/cookshack/codemirror-ruler
+    - Draws a vertical line at a certain column.
 
 - https://github.com/zweifisch/lezer-ast-explorer /MIT/202308/ts
   - https://zweifisch.github.io/lezer-ast-explorer/
@@ -1741,6 +1758,11 @@ modified: 2023-06-23T12:46:53.288Z
   - https://irisnotes.vercel.app/
   - A comfortable note-taking app powered by Markdown
   - 依赖codemirror6、prosemirror、markdown-it、electron-window-state、remark-gfm
+
+- https://github.com/brunodavi/quick-planner /202409/ts
+  - https://quick-planner.vercel.app/
+  - a fast calendar routine generator
+  - export ics to Import into any calendar
 
 - https://github.com/danielgolden/volon /202408/ts/vue
   - https://volon.app/

@@ -12,9 +12,11 @@ modified: 2024-08-11T03:29:17.282Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## [Is it possible to access the original event within the updateListener? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/is-it-possible-to-access-the-original-event-within-the-updatelistener/5110)
+- No, you can’t—updates aren’t tied to events. You may get some relevant information from the `userEvent` annotation on transactions.
 
-- ## 
+- ## 🆚 [EditorView.updateListener efficient way to check of editorView.state.doc.toString() changed ? - discuss. CodeMirror](https://discuss.codemirror.net/t/editorview-updatelistener-efficient-way-to-check-of-editorview-state-doc-tostring-changed/5337)
+- See ViewUpdate.docChanged or if you want to compare to some specific document version, `Text.eq` is very efficient when the documents share structure (i.e. they are modified instances of the same original document).
 
 - ## 🌰 [Example of onchange for CodeMirror6? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/example-of-onchange-for-codemirror6/3151)
 - `let updateListenerExtension = EditorView.updateListener.of((update) => { if (update.docChanged) { // Handle the event here } });`
@@ -23,6 +25,9 @@ modified: 2024-08-11T03:29:17.282Z
   - See `EditorView.updateListener` for a shorthand way to do this.
   - You provide EditorView.updateListener.of(update => ...) as an extension, and your function gets called with a view update object every time the view is updated.
   - There’s only a single type of editor state update in version 6, so you use an `updateListener` and inspect the updates/transactions to see if they match the kind of change you are looking for (‘cursorActivity’ is roughly equivalent to update.docChanged || update.selectionSet).
+
+- [Listen to Change Event - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/listen-to-change-event/5095)
+  - DOM event handlers are registered with `EditorView.domEventHandlers`.
 
 - ## [Filtering input characters - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/filtering-input-characters/3968)
   - For legacy reasons, our OT algorithm doesn’t support characters outside the Basic Multilingual Plane (BMP) 
@@ -33,6 +38,24 @@ modified: 2024-08-11T03:29:17.282Z
 - This approach where you replace all local transactions with a fresh one that has similar changes will strip all effects and annotations from the transactions, so that is probably not going to work (it’ll mess up the undo history, for example).
   - But I think the problem here is that the changes are all interpreted in the original document’s coordinate system. 
   - A filter that adds the the existing transaction by appending a change that deletes the astral characters, using sequential so that its coordinates are interpreted in the in-between coordinate system, might work (return [tr, {changes: ..., sequential: true}]).
+
+- ## [CodeMirror 6, how to get editor value on input/update/change event? - Stack Overflow](https://stackoverflow.com/questions/72404988/codemirror-6-how-to-get-editor-value-on-input-update-change-event)
+
+```JS
+let myView = new EditorView({
+  state: EditorState.create({
+    doc: "hello",
+    extensions: [
+      EditorView.updateListener.of(function(e) {
+        if (e.docChanged) {
+          sync_val = e.state.doc.toString();
+        }
+      })
+    ]
+  }),
+  parent: document.body
+})
+```
 
 - ## 🌰 [how to get selected content in v6 _202208](https://discuss.codemirror.net/t/how-to-get-selected-content-in-v6/4888)
 
@@ -127,6 +150,12 @@ view.dispatch({ changes: { from: line.from, to: line.to, insert: 'New text for t
 
 # discuss-transaction
 - ## 
+
+- ## 
+
+- ## [Listen to text changes of an existing state/view - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/listen-to-text-changes-of-an-existing-state-view/5952)
+  - Is there a way to attach a listener to an existing item on the page?
+  - I need to do this from an extension so I want to make sure I don’t break the 3rd-party editor by recreating the whole state.
 
 - ## [How to Compress transactions - discuss. CodeMirror _202409](https://discuss.codemirror.net/t/how-to-compress-transactions/8624)
   - I’m using the collab feature from CodeMirror and I’m saving the transactions in one of my DBs. I’m running into an issue where the amount of data being read and stored into my DB is excessive and I’m trying to see how to cut back. 

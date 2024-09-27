@@ -392,6 +392,7 @@ modified: 2024-05-06T02:52:41.789Z
 - [looop.dev](https://looop.dev/)
 
 - [Gru.ai - Hire your first coding guru](https://babelcloud.ai/)
+  - [Gru.ai | Hire your first coding gru](https://gru.ai/)
 
 ## products-cn
 

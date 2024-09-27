@@ -23,6 +23,12 @@ modified: 2022-12-19T01:51:01.389Z
 - https://github.com/osu-mist/jsonapi-openapi-generator
   - A script for generating an OpenAPI document adhering to the JSON: API specification.
 
+- https://github.com/microsoft/typespec /MIT/202409/java/ts
+  - https://typespec.io/
+  - TypeSpec is a language for defining cloud service APIs and shapes. 
+  - TypeSpec is a highly extensible language with primitives that can describe API shapes common among REST, OpenAPI, gRPC, and other protocols.
+  - TypeSpec to OpenAPI 3.0 Example
+
 - https://github.com/OData/odata.net
   - OData . NET Libraries project includes the implementation of core functionalities of OData protocol on the . NET platform, including URI parsing, request and response reading and writing, Entity Data Model (EDM) building
   - [OData简介 - 知乎](https://zhuanlan.zhihu.com/p/56639241)

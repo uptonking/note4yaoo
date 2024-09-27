@@ -16,6 +16,11 @@ modified: 2023-01-29T10:52:44.183Z
 
 - ## 
 
+- ## [How to get the instance of editor in DOM? - discuss. CodeMirror _202206](https://discuss.codemirror.net/t/how-to-get-the-instance-of-editor-in-dom/4457)
+- EditorView.findFromDOM(htmlDom)
+
+- `cmEditorElement.querySelector(".cm-content").cmView.view`
+
 - ## [Expose API for browser extensions - v6 - discuss. CodeMirror _202303](https://discuss.codemirror.net/t/expose-api-for-browser-extensions/5864)
   - Browser extensions that act on editable content, such as Grammarly or LanguageTool, currently cannot fully work on CodeMirror 6 because of viewporting. 
   - Would you be open to exposing some kind of (possibly read-only) API for such extensions? Specifically, as a minimum, some way of obtaining the full editable document text from a CM6 editor root DOM node

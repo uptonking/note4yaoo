@@ -387,6 +387,7 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
 
 - time-machine
   - 追加step
+  - 回放模式点击第一个action，然后点击播放，没有播放
   - 终止后未执行的action在进度条仍然显示，状态是cancelled
   - 关闭machine再打开时，会强制再次打开editor
   - 时光机终止后，驾驶舱如何反馈，终止状态如何清理
@@ -426,7 +427,7 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
     - implement quick sort algorithm and add 2 test cases
   - bugs
     - 🚨 disable cmdk in readonly and diff-view
-    - 🚨 去掉diff视图开关
+    - 🚨 只在需要时显示diff视图开关
     - 等待ai返回结果时，禁止send，允许esc键取消输入框和丢弃ai返回结果
     - 若在ai写代码时或写完后但未accept时刷新页面，是否会丢失状态数据
     - ~~sdk如何不使用sleep来获取chunk返回完成时的数据~~
@@ -455,13 +456,19 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
       - 指令输入框与diff-view无关，在diff下触发cmdk~~会聚焦到输入框~~会提示关闭diff
     - impl
       - input出现后且发送prompt到ai前，若用户光标位置变化然后再发送prompt到ai，生成代码的位置仍在原选区的位置且在input输入框之下
-    - cursor的cmdk实现细节
+    - 🌰 cursor的cmdk实现细节
       - cmdk后先修改绿色代码再accept后再修改，连续undo的表现是，先正常undo，然后undo到diff-view，然后保持在diff-view下undo，然后undo到原代码和输入框
       - 多次cmdk后连续undo，能恢复上一次cmdk的提示词prompt
       - cursor的指令输入框不能被del键删掉, cmdk后按backspace时输入框会显示在上一行之上
       - cursor的空行会显示cmd+k/l的指令提示
+- cmdk-undo的难点
+  - 如何确定undo显示diff的条件，若用stateField, 
+    - diff恢复后再次消失前的编辑也要支持undo
+  - 输入指令内容prompt的存储和还原，不在编辑器的内容中，是保存在编辑器state之外还是之中
+    - 可以将prompt内容保存在编辑器外(因为不需要reactivity)，prompt id保存在编辑器的state
 
 - not-yet
+  - 希望在本地vscode的命令行能够快速执行.1024里面配置的 run_command 命令
   - ai写代码打字效果的时机
   - 支持撤销ai写的代码
   - tab-key; chat-apply; aiCannotCreateThread
@@ -489,6 +496,17 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
 ```JS
 stt.message.channel().send('uCmdK', 'README.md', 2, 2, 'explain an elegant word in one sentence')
 ```
+
+## 0927
+
+- ideServer-events
+  - previous: followingAgentUser, followingFocusComponent, editorScroll, unFollowingAgentUser
+
+昨天：
+- 排查测试反馈的文件树不显示action创建文件的bug
+- cmdk的undo实现完善
+今天：
+- 测试undo并提pr
 
 ## 0926
 
