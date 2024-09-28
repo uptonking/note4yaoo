@@ -59,7 +59,17 @@ modified: 2021-01-28T14:34:20.579Z
 
 - ## 
 
-- ## 
+- ## TypeScript 5.7 will load 2.5x faster than TypeScript 5.6 when run in Node 22+, _202409
+- https://x.com/andhaveaniceday/status/1839423538203423156
+  - thanks to @JoyeeCheung 's work to provide an offical API for V8 compile caching.
+  - That's 60% less time waiting for tsc/tsserver to actually start doing work.
+
+- Nice, do you use the concurrent API or the synchronous one?
+  - Both CommonJS and ESM are compiled synchronously in Node.js - I think the streaming APIs can’t really be used because most of the source fetching is implemented in internal JS, or has to be customizable by user land loaders written in JS
+- Ah got you, makes sense -- if the loaders are hookable then concurrency is tough. Maybe resolved imported module loads could still be concurrent, allowing each import to streaming compile or deserialise while the others are looked up?
+  - For ESM that might be possible. Though there's the overhead coming from the C++ <-> JS boundary crossing + async/await/Promise used as a primitive to coordinate these from the JS loader, this is likely why async fs APIs in Node.js tends to be slower than their sync counterpart
+  - so it's hard to say whether that would make module loading faster overall e.g. the loading of `import esm` in Node.js uses async fs APIs to fetch the source concurrently (on the libuv thread pool), yet it's still slower than `require(esm)` that just uses blocking & sync fs APIs
+- True, without actually parallelising multiple compiles I can totally imagine that the overheads would be visible. The parallelism definitely helps us in the browser, but it's sufficiently different to not map directly.
 
 - ## In TS 5.5, type predicates will be inferred automatically from functions that return a narrowing statement.
 - https://twitter.com/mattpocockuk/status/1768809254733951424

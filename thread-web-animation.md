@@ -38,6 +38,16 @@ modified: 2021-01-08T17:14:34.841Z
   - This means if the main thread is blocked in the meantime, the timestamp provided will not represent the current frame but some time in the distant past.
   - Will ship a fix for Framer Motion today that uses http://performance.now() instead
 
+# discuss-svg-anime
+- ## 
+
+- ## 
+
+- ## 
+
+- ## One of the tricky things to get right in SVG path animations is picking the right `stroke-dasharray` , so I made this visual to help understand
+- https://x.com/nandafyi/status/1839319314220146753
+
 # discuss
 - ## 
 
@@ -51,7 +61,7 @@ modified: 2021-01-08T17:14:34.841Z
 - https://twitter.com/mattgperry/status/1788296976997478689
   - It's not 100% optimal for everything but fantastic for most and always getting better.
   - I would be genuinely curious to see a FLIP or WAAPI implementation of this
-  - It looks simple-ish but it's deceptive. The layouts are all being animated with transforms. With the mixed spring/time transitions, rotating children,  undistorted radius, interruption. I think the way we do it is the only way possible. But perhaps there's a more performant way?
+  - It looks simple-ish but it's deceptive. The layouts are all being animated with transforms. With the mixed spring/time transitions, rotating children, undistorted radius, interruption. I think the way we do it is the only way possible. But perhaps there's a more performant way?
 - When you say less powerful device, do you have specs? Because it could be we do things like frame rate detection that throttles or disables animations on slow devices
 
 - ## 💫 implementing text animations with framer-motion is so fun

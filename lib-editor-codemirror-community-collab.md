@@ -194,7 +194,8 @@ const detectChangeWithoutUndoRedo = StateField.define<boolean>({
 // use `detectChangeWithoutUndoRedo.extension`
 ```
 
-- ## [Problems with redoing an effect - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/problems-with-redoing-an-effect/5283)
+- ## 🤔💡 [Problems with redoing an effect - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/problems-with-redoing-an-effect/5283)
+  - I’m trying to implement something like “interactive diff mode”: when user deletes text, I leave the text where it was, but apply red background. This works fine and undo works out of the box, but I’m struggling with redo
 - `invertedEffects` functions should be called for every transaction that doesn’t have `addToHistory` set to false. Maybe your effects being mapped to nothing by going through the change-invertedchange steps? 
   - I’d recommend using a transaction filter, rather than a separately created transaction that reverts the previous one, for this. 
   - Or, possibly even less problematic, don’t keep deleted text in the document, but store it alongside it and display it as widgets.

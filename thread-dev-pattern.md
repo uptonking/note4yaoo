@@ -32,7 +32,9 @@ modified: 2021-02-19T12:23:12.286Z
 
 - ## 
 
-- ## 
+- ## How old were you when you figured out dependency injection was just “arguments”
+- https://x.com/jacobmparis/status/1839287139592450389
+- Dependency injection is just the practice of making your code impossible to statically analyze as a regular human being, since configuration can make it run completely differently. Absolutely hate working with codebases that use it.
 
 - ## "exposing platform APIs over wrapping them" that really stuck with me, 
 - https://twitter.com/jimniels/status/1774808433675719106

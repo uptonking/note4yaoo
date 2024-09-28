@@ -51,7 +51,10 @@ modified: 2023-05-07T18:35:50.897Z
 # discuss
 - ## 
 
-- ## 
+- ## 知道为什么 iOS 上面备份恢复这么慢了 甚至不是 BackupAgent2 在限速 而是他一次只传 32.7k 的数据
+- https://x.com/Lakr233/status/1839387561275654158
+  - 备份就是设备一次发 32k 恢复就是 Finder 一次发 32k
+  - 然后每次传完就打一条日制 挂着日制收集器 IO 直接爆炸 不挂也浪费一大堆处理器资源
 
 - ## Another day when I miss that cloud disk storages (S3, Google Drive, Dropbox, iCloud etc.) didn't implement atomic compare-and-swap.
 - https://x.com/Horusiath/status/1791335631823712266

@@ -12,7 +12,20 @@ modified: 2021-09-22T04:13:22.341Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 🚀 Think Framer Motion is too big? Think again. Introducing useAnimate mini. _202409
+- https://x.com/mattgperry/status/1839665133406044367
+  - Interruptible hardware accelerated animations, spring support, custom easing functions, default value types.
+  - It's WAAPI with a little pepper, for just 2.5kb.
+
+- bye http://motion.dev? one
+  - Or is it hello
+
+- any plans on making this framework agnostic?
+  - It is. This is just a wrapper for an agnostic animate function
+- How would one implement this on Framer?
+  - You wouldn’t need to as the full feature set is already in Framer by default
+
+- Does it hardware-accelerate animations on SVGs? I can’t remember if that’s a WAAPI feature or if we’re still in the doghouse
 
 - ## This test file demonstrates a pre-generated `keyframe` animation performing (literally) 100x slower in Chrome when it runs concurrently to another WAAPI animation or one running via `requestAnimationFrame` .
 - https://twitter.com/mattgperry/status/1746173512669073680

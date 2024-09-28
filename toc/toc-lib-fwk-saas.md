@@ -248,6 +248,10 @@ modified: 2021-05-25T09:41:29.066Z
 - https://github.com/Dokploy/dokploy /apache2+NonResell/202409/ts
   - https://dokploy.com/
   - Open Source Alternative to Vercel, Netlify and Heroku
+# app-store
+- https://github.com/microsoft/code-push-server /MIT/202409/ts
+  - CodePush is an App Center feature that enables React Native developers to deploy mobile app updates directly to their users’ devices. It consists of two parts: CodePush Server where developers can publish app updates to (e.g. JS, HTML, CSS or image changes), and CodePush React Native Client SDK that enables quering for updates from within an app.
+  - We announced that Visual Studio App Center will be retired on March 31, 2025.
 # more
 - https://github.com/yazz/yazz /js
   - Yazz is a both an IDE for building small web applications and a decentralised app store. 

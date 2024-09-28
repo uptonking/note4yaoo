@@ -12,6 +12,16 @@ modified: 2021-05-25T08:41:02.257Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 今天 HackerNews 上最火的开源软件 - OpenFreeMap
+- https://x.com/vikingmute/status/1839206415732453472
+  - https://openfreemap.org
+  - 数据来自 OpenStreetMap，主打一个完全免费，使用它的 PublicInstance 也完全免费，没有任何限制，无需注册，没有用户数据库，没有流量使用限制，没有 API key，引入一个 js 文件就开始使用。
+  - 也可以自己 self  host，需要 300 GB SSD for hosting a single run and 4 GB RAM。
+  - 作者说做这个软件的前提是，很久以来当你想在网站中使用 OpenStreetMap 的时候，你需要一个 commercial map tile provider，还举例到当年 levelsio 的 hoodmap 因为一下火了，https://x.com/levelsio/status/1730659933232730443 就收到了MapBox 11000 刀 的账单。
+  - 所以他要做一个完全免费的解决方案，我觉得还是一个非常赞的选项，假如有朋友要做地图的展示，不妨可以试一试，还支持多种样式的自定义，特别注意这个应用主要是做数据的展示，不提供搜索以及导航功能。
+
 - ## [Improve accuracy of CJK glyphs with higher resolution TinySDF textures · maplibre/maplibre-gl-js](https://github.com/maplibre/maplibre-gl-js/issues/2990)
 - 以前能注意到部分国外的地图在展示 CJK 时会不清楚，今天在 Maplibre 的一个 issue 里看到了具体的解释
 - All text displayed in MapLibre GL, web or native, is rendered using Signed Distance Fields (SDFs). This means text can be smoothly rotated and rescaled between different sizes as a function of zoom level, and text halos - a common visual design for map labels - are computationally "free".

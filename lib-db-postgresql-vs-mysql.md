@@ -100,7 +100,14 @@ modified: 2023-11-01T14:13:41.390Z
 # discuss-pg-mysql
 - ## 
 
-- ## 
+- ## I don't think the code bloat for InnoDB in MySQL 8.0 can be undone. 
+- https://x.com/MarkCallaghanDB/status/1839429943861887206
+  - The workarounds are MyRocks, MariaDB, MySQL 5.7 forever or Postgres.
+- I really never understood why people stuck around with MySQL. In my 'bubble' _everyone_ moved over the MariaDB around the MySQL 5.5 era. Although I recently noticed that Geoindexing was better in MySQL 8 compared to MariaDB 10.x. But then again, MariaDB 11 has been out already.
+  - We have different bubbles but I started to do tests for MariaDB and was happy to learn it has done much better at avoiding the performance regressions.
+- 5.7 is not a reasonable work-around! No one should be using that junk heap anymore.
+  - The real cause of the bloat is playing feature catch-up. 5.7, though it releases much later, was still rooted in the 2004-06 era of the platform. Sun lacked resources to advance the product even before Oracle, which had no reason to move it forward. MySQL stagnated for a decade.
+  - It got to the point MySQL no longer even qualified as a modern relational database platform. Too much was missing. So the push into 8.0 and later had to do too much, too quickly. Quality will always suffer when that dynamic is in play.
 
 - ## the implementation of btree in PG is also more refined. 
 - https://x.com/baotiao/status/1799557033555116035

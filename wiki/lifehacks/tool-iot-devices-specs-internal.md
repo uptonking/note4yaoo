@@ -21,10 +21,54 @@ modified: 2024-09-25T15:17:42.743Z
   - 官方提供的bios下载，最新版竟然不兼容无法使用
 # phone
 - cpu 根据使用场景确定性能需求
-- 内存 
+- 内存
 - 存储
 - 屏幕 尺寸、分辨率、刷新率
 - 电池 容量、快充协议
+
+## AGM X6
+
+- xp
+  - 🛒 购买日期202409，💣 摔坏日期202
+
+- pros
+  - ?
+
+- cons
+  - 不支持NFC
+
+- [AGM X6 – AGM手机官方商城](https://shop.agmdevice.com/products/agm-x6-zh/)
+  - 5G智能三防手机 黑色
+  - 出厂系统内核: Android 13 XOS系统
+  - 防水等级: IP68/IP69K
+  - 防爆认证: 不支持
+  - 跌落等级: 1.5米
+  - 尺寸: 9mm*79mm*170mm  258g
+  - 主屏尺寸: 6.78英寸 LCD 挖孔屏
+  - 主屏分辨率: 1080*2460 FHD+ 60Hz
+  - CPU型号: 紫光展锐 虎贲T750 八核 6nm
+  - CPU频率: 2*2.0GHz+6*1.8GHz
+  - RAM容量: 8GB
+  - ROM容量: 256GB
+  - 扩展存储（T卡）: 支持
+  - 电池容量: 5000mAh 支持18W快充
+  - 扬声器: BOX扬声器
+  - 蓝牙5.0
+  - 接口类型: Type-C（USB3.0）
+  - OTG功能: 支持
+  - 耳机接口:3.5mm
+  - 指纹识别传感器: 侧边按键指纹
+  - 前置摄像头:1600万像素
+  - 后置摄像头1:5000万像素
+  - 充电器: 5V2A
+
+- [官方ROM包下载-AGM手机官网](https://www.agmdevice.com/Home/software/index.html)
+  - 支持G1/G2/GIS
+
+- 
+- 
+- 
+- 
 
 ## Redmi Note 12
 

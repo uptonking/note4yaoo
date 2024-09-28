@@ -26,6 +26,20 @@ modified: 2021-03-10T11:38:16.053Z
 
 - 《52 个设计原则》每个原则都有来源推到、案例解读、边界限制，由小红书产品设计中心制作，移动端和 PC 端体验都不错
   - https://rpdc.xiaohongshu.com/52-design-principles
+# discuss-loading
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Along with automatic skeletons, another thing I worked on recently was coordinated image loading. 
+- https://x.com/devongovett/status/1839355629179486428
+  - You can wrap any group of images with an `<ImageCoordinator>` , and all the images under it will fade in together rather than popcorning. Makes for a much more pleasant experience! 
+  - By default, browsers display partial images during loading. This was ok on dial up, but it's a jarring experience on modern high speed internet. Fading images in once fully loaded helps, but out-of-order loading in a group of images can be unappealing. For the best experience on a fast connection, you can delay revealing all images until everything has loaded, and fade them in together.
+  - Our implementation has a timeout of 5 seconds before it reveals what has loaded so far and falls back to displaying images as they are ready. This gives the best of both worlds: on fast connections all images animate in together, and on slower connections you aren't stuck waiting for everything to load before seeing anything.
+  - We used React context to implement this. Our `<Image>` component registers its src with the ancestor `<ImageCoordinator>` , which tracks all of the loading images. Once everything has loaded or the 5 second timeout is reached, it reveals all of the images.
+
 # discuss
 - ## 
 
