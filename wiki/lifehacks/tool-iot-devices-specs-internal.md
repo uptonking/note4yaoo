@@ -32,10 +32,11 @@ modified: 2024-09-25T15:17:42.743Z
   - 🛒 购买日期202409，💣 摔坏日期202
 
 - pros
-  - ?
+  - 支持NFC
 
 - cons
-  - 不支持NFC
+  - 不支持微信双开
+  - 不支持一件锁屏后指纹解锁
 
 - [AGM X6 – AGM手机官方商城](https://shop.agmdevice.com/products/agm-x6-zh/)
   - 5G智能三防手机 黑色

@@ -49,6 +49,7 @@ modified: 2024-05-02T07:48:04.213Z
 
 - If you just need to dynamically derive the value of some facet from other aspects of the state, it is preferable to use `computed facets` instead of `reconfiguration`, since those are more efficient and easier to keep track of (they are a form of derived state, rather than adding new fundamental state).
   - if you have something like an extension that wants to conditionally enable another extension, locally declaring a compartment and reconfiguring that as needed works well.
+  - If the parent compartment of such an extension is reconfigured, the extension, along with its local compartment, will simply vanish from the configuration
 
 - how to do a top-level reconfiguration. 
   - This is slightly different from just creating a new editor state, in that it'll preserve the content of state fields and compartments that exist in both the old and the new configuration.

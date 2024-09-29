@@ -14,8 +14,15 @@ modified: 2024-09-10T11:29:46.166Z
 
 - ## 
 
-- ## 🌰 [remove decoration - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/remove-decoration/6696)
+- ## 🤔💡 [How to insert text with decorations? - v6 - discuss. CodeMirror _202401](https://discuss.codemirror.net/t/how-to-insert-text-with-decorations/7704)
+  - I try to insert an array of text programmatically 
+- If you use `view.state.changes` to create a `ChangeSet` object for your changes (which you can also `dispatch` ), you can use that to map positions from the document space before the change to after. 
+  - 👉 Also probably makes sense to dispatch both the changes and the decorations in a single transaction.
+
+- ## 🌰 [remove decoration - v6 - discuss. CodeMirror _202306](https://discuss.codemirror.net/t/remove-decoration/6696)
   - I am also trying to understand how this is done. I adapted the code from Decorations example
+- You’ll probably want to define another state effect that removes decorations, and check for that as well in your loop over `transaction.effects` , calling `value.update` with a `filter` option that removes the appropriate range.
+
 - Are you trying to clear it? In which case you can just set it to `Decoration.none` . Or are you trying to clear a specific range? If so, you’ll want to actually compare the ranges to the from and to values in the effect.
 - I do want to clear a specific range ideally. Though I am not sure how to store the range of the original effect that was used to set the style in the first place. To be clear, I am not seeking to undo the last transaction, but merely capture the range of the last transaction and remove its styling. Can I store the range in the EditorState and retrieve it later?
   - You can, if you define a StateField for it. But you can also iterate over the ranges in the set, if you can somehow recognize the proper one
@@ -279,10 +286,6 @@ modified: 2024-09-10T11:29:46.166Z
 
 - ## 
 
-- ## [How to insert text with decorations? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/how-to-insert-text-with-decorations/7704)
-- If you use `view.state.changes` to create a `ChangeSet` object for your changes (which you can also `dispatch` ), you can use that to map positions from the document space before the change to after. 
-  - Also probably makes sense to dispatch both the changes and the decorations in a single transaction.
-
 - ## [How to add decoration without focusing the editor on dispatch? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/how-to-add-decoration-without-focusing-the-editor-on-dispatch/6283)
 - What was going on was that the DOM changes needed to apply that update messed up the DOM selection, which was still in the editor despite it no longer having focus. And restoring a proper DOM selection apparently randomly moves focus back into the editor. This patch tries to detect and undo this phenomenon.
 
@@ -305,9 +308,6 @@ modified: 2024-09-10T11:29:46.166Z
 - ## [Prevent cursor position before a widget at the start of a line - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/prevent-cursor-position-before-a-widget-at-the-start-of-a-line/5745)
 - is it possible to place a widget decoration at the start of a line in such a way that the cursor can only be positioned on the line after the widget, not before it?
   - A transaction filter is probably the best way to do this.
-
-- ## [Conflicting widget and mark decorations on empty line in CM6 - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/conflicting-widget-and-mark-decorations-on-empty-line-in-cm6/3487)
-- 
 
 - ## 🆚 [Detect cursor motion into atomicRanges widget - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/detect-cursor-motion-into-atomicranges-widget/6399)
   - I tried transactionFilter it works by its own flawlessly. However, I don’t know how to prioritize it over atomicRange features.

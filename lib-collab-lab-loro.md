@@ -30,7 +30,42 @@ modified: 2024-01-06T15:37:08.031Z
 
 - ## 
 
-- ## 
+- ## 🚀🧮 [Collaborative text editing with Eg-Walker: Better, faster, smaller | Hacker News _202409](https://news.ycombinator.com/item?id=41669840)
+- Seph (author) also has a reference implementation in Typescript: https://github.com/josephg/eg-walker-reference
+
+- I find the formulation in the abstract slightly confusing. As far as I understand EG-Walker is a CRDT, an operation-based one.
+  - 👷 Author here. It’s kinda both a crdt and an operational transform system.
+  - It’s a crdt in that all peers share & replicate the set of all editing events. (A grow-only set crdt if we’re being precise). Peers can use those editing events to generate the document state at any point in time, merge changes and so on.
+  - But the editing events themselves are stored and expressed in their “original” form (unlike existing CRDTs, which need a prepare function). That means lower memory usage during use.
+  - The replying / merging process itself is kind of a batch operational transform algorithm. It works by building a normal crdt state object in memory in order to transform the events so they can be replayed. In that sense, it’s an OT system. (But one which transforms by using a crdt, like Yjs, internally within each peer).
+
+- Let me see if I understand this correctly:
+  - CRDTs take an editor event such as "insert at position X" and turns it into something a concrete operation like "insert to the right of node Y created by client C" which is then sent. This makes it super easy to apply concurrent operations since they have a direct reference to where they're located. However, it also means that you know have to keep track of these nodes. All of the nodes that has ever existed is present at all times, and deletion is handled as a state flag which marks it as hidden.
+  - OTs take an editor event such as "insert at position X" and keeps it like that. Whenever a concurrent event is received it then tries to "rebase" it (i.e. patch that event) so that it makes sense on top of the current events. However, this (1) can be quite finicky to get right and (2) it is based on there being One True Order of Events (i.e. a server).
+  - This approach takes an editor event such as "insert at position X" and keeps it like that. When applied, it can be inserted into an "ever-growing list of atoms with state flag". However, in this algorithm the data structure is actually capable of representing two different versions at the same time: A current version and a final version. This is handled by there being two state flags instead of one: Every node has a "current state = exists/deleted" and "final state = exists/deleted". This gives us the power of doing a "soft undo" (which is called "retreat" in the paper): We can take our own latest event which we've applied, revert the effect on the current version, while still keeping the final version the same. We're handling this very similar to CRDTs: We keep all the nodes at all time, we're just using state flags to keep track of whether it exists or not.
+- First paragraph: yes, exactly. But yes, everything else is right!
+
+- I've stated before that I think the main thing holding back collaborative text / sequence CRDTs is integration with a production database.
+  - Eg-walker looks interesting because it might lend itself to be integrated into a database because the operations are immutable and only appended. 
+  - However, to demonstrate the effectiveness of these algorithms, library authors (see Yjs, DiamondTypes, etc) build stand-alone data structures (usually specialized search trees) that most databases already provide.
+  - Personally, I've been trying to adapt a Piece Table to be collaborative and stored in Triplit which runs on both client and server and already implements logical clocks but I might see how well I can adapt this algorithm instead!
+- This seems to be a holy grail, to be honest! Super-simple database representations with barely any processing required on the "write path, " instant startup, minimal memory requirements on both server and client without a need for CRDT data structures to be in memory, none of the O(n^2) complexity of OT. In fact, if I'm interpreting it correctly, it should be straightforward to get this working in a serverless environment without any notion of session fixation, nor active documents needing to be kept in memory. I can see this completely reshaping the landscape of what's possible with collaborative documents
+- 👷🤔 Author here. Thanks! Yeah this is my hope too.
+  - Egwalker has one other advantage here: the data format will be stable and consistent. With CRDTs, every different crdt algorithm (Yjs, automerge/rga, fugue, etc) actually stores different fields on disk. So if someone figure out a new way to make text editing work better, we need to rip up our file formats and network protocols.
+  - Egwalker just stores the editing events in their original form. (Eg insert “a” at position 100). It uses a crdt implementation in memory to merge concurrent changes (and everyone needs to use the same crdt algorithm for convergence). But the network protocol and file format is stable no matter what algorithm you use.
+- Since it stores all the editing events, does this mean that the complexity of opening a document is at least O(N) in terms of number of edits? Or are there interim snapshots / merging / and/or intelligent range computations to reduce the number of edits that need to be processed?
+  - 👷 You can just store a snapshot on disk (ie, the raw text) and load that directly. You only ever need to look at historical edits when merging concurrent changes into the local document state. (And thats pretty rare in practice).
+  - Even when that happens, the algorithm only needs to look at operations as far back as the most recent "fork point" between the two branches in order to merge. (And we can compute that fork point in O(n) time - where n is the number of events that have happened since then). Its usually very very fast.
+  - In an application like google docs or a wiki, the browser will usually never need to look at any historical changes at all in order to edit a document.
+
+- Is there a practical implementation yet that supports not just strings, but also lists and maps?
+
+- Do collaborative whiteboard like software use the same algorithms, or are there more suitable algorithms for picture collaborations?
+  - There’s usually more suitable algorithms for picture collaborations. Text is hard because it’s a list of characters, and when items are inserted and deleted the operations change the index of all subsequent elements. Usually, editing a digital whiteboard is much simpler.
+
+- 
+- 
+- 
 
 - ## [Movable tree CRDTs and Loro's implementation | Hacker News _202407](https://news.ycombinator.com/item?id=41099901)
 - https://thymer.com We're building a new multiplayer editor for tasks/notes which supports both text and outliner operations. Although it behaves like a flat text document, the outliner features essentially turn the document into a large tree under the hood. We do something similar to the highly-available move operation to sync changes

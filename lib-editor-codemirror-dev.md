@@ -197,6 +197,11 @@ modified: 2021-05-06T09:38:31.520Z
   - 在红色部分前面的行末尾回车，有时新行会跑到红色之下，其实也符合预期
   - 插入换行符时会高亮整行作为新增，不符合预期，但这个是通过api修改的方式，通过ui修改是符合预期的
 
+- diff-view-undo
+  - 思路1: invertedEffects在修改stateField sf1时，将还原的effect保存到history
+  - 思路2: 使用transactionFilter, 将undo的tr替换为撤销逻辑
+- 如何在undo时恢复编辑器内容之外的数据，如cmdk的输入框的内容，思路是将自定义stateField的数据也加入history
+
 - discuss
   - 简化ast的设计和实现
 
@@ -204,7 +209,7 @@ modified: 2021-05-06T09:38:31.520Z
   - 渲染wysiwyg时采用 virtual render
   - 支持可缩放的编辑器，用于将编辑器嵌入画板/设计工具的场景
 
-- 如何在undo时恢复编辑器内容之外的数据，如cmdk的输入框的内容，思路是将自定义stateField的数据也加入history
+- ❓🆚 transaction vs changeSet
 # dev-xp
 - 💄 自定义元素widget
   - codemirror会在widget最外层渲染一个contenteditable为false的元素

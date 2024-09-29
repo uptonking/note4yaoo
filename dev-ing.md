@@ -391,6 +391,7 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
   - 终止后未执行的action在进度条仍然显示，状态是cancelled
   - 关闭machine再打开时，会强制再次打开editor
   - 时光机终止后，驾驶舱如何反馈，终止状态如何清理
+  - 🚨 在action执行rerun后，时光机回放模式取快照的逻辑需要根据action的快照次数确定
   - ~~终止需要二次确认~~
   - ~~live模式下暂停时支持终止~~
   - ~~machine组件unmount要手动清理时光机的定时器~~
@@ -459,8 +460,9 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
     - 🌰 cursor的cmdk实现细节
       - cmdk后先修改绿色代码再accept后再修改，连续undo的表现是，先正常undo，然后undo到diff-view，然后保持在diff-view下undo，然后undo到原代码和输入框
       - 多次cmdk后连续undo，能恢复上一次cmdk的提示词prompt
-      - cursor的指令输入框不能被del键删掉, cmdk后按backspace时输入框会显示在上一行之上
+      - 📌 cursor的指令输入框不能被del键删掉, cmdk后按backspace时输入框会显示在上一行之上
       - cursor的空行会显示cmd+k/l的指令提示
+      - cmdk后，用户点击accept后，cmd+z会恢复diff-view；用户点击reject后，cmd+z会恢复diff-view吗(cursor会)
 - cmdk-undo的难点
   - 如何确定undo显示diff的条件，若用stateField, 
     - diff恢复后再次消失前的编辑也要支持undo
