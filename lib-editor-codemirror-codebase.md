@@ -16,6 +16,8 @@ modified: 2024-05-02T06:41:19.983Z
 
 # architecture
 
+- codemirror的整体架构和extension的架构都是从model/view/update三方面考虑的
+  - 在mvu架构的基础上通过provide暴露api
 # extensions/plugins
 
 # styling

@@ -15,6 +15,18 @@ modified: 2024-08-11T03:35:16.823Z
 - ## 
 
 - ## 
+
+- ## 🤔🔀 [Should dispatched transactions be added to a queue? - v6 _202206](https://discuss.codemirror.net/t/should-dispatched-transactions-be-added-to-a-queue/4610)
+- I was slightly surprised to find that the dispatch method doesn’t put transactions on a queue for processing.
+  - While it would be easy enough to add a queue in a custom dispatch function, I’m wondering whether that would be a bad idea for any reason, particularly in a way that explains why it isn’t implemented as a queue by default.
+
+- When creating a transaction, you are basing it on the current editor state. It would often not make any sense anymore when applied from a different state. Also dispatching transactions is synchronous, so a queue seems needless complexity.
+
+- Would it not be correct to say that whenever something asynchronous happens which ends with a call to view.dispatch, there’s always a chance that the view will already be processing an update at that time, which would result in an error being thrown?
+  - The way to write asynchronous stuff that dispatches is to do the async action, and then figure out how it applies to the current state. This may in some cases involve mapping a position known at the start of the action forward through updates (which is why it is convenient to define this kind of stuff as a view plugin).
+
+- Ok, I think I see the flaw in my reasoning - thanks for helping to work through it. It’s because the transaction processing is synchronous, any asynchronous code which calls view.dispatch will be run from the microtask queue and can only happen once the current transaction processing has finished.
+  - In which case it’s only calls to view.dispatch that are triggered by updates within a CodeMirror cycle that we need to worry about, and these can be wrapped in setTimeout (or, perhaps, queueMicrotask).
 # discuss-async-plugin/ext
 - ## 
 

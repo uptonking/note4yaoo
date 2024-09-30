@@ -16,6 +16,19 @@ modified: 2024-08-11T06:42:41.903Z
 
 - ## 
 
+- ## 🤔🌰 [Toggling Extensions - discuss. CodeMirror _202207](https://discuss.codemirror.net/t/toggling-extensions/4667)
+  - I want to provide editor settings to a user
+  - I understand creating compartments and reconfiguring those compartments, but what’s the best way to trigger reconfiguration based on outside user input?
+  - Is there a better way to dispatch an update to a compartment based on an outside change?
+  - I don’t like using `ViewPlugin` in this way, but that’s the only way I’ve found that I can both listen to an effect and asynchronously send a view.dispatch. Seems like this is pretty inefficient for a dozen settings.
+  - 👉 `EditorState.transactionExtender` doesn’t allow async, the effect change has to be done right away. It also doesn’t work for multiple settings at once. It only seems to allow one transactionExtender to change the effects, overriding all the others
+  - I’d sure love a way to just “listen” to a particular effect being dispatched and trigger another view.dispatch as necessary, or some other more direct way for an extension/compartment to dynamically reconfigure itself.
+
+- Why are you using a custom effect and an update handler? Why not directly dispatch the reconfiguring effects from the code that triggers the setting change?
+
+- 
+- 
+
 - ## [Proposal: Coarser Module Structure - v6 - discuss. CodeMirror _202204](https://discuss.codemirror.net/t/proposal-coarser-module-structure/4243)
   - 似乎未实现，有争议
   - The ‘core’ library (not including the language packages) currently consists of 24 different packages. Setups usually don’t need all of them, but you’ll still easily end up with almost 20 of them, plus language support, for a typical editor project.
@@ -49,14 +62,6 @@ modified: 2024-08-11T06:42:41.903Z
 - ## 
 
 - ## 
-
-- ## [Toggling Extensions - discuss. CodeMirror _202207](https://discuss.codemirror.net/t/toggling-extensions/4667)
-  - I want to provide editor settings to a user
-  - I understand creating compartments and reconfiguring those compartments, but what’s the best way to trigger reconfiguration based on outside user input?
-  - Is there a better way to dispatch an update to a compartment based on an outside change?
-  - I don’t like using `ViewPlugin` in this way, but that’s the only way I’ve found that I can both listen to an effect and asynchronously send a view.dispatch. Seems like this is pretty inefficient for a dozen settings.
-  - `EditorState.transactionExtender` doesn’t allow async, the effect change has to be done right away. It also doesn’t work for multiple settings at once. It only seems to allow one transactionExtender to change the effects, overriding all the others
-
 # discuss-ext-showcase
 - ## 
 

@@ -12,6 +12,12 @@ modified: 2024-08-11T03:29:17.282Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## [What is the equivalent of view.dispatch in a statefield? - discuss. CodeMirror](https://discuss.codemirror.net/t/what-is-the-equivalent-of-view-dispatch-in-a-statefield/5500)
+- State field update methods should just be pure functions that compute a new value. They respond to a state update, and shouldn’t cause state updates.
+  - If you need to add effects to a transaction before it is applied, maybe `transactionExtender` is what you want.
+
 - ## [Is it possible to access the original event within the updateListener? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/is-it-possible-to-access-the-original-event-within-the-updatelistener/5110)
 - No, you can’t—updates aren’t tied to events. You may get some relevant information from the `userEvent` annotation on transactions.
 
@@ -189,7 +195,10 @@ view.dispatch({ changes: { from: line.from, to: line.to, insert: 'New text for t
 
 - ## 
 
-- ## 
+- ## [How to refresh gutters - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/how-to-refresh-gutters/4315)
+- `lineMarkerChange: (update: ViewUpdate) => true`
+
+- Where are you keeping the address data? `updateListener` is almost certainly not the right way to recompute this—it runs after an update is finished, whereas if you do this in a state field or view plugin update method, you’ll be able to do the recomputation during the update, and avoid extra redraw cycles (which the lineMarkerChange solution is definitely going to cause).
 
 - ## [Custom gutter for specific lines only? - discuss. CodeMirror](https://discuss.codemirror.net/t/custom-gutter-for-specific-lines-only/5530)
 - you really don’t want to be doing that much work in formatNumber (or lineMarker, for that matter). 
@@ -209,7 +218,8 @@ view.dispatch({ changes: { from: line.from, to: line.to, insert: 'New text for t
 
 - ## 
 
-- ## 
+- ## [Are people running into "Calls to EditorView.update are not allowed while an update is in progress" often? - discuss. CodeMirror](https://discuss.codemirror.net/t/are-people-running-into-calls-to-editorview-update-are-not-allowed-while-an-update-is-in-progress-often/5086)
+- It is often possible (and preferable, efficiency-wise) to reorganize things in such a way that all the state effects you need originate from a single transaction (in this case, the code that removes the diagnostics plugin would also need to remove the existing diagnostics). Or a transaction extender could be set up to do this.
 
 - ## 🏠 [Codemirror 6: reference to EditorView from EditorState - discuss. CodeMirror](https://discuss.codemirror.net/t/codemirror-6-reference-to-editorview-from-editorstate/2554)
 - This might work better at a level above the view/state, since it needs to orchestrate between multiple views.

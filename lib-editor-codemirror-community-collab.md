@@ -88,7 +88,7 @@ CodeMirror.commands.undo = function(cm) {
 - My “solution” was to have a debounce listener on document changes and just literally diff the document with its previous version. That’s probably a really bad plan for huge documents, but for my use-case it works quite well
   - with `createPatch` being the standard “get me the diff between these two strings” that you can find loads of libraries for
 
-- ## [CodeMirror Empty Changes Array - discuss. CodeMirror _202403](https://discuss.codemirror.net/t/codemirror-empty-changes-array/7980)
+- ## 🤔 [CodeMirror Empty Changes Array - discuss. CodeMirror _202403](https://discuss.codemirror.net/t/codemirror-empty-changes-array/7980)
   - `{"clientID":"CLIENT_ID","changes":[],"effects":[{"type":{"map":{}},"value":{"id":"FIRST_ID","from":0,"to":0}}]}`
 
 - Assuming these are the JSON representation of `ChangeSet` objects, the empty array represents no changes made to a zero-length document, and as such wouldn’t be valid for applying to a non-empty document. The numbers in these arrays encode changed and unchanged pieces of the document, and are not something you want to manipulate or read directly in your code.
@@ -117,7 +117,11 @@ CodeMirror.commands.undo = function(cm) {
 # discuss-undo/history
 - ## 
 
-- ## 
+- ## [Make the undo history extendable · Issue · codemirror/dev _201809](https://github.com/codemirror/dev/issues/24)
+- This has landed with state effects and the `invertedEffects` facet.
+
+- Are state affects what one might use to attach data to a history event?
+  - Yes, you model your actions as effects (which are attached to transactions), and register a handler that, given a transaction, produces the effects the inverse of that transaction should have. The history will store those inversed effects and replay them when the transaction is undone.
 
 - ## [Best way to manage 'doc-has-changed' status - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/best-way-to-manage-doc-has-changed-status/6557)
   - sing code mirror for a text editor. When loading the editor content from a file, I want to display if the editor text has been changed or is still/again the same as the file content
@@ -194,7 +198,7 @@ const detectChangeWithoutUndoRedo = StateField.define<boolean>({
 // use `detectChangeWithoutUndoRedo.extension`
 ```
 
-- ## 🤔💡 [Problems with redoing an effect - v6 - discuss. CodeMirror _202211](https://discuss.codemirror.net/t/problems-with-redoing-an-effect/5283)
+- ## 🤔🤔 [Problems with redoing an effect - v6 - discuss. CodeMirror _202211](https://discuss.codemirror.net/t/problems-with-redoing-an-effect/5283)
   - I’m trying to implement something like “interactive diff mode”: when user deletes text, I leave the text where it was, but apply red background. This works fine and undo works out of the box, but I’m struggling with redo
 - `invertedEffects` functions should be called for every transaction that doesn’t have `addToHistory` set to false. Maybe your effects being mapped to nothing by going through the change-invertedchange steps? 
   - I’d recommend using a transaction filter, rather than a separately created transaction that reverts the previous one, for this. 

@@ -470,8 +470,9 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
     - 可以将prompt内容保存在编辑器外(因为不需要reactivity)，prompt id保存在编辑器的state
 
 - not-yet
-  - 希望在本地vscode的命令行能够快速执行.1024里面配置的 run_command 命令
-  - ai写代码打字效果的时机
+  - cmdk整体功能
+  - 时光机获取快照使用uuid
+  - ai写代码打字效果的时机优化和样式优化
   - 支持撤销ai写的代码
   - tab-key; chat-apply; aiCannotCreateThread
   - 防抖: cmdk， chat
@@ -498,6 +499,15 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
 ```JS
 stt.message.channel().send('uCmdK', 'README.md', 2, 2, 'explain an elegant word in one sentence')
 ```
+
+## 0930
+
+- 昨天：
+0001. 将cmdk undo的实现方案从transactionFilter迁移到invertedEffects, 能更准确的确定diff显示隐藏的时机
+
+- 今天：
+0001. 继续实现基于invertedEffects的undo/redo, 测试普通模式下的undo/redo不受影响
+0002. undo时恢复对应的提示词
 
 ## 0927
 

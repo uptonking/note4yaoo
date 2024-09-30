@@ -179,4 +179,5 @@ modified: 2024-05-02T02:00:47.318Z
 # v5
 - [CodeMirror 5 v5.61.0](https://int-heuristweb-prod.intersect.org.au/HEURIST/HEURIST_SUPPORT/external_h7/codemirror-5.61.0/)
 - [CodeMirror: User Manual v5.25.1](https://www-sop.inria.fr/teams/marelle/coq-18/jscoq/ui-external/CodeMirror/doc/manual.html)
+- [CodeMirror](https://www-sop.inria.fr/teams/marelle/advanced-coq-16-17/jscoq/external/CodeMirror/index.html)
 # more

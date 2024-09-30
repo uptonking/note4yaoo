@@ -153,26 +153,6 @@ modified: 2023-06-23T12:46:53.288Z
     - The default Pretzel AI Server uses Mistral's Codestral but you can switch the inline completion model in Settings
   - We DO NOT store any code or data you send to the Pretzel AI Server
 
-- https://github.com/difizen/libro /MIT/202409/ts
-  - https://libro.difizen.net/
-  - 大模型时代的 notebook 产品方案, 灵活定制、轻松集成的 Notebook 产品方案
-  - 定义大模型工作流，内置大模型交互和辅助开发能力
-  - 更优雅的交互体验，兼容 jupyter notebook
-  - 可以在自己的工作流中使用 prompt cell，快速完成与大模型的交互，生成的结果也可以在上下文中继续访问
-  - 支持 Cell 级别的版本 Diff 能力，方便更好的进行版本管理、CR
-  - https://github.com/difizen/libro-server /202404/python
-    - 基于 jupyter-server 开发
-    - 您至少需要安装 jupyter-server 来支持 libro 运行，此时您可以使用 jupyter notebook 的能力，如果需要使用更多 libro 定义的能力，您需要安装 libro-server。
-    - 使用 rye 来管理多 python 包组成 monorepo，多个包会共享同一个虚拟环境 venv
-
-- https://github.com/srcbookdev/srcbook /apache2/202408/ts
-  - https://srcbook.com/
-  - TypeScript & JavaScript notebooks.
-  - Create, run, and share reproducible programs and ideas
-  - Export to valid markdown format (.src.md)
-  - Local execution with a web interface
-  - Powered by Node.js
-
 - Zettlr /9.3kStar/GPLv3/202408/ts/vue/偏学术编辑器
   - https://github.com/Zettlr/Zettlr
   - https://www.zettlr.com/
@@ -323,6 +303,8 @@ modified: 2023-06-23T12:46:53.288Z
   - https://github.com/fovi-llc/cursor-codemirror
   - https://github.com/kumar045/cursor-codemirror
   - https://github.com/carloslfu/cursor-old
+  - https://github.com/beachstrider/cursor-assist-electron-openai /202303/ts/inactive
+    - This is an OpenAI based code editor built for pair programming with AI
 
 - https://github.com/replit/codemirror-minimap /202401/ts
   - Minimap extension for Codemirror 6
@@ -756,14 +738,6 @@ modified: 2023-06-23T12:46:53.288Z
   - https://composr-omega.vercel.app/
   - Composr is a markdown writer with real-time compiler for the web.
 
-- Starboard Notebook /889Star/MPLv2/202206/ts
-  - https://github.com/gzuidhof/starboard-notebook
-  - https://unpkg.com/starboard-notebook/dist/index.html
-  - https://starboard.gg/
-  - In-browser literal notebook runtime used in Starboard.
-  - 编辑器已分离，基于rich-markdown-editor和prosemirror、codemirror6
-  - 前端基于lit
-
 - https://github.com/wikimedia/mediawiki-extensions-CodeMirror /GPL/202405/js
   - MediaWiki extension CodeMirror
 - https://github.com/bhsd-harry/codemirror-mediawiki /GPLv2/202407/ts
@@ -794,6 +768,8 @@ modified: 2023-06-23T12:46:53.288Z
   - a modern open-source code editor for HTML, CSS and JavaScript that's built in HTML, CSS and JavaScript.
   - [Notes on CodeMirror · adobe/brackets Wiki](https://github.com/adobe/brackets/wiki/Notes-on-CodeMirror)
     - Brackets uses a fork of CodeMirror as a submodule.
+    - 🍴 forks
+    - https://github.com/quadre-code/quadre /202409
 # collab
 - https://github.com/lucafabbian/firepad /202208/js/inactive
   - 🔥 Firepad is an open-source library for adding collaborative capabilities into text and code editors. Firepad uses Google Firebase as a backend, so it requires no server-side code. It supports out of the box popular web editors such as Codemirror, Ace and Monaco.
@@ -1743,6 +1719,10 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/PlayerMiller109/obsidian-cm-decorations /202408/js
   - a codemirror 6 learning case in Obsidian, create static and dynamic decorations
+
+- https://github.com/enibook/enibook /MIT/202404/js/inactive
+  - https://enibook.github.io/enibook/
+  - Collection of educational components in the form of custom HTML elements
 # examples
 - https://github.com/ralismark/ibis-wiki /202406/ts
   - http://www.ralismark.xyz/ibis-wiki/
@@ -1839,12 +1819,6 @@ modified: 2023-06-23T12:46:53.288Z
   - these editors were built for the Prisma Data Platform's Query Console
   - This is only a demo of Prisma's text editors. To try out the query console, head over to the Prisma Data Platform
 
-- https://github.com/shahenalgoo/snippad /MIT/202306/ts/inactive
-  - https://www.snippad.io/
-  - open-source code snippet & notebook app for developers.
-  - It is a web/cloud based open-source application made in React/Next.js that you can easily deploy on Appwrite and Vercel for free.
-  - 依赖tiptap、appwrite
-
 - https://github.com/spicybirsge/notebin /MIT/202306/js/ejs
   - https://notebin.cf/
   - A codebin / textbin or any thing you call it which will allow you to create "codebins"
@@ -1880,6 +1854,10 @@ modified: 2023-06-23T12:46:53.288Z
   - https://ghosttext.fregante.com/
   - Use your text editor to write in your browser. Everything you type in the editor will be instantly updated in the browser (and vice versa).
   - 提供了浏览器插件和ide插件
+
+- https://github.com/librogamesland/magebook /MIT/202401/ts/inactive
+  - https://magebook.github.io/
+  - A web editor for gamebook writing
 # theme
 - https://github.com/nodetec/mirrorshades /GPLv3/202403/ts
   - A react library to create themes for codemirror
@@ -2024,7 +2002,23 @@ modified: 2023-06-23T12:46:53.288Z
   - A free and open source code snippets manager for developers
   - 依赖codemirror5、d3、dom-to-image、electron-store、marked
   - 202208: I am excited that v3.0.0-beta.1 is out which now uses Codemirror instead of Ace
-# pm-code-docs
+# pm-code-docs/notebook
+- https://github.com/srcbookdev/srcbook /apache2/202408/ts
+  - https://srcbook.com/
+  - TypeScript & JavaScript notebooks.
+  - Create, run, and share reproducible programs and ideas
+  - Export to valid markdown format (.src.md)
+  - Local execution with a web interface
+  - Powered by Node.js
+
+- Starboard Notebook /889Star/MPLv2/202206/ts
+  - https://github.com/gzuidhof/starboard-notebook
+  - https://unpkg.com/starboard-notebook/dist/index.html
+  - https://starboard.gg/
+  - In-browser literal notebook runtime used in Starboard.
+  - 编辑器已分离，基于rich-markdown-editor和prosemirror、codemirror6
+  - 前端基于lit
+
 - https://github.com/wagmi-dev/vocs /MIT/202408/ts
   - https://vocs.dev/
   - Minimal Documentation Framework, powered by React + Vite
@@ -2034,6 +2028,29 @@ modified: 2023-06-23T12:46:53.288Z
   - [Twoslash – Vocs](https://vocs.dev/docs/guides/twoslash)
     - TypeScript Twoslash can be seen as a pre-processor that enhances your code-samples. It is a markup language for JavaScript and TypeScript.
     - It leverages the compiler APIs used by text editors to offer type-driven hover information, precise error messages, and type callouts.
+
+- https://github.com/difizen/libro /MIT/202409/ts
+  - https://libro.difizen.net/
+  - 大模型时代的 notebook 产品方案, 灵活定制、轻松集成的 Notebook 产品方案
+  - 定义大模型工作流，内置大模型交互和辅助开发能力
+  - 更优雅的交互体验，兼容 jupyter notebook
+  - 可以在自己的工作流中使用 prompt cell，快速完成与大模型的交互，生成的结果也可以在上下文中继续访问
+  - 支持 Cell 级别的版本 Diff 能力，方便更好的进行版本管理、CR
+  - https://github.com/difizen/libro-server /202404/python
+    - 基于 jupyter-server 开发
+    - 您至少需要安装 jupyter-server 来支持 libro 运行，此时您可以使用 jupyter notebook 的能力，如果需要使用更多 libro 定义的能力，您需要安装 libro-server。
+    - 使用 rye 来管理多 python 包组成 monorepo，多个包会共享同一个虚拟环境 venv
+
+- https://github.com/dralletje/Notebook-Experiments /202304/ts/js/inactive
+  - http://lezer-playground.vercel.app/
+  - Notebook Experiments for Notebook Scientists
+  - Experimenting with all things codemirror. A product that is housed in this repo is Lezer Playground.
+
+- https://github.com/shahenalgoo/snippad /MIT/202306/ts/inactive
+  - https://www.snippad.io/
+  - open-source code snippet & notebook app for developers.
+  - It is a web/cloud based open-source application made in React/Next.js that you can easily deploy on Appwrite and Vercel for free.
+  - 依赖tiptap、appwrite
 # pm-coding-ai
 - https://github.com/asadm/codemirror-copilot /MIT/202401/ts
   - https://copilot.asadmemon.com/

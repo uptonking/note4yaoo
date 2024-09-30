@@ -78,6 +78,10 @@ modified: 2023-02-05T19:03:12.723Z
     - 💡 slate.js for DOM, without React.
   - [有计划整合slate-yjs插件吗？ _202204](https://github.com/wangeditor-team/wangEditor/issues/4033)
     - 暂时没有开发多人协同功能的计划。多人协同是一个非常复杂的工程，不是集成一个插件就可以解决的，还需要服务端做很多配合。
+- https://github.com/cycleccc/wangEditor-next /MIT/202409/ts
+  - https://cycleccc.github.io/docs/
+  - https://cycleccc.github.io/demo/
+  - 原项目 wangeditor 因作者个人原因短期不再维护，本项目为fork版本, 将在尽量不 Breaking change 的前提下继续维护。
 
 - https://github.com/sagemathinc/cocalc /1.1kStar/AGPL3+NonCommercial/202311/ts/python
   - https://cocalc.com/

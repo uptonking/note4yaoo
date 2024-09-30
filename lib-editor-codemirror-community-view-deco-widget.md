@@ -174,6 +174,11 @@ modified: 2024-09-10T11:29:46.166Z
 
 - ## 
 
+- ## [What is the equivalent of view.dispatch in a statefield? - discuss. CodeMirror](https://discuss.codemirror.net/t/what-is-the-equivalent-of-view-dispatch-in-a-statefield/5500)
+- State field update methods should just be pure functions that compute a new value. They respond to a state update, and shouldn’t cause state updates.
+  - If you need to add effects to a transaction before it is applied, maybe `transactionExtender` is what you want.
+- I’d say just implement this as both an extension that implements the folding state, and a function that you call once on a newly created editor to scan for the appropriate text and initialize the folding state.
+
 - ## [Code folding for PostgreSQL doesn't work as expected. - v6 - discuss. CodeMirror _202403](https://discuss.codemirror.net/t/code-folding-for-postgresql-doesnt-work-as-expected/7993)
 - You can use `foldService` to provide custom, non-syntax-tree-based fold ranges if you want.
 

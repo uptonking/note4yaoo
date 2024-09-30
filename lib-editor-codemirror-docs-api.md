@@ -57,19 +57,24 @@ modified: 2024-09-10T00:43:36.318Z
 - 🧩 A ChangeSet represents a group of modifications to a document. 
   - It stores the document length, and can only be applied to documents with exactly that length.
 
-- changeFilter
+- 🧩 changeFilter
   - called for each transaction (unless explicitly disabled), and can suppress part of the transaction's changes.
   - Such a function can return true to indicate that it doesn't want to do anything, false to completely stop the changes in the transaction, or a set of ranges in which changes should be suppressed. 
-- transactionFilter
+- 🧩 transactionFilter
   - Facet used to register a hook that gets a chance to update or replace transaction specs before they are applied.
   - You can either return a single transaction spec (possibly the input transaction), or an array of specs (which will be combined in the same way as the arguments to EditorState.update).
-- transactionExtender
+- 🧩 transactionExtender
   - This is a more limited form of transactionFilter, which can only add annotations and effects.
   - But, this type of filter runs even if the transaction has disabled regular filtering, making it suitable for effects that don't need to touch the changes or selection, but do want to process every transaction.
   - Extenders run after filters, when both are present.
 
-- 
-- 
+- 🧩 isolateHistory
+  - Transaction annotation that will prevent that transaction from being combined with other transactions in the undo history. 
+  - Given "before", it'll prevent merging with previous transactions. 
+  - With "after", subsequent transactions won't be combined with this one. 
+  - With "full", the transaction is isolated on both sides.
+
+- 🧩 
 - 
 - 
 - 
