@@ -243,11 +243,19 @@ modified: 2023-02-08T07:20:48.475Z
 - https://github.com/rjmacarthy/twinny /995Star/MIT/202403/ts
   - The most no-nonsense locally hosted (or API hosted) AI code completion plugin for Visual Studio Code, like GitHub Copilot but 100% free and 100% private.
   - designed to work seamlessly with: Ollama
-# agents
+# agents-multi
+
+- https://github.com/microsoft/autogen /31.4kStar/MIT/202410/python/jupyter
+  - https://microsoft.github.io/autogen/
+  - AutoGen is an open-source programming framework for building AI agents and facilitating cooperation among multiple agents to solve tasks.
+  - It offers features such as agents capable of interacting with each other, facilitates the use of various large language models (LLMs) and tool use support, autonomous and human-in-the-loop workflows, and multi-agent conversation patterns.
+
 - https://github.com/om-ai-lab/OmAgent /apache2/202407/python
   - OmAgent是一个多模态智能体系统，专注于利用多模态大语言模型能力以及其他多模态算法来做一些有趣的事
   - 包含一个专为解决多模态任务而设计的轻量级智能体框架omagent_core。我们利用这个框架搭建了超长复杂视频理解系统——OmAgent，当然你可以利用它实现你的任何想法。
   - DnCLoop: 受到经典算法思想Divide and Conquer启发，我们设计了一个递归的通用任务处理逻辑，它将复杂的问题不断细化形成任务树，并最终使复杂任务变成一组可解得简单任务。
+
+
 # ollama
 - https://github.com/open-webui/open-webui /MIT/202405/svelte/python
   - https://openwebui.com/
@@ -346,6 +354,13 @@ modified: 2023-02-08T07:20:48.475Z
   - https://huggingface.co/spaces/cin-model/kotaemon-demo
   - open-source clean & customizable RAG UI for chatting with your documents. Built with both end users and developers in mind.
   - This project serves as a functional RAG UI for both end users who want to do QA on their documents and developers who want to build their own RAG pipeline.
+
+- https://github.com/memfreeme/memfree /MIT/202409/ts
+  - https://www.memfree.me/
+  - MemFree is a Hybrid AI Search Engine.
+  - Search and ask questions with text, images, files, and web pages.
+  - Multi AI Models: ChatGPT, Claude, Gemini
+  - 支持多模态（图片、文字、文件），多来源（Twitter、学术、本地知识库），多种表现形式（思维导图、图片音视频）等混合搜索形态
 # ai-examples
 - https://github.com/Zeyi-Lin/HivisionIDPhotos /apache2/202409/python
   - https://swanhub.co/ZeYiLin/HivisionIDPhotos/demo

@@ -115,7 +115,8 @@ modified: 2024-09-02T02:28:27.398Z
 
 - ## 
 
-- ## 
+- ## pearai: i put up a proxy on their app and guess what 270k coinbase engineers are calculating user's usage on client side. i blocked their log_tokens api and now i can access their all models without any usage restriction lol???
+- https://x.com/that_anokha_boy/status/1840476530536780072
 
 - ## Cursor 对于公共领域的代码理解能力是很不错的，比如每个语言的基本库，常用的开源库。
 - https://x.com/waylybaye/status/1834944111817978345

@@ -57,7 +57,10 @@ modified: 2021-01-28T14:34:20.579Z
 # discuss-news
 - ## 
 
-- ## 
+- ## You'll never need to write a `.js` import again, thanks to this new flag in TS 5.7.
+- https://x.com/mattpocockuk/status/1840747531740844509
+  - If it's got an extension, it'll be transformed (YES). 
+  - But if it targets a .d.ts file, or it's a non-relative import, it won't be transformed (NO).
 
 - ## TypeScript 5.7 will load 2.5x faster than TypeScript 5.6 when run in Node 22+, _202409
 - https://x.com/andhaveaniceday/status/1839423538203423156

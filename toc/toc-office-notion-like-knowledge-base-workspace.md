@@ -604,6 +604,12 @@ modified: 2022-06-03T21:34:54.893Z
   - Extract structured data from unstructured documents using Answer. AI's Byaldi, OpenAI gpt-4o, and Langchain's structured output.
   - 基于Answer. AI的Byaldi、OpenAI的gpt-4o和Langchain 做结构化数据输出
   - 支持从PDF等非结构化文档中提取结构化信息，比如损失历史记录、基本应用程序信息等
+
+- https://github.com/ucbepic/docetl /MIT/202410/python
+  - https://docetl.org/
+  - DocETL is a tool for creating and executing data processing pipelines, especially suited for complex document processing tasks. 
+  - It offers a low-code, declarative YAML interface to define LLM-powered operations on complex data.
+  - DocETL is the ideal choice when you're looking to maximize correctness and output quality for complex tasks over a collection of documents or unstructured datasets.
 # more
 - https://github.com/notea-org/notea
   - Self hosted note taking app stored on S3

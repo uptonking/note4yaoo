@@ -30,7 +30,26 @@ modified: 2021-02-19T12:23:12.286Z
 # discuss
 - ## 
 
-- ## 
+- ## 🆚️ concurrency is NOT parallelism. 提供了动画示例
+- https://x.com/NikkiSiapno/status/1840656501461184549
+  - One is about managing multiple tasks at once, intermixing them to optimize resource usage.
+  - The other involves executing multiple tasks simultaneously.
+  - In modern systems, concurrency is driven by design principles that ensure tasks or processes run efficiently, whether the hardware has one or multiple processors. 
+  - Even with a single CPU, concurrency patterns allow tasks to share processor time effectively. This creates an illusion of parallel execution.
+  - While concurrency is about dealing with many tasks at once (task management). Parallelism is about doing many tasks at once (task execution).
+  - Parallelism requires hardware support, such as multi-core or multi-processor systems, to allow different tasks to run at the same time.
+  - This distinction between concurrency (task management) and parallelism (task execution) significantly impacts application performance and efficiency.
+  - Parallelism is particularly beneficial for compute-intensive applications, where tasks can be distributed across multiple processors to be executed simultaneously, leading to faster and more efficient processing.
+  - Asynchronous programming is used to achieve concurrency in single-threaded environments. This approach enables a program to initiate tasks without waiting for previous ones to finish, managing multiple tasks in a non-blocking manner.
+  - A great example is Node.js, which handles concurrency in a single-threaded model using callbacks and event loops.
+  - Meanwhile, multi-threaded environments (eg; C#) facilitate both concurrency and parallelism. They facilitate both concurrent task execution and true parallel execution across multiple processors or cores simultaneously.
+
+- How to avoid data racing in parallelism?
+
+- ## Regarding DI and IoC in AdonisJS, the choice is yours. You can ditch DI and all that "OOP" in your userland code or fully embrace hexagonal architecture and DDD principles.
+- https://x.com/romainlanz/status/1838475431789441081
+  - We're a tool to help you build, not to lock you in.
+  - Note that I'm taking the extreme here. You can also easily build a standard MVC or n-tier application, using DI only where you truly need it.
 
 - ## How old were you when you figured out dependency injection was just “arguments”
 - https://x.com/jacobmparis/status/1839287139592450389

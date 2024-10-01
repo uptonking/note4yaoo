@@ -35,7 +35,13 @@ modified: 2021-01-08T17:13:43.392Z
 
 - ## 
 
-- ## 
+- ## 💡 I knew elements with IDs became global variables, but any child elements with a `name` attribute become properties on that global variable
+- https://x.com/kilianvalkhof/status/1840739327354998987
+  - `idElem.namedInput.onclick=()=>{}`
+
+- But it applies *only for form* and its elements. These "form elements" are not necessarily direct form children. And even not necessarily children at all, since there is the "form" attribute we can use to link the "detached" element.
+- Give the input a name of attributes and watch things break 
+  - Sure there's a lot of footguns here, but it's nice for some quick little form stuff.
 
 - ## Why is `cloneNode(true)` so broken in browsers today compared to `importNode(true)` ?
 - https://x.com/trueadm/status/1792590536777375841

@@ -11,6 +11,8 @@ modified: 2023-12-08T16:02:26.515Z
 
 # linear-sync-engine
 
+## [Tuomas Artman ( @artman ) on building Linear, sync engines, and rethinking the startup MVP _202409](https://t.co/e7rFP9l2jb)
+  
 ## 📝 [Scaling the Linear Sync Engine - Linear Blog__202306](https://linear.app/blog/scaling-the-linear-sync-engine)
 
 ## 🎞️ [cs-repeat: linear sync engine__202306](https://www.youtube.com/watch?v=Wo2m3jaJixU)

@@ -23,6 +23,50 @@ modified: 2023-03-18T17:53:25.909Z
 
 - ## 
 
+- ## [Clash 检测工具的原理 - V2EX](https://www.v2ex.com/t/1076961)
+  - Clash / Clash Meta 核心设置了「Access-Control-Allow-Origin: *」，通配符允许了所有网站的脚本都能调用它。
+  - 假设 9090 是您的 Clash API 端口（ Clash Verge 默认是 9097 ）。在 www.google.com 下按 F12 ，输入 await fetch("http://127.0.0.1:9090") 回车，你会发现请求成功了。
+  - Clash 系列核心没有用户界面（ GUI ），但它可以在本地运行一个 HTTP 服务，方便各种 GUI 通过 HTTP 请求调用它的接口。Clash 系列核心必须开一个“后门”，也就是允许跨域资源访问，否则这些 GUI 将无法运作。
+  - 不过，这个“后门”显然开得过大了。应该增加一个配置项，只允许特定网站，而不应使用 * 通配符。常见的端口有 9090 和 9097。如果不是，还可以遍历 1 - 65535 全部尝试一次。 
+  - 成功利用可以获得对 Clash 核心的全部操控权限，包括获取服务器列表，修改代理规则等。
+  - 只有 Access-Control-Allow-Origin 允许，才能进行跨域资源的访问，否则会出错。 实际上，出错不意味着没有请求发生。浏览器首先需要发送 HTTP OPTIONS 请求，才能知道 Access-Control-Allow-Origin 的情况。这个请求称为「 Preflight request 」。跨域检测通过之后，浏览器才会再去执行脚本指定的 HTTP 请求。 因此，即便浏览器报错拦截，实际上还是有请求发生了。这就是耗时检测的原理。
+  - 在 Windows 平台，操作系统收到 TCP RST 报文后，并不会立即认为端口关闭，而会重试 2 秒后返回错误。因此对于耗时检测，耗时两秒左右的端口是关闭的，毫秒级别耗时的端口是打开的。 在 macOS 和 Linux 平台，情况则相反，端口关闭的耗时比端口打开的短。不过由于区分度太小，准确性较低。
+- 其实还有一个保护叫做 PNA - Private Network Access ，防止处于相对更公共 ip 地址范围的网页访问更私有的网址，甚至连导航都不行
+  - 只不过有一个小问题：它默认允许访问 127.0.0.1
+- 其实给子域名绑一个 ip 指向 127.0.0.1 也不跨域。
+- Clash For Windows 有一个随机混合端口功能，打开后应该能降低风险
+- clash meta 本来就支持通过 external-ui 配置本地的 webui 资源，不知道为什么不默认禁止跨域
+  - 不过我觉得加个密码就行了，端口响应 401 就认为是 clash 有点不靠谱
+- 只有浏览器才有这么多安全限制，自己写代码访问 http 可以构造一切头部，就包括 webview ，可以轻松关掉跨域限制，你要什么 ua ，头部，我给你构造就是了
+  - 而且不仅是网站在扫代理，各种游戏也会扫代理，以前就爆出腾讯的国外某款射击游戏会扫描全盘，看你有没有装什么远控或者代理投屏软件
+
+- 看了下用 adblock 拦截 127.0.0.1:9090 就可以了
+- uBlock Origin 的 Block Outsider Intrusion into LAN 规则也失效了，没拦下来
+
+- 选择 1 ，用 FlClash 这类直接嵌入内核的软件，避免了外部通信，默认关闭外部面板访问。
+  - 选择 2 ，用 sing-box 内核，1.10.0 版增加了 access_control_allow_origin
+
+- mihomo 没有像 clash 一样 allow *，建议直接用 mihomo ，别用 clash 了
+  - mihomo 是刚修好的，他们做了改进。 文中提到的 clash 系列就包括 mihomo ，也就是 meta 。 至于原版的 clash 核心，早删库了
+
+- clash verge 设置 api key 可以解决
+
+- ## 💡 [在线检测您是否在使用 Clash](https://x.com/geekbb/status/1840655693398855930)
+  - https://mikewang000000.github.io/ClashScan/
+- 看代码就是直接 fetch 遍历, 扫描localhost的所有端口来访问clash api
+  - 本地打开端口扫描？Chrome 能让你随便访问本地端口？
+
+    - Clash 同源策略是 *，所以能请求成功
+
+  - 浏览器对跨站访问 localhost 的控制也只是 CORS 吗？没有额外策略？
+
+    - 据我所知没有的, 还有个 PNA 策略
+
+- 其实这种思路挺有意思的，而且不只能应用到Clash上。假设某个监听本地端口的应用程序没有正确的配置CORS，使用这种方式远程攻击方可以用客户自己的浏览器来跳过客户的防火墙，最终操作这个应用程序去进行某些操作/变更。
+- 确实是 chrome only，Safari 无效。
+- 并不对 扫不出来软路由
+- 我之前可以扫出来，把ublock的规则拉满就不行
+
 - ## 🆚️ Forward Proxy vs Reverse Proxy
 - https://twitter.com/sahnlam/status/1744600844195205473
 - A forward proxy (or just proxy) is a server that sits between user devices and the internet. A forward proxy is commonly used for:

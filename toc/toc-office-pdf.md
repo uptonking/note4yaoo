@@ -48,7 +48,8 @@ modified: 2021-01-04T17:26:43.784Z
   - https://github.com/enescang/react-pdf-table
     - Simple table generator for @react-pdf/renderer
 
-- https://github.com/wojtekmaj/react-pdf /js
+- https://github.com/wojtekmaj/react-pdf /MIT/202409/ts
+  - https://projects.wojtekmaj.pl/react-pdf
   - Display PDFs in your React app as easily as if they were images.
   - For React-PDF to work,  `PDF.js` worker needs to be provided.
 

@@ -51,10 +51,16 @@ modified: 2023-05-07T18:35:50.897Z
 # discuss
 - ## 
 
-- ## 知道为什么 iOS 上面备份恢复这么慢了 甚至不是 BackupAgent2 在限速 而是他一次只传 32.7k 的数据
-- https://x.com/Lakr233/status/1839387561275654158
-  - 备份就是设备一次发 32k 恢复就是 Finder 一次发 32k
-  - 然后每次传完就打一条日制 挂着日制收集器 IO 直接爆炸 不挂也浪费一大堆处理器资源
+- ## 
+
+- ## 
+
+- ## 推荐一个最近发现的邮件发送服务商 Brevo（http://brevo.com），他的免费套餐非常良心，
+- https://x.com/interjc/status/1840917391120691463
+  - 包含每天 300 封邮件的额度，并且还有免费 WhatsApp 推送、网页在线客服等服务，是一个一站式解决方案
+  - 之前使用的 Sendgrid 莫名其妙就把我风控了，于是才重新调研找了这家，也算是一种机缘
+  - 需要验证域名
+  - 这个只是提供 api，调用以后发邮件。嵌入到哪里的软件应该没有区别。不过纯国内似乎也可以使用 aliyun 的 mail
 
 - ## Another day when I miss that cloud disk storages (S3, Google Drive, Dropbox, iCloud etc.) didn't implement atomic compare-and-swap.
 - https://x.com/Horusiath/status/1791335631823712266

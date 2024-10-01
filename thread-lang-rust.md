@@ -12,6 +12,19 @@ modified: 2023-10-06T16:26:57.557Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## This post on rewriting Rust is very interesting, but I kept thinking: "and where's the stuff you would remove? you would remove stuff, right? not just add stuff?"
+- https://x.com/thorstenball/status/1839202375568892361
+- if we're talking rewrites, just off the top of my head:
+  - remove proc macros
+  - remove implicit into_iter
+  - remove Drop
+  - remove half of capabilities of module system (why http://mod.rs or http://foo.rs? Just one)
+- It seems like Rust is running into the cpp problem. The features will continue until morale improves.
+
 - ## In Rust when you see `let y = x.clone();` You don’t know if it’s a cheap reference count increment or an expensive allocation and memcopy.
 - https://x.com/fredine/status/1808654410660393457
   - You can do this instead: `let y = Arc::clone(x)` ; 

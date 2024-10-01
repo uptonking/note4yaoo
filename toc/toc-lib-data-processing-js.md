@@ -95,4 +95,18 @@ modified: 2021-05-13T16:14:28.745Z
   - a library for simple, fast filtering and sorting of large collections -- think 100, 000s of items -- in the browser. 
   - PourOver is built around the ideal of simple queries that can be arbitrarily composed with each other, without having to recalculate their results. You can union, intersect, and difference queries. 
   - Underscore.js is the only dependency. Optionally, you may use Lo-dash instead of underscore.
+# analysis
+- https://github.com/nshiab/simple-data-analysis /MIT/202409/ts
+  - https://nshiab.github.io/simple-data-analysis/
+  - Easy-to-use and high-performance JavaScript library for data analysis. Works with tabular and geospatial data.
+  - The library is based on DuckDB, a fast in-process analytical database.
+    - Under the hood, SDA sends SQL queries to be executed by DuckDB. 
+    - We use duckdb-node and duckdb-wasm. 
+    - SDA can run in the browser and with Node.js and other runtimes.
+    - For geospatial computations, we rely on the duckdb_spatial extension.
+  - The syntax and the available methods were inspired by Pandas (Python) and the Tidyverse (R).
+  - The library is maintained by Nael Shiab, computational journalist and senior data producer for CBC News.
+  - SDA is born out of the frustration of switching between Python, R, and JavaScript to produce data journalism projects
+  - https://github.com/nshiab/journalism
+    - Helper functions for journalism projects.
 # more

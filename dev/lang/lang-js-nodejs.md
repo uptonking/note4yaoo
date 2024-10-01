@@ -145,6 +145,12 @@ modified: 2022-12-19T01:48:17.115Z
   - 具体细节实现由libuv提供，在win下由命名管道实现，*nix系统采用unix domain socket实现
 # dev
 
+- v22.6.0 --experimental-strip-types 示例
+  - logux
+  - arktype
+  - react-pdf
+  - in-situ
+
 ## node-path
 
 - `path.join(path1，path2，path3.......)`

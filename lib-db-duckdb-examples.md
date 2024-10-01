@@ -50,8 +50,21 @@ modified: 2023-12-15T18:02:24.488Z
   - Hooks and utilities to make it easier to use duckdb-wasm in React apps.
 # utils
 
+# duckdb-powered
+- https://github.com/nshiab/simple-data-analysis /MIT/202409/ts
+  - https://nshiab.github.io/simple-data-analysis/
+  - Easy-to-use and high-performance JavaScript library for data analysis. Works with tabular and geospatial data.
+  - The library is based on DuckDB, a fast in-process analytical database.
+    - Under the hood, SDA sends SQL queries to be executed by DuckDB. 
+    - We use duckdb-node and duckdb-wasm. 
+    - SDA can run in the browser and with Node.js and other runtimes.
+    - For geospatial computations, we rely on the duckdb_spatial extension.
+  - The syntax and the available methods were inspired by Pandas (Python) and the Tidyverse (R).
+  - The library is maintained by Nael Shiab, computational journalist and senior data producer for CBC News.
+  - SDA is born out of the frustration of switching between Python, R, and JavaScript to produce data journalism projects
+  - https://github.com/nshiab/journalism
+    - Helper functions for journalism projects.
 # more
-
 - [Duckbook.ai - SQL + AI in your browser](https://www.duckbook.ai/)
   - Duckbook is an AI-powered SQL notebook that runs in your browser.
   - Notion-like SQL notebook built on Tiptap, DuckDB, and GPT-4

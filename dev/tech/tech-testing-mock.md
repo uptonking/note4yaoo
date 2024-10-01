@@ -48,7 +48,24 @@ modified: 2021-08-12T20:21:51.264Z
 
 - Jest is designed to be simple and straightforward, while Mocha has more options and can be more difficult to learn.
 - Jest is also faster than Mocha. It has built-in support for snapshot testing, which means tests are run automatically on each change to the code. This makes it easy to keep your tests up to date as you work.
+# discuss-mock
+- ## 
+
+- ## 
+
+- ## TIL you can mock fetch natively in Node.
+- https://x.com/mattpocockuk/status/1841074839446003927
+- MSW is already doing this
+- I use MSW for this in tests
+
+- https://codewithhugo.com/node-test-native-fetch-intercept-undici/
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
 - ## fetch-mock mocking all requests
 - https://stackoverflow.com/questions/41868698
 - I'm using fetch-mock in order to mock some requests to the server.
@@ -61,6 +78,7 @@ modified: 2021-08-12T20:21:51.264Z
   - It is chainable and can be called before or after other calls to .mock(). 
   - The api to check for unmatched calls remains unchanged.
 - Since fetch-mock v.6.5 there is a new config property called fallbackToNetwork that allows you to control how unhandled (unmatched) calls shall be handled by fetch-mock
+
 # examples-fake-fetch-mock
 - https://github.com/wheresrhys/fetch-mock
   - http://www.wheresrhys.co.uk/fetch-mock/

@@ -113,7 +113,12 @@ modified: 2023-09-13T20:24:41.516Z
 
 - ## 
 
-- ## 
+- ## 怎样将保存一个完整的网站到本地？
+- https://x.com/vikingmute/status/1839845550650536012
+  - 直接使用页面另存为会有非常多的问题，主要是静态资源的问题，比如图片不显示等等。
+  - 方案一：找到一个开源库 SingleFile
+  - 方案二：原帖中的一段 Gist 代码，https://gist.github.com/markflorkowski/4269bc529324dceb2858c77b7609704c
+我看了一下处理：使用FileReader 读取，external css 转换成 inline，并且修改地址到 absolute，图片转换成 base64 images。
 
 - ## [Local First, Forever | Hacker News _202406](https://news.ycombinator.com/item?id=40786425)
 - I think an important requirement for making the "forever" aspect of local-first possible is to make the backend sync server available for local self-hosting.
