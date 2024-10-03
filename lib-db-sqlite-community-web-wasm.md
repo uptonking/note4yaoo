@@ -15,6 +15,16 @@ modified: 2023-12-09T10:03:55.375Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🌰 What if PGlite could lazily load database files over HTTP with range requests?
+- https://x.com/samwillis/status/1841816489877286970
+  - https://pglite-httpfs-demo.netlify.app/
+  - This demo shows how to use PGlite, a WASM build of Postgres running entirely in the browser, with the WIP HttpFs to connect to a remote PGlite database. 
+  - It's using HTTP range requests to fetch database file pages from the remote server on demand.
+
 - ## 🆚️ SQLite WASM is much slower than the in-memory better-sqlite3, but still, the new Evolu CRDT algorithm can handle approximately 1666 mutations per second
 - https://x.com/evoluhq/status/1836518784539980248
   - I developed and tuned it with the in-memory better-sqlite3, where you can get around 25k mutations per second

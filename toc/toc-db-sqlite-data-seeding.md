@@ -24,6 +24,14 @@ modified: 2022-06-03T22:05:05.732Z
 
 - https://github.com/nuitsjp/AdventureWorks-for-SQLite
   - AdventureWorksLT for SQLite
+
+- https://github.com/devrimgunduz/pagila /202409/psql
+  - Pagila started as a port of the Sakila example database available for MySQL, which was originally developed by Mike Hillyer of the MySQL AB documentation team. 
+  - It is intended to provide a standard schema that can be used for examples in books, tutorials, articles, samples, etc.
+  - Pagila has been tested against PostgreSQL 12 and above.
+  - Fulltext functionality is built in PostgreSQL, so parts of the schema exist in the main schema file.
+  - The payment table is designed as a partitioned table with a 7 month timespan for the date ranges.
+  - The pagila database is made available under PostgreSQL license.
 # examples
 - https://github.com/joongyang/Lecture-Materials-for-SQLite
   - Example Databases and Schema Diagrams for SQLite Lecture

@@ -24,7 +24,22 @@ modified: 2024-03-30T05:55:54.349Z
 
 - ## 
 
-- ## 
+- ## 🤔 Porffor: Compile JS to native code ahead of time. No need for V8.
+- https://x.com/mattpocockuk/status/1841549046772547840
+- So there's no need for a JS runtime? It's a self executing binary?
+  - Yes, that ends up being insanely small compared to the binaries produced by Deno/Bun. 90mb -> 15kb sort of difference (was shown in the talk Oliver gave)
+  - There are some big challenges, like they haven't implemented GC yet. But they have some independent funding so they have a bit of runway to work with.
+
+- 🆚️ how does it compare to what Static Hermes is doing?
+  - Similar ambitions I guess. Both look to be using static types to make optimisation decisions. Both target WASM: SH does so via LLVM, Porffor directly targets WASM. I suspect Porffor will have very nice zero-overhead FFI features over time. It's early days for both projects.
+  - And I suspect more interesting differentiation will happen a level above when someone builds a runtime above these projects (Node.js : V8 :: ??? : Porffor :: ??? : SH)
+
+- quickjs does not compile JS ahead of time? it interprets. you can bundle it with JS but that isn't actually compiling JS
+  - qjs, yes, but its also bundled with qjsc, a compiler
+- that still isn't actually compiling JS though, it's just bundling the engine with source/bytecode
+  - fair point, but you can strip out eval for a tiny binary with no js parser
+
+- Still, I guess that will require custom packages that implements servers and stuff. Current ones depends on the v8 interface.
 # discuss
 - ## 
 

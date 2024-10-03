@@ -42,7 +42,26 @@ modified: 2023-06-16T02:53:00.115Z
 
 - ## 
 
-- ## 
+- ## Anyone have any good resources on making your own contenteditable plaintext editor?
+- https://x.com/RogersKonnor/status/1841179945848225884
+- If it’s plaintext why does it need to be contenteditable at all? IMO a great way to do plaintext editors is to use a simple textarea. If you need syntax highlighting with colors, consider overlaying a copy of the text on top of the text area where you control the colors.
+  - It falls apart at like 2k+ lines. I need to profile it and figure out whats causing the slowdown. Its not `<textarea>` itself. Cant tell if its layout thrashing or all the calls to Prism and if i need to throttle it
+- re:
+  1. I think Prism is too heavy for this use case.
+  2. Doing virtual rendering to only render the “visual” code should help with the perf a lot.
+  3. Probably will need a new kind of parser that can parse partial code well.
+- I was hoping to avoid that... I guess trying to make contenteditable work with virtualization is probably asking for even more trouble than just using what I have already.
+
+- Did you try content-visibility to see if that helps performance?
+  - I believe I did, but I didnt know notice a difference.
+
+- Yeah I would guess the bottleneck is the prism back and forth. Have you tried tree-sitter?
+  - treesitter goes against the whole ethos of being a small library on top of `<textarea>`. I may look at "lezer" which powers codemirror to get incremental parsing.
+  - and needing to compile individual grammars and use WASM is not my idea of fun
+
+- A client of mine did this and regrets it. They moved to Monaco editor.
+
+- The legitimate answer I've seen is don't. Perhaps https://developer.mozilla.org/en-US/docs/Web/API/EditContext_API is a better place to look but alas it's chromium only ATM. I'm not sure if Mozilla and WebKit are opposed or just haven't prioritised yet.
 
 - ## TIL about `field-sizing: content` in css
 - https://x.com/destroytoday/status/1835405977316655563

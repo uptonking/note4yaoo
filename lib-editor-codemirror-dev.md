@@ -77,11 +77,11 @@ modified: 2021-05-06T09:38:31.520Z
 - who is using #xtermjs
   - duckdb-shell
 
-- why-cloud-ide
+- cloud-ide-pros
   - easy to start and leave
   - better collaborative editing
   - consistent env
-- cloud-ide
+- cloud-ide-solutions
   - monaco: Codespaces(GitHub绑定), Gitpod(yml), Coder(no-cloud/k8s), theia, OpenSumi, StackBlitz, codesandbox
   - Eclipse Che: OpenShift CDE
   - DevPod: devcontainer-spec + local-and-cloud
@@ -89,6 +89,8 @@ modified: 2021-05-06T09:38:31.520Z
   - more: AWS Cloud9
   - 缺点
     - vps的性能不如本地计算机，vps很贵
+- cloud-ide-cons
+  - 计算资源受业务平台限制和云厂商限制
 
 - ide类产品 vs 文档类产品 🆚
   - ide一般支持远程连接代码仓库，本地仓库和远程仓库的文件通过git同步

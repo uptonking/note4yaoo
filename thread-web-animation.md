@@ -55,7 +55,12 @@ modified: 2021-01-08T17:14:34.841Z
 
 - ## 
 
-- ## 
+- ## Framer Motion 11.11 introduces object animations.
+- https://x.com/mattgperry/status/1841842701215437115
+  - animate() can now accept and animate *any* object. Be it Three.js Object3Ds, Pixi.js Graphics... anything.
+  - You can even mix different object types and HTML/SVG elements within animation sequences.
+
+- Check out the sandbox, based on the classic React Three Fiber x Spline demo
 
 - ## In Framer we're making an animation engine to animate anything a designer throws at us.
 - https://twitter.com/mattgperry/status/1788296976997478689

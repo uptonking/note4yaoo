@@ -105,7 +105,18 @@ modified: 2023-11-10T07:10:19.089Z
 
 - ## 
 
-- ## 
+- ## 🆚️ undici.request is MUCH faster than Node's built-in fetch (also backed up by undici).
+- https://x.com/mattpocockuk/status/1841781998622314583
+  - The extra overhead of fetch needing to be compliant with web standards really slows it down.
+- On one of @matteocollina ’s twitch streams some time ago, he said the perf can be improved to be on par with more investment. It’s not that one is inherently slower than the other. I think some of this is due to underlying web streams implementation
+
+- Seems neglectable overall. Nginx is doing 50K to 80K requests non-clustered from what I found and given node is used for much heavier tasks, this bench seems acceptable. I would take standards over this perf win any time.
+- So, if I've got my maths right, undici is about 32 nanoseconds per request faster. The instant you add real network latency onto that then that number becomes meaningless. Ping times to my WiFi router are about 8ms, which is 250x more than the 32ns speed gain from using undici.
+
+- Matt, this is just very actively harmful content. Really. You are saying "thing is slow because it's standard". That is blatantly untrue. There is nothing in this example that has to be slow because a spec says so. Which is why it's blazing fast in many runtimes other than Node.
+- if you use Bun with fetch you’re still at least 20x faster
+
+- Fetch API in general isn't that great for server side use. You'll easily end up with chains of copying and creating responses. For browser it's fine though.
 
 - ## I've rewritten the Node.js task runner (node run --test) in C++. 
 - https://twitter.com/yagiznizipli/status/1781682054393966900

@@ -63,19 +63,30 @@ modified: 2024-08-24T16:28:20.515Z
   - https://x.com/steventey/status/1796352490100896149
     - How is it fully self-hostable if it relies on three SaaS services? Seems more like partially self-hostable?
 # discuss-stars
-- ##
+- ## 
 
-- ##
+- ## 
 
-- ##
+- ## 
 # discuss-ide-ai
-- ##
+- ## 
 
-- ##
+- ## 
 
-- ##
+- ## 🚀 Introducing http://bolt.new, by StackBlitz _202410
+- https://x.com/stackblitz/status/1841873251313844631
+  - What if AI dev products (Claude, v0, etc) let you install packages, run backends & edit code?
+  - Prompt, edit, run & deploy fullstack apps
+  - Full dev env (npm, Vite, Next.js, …) w/ frontier AI
+  - bolt․new can create beautiful, production ready multi-page apps with backends and DBs like @Supabase .
+  - That's because every chat can run a prod build & deploy it to @Netlify (and @Cloudflare) — no login required
 
-- ##Introducing Zed AI, in collaboration with @anthropicAI . _20240821
+- how does bolt․new run in a browser tab without virtual machines?
+  - The secret sauce is WebContainers, our micro-OS that runs a full web development environment inside your browser tab. 
+
+- 
+
+- ## Introducing Zed AI, in collaboration with @anthropicAI . _20240821
 - https://x.com/zeddotdev/status/1825967812629631034
   - Zed AI brings LLMs directly into your editor with an extensible, text-centric approach.
   - We're also piloting @anthropicAI 's new Fast Edit mode for Claude 3.5 Sonnet with a small set of Zed users.
@@ -289,7 +300,6 @@ modified: 2024-08-24T16:28:20.515Z
 - ## 
 
 - ## 
-
 # discuss-debug
 - ## 
 
@@ -313,7 +323,6 @@ modified: 2024-08-24T16:28:20.515Z
 - ## 
 
 - ## 
-
 # discuss
 - ##
 

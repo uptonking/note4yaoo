@@ -191,7 +191,18 @@ modified: 2020-12-22T12:42:09.830Z
 # discuss-app-hunt
 - ## 
 
-- ## 
+- ## [微软将于 2025 年终止支持 Windows 11 上的 Android 子系统，有哪些战略考虑？ - 知乎](https://www.zhihu.com/question/647289775)
+- WSA 的用户体验真的一言难尽，各种 BUG 各种崩溃，还不如国产的安卓模拟器好用。所以，我不觉得微软失败是因为无法使用 Google Play 商店应用，这根本是自欺欺人的归咎于客观因素。
+  - 真正失败的主因还是太难用，大多数国产 APP 都不能很好的运行。而且，可能大家原以为可以利用 PC 强大的硬件性能去跑手游，一定很爽，其实你想多了，根本不咋地。只能说，这个功能就是 Windows 11 的一个宣传亮点（噱头），完成度很低，且离完美遥遥无期，最终只能砍了。
+  - 那有人要问为啥 WSA 这么垃圾难用？为啥就是修不好呢？因为从技术层面来看，确实就是修不好。图形堆栈问题，可能是核心因素。自 WSA 发布至今，就一直出现 dGPU VRAM 不被回收的问题，GLES3 和 Vulkan 的可用性几乎为零。应用开发商通常不会在其 apk 中打包 x86/x64 原生库，而且 Windows ARM 设备图形驱动程序也非常糟糕，以至于无法在 WSA 中获得硬件加速。这意味着用户只有两种结果：由于 libhoudini 翻译导致的 CPU 性能低下进而卡顿，或者由于图形性能低下导致的 UI 卡顿。无论哪种结果，都不可能获得优秀的体验，微软自己无法解决这些问题。
+
+- 国内虚拟机甚至都搞定dx11/12/vulkan转译了，说到底就是没上心
+- 国内那么多安卓模拟器厂商都能搞个还不错的体验，为什么微软反而不行
+  - 国内是系统层面虚拟，微软想搞成应用层（每个app都是单独的）。当然最主要还是微软不上心。国内厂子后面甚至能搞出dx11/12转译来保障手游性能
+
+- 据说是因为不挣钱。应用市场与亚马逊商店合作，收入被亚马逊拿走了。此外WSA原生也没有GMS，在美国可谓寸步难行。
+
+- 微软的特色就是，业界什么热点火，就跟风抄进去 windows 里。抄进去的功能跟 PC 市场水土不服，推不动以后就砍掉，但是又有一堆依赖的东西砍不干净，最后变成祖传屎山…当年 win8 的触控 ui，win10 的增强现实 ，uwp，win11 的安卓子系统…都是这个套路
 
 - ## [What is the best photo editing app for android? : androidapps](https://www.reddit.com/r/androidapps/comments/x4nuzo/what_is_the_best_photo_editing_app_for_android/)
 - According to me, the best one is krita, but only available and optimized for tablets. If you're even slightly familiar with Photoshop, Krita will not need a large learning curve. You might miss some of the AI features like subject selection etc, but you hall all the tools to do them manually. 

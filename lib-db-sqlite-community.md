@@ -42,6 +42,20 @@ modified: 2021-08-30T17:33:46.086Z
   - [In-Memory SQLite Perf / Matt | Observable](https://observablehq.com/@tantaman/in-memory-sqlite-perf)
   - Without adding a complicated layer on top which essentially becomes a second database itself. After pat leave I’ll turn this draft into something presentable
 
+# discuss-search
+- ## 
+
+- ## 
+
+- ## 
+
+- ## How to do "Hybrid search" with SQLite FTS5 and sqlite-vec
+- https://x.com/agarcia_me/status/1841522698373247065
+  - Reciprocal rank fusion, FTS-first, re-order by semantics, and more
+  - Featuring the great snowflake-arctic-embed-m-v1.5 model and sqlite-lembed, using pure SQL examples.
+  - Sample of what this looks like, using RRF: A single SQL SELECT statement, with CTEs performing vector + fts searches, combining the results in the last step.
+
+- Last Sunday, I was trying to make one with llama 3.2 1b  and Duckdb
 # discuss
 - ## 
 

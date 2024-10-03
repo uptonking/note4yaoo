@@ -16,6 +16,31 @@ modified: 2023-07-19T10:48:24.003Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## This is how SQL get Executed by DB engines
+- https://x.com/AmigosCode/status/1841091655786430471
+
+- ✅ Coding Order (How SQL Queries are Written)
+1. SELECT: Specifies the columns or expressions to retrieve from the database.
+2. FROM: Indicates the table(s) to query and the source of the data.
+3. WHERE: Filters the rows based on specified conditions before any grouping or aggregation occurs.
+4. GROUP BY: Aggregates rows that share the same values in specified columns into summary rows.
+5. HAVING: Filters groups based on a condition, similar to `WHERE` but applied after grouping.
+6. ORDER BY: Sorts the result set based on specified columns or expressions.
+7. LIMIT: Restricts the number of rows returned by the query.
+
+- ✅ Execution Order (How SQL Queries are Processed)
+1. FROM: The query starts by gathering data from the source tables.
+2. WHERE: Filters the rows from the `FROM` step based on given conditions.
+3. GROUP BY: Organizes filtered rows into groups defined by specified columns.
+4. HAVING: Applies conditions to these groups to filter out those that don’t meet the criteria.
+5. SELECT: Selects the specific columns or expressions to include in the result set.
+6. ORDER BY: Sorts the selected rows according to specified columns.
+7. LIMIT: Limits the number of rows returned, based on a specified number.
+
 - ## MySQL perf folks: I have a column that is TEXT, and my queries to find items where that field is null are dog slow (like 30s).
 - https://twitter.com/wesbos/status/1737568828022800426
   - How do I speed this up? 

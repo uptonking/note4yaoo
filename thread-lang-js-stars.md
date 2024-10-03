@@ -28,6 +28,40 @@ if(val) // doSth
 
 - ## 
 
+- ## How long has `crypto.randomUUID()` been available?
+- https://x.com/mattpocockuk/status/1841399224518287784
+  - Why on earth did I ever download a package to generate random UUIDs?
+  - It's also the fastest secure one, cool
+  - it also works on localhost! Lovely for local dev.
+
+- in node you can import { randomUUID } from "crypto" but this doesn't work on the client, you have to use window.crypto. been caught out a few times in a nextjs project with that
+  - Looks like crypto.randomUUID() is a global available in both.
+
+- It's not so convenient, when you test your app on http (not https) and your app just doesn't work. That's why I continue using NanoID
+
+- It's nice but doesn't produce v7 uuid
+- Because I want UUID v7 and not v4
+
+- Because NanoId has a shorter string representation
+
+- chrome release 92 (Released 2021-07-20)
+  - node 19.0.0 (Released 2022-10-18)
+- Only limitation is Node 18 support (ecosystem-wise to be adopted). crypto is globally available in 20+
+- It's been available since 14.17.0 & v15.6.0
+- I mean, depends on the Node version or browsers you need to support. It's available since v19 in Node for example. But it is an amazing addition, if not `crypto.getRandomValues` is a bit older and allows you build something similar too.
+
+- Important note, its available only on secure context, meaning on browser it won’t be available on “http”, throwing error. I learned it the hard way in prod. I then reinstalled uuid since it has internal fallback to use it when available and will always work. I recommend uuid
+
+- I feel like limiting certain APIs to HTTPS-only reduces the overall security of the web, because not everything needs the overhead of TLS. But not like anything in web dev has anything to do with logic or reason nowadays, so I guess it's just expected.
+
+- Once I needed to unique IDs I just have used `(Math.random()*1E7).toString(36)`. But there is important nuance: these IDs must be unique in set of few dozens items
+
+- 
+- 
+- 
+- 
+- 
+
 - ## 🌐️ Javascript Internationalization Methods
 - https://x.com/csaba_kissi/status/1832677217253339218
 - Any example how to cope with current  Date-time in different time zones?
