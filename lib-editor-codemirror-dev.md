@@ -62,6 +62,7 @@ modified: 2021-05-06T09:38:31.520Z
   - chrome-devtools(开源代码中使用v6)
   - known: mdn-bob, sourcegraph, odoo
   - libfwk: svelte-playground, gitbutler
+  - HuggingFace-sql-console, ChatGPT-canvas
   - more: tagspaces, hedgedoc
   - ?: replay.io, duckdb
   - apps: desmos-classroom

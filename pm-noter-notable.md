@@ -17,7 +17,6 @@ modified: 2023-11-28T14:48:45.910Z
   - end-user database: 支持用户自定义数据和流程, multi views
   - mobile-editor: phone, pad
   - animated-text/code sharing: playback with different speed
-  - features: 多文件知识库(ide), 移动优先的markdown知识库
   - github修改文档要提pr很繁琐; 可协作的workspace可直接改或用审阅修订模式
   - mobile-app-generator
   - local-first data storage with optional syncing: 兼容git的commits
@@ -26,6 +25,10 @@ modified: 2023-11-28T14:48:45.910Z
   - drag between windows
 
 - selling-point-knowledge-base
+  - features
+    - 多文件知识库(ide)
+    - 移动优先的markdown知识库
+    - automation(lowcode)
   - 通用或单一的builder价值不大，但针对业务平台特别是app-store的builder对平台方和开发者的价值都很大
   - 搜索: rag, code-search, ai-chat
     - 针对代码优化的搜索可作为技术卖点和产品卖点，可参考github-code-search/algolia

@@ -88,7 +88,11 @@ modified: 2023-11-10T08:05:25.474Z
 
 - ## 
 
-- ## 
+- ## This presentation to TC39 has me *worried* for the future of JavaScript. _202410
+- https://x.com/nullvoxpopuli/status/1842389133810913338
+  - JS0 -- the minimum JS the engines want to implement
+  - JSSugar -- what you're already writing today that is ultimately compiled down to JS0
+
 # discuss-feat-number
 - ## 
 
@@ -108,9 +112,28 @@ modified: 2023-11-10T08:05:25.474Z
 # discuss-feat-enum
 - ## 
 
-- ## 
+- ## 🤼🏻 [Insights from Adopting TypeScript at Scale | Hacker News _202011](https://news.ycombinator.com/item?id=25043541)
+  - Fascinating that Bloomberg started adopting server-side JS in 2005 and client-side JS only in 2012. And that they use their own deno-like JS engine.
 
-- ## 
+- > Back in 2005, the company started migrating those apps from Fortran and C/C++ to server-side JavaScript
+  - Since their use of Javascript predates Node (and the rest of that ecosystem, like Webpack or Babel or whatever), they've built up their own Javascript environment that doesn't rely on Node or Node conventions at all. 
+
+- There isn't much of a difference between regular enum and const enum when it comes to the usage of the enum keyword. The big difference is what they compile to - where const enum evaporates by inlining the values into the usage sites.
+
+- 
+- 
+
+- ## Bloomberg hates enums, and so should you _202410
+- https://x.com/mattpocockuk/status/1841564439281029272
+  - 📝 [10 Insights from Adopting TypeScript at Scale | Bloomberg LP _202011](https://www.bloomberg.com/company/stories/10-insights-adopting-typescript-at-scale/)
+- this is actually false... Bloomberg RECOMMENDS enum as one of the options to avoid type inlining. I don't get why you hate enums so much. My only problem with them in TS is the lack of features.
+
+- Just treat them as values that get inlined and problems are gone. TS implementation of enums is just ... suboptimal.
+
+- I think enums have their place. For simple things, union types are a better solution when the language supports it like in TS.
+  - However, enums can have (e.g. in Kotlin) additional benefits like supporting runtime enumeration of options, methods, reverse mappings, and so on.
+
+- They are quite wasteful when you really want to squeeze things.
 
 - ## Did you know that numeric and string enums compile differently?
 - https://twitter.com/mattpocockuk/status/1765700809113645458

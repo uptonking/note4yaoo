@@ -31,6 +31,11 @@ modified: 2023-01-08T16:27:44.918Z
 
 # extension-superset
 
+# arrow-impl
+
+- https://github.com/kylebarron/arro3
+  - a minimal Python implementation of @ApacheArrow based on the @rustlang Arrow crate.
+  - This adds zero-copy data import from Numpy, so you can use numeric Numpy-backed arrays with Rust Arrow operations without copies
 # utils
 - https://github.com/kylebarron/arrow-js-ffi /rust
   - Zero-copy reading of Arrow data from WebAssembly

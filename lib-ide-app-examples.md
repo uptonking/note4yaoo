@@ -34,8 +34,22 @@ modified: 2024-08-24T16:30:20.218Z
     - cursor的代码补全/提示太迅速及时了 这个能做到吗 除了ai的修改代码功能 我最喜欢就是cursor这个功能了 已经依赖了
     - 用cursor的时候我就找过其他开源的竞品（例如http://continue.dev），大部分步骤（例如embedding、apply、llm）在本地跑都不得劲。或许是我机器太差了？而这些还是相当重要的，例如apply这个在chat完成后自动填入代码这个直接使用普通的llm完成度都太差了。
 
+- https://github.com/CodeEditorLand/Editor /MIT/202410/ts
+  - https://npmjs.org/code-oss-dev
+  - We're rewriting VSCode @code with Tauri
+
 - https://github.com/reconsumeralization/CodeCurse /MIT/202404/ts/inactive
   - CodeCurse is not a mere fork but a pioneering set of scripts which automatically merge cursor functionalities into Microsoft's VS Code, resulting in freely-licensed binaries
+
+- https://github.com/stackblitz/bolt.new /MIT/202410/ts
+  - https://bolt.new/
+  - Bolt.new is an AI-powered web development agent that allows you to prompt, run, edit, and deploy full-stack applications directly from your browser—no local setup required
+  - Claude, v0, etc are incredible- but you can't install packages, run backends or edit code. That’s where Bolt.new stands out
+  - Full-Stack in the Browser: Bolt.new integrates cutting-edge AI models with an in-browser development environment powered by StackBlitz’s WebContainers.
+  - AI with Environment Control: Bolt.new gives AI models complete control over the entire environment including the filesystem, node server, package manager, terminal, and browser console. 
+  - Once your free daily token limit is reached, AI interactions are paused until the next day or until you upgrade your plan.
+  - https://x.com/oran_ge/status/1842497547010728358
+    - Bolt，可以提供写代码、preview、部署网站一条龙服务
 # ide/cde
 
 # code-playgrounds

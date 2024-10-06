@@ -287,6 +287,11 @@ modified: 2023-06-07T14:19:18.719Z
   - Create a Supabase Project and make sure to save the database password.
   - For a complete list of all available social login methods, consult the Supabase Social Login documentation
 
+- https://github.com/jaywcjlove/tools /MIT/202406/ts
+  - https://jaywcjlove.github.io/tools
+  - Many many useful Web Online Tools For Web Developers & Programmers
+  - 每个icon点进去是独立的工具在线使用页面
+
 - https://github.com/tgnav/tgnav.github.io /GPLv3/202402/js
   - https://tgnav.github.io/
   - Telegram频道导航。收录Telegram上的优质频道

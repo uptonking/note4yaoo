@@ -215,6 +215,17 @@ modified: 2023-12-12T08:45:31.670Z
 
 - ## 
 
+- ## 
+
+- ## 作为 RTC 的从业者说一下 OpenAI 在发布realtime api 的时候为啥会拉上 livekit 以及 agora：
+- https://x.com/leeoxiang/status/1841737253024137687
+  1、RTC 的接入成本远比http 要高很多倍，简单的场景按照要按照周算，复杂的场景要按照月算。
+  2、RealtimeAI  30 多个信令，涉及到长连接的重连，复杂状态处理，技术不好的开发者已经很难 hold 住了。
+  3、除了协议之外，音频的前后处理（降噪、人声分割等等）以及各种硬件设备的适配也需要非常专业的团队来处理。
+  - 这其中大量的接入工作openai 本身是支持不了的，也不是 openai 擅长的。
+
+- rtc是非常成熟的通信解决方案了，4年前就很成熟了，疫情期间rtc借着视频会议又火了一波，openai没必要自己建设rtc网络，这方面其它rtc供应商早做好了。
+
 - ## Web trivia: Chrome has its own IPC protocol called Mojo that's also used in part by Firefox and is similar in design to how MessageChannels work in JS user land, which are implemented on top of it.
 - https://x.com/qwtel/status/1813126057073254690
 

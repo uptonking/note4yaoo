@@ -17,7 +17,9 @@ modified: 2023-12-09T10:03:55.375Z
 
 - ## 
 
-- ## 
+- ## I wonder if instead of SQLite to WASM if it'd be easier to embed DuckDB as WASM for local first 
+- https://x.com/RogersKonnor/status/1841881976971698669
+- +1 on DuckDB embed story. That and the query language is identical Postgres SQL if I'm not mistaken
 
 - ## 🌰 What if PGlite could lazily load database files over HTTP with range requests?
 - https://x.com/samwillis/status/1841816489877286970

@@ -52,7 +52,19 @@ modified: 2023-10-28T17:31:26.535Z
 
 - ## 
 
-- ## 
+- ## It's indeed true that there is this misconception that the SQL over HTTP support Turso has is the only mode, which is not true. 
+- https://x.com/penberg/status/1842964199284036091
+  - The feature called "embedded replicas" gives you all the benefits of in-process SQLite  for reads, and we're currently working towards offline writes, which gives the same benefit for writes too. 
+  - The HTTP mode is there to unlock environments such as Cloudflare Workers and Vercel, where it is not practical to bring over the whole database query engine over to the app.
+
+- 🆚️ what benefits are there with Turso over just plain SQLite!
+- For starters, how do you @liltechnomancer deal with backing up your database file? 
+  - Do you, for example, use Litestream for that? Or do you have something custom. 
+  - This is one of the most important basic quality of life things Turso brings to the table: point in time recovery for your databases, which is pretty cool.
+- Another thing people use Turso for is replication. 
+  - This is actually something SQLite does not really support. There's a project called LiteFS that does this by implementing a special-purpose filesystem in userspace, that monitors writeahead log (WAL) updates and replicates them to the server. 
+  - We took a different route: we actually forked SQlite to add a "virtual WAL" interface that we can use to do similar style replication.
+- Litestream is great! We used in the early days of Turso before we had our own point in time restore wired up.
 
 - ## SQLite’s read and write paths are slower than they need to be because SQLite supports multiple processes accessing the same database file concurrently.
 - https://x.com/penberg/status/1819779262511018068

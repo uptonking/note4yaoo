@@ -59,6 +59,10 @@ modified: 2022-01-05T14:36:28.057Z
     - v4.0.0 2022-07-26 🎯 /ts重写
       - v4 API is completely backward compatible, so it's just nothing to update if you are JS users
       - One note is v4 depends on `useSyncExternalStore`.
+- https://github.com/dhmk083/dhmk-zustand-lens
+  - easily manage nested state inside your main state. 
+  - Lenses allow you to create isolated and reusable components.
+  - easily manage nested state inside your main state. Lenses allow you to create isolated and reusable components.
 
 - jotai  /6.7kStar/MIT/202201/ts/Atoms
   - https://github.com/pmndrs/jotai
@@ -174,10 +178,10 @@ modified: 2022-01-05T14:36:28.057Z
   - store actions can be added directly to the store
 - If you can't live without Redux-like reducers, you can define a `dispatch` function on the root level of the store
 
+- 
+- 
+- 
 
-- 
-- 
-- 
 # discuss-zustand
 - ## 
 

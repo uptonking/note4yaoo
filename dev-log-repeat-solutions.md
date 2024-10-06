@@ -39,26 +39,30 @@ modified: 2021-07-20T13:50:23.433Z
     - 输入数据input-data-table, 开放数据api，开放应用app-builder
     - 产品方向: 偏设计布局， 偏业务逻辑
 
-- 技术方向js: 前端版/流式版/oplog; 编辑器/ide，多维表格/excel，协作/gitdb; dnd，floating
+- 技术细节: virtualized, draggable, table(eav)
+- 技术产品: cm-devtools, noseditor, collab-hocuspocus
+- 技术方向js: 协作/ver-gitdb/partial-sync, 编辑器/ide, 多维表格/excel; scaling/HA-socket; dnd, floating; 前端版/流式版/oplog; 
 - 技术扩展js/py: 可拖拽的页面编辑器/lowcode, Excel/kanban, 图表
+- 通用能力: collab, ai-search, ai-chat
 - 技术扩展ai: rag, search, vector, 知识库搜索与对话
-- 技术产品: client/server版; cms/wiki, airtable/table, db
+- 技术业务: client/server版; cms/wiki, airtable/table, db
 - 技术可选1: 画板, pdf/ppt-editor, 图形编辑器
 - 技术可选2: olap-bi, 大数据系统, 数据库
-- 技术可选3: vscode，可参考架构 extensions、capabilities
+- 技术可选3: vscode, 可参考架构 extensions、capabilities
 - 技术可选4: 侧重版本控制的数据库，如dolt, SirixDB, git-like-db
 - 玩具尝试1: git+crdt+table+branch/version, 参考类似ckan的data-portal
 - roadmap: virtualized-draggable-table, cm-devtools, cm-noseditor, cm-hocus
   - 📝 编辑器，协作同步，版本分支，~~虚拟渲染, 分支版本, 协作冲突, undo/redo~~
   - 🔀🛢️ crdt版本历史, partial-replica、ivm, delta-db, dynamic-schema/eav, 实时架构
-- file-first: obsidian, notable, hexo
-- db-first: joplin, siyuan, nocodb
+- 数据存储架构
+  - file-first: obsidian, notable, hexo
+  - db-first: joplin, siyuan, nocodb
 
 - 🚀 产品落地
   - 侧重表格的cms, 内容创作与管理
   - 运营数据仪表板
   - sharing table/data pieces/snippets
-  - 个人数据管理，开放api，允许其他app获取，参考ckan
+  - 个人数据管理, 开放api，允许其他app获取，参考ckan
   - tags
 
 - 生态与集成, 业务方向考虑实时市场，不要凭空想象
@@ -91,13 +95,13 @@ modified: 2021-07-20T13:50:23.433Z
 - 💎 excel/data-grid
   - editing, group/pivot, multi-views
   - pivotable; collaborative; formulas
-  - 📌 tanstack-table, ag-grid, handsontable, luckysheet/univer, ospreadsheet ; undb/nocodb/ethercalc
+  - 📌 tanstack-table, ag-grid, handsontable, luckysheet/univer, ospreadsheet; undb/nocodb/ethercalc
   - stream-updates/server-side-infinite-row-model
   - scripting/themeable/canvas/viztable/apache-arrow
   - ~~excel-like~~/~~headless~~
 - 💎 collab
   - crdt: yjs, automerge, logux, rga, fluid-framework, hlc
-  - log-based: p/couchdb, powersync, kappa-db, event-sourcing
+  - log-based: ~~p/couchdb, ~~powersync, kappa-db, event-sourcing
   - eav: triplitdb
 
 - 通用的features
@@ -188,16 +192,16 @@ modified: 2021-07-20T13:50:23.433Z
   - 所有的操作可由用户执行，也可由ai执行
 
 - high-availability / horizontal-scaling
-2  - yjs-hocuspocus, y-redis, fluid-routerlicious 🤔 使用websocket通信是否是错误的架构
+  - 实现参考: yjs-hocuspocus, y-redis, fluid-routerlicious 🤔 使用websocket通信是否是错误的架构
   - strapi, nocobase
   - fwk: nestjs, feathers-sync
-  - manual: zulip
-  - more: overleaf
+  - manual-ha: zulip
+  - more: overleaf(pro-only)
 
 - 协同类产品要考虑数据和配置是否都要同步的问题
   - 表格的过滤条件
   - 回放操作的进度
-  - 搜索
+  - 搜索关键词
 # editor
 - tips
   - live edit
@@ -291,6 +295,7 @@ modified: 2021-07-20T13:50:23.433Z
 - job-hunting
   - codemirror
   - jupyter
+  - automation/rpa
 
 - charting-viz
   - leading
@@ -357,10 +362,10 @@ modified: 2021-07-20T13:50:23.433Z
   - 添加属性或方法后要注意提供清理方法或实现自动清理
 # pm
 - ai的能力擅长在翻译 语言 转换
-# more
+# more-work-xp
 - 20240406: 想做的事情有 灵活的cms、协作系统、支持大量数据的编辑器
-  - cms需要在架构层支持 配置和存储 表和字段 的元数据
-  - 协作系统需要对文本使用特殊的数据结构，还要考虑版本历史/yjs/权限
+  - cms需要在架构层支持 配置和存储 表和字段 的元数据, 可参考directus/nocodb
+  - 协作系统需要对文本使用特殊的数据结构，还要考虑版本历史/权限/yjs
   - 编辑器在模型层要考虑db架构和更新op采用ot/crdt, 系统中编辑器大多可替换
   - 协作只有部分文本需要YText这类复杂的crdt，表格使用llw-map足够
   - 富文本编辑器和页面编辑器的区别，主要在是否使用conetenteditable、选区

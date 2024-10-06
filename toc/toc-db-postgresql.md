@@ -39,6 +39,12 @@ modified: 2023-10-26T15:28:53.748Z
 
 # powered-by-pg
 
+- https://github.com/cloudberrydb/cloudberrydb /apache2/202409/c
+  - https://cloudberrydb.org/
+  - Open source alternative to Greenplum Database. Created by the original Greenplum developers.
+  - We aim to bring modern computing capabilities to the traditional distributed MPP database to support Analytics and AI/ML workloads in one platform.
+  - As a derivative of Greenplum Database 7, Cloudberry Database is compatible with Greenplum Database, but it's shipped with a newer PostgreSQL 14.4 kernel (scheduled kernel upgrade yearly) and a bunch of features Greenplum Database lacks or does not support. 
+
 - https://github.com/tensorchord/pgvecto.rs /202311/rust
   - Vector database plugin for Postgres, written in Rust, specifically designed for LLM
   - a Postgres extension that provides vector similarity search functions. 

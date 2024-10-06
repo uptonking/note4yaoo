@@ -71,7 +71,18 @@ modified: 2024-08-24T16:28:20.515Z
 # discuss-ide-ai
 - ## 
 
-- ## 
+- ## StackBlitz 推出 bolt. new，可以看作 Artfacts V0 和 Replit 的结合体。
+- https://x.com/op7418/status/1842034898317746328
+  - 支持提示、编辑、部署的全栈流程
+  - 带有完整的开发环境
+  - 可以实时预览生产结果。
+  - 最重要的是免费。
+
+- "完整的开发环境" 这个不准确，他们的运行环境使用的是 WebContainer 近端容器技术，只支持 JavaScript 技术栈，是一个几乎零成本的 IDE 解决方案，处理不太复杂的前端项目绰绰有余，可以确保 bolt 在线运行环境和真实本地环境一致。相比于 v0 可以零成本做一个完整的项目。
+
+- 测试了一下，图片识别有点弱，我上传了界面参考图，它一点都不参考。但是速度确实快
+
+- 这个赛道有门槛吗？感觉推陈出新太快了。
 
 - ## 🚀 Introducing http://bolt.new, by StackBlitz _202410
 - https://x.com/stackblitz/status/1841873251313844631
@@ -83,8 +94,6 @@ modified: 2024-08-24T16:28:20.515Z
 
 - how does bolt․new run in a browser tab without virtual machines?
   - The secret sauce is WebContainers, our micro-OS that runs a full web development environment inside your browser tab. 
-
-- 
 
 - ## Introducing Zed AI, in collaboration with @anthropicAI . _20240821
 - https://x.com/zeddotdev/status/1825967812629631034

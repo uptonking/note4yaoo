@@ -12,7 +12,16 @@ modified: 2024-06-30T11:17:28.971Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## Why we wrote Docker in Go instead of Python:
+- https://x.com/solomonstre/status/1842342755194048981
+  - A compiled binary that didn't require installing a language runtime and therefore didn't trigger tribalism(效忠部落主义; 效忠集体主义).
+  - We were all Python/C programmers and Go gave us the best of both.
+  - The syntax was "mainstream" without too many niche or radical concepts. 
+
+- I’d say binary size should also be a factor.
+
+- Did Kubernetes in anyway influenced the rewrite? Kubernetes was released in 2014, while Docker was released in 2013, and the Go rewrite happened in 2015.
+  - Docker was already in Go before Kubernetes was made public. Kubernetes was influenced by Docker’s use of Go and chose Go as a result.
 
 - ## ⌛️ 容器技术经历了几个历史阶段：
 - https://x.com/HappyQQ_CN/status/1829217593946669360

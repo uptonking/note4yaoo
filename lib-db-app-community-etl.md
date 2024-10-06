@@ -14,9 +14,16 @@ modified: 2023-09-17T18:10:33.050Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## [有人解答下datax、talend、etlcloud各自的不同吗？ - 知乎](https://www.zhihu.com/question/603875795)
+- datax是elt工具没有web界面，性能也一般
+  - talend是商用etl工具也有社区版本是c/s结构的，国内用户群体比较少出了问题不知道找谁
+  - etlcloud应该是国内最好的一款etl工具了，全web界面功能也很强大，还有cdc实时数据处理能力
 
-- ## 
+- ## 🆚️ [Otter, Canal, DataX这几个开源的数据同步工具差别在哪? 究竟该用哪个? - 知乎](https://www.zhihu.com/question/392983860)
+- cannal、otter都是阿里巴巴旗下开源的产品，其中canal是只有数据增量订阅的功能, 不能实现数据同步，otter是内嵌了canal的，利用其增量订阅，来进行源数据库和目标数据库的绑定，支持双向绑定和单向绑定，这两个该用哪个就看需求了，datax没用过不做评价
+
+- Otter、Canal联合起来使用，用于两个mysql数据库的实时同步，简单通俗地说就是，源mysql一旦有变更动作（也就是操作日志），就传递给Canal，Canal再传递给Otter，Otter再在目标mysql里重做该动作，由于双方做了相同动作，双方就一致。这种传递-重做的过程一直在进行，双方就一直相同。
+  - DataX则不同，它是直接读取源库的数据，并写入目标库，从而使双方一致。这种动作执行完成后，程序就退出了，如果以后需要再同步，需要再执行一次。
 
 - ## 🆚️ How are you propagating changes from your operational database to your data warehouse / analytics system?
 - https://twitter.com/gunnarmorling/status/1718681535803449394
@@ -30,7 +37,9 @@ modified: 2023-09-17T18:10:33.050Z
 
 - ## 
 
-- ## 
+- ## Why is it that there's so little code reuse in the data transformation layer/ETL?
+- https://x.com/mistercrunch/status/1841875802092405059
+- I've been involved in several data interoperability standards committees over the years. In my experience (which is admittedly outdated) only power ($, legislation, etc..) drives adoption (e.g. medicare, walmart)
 
 - ## 📥 Question for data people, how do you track files ingested, do you create a specific table or just a simple log like CSV etc ?
 - https://twitter.com/mim_djo/status/1755004742005387534

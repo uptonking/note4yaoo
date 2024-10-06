@@ -88,7 +88,9 @@ modified: 2023-10-30T07:34:03.602Z
 # discuss-ai-api/tools
 - ## 
 
-- ## 
+- ## 想要部署本地模型但是不会计算 vRAM 占用 
+- https://x.com/tuturetom/status/1842492423848804686
+  - https://huggingface.co/spaces/hf-accelerate/model-memory-usage
 
 - ## 看来大家终于达成共识了：langchain 是玩具，如果非要在生产环境用它，那它就会变成工业垃圾。
 - https://x.com/beihuo/status/1840058205768167699

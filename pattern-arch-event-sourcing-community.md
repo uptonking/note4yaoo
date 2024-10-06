@@ -442,7 +442,11 @@ that commit position, thus providing "read your own writes" semantics.
 # discuss
 - ## 
 
-- ## 
+- ## Drasi combines CDC with event processing, using @Neo4j 's Cypher language.  
+- https://x.com/rmoff/status/1842110663008649324
+  - In another vindication(澄清；证实) for open source standards, it supports Debezium's CDC format for output.
+  - It's worth noting that the docs call out that it's not intended for stream processing over high volume data streams
+- That incubation team publishes interesting experiments. In this case, equivalent functionality exists (done differently) inside of Microsoft Fabric as a combination of Eventstreams and Data Activator. Data Activator is derived from an internal, hyperscale stream pattern matcher.
 
 - ## 🆚️ Choosing the right architecture will make or break your systems. EDA vs. REST
 - https://x.com/RaulJuncoV/status/1832413686964551708

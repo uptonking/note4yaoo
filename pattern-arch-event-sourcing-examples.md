@@ -1038,6 +1038,20 @@ modified: 2023-09-12T09:37:22.608Z
     - Debezium provides modules that do this work for you. 
     - Some modules are generic and work with multiple database management systems
     - Other modules are tailored for specific database management systems
+
+- https://github.com/drasi-project/drasi-platform /apache2/202410/rust
+  - https://drasi.io/
+  - Drasi is a data processing platform that simplifies detecting changes in data and taking immediate action. 
+  - It is a comprehensive solution that provides built-in capabilities to track system logs and change feeds for specific events
+  - It tracks system changes and events without the need to copy data to a central data lake or repeatedly query data sources. Drasi uses queries to continuously evaluate incoming data changes. 
+- https://github.com/drasi-project/drasi-core /apache2/202409/rust
+  - Drasi-core is the library used by Drasi to implement continuous queries.
+  - Continuous Queries, as the name implies, are queries that run continuously.
+  - it is useful to contrast them with the kind of instantaneous queries developers are accustomed to running against databases.
+    - When you execute an instantaneous query, you are running the query against the database at a point in time. The database calculates the results to the query and returns them.
+    - While you work with those results, you are working with a static snapshot of the data and are unaware of any changes that may have happened to the data after you ran the query.
+    - Continuous Queries, once started, continue to run until they are stopped. While running, Continuous Queries will process any changes flowing from one or more data sources, compute how the query result is affected and emit the diff.
+  - Continuous Queries are implemented as graph queries written in the Cypher Query Language. 
 # server-sent events
 - https://github.com/dpskvn/express-sse
   - An Express middleware for quick'n'easy server-sent events.

@@ -24,18 +24,18 @@ modified: 2021-03-22T14:46:25.568Z
 - https://github.com/total-typescript/typescript-generics-workshop
   - Interactive tutorial on using generics in TypeScript  
 # ts-play
-
 - [TS Playground - An online editor for exploring TypeScript and JavaScript](https://www.typescriptlang.org/play/)
-
 
 - [ts-blank-space playground](https://bloomberg.github.io/ts-blank-space/play/)
   - https://github.com/bloomberg/ts-blank-space /apache2/202409/ts
+  - https://bloomberg.github.io/ts-blank-space/
   - small, fast, pure JavaScript type-stripper that uses the official TypeScript parser
-
+  - It supports a modern subset of TypeScript by erasing the types and replacing them with whitespace. 
+  - It is not a type checker and does not perform any other code transformations.
+  - The implementation is pure TypeScript. It is simple enough to read and understand in a few minutes because it is only 700 lines of code and reuses the original TypeScript parser.
 
 - [tsplay.dev](https://tsplay-dev.vercel.app/)
   - tsplay.dev links will always redirect to the TypeScript Playground
-
 # utils
 - https://github.com/beenotung/live-tsc
   - A lightweight esbuild-based implementation of tsc that trim off the types (without type checking)

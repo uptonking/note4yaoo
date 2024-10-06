@@ -381,6 +381,9 @@ modified: 2022-11-25T15:41:47.534Z
   - Chunk synchronization uses ID based range to divide a dataset into a smaller segments. 
   - Query based synchronization: In some cases view or actual SQL can be source for data sync, in that scenario SQL can be used as source.
   - Query based sync: In some cases view or actual SQL can be source for data sync, in that scenario SQL can be used as source.
+
+- https://github.com/lichuang/replited /LGPLv2/202410/rust
+  - inspired by litestream, with the power of Rust and OpenDAL, i start a project named replited, which target to replicate sqlite to everywhere(file system, s3, ftp, google drive, dropbox, etc)
 # raft
 - https://github.com/pgte/skiff-algorithm /201410/js
   - Raft implementation in Node.js

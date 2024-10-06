@@ -33,7 +33,26 @@ modified: 2021-04-21T15:01:12.882Z
 - https://twitter.com/wcandillon/status/1418810474045583366
   - 动画中的数学，以react native动画为例，
   - 动画示例做得很棒
+# discuss-anime-numbers
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🌰 一个非常丝滑的动画效果，MotionNumber
+- https://x.com/vikingmute/status/1842393172766494852
+  - 用 Framer Motion 编写的，抽象成了一个 React 组件
+  - https://github.com/barvian/motion-number /202409/ts
+  - https://motion-number.barvian.me/
+
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 
 
 - ## Responsive login form with fun animation Using HTML, CSS and JS.

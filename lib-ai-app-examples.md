@@ -57,6 +57,11 @@ modified: 2023-02-08T07:20:48.475Z
   - https://dstack.ai/
   - open-source container orchestration engine designed for running AI workloads across any cloud or data center. 
   - It simplifies dev environments, running tasks on clusters, and deployment.
+
+- https://github.com/DataformerAI/dataformer /apache2/202410/python
+  - https://dataformer.ai/
+  - Dataformer empowers engineers with a robust framework for creating high-quality synthetic datasets for AI, offering speed, reliability, and scalability
+  - We integrate with multiple LLM providers using one unified API and allow you to make parallel async API calls while respecting rate-limits.
 # LLM
 - https://github.com/songquanpeng/one-api /MIT/202404/go/js
   - https://openai.justsong.cn/
@@ -244,7 +249,6 @@ modified: 2023-02-08T07:20:48.475Z
   - The most no-nonsense locally hosted (or API hosted) AI code completion plugin for Visual Studio Code, like GitHub Copilot but 100% free and 100% private.
   - designed to work seamlessly with: Ollama
 # agents-multi
-
 - https://github.com/microsoft/autogen /31.4kStar/MIT/202410/python/jupyter
   - https://microsoft.github.io/autogen/
   - AutoGen is an open-source programming framework for building AI agents and facilitating cooperation among multiple agents to solve tasks.
@@ -254,8 +258,6 @@ modified: 2023-02-08T07:20:48.475Z
   - OmAgent是一个多模态智能体系统，专注于利用多模态大语言模型能力以及其他多模态算法来做一些有趣的事
   - 包含一个专为解决多模态任务而设计的轻量级智能体框架omagent_core。我们利用这个框架搭建了超长复杂视频理解系统——OmAgent，当然你可以利用它实现你的任何想法。
   - DnCLoop: 受到经典算法思想Divide and Conquer启发，我们设计了一个递归的通用任务处理逻辑，它将复杂的问题不断细化形成任务树，并最终使复杂任务变成一组可解得简单任务。
-
-
 # ollama
 - https://github.com/open-webui/open-webui /MIT/202405/svelte/python
   - https://openwebui.com/
@@ -287,6 +289,13 @@ modified: 2023-02-08T07:20:48.475Z
 
 - https://github.com/cmdr2/stable-diffusion-ui
   - The easiest way to install and use Stable Diffusion on your computer.
+
+- https://github.com/Nutlope/blinkshot /202410/ts
+  - https://www.blinkshot.io/
+  - An open source real-time AI image generator. 
+  - Powered by Flux through Together.ai.
+  - Flux Schnell from BFL for the image model
+  - Together AI for inference
 # ml-neural-network
 - https://github.com/AlloyTeam/netural
   - JavaScript的前向神经网络和反向传播的实现。

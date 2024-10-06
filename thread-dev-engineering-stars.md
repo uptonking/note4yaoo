@@ -122,6 +122,16 @@ Validate it to ensure it meets the method's requirements.
 
 - Where does Rust belong?
 
+- ## So you think you know Barrel Files
+- https://x.com/_developit/status/1842225012092104732
+  - Problem #1: Dead code
+  - Problem #2: Reduced clarity
+  - Problem #3: Accidental import cycles
+  - Problem #4: Infrastructure strain
+  - Problem #5: Testing code shipped to production
+  - Problem #6: "Bin Files"
+  - can linting help? A magical debarrel plugin appears
+
 - ## Wrote a new article, outlining why I think using barrel files in application code is a bad idea
 - https://x.com/TkDodo/status/1816890514160935417
   - [Please Stop Using Barrel Files | TkDodo's blog _202407](https://tkdodo.eu/blog/please-stop-using-barrel-files)

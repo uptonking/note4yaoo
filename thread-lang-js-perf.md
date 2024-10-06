@@ -12,7 +12,9 @@ modified: 2023-11-10T08:05:19.107Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## Needed some I/O latency numbers for a piece I'm working on, and this came in absolutely clutch(紧紧地抱住、握住).
+- https://x.com/BenjDicken/status/1841883864144429228
+
 # discuss-ts-perf
 - ## 
 

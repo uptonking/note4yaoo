@@ -12,13 +12,18 @@ modified: 2024-08-11T07:21:18.707Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## OpenAI will be sponsoring Marijn Haverbeke, the creator and maintainer of the two open source libraries used in making ChatGPT canvas, ProseMirror and CodeMirror. _202410
+- https://x.com/romainhuet/status/1841889813105971646
+- Claude also uses ProseMirror for their editor 
+- Now I would love to see a spreadsheet editor to round this beautiful thing off. Would be game changing
+  - yep, plus another alternative to PowerPoint, ChatGPT can be a new Office suite software
 
-- ## 🌰 [Which websites are using Codemirror 6 as now? - v6 - discuss.CodeMirror _202106](https://discuss.codemirror.net/t/which-websites-are-using-codemirror-6-as-now/3320)
+- ## 🌰 [Which websites are using Codemirror 6 as now? - v6 - discuss. CodeMirror _202106](https://discuss.codemirror.net/t/which-websites-are-using-codemirror-6-as-now/3320)
 - 
 - 
 - 
 - 
+
 # discuss-rich-text-cm
 - ## 
 
@@ -112,6 +117,16 @@ modified: 2024-08-11T07:21:18.707Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## CodeMirror powers HF(HuggingFace) Hub's dataset SQL Console.
+- https://x.com/mishig25/status/1842146478778655077
+- CodeMirror is awesome. It’s also what Replit uses
 
 - ## It can Record then and then Replay text editing actions you take on a `<textarea>` . "Live coding without the stress"
 - https://x.com/LeaVerou/status/1584250066029928449

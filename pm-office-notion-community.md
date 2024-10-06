@@ -340,6 +340,16 @@ modified: 2023-11-28T14:48:45.910Z
   - We don’t support “interactive” transaction, where you can read, modify, write as an atomic group. 
   - This just isn’t desirable in a multiplayer or offline system - in cases we need that kind of consistency we use a normal HTTP API which is online-only.
 
+# discuss-roam-like
+- ## 
+
+- ## 
+
+- ## Travel back to any previous version of your Roam with Graph History to access previous states of your notes or recover accidentally deleted data
+- https://x.com/RoamResearch/status/1841715046767890511
+  - Settings➡️ Graph➡️ Graph History: pick date+time➡️ Go!
+
+- Datomic ftw
 # discuss-notion-like
 - ## 
 
