@@ -14,7 +14,9 @@ modified: 2021-01-19T17:09:26.629Z
 
 - ## 
 
-- ## 
+- ## under-explored: island architecture web components using custom custom events + bubbling and window as a message bus
+- https://x.com/chrisshank23/status/1841920659175440710
+- Turns out that declarative templates might be complicating things more than we think. DOM manipulation isn't that bad in many cases. Especially with conditional rendering done via CSS custom states.
 
 - ## Many developers don't get why Web Components in React are an issue.
 - https://twitter.com/WebReflection/status/1527551263336013824

@@ -344,7 +344,7 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
   - [x] streaming infinite-list/tree
 
 - [Scrum Poker Online - Free Tool for Planning Poker](https://www.scrumpoker-online.org/en/room/64881797/scrum-poker)
-# dev-09
+# dev-10
 - yaoo-proj
   - codemirror-devtools
 
@@ -487,7 +487,7 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
   - ~~私有项目的导入~~
   - ~~多标签打开同一个cde，文件树的头像会显示2个~~
 
-## 090
+## 100
 
 - dev-log
   - ?
@@ -499,6 +499,11 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
 ```JS
 stt.message.channel().send('uCmdK', 'README.md', 2, 2, 'explain an elegant word in one sentence')
 ```
+
+## 1008
+
+
+# dev-09-cursorai-cmdk-pm-&-cm-block-widget-&-promise-socket-&-cm-undo-yet
 
 ## 0930
 

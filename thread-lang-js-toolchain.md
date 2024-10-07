@@ -67,7 +67,11 @@ modified: 2024-03-17T15:24:20.824Z
 # discuss
 - ## 
 
-- ## 
+- ## I'm wondering whether bundler & compiler should keep following Node.js new features like `module-sync`, 
+- https://x.com/hardfist_1/status/1843292473046781963
+  - It seems tools should be runtime agnostic, so why should we keep following Node.js specific new behavior other than Deno's or Bun's. I hope JS0 can solve these things
+  - Node.js behavior shouldn't be treated as tooling's standard. We need a tooling standard
+
 
 - ## JavaScript compilers today are fixated on compiling individual modules. 
 - https://x.com/trueadm/status/1806470121604419969

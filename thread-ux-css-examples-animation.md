@@ -22,9 +22,22 @@ modified: 2022-11-21T15:27:20.974Z
   - https://codepen.io/thebabydino/pen/bGPzdaM
   - https://codepen.io/t_afif/pen/MWZxXWB
 
+- ## Conic gradients can be so beautiful.
+- https://twitter.com/JoshWComeau/status/1367492015836049413
+  - This wonderful tool shows us a few dozen great examples, and features 1-click CSS copy-to-clipboard 
+- https://conic.style/
+
+- ## CSS conic-gradient borders 
+- https://twitter.com/argyleink/status/1282889809782927360
+- https://codepen.io/argyleink/pen/pogZxaZ
+
 - ## Create this beautiful button with SVG animation using HTML and CSS
 - https://x.com/davidm_ml/status/1835613558664495571
   - 围绕边框的亮线动画
+
+- https://x.com/Ibelick/status/1843236886636265601
+  - Just added the classic Border Trail to motion-primitives.
+  - An animated border that adapts to any container, easy to stylize, update the transition, and more.
 
 - ## 💫 I love this cool effect with CSS Conic gradients
 - https://x.com/wesbos/status/1828528779544719707

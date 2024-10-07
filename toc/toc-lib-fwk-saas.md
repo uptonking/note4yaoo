@@ -147,7 +147,6 @@ modified: 2021-05-25T09:41:29.066Z
   - https://oslojs.dev/
   - Oslo is an open-source project that aims to provide high-quality auth packages for server-side JS. 
   - Runtime agnostic. Zero third-party dependencies. Fully typed.
-
 - https://github.com/lucia-auth/lucia /6.8kStar/MIT/202403/ts
   - https://lucia-auth.com/
   - a simple and flexible user and session management library that provides an abstraction layer between your app and your database. 
@@ -155,6 +154,13 @@ modified: 2021-05-25T09:41:29.066Z
     - 支持express、fastify、nextjs、astro
   - [A database is required for storing your users and sessions](https://lucia-auth.com/database/)
     - 支持mongoose、sqlite、pg、prisma、drizzle-orm、kysely
+  - [Future plans · lucia-auth/lucia _20241007](https://github.com/lucia-auth/lucia/discussions/1707)
+    - I am planning to deprecate the library early next year. It has become abundantly clear to me that Lucia, in the current state, is not working. 
+    - I now implement sessions from scratch and don't use the library for my personal projects.
+    - I could make Lucia into something more of a framework, akin to Auth.js. However, they come with their own issues on top of Lucia's, and it should be its own package anyway.
+    - https://x.com/pilcrowonpaper/status/1843258855280742481
+    - I will continue to maintain all my other projects, including Oslo and Arctic
+    - This is exactly what make dev’s lose total trust in small half baked libs.
   - [Lucia 3.0 · Discussion _20240127](https://github.com/lucia-auth/lucia/discussions/1361)
     - Lucia doesn't use JWTs
     - We used to support JWT and it was a broken mess. Token rotation requires additional complexity, you need to sync state in the client, and the added security risks requires you to just do more. Even if it was simple, sessions and JWTs are 2 totally different things and require different db tables. Supporting both with a single library doesn't make any sense.

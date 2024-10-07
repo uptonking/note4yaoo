@@ -43,7 +43,7 @@ modified: 2021-07-20T13:50:23.433Z
 - 技术产品: cm-devtools, noseditor, collab-hocuspocus
 - 技术方向js: 协作/ver-gitdb/partial-sync, 编辑器/ide, 多维表格/excel; scaling/HA-socket; dnd, floating; 前端版/流式版/oplog; 
 - 技术扩展js/py: 可拖拽的页面编辑器/lowcode, Excel/kanban, 图表
-- 通用能力: collab, ai-search, ai-chat
+- 通用能力: collab, ai-search, ai-chat; auth, payment
 - 技术扩展ai: rag, search, vector, 知识库搜索与对话
 - 技术业务: client/server版; cms/wiki, airtable/table, db
 - 技术可选1: 画板, pdf/ppt-editor, 图形编辑器
@@ -293,9 +293,10 @@ modified: 2021-07-20T13:50:23.433Z
   - linear
 # wishlist
 - job-hunting
-  - codemirror
+  - codemirror / prosemirror
   - jupyter
-  - automation/rpa
+  - 协同 ot 开发 yjs 
+  - 低代码(易商业化，技术框架很难商业化) automation/rpa
 
 - charting-viz
   - leading

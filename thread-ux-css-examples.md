@@ -328,11 +328,6 @@ modified: 2021-02-05T14:00:02.922Z
   - Flexbox gap = less HTML elements, less CSS tricks, and cleaner, easier to manage code to get the job done
   - https://codepen.io/hexagoncircle/pen/oNbrbjP
 
-- ## Conic gradients can be so beautiful.
-- https://twitter.com/JoshWComeau/status/1367492015836049413
-  - This wonderful tool shows us a few dozen great examples, and features 1-click CSS copy-to-clipboard 
-- https://conic.style/
-
 - ## there is an excellent reason to use #CSS Position Sticky with top and bottom combined if the sticky element is stacked in the middle
 - https://twitter.com/eladsc/status/1367047171078582273
 - https://codepen.io/elad2412/pen/ExNKLbrz

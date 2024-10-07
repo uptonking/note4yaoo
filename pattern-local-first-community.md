@@ -111,7 +111,24 @@ modified: 2023-09-13T20:24:41.516Z
 
 - ## 
 
-- ## 
+- ## 🤔 [A Local-First Case Study | Hacker News _202410](https://news.ycombinator.com/item?id=41712593)
+- I had thought that the advantage of CRDTs was you do not need a centralized server and that if you do have a central server Operational Transforms are easier. Am I missing why CRDTs are used here?
+- A few thoughts on this:
+  - First and (maybe most importantly), WebRTC in browsers requires a central server for signaling. So unless web browsers loosen that constraint, a "true" P2P web app without a central server is unfortunately infeasible(办不到的；不能实行的).
+  - My understanding is that with Operational Transforms, the server is "special" — it's responsible for re-ordering the clients' operations to prevent conflicts. I mention a little later in the article that Y-Sweet is just running plain Yjs under the hood. So it is a central server, but it's easily replaceable with any other instance of Y-Sweet
+  - Peers will only sync their changes if they're online at the same time. That means that the longer peers go without being online simultaneously, the more their local documents will diverge. From a user experience point of view, that means people will tend to do a lot of work in a silo and then receive a big batch of others' changes all at once — not ideal! Having a "cloud peer" that's always online mitigates that (this is true for any algorithm).
+- The ability to run your own server--or even not requiring a bespoke set of operations--isn't a special property of a CRDT; the same thing should be doable with something like ShareJS and it's generic tree/JSON structures.
+- You’re right, that is one of the advantages of CRDTs, but it turns out to be hard to realize on the web — aside from RTC (which has its own dragons), you still need a server in the mix.
+  - The other thing an authoritative server solves is persisting the data. Because one server is the authority for a document at a time, you can use S3 or R2 for persistence without worrying about different servers with different versions of the document colliding and erasing each other’s changes.
+
+- OT would work fine to make this collaboratively editable. It’s just not local first. (If that matters to you.)
+  - With an OT based system like sharejs or google docs, the server is the hub, and clients are spokes connecting to that hub. Or to put it another way, the server acts as the central source of truth. If the server goes down, you’ve not only lost the ability to collaboratively edit. You've also usually lost your data too. (You can store a local copy, but sharejs not designed to be able to restore the server’s data from whatever is cached on the clients).
+  - With Yjs (and similar libraries), the entire data set is usually stored on each peer, the server is just one node you happen to connect to & use to relay messages. Because they’re using Yjs, the author of this travel app could easily set up a parallel webrtc channel with his wife’s computer (in the same house). Any edits made would be broadcast through all available pipes. Then even when they’re on the road and the internet goes down, their devices could still stay in sync. And if the server was somehow wiped, you could spin up another one. The first client that connects would automatically populate the server with all of the data.
+  - But whether these local first characteristics matter to you is another question. They might be a hindrance(阻碍物, 妨碍) - for commercial data, centralisation is often desirable. I can think of plenty of use cases where replicating your entire database to your customers’ computers (and replicating any changes they make back!) would be a disaster. It depends on your use case.
+
+- A lot of the newer local first systems, like Triplit (biased because I work on it), support partial replication so only the requested/queried data is sent and subscribed to on the client.
+  - The other issue of relying on a just the server to build these highly collaborative apps is you can't wait for a roundtrip to the server for each interaction if you want it to feel fast.
+  - The best approach IMO (again biased to what Triplit does) is to have the same query engine on both client and server so the exact query you use to get data from your central server can also be used to resolve from the clients cache.
 
 - ## 怎样将保存一个完整的网站到本地？
 - https://x.com/vikingmute/status/1839845550650536012
