@@ -169,7 +169,7 @@ modified: 2021-05-06T09:38:31.520Z
 
 - port to server side lang like prosemirror
   - hocuspocus for codemirror
-  - codemirror-rust
+  - codemirror-rust 🦀
 
 - experimental
   - stateField invertedEffects
