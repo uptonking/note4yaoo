@@ -74,6 +74,9 @@ modified: 2023-06-23T12:46:53.288Z
   - [Is it possible to include the commenting feature in the Community Edition? _202402](https://github.com/overleaf/overleaf/issues/1193)
     - You can try to develop it by yourself, or purchase server pro. Btw, I think commenting feature is not something difficult to imply, the core code is open-source, just need a proxy.
     - 🌵 I created a new branch, which includes only the code for enabling **comments and changes tracking** features. 
+  - 🐛未解决: [[Feature Request] Enable to display 4-byte characters in the editor _202406](https://github.com/overleaf/overleaf/issues/1234)
+    - The editor can display basic 3-byte emojis (without some emojis with ligature) (on row 16), but it cannot display any 4-byte emojis (on row 17).
+    - CJK IME shows converting candidates including emoji while inputting, however, the current candidate turns into a "non-compliant" string when those emoji appear as the current candidate. It terminates the converting process, thus we cannot select the correct candidate, making it hard to input our languages in the editor.
   - 🍴 forks
   - https://github.com/yu-i-i/overleaf-cep /202408/AGPL
     - extended CE with changes tracking and LDAP authentication
