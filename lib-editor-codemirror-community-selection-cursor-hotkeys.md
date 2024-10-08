@@ -67,9 +67,6 @@ modified: 2024-08-11T06:46:39.843Z
 
 - ## 
 
-- ## [CodeMirror react component losing focus on input - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/codemirror-react-component-losing-focus-on-input/3053)
-- I assume you’re recreating the editor on every update. You don’t want to do that for efficiency reasons, and also because removing and recreating the focused DOM will indeed remove its focus.
-
 - ## 🌰 [Is it possible deleteTab command - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/is-it-possible-deletetab-command/4453)
   - I want delete tab when I use Shift-Tab shortcut. But I can’t find any StateCommand
   - indentMore and indentLess command affects line. It doesn’t help me.

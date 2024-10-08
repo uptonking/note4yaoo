@@ -89,7 +89,7 @@ modified: 2022-08-30T22:07:26.164Z
   - In practice, I can imagine that using classes is really convenient when the state model is really complicated. 
   - I was hoping maybe you (@marijn) could share some of your thoughts on these trade-offs. Did you consider a pure-functional approach and if so, what led you to your decision to use classes?
 
-- It seems like the only reason to use a class is to add helper methods to the classes for syntactic convenience. Is that correct?
+- 🤔 It seems like the only reason to use a class is to add helper methods to the classes for syntactic convenience. Is that correct?
   - 👉🏻 No, it is also **so that we can control the internal data structures used in order to optimize functional updates** and possibly other things. 
   - See for example the use of `rope-sequence` in the undo history, and at one point I was planning to use a representation other than a flat array for very long fragments (though that turned out to not be enough of a win to justify the complexity).
 

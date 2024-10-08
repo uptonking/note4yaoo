@@ -438,6 +438,14 @@ width = 'this.parent.width - this.marginLeft - this.marginRight'
 
 - This is a series of blog posts that shows you how to build a text editor in Rust. 
   - It’s a re-implementation of kilo in Rust
+
+
+## 🦀 [My Experience Building an Editor in Rust _](https://jimmyhmiller.github.io/editor-experience)
+
+- 
+- 
+
+- I tried out lots of interesting ideas and they worked pretty darn well. But I think my biggest takeaway is that there is so much opportunity here. Text editors have largely remained unchanged in terms of user experience. Now with language servers, they can offer better static analysis and refactoring tools, but the ways of interacting with them have largely not changed.
 # more
 - [Rich text editors from backend perspective](https://habr.com/en/articles/533956/)
   - in this article I’m going to overview the most popular types of rich text editors, tradeoffs of their use from a backend perspective

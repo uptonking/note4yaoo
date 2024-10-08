@@ -129,7 +129,8 @@ modified: 2024-07-29T11:49:33.248Z
 - is there a way to get the initial value of a StateField in the provide() function?
   - No. The state configuration can’t directly depend on field/facet values. You’d have to set up some logic that reconfigures at the appropriate moment.
 
-- If you dispatch a normal change to a unified merge view, you’re just changing the document in the editor. To update the original, which that document is compared against, dispatch a transaction with the updateOriginalDoc effect
+- If you dispatch a normal change to a unified merge view, you’re just changing the document in the editor. 
+  - To update the original, which that document is compared against, dispatch a transaction with the `updateOriginalDoc` effect
 
 - ## 🆚️🎯 [Merge View Implementation - v6 - discuss. CodeMirror _202209](https://discuss.codemirror.net/t/merge-view-implementation/5072)
   - Not in scope are 3-way merges and spacer-less scroll synchronization, which the old implementation did support. If someone has a need for those we can talk about including them.

@@ -24,7 +24,12 @@ modified: 2024-08-11T06:40:41.476Z
 
 - ## 
 
-- ## 
+- ## ❓ [EditorView compositionend state  _202302](https://github.com/codemirror/dev/issues/1069)
+  - I use codemirror in a react component, and want to trigger props.onChange when code changes
+  - when use IME, I want to trigger onChange only when composition end, how can I konw this state.
+
+- Indeed,  `view.compositing` is still true when the last change the the composition is applied. You could set a timeout when composing changes come in, to flush them when view.composing is false, maybe?
+
 
 - ## [Replace chinese character with other input, someting strange _202405](https://discuss.codemirror.net/t/replace-chinese-character-with-other-input-someting-strange/8265)
 - I suspect the Chinese input method uses composition in this case. Unfortunately, browsers do odd buggy things if you interfere with the text around the cursor during composition, including duplicating text.

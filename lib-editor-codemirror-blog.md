@@ -85,6 +85,16 @@ modified: 2024-05-02T02:01:04.255Z
 
 # blogs-xp
 
+## 🌰 [My CodeMirror snippets - HackMD _202410](https://hackmd.io/@q/codemirror-snippets)
+
+- A draggable gutter extension to allow selecting lines by dragging on the line gutter.
+
+- (Concept only) A proposal on indented-wrapped line appearence ported from CM5.
+
+- 
+- 
+- 
+
 ## 🧑‍🏫 [Advanced state management with React and CodeMirror _202403](https://thetrevorharmon.com/blog/advanced-state-management-with-react-and-codemirror/)
 
 - https://thetrevorharmon.com/blog/codemirror-and-react/

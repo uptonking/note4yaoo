@@ -26,7 +26,7 @@ modified: 2021-06-02T17:13:37.692Z
   - parseDOM实现解析
   - 编辑时要toDOM，特殊节点如footnote/编辑操作一般是通过insert菜单
 
-- prosemirror-history 依赖 rope-sequence
+- 🧮 prosemirror-history 依赖 rope-sequence
   - a persistent sequence type implemented as a loosely-balanced rope. 
   - It supports appending, prepending, and slicing without doing a full copy. 
   - Random access is somewhat more expensive than in an array (logarithmic, with some overhead), but should still be relatively fast.

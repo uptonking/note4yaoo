@@ -17,6 +17,9 @@ modified: 2021-08-30T07:01:09.493Z
 - [JavaScript Promises vs. RxJS Observables](https://auth0.com/blog/javascript-promises-vs-rxjs-observables/)
   - Promises are very eager(热切的，渴望的). If we had a callback function provided to a Promise, once the Promise is resolved, the `.then` gets executed.
   - Observables are very lazy. We create the Observable, and then it will wait to be subscribed to. We create the Observable, and then it will wait to be subscribed to.
+# not-yet
+- await是否没有让出cpu时间？ 
+- 如何让一个function类型的参数支持await和非await调用，如何提高性能
 # examples
 - https://github.com/eldargab/load-script /js
   - load-script appends a `script` node to the `<head>` element in the dom.

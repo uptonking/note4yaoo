@@ -44,7 +44,7 @@ CodeMirror.commands.undo = function(cm) {
   - I am trying to figure out how can record and replay an array of ChangeSet
 - you can use change sets to move forward and backward through history like this. The error you’re getting happens when you somehow try to apply a changeset to a document that doesn’t match the document it was created for (in length), which suggests some issue in your implementation.
 
-- ## 💡 [Reconfigure doesn't re-run `StateField` 's `create` - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/reconfigure-doesnt-re-run-statefield-s-create/8548)
+- ## 💡 [Reconfigure doesn't re-run `StateField` 's `create` - v6 - discuss. CodeMirror _202408](https://discuss.codemirror.net/t/reconfigure-doesnt-re-run-statefield-s-create/8548)
   - “state field create” is only printed once, and “state field recreate” is never printed, even though the reconfigure effect is being dispatched.
 
 - I am still curious if excluding StateField create from reconfiguration is intended.

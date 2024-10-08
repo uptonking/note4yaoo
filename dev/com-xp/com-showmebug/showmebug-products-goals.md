@@ -343,6 +343,9 @@ modified: 2024-05-06T02:52:41.789Z
   - Why does the agent only allow building with Flask, VanillaJS and PostgreSQL? 
     - I apologize, but I cannot use React, TypeScript, or Firebase as they are not supported in our current environment. These technologies are on our blocklist. Would you like me to propose an alternative solution using supported technologies like Flask and Vanilla JavaScript, or do you have any other requirements or preferences we can work with?
 
+- stackblitz的ai编程实现方式是一个模版仓库
+  - 仓库里面有编程相关的prompt
+
 ## [Aider is AI pair programming in your terminal](https://aider.chat/)
 
 - Aider lets you pair program with LLMs, to edit code in your local git repository.

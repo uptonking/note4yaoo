@@ -145,6 +145,12 @@ modified: 2021-07-27T15:12:39.959Z
   - Multiple selections
   - Built-in language server support
   - Smart, incremental syntax highlighting and code editing via tree-sitter
+  - [helix/docs/architecture.md](https://github.com/helix-editor/helix/blob/master/docs/architecture.md)
+    - The core contains basic building blocks used to construct the editor. It is heavily based on CodeMirror 6. The primitives are functional: most operations won't modify data in place but instead return a new copy.
+    - The main data structure used for representing buffers is a Rope. We re-export the excellent ropey library. Ropes are cheap to clone, and allow us to easily make snapshots of a text state
+    - Ropes are modified by constructing an OT-like Transaction.
+    - Syntax is the interface used to interact with tree-sitter ASTs for syntax highlighting and other features.
+    - A Document ties together the Rope, Selection(s), Syntax, document History, language server (etc.) into a comprehensive representation of an open file.
   - [Plugin system](https://github.com/helix-editor/helix/discussions/3806)
   - [WebAssembly plugins system](https://github.com/helix-editor/helix/issues/122)
   - [Feature request: selective undo _202208](https://github.com/helix-editor/helix/issues/3364)

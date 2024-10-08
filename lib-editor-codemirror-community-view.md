@@ -52,7 +52,10 @@ modified: 2024-08-08T20:49:11.571Z
 # discuss-autocomplete
 - ## 
 
-- ## 
+- ## [need help about highly customized codemirror/autocomplete - discuss. CodeMirror _202210](https://discuss.codemirror.net/t/need-help-about-highly-customized-codemirror-autocomplete/5170)
+  - I want to highly customize the style of autocomplete and bind some events to achieve the effect of cascading components
+- @codemirror/autocomplete is rather specialized for classical code editor completion style. It looks like you’re trying to do something hierarchical there, which it definitely doesn’t support.
+  - The tooltip feature in @codemirror/view can be useful when implementing something like this. There’s no other completion functionality available.
 
 - ## [How to add custom completions before language completions? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/how-to-add-custom-completions-before-language-completions/7790)
 - These are sorted first by how well they match the typed input, and then by `boost` , and finally by `localeCompare` . 
@@ -231,6 +234,14 @@ modified: 2024-08-08T20:49:11.571Z
 # discuss-styling/theming
 - ## 
 
+- ## 
+
+- ## [EditorView.theme from facet value - v6 - discuss. CodeMirror _202407](https://discuss.codemirror.net/t/editorview-theme-from-facet-value/8477)
+  - What is a good way to provide a Theme derived from the value of a Facet? Say there’s a facet full of custom colors that a theme wants to use.
+  - I’ve attempted Facet.compute, StateField, ViewPlugin and more but I can’t seem to get anything that will allow me to get the current facet’s value to then use to build a separate theme extension.
+
+- A theme is a composite extension, not just a single facet value, so you can’t use something like `Facet.compute` for it. You’d have to use a compartment and apply an actual reconfiguration effect (possibly in a transaction extender) to do something like this.
+
 - ## [Dynamically changing theme in MergeView - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/dynamically-changing-theme-in-mergeview/8620)
 - Define a compartment
 
@@ -304,12 +315,25 @@ window.matchMedia('(prefers-color-scheme: dark)')
 - There are several types of interactions that will cause the editor to lose and then immediately regain focus (people implementing buttons that steal focus on mousedown but then immediately move it back to the editor, our own kludge for dealing with Android inappropriately closing the virtual keyboard in some situations). This timeout tries to isolate code tracking focus state from that kind of phantom(幽灵；幻觉) focus changes.
   - If you want to directly track DOM focus state, I’d recommend using a DOM event observer rather than an update listener. Those get the raw DOM events.
 
+- ## [Trigger a StateEffect when focus changes - discuss. CodeMirror _202302](https://discuss.codemirror.net/t/trigger-a-stateeffect-when-focus-changes/5701)
+  - I need to dispatch a state effect when the editor’s focus changes (on focus and on blur), and I am struggling to figure out the right way to go about this
+- Would it be possible for focusChangeEffect to pass the source of the focus change (pointer vs keyboard) as an argument?
+  - The editor knows just as little about that as you do. It’s just responding to a focus or blur event.
+
+- ## [CodeMirror react component losing focus on input - v6 - discuss. CodeMirror _202103](https://discuss.codemirror.net/t/codemirror-react-component-losing-focus-on-input/3053)
+- I assume you’re recreating the editor on every update. You don’t want to do that for efficiency reasons, and also because removing and recreating the focused DOM will indeed remove its focus.
+
 # discuss-event-scroll
 - ## 
 
 - ## 
 
-- ## 
+- ## 🌰 [cursorScrollMargin for v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/cursorscrollmargin-for-v6/7448)
+  - In CodeMirror 5 it was cursorScrollMargin, am I right in thinking that in V6 I should be using EditorView.scrollMargins ?
+
+- No, EditorView.scrollMargins is not what you need here. There is no way to configure this at the moment, except is you are scrolling something into view explicitly with EditorView.scrollIntoView.
+
+- I’ve iterated on this and fixed heaps of bugs with my previous implementation, and I’m leaving it here in case anyone wants to implement this
 
 - ## [Smooth scroll to selection position? - discuss. CodeMirror _202208](https://discuss.codemirror.net/t/smooth-scroll-to-selection-position/4875)
 - You can get the current scroll position with `view.scrollDOM.scrollTop` . The desired scroll position you’d have to compute based on the position you want to see ( `view.coordsAtPos` ) and the editor rectangle ( `view.scrollDOM.getBoundingClientRect` ).
@@ -335,7 +359,11 @@ view.scrollDOM.scrollTo({ qq, behavior: 'smooth' });
 # discuss-event-drag
 - ## 
 
-- ## 
+- ## 🤔 [Resizing Codemirror 6 - v6 - discuss. CodeMirror _202106](https://discuss.codemirror.net/t/resizing-codemirror-6/3265)
+- You should be able to style the outer (.cm-editor) element with a resize CSS property and then arrange for view.scheduleMeasure() to be called when it is actually resized so that it can update its internal layout.
+  - The idea would be to use the CSS of the parent element to change the editor’s size in response to user actions (or using browsers’ `resize` CSS support), and then call `requestMeasure` to make sure the editor picks up on any layout changes it needs to make. Nothing complicated is required. You didn’t really explain what is going wrong, so I can’t really help here.
+
+- [How to resize codemirror6 | PageHelper Docs](https://pagehelper.lets-script.com/blog/codemirror6-resize/)
 
 - ## [Implement draggable ranges/object through mouse curser. - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/implement-draggable-ranges-object-through-mouse-curser/4655)
 - Is this dropCursor?

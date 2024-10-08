@@ -36,7 +36,9 @@ modified: 2024-08-11T03:35:16.823Z
 # discuss
 - ## 
 
-- ## 
+- ## 🌰 [async StateField.define provide extension - v6 - discuss. CodeMirror _202306](https://discuss.codemirror.net/t/async-statefield-define-provide-extension/6731)
+  - I have a StateField extension with async value
+  - 可行的方案是在viewPlugin.update中执行异步逻辑后再更新stateField
 
 - ## [CM6 StreamParser - v6 - discuss. CodeMirror _202101](https://discuss.codemirror.net/t/cm6-streamparser/2842)
   - I’m noticing that there’s a collection of “CodeMirror 5 modes” which uses the StreamParser extension 

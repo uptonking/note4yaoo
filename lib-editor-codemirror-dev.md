@@ -145,6 +145,15 @@ modified: 2021-05-06T09:38:31.520Z
   - ast
 
 - resources
+# not-yet
+- 连续dispatch的实现方式，如何选择
+  - viewPlugin.update
+  - EditorView.updateListener
+  - EditorState.transactionExtender.of
+  - transactionFilter
+  - stateField.update, 可以不使用值，只使用update逻辑
+
+- codemirror似乎未使用rope数据结构
 # draft
 - nostable-editor
   - virtualized
@@ -235,6 +244,9 @@ modified: 2021-05-06T09:38:31.520Z
 
 - codemirror和cursor的undo实现
   - 默认只undo内容更改并移动光标到更改位置，不会触发undo仅仅移动光标
+
+- dispatch
+  - 作者推荐将async逻辑放在编辑器之外，等到await asyncLogic完了，再执行dispatch
 
 - 多标签页的实现思路和单标签差别不大，视觉上只有1个visible的editor，上方是tab
 

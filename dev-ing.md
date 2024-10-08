@@ -502,7 +502,14 @@ stt.message.channel().send('uCmdK', 'README.md', 2, 2, 'explain an elegant word 
 
 ## 1008
 
-
+- aws加速营的ai分享
+  - 国内融资金额小一个数量级
+  - ai的创业与学术相关
+  - 国内外大厂都投入了大量资源
+  - 小公司的toc机会不多，大厂也会做
+  - ai创业，topc面向专业消费者的机会更大
+- 十一分享
+  - 泰国曼谷，脏乱差，很热，再也不想去了
 # dev-09-cursorai-cmdk-pm-&-cm-block-widget-&-promise-socket-&-cm-undo-yet
 
 ## 0930

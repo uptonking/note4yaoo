@@ -67,6 +67,7 @@ modified: 2024-09-10T00:43:36.318Z
   - This is a more limited form of transactionFilter, which can only add annotations and effects.
   - But, this type of filter runs even if the transaction has disabled regular filtering, making it suitable for effects that don't need to touch the changes or selection, but do want to process every transaction.
   - Extenders run after filters, when both are present.
+  - 不支持async effect
 
 - 🧩 isolateHistory
   - Transaction annotation that will prevent that transaction from being combined with other transactions in the undo history. 

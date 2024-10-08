@@ -741,8 +741,10 @@ modified: 2023-06-23T12:46:53.288Z
   - https://composr-omega.vercel.app/
   - Composr is a markdown writer with real-time compiler for the web.
 
-- https://github.com/wikimedia/mediawiki-extensions-CodeMirror /GPL/202405/js
+- https://github.com/wikimedia/mediawiki-extensions-CodeMirror /GPL/202410/js
+  - https://doc.wikimedia.org/CodeMirror/master/js/js/
   - MediaWiki extension CodeMirror
+  - provides syntax highlighting in MediaWiki wikitext editors using CodeMirror
 - https://github.com/bhsd-harry/codemirror-mediawiki /GPLv2/202407/ts
   - https://bhsd-harry.github.io/codemirror-mediawiki/
   - Modified CodeMirror mode based on wikimedia/mediawiki-extensions-CodeMirror

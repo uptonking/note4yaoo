@@ -14,20 +14,26 @@ modified: 2024-08-11T06:42:41.903Z
 
 - ## 
 
-- ## 
+- ## [Correct way of updating configuration from an extension? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/correct-way-of-updating-configuration-from-an-extension/2743)
+  - I would like to create an extension that (after docChange) can reconfigure tagged extensions in the same EditorView.
+- Reconfiguring has to be done when creating a transaction, rather than when handling it. What kind of reconfiguration are you doing? It may be possible to do this as a transaction filter.
+  - This patch adds a `transactionExtender` facet that can be used in situations like this to make sure your logic runs even for transactions that have filtering disabled.
 
 - ## 🤔🌰 [Toggling Extensions - discuss. CodeMirror _202207](https://discuss.codemirror.net/t/toggling-extensions/4667)
   - I want to provide editor settings to a user
-  - I understand creating compartments and reconfiguring those compartments, but what’s the best way to trigger reconfiguration based on outside user input?
+  - I understand creating compartments and reconfiguring those compartments, but what’s the best way to trigger reconfiguration based on outside user input? 
+  - 现有方案是先dispatch新配置参数effect，然后在viewPlugin.update中dispatch对应的compart
+  - I’ve poured through the docs, and tried several approaches. One big hurdle is the async nature of some of the changes. For example: loading languages through @codemirror/language-data.
   - Is there a better way to dispatch an update to a compartment based on an outside change?
   - I don’t like using `ViewPlugin` in this way, but that’s the only way I’ve found that I can both listen to an effect and asynchronously send a view.dispatch. Seems like this is pretty inefficient for a dozen settings.
   - 👉 `EditorState.transactionExtender` doesn’t allow async, the effect change has to be done right away. It also doesn’t work for multiple settings at once. It only seems to allow one transactionExtender to change the effects, overriding all the others
   - I’d sure love a way to just “listen” to a particular effect being dispatched and trigger another view.dispatch as necessary, or some other more direct way for an extension/compartment to dynamically reconfigure itself.
 
 - Why are you using a custom effect and an update handler? Why not directly dispatch the reconfiguring effects from the code that triggers the setting change?
-
-- 
-- 
+  - I’m looking at around a dozen or more settings that toggle extensions in various ways on multiple editor views. Integrating into React for more added fun.
+  - I’d like each setting’s extension logic self contained, and an easy, consistent way to update multiple settings at once.
+  - It can probably be set up as a helper function that dispatches effects to reconfigure compartments, though I’ll likely have to create Objects to keep track of it all outside of CodeMirror.
+  - I’d love some better ways to listen for changes in CodeMirror and be able to respond with effects. For example: the Emmet extension can only work on certain languages, so I add a transactionExtender that watches the languages facet for changes and enables/disables emmet accordingly. Works well in this exact case, but seems inefficient to run this on every transaction.
 
 - ## [Proposal: Coarser Module Structure - v6 - discuss. CodeMirror _202204](https://discuss.codemirror.net/t/proposal-coarser-module-structure/4243)
   - 似乎未实现，有争议
@@ -73,7 +79,9 @@ modified: 2024-08-11T06:42:41.903Z
 
 - ## 
 
-- ## [CM6: Dynamically change extensions based on state field - discuss. CodeMirror](https://discuss.codemirror.net/t/cm6-dynamically-change-extensions-based-on-state-field/2941)
+- ## [CM6: Dynamically change extensions based on state field - discuss. CodeMirror _202102](https://discuss.codemirror.net/t/cm6-dynamically-change-extensions-based-on-state-field/2941)
+  - I’m trying to configure my editor state so that the language and theme change when a specific state field changes.
 - You need to reconfigure them, probably using a labeled extension
 - I’m also looking for a way to do this. It seems like the dispatch effect → statefield update → facet combine chain is working fine, but there isn’t a transaction after the facet has recalculated, so there’s nothing for the transaction extender to process, so it never gets to dispatch a new effect to reconfigure a compartment containing the theme.
-  - The editor configuration cannot depend on facets—that would be nice to have, but I found it pretty much impossible to implement in a reasonable way. So you’ll have to notice the conditions you’re interested in elsewhere, for example in a view plugin, and fire a new transaction when the configuration has to change.
+  - The editor configuration cannot depend on facets—that would be nice to have, but I found it pretty much impossible to implement in a reasonable way. 
+  - So you’ll have to notice the conditions you’re interested in elsewhere, for example in a view plugin, and fire a new transaction when the configuration has to change.

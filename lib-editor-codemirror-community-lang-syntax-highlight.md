@@ -56,6 +56,11 @@ modified: 2024-08-11T07:59:35.617Z
 
 - ## 
 
+- ## 
+
+- ## [How get token from updateListener.of - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/how-get-token-from-updatelistener-of/4158)
+- `syntaxTree(state).resolve(pos)` might help here (though it doesn’t do exactly the same thing as tokenBefore, but you can see how that’s implemented and do something similar if needed).
+
 - ## [Some thoughts (and requests) about how CM6 schedules parsing - v6 - discuss. CodeMirror _202103](https://discuss.codemirror.net/t/some-thoughts-and-requests-about-how-cm6-schedules-parsing/3045)
 - 
 - 
