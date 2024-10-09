@@ -10,6 +10,10 @@ modified: 2024-05-02T06:41:19.983Z
 # guide
 - codemirror的架构主要分3方面: model/state, view, extension
   - extension的扩展方式也是这3方面，state-field, deco, view-dom/event
+
+- editor业务的数据更新
+  - 修改编辑器内容
+  - 修改其他状态
 # not-yet
 - document是否总以换行符结尾
 # overview

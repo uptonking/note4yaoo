@@ -65,7 +65,7 @@ modified: 2024-09-10T00:43:36.318Z
   - You can either return a single transaction spec (possibly the input transaction), or an array of specs (which will be combined in the same way as the arguments to EditorState.update).
 - 🧩 transactionExtender
   - This is a more limited form of transactionFilter, which can only add annotations and effects.
-  - But, this type of filter runs even if the transaction has disabled regular filtering, making it suitable for effects that don't need to touch the changes or selection, but do want to process every transaction.
+  - But, this type of filter runs even if the transaction has disabled regular filtering, making it suitable 💡 for effects that don't need to touch the changes or selection, but do want to process every transaction.
   - Extenders run after filters, when both are present.
   - 不支持async effect
 

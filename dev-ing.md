@@ -500,6 +500,10 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
 stt.message.channel().send('uCmdK', 'README.md', 2, 2, 'explain an elegant word in one sentence')
 ```
 
+## 1009
+- cmdk并接受代码的状态变化
+  - original > new > showDiff > hideDiff
+
 ## 1008
 
 - aws加速营的ai分享

@@ -93,6 +93,7 @@ modified: 2023-06-23T12:46:53.288Z
     - [运行./dev.sh后编译论文报错 ](https://github.com/ayaka-notes/overleaf/issues/5)
   - https://github.com/ertuil/overleaf
     - a quick implication of review panel
+  - https://git.szumserver.eu/szymon/overleaf
   - https://github.com/smhaller/ldap-overleaf-sl
     - Free LDAP and OAuth2 Authentication and Authorisation for Sharelatex / Overleaf (Community Edition)
 
@@ -1037,6 +1038,10 @@ modified: 2023-06-23T12:46:53.288Z
   - https://codemirror.net/try/?example=Merge%20View
   - Merge view for CodeMirror
   - 左边旧代码可编辑，右边新代码不可编辑，与vscode相反
+
+- https://github.com/GerritCodeReview/plugins_codemirror-editor /apache2/202410/ts
+  - A plugin that uses CodeMirror to provide a rich code editing experience in PolyGerrit.
+  - The codemirror-element using CodeMirror is loaded lazily from another js bundle
 
 - https://github.com/jupyterlab/jupyterlab-git /BSD/202407/python/ts
   - A JupyterLab extension for version control using Git

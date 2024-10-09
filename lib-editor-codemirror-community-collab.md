@@ -16,7 +16,18 @@ modified: 2024-05-02T05:51:12.370Z
 
 - ## 
 
-- ## 
+- ## 🤔 [Equivalent for cm5 operation api in cm6 - discuss. CodeMirror _202406](https://discuss.codemirror.net/t/equivalent-for-cm5-operation-api-in-cm6/8407)
+  - I am trying to implement macro recording and replay feature, but the straightforward method of implementing it (calling commands one by one as they are called during normal editing), is orders of magnitude slower than cm5 version, because of the time spent in updating dom and highlighting matching brackets.
+  - The advice in documentation is to collect all the changes and dispatch them only once, but many commands need to read the intermediate states which is not possible with this approach.
+
+- What exactly are the ‘commands’ you are replaying? If they are transactions, you can dispatch them all at once as an array. 
+  - If they are arbitrary code that can read the view state, then indeed, there’s no support for batching them. 
+  - A dispatch will only synchronously write to the DOM, not read from it, so in many situations running commands should still be pretty fast, but there’s no way to update the view without updating the DOM in version 6.
+- Are you playing these back at a much faster rate than they initially happened? If so, would it maybe make sense to record document and selection changes instead of keys? (Of course, that will fail to capture some kind of state changes, but it seems that for a fast-forward kind of state change, those might not be relevant.)
+- If you have control over the way these commands access the editor state, you may be able to just run a state update, having them read from a state not a full view, while you accumulate transactions, and then dispatch them in one go.
+- 💡 What you’re seeing is mostly the parser updating its parse tree on every change. Having editor states synchronously compute all their fields is a fundamental part of the editor’s design. There’s no way to delay that, except something like temporarily turning off the language.
+
+- 另一种思路是replay时不使用原始op，使用compose过的op
 
 - ## [integrating CodeMirror history with app-wide history - discuss. CodeMirror _201509](https://discuss.codemirror.net/t/integrating-codemirror-history-with-app-wide-history/465)
   - I want to use a CodeMirror editor as a component in a larger web app, where the user can do actions that CodeMirror doesn’t know about. What is the best way to have undo/redo work in a way that makes the CodeMirror/non-CodeMirror distinction invisible to the user?

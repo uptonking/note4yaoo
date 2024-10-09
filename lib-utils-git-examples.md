@@ -64,6 +64,21 @@ modified: 2023-08-29T10:12:22.345Z
 - https://github.com/jupyterlab/jupyterlab-git /BSD/202407/python/ts
   - A JupyterLab extension for version control using Git
 
+- https://github.com/GerritCodeReview/gerrit /955Star/apache2/202410/java/ts
+  - https://www.gerritcodereview.com
+  - https://gerrit.googlesource.com/gerrit
+  - Gerrit is a code review and project management tool for Git based projects.
+  - Gerrit makes reviews easier by showing changes in a side-by-side display, and allowing inline comments to be added by any reviewer.
+  - Gerrit simplifies Git based project maintainership by permitting any authorized user to submit changes to the master Git repository, rather than requiring all approved changes to be merged in by hand by the project maintainer.
+  - Gerrit Code Review started as a simple set of patches to Rietveld, and was originally built to service AOSP. 
+  - Gerrit 2.x is a complete rewrite of the Gerrit fork, changing the implementation from Python on Google App Engine, to Java on a J2EE servlet container and a SQL database.
+  - Since Gerrit 3.x NoteDb replaced the SQL database and all metadata is now stored in Git. The user interface migrated away from GWT to Polymer.
+  - [NoteDb Backend](https://gerrit-review.googlesource.com/Documentation/note-db.html)
+    - NoteDb is the only database format supported by Gerrit 3.0+. 
+    - NoteDb is the storage backend for code review metadata. It is based on Git, so code reviews are stored together with the code under review. 
+    - NoteDb replaced the traditional SQL backend for change, account and group metadata that was used in the 2.x series
+    - Enables simple federation between Gerrit servers, as well as offline code review and interoperation with other tools.
+
 - https://github.com/aergoio/litetree /202003/c/inactive
   - It is a modification of the SQLite engine to support branching, like git
   - Each database transaction is saved as a commit, and each commit has an incremental number

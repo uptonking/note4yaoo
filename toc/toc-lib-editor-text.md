@@ -153,7 +153,9 @@ modified: 2021-07-27T15:12:39.959Z
     - A Document ties together the Rope, Selection(s), Syntax, document History, language server (etc.) into a comprehensive representation of an open file.
   - [Plugin system](https://github.com/helix-editor/helix/discussions/3806)
   - [WebAssembly plugins system](https://github.com/helix-editor/helix/issues/122)
-  - [Feature request: selective undo _202208](https://github.com/helix-editor/helix/issues/3364)
+  - [Feature request: selective undo _202208](https://github.com/helix-editor/helix/issues/3364) 
+  - https://github.com/omentic/helix-ext
+    -  fork of the Helix editor with various inactive and rejected patches applied.
 # editor-utils
 - https://github.com/juliankrispel/react-text-selection-popover
   - https://juliankrispel.github.io/react-text-selection-popover

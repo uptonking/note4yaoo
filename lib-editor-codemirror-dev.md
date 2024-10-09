@@ -153,6 +153,11 @@ modified: 2021-05-06T09:38:31.520Z
   - transactionFilter
   - stateField.update, 可以不使用值，只使用update逻辑
 
+- 基于transactionExtender的ext，
+  - 🤔 后注册的会先执行
+  - ~~只能返回单个effect，不能返回数组~~, 看清楚.of的返回值类型时StateEffect或Anno，而不是Transaction
+  - 处理changes推荐用transactionFilter
+
 - codemirror似乎未使用rope数据结构
 # draft
 - nostable-editor
