@@ -16,6 +16,15 @@ modified: 2024-05-02T05:51:12.370Z
 
 - ## 
 
+- ## 🤔🌰 [debouncing/merging docChanged transactions? - discuss. CodeMirror _202406](https://discuss.codemirror.net/t/debouncing-merging-docchanged-transactions/8268)
+  - CodeMirror 6 lets you listen for doc changes in the form of transactions, but every change is fired off immediately: if a user types `function cakeBaker(type="extreme")` at a normal typing rate, that’s 30+ transactions for one letter each, instead of a single transaction for the single stretch of text typed.
+  - Is there a way to set a debounce interval, or even a way to bundle/merge transactions into one transaction after the fact
+
+- 💡 You cannot merge transactions, but you can merge change set with `ChangeSet.compose` . You could set up a thing that accumulates changes and runs some code on the result only after a given period of inactivity.
+
+- 💡 My “solution” was to have a debounce listener on document changes and just literally diff the document with its previous version. That’s probably a really bad plan for huge documents, but for my use-case it works quite well
+  - with `createPatch` being the standard “get me the diff between these two strings” that you can find loads of libraries for
+
 - ## 🤔 [Equivalent for cm5 operation api in cm6 - discuss. CodeMirror _202406](https://discuss.codemirror.net/t/equivalent-for-cm5-operation-api-in-cm6/8407)
   - I am trying to implement macro recording and replay feature, but the straightforward method of implementing it (calling commands one by one as they are called during normal editing), is orders of magnitude slower than cm5 version, because of the time spent in updating dom and highlighting matching brackets.
   - The advice in documentation is to collect all the changes and dispatch them only once, but many commands need to read the intermediate states which is not possible with this approach.
@@ -28,6 +37,10 @@ modified: 2024-05-02T05:51:12.370Z
 - 💡 What you’re seeing is mostly the parser updating its parse tree on every change. Having editor states synchronously compute all their fields is a fundamental part of the editor’s design. There’s no way to delay that, except something like temporarily turning off the language.
 
 - 另一种思路是replay时不使用原始op，使用compose过的op
+
+- ## ⏳ [Recording and replaying code changes. - v6 - discuss. CodeMirror _202109](https://discuss.codemirror.net/t/recording-and-replaying-code-changes/3502)
+  - I am trying to figure out how can record and replay an array of ChangeSet
+- you can use change sets to move forward and backward through history like this. The error you’re getting happens when you somehow try to apply a changeset to a document that doesn’t match the document it was created for (in length), which suggests some issue in your implementation.
 
 - ## [integrating CodeMirror history with app-wide history - discuss. CodeMirror _201509](https://discuss.codemirror.net/t/integrating-codemirror-history-with-app-wide-history/465)
   - I want to use a CodeMirror editor as a component in a larger web app, where the user can do actions that CodeMirror doesn’t know about. What is the best way to have undo/redo work in a way that makes the CodeMirror/non-CodeMirror distinction invisible to the user?
@@ -48,18 +61,8 @@ CodeMirror.commands.undo = function(cm) {
 
 - ## [Is dirty flag available in codemirror? - discuss. CodeMirror](https://discuss.codemirror.net/t/is-dirty-flag-available-in-codemirror/2716)
 - is there something similar in v6?
-  - No, but documents are structure-sharing persistent values, and comparing them is optimized to make use of this, 
+  - 💡 No, but documents are structure-sharing persistent values, and comparing them is optimized to make use of this, 
   - so if you just want to check whether a the current document is the same as some previous one, keep a reference to that previous `state.doc` , and compare with `cleanDoc.eq(state.doc)` later.
-
-- ## ⏳ [Recording and replaying code changes. - v6 - discuss. CodeMirror _202109](https://discuss.codemirror.net/t/recording-and-replaying-code-changes/3502)
-  - I am trying to figure out how can record and replay an array of ChangeSet
-- you can use change sets to move forward and backward through history like this. The error you’re getting happens when you somehow try to apply a changeset to a document that doesn’t match the document it was created for (in length), which suggests some issue in your implementation.
-
-- ## 💡 [Reconfigure doesn't re-run `StateField` 's `create` - v6 - discuss. CodeMirror _202408](https://discuss.codemirror.net/t/reconfigure-doesnt-re-run-statefield-s-create/8548)
-  - “state field create” is only printed once, and “state field recreate” is never printed, even though the reconfigure effect is being dispatched.
-
-- I am still curious if excluding StateField create from reconfiguration is intended.
-  - Yes. Reconfiguring the editor preserves the value of state fields that are present in both the old and new configuration (so that you don’t, say, lose your undo history every time you reconfigure something).
 
 - ## 🌰 [CodeMirror 6: How to set up collaborative editing with clients and server? - discuss. CodeMirror _202008](https://discuss.codemirror.net/t/codemirror-6-how-to-set-up-collaborative-editing-with-clients-and-server/2583)
   - In the end I sidestepped the collab extension, and used a system similar to the split view example (except sending the ChangeSets over the network), using the map function on the ChangeSets as necessary and using the EditorView.dispatch() function to apply the change sets.
@@ -79,7 +82,7 @@ CodeMirror.commands.undo = function(cm) {
   - Because focus isn’t on the editor, keys are handled by the native browser history feature, which then mutates the editor content. 
   - To make things worse, it inexplicably doesn’t fire a `beforeInput` the way it normally does for history actions, so I haven’t found a way for the library to recognize or capture these.
 
-- ## 🤼 [More conventional undo behaviour? - v6 - discuss. CodeMirror _202301](https://discuss.codemirror.net/t/more-conventional-undo-behaviour/5565)
+- ## 🤼🤔 [More conventional undo behaviour? - v6 - discuss. CodeMirror _202301](https://discuss.codemirror.net/t/more-conventional-undo-behaviour/5565)
   - I noticed the undo behaviour is based on grouping events after an idle delay. For example if I start typing a lot of text (quickly), make a typo and press Ctrl+Z it will delete all of the text that I typed.
   - Other editors tend to make Ctrl+Z either delete one character at a time (for example this forum) or one word at a time (VS Code, Mousepad etc.). The former behaviour can be achieved in CodeMirror by setting `newGroupDelay` to a small value such as 50. But I was wondering if undoing by word is possible?
 - I don’t think there is anything like a consensus on that. 
@@ -93,11 +96,6 @@ CodeMirror.commands.undo = function(cm) {
 - ## 
 
 - ## 
-
-- ## 🌰 [debouncing / merging docChanged transactions? - discuss. CodeMirror](https://discuss.codemirror.net/t/debouncing-merging-docchanged-transactions/8268)
-- You cannot merge transactions, but you can merge change set with `ChangeSet.compose` . You could set up a thing that accumulates changes and runs some code on the result only after a given period of inactivity.
-- My “solution” was to have a debounce listener on document changes and just literally diff the document with its previous version. That’s probably a really bad plan for huge documents, but for my use-case it works quite well
-  - with `createPatch` being the standard “get me the diff between these two strings” that you can find loads of libraries for
 
 - ## 🤔 [CodeMirror Empty Changes Array - discuss. CodeMirror _202403](https://discuss.codemirror.net/t/codemirror-empty-changes-array/7980)
   - `{"clientID":"CLIENT_ID","changes":[],"effects":[{"type":{"map":{}},"value":{"id":"FIRST_ID","from":0,"to":0}}]}`

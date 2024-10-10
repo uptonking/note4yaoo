@@ -153,6 +153,12 @@ modified: 2021-05-06T09:38:31.520Z
   - transactionFilter
   - stateField.update, 可以不使用值，只使用update逻辑
 
+- undo的粒度是什么，如何触发一次undo来撤销指定几个transaction
+
+- cmdk-undo
+  - 正向触发流程: originalDoc > newDoc > showDiff > hideDiff
+  - undo更好的实现方式是手动控制tr的合并，更简单的这种方式是手动触发undo的逻辑
+
 - 基于transactionExtender的ext，
   - 🤔 后注册的会先执行
   - ~~只能返回单个effect，不能返回数组~~, 看清楚.of的返回值类型时StateEffect或Anno，而不是Transaction
@@ -228,6 +234,9 @@ modified: 2021-05-06T09:38:31.520Z
 
 - ❓🆚 transaction vs changeSet
 # dev-xp
+- beforeChange/beforeSelectionChange 可使用filter
+  - afterChange 可使用 updateListener/viewPlugin.update
+
 - 💄 自定义元素widget
   - codemirror会在widget最外层渲染一个contenteditable为false的元素
   - 💡 block widget前面默认没行号，inline widget会使用原行的行号，无论有没有使用Decoration.replace渲染
@@ -248,7 +257,9 @@ modified: 2021-05-06T09:38:31.520Z
     - 每个变更块的红色部分(可能包含多行)都是一个 `<div class="cm-deletedChunk" contenteditable="false">`, 多行红色会直接在TextNode里面换行文本，没有额外的html标签元素, deletedChunk.textContent会返回类似`four cups\nhello`
 
 - codemirror和cursor的undo实现
-  - 默认只undo内容更改并移动光标到更改位置，不会触发undo仅仅移动光标
+  - 默认只undo内容更改并移动光标到更改位置，不会触发undo仅仅移动光标而不修改内容
+- dispatchTr是同步操作，tr都是基于当前state，若doc有变化，则合并tr的思路不可取
+  - 是否采用合并transaction的思路要多考虑，When creating a transaction, you are basing it on the current editor state. It would often not make any sense anymore when applied from a different state. Also dispatching transactions is synchronous, so a queue seems needless complexity.
 
 - dispatch
   - 作者推荐将async逻辑放在编辑器之外，等到await asyncLogic完了，再执行dispatch

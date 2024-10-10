@@ -63,7 +63,11 @@ modified: 2024-07-29T11:49:33.248Z
 # discuss-diff/track-changes
 - ## 
 
-- ## 
+- ## 🌰 [CodeMirror Merge - Calling a Function on Chunk Approval/Reject - v6 - discuss. CodeMirror _202409](https://discuss.codemirror.net/t/codemirror-merge-calling-a-function-on-chunk-approval-reject/8636)
+  - I can not figure out how to trigger a function when the user has either approved or rejected a code chunk.
+  - I want to run a function to know when to turn off merge view
+
+- The extension will fire transactions tagged with a user event of "accept" or "revert". You could listen to those and, if necessary reconstruct which chunk was reverted by comparing the change’s location to the chunks that existed in the state at the start of the transaction.
 
 - ## 🔀🌰 [Feasability Assessment: Extension to decorate conflict markers - v6 - discuss. CodeMirror _202407](https://discuss.codemirror.net/t/feasability-assessment-extension-to-decorate-conflict-markers/8459)
   - this is not about building a three-way merge editor as many others have suggested already. This proposal is something much simpler (presumably) but related
@@ -140,6 +144,14 @@ modified: 2024-07-29T11:49:33.248Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [Synchronous Fold/Unfold in MergeView - v6 - discuss. CodeMirror _202405](https://discuss.codemirror.net/t/synchronous-fold-unfold-in-mergeview/8194)
+  - I’m using MergeView plugin to show the difference between 2 json strings
+  - The problem is when one side is folded/unfolded based on gutter click, other side remains as it was. How can I make 2 sides to fold/unfold together?
+
+- You could observe transactions with fold effects, find the matching line on the other side (by using the chunk information), and fold that.
 
 - ## 🌰🆚 [Adding widgets between lines instead of inside lines - v6 - discuss. CodeMirror _202207](https://discuss.codemirror.net/t/adding-widgets-between-lines-instead-of-inside-lines/4772)
   - We’re working on a CodeMirror side-by-side diff viewer similar to github’s view

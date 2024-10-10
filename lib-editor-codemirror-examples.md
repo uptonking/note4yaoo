@@ -205,6 +205,18 @@ modified: 2023-06-23T12:46:53.288Z
   - https://github.com/vizhub-core/codemirror-6-experiments /MIT/201811/js
     - [Codemirror 6 Experiments _201811](https://currankelleher.medium.com/codemirror-6-experiments-a3930bf03781)
 
+- silverbullet /2.4kStar/MIT/202410/ts
+  - https://github.com/silverbulletmd/silverbullet
+  - https://silverbullet.md/
+  - SilverBullet is an extensible, open source personal knowledge platform. 
+  - implemented as an open-source offline-capable web application.
+  - written in TypeScript and built on top of the excellent CodeMirror 6, preact
+    - The server backend runs as a HTTP server on Deno using and is written using Oak.
+  - At its core it’s a clean markdown-based writing/note taking application that stores your pages (notes) as plain markdown files in a folder referred to as a space. 
+  - While SB uses a database for indexing and caching some indexes, all of that can be rebuilt from its markdown source at any time. 
+  - extensible with plugs, and you can customize it
+  - [Silver Bullet: Markdown-based extensible open source personal knowledge platform | Hacker News_202212](https://news.ycombinator.com/item?id=33843009)
+
 - https://github.com/sourcegraph/openctx/tree/main/client/codemirror /apache2/202405/ts
   - https://openctx.org/playground
   - implements a CodeMirror extension that shows OpenCtx items in the editor

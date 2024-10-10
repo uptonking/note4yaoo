@@ -399,11 +399,13 @@ modified: 2022-06-03T21:34:54.893Z
   - Monotome has support for the common `[[wiki]]` syntax, 
   - Subjects are ordered into a simple directory structure which is mirrored by index.json.
 
-- silverbullet /1.5kStar/MIT/202401/ts
+- silverbullet /2.4kStar/MIT/202410/ts
   - https://github.com/silverbulletmd/silverbullet
   - https://silverbullet.md/
   - SilverBullet is an extensible, open source personal knowledge platform. 
   - implemented as an open-source offline-capable web application.
+  - written in TypeScript and built on top of the excellent CodeMirror 6, preact
+    - The server backend runs as a HTTP server on Deno using and is written using Oak.
   - At its core it’s a clean markdown-based writing/note taking application that stores your pages (notes) as plain markdown files in a folder referred to as a space. 
   - While SB uses a database for indexing and caching some indexes, all of that can be rebuilt from its markdown source at any time. 
   - extensible with plugs, and you can customize it

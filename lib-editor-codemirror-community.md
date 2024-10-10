@@ -225,7 +225,7 @@ modified: 2023-01-29T10:52:44.183Z
 - But I was thinking as an inline node, meaning instead of being a full width div, it just expands as the user types.
   - no, CodeMirror assumes it is a block element, so for this you’d have to wrap it in some kind of `inline-block` container and add a kludge that constantly resizes it to match its content size. It won’t work as a regular content-fitting inline element.
 
-- ## [Synchronising CodeMirror 6 and ProseMirror _202310](https://discuss.codemirror.net/t/synchronising-codemirror-6-and-prosemirror/7339)
+- ## 🤔 [Synchronising CodeMirror 6 and ProseMirror _202310](https://discuss.codemirror.net/t/synchronising-codemirror-6-and-prosemirror/7339)
 - Could you offer any advice on how to translate between the CodeMirror and ProseMirror transactions please?
   - Not really. The way you map between rich text and plain text documents is going to involve some kind of translation, I guess, depending on the text format and ProseMirror schema used. You say nothing about how you’re doing that, but I suspect it involves some kind of parsing. Mapping changes in such a context, and especially translating text changes to structured ProseMirror steps is likely going to be non-trivial. It may be easier to compute a diff of some kind and work from that.
 

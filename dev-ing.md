@@ -357,6 +357,7 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
 
 - editor
   - tab自动补全
+  - 打字动画优化，先对行数多的按行输出，再对行数少的按字符输出
   - 通过minimap快速定位diff视图位置
   - ~~readonly属性不生效~~
 

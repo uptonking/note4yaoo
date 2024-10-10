@@ -91,7 +91,7 @@ modified: 2023-07-23T07:05:19.441Z
   - Windows: Alt + ← ; 或者 鼠标侧键
   - Linux: Ctrl + Alt + - ; 
   - Mac: Ctrl + -
-- 左右括号之间跳转： ctrl + shift + \
+- 左右括号之间跳转： ctrl/cmd + shift + \
 
 ## devtools
 

@@ -176,8 +176,87 @@ modified: 2024-05-02T02:00:47.318Z
 - what do you do when the different instances of the extension got different configurations?
   - Sometimes, that's just an error. But often, it is possible to define a strategy for reconciling them. Facets work well for this. You can put the configuration in a module-private facet, and have its combining function either reconcile configurations or throw an error when this is impossible. Then code that needs access to the current configuration can read that facet.
   - See the `zebra` stripes example for an illustration of this approach.
+# v5-to-v6
+
+## [CodeMirror 5 to 6 Migration Guide](https://codemirror.net/docs/migration/)
+
+- Whereas CodeMirror 5 used `{line, ch}` objects to point at document positions, CodeMirror 6 just uses offsets—the number of characters (UTF16 code units) from the start of the document, counting line breaks as one character. 
+  - 🤔 This decision was made because manipulating plain numbers is a lot simpler and more efficient than working with such objects.
+  - But note: in CodeMirror 6 the first line has number 1, whereas CodeMirror 5 lines started at 0.
+
+```JS
+cm.getValue()→ cm.state.doc.toString()
+
+cm.getRange(a, b)→ cm.state.sliceDoc(a, b)
+
+cm.getLine(n)→ cm.state.doc.line(n + 1).text
+
+cm.lineCount()→ cm.state.doc.lines
+
+cm.getCursor()→ cm.state.selection.main.head
+```
+
+- In version 6, updates are wrapped in transactions and then dispatched to the view up to update it.
+  - This means that different types of update go through a single method, which takes one or more objects describing the changes, and applies them atomically. 
+  - Document changes are described by the changes property of the transaction specs.
+  - 🤔 Situations that would, in the old interface, require the use of operation to group updates together tend to not really come up anymore, since you will just group all your updates into a single transaction.
+- When making multiple changes at once (changes can also take an array of change objects), all from and to positions refer to the document at the start of the transaction (as opposed to the document created by the changes before it). 
+  - This makes it a lot easier to apply composite changes.
+
+- Instead of a set of named options, the new configuration system uses a tree of extension values
+
+- 🤔 CodeMirror 6 no longer uses an event system. The main reason for this is that that kind of asynchronous notification interface makes it really hard to implement more complex customizations in a robust way, and that events tend to be too fine-grained—a given event handler just tells you about one aspect of what changed, and you need to awkwardly piece together information from multiple events to get a bigger picture of what's happening.
+  - Instead, state updates are represented by transactions, which group all the available information about the update. 
+  - If you need to maintain state in sync with other parts of the editor state, you'll want to use custom state fields for that. Those are updated for every transaction using a “reducer”—a function that takes the previous state and a transaction, and produces a new state.
+
+- Changing or filtering updates as they happen (similar to the old "beforeChange" and "beforeSelectionChange" events) can be done with change filters, transaction filters, or transaction extenders.
+
+- 🤔 there is no longer a central registry of named commands (getting rid of central registries was one of the goals of the redesign).
+  - Commands are simply functions that take an editor instance and, if they can, perform a side effect and return true.
+
+- Version 5 has a static `CodeMirror.fromTextArea` method that tries to transparently replace a given `<textarea>` element with a CodeMirror instance. 
+  - Unfortunately, this was never very robust (or even transparent), so I've decided not to provide this convenience function in version 6.
+  - Basically, what fromTextArea did was insert the editor as a sibling of the textarea, hide the textarea, and, through various hacks, wire up form submission to sync the content of the editor back to the textarea (automatically syncing on every change gets too expensive for big documents).
+
+- Marked text (and bookmarks) are called decorations in the new system, and creating them is a bit more difficult (but also a lot less error-prone).
 # v5
 - [CodeMirror 5 v5.61.0](https://int-heuristweb-prod.intersect.org.au/HEURIST/HEURIST_SUPPORT/external_h7/codemirror-5.61.0/)
 - [CodeMirror: User Manual v5.25.1](https://www-sop.inria.fr/teams/marelle/coq-18/jscoq/ui-external/CodeMirror/doc/manual.html)
 - [CodeMirror](https://www-sop.inria.fr/teams/marelle/advanced-coq-16-17/jscoq/external/CodeMirror/index.html)
+# obsidian-docs
+- Obsidian uses CodeMirror (CM) as the underlying text editor, and exposes the CodeMirror editor as part of the API. 
+  - `Editor` serves as an abstraction to bridge features between CM6 and CM5 (legacy editor, only available on desktop). 
+  - By using `Editor` instead of directly accessing the CodeMirror instance, you ensure that your plugin works on both platforms.
+
+- Obsidian uses CodeMirror 6 (CM6) to power the Markdown editor. 
+  - Just like Obsidian, CM6 has plugins of its own, called extensions. 
+  - In other words, an Obsidian editor extension is the same thing as a CodeMirror 6 extension.
+  - While Obsidian comes with many of these extensions out-of-the-box, you can also register your own.
+  - While CM6 supports several types of extensions, two of the most common ones are View plugins and State fields.
+
+## [Decorations - Developer Documentation](https://docs.obsidian.md/Plugins/Editor/Decorations)
+
+- If you can implement your extension using either approach, then the view plugin generally results in better performance. 
+- For example, imagine that you want to implement an editor extension that checks the spelling of a document.
+  - One way would be to pass the entire document to an external spell checker which then returns a list of spelling errors. In this case, you'd need to map each error to a decoration and use a state field to manage decorations regardless of what's in the viewport at the moment.
+  - Another way would be to only spellcheck what's visible in the viewport. The extension would need to continuously run a spell check as the user scrolls through the document, but you'd be able to spell check documents with millions of lines of text.
+
+- Since the view plugin knows what's visible to the user, you can use `view.visibleRanges` to limit what parts of the syntax tree to visit.
+
+## [State management - Developer Documentation](https://docs.obsidian.md/Plugins/Editor/State+management)
+
+- To support features like undoing and redoing changes to a user's workspace, applications like Obsidian instead keep a history of all changes that have been made. 
+
+- what if you could group these changes so that they appear as one?
+  - For editor extensions, a group of state changes that happen together is called a transaction.
+
+- 
+- 
+- 
+
+- 
+- 
+- 
+- 
+
 # more
