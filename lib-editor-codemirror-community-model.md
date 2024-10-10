@@ -46,7 +46,7 @@ modified: 2024-08-11T03:29:17.282Z
   - It seems like a `transactionFilter` is the right tool for this and I’ve attempted it in this codesandbox. The replacement works as expected but it inserts in reverse and I’m not sure why.
 - This approach where you replace all local transactions with a fresh one that has similar changes will strip all effects and annotations from the transactions, so that is probably not going to work (it’ll mess up the undo history, for example).
   - 👉 But I think the problem here is that the changes are all interpreted in the original document’s coordinate system. 
-  - A filter that adds the the existing transaction by appending a change that deletes the astral characters, using sequential so that its coordinates are interpreted in the in-between coordinate system, might work (return [tr, {changes: ..., sequential: true}]).
+  - A filter that adds the the existing transaction by appending a change that deletes the astral characters, using `sequential` so that its coordinates are interpreted in the in-between coordinate system, might work (`return [tr, {changes: ..., sequential: true}]`).
 
 - ## [CodeMirror 6, how to get editor value on input/update/change event? - Stack Overflow](https://stackoverflow.com/questions/72404988/codemirror-6-how-to-get-editor-value-on-input-update-change-event)
 
@@ -138,7 +138,35 @@ view.dispatch({ changes: { from: line.from, to: line.to, insert: 'New text for t
   - Do keep in mind that that’ll mess up the undo history and any other metadata that’s being kept about the document content (marks, mapped positions). If practical, you could compute a minimal diff and just update the changed ranges.
 - ## 💡 [swapDoc v6 equivalent - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/swapdoc-v6-equivalent/5973)
 - Store the editor states of the docs not in the view, and use `setState` to put a new state into an editor view.
+# discuss-effects/anno
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🌰 [Using Annotations to differentiate origin of transaction - discuss. CodeMirror _202105](https://discuss.codemirror.net/t/using-annotations-to-differentiate-origin-of-transaction/3224)
+  - Could I see a simple example of how to create an annotation and add it to a change?
+
+```typescript
+const myAnnotation = Annotation.define<string>()
+
+view.dispatch({
+  changes: [{from: 0, insert: "hi"}],
+  annotations: myAnnotation.of("greeting")
+})
+```
+
+- ## [Keep original's annotation to an updated transaction - v6 - discuss. CodeMirror _202204](https://discuss.codemirror.net/t/keep-originals-annotation-to-an-updated-transaction/4218)
+  - How can I update a transaction keeping its annotation’s origin value?
+- `annotations: Transaction.userEvent.of('delete.selection')`
+
+- You can’t copy all annotations when replacing a selection, currently. 
+  - But I think that actually is a reasonable thing, since doing that wouldn’t be safe anyway (for example, the transactions created by undo/redo will include a new undo history object in an annotation, which would not be valid for a transaction that has different changes). 
+  - You may be able to do what you’re trying to do with a change filter, or just add only userEvent and hope you’re not dropping any important annotations.
 # discuss-transaction
+- ## 
+
 - ## 
 
 - ## 
