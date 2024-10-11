@@ -9,6 +9,20 @@ modified: 2022-08-30T19:04:37.774Z
 
 # guide
 
+# discuss-multi/nested/sub-doc
+- ## 
+
+- ## 
+
+- ## [Best approach for rendering document subtree? - discuss. ProseMirror _202410](https://discuss.prosemirror.net/t/best-approach-for-rendering-document-subtree/7676)
+  - I’m working on an editor for documents that are composed of a list of sections. 
+  - I want to keep the ability to review/edit the document as a whole, while also supporting a “section view” mode that only renders one section of the document at a time.
+  - I want to support optionally rendering only a single section at a time
+  - I’m trying to think of the best way of doing this. My first instinct is to maintain the full document in memory, but build the EditorView by passing a single section as the doc part of state. I could then add a plugin that listens for transactions and proxies them back to the master document. I think this should work, but it feels potentially brittle.
+  - Another approach I’m considering is to just delete all other sections when switching to a section view (and saving a reference to them in memory), then inserting them back when switching back to the full document view. This approach seems conceptually a little simpler, but it feels dirty (modifying data for view-layer purposes), and adds complexity for features like collaboration or version history that care about “real” document transactions.
+  - Do either of these approaches seem more or less appropriate? Is there a better way of doing this I’m not considering?
+
+- The first approach should work perfectly well. Use `StepMap.offset` to transform section-local steps into document-level steps. The nested editors in the footnote example work the same way.
 # discuss
 - ## 
 

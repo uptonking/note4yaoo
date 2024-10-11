@@ -9,6 +9,9 @@ modified: 2022-05-15T18:37:27.994Z
 
 # guide
 
+- who is using #lexical
+  - mdxeditor
+
 - lexical-starter
   - [VanillaJS Codesandbox](https://github.com/facebook/lexical/issues/1845)
 # popular

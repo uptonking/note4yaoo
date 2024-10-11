@@ -45,9 +45,11 @@ modified: 2024-08-08T20:49:11.571Z
 - ## [Editor on multiple columns - discuss. CodeMirror _202208](https://discuss.codemirror.net/t/editor-on-multiple-columns/4908)
 - Just setting the editor CSS to create columns will definitely not work. The editor expects a lines to appear below each other, in order. You might be able to build something out of multiple editors by having your own code split and divide the content, but getting things like the undo history and cursor motion to work smoothly like that would probably be a lot of work.
 
-- ## [Multiple Editable Columns with CodeMirror 6 - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/multiple-editable-columns-with-codemirror-6/8514)
+- ## [Multiple Editable Columns with CodeMirror 6 - v6 - discuss. CodeMirror _202408](https://discuss.codemirror.net/t/multiple-editable-columns-with-codemirror-6/8514)
   - My north star goal is to provide a Layout experience similar to that of Confluence/Notion
-- I had a very positive experience with just replacing decoration widgets (width:100%). One can make them mutable (they can change the content on the covered ranges using basic transactions) and provide a transaction filter or something similar so that if a cursor goes into the region of the widget, it will move the focus into the nested codemirror editor.
+  - CM expects lines to follow each other, and to provide a clean experience with cursor and undo
+- I had a very positive experience with just replacing decoration widgets (width:100%). One can make them mutable (they can change the content on the covered ranges using basic transactions) and provide a transaction filter or something similar so that if a cursor goes into the region of the widget, it will move the focus into the **nested codemirror editor**.
+  - There is no need to rerender the nested editor, if you provide updateDom method to a widget
 
 # discuss-autocomplete
 - ## 

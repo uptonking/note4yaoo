@@ -12,6 +12,7 @@ modified: 2023-08-29T10:11:26.348Z
 - pros
   - branching
   - revision history
+  - ssh数据传输的方案有官方支持
 
 - cons
   - 体积会越来越大

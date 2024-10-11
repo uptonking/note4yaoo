@@ -307,6 +307,22 @@ modified: 2023-06-23T12:46:53.288Z
   - https://github.com/imzbf/md-editor-extension
     - Common extensions for md-editor-v3 and md-editor-rt
 
+- https://github.com/marcoklein/noteberry /MIT/202204/ts/archived/notion-like
+  - https://marcoklein.github.io/noteberry/
+  - https://marcoklein.github.io/noteberry/codemirror-block-editor/
+  - A toolbox for working with block-based linked markdown notes
+  - https://github.com/marcoklein/codemirror-block-editor /archived
+
+- https://github.com/JerryI/wljs-editor /202407/js/多层嵌套cm
+  - https://jerryi.github.io/wljs-editor/
+  - A cell editor & supporting packages for wolfram-frontend project written in JS with Codemirror 6. Support mathematical expressions rendered inline, Mathematica's boxes and many more...
+  - This is a core component of Wolfram JS Frontend project
+  - 多个编辑器nested示例
+  - [Multiple Editable Columns with CodeMirror 6 - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/multiple-editable-columns-with-codemirror-6/8514)
+    - here is an example with even ~10 nested editor, which can perfectly work with all updates and mutations and cursor movements
+  - https://github.com/JerryI/wolfram-js-frontend
+    - Dynamic Notebook Environment for Wolfram Language written in Javascript
+
 - https://github.com/getcursor/old /192Star/MIT/202304/ts/inactive
   - https://github.com/fovi-llc/cursor-codemirror/blob/main/src/components/codemirrorHooks/extensions.ts
   - A Codemirror-based editor with many modern need-to-haves (e.g. LSP, Copilot, Vim, Remote SSH)
@@ -1268,16 +1284,6 @@ modified: 2023-06-23T12:46:53.288Z
   - CodeMirror 5 does come with a comment addon, but I wanted to use the same algorithm used in Brackets
   - I ported the code related to commenting code from Brackets and experimented a bit, integrating features of the original one
 # utils
-- https://github.com/JerryI/wljs-editor /202407/js
-  - https://jerryi.github.io/wljs-editor/
-  - A cell editor & supporting packages for wolfram-frontend project written in JS with Codemirror 6. Support mathematical expressions rendered inline, Mathematica's boxes and many more...
-  - This is a core component of Wolfram JS Frontend project
-  - 多个编辑器nested示例
-  - [Multiple Editable Columns with CodeMirror 6 - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/multiple-editable-columns-with-codemirror-6/8514)
-    - here is an example with even ~10 nested editor, which can perfectly work with all updates and mutations and cursor movements
-  - https://github.com/JerryI/wolfram-js-frontend
-    - Dynamic Notebook Environment for Wolfram Language written in Javascript
-
 - https://github.com/lume/code-mirror-el /MIT/202405/ts
   - https://codepen.io/trusktr/pen/poGZYOy?editors=1000
   - A customizeable `<code-mirror>` element that makes a code editor powered by CodeMirror 

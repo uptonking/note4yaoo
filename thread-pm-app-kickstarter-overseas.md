@@ -12,6 +12,17 @@ modified: 2023-03-31T16:22:00.794Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 今晚AFFiNE cofounder & 前运营负责人 生姜Iris 在「出海！一定要出海」分享的特别棒，涵盖了出海、开源、产品等方方面面的信息、潜信息。
+- https://x.com/henuwangkai/status/1844384069955748043
+  - https://iayiilttimq.feishu.cn/file/ZLo6byayOoRfaNxfgPGcwszdnQb
+- 如果不说背后真相，就会让人走弯路，真正事实 - 
+  - Reddit 大把卖号的，几刀到几十刀搞定； 
+  - PH 国内有谁不买票的，还有被国内的人忽悠花了高价去刷票，超过五百刀就是冤种； 
+  - 开源一样靠刷别当回事； 联系 influencer，AI 导航站，兼职网上两百刀找老印去处理； 
+  - 这些不会让你从平庸里取胜，核心还是靠产品
+
 - ## 2023: Shein and Temu become the world's #1 and #2 clothing retailers
 - https://x.com/levelsio/status/1792156378783453430
   - 2024: US now discussing ban of Shein and Temu

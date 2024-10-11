@@ -16,7 +16,23 @@ modified: 2022-08-31T00:23:09.227Z
   - 缺点
     - 不能使用浏览器而需要自己实现查找搜索
     - 可能破坏第三方扩展，如toc
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## 🆚⚡️ [ProseMirror vs Lexical performance test - discuss. ProseMirror _202410](https://discuss.prosemirror.net/t/prosemirror-vs-lexical-performance-test/7681)
+  - My conclusion: ProseMirror wins.
+  - For me it looks like Lexical has a little bit better performance, worse docs, same bundle size, worse community / tooling.
+  - Conclusions : Lexical’s total of script executing time increases faster than ProseMirror’s, which is probably linked to its faster handling of increasing content and more frequent garbage collection.
+  - we just got an update for this article and the memory consumption was caused by Lexical’s history plugin. Without that they’re kind of similar, will post an update soon!
+
+- It seems like the only place Lexical surpasses ProseMirror is in LayoutCount. I wonder if, in the long run, ProseMirror could be optimized in this regard.
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## A4 pages conceptual guide

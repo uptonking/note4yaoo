@@ -17,6 +17,7 @@ modified: 2021-05-06T09:39:53.522Z
   - support branch
   - 支持rebase
   - 支持多实例，参考官方示例
+    - 支持nested-editor，参考footnote示例
   - selection支持多个ranges
 
 - cons
