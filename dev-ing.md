@@ -417,7 +417,7 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
 - 🚧 cmdk实现计划 
   - [-] 工具条或快捷键唤起、隐藏
   - [x] 输入提示词，agent返回时显示diff
-  - [x] undo: cmd+z回到diff
+  - [x] undo: cmd+z回到diff, 恢复提示词和选区
   - [-] 部分stop/cancel， 注意agent返回内容的时机
   - [ ] 部分accept
   - [ ] followup
@@ -430,6 +430,7 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
   - bugs
     - 🚨 disable cmdk in readonly and diff-view
     - 🚨 只在需要时显示diff视图开关
+    - cmdk针对选中全文的场景进行优化, ai会返回空{}
     - 等待ai返回结果时，禁止send，允许esc键取消输入框和丢弃ai返回结果
     - 若在ai写代码时或写完后但未accept时刷新页面，是否会丢失状态数据
     - ~~sdk如何不使用sleep来获取chunk返回完成时的数据~~
@@ -465,8 +466,8 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
       - cursor的空行会显示cmd+k/l的指令提示
       - cmdk后，用户点击accept后，cmd+z会恢复diff-view；用户点击reject后，cmd+z会恢复diff-view吗(cursor会)
 - cmdk-undo的难点
-  - 如何确定undo显示diff的条件，若用stateField, 
-    - diff恢复后再次消失前的编辑也要支持undo
+  - cmdk的输入框在redo时要恢复到正确的选区位置
+  - 如何确定undo显示diff的条件，若用stateField, diff恢复后再次消失前的编辑也要支持undo
   - 输入指令内容prompt的存储和还原，不在编辑器的内容中，是保存在编辑器state之外还是之中
     - 可以将prompt内容保存在编辑器外(因为不需要reactivity)，prompt id保存在编辑器的state
 
@@ -474,7 +475,7 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
   - cmdk整体功能
   - 时光机获取快照使用uuid
   - ai写代码打字效果的时机优化和样式优化
-  - 支持撤销ai写的代码
+  - 支持撤销ai写的代码, diff工具条
   - tab-key; chat-apply; aiCannotCreateThread
   - 防抖: cmdk， chat
   - 驾驶舱action列表支持打开文件
@@ -500,6 +501,16 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
 ```JS
 stt.message.channel().send('uCmdK', 'README.md', 2, 2, 'explain an elegant word in one sentence')
 ```
+
+## 1012
+
+昨天：
+- 完善cmdk undo的细节，输入框显示隐藏也支持undo
+- 实现代码工具条唤起cmdk
+
+今天：
+- 检查linear上cmdk相关的bug
+- 测试cmdk的整体功能，体验测试
 
 ## 1011
 

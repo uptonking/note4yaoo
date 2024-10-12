@@ -55,6 +55,19 @@ function range(start, end) {
   return Array.apply(0, Array(end - 1))
     .map((element, index) => index + start);
 }
+
+// generate random charaters
+// Can change 7 to 2 for longer results.
+(Math.random() + 1).toString(36).substring(4)
+
+(Math.random().toString(36) + '001100110011').slice(-5)
+
+(+new Date).toString(36).slice(-5)
+
+btoa(+new Date).slice(-7, -2)
+
+// node vs browser
+crypto.randomUUID().slice(-5)
 ```
 
 # npm-cli

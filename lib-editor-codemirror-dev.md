@@ -212,6 +212,10 @@ modified: 2021-05-06T09:38:31.520Z
 
 - ❓🆚 transaction vs changeSet
 # dev-xp
+- 在editor中插入内容要考虑
+  - 选区， del键/快捷键操作影响， 复制粘贴
+  - undo/redo
+
 - beforeChange/beforeSelectionChange 可使用filter
   - afterChange 可使用 updateListener/viewPlugin.update
 
@@ -230,9 +234,6 @@ modified: 2021-05-06T09:38:31.520Z
 
 - dispatch
   - 作者推荐将async逻辑放在编辑器之外，等到await asyncLogic完了，再执行dispatch
-
-- 在editor中插入内容要考虑
-  - 选区， del键/快捷键操作影响， 复制粘贴
 
 - 多标签页的实现思路和单标签差别不大，视觉上只有1个visible的editor，上方是tab
 
