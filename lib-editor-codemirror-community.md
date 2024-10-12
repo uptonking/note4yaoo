@@ -16,7 +16,7 @@ modified: 2023-01-29T10:52:44.183Z
 
 - ## 
 
-- ## [How to get the instance of editor in DOM? - discuss. CodeMirror _202206](https://discuss.codemirror.net/t/how-to-get-the-instance-of-editor-in-dom/4457)
+- ## 💡 [How to get the instance of editor in DOM? - discuss. CodeMirror _202206](https://discuss.codemirror.net/t/how-to-get-the-instance-of-editor-in-dom/4457)
 - EditorView.findFromDOM(htmlDom)
 
 - `cmEditorElement.querySelector(".cm-content").cmView.view`

@@ -12,6 +12,12 @@ modified: 2024-08-08T20:49:11.571Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 💡 [Using css transform results in incorrect behavior · codemirror/dev _202010](https://github.com/codemirror/dev/issues/324)
+- 202309: the view supports translation and scaling. Other types of transformation are probably never going to be supported, but translation is easy, and I believe I've added the necessarily logic to make scaling work properly.
+  - 202311: Closing this. Support for more complicated transforms is not planned.
+
 - ## [Force a layout pass programmatically - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/force-a-layout-pass-programmatically/5914)
 - Could it be that your fonts or styles are loading after the editor initializes? A `view.requestMeasure()` should cause it to re-measure its layout. Sometimes it helps to do this on a "load" event.
 
@@ -310,7 +316,16 @@ window.matchMedia('(prefers-color-scheme: dark)')
 # discuss-event-focus/blur
 - ## 
 
-- ## 
+- ## [How to set cursor position in Codemirror editor - Stack Overflow](https://stackoverflow.com/questions/33394855/how-to-set-cursor-position-in-codemirror-editor)
+- Before you set the cursor position you have to focus on the editor.
+
+- ## 🤔 [set cursor position in v6 - discuss. CodeMirror _202206](https://discuss.codemirror.net/t/set-cursor-position-in-v6/4476)
+  - `editor.dispatch({selection: {anchor: N, head: N}})`
+
+- Could it be that the editor is simply not focused? The cursor won’t be visible then.
+
+- ## [How to programmatically remove focus from the editor? - v6 - discuss. CodeMirror _202108](https://discuss.codemirror.net/t/how-to-programmatically-remove-focus-from-the-editor/3429)
+- `cm.contentDOM.blur()` should work.
 
 - ## 📱 [What is the purpose of settimeout of 10ms in updateForFocusChange? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/what-is-the-purpose-of-settimeout-of-10ms-in-updateforfocuschange/8369)
   - codemirror’s blur happens after a 10ms timeout, making it the last event, occurring after my event
