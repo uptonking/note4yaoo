@@ -36,6 +36,14 @@ modified: 2024-06-30T11:15:28.002Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## I understand that k8s and containers is impossible to avoid these days, but when shit goes wrong, the layers of the onion you have to unravel are wild. 
+- https://x.com/mitsuhiko/status/1843307524700934176
+  - Gone are the days you quickly create a coredump or attach gdb/strace etc. Now debugging takes ages and sometimes is not helpful.
+
 - ## Why Kubernetes uses Pods instead of Containers
 - https://x.com/iximiuz/status/1816522606834786540
   - A container is an isolated and restricted "box" to run (a single instance of) your app. 

@@ -105,6 +105,24 @@ modified: 2023-11-10T07:10:19.089Z
 
 - ## 
 
+- ## node 写服务端或者说写前+后，纵使有千般不好，万般不是。 但一个仓库一个语言一个框架一个编辑器一次解决问题，这一点就够了。
+- https://x.com/wwwgoubuli/status/1844569476257427554
+  - 这个趋势不会变的。node 就是会吃下越来越多的“靠前的后端”。
+  - 来我们公司前真的怀疑过所谓全栈框架 next, nuxt 之流是否真能写后端，但我们还真就是直接用 nextjs 写后端撑起百万的月活。
+
+- 确实，而且这样有一个好处就是在monorepo的开发模式下，types.d.ts可以共用，彻底解决前后端API对接时的类型同步问题
+
+- 但是量化不得不用py
+  - 所以说嘛，它可以处理也擅长的是比较靠前的那部分后端。我这两年其实越来越少说后端，我比较喜欢说服务端。因为有很多时候，一些模块或者服务和前端是没有任何交互的，他们只操作队列或者数据库。同样的，前端也应该尽量只操作这些数据源。和后端的耦合不应该是过多的增删改查。
+
+- 太绝对了，风水轮流转，ASP、PHP 何曾不是那么流行过？
+
+- node 无非是工具罢了。
+
+- ## How do you debug @nodejs ?
+- https://x.com/matteocollina/status/1844694356160028954
+- VS Code and its JavaScript Debug Terminal or by recording a @replayio if the code execution problem is more complex and hard to diagnose
+
 - ## 🆚️ undici.request is MUCH faster than Node's built-in fetch (also backed up by undici).
 - https://x.com/mattpocockuk/status/1841781998622314583
   - The extra overhead of fetch needing to be compliant with web standards really slows it down.

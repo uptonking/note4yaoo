@@ -21,6 +21,14 @@ modified: 2023-12-26T19:10:48.719Z
 
 ## webpack-rewrite
 
+- https://github.com/hardfist/unpack /202410/rust
+  - Unplugin API built on top of Webpack architecture
+  - Unpack is a miniature model of the bundler, intended to teach the structure of the real bundler.
+  - Crafting Bundler builds Unplugin API on top of Webpack architecture.
+  - This is the repo used for the in-progress book "Crafting Bundler". It contains the markdown text of the book, full implementation of bundler(unpack).
+  - Inspired by https://github.com/sandersn/mini-typescript and https://github.com/codecrafters-io/build-your-own-x and https://github.com/munificent/craftinginterpreters/tree/master
+  - literally writing a mini rspack bundler implementation... as a way to teach and reference bundler design. "will contain 1/10th the functionality of rspack"
+
 - https://github.com/JinJieTan/mini-webpack /201909/js
   - 本文会先介绍webpack的打包流程，运行原理，然后去实现一个简单的webpack
   - 识别入口文件，逐级递归识别依赖，构建依赖图谱，将代码转化成AST抽象语法树，把AST抽象语法树变成浏览器可以识别的代码， 然后输出

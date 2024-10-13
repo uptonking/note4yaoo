@@ -244,7 +244,10 @@ modified: 2022-11-07T11:00:28.824Z
 
 - ## 
 
-- ## 
+- ## Once we became profitable @typesense , my conversations with VCs shifted.
+- https://x.com/jasonbosco/status/1845071072414077181
+  - I’d tell them that capital is no longer a constraint for us. So are there any other non-monetary benefits they bring to the table? Till date I haven’t heard a convincing answer
+  - Long story short: It’s a grind to reach profitability, but once you get there and you’re able to do all the things you want to… Raising from VCs becomes a very very poor proposition.
 
 - ## 很多朋友都是因 ChatGPT、或技术而关注到我的。最近被推广烦透了，我就写了一份公众号商业合作声明
 - https://x.com/lencx_/status/1806991730954387886
@@ -1314,6 +1317,37 @@ modified: 2022-11-07T11:00:28.824Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 国内类似Stripe 这种复合支付平台都有哪些不错的？ 我的应用都是自己接官方的SDK 想了解一下用这种平台有没有必要？
+- https://x.com/vikingmute/status/1844188537668894852
+- 既然可以直接接官方了，那就肯定直接接官方啊。不过，接官方基本上都是要企业/个体户，也就是说涉税。大概你可能还想了解，个人是不是也可以接入吧：
+  1、个人可以接支付宝官方；微信不行。
+  2、除了接官方，还可以自己挂机做webhooks实现自动收款，挂自己个人微信/支付宝的收款二维码。
+  1&2我用一年多了
+- 支付宝是当面付吗
+  - 当面付，可以回调。
+
+- ## 调查完毕了，在国内做支付，尤其是独立开发，就别用第三方聚合平台了，还要被抽成，直接接支付宝和微信的官方 SDK 就行了，代码量也不大，
+- https://x.com/vikingmute/status/1844289771801280895
+  - 我主要用的是微信支付，一年有年费 300元，使用支付宝应该是一个更省钱的方案。
+- 从经营合规性来说，这个业务需要申请ICP经营许可证，并且每年要年检，还有很大可能需要做安全性定级备案，总结一下要求就是必须有个营业执照，注册资本在100w以上，申请ICP经营许可证，办理安全定级备案，域名做ICP备案和公安备案并获得备案号，一般的独立开发满足这些条件有点难……
+
+- 个人去接微信和支付宝sdk，只能做内购，没法做订阅吧？
+  - 我看微信有这个委托代扣功能：https://pay.weixin.qq.com/wiki/doc/api_external/ch/open/chapter5_1_1.shtml#part-4 可以实现免密支付
+  - 一般公司签不到，不然就要签一堆的合约，以及交保证金。
+
+- 没企业资质能接吗
+  - 不能 需要有公司
+  - 找个营业执照，上传支付宝，开通个人商户就行了。
+- 就是要注册公司，但实际上已经很简单了
+
+- 找个营业执照，上传支付宝，开通个人商户就行了。
+
+- 对的，第三方支付手续费都能够给微信支付的年费了，而且说实话，选择了做国内业务就安安分分就好了
+
+- 微信支付只需要第一年认证就行，以后就不需要每年300了。别人用聚合支付，主要是灰产。你正常业务需要的话，备案一个域名，然后申请微信支付和支付宝企业支付就足够了
 
 - ## 最近搞微信系的支付，头都大了。微信商户、微信支付、微信收款商业版（还送一个微信小商店，直接开小商店是没有入口的）、企业微信、公众号、小程序（这些非个人主体认证一个 300/年）。
 - https://x.com/_Xheldon/status/1793263004550599157

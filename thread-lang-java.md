@@ -37,7 +37,11 @@ modified: 2023-12-15T19:40:39.912Z
 
 - ## 
 
-- ## 
+- ## Are you using #Java annotation processors? Then watch out when upgrading to Java 23: 
+- https://x.com/gunnarmorling/status/1844031793672180105
+  - APs are not picked up any longer by default from the class path. 
+  - Instead, opt in via --proc:full
+  - Alternatively, you can also add the JAR with the processor to the separate annotation processor path of the Java compiler, which is practical in particular if the processor provides separate JARs for its annotations and the processor (like for instance @GetMapStruct does).
 
 - ## java 22 is now available _20240319
 - https://twitter.com/ErikGahlin/status/1770118137062588630

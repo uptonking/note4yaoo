@@ -415,4 +415,12 @@ modified: 2021-01-04T17:26:43.784Z
   - Transform PDF to JSON or Markdown with ease and speed
   - Understands detailed page layout, reading order and recovers table structures
   - Optionally applies OCR (use with scanned PDFs)
+
+- https://github.com/lumina-ai-inc/chunkr /AGPLv3/202410/python/ts/rust
+  - https://chunkr.ai/
+  - Vision model based PDF chunking.
+  - We have temporarily switched to Textract for OCR from PaddleOCR. Textract is provided for free until we resolve PaddleOCR issues.
+  - Lumina的一款基于视觉模型的PDF分块处理工具：Chunkr，速度每秒可处理约5页
+  - 基于视觉模型进行段落提取和OCR，通过 Rust Actix 服务器统一输出，可实现单个NVIDIA L4 GPU上达到每秒约5页速度
+  - 支持自托管部署，兼容GPU和CPU，提供用户界面
 # more-pdf

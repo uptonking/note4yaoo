@@ -53,7 +53,14 @@ modified: 2023-05-07T18:35:50.897Z
 
 - ## 
 
-- ## 
+- ## .io存世量很大，应该不会直接删除，可能会停止新注册。 别怕苏联解体这么多年不见了， .su 也还在呢
+- https://x.com/hixiaoji/status/1845312320525959235
+- spring官网就是
+- http://socket.io 丸辣
+
+- 主要是之前南斯拉夫解体，出来一堆克罗地亚，黑山国家都在争吵继承.yu域名，IANA就改规则，国家没了域名也要删除。
+  - 不过io域名由于使用广泛，很可能会被IANA收回转为com，net一样的通用域名。
+- 大惊小怪，su 域名现在都能注册，苏联都解体几十年了。
 
 - ## 推荐一个最近发现的邮件发送服务商 Brevo（http://brevo.com），他的免费套餐非常良心，
 - https://x.com/interjc/status/1840917391120691463
@@ -61,7 +68,7 @@ modified: 2023-05-07T18:35:50.897Z
   - 之前使用的 Sendgrid 莫名其妙就把我风控了，于是才重新调研找了这家，也算是一种机缘
   - 需要验证域名
   - 这个只是提供 api，调用以后发邮件。嵌入到哪里的软件应该没有区别。不过纯国内似乎也可以使用 aliyun 的 mail
-
+THREAD
 - ## Another day when I miss that cloud disk storages (S3, Google Drive, Dropbox, iCloud etc.) didn't implement atomic compare-and-swap.
 - https://x.com/Horusiath/status/1791335631823712266
 

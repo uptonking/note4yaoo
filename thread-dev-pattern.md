@@ -30,6 +30,21 @@ modified: 2021-02-19T12:23:12.286Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Controversial opinion: booleans in user-facing APIs are almost always the wrong thing.
+- https://x.com/elithrar/status/1844066772938522731
+  - Enums are better, self-documenting, easier to grow over time, and make handling the "null" state easier.
+  - Also: some languages like Go treat the absence (default value) of a boolean as false, which can be tricky - you don’t know if the user explicitly passed false or not.(Pointer types can help, but it’s a sharp edge)
+
+- Totally agree. Enums can be problematic because consumers expect these to be a rigid set. It means you either make sure enums are “open” or you’re potentially facing a breaking api change if you add a new member. Not always the case, painful when it is.
+
+- Great for TS, though I hate relying on JS string matching for enums though 🙃 better have good Intellisense
+
 - ## 🆚️ concurrency is NOT parallelism. 提供了动画示例
 - https://x.com/NikkiSiapno/status/1840656501461184549
   - One is about managing multiple tasks at once, intermixing them to optimize resource usage.

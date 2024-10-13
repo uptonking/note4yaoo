@@ -1204,6 +1204,12 @@ modified: 2023-06-23T12:46:53.288Z
   - https://github.com/rizerphe/codemirror-companion-extension /MIT/202311/ts
     - a backward-compatible fork of saminzadeh's project that allows the user to display text different than that being accepted, and to instantly trigger the completion function upon accepting the previous completion.
 
+- https://github.com/duncanpierce/codemirror-reflector /MIT/202410/ts
+  - https://duncanpierce.github.io/
+  - Refactoring, smart navigation and code assistance for CodeMirror
+  - Reflector is a CodeMirror extension that allows language packages to provide refactoring, code navigation and linting features.
+  - It plugs into CodeMirror's Lint extension and uses it to display problems and suggestions it has found. It also provides Autocomplete suggestions using the identifiers that are in scope.
+
 - https://github.com/replit/codemirror-vscode-keymap /202212/ts/inactive
   - Ports VSCode's keyboard shortcuts to CodeMirror 6.
 

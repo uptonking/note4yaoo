@@ -190,7 +190,10 @@ modified: 2024-08-24T16:28:20.515Z
 
 - ## 
 
-- ## 
+- ## 🚀 Github Copilot Chat for Repo 全面开放，免费使用
+- https://x.com/tuturetom/status/1843648749324865879
+  - 对任意 Github 仓库进行语义提问，全局可用，动动嘴就能学习项目源码的时代正式到来
+  - https://github.com/copilot
 
 - ## [What's the different between replit agent which is just released and cursor? : r/replit _202409](https://www.reddit.com/r/replit/comments/1fabsow/whats_the_different_between_replit_agent_which_is/)
 - ReplitAgents is a MVP builder. Don't expect any sophisticated from it

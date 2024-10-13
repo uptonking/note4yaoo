@@ -357,6 +357,20 @@ modified: 2023-11-28T14:48:45.910Z
 
 - ## 
 
+- ## What @NotionHQ feature should we un-ship? _202410
+- https://x.com/akothari/status/1843512114612449483
+- The AI suggest feature that activates when pressing tab is annoying. It gets in the way of writing
+- Everything “AI”
+
+- Mandatory name column in tables
+  - Or at least allow us to switch it / combine it with the Auto ID column type Often, I want the page name to be the Auto ID, like in a database of RFCs
+
+- 
+
+- ## ✨ Anything goes edition: What Notion feature SHOULD we ship? _202410
+- https://x.com/NotionHQ/status/1844099360671531383
+- 
+
 - ## 📈 [Show HN: Eidos – Offline alternative to Notion | Hacker News _202406](https://news.ycombinator.com/item?id=40746773)
 
 - A key idea of Eidos is to make each table a real SQLite table, so users can view and modify it through other software or visualize it with tools like Metabase

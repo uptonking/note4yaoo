@@ -20,7 +20,13 @@ modified: 2024-08-11T07:19:29.817Z
 
 - ## 
 
-- ## 
+- ## Aider keeps shipping with 70% of its code now written by AI. But I think its growth is constrained by being terminal only. 
+- https://x.com/imrat/status/1845158205552226742
+  - Replit Agents has massive potential especially as early alpha. Improvements made are great. But I think they may struggle to be adopted in enterprise.
+  - Cursor  adoption in enterprise is huge (70%-80% of users are on Windows) and I think they will focus more and more on code for complex services / apps. Those that can’t be deployed at the press of a button and have UIs too complex for AI. 
+  - V0 owns the front end space right now. I think they will deliver big improvements on Tuesday launch. I hope better support for backend and deployment is coming. 
+
+- google idx looks pretty interesting. So does bolt(dot) new. FOSS version of v0 is called "Llamacoder" (also fairly nice).
 
 - ## Parallel cmd-k’s are becoming unexpectedly popular
 - https://x.com/cursor_ai/status/1765512112200151391
@@ -33,7 +39,25 @@ modified: 2024-08-11T07:19:29.817Z
 
 - ## 
 
-- ## 
+- ## Everyone's building AI Agents. Here are the most popular libraries:
+- https://x.com/deedydas/status/1845297659760058668
+  Langchain [93.4k]
+  Microsoft Autogen [31.8k]
+  Microsoft Semantic Kernel [21.6k]
+  Crew AI [20k]
+  OpenAI Swarm [4.7k]
+  Langroid [2.4k]
+
+- I would add couple to this list:
+  mem0 (22.3k stars and it includes super useful embedchain)
+  streamlit (35.1k stars)
+  crawl4ai (13.3k stars)
+  OpenAI API (a lot of open source LLMs can be used via same API)
+  Gemini Developer API
+  Anthropic API
+  3rd party providers like: Monster API, Replicate and AI/ML
+
+- Most popular, sure. But the only ones they should use is swarm and lang graph. Theres a good series on YT breaking down why that is, but long story short, the other frameworks are so costly (up to 15x more) and nowhere near production ready.
 
 - ## Introducing @Taskade 's AI Teams with Multi-Agent Collaboration, now in beta
 - https://x.com/Taskade/status/1822908447597396176

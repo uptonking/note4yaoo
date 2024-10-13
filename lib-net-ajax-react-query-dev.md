@@ -210,6 +210,12 @@ modified: 2023-03-05T08:55:03.696Z
 
 - 💡 do initial fetches on the server (e.g. next), but do refetches on the client (react-query). 
   - Same as rendering really: initially on the server, but then on the client only.
+# discuss-stream
+- ## 
+
+- ## What if @Tan_Stack Query supported streams?
+- https://x.com/tannerlinsley/status/1844511451110834442
+
 # discuss
 - ## 
 

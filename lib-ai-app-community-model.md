@@ -125,6 +125,15 @@ modified: 2023-10-30T07:34:03.602Z
 - I explored some closely related ideas with @MagicPaperAI . You guys have pulled off the synthesis of highlights and copied fragments. I’d posit that the next key synthesis is between copied fragments and revisions of a document. Edits are partial copies.
 - Great work! I like the flow of adding & organizing snippets -> augmented synthesis. The more snippets you grab under a heading, the clearer a cluster forms. That then generates 'what you're getting at' summaries & gives AI bounds to forage for related snippets. Good loop there.
 
+ # discuss-multi-agents
+- ## 
+
+- ## 
+
+- ## OpenAI 悄悄开源了构建多代理智能体协同框架：Swarm
+- https://x.com/aigclink/status/1844936446416912628
+  - 用于构建、编排和部署多代理
+
  # discuss
 - ## 
 

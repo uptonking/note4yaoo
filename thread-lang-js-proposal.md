@@ -88,6 +88,25 @@ modified: 2023-11-10T08:05:25.474Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🔀 JavaScript 标准委员会今天通过了新的提案，增加 struct, shared struct, unsafe 块，内存顺序，Mutex 同步原语等概念，解锁 JavaScript 多线程共享内存的能力
+- https://x.com/_hisriver/status/1843671089534382244
+  - 未来可以让 JavaScript 像 Rust 和 Go 一样拥有高并发能力。我看 JS 的大佬一致叫好，不过这些复杂的东西引入 JavaScript 真的有必要吗？
+  - 那个 Memory Ordering 挺复杂的，Rust 里面我花了好久才搞明白。以后 JavaScript 也要写 Unsafe 代码了？
+- Stage 1 而已，至少要到 Stage 3 才算通过
+
+- 挺好的，worker终于有靠谱数据传递和锁机制了
+- 引入了worker却不能共享对象才叫奇怪，这个是对之前奇怪地方进行修正，当然如果当初不加worker就不会有这些需求。
+
+- 这个提案其实已经有一段时间了，也不是今天才加的。而且这个多线程共享内存的能力原本就有（SharedArrayBuffer），只是是个底层api，不是给人用的（一般是作为编译target，手写太蛋疼）
+
+- 这个早晚的事情，要不然web 平台很难跟 android 和 ios 竞争。而且 web 是开放的，我认为更应该进化。
+
+- 已经完全成为rust了？？不过这么多新标准要一一落实估计得10年了
+
 - ## This presentation to TC39 has me *worried* for the future of JavaScript. _202410
 - https://x.com/nullvoxpopuli/status/1842389133810913338
   - JS0 -- the minimum JS the engines want to implement

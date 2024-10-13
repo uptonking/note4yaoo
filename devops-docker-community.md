@@ -12,6 +12,25 @@ modified: 2024-06-30T11:17:28.971Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## docker 是不能做到不同的用户之前相互隔离的吗？ 比如我有 A 和 B 两个不是 root 的账户，授予 docker.sock 的访问以后他们俩就都可以成为 root 并管理内容了？？？
+- https://x.com/Lakr233/status/1844993521113055437
+- 你要找的其实是 rootless container。 不过 podman 确实算是一个 rootless container。
+  - 不干扰 podman rootless 每个用户有自己的容器，使用podman generate 生成systemd文件，让systemd 托管各个用户podman 容器生命周期
+
+- docker也可以装成rootless的，就是不知道是否可以如预期那样
+
+- 是的 如果希望隔离的话，可以用 rootless 的 podman，作为 docket 的 drop-in replacement
+
+- 对，这是通过 Docker 进行本地权限提升的常见手段，所以在很多情况下安装 Docker 会被认为是一种攻击面
+- docker socket API可以认为是root
+- 容器内访问 Docker Socket 是一种提权手段，因为 Docker Daemon 是 Root 权限运行的
+
+- runc 是共用一个host kernel，要做到容器安全隔离可以看看kata container ，不同容器独用一个guest kernel
+
+- docker 守护进程默认 root 权限运行的，容器里的 root 用户也映射到宿主机 root 账户。 要完全隔离得配置 rootless，每个账户下运行各自的daemon，这样创建出的容器，内部 root 用户才会映射到当前账户，不过会遇到些奇奇怪怪的问题。 感觉用 podman 玩一玩 rootless 比较方便。
+
 - ## Why we wrote Docker in Go instead of Python:
 - https://x.com/solomonstre/status/1842342755194048981
   - A compiled binary that didn't require installing a language runtime and therefore didn't trigger tribalism(效忠部落主义; 效忠集体主义).

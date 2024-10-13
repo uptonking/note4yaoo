@@ -276,6 +276,11 @@ modified: 2023-02-08T07:20:48.475Z
   - https://hollama.fernando.is/
   - A minimal web-UI for talking to Ollama servers
   - Markdown parsing w/syntax highlighting
+
+## llama-rewrite
+
+- https://github.com/naklecha/llama3-from-scratch /MIT/202405/jupyter/inactive
+  - llama3 implementation one matrix multiplication at a time
 # text2image
 - https://github.com/Stability-AI/stablediffusion
   - https://github.com/CompVis/stable-diffusion

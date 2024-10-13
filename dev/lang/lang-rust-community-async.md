@@ -34,7 +34,9 @@ modified: 2023-08-28T04:43:22.738Z
 
 - ## 
 
-- ## 
+- ## Raft要求IO串行执行。Openraft采用基于回调的异步IO接口以提升性能，但这增加了应用开发的复杂性。
+- https://x.com/drmingdrmer/status/1845274065046798698
+  - 在存储实现中处理多个IO时，内部仍须保证串行。异步IO接口可用于IO聚合，但不意味允许乱序执行。开发者需谨慎维持正确的执行顺序。
 
 - ## Async is the final boss in Rust. _202408
 - https://x.com/fredine/status/1821048270711615936

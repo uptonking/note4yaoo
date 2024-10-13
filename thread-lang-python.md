@@ -22,7 +22,20 @@ modified: 2024-02-14T12:35:31.547Z
 
 - ## 
 
-- ## 
+- ## 经我考虑后，决定在新项目上采用Django和PostgreSQL技术栈。
+- https://x.com/1oogle/status/1844008735838257644
+  - 虽然最开始我也想继续沿用FastAPI，但是考虑到和同事之间协作顺利、ORM与DTO的转换、第三方生态库以及分包开发的问题，最后还是用敲定用Django这最为成熟的方案
+
+- 只开发rest api吗还是前后端不分离的（比如要后端通过template engine渲染页面）？如果只是前者，感觉Django有点重，如果是后者或者后者+rest api，我觉得Django非常适合。个人觉得Django的orm用的不是很顺手，比如laravel的eloquent好用
+
+- Django的用户权限代码生成做得不错，很适合CMS，不过关键在于app做好部署怎么保证large scale吧
+
+- 要写视图的话用 jinja2 别用 django 那自带的残废模板
+
+- 还需要加上redis做缓存。注意要优化所有的全表搜索，否则很容易就把服务器搞死了
+
+- Django + DRF，现在已经全面支持async了，建议直接上asgi，做一套boilerplate到处都能用
+  - 其实说法不对，Django也没完全支持，ORM都还是通过 sync_to_async这种魔改的方式来强行支持……至于DRF, 作者现在心思都放在 httpx 以及 Starlette 上了, 所以DRF仍不支持Async，只能用第三方包adrf来支持，但这个包能否在生产上稳定使用仍未知
 
 - ## [Which Python Web Framework to Choose for 2023: Django, Flask, FastAPI or Tornado? | by PrimerPy | Medium _202302](https://primerpy.medium.com/which-python-web-framework-to-choose-for-2023-django-flask-fastapi-or-tornado-9d05860adfe3)
 - If you’re building a traditional, monolithic web application with a relational database, Django might be the best choice.

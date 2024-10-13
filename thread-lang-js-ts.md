@@ -85,7 +85,16 @@ modified: 2021-01-28T14:34:20.579Z
 
 - ## 
 
-- ## 
+- ## Sick of Node truncating your objects when you log them? Check out `console.dir(obj, { depth: Infinity })` .
+- https://x.com/mattpocockuk/status/1843234819326484629
+- inspect() is a more general purpose tool for these things 
+  - I learned the hard way Node.js might truncate error chains too This happens when using Error Cause, AggregateError etc 
+  - Solution: `console.error(inspect(err, {depth: Infinity}));`
+
+- depth: null > depth: Infinity
+
+- JSON.stringify will use obj.toString() or obj.toJSON() if found.
+  - some objects just get skipped altogether by JSON.stringify
 
 - ## The year is 2024 and TypeScript still doesn’t have a built-in JSON type
 - https://twitter.com/EricVicenti/status/1778823633248702972

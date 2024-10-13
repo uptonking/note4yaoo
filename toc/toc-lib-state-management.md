@@ -307,7 +307,7 @@ modified: 2020-07-14T11:03:53.196Z
   - Signals can be accessed directly and your component will automatically re-render when the signal's value changes.
   - [Reactive/Store-like primitive](https://github.com/preactjs/signals/issues/4)
   - [Proposal: Multi-value Signal using bitmaps (bit arrays)](https://github.com/preactjs/signals/pull/217)
-  - [Reasoning for using prototype over classes](https://github.com/preactjs/signals/issues/216)
+  - 🤔 [Reasoning for using prototype over classes](https://github.com/preactjs/signals/issues/216)
     - It performed better in benchmarks, and avoided cruft resulting from transpiled TypeScript classes
   - https://gitlab.com/kevindoughty/undo-manager /MIT/202404/js
     - Undo and redo management for Preact Signals
@@ -326,6 +326,18 @@ modified: 2020-07-14T11:03:53.196Z
   - [Signals in Vanilla JS](https://www.trpkovski.com/2023/04/25/signals-in-vanilla-js/)
 - https://github.com/ic3Dragon/such-a-fancy-shopping-list
   - A shopping list app using typescript and preact signals
+
+- https://github.com/stackblitz/alien-signals /MIT/202410/ts
+  - The lightest signal library
+  - The goal of alien-signals is to create a Signal library with the lowest overhead.
+  - We have set the following scheduling logic constraints:
+    - Based on Push-Pull
+    - No dynamic objects
+    - No use of Array/Set/Map
+    - No recursion calls
+    - Class properties must be fewer than 10 (https://v8.dev/blog/fast-properties)
+  - The overall performance of alien-signals is approximately 400% that of Vue 3.4's reactivity system.
+  - To achieve high-performance code generation in https://github.com/vuejs/language-tools, I needed to write some on-demand computed logic using Signals, but I couldn't find a low-cost Signal library that satisfied me.
 
 - https://github.com/tldraw/signia /ts
   - Reactive signals that scale, by tldraw.
