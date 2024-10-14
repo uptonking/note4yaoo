@@ -345,6 +345,7 @@ modified: 2022-08-21T10:02:05.129Z
     - APITable is the open-source and community version of Vika.
     - Vika is a SaaS distribution for China mainland built on APITable open-source core
   - [chore: update BSL license by mr-kelly](https://github.com/apitable/apitable/pull/1428)
+  - [Bika.ai - Automate Your Work with Intelligence](https://bika.ai/)
 
 - S2 /1.1kStar/MIT/202302/ts/纯前端
   - https://github.com/antvis/S2

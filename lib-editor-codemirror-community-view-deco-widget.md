@@ -53,9 +53,20 @@ modified: 2024-09-10T11:29:46.166Z
 
 - ## 
 
-- ## 
+- ## 🌰 [unmount() method in WidgetType  _202104](https://github.com/codemirror/dev/issues/451)
+  - The only problem is that I could not remove the state listeners easily, when the widget gets unmounted (for example when the line goes out of the viewport).
 
-- ## 
+- this is actually quite painful to support, because the view tree update logic is really complicated and keeping track of where views are dropped is hard. I'm not sure yet whether I want to release this as a feature. Would using a custom element with disconnectedCallback be a workable solution for your use case?
+  - custom element acts like a regular unknown element, except that when removed from the DOM, its disconnectedCallback is called. Does that help here?
+- Your solution with custom elements works pretty well, although the code became a bit hacky because I had to dispatch custom events on the disconnect callback in order to properly dispose the handlers from the WidgetType instance
+
+- ## [CM6 WidgetType toDOM/updateDOM context - v6 - discuss. CodeMirror _202102](https://discuss.codemirror.net/t/cm6-widgettype-todom-updatedom-context/2867)
+  - I’m attempting to use a Decoration.widget() to insert an image right after a URL corresponding to an image.
+  - Currently, I’m constantly re-creating the widget with `Decoration.widget({widget: new ImageWidget(imageUrl)})` . Is there a better way to do this?
+
+- The idea is to give widgets as little dependencies as possible, so that they don’t have to be re-rendered every time something changes elsewhere in the document. 
+  - Is there anything, beyond the image’s URL, that your widget depends on? If not, then putting the URL in the widget instance works, doesn’t it? 
+  - Recreating the widget instance, as long as they have a proper eq method, shouldn’t be very expensive, since the widget DOM won’t be re-rendered (this is why the indirection through WidgetType exists).
 
 - ## 💡 [the block widget disappeared after add or remove a new line - discuss. CodeMirror](https://discuss.codemirror.net/t/the-block-widget-disappeared-after-add-or-remove-a-new-line/4855)
 - I tried to simulate the onchange event here but don’t know how to do it properly. I am using a react version of CM
@@ -217,7 +228,7 @@ modified: 2024-09-10T11:29:46.166Z
   - Or keep using a builder and add some extra logic to make sure you insert them in order.
 
 - ## [Updating block-widgets // What is the order of the state update cycle, exactly? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/updating-block-widgets-what-is-the-order-of-the-state-update-cycle-exactly/8365)
-- I suspect, from your message, that you’re mutating your decorations, and expecting the method to run then? That’s not how these work—they are immutable like everything else you store in your state. You replace them with a widget of the same type to have updateDOM called.
+- I suspect, from your message, that you’re mutating your decorations, and expecting the method to run then? That’s not how these work—they are immutable like everything else you store in your state. You replace them with a widget of the same type to have `updateDOM` called.
 
 - ## [Block decoration and gutter line numbers - discuss. CodeMirror](https://discuss.codemirror.net/t/block-decoration-and-gutter-line-numbers/3710)
 - You should always use state decorations for block decorations or other height-influencing things. I haven’t found a way to cheaply check this at run-time, but the docs mention it.
@@ -232,7 +243,13 @@ modified: 2024-09-10T11:29:46.166Z
 - ## [How to recognise if a widget is removed ? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/how-to-recognise-if-a-widget-is-removed/8180)
 - You could do a check where you see if the range set’s size changed after mapping, and if so, do a scan through it to figure out which widget that you still have in your outside data was removed.
 
-- ## [How to get widgets from DecorationSet? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/how-to-get-widgets-from-decorationset/3772)
+- ## 🤔 [How to get widgets from DecorationSet? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/how-to-get-widgets-from-decorationset/3772)
+  - I have a StateField that contains DecorationSet.
+  - in some cases, I need to enumerate all existing decorations and get the widgets from them. Is there a way to do it?
+  - I use replace decorations, they replace specific strings of text, and I want to make them appear selectable, just like text, so I want to regenerate the DOM and change the styles there so that the widgets appear selected.
+
+- Decoration sets are immutable and widget DOM should be a pure function of the widget decorations, so you can’t, but you can regenerate the decorations when something about them should change, and you can even use the widget’s updateDOM 12 method to optimize the DOM updates.
+
 - I’ve used DecorationSet.between to iterate the decorations in the set
 
 - ## [Hide StateField decorations when replaced code is selected - v6 - discuss. CodeMirror _202310](https://discuss.codemirror.net/t/hide-statefield-decorations-when-replaced-code-is-selected/7219)

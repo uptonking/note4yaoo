@@ -24,7 +24,19 @@ modified: 2024-05-02T06:41:19.983Z
   - 在mvu架构的基础上通过provide暴露api
 # extensions/plugins
 
-# styling
+# state
 
+# view
+
+## widget
+
+- 通过eq和updateDOM多层拦截判断来减少重绘
+- `toDOM`
+  - 具体实现可以调用this.updateDOM()，也可以不调用
+- `updateDOM`
+  - if return true, the original dom is kept and updated
+  - if return false, the original dom is destroyed and recreated
+- `eq` is used in merge widgets/decorations
+# styling
 - 编辑器获取到焦点时 .cm-editor 的dom元素会增加样式类 .cm-focused
 # more

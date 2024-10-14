@@ -170,6 +170,15 @@ modified: 2023-06-23T12:46:53.288Z
   - https://github.com/Zettlr/Zettlr/tree/develop/source/common/modules/markdown-editor/plugins
     - 🔌 ext实现了typewriter(当前行居中),contextMenu,statistics-fields,toc
 
+- https://github.com/wikimedia/mediawiki-extensions-CodeMirror /GPL/202410/js
+  - https://doc.wikimedia.org/CodeMirror/master/js/js/
+  - MediaWiki extension CodeMirror
+  - provides syntax highlighting in MediaWiki wikitext editors using CodeMirror
+- https://github.com/bhsd-harry/codemirror-mediawiki /GPLv2/202407/ts
+  - https://bhsd-harry.github.io/codemirror-mediawiki/
+  - Modified CodeMirror mode based on wikimedia/mediawiki-extensions-CodeMirror
+  - The goal is to support a standalone integration between CodeMirror and Wikitext, without the need for a MediaWiki environment
+
 - https://github.com/tidbcloud/tisqleditor /MIT/202408/ts
   - https://tisqleditor.vercel.app/
   - https://tisqleditor.vercel.app/playground
@@ -770,15 +779,6 @@ modified: 2023-06-23T12:46:53.288Z
   - https://composr-omega.vercel.app/
   - Composr is a markdown writer with real-time compiler for the web.
 
-- https://github.com/wikimedia/mediawiki-extensions-CodeMirror /GPL/202410/js
-  - https://doc.wikimedia.org/CodeMirror/master/js/js/
-  - MediaWiki extension CodeMirror
-  - provides syntax highlighting in MediaWiki wikitext editors using CodeMirror
-- https://github.com/bhsd-harry/codemirror-mediawiki /GPLv2/202407/ts
-  - https://bhsd-harry.github.io/codemirror-mediawiki/
-  - Modified CodeMirror mode based on wikimedia/mediawiki-extensions-CodeMirror
-  - The goal is to support a standalone integration between CodeMirror and Wikitext, without the need for a MediaWiki environment
-
 - https://github.com/lhlyu/pure-editor /MIT/202302/ts/inactive
   - a pure editor developed using codemirror6
 
@@ -1176,7 +1176,7 @@ modified: 2023-06-23T12:46:53.288Z
   - codemirror-final-newline
   - codemirror-markdown-commands
   - codemirror-markdown-image
-  - codemirror-toolbar
+  - codemirror-toolbar 非浮动工具条
 
 - https://github.com/exuanbo/codemirror-toolkit /MIT/202312/ts
   - A batteries-included toolset for efficient development of CodeMirror 6 based editors (w/o React).

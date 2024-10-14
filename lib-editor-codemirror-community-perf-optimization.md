@@ -47,10 +47,10 @@ modified: 2024-08-11T03:39:54.012Z
 
 - ## 
 
-- ## [Cache objects between Widgets updates - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/cache-objects-between-widgets-updates/6844)
+- ## 🤔 [Cache objects between Widgets updates - v6 - discuss. CodeMirror _202307](https://discuss.codemirror.net/t/cache-objects-between-widgets-updates/6844)
   - In a Widget’s constructor, I’m initializing a class (a UI library) that is slow to compute, so I’d like to cache it between updates. Unfortunately, the Widget’s constructor is called on every update, so that object is disposed, even if the Widget is equal
   - I understand Widgets are supposed to be cheap to create, but is there a proper way to retain data inside a Widget?
-- Not really, except closing over it in the code run in toDOM. I don’t know why you need to retain this value, so I can’t really give specific advice from what you’ve shown.
+- Not really, except closing over it in the code run in `toDOM`. I don’t know why you need to retain this value, so I can’t really give specific advice from what you’ve shown.
 
 - ## [Replace the entire doc performance - v6 - discuss. CodeMirror _202211](https://discuss.codemirror.net/t/replace-the-entire-doc-performance/5289)
   - when I use the dispatch function to insert a huge text, codemirror will create ten-thousands of dom nodes in the background and freeze the page for a while.

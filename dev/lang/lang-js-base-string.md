@@ -9,6 +9,15 @@ modified: 2024-09-02T06:46:20.751Z
 
 # guide
 
+# string
+
+# number
+
+```JS
+// max number is 9_007_199_254_740_991
+Number.MAX_SAFE_INTEGER === 2 ** 53 - 1
+```
+
 # more
 
 # discuss

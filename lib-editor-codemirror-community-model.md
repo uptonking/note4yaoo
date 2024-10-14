@@ -91,7 +91,8 @@ view.dispatch({ changes: { from: line.from, to: line.to, insert: 'New text for t
 ```
 
 - ## [Updating block-widgets // What is the order of the state update cycle, exactly? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/updating-block-widgets-what-is-the-order-of-the-state-update-cycle-exactly/8365)
-- I suspect, from your message, that you’re mutating your decorations, and expecting the method to run then? That’s not how these work—they are immutable like everything else you store in your state. You replace them with a widget of the same type to have updateDOM called.
+- I suspect, from your message, that you’re mutating your decorations, and expecting the method to run then? That’s not how these work—they are immutable like everything else you store in your state. You replace them with a widget of the same type to have `updateDOM` called.
+
 - ## 🆚 [Difference between state field and facet? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/difference-between-state-field-and-facet/3650)
 - How do you update the facet’s content? The way these are designed, fields are useful for independent bits of state, and facets are more applicable for derived state and inter-module communication.
 
@@ -117,7 +118,8 @@ view.dispatch({ changes: { from: line.from, to: line.to, insert: 'New text for t
   - Not directly using the editor’s syntax highlighting. Though I guess you could run `highlightTree` on the subtree for the text inside the widget, feeding it the same highlighters that your editor uses, and then construct the highlighted DOM directly and put that in the widget.
 - You could apply marker widgets to the content you want to alter, and put empty replace widgets on the stuff you want to hide, skiping the whole need to redecorate it inside a new widget.
 - To fully support the recursion for widgets I was thinking, would it be a bad idea to start a separate instances of CM6 view inside the widget? For example of I have a widget of a matrix, where each cell is a separate CM6 editor. Then I can make matrixes inside matrixes and so one. I tried, not too bad I would say
-- ## [Dispatch changes without redrawing the widget - v6 - discuss. CodeMirror _202304](https://discuss.codemirror.net/t/dispatch-changes-without-redrawing-the-widget/6320)
+
+- ## 🌰🌰 [Dispatch changes without redrawing the widget - v6 - discuss. CodeMirror _202304](https://discuss.codemirror.net/t/dispatch-changes-without-redrawing-the-widget/6320)
   - 3 levels of CM6 is working
   - a new instance of CM6 is embedded into replacing decoration.
   - How to mutate the data without recreating the widget?
