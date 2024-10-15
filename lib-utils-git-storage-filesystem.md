@@ -9,7 +9,10 @@ modified: 2023-08-29T10:23:33.198Z
 
 # guide
 
-# [Git数据存储的原理浅析](https://segmentfault.com/a/1190000016320008)
+# blogs-git-internals
+
+## [Git数据存储的原理浅析](https://segmentfault.com/a/1190000016320008)
+
 - 我的疑问：
   - git怎么存储数据的，如何能根据存储的数据可以很精确的回退到制定的版本？
   - git存储和docker的存储机制类似吗？是不是都是分层的存储？
@@ -40,10 +43,29 @@ modified: 2023-08-29T10:23:33.198Z
 
 - ref
   - [Git内部存储原理](https://zhaohuabing.com/post/2019-01-21-git/)
-# [What filesystem does GitHub use for its repositories and why?](https://www.quora.com/What-filesystem-does-GitHub-use-for-its-repositories-and-why)
+# blogs-storage/files
 
+## [What filesystem does GitHub use for its repositories and why?](https://www.quora.com/What-filesystem-does-GitHub-use-for-its-repositories-and-why)
+
+## [分布式文件系统之NFS - 知乎](https://zhuanlan.zhihu.com/p/295230549)
+
+- 文件系统这个领域，早期的分布式实现更多的是用来实现「共享」，而不是「容错」。
+  - 传统的集中式文件系统允许单个系统中的多用户共享本地存储的文件，而分布式文件系统将共享的范围扩展到通过网络互连的不同机器的用户中。
+
+- 最早的分布式文件系统诞生自上世纪70年代，目前依然在使用的FTP算是其中老资格的代表，但FTP的使用涉及文件的上传和下载，而随后出现的NFS，提供了像访问本地文件一样访问远程文件的方式。
+- NFS直译过来是「网络文件系统」，但其实网络文件系统是一个大类，为了区分，我们可以把它叫做"Sun Network File System"。
+- NFS的实现基于client-server模型，当client的用户态程序使用read()系统调用后，client位于内核的文件系统将通过网络传输，向server的文件系统发送读取某个block数据的请求。
+  - server收到请求后，从自己的disk（或者page cache）读取对应的block数据，发送给client。然后，client的文件系统将收到的数据复制到read()入参指定的user buffer中。
+  - 虽然文件的实体在远端，但从client端用户程序的角度，read()调用返回的结果与对本地文件系统的访问无异，是透明的，这属于一种远程过程调用（RPC）。
+  - RPC本身不依赖于任何传输协议，但其通常是基于UDP/IP实现的，为了保证传输服务的可靠性，RPC层会跟踪所有未回复的请求，如果没有收到答复，就按一定的时间间隔重传请求。
+
+- 当client发送访问文件的请求后，由server返回给client一个文件描述符，之后当client试图访问这个文件时，将文件描述符传给server就可以了，由server来维护这个文件的状态信息，这种模式被称为stateful。
+  - stateful模式平时用着没什么问题，但当server和client的任意一方出现crash的时候，都将给recovery增加复杂性。比如当server给client返回一个文件描述符后，自己崩溃了，之后重启运行后，client拿着这个文件描述符来找它，它就不记得自己前世的事情（该文件描述符对应哪个文件啊）。
+- 与之相对的另一种方式是：哪个文件被client打开了，访问到文件的哪个位置了（即"offset"），server通通都不记录，由client自己维护，并在发送读写文件请求时，包含所需的全部信息（self-contained），即stateless模式。
+- stateful和stateless各有利弊，作为以fast crash recovery为设计目标的NFS，其v2（1989年）和v3（1995年）版本的实现采用的都是stateless模型。
+
+- 到了新世纪的2000年，NFS演进到了v4版本，其中一个重大的变化就是：它投靠了stateful阵营。除了解决上述stateless模式存在的一些固有问题，stateful模式还让client端的close()操作有了意义：通知server丢弃关于这个文件的状态信息。此外，NFSv4还在诸多方面进行了优化。
 # discuss
-
 - ## 
 
 - ## 

@@ -223,7 +223,9 @@ modified: 2023-04-05T19:35:14.347Z
   - file watcher used in MS VSCode.
   - Minimal and efficient cross-platform file watching library
   - On MacOS, chokidar by default uses a native extension exposing the Darwin `FSEvents` API.
-  - On most other platforms, the fs.watch-based implementation is the default, which avoids polling and keeps CPU usage down.
+  - On most other platforms, the `fs.watch`-based implementation is the default, which avoids polling and keeps CPU usage down.
+  - [Watching file over network _201507](https://github.com/paulmillr/chokidar/issues/315)
+    - With nfs mounting and `UsePolling: true` it is working.
 
 - https://github.com/webpack/watchpack
   - 不依赖chokidar，依赖graceful-fs，由webpack开发

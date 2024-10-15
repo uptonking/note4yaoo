@@ -22,6 +22,7 @@ modified: 2021-05-06T09:38:31.520Z
   - 基于contenteditable(而不是textarea)实现，具备✨富文本的能力
   - 支持nested-editor，可在同一页面渲染多个编辑器，参考split-view示例、公式
   - 内置支持folded-code
+  - 支持multi-cursor, 此时键盘输入字符会在多个光标后同时显示
   - ~~simpler than prosemirror~~
 
 - cons
@@ -175,6 +176,7 @@ modified: 2021-05-06T09:38:31.520Z
   - codemirror devtools
   - autocomplete
   - 迁移v5的示例到v6
+  - migrate monaco-playground to codemirror
   - lezer-highlight vs highlightjs
 
 - port to server side lang like prosemirror

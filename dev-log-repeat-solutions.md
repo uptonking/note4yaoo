@@ -33,6 +33,7 @@ modified: 2021-07-20T13:50:23.433Z
     - sqlite的流行表明scaling要考虑场景, zulip/jupyterhub私有部署默认支持几千用户但不scale
     - 没有完美的架构，优先支持迭代，不要执着于当下的问题，也许以后就突然想清楚了
     - 先实现业务核心功能， 再考虑如何以sdk/paas的方式提供给使用方，再优化性能
+    - 系统的性能受第三方资源如github的fetch api的限制，设计初期要想办法避免
   - 抽空在线体验，工作专注代码
   - data-app
     - specification for pivot table
