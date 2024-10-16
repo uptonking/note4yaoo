@@ -57,8 +57,16 @@ modified: 2024-08-08T20:49:11.571Z
 - I had a very positive experience with just replacing decoration widgets (width:100%). One can make them mutable (they can change the content on the covered ranges using basic transactions) and provide a transaction filter or something similar so that if a cursor goes into the region of the widget, it will move the focus into the **nested codemirror editor**.
   - There is no need to rerender the nested editor, if you provide updateDom method to a widget
 
-# discuss-autocomplete
+# discuss-autocomplete/tooltip
 - ## 
+
+- ## 
+
+- ## [Highlight some text while hoverTooltip is activated - discuss. CodeMirror _202408](https://discuss.codemirror.net/t/highlight-some-text-while-hovertooltip-is-activated/8506)
+  - I want to support LSP hover in CM, so I used the hoverTooltip plugin, it sends the LSP textDocument/hover request and show a tooltip for it, that’s good.
+  - However, LSP server will also return a range object, which represents user-focused semantic object, I want to highlight the text in range during the hover tooltip. Is there a good way to do it? Thanks!
+
+- This is currently difficult to do, since you cannot really recognize the transactions that open or close a hover tooltip. Would a feature that gives you access to the state field storing the active tooltips produced by the hover tooltip, which you could wire up to `EditorView.decorations.compute`, solve this problem for you?
 
 - ## [need help about highly customized codemirror/autocomplete - discuss. CodeMirror _202210](https://discuss.codemirror.net/t/need-help-about-highly-customized-codemirror-autocomplete/5170)
   - I want to highly customize the style of autocomplete and bind some events to achieve the effect of cascading components

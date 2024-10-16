@@ -248,6 +248,9 @@ flatpak run com.discordapp.Discord --proxy-server="socks5://127.0.0.1:1080"
 
 # PersonalPins收藏中心，包含信息原始数据和完整元信息
 ~/.var/app/com.discordapp.Discord/config/BetterDiscord/plugins/PersonalPins.config.json
+
+# mac plugin location path
+/Users/yaoo/Library/Application Support/BetterDiscord/plugins
 ```
 
 ## BetterDiscord

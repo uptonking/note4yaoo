@@ -306,7 +306,14 @@ modified: 2024-09-10T11:29:46.166Z
 
 - ## 
 
-- ## 
+- ## 💡 [Decoration.mark is broken into chunks on visualisation _202112](https://github.com/codemirror/dev/issues/656)
+  - Decoration.mark is broken into chunks on visualisation if some extra visualisations are applied, i.e. matching brackets.
+
+- Yes, it is, unless it has lower precedence than all other marks in the range it covers. This is by design (and necessary, since it is technically impossible to render two partially overlapping marks without wrapping one in the other).
+- How do I change precedence? Tried setting precedence for the extension that creates StateField, StateEffect and Mark but it didn't help.
+  - The facet provider that provides the decorations is the one where this precedence applies, so probably in the provide option to your state field definition.
+
+- you are running into the fact that plugin decorations always get a lower precedence than facet-based decorations. I do have a concrete plan to fix this, but it'll involve a breaking change so I'm holding it back until the next breaking release. For now, a workaround would be to use a view plugin to display your mark decoration.
 
 - ## [How to add decoration without focusing the editor on dispatch? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/how-to-add-decoration-without-focusing-the-editor-on-dispatch/6283)
 - What was going on was that the DOM changes needed to apply that update messed up the DOM selection, which was still in the editor despite it no longer having focus. And restoring a proper DOM selection apparently randomly moves focus back into the editor. This patch tries to detect and undo this phenomenon.
@@ -361,7 +368,7 @@ modified: 2024-09-10T11:29:46.166Z
 - ## [Decoration.mark() has lower precedense over styleTags()? - discuss. CodeMirror](https://discuss.codemirror.net/t/decoration-mark-has-lower-precedense-over-styletags/7397)
 - Wrapping your decoration extension in Prec.highest should probably fix this.
 
-- ## 💡 [Composing multiple DecorationSets - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/composing-multiple-decorationsets/2922)
+- ## 💡💡 [Composing multiple DecorationSets - v6 - discuss. CodeMirror _202102](https://discuss.codemirror.net/t/composing-multiple-decorationsets/2922)
 - State-level decorations can be provided in bulk with `computeN` , something like…
   - `EditorView.decorations.computeN(s => s.field(f))`
 

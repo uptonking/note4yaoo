@@ -22,6 +22,19 @@ modified: 2023-11-30T06:56:24.809Z
 - ## 
 
 - ## 
+
+- ## 💡 [Dynamic line height - discuss. CodeMirror _202106](https://discuss.codemirror.net/t/dynamic-line-height/3257)
+  - I have a decorations Facet that sets the line height based on a StateField using attributes
+  - This works fine while the editor contents are in view. But once I scroll the content out of view, the “artificially increased” line height is not taken into account, and so the content jumps up.
+  - How can I solve it? 
+  - I can’t use a block widget, because I need the line itself to have the given height. Can I hook into codemirror’s line height calculation to let the editor know that some lines are different height?
+
+- The height of out-of-view content is modeled by the view’s internal “height map” structure, which understands widgets with estimated heights but not explicitly set heights on lines. What exactly are you implementing here? Would it be a good match for block widgets?
+
+- Spending some more time on this problem, I think the only way to get a bulletproof solution with the current “smart” layout I have (where the two editors can take different width based on their content), is to disable the viewport optimization. I read the Codemirror code, and I can’t really see how that can be done. @marijn any ideas on how I could disable the viewport and force Codemirror to render all content? 
+  - 👷 That’s not something that CodeMirror 6 currently supports, and a lot of complexity analysis in the system assumes a limited-size viewport, meaning that you’re quite likely to hit performance cliffs when working with even medium-sized (say, a few thousand lines) documents if you were to somehow disable this. So I’m not too keen on adding this option, knowing that people will turn it off and then ask for support when it messes up their user experience.
+- I forked codemirror/view to hata6502/codemirror-view , and disabled viewport.
+  - Disabling viewport may occur the performance issue, but it resolves the following scroll problem.
 # discuss-codemirror
 - ## 
 

@@ -416,26 +416,31 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
   - 初始化环境计划执行完后，create pr时必须在前端打开terminal，否则 Got an error from agent event, Failed to find the prompt when use ctrl+c command
 
 - 🚧 cmdk实现计划 
-  - [-] 工具条或快捷键唤起、隐藏
+  - [x] 工具条或快捷键唤起、隐藏
   - [x] 输入提示词，agent返回时显示diff
   - [x] undo: cmd+z回到diff, 恢复提示词和选区
   - [-] 部分stop/cancel， 注意agent返回内容的时机
   - [ ] 部分accept
   - [ ] followup
-  - [ ] diff工具条
+  - [x] diff工具条
   - [ ] agent写代码时的输入框显示动画边框
-  - [ ] 悬浮输入框
+  - [ ] 🚨 悬浮输入框，第一行时唤起的输入框改为悬浮输入框(或将input显示在第2行)，全选也改为悬浮输入框
   - explain an elegant word in one sentence
     - rename to an elegant variable name
     - implement quick sort algorithm and add 2 test cases
   - bugs
-    - 🚨 disable cmdk in readonly and diff-view
-    - 🚨 只在需要时显示diff视图开关
-    - 处理esc隐藏输入框的undo/redo
-    - 显示输入框时高亮原选区，undo时能恢复原选区
+    - 🚨 测试恢复提示词、输入框位置
+    - 🚨 cmdk input在undo后有时渲染在diff视图中间而不是上面，在内容变化后选区位置也应变化
+    - 🚨 diff视图开关只在需要时显示
+    - reject后的diff视图 undo
+    - 键盘ac/rj
     - cmdk针对选中全文的场景进行优化, ai会返回空{}
     - 等待ai返回结果时，禁止send，允许esc键取消输入框和丢弃ai返回结果
     - 若在ai写代码时或写完后但未accept时刷新页面，是否会丢失状态数据
+    - ~~显示输入框时高亮原选区，undo时能恢复原选区~~
+    - ~~处理esc隐藏输入框的undo/redo~~
+    - ~~disable cmdk in readonly and diff-view~~
+    - ~~cmdk + esc + cmd-z会显示diff~~
     - ~~sdk如何不使用sleep来获取chunk返回完成时的数据~~
     - ~~replace initial lines on ai responses~~
     - ~~diff anime gray bg~~
