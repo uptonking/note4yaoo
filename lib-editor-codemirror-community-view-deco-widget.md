@@ -12,7 +12,9 @@ modified: 2024-09-10T11:29:46.166Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## [Absolute position for widget - v6 - discuss. CodeMirror _202409](https://discuss.codemirror.net/t/absolute-position-for-widget/8668)
+  - I have a widget that I need to locate in an absolute position using coordsAtPos but an error is been thrown saying Error: Reading the editor layout isn't allowed during an update.
+- You’ll want to go through `EditorView.requestMeasure` for this so that the DOM reading (and then writing) can be synchronized (and plugins don’t cause layout trashing).
 
 - ## 🤔💡 [How to insert text with decorations? - v6 - discuss. CodeMirror _202401](https://discuss.codemirror.net/t/how-to-insert-text-with-decorations/7704)
   - I try to insert an array of text programmatically 

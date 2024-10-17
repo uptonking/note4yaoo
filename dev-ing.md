@@ -430,15 +430,19 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
     - implement quick sort algorithm and add 2 test cases
   - bugs
     - 🚨 测试恢复提示词
-    - 🚨 cmdk input在undo后有时位置没有正确恢复，显示在diff视图中间而不是上面，在内容变化后选区位置也应变化
+    - 🚨 多次cmdk后能正确恢复diff、原文
+    - 🚨 cmd+del在input执行时会多执行一个del
     - 🚨 diff视图开关只在需要时显示
-    - reject后的diff视图 undo
-    - 键盘ac/rj
+    - migrate to StateField
     - cmdk针对选中全文的场景进行优化, ai会返回空{}
     - 等待ai返回结果时，禁止send，允许esc键取消输入框和丢弃ai返回结果
     - 若在ai写代码时或写完后但未accept时刷新页面，是否会丢失状态数据
-    - 输入框位置在修改内容如加减行后如何保持正确的位置
     - 输入框无法在ctrl+a+DEL时删除
+    - cmdk input输入框在undo后有时位置没有正确恢复，显示在diff视图中间而不是上面，在内容变化后选区位置也应变化
+      - 一种思路是显示和隐藏前都保存pos
+    - ~~键盘ac/rj~~
+    - ~~输入框位置在修改内容如加减行后如何保持正确的位置~~
+    - ~~reject后的diff视图 undo~~
     - ~~显示输入框时高亮原选区，undo时能恢复原选区~~
     - ~~处理esc隐藏输入框的undo/redo~~
     - ~~disable cmdk in readonly and diff-view~~
@@ -516,10 +520,10 @@ stt.message.channel().send('uCmdK', 'README.md', 2, 2, 'explain an elegant word 
 
 昨天：
 - 在clacky前端测试了cmdk undo的功能，修复了样式主题相关问题
-- 整理代码，提交pr
+- 整理代码，已提交pr
 
 今天：
-- 进行code review，将cmdk undo合入develop环境，很多实现细节产品文档没有描述，先让产品体验，根据产品反馈修改后再合入staging
+- 在clacky前端再测试一下，进行code review，将undo合入develop环境，很多实现细节产品文档没有描述，先让产品体验，根据产品反馈修改后再合入staging
 - 修复linear上的高优先级bug
 
 ## 1015

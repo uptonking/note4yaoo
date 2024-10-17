@@ -178,6 +178,7 @@ modified: 2021-05-06T09:38:31.520Z
   - 迁移v5的示例到v6
   - migrate monaco-playground to codemirror
   - lezer-highlight vs highlightjs
+  - EditorView.requestMeasure
 
 - port to server side lang like prosemirror
   - hocuspocus for codemirror
@@ -341,3 +342,8 @@ modified: 2021-05-06T09:38:31.520Z
 ```
 
 # more
+
+# devlog
+
+- "codemirror" Field is not present in this state
+  - 可能是代码import了不同版本的codemirror导致的，也可能是本地fork了代码但用的还是npm包

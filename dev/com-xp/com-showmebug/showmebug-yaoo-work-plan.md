@@ -405,6 +405,15 @@ modified: 2024-05-06T02:54:40.374Z
 
 ### ✨ feat-cmdk
 
+- improve
+  - migrate to StateField
+  - cmdk-undo有时需要undo两次的逻辑可以通过传入参数定制 `history({joinToEvent: tr=>boolean})` 来实现
+
+- 🚧 开发实现记录
+  - reject后undo的流程通过 isCmdkDiffRejected 的 1/0/-1 三种状态控制，由于场景的特殊性，1/0不表示true/false，而是before/after
+  - 在undo时输入框恢复正确位置可通过 tr.startState.field() 找到旧值，而不是tr.state
+  - 快捷键ac/rj的逻辑不一定要import各种逻辑和文件，可以使用已有的dom事件， acceptBtn.click() 可直接触发已注册的事件，可在一定程度上通过dom对象减少实现的复杂度
+
 - ✨ cmd+k， 主流程是用户输入需求，agent返回建议的代码
   - 对于不清晰的用户需求，cmd+k如何处理，需不需要澄清, ui交互是否要补充
   - agent工作编辑时是否禁用cmd+k快捷键

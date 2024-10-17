@@ -48,6 +48,16 @@ modified: 2024-08-11T06:40:41.476Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Inconsistent cursor position for a widget created by Decoration.replace in Chrome and Safari - v6 - discuss. CodeMirror _202106](https://discuss.codemirror.net/t/inconsistent-cursor-position-for-a-widget-created-by-decoration-replace-in-chrome-and-safari/3239)
+  - The blinking cursor’s position is after the widget in Chrome, which is expected; however, it is before the widget in Safari, which seems to be incorrect
+
+- you are using the native selection. That does indeed produce a very weird cursor on Safari in this situation. The only workaround I could find for that is to wrap the widget in a span and put zero-width spaces on both sides of the checkbox. Setting the selection differently from the library side doesn’t appear to be able to affect this. Any reason you’re not using `drawSelection` ?
+  - Ah. I never knew the existence of drawSelection. I tried it and it does solve the issue. Thanks for looking into this
+
 - ## [Override selection on tap - v6 - discuss. CodeMirror _202401](https://discuss.codemirror.net/t/override-selection-on-tap/7671)
   - I’m trying to select entire words when a user taps on one but my changes end up getting overridden by the native selection logic.
 
