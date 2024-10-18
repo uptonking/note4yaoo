@@ -15,7 +15,29 @@ modified: 2023-06-14T00:53:15.226Z
 
 ## 
 
-## 
+## innerHTML=`` 内容中若有换行时，会占用元素高度
+
+- 下面的示例中 Reject span元素的高度为100px左右
+
+```HTML
+<div class="cm-ai-prompt-input-actions">
+  <button id="cm-ai-prompt-btn-accept" class="cmdk-accept-btn">
+    <span style> Accept </span>
+    <span class="hotkey-text">
+      ⌘↩
+    </span>
+  </button>
+  <button id="cm-ai-prompt-btn-discard" class="cmdk-reject-btn">
+    <span>
+      Reject
+    </span>
+    <span class="hotkey-text">
+      ⌘⌫
+    </span>
+  </button>
+  <!-- <button id="cm-ai-prompt-btn-gen">Regenerate</button>  -->
+</div>
+```
 
 ## 监听文件系统变化然后通知
 

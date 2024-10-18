@@ -23,6 +23,16 @@ https://us05web.zoom.us/j/7754416829?pwd=TUlMR3dMWEpaajdVR1VNdDR5N29NZz09
 ---
 
 ```JS
+async function mockCmdkChat() {
+  await new Promise((_) => setTimeout(_, 3000));
+  return {
+    status: 'success',
+    message: '// ;;;\nCMD+K Error;\n// cmdkCodingRequest is not implemented;\n// please Reject and check your implementation;\n// ;;; ',
+  }
+  as
+  const;
+}
+
 const unsubscribe2 = editor.selection.onSelectionChange(info => {
   console.log(';; sel-chge ', info.type);
 });

@@ -420,8 +420,8 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
   - [x] 输入提示词，agent返回时显示diff
   - [x] undo: cmd+z回到diff, 恢复提示词和选区
   - [-] 部分stop/cancel， 注意agent返回内容的时机
-  - [ ] 部分accept
   - [ ] followup
+  - [ ] 部分accept
   - [x] diff工具条
   - [ ] agent写代码时的输入框显示动画边框
   - [ ] 🚨 悬浮输入框，第一行时唤起的输入框改为悬浮输入框(或将input显示在第2行)，全选也改为悬浮输入框
@@ -429,16 +429,16 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
     - rename to an elegant variable name
     - implement quick sort algorithm and add 2 test cases
   - bugs
+    - 🚨 diff视图开关只在需要时显示
     - 🚨 测试恢复提示词
     - 🚨 多次cmdk后能正确恢复diff、原文
     - 🚨 cmd+del在input执行时会多执行一个del
-    - 🚨 diff视图开关只在需要时显示
     - migrate to StateField
     - cmdk针对选中全文的场景进行优化, ai会返回空{}
     - 等待ai返回结果时，禁止send，允许esc键取消输入框和丢弃ai返回结果
     - 若在ai写代码时或写完后但未accept时刷新页面，是否会丢失状态数据
     - 输入框无法在ctrl+a+DEL时删除
-    - cmdk input输入框在undo后有时位置没有正确恢复，显示在diff视图中间而不是上面，在内容变化后选区位置也应变化
+    - ✅ cmdk input输入框在undo后有时位置没有正确恢复，显示在diff视图中间而不是上面，在内容变化后选区位置也应变化
       - 一种思路是显示和隐藏前都保存pos
     - ~~键盘ac/rj~~
     - ~~输入框位置在修改内容如加减行后如何保持正确的位置~~
@@ -486,15 +486,17 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
     - 可以将prompt内容保存在编辑器外(因为不需要reactivity)，prompt id保存在编辑器的state
 
 - not-yet
-  - cmdk整体功能
-  - 时光机获取快照使用uuid
-  - ai写代码打字效果的时机优化和样式优化
-  - 支持撤销ai写的代码, diff工具条
+  - ~~cmdk整体功能~~
+  - 🚨 时光机获取快照使用uuid
+  - 🚨 ai写代码打字效果的时机优化和样式优化
+  - 🚨 追加步骤
+  - 🚨 diff视图开关只在需要时显示
+  - ~~支持撤销ai写的代码, diff工具条~~
   - tab-key; chat-apply; aiCannotCreateThread
   - 防抖: cmdk， chat
   - 驾驶舱action列表支持打开文件
-    - 打开已删除的文件未实现
-    - 点击actionBar打开文件时，文件树对应文件会被选中
+    - 🚨 打开已删除的文件未实现， 同时处理undo工具条的位置
+    - 点击actionBar打开文件时，文件树对应文件应该被选中
     - 在文件树ui创建文件夹和命令行mkdir创建文件夹的permission不同
   - 驾驶舱聊天后直接apply代码到编辑器
   - regenerate plan/task/action
@@ -515,6 +517,19 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
 ```JS
 stt.message.channel().send('uCmdK', 'README.md', 2, 2, 'explain an elegant word in one sentence')
 ```
+
+## 1018
+
+- [css - What's the difference between :focus-within and :has(:focus)? - Stack Overflow](https://stackoverflow.com/questions/78652185/whats-the-difference-between-focus-within-and-hasfocus)
+  - So why to use :focus-within instead of &:focus, &:has(:focus), which depends entirely on your use-case (leaving the slight performance differences aside), you can see :focus-within as a shorthand like logical properties or that you can just write border: 1px solid red instead of writing border-color, border-width, ...
+
+昨天：
+- cmdk undo在clacky测试，修复影响体验的问题，比如undo后输入框位置有时不能正确恢复的问题
+- 代码整理，提交pr
+
+今天：
+- 很明显的体验问题没有了，代码整理，code review和合并pr，让产品体验undo
+- 修复时光机相关bug和高优先级bug
 
 ## 1017
 
