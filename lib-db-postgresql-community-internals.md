@@ -26,6 +26,21 @@ modified: 2023-10-28T13:46:14.957Z
   - Basically you create a regular table in place of a materialised one, only aggregate data newer than what's currently in the table then store the new aggregates in table. Repeat this an interval.
 - Interestingly, DBT does not support creating materialized views.
 
+# discuss-indexing
+- ## 
+
+- ## 
+
+- ## PostgreSQL implements an interesting optimization to make some scans index-only and execute the query faster. Let's explore the implementation.
+- https://x.com/arpit_bhayani/status/1846754739762901454
+  - An index-only scan is when PostgreSQL retrieves data entirely from the index without needing to access the actual rows (the heap). This is much faster as it avoids the extra step of reading rows from the disk.
+
+# discuss-perf
+- ## 
+
+- ## 
+
+- ## 
 # discuss
 - ## 
 

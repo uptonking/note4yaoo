@@ -338,7 +338,9 @@ modified: 2021-04-12T16:30:53.967Z
 
 ## 
 
-## 
+## [给玩美股的朋友们推荐一个免费网站：Stock Circle](https://x.com/vikingmute/status/1846722773533839460)
+
+- 可以看很多位投资大鳄的持仓，交易详情，数据很翔实。有 Warren Buffett/Ray Dalio/Cathie Wood 等多位大佬。可以参考他们的持仓，看他们最近的交易来跟着大佬进行投资。
 
 ## [我是经历过 15 年的剧本的，那个时候，很多人一天赚的钱超过一个月的工资。](https://x.com/amehochan/status/1843466530178179215)
 

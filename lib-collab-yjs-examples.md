@@ -105,6 +105,11 @@ modified: 2022-09-21T15:47:41.340Z
   - A Chrome DevTools formatter for Yjs.
   - It makes the Yjs data types printed in the Chrome DevTools console easier to read and inspect, allowing developers to inspect Yjs data types just as they do with primitive data types.
 
+- https://github.com/pi0/y-crossws
+  - https://y-crossws.pi0.workers.dev/tiptap/
+  - We first developed a universal WebSocket layer: unjs/crossws.
+  - the first version of y-crossws—a one-liner server for Y.js to create collaborative apps 
+
 - https://github.com/TexteaInc/y-socket.io /MIT/202211/ts/inactive
   -  Multi Persistence Support
 

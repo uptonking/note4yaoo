@@ -612,6 +612,10 @@ modified: 2022-06-03T21:34:54.893Z
   - DocETL is a tool for creating and executing data processing pipelines, especially suited for complex document processing tasks. 
   - It offers a low-code, declarative YAML interface to define LLM-powered operations on complex data.
   - DocETL is the ideal choice when you're looking to maximize correctness and output quality for complex tasks over a collection of documents or unstructured datasets.
+
+- https://github.com/whyhow-ai/knowledge-table
+  - 结构化数据提取工具，它可以以自然语言查询的方式从非结构化文档中提取结构化数据，并以表格或图表的形式展现
+  - 文档数据的结构化入库，比如从合同里提取关键交易信息，然后结构化展示
 # more
 - https://github.com/notea-org/notea
   - Self hosted note taking app stored on S3

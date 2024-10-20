@@ -38,6 +38,23 @@ modified: 2021-01-08T17:15:13.906Z
 
 - ## 
 
+- ## 
+
+- ## how to not feel like a website:
+- https://x.com/morajabi/status/1846583265072660939
+  - `* { user-select: none; user-drag: none; app-region: no-drag; }`
+
+- Been studying native app differences lately. A few other big ones:
+  - stop putting cursor pointer on buttons
+  - stop putting hover states EVERYWHERE. Some are useful, others not
+  - right click context menus should be customized
+
+- why the hell would you use `user-select: none` on everything?? Are you that against people highlighting text lmao
+  - you’d then apply user-select selectively only on user content, as you’d so in native apps.
+
+- ## Here's how you can use CSS filter to grey out customer logos on landing pages
+- https://x.com/kyrylosilin/status/1846447206670258347
+
 - ## Here is a great use case for #CSS container queries, inspired by LinkedIn's feed.
 - https://twitter.com/shadeed9/status/1781344755332382921
   - Show or hide each post action label (e.g: 'Like' or 'Comment') based on the container width

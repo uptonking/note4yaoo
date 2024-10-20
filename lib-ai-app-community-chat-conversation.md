@@ -18,7 +18,33 @@ modified: 2023-04-16T10:02:58.738Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 🏘️ 分享下我们在做 SaaS 产品 LobeChat Cloud 上用的技术平台选型吧： _202410
+- https://x.com/arvin17x/status/1847627132891254803
+  - https://x.com/arvin17x/status/1803761433714507850 /202406
+  Serverless 部署：Vercel
+  Server 部署：Railway、Zeabur
+  数据库： Postgres Neon
+  用户管理： Clerk
+  文件/对象存储：Cloudflare R2
+  数据统计： Google Analysis / Plausible
+  邮件支持： Zoho
+  SEO： GSC / SimilarWeb
+  支付： Stripe
+  这一套下来会有一些费用开支（几十刀/月），但能大大降低运维成本，体验非常棒
+
+- Google Analytics 和 Plausible是一起用吗，还是选一个
+  - 是一起用的。实际上看其实 GA 的数据更准， Plausible 的数据接近 GA 的两倍，但 Plausible 基本和 SimilarWeb 差不多
+
+- vercel，clerk，neon 都是超出用量之后开销上升非常快的
+  - 算过了能接受， ROI 划得来
+
+- Clerk 和 authjs 对比有什么优势吗？一直在用 authjs 还没尝试过 Clerk
+  - Clerk 是 Auth 的服务，给了一套解决方案，你接入了以后就能直接有一套完整的用户后台管理系统，可以直接看到各种用户活跃数据信息、设置白名单/黑名单、用户禁用等等操作，但相应的也需要付费才能启用所有功能。
+  - 而 Authjs 只是一个 npm 包，它解决了 auth 集成的问题，但配套的管理的功能都得自己搞。
+  - 我们在 LobeChat 中其实两种方案都集成了，如果是要体验最佳的话推荐接入 Clerk，如果要完全自主可控的私有化部署我们会推荐配置 next-auth（authjs 的 next 版）。
+
+- supabase 包含的clerk和neon，且免费方案中给的活跃用户额度更高，为什么没选用呢？是有什么弊端吗？
+  - 这个在我们一开始选型的时候专门对比过，以后有空可以展开讲讲，简单来说的话：虽然 Supabase db 和 auth 都有，但 db 不如 neon , auth 不如 clerk。
 
 - ## 根据过去半年的观察，我认为 2024 年 Chat 领域的第一个交互范式应该初步成型了 —— 我暂且称之为 Chat Portal（对话模态窗）。
 - https://x.com/arvin17x/status/1809847312187027628

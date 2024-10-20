@@ -40,7 +40,12 @@ modified: 2024-02-12T17:47:34.152Z
 
 - ## 
 
-- ## 
+- ## 📝 "CDC Is a Feature Not a Product": Some thoughts on Change Data Capture as a Service.
+- https://x.com/gunnarmorling/status/1847280389443706914
+  - [CDC Is a Feature Not a Product - Gunnar Morling _201410](https://www.morling.dev/blog/cdc-is-a-feature-not-a-product/)
+- 100% this, CDC must be a part of a larger platform to actually form a product. It’s just a piece somewhere at the begging of data pipeline.
+
+- What if every database and SaaS provided near real-time (e.g. Every minute) data dump in Iceberg format export to blob storage?
 
 - ## The number one cause of production database outages I see these day is because of CDC tools. 
 - https://x.com/craigkerstiens/status/1824114371737616794

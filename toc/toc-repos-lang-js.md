@@ -429,6 +429,12 @@ modified: 2021-05-14T15:04:42.225Z
   - tiny and lightweight benchmarking library
   - You can run your benchmarks in multiple JavaScript runtimes, Tinybench is completely based on the Web APIs with proper timing using `process.hrtime` or `performance.now`.
   - Event and EventTarget compatible events
+
+## bench-nodejs
+
+- https://github.com/RafaelGSS/bench-node /202410/js
+  - A powerful Node.js benchmark library
+  - The bench-node module allows you to measure operations per second of Node.js code blocks.
 # toolchain
 - https://github.com/albertan017/LLM4Decompile /MIT/202403/python
   - 🔡 Reverse Engineering: Decompiling Binary Code with Large Language Models

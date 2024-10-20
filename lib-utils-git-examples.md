@@ -334,6 +334,15 @@ modified: 2023-08-29T10:12:22.345Z
 - https://github.com/mbostock/git-static /201503/js
   - A versioned static file server backed by Git.
   - Go to `http://localhost:3000/HEAD/path/to/file.html` to view a file from the source repository. You can replace HEAD with a specific commit version, or with short names and aliases for commits such as "0ad4156" or "HEAD~1".
+
+- https://github.com/awslabs/git-remote-s3 /apache2/202410/python
+  - This library enables to use Amazon S3 as a git remote and LFS server.
+  - It provides an implementation of a git remote helper to use S3 as a serverless Git server.
+  - It also provide an implementation of the git-lfs custom transfer to enable pushing LFS managed files to the same S3 bucket used as remote.
+    - The LFS integration stores the file in the bucket defined by the remote URI, under a key `<prefix>/lfs/<oid>`, where oid is the unique identifier assigned by git-lfs to the file. 
+    - If an object with the same key already exists, git-lfs-s3 does not upload it again.
+  - The git S3 integration was inspired by the work of Bryan Gahagan on git-remote-s3.
+    - The LFS implementation benefitted from lfs-s3 by @nicolas-graves. If you do not need to use the git-remote-s3 transport you are should use that project.
 # apps-by-git
 - https://github.com/w4/rgit /public/202402/rust
   - https://git.inept.dev/

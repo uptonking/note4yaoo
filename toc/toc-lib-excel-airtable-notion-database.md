@@ -317,6 +317,7 @@ modified: 2022-08-21T10:02:05.129Z
   - API-oriented low-code platform for building collaborative apps and better than all other Airtable open-source alternatives
   - 后端依赖 spring-boot、mybatis、easyexcel、grpc、protobuf、nestjs
   - 前端依赖 antd、ahooks、redux、exceljs、konva、markdown-it、react-quill、react-dnd、slate
+  - 表格数据存储在mongodb ❓
   - 示例使用mysql
   - 用户的所有操作都记录在`datasheet_changeset`这张表，该表的`operations`字段存储了用户操作的元信息和用户输入的数据如AddRecords/SetRecords/SetFieldAttr/DeleteField，业务表和view数据会据此计算得到
   - 默认管理员 By default the admin account is `admin@apitable.com` and `Apitable2022`.

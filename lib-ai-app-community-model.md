@@ -128,7 +128,10 @@ modified: 2023-10-30T07:34:03.602Z
  # discuss-multi-agents
 - ## 
 
-- ## 
+- ## OpenAI 发布多 Agent 编排框架背后的思考以及实践过程
+- https://x.com/tuturetom/status/1845634978530693494
+  - 核心是 OpenAI 的工程师在思考  Agent 的「路由」 + 「移交」等能力时拓展出来的一个示例，进而发现这个示例原语很普适，所以开发了 Swarm 框架
+  - 所有伟大的思考都源于周末业余工作
 
 - ## OpenAI 悄悄开源了构建多代理智能体协同框架：Swarm
 - https://x.com/aigclink/status/1844936446416912628

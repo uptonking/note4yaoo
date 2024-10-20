@@ -17,6 +17,21 @@ modified: 2024-02-14T12:35:31.547Z
 - ## 
 
 - ## 
+# discuss-news
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Python 3.13 is out and you can now disable the infamous GIL 
+- https://x.com/arpit_bhayani/status/1845816870458339499
+  - It is a free-threaded execution which means Python can now fully utilize all available CPU cores. 
+  - By the way, Python 3.13 also has a pretty awesome JIT compiler, which may speed up some programs.
+
+- I first came across GIL when I was trying multithreaded matrix multiplication and I noticed that there wasn't any improvement from single-threaded one. Will try this again in python 3.13 so see the changes
+
+- Parallelism comes with its own caveats, so we need to be careful while using it.
 # discuss-web-fwk
 - ## 
 

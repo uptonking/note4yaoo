@@ -22,7 +22,12 @@ modified: 2022-12-31T20:13:33.307Z
 
 - 
 - 
-- 
+
+- [v23.0.0_20241016](https://openjsf.org/blog/announcing-node.js-23-key-features-and-enhancement)
+  - Support for loading native ES modules using require()
+  - Dropped Support for Windows 32-bit Systems
+  - Stabilized --run Command: The --run flag has been stabilized for more efficient script execution.
+  - Test Runner Enhancements: The test runner now supports glob patterns for coverage files
 
 - [v22.7.0_20240821](https://github.com/nodejs/node/releases/tag/v20.17.0)
   - With the new flag `--experimental-transform-types` it is possible to enable the transformation of TypeScript-only syntax into JavaScript code.

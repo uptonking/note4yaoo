@@ -400,6 +400,11 @@ modified: 2023-02-08T07:20:48.475Z
   - With Zep, you can provide AI assistants with the ability to recall past conversations, no matter how distant, while also reducing hallucinations, latency, and cost.
   - Zep persists and recalls chat histories, and automatically generates summaries and other artifacts from these chat histories. 
   - Zep also provides a simple, easy to use abstraction for document vector search called Document Collections. This is designed to complement Zep's core memory features, but is not designed to be a general purpose vector database.
+# ai-figure/数字人
+- https://github.com/taoofagi/easegen-front
+  - 开源的数字人课程制作项目：easegen，它提供从课程制作、视频管理、智能课件生成到智能出题全套方案
+  - 支持ppt课件批量自动生成、数字人克隆、声音克隆、数字人课程设计、数字人视频渲染等
+  - https://x.com/aigclink/status/1847102226088841648
 # ui-ai
 - https://github.com/kangfenmao/cherry-studio /NonCommercial/202409/ts
   - https://cherry-ai.com/

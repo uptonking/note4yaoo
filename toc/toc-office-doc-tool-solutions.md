@@ -337,6 +337,10 @@ modified: 2021-07-21T18:07:43.056Z
   - https://elegant-clarke-8778e0.netlify.app/
   - 依赖webpack.v4、react-remarkable、express、@mdx-js/loader；不依赖framer-motion
   - Monobase let's you build sites in a component based way, allowing you to isolate and re-use every part of your website. 
+# convert
+- https://github.com/lujunji4113/cloud-document-converter /MIT/202410/ts
+  - Convert lark cloud documents to markdown.
+  - 支持下载、复制飞书文档为 Markdown，兼容标题、代码块、列表、表格、图片、加粗、删除线、链接等元素。
 # ref
 - [Storybook vs Styleguidist_201805](https://www.chromatic.com/blog/storybook-vs-styleguidist/)
 - [What’s the difference between Styleguidist and Storybook?](https://react-styleguidist.js.org/docs/cookbook/#are-there-any-other-projects-like-this)
