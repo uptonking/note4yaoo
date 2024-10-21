@@ -2127,6 +2127,32 @@ const playbackInfo = [
 
 - 
 - 
+
+#### fileTree
+
+- 视图组件基于 react-complex-tree 的 ControlledTreeEnvironment 和 Tree 实现
+  - renderItem定义在顶层
+
+- 通过鼠标点击切换文件时会执行click事件的openFile()逻辑
+  - 先设置跟随 store.dao.channel().followingFocusComponent('Tree'); 
+  - setOpenPath(''); 
+  - onSelectFileOrFolder([src]); + onCustomSelect?.([src], type);
+  - setSelectedFilePath(items[0] as string); 
+- 在useEffect里面，每次selectedFilePath变化，都会请求文件内容并更新编辑器
+  - channel.loadFile(selectedFilePath); 
+  - actions.file.setDocLoading(true); 
+  - this.send(Commands. File, { path }) 向ideServer请求文件内容
+  - 当收到ideServer返回的文件内容时
+  - switchFile(event.data) 更新 fileStore.doc
+  - this.transitionFileInfo({ openedPath: event.data.openedPath }); 触发`fileInfo`事件到sdk前端
+  - this.dispatchDataEvent('editor', event); 触发初始注册事件
+  - 每次 fileStore.doc.openedPath 变化都会触发`CodeEditor`组件强制unmount再mount重渲染
+  - `CodeEditor`在EditorView初始化完成后会执行 setEditorSelection，触发 `fileOpenDone` 事件
+
+- 
+- 
+- 
+- 
 - 
 
 ### codebase-ide-server

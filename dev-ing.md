@@ -362,6 +362,7 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
   - ~~readonly属性不生效~~
 
 - diffView
+  - diff-view的开关只在需要时显示，[ ] 开启关闭diff无需刷新编辑器
   - 关闭diff后也支持显示打字动画
   - 流式更新的文档内容，需要流式更新diff-view
   - ~~隐藏绿色部分后，红色部分是否显示行号~~，打字太快了，不用看行号
