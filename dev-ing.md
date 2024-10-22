@@ -519,6 +519,21 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
 stt.message.channel().send('uCmdK', 'README.md', 2, 2, 'explain an elegant word in one sentence')
 ```
 
+## 1023
+
+- dev-to
+  - AI在会话栏输出内容时，切换文件，无法将文件打开，只能等 AI 回复完毕才可以
+
+## 1022
+
+昨天：
+- 处理编辑器右上角diff开关显示时机的问题
+- 处理时光机终止后action状态的issues
+
+今天：
+- 集中处理时光机终止和追加步骤、回放的逻辑
+- 处理cmdk反馈的相关issue
+
 ## 1018
 
 - [css - What's the difference between :focus-within and :has(:focus)? - Stack Overflow](https://stackoverflow.com/questions/78652185/whats-the-difference-between-focus-within-and-hasfocus)
