@@ -2136,7 +2136,7 @@ const playbackInfo = [
 - 通过鼠标点击切换文件时会执行click事件的openFile()逻辑
   - 先设置跟随 store.dao.channel().followingFocusComponent('Tree'); 
   - setOpenPath(''); 
-  - onSelectFileOrFolder([src]); + onCustomSelect?.([src], type);
+  - onSelectFileOrFolder([src]); + onCustomSelect?.([src], type); 
   - setSelectedFilePath(items[0] as string); 
 - 在useEffect里面，每次selectedFilePath变化，都会请求文件内容并更新编辑器
   - channel.loadFile(selectedFilePath); 
@@ -2157,9 +2157,9 @@ const playbackInfo = [
 
 ### codebase-ide-server
 
-- init-dataflow
-  - AppService发送heartBeat到manager
-  - AppGateway初始化 new PlaygroundChannel(this.i18n, client, this.server, ）
+- init-dataflow 前提是sdk已经获取到ideServer的socket连接地址url了
+  - AppService使用setInterval发送ideServerHeartBeat到manager
+  - AppGateway初始化 new PlaygroundChannel(this.i18n, client, this.server)
   - AgentUserService
   - PlaygroundManagerService
 
@@ -2176,6 +2176,14 @@ const playbackInfo = [
     - 直接使用playgroundItem.fileTree缓存，未做重新计算
   - registerFileTreeEvent
     - 每次都去构建文件树, 操作过重, 需要细分
+- registerFileEvent
+  - 若非大文件，读内容使用 await this.currentPlaygroundItem. FileTree_readFile( path, fileRootPath ); 
+  - 打开文件时，便要初始化文件的基础信息写入数据库，用于回放
+    - this.currentPlaygroundItem.playgroundHistoryCRDT.initialBaseFileByPath( path, { currentDoc } );
+    - this.currentPlaygroundItem.playgroundHistoryCRDT.initCachedOTMap( path, loadType === 'refresh', { currentDoc }, );
+  - OTInfo = await this.currentPlaygroundItem.playgroundHistoryCRDT.queryEditorOTInfoByPath( path, ); 
+    - queryEditorOTInfoByPathFromCache
+  - this.broadcastAll('file', { data:{ content: OTInfo.currentDoc } }, true); 
 
 - PlaygroundChannel 监听getPlaybackInfo
   - 从mongodb表获取编辑操作数据 playgroundHistoryCRDT.loadAllData(); 

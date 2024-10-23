@@ -429,13 +429,14 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
   - explain an elegant word in one sentence
     - rename to an elegant variable name
     - implement quick sort algorithm and add 2 test cases
+    - show me how to implement quick sort algorithm using recursive and non-recursive approach separately, then add 5 test cases
   - bugs
     - 🚨 diff视图开关只在需要时显示
     - 🚨 测试恢复提示词
     - 🚨 多次cmdk后能正确恢复diff、原文
     - 🚨 cmd+del在input执行时会多执行一个del
-    - migrate to StateField
     - cmdk针对选中全文的场景进行优化, ai会返回空{}
+    - migrate to StateField
     - 等待ai返回结果时，禁止send，允许esc键取消输入框和丢弃ai返回结果
     - 若在ai写代码时或写完后但未accept时刷新页面，是否会丢失状态数据
     - 输入框无法在ctrl+a+DEL时删除
@@ -491,7 +492,7 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
   - 🚨 时光机获取快照使用uuid
   - 🚨 ai写代码打字效果的时机优化和样式优化
   - 🚨 追加步骤
-  - 🚨 diff视图开关只在需要时显示
+  - ~~diff视图开关只在需要时显示~~
   - ~~支持撤销ai写的代码, diff工具条~~
   - tab-key; chat-apply; aiCannotCreateThread
   - 防抖: cmdk， chat
@@ -523,6 +524,14 @@ stt.message.channel().send('uCmdK', 'README.md', 2, 2, 'explain an elegant word 
 
 - dev-to
   - AI在会话栏输出内容时，切换文件，无法将文件打开，只能等 AI 回复完毕才可以
+
+昨天：
+- 修复编辑器右上角的diff-view开关的显示时机
+- 修复测试反馈的cmdk先关问题， 包括reject快捷键
+- 修复时光机终止任务的action异常
+
+今天：
+- 集中修复追加步骤、回放相关问题
 
 ## 1022
 

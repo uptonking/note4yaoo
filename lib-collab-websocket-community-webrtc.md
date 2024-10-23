@@ -13,6 +13,13 @@ modified: 2023-12-12T08:45:31.670Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## [websocket - Is there a limit (practical or otherwise) to the number of web sockets a page opens? - Stack Overflow](https://stackoverflow.com/questions/26003756/is-there-a-limit-practical-or-otherwise-to-the-number-of-web-sockets-a-page-op)
+- It seems that the maximum number of possible open Websockets is defined by the browser implementation, and it is being difficult to find numbers.
+  - In the Chromium source code (Google Chrome for Linux), I can see a max of 30 per host, 256 overall.
+  - In the Firefox configuration, (go to about:config and search for network.websocket) I can see a max of 6 persistent connections per host and 200 overall, but apparently the persistent conection limit does not affect WebSocket connections, so only the 200 limit applies.
+
 - ## [Custom event naming convention · Issue #1571 · socketio/socket.io](https://github.com/socketio/socket.io/issues/1571)
 - I have seen examples with 1) lower case and underscore and 2) camelcase, Altso, should I use present tense or past?
 

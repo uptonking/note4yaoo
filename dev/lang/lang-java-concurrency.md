@@ -64,14 +64,43 @@ modified: 2022-12-19T01:59:01.628Z
 
 - ## 
 
-- ## 
+- ## ❓ [Is stackless coroutines could be stackful in the theory? : r/Kotlin](https://www.reddit.com/r/Kotlin/comments/1fyhng9/is_stackless_coroutines_could_be_stackful_in_the/)
+  - Kotlin uses stackless coroutines with CPS (Continuation-Passing Style), so the compiler creates a state machine for every suspend function, with a new state generated for each suspension point. 
+  - In contrast, stackful coroutines can be suspended at any point, and a stackful continuation can be unmounted from its carrier thread and then remounted upon a callback. 
+  - However, if in a stackless coroutine every function is made suspendable — for example, making a network API suspendable — then a socket read could simply returnCOROUTINE_SUSPENDED, allowing a separate poller to invoke resumeWith on the passed continuation.
+  - It seems to me that, from a user perspective, there is no difference between the stackful and stackless approaches; the only difference is where the local data of the stack is stored: either in the continuation object (restored by the state machine's generated code) or in the stackful continuation, which is restored as a full stack frame. Am I wrong?
 
-- ## 
+- ## 🆚 [最近发现大家都在聊虚拟线程，那我也蹭蹭热度前言 _202309](https://juejin.cn/post/7277840091967979580)
+  - [JDK21最终版协程实现之虚拟线程 - 公众号-JavaEdge - 博客园](https://www.cnblogs.com/JavaEdge/p/17727379.html)
 
-- ## [如果java虚拟线程稳定了，是不是有一大批框架和工具要重写？ - 知乎](https://www.zhihu.com/question/549661510/answers/updated)
+- 在java过去的三十年中, java程序员几乎都依赖线程解决各种高并发问题, 特别是在各大主流编程语言引进协程的大环境下, java继续保持一个请求一个线程的独特风格未免也太过于保守且不合群
+- java中线程是非常昂贵的, 在我们最常使用的linux系统中, 我们叫线程为LWP, 也就是轻量级进程, 每个线程一般需要兆级别的内存
+- 如果每个请求的持续时间内都使用一个线程（每个请求一个操作系统线程），那么在其他资源（如CPU或网络连接）耗尽之前，线程的数量通常成为限制因素。即使线程被池化，应用程序的吞吐量也会受到限制，因为池化可以避免启动新线程的高成本，但不能增加总线程数。
+
+- 虚拟线程是有栈协程, 虚拟线程需要虚拟线程栈, 虚拟线程栈以块对象的形式存放在jvm的堆中
+  - 在Java虚拟机（JVM）中，每个线程都有自己的线程栈，这个线程栈是用来存储线程运行时的信息的。但是，对于虚拟线程来说，它们的线程栈并不是垃圾收集（GC）的根，也就是说，垃圾收集器在进行垃圾收集时，并不会去检查虚拟线程栈中的引用。
+
+- 🆚 java不能像 c# 那样直接用 async 和 await 糖, 真的很可惜, 直到我发现openjdk开发人员不使用async/await的理由非常离谱, 大意是:
+  - 有人提议将无栈协程（例如async/await）这种语法添加到Java语言中。这种做法比实现用户模式线程更容易，而且提供了一种统一的构造来表示操作序列的上下文。
+  - 然而，这种新的构造与线程是分开的，虽然在许多方面与线程相似，但在一些微妙的方式上存在区别。它会将API划分为面向线程和面向协程的两部分，并且需要将这种新的类线程构造引入到平台及其工具的所有层面。这需要更长的时间才能被生态系统接受，并且与用户模式线程相比，可能不会与平台那么优雅和协调。
+  - 大多数已经采用async/await语法协程的语言之所以这样做，是因为无法实现用户模式线程（例如Kotlin），具有遗留的语义保证（例如固有的单线程JavaScript）或者是具有特定语言的技术约束（例如C++）。这些限制在Java中并不适用。
+
+- ## 🤔 [如果java虚拟线程稳定了，是不是有一大批框架和工具要重写？ - 知乎](https://www.zhihu.com/question/549661510/answers/updated)
+- 参考c# js go，c#和go早早统一了异步协成的写法，所有的库都自然往这上面靠，
+  - 而js还在各自为政，async await promise体系在部分场合统一而已
+
+- JDK21已发，还有几个遗留问题
+  - 虚拟线程不用黑科技（本质上是可以替换那个forkjoin线程池的），背后都是那几个线程在跑，线程池之间背后的线程不隔离，还是有风险（万一那个类库有sync块呢？）
+
+- java的虚拟线程之所以叫虚拟线程（之前叫做fiber纤程）就是因为它要尽量保留原来线程的api，这样可以使的工具类库升级的时候，尽量减少他们的工作量
+
+- 粗略看了一下 API，java 的虚拟线程应该是有栈协程。因为是从已有的 Thread 模型上做扩展，现有第三方库的改动量应该比较好控制。
+  - 如果是 C# 那种无栈协程的话就需要整个重新实现一遍异步 API 了。 无栈所有设计多线程的代码都要重写，有栈大部分能继续用。
+- 没有错。无栈协程理论上性能比有栈高，这是它的优势。java没有设计无栈，性能会低一点点，但非常微，无栈协程的性能优势我觉得大部分项目都没必要。
+
 - 大部分程序员能写好多线程的阻塞代码就不错了, 用非阻塞异步框架的JVM 程序员可不多（，心疼一秒自虐的 JS 程序员）
-- 目前的大部分阻塞多线程相关的模型， 比如 servlet、以及基于 eventpool， reactor 等等，往往是基于同步阻塞多线程的模式， 在web应用下的高频应用， 正好是虚拟线程的主要发力点， 往往是啥都不用改就享受了这波红利，几乎不用重写。
-- 至于那些需要高频异步的场景， 无论是 actor， forkjoin ， reactive-stream，本身就是冲着高效利用物理线程， 对并发任务细节进行抽象的异步框架， 他们和虚拟线程是同质化的，迁移到虚拟线程收益不明确。
+  - 目前的大部分阻塞多线程相关的模型， 比如 servlet、以及基于 eventpool， reactor 等等，往往是基于同步阻塞多线程的模式， 在web应用下的高频应用， 正好是虚拟线程的主要发力点， 往往是啥都不用改就享受了这波红利，几乎不用重写。
+  - 至于那些需要高频异步的场景， 无论是 actor， forkjoin ， reactive-stream，本身就是冲着高效利用物理线程， 对并发任务细节进行抽象的异步框架， 他们和虚拟线程是同质化的，迁移到虚拟线程收益不明确。
 
 - ## 可能是暴论，但我认为高性能并发编程最佳选项始终是Go语言的goroutine和channel。
 - https://twitter.com/stephenzhang233/status/1762883684456390874
