@@ -9,6 +9,8 @@ modified: 2024-08-24T16:30:20.218Z
 
 # guide
 
+- pm-ai-coding
+  - ai编程类热门产品可以在各大ide的插件市场搜索排序
 # popular
 - https://github.com/trypear/pearai-app /apache2/202409/ts
   - https://trypear.ai/

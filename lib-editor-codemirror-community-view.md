@@ -324,6 +324,18 @@ window.matchMedia('(prefers-color-scheme: dark)')
 # discuss-event-focus/blur
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Handling focus changes in StateField - v6 - discuss. CodeMirror _202303](https://discuss.codemirror.net/t/handling-focus-changes-in-statefield/6138)
+  - How to handle focus changes in StateField update function? Should I use UpdateListener which dispatches some effect like FocusChangeEffect when focusChanged?
+- By default, focus changes do not cause transactions and thus cannot be observed by the editor state. You can use `focusChangeEffect` to tell the editor to dispatch a given effect when focus changes, and react to those in your state field update method.
+
+- ## [View.hasFocus is false when adding focus programmatically - v6 - discuss. CodeMirror _202111](https://discuss.codemirror.net/t/view-hasfocus-is-false-when-adding-focus-programmatically/3734)
+- I think this is because `view.hasFocus` check for `document.hasFocus()` which is only true if the window/tab has focus from the OS. 
+  - That means programmatically setting the active element (with .focus()) won’t affect view.hasFocus when the OS user isn’t focused on the web page.
+
 - ## [How to set cursor position in Codemirror editor - Stack Overflow](https://stackoverflow.com/questions/33394855/how-to-set-cursor-position-in-codemirror-editor)
 - Before you set the cursor position you have to focus on the editor.
 

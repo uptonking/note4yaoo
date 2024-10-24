@@ -8,6 +8,8 @@ modified: 2024-08-24T16:28:20.515Z
 # lib-ide-app-community-ai
 
 # guide
+- pm-ai-coding
+  - ai编程类热门产品可以在各大ide的插件市场搜索排序
 
 - products
   - [Top 6 Devin AI Alternatives for Developer to Automate Codings](https://analyticsindiamag.com/top-6-devin-alternatives-to-automate-your-coding-tasks/)

@@ -8,7 +8,8 @@ modified: 2024-08-11T07:19:29.817Z
 # lib-editor-codemirror-community-pm-ide-ai
 
 # guide
-
+- pm-ai-coding
+  - ai编程类热门产品可以在各大ide的插件市场搜索排序
 # discuss-stars
 - ## 
 

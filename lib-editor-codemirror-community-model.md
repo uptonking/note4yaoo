@@ -245,9 +245,11 @@ EditorState.transactionFilter.of(tr => {
 
 # discuss-StateField
 - ## 
-- ## [Handling focus changes in StateField - v6 - discuss. CodeMirror _202303](https://discuss.codemirror.net/t/handling-focus-changes-in-statefield/6138)
-  - How to handle focus changes in StateField update function? Should I use UpdateListener which dispatches some effect like FocusChangeEffect when focusChanged?
-- By default, focus changes do not cause transactions and thus cannot be observed by the editor state. You can use `focusChangeEffect` to tell the editor to dispatch a given effect when focus changes, and react to those in your state field update method.
+
+- ## 
+
+- ## 
+
 - ## [Using `EditorView.scrollIntoView` in `transactionExtender` breaks `StateField` updates - discuss. CodeMirror](https://discuss.codemirror.net/t/using-editorview-scrollintoview-in-transactionextender-breaks-statefield-updates/7476)
 - Editor states, including any values attached to them, should be immutable.
 
