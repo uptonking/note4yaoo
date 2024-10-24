@@ -15,6 +15,14 @@ modified: 2023-06-14T00:53:15.226Z
 
 ## 
 
+## 
+
+## codemirror的stateField扩展不能使用工厂方法创建, 否则tooltip的dom元素会显示后立即消失
+
+- 原因是state变化时tooltip的dom创建后会立即销毁
+
+- toolbar上按钮的click事件会后于editor的blur事件执行，若在editor的blur事件中已经将toolbar所在的dom销毁了，toolbar上按钮的事件也不会触发
+
 ## innerHTML=`` 内容中若有换行时，会占用元素高度
 
 - 下面的示例中 Reject span元素的高度为100px左右
