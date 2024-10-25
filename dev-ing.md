@@ -521,6 +521,29 @@ stt.message.channel().send('uCmdK', 'README.md', 2, 2, 'explain an elegant word 
 ^(?!42\["res).*
 ```
 
+## 1025
+
+- nx配置执行自定义命令的方法
+
+```JS
+// apps/webapp/project.json
+// npx nx run webapp:dev1
+{
+  "targets": {
+    "dev1": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/webapp",
+        "command": "next dev -H 0.0.0.0 -p 3000"
+      }
+    }
+  }
+}
+```
+
+- [next.js - How to host NextJS app on 0.0.0.0:3000 with nrwl/next (not localhost:3000) - Stack Overflow](https://stackoverflow.com/questions/70079560/how-to-host-nextjs-app-on-0-0-0-03000-with-nrwl-next-not-localhost3000)
+  - `npx next dev -H 0.0.0.0 -p 3000`
+
 ## 1024
 
 - 现在有个需求，前端需要获取当前打开的文件路径

@@ -9,7 +9,24 @@ modified: 2023-02-12T15:19:54.332Z
 
 # guide
 
+# discuss-events
+- ## 
+
+- ## 
+
+- ## [In web browsers, what's the difference between onblur and onfocusout? - Stack Overflow](https://stackoverflow.com/questions/7755052/in-web-browsers-whats-the-difference-between-onblur-and-onfocusout)
+- `onBlur` event fires for an element if that element had the focus, but loses it.
+  - `onFocusOut` event fires in this case, but also triggers if any child element loses focus.
+
+- Acccording to the spec for the `focusout` event type: This event type is similar to blur, but is dispatched before focus is shifted, and does bubble.
+  - Whereas `blur` events do bubble, and are dispatched later.
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 调研一下 iOS 的选区菜单能不能取消掉或者可定制

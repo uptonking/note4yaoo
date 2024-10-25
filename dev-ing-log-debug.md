@@ -22,6 +22,7 @@ modified: 2023-06-14T00:53:15.226Z
 - 原因是state变化时tooltip的dom创建后会立即销毁
 
 - toolbar上按钮的click事件会后于editor的blur事件执行，若在editor的blur事件中已经将toolbar所在的dom销毁了，toolbar上按钮的事件也不会触发
+  - blur事件中的timeout设置要考虑低性能的浏览器和设备，调试时设为60ms会在windows上出bug，设为120ms会在windows上正常
 
 ## innerHTML=`` 内容中若有换行时，会占用元素高度
 

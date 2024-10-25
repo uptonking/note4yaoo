@@ -171,6 +171,7 @@ modified: 2021-05-06T09:38:31.520Z
   - draggable block-style
   - table/database: multi views, user-defined
   - markdown sync scroll
+  - 尝试集成redux-devtools
 
 - not-yet
   - codemirror devtools
