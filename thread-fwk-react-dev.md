@@ -12,6 +12,14 @@ modified: 2021-01-06T14:40:03.364Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## useEffect is for syncing state managed by React with the external world. uSES is about syncing the external world *into* React.
+- https://x.com/rossipedia/status/1847839401772032266
+  - Because React can't make any assumptions about external world, it can't manage any kind of lifecycle, which is why it's sync
+  - Whereas with useEffect, React is in control, and so it can support all the async goodies like Suspense and stuff.
+  - And since directionality is really just a matter of perspective, the overlap between the two is pretty big.
+
 - ## 🆚️🏘️ [Remix vs Modern JS · remix-run/remix _202310](https://github.com/remix-run/remix/discussions/7767)
 - My high-level understanding of modern.js is that it is mostly a re-implementation of Remix on top of the webpack and Rspack compilers. 
   - It copies and/or references a lot of Remix code and packages to implement the same concepts, whilst re-exporting react-router-dom and remix-router for the majority of its functionality.

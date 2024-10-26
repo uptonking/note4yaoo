@@ -12,6 +12,15 @@ modified: 2023-10-26T15:02:47.068Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 
+
+- ## What's the 2024 version of this list of storage engines written in Rust?
+- https://x.com/eatonphil/status/1849084233525977108
+- It’s sad that half of this list is died 
+- All this list of Key/Values DBs (for any language that matter) reminds of the old 3D engine list (though site/forum long gone) 
+
 - ## 🆚️ does anyone have good sources comparing and contrasting the tradeoffs of relational dbs versus key-value stores? 
 - https://twitter.com/jessmartin/status/1773320178786271236
 - kv stores are used to implement relational dbs.

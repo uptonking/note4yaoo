@@ -174,6 +174,16 @@ modified: 2023-04-21T11:42:46.575Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Should TinyBase be 𝘮𝘰𝘳𝘦 opinionated about persistent data storage? E.g:
+- https://x.com/tinybasejs/status/1850198287178969456
+  - a) tightly bind the existing API to one client-side SQLite solution
+  - b) a vertical out-of-the-box integration with one cloud/sync provider
+  - c) continue with our unopinionated integrations
+
 - ## 💡 The docs of @tinybasejs are pretty cool. You can jump to the function's doc in any code snippet. How did you guys implement this
 - https://twitter.com/zx_loro/status/1788161816524419125
 - TypeDoc and then lots of scary regex.

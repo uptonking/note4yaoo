@@ -442,7 +442,28 @@ that commit position, thus providing "read your own writes" semantics.
 # discuss
 - ## 
 
-- ## Drasi combines CDC with event processing, using @Neo4j 's Cypher language.  
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Event sourcing is essentially as if your database only had a WAL but no table files. Key lookups? Queries? Unique constraints? 
+- https://x.com/gunnarmorling/status/1847953333937467864
+  - You'll be on your own with all of that, and more. 
+  - Not saying there isn't a place for this, but be sure to do a really thorough cost/benefit analysis.
+- You can always have whatever derived projections you find beneficial.
+Always reaccumulating from a scratch is doing event sourcing wrong.
+  - yes, yes, yes! Let’s add cache invalidation to the mix.
+
+- seems like generalizing the outbox pattern affords the best of both persistence mechanisms: the wal maintains the eventing part of the system while a traditional relational system maintains the other. ofc both should be part of a single transaction
+
+- Which is why you rarely use event sourcing in its own. You project whatever state you want into whatever tables or indices are convenient for your queries. ES is a pattern for writing data.
+  - In fact ES plays the same role in an app that the WAL in a database. You wouldn’t have an eventsourced app without projections for the same reason you wouldn’t have a WAL without tables. It just extends the same idea to your app.
+
+- Event Sourcing + current state snapshot is the way
+
+- ## Drasi combines CDC with event processing, using @Neo4j 's Cypher language. 
 - https://x.com/rmoff/status/1842110663008649324
   - In another vindication(澄清；证实) for open source standards, it supports Debezium's CDC format for output.
   - It's worth noting that the docs call out that it's not intended for stream processing over high volume data streams

@@ -14,7 +14,14 @@ modified: 2023-10-28T13:38:46.522Z
 
 - ## 
 
-- ## 
+- ## Reminder: SQLite is 35% faster than the filesystem while also using 20% less disk space
+- https://x.com/iavins/status/1850165947392254445
+- SQLite could be default storage engine for an OS?
+  - Great question! There have been attempts. Sharing some from my notes: sqlitefs, libsqlfs, wddfs
+
+- Plain text is 35% slower than SQLite and takes up 20% more disk space but is more human readable. ScrollSets are the future
+
+- What you're saying is not the same as what they are saying. If the thumbnails were in a sprite instead of individual files, that might be just as fast/faster than SQLite. Treating 1 single opened Sqlite DB to multiple unopened file descriptors isn't apples to apples comparison
 
 - ## 看 SQLite 的介绍从数据库读小文件性能比从文件系统直接读要提升 35%，因为小文件读取大部分时间都消耗在了 open 和 close 的调用，而数据库只用一次 open 就够了
 - https://x.com/liumengxinfly/status/1818514354196955539
@@ -84,6 +91,27 @@ modified: 2023-10-28T13:38:46.522Z
   - For MySQL or PG the default advice is to prefer a smaller number of large queries, to minimize network latency. 
   - For SQLite, you should prefer a larger number of small queries.
 - Writes block, so you want to avoid long running write queries. So if you want to avoid busy errors, you want to keep your writes small and quick. This allows SQLite to linearize them and keep any from overflowing the timeout.
+
+# discuss-db-per-user
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## I learned that Bue Sky uses one SQLite database per user, as God intended. Where can I read more about its high level architecture?
+- https://x.com/iavins/status/1850036886938497410
+- A step in the right direction. One SQLite per user = 1 file per user. It's only 1 step from there to ScrollSets (1 plain text file per user ).
+
+- Dan did a great talk about the high level architecture. as for the tech each part uses, the PDSes are TypeScript+SQLite, the Relay is Go+Postgres, and the AppView is half Go+Scylla, half TypeScript
+
+- https://x.com/iavins/status/1850201235347128640
+  - They have a service called PDS (Personal Data Server) which contains all user data, where each user has their own SQLite db.
+  - They push new changes from SQLite to Scylla. How are the changes from SQLite observed - through changesets or by monitoring WAL?
+- the PDS exposes a websocket which sends changes. the appview consumes these events to construct its view of the network
+  - as an optimisation, a service called a relay aggregates events from all the PDSes on the network into a single stream, called the firehose
 
 # discuss
 - ## 

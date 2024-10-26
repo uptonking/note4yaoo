@@ -388,7 +388,7 @@ modified: 2021-05-14T15:04:55.849Z
   - platform for data monitoring and observability
   - written in pure react and go.
   - Datav is forked from @grafana, but changed a lot
-# ts
+# ts-validate
 - https://github.com/colinhacks/zod /MIT/202312/ts
   - https://zod.dev/
   - TypeScript-first schema validation with static type inference
@@ -401,6 +401,11 @@ modified: 2021-05-14T15:04:55.849Z
   - VineJS is a form data validation library for Node.js
   - You may use it to validate the HTTP request body in your backend applications.
   - VineJS performance is the outcome of our pre-compiling API. Both Yup and Zod have no option for pre-compiling schemas.
+
+# ts-toolchain
+- https://github.com/webpro-nl/knip /ISC/202410/ts
+  - https://knip.dev/
+  - Find unused files, dependencies and exports in your JavaScript and TypeScript projects. Knip it before you ship it
 # ts-repos
 - https://github.com/julianshapiro/velocity
   - Accelerated JavaScript animation.

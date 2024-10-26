@@ -161,4 +161,12 @@ modified: 2020-11-03T06:56:19.448Z
 - https://github.com/rust-unofficial/patterns /MPLv2/202403/Handlebars
   - https://rust-unofficial.github.io/patterns/
   - An open source book about design patterns and idioms in the Rust programming language
+
+## rust-web
+
+- https://github.com/mitsuhiko/minijinja /apache2/202410/rust
+  - https://docs.rs/minijinja/
+  - MiniJinja is a powerful but minimal dependency template engine for Rust compatible with Jinja/Jinja2
+  - https://x.com/mitsuhiko/status/1849891716070805981
+    - this took me 5 minutes to write. Basically all cursor generated. Because it has embedded dependencies, I can just use uv run to execute it
 # more

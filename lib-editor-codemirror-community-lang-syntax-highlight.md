@@ -50,6 +50,26 @@ modified: 2024-08-11T07:59:35.617Z
 - ## 
 
 - ## 
+# discuss-tree-sitter
+- ## 
+
+- ## 
+
+- ## Oxc parser on the node side is compatible with estree-walker, along with types.
+- https://x.com/boshen_c/status/1850179017862959128
+- Is it fully compatible now? Last time I checked/tried iirc there were some differences in the ast still
+  - Still not compatible. estree-walker duck types the AST for the visits ...
+
+- ## 🧮 [Lezer: A parsing system for CodeMirror, inspired by Tree-sitter | Hacker News _202403](https://news.ycombinator.com/item?id=39805591)
+- lezer is a parser generator( which by itself is not a trivial feat with novel ideas like incremental computations applied to parsing) to power his mainstream project which is CodeMirror.
+- it would be great if CodeMirror could just work with Tree-sitter or similar. There’s a lot of ecosystem around other parsing systems, and needing to figure out Lezer stuff is a big friction for adopting CodeMirror 6 for me. There are not a lot of language packages listed
+- Unfortunately, tree-sitter is written in C, which is still awkward to run in the browser (and CodeMirror targets non-WASM browsers). It also generates very hefty(大的，重的) grammar files because it makes the size/speed trade-off in a different way than a web system would.
+  - Tree-sitter does run on the web. I got it working for my editor, but it did involve several days' worth of effort and getting into the weeds with emscripten.
+- I've been using both codemirror and lezer in Yaade (https://github.com/EsperoTech/yaade). Thanks to lezer I was able to write a JSON extension language that supports Yaade environment variables. Pretty cool project and very nicely documented! I love building OSS on top of OSS.
+
+- 
+- 
+
 # discuss-lezer
 - resources
   - [Comparison of Leading Language Parsers – ANTLR, JavaCC, SableCC, Tree-sitter, Yacc, Bison _202310](https://www.researchgate.net/publication/376883410_Comparison_of_Leading_Language_Parsers_-_ANTLR_JavaCC_SableCC_Tree-sitter_Yacc_Bison)
@@ -81,17 +101,6 @@ modified: 2024-08-11T07:59:35.617Z
   - I see ensureSyntaxTree() takes a max line number param, but I'm not sure how it expects you to save+restore state between calls.
 
 - That's automatic. Parsing work is kept in a mutable cache and reused when possible on the next editor state update (and on further calls to that function).
-
-- ## 🧮 [Lezer: A parsing system for CodeMirror, inspired by Tree-sitter | Hacker News _202403](https://news.ycombinator.com/item?id=39805591)
-- lezer is a parser generator( which by itself is not a trivial feat with novel ideas like incremental computations applied to parsing) to power his mainstream project which is CodeMirror.
-- it would be great if CodeMirror could just work with Tree-sitter or similar. There’s a lot of ecosystem around other parsing systems, and needing to figure out Lezer stuff is a big friction for adopting CodeMirror 6 for me. There are not a lot of language packages listed
-- Unfortunately, tree-sitter is written in C, which is still awkward to run in the browser (and CodeMirror targets non-WASM browsers). It also generates very hefty(大的，重的) grammar files because it makes the size/speed trade-off in a different way than a web system would.
-  - Tree-sitter does run on the web. I got it working for my editor, but it did involve several days' worth of effort and getting into the weeds with emscripten.
-- I've been using both codemirror and lezer in Yaade (https://github.com/EsperoTech/yaade). Thanks to lezer I was able to write a JSON extension language that supports Yaade environment variables. Pretty cool project and very nicely documented! I love building OSS on top of OSS.
-
-- 
-- 
-
 # discuss
 - ## 
 

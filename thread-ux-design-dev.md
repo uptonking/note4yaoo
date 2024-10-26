@@ -31,7 +31,8 @@ modified: 2021-03-10T11:38:16.053Z
 
 - ## 
 
-- ## 
+- ## Text Shimmer now live on motion-primitives
+- https://x.com/Ibelick/status/1849504454938100042
 
 - ## Along with automatic skeletons, another thing I worked on recently was coordinated image loading. 
 - https://x.com/devongovett/status/1839355629179486428
@@ -45,8 +46,23 @@ modified: 2021-03-10T11:38:16.053Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## the linear homepage shot is not an image it's actually html and css
+- https://x.com/jordienr/status/1849875325703905743
+  - 歪斜界面的效果
+- thats actually a pretty neat trick because I would assume they can just take a piece of their real UI components, plug them in with some fake data and then transform the wrapper and user-select: none
+
+- transform: translateX(2%) scale(1.2) rotateX(47deg) rotateY(31deg) rotate(324deg); 
+
+- Literally just an app with hardcoded user data and transform3d on top
+
 - ## Assisted password confirmation. Made with Tailwind and Framer Motion.
-- https://x.com/wickedmishra/status/1831361580396884190
+- https://x.com/w- ## 
+
+ickedmishra/status/1831361580396884190
   - 输入确认密码时，显示匹配字符为绿色
 
 - ## 今天从设计师朋友那学到了排版四原则：

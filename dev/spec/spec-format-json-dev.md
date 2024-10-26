@@ -54,6 +54,17 @@ modified: 2021-02-27T15:31:23.130Z
 - https://github.com/rse/json-asty
   - Lossless JSON-to-AST Parser and AST-to-JSON Generator
   - The AST is based on ASTy-ASTq
+# discuss-parser/generator
+- ## 
+
+- ## 
+
+- ## 
+
+- ## One coding project that I recommend every engineer to build at least once is to write your own JSON parser that converts the given string into a language-native object like a dictionary.
+- https://x.com/arpit_bhayani/status/1848931553281450419
+- Building a JSON-parser really taught me a lot
+
 # discuss
 - ## 
 
