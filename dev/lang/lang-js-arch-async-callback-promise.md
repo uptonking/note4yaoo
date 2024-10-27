@@ -113,6 +113,60 @@ modified: 2021-08-30T07:01:09.493Z
 - The code for dynamic `import` can be placed in the `head` of the file instead of inside the `onClick` function, two benefits: 
   - 1. maintain page performance (dynamic import will start loading after the static import), 
   - 2. no need to wait to use the function inside the onClick function
+# discuss-queue/concurrency
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [GCP: When to use PubSub vs Task Queues _201702](https://groups.google.com/g/google-appengine/c/IcIjLfgnNXs/m/-m_ik7h6DgAJ)
+- Much of the answer is historical. Task Queues evolved as part of the App Engine developer libraries (back in 2009) and was (internally) slated for deprecation and replacement with release of Pub/Sub. As you observed: Pub/Sub does seem like a strong generalization of Task Queues. When Pub/Sub launched, however, we found that it did not meet the needs of a significant number of customers. A number of features that we thought weren’t particularly import (de-duplication, scheduled delivery, rate management, concurrency management, tagged tasks, configurable retries, etc) turned out to be critical and not supported in Pub/Sub.
+  - In response to that feedback, we took a step back and tried to define the core differences. The conclusion we arrived at is that Pub/Sub is a networking and big data product. It is agnostic to both the content and the target and focuses on delivering very high throughput capabilities to arbitrary handlers. Task Queues is a managed execution product. It is intended for running and managing large numbers of explicit commands. We’re working to repackage Task Queues as Cloud Tasks and open it up for broader integration with the rest of GCP. For example, we want to make it possible to enqueue Datastore operations or Cloud Functions for asynchronous execution. The idea is to make it as easy as possible to spin up large distributed systems without needing to write handlers and managers. 
+
+- Personal opinion:
+  - Task queues are probably better to use from App Engine Standard. They've existing for a long time, and I suspect the RPC API that is used to call App Engine services is pretty efficient. Using Pub/Sub is likely to be slightly worse in terms of overhead per API call, since it will have to go through the HTTP API via URL Fetch.
+  - Pub/Sub is probably better to be used from anywhere else. The API works from anywhere. A single Pub/Sub topic has nearly no limits, while task queues top out at around 500 messages / second. You can also "replicate" a topic to multiple subscribers, which is useful for some applications.
+
+- ## [javascript - what is the difference events and tasks? - Stack Overflow](https://stackoverflow.com/questions/73185642/what-is-the-difference-events-and-tasks)
+- Events are signals that tell the event loop that a task is now ready to run. They are not part of the event loop, they come from outside. Examples are DOM events (such as clicks, keyboard events etc), network events (readystatechange, progress), timer events (from setTimeout). 
+  - Events are not tasks themselves. They may or may not be fired by another thread - often enough, the event loop polls for them.
+
+- ## 🆚️ [Event Loops vs Queues? _201910](https://www.reddit.com/r/esp32/comments/dde864/event_loops_vs_queues/)
+  - I'm doing a refactoring of some code and am looking to componentize things. As far as communication between components, is there any "best practice" as to when to use event loops vs queues? 
+  - Its seems like you can get the same functionality, ie running a function on an event vs running a function when an item in a queue is received. 
+  - I want to do things in an extendable, well maintainable, and "correct" way so does anyone have any advice or resources I can look into to better resolve this?
+
+- ‘Queues’ provide a task-to-task, task-to-interrupt, and interrupt-to-task communicationmechanism.
+  - Event groups are another feature of FreeRTOS that allow events to be communicated totasks. Unlike queues and semaphores: Event groups allow a task to wait in the Blocked state for a combination of one of moreevents to occur. Event groups unblock all the tasks that were waiting for the same event, or combinationof events, when the event occurs
+- In Summary. 
+  - Events are good if you want to wait to do something when the chip has reached a set of states. e.g. I have read the temperature and humidity and I'm connected = OK send the payload. All (or some) conditions must be met for the event to trigger
+  - Queues are better for copying information from one task to another. e.g I have 2 tasks. One that handles reading the temperature and another that displays the information. A queue can be used to "notify" (copy) the information from the task that read the data to the other that displays it.
+  - As far as Main is concerned, Its just another FreeRtos task. I like to organize my code so that all my tasks, semaphores, events, queues etc, are initialized in main and the tasks act like individual applications thereafter. but there is no hard and fast rule about that as long as you keep your eye on the available stack space
+
+- My answer will be specific to ESP-IDF.
+  - The best practice is this: use eventGroup to signalling, use Queue to transfer data between tasks.
+  - ESP-IDF framework is oriented to asynchronous programming model i.e. Non-blocking. So the main function should only be used for init'ing and setup handler. It's okay to have small code in main function, but if you're working with a larger systems then you need to consider creating some FreeRTOS tasks from main func. This way you'll keep your project modular.
+
+- ## 🆚️ [Message Queue vs Task Queue difference - Stack Overflow](https://stackoverflow.com/questions/10075817/message-queue-vs-task-queue-difference)
+- below is my understanding:
+  - Message queue is the message broker part - a queue data structure implementation, where you can: send/receive
+  - Task queue, on the other hand, is to process tasks: At a desired pace, In an async way
+  - As you can see, message queue and task queue focus on different aspects, they can overlap, but not necessarily.
+  - An example for task queue but not message queue - if your tasks don't care about ordering - each task does not depend on one another - then you don't need a "queue", FIFO data structure. You can, but you don't have to. You just need a place to store the buffered tasks like a pool, a simple SQL/NoSQL database or even S3 might suffice.
+  - An opposite example is push notification. You use message queue but not necessarily task queue. Server generates events/notifications and wants to deliver them to the client. The server will push notifications in the queue. The client consumes/pulls down notifications from the queue when they are ready to do so. Products like GCP PubSub, AWS SNS can be used for this.
+- Tools like Celery are task queue + message queue baked into one. There aren't many tools like Celery as I know that do both, guess that's why it's so popular (alternatives are Bull or Bee in NodeJS, or if you know more please let me know!).
+
+- ### 🆚️ [Difference between a task queue and worker threads? : r/node _202203](https://www.reddit.com/r/node/comments/tdrjq2/difference_between_a_task_queue_and_worker_threads/)
+- A task queue lets you do things like persist, schedule, coordinate and retry jobs in a robust way.
+  - A worker thread just spins up a new thread to do some work on. It doesn't help you with the other stuff I mentioned.
+  - If you are looking for a lightweight queue and are using Postgres, you might want to check out pg-boss and @graphile/worker, as an alternative to the Redis-based queues like Bull.
+
+- A worker thread is a primitive which gives you the ability to run code in parallel. 
+  - A task queue is a pattern for distributing work across potentially many computers.
+  - You could implement a task queue pattern on top of worker threads, but as others have pointed out, if your process dies due to an exception, the OOM killer, or even a deployment script, all the threads will be killed along with it.
+  - Most of the time when you implement a task queue pattern, you'll want to distribute the work across multiple servers, and store the actual tasks externally (e.g. in a database or Redis).
+  - This is why e.g. "worker threads don't automatically retry" like some task queues. They're low level and you can use them to build up many different high level architectures.
 # discuss-stars
 - ## 
 

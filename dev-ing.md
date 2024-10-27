@@ -388,7 +388,9 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
   - ~~action bar working/replaying~~
 
 - time-machine
-  - 追加step
+  - ❓ 追加step，同一cde内，用户A在回放，用户B追加完点执行，
+    - 则用户A的的时光机处于什么状态
+    - 若用户A取消跟随且自己执行回放，是否执行B追加过的已执行完的action
   - 回放模式点击第一个action，然后点击播放，没有播放
   - 终止后未执行的action在进度条仍然显示，状态是cancelled
   - 关闭machine再打开时，会强制再次打开editor

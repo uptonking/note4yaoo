@@ -14,6 +14,13 @@ modified: 2023-04-04T22:36:31.529Z
   - 模式的选型会影响整个codebase的代码风格
   - 主流库的实现大多基于Promise/async/await，而不是generator
 
+- queue vs setInterval/loop
+  - queue内置更多功能，如pause/resume, FIFO顺序
+  - 是否需要传输数据，event更容易传输数据
+  - 执行的优先级不同
+    - setInterval作为macroTask执行fn的时机是下一个event-loop
+    - queue如果使用同步方式实现，执行fn的时机是当前event-loop
+
 - queue-features
   - pause/resume
   - concurrency

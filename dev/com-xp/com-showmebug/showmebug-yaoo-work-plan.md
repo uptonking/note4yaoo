@@ -407,15 +407,21 @@ modified: 2024-05-06T02:54:40.374Z
 
 - 引入task-engine的好处
   - 可细粒度控制打字动画的暂停和action执行的时序
+  - 可单独控制回放的长度，不必回放全部action
 
-- live模式下的暂停与恢复
+- live模式下action的暂停与恢复
   - 完全由agent控制，agent在未执行完action时点暂停会将当前action视为未执行
-  - task状态变化 init > planning > working > pausing > working 
   - 打字动画在暂停时会立即打完，当前action视为已执行
+  - task状态变化 inited > planning > working > pausing > working > done/canceled/appended 
+  - action状态变化 inited > in_progress > completed/abandoned/canceled
 
-- playback模式下的暂停与恢复
-  - 完全由业务前端控制
+- playback模式下action的暂停与恢复
+  - 完全由业务前端控制, 在未执行完action时点暂停会立即将该action执行完且暂停
   - 打字动画在暂停时会立即打完，当前action视为已执行
+  - task状态变化 waitingActions为空时回放完成
+  - action状态变化 running > played，按顺序执行
+  - 回放时点击action会立即暂停到点击的action，然后更新waitingActions，不能清空否则丢失pause状态
+  - 暂停后点播放会从下一个action开始播放
 
 ### ✨ feat-cmdk
 
