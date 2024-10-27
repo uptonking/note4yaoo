@@ -36,6 +36,10 @@ modified: 2021-09-29T13:23:09.969Z
 
 - https://github.com/JokerLHF/tiny-library
   - 各种库的模拟实现, express, koa
+
+- https://github.com/Jcanno/express-koa-core-analysis /202004/js/inactive
+  - express base version: 4.17.1 简写express 版本
+  - koa base version: 2.11.0 简写koa 版本
 # data-structure
 - https://github.com/childrentime/mini-immer
   - create a minimal version of the immer library that illustrates the core principles of immer.

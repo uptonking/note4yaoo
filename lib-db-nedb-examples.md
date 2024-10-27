@@ -754,6 +754,12 @@ modified: 2023-09-28T20:33:44.333Z
 - https://github.com/louischatriot/nedb-server
   - HTTP interface for a NeDB database
 
+- https://github.com/hajnalben/embedded-queue /MIT/202311/ts/inactive
+  - embedded-queue is job/message queue for any platform. 
+  - It does not required any other repository for storing data, like Redis, MySQL, and so on.
+  - 支持in-memory/nedb/custom
+  - 不支持pause
+
 - https://github.com/node-modli/modli /MIT/201603/js
   - http://node-modli.github.io/modli/
   - A module for building models and adapters for multiple data sources

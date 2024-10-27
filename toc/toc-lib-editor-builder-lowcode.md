@@ -623,8 +623,11 @@ modified: 2020-12-28T12:24:09.275Z
 # workflow-automation-tasks-pipeline
 - tips
   - 考虑跨平台/系统的task兼容性、分享，主流的airflow/ifttt
-  - https://github.com/meirwah/awesome-workflow-engines
   - https://github.com/pditommaso/awesome-pipeline
+
+- https://github.com/meirwah/awesome-workflow-engines /md
+  - A curated list of awesome open source workflow engines
+  - saas, bpm, embedded
 
 - https://github.com/node-red/node-red /apache2/js
   - Low-code programming for event-driven applications

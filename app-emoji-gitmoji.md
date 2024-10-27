@@ -17,7 +17,7 @@ modified: 2024-01-21T07:46:00.256Z
 
 - emoji-resources
   - [EmojiDB](https://emojidb.org/)
-  - [Emoji大全 | EmojiAll中文官方网站](https://www.emojiall.com/zh-hans)
+  - [Emoji大全 | EmojiAll中文官方网站 🇨🇳](https://www.emojiall.com/zh-hans)
   - https://www.emojiall.com/en/all-emojis
   - [Emoji cheat sheet for GitHub, Basecamp, Slack & more](https://www.webfx.com/tools/emoji-cheat-sheet/)
   - [Unicode Full Emoji List](https://unicode.org/emoji/charts/full-emoji-list.html)
@@ -30,7 +30,7 @@ modified: 2024-01-21T07:46:00.256Z
   - A markdown version emoji cheat sheet
 # face
 - 🙃 🥲
-  - ime 呵呵 倒脸
+  - ime 呵呵 倒脸/上下颠倒的脸
   - upside-down face
 - 🤔
   - ime 思考 为啥
@@ -76,8 +76,8 @@ modified: 2024-01-21T07:46:00.256Z
 - 🤑
   - 给钱/势利
 # common
-- ⭐️  🌟  ✨   💫   🌠   ☄️
-  - 星 星光 繁星 小行星 流星 彗星
+- ⭐️   🌟    💫    🌠   ☄️
+  - 星 星光  小行星 流星 彗星
 - ✨ ⚡️
   - 闪亮/闪烁 电
 - ✴️ ✳️
@@ -103,10 +103,10 @@ modified: 2024-01-21T07:46:00.256Z
   - 喇叭
 - 🔈 🔔
   - 扬声器 提醒
-- 🪧
-  - 提示牌/警示牌
+- 🪧 
+  - 标语牌/提示牌/警示牌
 - 🚨   ⚠️   ❗️  🔔
-  - 危险 警告 叹号 提醒
+  - 危险/警灯 警告 叹号 提醒
 - 🆘️️
   - 紧急/救命
 - 🛑 🗣️
@@ -117,8 +117,8 @@ modified: 2024-01-21T07:46:00.256Z
   - 停
 - ⭕️️
   - 圈圈
-- ✅      ☑️      🔲
-  - 勾/打勾/勾号 复选框 黑色方形按钮
+- ✅              ☑️      🔲         🔳         🔘
+  - 勾/打勾/勾号 复选框  黑色方形按钮  白色方形按钮 单选按钮
 - ❎
   - 叉
 - ❌
@@ -153,7 +153,7 @@ modified: 2024-01-21T07:46:00.256Z
 - 📑 🔖
   - 书签
 - 📝 
-  - 便条/备忘
+  - 便条/备忘/word/writer
 - 📄
   - 文档
 - 📖
@@ -164,7 +164,7 @@ modified: 2024-01-21T07:46:00.256Z
   - 发票 羊皮纸
 - 🗒️
   - 线圈本
-- 📕 📗 📘 📙 📓 📔 📒
+- 📕 📗 📘 📙                         📓     📔   📒
   - 小说/第一卷/pdf 第二卷 第三卷 第四卷 笔记本 笔记本 账本
 - 📚
   - 一摞书
@@ -176,17 +176,17 @@ modified: 2024-01-21T07:46:00.256Z
   - 学校
 - 📈
   - 涨(spreadsheet)
-- 🪟 🎛️
-  - 窗(kanban)旋钮
+- 🪟           🎛️
+  - 窗(kanban) 旋钮
 - 🧱
   - 砖
-- 🌓 🍪 🛞 🥧
-  - 半月/ppt 
-- 🎨 🖌️
+- 🖥️         👩🏻‍🏫   🅿️   🪁   🌓 🍪 🛞 🥧  🍰  🍕
+  - 台式电脑 女老师 停车 风筝  半月/ppt    蛋糕 披萨
+- 🎨            🖌️
   - 画画/调色板 画笔
-- 🖼️ 📷 📸
-  - 画框 相机 照相
-- 🔴 🅿️ 🎞️ 🎬 📺 🎥 🎦 📼 
+- 🖼️     📷   📸   🏞️
+  - 画框 相机 照相 国家公园
+- 🔴     🅿️   🎞️    🎬  📺 🎥 🎦 📼 
   - 红圆 停车 影片 电影 电视 电影院 录像 录音带
 - ✏️ ✍🏻️ 
   - 铅笔 写 
@@ -233,7 +233,7 @@ modified: 2024-01-21T07:46:00.256Z
   - 大头钉
 - 🕹️️
   - 摇杆/手柄
-- 🌐️ 🌎 🌕 🌑 📶
+- 🌐️    🌎    🌕   🌑  📶
   - 世界 地球 月球 新月 信号
 - 👣 🐾
   - 足迹/脚印
@@ -255,7 +255,7 @@ modified: 2024-01-21T07:46:00.256Z
   - 指南针/浏览器
 - 🪦
   - 墓碑
-- 🎈🎐 🪁
+- 🎈    🎐    🪁
   - 气球 风铃 风筝
 - 💻
   - 笔记本
@@ -392,10 +392,10 @@ modified: 2024-01-21T07:46:00.256Z
   - 蛇夫座
 - ♉️
   - 金牛座
-- 🏗️
-  - 在建
+- 🚧      🏗️
+  - 路障  在建
 - 🏘️
-  - 小区
+  - 小区/房屋建筑
 - 🏛️
   - 神庙
 - 🏢
@@ -694,7 +694,7 @@ modified: 2024-01-21T07:46:00.256Z
   - 移动/重命名文件或仓库
 - 🤡
   - :clown_face:
-  - Mocking things
+  - Mocking things 小丑
 - 🌱
   - :seedling:
   - 添加或更新种子文件
@@ -710,7 +710,7 @@ modified: 2024-01-21T07:46:00.256Z
 # more
 - 🇨🇳
   - :cn:
-  - flag: China
+  - flag: China 五星红旗
 - 🇺🇸
   - :us:
-  - flag: United States
+  - flag: United States 星条旗

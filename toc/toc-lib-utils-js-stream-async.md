@@ -11,10 +11,16 @@ modified: 2023-04-04T22:36:31.529Z
 
 - async-sync (push/pull)
   - event/stream/observable/iterator 可作为统一async/sync的思路
-  - 模式的选型会影响整个codebase的代码
+  - 模式的选型会影响整个codebase的代码风格
+  - 主流库的实现大多基于Promise/async/await，而不是generator
 
-- blogs
-  - [kappa architecture vs event sourcing](https://github.com/tschudin/ssb-icn2019-paper/issues/6)
+- queue-features
+  - pause/resume
+  - concurrency
+  - priority
+  - persistence
+  - dependence
+  - dynamic-add-task
 # popular
 - https://github.com/EloquentStudio/StreamTable.js /201604/js
   - streams data for tables in the background, updates and renders them using templating frameworks like Mustache.js, HandleBars.js
@@ -229,7 +235,7 @@ modified: 2023-04-04T22:36:31.529Z
 
 - https://github.com/popeindustries/lit /js
   - Fast server-rendering and client-hydration of lit-html templates and web components
-# queue
+# queue-persistence
 - https://github.com/taskforcesh/bullmq /4.8kStar/MIT/202401/ts
   - https://bullmq.io/
   - reliable, Redis-based distributed queue for Node.
@@ -274,36 +280,64 @@ modified: 2023-04-04T22:36:31.529Z
   - Made for Forward Email and Lad.
   - Built for @ladjs, @forwardemail, @spamscanner, @cabinjs.
 
-- https://github.com/hajnalben/embedded-queue /MIT/202311/ts
-  - embedded-queue is job/message queue for any platform. 
-  - It does not required any other repository for storing data, like Redis, MySQL, and so on.
-  - 支持in-memory/nedb/custom
-  - https://www.npmjs.com/package/@abtnode/queue
-    - A simple job queue built on top of nedb and fastq
+- https://github.com/wakatime/wakaq-ts /BSD/202403/ts/inactive
+  - Background task queue for TypeScript backed by Redis, a super minimal Celery
+  - For the original Python version, see WakaQ for Python.
 
-- https://github.com/lance-gg/lance /apache2/202405/ts
-  - https://lance-gg.github.io/
-  - Multiplayer game server based on Node. JS
-  - It provides an extendible Node. JS based server, on which game logic runs, as well as a client-side library which synchronizes the client's game state with the server game state. 
-  - In order to provide a smooth visual experience for each connected client, Lance implements efficient networking methods, position interpolation and extrapolation, user input coordination, shadow objects, physics and pseudo-physical movement, automatic handling of network spikes.
-  - Communication is packed and serialized into binary
-  - Replay saving
+- https://github.com/scality/backbeat /apache2/202410/js
+  - https://www.zenko.io/
+  - the core engine for asynchronous replication, optimized for queuing metadata updates and dispatching work to long-running tasks in the background.
+  - Backbeat is an engine with a messaging system at its heart. It's part of Zenko, Scality’s Open Source Multi-Cloud Data Controller
+# concurrency/async
+- https://github.com/sindresorhus/p-queue
+  - Promise queue with concurrency control
+  - For servers, you probably want a Redis-backed job queue instead.
+  - 支持pause/concurrency/priority
+  - Returns a new queue instance, which is an `EventEmitter3` subclass.
+  - 依赖eventemitter3、p-timeout
+- https://github.com/sindresorhus/p-limit /MIT/202410/js
+  - Run multiple promise-returning & async functions with limited concurrency
+  - Works in Node.js and browsers.
+  - 🆚 How is this different from the p-queue package?
+    - This package is only about limiting the number of concurrent executions, while `p-queue` is a fully featured queue implementation with lots of different options, introspection, and ability to pause the queue.
 
 - https://github.com/poppinss/defer /MIT/202409/ts/adonis
   - A managed deferred queue to run async operations in the background
   - @poppinss/defer package allows you to run async operations in the background using an in-memory queue.
   - Think of it as setImmediate but with support for monitoring, error handling, and the ability to gracefully shutdown process by flushing the queue.
-  - You may pause the queue from processing tasks using the queue.pause method and resume it using the queue.resume method.
+  - You may pause the queue from processing tasks using the `queue.pause` method and resume it using the `queue.resume` method.
   - By default, 10 tasks are processed concurrently
-# concurrency/async
-- https://github.com/sindresorhus/p-queue
-  - Promise queue with concurrency control
-  - For servers, you probably want a Redis-backed job queue instead.
+  - 依赖fastq
+  - https://github.com/mcollina/fastq /ISC/ISC/202402/js
+    - Fast, in memory work queue
+    - If you need zero-overhead series function call, check out fastseries. 
+    - For zero-overhead parallel function call, check out fastparallel.
 
-- https://github.com/sindresorhus/p-limit
-  - Run multiple promise-returning & async functions with limited concurrency
+- https://github.com/Jcanno/best-queue /MIT/202203/ts/NoDeps/inactive
+  - Queue in runtime based promise
+  - 支持pause/concurrency
 
-- https://github.com/andywer/threads.js /ts
+- https://github.com/hajnalben/embedded-queue /MIT/202311/ts/inactive
+  - embedded-queue is job/message queue for any platform. 
+  - It does not required any other repository for storing data, like Redis, MySQL, and so on.
+  - 支持in-memory/nedb/custom
+  - [about delay queue · hajipy/embedded-queue](https://github.com/hajipy/embedded-queue/issues/43)
+    - 不支持pause
+    - how should I suspend the queue
+    - In the current implementation, the queue can only process the added jobs immediately. We have found that there is a demand for the new feature, but it cannot be implemented immediately.
+  - https://www.npmjs.com/package/@abtnode/queue
+    - A simple job queue built on top of nedb and fastq
+
+- https://github.com/BalassaMarton/sequential-task-queue /MIT/201812/ts/inactive
+  - FIFO task queue for node and the browser. 
+  - Supports promises, timeouts and task cancellation.
+  - The primary goal of this component is to allow asynchronous tasks to be executed in a strict, predictable order. 
+  - 不支持pause
+
+- https://github.com/XadillaX/scarlet-task /MIT/202409/ts
+  - an advanced task queue module for Node.js, featuring the ability to configure multiple child queues for a single task queue.
+
+- https://github.com/andywer/threads.js /MIT/202404/ts/inactive
   - Make web workers & worker threads as simple as a function call.
   - Offload CPU-intensive tasks to worker threads in node.js, web browsers and electron using one uniform API.
   - Uses web workers in the browser, worker_threads in node 12+ and tiny-worker in node 8 to 11.
@@ -314,10 +348,19 @@ modified: 2023-04-04T22:36:31.529Z
   - Node.js, ReactNative
   - Inside existing worker threads (Threading inside Threads)
 
-## task-scheduler/dag
+## scheduler/dag/topo-sort
 
-- https://github.com/caolan/async
+- https://github.com/nicolas-van/modern-async /MIT/202410/js
+  - https://nicolas-van.github.io/modern-async/
+  - A modern JavaScript tooling library for asynchronous operations using async/await, promises and async generators
+  - This library is a modernized alternative to a lot of libraries like Async.js that were created using the legacy callback style to handle asynchronous operations.
+    - Its goal is to be as complete as any of those libraries while being built from the very beginning with async/await and promises in mind.
+  - Typescript support
+
+- https://github.com/caolan/async /MIT/202410/js
   - Async utilities for node and the browser
+  - https://github.com/suguru03/neo-async /202012/js/inactive
+    - drop-in replacement for Async, it almost fully covers its functionality and runs faster
 
 - https://github.com/observablehq/runtime
   - The Observable dataflow runtime.
@@ -395,6 +438,83 @@ modified: 2023-04-04T22:36:31.529Z
 - https://github.com/qualiancy/breeze-dag /201211/js
   - Async flow control for directed-acyclic-graph iteration.
 
+## task-flow/multi-engine
+
+- https://github.com/meirwah/awesome-workflow-engines /md
+  - A curated list of awesome open source workflow engines
+  - saas, bpm, embedded
+
+- https://github.com/danielduarte/flowed /MIT/202309/ts/inactive/依赖少/示例多
+  - https://danielduarte.github.io/flowed
+  - [flowed/doc/tutorial.md](https://github.com/danielduarte/flowed/blob/main/doc/tutorial.md)
+  - https://github.com/danielduarte/flowed/tree/main/test/examples
+  - A fast and reliable flow engine for orchestration and more uses in Node.js, Deno and the browser
+  - The flow specifications are written in JSON format
+  - Flow executions can be paused and resumed with task granularity. The same for stopping and resetting
+  - 依赖[flowed-st JSON Selector + Transformer](https://github.com/danielduarte/flowed-st)
+  - Asynchronous and synchronous tasks. The flow will take care of promises, waiting for results according to dependencies.
+  - Using the Flowed plugin system, any developer can add their own resolver library and easily integrate it into the flow engine.
+  - In order to run tasks in parallel, they don't have dependence on each other.
+  - you can specify dependence between tasks arbitrarily, not only when one of them needs results from the other.
+  - Flows can have cyclic dependencies forming loops. In order to run these flows, external parameters must raise the first execution.
+  - https://github.com/danielduarte/flowed-server /依赖loopback
+    - Execute Flowed flows as a service.
+  - https://github.com/danielduarte/flowed-ui /202003/js/inactive
+    - easy to use UI to work with flows made in Flowed
+  - https://github.com/danielduarte/flowed-sdk
+    - used in browser
+
+- https://github.com/rudderlabs/rudder-workflow-engine /MIT/202410/ts
+  - https://transformers-workflow-engine.rudderstack.com/#/workflow-engine
+  - A generic embeddable workflow execution engine library
+  - To bring standardization, we are building a workflow engine that is config driven to provide improved readability, testability, reusability, and speed of development.
+  - Since we want to express the transformation of the logic using easy to read and write template based language. We support following template languages: JSONata, JsonTemplate
+  - Users should be able to express the destination transformation logic as a series of steps in a YAML file as a workflow. Steps can be written as template base languages.
+  - ❓ 是否与rudder绑定
+  - https://github.com/rudderlabs/rudder-transformer /ElasticLic
+    - a service which transforms the RudderStack events to destination-specific singular events. 
+
+- https://github.com/iauroSystems/io-flow-core /apache2/202312/ts/inactive
+  - designed to automate and manage the flow of tasks, activities, and information within an organization or system. 
+  - It serves as a central platform that orchestrates and coordinates the execution of business processes or workflows. 
+  - At its core, a IO Flow provides a framework for defining, modeling, and executing workflows
+  - 支持mongodb
+  - IO Flow can integrate with various external systems, databases, or applications to gather inputs, retrieve or update data, and trigger actions.
+  - IO Flow provide real-time monitoring and reporting capabilities, allowing stakeholders to track the progress, performance, and key metrics of workflows.
+
+- https://github.com/cloudb2/processus /MPLv2/201512/js/inactive
+  - http://cloudb2.github.io/processus
+  - A simple lightweight nodejs workflow engine designed to help orchestrate multiple tasks.
+
+- https://github.com/nodeca/idoit /MIT/202102/js/inactive
+  - Redis-backed task queue engine with advanced task control and eventual consistency
+  - Task grouping, chaining, iterators for huge ranges.
+  - Load distribution + worker pools.
+
+- https://github.com/reverb-app/reverb /MIT/MIT/202404/ts/inactive
+  - https://reverb-app.github.io/
+  - Reverb is an event-driven, asynchronous workflow engine that orchestrates the logic and infrastructure developers need to build complex background tasks. 
+  - Users define tasks as multi-step functions in their repository, and Reverb handles triggering and executing them step-by-step. 
+    - The service is self-hosted on Amazon Web Services (AWS) and is deployable with one command using our CLI tool
+  - 🏘️ Reverb’s functionality is organized in a three-node pattern. 
+    - The three nodes are the Ingress Server, the Graphile Workers Server and the Functions Server.
+    - Ingress Server provides API endpoints for enqueueing your application's Reverb triggers, including events and webhooks. It also provides an endpoint for retrieving logs related to your events and workflows
+    - Graphile Workers Server hosts Graphile Worker runners that are responsible for managing your Postgres job queue and processing your application's Reverb workflows. These include jobs triggered by events, cron, or steps within the Reverb step functions you've defined
+    - Functions Server hosts your application's Reverb workflow definitions and contains all the code needed to create these jobs from the provided template.
+    - A function can be a single function invocation or can consist of multiple steps**._ Each step will need to be awaited._**
+    - Steps can run code, delay execution, invoke another workflow, or emit an event.
+
+- https://github.com/tabkram/execution-engine /MIT/202312/ts
+  - https://tabkram.github.io/execution-engine/
+  - a TypeScript library that enables tracing and visualization of code execution workflows in your project. 
+  - Gain insights into the dynamic sequence of code execution by capturing detailed traces in JSON format, easily parseable into graphs.
+  - [Easily parseable into graphs using tools like json-to-graph online demo.](https://tabkram.github.io/json-to-graph/?data=https%3A%2F%2Fraw.githubusercontent.com%2Ftabkram%2Fjson-to-graph%2Fmain%2Fdata%2Ftrace.json)
+
+- https://github.com/runabol/tork /592Star/MIT/202410/go
+  - https://tork.run/
+  - Tork is a highly-scalable, general-purpose workflow engine.
+  - https://github.com/runabol/tork-web
+
 ## dataflow/reactive/functional-programming
 
 - https://github.com/hoplon/javelin /202310/clojure
@@ -405,6 +525,11 @@ modified: 2023-04-04T22:36:31.529Z
 
 - https://github.com/observablehq/runtime /ISC/js
   - The Observable runtime lets you run Observable notebooks as true reactive programs in any JavaScript environment
+
+- https://github.com/receptron/graphai /MIT/202410/ts
+  - GraphAI is an asynchronous data flow execution engine, which allows developers to build agentic applications by describing agent workflows as declarative data flow graphs in YAML or JSON.
+  - agentic applications require making multiple asynchronous API calls (e.g., OpenAI's chat-completion API, database queries, web searches) and managing data dependencies among them
+  - GraphAI allows developers to describe dependencies among those agents (asynchronous API calls) in a data flow graph in YAML or JSON, which is called declarative data flow programming
 
 ## excel/sheet-formula
 
@@ -422,7 +547,33 @@ modified: 2023-04-04T22:36:31.529Z
 
 ## async-sync-converter
 
-- https://github.com/Kaciras/deasync /MIT/202403/ts
+- https://github.com/thefrontside/effection /MIT/202409/ts
+  - https://frontside.com/effection
+  - Structured concurrency and effects for JavaScript
+  - Effection leverages the idea of structured concurrency to ensure that you don't leak any resources, effects, and that cancellation is always properly handled. 
+  - It helps you build concurrent code that feels rock solid at scale, and it does all of this while feeling like normal JavaScript.
+  - Effection runs on all major JavaScript platforms including NodeJs, Browser, and Deno.
+  - Unlike Promises and async/await, Effection is fundamentally synchronous in nature, which means you have full control over the event loop and operations requiring synchronous setup remain race condition free.
+  - 👉 For every Async/Await/Promise API we provide Structured Concurrency compliant Effection alternative.
+  - [Announcing Effection 3.0 -- Structured Concurrency and Effects for JavaScript _202311](https://frontside.com/blog/2023-12-18-announcing-effection-v3/)
+    - This new version refines and simplifies the abstractions we first created in version 2.0 while introducing some new ones of exceptional power.
+    - the new Context API and an even better TypeScript experience
+    - Rebuilt with Delimited Continuations
+
+- https://github.com/dmaevsky/conclure /MIT/202211/js/NoDeps/inactive
+  - Brings cancellation and testability to your async flows.
+  - It is a tiny (core is < 200 lines of code), zero dependencies generator runner. 
+  - Using generators instead of promises allows for a LOT more flexibility, including cancellation, sync resolution, and better testing. The API is strictly the same as `async/await`.
+  - 🤼 You should avoid Promises for two major reasons:
+    - Promises are greedy: once created, cannot be cancelled
+    - `await promise` always inserts a tick into your async flow, even if the promise is already resolved or can be resolved synchronously.
+  - You can see a Promise as a particular type of an iterator for which the JS VM provides a built-in runner, a quite poorly designed one nonetheless.
+  - Conclure JS is a custom generator runner that
+    - allows you to cancel your async flows
+    - ensures that sync flows always resolve synchronously
+    - delivers better testability through the use of effects as popularized by redux-saga.
+
+- https://github.com/Kaciras/deasync /MIT/202403/cpp/ts
   - Turns async function into sync via JavaScript wrapper of Node event loop
   - DeAsync turns async code into sync, implemented with a blocking mechanism by calling Node.js event loop at JavaScript layer. 
   - The core of deasync is written in C++.

@@ -29,6 +29,18 @@ modified: 2023-04-07T03:10:46.225Z
 
 - https://github.com/Jacky-Summer/mini-mobx /js
   - 模拟实现 MobX 的 observable 和 autorun 方法
+
+- https://github.com/dmaevsky/quarx /MIT/202211/js/inactive
+  - tiny reactivity engine, MobX inspired
+  - In less than 200 lines of code and zero dependencies Quarx supports most of MobX core functionality
+  - Unlike MobX, Quarx does not support circular computations even if they might eventually settle. This deliberate design decision allowed for dramatic algorithm simplification while circular calculation graphs do little to promote code clarity.
+  - Another difference with MobX, and the primary reason Quarx saw the light of day is that Quarx always runs the computation immediately and synchronously when autorun is called, while MobX always delays the execution of nested reactions until the parent reaction exits.
+  - Quarx observables are trivially convertible to and from other popular reactivity mechanisms such as RxJS or Svelte stores.
+  - The goal for Quarx is to remain a dry essence of a reactivity engine. As simple and tiny as it is, it is used in production at ellx.io.
+  - Quarx can be use for state management, e.g. in combination with Tinyx or Redux. 
+  - https://github.com/dmaevsky/tinyx
+    - A tiny state manager for big applications
+    - Redux inspired
 # examples
 - https://github.com/xaviergonz/mobx-keystone /ts
   - https://mobx-keystone.js.org/

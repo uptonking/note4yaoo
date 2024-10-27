@@ -274,6 +274,8 @@ modified: 2023-08-23T17:15:46.484Z
 - [Kappa Architecture - Where Everything Is A Stream · java-design-patterns](https://github.com/iluwatar/java-design-patterns/issues/892)
 
 - [kappa architecture vs event sourcing](https://github.com/tschudin/ssb-icn2019-paper/issues/6)
+  - when I first heard about the idea of building an system around a log of events, they called it event sourcing. in 2014, it got reinvented as "kappa architecture"
+  - when people talk about Event Sourcing, they normally are talking about designing an application that can regenerate the state from events - all state is captured as events. 
 
 - [Kappa Architecture - A big data engineering approach](https://pradeepl.com/blog/kappa-architecture/)
 # flumedb

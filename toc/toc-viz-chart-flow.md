@@ -106,7 +106,7 @@ modified: 2020-10-22T10:22:55.878Z
     - https://github.com/bpmn-io/bpmn-auto-layout
     - https://github.com/bpmn-io/diagram-js-examples
 
-- xyflow/react-flow /18.6kStar/MIT/202311/ts/d3
+- xyflow/react-flow /18.6kStar/MIT/202410/ts/d3
   - https://github.com/xyflow/xyflow 
   - https://github.com/wbkd/react-flow
   - https://xyflow.com/
@@ -115,7 +115,8 @@ modified: 2020-10-22T10:22:55.878Z
   - https://reactflow.dev/docs/examples/layout/auto-layout/
     - One using d3-hierarchy and the other one using dagre.js as a layout engine.
   - open source libraries for building node-based UIs with React or Svelte
-  - core依赖 react, d3-drag, d3-selection, d3-zoom, zustand
+  - core依赖d3-drag, d3-selection, d3-zoom
+  - react依赖zustand，postcss
   - library for building interactive node-based UIs, editors, flow charts and diagrams
   - React Flow Pro is not an additional library, it is a paid subscription around the React Flow
   - 🐛 似乎不支持 pause/resume ?
@@ -250,6 +251,12 @@ modified: 2020-10-22T10:22:55.878Z
   - 基于思维导图库、Vue2.x、ElementUI 开发，可以操作电脑本地文件，可以当做一个在线版思维导图应用使用，也可以自部署和二次开发。
   - 也提供了客户端可供下载使用，支持Windows、Mac及Linux
   - [我开源了一个思维导图 - 掘金 _202307](https://juejin.cn/post/7257922419319406648)
+# bpmn
+- https://github.com/paed01/bpmn-engine /MIT/202410/js
+  - BPMN 2.0 execution engine. Open source javascript workflow engine.
+  - The engine only support elements and attributes included in the BPMN 2.0 scheme, but can be extended to understand other schemas and elements.
+  - The aim is to, at least, have BPMN 2.0 core support.
+  - The bpmn-engine resides upon the excellent library bpmn-io/bpmn-moddle developed by bpmn.io
 # uml
 - https://github.com/jgraph/mxgraph /6.1kStar/Apache2/202011/archived
   - mxGraph is a fully client side JavaScript diagramming library that uses SVG and HTML for rendering.
@@ -356,6 +363,11 @@ modified: 2020-10-22T10:22:55.878Z
   - https://www.tiledesk.com/
   - full-stack Open Source Live Chat with built-in Chatbots, written in Node.js and Angular.
   - This repository is dedicated to the WebApp dashboard to manage Tiledesk
+
+- https://github.com/receptron/graphai /MIT/202410/ts
+  - GraphAI is an asynchronous data flow execution engine, which allows developers to build agentic applications by describing agent workflows as declarative data flow graphs in YAML or JSON.
+  - agentic applications require making multiple asynchronous API calls (e.g., OpenAI's chat-completion API, database queries, web searches) and managing data dependencies among them
+  - GraphAI allows developers to describe dependencies among those agents (asynchronous API calls) in a data flow graph in YAML or JSON, which is called declarative data flow programming
 # more
 - https://github.com/aislelabs/react-flowchart-editor
   - http://data.aislelabs.com/demo/index.html

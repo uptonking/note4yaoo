@@ -57,11 +57,11 @@ modified: 2021-08-30T07:01:09.493Z
   - DeAsync turns async function into sync, implemented with a blocking mechanism by calling Node.js event loop at JavaScript layer. 
   - The core of deasync is written in C++.
 
-- https://github.com/dmaevsky/conclure /MIT/202211/js/inactive
+- https://github.com/dmaevsky/conclure /MIT/202211/js/NoDeps/inactive
   - Brings cancellation and testability to your async flows.
-  - It is a tiny (core is < 200 lines of code), zero dependencies generator runner.
-  - Using generators instead of promises allows for a LOT more flexibility, including cancellation, sync resolution, and better testing. The API is strictly the same as async/await
-  - 💡 You should avoid Promises for two major reasons:
+  - It is a tiny (core is < 200 lines of code), zero dependencies generator runner. 
+  - Using generators instead of promises allows for a LOT more flexibility, including cancellation, sync resolution, and better testing. The API is strictly the same as `async/await`.
+  - 🤼 You should avoid Promises for two major reasons:
     - Promises are greedy: once created, cannot be cancelled
     - `await promise` always inserts a tick into your async flow, even if the promise is already resolved or can be resolved synchronously.
   - You can see a Promise as a particular type of an iterator for which the JS VM provides a built-in runner, a quite poorly designed one nonetheless.
@@ -186,7 +186,7 @@ modified: 2021-08-30T07:01:09.493Z
 - In other words, Promise.all gives you fail-fast behavior, allowing you to handle the error case sooner than if you had waited for all of the promises to settle.
 - very interesting, even if one promise fails it goes into the catch block, makes a ton of sense to do so.
 
-- ## 🤔🔀 Have any JS lib maintainers switched back to using callbacks over promises and async/await?
+- ## 🤔🆚 Have any JS lib maintainers switched back to using callbacks over promises and async/await?
 - https://twitter.com/tantaman/status/1758828869530906748
   - The purpose being that by using callbacks you can preserve the task and event loops when the library is deployed with synchronous workloads and still be able to support async workloads.
   -  with promises and async functions, everything resolves asynchronously even if it is synchronous. That’s what I want to avoid since, with my lib, some ppl want it to be full synchronous and others full asynchronous. Callbacks allow that as you said. Promises don’t.
@@ -203,11 +203,13 @@ modified: 2021-08-30T07:01:09.493Z
   - we actually wanted to maximize parallelism whereas promises would require the end user to ensure they aren’t blocking unnecessarily
   - basically we never want them to await
 
-- I've ditched promises long time ago in favor of generators. Wrote a tiny generator runner http://github.com/dmaevsky/conclure that allows me to keep the async/await logic (spelled function*/yield in the iterator world), but sync tasks are still executed sync. And async tasks can be cancelled
+- 🤔 I've ditched promises long time ago in favor of generators. Wrote a tiny generator runner http://github.com/dmaevsky/conclure that allows me to keep the async/await logic (spelled function*/yield in the iterator world), but sync tasks are still executed sync. And async tasks can be cancelled
 
 - Too many people call await sequentially which kills perf, cause they don't know about parallel.
 
 - I am curious if it possible to make own Promise implementation that will not be falling to microtasks
+
+- Given I’m mostly writing code (both apps and libraries) using [Effect](https://effect.website/), most APIs are returning Effects - or sync if side-effect free. Effect uses callbacks to implement most operations where necessary.
 
 - ## is there a way to wait for N promises on tests?
 - https://twitter.com/sseraphini/status/1365297469911937025
@@ -438,7 +440,7 @@ class LongRunning {
 }
 ```
 
-- ## I really wish there were Promises in JS that could be evaluated sync. It’s a complex problem.
+- ## 🤔🆚 I really wish there were Promises in JS that could be evaluated sync. It’s a complex problem. _202303
 - https://twitter.com/trueadm/status/1630739165045194752
 - For UI frameworks you want to allow the user to pass a promise, but ensure that if it is ready that you can render synchronously. But `T | Promise<T>` doesn’t compose the way promises do, so either you accept a perf/UX hit, create your own alternate async ecosystem, etc.
   - I use a WeakMap for this. Only pass promise. Lookup resolution value sync via weakmap where you want to do this. Still agree though: custom thenables are great and Promise.resolve using them is great, async/await not using them sucks
@@ -493,3 +495,10 @@ const foo = await new Promise((res, rej) => setTimeout(res, 0));
 - This is good news. I’ve done cr-sqlite / vlcn as completely async (and had to part ways with collaborators over that decision) so this gives me some reassurance(肯定，保证).
 
 - Gotta convince everyone to switch to generator-based effects.
+
+- For UI frameworks you want to allow the user to pass a promise, but ensure that if it is ready that you can render synchronously. But `T | Promise<T>` doesn’t compose the way promises do, so either you accept a perf/UX hit, create your own alternate async ecosystem, etc. promises always incur a microtask
+  - I use a `WeakMap` for this. Only pass promise. Lookup resolution value sync via weakmap where you want to do this. Still agree though: custom thenables are great and `Promise.resolve` using them is great, async/await not using them sucks
+
+- Have you looked at @EffectTS_ from @MichaelArnaldi . I think he mentioned that Effect is faster than Promise as it is more sync.
+  - Yeah effect only forces a micro task every 2048 suspensions of a fiber and a timer after 2048 microtasks have been executed in a row
+  - ofc if you use the sync executor it runs fully sync without ever suspending

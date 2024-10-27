@@ -153,7 +153,6 @@ modified: 2024-01-30T14:41:38.742Z
 - https://github.com/AlloyTeam/alloy-worker
   - 面向事务的高可用 Web Worker 通信框架
 
-
 - https://github.com/michaelficarra/proposal-concurrency-control /202407/ts
   - interfaces and data structures for concurrency control and integration into async iterator helpers
   - This proposal subsumes(把…包括在内, 包含; 把…并入) Luca's Semaphore proposal
@@ -170,6 +169,11 @@ modified: 2024-01-30T14:41:38.742Z
 - https://github.com/tinylibs/tinypool /971Star/MIT/202401/ts
   - tiny Node.js Worker Thread Pool implementation 
   - a fork of piscina. What we try to achieve in this library, is to eliminate some dependencies and features that our target users don't need
+
+- https://github.com/andywer/threads.js /MIT/202404/ts/inactive
+  - Make web workers & worker threads as simple as a function call.
+  - Offload CPU-intensive tasks to worker threads in node.js, web browsers and electron using one uniform API.
+  - Uses web workers in the browser, worker_threads in node 12+ and tiny-worker in node 8 to 11.
 # service-worker
 - https://github.com/mswjs/msw
   - a seamless REST/GraphQL API mocking library for browser and Node.js.

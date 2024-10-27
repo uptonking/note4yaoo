@@ -273,6 +273,14 @@ modified: 2023-01-17T19:14:47.611Z
   - Geckos.io offers real-time client/server communication over UDP using WebRTC and Node.js
   - People who have never build a multiplayer game, should probably use a library like socket.io instead, since there are way more examples/tutorial available.
   - Socket.io and geckos.io use a similar API. The switch from socket.io to geckos.io should be easy.
+# gaming
+- https://github.com/lance-gg/lance /apache2/202405/ts
+  - https://lance-gg.github.io/
+  - Multiplayer game server based on Node. JS
+  - It provides an extendible Node. JS based server, on which game logic runs, as well as a client-side library which synchronizes the client's game state with the server game state. 
+  - In order to provide a smooth visual experience for each connected client, Lance implements efficient networking methods, position interpolation and extrapolation, user input coordination, shadow objects, physics and pseudo-physical movement, automatic handling of network spikes.
+  - Communication is packed and serialized into binary
+  - Replay saving
 # cursor
 - https://github.com/mskelton/cursed /202402/ts
   - Multiplayer live cursors

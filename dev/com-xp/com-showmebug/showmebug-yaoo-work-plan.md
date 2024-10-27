@@ -403,6 +403,20 @@ modified: 2024-05-06T02:54:40.374Z
 ]
 ```
 
+### ✨ feat-时光机的任务执行
+
+- 引入task-engine的好处
+  - 可细粒度控制打字动画的暂停和action执行的时序
+
+- live模式下的暂停与恢复
+  - 完全由agent控制，agent在未执行完action时点暂停会将当前action视为未执行
+  - task状态变化 init > planning > working > pausing > working 
+  - 打字动画在暂停时会立即打完，当前action视为已执行
+
+- playback模式下的暂停与恢复
+  - 完全由业务前端控制
+  - 打字动画在暂停时会立即打完，当前action视为已执行
+
 ### ✨ feat-cmdk
 
 - improve

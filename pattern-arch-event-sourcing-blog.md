@@ -14,6 +14,8 @@ modified: 2023-09-13T14:37:51.659Z
   - [How to create simple and scalable event driven NodeJS services. | by Ilija | ITNEXT](https://itnext.io/how-to-create-simple-and-scalable-event-driven-nodejs-services-14e9dee75a74)
 # blogs
 - [kappa architecture vs event sourcing](https://github.com/tschudin/ssb-icn2019-paper/issues/6)
+  - when I first heard about the idea of building an system around a log of events, they called it event sourcing. in 2014, it got reinvented as "kappa architecture"
+  - when people talk about Event Sourcing, they normally are talking about designing an application that can regenerate the state from events - all state is captured as events. 
 
 ## [Why Event Sourcing?](https://abdullin.com/post/event-sourcing-why/)
 

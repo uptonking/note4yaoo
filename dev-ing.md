@@ -541,7 +541,7 @@ stt.message.channel().send('uCmdK', 'README.md', 2, 2, 'explain an elegant word 
 }
 ```
 
-- [next.js - How to host NextJS app on 0.0.0.0:3000 with nrwl/next (not localhost:3000) - Stack Overflow](https://stackoverflow.com/questions/70079560/how-to-host-nextjs-app-on-0-0-0-03000-with-nrwl-next-not-localhost3000)
+- [How to host NextJS app on 0.0.0.0:3000 with nrwl/next (not localhost:3000) - Stack Overflow](https://stackoverflow.com/questions/70079560/how-to-host-nextjs-app-on-0-0-0-03000-with-nrwl-next-not-localhost3000)
   - `npx next dev -H 0.0.0.0 -p 3000`
 
 ## 1024

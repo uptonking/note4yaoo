@@ -45,6 +45,14 @@ modified: 2023-09-01T03:56:10.056Z
     - simple module for creating lean text diff deltas, based on the excellent fast-diff by Jason Chen.
     - Instead of sending the entire block of text to the server on each save, you'd ideally want to submit a "minimal patch" for each operation
 
+- https://github.com/danielduarte/diffparse /MIT/202211/js/inactive
+  - Simple parser for Diff files (unified diff format)
+  - Parse a diff file from its filepath or string
+  - https://github.com/danielduarte/diffsplit /MIT/202006/js/inactive
+    - Easy split of .diff & .patch into its files
+    - This CLI utility splits .diff or .patch files in unified format into parts by file without deleting or overwriting anything.
+    - [Unified Format (Comparing and Merging Files)](https://www.gnu.org/software/diffutils/manual/html_node/Unified-Format.html)
+
 - https://github.com/davidar/pandiff
   - Prose diffs for any document format supported by Pandoc
   - Supported output formats:

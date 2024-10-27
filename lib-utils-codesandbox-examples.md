@@ -152,6 +152,15 @@ modified: 2023-09-02T09:17:22.992Z
   - To use this docker container first connect to it using websockets, you can then send the JavaScript code you want to execute to the container and it will stream back the output.
   - https://github.com/jonathan-fielding/use-node-runner
 
+- https://github.com/danielduarte/es-eval /MIT/202409/js
+  - Evaluate JavaScript expressions safely. No more being afraid of what the users enter
+  - No access to require/import modules.
+  - No access to global objects. All access to global objects is emulated and there's no real access to natives.
+  - No access to OS features like file system, network, etc.
+  - All user code is parsed to an AST and analyzed step by step, representing the code statements and functions in own components. No native functions are created with the user input.
+  - Standard ECMAScript features are implemented and not delegated to the underlying engine.
+  - https://github.com/danielduarte/es-eval-playground /202409/js
+
 ## iframe-sandbox
 
 - https://github.com/dabbott/javascript-playgrounds /ts
@@ -413,6 +422,20 @@ modified: 2023-09-02T09:17:22.992Z
     - This sometimes requires re-implementing and re-compiling them and costs extra time for development. 
     - This is a PoC converter tries to solve it by enabling running unmodified containers on WASM.
 # vm/docker-based
+- https://github.com/engineer-man/piston /MIT/202410/js
+  - https://emkc.org/run
+  - Piston is a high performance general purpose code execution engine. It excels at running untrusted and possibly malicious code without fear from any harmful effects.
+  - Piston uses `Isolate` inside Docker as the primary mechanism for sandboxing. 
+    - There is an API within the container written in Node which takes in execution requests and executes them within the container safely.
+    - High level, the API writes any source code and executes it inside an Isolate sandbox.
+    - Piston uses Isolate which makes use of Linux namespaces, chroot, multiple unprivileged users, and cgroup for sandboxing and resource limiting. 
+    - Code execution submissions on Piston shall not be aware of each other, shall not affect each other and shall not affect the underlying host system.
+
+- https://github.com/teknologi-umum/pesto /apache2/202409/ts
+  - Remote Code Execution Engine that lets you execute any piece of code on a remote server via REST API
+  - It is heavily inspired by Piston. Pesto is not a fork of Piston, it's an entire rewrite from scratch and therefore it's not compatible with Piston but should be similar
+  - Pesto was written with a fresh start, minimizing the dependencies needed, and system controlled for limited resources usage.
+
 - https://github.com/leaningtech/webvm /apache2+NonCommercial/202312/js
   - https://webvm.io/
   - This repository hosts the source code for https://webvm.io, a Linux virtual machine that runs in your browser.
