@@ -17,6 +17,7 @@ modified: 2023-04-04T22:36:31.529Z
 - queue vs setInterval/loop
   - queue内置更多功能，如pause/resume, FIFO顺序
   - 是否需要传输数据，event更容易传输数据
+  - queue需要task的fn提前定义，动态add-task的复杂度高，但动态add-task的场景本身就复杂相关业务也复杂
   - 执行的优先级不同
     - setInterval作为macroTask执行fn的时机是下一个event-loop
     - queue如果使用同步方式实现，执行fn的时机是当前event-loop
