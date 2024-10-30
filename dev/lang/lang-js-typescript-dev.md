@@ -9,6 +9,10 @@ modified: 2021-03-22T14:46:25.568Z
 
 # guide
 
+# dev-xp
+- enum vs union
+  - enum即可作为类型，也可作值
+  - enum比字符串方便统一修改和重构
 # tutorials
 - [Type-Challenges解析 | 汪图南](https://wangtunan.github.io/blog/typescript/challenge.html)
 

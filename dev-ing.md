@@ -531,12 +531,12 @@ console.log(';; task ', taskState, runningTaskAction, task?.task_steps)
 ## 1029
 
 昨天：
-- 修复了cde浏览器面板显示showmebug logo的问题
-- 调整了时光机的追加步骤时的状态变化逻辑
+- paas的browser组件支持配置logo，不会显示showmebug了
+- 调整了时光机的追加步骤和播放逻辑，使得与驾驶舱保持一致
 
 今天：
-- 调整时光机的回放逻辑，执行完计划会自动回到第一个action并打开对应文件
-- 处理快照action的快照提示条导致的issue
+- 调整时光机的回放逻辑，执行完计划会自动回到第一个action并打开对应文件，使得live和playback模式的播放逻辑保持一致
+- 处理快照action的快照提示条导致的多个issue
 
 ## 1028
 
