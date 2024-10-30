@@ -489,7 +489,7 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
 - not-yet
   - ~~cmdk整体功能~~
   - 🚨 追加步骤
-  - 🚨 时光机获取快照使用uuid
+  - 🚨 时光机获取快照使用uuid, cancelled的action无法打开快照
   - 🚨 ai写代码打字效果的时机优化和样式优化
   - 追加步骤不能选择之前修改过的文件
   - ~~diff视图开关只在需要时显示~~
@@ -507,7 +507,7 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
   - ~~私有项目的导入~~
   - ~~多标签打开同一个cde，文件树的头像会显示2个~~
 
-## 100
+## 110
 
 - dev-log
   - ?
@@ -520,6 +520,7 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
 stt.message.channel().send('uCmdK', 'README.md', 2, 2, 'explain an elegant word in one sentence')
 
 console.log(';; task ', taskState, runningTaskAction, task?.task_steps)
+console.log(';; act-file-o ', shouldForceOpenFile, actionPath !== currentFilePath, actionPath, currentFilePath)
 ```
 
 ```
@@ -527,6 +528,19 @@ console.log(';; task ', taskState, runningTaskAction, task?.task_steps)
 ```
 
 - d42-tree-root-container  去掉 tansition 样式
+
+## 1101
+
+昨天：
+- 合并重构时光机回放的pr并上线staging
+- 重构快照action的快照提示条的逻辑
+- 排查clacky cde的编辑器几乎不能编辑go语言文件的问题
+
+今天：
+- 重构快照action的快照提示条的逻辑
+- 排查clacky cde的编辑器几乎不能编辑go语言文件的问题
+- 打字动画优化
+# dev-10-cmdk-reject-undo-&-cm-tooltip
 
 ## 1029
 

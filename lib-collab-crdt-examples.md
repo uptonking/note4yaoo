@@ -718,7 +718,7 @@ modified: 2022-04-05T10:08:25.947Z
   - Under RGA, we represent documents as trees of strings. although conceptually RGA operates on trees, implementation-wise, it’s not a requirement
   - The merging algorithm behind RGA is pretty elegant. Each character in the tree points to the one before it.
 
-- https://github.com/el10savio/rga-crdt /go
+- https://github.com/el10savio/rga-crdt /MIT/202102/go/inactive
   - RGA CRDT Implemented in Go
 
 ## rewrite-more
@@ -1229,7 +1229,7 @@ modified: 2022-04-05T10:08:25.947Z
     - In this fork, simple collaboration features based on Melda have been implemented. 
     - The implemented paradigm is save and refresh: when the user saves the local copy, changes from other users are merged.
 
-- https://github.com/soundcloud/roshi /3.1kStar/bsd/go/soundcloud
+- https://github.com/soundcloud/roshi /3.1kStar/bsd/201409/go/soundcloud/inactive
   - Roshi implements a time-series event storage via a LWW-element-set CRDT with limited inline garbage collection. 
   - Roshi is a stateless, distributed layer on top of Redis and is implemented in Go. 
   - It is partition tolerant, highly available and eventually consistent.
