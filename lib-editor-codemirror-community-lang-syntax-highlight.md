@@ -106,7 +106,10 @@ modified: 2024-08-11T07:59:35.617Z
 
 - ## 
 
-- ## 
+- ## [Loading syntax highlighting on demand? - v6 - discuss. CodeMirror _202402](https://discuss.codemirror.net/t/loading-syntax-highlighting-on-demand/7840)
+- All the language descriptions in `@codemirror/language-data` use dynamic imports. So if your bundler supports code splitting, they should just magically get loaded on demand.
+  -  Each of these holds a function that, when called, runs an `import(...)` expression that fetches the actual language mode. 
+  -  If you set up Rollup or whatever you’re using to split your bundle on dynamic imports, they shouldn’t be part of the ‘main’ bundle.
 
 - ## 🌰 [How to define highlighting styles for blocks? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/how-to-define-highlighting-styles-for-blocks/4029)
   - Is there any way to define styles for blocks (e.g., blockquote, codeblock)?

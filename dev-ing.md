@@ -531,8 +531,12 @@ console.log(';; act-file-o ', shouldForceOpenFile, actionPath !== currentFilePat
 
 ## 1101
 
+# dev-10-cmdk-reject-undo-&-cm-tooltip
+
+## 1031
+
 昨天：
-- 合并重构时光机回放的pr并上线staging
+- 合并重构时光机回放的pr并上线staging，解决现有问题和产品需求变化
 - 重构快照action的快照提示条的逻辑
 - 排查clacky cde的编辑器几乎不能编辑go语言文件的问题
 
@@ -540,7 +544,6 @@ console.log(';; act-file-o ', shouldForceOpenFile, actionPath !== currentFilePat
 - 重构快照action的快照提示条的逻辑
 - 排查clacky cde的编辑器几乎不能编辑go语言文件的问题
 - 打字动画优化
-# dev-10-cmdk-reject-undo-&-cm-tooltip
 
 ## 1029
 
