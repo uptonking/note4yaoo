@@ -387,6 +387,39 @@ width = 'this.parent.width - this.marginLeft - this.marginRight'
 
 - Block-Style Editor has its roots in CMS(content management system), SSG (static site generator), GitHub& Markdown, MDX, JSX, and Low-code Site Building.
 - In a sense, a Block Style Editor is a Modular CMS for web document use case.
+# blogs-typesetting
+
+## 🆚️⚖️ [On Typesetting Engines: A Programmer's Perspective _202410](https://blog.ppresume.com/posts/on-typesetting-engines)
+
+- Spent two weeks writing a super looooong post: "On Typesetting Engines: A Programmer's Perspective", just to answer one question: why we chose LaTeX as the default typesetting engine.
+  - In this post I compared 5 typesetting engines from a programmer's perspective: HTML/CSS, LaTeX, LaTeX.js, Typst and react-pdf with 4 judgement criteria: 1) line breaking, 2) CJK support, 3) pagination, 4) instant preview.
+
+- 📌 The goal of PPResume is to be a professional resume builder that offers top notch typesetting quality, with native support for multi languages.
+- in order to meet PPResume's requirements, the typesetting engine must:
+  - adopt Knuth Plass line breaking algorithm
+  - support CJK with respect to best typesetting practices
+  - support pagination
+  - (optional) support instant preview
+
+| Typesetting Engine | Knuth Plass line breaking |   CJK   | Pagination | Instant Preview |
+|--------------------|---------------------------|---------|------------|-----------------|
+|     HTML & CSS     |            No             |   Yes   |  Partial   |       Yes       |
+|       LaTeX        |            Yes            |   Yes   |    Yes     |       No        |
+|      LaTeX.js      |            No             |   Yes   |     No     |       Yes       |
+|       Typst        |            Yes            | Partial |    Yes     |     Partial     |
+|     React-pdf      |            Yes            |   No    |    Yes     |       Yes       |
+
+- Both HTML & CSS and LaTeX.js do not support Knuth Plass line breaking, react-pdf and typst's CJK support is not production ready, hence LaTeX is our only option.
+- In the long run if there're better choice, it is possible for PPResume to add support for other typesetting engines.
+- Last but not least, having fun with polytype, a Rosetta stone for typesetting engines.
+
+- https://x.com/xiaohanyu1988/status/1852215462979080551
+  - Conclusion here: LaTeX is still the best choice for PPResume's case. 
+  - HTML/CSS pros: flexible/responsive, cons: poor line breaking implementation, deal breaker
+  - LaTeX pros: mature typesetting ecosystem, production-ready CJK typesetting support, cons: no instant preview for now
+  - LaTeX.js pros: based on HTML, flexible and extensive, instant preview; cons: slightly better line breaking but still not in parallel with LaTeX, not full compatible with LaTeX, lacking some key capability, no pagination support.
+  - Typst pros: modern syntax, better DX and UX experience, instant preview in official web app; cons: CJK typesetting is far from production-ready, instant preview feature is private and not open sourced
+  - React-pdf pros: based on react, flexible, with instant preview, with good line breaking algorithm; cons: you have to reinvent the wheels for many typesetting structures like enumeration list, etc, poor CJK typesetting support.
 # editor-ide
 
 ## [LSP-language-server-protocol规范学习](https://zhuanlan.zhihu.com/p/343218679)
@@ -438,7 +471,6 @@ width = 'this.parent.width - this.marginLeft - this.marginRight'
 
 - This is a series of blog posts that shows you how to build a text editor in Rust. 
   - It’s a re-implementation of kilo in Rust
-
 
 ## 🦀 [My Experience Building an Editor in Rust _](https://jimmyhmiller.github.io/editor-experience)
 

@@ -404,6 +404,15 @@ modified: 2022-11-08T19:04:00.289Z
   - 面向 AI 的下一代富文本编辑器，基于 Web Component，因此支持 Layui、Vue、React、Angular 等几乎任何前端框架
   - 现代风格（类腾讯文档）: http://aieditor1.jpress.cn
   - 经典/传统风格: http://aieditor.jpress.cn
+# typesetting
+- https://github.com/alerque/polytype /202408
+  - https://polytype.dev/
+  - A Rosetta stone for typesetting engines.
+  - This project's goal is to provide a chrestomathy for typesetting similar to what Rosetta Code does for programming languages. 
+  - 🆚️ SILE, Typst, LaTeX, paged.js, WeasyPrint, Speedata, groff, Patoline, SATySFi
+  - The samples here are designed to compare and/or contrast the approaches taken to various typesetting situations by different typesetting engines.
+  - The emphasis is less on document markup languages, programming languages, or actual content and more on the way layout and orthographic features are achieved. 
+  - 📝🆚️ [On Typesetting Engines: A Programmer's Perspective _202410](https://blog.ppresume.com/posts/on-typesetting-engines)
 # inactive
 - https://github.com/guardian/scribe /apache2/201808/js
   - A rich text editor framework for the web platform, with patches for browser inconsistencies and sensible defaults.

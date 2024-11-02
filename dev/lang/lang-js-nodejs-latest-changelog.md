@@ -18,24 +18,52 @@ modified: 2022-12-31T20:13:33.307Z
 
 ## v
 
+## v24
+
+- [v23.1.0 (Current) _2024-10-24](https://nodejs.org/en/blog/release/v23.1.0)
+  - When a Buffer is created using a resizable `ArrayBuffer`, the Buffer length will now correctly change as the underlying ArrayBuffer size is changed.
+  - MockTimers, introduced in April 2023, has just reached stable status. 
+  - JSON modules and import attributes are now stable
+  - assert: make `assertion_error` use Myers diff algorithm 
+
+### [v23.0.0_20241016](https://openjsf.org/blog/announcing-node.js-23-key-features-and-enhancement)
+
+- [v23.0.0 (Current)](https://nodejs.org/en/blog/release/v23.0.0)
+
+- ✨ Support for loading native ES modules using `require()`.
+- 🗑️ Dropped Support for Windows 32-bit Systems
+- ✨ Stabilized `--run` Command: The --run flag has been stabilized for more efficient script execution.
+- Test Runner Enhancements: The test runner now supports glob patterns for coverage files
+
 ## v22.0.0_20240424
 
 - 
 - 
+- 
 
-- [v23.0.0_20241016](https://openjsf.org/blog/announcing-node.js-23-key-features-and-enhancement)
-  - Support for loading native ES modules using require()
-  - Dropped Support for Windows 32-bit Systems
-  - Stabilized --run Command: The --run flag has been stabilized for more efficient script execution.
-  - Test Runner Enhancements: The test runner now supports glob patterns for coverage files
+- 🔖 [v22.11.0 (LTS) _2024-10-29](https://nodejs.org/en/blog/release/v22.11.0)
+  - Official binaries for Node.js 22.x currently include OpenSSL 3.0.x (more specifically, the quictls OpenSSL fork). 
+  - Other than updating metadata, such as the process.release object, to reflect that the release is LTS, no further changes from Node.js 22.10.0 are included.
 
-- [v22.7.0_20240821](https://github.com/nodejs/node/releases/tag/v20.17.0)
+- [v22.10.0 (Current) _2024-10-16](https://nodejs.org/en/blog/release/v22.10.0)
+  - introduces a "module-sync" exports condition that's enabled when require(esm) is enabled, so packages can supply a synchronous ES module to the Node.js module loader, no matter if it's being required or imported
+  - `node --run` is now stable
+  - module: support loading entrypoint as url
+
+- [v22.8.0 (Current)_2024-09-03](https://nodejs.org/en/blog/release/v22.8.0)
+  - adds a new API `module.enableCompileCache()` that can be used to enable on-disk code caching of all modules loaded after this API is called. 
+    - This is a built-in alternative to the v8-compile-cache/v8-compile-cache-lib packages, but have better performance and supports ESM.
+  - New option for `vm.createContext()` to create a context with a freezable globalThis
+  - Support for coverage thresholds
+
+- [v22.7.0_20240821](https://github.com/nodejs/node/releases/tag/v22.7.0)
+  - [v22.7.0 (Current)](https://nodejs.org/en/blog/release/v22.7.0)
   - With the new flag `--experimental-transform-types` it is possible to enable the transformation of TypeScript-only syntax into JavaScript code.
     - This feature allows Node.js to support TypeScript syntax such as Enum and namespace
   - Module syntax detection (the `--experimental-detect-module` flag) is now enabled by default. 
 
 - [v22.6.0_20240806](https://github.com/nodejs/node/releases/tag/v22.6.0)
-  - introduces the `--experimental-strip-types` flag for initial TypeScript support
+  - ✨ introduces the `--experimental-strip-types` flag for initial TypeScript support
     - This feature strips type annotations from .ts files, allowing them to run without transforming TypeScript-specific syntax.
     - Supports only inline type annotations, not features like enums or namespaces.
     - Requires explicit file extensions in import and require statements.
@@ -48,7 +76,7 @@ modified: 2022-12-31T20:13:33.307Z
   - [Node.js — Node v22.0.0 (Current)](https://nodejs.org/en/blog/release/v22.0.0)
 
 - Highlights include require()ing ESM graphs, WebSocket client, updates of the V8 JavaScript engine, and more
-- module: support require()ing synchronous ESM graphs 
+- ✨ module: support require()ing synchronous ESM graphs 
 - 🗑️ esm: drop support for import assertions
 - cli: implement `node --run` .
 - improve perf of `AbortSignal` creation

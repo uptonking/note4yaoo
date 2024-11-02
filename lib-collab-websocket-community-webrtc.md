@@ -222,7 +222,20 @@ modified: 2023-12-12T08:45:31.670Z
 
 - ## 
 
-- ## 
+- ## how are you doing websockets? assume you have multiple application servers running and broadcasts need to work to clients across all
+- https://x.com/thdxr/status/1851038633014198392
+- DB backed events, polling works in most cases.. you can make a simple observable event type abstraction. it depends. I’ve never done anything too resource intensive.
+
+- I wrote https://npmjs.com/package/mqemitter before @nodejs had promises, and I never had to reach for something else. Use the Redis/Valkey pubsub adapter.
+  - Works well up to several hundred thousands messages per second (depends on the size of message).
+
+- In the past I reached for ZMQ. I keep hearing good things about NATs from GoLang devs.  A lot of times it's Redis TBH. (Or any of the MQ services)
+
+- Use go, Nats or Centrifuge
+
+- we use just a simple socketio like ws wrapper on our api instance, all behind a load balancer on AWS
+  - use a few different ways of throwing info from one side of our stack to another, but mainly designed around http://NATS.io, basically a pub-sub model, each user gets an ephemeral channel
+  - we ingest data from webhooks often from multiple third party services, so getting it from say, instance A, over to instance B where a client is connected (and even multiple instances) works nicely via this method
 
 - ## 作为 RTC 的从业者说一下 OpenAI 在发布realtime api 的时候为啥会拉上 livekit 以及 agora：
 - https://x.com/leeoxiang/status/1841737253024137687

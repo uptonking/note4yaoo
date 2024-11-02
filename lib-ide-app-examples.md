@@ -153,4 +153,13 @@ modified: 2024-08-24T16:30:20.218Z
   - Conforms to the OpenAI API standard
   - Chat conversations are preserved
   - Compatible with Ollama, llama.cpp, oobabooga, and LM Studio APIs
+
+## ide-repo-ai
+
+- https://github.com/yamadashy/repopack /MIT/202411/ts
+  - Repopack is a powerful tool that packs your entire repository into a single, AI-friendly file.
+  - AI-Optimized: Formats your codebase in a way that's easy for AI to understand and process.
+  - Token Counting: Provides token counts for each file and the entire repository, useful for LLM context limits.
+  - Git-Aware: Automatically respects your .gitignore files.
+  - 可以将你的代码库打包成一个 AI 友好文件（带有文件的目录结构，文件内容以及提示词），然后可以方便的供给大模型进行分析和使用。思路非常有趣。
 # more

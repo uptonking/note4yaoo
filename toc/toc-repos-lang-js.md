@@ -414,6 +414,12 @@ modified: 2021-05-14T15:04:42.225Z
   - lightweight JavaScript runtime designed to address the growing demand for fast and efficient Serverless applications.
   - It's built in Rust, utilizing QuickJS as JavaScript engine, ensuring efficient memory usage and swift startup.
   - Extremely surprised it uses QuickJS and they specifically chose no JIT. It does make good sense for their situation though.
+
+- https://github.com/holepunchto/bare /apache2/202411/c
+  - Small and modular JavaScript runtime for desktop and mobile
+  - Like Node.js, it provides an asynchronous, event-driven architecture for writing applications in the lingua franca of modern software. 
+  - Unlike Node.js, it makes embedding and cross-device support core use cases, aiming to run just as well on your phone as on your laptop. 
+  - The result is a runtime ideal for networked, peer-to-peer applications that can run on a wide selection of hardware.
 # pref
 - https://github.com/narutosstudent/load-balancer /202401/ts
   - Built a load balancer from scratch. 

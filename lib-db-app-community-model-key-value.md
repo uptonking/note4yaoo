@@ -14,9 +14,38 @@ modified: 2023-10-26T15:02:47.068Z
 
 - ## 
 
-- ## 
+- ## 📌 Help me out with db storage companies that were acquired?
+- https://x.com/eatonphil/status/1852049557204447709
+  - InnoDB (Oracle)
+  - WiredTiger (Mongo)
+  - BerkeleyDB (Oracle)
+  - Oriole (Supabase)
+  - Tabular (Databricks)
+  - Like the tech was primarily an embedded database intended to be used within some other database system.
+  - [Browse - Database of Databases](https://dbdb.io/browse?tag=acquired-company)
 
-- ## What's the 2024 version of this list of storage engines written in Rust?
+- Sap acquired sybase back in 2010 
+  - Hp acquired vertica in 2011
+  - I don't think either of those were embedded databases/storage layers
+  - You're right I didn't read the orig tweet well Though in the case of Sybase, while it wasn't an embedded db, it's technology is now one of the engines in the SAP Hana offering.
+
+- Rockset (RocksDB) got acquired by OpenAI
+  - I think that is just a whole database, I don't think it's particularly embedded
+
+- Crazy to think that mongodb started off using mmap
+  - I hate this topic :p but plenty still do usemmap. Including even WiredTiger apparently
+  - IIRC, WiredTiger uses MMAP just for SSTables. See their 2015 talk
+
+- Bytedance acquired TerarkDB years ago
+
+- SpeedDB acquired by Redis
+
+- Tableau got acquired by salesforce. Before that tableau acquired HyPer - an in memory db that msft took ideas from and built their in-memory version called hekaton, which they integrated with sql server.
+
+- PipelineDB (Confluent)
+  - Aster Data (Terradata)
+
+- ## 📌 What's the 2024 version of this list of storage engines written in Rust?
 - https://x.com/eatonphil/status/1849084233525977108
 - It’s sad that half of this list is died 
 - All this list of Key/Values DBs (for any language that matter) reminds of the old 3D engine list (though site/forum long gone) 

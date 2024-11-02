@@ -12,10 +12,28 @@ modified: 2023-10-27T06:54:20.487Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 
+
 - ## 💡👣 Most databases were built when data was static and queries were dynamic. 
 - https://twitter.com/tantaman/status/1699826662408409383
   - For applications, most queries are static and the data is dynamic
 - What you really want is a database where a query is the same things as an index, is the same thing as a subscription... These are all the same underlying mechanic.
+
+# discuss-id
+- ## 
+
+- ## 
+
+- ##  `Bun.randomUUIDv7()` returns UUID v7, which is a sorting & database-friendly UUID
+- https://x.com/jarredsumner/status/1850526527617966451
+  - Internally, it uses a timestamp for the first part, an auto-incrementing integer ID for the second part, and 8 bytes of randomness for the third part.
+  - Bun.randomUUIDv7 also lets you override the output encoding and override the timestamp.
+  - I almost went with ULID instead and then I remembered this poll ranked UUID v7 higher
+
+- The name feels a bit misleading. If it's monotonic then it's not really random, is it?
+  - Nope, it's random. There are 8 bytes of randomness at the end. It starts with a timestamp, and then an incrementing integer, and then randomness.
 
 - ## 🆔️ The effect of switching id for new records from UUID v4 to UUID v7 on INSERT to a 24 GB PostgreSQL table with 116M rows
 - https://x.com/maciejwalkowiak/status/1809164757959938376

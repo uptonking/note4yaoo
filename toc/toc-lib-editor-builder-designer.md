@@ -354,6 +354,13 @@ modified: 2020-11-17T13:38:19.107Z
   - 基于React技术栈构建一个可视化搭建平台，通过拖拽的方式构建中台
   - 代码自动生成底层技术原理是AST, DSL做功能辅助
   - 很多大的平台在开始做这样的可视化搭建平台，节约项目开发成本。在目前来看，没有特别好的系统解决方案。微软的power，阿里云的云凤蝶，金蝉等
+
+- https://github.com/abi/screenshot-to-code /MIT/202410/python
+  - https://screenshottocode.com/
+  - Drop in a screenshot and convert it to clean code (HTML/Tailwind/React/Vue)
+  - Now supporting Claude Sonnet 3.5 and GPT-4o!
+  - https://github.com/liseami/screenshot-to-code
+    - Fork了Screenshot to Code这个项目，修改了前端和后端的Dockerfile，解决了国内Docker源、pip源、npm源拉取不了的问题。你只需要下载源码，在根目录docker-compose up -d --build，一键部署在本地
 # json-ui-editor
 - https://github.com/acrodata/gui /MIT/202406/ts/angular
   - https://acrodata.github.io/gui/

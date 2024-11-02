@@ -129,6 +129,13 @@ modified: 2024-06-30T11:17:28.971Z
   - The goal is that OrbStack is just a lot nicer to use. Better performance, lower resource usage, and many DX features (several of which are covered) that go together to create a delightful experience.
   - Orbstack even comes with working ipv6 out of the box unlike Docker Desktop for Mac which STILL doesnt have support for ipv6
   - You're paying a premium because it's designed specifically for MacOS systems. Docker desktop is terrible on Mac, but Orbstack is awesome for this group of users.
+# discuss-physical
+- ## 
+
+- ## AWS itself claims sub-millisecond latency within a AZ. In this poll, many people guess it’s in single digit milliseconds, which is what AWS claims for inter-AZ latency.
+- https://x.com/penberg/status/1850794649440432193
+- I measured in eu-central-1 and it’s 500us for cross az traffic and less than 500us within the same az
+
 # discuss
 - ## 
 

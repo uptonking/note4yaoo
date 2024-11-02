@@ -11,7 +11,7 @@ modified: 2023-12-26T19:10:48.719Z
 
 # popular
 
-# plugins
+# bundler
 
 - https://github.com/godaddy/radpack /MIT/202312/js
   - Radpack fuses the best of both worlds by taking advantage of build-time bundling, with graph-based run-time loading to prevent wasteful waterfalls.
@@ -19,10 +19,16 @@ modified: 2023-12-26T19:10:48.719Z
   - Most loaders on the other hand, are focused on delivering only the requested assets, as they are needed. 
   - Radpack fuses the best of both worlds by taking advantage of build-time bundling, with graph-based run-time loading.
 
+
+## webpack-powered
+
+- https://github.com/KidkArolis/jetpack
+  - Replaced webpack with rspack in jetpack@3.0.0-0 
+
 ## webpack-rewrite
 
 - https://github.com/hardfist/unpack /202410/rust
-  - Unplugin API built on top of Webpack architecture
+  - ⚖️ Unplugin API built on top of Webpack architecture
   - Unpack is a miniature model of the bundler, intended to teach the structure of the real bundler.
   - Crafting Bundler builds Unplugin API on top of Webpack architecture.
   - This is the repo used for the in-progress book "Crafting Bundler". It contains the markdown text of the book, full implementation of bundler(unpack).
@@ -76,9 +82,12 @@ modified: 2023-12-26T19:10:48.719Z
 
 - https://github.com/rmanoka/webundle /archived
   - Web bundler written in Rust
-# used-loaders
+# loaders
 - https://github.com/Epimodev/svg-sprite-html-webpack /202301/js/inactive
   - Webpack loader and plugin to generate a SVG sprite with `<symbol>` elements and inject it in html built by `html-webpack-plugin`
-# used-plugins
-
+# plugins
+- https://github.com/unjs/unplugin /ts
+  - Unified plugin system for Vite, Rollup, Webpack, esbuild, and more
+  - very high level to adapt plugins to bundlers
+  - parsing/transforming is still babel
 # more

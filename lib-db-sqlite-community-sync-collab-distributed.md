@@ -47,7 +47,19 @@ modified: 2023-10-26T19:03:22.063Z
 # discuss
 - ## 
 
-- ## 
+- ## SQLite is not single connection. Even upstream supports multiple processes reading and writing to the same database
+- https://x.com/penberg/status/1850522929928311134
+- PGLite only supports a single connection. But it provides a way to multiplex queries from multiple clients
+
+- Perhaps he means single writer multiple reader, even though it supports multiple connections.
+  - Yes it supports multiple connections but they are queued when they write so that only one had access to the database at a time
+- Sure, but I think what you're saying about "single connection" is confusing and not true because the single writer limitation is orthogonal to that. You can have as many connections as you want. Reads are concurrent, writes are not (but there's BEGIN CONCURRENT hopefully some time in the future to lift that limitation).
+  - Agree that "single connection" was poorly worded. What matters for concurrency are transactions. While read-only tx can operate concurrently, the read operation itself may not: a read within a tx that writes later can be canceled if there is any concurrent write
+
+- And if you want a distributed DB, powered by SQLite, with read replicas use this: https://github.com/bloomberg/comdb2
+  - Sqlite VM SQL engine
+
+- We are using WAL mode with Litestream for backup and it's working well. We have . Net 8.0 API which pulls data from multiple systems e.g CSV, Sql Server and then use Sqlite to keep that data and then it's used by 3rd parties via REST Api.
 
 - ## [Marmot: Multi-writer distributed SQLite based on NATS | Hacker News_202312](https://news.ycombinator.com/item?id=38600743)
 - If you're interested in this, here are some related projects that all take slightly different approaches:

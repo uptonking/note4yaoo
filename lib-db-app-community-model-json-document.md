@@ -15,6 +15,21 @@ modified: 2023-10-26T15:01:36.462Z
 - ## 
 
 - ## 
+# discuss-s3/object-storage
+- ## 
+
+- ## 
+
+- ## I had convinved myself that disaggregated storage is the way to go for OLTP, but now i am starting to convince myself that ”diskless” (object storage as the primary storage) is where disaggregated storage converges to (on cloud anyway). 
+- https://x.com/penberg/status/1850605680891490491
+  - All we need is little bit cheaper writes on AWS S3 and others…
+
+- Ability to append to a file on S3 (or another) would make a massive difference.
+  - Azure has supported this for years with Page Blobs and Append Blobs
+  - I wrote about my experience building a distributed log using them
+  - [Shared-Nothing Architectures for Server Replication and Synchronization _201912](https://blog.colinbreck.com/shared-nothing-architectures-for-server-replication-and-synchronization/)
+
+- If it were an append-only log-based transaction for time series data, and you use double-entry bookkeeping style, you could actually manage a transactional system that way.
 # discuss
 - ## 
 

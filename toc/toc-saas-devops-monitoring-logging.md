@@ -154,8 +154,13 @@ modified: 2024-02-11T15:11:31.598Z
   - https://counterscale.dev/
   - Counterscale is a simple web analytics tracker and dashboard that you self-host on Cloudflare.
   - designed to be easy to deploy and maintain, and should cost you near-zero to operate – even at high levels of traffic (Cloudflare's free tier could hypothetically support up to 100k hits/day).
-
-
+# crawler-like
+- https://github.com/dgtlmoon/changedetection.io /apache2/202411/python
+  - https://changedetection.io/
+  - The best and simplest free open source web page change detection, website watcher, restock monitor and notification service. 
+  - Detect website content changes and perform meaningful actions - trigger notifications via Discord, Email, Slack, Telegram, API calls and many more.
+  - Chrome browser included.
+  - Nothing to install, access via browser login after signup.
 # more
 - https://github.com/anthonygauthier/jmeter-es-backendlistener-dashboard /201810/js
   - Dashboard to visualize JMeter results generated via the ElasticSearch Backend Listener. 

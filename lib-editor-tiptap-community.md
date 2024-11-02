@@ -69,6 +69,14 @@ modified: 2023-02-05T19:03:27.730Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Released “Snapshot Compare” for Tiptap to make tracking changes between document versions simple and visual _202411
+- https://x.com/tiptap_editor/status/1852018294682767647
+  - right within the editor like you know from Google Docs or MS Word. 
+
 - ## we're working on something... What should we call it? Track changes? _202407
 - https://x.com/tiptap_editor/status/181537635366484  7993
   - The first version is just tracking changes, laying the basis for suggestions like you described coming in the next version.

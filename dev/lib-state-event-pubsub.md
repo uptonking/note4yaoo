@@ -74,7 +74,21 @@ modified: 2021-05-13T03:13:45.375Z
 
 - ## 
 
-- ## 
+- ## eventemitter is a performance bottleneck and the internals are exposed enough to make it difficult to optimize
+- https://x.com/jarredsumner/status/1850311072001192118
+  - this is part of why exactly 0 of bun’s APIs use event emitter
+- What are you doing instead?
+  - functions specified once at creation time, with a .reload method if necessary to update the callbacks later. this makes hot reloading sockets, websockets and http servers work
+
+- Does EventTarget provide any improvement? 
+  - It’s worse because there’s capturing and bubbling phases, and the Event objects are not free to create
+
+- I'm a fan of the API that vscode adopted:
+  - https://github.com/microsoft/vscode/blob/main/src%2Fvs%2Fbase%2Fcommon%2Fevent.ts
+
+- What is a better API for this use-case?
+  - “Pull streams” for streams. 
+  - Event emitters should have never be the base for streams.
 
 - ## 🆚️🌰 Non-RxJS Observables in the wild... tanstack edition _202305
 - https://twitter.com/BenLesh/status/1656746366553452573

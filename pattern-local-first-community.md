@@ -109,7 +109,22 @@ modified: 2023-09-13T20:24:41.516Z
 
 - ## 
 
-- ## 
+- ## 🤼🏻 Eventually, I'd like to write a talk titled something like "Critical problems with local-first " _202410
+- https://x.com/jlongster/status/1851261217580466491
+  - I'll just go ahead and say it: I don't think it's the future anymore. 
+  - It's cool for some very specific apps (obsidian for example) but most things shouldn't build around it.
+- https://x.com/jlongster/status/1851993194583527902
+  - I truly do support people building new libraries and databases
+  - but let's be honest: it's going to be really really hard. You're crazy if you start a new company and bet the whole thing on a brand new library/db build buy one or two people
+  - a smart strategy is to be as compatible as you can with the mainstream stacks, i.e. SQL should be your interface. imagine a user transitioning away from your product and onto a normal stack and make that as easy as possible. that's the best way to build trust
+
+- That's (almost) what I say all the time. Local-first isn't for everyone. Offline first, maybe, but not local-first—not now, maybe never. That's why I focused @evoluhq on strictly limited use cases where privacy and independence are essential.
+  - By the way, I'm close to completing the redesign of the Evolu sync. MerkleTree was nice, but it does not scale and is not very efficient. But it did its work and was honest work. Thank you for that. It helped me to start with something.
+- What are you re-designing too? I was always worried about the MerkleTree approach and avoided it but that was probably a premature optimization. Nice to see it has gotten you so far.
+
+- Local-first is not against authoritarian rules but rather to provide an alternative to them if someone wants to.
+
+- How about own your data first. I am amazed how the world is feeding AI with data petrol just because:) I use Obsidian with my NAS. No problem sharing and collaborating.
 
 - ## 🤔 [A Local-First Case Study | Hacker News _202410](https://news.ycombinator.com/item?id=41712593)
 - I had thought that the advantage of CRDTs was you do not need a centralized server and that if you do have a central server Operational Transforms are easier. Am I missing why CRDTs are used here?

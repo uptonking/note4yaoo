@@ -11,9 +11,14 @@ modified: 2023-09-21T16:44:11.438Z
 
 # blogs
 
+## [Fine-grained Markdown | Code Hike _202407](https://codehike.org/blog/fine-grained-markdown)
+
+- Markdown is great. Easy to write, easy to read, and covers most use cases for content websites.
+  - But sometimes it feels a bit limited. Sometimes your content is not so linear
+- that's how Code Hike gives you type-safe fine-grained markdown, making your content more flexible so you can use the whole power of React to present it in any way you want.
 # blogs-extensions
 
-## [MarkDown图片存储格式-Textbundle格式 - 知乎](https://zhuanlan.zhihu.com/p/368463926)
+## ⚖️ [MarkDown图片存储格式-Textbundle格式 - 知乎](https://zhuanlan.zhihu.com/p/368463926)
 
 - 由于MarkDown纯文本文件的特性，其在附带图片时，图片的保存和传输成为一个大问题
 - 常用的解决图片传输问题的方案

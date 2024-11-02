@@ -41,6 +41,13 @@ modified: 2023-12-26T19:11:22.389Z
 
 - https://github.com/KyrieLii/webpack-to-rspack /md
   - Configuration mapping from webpack to rspack
+
+## rspack-powered
+
+- https://github.com/KidkArolis/jetpack /202411/js
+  - Replaced webpack with rspack in jetpack@3.0.0-0 _20241101
+  - Jetpack wraps rspack to create a smoother developer experience. Jetpack can be used instead of @rspack/core, @rspack/cli, webpack-dev-server and webpack-dev-middleware without writing any configuration
+  - Jetpack is a thin wrapper around rspack, and can be extended with any rspack configuration
 # starter/web/client/nodejs
 - resources
   - https://github.com/web-infra-dev/rspack-demo /js/react

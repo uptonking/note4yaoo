@@ -150,6 +150,12 @@ modified: 2022-11-06T15:45:36.913Z
   - Clients receive events about changes from the server which are automatically applied to a shared object (in-place)
   - The server takes care of syncing the state of all connected clients
   - https://github.com/janmonschke/diffsync /MIT/201505/js
+
+- https://github.com/gritzko/librdx /202411/c
+  - Replicated Data eXchange format
+  - RDX is like JSON with diff/patch/merge
+  - Today's popular data formats are either "one-way" or "RPC". "One-way" is something like CSV or JSON. I can dump my data into such format, send it to somebody, never see it again. If they send me back my JSON with some changes, that might be a problem.
+  - RDX is a versioned format for data synchronization. It is designed to send around data patches.
 # merge
 - https://github.com/avian2/jsonmerge /python
   - merge a series of JSON documents into a single one
