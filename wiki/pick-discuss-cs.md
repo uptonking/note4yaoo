@@ -7,7 +7,43 @@ modified: 2021-04-12T16:30:53.967Z
 
 # pick-discuss-cs
 
+# guide
+
+# discuss-stars
+
+## 
+
+## 
+
+## [如何评价Apache(Apache Software Foundation)?](https://www.zhihu.com/question/475661170/answer/2025600572)
+
+- Apache 从来没有创造出一个历经考验而不被吊打的项目。
+  - svn 被 git/hg 完虐
+  - ant, maven 相比其它语言的构建工具，那就是虐待 Java 工程师的土鳖工具。
+  - hbase/hadoop 现在还是主流，算是个例外，也是被 MooseFS 完虐的货。因为基于其上的项目 hive, pig, spark 等得以苟延残喘
+  - 一堆MQ: ActiveMQ, Kafka, RocketMQ, Pulsar，不由得怀疑Apache是不是有MQ集怪癖
+  - Kafka: Golang 系列的 NSQ, nats.io 都是轻量级、高效的 MQ，侧重点各有千秋，笔记本上就能部署，完成日常开发非常容易。比起 Java 系庞然大物的 MQ 好用很多。
+  - Dubbo/Avro 虽然占有率还在涨，那也是被反叛之冰(ZeroC Ice)完虐的货
+  - Arrow 有价值和潜力，但是C++工程技术上就是反面典型
+  - 究其根本原因，Java 功不可没。固然 Java 无所不能，但是各种缺陷影响深远，导致这个社区都被毒害了，乃至于 Javaer 的思维方式都被荼毒了。看过 Javaer 写的 C++ 代码就能明白这句话的含义。
+  - 追捧一个平庸的组织没有什么问题，但是把这样一个组织的产品奉为技术选型的标准就可能会害人害己了。
+- 说白了就想表达一句话:java垃圾
+- 我感觉你不是看不起Apache，是看不起Java
+- apache的确有很多技术被碾压，但是人家是开源组织呀，光这一点就足够了
+- 要反过来想，如果没有apache会怎么样
+- Apache难道不是开源垃圾桶吗？
+  - 捐给 Apache: 主动触发 GC, 被 Apache 看上: 被动触发 GC
+- 阿里不就喜欢把自己不想再维护的东西丢给apache吗
+- 不能用现代的眼光去评价历史。新东西固然有后发优势，旧东西也不是一无是处，轻喷
+- 每个东西它都有自己的历史使命，svn是，git也一样。你所认为的久经考验的，将来也会有被吊打的一天。
+- 每天都指点江山，这个开源项目不行，那个开源项目low，偷偷告诉你们，其实自己一个拿的上台面的开源项目都没有
+
+- 具有良好技术品味的工程师应该避免用apache的任何东西，特别是国内大厂kpi项目抄了个别的开源项目代码级重构，然后干系人升高p走人了，直接扔给apache的那种。大坑。
 # discuss
+
+## 
+
+## 
 
 ## 
 

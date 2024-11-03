@@ -398,7 +398,7 @@ modified: 2021-01-04T17:26:43.784Z
 - OpenViewerFX  /LGPL/
   - https://github.com/qwertme/OpenViewerFX
   - now part of JDeli
-# pdf-doc
+# pdf-doc/rag
 - https://github.com/opendatalab/PDF-Extract-Kit /apache2/202407/python
   - 布局检测：使用LayoutLMv3模型进行区域检测，如图像，表格, 标题, 文本等；
   - 公式检测：使用YOLOv8进行公式检测，包含行内公式和行间公式；
@@ -423,4 +423,11 @@ modified: 2021-01-04T17:26:43.784Z
   - Lumina的一款基于视觉模型的PDF分块处理工具：Chunkr，速度每秒可处理约5页
   - 基于视觉模型进行段落提取和OCR，通过 Rust Actix 服务器统一输出，可实现单个NVIDIA L4 GPU上达到每秒约5页速度
   - 支持自托管部署，兼容GPU和CPU，提供用户界面
+# pdf-video
+- [PDF to Brainrot | MemenomeLM](https://www.memenome.gg/)
+  - 把 PDF 转化为易上瘾的视频
+  - 通过 AI 技术将传统的 PDF 学习材料转换为更生动有趣的视频形式, 既保留了学习内容的专业性, 又强调提高效率、改善学习体验和趣味性, 网站显示已经有超过 10w 学生使用
+  - 用 AI 改造成交互式学习的过程, 交互视频、AI 和真人交互都可以
+  - https://x.com/0xPaulius/status/1852697757124845684
+    - Been using this to post automated tiktoks on the latest research papers, its actually getting pretty good traction
 # more-pdf

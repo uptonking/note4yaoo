@@ -220,9 +220,32 @@ modified: 2023-12-12T08:45:31.670Z
 # discuss
 - ## 
 
-- ## 
+- ## I’m increasingly thinking that every client-server connection should be default realtime using websockets, unless you have a very good reason for not doing that.
+- https://x.com/jamonholmgren/status/1852568079223681525
+  - And most server-server connections too.
+  - and SSE is a great way to scale up if you really mainly need one-way realtime (which is common).
 
-- ## how are you doing websockets? assume you have multiple application servers running and broadcasts need to work to clients across all
+- Avoid web protocols entirely. Especially within a backend where you have full control over what’s being used. Real-time is good but Websockets are not that. Build on top of UDP.
+  - Why not? Zoom and Slack both offer WebSocket APIs, and you can get events streamed in that way.
+
+- the request / response model is simple, effective and not only scales very well but has decades of infrastructure built explicitly to support it. unless you’re explicitly building a realtime web app (chat, multiplayer) it’s overkill & you will likely get it wrong
+
+- Keeping connections alive with WebSockets can drive up CPU usage and hit connection limits fast, often needing a lot of tweaking at the kernel level to manage. I’d stick to using WebSockets mainly for event-driven apps where real-time updates are key.
+  - That’s why Elixir/Phoenix is amazing. Millions on a single server, and easy horizontal scaling
+
+- That mentality is a good way to make your app buggy or completely unusable during network issues.
+
+- don’t think most apps need it. Optimistic updating client-side keeps state snappy on front end and in sync with server. It’s a nice middle ground 
+
+- The websocket overhead is greater than a tcp+tls handshake (on a healthy network) If using http3 you can have 0-RTT for itempodent reqs which basically makes connecting again free (+ UDP benefits on unhealthy networks if some packets get lost)
+
+- This makes caching (of all sorts: BF, CDNs, basic HTTP caching) more difficult, SEO more difficult, debugging more annoying, scaling is horrific (when are connections terminated? How many can a server handle?)
+
+- Request/response over http3 is more than adequate.  Why on earth do you need more than that for simple data hydration?
+
+- Websockets have tons of issues, esp around public internet connections that might block them.
+
+- ## 🤔 how are you doing websockets? assume you have multiple application servers running and broadcasts need to work to clients across all
 - https://x.com/thdxr/status/1851038633014198392
 - DB backed events, polling works in most cases.. you can make a simple observable event type abstraction. it depends. I’ve never done anything too resource intensive.
 

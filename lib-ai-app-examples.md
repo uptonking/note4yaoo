@@ -362,7 +362,7 @@ modified: 2023-02-08T07:20:48.475Z
   - Free Commercial Use. Starting from April 2024, both V2 and V1 are released under MIT License. 
   - OpenVoice has been powering the instant voice cloning capability of myshell.ai since May 2023. 
   - 即时语音克隆工具，只需从参考资料中截取一段简短的音频即可实现克隆。可详细控制语音风格，包括情感、口音、节奏、停顿和语调。生成多种语言的语音。
-# search-rag
+# rag-search
 - https://github.com/Cinnamon/kotaemon /apache2/202409/python
   - https://cinnamon.github.io/kotaemon/
   - https://huggingface.co/spaces/cin-model/kotaemon-demo
@@ -375,6 +375,11 @@ modified: 2023-02-08T07:20:48.475Z
   - Search and ask questions with text, images, files, and web pages.
   - Multi AI Models: ChatGPT, Claude, Gemini
   - 支持多模态（图片、文字、文件），多来源（Twitter、学术、本地知识库），多种表现形式（思维导图、图片音视频）等混合搜索形态
+
+- https://github.com/KruxAI/ragbuilder /apache2/202410/python
+  - https://docs.ragbuilder.io/
+  - A toolkit to create optimal Production-readyRetrieval Augmented Generation(RAG) setup for your data
+  - By performing hyperparameter tuning on various RAG parameters (Eg: chunking strategy: semantic, character etc., chunk size: 1000, 2000 etc.), RagBuilder evaluates these configurations against a test dataset to identify the best-performing setup for your data.
 # ai-examples
 - https://github.com/Zeyi-Lin/HivisionIDPhotos /apache2/202409/python
   - https://swanhub.co/ZeYiLin/HivisionIDPhotos/demo

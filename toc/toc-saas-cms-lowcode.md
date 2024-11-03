@@ -217,18 +217,6 @@ modified: 2023-01-20T21:59:47.792Z
   - server基于nodejs的服务端, 启动后可直接访问3000端口, 也就是内容SSR端
   - admin CMS的管理后 集成了用户管理, 内容审核, 内容发布, 数据统计等模块
 
-- https://github.com/twentyhq/twenty /AGPLv3/ts
-  - https://twenty.com/
-  - We are building an Open Source CRM designed to be: enjoyable to use, easily extendable, and perfectly in-sync with your data.
-  - a modern alternative to Salesforce
-  - 后端依赖nestjs、prisma、graphql、apollo/server
-  - 前端依赖recoil、blocknote、chakra-ui、afterframe(raf)
-
-- https://github.com/odoo/odoo /LGPLv3/python/js
-  - https://www.odoo.com/
-  - a suite of web based open source business apps.
-  - The main Odoo Apps include an Open Source CRM, Website Builder, eCommerce, Warehouse Management, Project Management, Billing & Accounting, Point of Sale, Human Resources, Marketing, Manufacturing, ...
-
 - https://github.com/apstanisic/zmaj /ts
   - https://zmaj.vercel.app/
   - a headless CMS with RESTful API for your database and admin panel to easily manage your data
@@ -260,6 +248,26 @@ modified: 2023-01-20T21:59:47.792Z
     - It combines the ease of use of JSON, the connectivity of RDF (linked data) and the reliability of type-safety.
     - Atomic Data is Linked Data, as it is a strict subset of RDF.
     - The default serialization format for Atomic Data is JSON-AD
+# crm/erp
+- https://github.com/twentyhq/twenty /AGPLv3/202411/ts
+  - https://twenty.com/
+  - https://demo.twenty.com/
+  - Building a modern alternative to Salesforce, powered by the community
+  - We are building an Open Source CRM designed to be: enjoyable to use, easily extendable, and perfectly in-sync with your data.
+  - a modern alternative to Salesforce
+  - 后端依赖nestjs、prisma、graphql、apollo/server
+  - 前端依赖recoil、blocknote、chakra-ui、afterframe(raf)
+
+- https://github.com/odoo/odoo /LGPLv3/python/js
+  - https://www.odoo.com/
+  - a suite of web based open source business apps.
+  - The main Odoo Apps include an Open Source CRM, Website Builder, eCommerce, Warehouse Management, Project Management, Billing & Accounting, Point of Sale, Human Resources, Marketing, Manufacturing
+
+- https://github.com/frappe/frappe /MIT/202411/python/js
+  - https://frappeframework.com/
+  - https://erpnext.com/
+  - Low code web framework for real world applications, in Python and Javascript
+  - Full-stack web application framework that uses Python and MariaDB on the server side and a tightly integrated client side library. Built for ERPNext.
 # in-memory/json-cms/dashboard
 - TiddlyWiki5 /7.5kStar/BSD/202311/js
   - https://github.com/Jermolene/TiddlyWiki5

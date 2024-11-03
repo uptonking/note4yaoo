@@ -41,6 +41,10 @@ modified: 2021-07-20T13:50:23.433Z
     - 输入数据input-data-table, 开放数据api，开放应用app-builder
     - 产品方向: 偏设计布局， 偏业务逻辑
 
+- lts-tech-stack
+  - vscode: monaco-editor + electron
+  - codemirror/prosemirror: state + view + commands + transform/ot/collab + virtualized
+
 - 技术细节: virtualized, draggable, table(eav)
 - 技术产品: cm-devtools, noseditor, collab-hocuspocus
 - 技术方向js: 协作/ver-gitdb/partial-sync, 编辑器/ide, 多维表格/excel; scaling/HA-socket; dnd, floating; 前端版/流式版/oplog; 

@@ -21,7 +21,13 @@ modified: 2024-01-04T01:28:58.097Z
 
 - ## 
 
-- ## 
+- ## 社交媒体的历史一图流
+- https://x.com/oran_ge/status/1852562550522826925
+  - 这里面的几个常青树都不简单, 还有个极速增长的 reddit, 怪不得现在都去 reddit 获客, 为什么中国的论坛没有这样的机会？
+- 当然是监管的原因。当年我的论坛也有日活十万贴，月访问量三千万的光辉历史记录。被降维打击了一把，转眼也成了云烟。
+- Pinterest 这个形态在国内也是没有。
+
+- Instagram、Reddit、TikTok三大流量巨头，国内小红书、b站、抖音。
 
 - ## 🔁 [Why isn't Bluesky a peer-to-peer network? | Paul's Dev Notes _202401](https://www.pfrazee.com/blog/why-not-p2p)
 - The indie hacker spirit was strong in the NodeJS & Web community in 2014. There was a brief surge of interest in CouchDB and the potential for CouchApps. WebRTC had just stabilized and was being fiddled with.

@@ -162,4 +162,12 @@ modified: 2024-08-24T16:30:20.218Z
   - Token Counting: Provides token counts for each file and the entire repository, useful for LLM context limits.
   - Git-Aware: Automatically respects your .gitignore files.
   - 可以将你的代码库打包成一个 AI 友好文件（带有文件的目录结构，文件内容以及提示词），然后可以方便的供给大模型进行分析和使用。思路非常有趣。
+# code-search
+- https://github.com/sourcebot-dev/sourcebot /MIT/202411/ts
+  - https://sourcebot.dev/
+  - a fast code indexing and search tool for your codebases. 
+  - It is built ontop of the zoekt indexer, originally authored by Han-Wen Nienhuys and now maintained by Sourcegraph.
+  - https://github.com/sourcegraph/zoekt /apache2/202411/go
+    - This is a fast text search engine, intended for use with source code.
+    - This is a Sourcegraph fork of github.com/google/zoekt. It is now the main maintained source of Zoekt.
 # more

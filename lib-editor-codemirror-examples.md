@@ -176,7 +176,7 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/bhsd-harry/codemirror-mediawiki /GPLv2/202407/ts
   - https://bhsd-harry.github.io/codemirror-mediawiki/
   - Modified CodeMirror mode based on wikimedia/mediawiki-extensions-CodeMirror
-  - The goal is to support a standalone integration between CodeMirror and Wikitext, without the need for a MediaWiki environment
+  - 💡 The goal is to support a standalone integration between CodeMirror and Wikitext, without the need for a MediaWiki environment
 
 - https://github.com/tidbcloud/tisqleditor /MIT/202408/ts
   - https://tisqleditor.vercel.app/
@@ -670,9 +670,14 @@ modified: 2023-06-23T12:46:53.288Z
   - Auto link detection
   - https://codeberg.org/retronav/ixora /202305/ts/inactive
 
-- https://github.com/madeyoga/chunchunmaru-mde /MIT/202207/ts/inactive
-  - https://madeyoga.github.io/chunchunmaru-mde/
+- https://github.com/madeyoga/chun-mde /MIT/202207/ts/inactive
+  - https://madeyoga.github.io/chun-mde/
   - Markdown editor based on codemirror 6
+
+- https://github.com/jalalmanafi/ownmd /MIT/202410/ts
+  - https://ownmd.io/
+  - open-source Markdown editor for the web. Write, preview, and share your Markdown content with ease.
+  - Client-side saving
 
 - https://github.com/s-zeid/MarkupChisel /BSD/202407/js
   - https://code.s.zeid.me/markdownchisel
@@ -743,6 +748,16 @@ modified: 2023-06-23T12:46:53.288Z
   - a text editor for the web
   - 依赖codemirror6、bulma、idb
 
+- https://github.com/common-repository/codemirror-file-editor /GPL/202411/js
+  - https://wordpress.org/plugins/codemirror-file-editor/
+  - Replaces defaults WordPress Theme and Plugin Editors with CodeMirror
+  - https://github.com/common-repository/codemirror-for-codeeditor
+    - Just another code syntaxhighligher for the theme and plugin editor with CodeMirror. This plugin can highlight sourcecodes in the theme/plugin editor and provide a useful toolbar.
+  - https://github.com/common-repository/codemirror-for-post-editor
+    - This plugin adds an editor button that will let you use the great [CodeMirror](http://codemirror.net) editor to edit the HTML code of your posts.
+  - https://github.com/common-repository/wp-codemirror-block
+  - https://github.com/common-repository/codemirror-2
+
 - https://github.com/frabjous/open-guide-editor /GPLv3/202404/php/js
   - Web based editor based on codemirror for editing markdown and LaTeX files with live updating HTML and PDF previews
   - Highly configurable web-based text editor based on codemirror primarily designed for editing markdown, LaTeX, and html files with live-updating html and pdf previews.
@@ -786,6 +801,9 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/openwebwork/pg-codemirror-editor /MIT/202410/ts
   - This package implements a CodeMirror 6 editor that is primarily intended for editing PG problem files for the WeBWorK Online Homework Delivery System. 
   - However, it also supports editing Perl, HTML, XML, Mojolicious HTML templates, and Mojolicious raw text templates since those are needed by webwork2.
+  - https://github.com/openwebwork/codemirror-lang-pg /MIT
+    - This package implements PG language support for the CodeMirror code editor.
+    - PG is the problem generation language for the WeBWorK online homework delivery system.
 
 - https://github.com/lhlyu/pure-editor /MIT/202302/ts/inactive
   - a pure editor developed using codemirror6
@@ -1461,7 +1479,7 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/cookshack/codemirror-lang-lezer-tree /MIT/202409/js
   - Language support for Lezer trees, for CodeMirror 6
   - https://github.com/cookshack/codemirror-ruler
-    - Draws a vertical line at a certain column.
+    - Draws a vertical line at a certain column
 
 - https://github.com/zweifisch/lezer-ast-explorer /MIT/202308/ts
   - https://zweifisch.github.io/lezer-ast-explorer/
@@ -2001,6 +2019,7 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/TheNewC0der-24/CodePen-Clone /202201/js/inactive
   - https://my-codepen-clone.netlify.app/
   - create my own CodePen.
+  - I love CodePen. I like it so much I decided to see what it would
 
 - https://github.com/darrowv/JsLogs /202310/js
   - https://darrowv.github.io/JsLogs/
@@ -2073,6 +2092,9 @@ modified: 2023-06-23T12:46:53.288Z
   - A free and open source code snippets manager for developers
   - 依赖codemirror5、d3、dom-to-image、electron-store、marked
   - 202208: I am excited that v3.0.0-beta.1 is out which now uses Codemirror instead of Ace
+
+- https://github.com/github/codemirror-contrib /archived
+  - CodeMirror community contributions as used by GitHub.
 # pm-code-docs/notebook
 - https://github.com/srcbookdev/srcbook /apache2/202408/ts
   - https://srcbook.com/
@@ -2185,6 +2207,11 @@ modified: 2023-06-23T12:46:53.288Z
   - open-source code editor as a React component with unlimited AI autocomplete. 
   - Brought to you by the team at Codeium. Free with no account required.
   - Customizable API extended from Monaco React
+
+- https://github.com/buildownai/buddy /CC-NC/202410/ts/vue
+  - https://buildown.ai/
+  - AI driven IDE in the browser - Showcase from the book: Build Your Own AI
+  - a demonstration application showcasing how to build an AI-driven solution in TypeScript, leveraging Ollama 
 
 ## coding-toolchain-ai
 

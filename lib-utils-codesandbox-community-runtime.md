@@ -265,6 +265,16 @@ modified: 2024-05-12T17:20:03.132Z
 - 这是 Serverless（无服务器） 前进的一步，也是开源前进的一步。125ms 启动时间、5 MiB 内存占用的 microVM ，让容器/函数轻易获得隔离性的加持（现阶段容器和函数的安全性还是靠虚拟化了），而 AWS 开源此项技术，表明基础技术的未来还是开源。
 
 - 2年前大家做FaaS的时候，就已经在猜测和追赶AWS在轻量级VM这块的技术。到现在开源，大家已经或多或者形成了类似的技术，例如Kata Container，google gVisor等。 而且在17年逐步形成了一定的影响力。但是Lambda和Fargate已经成为Serverless的事实上的标准的时候，把这项技术开源出来, 一方面是显示AWS本身在serverless infrastructure方面的革新能力，另外一方面也是对逐步火热的轻量级VM技术的统治力的争夺。至于对VM和container技发展方向的变化，我理解变化并不是firecracker带来的，而是Lambda，Fargate等带来的，而这个变化早已经出现。
+# discuss-firecracker
+- ## 
+
+- ## Docker is not the optimal way to run serverless workloads; hence, AWS Lambda or even an online judge like CodeChef, uses Firecracker as its execution environment.
+- https://x.com/arpit_bhayani/status/1852550914638537196
+  - This week, I’m reading about Firecracker which is Amazon’s lightweight VM built specifically for serverless applications like AWS Lambda and Fargate. The paper covers how Firecracker supports thousands of short-lived containers and functions on shared hardware without sacrificing security or efficiency.
+  - I skimmed the paper once, and it is pretty interesting to understand the story behind how Amazon found the right trade-offs between traditional hypervisors and containers and balanced both really well. 
+
+- It is also interesting to read how Aws  fast load docker containers on lambda. 
+- Docker has added lot of features, and continously evolving, abd has become bit heavy, so if you just need containers, then all features are not needed. That's the main reason kubernetes also uses 'containerd' which is mini version of docker, and extracted from docker.
 # discuss-runtime-docker
 - ## 
 

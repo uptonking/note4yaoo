@@ -30,8 +30,12 @@ modified: 2023-11-28T14:48:45.910Z
     - 移动优先的markdown知识库
     - automation(lowcode)
   - 通用或单一的builder价值不大，但针对业务平台特别是app-store的builder对平台方和开发者的价值都很大
-  - 搜索: rag, code-search, ai-chat
+  - 🔍 search: rag, code-search, ai-chat
     - 针对代码优化的搜索可作为技术卖点和产品卖点，可参考github-code-search/algolia
+    - repomap/manifest for repo
+  - 🎞️ video: 自动生成视频，方便回放、教学
+    - pdf/ppt > video
+    - video templates for tiktok/bilibili
   - markdown support with git-like database
     - widely used, enterprise-loved(易盈利)
     - text files works well with existing tooling

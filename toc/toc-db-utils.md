@@ -160,9 +160,12 @@ modified: 2022-11-06T11:21:27.612Z
   - a database metadata analyzer. 
   - It helps your database administrators and developers visualize, navigate and understand your data model. 
   - SchemaSpy is a standalone application without GUI. Just download the latest JAR file
-
- # more
-
+# testing
+- https://gitlab.com/gitlab-org/database-team/gitlab-com-database-testing /202410/ruby
+  - This project contains automation to test GitLab database migrations on the GitLab.com dataset. 
+  - This is intended to be used before the migration code is being merged and deployed.
+  - By using thin-clone technology provided by postgres.ai, the dataset used is very close to actual GitLab.com production. This allows us to analyze migrations and their behavior on the actual dataset, before merging code.
+# more
 - https://github.com/mlaanderson/database-js
   - Database-js implements a common, promise-based interface for SQL database access. 
   - Inspired by JDBC, it uses connection strings to identify the database driver.

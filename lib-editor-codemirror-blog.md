@@ -122,6 +122,7 @@ modified: 2024-05-02T02:01:04.255Z
 # more
 - [CodeMirror Accessible](https://bgrins.github.io/codemirror-accessible/)
 
+- [Interactive Code Editor Tutorial: Managing Dynamic Content with react-codemirror - DEV Community _202410](https://dev.to/mrsupercraft/interactive-code-editor-tutorial-managing-dynamic-content-with-react-codemirror-3i7g)
 - [How to make a code editor with CodeMirror 6 _202106](https://www.raresportan.com/how-to-make-a-code-editor-with-codemirror6/)
 
 - [Revisiting our CodeMirror 6 implementation in React after the official release _202210](https://www.codiga.io/blog/revisiting-codemirror-6-react-implementation/)

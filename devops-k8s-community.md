@@ -14,7 +14,20 @@ modified: 2024-06-30T11:15:28.002Z
 
 - ## 
 
-- ## 
+- ## 🤔 is "service mesh" just a kubernetes marketing term for 25-year-old boring technologies like proxies and load balancers and tunnels?
+- https://x.com/jer_s/status/1852770230680129700
+- No. Among other notable differences, the main one is the central control plane to distribute configurations, apply global policies and provide e2e observability. Letting alone sidecar-less meshes that didn't exist
+  - Istio, Cillium and others all call themselves service mesh. Sidecar has a clear meaning in K8s, so makes sense. But the same pattern (called as such or not) can be employed outside of K8s (by bundling Envoy/whatever in the VM).
+
+- pretty much, each “service” has a proxy sharing its loopback as side car and only the proxies talking to each other. Each proxy is exposed as both forward proxy (for client requests from the service) and reverse proxy (for incoming requests to the service)
+
+- Basically, yes!! Imagine you have a big playground with lots of kids playing different games. Proxies and load balancers are like teachers who help pass messages between the kids so they can play nicely. A service mesh is like giving each kid a walkie-talkie and a rulebook they can communicate directly, share secrets safely, and know the best ways to work together. So, while it uses some old ideas, a service mesh is a new and smarter way to help all the kids in the playground play together smoothly.
+
+- I think it's a bit of both - new ideas built on top of old concepts. Service mesh does bring some much-needed advancements like traffic management and observability, but I agree the underlying tech isn't exactly new.
+
+- May I use a MQ to replace those proxy mesh? Much simpler
+
+- I remember the days we called this the “ambassador model”.
 # discuss-scaling
 - ## 
 

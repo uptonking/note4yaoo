@@ -329,10 +329,12 @@ modified: 2021-05-06T09:58:23.803Z
 - [Iconbuddy — 200K+ open source free svg icons](https://iconbuddy.app/)
   - Download, Customize, Edit and Personalize. Over 200k+ open source icons.
 
-
 - https://github.com/jaywcjlove/icongo /MIT/202405/ts
   - https://icongo.github.io/
   - Search SVG Icons. Easily include popular icons in your React projects and provide an easy tool to convert SVG into React components
+# icons-anime
+- https://icons.pqoqubbw.dev/
+  - animated icons i’ve been working on lately are now open source
 # logos
 - [FreeLogo.me – Free SVG Logo Templates](https://freelogo.me/)
   - SVG Logo placeholders you can download and use with no restrictions for free.
