@@ -344,16 +344,9 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
   - [x] streaming infinite-list/tree
 
 - [Scrum Poker Online - Free Tool for Planning Poker](https://www.scrumpoker-online.org/en/room/64881797/scrum-poker)
-# dev-10
+# dev-11
 - yaoo-proj
   - codemirror-devtools
-
-- frontend
-  - think卡片打开文件，滚动到文件的行数
-  - 🎨 计划画布展示、修改及对话
-  - 付费订阅和积分扣减
-  - ai控制台前端
-  - 前端未控制member/owner的按钮、路由访问权限
 
 - editor
   - tab自动补全
@@ -367,11 +360,6 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
   - 流式更新的文档内容，需要流式更新diff-view
   - ~~隐藏绿色部分后，红色部分是否显示行号~~，打字太快了，不用看行号
 
-- paas
-  - openFile处理异常 File does not exist
-  - agent新建文件后文件树未显示
-  - ~~显示部分隐藏文件，如 .gitignore~~
-
 - cde
   - 重写驾驶舱侧边栏的header，让置顶卡片位置水平居中
   - changed-files-list
@@ -381,7 +369,6 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
 - agent
   - 系统token达到上限后，不能再制定计划，但现有计划也无法显示
   - 计划终止后，如何清理action，需要agent提供api
-  - 跟随模式似乎不需要高亮边框
 
 - animation
   - time machine show/hide
@@ -391,27 +378,23 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
   - ❓ 追加step，同一cde内，用户A在回放，用户B追加完点执行，
     - 则用户A的的时光机处于什么状态
     - 若用户A取消跟随且自己执行回放，是否执行B追加过的已执行完的action
-  - 回放模式点击第一个action，然后点击播放，没有播放
-  - 终止后未执行的action在进度条仍然显示，状态是cancelled
-  - 关闭machine再打开时，会强制再次打开editor
-  - 时光机终止后，驾驶舱如何反馈，终止状态如何清理
-  - 🐛 时光机在计划执行完后，追加action修改之前的文件并执行，此时点击后面的action打开文件时会一直显示loading
-  - 🚨 在action执行rerun后，时光机回放模式取快照的逻辑需要根据action的快照次数确定
   - 文件树上文件路径变化后(如移动)，action信息显示的路径要变化吗，支持打开吗
+  - 🚨 对于单action的任务，执行时openFile(带打字)，执行完会立即再次openFile(无打字)，体验不好
+  - 在action执行rerun后，时光机回放模式取快照的逻辑需要根据action的快照次数确定
+  - ~~回放模式点击第一个action，然后点击播放，没有播放~~
+  - ~~终止后未执行的action在进度条仍然显示，状态是cancelled~~
+  - ~~关闭machine再打开时，会强制再次打开editor~~
+  - ~~时光机终止后，驾驶舱如何反馈，终止状态如何清理~~
+  - ~~时光机在计划执行完后，追加action修改之前的文件并执行，此时点击后面的action打开文件时会一直显示loading~~
   - ~~终止需要二次确认~~
   - ~~live模式下暂停时支持终止~~
   - ~~machine组件unmount要手动清理时光机的定时器~~
-- 未执行的时光机
-  - 状态会变成pause
-  - actions和plan在刷新页面后会丢失、重置
 - 回放模式
   - .pnpm-store文件夹应该默认隐藏，被ignore的文件不要显示，不要出现在changedFiles
     - 文件树打不开.pnpm-store文件夹
   - ~~最后一个action播放时进度条未显示loading~~
   - ~~.gitignore文件无法显示，需要在ideServer放开~~
-  - 第一个action有时会转起来
   - 只读编辑器光标改为禁用箭头
-  - 回放时高亮对应面板边框
   - diff效果有时显示不出来
   - 新增文件未显示A图标，显示的是M
 
@@ -488,13 +471,13 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
 
 - not-yet
   - ~~cmdk整体功能~~
-  - 🚨 追加步骤
-  - 🚨 时光机获取快照使用uuid, cancelled的action无法打开快照
+  - ~~追加步骤、回放重构~~
+  - 🤔 时光机获取快照使用uuid, ~~cancelled的action无法打开快照~~
   - 🚨 ai写代码打字效果的时机优化和样式优化
-  - 追加步骤不能选择之前修改过的文件
+  - 同一step里追加步骤不能选择之前修改过的文件
   - ~~diff视图开关只在需要时显示~~
   - ~~支持撤销ai写的代码, diff工具条~~
-  - tab-key; chat-apply; aiCannotCreateThread
+  - tab-key; chat-apply
   - 防抖: cmdk， chat
   - 驾驶舱action列表支持打开文件
     - 🚨 打开已删除的文件未实现， 同时处理undo工具条的位置
@@ -520,20 +503,53 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
 stt.message.channel().send('uCmdK', 'README.md', 2, 2, 'explain an elegant word in one sentence')
 
 console.log(';; task ', taskState, runningTaskAction, task?.task_steps)
-console.log(';; act-file-o ', shouldForceOpenFile, actionPath !== currentFilePath, actionPath, currentFilePath)
+
+console.log(';; act-file-o ', currentOpenedActionId, shouldForceOpenFile, actionPath, currentFilePath)
+
+console.log(';; taskActions', currentActionId, path, taskActions)
+console.log(';; open-diff ', enableDiffAnimation, store.cdePlay.enableDiffView(), store.cdeReplay.isMachinePaused())
 ```
 
 ```
 ^(?!42\["res).*
 ```
 
-- d42-tree-root-container  去掉 tansition 样式
+## 1104
+
+- ❓ 为什么ai执行同一个action期间会打开2次编辑器，且第2次的path是最新的
+- 为什么 onTaskUpdated 事件会触发2次，中间刚好隔2s，然后 有时中间也会打开文件
+  - action状态变化: wip-action1 > 2s > completed > 2s > wip-action2
+
+- 不在文件树ui而通过api打开文件时，文件树上对应文件没显示选中状态
+  - 方案1: daoPaas提供新api setFileSelected, 让前端手动设置文件选中的状态
+  - 方案2: 在执行daoPaas.openFile时自动更新文件树的选中状态
 
 ## 1101
 
+- ~~d42-tree-root-container  去掉 tansition 样式~~
+
+昨天：
+- 排查并解决了cde的编辑器编辑go语言文件卡顿的问题
+- 修复显示快照action时不能切换文件的问题
+
+今天：
+- 修复快照action剩下的issue
+- 打字动画优化
 # dev-10-cmdk-reject-undo-&-cm-tooltip
 
 ## 1031
+
+- paas
+  - ~~agent新建文件后文件树未显示~~
+  - ~~openFile处理异常 File does not exist~~
+  - ~~显示部分隐藏文件，如 .gitignore~~
+
+- frontend
+  - think卡片打开文件，滚动到文件的行数
+  - 🎨 计划画布展示、修改及对话
+  - 付费订阅和积分扣减
+  - ai控制台前端
+  - 前端未控制member/owner的按钮、路由访问权限
 
 昨天：
 - 合并重构时光机回放的pr并上线staging，解决现有问题和产品需求变化

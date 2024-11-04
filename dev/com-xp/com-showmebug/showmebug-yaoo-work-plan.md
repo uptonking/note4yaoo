@@ -2175,7 +2175,7 @@ const playbackInfo = [
 - 通过鼠标点击切换文件时会执行click事件的openFile()逻辑
   - 先设置跟随 store.dao.channel().followingFocusComponent('Tree'); 
   - setOpenPath(''); 
-  - onSelectFileOrFolder([src]); + onCustomSelect?.([src], type); 
+  - onSelectFileOrFolder([src]); + `onCustomSelect?.([src], type)`; 
   - setSelectedFilePath(items[0] as string); 
 - 在useEffect里面，每次selectedFilePath变化，都会请求文件内容并更新编辑器
   - channel.loadFile(selectedFilePath); 
