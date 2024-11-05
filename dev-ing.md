@@ -361,6 +361,7 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
   - ~~隐藏绿色部分后，红色部分是否显示行号~~，打字太快了，不用看行号
 
 - cde
+  - 变更文件列表在fork仓库时需要清空M标记
   - 重写驾驶舱侧边栏的header，让置顶卡片位置水平居中
   - changed-files-list
   - cde页面无法区分自己和其他用户
@@ -522,7 +523,22 @@ console.log(';; open-diff ', enableDiffAnimation, store.cdePlay.enableDiffView()
   - 方案1: daoPaas提供新api setFileSelected, 让前端手动设置文件选中的状态
   - 方案2: 在执行daoPaas.openFile时自动更新文件树的选中状态
 
+## 1106
+
+- 昨天
+  - 调整打字动画的逻辑，实现在修改行数较多时按行打字，在修改行数较少时按字符
+- 风险
+  - ai打字的等待时间希望根据新增行数等待，而不是默认等2s
+    - action对象的result属性的diff描述内容中包含新增文件的行数
+  - 某些类型的action如新增文件，ai工作时跟随延迟的问题，前端难以解决
+    - 希望ai先打开一个空白文件，然后再开始写
+  - 某些类型的action，回放时应该如何交互产品定义不清晰，rename/move/文件夹操作
+    - 对于文件路径不存在的场景，默认打开只读的快照文件
+
 ## 1105
+
+- [Create dummy text using javascript - Stack Overflow](https://stackoverflow.com/questions/34123706/create-dummy-text-using-javascript)
+  - 可将随机文本问题转换为在固定数组中获取有效下标元素的问题
 
 - 昨天
   - 修复时光机快照相关pr合到staging

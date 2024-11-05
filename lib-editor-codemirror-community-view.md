@@ -252,6 +252,24 @@ modified: 2024-08-08T20:49:11.571Z
 
 - ## 
 
+- ## [CSS style for border of editor - discuss. CodeMirror](https://discuss.codemirror.net/t/css-style-for-border-of-editor/3097)
+- If you are using v6, you can do something like:
+
+```js
+const myTheme = EditorView.theme({
+  "&": {
+    fontSize: "12pt",
+    border: "1px solid #c0c0c0"
+  },
+  "&.cm-editor.cm-focused": {
+    outline: "none"
+  }
+});
+```
+
+- ## [Change where/when Theme `<style>` Element is Injected - discuss. CodeMirror _202402](https://discuss.codemirror.net/t/change-where-when-theme-style-element-is-injected/7821)
+- Due to Next’s restrictions, we ended up needing to go the ShadowDOM route, like @dimanik94 describes, so that the styles get contained inside of the shadow root and Next can’t obliterate them. Our implementation gets rather involved, but the example they provide should work
+
 - ## [EditorView.theme from facet value - v6 - discuss. CodeMirror _202407](https://discuss.codemirror.net/t/editorview-theme-from-facet-value/8477)
   - What is a good way to provide a Theme derived from the value of a Facet? Say there’s a facet full of custom colors that a theme wants to use.
   - I’ve attempted Facet.compute, StateField, ViewPlugin and more but I can’t seem to get anything that will allow me to get the current facet’s value to then use to build a separate theme extension.

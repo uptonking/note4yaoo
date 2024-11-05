@@ -36,6 +36,59 @@ modified: 2023-08-29T10:24:09.136Z
 ## [ipld-version-control _201706](https://gist.github.com/flyingzumwalt/a6821e843366d606aeb1ba53525b8669)
 
 - hypercore-protocol.org is built on version control, if anyone's interested 
+# blogs-diff 🆚
+
+## 🧑‍🏫 [Git Diff | Atlassian Git Tutorial](https://www.atlassian.com/git/tutorials/saving-changes/git-diff)
+
+```diff
+# the input sources of the diff
+diff --git a/diff_test.txt b/diff_test.txt
+# internal Git metadata. correspond to Git object version hash identifiers
+index 6b0c6cf..b37e70a 100644
+# a legend that assigns symbols to each diff input source
+--- a/diff_test.txt
++++ b/diff_test.txt
+# a list of diff 'chunks'
+# A diff only displays the sections of the file that have changes
+# The first line is the chunk header. Each chunk is prepended by a header enclosed within @@ symbols. The content of the header is a summary of changes made to the file.
+# -1 +1 meaning line one had changes. 
+# @@ -34,6 +34,8 @@ meaning 6 lines have been extracted starting from line number 34. Additionally, 8 lines have been added starting at line number 34.
+@@ -1 +1 @@
+# The remaining content of the diff chunk displays the recent changes
+-this is a git diff test example
++this is a diff example
+```
+
+```shell
+# When a file path is passed, the diff operation will be scoped to the specified file.
+# By default git diff will execute the comparison against HEAD
+# 👉 compare the specific changes in the working directory, against the index, showing the changes that are not staged yet
+git diff HEAD ./path/to/file
+# with the --cached option the diff will compare the staged changes with the local repository
+# --cached option is synonymous with --staged.
+git diff --cached ./path/to/file
+
+# Comparing files between two different commits
+git diff commitId1 commitId2
+
+# Comparing files from two branches
+git diff main new_branch ./diff_test.txt
+
+# Branches are compared like all other ref inputs to git diff
+# two dots indicate the diff input is the tips of both branches. 
+# The same effect happens if the dots are omitted and a space is used between the branches.
+git diff branch1..other-feature-branch
+
+# three dot operator initiates the diff by changing the first input parameter branch1. It changes branch1 into a ref of the shared common ancestor commit between the two diff inputs, the shared ancestor of branch1 and other-feature-branch. The last parameter input parameter remains unchanged as the tip of other-feature-branch.
+git diff branch1...other-feature-branch
+
+```
+
+- git diff --color-words
+  - 可以展示行内diff, 删除的字符是红色，新增的字符为普通黑色而不是绿色
+
+- `git diff` can be run on binary files. Unfortunately, the default output is not very helpful.
+  - Git does have a feature that allows you to specify a shell command to transform the content of your binary files into text prior to performing the diff.
 # more-blogs
 - [Git's database internals I: packed object store - The GitHub Blog](https://github.blog/2022-08-29-gits-database-internals-i-packed-object-store/)
 

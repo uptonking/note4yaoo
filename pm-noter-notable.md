@@ -33,6 +33,8 @@ modified: 2023-11-28T14:48:45.910Z
   - 🔍 search: rag, code-search, ai-chat
     - 针对代码优化的搜索可作为技术卖点和产品卖点，可参考github-code-search/algolia
     - repomap/manifest for repo
+  - 🔡 coding
+    - 针对用户问题给出代码参考和可运行可操作的在线交互示例，特别针对css
   - 🎞️ video: 自动生成视频，方便回放、教学
     - pdf/ppt > video
     - video templates for tiktok/bilibili
