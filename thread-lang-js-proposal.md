@@ -128,8 +128,27 @@ modified: 2023-11-10T08:05:25.474Z
   - 代码能跑，但结果不符合期待
 
 - 我知道js只支持到2**53 但是我之前记得在那看过 新特性解决了这个问题 还支持有无符号 难道是我记忆错位
-# discuss-feat-enum
+# discuss-feat-enum 📍
 - ## 
+
+- ## 
+
+- ## [Why you shouldn't use Enums _202403](https://www.wordman.dev/blog/typescript-enums)
+- basically TypeScript creates an Object that looks like this
+  - The nice thing with this approach is that is lets us have access to every possible information of the HttpStatusCode in a bidirectional way
+  - it does come with an increase in bundle size
+  - `const enum` s in TypeScript don’t create any code at runtime, they just act as a type and their value is automatically resolved when used. The result of this looks great to me, but you can run into problems with this. It is getting more and more common to use other transpilers to generate JavaScript code from TypeScript. Often those transpilers work on a file-by-file basis, transpiling just a single file without fully understanding the full type system. Vite and Babel work this way for instance. Just transpiling a single file does not read imported modules, so there is no way to support const enums. 
+- don’t use enums! TypeScript has Literal Types that are a great replacement for enums
+
+- ## [You might not need TypeScript Enum - DEV Community _202309](https://dev.to/maafaishal/you-might-not-need-typescript-enum-1f4n)
+- TypeScript provides both numeric and string-based enums.
+- While Constants can cover an object with string and number property values including all data types.
+
+- I used https://babeljs.io/repl to know the size after the code has been transpiled.
+
+- Based on several aspects I've discussed earlier, we can replace Enum with Object. Object has the flexibility for defining various data types, has a smaller transpiled size, and can detect both property values or property access.
+
+- I'm avoiding TypeScript enums with all cost. I prefer to use string unions instead
 
 - ## 🤼🏻 [Insights from Adopting TypeScript at Scale | Hacker News _202011](https://news.ycombinator.com/item?id=25043541)
   - Fascinating that Bloomberg started adopting server-side JS in 2005 and client-side JS only in 2012. And that they use their own deno-like JS engine.

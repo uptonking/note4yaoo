@@ -7,8 +7,10 @@ modified: 2020-07-07T08:10:16.774Z
 
 # lang-js-proposal
 
+# guide
+- communities
+  - [TC39 - Specifying JavaScript](https://es.discourse.group/)
 # proposals-toc
-
 - [finished proposals](https://github.com/tc39/proposals/blob/main/finished-proposals.md)
 
 - https://babeljs.io/docs/en/plugins
@@ -16,6 +18,11 @@ modified: 2020-07-07T08:10:16.774Z
 - [top tc39 proposals](https://github.com/search?o=desc&q=user%3Atc39&s=stars&type=Repositories)
   - pipeline-operator(|>), optional-chaining(?.), pattern-matching(case-when), observable, dynamic-import, bind-operator(::), object-rest-spread, decorators
   - [tc39 proposals stages](https://github.com/tc39/proposals)
+
+- https://github.com/saadq/proposals.es /MIT/202111/ts/inactive
+  - https://proposals.es/
+  - A website for exploring ECMAScript proposals/champions/specs and more
+  - 基于nextjs实现，每个proposal可在单独页面打开
 # proposals-trending
 - https://github.com/tc39/proposal-json-modules /s3
   - Proposal to import JSON files as modules
@@ -165,7 +172,9 @@ modified: 2020-07-07T08:10:16.774Z
 
 ## more-proposals
 
-- https://github.com/rbuckton/proposal-enum /stage0
+- https://github.com/rbuckton/proposal-enum /201805/stage0
+  - Enums provide a finite domain of constant values that are regularly used to indicate choices, discriminants, and bitwise flags.
+  - [Alternative enum proposal · Issue #1 · rbuckton/proposal-enum](https://github.com/rbuckton/proposal-enum/issues/1)
   - https://github.com/Jack-Works/proposal-enum
 
 ## stage3/4

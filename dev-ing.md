@@ -514,8 +514,6 @@ console.log(';; open-diff ', enableDiffAnimation, store.cdePlay.enableDiffView()
 ^(?!42\["res).*
 ```
 
-## 1104
-
 - ❓ 为什么ai执行同一个action期间会打开2次编辑器，且第2次的path是最新的
 - 为什么 onTaskUpdated 事件会触发2次，中间刚好隔2s，然后 有时中间也会打开文件
   - action状态变化: wip-action1 > 2s > completed > 2s > wip-action2
@@ -523,6 +521,32 @@ console.log(';; open-diff ', enableDiffAnimation, store.cdePlay.enableDiffView()
 - 不在文件树ui而通过api打开文件时，文件树上对应文件没显示选中状态
   - 方案1: daoPaas提供新api setFileSelected, 让前端手动设置文件选中的状态
   - 方案2: 在执行daoPaas.openFile时自动更新文件树的选中状态
+
+## 1105
+
+- 昨天
+  - 修复时光机快照相关pr合到staging
+  - 调整打字动画的实现，关闭diff视图时也支持打字
+- 今天
+  - 调整打字动画的逻辑，在修改行数较多时按行打字，在修改行数较少时按字符
+- 风险
+  - ai工作时跟随延迟的问题，前端难以解决
+  - 某些类型的action，回放时应该如何交互产品定义不清晰，rename/move/文件夹操作
+
+## 1104
+
+- 上周
+  - 集中修复时光机终止、追加、回放、快照相关的issues，修复快照相关pr还没合到staging
+  - 简单调整了打字动画的时机，避免多次打开文件多次渲染
+- 本周
+  - 花2天时间修复打字动画的效果和时机
+  - 花1天时间修复ui、动效相关issues
+  - 花2天时间完成本次迭代的feature，包括addToChat/fileTree-search
+- 今天
+  - 调整打字动画的逻辑，在修改行数较多时按行打字，在修改行数较少时按字符
+    - 思路是设计diff视图的option支持几种模式 auto | byLine | byChar
+  - 调整打字动画的实现，关闭diff视图时也支持打字
+    - 关闭diff一定不刷新编辑器，打开diff可能刷新
 
 ## 1101
 
