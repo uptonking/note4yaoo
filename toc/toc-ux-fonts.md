@@ -172,7 +172,17 @@ modified: 2020-07-17T10:54:16.341Z
 # discuss
 - ## 
 
-- ## 
+- ## 🆚 [What is difference between CSS em and ch units? - Stack Overflow](https://stackoverflow.com/questions/48649169/what-is-difference-between-css-em-and-ch-units)
+- em - Relative to the font size of the own element or the last parent element with a font size
+  - em is the font-size of the font, which is traditionally the width of a capital M (thus em)
+  - em was originally based on the typographic measurement of the current font M character but that is already outdated. 
+  - As you can see now, it always refers to a "fixed start-value" and not the width of a character.
+
+- rem - Relative to font-size of the root element
+
+- ch - Relative to width of the "0" (zero)
+  - ch refers to the width of the 0 character to its font size.
+  - As example: The body has a font-size: 16px and the 0 character has a width of 10px from the selected font-family, then 1ch equals 10px. And even that is still inaccurate, because e.g. italic or bold can change the width of the character.
 
 - ## Windows 中的 Chrome 准备将默认字体设置为 Noto CJK，这会影响中日韩三种语言的用户。主要是为了开启标点挤压来提升排版效果。
 - https://x.com/yisibl/status/1801182673634750806

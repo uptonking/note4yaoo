@@ -42,7 +42,7 @@ modified: 2024-05-06T02:52:41.789Z
   - 是否面向非开发者？ 
   - 支持js、ts、java、go
 - clacky对标的产品的是什么? copilot? vscode-ext? 
-  - devvi, swe
+  - devv, swe
 - clacky工具的产出是代码pr? 还是编译通过的部署预览?
   - 暂时不实现部署预览
 

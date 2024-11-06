@@ -142,8 +142,22 @@ modified: 2024-08-08T20:49:11.571Z
 - ## 💫 [A Multi-line CSS only Typewriter effect - DEV Community _202204](https://dev.to/afif/a-multi-line-css-only-typewriter-effect-3op3)
   - The effect relies on using a Monospace font and knowing the number of characters. 
   - Yes, I am starting with the drawbacks but that was the price for a generic and easy-to-use code.
+
 - 
 - 
+- 
+- 
+
+- [Upgrading the CSS only Multi-line Typewriter effect - DEV Community _202109](https://dev.to/afif/upgrading-the-css-only-multi-line-typewriter-effect-2269)
+  - create a more fancy variation of the "writer effect" using only CSS.
+  - Filling, Sliding, Shot, Random, Fragmentation
+
+- ## 💫 [Multiline CSS-only typewriter effect - DEV Community _202109](https://dev.to/alvaromontoro/multiline-css-only-typewriter-effect-18p4)
+  - it could be "close" to the one https://dev.to/afif/a-multi-line-css-only-typewriter-effect-3op3, but using different elements and properties
+- The idea of this effect is having two different moving elements: the text container in itself and a pseudo-element used to hide the content.
+  - The container animation is simple: it grows a given height (the specified line height) until all the text has been displayed or the container reaches a limit of lines (500 by default). It happens in steps, so each line is revealed at a time.
+- 🧐 Required styles: the animation requires all lines to have the same height, so a `line-height` value is needed. It's "vertically monospaced."
+  - Limited backgrounds: the background must be a solid color. Otherwise, the animation of the pseudo-element will be revealed.
 
 - ## [Typewriter Effect | CSS-Tricks _201607](https://css-tricks.com/snippets/css/typewriter-effect/)
   - Demo relies on flexbox, so that could affect the layout in testing
@@ -316,6 +330,35 @@ window.matchMedia('(prefers-color-scheme: dark)')
   - Styles will be distributed over various packages. Users can not be expected to manually include the styles for all the packages they (transitively) load, and bundlers don’t (yet) provide a standardized way to bundle styles.
   - I’d really like to have proper isolation/scoping on CSS class names. Something like that is necessary for themes in any case. Being able to load multiple versions of the library without those interfering with each other is a plus.
 
+# discuss-lineWrapping
+- ## 
+
+- ## 
+
+- ## [Editor driven line wrapping - v6 - discuss. CodeMirror _202210](https://discuss.codemirror.net/t/editor-driven-line-wrapping/5125)
+  - I’m from Replit and I’ve been working on an extension for adding indentation preserving line wrapping to our editor. 
+  - Basically, me and other people at Replit have come up with… maybe 5 or more methods to add this feature and all of them have serious problems. They depend on CSS hacks, widget/mark decorations which require particular DOM layouts, etc.
+  - where line breaks are in control of the browser. And with that you only get two choices (basically), which is breaking on every character, or breaking on what the browser considers a “word”.
+  - I think most users would rather lines not break in the middle of words, but often the browser makes terrible choices with word based line breaks.
+  - Decorations in general mess with line wrapping, as the browser will treat the edge of an inline-block (and others) as a word break point, which causes some problems. An example scenario would be placing a checkmark widget before a word, with the word being a label. Unless you wrapped both the checkmark and the label word in another decoration, the browser might choose to line wrap directly after the checkmark, which would be confusing.
+
+- Doing line wrapping properly, taking into account the actual width of the glyphs, bidirectional text, and character types, is far from trivial, and as you probably expected, I’m not very attracted to the idea of increasing the scope of the library to include this.
+  - I really don’t want to implement hanging indent (and/or line wrapping) in the core library, sorry.
+
+- there are a lot of approaches we tried, and the current one uses `padding-left` on the line element, and then wraps the beginning whitespace in a decoration and uses negative margin on that element to shift the first row of a line. This is basically a modification of the technique where you use `padding-left` and `text-indent` together.
+  - The issue with the padding-left and text-indent technique is that it has inconsistent behavior with tabs and between browsers. I have no idea why, but if you use tabs instead of spaces, negative margins/indents start to act in a stepwise… pattern? It feels inexplicable to me. It’s not consistent between browsers either.
+  - You can get around this somewhat by doing what my current technique does, which is wrapping the beginning whitespace in an element so that you kind of “isolate” the problematic tab characters, and then you shift that element to offset the first line. 
+  - However, because this is kind of an abuse of the whole decoration system, it breaks when other extensions (such as a linter) wrap lines or at least a part of the beginning whitespace in a mark decoration.
+
+- ## 🌰 [Making Codemirror 6 respect indent for wrapped lines - v6 - discuss. CodeMirror _202102](https://discuss.codemirror.net/t/making-codemirror-6-respect-indent-for-wrapped-lines/2881)
+- Plugin that makes line wrapping in the editor respect the identation of the line. 
+  - It does this by adding a line decoration that adds padding-left (as much as there is indentation), and adds the same amount as negative "text-indent". 
+  - The nice thing about text-indent is that it applies to the initial line of a wrapped line.
+- Thanks for that! I adapted your version to not use any dependencies other than Codemirror itself. I removed the React bit and replaced the Lodash for loops
+
+- I discovered that the text-indent trick used by all solutions in this thread interferes with the library’s rectangular selection. 
+  - The left side will grow outside the text when the first line in the rendered viewport is indented.
+  - I think I have made it. First, use ::before to create pseudo-elements with negative margin-left that mimic the effect of text-indent. Second, set border-left on lines instead of margin-left so that active line background still covers the indentation.
 # discuss-view-render
 - ## 
 
