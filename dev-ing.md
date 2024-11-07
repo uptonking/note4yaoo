@@ -355,8 +355,11 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
   - ~~readonly属性不生效~~
 
 - diffView
+  - 🚨 关闭diff视图显示打字动画后，无法使用cmdk，且cmdk-undo交互异常
   - diff-view的开关只在需要时显示，[ ] 开启关闭diff无需刷新编辑器
-  - 关闭diff后也支持显示打字动画
+  - ✅ 关闭diff后也支持显示打字动画
+  - ✅ 在行数多时按行打字，在行数少时按字符打字
+  - ✅ 重构打字动画css，不会从下向上
   - 流式更新的文档内容，需要流式更新diff-view
   - ~~隐藏绿色部分后，红色部分是否显示行号~~，打字太快了，不用看行号
 
@@ -507,7 +510,7 @@ console.log(';; task ', taskState, runningTaskAction, task?.task_steps)
 
 console.log(';; act-file-o ', currentOpenedActionId, shouldForceOpenFile, actionPath, currentFilePath)
 
-console.log(';; taskActions', currentActionId, path, taskActions)
+console.log(';; taskActions', currentActionId, path, store.cdePlay.enableDiffView(), taskActions)
 console.log(';; open-diff ', enableDiffAnimation, store.cdePlay.enableDiffView(), store.cdeReplay.isMachinePaused())
 ```
 
@@ -522,6 +525,24 @@ console.log(';; open-diff ', enableDiffAnimation, store.cdePlay.enableDiffView()
 - 不在文件树ui而通过api打开文件时，文件树上对应文件没显示选中状态
   - 方案1: daoPaas提供新api setFileSelected, 让前端手动设置文件选中的状态
   - 方案2: 在执行daoPaas.openFile时自动更新文件树的选中状态
+
+## 1108
+
+- 昨天
+  - 合并了打字动画的pr，还有改进的空间，以后抽时间再优化
+  - 修复驾驶舱变更文件列表打开时不显示diff视图的问题
+  - 接入paas的文件树搜索功能，根据设计稿进行调整
+- 今天
+  - 根据clacky需求进一步完善文件树的搜索功能
+  - add to chat
+
+## 1107
+
+- 昨天
+  - 优化打字动画的效果
+- 今天
+  - 文件树搜索
+  - add to chat
 
 ## 1106
 
