@@ -19,6 +19,9 @@ modified: 2024-08-24T16:15:11.456Z
 - features
   - ?
 
+- who is using #vscode 💠
+  - known: cursor
+
 - who is using #theia
   - eclipse-che
   - ide: Arduino Pro IDE

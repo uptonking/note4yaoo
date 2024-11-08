@@ -27,6 +27,11 @@ modified: 2023-08-29T10:11:26.348Z
   - 强大的功能，但ui设计和使用场景有待挖掘
   - 可用于db dynamic schema, 作为实现或备份
 
+- who is using #git
+  - git-powered: gitlab, gitea, gogs, onedev
+  - best-integrations: 💠 vscode, jupyter
+  - known: gitlens
+
 - tips
   - git的广泛使用一个原因是与现有的文件和工具都集成方便，设计架构时要考虑现有格式与集成
     - 拆分核心内容和周边功能，split git-src and issues/pr/wiki, split txt/docx/xlsx and api

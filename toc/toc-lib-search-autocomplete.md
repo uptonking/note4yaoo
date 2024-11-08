@@ -144,15 +144,17 @@ modified: 2023-01-01T13:24:35.994Z
   - forks
   - https://github.com/Mister-Hope/slimsearch /202402/ts
 
-- itemsjs /274Star/apache2/202403/js/NoDeps
+- itemsjs /274Star/apache2/202409/js/NoDeps
   - https://github.com/itemsapi/itemsjs
+  - https://github.com/itemsapi/itemsjs/blob/master/docs/demo.md
   - Full text, faceted, (almost) dependency free search engine in javascript
   - **Created to perform fast search on json dataset (up to 100K items)**.
   - working on backend and frontend
-  - If native full text search is not enough then you can integrate with external full text search, like minisearch/lunr.js
+  - If native full text search is not enough then you can integrate with external full text search, like `minisearch/lunr.js`.
   - Facet filtering and sorting: Filter and order results by various facets.
   - pagination
-  - https://github.com/unplatform-io/instantsearch-itemsjs-adapter
+  - https://github.com/unplatform-io/instantsearch-itemsjs-adapter /202203/ts
+    - an adapter that connects the search engine ItemsJS with the opensource tool Instantsearch
   - https://github.com/unplatform-io/clientside-instantsearch-demo
 
 - search-index /1.3kStar/MIT/202207/js

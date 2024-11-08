@@ -39,8 +39,8 @@ modified: 2023-08-29T10:12:22.345Z
   - http://gitlet.maryrosecook.com/docs/gitlet.html
   - I can only understand something by implementing it. So, I wrote Gitlet, my own version of Git
 
-- https://github.com/Byron/gitoxide /7.6kStar/MIT/202402/rust
-  - an implementation of git written in Rust
+- https://github.com/GitoxideLabs/gitoxide /9.1kStar/MIT/202411/rust
+  - 🦀 an implementation of git written in Rust
   - for the most part, git operations are heavily reliant on memory mapped IO as well as CPU to decompress data, which doesn't lend itself well to async IO out of the box.
 - https://github.com/chrisdickinson/git-rs
   - Implementing git in rust for fun and education
@@ -54,6 +54,7 @@ modified: 2023-08-29T10:12:22.345Z
   - The GitButler version control client, backed by Git, powered by Tauri/Rust/Svelte
   - Git branch management tool, built from the ground up for modern workflows
   - GitButler is a git client that lets you work on multiple branches at the same time
+  - GitButler is a Tauri-based application. Its UI is written in Svelte using TypeScript and its backend is written in Rust.
   - ✨ Changes to files or parts of files can be grouped into what we call virtual branches. 
   - 🆚️ How do GB's virtual branches differ from Git branches?
     - The branches that we know and love in Git are separate universes, and switching between them is a full context switch. 
@@ -117,6 +118,16 @@ modified: 2023-08-29T10:12:22.345Z
     - support for multiple working trees (git-worktree)
     - using external diff tools
     - git protocol V2 (client side): packfile-uris
+- https://github.com/terabyte/jgit /BSD/201104/java
+  - https://www.eclipse.org/jgit/
+  - JGit is an EDL (new-style BSD) licensed, lightweight, pure Java library implementing the Git version control system
+  - A pure Java library capable of being run standalone, with no additional support libraries.
+  - Symbolic links are not supported because java does not support it. Such links could be damaged.
+  - [Distributed file system as storage layer over git - Stack Overflow](https://stackoverflow.com/questions/24178074/distributed-file-system-as-storage-layer-over-git)
+- https://github.com/spearce/jgit_cassandra /201103/java
+  - Cassandra based storage layer for JGit
+  - This package is a trivial implementation of the org.eclipse.jgit.storage.dht.spi interface, binding JGit's generic DHT storage onto the Apache Cassandra NoSQL database.
+  - Install Cassandra 0.7 or later, and start it on at least one node.
 
 - https://github.com/gitblit-org/gitblit /apache2/202311/java
   - http://gitblit.com/
@@ -128,7 +139,7 @@ modified: 2023-08-29T10:12:22.345Z
   - JGit 4.5 release supports GitLFS, this could allow mirroring of repositories using LFS and provide a means for handling LFS files during federation requests.
   - [Support for partial clones? /未实现 _202104](https://github.com/gitblit-org/gitblit/issues/1365)
     - currently partial cloning is not supported.
-    - Gitblit uses JGit underneath. I am not sure, but I think right now JGit does not have support for it, at least not fully.
+    - 👉 Gitblit uses JGit underneath. I am not sure, but I think right now JGit does not have support for it, at least not fully.
 
 - https://github.com/jelmer/dulwich /python
   - Pure-Python Git implementation
@@ -167,7 +178,7 @@ modified: 2023-08-29T10:12:22.345Z
   - A Git-compatible DVCS that is both simple and powerful
   - Jujutsu is unlike most other systems, because internally it abstracts the user interface and version control algorithms from the storage systems used to serve your content. This allows it to serve as a VCS with many possible physical backends, that may have their own data or networking models—like Mercurial or Breezy, or hybrid systems like Google's cloud-based design, Piper/CitC.
   - It combines features from Git (data model, speed), Mercurial (anonymous branching, simple CLI free from "the index", revsets, powerful history-rewriting), and Pijul/Darcs (first-class conflicts), with features not found in most of them
-  - Jujutsu has two backends. One of them is a Git backend (the other is a native one). This lets you use Jujutsu as an alternative interface to Git.
+  - 👉 Jujutsu has two backends. One of them is a Git backend (the other is a native one). This lets you use Jujutsu as an alternative interface to Git.
   - All operations you perform in the repo are recorded, along with a snapshot of the repo state after the operation. This means that you can easily revert to an earlier repo state, or to simply undo a particular operation
   - The tool is quite feature-complete, but some important features like (the equivalent of) git blame are not yet supported. 
   - Git compatibility pretty much rules out the radically different approaches that might actually be better enough to outcompete it. Like:
@@ -195,17 +206,6 @@ modified: 2023-08-29T10:12:22.345Z
   - [Darcs is a free and open source, cross-platform version control system, like git/svn](https://darcs.net/)
   - the primary datastructure in Darcs is indeed a list of patches, and the main operation is rearrangement.
   - [darcs: a distributed, interactive, smart revision control system](https://hackage.haskell.org/package/darcs)
-
-- https://github.com/terabyte/jgit /BSD/201104/java
-  - https://www.eclipse.org/jgit/
-  - JGit is an EDL (new-style BSD) licensed, lightweight, pure Java library implementing the Git version control system
-  - A pure Java library capable of being run standalone, with no additional support libraries.
-  - Symbolic links are not supported because java does not support it. Such links could be damaged.
-  - [Distributed file system as storage layer over git - Stack Overflow](https://stackoverflow.com/questions/24178074/distributed-file-system-as-storage-layer-over-git)
-- https://github.com/spearce/jgit_cassandra /201103/java
-  - Cassandra based storage layer for JGit
-  - This package is a trivial implementation of the org.eclipse.jgit.storage.dht.spi interface, binding JGit's generic DHT storage onto the Apache Cassandra NoSQL database.
-  - Install Cassandra 0.7 or later, and start it on at least one node.
 # git-ui
 - https://github.com/corylus-git/corylus /ts/electron
   - https://corylus.dev/
@@ -224,7 +224,28 @@ modified: 2023-08-29T10:12:22.345Z
   - https://github.com/ianchanning/awesome-github-alternatives
     - a list of alternatives to GitHub, that by default offer Git management in some way.
 
-- https://github.com/gogs/gogs /43.8kStar/MIT/202312/go
+- https://github.com/go-gitea/gitea /44.9kStar/MIT/202411/go/vue
+  - https://about.gitea.com/
+  - [Compared to other Git hosting | Gitea Documentation](https://docs.gitea.com/next/installation/comparison)
+  - https://demo.gitea.com/
+  - Painless self-hosted all-in-one software development service, including Git hosting, code review, team collaboration, package registry and CI/CD
+  - 🍴 forked from Gogs since November of 2016, but a lot has changed
+  - 🆚 [Why use `gitea` over `gogs` ? · Issue · go-gitea/gitea _201612](https://github.com/go-gitea/gitea/issues/423)
+    - Gogs is managed by a single person, who is the original author. The community asked many times to share responsibility but this was never accepted. So yes, this is the reason why the project was forked.
+  - [Rewrite Gitea fronend in react+atlaskit · Issue · go-gitea/gitea _202005](https://github.com/go-gitea/gitea/issues/11324)
+    - Vue is what most maintainers seem to have the most experience in and would be preferred.
+    - we aren't looking at re-writing our FE in react
+    - As for react, you may want to reach out to the authors of unfoldingWord/gitea-react-toolkit as I know they are doing similar things
+  - [Gitea: Open source, self-hosted GitHub alternative | Hacker News _201805](https://news.ycombinator.com/item?id=17006503)
+    - git, as our industry uses it, is not really a good tool for keeping artifacts, and "video" sounds like an artifact, not a source file. 
+  - [Gitea hosted Gitea /未实现 _201702](https://github.com/go-gitea/gitea/issues/1029)
+    - Why is this not hosted on a Gitea instance? We're working on it.
+  - https://github.com/unfoldingWord/gitea-react-toolkit
+    - https://gitea-react-toolkit.netlify.com/
+    - A Gitea React Toolkit Component Library.
+    - to expose Gitea API functionality using React Components and Material UI.
+
+- https://github.com/gogs/gogs /45.1kStar/MIT/202411/go
   - https://gogs.io/
   - aims to build a simple, stable and extensible self-hosted Git service that can be set up in the most painless way. 
   - 依赖gorm、xorm、tablewriter
@@ -233,12 +254,6 @@ modified: 2023-08-29T10:12:22.345Z
   - https://github.com/gogs/git-module /MIT/202210/go
     - a Go module for Git access through shell commands
 
-- https://github.com/go-gitea/gitea /40.7kStar/MIT/202402/go
-  - https://about.gitea.com/
-  - Painless self-hosted all-in-one software development service, including Git hosting, code review, team collaboration, package registry and CI/CD
-  - forked from Gogs since November of 2016, but a lot has changed
-  - [Gitea hosted Gitea /未实现 _201702](https://github.com/go-gitea/gitea/issues/1029)
-
 - https://codeberg.org/forgejo/forgejo /go
   - https://forgejo.org/
   - Forgejo was created in 2022 because we think that the project should be owned by an independent community.
@@ -246,6 +261,9 @@ modified: 2023-08-29T10:12:22.345Z
   - [Codeberg: A GitHub alternative from Europe | Hacker News _202210](https://news.ycombinator.com/item?id=33233360)
     - Codeberg is a fork of Gitea
   - https://codeberg.org/Codeberg/forgejo
+  - [Gitea vs Gogs on Ubuntu Server : r/selfhosted _202403](https://www.reddit.com/r/selfhosted/comments/1bptz7n/gitea_vs_gogs_on_ubuntu_server/)
+    - Forgejo is a fork of Gitea, which is a fork of Gogs and is indeed similar in feature set. Opinions are going to be mixed on Gitea and Forgejo because some dont like the owners of Gitea attempting to monetize
+    - Gogs is basically one dude working slowly (albeit very admirably!) on his own. Gitea is a fork of Gogs with a huge community of developers behind it. Gitea has shot far ahead of Gogs for quite some time now.
 
 - https://github.com/harness/gitness /apache2/202402/go/ts
   - https://gitness.com/
@@ -403,6 +421,11 @@ modified: 2023-08-29T10:12:22.345Z
 - https://github.com/steveukx/git-js /MIT/202402/ts
   - A lightweight interface for running git commands in any node.js application.
   - Requires git to be installed and that it can be called using the command git.
+
+- https://github.com/git-lfs/git-lfs /MIT/202411/go
+  - https://git-lfs.com/
+  - Git extension for versioning large files
+  - Git LFS is a command line extension and specification for managing large files with Git.
 
 - https://github.com/filhodanuvem/gitql /go
   - a Git query language

@@ -512,6 +512,7 @@ console.log(';; act-file-o ', currentOpenedActionId, shouldForceOpenFile, action
 
 console.log(';; taskActions', currentActionId, path, store.cdePlay.enableDiffView(), taskActions)
 console.log(';; open-diff ', enableDiffAnimation, store.cdePlay.enableDiffView(), store.cdeReplay.isMachinePaused())
+console.log(';; qryDiffSnap ', snapshotFrameResult)
 ```
 
 ```
@@ -529,7 +530,7 @@ console.log(';; open-diff ', enableDiffAnimation, store.cdePlay.enableDiffView()
 ## 1108
 
 - 昨天
-  - 合并了打字动画的pr，还有改进的空间，以后抽时间再优化
+  - 提交了打字动画的pr，还有改进的空间，以后抽时间再优化
   - 修复驾驶舱变更文件列表打开时不显示diff视图的问题
   - 接入paas的文件树搜索功能，根据设计稿进行调整
 - 今天

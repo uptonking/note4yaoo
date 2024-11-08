@@ -81,11 +81,10 @@ modified: 2024-06-30T11:15:15.860Z
 - 
 
 # blogs-scaling
-
 - [Load balancing, threading, and scaling in Node.js | Red Hat Developer _202310](https://developers.redhat.com/articles/2023/10/09/load-balancing-threading-and-scaling-nodejs)
   - the team recommends delegating load balancing and scaling to the highest layer possible instead of using the Cluster API. For example, if you deploy the application to Kubernetes, use the load balancing and scaling built into Kubernetes. In our experience, this has been just as efficient or more efficient than trying to manage it at a lower level through tools like the Cluster API.
 
-- [Scaling Your Node.js Application on Kubernetes: Unlocking the Full Potential of Your App | by Amit Cohen | Medium _202303](https://medium.com/@amitcohen_dev/scaling-your-node-js-application-on-kubernetes-unlocking-the-full-potential-of-your-app-46f0bf5efbcd#:~:text=Horizontal%20scaling%20involves%20adding%20more,js%20application%20based%20on%20demand.)
+- [Scaling Your Node.js Application on Kubernetes: Unlocking the Full Potential of Your App | by Amit Cohen | Medium _202303](https://medium.com/@amitcohen_dev/scaling-your-node-js-application-on-kubernetes-unlocking-the-full-potential-of-your-app-46f0bf5efbcd#:~:text=Horizontal%20scaling%20involves%20adding%20more, js%20application%20based%20on%20demand.)
 
 - [Horizontal Autoscaling in Kubernetes #1 – An Introduction - DEV Community _202005](https://dev.to/cdennig/horizontal-autoscaling-in-kubernetes-1-an-introduction-ab2)
   - [Horizontal Autoscaling in Kubernetes #2 – Custom Metrics - DEV Community](https://dev.to/cdennig/horizontal-autoscaling-in-kubernetes-2-custom-metrics-549k)
@@ -106,4 +105,18 @@ modified: 2024-06-30T11:15:15.860Z
   - 红帽® OpenShift® 是一个企业级 Kubernetes 版本。
 
 - [Kubernetes 架构入门指南：一文带你看懂 K8s 架构](https://www.redhat.com/zh/topics/containers/kubernetes-architecture)
+# blogs-against
+
+## [gitpod: We’re leaving Kubernetes - Blog _202410](https://www.gitpod.io/blog/we-are-leaving-kubernetes)
+
+- Kubernetes seems like the obvious choice for building out remote, standardized and automated development environments. 
+  - We thought so too and have spent six years invested in making the most popular cloud development environment platform at internet scale
+  - In that time we’ve found that Kubernetes is not the right choice for building development environments
+- This is not a story of whether or not to use Kubernetes for production workloads that’s a whole separate conversation. As is the topic of how to build a comprehensive soup-to-nuts developer experience for shipping applications on Kubernetes.
+
+- When we started Gitpod, Kubernetes seemed like the ideal choice for our infrastructure. Its promise of scalability, container orchestration, and rich ecosystem aligned perfectly with our vision for cloud development environments. However, as we scaled and our user base grew, we encountered several challenges around security and state management that pushed Kubernetes to its limits. Fundamentally, Kubernetes is built to run well controlled application workloads, not unruly development environments.
+
+- As we grappled with the challenges of Kubernetes, we began exploring micro-VM (uVM) technologies like Firecracker, Cloud Hypervisor, and QEMU as a potential middle ground.
+
+- In Gitpod Flex we carried over the foundational aspects of Kubernetes such as the liberal application of control theory and the declarative APIs whilst simplifying the architecture and improving the security foundation.
 # more
