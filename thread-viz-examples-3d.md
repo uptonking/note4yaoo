@@ -7,7 +7,31 @@ modified: 2021-08-25T05:56:00.431Z
 
 # thread-viz-examples-3d
 
+# guide
+
+# discuss-earth-3d
+- ## 
+
+- ## 
+
+- ## if anyone knows how to make a globe with animations like this, plz dm, willing to pay
+- https://x.com/nick_linck/status/1854658763707629912
+- I made something like this... and it is open source
+
+- claude's gonna have problems coding that
+
+- I used CesiumJS at an internship a long time ago, but that's overkill unless you want a lot of zoom range with tiling etc.
+
+- I have a general notion of how to start on how to do it, if anyone wants to try. React Three Fiber + Drei, put a sphere, then ask some AI to help you figure out how to translate IRL coordinates to a sphere
+
+- Depends on which platform you want. WebGL with a lot of work it can be done for browser (you need a really good computer to run it) 
+  - You can go with game engines (like Unity or Unreal) which will require less effort
+
+- https://github.com/janarosmonaliev/github-globe
+  - https://janarosmonaliev.github.io/github-globe/
+  - The Globe from Github's homepage implemented in ThreeJS with beautiful shading
 # discuss
+- ## 
 
 - ## 
 

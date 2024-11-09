@@ -177,19 +177,23 @@ modified: 2023-04-19T07:30:34.872Z
 # discuss-hudi-iceberg-delta
 - ## 
 
-- ## 
+- ## The Open Data Format is good for the Data AI ecosystem, with two main options currently available: Delta and Hudi. 
+- https://x.com/Ubunta/status/1853464831086452828
+  - For those concerned about lock-in or API compatibility when switching between these formats, Apache XTable (currently in incubation) offers a promising solution. Apache XTable acts as a cross-format converter for lakehouse table formats
+
+- I disagree with the clear winner statement. I think all three projects will continue to build and evolve.
 
 - ## Apache Hudi’s WRITE operation - Under the Hood. 
 - https://twitter.com/apachehudi/status/1764814812939202841
-01. Deduplication:  Any duplicate record keys in the incoming batch are identified & addressed appropriately
-02. Index Lookup: Next, an index lookup is performed to identify the file group an input record belongs to. For a new INSERT, this step returns no results
-03. File Sizing: Then the file sizing algorithm will add sufficient records into a small file until it nearly reaches the configured maximum limit (via bin-packing)
-04. Partitioning: Here the allocation of specific updates & inserts to existing or new file groups is determined
-05. Write I/O: Actual writes happens here. Either the base file is created or an existing log file is appended to
-06. Update Index: The Index is then updated to reflect the inclusion of new file groups, among other updates
-07. Commit: Finally the changes are committed atomically
-08. Clean: Following the commit, cleaning is initiated as required
-09. Compaction: For MoR tables, compaction may run inline or be scheduled to execute asynchronously
+01.  Deduplication:  Any duplicate record keys in the incoming batch are identified & addressed appropriately
+02.  Index Lookup: Next, an index lookup is performed to identify the file group an input record belongs to. For a new INSERT, this step returns no results
+03.  File Sizing: Then the file sizing algorithm will add sufficient records into a small file until it nearly reaches the configured maximum limit (via bin-packing)
+04.  Partitioning: Here the allocation of specific updates & inserts to existing or new file groups is determined
+05.  Write I/O: Actual writes happens here. Either the base file is created or an existing log file is appended to
+06.  Update Index: The Index is then updated to reflect the inclusion of new file groups, among other updates
+07.  Commit: Finally the changes are committed atomically
+08.  Clean: Following the commit, cleaning is initiated as required
+09.  Compaction: For MoR tables, compaction may run inline or be scheduled to execute asynchronously
 10. Archival: Finally, an archival process is run, transferring old items from the timeline to an archive folder
 
 # discuss

@@ -63,6 +63,19 @@ modified: 2024-07-29T11:49:33.248Z
 # discuss-diff/track-changes
 - ## 
 
+- ## 
+
+- ## 🧮 Myers diff may generate weird deltas like the following example. It will make concurrent text updates generate weird merge results. Any suggestions? 
+- https://x.com/zx_loro/status/1854568496413524165
+  - My current thought is to implement an A* search on top of the edit graph that punishes noncontinuous edits
+  - An update like this is also less efficient for CRDTs, even though it is a minimal edit script. Because it is harder to compress a scattered update.
+
+- Have you tried patience/histogram diff algos? They seem to produce more “linear” diffs (not necessarily minimal, but seemingly more close to what a human would do). Although not sure how well they work with character-based granularity.
+  - Yeah, they seem like designed specifically for line-based diff
+
+- Tons of heuristics, like everybody else did?
+  - working on it! Just learned a lot from diff-match-patch
+
 - ## 🌰 [CodeMirror Merge - Calling a Function on Chunk Approval/Reject - v6 - discuss. CodeMirror _202409](https://discuss.codemirror.net/t/codemirror-merge-calling-a-function-on-chunk-approval-reject/8636)
   - I can not figure out how to trigger a function when the user has either approved or rejected a code chunk.
   - I want to run a function to know when to turn off merge view

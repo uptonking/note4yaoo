@@ -295,6 +295,20 @@ modified: 2023-10-26T19:04:00.318Z
 # discuss
 - ## 
 
+- ## 
+
+- ## I see a lot of orgs struggle w/ DB infra costs. Paying for 24/7 hot replicas the same size as the primary is a struggle for some orgs. 
+- https://x.com/kellabyte/status/1854943915138330804
+  - If DB service companies solve replicated writes without having to pay for a hot standby your pricing would become a major competitive advantage.
+  - I know some services already offer this by separating storage from compute but a lot of DB services haven’t achieved this yet since they rely on the DB replication protocol.
+- sorry, what? How does separating storage from compute make it so you don’t need a replica?
+  - Neon and AWS serverless can spawn new compute within minutes of failure. However it won't save any money compared to 3-node self hosted postgres HA cluster. Saving money is the core premise of engagement farming by op.
+- Not quite - it means your state is always replicated but you’re willing to accept a delay in starting up new compute to use that storage in the event of failure of the primary. Object storage eg S3 is often used here as the way to achieve state replication, c.f. SlateDB.
+  - Oh, yeah that seems like a reasonable tradeoff tbh… depending on how long the delay is. 5-10 minutes probably fine, 5 hours probably a dealbreaker.
+
+- another option is to switch DB servers to bare metal systems.
+  - Colocation is extremely cheap 
+
 - ## Byzantine failures only come up in crypto conversations. Never in distributed databases or other distributed system projects. 
 - https://twitter.com/sunbains/status/1787376127708696928
   - Non-crypto  seem to care only about fail-stop.

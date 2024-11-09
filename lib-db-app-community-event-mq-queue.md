@@ -41,7 +41,13 @@ For more stable, defined workflows, queues offer simplicity and directness.
 # discuss
 - ## 
 
-- ## 
+- ## Kafka (somewhat) noob question: how does a client select the listener  when there are multiple advertised listeners? I have Kafka in Docker (via Testcontainers), with two advertised listeners
+- https://x.com/gunnarmorling/status/1855205862492475660
+  - Kafka Connect, running within the same  Docker network, picks up the former (i.e. the mapped port for access from the host). Can I force it to use that other, Docker-network, internal one?
+
+- If you give a broker a hostname, your client can use that hostname + port in the bootstrap.servers. That way it should connect based on BROKER listener, I think.
+
+- The client must be configured to connect to a specific listener. It cannot select on its own afaik.
 
 - ## 🆚 [RabbitMQ vs Kafka - Difference Between Message Queue Systems - AWS](https://aws.amazon.com/compare/the-difference-between-rabbitmq-and-kafka/)
 - Kafka and RabbitMQ are message queue systems you can use in stream processing. 

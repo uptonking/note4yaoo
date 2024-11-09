@@ -21,6 +21,23 @@ modified: 2022-11-23T17:48:48.839Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🆚️ I have mixed feeling around classes VS objects in JS, until real Structs become a thing (and a performance oriented one).
+- https://x.com/WebReflection/status/1853431533756973433
+  - Use the pattern you prefer, JS engines are smart enough to do the right thing for us, we should not avoid this feature, just embrace it when it's convenient.
+- my rule of thumbs recently is this one:
+  * do I ever need instanceof to disambiguate? Classes!
+  * is it just a data layer? literals until Structs exist
+  * is it to avoid RAM increase thanks to reused methods? but is an instance + prototype resolution faster or better than an arrow?
+- long story short, in next uhtml I've played around Classes vs object literals a lot and the conclusion is: *meh* ... the algorithm is all it matters and correctness easily adds up micro-seconds ... pick your poison but focus on the right problem, not futile debates 
+
+- Oh man I remember the instanceof gotchas you could run into if you accidentally include two versions of the lib
+  - I wrote sticky-module not by accident, that issue (which is real) is solved to me 
+- I like how simple it is
+
 - ## [the "Alternative Pattern" Mixin in TypeScript - Stack Overflow](https://stackoverflow.com/questions/67593721/using-the-alternative-pattern-mixin-in-typescript)
 - This pattern does not take property initialisation into account, i.e. it ignores the constructors of the mixins. This is why mixins should not have constructors at all, and ideally not use class syntax.
   - To use this pattern, provide a mixin-specific initialisation method instead

@@ -37,6 +37,14 @@ modified: 2023-10-26T19:18:19.584Z
 # discuss-migration/upgrade
 - ## 
 
+- ## 
+
+- ## I need to migrate a small Postgres database (around 900MB) to another host, is there a way to minimize the downtime
+- https://x.com/localhost_5173/status/1853433971721613765
+- et up replication from old to new, then deploy with updated connection config pointing to new db
+
+- cdc
+
 - ## 🔥 [Migrating 1200 databases from MySQL to Postgres | Hacker News_201708](https://news.ycombinator.com/item?id=15026887)
 - 
 - 

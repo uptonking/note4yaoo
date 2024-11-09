@@ -110,7 +110,11 @@ modified: 2024-02-12T03:23:17.007Z
 
 - ## 
 
-- ## 
+- ## Instantly reflect backend changes in your app w/ built-in real-time streaming:
+- https://x.com/powersync_/status/1853416575598051522
+  - Backend data changes stream from PowerSync Service to SDK clients via HTTPS
+  - With watch(), on-device SQLite changes stream to your app UI
+  - Offline? Streaming pauses, resumes once reconnected.
 
 - ## 🆚️ Electric has changed its approach and trying to do it similar to powersync now(pg + pglite). They've depreciated their original repo _202409
 - https://x.com/AkshitBanta/status/1836363683762454587

@@ -44,7 +44,20 @@ modified: 2023-11-28T14:48:45.910Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 🛢️ Notion uses SQLite compiled to WASM in browsers. 
+- https://x.com/iavins/status/1855088684850151844
+  - LocalStorage: 10MB limit, lost writes
+  - IndexedDB: Performance issues, reliability bugs hard to debug
+  - Notion also wrote a blog explaining how they implemented this, but it is not heavy on the details about why
+  - 📝 [How we sped up Notion in the browser with WASM SQLite _202407](https://www.notion.so/blog/how-we-sped-up-notion-in-the-browser-with-wasm-sqlite)
+
+- where does sqlite persists its data in the browser? Doesnt it have to use indexeddb/localstorsge at the end?
+  - In OPFS
+- is there a way to use thus without the browser prompting the user to allow file system access?
+  - yes it does! It goes into very nice detail of the challenges they faced and how they implemented it
+
+- I’ve implemented OPFS based caching using SQLite WASM and writing raw json strings and it’s like an additional super power in the browser. This is where the web is heading. It will be really interesting to see how this plays out in the coming years.
+  - I’ve implemented OPFS based SQLite wasm and writing raw json strings storing upwards of 8 gigs of data in the browser. This type of caching is like an additional super power. Will be very interesting to see where this goes in the future
 
 - ## How Notion uses Sqlite WASM.
 - https://x.com/evoluhq/status/1813874658619601205

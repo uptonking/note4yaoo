@@ -121,6 +121,13 @@ modified: 2024-05-12T17:20:03.132Z
 # discuss-runtime-vm
 - ## 
 
+- ## 
+
+- ## 👷🏻 I 100% agree with this. We needed an orchestrator that understands VM snapshotting/cloning and can spin up a new VM extremely quickly.
+- https://x.com/CompuIves/status/1853478202569617647
+  - We tried different solutions, but ultimately we had to build our own because nothing fit the bill.
+  - This was also a big challenge for us, so we had to customize how VM snapshots are created and loaded.
+
 - ## 浏览器中运行的 Linux 虚拟机环境 https://webvm.io
 - https://x.com/geekbb/status/1816265787113627786
   - 通过 HTML5 和 WebAssembly 技术实现客户端执行 x86 二进制文件，支持网络功能，并提供了部署和定制的指南。

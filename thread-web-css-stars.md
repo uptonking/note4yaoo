@@ -14,9 +14,21 @@ modified: 2021-07-25T12:49:10.410Z
 
 - ## 
 
-- ## 
+- ## There is a free performance improvement you can make right now to your CSS variable animations (if they're scoped to the current element).
+- https://x.com/mattgperry/status/1853728564316680552
+  - Register your CSS variable the `inherits: false` option. Depending on the size of the style recalcs this can be a huge saving.
+  - I stumbled on this trying to figure out a more performant way to animate a layer that's too large for the GPU but setting `.style.transform` is triggering a ton of style recalculations. 
+  - Normally I recommend against animating CSS variables but just goes to show.
+  - That was the conclusion of https://web.dev/blog/at-property-performance . Also: Custom Properties animate on the Main Thread
 
-- ## 
+- The problem with animating custom properties is that this happens on the main thread (unless this was fixed on Chrome?)
+  - Yes but in this instance making this large element a GPU layer is crashing mobile browsers. There’s also non-accelerated values that would benefit from this approach.
+
+- ## the things we do when styling HTML we don’t control… 🫠
+- https://x.com/LeaVerou/status/1854658564423622882
+  - `[style*="color:#000"]`
+
+- This must be HTML 4. I can see you're styling the `<font>` tag 
 
 - ## Create hover gallery effect using flex grow 
 - https://twitter.com/davidm_ml/status/1778436043781341443

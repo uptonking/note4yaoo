@@ -99,6 +99,41 @@ modified: 2022-12-04T16:34:29.342Z
 # products
 - ## 
 
+- ## 
+
+- ## 有什么在国内体验比较好的问卷类工具? (接受付费)
+- https://x.com/DIGITALYCHEE/status/1853288959608234392
+  - 目前用的是免费版问卷星，顾客提交后被问卷星平台的第三方广告“牵着走”付费订阅了其他虚拟产品。被扣费后，投诉我们店铺并给了一个差评。
+
+- 我的团队十多年来一直在用金数据，非常好用稳定，拓展性也很好。
+
+- 我以前也是用问卷星，后来也用飞书/石墨的表单来做问卷
+  - 你说的这些，似乎都需要用户登陆后才能填写。
+- 飞书问卷，填写用户无需登陆，目前无广告。实现邮件，飞书消息，第三方社交平台发送功能可使用多维表格的自动化功能。
+
+- 不一定要局限在问卷类工具上，几乎所有的多维表产品都能实现收集表
+
+- https://xiaojusurvey.didi.cn 滴滴出了个小橘问卷，可以自己部署
+  - 滴滴开源的问卷系统这是一套轻量、安全的问卷系统基座，提供面向个人和企业的一站式产品级解决方案，快速满足各类线上调研场景。内部系统已沉淀40+种题型，累积精选模板100+，适用于市场调研、客户满意度调研、在线考试、投票、报道、测评等众多场景
+
+- ## 🤔 Free + open source logo generator
+- https://x.com/nutlope/status/1854916921667534925
+- Dope, are you using flux or what?
+  - yep. Flux (AI image model)
+- Next do YouTube video cover images
+  - you mean thumbnails for vids? that might be cool actually
+
+- can do svg?
+  - nope, this one will just do 1024x1024 pngs for now
+  - As of now, it can only be exported as a 1024x1024 png
+
+- Self hosted? How you built itvideo too?
+  - Using @togethercompute 's API! I'll do a tutorial on it after too
+- Can you make the inference layer swappable with any provider? Thanks.
+  - The inference layer is gonna be through @togethercompute 
+
+- Have a look at Midjourney's prompting. 
+
 - ## 励志语录网站，月入60万美元，赚这么多真是没想到。
 - https://x.com/indiehackercase/status/1833124077151932542
   - [Motivation - Home](https://motivation.app/)

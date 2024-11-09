@@ -98,6 +98,22 @@ modified: 2023-11-10T07:10:19.089Z
 - Not supporting extension-less imports is by-design
 
 - users should write their import specifiers with .ts extensions, like import './file.ts', and there’s typescriptlang.org/tsconfig#allowImportingTsExtensions allowImportingTsExtensions to support this via tsconfig.json. Such behavior also aligns us with Deno.
+# discuss-scaling-nodejs
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Node.js doesn't have a predictive way to manage traffic spikes, so over-provisioning for peak loads isn't optimized for the stable periods that follow. We've all faced this issue.
+- https://x.com/matteocollina/status/1853393504807846207
+  - This is why @Platformatic is simplifying multithreading in our Node.js app server.
+- Node.js applications are usually deployed as single-threaded: ↳Each instance operates as a single process. ↳Organizations overprovision to handle traffic spikes. ↳This leads to wasted resources and increased costs.
+  - Additionally, heavy computations can block the event loop, causing performance and user experience issues.
+- What’s clear is that we need to rethink our approach to infrastructure. This is why @platformatic ’s Watt app server now supports service replication. By starting multiple workers, you can now fully utilize all the CPU cores available on your server, providing the best possible user experience.
+
+- 🆚️ How is this different from pm2 ?
+  - Wattpm is designed to run only one application at a time, typically inside Docker/Kubernetes. pm2 is designed to run multiple apps on a vps.
 # discuss
 - ## 
 

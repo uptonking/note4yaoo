@@ -33,7 +33,8 @@ modified: 2021-01-08T17:13:43.392Z
 # discuss
 - ## 
 
-- ## 
+- ## I ran into something interesting: a "mouseenter" event will be re-triggered on a parent element if the user is over a child element, and that child is replaced with a new element
+- https://x.com/alexandereardon/status/1853234614007128488
 
 - ## 💡 I knew elements with IDs became global variables, but any child elements with a `name` attribute become properties on that global variable
 - https://x.com/kilianvalkhof/status/1840739327354998987

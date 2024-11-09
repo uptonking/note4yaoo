@@ -24,7 +24,16 @@ modified: 2023-10-26T15:03:56.115Z
 # discuss-vector-db
 - ## 
 
-- ## 
+- ## 一般来说，向量数据库的定位都是一个辅助组件，存储核心数据所生成的 text embedding。
+- https://x.com/novoreorx/status/1852915256265441447
+  - 但当核心数据发生变化，向量存储（包括 metadata）也必须更新，这意味着一致性维护的负担，系统会越来越复杂和容易出错，我在开发 RAG 应用的过程中对此有着深刻的体会
+  - 这篇文章批判向量数据库的原罪，把原因讲得很透彻——向量数据库把向量当作独立数据存储，但他们其实是派生数据，应该与核心数据相邻存放，由数据库来维持更新和一致性。
+  - 文章提出了 vectorizers 的概念，类似 index，vectorizer 在创建之后会自动维护表中字段的向量化数据，无须手动进行 C/U/D。他们开发了一个叫 pgai 的工具，为 PostgreSQL 提供了 vectorizer 功能。我认为这个设计理念是向量存储的未来，希望 pgai 能尽早稳定并推广，启发更多数据库做出类似实现。
+- 做RAG, 至少要有一个hierarchical 结构, 那就意味着, 你动一个叶子, 整棵树都需要更新, 那么问题来了?  这些基础厂商提供这样的功能吗? RAG这块也在持续创新, 也就意味着处理方式在持续改变, 所以最好, 自己实现一个layer, 来隔离query和db, 更新db的时候, 顺带更新所有的相关的embedding
+
+- 话虽如此，但是当前的RAG应用中，“核心数据”基本不会有什么变化，尤其是某个domain非常有限的数据集中sft之后，几乎就是一直用，然后通过各种检索优化来实现不同的需求和性能提升。微软额GraphRAG可能更符合你所描述的场景，但是那个太贵，太慢，太封闭...
+
+- 用pgvector 呗，向量就是一个一个字段
 
 - ## pgvector is the de facto standard for vectorized processing in Postgres. 
 - https://twitter.com/denismagda/status/1726071145235874059

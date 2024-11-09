@@ -278,6 +278,14 @@ SecretOps:
 # discuss-payment-overseas
 - ## 
 
+- ## 
+
+- ## 之前考虑用 Paddle 是因为 LemonSqueezy 不支持国内用户支付了，后来 LS又支持国内用户支付了，
+- https://x.com/okooo5km/status/1855050843583922545
+  - 加上 LemonSqueezy 的许可管理/推广联盟/邮件推广还挺好用的，省心
+
+
+
 - ## 有实时更新、货币齐全的汇率 API 服务推荐吗？付费的也行。
 - https://x.com/waylybaye/status/1831261104359571586
 - 你可以Windows添加个微软官方的汇率桌面小程序… 抓一下包就知道API了， 而且这类随便每台Windows电脑都能调用的API肯定是public的而且吞吐量充足的….

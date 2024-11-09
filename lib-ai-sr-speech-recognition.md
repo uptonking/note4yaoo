@@ -102,6 +102,23 @@ modified: 2023-02-07T09:22:03.120Z
 
 - https://github.com/nateshmbhat/pyttsx3
   - Fully OFFLINE text to speech conversion
+# discuss-whisper
+- ## 
+
+- ## 
+
+- ## whisper 已经很强大了，目前提供 whisper 商业 API 的产品大多还是提供基本的语音识别能力，有没有专门做 whisper 商业化的公司？
+- https://x.com/leeoxiang/status/1855168937786253538
+  1、热词支持
+  2、实时识别能力
+  3、vad 能力
+  4、多说话人识别能力
+  5、精准时间戳
+
+- 话说都用商业 API 了, 你还关注别人是不是用 Whisper 实现的吗?  你只想要效果好就行了.  我估计你这些需求 Azure Speech 应该都能实现.
+
+- 其实我有点好奇，为啥会有商业化支持的诉求，一线大厂的通用asr能力挺强的。我们之所以自己搞，主要是推理成本低很多和领域下的效果提升
+  - 真实测试下来大厂的通用 asr 并没有那么好，比如多语言混合识别，语言自动识别方面。
 # discuss
 - ## 
 

@@ -15,6 +15,7 @@ modified: 2022-11-11T10:46:41.519Z
   - locally hosted web application that allows you to perform various operations on PDF files
   - locally hosted web based PDF manipulation tool using docker that allows you to perform various operations on PDF files
   - 依赖 Spring Boot + Thymeleaf、pdfbox、itext7、libreoffice转换格式、ocrMyPdf
+  - 除了能给PDF打水印之外，还可以轻松批量给扫描的PDF文件瘦身，1秒钟搞定，太好用了
   - [New Browser-based PDF Editor (github link) : selfhosted](https://www.reddit.com/r/selfhosted/comments/10pexhn/new_browserbased_pdf_editor_github_link/)
   - https://twitter.com/dotey/status/1739426777091408207
     - 一个本地的处理 PDF 的工具，界面是 Web UI，可以支持 Docker 部署。

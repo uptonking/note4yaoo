@@ -423,6 +423,10 @@ modified: 2021-01-04T17:26:43.784Z
   - Lumina的一款基于视觉模型的PDF分块处理工具：Chunkr，速度每秒可处理约5页
   - 基于视觉模型进行段落提取和OCR，通过 Rust Actix 服务器统一输出，可实现单个NVIDIA L4 GPU上达到每秒约5页速度
   - 支持自托管部署，兼容GPU和CPU，提供用户界面
+
+- https://github.com/CatchTheTornado/pdf-extract-api 
+  - 一款可本地运行去除个人信息的PDF解析工具：pdf-extract-api，文档匿名化处理，可以识别表格数据、数字、数学公式，适合隐私性较强的处理需求，企事业单位、医疗机构等
+  - 集成marker、surya-ocr、tessereact多种OCR策略，用LLM提高识别准确度, 支持输出JSON和Markdown
 # pdf-video
 - [PDF to Brainrot | MemenomeLM](https://www.memenome.gg/)
   - 把 PDF 转化为易上瘾的视频

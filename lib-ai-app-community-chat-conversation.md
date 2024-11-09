@@ -123,6 +123,17 @@ modified: 2023-04-16T10:02:58.738Z
 - 很好的思路，本质上就是通过对每句话进行句子表述上的补全，让每句话都是独立且完整的表述，保证了能进行可靠的向量搜索
 - plugins 的思路也类似这样
 
+# discuss-db-chat
+- ## 
+
+- ## 
+
+- ## 一个轻量级的数据库管理工具：WhoDB，支持自然语言交互，不写代码也能查数据
+- https://x.com/aigclink/status/1854436720957407697
+  - 支持多种数据库，PostgreSQL、MySQL、SQLite、MongoDB、Redis、MariaDB、Elastic Search等
+  - https://github.com/clidey/whodb
+
+- 和chat2db相比哪个好用？
 # discuss
 - ## 
 
