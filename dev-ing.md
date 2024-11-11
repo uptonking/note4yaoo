@@ -527,6 +527,19 @@ console.log(';; qryDiffSnap ', snapshotFrameResult)
   - 方案1: daoPaas提供新api setFileSelected, 让前端手动设置文件选中的状态
   - 方案2: 在执行daoPaas.openFile时自动更新文件树的选中状态
 
+## 1111
+
+- 搜索框一直显示的设计不符合ide
+  - 显示变更文件的checkbox的条件是什么
+
+## 1110
+
+- 昨天
+  - 根据clacky需求进一步完善文件树的搜索功能
+- 今天
+  - 提交文件树搜索的pr
+  - 对接ai的add to chat通信逻辑
+
 ## 1108
 
 - 昨天

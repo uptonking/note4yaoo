@@ -319,7 +319,8 @@ modified: 2023-09-02T09:17:22.992Z
   - If you are interested in using Sandpack 2.0 or Nodebox for commercial purposes, please contact us.
   - Can I run Nodebox without Sandpack?
     - Yes, we made Nodebox available as a standalone package on npm
-  - [Docs don't explain how to self host a Nodebox instance?](https://github.com/Sandpack/nodebox-runtime/issues/48)
+  - [Docs don't explain how to self host a Nodebox instance? _202308](https://github.com/Sandpack/nodebox-runtime/issues/48)
+    - We can work out a solution if this is required, usually with a custom license on a per company/customer basis.
 
 - https://github.com/RealSput/Wenode /202302/js/inactive
   - WebContainers, except it's a million times easier to use

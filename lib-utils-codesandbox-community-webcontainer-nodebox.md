@@ -9,6 +9,21 @@ modified: 2024-01-25T13:32:35.137Z
 
 # guide
 
+- runtime
+  - webvm
+  - jupyter-kernels
+
+- 在vscode打开仓库
+  - csb支持
+  - stblz不支持
+# stackblitz-webcontainer-xp
+- 首次点击文件树未打开的文件时获取文件内容会发送2个请求, 在devtools都没有响应内容
+  - GET https://p.stackblitz.com/github.com/uptonking/nostalgia-studio.git/info/refs?service=git-upload-pack
+  - POST https://p.stackblitz.com/github.com/uptonking/nostalgia-studio.git/git-upload-pack
+  - ❓ 是否通过worker执行的fetch都看不到响应内容
+  - 打开过的文件内容都缓存在indexeddb codeflow-data-project
+    - key是path ".git/objects/pack/pack-1d6d23bbed6cce403473934f86bf98bf2143f5ea.pack/.idx"
+    - value保存的事Unit8Array buffer + action('add') + type(file)
 # docs-nodebox
 - Nodebox is a runtime for executing Node.js code in the browser. 
   - Sandpack 2.0 uses Nodebox to run server-side examples directly in the browser. 
@@ -23,7 +38,7 @@ modified: 2024-01-25T13:32:35.137Z
   - However, bear in mind it can’t run napi or any other low-level C++/Rust package you can use in Node.js—only WebAssembly and JavaScript modules. 
   - Postgres, MongoDB and MySQL are also currently not supported because of the lack of raw socket support in browsers.
 
-- Difference with WebContainers
+- 🆚 Difference with WebContainers
   - Web Containers use modern browser technologies like `SharedArrayBuffer`, which makes it impossible to run in Safari and requires the user to set additional `Cross-Origin-Isolation` headers on the server to run any code.
   - Nodebox however, is implemented without modern browser technologies, to make it run in any browser (like iOS and Safari) with minimal setup.
 
@@ -123,9 +138,27 @@ modified: 2024-01-25T13:32:35.137Z
 # discuss-webcontainer/stackblitz
 - ## 
 
-- ## 
+- ## ⛓️ [[ENHANCMENT] SSH access to the workspace · Issue  · stackblitz/core _202203](https://github.com/stackblitz/core/issues/1770)
+  - Would it be possible to add SSH access to the workspace so that it's possible to connect in VSC, Terminal, or an editor of the user's choice?
 
-- ## 
+- I’m tentatively marking this request as “rejected” because of the way that StackBlitz works: we are not running projects on servers, but directly in the browser
+  - We run a custom OS layer in JavaScript and WebAssembly
+  - We run Node APIs and scripts with the browser’s JavaScript runtime.
+  - So there is no server to SSH into.
+  - If you’re looking for a provider which provisions VMs or containers that you can SSH into, I think the fine folks at GitPod have that feature and a compute model that looks closer to what you’re looking for.
+
+- We have a very alpha experiment for working with local files at stackblitz.com/local, but it's not a current focus.
+
+- ## [WebContainer API | Hacker News _202302](https://news.ycombinator.com/item?id=34793858)
+- Does "WebContainer API" mean "proprietary web service for accessing npm and git over http"? Or is it "ECMAScript API of new open source WASM-based POSIX-style browser OS"? The documentation doesn't seem to separate these two, and applying such name for the former would seem intentionally misleading to me, especially if it gets trademarked by commercial entity providing the service.
+  - This is closer to what the Bytecode Alliance is looking to do with WASI, which we're playing a small (but crucial) part in: https://blog.stackblitz.com/posts/bytecode-alliance/
+  - Kinda, we have plans to allow self hosting and more reg open source- more to come
+
+- It's very reassuring to see that this is going to be open standard with working group behind it!
+  - webcontainers.io/api describes client-side ECMAScript interface (e.g. `WebContainer.boot().spawn('ls', ['src', '-l'])`). The "StackBlitz WebContainers client" is not the only existing in-browser implementation capable of providing such interface. For example, there is "WebVM" from Leaning Technologies, that "runs unmodified Debian binaries in the browser" using "x86-to-WebAssembly JIT compiler" and "Linux syscall emulator". It can run everything from WebContainers examples, like `ls src -l` or `npm run dev`. One could easily make adapter that uses `WebVM` to implement WebContainer API. This is what I thought "WebContainers API" should encompass.
+  - But as I learned today, WebVM just like WebContainer also requires a web service (Tailscale) for proxying network traffic. Even JSLinux (bellard.org) uses proxy server. That's necessary because there is no "WebNetworking API" exposing local native networking trough the browser. Usage of such service is implementation detail, but including it in the "WebContainers API" standard is right now the only way to make provider-agnostic clients and I did not consider that before. It may become redundant one day if we get "WebNetworking API" for the browser but there's no such ongoing initiative.
+
+- It is nice, but not totally free or open source: "WebContainers rely on hosted proxies and server-side acceleration to enable truly instant development environments. By obtaining a WebContainer API license, your business can gain access to higher API rate limits, uptime reliability, and a range of benefits designed to help you maximize the potential of the WebContainer API in your organization. Licensing is required for production usage of the API in a for-profit setting (feel free to prototype as much as you like without a license). If you're using the API to meet the needs of your customers, prospective customers, and/or employees you need a license to ensure continued access to the API as you scale. "
 
 - ## Is stackblitz open source and can i self host it _202403
 - https://discord.com/channels/364486390102097930/680953097354215446/1214952721132818522

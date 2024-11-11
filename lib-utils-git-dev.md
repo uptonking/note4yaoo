@@ -10,6 +10,7 @@ modified: 2023-08-29T10:11:26.348Z
 # guide
 
 - pros
+  - 生态丰富，参考方案多: 如ssh、大文件存储、shallow-clone、压缩传输
   - branching
   - revision history
   - 使用ssh数据传输的方案有官方支持

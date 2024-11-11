@@ -174,6 +174,8 @@ modified: 2023-06-14T00:53:15.226Z
   - Solved by changing settings. In React devtools: Components tab -> settings symbol -> components -> remove or disable the filter type equals host (e.g. `<div>`)
 - 可以在react devtools里面查看基本dom元素，上面就可以看到具体dom元素的key值冲突
 
+- 🔂 可能是找错了异常发生的位置，查看error的调用链，真实的异常位置不在第一层的render方法，而是在前面组件的render方法
+
 ## /code/fork 创建playgroundId的api一直显示 cancelled
 
 - 变通方法是用 staging环境 的api，而不是 dev环境 的api

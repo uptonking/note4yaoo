@@ -14,6 +14,34 @@ modified: 2024-01-25T13:29:10.054Z
   - [codesandbox.io/blog/category/engineering](https://codesandbox.io/blog/category/engineering)
 # blogs-dev-xp
 
+## [How to run Node.js in the browser | Nearform _202304](https://www.nearform.com/digital-community/how-to-run-node-js-in-the-browser/)
+
+- We will focus on two relatively new technologies, WebContainers by StackBlitz and Nodebox by Codesandbox, with a view to seeing:
+  - How feasible and usable these tools are and what underlying technologies they use
+  - What features and limitations they have
+  - If it’s worth trying to build our own apps or integrations around them
+
+- our main goal is to run Fastify in the browser from our own codebase and allow users to experiment with it in real-time
+
+- WebContainers and Nodebox use different mechanisms to sandbox the code being run in the browser and emulate a local filesystem by means of a Javascript object containing key/value pairs to represent filenames and their contents.
+  - Each system requires a ‘files content’ to be provided as a raw escaped string.
+- Both systems:
+  - Do not provide a way to work with the file system for security (and likely proprietary) reasons. If you want to work with the file system or a remote endpoint and save your work, you must implement your own functionality.
+  - Use an in-memory virtual file system, which can be interacted with by users. However, without extensive initial work, the implementation is limited to the browser and changes will be lost on refresh.
+
+- WebContainers are a browser-based runtime for executing Node.js applications and operating system commands, entirely inside your browser tab.
+  - The  sharedArrayBuffer is a JavaScript object that represents a fixed-length binary data buffer that can be shared between different execution threads. 
+  - By sharing memory, these applications can avoid the overhead of copying data between threads and reduce the need for synchronisation mechanisms.
+  - However, this feature has been disabled by default in many web browsers since 2018 due to security concerns related to Meltdown and Spectre-style attacks.
+
+- Codesandbox’s Nodebox is a custom, closed source runtime that is run entirely in the browser
+  - Like WebContainers, though, it’s possible to roll your own fully customised experience without their ecosystem and implement it with Nodebox directly.
+  - Unlike other supported systems, Nodebox does not offer the watching/live recompilation/rerun of code without rolling your own mechanism which is very limited in scope.
+
+- TLDR: Both WebContainers and Nodebox are promising and interesting tools. However, these tools being closed source is somewhat problematic and both come with some important technical limitations.
+  - Both WebContainers and Nodebox have been opened up to some degree, allowing developers to build their own applications and integrations. However, it is important to be mindful of vendor lock-in and to create experiences that are not directly tied to one sandboxing technology
+  - While this is possible today, it requires implementing a lot of functionality from scratch, which incurs a high maintenance overhead.
+
 ## [Building a Next-Level Code Playground/Sandbox/REPL with Sandpack _202402](https://www.joshwcomeau.com/react/next-level-playground/)
 
 - I recently rebuilt this blog's playground, using Sandpack, a modern playground framework built by the folks at CodeSandbox
