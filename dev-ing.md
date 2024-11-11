@@ -529,8 +529,34 @@ console.log(';; qryDiffSnap ', snapshotFrameResult)
 
 ## 1111
 
+- [css - How to increase cursor caret thickness in HTML? - Stack Overflow](https://stackoverflow.com/questions/67417961/how-to-increase-cursor-caret-thickness-in-html)
+  - You can't change the way the cursor caret looks in a textarea. The most you can do is change the color
+  - There a way, you can change the font-size of the textarea to bigger or smaller, the caret size will change according to it, its not the best way but its a solution
+
+- [iframe嵌套其他网站提示连接被拒绝 - 明月南楼 - 博客园](https://www.cnblogs.com/mynl/p/16065589.html)
+  - 最近开发项目中遇到了客户iframe嵌套我们项目，遇到了域名提示... 拒绝了您的访问。
+  - 然后百度了一下 `X-Frame-Options`： HTTP 响应头是用来给浏览器 指示允许一个页面 可否在`<frame>, <iframe>, <embed> 或者 <object>` 中展现的标记。站点可以通过确保网站没有被嵌入到别人的站点里面，从而避免 点击劫持 攻击。
+
 - 搜索框一直显示的设计不符合ide
   - 显示变更文件的checkbox的条件是什么
+
+上周
+- 重构打字动画的实现
+- 修复cde相关issues，修复了20多个
+- 根据clacky的需求在paas调整了文件树及搜索的功能，完成了80%
+
+本周
+- 交付文件树搜索
+- 代码工具条实现add to chat
+- 全局快捷键
+
+今天
+- 合并文件树搜索的pr
+- 实现add to chat的交互和通信
+
+风险
+- 文件树搜索的实现依赖goAgent的grep命令，需要在docker镜像中预安装这个包
+- 和意如确定文件树搜索输入框的显示条件
 
 ## 1110
 
