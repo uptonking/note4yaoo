@@ -527,6 +527,17 @@ console.log(';; qryDiffSnap ', snapshotFrameResult)
   - 方案1: daoPaas提供新api setFileSelected, 让前端手动设置文件选中的状态
   - 方案2: 在执行daoPaas.openFile时自动更新文件树的选中状态
 
+## 1114
+
+- 产品设计上，add to chat 最多支持引用几个代码块
+## 1112
+
+- 昨天
+  - 和产品设计讨论并调整了文件树搜索的显示隐藏条件和筛选过滤交互
+- 今天
+  - 合并文件树搜索的pr
+  - 实现代码工具条add to chat
+
 ## 1111
 
 - [css - How to increase cursor caret thickness in HTML? - Stack Overflow](https://stackoverflow.com/questions/67417961/how-to-increase-cursor-caret-thickness-in-html)
