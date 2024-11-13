@@ -85,6 +85,62 @@ modified: 2021-01-28T14:34:20.579Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🆚 [Which style of discriminated unions do you prefer in TypeScript and why? : r/typescript](https://www.reddit.com/r/typescript/comments/16zodeq/which_style_of_discriminated_unions_do_you_prefer/)
+
+```typescript
+
+// Input design where `type` makes the distinction
+interface Input {
+  shape : {
+    type : "circle",
+    radius : number,
+  } | {
+    type : "rectangle",
+    width : number,
+    height : number
+  }
+}
+
+// 🆚 
+
+// Input design where an extra node makes the distinction
+interface Input {
+  shape : {
+    circle : {
+      radius : number,
+    }
+  } | {
+    rectangle : {
+      width : number,
+      height : number
+    }
+  }
+}
+
+// I actually don't think you've represented the best option, which is to have all common properties at the top level, with unique properties being nested. The classic example is actions:
+type AddUserAction = {
+  type: 'ADD_USER';
+  payload: {
+    id: string;
+    name: string;
+  };
+};
+
+type RemoveUserAction = {
+  type: 'REMOVE_USER';
+  payload: {
+    id: string;
+  };
+};
+
+type Action = AddUserAction | RemoveUserAction;
+
+```
+
 - ## Sick of Node truncating your objects when you log them? Check out `console.dir(obj, { depth: Infinity })` .
 - https://x.com/mattpocockuk/status/1843234819326484629
 - inspect() is a more general purpose tool for these things 

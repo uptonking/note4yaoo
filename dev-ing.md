@@ -505,6 +505,8 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
 
 ```JS
 stt.message.channel().send('uCmdK', 'README.md', 2, 2, 'explain an elegant word in one sentence')
+stt.message.channel().send('message', '@@user_context[file://README.md:12-42, file://XXX]@@')
+stt.message.channel().send('message', '@user_context[file://README.md:7-24]')
 
 console.log(';; task ', taskState, runningTaskAction, task?.task_steps)
 
@@ -527,9 +529,20 @@ console.log(';; qryDiffSnap ', snapshotFrameResult)
   - 方案1: daoPaas提供新api setFileSelected, 让前端手动设置文件选中的状态
   - 方案2: 在执行daoPaas.openFile时自动更新文件树的选中状态
 
-## 1114
+- 修复文件树拖拽的背景色
 
-- 产品设计上，add to chat 最多支持引用几个代码块
+## 1113
+
+- 昨天
+  - 合并文件树搜索的pr, 今天会发到staging
+  - 在编辑器实现代码工具条add to chat的按钮
+- 今天
+  - 在驾驶舱实现add to chat的聊天交互
+
+- ui交互
+  - 产品设计上，add to chat 最多支持引用几个代码块
+  - 聊天框有最大高度吗
+
 ## 1112
 
 - 昨天
