@@ -531,6 +531,41 @@ console.log(';; qryDiffSnap ', snapshotFrameResult)
 
 - 修复文件树拖拽的背景色
 
+## 1114
+
+- [ multiple condition in ternary operator in jsx - Stack Overflow](https://stackoverflow.com/questions/46408983/multiple-condition-in-ternary-operator-in-jsx)
+  - I would suggest using functions if your conditions get complicated, to not degrade your code readability.
+
+- [javascript - Is it possible to put a switch statement inside of a Conditional (ternary)? - Stack Overflow](https://stackoverflow.com/questions/47488109/is-it-possible-to-put-a-switch-statement-inside-of-a-conditional-ternary)
+
+```JS
+// tl;dr: kind of, but you shouldn't do it since it is not that readable.
+// It is better to use a verbose coding style. In your case something like this would be cleaner and more readable:
+
+const a = 20;
+const condition = a > 100;
+const result = condition ? true : (() => {
+  switch (a) {
+    case 11:
+      return 22;
+    case 20:
+      return 21;
+    default:
+      return 100;
+  }
+})();
+
+console.log(result);
+```
+
+- 昨天
+  - 在paas完善了add to chat按钮的消失隐藏条件
+  - 在聊天输入框实现了添加代码引用的基本交互
+- 今天
+  - 完善取消代码引用的交互和渲染细节
+  - 提交一版add to chat的pr
+  - 开始clacky重点快捷键的实现
+
 ## 1113
 
 - 昨天

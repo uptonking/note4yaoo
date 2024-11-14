@@ -106,6 +106,25 @@ modified: 2024-08-11T07:59:35.617Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🌰 [All I want to do is highlight "hello" - Lezer - discuss. CodeMirror _202305](https://discuss.codemirror.net/t/all-i-want-to-do-is-highlight-hello/6444)
+  - Is there anyone here that can give me a simple example of how to highlight for example the word “hello” in a specific color?
+
+- ## 🌰 [Syntax Highlighting in CodeMirror v6 without the editor functionality? - discuss. CodeMirror _202402](https://discuss.codemirror.net/t/syntax-highlighting-in-codemirror-v6-without-the-editor-functionality/7823)
+  - I am looking to syntax highlight hundreds of blocks of code on a page, and creating editors for each will be too much performance-wise I think. I saw some threads discussing syntax highlighting being implemented for v6 (like this? Server-side highlighting with CodeMirror 6 · GitHub 17), but wasn’t sure what the status/plan was.
+  - [Server-side highlighting with CodeMirror 6 _202010](https://gist.github.com/justinfagnani/7d4a4acfc4dd00dde3c62db13731f68f)
+- You can use the Lezer parser system (as used in CodeMirror) to highlight code without an editor. See here for an example.
+
+- Is there a basic way to integrate that Lezer parsing with EditorView.theme?
+  - Not really—editor themes style parts of the editor, not the syntax.
+
+- 
+- 
+- 
+
 - ## [Loading syntax highlighting on demand? - v6 - discuss. CodeMirror _202402](https://discuss.codemirror.net/t/loading-syntax-highlighting-on-demand/7840)
 - All the language descriptions in `@codemirror/language-data` use dynamic imports. So if your bundler supports code splitting, they should just magically get loaded on demand.
   -  Each of these holds a function that, when called, runs an `import(...)` expression that fetches the actual language mode. 

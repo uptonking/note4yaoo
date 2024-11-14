@@ -36,13 +36,20 @@ modified: 2021-01-03T17:11:47.916Z
   - class="w-[calc(100%+2rem)]"
   - class="h-20 w-[calc(100%_-_10rem)]
 
-- border-[rgba(16,_24,_40,_0.1)]
+- border-[rgba(16, _24, _40, _0.1)]
 # discuss
 - ## 
 
 - ## 
 
 - ## 
+
+- ## 🌰 [Using group-hover with a css child selector · tailwindlabs/tailwindcss](https://github.com/tailwindlabs/tailwindcss/discussions/13309)
+
+- ## [Child Selector Tailwind CSS · tailwindlabs/tailwindcss](https://github.com/tailwindlabs/tailwindcss/discussions/9917)
+- You might be looking for variant groups but Tailwind does not support this
+  - You could try adding the classes directly to the elements instead of the parent, but I understand there are circumstances where this is not possible.
+  - You could also abstract the arbitrary variant to a plugin via addVariant to make it less verbose.
 
 - ## 继续在浏览器扩展中尝试 tailwindcss，非常不适合 content-script，
 - https://twitter.com/rxliuli/status/1751903441549438996
