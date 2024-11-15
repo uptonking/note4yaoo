@@ -26,6 +26,9 @@ modified: 2022-06-04T00:44:40.955Z
 
 - resources
   - [HTMLElement API: popover | Can I use](https://caniuse.com/mdn-api_htmlelement_popover)
+# dev-xp
+- 在包含popover的组件逻辑中提前return可能会导致问题
+  - fewer hooks
 # blogs
 
 ## [Dialogs and popovers seem similar. How are they different? _202309](https://hidde.blog/dialog-modal-popover-differences/)

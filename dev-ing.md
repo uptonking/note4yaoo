@@ -531,6 +531,15 @@ console.log(';; qryDiffSnap ', snapshotFrameResult)
 
 - 修复文件树拖拽的背景色
 
+## 1115
+
+- 昨天
+  - 完善代码引用在历史消息列表的交互细节
+  - 联合paas/clacky/ai测试add to chat的功能
+- 今天
+  - 提交一版add to chat的pr，下午可以演示主流程
+  - 准备下午的演示，修复相关的issue
+
 ## 1114
 
 - [ multiple condition in ternary operator in jsx - Stack Overflow](https://stackoverflow.com/questions/46408983/multiple-condition-in-ternary-operator-in-jsx)
