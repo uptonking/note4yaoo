@@ -9,6 +9,15 @@ modified: 2024-01-18T11:57:13.987Z
 
 # guide
 
+# discuss-news/author
+- ## 
+
+- ## 
+
+- ## We use dependency injection and rxjs (thanks Angular!) to manage state instead of wrapping everything in React, 
+- https://x.com/wzhudev/status/1854731397325635920
+  - and they work pretty well even for a complicated application like spreadsheets.
+
 # discuss
 - ## 
 

@@ -224,6 +224,15 @@ modified: 2023-02-06T09:14:40.114Z
   - In HTTP2, normally, a browser opens a new connection for every new domain it sees. (So if your site loads via www. but serves images from img., that’d be 2 connections.)
   - Making domains use the same IP address and HTTPS certificate is an *implicit* way to enable connection coalescing; the control is on the browser’s side, and it’s not always great. (Plus sharing IPs is tricky.) But (TIL!) there’s also an *explicit* way.
 
+# discuss-stream
+- ## 
+
+- ## 
+
+- ## 🌰 Implementing basic HTML streaming with node
+- https://x.com/asidorenko_/status/1857475654364655751
+- PHP days all over again
+
 # discuss-polling
 - ## 
 

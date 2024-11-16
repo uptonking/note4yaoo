@@ -22,7 +22,8 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## 📌 A list of software that allows searching the web with the assistance of AI.
+- https://x.com/tom_doerr/status/1856778512612667838
 # discuss
 - ## 
 

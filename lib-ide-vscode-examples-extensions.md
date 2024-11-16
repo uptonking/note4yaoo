@@ -107,6 +107,9 @@ modified: 2024-08-24T16:17:26.715Z
 - https://github.com/microsoft/vscode-data-wrangler /未开源
   - [Announcing Data Wrangler: Code-centric viewing and cleaning of tabular data in Visual Studio Code - Python](https://devblogs.microsoft.com/python/announcing-data-wrangler-code-centric-viewing-and-cleaning-of-tabular-data-in-visual-studio-code/)
   - Data Wrangler is a free extension that offers data viewing and cleaning that is directly integrated into VS Code and the Jupyter extension
+# sync
+- https://github.com/neilmovva/codemirror /202411/ts
+  - VSCode extension to continuously sync the open workspace folder to a remote server.
 # themes
 - https://github.com/vscodethemes/web /202303/ts/inactive
   - https://vscodethemes.com/

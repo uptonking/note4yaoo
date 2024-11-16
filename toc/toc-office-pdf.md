@@ -410,6 +410,7 @@ modified: 2021-01-04T17:26:43.784Z
   - Magic-PDF 是一款将 PDF 转化为 markdown 格式的工具。支持转换本地文档或者位于支持S3协议对象存储上的文件。
   - Magic-Doc 是一款支持将网页或多格式电子书转换为 markdown 格式的工具。
     - 支持176种语言的准确识别
+  - https://huggingface.co/spaces/opendatalab/MinerU
 
 - https://github.com/DS4SD/docling /MIT/202409/python
   - Transform PDF to JSON or Markdown with ease and speed

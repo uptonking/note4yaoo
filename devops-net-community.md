@@ -1,11 +1,11 @@
 ---
-title: dovops-net-community
+title: devops-net-community
 tags: [community, devops, network]
 created: 2024-11-16T10:58:13.978Z
-modified: 2024-11-16T10:58:31.291Z
+modified: 2024-11-16T16:58:32.628Z
 ---
 
-# dovops-net-community
+# devops-net-community
 
 # guide
 
@@ -15,7 +15,7 @@ modified: 2024-11-16T10:58:31.291Z
 - ## 
 
 - ## 
-# discuss-nignx
+# discuss-nginx
 - ## 
 
 - ## 

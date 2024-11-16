@@ -68,6 +68,8 @@ modified: 2024-05-06T02:54:40.374Z
 
 ### draft
 
+- 不支持自动重命名
+
 - 端侧大模型辅助coding，如浏览器内置的ai-api
 
 - docker in docker 的权限问题

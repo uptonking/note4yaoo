@@ -14,7 +14,10 @@ modified: 2023-12-18T15:15:36.887Z
 
 - ## 
 
-- ## 
+- ## 潦草手写文字，用不同 AI 来识别，分别为 Claude 3.5 Sonnet, GPT 4o(Perplexity)和 Gemini 1.5 Pro Preview 1114。感觉 Gemini 的中文 OCR 是真强悍啊
+- https://x.com/wshuyi/status/1857609038999203999
+- google 最新研究还可以基于 OCR 结果重建笔迹
+- 毕竟 google 的检验码项目收集了足够多的手写识别数据
 
 - ## Announcing llama-ocr –  a free + open source OCR tool
 - https://x.com/nutlope/status/1856402928086725020

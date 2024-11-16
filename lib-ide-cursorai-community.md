@@ -37,6 +37,19 @@ modified: 2024-09-02T02:28:27.398Z
 - 更喜欢cursor聊天式帮忙生成代码。
 
 - 做工程不会拿着ai一路问到底的，cursor 就项目初开的时候用得多，路走顺了，就一个copilot帮补一下。
+# discuss-internals-cursorai
+- ## 
+
+- ## 
+
+- ## cursor代码库索引技术细节展示了代码的RAG 实现方法大概（虽然很粗，也值得学习）：
+- https://x.com/LinearUncle/status/1856597751930474873
+  1. 利用 Turbopuffer 生成分块代码向量嵌入做代码RAG。
+  2. 通过 Merkle 树 每 10 分钟检测代码变动，更新嵌入。
+  3. 若代码改动，仅为新 chunk 索引，旧 chunk 走缓存，节省成本
+- cursor是写在安全页面用来自证cursor没有上传用户代码
+  - Cursor 没有，Anthropic 干了
+
 # discuss-examples-cursorai-like
 - ## 
 

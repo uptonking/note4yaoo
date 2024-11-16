@@ -26,6 +26,7 @@ modified: 2021-07-20T13:50:23.433Z
   - 💠 architecture-early 需要尽早考虑的架构问题，没有完美的架构
     - 核心架构考虑 server/db/network-socket
     - 早期不要将系统架构设计得过于复杂，会影响开发进度, 甚至产品终止都用不上
+    - 重前端还是重服务端的设计
     - collaborative的数据结构，冲突处理算法，客户端中心还是服务端中心
     - scale水平扩展/多实例/多租户; http更适合scale; shared配置、缓存
     - 数据通信，http/websocket
@@ -35,6 +36,8 @@ modified: 2021-07-20T13:50:23.433Z
     - 先实现业务核心功能， 再考虑如何以sdk/paas的方式提供给使用方，再优化性能
     - 系统的性能受第三方资源如github的fetch api的限制，设计初期要想办法避免
     - 计算密集型的feature尝试多层架构，如大模型llm/ocr
+    - frontend: animation
+    - backend: orm vs sql
   - 抽空在线体验，工作专注代码
   - data-app
     - specification for pivot table

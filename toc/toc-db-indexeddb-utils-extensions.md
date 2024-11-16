@@ -57,6 +57,11 @@ modified: 2022-11-04T14:22:17.373Z
 - https://github.com/simplifyjs/indexeddb-crud
   - Comparison between native IndexedDB API and using IDB library in operating CRUD workaround
 
+- https://github.com/instructure/idb-cache /202411/ts
+  - https://instructure.github.io/idb-cache/
+  - IndexedDB-based caching library with encryption and chunked storage, designed for performance and security. 
+  - Implements `AsyncStorage` interface.
+
 - https://github.com/creasource/reactive-idb /MIT/202109/ts
   - https://reactive-idb.creasource.dev/
   - A reactive wrapper to IndexedDB using Rxjs

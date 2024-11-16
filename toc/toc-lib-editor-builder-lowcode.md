@@ -694,6 +694,11 @@ modified: 2020-12-28T12:24:09.275Z
   - https://www.activepieces.com/
   - Your friendliest open source all-in-one automation tool 
   - Workflow automation tool 100+ integration / Enterprise automation tool / Zapier Alternative
+
+- https://github.com/riccardoperra/pipelineui /MIT/202411/ts
+  - https://pipelineui.dev/
+  - Open source editor for visualizing, creating and managing GitHub Actions workflows. 
+  - Built with SolidStart and Appwrite
 # json-builder
 - https://github.com/redgeoff/mson /apache2/202401/js
   - The MSON compiler allows you to generate apps from JSON

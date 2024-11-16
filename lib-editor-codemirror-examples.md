@@ -1233,6 +1233,10 @@ modified: 2023-06-23T12:46:53.288Z
   - ⛏ 更偏向于作为codemirror的devtools
   - https://github.com/overleaf/codemirror-autocomplete
   - https://github.com/overleaf/codemirror-search
+- https://github.com/GamerGirlandCo/datacore-autocomplete
+  - codemirror autocompletion for datacore
+
+
 
 - https://github.com/jmkng/sen /MIT/202310/ts
   - Simple, reusable CodeMirror (v6+) extensions.
@@ -1318,6 +1322,7 @@ modified: 2023-06-23T12:46:53.288Z
   - an image upload plugin for CodeMirror that supports pasting or dragging and dropping images and uploading them to a server. 
   - allows using either a default fetch upload logic or custom upload logic.
   - feat: 添加 CodeMirror 的图片转换base64 插件
+  - https://github.com/cloudflypeng/codemirror-upload
 
 - https://github.com/ficristo/codemirror-addon-toggle-comment /MIT/202409/tsc
   - CodeMirror 5 does come with a comment addon, but I wanted to use the same algorithm used in Brackets
@@ -1717,6 +1722,10 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/google/playground-elements /202405/ts
   - Serverless coding environments for the web.
   - 依赖CodeMirror5
+
+- https://github.com/sumeetgodse/code-snippet-runner /202411/js
+  - https://code-snippet-runner.netlify.app/
+  - A snipper runner built with CodeMirror5 & React that can run HTML, CSS, JS
 
 - https://github.com/kazzkiq/CodeFlask /MIT/202006/js/inactive
   - https://kazzkiq.github.io/CodeFlask/
@@ -2210,7 +2219,7 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/buildownai/buddy /CC-NC/202410/ts/vue
   - https://buildown.ai/
-  - AI driven IDE in the browser - Showcase from the book: Build Your Own AI
+  - 👨🏻‍🏫 AI driven IDE in the browser - Showcase from the book: Build Your Own AI
   - a demonstration application showcasing how to build an AI-driven solution in TypeScript, leveraging Ollama 
 
 ## coding-toolchain-ai
