@@ -335,7 +335,14 @@ modified: 2021-05-06T09:58:23.803Z
 # icons-anime
 - https://icons.pqoqubbw.dev/
   - animated icons i’ve been working on lately are now open source
-# logos
+# logos-generator
+- https://github.com/Nutlope/logocreator /202411/ts
+  - https://www.logo-creator.io/
+  - A free + OSS logo generator powered by Flux on Together AI
+  - Flux Pro 1.1 on Together AI for logo generation
+  - nextjs + shadcn + redis + clerk + plausible
+  - Create a .env file and add your Together AI API key: TOGETHER_API_KEY=
+# logos-resources
 - [FreeLogo.me – Free SVG Logo Templates](https://freelogo.me/)
   - SVG Logo placeholders you can download and use with no restrictions for free.
 

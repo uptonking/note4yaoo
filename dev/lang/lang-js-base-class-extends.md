@@ -23,7 +23,15 @@ modified: 2022-11-23T17:48:48.839Z
 
 - ## 
 
-- ## 
+- ## 🆚️ Node.js historically used prototypical inheritance to mimic the "class" concept. I've recently been asked the question... is it faster or slower than `class`?
+- https://x.com/matteocollina/status/1857469617741906257
+  - Node.js was initially written in ES3, and a lot of its APIs are still designed across its idioms. Specifically, we would need to set up a prototype inheritance chain to inherit from one class to another
+- Let's take a look at the benchmark.
+  - ES3 style inheritance is faster than classes
+  - https://github.com/mcollina/class-vs-function
+
+- A related question, since JavaScript fully supports the Functional style as an alternative to OOP. Would Functional be faster?
+  - generically no, closure allocation is costly and there is no tail call elimination in JS.
 
 - ## 🆚️ I have mixed feeling around classes VS objects in JS, until real Structs become a thing (and a performance oriented one).
 - https://x.com/WebReflection/status/1853431533756973433

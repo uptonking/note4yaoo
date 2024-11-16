@@ -16,7 +16,13 @@ modified: 2023-12-18T15:15:36.887Z
 
 - ## 
 
-- ## 
+- ## Announcing llama-ocr –  a free + open source OCR tool
+- https://x.com/nutlope/status/1856402928086725020
+  - It takes documents (images for now) & outputs markdown, and does really well for complex receipts, PDFs with tables/charts, ect...
+  - Powered by Llama 3.2 vision on @togethercompute & available on npm today
+
+- I already compared the llama 3.2 visión in groq with other models and it performs quite good in general but when analyzing receipts if its a bit rotated then it starts to fail when assigning correct item prices and so on. If you need an example I can dm you
+- Is there any comparison with llama parse? What are the things generally we should consider while switching from llama parse to llama ocr?
 
 - ## 开源中文 OCR 最好用的是哪个? 甲方不想用云服务.
 - https://twitter.com/hylarucoder/status/1766782291651575871

@@ -15,6 +15,15 @@ modified: 2022-12-19T01:59:37.634Z
 - ## 
 
 - ## 
+# discuss-concurrency-languages
+- ## 
+
+- ## 
+
+- ## My memory tells me there are two papers. First one that talks about how event-based concurrency is better than thread-based concurrency and a second one that makes tries to make the opposite claim. But I can't find them anymore! Did my mind hallucinate them?
+- https://x.com/penberg/status/1856605191002329461
+  - "why X is a bad idea" was the pattern of the paper titles
+
 # discuss
 - ## 
 

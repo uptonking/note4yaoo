@@ -74,7 +74,20 @@ modified: 2024-02-12T17:47:34.152Z
   - You don't, and can't, make use of transactions with that approach - you get (eventual) consistency because each log is ordered, which gives you the properties that you want with less of the downsides (deadlocks), but writing and reading the eventual results of that write is a fundamentally async process (which is good in the long term - it forces you think about your dataflow and avoid loops - though it might involve more work upfront). 
   - 👉🏻 And you don't really have relationality - if you need a relation in your live dataflow, you'll generally join at the event pipeline level and make the joined thing its own stream (much like a materialized view in SQL-land). You can build secondary indices etc. but those are explicitly a secondary thing layered on top of your primary datastore.
 
+# discuss-news-debezium
+- ## 
+
+- ## 
+
+- ## Debezium as of 2.7 supports read-only incremental snapshots for #Postgres (based on the DBLog watermarking idea), 
+- https://x.com/gunnarmorling/status/1857357125695017007
+  - leveraging pg_current_snapshot() to retrieve in-progress TX IDs
+
 # discuss-debezium
+- ## 
+
+- ## 
+
 - ## 
 
 - ## What could be a valid use case for also updating the primary key on upserts? 

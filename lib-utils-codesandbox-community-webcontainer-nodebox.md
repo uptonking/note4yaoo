@@ -225,11 +225,6 @@ modified: 2024-01-25T13:32:35.137Z
   - some node apis have polyfills
     - https://github.com/niksy/node-stdlib-browser
   - but some node apis are hard to polyfill
-
-- https://github.com/leaningtech/webvm /未开源
-  - WebVM is a server-less virtual Linux environment running fully client-side in HTML5/WebAssembly.
-  - WebVM is powered by the CheerpX virtualization engine, which enables safe, sandboxed client-side execution of x86 binaries on any browser. 
-  - JIT-compiling binaries to WASM = fast
 # discuss
 - ## 
 

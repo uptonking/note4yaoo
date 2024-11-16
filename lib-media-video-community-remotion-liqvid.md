@@ -15,6 +15,15 @@ modified: 2024-06-21T09:53:44.956Z
 - ## 
 
 - ## 
+# discuss-vid-pm
+- ## 
+
+- ## 
+
+- ## Google 正式推出 Gemini AI 驱动的视频演示应用 Vids 
+- https://x.com/imxiaohu/status/1855436961131164004
+  - 通过简单提示即可生成各种类型的视频演示,你只需提供提示或 Google Drive 中的文档，系即可生成一个初始视频故事板，包括推荐的场景、脚本、背景音乐等。
+
 # discuss
 - ## 
 
@@ -30,10 +39,30 @@ modified: 2024-06-21T09:53:44.956Z
 - 剪映，放大镜特效，可以调节参数控制放大范围
 - 微软官方的zoomit
 
-# discuss-vid-size-compress
+# discuss-vid-size/bandwidth-compress
 - ## 
 
 - ## 
+
+- ## 最方便的图片视频压缩工具 —— 微信。 三百多兆的视频，往微信里一丢，四兆，简直就是牛了个逼
+- https://x.com/juransir/status/1857071258082365921
+
+- 单向有损压缩 没法恢复
+
+- 100M 一张的相机原片，用Windows画图打开，啥也不做，保存。 一看剩下4兆，关键是你肉眼还看不出来压缩了
+- 最方便的ocr工具-微信文字识别，本来是为了监控识别用户。
+
+- Google Photos 才是... 甚至不需要专门软件， 浏览器打开拖进去，人在墙外的话上传/压缩速度还秒杀微信... 上传之后还能直接各种方式搜索视频/图片内容
+
+- 候选压缩工具 B站、油管、阿里盘，油管一压多得无水印。
+
+- 有个类似的技巧，上传图片过大，截图发到微信/qq然后直接拖到桌面
+
+- ## I wrote up a full article on how we serve 15 terabytes of 4K video per month for just $2.18.
+- https://x.com/steve_tenuto/status/1857523923509981437
+  - https://screencasting.com/cheap-video-hosting
+- Is there a way it can be secured? I.e I assume you must prevent people from just using the playlist url outside of your site?
+  - I haven’t tried this yet, but I think there’s probably a way to use R2’s signed URLs inside the manifest file.
 
 - ## 一个月15TB的流量 4K 视频画质才花了 不到 3 美元，主要是 CloudFlare 的出口流量是免费的，所以放在 R2 可以很便宜，
 - https://x.com/dotey/status/1854997844417298485

@@ -38,4 +38,6 @@ modified: 2024-09-16T11:11:14.989Z
 
 - ## 
 
-- ## 
+- ## RMBG-2.0：最佳一键去背景模型
+- https://x.com/Gorden_Sun/status/1856711137028608292
+  - 模型开源但不可商用：https://huggingface.co/briaai/RMBG-2.0

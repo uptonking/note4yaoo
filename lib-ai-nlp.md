@@ -36,6 +36,10 @@ modified: 2023-03-03T08:06:36.592Z
     - Translation engine and memory is shared among all tabs and webpages
   - [Google Chrome](https://github.com/jelmervdl/translatelocally-web-ext/issues/10)
 
+- https://github.com/Byaidu/PDFMathTranslate
+  - 一款可以保留原排版的PDF文档翻译工具：PDFMathTranslate，可以完整保留原文档中的公式、图表，支持双语对比
+  - 支持多种翻译服务，Google、DeepL、Ollama、OpenAI等
+
 - 使用Google翻译（Translate）的离线翻译功能？有前提：你必须先在联网状态下将需要且支持离线翻译的语言下载。
   - 而离线翻译的结果会与联网翻译的结果存在结果差距。特别是翻译同一个字词语句下
 

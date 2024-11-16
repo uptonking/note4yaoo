@@ -77,11 +77,6 @@ modified: 2021-01-28T21:31:18.697Z
   - based on CSS Grid Layout to build various types of grids
 - react-css-grid-table /MIT/122Star/201807
   - https://github.com/RebeccaPark/react-css-grid-table
-# typeset
-- https://github.com/typst/typst /apache2/202403/rust
-  - https://typst.app/
-  - Typst is a new markup-based typesetting system that is designed to be as powerful as LaTeX while being much easier to learn and use.
-  - This repository contains the Typst compiler and its CLI, which is everything you need to compile Typst documents locally.
 # more
 - animate-css-grid /NALicense/909Star/201912
   - https://github.com/aholachek/animate-css-grid

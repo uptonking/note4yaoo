@@ -12,7 +12,14 @@ modified: 2021-07-25T12:49:10.410Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## TL; DR: `content-visibility` property good, `F` value broken.
+- https://x.com/fabiospampinato/status/1856032799892861070
+  - Today's important learnings about the CSS `content-visibility` property:
+  - Setting it to "auto" is broken in Chrome as far as I can see, it considers every block I have in this huge page as visible, even though I have correct "contain-intrinsic-size" properties set for each block. 
+  - Setting it to "auto" is broken in Chrome as far as I can see, it considers every block I have in this huge page as visible, even though I have correct "contain-intrinsic-size" properties set for each block. 
+- The best way that I've found to get this stuff to work:
+  1. Add "content-visibility: auto" to all blocks, you need that compared to "hidden" to be able to search natively into the blocks that you can't see. (bug in Chrome presumably)
+  2. Add "content-visibility: visible" to the blocks that are visible, you need that to unbreak the CSS custom highlights. (bug in Chrome presumably)
 
 - ## There is a free performance improvement you can make right now to your CSS variable animations (if they're scoped to the current element).
 - https://x.com/mattgperry/status/1853728564316680552

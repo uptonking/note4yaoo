@@ -73,6 +73,24 @@ modified: 2024-08-24T16:28:20.515Z
 # discuss-ide-ai
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Windsurf by Codeium which is a Cursor killer which is a vs code + copilot killer which is killing me keeping up with these _20241114
+- https://x.com/wesbos/status/1856806422899822999
+- Can't wait for Zed to become the standard. Then we will see Zed forks with AI features
+
+- how much did YC invest in this one?
+  - 250m is VC funding so far
+
+- ## Bolt New 的产品和销售数据出来了！ 4周时间，从0到400万美金的 ARR！
+- https://x.com/oran_ge/status/1856492253902258304
+  - 这种爆发式的增长，核心是因为它解决了一个一直以来的行业难题： Web 是世界上使用最广泛的平台，但开发者却无法在浏览器中构建 Web 应用。
+  - 通过开创性的 WebContainers 技术和先进的 AI Coder 解决了这个问题。
+
 - ## StackBlitz 推出 bolt. new，可以看作 Artfacts V0 和 Replit 的结合体。
 - https://x.com/op7418/status/1842034898317746328
   - 支持提示、编辑、部署的全栈流程

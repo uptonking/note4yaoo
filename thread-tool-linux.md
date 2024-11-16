@@ -44,7 +44,11 @@ modified: 2024-01-06T13:48:42.969Z
 
 - ## 
 
-- ## 
+- ## The amount of times I've scrolled up in my terminal and wanted the result of that to be ^[[A^[[A^[[A^[[A is zero
+- https://x.com/_smcf/status/1855171377583849657
+- Screen users will know
+- the classic terminal moment when you scroll up and instead of finding the result, you get an endless loop of ^[[A. the true art of debugging frustration.
+- 
 
 - ## 1Panel 竟然还提供一键安装 AI 大模型
 - https://x.com/kuizuo/status/1793608153734746186

@@ -9,6 +9,22 @@ modified: 2023-12-10T14:20:42.600Z
 
 # guide
 
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## idb-cache: An IndexedDB-based caching library with encryption and chunked storage, optimized for performance and security.
+- https://x.com/aaronshaf/status/1856751512778645785
+  - Implements AsyncStorage interface. Hence, pluggable into TanStack Query.
+
+- Random question, part from AsyncStorage standard, why all cache libraries are not designing cache key as plain object just like tanstack query queryKey dose?
+  - TanStack Query serializes queryKey to a string.
+- Yes, I know that. It just order the perperties by key and just JSON.stringify it. It's just much easier to use an object. Idk it just me or I frequently forget to include some properties into the cache key
+  - That was something I really liked about rails' built in caching. They have a convention where anything that responds_to "cache_key" would be used 
+
+- what is the use case to use this library? or storing encrypted data to local storage?
+  - Avoiding unencrypted storage of PII.
 # discuss
 - ## 
 

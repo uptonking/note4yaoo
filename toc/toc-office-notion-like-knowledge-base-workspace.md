@@ -616,6 +616,11 @@ modified: 2022-06-03T21:34:54.893Z
 - https://github.com/whyhow-ai/knowledge-table
   - 结构化数据提取工具，它可以以自然语言查询的方式从非结构化文档中提取结构化数据，并以表格或图表的形式展现
   - 文档数据的结构化入库，比如从合同里提取关键交易信息，然后结构化展示
+
+- https://github.com/shaheryaryousaf/fastapi-docgpt
+  - 一个PDF文档GPT项目：fastapi-docgpt，可以对PDF文档内容进行对话问答 
+  - 上传PDF，系统自动提取PDF文本内容，并将文档内容转换为向量存储 
+  - 可通过Swagger在 /docs 获取自动API文档
 # more
 - https://github.com/notea-org/notea
   - Self hosted note taking app stored on S3

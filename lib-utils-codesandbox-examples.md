@@ -451,6 +451,10 @@ modified: 2023-09-02T09:17:22.992Z
     - lwIP, for the TCP/IP stack, compiled for the Web via Cheerp
   - The public CheerpX deployment is provided as-is and is free to use for technological exploration, testing and non-commercial uses.
   - If you want to build a product on top of CheerpX/WebVM, please get in touch with sales
+  - https://x.com/tom_doerr/status/1857505332274278907
+    - Using linux and open your browser to use linux 😏
+    - Works in XR too
+    - Very cool. I wonder if it can be leveraged to enhance @vscode to include a terminal too.
 # miniprogram/小程序
 - https://github.com/yeliex/cromosjs /202310/ts/inactive
   - 简单的小程序跨平台解决方案

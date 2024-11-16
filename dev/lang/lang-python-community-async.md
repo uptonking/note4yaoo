@@ -14,7 +14,16 @@ modified: 2023-08-28T06:15:13.277Z
 
 - ## 
 
-- ## 
+- ## part of what makes Python async impossible is that
+- https://x.com/ekzhang1/status/1857614129353064956
+  - Rust has Future<>
+  - Go has go func()
+  - JS has Promise
+  - Python has: Awaitable, Coroutine, Task, asyncio. Future, concurrent.futures. Future, AsyncIterator, AsyncIterable, shutdown_asyncgens, contextvars, shield()
+
+- Async Python is absolutely useless, just use threads 🧵. and GIL free will make this even better because async uses only one system thread while multiple Python threads use many and thus utilise CPU better. Async in Python is code smell, always stay away!
+
+- This is why i use gevent/greenlets
 
 - ## js 的 await 语法和 python 几乎就是一样的
 - https://twitter.com/LaiskyCai/status/1764462751227777066

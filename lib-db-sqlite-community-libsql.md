@@ -103,7 +103,10 @@ modified: 2023-10-28T17:31:26.535Z
 
 - ## 
 
-- ## 
+- ## In Limbo, I am implementing the SQLite C API with Rust. 
+- https://x.com/penberg/status/1857406118277836856
+  - Right now I have the whole of SQLite API in a single file (https://buff.ly/3URtylE ) and like to split it up. But I seem to be unable to convince cbindgen to pick up symbols from other files. What am I doing wrong?
+- rust is so comfy. cargo, cargo-watch, rust-analyzer, arbtest, closures, multi-line comments, clippy... compiler warnings...
 
 - ## SQLite and MySQL are quite different, and it won't work for all of you.
 - https://twitter.com/glcst/status/1765852342627246402

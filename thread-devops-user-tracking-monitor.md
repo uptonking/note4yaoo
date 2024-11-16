@@ -32,7 +32,11 @@ modified: 2023-04-25T17:48:06.146Z
 
 - ## 
 
-- ## 
+- ## 听俺牛马一句劝，网站上线第一件事情就是接入数据分析（推荐Plausible，Google Analytics虽然免费，但是好复杂我昨晚研究了一下就放弃了
+- https://x.com/leohuntercn/status/1857344630913990872
+  - 接上之后的好处就是，一会儿瞅一眼，开发更有动力了
+
+- 也可以试下openpanel，不限项目数量，功能比umami强，界面也不输plausible
 
 - ## I don't understand why people prefer to store log lines as text vs structured data. 
 - https://x.com/matteocollina/status/1798385291016737264

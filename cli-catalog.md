@@ -62,8 +62,12 @@ tsc --showconfig
 git clone -b <branch-name> <repo-url> <destination-folder-name>
 
 # 将远程git仓库里的指定分支拉取到本地（本地不存在的分支）
-# 若提示origin/远程分支名不存在，需要先 git fetch --all
+  # 若提示origin/远程分支名不存在，需要先 git fetch --all
 git checkout -b 本地分支名 origin/远程分支名
+# or
+git fetch origin main:main
+git fetch origin feature/123
+git checkout feature/123
 
 # switch my git repository to a particular commit
 # With the commit hash (or part of it)
@@ -75,6 +79,7 @@ git checkout c5f567 -- file1/to/restore file2/to/restore
 
 git branch --set-upstream-to=origin/my_branch
 git branch -u origin/my_branch
+
 ```
 
 - commit相关

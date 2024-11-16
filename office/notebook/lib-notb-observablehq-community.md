@@ -11,7 +11,10 @@ modified: 2024-06-30T03:21:21.677Z
 
 - ## 
 
-- ## 
+- ## A userspace @observablehq notebook exporter that serializes notebooks into a single HTML file.
+- https://x.com/tomlarkworthy/status/1857731430823944346
+  - Works from file://, syncs to S3, stays unminified for easy editing, works offline, and is editable with a text editor and is recursively self-sustaining
+  - https://observablehq.com/@tomlarkworthy/exporter
 
 - ## [Can you run your own Observable notebook server _201805](https://talk.observablehq.com/t/noob-can-you-run-your-own-observable-server/757)
 - The community could create a custom open sourced editor for observablehq, based on the runtime

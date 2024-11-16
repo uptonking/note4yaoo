@@ -18,7 +18,13 @@ modified: 2023-12-09T10:04:28.663Z
 # discuss
 - ## 
 
-- ## 
+- ## SQL from frontend. Is it heresy or valid architecture? 
+- https://x.com/nikitabase/status/1856776727407771901
+- I think that makes things get started fast and is great for internal tooling, but you have to deal with migration annoyances like ensuring that frontend and DB changes get deployed at the same time. If it’s an SPA, then you need to do hot reload more often. People may also model their data poorly. Good data model may be different than component data model
+
+- imo the nicest thing about postgREST isn't the rest API, it's the jwt middleware that lets you pool your conns under a common 'authenticator' identity and base the rls/security model on jwt claims that are set and evaluated per api request/transaction using a shared conn role
+
+- PHP has been preaching this for years
 
 - ## [SQL.js: SQLite Compiled to JavaScript | Hacker News_202011](https://news.ycombinator.com/item?id=25008308)
 - sql.js uses emscripten to compile SQLite to webassembly (or to javascript code for compatibility with older browsers)

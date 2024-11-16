@@ -128,6 +128,36 @@ modified: 2023-10-30T07:34:03.602Z
  # discuss-multi-agents
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## @KuraAIAgents 通过创新的五重 Agent 架构（规划、执行、评估）实现了 87% 的浏览器自动化准确率，超越 Claude 计算机操作 28 个百分点，同时支持低成本模型替换方案
+- https://x.com/shao__meng/status/1857586562588094918
+  - 包含5个专门的 Agent，其中3个核心 Agent 形成一个循环系统
+  - 在 WebVoyager 基准测试中取得 87% 的成绩
+  - 比 Claude 的计算机操作高出 28%
+- 五个核心 Agent：
+a) 初始规划者(Initial Planner)
+- 负责制定高层次计划
+- 使用 OpenAI o1 模型进行推理
+b) 循环规划者(Agent Loop Planner)
+- 评估任务是否完成或不可能完成
+- 为执行者提供下一步指令
+- 根据需要修改计划
+c) 执行者(Executor)具备三项核心技能：
+- 网址导航和返回
+- 读取当前页面数据
+- 执行屏幕操作(点击、滚动、输入)
+d) 循环评论者(Agent Loop Critic)
+- 评估执行者的表现
+- 特别在复杂界面操作中起关键作用
+e) 最终评论者(Final Critic)
+- 评估整个任务轨迹
+- 必要时提供反馈并启动新的循环
+
 - ## OpenAI 发布多 Agent 编排框架背后的思考以及实践过程
 - https://x.com/tuturetom/status/1845634978530693494
   - 核心是 OpenAI 的工程师在思考  Agent 的「路由」 + 「移交」等能力时拓展出来的一个示例，进而发现这个示例原语很普适，所以开发了 Swarm 框架

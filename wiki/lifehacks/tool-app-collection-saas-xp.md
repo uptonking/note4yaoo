@@ -386,6 +386,9 @@ sudo systemctl start minidlna
   - https://github.com/xiaodu114/xiaodu114.github.io
     - 我的学习笔记
 
+- gfw-list
+  - https://github.com/gfwlist/gfwlist/blob/master/gfwlist.txt
+
 ## google-proxy
 
 - 备用方法

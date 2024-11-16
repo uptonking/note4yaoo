@@ -12,7 +12,16 @@ modified: 2021-01-06T14:40:03.364Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## react is so much better when you use it only as a view layer and manage your state externally
+- https://x.com/thekitze/status/1854635151256408299
+  - after 2 days of dev I got frustrated enough with context and hooks to move my state logic into mobx-state-tree
+
+- Global state is an anti pattern only to be used for things that truly need to be global (like auth, etc)
+  - React is designed for state management. If you keep the state close to your components you’ll have a much better time as your app grows.
+
+- univer: We use dependency injection and rxjs (thanks Angular!) to manage state instead of wrapping everything in React, and they work pretty well even for a complicated application like spreadsheets.
+
+- 
 
 - ## useEffect is for syncing state managed by React with the external world. uSES is about syncing the external world *into* React.
 - https://x.com/rossipedia/status/1847839401772032266

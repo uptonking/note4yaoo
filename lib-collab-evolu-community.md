@@ -12,7 +12,15 @@ modified: 2023-05-14T04:32:30.696Z
 # discuss-authors
 - ## 
 
-- ## 
+- ## That's one of the reasons I'm removing Effect from Evolu right now (sorry, the new sync, you have to wait a little). _202411
+- https://x.com/evoluhq/status/1856327710349369667
+  - This is nothing against Effect; design patterns are proper, and the implementation, when used properly, as well). I would still recommend it for enterprise apps.
+  - The low-level library is the other case. We need maximum performance. We need maximum simplicity for contributors. We need 'readable stack traces'. Last but not least, we must limit vendor locks as much as possible.
+  - Personally, I would love to see Effect AOT compiled—no runtime, just code. But it's hard, of course; good things are. It took React 10 years to have its compiler. I believe the Effect will be faster.
+
+- Low level library code that sits on the sync rendering path is one of the use cases where effect doesn't fit (even promises here would hurt). High level app code have different requirements so the tradeoffs are much better.
+
+- Effect Compiler wouldn't really have a clear scope, stack traces are one of the things you lose using lazy code (even if using () => Promise) we recover debuggability via telemetry but the creation of runtime is an awkward spot especially in a recursive case like yours
 
 - ## 🆚️ SQLite WASM is much slower than the in-memory better-sqlite3, but still, the new Evolu CRDT algorithm can handle approximately 1666 mutations per second
 - https://x.com/evoluhq/status/1836518784539980248
