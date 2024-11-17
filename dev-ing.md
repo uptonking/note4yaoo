@@ -531,6 +531,18 @@ console.log(';; qryDiffSnap ', snapshotFrameResult)
 
 - 修复文件树拖拽的背景色
 
+## 1118
+
+- 上周
+  - 交付了fileTree-search的功能
+  - 实现了大部分add-to-chat的功能
+- 本周
+  - 交付clacky的重点快捷键的功能
+  - 修复cde高优先级的issues
+- 今天
+  - 分别review add to chat在paas和clacky前端的pr，上午合入staging
+  - 开始实现clacky的重点快捷键
+
 ## 1115
 
 - 昨天

@@ -35,6 +35,10 @@ modified: 2024-03-13T14:26:26.220Z
 
 - ## 
 
+- ## Justin, CTO of Docker, share my post on implementing "Delta Lake" from scratch in a talk at kubecon. "Object Storage Is All You Need"
+- https://x.com/eatonphil/status/1857807099851395336
+  - [Build a serverless ACID database with this one neat trick (atomic PutIfAbsent) | notes.eatonphil.com _202409](https://notes.eatonphil.com/2024-09-29-build-a-serverless-acid-database-with-this-one-neat-trick.html)
+
 - ## Why are Object Databases not mainstream and we still waste gigawatts of electricity to convert to tables and relations back and forth?
 - https://x.com/bercut2000/status/1809141678013387080
 - Because modern SQL adopted NOSQL features, we can store and index JSONs in SQLite.

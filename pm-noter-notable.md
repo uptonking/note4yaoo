@@ -12,7 +12,7 @@ modified: 2023-11-28T14:48:45.910Z
 
 # guide(for notable/noter/paper)
 - features
-  - market: lowcode(editor), playground(code+preview)
+  - market: lowcode(editor), playground(code+preview+pdf)
   - versioning and branching: 基于oplog/events实现, draft/public
   - collaboration-ready: 基于crdt
   - end-user database: 支持用户自定义数据和流程, multi views
