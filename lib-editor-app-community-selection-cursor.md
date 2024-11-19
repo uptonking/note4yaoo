@@ -20,7 +20,20 @@ modified: 2023-11-21T04:37:09.686Z
   - [A React Typescript hook that tracks user text selections & their screen positions](https://gist.github.com/KristofferEriksson/8acb9b3eb241507eb0f6232938bf4ec7)
 - you can pass an `elementRef` . If you are doing that, it'll only capture selections within that element.
 
+# discuss-hotkeys
+- ## 
+
+- ## 
+
+- ## [Chrome - global keyboard shortcut not actually global. - Stack Overflow](https://stackoverflow.com/questions/34366233/chrome-global-keyboard-shortcut-not-actually-global)
+- It could be this: Chrome cannot read keyboard shortcuts for applications running as Administrator, unless Chrome is also ran as administrator. 
+  - I learned this in figuring out why Google Play music shortcuts weren't working in Steam games.
+
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 悬浮工具条挤在一起好烦人，关键是每个都有用还不能关掉，我觉得操作系统应该出一个专门的 API 让程序往统一的悬浮窗里加东西，而不是各做各的 ...
