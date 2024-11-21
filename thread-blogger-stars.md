@@ -19,6 +19,10 @@ modified: 2021-02-09T19:27:07.664Z
   - 手写系列多
   - https://github.com/dennis-jiang/Front-End-Knowledges
 
+- [为什么这么设计系列文章 - 面向信仰编程](https://draveness.me/whys-the-design/)
+  - [为什么 TCP 建立连接需要三次握手](https://draveness.me/whys-the-design-tcp-three-way-handshake/)
+  - [为什么 TCP 协议有性能问题](https://draveness.me/whys-the-design-tcp-performance/)
+
 - [Brian Lovin](https://brianlovin.com/)
   - 白色主题
 # olap-bi

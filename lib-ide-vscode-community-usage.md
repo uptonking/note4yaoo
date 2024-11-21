@@ -17,6 +17,15 @@ modified: 2024-08-24T16:52:53.996Z
 - ## 
 
 - ## 
+# discuss-diff
+- ## 
+
+- ## 
+
+- ## [Opening new multi-file diff view? _202411](https://github.com/microsoft/vscode-discussions/discussions/2398)
+  - Is there any way for an extension to open the new built-in multi-file diff view as seen here?
+
+- You can use the `vscode.changes` command, which was missing in the document
 # discuss
 - ## 
 

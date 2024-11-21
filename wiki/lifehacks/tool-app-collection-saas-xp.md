@@ -445,6 +445,9 @@ sudo systemctl start minidlna
 
 - [GitHub 文件加速](https://github.moeyy.xyz/)
 
+- https://github.com/jadezi/github-accelerator
+  - 油猴插件---github访问加速
+
 ## apps-mirrors
 
 - https://github.com/LiLittleCat/awesome-free-chatgpt

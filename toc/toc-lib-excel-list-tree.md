@@ -163,7 +163,7 @@ modified: 2022-08-21T10:02:41.845Z
   - A sortable, virtual, customizable tree component for React.
   - 依赖 react-dnd, react-window
 
-- https://github.com/lukasbach/react-complex-tree /ts/NoDeps
+- https://github.com/lukasbach/react-complex-tree /MIT/202411/ts/NoDeps
   - https://rct.lukasbach.com/
   - https://rct.lukasbach.com/storybook
   - Unopinionated Accessible Tree Component with Multi-Select and Drag-And-Drop

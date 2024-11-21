@@ -521,7 +521,7 @@ console.log(';; qryDiffSnap ', snapshotFrameResult)
 ^(?!42\["res).*
 ```
 
-- ❓ 为什么ai执行同一个action期间会打开2次编辑器，且第2次的path是最新的
+- ~~为什么ai执行同一个action期间会打开2次编辑器，且第2次的path是最新的~~
 - 为什么 onTaskUpdated 事件会触发2次，中间刚好隔2s，然后 有时中间也会打开文件
   - action状态变化: wip-action1 > 2s > completed > 2s > wip-action2
 
@@ -529,7 +529,14 @@ console.log(';; qryDiffSnap ', snapshotFrameResult)
   - 方案1: daoPaas提供新api setFileSelected, 让前端手动设置文件选中的状态
   - 方案2: 在执行daoPaas.openFile时自动更新文件树的选中状态
 
-- 修复文件树拖拽的背景色
+## 1121
+
+- 昨天
+  - 配合后端排查文件丢失的问题
+  - 修复体验测试反馈的打开.sql文件卡顿的问题，也解决了打开普通大文件如package-lock.json卡顿的问题
+- 今天
+  - 修复cde高优先级bugs，特别是体验测试反馈相关的
+  - 开始实现全局布局切换相关的快捷键，解决一些浏览器内置的快捷键冲突
 
 ## 1120
 

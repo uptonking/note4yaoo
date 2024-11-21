@@ -20,7 +20,7 @@ modified: 2024-08-24T16:15:11.456Z
   - ?
 
 - who is using #vscode 💠
-  - known: cursor
+  - known: cursorai, codeium-windsurf
 
 - who is using #theia
   - eclipse-che

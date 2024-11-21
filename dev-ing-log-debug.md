@@ -23,7 +23,12 @@ modified: 2023-06-14T00:53:15.226Z
 
 ## 
 
-## 
+## 通过git fetch拉取代码失败，导致数据不一致的问题
+
+- 多人git fetch会导致其中有人git fetch失败，所以导致数据不一致，解决方案是fetch失败后重试
+
+- root thread会丢失node_modules数据的问题
+  - ？
 
 ## codemirror打开大文件如package-lock.json时卡顿
 

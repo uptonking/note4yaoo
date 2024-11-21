@@ -137,7 +137,7 @@ modified: 2024-08-24T16:15:54.137Z
   - Requirements: Linux machine with WebSockets enabled, 1 GB RAM, and 2 vCPUs
   - https://github.com/coder/coder /AGPLv3
     - Provision remote development environments via Terraform
-  - [Difference to OpenVSCode Server _202109](https://github.com/coder/code-server/discussions/4267)
+  - 🆚 [Difference to OpenVSCode Server _202109](https://github.com/coder/code-server/discussions/4267)
     - code-server isn't a Docker image, although Docker images for code-server exist. 
     - I'd prefer code-server since Gitpod's VS Code Web Server doesn't allow me to use `sudo` command
     - since code-server is used on Coder(dev workspaces) but I don't think code-server will be dead. I think for collaborating with multiple people simultaneously, Open VS Code is best but for individuals, code-server is recommended since it has protection.
