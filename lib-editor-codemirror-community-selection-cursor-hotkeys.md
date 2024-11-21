@@ -59,9 +59,12 @@ modified: 2024-08-11T06:46:39.843Z
 # discuss-selection/cursor
 - ## 
 
-- ## 
+- ## [Event on End of Selection? - discuss. CodeMirror _202010](https://discuss.codemirror.net/t/event-on-end-of-selection/2671)
+- No, this doesn’t exist. You might be able to cobble something together by combining a debounced "change" event listener with "mousedown"/"mouseup" handlers that track the mouse button state.
 
-- ## 
+- ## [Selections and Life Cycle - v6 - discuss. CodeMirror _202206](https://discuss.codemirror.net/t/selections-and-life-cycle/4501/5)
+- The editor was losing focus (when you click a button that gets focus) and the document change was causing the DOM selection to get mangled(严重损毁; 使变形; 破坏). But because the editor didn’t consider the DOM selection to be under its control when it isn’t focused, it didn’t repair that. Attached patch adjusts the logic for when to manage the DOM selection to avoid situations like this.
+
 # discuss
 - ## 
 

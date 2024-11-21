@@ -78,7 +78,7 @@ betterdiscordctl -i flatpak install
 
 npx create-strapi@rc strapi5-play-202408 --use-npm --quickstart --ts --skip-cloud
 
-npx create-strapi@latest --ts --use-npm --no-git-init  --example --skip-cloud --skip-db    --quickstart ./emptyFolder
+npx create-strapi@latest --ts --use-npm --git-init  --example --skip-cloud --skip-db    --quickstart ./emptyFolder
 
 stt.message.channel().send('uResetTask')
 stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorithm')
@@ -530,6 +530,25 @@ console.log(';; qryDiffSnap ', snapshotFrameResult)
   - 方案2: 在执行daoPaas.openFile时自动更新文件树的选中状态
 
 - 修复文件树拖拽的背景色
+
+## 1120
+
+- 昨天
+  - 给部分issue添加了关联标签
+  - 可用性测试尝试了2个项目
+- 今天
+  - 修复cde高优先级bugs，特别是打开.sql文件卡顿或打不开
+  - 开始实现全局布局切换相关的快捷键，解决一些浏览器内置的快捷键冲突
+
+## 1119
+
+- 昨天
+    - 解决 add to chat 在前端的循环引用问题
+    - 分别review add to chat在paas和clacky前端的pr，上午合入staging
+- 今天
+    - 梳理linear上的100多个issues，将相关的issue添加关联，有疑问的和测试、产品、老板确认
+    - 完成clacky的体验报告
+    - 开始实现clacky的重点快捷键
 
 ## 1118
 

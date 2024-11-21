@@ -21,6 +21,38 @@ modified: 2023-06-14T00:53:15.226Z
 
 ## 
 
+## 
+
+## 
+
+## codemirror打开大文件如package-lock.json时卡顿
+
+- 原因定位到是 readOnlyRanges 扩展让每次 editorState 更新都会逐行计算readOnly范围
+  - 减少计算的方式是使用自定义memo方法，不用WeakMap的原因是codemirror的editorState是不可变数据结构，更新次数过多，用字符串反而能解决问题
+
+- [javascript - How to create a memoize function - Stack Overflow](https://stackoverflow.com/questions/30386943/how-to-create-a-memoize-function)
+
+```JS
+var myMemoizeFunc = function(passedFunc) {
+  var cache = {};
+  return function(x) {
+    if (x in cache) return cache[x];
+    return cache[x] = passedFunc(x);
+  };
+};
+
+const memoize = (func) => {
+  const results = {};
+  return (...args) => {
+    const argsKey = JSON.stringify(args);
+    if (!results[argsKey]) {
+      results[argsKey] = func(...args);
+    }
+    return results[argsKey];
+  };
+};
+```
+
 ## clacky的.go文件的diff-view在编辑时抛出异常
 
 - rangeError

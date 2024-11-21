@@ -86,7 +86,9 @@ modified: 2024-05-27T09:12:06.925Z
 
 - ## 
 
-- ## 
+- ## [git - warning: ignoring broken ref refs/remotes/origin/HEAD - Stack Overflow](https://stackoverflow.com/questions/45811971/warning-ignoring-broken-ref-refs-remotes-origin-head)
+
+- Since you may have excluded the branch that origin/HEAD was initially pointed to.
 
 - ## 🆚 [Git - see changes across multiple commits? : r/vscode](https://www.reddit.com/r/vscode/comments/y6oti0/git_see_changes_across_multiple_commits/)
   - Jetbrains IDEs have a feature where you can select multiple commits and you can see the files and changes that were made in the selected commits.

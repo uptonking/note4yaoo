@@ -273,22 +273,29 @@ EditorState.transactionFilter.of(tr => {
 
 # discuss
 - ## 
+
 - ## 
+
 - ## 
+
 - ## 
+
 - ## 🌰 [Distinguish User Input Updates - v6 - discuss. CodeMirror _202209](https://discuss.codemirror.net/t/distinguish-user-input-updates/5052)
   - I needed to know if the document had changed due to direct user input in that specific CodeMirror instance, not due to other extensions or an external source changing the document
+
 - ## 🤔 [Are people running into "Calls to EditorView.update are not allowed while an update is in progress" often? - discuss. CodeMirror _202210](https://discuss.codemirror.net/t/are-people-running-into-calls-to-editorview-update-are-not-allowed-while-an-update-is-in-progress-often/5086)
 - The approach of an atomic state updated (from the previous state) in explicit, serial steps is incompatible with firing new updates during an update, so this restriction seems hard to avoid.
   - It is often possible (and preferable, efficiency-wise) to reorganize things in such a way that all the state effects you need originate from a single transaction (in this case, the code that removes the diagnostics plugin would also need to remove the existing diagnostics). Or a transaction extender could be set up to do this.
   - If all that fails for you, I might be open to adding a utility method on EditorView that take a `() => TransactionSpec` function, and makes sure the resulting transaction is applied right after the current update, triggering another update cycle. But again, this feels messy and somewhat sub-optimal.
+
 - ## 🏠 [Codemirror 6: reference to EditorView from EditorState - discuss. CodeMirror](https://discuss.codemirror.net/t/codemirror-6-reference-to-editorview-from-editorstate/2554)
 - This might work better at a level above the view/state, since it needs to orchestrate between multiple views.
   - The editor state intentionally lives in its own ‘world’, away from the view, so there is no function that takes a state and returns a view. 
   - But you can pass in something like a view getter function when creating a state, and arrange things so that that gets access to the view when one has been created.
 - I figured out how to give the state a facet that I can populate with a reference to the view. This seems to be working so far.
+
 - ## [line background layer - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/line-background-layer/7666)
-- It looks like the newlines are not part of the LineBlock items returned by view.viewportLineBlocks. I’ve verified that by looking at view.state.doc.toString().slice(block.from, block.to)
+- It looks like the newlines are not part of the LineBlock items returned by `view.viewportLineBlocks` . I’ve verified that by looking at `view.state.doc.toString().slice(block.from, block.to)`
 
 # discuss-readonly
 - ## 
@@ -302,7 +309,8 @@ EditorState.transactionFilter.of(tr => {
 - ## [How to make certain ranges readonly in CodeMirror6 - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/how-to-make-certain-ranges-readonly-in-codemirror6/3400)
   - I just released codemirror-readonly-ranges extension that easy allow to work with read-only ranges on CodeMirror6.
 - The recommended way to do this is to create a transaction filter that stops transactions which affect those ranges.
-- don’t use undocumented properties like RangeSet.chunk, those may break on any release. Also, you’ll want to use a consistent coordinate system, so using the read-only ranges from tr.startState and the original-document coordinates in the change set seems safer. 
+- don’t use undocumented properties like RangeSet.chunk, those may break on any release. Also, you’ll want to use a consistent coordinate system, so using the read-only ranges from tr.startState and the original-document coordinates in the change set seems safer.
+
 - ## 🧩 [Read-only Facets? - discuss. CodeMirror _202310](https://discuss.codemirror.net/t/read-only-facets/7175)
   - Somewhere else in the codebase I want to read the value of MySpecialNumber. But I don’t want anywhere else in the codebase to register MySpecialNumber.of(...). Its value should be defined internally in this module only.
   - Perhaps like a wrapper class

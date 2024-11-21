@@ -9,6 +9,8 @@ modified: 2024-01-07T15:00:50.079Z
 
 # guide
 
+# job-sources
+- https://www.zhipin.com/web/geek/job-recommend
 # jd-xp
 - 企业招聘ide研发的hc比文本编辑器多很多
 
@@ -178,7 +180,13 @@ modified: 2024-01-07T15:00:50.079Z
 
 - ## 
 
-- ## 
+- ## [数字马力是把人骗进来杀吧，13薪说没有就没有](https://maimai.cn/web/feed_detail?fid=1822308869&efid=S2ZagOF3ijV5rjrNkItZKg)
+- 数字马力对于蚂蚁是不是相当于外企德科对于华为
+  - 是的没错
+
+- https://maimai.cn/web/feed_detail?fid=1851920334&efid=p-bwFNFFx5ER24ELcOTTQg
+- 内包，工作量和薪资都介于外包和正式员工之间
+- 无福利可言 比外包工资高一点，比蚂蚁薪资低很多，比外包卷的多
 
 - ## 我就希望我手下的五个工人不休息加班加点尽快完成这个单，本来我需要给他们80万的工资，在我的残酷压榨下，他们缩短时间提前完成了工作，
 - https://x.com/FedoJerk6571/status/1808097236884377833

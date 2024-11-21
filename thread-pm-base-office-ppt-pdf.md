@@ -16,6 +16,8 @@ modified: 2024-01-11T15:57:32.182Z
 - products
   - design-to-code
   - code-to-design
+# ppt-ai
+- [Presentations and Slide Decks with AI | Gamma](https://gamma.app/)
 # discuss-stars
 - ## 
 

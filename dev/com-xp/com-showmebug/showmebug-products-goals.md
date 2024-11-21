@@ -308,6 +308,13 @@ modified: 2024-05-06T02:52:41.789Z
 - Rules for AI
   - use this for warning the AI of common gotchas in your codebase or for controlling its code style.
 # pm-devin ⛳️
+- devin
+  - 主推 playbook，工作过程记录
+  - 支持 时光机，快速查看某个时刻的编辑器/控制台/browser
+  - 支持 machine snapshot，支持整体备份和恢复
+  - 支持 shell/browser/editor/planner
+  - 支持 vscode直连
+
 - [Devin June '24 Product Update](https://www.cognition.ai/blog/june-24-product-update)
   - playbook
 
