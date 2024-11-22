@@ -247,6 +247,25 @@ modified: 2023-02-06T09:14:40.114Z
   - 底层存 event 的 storage 压力会很大
 - 底层 event sourcer 系统 bookkeeping message 的成本会上去，不过比起轮询对系统造成的压力来说，这个代价基本上算是 net win 
 
+# discuss-cors
+- ## 
+
+- ## 
+
+- ## [Why does my JavaScript code receive a "No 'Access-Control-Allow-Origin' header is present on the requested resource" error, while Postman does not? - Stack Overflow](https://stackoverflow.com/questions/20035101/why-does-my-javascript-code-receive-a-no-access-control-allow-origin-header-i)
+- Regular web pages can use the XMLHttpRequest object to send and receive data from remote servers, but they're limited by the same origin policy. Extensions aren't so limited. An extension can talk to remote servers outside of its origin, as long as it first requests cross-origin permissions.
+
+- The CORS standard is a client-side standard, implemented in the browser. So it is the browser which prevent the call from completing and generates the error message - not the server.
+  - Postman does not implement the CORS restrictions, which is why you don't see the same error when making the same call from Postman.
+  - Why doesn't Postman implement CORS? CORS defines the restrictions relative to the origin (URL domain) of the page which initiates the request. But in Postman the requests doesn't originate from a page with an URL so CORS does not apply.
+
+- A client (most Browsers and Development Tools) has a choice to enforce the Same-Origin Policy.
+  - Most browsers enforce the policy of Same-Origin Policy to prevent issues related to CSRF (Cross-Site Request Forgery) attack.
+  - Postman as a development tool chooses not to enforce SOP while some browsers enforce, this is why you can send requests via Postman that you cannot send with XMLHttpRequest via JS using the browser.
+
+- CORS is a client side measure implemented in the browser and therefore not something which can prevent DDOS attacks from bot farms.
+
+- 🐛 通过fetch请求文件地址响应404和cors问题，可能是文件存储的磁盘未挂载到kong/nginx配置的路径位置
 # discuss
 - ## 
 

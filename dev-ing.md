@@ -529,6 +529,15 @@ console.log(';; qryDiffSnap ', snapshotFrameResult)
   - 方案1: daoPaas提供新api setFileSelected, 让前端手动设置文件选中的状态
   - 方案2: 在执行daoPaas.openFile时自动更新文件树的选中状态
 
+## 1122
+
+- 昨天
+  - 修复cde中文件树相关的多个bug，比较大的调整是默认显示隐藏文件
+  - 实现一部分布局切换相关的快捷键
+- 今天
+  - 实现布局切换和编辑器相关的快捷键
+  - 修复一些cde布局相关的bug
+
 ## 1121
 
 - 昨天
