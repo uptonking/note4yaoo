@@ -15,7 +15,46 @@ modified: 2023-11-01T10:15:06.245Z
 
 - ## 
 
-- ## 
+- ## 🆚️🤼🏻 To thread, or not to thread: How to build high concurrency systems?
+- https://x.com/penberg/status/1860248258808852900
+  - There are two main concurrency models: threads and events, but which one should you choose for your system?
+- A thread is a sequence of instructions that represents an independent flow of control within a program. A thread has its own program counter and a thread, but typically shares other resources such as memory with other threads.
+  - However, sharing resources has a downside too: you must synchronize access to shared resources (for example, with locks); otherwise you may end up corrupting data or having race conditions. Writing correct multi-threaded code can be extremely challenging.
+  - Synchronization a major drawback for high concurrency: it can be hard to get right (risking data corruption and deadlocks) but it is also often inefficient because locking can prevent concurrency.
+- Event-based concurrency departs from the sequential programming model to asynchronous one. 
+  - Instead of having independent sequences of instructions (threads), you express concurrency via event handlers.
+  - An event-based system has an event loop (sometimes referred to as I/O dispatcher) and bunch of event handlers, as illustrated by Ousterhout.
+  - Today, event loops use OS interfaces such as io_uring, epoll, or kqueue, to poll for events such as received network messages or I/O completion, and then call the application specific event handlers to perform work.
+  - However, the asynchronous nature of event-based systems can make the control flow of the system hard to understand, an argument made by Behren et al some years after Ousterhout's critique on threads.
+- Behren et al also make the point that much of the validity of Ousterhout's claim is because of the way threads are implemented as kernel threads. However, implementing threads in user space solves the task switching overheads.
+- If there is no fundamental difference between events and threads, how do you choose between the two? Behren claims that the decision should be based on what is more appropriate for your type of application. But is this still true two decades later?
+  - I think not: thread implementations have consolidated on the inefficient kernel-thread model, using shared data is expensive, and I/O is much faster than the CPU. 
+  - Therefore, lot of high concurrency systems have adopted a thread-per-core approach with event-based concurrency.
+  - tl; dr; For high concurrency systems, an event-based concurrency model seems to be a good default to go for because you're able to take better advantage of hardware capabilities because of practical reasons.
+  - Of course, the core argument remains: you can likely implement thread-based concurrency as efficiently as event-based. In fact, in GPUs, threading model works fine because scheduling and context switching is implemented in hardware itself.
+
+- The third option is virtual threads is cooperative multi tasking  in userland and managed by a virtual machine. Probably want normal threads for CPU bound tasks. Ideally 1 per core. And virtual threads or events based on the architecture.
+
+- The type of workload is important, to be implemented in either ways.
+  - Lightweight threads like Goroutines are cheaper, smaller in size and context switch within the same process is also cheap.
+  - The scheduling algorithms differ, Go is a round robin algorithm… equal but not fair
+- To continue how Go works, as an example of combining this two models…
+  - Go uses different goroutines for different work
+  - Go uses the epoll/kqueue/IOPC for network calls (aka network poller)
+  - Go forks a new OS thread for blocking IO like files.
+  - This approach maximizes throughput 
+  - The chances of forking so many threads is unlikely due to Ulimit descriptors.
+
+- Erlang VM uses managed processes and message passing with the Actor model, where does it fall in your description? It doesn’t seem to fall under events as I understood your description. And it avoids data sharing becomes of the inherent problems.
+  - Runtimes like V8/NodeJS using the event model with async I/O, but achieving concurrency with its single-thread model is quite a hassle I’d say.
+
+- Events then would get handled one after another or in parallel? if parallel, what is running them? I guess threads?
+  - You have parallel execution only if there are multiple cores. Even threads run one after another (although pre-empted) on a single CPU core. Typically, I/O dispatchers are per core so event handling is concurrent, but not parallel.
+
+- You can get much of the benefit of both models using coroutines (fibers, green threads). Your local model is like you know, but the code can stall and do something else useful when a wait is required. FWIW, very high concurrency programming dispenses(去掉, 豁免) with shared memory entirely.
+
+- https://x.com/iavins/status/1860320145383821745
+  - the duality of a man
 # discuss-transactions
 - ## 
 
