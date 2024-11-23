@@ -251,6 +251,12 @@ modified: 2023-02-07T17:38:05.336Z
   - Built with Nextjs framework with Typescript and Chakra UI library with support from MongoDB
   - Login/Register with JWT token authentication
 
+
+- https://github.com/kaiban-ai/KaibanJS /MIT/202411/js
+  - https://www.kaibanjs.com/
+  - a JavaScript-native framework for building and managing multi-agent systems with a Kanban-inspired approach.
+  - If you've used tools like Trello, Jira, or ClickUp, you'll be familiar with how Kanban helps manage tasks. Now, KaibanJS uses that same system to help you manage AI agents and their tasks in real time.
+
 - https://github.com/oldboyxx/jira_clone /js/未使用组件库
   - https://jira.ivorreic.com/project/board
   - simplified Jira clone built with React/Babel (Client), and Node/TypeScript (API)

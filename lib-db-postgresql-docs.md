@@ -10,6 +10,12 @@ modified: 2022-06-13T03:00:51.734Z
 # guide
 
 - [PostgreSQL wiki](https://wiki.postgresql.org/wiki/Main_Page)
+# pg-tips
+- [Don't Do This - PostgreSQL wiki](https://wiki.postgresql.org/wiki/Don%27t_Do_This)
+  - only do it if you know what you are doing
+
+- [PostgresqlCO.NF: PostgreSQL configuration for humans](https://postgresqlco.nf/doc/en/param/)
+  - useful reference for all the PG config options, organized by version
 # docs
 
 ## [16: F.18. hstore — hstore key/value datatype](https://www.postgresql.org/docs/current/hstore.html)

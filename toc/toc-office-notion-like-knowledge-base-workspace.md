@@ -607,6 +607,15 @@ modified: 2022-06-03T21:34:54.893Z
   - 基于Answer. AI的Byaldi、OpenAI的gpt-4o和Langchain 做结构化数据输出
   - 支持从PDF等非结构化文档中提取结构化信息，比如损失历史记录、基本应用程序信息等
 
+- https://github.com/yobix-ai/extractous /apache2/202411/rust
+  - Fast and efficient unstructured data extraction. 
+  - Written in Rust with bindings for many languages.
+  - Extractous offers a fast and efficient solution for extracting content and metadata from various documents types such as PDF, Word, HTML, and many other formats. 
+  - Extractous is 25x faster than the popular unstructured-io library
+  - 高性能非结构化数据提取工具：extractous，比unstructured-io快25倍，支持微软Office、PDF、网页、图片、电子书、邮件等多种格式
+  - Extractous was born out of frustration with the need to rely on external services or APIs for content extraction from unstructured data. 
+    - unstructured-io stood out as the popular and widely-used library for parsing unstructured content with in-process parsing. 
+
 - https://github.com/ucbepic/docetl /MIT/202410/python
   - https://docetl.org/
   - DocETL is a tool for creating and executing data processing pipelines, especially suited for complex document processing tasks. 

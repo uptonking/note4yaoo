@@ -278,13 +278,17 @@ SecretOps:
 # discuss-payment-overseas
 - ## 
 
-- ## 
+- ## Paddle 也支持 Alipay，算上 Stripe ，最后支持全球收款的，反而是这几个国际支付渠道
+- https://x.com/tualatrix/status/1860157697511064012
+- 是Paddle的消费者支付支持alipay，还是开发者收款支持alipay？
+  - 是消费者端
+
+- 就很好玩，国内平台搞不定支付宝循环付款，国外的却能搞定
+  - 嗯，支付宝国内要开循环付款的前提是公司注册资本100万元
 
 - ## 之前考虑用 Paddle 是因为 LemonSqueezy 不支持国内用户支付了，后来 LS又支持国内用户支付了，
 - https://x.com/okooo5km/status/1855050843583922545
   - 加上 LemonSqueezy 的许可管理/推广联盟/邮件推广还挺好用的，省心
-
-
 
 - ## 有实时更新、货币齐全的汇率 API 服务推荐吗？付费的也行。
 - https://x.com/waylybaye/status/1831261104359571586

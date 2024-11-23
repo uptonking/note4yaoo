@@ -66,7 +66,30 @@ modified: 2023-05-14T04:32:30.696Z
   - I tried to solve, when you do not have a connection between nodes for a while and also one of client could have wrong time. (I think it is very popular case when you are making JS framework like @logux_io )
 - it's all tradeoffs, but HLC with some additional checks would still work well for that. You only allow the clock to drift a certain amount (say 60 seconds) and reject messages outside of that range. client would have to start over and lose local changes, but it's their fault
   - You don't want to actually use `Date.now()`, lots of little edge cases with that. Also, CRDTs are conflict free. There are no conflicts.
+# discuss-news
+- ## 
+
+- ## 
+
+- ## [Why the Effect dependency removal? _202411](https://github.com/evoluhq/evolu/issues/499)
+- The Effect is a set of a few good design patterns with an implementation with trade-offs I don't want anymore. I have been using fp-ts and Effect for years
+  - the current Evolu code base is convoluted as hell. I asked the Effect team for help, but despite their best effort (I believe), their advice didn't help. 
+  - Do you use Array.reduce? I like it, but even this tiny function is so complex that many senior developers prefer plain for-of-cycle. The Effect is 1000x more complex. I realized that instead of programming simple code, I spent hours reading Effect docs and tests to figure out which one-liner could replace four lines of a simple code
+  - Every Effect function has dual API, and I often felt like a donkey from Buridan's ass story. And naming...
+  - After a long time (of self-doubt), I realized that writing Effect-less code is more straightforward, faster, and fun. That was the first reason why I had to remove Effect.
+- The second reason is that I lost confidence in my code because it wasn't my code anymore. I wrote code to be run by Effect Runtime, and suddenly, they changed something, and Evolu stopped working. 
+  - I couldn't even debug my code because of unreadable stack traces. That's a no-go for Evolu.
+- The last reason was performance. 
+  - Their Web Worker added solid 4-5ms to any call to DB. I tried to use Effect schema for Evolu Binary Protocol, but it was slow. Please take this point with the context. For standard business enterprise apps, Effect is fast enough; Evolu is a different case.
+
+- So, I removed Effect from Evolu, and you would not believe what happened next. The code is simpler, not as verbose as I was afraid, and I have peace of mind again. When I release the new sync, you will see. The inner circle of Evolu devs already saw it and appreciated it a lot.
+
+- The only issue I had was what to replace Effect Schema with. I decided to avoid dependency and wrote something portable (via adapters) to Zod, io-ts, Effect Schema, or whatever. 
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## Effect reminds me of Rx. I used Rx a lot but I will not use Effect.

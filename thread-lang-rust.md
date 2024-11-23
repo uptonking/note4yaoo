@@ -14,7 +14,10 @@ modified: 2023-10-06T16:26:57.557Z
 
 - ## 
 
-- ## 
+- ## 看来 PingCAP Talent Plan 是彻底抛弃 Rust 了 _202411
+- https://x.com/blackanger/status/1858467762202607932
+- 公司很久之前就 Go 上 Rust 下了。因为不那么核心的部分没那么需要memory safety之类的，快速出原型推向市场看客户反映更关键。
+- 正确选择，Rust对绝大部分创业公司而言都不适合。学习成本偏高
 
 - ## This post on rewriting Rust is very interesting, but I kept thinking: "and where's the stuff you would remove? you would remove stuff, right? not just add stuff?"
 - https://x.com/thorstenball/status/1839202375568892361

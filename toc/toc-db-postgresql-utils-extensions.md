@@ -45,6 +45,9 @@ modified: 2023-10-26T15:29:40.053Z
 - https://github.com/pgq/pgq /sql/c
   - Generic Queue for PostgreSQL
   - PostgreSQL extension that provides generic, high-performance lockless queue with simple API based on SQL functions.
+
+- https://github.com/frectonz/pglite-fusion /MIT/202411/rust
+  - Embed an SQLite database in your PostgreSQL table. AKA multitenancy has been solved.
 # plugins
 
 # utils

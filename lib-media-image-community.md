@@ -21,6 +21,17 @@ modified: 2024-09-16T11:11:14.989Z
 - ## Image zoom hover effect is one of my favourite simple ways to enhance your project
 - https://x.com/davidm_ml/status/1842187323435593944
 
+# discuss-image-ai
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 给产品和网站配图 line art 是一个很好的表现形式，但 AI 生成的这种line art drawing 都没法生成透明的背景。
+- https://x.com/leeoxiang/status/1858321793691623515
+  - 实验下来 http://recraft.ai 效果是最好的，line art + remove bg 生成透明背景的 line art 效果图。
+
 # discuss-tools
 - ## 
 

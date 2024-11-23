@@ -100,6 +100,48 @@ modified: 2023-11-01T14:13:41.390Z
 # discuss-pg-mysql
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🆚️ Postgres and MySQL, the main differences
+- https://x.com/hnasr/status/1859366187534254274
+  - In a nutshell, the main difference between the two databases really boils down to the implementation of primary and secondary indexes, how data is stored and updated and the MVCC implementation.
+  - An index is a data structure (B+Tree mostly) that allows searching for keys through layers of nodes which databases implement as pages
+
+- 🐬 MySQL
+  - In a primary index, the value is the full row object with all the attributes*. This is why primary indexes are often referred to as clustered indexes or another term that I prefer index-organized table. This means the primary index is the table.
+  - Note that this is true for row-store, databases might use different storage model such as column-store, graphs or documents, fundamentally those could be potential values.
+- In a secondary index the key is whatever column(s) you indexed and the value is the primary key for that row. The value of secondary index leaf pages are usually primary keys. 
+  - If you do a lookup on a secondary index, you find the secondary key, and the key's value is primary key for that row. To find the full row you need to scan the primary index using the primary key you found to get the full row. 
+  - So two index scans.
+
+- 🐘 Postgres
+  - Technically in Postgres there is no primary index, all indexes are secondary and all point to system managed tuple ids in data pages loaded in the heap. 
+  - The table data in the heap are unordered, unlike the clustered primary index leaf pages which are ordered.
+  - Postgres tables are often referred to as “heap organized tables” instead of “index organized tables”.
+  - Updates and deletes in Postgres are actually inserts. Every update or delete creates a new tuple id and the old tuple id is kept for MVCC reasons. 
+  - The truth is the tid by it itself is not enough. Really we need both the tuple id and also the page number, this is referred to as c_tid. Think about it, it is not enough to just know the tuple id we need to know which page the tuple live. Something we didn’t have to do for MySQL because we are actually doing a lookup to find the page of the primary key. Whereas in Postgres we are simply doing an I/O to fetch the full row.
+
+- That query in MySQL will cost us two B+Tree lookups*.  We need first to lookup x2 using the secondary index to find x2's primary key which is 1, then do another lookup for 1 on the primary index to find the full row so we return all the attributes (hence the *).
+  - In Postgres looking up any secondary index will only require one index lookup followed by a constant single I/O to the heap to fetch the page where the full row live. One B+Tree lookup is better than two lookups of course.
+
+- Both MySQL and Postgres require a clean up process that removes dead and unwanted data. MySQL implements a process called “purge, ” while PostgreSQL uses “vacuum”.
+  - Purge removes unused undo logs no longer needed either belonging to transactions that already committed or transactions that have rolled back (via a crash) and no longer need the undo log. Too many undo logs can slow down reads.
+  - Postgres vacuum process (or really processes), on the other hand, is designed to reclaim storage occupied by “dead tuples”. As we discussed, when a row is updated or deleted in Postgres, the old version of the row is not immediately removed from disk; instead, it’s marked as dead. The vacuum process cleans up these dead tuples, freeing space for new data and preventing table bloat, but not necessary returning this space back to the operating system.
+
+- MySQL uses threads, Postgres uses processes
+
+- MySQL was designed with the flexibility to extend its storage engine, with InnoDB as the default option. This allowed MySQL to support multiple storage engines, for example it could integrate with RocksDB through MyRocks. 
+  - However, PostgreSQL operates with a single storage engine (heap storage), and adopting a different one would require forking and significantly rewriting the entire system, making such modifications far more challenging.
+
+- 👥 discussion
+
+- if you don’t define a primary key, MySQL will find a way to create one from existing fields, if it couldn’t it generates a new hidden field and makes it the pk
+  - That's not at all the same as a normal PK, it doesn't present externally at all and is only used internally.
+
 - ## I don't think the code bloat for InnoDB in MySQL 8.0 can be undone. 
 - https://x.com/MarkCallaghanDB/status/1839429943861887206
   - The workarounds are MyRocks, MariaDB, MySQL 5.7 forever or Postgres.

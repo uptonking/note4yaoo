@@ -117,6 +117,18 @@ The problem is that the read replica of mysql server are updated by the master s
 - ## [How to use a docker container name instead of IP for DB connection with knex - Stack Overflow](https://stackoverflow.com/questions/56299533/how-to-use-a-docker-container-name-instead-of-ip-for-db-connection-with-knex)
 - The Docker DNS resolution with container names only works from within containers but you could publish the port to the hosts IP/localhost and connect to that
 
+# discuss-drizzle
+- ## 
+
+- ## 
+
+- ## 
+
+- ## With http://drizzle.run, Drizzle Lab CLI, Visualizer, VSCode extension, and Drizzle API (Kit API fork), you can: play with Drizzle in your browser, visualize your schema, transform it to JSON/SQL and back.
+- https://x.com/rphlmr/status/1858201283548811482
+  - It's been over 9 months of dedicated work, making impossible things possible... don't judge me too harshly on the code
+  - As promised, everything I've done around @DrizzleORM is now fully open source.
+
 # discuss
 - ## 
 

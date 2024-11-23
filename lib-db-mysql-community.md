@@ -54,6 +54,31 @@ modified: 2022-06-13T03:00:06.041Z
 # discuss-vendors
 - ## 
 
+- ## 
+
+- ## wesql: MySQL distribution which uses S3 as storage backend
+- https://x.com/iavins/status/1859985872227344451
+- The founder of this project was the founder of PolarDB, which is Aurora of AliCloud. WeSQL does share some design with neon, but this has already became the standard scheme to build a cloud database.
+
+- slatedb dose this too
+
+- what are the deciding factors for relying on an object store vs directly manipulating "disk" blocks (EBS maybe)?
+  - The readme and their site talk about benefits. It's mostly for reliability and ease of scaling as you don't need to manage the infra.
+- I wonder how this is implemented on a relatively coarse grained API like S3 without compromising on query execution latency. For example to list multiple objects they would've to issue individual getobject calls
+  - Depending on the use case, the data transfer costs can also be enormous
+
+- if it works with S3 compatible systems, should work with Minio right?
+  - yes. it is S3 compatible, so Minio etc should be fine.
+- According to the bug tracker cloudflare's S3 compatible storage doesn't seem to be supported yet. Not sure if http://min.io is more compliant?
+  - Not supported yet but it’s on their roadmap.
+
+- That will be very expensive if not written well. Ops on S3 actually cost a lot. Hopefully they do some sort of local WAL and then push to S3. Will check it out for sure
+  - litestream (similar project but for SQLite) is rather cheap in practice, and afaik is implemented exactly this way (WAL)
+
+- S3 performance sucks.  Using it as a store for a relational database is questionable.
+
+- that's indeed a fascinating approach. Currently we are using Debezium to load change data capture stream into S3. This solution seems promising for me.
+
 - ## 🔥 [Azure dropping database support for MariaDB. Users advised to migrate to MySQL | Hacker News_202309](https://news.ycombinator.com/item?id=37715209)
 - 
 - 
@@ -132,6 +157,22 @@ modified: 2022-06-13T03:00:06.041Z
 
 # discuss
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 优先使用 MYSQL 这种最简单，最不容易出错，最好招聘，资料和工具最丰富的技术，因为项目成功率本来就低
+- https://x.com/skywind3000/status/1860161984056135837
+  - 前期探索又尝尝变来变去，你应该把时间花在快速迭代上，等 dau 过百万了，项目也挣大钱了，需求也稳定了，那时候你招堆人进来爱换啥换啥。
+- 什么sql不重要。业务还没起飞，就设计一套扛住春运期间大流量大并发的抢购架构，这就是过度设计。整个技术团队的偏好或者玩的比较熟的是最好的，等业务起飞了，遇到瓶颈了再来考虑换啥。市面上某些公司某些团队，业务QPS不超过100，系统用户不过千，微服务、集群、k8s、配置中心、多级缓存、读写分离
+
+- PostgreSQL 比 MySQL 简单啊, 你看文本都不用区分类型，直接 TEXT，时间戳也不用担心精度和范围，TIMESTAMPTZ 微秒管够。索引想怎么建就怎么建，永远有回转空间。
+  - pgsql运维比mysql难招
+
+- 我的项目也这样，而且MySQL也直接用云厂商的RDS，不用自己维护，不够用时升下配置就好。暂时没碰到扛不住的情况。
+
+- 必须是pg，既支持关系数据，也支持对象存储，还支持向量存储，最关键是真正免费，没有license限制。
 
 - ## Interesting to compare how Uber and GitHub approached their upgrades of MySQL to 8.0 differently
 - https://x.com/rmoff/status/1824510857293811765

@@ -101,7 +101,11 @@ modified: 2023-10-28T17:31:26.535Z
 # discuss-news
 - ## 
 
-- ## 
+- ## Limbo is now self-hosting! You can create and access databases from Limbo, with file format compatibility with SQLite _202411
+- https://x.com/penberg/status/1858496941417484757
+  - There's also now a "limbo-wasm" package with Limbo core compiled into Wasm and I/O using Node's filesystem APIs.
+- Do I correctly understand that you're rebuilding SQLite in pure Rust?
+  - Yes, with two architectural changes: (1) I/O is asynchronous and (2) the core is built for deterministic simulation testing.
 
 - ## In Limbo, I am implementing the SQLite C API with Rust. 
 - https://x.com/penberg/status/1857406118277836856

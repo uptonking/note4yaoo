@@ -488,7 +488,14 @@ function getOffsetX(event) {
 
 - ## 
 
-- ## 
+- ## Revisiting some of React Aria's event handling code today and oh man, pointer events are still an absolute mess. _202411
+- https://x.com/devongovett/status/1860038993796301267
+  - Browsers fire events in different orders, do different things in preventDefault, have different focus behavior, special cases for certain elements, etc.
+  - Not only that, different component libraries also handle events differently. Some rely on mouse events only, some use pointer events, some override preventDefault for their own purposes, etc. Trying to improve compatibility between libraries while ensuring events happen consistently is a tiny needle to thread.
+  - Just found out that as of Safari 17, `<button tabindex=0>` actually works like other browsers! You can tab to it by default even without a special setting, and clicking actually focuses the button. But only when you set an explicit tabindex. This could probably eliminate a lot of workarounds
+
+- Is this mainly because browsers are not following the spec properly, or the spec doesn’t prescribe enough detail?
+  - It’s because the spec is actually quite lenient(宽大的；仁慈的), and explicitly allows implementation specific behavior. Especially in regards to when compatibility mouse events are fired and when focus occurs.
 
 - ## The video shows how @NotionHQ handles window resize on their webapp: they wait until the window resize stops to recalculate the space every section needs.
 - https://twitter.com/hhg2288/status/1740053002076279155
