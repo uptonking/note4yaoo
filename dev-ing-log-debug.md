@@ -28,7 +28,7 @@ modified: 2023-06-14T00:53:15.226Z
 - 多人git fetch会导致其中有人git fetch失败，所以导致数据不一致，解决方案是fetch失败后重试
 
 - root thread会丢失node_modules数据的问题
-  - ？
+  - 原因是使用第三方go-sdk操作git仓库文件导致丢失， 使用原生shell-git命令操作git仓库不会丢失文件
 
 ## codemirror打开大文件如package-lock.json时卡顿
 
@@ -169,6 +169,8 @@ const memoize = (func) => {
 
 - 一开始以为是通信过程中事件处理逻辑的问题，参考1024code和showmebug后不是此问题
   - 调试多层编辑器的渲染，找到触发unmount的条件添加限制来解决问题
+
+- [fix: following ai ui and switch files by uptonking · Pull Request · clacky-ai/clacky-ai-frontend](https://github.com/clacky-ai/clacky-ai-frontend/pull/107/files)
 
 ## 调试idepaas的编辑器不能正常渲染，调试了一晚上加第二天整天 _20240714
 

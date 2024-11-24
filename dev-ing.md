@@ -529,6 +529,20 @@ console.log(';; qryDiffSnap ', snapshotFrameResult)
   - 方案1: daoPaas提供新api setFileSelected, 让前端手动设置文件选中的状态
   - 方案2: 在执行daoPaas.openFile时自动更新文件树的选中状态
 
+## 1124
+
+- [node.js - Yarn local packages dependencies - Stack Overflow](https://stackoverflow.com/questions/48686053/yarn-local-packages-dependencies)
+  - yarn unlink 在原link的文件夹A执行，就会让使用方文件夹B下的node_modules的a包失效
+
+## 1123
+
+昨天
+- 修复一些cde相关的bug
+- 实现了布局切换相关快捷键
+
+今天
+- 实现编辑器和时光机操作相关快捷键
+
 ## 1122
 
 - 昨天

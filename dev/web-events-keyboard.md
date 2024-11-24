@@ -13,12 +13,22 @@ modified: 2023-03-19T20:03:32.594Z
 
 ## [How Discord Implemented App-Wide Keyboard Navigation – Bram.us](https://www.bram.us/2020/12/24/how-discord-implemented-app-wide-keyboard-navigation/)
 
+## [How to Create Custom Keyboard Shortcuts using JavaScript _201903](https://ralzohairi.medium.com/adding-custom-keyboard-shortcuts-to-your-website-b4151fda2e7a)
+
+- 💡 只在事件中处理dom相关操作和参数，可将业务逻辑提取到与dom无关的工具方法
+
+- The keydown event is fired when a key is pressed and the keyup event is fired when a key is released.
+
+- firstly create a boolean reference to help us track whether the key is clicked or not. 
+  - However, it would be a little too much to create a variable for each key. 
+  - For that reason, an object is created with a property for each key code that you want to track down. A key code is usually the ASCII code.
 # utils
 - https://github.com/jamiebuilds/tinykeys /3.8kStar/MIT/202408/ts/体积小
   - https://jamiebuilds.github.io/tinykeys/
   - A tiny (~650 B) & modern library for keybindings
   - In some instances, tinykeys will alias keys depending on the platform to simplify cross-platform keybindings on international keyboards.
-  - Keybindings are made up of a sequence of presses.
+  - Keybindings are made up of a sequence of presses. A press can be as simple as a single key which matches against KeyboardEvent.code and KeyboardEvent.key (case-insensitive).
+  - The purpose of the `AltGraph` key is to type "Alternate Graphics", so you will often want to use the `event.code` (KeyS) for letters instead of `event.key` (S)
 
 - https://github.com/webNeat/ctrl-keys /MIT/202406/ts/NoDeps
   - A tiny, super fast, typescript library to handle keybindings efficiently.
