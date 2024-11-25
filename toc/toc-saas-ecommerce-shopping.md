@@ -78,7 +78,7 @@ modified: 2023-06-07T14:19:18.719Z
   - 前端依赖redux、mui.v5、rematch、marked、react-markdown、JSONStream
   - 支持显示包的历史版本和各版本信息，和npm前端几乎类似
   - Verdaccio comes out of the box with its own tiny database, and the ability to proxy other registries (eg. npmjs.org), caching the downloaded modules along the way
-  - 🔜 使用openvsx的前端替换
+  - 📡 使用openvsx的前端替换
   - A memory based storage plugin.
   - File system storage plugin for verdaccio
   - AWS S3/minio storage plugin for Verdaccio

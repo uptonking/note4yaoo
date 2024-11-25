@@ -525,6 +525,36 @@ console.log(';; qryDiffSnap ', snapshotFrameResult)
 - 为什么 onTaskUpdated 事件会触发2次，中间刚好隔2s，然后 有时中间也会打开文件
   - action状态变化: wip-action1 > 2s > completed > 2s > wip-action2
 
+- 📌 🔜
+  - file-tree search input 支持快捷键隐藏搜索
+  - 隐藏browser面板箭头跟随图标
+
+## 1126
+
+- 昨天
+  - 实现了clacky需求的重点快捷键，包括布局、时光机、编辑器3个方面
+  - 实现了快捷键展示说明的主要ui
+- 今天
+  - 核对文档并在ui上隐藏一些未实现的快捷键，提交快捷键feature的pr
+  - 修复体验测试相关的bug，特别是文件树容易达到1000个文件的限制而无法查看
+  - 实现cde打开已删除文件失败的feature
+
+## 1125
+
+- 上周
+    - 修复部分体验测试反馈的issue
+    - 上线 add to chat
+- 本周
+    - 交付快捷键pr
+    - 实现多个快照切换的feature
+    - 修复cde相关issue
+- 昨天
+  - 实现了部分时光机操作相关快捷键
+  - 在showmebug业务侧，解决了切换编程题时编辑器无法显示的问题，体验还有待改进
+- 今天
+  - 交付快捷键feature的pr
+  - 修复体验测试相关的高优先级bug
+
 - 不在文件树ui而通过api打开文件时，文件树上对应文件没显示选中状态
   - 方案1: daoPaas提供新api setFileSelected, 让前端手动设置文件选中的状态
   - 方案2: 在执行daoPaas.openFile时自动更新文件树的选中状态

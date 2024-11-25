@@ -52,7 +52,7 @@ modified: 2021-07-20T13:50:23.433Z
 - 技术产品: cm-devtools, noseditor, collab-hocuspocus
 - 技术方向js: 协作/ver-`gitdb`/partial-sync, 编辑器/ide, 多维表格/excel; scaling/HA-socket; dnd, floating; 前端版/流式版/oplog; 
 - 技术扩展js/py: 可拖拽的页面编辑器/lowcode, Excel/kanban, 图表
-- 通用能力: collab, ai-search, ai-chat; auth, payment
+- 通用能力: collab, version-history+sync, ai-search, ai-chat; auth, payment
 - 技术扩展ai: rag, search, vector, 知识库搜索与对话
 - 技术业务: client/server版; cms/wiki, airtable/table, db
 - 技术可选1: 画板, pdf/ppt-editor, 图形编辑器
@@ -63,6 +63,7 @@ modified: 2021-07-20T13:50:23.433Z
 - roadmap: virtualized-draggable-table, cm-devtools, cm-noseditor, cm-hocus
   - 📝 编辑器，协作同步，版本分支，~~虚拟渲染, 分支版本, 协作冲突, undo/redo~~
   - 🔀🛢️ crdt版本历史, partial-replica、ivm, delta-db, dynamic-schema/eav, 实时架构
+  - version-history+sync
 - 数据存储架构
   - file-first: obsidian, notable, hexo
   - db-first: joplin, siyuan, nocodb
@@ -115,6 +116,7 @@ modified: 2021-07-20T13:50:23.433Z
 
 - 通用的features
   - collab, realtime, ai
+  - version-history + sync
 
 ## solutions: inter(re)active knowledge-base/wiki
 

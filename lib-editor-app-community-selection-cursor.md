@@ -20,15 +20,6 @@ modified: 2023-11-21T04:37:09.686Z
   - [A React Typescript hook that tracks user text selections & their screen positions](https://gist.github.com/KristofferEriksson/8acb9b3eb241507eb0f6232938bf4ec7)
 - you can pass an `elementRef` . If you are doing that, it'll only capture selections within that element.
 
-# discuss-hotkeys
-- ## 
-
-- ## 
-
-- ## [Chrome - global keyboard shortcut not actually global. - Stack Overflow](https://stackoverflow.com/questions/34366233/chrome-global-keyboard-shortcut-not-actually-global)
-- It could be this: Chrome cannot read keyboard shortcuts for applications running as Administrator, unless Chrome is also ran as administrator. 
-  - I learned this in figuring out why Google Play music shortcuts weren't working in Steam games.
-
 # discuss
 - ## 
 
