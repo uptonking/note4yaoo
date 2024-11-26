@@ -443,6 +443,31 @@ modified: 2024-05-06T02:52:41.789Z
 - chat
   - 是否支持允许代码片段
 
+## v20241126-rerun/undo调整
+
+- ✨ rerun/regenerate 功能调整
+- 只能修改最后一个action
+  - 前面action的工具条不展示regenerate
+- regenerate后~~会添加一个新快照~~，默认打开最新的文件与最初原文件的diff
+
+- diff视图下的action卡片显示位置不能准确定位
+  - diff工具条展示在第一个变更块
+
+- 删除文件的卡片显示在哪里
+  - 对于删除文件，没有regenerate按钮， 只有revert按钮
+
+- ✨ revert/undo功能调整
+- 用户修改会一起revert，符合预期吗
+  - 工具条的revert直接撤销到ai修改前的场景，需要二次确认
+- restore会恢复diff视图
+
+- 🤔 变更文件列表的文件未打开时，revert如何撤销
+  - 直接替换文件
+
+- revert后需要修改action的状态为人工修改黄色
+
+- cmd+z默认只撤销自己的修改，不撤销ai的修改，保持编辑器的修改
+
 ## v20240613-初始化开发环境
 
 - 第一个thread也作为新手引导

@@ -2196,7 +2196,7 @@ const playbackInfo = [
 - 
 - 
 
-### codebase-ide-server
+### codebase-ideServer 🔡
 
 - init-dataflow 前提是sdk已经获取到ideServer的socket连接地址url了
   - AppService使用setInterval发送ideServerHeartBeat到manager
@@ -2230,7 +2230,13 @@ const playbackInfo = [
   - 从mongodb表获取编辑操作数据 playgroundHistoryCRDT.loadAllData(); 
   - 获取代码文件数据 playgroundHistoryBase.findSourceByPlaygroundId()
 
-- 
+- 🔊 mq通信逻辑
+- 在收到manager发过来的playgroundInfo事件时，ideServer会缓存部分状态如console/terminal-history，对发给前端的业务数据用的是先缓存再更新的逻辑然后发给前端
+  - this.playgroundLayerMap.set(playgroundInfo.dockerId, layer); 
+  - await layer.updatePlaygroundInfo(playgroundInfo); 
+  - this.playgroundItem.consumerLayer(data.dockerId); 
+  - this.playgroundItemInfo = cloneDeep(layer.playgroundItemInfo); 
+
 - 
 - 
 - 
