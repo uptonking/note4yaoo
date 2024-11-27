@@ -529,14 +529,26 @@ console.log(';; qryDiffSnap ', snapshotFrameResult)
   - file-tree search input 支持快捷键隐藏搜索
   - 隐藏browser面板箭头跟随图标
   - 将快捷键在win下由cmd改为ctrl
+  - .breakpoints的配置文件改为.1024breakpoint
+
+- 快捷键改进
+  - cmd+shift+f 的描述不包含docs/commands
 
 ## 1127
 
+- [How can I make a div not larger than its contents? - Stack Overflow](https://stackoverflow.com/questions/450903/how-can-i-make-a-div-not-larger-than-its-contents)
+  - display: inline-block
+  - display: table
+  - width: fit-content
+  - width: intrinsic
+  - 让子元素宽度相同的方法： flex: 1 1 0
+
 - 昨天
-  - regenerate和revert撤销的需求评审
-  - 实现并核对了快捷键展示说明的主要ui，快捷键的pr
-  - 排查了ideServer在rgaStatus
+  - 进行了regenerate重试和revert撤销的需求评审
+  - 实现了快捷键展示说明的主要ui，核对了需求文档中的一部份快捷键，还剩一部份
+  - 修复了ideServer未更新rgaStatus的问题
 - 今天
+  - 核对并交付快捷键pr
   - 修复cde高优先级的bug，特别是文件树容易达到1000个文件的限制而无法查看
   - 实现cde打开已删除文件失败的feature
 

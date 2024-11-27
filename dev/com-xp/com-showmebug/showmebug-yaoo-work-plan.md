@@ -76,6 +76,9 @@ modified: 2024-05-06T02:54:40.374Z
 
 ### dev-log
 
+- root-thread项目初始化时，cde环境会生成.1024start/.1024nix文件
+  - 第2个thread创建时，若git fetch失败则fetch下来的代码就没有.1024nix文件，第2个thread的terminal就无法使用
+
 - 底部面板的时光机显示隐藏动画
   - 思路1: 使用css transition修改transform
     - 若隐藏前后使用2个面板组件，则需要在动画结束后手动移除dom
@@ -2237,6 +2240,7 @@ const playbackInfo = [
   - this.playgroundItem.consumerLayer(data.dockerId); 
   - this.playgroundItemInfo = cloneDeep(layer.playgroundItemInfo); 
 
+- 
 - 
 - 
 - 
