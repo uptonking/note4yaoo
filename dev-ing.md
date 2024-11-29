@@ -528,11 +528,54 @@ console.log(';; qryDiffSnap ', snapshotFrameResult)
 - 📌 🔜
   - file-tree search input 支持快捷键隐藏搜索
   - 隐藏browser面板箭头跟随图标
-  - 将快捷键在win下由cmd改为ctrl
   - .breakpoints的配置文件改为.1024breakpoint
 
-- 快捷键改进
-  - cmd+shift+f 的描述不包含docs/commands
+## 1129
+
+- [How to display raw HTML code on an HTML page - Stack Overflow](https://stackoverflow.com/questions/2820453/how-to-display-raw-html-code-on-an-html-page)
+  - Kind of a naive method to display code will be including it in a textarea and add disabled attribute so its not editable.
+  - `<textarea disabled> code </textarea>`
+
+```HTML
+<textarea disabled>
+
+This is the code to create a textarea:
+<textarea></textarea>
+
+</textarea>
+```
+
+- [NextJS build error - ReferenceError: navigator is not defined - Stack Overflow](https://stackoverflow.com/questions/70992277/nextjs-build-error-referenceerror-navigator-is-not-defined)
+  - I added `'use client'` for client side rendering on the top of the component file and it fixed the issue
+
+- [Reference Error: Navigator not defined with nextjs - Stack Overflow](https://stackoverflow.com/questions/63536562/reference-errornavigator-not-defined-with-nextjs)
+  - Browser objects like `window , navigator` etc should be defined in `useEffect` first before use.
+  - Window it's browser object, and the hook will run after it's loaded, that's why it will work
+  - Sometimes the page is pre-rendered on the server and the navigator variable is not declared there. Before calling anything that has the navigator variable, you should check that the code is running in the browser.
+
+- 昨天
+  - 快捷键的pr合到了staging
+  - 修复了cde的一些issues
+- 今天
+  - 处理cde高优先级的bug
+  - 特别是loading页面卡住的问题、文件树最多1000的数量限制
+
+## 1128
+
+- 昨天
+  - 完善了快捷键展示说明的ui
+  - 核对完了需求文档中的快捷键，隐藏未实现的
+- 今天
+  - 核对快捷键的windows系统实现，并提交pr
+  - 处理cde高优先级的bug
+
+- ⌨️ 快捷键改进
+  - essential: cmd+shift+f 的描述不包含docs/commands
+  - editing: ctrl+x/c, ctrl+shift+k, ctrl+[], fileStart用cmd, ctrl+/, ask-ai用cmd+L
+  - search: ctrl+f/h/d
+  - display: cmd+~
+  - ~~将快捷键在win下由cmd改为ctrl~~
+  - ~~cmdk快捷键文案~~
 
 ## 1127
 
@@ -1599,13 +1642,6 @@ console.log(result);
 
 ## 0801
 
-- [How to set background color on terminal · xtermjs/xterm.js](https://github.com/xtermjs/xterm.js/issues/1719)
-  - term.setOption('theme', { background: '#fdf6e3' }); 
-- [Release 5.0.0 · xtermjs/xterm.js](https://github.com/xtermjs/xterm.js/releases/tag/5.0.0)
-  - The deprecated getOption and setOption APIs have been removed in favor of options assignment
-  - term.options.scrollback = 1000; 
-  - term.options.theme = { background: '#ccc' } 注意这里更新是replace而不是merge
-
 - dev-log
   - 讨论了diffView接入使用场景的状态数据流，以及产品细节
   - 修改paas的编辑器，增加了diffView相关api
@@ -1916,9 +1952,6 @@ console.log(result);
   - ~~clacky read_file TODO.md~~
 
 ## 0704
-
-- [Migrate to @xterm org on npm · xtermjs/xterm.js _](https://github.com/xtermjs/xterm.js/issues/4859)
-  - Publish 5.4 to new scope
 
 - 根据thread状态优化cde启动速度
   - ~~每次打开cde都会重新import，要实现skip~~

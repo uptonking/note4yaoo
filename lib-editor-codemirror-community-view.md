@@ -266,6 +266,28 @@ modified: 2024-08-08T20:49:11.571Z
 
 - ## 
 
+- ## 
+
+- ## 💡 [How do I get selected text to highlight? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/how-do-i-get-selected-text-to-highlight/7115)
+- Don’t set non-transparent line backgrounds. The selection is drawn as a layer behind the text, so you’re hiding it.
+- You’ll want to use transparent colors for text background styles. The selection (and other layers) are rendered behind the text, so if you give that an opaque background, you hide anything behind it.
+
+- ## [How can I change the color of selected text? - Stack Overflow](https://stackoverflow.com/questions/12339667/how-can-i-change-the-color-of-selected-text)
+
+```CSS
+/* drawSelection */
+.cm-selectionBackground,
+/* browser-native selection */
+.cm-editor ::selection {
+  background-color: #ccc !important;
+}
+
+/* To reset to the browser's default, rather than drawSelection's custom color*/
+.cm-selectionBackground {
+  background-color: highlight !important;
+}
+```
+
 - ## [CSS style for border of editor - discuss. CodeMirror](https://discuss.codemirror.net/t/css-style-for-border-of-editor/3097)
 - If you are using v6, you can do something like:
 

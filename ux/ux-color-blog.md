@@ -9,6 +9,22 @@ modified: 2022-11-30T16:33:25.382Z
 
 # guide
 
+
+- [Hex transparency in colors - Stack Overflow](https://stackoverflow.com/questions/15852122/hex-transparency-in-colors)
+  - 0% = #00  HEX
+  - 10% = #16  1A
+  - 20% = #32  33
+  - 30% = #48  4D
+  - 40% = #64  66
+  - 50% = #80
+  - 60% = #96  99
+  - 70% = #112 B3
+  - 80% = #128 CC
+  - 85% =      D9
+  - 90% = #144 E6
+  - 95% =      F2
+
+
 # [Radix UI - Understanding the scales of color palettes](https://www.radix-ui.com/docs/colors/palette-composition/understanding-the-scale)
 - There are 12 steps in each scale. 
   - Each step was designed for at least one specific use case.

@@ -80,6 +80,9 @@ git checkout c5f567 -- file1/to/restore file2/to/restore
 git branch --set-upstream-to=origin/my_branch
 git branch -u origin/my_branch
 
+# To rename the current branch
+git branch -m newname
+
 ```
 
 - commit相关

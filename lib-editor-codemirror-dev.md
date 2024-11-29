@@ -30,7 +30,7 @@ modified: 2021-05-06T09:38:31.520Z
   - collab基于ot变体，非标准ot
   - ssr默认不支持, 但有方案支持
   - 顶层容器不支持CSS transform 3d，但支持transform2d(用于画板缩放的场景, 但ace/monaco支持3d，有改进)
-  - 使用了自定义css-in-js方案，但也支持css覆盖样式
+  - 使用了自定义css-in-js方案(runtime-css会降低性能)，但也支持css覆盖样式
 
 - features
   - dispatch高性能，只写不读

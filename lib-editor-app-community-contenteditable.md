@@ -63,7 +63,7 @@ modified: 2023-06-16T02:53:00.115Z
 
 - The legitimate answer I've seen is don't. Perhaps https://developer.mozilla.org/en-US/docs/Web/API/EditContext_API is a better place to look but alas it's chromium only ATM. I'm not sure if Mozilla and WebKit are opposed or just haven't prioritised yet.
 
-- ## TIL about `field-sizing: content` in css
+- ## ✨ TIL about `field-sizing: content` in css， chrome默认启用
 - https://x.com/destroytoday/status/1835405977316655563
   - 支持自动增加高度为内容高度
   - it’s on by default on Chrome vs behind a flag. I read a post that said Safari committed to implement it
