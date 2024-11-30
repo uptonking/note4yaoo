@@ -45,9 +45,17 @@ modified: 2024-03-30T05:55:54.349Z
 
 - ## 
 
-- ## 
+- ## [LibJS JavaScript Engine | Hacker News _202203](https://news.ycombinator.com/item?id=30857705)
+  - https://serenityos.github.io/libjs-website/
 
-- ## 
+- What is the draw here compared to other JS engines (either v8/JSC/spidermonkey on the big end or something like quickJS/duktape on the small end)?
+  - All those other engines are cross-platform, whereas LibJS is UNIX only and actually very dependent on SerenityOS libraries (so not really a portable UNIX library), but that's apparently the intended design.
+- To be fair both JavaScriptCore and V8 heavily rely on the base C++ libraries that are part of Chromium and Webkit.
+
+- ## Looks like LibJS from @ladybirdbrowser is currently the most complete implementation of the JavaScript language according to test262
+- https://x.com/awesomekling/status/1862516765642686637
+  - https://test262.fyi/
+- Major vendors are extremely competent! Our score is mainly higher because we implement new language features eagerly when they are specced, and we enjoy improving our spec compliance by tracking down random edge cases and fixing tests
 
 - ## Graal.js is a JS engine, implemented in Java, executed on GraalVM. 
 - https://x.com/birch_js/status/1804430816010973518

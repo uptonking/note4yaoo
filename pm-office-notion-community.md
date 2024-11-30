@@ -513,6 +513,16 @@ modified: 2023-11-28T14:48:45.910Z
   - 最开始把服务端代码搬到 web worker 实现，client-server 一体放在 web 中，实现了离线可用。
   - 现在把 web worker 的代码复用，port 到边缘环境（Cloudflare worker/ Deno deploy ）公网可访问，实现发布服务，只需要少量的适配就行了。 设计模式真伟大
 
+# discuss-notion-cons
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 再提供一个想法，赚钱了分我一成就行：将 Notion 当数据库提供类似 Vercel 自定义域名的能力，以及各种主题可以选择。
+- https://x.com/_Xheldon/status/1860691877357580581
+  - 难点在于因为 Notion 任何集成并发限制是3次/秒，公共集成基本不可能，需要用户自己生成集成，这点跟小白目标群体有冲突，而且跟 Notion 已有的自定义域名能力是竞争关系
 # discuss-showcase
 - ## 
 

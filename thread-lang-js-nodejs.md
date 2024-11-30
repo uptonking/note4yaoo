@@ -58,14 +58,21 @@ modified: 2023-11-10T07:10:19.089Z
   - defacto standard at this point
 - their firecracker(爆竹，鞭炮; 杰出或激动人心、有吸引力的人或事物) vm is worth looking into if you want to get further back there in the backend and look at infra. i would imagine they are designing something purpose-built for it.
 - IMO WinterCG should eventually work on standardizing the subset of the Node API that runtimes can implement to get “enough” compatibility. Maybe not time yet though
-# discuss-nodejs-ts
+# discuss-nodejs-ts ⤴️
 - ## 
 
 - ## 
 
 - ## 
 
-- ## 
+- ## Problem: You want to use Node with TypeScript.
+- https://x.com/housecor/status/1861890234033766408
+- --experimental-strip-types + --experimental-require-module  is honestly my favorite now. No build step, no new dependencies, supported everywhere node is reasonably up to date
+
+- Also worth mentionning @unjsio unbuild : https://github.com/unjs/unbuild
+
+- when you need hot reload, all compiler are ugly and complex, you have to write  more  config and
+install more packages. only Bun is zero config, and it is not a compiler, it's runtime environment
 
 - ## [Node.js adds experimental support for TypeScript | Hacker News _202407](https://news.ycombinator.com/item?id=41064351)
 - One thing to note is that it is impossible to strip types from TypeScript without a grammar of TypeScript. Stripping types is not a token-level operation, and the TypeScript grammar is changing all the time.

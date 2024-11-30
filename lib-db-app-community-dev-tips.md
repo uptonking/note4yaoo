@@ -78,6 +78,16 @@ modified: 2023-11-07T16:47:11.499Z
 - 
 - 
 
+# discuss-datetime ⌚️
+- ## 
+
+- ## 
+
+- ## great advice from @simonw on how to store timestamps in a database
+- https://x.com/iavins/status/1861468050748514547
+- It is very important to note that this advice applies only if the event takes place within a single timezone.
+
+- The word “local” is ambiguous. If the timestamp is generated at the server sitting in a cloud and unless you have laws to govern data within country, you won’t know what value it would be. UTC is the universal truth.
 # discuss
 - ## 
 

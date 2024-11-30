@@ -13,12 +13,16 @@ modified: 2023-12-26T19:10:48.719Z
 
 # bundler
 
+- https://github.com/unjs/unbuild /MIT/202411/ts
+  - A unified JavaScript build system
+  - rollup based bundler that supports typescript and generates commonjs and module formats + type declarations
+  - Automagically infer build config and entries from package.json.
+
 - https://github.com/godaddy/radpack /MIT/202312/js
   - Radpack fuses the best of both worlds by taking advantage of build-time bundling, with graph-based run-time loading to prevent wasteful waterfalls.
   - Bundlers like Webpack do a great job at providing a toolset needed to deliver an optimal out-of-the-box delivery solution for your end-users. 
   - Most loaders on the other hand, are focused on delivering only the requested assets, as they are needed. 
   - Radpack fuses the best of both worlds by taking advantage of build-time bundling, with graph-based run-time loading.
-
 
 ## webpack-powered
 

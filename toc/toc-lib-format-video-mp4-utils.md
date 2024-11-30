@@ -10,6 +10,18 @@ modified: 2024-04-14T12:19:52.096Z
 # guide
 
 # popular
+- https://github.com/motion-canvas/motion-canvas /16.2kStar/MIT/202410/ts
+  - https://motioncanvas.io/
+  - A TypeScript library that uses generators to program animations.
+  - An editor providing a real-time preview of said animations.
+  - It's a specialized tool designed to create informative vector animations and synchronize them with voice-overs.
+
+- https://github.com/redotvideo/revideo /MIT/202410/ts
+  - https://re.video/
+  - Revideo is an open source framework for programmatic video editing. 
+  - It is forked from the amazing Motion Canvas editor, with the goal of turning it from a standalone application into a library that developers can use to build entire video editing apps.
+  - Revideo lets you create video templates in Typescript and deploy an API endpoint to render them with dynamic inputs. It also provides a React player component to preview changes in the browser in real-time. 
+
 - https://github.com/liqvidjs/liqvid /MIT/202406/ts
   - https://liqvidjs.org/
   - a library for creating interactive videos in React
@@ -20,6 +32,12 @@ modified: 2024-04-14T12:19:52.096Z
   - https://remotion.dev/
   - creating videos programmatically using React.
   - [Remotion 5.0 license change _202404](https://github.com/remotion-dev/remotion/pull/3750)
+  - https://github.com/c0/remotion-playground
+    - 水滴聚合分散的效果，基于remotion实现
+  - [A Modern FREE Open Source Video Editor : r/reactjs _202308](https://www.reddit.com/r/reactjs/comments/15vv6yu/a_modern_free_open_source_video_editor/)
+- https://github.com/thecmdrunner/remotion-render-alternatives
+  - WIP: An alternative to using Remotion Lambda or Cloudrun for rendering Remotion videos in the cloud
+  - This is a Next.js template for building programmatic video apps, with @remotion/player and @remotion/lambda built in.
 # apps
 - https://github.com/lyonbot/video-to-gif /202404/ts
   - https://lyonbot.github.io/video-to-gif/

@@ -9,7 +9,21 @@ modified: 2023-10-06T16:26:57.557Z
 
 # guide
 
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## I learned Rust by typing out examples, making mistakes, and fixing them
+- https://x.com/penberg/status/1862209708301386124
+  - The problems tend to be localized enough for you to solve them as a beginner.
+  - So i bought two Rust books, typed out all the examples, made mistakes, and eventually learned how to write Rust!
+
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

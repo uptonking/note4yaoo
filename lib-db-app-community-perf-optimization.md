@@ -14,7 +14,11 @@ modified: 2023-10-26T19:00:02.186Z
 
 - ## 
 
-- ## 
+- ## To optimize performance, We( @DatabendLabs )’ve done: 
+- https://x.com/BohuTANG/status/1862364484100399594
+  - 1. Adopted efficient compression like zstd. 
+  - 2. Optimized warehouse processor scheduling to hit S3 max bandwidth. 
+  - 3. Merged S3 requests to minimize API call overhead.
 
 - ## 正在做一个web应用，数据库某个表可能会有100w量级的数据，假如单纯使用nextjs + supabase 方案，问题大吗？
 - https://twitter.com/wsygc/status/1775093291165634871
@@ -26,7 +30,6 @@ modified: 2023-10-26T19:00:02.186Z
 - 百万在数据库领域是个小数目，做好索引即可
 - 100w数据量，都不叫数据，随便折腾，mysql也算是千万级的，更高就上clickhouse
 - 100G 也不算多，MySQL 一把梭，查询很轻松，只要做好索引就好了, 实在多了就分区分表。
-
 
 - 没用过supabase，以mysql好久之前的版本为基准，没索引的情况下，全表扫描1s在100w~200w数据，魔改版应该会快，索引做好，就没啥事
 # discuss-vendors

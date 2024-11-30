@@ -194,6 +194,14 @@ modified: 2023-09-17T17:37:19.913Z
 
 - ## 
 
+- ## 
+
+- ## 现在数据库用 Rust 写 extensions 越来越流行了
+- https://x.com/yihong0618/status/1860542339267330185
+  - pg -> pgrx
+  - sqlite-> sqlite-loadable-rs
+  - duckdb -> extension-template-rs
+
 - ## 🎞️ How Zoom supports 300 million video calls a day:
 - https://x.com/systemdesign42/status/1806551695331139635
   - They use scalable video coding (SVC) to stream video

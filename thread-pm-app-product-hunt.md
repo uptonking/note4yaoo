@@ -12,6 +12,14 @@ modified: 2022-12-04T16:34:29.342Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 发现一个很有意思的网站, 后悔排行榜, 记录了那些事情最让人后悔, 不过现在数据很少
+- https://x.com/holegots/status/1861020569136963702
+  - regrets.io
+
 - ## Product Hunt 现在的风评越来越差，许多产品存在着明显的买票行径，底下还充斥着大量虚假的AI评论，
 - https://x.com/javayhu/status/1840605946500002247
   - 很多独立开发者都苦不堪言进而讨厌PH，后起之秀microlaunch、devhunt、uneed之流，个个都摩拳擦掌，意欲取而代之。

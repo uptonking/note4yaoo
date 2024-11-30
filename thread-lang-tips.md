@@ -14,7 +14,16 @@ modified: 2021-04-30T11:10:26.083Z
 
 - ## 
 
-- ## 
+- ## 1 billion nested loop iterations
+- https://x.com/BenjDicken/status/1861072804239847914
+  - https://benjdd.com/languages
+  - https://github.com/bddicken/languages
+  - Java and Kotlin are quick! Possible explanation: Google is heavily invested in performance here.
+  - Js is really fast as far as interpreted / jit languages go.
+  - Python is quite slow without things like PyPy.
+- Have you seen the 1 billion row challenge from @gunnarmorling ? https://morling.dev/blog/one-billion-row-challenge/ also compares different languages, see the Show and Tell list
+
+- Implementing the code identically in different languages instead of using recommended patters skews the results, even while sticking to built-in functionality. Example: by using list comprehension in Python it'll run at the same speed as Ruby
 # discuss-ruby
 - ## 
 

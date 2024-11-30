@@ -258,6 +258,30 @@ modified: 2023-02-08T07:20:48.475Z
   - OmAgent是一个多模态智能体系统，专注于利用多模态大语言模型能力以及其他多模态算法来做一些有趣的事
   - 包含一个专为解决多模态任务而设计的轻量级智能体框架omagent_core。我们利用这个框架搭建了超长复杂视频理解系统——OmAgent，当然你可以利用它实现你的任何想法。
   - DnCLoop: 受到经典算法思想Divide and Conquer启发，我们设计了一个递归的通用任务处理逻辑，它将复杂的问题不断细化形成任务树，并最终使复杂任务变成一组可解得简单任务。
+# ai-sdk
+- [AI SDK Cookbook](https://sdk.vercel.ai/cookbook)
+  - An open-source collection of recipes and guides for building with the AI SDK.
+# open-agent
+- https://github.com/modelcontextprotocol/servers /MIT/202411/python
+  - https://modelcontextprotocol.io/
+  - A collection of reference implementations and community-contributed servers for the Model Context Protocol (MCP). This repository showcases the versatility and extensibility of MCP, demonstrating how it can be used to give Large Language Models (LLMs) secure, controlled access to tools and data sources.
+  - Each MCP server is implemented with either the Typescript MCP SDK or Python MCP SDK.
+  - https://x.com/alexalbert__/status/1861464485011300839
+    - The future of MCP is truly going to be community-led and not controlled by any single entity.
+    - Here are some of the highlights I'm seeing from across the industry:
+    - Replit is looking into adding MCP support to Agents
+    - Sourcegraph has already added MCP to Cody and you can go try it out right now!
+    - Zed has added MCP support in their editor, also available to try out!
+    - Github Copilot is working with MCP
+    - Codeium is using MCP to improve Windsurf's capabilities
+  - https://x.com/alexalbert__/status/1861453744216453309
+    - we do have a few clients beside Claude desktop that have already integrated MCP in production (Zed, Sourcegraph, etc).
+
+- https://github.com/QwenLM/Qwen-Agent /tongyi/202411/python
+  - https://pypi.org/project/qwen-agent/
+  - Agent framework and applications built upon Qwen>=2.0, featuring Function Calling, Code Interpreter, RAG, and Chrome extension
+  - 基于Qwen2.0的agent框架：Qwen-Agent，它有指令遵循、工具使用、做规划和记忆能力
+  - 基于Qwen-Agent的一个Chrome浏览器扩展，一个智能浏览器助手：BrowserQwen, 它可以基于当前页面或文档跟你对话、能记住你浏览过的内容进行总结、可以解决数学问题、数据图表可视化
 # ollama
 - https://github.com/open-webui/open-webui /MIT/202405/svelte/python
   - https://openwebui.com/
@@ -362,6 +386,15 @@ modified: 2023-02-08T07:20:48.475Z
   - Free Commercial Use. Starting from April 2024, both V2 and V1 are released under MIT License. 
   - OpenVoice has been powering the instant voice cloning capability of myshell.ai since May 2023. 
   - 即时语音克隆工具，只需从参考资料中截取一段简短的音频即可实现克隆。可详细控制语音风格，包括情感、口音、节奏、停顿和语调。生成多种语言的语音。
+# rag-knowledge-base
+- https://github.com/pingcap/autoflow /apache2/202411/python
+  - https://tidb.ai/
+  - pingcap/autoflow is a Graph RAG based and conversational knowledge base tool built with TiDB Serverless Vector Storage.
+  - An open source GraphRAG (Knowledge Graph) built on top of TiDB Vector and LlamaIndex and DSPy.
+  - UI交互类似chatgpt
+  - https://x.com/9hills/status/1862522244527972625
+    - RAG Demo 到 RAG Application 难度的完美表现，其实功能不算丰富（增加了 Graph RAG和 Agent RAG 的思想），
+    - 代码却不得不做的非常复杂，大部分其实是应用逻辑。 P. S. 代码已经成熟到可以直接抄了，直接复刻就完了
 # rag-search
 - https://github.com/Cinnamon/kotaemon /apache2/202409/python
   - https://cinnamon.github.io/kotaemon/
