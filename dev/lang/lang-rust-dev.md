@@ -31,7 +31,8 @@ modified: 2022-11-11T06:57:09.670Z
 
 - [Rust语言圣经(Rust Course)](https://course.rs/about-book.html)
   - https://github.com/google/comprehensive-rust
-  - L👨🏻‍🏫 Rust course used by the Android team at Google
+  - https://google.github.io/comprehensive-rust/index.html
+  - 👨🏻‍🏫 Rust course used by the Android team at Google
 
 - [Rust Language Cheat Sheet](https://cheats.rs/)
 

@@ -120,6 +120,8 @@ modified: 2024-05-02T02:01:04.255Z
   - HighlightJS does not solve Problem 1, and for Problem 2, HighlightJS can attempt to determine the coding language but at an expensive network and compute cost.
 - Given HighlightJS’s limitations, my team at Pieces built and published the CodeDetectionAPI to solve Problems 1 and 2 in our app with machine learning while achieving optimal network and compute performance.
 # more
+- https://dev.to/thinkthroo/execa-vs-using-childprocess-to-execute-cli-commands-programmatically-1mjm
+
 - [CodeMirror Accessible](https://bgrins.github.io/codemirror-accessible/)
 
 - [Interactive Code Editor Tutorial: Managing Dynamic Content with react-codemirror - DEV Community _202410](https://dev.to/mrsupercraft/interactive-code-editor-tutorial-managing-dynamic-content-with-react-codemirror-3i7g)

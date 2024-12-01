@@ -45,8 +45,10 @@ modified: 2021-07-20T13:50:23.433Z
     - 产品方向: 偏设计布局， 偏业务逻辑
 
 - lts-tech-stack
-  - vscode: monaco-editor + electron
+  - 🌰lts: vscode, git
+  - vscode: monaco-editor + electron, code-server
   - codemirror/prosemirror: state + view + commands + transform/ot/collab + virtualized
+  - rspack: js plugin
 
 - 技术细节: virtualized, draggable, table(eav)
 - 技术产品: cm-devtools, noseditor, collab-hocuspocus

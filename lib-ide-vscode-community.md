@@ -12,7 +12,8 @@ modified: 2024-08-24T16:15:47.613Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## [Why VSCode doesn't use any front end framework | Hacker News _202403](https://news.ycombinator.com/item?id=39676050)
+- > what many people don't know is that we decided to not use any UI frameworks from the beginning, and that's still true today because performance is very important to us, and we want to be fully in control of our own destiny. So we don't want to chase a framework or track down performance from in the framework, we want to be directly as close to the DOM as possible.
 
 - ## [Vscode设置选项过多，是否反人类？ - 知乎](https://www.zhihu.com/question/646432493)
 - VSCode 的设置项整体是基于 JSON 的，Ctrl+, 打开的图形化界面只是一层很薄的封装而已。我认为这实际上反而是很容易配置的。我其实是建议大多数时候不要依赖于图形化界面的配置，直接去改 settings.json

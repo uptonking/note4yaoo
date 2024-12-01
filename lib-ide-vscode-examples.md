@@ -28,7 +28,7 @@ modified: 2024-08-24T16:15:54.137Z
       - ✨ 在 Web 环境下，前后端会建立一条 WebSocket 连接
       - 在 Electron 环境下，则会建立一条 Socket 连接进行进程间通信(IPC)
     - 核心功能的代码都是可以在 Web/Electron 端复用的，因为 connection 模块屏蔽了大部分平台、底层通信协之间的差异, connection 模块基于 JSON-RPC 2.0 实现了一个 RPC 框架，将 Web 与 Electron 端通信过程通过 RPC 协议来封装起来
-  - 🔀 支持使用 3-way merge editor 新交互来解决代码冲突
+  - 🔀 支持使用 3-way merge editor 新交互来解决代码冲突, (vscode本身支持)
   - 提供了ai模块
   - 🤝 协同编辑模块目前只支持 Browser + Node 的 Cloud IDE 场景, 当前的设计考虑的是客户端(Browser)/服务端(Node)一对一的架构
     - 不支持纯前端与 Electron 平台
@@ -117,6 +117,7 @@ modified: 2024-08-24T16:15:54.137Z
   - the Open VSX Registry is the pre-set extension gallery in VSCodium. Using the extension view in VSCodium will therefore by default use it.
   - [Run vscodium in browser](https://github.com/VSCodium/vscodium/discussions/1469)
     - is there a definitive answer for a web version of vscodium?
+    - AFAIK, the code-server seems to be the best option for now
   - [Switching between marketplaces](https://github.com/VSCodium/vscodium/issues/519)
     - If it helps anyone, there's a AUR (Archlinux User Repository) that adds the VSCode marketplace to VSCodium. 
 
@@ -130,11 +131,17 @@ modified: 2024-08-24T16:15:54.137Z
 - https://github.com/Felx-B/vscode-web /MIT/202311/js
   - This project is aimed to build a web version of VSCode, this is not a fork, simply a web compilation of the VSCode project.
   - Microsoft recently open sourced VSCode web compilation, so I simplified the build process to use the official compilation (no more tweak needed).
+
+- https://github.com/antfu/vscode-browse-lite /ts
+  - Embedded browser in VS Code
 # vscode-server
-- https://github.com/coder/code-server /MIT/202405/ts
+- https://github.com/coder/code-server /68.8kStar/MIT/202411/ts
   - https://coder.com/
   - Run VS Code on any machine anywhere and access it in the browser.
   - Requirements: Linux machine with WebSockets enabled, 1 GB RAM, and 2 vCPUs
+  - 👍🏻 pros: auth, patch-vscode, 通过第三方支持collab, terminal, easy to self-host, production-ready
+  - 👎🏻 cons: slow to dev/build
+  - code-server --auth none --port 8080
   - https://github.com/coder/coder /AGPLv3
     - Provision remote development environments via Terraform
   - 🆚 [Difference to OpenVSCode Server _202109](https://github.com/coder/code-server/discussions/4267)
@@ -159,14 +166,29 @@ modified: 2024-08-24T16:15:54.137Z
     - OpenVSCode-Server is scoped at only making VS Code available as-is in the web browser. 
       - code-server contains additional changes to make the self-hosted experience better 
 
-- https://github.com/gitpod-io/openvscode-server /MIT/202405/ts
+- https://github.com/gitpod-io/openvscode-server /5.1kStar/MIT/202411/ts
   - This project provides a version of VS Code that runs a server on a remote machine and allows access through a modern web browser. 
   - It's based on the very same architecture used by Gitpod or GitHub Codespaces at scale.
   - in 2019 the VS Code team started to refactor its architecture to support a browser-based working mode. While this architecture has been adopted by Gitpod and GitHub, the important bits have not been open-sourced, until now. As a result, many people in the community still use the old, hard to maintain and error-prone approach.
   - At Gitpod, we've been asked a lot about how we do it. So we thought we might as well share the minimal set of changes needed 
   - [VS Code in the browser for everyone - Blog _202109](https://www.gitpod.io/blog/openvscode-server-launch)
+
+- https://github.com/xaberus/vscode-remote-oss /MIT/202405/ts
+  - Remote development for OSS Builds of VSCode like VSCodium
+  - This extension allows you to use the existing remote extension host (REH) machinery of VSCode for OSS builds
+  - Note: If you want an alternative that is limited to either SSH tunnels or WSL, you can try the extensions open-remote-ssh or open-remote-wsl instead.
 # vscode-collab
-- https://github.com/sekassel-research/vscode-collab-plugin /ts
+- https://github.com/eclipse-oct/open-collaboration-tools /MIT/202408/ts
+  - https://www.open-collab.tools/
+  - ⚖️ Open Collaboration Tools: live-sharing solution for Eclipse Theia, VS Code and other editors and IDEs
+  - This is how it works: one person starts a collaboration session as host and invites others to join. The IDE extension distributes the contents of the hostʼs workspace and highlights text selections and cursor positions of other participants. 
+  - A public instance of the collaboration server is available at open-collab.tools.
+  - [Announcing the Open Collaboration Tools | TypeFox _202407](https://www.typefox.io/blog/open-collaboration-tools-announcement/)
+    - It's a collection of libraries and tools for live-sharing of IDE contents, designed to boost remote teamwork with open technologies.
+    - The basic idea is simple: one person starts a collaboration session as host and invites others to join. The IDE extension distributes the contents of the hostʼs workspace and highlights text selections and cursor positions of other participants. 
+    - A VS Code Extension available on Open VSX and the VS Code Marketplace
+
+- https://github.com/sekassel-research/vscode-collab-plugin /202306/ts/archived
   - Collaborative editing plugin for VSCode/code-server/fulib.org Projects
   - This extension is designed to work with code-server and allows for real-time synchronization of work on projects. 
   - However, it's important to note that this synchronization only works when users are working on the same directory. 

@@ -15,9 +15,30 @@ modified: 2024-02-04T19:53:29.532Z
   - https://github.com/wangdoc/bash-tutorial
   - 本教程介绍 Linux 命令行 Bash 的基本用法和脚本编程
 
-- Bash 提供四个特殊语法，跟变量的默认值有关，目的是保证变量不为空。
+- Bash 变量名区分大小写，HOME和home是两个不同的变量。
+- Bash 没有数据类型的概念，所有的变量值都是字符串。
+
+- Bash 允许字符串放在单引号或双引号之中，加以引用。
+  - 单引号用于保留字符的字面含义，各种特殊字符在单引号里面，都会变为普通字符，比如星号（*）、美元符号（$）、反斜杠（\）等
+  - 双引号比单引号宽松，大部分特殊字符在双引号里面，都会失去特殊含义，变成普通字符。
+
+- echo
+  - echo "$a" 可以打印变量值
+
+- `$?`为上一个命令的退出码，用来判断上一个命令是否执行成功。返回值是0，表示上一个命令执行成功；如果不是零，表示上一个命令执行失败
+
+- check file exists in bash, -e vs -f
+  - -e: Returns true if the file or directory exists, regardless of its type (regular file, directory, symbolic link, etc.)
+  - -f: Returns true only if the file is a regular file (not a directory, symbolic link, etc.).
+
+- Bash提供四个特殊语法，跟变量的默认值有关，目的是保证变量不为空。
 
 ```shell
+# 变量var1声明, 等号两边不能有空格, 变量可以重复赋值; 读取变量用$var1
+variable=value
+# 如果变量的值包含空格，则必须将值放在引号中。
+var1="hello world"
+# 读取变量的时候，变量名也可以使用花括号{}包围，比如$a也可以写成${a}。
 
 # 如果变量varname存在且不为空，则返回它的值，否则将它设为word，并且返回word。
 # 它的目的是设置变量的默认值。${count:=0}表示变量count不存在时返回0，且将count设为0。
@@ -44,13 +65,8 @@ ${varname:?message}
 # [ -e file ]：如果 file 存在，则为true。
 # [ -d file ]：如果 file 存在并且是一个目录，则为true。
 
-
 ```
 
-- echo
-  - echo "$a" 可以打印变量值
-
-- `$?`为上一个命令的退出码，用来判断上一个命令是否执行成功。返回值是0，表示上一个命令执行成功；如果不是零，表示上一个命令执行失败
 # blogs
 - [一篇教会你写90%的shell脚本 - 知乎](https://zhuanlan.zhihu.com/p/264346586)
 # tips

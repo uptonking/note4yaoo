@@ -72,7 +72,55 @@ modified: 2024-01-02T07:53:22.956Z
   - 默认使用esm入口，即dist/index.mjs，而不是index.js
 # changelog
 
-## v2023
+## v1.0
+
+- [Announcing Rspack 1.0 - Rspack _20240828](https://rspack.dev/blog/announcing-1-0)
+- New features
+  - Better performance
+  - Better compatibility
+  - Smaller bundle size
+  - Support for Module Federation 2.0
+  - Stable API and new website
+
+- [Migrating from Rspack 0.x - Rspack](https://rspack.dev/guide/migration/rspack_0.x)
+- The default value of experiments.css has been changed from true to false.
+  - In Rspack 0.x, experiments.css was enabled by default, which means files ending with*.csswere automatically treated astype: 'css/auto' without needing to manually include other loaders to process CSS files.
+- The default value of optimization.concatenateModules has been changed from false to: true when mode is 'production'.
+  - allowing multiple modules to be concatenated into a single module to reduce output size and improve compression efficiency.
+- The default value of devtool has been changed from false to: eval when mode is 'development'.
+  - @rspack/cli overrides the default devtool value from @rspack/core. Therefore, if you are using @rspack/cli, this change will not affect you.
+
+- To streamline the core, Rspack 1.x has removed the built-in SWC plugins. You now need to manually include them.
+
+- CSS Minimizer Plugin Adjustment
+  - In Rspack 0.x, we used the built-in rspack. SwcCssMinimizerRspackPlugin to compress CSS size. 
+  - Now, we have removed it and replaced it with rspack. LightningCssMinimizerRspackPlugin to handle the same functionality.
+
+- @rspack/cli has upgraded its dependency on webpack-dev-server from v4 to v5.
+  - The minimum supported Node.js version for webpack-dev-server v5 is 18.12.0.
+
+- ResolverFactory and Resolver have been refactored with Rust to unify the implementations on the JS and Rust sides. 
+  - Due to this change, ResolverFactory and Resolver currently do not support any hooks.
+  - Rspack supports the NormalModuleFactory's resolve hook. In most cases, you can use this hook as a replacement for the Resolver's resolve hook to achieve the same functionality.
+
+- The default value of experiments.asyncWebAssembly has been changed from false to depend on the experiments.futureDefaults configuration
+- The default value of splitChunks.cacheGroups.{cacheGroup}.reuseExistingChunk has been changed from true to false.
+- The default value of optimization.moduleIds has been changed to 'natural' when mode is none.
+- The default value of optimization.chunkIds has been changed to 'natural' when mode is none.
+
+- 🗑️ Removed Configurations
+  - resolve.tsConfigPath >> tsConfig
+  - output.amdContainer
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
+## v0.x
 
 - [feat: electron support _202306](https://github.com/web-infra-dev/rspack/pull/3414)
 # more

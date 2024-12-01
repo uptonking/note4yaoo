@@ -23,4 +23,8 @@ modified: 2024-08-24T16:15:42.906Z
   - 微软VSCode IDE源码分析
   - 1.37.1版本
   - 依赖版本 Nodejs x64 version >= 10.16.0, < 11.0.0, python 2.7(3.0不能正常执行)
+# vscode
+
+# coder-server
+
 # more

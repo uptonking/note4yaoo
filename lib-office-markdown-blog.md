@@ -16,6 +16,18 @@ modified: 2023-09-21T16:44:11.438Z
 - Markdown is great. Easy to write, easy to read, and covers most use cases for content websites.
   - But sometimes it feels a bit limited. Sometimes your content is not so linear
 - that's how Code Hike gives you type-safe fine-grained markdown, making your content more flexible so you can use the whole power of React to present it in any way you want.
+# blogs-frontmatter
+- [Front Matter | Jekyll • Simple, blog-aware, static sites](https://jekyllrb.com/docs/front-matter/)
+  - The front matter must be the first thing in the file and must take the form of valid YAML set between triple-dashed lines.
+  - A date is specified in the format `YYYY-MM-DD HH:MM:SS +/-TTTT;` hours, minutes, seconds, and timezone offset are optional.
+
+- [Front matter | Hugo](https://gohugo.io/content-management/front-matter/)
+  - Provide front matter using a serialization format, one of JSON, TOML, or YAML.
+
+- 
+- 
+- 
+
 # blogs-extensions
 
 ## ⚖️ [MarkDown图片存储格式-Textbundle格式 - 知乎](https://zhuanlan.zhihu.com/p/368463926)

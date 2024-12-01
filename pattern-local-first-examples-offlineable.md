@@ -338,6 +338,7 @@ modified: 2023-11-17T10:12:06.357Z
   - Create local-first web-like apps on any platform.
   - RN/Flutter translates your codebase when built/compiled vs FullStacked is a prebuilt environment ready to run web-like apps.
   - FullStacked has and will always have an offline-first/local-first approach.
+  - some typescript, some esbuild, some codemirror, all running in the browser with @golang and webassembly!
 # sync/collab
 - https://github.com/YousefED/Matrix-CRDT
   - Use Matrix as a backend for local-first applications with the Matrix-CRDT Yjs provider.

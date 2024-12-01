@@ -10,6 +10,7 @@ modified: 2020-12-21T07:44:53.873Z
 # guide
 - resources
   - [Web Browser Engineering book](https://browser.engineering/)
+  - [Let's build a browser engine! Part 1: Getting started _201408](https://limpet.net/mbrubeck/2014/08/08/toy-layout-engine-1.html)
 # discuss-stars
 - ## 准备把《手写简易的浏览器》掏出来。
 - https://www.zhihu.com/pin/1382344579656626176

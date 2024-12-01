@@ -32,7 +32,9 @@ modified: 2024-02-12T03:23:17.007Z
 # discuss-news
 - ## 
 
-- ## 
+- ## 🎯 v1.0.0 of our Docker image for self-hosted PowerSync _20241128
+- https://x.com/powersync_/status/1862131536293757243
+  - This release introduces a major refactor of the PowerSync Service to support modular replication, along with initial alpha support for MongoDB and MySQL source databases.
 
 - ## PowerSync joins @getsentry @gitbutler @convex_dev and others in adopting the FSL for our Open Edition. _20240606
 - https://x.com/powersync_/status/1798702381967806523

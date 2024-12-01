@@ -54,7 +54,7 @@ https://meeting.tencent.com/p/9606972663
 # delete all node_modules folders recursively
 rm package-lock.json && find . -name 'node_modules' -type d -prune -exec rm -rf '{}' + && find . -name 'dist' -type d -prune -exec rm -rf '{}' + && find . -name '.next' -type d -prune -exec rm -rf '{}' +
 
-find . -name 'node_modules' -type d -prune -exec rm -rf '{}' + 
+sudo find . -name 'node_modules' -type d -prune -exec rm -rf '{}' + 
 
 # 格式化当前包，注意在子文件夹执行命令也会从package.json目录开始格式化整个包
 prettier --write '**/*.{js,jsx,ts,tsx,json}' --ignore-unknown

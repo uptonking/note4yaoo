@@ -359,7 +359,7 @@ modified: 2024-01-25T13:33:23.267Z
 - 🆚️ Is your biggest competitor Repl.it? What advantages do you have compared to them?
   - I'd say that CodeSandbox has a strong focus on extending the existing workflow for developers. That's why we have a VSCode integration, a GitHub integration with a GitHub App that creates a running dev env for every branch/PR, and we make sure that generally all editor features you expect (autocomplete, go to definition, hover info, etc) are available for the languages that we support.
 
-- Are you basically reselling hosted https://github.com/coder/code-server?
+- 🤔 Are you basically reselling hosted https://github.com/coder/code-server?
   - No, we've built our own web editor & iOS code editor. In our v1 editor we did run VSCode in the browser, but that was before code-server was released (in 2018). 
   - Even if we wanted to run code-server, that would be impossible as we allow for multiple users to open the same sandbox/branch, which wouldn't fit the model of VSCode server (which is single user per server).
 

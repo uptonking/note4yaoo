@@ -118,6 +118,7 @@ modified: 2022-11-07T10:25:12.034Z
 
 # twitter
 - search
+  - [How to use advanced search – find posts, hashtags, and more](https://help.x.com/en/using-x/x-advanced-search)
   - 搜索关键词时，可加上'min_replies:1'的条件，筛选出被讨论过的质量更高的内容
   - https://github.com/igorbrigadir/twitter-advanced-search
   - 搜索转发的内容

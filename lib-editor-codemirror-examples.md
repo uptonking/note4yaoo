@@ -853,13 +853,13 @@ modified: 2023-06-23T12:46:53.288Z
   - https://github.com/jupyter-server/pycrdt-websocket /python
     - async WebSocket connector for pycrdt
 
-- https://github.com/TypeFox/open-collaboration-tools /MIT/202408/ts
+- https://github.com/eclipse-oct/open-collaboration-tools /MIT/202408/ts
   - https://www.open-collab.tools/
   - ⚖️ Open Collaboration Tools: live-sharing solution for Eclipse Theia, VS Code and other editors and IDEs
-  - A public instance of the collaboration server is available at open-collab.tools.
   - This is how it works: one person starts a collaboration session as host and invites others to join. The IDE extension distributes the contents of the hostʼs workspace and highlights text selections and cursor positions of other participants. 
+  - A public instance of the collaboration server is available at open-collab.tools.
   - [Announcing the Open Collaboration Tools | TypeFox _202407](https://www.typefox.io/blog/open-collaboration-tools-announcement/)
-    - Itʼs a collection of libraries and tools for live-sharing of IDE contents, designed to boost remote teamwork with open technologies.
+    - It's a collection of libraries and tools for live-sharing of IDE contents, designed to boost remote teamwork with open technologies.
     - The basic idea is simple: one person starts a collaboration session as host and invites others to join. The IDE extension distributes the contents of the hostʼs workspace and highlights text selections and cursor positions of other participants. 
     - A VS Code Extension available on Open VSX and the VS Code Marketplace
 
@@ -1236,8 +1236,6 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/GamerGirlandCo/datacore-autocomplete
   - codemirror autocompletion for datacore
 
-
-
 - https://github.com/jmkng/sen /MIT/202310/ts
   - Simple, reusable CodeMirror (v6+) extensions.
   - The extensions are exported as functions that return an array of extensions that you can apply to your view.
@@ -1421,6 +1419,10 @@ modified: 2023-06-23T12:46:53.288Z
 
 ## lsp
 
+- https://github.com/qualified/lsps /MIT/202206/ts/inactive
+  - Use Language Servers with in-browser editors. 
+  - Monorepo of editor agnostic packages and CodeMirror client.
+
 - https://stackblitz.com/edit/codemirror-6-typescript
 
 - https://github.com/coder0107git/codemirror-web-workers-lsp-demo /202404/ts
@@ -1447,10 +1449,6 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/lbb00/codemirror-typespec /202409/js
   - This project is a demo of useing Typespec with Codemirror.
   - A Node.js server is running the Typespec compiler language server, connected via codemirror-languageserver, because the @typespec/compiler does not support browser environments.
-
-- https://github.com/qualified/lsps /MIT/202206/ts/inactive
-  - Use Language Servers with in-browser editors. 
-  - Monorepo of editor agnostic packages and CodeMirror client.
 
 - https://github.com/marc2332/lsp-codemirror /ISC/202008/ts/inactive
   - LSP integration for CodeMirror
@@ -1718,6 +1716,9 @@ modified: 2023-06-23T12:46:53.288Z
   - A code first database diagram design tool. 
   - 依赖codemirror6、lezer、shadcn、reactflow、dexie
   - 功能似乎无法正常使用
+
+- https://github.com/BaseMax/MarkdownLiveEditor /202411/js
+  - Real-time Markdown editor with live preview support, automatic scrolling synchronization and full support for right-to-left (RTL) languages. Built using CodeMirror and Marked.js.
 
 - https://github.com/google/playground-elements /202405/ts
   - Serverless coding environments for the web.

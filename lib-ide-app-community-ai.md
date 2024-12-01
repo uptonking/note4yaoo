@@ -75,9 +75,17 @@ modified: 2024-08-24T16:28:20.515Z
 
 - ## 
 
-- ## 
+- ## [Show HN: Windsurf – Agentic IDE | Hacker News _202411](https://news.ycombinator.com/item?id=42127882)
+- I've been using Cursor Composer heavily and it's great but buggy, and could be more agentic.
+  - After about an hour with Windsurf, I find myself frustrated with how it deals with context. If you add a directory to your Cascade, it's reluctant to actually read all the files in the directory.
+- 
+- 
+- 
 
-- ## 
+- ## [Show HN: Aide, an open-source AI native IDE | Hacker News _202411](https://news.ycombinator.com/item?id=42063346)
+- 
+- 
+- 
 
 - ## Windsurf by Codeium which is a Cursor killer which is a vs code + copilot killer which is killing me keeping up with these _20241114
 - https://x.com/wesbos/status/1856806422899822999
@@ -114,6 +122,13 @@ modified: 2024-08-24T16:28:20.515Z
 
 - how does bolt․new run in a browser tab without virtual machines?
   - The secret sauce is WebContainers, our micro-OS that runs a full web development environment inside your browser tab. 
+
+- ## [Show HN: Void - open source Cursor AI code editor | Hacker News _202409](https://news.ycombinator.com/item?id=41523197)
+- [Show HN: Void, an open-source Cursor/GitHub Copilot alternative | Hacker News _202409](https://news.ycombinator.com/item?id=41563958)
+
+- 
+- 
+- 
 
 - ## Introducing Zed AI, in collaboration with @anthropicAI . _20240821
 - https://x.com/zeddotdev/status/1825967812629631034

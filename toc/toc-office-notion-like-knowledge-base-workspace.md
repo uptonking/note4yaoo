@@ -630,6 +630,16 @@ modified: 2022-06-03T21:34:54.893Z
   - 一个PDF文档GPT项目：fastapi-docgpt，可以对PDF文档内容进行对话问答 
   - 上传PDF，系统自动提取PDF文本内容，并将文档内容转换为向量存储 
   - 可通过Swagger在 /docs 获取自动API文档
+
+- https://github.com/pingcap/autoflow /apache2/202411/python
+  - https://tidb.ai/
+  - pingcap/autoflow is a Graph RAG based and conversational knowledge base tool built with TiDB Serverless Vector Storage.
+  - An open source GraphRAG (Knowledge Graph) built on top of TiDB Vector and LlamaIndex and DSPy.
+  - UI交互类似chatgpt
+  - https://x.com/9hills/status/1862522244527972625
+    - RAG Demo 到 RAG Application 难度的完美表现，其实功能不算丰富（增加了 Graph RAG和 Agent RAG 的思想），
+    - 代码却不得不做的非常复杂，大部分其实是应用逻辑。 P. S. 代码已经成熟到可以直接抄了，直接复刻就完了
+
 # more
 - https://github.com/notea-org/notea
   - Self hosted note taking app stored on S3

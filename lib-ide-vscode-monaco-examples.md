@@ -39,7 +39,6 @@ modified: 2024-08-24T16:17:47.677Z
 # examples
 
 - https://github.com/SamsungInternet/web-code /201910/js
-
   - A text editor for the web based around monaco
   - deprecated: I've recently started using cdr/code-server which is a full VS Code instance which now runs on Android. The same way this does.
 

@@ -204,6 +204,8 @@ modified: 2021-05-25T09:41:29.066Z
     - a convenient layer to use CASL in feathers.js.
     - Fully powered by Feathers 5 & CASL 6
 
+- https://github.com/openauthjs/openauthjs /202411/ts
+  - openauthjs
 ## auth-jwt
 
 - https://github.com/rajeshpillai/node-jwt-step-by-step /202005/js

@@ -33,6 +33,11 @@ modified: 2024-08-24T16:15:11.456Z
 - resources
   - ide类的参考实现包括: vscode, jupyter(codemirror), jetbrains
   - 参考设计 capabilities
+# draft
+- vscode提供了electron和web模式，未提供纯前端模式
+
+- 文件操作基于文件实现，如何基于数据库实现
+  - 参考markdown-database的实现和数据同步
 # dev
 
 # docs

@@ -85,6 +85,9 @@ modified: 2024-08-24T16:17:26.715Z
   - This library wraps most of the VSCode APIs into Vue Composables.
   - built on top of `@vue/reactivity`, and ported some code from `@vue/runtime-core` .
   - This library is not designed for using Vue in a webview.
+
+- https://github.com/sekassel-research/vscode-vnc-plugin /202212/ts/archived
+  - This extension adds an embedded vnc viewer to the vs code server instance, which is used by fulib.org projects.
 # vscode-browser
 - https://github.com/antfu/vscode-browse-lite /ts
   - Embedded browser in VS Code
