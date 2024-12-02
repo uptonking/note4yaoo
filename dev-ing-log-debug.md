@@ -24,6 +24,19 @@ modified: 2023-06-14T00:53:15.226Z
 ## figma渲染和浏览器渲染的区别
 
 - 特殊字体在figma渲染得更友好，如roboto-mono在figma更好看，特别是针对keycode键盘符号元素的渲染
+# issues-architecture
+
+## 
+
+## 
+
+## 
+
+## 大量用户同时调用github的api来clone仓库，可能导致后端崩溃
+
+- 前端每次刷新页面都会发起一个新的clone请求，这个设计不好
+  - 前端每次刷新页面应该去查询上次clone请求的结果
+  - 后端使用同步处理的逻辑容易导致资源被占满
 # issues
 
 ## 

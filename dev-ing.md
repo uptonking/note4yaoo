@@ -67,7 +67,7 @@ DEBUG=* npm i --legacy-peer-deps --no-audit --loglevel=silly --registry=https://
 
 npm --registry=https://registry.npmmirror.com install   axios
 yarn add axios --registry=https://registry.npmjs.org/  
-pnpm install --registry=https://registry.npmmirror.com  
+pnpm install --registry=https://registry.npmmirror.com --loglevel=debug
 
 export https_proxy=http://127.0.0.1:7890;export http_proxy=http://127.0.0.1:7890;export all_proxy=socks5://127.0.0.1:7890
 
@@ -344,7 +344,7 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
   - [x] streaming infinite-list/tree
 
 - [Scrum Poker Online - Free Tool for Planning Poker](https://www.scrumpoker-online.org/en/room/64881797/scrum-poker)
-# dev-11
+# dev-12
 - yaoo-proj
   - codemirror-devtools
 
@@ -474,27 +474,28 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
     - 可以将prompt内容保存在编辑器外(因为不需要reactivity)，prompt id保存在编辑器的state
 
 - not-yet
+  - 在terminal执行rm -rf node_modules/后文件树未更新
   - ~~cmdk整体功能~~
   - ~~追加步骤、回放重构~~
   - 🤔 时光机获取快照使用uuid, ~~cancelled的action无法打开快照~~
   - 🚨 ai写代码打字效果的时机优化和样式优化
-  - 同一step里追加步骤不能选择之前修改过的文件
+  - ~~同一step里追加步骤不能选择之前修改过的文件~~
   - ~~diff视图开关只在需要时显示~~
   - ~~支持撤销ai写的代码, diff工具条~~
   - tab-key; chat-apply
   - 防抖: cmdk， chat
   - 驾驶舱action列表支持打开文件
     - 🚨 打开已删除的文件未实现， 同时处理undo工具条的位置
-    - 点击actionBar打开文件时，文件树对应文件应该被选中
     - 在文件树ui创建文件夹和命令行mkdir创建文件夹的permission不同
+    - ~~点击actionBar打开文件时，文件树对应文件应该被选中~~
   - 驾驶舱聊天后直接apply代码到编辑器
-  - regenerate plan/task/action
   - zustandx如何在一个store里面使用另一个store的值, 或重新架构store的内容
+  - ~~regenerate plan/task/action~~
   - ~~演示之前测试cpu、内存~~
   - ~~私有项目的导入~~
   - ~~多标签打开同一个cde，文件树的头像会显示2个~~
 
-## 110
+## 120
 
 - dev-log
   - ?
@@ -529,6 +530,18 @@ console.log(';; qryDiffSnap ', snapshotFrameResult)
   - file-tree search input 支持快捷键隐藏搜索
   - 隐藏browser面板箭头跟随图标
   - .breakpoints的配置文件改为.1024breakpoint
+
+## 1201
+
+- 上周
+  - 交付重点快捷键的feature
+  - 修复cde体验测试相关和高优先级的issues
+- 本周
+  - 修复cde的issues
+  - 实现删除移动重命名文件的回放打开体验
+- 今天
+  - 修复cde高优先级的issues
+# dev-11
 
 ## 1129
 

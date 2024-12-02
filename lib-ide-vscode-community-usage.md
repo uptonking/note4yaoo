@@ -31,7 +31,13 @@ modified: 2024-08-24T16:52:53.996Z
 
 - ## 
 
-- ## 
+- ## [Visual Studio Code: Secrets of Regular Expression Search | by Nikhilbaxi | Medium _202309](https://medium.com/@nikhilbaxi3/visual-studio-code-secrets-of-regular-expression-search-71723c2ecbd2)
+- (.+) : This is used to find the content between the unknown. For example, we need to find where the API call is defined.
+  - `/api/user/${userId}/address/` or `/api/user/123/address/` ; 
+  - `/api/user/(.+)/address/`
+
+- To find all lines with both “apple” and “banana”:
+  - `(apple.*banana)|(banana.*apple)`
 
 - ## vscode 准备支持内置 terminal 的 zsh/bash 补全列表了
 - https://x.com/YuTengjing/status/1834076948089454896

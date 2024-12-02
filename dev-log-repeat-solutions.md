@@ -350,6 +350,12 @@ modified: 2021-07-20T13:50:23.433Z
   - elara: demo示例非常酷，特别是layer，dashboard, shell, pic-viewer
   - ventus: 快速切换到窗口平铺预览
   - rc-dock: 类似ide的拖拽停靠效果
+# solutions
+- 系统提供很多配置项的设计
+  - webpack
+  - vscode settings
+  - npmrc
+  - 手机系统的设置
 # fundamentals
 - format
   - excel/csv/office open xml
