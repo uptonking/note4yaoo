@@ -25,7 +25,14 @@ modified: 2023-11-14T06:31:35.103Z
 
 - ## 
 
-- ## 
+- ## [Show HN: Turn your Pandas dataframe into a Tableau-style UI for visual analysis | Hacker News _202302](https://news.ycombinator.com/item?id=34869244)
+- The Tableau algorithm is patented. In particular, the algorithm that chooses the type of the chart depending on the properties of the data. It was developed under the name Polaris at MIT (?).
+  - This is based on graphic-walker which is based on vega as far as I see. It would be interesting to see if vega is different enough from Polaris/Tableau.
+
+- Superset doesn't run in a Jupyter Notebook. So they are used differently. This seems very easily embeddable for instance. Or otherwise really practical.
+
+- 
+- 
 
 - ## [Comparison of Data Lake Table Formats | Dremio Blog_202204](https://www.dremio.com/blog/comparison-of-data-lake-table-formats-apache-iceberg-apache-hudi-and-delta-lake/)
 

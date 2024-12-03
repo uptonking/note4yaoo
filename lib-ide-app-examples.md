@@ -170,4 +170,34 @@ modified: 2024-08-24T16:30:20.218Z
   - https://github.com/sourcegraph/zoekt /apache2/202411/go
     - This is a fast text search engine, intended for use with source code.
     - This is a Sourcegraph fork of github.com/google/zoekt. It is now the main maintained source of Zoekt.
+# code-utils
+- https://github.com/salsa-rs/salsa /MIT/20212/rust
+  - https://salsa-rs.netlify.app/
+  - A generic framework for on-demand, incrementalized computation. 
+  - Inspired by adapton, glimmer, and rustc's query system.
+  - [Salsa In More Depth (2019.01) - YouTube](https://www.youtube.com/watch?v=i_IhACacPRY&t=1348s)
+  - The key idea of salsa is that you define your program as a set of queries. 
+    - Every query is used like function K -> V that maps from some key of type K to a value of type V. 
+    - Queries come in two basic varieties: inputs/functions
+
+- https://github.com/kythe/kythe /apache2/202412/cpp
+  - https://kythe.io/
+  - Kythe is a pluggable, (mostly) language-agnostic ecosystem for building tools that work with code.
+  - Indexer implementations for C++, Go, and Java
+  - Compilation extractors for javac, Maven, cmake, Go, and Bazel
+  - Sample cross-reference service
+  - The Kythe project was founded to provide and support tools and standards that encourage interoperability among programs that manipulate source code
+  - Kythe grew out of our experience creating a large-scale semantic index of cross-references for the enormous, multi-lingual internal codebase at Google
+  - What Kythe Provides
+    - Language-agnostic graph storage format. Kythe defines a simple, flexible, and portable graph representation that is easy to emit from an instrumented compiler, and for clients to consume.
+    - extensible graph schema for a variety of interesting semantic cross-reference data in various languages, including C++, Java, and (soon) Go
+    - Analyzers, tools and examples. a self-contained server that can use Kythe data to answer cross-reference queries;
+- https://github.com/TreeTide/underhood /202203/inactive
+  - UnderHood is a code browsing interface backed by Kythe indices.
+  - With https://github.com/TreeTide/underhood, my goal is to provide a read-only view of code, geared for understanding and debugging. Having to maintain the ability to edit comes with constraints.
+
+- https://github.com/rizsotto/Bear /GPL/202411/cpp
+  - Bear is a tool that generates a compilation database for clang tooling.
+  - The JSON compilation database is used in the clang project to provide information on how a single compilation unit is processed. With this, it is easy to re-run the compilation with alternate programs.
+  - Some build system natively supports the generation of JSON compilation database. For projects which does not use such build tool, Bear generates the JSON file during the build process.
 # more

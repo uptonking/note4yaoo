@@ -46,6 +46,10 @@ modified: 2022-11-11T06:57:09.670Z
 
 - [Experiment: Improving the Rust Book](https://rust-book.cs.brown.edu/)
   - This website has the same structure as the Rust Book, but interactive quizzes are added in each section
+# draft
+- toys
+  - salsa-rust-code-database
+  - codemirror-ast port
 # changelog
 - [Generators are dead, long live coroutines, generators are back | Inside Rust Blog_202310](https://blog.rust-lang.org/inside-rust/2023/10/23/coroutines.html)
 # rust-env

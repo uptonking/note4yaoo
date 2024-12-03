@@ -21,13 +21,13 @@ npm install
   - Running on Electron with extensions run in NodeJS
 - ./scripts/code-web.sh
   - Extensions and UI run in the browser
-  - 切换文件时，url不变， url不包含文件路径
+  - 切换文件时url不变， url不包含文件路径
   - 编辑文件会持久化到磁盘
   - 刷新页面时打开的仓库会丢失，需要重新打开
   - 数据保存在indexeddb
 - ./scripts/code-server.sh --launch
   - UI in the browser, extensions run in code server (NodeJS)
-  - url包含文件路径，?folder=/Users/user11/repos/proj1/readme.md，切换文件时url会变
+  - url包含文件路径，?folder=/Users/user11/repos/，切换文件时url也不会变
   - 编辑文件会持久化道磁盘
   - 刷新页面时仓库会恢复，打开文件名也会恢复
 

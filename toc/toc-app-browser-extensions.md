@@ -16,7 +16,11 @@ modified: 2023-02-08T10:24:11.422Z
 - resources
   - [Extension Development and ToolKit - WebExtension. ORG](https://webextension.org/)
 # popular
-
+- https://github.com/JasonGrass/auto-extension-manager /APGLv3/202411/js
+  - https://ext.jgrass.cc/docs/intro
+  - 用于浏览器扩展管理的扩展
+  - 灵活的规则自定义，自动启用或禁用指定的浏览器扩展。
+  - 批量导出/导入与分享扩展
 # browser-ext-devtools
 - https://github.com/DaniGuardiola/browser-namespace /ts
   - Cross-browser support for the "browser" namespace in browser extensions. Fully typed.

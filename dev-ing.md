@@ -527,11 +527,56 @@ console.log(';; qryDiffSnap ', snapshotFrameResult)
   - action状态变化: wip-action1 > 2s > completed > 2s > wip-action2
 
 - 📌 🔜
-  - file-tree search input 支持快捷键隐藏搜索
-  - 隐藏browser面板箭头跟随图标
-  - .breakpoints的配置文件改为.1024breakpoint
+  - editor
 
-## 1201
+- 文件树M标记的处理
+  - 清理标记的时机， fork时和commit时，提供手动删除.1024feature-file的能力
+    - goAgent去删，ideServer不关心git操作和文件操作
+  - A/D标记不支持
+  - goAgent触发的时机不太确定，计算资源占用大
+  - gitignore的文件不应该显示M
+
+- lsp支持的语言排查
+  - 鼠标放上去就消失lint了
+  - 让setttings开关联动
+
+## 1204
+
+- 昨天
+  - 修改了快捷键清单面板从底部唤起的交互，
+  - 集中修复cde相关的多个issues，并合到staging
+  - 去掉部分重复的滚动条，编辑器不会再出现多个浮动工具条
+- 今天
+  - 完善快捷键相关的退出与tooltip引导
+  - 集中修复cde相关的issues
+- 风险
+  - 快捷键功能在2015款mac的safari浏览器上测试出现很多bug，但chrome浏览器却正常，windows电脑测试也正常； 
+  - 💡 可以给测试换一台2019款的mac，或将相关bug放入backlog再观察一段时间看有没有其他人的复现和反馈
+
+## 1203
+
+- 🆚 [What's the difference between event.stopPropagation and event.preventDefault? - Stack Overflow](https://stackoverflow.com/questions/5963669/whats-the-difference-between-event-stoppropagation-and-event-preventdefault)
+  - Returning false from a regular DOM event handler does absolutely nothing.
+  - Returning false from a jQuery event handler prevents the browser from navigating to the link address and it stops the event from propagating through the DOM.
+  - Returning false from an inline event handler prevents the browser from navigating to the link address, but it doesn't stop the event from propagating through the DOM.
+
+- [Prevent focus on dialog · radix-ui/primitives ](https://github.com/radix-ui/primitives/discussions/935)
+  - typically you wouldn't want to completely prevent focus inside the dialog otherwise you'll be breaking accessibility.
+  - You can simple do event.preventDefault() in Content's `onOpenAutoFocus` prop and then run your own focus logic in there.
+
+- 昨天
+  - 修复了上次体验测试反馈的大多数bug，剩下一些不能稳定复现的再观察一下
+  - 优化了terminal操作的体验
+- 今天
+  - 集中修复cde中的高优先级bug
+  - 修复动画无法显示的问题
+
+- dev-done
+  - file-tree search input 支持快捷键隐藏搜索； 其他编辑器不是这样
+  - ~~隐藏browser面板箭头跟随图标~~
+  - ~~.breakpoints的配置文件改为.1024breakpoint~~, 协议文件不支持改名
+
+## 1202
 
 - 上周
   - 交付重点快捷键的feature

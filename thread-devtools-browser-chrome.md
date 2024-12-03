@@ -16,7 +16,8 @@ modified: 2023-02-20T19:41:08.506Z
 
 - ## 
 
-- ## 
+- ## Uncaught (in promise) Error: Could not establish connection. Receiving end does not exist.
+- 经排查是过期扩展的问题， 定位到是 z-context 导致的，disable掉就让异常信息消失了
 
 - ## In Chrome/Firefox, when debugging memory leaks, you can click a “Collect Garbage” button to run a garbage collector. 
 - https://twitter.com/iamakulov/status/1737065367657382118
