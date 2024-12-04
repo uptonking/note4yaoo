@@ -526,9 +526,6 @@ console.log(';; qryDiffSnap ', snapshotFrameResult)
 - 为什么 onTaskUpdated 事件会触发2次，中间刚好隔2s，然后 有时中间也会打开文件
   - action状态变化: wip-action1 > 2s > completed > 2s > wip-action2
 
-- 📌 🔜
-  - editor
-
 - 文件树M标记的处理
   - 清理标记的时机， fork时和commit时，提供手动删除.1024feature-file的能力
     - goAgent去删，ideServer不关心git操作和文件操作
@@ -540,15 +537,28 @@ console.log(';; qryDiffSnap ', snapshotFrameResult)
   - 鼠标放上去就消失lint了
   - 让setttings开关联动
 
+- 📌 🔜
+  - code ref 设计稿上展开折叠箭头方向与accordion组件不符
+  - 修复文件树将文件夹拖到文件夹不work的问题
+
+## 1205
+
+- 昨天
+  - 排查在cde browser面板跟随用户鼠标操作的功能在clackypaas不能正常使用的问题，暂不处理，等主推这个功能时再修复
+  - 根据产品反馈，增强了部分快捷键的退出与tooltip引导
+  - 还原了add to chat的代码展开折叠交互细节
+- 今天
+  - 继续集中修复cde相关的issues
+
 ## 1204
 
 - 昨天
-  - 修改了快捷键清单面板从底部唤起的交互，
   - 集中修复cde相关的多个issues，并合到staging
   - 去掉部分重复的滚动条，编辑器不会再出现多个浮动工具条
+  - 调整了快捷键清单面板从底部唤起的交互，
 - 今天
-  - 完善快捷键相关的退出与tooltip引导
-  - 集中修复cde相关的issues
+  - 根据产品反馈增强快捷键相关的退出与tooltip引导
+  - 继续集中修复cde相关的issues
 - 风险
   - 快捷键功能在2015款mac的safari浏览器上测试出现很多bug，但chrome浏览器却正常，windows电脑测试也正常； 
   - 💡 可以给测试换一台2019款的mac，或将相关bug放入backlog再观察一段时间看有没有其他人的复现和反馈
