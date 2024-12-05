@@ -23,6 +23,10 @@ modified: 2023-06-14T00:53:15.226Z
 
 ## figma渲染和浏览器渲染的区别
 
+- 字体渲染的影响因素
+  - 使用dom渲染文字时，不同浏览器渲染字体时能匹配到的fallback字体，比如mono字体常用 monaco > consolas > courier new > monospace
+    - 💡 要让不同浏览器渲染的文字宽度相同，首先要让不同浏览器能匹配到相同字体的相同字号
+  - 检查浏览器渲染字体的渲染实现基于dom，还是canvas/webgl自定义渲染逻辑
 - 特殊字体在figma渲染得更友好，如roboto-mono在figma更好看，特别是针对keycode键盘符号元素的渲染
 # issues-architecture
 

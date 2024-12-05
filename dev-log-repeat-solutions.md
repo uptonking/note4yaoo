@@ -119,6 +119,7 @@ modified: 2021-07-20T13:50:23.433Z
 - 通用的features
   - collab, realtime, ai
   - version-history + sync
+  - 操作与回放，倍速播放
 
 ## solutions: inter(re)active knowledge-base/wiki
 

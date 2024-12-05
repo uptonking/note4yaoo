@@ -544,13 +544,33 @@ console.log(';; qryDiffSnap ', snapshotFrameResult)
 ## 1205
 
 - 昨天
+  - 调整了一部分快捷键和描述，增强了一部分快捷键的退出与tooltip引导，今天上午会尽快发到正式环境？
   - 排查在cde browser面板跟随用户鼠标操作的功能在clackypaas不能正常使用的问题，暂不处理，等主推这个功能时再修复
-  - 根据产品反馈，增强了部分快捷键的退出与tooltip引导
   - 还原了add to chat的代码展开折叠交互细节
 - 今天
+  - 优化打字动画的时机
+  - 处理cde文件树或驾驶舱显示隐藏时的宽度异常问题
   - 继续集中修复cde相关的issues
 
 ## 1204
+
+- [How to omit specific properties from an object in JavaScript - Stack Overflow](https://stackoverflow.com/questions/43011742/how-to-omit-specific-properties-from-an-object-in-javascript)
+
+```JS
+function omit(obj, key) {
+  return Object.fromEntries(Object.entries(obj).filter(e => e[0] != key))
+}
+
+/** Omits multiple keys. The exclude parameter is a Set of keys to exclude **/
+function omitSet(obj, excludes) {
+  return Object.fromEntries(
+    // Object.entries(obj).filter((e) => !excludes.has(e[0]))
+    Object.entries(obj).filter((e) => !excludes.includes(e[0]))
+  );
+}
+
+```
+
 
 - 昨天
   - 集中修复cde相关的多个issues，并合到staging
