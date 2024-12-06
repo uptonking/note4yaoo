@@ -136,6 +136,18 @@ modified: 2024-06-30T11:17:28.971Z
 - https://x.com/penberg/status/1850794649440432193
 - I measured in eu-central-1 and it’s 500us for cross az traffic and less than 500us within the same az
 
+# discuss-docker-proxy
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 目前 Docker Hub 被墙，拉取镜像比较困难，如果你有 HTTP 代理，可在 daemon.json 配置文件中添加代理，重启服务后就能正常访问了。
+- https://x.com/linuxtoy/status/1863768873239294163
+  - 若是 SOCKS 代理的话，用 gost 转一下即可
+- 不需要用 gost 转一下，这里直接写 socks5://127.0.0.1:1080 是可以的，支持直接使用 socks5 代理。
+
 # discuss
 - ## 
 

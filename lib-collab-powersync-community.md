@@ -76,6 +76,16 @@ modified: 2024-02-12T03:23:17.007Z
   - having an authoritative server in a system architecture means that a global ordering of operations can be enforced, typically without adding much complexity to the system.
   - With PowerSync, writes are sent through the developers’ own application backend, allowing them to apply their own business logic, fine-grained authorization, validations and server-side integrations.
   - While PowerSync does not use CRDTs for its internal protocol, it can leverage another important strength of CRDTs: very fine-grained collaboration like document/text editing. CRDTs can actually be implemented on top of PowerSync + Postgres for collaborative document editing: For example, using Yjs and storing its CRDT data structure in Postgres using blobs, and keeping it in sync between clients in real-time
+# discuss-sync-solutions
+- ## 
+
+- ## 
+
+- ## 
+
+- ## We built Y-Sweet to be the zero-lock-in sync engine, so it uses your storage as the source-of-truth.
+- https://x.com/JamsocketHQ/status/1863589701765960122
+
 # discuss-sync
 - ## 
 

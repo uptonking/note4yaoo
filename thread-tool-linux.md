@@ -42,7 +42,10 @@ modified: 2024-01-06T13:48:42.969Z
 
 - ## 
 
-- ## 
+- ## 如果你想要快速找出一个网站的所有子域，那么可以使用 Sublist3r 这个工具。
+- https://x.com/linuxtoy/status/1864604214217069031
+  - Sublist3r 通过 OSINT 找出一个网站的子域。
+  - OSINT 的来源包括谷歌、百度等搜索引擎，以及 Netcraft、DNSdumpster、ReverseDNS 等等
 
 - ## The amount of times I've scrolled up in my terminal and wanted the result of that to be ^[[A^[[A^[[A^[[A is zero
 - https://x.com/_smcf/status/1855171377583849657

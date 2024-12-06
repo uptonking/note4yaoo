@@ -30,7 +30,13 @@ modified: 2021-01-01T21:42:01.940Z
 
 - ## 
 
-- ## 
+- ## Is there really no GPU emulator that does a CPU backend using SIMD and userspace threads? 
+- https://x.com/penberg/status/1864223088667181160
+  - Like QEMU, but for GPUs? What would such a thing even look like? How would you hook into something like CUDA or OpenCL in useful way?
+- For graphics or for gpgpu? You'd have to do qemu for sass?
+
+- It would just be insanely slow, llvmpipe is a simd + threaded coroutines compute shader, you could parse ptx to mesa to llvmpipe if you didn't want to emulate an real GPU execution unit
+- Well opencl you can run on CPU 100% accelerated. CUDA is a different story
 
 - ## CPU上难道就不能带专用的浮点数计算单元吗，譬如tensorcore？为什么对于深度学习而言，CPU一定比GPU差呢？
 - https://x.com/JXQNHZr1yUAj5Be/status/1799728380272935219

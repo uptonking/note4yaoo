@@ -12,7 +12,10 @@ modified: 2023-11-21T04:37:09.686Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 💫 Introducing Motion Cursor, a React component for creative cursor and follow cursor effects.
+- https://x.com/mattgperry/status/1864680523462840660
+  - By default, it's a stylable, animatable cursor replacement that automatically grows and adapts to selectable text and clickable targets.
+  - By rendering children into the cursor, it'll use Motion's layout animations to automatically animate to the new size.
 
 - ## 🌰 useTextSelection - #React TS hook that tracks user text selections & their screen positions! 
 - https://twitter.com/buildWithKris/status/1756607505755734373

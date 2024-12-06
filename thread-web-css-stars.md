@@ -12,6 +12,14 @@ modified: 2021-07-25T12:49:10.410Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## Found a neat CSS trick to automatically swap between black or white text based on any arbitrary background color
+- https://x.com/devongovett/status/1863733091409461256
+  - https://codepen.io/devongovett/pen/QwLbRrW
+  - With relative color syntax, you can use calc to adjust the text color depending if the background is above or below 50% lightness in the LCH color space.
+- I hope the `* infinity` trick doesn't yield whiter-than-white when browsers finally get around to supporting HDR colors. by the way, oklab would be better for avoiding black-on-blue and white-on-yellow edge cases.
+
 - ## TL; DR: `content-visibility` property good, `F` value broken.
 - https://x.com/fabiospampinato/status/1856032799892861070
   - Today's important learnings about the CSS `content-visibility` property:

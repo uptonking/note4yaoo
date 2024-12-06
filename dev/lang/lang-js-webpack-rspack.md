@@ -70,6 +70,11 @@ modified: 2024-01-02T07:53:22.956Z
 - vite的cache目录默认在 node_modules/.strapi/deps/**.js
   - 修改dist目录后需要先删除cache目录，然后cache会再次生成
   - 默认使用esm入口，即dist/index.mjs，而不是index.js
+# docs
+- Rspack 文档有一套很清晰的 webpack 钩子流程图
+  - [Compiler 钩子 - Rspack](https://rspack.dev/zh/api/plugin-api/compiler-hooks)
+  - https://x.com/Soon_Iter/status/1863824929394975086
+    - 这个时候我就得安利一下unplugin了，rollup like钩子，一次开发适配多个打包器。
 # changelog
 
 ## v1.0

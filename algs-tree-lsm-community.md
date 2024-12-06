@@ -20,7 +20,15 @@ modified: 2024-02-28T08:22:23.107Z
 
 - ## 
 
-- ## 
+- ## What are some other popular LSM Tree implementations besides RocksDB? 
+- https://x.com/iavins/status/1864296848434851901
+  - Do any of the modern LSM Tree stores *not* do level based data storage? What are the alternatives?
+
+- Apache Lucene is LSM-like and widely used (e.g. in Elasticsearch and OpenSearch).
+
+- Cassandra, ScyllaDB, LevelDB from the top of my head.
+
+- Iirc eventstore uses LSMs
 
 - ## Many modern databases use LSM-Tree and RocksDB with adaptations. Here is what YugabyteDB did
 - https://twitter.com/FranckPachot/status/1763387123502321950

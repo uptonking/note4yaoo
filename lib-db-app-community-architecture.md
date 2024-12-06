@@ -189,6 +189,21 @@ modified: 2023-09-17T17:37:19.913Z
 - 
 - 
 
+# discuss-db-in-memory
+- ## 
+
+- ## 
+
+- ## ⌛️ In-memory database systems were a game changer when they first came out in the early 2010s. But it looks like everyone moved back to persistent storage.
+- https://x.com/cedar_db/status/1863986711845306799
+- 📝 [The History of the Decline and Fall of In-Memory Database Systems | CedarDB - The All-In-One-Database _202412](https://cedardb.com/blog/in_memory_dbms/)
+  - So what did we learn from the story of in-memory database systems? 
+  - For one thing, main memory capacity is now enough to fit a significant share of data, allowing us to rethink data processing algorithms. 
+  - Also, it is important to try to take advantage of new trends in computer hardware so as not to get stuck with the performance and capabilities of the current generation. 
+  - However, the painful lesson is that committing to a single technology is a huge gamble that is unlikely to pay off. 
+  - So it is important to be prepared for future changes in all components of the system, from the storage layer to address the cloud, to join algorithms for time series, to completely different data models.
+  - Regardless of whether CXL takes off, and whatever other trends the future brings, building a modular system that allows components like the storage tier to be easily swapped out seems like the best way forward.
+
 # discuss
 - ## 
 

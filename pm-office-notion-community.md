@@ -25,6 +25,16 @@ modified: 2023-11-28T14:48:45.910Z
 # discuss-author
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Notion's performance toolbar, built by @michaelfromyeg et al. goal is to make all engineers aware of perf by default! 
+- https://x.com/jitl/status/1864791448819736753
+  - some show pretty typical stuff like fps, memory use, env, etc.
+  - others show app-specific metrics. IPR "initial page render" measures the time it takes to see page content from a new tab. IDV "initial database visible" is the time it takes you see the first row in a database from new tab. many sub-metrics too
+  - peculiar one: CSC "Computed Store Count" measures derived values in Notion's internal signals state management framework. this was created in 2014/2015 around the same time as mobx, and evolved in parallel to open-source react ecosystem. the Australia/marsupial of state mgmt
+
 - ## [Faster CRDTs (2021) | Hacker News _202408](https://news.ycombinator.com/item?id=41372833)
 
 - 👷🏻 jitl: Today(202408) Notion is a last-write-wins system with limited intention-preserving operations for list data (like block ordering). Text is last-write-wins, each block text or property is a last-write-wins register. We're working on a new CRDT format for block text.
@@ -523,6 +533,7 @@ modified: 2023-11-28T14:48:45.910Z
 - ## 再提供一个想法，赚钱了分我一成就行：将 Notion 当数据库提供类似 Vercel 自定义域名的能力，以及各种主题可以选择。
 - https://x.com/_Xheldon/status/1860691877357580581
   - 难点在于因为 Notion 任何集成并发限制是3次/秒，公共集成基本不可能，需要用户自己生成集成，这点跟小白目标群体有冲突，而且跟 Notion 已有的自定义域名能力是竞争关系
+
 # discuss-showcase
 - ## 
 

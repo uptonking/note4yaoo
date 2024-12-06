@@ -69,7 +69,15 @@ modified: 2024-01-25T13:33:23.267Z
 # discuss-iframe
 - ## 
 
-- ## 
+- ## I found the dumbest way to preload an iframe ahead of time: `<iframe src="..." sandbox="allow-same-origin">`;
+- https://x.com/iamakulov/status/1863609927568429456
+  - Downloads the iframe + its CSS/JS/etc
+  - Puts these resources into the cache, so they’re there when you need them later
+  - Critically, doesn’t execute any JS at all
+  - All at the cost of a single annoying console error
+- “Why not just `<link rel="preload">`?” That will load the HTML – but not its CSS/JS/etc. Also, Chrome doesn’t support preloading HTML
+  - “Why can’t you just cache CSS/JS/etc with a service worker, or with some custom JS?” Because these files will get cached in the wrong place – and won’t actually speed up anything. This is for privacy reasons
+  - “Why would you do this at all, you madman?” Well, sometimes you do need to show an iframe ASAP! E.g. at Framer, we use cross-origin iframes to render plugins. When you hover over a plugin in the picker, we preload the plugin’s iframe. This makes it pop up 0.5-1s sooner
 
 - ## [Alternative to iFrames with HTML5 - Stack Overflow](https://stackoverflow.com/questions/8702704/alternative-to-iframes-with-html5)
 - You can use object and embed

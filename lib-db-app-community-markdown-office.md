@@ -31,7 +31,12 @@ modified: 2023-10-26T21:39:57.237Z
 
 - ## 
 
-- ## 
+- ## If JSON databases are a thing, why aren't YAML databases?!?  
+- https://x.com/mgill25/status/1863633176859443693
+- Dont forget about TOML
+- Absolutely valid! The only counter argument I see here is JSON is faster when it comes to parsing and serialization. Databases are all about performance and scalability which YAML cannot provide due to it's flexibility and slow speed.
+  - Yes. YAML parsing is why databases are slow
+  - I say to solve this issue, we should do away with encoding and decoding and just make our clients send the data as binary and the memory location they want it to be in. Then we just store it in that memory location on our disk. If it can't be stored, we just respond with no.
 
 - ## 🔥 [Obsidian Dataview: Turn Obsidian Vault into a database you can query from | Hacker News_202205](https://news.ycombinator.com/item?id=31407781)
 - I sometimes wonder if learning how to use Dataview inside of Obsidian is too technical to get mass adoption, compared to WYSIWYG tools like Notion that let you build databases with nice UI filtering. But the performance of Dataview is so much better, and the control you have over queries so much more granular, that it’s worth the learning curve. The Obsidian community is also incredibly good at helping new users learn, which makes me feel optimistic.

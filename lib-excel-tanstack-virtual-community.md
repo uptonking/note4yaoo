@@ -14,7 +14,17 @@ modified: 2024-03-15T03:25:43.756Z
 
 - ## 
 
-- ## 
+- ## [sentry: Better Code Rendering Through Virtualization _202412](https://sentry.engineering/blog/better-code-rendering-through-virtualization)
+  - TL; DR: we rebuilt Codecov’s code renderer from the ground up utilizing virtual lists and some other nifty tricks to significantly decrease render blocking time, and unblock customers with files containing tens of thousands of lines.
+  - We had Jake an engineer at Microsoft working on TypeScript tooling, reach out to us, letting us know he was devastated with the code renderer crashing on them while trying to render TypeScript’s checker.ts file. 
+  - The problem turns out to be that the current code renderer was not built to handle files that contains this amount of code and coverage data, leading the application to crash. 
+  - The objective of our initiative is to rebuild our code renderer from the ground up utilizing new techniques so that we’re able to handle these larger files with ease
+- The easiest way to introduce virtualization to your application is through using a third-party library, instead of attempting to write the logic ourselves. 
+  - 💡 we landed on `@tanstack/react-virtual` as it meets all the functionality requirements for our project, as well we are already using a couple other TanStack libraries and have had pretty good success with them.
+- 
+- 
+- 
+
 # discuss-not-yet
 - ## 
 

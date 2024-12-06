@@ -13,7 +13,18 @@ modified: 2023-11-01T10:15:06.245Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## Optimistic vs Pessimistic concurrency control
+- https://x.com/sunbains/status/1864854818214338821
+  - TiDB used to be OCC only but had to change to PCC and OCC is now optional.
+  - [Pessimistic or Optimistic Concurrency Control? Lessons Learned from Real-World Customer Scenarios | by siddontang _202412](https://medium.com/@siddontang/pessimistic-or-optimistic-concurrency-control-lessons-learned-from-real-world-customer-scenarios-a4f0b8dd6e49)
+
+- I assume that CockroachDB started with naive OCC and now has AOCC (Adaptive OCC). And this lesson will be learned many times.
+  - [Navigating CockroachDB Traffic Jams with a Smile: Adaptive Optimistic Concurrency Control | by Byte Blog | Medium _202409](https://byteblog.medium.com/navigating-traffic-jams-with-a-smile-adaptive-optimistic-concurrency-control-in-cockroachdb-da03c747bb69)
+
+- ## Reading this paper: 'Why Events Are A Bad Idea (for high-concurrency servers) (2003)'
+- https://x.com/iavins/status/1863933376627097644
+- Event based programming is bad says academic authors who never wrote large scale software
+- they didn’t know about Java Virtual Threads at that time
 
 - ## 🆚️🤼🏻 To thread, or not to thread: How to build high concurrency systems?
 - https://x.com/penberg/status/1860248258808852900

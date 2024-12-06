@@ -12,7 +12,28 @@ modified: 2023-10-06T16:26:57.557Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 🤔 Prisma rewrite in TypeScript _202412
+- https://x.com/localhost_5173/status/1863873604229972068
+- [Prisma ORM Manifesto: Clarity and Collaboration _202412](https://www.prisma.io/blog/prisma-orm-manifesto)
+  - Prisma’s architecture has historically limited community contributions. Core functionality—such as query parsing, validation, and execution—has been managed by our Rust engine, which has been opaque to our TypeScript-focused community. Expanding capabilities or fixing core issues often fell solely to our team.
+
+- https://x.com/jarredsumner/status/1863837970471784924
+  - I bet moving from Rust to TypeScript will make Prisma faster. NAPI overhead & event loop scheduling overhead is significant for DB drivers.
+  - The APIs we use to make bun:sqlite & Bun.sql’s native implementations fast don’t have an equivalent for napi because they rely on JSC internals that don’t really exist in V8
+- Is the overhead of transitioning between JavaScript and WebAssembly smaller? Prisma’s approach make sense, but I do wonder if embedded databases such as SQLite are better off linked to the runtime or will Wasm be a good long term solution 
+  - The overhead between js and wasm is large. You end up with tons of copies back and forth across the barrier.
+- Right, but is there anything we can do at the runtime level? Perhaps embedded databases are the only use case here, but it’s hard for me to see them being special purpose built just for JavaScript
+  - I'm not sure what the solution is. I actually planned to go the other way – Zero is current implemented in TS for performance and convenience in the web ecosystem, but when we get to mobile my assumption is we will go back to native. I was hoping by that time the wasm folks have figured this marshaling stuff out.
+-  the whole situation is a bit absurd: both JavaScript and Wasm code runs on the same runtime (V8 or JavaScriptCore), but we don't do that because the overhead is too high. However, the overhead of native calls via NAPI is high too. And from packaging perspective, the way I do with Limbo is JavaScript + Wasm and it's so much simpler compared to SQLite and libSQL having to build for every native target out there...
+   - Interesting. I assumed you’d want every drop of native perf possible (wasm still has significant overhead). Also I assumed if you were in native land you’d have access somehow to full js api with goodies like v8’s ExternalString, which can prevent copies. But we haven’t tried any of this.
+
+- Rust adds overhead in all situations. C is better for certain tasks, and JavaScript/TypeScript works best for the rest.
+
+- NAPI is a glaringly inefficient FFI. It's worse than JNI.
+- And NAPI-RS just adds even more overhead. It's all about the algorithms, not the language.
+- and system design in this case. The cost of having extra rust process running side by side is not worth it.
+
+- If struct comes part of the language. How much difference do you think it would make for JS tooling being in JS
 
 - ## I learned Rust by typing out examples, making mistakes, and fixing them
 - https://x.com/penberg/status/1862209708301386124

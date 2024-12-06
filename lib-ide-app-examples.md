@@ -52,6 +52,12 @@ modified: 2024-08-24T16:30:20.218Z
   - Once your free daily token limit is reached, AI interactions are paused until the next day or until you upgrade your plan.
   - https://x.com/oran_ge/status/1842497547010728358
     - Bolt，可以提供写代码、preview、部署网站一条龙服务
+
+- https://github.com/langchain-ai/open-canvas /MIT/202412/ts
+  - https://opencanvas.langchain.com/
+  - Open Canvas is an open source web application for collaborating with agents to better write documents. 
+  - It is inspired by OpenAI's "Canvas", but with a few key differences.
+  - Built in memory: Open Canvas ships out of the box with a reflection agent which stores style rules and user insights in a shared memory store. This allows Open Canvas to remember facts about you across sessions.
 # ide/cde
 
 # code-playgrounds

@@ -72,7 +72,9 @@ modified: 2023-06-16T02:53:00.115Z
 # discuss
 - ## 
 
-- ## 
+- ## "document.caretPositionFromPoint" and "document.caretRangeFromPoint" tell you where the caret would be rendered given an arbitrary viewport coordinate.
+- https://x.com/fabiospampinato/status/1863656697341857922
+  - Largely it's all good, but in this huge page I'm testing these on (~28k DOM elements, ~12k short text nodes) these functions take 10ms+. And "document.elementFromPoint" performs about the same, so basically finding the target element seems to take that much.
 
 - ## [Ask HN: Why is working with contenteditable is so hard? | Hacker News _202409](https://news.ycombinator.com/item?id=41462298)
 - Because different browsers insert the content in a different fashions. The reliable way to use contenteditable is to intercept keypresses and modify the inner HTML yourself, i.e. use contenteditable only to use the cursor affordance.

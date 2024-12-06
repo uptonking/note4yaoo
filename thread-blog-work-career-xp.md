@@ -14,6 +14,27 @@ modified: 2022-11-08T10:34:34.820Z
 
 - ## 
 
+- ## 🤔 Who do you think is the most insane programmer of our current era?
+- https://x.com/zack_overflow/status/1862939126737285427
+- I think it’s Evan Wallace (cofounder of Figma):
+  - Basically rebuilt the browser rendering stack to run in the browser for Figma
+  - Built CRDTs to run Figma’s multiplayer tech for millions of users
+  - Built a JS bundler 10-100x faster than the status quo (esbuild)
+  - First person to do crazy graphics stuff on the web (WebGL water)
+- I've got a deep respect for Chris Lattner:
+  - Creator of LLVM
+  - Clang compiler
+  - Swift Programming language
+  - MLIR compiler infra
+  - Lead Xcode/instruments/compiler teams
+  - Former VP of autopilot at tesla
+  - Contributor to TensorFlow
+  - Now Mojo giving python systems level perf
+
+- ## 最近觉得源码剖析这个内容品类确实不大可持续，现代软件工程就是要能够在不理解整个 code base 的前提下加入工作的，研究源码是需要用穷究真理的态度来做吗？
+- https://x.com/flaneur2023/status/1863517967553843703
+  - 最近的想法是有需要的时候能伸进手去把需要的改出来就够了，在我需要的之外的细节不是我需要关注的
+
 - ## 🤼🏻 大公司的技术人才不适合创业公司和中小型公司，因为他们的技能多半围绕大公司特定场景产生，或者围绕某种特殊功能访问量达到一定程度时候的优化需求，这些需求中小公司都没有；
 - https://x.com/skywind3000/status/1846693361731895687
   - 而中小公司人的经验又属于短平快的东拼西凑，重点是快速出活，他们的经验也不适合大公司，在大公司的视角看起来会觉得 low

@@ -33,7 +33,11 @@ modified: 2024-03-13T14:26:26.220Z
 
 - ## 
 
-- ## 
+- ## Last year, it was S3 Express One Zone. This year, it’s S3 Tables. These features indicate three key trends:
+- https://x.com/YingjunWu/status/1864411659336552753
+  - Lakehouses are the new norm. The days of traditional data warehouses are numbered!
+  - Apache Iceberg’s leadership in the open table format space has been reaffirmed by a major cloud provider.
+  - Every data infrastructure vendor must now seriously consider their Apache Iceberg strategy.
 
 - ## Justin, CTO of Docker, share my post on implementing "Delta Lake" from scratch in a talk at kubecon. "Object Storage Is All You Need"
 - https://x.com/eatonphil/status/1857807099851395336

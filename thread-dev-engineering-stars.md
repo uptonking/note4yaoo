@@ -192,7 +192,29 @@ Validate it to ensure it meets the method's requirements.
 - https://twitter.com/catalinmpit/status/1693165227183837429
 - Complain, but be nice and provide suggestions.
 
+# discuss-debug
+- ## 
+
+- ## 
+
+- ## I don’t use debuggers much. It’s not that I don’t know how to use them, I simply find printf() more effective and universal.
+- https://x.com/penberg/status/1863147820338802722
+  - Or course, it’s not about printf() but about using they grey matter between your ears to reason about the code and then verifying your assumptions with logging and assetions.
+  - I actually started with debuggers a long time ago and used to run through programs step by step. But as I started working on Linux, debuggers were not an option at the time. So i learned a different way of debugging and have not had the need to switch back.
+
+- The most useful property of a debugger in my experience has been  breaking on memory read/write. Gdb functions have been very useful to examine state too but …default staring point has been peppering more assertions, printfs to  understand control flow  and to examine state
+
+- I know how to use debuggers but in virtually all cases I use “printf” style debugging because it is faster and more effective. You can bisect a root cause really quickly using printf with minimal effort. 
+
+- Always tempted by time travelling debuggers, those resolve the issue that lead me instead to use highly quality spontaneously added tracing (as in, printf debugging
+
+- 
+
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## How do you implement feature flags in your application? Do you use any apps or have any approaches?
