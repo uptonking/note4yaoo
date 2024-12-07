@@ -50,13 +50,20 @@ modified: 2021-08-30T18:56:14.863Z
   - Supported: pg, mysql, sqlite
   - Use the cloud version or deploy locally
 
+- https://github.com/outerbase/studio /AGPLv3/202412/ts
+  - https://studio.outerbase.com/
+  - A lightweight Database GUI in your browser. 
+  - It supports connecting to Postgres, MySQL, and SQLite.
+  - a lightweight, browser-based GUI for managing SQL databases, designed for simplicity and versatility. 
+  - Initially built for LibSQL and SQLite, it now supports a broad range of databases
+  - Outerbase Studio Desktop is a lightweight Electron wrapper for the Outerbase Studio web version. 
+
 - https://github.com/sqlpad/sqlpad
   - A web app for writing and running SQL queries and visualizing the results. 
   - Supports Postgres, MySQL, SQL Server, ClickHouse, Crate, Vertica, Trino, Presto, SAP HANA, Cassandra, Snowflake, Google BigQuery, SQLite
 
 - https://github.com/drawdb-io/drawdb /MIT/202404/js
   - https://drawdb.vercel.app/
-  - DrawDB is a robust and user-friendly database entity relationship (DBER) editor right in your browser. 
   - DrawDB is a robust and user-friendly database entity relationship (DBER) editor right in your browser. 
   - https://github.com/drawdb-io/drawdb-server /MIT/202404/js
     - Simple server to handle form submissions via email for drawDB.

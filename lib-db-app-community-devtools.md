@@ -21,6 +21,18 @@ modified: 2023-10-27T09:12:16.163Z
 - ## 
 
 - ## 
+# discuss-db-designer
+- ## 
+
+- ## 
+
+- ## 
+
+- ## With http://database.build, you can create an unlimited number of databases using AI
+- https://x.com/dshukertjr/status/1865053120537182246
+  - we have added the ability to deploy the database you built on http://database.build to Supabase with a click of a button
+- The whole no code community deserves to know about this. Well, and the traditional coding community too lol
+
 # discuss
 - ## 
 

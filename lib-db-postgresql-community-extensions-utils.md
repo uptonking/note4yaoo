@@ -20,6 +20,17 @@ modified: 2023-10-26T21:43:43.231Z
 
 - ## [PGX: Write Postgres extensions in Rust instead of C | Hacker News_202007](https://news.ycombinator.com/item?id=23821112)
 
+# discuss-ai-pg
+- ## 
+
+- ## 
+
+- ## 
+
+- ## zed: Use the Postgres Context Server extension to automatically inject your Postgres table schemas into the assistant's context
+- https://x.com/zeddotdev/status/1865144955812934103
+- Smoking it is bad enough. Injecting it is asking for a nightmare
+
 # discuss
 - ## 
 

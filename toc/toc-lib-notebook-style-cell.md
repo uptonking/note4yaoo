@@ -103,6 +103,11 @@ modified: 2021-05-13T16:08:15.067Z
   - Tangle is a JavaScript library for creating reactive documents. Your readers can interactively explore possibilities, play with parameters, and see the document update immediately. Tangle is super-simple and easy to learn.
 - https://github.com/rexgarland/Entangle /MIT/202302/js/inactive
   - Another attempt at writing Tangle.js documents in markdown.
+# notebook-ai
+- https://github.com/lfnovo/open-notebook /MIT/202411/python
+  - https://www.open-notebook.ai/
+  - An open source, privacy-focused alternative to Google's Notebook LM
+  - built with streamlit/langchain/surrealdb
 # ref
 - https://github.com/jsvine/notebookjs
   - Notebook.js parses raw Jupyter/IPython notebooks, and lets you render them as HTML

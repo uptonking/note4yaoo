@@ -129,6 +129,16 @@ modified: 2022-11-06T11:21:27.612Z
   - A framework-agnostic syncing solution that auto-connects any DB/API with your local data store and has optimistic-UI built in
   - Magnetar has 2-way sync database integration for Google Firestore (and others coming). You do not need to learn to work with the database SDK.
 # db-client
+- https://github.com/outerbase/studio /AGPLv3/202412/ts
+  - https://studio.outerbase.com/
+  - A lightweight Database GUI in your browser. 
+  - It supports connecting to Postgres, MySQL, and SQLite.
+  - a lightweight, browser-based GUI for managing SQL databases, designed for simplicity and versatility. 
+  - Initially built for LibSQL and SQLite, it now supports a broad range of databases
+  - Outerbase Studio Desktop is a lightweight Electron wrapper for the Outerbase Studio web version. 
+  - https://x.com/ImSh4yy/status/1864723257410167065
+    - been using it with cloudflare d1 during dev, pretty good
+
 - https://github.com/dbgate/dbgate /MIT/202402/ts/svelte
   - https://dbgate.org/
   - Database manager for MySQL, PostgreSQL, SQL Server, MongoDB, SQLite and others. 

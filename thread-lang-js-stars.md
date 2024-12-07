@@ -26,7 +26,15 @@ if(val) // doSth
 
 - ## 
 
-- ## 
+- ## A simple general purpose memoizer utility for TypeScript
+- https://x.com/colinhacks/status/1865002498332795032
+  - 基于Object.defineProperty
+  - lazily computes a value when accessed
+  - auto-caches the result by overwriting the getter
+  - typesafe
+  - I use this all the time for deferring initialization or expensive operations. unlike a simple getter, there's no runtime overhead after the first invokation since the getter itself is overwritten with the memoized value.
+
+- I love Proxy but for something simple like this it's more complex to implement (imo) and worse in terms of runtime performance
 
 - ## How long has `crypto.randomUUID()` been available?
 - https://x.com/mattpocockuk/status/1841399224518287784

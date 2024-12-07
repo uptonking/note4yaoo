@@ -188,3 +188,28 @@ modified: 2023-01-12T10:24:24.591Z
 - more
   - spring-petclinic
     - sample pet store
+# discuss-backend-solutions
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Supabase really is the complete backend stack
+- https://x.com/AntWilson/status/1864843592336052625
+  - Database: @supabase
+  - Auth: @supabase
+  - Functions: @supabase
+  - Realtime: @supabase
+  - Queues: @supabase
+  - Crons: @supabase
+  - File storage: @supabase
+  - Clothing: @supabase
+
+- That one friend who’ll always be there for you... to pause your db
+
+- Add ANALYTICS table and I tattoo your logo on my arm
+
+- Two things missing: 
+  1. Payment integration
+  2. A starter app in nextjs and other frameworks using all these (at least nextjs)

@@ -14,7 +14,13 @@ modified: 2023-10-28T17:52:17.942Z
 
 - ## 
 
-- ## 
+- ## PostgreSQL is a fascinating database and if you want to explore something super interesting in it, I would highly recommend reading about these five niche concepts
+- https://x.com/arpit_bhayani/status/1865012459423305841
+  1. Transaction Wraparound Problem
+  2. Transaction ID Freezing
+  3. Integration of Freezing Logic in VACUUM
+  4. Aggressive Freezing vs. Lazy Freezing
+  5. Multi-page Freezing and Freeze Map Maintenance
 
 - ## I was today years old when I learned about the "\watch" option of psql for repeatedly running a query and examining its changing output.
 - https://twitter.com/gunnarmorling/status/1693868171931914288

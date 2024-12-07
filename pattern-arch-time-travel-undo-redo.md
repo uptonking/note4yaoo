@@ -188,6 +188,12 @@ modified: 2023-09-12T09:36:25.608Z
 
 - ## 
 
+- ## you need to wait until the previous layer has fully dried
+- https://x.com/palekirill/status/1865049187282292823
+  - 不完全3d的界面移动，适合实现版本历史
+- I don’t like oil paint for that reason
+  - yes i know that feeling—when you’re eager to keep going, but the painting makes you wait
+
 - ## ✏️ [How does Etherpad's timeline feature work? - Stack Overflow _201206](https://stackoverflow.com/questions/11242188/how-does-etherpads-timeline-feature-work)
   - I am very much interested in understanding the JSON response and how it works. Also what database is most suitable for such apps (etherpad, google docs, etc.). Nosql (like mongodb) or sql (like mysql).
 

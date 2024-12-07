@@ -47,6 +47,14 @@ modified: 2021-08-30T18:56:18.632Z
     - Due to we store all the changes at server, it is also planned to add time travel, when CRDT is not what user expect at some cases.
   - [I managed to pause work on it because I don't have enough resources (money/time) to keep working on it_202208](https://twitter.com/quolpr/status/1558852687956951044)
 
+- https://github.com/outerbase/studio /AGPLv3/202412/ts
+  - https://studio.outerbase.com/
+  - A lightweight Database GUI in your browser. 
+  - It supports connecting to Postgres, MySQL, and SQLite.
+  - a lightweight, browser-based GUI for managing SQL databases, designed for simplicity and versatility. 
+  - Initially built for LibSQL and SQLite, it now supports a broad range of databases
+  - Outerbase Studio Desktop is a lightweight Electron wrapper for the Outerbase Studio web version. 
+
 - https://github.com/qwtel/sqlite-viewer-vscode  /ts
   - https://sqliteviewer.app/
   - easy SQLite viewer for VSCode, inspired by DB Browser for SQLite and Airtable.
@@ -221,7 +229,6 @@ modified: 2021-08-30T18:56:18.632Z
       - The major challenge is compatibility and the volume of the work. The beauty of SQLite is that the core architecture is simple, yet efficient and fast, and as such pretty straight-forward to reimplement, but there's just a lot of it.
     - Are you planning for the library to be for single thread usage only? I see Rc being used instead of Arc.
       - Single-threaded because it allows the application to figure out locking scheme and it makes deterministic simulation testing easy. The current performance numbers suggest you can get to 500k reads per second easily, which should be plenty for the types of workloads SQLite runs
-
 
 - https://github.com/cstack/db_tutorial /clang
   - Writing a sqlite clone from scratch in C

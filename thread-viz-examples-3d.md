@@ -9,6 +9,17 @@ modified: 2021-08-25T05:56:00.431Z
 
 # guide
 
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## you need to wait until the previous layer has fully dried
+- https://x.com/palekirill/status/1865049187282292823
+  - 不完全3d的界面移动，适合实现版本历史
+- I don’t like oil paint for that reason
+  - yes i know that feeling—when you’re eager to keep going, but the painting makes you wait
+
 # discuss-earth-3d
 - ## 
 

@@ -14,10 +14,19 @@ modified: 2021-06-09T10:38:04.542Z
   - https://github.com/Swizec/react-fractals
   - 可以增加树的高度和叶节点的数量
   - 给出了调试步骤
+# v19
 
+## changelog
+
+- Context as Provider
+- forwardRef >> ref
+- ref callback supports return cleanup function
+- useDeferredValue will return initial value for initial render, then schedule a rerender with deferred value
+- support custom elements
 # v18 issues
 
 ## [How to support strict effects](https://github.com/reactwg/react-18/discussions/18)
+
 - when running in “strict mode“ React will intentionally double-render components for in order to flush out unsafe side effects.
 - With the release of React 18, StrictMode gets an additional behavior that we call “strict effects” mode. 
   - When strict effects are enabled, React intentionally double-invokes effects (mount -> unmount -> mount) for newly mounted components. 
@@ -29,6 +38,7 @@ modified: 2021-06-09T10:38:04.542Z
 
 - [I said a few months ago that "React 18 'strict effects' will cause more issues than Concurrency"](https://twitter.com/acemarke/status/1482390498266558466)
   - 
+
 # v18-stars
 - ## an initial implementation of built-in Suspense cache.
 - https://github.com/reactwg/react-18/discussions/25
