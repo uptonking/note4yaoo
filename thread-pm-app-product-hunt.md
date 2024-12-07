@@ -96,7 +96,10 @@ modified: 2022-12-04T16:34:29.342Z
 # products-developer
 - ## 
 
-- ## 
+- ## how do you all remember every UUID? I find it really hard. so I wrote them all down on every uuid dot com
+- https://x.com/itseieio/status/1865087304877982037
+  - the list has fast search across all 2^122 values (so you can find your favorites) - hoping to add some social features like "trending UUIDs" soon!
+  - the site is over here: https://everyuuid.com and i wrote a blog about what i learned from making it over at https://eieio.games/blog/writing-down-every-uuid/. but i can capture a few fun things here
 
 - ## Introducing http://npm.chart.dev 
 - https://x.com/Atinux/status/1836418652293525706

@@ -9,6 +9,8 @@ modified: 2024-12-03T13:20:30.085Z
 
 # guide
 
+- 代码文件与数据库紧密结合的方案示例，可参考git
+- 代码与数据库结合来更新应用的方案，可参考aquameta/couchapp/reka
 # discuss-stars
 - ## 
 
@@ -16,6 +18,8 @@ modified: 2024-12-03T13:20:30.085Z
 
 - ## 
 # discuss-ide-database 🛢️
+- ## 
+
 - ## 
 
 - ## 
@@ -73,9 +77,61 @@ modified: 2024-12-03T13:20:30.085Z
   - [Salsa In More Depth (2019.01) - YouTube](https://www.youtube.com/watch?v=i_IhACacPRY&t=1348s)
 
 - Sorry to disappoint but for people doing programming language semantics there’s nothing new here. The hard part is always to go from the made-up language to a set of multiple full-blown languages.
+
+- ## [The Database Inside Your Codebase | Hacker News _202102](https://news.ycombinator.com/item?id=26160186)
+- Check out Aquameta, a web dev stack built entirely in PostgreSQL (self-plug):
+  - There's a ton down this rabbit hole. One of the great anomalies(异常的事物；不合规则) of our industry is that we've used the database to bring coherence(合乎逻辑的; 协调) to countless "user domains", but never applied the same principles to our own stack. The benefits of doing so compound exponentially.
+- So basically Oracle Apex, oracle html db before that, and end of the 90s we were generating this from Oracle Designer 2000: low-code tools to generate web applications from the database...
+
+- I've been playing with some ideas for creating a SQLite database of classes, functions and suchlike found in Python code, so I can analyze my codebases with SQL queries.
+  - I've had some good initial results with https://github.com/davidhalter/jedi - which is the Python introspection library that powers various editor autocomplete implementations. I have a prototype which uses that to create a SQL database of functions, classes and places that they are used.
+  - I've also been playing with https://github.com/github/semantic - it can parse Python, JavaScript and other languages and offers a --json-symbols option which dumps out a JSON object showing the symbols (functions, variables etc) found in the code.
+
+- It's really a shame the database is not at the base of what we're doing. We're inventing and re-inventing tons of file formats and ways to persist data without using the database, we have to eternally worry about race conditions in the file system and stuff, and all the while most of our concerns would be well served by an RDBMS.
+
+- ## [Aquameta: Web development platform built in PostgreSQL | Hacker News _201910](https://news.ycombinator.com/item?id=21281042)
+- I think this is an awesome idea. I really like the Smalltalk approach of not using files and instead representing the structure of a program purely in memory. I also love the idea of drawing inspiration from spreadsheets and databases instead of representing programs purely in lines of code.
+  - Any long-lived executable sits in memory (notwithstanding paging, which the database server is also subject to), and such an executable is free to maintain any files it accesses in memory as well.
+- I think what was being referred to is the technique of defining a program, not as source code files which are then compiled/run in an interpreter, but as an in-memory VM environment (think REPLs). The memory-based environment can then be saved to a file, similar to making a core dump.
+  - This changes the structure of programs from a file/disk based structure, to the potentially richer structure of the programming environment (e.g. graphs of objects). Although it comes with disadvantages like losing the tool inter-operability of files.
+- I have a hard time seeing advantages of ditching files. I like this concept, but you can have it both ways (come up with a graphical notation that you can then manipulate with graph like tools), but at the end of the day you need a source of truth, and the file metaphor (a named region of code) is hard to beat (impossible to beat?). Even databases store things as files.
+- File systems are just one approach to storage. 
+  - Databases can use file systems, block devices, or object-based storage (such as distributed storage systems, e.g. Ceph, Amazon S3). 
+  - Traditional file systems are, by themselves, inadequate for many use case, as they don't provide things like versioning. 
+  - The strength of the file system, is that much tooling already exists for it.
+
+- I guess this isn't that dissimilar from Git, except that when you snapshot your environment, you get everything (code, IDE settings, issue tracking, and persistent data) all in the same dump.
+  - if we had a way to version code that combines source, data, and issues, I'm super interested. It just needs to pipe into existing tools rather than recreating existing tools.
+
+- Oracle have already done this, it's called Application Express[0]. I used it for my last job. In practice it was pretty good for fast prototyping and iterating on database-backed apps. It took the schema as the source of truth and would add useful interface features based on it (eg, dropdown lists derived from foreign keys, converting some check constraints to javascript validation code etc).
+  - But on the downside it was essentially untestable and version control meant dumping a massive file of autogenerated PL/SQL and checking it into git. For anything more complicated than basic CRUD and reporting you'd wind up cracking the hood to directly use PL/SQL and then skin it with APEX. The tradeoff being that you lost some of the roundtrip niceties.
+
+- Databases have been basically awful at being approachable from the command-line.
+  - Let's say I have some HTML in some field in the db and want to make a change to it from the terminal. How do I do this?
+  - Aquameta has a filesystem integration layer that lets you browse the database from the command line, grep database content, edit the content of a field using your preferred text editor
+  - Generally just trying to ease these pain points has been a big goal of the project... still a lot to do.
+
+- The problem with not putting business logic in an RDBMS is that you risk ending up with an application which evolves towards... implementing features already provided by the RDBMS.
+
+- For a good overview of what power and speed you can have by "putting a web development platform entirely inside an RDBMS", check out this video called "Twitter-like App in 20 minutes with Oracle APEX"
+
+- Is this comparable to Oracle Apex, which is a web development tool written entirely in oracle PL/SQL?
+  - Used Apex when it first came out (as HTMLDB). I’ve never found anything that compared to its speed in rolling out web based forms for internal use
+
+- reminds me of couchdb apps where you'd use document attachments to store html/public files and serve them directly from couch.
+
+- This is actually really similar to on-premise SharePoint development; list data, content types, workflow definitions, front-end HTML, CSS, JS code are just stored in the back end database.
+
+- Data driven applications are cool, I think I'd use Datomic over Postgres but it didn't exist 20 years ago
 # discuss-ide
 - ## 
 
 - ## 
 
-- ## 
+- ## [Drowning in code: The ever-growing problem of ever-growing codebases | Hacker News _202402](https://news.ycombinator.com/item?id=39356574)
+- Basically, "divide and conquer." Big things are composed of small things.
+
+- I once used OpenGrok, a web based sourcecode repository viewer to tell myself I would try reading and understanding a large code base.
+
+- 
+- 

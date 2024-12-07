@@ -26,6 +26,21 @@ modified: 2024-08-24T16:52:53.996Z
   - Is there any way for an extension to open the new built-in multi-file diff view as seen here?
 
 - You can use the `vscode.changes` command, which was missing in the document
+# discuss-ide-comparisons 🆚️ 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Reflections on IDEA vs VS Code | Hacker News _202103](https://news.ycombinator.com/item?id=26367410)
+- I used to think VS Code was going to be a threat to JetBrains IDEs considering how fast its iterative development was (thanks in large part to the productivity of JS + Web renderer) but its never seems to quite be able to reach the feature-set, polish & intelligence of JetBrains IDEs.
+  - Every IDE function appears to be better implemented in JetBrains, whether it's Code Analysis, Refactoring, Navigation, Running/Debugging, Running Tests, adding new files, git integration or contextual functionality like adding package references etc. Everything is just better in JetBrains.
+
+- 
+- 
+- 
+
 # discuss
 - ## 
 

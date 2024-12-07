@@ -29,7 +29,19 @@ modified: 2023-10-26T21:39:57.237Z
 
 - ## 
 
-- ## 
+- ## [Foam: A personal knowledge management and sharing system for VSCode | Hacker News _202101](https://news.ycombinator.com/item?id=25760066)
+- I believe that knowledge management tied to a development platform is a bad idea. Development isn't the only thing I do in computers and knowledge management should be able to store stuff from all other activities (including cooking recipes or reading notes to read on a mobile phone).
+
+- I think they're using vscode here as an application platform of sorts.
+  - Like Emacs before it. Emacs has Org-mode. Why shouldn't VS Code have a killer app of its own?
+
+- How is fossil-scm tied to a particular platform? The data format is literally a SQLITE DB, which is the most used DB on the planet. Binaries are available for all the major OS's and many "alternative" ones. I use Fossil-SCM for my personal notes. Works great. I even run many websites with Fossil-SCM as the wiki is fabulous for a super easy to deploy and super easy to edit website, even if there is zero code in the VCS portion.
+
+- Foam is a great FOSS clone of Roam. If you like to write text files, like markdown, and like to link among the text, then definitely try Foam and Roam-- they are superb for organization. And if you use emacs, the similar tool is org-roam for emacs org mode.
+  - there is also dendron
+  - There is also logseq.
+
+- File-based knowledge systems also assume knowledge is neatly partitionable in relatively large chunks.
 
 - ## If JSON databases are a thing, why aren't YAML databases?!?  
 - https://x.com/mgill25/status/1863633176859443693

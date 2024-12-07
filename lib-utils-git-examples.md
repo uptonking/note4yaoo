@@ -459,7 +459,10 @@ modified: 2023-08-29T10:12:22.345Z
   - A tool to list print the commits on one git branch that are not on another using loose comparison
   - The output is the same as changelog-maker 
   - The commit list is very close to running: `git log main..next`; But the comparison isn't quite as strict, generally leading to a shorter list of commits.
-# git-data
+# git-ai
+- https://github.com/jnsahaj/lumen /MIT/202411/rust
+  - Instant AI Git Commit message, Git changes summary from the CLI (no API key required)
+# git-storage
 - https://github.com/CodeForPhilly/jawn /js
   - a node.js module that allows distributed version control of Tabular Data. 
   - It's connected to the dat project. 

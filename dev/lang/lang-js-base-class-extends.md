@@ -21,9 +21,25 @@ modified: 2022-11-23T17:48:48.839Z
 # discuss
 - ## 
 
-- ## 
+- ## One reason to stay away from classes: "this" keyword.
+- https://x.com/mattpocockuk/status/1865318982170882175
+  - The fact that your encapsulated logic will not run the same everywhere in javascript is scary
+- do you know why it Works this way?
+  - It's javascript legacy. Changing it would break existing code. JS tried to solve it by introducing arrow functions. But it now we have 2 different "functions" that behaves differently.
+- great = () => fixes this
+  - .bind(john) Existed way before classes and arrow functions.
+- using bind in the constructor. It makes JavaScript classes hard for beginners, or if you come from another language.
 
-- ## 🆚️ Node.js historically used prototypical inheritance to mimic the "class" concept. I've recently been asked the question... is it faster or slower than `class`?
+- The only thing that will always bother me is that methods and properties are public by default
+  - Any default's going to piss off someone
+
+- Curious on your opinion on when to use js classes instead of a module based approach of exported objects with variables and functions we want to export. I feel I only use classes nowadays on frameworks that enforce it, like Nest.js
+
+- Best future is the runtime  instanceof check
+
+- Using "#" to mark properties as private was a very stupid decision. Other than that they're great
+
+- ## 🆚️ Node.js historically used prototypical inheritance to mimic the "class" concept. I've recently been asked the question... is it faster or slower than `class` ?
 - https://x.com/matteocollina/status/1857469617741906257
   - Node.js was initially written in ES3, and a lot of its APIs are still designed across its idioms. Specifically, we would need to set up a prototype inheritance chain to inherit from one class to another
 - Let's take a look at the benchmark.

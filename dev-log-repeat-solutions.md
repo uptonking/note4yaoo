@@ -66,9 +66,11 @@ modified: 2021-07-20T13:50:23.433Z
   - 📝 编辑器，协作同步，版本分支，~~虚拟渲染, 分支版本, 协作冲突, undo/redo~~
   - 🔀🛢️ crdt版本历史, partial-replica、ivm, delta-db, dynamic-schema/eav, 实时架构
   - version-history+sync
-- 数据存储架构
-  - file-first: obsidian, notable, hexo
-  - db-first: joplin, siyuan, nocodb
+- 🛢️ 数据存储架构
+  - file-first: vscode, obsidian, notable, hexo
+  - db-first: git, joplin, siyuan, nocodb
+  - 代码文件与数据库紧密结合的方案示例，可参考git
+  - 代码与数据库结合来更新应用程序的方案，可参考aquameta/couchapp/reka
 
 - 🚀 产品落地
   - 侧重表格的cms, 内容创作与管理

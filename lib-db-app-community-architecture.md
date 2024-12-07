@@ -204,6 +204,28 @@ modified: 2023-09-17T17:37:19.913Z
   - So it is important to be prepared for future changes in all components of the system, from the storage layer to address the cloud, to join algorithms for time series, to completely different data models.
   - Regardless of whether CXL takes off, and whatever other trends the future brings, building a modular system that allows components like the storage tier to be easily swapped out seems like the best way forward.
 
+# discuss-db-cloud
+- ## 
+
+- ## 
+
+- ## [Repl.it Database | Hacker News _202009](https://news.ycombinator.com/item?id=24472941)
+- Can I ask what you're using under the hood to power this?
+  - It's Postgres under the hood. The key-value service itself is Go and we run it on GKE alongside some of our other services.
+- For filtering/search queries, is the idea to use the prefix system to group related items together, and then run matches using that?
+  - Yep, that's the idea. If you had a user with ID 1, one scheme to get all her info could be storing attributes in keys. Then a prefix search for "user:1:" would get you the relevant keys for that user.
+  - But you could also go another way and drop a JSON-encoded object in a single key and work with it inside your app, since that might be the fastest way to get something off the ground!
+- I didn't look super closely, but it looks like your database works similarly to DynamoDB, in which case it could use similar data modeling. Here is a great post on single table design for DynamoDB that would probably be mostly applicable here: https://www.alexdebrie.com/posts/dynamodb-single-table/ The post author actually wrote an entire book on data modeling with a single key/value table.
+
+- This sounds like a database-per-tenant architecture, which is something I'm interested in. Are you having to build a lot of custom tooling to manage that many databases? Does the existing repl.it code make it easy to just spin up an extra docker container for each session? Or are there off-the-shelf tools that make this easy?
+
+- Did you consider SQLite for this?
+  - We did! Our infrastructure has some unique constraints around filesystem persistence. We use btrfs and regularly take snapshots of the repl's filesystem while someone is editing the repl. However, we don't take snapshots when a repl is only acting as a web server without anyone editing it, meaning that we would need a solution that lives outside of the repl's filesystem.
+  - Keeping each database outside of the filesystem also gives us the flexibility to let people access the same database across multiple repls in the future.
+  - I have lots of love for SQLite; early prototypes of Database were backed by it!
+- Totally makes sense - SQLite is very dependent on a traditional filesystem. I've been figuring out how to run backups recently and grabbing a copy of the file isn't enough - you need to be sure there are no transactions going on, so you need to use the SQLite backup API or run VACUUM INTO a separate copy, which then doubles the amount of disk space you need.
+
+- Having a simple database it a great feature for prototyping, but I think having custom Dockerfile support would be even better.
 # discuss
 - ## 
 

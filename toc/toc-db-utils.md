@@ -139,6 +139,16 @@ modified: 2022-11-06T11:21:27.612Z
   - https://x.com/ImSh4yy/status/1864723257410167065
     - been using it with cloudflare d1 during dev, pretty good
 
+- https://github.com/Microsoft/azuredatastudio /MIT/202412/ts
+  - https://learn.microsoft.com/sql/azure-data-studio
+  - Azure Data Studio is a data management and development tool with connectivity to popular cloud and on-premises databases.
+  - Azure Data Studio supports Windows, macOS, and Linux, with immediate capability to connect to Azure SQL and SQL Server
+  - Browse the extension library for more database support options including MySQL, PostgreSQL, and MongoDB.
+  - Query Results Viewer with advanced data grid supporting large result sets, export to JSON\CSV\Excel, query plan and charting
+  - Visual Data Editor that enables direct row insertion, update and deletion into tables
+  - Management Dashboard supporting customizable widgets with drill-through actionable insights
+  - Workspaces with full Git integration and Find In Files support to managing T-SQL script libraries
+
 - https://github.com/dbgate/dbgate /MIT/202402/ts/svelte
   - https://dbgate.org/
   - Database manager for MySQL, PostgreSQL, SQL Server, MongoDB, SQLite and others. 

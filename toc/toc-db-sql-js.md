@@ -79,6 +79,16 @@ modified: 2021-08-30T18:56:14.863Z
   - Infinite scroll rows view.
   - Tables page with each table's metadata, including the disk size being used by each table.
 
+- https://github.com/Microsoft/azuredatastudio /MIT/202412/ts
+  - https://learn.microsoft.com/sql/azure-data-studio
+  - Azure Data Studio is a data management and development tool with connectivity to popular cloud and on-premises databases.
+  - Azure Data Studio supports Windows, macOS, and Linux, with immediate capability to connect to Azure SQL and SQL Server
+  - Browse the extension library for more database support options including MySQL, PostgreSQL, and MongoDB.
+  - Query Results Viewer with advanced data grid supporting large result sets, export to JSON\CSV\Excel, query plan and charting
+  - Visual Data Editor that enables direct row insertion, update and deletion into tables
+  - Management Dashboard supporting customizable widgets with drill-through actionable insights
+  - Workspaces with full Git integration and Find In Files support to managing T-SQL script libraries
+
 - https://github.com/dblens/app /202202/ts
   - database client that helps you to explore database with automatic ER diagrams, visualise and analyse internal DB metrics such as index utilisation sequential scans, slow running queries, storage and many more.
 

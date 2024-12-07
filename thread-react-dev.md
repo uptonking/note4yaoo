@@ -14,7 +14,11 @@ modified: 2021-01-06T14:40:11.360Z
 
 - ## 
 
-- ## 
+- ## useCallback 实际上是 useMemo 的一个特殊形式，useMemo会自动调用函数并且返回值，而 useCallback 是不调用直接返回函数
+- https://x.com/wulianwen1/status/1865416582102704181
+  - 这两个函数在 react 源代码中的实现非常一致，窃以为 react 团队单独实现 useCallback 的原因是语义化和减少函数调用的这一步性能开销，
+
+- 就函数声明那点开销几乎可以忽略不计。useCallback 的目的是因为 useMemo 里的计算可能开销很大，由于 useMemo 里的计算可能会依赖于函数，所以没办法只能把函数也缓存起来。
 
 - ## 活久见，使用 useRef 缓存过的 VDom，居然还会触发重渲染，而且重渲染使用的还是缓存时的 props。
 - https://x.com/YuTengjing/status/1803435159645200623
@@ -359,7 +363,7 @@ useEffect(() => {
 
 - What are your issues exactly with unserializable data in this case?
   - Specifically: Replay's codebase is 80% a copy-paste of the FF DevTools. 
-  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,                                                               `ValueFront`,                                                               `Pause`, etc. 
+  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,                                                                `ValueFront`,                                                                `Pause`, etc. 
   - We currently parse JSON and instantiate those classes, _then_ put them into Redux.
   - The Replay codebase started with very legacy Redux patterns (hand-written reducers, etc), and no Redux DevTools integration. When I added the DevTools setup, that began to choke on the class instances. So, I had to sanitize those out from being sent to the DevTools.
   - I've been modernizing our reducers to RTK's `createSlice`, which uses Immer. Immer recursively freezes all values by default. Unfortunately, those `SomeFront` instances are mutable, and _do_ get updated later. This now causes "can't update read-only field X" errors
