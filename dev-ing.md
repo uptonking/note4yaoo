@@ -537,10 +537,23 @@ console.log(';; qryDiffSnap ', snapshotFrameResult)
   - 鼠标放上去就消失lint了
   - 让setttings开关联动
 
+- console/terminal/ports交互修改，当点击cde-tools开关按钮时
+  - 若tabs头部没有显示标题，则创建tab并显示tab内容
+  - 若tabs头部显示了标题但没有显示tab内容，则切换到tab并显示tab内容
+  - 若展示的tab标题和内容都与开关按钮符合，则隐藏标题和内容，只有此时tools开关按钮不显示背景色
+  - 只要tabs头部的标题包含tools开关按钮，开关按钮就显示背景色
+
 - 📌 🔜
   - 修复文件树将文件夹拖到文件夹不work的问题
 
 ## 1208
+
+- [usePrevious with or without useEffect : r/reactjs](https://www.reddit.com/r/reactjs/comments/125w5nj/useprevious_with_or_without_useeffect/)
+  - Normally, writing or reading ref.current during render is not allowed.
+  - Do not write or read ref.current during rendering, except for initialization. This makes your component’s behavior unpredictable.
+
+- [How to specify a port to run a create-react-app based project? - Stack Overflow](https://stackoverflow.com/questions/40714583/how-to-specify-a-port-to-run-a-create-react-app-based-project)
+  - `"start": "cross-env PORT=3009 react-scripts start",`
 
 - 昨天
   - 处理驾驶舱悬浮时的宽度异常问题
@@ -549,6 +562,7 @@ console.log(';; qryDiffSnap ', snapshotFrameResult)
 - 今天
   - 优化打字动画的时机
   - 继续集中修复cde相关的issues
+
 ## 1206
 
 - 昨天

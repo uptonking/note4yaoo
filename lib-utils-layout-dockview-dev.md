@@ -113,6 +113,11 @@ modified: 2024-05-27T11:39:14.886Z
 - left-sidebar最好不要放在DockviewReact里面实现，因为实现below不好实现
   - 变通思路是先创建中间区域的panels，再通过左右方向添加2个侧边栏
 
+- 🤔 面板配置方式
+  - 设置同一个group多个panel的显示隐藏，必须先设置要显示的，再隐藏不需要显示的panel，才能符合预期
+  - 要先setVisible，再setSize，这样宽高才会生效
+
+- 
 - 
 - 
 
