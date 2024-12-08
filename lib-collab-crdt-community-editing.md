@@ -81,7 +81,28 @@ modified: 2023-10-28T09:00:45.811Z
 
 - ## 
 
-- ## 
+- ## [Building Document-Centric, CRDT-Native Editors | Hacker News _202410](https://news.ycombinator.com/item?id=41923693)
+- Document-centric workflows were once the great promise of the future, and inspired Microsoft's OLE, Apple's "Publish and Subscribe", and then OpenDoc.
+  - You would in essence be able to build your own perfect word processing environment (for example), by bringing Company X's editing tools, Company Y's grammar checking and spelling tools, perhaps some embedded spreadsheet tables from Company Z if you were writing business reports, and so on.
+  - We kind of have this a little today with browser extensions, in that we can extend functionality onto a webpage we're viewing, but our environments are still very application-centric and not workflow or content-centric at all.
+
+- 💡 I just recently put into production a large scale document centric CRDT editor using yjs and Vue3/Vuetify. This is a platform agnostic WYSIWYG editor that supports around 30M daily users. It was a really intense experience writing this software! It uses YJS as the document, then creates an event sourced change stream (ydoc changes) that is streamed in via a websocket (APIGWV2) lambda into a dynamodb, then projected into S3 as plain old JSON for service load. The editor presents "what the web sees" for platform preview and is interpreted from the ydoc. All serverless. Multi user is awesome! History is awesome! The whole thing is just really cool!
+  - I ran into two major issues: 
+  - upstream updates being too large for a websocket which I fixed with signed URLs to a S3 YJS triggered lambda that inserted these very large events - which are exceptionally rare, like when I user copies/pastes a giant doc. 
+  - That and multi user hierarchical updates, like where a user updates a parent node and that triggers an update of the children messing up the other user. 
+  - The trick was to flatten the hierarchy into a linked list on save and save the doc as a flat ymap structure in the DB. I had to chunk serialized strings into dynamodb because of the ~400k row limit, but no regrets, loads are very fast over WS even when chunked. Lots of learning. Really fun system to write.
+
+- I was very excited about the "Document-Centric" mention in the title, but the article does not really deliver in that regard (other than indicating that separating content from editor logic is important).
+  - What I expected instead: a way to consider the document as the first-class citizen in people's workflows (especially local-first flows, since CRDT is mentioned), which is a big challenge considering that all filesystems are still file-oriented (ie. if you want two versions of a document, you end up with two files, which then become two documents since there's nothing binding them).
+
+- I'm completely into the idea that your data should be document-centric, this I've seen working at a very large scale (i.e. 100+ MB JSON blobs being updated at 60 FPS with a large team of people editing at the same time) with the structure we built at Framer.
+
+- I think we already standardized with the file as the unit of document exchange. You can make a CRDT interface to that file if you want, but CRDT is should not be the authority. There are too many competing implementations and what is best is too context specific and we already have the file as the standard everywhere so it's never gonna catch on
+
+- By putting all the state into a single CRDT then yes, you're going to get conflict resolution across the entire document. But you might also want to think about how big that CRDT state is going to get.
+  - There's no splitting or isolation available here, you need to load the entire Y. Doc to get any of the content of the page. The content of the Y. Doc is opaque bytes, and if you dump it to some other representation (like JSON) then you lose the internal Y. Doc counters that make conflict resolution work.
+- Yjs had a “subdocument” facility for dividing up content for lazy loading, although I’m not exactly sure if or how cross-doc transactions would work.
+  - If you compare Ydoc for a very large page with many items to a web API maybe it seems like it could be a bit big, but traditional file document in an editor like Pages are frequently several megabytes, it really doesn’t seem spooky to me in a truly local first app where you will delta sync.
 
 - ## [Cola: A text CRDT for real-time collaborative editing | Hacker News _202309](https://news.ycombinator.com/item?id=37373796)
 - I would guess a G-tree is still a B-tree with additional parent pointers, the fact that it is stored in an array is a matter of representation but does not fundamentally change the structure. This still stores pointers, they are just in units of the node size instead of bytes and relative to the first array element instead of the beginning of the address space. A complete binary tree stored in a array without any explicit references, i.e. an implicit representation with the children of the node at index x stored at indices 2x + 1 and 2x + 2, is still referred to as a binary tree, just with an implicit representation.

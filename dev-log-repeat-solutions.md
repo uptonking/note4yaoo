@@ -354,6 +354,10 @@ modified: 2021-07-20T13:50:23.433Z
   - ventus: 快速切换到窗口平铺预览
   - rc-dock: 类似ide的拖拽停靠效果
 # solutions
+- partial-sync
+  - 实现方案可参考成熟数据库的streaming，一般与业务表相关
+  - powersync
+
 - 系统提供很多配置项的设计
   - webpack
   - vscode settings
