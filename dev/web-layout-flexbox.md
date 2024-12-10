@@ -64,8 +64,8 @@ modified: 2020-12-21T07:46:17.578Z
   - 默认值：`0 1 auto`，弹性项目的宽度由里面的内容自动确定
   - 简写建议显式写出3个值
   - 快捷值：auto (1 1 auto) 和 none (0 0 auto)
-  - 当flex取值为一个**非负数字**时，则该数字为`flex-grow`值，flex-shrink 取 1，flex-basis 取 0，即`N 1 0%` 可放大
   - 当flex取值为**0**时，对应的三个值分别为 `0 1 0%` 不放大
+  - 当flex取值为一个**非负数字**时，则该数字为`flex-grow`值，flex-shrink 取 1，flex-basis 取 0，即`N 1 0%` 可放大
   - 当flex取值为**一个长度或百分比**(如0%)时，则视为`flex-basis`值，flex-grow 取 1，flex-shrink 取 1
   - 当flex取值为两个非负数字，则分别视为flex-grow和flex-shrink的值，flex-basis 取 0%
   - 当flex取值为一个非负数字和一个长度或百分比，则分别视为flex-grow和flex-basis的值，flex-shrink 取 1

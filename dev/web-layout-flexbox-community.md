@@ -15,6 +15,46 @@ modified: 2024-06-18T02:45:42.107Z
   - https://codepen.io/argyleink/pen/rNPEOxM
   - wrapping the style updates with `document.startViewTransition()`.
   - i could write some custom view transition styles to make it stretch to the new position, but i was lazy.
+
+- [fixed header div with scrollable div below - Stack Overflow](https://stackoverflow.com/questions/15293941/fixed-header-div-with-scrollable-div-below)
+
+```HTML
+<div id="content">
+  <div id="top-padding"></div>
+  <div id="stuff">
+    <p>some content</p>
+  </div>
+</div>
+```
+
+```CSS
+#content {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 100%;
+  margin: 0 auto;
+  background-color: #C9E6FF;
+}
+
+#top-padding {
+  height: 30px;
+  flex: none;
+  background: blue;
+}
+
+#stuff {
+  flex: auto;
+  overflow-y: auto;
+  background-color: lightgreen;
+}
+
+/* long content for demo purpose */
+#stuff p {
+  height: 1000px;
+}
+```
+
 # faq
 - ## `margin: auto` vs `justify-content/align-items:center`
 
