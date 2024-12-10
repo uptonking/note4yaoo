@@ -535,7 +535,7 @@ console.log(';; qryDiffSnap ', snapshotFrameResult)
 
 - lsp支持的语言排查
   - 鼠标放上去就消失lint了
-  - 让setttings开关联动
+  - 让settings开关联动
 
 - console/terminal/ports交互修改，当点击cde-tools开关按钮时
   - 若tabs头部没有显示标题，则创建tab并显示tab内容
@@ -545,6 +545,42 @@ console.log(';; qryDiffSnap ', snapshotFrameResult)
 
 - 📌 🔜
   - 修复文件树将文件夹拖到文件夹不work的问题
+
+## 1210
+
+- 昨天
+  - 基本对接完了端口转发的功能，还需要调整ports面板自动打开的时机，今天上午可以合到staging开始测试
+  - 调整并统一了底部面板terminal/console/ports的打开关闭交互
+  - 排查一个紧急issue，langfuse上ai计划的修改 和 最终在ideServer ai的修改 为什么不一致, 需要ivan处理一下， langfuse日志截图显示ai只修改了几行, ideServer日志截图显示ai修改的内容包含多个重复片段
+- 今天
+  - 尽快上线ports功能
+  - 增加请求跟随和取消跟随的事件
+  - 修复了cde的高优先级issues
+
+## 1209
+
+- [为什么说FRP不稳定，大厂都开始用商业公司的内网穿透？ - 知乎](https://www.zhihu.com/question/405414651)
+  - frp确实不稳定，最大并发1000左右就不行了，老掉线。所以我们公司都是自己开发的，并发10万都没问题，C语言就是牛逼。
+  - FRP的确不太稳定，我连接数稍微大一点点，客户端就会自动退出，不知道什么鬼，已经好久没有用了，好久没碰代码，手都生疏了
+- [使用免费的 frp 服务器有什么安全隐患？ - 知乎](https://www.zhihu.com/question/593772098)
+  - 作为中间人, frp服务器理论上可以截留消息
+  - frp把你的内网服务暴露到公网, 可能被黑客攻破
+  - 服务出故障中断没人维护, 而你在外面正好要用这个服务
+  - 可以试下cloudflare的zerotrust, 也可以自己租便宜云主机(vps)搭建frp/nps, 或者用n2n来组局域网.
+
+- 上周
+    - 调整了部分快捷键的功能，增强了快捷键的体验
+    - 对接端口转发功能的前端
+    - 调整browser面板的功能及交互
+    - 集中修复了cde的20多个issues，包括优化terminal体验、布局宽度异常
+- 本周
+    - 增加请求跟随和取消跟随的事件
+    - 处理删除、移动、重命名文件的回放和撤销
+    - 优化LSP的功能和体验
+    - 修复了cde的高优先级issues
+- 今天
+    - 完成端口转发功能的前端
+    - 修复了cde的高优先级issues
 
 ## 1208
 

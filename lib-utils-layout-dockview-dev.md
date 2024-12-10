@@ -85,7 +85,9 @@ modified: 2024-05-27T11:39:14.886Z
 - drag
   - how to disable drag of a tab or group, not drop
 
-- 
+- 当拖拽导致面板宽度变化时，希望显示不同的内容
+  - 可结合container query实现
+
 - 
 - 
 - 

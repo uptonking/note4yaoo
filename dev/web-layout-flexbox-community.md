@@ -59,6 +59,13 @@ modified: 2024-06-18T02:45:42.107Z
 
 - With right: 0; bottom: 0, the margin is contained inside the positioned descendant; they will shrink the size of the element.
   - So what does this mean? It seems to me that `top: 0; right: 0; bottom: 0; left: 0` is probably the one to favor, as it's a little more predictable, unless you have a particular reason to use height or width instead.
+# discuss-min-width/height-0
+- ## 
+
+- ## [Use text-overflow: ellipsis and flexbox align-items: center in combination - Stack Overflow](https://stackoverflow.com/questions/48545178/use-text-overflow-ellipsis-and-flexbox-align-items-center-in-combination)
+- text-overflow: ellipsis won't work on flex container (display: flex).
+  - The main reason is that the text node becomes a anonymous flex child and needs `min-width: 0` to behave (or else it won't shrink beyond its content size), but as one can't target a text node with CSS, we need to wrap it, here done with a span.
+
 # discuss
 - ## 
 
