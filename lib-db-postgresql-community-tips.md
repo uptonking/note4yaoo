@@ -81,7 +81,18 @@ modified: 2023-10-28T17:52:17.942Z
 
 - ## 
 
-- ## 
+- ## [Common mistakes in PostgreSQL | Hacker News _201905](https://news.ycombinator.com/item?id=19817531)
+- There are two ways to built abstractions: 
+  - either by defining an interface that represents the lowest-common-denominator of functionality such that all the underlying implementations already implement it; 
+  - or by defining the interface that you want to have, where some implementations can implement it directly, and others require a shim/polyfill implementation, 
+  - or where the implementation “adapter” will just plain throw a NotImplementedError at your attempt to use the advanced features of the interface.
+  - Personally, I prefer the latter. But it seems like in the ORM space the latter approach is nowhere to be found.
+
+- ORMs are great for quickly standing up a database, but if you need advanced features you should probably just use raw SQL. Most ORMs even make this very simple and safe.
+
+- 
+- 
+- 
 
 - ## 🧐 Each Postgres server can host multiple databases, but be careful! An important note is all databases on the same server share the Write-Ahead Log (WAL)
 - https://x.com/qianl_cs/status/1826314526431871476

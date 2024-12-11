@@ -41,6 +41,23 @@ modified: 2024-08-24T16:52:53.996Z
 - 
 - 
 
+# discuss-habit 🤼🏻
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [why programmers reluctant to use auto save feature on text editors? : r/learnprogramming _202105](https://www.reddit.com/r/learnprogramming/comments/ndrc5b/why_programmers_reluctant_to_use_auto_save/)
+- It mainly comes down to the warning your editor will give when you try and close an unsaved file. With autosave, this will never happen
+- One of the points is to save only working code. With Autosave, one has no control over the timing.
+- it probably depends on what era of programming you are from. i used to use manual saves until i used intellij for work, where auto saves happen.
+
+- I love auto save. For everything else. But not when I'm programming.
+
+- I prefer autosave, however it's not uncommon to have some automatic actions harken on save, like auto formatting or relaunching a dev server. 
+
+- I love autosave because I am the sort of person to have forgotten I've saved
 # discuss
 - ## 
 

@@ -66,6 +66,7 @@ modified: 2021-07-20T13:50:23.433Z
   - 📝 编辑器，协作同步，版本分支，~~虚拟渲染, 分支版本, 协作冲突, undo/redo~~
   - 🔀🛢️ crdt版本历史, partial-replica、ivm, delta-db, dynamic-schema/eav, 实时架构
   - version-history+sync
+  - 基于ast的架构: reka, tango-lowcode, ast优化常使用bytecode(data+logic)
 - 🛢️ 数据存储架构
   - file-first: vscode, obsidian, notable, hexo
   - db-first: git, joplin, siyuan, nocodb

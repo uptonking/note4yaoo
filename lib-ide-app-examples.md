@@ -172,12 +172,12 @@ modified: 2024-08-24T16:30:20.218Z
 - https://github.com/sourcebot-dev/sourcebot /MIT/202411/ts
   - https://sourcebot.dev/
   - a fast code indexing and search tool for your codebases. 
-  - It is built ontop of the zoekt indexer, originally authored by Han-Wen Nienhuys and now maintained by Sourcegraph.
+  - It is built on top of the zoekt indexer, originally authored by Han-Wen Nienhuys and now maintained by Sourcegraph.
   - https://github.com/sourcegraph/zoekt /apache2/202411/go
     - This is a fast text search engine, intended for use with source code.
     - This is a Sourcegraph fork of github.com/google/zoekt. It is now the main maintained source of Zoekt.
 # code-utils
-- https://github.com/salsa-rs/salsa /MIT/20212/rust
+- https://github.com/salsa-rs/salsa /MIT/202412/rust
   - https://salsa-rs.netlify.app/
   - A generic framework for on-demand, incrementalized computation. 
   - Inspired by adapton, glimmer, and rustc's query system.
@@ -186,14 +186,14 @@ modified: 2024-08-24T16:30:20.218Z
     - Every query is used like function K -> V that maps from some key of type K to a value of type V. 
     - Queries come in two basic varieties: inputs/functions
 
-- https://github.com/kythe/kythe /apache2/202412/cpp
+- https://github.com/kythe/kythe /apache2/202412/cpp/google
   - https://kythe.io/
   - Kythe is a pluggable, (mostly) language-agnostic ecosystem for building tools that work with code.
   - Indexer implementations for C++, Go, and Java
   - Compilation extractors for javac, Maven, cmake, Go, and Bazel
   - Sample cross-reference service
   - The Kythe project was founded to provide and support tools and standards that encourage interoperability among programs that manipulate source code
-  - Kythe grew out of our experience creating a large-scale semantic index of cross-references for the enormous, multi-lingual internal codebase at Google
+  - 👉🏻 Kythe grew out of our experience creating a large-scale semantic index of cross-references for the enormous, multi-lingual internal codebase at Google
   - What Kythe Provides
     - Language-agnostic graph storage format. Kythe defines a simple, flexible, and portable graph representation that is easy to emit from an instrumented compiler, and for clients to consume.
     - extensible graph schema for a variety of interesting semantic cross-reference data in various languages, including C++, Java, and (soon) Go
@@ -201,6 +201,13 @@ modified: 2024-08-24T16:30:20.218Z
 - https://github.com/TreeTide/underhood /202203/inactive
   - UnderHood is a code browsing interface backed by Kythe indices.
   - With https://github.com/TreeTide/underhood, my goal is to provide a read-only view of code, geared for understanding and debugging. Having to maintain the ability to edit comes with constraints.
+
+- https://github.com/facebookincubator/glean /BSD/202412/haskell/cpp/facebook
+  - https://glean.software/
+  - System for collecting, deriving and working with facts about source code.
+  - Glean is designed around an efficient storage model that enables storing information about code at scale.
+  - There is currently full support for: C++, C, Hack, Haskell, JavaScript/Flow
+  - We also support the SCIP or LSIF code indexing formats, for: rust, ts, go, java, python, .net
 
 - https://github.com/rizsotto/Bear /GPL/202411/cpp
   - Bear is a tool that generates a compilation database for clang tooling.

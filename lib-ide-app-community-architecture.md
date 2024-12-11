@@ -29,6 +29,8 @@ modified: 2024-12-03T13:20:30.085Z
 - why isn't the compiler incremental?
   - It doesn’t need to be / it is, depending on perspective. The C# compiler, for example, has what’s called a “semantic speculative model” wherein it will use various heuristics to know when you need to re-typecheck things or not (e.g., editing just the body of a method without changing a type signature kicks off much less work than if you also change the return type). But it’s also just really fucking fast and will use as many threads as you want it to, so it can also be kinda moot too. Very rarely is the compiler actually a bottleneck in the C# case, but could be in others.
 
+- Source-code can be stored in a database of course. But I think this is about having source-code express the data. In a sense SQL does that already with its data-definition language subset. Or maybe I misunderstood?
+
 - This is a well composed idea. This reminds me slightly of (Rich's?) Codeq https://github.com/Datomic/codeq although codeq is only outlining code/scm relationships and not syntax trees etc. I think I was always hoping codeq would add something like this (for doing what you are doing to validate forms) but the input mechanism probably needed more hammock time
 
 - 💡 It's not a new approach but actually a very old one. 
@@ -42,9 +44,11 @@ modified: 2024-12-03T13:20:30.085Z
 
 - In traditional Smalltalks, all the method objects have a shared object representing the file that method source is stored in (either .sources or .changes, with room for more) and an offset in the method to point to the text. On compilation, all it does is write the new method with metadata to the end of the .changes file, then set the text indexes. There is a mechanism to crunch out all the unused source text and generate a new merged .sources file. If you are all working on the same base version, .sources files can be shared since they are usually read only.
 
-- Source-code can be stored in a database of course. But I think this is about having source-code express the data. In a sense SQL does that already with its data-definition language subset. Or maybe I misunderstood?
+- One of my ideas is "lazy invariant maintenance". It should be possible to layer the tip of execution (what should go on next) with lazy incremental materialized invariants. Let the computer decide what is the most efficient approach to solving the computational problem. 
+  - In other words everything is a query and queries are layered on top of eachother in arbitrary directions. 
+  - I think storage or source of truth should be decided by the software. It might be more efficient to arrange data a certain way to sustain multiple types of queries.
 
-- ## 🤔🔡 [Turning the IDE Inside Out with Datalog | Hacker News _202207](https://news.ycombinator.com/item?id=23869592)
+- ## 🤔🔡 [Turning the IDE Inside Out with Datalog | Hacker News _202007](https://news.ycombinator.com/item?id=23869592)
 - This is really nice. Key points:
   - Parse the program like an IDE would, but expose the data in an open queryable database format (both line and unlike a language server).
   - Use Datalog for storing the facts and inferring new facts about data.
@@ -72,7 +76,7 @@ modified: 2024-12-03T13:20:30.085Z
 
 - This idea of turning a program into a database and using prolog/dalalog on it is not new. The most successful example is Semmle (bought by Github), which has been doing it for years now, with a SQL-like syntax for requests (named ". QL").
 
-- This is how Rust Analyzers intellisense works, it uses a query engine called Salsa that stores the symbols in a database and the linting and completion/semantics are entirely query-driven
+- 💡 This is how Rust Analyzers intellisense works, it uses a query engine called Salsa that stores the symbols in a database and the linting and completion/semantics are entirely query-driven
   - Good video describing it's use for working with Rust's AST:
   - [Salsa In More Depth (2019.01) - YouTube](https://www.youtube.com/watch?v=i_IhACacPRY&t=1348s)
 
@@ -123,6 +127,84 @@ modified: 2024-12-03T13:20:30.085Z
 - This is actually really similar to on-premise SharePoint development; list data, content types, workflow definitions, front-end HTML, CSS, JS code are just stored in the back end database.
 
 - Data driven applications are cool, I think I'd use Datomic over Postgres but it didn't exist 20 years ago
+# discuss-ast
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Where is the CRDT for syntax trees | Hacker News _202112](https://news.ycombinator.com/item?id=29433896)
+  - 核心是json的crdt操作
+- We are almost there, for lists and structs there are CDRT's but a move operation across the data structure is missing. Martin Kleppman (from automerge) talks about this in his talk "CRDTs: the hard parts"
+  - I also think a range move or range delete is missing from many of these algorithms. Peritext
+
+- We just got CRDTs for generic textual documents
+  - code has generic textual components -- like comments -- plus tree-like elements -- so it's arguably more complex. 
+  - Furthermore, one expects automatically merging conflicting content to often have to be resolved because even a merge + a sophisticated node-based merging strategy will fail to capture effectful intents. 
+  - However, i am excited to see tooling where, for example competing merges get run through a trichotomy (A only, B only, A + B) to see which branch satisfies the most number of tests... And then suggests the resolution accordingly.
+- In terms of generic textual documents, do you have a link? The only thing that comes to mind is Pijul: https://pijul.org/ I also found peritext
+
+- Sounds nice in theory. But how is syntax based version control ever supposed to work when we have so many languages that literally parse differently depending on dependencies that aren't even in the codebase? Let alone ones that easily take hours to compile even when they are in the codebase? Sounds impossible in practice unless we restrict ourselves to sufficiently context free languages.
+
+- Sounds similar to what Semantic Merge does. Of course it would also have to handle syntax errors. For that it could fall back to the current crop of text CRDTs.
+
+- ## ✏️ [Treefrog: A code editor that uses both AST and text editing commands | Hacker News _202201](https://news.ycombinator.com/item?id=29787861)
+- I started experimenting with AST editing ideas after getting frustrated with my editor's lack of understanding of the structure and meaning of code, ie. the editing primitives all dealt with text and simple changes to the code often required repetitive manual text edits that had nothing to do with the meaning of the change. 
+  - I went through a couple of prototypes and landed on the idea of augmenting a standard editing interface with a new mode that works on a simplified representation of the structure, which basically follows indentation levels - blocks of code like functions, loops, etc, can be moved and manipulated as units, and there are specific editing commands for the different elements.
+  - The main idea is to design all of the editing and navigation commands around the thought processes (instead of designing around a data structure, which I think is where traditional editors have gone wrong), so that it feels natural and intuitive to use - like something that's been designed for what editing code actually involves, as opposed to a text editor that's had lots of code intelligence stuff added on top of it.
+
+- There has been a movement to try something like this under the buzzword "projectional editing". The idea was to edit a representation of the code and not the code itself. People and companies experimented with it but didn't get much adoption. Not sure why. Perhaps you need to allow the developers to reach invalid states, because the editors I tried just refused entries which would result in a syntax violation. This is harder to implement though. 
+  - Yeah, that's one of the main issues with ASTs and why I think they make the same mistake as text editors ultimately - designing around a particular data structure just constrains you into weird UX scenarios that don't have anything to do with the actual problem of making something that lets you write code.
+- Friend of mine said he worked with a system like that. Problem with it was it couldn't save code that didn't compile. That's a defect. Am reminded of someones comment that they would like a compiler that just stubs out code that doesn't compile. For a system to be workable you need to be able to handle that.
+
+- I think of refactorings as being a level of abstraction above text and AST editing - kind of like macros for AST edits.
+
+- The features I've always dreamed about from an AST aware editor was shell-like functionality where operations to rename, move, copy, create, etc were akin to file manipulations done on the command line. At one point I was thinking about the possibility of FUSE-ifying(https://en.wikipedia.org/wiki/Filesystem_in_Userspace) some code so that a normal shell could be used. Any chance of shell-like functionality from treefrog?
+
+- ## [Flattening ASTs and other compiler data structures | Hacker News _202307](https://news.ycombinator.com/item?id=36559346)
+- Blender (the 3D modelling software) is a fascinating case of this. 
+  - To make loading and saving files fast and lossless, it uses identical on-disk and in-memory representations. 
+  - In other words, everything is in an arena(活动场地), and saving and loading is just a memcpy of the entire arena. 
+  - Considering the massive potential complexity of a Blender project and the myriad issues you could have with serialisation and deserialisation, this seems like a great design to me.
+  - The trade-off of course is that your data structure design is kinda sticky, insofar as you need to be able to open files for older versions.
+
+- The missing piece is a way to evolve those data structures over time, in a similar way to database migrations. Only when loading data from an older version of the app those operations would need to be issued, and then the app could save the updated version in disk immediately to avoid incurring that cost again.
+  - An example implementation of this concept is [this project](https://www.inkandswitch.com/cambria/) that was created in the context or CRDTs. If it is not directly applicable, at least it should be a good inspiration
+
+- You ever hear of .doc files? Yeah. There is a reason XML was seen as the future back in the 90s. 
+  - Custom databases often get extended into custom filesystems. And these systems on top of systems get obscure features (like embedding excel sheets inside of Word) and... Thing get hairy.
+
+- Wasn't that also the way Word used to dump structs onto disc in the "doc" days? I think I read that way also a major problem in writing converters, you baobab needed to decode Word's internal data structures which were of course undocumented.
+  - It's very common in old software and video games. Pre-97 office did that though with more formalisation than most (the binary format is now called Binary Interchange File Format, or BIFF, and is relatively generic, at the time MS almost certainly had utility libraries for working with BIFF).
+  - This was a common source of portability issues for game saves (as well as blowing your saves on updates), as they'd commonly just blit internal data structure, with no formalised interface.
+
+- I remember Spolsky saying Excel .xls worked like this, but I guess this should apply to .doc files as well. This is usually orders of magnitude faster than serializing to/deserializing from a different storage format.
+  - I don't think so. Serializing is IO-bound, if your format is "simple" (e.g. CBOR) you can't measure the difference.
+
+- I believe Microsoft Word originally did this, and it was a major pain as the file format evolved.
+
+- It also means you can't share files between little endians and big endians.
+  - It isn't a real problem. Blender supports only little-endian targets and the code byte swaps data files as needed. I guess someone could port it to AIX, z/OS, or Linux/zSeries, but that's unlikely at best.
+
+- Storing changes and the originals blew up badly for Microsoft Word in the late 1990's due to privacy concerns.
+
+- I love flattened ASTs. One of my favorite uses of them is for inline markup in pulldown-cmark (see [1] for a brief description).
+  - Here's a sketch of the problem being solved. The raw input is broken into a sequence of nodes, and something like * is turned into a "MaybeEmphasis" node, as it has the potential to turn into emphasis, or remain text if no match for it is found.
+
+- This reminds me of a GDC talk where rust was praised because it forces you to either go mad because of the borrow checker or structure code using an entity component system. I find it funny that the value of the borrow checker in all these real world scenarios with complicated lifetimes is to find a way to avoid it entirely by putting stuff in arrays and reference them by their index.
+  - Using an entity component system felt like writing very fancy spaghetti code in my limited experience with the Bevy game engine in Rust. No longer having direct references between objects means the type system isn't nearly as useful and I found it very hard to reason about the code. I can believe it becomes useful in very large systems but it was just a hinderance in the small program I was writing.
+
+- This is also how Prolog terms are represented on the heap in the Warren Abstract Machine (WAM). 
+
+- I used such a succinct(简洁的；简要的) AST structure to implement a JavaScript parser and interpreter for a severely memory constrained environment (embedded): V7 (https://github.com/cesanta/v7)
+  - We later switched to a ast->bytecode compilation step but for a while the implicit AST was directly traversed during interpretation.
+
+- I did something similarly for my Yaml to Sql compiler at https://yaml2sql.netlify.app.
+
+- Same ideas are used in Nim's incremental compilation (wip) https://github.com/nim-lang/Nim/tree/devel/compiler/ic Also there are two JSON implementations with a flat architecture https://github.com/Araq/packedjson and https://github.com/planetis-m/packedjson2 (this one I wrote) But I agree it's a pain to write it like that.
+
+- There was some work on having flattened JS as bytecode. It never got much adoption but I believe it would have made the web a lot more efficient.
 # discuss-ide
 - ## 
 

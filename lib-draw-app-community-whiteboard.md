@@ -68,6 +68,28 @@ modified: 2023-09-07T04:17:31.787Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## ⚖️ [JSON Canvas – An open file format for infinite canvas data | Hacker News _202403](https://news.ycombinator.com/item?id=39670922)
+- Some context about why we created JSON Canvas:
+https://obsidian.md/blog/json-canvas/
+  - We just released it today, so this is still a very nascent project. A little over a year ago we released Obsidian Canvas. The .canvas file format has felt stable enough to give it a name and resources that other apps can freely use
+  - The spec is conservative, and definitely does not support many features canvas apps will want to implement (yet).
+  - The purpose of giving JSON Canvas a name and site is to encourage an interoperable ecosystem to grow around this format. 
+
+- do you have any notes on why this isn't SVG? Which existing formats were considered before building your own, e.g. SVG/Excalidraw/draw.io/...?
+  - Looking at the JSON, I assume this is a higher level format that may output SVG
+- It makes sense if you see Obsidian as the starting point - it's a document store. While other canvas products may be more graphics-oriented, Obsidian's is about laying out documents and objects and providing simple relationships between them. For this purpose, JSON's probably a lot easier to work with than XML/SVG.
+- Obsidian's philosophy is file over app and releasing a spec for their Canvas feature is fulfilling that promise. It's a strictly positive 'today is better than yesterday' thing for them to have done so.
+
+- SVG is great and you are the first person I have ever seen who would (and did) imply that SVG might be or would be better than JSON for this kind of thing.
+
+- I'm still glad SVG exists because it's available on the web for free, but this file format is really a mess (very hard to parse, the feature set is so broad it's never entirely implemented and the implantations diverge making it surprisingly hard to support multiple browsers).
+
+- From my Analysis, GraphML, although specified in XML, seems to be one of the most widely used exchange formats, especially with the yWorks extensions for yEd.
+
 - ## [Show HN: Obsidian Canvas – An infinite space for your ideas | Hacker News_202212](https://news.ycombinator.com/item?id=34066824)
 - 
 - 

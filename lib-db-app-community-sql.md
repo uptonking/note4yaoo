@@ -116,6 +116,23 @@ modified: 2023-09-17T17:35:27.024Z
   - This physical storage and the indexes will make the reads or joins X times faster.
 
 - I love CTEs because of their readability, but the performance on Temp Tables is hard to ignore in large datasets.
+# discuss-sql-formats
+- ## 
+
+- ## 
+
+- ## [Transpile Any SQL to PostgreSQL Dialect | Hacker News _202403](https://news.ycombinator.com/item?id=39741956)
+- 
+- 
+
+- Is there any standardized AST for SQL?
+  - The SQL standard nominally defines one (I don't know if it hands it to you on a silver platter as some sort of grammar but it certainly defines one one way or another), but if you just implement that and then send your code out into the world, you're going to be disappointed with the results. 
+  - All the database have deviations and extensions of their own and people use them frequently.
+
+- 
+- 
+- 
+
 # discuss
 - ## 
 

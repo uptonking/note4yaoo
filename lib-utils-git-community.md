@@ -402,6 +402,14 @@ modified: 2023-08-29T10:13:31.070Z
   - Nope! It has cache structures, etc, that are not thread-safe. The core git code was only designed to run in a single-threaded manner as command line tools, after all.
 
 - [Git: the NoSQL Database - Speaker Deck](https://speakerdeck.com/bkeepers/git-the-nosql-database)
+# discuss-git-diff
+- ## 
+
+- ## 
+
+- ## 💡 [Show HN: Locust – “Git diff” over abstract syntax trees | Hacker News _202011](https://news.ycombinator.com/item?id=24999775)
+- I can't wait until the future when we have version control at the AST level instead of using text files.
+
 # discuss-collab/crdt
 - ## 
 
