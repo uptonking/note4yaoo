@@ -86,6 +86,19 @@ modified: 2024-05-27T09:12:06.925Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [gitignore does not ignore folder - Stack Overflow](https://stackoverflow.com/questions/24410208/gitignore-does-not-ignore-folder)
+- Here's the steps I took to ensure my .gitignore file ignored the folder I wanted it to ignore:
+  - Commit any changes that you need to fix/change.
+  - Run this command: `git rm -r --cached .` (which removes everything from the git index in order to refresh your git repository)
+  - Then run this command: `git add .` (to add everything back to the repo)
+  - Finally, commit these changes using `git commit -m ".gitignore Fixed"`
+
 - ## [git - warning: ignoring broken ref refs/remotes/origin/HEAD - Stack Overflow](https://stackoverflow.com/questions/45811971/warning-ignoring-broken-ref-refs-remotes-origin-head)
 
 - Since you may have excluded the branch that origin/HEAD was initially pointed to.

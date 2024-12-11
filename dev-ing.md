@@ -526,6 +526,10 @@ console.log(';; qryDiffSnap ', snapshotFrameResult)
 - 为什么 onTaskUpdated 事件会触发2次，中间刚好隔2s，然后 有时中间也会打开文件
   - action状态变化: wip-action1 > 2s > completed > 2s > wip-action2
 
+- lsp支持的语言排查
+  - 鼠标放上去就消失lint了
+  - 让settings开关联动
+
 - 文件树M标记的处理
   - 清理标记的时机， fork时和commit时，提供手动删除.1024feature-file的能力
     - goAgent去删，ideServer不关心git操作和文件操作
@@ -533,18 +537,20 @@ console.log(';; qryDiffSnap ', snapshotFrameResult)
   - goAgent触发的时机不太确定，计算资源占用大
   - gitignore的文件不应该显示M
 
-- lsp支持的语言排查
-  - 鼠标放上去就消失lint了
-  - 让settings开关联动
-
-- console/terminal/ports交互修改，当点击cde-tools开关按钮时
-  - 若tabs头部没有显示标题，则创建tab并显示tab内容
-  - 若tabs头部显示了标题但没有显示tab内容，则切换到tab并显示tab内容
-  - 若展示的tab标题和内容都与开关按钮符合，则隐藏标题和内容，只有此时tools开关按钮不显示背景色
-  - 只要tabs头部的标题包含tools开关按钮，开关按钮就显示背景色
-
 - 📌 🔜
   - 修复文件树将文件夹拖到文件夹不work的问题
+  - 编辑器行号宽度样式优化
+
+## 1211
+
+- 昨天
+    - 上线端口转发功能到staging环境，暴露端口对应的url只能在12月9号以后的root-thread才能访问，旧的root thread和cde不支持访问url
+    - 优化了面板显示隐藏的交互体验
+    - 解决paas ci失败的问题，花了比较多的时间
+- 今天
+    - 修复文件树拖拽功能有时异常的问题
+    - 准备体验测试
+    - 修复了cde的高优先级issues
 
 ## 1210
 
@@ -581,6 +587,12 @@ console.log(';; qryDiffSnap ', snapshotFrameResult)
 - 今天
     - 完成端口转发功能的前端
     - 修复了cde的高优先级issues
+
+- console/terminal/ports交互修改，当点击cde-tools开关按钮时
+  - 若tabs头部没有显示标题，则创建tab并显示tab内容
+  - 若tabs头部显示了标题但没有显示tab内容，则切换到tab并显示tab内容
+  - 若展示的tab标题和内容都与开关按钮符合，则隐藏标题和内容，只有此时tools开关按钮不显示背景色
+  - 只要tabs头部的标题包含tools开关按钮，开关按钮就显示背景色
 
 ## 1208
 
