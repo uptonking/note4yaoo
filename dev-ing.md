@@ -542,17 +542,28 @@ console.log(';; qryDiffSnap ', snapshotFrameResult)
   - 编辑器行号宽度样式优化
   - action路径超出卡片宽度
 
-## 1213
 
+## 1216
 - 昨天
-  - 在排查影响产品主流程的问题，进入cde时有时一直卡在loading界面，分析了8个thread的创建流程还是无法稳定复现
-    - 在ideServer的激活事件发送接收位置添加log，方便排查
-    - ai连接后有时没有调用激活方法
-    - 激活方法使用 activePlaygroundSync 
+  - 在排查影响产品主流程的紧急问题，进入cde时有时一直卡在loading界面
+  - 在ideServer的激活事件发送接收位置添加log，方便排查
+  - ideServer连接增强了健壮性，在收到error事件时弹出阻断性弹窗
 - 今天
   - 修复体验测试反馈的高优先级issues
   - 处理在terminal输入时光标意外跳入编辑器的问题
   - 增加请求跟随和取消跟随的事件
+
+## 1213
+
+- 昨天
+  - 在排查影响产品主流程的紧急问题，进入cde时有时一直卡在loading界面，结果是没有稳定复现和解决，分析了8个thread的创建流程还是无法稳定复现
+  - 帮佳路升级了 Clacky docs 帮助文档的版本
+- 今天
+  - 修复体验测试反馈的高优先级issues
+  - 处理在terminal输入时光标意外跳入编辑器的问题
+  - 增加请求跟随和取消跟随的事件
+- notes
+  - 激活方法使用 activePlaygroundSync
 
 ``shell
 
@@ -561,6 +572,8 @@ paas-ide-server-dev-ff679995f-jvlsx
 [Nest] 44 - 12/12/2024, 9:24:27 PM INFO [RabbitmqService] [mqName:paas-ide-server-dev-ff679995f-jvlsx][playgroundId:738970013205168128][rabbitmq.service.ts:262] =>[toMQ]paas:active:toPlayground.738970013205168128:{"messageId":"16190349-0834-4d71-beb5-63eecda37cec", "timestamp":1734009867644, "ideServer":"paas-ide-server-dev-ff679995f-jvlsx"} +1ms
 
 [Nest] 44  - 12/11/2024, 4:53:48 PM VERBOSE [AppGateway] [logger.service.js:62] A connection (738539651303972864) has been established. There is/are [[connectionCount:8]] connections currently. clientID: IGlGDh0CvECDwmZuAAxP +0ms
+
+[Nest] 44 - 12/11/2024, 4:53:48 PM INFO [RabbitmqService] [mqName:paas-ide-server-597967c678-5mdmr][playgroundId:738539651303972864][rabbitmq.service.ts:262] =>[toMQ]paas:playgroundInfo:toPlayground.738539651303972864:{"messageId":"758421ab-87ad-4171-8a71-fe1a64ea4003", "timestamp":1733907228323, "ideServer":"paas-ide-server-597967c678-5mdmr"} +1ms
 
 ```
 

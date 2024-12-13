@@ -9,13 +9,15 @@ modified: 2023-04-25T17:48:06.146Z
 
 # guide
 
+# observing-xp
+- 观测云支持页面回放，内容放在canvas·
 # discuss-OpenTelemetry
 - ## 
 
 - ## 
 
 - ## I've learned today that OpenTelemetry is literally unable to implement traditional traces 
-- https://x.com/zeeg/status/1778456223010169228
+- https://x·.com/zeeg/status/1778456223010169228
   - (for example, long running operations), and has duct taped it by adding random edges (span links) as if a trace has become a graph database.
 - OTEL has a long way to go. I hope the industry adoption accelerates some stuff. Even “simple” stuff like a logging implementation for JS is still experimental
   - I should clarify when I say OTel I'm only focused on tracing. Metrics/Logs are never gonna see mainstream adoption. You'll find startups and economy players latch onto them, but there's little to no value for most folks as logging adapters, metrics are solved problems.
