@@ -207,7 +207,13 @@ modified: 2022-11-07T10:58:24.512Z
 
 - ## 
 
-- ## 
+- ## 我真的好需要一个能按语义（而非单纯名称）搜索 emoji 的 app
+- https://x.com/laike9m_/status/1865845517974216935
+  - 现在的 app 都只能按名称检索。比如输入 "computer"，我希望找的是这几个 emoji 🧑‍💻👩‍💻，但它们根本不会出现，因为这些 emoji 的名称是 "programmer"
+
+- Raycast 满足，mac app 可以绑定快捷键，全局触发，AI 搜索
+- 为了这件事我都把 Alfred 换 Raycast 了，之前还写 workflow 搜来着
+- 我需要一个能全局触发的 Mac app。网站不方便
 
 - ## 我觉得带壳截图的春天来了
 - https://x.com/CoffeeOrPasta/status/1797139043744104471

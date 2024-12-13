@@ -112,7 +112,18 @@ modified: 2023-10-28T13:38:46.522Z
   - They push new changes from SQLite to Scylla. How are the changes from SQLite observed - through changesets or by monitoring WAL?
 - the PDS exposes a websocket which sends changes. the appview consumes these events to construct its view of the network
   - as an optimisation, a service called a relay aggregates events from all the PDSes on the network into a single stream, called the firehose
+# discuss-sqlite-testing
+- ## 
 
+- ## 
+
+- ## 
+
+- ## TIL that SQLite's test suite is proprietary and non-public.
+- https://x.com/charliermarsh/status/1866575755783921810
+- It’s the secret of their business model really. It’s a pretty fascinating approach and it worked for them for a long time. Not sure how much that works in the general sense. They also don’t take contributions.
+
+- The test suite is how they make money. Only thing that they sell. It cost about $3, 000 decades back. Should be far higher now. Not published. Negotiated.
 # discuss
 - ## 
 

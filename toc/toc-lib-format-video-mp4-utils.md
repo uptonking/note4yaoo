@@ -38,6 +38,12 @@ modified: 2024-04-14T12:19:52.096Z
 - https://github.com/thecmdrunner/remotion-render-alternatives
   - WIP: An alternative to using Remotion Lambda or Cloudrun for rendering Remotion videos in the cloud
   - This is a Next.js template for building programmatic video apps, with @remotion/player and @remotion/lambda built in.
+
+- https://github.com/video-db/Director /MIT/202412/python
+  - https://chat.videodb.io/
+  - Think of Director as ChatGPT for videos. It is a framework to build video agents that can reason through complex video tasks like search, editing, compilation, generation etc & instantly stream the results.
+  - Built on top of the cutting edge 'Video-as-Data' infrastructure, VideoDB
+  - Framework to build video agents that can reason through complex video tasks like search, editing, compilation, generation etc & instantly stream the results.
 # apps
 - https://github.com/lyonbot/video-to-gif /202404/ts
   - https://lyonbot.github.io/video-to-gif/

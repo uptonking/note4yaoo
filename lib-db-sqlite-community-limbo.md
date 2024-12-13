@@ -1,11 +1,11 @@
 ---
-title: lib-db-sqlite-community-libsql
-tags: [community, database, libsql, sqlite]
+title: lib-db-sqlite-community-limbo
+tags: [community, database, limbodb, sqlite]
 created: 2023-10-28T17:31:09.680Z
-modified: 2023-10-28T17:31:26.535Z
+modified: 2024-12-13T15:12:55.861Z
 ---
 
-# lib-db-sqlite-community-libsql
+# lib-db-sqlite-community-limbo
 
 # guide
 
@@ -13,6 +13,27 @@ modified: 2023-10-28T17:31:26.535Z
 - ## 
 
 - ## 
+
+- ## [Limbo: A complete rewrite of SQLite in Rust | Lobsters _202412](https://lobste.rs/s/hl73hl/limbo_complete_rewrite_sqlite_rust)
+- Deterministic Simulation Testing is a paradigm made famous by the folks at TigerBeetle
+
+- SQLite has three test suites. Two are freely available. One, TH3, which was developed to ensure especially thorough testing, is not freely available. Supposedly, it can be licensed for some amount of money, but the libSQL authors never received a reply when they wrote asking about this.
+
+- ## 🚀 [Limbo: A complete rewrite of SQLite in Rust | Hacker News _20241210](https://news.ycombinator.com/item?id=42378843)
+- The SQLite3 business model is that SQLite3 is open source but the best test suite for it is proprietary, and they don't accept contributions to any of either. This incentivizes anyone who needs support and/or new features in SQLite3 to join the SQLite Consortium. It's a great business model 
+- In case anyone else was wondering, SQLite is about 156k lines of code with 92, 000k lines of test code.
+
+- > It uses Asynchronous I/O, considers WASM as first class, and has Deterministic Simulation Testing support from the beginning.
+
+- author here: fully compatible at the language and file format level.
+  - If you "intend to get rid of some of the baggage" you won't be fully compatible.
+  - libSQL already isn't fully compatible: as soon as you add a RANDOM ROWID table, you get "malformed database schema" when using the (e.g.) sqlite3 shell to open your file (also Litestream doesn't work, etc).
+
+- Large chunks of the test suite are open source, committed to the repo and easy to run with a `make test`.
+
+- The standard TPC-C and TPC-H benchmarks are available online at https://www.tpc.org/tpc_documents_current_versions/current_s... They aren’t fully open source but are free to use, including use with open source software. They may be a bit on the complex side though
+
+- One killer feature I miss from SQLite is table compression. Especially important on various embedded devices where you collect data from sensors or logs.
 
 - ## 🌲💡 How do Turso/libSQL replicate database schema and data replication?
 - https://twitter.com/penberg/status/1766031437919138218
@@ -100,6 +121,30 @@ modified: 2023-10-28T17:31:26.535Z
   - Yeah, so I don't know why SQLite is so heavy on the advisory lock by default. Maybe just historical.
 # discuss-news
 - ## 
+
+- ## 
+
+- ## 
+
+- ## limbo, Today we have decided to make @penberg 's experimental project, an official Turso project _20241210
+- https://x.com/glcst/status/1866508345731088759
+- Will you keep the same code of ethics as SQLite though?
+  - NO
+- Does libSQL already have a build feature to enable Limbo?
+  - There's no build feature, and at this point limbo was kept entirely separate, even on Pekka's github, instead of Turso's. I was really just him working on it for fun. It went very well and we decided to promote it.
+  - The long term plan depends on what happens next. It is still very experimental and non-committal from my PoV.
+-  the plan is towards full compatibility for modern SQLite features. For example, no plans to do journal mode, we're all in the WAL mode, and hoping to later move towards WAL2 or even something that could do `BEGIN CONCURRENT` .
+- will your first step be to add experimental limbo support in libSQL through an optional build feature? This looks like the best way to put it in the hands of people already using libSQL
+  - Yes, indeed. But I think there's still bit more work to do on Limbo for this to be useful.
+- SQLite supports data change notifications, but doing so requires bindings that are not available in most wrappers, libraries, etc.
+  - I'm very interested in finding a way to make this happen because SQLite can be used virtually everywhere. That also means I want to make sure that whatever method I use to enable this, would also have to work in environments a user may want to use.
+- Don’t fall into the trap of adding every feature people ask for. The reason SQLite is popular is because it’s SMALL. If you want this to succeed, you need to say NO to a lot of requests
+
+- because of io_uring will this be linux only for now? forever?
+  - Not Linux only. Limbo also supports traditional syscall I/O and runs on macOS fine. Don’t know the state of Windows port but ran there fine too at some point.
+
+- Do y’all plan to pay for the commercial SQLite test suite?
+  - We tried to pay for it when we forked libSQL but never heard back… I think doubling down on DST but also the open test suite (Limbo has the same TCL tester) is the way to go!
 
 - ## Limbo is now self-hosting! You can create and access databases from Limbo, with file format compatibility with SQLite _202411
 - https://x.com/penberg/status/1858496941417484757

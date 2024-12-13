@@ -639,8 +639,11 @@ modified: 2022-06-03T21:34:54.893Z
   - https://x.com/9hills/status/1862522244527972625
     - RAG Demo 到 RAG Application 难度的完美表现，其实功能不算丰富（增加了 Graph RAG和 Agent RAG 的思想），
     - 代码却不得不做的非常复杂，大部分其实是应用逻辑。 P. S. 代码已经成熟到可以直接抄了，直接复刻就完了
-
-- 
+# office
+- https://github.com/microsoft/markitdown /MIT/202411/python
+  - Python tool for converting files and office documents to Markdown.
+  - a utility tool for converting various files to Markdown (e.g., for indexing, text analysis, etc.)
+  - supports: PDF (.pdf) PowerPoint (.pptx) Word (.docx) Excel (.xlsx) Images (EXIF metadata, and OCR) Audio (EXIF metadata, and speech transcription) HTML (special handling of Wikipedia, etc.) Various other text-based formats (csv, json, xml, etc.)
 # more
 - https://github.com/notea-org/notea
   - Self hosted note taking app stored on S3

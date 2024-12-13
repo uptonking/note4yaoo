@@ -108,6 +108,21 @@ modified: 2023-11-10T08:05:19.107Z
 
 - ## 
 
+- ## 
+
+- ## I wouldn't mind seeing some performance-oriented APIs being added to JS
+- https://x.com/fabiospampinato/status/1866210254725239195
+  - `Object.copyOwnPropertyDescriptor(s)` , it would delete the need to actually create property descriptors if we just want to copy stuff from an object to another.
+  - String.isLatin1, you can check for this in userland by going through the whole string, but for the engine it can be a constant time operation.
+  - `Object.isPropertyGetter/Setter` , you could check for this by getting the property descriptor, but if you want to specially handle getters/setters in an environment where usually you wouldn't see any of them, then you'd be paying the cost of these property descriptors for nothing.
+  - `Function.prototype.bound` , being able to know what the originally function that was bound is could be a very cheap form of branding, adding symbols to the bound function or anything else I've tried isn't as fast as that could be.
+
+- I think it’d be nice to be able to make certain optimization assertions to the engine, and have it fail hard on deopt. Like “all usage of this function is monomorphic”. Could be high impact for lots of code & could act as automated test to catch broken perf assumptions
+  - I think it may be worth collecting a bunch of these and introducing a "use stricter" eventually 
+  - it was discussed already and discarded as an idea (it was called "use strong"), but it feels to me like there's still stuff that should be fixed 
+
+- Object.create(Object.getPrototypeOf(source), Object.getOwnPropertyDescrptors(source)); is not too bad but agreed creating those to reparse those is a waste, although engines could optimize that pattern like they do in other occasions, see the for loop i to length.
+
 - ## [Optimizing Javascript for fun and for profit _202403](https://romgrk.com/posts/optimizing-javascript)
 
 - ## 真的绝了，没想到分支预测对性能的影响有这么明显。不论怎么跑，三元表达式一定相对更慢

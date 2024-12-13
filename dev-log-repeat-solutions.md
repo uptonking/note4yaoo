@@ -70,7 +70,7 @@ modified: 2021-07-20T13:50:23.433Z
 - 🛢️ 数据存储架构
   - file-first: vscode, obsidian, notable, hexo
   - db-first: git, joplin, siyuan, nocodb
-  - 代码文件与数据库紧密结合的方案示例，可参考git
+  - 代码文件与数据库紧密结合的方案示例，可参考git/docx-zip
   - 代码与数据库结合来更新应用程序的方案，可参考aquameta/couchapp/reka
 
 - 🚀 产品落地

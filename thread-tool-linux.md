@@ -42,6 +42,14 @@ modified: 2024-01-06T13:48:42.969Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## found this super cool project called `osquery` which lets you run SQL on your OS as if it's a database!
+- https://x.com/iavins/status/1866857917129142493
+- it’s brilliant. found it when researching self hosted man solutions a while back. https://fleetdm.com is pretty heavily dependent on it from what I gathered.
+
 - ## 如果你想要快速找出一个网站的所有子域，那么可以使用 Sublist3r 这个工具。
 - https://x.com/linuxtoy/status/1864604214217069031
   - Sublist3r 通过 OSINT 找出一个网站的子域。

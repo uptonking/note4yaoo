@@ -16,7 +16,10 @@ modified: 2023-11-10T08:05:12.852Z
 
 - ## 
 
-- ## 
+- ## [The handleEvent() method is the absolute best way to handle events in Web Components | Go Make Things](https://gomakethings.com/the-handleevent-method-is-the-absolute-best-way-to-handle-events-in-web-components/)
+- https://x.com/WebReflection/status/1866817584039071759
+- I like it. It’s quite clean to forward like `this[“on”+ev.type]?.(ev)` when you use prefixed handler names, and overall intercepting all events has a lot of other advantages, too
+
 # discuss-dynamic-import
 - ## 
 

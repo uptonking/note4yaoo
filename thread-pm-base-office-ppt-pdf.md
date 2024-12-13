@@ -132,7 +132,9 @@ modified: 2024-01-11T15:57:32.182Z
 
 - ## 
 
-- ## 
+- ## 刚试用了 Gamma，被惊艳到了，这生成网页的效果不亚于 bolt 啊，没细看代码，但视觉效果，包括动效跟响应式绝对出彩
+- https://x.com/msjiaozhu/status/1867546304769049051
+  - 这个帖子应该叫「1 分钟生成超高质 PPT，这款 AI 工具堪比专业设计」
 
 - ## [what are some good ai tools to create powerpoint presentations? : r/powerpoint _202310](https://www.reddit.com/r/powerpoint/comments/176sxbp/what_are_some_good_ai_tools_to_create_powerpoint/)
 - I would also recommend https://chatslide.ai/. I am a student tutor and has weekly lecture materials, I feed those materials into chatslide and they give me well structured ppt, even with a Q&A section at the end. It's free, give it a shot!!!

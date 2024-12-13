@@ -12,7 +12,9 @@ modified: 2021-07-25T12:49:10.410Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## It looks like "position: sticky" is not implemented for ::before and ::after pseudo-elements in Chrome?
+- https://x.com/fabiospampinato/status/1866299411216695470
+  - That's why in some way CSS is harder than JS, in practice you can run the JS in your head fairly reliably, but you can't always do that with CSS, it's a spaghetti blob of hundreds of properties interacting with each other in sometimes unpredictable way, with a sauce of limitations and quirks that are just unpredictable, you need to run an experiment to see what happens, for each different engine.
 
 - ## Found a neat CSS trick to automatically swap between black or white text based on any arbitrary background color
 - https://x.com/devongovett/status/1863733091409461256
@@ -69,7 +71,9 @@ modified: 2021-07-25T12:49:10.410Z
 
 - ## 
 
-- ## 
+- ## if you have ::highlight() CSS rules that don't match anything they can still have a major performance impact on the rendering of the page, in Chrome.
+- https://x.com/fabiospampinato/status/1866890002161860663
+  - A lot of things around CSS Custom Highlights should be reviewed again because things are outright buggy (like a ::selection with a transparent background erasing custom highlights, which makes no sense, or custom highlights not being rendered after scrolling to blocks with "content-visibility: auto", unless you click somewhere, sometimes), and sometimes when they are not buggy they are not fully right either (how is an highlight rule with no registered ranges expensive).
 
 - ## I wrote an interactive article about `display: contents` in CSS
 - https://x.com/shadeed9/status/1832053021557321871
