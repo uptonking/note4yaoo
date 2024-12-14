@@ -644,6 +644,10 @@ modified: 2022-06-03T21:34:54.893Z
   - Python tool for converting files and office documents to Markdown.
   - a utility tool for converting various files to Markdown (e.g., for indexing, text analysis, etc.)
   - supports: PDF (.pdf) PowerPoint (.pptx) Word (.docx) Excel (.xlsx) Images (EXIF metadata, and OCR) Audio (EXIF metadata, and speech transcription) HTML (special handling of Wikipedia, etc.) Various other text-based formats (csv, json, xml, etc.)
+  - https://msftmd.replit.app/
+    - Powered by Microsoft MarkItDown, this tool converts various file formats to clean, structured Markdown for easy analysis and indexing.
+    - https://x.com/mattppal/status/1867703377888784880
+      - If you're wondering how I did this so fast, it was Agent + Assistant + deploy on Replit
 # more
 - https://github.com/notea-org/notea
   - Self hosted note taking app stored on S3

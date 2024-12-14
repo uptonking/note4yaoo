@@ -14,8 +14,7 @@ modified: 2023-03-13T08:05:09.453Z
   - we’ll be migrating the underlying technical implementation of Docs from the current `HTML-based` rendering approach to a `canvas-based` approach 
   - to improve performance and improve consistency in how content appears across different platforms.
 
-- ## Google Docs will now use canvas based rendering__20210512
-- https://news.ycombinator.com/item?id=27129858
+- ## [Google Docs will now use canvas based rendering__20210512](https://news.ycombinator.com/item?id=27129858)
 - canvas comes with very real trade offs though:
   - Cost of implementation and maintenance is much higher with canvas. This is particularly the case with WebGL, there have been very few contributions to xterm.js (the terminal frontend component) in the WebGL renderer because of the knowledge required. 
   - Accessibility needs to be implemented from scratch using a parallel DOM structure that only gets exposed to the screen reader. Supporting screen readers will probably also negate the benefits of using canvas to begin with since you need to maintain the DOM structure anyway.

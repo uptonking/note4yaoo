@@ -38,7 +38,13 @@ modified: 2023-03-01T14:10:06.993Z
 
 - ## 
 
-- ## 
+- ## 用 OminiDocBench 对 gemini-2.0-flash-exp 模型进行评测（采用默认Prompt），结果如图： 全部项：英文第三，中文第一
+- https://x.com/9hills/status/1867551009457025465
+  - 文本：英3，中2
+  - 公式（编辑距离）：英-，中2
+  - 表格（TEDS）：英3，中1
+  - 表格（编辑距离）：英1，中1
+  - 顺序：英1，中1
 
 - ## Use these CHAR functions to add context to your spreadsheets
 - https://twitter.com/benlcollins/status/1395091986626056211

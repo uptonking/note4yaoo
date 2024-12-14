@@ -17,6 +17,13 @@ modified: 2023-11-03T17:43:01.518Z
   - The goal is to help developers of annotation tools create their applications without having to reinvent the wheel, while applying a standards-driven approach based on the W3C’s Web Annotation data model, in order to facilitate an ecosystem of interoperable annotation tools 
   - [Web Annotation Protocol Server](https://github.com/apache/incubator-annotator/issues/70)
 
+- https://github.com/opendatalab/labelU-Kit /apache2/202412/ts
+  - https://opendatalab.github.io/labelU-Kit/
+  - https://labelu.shlab.tech/
+  - LabelU前端标注组件库，支持图片2D框、点、线、多边形、立体框及混合标注工具，可用于标注平台开发集成，开箱即用。
+  - 支持视频标注
+  - 支持音频标注
+
 - https://github.com/rough-stuff/rough-notation /MIT/202010/ts
   - https://roughnotation.com/
   - Create and animate hand-drawn annotations on a web page

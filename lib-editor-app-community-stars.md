@@ -74,7 +74,7 @@ modified: 2022-08-21T10:12:02.964Z
 - What I instantly liked is, how literally it starts from scratch and builds a couple of lines at a time.
   - Can anybody refer to a similar step by step guide to building a compiler?
 
-- ## [Ask HN: How to learn about text editor architectures and implementations? | Hacker News](https://news.ycombinator.com/item?id=29874669)
+- ## [Ask HN: How to learn about text editor architectures and implementations? | Hacker News _202201](https://news.ycombinator.com/item?id=29874669)
 - Similar suggestion: if you're trying to learn the architecture of a big established project like Vim or Emacs, don't start at the top and try to follow everything. Start with a small feature you would like to tweak, implement, or understand. How does Emacs render the modeline, for example
 - probably you are studying editors that are too big for your purposes - find something smaller in scope
 

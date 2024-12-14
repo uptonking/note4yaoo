@@ -161,7 +161,14 @@ modified: 2023-04-04T03:59:40.928Z
 # discuss-ai-product-hunt
 - ## 
 
-- ## 
+- ## Gemini 2.0的实时多模态能力, 共享屏幕，时刻在线，随时指导你工作
+- https://x.com/imxiaohu/status/1867496918655676671
+  - 响应几乎就是实时的... 这才是真正的AI助理
+
+- 还能实时CT诊断，在医疗领域潜力也很大
+
+- https://x.com/JarrettYe/status/1867607219543715855
+  - 不需要复制粘贴，直接让 AI 看你的屏幕，然后语音实时聊天，每一步编程都可以有反馈。
 
 - ## 一款将图片内容“还原”为可编辑文档的工具：RapidLayoutRecover 
 - https://x.com/aigclink/status/1831279513470386667

@@ -44,4 +44,11 @@ modified: 2020-12-12T19:01:56.749Z
 - https://github.com/Hexagon/croner /MIT/js/NoDeps
   - Trigger functions or evaluate cron expressions in JavaScript or TypeScript. 
   - No dependencies. Most features. Node. Deno. Bun. Browser.
+# linux-monitor
+- https://github.com/tanelpoder/0xtools /GPL/202412/python/c
+  - https://0x.tools/
+  - a set of open-source utilities for analyzing application performance on Linux
+  - It has a goal of deployment simplicity and minimal dependencies, to reduce friction of systematic troubleshooting. 
+  - No need to install kernel modules or heavy monitoring frameworks.
+  - 0x.tools allow you to measure individual thread level activity, like executed code, sleep states, system calls and wait locations - by tracking (not tracing) and then sampling the right events at the right time.
 # more

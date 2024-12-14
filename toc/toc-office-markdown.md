@@ -53,6 +53,20 @@ modified: 2021-01-04T17:26:25.032Z
   - a fast, batteries-included static-site generator that transforms Markdown content into fully functional websites
   - Quartz is a set of tools that helps you publish your digital garden and notes as a website for free. 
   - Quartz v4 features a from-the-ground rewrite focusing on end-user extensibility and ease-of-use.
+
+- https://github.com/microsoft/markitdown /MIT/202411/python
+  - Python tool for converting files and office documents to Markdown.
+  - a utility tool for converting various files to Markdown (e.g., for indexing, text analysis, etc.)
+  - supports: PDF (.pdf) PowerPoint (.pptx) Word (.docx) Excel (.xlsx) Images (EXIF metadata, and OCR) Audio (EXIF metadata, and speech transcription) HTML (special handling of Wikipedia, etc.) Various other text-based formats (csv, json, xml, etc.)
+  - https://msftmd.replit.app/
+    - Powered by Microsoft MarkItDown, this tool converts various file formats to clean, structured Markdown for easy analysis and indexing.
+    - https://x.com/mattppal/status/1867703377888784880
+      - If you're wondering how I did this so fast, it was Agent + Assistant + deploy on Replit
+  - https://x.com/kepano/status/1867664671446381017
+    - https://www.getmarkdown.com/
+      - Someone turned the Microsoft conversion tool into a webapp that runs on your device.
+    - Very nice. But from a business point hard to understand. Microsoft‘s whole business model is based on ecosystem lock-in, not the quality of products.
+    - Markdowns may be easier on ai.
 # md-parser-generator
 - remark 
   - https://github.com/remarkjs/remark/tree/main/packages/remark-parse

@@ -21,7 +21,10 @@ modified: 2024-01-11T15:57:32.182Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## [Lessons learned from 15 years of SumatraPDF, an open source Windows app (2021) | Hacker News _202303](https://news.ycombinator.com/item?id=35065785)
+- Notably, the roll-your-own parts do not include core PDF parsing and rendering, which are outsourced to (possibly a fork of?) mupdf.
+  - Mupdf is the key. Sadly there's no user-friendly mupdf wrapper like Sumatra on Linux.
+- PDF is (was originally) a stripped down version of postscript, and postscript ran well on embedded processors by the late 80’s.
 
 - ## pdf.js from @mozilla cannot show multiple PDFs in one page as pdf.js use global namespace. 
 - https://x.com/xiaohanyu1988/status/1819575393252163866

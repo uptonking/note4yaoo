@@ -29,6 +29,16 @@ modified: 2024-08-11T07:21:48.172Z
 - 
 - 
 
+# discuss-pg-web/wasm
+- ## 
+
+- ## 
+
+- ## [Learn Postgres at the Playground – Postgres compiled to WASM running in browser | Hacker News _202208](https://news.ycombinator.com/item?id=32498435)
+- The playground seems to be using v86.js I don't see the required "Redistributions in binary form must reproduce the above copyright notice" 
+  - v86 is an interesting choice, I wonder why they couldn't compile Postgres itself with Emscripten (AFAIK it's all C code).
+  - I'm assuming there are too many details like syscalls and file system specific APIs that they needed a lower level virtualization?
+
 # discuss
 - ## 
 

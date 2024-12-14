@@ -67,6 +67,10 @@ modified: 2021-08-30T18:56:14.863Z
   - DrawDB is a robust and user-friendly database entity relationship (DBER) editor right in your browser. 
   - https://github.com/drawdb-io/drawdb-server /MIT/202404/js
     - Simple server to handle form submissions via email for drawDB.
+  - [Show HN: Online database diagram editor | Hacker News _202404](https://news.ycombinator.com/item?id=39955944)
+    - what I'm looking for is a tool that generates the docs and diagrams for a database from the database schema itself and lays it out cleanly.
+    - Maybe you can use schemaspy? https://schemaspy.org/
+    - You can use an automated diagrammer such as the one in https://visualdb.com/ It shows tables and relationships graphically, and you can click on a table to see its columns and data types.
 
 - https://github.com/sqlectron/sqlectron-gui /MIT/202202/ts/inactive
   - https://sqlectron.github.io/
