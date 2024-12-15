@@ -216,6 +216,19 @@ export default FrontPage
 - atjson isn't really a spec; there's space for someone with the energy to do that to go ahead and standardise something, but so far we've just built a tool that meets our needs. I think it's a good approach, and @codexeditor independently came up with almost the same thing
 - One of the differences to conmonmark is that it's more of an approach. The spec is: here's some Unicode text, here are some annotations on that text (standoff per codex). Annotations have a type, start and end indexes, and a set of type-specific attributes. That's really it!
 
+# discuss-md-conversion
+- ## 
+
+- ## 
+
+- ## 
+
+- ## MarkItDown = a tool from Microsoft to convert Word / Excel / PPT / PDF... to Markdown
+- https://x.com/python_tip/status/1868061408161911248
+- Very strange PDF support: it’s just a paper thin pdfminer wrapper.
+- I thought it was something they open source, like they build the whole thing. Turns out it was just some wrapper and spaghetti code
+- Unfortunately, the formats ['.xls', '.xls', '.wb3', '.doc', '.spo', '.opt', '.rvt', '.vsd', '.msi', '.pub', '.mtw', '.ac_', '.dot', '.pps', '.ppt', '.xla', '.wiz', '.sou', '.wps', '.apr', '.msc', '.adp', '.db', '.wdb', '.xlr', '.suo'] are not supported.
+
 # discuss
 - ## 
 

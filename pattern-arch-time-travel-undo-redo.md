@@ -210,7 +210,7 @@ modified: 2023-09-12T09:36:25.608Z
 
 - ## 
 
-- ## [How to version control a record in a database - Stack Overflow](https://stackoverflow.com/questions/323065/how-to-version-control-a-record-in-a-database)
+- ## 🤔 [How to version control a record in a database - Stack Overflow](https://stackoverflow.com/questions/323065/how-to-version-control-a-record-in-a-database)
 - A good starting point might be looking at some database model that uses revision tracking.
   - The best example that comes to mind is MediaWiki, the Wikipedia engine. Compare the database diagram here, particularly the revision table.
   - Depending on what technologies you're using, you'll have to find some good diff/merge algorithms.
@@ -227,7 +227,7 @@ modified: 2023-09-12T09:36:25.608Z
 
 - ## 
 
-- ## [Huge performance issue when dispatching hundreds of actions · reduxjs/react-redux _201601](https://github.com/reduxjs/react-redux/issues/263)
+- ## 💥 [Huge performance issue when dispatching hundreds of actions · reduxjs/react-redux _201601](https://github.com/reduxjs/react-redux/issues/263)
 - On boot, the app I'm building gets a stream of data from a server. This stream can have hundreds of messages and entities and each message is handled separately.
   - It takes a tremendous amount of time to dispatch actions after UI has rendered, because every state change re-renders the @connected component.
 
@@ -247,6 +247,123 @@ modified: 2023-09-12T09:36:25.608Z
   - When any Redux action modifies the game state, you listen for the patch using Immer, and push it into an array of the game moves. When you need to replay, you just iterate through the array. To undo, just pop items off the array.
   - If you want to do this without Immer, Redux has some docs that describe history and undo functionality with code examples
 
+# discuss-version/history
+- ## 
+
+- ## [Ask HN: Best way to version control your notes or documents? | Hacker News _202302](https://news.ycombinator.com/item?id=34690171)
+- I recently switched from using Google Docs to storing my notes in Markdown/Git and making them available just to myself via Docusaurus on a private Gitlab Pages repo.
+
+- I tried using git for general note taking and I hated it. I used Foam, which is markdown inside of VSCode synced to Git, accompanied with GitJournal which allows you to update the same markdown files from a mobile device.
+
+- For plaintext documents in Emacs the diff command is useful but enabling the fossil-mode has more steps, and Fossil has extra plumbing for ticketing and webui.
+# discuss-replay-solutions
+- ## 
+
+- ## 
+
+- ## [DOM recording for web application demos | Hacker News _202011](https://news.ycombinator.com/item?id=25195454)
+- This is very cool, but for me the problem has always been the repeatability of demo videos. I make a demo video of our product, and two weeks later that demo is out of date and now I need to make the same video again.
+  - Additionally, the need to add fake CSS pseudo classes to get it to work with focus, etc. seems like a bummer.
+
+- That's addressed in the post too. They make their demos as Selenium scripts so in many cases they can simply re-record the demo when the UI changes.
+
+- In my experience, Mutation Observers can be very punishing in terms of performance if you have large DOM structures, especially on page load.
+
+- ## [Show HN: Wirequery – Full-stack session replay and more | Hacker News _202403](https://news.ycombinator.com/item?id=39802120)
+- How does this compare to rrweb, the library that Sentry and many other commercial offerings for frontend monitoring use?
+  - WireQuery uses rrweb for capturing the frontend interactions. However, perhaps I can answer a similar question, which is how it compares to other offerings.
+  - The main difference between existing tools and WireQuery is that WireQuery was designed for capturing the interactions within the complete stack. This manifests itself in the following ways:
+  - The frontend recording is paired with the network calls on the backend, which can consist of the entire trace (i.e. the data of system A calling system B, system B calling system C, etc.), including the actual request and response bodies, headers, etc; - There is an exploration and query-in-the-background feature. These features allow you to run arbitrary queries against a backend system that will capture any network request that meets your criteria, optionally paired with the complete trace and some transformations.
+
+- ## [Launch HN: Highlight.io (YC W23) – Open-source, full stack web app monitoring | Hacker News _202307](https://news.ycombinator.com/item?id=36774611)
+- Congrats on being the only commercial company to actually sponsor rrweb rather than just fork it and contribute absolutely nothing back (or in the case of Sentry - remove their copyright and violate their license).
+  - Sentry’s license change on the fork was a mistake. It has been fixed though.
+
+- Why using 6 databases? Kafka, redis, Postgres, ClickHouse, influxdb, opensearch
+  - The open-source infra we use allows us to have a highly-available, scale-able system.
+
+- what's the advantage over MS Clarity, which seems to offer the same features, is free forever, and easy to setup?
+  - On session replay, clarity if definitely comparable to an extent. Keep in mind that the tool is very fine-tuned for a more marketing use case (w/ heatmaps, analytics, etc..). On the other hand, Highlight.io will monitor the content of network requests, trace request all the way to your backend, let you inspect the DOM, report on errors and much more.
+- Clarity is meant for high level analytics around product usage, while Highlight is built for engineering observability (catching and debugging errors). Highlight offers network tracing, log ingest (both client and server side), and error monitoring to serve that use-case which Clarity does not.
+
+- ## [highlight: Show HN: We’re open-sourcing our session replay tool | Hacker News _202302](https://news.ycombinator.com/item?id=34897645)
+  - We’re open-sourcing highlight.io, a session replay and error monitoring tool. 
+- We've actually had quite a few customers switch off Logrocket because of our support for things like Canvas recording
+- Our frontend session replay happens in two parts:
+  - The HTML DOM Recording using rrweb
+  - The monkey patching of fetch, xhr, console methods, combined with data from `window.performance` .
+  - The rrweb repo has a good in-depth explanation of how the DOM recording works. In short, it captures the full HTML of a page when a user first loads it, then tracks DOM changes via the `MutationObserver` api. From our client, these are all shipped to our backend as serialized events. We process the events per 'user session', storing them temporarily in redis, then compressing a permanent payload once the session no longer is sending new events in the local filesystem or S3.
+  - Monkey patching network and console methods allows us to capture request/response payloads, headers, status code, etc. We then combine that data with the `window.performance` api's notion of network requests to ensure we capture all requests (even ones that happened before our monkey-patch had time to apply), as well as to get precision timing data.
+
+- Following up regarding the other points I missed. Compared to OpenReplay, we have similar functionality in our session replay, but we've focused a lot of effort on making a cohesive error monitoring (backend and frontend) experience. We closely link sessions with errors (stacktraces and associated metadata) and vice versa to make it easy to get to the root cause of a bug.
+
+- On the OpenReplay end, its seems we have feature parity for session replay, but they don't have support for error monitoring and therefore linking errors to corresponding sessions (as far as I can see).
+
+- PostHog, Highlight and Sentry are all using rrweb. 
+  - At OpenReplay, we use a full proprietary solution that we built from the ground up and covers all session replay aspects (tracker, protocol and replayer).
+
+- PostHog started as a product analytics tool but we now have a fully fledged session recordings product including handling console logging and network requests for debugging. Mobile support is coming shortly too
+
+- ## [Rrweb – record and replay debugger for the web | Hacker News _202407](https://news.ycombinator.com/item?id=41030862)
+- We use rrweb as a DOM-recorder in our extension, and it does come with some limitations. Taken from our docs:
+  - DOM recording has the fundamental trait that nothing outside the DOM can be recorded. This latter limitation means that only content on the specific page is recorded: Data in popup dialogs or other tabs is not recorded, neither is anything outside the HTML document like native MacOS/Windows menus shown for native HTML selects.
+  - On top of that, some embeddable elements like `<canvas>` are not recorded (e.g. Google Maps, Figma).
+  - When playing back DOM recordings, there can be visual glitches, like duplicate elements being shown. Even when there’s no obvious glitches, a DOM recording is unlikely to look exactly like the page as experienced by the session reported.
+  - Security configuration like CORS on the recorded site’s hosting, and Bird’s own CSP policy can prevent the loading and rendering of embedded elements, like the original page’s font.
+  - Because DOM recordings don’t include all information (e.g. image files are only linked to), DOM recordings can drift apart from the time of the recording in fidelity over time, if the content of the asset behind the URL changes, or even degrade, or when the assets are no longer accessible at all at the URL.
+- Having said that, we found that rrweb is quite reliable on most situations and works well for most of our users.
+
+- 🧐 rrweb is capable of canvas recording. We use it at sentry but there are inherent challenges with canvas you have to be aware of. Most importantly we're very careful about PII handling and if you have canvases you will sooner or later capture stuff you do not want to have on there unless you are very careful yourself.
+
+- Replay.io is a different beast altogether. They implement their tooling on their own browser (Chromium-based), so they have access to much more precise data than a JS-library like rrweb does.
+
+- 👷🏻 Maintainer of rrweb here. I used replay.io for debugging sometimes, it’s really quite useful. 
+  - It is however a standalone browser and it works by intercepting quite low level browser calls which is only possible to do with a forked version of a browser. 
+  - So it’s great for debugging if you know what you’d like to reproduce or deep-dive into. 
+  - rrweb is more versatile as it can run in any browser and you could use it for analytics, live streaming for support, or recording tutorial videos like we do at https://recordonce.com
+
+- RRWeb only records changes to the DOM, it doesn't actually replay the JavaScript that makes those changes happen. So you see exactly what the user sees, but you're not able to inspect memory or anything like that.
+  - There are a few caveats since not everything is captured in the DOM, such as media playback state and content in canvases. The user may also have some configurations that change their media queries, such as dark mode or prefers reduced motion.
+- 👷🏻 Maintainer of rrweb here: media playback was added a little while ago and was recently improved quite a lot. 
+  - Canvas recording is also available but there are three different ways of doing that as all three have their own pros/cons.
+
+- Everything is open source and from what I see there is no official server – you can store captured sessions anywhere you want.
+
+- Believe Sentry use it in their session replay product
+  - We do and we're not alone. I really like rrweb and I think it's the strongest library in the space.
+- Posthog uses it for their session replay product as well
+  - pendo, as well
+- DataDog, Sentry and Highlight use rrweb quite heavily in their tools to give you an idea of where things went wrong
+
+- Zipy is also a session replay and error tracking tool, which uses rrweb to capture the DOM. On top of that they have many small and big features which adds value to their product, must visit https://zipy.ai
+
+- I studied rrweb's MutationObserver-based DOM event handling & recording when rebuilding the Notion editor a few years ago. I've never used the full thing but liked the code quality I encountered.
+
+- I wish we had an rr for nodejs.
+  - Today I found EffectfulJS Debugger, which is a DAP debugger with time travel and state persistence for JS
+
+- ## [Ask HN: How does software such as rrweb and OpenReplay work? | Hacker News _202208](https://news.ycombinator.com/item?id=32658825)
+
+- 录制界面方案的优点是支持浏览器外的元素，
+  - 缺点是子元素不可交互，视频体积大
+- 录制DOM方案的优点是元素可点击，
+  - 缺点是不支持浏览器外的元素，部分元素可能错位或缺失
+
+- 👷🏻 Core team member of rrweb here. rrweb and other tools that do user session recording heavily depend on the mutation observer to surface changes to a webpage, each of those changes gets serialized into a JSON event and get captured for later viewing.
+  - part from the things we can get directly from the Mutation Observer we also end up monkey patching things like the WebGLRender... and record each call that is done to it so that we can play those back in the same order for replay.
+  - Before we do all of the diff recording we start with a full snapshot of the webpage which captures every dom node. And it does a lot more than just your plain old `document.documentElement.outerHTML` , it captures contents of style sheets, images, scroll positions etc.. We use those full snapshots as keyframes to base our diffs off of. This works in a similar way to how video files work, but the snapshots don't contain any pixel data, just DOM information.
+  - On replay we go ahead and rebuild the DOM as close to how it was recorded and we then animate the changes as they occurred.
+
+- OR is opensource so you can pretty much explore it on your own but TLDR is that it records diffs of DOM, network and state alongside with mouse and send it as a byte array batches to the backend that gzip this files, and then this process is going the other way (unpack, bytes to diff to display) in the player parts.
+  - Videos would take too much space plus API is limited as I can see on MDN
+
+- ## 🚀 [Show HN: Open source JavaScript library to record and replay the web | Hacker News _201812](https://news.ycombinator.com/item?id=18776496)
+
+- Security and Privacy are extremely hard to get right here. 
+  - Some of the challenges: - CSPs can often be bypassed using Google API libraries `<Object/>`/ `<SVG>` - Blacklisting `<SCRIPT/>` tags can often be bypassed with an XML namespace - CSS based data or password exfiltration. - Clickjacking, "data:" urls etc. - Could you imagine a web request proxy server deploying Service Workers? - postMsg() from further nested frames
+  - Substantial work goes into sandboxing replay environments and limiting PII. Defense in depth is particularly important here. Enterprise level research, auditing, monitoring and care should be taken seriously.
+
+- You should offer a commercial and open source version. The commercial service could provide a few extra features at a modest price point, but support development of the open source platform. Perhaps it could pay your bills and be a cheaper alternative to the existing expensive commercial offerings.
 # discuss
 - ## 
 

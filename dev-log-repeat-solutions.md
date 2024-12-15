@@ -11,7 +11,8 @@ modified: 2021-07-20T13:50:23.433Z
 # guide
 
 - tips
-  - ~~paas/rendering/web~~ may be the future
+  - ~~paas/rendering/web/benefit~~ may be the future
+  - 抽空在线体验，工作专注代码
   - 涉猎saas解决方案，积累算法、库、框架、模版项目、生态
     - 尝试将算法和技术转化为可复用的产品, 参考yjs+hocuspocus
     - 工具型框架离商业化应用太远, 直接从主流cms/saas中寻找架构或框架参考
@@ -35,16 +36,15 @@ modified: 2021-07-20T13:50:23.433Z
     - 没有完美的架构，优先支持迭代，不要执着于当下的问题，也许以后就突然想清楚了
     - 先实现业务核心功能， 再考虑如何以sdk/paas的方式提供给使用方，再优化性能
     - 系统的性能受第三方资源如github的fetch api的限制，设计初期要想办法避免
-    - 计算密集型的feature尝试多层架构，如大模型llm/ocr
+    - 计算密集型的feature可尝试多层架构，如大模型llm/ocr
     - frontend: animation
     - backend: orm vs sql
-  - 抽空在线体验，工作专注代码
   - data-app
     - specification for pivot table
     - 输入数据input-data-table, 开放数据api，开放应用app-builder
     - 产品方向: 偏设计布局， 偏业务逻辑
 
-- lts-tech-stack
+- lts-tech-stack 可离线、可协作、可撤销
   - 🌰lts: vscode, git
   - vscode: monaco-editor + electron, code-server
   - codemirror/prosemirror: state + view + commands + transform/ot/collab + virtualized
@@ -54,7 +54,7 @@ modified: 2021-07-20T13:50:23.433Z
 - 技术产品: cm-devtools, noseditor, collab-hocuspocus
 - 技术方向js: 协作/ver-`gitdb`/partial-sync, 编辑器/ide, 多维表格/excel; scaling/HA-socket; dnd, floating; 前端版/流式版/oplog; 
 - 技术扩展js/py: 可拖拽的页面编辑器/lowcode, Excel/kanban, 图表
-- 通用能力: collab, version-history+sync, ai-search, ai-chat; auth, payment
+- 通用能力: collab, version-history+sync+replay, ai-search, ai-chat; auth, payment
 - 技术扩展ai: rag, search, vector, 知识库搜索与对话
 - 技术业务: client/server版; cms/wiki, airtable/table, db
 - 技术可选1: 画板, pdf/ppt-editor, 图形编辑器
@@ -69,7 +69,7 @@ modified: 2021-07-20T13:50:23.433Z
   - 基于ast的架构: reka, tango-lowcode, ast优化常使用bytecode(data+logic)
 - 🛢️ 数据存储架构
   - file-first: vscode, obsidian, notable, hexo
-  - db-first: git, joplin, siyuan, nocodb
+  - db-first: git, joplin, siyuan, 多维表格/nocodb
   - 代码文件与数据库紧密结合的方案示例，可参考git/docx-zip
   - 代码与数据库结合来更新应用程序的方案，可参考aquameta/couchapp/reka
 
@@ -119,10 +119,11 @@ modified: 2021-07-20T13:50:23.433Z
   - log-based: ~~p/couchdb, ~~powersync, kappa-db, event-sourcing
   - eav: triplitdb
 
-- 通用的features
-  - collab, realtime, ai
-  - version-history + sync
+- 通用能力/features
+  - collab, realtime
+  - version-history + sync, time travel
   - 操作与回放，倍速播放
+  - ai
 
 ## solutions: inter(re)active knowledge-base/wiki
 
@@ -209,7 +210,7 @@ modified: 2021-07-20T13:50:23.433Z
   - 所有的操作可由用户执行，也可由ai执行
 
 - high-availability / horizontal-scaling
-  - 实现参考: yjs-hocuspocus, y-redis, fluid-routerlicious 🤔 使用websocket通信是否是错误的架构
+  - 实现参考: yjs-hocuspocus, y-redis, fluid-routerlicious 🤔 使用websocket通信是否是错误的架构(mq更好)
   - strapi, nocobase
   - fwk: nestjs, feathers-sync
   - manual-ha: zulip

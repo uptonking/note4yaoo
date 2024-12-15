@@ -8,6 +8,17 @@ modified: 2022-12-19T01:59:01.628Z
 # lang-java-concurrency
 
 # guide
+
+- stackless
+  - rust
+  - js async+await/generator
+  - python async+await/generator
+  - c# async+await/IEnumerator
+  - kotlin
+- stackful
+  - go goroutines
+  - java
+
 - [高并发系统设计 40 问 | JAVA 架构师笔记](https://zq99299.github.io/note-architect/hc/)
 # race condition 竞态条件
 

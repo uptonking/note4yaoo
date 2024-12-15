@@ -26,6 +26,11 @@ modified: 2023-11-01T10:15:06.245Z
 - Event based programming is bad says academic authors who never wrote large scale software
 - they didn’t know about Java Virtual Threads at that time
 
+- https://x.com/redixhumayun/status/1868321500685807782
+  - Reading this paper and it definitely seems like most modern languages (Rust, Go) eventually converged on the model the paper suggests - mapping M user level tasks onto N kernel threads.
+  - Specifically, Go seems to provide the best compiler support because it embeds the coroutine runtime within the language itself.
+- There's a nice blog post on http://without.boats which discusses coroutines in Go and Rust and why Rust uses stackless coroutines compared to Go which uses stackful coroutines. 
+
 - ## 🆚️🤼🏻 To thread, or not to thread: How to build high concurrency systems?
 - https://x.com/penberg/status/1860248258808852900
   - There are two main concurrency models: threads and events, but which one should you choose for your system?

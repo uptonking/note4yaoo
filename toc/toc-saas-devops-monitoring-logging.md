@@ -47,7 +47,7 @@ modified: 2024-02-11T15:11:31.598Z
   - An open-source alternative to Datadog, Elasticsearch, Loki, and Tempo.
   - Elasticsearch-compatible API, use Quickwit with any Elasticsearch or OpenSearch client
 
-- https://github.com/openreplay/openreplay /8.2kStar/Elastic/202311/ts/go/python
+- https://github.com/openreplay/openreplay /8.2kStar/Elastic/202412/ts/go/python
   - https://openreplay.com/
   - a session replay suite you can host yourself, that lets you see what users do on your web app, helping you troubleshoot issues faster.
 - https://github.com/SigNoz/signoz /202403/go/ts

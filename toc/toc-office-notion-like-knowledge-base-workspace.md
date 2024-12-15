@@ -640,6 +640,22 @@ modified: 2022-06-03T21:34:54.893Z
     - RAG Demo 到 RAG Application 难度的完美表现，其实功能不算丰富（增加了 Graph RAG和 Agent RAG 的思想），
     - 代码却不得不做的非常复杂，大部分其实是应用逻辑。 P. S. 代码已经成熟到可以直接抄了，直接复刻就完了
 # office
+- https://github.com/paperless-ngx/paperless-ngx /GPLv3/202412/ts/python
+  - https://docs.paperless-ngx.com/
+  - https://demo.paperless-ngx.com/
+  - Paperless-ngx is a document management system that transforms your physical documents into a searchable online archive so you can keep, well, less paper.
+  - Paperless-ngx is compatible with many different scanners and scanning tools.
+  - Once you've got Paperless setup, you need to start feeding documents into it
+    - OCR the Document
+    - create an archivable PDF/A document from your document. 
+    - performs automatic matching of tags, correspondents and types on the document before storing it in the database.
+    - The primary method of getting documents into your database is by putting them in the consumption directory. 
+  - Paperless-ngx is the official successor to the original Paperless & Paperless-ng projects 
+  - Utilizes the open-source `Tesseract` engine to recognize more than 100 languages.
+  - Documents are saved as PDF/A format which is designed for long term storage, alongside the unaltered originals.
+  - Paperless stores your documents plain on disk. Filenames and folders are managed by paperless and their format can be configured freely 
+  - [Paperless-ngx – Open source document management system | Hacker News _202310](https://news.ycombinator.com/item?id=37800951)
+
 - https://github.com/microsoft/markitdown /MIT/202411/python
   - Python tool for converting files and office documents to Markdown.
   - a utility tool for converting various files to Markdown (e.g., for indexing, text analysis, etc.)

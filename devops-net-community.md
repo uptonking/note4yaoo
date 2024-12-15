@@ -62,4 +62,5 @@ modified: 2024-11-16T16:58:32.628Z
 
 - ## 
 
-- ## 
+- ## 发现一个Tailscale服务端的开源替代品，Headscale，可以用它自建Tailscale服务，客户端还是Tailscale，但是可以完全掌控在自己手里，不限制用户数和设备数
+- https://x.com/ShouChen_/status/1868228852449005735

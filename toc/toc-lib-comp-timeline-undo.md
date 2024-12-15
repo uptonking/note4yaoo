@@ -194,23 +194,6 @@ modified: 2023-11-24T18:41:26.906Z
   - https://github.com/kristw/d3kit-timeline /201802/js/依赖d3-scale-axis
     - https://d3kit-timeline.vercel.app/
     - reusable timeline component built on top of D3, d3Kit and Labella.js
-
-## play-pause
-
-- https://github.com/HuolalaTech/page-spy-web /MIT/202407/ts
-  - https://www.pagespy.org/
-  - Debug remotely and easily like chrome devtools
-  - PageSpy 是一款兼容 Web / 小程序 / React Native / 鸿蒙 App 等平台项目的开源调试平台
-  - 基于对原生 API 的封装，它将调用原生方法时的参数进行过滤、转化，整理成格式规范的消息供调试端消费；调试端收到消息数据，提供类控制台可交互式的功能界面将数据呈现出来。
-  - 任何无法在本地使用控制台调试的场景，都是 PageSpy 可以大显身手的时候
-  - 用于连接客户端和调试端、并转发两端之间消息的服务是 PageSpy 的核心能力之一。
-  - 在 1.7.3 版本中提供了离线日志回放, DataHarborPlugin 本身只收集数据、提供数据处理的功能，PageSpy 另外还提供了 RRWebPlugin: 使用 rrweb 记录 DOM 更新，在调试端的「日志回放」面板左侧用户可以看到页面的操作轨迹；
-  - 插件实现案例 参考 DataHarborPlugin 和 RRWebPlugin
-  - https://github.com/HuolalaTech/page-spy-api
-    - backend service for HuolalaTech/page-spy-web, which includes static resource serving, HTTP service, and WebSocket service.
-  - https://github.com/HuolalaTech/page-spy
-    - SDKs for PageSpy
-    - SDKs collects information and HuolalaTech/page-spy-web consumes and filters, organizes, and converts information into a standardized format, which is then showed on the page.
 # gantt
 - https://github.com/guiqui/react-timeline-gantt /202112/js
   - https://guiqui.github.io/react-timeline-gantt/index.html
@@ -280,7 +263,7 @@ modified: 2023-11-24T18:41:26.906Z
 # time-travel/track-changes
 - https://github.com/loro-dev/loro-time-travel-demo /202311/ts
   - https://loro-dev.github.io/loro-time-travel-demo/
-  - demonstrate Loro's high performance and time travel capabilities. 
+  - demonstrate Loro's high performance and time travel capabilities.
   - The entire code is only about 100 lines.
 
 - https://github.com/haydn/use-state-snapshots /MIT/201906/js/NoDeps/inactive
@@ -302,6 +285,44 @@ modified: 2023-11-24T18:41:26.906Z
   - [Online Contract Editor problem](https://github.com/nytimes/ice/issues/146)
     - as someone who has contributed quite a bit to this library in the past, I feel obliged to tell you that this library is quite out of date and in many ways unfixable due to the way it is structured as browsers are changing those parts that this library touches all the time.
     - I would recommend going with an editing library that maintains its own model of the content - such as ProseMirror or CKEditor 5 and build tracked changes on top of that.
+# replay/debug
+- https://github.com/rrweb-io/rrweb /MIT/202412/ts
+  - https://www.rrweb.io/
+  - rrweb refers to 'record and replay the web', which is a tool for recording and replaying users' interactions on the web.
+  - rrweb is mainly composed of 3 parts:
+    - rrweb, including two functions, record and replay. The record function is used to record all the mutations in the DOM; the replay is to replay the recorded mutations one by one according to the corresponding timestamp.
+    - rrweb-snapshot, including both snapshot and rebuilding features. The snapshot is used to convert the DOM and its state into a serializable data structure with a unique identifier; the rebuilding feature is to rebuild the snapshot into corresponding DOM.
+    - rrweb-player, is a player UI for rrweb, providing GUI-based functions like pause, fast-forward, drag and drop to play at any time.
+
+- https://github.com/highlight/highlight /apache2/202412/ts/go/rrweb
+  - https://app.highlight.io/
+  - open source, full-stack monitoring platform. 
+  - Error monitoring, session replay, logging, distributed tracing, and more.
+
+- https://github.com/openreplay/openreplay /8.2kStar/Elastic/202412/ts/go/python
+  - https://openreplay.com/
+  - a session replay suite you can host yourself, that lets you see what users do on your web app, helping you troubleshoot issues faster.
+
+- https://github.com/HuolalaTech/page-spy-web /MIT/202407/ts/go
+  - https://www.pagespy.org/
+  - Debug remotely and easily like chrome devtools
+  - PageSpy 是一款兼容 Web / 小程序 / React Native / 鸿蒙 App 等平台项目的开源调试平台
+  - 基于对原生 API 的封装，它将调用原生方法时的参数进行过滤、转化，整理成格式规范的消息供调试端消费；调试端收到消息数据，提供类控制台可交互式的功能界面将数据呈现出来。
+  - 任何无法在本地使用控制台调试的场景，都是 PageSpy 可以大显身手的时候
+  - 用于连接客户端和调试端、并转发两端之间消息的服务是 PageSpy 的核心能力之一。
+  - 在 1.7.3 版本中提供了离线日志回放, DataHarborPlugin 本身只收集数据、提供数据处理的功能，PageSpy 另外还提供了 RRWebPlugin: 使用 rrweb 记录 DOM 更新，在调试端的「日志回放」面板左侧用户可以看到页面的操作轨迹；
+  - 插件实现案例 参考 DataHarborPlugin 和 RRWebPlugin
+  - [前端远程调试工具 PageSpy 原理揭秘 - 知乎 _202401](https://zhuanlan.zhihu.com/p/675863169)
+    - sdk只是对原生方法进行了简单的包装，整个过程中没有银弹
+    - server供 SDK、调试端两端建立 WebSocket 连接
+    - [你知道 Chrome DevTools Protocol 是什么吗？ - 知乎](https://zhuanlan.zhihu.com/p/553149137)
+    - Puppeteer 完整地实现了 CDP 协议
+    - [Chrome DevTools Protocol 协议详解 _202007](https://github.com/Pines-Cheng/blog/issues/82)
+  - https://github.com/HuolalaTech/page-spy-api /MIT/202411/go
+    - backend service for HuolalaTech/page-spy-web, which includes static resource serving, HTTP service, and WebSocket service.
+  - https://github.com/HuolalaTech/page-spy /MIT/202412/ts
+    - SDKs for PageSpy
+    - SDKs collects information and HuolalaTech/page-spy-web consumes and filters, organizes, and converts information into a standardized format, which is then showed on the page.
 
 - https://github.com/open-source-labs/reactime /2.1kStar/MIT/202310/ts
   - https://www.reacti.me/

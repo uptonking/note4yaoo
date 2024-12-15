@@ -59,6 +59,28 @@ modified: 2021-07-27T16:35:20.057Z
 # discuss
 - ## 
 
+- ## 
+
+- ## [Paperless-ngx – Open source document management system | Hacker News _202310](https://news.ycombinator.com/item?id=37800951)
+- one thing that keeps me coming back to DEVONthink: a learning classifier.
+  - Paperless uses tags and will auto tag based on previous scans. IME it works very well (as long as you have a decently sized library of tagged documents) and seldom do I have to add my own tags. It’s not perfect, though, and sometimes I have to go in and fix some of the tags.
+
+- Paperless-NGX doesn't have document version history, unfortunately.
+  - Right now I am looking at OpenProDoc(java) and bitfarm-archiv as document management possibilities.
+- I am just rcloning my paperless-ngx document volume to s3 deep glacier every night for this.
+
+- ## 企业内部知识库系统，带个 RAG 这种，很长一段时间将只会是免费开源的天下。
+- https://x.com/wwwgoubuli/status/1867976505697165417
+  - 我知道有一些商务的例子，我当然也知道永远都会有。但这没法成为一个可靠稳定的商业需求目标。
+  - 搜索与召回是个狗都能写，但要提升一点点点点都极其困难。
+  - 剩下看模型。怎么看都是开源免费的天下。
+
+- 我觉得知识库最难的在于你怎么把系统内的文本做有结构化的组织。搜索跟召回更大程度的依赖与你给予的语料，而语料是从你处理过的数据中来的。而不是直接拿的原始的数据。
+  - 所以说这个事情几乎不存在什么通用解，每个业务中都要精心地来构造对应的二次语料，这事儿能干，但不轻松
+
+- RPA可以是RAG数据输入或输出外设，延伸了RAG和模型的应用场景
+  - 机会一直有。能找到客户，满足需求，有付费意愿
+
 - ## 🧩 [如何具体实践Zettelkasten卡片盒笔记法的？ - 知乎](https://www.zhihu.com/question/424376132)
 - 卡片笔记法三大核心：
 - 卡片及时记（建立卡片库）。它可以是一句话，也可以是一个灵感，也可以是一片文章
