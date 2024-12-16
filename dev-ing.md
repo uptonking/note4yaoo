@@ -542,14 +542,47 @@ console.log(';; qryDiffSnap ', snapshotFrameResult)
   - 编辑器行号宽度样式优化
   - action路径超出卡片宽度
 
+## 1217
+
+- 昨天
+  - 优化ai打字动画的时机，clacky前端与agent的websocket通信速度远快于与ide-server的通信
+- 今天
+  - 处理在terminal输入时光标意外跳入编辑器的问题
 
 ## 1216
+
+- 🐛 ai干活速度太快，ide-server跟不上导致打开文件时序错误
+  - ？
+
+- 🐛 ai修改前后分别打开文件，2次file事件的文件path相同
+  - 此时CodeEditor组件不会重新渲染，所以没有展示diff视图
+  - 💡 写完快照后，打开1次即可
+
+- 完全由ai确定action工作和完成的状态，
+  - action等2s也是working，前端不好打补丁，特别是最后一个action完成时task的状态
+  - ai等待的时间需要大于2s，因为前端打开文件、请求快照这些逻辑需要几百毫秒
+- 确定ai打开文件的时机
+- 对于修改已有文件
+  - ai先打开旧内容，再写入新内容
+- 对于新增文件
+  - ai先打开空白文件，再写入新内容
+- 对于删除文件
+  - ai打开旧内容
+
+- 上周
+  - 对接端口转发ports的功能，体验有待优化
+  - 进行体验测试
+  - 排查影响产品主流程的紧急问题，进入cde时有时一直卡在loading界面
+- 本周
+  - 修复体验测试反馈的高优先级issue，如光标从命令行调入编辑器
+  - 完成本次迭代的功能，布局优化
 - 昨天
   - 在排查影响产品主流程的紧急问题，进入cde时有时一直卡在loading界面
   - 在ideServer的激活事件发送接收位置添加log，方便排查
   - ideServer连接增强了健壮性，在收到error事件时弹出阻断性弹窗
 - 今天
   - 修复体验测试反馈的高优先级issues
+  - ai打字时机优化
   - 处理在terminal输入时光标意外跳入编辑器的问题
   - 增加请求跟随和取消跟随的事件
 
@@ -565,7 +598,7 @@ console.log(';; qryDiffSnap ', snapshotFrameResult)
 - notes
   - 激活方法使用 activePlaygroundSync
 
-``shell
+```shell
 
 12/12 21:24:27.944638
 paas-ide-server-dev-ff679995f-jvlsx
