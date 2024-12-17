@@ -542,11 +542,26 @@ console.log(';; qryDiffSnap ', snapshotFrameResult)
   - 编辑器行号宽度样式优化
   - action路径超出卡片宽度
 
+## 1218
+- 昨天
+  - 花了一部分时间排查agent `Connecting to IDEServer fail, sync fail` 的问题，缩小排查范围
+  - 与产品确定了端口转发的优化方案
+  - 与ivan联调了打字动画的时机，主要调整成先更新action状态ai再操作
+- 今天
+  - 解决打字动画有时不显示的问题
+  - 产品提供了优化端口转发的方案，今天会调整
+  - 处理在terminal输入时光标意外跳入编辑器的问题
+
+
+
 ## 1217
 
 - 昨天
-  - 优化ai打字动画的时机，clacky前端与agent的websocket通信速度远快于与ide-server的通信
+  - 找到了稳定复现打字动画有时不显示的场景，优化ai打字动画的时机，排查打开2次文件的问题
+    - clacky前端与agent的websocket通信速度远快于与ide-server的通信
 - 今天
+  - 解决打字动画有时不显示的问题
+  - 产品提供了优化端口转发的方案，今天会调整
   - 处理在terminal输入时光标意外跳入编辑器的问题
 
 ## 1216

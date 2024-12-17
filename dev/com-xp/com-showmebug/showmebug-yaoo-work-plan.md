@@ -424,15 +424,20 @@ modified: 2024-05-06T02:54:40.374Z
 
 ### ✨ feat-时光机的任务执行
 
+
+
 - ai修改文件的逻辑20241216
-  - >>IDEserver: `file`, args=`{'path': 'index.html', 'timestamp': 1734337154, 'loadType': 'default', 'readOnly': False}`
-  - >>IDEserver: `appendCustomizeFrameData`, args=`{'action': 'snapshot_file', 'value': {'path': 'index.html', 'content': 
   - 🚩 u<<all: taskUpdated, {'id': '2-1', 'title': 'Modify index.html to include progressbar.mjs script', 'action': <ActionType. MODIFY_FILE: 'modify_file'>, 'status': <ActionStatus. IN_PROGRESS_STATUS: 'in_progress'>, 'result': None
+  - >>IDEserver: `file`, args=`{'path': 'index.html', 'timestamp': 1734337154, 'loadType': 'default', 'readOnly': False}`.
+    - 可能会打开不存在的文件，对不存在的文件不需要打快照，但快照为空字符串时不影响
+  - >>IDEserver: `appendCustomizeFrameData`, args=`{'action': 'snapshot_file', 'value': {'path': 'index.html', 'content': 
   - >>IDEserver: `queryCustomizeFrameData`, args=`{'action': 'snapshot_file', 'uuid': '41dba51a-42fa-4aa1-a501-bc7d81c93a61', 'value': {'path': 'index.html'}}`
-  - 🚨 >>IDEserver: `file`, args=`{'path': 'progressbar.mjs', 'timestamp': 1734337154, 'loadType': 'default', 'readOnly': True}`
+  - >>IDEserver: `file`, args=`{'path': 'progressbar.mjs', 'timestamp': 1734337154, 'loadType': 'default', 'readOnly': True}`
+    - 为什么会读取非本action的文件, readonly 静默打开不影响前端，是在读references
   - >>IDEserver: `agentWriteFile`, args=`{'path': 'index.html', 'content': 
   - >>IDEserver: `file`, args=`{'path': 'index.html', 'timestamp': 1734337158, 'loadType': 'default', 'readOnly': False}`
   - 🚩 u<<all: taskUpdated, {'id': '2-1', 'title': 'Modify index.html to include progressbar.mjs script', 'action': <ActionType.MODIFY_FILE: 'modify_file'>, 'status': <ActionStatus.COMPLETED_STATUS: 'completed'>, 
+    - 为什么有时action的taskUpdated事件没了，还是在很后面?
   - 等2s
   - u<<all: taskStateUpdated, done
 
