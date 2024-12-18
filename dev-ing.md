@@ -543,16 +543,15 @@ console.log(';; qryDiffSnap ', snapshotFrameResult)
   - action路径超出卡片宽度
 
 ## 1218
+
 - 昨天
-  - 花了一部分时间排查agent `Connecting to IDEServer fail, sync fail` 的问题，缩小排查范围
-  - 与产品确定了端口转发的优化方案
-  - 与ivan联调了打字动画的时机，主要调整成先更新action状态ai再操作
+  - 花了一部分时间排查ai `Connecting to IDEServer fail, sync fail` 的问题，缩小排查范围
+  - 与产品讨论了端口转发的优化方案
+  - 与ivan联调了打字动画的优化，ai侧基本修改完了，前端还在联调测试，主要调整成先更新action状态再  执行action操作
 - 今天
-  - 解决打字动画有时不显示的问题
-  - 产品提供了优化端口转发的方案，今天会调整
+  - 联调完ai工作时打字动画有时不显示的问题
+  - 处理ide-server的syncPlaygroundInfo返回的数据量过大达到几兆的场景，这很可能导致ai连接ide-server失败进入无限重连的问题
   - 处理在terminal输入时光标意外跳入编辑器的问题
-
-
 
 ## 1217
 

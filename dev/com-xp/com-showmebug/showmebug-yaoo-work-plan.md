@@ -87,6 +87,24 @@ modified: 2024-05-06T02:54:40.374Z
   - 减少layout计算，面板上方部分元素尽可能减少重绘
   - 动画要考虑进入场景和退出场景
 
+### codebase-collab 🔀
+
+- ai工作时
+- 对于新建文件的action类型
+  - ai先打开空白文件，sdk前端发送syncOTUpdates，version-0
+    - 收到响应latestRevision-0
+  - ai改完后
+    - sdk前端收到pullOTUpdates，latestRevision-1，
+      - updates[0].changes[0]包含ai的修改，即新文件全部内容
+      - updates.agentUserId 为 clacky
+- 对于修改文件的action类型
+  - ai先打开已存在的文件，sdk前端发送syncOTUpdates，version-0 🧐
+    - 收到响应latestRevision-0
+  - ai改完后
+    - sdk前端收到pullOTUpdates，latestRevision-1，
+      - updates[0].changes[0]包含ai的修改，即新文件全部内容，包含与
+      - updates.agentUserId 为 clacky
+
 ### ✨ feat-ai-writing-with-diff
 
 - 打字动画的问题与优化方案
@@ -424,8 +442,6 @@ modified: 2024-05-06T02:54:40.374Z
 
 ### ✨ feat-时光机的任务执行
 
-
-
 - ai修改文件的逻辑20241216
   - 🚩 u<<all: taskUpdated, {'id': '2-1', 'title': 'Modify index.html to include progressbar.mjs script', 'action': <ActionType. MODIFY_FILE: 'modify_file'>, 'status': <ActionStatus. IN_PROGRESS_STATUS: 'in_progress'>, 'result': None
   - >>IDEserver: `file`, args=`{'path': 'index.html', 'timestamp': 1734337154, 'loadType': 'default', 'readOnly': False}`.
@@ -436,7 +452,7 @@ modified: 2024-05-06T02:54:40.374Z
     - 为什么会读取非本action的文件, readonly 静默打开不影响前端，是在读references
   - >>IDEserver: `agentWriteFile`, args=`{'path': 'index.html', 'content': 
   - >>IDEserver: `file`, args=`{'path': 'index.html', 'timestamp': 1734337158, 'loadType': 'default', 'readOnly': False}`
-  - 🚩 u<<all: taskUpdated, {'id': '2-1', 'title': 'Modify index.html to include progressbar.mjs script', 'action': <ActionType.MODIFY_FILE: 'modify_file'>, 'status': <ActionStatus.COMPLETED_STATUS: 'completed'>, 
+  - 🚩 u<<all: taskUpdated, {'id': '2-1', 'title': 'Modify index.html to include progressbar.mjs script', 'action': <ActionType. MODIFY_FILE: 'modify_file'>, 'status': <ActionStatus. COMPLETED_STATUS: 'completed'>, 
     - 为什么有时action的taskUpdated事件没了，还是在很后面?
   - 等2s
   - u<<all: taskStateUpdated, done
@@ -2214,7 +2230,7 @@ const playbackInfo = [
   - channel.loadFile(selectedFilePath); 
   - actions.file.setDocLoading(true); 
   - this.send(Commands. File, { path }) 向ideServer请求文件内容
-  - 当收到ideServer返回的文件内容时
+  - 当收到ideServer返回的文件内容时 this.socket.on(Events. File, 
   - switchFile(event.data) 更新 fileStore.doc
   - this.transitionFileInfo({ openedPath: event.data.openedPath }); 触发`fileInfo`事件到sdk前端
   - this.dispatchDataEvent('editor', event); 触发初始注册事件
@@ -2225,6 +2241,10 @@ const playbackInfo = [
 - 
 - 
 - 
+- 
+
+### codebase-collab 🔀
+
 - 
 
 ### codebase-ideServer 🔡

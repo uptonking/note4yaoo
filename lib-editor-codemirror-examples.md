@@ -877,14 +877,15 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/codemirror/collab /MIT/202309/ts
   - Collaborative editing for the CodeMirror code editor
 
-- https://github.com/JohnnyAir/codemirror-collab-extension /202401/ts
+- https://github.com/JohnnyAir/codemirror-collab-extension /202401/ts/inactive
   - Real-time collaboration plugin for CodeMirror 6
-  - 依赖@codemirror/collab
+  - 依赖@codemirror/collab, 依赖很少
 
 - https://github.com/akashahmad/codemirror-collab-example-react /202406/ts
   - https://codemirror-collab-example-react.vercel.app/
   - React + TypeScript + Vite
   - 依赖@codemirror/collab
+  - 前端2个编辑器协同，无后端
 
 - https://github.com/MINERVA-MD/minerva /GPLv3/202302/ts/vue/inactive
   - Minerva is a simple, performant, and hackable Markdown editor that provides seamless GitHub integration and real-time collaboration.
