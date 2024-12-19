@@ -542,6 +542,21 @@ console.log(';; qryDiffSnap ', snapshotFrameResult)
   - 编辑器行号宽度样式优化
   - action路径超出卡片宽度
 
+## 1219
+
+- ai打字优化
+  - 判断 开启diff动画的时机 和 CodeEditor的内容更新时机
+
+- [Subscription plans for GitHub Copilot - GitHub Docs](https://docs.github.com/en/copilot/about-github-copilot/subscription-plans-for-github-copilot)
+
+- 昨天
+  - 处理了前端的一些locale/theme异常
+  - 将ai工作时live模式的打字动画迁移到由协同事件触发，方案感觉可行
+- 今天
+  - 联调完ai工作时打字动画有时不显示的问题
+  - 快速处理本次迭代的研发任务
+  - 处理在terminal输入时光标意外跳入编辑器的问题
+
 ## 1218
 
 - 昨天

@@ -105,6 +105,79 @@ modified: 2024-05-06T02:54:40.374Z
       - updates[0].changes[0]包含ai的修改，即新文件全部内容，包含与
       - updates.agentUserId 为 clacky
 
+- ai编辑文件比多人协同的场景更复杂的原因，ai会发送很多事件导致编辑器多次渲染
+
+- ai执行action时前端收到的事件顺序，场景1，大多数执行流程是这种
+  - onTaskUpdated wip
+  - file-打开
+  - pullOTUpdates
+  - onTaskUpdated completed
+  - ~~file-更新内容状态~~
+- ai执行action时前端收到的事件顺序，场景2，这种流程也较多
+  - onTaskUpdated wip
+  - file-打开
+  - pullOTUpdates
+  - ~~file-更新内容状态~~
+  - onTaskUpdated completed
+- ai执行action时前端收到的事件顺序，场景3，很少
+  - onTaskUpdated wip
+  - file-打开
+  - onTaskUpdated completed
+  - pullOTUpdates
+  - ~~file-更新内容状态~~
+- ai执行action时前端收到的事件顺序，场景4，很少
+  - onTaskUpdated wip
+  - file-打开
+  - ~~pullOTUpdates~~, 缺少了此事件
+  - onTaskUpdated completed
+  - ~~file-更新内容状态~~
+
+```JS
+[
+  "pullOTUpdates",
+  {
+    "updates": [{
+      "changes": [
+        2,
+        [
+          0,
+          "z"
+        ],
+        250
+      ],
+      "selection": {
+        "ranges": [{
+          "anchor": 3,
+          "head": 3
+        }],
+        "main": 0
+      },
+      "agentUserId": "a9db200d-f439-4687-94c3-d905890baaae"
+    }],
+    "lastRevision": 51,
+    "latestRevision": 52,
+    "path": "README.md",
+    "id": "c555f900-cb62-4e1b-9f2f-dac9dcbbed29",
+    "mapSelection": {
+      "a9db200d-f439-4687-94c3-d905890baaae": {
+        "ranges": [{
+          "anchor": 3,
+          "head": 3
+        }],
+        "main": 0
+      },
+      "1f381fbe-d91e-46b5-ba5d-66511ebdb681": {
+        "ranges": [{
+          "anchor": 249,
+          "head": 249
+        }],
+        "main": 0
+      }
+    }
+  }
+]
+```
+
 ### ✨ feat-ai-writing-with-diff
 
 - 打字动画的问题与优化方案

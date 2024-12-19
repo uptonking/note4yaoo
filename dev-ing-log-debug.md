@@ -45,7 +45,9 @@ modified: 2023-06-14T00:53:15.226Z
 
 ## 
 
-## 
+## python socketio用的aiohttp客户端设了个4MB的限制
+
+- ide server重连问题，nodejs和goagent没问题，和python有问题，看了下是socketio用的aiohttp客户端设了个4MB的限制
 
 ## 通过git fetch拉取代码失败，导致数据不一致的问题
 

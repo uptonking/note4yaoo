@@ -11,6 +11,8 @@ modified: 2024-05-27T09:12:06.925Z
 
 # git-commands
 - [alias from ohmyzsh](https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/git/git.plugin.zsh)
+
+- [Git Operations Simulator to get git commands](https://github-branching-antdx316.vercel.app/)
 # disccuss-stars
 - ## 
 
