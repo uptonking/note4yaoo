@@ -542,6 +542,29 @@ console.log(';; qryDiffSnap ', snapshotFrameResult)
   - 编辑器行号宽度样式优化
   - action路径超出卡片宽度
 
+## 1220
+
+- [Error occurred during build · Issue · vitejs/vite](https://github.com/vitejs/vite/issues/19018)
+  - The current workaround is to set pnpm overrides to package.json
+  - You can use npm `overrides` or yarn `resolutions` as well.
+  - [ERROR: Expected identifier but found "import" · Issue · evanw/esbuild](https://github.com/evanw/esbuild/issues/4010)
+    - Vite uses define: { 'import.meta.url': 'xxx' } and it was working on 0.24.0, but it looks like this is now an error on 0.24.1
+
+```JS
+ "pnpm": {
+   "overrides": {
+     "esbuild": "0.24.0"
+   }
+ }
+```
+
+- 昨天
+  - 将ai工作时live模式的打字动画迁移到由协同事件触发，方案感觉可行
+  - 处理在terminal输入时光标意外跳入编辑器的问题，进度60%，确定了稳定复现的场景并定位问题
+- 今天
+  - 解决完terminal输入时光标意外跳入编辑器的问题，以及浏览器面板输入时也会调入编辑器的问题
+  - 快速处理本次迭代的研发任务
+
 ## 1219
 
 - ai打字优化

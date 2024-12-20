@@ -41,6 +41,11 @@ modified: 2022-12-31T20:13:33.307Z
 - 
 - 
 
+- 🔖 [v22.12.0 _2024-12-03](https://nodejs.org/en/blog/release/v22.12.0)
+  - require(esm) is now enabled by default
+  - esm: mark import attributes and JSON module as stable 
+  - Added resizable ArrayBuffer support in Buffer
+
 - 🔖 [v22.11.0 (LTS) _2024-10-29](https://nodejs.org/en/blog/release/v22.11.0)
   - Official binaries for Node.js 22.x currently include OpenSSL 3.0.x (more specifically, the quictls OpenSSL fork). 
   - Other than updating metadata, such as the process.release object, to reflect that the release is LTS, no further changes from Node.js 22.10.0 are included.
