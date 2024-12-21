@@ -79,7 +79,37 @@ modified: 2023-10-28T09:00:45.811Z
 # discuss
 - ## 
 
-- ## 
+- ## 🤔 [Lies I was told about collab editing, Part 1: Algorithms for offline editing | Hacker News _202412](https://news.ycombinator.com/item?id=42343953)
+- 👷🏻 Author of Eg-walker & ShareJS here, both of which are referenced by this post.
+  - when users edit content offline, or in long lived branches, you probably want the option to add conflict markers & do manual review when merging. (Especially for code.)
+  - algorithms like egwalker have access to all the information they need to do that. We store character-by-character editing traces from all users. And we store when all changes happened (in causal order, like a git DAG). This is far more information than git has. So it should be very possible to build a CRDT which uses this information to detects & mark conflict ranges when branches are merged. Then we can allow users to manually resolve conflicts.
+  - Algorithmically, this is an interesting problem but it should be quite solvable. Just, for some reason, nobody has worked on this yet
+
+- 👷🏻(chronofold): The author describes the case of overlapping concurrent splices. 
+  - It is a known funky corner case, yes. 
+  - If we speak of editing program code, the rabbit hole is deeper as we ideally expect a valid program as a result of a merge. There was a project at JetBrains trying to solve this problem through AST-based merge. 
+  - After delving into the rabbit hole much much deeper, the guys decided it is not worth it. This is what I was told.
+
+- I would simply argue that the “offline” editing is a people-problem and hence van not be solved using automation. People shall find a way to break/bypass the automation/system.
+  - The only “offline editing” that I allow on human text documents is having people add comments. So not editing, no automated merging.
+  - For “offline editing” that I allow on automation (source code) is GIT which intentionally does not pretend to solve the merge, it just shows revisions. The merge is an action supervised by humans or specialised automation on a “best guess” effort and still needs reviews and testing to verify success.
+- Yes I agree. But remember: but git will automatically merge concurrent changes in most cases - since most concurrent changes aren’t in conflict. You’re arguing you want to see & review the merged output anyway - which I agree with.
+  - right now CRDTs are too optimistic. If two branches edit the same line, we do a best-effort merge and move on. Instead in this case, the algorithm should explicitly mark the region as “in conflict” and needing human review, just like git does. 
+
+- I want a tool with the best parts of both git and a crdt:
+  - From CRDTs I want support for realtime collaborative editing. This could even include non-code content (like databases). And some developer tools could use the stream of code changes to implement hot-module reloading and live typechecking.
+  - From git I want .. well, everything git does. Branches. Pull requests. Conflict detection when branches merge. Issue tracking. (This isn't part of git, but it would be easy to add using json-like CRDTs!)
+
+- 🤔🤔 The other dark side of implementations using CRDTs is the infrastructure load. I wrote about this in depth previously, and Supabase wrote an article a couple of years ago about a CRDT extension for Postgres which I'm happy to discover agrees with my empirical findings.
+  - If you're going to use CRDTs, do yourself a favor and either use Redis or similar (though the amount of memory being consumed is painful to think about), or MyRocks (or anything else based on RocksDB / LevelDB). Whatever you do, do _not_ back it with an RDBMS, and especially not Postgres.
+- PowerSync has an article on using Postgres with Yjs (and perhaps look into Yrs, the Rust implementation, as well as other Rust crates like Loro and Automerge that are much faster) and they use a table in the database that stores the changes, is that what you are doing too
+
+- One challenge is that the algorithms typically used for collaborative text editing (CRDTs and OT) have strict algebraic requirements for what the edit operations do & how they interact. So even if your server is smart enough to process the "Colour" example in a UX-reasonable way, it's very hard to design a corresponding CRDT/OT, for optimistic client-side edits.
+  - You can work around this by not using CRDTs/OT. E.g., the server processes operations in receipt order, applying whatever UX logic it wants; clients use a rebase/prediction strategy to still allow optimistic edits on top
+
+- I implemented differential sync mostly because I couldn’t understand anything else and seemed simplest in my grugnotes.com app 
+
+- A gramatically aware text CRDT? At least aware of words and sentences? I'd be curious to hear whether that's been tried, and if it solves any issues or produces new ones.
 
 - ## [Building Document-Centric, CRDT-Native Editors | Hacker News _202410](https://news.ycombinator.com/item?id=41923693)
 - Document-centric workflows were once the great promise of the future, and inspired Microsoft's OLE, Apple's "Publish and Subscribe", and then OpenDoc.

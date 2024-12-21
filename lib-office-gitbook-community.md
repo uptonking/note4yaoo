@@ -192,6 +192,26 @@ modified: 2023-09-19T06:35:28.278Z
 # discuss-format
 - ## 
 
+- ## ⚖️ [Diátaxis – A systematic approach to technical documentation authoring | Hacker News _202412](https://news.ycombinator.com/item?id=42325011)
+- All of Canonical's documentation is written with Diataxis.
+
+- By giving 2-3 examples, that describe the same thing from slightly different aspects, you can to some extent overcome the ambiguities of language
+
+- We just applied this framework to the Sequin docs two weeks ago. It has felt so nice to have a framework. I think our docs flow really well now, and it's been easier for us to add and maintain docs because we know where to put things.
+  - The slightly ironic part is that the Diataxis docs themselves are a bit obtuse. It's a little verbose. So it took a couple passes for it all to click.
+
+- 🤔 I'm a technical writer. Diátaxis is similar to DITA
+  - On the other hand, systems like these might miss out on what users actually need. Diátaxis might work for a long time if technical documentation is only used in a documentation platform. However, if the same information could and should be used in more than one place—for example, in a UI, in a documentation portal, and in a mobile app—there might be need to break up information into smaller pieces in order to assemble them in different ways. 
+  - This is known as 'content reuse', the practice of using the same content in multiple places. 
+  - One approach on how to create and edit information for content reuse is described in the 'every page is page one' concept'
+- >Diátaxis is similar to DITA 
+  - I don't see it. DITA differentiates between topic types such as task, reference, concept, etc., but a tutorial or a solution guide will be a combination of those topic types. Here I believe the focus is on deliverables that are larger than the individual topic.
+- Got an opinion on LwDITA ? Or are you deep enough into DITA that the complexity is not an issue ?
+  - Got an opinion on LwDITA ? Or are you deep enough into DITA that the complexity is not an issue ?
+- The trouble with DITA is that it is very often accompanied by its own very opinionated toolchain, although of course it's not mandatory. There are better ways to write docs nowadays than wrestle with XSL/FO and its brethren.
+
+- I don't agree with it because while I think that it's theoretically correct, the words are too close together. To me "tutorial", "how to guide" and "explanation" are all practically synonyms. I know that when you think deeply about it, there are legitimate reasons for each category but it's just too close semantically that my brain can't see the difference. 
+
 - ## A dilemma posed by Humane Interface: might OpenDoc/OLE style compound documents ironically exacerbate the problems with apps?
 - https://twitter.com/geoffreylitt/status/1470759473371226114
   - As with apps, each component  defines its own world. But unlike apps, you don’t even know when you’re switching worlds! “Modality with a vengeance”

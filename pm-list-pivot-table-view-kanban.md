@@ -22,7 +22,37 @@ modified: 2023-01-22T18:45:58.936Z
 
 - ## 
 
-- ## 
+- ## [Nullboard: Kanban board in a single HTML file | Hacker News _202412](https://news.ycombinator.com/item?id=42461688)
+- when developing single HTML file apps, instead of localStorage, one can use the HTML as the source of truth, so the user can just save/save-as to persist.
+  - TiddlyWiki famously does this! It's a great system for what it needs to be
+
+- I like urls as source of truth. It’s beautifully deterministic
+
+- How would this work without manually editing the HTML file?
+  - You write Javascript to read and write to HTML, like, develop a single page app that treats HTML as the view and the database, and restores state on DOMContentLoad from the HTML. Super easy and maintainable for micro apps.
+  - You can also use the contenteditable attribute and use no JS, so you basically have a notepad.
+
+- One major failing of WebDAV for these use cases is that the spec requires you to `PUT` the whole resource/file in order to save changes. This isn't too bad when the individual files are small, but as your single file apps grow, this means a lot of data transfer without the comforts of differential uploads.
+
+- I feel GitHub gists are a very good store for data: writable, versioned, shareable and read-only for non authors, workable, support for arbitrary data including binary
+  - I tried that. The problem is that you will always need a middle-end (a separate server between your stand-alone front end application and the GitHub server). You can't just distribute a stand-alone app and let it talk to GitHub directly. Or well you can but only if you get a token with *FULL* scope for all repositories. What I as a developer need is a scope for only one repository. That's how stand-alone and especially browser-based applications can remain safe. You don't want to store tokens with full permissions in multiple apps.
+
+- SyncThing is my go-to for multi-device syncing.
+
+- CouchDB + PouchDB
+- dexieCloud too.
+
+- Custom two way syncing is a nightmare to implement correctly, and it doesn't make sense for apps to have to keep reinventing the wheel 
+  - It is a factor in why CRDT/OT posts and libraries get regularly upvoted on HN. A lot of us want a good, easy to use baseline. A lot of us are searching for that and/or thinking we can build that.
+  - Part of why there's always some reinventing the wheel in this space, unfortunately is that this also seems to be one of the harder problems to generalize. There's always going to be domain specifics to your models or your users or users' idea of your models that is going to need some custom sync and conflict resolution work. Sync has a lot more application specifics than most of us want.
+  - That said, yeah, if there was a good simple building block "base line" to start with that met a nice 80/20 rule plateau
+  - (One such 80/20 place to start if the idea was just a simple KV store might be a basic "Last Write Wins" approach and a simple API to read older versions when necessary. You can build a lot of the cool CRDT/OT stuff on top of a store that simple. Many starting apps LWW is generally a good place to start for the basics. It doesn't solve all the syncing/conflict resolution problems, you'll still need to write app-specific code at some point, but that could be a place to start. It's basically the place most of the simplest NoSQL databases started.)
+
+- ## [Show HN: Nullboard – Simple, light, locally-stored to-do lists | Hacker News _201906](https://news.ycombinator.com/item?id=20077177)
+- It's a single html page, depends only on jQuery and a small webfont pack. It can be used completely offline, and it stores all data locally.
+
+- Drag and drop doesn't work on mobile.
+  - Yes, among other things. This is 100% desktop-oriented app.
 
 - ## 我们团队近期不得不尝试寻找 Trello 替代品。
 - https://twitter.com/DIGITALYCHEE/status/1773238652073881795

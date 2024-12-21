@@ -160,3 +160,23 @@ modified: 2024-02-12T03:23:17.007Z
 - ## 
 
 - ## 
+# discuss-electicsql
+- ## 
+
+- ## 
+
+- ## [Electric (Postgres sync engine) beta release | Hacker News _202412](https://news.ycombinator.com/item?id=42383136)
+- This is how DuckDB is structured too:
+  - DuckDB Labs: The core contributors. Instead of developing features that will be behind a paywall, they provide support and consulting.
+  - DuckDB Foundation: A non-profit that ensures DuckDB remains MIT licensed.
+
+- This is really amazing as is their standalone pglite project, which is a WASM port of Postgres. 
+  - One surprise for me though is that Electric is a read only replica. In particular, “Electric does read-path sync. It syncs data out-of Postgres, into local apps and services. 
+  - Electric does not do write-path sync. It doesn't provide (or prescribe) a built-in solution for getting data back into Postgres from local apps and services.
+- We hit on exactly the same pattern for our product and it works really well. We use Hasura as the read engine. That updates a graph of mobx objects that drive the ui. We apply updates directly to those objects so the ui updates immediately. The mutations are posted back to a Python api that applies them to the db.
+
+- The ElectricSQL concept of 'shapes' is interesting.
+  - In my experience, the "outbox" approach means a lot more manual work for developers. It requires developers to create a message for every type of change they want to sync to the client, and then also interpret that on the client. 
+  - ElectricSQL's Shapes does a lot more work to keep the shape in sync between the client and the server, reducing the need for the developer to do that work.
+  - 👷🏻 You're right that "single-table sync" does have its limitations. At PowerSync we effectively support one level of "joins", and even then it's often not enough for more complex schemas. An older version of ElectricSQL did also actually have multi-table shape sync support, but I believe doing that at scale proved to be difficult.
+  - One solution to this is often denormalizing data - either adding more denormalized columns in the existing table, or creating new tables dedicated to sync data. Conceptually, keeping these tables up to date is not that different from writing updates to an outbox table.

@@ -52,6 +52,12 @@ modified: 2022-10-22T18:45:00.382Z
 
 # yjs-usecase
 
+## [CRDTs and collaborative playgrounds | Cerbos _202412](https://www.cerbos.dev/blog/crdts-and-collaborative-playground)
+
+- One of the tools we offer is a collaborative IDE and testing environment we nicknamed the "Playground"
+  - The Playground is a fully integrated collaborative IDE with built-in testing that provides feedback in real-time, and easily integrates into your GitOps workflow
+- Cerbos leverages the power of CRDTs to facilitate real-time collaboration in our Playground, ensuring a seamless and efficient development experience. 
+
 ## [深入浅出 OpenSumi 协同编辑的原理 - SegmentFault 思否 _202304](https://segmentfault.com/a/1190000043721913)
 
 - OpenSumi 选择基于 Yjs 的多人协同编辑方案

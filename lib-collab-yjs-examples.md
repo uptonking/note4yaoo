@@ -78,9 +78,11 @@ modified: 2022-09-21T15:47:41.340Z
   - CRDT Client-Server Branch using modified y-websocket
   - Operational Transformation Client-Server Branch using `@codemirror/collab` OT, based on Codemirror Collab Website Example for code editor
 
-- https://github.com/drifting-in-space/y-sweet /MIT/rust/ts
-  - https://github.com/jamsocket/y-sweet
+- https://github.com/jamsocket/y-sweet /MIT/202412/rust/ts
+  - https://github.com/drifting-in-space/y-sweet
+  - https://docs.jamsocket.com/y-sweet
   - https://y-sweet.dev/
+  - A realtime CRDT-based document store, backed by S3
   - A standalone yjs server with persistence to S3 or filesystem.
   - building on the excellent y-crdt library
   - Persists document data to a network filesystem or S3-compatible storage, inspired by Figma’s infrastructure.

@@ -15,6 +15,67 @@ modified: 2024-01-07T05:09:14.413Z
 - ## 
 
 - ## 
+# discuss-author(aboodman)
+- ## 
+
+- ## 
+
+- ## 🔁🆚️🤔 Here is how I think about the local-first/sync space. _20241007
+- https://x.com/aboodman/status/184 3041337794576810
+- 1️⃣ The first dimension to consider is document vs database sync. 
+  - Things like @liveblocks , yjs, Reflect are what I would call 'multiplayer' and things like @replicache , @powersync_ , @ElectricSQL , @instant_db , @triplit_dev and @convex_dev are database sync.
+  - The difference is a matter of technical architecture and scale. 
+  - The document sync systems are intended for syncing a single document. They are often much faster and run in memory on the server to facilitate super high-rate (mousemovement, 60fps) sync.
+  - The database sync engines are not backed by databases not memory, so they are inherently slower. But they can sync a lot more data and are more appropriate for syncing your entire application state not just one document.
+
+- 2️⃣ The second dimension to consider is server-authority vs what I will call "decentralized" here.
+  - Examples of server-authority systems are replicache, zero, powersync, electric, convex, instant, triplit, even firebase ...
+  - Examples of decentralized systems are yjs, automerge, @jazz_tools , @dittolive , @evoluhq ...
+  - The difference is again a matter of technical architecture that affects what is possible to build. 
+  - Server authority systems have a central server that all changes go through. This is exactly the same as how basically ~all modern software everyone uses today is built, so it's a lot easier to adopt by industry.
+  - In server authoritative systems it's easy to implement authorization -- only certain users can read or write certain data -- because there is a central server that makes those decisions. There is interesting work being done on auth in decentralized systems but it's a lost more explorative IMO.
+  - On the other hand the decentralized systems have the advantage that they don't need a central server to sync. One fascinating example is Ditto. 
+  - I have also personally recommended things like yjs to people that contacted me from the defense industry. On the battlefield you can't rely on access to the central server so decentralized systems work better.
+
+- 3️⃣ the third dimension is sync engine vs syncing datastore.
+  - A syncing datastore is a backend datastore (that also syncs). It takes the place of postgres/mysql/whatever in your stack, and also takes the place of APIs. They *are* the system of record.
+  - Examples of datastores are instant, triplit, convex, firebase, liveblocks ...
+  - A sync engine is only a data transport layer. It takes the place of GraphQL/REST APIs, but not the place of the database.
+  - Examples of sync engines are powersync, electric, replicache, zero, yjs, automerge, jazz tools .... and I guess I might put @tinybasejs in this category too?
+  - The difference here is ease of use vs flexibility. The syncing datastores are tightly integrated systems that generally are very easy (almost trivial) to setup. But the downside is that they are their own universes. Hard to integrate with the rest of the tools from the software world.
+  - If your sync engine is backed by standard pg, then customers can use it alongside anything that talks to pg. They can easily swap you out for some other sync engine. They can also swap out pg and use a different database.
+
+- 📌 Other important attributes are:
+  - partial sync
+  - optimistic reads (do reads go to the local device first, or always to cloud)
+  - optimistic writes
+  - consistency (what invariants about what data clients can see does the system guarantee)
+
+- Fluid is:
+  - document sync (no queries, very fast, in-memory, primarily designed for syncing a document not a database)
+  - server-authoritative (although the core model is crdt-inspired, there is an authoritative order to all writes)
+  - syncing datastore (fluid *is* your backend)
+  - has optimistic reads and writes built in, ubiquitously
+  - strong consistency
+  - no partial sync
+- The document sync systems are almost always optimistic read/write, strong consistency, no partial sync. These three questions only come into play when you're syncing a lot more data.
+
+- isn’t Liveblocks more of a sync engine than a datastore? Under the hood it’s either Yjs or Liveblocks Storage (which is similar to Yjs) and you still need to persist data to a database yourself via webhooks. As far as I know, Liveblocks room storage isn’t durable.
+  - It is durable. In fact it’s in cf durable objects.
+  - Data is persisted in @liveblocks . Our "Realtime APIs" product offer a data store that supports two sync engines: Yjs and Liveblocks Storage.
+
+- I wonder if you'll touch on an important distinction between things like Convex and things like Firebase, Instant, Triplit, etc.
+  - Convex syncs the results of query functions down to the client it's syncing to, rather than entities themselves. All mutations are queued and actually executed on the server database, enabling Convex to achieve the strongest possible transactional guarantees on the server. Also this allows for more flexibility around authorization rules.
+  - So, Convex is a bit more "online-oriented " today and not truly a local-first solution (yet!). I'm looking forward to Zero and a possible integration in the future
+  - This stands in contrast to Firebase, Instant, and Triplit, where every client has full access to the database locally by default. Depending on the product being built, these might be totally reasonable tradeoffs.
+
+- Both Instant and Triplit have permissions, so it's not the case that all clients have access to entire db by default (unless I'm misunderstanding something about what you mean?).
+  - Yep! Permissions and partial sync means a client/users only has the data that they're both allowed to see and have queried
+
+- I wrote up some similar thoughts we have on the sync landscape in https://stack.convex.dev/a-map-of-sync 
+  - it's *nine* dimensions instead of three (phew), and they're shifted around a bit, but I'm curious what y'all think.
+- 比较了linear/dropbox/figma/replicache/automerge/valorant
+  - 维度9个: Size, Update Rate, unStructured, Input latency, Offline, Concurrent clients, Centralization, Flexibility-sync-rules, Consistency
 # discuss-news
 - ## 
 
@@ -31,7 +92,7 @@ modified: 2024-01-07T05:09:14.413Z
 
 - How would you compare it to Meteor publications and DDP? The engine that implements an SFU there being the mergebox algo, on top of MongoDB oplog/change streams
 
-- ## 🚀 The most annoying problem for Zero's launch was what bug tracker to use. _20241219
+- ## The most annoying problem for Zero's launch was what bug tracker to use. _20241219
 - https://x.com/aboodman/status/1869448123942347128
   - GitHub is way too slow, and Linear doesn't have public bugs or permissions – both required for OSS projects.
   - Yeah, we built a bug tracker. A bug tracker that has *instant* (zero millisecond) UI transitions, live updates, and fine-grained permissions.
@@ -44,6 +105,66 @@ modified: 2024-01-07T05:09:14.413Z
 
 - Is it using indexedDB to store data locally ? Is the local storage limit configurable ?
   - It uses idb yea, or sqlite on mobile.
+
+- What are the longer term plans for replicache now that zero is live? I suspect the bring your own backend approach might still be quite attractive for folks migrating existing apps to local first far into the future. 
+  - For me personally, I really liked the idea of replicache over most other local-first solutions specifically because of the flexibility of the protocol based approach that allowed me to use any tech stack/db and in theory freely migrate to different ones in the future
+- Zero only supports Postgres *currently* but there is nothing important preventing it from working with most databases. 
+  - Powersync and Materialized use the same WAL-tailing technique and they work with many databases.
+  - In a sense Zero is *more* compatible than Replicache because it has fewer dependencies on upstream. All it really needs is a commit log. 
+
+- Any ideas how AWS's new DSQL will fare in terms of overall compat and the event trigger thing? I suspect not well since it's not actual postgres.
+  - I'll have to wait and see how DSQL shapes out when it's public. I suspect it won't even have any replication log at all at launch but that it will quickly be added since it's such a common thing for databases to need to have.
+
+- In your http://fly.io example for zero-cache it's using 2gb of memory. Is that the minimum recommended or can we make do with less for smaller DBs?
+  - I'm not sure why we chose this number. zero-cache is actually pretty lean on memory as it keep most of its working state on SSD. The minimum will depend on your workload.
+
+- I'm also curious what exactly makes the current version "single-node". What's preventing us from deploying multiple instances and load balance between them? Are the nodes not stateless? Do they need to coordinate between each other somehow? Do clients need to stick to 1 mode for the entire session? Or something else entirely?
+  - The nodes are definitely not stateless. They maintain replicas on SSD of the upstream database to do efficient sync (any sync engine works this way). 
+  - We run zero-cache today with 5 nodes for zbugs, so nothing is preventing you from doing this other than that we haven't documented how to do so. A multinode deployment of zero-cache has one leader node that recies the wal from pg and n followers that serve as endpoints for clients. Coordination is needed when an update happens to smoothly drain clients, avoid thundering herd, ensure only one node is using exclusive resources (like the pg replication slot), etc. Standard stuff. 
+  - It all aready works and is being used on zbugs, we just don't like saying stuff is done until it has been documented, tested, APIs cleaned up, etc.
+  - if you try and just run multiple copies of zero-cache w/o any changes from instructions all but one will error out saying that the pg replication slot is in use. To do it correctly you need to configure one as the leader and the others as followers.
+
+- ## 🚀🆚️ [Day Zero – Build Good Web Apps with the Zero Sync Engine | Hacker News _20241218](https://news.ycombinator.com/item?id=42453431)
+- Will replicache be deprecated? 
+  - We'll continue supporting Replicache but won't add new features to it.
+  - Even if you don't think you'll need partial sync, our experience is that almost all projects end up needing either it or permissions. Both of which are difficult with Replicache.
+  - And if you don't need either of those, the the query-based programming model of Zero is just a lot more fun.
+
+- your closest competitor and most similar in design is InstantDB
+  - while both InstantDB and Zero use PostgreSQL as a backend (and add a subscription mechanism in front), the former uses it as a triple store (more similar in practice to something like Triplit), meaning the data is not available in a format comprehensible to other clients, so it is merely an implementation detail. 
+  - Zero however allows the database to be accessed simultaneously in other manners, promoting compatibility and reducing lock-in
+- Instant is a full database, including the backend. 
+  - Zero is not - it connects to some separate authoritative backend db. Currently only Postgres is supported, but our intent is to support other DBs like MySQL, Mongo, Cockroach, and in the fullness of time even custom distributed systems. 
+- Instant uses a datalog/triple style data model and a custom query system. 
+  - Zero's data model is just relational data, and it uses a SQL-style query system. 
+  - In practice the API that instant exposes is very relational-like, but I still think that if you know SQL already there's less to learn with Zero.
+- Zero is based on Incremental View Maintenance. 
+  - When data that affects a Zero query changes, Zero does only a small amount of work to reflect the change. 
+  - To my knowledge, Instant doesn't do this and re-runs the query (correct me if I'm wrong here Instant folks). This was a specific design choice in Zero because ...
+- Zero was designed primarily to support 'the linear use case': storing dozens of MB of data client-side and keeping it up to date with permissions and partial sync. 
+  - We did not want to have to run these huge queries over and over.
+- Zero is very focused on just being a sync engine. 
+  - Instant appears to be aiming to take on more of the suite of features Firebase offers like login, email, blob storage, etc.
+
+- zero-cache uses SQLite internally, but the component that’s missing for SQLite support overall is a replication log that zero-cache can subscribe to.
+
+- Zero's "BYODB" approach has some advantages:
+  * You don't have to trust us to build a correct backend database (nothing Zero can do can corrupt your data - it's just a fancy cache)
+  * If you end up not liking Zero you can easily move to anything else that can run on top of PG.
+  * You can adopt Zero incrementally in an existing project by just moving features over to Zero one-by-one.
+  * Any code, library, or project that works with PG likely already works with Zero.
+  * Zero can coexist with other types of PG users. If some non-Zero client changes PG, Zero clients will see it update live. If Zero clients change PG, other clients will see it when they next read PG.
+  * You don't have to wait for us to build features. Admin UI? Use any of the great PG ones. Data export? It's just PG. Backups? Triggers? FKs? Constraints? Schemas? Migrations? Use all the normal PG stuff.
+- On the flip side this is a more complicated way to build the system and some of that complexity does leak out into Zero's DX. We're trying to minimize it as best we can, but Zero can probably never be quite as 'sleek' an experience as Instant.
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 
 - ## Just got off stage* at @localfirstconf where I shared Zero: https://zerosync.dev
 - https://x.com/aboodman/status/1796238294017085593

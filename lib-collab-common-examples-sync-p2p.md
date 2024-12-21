@@ -17,6 +17,16 @@ modified: 2023-01-17T19:13:01.845Z
   - 同步前一定要检查一个version，参考indexeddb upgrade
   - 参考sqlite+http-range的部分下载示例(sql.js-httpvfs)
 # sync-solutions
+- https://github.com/rocicorp/mono /apache2/202412/ts
+  - https://mono-replicache-trunk-docs.vercel.app/
+  - This is the mono repo for Rocicorp's two main products (as of 2024).
+  - packages/zero-client: The main client library. It use replicache under the hood.
+  - packages/zero-cache: The server side code.
+  - packages/zql: The IVM (incremental view maintenance) engine as well as the query language/API.
+  - apps/zbugs: The bug tracker app.
+  - packages/replicache: The replicache client library.
+  - Reflect is no longer under development.
+
 - verdant/lo-fi /7Star/MIT/202211/ts
   - https://github.com/a-type/verdant
   - https://github.com/a-type/lo-fi

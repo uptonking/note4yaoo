@@ -124,7 +124,35 @@ modified: 2022-11-29T20:41:25.566Z
   - [MySQL: Replication Protocol](https://dev.mysql.com/doc/dev/mysql-server/latest/page_protocol_replication.html)
     - Replication uses binlogs to ship changes done on the master to the slave and can be written to Binlog File and sent over the network as Binlog Network Stream.
 
- ## [RxDB replication protocol](https://rxdb.info/replication.html)
+## 📌🆚️[A Map of Sync _202410](https://stack.convex.dev/a-map-of-sync)
+
+- 比较了linear/dropbox/figma/replicache/automerge/valorant
+  - 维度9个: Size, Update Rate, unStructured, Input latency, Offline, Concurrent clients, Centralization, Flexibility-sync-rules, Consistency
+
+- A few of us at Convex have worked for over a decade on sync at Dropbox, and we've been working the past few months on extending Convex's sync engine for better offline support and responsiveness. 
+- Here are our notes for how we've been keeping things straight.
+
+- Categorizing sync platforms
+
+- Data model:
+- Size: How large is the data set that a single client can access?
+- Update rate: How often do clients send updates?
+- Structure: Is the data rich with structure or flat and unstructured?
+
+- Systems requirements:
+- Input latency: How long can updates be delayed while maintaining a good user experience?
+- Offline: How many interactions does the app need to support offline?
+- Concurrent clients: How many concurrent clients will look at the same data?
+
+- Programming model:
+- Centralization: How centralized is the programming model and infrastructure?
+- Flexibility: How flexible are sync policies, especially around conflict resolution?
+- Consistency: What types of invariants can the application assert about its data model, and how strong can these invariants be?
+
+- With these nine dimensions, we can start to tame the wilderness of the current sync ecosystem. 
+  - Sync engines can differ wildly, but they all make important decisions in their data model, their systems requirements, and their programming model.
+
+## [RxDB replication protocol](https://rxdb.info/replication.html)
 
 - 支持websocket、graphql、couchdb、p2p
 - The RxDB replication protocol provides the ability to replicate the database state in realtime between the clients and the server.
