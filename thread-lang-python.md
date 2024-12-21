@@ -63,6 +63,24 @@ modified: 2024-02-14T12:35:31.547Z
 
 - ## 
 
+- ## 
+
+- ## 说一说将 MarkItDown 运行在浏览器中只有中国大陆程序员会遇到的一个问题
+- https://x.com/miantiao_me/status/1869366259818885429
+  - Pyodide 是一个在 WebAssembly 中运行 Python 的工具库，使用 Micropip 通过 PyPI 来安装包。
+  - PyPI 在中国大陆是无法正常访问的，但是有许多的 Mirror。清华、阿里云、腾讯云、华为云等不少网站都提供了镜像。这些镜像除了清华的 tuna，其他都不支持 JSON-based Simple API for Python (PEP 691)。
+  - 由于 WebAssembly 在浏览器内运行需要跨域和 PEP 691，但是清华的 tuna 又不支持 CORS 跨域。所以在中国大陆可能没有 Micropip 可用的 PyPI 镜像。
+  - 基于这个背景，使用 Cloudflare 搭建了一个支持 PEP691 和 CORS 的 Mirror。
+
+- 这种算是通过workers进行反向代理吧…新政策禁止用户通过CF的服务创建代理…存在违反使用政策被封禁的担忧
+
+- ## Python 届的三大 Web Frameworks：Flask、Django 和 FastAPI，居然是三足鼎立之势。
+- https://x.com/tualatrix/status/1869364341935591858
+  - 现在只需要写 API 的场景越来越多了
+
+- 多年 aiohttp 用户飘过
+- 没想到 FastAPI 涨这么快
+
 - ## Python这个基于路径导入就是一坨XXX，只能搞黑魔法。 因为根本不可能同时让Jupyter notebook/vscode-python/命令行工具三个都满意，
 - https://twitter.com/JXQNHZr1yUAj5Be/status/1786997922120204397
   - 如果你用复杂的项目配置(pyproject/src-layout)，那jupyter和命令行死给你看。 

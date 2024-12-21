@@ -50,6 +50,21 @@ modified: 2021-04-24T08:29:02.272Z
 
 - ## 
 
+- ## 
+
+- ## htmx is basically the same idea as the SSR stuff in React/NextJS/Remix of the last ~5 years, which is almost the same as the Rails 4 or 5 turbosomething approach to JS:
+- https://x.com/Swizec/status/1868410384350380154
+  - You render chunks of HTML on the server and your framework makes Ajax calls to inject these chunks into the page in response to user actions. Like a form submit or a navigation. 
+  - The framework then hydrates these chunks so they can be interactive.
+  - The reason this works now but didn’t 15 years ago is that you can now deploy those HTML rendering workers in a massively distributed CDN-like compute. This way a user from Australia doesn’t need to wait for ping times with us-west-2. Also frameworks make it nicer than when we tried to do this with jQuery back when Ajax was the new hot.
+  - Ultimately the physical distance between your user and the data they’re accessing remains the core bottleneck.
+
+- We have 2 super different use-cases. 
+  - Parts of the app are standard multi-page stuff where htmx will be a good fit.
+  - Parts of the app are more Figma-like and will need to be very client-side. Might even need wasm
+
+- You can render HTML on an edge node, but for most apps this will be overkill and the actual perceptible delay will be either talking to the database from that edge node.
+
 - ## Twitter(x) 的 web 端也做的很好，首次加载用 SSR 保 SEO、TTI、FCP，之后其他页面 router 用 CSR 保证切换流畅体验，客户端 API Request 减少 SSR 服务开销。
 - https://x.com/zhdsuperman/status/1818660691710238878
   - 至今我还不知如何用 nextjs 实现类似体验，怎么做到只有首次加载是 RSC，但是之后切换为 CSR？
@@ -97,12 +112,12 @@ modified: 2021-04-24T08:29:02.272Z
 
 - ## [How single-page application works in SSR (React) - Stack Overflow](https://stackoverflow.com/questions/57243697/how-single-page-application-works-in-ssr-react)
 - When implementing Server Side Rendering (SSR), the server knows how to generate a full page with markup so the user gets a fully rendered page and from that moment, when the js resources get downloaded, the application will be live (event listeners will be enabled, the react lifecycle will be active and so on).
-01.         Get a request for a specific path
-02.         Initiate a new store instance for the request
-03.         In case of using react router (or other router solution), fill the state with the requested route
-04.         Render the app, but instead of rendering and mounting the App, render the App to string (with renderToString)
-05.         Dehydrate the state - take the latest state snapshot and append it to the result (after escaping it and wrapping it with script tag for example)
-06.         Return the markup as a response. The markup can look similar to the following: 
+01.          Get a request for a specific path
+02.          Initiate a new store instance for the request
+03.          In case of using react router (or other router solution), fill the state with the requested route
+04.          Render the app, but instead of rendering and mounting the App, render the App to string (with renderToString)
+05.          Dehydrate the state - take the latest state snapshot and append it to the result (after escaping it and wrapping it with script tag for example)
+06.          Return the markup as a response. The markup can look similar to the following: 
 
 ```HTML
 <html>

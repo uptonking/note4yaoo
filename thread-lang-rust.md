@@ -47,7 +47,10 @@ modified: 2023-10-06T16:26:57.557Z
 
 - ## 
 
-- ## 
+- ## Someone said that even after 5 years of Rust and they still end up in situations when I need to spend over an hour to wrestle with borrow checker. 
+- https://x.com/ifesdjeen/status/1870481296386077176
+- You need not run into lifetimes, until you need absolute raw peformance. Just clone away until you get things working, then measure the sections in hot loop, and introduce lifetimes there incrementally.
+  - Make it work, make it better, make it faster. In that order.
 
 - ## 看来 PingCAP Talent Plan 是彻底抛弃 Rust 了 _202411
 - https://x.com/blackanger/status/1858467762202607932

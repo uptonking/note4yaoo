@@ -20,6 +20,10 @@ modified: 2024-11-16T10:35:13.534Z
 
 - ## 
 
+- ## 
+
+- ## 
+
 - ## 🚀 Today, we’re spinning Framer Motion out into its own independent open-source project, to better serve the whole community. _202411
 - https://x.com/mattgperry/status/1856347846796005472
   - [Framer Motion is now independent, introducing Motion - Motion Blog _202411](https://motion.dev/blog/framer-motion-is-now-independent-introducing-motion)
@@ -50,10 +54,22 @@ modified: 2024-11-16T10:35:13.534Z
 
 - ## 
 
-- ## 
+- ## 🚀 Introducing Blendy – a framework-agnostic tool that smoothly transitions any element into any other element with just a few lines of code. _202412
+- https://x.com/tahazsh/status/1869046551500456418
+  - https://blendy.tahazsh.com
+  - 卡片从小变大的动画示例
 # discuss
 - ## 
 
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## For years, Figma has been using Motion to drive delightful animations throughout their site, core product, and now FigJam too.
+- https://x.com/mattgperry/status/1869761398223634733
+- Don't get bought by Figma!
+  - 100% aboard the independent train, no worries

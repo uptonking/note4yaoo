@@ -35,6 +35,23 @@ modified: 2023-10-28T13:45:16.973Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Some notes on how SQLite implements MVCC using WAL and provides Snapshot Isolation
+- https://x.com/iavins/status/1870464040977256753
+- First, let's understand the transaction model of SQLite, which is quite different (and more limited) than other databases.
+- What SQLite offers:
+  - Concurrent transactions
+  - Multiple readers AND a writer simultaneously
+  - But no multiple concurrent writers
+- In other words, readers don't block the writer, and the writer doesn't block readers. 
+- Fun fact: SQLite added WAL mode only in 2010. Until then, you could have either a single writer or multiple readers, but never both!
+- SQLite is B-Tree based, so all data is stored on disk in pages within the `.db` file. SQLite also has an auxiliary file called WAL (Write-Ahead Log) where writes are appended. This is the `.db-wal` file.
+  - When you make a write, changes are not directly applied to the db file; they are first appended to the WAL. The WAL file continues growing until the 'checkpoint' operation occurs. During checkpointing, the changes from the WAL file are applied to the main database file, and the WAL file is emptied.
+  - The WAL maintains frames, which are versioned pages. (We will come back to this)
+
 - ## [Why SQLite Uses Bytecode | Hacker News _202404](https://news.ycombinator.com/item?id=40206752)
 - It is difficult to summarize the advantages and disadvantages of byte-code versus AST for SQL 
 

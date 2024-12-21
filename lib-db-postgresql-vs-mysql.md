@@ -104,7 +104,35 @@ modified: 2023-11-01T14:13:41.390Z
 
 - ## 
 
-- ## 
+- ## I can't *quickly* think of companies doing massive Postgres deployments (like petabytes or exabytes) 
+- https://x.com/iavins/status/1870142918549496283
+  - But for MySQL? So many come to my mind easily: YouTube, Facebook, PlanetScale, Uber, etc.
+  - Okay, couldn't find a single example of a massive Postgres deployment
+
+- Here are the top three (publicly known) deployments:
+  1. Heap - 2PB+
+  2. Timescale - 1PB+
+  3. Adyen - 100TB
+
+- Ostensibly this is because those companies started in a time where MySQL was dominant and not Postgres (mid 2000s). Check in again 15 years from now and see what the biggest RBDMS deployments are. Also MySQL backed by Oracle which is good for enterprises whereas Postgres is bona fide OSS.
+- Postgres became popular much later. MySQL was everyone’s go-to DB in the 2000s. Oracle’s acquisition impacted its popularity to some extent (which also split the community with MariaDB) So we will start reading about massive Postgres deployments in few more years.
+
+- It's easier to migrate from Postgres to MySQL and use the mega-scale tooling in that world than it is to re-create that tooling for Postgres I guess. I also think Postgres' design is better for small-mid systems (MVCC etc) but MySQL eventually wins out when you have to start doing more in the application layer anyway at massive scale.
+
+- I’m pretty sure @zerodhaonline is all in on Postgres and they’re huge!
+
+- Figma. And AWS if you count Aurora
+
+- The number of people demanding compression from Innodb is long, because cost savings are very important due to the scale of many MySQL deployments. I have not heard anybody make the same demands from Postgres. This makes me very suspicious of all the PG fanboi spruiking
+
+- Possibly Notion, but I couldn't find storage numbers in their blog posts
+- Figma has a great blog about theirs - but ummm yes there are a TON of massive postgres deployments
+- I think PostgreSQL is becoming more enterprise-oriented at larger scales. Azure's acq. of Citus, for example, enables their offering to scale to petabytes as they claim.
+- Skype used Postgres. I don't have numbers but it wad quite large back then
+
+- Dropbox metadata is on MySQL and served millions of transactions per second last time I worked on it. Even the multi-exabyte storage system we built used MySQL for indexing. At the time MySQL was much more battle-tested at scale than Postgres.
+
+- If you’re in a situation where you want to store a large number of documents for app retrieval (pdfs, word, etc) I know the S3 or azure storage is the best strategy but how well does Postgres scale in these scenarios?
 
 - ## 🆚️ Postgres and MySQL, the main differences
 - https://x.com/hnasr/status/1859366187534254274

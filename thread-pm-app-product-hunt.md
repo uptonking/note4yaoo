@@ -110,7 +110,11 @@ modified: 2022-12-04T16:34:29.342Z
 # products
 - ## 
 
-- ## 
+- ## 分享一个开源的 PC 微信聊天记录数据导出工具。 
+- https://x.com/austinit/status/1870347850204557789
+  - 导出后数据可以做永久化保存，即使微信停止支持，聊天记录也可以随时查看。
+  - 前端界面尽量与微信界面保持一致，减少使用成本。
+  - https://github.com/git-jiadong/wechatDataBackup
 
 - ## 有什么在国内体验比较好的问卷类工具? (接受付费)
 - https://x.com/DIGITALYCHEE/status/1853288959608234392

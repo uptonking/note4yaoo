@@ -79,7 +79,8 @@ modified: 2023-10-28T17:52:17.942Z
 # discuss
 - ## 
 
-- ## 
+- ## TIL there was an attempt to bring async I/O to PostgreSQL, but unfortunately it didn't pan out
+- https://x.com/iavins/status/1869008971551350981
 
 - ## [Common mistakes in PostgreSQL | Hacker News _201905](https://news.ycombinator.com/item?id=19817531)
 - There are two ways to built abstractions: 

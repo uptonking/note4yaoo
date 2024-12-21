@@ -92,7 +92,15 @@ modified: 2024-05-27T09:12:06.925Z
 
 - ## 
 
-- ## 
+- ## Problem: You want to push your changes, but skip CI because you're not done yet, so running CI would be wasteful.
+- https://x.com/housecor/status/1868376700033413151
+  - Solution: Put this in the push commit message: [no ci]
+
+- What we do is that we only run CI if the PR has a "Run CI" label, that is manually added by the dev when they're ready for it
+  - Feels backward to me since it risks CI not running
+
+- Why not create Draft PR instead?
+  - That works too
 
 - ## [gitignore does not ignore folder - Stack Overflow](https://stackoverflow.com/questions/24410208/gitignore-does-not-ignore-folder)
 - Here's the steps I took to ensure my .gitignore file ignored the folder I wanted it to ignore:

@@ -61,6 +61,20 @@ modified: 2023-10-26T19:56:12.974Z
   - Semantic Search on Wikipedia with Upstash Vector
 - 这类的数据和embedding开源意义更大. 看了下是bge-m3的embedding model (看重多语言) 具体chunk是用的自然段, 然后过滤掉过短的.
 
+# discuss-recsys
+- ## 
+
+- ## 
+
+- ## 
+
+- ## TikTok just open-sourced their recommender system framework (Monolith) -- and it uses Keras _20241220
+- https://x.com/fchollet/status/1869949776764252328
+  - This means that nearly all the major recommender systems in the industry are built on Keras -- YouTube, TikTok, Spotify, Snap, X/Twitter, and many more (Grubhub...)
+
+- wild how Keras became the unofficial standard for big tech recommenders... feels like Python/PyTorch vs TensorFlow wars are settling
+
+- X/Twitter doesn’t use Keras
 # discuss
 - ## 
 

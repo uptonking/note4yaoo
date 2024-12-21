@@ -221,7 +221,8 @@ export default FrontPage
 
 - ## 
 
-- ## 
+- ## 前两天分享了一下在浏览器内运行的 MarkItDown, 分享一下核心代码
+- https://x.com/miantiao_me/status/1870417021285900709
 
 - ## MarkItDown = a tool from Microsoft to convert Word / Excel / PPT / PDF... to Markdown
 - https://x.com/python_tip/status/1868061408161911248
@@ -229,7 +230,14 @@ export default FrontPage
 - I thought it was something they open source, like they build the whole thing. Turns out it was just some wrapper and spaghetti code
 - Unfortunately, the formats ['.xls', '.xls', '.wb3', '.doc', '.spo', '.opt', '.rvt', '.vsd', '.msi', '.pub', '.mtw', '.ac_', '.dot', '.pps', '.ppt', '.xla', '.wiz', '.sou', '.wps', '.apr', '.msc', '.adp', '.db', '.wdb', '.xlr', '.suo'] are not supported.
 
+- https://x.com/9hills/status/1868580355915350116
+  - 有些话说出来比较得罪人，但是确实这个圈子有大量盲目转发和夸赞。 
+  - 远的比如某名人挂名做了一个LLM调用库，近的比如微软发布的 markitdown。 它只有 1000 行左右，主要工作是把很多开源库给集成到一个简便的API。并没有提升解析效果，该不好还是不好。 你要说有价值吧，是有价值的，但是你说这玩意震撼发布，那就属于尬吹了。
+- 名人挂名做了一个LLM调用库是啥。
+  - 吴恩达的aisuite
 # discuss
+- ## 
+
 - ## 
 
 - ## 

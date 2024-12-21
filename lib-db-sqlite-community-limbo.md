@@ -71,7 +71,11 @@ modified: 2024-12-13T15:12:55.861Z
 # discuss-author
 - ## 
 
-- ## 
+- ## I was exploring ways to make SQLite async and picked Zig initially because I thought I could just reuse large chunks of SQLite by re-writing just the VDBE. 
+- https://x.com/penberg/status/1869426876797624350
+  - The more I kept digging into it, the less convinced I became of keeping any of SQLite because (1) the front-end is a bit hairy to be honest and (2) async eventually bubbles up to most layers.
+  - As I figured I'd be rewriting the whole thing, Zig was just slowing me down as I was learning the language, while trying to figure out how to build everything. I also ended up sending much more time in `gdb` than usual and I never really understood why people love comptime. People tell me this is a skill issue, and they're probably right.
+  - Anyway, I then simplified the problem to just rewriting SQLite and went with Rust, which I already knew well, and which I think is an excellent fit for systems programming.
 
 - ## It's indeed true that there is this misconception that the SQL over HTTP support Turso has is the only mode, which is not true. 
 - https://x.com/penberg/status/1842964199284036091
@@ -180,6 +184,20 @@ modified: 2024-12-13T15:12:55.861Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## If you'd rather watch @ThePrimeagen break down @penberg 's Limbo rewrite of SQLite in Rust than read the article - and I recommend it (way more entertaining) - here's the vid
+- https://x.com/tursodatabase/status/1869412566054977555
+
+- ## Working on Limbo is not just about catching up with SQLite, sometimes you get to improve on it. 
+- https://x.com/penberg/status/1869718985018847694
+  - For example, SQLite's API only supports cancelling all queries, but with async it's important to support per query cancellation. So we added that to Limbo!
+
+- A feature that I am looking for _right now_ in sqlite is per-connection malloc/free control. You can configure it at the process level, but I want to create arenas per connection.
+
+- Do you think using Rust's unsafe is inevitable for a database like this? I noticed there are some unsafe uses in the repo for sqlite3.
+  - I don’t know if it’s inevitable, but useful at least. Unsafe just makes sense in some cases
 
 - ## running a database in production is much more than just doing reads and writes.
 - https://twitter.com/glcst/status/1759670019443577324

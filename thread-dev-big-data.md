@@ -201,7 +201,9 @@ modified: 2023-04-19T07:30:34.872Z
 
 - ## 
 
-- ## 
+- ## Uber's Neutrino project uses @ApacheCalcite in combination with @ApachePinot . Nice
+- https://x.com/julianhyde/status/1869168819069124983
+- One clarification: Neutrino itself is a fork of Presto and hence uses PrestoSQL and Presto’s planner; however Pinot’s Multistage Engine leverages Calcite and is pegged to be the next generation query engine for Pinot and platforms that use it.
 
 - ## 🆚️ not an exhaustive list of current table format support _202406
 - https://x.com/mim_djo/status/1801597909148012631

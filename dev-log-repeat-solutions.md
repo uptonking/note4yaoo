@@ -360,6 +360,13 @@ modified: 2021-07-20T13:50:23.433Z
   - 实现方案可参考成熟数据库的streaming，一般与业务表相关
   - powersync
 
+- ivm/incremental-view-maintenance
+  - web前端的reactive实现
+  - 数据库的materialized view
+  - event sourcing
+  - bundler的热加载，如turbopack
+  - 编译器的热更新
+
 - 系统提供很多配置项的设计
   - webpack
   - vscode settings

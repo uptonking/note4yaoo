@@ -220,6 +220,18 @@ modified: 2023-12-12T08:45:31.670Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## TIL (and painful reminder): You need to close WebSocket connections with a code for a Node process/thread to properly exit.
+- https://x.com/schickling/status/1869081922846220583
+- MDN claims it to be automatically set to 1000?
+
+- Every TinyBase documentation snippet doubles up as a unit test. This is why they all include cleanup!
+
+- nodejs - not even once.
+
 - ## I’m increasingly thinking that every client-server connection should be default realtime using websockets, unless you have a very good reason for not doing that.
 - https://x.com/jamonholmgren/status/1852568079223681525
   - And most server-server connections too.

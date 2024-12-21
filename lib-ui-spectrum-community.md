@@ -27,6 +27,42 @@ modified: 2021-04-12T18:07:01.092Z
   - A library of React Hooks for React-Native (Android/iOS/web) to provide accessible UI primitives for a design system
   - 依赖很多react-aria的子包
   - https://github.com/GeekyAnts/react-native-aria /archived
+# discuss-ui-a11y
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🚀 Introducing @base_ui _20241218
+- https://x.com/colmtuite/status/1869053012712550819
+  - ✔️ 25 accessible UI components
+  - ✔️ Unstyled. Compatible with any styling engine.
+  - ✔️ Fully composable with an open API
+  - First awesome feature is nested dialogs
+- Potentially a controversial one, but after literally a a year of research and debate, we settled on the `render` prop for component replacement and composition.
+- Curious whether there is a public record of why it was chosen over `asChild` ? Would be interested to read why `render` was chosen instead
+  - We actually researched about 7 or 8 different APIs. Long story short: `asChild` can be a footgun, `render` is more obvious what's going on in the code, and it's more inline with React's vibes.
+
+- what's the the distinction/direction of these compared to what's going on with radix ui?
+  - There's not much going on with radix rn. Almost 2 years since the last new radix component, just 1 part-time maintainer. All original devs left a long time ago.
+  - So rather than a new direction, the idea is to provide a familiar alternative.
+  - It's not built on Radix
+  - Radix has not been actively maintained for a long time. None of the original team have been working on it for 1–2 years. Issues often take a long time to be resolved. It's been 4 years since launch, and still no Combobox, Carousel, DatePicker etc. The project is effectively dead
+
+- When comparison with React Aria?
+  - Spoiler alert: it will be prioritised like: 1. stability 2. radix parity (Toast, Menubar, NavigationMenu etc.), then Combobox and other comps
+- Looks like a strong competition to React Aria from Adobe, I guess. What’s the main difference of Base UI?
+  - RA is streets ahead in terms of number of components, especially the complex components. It's also more stable and mature. I'd say the main difference would be DX + API design. Lots and lots of small differences across the board.
+
+- How is it related to MUI base UI? Has it been split out? Confused because some of the authors are MUI (former?) employees
+  - It is funded by the same company, just a different brand. All current MUI employees, not former.
+
+- I can see lots of familiarities coming from @ark_ui_
+
+- https://x.com/colmtuite/status/1869424949758439919
+  - When a small startup creates OSS as a side project, there is always the risk that it will go away at some point. 
+  - The main reason I chose MUI is so that the project won't be a side hustle. Components are the business model here, and the company has been profitable for years.
 # discuss
 - ## 
 

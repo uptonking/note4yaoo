@@ -28,7 +28,17 @@ modified: 2021-07-28T19:22:07.339Z
 
 - ## 
 
-- ## 
+- ## what is the best performant and DX approach to import icons?
+- https://x.com/peer_rich/status/1868635934822138237
+  - at @calcom we currently have a build-process to turn all icons into a massive `sprite.svg` (introduced here: https://github.com/calcom/cal.com/pull/16135).
+  - but while performance is great, developer experience is poor and we run into more edge cases than we would like
+- I'm working on a vite plugin to generate sprites based on an input path. When I finish it I'll let you know.
+
+- unplugin-icons is great. You can make a wrapper around it to use a single Icon component controlled by props
+
+- if you are not styling them much and have close to non-interactivity, I would rather keep them as assets. On the contrary, if they are small and reusable, I would have them inline. but I am facing performance issues with this approach as well, even if I use tools to minify them.
+
+- I made something for this that solved my problems with SVG in React. It’s using a reference file to all your icons and then loads them on demand depending on the renderer you need; 
 
 - ## 🆚️ Article greatly explains strategies to load SVGs + tradeoffs. Then introduce a toolchain to make SVG use convenient
 - https://x.com/sebastienlorber/status/1831291514070122593

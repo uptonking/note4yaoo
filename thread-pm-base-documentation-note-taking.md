@@ -99,7 +99,9 @@ modified: 2021-08-16T06:56:53.061Z
 
 - ## 
 
-- ## 
+- ## userjot: The editor is getting a lot better
+- https://x.com/ImSh4yy/status/1869887335854117092
+  - 经典的文件树、编辑器、侧边栏(设置、统计、评论)三栏布局
 
 - ## 微软推出了将web + work + Page结合在一起的新型办公工具：Copilot Pages，工作协作起来方便很多
 - https://x.com/aigclink/status/1835931927658029442

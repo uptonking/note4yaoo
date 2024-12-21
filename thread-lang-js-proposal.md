@@ -90,7 +90,23 @@ modified: 2023-11-10T08:05:25.474Z
 
 - ## 
 
-- ## 
+- ## 🤔 Directives are the weirdest annotation tactic and I think it's insane that they're getting normalized as much as they are. Files... sure. But functions, come on.
+- https://x.com/tannerlinsley/status/1869096602977313273
+  - Today's directive insanity: Most of them imply an AST transformation, and it's no guaranty that the original function will remain as in (or at all), let alone *other* directives in that function.
+  - So really, each directive needs to be somehow responsible for preserving the functionality of any others...
+  - So order matters.
+  - So it should just be a higher order function. Not a directive.
+
+- to be fair, directives on their own aren't really responsible for anything. it's the bundler/compilers job to read all the directives and decide what needs to be transformed, and how. in my mind directives are more like a hyperlocal config file or a routing convention than a HOC.
+
+- I really wish tanstack start to never go this direction
+  - We will support basic directives per framework (not meta framework) like `use server` and `use client` to achieve ecosystem compatibility. But other than that, TanStack will provide much better first-class alternatives that prioritize type-safety, validation, and opt-in customization.
+
+- React is (always has been) obsessed with creating it's own language by exploiting the dynamism and flexible syntax of JS, then trying to pass it off as regular JS.
+
+- NextJS introduces many weird stuff. The recent introduction of *awaits params* is weird because I have always used await for a function that returns a promise. Why this thing is not ‘await params()’ ?
+
+- Totally agree, especially when they're mixed with functions to control their behavior.
 
 - ## 🔀 JavaScript 标准委员会今天通过了新的提案，增加 struct, shared struct, unsafe 块，内存顺序，Mutex 同步原语等概念，解锁 JavaScript 多线程共享内存的能力
 - https://x.com/_hisriver/status/1843671089534382244

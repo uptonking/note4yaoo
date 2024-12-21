@@ -32,7 +32,13 @@ modified: 2021-02-19T12:23:12.286Z
 
 - ## 
 
-- ## 
+- ## 🤔 What are your thoughts on early returns?
+- https://x.com/schlimmson/status/1870122088100725244
+- Guards are great, there is a reason modern languages like Swift or Rust have them built in
+
+- Personally, I prefer using early return instead of wrapping everything into multiple if/else statements. This reduces the load on the reader’s mind later, makes it easier to understand and trace the flow, and eliminates the need for excessive nesting.
+
+- early returns are one way to reduce the number of code paths through a function (often called cyclomatic complexity).
 
 - ## 🤼🏻 提示一下各位同学，1）在项目中的代码最好全用相对URL路径，如果要用绝对的话，最好支持一个BasePath的配置（Java的项目都会有一个app）。
 - https://x.com/haoel/status/1610116273937211396

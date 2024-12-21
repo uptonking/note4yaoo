@@ -48,7 +48,9 @@ modified: 2021-07-29T11:15:44.100Z
 # discuss
 - ## 
 
-- ## 
+- ## TIL about `PointerEvent.getPredictedEvents()` . Apparently, web browsers can predict where the cursor could potentially move next
+- https://x.com/sebastienlorber/status/1869083536185331772
+  - It's now supported everywhere starting Safari 18.2
 
 - ## 自从知道 Chrome 有能实时捕获网页内的媒体流的 tabCapture API 后，对我这个常年开发 iOS App 的良民来说受到了文化冲击，这个 API 简直是外挂
 - https://x.com/kevinzhow/status/1818562695026950216

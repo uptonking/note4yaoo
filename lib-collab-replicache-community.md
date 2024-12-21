@@ -22,9 +22,28 @@ modified: 2024-01-07T05:09:14.413Z
 
 - ## 
 
-- ## 
+- ## AFAIK Zero is the first sync engine based on IVM, and maybe the first application of IVM in UI?
+- https://x.com/aboodman/status/1869840603753918701
+  - Why are we doing this crazy thing? I think that it is inevitable if you want to build generally useful sync engines.
+  - I tried waiting for years for somebody to do this as a library we could reuse, but nobody did so I nerdsniped @tantaman into researching it and he prototyped it in https://github.com/vlcn-io/materialite. Then we ended up hiring him and rebuilding it together from the ground up for Zero.
 
-- ## 
+- Triplit's been doing it since the beginning! And in a sense IVM is basically how all modern web frameworks work when they're updating the DOM
+
+- How would you compare it to Meteor publications and DDP? The engine that implements an SFU there being the mergebox algo, on top of MongoDB oplog/change streams
+
+- ## 🚀 The most annoying problem for Zero's launch was what bug tracker to use. _20241219
+- https://x.com/aboodman/status/1869448123942347128
+  - GitHub is way too slow, and Linear doesn't have public bugs or permissions – both required for OSS projects.
+  - Yeah, we built a bug tracker. A bug tracker that has *instant* (zero millisecond) UI transitions, live updates, and fine-grained permissions.
+  - The *problem* with sync engines, historically, has been that they only work for a narrow class of apps. As soon as you get more data than you'd want to sync to the client, need fast startup, or need fine-grained permissions, they start to fall apart.
+  - Today, we're making Zero available for the first time in alpha.
+  - It's open source: We plan to offer zero-cache as a service and also help larger businesses run zero-cache on-prem.
+
+- What i don't get is how i would intercept mutations on a server. Let's say i want to have a server part that has to do stuff if resource x is mutated, like sending an email or what not? I only see the frontend talking directly to the zero-cache..
+  - we're adding that next
+
+- Is it using indexedDB to store data locally ? Is the local storage limit configurable ?
+  - It uses idb yea, or sqlite on mobile.
 
 - ## Just got off stage* at @localfirstconf where I shared Zero: https://zerosync.dev
 - https://x.com/aboodman/status/1796238294017085593

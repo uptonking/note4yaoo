@@ -33,6 +33,14 @@ modified: 2021-01-08T17:13:43.392Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## chrome 选定 dom 可以直接 ask ai
+- https://x.com/hylarucoder/status/1870064803533967670
+- 没有context, 不在runtime, 甚至都不是源代码，试了几次暂时弃置了
+
 - ## I ran into something interesting: a "mouseenter" event will be re-triggered on a parent element if the user is over a child element, and that child is replaced with a new element
 - https://x.com/alexandereardon/status/1853234614007128488
 

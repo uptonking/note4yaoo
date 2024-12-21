@@ -73,7 +73,13 @@ modified: 2024-08-24T16:28:20.515Z
 # discuss-ide-ai
 - ## 
 
-- ## 
+- ## 🚀 Announcing GitHub Copilot Free _20241219
+- https://x.com/code/status/1869449373995708703
+  - No trial. No subscription. No credit card required.
+  - main benefits of Copilot Pro are more models and unlimited requests quota.
+
+- Does it not work through SSH?
+  - It should. 
 
 - ## [Show HN: Windsurf – Agentic IDE | Hacker News _202411](https://news.ycombinator.com/item?id=42127882)
 - I've been using Cursor Composer heavily and it's great but buggy, and could be more agentic.

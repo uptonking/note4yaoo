@@ -188,7 +188,11 @@ modified: 2023-04-04T03:59:40.928Z
 
 - ## 
 
-- ## 
+- ## 智谱ai刚融资了30个亿，背靠国企和强劲的需求，我估计未来2-3年现金流不会有问题。
+- https://x.com/seclink/status/1870284667309768985
+  - 我今天看了一下官网，有145个岗位在招人。
+
+- 跟政府单位谈AI项目，他们反馈目前国内主推的是讯飞。所有政府项目优先用讯飞的。其次是360这种有资质的，在后面是挂靠在电信和移动的资质下面做分包
 
 - ## 🤔 大厂抄 Cursor，这样追在别人屁股后面跑是没有前途的，AI 代码编辑器已经是红海了，就算大厂又如何，微软比 Cursor 大多少？
 - https://x.com/dotey/status/1827749825732874241
@@ -270,11 +274,11 @@ modified: 2023-04-04T03:59:40.928Z
 
 - ## 5 new market maps in AI
 - https://x.com/chiefaioffice/status/1799766662746398851
-  01.         AI code generation tools from Greylock
-  02.         AI legal tools from Battery Ventures
-  03.         AI agent infrastructure from Madrona
-  04.         AI marketing tools from a16z
-  05.         Conversational AI from Cobus Greyling
+  01.          AI code generation tools from Greylock
+  02.          AI legal tools from Battery Ventures
+  03.          AI agent infrastructure from Madrona
+  04.          AI marketing tools from a16z
+  05.          Conversational AI from Cobus Greyling
 
 - ## Google 最近新出了两个 Code 相关的 Agent 非常有意思：
 - https://x.com/tuturetom/status/1798350275314581670

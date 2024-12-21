@@ -12,7 +12,17 @@ modified: 2023-10-28T17:52:51.915Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## TIL Postgres added replication only in 2010
+- https://x.com/iavins/status/1870146352052875489
+- It's surprising but true. Before that, it was continuous crash recovery via WAL replay, or... Slony trigger-based replication.
+
+- How were people working around this limitation before that?
+  - There were several very mature extensions for it - I think Slony was the most popular - https://slony.info - first released over 20 years ago
+- Nobody cared that much 🤷‍♂️ And people who cared did schema-level replication with third party extensions like Slony.
+
+- About the same time MySQL added select from a select.
+
+- A major reason why MongoDB become popular in a lot of companies starting in 2010-2015.
 
 - ## For CDC users, one of the most exciting features in #Postgres version 16 is the support for logical replication from stand-by servers (a.k.a. read replicas). 
 - https://twitter.com/gunnarmorling/status/1737158441611796623
