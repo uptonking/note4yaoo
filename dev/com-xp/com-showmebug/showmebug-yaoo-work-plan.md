@@ -515,6 +515,11 @@ modified: 2024-05-06T02:54:40.374Z
 
 ### ✨ feat-时光机的任务执行
 
+- 🤔 时光机打字动画的时机不采用pullOTUpdates事件的原因
+  - pullOTUpdates事件虽然包含了用户id，但ai进行其他操作时顺便修改文件此时也会打开diff视图，而业务侧只想要ai在action对应的文件才打开打字动画(非计划内的文件不打开打字动画)，在业务侧难以控制和定制diff视图的打开时机
+  - 多人协同时，其他用户编辑会影响diff-view的originalContent的值，没有使用稳定可靠的mongodb里的快照值
+  - ot事件的触发频率过高，计算diff视图影响性能
+
 - ai修改文件的逻辑20241216
   - 🚩 u<<all: taskUpdated, {'id': '2-1', 'title': 'Modify index.html to include progressbar.mjs script', 'action': <ActionType. MODIFY_FILE: 'modify_file'>, 'status': <ActionStatus. IN_PROGRESS_STATUS: 'in_progress'>, 'result': None
   - >>IDEserver: `file`, args=`{'path': 'index.html', 'timestamp': 1734337154, 'loadType': 'default', 'readOnly': False}`.

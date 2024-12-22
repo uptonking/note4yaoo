@@ -9,12 +9,14 @@ modified: 2023-06-14T00:53:15.226Z
 
 # guide
 
+# not-yet
+- ❓ hover的tooltip/popover如何调试
 # tips
-- hover的tooltip/popover如何调试
+- 后端有没有收到请求以及请求执行是否成功/超时，需要开发时在业务逻辑的现场位置提前添加日志记录并判断，否则排查时需要靠猜或缺少信息
 
 - nextjs或react组件如何在浏览器devtools中调试或获取业务变量/对象
   - 有时在devtools中直接source代码不会生效
-  - 可尝试在onClick等event handler的逻辑中间直接设置breakpoint，这样可在source面板看到调用栈及闭包对象，可通过store as global variable 拿到重要对象
+  - 可尝试在onClick等event handler的逻辑中间直接设置breakpoint，这样可在source面板看到调用栈及闭包对象，再通过 store as global variable 拿到重要对象
 
 - 前端页面有时无法捕获鼠标事件，可尝试先F12关闭devtools控制台，再重启服务，然后页面可能就能正常交互了，再F12打开控制台调试异常
 # issues-sketch/figma

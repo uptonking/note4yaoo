@@ -538,9 +538,29 @@ console.log(';; qryDiffSnap ', snapshotFrameResult)
   - gitignore的文件不应该显示M
 
 - 📌 🔜
+  - add action的文件路径需要类似cmd+p的组件或api
+  - terminal在follow时自动打开，在
+  - webview自动打开, 刷新时保持打开
+  - terminal放大缩小折叠展开后，光标自动聚焦在terminal
   - 修复文件树将文件夹拖到文件夹不work的问题
   - 编辑器行号宽度样式优化
   - action路径超出卡片宽度
+
+## 1222
+
+- [Unexpected token 'A', "An error o"... is not valid JSON · trpc/trpc · Discussion _202301](https://github.com/trpc/trpc/discussions/3640)
+  - An error occurred with your deployment `FUNCTION_INVOCATION_TIMEOUT`.
+  - It turns out vercel was throwing a FUNCTION_INVOCATION_TIMEOUT and rug-pulling my trpc procedure before it could finish. I had to upgrade my vercel account from a hobby account to pro subscription to extend the timeout from 10 seconds to something longer.
+
+- 昨天
+  - 处理在terminal输入时光标意外跳入编辑器的问题
+  - 处理佳路反馈的正式环境下外部用户使用cde时光标不停跳到编辑器导致的cde几乎不可用的问题，能稳定复现，但没找到原因
+- 今天
+  - 解决完terminal输入时光标意外跳入编辑器的问题
+  - 将ai工作时live模式的打字动画迁移到由协同事件触发，方案感觉可行
+  - 快速处理本次迭代的研发任务
+
+## 1219
 
 ## 1220
 
