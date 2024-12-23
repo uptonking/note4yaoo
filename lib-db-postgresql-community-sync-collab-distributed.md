@@ -74,6 +74,23 @@ modified: 2023-10-28T17:52:51.915Z
 - What's the self-hosted Postgres HA story these days?
   - pg_auto_failover makes it an absolute breeze. I cannot understand how it's not mentioned in the article.
 - On self-hosted you can use the same as what cloud vendors are doing. Patroni or pg_auto_failover to manage single-primary + replicas. Maybe Neon to run an Aurora-like. CitusData... Azure did a lot around to get elasticity. Not easy to do the same. YugabyteDB on Kubernetes can be a cloud-native self-hosted solution
+# discuss-cdc-pg
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [The Ultimate Guide to PostgreSQL Data Change Tracking | Hacker News _202402](https://news.ycombinator.com/item?id=39488719)
+- I really like the approach of adding additional context for WAL CDC. I imagine this could be implemented with something like Hasura pretty easily (you can access hasura session data in the db).
+  - I use both the trigger + audit table approaches in my sass (for user-facing activity feeds) and subscribe to CDC WAL changes for dealing with callback-like logic (i.e., send registration email, clear cache).
+  - I'm not a fan of the pg_notify approach due to requirement of adding triggers (performance penalty) and the 8k character limit per column (you will lose data as it will splice off anything larger than that).
+  - Application-level tracking or callbacks makes the stack dependent on the application for data integrity, I'd rather the database be the source of truth on all things data. Especially in the age of microservices.
+
+- Another technique not discussed is to create an md5 hash of each record and to keep track of added and deleted hashes. The d hash would exist as an additional column on each table being tracked.
+  - If I understand you right, this seems like a very course-grained way to track changes. You can record that a change was made, but not the specific change. 
+
+- There are also other way, such as bitemporal tables.
 # discuss
 - ## 
 

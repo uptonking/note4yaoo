@@ -44,7 +44,36 @@ modified: 2023-10-26T19:03:22.063Z
 - 
 - 
 
+# discuss-cdc-sqlite
+- ## 
+
+- ## 🤔🆚️ [Tracking SQLite Database Changes in Git | Hacker News _202311](https://news.ycombinator.com/item?id=38110286)
+- This approach works by storing the actual SQLite binary files in Git and then using a custom "diff" configuration to dump each file as SQL and compare the result.
+  - It's a neat trick, but storing binary files like that in Git isn't as space efficient as using a plain text format.
+  - I built my own tooling to solve this problem: https://datasette.io/tools/sqlite-diffable - which outputs a “diffable” copy of the data in a SQLite database, precisely so you can store it in Git and look at the differences later.
+
+- But it's not really a diff no the database itself, just a diff of a full dump that you can use to rebuild the db, but not change an existing one. For example when you do a DELETE the diff does instead have an INSERT less in the dump, which is not exactly a database diff. Depending on the use case that might still be ok.
+
+- 🧩 does no one know about _A tables anymore? This has been a solved thing since the 1970s
+  - sometimes called audit or journal tables.
+  - Every time something is updated or deleted, the entire previous record is inserted into its corresponding _A table with who did it and when (and optionally for what transaction number)
+  - so delete from foo results in an insert into foo_A before the delete occurs.
+
+- I was also exploring something like this a few years back but for Office files. This exact approach seemed like an absolute win to me, but I ended up not using it, because this won't work in the GitHub web UI. This won't be a deal-breaker to many, but people should be aware of it still. In the end I ended up doing this: https://github.com/TomasHubelbauer/modern-office-git-diff/
+
+- is similar approach possible for postgres and MySQL?
+  - Not for this technique, because this relies on the fact that SQLite databases are a single file that can be checked into Git.
+  - MySQL and PostgreSQL use a whole directory full of files. You could try storing that whole thing in Git and then tiring a custom diff command that can load those directories into a temporary database sever and dump out SQL for comparison, but it would be very slow and brittle if you could even get it to work at all.
+  - Instead, a better strategy would be to dump your MySQL or PostgreSQL database to plain SQL and store that in your Git repo. Or use the trick in using here for my PostgreSQL database
+
+- ## [SQLite triggers to track table changes | Hacker News _202410](https://news.ycombinator.com/item?id=41741752)
+- Cool solution. I might use it on a small multi tenant web app to generate audit logs.
+
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## SQLite is not single connection. Even upstream supports multiple processes reading and writing to the same database

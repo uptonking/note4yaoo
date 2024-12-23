@@ -75,8 +75,11 @@ modified: 2023-10-26T15:28:53.748Z
   - Omnigres makes Postgres a developer-first application platform. 
   - Running application logic inside or next to the database instance
 
-- https://github.com/tembo-io/tembo /pgLic/202401/rust
+- https://github.com/tembo-io/tembo /1.1kStar/pgLic/202412/rust
+  - https://tembo.io/
   - Tembo aims to improve the experience developers have with deploying, managing, and scaling Postgres
+  - Tembo Stacks - workload-configured Postgres deployable to Kubernetes
+  - Tembo Self Hosted is a self-hosted version of the Tembo Platform that runs in your own Kubernetes cluster.
 # pg-rewrite
 - pg-mem /1.6kStar/MIT/202310/ts
   - https://github.com/oguimbal/pg-mem

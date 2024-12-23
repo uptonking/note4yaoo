@@ -24,4 +24,9 @@ modified: 2022-08-20T10:38:29.185Z
     - A node/npm package for parsing bibtex (.bib) files. This is the parser that drives Better BibTeX for Zotero bib(la)tex imports.
   - https://github.com/ORCID/bibtexParseJs
   - https://github.com/GeeLaw/bibtex-ts
+# office-diff
+- https://github.com/TomasHubelbauer/modern-office-git-diff /MIT/202204/js/inactive
+  - An experiment in tracking and diffing versions of modern Microsoft Office files in Git.
+  - Modern Office file formats are ZIP archives with XML files in them.
+  - This is achieved using a PowerShell script which unpacks the ZIP file to a tracked directory, formats the XML files for nice diff and tracks the formatted files as well.
 # more-office-utils

@@ -179,6 +179,15 @@ modified: 2023-09-12T09:36:25.608Z
 - [onlyoffice: Simplify History Structure](https://github.com/ONLYOFFICE/document-server-integration/issues/437)
 
 - [Version Control · vkbo/novelWriter](https://github.com/vkbo/novelWriter/issues/383)
+# blogs-version-history
+
+## [Version History and Lifecycle Policies for Postgres Tables | Tembo _202309](https://tembo.io/blog/table-version-history)
+
+- A nice feature of AWS S3 is version history and lifecycle policies. 
+  - When objects are updated or deleted, the old object version remains in the bucket, but it’s hidden. 
+  - Old versions are deleted eventually by the lifecycle policy.
+- I would like something like that for my Postgres table data. 
+  - We can use the `temporal_tables` extension for version history, and combine it with `pg_partman` to partition by time, automatically expiring old versions.
 # more
 - [Data model for storing revision history in FoundationDB · couchdb](https://github.com/apache/couchdb/issues/1957)
 

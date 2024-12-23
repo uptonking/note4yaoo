@@ -173,6 +173,14 @@ modified: 2023-10-27T06:54:20.487Z
 
 - ### [feat: add support to cuid · cockroachdb/cockroach _202211](https://github.com/cockroachdb/cockroach/issues/91006)
 - Thanks for the feature request! Until we add this support, you might be able to get what you want by using a `bytes` column, and in 22.2, you can add a user-defined function that converts it to CUID format.
+
+- ## ⌛️ [A Brief History of the UUID | Hacker News _201706](https://news.ycombinator.com/item?id=14508413)
+- One of the things I've found strange about UUIDs is their serialization to hex when displayed as a string, yet I've seen real life projects with little technical debt store them as a string in a database.
+  - There will be a lot of these. Microsoft's ASP. NET Core Identity by default stores user id as a GUID string to the database
+
+- Why would you ever want to use UUID format, which only has 122 bits, versus just making a random 128 bit number? In which realistic scenario would simply reading 16 bytes from urandom not be fine and actually cause issues that removing 6 of those bits to identify the UUID type help?
+  - AFAICT the only reason is that you need it for compatibility. If your variant and version fields aren't valid, you don't have a UUID anymore -- you have something else.
+- Sortability.
 # discuss
 - ## 
 

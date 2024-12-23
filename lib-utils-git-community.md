@@ -402,10 +402,61 @@ modified: 2023-08-29T10:13:31.070Z
   - Nope! It has cache structures, etc, that are not thread-safe. The core git code was only designed to run in a single-threaded manner as command line tools, after all.
 
 - [Git: the NoSQL Database - Speaker Deck](https://speakerdeck.com/bkeepers/git-the-nosql-database)
+# discuss-git-versioning/vcs
+- ## 
+
+- ## [Working with stacked branches in Git is easier with –update-refs (2022) | Hacker News _202407](https://news.ycombinator.com/item?id=40963427)
+- I like to work with Gerrit, which approaches the core problem in a different way
+  - "Stacked branches" seem to be a terminology which derives from Github/etc's approach to Pull Requests, where one PR maps to one atomic change. The PR can either be integrated in the repo as a merge, in which case you maintain the history of the PR and all its changes through its reviews, or as a squash-merge, in which case you flatten the PR's review history into one commit.
+  - Gerrit took a different approach, and requires you to add metadata to each commit's message, the Change-Id. This way Gerrit can track your commit through its review evolution (since its SHA will change with each iteration). This also allows Gerrit to trivially track a series of related changes through their overall evolution
+- In any case, both solutions demonstrate that Git lacks a way to track the evolution of specific commits throughout their review history (a 2D branch in a way), so review tools like Github/etc and Gerrit had to create their own solution on top of it.
+
+- ## [Show HN: I created a plugin for Figma to track changes in the design | Hacker News](https://news.ycombinator.com/item?id=42098378)
+
+- ## [Git scraping: track changes over time by scraping to a Git repository (2020) | Hacker News _202308](https://news.ycombinator.com/item?id=37082289)
+- The core idea I believe is tracking incremental changes and keeping past history of items. Git is good for text, though for large amounts of binary data I would recommend filesystem snapshots like with btrfs.
+
+- some covid datasets were published as git repositories. the cool part was that it added a publish date dimension for historical data so that one could understand how long it took for historical counts to reach a steady state.
+
+- Git scraping also lets you easily track changes made to textual content, which I don't think would fit neatly in a time series database.
+
+- ## [Extremely Linear Git History | Hacker News _202211](https://news.ycombinator.com/item?id=33704297)
+- Github-style rebase-only PRs have revealed the best compromise between 'preserve history' and 'linear history' strategies
+
+- Mercurial always has had sequential revision numbers in addition to hashes for every commit. They aren't perfect, of course. All they indicate is in which order the current clone of the repo saw the commits. So two clones could pull the commits in different order and each clone could have different revision numbers for the same commits.
+
+- The problem is that rebasing commits has the potential of screwing up the integrity of your commit history.
+
+- Sane revision numbers are among the many reasons I prefer SVN to GIT.
+  - You could automatically tag each uploaded commit with a number drawn from a sequence - using a git post-update hook. The only problem is that this centralizes the process. It's not possible to have fully "blessed" commits without pushing them first. And that's how SVN works, too.
+
+- Gitlab supports an option called "Fast-forward merge"
+
+- A neat trick with this tool is to generate a commit message that corresponds to a given issue number. It could almost be useful.
+
+- Another approach could be to use prefixes.
+
+- ## [Git Is Not Revision Control (2017) | Hacker News _201807](https://news.ycombinator.com/item?id=17475392)
+- I opened the link expecting to see an introduction to a patch-based system like Darcs or Pijul.
+
+- For me, rewriting history is a feature of Git, and not a bug. I used to use Mercurial, which prioritized immutability of history
+
+- ## [Git evolve: tracking changes to changes | Hacker News _202211](https://news.ycombinator.com/item?id=33567930)
+- Git makes the commit history permanent and there are a lot of issues if you keep changing the commit using commit amend or rebase. Git kind of fights with you if you try to edit commits after the commits have been made and pushed to remote
+  - One option is to “evolve” the commits without git. Create local branch but do not push them, convert the branch to a patch set, a series of files
+
+- ## [Version Control Beyond Git | Hacker News _202405](https://news.ycombinator.com/item?id=40424452)
+- The real issue is though, that each time someone writes a new VCS they seem to want to make it centralised again, often with silly ideas like auto-uploading changes. I do dislike the git stash and the "mess" of untracked files in git status, but I'm not sure what the true answer is.
+
+- The feature I think I would most like to see is support for patches as a more first-class object. For example reverts and cherry picks have no real metadata. This leads to conflicts when merging branches that have cherry picks (although they often auto-resolve if they are exactly the same diff) and makes asking "Does $branch contain $patch" basically impossible to answer.
+  - https://pijul.org/ greatly improves this by making patches a first class object (and commits are basically sets of patches). I think it has some great ideas to improve the really gnarly parts of Git low-level behaviour. (Not just surface-level UI issues)
 # discuss-git-diff
 - ## 
 
-- ## 
+- ## [Show HN: Diffs of Word documents, designed for humans | Hacker News _201305](https://news.ycombinator.com/item?id=5662214)
+- Word already has this capability through their track changes feature. You can even use it to open two documents and see a third document showing what has changed.
+
+- Pictures added or removed are not shown. Changed formatting is not shown. Text modified in text boxes is not shown.
 
 - ## 💡 [Show HN: Locust – “Git diff” over abstract syntax trees | Hacker News _202011](https://news.ycombinator.com/item?id=24999775)
 - I can't wait until the future when we have version control at the AST level instead of using text files.
@@ -427,6 +478,13 @@ modified: 2023-08-29T10:13:31.070Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [Git Things | Hacker News _202401](https://news.ycombinator.com/item?id=38830194)
+- 
+- 
+- 
 
 - ## [Git 远程代码执行漏洞（CVE-2024-32002）复现 - starnight\_cyber - 博客园 _202405](https://www.cnblogs.com/Hi-blog/p/18224773/git_rce_CVE-2024-32002)
 - [【已复现】Git存在远程代码执行漏洞（CVE-2024-32002）](https://mp.weixin.qq.com/s/BRr5PCTgYkfPkvHwDckVMQ)
@@ -594,7 +652,14 @@ modified: 2023-08-29T10:13:31.070Z
 # discuss-git-alternatives 🆚️
 - ## 
 
-- ## 
+- ## [Darcs - Another open source version control system | Hacker News _201205](https://news.ycombinator.com/item?id=3947103)
+- The primary pull of the "patch theory" is that it will allow you to share code more easily between different "patch sets" (branches / forks). 
+  - The reality of software projects means that you can't automate such a process except in the most trivial cases, and other VCSs handle the trivial cases already.
+  - By contrast, Git/SVN/Hg folk think about snapshots of development. So it's a different paradigm.
+
+- 
+- 
+- 
 
 - ## 要想实现 Google 代码管理方案，目前开源解决方案只有 Meta 的 Sapling ，但是对 Git 兼容不太好；
 - https://x.com/genedna/status/1797927349624901967

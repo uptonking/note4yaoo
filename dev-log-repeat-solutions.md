@@ -45,7 +45,7 @@ modified: 2021-07-20T13:50:23.433Z
     - 产品方向: 偏设计布局， 偏业务逻辑
 
 - lts-tech-stack 可离线、可协作、可撤销
-  - 🌰lts: vscode, git
+  - 🌰lts: vscode/ide, git/vcs
   - vscode: monaco-editor + electron, code-server
   - codemirror/prosemirror: state + view + commands + transform/ot/collab + virtualized
   - rspack: js plugin
@@ -62,10 +62,11 @@ modified: 2021-07-20T13:50:23.433Z
 - 技术可选3: vscode, 可参考架构 extensions、capabilities
 - 技术可选4: 侧重版本控制的数据库，如dolt, SirixDB, git-like-db
 - 玩具尝试1: git+crdt+table+branch/version, 参考类似ckan的data-portal
-- roadmap: virtualized-draggable-table, cm-devtools, cm-noseditor, cm-hocus
+- 🎯 roadmap: virtualized-draggable-table, cm-devtools, cm-noseditor, cm-hocus
   - 📝 编辑器，协作同步，版本分支，~~虚拟渲染, 分支版本, 协作冲突, undo/redo~~
-  - 🔀🛢️ crdt版本历史, partial-replica、ivm, delta-db, dynamic-schema/eav, 实时架构
-  - version-history+sync
+  - 🔀🛢️ crdt版本历史, partial-replica、ivm, delta-db, 实时架构
+  - version-history+sync(for table/pdf)
+  - dynamic-schema/eav
   - 基于ast的架构: reka, tango-lowcode, ast优化常使用bytecode(data+logic)
 - 🛢️ 数据存储架构
   - file-first: vscode, obsidian, notable, hexo
@@ -362,12 +363,12 @@ modified: 2021-07-20T13:50:23.433Z
   - triplit
 
 - ivm/incremental-view-maintenance
+  - zero-sync
   - web前端的reactive实现
   - 数据库的materialized view
   - event sourcing
   - bundler的热加载，如turbopack
   - 编译器的热更新
-  - zero-sync
 
 - 系统提供很多配置项的设计
   - webpack

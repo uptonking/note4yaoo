@@ -348,7 +348,7 @@ modified: 2023-09-19T06:35:28.278Z
 
 - ## 
 
-- ## [Ask HN: “Git” for Microsoft Office? | Hacker News](https://news.ycombinator.com/item?id=23245552)
+- ## [Ask HN: “Git” for Microsoft Office? | Hacker News _202005](https://news.ycombinator.com/item?id=23245552)
 - A couple years back I built this: 
 - https://github.com/tomashubelbauer/modern-office-git-diff /js
   - It is a pre-commit script which unpacks Office XML into text contents and tracks that alongside the source file. This way you can consider the binary to be a source of truth, but with each commit you also get a textual diff showing what changed content-wise. More or less

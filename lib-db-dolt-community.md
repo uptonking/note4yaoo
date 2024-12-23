@@ -552,7 +552,107 @@ modified: 2023-08-25T21:17:11.979Z
   - Or stated another way: Noms is a much lower level piece of machinery: it doesn't guarantee convergence by itself, you'd have to put something on top that does. **Noms is also focused a lot more on being a database** (larger data, better performance, indexes, etc).
 
 - noms is a git-like database, implementing B+Trees (maps, sets, secondary indexes, lists, blobs) with chunks, split at boundaries chosen by rolling hash function to deduplicate. 
-# discuss-branching/versioning
+# discuss-versioning/vcs
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Ask HN: Do you ever truly use your revision history? | Hacker News _202003](https://news.ycombinator.com/item?id=22516414)
+- yes, I use it daily. I'm in AAA gamedev and the codebase I deal with goes back 20+ years. The last 10 years are readily accessible in Perforce and the rest can be found in another version control system. I am forever grateful to past engineers for outlining WHY they made their changes, and not WHAT the changes were per se. With thousands of engineers that have come and gone, this is incredibly useful information in addition to the code itself.
+
+- I suspect that if the industry ever moves away from git in the next 5-20 years, it will be because there's another SCM that has this capability.
+  - Just like DVCS "solved" branching and merging, following history through renames, splits, and other structural will make SCM 2x better.
+
+- "git blame" (or the p4 equivalent) is my usual archaeologic tool in this context, but "git bisect" has been very helpful in others. 
+
+- ## [Chronologic Versioning: No more arbitrary version updates and regressions | Hacker News _202001](https://news.ycombinator.com/item?id=21929063)
+- Stylistic versioning was conquered years ago by TeX.
+
+- For those trying to compare it to SemVer, ChronVer seems to have a different target. It mentions web applications and systems that see releases (with continuous delivery or not).
+  - SemVer remains good for libraries, or anything where there's a clearly-defined API for consumption, because it clearly establishes a set of rules for what to expect. 
+  - For applications though, I agree that ChronVer seems far more useful, because there's just no real "compatibility" contract with an application. After all, macOS 2017.09.25 seems far more descriptive than "10.13", which means nothing to anyone.
+- It's unfortunately becoming less common but there is still a "compatability contract" between developers and users. With 10.13 -> 10.14 upgrade I would expect no major disruptions as a user, I would expect the UI to be nearly identical and no features to be dropped. With a 10.13 -> 11.1 upgrade I would expect "breaking" changes to my interactions and plan to install the update at a convenient time to deal with this. For a 2017.05 -> 2019.08 upgrade I have no indication of what to expect.
+  - For something like continuously delivered web applications I don't think any versioning scheme makes sense to user because they have zero control, it's useless information.
+
+- ## [Grace Version Control System | Hacker News _202405](https://news.ycombinator.com/item?id=40272439)
+- I'll use "GitHub" below as a stand-in for "Git hoster", but they invented the fork, so, you know...
+
+- can Grace support partial commits somehow? Such as if I want to check in part of a file but not other parts? This is a key feature of Git for my workflows but doesn’t seem to be plausible at all if files are pushed up on save. Unless this would be part of “promote requests” only?
+
+- ## 🤔 [Versioning data in Postgres? Testing a Git like approach | Hacker News _202310](https://news.ycombinator.com/item?id=37955617)
+- https://neon.tech/docs/introduction/branching is exactly what the author is looking for and is the best way to do highly efficient point-in-time versioning of Postgres data I have seen so far.
+- Neon does something like this I believe. They allow you to "branch" your databases: https://neon.tech
+
+- On the topic of PostgreSQL and git. As crazy as this sounds, I once entertained the idea of writing a VCS that used PostgreSQL's large object facility for storing the data. I realized pg_largeobject (1) chunks data to around 2kB per chunk, and (2) stores each chunk on its own row, and (3) each row uses "oid" type as identifier, which is just 32 bit long. It's probably large enough for anything I would ever need, but for some reason I don't feel comfortable with only 32 bits as primary key.
+  - Not entirely crazy. The creater of SQLite has done just that as fossil
+
+- Better idea: just install the Postgres extension that enables ISO SQL Temporal Tables, just like what MSSQL and MariaDB have had for 8 years now: https://pgxn.org/dist/temporal_tables/
+  - Does this robustly support altering tables? What happens if a column is deleted - does it delete historical data, or mark the history column as nullable? 
+
+- I've been running the cheapest possible implementation of Git-based revision history for my blog's PostgreSQL database for a few years now.
+
+- Aquameta has an interesting extension that something like this in a different way: https://github.com/aquametalabs/aquameta/tree/master/extensi....
+
+- ## 🤔 [Data Version Control | Hacker News _202410](https://news.ycombinator.com/item?id=41888937)
+  - DVC support multiple remotes. S3 is one of them, there are also WebDAV, local FS, Google Drive, and a bunch of others.
+  - Happy to answer any questions about DVC and our sister project DataChain https://github.com/iterative/datachain that does data versioning with a bit different assumptions: no file copy and built-in data transformations.
+
+- DVC caches data for consistency and reproducibility. 
+  - If caching is not needed and streaming required, we've created a sister tool DataChain. It's even supports WebDataset and can stream from tar archives and filter images by metadata.
+
+- I've used DVC for most of my projects for the past five years. 
+  - The good things is that it works a lot like git. If your scientists understand branches, commits and diffs, they should be able to understand DVC. 
+  - The bad thing is that it works like git. Scientists often do not, in fact, understand or use branches, commits and diffs. 
+  - The best thing is that it essentially forces you to follow Ten Simple Rules for Reproducible Computational Research
+-  I recently started building a tool called Calkit (https://github.com/calkit/calkit) in an attempt to simply and unify Git and DVC for these types of researchers. 
+
+- if the data files are all just text files, what are the differences between DVC and using plain git?
+- 🆚️ DVC does a lot more than git.
+  - It essentially makes sure that your results can reproducibly be generated from your original data. If any script or data file is changed, the parts of your pipeline that depend on it, possibly recursively, get re-run and the relevant results get updated automatically.
+  - There's no chance of e.g. changing the structure of your original dataset slightly, forgetting to regenerate one of the intermediate models by accident, not noticing that the script to regenerate it doesn't work any more due to the new dataset structure
+  - It's a lot like Unix make, but with the ability to keep track of different git branches and the data / intermediates they need, which saves you from needing to regen everything every time you make a new checkout, lets you easily exchange large datasets with teammates etc.
+  - In theory, you could store everything in git, but then every time you made a small change to your scripts that e.g. changed the way some model works and slightly adjusted a score for each of ten million rows, your diff would be 10m LOC, and all versions of that dataset would be stored in your repo, forever, making it unbelievably large.
+- In this cases, you need DVC if:
+  1. File are too large for Git and Git LFS.
+  2. You prefer using S3/GCS/Azure as a storage.
+  3. You need to track transformations/piplines on the file - clean up text file, train mode, etc.
+  - Otherwise, vanilla Git may be sufficient.
+- It's not just to manage file versioning. Yo can define a pipeline with different stages, the dependencies and outputs of each stage and DVC will figure out which stages need running depending on what dependencies have changed. Stages can also output metrics and plots, and DVC has utilities to expose, explore and compare those.
+
+- 🆚️ How does it compare to Oxen?
+  - Maintainer of Oxen here, we initially built Oxen because DVC was pretty painfully slow to work with, and had a lot of extra bells and whistles that we didn’t need. Under the hood we optimized the merkle tree structure, hashing algorithms, network protocols, etc to make it speedy when it came to large datasets. We have a pretty nice front end at https://oxen.ai for viewing and querying the data as well.
+
+- Sounds like it is more a framework than a tool.
+
+- It doesn’t force you to use any of the extra functionality. My team has been using it just for the version control part for a couple years and it has worked great.
+  - Yep. I personally like DVC's pipeline implementation because it's lightweight and language-agnostic, but haven't gotten into using their experiment tracking features.
+
+- Great to see DVC being discussed here! As a tool, it’s done a lot to simplify version control for data and models, and it’s been a game-changer for many in the MLOps space.
+  - Specifically, it's a genius way to store large files in git repos directly on any object storage without custom application servers like git-lfs or rewriting git from scratch...
+  - At DagsHub, we've integrated directly with DVC for a looong time, so teams can use it with added features like visualizing and labeling datasets managing and models, running experiments collaboratively, and tracking everything (code, data, models, etc.) all in one place.
+
+- DVC is (at least as I use it) pretty much just git LFS with multiple backends (guess actually a more simple git annex). It further has some rather MLOps specific stuff. Is handy if you do versions model training with changing data on S3.
+
+- Speaking of git-annex, there is another project called DataLad (https://www.datalad.org/), which has some overlap with DVC. It uses git-annex under the hood and is domain-agnostic, compared to the ML focus that DVC has.
+
+- I've used it for storing rasters alongside georeferencing data in small GIS projects, as an alternative to git LFS. It not only works like git but can integrate with git repos through commit and push/pull hooks, storing DVC pointers and managing .gitignore files while retaining directory structure of the DVC-managed files. It's neat, even if the initial learning curve was a little steep.
+
+- What are the benefits of DVC over Apache Iceberg? 
+  - If you're wondering this you should look at Icechunk too, which was open-sourced just this week. It's Apache Iceberg but for multidimensional data (e.g. Zarr).
+- tl; dr version
+  * throw data into dvc when unstructured ‘blob’ data.
+  * throw it into iceberg when you’ve got structured data.
+- benefits of dvc over iceberg:
+  * not forcing ‘blob’ data into a tabular format and all the “fun” (read: annoying) processing steps that come with doing that
+  * don’t have to have to run some processing step to extract ‘blob’ data out of what is basically a parquet file, dvc pull (?) will just download each file as is.
+  * edit files locally then run three-ish (?) commands to commit changes, without needing to run a data ingestion pipeline to force ‘blob’ data into a table
+  * completely schema less, so don’t have to worry about ‘blob’ data being the wrong type, just shove it in the repo and commit it
+  * roll back throughout all of commit history, not just to the last vacuum/checkpoint
+
+- I had a lot of problems when using it with a dataset of many jpg Files. The indexing for every dvc status took many minutes to check every file. Caching did not work.
+# discuss-branching
 - ## 
 
 - ## 

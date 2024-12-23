@@ -65,7 +65,7 @@ modified: 2021-07-27T16:35:20.057Z
 - one thing that keeps me coming back to DEVONthink: a learning classifier.
   - Paperless uses tags and will auto tag based on previous scans. IME it works very well (as long as you have a decently sized library of tagged documents) and seldom do I have to add my own tags. It’s not perfect, though, and sometimes I have to go in and fix some of the tags.
 
-- Paperless-NGX doesn't have document version history, unfortunately.
+- 🐛 Paperless-NGX doesn't have document version history, unfortunately.
   - Right now I am looking at OpenProDoc(java) and bitfarm-archiv as document management possibilities.
 - I am just rcloning my paperless-ngx document volume to s3 deep glacier every night for this.
 

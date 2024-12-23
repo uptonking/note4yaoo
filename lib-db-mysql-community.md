@@ -155,6 +155,16 @@ modified: 2022-06-13T03:00:06.041Z
   - If you want to have fun look at the algorithm inside InnoDB for writing out zip pages, it needs to trade off between CPU and IO.  
   - Another fun area in normal background flushing is the complication to determine the batch size and select which pages to flush to persistent store. Especially when there are very few (or none) free pages. This is what makes storage engine design and implementation fun 
 
+# discuss-cdc-mysql
+- ## 
+
+- ## 
+
+- ## [How To Use Triggers to Track Changes in MySQL | Hacker News _200805](https://news.ycombinator.com/item?id=182529)
+- 
+- 
+- 
+
 # discuss
 - ## 
 
