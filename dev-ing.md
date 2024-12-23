@@ -546,6 +546,20 @@ console.log(';; qryDiffSnap ', snapshotFrameResult)
   - 编辑器行号宽度样式优化
   - action路径超出卡片宽度
 
+## 1223
+
+- 上周
+  - 协助排查cde初始化时ai无限重连ide-server的问题，花费了较多的时间
+  - 和ivan调整了ai工作时打字的时机，尝试了几种方案，最后确定了方案
+  - 修复了光标从terminal跳到editor的问题
+  - 处理了佳路对接外部用户时反馈的一些问题
+- 本周
+  - 快速完成迭代剩余的工作: 打字动画优化、删除移动文件
+  - cde的空间布局优化
+- 今天
+  - 和ivan联调ai工作时thinking和打字的时机
+  - 完成删除移动文件在live和回放模式的表现
+
 ## 1222
 
 - [Unexpected token 'A', "An error o"... is not valid JSON · trpc/trpc · Discussion _202301](https://github.com/trpc/trpc/discussions/3640)
@@ -559,8 +573,6 @@ console.log(';; qryDiffSnap ', snapshotFrameResult)
   - 解决完terminal输入时光标意外跳入编辑器的问题
   - 将ai工作时live模式的打字动画迁移到由协同事件触发，方案感觉可行
   - 快速处理本次迭代的研发任务
-
-## 1219
 
 ## 1220
 
@@ -624,7 +636,6 @@ console.log(';; qryDiffSnap ', snapshotFrameResult)
 ## 1216
 
 - 🐛 ai干活速度太快，ide-server跟不上导致打开文件时序错误
-  - ？
 
 - 🐛 ai修改前后分别打开文件，2次file事件的文件path相同
   - 此时CodeEditor组件不会重新渲染，所以没有展示diff视图

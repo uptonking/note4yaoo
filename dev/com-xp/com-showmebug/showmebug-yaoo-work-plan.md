@@ -2333,6 +2333,12 @@ const playbackInfo = [
   - AgentUserService
   - PlaygroundManagerService
 
+- plyground支持切换容器环境
+  - 切换时playgroundId不变，但fileRootPath和dockerId都可变，dockerId名字取得不好它代表的是容器环境而不是docker
+
+- playgroundLayer的设计是为了解决切换环境时通信中断的问题，
+  - 方法是先在layer层更新数据，然后一次性更新playgroundItem的属性
+
 - paas-sdk-client通过manager动态获取到ide-server的url，不是固定的
   - manager负责docker容器的管理和分配
 
