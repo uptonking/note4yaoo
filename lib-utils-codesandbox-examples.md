@@ -175,6 +175,11 @@ modified: 2023-09-02T09:17:22.992Z
   - Render an iframe or popup on a different domain, and pass down props, including objects and functions
   - [Iframes are just terrible. Here’s how they could be better.](https://bluepnume.medium.com/iframes-are-just-terrible-heres-how-they-could-be-better-974b731f0fb4)
 # iframe
+
+- 支持iframe的网站
+  - https://www.bilibili.com/
+  - https://weixin.qq.com/
+
 - https://github.com/bluwy/whyframe /js
   - https://whyframe.dev/
   - enables rendering any UI framework markup within an iframe, including Svelte, Vue, Solid, Preact, and React. 

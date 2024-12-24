@@ -196,6 +196,13 @@ modified: 2020-10-05T06:17:42.467Z
 # utils
 - https://github.com/yinguangyao/canvas-flex /ts
   - Canvas 结合 Yoga 实现的一个 Flex 布局，支持部分 Flex 语法
+
+- https://github.com/KaliedaRik/Scrawl-canvas /MIT/202410/js
+  - https://scrawl-v8.rikweb.org.uk/
+  - a Javascript library for working with the HTML5 `<canvas>` element
+  - Includes an adaptable - yet easy to use - protocol for positioning, displaying and animating artefacts and effects across the canvas.
+  - Adds functionality to make `<canvas>` elements responsive, adapting their size to their surrounding environment while remaining fully interactive.
+  - Helps make canvas elements more accessible for both keyboard and AT users.
 # more-repos
 - https://github.com/c-zhuo/easycanvas /2019
   - 一个同时支持2D和3D渲染、轻量、高效、MVVM模式的渐进式canvas渲染库

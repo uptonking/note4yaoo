@@ -7,8 +7,8 @@ modified: 2023-04-16T13:34:33.706Z
 
 # toc-lib-utils-image-screenshot-preview
 - guide
-  - preview实时预览更适合直接展示dom，支持动态交互
   - screenshot更适合静态内容
+  - preview实时预览更适合直接展示dom，支持动态交互
 # react-comp-screenshot
 - https://github.com/fayeed/use-screenshot
   - https://use-screenshot.now.sh/
@@ -18,40 +18,50 @@ modified: 2023-04-16T13:34:33.706Z
   - https://codesandbox.io/s/nostalgic-poincare-7xfrl?file=/src/App.js
   - Export component as jpeg, png or pdf
   - 依赖html2Canvas、jspdf
-# js-screenshot
-- https://github.com/niklasvh/html2canvas /ts
+# dom-screenshot
+- https://github.com/niklasvh/html2canvas /30.8kStar/MIT/202201/ts/inactive
   - https://html2canvas.hertzen.com/
   - Screenshots with JavaScript
   - The script allows you to take "screenshots" of webpages or parts of it, directly on the users browser.
+  - `html2canvas(element[, options])` 支持截图部分元素，🌹 且截图样式稳定
+  - html2canvas支持非browser环境，数据源可以是json而无需打开页面
+  - ❓ 对于无需交互的场景，html2canvas的速度是否比cloneNode更快
+    - cloneNode在改变dom位置/层级/结构时，样式很可能会混乱
+    - You may retrieve the current layout of every element using  getComputedStyle and apply it to the cloned elements
   - how it works
     - The script renders the current page as a canvas image, by reading the DOM and the different styles applied to the elements.
     - It does not require any rendering from the server, as the whole image is created on the client's browser. 
     - However, as it is heavily dependent on the browser, this library is not suitable to be used in nodejs.
     - The html2canvas library utilizes Promises and expects them to be available in the global context. 
+  - 🍴 forks
+  - https://github.com/html2canvas/html2canvas /202407/ts
+    - a fork of niklasvh/html2canvas
+  - https://github.com/cantoo-scribe/html2canvas
 - https://github.com/johnnywang1994/jsPDF-html2canvas
   - A combine usage with jsPDF & html2canvas, which translating html content to PDF file.
 
-- https://github.com/rsify/pico /ts
+- https://github.com/rsify/pico /2kStar/MIT/202004/ts/inactive
   - Pico's goal is to produce high precision screenshots of any viewport entirely client side.
   - This is different from simply capturing a webpage using Puppeteer or a similar tool in that the **screenshot taking happens entirely client side**.
   - This program renders whatever is displayed in the given `Window` into an image, thanks to svg's `<foreignObject>`.
   - **No server side code is required to produce the screenshot**.
+  - Render the given `Window` to a PNG image and return it as an object URL.
   - Pico's selling point is representing the whole viewport as accurately as possible. If you want to render a single DOM node instead, consider using one of the above libraries.
-  - Pico is built using Fluture and in addition to the Promise also provides a direct API to Fluture via functions suffixed with Fluture
+  - Pico is built using `Fluture` and in addition to the Promise also provides a direct API to Fluture via functions suffixed with Fluture
 
-- https://github.com/bubkoo/html-to-image /540Star/MIT/202101/ts
+- https://github.com/bubkoo/html-to-image /5.9kStar/MIT/202301/ts/inactive
   - Generates an image from a DOM node using HTML5 canvas and SVG.
   - Fork from `dom-to-image` with more maintainable code and some new features.
 
-- https://github.com/1904labs/dom-to-image-more /js
+- https://github.com/1904labs/dom-to-image-more /526Star/MIT/202410/js/cpp
   - a library which can turn arbitrary DOM node, including same origin and blob iframes, into a vector (SVG) or raster (PNG or JPEG) image, written in JavaScript.
   - Anatolii's version was based on domvas by Paul Bakaus and has been completely rewritten
   - This fork of `dom-to-image`
 
-- https://github.com/tsayen/dom-to-image /7kStar/201706/inactive
+- https://github.com/tsayen/dom-to-image /10.4kStar/MIT/201706/js/inactive
   - turn arbitrary DOM node into a vector (SVG) or raster (PNG or JPEG) image, written in JavaScript.
   - It's based on domvas
-- https://github.com/pbakaus/domvas /370Star/201307
+- https://github.com/pbakaus/domvas /370Star/MIT/201307/js/inactive
   - Domvas implements the missing piece that connects the DOM and Canvas.
   - It gives to the ability to take arbitrary DOM content and paint it to a Canvas of your choice.
   - Domvas uses a feature of SVG that allows you to embed XHTML content into the SVG 
@@ -61,7 +71,7 @@ modified: 2023-04-16T13:34:33.706Z
   - The DOM object is not linked, but copied 
   - Content outside the bounding box of the element will be cut of per default if painted to Canvas. Don't worry though, simply pass a more comfortable offset to the toImage function
 
-- https://github.com/cburgmer/rasterizeHTML.js /js
+- https://github.com/cburgmer/rasterizeHTML.js /2.5kStar/MIT/202201/js/inactive
   - http://cburgmer.github.io/rasterizeHTML.js
   - Renders HTML into the browser's canvas
   - it is possible by embedding the HTML into an SVG image as a `<foreignObject>` and then drawing the resulting image via `ctx.drawImage()`.
@@ -160,6 +170,7 @@ modified: 2023-04-16T13:34:33.706Z
   - https://codeimage.dev/
   - A tool to beautify your code screenshots. Built with SolidJS
   - SSG+Partial hydration
+  - a fork of html-to-image
   - https://x.com/riccardoperra0/status/1603412081054810112
     - lazy load @codemirror and motion without blocking rendering and losing performance.
 
@@ -249,8 +260,9 @@ modified: 2023-04-16T13:34:33.706Z
   - This implementation allows you to create very large video files (exceeding the size of available memory), because when running in a privileged context like a Chrome extension or Electron app, it can stream chunks immediately to a file on disk using Chrome's FileWriter while the video is being constructed, instead of needing to buffer the entire video in memory before saving can begin. 
   - Video sizes in excess of 4GB can be written. The implementation currently tops out at 32GB, but this could be extended.
 # thumbnail/preview-image
-- https://github.com/wei/socialify /MIT/202311/ts/inactive
+- https://github.com/wei/socialify /MIT/202412/ts
   - Socialify helps you showcase your project to the world by generating a beautiful project image 
+  - Social Image as a Service
 # more
 - https://github.com/antfu/broz
   - A simple, frameless browser for screenshots
@@ -259,7 +271,7 @@ modified: 2023-04-16T13:34:33.706Z
 
 - ## 
 
-- ## Hackreels —— 代码动画制作工具
+- ## Hackreels —— 代码动画制作工具 (非开源)
 - https://x.com/ftium4/status/1807508945071964607
   - https://www.hackreels.com/
   - 支持多种语言和字体格式，让你的代码展示效果更炫酷。

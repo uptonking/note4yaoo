@@ -265,6 +265,14 @@ modified: 2023-09-12T09:36:25.608Z
 - I tried using git for general note taking and I hated it. I used Foam, which is markdown inside of VSCode synced to Git, accompanied with GitJournal which allows you to update the same markdown files from a mobile device.
 
 - For plaintext documents in Emacs the diff command is useful but enabling the fossil-mode has more steps, and Fossil has extra plumbing for ticketing and webui.
+# discuss-rrweb
+- ## 
+
+- ## 
+
+- ## [Fabric JS Image object shows blank while replaying · Issue · rrweb-io/rrweb _202103](https://github.com/rrweb-io/rrweb/issues/516)
+- Current workaround I did is to take a screenshot ( `html2canvas` ) and set that dataURL to an image hid behind the actual canvas while recording. While replaying the canvas is empty but the screenshot is shown in it's place so works for me.
+
 # discuss-replay-solutions
 - ## 
 
@@ -351,7 +359,7 @@ modified: 2023-09-12T09:36:25.608Z
 - I wish we had an rr for nodejs.
   - Today I found EffectfulJS Debugger, which is a DAP debugger with time travel and state persistence for JS
 
-- ## [Ask HN: How does software such as rrweb and OpenReplay work? | Hacker News _202208](https://news.ycombinator.com/item?id=32658825)
+- ## 🤔 [Ask HN: How does software such as rrweb and OpenReplay work? | Hacker News _202208](https://news.ycombinator.com/item?id=32658825)
 
 - 录制界面方案的优点是支持浏览器外的元素，
   - 缺点是子元素不可交互，视频体积大
@@ -366,10 +374,15 @@ modified: 2023-09-12T09:36:25.608Z
 - OR is opensource so you can pretty much explore it on your own but TLDR is that it records diffs of DOM, network and state alongside with mouse and send it as a byte array batches to the backend that gzip this files, and then this process is going the other way (unpack, bytes to diff to display) in the player parts.
   - Videos would take too much space plus API is limited as I can see on MDN
 
-- ## 🚀 [Show HN: Open source JavaScript library to record and replay the web | Hacker News _201812](https://news.ycombinator.com/item?id=18776496)
+- ## 🚀 [rrweb - Show HN: Open source JavaScript library to record and replay the web | Hacker News _201812](https://news.ycombinator.com/item?id=18776496)
 
 - Security and Privacy are extremely hard to get right here. 
-  - Some of the challenges: - CSPs can often be bypassed using Google API libraries `<Object/>`/ `<SVG>` - Blacklisting `<SCRIPT/>` tags can often be bypassed with an XML namespace - CSS based data or password exfiltration. - Clickjacking, "data:" urls etc. - Could you imagine a web request proxy server deploying Service Workers? - postMsg() from further nested frames
+  - Some of the challenges: 
+  - CSPs can often be bypassed using Google API libraries `<Object/>`/ `<SVG>`.
+  - Blacklisting `<SCRIPT/>` tags can often be bypassed with an XML namespace - CSS based data or password exfiltration. 
+  - Clickjacking, "data:" urls etc. 
+  - Could you imagine a web request proxy server deploying Service Workers? 
+  - postMsg() from further nested frames
   - Substantial work goes into sandboxing replay environments and limiting PII. Defense in depth is particularly important here. Enterprise level research, auditing, monitoring and care should be taken seriously.
 
 - You should offer a commercial and open source version. The commercial service could provide a few extra features at a modest price point, but support development of the open source platform. Perhaps it could pay your bills and be a cheaper alternative to the existing expensive commercial offerings.

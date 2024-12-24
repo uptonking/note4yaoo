@@ -23,8 +23,11 @@ modified: 2020-10-05T06:18:21.639Z
   - http://snapsvg.io/
   - JS library for modern SVG graphics
 # svg-utils
-- https://github.com/vercel/satori /ts
+- https://github.com/vercel/satori /MPLv2/202411/ts
+  - https://og-playground.vercel.app/
   - Enlightened library to convert HTML and CSS to SVG
+  - ✨ 提供了支持可视化配置的playground
+  - What if there’s a `<Satori>` component that adds fluid layout & style transitions to your elements?
   - https://github.com/natemoo-re/satori-html
     - satori is built on top of React's JSX and expects "React-elements-like objects". 
     - This library (satori-html) bridges that gap, generating the necessary VDOM object from a string of HTML.

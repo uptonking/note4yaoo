@@ -10,7 +10,7 @@ modified: 2021-05-13T03:08:52.583Z
 # guide
 
 - pros
-  - ?
+  - 相对于qt/zed等原生框架实现ui，electron基于html/dom实现，可以方便集成类似rrweb进行操作回放
 
 - cons
   - ?

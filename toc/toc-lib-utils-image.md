@@ -133,9 +133,13 @@ modified: 2023-04-04T22:39:45.442Z
   - Display PDFs in your React app as easily as if they were images.
   - For React-PDF to work,  `PDF.js` worker needs to be provided.
 
-- https://github.com/vercel/satori /ts
+- https://github.com/vercel/satori /MPLv2/202411/ts
+  - https://og-playground.vercel.app/
   - Enlightened library to convert HTML and CSS to SVG
+  - ✨ 提供了支持可视化配置的playground
+  - 不支持html字符串渲染和dangerouslySetInnerHTML
   - What if there’s a `<Satori>` component that adds fluid layout & style transitions to your elements?
+  - [Show HN: Satori – Convert HTML and CSS to SVG | Hacker News _202210](https://news.ycombinator.com/item?id=33156130)
   - https://github.com/natemoo-re/satori-html
     - satori is built on top of React's JSX and expects "React-elements-like objects". 
     - This library (satori-html) bridges that gap, generating the necessary VDOM object from a string of HTML.

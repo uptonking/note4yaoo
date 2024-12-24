@@ -538,15 +538,45 @@ console.log(';; qryDiffSnap ', snapshotFrameResult)
   - gitignore的文件不应该显示M
 
 - 📌 🔜
-  - add action的文件路径需要类似cmd+p的组件或api
-  - terminal在follow时自动打开，在
+  - terminal在follow时自动打开，在非follow时显示更新的红点
   - webview自动打开, 刷新时保持打开
   - terminal放大缩小折叠展开后，光标自动聚焦在terminal
   - 修复文件树将文件夹拖到文件夹不work的问题
   - 编辑器行号宽度样式优化
   - action路径超出卡片宽度
 
+## 1224
+
+- [Backdrop Filter (Blur) not showing up in the output · Issue · niklasvh/html2canvas](https://github.com/niklasvh/html2canvas/issues/2406)
+  - In this library they used foreign-object and foreign-object doesn't support backdrop-filter
+
+- [css - backdrop-filter vs filter - Stack Overflow](https://stackoverflow.com/questions/48219624/backdrop-filter-vs-filter)
+  - The `backdrop-filter` property applies the effects behind the selected element. 
+  - Where the `filter` property applies the effects to the entire element.
+
+- [how to preserve style when cloning a node - Stack Overflow](https://stackoverflow.com/questions/6880341/how-to-preserve-style-when-cloning-a-node)
+  - You may retrieve the current layout of every element using currentStyle(IE<9) or getComputedStyle(Others) and apply it to the cloned elements.
+
+- ai工作时
+  - 有时缺少打开文件的事件
+  - closeFile的文件路径错误
+
+- 昨天
+  - 和ivan联调ai工作时的action状态变化及打开文件的时机，前端还要调整
+  - 排查并解决ai连接ide-server超时并不断重试的问题
+  - ~~add action的文件路径需要类似cmd+p的组件或api~~
+- 今天
+  - 在clacky前端调整ai工作时thinking的交互及打字效果
+  - 完成删除移动文件在live和回放模式的表现
+
 ## 1223
+
+- [How to wrap long lines inside of markdown \`\`\` code \`\`\` in Github and Gitlab issues? - Stack Overflow](https://stackoverflow.com/questions/41238148/how-to-wrap-long-lines-inside-of-markdown-code-in-github-and-gitlab-issu)
+
+```markdown
+> ```this line is very long```
+
+```
 
 - 上周
   - 协助排查cde初始化时ai无限重连ide-server的问题，花费了较多的时间
