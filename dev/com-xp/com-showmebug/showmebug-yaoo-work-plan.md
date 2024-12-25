@@ -2304,7 +2304,7 @@ const playbackInfo = [
   - setOpenPath(''); 
   - onSelectFileOrFolder([src]); + `onCustomSelect?.([src], type)`; 
   - setSelectedFilePath(items[0] as string); 
-- 在useEffect里面，每次selectedFilePath变化，都会请求文件内容并更新编辑器
+- 在useEffect里面，每次`selectedFilePath`变化，都会请求文件内容并更新编辑器(收到服务端的创建文件事件时也会这样)
   - channel.loadFile(selectedFilePath); 
   - actions.file.setDocLoading(true); 
   - this.send(Commands. File, { path }) 向ideServer请求文件内容

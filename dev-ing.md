@@ -545,6 +545,19 @@ console.log(';; qryDiffSnap ', snapshotFrameResult)
   - 编辑器行号宽度样式优化
   - action路径超出卡片宽度
 
+## 1225
+
+- ai工作时
+  - closeFile事件的时机，调整到completed前后
+
+- 昨天
+  - 在clacky前端调整ai工作时thinking的交互效果
+  - terminal在follow时自动打开，在非follow时显示更新的圆点提示，实现了一部分
+- 今天
+  - 和ivan联调ai工作时的action状态变化及打开文件的时机
+  - 测试terminal的自动打开及更新提示
+  - 完成删除移动文件在live和回放模式的表现
+
 ## 1224
 
 - [Backdrop Filter (Blur) not showing up in the output · Issue · niklasvh/html2canvas](https://github.com/niklasvh/html2canvas/issues/2406)
