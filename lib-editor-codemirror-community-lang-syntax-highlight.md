@@ -101,6 +101,19 @@ modified: 2024-08-11T07:59:35.617Z
   - I see ensureSyntaxTree() takes a max line number param, but I'm not sure how it expects you to save+restore state between calls.
 
 - That's automatic. Parsing work is kept in a mutable cache and reused when possible on the next editor state update (and on further calls to that function).
+# discuss-code-docs 📄
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Is it possible to show twoslash like hover info in Shiki for non TypeScript code? 
+- https://x.com/hd_nvim/status/1871773909642870847
+- You just wanna some hover interaction with some arbitrary info rather than type ? 
+  - I think I can get it supported in shaku https://shaku-web.vercel.ap
+  - Shaku on Shiki supports most languages that are supported by Shiki. You can find the +150 languages from Shaku Snippet.
+
 # discuss
 - ## 
 

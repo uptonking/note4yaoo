@@ -14,7 +14,11 @@ modified: 2023-10-28T13:45:16.973Z
 
 - ## 
 
-- ## 
+- ## How Bloom Filters Made SQLite 10x Faster
+- https://x.com/iavins/status/1870843294886007005
+- I believe Automerge(CRDT library) uses bloom filters to sync documents across peers in a network, it's pretty fast and efficient.
+
+- that would fits nicely on limbo
 
 - ## 🪶⚖️🔥 [The SQLite Database File Format | Hacker News_201409](https://news.ycombinator.com/item?id=8385259)
 - The problem with SQLite is that there's no official RFC, it's a pseudo database. When you're weighing up what to implement, it certainly helps when there is an agreed upon technical specification.

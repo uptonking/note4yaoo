@@ -14,6 +14,35 @@ modified: 2023-10-26T19:04:00.318Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## Using S3 as WAL sounds like a pretty neat way to replicate changes in a distributed system. Why is that not common?
+- https://x.com/chronark_/status/1871533010153328768
+  - You still need to elect a leader for writes but the distribution of updates becomes very easy 
+- Probably because P99 write latency is too high for many use-cases. This conversation with @Sirupsen is a great look at the trade offs and how one might deal with them
+- Ppl have mentioned it but p99 latency and it’s a relatively new idea and surprisingly some apis were recently added allowing for it. (Like compare and swap) Check out slatedb! Also warpstream
+
+- Actually, that's what WeSQL implements. 
+  - It uses an LSM-tree based storage engine where both data files and binlogs are asynchronously written to S3. 
+  - The system leverages a Raft group to ensure data is safely written to S3 even if the leader fails, guaranteeing RPO through logger nodes. 
+  - You can check out more details at https://wesql.io The design combines the durability of S3 storage with the consistency guarantees of Raft, making it both reliable and efficient for distributed database operations.
+
+- I think the reliability of S3 was a problem in the past, hence slowing down adoption. It's thanks to companies like @neondatabase and @orioledb it got a lot more attention the last few years and more projects are emerging with this. @supabase also acquired Oriolesb I believe
+
+- Because there isn’t a sequential write API ? No order guarantees ?
+  - Hence the requirement for leader election
+
+- litestream does this pretty nicely
+
+- Because there are several problems. Electing the leader is difficult. Suppose you use Raft for leader election. It is not enough to make sure there is only one writer. In Raft, there can be multiple nodes thinking themself a leader. 
+  - Another problem is consistency guaranteed. S3 only support read your write consistency. Which means, when you crash, the next time you up again, you might not seen the last log you’ve successfully written. This is in contrast with normal filesystem where you can be sure when your data is fully durable. I think, in theory, there should be a way to solve this, but I haven’t found S3 API that allow us to have consistent read.
+  - Next problem is latency. S3 latency is bigger than EBS, so it’s just more practical to use EBS.
+  - Next problem is latency. S3 latency is bigger than EBS, so it’s just more practical to use EBS.
+
+- S3 storage is cheap but the egress and API calls cost can become quite expensive.
+
+- because the latency even with optimized buckets is killer and guarantees are slim
+
 - ## I learned today that TimescaleDB deprecated their distributed (multi-node) support
 - https://twitter.com/a_prout/status/1777813707327684750
   - It reminded me that distributed databases come with a cost

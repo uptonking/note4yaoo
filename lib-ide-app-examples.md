@@ -176,6 +176,18 @@ modified: 2024-08-24T16:30:20.218Z
   - https://github.com/sourcegraph/zoekt /apache2/202411/go
     - This is a fast text search engine, intended for use with source code.
     - This is a Sourcegraph fork of github.com/google/zoekt. It is now the main maintained source of Zoekt.
+
+- https://github.com/sourcegraph/sourcegraph-public-snapshot /apache2 > private/202306/go/ts/archived
+  - https://sourcegraph.com/
+  - Sourcegraph makes it easy to read, write, and fix code—even in big, complex codebases.
+  - Sourcegraph transitioned to a private monorepo. This repository is a publicly available copy of the sourcegraph/sourcegraph repository as it was just before the migration.
+  - Sourcegraph stores most data in a PostgreSQL database. Git repositories, uploaded user content (e.g., image attachments in issues) are stored on the filesystem.
+  - [Sourcegraph architecture overview](https://github.com/sourcegraph/sourcegraph-public-snapshot/blob/main/doc/dev/background-information/architecture/index.md)
+    - At its core, Sourcegraph maintains a persistent cache of all repositories that are connected to it. It is persistent, because this data is critical for Sourcegraph to function, but it is ultimately a cache because the code host is the source of truth and our cache is eventually consistent.
+    - By default, Sourcegraph uses zoekt to create a trigram index of the default branch of every repository so that searches are fast. This trigram index is the reason why Sourcegraph search is more powerful and faster than what is usually provided by code hosts.
+    - Sourcegraph also has a fast search path for code that isn't indexed yet, or for code that will never be indexed (for example: code that is not on a default branch).searcher implements the non-indexed search.
+    - Syntax highlighting for any code view, including search results, is provided by Syntect server.
+    - Code navigation surfaces data (for example: doc comments for a symbol) and actions (for example: go to definition, find references) based on our semantic understanding of code (unlike search, which is completely text based). By default, Sourcegraph provides imprecise search-based code navigation.
 # code-utils
 - https://github.com/salsa-rs/salsa /MIT/202412/rust
   - https://salsa-rs.netlify.app/

@@ -109,6 +109,21 @@ modified: 2022-06-13T03:00:06.041Z
   * it is new memory system stress distributed throughout the code (more misses, loads, stores for cache and TLB)
   * much of the new overhead arrives in pre-GA 5.7 and pre-GA 8.0.
 
+# discuss-devops-mysql
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Built a MySQL branching tool for GitHub Actions - similar to PlanetScale but runs directly in your CI/CD pipeline. 
+- https://x.com/earayu/status/1871833634703131094
+  - Create database copies and test schema changes without touching prod.
+  - [MySQL Branch Action · Actions · GitHub Marketplace](https://github.com/marketplace/actions/mysql-branch-action)
+- love this functionality. i recall that when Minio was first started, it took a test-environment-first strategy, and it finally proved to be a successful strategy to attract adopters.
+  - Indeed, database access in CI/CD pipelines has always been a challenging issue, particularly when dealing with test data and executing DDL statements.
+  - Currently, we offer an experience similar to PlanetScale. Moving forward, we aim to match the developer experience provided by Neon.
+
 # discuss-news
 - ## 
 

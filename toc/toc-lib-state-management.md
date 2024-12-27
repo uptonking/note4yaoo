@@ -566,6 +566,15 @@ modified: 2020-07-14T11:03:53.196Z
   - Allows you to separate concerns between presentation and interaction logic
   - This library is a minimal observer pattern implementation that takes in a POJO as a subject, instruments it, and performs callbacks when the subject has changed. 
   - It's not opinionated at all and allows you to use it however you see fit, like choosing the event library to add (or not).
+# url-params-as-state
+- https://github.com/47ng/nuqs /MIT/202412/ts
+  - https://nuqs.47ng.com/
+  - Type-safe search params state manager for React frameworks - Like useState, but stored in the URL query string.
+  - Simple: the URL is the source of truth
+  - Supports Next.js (app and pages routers), plain React (SPA), Remix, React Router, and custom routers via adapters
+  - useSearchParams 得过一次服务器，nuqs 会立即更新
+  - tanstack router 自带这个功能
+  - 之前准备用ahooks的use-state-url但是只支持react-router
 # games
 - https://github.com/fritzy/ape-ecs /js
   - performant, featureful, and flexible Entity-Component-System library for JavaScript, intended for use in games and simulations.

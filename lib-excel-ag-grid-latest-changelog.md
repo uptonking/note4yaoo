@@ -17,6 +17,20 @@ modified: 2022-08-21T09:55:17.539Z
   - In AG Grid v28 we plan to remove the old way of React rendering.
 # changelog
 
+## [v33_20241219 🚨](https://blog.ag-grid.com/upgrading-to-ag-grid-33/)
+
+- AG Grid 33 is one of our most significant releases ever: We've refactored the way Modules are implemented to deliver up to a 40% reduction in bundle size
+  - We recommend using our latest Codemod to automate most of the migration process
+
+- Refactoring the internals of the grid means we can now tree shake from a single bundle, reducing the size of your grids by up to 40%.
+  - We've refactored the underlying architecture of the grid so that we can optimize our bundle size and let you choose the features you want to use, whilst tree-shaking out everything else.
+  - Simplifying the library so that we only need to support 2 packages instead of 25 means better velocity for new features in future releases.
+- Moving towards the Theming API means no more need for importing those CSS files above your component/somewhere in the app.
+  - allows you to use the Theme Builder to quickly create custom grid themes with our intuitive UI.
+  - Note: Whilst we're defaulting to the Theming API, we intend to support the legacy CSS themes for the foreseeable future, so you only need to migrate when you're ready.
+  - Having the CSS in the code also means it is split per module adding even more savings to bundle size.
+- Finally, we've removed a number of APIs which were deprecated in or before version 31.
+
 ## v27
 
 - [Regarding removal of Immutable data mode](https://github.com/ag-grid/ag-grid/issues/5139)

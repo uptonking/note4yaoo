@@ -48,7 +48,15 @@ modified: 2022-12-19T01:48:53.761Z
 
 - ## 
 
-- ## 
+- ## Skip - The Reactive Framework. I’ve always wanted something like React for the backend 
+- https://x.com/Vjeux/status/1872353619800199366
+- i remember skip wasn’t maintained for a long time.. is it back on track now?
+  - Shipping a brand new programming language is hard. They changed the strategy, they build the core library using skip but have people write code in javascript instead. Much lower adoption barrier but still the same wins.
+
+- A summary of the architecture:
+  - Low level: The runtime (written in Skiplang), compiles to native or wasm.
+  - Medium level: The JS bindings, use native code when available (node), otherwise wasm.
+  - High level: The framework, bindings + helper functions to write reactive systems
 
 - ## 在Node环境中跑起了PHP框架Laravel。
 - https://twitter.com/TooooooBug/status/1727896108591178194

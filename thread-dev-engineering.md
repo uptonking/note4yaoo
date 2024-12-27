@@ -43,7 +43,9 @@ modified: 2021-01-21T17:52:13.333Z
 
 - ## 
 
-- ## 
+- ## Serverless is dependency injection at the service level. 
+- https://x.com/earayu/status/1872487948756873640
+  - Users don't want to worry about how services are built - they just want to use them. This is similar to how, at the code level, developers don't care about object construction - they just want to use the objects.
 
 - ## 一个项目过了最佳重构期，再重构就很难了, 用户量一上来全是 breaking，重构零收益，只能缝缝补补走到生命周期的尽头
 - https://x.com/Soon_Iter/status/1856958579003330866
@@ -224,9 +226,9 @@ modified: 2021-01-21T17:52:13.333Z
 
 - 这里可能有个悖论, 自己造轮子 研发成本高, 不自己造轮子 显不出技术“高明”, 结果是 996 劣质轮子 遍地都是…
 
-01.                 大概率没有开源的好
-02.                 造轮子就要维护一个轮子迭代维保团队
-03.                 迭代维保团队和其他团队无限的撕逼
+01.                  大概率没有开源的好
+02.                  造轮子就要维护一个轮子迭代维保团队
+03.                  迭代维保团队和其他团队无限的撕逼
 
 - ## Five terms I avoid when naming things:
 - https://twitter.com/housecor/status/1742197661837476018

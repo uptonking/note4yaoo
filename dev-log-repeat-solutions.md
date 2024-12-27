@@ -47,7 +47,7 @@ modified: 2021-07-20T13:50:23.433Z
 
 - lts-tech-stack 可离线、可协作、可撤销
   - 🌰lts: vscode/ide, git/vcs
-  - vscode: monaco-editor + electron, code-server
+  - vscode: monaco-editor + electron, code-server, sourcegraph
   - codemirror/prosemirror: state + view + commands + transform/ot/collab + virtualized
   - rspack: js plugin
 
@@ -70,12 +70,13 @@ modified: 2021-07-20T13:50:23.433Z
   - replay(editor+tree+layout), reproducible
   - dynamic-schema/eav
   - 基于ast的架构: reka, tango-lowcode, ast优化常使用bytecode(data+logic)
+  - sourcegraph
   - 支持输出canvas，为了分享或安全
 - 🛢️ 数据存储架构
   - file-first: vscode, obsidian, notable, hexo
   - db-first: git, joplin, siyuan, 多维表格/nocodb
   - 代码文件与数据库紧密结合的方案示例，可参考git/docx-zip
-  - 代码与数据库结合来更新应用程序的方案，可参考aquameta/couchapp/reka
+  - 代码与数据库结合来更新应用程序(app/webapp)的方案，可参考aquameta/couchapp/reka/sourcegraph
 
 - 🚀 产品落地
   - 侧重表格的cms, 内容创作与管理

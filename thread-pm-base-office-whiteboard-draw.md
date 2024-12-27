@@ -49,6 +49,15 @@ modified: 2023-05-30T21:36:55.391Z
   4. Mindmap选中之后不能独立缩放
   - BoardOS是一个非常优秀的产品，以上完全可能是我习惯了Miro之后的不适，并非产品的问题。
 
+# discuss-workflow-pm
+- ## 
+
+- ## 
+
+- ## 一直想寻找一套简单代替 Dify 的工作流框架。
+- https://x.com/ZeroZ_JQ/status/1872456529691258935
+  - 最后找到了知名工作流库 Prefect 推出的 ControlFlow。
+
 # discuss
 - ## 
 

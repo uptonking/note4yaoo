@@ -205,7 +205,30 @@ e) 最终评论者(Final Critic)
 - https://x.com/aigclink/status/1844936446416912628
   - 用于构建、编排和部署多代理
 
- # discuss
+# discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🎯 Introducing DeepSeek-V3 _20241226
+- https://x.com/deepseek_ai/status/1872242657348710721
+  - 60 tokens/second (3x faster than V2!)
+  - Fully open-source models & papers
+  - 671B MoE parameters
+
+- https://x.com/op7418/status/1872469838641406262
+  - 他们自测的成绩整体跟 GPT-4o 和 Claude 3.5 对齐了
+  - 海外社区普遍惊叹他们用 Llama 405B 十分之一的算力成本训练了一个更大更强的模型
+  - Llama 3 405B 使用了 30.8M GPU 小时，而 DeepSeek-V3 看起来是一个更强大的模型，仅使用了 2.8M GPU 小时（计算量减少了约 11 倍）。
+  - 并不意味着前沿 LLM 需要要大的计算集群，反而意味着你必须不能浪费你拥有的资源
+
+- https://x.com/amasad/status/1872320808028454976
+  - Craziest thing is it took only $5.5m to train. US labs spend one — maybe two — order of magnitude more for frontier models.
+# discuss
+- ## 
+
 - ## 
 
 - ## 

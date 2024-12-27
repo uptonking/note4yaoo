@@ -20,6 +20,20 @@ modified: 2024-01-07T05:09:14.413Z
 
 - ## 
 
+- ## I think it is so interesting how many of the people building sync engines came to it through *UI* development.
+- https://x.com/aboodman/status/1871237826333032715
+  - You would not naively expect these people to be working on distributed systems. But for all, it was the same thing – we wanted to create better UIs.
+  - Over time, we all narrowed in on the same thing: that the traditional way of building software around request/response APIs was the core thing preventing better UX, and the thing that needed to change.
+  - Five years ago I started @rocicorp and recruited a team. We made our first sync engine @replicache . Two years agod we built our first attempt at a sync backend @hello_reflect .
+  - It was too narrow, so we scrapped it and started @rocicorp_zero - a novel syncing distributed database.
+  - It has been a lot of work, and all in pursuit of the same thing – fast clicks. The clicks must be fast.
+
+- And the results are stunning, no doubt. I was wondering how well does it work with existing postgres deployments that use RLS and native ROLES heavily for security?
+  - It doesn't. You'll need to port those RLS rules to Zero permissions
+  - This is required because Zero has its own streaming query engine to support continuously syncing the results of queries to clients. So we can't make use of PG's query system
+
+- Definitely. My take is that react and these new FRP paradigms actually made the backends and req/resp protocol models feel quite antiquated. the apps suddenly had a more ambitious and useful model for state.
+
 - ## 🔁🆚️🤔 Here is how I think about the local-first/sync space. _20241007
 - https://x.com/aboodman/status/184 3041337794576810
 - 1️⃣ The first dimension to consider is document vs database sync. 

@@ -13,6 +13,8 @@ modified: 2023-04-04T03:59:40.928Z
 - 中国法律AI助手
   - [中国法律AI助手](https://law-cn-ai.vercel.app/)
 
+- ai聊天的存储和恢复
+
 ## resources
 
 - [AIGC交流群工具沉淀](https://bytedance.feishu.cn/base/AIMAbnJxQaNgSGsBAtwcdAkLnvf)
@@ -186,7 +188,14 @@ modified: 2023-04-04T03:59:40.928Z
 
 - ## 
 
-- ## 
+- ## 🤔 有没有推荐的支持 AI Ask 的 适合阅读 Epub、PDF 电子书的工具？
+- https://x.com/houjoe1/status/1872454515246706715
+  - 微信读书的 AI 问书无法对话，无法输入我的问题意图，只能查一查，有点傻。
+  - 豆包的 AI 阅读，读 PDF 还可以，真正的电子书不行，做不了笔记，只能看或者让 AI 解答
+  - 主要的诉求是可以全文提问或者选择文本提问，问题可自定义
+  - 而且发现一个 AI 伴读的问题，所有与 AI 的对话本质上是阅读的一种延伸，但无法方便的将二者关联起来，甚至，都无法直接保存，有点问完阅后即焚的感觉，仿佛，AI 伴读就是给电子书加个 AI 聊天框
+
+- NotebookLLM 没有阅读体验，纯 ASK AI，ChatPDF 我试试。
 
 - ## 智谱ai刚融资了30个亿，背靠国企和强劲的需求，我估计未来2-3年现金流不会有问题。
 - https://x.com/seclink/status/1870284667309768985
@@ -274,11 +283,11 @@ modified: 2023-04-04T03:59:40.928Z
 
 - ## 5 new market maps in AI
 - https://x.com/chiefaioffice/status/1799766662746398851
-  01.          AI code generation tools from Greylock
-  02.          AI legal tools from Battery Ventures
-  03.          AI agent infrastructure from Madrona
-  04.          AI marketing tools from a16z
-  05.          Conversational AI from Cobus Greyling
+  01.           AI code generation tools from Greylock
+  02.           AI legal tools from Battery Ventures
+  03.           AI agent infrastructure from Madrona
+  04.           AI marketing tools from a16z
+  05.           Conversational AI from Cobus Greyling
 
 - ## Google 最近新出了两个 Code 相关的 Agent 非常有意思：
 - https://x.com/tuturetom/status/1798350275314581670
