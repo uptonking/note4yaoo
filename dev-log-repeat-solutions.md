@@ -43,6 +43,7 @@ modified: 2021-07-20T13:50:23.433Z
     - specification for pivot table
     - 输入数据input-data-table, 开放数据api，开放应用app-builder
     - 产品方向: 偏设计布局， 偏业务逻辑
+    - 网盘: 数据展示和回收站，非常经典的产品
 
 - lts-tech-stack 可离线、可协作、可撤销
   - 🌰lts: vscode/ide, git/vcs

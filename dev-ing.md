@@ -516,6 +516,31 @@ console.log(';; act-file-o ', currentOpenedActionId, shouldForceOpenFile, action
 console.log(';; taskActions', currentActionId, path, store.cdePlay.enableDiffView(), taskActions)
 console.log(';; open-diff ', enableDiffAnimation, store.cdePlay.enableDiffView(), store.cdeReplay.isMachinePaused())
 console.log(';; qryDiffSnap ', snapshotFrameResult)
+
+console.log(
+  '📝 ide-file ',
+  filePath,
+  isFollow,
+  selectedFilePath,
+  store.file.latestRequestFilePath(),
+  isOtherUserOpened,
+  agentUserId,
+  event,
+);
+
+{
+  "timestamp": 1735283945492,
+  "playgroundId": "744308458098143232",
+  "dockerId": "744308458131697664",
+  "eventName": "simulator",
+  "agentUserId": "backend",
+  "data": {
+    "action": "load",
+    "path": 8080
+  },
+  "_id": "676e54e9e696257f595035a7",
+  "__v": 0
+}
 ```
 
 ```
@@ -544,6 +569,45 @@ console.log(';; qryDiffSnap ', snapshotFrameResult)
   - 修复文件树将文件夹拖到文件夹不work的问题
   - 编辑器行号宽度样式优化
   - action路径超出卡片宽度
+
+## 1230
+
+- ports现有逻辑的问题
+  - `ApplicationAvailable`是否还有必要存在
+  - 现有实现未考虑多端口的场景，每次sdk收到manager的`portOpen`事件，都会触发`ApplicationAvailable`到前端，多端口时若port减少一个是否该触发
+- ports待改进的问题
+  - 刷新页面时如何恢复当前已开放的端口，及已在webview打开的端口
+    - A1: 由于容器会自动失活，每次syncPlaygroundInfo事件，由manager将ports放到该事件里面
+    - A2: 每次syncPlaygroundInfo事件，manager立即发送httpProxy事件给前端
+  - 手动点击portUrl会更新当前webview标签的url
+  - 当webview支持多标签时，portUrl后面的currentOpened标记让人困惑
+  - 非前端项目时，webview打开是什么体验，是否可输入url
+
+- 昨天
+  - 联调ai工作及regenerate的整体效果
+  - 增强端口转发的url更新逻辑
+- 今天
+  - 增强端口转发的url更新逻辑和交互体验
+  - 完成删除移动文件在live和回放模式的表现
+
+## 1227
+
+- 昨天
+  - ai工作时thinking的交互体验在前端和在ai侧联调都已完成，今天review一下后可合入staging
+  - 修改端口转发的url更新逻辑，去掉旧的url
+- 今天
+  - 增强端口转发的url更新逻辑和交互体验
+  - 确定ai工作时的action状态变化及打开文件的时机
+  - 完成删除移动文件在live和回放模式的表现
+
+## 1226
+
+- 昨天
+  - 在clacky前端调整ai工作时thinking的交互体验，我又想了一种方案，待讨论
+  - webview在点击run按钮后会自动打开，刷新页面保持打开今天再实现
+- 今天
+  - 确定ai工作时的action状态变化及打开文件的时机
+  - 完成删除移动文件在live和回放模式的表现
 
 ## 1225
 
