@@ -231,7 +231,23 @@ modified: 2022-08-21T10:11:43.095Z
 
 - With CKEditor 5 we are planning to conclude this process by letting the browser insert text only, but with CKEditor’s control.
 
-## [Text Editor: Data Structures | Hacker News_201710](https://news.ycombinator.com/item?id=15381886)
+## 🧮 [Text Editor: Data Structures | Hacker News _202312](https://news.ycombinator.com/item?id=38772754)
+
+- VSCode have a blog article talking out their move to using Piece Table as their main data structure.  
+
+- Claim made from theoretical considerations, without any actual reference to real-world editors. The popular Micro text editor uses a simple line array, and performs fantastically well on real-world editing tasks.
+  - Meanwhile, ropes are so complicated that even high-quality implementations have extremely subtle bugs that can lead to state or content corruption.
+
+- The worst way to store and manipulate text is to use an array. 
+  - Firstly, the entire file must be loaded into the array first, which raises issues with time and memory. Even worse still, every insertion and deletion requires each element in the array to be moved. There are more downsides, but already this method is clearly not practical. The array can be dismissed as an option rather quickly.
+
+- In my text editor (https://github.com/alefore/edge) I use a balanced binary tree containing small chunks (std::vector) of contiguous lines. That works well enough for me
+
+- How does that perform when the entire 12MB file is a single line?
+  - In my experience, editors tend to break down on edge cases like these. Editors (e.g. Jetbrains) often turn off syntax highlighting and/or edit capabilities on large files, not to mention put an upper limit on the number of cursors.
+- Looks like Codemirror does similar with long/ huge files 
+
+## 🧮 [Text Editor: Data Structures | Hacker News _201710](https://news.ycombinator.com/item?id=15381886)
 
 - in my editor (CodeMirror) I'm also using a rope/tree style representation, because it's pleasantly general and easy to reason about
   - [CodeMirror's document representation_201209](https://marijnhaverbeke.nl/blog/codemirror-line-tree.html)

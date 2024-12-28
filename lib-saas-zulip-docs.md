@@ -11,6 +11,7 @@ modified: 2024-06-23T02:10:01.601Z
 - resources
   - [Zulip overview](https://zulip.readthedocs.io/en/latest/overview/readme.html)
   - [Zulip help center](https://zulip.com/help/)
+  - [History of the Zulip project](https://zulip.com/history/)
 # docs
 
 ## overview

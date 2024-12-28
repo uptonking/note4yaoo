@@ -39,6 +39,12 @@ modified: 2022-12-19T01:59:01.625Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
 - ## contrary to popular belief, in Node.js promises (and async/await) would not yield to the event loop. 
 - https://x.com/matteocollina/status/1862180654672171418
   - So, if you want the event loop to process I/O in between a long chain of async functions that actually aren’t doing any I/O, you would need to add a setImmediate (promisified) in between.

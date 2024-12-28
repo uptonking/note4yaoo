@@ -33,6 +33,24 @@ modified: 2022-12-19T01:59:37.634Z
 
 - ## 
 
+- ## [Napa.js: A multi-threaded JavaScript runtime | Hacker News _201710](https://news.ycombinator.com/item?id=15498219)
+- Multi-threading does well for some problems, but often, multi-machining or multi-processing is sufficient, which is why so many runtimes don't really do multi-threading: Node. JS, Python, Ruby.
+  - Very true, and we've seen better performance from multi-process than multi-threading in some high-traffic (10Gbps) systems (those were C++ however, not node). It was puzzling, but I put it down to the OS scheduler; I imagine that a single multi-threaded process would be pre-empted in the typical fashion, but that multiple single-threaded processes would, in aggregate, spend less time in a pre-empted state.
+- The benefit to programs that don't use threading and use event loop and shared nothing multi-process is that they don't have the overhead when things are maxed out.
+  - This is why virtually every high performance server (nginx, redis, memcached, etc) is written this way and things like varnish (thread per request) are multiples or orders of magnitude slower.
+  - Funny people criticizing nodejs for using the same architecture that all the best-in-class products use.
+
+- Context switching is expensive and very tempting to forget about in multi-threaded development. You eliminate that overhead constraining the execution code to a single thread context.
+
+- Node.JS, Python, and Ruby are in C/C++ so you can do multithreading in all three, if you are willing to write native modules.
+
+
+
+- 
+- 
+- 
+- 
+
 - ## Apparently since Node v20 and Chrome v111 it's possible to perfectly* pass a synchronous function to a worker and for that worker to just call it synchronously, thanks to ` SharedArrayBuffer.prototype.grow` .
 - https://twitter.com/fabiospampinato/status/1751590274873077860
   - Previously this wasn't possible because the worker needs to create a SharedArrayBuffer, pass it to the other thread, and then the other thread writes the result onto the buffer, basically. Problem is you can't pre-allocate a SAB of the right size, now you can grow it though.

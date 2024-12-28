@@ -129,6 +129,43 @@ modified: 2024-12-01T09:34:54.164Z
 - I want an LLM which uses an LSP to gather more context.
   - Aider uses Treesitter to improve code generation.
   - Aider uses Treesitter to improve code generation.
+# discuss-remote-actions
+- ## 
+
+- ## [A Whole New Quick Edit in Cloudflare Workers | Hacker News _202305](https://news.ycombinator.com/item?id=35975268)
+- > how does this work at a high level? 
+  - We embed VSCode for Web in the Cloudflare dashboard as an iframe, and communicate with it over a MessageChannel. 
+  - When the iframe is loaded, the Cloudflare dashboard sends over the contents of your worker to a VSCode for Web extension. This extension seeds an in-memory filesystem from which VSCode for Web reads. 
+  - When you edit files in VSCode for Web, the updated files are sent back over the same MessageChannel to the Cloudflare dashboard, where they’re uploaded as a previewed worker to Cloudflare's global network.
+
+- ## [Ask HN: Best practices for editing remote code locally? | Hacker News _202204](https://news.ycombinator.com/item?id=30987770)
+- VS Code + The Remote SSH extension is a remarkable solution to developing code (not just editing!) on a remote machine.
+- I like vscode + remote ssh a lot, but one thing to be aware of is that the node server that it installs on the remote can be a bit memory hungry if you're on a small machine (i.e., low-end droplet or vps). One of the rsync or sftp remote adapters is much nicer to such environments.
+
+- VS Code (now) has a super nice support for jupyter. You don't have to start the server externally, vim mode and all your extensions like github copilot work fine, proper autocompleting works, etc. Debugging is absolutely amazing. I've recently switched myself and am never going back to browser-based jupyter.
+
+- Visual Studio Code Remote SSH? https://code.visualstudio.com/docs/remote/ssh it will however install VS Code Server on target machine. So, for permanent development it is good. Not great if you only want to change one config file in PROD environment.
+
+- Since I like my local development environment, I mostly use `sshfs`.
+  - It mounts a remote directory onto a local directory and lets you access remote files as if they're local, with slight latency. Then you can use whatever tools you use locally to edit/compile/run the software.
+- I also use this setup. Works well for editing and reading the files. But be aware that some file-intensive operations don't work as well. It is better to grep or git in the remore server instead of in the local mount. Be careful if your shell prompt is configured to show git status, because that won't be instantaneous.
+- JetBrains never works on sshfs as it parses files for dependencies.
+  - Actually, you're right. I just tested recursively grepping a remote directory with a thousand 16KiB files. The speed is completely catastrophic
+- I think it's because it's not simply a file download but instead keeps on asking for file content or meta data making a roundtrip on each files to cause excessive latencies against many files. All the tools are basically designed to work on local files and they tend to work bad interacting directly on mounted file systems.
+
+- Yeah code-server is really nice and underrated as a remote coding option. The linuxserver.io docker container for it is super fast and easy to setup: https://docs.linuxserver.io/images/docker-code-server
+
+- Couple of solutions (some already mentioned):
+  - SSH remote editing (e.g. ssh + remote Emacs/Vim)
+  - VS Code + Remote SSH
+  - Emacs TRAMP
+  - JetBrains Gateway
+  - mutagen?
+- Many editors support the rmate protocol, enabling you to open a remote file from a ssh session in your local editor.
+
+- While there are plenty of other more powerful solutions suggested here, I prefer my fairly light weight option - WinSCP connecting to the remote server over SFTP, then opening the files I want to change in my preferred editor (Sublime Text). 
+  - WinSCP handles uploading file changes to the remote server automatically; there might also be a way to trigger actions on upload, but that gets into specifics of how your codebase is setup / what you need to run to test changes. 
+  - Bonuses of using WinSCP are drag-and-drop file transfers, and a pretty thorough site manager (/address book / credential storage / login manager, whatever you want to call it).
 # discuss
 - ## 
 

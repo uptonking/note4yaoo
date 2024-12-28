@@ -28,6 +28,38 @@ modified: 2024-12-27T17:28:57.941Z
 
 - ## 
 
+- ## 
+
+- ## ⚖️ [Sourcegraph is no longer open source | Hacker News _202307](https://news.ycombinator.com/item?id=36584656)
+- It was open first. Then closed. Then open again. So, now it's closed again...
+
+- Sourcegraph only provided non-OSS images and the build process was difficult and broken for a long time
+  - It's no wonder, that the usage of OSS version was pretty low, when few were able to build it
+
+- If anyone's looking for an open-source search tool for grepping across repos (or even one large repo) at insane speed, I highly recommend livegrep
+  - We used it at Stripe and it was quite popular; often, searching even a single repo was faster on livegrep than with ripgrep locally.
+- livegrep is... fine. It's literally what it says it is. It's a web version of grep. livegrep is definitely not a replacement for sourcegraph, which actually understands the underlying code, and lets you follow code paths, search for references, etc.
+
+- https://oracle.github.io/opengrok/ is open source and very good at huge source base, e.g. for the whole android and linux kernel together, fast and useful.
+  - It’s a Sun tool that Oracle inherited and never made an attempt to monetize.
+
+- I'll add something I have been working on https://github.com/boyter/cs which is aimed at a smaller scale. It works fine for multiple repositories so long as they aren't too large.
+
+- Did anyone actually use the open version? I dimly remember that I looked into it like 2-3 years ago, but all the really interesting stuff was not included in that. 
+  - OSS version didn't have official Docker images prebuilt, you had to build them yourself and for a long time the OSS build was broken. 
+- Yes, I remember the Docker thing, but I also remember that at least the language parsers we were interested in were only supported through some kind of plugin mechanism, which the OSS version did not support, so it was useless for us, so I didn't ever bother testing it.
+- So basically their "open source" offering wasn't really open source, it wasn't even open core, as you had to build it yourself, the build wasn't working for a long time and even if you managed that, some languages were enterprise-only.
+
+- https://github.com/sourcegraph/sourcegraph/issues/53528#issu... appears to be a comment from someone in the project laying out why they've changed.
+
+- Tools like sourcegraph are cool, but it is not like they are going to make you X times more productive.
+  - The marginal efficiency gain over the free ripgrep is so small
+
+- There is a lot of competing technology now, from GitHub’s improved search to new open source LangChain and LlamaIndex support for better document chunking of source code in several languages.
+  - That's part of the impetus behind their Cody product. It uses the code search system as a semantic index. It actually works very well in my experience.
+
+- Cloud9, Elastic, Sourcegraph, CockroachDB, what is it with companies making things closed source?
+
 - ## [Toward a URL for every function | Hacker News _201606](https://news.ycombinator.com/item?id=11855638)
 - 👷🏻 Sourcegraph founder here. We built this to make it much easier to grok code.
   - Sourcegraph supports Go and Java right now

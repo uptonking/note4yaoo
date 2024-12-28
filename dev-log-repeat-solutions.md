@@ -24,7 +24,7 @@ modified: 2021-07-20T13:50:23.433Z
     - 开放能力: extensions, scripts, marketplace
     - pref: 索引、缓存、分库分表、读写分离
     - 典型产品: editor + fileTree + workbenchLayout + search + cmdKeys + settings
-  - 💠 architecture-early 需要尽早考虑的架构问题，没有完美的架构
+  - 🏘️ architecture-early 需要尽早考虑的架构问题，没有完美的架构
     - 核心架构考虑 server/db/network-socket
     - 早期不要将系统架构设计得过于复杂，会影响开发进度, 甚至产品终止都用不上
     - 重前端还是重服务端的设计
@@ -43,13 +43,15 @@ modified: 2021-07-20T13:50:23.433Z
     - specification for pivot table
     - 输入数据input-data-table, 开放数据api，开放应用app-builder
     - 产品方向: 偏设计布局， 偏业务逻辑
-    - 网盘: 数据展示和回收站，非常经典的产品
+    - 网盘: 数据展示和回收站，非常经典的场景，常在cms中存储资源
 
-- lts-tech-stack 可离线、可协作、可撤销
+- lts-tech-stack 可协作、可同步(离线)、可撤销
   - 🌰lts: vscode/ide, git/vcs
   - vscode: monaco-editor + electron, code-server, sourcegraph
   - codemirror/prosemirror: state + view + commands + transform/ot/collab + virtualized
-  - rspack: js plugin
+  - version-history: rrweb
+  - rspack: js plugin; rolldown-wasm
+  - animation: motion(dom/svg)
 
 - 技术细节: virtualized, draggable, table(eav)
 - 技术产品: cm-devtools, noseditor, collab-hocuspocus
@@ -66,7 +68,7 @@ modified: 2021-07-20T13:50:23.433Z
 - 🎯 roadmap: virtualized-draggable-table, cm-devtools, cm-noseditor, cm-hocus
   - 📝 编辑器，协作同步，版本分支，~~虚拟渲染, 分支版本, 协作冲突, undo/redo~~
   - 🔀🛢️ crdt版本历史, partial-replica、ivm, delta-db, 实时架构
-  - version-history+sync(for table/pdf)
+  - version-history+sync(for table/pdf), replay, motion-photo(标准)
   - replay(editor+tree+layout), reproducible
   - dynamic-schema/eav
   - 基于ast的架构: reka, tango-lowcode, ast优化常使用bytecode(data+logic)
@@ -203,7 +205,28 @@ modified: 2021-07-20T13:50:23.433Z
 - 架构参考
   - immutable: prosemirror, slate, wangeditor, typewriter, ospreadsheet, maxgraph
   - functional: wangeditor, typewriter
-  - 数据层: ivm-crsqlite
+  - 数据层: ivm-crsqlite/zero-sync
+
+### solutions-cases
+
+- partial-sync
+  - 实现方案可参考成熟数据库的streaming，一般与业务表相关
+  - powersync
+  - triplit
+
+- ivm/incremental-view-maintenance
+  - zero-sync
+  - web前端的reactive实现
+  - 数据库的materialized view
+  - event sourcing
+  - bundler的热加载，如turbopack
+  - 编译器的热更新
+
+- 系统提供很多配置项的设计
+  - webpack
+  - vscode settings
+  - npmrc
+  - 手机系统的设置
 # collab
 - 多文件的app, 或多或少有点类似知识库
   - 可以参考给普通数据库表添加crdt支持的场景
@@ -360,25 +383,6 @@ modified: 2021-07-20T13:50:23.433Z
   - elara: demo示例非常酷，特别是layer，dashboard, shell, pic-viewer
   - ventus: 快速切换到窗口平铺预览
   - rc-dock: 类似ide的拖拽停靠效果
-# solutions
-- partial-sync
-  - 实现方案可参考成熟数据库的streaming，一般与业务表相关
-  - powersync
-  - triplit
-
-- ivm/incremental-view-maintenance
-  - zero-sync
-  - web前端的reactive实现
-  - 数据库的materialized view
-  - event sourcing
-  - bundler的热加载，如turbopack
-  - 编译器的热更新
-
-- 系统提供很多配置项的设计
-  - webpack
-  - vscode settings
-  - npmrc
-  - 手机系统的设置
 # fundamentals
 - format
   - excel/csv/office open xml

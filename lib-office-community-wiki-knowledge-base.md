@@ -39,7 +39,27 @@ modified: 2023-09-21T17:32:15.618Z
 - 是的，toB数据知识库这件事有两个节点。
   - 一是RAG工具逐渐成熟，很多国内企业是需要私有化部署的，没有开源项目办不到。
   - 二是各种非标数据的处理工具，包括多模态文档转换提取、复杂的标注、归纳等等。前者是应用层的突破，后者是应用层倒闭基础工具。
+# discuss-office-web
+- ## 
+
+- ## 
+
+- ## [Microsoft Office rewrite to React.js nears completion | Hacker News _201806](https://news.ycombinator.com/item?id=17310738)
+- I was a big fan of google docs 10 years ago. But have lost interest as they have stagnated. Sheets is slow for anything over 100 rows compared to Excel and there’s a lot of 20% functionality that’s been missing for years in functions, charts, pivot, etc.
+  - It’s great for lists, but I want an Excel clone on web. Fortunately, MS has been building this.
+
+- Do they mean that just the user interface is being rewritten in React/JavaScript or do they mean the entire application?
+  - only the frontend, there is a post on reddit in which one of the devs specifically said that all the backend is still in c++ and will remain that way
+  - You got it. One of the engineers from the office product group chimed in and said as much. They are using react native for some UI components.
+
+- ## [Office 365 is being completely rewritten in JavaScript | Hacker News _201806](https://news.ycombinator.com/item?id=17300893)
+- I’m an engineer in Office. The desktop app’s are fully native, and will remain so. They utilize React Native for a few components, but otherwise are written in C & C++.
+
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## [GitLab Wiki or Other self-hosted wiki for Documentation : r/selfhosted _202208](https://www.reddit.com/r/selfhosted/comments/wdjeo8/gitlab_wiki_or_other_selfhosted_wiki_for/)

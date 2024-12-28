@@ -77,7 +77,8 @@ modified: 2023-01-02T10:30:19.459Z
 
 - ## 
 
-- ## 
+- ## [java 也是跨平台, 为何没有 gui 框架像electron 那么火? - 知乎](https://www.zhihu.com/question/601426954/answers/updated)
+- Java最初诞生之后，它的GUI也是比较火的，许多Java应用程序都是具有GUI的桌面应用程序。 但现在GUI界面已经普遍地被网页界面取代，Java也不例外，Java Web应用成为主流的应用。所以Java的GUI API就逐渐使用得少了。
 
 - ## [为什么用 electron 开发的桌面应用那么多？ - 知乎](https://www.zhihu.com/question/509656170/answer/3176126664)
 - 飞书和钉钉肯定不是，他俩用的CEF。Electron和CEF底下其实都是chromium内核。

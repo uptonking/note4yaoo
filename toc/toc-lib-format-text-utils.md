@@ -89,10 +89,24 @@ modified: 2023-09-01T03:56:10.056Z
   - simple and beautiful text diff viewer component made with jsdiff and React.
   - Inspired from Github diff viewer, it includes features like split view, inline view, word diff, line highlight and more. It is highly customizable and it supports almost all languages.
 
+- https://github.com/rtfpessoa/diff2html /MIT/202412/ts
+  - https://diff2html.xyz/
+  - https://diff2html.xyz/demo
+  - Pretty diff to html javascript library (diff2html)
+  - diff2html generates pretty HTML diffs from git diff or unified diff output.
+  - diff2html makes it easy to share static html representations of diffs with anyone, independent of the provider 
+  - Any GitHub, Bitbucket or GitLab commit, pull/merge request urls.
+  - https://github.com/pbu88/diffy /202206/ts/inactive
+    - https://diffy.org/
+    - Share diff output in the browser with an nodejs server
+    - diffy.org is an amazing tool created by pbu88 to share your diffs and uses diff2html under the hood.
+    - The mongodb data will be stored on the data/ folder.
+
 - https://github.com/kpdecker/jsdiff /7.4kStar/BSD/202403/js
   - http://incaseofstairs.com/jsdiff/
   - A JavaScript text differencing implementation
   - Based on the algorithm proposed in "An O(ND) Difference Algorithm and its Variations" (Myers, 1986).
+  - 支持按chars/words/lines比对，还支持patch
   - If you need behavior a little different to what any of the text diffing functions above offer, you can roll your own by customizing both the tokenization behavior used and the notion of equality used to determine if two tokens are equal.
   - jsdiff deviates from the published algorithm in a couple of ways that don't affect results but do affect performance:
     - jsdiff keeps track of the diff for each diagonal using a linked list of change objects for each diagonal, rather than the historical array of furthest-reaching D-paths on each diagonal contemplated on page 8 of Myers's paper.

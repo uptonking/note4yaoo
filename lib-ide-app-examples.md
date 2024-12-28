@@ -173,9 +173,13 @@ modified: 2024-08-24T16:30:20.218Z
   - https://sourcebot.dev/
   - a fast code indexing and search tool for your codebases. 
   - It is built on top of the zoekt indexer, originally authored by Han-Wen Nienhuys and now maintained by Sourcegraph.
-  - https://github.com/sourcegraph/zoekt /apache2/202411/go
+ - https://github.com/sourcegraph/zoekt /apache2/202411/go
     - This is a fast text search engine, intended for use with source code.
     - This is a Sourcegraph fork of github.com/google/zoekt. It is now the main maintained source of Zoekt.
+
+- https://github.com/google/codesearch /BSD/202406/go
+  - Fast, indexed regexp search over large file trees
+  - Code Search is a tool for indexing and then performing regular expression searches over large bodies of source code. It is a set of command-line programs written in Go.
 
 - https://github.com/sourcegraph/sourcegraph-public-snapshot /apache2 > private/202306/go/ts/archived
   - https://sourcegraph.com/
@@ -188,7 +192,35 @@ modified: 2024-08-24T16:30:20.218Z
     - Sourcegraph also has a fast search path for code that isn't indexed yet, or for code that will never be indexed (for example: code that is not on a default branch).searcher implements the non-indexed search.
     - Syntax highlighting for any code view, including search results, is provided by Syntect server.
     - Code navigation surfaces data (for example: doc comments for a symbol) and actions (for example: go to definition, find references) based on our semantic understanding of code (unlike search, which is completely text based). By default, Sourcegraph provides imprecise search-based code navigation.
-# code-utils
+  - [GitHub code search vs. Sourcegraph - Sourcegraph docs](https://docs-legacy.sourcegraph.com/@v4.4.2/getting-started/github-vs-sourcegraph)
+    - Sourcegraph is a code intelligence platform that makes codebases intelligible by semantically indexing and analyzing all of an organization’s code, providing developers and engineering leaders with a complete understanding of their codebase. 
+    - In addition to universal code search across every code host, Sourcegraph has features to help developers find code, understand and answer questions about code, and fix code faster.
+    - GitHub allows you to search indexed code, but not all code is indexed.Files over 350 KiB and empty files are excluded.With GitHub, only the default branch is searchable 
+    - Sourcegraph offers structural search, and GitHub code search does not offer this search method. 
+    - GitHub code search does not offer commit diff search or commit message search.
+  - 🍴 forks
+  - https://github.com/SINTEF/sourcegraph /apache2/202302/go/ts/inactive
+    - a fork of SourceGraph with a few modifications
+    - It only contains the opensource code. The proprietary code is removed to make sure it's not used during compilation.
+    - It has a Oauth2 Proxy Mode allowing to fetch the user information from the HTTP headers.
+
+- https://github.com/livegrep/livegrep /BSD/202412/cpp/go
+  - http://livegrep.com/
+  - Livegrep is a tool, partially inspired by Google Code Search, for interactive regex search of ~gigabyte-scale source repositories
+  - livegrep builds an index file of your source code, and then works entirely out of that index, with no further access to the original git repositories.
+    - The index file will vary somewhat in size, but will usually be 3-5x the size of the indexed text.
+    - livegrep memory-maps the index file into RAM, so it can work out of index files larger than (available) RAM, but will perform better if the file can be loaded entirely into memory. 
+  - Livegrep uses Google's re2 regular expression engine, and inherits its supported syntax.
+
+- https://github.com/oracle/opengrok /CDDL/202412/java
+  - http://oracle.github.io/opengrok/
+  - OpenGrok is a fast and usable source code search and cross reference engine, written in Java
+
+- https://github.com/Rajeev-K/eureka /GPLv3/202302/java/inactive
+  - Lucene-based search engine for your source code
+  - eureka is a web application that harnesses the power of Lucene to index and search your source code.
+  - https://github.com/wisercoder/eureka
+
 - https://github.com/salsa-rs/salsa /MIT/202412/rust
   - https://salsa-rs.netlify.app/
   - A generic framework for on-demand, incrementalized computation. 
@@ -210,9 +242,9 @@ modified: 2024-08-24T16:30:20.218Z
     - Language-agnostic graph storage format. Kythe defines a simple, flexible, and portable graph representation that is easy to emit from an instrumented compiler, and for clients to consume.
     - extensible graph schema for a variety of interesting semantic cross-reference data in various languages, including C++, Java, and (soon) Go
     - Analyzers, tools and examples. a self-contained server that can use Kythe data to answer cross-reference queries;
-- https://github.com/TreeTide/underhood /202203/inactive
-  - UnderHood is a code browsing interface backed by Kythe indices.
-  - With https://github.com/TreeTide/underhood, my goal is to provide a read-only view of code, geared for understanding and debugging. Having to maintain the ability to edit comes with constraints.
+  - https://github.com/TreeTide/underhood /202203/inactive
+    - UnderHood is a code browsing interface backed by Kythe indices.
+    - With https://github.com/TreeTide/underhood, my goal is to provide a read-only view of code, geared for understanding and debugging. Having to maintain the ability to edit comes with constraints.
 
 - https://github.com/facebookincubator/glean /BSD/202412/haskell/cpp/facebook
   - https://glean.software/

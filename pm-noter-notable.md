@@ -13,7 +13,7 @@ modified: 2023-11-28T14:48:45.910Z
 # guide(for notable/noter/paper)
 - features
   - market: lowcode(editor), playground(code+preview+pdf)
-  - versioning and branching: 基于oplog/events实现, draft/public
+  - versioning and branching: 基于oplog/events实现, draft/public, replay
   - collaboration-ready: 基于crdt
   - end-user database: 支持用户自定义数据和流程, multi views
   - mobile-editor: phone, pad
@@ -33,6 +33,7 @@ modified: 2023-11-28T14:48:45.910Z
   - 通用或单一的builder价值不大，但针对业务平台特别是app-store的builder对平台方和开发者的价值都很大
   - 🔍 search: rag, code-search, ai-chat
     - 针对代码优化的搜索可作为技术卖点和产品卖点，可参考github-code-search/algolia
+    - 文档和代码同步更新、搜索
     - repomap/manifest for repo
   - 🔡 coding  + 🛝 playground
     - 针对用户问题给出代码参考和可运行可操作的在线交互示例，特别针对css
@@ -40,6 +41,8 @@ modified: 2023-11-28T14:48:45.910Z
   - 🎞️ video: 自动生成视频，方便回放、教学
     - pdf/ppt > video
     - video templates for tiktok/bilibili
+  - table
+    - diff
   - markdown support with git-like database
     - widely used, enterprise-loved(易盈利)
     - text files works well with existing tooling
