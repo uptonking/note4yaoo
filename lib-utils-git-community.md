@@ -453,10 +453,8 @@ modified: 2023-08-29T10:13:31.070Z
 # discuss-git-diff
 - ## 
 
-- ## [Show HN: Diffs of Word documents, designed for humans | Hacker News _201305](https://news.ycombinator.com/item?id=5662214)
-- Word already has this capability through their track changes feature. You can even use it to open two documents and see a third document showing what has changed.
+- ## 
 
-- Pictures added or removed are not shown. Changed formatting is not shown. Text modified in text boxes is not shown.
 
 - ## 💡 [Show HN: Locust – “Git diff” over abstract syntax trees | Hacker News _202011](https://news.ycombinator.com/item?id=24999775)
 - I can't wait until the future when we have version control at the AST level instead of using text files.

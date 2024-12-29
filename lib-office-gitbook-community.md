@@ -348,14 +348,6 @@ modified: 2023-09-19T06:35:28.278Z
 
 - ## 
 
-- ## [Ask HN: “Git” for Microsoft Office? | Hacker News _202005](https://news.ycombinator.com/item?id=23245552)
-- A couple years back I built this: 
-- https://github.com/tomashubelbauer/modern-office-git-diff /js
-  - It is a pre-commit script which unpacks Office XML into text contents and tracks that alongside the source file. This way you can consider the binary to be a source of truth, but with each commit you also get a textual diff showing what changed content-wise. More or less
-  - This is achieved using a PowerShell script which unpacks the ZIP file to a tracked directory, formats the XML files for nice diff and tracks the formatted files as well.
-
-- An underused feature in MS Word is 'Compare documents' - It's under the Review tab on the ribbon as 'Compare'. It allows you to do a 'diff' style compare on two Word documents - it's invaluable for working out what changed between versions if the place you are working at doesn't have any other document tracking systems.
-
 - ## [Advice: I am planning on self-publishing a very complicated non-fiction book (indexes and endnotes and TONS of images) on two different platforms](https://www.reddit.com/r/selfpublish/comments/nhvtt6/advice_i_am_planning_on_selfpublishing_a_very/)
 - Just wanted to say: the more images you have, the more difficulties you will have getting distributed on the ebook platforms 
   - If you 're doing physics, maybe SVG images might consume significantly less space for ebooks although Kindle support would be iffy.

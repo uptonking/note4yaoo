@@ -256,15 +256,6 @@ modified: 2023-09-12T09:36:25.608Z
   - When any Redux action modifies the game state, you listen for the patch using Immer, and push it into an array of the game moves. When you need to replay, you just iterate through the array. To undo, just pop items off the array.
   - If you want to do this without Immer, Redux has some docs that describe history and undo functionality with code examples
 
-# discuss-version/history
-- ## 
-
-- ## [Ask HN: Best way to version control your notes or documents? | Hacker News _202302](https://news.ycombinator.com/item?id=34690171)
-- I recently switched from using Google Docs to storing my notes in Markdown/Git and making them available just to myself via Docusaurus on a private Gitlab Pages repo.
-
-- I tried using git for general note taking and I hated it. I used Foam, which is markdown inside of VSCode synced to Git, accompanied with GitJournal which allows you to update the same markdown files from a mobile device.
-
-- For plaintext documents in Emacs the diff command is useful but enabling the fossil-mode has more steps, and Fossil has extra plumbing for ticketing and webui.
 # discuss-rrweb
 - ## 
 
@@ -365,6 +356,7 @@ modified: 2023-09-12T09:36:25.608Z
   - 缺点是子元素不可交互，视频体积大
 - 录制DOM方案的优点是元素可点击，
   - 缺点是不支持浏览器外的元素，部分元素可能错位或缺失
+  - 方便回放时渲染与操作时不同的交互，如diff-view
 
 - 👷🏻 Core team member of rrweb here. rrweb and other tools that do user session recording heavily depend on the mutation observer to surface changes to a webpage, each of those changes gets serialized into a JSON event and get captured for later viewing.
   - part from the things we can get directly from the Mutation Observer we also end up monkey patching things like the WebGLRender... and record each call that is done to it so that we can play those back in the same order for replay.
@@ -412,7 +404,7 @@ modified: 2023-09-12T09:36:25.608Z
   - Unlike the standard undo/redo system in most software, it allows you to recover *any* past state of a buffer (whereas the standard undo/redo system can lose past states as soon as you redo). 
   - Emacs’s undo system is quite frankly amazing. Not only can you recover any state through an arbitrary number of undo and redo operations, but you can also localize the undo/redo operations to a selected region of the buffer.
 
-- ## how would you write an undo system for a raster graphics illustration/painting application?
+- ## 🤔 how would you write an undo system for a raster graphics illustration/painting application?
 - https://twitter.com/FreyaHolmer/status/1441541405298630657
   - there's some low hanging fruit - only storing the rectangular region of the pixels that were changed, and its content, would save a lot
   - maybe some RLE compression? especially when the alpha channel is 0, but that would add compression/decompression to the time undo/redo takes
@@ -421,7 +413,6 @@ modified: 2023-09-12T09:36:25.608Z
 - I don’t know if it’s a good way, but what I’ve done in the past is get the delta, changed pixels, between before/after, and use RLE style compression - all non-changed pixels would compress away as “empty”. Applying the delta would undo the action.
 - Reapplying deltas to a buffer repeatedly is likely to introduce small variations and possibly artifacts. The only system I'd seen in the past worked via snapshots and a stack of actions. Curious how PS Lightroom works. Has a "complete" history and is non destructive.
 - Hm. I wonder if you could take that idea further with a quadtree style structure? Slice down to a min cell size to cull transparent cells... or would that contain too much overhead for the tree? Could make pixel storage more challenging.
-
   - iirc photoshop does it by storing every version and sharing overlapping data between them using a persistent data structure.
 
 - this is far and away the best solution in my experience, for any kind of editor (outside of implementation practicality). i normally store the entire state each undo step in my tools since like. i'm never working with a lot of data, its super easy to implement and never breaks
@@ -470,7 +461,6 @@ modified: 2023-09-12T09:36:25.608Z
 - Refing some stuff other people mentioned in the comments, but keeping a hist of modified but also keeping a space-efficient history of each tile sounds like something a modern GPU's sparse-texture/sparse-residency would perfectly lend itself to
   - Maintain a current-state image, a change happens, you mark the tiles touched, save their state(lots of compression decisions happen here) and an undo would just be rebinding those tiles to that memory, and the older it gets, it goes from vram>ram>disc. Sparse textures are soo good
   - I've reverse engineered Paintool Sai, and they do a tile-based approach. I haven't looked at the undo system in particular, but I have reason to believe that they probably do just-that for their undo system based on how it's their core intermediate format
-  - 
 - 
 - 
 - 

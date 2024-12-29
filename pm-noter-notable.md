@@ -12,8 +12,8 @@ modified: 2023-11-28T14:48:45.910Z
 
 # guide(for notable/noter/paper)
 - features
-  - market: lowcode(editor), playground(code+preview+pdf)
-  - versioning and branching: 基于oplog/events实现, draft/public, replay
+  - market: lowcode(editor/automation), playground(code+preview+pdf)
+  - versioning and branching: 基于oplog/events实现, draft/public, replay, diff
   - collaboration-ready: 基于crdt
   - end-user database: 支持用户自定义数据和流程, multi views
   - mobile-editor: phone, pad
@@ -31,6 +31,9 @@ modified: 2023-11-28T14:48:45.910Z
     - 移动优先的markdown知识库
     - automation(lowcode)
   - 通用或单一的builder价值不大，但针对业务平台特别是app-store的builder对平台方和开发者的价值都很大
+  - ⌛️ version history
+    - diff
+    - replay: 可调倍速，回放时的表现可以和操作时不同，在回放模式下显示diff-view更直观清晰
   - 🔍 search: rag, code-search, ai-chat
     - 针对代码优化的搜索可作为技术卖点和产品卖点，可参考github-code-search/algolia
     - 文档和代码同步更新、搜索

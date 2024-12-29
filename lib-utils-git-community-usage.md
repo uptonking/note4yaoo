@@ -43,6 +43,17 @@ modified: 2024-05-27T09:12:06.925Z
 
 - they could have just used `git clone --depth 1`; 
   - Not everyone knows about this trick, unfortunately
+
+- ## 🤔 [Ask HN: Why hasn't Git been adopted outside of software engineering? | Hacker News _202205](https://news.ycombinator.com/item?id=31406550)
+- Maybe the better question to ask is "why isn't file reversion control adopted more outside of software engineer?"
+  - Git a is distributed version control system that most people shouldn't have to deal with. It has awful tools and doesn't work well with binary files, large files and moved files. Just an example: How do you diff two copies of an excel document with Git?
+  - Most people don't have to deal with multiple "master" branches with no single source of truth because that's really what Git is for.
+  - I believe a tool like Dropbox or even centralized version control systems like Subversion or Perforce are better positioned to solve this than Git.
+
+- Git isn't the best for office documents. Revision marking (aka, change tracking), document comparisons, and merging are all available in Office suites. Git isn't really used here because there features predate Git, operated on binary files or complex XML documents (neither of which are conducive to diffs).
+  - Git isn't good for databases or data lakes. The files are huge and typically aren't modified (CSV) or are binary/compressed (Parquet).
+
+- git (and more generally diff) is not very efficient for detecting and showing moved text (which it displays as deletion+addition)
 # disccuss-usage-github
 - ## 
 

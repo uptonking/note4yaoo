@@ -49,7 +49,7 @@ modified: 2021-07-20T13:50:23.433Z
   - 🌰lts: vscode/ide, git/vcs
   - vscode: monaco-editor + electron, code-server, sourcegraph
   - codemirror/prosemirror: state + view + commands + transform/ot/collab + virtualized
-  - version-history: rrweb
+  - version-history: rrweb, diff, format(.fodt)
   - rspack: js plugin; rolldown-wasm
   - animation: motion(dom/svg)
 
@@ -128,8 +128,8 @@ modified: 2021-07-20T13:50:23.433Z
 
 - 通用能力/features
   - collab, realtime
-  - version-history + sync, time travel
-  - 操作与回放，倍速播放
+  - version-history + Sync
+  - 操作与回放, time travel，倍速播放
   - ai
 
 ## solutions: inter(re)active knowledge-base/wiki
@@ -150,7 +150,7 @@ modified: 2021-07-20T13:50:23.433Z
   - rowy       (apache2/firebase+tinymce5)
   - baserow        (MIT/django+nuxt2)
   - ckan/datapian
-- ✨ ~~workflow~~ > directus
+- ✨ ~~workflow/automation~~ > directus
   - n8n           (AGPL/typeorm+vue2+jsplumb)
   - budibase      (AGPL/knex+svelte)
   - automatisch   (AGPL/knex+graphql+slate)

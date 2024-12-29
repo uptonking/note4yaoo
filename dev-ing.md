@@ -495,7 +495,7 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
   - ~~私有项目的导入~~
   - ~~多标签打开同一个cde，文件树的头像会显示2个~~
 
-## 120
+## 12x
 
 - dev-log
   - ?
@@ -569,6 +569,7 @@ console.log(
   - 修复文件树将文件夹拖到文件夹不work的问题
   - 编辑器行号宽度样式优化
   - action路径超出卡片宽度
+# dev-12-hotkeys-enhance-vs-forwarded-ports-vs-bug-init-loading-vs-diff-anime-at-ot-event
 
 ## 1230
 
@@ -576,19 +577,26 @@ console.log(
   - `ApplicationAvailable`是否还有必要存在
   - 现有实现未考虑多端口的场景，每次sdk收到manager的`portOpen`事件，都会触发`ApplicationAvailable`到前端，多端口时若port减少一个是否该触发
 - ports待改进的问题
-  - 刷新页面时如何恢复当前已开放的端口，及已在webview打开的端口
+  - 刷新页面时如何恢复当前已开放的端口、及已在webview打开的端口
     - A1: 由于容器会自动失活，每次syncPlaygroundInfo事件，由manager将ports放到该事件里面
     - A2: 每次syncPlaygroundInfo事件，manager立即发送httpProxy事件给前端
   - 手动点击portUrl会更新当前webview标签的url
-  - 当webview支持多标签时，portUrl后面的currentOpened标记让人困惑
-  - 非前端项目时，webview打开是什么体验，是否可输入url
+  - ❓ 当webview支持多标签时，portUrl后面的currentOpened标记让人困惑
+  - 对非前端项目或未点击run时，点webview打开是什么体验，是否可输入url
 
+- 上周
+  - 花了很多时间和ai侧联调agent工作时打字的时机和前端效果，测试了几种方案已上线staging，大家体验后有问题可以反馈
+  - 排查并解决ai连接ide-server超时并不断重试的新问题
+  - 修复了cde的一些issues，如ai在terminal工作时自动打开
+  - 调整了一部分端口转发的逻辑
+- 本周
+  - 完成转口转发功能的增强
+  - 快速完成迭代剩余的工作: 删除移动文件优化、cde布局空间优化
 - 昨天
   - 联调ai工作及regenerate的整体效果
   - 增强端口转发的url更新逻辑
 - 今天
-  - 增强端口转发的url更新逻辑和交互体验
-  - 完成删除移动文件在live和回放模式的表现
+  - 增强端口转发的url更新逻辑和交互体验，需要讨论确定技术
 
 ## 1227
 
@@ -966,7 +974,7 @@ function omitSet(obj, excludes) {
   - 实现删除移动重命名文件的回放打开体验
 - 今天
   - 修复cde高优先级的issues
-# dev-11
+# dev-11-diff-anime-duration-vs-file-tree-search-vs-add-to-chat-vs-hotkeys
 
 ## 1129
 

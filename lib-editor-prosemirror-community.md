@@ -124,7 +124,6 @@ class TodoListView {
 - Making everything flow through Redux seems appropriate as it avoids managing various event listeners. It seems you’ve separated the UI & API state into Redux stores and PM specific state into plugins?
   - To connect back up to application logic, we are just using the same redux store in both places (including relevant prosemirror-plugin state). That redux store is also responsible for the editor state (just holds a reference to prosemirror-state). This also means that the state is available for other application components through selectors/actions/etc.
 
-
 - ## ProseMirror – A toolkit for building rich-text editors on the web
 - https://news.ycombinator.com/item?id=18998042
 - What sets ProseMirror apart from the rest (Slate, Quill, Trix, Draft, etc.) is - ProseMirror isn't simply a library. 
@@ -156,9 +155,8 @@ class TodoListView {
   - ProseMirror on the other hand had the concept of Decorators (https://prosemirror.net/docs/ref/#view.Decorations) for such a case. That was just one example.
   - More from the author of Quill himself
 
-- ## ProseMirror 1.0 
-- https://news.ycombinator.com/item?id=15465125
-- Author of Quill here. 
+- ## 🎯 [ProseMirror 1.0 _201710](https://news.ycombinator.com/item?id=15465125)
+- 👷🏻 Author of Quill here. 
   - Interested in hearing Marjin’s thoughts but here are some of my main observation is at a high level Prosemirror is much more willing than Quill to sacrifice simplicity for power. 
   - This value difference manifests in the target audience, architecture and API design:
   - Quill can be used for the get going quickly drop in use case. 

@@ -240,7 +240,20 @@ export default FrontPage
 
 - ## 
 
-- ## 
+- ## [Say Yes to Markdown, No to MS Word | Hacker News _201803](https://news.ycombinator.com/item?id=16592356)
+- I've spent the bulk of my career on content-driven apps, ranging from basic CMS systems to platforms that manage workflow of large, complex, legal documents. 
+  - And I can tell you that while Markdown works for basic formatting of short documents, it falls short when you work with people whose entire lives revolve around long documents with complex formatting. (Attorneys, policy writers, etc.) 
+  - A UX that exposes markdown to that crowd just isn't widely accepted. 
+  - And that is before we even get into actual features like TOCs, headers, pagination, margin control, nested tables, etc.
+  - Now, the benefits of Markdown listed in the article are all true -- but also only loosely tied to the UX of the actual document authors and editors.
+
+- I've tried to switch to Markdown almost completely for portability, but I end up having to return to Word frequently to accomplish certain features. IMO, Markdown's biggest flaw was that the original feature set was incomplete, and everyone has tried to fill in the gaps (TOC, tables, references, etc.) their own way instead of settling on an updated standard.
+
+- MS Word really has some features that are missing that would be needed for a markdown editor to make a dent in what we need.
+  1. auto-generating table of contents
+  2. easy table creation/manipulation
+  3. header/footer and page numbering
+  4. comments/edits (maybe integrated with git?)
 
 - ## Learned about quadtruple backticks in Markdown yesterday and... okay, well, it might not be life-saving, but it sure is handy.
 - https://twitter.com/thorstenball/status/1780155196196196490

@@ -36,7 +36,14 @@ modified: 2024-08-11T07:22:03.920Z
 
 - ## 
 
-- ## 
+- ## 🚀 [Excel Labs, a Microsoft Garage Project | Hacker News _202305](https://news.ycombinator.com/item?id=36081851)
+- Some things in Excel have not improved since 2003, that should be fixed before toying with "AI" . For example, when importing a CSV:
+  - Excel cannot guess the encoding of the file
+  - Excel cannot guess the separators either
+
+- Excel lately is turning into a really compelling product, using functions such as sequence (dynamic arrays), lambda (pure functions) and let (defining sub-variables). You'd think you're coding in a pure functional language, and that's great
+
+- The universal language and portability of a spreadsheet is really hard to beat.
 
 - ## 🚀 [Bricks - Show HN: Fast Modern Spreadsheet | Hacker News _202403](https://news.ycombinator.com/item?id=39817041)
 - 👷🏻 Co-founder/CTO here.
