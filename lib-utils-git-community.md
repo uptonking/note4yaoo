@@ -345,6 +345,23 @@ modified: 2023-08-29T10:13:31.070Z
 - 
 - 
 
+# discuss-git-fs
+- ## 
+
+- ## 
+
+- ## [Gitfs: Version Controlled File System | Hacker News _202108](https://news.ycombinator.com/item?id=28263356)
+- To be clear on what this is, it allows you to mount a git repo and use writes to the filesystem to autocommit and push to the remote, effectively using git and a server to synchronize directories between remote hosts.
+  - That is not the same thing I would think of as a version-controlled filesystem. That would be something more like the ClearCase MultiVersion Filesystem, which allows you to define versioned views of an entire filesystem. 
+
+- I expected it to be closer to Microsoft's GVFS
+  - There, they used a filesystem interface to speed up checkouts for large repositories.
+- VFS for Git was superceded by https://github.com/microsoft/scalar and then many of the features were merged into mainline git, so what is left now is a thin shell around git features in the form of MS's forked git binary
+- VFS for Git solves the issue of having gigantic bloated monorepos used by thousands of devs, making sure user efficiently downloads only what is needed for him.
+
+- NixOS can also move between system generations seamlessly. The approach is entirely different though, the system is fully defined by its config files and will be recreated from scratch each time it is changed (except /home and /var, mostly).
+
+- It's different from git-annex in that it's using git itself (git-annex just uses git to track metadata/hash to facilitate large files), but there's a similarity to git-annex's 'Git-annex Assistant' in how it "any subsequent changes made to the files will be automatically committed to the remote".
 # discuss-git-db
 - ## 
 
@@ -454,7 +471,6 @@ modified: 2023-08-29T10:13:31.070Z
 - ## 
 
 - ## 
-
 
 - ## 💡 [Show HN: Locust – “Git diff” over abstract syntax trees | Hacker News _202011](https://news.ycombinator.com/item?id=24999775)
 - I can't wait until the future when we have version control at the AST level instead of using text files.

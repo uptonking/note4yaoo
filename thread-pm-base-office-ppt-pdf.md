@@ -130,7 +130,22 @@ modified: 2024-01-11T15:57:32.182Z
 - ## 吉光卡片，这是一款高颜值的文字排版设计 App，提供了丰富的模板以满足各种场景需求，符合我对 iOS 用户的想象。
 - https://x.com/austinit/status/1800390337082597519
 
+# discuss-pdf-format
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [History of the PDF | Hacker News _202312](https://news.ycombinator.com/item?id=38511697)
+- PDF is a remarkable creation. It has some notable weaknesses, such as the fact that its color channel for images does not include alpha, and thus needs masks, but the fact that it covers so much visual complexity in a relatively compact form is just amazing. (BTW: Its graphics model is strictly from Adobe Postscript, but PDF content streams are not programs.)
+
+- IBM tried to push a competitor in the 1990s…BookManager was an initially mainframe (VM/CMS, MVS, etc) combination of viewer program and proprietary format
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

@@ -44,6 +44,23 @@ modified: 2024-05-27T09:12:06.925Z
 - they could have just used `git clone --depth 1`; 
   - Not everyone knows about this trick, unfortunately
 
+- ## 🤔 [Ask HN: Can we do better than Git for version control? | Hacker News _202312](https://news.ycombinator.com/item?id=38590080)
+- Git is absolutely not suited to the workflow of several industries, including the one I work in: games.
+  - Git, even with LFS and partial clone and shallow copies and fsnotify just falls apart at this scale. Add to that the necessity for less-technical people (artists, designers, VFX, audio, etc) to use it, and it is really just a non starter.
+  - I absolutely loathe(讨厌；厌恶) Perforce (having used and occasionally admin'd it professionally since 2007), but I begrudgingly(begrudgingly) admit that is is currently the only publicly available VCS that can fulfill all of the requirements of this industry in a practical way. Plastic and the others just aren't there yet.
+- Microsoft had a bunch of solutions to handle their massive Windows repo: VFS for Git (GVFS), Scalar, and now it has a bunch of MS specific patches on top of the official git client, but apparently that one is also not required any more as partial clone is now supported on azure as well (which is another such implementation from Microsoft employees that made it to both GitHub and upstream git).
+
+- Git is basically content-addressable storage with a couple of layers on top (heads/tags/trees) which is itself content-addressable storage. If you can offload that storage to a remote, you still have git... and can use git as you've always used git. The tricky part is making it feel like the storage is local and your own, instead of shared.
+
+- That’s why you need a binary repository like Artifactory and not store your large files in Git. But you can still track them in Git with the large files in a binary repository like Artifactory.
+
+- Patch based VCS systems (Darcs, Pijul) are apparently better.
+
+- Git views the codebase as mutable. It's really well set up for changing the historical record to reflect how you wish it had been done.
+  - Fossil views the historical record as immutable. Your sequences of mistakes, iteration, failed experiments are all diligently recorded. 
+
+- Git is great for keeping track of logical history, but personally I find that it is missing tools for handling physical history. Reflog is a step in the right direction but it has a limited size and AFAIK it is not possible to share a reflog between clones. Which leaves "cp -r repo repo.backup" as the best option.
+
 - ## 🤔 [Ask HN: Why hasn't Git been adopted outside of software engineering? | Hacker News _202205](https://news.ycombinator.com/item?id=31406550)
 - Maybe the better question to ask is "why isn't file reversion control adopted more outside of software engineer?"
   - Git a is distributed version control system that most people shouldn't have to deal with. It has awful tools and doesn't work well with binary files, large files and moved files. Just an example: How do you diff two copies of an excel document with Git?
