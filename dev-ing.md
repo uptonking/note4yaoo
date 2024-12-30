@@ -566,23 +566,57 @@ console.log(
   - terminal在follow时自动打开，在非follow时显示更新的红点
   - webview自动打开, 刷新时保持打开
   - terminal放大缩小折叠展开后，光标自动聚焦在terminal
+  - terminal在执行时需要自动滚到末尾，方便显示最新输出信息
   - 修复文件树将文件夹拖到文件夹不work的问题
   - 编辑器行号宽度样式优化
+  - 编辑器打开时自动跳到diff视图第一个变更块的位置
   - action路径超出卡片宽度
+  - save-all, reject-all
 # dev-12-hotkeys-enhance-vs-forwarded-ports-vs-bug-init-loading-vs-diff-anime-at-ot-event
+
+## 1231
+
+- 昨天
+  - 讨论并调整了端口转发的事件和逻辑，进度50%
+  - 排查ai打字动画有时仍然出不来的问题，跟踪了ide-server侧的读写文件逻辑，待会儿讨论下解决方案
+- 今天
+  - 解决ai打字动画的问题
+  - 增强端口转发的url更新逻辑和交互体验
+  - 开始删除移动文件优化
 
 ## 1230
 
+- ai打字动画的diff视图有时不显示的原因排查
+  - 正常 745479780069527552
+  - 异常 745477576218263552
+  - agent_write_file触发的FileTree_writeFile有时没执行完，而打开文件触发的FileTree_readFile先执行完了
+    - 可能的原因 fs.writeFile的callback里面resolve太晚
+    - writeEditorCRDTInfoToFile 执行的太晚，没有await
+- ✅ 修改已有文件时，正常的流程，
+  - ai在0.004ms之内做完了 agent_write_file > open-file-refresh, 然后设置 action-completed
+  - ide-server在0.004ms内完成了 agentWriteFile > toMQ/fileContentUpdate/begin/execute > return null
+    - 接着 file > `updateFileChangeToFeatureFile` > all-special-file (> makeTree) > self-file (> makeTree) > all-fileChange > paas-filePull-toDocker
+- ❌ 修改已有文件时，异常的流程, 👉 原因是open-file事件的逻辑比write-file执行的更快
+  - ide-server在0.004ms内完成了 agentWriteFile > toMQ/fileContentUpdate/begin/execute > return null
+    - 接着 file > all-special-file > self-file > paas-filePull-toDocker > `updateFileChangeToFeatureFile` > makeTree > all-fileChange 
+    - 从write结束到打开file 
+      - 17:23:24.106510  >  17:23:25.107531
+      - 20:23:34.731785  >  20:23:34.731786
+
 - ports现有逻辑的问题
-  - `ApplicationAvailable`是否还有必要存在
-  - 现有实现未考虑多端口的场景，每次sdk收到manager的`portOpen`事件，都会触发`ApplicationAvailable`到前端，多端口时若port减少一个是否该触发
+  - `ApplicationAvailable`事件是否还有必要存在
+  - 👉 1024paas的原有实现是，每次ide-server收到manager的`portOpen`事件，都会触发`simulator > ApplicationAvailable`到sdk前端，这个实现未考虑多端口的场景，多端口时若port减少一个是否该触发
+  - 👉 clacky的实现是，每次ide-server收到manager的`portsChanged`事件，都会触发`ports`事件到sdk前端，前端能感知端口增减但不能确定何时该打开webview
+  - 新增`availablePorts`
 - ports待改进的问题
   - 刷新页面时如何恢复当前已开放的端口、及已在webview打开的端口
     - A1: 由于容器会自动失活，每次syncPlaygroundInfo事件，由manager将ports放到该事件里面
-    - A2: 每次syncPlaygroundInfo事件，manager立即发送httpProxy事件给前端
-  - 手动点击portUrl会更新当前webview标签的url
+    - A2: 每次syncPlaygroundInfo事件后，manager立即发送 httpProxy 事件给前端
   - ❓ 当webview支持多标签时，portUrl后面的currentOpened标记让人困惑
+  - 端口减少时，webview的url是切换到下一个，还是显示占位符背景图
+    - ~~在httpProxy发来前，webview仍会显示白屏~~
   - 对非前端项目或未点击run时，点webview打开是什么体验，是否可输入url
+  - 手动点击portUrl会更新当前webview标签的url
 
 - 上周
   - 花了很多时间和ai侧联调agent工作时打字的时机和前端效果，测试了几种方案已上线staging，大家体验后有问题可以反馈
@@ -592,11 +626,12 @@ console.log(
 - 本周
   - 完成转口转发功能的增强
   - 快速完成迭代剩余的工作: 删除移动文件优化、cde布局空间优化
+- 今天
+  - 增强端口转发的url更新逻辑和交互体验，需要讨论确定技术
+  - 开始删除移动文件优化
 - 昨天
   - 联调ai工作及regenerate的整体效果
   - 增强端口转发的url更新逻辑
-- 今天
-  - 增强端口转发的url更新逻辑和交互体验，需要讨论确定技术
 
 ## 1227
 
