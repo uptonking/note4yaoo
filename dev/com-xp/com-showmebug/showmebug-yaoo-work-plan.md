@@ -2373,6 +2373,15 @@ const playbackInfo = [
   - this.playgroundItem.consumerLayer(data.dockerId); 
   - this.playgroundItemInfo = cloneDeep(layer.playgroundItemInfo); 
 
+- Events. ForceRefreshFile
+  - const isFileExist = await this.currentPlaygroundItem.checkIfThePathExists(
+  - if (!isFileExist), not exist
+  - let OTInfo = this.currentPlaygroundItem.playgroundHistoryCRDT.queryEditorOTInfoByPathFromCache( path, ); 
+  - if (fileByte / (1024 * 1024) >= 16), this.transmit('file', fileJson); largeSuffix = 'd42.large'
+  - this.broadcastAll('file', fileJson, true); 
+
+- 
+- 
 - 
 - 
 - 
