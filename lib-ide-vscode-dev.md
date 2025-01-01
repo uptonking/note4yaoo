@@ -11,6 +11,7 @@ modified: 2024-08-24T16:15:11.456Z
 
 - pros
   - 完善的编辑器和ide功能，包括 editor/workbench/files/search/ext/cmd-palette
+  - 支持运行在多种环境，如 web-memory, web-node-server, electron
   - theia is licensed under EPL, not as friendly as vscode/MIT
 
 - cons

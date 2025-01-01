@@ -49,7 +49,7 @@ modified: 2021-07-20T13:50:23.433Z
   - 🌰lts: vscode/ide, git/vcs
   - vscode: monaco-editor + electron, code-server, sourcegraph
   - codemirror/prosemirror: state + view + commands + transform/ot/collab + virtualized
-  - version-history: rrweb, diff, format(.fodt)
+  - version-history: rrweb, diff, format(.fodt), video-but-auto-update
   - rspack: js plugin; rolldown-wasm
   - animation: motion(dom/svg)
 

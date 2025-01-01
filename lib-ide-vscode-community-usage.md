@@ -63,6 +63,32 @@ modified: 2024-08-24T16:52:53.996Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [I can't stand using VSCode so I wrote my own | Hacker News _202404](https://news.ycombinator.com/item?id=40106157)
+- This is the way. Anytime I have had issues with an open source project, creating a PR even if it's not great will often have it taken over, improved and merged.
+
+- VSCode is still on the top of accessibility, so when you can claim that you work perfectly with a screen reader, you will convince me to switch.
+  - people often overlook accessibility and other essential features of a modern editor, you telling me that your rudimentary rust editor is faster than vscode? and? people don't use it because it's fast (it's not).
+
+- One of the benefits of Electron is being able to build the same app for multiple operating systems. When writing GUI app using native OS calls, how does one make sure the code is compatible with all three major operating systems?
+  - Folks did this plenty prior to Electron, either by using cross-platform GUI toolkits (GTK and Qt both run on Windows, Java's been doing this forever with Swing and JavaFX, etc), or by writing GUIs for multiple toolkits/OSes that work with the same/similar core application logic.
+  - Electron makes it easier to build cross-platform apps, and certainly cheaper, but it's not like it's the only way to do it.
+
+- ## [Microsoft is introducing hidden APIs to VS Code only enabled for Copilot? | Hacker News _202410](https://news.ycombinator.com/item?id=41907350)
+- I don’t see any problem here. They spend money, effort, time to develop their products. Why do they need to give that products for free to everyone, or even their competitors?
+
+- I discovered that VSCode has a set of APIs for adding SSH tunneling, and under normal circumstances you must launch vscode with special flags to be able to use them. Somehow their built-in JavaScript debugging extension can use these APIs without any issues.
+  - And you can hardly find any public information about these APIs. Well, unless someone asks -- As of 2 years ago, they didn't have any plans to "finalize" these APIs, i.e. make them public. You are advised to find other workarounds (which do work).
+
+- Microsoft has been very clear about their business model of VSCode -- similar to Chromium, the base product is free and you can do whatever you want, but extension marketplace/remote/GitHub Copilot are proprietary.
+
+- they have a number of "inline completion" APIs standardized as both VSCode APIs and LSP protocol (upcoming).
+
 - ## [Visual Studio Code: Secrets of Regular Expression Search | by Nikhilbaxi | Medium _202309](https://medium.com/@nikhilbaxi3/visual-studio-code-secrets-of-regular-expression-search-71723c2ecbd2)
 - (.+) : This is used to find the content between the unknown. For example, we need to find where the API call is defined.
   - `/api/user/${userId}/address/` or `/api/user/123/address/` ; 

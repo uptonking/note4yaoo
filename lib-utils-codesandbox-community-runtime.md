@@ -118,7 +118,34 @@ modified: 2024-05-12T17:20:03.132Z
   - service worker 中监听 fetch 事件当然是可以拦截脚本的请求的，不信你可以试试
   - 包括esm加载时的请求都可以被拦截
 
+# discuss-cloud-env
+- ## 
+
+- ## 
+
+- ## [Cloud, why so difficult? (2022) | Hacker News _202306](https://news.ycombinator.com/item?id=36488733)
+- Cloud is difficult because it stiched together from fragments of old applications and approaches.
+  - Cloud will be easy with consistent approach. One or very few languages for everything, from configuring resources, to configuring policies and writing code.
+  - Cloud will be easy with opinionated tooling. No Dockerfile and supporting of miriads languages. Just file with dependencies and folder with source code.
+  - Cloud will be easy with opinionated approach to configuration. No need to support PASSWORD env, PASSWORD_FILE env, some secret access service. Only one secure and simple way.
+
+- 
+- 
+
+- ## [Cloud desktops aren't as good as you'd think | Hacker News _202210](https://news.ycombinator.com/item?id=33106234)
+- Latency for every keystroke, your brain starts to add latency to latency that is not there to compensate for a life lived wearing citrix latency goggles.
+
+- Nothing beats working directly on a fast but quiet workstation sitting next to my table.
+
+- With cloud gaming you can stream 4K games at 60FPS, with clarity and quality for fast moving objects.
+  - Why does remote desktop still shit itself when I move around MS Word with a few pictures?
+
+- 
+- 
+
 # discuss-runtime-vm
+- ## 
+
 - ## 
 
 - ## 

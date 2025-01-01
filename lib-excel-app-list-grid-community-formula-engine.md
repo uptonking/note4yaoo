@@ -16,6 +16,28 @@ modified: 2023-11-12T16:48:11.308Z
 # discuss-formula
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [A Fast Excel Formula Parser and Evaluator | Hacker News _202205](https://news.ycombinator.com/item?id=31365777)
+- I’m surprised that Excel formulas have such poor coverage in text editors like NP++ or VSCode. Developing horribly convoluted formulas with nested IF statements in the formula bar is painful, and the PowerQuery editor doesn’t even have syntax highlighting.
+
+- The lack of decent syntax highlighting, auto-indentation or “IDE mode” instead of the formula bar can be painful. Especially when working with models developed by others.
+  - On the other hand, you can see it as a feature. It forces you to keep your formulas short, break them down in helper columns and overall make your logic cleaner. 
+
+- In the old Excel with only cell grid references I would agree. However in "new Excel" with LET expressions and LAMBDA it is now possible to write legible and self-documenting code where the lack of decent editing support is becoming a problem.
+
+- It’s really new but the Advanced Formula Editor tackles this, and goes further. It’s a collaboration between the Excel team and MS’ Cambridge boffins.
+
+- Python and Pandas > Excel for anything outside of exploratory spreadsheet-y like calculations
+
+- nothing can compete with Excel in terms of modeling speed and agility. A capable analyst can do miracles with Excel, find other routes to a solution, and then produced model can go to Python/Pandas developer for the processing optimization.
+
+- bamboo seems interesting but their acquisition by Databricks stopped development on Bamboo last year.
+
+- Excel uses IEEE 754 double precision which stores up to 17 significant digits but the Excel UI itself only displays up to 15 significant digits.
+
 - ## [Excel formulas in JavaScript | Hacker News_201404](https://news.ycombinator.com/item?id=7638879)
 - 
 - 

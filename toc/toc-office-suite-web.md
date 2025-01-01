@@ -134,10 +134,12 @@ modified: 2023-03-09T13:47:07.317Z
   - Encrypted, secure, user-owned productivity suite
   - 依赖slate.v0.47、handsontable.v7
 # office-viewer
-- https://github.com/cweijan/vscode-office /MIT/202401/js
+- https://github.com/cweijan/vscode-office /MIT/202412/js
   - 让VSCode支持预览PDF, Excel和Word等格式, 并增加markdown所见即所得编辑器
   - 支持预览xlsx, docx, svg, pdf, zip等格式, 后来才增加markdown编辑器
-  - 该扩展在vscode内集成Vditor
+  - 依赖docxjs、sheetjs、vditor(md)、pdfjs
+  - [Please support PPT/PPTX files _202211](https://github.com/cweijan/vscode-office/issues/166)
+    - I have done research on this, but due to the complexity of ppt/pptx, it is impossible to display it in js.
 
 - https://github.com/501351981/vue-office /MIT/202401/js/vue/react
   - https://501351981.github.io/vue-office/examples/docs/

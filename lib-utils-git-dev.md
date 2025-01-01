@@ -15,6 +15,7 @@ modified: 2023-08-29T10:11:26.348Z
   - revision history
   - 使用ssh数据传输的方案有官方支持
   - 传输大文件的方案LFS有官方支持
+  - 传输海量文件的方案，可参考gvfs/scalar
 
 - cons
   - 体积会越来越大

@@ -34,6 +34,15 @@ modified: 2024-12-14T17:28:23.214Z
 
 - Tree sitter grammars generate a complete/concrete syntax tree with incremental updates, they necessarily have to be able to represent invalid source text (because users will type it!).
   - If you're using a tree-sitter grammar as the input to a compiler (which is not what its designed for) you need to write a pass to convert from CST to AST, as you normally would.
+# discuss-vscode-web-storage
+- ## 
+
+- ## 
+
+- ## [Use `vscode-vfs` (instead of `gitlab-web-ide` ) as Web IDE file system scheme · Issues · GitLab.org / gitlab-web-ide · GitLab _202406](https://gitlab.com/gitlab-org/gitlab-web-ide/-/issues/357)
+  - Update the Web IDE file scheme to vscode-vfs (from gitlab-web-ide). It looks like this is a hardcoded scheme in a number of VSCode logic (and even extensions).
+  - VSCode has some built-in logic which suggests that the main virtual file system used in the browser should be `vscode-vfs` . This blocks us from using enableWorkspaceTrust: true
+
 # discuss
 - ## 
 

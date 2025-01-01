@@ -287,3 +287,6 @@ $if($gt(%totaldiscs%,1),%discnumber%-,)$if($and(%albumartist%,%tracknumber%),$nu
 - 王安迪
   - andywangkingluckii@outlook.com
   - AnDy.20080313
+
+- 唐银生
+  - 农业银行 6228 4804 7850 9920 979

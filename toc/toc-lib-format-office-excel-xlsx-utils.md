@@ -186,6 +186,18 @@ modified: 2023-01-09T11:04:13.958Z
   - This is largely a re-write of Handsontable's https://github.com/handsontable/ruleJS, and https://github.com/sutoiku/formula.js/.
   - The parser was derived from Handsontable's, and many of the formulas were created with FormulaJS's formulas as a reference point.
 
+- https://github.com/LesterLyu/fast-formula-parser /MIT/202205/js/inactive
+  - https://lesterlyu.github.io/#/demo/fast-formula-parser
+  - Parse and evaluate MS Excel formula in javascript
+  - A fast and reliable excel formula parser in javascript. Using LL(1) parser.
+  - This very excellent project is now being managed as part of SheetXL
+  - [A Fast Excel Formula Parser and Evaluator | Hacker News _202205](https://news.ycombinator.com/item?id=31365777)
+  - https://github.com/sheetxl/sheetxl /MIT/NonOpen
+    - https://www.sheetxl.com/
+    - SheetXL is a spreadsheet and a data-grid. Fast⚡, beautiful, and compatible with Excel. 
+    - Built using React, Typescript, and MUI
+    - Built from the ground up using React
+
 - https://github.com/borgar/fx /js
   - Utilities for working with Excel formulas
   - A tokenizer, parser, and other utilities to work with Excel formula code, specifically syntax highlighting.

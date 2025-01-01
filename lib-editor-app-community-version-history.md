@@ -112,7 +112,35 @@ modified: 2024-07-18T15:52:38.176Z
 
 - ## 
 
-- ## 
+- ## ⌛️🎞️ [CodeTour: VS Code extension to record and play guided walkthroughs of codebases | Hacker News _202103](https://news.ycombinator.com/item?id=26488610)
+- A killer feature would be doing semantic analysis to attach steps to AST nodes instead of lines. EG a class or function.
+  - Without this it seems tours could be broken/outdated very quickly in active code bases.
+- 💡 IMHO this is much better solved with a literate programming approach where the tour content lives inside the code as comments. Then as code is refactored and changed it's very obvious that the related docs and tour data has to change too.
+  - some files don't necessarily support comments (e.g. JSON/image)
+  - Additionally, after speaking with a bunch of folks, there are definitely teams that weren't interested in "polutting" their code with comments
+  - That said, I totally agree with the value of a literate programming-based solution. But there may also be some nice properties to a "side car" file as well, and so I'm primarily trying to explore how well we could make that work, in a resilient and easy-to-maintain way. We'll see how it goes
+- > there are definitely teams that weren't interested in "polutting" their code with comments
+  - Add an extension feature that toggles (hides/shows) those comments maybe?
+
+- Not an equivalent of literate programming. Here you can jump to arbitrary files at arbitrary points, in literate programming your code must flow from top to bottom linearly, which is most of the times impossible to achieve.
+
+- How do CodeTours handle drift as the code base changes?
+  - They have a GitHub Action to monitor this
+
+- 🔒 how is user privacy handled? Is data about the repo sent externally? I assume this would primarily be useful for OSS projects and not private or internal/confidential projects?
+  - When you record a tour, it simply creates a JSON file that can be committed/maintained as part of the associated codebase. Then, when someone takes the tour later, they're simply "reading" that file locally in their editor, and so no data about the codebase is ever sent externally.
+
+- I'm hoping that some day it'll be possible for my coworkers to follow a CodeTour without installing VS Code.
+  - That's exactly the issue we had at the office. So someone in our team built https://github.com/doctolib/code-tours-github we use it to help new joiners get into the codebase!
+
+- CodeLingo’s playbooks are an approach to solve that type of problem https://playbooks.codelingo.io/p
+
+- 🆚️ This seems really cool but my immediate thought is that it might be pretty fragile compared to just screen recording.
+  - Create the tour, then screen record playing through it. Two birds one stone.
+  - 💡 conversely, a screen recording does not allow for easy maintenance as this plugin does with its tours.
+
+- Does anyone know of any package similar to this for emacs?
+  - For vim I use the CodeReviewer plugin to capture comments for files. I modified it to use differently named comment files and to jump to the file locations from the comment line. I am planning to include support for hierarchical comments or referring other comment files from within one. Also the problem of tracking code changes or referring to a certain git commit is still there - in clearcase it can be easily done with a reference to the branch, but not sure how to do it in git.
 
 - ## [Hey Dropbox, why can't I compare file versions like this? | Hacker News _202003](https://news.ycombinator.com/item?id=22221265)
 - Am I missing something? This already exists in Google Docs. Much easier to implement when the doc is database-backed (recording every keystroke for OT) vs file-based.

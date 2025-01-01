@@ -49,6 +49,34 @@ modified: 2023-09-16T17:43:09.215Z
 - I was expecting this to be a way to mount so-called SQL Archives (https://sqlite.org/sqlar.html) but this is just as cool.
 
 - I'm also working on something like this: https://github.com/Airsequel/SQLiteDAV My mapping is: table -> dir, row -> dir, cell -> file
+# discuss-sshfs
+- ## 
+
+- ## 
+
+- ## [A currently maintained fork of SSHFS | Hacker News _202309](https://news.ycombinator.com/item?id=37390184)
+- If you want something in user land and you don't mind emacs there is TRAMP “Transparent Remote (file) Access, Multiple Protocol”.
+  - My favorite thing about using TRAMP is being able to cd to a directory on a remote system, and then cp a file either from my working directory to my local machine (or another remote!), or from my local machine to the current working directory.
+  - Before I started using TRAMP, my flow for this was: SSH to a remote system, locate where I want to copy a file to with cd + ls, kill my SSH session, and then scp or rsync the file over, and then usually SSH back into the system.
+
+- Couldn't you just use sftp?
+  - Idk when you stopped using scp, but scp has been deprecated, and at least w/openssh, using sftp under the hood for years now. You probably have used it if you've scp'd since 2020.
+- My point above was that I was making and killing multiple SSH connections to find where I want to copy a file, and then do the copy. Using SCP with an SFTP backend would still do that.
+
+- I think SFTP is a good but underrated protocol, when mirroring a file tree bidirectionally makes more sense than cloning one to another.
+  - SFTP is a major step up from FTP, but there's a lot of unrealized potential on the server side, so you can't just work on better clients. Both OpenSSH and the GNU lsh server only offer an old version of the protocol -- v2
+
+- rclone mount is my go-to now for sshfs functionality - better performance, stability and caching options
+  - rclone cannot write to the middle of a file though, without transferring the whole file. That is my main issue with it. Maybe sshfs has the same limitation though.
+- rclone mount uses sftp in the background which compresses the entire stream (you can control that by passing args to the ssh command spawned by rclone) but it doesn't do it per-file. In practice I don't know if there is a difference.
+
+- Nautilus (Ubuntu's file explorer) allows to mount SFTP folders. Supposedly it uses `gvfs` under the hood.
+  - Note that SFTP uses an SSH connection for its file transfers, so I have not seen an UI difference from SSHFS
+
+- gvfs has a bridge to fuse, cf. https://manpages.ubuntu.com/manpages/trusty/man1/gvfsd-fuse.... -- that means: Yes, you can use gvfs mounts natively in all other non-GNOME/GTK-applications running on your computer.
+
+- Is there a more security-oriented alternative to SSHFS, where the connecting client won't be given shell access on the server?
+  - If the user account is only supposed to have file transfer capabilities/no shell access, add it a to a specific group e.g. `sftponly`, and only allow this group to use the `internal-sftp` command in `/etc/ssh/sshd_config`
 # discuss
 - ## 
 

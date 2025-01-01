@@ -55,7 +55,10 @@ modified: 2020-12-22T12:41:57.687Z
 
 - ## 
 
-- ## 
+- ## [How to develop on Windows: comparing native, MinGW, Cygwin, WSL | Hacker News _202407](https://news.ycombinator.com/item?id=41059548)
+- Windows can't handle symlinks in a sane way because they're a source of privilege escalation exploits on Windows. So git repos with symlinks in the require a security degradation to use them natively.
+
+- there are a few specific areas where developing on Windows is the best platform. Game development is one of them: DirectX 12 is the industry standard graphics API, and the first- and third-party tooling related to it is cream of the crop on Windows.
 
 - ## wsl 下居然可以直接运行 windows 应用？
 - https://twitter.com/geniusvczh/status/1756061643346415638

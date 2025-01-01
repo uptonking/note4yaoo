@@ -88,22 +88,56 @@ modified: 2024-08-24T16:17:26.715Z
 
 - https://github.com/sekassel-research/vscode-vnc-plugin /202212/ts/archived
   - This extension adds an embedded vnc viewer to the vs code server instance, which is used by fulib.org projects.
-# vscode-browser
+# vscode-web
 - https://github.com/antfu/vscode-browse-lite /ts
   - Embedded browser in VS Code
 # extensions
 
-## ext-office
+## ext-office/files
+
+- https://github.com/cweijan/vscode-office /MIT/202412/js
+  - 让VSCode支持预览PDF, Excel和Word等格式, 并增加markdown所见即所得编辑器
+  - 支持预览xlsx, docx, svg, pdf, zip等格式, 后来才增加markdown编辑器
+  - 依赖docxjs、sheetjs、vditor(md)、pdfjs
+  - [Please support PPT/PPTX files _202211](https://github.com/cweijan/vscode-office/issues/166)
+    - I have done research on this, but due to the complexity of ppt/pptx, it is impossible to display it in js.
+  - https://github.com/orellabac/vscode-office /202010/js/inactive
+    - Word: mammoth
+    - Excel: sheetjs + x-spreadsheet
+    - md: stackedit
+    - PDF: pdf.js
+    - PhotoShop: psd.js
+    - xmind: xmind-viewer
+    - Image: lightGallery
 
 - https://github.com/janisdd/vscode-edit-csv /MIT/202310/ts
   - vs code extension to edit csv files with an excel like table ui
   - If you don't have vs code to hand, you can use the online version at https://edit-csv.net
+
+- https://github.com/mikeebowen/ooxml-validator-vscode /MIT/202412/ts
+  - A VS Code extension for validating Office Open XML files
+  - The OOXML Validator validates Office Open XML files (.docx, .docm, .dotm, .dotx, .pptx, .pptm, .potm, .potx, .ppam, .ppsm, .ppsx, .xlsx, .xlsm, .xltm, .xltx, or .xlam) and displays the validation errors found in the xml parts in VSCode and creates an optional CSV or JSON log file of the validation errors.
 
 ## ext-git
 
 - https://github.com/MichaelCurrin/auto-commit-msg /ts
   - A VS Code extension to generate a smart commit message based on file changes
   - With the explosion of AI tools, you can find alternatives to this extension which use AI - see AI tools
+
+## ext-history
+
+- https://github.com/microsoft/codetour /MIT/202303/ts/inactive
+  - VS Code extension that allows you to record and play back guided tours of codebases, directly within the editor
+  - A "code tour" is simply a series of interactive steps, each of which are associated with a specific directory, or file/line, and include a description of the respective code. 
+  - Tours can either be checked into a repo, to enable sharing with other contributors, or exported to a "tour file", which allows anyone to replay the same tour, without having to clone any code to do it
+  - Recording Tours: You can create directory steps, selection steps, or content steps in order to add an introductory or intermediate explanations to a tour.
+  - Re-arranging steps
+  - Versioning Tours: When you record a tour, you'll be asked which git "ref" to associate it with. 
+  - Behind the scenes, the tour will be written as a JSON file to the `.tours` directory of the current workspace. 
+    - This file is pretty simple and can be hand-edited if you'd like.
+    - you can manually create tour files, by following the tour schema.
+  - Maintaining Tours: In order to ensure that your tours stay up-to-date as your codebase evolves, you can install one of the following tasks as part of your CI pipeline, in order to detect "tour drift" in response to PRs/commits/etc.
+  - [CodeTour: VS Code extension to record and play guided walkthroughs of codebases | Hacker News _202103](https://news.ycombinator.com/item?id=26488610)
 
 ## ext-data
 
