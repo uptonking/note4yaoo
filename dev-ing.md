@@ -572,6 +572,15 @@ console.log(
   - 编辑器打开时自动跳到diff视图第一个变更块的位置
   - action路径超出卡片宽度
   - save-all, reject-all
+
+## 0102
+
+- 昨天
+  - 在ide-server调整了ai写字和显示动画的时序，解决打字动画有时不显示的问题
+  - 联调端口转发的事件和逻辑，重构webview组件的渲染和更新逻辑
+- 今天
+  - 调整完端口转发的逻辑和体验
+  - 快速完成删除移动文件在live和回放模式的表现
 # dev-12-hotkeys-enhance-vs-forwarded-ports-vs-bug-init-loading-vs-diff-anime-at-ot-event
 
 ## 1231
