@@ -42,7 +42,19 @@ modified: 2023-10-26T19:00:02.186Z
 - 
 - 
 
+# discuss-big-dataset
+- ## 
+
+- ## 
+
+- ## So, what’s the most cost-effective yet reliable AND affordable way to run a 4TB+ MySQL database for a production app that is expected to scale to 10TB+ in 2025?
+- https://x.com/arvidkahl/status/1874582576004006132
+- Store it all locally. Open your personal network to the internet. Get 5+ 12TB hard drives and use Raid.
+- Grab an 'obsolete' m.2 HBA if you wanna be cheap. 14GB/sec read and write speed. IOPS, yes.
+
 # discuss
+- ## 
+
 - ## 
 
 - ## 

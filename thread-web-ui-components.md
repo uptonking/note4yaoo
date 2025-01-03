@@ -23,7 +23,9 @@ modified: 2021-01-19T04:46:23.100Z
 # discuss
 - ## 
 
-- ## 
+- ## All My 2024 Achievements ( nearly 100 components )
+- https://x.com/ln_dev7/status/1873704588974412159
+  - Access all the source codes here : https://ui.lndev.me/buy
 
 - ## I've been working on a new gauge component with @glennui
 - https://twitter.com/timolins/status/1710991444717297856

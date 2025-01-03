@@ -14,7 +14,17 @@ modified: 2023-02-20T19:41:08.506Z
 
 - ## 
 
-- ## 
+- ## Tip: Chrome DevTools can override the content of Fetch/XHR requests! 
+- https://x.com/addyosmani/status/1873479196829467123
+  - Useful for mocking APIs without waiting on backend changes.
+- I was looking into this a few weeks ago. It's a great feature! However, we ended up going with https://requestly.com. Mostly because of share-ability of mocks across the team.
+
+- please… add server-side validations. Do not rely solely on the client. If your application is a Single Page Application (SPA) and does not use or implement any form of server-side rendering, users may experience unexpected behaviors using this new tool.
+
+- I use this to activate chrome extensions that have failed API calls
+
+- Does it works for any kind of requests? Like for CSS or JS
+  - Yes! You can use Chrome DevTools’ Local Overrides to replace or modify CSS and JS files as well. Just enable overrides, make your edits, and reload the page to see the changes applied in real time. Super handy for front-end tweaks
 
 - ## Uncaught (in promise) Error: Could not establish connection. Receiving end does not exist.
 - 经排查是过期扩展的问题， 定位到是 z-context 导致的，disable掉就让异常信息消失了

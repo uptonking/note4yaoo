@@ -12,6 +12,10 @@ modified: 2023-10-06T16:26:57.557Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 
+
 - ## 🤔 Prisma rewrite in TypeScript _202412
 - https://x.com/localhost_5173/status/1863873604229972068
 - [Prisma ORM Manifesto: Clarity and Collaboration _202412](https://www.prisma.io/blog/prisma-orm-manifesto)

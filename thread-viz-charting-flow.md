@@ -41,6 +41,17 @@ modified: 2021-09-10T18:35:00.465Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🚀 bitspace is now open source _202412
+- https://x.com/emilwidlund/status/1873749876036825343
+  - the reactive node graph engine, interactive components, schema validations, etc. will move out & become its own framework.
+  - bitspace will utilize this new framework & only house business logic. 
+  - everything will remain open source under mit license
+  - mobx will be purged away from the core framework, and remain rxjs exclusive. 
+
 - ## 节点伸手求链接的效果
 - https://x.com/Datou/status/1824261977247711333
 

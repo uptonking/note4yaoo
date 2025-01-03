@@ -41,6 +41,11 @@ modified: 2023-02-03T05:55:22.102Z
 
 - https://github.com/microlinkhq/browserless /js
   - interact with a headless browser built in top of puppeteer.
+
+- https://github.com/weijunext/ogimage-click /MIT/202501/ts
+  - https://ogimage.click/
+  - Create beautiful OG images, Twitter/X Header Images & more for free, in simple clicks.
+  - https://github.com/FadyMak/imgsrc-app
 # blogs
 
 ## [A framework for building Open Graph images | The GitHub Blog_202106](https://github.blog/2021-06-22-framework-building-open-graph-images/)
@@ -64,7 +69,9 @@ modified: 2023-02-03T05:55:22.102Z
 
 - ## 
 
-- ## 
+- ## 开源的 OG Image 生成器的项目，添加了不少 SEO 内容，上线第二天就获得了谷歌搜索流量
+- https://x.com/weijunext/status/1875005086549836040
+  - [Free OG Image Generator](https://ogimage.click/)
 
 - ## 如果你不知道 Open Graph Image 怎么设计可以去 OGImage Gallery 找找灵感，这边收集了上千个网站的 OGImage
 - https://x.com/ccbikai/status/1810106528088674673

@@ -27,7 +27,7 @@ npm install
   - 数据保存在indexeddb
 - ./scripts/code-server.sh --launch
   - UI in the browser, extensions run in code server (NodeJS)
-  - url包含文件路径，?folder=/Users/user11/repos/，切换文件时url也不会变
+  - url包含文件路径，?folder=/Users/user11/repos/，切换文件时url不会变
   - 编辑文件会持久化道磁盘
   - 刷新页面时仓库会恢复，打开文件名也会恢复
 

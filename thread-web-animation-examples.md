@@ -46,6 +46,19 @@ modified: 2021-04-21T15:01:12.882Z
   - https://github.com/barvian/motion-number /202409/ts
   - https://motion-number.barvian.me/
 
+# discuss-transition
+- ## 
+
+- ## 
+
+- ## 
+
+- ## View Transitions API before/after setting on a transition group
+- https://x.com/mattgperry/status/1874406487742886000
+- I believe there are bugs in both Chrome and Safari:
+  - Chrome/Blink uses "none" in the to keyframe
+  - Safari/WebKit uses the same value as the from keyframe in the to keyframe 
+
 # discuss
 - ## 
 

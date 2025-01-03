@@ -57,7 +57,9 @@ modified: 2022-08-21T10:19:58.756Z
 # discuss
 - ## 
 
-- ## 
+- ## When defining columns in TanStack Table, do you prefer using an `accessorKey` or an `accessorFn` + `id` ?
+- https://x.com/KevinVanCott/status/1874524551918621146
+  - As I'm working on V9, I've realized that we could both close a lot of issues and increase type-safety by just getting rid of the accessorKeys and requiring accessorFn + id.
 
 - ## 🤔 how can I use the sorting to sort by nested object. 
 - https://twitter.com/som3aware/status/1773516234388127966

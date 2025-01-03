@@ -61,7 +61,17 @@ modified: 2023-11-10T08:05:12.852Z
 
 - ## 
 
-- ## 
+- ## Why use: `const x = JSON.parse('{"foo":42}')` ?
+- https://x.com/DanShappir/status/1874909922313596990
+  - When you can: `const x = await import('data:application/json,{"foo":42}', {type:'json'})`
+
+- Easy CORS
+
+- its matter if your using on Lambda or function or serverless, if your normal controller based app its fine to use import example.
+  1. Memory Usage ( import ) 
+  2. Compute Cost
+  3. Scalability
+  4. Asynchronous
 
 - ## TIL, you cant catch errors thrown in setTimeout and requestIdleCallback from outside the setTimeout
 - https://x.com/okikio_dev/status/1834663298173702518

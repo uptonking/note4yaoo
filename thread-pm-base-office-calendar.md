@@ -12,6 +12,14 @@ modified: 2023-04-19T07:08:48.121Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## a side effect of tracking everything in @obsdmd ... I made this 2024 year in review
+- https://x.com/kepano/status/1874147340715770274
+  - 每月绿块
+
 - ## From 2024 onwards, the lines between Calendar and Task Management apps will start to blur.
 - https://twitter.com/FrancescoD_Ales/status/1753060651977568505
 - Which tools are the one in the exact centre?

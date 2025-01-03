@@ -54,6 +54,9 @@ modified: 2022-12-14T18:26:38.588Z
 - A simple application for keeping score in games. For example, golf or Settlers of Catan.
 - External effects interface through services defined on the Environment.
 - TupleDatabase as a UI state management system.
+
+## [Local Caching _202412](https://chetcorcos.notion.site/Local-Caching-1698d4136624809a876ddfb66d16ef35)
+
 # more
 - [Tuple Database – A reactive, local-first db inspired by FoundationDB | Hacker News_202206](https://news.ycombinator.com/item?id=31630518)
 # discuss

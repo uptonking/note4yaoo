@@ -43,7 +43,12 @@ modified: 2023-10-30T07:34:03.602Z
 
 - ## 
 
-- ## 
+- ## We just published a near-term development roadmap for the model context protocol (MCP) _20250103
+- https://x.com/alexalbert__/status/1874853921543553147
+  - Remote support (and auth!)
+  - Reference implementations
+  - Better package management
+  - Agent support
 
 - ## 聊几点我对 Anthropic MCP 的看法：
 - https://x.com/idoubicc/status/1861620206453563446

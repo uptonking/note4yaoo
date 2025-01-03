@@ -637,6 +637,12 @@ modified: 2024-01-30T20:56:45.773Z
   - https://graphcentral.github.io/graph
   - Performant graph visualization on the web with WebGL + Webworkers + IndexedDB
   - You can visualize Notion pages on force layout graph using this library
+# note-encryption
+- https://github.com/harshsbhat/sealnotes /MIT/202412/ts
+  - https://sealnotes.com/
+  - Open-source lightweight encrypted notepad
+  - End-to-End Encryption: Your text is encrypted using AES-256 before being stored on our servers, and even the name of your notepad is securely hashed before being saved in our database.
+  - No Account Required: Access your notes using a unique URL and password combination.
 # more-note-app
 - https://github.com/codex-team/codex.notes /79Star/MIT/202009/js/inactive
   - crossplatform desktop notes application based on Electron and Editor.js
