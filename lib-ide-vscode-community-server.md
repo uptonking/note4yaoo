@@ -102,33 +102,6 @@ modified: 2024-12-01T09:34:54.164Z
 - 
 - 
 
-# discuss-autocomplete/ai
-- ## 
-
-- ## 
-
-- ## [LSP-AI: open-source language server serving as back end for AI code assistance | Hacker News _202406](https://news.ycombinator.com/item?id=40617082)
-  - LSP-AI abstracts complex implementation details like maintaining document / context parity and providing different LLM backends.
-  - Most editors should let you use multiple language severs at once, they merge the results together which can be annoying.
-
-- Currently, whether multiple language servers can be active in one buffer is up to the language client. In Emacs for example, Eglot (built-in) doesn’t support this but LSP-mode (bolt-on) does.
-
-- It would be very interesting to leverage this to edit documents as much as code. Obviously editor-dependent due to the language server.
-- Isn't the entire point behind "language server" (guess it's referring to LSP - Language Server Protocol) that it gets rid of editor-dependent stuff?
-
-- Are there any text editors that use LSPs for non-coding tasks?
-  - It's not really about the editor. The editor (the LSP client) just provides support for telling the server what the user wants a definition for, and how to display that back to the user.
-  - Other non-coding uses of LSP that I'm aware of are spell-checking and grammar suggestions (LSP clients can display diagnostics), semantic syntax highlighting (e.g. for highlighting a markdown document), and projects like the one discussed here which just integrate more general-purpose AI.
-
-- Very interesting approach. The folks at rift worked on LSP as an integration point for AI coding. But I think they are focusing on other things now.
-  - My project aider provides a pair-programming UX, which allows complex interactions like asking for a change that will modify multiple files. Could LSP servers support more general AI coding like this?
-- The problem with aider for me is that it works in the terminal, where as coding happens in the editor, where I most likely already have the file open I want to transform with LLM. I probably even have my cursor on the thing or can at least easily select the function etc. that needs to be changed.
-  - CopilotChat.nvim solves this somewhat elegantly for neovim, providing a streamlined UI to interact with an LLM in a way that allows accepting suggested diffs to your currently open buffer. The problem however is that it only works with GitHub's Copilot chat, as the name suggests. Not sure how well Copilot stacks up against gpt-4o for example but I'd imagine not that well.
-  - This is pretty much the kind of UI I'd want for interacting with LLMs, aside from the typical Copilot style ghost autocomplete.
-
-- I want an LLM which uses an LSP to gather more context.
-  - Aider uses Treesitter to improve code generation.
-  - Aider uses Treesitter to improve code generation.
 # discuss-remote-actions
 - ## 
 

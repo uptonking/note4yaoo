@@ -12,7 +12,38 @@ modified: 2021-01-28T14:34:20.579Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 🆚️⚡️ many people argue over when to use type vs interface.
+- https://x.com/housecor/status/1875224554374930493
+- Here are 5 things only type can do.
+
+```JS
+// type alias for primitives
+type Id = number
+
+// union
+// intersection
+
+// tuple
+type Pair = [string, number]
+
+// mapped typess
+type Keys = 'key1' | 'key2'
+type Features = {
+  [k in Keys]: lean
+}
+
+// types for setting array defs.
+type ObjectArray = { key: string } []
+```
+
+- We can also do a pretty cool discriminated union props type for React components. This makes sure we use props in a correct combination.
+
+- Key difference: Types aren't inheritable, whereas interfaces can be extended or inherited. An interface can extend a type. This is valid.
+  - An interface can extend a type. This is valid.
+
+- I think I read somewhere ( @mattpocockuk blog is my guess) that type intersections are not very performant and for that matter, interfaces are a better structure for types inheritance and extension.
+
+- Personally, I avoid interfaces because I don’t want to be surprised by unwanted declaration merging
 
 - ## 🆚️ Trying to write an exhaustive pro's/cons list for three different approaches to TS monorepos.
 - https://x.com/mattpocockuk/status/1799055070274986098

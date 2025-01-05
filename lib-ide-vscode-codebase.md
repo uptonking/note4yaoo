@@ -15,6 +15,7 @@ modified: 2024-08-24T16:15:42.906Z
 // start dev
 npm install
 // npm run watch
+// docs:　https://github.com/microsoft/vscode/wiki/How-to-Contribute
 ```
 
 - ./scripts/code.sh
