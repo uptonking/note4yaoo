@@ -189,6 +189,7 @@ git merge upstream/main
 # push the changes
 git push
 
+git remote rename <old-name> <new-name>
 ```
 
 - git status命令 
