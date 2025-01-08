@@ -113,6 +113,12 @@ git reset --hard commit_id
 git reset --hard HEAD~
 git push origin -f
 
+# useful since adding the -f -d flag deletes new directories and files within them as opposed to just -f flag which only deletes new files.
+git reset --hard <commitId> && git clean -f -d 
+
+# 
+git checkout -b old-state 0d1d7fc32
+
 ```
 
 - merge相关

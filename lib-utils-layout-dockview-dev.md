@@ -188,6 +188,29 @@ layoutApi.current?.addPanel({
   - A simple web based audio player for offline files.
 # issues
 - 如何处理tab中的大文件，比如大于3000行/10M
+# changelog
+
+## [v3.0.0 _2024-12-29](https://github.com/mathuo/dockview/releases/tag/v3.0.0)
+
+- There are no new features in this release.
+  - This is a major release version due to some breaking changes in the `dockview-core` package. 
+  - If you use the react or vue versions of dockview you should not see any breaking changes when upgrading. 
+
+- 🔌 Standardize dockview-core components for generic framework extensions following the pattern in DockviewComponent #810
+
+- rename class dockview-react-part to dv-react-part
+- rename type PaneviewDropEvent to PaneviewDidDropEvent
+- remove `showDndOverlay` from PaneviewComponent in favour of `api.onUnhandledDragOverEvent` #812
+
+## [v2.0.0 _2024-11-04](https://github.com/mathuo/dockview/releases/tag/v2.0.0)
+
+- This major version bump is due to breaking changes related to classnames.
+  - Prefix all classnames with `-dv-*` #688 .
+  - Remove depreciated methods
+
+- Add panel within group at specific index
+- Fix Constraints
+- Fix popout window issues
 # more
 
 # issues-not-yet
@@ -200,7 +223,13 @@ layoutApi.current?.addPanel({
 - ## [Save group restrictions as a part of layout object ](https://github.com/mathuo/dockview/issues/493)
 - Group constraints currently come with quite a few limitations including the fact they are not persisted. It would need some careful though into how this might work if it was added.
 
-- ## [Unable to persist fullscreen / maximized mode ](https://github.com/mathuo/dockview/issues/494)
+- ## 🐛 [Unable to persist fullscreen / maximized mode ](https://github.com/mathuo/dockview/issues/494)
+  - Whenever there's a call to `onDidLayoutChange` we persist the user's layout state, with `toJSON()` so we store the layout structure on our end.
+  - When we added the Maximize feature we noticed that the when the user maximizes the group, and changes the active tab, the call to `toJSON()` executed on `onDidLayoutChange` causes the maximize state to be lost.
+  - dockviewComponent.ts ln.1010 -> this.gridview.serialize() // When the gridview is serialized
+  - gridview.ts ln.439 -> this.exitMaximizedView() // The library exits the maximized view purposely
+
+- mathuo closed this as completed in #762 2024-12-11 03:16
 
 - ## 💡 [Implement default width and height for Dockview panels ](https://github.com/mathuo/dockview/issues/589)
   - When adding a new panel to the top/right/bottom/left of a panel in a Dockview component, the available space is evenly distributed between the two panels. This is not always a desirable default.

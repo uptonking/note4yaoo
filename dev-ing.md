@@ -563,13 +563,25 @@ console.log(
   - live模式显示弹窗
   - 回放模式显示红色背景的文件快照
 
+## 0107
+
+- 昨天
+  - 端口转发增强的功能合入staging，并修复相关问题
+  - 梳理了linear上删除移动文件相关的issues，分析了删除移动重命名文件在live和回放模式的主要交互
+- 今天
+  - 和产品确认删除移动重命名文件的需求和交互细节
+  - 实现删除文件在live和回放模式的表现
+- 风险
+  - terminal上的restart按钮导致容器重启后，有一些ide-server上的数据没有及时清除，如开放的端口，需要讨论解决方案
+
 ## 0106
 
 - restartServer后如何更新ports数据
-  - S1: 在restartServer后， 在前端业务侧手动请求ports数据，缺点是sdk不能正常使用
+  - S1: ~~在restartServer的逻辑中，加上获取ports的逻辑~~ 后端方案，调整restart成功的时机
+  - S2: 在restartServer后， 在前端业务侧手动请求ports数据，缺点是sdk的demo不能正常使用
     - 此方案耦合度最低，易维护
-  - S2: 在restartServer的逻辑中，加上获取ports的逻辑
-  - S3: 在周边事件中添加ports数据，如在active事件后自动发送ports数据
+  - ✅ S3: 在周边事件中添加ports数据或playgroundStatus数据，如在active事件后自动发送ports数据
+  - S4: 纯前端的场景定制方案, 前端主动将webview设为空白
 
 - 上周
   - 根据业务需求，与杨豪调整了端口转发事件相关的数据结构
