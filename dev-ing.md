@@ -563,6 +563,23 @@ console.log(
   - live模式显示弹窗
   - 回放模式显示红色背景的文件快照
 
+## 0108
+
+- [refactor: allow ai to open file after write by uptonking · Pull Request #78 · clacky-ai/clacky-ai-paas-frontend](https://github.com/clacky-ai/clacky-ai-paas-frontend/pull/78/files)
+
+```log
+
+tempOTInfo before write file: true, {"revision":0,"locked":false,"currentDoc":""} 
+```
+
+- 昨天
+  - 修复restart container后，部分playground status未更新的问题
+  - 排查布局上的最大化按钮、terminal收起按钮有时不生效的问题，定位到是最近实现布局自动持久化和恢复导致的，与编辑器无关，已经修改了持久化相关的逻辑，还要再测试下
+- 今天
+  - 测试和完善布局相关的功能，并合入staging
+  - 修复一些高优先级的bug，特别是聊天框输入时光标自动跳到行尾
+  - 实现删除文件在live和回放模式的表现
+
 ## 0107
 
 - 昨天
