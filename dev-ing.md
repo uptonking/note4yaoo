@@ -563,12 +563,26 @@ console.log(
   - live模式显示弹窗
   - 回放模式显示红色背景的文件快照
 
+## 0109
+
+- [node.js - Fs.writeFile callback not called - Stack Overflow](https://stackoverflow.com/questions/52225476/fs-writefile-callback-not-called)
+  - I've temporarily fixed the issue by writing a synchronous version with fs.writeFileSync
+  - If process is dead before the writing path is done, your callback will not be called because it is an asynchronous.
+
+- 昨天
+  - 修复布局最大化和收起terminal有时不work的问题，还剩一点工作
+  - 排查佳路反馈的激活失败的问题，暂时没什么解决思路
+  - 排查staging环境的agentWriteFile超时问题，已定位到问题出在是node fs.writeFile这一步
+- 今天
+  - 修复agentWriteFile超时问题
+  - 测试和完善布局相关的功能，并合入staging
+  - 修复一些urgent优先级的bug，特别是聊天框输入时光标自动跳到行尾
+
 ## 0108
 
 - [refactor: allow ai to open file after write by uptonking · Pull Request #78 · clacky-ai/clacky-ai-paas-frontend](https://github.com/clacky-ai/clacky-ai-paas-frontend/pull/78/files)
 
 ```log
-
 tempOTInfo before write file: true, {"revision":0,"locked":false,"currentDoc":""} 
 ```
 
