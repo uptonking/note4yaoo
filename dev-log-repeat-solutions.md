@@ -26,6 +26,7 @@ modified: 2021-07-20T13:50:23.433Z
     - 典型产品: editor + fileTree + workbenchLayout + search + cmdKeys + settings
   - 🏘️ architecture-early 需要尽早考虑的架构问题，没有完美的架构
     - 核心架构考虑 server/db/network-socket
+    - feature-flag
     - 早期不要将系统架构设计得过于复杂，会影响开发进度, 甚至产品终止都用不上
     - 重前端还是重服务端的设计
     - collaborative的数据结构，冲突处理算法，客户端中心还是服务端中心

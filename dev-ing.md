@@ -563,6 +563,17 @@ console.log(
   - live模式显示弹窗
   - 回放模式显示红色背景的文件快照
 
+## 0110
+
+- 昨天
+  - 继续排查了agentWriteFile超时问题，但staging环境昨天无法复现了，根据日志还是把问题定位在fs.writeFile, 我把排查日志在linear上记录了，这个问题再观察一段时间
+  - 修复布局最大化按钮和terminal收起按钮有时不work的问题，已合入staging
+  - 修复高优先级bug，在驾驶舱输入框文字中间输入时，光标经常跳到末尾
+  - 开始修复昨天反馈的搜索关键词包含正则时，卡住不可用的问题
+- 今天
+  - 继续修复昨天反馈的搜索体验问题
+  - 修复一些urgent优先级的bug，特别是佳路反馈的terminal经常不可用的问题
+
 ## 0109
 
 - [node.js - Fs.writeFile callback not called - Stack Overflow](https://stackoverflow.com/questions/52225476/fs-writefile-callback-not-called)
