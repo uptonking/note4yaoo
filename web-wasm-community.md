@@ -41,6 +41,16 @@ modified: 2022-12-24T07:31:48.493Z
   - last, but not least, this works in browsers, NodeJS, Deno, and hopefully soon in @bunjavascript too, it's literally one code base64 pack/unpack 'em all via standard primitives
   - [How to embed your WASM blob _202406](https://webreflection.medium.com/how-to-embed-your-wasm-blob-c29692119039)
 
+# discuss-wasm-db
+- ## 
+
+- ## 
+
+- ## Using threads with WASM was a major challenge during the development of TonboLite. 
+- https://x.com/tonboio/status/1876956230410743876
+  - Based on our experience, we've put together a simple guide about threads in WASM.
+
+- You can use @napi_rs alpha to compile your code into wasi, it supports std::thread polyfill via web worker out of the box
 # discuss
 - ## 
 

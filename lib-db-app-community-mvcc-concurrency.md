@@ -113,6 +113,19 @@ modified: 2023-11-01T10:15:06.245Z
   - This is helpful in many ways and simplifies the programming model at the application level.
   - In a single relational database, transactions make sure that the following ACID conditions are met
 
+# discuss-crdt
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Amazon MemoryDB multi-region is now generally available. 
+- https://x.com/MarcJBrooker/status/1877532954940915821
+  - If you're a dist sys geek, you may be interested to know that this multi-region active-active eventually consistent database is based on conflict-free replicated data types (CRDTs).
+  - By mapping Valkey's types to CRDTs, MemoryDB multi-region removes the need to implement custom merge logic, avoids last-writer-wins (LWW) edge cases, optimizes large collections, all while offering strong eventual consistency.
+- Amazon has so many databases now it’s hard to keep up with all of them!
+
 # discuss
 - ## 
 

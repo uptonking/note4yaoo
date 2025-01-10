@@ -216,7 +216,11 @@ HMACSHA256(
 
 - ## 
 
-- ## 
+- ## I got a Next.js 15 application with next-auth.  I add a logout button.  It calls a logout action which invokes the signOut method from next-auth.
+- https://x.com/webdevcody/status/1877117381757026720
+  - This all works great locally.  I deploy to AWS using SST open-next, logout button never actually deletes the session and just keeps redirecting the user back to the same page.
+  - This all works great locally.  I deploy to AWS using SST open-next, logout button never actually deletes the session and just keeps redirecting the user back to the same page.
+  - I guess that's what I get for using a v5 BETA version of a library
 
 - ## 👨🏻‍🏫 JWTs make authentication stateless and super-scalable.
 - https://x.com/ProgressiveCod2/status/1793895187090985016

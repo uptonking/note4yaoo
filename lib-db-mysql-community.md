@@ -54,7 +54,9 @@ modified: 2022-06-13T03:00:06.041Z
 # discuss-vendors
 - ## 
 
-- ## 
+- ## GitHub的数据库是MySQL，从5.1一路更新到8.0, 没有使用分布式数据库，数据量变大之后是拆分微服务并且垂直分表
+- https://x.com/changwei1006/status/1877603560038293530
+  - 在水平拆表之前使用SQL linters优化查询并确定拆分边界，后期使用Vitess实现MySQL扩展
 
 - ## wesql: MySQL distribution which uses S3 as storage backend
 - https://x.com/iavins/status/1859985872227344451

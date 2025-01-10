@@ -59,7 +59,21 @@ modified: 2021-07-27T16:35:20.057Z
 # discuss
 - ## 
 
-- ## 
+- ## 大家觉得企业文档管理最好的产品是哪个？ _202501
+- https://x.com/waylybaye/status/1877307423142146266
+- 这个问题我比较有资格回答，申请答题：
+  - 小团队可以尝试：Notion、Coda 这类轻便性管理
+  - 大团队比较注重权限，可以看看 Confluence
+  - 如果喜欢套件，飞书、Google Workspace 都可以
+  - 这里不存在绝对最好，文档这个行业我做了那么多年，很多想法都是想通的，主要看你自己顺手哪个而已
+
+- Confluence+Jira的生态基本无敌。
+
+- 与其做文档，还不如先做一个更好用的ai写作编辑器，先做点再做面吧？感觉文档太多上下游和生态整合之类了… 比如微软用azure devops wiki居然很多，然后还有word和loop实时协作，然后基于sharepoint可以用copilot在teams里面检索，这整个生态链一旦一个企业用上就很难跳出了。
+
+- 欧美企业用的最多的一定是sharepoint. 微软一贯的打包做法基本没对手。我遇到过的欧美中大型企业都用，反正打包在Microsoft 365里面。然后做技术的企业一般就是confluence。
+
+- nextcloud也不错 主要是喜欢账户系统  随便设置共享 还有note 邮箱 群聊 视频通话等等很多功能 在线共同编辑也行
 
 - ## [Paperless-ngx – Open source document management system | Hacker News _202310](https://news.ycombinator.com/item?id=37800951)
 - one thing that keeps me coming back to DEVONthink: a learning classifier.

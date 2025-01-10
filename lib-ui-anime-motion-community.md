@@ -22,7 +22,9 @@ modified: 2024-11-16T10:35:13.534Z
 
 - ## 
 
-- ## 
+- ## 🌰 Introducing Motion view animations, the View Transition API for the rest of us.
+- https://x.com/mattgperry/status/1876621824752296253
+  - view() is the easiest way to create view animations. Play, pause, scrub, scroll, and spring
 
 - ## 🚀 Today, we’re spinning Framer Motion out into its own independent open-source project, to better serve the whole community. _202411
 - https://x.com/mattgperry/status/1856347846796005472
@@ -58,6 +60,7 @@ modified: 2024-11-16T10:35:13.534Z
 - https://x.com/tahazsh/status/1869046551500456418
   - https://blendy.tahazsh.com
   - 卡片从小变大的动画示例
+
 # discuss
 - ## 
 

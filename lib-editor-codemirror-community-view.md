@@ -113,6 +113,13 @@ modified: 2024-08-08T20:49:11.571Z
 
 - ## 
 
+- ## 
+
+- ## AI SDK 4.0.26 With the new smoothStream 'line' option, you can stream out full lines with a configurable delay _202501
+- https://x.com/aisdk/status/1876657568929759566
+- I think doing it client side is even better because you get the full stream, so you can only delay certain UI-rendered tokens but not tokens related to a custom built parser
+- I like Gemini's fade-in effect. I spent a while trying to get that to work a few months ago but never got it quite right.
+
 - ## [How to add animation, keyframes in the basetheme? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/how-to-add-animation-keyframes-in-the-basetheme/3561)
 
 ```JS

@@ -7,8 +7,17 @@ modified: 2021-08-16T06:45:26.099Z
 
 # thread-gis-examples-mapping-carto
 
-# pieces
+# guide
 
+# examples-monotone-mapping
+- ## 
+
+- ## early exploration of a personal website/archive that plays like a game world, documenting the breadth and depth of what you create in a meaningful, engaging experience 
+- https://x.com/elissafied/status/1877417223205052771
+  - this isn't just my own personal website-- it's a platform; anyone can build their own world for visitors to explore 
+  - it’s all figma! want to build it but no idea how yet
+
+# examples-mapping
 - ## 
 
 - ## 

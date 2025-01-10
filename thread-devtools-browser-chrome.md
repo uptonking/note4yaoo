@@ -12,7 +12,10 @@ modified: 2023-02-20T19:41:08.506Z
 # discuss
 - ## 
 
-- ## 
+- ## If you ever do UI debugging in Chromium go and enable this setting right away, it will make your life so much easier. 
+- https://x.com/tommoor/status/1877390846665830867
+  - Clicking into devtools will no longer cause the page to lose focus.
+  - Also accessible via cmd+shift+p
 
 - ## Tip: Chrome DevTools can override the content of Fetch/XHR requests! 
 - https://x.com/addyosmani/status/1873479196829467123

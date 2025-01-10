@@ -271,3 +271,29 @@ modified: 2023-01-15T11:41:37.722Z
 - [java - 一文搞懂字典树](https://segmentfault.com/a/1190000040801084)
 - [Trie树 - 掘金](https://juejin.cn/post/6844903641799720974)
 - [字典树的几种实现方式以及应用 | 酱猪蹄的博客](http://jiangzhuti.me/posts/%E5%AD%97%E5%85%B8%E6%A0%91%E7%9A%84%E5%87%A0%E7%A7%8D%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F%E4%BB%A5%E5%8F%8A%E5%BA%94%E7%94%A8)
+# discuss-tree
+- ## 
+
+- ## 
+
+- ## 
+# discuss-tree-alternatives
+- ## 
+
+- ## 
+
+- ## I often see hash tables used for object sets needing:
+- https://x.com/awesomekling/status/1877324622665748800
+  - O(1) insert
+  - O(1) remove
+  - O(1) check if the set contains an object
+  - Iterate over all objects
+- If you're okay with these constraints:
+  - Objects grow by three pointers (next, prev, and containing list)
+  - Each object is in at most one list
+  - Objects have well-defined lifetimes
+  - You can use an intrusive linked list instead, achieving all operations in a handful of instructions and with no allocations
+- there's definitely some nuances to consider, like impact on cache locality
+  - Most people never consider using a intrusive linked lists for anything, which is why I like this tip.. Just to put the idea in their head, then let them decide if it's useful in their scenario
+- If I'm not mistaken, Linux is using this heavily.
+  - Yeah it’s super useful in embedded/kernel programming
