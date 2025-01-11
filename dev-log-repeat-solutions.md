@@ -228,6 +228,10 @@ modified: 2021-07-20T13:50:23.433Z
   - vscode settings
   - npmrc
   - 手机系统的设置
+
+- replay
+  - 回放时可与执行时显示不同的视图，如将edit显示为diff，显示debug信息
+  - 基于代码的回放能解决视频难以实时更新的问题, video-but-auto-update
 # collab
 - 多文件的app, 或多或少有点类似知识库
   - 可以参考给普通数据库表添加crdt支持的场景

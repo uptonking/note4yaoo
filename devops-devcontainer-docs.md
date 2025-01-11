@@ -9,6 +9,8 @@ modified: 2024-05-22T04:21:34.726Z
 
 # guide
 
+- resources
+  - [Developing inside a Container using Visual Studio Code Remote Development](https://code.visualstudio.com/docs/devcontainers/containers)
 # blogs
 
 ## [配置VSCode的Dev Container - 知乎 _202305](https://zhuanlan.zhihu.com/p/627102373)

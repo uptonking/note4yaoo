@@ -34,6 +34,7 @@ modified: 2024-08-24T16:15:11.456Z
 - resources
   - ide类的参考实现包括: vscode, jupyter(codemirror), jetbrains
   - 参考设计 capabilities
+  - [Visual Studio Code for Education](https://vscodeedu.com/)
 # draft
 - vscode提供了electron和web模式，未提供纯前端模式
 
@@ -44,7 +45,31 @@ modified: 2024-08-24T16:15:11.456Z
 
 - 文件操作基于文件实现，如何基于数据库实现
   - 参考markdown-database的实现和数据同步
-# dev
+# dev-xp
+
+## hot-keys
+
+- Navigate back:     Ctrl+Alt+-
+- Navigate forward:  Ctrl+Shift+-
+
+- Move line up and down: Alt+Up/Down
+- Copy line up / down: Ctrl+Shift+Alt+Up/Down
+- Shrink / expand selection: Shift+Alt+Left/Right
+
+- Whole document format: Ctrl+Shift+I
+
+- Code folding: Ctrl+Shift+[/]
+
+- Open Markdown preview: Ctrl+Shift+V
+
+- Ctrl+Space to trigger the Suggestions widget.
+
+- Go to References: Select a symbol then type Shift+F12
+  - Shift+Alt+F12: Find All References view
+
+- 
+- 
+- 
 
 # docs
 
