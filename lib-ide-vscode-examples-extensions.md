@@ -88,9 +88,6 @@ modified: 2024-08-24T16:17:26.715Z
 
 - https://github.com/sekassel-research/vscode-vnc-plugin /202212/ts/archived
   - This extension adds an embedded vnc viewer to the vs code server instance, which is used by fulib.org projects.
-# vscode-web
-- https://github.com/antfu/vscode-browse-lite /ts
-  - Embedded browser in VS Code
 # extensions
 
 ## ext-office/files
@@ -118,7 +115,32 @@ modified: 2024-08-24T16:17:26.715Z
   - A VS Code extension for validating Office Open XML files
   - The OOXML Validator validates Office Open XML files (.docx, .docm, .dotm, .dotx, .pptx, .pptm, .potm, .potx, .ppam, .ppsm, .ppsx, .xlsx, .xlsm, .xltm, .xltx, or .xlam) and displays the validation errors found in the xml parts in VSCode and creates an optional CSV or JSON log file of the validation errors.
 
+- https://github.com/hediet/vscode-drawio /GPLv3/202401/ts/inactive
+  - This unofficial extension integrates Draw.io (also known as diagrams.net) into VS Code.
+
+## ext-editor
+
+- https://github.com/zaaack/vscode-markdown-editor /MIT/202501/ts
+  - A vscode extension to make your vscode become a full-featured WYSIWYG markdown editor
+  - Auto sync changes between the VSCode editor and webview
+  - 依赖vditor3、jquery
+
+- https://github.com/microsoft/vscode-hexeditor /MIT/202412/ts
+  - A custom editor extension for Visual Studio Code which provides a hex editor for viewing and manipulating files in their raw hexadecimal representation.
+  - Opening files as hex
+  - Editing with undo, redo, copy, and paste support
+
+- https://github.com/urin/vscode-web-visual-editor /MIT/202412/ts
+  - Visual Editing: Edit HTML elements visually within the WebView.
+  - Real-Time Preview: See changes reflected instantly as you edit.
+  - Drag elements to rearrange their position.
+  - This extension is similar to microsoft/vscode-livepreview 
+
 ## ext-git
+
+- https://github.com/gitkraken/vscode-gitlens /MIT+Plus/202501/ts
+  - http://gitkraken.com/gitlens
+  - Supercharge Git inside VS Code and unlock untapped knowledge within each repository
 
 - https://github.com/MichaelCurrin/auto-commit-msg /ts
   - A VS Code extension to generate a smart commit message based on file changes
@@ -139,11 +161,32 @@ modified: 2024-08-24T16:17:26.715Z
   - Maintaining Tours: In order to ensure that your tours stay up-to-date as your codebase evolves, you can install one of the following tasks as part of your CI pipeline, in order to detect "tour drift" in response to PRs/commits/etc.
   - [CodeTour: VS Code extension to record and play guided walkthroughs of codebases | Hacker News _202103](https://news.ycombinator.com/item?id=26488610)
 
+## ext-coding
+
+- https://github.com/lostintangent/codeswing /MIT/202409/ts
+  - VS Code extension for building web applications ("swings") using a interactive and editor-integrated coding environment
+
 ## ext-data
+
+- https://github.com/dineug/erd-editor /MIT/202501/ts
+  - https://erd-editor.io/
+  - Entity-Relationship Diagram Editor
+  - Local-first support (autosaves to the browser).
 
 - https://github.com/microsoft/vscode-data-wrangler /未开源
   - [Announcing Data Wrangler: Code-centric viewing and cleaning of tabular data in Visual Studio Code - Python](https://devblogs.microsoft.com/python/announcing-data-wrangler-code-centric-viewing-and-cleaning-of-tabular-data-in-visual-studio-code/)
   - Data Wrangler is a free extension that offers data viewing and cleaning that is directly integrated into VS Code and the Jupyter extension
+# ext-ui
+- https://github.com/subframe7536/vscode-custom-ui-style /MIT/202501/ts
+  - VSCode extension that modify CSS and JS code in both editor and webview, unify global font family, setup background image and Electron BrowserWindow options, or add your custom CSS or JS code
+# ext-api
+- https://github.com/CodinGame/monaco-vscode-api /MIT/202412/ts
+  - VSCode public API plugged on the monaco editor
+  - Most of VSCode functionality implemented as "services"
+  - By default, Monaco uses a simplified versions of the VSCode services, called standalone services. 
+  - This package allows to 
+    - override them with fully-functional alternatives from VSCode
+    - add new services that were not included in Monaco
 # sync
 - https://github.com/neilmovva/codemirror /202411/ts
   - VSCode extension to continuously sync the open workspace folder to a remote server.

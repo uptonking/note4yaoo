@@ -228,7 +228,7 @@ modified: 2024-01-30T20:56:45.773Z
   - Tight integration with pandoc for import/export to/from plenty of file formats (including HTML, docx, LaTeX and EPUB).
   - Preview pane that can show pages – including page breaks etc. Layout adjustments are immediately reflected in the preview.
 
-- yn /3.6kStar/AGPLv3/202401/ts/vue/网页版+桌面版
+- yn /3.6kStar/AGPLv3/202501/ts/vue/网页版+桌面版
   - https://github.com/purocean/yn
   - https://yank-note.vercel.app/
   - 一款面向程序员的Markdown笔记应用

@@ -127,13 +127,20 @@ modified: 2024-08-24T16:15:54.137Z
   - This fork is used for building tools-injector for remote development.
 # apps
 
-# vscode-web
+# vscode-web/client
 - https://github.com/Felx-B/vscode-web /MIT/202311/js
   - This project is aimed to build a web version of VSCode, this is not a fork, simply a web compilation of the VSCode project.
   - Microsoft recently open sourced VSCode web compilation, so I simplified the build process to use the official compilation (no more tweak needed).
 
 - https://github.com/antfu/vscode-browse-lite /ts
   - Embedded browser in VS Code
+
+- https://github.com/nightmare-space/code_lfa /BSD/202412/ts
+  - Implementation of the VS Code editor natively on Android.
+  - This is an Android version of VS Code implemented using code-server. Some have already implemented similar solutions, and this is one of them.
+  - The principle is to run code-server and then use a webview to load the view. There might be some bugs, but it performs reasonably well.
+  - Fully local operation of Code Server
+  - Can run without an internet connection
 # vscode-server
 - https://github.com/coder/code-server /68.8kStar/MIT/202411/ts
   - https://coder.com/

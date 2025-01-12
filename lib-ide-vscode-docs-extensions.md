@@ -48,7 +48,8 @@ modified: 2025-01-11T10:42:21.734Z
 - 
 - 
 
-# ext-Capabilities
+## api-Capabilities
+
 - Common Capabilities are core pieces of functionality that you can use in any extension.
   - Registering commands, configurations, keybindings, or context menu items.
   - Storing workspace or global data.
@@ -98,13 +99,92 @@ modified: 2025-01-11T10:42:21.734Z
   - Track the lifecycle of debug sessions.
   - Create and manage breakpoints programmatically.
 
-## Restrictions
+### Restrictions
 
 - No DOM Access
   - Extensions have no access to the DOM of VS Code UI. You cannot write an extension that applies custom CSS to VS Code or adds an HTML element to VS Code UI.
   - To ensure that extensions cannot interfere with the stability and performance of VS Code, and that we can continue to improve the DOM of VS Code without breaking existing extensions, we run extensions in an Extension Host process and prevent direct access to the DOM.
+- VS Code aims to deliver a stable and high performance editor to users, and misbehaving extensions should not impact the user experience. The Extension Host in VS Code prevents extensions from:
+  - Impacting startup performance
+  - Slowing down UI operations
+  - Modifying the UI
 
 - No custom style sheets
   - A custom style sheet provided by users or extensions would work against the DOM structure and class names. These are not documented as we consider them internal.
   - Instead, VS Code aims to provide a well-designed extension API supporting UI customizations. The API is documented, comes with tooling and samples
+
+## api-webview
+
+- A webview can render almost any HTML content, and it communicates with extensions using message passing. 
+  - This freedom makes webviews incredibly powerful, and opens up a whole new range of extension possibilities.
+- Webviews are used in several VS Code APIs:
+  - With Webview Panels created using createWebviewPanel. In this case, Webview panels are shown in VS Code as distinct editors. 
+  - As the view for a custom editor. Custom editors allow extensions to provide a custom UI for editing any file 
+  - In Webview views that are rendered in the sidebar or panel areas.
+- webview should be used sparingly and only when VS Code's native API is inadequate. 
+  - Webviews are resource heavy and run in a separate context from normal extensions. 
+- Webview panels are owned by the extension that creates them. The extension must hold onto the webview returned from `createWebviewPanel`. 
+  - If your extension loses this reference, it cannot regain access to that webview again, even though the webview will continue to show in VS Code.
+- Webviews run in isolated contexts that cannot directly access local resources. This is done for security reasons.
+  - you must use the Webview.asWebviewUri function to convert a local file: URI into a special URI that VS Code can use to load a subset of local resources.
+
+- Web Workers are supported inside of webviews but there are a few important restrictions to be aware of.
+  - First off, workers can only be loaded using either a data: or blob: URI. You cannot directly load a worker from your extension's folder.
+  - If you do need to load worker code from a JavaScript file in your extension, try using fetch
+  - Worker scripts also do not support importing source code using importScripts or import(...). If your worker loads code dynamically, try using a bundler such as webpack to package the worker script into a single file.
+
+- 
+- 
+
+## api-editor
+
+- Custom editors allow extensions to create fully customizable read/write editors that are used in place of VS Code's standard text editor
+- Custom editors build on a lot of VS Code concepts—such as webviews and text documents
+
+- A custom editor is an alternative view that is shown in place of VS Code's standard text editor for specific resources. There are two parts to a custom editor: 
+  - the view that users interact with 
+  - and the document model that your extension uses to interact with the underlying resource.
+- The view side of a custom editor is implemented using a webview. 
+  - This lets you build the user interface of your custom editor using standard HTML, CSS, and JavaScript. 
+  - Webviews cannot access the VS Code API directly but they can talk with extensions by passing messages back and forth
+- The other part of a custom editor is the document model. 
+  - This model is how your extension understands the resource (file) it is working with. 
+  - A CustomTextEditorProvider uses VS Code's standard TextDocument as its document model and all changes to the file are expressed using VS Code's standard text editing APIs.
+  - CustomReadonlyEditorProvider and CustomEditorProvider on the other hand let you provide your own document model, which lets them be used for non-text file formats.
+- Custom editors have a single document model per resource but there may be multiple editor instances (views) of this document.
+  - there is still just a single TextDocument since there is still just a single copy of the resource in the workspace, but there are now two webviews for that resource.
+
+- if you are working with a text based file format use CustomTextEditorProvider, for binary file formats use CustomEditorProvider.
+
+- 
+- 
+- 
+- 
+- 
+
+## Virtual Documents
+
+- The text document content provider API allows you to create readonly documents in Visual Studio Code from arbitrary sources.
+- Note how the provider doesn't create uris for virtual documents - its role is to provide contents given such an uri. In return, content providers are wired into the open document logic so that providers are always considered.
+
+- Depending on the scenario virtual documents might change. To support that, providers can implement a `onDidChange`-event.
+
+- The event emitter has a fire method which can be used to notify VS Code when a change has happened in a document.
+
+- If you need more flexibility and power take a look at the `FileSystemProvider` API. 
+  - It allows to implement a full file system, having files, folders, binary data, file-deletion, creation and more.
+
+- 
+- 
+- 
+- 
+
+## web-extension
+
+- When VS Code is used in the Web, installed extensions are run in an extension host in the browser, called the 'web extension host'.
+  - An extension that can run in a web extension host is called a 'web extension'.
+- Web extensions still have access to the full VS Code API, but no longer to the Node.js APIs and module loading.
+- The web extension runtime is supported on VS Code desktop too
+# ext-
+
 # more
