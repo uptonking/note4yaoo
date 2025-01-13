@@ -328,4 +328,9 @@ modified: 2022-12-19T01:51:01.389Z
   - The JavaScript toolkit to build full stack apps and frameworks with your own opinions
   - Compose full stack applications (and frameworks) using Vite, the versatile bundler and dev server, and Nitro, the universal production server. The core primitive in vinxi is a router.
   - There are currently two frameworks actively being developed on vinxi: SolidStart, TanstackStart
+# py-fastapi
+- https://github.com/yezz123/DogeAPI /MIT/202405/python/inactive
+  - API with high performance built with FastAPI & SQLAlchemy, help to improve connection with your Backend Side to create a simple blog and Cruds with OAuth2PasswordBearer
+  - uvicorn main:app --reload
+  - [Build and Secure an API in Python with FastAPI – Blog _202105](https://blog.yezz.me/blog/Build-and-Secure-an-API-in-Python-with-FastAPI)
 # more

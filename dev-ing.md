@@ -558,10 +558,30 @@ console.log(
   - 修复文件树将文件夹拖到文件夹不work的问题
   - 变更列表 accept-all, reject-all
   - ~~webview自动打开, 刷新时保持打开~~
+  - cmdk工具条无法触发，快捷键可以
 
 - action-删除文件
   - live模式显示弹窗
   - 回放模式显示红色背景的文件快照
+
+## 0113
+
+```shell
+curl -i -X POST -H 'Content-Type: application/json' -d '{"name": "New item", "year": "2009"}' http://rest-api.io/items
+```
+
+- 上周
+  - 修复了重启容器后部分状态未更新的问题
+  - 修复布局最大化和收起terminal有时不work的问题
+  - 修复了一些紧急issues，如驾驶舱聊天框的光标经常跳到行尾
+  - 修复了cde一些其他issue
+  - 花了较多时间排查cde激活失败、ai写文件超时、刷新页面不显示编辑器文件树的问题
+- 本周
+  - 实现删除移动文件在live和回放模式的表现
+  - 修复年前规划的剩余issues
+- 今天
+  - 继续排查刷新页面不显示编辑器文件树的问题
+  - 修复一些urgent优先级的bug，特别是佳路反馈的terminal经常不可用的问题
 
 ## 0110
 

@@ -31,7 +31,8 @@ modified: 2024-06-30T03:20:21.444Z
   - https://jupyter-server.github.io/jupyverse
   - A Jupyter server based on FastAPI
   - A set of Asphalt components implementing a Jupyter server.
-  - 202207: Jupyverse and FPS generally embrace modern Python technologies such as ASGI, and an ecosystem built around uvicorn/Starlette/FastAPI, which we see as the future of web development. In the near future, Jupyverse may take a different path than JupyterHub for a multi-user scenario.
+  - 202207: Jupyverse and FPS generally embrace modern Python technologies such as ASGI, and an ecosystem built around uvicorn/Starlette/FastAPI, which we see as the future of web development. 
+    - In the near future, Jupyverse may take a different path than JupyterHub for a multi-user scenario.
     - JupyterHub is basically a server of servers. Each individually spawned Jupyter server is quite independent. We might scale Jupyverse differently, so that it remains the only server.
   - [Jupyverse may take a different path than JupyterHub for a multi-user scenario? _202208](https://github.com/jupyter-server/jupyverse/issues/201)
     - I mean that we will probably not scale Jupyverse by launching a server for each user, but by using other techniques such as replication.
@@ -222,7 +223,7 @@ modified: 2024-06-30T03:20:21.444Z
   - Instructor toolbar extension for Jupyter notebooks
   - Instructor "formgrader" extension for Jupyter notebooks
 # collab
-- https://github.com/jupyterlab/jupyter-collaboration /BSD/202406/python
+- https://github.com/jupyterlab/jupyter-collaboration /BSD/202501/python
   - https://jupyterlab-realtime-collaboration.readthedocs.io/en/latest/
   - A Jupyter Server Extension Providing Support for Y Documents
   - JupyterLab Real-Time Collaboration is a Jupyter Server Extension and JupyterLab extensions providing support for Y documents and adding collaboration UI elements in JupyterLab.
