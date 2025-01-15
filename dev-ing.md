@@ -564,10 +564,44 @@ console.log(
   - live模式显示弹窗
   - 回放模式显示红色背景的文件快照
 
+## 0114
+
+- [regex - javascript syntax error: invalid regular expression - Stack Overflow](https://stackoverflow.com/questions/16168484/javascript-syntax-error-invalid-regular-expression)
+  - In this case you didn't actually need regular expressions, but if you want to avoid invalid characters in your expression you should escape it:
+
+```JS
+RegExp.quote = function(str) {
+  return str.replace(/([.?*+^$[\]\\(){}|-])/g, "\\$1");
+};
+var re = new RegExp(RegExp.quote(filter));
+
+RegExp.quote = function allowSpecialSymbols(str) {
+  return str.replace(/([.?*+^$[\]\\(){}|-])/g, '');
+};
+const regExp = new RegExp(RegExp.quote('some \ string'), 'i');
+```
+
+- 本周
+  - 继续排查刷新页面不显示编辑器和文件树的问题，初步结论是没什么思路
+  - 尝试修复terminal经常不可用的问题，定位到了原因，修复方法还在尝试
+- 今天
+  - 继续修复terminal经常不可用的问题
+  - 修复体验测试反馈的问题
+  - 实现删除移动文件在live和回放模式的表现
+
+[fromMQ] fileChange
+
+```log
+
+[Nest] 44  - 01/14/2025, 10:13:23 AM VERBOSE [RabbitmqService] [mqName:paas-ide-server-dev-6db6599549-c84mm][playgroundId:746966488363220992][rabbitmq.service.ts:129] <=[fromMQ] fileChange[750759531793043456]:{"messageId":"21c50acd-d21d-11ef-a5ca-0242ac110004","timestamp":1736820803,"replyMessageId":"","dockerId":"750759531843375104","fileChanges":[{"path":"venv/include/python3.11","change":1,"type":1},{"path":"venv/lib/python3.11","change":1,"type":1},{"path":"venv/lib/python3.11/site-packages","change":1,"type":1},{"path":"venv/bin","change":1,"type":1},{"path":"venv/include","change":1,"type":1},{"path":"venv/lib","change":1,"type":1},{"path":"venv/pyvenv.cfg","change":1,"type":0},{"path":"venv","change":1,"type":1}]} +9038ms
+
+[Nest] 44  - 01/14/2025, 10:13:33 AM VERBOSE [RabbitmqService] [mqName:paas-ide-server-dev-6db6599549-c84mm][playgroundId:746966488363220992][rabbitmq.service.ts:129] <=[fromMQ] fileChange[750759531793043456]:{"messageId":"27f81c19-d21d-11ef-a5ca-0242ac110004","timestamp":1736820813,"replyMessageId":"","dockerId":"750759531843375104","fileChanges":[{"path":"venv/lib/python3.11/site-packages/pip/_vendor/idna/__pycache__","change":1,"type":1},{"path":"venv/lib/python3.11/site-packages/pip/_vendor/colorama/tests/initialise_test.py","change":1,"type":0},{"path":"venv/lib/python3.11/site-packages/pip/_vendor/msgpack/__pycache__/ext.cpython-311.pyc","change":1,"type":0},{"path":"venv/lib/python3.11/site-packages/pip-24.0.dist-info/REQUESTED","change":1,"type":0},{"path":"venv/lib/python3.11/site-packages/setuptools/_distutils/command/bdist.py","change":1,"type":0},{"path":"venv/lib/python3.11/site-packages/setuptools/command/__pycache__/install_lib.cpython-311.pyc","change":1,"type":0},{"path":"venv/lib/python3.11/site-packages/pip/_vendor/colorama/ansi.py","change":1,"type":0},{"path":"venv/lib/python3.11/site-packages/pip/_internal/operations/build/__pycache__/metadata_editable.cpython-311.pyc","change":1,"type":0},{"path":"venv/lib/python3.11/site-packages/pip/_vendor/rich/__pycache__/_fileno.cpython-311.pyc","change":1,"type":0},{"path":"venv/lib/python3.11/site-packages/pip/_internal/models","change":1,"type":1},{"path":"venv/lib/python3.11/site-packages/pip/_vendor/urllib3/util/queue.py","change":1,"type":0},{"path":"venv/lib/python3.11/site-packages/pip/_internal/network/__pycache__/auth.cpython-311.pyc","change":1,"type":0},{"path":"venv/lib/python3.11/site-packages/pip/_vendor/pyproject_hooks/_in_process/__pycache__/__init__.cpython-311.pyc","change":1,"type":0},{"path":"venv/lib/python3.11/site-packages/setuptools/command/develop.py","change":1,"type":0},{"path":"venv/lib/python3.11/site-packages/pip/_internal/operations/build/build_tracker.py","change":1,"type":0},{"path":"venv/lib/python3.11/site-packages/setuptools/_distutils/command/bdist_rpm.py","change":1,"type":0},{"path":"venv/lib/python3.11/site-packages/pip/_vendor/... +3ms
+```
+
 ## 0113
 
 ```shell
-curl -i -X POST -H 'Content-Type: application/json' -d '{"name": "New item", "year": "2009"}' http://rest-api.io/items
+curl -i -X POST -H 'Content-Type: application/json' -d  '{"name": "New1", "email": "yaoo@qq.com","password":"111111"}' http://rest-api.io/items
 ```
 
 - 上周

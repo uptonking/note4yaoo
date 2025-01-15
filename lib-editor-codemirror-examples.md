@@ -1751,6 +1751,15 @@ modified: 2023-06-23T12:46:53.288Z
 
 - code-play
   - https://github.com/xorazmiy-dev/code-mirror /js
+
+## playgrounds
+
+- https://github.com/vercel/satori /MPLv2/202411/ts
+  - https://og-playground.vercel.app/
+  - Enlightened library to convert HTML and CSS to SVG
+  - ✨ 提供了支持可视化配置的playground
+  - 不支持html字符串渲染和dangerouslySetInnerHTML
+  - What if there’s a `<Satori>` component that adds fluid layout & style transitions to your elements?
 # starter
 - https://github.com/nothingislost/obsidian-cm6-attributes /202112/ts/inactive
   - This reference plugin implements a ViewPlugin which will parse the markdown syntaxTree and add various Decorations to enhance the editor.
