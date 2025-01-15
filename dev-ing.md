@@ -564,6 +564,21 @@ console.log(
   - live模式显示弹窗
   - 回放模式显示红色背景的文件快照
 
+## 0115
+
+- 昨天
+  - 修复了terminal经常不可用的问题
+  - 修复了文件树搜索的关键词包含特殊字符时导致页面崩溃的问题
+- 今天
+  - 集中修复体验测试反馈的问题
+
+- 🤔 [innerWidth and outerWidth oddness on desktop - Stack Overflow](https://stackoverflow.com/questions/22468878/innerwidth-and-outerwidth-oddness-on-desktop)
+  - One reason `innerWidth` could be larger than `outerWidth` is if your browser is zoomed
+
+- [AWS EFS too slow when i use git & npm install - Stack Overflow](https://stackoverflow.com/questions/63768023/aws-efs-too-slow-when-i-use-git-npm-install)
+  - EFS with git, regardless of config is not working very well. However, rsync works much better. 
+  - As such a workaround for EFS+git repo that worked for me: Clone to an EBS. Rsync to the EFS
+
 ## 0114
 
 - [regex - javascript syntax error: invalid regular expression - Stack Overflow](https://stackoverflow.com/questions/16168484/javascript-syntax-error-invalid-regular-expression)
@@ -581,7 +596,7 @@ RegExp.quote = function allowSpecialSymbols(str) {
 const regExp = new RegExp(RegExp.quote('some \ string'), 'i');
 ```
 
-- 本周
+- 昨天
   - 继续排查刷新页面不显示编辑器和文件树的问题，初步结论是没什么思路
   - 尝试修复terminal经常不可用的问题，定位到了原因，修复方法还在尝试
 - 今天
