@@ -98,6 +98,23 @@ modified: 2020-10-22T10:22:55.878Z
 - https://gitee.com/openEA/FlowDesigner
   - FlowDesigner来源于Linkey BPM中的流程设计器，作用于流程运行过程中的图形描述
 
+- https://github.com/eclipse-sprotty/sprotty /EPLv2/202501/ts/svg
+  - https://sprotty.org/
+  - A diagramming framework for the web
+  - This is the client part of Sprotty, a next-generation, open-source diagramming framework built with web technologies.
+  - Fast, scalable SVG rendering that is compatible with all modern browsers and stylable with CSS
+  - Animations built into the core
+  - Support for a distributed runtime with client and server
+  - Fast, reactive client architecture implemented in TypeScript
+  - Java or Node.js based server architecture
+  - Configuration via dependency injection
+  - Integrations with Xtext, Langium, the Language Server Protocol, VS Code and Theia
+  - Can be run as rich-client as well as in the browser
+  - sprotty (this repository) contains the client code (sprotty), shared code for Node.js servers (sprotty-protocol), ELK layout integration (sprotty-elk) and examples.
+  - https://github.com/eclipse-sprotty/sprotty-server /EPL/202411/java
+    - Server implementation for the Sprotty diagramming framework
+    - contains server code for Java and includes server-side diagram layout, the extension of the Language Server Protocol, and the integration with the Xtext framework
+
 - diagram-js /1.4kStar/MIT/202305/js
   - https://github.com/bpmn-io/diagram-js
   - A toolbox for displaying and modifying diagrams on the web.

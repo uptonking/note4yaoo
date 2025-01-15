@@ -69,6 +69,20 @@ modified: 2024-08-24T16:17:26.715Z
   - This is a small fraction of the more than 40, 000 extensions in the VS Code Marketplace
   - This flake provides Nix expressions for the majority of available extensions from Open VSX and VS Code Marketplace.
 # popular
+- https://github.com/microsoft/vscode-livepreview /MIT/202312/ts/inactive
+  - http://aka.ms/live-preview
+  - Hosts a local server in your workspace for you to preview your webpages.
+  - An extension that hosts a local server for you to preview your web projects on
+  - The external browser preview also supports debugging via the built-in js-debug extension and attaching to the Edge Devtools Extension. 
+  - https://github.com/auchenberg/vscode-browser-preview
+    - This extension has been deprecated in favor of the Live Preview extension.
+
+- https://github.com/urin/vscode-web-visual-editor /MIT/202412/ts
+  - Visual Editing: Edit HTML elements visually within the WebView.
+  - Real-Time Preview: See changes reflected instantly as you edit.
+  - Drag elements to rearrange their position.
+  - This extension is similar to microsoft/vscode-livepreview 
+
 - https://github.com/bebo-dot-dev/jjs-vscode-toolbar
   - A VSCode toolbar and context menu extension
   - Modifies the VSCode toolbar and context menu to include a few useful commands
@@ -107,34 +121,65 @@ modified: 2024-08-24T16:17:26.715Z
     - xmind: xmind-viewer
     - Image: lightGallery
 
-- https://github.com/janisdd/vscode-edit-csv /MIT/202310/ts
+- https://github.com/janisdd/vscode-edit-csv /MIT/202310/ts/inactive
   - vs code extension to edit csv files with an excel like table ui
   - If you don't have vs code to hand, you can use the online version at https://edit-csv.net
+
+- https://github.com/sswatson/table-editor-vscode /202410/ts/inactive
+  - This extension provides support for editing CSV files in a spreadsheet-like interface.
 
 - https://github.com/mikeebowen/ooxml-validator-vscode /MIT/202412/ts
   - A VS Code extension for validating Office Open XML files
   - The OOXML Validator validates Office Open XML files (.docx, .docm, .dotm, .dotx, .pptx, .pptm, .potm, .potx, .ppam, .ppsm, .ppsx, .xlsx, .xlsm, .xltm, .xltx, or .xlam) and displays the validation errors found in the xml parts in VSCode and creates an optional CSV or JSON log file of the validation errors.
 
+- https://github.com/skfrost19/Docx-Viewer /MIT/202308/ts/inactive
+  - VSCode extension to view docx / ODT files within the editor.
+
 - https://github.com/hediet/vscode-drawio /GPLv3/202401/ts/inactive
   - This unofficial extension integrates Draw.io (also known as diagrams.net) into VS Code.
 
+- https://github.com/DomMinnich/VS-Notes /202501/ts
+  - VS-QuickNotes is a simple and intuitive note-taking extension for Visual Studio Code. 
+  - It allows users to create, manage, and organize notes directly within the editor.
+  - Notes are stored globally, so they can be accessed across all projects in your VS Code environment.
+    - Notes are stored in the global storage location of VS Code, meaning they're specific to the VS Code environment and not synced across different machines automatically
+  - No Multi-File Support: Currently, each note is created as an individual .txt or .md file.
+
 ## ext-editor
+
+- https://github.com/patmood/rich-markdown-editor-vsc /202405/ts/inactive
+  - Rich Markdown Editor extension for VSCode
+  - This extension replaces the default code editor for markdown files with a rich version, allowing you to "edit" in preview mode.
+  - It uses the rich-markdown-editor project generously open sourced by Outline
 
 - https://github.com/zaaack/vscode-markdown-editor /MIT/202501/ts
   - A vscode extension to make your vscode become a full-featured WYSIWYG markdown editor
   - Auto sync changes between the VSCode editor and webview
   - 依赖vditor3、jquery
 
+- https://github.com/kurusugawa-computer/formula-editor-vscode /MIT/202412/ts
+  - Formula Editor is a WYSIWYG editor that allows you to edit formulas in Markdown.
+
 - https://github.com/microsoft/vscode-hexeditor /MIT/202412/ts
   - A custom editor extension for Visual Studio Code which provides a hex editor for viewing and manipulating files in their raw hexadecimal representation.
   - Opening files as hex
   - Editing with undo, redo, copy, and paste support
 
-- https://github.com/urin/vscode-web-visual-editor /MIT/202412/ts
-  - Visual Editing: Edit HTML elements visually within the WebView.
-  - Real-Time Preview: See changes reflected instantly as you edit.
-  - Drag elements to rearrange their position.
-  - This extension is similar to microsoft/vscode-livepreview 
+- https://github.com/dineug/textflow /MIT/202501/ts
+  - WYSIWYG Editor VSCode Extension
+  - create an empty file with a .txf.json extension and open it in Visual Studio Code.
+  - A rich-text editor based on Lexical.
+
+- https://github.com/tomoyukim/vscode-mermaid-editor /MIT/202308/ts/inactive
+  - Live editor and image creator for mermaid.js in Visual Studio Code
+
+- https://github.com/henoc/svgeditor /MIT/201812/ts/inactive
+  - VSCode extension for svg editor
+
+- https://github.com/SumitNalavade/VS-Code-ReadMe-Editor /202306/ts/inactive
+  - A VS Code extension to create, customize and save your Readme without having to leave your project workspace.
+  - Built with TypeScript & React using the VS Code Webview API
+  - https://github.com/ryanwelcher/vscode-readme-editor
 
 ## ext-git
 
@@ -145,6 +190,20 @@ modified: 2024-08-24T16:17:26.715Z
 - https://github.com/MichaelCurrin/auto-commit-msg /ts
   - A VS Code extension to generate a smart commit message based on file changes
   - With the explosion of AI tools, you can find alternatives to this extension which use AI - see AI tools
+
+- https://github.com/zawys/vscode-as-git-mergetool /AGPL/202111/ts/inactive
+  - VS Code extension providing diff editor layouts & more for 3-way merging
+
+- https://github.com/sapegin/vscode-just-blame /MIT/202501/ts
+  - VS Code extension to show Git Blame annotations, inspired by JetBrains editors
+  - Heatmap like in JetBrains editors.
+  - Doesn’t use any resources until you turn on the annotations.
+
+- https://github.com/carlthome/vscode-git-line-blame /AGPL/202407/ts/inactive
+  - When you select a line in the text editor, the commit summary, author, and time elapsed since that commit edited that line will appear next to the line number in a discrete and unobtrusive color.
+
+- https://github.com/dzhavat/git-cheatsheet-inside-vs-code /MIT/202501/ts
+  - VS Code extension that lets you open a Git cheatsheet directly in the editor.
 
 ## ext-history
 
@@ -164,21 +223,62 @@ modified: 2024-08-24T16:17:26.715Z
 ## ext-coding
 
 - https://github.com/lostintangent/codeswing /MIT/202409/ts
+  - https://aka.ms/codeswing
   - VS Code extension for building web applications ("swings") using a interactive and editor-integrated coding environment
+  - CodeSwing comes with support for all major web languages: js/ts/css/scss/less/html/markdown/pug
+  - CodeSwing also allows you to create component-based swings, using either React, React Native, Vue (single-file components) or Svelte
+  - If you need to add any external JavaScript libraries (e.g. react) or stylesheets (e.g. font-awesome) to your swing, simply click the Add swing Library command 
 
-## ext-data
+- https://github.com/mh-mobile/vscode-inline-repl /MIT/202412/ts
+  - Inline REPL extensions for VS Code 
+  - Execute Ruby/Rust code and see results directly in your editor using Jupyter kernels.
+  - The project is inspired by Zed Editor's REPL functionality, bringing a similar seamless code evaluation experience to VS Code.
+
+## ext-data/format
 
 - https://github.com/dineug/erd-editor /MIT/202501/ts
   - https://erd-editor.io/
   - Entity-Relationship Diagram Editor
   - Local-first support (autosaves to the browser).
+  - https://github.com/dineug/vuerd-vscode
 
 - https://github.com/microsoft/vscode-data-wrangler /未开源
   - [Announcing Data Wrangler: Code-centric viewing and cleaning of tabular data in Visual Studio Code - Python](https://devblogs.microsoft.com/python/announcing-data-wrangler-code-centric-viewing-and-cleaning-of-tabular-data-in-visual-studio-code/)
   - Data Wrangler is a free extension that offers data viewing and cleaning that is directly integrated into VS Code and the Jupyter extension
+
+- https://github.com/slaugaus/visual-json-editor-vscode /MIT/202412/ts
+  - WYSIWYG JSON viewer/editor for VS Code that looks like its settings page
+  - Open JSON files in a GUI that looks (kind of) like the VS Code settings page! Includes type changing, item rearrangement, undo/redo, and assistance with colors, dates, and times.
+- https://github.com/sunmorgus/vscode-json-editor /201806/ts/inactive
+  - A vscode extension to preview and edit JSON documents in a simple tree view
+
+- https://github.com/liriliri/vscode-settings-editor /MIT/202307/ts/inactive
+  - VS Code visual editor for settings like prettierrc, tsconfig etc.
+
+- https://github.com/Saber2pr/vsc-ext-todolist /202404/ts
+  - TodoList TreeView Editor for Vscode Extension.
+  - Create and edit *.todo file
 # ext-ui
 - https://github.com/subframe7536/vscode-custom-ui-style /MIT/202501/ts
   - VSCode extension that modify CSS and JS code in both editor and webview, unify global font family, setup background image and Electron BrowserWindow options, or add your custom CSS or JS code
+
+- https://github.com/GorvGoyl/Shortcut-Menu-Bar-VSCode-Extension /GPLv3/202203/ts/inactive
+  - Add handy buttons like beautify, show opened files, save, toggle terminal, etc to the editor menu bar in VSCode
+  - Add 35+ handy buttons like beautify, show opened files, save, toggle terminal, activity bar, Find replace etc to the editor menu bar in VSCode
+
+- https://github.com/enyancc/vscode-ext-color-highlight /GPLv3/202403/js/inactive
+  - Extension adds colored border around css/web colors in the editor
+
+- https://github.com/BrandonKirbyson/VSCode-Animations /MIT/202501/ts
+  - A VSCode extension that adds animations to the editor
+  - The theme used in the demo is Solarized Palenight.
+  - Apc Customize UI++ is currently not working as of this issue, use Custom CSS and JS Loader or Custom UI Style instead.
+# ext-view
+- https://github.com/ctcuff/vscode-font-preview /MIT/202312/ts/inactive
+  - A VS Code extension that allows you to view fonts right in your editor
+
+- https://github.com/ericadamski/vscode-carbon_now_sh /202201/ts/inactive
+  - A Code package to open the current editor content in carbon.now.sh
 # ext-api
 - https://github.com/CodinGame/monaco-vscode-api /MIT/202412/ts
   - VSCode public API plugged on the monaco editor
@@ -187,6 +287,11 @@ modified: 2024-08-24T16:17:26.715Z
   - This package allows to 
     - override them with fully-functional alternatives from VSCode
     - add new services that were not included in Monaco
+# ext-more
+- https://github.com/tahabasri/snippets /MIT/202309/ts/inactive
+  - Visual Studio Code already provides robust support for snippets, including their appearance in IntelliSense, tab-completion, and a dedicated snippet picker (Insert Snippet in the Command Palette). 
+  - This extension takes snippets to another level by introducing new features that enhance code snippet management.
+  - search, sync
 # sync
 - https://github.com/neilmovva/codemirror /202411/ts
   - VSCode extension to continuously sync the open workspace folder to a remote server.

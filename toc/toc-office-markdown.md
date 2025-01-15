@@ -164,6 +164,12 @@ modified: 2021-01-04T17:26:25.032Z
   - While SB uses a database for indexing and caching some indexes, all of that can be rebuilt from its markdown source at any time. 
   - extensible with plugs, and you can customize it
   - [Silver Bullet: Markdown-based extensible open source personal knowledge platform | Hacker News_202212](https://news.ycombinator.com/item?id=33843009)
+
+- https://github.com/k-lar/dynomark /MIT/202411/go
+  - Dynomark strives to be a markdown query language engine, similar to obsidian's Dataview plugin.
+  - This program can be used with editors like neovim, vscode and emacs to provide a similar experience to Dataview (but very barebones for now).
+  - https://github.com/k-lar/vscode-dynomark
+    - This extension is a wrapper around that engine, and provides a simple way to query your markdown files.
 # apps
 - https://github.com/motifland/markprompt
   - Markprompt is a platform for building GPT-powered prompts. 
