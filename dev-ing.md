@@ -80,6 +80,8 @@ npx create-strapi@rc strapi5-play-202408 --use-npm --quickstart --ts --skip-clou
 
 npx create-strapi@latest --ts --use-npm --git-init  --example --skip-cloud --skip-db    --quickstart ./emptyFolder
 
+vite --host 0.0.0.0 --port 8080
+
 stt.message.channel().send('uResetTask')
 stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorithm')
 ```
@@ -563,6 +565,16 @@ console.log(
 - action-删除文件
   - live模式显示弹窗
   - 回放模式显示红色背景的文件快照
+
+## 0116
+
+- 昨天
+  - 集中处理体验测试反馈的问题，主要是add-to-chat背景色挡住文字、webview宽度优化
+  - 将一些无法复现的问题移入了backlog，再观察一段时间能否复现
+- 今天
+  - 优化webview面板的操作体验
+  - 排查ai写文件超时的问题
+  - 修复年前规划的剩余问题
 
 ## 0115
 
