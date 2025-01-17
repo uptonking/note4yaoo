@@ -566,6 +566,11 @@ console.log(
   - live模式显示弹窗
   - 回放模式显示红色背景的文件快照
 
+## 0117
+
+- [WindowProxy and Window objects? - Stack Overflow](https://stackoverflow.com/questions/16092835/windowproxy-and-window-objects)
+  - iframe.contentWindow, or window.frames[0], or any other way of attempting to access a window, return a WindowProxy object, not a Window object. That WindowProxy object delegates to whatever the current Window is
+
 ## 0116
 
 - 昨天
