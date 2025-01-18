@@ -14,34 +14,6 @@ modified: 2024-01-25T13:29:10.054Z
   - [codesandbox.io/blog/category/engineering](https://codesandbox.io/blog/category/engineering)
 # blogs-dev-xp
 
-## [How to run Node.js in the browser | Nearform _202304](https://www.nearform.com/digital-community/how-to-run-node-js-in-the-browser/)
-
-- We will focus on two relatively new technologies, WebContainers by StackBlitz and Nodebox by Codesandbox, with a view to seeing:
-  - How feasible and usable these tools are and what underlying technologies they use
-  - What features and limitations they have
-  - If it’s worth trying to build our own apps or integrations around them
-
-- our main goal is to run Fastify in the browser from our own codebase and allow users to experiment with it in real-time
-
-- WebContainers and Nodebox use different mechanisms to sandbox the code being run in the browser and emulate a local filesystem by means of a Javascript object containing key/value pairs to represent filenames and their contents.
-  - Each system requires a ‘files content’ to be provided as a raw escaped string.
-- Both systems:
-  - Do not provide a way to work with the file system for security (and likely proprietary) reasons. If you want to work with the file system or a remote endpoint and save your work, you must implement your own functionality.
-  - Use an in-memory virtual file system, which can be interacted with by users. However, without extensive initial work, the implementation is limited to the browser and changes will be lost on refresh.
-
-- WebContainers are a browser-based runtime for executing Node.js applications and operating system commands, entirely inside your browser tab.
-  - The  sharedArrayBuffer is a JavaScript object that represents a fixed-length binary data buffer that can be shared between different execution threads. 
-  - By sharing memory, these applications can avoid the overhead of copying data between threads and reduce the need for synchronisation mechanisms.
-  - However, this feature has been disabled by default in many web browsers since 2018 due to security concerns related to Meltdown and Spectre-style attacks.
-
-- Codesandbox’s Nodebox is a custom, closed source runtime that is run entirely in the browser
-  - Like WebContainers, though, it’s possible to roll your own fully customised experience without their ecosystem and implement it with Nodebox directly.
-  - Unlike other supported systems, Nodebox does not offer the watching/live recompilation/rerun of code without rolling your own mechanism which is very limited in scope.
-
-- TLDR: Both WebContainers and Nodebox are promising and interesting tools. However, these tools being closed source is somewhat problematic and both come with some important technical limitations.
-  - Both WebContainers and Nodebox have been opened up to some degree, allowing developers to build their own applications and integrations. However, it is important to be mindful of vendor lock-in and to create experiences that are not directly tied to one sandboxing technology
-  - While this is possible today, it requires implementing a lot of functionality from scratch, which incurs a high maintenance overhead.
-
 ## [Building a Next-Level Code Playground/Sandbox/REPL with Sandpack _202402](https://www.joshwcomeau.com/react/next-level-playground/)
 
 - I recently rebuilt this blog's playground, using Sandpack, a modern playground framework built by the folks at CodeSandbox
@@ -83,10 +55,10 @@ modified: 2024-01-25T13:29:10.054Z
 
 - Browser Sandbox相关代码都是开源的，让我们按照抽象程度从上往下介绍他。
 - 首先是封装最完整的库 —— @codesandbox/sandpack-react。这个React库提供了很多开箱即用的codesandbox模块。
-  - 各个组件通过postMessage与SandackPreview渲染的iframe交互。
+  - 各个组件通过postMessage与SandpackPreview渲染的iframe交互。
 - codesandbox的核心实际上包含三部分内容：
   1. 各种编辑器相关模块的实现（比如代码编辑部分、控制台、预览）
-  2. Browser Sandpack运行环境，是一个独立的网页，在预览模块(SandackPreview)中通过iframe渲染
+  2. Browser Sandpack运行环境，是一个独立的网页，在预览模块(SandpackPreview)中通过iframe渲染
   3. 1与2之间通信的协议（即页面与iframe之间的通信协议）
   - @codesandbox/sandpack-react实现了1，他依赖的@codesandbox/sandpack-client实现了3。
   - 2相关的源代码在codesandbox-client/packages/app中。将这个包的代码部署上线后，就能获得一个Browser Sandpack运行环境。
@@ -99,6 +71,34 @@ modified: 2024-01-25T13:29:10.054Z
   - 对于Cloud Sandpack，会占用一定服务端资源。
   - 对于Browser Sandpack，则不会占用什么服务端资源，因为他大部分逻辑都是在前端执行的。
 # blogs-js-sandbox 🧊
+
+## [How to run Node.js in the browser | Nearform _202304](https://www.nearform.com/digital-community/how-to-run-node-js-in-the-browser/)
+
+- We will focus on two relatively new technologies, WebContainers by StackBlitz and Nodebox by Codesandbox, with a view to seeing:
+  - How feasible and usable these tools are and what underlying technologies they use
+  - What features and limitations they have
+  - If it’s worth trying to build our own apps or integrations around them
+
+- our main goal is to run Fastify in the browser from our own codebase and allow users to experiment with it in real-time
+
+- WebContainers and Nodebox use different mechanisms to sandbox the code being run in the browser and emulate a local filesystem by means of a Javascript object containing key/value pairs to represent filenames and their contents.
+  - Each system requires a ‘files content’ to be provided as a raw escaped string.
+- Both systems:
+  - Do not provide a way to work with the file system for security (and likely proprietary) reasons. If you want to work with the file system or a remote endpoint and save your work, you must implement your own functionality.
+  - Use an in-memory virtual file system, which can be interacted with by users. However, without extensive initial work, the implementation is limited to the browser and changes will be lost on refresh.
+
+- WebContainers are a browser-based runtime for executing Node.js applications and operating system commands, entirely inside your browser tab.
+  - The  sharedArrayBuffer is a JavaScript object that represents a fixed-length binary data buffer that can be shared between different execution threads. 
+  - By sharing memory, these applications can avoid the overhead of copying data between threads and reduce the need for synchronisation mechanisms.
+  - However, this feature has been disabled by default in many web browsers since 2018 due to security concerns related to Meltdown and Spectre-style attacks.
+
+- Codesandbox’s Nodebox is a custom, closed source runtime that is run entirely in the browser
+  - Like WebContainers, though, it’s possible to roll your own fully customised experience without their ecosystem and implement it with Nodebox directly.
+  - Unlike other supported systems, Nodebox does not offer the watching/live recompilation/rerun of code without rolling your own mechanism which is very limited in scope.
+
+- TLDR: Both WebContainers and Nodebox are promising and interesting tools. However, these tools being closed source is somewhat problematic and both come with some important technical limitations.
+  - Both WebContainers and Nodebox have been opened up to some degree, allowing developers to build their own applications and integrations. However, it is important to be mindful of vendor lock-in and to create experiences that are not directly tied to one sandboxing technology
+  - While this is possible today, it requires implementing a lot of functionality from scratch, which incurs a high maintenance overhead.
 
 ## [浅析 JavaScript 沙箱 - 掘金](https://juejin.cn/post/7148335784431468551)
 
@@ -140,7 +140,7 @@ modified: 2024-01-25T13:29:10.054Z
   - 代理沙箱运用了proxy，保证了window对象的纯净，不被污染。
   - 每个 ProxySandbox 都拥有其独立的代理对象，并不会污染真正的window对象，而快照沙箱会污染真正的window对象，所以需要在激活失活时去进行恢复/重置操作
 
-## [30 行代码实现 JS 沙箱 - 知乎](https://zhuanlan.zhihu.com/p/589341143)
+## [30行代码实现 JS 沙箱 - 知乎](https://zhuanlan.zhihu.com/p/589341143)
 
 - 在 JavaScript 中，动态执行代码的方法有 Function 和 eval
 
@@ -247,12 +247,34 @@ Function('str', 'console.log(str, aaa)')('aaa:');
   - Currently files inside xfs get fragmented quickly, due to many random writes.
 # blogs-csb-internals-browser
 
+## [codesandbox在线编译部署方式 _202305](https://juejin.cn/post/7238869983622774840)
+
+- 在组内做了一款前端研效工具，需要在线预览react代码效果，笔者便私有化部署了codesandbox的在线编译服务。
+  - 本文重心在实践层面，故原理会写得比较简略
+- 直接部署最为简单，直接使用sandpack库即可
+  - 点击右下角分享按钮，即可将代码同步到codesandbox共享
+  - 依赖公共npm源：企业内部私有库无法直接使用
+  - 安全性差：分享误操作可能导致代码共享到codesandbox，带来安全风险
+  - iframe沙箱环境为codesandbox官方环境：私密性问题，代码执行在外部域上
+- 支持私有源部署
+  - 私有源主要包含了github packages、npm私有源、自定义源等
+  - 私有源的包代码会缓存到sandpack的对象存储，对代码私密性比较重视需要考量
+- 完全私有化部署
+  - codesandbox / dependency-packager仓库：提供依赖处理服务
+  - codesandbox / codesandbox-client仓库：提供iframe服务，简易babel及简易webpack的实现也在这
+  - 对象存储：自行准备，用于缓存处理后的npm依赖
+
+## [CodeSandBox私有化部署实践 _202309](https://developers.weixin.qq.com/community/develop/article/doc/000c0ca3fdc7c8e310502d3aa6b013)
+
+- 如何有效地预览和调试前端物料组件
+  - 在微盟，物料平台为包括装修、融合、微盟云在内的多个业务提供了数千个组件，基于 CodeSandBox 的私有物料组件预览方案为我们的组件开发带来了许多好处，降低了组件的开发、接入成本，提升了开发效率
+
 ## [CodeSandbox是如何让npm上的模块直接在浏览器端运行的 _202011](https://www.yuque.com/wangxiangzhong/aob8up/uf99c5)
 
 - [CodeSandbox - 从入门到实现原理解析](https://www.yuque.com/wangxiangzhong/aob8up)
 
 - [技术夹](https://www.yuque.com/wangxiangzhong/mvugau)
-  - [一文彻底搞懂前端沙箱](https://www.yuque.com/wangxiangzhong/mvugau/bgs3po)
+  - [一文彻底搞懂前端沙箱_202202](https://www.yuque.com/wangxiangzhong/mvugau/bgs3po)
 
 ## [搭建一个浏览器版 Vite 沙箱 · mcuking/blog _202201](https://github.com/mcuking/blog/issues/111)
 

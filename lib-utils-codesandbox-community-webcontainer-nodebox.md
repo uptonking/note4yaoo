@@ -12,6 +12,7 @@ modified: 2024-01-25T13:32:35.137Z
 - runtime
   - webvm
   - jupyter-kernels
+  - 还可以考虑基于docker的c/s架构
 
 - 在vscode打开仓库
   - csb支持
@@ -137,6 +138,31 @@ modified: 2024-01-25T13:32:35.137Z
 - Nice. Stackblitz did this first and this is a killer feature all fiddles now need
 # discuss-webcontainer/stackblitz
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 💡 [compile NodeJS to wasm · Issue · nodejs/help _202203](https://github.com/nodejs/help/issues/3774)
+- 👷🏻202410: It is closed because i did provide a workaround to given. 
+  - If you want to start working on a whole platform like stackblitz simple supply a cool project name and i will deliver you the most essential parts.
+- Addressing WebContainers, Node.js, and WASM: Workarounds and Open Source Alternatives
+  - The core issue revolves around StackBlitz’s WebContainer, a WASM-based virtualized environment that allows developers to run Node.js within the browser. However, several members of the developer community, such as @lemanschik, have pointed out that StackBlitz’s approach involves "borrowing" foundational technologies without proper acknowledgment, licensing, or contribution back to the open-source community. 
+- Several technical elements are central to the debate:
+  - WASM-based Node.js: The conversation frequently touches on the feasibility of running Node.js as a WASM module. Though possible, it is largely seen as impractical for broader use due to the complexity involved. WASM builds of Node.js are challenging because they would need shims for certain Node.js APIs, like fs and net.
+  - Monaco Editor and Rollup: StackBlitz relies on Monaco Editor and uses Rollup to handle module bundling in its WASM environment. This setup allows for running Node.js commands in a limited way. However, native modules are excluded, and the full Node.js experience isn’t available.
+  - ServiceWorker Network Layer: Much of what StackBlitz achieves is done through a custom network layer built over a ServiceWorker, which enables HTTP servers to be run in the browser. This technique, while innovative, is seen as unnecessarily complex given the availability of native Web APIs that could handle the same functionality more cleanly.
+- Workarounds: A More Open Approach
+  - The developer community has proposed several ways to work around the limitations posed by StackBlitz’s proprietary approach:
+  - Direct Use of Browser APIs: As highlighted in the discussion, modern browsers already offer APIs such as the File System Access API and Sockets API, which can be leveraged to replicate much of what WebContainers achieve. By utilizing these native interfaces, developers can bypass the need for a virtualized environment like StackBlitz's entirely. This opens the door to building Node.js-like environments directly in the browser without WASM or ServiceWorker hacks.
+  - Node.js Internals via WASM: There is also a proposal to compile key parts of Node.js directly into WASM but leave out unnecessary elements like the net and fs modules, which can be replaced with Web APIs. This would create a lightweight WASM environment that retains most of Node.js's capabilities in the browser, offering a closer-to-native experience.
+  - Simplified HTTP Server Implementation: In the provided code snippets, @lemanschik demonstrates how simple it is to create an HTTP server using pure JavaScript and WebStreams. This eliminates the need for heavy frameworks and virtualized environments, showing that many of StackBlitz’s functionalities can be replicated with a minimal amount of code.
+  - Focus on ESM Compatibility: The shift from CommonJS to ECMAScript Modules (ESM) has become a hot topic.
+- While StackBlitz’s WebContainers offer an interesting approach to running Node.js in the browser, the lack of transparency and proper licensing has led to frustration within the developer community. The proposed workaround—a combination of native browser APIs, WASM, and lightweight JavaScript-based implementations—provides a more open, flexible alternative that adheres to the open-source ethos.
+
+- ## [EventSource is not working · Issue · stackblitz/webcontainer-core _202307](https://github.com/stackblitz/webcontainer-core/issues/1132)
+  - I am using eventsource npm pkg. In webcontainer, onopen never triggers
+- You are right, it doesn't seem to work. I've created an internal ticket to track this.
 
 - ## ⛓️ [[ENHANCMENT] SSH access to the workspace · Issue  · stackblitz/core _202203](https://github.com/stackblitz/core/issues/1770)
   - Would it be possible to add SSH access to the workspace so that it's possible to connect in VSC, Terminal, or an editor of the user's choice?

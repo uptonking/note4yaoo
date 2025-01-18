@@ -175,7 +175,6 @@ modified: 2023-09-02T09:17:22.992Z
   - Render an iframe or popup on a different domain, and pass down props, including objects and functions
   - [Iframes are just terrible. Here’s how they could be better.](https://bluepnume.medium.com/iframes-are-just-terrible-heres-how-they-could-be-better-974b731f0fb4)
 # iframe
-
 - 支持iframe的网站
   - https://www.bilibili.com/
   - https://weixin.qq.com/
@@ -296,6 +295,20 @@ modified: 2023-09-02T09:17:22.992Z
   - Dify-Sandbox offers a simple way to run untrusted code in a secure environment. It is designed to be used in a multi-tenant environment, where multiple users can submit code to be executed. 
   - The code is executed in a sandboxed environment, which restricts the resources and system calls that the code can access.
   - DifySandbox currently only supports Linux, as it's designed for docker containers
+
+- https://github.com/freewheel/code-kitchen /apache2/202402/ts
+  - https://freewheel.github.io/code-kitchen/home
+  - A pure-static live-coding playground that is easy to be used in a closed source environment for React UI Libraries
+  - [Code Kitchen: 一个支持多文件与私有库的离线 React Playground 方案 | pengx17 _202203](https://pengx17.vercel.app/posts/code-kitchen-intro)
+    - 可能是目前最廉价的实现多文件、支持私有库的离线 React playground 方案。
+    - 目前 Code Kitchen 与 React 框架绑定。我们会持续探索如 Vue/Angular 等其他框架结合的可能性。
+    - 由于 Code Kitchen 核心依赖于 esbuild-wasm，本身体积较大（经过压缩后依然有 2.5M），与 React Live 这样的方案相比不够轻量
+
+- https://github.com/huozhi/devjar /MIT/202402/js/inactive
+  - https://devjar.vercel.app/
+  - live code runtime for your react project in browser
+  - devjar only works for browser runtime at the moment. It will always render the default export component in index.js as the app entry.
+  - 依赖sucrase
 # codesandbox-like
 - https://github.com/rajatmaheshwari2512/codefiddle /202308/ts
   - This project is a take on how a site like CodeSandbox could be built.
@@ -313,7 +326,7 @@ modified: 2023-09-02T09:17:22.992Z
 - https://github.com/jerrywu001/sandpack-vue3 /MIT/202402/ts
   - https://sandpack-vue3.js-bridge.com/
   - Vue3 components that give you the power of editable sandboxes that run in the browser.
-# nodebox/webcontainer
+# nodebox/webcontainer 🧊
 - https://github.com/Sandpack/nodebox-runtime
   - https://sandpack.codesandbox.io/docs/advanced-usage/nodebox
   - Nodebox is a runtime for executing Node.js modules in the browser.

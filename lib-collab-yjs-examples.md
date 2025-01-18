@@ -54,7 +54,7 @@ modified: 2022-09-21T15:47:41.340Z
 - https://github.com/ToolJet/yjs-crdt-game
   - [Building a realtime multiplayer game using React & Yjs + y-webrtc](https://blog.tooljet.com/multiplayer-tic-tac-toe-using-react-crdt-yjs/)
 
-- https://github.com/pengx17/yjs-textarea-demo
+- https://github.com/pengx17/yjs-textarea-demo /202301/ts
   - A nearly full featured YJS demo on textarea
 - https://github.com/Jlg1128/yjs-textarea-react
   - Yjs在textarea上的应用，基于vite和React

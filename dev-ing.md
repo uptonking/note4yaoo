@@ -81,6 +81,7 @@ npx create-strapi@rc strapi5-play-202408 --use-npm --quickstart --ts --skip-clou
 npx create-strapi@latest --ts --use-npm --git-init  --example --skip-cloud --skip-db    --quickstart ./emptyFolder
 
 vite --host 0.0.0.0 --port 8080
+serve -p 9000 --cors
 
 stt.message.channel().send('uResetTask')
 stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorithm')

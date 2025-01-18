@@ -71,6 +71,12 @@ modified: 2021-03-03T21:48:48.379Z
     - No extra compiling. Jarle only packages a JSX transformer, making it lighter than alternatives.
     - Smart rendering
 
+- https://github.com/huozhi/devjar /MIT/202402/js/inactive
+  - https://devjar.vercel.app/
+  - live code runtime for your react project in browser
+  - devjar only works for browser runtime at the moment. It will always render the default export component in index.js as the app entry.
+  - 依赖sucrase
+
 - https://github.com/konnorrogers/light-pen /MIT/202311/js
   - https://konnorrogers.github.io/light-pen/
   - A lightweight codepen implementation using web components
