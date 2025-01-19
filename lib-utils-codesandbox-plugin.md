@@ -38,6 +38,51 @@ modified: 2023-09-02T09:16:30.412Z
   - 让原生程序在浏览器、移动端执行
   - 让浏览器中的文件系统更方便
 # iframe
+- iframe渲染时注入自定义脚本的实现方案，(针对拦截window.history的场景)
+  - 不要采用 `iframe.contentDocument.body.appendChild(script)` 方式来注入包含window.onload的自定义js，直接用iframe.onload
+  - onload事件直接注册在iframe元素上，而不是 iframe.contentWindow 上
+  - 在iframe.onload事件里面，iframe.contentWindow有值，但iframe.contentDocument为null
+  - 🤔: 从top.window访问iframe.contentWindow.history存在跨域限制，解决方案是postMessage
+- iframe load事件不触发的另一种思路是，初始iframe不设置src，之后在js中先设置load，再设置src
+  - [Iframe onload event when content is set from srcdoc - Stack Overflow](https://stackoverflow.com/questions/62087163/iframe-onload-event-when-content-is-set-from-srcdoc)
+    - A workaround that works for me (tested in current versions of Firefox and Chrome) is to set the `srcdoc` after having added the `load` listener
+  - [onload event inside iframe only triggers once - Stack Overflow](https://stackoverflow.com/questions/27962471/onload-event-inside-iframe-only-triggers-once)
+    - t's due to a race condition - the `load` handler needs to be attached before the iframe loads its `src`.
+  - [Dynamically create an iframe and attach onload event to it - Stack Overflow](https://stackoverflow.com/questions/6183737/dynamically-create-an-iframe-and-attach-onload-event-to-it)
+    - Some browsers do have the `onload` event for an iframe, first you should try to attach it before setting the iframe's `src` attribute.
+    - You could user a timer to check if the frame's contentWindow's readystate is complete
+
+- iframe的跨域问题 🐛
+  - 解决访问iframe.contentWindow.document/history出现跨域问题的另一种思路，是在访问地址所在的服务器注入自定义业务逻辑
+  - [Blocked a frame with origin "xyz" from accessing a cross-origin frame – Noibu _202501](https://help.noibu.com/hc/en-us/articles/4413414445069-Blocked-a-frame-with-origin-xyz-from-accessing-a-cross-origin-frame)
+    - By default, iframes are protected by same-origin policy. This means that any site hosting an iframe is not allowed to access any content within the iframe unless they share the same protocol, domain, and port.
+    - The only two actions a site can perform with this iframe are to access its `contentWindow` attribute and modify its `location` attribute
+    - Any other interaction with the iframe is considered a violation of the same-origin rule and results in the cross-origin error.
+
+```JS
+// This function takes a given url and creates an iframe for it 
+let injectIframe = function(url) {
+
+  let iframe = document.createElement('iframe');
+  iframe.src = url;
+
+  // This adds a listener to run some code once the iframe initializes
+  iframe.addEventListener("load", function() {
+
+    // This is allowed! 
+    console.log(iframe.contentWindow);
+
+    // This is not allowed!
+    console.log(iframe.contentWindow.document);
+
+  });
+
+  // This adds the iframe onto the target site
+  document.body.appendChild(iframe);
+
+};
+```
+
 - iframe内最外层元素的 `height: 100%` 经常导致嵌入元素的整体高度异常或滚动异常
 
 - iframe页面没有自己的历史记录，使用的是基座(父页面)的浏览历史
