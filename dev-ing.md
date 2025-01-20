@@ -82,6 +82,7 @@ npx create-strapi@latest --ts --use-npm --git-init  --example --skip-cloud --ski
 
 vite --host 0.0.0.0 --port 8080
 serve -p 9000 --cors
+HOST=0.0.0.0 PORT=8080 react-scripts start
 
 stt.message.channel().send('uResetTask')
 stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorithm')
@@ -566,6 +567,22 @@ console.log(
 - action-删除文件
   - live模式显示弹窗
   - 回放模式显示红色背景的文件快照
+
+## 0119
+
+- [Difference between DOMContentLoaded and load events - Stack Overflow](https://stackoverflow.com/questions/2414750/difference-between-domcontentloaded-and-load-events)
+  - `DOMContentLoaded` event is fired when the document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading 
+  - `load` event will do it when all the images and sub-frames have finished loading.
+
+- [Detect DOMContentLoaded in iframe - Stack Overflow](https://stackoverflow.com/questions/16960829/detect-domcontentloaded-in-iframe)
+  - If your page and the iframe are on the same domain, you have to wait for the original page to fire `DOMContentLoaded` first, then attach a `DOMContentLoaded` event listener on the iframe's Window (not Document).
+
+- 周四
+  - 协助排查点击action时显示的diff视图与ai实际修改内容不一致的问题
+  - 尝试实现当用户点击webview内的链接时，自动更新上方的url，参考了codesandbox的实现，确定了方案
+- 今天
+  - 继续优化webview面板的体验
+  - 排查文件树在某些场景下未自动更新的问题
 
 ## 0117
 

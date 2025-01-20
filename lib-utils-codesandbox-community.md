@@ -69,13 +69,69 @@ modified: 2024-01-25T13:33:23.267Z
 # discuss-iframe
 - ## 
 
-- ## I found the dumbest way to preload an iframe ahead of time: `<iframe src="..." sandbox="allow-same-origin">`;
+- ## 
+
+- ## [Injecting javascript into an iframe - Stack Overflow](https://stackoverflow.com/questions/68161803/injecting-javascript-into-an-iframe)
+  - I actually ended up taking a different approach with this. Rather than injecting the script into the the iFrame, realised that I could reference the parent.function() from the iFrame. This resolved the issues with not having access to the variables and the scope to call the function.
+
+```JS
+var iframe = document.getElementById('my_iframe');
+var iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+
+var scriptSource = `
+    window.addEventListener('DOMContentLoaded', function() {
+        var form = document.getElementById('form'); // change to the actual form selector
+        var input = document.getElementById('transaction_amount');
+        input.value = 100;
+
+        form.addEventListener('submit', function (ev) {
+            if (Number(input.value) > 100) {
+                alert('No chance');
+                ev.preventDefault();
+            }
+        });
+    });
+`;
+var script = iframeDocument.createElement("script");
+var source = iframeDocument.createTextNode(scriptSource);
+script.appendChild(source);
+iframeDocument.body.appendChild(script);
+
+// in your specific case you could do something like:
+frames[0].window.eval(foo.toString());
+
+// another way
+const iframeDoc = iframe.contentDocument || iframeWin.document;
+var script = iframeDoc.createElement("script");
+script.append(`
+    window.onload = function() {
+     document.getElementById("fire").addEventListener('click', function() {
+        const text = document.getElementById('title').innerText;
+        alert(text);
+     })
+  }
+`);
+iframeDoc.documentElement.appendChild(script);
+
+// another way
+window.document.getElementById("baidu-container").onload = function() {
+  var s = document.createElement("script");
+  s.type = "text/javascript";
+  s.src = "my.js";
+  window.document.head.append(s);
+}
+```
+
+- 
+- 
+
+- ## I found the dumbest way to preload an iframe ahead of time: `<iframe src="..." sandbox="allow-same-origin">` ; 
 - https://x.com/iamakulov/status/1863609927568429456
   - Downloads the iframe + its CSS/JS/etc
   - Puts these resources into the cache, so they’re there when you need them later
   - Critically, doesn’t execute any JS at all
   - All at the cost of a single annoying console error
-- “Why not just `<link rel="preload">`?” That will load the HTML – but not its CSS/JS/etc. Also, Chrome doesn’t support preloading HTML
+- “Why not just `<link rel="preload">` ?” That will load the HTML – but not its CSS/JS/etc. Also, Chrome doesn’t support preloading HTML
   - “Why can’t you just cache CSS/JS/etc with a service worker, or with some custom JS?” Because these files will get cached in the wrong place – and won’t actually speed up anything. This is for privacy reasons
   - “Why would you do this at all, you madman?” Well, sometimes you do need to show an iframe ASAP! E.g. at Framer, we use cross-origin iframes to render plugins. When you hover over a plugin in the picker, we preload the plugin’s iframe. This makes it pop up 0.5-1s sooner
 

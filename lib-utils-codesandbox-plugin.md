@@ -15,10 +15,15 @@ modified: 2023-09-02T09:16:30.412Z
 # csb-draft
 - iframe内的console.log在chrome-devtools可以看到吗
 # csb-dev-xp
+- SandpackClient抽象类有3种实现， Node/Static/Runtime, 前端项目默认使用Runtime
+
 - 调试codesandbox-client的源码时，注意 packages/codesandbox-api/src/dispatcher/index.ts 的dispatch方法中不要使用 `console.log`，
   - 否则iframe内的console更新事件会向parent window触发on-message的逻辑，顶层window也会通知iframe更新了，导致chrome-devtools不停显示console.log进入死循环
 
-- SandpackClient抽象类有3种实现， Node/Static/Runtime, 前端项目默认使用Runtime
+- SandpackPreview组件会渲染预览面板的url和iframe内容
+  - 组件中的useSandpackClient会在iframe元素首次渲染时执行sandpack.registerBundler 注册iframe用来 createClient(iframe)
+  - SandpackRuntime在执行constructor时，会初始化 new IFrameProtocol(this.iframe, this.bundlerURL); 
+  - 然后在顶层window上注册message handler处理iframe发来的事件 window.addEventListener("message", this.eventListener); 
 
 - 💡 点击预览面板内容url发生跳转时，预览面板顶部的url自动更新的实现逻辑
   - 核心逻辑: 预览面板顶部的url渲染在单独的input元素，监听到urlchange事件时会自动更新input元素显示的内容
@@ -28,6 +33,9 @@ modified: 2023-09-02T09:16:30.412Z
   - 顶层window每次收到`message`事件时，this.eventListener会执行所有 this.globalListeners 和 this.channelListeners，其中包含 自动更新input元素的方法urlChangeFn
   - 在 codesandbox-client/packages/sandbox-hooks/url-listeners.js 的setupHistoryListeners方法中定义了iframe的`window.history`变化时，通知parent window的事件，这个增强history的逻辑会在csb-client的入口文件packages/app/src/sandbox/startup.ts执行时立即执行
   - 点击预览面板内容中的超链接url时，会随着`window.history`的变化触发自定义`pushState`的逻辑，立即通过 `window.parent.postMessage(｛type: 'urlchange'｝)`发送消息到顶层window，然后顶层window会触发更新input元素的方法urlChangeFn
+
+- SandpackTranspiledCode组件渲染了一个 display-none 的iframe元素，此组件多用在文档中
+  - 这里注册了一个iframe，用来执行 runSandpack -> await createClient(iframe); 
 
 - 
 - 

@@ -48,6 +48,17 @@ modified: 2023-06-14T00:53:15.226Z
 
 ## 
 
+## 
+
+## 
+
+## ai工作时写文件超时，agent_write_file call timeout(7s)
+
+- NFS在staging下使用v4的文件问题
+
+- 目前发现，相同的命令（time cat 1），在文件系统，nfs挂载目录，docker容器内执行都为0.001s，在cde terminal中执行延时显著增加，需要进一步排查
+  - 已知 aws efs 有问题，其他问题待查
+
 ## python socketio用的aiohttp客户端设了个4MB的限制
 
 - ide server重连问题，nodejs和goagent没问题，和python有问题，看了下是socketio用的aiohttp客户端设了个4MB的限制

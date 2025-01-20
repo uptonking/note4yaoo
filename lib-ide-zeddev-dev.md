@@ -34,8 +34,14 @@ modified: 2024-08-24T16:41:17.117Z
 - ext-src
   - [Zed - ext](https://zed.dev/extensions)
   - https://github.com/zed-industries/extensions
-# keymap
+# hotkeys
 - keymap-config
   - [Key bindings - Zed](https://zed.dev/docs/key-bindings)
   - [keymap linux .json](https://github.com/zed-industries/zed/blob/main/assets/keymaps/default-linux.json)
+
+- go-to-definition
+  - cmd + click
+- jump backward
+  - linux: ctrl-alt--
+  - macos: ctrl--
 # more
