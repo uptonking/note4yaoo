@@ -69,7 +69,31 @@ modified: 2024-01-25T13:33:23.267Z
 # discuss-iframe
 - ## 
 
-- ## 
+- ## [Adding javascript to an iframe - Anvil Q&A - Anvil Community Forum](https://anvil.works/forum/t/adding-javascript-to-an-iframe/17599/2)
+- Do you control the source of the iframe? If so, include the Javascript in it originally.
+  - If you’re trying to inject the Javascript into the iframe dynamically, you’ll run up against cross domain security issues. Imagine a hacker creating an iframe that goes to Paypal and injecting their own Javascript into it.
+
+- ## [How can I manually append three.js code into an iframe - Stack Overflow](https://stackoverflow.com/questions/72862663/how-can-i-manually-append-three-js-code-into-an-iframe)
+- `iframeDocument.write(generatedCode)` ; 
+  - Your generatedCode will produce error Unterminated template literal you need to escape/replace `</script>` in variable with `<\/script>`
+
+- ## [Is it safe to have sandbox="allow-scripts allow-popups allow-same-origin" on <iframe />? - Stack Overflow](https://stackoverflow.com/questions/35208161/is-it-safe-to-have-sandbox-allow-scripts-allow-popups-allow-same-origin-on-if)
+- allow-scripts This allows JavaScript code within the IFrame to run
+  - Without allow-scripts being set, all this does on its own is allow your outer IFrame to manipulate and read objects, 
+  - however, with allow-scripts this can allow the IFrame to manipulate and read objects in the parent, i.e. your page, which is not safe.
+
+- allow-same-origin is not safe. That will give the iframe the possibility to access parent data (also local storage for example)
+  - Also allow-same-origin will allow the iframe to make ajax requests to the parent's apis which can also be harmful.
+
+- ## [Running Javascript in an iframe from a different domain - Stack Overflow](https://stackoverflow.com/questions/28780057/running-javascript-in-an-iframe-from-a-different-domain/28780131)
+- There are two ways you could tell the document in the iframe to do stuff, and neither can be done unilaterally.
+  - the easiest way (for structural things like tabs) would be to use the URL with a hash; the app on the other domain just needs to support them.
+  - The other, more flexible way would be to use Cross-document messaging. For that to work, the developers of the app on the other domain must write a message handler on their side.
+
+- ## [inject script inside iframe of different domain - Stack Overflow](https://stackoverflow.com/questions/15041820/inject-script-inside-iframe-of-different-domain)
+- Nope. Same Origin Policy dates back to Netscape 2.0.
+  - Unless you can hack/XSS the other site's files to inject the JS, you will have a hard time.
+  - Now if you legitimately need to communicate with the other page, and you either have control of the other page or can setup it to communicate with your server, you can use window.postMessage, JSONP or even Ajax with CORS
 
 - ## [Injecting javascript into an iframe - Stack Overflow](https://stackoverflow.com/questions/68161803/injecting-javascript-into-an-iframe)
   - I actually ended up taking a different approach with this. Rather than injecting the script into the the iFrame, realised that I could reference the parent.function() from the iFrame. This resolved the issues with not having access to the variables and the scope to call the function.
