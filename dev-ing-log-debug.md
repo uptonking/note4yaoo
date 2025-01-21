@@ -50,7 +50,10 @@ modified: 2023-06-14T00:53:15.226Z
 
 ## 
 
-## 
+## editor的工具条点击相关事件，注意点击的同时要阻止事件冒泡 event.stopPropagation()
+- 注意场景
+  - 点击工具条undo, 有时会先执行blur使工具条消失，然后就不会执行undo逻辑了
+  - clickOutside的场景下，有时先执行undo/showCmdk，然后执行outside逻辑隐藏掉，视觉上就是没执行
 
 ## ai工作时写文件超时，agent_write_file call timeout(7s)
 
@@ -114,7 +117,8 @@ const memoize = (func) => {
 - toolbar上按钮的click事件会后于editor的blur事件执行，若在editor的blur事件中已经将toolbar所在的dom销毁了，toolbar上按钮的事件也不会触发
   - blur事件中的timeout设置要考虑低性能的浏览器和设备，调试时设为60ms会在windows上出bug，设为120ms会在windows上正常
 
-## innerHTML=\ `\` 内容中若有换行时，会占用元素高度
+## innerHTML=\ `内容\` 内容中若有换行时，会占用元素高度
+- 注意内容使用反引号包裹和使用双引号包裹时内部换行符的区别
 
 - 下面的示例中 Reject span元素的高度为100px左右
 

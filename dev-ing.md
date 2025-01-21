@@ -568,6 +568,29 @@ console.log(
   - live模式显示弹窗
   - 回放模式显示红色背景的文件快照
 
+## 0121
+
+- 昨天
+  - 讨论并梳理年前剩余issue的复杂度和优先级
+  - 开始进一步优化cde的编辑器，解决了cmd-z有时会唤起cmdk输入框的问题
+- 今天
+  - 继续优化cde的编辑体验，集中解决cmdk相关的问题
+
+## 0120
+
+- 上周
+  - 集中处理体验测试反馈的问题，主要是add-to-chat背景色挡住文字、webview宽度优化
+  - 修复terminal经常不可用的问题
+  - 开始实现当用户点击webview内的链接时自动更新上方的url的功能，访问iframe内的对象碰到跨域问题，需要讨论下解决方案
+    - 一种思路是用户访问url前向网站注入自定义js脚本逻辑
+- 本周
+  - 优化webview的体验
+  - 实现删除移动文件在live和回放模式的表现
+  - 修复年前规划的剩余issues
+- 今天
+  - 继续优化webview面板的体验
+  - 排查文件树在某些场景下未自动更新的问题
+
 ## 0119
 
 - [Difference between DOMContentLoaded and load events - Stack Overflow](https://stackoverflow.com/questions/2414750/difference-between-domcontentloaded-and-load-events)

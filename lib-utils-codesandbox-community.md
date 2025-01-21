@@ -277,7 +277,11 @@ window.document.getElementById("baidu-container").onload = function() {
 # discuss-sandpack
 - ## 
 
-- ## 
+- ## [How to securely install sandpack on a website? · codesandbox/sandpack _202401](https://github.com/codesandbox/sandpack/discussions/1061)
+  - The bundler evaluates and transpiles all files in an iframe under a different subdomain. This is important, because it prevents attackers from tampering with cookies of the host domain when evaluating code.
+
+- When using Sandpack, CodeSandbox never stores the sandbox content in its server - everything runs in the user's browser.
+  - By using Sandpack, you will only get static files from codesandbox.io, and these files will be responsible for evaluating and bundling the sandbox content you create.
 
 - ## I'm trying to implement Sandpack in Svelte, using sandpack-client. _202210
 - https://discord.com/channels/333980639973867521/913053362738573312/1031251046930067507
