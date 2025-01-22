@@ -38,7 +38,7 @@ modified: 2021-07-20T13:50:23.433Z
     - 先实现业务核心功能， 再考虑如何以sdk/paas的方式提供给使用方，再优化性能
     - 系统的性能受第三方资源如github的fetch api的限制，设计初期要想办法避免
     - 计算密集型的feature可尝试多层架构，如大模型llm/ocr
-    - frontend: animation
+    - frontend: animation, 多标签
     - backend: orm vs sql
   - data-app
     - specification for pivot table
@@ -232,6 +232,12 @@ modified: 2021-07-20T13:50:23.433Z
 - replay
   - 回放时可与执行时显示不同的视图，如将edit显示为diff，显示debug信息
   - 基于代码的回放能解决视频难以实时更新的问题, video-but-auto-update
+
+- 重前端架构的优点
+  - 无需服务器，或对服务器要求低
+  - 容易快速响应用户交互
+- 重前端架构的缺点
+  - 刷新页面或关闭页面容易导致数据丢失或数据不一致
 # collab
 - 多文件的app, 或多或少有点类似知识库
   - 可以参考给普通数据库表添加crdt支持的场景

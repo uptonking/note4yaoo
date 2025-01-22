@@ -51,9 +51,12 @@ modified: 2023-06-14T00:53:15.226Z
 ## 
 
 ## editor的工具条点击相关事件，注意点击的同时要阻止事件冒泡 event.stopPropagation()
+
 - 注意场景
   - 点击工具条undo, 有时会先执行blur使工具条消失，然后就不会执行undo逻辑了
   - clickOutside的场景下，有时先执行undo/showCmdk，然后执行outside逻辑隐藏掉，视觉上就是没执行
+
+- `event.stopPropagation()`通常是比`setTimeout`更好的方案
 
 ## ai工作时写文件超时，agent_write_file call timeout(7s)
 
@@ -61,6 +64,10 @@ modified: 2023-06-14T00:53:15.226Z
 
 - 目前发现，相同的命令（time cat 1），在文件系统，nfs挂载目录，docker容器内执行都为0.001s，在cde terminal中执行延时显著增加，需要进一步排查
   - 已知 aws efs 有问题，其他问题待查
+
+- 项目实测，nfs+btrfs更稳定， nfs+bcachefs在git-status不稳定
+  - 特别是 find / 命令很容易导致文件系统崩溃，类似地，如果多个进程在执行ai写文件，也容易导致系统cpu爆满而崩溃
+  - 考虑多个docker容器同时挂载同一个文件系统时，文件系统崩溃会导致多个docker不可用
 
 ## python socketio用的aiohttp客户端设了个4MB的限制
 
@@ -118,6 +125,7 @@ const memoize = (func) => {
   - blur事件中的timeout设置要考虑低性能的浏览器和设备，调试时设为60ms会在windows上出bug，设为120ms会在windows上正常
 
 ## innerHTML=\ `内容\` 内容中若有换行时，会占用元素高度
+
 - 注意内容使用反引号包裹和使用双引号包裹时内部换行符的区别
 
 - 下面的示例中 Reject span元素的高度为100px左右
