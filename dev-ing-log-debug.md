@@ -58,6 +58,10 @@ modified: 2023-06-14T00:53:15.226Z
 
 - `event.stopPropagation()`通常是比`setTimeout`更好的方案
 
+- 通过editor blur事件触发隐藏工具条的优点是方便插件化控制元素的显示隐藏，缺点是某些click事件需要使用setTimeout
+  - 另一种思路是在插件中添加clickOutside的逻辑
+  - 通过编辑器外部事件clickOutside来控制隐藏可以使用`event.stopPropagation()`控制，比`setTimeout`更好
+
 ## ai工作时写文件超时，agent_write_file call timeout(7s)
 
 - NFS在staging下使用v4的文件问题

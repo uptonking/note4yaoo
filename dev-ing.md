@@ -570,6 +570,21 @@ console.log(
 
 ## 0123
 
+- [How can I force a `span` to not wrap at the end of a line? - Stack Overflow](https://stackoverflow.com/questions/7015317/how-can-i-force-a-span-to-not-wrap-at-the-end-of-a-line)
+
+```CSS
+.span-nowrap {
+  display: inline-block;
+  width: max-content;
+}
+```
+
+- 昨天
+  - 优化cde的编辑体验，进一步还原cmdk的动效边框，优化了cmdk在ai返回大量内容时的超时问题
+- 今天
+  - 和佳路确定端口转发中探测中端口的交互细节，并上线
+  - 设计删除文件的体验和实现方案
+
 - cmdk卡片是否要自动隐藏，不方便复制粘贴提示词，不方便在异常后保持卡片位置和内容
 - cmdk的accept/reject快捷键的样式确认
 - cmdk的打字效果在大文件经常超时或卡死，需要讨论解决方案
