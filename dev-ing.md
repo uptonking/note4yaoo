@@ -568,6 +568,15 @@ console.log(
   - live模式显示弹窗
   - 回放模式显示红色背景的文件快照
 
+## 0124
+
+- 昨天
+  - 和佳路确定探测中端口的交互细节，并上线staging
+  - 修复一些影响发版的issues
+- 今天
+  - 继续修复紧急优先级的issues
+  - 设计删除文件的体验和实现方案
+
 ## 0123
 
 - [How can I force a `span` to not wrap at the end of a line? - Stack Overflow](https://stackoverflow.com/questions/7015317/how-can-i-force-a-span-to-not-wrap-at-the-end-of-a-line)
