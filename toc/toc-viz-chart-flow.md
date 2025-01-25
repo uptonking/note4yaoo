@@ -115,7 +115,7 @@ modified: 2020-10-22T10:22:55.878Z
     - Server implementation for the Sprotty diagramming framework
     - contains server code for Java and includes server-side diagram layout, the extension of the Language Server Protocol, and the integration with the Xtext framework
 
-- diagram-js /1.4kStar/MIT/202305/js
+- diagram-js /1.4kStar/MIT/202501/js
   - https://github.com/bpmn-io/diagram-js
   - A toolbox for displaying and modifying diagrams on the web.
   - [支持Redo/Undo](https://github.com/bpmn-io/diagram-js/issues/9)

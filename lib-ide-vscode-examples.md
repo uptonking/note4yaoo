@@ -211,6 +211,11 @@ modified: 2024-08-24T16:15:54.137Z
   - Realtime Collaborative Code Editor extension for vscode
   - Extension is based on CRDT`s concrete implementation YJS.
   - For peer to peer connection is used webRTC
+
+- https://github.com/hanz-archer/VSCode-Live-Collab /MIT/202501/ts
+  - A VS Code extension for real-time collaboration, allowing multiple users to edit the same file simultaneously. 
+  - It syncs changes across instances using a unique document ID, making collaborative coding seamless.
+  - 依赖firebase
 # vscode-integrations
 - https://github.com/betatim/vscode-binder /python
   - VS Code on Binder, because sometimes you need a real editor.

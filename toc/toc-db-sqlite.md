@@ -55,7 +55,7 @@ modified: 2021-08-30T18:56:18.632Z
   - Initially built for LibSQL and SQLite, it now supports a broad range of databases
   - Outerbase Studio Desktop is a lightweight Electron wrapper for the Outerbase Studio web version. 
 
-- https://github.com/qwtel/sqlite-viewer-vscode  /ts
+- https://github.com/qwtel/sqlite-viewer-vscode  /202501/ts
   - https://sqliteviewer.app/
   - easy SQLite viewer for VSCode, inspired by DB Browser for SQLite and Airtable.
   - [Next version of SQLite Viewer, handling 3 million rows, 1 GB sqlite file, in a browser.](https://twitter.com/qwtel/status/1639204056622321664)

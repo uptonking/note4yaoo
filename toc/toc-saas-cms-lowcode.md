@@ -248,6 +248,11 @@ modified: 2023-01-20T21:59:47.792Z
     - It combines the ease of use of JSON, the connectivity of RDF (linked data) and the reliability of type-safety.
     - Atomic Data is Linked Data, as it is a strict subset of RDF.
     - The default serialization format for Atomic Data is JSON-AD
+
+- https://github.com/openstax/openstax-cms /AGPLv3/202501/python
+  - https://openstax.org/
+  - The OpenStax CMS, built using Wagtail on top of Django.
+  - SQLite is supported as an alternative to PostgreSQL
 # crm/erp
 - https://github.com/twentyhq/twenty /AGPLv3/202411/ts
   - https://twenty.com/

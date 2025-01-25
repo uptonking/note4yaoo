@@ -98,6 +98,10 @@ modified: 2024-08-24T16:30:20.218Z
   - https://x.com/0xrandomlabs
     - https://www.ycombinator.com/launches/Lnp-random-labs-an-open-source-agent-that-deeply-understands-you
 # coding-ai
+- https://github.com/cline/cline /24.5kStar/apache2/202501/ts
+  - Meet Cline, an AI assistant that can use your CLI aNd Editor.
+  - Autonomous coding agent right in your IDE, capable of creating/editing files, executing commands, using the browser, and more with your permission every step of the way.
+
 - https://github.com/nutlope/llamacoder /202409/ts
   - https://www.llamacoder.io/
   - open source Claude Artifacts – generate small apps with one prompt. 
@@ -159,6 +163,9 @@ modified: 2024-08-24T16:30:20.218Z
   - Conforms to the OpenAI API standard
   - Chat conversations are preserved
   - Compatible with Ollama, llama.cpp, oobabooga, and LM Studio APIs
+
+- https://github.com/julesmons/recline /MPLv2/202501/ts
+  - The AI assistant that seamlessly integrates with VSCode to autonomously create, edit, and run terminal commands; redefining how you code.
 
 ## ide-repo-ai
 
