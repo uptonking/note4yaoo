@@ -28,7 +28,11 @@ modified: 2024-12-27T17:28:57.941Z
 
 - ## 
 
-- ## 
+- ## Vercel刚推出的一款强大的代码搜索工具叫grep，覆盖超过50万个GitHub仓库。
+- https://x.com/vista8/status/1880945126220218452
+  - 支持代码、文件和路径多维度搜索，支持跨仓库代码搜索，能用正则和区分大小写，非常好用。
+
+- 这个也是独立开发者做的 被vercel收购了
 
 - ## ⚖️ [Sourcegraph is no longer open source | Hacker News _202307](https://news.ycombinator.com/item?id=36584656)
 - It was open first. Then closed. Then open again. So, now it's closed again...

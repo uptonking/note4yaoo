@@ -708,6 +708,23 @@ modified: 2020-12-28T12:24:09.275Z
   - The rendering layer is pluggable and can be written to support any framework and UI library.
   - The MSON library can also be used without any UI dependecies, which makes it great for things like data validation in both the front and back ends.
   - https://github.com/redgeoff/mson-react
+# app-builder
+- https://github.com/AmruthPillai/Reactive-Resume /28.3kStar/MIT/202501/ts
+  - https://rxresu.me/
+  - A one-of-a-kind resume builder that keeps your privacy in mind. 
+  - Completely secure, customizable, portable, open-source and free forever. 
+  - A free and open-source resume builder that simplifies the process of creating, updating, and sharing your resume.
+  - With zero user tracking or advertising, your privacy is a top priority. 
+  - The platform is extremely user-friendly and can be self-hosted in less than 30 seconds 
+  - Bring your own OpenAI API key and unlock features 
+  - React (Vite), for the frontend
+  - NestJS, for the backend
+  - Postgres (primary database)
+  - Prisma ORM
+  - Minio (for object storage: to store avatars, resume PDFs and previews)
+  - Browserless (for headless chrome, to print PDFs and generate previews)
+  - GitHub/Google OAuth (for quickly authenticating users)
+  - LinguiJS and Crowdin (for translation management and localization)
 # more-lowcode
 - corteza /go/vue
   - https://github.com/cortezaproject/corteza

@@ -57,6 +57,29 @@ modified: 2024-11-16T16:58:32.628Z
 - https://x.com/austinit/status/1863763735602725345
   - [ChatTCP：上传PCAP文件在线进行TCP分析](https://online.chattcp.com/zh)
 
+# discuss-tunnel/gateway
+- ## 
+
+- ## 内网穿透方案之tailscale+cloudflare tunnel
+- https://x.com/Stv_Lynn/status/1878316656998649969
+  - 很多homelab玩家拿到机器遇到的第一个问题就是怎么把服务部署到公网。
+  - 有的人会选择frp，但考虑到国内服务器带宽和价格的情况下frp效果实在太差。
+  - 也有人使用tailscale这种p2p方案，但这种并没有把服务暴露到公网。这里分享一个我的解决方案。
+  - 首先你需要在本地机器和一台海外vps上都部署tailscale并且完成登录。关于vps的选择，推荐使用新加坡的vps（可以做到一机多用，能够正常代理ChatGPT，大多直连效果也不错），不推荐使用国内的vps，因为后面还要连接cloudflare。
+
+- ## 有人用过 tailscale 的开源实现 headscale 吗？感觉也不错…想折腾一下。 
+- https://x.com/tualatrix/status/1879877738733130087
+- 都用，这类工具的核心是要打洞成功率。我一直都是  tailscale 和 zerotier 一起用，在我场景下，zerotier 的成功率明显高于 tailscale
+
+- 没啥区别，到最后只要能打洞就行。headscale好就好在可以自建derp和无限机器。无限机器我们用不到，tailscale的就够用能直接打洞就不用自建，所以不如都有IPV6好
+
+- 不好用，我就是用过那个之后才换到 tailscale 的。 另外， zeronet 也没有 tailscale 好用
+
+- headscale只是tailscale的后端而已，用它可以不依赖tailscale的官方后台自由度高一点，客户端仍然还是用tailscale
+
+- 个人感觉 headscale 完全没有必要，直接用 tailscale + 自建 derp 就行。
+
+- 用过了，因为自建所以稳定性比不上官方，功能缺失挺多不好用，不如官方服务。
 # discuss
 - ## 
 

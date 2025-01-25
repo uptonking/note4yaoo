@@ -134,6 +134,25 @@ modified: 2023-04-16T10:02:58.738Z
   - https://github.com/clidey/whodb
 
 - 和chat2db相比哪个好用？
+# discuss-chat-office
+- ## 
+
+- ## 
+
+- ## 
+
+- ## I have a script that splits all the pages of a PDF, calls OpenAI for OCR into Markdown, and assembles the output. 
+- https://x.com/ccorcos/status/1878308491158589820
+  - https://github.com/ccorcos/ask-pdf/blob/master/src/pdf2md
+  - PDFs are a pain. The format is optimized for printing, not for machine readability. 
+  - The best and most general solution I’ve found is just to use GPT as OCR.
+
+- What about tesseract?
+  - Tried it. Not very good
+  - Aside from doing a poor job recognizing text, it doesn’t do any high level structural arrangement of the only markdown. You’d have to do that yourself. 
+
+- which model of gpt you use as ocr?
+  - OpenAI GPT4o-mini
 # discuss
 - ## 
 

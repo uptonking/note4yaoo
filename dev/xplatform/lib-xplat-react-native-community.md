@@ -22,7 +22,16 @@ modified: 2021-09-10T14:15:55.903Z
 
 - ## 
 
-- ## 
+- ## Five years ago, we @Shopify decided to go all-in on @reactnative . Today(202501), we're sharing how it went.
+- https://x.com/mustafa01ali/status/1879177126848680395
+  - Building features just once has been a huge productivity boost
+  - Native devs and code are crucial for success
+  - RN apps are fast!
+  - [Five years of React Native at Shopify (2025) - Shopify _202501](https://shopify.engineering/five-years-of-react-native-at-shopify?q=v)
+
+- After the infamous Airbnb article, we @Dream11Engg were skeptical but as more and more people invested in React Native we finally took the big bet and haven’t looked back since.
+
+- With the emergence of Hotwire Native, if you were to start over today would you still go all-in on React Native?
 
 - ## Let's run React Native on the UI thread and see what blows up first
 - https://twitter.com/LinguaBrowse/status/1758141910605283492

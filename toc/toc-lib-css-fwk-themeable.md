@@ -29,6 +29,9 @@ modified: 2023-02-26T18:25:45.484Z
   - 🍴 It's a fork from Shoelace and Bootstrap, that fully embraces CSS variables/custom properties.
   - It's written in LESS, because of nesting and other neat features
 
+- https://github.com/rudrodip/theme-toggle-effect /202408/js
+  - https://theme-toggle.rdsx.dev/
+  - theme toggle effect using view transitions api
 ## switch-themes
 
 - primitive/skeleton-css  /760Star/MIT/202010/scss/NoDeps

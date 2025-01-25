@@ -71,6 +71,21 @@ modified: 2024-12-13T15:12:55.861Z
 # discuss-author
 - ## 
 
+- ## 
+
+- ## 
+
+- ## What is the compatibility plan in Limbo with SQLite?
+- https://x.com/penberg/status/1879430213337018423
+  - Long term plan is that Limbo is drop-in replacement for SQLite. Of course, "drop-in" is always bit of a lie because only the original is 100% compatible (although sometimes incompatible with previous versions of itself) and you can only realistically get to 99% or whatever. But at the end of the day, when you reach an acceptable level of compatibility, it makes no practical difference to developers.
+  - We will of course add opt-in features that SQLite does not have. For example, we will have built-in vector search, which is unlikely to ever be part of SQLite. We will also work towards features that SQLite might have, but does not have yet, like `BEGIN CONCURRENT` , which lifts single-writer limitation in SQLite.
+
+- Are triggers and webhooks in the plans?
+  - Triggers yes. Webhooks -- do you mean like they have in SQLite Cloud?
+
+- just curious, is "loadable sqlite extensions" support planned for limbo? Would love to help contribute/test if so!
+  - Yes it in scope and some plumbing already exists for it. Hop on to our Discord (link in readme badge) if you want to hack on it!
+
 - ## I was exploring ways to make SQLite async and picked Zig initially because I thought I could just reuse large chunks of SQLite by re-writing just the VDBE. 
 - https://x.com/penberg/status/1869426876797624350
   - The more I kept digging into it, the less convinced I became of keeping any of SQLite because (1) the front-end is a bit hairy to be honest and (2) async eventually bubbles up to most layers.

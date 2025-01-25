@@ -15,7 +15,22 @@ modified: 2024-03-16T14:11:57.461Z
 
 - ## 
 
-- ## 
+- ## apparently JavaScript coerces numeric property types... cursed behavior
+- https://x.com/aidenybai/status/1878474267295142281
+
+```JS
+const obj = {
+  0.12e3: 'i hate js'
+}
+
+obj[0.12e3] // 'i hate js'
+obj['.12e3'] // undefined
+obj['120'] // 'i hate js'
+```
+
+- TS warns about this!
+- You can use Map
+- Use a map not an object, but even then using a float for key is bad in any language and any platform due to floating point error.
 # discuss
 - ## 
 

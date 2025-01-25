@@ -35,7 +35,10 @@ modified: 2021-01-08T17:13:43.392Z
 
 - ## 
 
-- ## 
+- ## Each element remembers where it was scrolled to, even the virtualized element list, which is WAY dynamic and only rendered after the DOM has been measured.
+- https://x.com/tannerlinsley/status/1880404505260617978
+- how is this implemented?
+  - It’s custom. Low overhead scroll tracking, session storage, location state keys.
 
 - ## chrome 选定 dom 可以直接 ask ai
 - https://x.com/hylarucoder/status/1870064803533967670

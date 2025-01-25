@@ -9,10 +9,23 @@ modified: 2021-08-22T07:29:34.045Z
 
 # guide
 
+# discuss-editor-ai 👾
+- ## 
+
+- ## 
+
+- ## Did you see my @vercel AI text editor integration? You can select text and ask AI to simplify, add detail, translate, and more.
+- https://x.com/ctnicholasdev/status/1882829374585786732
+  - Soon we'll be enabling this with first-party components at @liveblocks .
+  - [Building an AI toolbar for text editors | Chris Nicholas | Developer experience at Liveblocks _202407](https://chrisnicholas.dev/blog/building-an-ai-toolbar-for-text-editors)
 # discuss
 - ## 
 
 - ## 
+
+- ## 
+
+
 
 - ## ✨ Did you know you can add section headers to the minimap of @code ? 
 - https://x.com/CSSWeekly/status/1806625178878619984

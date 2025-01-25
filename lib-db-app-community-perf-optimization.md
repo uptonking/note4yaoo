@@ -57,7 +57,17 @@ modified: 2023-10-26T19:00:02.186Z
 
 - ## 
 
-- ## 
+- ## database performance tips 1. just index every column in your database
+- https://x.com/andrii_sherman/status/1878850779102224590
+  - don't use indexes on writes
+- Doesnt it impact write performance since everything will need to have every column indexed?
+  - yes
+
+- This is what cloud firestore does.
+
+- materialize all views😁
+
+- Aka elasticsearch
 
 - ## Database Caching is a million-dollar technique you can’t ignore.
 - https://twitter.com/ProgressiveCod2/status/1765333907522916465

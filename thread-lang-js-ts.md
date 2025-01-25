@@ -12,6 +12,18 @@ modified: 2021-01-28T14:34:20.579Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## ts contains 4 features that I avoid: 
+- https://x.com/housecor/status/1878160498006299039
+  1. The "private" and "protected" keywords on classes. Largely redundant since JS has native support via #.
+  2. Enums. An object marked "as const" accomplishes the same thing. And unions are often a simpler, lighter-weight solution.
+  3. Namespaces. This feature predates ES Modules. ES modules are sufficient for encapsulation.
+  4. Decorators. Confusing since TS decorators predate JS' decorators, and differ from the stage 3 JS decorators proposal. 
+  - Finally, there's a common problem with all 4 of these features - TS is supposed to be JS with static types. If we remove the types, what's left should be valid JS.
+
+- The only use I see for enums is nicknames for numbers.
+
 - ## 🆚️⚡️ many people argue over when to use type vs interface.
 - https://x.com/housecor/status/1875224554374930493
 - Here are 5 things only type can do.

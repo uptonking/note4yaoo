@@ -50,7 +50,14 @@ modified: 2021-04-24T08:29:02.272Z
 
 - ## 
 
-- ## 
+- ## Technically isn’t server side rendering always gonna be more secure than any other approach, such as a rest API?
+- https://x.com/webdevcody/status/1880724541837857210
+- SSR still sends full data to the client, it’s just in the HTML instead of an XHR response. So the only solution either way is to manually limit the API  response fields or use smth like taint
+
+- Not really. You are getting the same information in an HTML format or JSON format. Doesn't effect data leak vulnerabilities.
+  - Both approaches and miles better than anything GraphQL or anything firebase has to offer.
+
+- This question is a category error. cgi-bin had plenty of security issues and you don't get more SSR than that. Same with PHP.
 
 - ## htmx is basically the same idea as the SSR stuff in React/NextJS/Remix of the last ~5 years, which is almost the same as the Rails 4 or 5 turbosomething approach to JS:
 - https://x.com/Swizec/status/1868410384350380154
@@ -112,12 +119,12 @@ modified: 2021-04-24T08:29:02.272Z
 
 - ## [How single-page application works in SSR (React) - Stack Overflow](https://stackoverflow.com/questions/57243697/how-single-page-application-works-in-ssr-react)
 - When implementing Server Side Rendering (SSR), the server knows how to generate a full page with markup so the user gets a fully rendered page and from that moment, when the js resources get downloaded, the application will be live (event listeners will be enabled, the react lifecycle will be active and so on).
-01.          Get a request for a specific path
-02.          Initiate a new store instance for the request
-03.          In case of using react router (or other router solution), fill the state with the requested route
-04.          Render the app, but instead of rendering and mounting the App, render the App to string (with renderToString)
-05.          Dehydrate the state - take the latest state snapshot and append it to the result (after escaping it and wrapping it with script tag for example)
-06.          Return the markup as a response. The markup can look similar to the following: 
+01.           Get a request for a specific path
+02.           Initiate a new store instance for the request
+03.           In case of using react router (or other router solution), fill the state with the requested route
+04.           Render the app, but instead of rendering and mounting the App, render the App to string (with renderToString)
+05.           Dehydrate the state - take the latest state snapshot and append it to the result (after escaping it and wrapping it with script tag for example)
+06.           Return the markup as a response. The markup can look similar to the following: 
 
 ```HTML
 <html>

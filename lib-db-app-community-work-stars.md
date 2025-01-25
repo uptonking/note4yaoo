@@ -24,7 +24,9 @@ modified: 2023-10-27T06:54:20.487Z
 # discuss-id
 - ## 
 
-- ## 
+- ## When using auto-incrementing IDs on the backend database, how do you handle offline client-side record creation?
+- https://x.com/powersync_/status/1881739219745579295
+  - A good solution is to use a secondary UUID on the client, then map it to a sequential ID when performing an update on the backend database.
 
 - ##  `Bun.randomUUIDv7()` returns UUID v7, which is a sorting & database-friendly UUID
 - https://x.com/jarredsumner/status/1850526527617966451

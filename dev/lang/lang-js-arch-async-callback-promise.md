@@ -201,7 +201,17 @@ modified: 2021-08-30T07:01:09.493Z
 - That’s what goroutines do in golang. Channels and channel-operations are used to model both concurrency and generators. The same is true for core.async in clojure.
 
 - This is what Kotlin does. They offer a generic coroutine framework that lets you build “suspend” functionality
+# discuss-setTimeout/setInterval
+- ## 
+
+- ## 
+
+- ## Builtin timeout using AbortSignal
+- https://x.com/hd_nvim/status/1882484934356664640
+
 # discuss
+- ## 
+
 - ## 
 
 - ## 

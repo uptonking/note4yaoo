@@ -27,7 +27,11 @@ modified: 2021-08-28T11:49:05.730Z
 
 - ## 
 
-- ## 
+- ## Learn how to write end-to-end tests for AG Grid with Playwright
+- https://x.com/ag_grid/status/1881357589633704223
+  - Async data loading
+  - Accessibility
+  - [Writing E2E Tests for AG Grid React Tables with Playwright _202501](https://blog.ag-grid.com/writing-e2e-tests-for-ag-grid-react-tables-with-playwright/)
 
 - ## 🔒 This is THE way to test any UI behind authentication. 
 - https://x.com/kettanaito/status/1821828346780516619

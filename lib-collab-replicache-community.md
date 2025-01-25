@@ -18,8 +18,6 @@ modified: 2024-01-07T05:09:14.413Z
 # discuss-author(aboodman)
 - ## 
 
-- ## 
-
 - ## I think it is so interesting how many of the people building sync engines came to it through *UI* development.
 - https://x.com/aboodman/status/1871237826333032715
   - You would not naively expect these people to be working on distributed systems. But for all, it was the same thing – we wanted to create better UIs.
@@ -90,6 +88,22 @@ modified: 2024-01-07T05:09:14.413Z
   - it's *nine* dimensions instead of three (phew), and they're shifted around a bit, but I'm curious what y'all think.
 - 比较了linear/dropbox/figma/replicache/automerge/valorant
   - 维度9个: Size, Update Rate, unStructured, Input latency, Offline, Concurrent clients, Centralization, Flexibility-sync-rules, Consistency
+
+- ## Story time... We started Replicache in 2019 and slowly built a niche but passionate community – including @thdxr . _20250123
+- https://x.com/aboodman/status/1882323407943123369
+  - Replicache is one of the most popular sync engines today. People love how it makes their app respond absolutely instantly (< 1ms) to clicks, and the automatic full-stack reactivity that comes for free. 
+  - People also love that Replicache works with existing standard databases like Postgres, and supports partial sync, authorization, and custom server-side code.
+  - But Replicache has an achilles heel: It's quite difficult to setup, requiring a lot of fairly intricate server-side code. Worse, the complexity of this code scales very poorly as the app's needs grow more complex.
+  - So we started a project called Reflect in 2023. It was a short-lived, fully hosted version of Replicache with a very narrow focus on just single-document high-framerate sync, suitable for things like Figma. It didn't do most of the things that people used Replicache for, but the idea was to do one of them very very well. One day in our channel, @cezar asked "could you get dax to use it?". And I think that was the precise moment Reflect died. What good was it if didn't work for our most passionate existing users?
+  - So we scrapped it and started over. Work began on @rocicorp_zero right around Jan 1, 2024. We designed it from the beginning to (a) make Replicache dramatically easier to setup so many more people could use it, and (b) to grow much better as the needs of the app grew.
+  - To do so, we had to solve some hairy problems. In particular we built a new streaming query engine that applies ideas from @felderainc and @readysetio to efficiently sync arbitrary queries to the client.
+  - We have a ways to go yet, and I'll write more about Zero as we get closer to beta. But it's incredibly gratifying to see this one particular customer make the leap.
+
+- Does it currently only work exclusively on postgres?
+  - Yes, only pg for now.
+
+- do you have a pricing model in mind for Zero yet?
+  - We imagine that it will be free/oss to self-host. We'll have a SaaS version roughly comparable to what you might pay for database hosting. And we'll offer white-glove help to large enterprises to run Zero within their own VPC.
 # discuss-news
 - ## 
 

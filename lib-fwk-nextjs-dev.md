@@ -55,8 +55,26 @@ modified: 2020-12-12T19:22:00.735Z
 - while storybook is not a general-purpose SSG, it comes with its own SSG engine under the hood.
 # more
 
-# discuss
+# discuss-nextjs-vs 🆚️
 
+- ## 
+
+- ## 
+
+- ## Why Remix is a better framework than Next.js _202501
+- https://x.com/_trish_07/status/1877989339574997151
+  - 1. Server components looked cool, but Remix's traditional SSR is better. You can do server stuff in a loader, and it’s available throughout your page components.
+  - 2. Routing is so much cleaner – file-based or function-based (my favorite).
+  - 3. Deploy anywhere. I’ve tried Node servers and Cloudflare Pages, and it works great everywhere.
+  - 4. Vite for bundling – way faster than Next’s Turbopack.
+
+- why do you think loader functions are better than server components
+  - I get why people like server components, but I found it annoying to create multiple wrapper components just to use Suspense for loading UIs. In Remix, I can just defer any promise and use the Await component – much simpler. Also, loaders being accessible throughout the page is great, no need for prop drilling or context. I do agree though, Next’s font and image optimization is a plus.
+
+- The only thing I dont like about remix is the amount of config to set it up, 95% of web apps behave the same, they can and should standarlize it and allow customization if the user requires.
+
+- Also remix allows traditional SPA paradigm in cases what that shined
+# discuss
 - ## 
 
 - ## 

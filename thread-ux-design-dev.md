@@ -48,7 +48,9 @@ modified: 2021-03-10T11:38:16.053Z
 
 - ## 
 
-- ## 
+- ## 今年我认为最佳的网页设计：https://oxide.computer
+- https://x.com/vikingmute/status/1880854664385827250
+  - 各种精致的动画（动画居然都是用 DOM 模拟的，大家可以打开源代码看看）每个都很有想象力，极客风的整体设计，非常棒的响应式设计。看了好几遍还是非常养眼，一些小细节都非常出彩。
 
 - ## the linear homepage shot is not an image it's actually html and css
 - https://x.com/jordienr/status/1849875325703905743

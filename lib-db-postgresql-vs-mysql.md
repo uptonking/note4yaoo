@@ -102,7 +102,17 @@ modified: 2023-11-01T14:13:41.390Z
 
 - ## 
 
-- ## 
+- ## Comparing the read-only performance of MySQL and PostgreSQL with the same 128 hash partitions.
+- https://x.com/wangbin579/status/1880086759830352341
+- Am ai reading this wrong? PG seems much slower at ~1000 req per sec while mysql is around 17k req per sec
+  - This is the performance of PostgreSQL hash partitioning, and it doesn't represent the overall performance of PostgreSQL.
+- psql is slower because of the optimizations? Or did I misread the results?
+  - This is a known issue with PostgreSQL partitions. Even after merging the fast path patch, performance is still not good. The chart above shows the difference between MySQL and PostgreSQL in this test. Of course, the difference can vary in different environments.
+
+- Queries within a single partition's constraints are much faster, right? Is this also the case for RANGE partitions? Can't say I've benchmarked PostgreSQL in this regard.
+  - For RANGE partitions, PostgreSQL performs fairly well, as long as not too many partitions need to be accessed.
+
+- This is a well-known issue with PostgreSQL hash partitioning. The official next version is expected to include a fast path patch, which should alleviate some of the issues.
 
 - ## I can't *quickly* think of companies doing massive Postgres deployments (like petabytes or exabytes) 
 - https://x.com/iavins/status/1870142918549496283

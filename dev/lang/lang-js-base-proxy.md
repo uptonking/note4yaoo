@@ -21,6 +21,24 @@ modified: 2022-11-23T17:49:54.052Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## my favorite JavaScript API is `Proxy` – it allows you to "spy" on any object property
+- https://x.com/aidenybai/status/1880648594895901055
+- Check out vue 3 ref and reactive. They used proxies to handle reactivity in vue and it works flawlessly.
+
+- Proxy is indeed cool and useful. But note that its primary role is to break JS semantics, when needed.
+
+- Why use `Reflect` for that use case? Why not `target[key]` directly?
+  - With Reflect.get you simulate the default behavior if there was no proxy.
+- In this case you can use target[key]. However get() has an extra argument that Reflect.get can utilize so the right invocation would be Reflect.get(...arguments) or Reflect.get(target, key, receiver). So in the example posted, Reflect.get doesn't do anything.
+
+- Proxy object can act as a facade. You may use it as wrapper for a complex object to intercept/control access to its properties. This is how zone.js actually manages change detection in Angular.
+
 - ## structuredClone doesn’t support proxies which means Vue’s ref or reactive values cannot be cloned.
 - https://x.com/logaretm/status/1821882058718757278
   - toRaw won’t work either because of deep objects.

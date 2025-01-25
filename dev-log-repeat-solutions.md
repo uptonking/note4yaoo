@@ -38,6 +38,7 @@ modified: 2021-07-20T13:50:23.433Z
     - 先实现业务核心功能， 再考虑如何以sdk/paas的方式提供给使用方，再优化性能
     - 系统的性能受第三方资源如github的fetch api的限制，设计初期要想办法避免
     - 计算密集型的feature可尝试多层架构，如大模型llm/ocr
+    - 重技术型业务的开发稳定性兼容性比性能更重要
     - frontend: animation, 多标签
     - backend: orm vs sql
   - data-app

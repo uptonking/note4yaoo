@@ -16,11 +16,27 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## RAG is anti pattern.
+- https://x.com/pelaseyed/status/1882471632129994914
+  - I don’t do RAG anymore, get 10x the result just spinning up a pipeline and feed all content to Deepseek. And yes it scales to over 10K docs. 
+
+- And you can cache it, so doesn’t even cost that much
+
+- Does deepseek have caching like Google’s media.upload? How do you otherwise avoid rebuilding the context all the time (I’ve not used the DS APIs).
+
+- I wish I could fit the entire Internet in the prompt for @ask_pandi but it doesn't fit. RAG is still needed for this.
+  - Run multiple LLMs in parallell, you will have infinite context window.
+
+- You put everything into context?
+  - Everything in context(s)
+
+- RAG is A pattern, just not useful when your context is under 128k token and when the context is known. Pick the right tool for the job.
 # discuss-solutions
 - ## 
 
-- ## 
+- ## 有没有想过将自己的代码库打包然后直接塞给大语言模型来处理？也许你会想到用RAG或者用windsurf或cursor。现在有了更简单的办法——Repomix
+- https://x.com/karminski3/status/1881150047276138689
+  - 这个库可将整个存储库打包到一个 AI 友好的文件中，方便给大语言模型使用。
 
 - ## 📌 A list of software that allows searching the web with the assistance of AI.
 - https://x.com/tom_doerr/status/1856778512612667838

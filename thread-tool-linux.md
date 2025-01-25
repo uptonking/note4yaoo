@@ -44,7 +44,11 @@ modified: 2024-01-06T13:48:42.969Z
 
 - ## 
 
-- ## 
+- ## netdata 也太强了，不仅能监控电脑硬件情况，还有软件的使用概括：比如 Docker，哪些 image 在运行，哪些退出了。
+- https://x.com/tualatrix/status/1882412419005530122
+- netdata有点重，目前在用 Beszel + iStatistica开启Web access
+- netdata 在服务器上安装之后总是有内存泄漏 现在都不用了
+- netdata资源消耗太重了，生产上不会用。不过个人服务器没啥毛病怎么方便怎么来
 
 - ## found this super cool project called `osquery` which lets you run SQL on your OS as if it's a database!
 - https://x.com/iavins/status/1866857917129142493

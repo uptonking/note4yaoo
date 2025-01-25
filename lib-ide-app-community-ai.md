@@ -69,7 +69,27 @@ modified: 2024-08-24T16:28:20.515Z
 
 - ## 
 
-- ## 
+- ## 🤔 How Cline works 这两天一直在看 Cline 的源码，探究当前 AI Coding 编辑器背后的神秘技术。 _202501
+- https://x.com/xiaokedada/status/1882697004670992774
+  - [AI Coding 编辑器没有那么神秘 - How Cline works _202501](https://www.nazha.co/posts/how-cline-works)
+  - Cline 的核心是依赖系统提示词以及大语言模型的指令遵循能力。在编程任务启动的时，收集系统提示词、用户自定义提示、用户的输入、以及所在项目的环境信息（哪些文件、打开的 Tab 等等），提交给 LLM。
+  - LLM 按照指令输出解决方案和操作。
+  - Cline 通过解析返回的操作指令（比如 `<execute_command />、<read_file />` ），调用编写好的 Tool Use 能力进行处理，并将处理结果再次交给 LLM 处理。
+  - 也分析了为啥 Cline 会如此消耗 token，它是如何摆脱大语言模型的窗口限制的，@ 操作为啥起作用了...
+
+- https://github.com/caicongyang/mini-cline
+  - [Cline AI Agent 核心实现分析](https://github.com/caicongyang/mini-cline/blob/main/docs/core-implementation-analysis.md)
+
+- cline非常棒，经典的react agent模式
+  - cline一个很大的缺点就是system prompt实在太长了，例如MCP在我的场景里根本不需要，但是它也携带了，浪费很多token(不知道新版本优化了没有？)。
+
+- cline能用本地的deepseek R1，例如7B，32B直接参与编程么？
+  - 可以，他是开源的，你甚至可以自己修改相关的处理逻辑
+
+- cline没有用tool calling吗？而是用解析特殊标识来实现调用工具的？
+  - xml, 类似这样的格式。我自己写的agent就是几乎照搬了cline的格式。
+  - function calling
+- 我个人认为function call并不合适复杂处理过程。当然，cline目前这种系统提示词里all in one的模式似乎也不是很优雅
 # discuss-autocomplete/ai
 - ## 
 
@@ -98,6 +118,16 @@ modified: 2024-08-24T16:28:20.515Z
   - Aider uses Treesitter to improve code generation.
 # discuss-ide-ai
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 为啥字节有了 MarsCode 还要推出一个新的叫 Trae 的 IDE？还是资源太丰富了，内卷的厉害
+- https://x.com/_hisriver/status/1881210064083808393
+- MarsCode 的重点和基因是 Cloud IDE + Playground，延续了 LLM 时代之前的 Cloud IDE 项目， 可以对标 Replit
+  - Trae 对标的当然是 Cursor，对标 Bolt/v0 的也快了
+  - 在早期探索阶段，这些不同的现有产品形态如果混在一起从原有产品上「升级」出来，是很容易背历史包袱互相扯后腿的，容易走偏搞错重点
 
 - ## 🚀 Announcing GitHub Copilot Free _20241219
 - https://x.com/code/status/1869449373995708703

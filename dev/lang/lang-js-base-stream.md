@@ -16,9 +16,22 @@ modified: 2023-04-11T13:29:56.273Z
 
 - ## 
 
-- ## 
+- ## Writing Node Stream + Web Stream compatible code is really really annoying.
+- https://x.com/tannerlinsley/status/1882171811137528008
+- If you can, rely on web streams as both are supported everywhere. 
+  - If you can't, use the .fromWeb()/.toWeb() methods on Node's Readable and Writable. They do what you think they do.
+- Node streams are more performant, but you are the best judge of the performance/compatibility balance.
+  -  there are use cases for both, but standard-first is certainly the default. 
 
-- ## 
+- Neither Node streams nor `readable-stream` can run in the browser, which defeats compatibility. I get it that the spec isn't perfect and, perhaps, even flawed. But compatibility goes a long way
+  - readable-stream should work in browsers
+
+- We rely on web streams in MSW across the board for compatibility reasons, which is a top priority for an environment-agnostic tool.
+
+- ## People don't understand how many optimizations are lost by exposing Request.body/Response.body
+- https://x.com/KhafraDev/status/1882825305200763280
+- But this is a standard, no? 
+  - They were added a significant amount of time after Request, Response, and the body mixins. Exposing `.body` causes a cascade of webstreams (similar to `async` ): you cannot selectively choose when to use webstreams once it is exposed.
 
 - ## Reading a response body in chunks and stopping the readable stream the moment I got the needed info feels like superpowers.  
 - https://x.com/kettanaito/status/1824029571630412272

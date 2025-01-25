@@ -78,6 +78,10 @@ modified: 2021-01-08T11:48:16.590Z
     - v2_202303 exposure of className, and full switch to Tailwind CSS
   - 依赖recharts2、tippyjs、date-fns，未使用任何组件库
   - 图表默认动画
+  - https://github.com/tremorlabs/tremor-blocks
+    - https://blocks.tremor.so/
+    - a Next.js project bootstrapped with create-next-app.
+    - thanks to @vercel acquisition, you can get access to all blocks on GitHub
 - https://github.com/tinybirdco/log-analytics-starter-kit
   - This Stater Kit provides an example for you can build your own logging & telemetry solution powered by Tinybird.
   - Analytics Dashboard built with Next.js & Tremor

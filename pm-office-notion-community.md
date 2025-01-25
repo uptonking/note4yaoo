@@ -487,6 +487,13 @@ modified: 2023-11-28T14:48:45.910Z
 # discuss-news-notion
 - ## 
 
+- ## 
+
+- ## 
+
+- ## We shipped 95 product updates last year(2024). Some big, some you might have missed 
+- https://x.com/NotionHQ/status/1879578695750623311
+
 - ## Take collaboration up a notch with new suggested edits _202407
 - https://x.com/NotionHQ/status/1807819016729460894
   - Switch to suggestion mode to effortlessly co-create and refine content with your team.  

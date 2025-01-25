@@ -14,6 +14,33 @@ modified: 2023-09-17T17:36:36.118Z
 
 - ## 
 
+- ## 
+
+- ## Concrete example of the difference between theory and practice in systems engineering:
+- https://x.com/jamesacowling/status/1882160361467695345
+  - When we were designing the storage system at @Dropbox (called "magic pocket") every new PhD graduate would say it was dumb to use a thousand-node MySQL cluster to store the mapping from file chunks to their locations in a million-node storage cluster. Instead they'd point out that a distributed hash table is a much more "efficient" way of storing this mapping with no need for a database.
+- This is fine in theory but in practice you need to
+  1. run verifier jobs that walk over your indexes and make sure all the data is in the right place
+  2. dynamically adjust the amount of data on each node or cluster due to hardware issues or data center migrations
+  3. run queries over the metadata for auditing and forecasting and all manner of things
+  4. have a really simple codepath for committing a write to the system and not much is simpler than writing a single row to a DB.
+- It turns out the simpler approach is better because the simpler approach works and can be maintained. All this stuff can be learned but it's much much easier to learn in an environment where you run into constraints on a daily basis.
+
+- If you were able to do it over again from scratch today would you still use MySql clusters or some other tech like Redis for example?
+  - It's hard to imagine making too many changes to how we stored metadata for the Dropbox storage system. There are very few systems proven to work at the scale of a giant sharded MySQL cluster, plus a relational database was the most convenient data modeling abstraction.
+  - It takes a lot of operational competency to run databases at petabyte/million-qps scale but we already had that in-house. Query planners are also a huge hassle but we'd try to bypass that with FORCE INDEX everywhere.
+  - In this case we're talking about a well-abstracted system that only had a small handful of common queries that a small handful of people wrote. The tradeoffs are different when application developers need to interact with the database directly, which is why we started @convex_dev to provide the expressive power of queries-as-code.
+  - Convex is mostly about the query model, reactivity, and development abstraction though. It's still a relational database and still has regular ol' MySQL/Postgres underneath as the storage engine.
+- Thank you for this thorough response. What you are describing is very similar to other mass storage systems I have worked on in the past which also used clustered MySQL. I sometimes wonder if we would have been better off implementing a more basic but scalable key value cache system for the file retrieval services.  Although our db implementation included a memcache that sped up repeated or clustered requests which were rather common in our system.  Sounds like you made a good call for Dropbox though if it was that performant and you can still remember it with fondness.
+
+- I was reading about this today on Martin Kleppmann's book on Distributed Systems about tradeoffs of using partition hashing and from a practical perspective you're 💯 right.
+
+- https://x.com/sriramsubram/status/1882306640894165445
+  - We ran a 1000+ node sql server cluster at Microsoft to store the metadata for our object store that managed petabytes of data 12 years back. 
+  - Simple mapping between the object store and the metadata layer helped scale many services including data balancer, data consistency checkers, replication, deletions, compliance rules, data restoration etc. 
+  - At scale, it becomes really critical to keep the mental model simple. Even the simplest of systems get complex at scale. 
+  - There were definitely cases of orphaned metadata or blobs but with redundancy, frequent auditing and reconciliation, we were able to build a battle hardened system that ran for more than a decade with high availability.
+
 - ## 🤼🏻 > ScyllaDB completely bypasses the Linux cache during reads, using its own highly efficient row-based cache instead.
 - https://twitter.com/eatonphil/status/1773513087301066877
 - I am assuming by Linux cache, they mean the file cache. There are other databases that bypass the file cache and use DirectIO, for example MySQL InnoDB. So this is not something ScyllaDB specific.

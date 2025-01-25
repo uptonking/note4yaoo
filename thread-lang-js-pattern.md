@@ -59,7 +59,16 @@ modified: 2023-11-10T08:05:12.852Z
 # discuss
 - ## 
 
-- ## 
+- ## JavaScript's most important feature is that "errors" don't crash the program.
+- https://x.com/cpojer/status/1880728065703366840
+  - Imagine if your browser crashed for every JS error, or if developers had to handle every error before being able to ship. The web would basically not exist as a platform without this.
+
+- that's not a feature of javascript, it's the feature of the browser
+  - that's not a feature of javascript, it's the feature of the browser
+
+- https://x.com/aboodman/status/1880848014740443480
+  - it’s actually deeper than this. The existence of this feature is dependent on web browsers being structured as an event loop. This separation between the main loop of the program being in the platform and app code being expressed as handlers is what enables the web to limp on after an error and mostly sorta work.
+  - In a hypothetical alternate design where web apps just got to run a main loop this couldn’t work.
 
 - ## Why use: `const x = JSON.parse('{"foo":42}')` ?
 - https://x.com/DanShappir/status/1874909922313596990

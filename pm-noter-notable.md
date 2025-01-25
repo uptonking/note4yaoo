@@ -101,6 +101,9 @@ modified: 2023-11-28T14:48:45.910Z
 - headless/unstyled design
   - 基于场景预定义react组件接口，允许替换默认使用的各个组件
   - 因为允许替换，所以经常需要动态导入
+# business-apps
+- 知识库的市场
+  - 客服系统自动回复，并显示相关历史
 # features
 - inspirations
   - 高频需求，网盘分享

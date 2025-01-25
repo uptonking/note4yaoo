@@ -131,6 +131,14 @@ modified: 2023-10-30T07:34:03.602Z
 # discuss-ai-api/tools
 - ## 
 
+- ## 
+
+- ## We ( @jamesmurdza ) have been building Open Computer Use - 100% open source computer use agent.
+- https://x.com/mlejva/status/1877054558481813799
+  - The agent is using @e2b_dev 's Desktop Sandbox as virtual computer.
+  - The agent is using 3 different LLMs: 🔸Llama 3.2 ( @AIatMeta ) 🔸Llama 3.3 🔸OS-Atlas ( @Alibaba_Qwen )
+  - It's slow and makes mistakes but this is a big milestone for OS AI community!
+
 - ## 想要部署本地模型但是不会计算 vRAM 占用 
 - https://x.com/tuturetom/status/1842492423848804686
   - https://huggingface.co/spaces/hf-accelerate/model-memory-usage
@@ -167,8 +175,31 @@ modified: 2023-10-30T07:34:03.602Z
 - https://x.com/MatthewWSiu/status/1828929032718872734
 - I explored some closely related ideas with @MagicPaperAI . You guys have pulled off the synthesis of highlights and copied fragments. I’d posit that the next key synthesis is between copied fragments and revisions of a document. Edits are partial copies.
 - Great work! I like the flow of adding & organizing snippets -> augmented synthesis. The more snippets you grab under a heading, the clearer a cluster forms. That then generates 'what you're getting at' summaries & gives AI bounds to forage for related snippets. Good loop there.
+# discuss-workflow-ai
+- ## 
 
- # discuss-multi-agents
+- ## 
+
+- ## 又一个值得学习的爬虫&RPA开源库 Maxun
+- https://x.com/yan5xu/status/1881150511220752884
+  - 自带低代码后台，轻松抓取任何网页数据，自动提取整理成表格，还能处理滚动分页和验证码
+  - 核心用 Playwright 做浏览器自动化，配合 puppeteer-extra-plugin-stealth/recaptcha 插件处理反爬和验证码，再用 adblocker 清理广告干扰
+
+- ## Announcing Flows AI: A light-weight library to build agent workflows, on top of Vercel AI SDK.
+- https://x.com/grabbou/status/1882139484994551861
+  - Use any LLM and provider of your choice.
+  - All patterns from Anthropic article provided out of the box.
+  -  we have a branch open and POC of a builder project, where we want to provide a very light-weight flow-based UI for configuring and visualizing this. Standalone and CLI-like, so you can execute those workflows like JavaScript files
+- There’s more than on the screenshot, including routers etc. Error handling can be done with a custom agent, overall - very simple, although I am interested to implement the missing blocks!
+
+- No unnecessary abstractions whilst literally abstracting away the AI SDK 
+
+- Is it capable of passing and using structured outputs and objects ?
+  - Agent is a function, so simply use generate object inside. The helpers we provide operate on text for now (keeping things slim), but adding that if requested isn’t too much of work
+
+- Does it support streaming?
+  - Not yet, keeping scope limited. Theoretically possible
+# discuss-multi-agents
 - ## 
 
 - ## 
@@ -236,7 +267,9 @@ e) 最终评论者(Final Critic)
 
 - ## 
 
-- ## 
+- ## 由于DeepSeek-R1 爆火，所以为大家带来什么是LLM蒸馏技术的笔记。
+- https://x.com/karminski3/status/1882233538042597423
+  - 几个助记词：教师模型，学生模型，软目标，硬目标。
 
 - ## 我日常用 Cursor 写代码的场景之一：“请参考代码 @ XXX1 @ XXXn 做 YYY 事。”
 - https://x.com/dotey/status/1869436413600731146

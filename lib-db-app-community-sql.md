@@ -18,7 +18,17 @@ modified: 2023-09-17T17:35:27.024Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## A quick reminder that LIMIT without ORDER BY can produce unpredictable results 
+- https://x.com/FranckPachot/status/1881281403528343815
+  - it's not a bug but a brilliant @PostgreSQL feature
+- what's the default "order by" column? The table's ID column?
+  - There's no default. Without ORDER BY, you get rows as they come from the storage, depending on the execution plan, scan optimizations, parallel query, and luck (Relational tables are sets of rows and have no order - ORDER BY is an SQL addition to fetch them sorted)
+
+- Even more funny: use limit with offset. What do you expect to get
+
+- Same as for clickhouse, due to its multi threaded nature if you don't use `ORDER BY` before `LIMIT` you get also  same unpredictable results.
+
+- The same could be said for non-deterministic ordering when no unique column is an element in the order by clause. It’s a cold world.
 
 - ## Ever struggled to find if a database supports a particular SQL syntax? 
 - https://twitter.com/ohmypy/status/1735275704001196175
