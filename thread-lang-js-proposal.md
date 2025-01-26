@@ -147,7 +147,21 @@ modified: 2023-11-10T08:05:25.474Z
 # discuss-feat-enum 📍
 - ## 
 
-- ## 
+- ## TS 5.8 just shipped a flag to disable all the features I don't like in TypeScript.
+- https://x.com/mattpocockuk/status/1882844674924347418
+  - [TypeScript 5.8 Ships --erasableSyntaxOnly To Disable Enums | Total TypeScript _202501](https://www.totaltypescript.com/erasable-syntax-only)
+  - I think the TypeScript team is looking toward a future where these syntaxes will no longer be used.
+  - There are several proposals floating to add types to JavaScript. One of the most popular is types as comments, which would allow JavaScript to treat types in code as ignorable at runtime.
+  - But the issue is that this only works with erasable syntax. Anything that requires a more complex transformation, like enums or namespaces, won't work in this model.
+
+
+
+
+- 
+- 
+- 
+- 
+
 
 - ## [Why you shouldn't use Enums _202403](https://www.wordman.dev/blog/typescript-enums)
 - basically TypeScript creates an Object that looks like this

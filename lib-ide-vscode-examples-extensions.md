@@ -87,7 +87,7 @@ modified: 2024-08-24T16:17:26.715Z
   - A VSCode toolbar and context menu extension
   - Modifies the VSCode toolbar and context menu to include a few useful commands
 
-- https://github.com/estruyf/vscode-front-matter /MIT/202312/ts
+- https://github.com/estruyf/vscode-front-matter /MIT/202412/ts
   - https://frontmatter.codes/
   - Front Matter is a CMS running straight in Visual Studio Code. 
   - Can be used with static site generators like Hugo, Jekyll, Hexo, NextJs, Gatsby, and many more
@@ -117,7 +117,7 @@ modified: 2024-08-24T16:17:26.715Z
 
 ## ext-office/files
 
-- https://github.com/cweijan/vscode-office /MIT/202412/js
+- https://github.com/cweijan/vscode-office /MIT/202501/js
   - 让VSCode支持预览PDF, Excel和Word等格式, 并增加markdown所见即所得编辑器
   - 支持预览xlsx, docx, svg, pdf, zip等格式, 后来才增加markdown编辑器
   - 依赖docxjs、sheetjs、vditor(md)、pdfjs
@@ -154,6 +154,9 @@ modified: 2024-08-24T16:17:26.715Z
 - https://github.com/AdamRaichu/vscode-pdf-viewer /MIT/202402/js
   - A web extension which allows you to view PDF files directly in VS Code.
 
+- https://github.com/yzane/vscode-markdown-pdf /202003/js/inactive
+  - This extension converts Markdown files to pdf, html, png or jpeg files.
+
 - https://github.com/yuenm18/ooxml-viewer-vscode /MIT/202412/ts
   - An OOXML Viewer for Visual Studio Code
   - When a document opened by the OOXML Viewer is edited from an external program, changed parts are marked with a yellow asterisk, deleted parts are marked with a red asterisk, and new parts are marked with a green asterisk.
@@ -179,7 +182,7 @@ modified: 2024-08-24T16:17:26.715Z
 - https://github.com/patmood/rich-markdown-editor-vsc /202405/ts/inactive
   - Rich Markdown Editor extension for VSCode
   - This extension replaces the default code editor for markdown files with a rich version, allowing you to "edit" in preview mode.
-  - It uses the rich-markdown-editor project generously open sourced by Outline
+  - It uses the `rich-markdown-editor` project generously open sourced by Outline
 
 - https://github.com/zaaack/vscode-markdown-editor /MIT/202501/ts
   - A vscode extension to make your vscode become a full-featured WYSIWYG markdown editor
@@ -228,12 +231,143 @@ modified: 2024-08-24T16:17:26.715Z
 
 ## ext-markdown
 
+- https://github.com/Jekwwer/markdown-template /MTI/202501/js
+  - A comprehensive template for working with Markdown files, equipped with tools for formatting, linting, spell checking, link validation, and more. 
+  - Ideal for documentation projects, blogs, or any Markdown-heavy projects.
+
+- https://github.com/yzhang-gh/vscode-markdown /MIT/202406/ts/inactive
+  - Markdown All in One
+  - All you need for Markdown (keyboard shortcuts, table of contents, auto preview and more).
+  - https://github.com/qjebbs/vscode-markdown-extended
+    - an extension extends syntaxes and abilities to VSCode built-in markdown function.
+    - Markdown Extended includes lots of editing helpers and a what you see is what you get exporter
+
+- https://github.com/shd101wyy/vscode-markdown-preview-enhanced /NCSA/202403/ts/inactive
+  - https://shd101wyy.github.io/markdown-preview-enhanced
+  - Markdown Preview Enhanced is an extension that provides you with many useful functionalities such as automatic scroll sync, math typesetting, mermaid, PlantUML, pandoc, PDF export, code chunk, presentation writer, etc. 
+  - A lot of its ideas are inspired by Markdown Preview Plus and RStudio Markdown.
+  - https://github.com/atom-community/markdown-preview-plus /202205/ts/archived
+- https://github.com/domdomegg/markdown-inline-preview-vscode /MIT/202404/ts/inactive
+  - extension for improving the display of markdown directly in the editor
+
+- https://github.com/searKing/preview-vscode /MIT/202412/ts
+  - A Previewer of Markdown and HTML for Visual Studio Code
+- https://github.com/abechanta/vscode-ext-paged-media /MIT/202310/js/inactive
+  - vscode extension for writing books using markdown and css paged media.
+  - markdown-it: this is a default markdown engine in vscode which renders md file to html.
+  - Paged.js: this is a css-based paged-media engine proposed by W3C which renders chunked html pages from one big continuous html.
+
+- https://github.com/takumisoft68/vscode-markdown-table /apache2/202501/ts
+  - A vscode extension to add markdown table features.
+  - https://github.com/darkriszty/MarkdownTablePrettify-VSCodeExt /202110/ts/inactive
+  - https://github.com/fcrespo82/vscode-markdown-table-formatter
+  - https://github.com/TomasHubelbauer/vscode-markdown-table-format
+  - https://github.com/philipparndt/vscode-markdown-tables
+- https://github.com/rpeshkov/vscode-text-tables /MIT/202005/ts/inactive
+  - VSCode extension that brings the power of Emacs table editing
+  - Support for org and markdown tables
+- https://github.com/simonguo/vscode-markdown-table-sort /202402/ts
+  - extension to sort markdown tables
+
+- https://github.com/csholmq/vscode-excel-to-markdown-table /MIT/202108/ts/inactive
+  - VSCode extension to paste Excel copies to markdown table format
+
+- https://github.com/remarkjs/vscode-remark /MIT/202404/js/inactive
+  - Lint and format markdown code with remark
+
+- https://github.com/microsoft/vscode-markdown-languageservice /MIT/202410/ts
+  - The language service that powers VS Code's Markdown support, extracted so that it can be reused by other editors and tools
+  - This library targets CommonMark. Support for other Markdown dialects and extensions is not within the scope of this project.
+  - https://github.com/microsoft/vscode-markdown-languageserver
+- https://github.com/so1ve/vscode-language-support-in-markdown /MIT/202402/ts/inactive
+  - VSCode extension to provide language support in markdown files.
+
+- https://github.com/DavidAnson/vscode-markdownlint /MIT/202501/js
+  - Markdown/CommonMark linting and style checking for Visual Studio Code
+  - It is powered by the markdownlint library for Node.js (which was inspired by markdownlint for Ruby). 
+  - Linting is performed by the `markdownlint-cli2` engine
+
+- memo /843Star/MIT/202303/ts/vscode/inactive
+  - https://github.com/svsool/memo
+  - Markdown knowledge base with bidirectional [[link]]s built on top of VSCode
+  - Inspired by Obsidian.md and RoamResearch.
+
+- https://github.com/Clikengo/markdown-print-tools /MIT/201904/ts/inactive
+  - Tools to nicely print markdown document (vscode extension, markdown it extension, pdf generation)
+
+- foam /15.6kStar/MIT/202411/ts/inactive
+  - https://github.com/foambubble/foam
+  - https://foambubble.github.io/
+  - personal knowledge management and sharing system inspired by Roam Research, built on Visual Studio Code and GitHub.
+  - Foam supports link aliasing, so you can have a `[[wikilink]]`, or a `[[wikilink|alias]]`.
+  - See how your notes are connected via a graph with the Foam: Show Graph command
+  - Foam updates the links to renamed files, so your notes stay consistent.
+
+- dendron /6.8kStar/AGPLv3 > apache2/202404/ts/inactive
+  - https://github.com/dendronhq/dendron
+  - https://wiki.dendron.so/
+  - local-first, markdown-based, note-taking tool built on top of VSCode. 
+  - Dendron builds on top of the past five decades of programming languages and developer tooling. We apply the key lessons from software to the management of general knowledge. We make managing general knowledge like managing code and your PKM like an IDE.
+  - Dendron finds the usable center between the two extremes by supporting backlinks of any two arbitrary notes while also maintaining a canonical hierarchy for every note. 
+  - We do this through our hierarchal first approach to note taking that relies on the combination of hierarchies, schemas, and path based lookups.
+
+- yn /3.6kStar/AGPLv3/202501/ts/vue/网页版+桌面版
+  - https://github.com/purocean/yn
+  - https://yank-note.vercel.app/
+  - 一款面向程序员的Markdown笔记应用
+  - 使用 vscode-Monaco 内核，专为 Markdown 优化
+  - 支持历史版本回溯；可在文档中嵌入小工具、可运行的代码块、表格、PlantUML图形、Drawio图形、宏替换等；支持接入 OpenAI 自动补全。
+  - 兼容性强：数据保存为本地Markdown文件；拓展功能尽量用 Markdown 原有的语法实现。
+  - 支持用户编写自己的插件来拓展编辑器的功能。
+  - 加密文件的加密解密操作均在前端完成，请务必牢记自己的密码。一旦密码丢失，只能暴力破解了。
+
 - https://github.com/kortina/vscode-markdown-notes /GPLv3/202407/ts/inactive
   - Use [[wiki-links]], backlinks, #tags and @bibtex-citations for fast-navigation of markdown notes.
   - Bring some of the awesome features from apps like Notational Velocity, nvalt, Bear, FSNotes, Obsidian to VS Code, where you also have (1) Vim key bindings and (2) excellent extensibility.
 - https://github.com/binyamin/vscode-backlinks-panel /MIT/202012/ts
   - View all markdown documents linking to current document.
   - this extension depends on the wikilink extension by kortina
+
+- https://github.com/imlinhanchao/vsc-markdown-image /MIT/202411/ts
+  - An extension for conveniently inserting pictures in Markdown, which supports storing pictures in local or third-party CDN service.
+  - Configurable to support Imgur, Qiniu, SM. MS, Cloudflare, Cloudinary, S3, Azure Storage and other CDN service. The default is `local`, you need to open the folder where the Markdown file is located.
+  - https://github.com/telesoho/vscode-markdown-paste-image
+
+- https://github.com/3choff/docs-miner /MIT/202501/ts
+  - A VSCode extension that generates markdown documentation from web pages and GitHub repositories.
+  - Two scraping methods: API Method (Faster but may fail on some sites), Browser Method (Slower but more reliable)
+- https://github.com/jsartelle/vscode-web-clipper /MIT/202004/ts/inactive
+  - Clip web pages into Markdown in VSCode
+  - The extension uses the Mercury parser to extract the main content from a page. The HTML to Markdown conversion is handled by `Turndown`.
+
+- https://github.com/fabiospampinato/vscode-markdown-todo /MIT/202412/ts
+  - Manage todo lists inside markdown files with ease.
+  - Triggers `Markdown Todo: Toggle Todo/Done`.
+  - https://github.com/TomasHubelbauer/vscode-markdown-todo
+
+- https://github.com/houkanshan/vscode-markdown-footnote /MIT/202106/ts/inactive
+  - [^1] footnote syntax support to VS Code's Markdown editor and preview.
+- https://github.com/mjbvz/vscode-markdown-footnotes /MIT/202211/js/inactive
+  - Adds [^1] footnote syntax support to VS Code's built-in Markdown preview
+
+- https://github.com/estruyf/screendown /MIT/202401/ts/inactive
+  - Capture stunning screenshots of your Markdown or code directly in Visual Studio Code with ease
+
+- https://github.com/JeepShen/vscode-markdown-code-runner /MIT/202006/js/inactive
+  - Run code snippet in markdown language for multiple languages: bash, python, golang, php
+  - https://github.com/renathossain/vscode-markdown-runner
+
+- https://github.com/HansKre/markdown-execute /MIT/202408/ts
+  - VSCode Extension to execute commands directly from Markdown
+
+- https://github.com/stateful/runmejs
+  - A JavaScript module to use Runme in Node.js.
+
+- https://github.com/rlnt/vscode-keepachangelog /LGPL/202306/ts/inactive
+  - A VSCode extension that provides snippets for markdown files to create a changelog with the ruleset of Keep a Changelog.
+
+- https://github.com/mjbvz/vscode-markdown-emoji /MIT/202412/ts
+  - VS Code extension that adds support for :emoji: syntax to the built-in markdown preview
 
 ## ext-git
 
@@ -311,6 +445,8 @@ modified: 2024-08-24T16:17:26.715Z
   - JAR Viewer Extension for VS Code
   - Extension for VS Code that gives a quick peek inside a JAR file by listing all classes and files bundled inside the archive.
 
+## ext-js/ts
+
 ## ext-data/format
 
 - https://github.com/AdamRaichu/vscode-zip-viewer /MIT/202412/js
@@ -339,6 +475,9 @@ modified: 2024-08-24T16:17:26.715Z
 - https://github.com/Saber2pr/vsc-ext-todolist /202404/ts
   - TodoList TreeView Editor for Vscode Extension.
   - Create and edit *.todo file
+
+- https://github.com/ai-primitives/vscode-mdxld /MIT/202412/ts
+  - VS Code extension for MDX-LD providing integrated support for Structured Data (YAML), Unstructured Content (markdown), Executable Code (JS/TS), and UI Components (JSX/React) with schema.org, gs1.org, and mdx.org.ai enrichment.
 
 ## ext-db/sqlite
 
@@ -370,7 +509,14 @@ modified: 2024-08-24T16:17:26.715Z
 - https://github.com/Dheovani/SVG-Viewer /MIT/202403/ts
   - Allows you to view SVG images directly within VSCode.
 # ext-integrations-note-taking
+- https://github.com/sheilaCat/zknotes /202008/ts/inactive
+  - zettelkasten zettelkasten .vscode plugin for applying zettelkasten notation.
 
+- https://github.com/inaki-ibarra/vscode-daily-notes /MIT/201910/js/inactive
+  - A simple text-based journal extension for Visual Studio Code
+
+- https://github.com/binarynoir/vscode-markdown-tags /202412/ts
+  - Enhance your Markdown documents with custom tags. Use predefined or custom labels, customizable colors, and arrow indicators 
 # ext-ui
 - https://github.com/DaGhostman/vscode-tree-view /MIT/201907/ts
   - VSCode extension that probvides mail symbol overview of the currently opened file
@@ -419,6 +565,9 @@ modified: 2024-08-24T16:17:26.715Z
   - search, sync
 - https://github.com/lostintangent/gistpad /MIT/202311/ts
   - VS Code extension for managing and sharing code snippets, notes and interactive samples using GitHub Gists
+
+- https://github.com/usernamehw/vscode-snippets-in-markdown /MIT/202307/ts/inactive
+  - Write and keep snippets for VSCode in a markdown file.
 
 - https://github.com/damonsk/vscode-wardley-maps /MIT/202411/ts
   - https://onlinewardleymaps.com/

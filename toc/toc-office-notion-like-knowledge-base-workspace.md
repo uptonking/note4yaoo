@@ -507,22 +507,26 @@ modified: 2022-06-03T21:34:54.893Z
   - Powered by the Hypermedia protocol 自定义协议
   - Mintter supports the new Hypermedia Web Protocol. This open protocol supports secure identities, version control, semantic documents, multimedia, and groups/organizations.
 # vscode-powered
-- foam /14.6kStar/MIT/202401/ts
+- foam /15.6kStar/MIT/202411/ts/inactive
   - https://github.com/foambubble/foam
   - https://foambubble.github.io/
   - personal knowledge management and sharing system inspired by Roam Research, built on Visual Studio Code and GitHub.
+  - Foam supports link aliasing, so you can have a `[[wikilink]]`, or a `[[wikilink|alias]]`.
+  - See how your notes are connected via a graph with the Foam: Show Graph command
+  - Foam updates the links to renamed files, so your notes stay consistent.
   - [Add support for VSCodium](https://github.com/foambubble/foam/issues/26)
     - Foam is officially published to OpenVSX as of 0.7.5_202012
 
-- memo /613Star/MIT/202208/ts/vscode
+- memo /843Star/MIT/202303/ts/vscode/inactive
   - https://github.com/svsool/memo
   - Markdown knowledge base with bidirectional [[link]]s built on top of VSCode
   - Inspired by Obsidian.md and RoamResearch.
 
-- dendron /6.2kStar/AGPLv3 > apache2/202308/ts/vscode/inactive
+- dendron /6.8kStar/AGPLv3 > apache2/202404/ts/vscode/inactive
   - https://github.com/dendronhq/dendron
   - https://wiki.dendron.so/
   - local-first, markdown-based, note-taking tool built on top of VSCode. 
+  - Dendron builds on top of the past five decades of programming languages and developer tooling. We apply the key lessons from software to the management of general knowledge. We make managing general knowledge like managing code and your PKM like an IDE.
   - Dendron finds the usable center between the two extremes by supporting backlinks of any two arbitrary notes while also maintaining a canonical hierarchy for every note. 
   - We do this through our hierarchal first approach to note taking that relies on the combination of hierarchies, schemas, and path based lookups.
   - [A Hierarchy First Approach to Note Taking](https://www.kevinslin.com/notes/3dd58f62-fee5-4f93-b9f1-b0f0f59a9b64.html)

@@ -54,6 +54,7 @@ modified: 2023-11-28T14:48:45.910Z
     - sync: 本地文件自动生成delta
   - mdbook/gitbook: text + actions/workflows
   - office editor
+    - pagable
   - encrypted elements: 有权限的用户或有密码的用户才可看到的数据
     - paid-only paragraphs/sentences
   - 文章段落查重，也可用于论文查重、评论查重

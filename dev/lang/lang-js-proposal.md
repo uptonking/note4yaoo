@@ -9,6 +9,7 @@ modified: 2020-07-07T08:10:16.774Z
 
 # guide
 - communities
+  - [TC39 - Specifying JavaScript.](https://tc39.es/)
   - [TC39 - Specifying JavaScript](https://es.discourse.group/)
 # proposals-toc
 - [finished proposals](https://github.com/tc39/proposals/blob/main/finished-proposals.md)
