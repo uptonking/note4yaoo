@@ -52,7 +52,7 @@ modified: 2021-07-20T13:50:23.433Z
   - vscode: monaco-editor + electron, code-server, sourcegraph
   - codemirror/prosemirror: state + view + commands + transform/ot/collab + virtualized
   - version-history: rrweb, diff, format(.fodt), video-but-auto-update
-  - rspack: js plugin; rolldown-wasm
+  - rspack: js plugin; rspack/rolldown-wasm
   - animation: motion(dom/svg)
 
 - 技术细节: virtualized, draggable, table(eav)
@@ -209,7 +209,7 @@ modified: 2021-07-20T13:50:23.433Z
   - functional: wangeditor, typewriter
   - 数据层: ivm-crsqlite/zero-sync
 
-### solutions-cases
+### solutions-cases 💡
 
 - partial-sync
   - 实现方案可参考成熟数据库的streaming，一般与业务表相关

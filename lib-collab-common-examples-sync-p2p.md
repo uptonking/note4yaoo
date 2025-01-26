@@ -27,6 +27,13 @@ modified: 2023-01-17T19:13:01.845Z
   - packages/replicache: The replicache client library.
   - Reflect is no longer under development.
 
+- https://github.com/powersync-ja/powersync-service /FSL-1.1-Apache-2.0(2y)/202406/ts
+  - https://www.powersync.com/
+  - The backend PowerSync Service responsible for data replication.
+  - PowerSync is a Postgres-SQLite sync layer, which helps developers to create local-first real-time reactive apps that work seamlessly both online and offline.
+  - https://github.com/powersync-ja/powersync-js /apache2/202501/ts
+    - SDK that enables local-first and real-time reactive apps with embedded SQLite for JavaScript clients, including React Native and Web
+
 - verdant/lo-fi /7Star/MIT/202211/ts
   - https://github.com/a-type/verdant
   - https://github.com/a-type/lo-fi

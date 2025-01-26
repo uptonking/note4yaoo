@@ -73,7 +73,7 @@ modified: 2022-04-05T10:08:25.947Z
   - Evolu CRDT has no support for transactions because CRDT transactions are still an unsolved issue. 
   - All table columns except for ID are nullable by default. It's not a bug; it's a feature. Local-first data are meant to last forever, but schemas evolve.
 
-- triplit /AGPLv3/202310/ts/crdt/llw/eav
+- triplit /AGPLv3/202501/ts/crdt/llw/eav
   - https://github.com/aspen-cloud/triplit
   - https://triplit.dev/
   - [Triplit Roadmap](https://aspencloud.notion.site/7362bdf6512243fcbdfe03c9d56a5998?v=acd301c4bd3942b9b30a15f636cecd00)

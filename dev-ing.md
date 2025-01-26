@@ -76,8 +76,6 @@ $$('[contenteditable]')
 flatpak run com.discordaspp.Discord --proxy-server="socks5://127.0.0.1:7897"
 betterdiscordctl -i flatpak install
 
-npx create-strapi@rc strapi5-play-202408 --use-npm --quickstart --ts --skip-cloud
-
 npx create-strapi@latest --ts --use-npm --git-init  --example --skip-cloud --skip-db    --quickstart ./emptyFolder
 
 vite --host 0.0.0.0 --port 8080
@@ -96,7 +94,7 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
   - 事项--截止日期(0730+休整)--重要性(hml/s1-s3)
   - apps-wiki-knowledge-base--0904
   - dashboard/webapp-template--0901
-  - ui: ariakit, zag/ark, radix-ui, mantine
+  - ui: ariakit, zag/ark, radix-ui/base-ui, mantine
   - apps: cms+crdt
 
 - deep into lib/fwk 书籍原理与代码实践要分开, 寻找深入debug的状态
@@ -129,7 +127,7 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
   - general-editing-backend: ActionText, cms-payload
 - eg-pivot-views/focalboard
   - table view
-  - kanban view
+  - kanban view, specification
   - **结合tanstack-table的pivot和ospreadsheet的edit/architecture**
 - eg-tanstack-table-v8
   - [ ] 方便接入已有的外部数据源
@@ -360,11 +358,12 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
 
 - diffView
   - 🚨 关闭diff视图显示打字动画后，无法使用cmdk，且cmdk-undo交互异常
-  - diff-view的开关只在需要时显示，[ ] 开启关闭diff无需刷新编辑器
+  - [ ] 开启关闭diff无需刷新编辑器
+  - 流式更新的文档内容，需要流式更新diff-view
   - ✅ 关闭diff后也支持显示打字动画
   - ✅ 在行数多时按行打字，在行数少时按字符打字
   - ✅ 重构打字动画css，不会从下向上
-  - 流式更新的文档内容，需要流式更新diff-view
+  - ~~diff-view的开关只在需要时显示~~
   - ~~隐藏绿色部分后，红色部分是否显示行号~~，打字太快了，不用看行号
 
 - cde
