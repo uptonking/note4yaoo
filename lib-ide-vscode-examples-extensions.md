@@ -93,6 +93,10 @@ modified: 2024-08-24T16:17:26.715Z
   - Can be used with static site generators like Hugo, Jekyll, Hexo, NextJs, Gatsby, and many more
   - Preview your site/content straight in Visual Studio Code
 # utils
+- https://github.com/Priyanshukeshri/extension-uninstaller-plugin /202308/ts
+  - extension that allows you to view and uninstall installed extensions from within the editor. 
+  - It provides a webview panel that displays a list of installed extensions along with their details.
+
 - https://github.com/a-bentofreire/editortoix /202410/ts
   - EditorToIX are open-source text utilities available for multiple code editors in form of extension or plugins.
   - This is a stable project with utilities being available on brackets code editor since 2016, however, since more editors have been supported, there is still work in progress to support the same extensions and policies across all code editors. 
@@ -109,8 +113,107 @@ modified: 2024-08-24T16:17:26.715Z
 
 ## utils-webview
 
+- https://github.com/microsoft/vscode-webview-ui-toolkit /MIT/202403/ts/archived
+  - A component library for building webview-based extensions in Visual Studio Code.
+  - [GitHub Next | React Webview UI Toolkit for VS Code](https://githubnext.com/projects/react-webview-ui-toolkit/)
+  - [Webview API | Visual Studio Code Extension API](https://code.visualstudio.com/api/extension-guides/webview)
+  - 🗑️ [Sunsetting the Webview UI Toolkit _202407](https://github.com/microsoft/vscode-webview-ui-toolkit/issues/561)
+    - at the beginning of May the FAST project announced a project re-alignment which includes the deprecation of several core packages. Notably, FAST Foundation (one of the defining pieces of technology we used to build the toolkit) was on this list.
+    - the only meaningful path forward is a full top-to-bottom rewrite of the toolkit using FAST Element (a lower-level library from FAST for building web components) and unfortunately the resourcing to complete this work was not allocated.
+  - https://github.com/microsoft/vscode-webview-ui-toolkit-samples
+
+- https://github.com/liutaigang/vscode-webview-extension-example /MIT/202501/ts
+  - Vscode 的 extension webview 开发示例，提供 Vue 和 React 实现，文档详细，举例丰富
+  - https://github.com/liutaigang/vite-plugin-vscode-webview-hmr
+
+- https://github.com/vscode-elements/elements /MIT/202501/ts/lit
+  - https://vscode-elements.github.io/guides/getting-started/
+  - Web component library for developing Visual Studio Code extensions
+  - The “webview API” enables extensions to build entirely customizable views within Visual Studio Code. While the VSCode API grants access to different UI elements, none of these UI widgets are functional in the “webview.” VSCode Elements addresses this by re-implementing these UI controls as web components (aka custom elements)
+  - You may not need VSCode Elements If you prefer traditional HTML and CSS over JavaScript, or if you’d rather avoid adding a new dependency, consider checking out the VSCode Elements Lite project
+  - https://github.com/vscode-elements/elements-lite
+    - A partial, pure CSS implementation of VSCode Elements, including only components that don't require JavaScript.
+
+- https://github.com/KermanX/reactive-vscode /MIT/202501/ts
+  - https://kermanx.github.io/reactive-vscode/
+  - Develop VSCode extension with Vue Reactivity API
+  - Source code in the `./packages/reactivity` directory is ported from `@vue/runtime-core`.
+  - Source code in the `./packages/mock` directory references the implementation of VSCode
+  - Part of the docs website is ported from VueUse
+
+- https://github.com/tomjs/vite-plugin-vscode /MIT/202412/ts
+  - 用 vue/react 来开发 vscode extension webview ，支持 esm 和 cjs。
+  - Support webview HMR
+  - Support Multi-Page App
+  - Supports vue and react and other frameworks supported by vite
+
+- https://github.com/estruyf/vscrui /MIT/202410/ts/inactive
+  - A React components library for building webview-based extensions with React in Visual Studio Code.
+  - The library is based on the VS Code Webview UI Toolkit
+
+- https://github.com/githubnext/vscode-react-webviews /MIT/202110/ts/inactive
+  - A sample/starter template for developing VS Code extensions with webviews
+  - if your application cannot be implemented using the builtins, then you must implement your UIs using webviews. Webviews in VS Code give you all of the power, but using them effectively can involve a lot of headache, and it's very easy to do things that ruin performance.
+
+- https://github.com/hacker0limbo/vscode-webview-react-boilerplate /202206/ts/inactive
+  - Boilerplate for developing VSCode Extension Webview with React
+  - https://github.com/estruyf/vscode-react-webview-template
+  - https://github.com/cs-magic-open/vscode-extension-template
+  - https://github.com/LinLzis/vscode-extension-react-starter
+- https://github.com/rebornix/vscode-webview-react /MIT/201902/ts/inactive
+  - Create React App starter in VSCode Webview.
+  - The webview API allows extensions to create customizable views within VSCode. Single Page Application frameworks are perfect fit for this use case. 
+  - to make modern JavaScript frameworks/toolchains appeal to VSCode webview API's security best practices requires some knowledge of both the bundling framework you are using and how VSCode secures webview.
+
 - https://github.com/stack-spot/vscode-async-webview /apache2/202407/ts
   - A utility for making it easier to implement web views within VSCode extensions
+  - https://github.com/Tiagoperes/vscode-async-webview-sample
+
+- https://github.com/jasongin/vscode-webview-dialog /202311/ts
+  - Sample for using webviews for dialogs or forms in VS Code extensions
+
+- https://github.com/DTeam-Top/vscode-page /apache2/202003/ts/inactive
+  - A light-weight page micro framework for vscode webview.
+  - abstract the communication between html page and WebviewPanel, developers can focus on business logic.
+  - built-in template engine, with handlebars.js.
+
+- https://github.com/jackiotyu/remote-webview-devtools /GPLv3/202407/ts/vue/inactive
+  - 使用最新的 chrome devtools 调试移动端 webview
+
+- https://github.com/Lirobi/phoneviewvscode /202412/ts
+  - My VSCode extension to get a mobile webview on the side of the editor, with multiple devices avaliable
+  - extension that allows you to preview your web application in a phone-sized viewport. 
+  - Currently 1.6K downloads on the marketplace
+
+- https://github.com/sandipchitale/vscode-webview-iframe /202304/ts
+  - 过于简单
+
+- https://github.com/sandipchitale/vscode-webview-iframe /202007/ts
+  - Demonstrates VS Code's webview API 
+
+- https://github.com/sandipchitale/vscode-devtools /202105/ts
+  - Chrome Devtools inside VSCode using Webview+iframe
+
+## utils-rpc/messaging
+
+- https://github.com/SAP/vscode-webview-rpc-lib /apache2/202404/ts/inactive
+  - Provides a convenient way to communicate between VSCode extension and its webviews. 
+  - Use RPC calls to invoke functions on the webview, receive callbacks and vice versa.
+
+- https://github.com/TypeFox/vscode-messenger /MIT/202412/ts
+  - RPC messaging library for the VS Code extension platform
+  - Makes the communication between your VS Code extension and its webviews much simpler.
+  - Support for sync and async request/notification handlers
+  - Support for request cancellation
+
+- https://github.com/slightc/web-service-rpc /202311/ts
+  - 使用vue/react写vscode插件webview的工具
+  - 基于postMessage的RPC通信工具
+  - https://github.com/Aaronphy/vscode-webview-rpc
+  - https://github.com/huanghaoAlvin/vscode-message-management
+
+- https://github.com/mkloubert/vscode-http-client /LGPL/201903/ts/inactive
+  - Simple way to do HTTP requests in Visual Studio Code.
 # extensions
 - https://github.com/minherz/copyright-inserter /apache2/202501/ts
   - VSCode extension that inserts a copyright header into editing file
@@ -228,6 +331,10 @@ modified: 2024-08-24T16:17:26.715Z
 - https://github.com/kurusugawa-computer/formula-editor-vscode /MIT/202412/ts
   - Formula Editor is a WYSIWYG editor that allows you to edit formulas in Markdown.
   - When you're done editing, press the copy icon to copy the LaTeX string of the formula to the clipboard.
+
+- https://github.com/JackieScorpio/convert-json-to-ts /MIT/202404/ts
+  - use codemirror and vscode webview to achieve a vscode extension
+  - Convert Json to Typescript
 
 ## ext-markdown
 
@@ -503,6 +610,15 @@ modified: 2024-08-24T16:17:26.715Z
 
 ## ext-image
 
+- https://github.com/hemengke1997/vscode-image-manager /MIT/202501/ts
+  - https://hemengke1997.github.io/vscode-image-manager/
+  - Powerful yet easy-to-use VSCode image management extension
+  - https://github.com/ZhangJian1713/vscode-image-viewer
+    - View Images in current project
+    - Display all images as thumbnails, support resizing thumbnails and previewing origin image(zoom in/out or rotate freely)
+  - https://github.com/1000ch/vscode-svgo
+    - Fully featured SVGO extension for Visual Studio Code
+
 - https://github.com/WindMillCode/Paste-Text-From-Image /MIT/202409/ts
   - A VSCode extension that allows you to extract text from images directly from your clipboard and paste it into your editor with a simple right-click.
 
@@ -524,6 +640,10 @@ modified: 2024-08-24T16:17:26.715Z
 
 - https://github.com/subframe7536/vscode-custom-ui-style /MIT/202501/ts
   - VSCode extension that modify CSS and JS code in both editor and webview, unify global font family, setup background image and Electron BrowserWindow options, or add your custom CSS or JS code
+
+- https://github.com/aryanpingle/vscode-webview-variables /202407/ts
+  - A collection of all Theme Colors provided by Visual Studio Code's Extension API (and their corresponding CSS names).
+  - The primary purpose of this package is to ensure that silly typos in variable names don't cause your code to break. Instead, you can rely on the autocomplete to correctly use (and find!) VSCode's in-built colors.
 
 - https://github.com/GorvGoyl/Shortcut-Menu-Bar-VSCode-Extension /GPLv3/202203/ts/inactive
   - Add handy buttons like beautify, show opened files, save, toggle terminal, etc to the editor menu bar in VSCode
