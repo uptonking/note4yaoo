@@ -16,7 +16,7 @@ modified: 2023-11-28T14:48:45.910Z
   - versioning and branching: 基于oplog/events实现, draft/public, replay, diff
   - collaboration-ready: 基于crdt
   - end-user database: 支持用户自定义数据和流程, multi views
-  - mobile-editor: phone, pad
+  - mobile-editor: phone/pad, 自定义编辑器可以是主特性，也可以是锦上添花
   - animated-text/code sharing: playback with different speed
   - github修改文档要提pr很繁琐; 可协作的workspace可直接改或用审阅修订模式
   - mobile-app-generator

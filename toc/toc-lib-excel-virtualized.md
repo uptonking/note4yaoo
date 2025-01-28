@@ -11,6 +11,7 @@ modified: 2023-01-15T15:56:43.100Z
 - list
   - 常见场景: virtual, infinite, lazy
   - 滚动时，infinite列表的按需加载可看做是lazy
+  - 是否支持nested virtualized? 类似文档内的表格 或 嵌套的树
 # virtualized
 - virtua /871Star/MIT/202403/ts
   - https://github.com/inokawa/virtua

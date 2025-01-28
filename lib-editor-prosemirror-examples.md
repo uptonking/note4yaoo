@@ -40,6 +40,8 @@ modified: 2022-08-18T16:57:46.405Z
   - https://tiptap.dev/examples/default
   - A headless, framework-agnostic and extendable rich text editor, based on ProseMirror.
   - It’s headless and comes without any CSS. You are in full control over markup, styling and behaviour.
+  - 优点: 协同后端实现hocuspocus, 示例丰富(drawing), RAG生成示例, 编辑器内嵌入iframe
+  - 缺点: 很多扩展未开源
 
 - BlockNote /14Star/MPLv2/202208/ts/tiptap
   - https://github.com/TypeCellOS/BlockNote
@@ -48,37 +50,52 @@ modified: 2022-08-18T16:57:46.405Z
   - 支持跨block选择部分文字
   - 支持拖拽block修改顺序，特别是支持将list item拖入拖出列表
   - 支持斜杠菜单、悬浮菜单修改标题层级、多级列表、顺滑动画
-  - 支持协作
+  - ✨ 支持multi-column布局
+  - ✨ 支持editor多实例，且支持将block从一个editor拖到另一个editor
   - 依赖tiptap.v2、tippyjs、styled-components
   - core+react-slashMenu/toolbar
   - bugs
     - 复制粘贴多行文本
+  - Collaboration提供了多种实现: y-sweet, liveblocks, partykit
+  - also works with vanilla JS for use with other frameworks
+  - 100% of BlockNote is open source. While the library is free, we offer paid consultancy and support services
+  - "BlockNote Pro" is not an additional library, but instead a subscription service built around the open-source BlockNote library.
+  - BlockNote is open source software licensed under the MPL 2.0 license, which allows you to use BlockNote in commercial (and closed-source) applications - even without a subscription
+    - The XL packages are dual-licensed and available under AGPL-3.0 or a commercial license as part of the BlockNote Business subscription or above.
 
-- nytimes-react-prosemirror /314Star/apache2/202311/ts
-  - https://github.com/nytimes/react-prosemirror
-  - A fully featured library for safely integrating ProseMirror and React
-  - React separates updates into render and commit phases so that it can process updates in batches
-  - [Announcing React ProseMirror_202303](https://discuss.prosemirror.net/t/announcing-react-prosemirror/5328)
-  - [The Future of @nytimes/react-prosemirror_202309](https://discuss.prosemirror.net/t/the-future-of-nytimes-react-prosemirror/5855)
-    - For the past several months, I’ve been hard at work on a very different approach to integrate React and ProseMirror. 
-    - The summary is this: the new approach completely replaces ProseMirror’s DOM management system with one built in React. 
-    - We’re still using `prosemirror-view` for everything outside of change detection and DOM updates, which means we are exposing exactly the same API. 
-    - In fact, I’ve ported over most of the unit tests from prosemirror-view to ensure that behavior matches the default library.
-  - ProseMirror View library renders ProseMirror documents in a single-phase update. 
-  - The first phase of a React update should be free of side effects, which requires that updates to the ProseMirror View happen in the second phase.
-    - during the first phase, React components actually have access to a different (newer) version of the EditorState than the one in the Editorview. 
-    - As a result code that dispatches transactions may dispatch transactions based on incorrect state. 
-  - There are two different directions to integrate ProseMirror and React: 
-    - you can render a ProseMirror EditorView inside of a React component, 
-    - and you can use React components to render ProseMirror NodeViews. 
-    - This library provides tools for accomplishing both of these goals.
-  - https://github.com/nytimes/oak-byo-react-prosemirror-redux
-    - https://nytimes.github.io/oak-byo-react-prosemirror-redux/
-    - This repository contains learning materials originally sourced and written for the Oak team at The New York Times.
-    - The courses within focus on developing an understanding of how the three tools that the Oak collaborative rich text editor relies on, React, ProseMirror, and Redux, actually work.
-    - [Build Your Own: ProseMirror View](https://nytimes.github.io/oak-byo-react-prosemirror-redux/post/build-your-own-pm-view/)
-      - demonstrate how to build the core components of a ProseMirror view library.
-    - [Build Your Own: React, ProseMirror, and Redux : javascript](https://www.reddit.com/r/javascript/comments/10swhle/build_your_own_react_prosemirror_and_redux/)
+- milkdown /9.1kStar/MIT/202501/ts/remark
+  - https://github.com/Milkdown/milkdown
+  - https://github.com/Saul-Mirone/milkdown
+  - https://milkdown.dev/
+  - https://milkdown.dev/online-demo
+  - 依赖prosemirror、remark、prism、katex，但不依赖prosemirror-markdown、react
+  - A plugin-driven WYSIWYG markdown Editor, inspired by Typora, built on top of prosemirror and remark.
+  - 不同于其他prosemirror项目，可配置支持的markdown特性
+  - ⚠️️breaking: @milkdown/core@4.4.0(date202107) migrate from markdown-it to remark
+  - https://github.com/Milkdown/vscode /MIT/202501/ts
+    - vscode-ext: Edit markdown in a WYSIWYG way, powered by milkdown
+
+- https://github.com/ocavue/prosekit /101Star/MIT/202404/ts
+  - https://prosekit.dev/
+  - https://prosekit.dev/guide/integrations/react
+  - Framework agnostic and headless rich text editor based on ProseMirror
+  - 整体采用ContextProvider模式，`<ProseKit editor={editor}>` 编辑器实例放在顶层
+  - why not keep developing remirror?
+    - I’ll continue maintaining Remirror. The api change is just too big that I cannot base on the Remirror codebase.
+  - https://prosekit.dev/examples/change-tracking
+    - 示例较简单，偏向纯文本的diff
+  - 🆚️ [how is it different from Remirror, Prosemirror or Tiptap? _202412](https://github.com/prosekit/prosekit/discussions/857)
+    - Remirror and TipTap share some similar designs. One of them is that every extension is a class (e.g., BoldExtension). If you want to add more features based on an existing extension, you extend it (e.g., class MyBoldExtension extends BoldExtension) and add/override methods in the subclass.
+    - I found this design makes it harder to use in complex scenarios. Using the principle of "composition over inheritance," I redesigned the extension system in ProseKit, where every extension is just a function that calls one or more other extensions.
+    - I also made some other improvements, like simpler lifecycle management and more UI library (Svelte, SolidJS, etc.) support.
+    - Sadly, these changes are so significant that I won't be able to publish them as a new major version of the existing Remirror project, so I created ProseKit.
+- prosemirror-adapter /65Star/MIT/202402/ts
+  - https://github.com/prosekit/prosemirror-adapter
+  - https://github.com/Saul-Mirone/prosemirror-adapter
+  - Universal adapter to create prosemirror nodeview from modern UI frameworks.
+  - 支持react/vue/lit/svelte
+  - 支持node-view, plugin-view, widget-decoration
+  - not on the plan: no ui, no hotkeys, no schema
 
 - remirror /1.8kStar/MIT/202208/ts
   - https://github.com/remirror/remirror
@@ -89,21 +106,32 @@ modified: 2022-08-18T16:57:46.405Z
   - Great support for mobile devices.
   - Out-of-the-box editors, or create own by composing extensions.
   - Collaborative editing with yjs or prosemirror-collab.
+  - 缺点: ui组件依赖material-ui, api设计依赖装饰器
+  - [Introducing Remirror v3 _202407](https://www.remirror.io/blog/announcement-v3)
+    - This version aims to make it easier to use Remirror in existing applications, by not imposing our architectural decisions on to you.
+    - The core of Remirror v2 relied on packages such as @mui/material to power our menus and toolbars, and @lingui/core to provide internationalisation (i18n) support.
+    - we have removed these features from the core, and moved them into optional packages.
 
-- https://github.com/ocavue/prosekit /101Star/MIT/202404/ts
-  - https://prosekit.dev/
-  - https://prosekit.dev/guide/integrations/react
-  - Framework agnostic and headless rich text editor based on ProseMirror
-  - 整体采用ContextProvider模式，`<ProseKit editor={editor}>` 编辑器实例放在顶层
-  - why not keep developing remirror?
-    - I’ll continue maintaining Remirror. The api change is just too big that I cannot base on the Remirror codebase.
-
-- prosemirror-adapter /65Star/MIT/202402/ts
-  - https://github.com/Saul-Mirone/prosemirror-adapter
-  - Universal adapter to create prosemirror nodeview from modern UI frameworks.
-  - 支持react/vue/lit/svelte
-  - 支持node-view, plugin-view, widget-decoration
-  - not on the plan: no ui, no hotkeys, no schema
+- wax-prosemirror /9Star/MIT/202411/js/react
+  - https://gitlab.coko.foundation/wax/wax-prosemirror
+  - https://waxjs.net/docs/wax/
+  - http://wax-demo.coko.foundation/
+  - https://waxjs.net/features/
+  - 提供了丰富示例，包括编辑器内带下拉框的表单、脚注面板浮层、Track changes
+  - 支持评论，评论卡片可与编辑器内容水平对齐，但被评论文本不支持部分重叠
+  - ✨ 实现了suggestion mode
+  - The Word Processor for the Web
+  - Wax depends on the following libraries.
+    - React for the view(UI)
+    - Styled-components for theming and styling.
+    - Inversify.io as service containers，用的不多，可剥离
+  - 依赖注入使用了很多class
+  - 大量使用react组件
+  - ref
+    - https://github.com/christos8333/wax-prosemirror
+    - licit也是适合论文的编辑器
+    - Wax, a [Cabbage Tree Labs](https://www.cabbagetreelabs.org/) project
+    - The Cabbage Tree Method and Book Sprints and led the development of open source software for publishing such as PubSweet, Editoria, Kotahi, PagedJS, Wax, BookType and many more
 
 - @atlaskit/editor-core /8Star/Apache2/202208/ts
   - https://bitbucket.org/atlassian/atlassian-frontend-mirror/src/master/editor/
@@ -121,52 +149,7 @@ modified: 2022-08-18T16:57:46.405Z
     - https://github.com/TeemuKoivisto/prosemirror-track-changes-example
     - https://github.com/pioug/atlassian-frontend-mirror
 
-- notitap /39Star/MIT/202209/ts
-  - https://github.com/sereneinserenade/notitap
-  - https://sereneinserenade.github.io/notitap/
-  - 依赖daisyui、tippyjs、floating-ui、fuzzysort
-  - Notion like editor built on top of tiptap.
-  - 支持跨block选择部分文字
-  - 支持拖拽block修改顺序，但list item不支持拖入拖出
-
-- tui.editor.v3 /15.1kStar/MIT/202302/ts/inactive/几乎无依赖/生态丰富
-  - https://github.com/nhn/tui.editor
-  - https://ui.toast.com/tui-editor
-  - https://nhn.github.io/tui.editor/latest/tutorial-example01-editor-basic
-  - 👀 v3新版本迁移到了prosemirror
-  - 只依赖prosemirror，mark解析自己实现了toastmark，公司还自研了很多ui组件
-  - core只依赖 codemirror5，另外提供了react/vue-editor
-  - 全都是vanillajs，react的封装很薄，只有3文件
-  - 编辑器支持分屏查看、双屏同步滚动、配置图表chart、uml、语法高亮、合并单元格、自定义toolbar、i18n、theming
-  - 代码复杂度高
-  - 支持通过代码块中的图表配置信息生成图表
-  - The Editor allows you to edit your Markdown documents using text or WYSIWYG and comes with Syntax Highlighting, Scroll-Sync, Live Preview, and Chart features.
-  - ref
-    - [example: Editor with Chart Plugin](https://nhn.github.io/tui.editor/latest/tutorial-example07-editor-with-chart-plugin)
-    - https://github.com/QinHongZhe/hongzhe-tui.editor
-
-- wax-prosemirror /9Star/MIT/202403/js/react
-  - https://gitlab.coko.foundation/wax/wax-prosemirror
-  - https://waxjs.net/docs/wax/
-  - http://wax-demo.coko.foundation/
-  - https://waxjs.net/features/
-  - 提供了丰富示例，包括编辑器内带下拉框的表单、脚注面板浮层、Track changes
-  - 支持评论，评论卡片可与编辑器内容水平对齐，但被评论文本不支持部分重叠
-  - 👉🏻 实现了suggestion mode
-  - The Word Processor for the Web
-  - Wax depends on the following libraries.
-    - React for the view(UI)
-    - Styled-components for theming and styling.
-    - Inversify.io as service containers，用的不多，可剥离
-  - 依赖注入使用了很多class
-  - 大量使用react组件
-  - ref
-    - https://github.com/christos8333/wax-prosemirror
-    - licit也是适合论文的编辑器
-    - Wax, a [Cabbage Tree Labs](https://www.cabbagetreelabs.org/) project
-    - The Cabbage Tree Method and Book Sprints and led the development of open source software for publishing such as PubSweet, Editoria, Kotahi, PagedJS, Wax, BookType and many more
-
-- guardian-prosemirror-editor /2Star/MIT/202311/ts/react
+- guardian-prosemirror-editor /2Star/MIT/202311/ts/react/inactive
   - https://github.com/guardian/prosemirror-editor
   - provide a re-usable ProseMirror editor for use across our tools
   - it aims to replace Scribe-based rich text editors with a React-based prosemirror editor in: tagmanager, atom-workshop
@@ -181,8 +164,95 @@ modified: 2022-08-18T16:57:46.405Z
     - Each Element is made up of Fields, which represent a data type – for example, text, rich text, or custom data types.
   - [How prosemirror-elements works](https://github.com/guardian/prosemirror-elements/blob/main/docs/how-it-works.md)
 
+- https://github.com/handlewithcarecollective/react-prosemirror /apache2/202501/ts
+  - A fully featured library for safely integrating ProseMirror and React.
+  - On Jan. 17, 2025, the maintainers of the @nytimes/react-prosemirror library decided fork the v2 release into its own project. It had been developed entirely by one developer, @smoores-dev, who had not worked for NYT in years
+  - It's also challenging to effectively use React to define node views for ProseMirror documents. Both ProseMirror and React expect to have full control over their respective parts of the DOM. They both modify and destroy DOM nodes as needed. Previous solutions (including previous iterations of this library) have attempted to work around this power struggle by producing wrapper elements to hand to ProseMirror, and then mounting React nodes within these (usually with React Portals).
+    - This approach works, but tenuously. Having additional nodes in the document that ProseMirror isn't strictly aware of can cause issues with its change detection system, leading to challenging edge cases. [Deleting the last node view can throw errors · Issue · nytimes/react-prosemirror _202306](https://github.com/nytimes/react-prosemirror/issues/42)
+  - 💡 This library provides an alternate implementation of ProseMirror's `EditorView`. It uses React as the rendering engine, rather than ProseMirror's home-brewed DOM update system. This allows us to provide a more comfortable integration with ProseMirror's powerful data model, transformations, and event management systems.
+    - the new release moves rendering responsibility entirely into React. We disabled the EditorView's DOM update cycle, and implemented the same update algorithm that prosemirror-view uses with React components. The result is a more idiomatic, React-based library, which doesn't have any of the issues of the original implementation.
+- nytimes-react-prosemirror /314Star/apache2/202311/ts
+  - https://github.com/nytimes/react-prosemirror
+  - A fully featured library for safely integrating ProseMirror and React
+  - React separates updates into render and commit phases so that it can process updates in batches
+  - [Announcing React ProseMirror_202303](https://discuss.prosemirror.net/t/announcing-react-prosemirror/5328)
+  - [The Future of @nytimes/react-prosemirror_202309](https://discuss.prosemirror.net/t/the-future-of-nytimes-react-prosemirror/5855)
+    - For the past several months, I’ve been hard at work on a very different approach to integrate React and ProseMirror. 
+    - The summary is this: the new approach completely replaces ProseMirror’s DOM management system with one built in React. 
+    - We’re still using `prosemirror-view` for everything outside of change detection and DOM updates, which means we are exposing exactly the same API. 
+    - In fact, I’ve ported over most of the unit tests from prosemirror-view to ensure that behavior matches the default library.
+  - ProseMirror View library renders ProseMirror documents in a single-phase update. 
+  - The first phase of a React update should be free of side effects, which requires that updates to the ProseMirror View happen in the second phase.
+    - during the first phase, React components actually have access to a different (newer) version of the EditorState than the one in the Editorview. 
+    - As a result code that dispatches transactions may dispatch transactions based on incorrect state. 
+  - 💡 There are two different directions to integrate ProseMirror and React: 
+    - you can render a ProseMirror EditorView inside of a React component, 
+    - and you can use React components to render ProseMirror NodeViews. 
+    - This library provides tools for accomplishing both of these goals.
+  - https://github.com/nytimes/oak-byo-react-prosemirror-redux
+    - https://nytimes.github.io/oak-byo-react-prosemirror-redux/
+    - This repository contains learning materials originally sourced and written for the Oak team at The New York Times.
+    - The courses within focus on developing an understanding of how the three tools that the Oak collaborative rich text editor relies on, React, ProseMirror, and Redux, actually work.
+    - [Build Your Own: ProseMirror View](https://nytimes.github.io/oak-byo-react-prosemirror-redux/post/build-your-own-pm-view/)
+      - demonstrate how to build the core components of a ProseMirror view library.
+    - [Build Your Own: React, ProseMirror, and Redux : javascript](https://www.reddit.com/r/javascript/comments/10swhle/build_your_own_react_prosemirror_and_redux/)
+
+- manuscript-editor /7Star/apache2>CPAL/202208/ts/react
+  - https://github.com/Atypon-OpenSource/manuscripts-article-editor
+  - the editor package of Manuscripts app to be used in a react application.
+  - 数据保存支持 pouchdb-adapter-idb
+  - https://github.com/Atypon-OpenSource/manuscripts-body-editor
+    - A React + ProseMirror editor for manuscripts.
+  - https://gitlab.com/mpapp-public/manuscripts-manuscript-editor
+  - https://gitlab.com/mpapp-public/manuscripts-frontend
+    - /CPAL-1.0; 类似MPL
+  - A React + ProseMirror editor for manuscripts.
+  - 编辑器依赖prosemirror、@jupyterlab/services、codemirror5、popperjs、react-dnd
+  - 编辑器样式采用论文简洁风格，支持 摘要、脚注、交叉引用、评论
+  - Manuscripts.io web frontend which makes API calls to manuscripts-api and manuscripts-sync
+  - This repository contains the browser client for the Manuscripts collaborative authoring environment, in a single-page React app (desktop and mobile app embeddable using cocos).
+  - https://github.com/Atypon-OpenSource/manuscripts-data
+    - https://github.com/Atypon-OpenSource/manuscripts-examples
+    - source data for use by Manuscripts client applications
+  - ref
+    - https://gitlab.com/mpapp-public/manuscripts-api
+    - https://gitlab.com/mpapp-public/manuscripts-sync
+    - https://gitlab.com/mpapp-public/manuscripts-data
+  - [Manuscripts.io is a ProseMirror-based editor in a React application_202011](https://discuss.prosemirror.net/t/manuscripts-io/3299), 
+    - served as a PWA that works offline and can be installed as a desktop application via Chrome.
+    - instead of using ProseMirror’s standard collaboration plugin, 👉🏻 Manuscripts serializes each block of the document to a JSON object with an id, which is stored in the browser’s local storage (IndexedDB) using RxDB/PouchDB and then synced with Couchbase via Sync Gateway, which handles permissions and validates each object according to a defined schema. 
+    - Manuscripts.io 64 is built by a team within Atypon; Atypon成立于1996年，是一家为全球期刊发展服务的软件系统公司，Atypon旗下出版平台Literatum为全球近100000本期刊和919家出版商网站、45%的英文同行评审学术期刊和其他语种的出版物提供服务。
+    - Conflict resolution is handled in each client, with any conflicting changes in the document’s content presented to the user for them to choose the most appropriate resolution.
+    - Collaboration in Manuscripts.io 64 works at the project level — each project can contain several manuscripts — and collaborators can either be responsible for editing parts of the document or can simply comment by adding annotations to blocks or ranges of the manuscript.
+    - Manuscripts.io 64 includes some innovations: figures that can be (re)generated dynamically by evaluating code in a hosted Jupyter kernel; built-in searching of online reference databases; configurable paragraph, section and inline styles, and output to multiple formats (DOCX, PDF, JATS XML, HTML, and others).
+
+- notitap /39Star/MIT/202209/ts
+  - https://github.com/sereneinserenade/notitap
+  - https://sereneinserenade.github.io/notitap/
+  - 依赖daisyui、tippyjs、floating-ui、fuzzysort
+  - Notion like editor built on top of tiptap.
+  - 支持跨block选择部分文字
+  - 支持拖拽block修改顺序，但list item不支持拖入拖出
+
+- tui.editor.v3 /15.1kStar/MIT/202302/ts/inactive/几乎无依赖/生态丰富
+  - https://github.com/nhn/tui.editor
+  - https://ui.toast.com/tui-editor
+  - https://nhn.github.io/tui.editor/latest/tutorial-example01-editor-basic
+  - ✨ v3新版本迁移到了prosemirror
+  - 只依赖prosemirror，mark解析自己实现了toastmark，公司还自研了很多ui组件
+  - core只依赖 codemirror5，另外提供了react/vue-editor
+  - 全都是vanillajs，react的封装很薄，只有3文件
+  - 编辑器支持分屏查看、双屏同步滚动、配置图表chart、uml、语法高亮、合并单元格、自定义toolbar、i18n、theming
+  - 代码复杂度高
+  - 支持通过代码块中的图表配置信息生成图表
+  - The Editor allows you to edit your Markdown documents using text or WYSIWYG and comes with Syntax Highlighting, Scroll-Sync, Live Preview, and Chart features.
+  - ref
+    - [example: Editor with Chart Plugin](https://nhn.github.io/tui.editor/latest/tutorial-example07-editor-with-chart-plugin)
+    - https://github.com/QinHongZhe/hongzhe-tui.editor
+
 - bangle.dev-editor /527Star/MIT/202310/ts/inactive
   - https://github.com/bangle-io/bangle-editor
+  - https://github.com/bangle-io/banger-editor
   - https://github.com/bangle-io/bangle.dev
   - https://bangle.dev/docs/examples/markdown-editor
   - https://app.bangle.io/
@@ -260,11 +330,18 @@ modified: 2022-08-18T16:57:46.405Z
   - ref
     - https://github.com/gitlabhq/gitlabhq/tree/master/app/assets/javascripts/content_editor
 
-- taleweaver(织书) /90Star/MIT/202008/ts
+- https://github.com/WaiSiuKei/neditor /MIT/202308/ts/inactive
+  - https://waisiukei.github.io/neditor/
+  - rich text editor aimed at running in Canvas.
+  - 在事件模型和 DOM 模型都准备好之后，移植 ProseMirror 就非常容易了。
+  - [从浏览器源码开始实现 Canvas 富文本编辑器 - 知乎 _202307](https://zhuanlan.zhihu.com/p/642703113)
+
+- taleweaver(织书✨) /90Star/MIT/202008/ts
   - https://github.com/yuzhenmi/taleweaver
   - https://yuzhenmi.github.io/taleweaver/
   - Web word processor for 2Tale Writer's Portal.
-  - 👀 未使用contenteditable，基于dom实现排版，支持显示分页
+  - ✨ 未使用contenteditable，基于dom实现排版，支持显示分页； 
+    - 自定义排版还可参考 dropflow，但输出canvas
   - core无依赖，react封装很少(只有2个文件)，不依赖prosemirror
   - 大量使用es6 class
   - 自己实现了依赖注入，设计了model/service/component
@@ -282,36 +359,7 @@ modified: 2022-08-18T16:57:46.405Z
     - I don't have prior experience with building word processors, much of the project's design has been trial and error.
     - There are 2 features that I'm still trying to figure out, with no satisfactory solution so far: Pasting, Text formatting 
 
-- manuscript-editor /7Star/apache2>CPAL/202208/ts/react
-  - https://github.com/Atypon-OpenSource/manuscripts-article-editor
-  - the editor package of Manuscripts app to be used in a react application.
-  - 数据保存支持 pouchdb-adapter-idb
-  - https://github.com/Atypon-OpenSource/manuscripts-body-editor
-    - A React + ProseMirror editor for manuscripts.
-  - https://gitlab.com/mpapp-public/manuscripts-manuscript-editor
-  - https://gitlab.com/mpapp-public/manuscripts-frontend
-    - /CPAL-1.0; 类似MPL
-  - A React + ProseMirror editor for manuscripts.
-  - 编辑器依赖prosemirror、@jupyterlab/services、codemirror5、popperjs、react-dnd
-  - 编辑器样式采用论文简洁风格，支持 摘要、脚注、交叉引用、评论
-  - Manuscripts.io web frontend which makes API calls to manuscripts-api and manuscripts-sync
-  - This repository contains the browser client for the Manuscripts collaborative authoring environment, in a single-page React app (desktop and mobile app embeddable using cocos).
-  - https://github.com/Atypon-OpenSource/manuscripts-data
-    - https://github.com/Atypon-OpenSource/manuscripts-examples
-    - source data for use by Manuscripts client applications
-  - ref
-    - https://gitlab.com/mpapp-public/manuscripts-api
-    - https://gitlab.com/mpapp-public/manuscripts-sync
-    - https://gitlab.com/mpapp-public/manuscripts-data
-  - [Manuscripts.io is a ProseMirror-based editor in a React application_202011](https://discuss.prosemirror.net/t/manuscripts-io/3299), 
-    - served as a PWA that works offline and can be installed as a desktop application via Chrome.
-    - instead of using ProseMirror’s standard collaboration plugin, 👉🏻 Manuscripts serializes each block of the document to a JSON object with an id, which is stored in the browser’s local storage (IndexedDB) using RxDB/PouchDB and then synced with Couchbase via Sync Gateway, which handles permissions and validates each object according to a defined schema. 
-    - Manuscripts.io 64 is built by a team within Atypon; Atypon成立于1996年，是一家为全球期刊发展服务的软件系统公司，Atypon旗下出版平台Literatum为全球近100000本期刊和919家出版商网站、45%的英文同行评审学术期刊和其他语种的出版物提供服务。
-    - Conflict resolution is handled in each client, with any conflicting changes in the document’s content presented to the user for them to choose the most appropriate resolution.
-    - Collaboration in Manuscripts.io 64 works at the project level — each project can contain several manuscripts — and collaborators can either be responsible for editing parts of the document or can simply comment by adding annotations to blocks or ranges of the manuscript.
-    - Manuscripts.io 64 includes some innovations: figures that can be (re)generated dynamically by evaluating code in a hosted Jupyter kernel; built-in searching of online reference databases; configurable paragraph, section and inline styles, and output to multiple formats (DOCX, PDF, JATS XML, HTML, and others).
-
-- https://github.com/oschina/tide /202306/ts/react
+- https://github.com/oschina/tide /MIT/202306/ts/react/inactive
   - https://oschina.gitee.io/tide
   - 开箱即用、扩展性强、支持 Markdown 语法、基础功能完善的 React 富文本编辑器
 
@@ -320,7 +368,7 @@ modified: 2022-08-18T16:57:46.405Z
   - https://wode.vercel.app/tiptap
   - TipTap based Google Doc
   - 实现了预定义2/3多栏布局，但不work
-  - google采用canval好象是为了解决浏览器兼容性方面的问题。因为在dom在不同浏览器上表现差别确实大，大到它都不再维护直接换成canvas了。
+  - google采用canvas好象是为了解决浏览器兼容性方面的问题。因为在dom在不同浏览器上表现差别确实大，大到它都不再维护直接换成canvas了。
 
 - jcmnunes-editor /5Star/MIT/202203/ts
   - https://github.com/jcmnunes/editor
@@ -424,11 +472,6 @@ modified: 2022-08-18T16:57:46.405Z
       - 合并了其他人的修复 https://github.com/kepta/prosemirror-dev-tools
     - https://github.com/luke-john-atlassian/prosemirror-devtools /单独app或extension/inactive
     - [Is there a good way to understand the “pos” that is used all over?](https://discuss.prosemirror.net/t/is-there-a-good-way-to-understand-the-pos-that-is-used-all-over/3458)
-
-- https://github.com/WaiSiuKei/neditor /MIT/202308/ts/inactive
-  - https://waisiukei.github.io/neditor/
-  - rich text editor aimed at running in Canvas.
-  - 在事件模型和 DOM 模型都准备好之后，移植 ProseMirror 就非常容易了。
 # tiptap/milkdown/remirror/atlassian
 - typist /8Star/MIT/202211/ts
   - https://github.com/Doist/typist
@@ -483,11 +526,13 @@ modified: 2022-08-18T16:57:46.405Z
 - https://github.com/equinor/fusion-components/tree/master/src/customElements/components/markdown-editor
   - https://equinor.github.io/fusion-components/?path=/story/general-markdown-editor--default
   - 依赖prosemirror、prosemirror-markdown、lit
-
 # ai-editor
-
-- ai-editors
-  - novel
+- novel /13.7kStar/apache2/202501/ts
+  - https://github.com/steven-tey/novel
+  - https://novel.sh/
+  - Notion-style WYSIWYG editor with AI-powered autocompletion. 
+  - Built with [Tiptap](https://tiptap.dev/) + [Vercel AI SDK](https://sdk.vercel.ai).
+  - 依赖tiptap、@vercel/kv/blob、nextjs、react-markdown.v8、tailwindcss
 
 - https://github.com/aieditor-team/AiEditor /LGPLv2/202407/ts
   - https://aieditor.dev/

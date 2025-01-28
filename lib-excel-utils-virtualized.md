@@ -9,6 +9,8 @@ modified: 2022-08-24T10:49:48.139Z
 
 # guide
 
+- 是否支持nested virtualized? 类似文档内的表格
+
 - ref
   - [How does windowing work?](https://bvaughn.github.io/forward-js-2017/#/12/5)
   - [List Virtualization](https://www.patterns.dev/posts/virtual-lists/)

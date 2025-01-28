@@ -14,6 +14,13 @@ modified: 2022-08-30T22:47:08.515Z
 
 ## 
 
+## 
+
+## [Temp of nvme-pci-0300 too high? : r/homelab _202202](https://www.reddit.com/r/homelab/comments/svgbhn/temp_of_nvmepci0300_too_high/)
+
+- I wouldn't be concerned with these temperatures. Generally speaking SSD temperature is only something to worry about when the temperature of the controller gets so high that it starts thermal throttling and reduces the performance. It depends on the exact SSD, but that generally starts in the high 80 degree C range, and when it does kick in it doesn't do any damage to the SSD; it just causes the controller to reduce the power draw (and therefore performance) until it gets back below the throttling point.
+- There's also another issue to consider, which is that the NAND on SSDs actually works best when it's relatively warm/hot (as long as it's within spec, of course). That's part of the reason why many high performance modern SSDs come with a thermal label on them, rather than a thermal pad and heatsink. The thermal label spreads heat from the controller to the NAND packages, which helps with both of the above problems (i.e. it keeps the controller below the throttling point and it keeps the NAND warmer, where it works best).
+
 ## [What is the state of fractional scaling on GNOME? : gnome](https://www.reddit.com/r/gnome/comments/11ekj8o/what_is_the_state_of_fractional_scaling_on_gnome/)
 
 - Tl:dr No, and it won't for a very long time (many years from now), because GTK4 doesn't support it.

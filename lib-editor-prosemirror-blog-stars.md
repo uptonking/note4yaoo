@@ -11,7 +11,7 @@ modified: 2023-03-02T14:25:34.817Z
 
 # blogs-pref
 
-## 🌰✏️🎨 [从浏览器源码开始实现 Canvas 富文本编辑器 - 知乎_](https://zhuanlan.zhihu.com/p/642703113)
+## 🌰✏️🎨 [从浏览器源码开始实现 Canvas 富文本编辑器 - 知乎 _202307](https://zhuanlan.zhihu.com/p/642703113)
 
 - https://github.com/WaiSiuKei/neditor /MIT/202308/ts
   - https://waisiukei.github.io/neditor/

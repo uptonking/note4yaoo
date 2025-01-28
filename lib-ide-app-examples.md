@@ -264,4 +264,10 @@ modified: 2024-08-24T16:30:20.218Z
   - Bear is a tool that generates a compilation database for clang tooling.
   - The JSON compilation database is used in the clang project to provide information on how a single compilation unit is processed. With this, it is easy to re-run the compilation with alternate programs.
   - Some build system natively supports the generation of JSON compilation database. For projects which does not use such build tool, Bear generates the JSON file during the build process.
+
+- https://gitee.com/koode/kooder /apache2/202306/java/inactive
+  - Kooder 是 Gitee 团队开发的一个代码搜索系统，为 Gitee/GitLab/Gitea 提供代码搜索服务
+  - Kooder 服务包含两个模块，分别是 gateway 和 indexer（默认配置下 indexer 被集成到 gateway 中）。 
+    - 其中 gateway 用来接受来自 HTTP 的索引任务， 对任务进行检查后存放到队列中； 同时 gateway 还接受搜索的请求，并返回搜索结果给客户端。
+    - 而 indexer 进程负责监控队列中的索引任务， 并将这些要新增、删除和修改索引的任务更新到索引库中。
 # more

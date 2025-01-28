@@ -54,11 +54,12 @@ modified: 2023-11-28T14:48:45.911Z
   - 支持跨block选择部分文字
   - 支持拖拽block修改顺序，但list item不支持拖入拖出
 
-- novel /7.3kStar/MIT/202309/ts
+- novel /13.7kStar/apache2/202501/ts
   - https://github.com/steven-tey/novel
   - https://novel.sh/
-  - a Notion-style WYSIWYG editor with AI-powered autocompletion. Built with [Tiptap](https://tiptap.dev/) + [Vercel AI SDK](https://sdk.vercel.ai).
-  - 依赖tiptap、@vercel/kv/blob、nextjs、react-markdown.v8
+  - Notion-style WYSIWYG editor with AI-powered autocompletion. 
+  - Built with [Tiptap](https://tiptap.dev/) + [Vercel AI SDK](https://sdk.vercel.ai).
+  - 依赖tiptap、@vercel/kv/blob、nextjs、react-markdown.v8、tailwindcss
 
 - https://github.com/kiaksarg/edu-editor  /slate
   - https://edu-editor.netlify.app/

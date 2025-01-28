@@ -9,6 +9,7 @@ modified: 2024-03-15T03:25:43.756Z
 
 # guide
 
+- 是否支持nested virtualized? 类似文档内的表格
 # discuss-stars
 - ## 
 

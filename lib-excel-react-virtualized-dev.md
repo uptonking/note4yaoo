@@ -7,21 +7,19 @@ modified: 2022-08-21T09:59:27.391Z
 
 # lib-excel-react-virtualized-dev
 
-# react-virtualized的ui结构层次
+# guide
 
+- 是否支持nested virtualized? 类似文档内的表格
+# react-virtualized的ui结构层次
 - list
   - grid/GridReactVirtualized__List
     - Grid__innerScrollContainer
       - row
       - row
       - row
-
 # guide 
-
 - [How does windowing work?](https://bvaughn.github.io/forward-js-2017/#/12/3)
-
 # issues
-
 - [FlexTable - rowspan would be a nice-to-have feature](https://github.com/bvaughn/react-virtualized/issues/245)
   - I don't think the FlexTable interface has a meaningful way to accommodate a rowSpan attribute. 
   - With HTML tables, rowSpan and colSpan are specified on a `<td>` , but with react-virtualized, cell-rendering is managed by FlexTable itself in order to simplify the flexbox display properties. (That's actually the primary function of FlexTable - you could just use VirtualScroll if you want to manage the flexbox properties manually.)
@@ -39,9 +37,7 @@ modified: 2022-08-21T09:59:27.391Z
   - For some complex data structures, nested headers are a good way to give your data structure hierarchy. 
   - In my use case we intent to implement a nested header structure using `<table>` markup like this
   - It's a bit hacky, but I believe you can accomplish the layout (or a similar one) to what you're describing using the existing `headerRowRenderer` prop 
-
 # Rendering large lists with React Virtualized
-
 - [Rendering large lists with React Virtualized_201805](https://blog.logrocket.com/rendering-large-lists-with-react-virtualized-82741907a6b3/)
   - [Rendering Lists Using React Virtualized](https://css-tricks.com/rendering-lists-using-react-virtualized/)
 
@@ -140,7 +136,7 @@ modified: 2022-08-21T09:59:27.391Z
   - Luckily, you can use the `AutoSizer` and `CellMeasurer` components to solve this.
 - The `AutoSizer` component will fill all of the available space of its parent so if you want to fill all the space after the header, in src/App.css, you can add the following line to the list class:
 
-``` CSS
+```CSS
 .list {
   height: calc(100vh - 210px)
 }

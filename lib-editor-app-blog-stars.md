@@ -42,7 +42,7 @@ modified: 2022-08-21T10:11:43.095Z
 - 用户闪烁的光标目前还没有思路实现，后面会攻克技术难点，但是用户选取可以通过API实现
 - 整个编辑器需要实现协同的地方，都能调用 ydoc 实现。
 
-## 🌰✏️🎨 [从浏览器源码开始实现 Canvas 富文本编辑器 - 知乎_](https://zhuanlan.zhihu.com/p/642703113)
+## 🌰✏️🎨 [从浏览器源码开始实现 Canvas 富文本编辑器 - 知乎 _202307](https://zhuanlan.zhihu.com/p/642703113)
 
 - https://github.com/WaiSiuKei/neditor /MIT/202308/ts
   - https://waisiukei.github.io/neditor/

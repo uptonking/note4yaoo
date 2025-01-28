@@ -10,7 +10,7 @@ modified: 2023-11-28T14:42:16.738Z
 # guide
 
 # markdown-editor
-- milkdown /7.5kStar/MIT/202306/ts/remark
+- milkdown /9.1kStar/MIT/202501/ts/remark
   - https://github.com/Milkdown/milkdown
   - https://github.com/Saul-Mirone/milkdown
   - https://milkdown.dev/

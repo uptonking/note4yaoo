@@ -287,6 +287,9 @@ modified: 2024-08-24T16:17:26.715Z
   - This extension replaces the default code editor for markdown files with a rich version, allowing you to "edit" in preview mode.
   - It uses the `rich-markdown-editor` project generously open sourced by Outline
 
+- https://github.com/Milkdown/vscode /MIT/202501/ts
+  - vscode-ext: Edit markdown in a WYSIWYG way, powered by milkdown
+
 - https://github.com/zaaack/vscode-markdown-editor /MIT/202501/ts
   - A vscode extension to make your vscode become a full-featured WYSIWYG markdown editor
   - Auto sync changes between the VSCode editor and webview

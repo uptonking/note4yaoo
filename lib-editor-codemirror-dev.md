@@ -198,6 +198,8 @@ modified: 2021-05-06T09:38:31.520Z
 - extensions-to
   - katex
 
+- 兼容tiptap的扩展api，底层替换为codemirror实现
+
 - lang
   - replace lezer with Tree-sitter
 
