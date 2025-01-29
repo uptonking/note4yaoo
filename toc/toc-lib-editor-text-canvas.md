@@ -16,6 +16,7 @@ modified: 2021-05-19T08:32:28.120Z
   - https://waisiukei.github.io/neditor/
   - rich text editor aimed at running in Canvas.
   - 在事件模型和 DOM 模型都准备好之后，移植 ProseMirror 就非常容易了。
+  - [从浏览器源码开始实现 Canvas 富文本编辑器 - 知乎 _202307](https://zhuanlan.zhihu.com/p/642703113)
 
 - onlyoffice-sdkjs /190Star/AGPLv3/202302/js
   - https://github.com/ONLYOFFICE/sdkjs
@@ -110,4 +111,14 @@ modified: 2021-05-19T08:32:28.120Z
 - https://github.com/ahungrynoob/canvas-text
   - https://ahungrynoob.github.io/canvas-text/index.html
   - a simple paragraph editor implemented by canvas.
+# canvas-engine
+- https://github.com/youtube/cobalt /BSD/202501/cpp
+  - https://cobalt.dev/
+  - https://developers.google.com/youtube/cobalt
+  - Cobalt is a lightweight HTML5/CSS/JS application container that is designed to provide a rich application development environment with minimal resource consumption (deployment size, RAM, CPU, GPU). 
+  - 为在极少资源条件下播放视频而设计，支持audio/video标签，不支持img/p，对文本排版支持有限
+  - Cobalt is a single-process application and does not rely on the ability to spawn multiple processes.
+  - Cobalt is optimized to run on single-core CPUs, resulting in better input latency since the renderer and resource loader do not compete with layout operations.
+  - Cobalt produces consistent 60FPS animations by only supporting animation of properties that don't affect layout, like transform, and always running animations on a separate thread.
+  - On platforms that support GLES2, Cobalt avoids CPU painting by performing almost all rendering operations on the GPU.
 # more

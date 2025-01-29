@@ -44,9 +44,10 @@ modified: 2021-08-30T18:56:14.863Z
 # db-sql-tools
 - [SQL Workbench - Rapid prototyping SQL Queries & Data Visualizations](https://sql-workbench.com/)
 
-- https://github.com/chartdb/chartdb /AGPLv3/202409/ts
+- https://github.com/chartdb/chartdb /AGPLv3/202501/ts
   - https://chartdb.io/
-  - Open-source database diagrams editor, visualize and design your DB with a single query.
+  - a powerful, web-based database diagramming editor
+  - Instantly visualize your database schema with a single "Smart Query." Customize diagrams, export SQL scripts, and access all features—no account required.
   - Supported: pg, mysql, sqlite
   - Use the cloud version or deploy locally
 
@@ -62,8 +63,9 @@ modified: 2021-08-30T18:56:14.863Z
   - A web app for writing and running SQL queries and visualizing the results. 
   - Supports Postgres, MySQL, SQL Server, ClickHouse, Crate, Vertica, Trino, Presto, SAP HANA, Cassandra, Snowflake, Google BigQuery, SQLite
 
-- https://github.com/drawdb-io/drawdb /MIT/202404/js
+- https://github.com/drawdb-io/drawdb /MIT > AGPL/202501/js
   - https://drawdb.vercel.app/
+  - https://drawdb.app/
   - DrawDB is a robust and user-friendly database entity relationship (DBER) editor right in your browser. 
   - https://github.com/drawdb-io/drawdb-server /MIT/202404/js
     - Simple server to handle form submissions via email for drawDB.

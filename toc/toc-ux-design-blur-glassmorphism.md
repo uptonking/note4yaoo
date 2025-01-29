@@ -241,6 +241,11 @@ modified: 2022-11-16T16:09:02.278Z
   - Goal: Cross-Browser Blurs
   - Browser support for native blurs is almost non-existent. This project uses canvas as a fallback for blurs and provides native blurs when possible.
 
+- https://github.com/AndrewPrifer/progressive-blur /MIT/202404/ts/inactive
+  - https://progressive-blur.vercel.app/
+  - Drop-in progressive (gradient) backdrop blur for React. 
+  - Both radial and linear gradients are supported.
+
 - https://github.com/tnargib/react-backdrop-filter
   - React Backdrop Filter is a quick and easy way to add nice backdrop filters to your app.
   - If the css backdrop filter property is not supported by your navigator, the component will fallback to html2canvas by default

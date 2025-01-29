@@ -84,7 +84,7 @@ modified: 2021-05-14T15:06:46.615Z
     - All VM's are built using plain dockerfiles. I see no problem with creating a nix base image as long as some assumptions Hocus makes are fullfilled
     - We're thinking of introducing per team/project buildkit builders. Instead of using docker we would use buildkit directly. Buildkit has support for mutiple frontends, especially for nix.
 
-- https://github.com/eclipse-theia/theia /EPLv2/202405/ts
+- https://github.com/eclipse-theia/theia /20.2kStar/EPLv2/202405/ts
   - http://theia-ide.org/
   - Theia is a cloud & desktop IDE framework implemented in TypeScript.
   - Eclipse Theia is an extensible framework to develop full-fledged multi-language Cloud & Desktop IDE-like products with state-of-the-art web technologies.

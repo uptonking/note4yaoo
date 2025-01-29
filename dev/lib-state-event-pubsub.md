@@ -74,7 +74,7 @@ modified: 2021-05-13T03:13:45.375Z
 
 - ## 
 
-- ## eventemitter is a performance bottleneck and the internals are exposed enough to make it difficult to optimize
+- ## 🤼🏻 eventemitter is a performance bottleneck and the internals are exposed enough to make it difficult to optimize
 - https://x.com/jarredsumner/status/1850311072001192118
   - this is part of why exactly 0 of bun’s APIs use event emitter
 - What are you doing instead?

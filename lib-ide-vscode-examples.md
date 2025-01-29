@@ -10,6 +10,13 @@ modified: 2024-08-24T16:15:54.137Z
 # guide
 
 # popular
+- https://github.com/microsoft/vscode /MIT/202501/ts
+  - https://code.visualstudio.com/
+  - This repository ("Code - OSS") is where we (Microsoft) develop the Visual Studio Code product together with the community.
+  - https://github.com/VSCodium/vscodium
+    - binary releases of VS Code without MS branding/telemetry/licensing
+    - This is not a fork. This is a repository of scripts to automatically build Microsoft's vscode repository into freely-licensed binaries with a community-driven default configuration.
+
 - https://github.com/opensumi/core /2.7kStar/MIT/202405/ts
   - https://opensumi.com/
   - https://preview.opensumi.com/

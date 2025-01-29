@@ -9,7 +9,7 @@ modified: 2022-08-18T16:57:46.405Z
 
 # guide
 
-- 编辑器可复用的模块: model/selection/view/commands
+- 编辑器的架构模块: model(包含selection)/view/commands
 
 - prosemirror-futuristic
   - 方向：collab、markdown、pivot-table、math/formula、media/embed、cms
@@ -34,13 +34,15 @@ modified: 2022-08-18T16:57:46.405Z
 - examples
   - https://prosekit.dev/examples/drop-cursor
 # popular
-- tiptap /16.1kStar/MIT/202208/ts
+- tiptap /28.5kStar/MIT/202501/ts
   - https://github.com/ueberdosis/tiptap
   - https://tiptap.dev/
   - https://tiptap.dev/examples/default
   - A headless, framework-agnostic and extendable rich text editor, based on ProseMirror.
   - It’s headless and comes without any CSS. You are in full control over markup, styling and behaviour.
-  - 优点: 协同后端实现hocuspocus, 示例丰富(drawing), RAG生成示例, 编辑器内嵌入iframe
+  - 优点: 🔁 协同后端实现hocuspocus, 示例丰富(drawing), RAG生成示例
+    - 编辑器内嵌入iframe
+    - 支持多层嵌套拖拽
   - 缺点: 很多扩展未开源
 
 - BlockNote /14Star/MPLv2/202208/ts/tiptap
@@ -50,8 +52,10 @@ modified: 2022-08-18T16:57:46.405Z
   - 支持跨block选择部分文字
   - 支持拖拽block修改顺序，特别是支持将list item拖入拖出列表
   - 支持斜杠菜单、悬浮菜单修改标题层级、多级列表、顺滑动画
-  - ✨ 支持multi-column布局
+  - ✨❤️️ 支持multi-column布局, 支持拖拽生成多列布局
   - ✨ 支持editor多实例，且支持将block从一个editor拖到另一个editor
+  - 📱 支持mobile优化
+  - 示例丰富: 嵌入pdf
   - 依赖tiptap.v2、tippyjs、styled-components
   - core+react-slashMenu/toolbar
   - bugs
@@ -70,6 +74,10 @@ modified: 2022-08-18T16:57:46.405Z
   - https://milkdown.dev/online-demo
   - 依赖prosemirror、remark、prism、katex，但不依赖prosemirror-markdown、react
   - A plugin-driven WYSIWYG markdown Editor, inspired by Typora, built on top of prosemirror and remark.
+  - ✨ 主要特性是自定义markdown、支持plugin
+  - Plugin Driven: Everything in Milkdown are plugins
+  - Collaborative with yjs
+  - Headless: comes without any CSS
   - 不同于其他prosemirror项目，可配置支持的markdown特性
   - ⚠️️breaking: @milkdown/core@4.4.0(date202107) migrate from markdown-it to remark
   - https://github.com/Milkdown/vscode /MIT/202501/ts
@@ -80,8 +88,8 @@ modified: 2022-08-18T16:57:46.405Z
   - https://prosekit.dev/guide/integrations/react
   - Framework agnostic and headless rich text editor based on ProseMirror
   - 整体采用ContextProvider模式，`<ProseKit editor={editor}>` 编辑器实例放在顶层
-  - why not keep developing remirror?
-    - I’ll continue maintaining Remirror. The api change is just too big that I cannot base on the Remirror codebase.
+  - 支持多个前端框架react/vue/solid/svelte
+  - 支持多层嵌套拖拽
   - https://prosekit.dev/examples/change-tracking
     - 示例较简单，偏向纯文本的diff
   - 🆚️ [how is it different from Remirror, Prosemirror or Tiptap? _202412](https://github.com/prosekit/prosekit/discussions/857)
@@ -218,13 +226,13 @@ modified: 2022-08-18T16:57:46.405Z
     - https://gitlab.com/mpapp-public/manuscripts-api
     - https://gitlab.com/mpapp-public/manuscripts-sync
     - https://gitlab.com/mpapp-public/manuscripts-data
-  - [Manuscripts.io is a ProseMirror-based editor in a React application_202011](https://discuss.prosemirror.net/t/manuscripts-io/3299), 
+  - [Manuscripts.io is a ProseMirror-based editor in a React application _202011](https://discuss.prosemirror.net/t/manuscripts-io/3299), 
     - served as a PWA that works offline and can be installed as a desktop application via Chrome.
     - instead of using ProseMirror’s standard collaboration plugin, 👉🏻 Manuscripts serializes each block of the document to a JSON object with an id, which is stored in the browser’s local storage (IndexedDB) using RxDB/PouchDB and then synced with Couchbase via Sync Gateway, which handles permissions and validates each object according to a defined schema. 
-    - Manuscripts.io 64 is built by a team within Atypon; Atypon成立于1996年，是一家为全球期刊发展服务的软件系统公司，Atypon旗下出版平台Literatum为全球近100000本期刊和919家出版商网站、45%的英文同行评审学术期刊和其他语种的出版物提供服务。
+    - Manuscripts.io is built by a team within Atypon; Atypon成立于1996年，是一家为全球期刊发展服务的软件系统公司，Atypon旗下出版平台Literatum为全球近100000本期刊和919家出版商网站、45%的英文同行评审学术期刊和其他语种的出版物提供服务。
     - Conflict resolution is handled in each client, with any conflicting changes in the document’s content presented to the user for them to choose the most appropriate resolution.
-    - Collaboration in Manuscripts.io 64 works at the project level — each project can contain several manuscripts — and collaborators can either be responsible for editing parts of the document or can simply comment by adding annotations to blocks or ranges of the manuscript.
-    - Manuscripts.io 64 includes some innovations: figures that can be (re)generated dynamically by evaluating code in a hosted Jupyter kernel; built-in searching of online reference databases; configurable paragraph, section and inline styles, and output to multiple formats (DOCX, PDF, JATS XML, HTML, and others).
+    - Collaboration in Manuscripts.io works at the project level — each project can contain several manuscripts — and collaborators can either be responsible for editing parts of the document or can simply comment by adding annotations to blocks or ranges of the manuscript.
+    - Manuscripts.io includes some innovations: figures that can be (re)generated dynamically by evaluating code in a hosted Jupyter kernel; built-in searching of online reference databases; configurable paragraph, section and inline styles, and output to multiple formats (DOCX, PDF, JATS XML, HTML, and others).
 
 - notitap /39Star/MIT/202209/ts
   - https://github.com/sereneinserenade/notitap

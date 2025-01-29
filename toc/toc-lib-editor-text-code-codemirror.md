@@ -61,11 +61,12 @@ modified: 2022-08-18T11:29:26.644Z
   - The new system provides solid accessibility, touchscreen support, better content analysis
   - It is not API-compatible with the old code.
 # code-editor
-- ace-editor /26kStar/BSD/202311/js
+- ace-editor /26kStar/BSD/202501/js
   - https://github.com/ajaxorg/ace
   - https://ace.c9.io/
   - Ace is a standalone code editor written in JavaScript. 
-  - 支持virtual_renderer
+  - ✨ 支持virtual_renderer
+  - ✨ 适合嵌入画布缩放编辑器的场景，比codemirror更合适
   - Our goal is to create a browser based editor that matches and extends the features, usability and performance of existing native editors such as TextMate, Vim or Eclipse
   - Ace is developed as the primary editor for Cloud9 IDE
     - AWS Cloud9: A cloud IDE for writing, running, and debugging code

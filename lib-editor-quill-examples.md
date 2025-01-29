@@ -22,6 +22,7 @@ modified: 2023-02-09T18:32:06.240Z
 # popular
 - quill /37.5kStar/BSD/202311/ts
   - https://github.com/quilljs/quill
+  - https://github.com/slab/quill
   - https://quilljs.com/
   - https://quilljs.com/playground/  /提供了vanillajs、react、form
   - a modern WYSIWYG editor built for compatibility and extensibility

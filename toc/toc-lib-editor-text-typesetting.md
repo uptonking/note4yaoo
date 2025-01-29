@@ -57,4 +57,14 @@ modified: 2024-11-16T08:23:40.617Z
   - Note that litehtml itself does not draw any text, pictures or other graphics and that litehtml does not depend on any image/draw/font library
   - litehtml just parses HTML/CSS and places the HTML elements into the correct positions (renders HTML). To draw the HTML elements you have to implement the simple callback interface document_container. 
   - litehtml uses the gumbo-parser to parse HTML. Gumbo is an implementation of the HTML5 parsing algorithm implemented as a pure C99 library with no outside dependencies
+
+- https://github.com/youtube/cobalt /BSD/202501/cpp
+  - https://cobalt.dev/
+  - https://developers.google.com/youtube/cobalt
+  - Cobalt is a lightweight HTML5/CSS/JS application container that is designed to provide a rich application development environment with minimal resource consumption (deployment size, RAM, CPU, GPU). 
+  - 为在极少资源条件下播放视频而设计，支持audio/video标签，不支持img/p，对文本排版支持有限
+  - Cobalt is a single-process application and does not rely on the ability to spawn multiple processes.
+  - Cobalt is optimized to run on single-core CPUs, resulting in better input latency since the renderer and resource loader do not compete with layout operations.
+  - Cobalt produces consistent 60FPS animations by only supporting animation of properties that don't affect layout, like transform, and always running animations on a separate thread.
+  - On platforms that support GLES2, Cobalt avoids CPU painting by performing almost all rendering operations on the GPU.
 # more

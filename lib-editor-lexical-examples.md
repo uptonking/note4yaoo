@@ -41,6 +41,13 @@ modified: 2022-05-15T18:37:27.994Z
   - MDXEditor is a rich, client-side component that does not benefit from server-side rendering. To use it in your server components, you should use next/dynamic
   - 依赖lexical、codemirror6、radix-ui、hast、mdast、react-diff-view、react-hook-form
 
+- https://github.com/mdmahendri/lexical-review /MIT/202501/ts
+  - https://mdmahendri.github.io/lexical-review/
+  - an implementation of review mode based on the ability of Lexical text-editor
+  - Support review-mode only for textual change; does not support yet format change
+  - Is there a way to delete one character at a time?
+    - at first, i set it to character, but change that after realizing that deleting word is more efficient (at least in my language).
+    - for now, you need to copy paste the package and modify it here where the backspace is work at `character` level for insertion
 - https://github.com/Ramnath-Karthikesan/lexical-track-changes /NALic/202405/ts
   - I've implemented a basic version of track changes in the Lexical Editor. 
   - The concept involves creating two nodes, one for insertion and one for deletion, inspired by the structure of the link node in Lexical. 

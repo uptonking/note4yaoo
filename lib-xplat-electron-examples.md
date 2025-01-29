@@ -382,6 +382,17 @@ modified: 2024-01-31T19:13:11.286Z
 
 - https://github.com/weolar/miniblink49 /201911/cpp
   - 一个小巧、轻量的浏览器内核，用来取代wke和libcef
+
+## utils-messaging
+
+- https://github.com/linonetwo/electron-ipc-cat /MIT/202307/ts
+  - Passing object and type between Electron main process and renderer process simply via preload script.
+  - In latest electron, the remote module is deprecated, and you are required to passing data using IPC. 
+  - Based on frankwallis/electron-ipc-proxy, and used in TiddlyGit-Desktop.
+    - electron-ipc-proxy doesn't work well when we have `contextIsolation: true`, so here we have electron-ipc-cat
+  - Only plain objects can be passed between the 2 sides of the proxy, as the data is serialized to JSON, so no functions or prototypes will make it across to the other side.
+  - https://github.com/frankwallis/electron-ipc-proxy /MIT/202010/ts
+    - Transparent asynchronous electron remoting using IPC.
 # tauri
 - https://github.com/12joan/ping-ui
   - A simple GUI for the ping command-line utility built using Tauri.

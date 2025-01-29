@@ -109,14 +109,16 @@ modified: 2021-07-27T15:12:39.959Z
   - enjoy live editing (+markdown)
   - used by Teambition
 # editor-electron
-- https://github.com/pulsar-edit/pulsar /MIT/202408/js
+- https://github.com/pulsar-edit/pulsar /MIT/202501/js
   - https://pulsar-edit.dev/
   - A Community-led Hyper-Hackable Text Editor, Forked from Atom, built on Electron.
   - Designed to be deeply customizable, but still approachable using the default configuration.
   - [Porting Teletype from Atom repo a.k.a Collaboration tool_202305](https://github.com/pulsar-edit/pulsar/issues/536)
     - The main issue is that Teletype runs on a server and we simply might not be able to justify running such a service without charging a maintenance cost for access.
-  - https://github.com/atom-community/atom
+  - https://github.com/atom-community/atom /202304/js/fork/inactive
     - Community build of the hackable text editor
+  - https://github.com/atom/atom /MIT/202211/js/archived
+    - a hackable text editor, built on Electron
 # desktop-editor
 - https://github.com/lapce/lapce
   - written in pure Rust with a UI in Druid (which is also written in Rust). 

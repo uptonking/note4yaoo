@@ -10,12 +10,17 @@ modified: 2021-01-04T17:26:25.032Z
 # guide
 
 # popular
-- marktext /42.5kStar/MIT/202308/js/vue
+- marktext /42.5kStar/MIT/202403/js/vue/inactive
   - https://github.com/marktext/marktext
   - https://www.marktext.cc/
   - simple and elegant markdown editor, available for Linux, macOS and Windows.
   - MarkText uses virtual DOM to render pages
   - 依赖electron-store、codemirror.v5、dragula、vue2、vuex、element-ui.v2、snabbdom
+  - https://github.com/marktext/muya /549Star/MIT/202404/ts
+    - markdown editor for web browser applications development
+    - 依赖fuse.js、marked、katex、ot-json1、prismjs、snabbdom、turndown、vega-lite
+    - Muya originated from MarkText, which was originally used in the MarkText and provides Markdown editing support for MarkText. Today, Muya is available as a stand-alone library 
+    - What is the relationship between MarkText's version and the Muya's version? None
 
 - https://github.com/Harry-Hopkinson/markdown-editor
   - A markdown editor written in Typescript.

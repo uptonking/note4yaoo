@@ -41,7 +41,9 @@ modified: 2023-11-28T14:48:45.910Z
     - repomap/manifest for repo
   - 🔡 coding  + 🛝 playground
     - 针对用户问题给出代码参考和可运行可操作的在线交互示例，特别针对css
-  - animation: editor + dom-motion + video-playback + 🛝 playground
+  - animation
+    - editor + dom-motion + video-playback + 🛝 playground
+    - 低代码工具吸引用户的方式一定会加入动画，类似 webflow-GSAP/Framer-motion
   - 🎞️ video: 自动生成视频，方便回放、教学
     - pdf/ppt > video
     - video templates for tiktok/bilibili

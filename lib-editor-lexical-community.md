@@ -55,8 +55,13 @@ modified: 2022-05-15T18:35:39.272Z
 
 - ## 
 
-- ## [Implement track changes _202306](https://github.com/facebook/lexical/discussions/4707)
-- Have you figured it out? If not the CharacterLimitPlugin from the playground might help which basically does the same, only wrapping characters (or text) which is longer than allowed and then instead of wrapping deleted it unwraps
+- ## ⌛️ [Implement track changes _202306](https://github.com/facebook/lexical/discussions/4707)
+- Have you figured it out? If not the `CharacterLimitPlugin` from the playground might help which basically does the same, only wrapping characters (or text) which is longer than allowed and then instead of wrapping deleted it unwraps
+
+- 
+- 
+- 
+- 
 
 # discuss
 - ## 

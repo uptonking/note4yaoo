@@ -101,7 +101,13 @@ modified: 2024-05-27T09:12:06.925Z
 
 - ## 
 
-- ## 
+- ## [How to fetch all git history after I clone the repo with `--depth 1` ? - Stack Overflow](https://stackoverflow.com/questions/29270058/how-to-fetch-all-git-history-after-i-clone-the-repo-with-depth-1)
+
+```
+git fetch --unshallow
+
+git fetch --depth=1000000
+```
 
 - ## Problem: You want to push your changes, but skip CI because you're not done yet, so running CI would be wasteful.
 - https://x.com/housecor/status/1868376700033413151

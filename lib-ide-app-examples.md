@@ -12,6 +12,10 @@ modified: 2024-08-24T16:30:20.218Z
 - pm-ai-coding
   - ai编程类热门产品可以在各大ide的插件市场搜索排序
 # popular
+- https://github.com/microsoft/vscode /MIT/202501/ts
+  - https://code.visualstudio.com/
+  - This repository ("Code - OSS") is where we (Microsoft) develop the Visual Studio Code product together with the community.
+
 - https://github.com/trypear/pearai-app /apache2/202409/ts
   - https://trypear.ai/
   - Open Source AI-Powered Code Editor. 
@@ -58,8 +62,6 @@ modified: 2024-08-24T16:30:20.218Z
   - Open Canvas is an open source web application for collaborating with agents to better write documents. 
   - It is inspired by OpenAI's "Canvas", but with a few key differences.
   - Built in memory: Open Canvas ships out of the box with a reflection agent which stores style rules and user insights in a shared memory store. This allows Open Canvas to remember facts about you across sessions.
-# ide/cde
-
 # code-playgrounds
 
 # coding-engineer
@@ -175,6 +177,28 @@ modified: 2024-08-24T16:30:20.218Z
   - Token Counting: Provides token counts for each file and the entire repository, useful for LLM context limits.
   - Git-Aware: Automatically respects your .gitignore files.
   - 可以将你的代码库打包成一个 AI 友好文件（带有文件的目录结构，文件内容以及提示词），然后可以方便的供给大模型进行分析和使用。思路非常有趣。
+# ide/cde
+- https://github.com/pulsar-edit/pulsar /MIT/202501/js
+  - https://pulsar-edit.dev/
+  - A Community-led Hyper-Hackable Text Editor, Forked from Atom, built on Electron.
+  - Designed to be deeply customizable, but still approachable using the default configuration.
+  - https://github.com/atom-community/atom /202304/js/fork/inactive
+    - Community build of the hackable text editor
+  - https://github.com/atom/atom /MIT/202211/js/archived
+    - a hackable text editor, built on Electron
+    - [Sunsetting Atom - The GitHub Blog _202206](https://github.blog/news-insights/product-news/sunsetting-atom/)
+
+- https://github.com/phcode-dev/phoenix /1.3kStar/AGPLv3/202405/js
+  - https://phcode.dev/
+  - Phoenix is a modern open-source Code Editor for the web, built for the browser
+  - Extension support maintaining full compatibility with Brackets extensions (except brackets-node extensions).
+  - Adobe 公司开发过一个代码编辑器 Bracket，现在将其做成了 Web 版，重新命名为 Phoenix，可以当作线上 IDE 使用。
+  - 依赖codemirror5、@floating-ui/dom、file-saver、marked、mustache
+  - Support for pluggable remote back-ends.
+  - Phoenix core will work from a static web server.
+- https://github.com/adobe/brackets /MIT/202003/js/archived
+  - http://brackets.io/
+  - a modern open-source code editor for HTML, CSS and JavaScript that's built in HTML, CSS and JavaScript.
 # code-search
 - https://github.com/sourcebot-dev/sourcebot /MIT/202411/ts
   - https://sourcebot.dev/

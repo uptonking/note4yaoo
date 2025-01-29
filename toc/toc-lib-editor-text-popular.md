@@ -123,6 +123,7 @@ modified: 2022-11-08T19:04:00.289Z
 - etherpad-lite /13.5kStar/Apache2/202211/js
   - https://github.com/ether/etherpad-lite
   - https://etherpad.org/
+  - https://etherpad.wikimedia.org/
   - Etherpad is a real-time collaborative editor scalable to thousands of simultaneous real time users. 
   - It provides full data export capabilities, and runs on your server, under your control.
   - 前端依赖jquery

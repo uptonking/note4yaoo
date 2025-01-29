@@ -77,11 +77,28 @@ modified: 2020-10-05T06:22:02.107Z
   - It's a specialized tool designed to create informative vector animations and synchronize them with voice-overs. 
   - It's not meant to be a replacement for traditional video editing software.
 
-- https://github.com/theatre-js/theatre /10kStar/apache2/202311/ts
+- https://github.com/AndrewPrifer/framer-motion-theatre /MIT/202407/ts/inactive
+  - Toolset for creating animated React components built on Theatre.js and Framer Motion
+  - Seamlessly integrate Theatre.js with Framer Motion and React and get the best of Theatre.js' animation sequencer and React's declarative API. 
+  - 👉🏻 Animate Framer Motion's motion values using Theatre.js, and have all the complexity like sheets, objects, animation instancing and wiring taken care of. 
+  - Automatically get WYSIWYG editing tools with 1 line of code.
+  - While Theatre.js provides a framework-agnostic toolset, its concepts map directly to React and Framer Motion.
+
+- https://github.com/theatre-js/theatre /11.5kStar/apache2/202401/ts/inactive
   - https://www.theatrejs.com/
   - Motion design editor for the web
   - Theatre.js is an animation library for high-fidelity motion graphics.
-  - Theatre.js can be used both programmatically and visually.
+  - ⛏ Theatre.js can be used both programmatically and visually.
+  - Animate 3D objects made with THREE.js or other 3D libraries
+  - Animate HTML/SVG via React or other libraries
+  - https://github.com/theatre-js/theatre/tree/main/packages/dataverse
+    - Dataverse is the reactive dataflow library Theatre.js is built on. 
+    - It is inspired by ideas in functional reactive programming and it is optimised for interactivity and animation.
+  - [Our plan to make Theatre.js Local-First _202407](https://github.com/theatre-js/theatre/issues/492)
+    - Theatre.js 0.8 (upcoming) supports real-time collaboration similar to GDocs and Figma.
+    - Local-first removes the lock-in of a central server (although Theatre's server is also open-source). It also simplifies our backend and reduces maintenance costs.
+    - But since local-first sync algorithms (CRDTs) haven't yet matured enough for creative apps, we decided to start with a server-ful approach and gradually transition to local-first.
+    - Our server-ful implementation is called Saaz. Saaz' algorithm is a simple tree of registers, which allows us to gradually bring in domain-specific CRDT implementations for specific features (such as text, brush strokes, non-destructive bitmap editing, etc). As each of thse CRDTs mature, we can swap them in, and at some point, remove the server.
 # react-native-animation
 - https://github.com/LegendApp/legend-motion
   - Supports react-native and react-native-web

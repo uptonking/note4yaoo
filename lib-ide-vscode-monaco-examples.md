@@ -17,6 +17,7 @@ modified: 2024-08-24T16:17:47.677Z
   - The Monaco Editor is generated straight from VS Code's sources with some shims around services the code needs to make it run in a web browser
   - supports Edge, Chrome, Firefox, Safari and Opera.
   - The Monaco editor is not supported in mobile browsers or mobile web frameworks.
+  - ❓ 是否实现了自定义排版换行的逻辑
 
 - https://github.com/judge0/ide /MIT/202403/js
   - https://ide.judge0.com/

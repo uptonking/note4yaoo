@@ -146,6 +146,12 @@ modified: 2022-11-04T14:20:37.172Z
 - https://github.com/sixteenmillimeter/frameworks_search
   - Scripts for building a Postgres database of the frameworks archives and searching that database
 # query
+- https://github.com/darkskygit/sqlite-vfs-http /AGPL/202412/rust
+  - a library based on the SQLite VFS extension, designed to access static SQLite files located on a CDN via HTTP/HTTPS protocol.
+  - By using this library, you can host SQLite database files on a remote server and perform queries without downloading the files locally.
+  - Limitations
+    - Before uploading to the CDN, the database needs to change the journal mode to MEMORY: `PRAGMA journal_mode = MEMORY;`
+
 - https://github.com/jorroll/observable-sqlite /202312/ts
   - a minimal example of how to subscribe to SQL queries in a SQLite database. 
   - This example uses typescript and the official WASM distribution of SQLite.

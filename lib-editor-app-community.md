@@ -166,7 +166,7 @@ observer.observe(div, config);
   - The solution is to use the `input` event.
   - Unlike the input event, the change event is not necessarily fired for each change to an element's value.
 
-- ## [The slowest part of TinyMCE: SaxParser_202110](https://github.com/tinymce/tinymce/issues/7341)
+- ## ⚡️ [The slowest part of TinyMCE: SaxParser_202110](https://github.com/tinymce/tinymce/issues/7341)
 - What we're currently aiming for is a swap to the built-in browser DomParser then adding DomPurify to sanitise.
   - The problems you are describing seem to be more about how often the parser is run rather than an intrinsic performance issue with the parser itself. 
   - Micro-optimising things like how often a regex is compiled won't make any noticeable difference.

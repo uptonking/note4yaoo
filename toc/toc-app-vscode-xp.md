@@ -84,7 +84,8 @@ modified: 2023-02-08T10:47:19.056Z
 
 - ## 
 
-- ## 
+- ## [How to change environment's font size? - Stack Overflow](https://stackoverflow.com/questions/33701933/how-to-change-environments-font-size)
+- by pressing Ctrl+ and Ctrl- you can change the overall font size of the IDE. This helps faster than changing settings in every session.
 
 - ## VSCode 现在已经原生支持了内网穿透，你只需要在工具栏中设置本地的具体端口，它就会生成一个临时域名，帮你把服务暴露出去。
 - https://twitter.com/Barret_China/status/1710846764121821296

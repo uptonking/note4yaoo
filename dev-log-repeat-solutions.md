@@ -38,7 +38,7 @@ modified: 2021-07-20T13:50:23.433Z
     - 先实现业务核心功能， 再考虑如何以sdk/paas的方式提供给使用方，再优化性能
     - 系统的性能受第三方资源如github的fetch api的限制，设计初期要想办法避免
     - 计算密集型的feature可尝试多层架构，如大模型llm/ocr
-    - 重技术型业务的开发稳定性兼容性比性能更重要
+    - 重技术的业务开发时灵活性兼容性比性能更重要, Compatibility, Flexibility, Perf
     - frontend: animation, 多标签
     - backend: orm vs sql
   - data-app
@@ -47,16 +47,18 @@ modified: 2021-07-20T13:50:23.433Z
     - 产品方向: 偏设计布局， 偏业务逻辑
     - 网盘: 数据展示和回收站，非常经典的场景，常在cms中存储资源
 
-- lts-tech-stack 可协作、可同步(离线)、可撤销
+- lts-tech-stack 可协作、可同步(离线)、版本历史
   - 🌰lts: vscode/ide, git/vcs
-  - vscode: monaco-editor + electron, code-server, sourcegraph
+    - 20230630: editor/slate  + table   + collab
+    - 20250129: editor/vscode + triplit + sync(powersync/zerosync)
+  - vscode: monaco-editor + electron/BS/CS, code-server, sourcegraph
   - codemirror/prosemirror: state + view + commands + transform/ot/collab + virtualized
   - version-history: rrweb, diff, format(.fodt), video-but-auto-update
   - rspack: js plugin; rspack/rolldown-wasm
   - animation: motion(dom/svg)
 
-- 技术细节: virtualized, draggable, table(eav)
-- 技术产品: cm-devtools, noseditor, collab-hocuspocus
+- 技术细节(editor): virtualized, draggable, table(eav)
+- 技术产品(reuse):  cm-devtools, noseditor, collab-hocuspocus
 - 技术方向js: 协作/ver-`gitdb`/partial-sync, 编辑器/ide, 多维表格/excel; scaling/HA-socket; dnd, floating; 前端版/流式版/oplog; 
 - 技术扩展js/py: 可拖拽的页面编辑器/lowcode, Excel/kanban, 图表
 - 通用能力: collab, version-history+sync+replay, ai-search, ai-chat; auth, payment
