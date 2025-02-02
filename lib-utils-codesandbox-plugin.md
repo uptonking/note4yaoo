@@ -9,9 +9,10 @@ modified: 2023-09-02T09:16:30.412Z
 
 # guide
 
-- tips
+- sandbox-dev
   - 简单场景考虑基于eval/Function的方案
   - 复杂场景可参考 microsoft-excel-addon script-lab
+  - 服务端的设计实现可参考jupyter server
 # csb-draft
 - iframe内的console.log在chrome-devtools可以看到吗
 # csb-dev-xp

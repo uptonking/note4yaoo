@@ -383,7 +383,22 @@ modified: 2023-09-12T09:36:25.608Z
 
 - ## 
 
-- ## 
+- ## [Text Editor Data Structures: Rethinking Undo | Hacker News _202312](https://news.ycombinator.com/item?id=38601435)
+- Some points that often get left out of 'undo' discussions:
+  * The usual linked-list (or tree) implementation is very cache-unfriendly if you're undoing several steps at a time. Using "linked list inside a buffer" is better; this does not preclude trees, the back "pointer" just has to specify the offset as well as the previous buffer (when you reach the fixed-size allocation you will also have to do this). If you undo across a buffer change you'll also need to update the "most recent redo" backlink from the new buffer.
+  * SSO strings will usually beat external strings for small edits (this can be variable-size in the linked-list-in-a-buffer case); for large edits see if you can just incref part of the main editing buffer rope.
+  * It is highly useful to expose a few "shortcut" undo commands: undo to previous save, undo to previous build, etc. Manual tags is probably not very practical most of the time, and "save" is essentially one anyway.
+
+- If you are looking for counter examples, take a look at Excel on windows. It undoes in multiple windows. Say you have two documents open. You make a change in the first then change the second document then go back to the first and make a change. One document has two changes and the other has one. First undo impacts document one. Second alters document two. Infuriating
+  - The behavior in Excel tricks you into using the feature by working as you'd expect in a single document scenario. Then you open a second document and end up trashing one or the other when you undo the wrong thing.
+- more interesting part is, when you find these are shared in powerpoint and word, too. there is not warning about I modified another file, if I dare to work on multiple task, everything probably wreck.
+  - Devil's advocate: For Excel, it makes a bit sense to have app global undo because sometimes Excel books refer other opened books' data. For Word and PowerPoint, it's hard to advocate because I've never seen referring other docs.
+
+- 
+- 
+- 
+- 
+- 
 
 - ## Converting file system changes into ops for a rewindable Obsidian.
 - https://twitter.com/JungleSilicon/status/1734394464289132751

@@ -113,6 +113,25 @@ modified: 2023-09-17T17:37:19.913Z
 - 技术上根本没有障碍。JS可以做几乎任何事，但是很多事情会被浏览器给拦下来。
   - 比如你用js不借助file控件直接读写一个本地文件你觉得可能吗？如果真的可以后台直接操作，那当你打开某个网页时，你的所有电脑信息都可以被拷贝走
   - 但凡有点经验的开发都知道，所有放到前端的东西都是不安全的。
+# discuss-arch-per-user 👣
+- ## 
+
+- ## 
+
+- ## [Plane: Per-user backends for web apps | Hacker News _202210](https://news.ycombinator.com/item?id=33178797)
+  - Plane came from our desire to build tools that have the low friction to use of running in the browser, but use more memory and compute than the browser will allocate. The basic idea is to run a remote background process, connect to it over WebSocket, and stream data.
+- A related and also very useful usage pattern: "backend instance per customer". 
+  - Because… There are many ways to implement multi-tenant SaaS; but a highly underrated approach is to write a single tenant app, then use infrastructure to run an instance of it per (currently logged in) customer. Plus a persistent database per customer of course.
+  - This has the tremendous advantage that you can add another column to your pricing page easily: the "bring a truckload of money and we will set you up to run this behind your firewall" tier. There are still a lot of orgs out there, large ones with considerable financial capacity, who really want this.
+
+- The implementation makes some weird choices like rebuilding a bunch of services like DNS, cert, weird dependency on SQLite. Wish people would stop reimplementing Kubernetes and just build on top of it.
+  - I think "per-user" is probably the wrong killer feature for something like this. Much more potential in shared distributed processes that support multiple users (chat, CRDT/coauthoring). Appears that the underlying layer can probably do that.
+
+- This seems similar to an Elixir/Phoenix use case where you have a GenServer per user. At first glance, it seems like that approach would be functionally equivalent.
+
+- 
+- 
+
 # discuss-db-per-user 👣
 - ## 
 

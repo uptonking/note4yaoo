@@ -31,7 +31,7 @@ modified: 2020-11-17T13:38:19.107Z
     - Grida's Design to code core library. 
     - Convert your figma, sketch and adobe xd design to flutter, react, vue and more.
 
-- craft.js /7kStar/MIT/202402/ts/偏设计
+- craft.js /7kStar/MIT/202410/ts/偏设计
   - https://github.com/prevwong/craft.js
   - https://craft.js.org/
   - A React Framework for building extensible drag and drop page editors
@@ -310,6 +310,8 @@ modified: 2020-11-17T13:38:19.107Z
 - h5-dooring /7kStar/GPLv3/202312/ts
   - https://github.com/MrXujiang/h5-Dooring
   - http://h5.dooring.cn/
+  - https://dooring.vip/
+  - 轻松搭建H5页面, H5网站
   - https://github.com/H5-Dooring/dooringx
     - 快速高效搭建可视化拖拽平台
   - https://github.com/MrXujiang/pc-Dooring

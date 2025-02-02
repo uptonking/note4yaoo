@@ -2216,6 +2216,11 @@ modified: 2023-06-23T12:46:53.288Z
   - https://github.com/e2b-dev/infra /apache2/202408/go
     - Infrastructure powering E2B - Secure Runtime for AI Agents & Apps
     - there are several components written in Go and a Terraform configuration for the deployment.
+  - [Self-hosting E2B on Google Cloud](https://github.com/e2b-dev/infra/blob/main/self-host.md)
+    - Supported cloud providers: GCP (wip: AWS, Azure, General linux machine)
+    - We ask for Terraform v1.5.x because starting from v1.6 Terraform switched their license from Mozilla Public License to Business Source License.
+    - PostgreSQL database (Supabase's DB only supported for now)
+    - E2B is using Firecracker for Sandboxes. You can build your own kernel and Firecracker version from source by running make build-and-upload-fc-components
   - [E2B Code Interpreter Sandbox _202311](https://medium.com/e-two-b/e2b-sandbox-bb146264f4c4)
     - You can create your own Custom Sandboxes for different purposes, from data analysis through AI internet browsing to very popular code execution.
     - The E2B Code Interpreter Sandbox is just a sandbox — without any LLM “connected” to it. 

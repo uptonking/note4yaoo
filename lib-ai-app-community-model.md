@@ -38,6 +38,18 @@ modified: 2023-10-30T07:34:03.602Z
 - https://twitter.com/FinanceYF5/status/1730912502312296935
   - [国产大模型188个list - Feishu Docs](https://zw73xyquvv.feishu.cn/wiki/WXLmwBbYuiTobkkJ6Ojc2cxqnj0?sheet=2XjJlJ&table=tblS2Jv7isKtSODz&view=vewfCdOf0U)
 
+# discuss-ai-computer-use
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [How I taught an AI to use a computer _202501](https://e2b.dev/blog/how-i-taught-an-ai-to-use-a-computer)
+- 
+- 
+- 
+
 # discuss-ai-protocol
 - ## 
 
@@ -241,7 +253,7 @@ e) 最终评论者(Final Critic)
 - https://x.com/aigclink/status/1844936446416912628
   - 用于构建、编排和部署多代理
 
-# discuss
+# discuss-news-ai-model
 - ## 
 
 - ## 
