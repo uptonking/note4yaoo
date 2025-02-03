@@ -13,6 +13,17 @@ modified: 2023-11-01T10:15:06.245Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## Scaling reads is easy—cache, replicate, and you're good. 
+- https://x.com/RaulJuncoV/status/1885317867891044686
+  - Reads scale horizontally with caching (Redis, CDN) and replication (read replicas).
+  - Scaling writes? That’s where things get tricky.
+  - But writes? They require partitioning and consistency trade-offs—things you can't just slap on later without pain.
+  - Sharding, CQRS, and Event-Driven approaches help distribute the write load.
+
+- When addressing the challenges of managing write-heavy workloads, it’s crucial to focus on strategies that not only scale effectively but also ensure reliability and data integrity.
+
 - ## Optimistic vs Pessimistic concurrency control
 - https://x.com/sunbains/status/1864854818214338821
   - TiDB used to be OCC only but had to change to PCC and OCC is now optional.

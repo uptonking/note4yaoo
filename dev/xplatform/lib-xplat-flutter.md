@@ -125,6 +125,18 @@ modified: 2021-05-13T03:10:56.112Z
   - The community ART module has pretty much been depracted in favour of RNSVG, which doesn't support advanced features like filters or shaders.
   - Except the deprecation part it is pretty similar isn’t it?
   - From what I understand this is more of a low-level solution for 2D graphics in general. I guess we'll see when it actually becomes public, until then I suggest watching the video if you are interested
+# discuss-vendors
+- ## 
+
+- ## 
+
+- ## Why AppFlowy left Flutter in their own words.
+- https://x.com/jezell/status/1884548595896160437
+  - What's super lame about this is that Flutter web is a few bugfixes away from being awesome, but those fixes never seem to happen.
+
+- No doubt building an editor is complex, but it’s double complex in flutter because of a combination of bugs and limitations of the IME and Text APIs that the team refuses to address despite well known packages saying for years they are hitting dead ends that require engine changes or enhancements. 
+
+- To be honest, Even if i love Flutter on Mobile and Desktop, it’s painful on web compared to web based solution. Each tool have is usage.
 # discuss
 - ref
   - [twitter: JetPack compose flutter ](https://twitter.com/search?q=JetPack%20compose%20flutter%20min_replies%3A1&src=typed_query&f=live)

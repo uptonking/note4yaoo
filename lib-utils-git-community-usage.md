@@ -84,7 +84,16 @@ modified: 2024-05-27T09:12:06.925Z
 # disccuss-git-ui
 - ## 
 
-- ## 
+- ## VSCode git UI is awesome
+- https://x.com/aidenybai/status/1885810358138667140
+- Until you realise that lazygit exists
+- gitlens extension is pretty good too
+
+- if you think this is good it's because you haven't yet tried 
+
+```sh
+git log --online --graph --decorate
+```
 
 - ## UGit：腾讯自研Git客户端
 - https://x.com/javayhu/status/1831348801032081527
@@ -94,6 +103,14 @@ modified: 2024-05-27T09:12:06.925Z
 - 我用过fork，感觉很丝滑，之前直接开Android的Repo下面的一些源码提交记录也是非常多，一点都不卡。
 - 我给公司的技术经理推荐过这个…他只说了一句：企鹅的尿性很可能未来收费，鉴于这点…选择开源…
 
+# disccuss-pm-git
+- ## 
+
+- ## 
+
+- ## The next hypermedia platform should be based on Git. Creating a text file in a Git repo should be all you need to participate. 
+- https://x.com/msimoni/status/1884333920080257053
+  - In contrast to plain HTTP, Git also solves incremental updates efficiently, so everyone can locally store a complete copy of the sites they follow.
 # disccuss
 - ## 
 

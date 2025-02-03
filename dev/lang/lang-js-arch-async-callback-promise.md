@@ -204,7 +204,12 @@ modified: 2021-08-30T07:01:09.493Z
 # discuss-setTimeout/setInterval
 - ## 
 
-- ## 
+- ## in early versions of Bun we made setTimeout(cb, 0) append to the task queue without delay and it broke a lot of libraries that implicitly expected it to clamp to 1ms
+- https://x.com/jarredsumner/status/1885104099307511953
+  - Blink:  Intent to Ship: Remove clamping of setTimeout(...) to >= 1ms
+
+- I thought setTimeout ran immediately unless the stack had X number of  setTimeouts, than clamped to 4ms
+  - iirc none of the actual behavior is defined in spec, so it’s pretty flexible.
 
 - ## Builtin timeout using AbortSignal
 - https://x.com/hd_nvim/status/1882484934356664640

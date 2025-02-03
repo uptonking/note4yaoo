@@ -21,6 +21,15 @@ modified: 2024-02-17T13:01:44.351Z
   - Vitess is not well tested on MariaDB today within the project nor the user base
 
 - This issue isn't trying to compare MySQL vs MariaDB, it is just acknowledging that they can't be treated the same anymore. It's fundamentally no different from PostgreSQL compatibility, which is the highest upvoted issue in all of Vitess. It's not technically impossible, just significantly more overhead, that based on the current usage of Vitess would be better spent adding features and improving performance.
+# discuss-planetscale
+- ## 
+
+- ## 
+
+- ## we have single PlanetScale databases on our cloud that are powered by 20, 000 cores. all through a single connection string.
+- https://x.com/isamlambert/status/1885914329905832429
+  - shared nothing architecture is insanely powerful.
+
 # discuss-pg-vitess
 - ## 
 

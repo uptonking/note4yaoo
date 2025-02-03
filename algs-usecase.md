@@ -44,3 +44,18 @@ modified: 2020-12-20T15:24:16.216Z
 - https://twitter.com/Elijah_Meeks/status/1378880759713333252
 # ref
 - [世界上有哪些代码量很少，但很牛逼很经典的算法或项目案例？](https://www.zhihu.com/question/358255792)
+# discuss-data-structure-cases
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Suppose you have a list of items in your app. How do you represent it?
+- https://x.com/ccorcos/status/1884678627209736257
+  1. Fractional indexing
+  2. Linked list
+  3. JSON array in a single object
+  - It's conceptually simple problem that is surprisingly complicated once you consider syncing offline edits.
+
+- I would put the rows in a db and use fractional indexing.

@@ -15,6 +15,15 @@ modified: 2024-01-03T16:14:53.804Z
 - ## 
 
 - ## 
+# discuss-internals
+- ## 
+
+- ## 
+
+- ## Currently, for performance reasons, we interpret JavaScript regular expressions literal as Rust regular expressions _202502
+- https://x.com/hardfist_1/status/1886376769122652230
+  - and don't meet too much problems, what if we interpret more JavaScript syntax as native syntax ?
+
 # discuss
 - ## 
 

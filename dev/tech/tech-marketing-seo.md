@@ -42,7 +42,21 @@ modified: 2020-12-20T12:36:17.694Z
   - Twitter began as an SMS text-based service. This limited the original Tweet length to 140 characters (which was partly driven by the 160 character limit of SMS, with 20 characters reserved for commands and usernames). 
   - Over time as Twitter evolved, the maximum Tweet length grew to 280 characters - still short and brief, but enabling more expression. 
   - In most cases, the text content of a Tweet can contain up to 280 characters or Unicode glyphs.
+# discuss-seo-tools
+- ## 
+
+- ## 
+
+- ## 分享 GitHub 上一份 Google 索引脚本：Google Indexing Script。
+- https://x.com/GitHub_Daily/status/1885591414924599779
+  - 无需任何复杂技巧或黑客手段，只需简单的脚本和 Google API，即可让我们的网站在 48 小时内在 Google 上建立索引。
+  - https://github.com/goenning/google-indexing-script
+
 # discuss-seo
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 原来发知乎的目的，是为了让百度能搜到, 毕竟百度已经不太索引新网站了, 以及B站图文也要发起来，权重也很高

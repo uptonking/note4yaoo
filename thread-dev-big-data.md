@@ -177,6 +177,21 @@ modified: 2023-04-19T07:30:34.872Z
 # discuss-hudi-iceberg-delta
 - ## 
 
+- ## 
+
+- ## 🔍 I'm doing some research on the @ApacheIceberg ecosystem. Why nobody care about search (e.g., @elastic on Iceberg), vector search (e.g., @pinecone on Iceberg), or KV (e.g., @Redisinc on Iceberg)? No use cases?
+- https://x.com/YingjunWu/status/1885805268577259750
+- What surprised me was that Elastic doesn't really have integration with Iceberg
+  - It doesn't work for elastic search on top of iceberg because elastic search needs data to be indexed in a specific way and iceberg format is not optimized for that. 
+  - Similarly, it doesn't make sense to store iceberg format in redis when there are multiple datastructures supported by redis, which helps with quick access and transformation in memory layer. 
+  - Iceberg is a datlake format, no reason for it to be the standard format across all the types of data stores.
+
+- Those 3 use cases are more for online serving, instead of offline data processing. Iceberg is more on the offline side.
+
+- @turbopuffer is doing great work on vector search on S3, but not open source yet
+
+- Vector search has all moved into normal databases like SQLite, Postgres, oracle, mongo. No need for a dedicated vector db. It adds zero value and just increases ops complexity
+
 - ## The Open Data Format is good for the Data AI ecosystem, with two main options currently available: Delta and Hudi. 
 - https://x.com/Ubunta/status/1853464831086452828
   - For those concerned about lock-in or API compatibility when switching between these formats, Apache XTable (currently in incubation) offers a promising solution. Apache XTable acts as a cross-format converter for lakehouse table formats
@@ -185,15 +200,15 @@ modified: 2023-04-19T07:30:34.872Z
 
 - ## Apache Hudi’s WRITE operation - Under the Hood. 
 - https://twitter.com/apachehudi/status/1764814812939202841
-01.  Deduplication:  Any duplicate record keys in the incoming batch are identified & addressed appropriately
-02.  Index Lookup: Next, an index lookup is performed to identify the file group an input record belongs to. For a new INSERT, this step returns no results
-03.  File Sizing: Then the file sizing algorithm will add sufficient records into a small file until it nearly reaches the configured maximum limit (via bin-packing)
-04.  Partitioning: Here the allocation of specific updates & inserts to existing or new file groups is determined
-05.  Write I/O: Actual writes happens here. Either the base file is created or an existing log file is appended to
-06.  Update Index: The Index is then updated to reflect the inclusion of new file groups, among other updates
-07.  Commit: Finally the changes are committed atomically
-08.  Clean: Following the commit, cleaning is initiated as required
-09.  Compaction: For MoR tables, compaction may run inline or be scheduled to execute asynchronously
+01.    Deduplication:  Any duplicate record keys in the incoming batch are identified & addressed appropriately
+02.    Index Lookup: Next, an index lookup is performed to identify the file group an input record belongs to. For a new INSERT, this step returns no results
+03.    File Sizing: Then the file sizing algorithm will add sufficient records into a small file until it nearly reaches the configured maximum limit (via bin-packing)
+04.    Partitioning: Here the allocation of specific updates & inserts to existing or new file groups is determined
+05.    Write I/O: Actual writes happens here. Either the base file is created or an existing log file is appended to
+06.    Update Index: The Index is then updated to reflect the inclusion of new file groups, among other updates
+07.    Commit: Finally the changes are committed atomically
+08.    Clean: Following the commit, cleaning is initiated as required
+09.    Compaction: For MoR tables, compaction may run inline or be scheduled to execute asynchronously
 10. Archival: Finally, an archival process is run, transferring old items from the timeline to an archive folder
 
 # discuss

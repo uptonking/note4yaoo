@@ -14,7 +14,9 @@ modified: 2022-06-13T03:00:06.041Z
 
 - ## 
 
-- ## 
+- ## While SQL has its own limitations, scaling was actually the reason why FaceBook, UBER, Pinterest, Shopify, and Airbnb use MySQL instead of NoSQL databases.
+- https://x.com/vlad_mihalcea/status/1885692781743555061
+- Yes, MySQL scaled huge at FB/Uber/Airbnb, but let's not forget Netflix/Google/Amazon crushing it with NoSQL. Truth is: both scale well => pick based on your actual needs, not hype. Sometimes MySQL wins, sometimes NoSQL does.
 
 - ## Decided to resurrect an old project this weekend. Embedded InnoDB.
 - https://twitter.com/sunbains/status/1761628685973782870

@@ -23,7 +23,20 @@ modified: 2021-07-28T19:22:07.339Z
 - ## What's the best practice in 2024 to get SVG icons from a Figma design into a Vite web app with minimal impact on app bundle size?
 - https://x.com/schickling/status/1825836159244599452
 
+# discuss-tools-icon
+- ## 
+
+- ## 
+
+- ## Meet http://draw.supply — an open-source illustration library, updated weekly for personal and commercial use.
+- https://x.com/talktogoutham/status/1885335252274733275
+  - Free to use in any project without restrictions. Just no reselling as illustration pack or an a illustration paid library.
+  - Handmade by my partner @KikiDoodoo & designed by me.
+  - Font is Made Gentle
+
 # discuss
+- ## 
+
 - ## 
 
 - ## 

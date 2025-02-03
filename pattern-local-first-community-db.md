@@ -32,6 +32,16 @@ modified: 2023-12-01T09:08:18.316Z
 - One of the distinguishing features of SyncedDB is that it attempts to be a very lightweight wrapper around IndexedDB. 
   - It's essentially IndexedDB + migrations + promises + syncing.
 
+# discuss-interoperability
+- ## 
+
+- ## 
+
+- ## Just demo'd: Using DeepSeek to search AFFiNE workspace in VSCode! ( @thankscline as MCP client) _202502
+- https://x.com/ewind_dev/status/1886334272803663915
+  - At @localfirstconf last year, I demoed mapping CRDT to WebDAV filesystem, enabling AFFiNE doc editing in VSCode. This feature never made it to production because sharing content through traditional OS files was too cumbersome and clunky.
+  - MCP, however, significantly simplifies cross-app and cross-LLM data source sharing—you don't need to expose your workspace as markdown files on disk anymore. MCP servers can automatically map them as multi-modal resources, opening up broader interaction possibilities.
+
 # discuss-skdb
 - ## 
 
@@ -136,7 +146,6 @@ modified: 2023-12-01T09:08:18.316Z
 
 - Currently SQLSync moves the entire database to every client and keeps them all in sync. This means that it's suited for smallish sets of relational data - ideally per-user or per-document. This is made easier as each db is very cheap to create.
   - this model works very well with @tursodatabase , since we can offer 10k databases for $29 - and more on enterprise plans. We are drooling for an integration here!
-
 
 - ## for @recall_wiki we are going with WatermelonDB.
 - https://twitter.com/paulrchds/status/1483416223425650691

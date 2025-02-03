@@ -137,7 +137,10 @@ modified: 2023-03-05T08:55:03.696Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 🔡 I built React Query from scratch.
+- https://x.com/TAbrodi/status/1884571448670318883
+  -  https://github.com/tigerabrodi/react-query-from-scratch
+  - Even though it's a scoped down version, it was much harder than expected. Jotai and Signals from scratch were challenging, but this was another level.
 
 - ## 🆚️ Let's talk about how data fetching happens in different meta-frameworks and what the trade-offs of those approaches are.
 - https://twitter.com/mhevery/status/1729973597702381602

@@ -134,7 +134,50 @@ modified: 2024-01-07T15:00:50.079Z
 # discuss-algorithm
 - ## 
 
-- ## 
+- ## 📌 Tips for solving leetcode codings interview problems
+- https://x.com/_trish_07/status/1884688446574506073
+If input array is sorted then
+- Binary search
+- Two pointers
+
+If asked for all permutations/subsets then
+- Backtracking
+
+If given a tree then
+- DFS
+- BFS
+
+If given a graph then
+- DFS
+- BFS
+
+If given a linked list then
+- Two pointers
+
+If recursion is banned then
+- Stack
+
+If must solve in-place then
+- Swap corresponding values
+- Store one or more different values in the same pointer
+
+If asked for maximum/minimum subarray/subset/options then
+- Dynamic programming
+
+If asked for top/least K items then
+- Heap
+
+If asked for common strings then
+- Map
+- Trie
+
+Else
+- Map/Set for O(1) time & O(n) space
+- Sort input for O(nlogn) time and O(1) space
+
+- Tips for solving leetcode codings interview problems: don’t
+
+- 8 years as a dev and I’ve never had to do 99% of this garbage
 
 - ## 反转链表、反转二叉树、大数相乘、手写LRU、有序链表合并……面来面去也就那些题，平时摸鱼刷
 - https://x.com/stephenzhang233/status/1871583811642990710

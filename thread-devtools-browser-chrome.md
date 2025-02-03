@@ -9,7 +9,49 @@ modified: 2023-02-20T19:41:08.506Z
 
 # guide
 
+# discuss-stars
+- ## 
+
+- ## 推荐一个可自托管的虚拟浏览器，可以直接部署到一个VPS上，然后就可以实现团队间共享一个持久化Session的浏览器。
+- https://x.com/Stephen4171127/status/1883559372204491156
+- 试过了，卡顿很厉害。还不如vpn加windows虚拟机
+- 这种用类似于novnc实现的浏览器项目都不是很好用，带宽和延迟一旦不够就会让整个界面都很卡，甚至是完全不可用的地步
+- aws的remote desktop考虑一下？
+# discuss-net
+- ## 
+
+- ## 
+
+- ## A web application can be choked by Chrome’s HTTP/1.1 six connection per host limit.
+- https://x.com/hnasr/status/1886291288749908243
+  - The browser creates a TCP connection to the HTTP server on port 443. As part of TLS, protocol negotiation happens which decides whether the communication should happen on HTTP/1.1 or HTTP/2, ( h1 or h2 for short). This is done through the ALPN TLS extension.
+  - If the web server doesn’t support h2, (h2 isn’t not implemented or purposely disabled), the communication proceeds with h1.
+  - Let us say an h1 frontend sending many concurrent requests. Each HTTP request is sent on a dedicated TCP h1 connection. 
+  - No two concurrent h1 requests can use the same* TCP connection, the browser has to wait for the response to come back to send another request on the same connection.
+  - Chrome and other browsers implemented an h1 connection pool per host and this limit is hard coded to 6.
+  - With that limit, if the frontend sent 6 requests concurrently on 6 connections, the rest of subsequent requests get stalled and queued until a connection is available (a response was received). This leads to performance and latency issues.
+  - Enabling h2 can of course help alleviate this because you essentially are no longer chocked by the h1 pool limit, you would have one TCP connection but create new stream for each request or reuse existing available streams. There is a max stream limit of course as well but its high (I think 250 is the default)
+  - However enabling h2 isn’t free, it comes with an extra cost on the backend, especially that h2 processing is more cpu and memory intensive compared to simple h1 because of the additional h2 frame processing.
+
+- ## [HTTP simultaneous connections per host limit... are per tab, browser instance or global? - Stack Overflow](https://stackoverflow.com/questions/22866552/http-simultaneous-connections-per-host-limit-are-per-tab-browser-instance-or)
+- I use EVENTSOURCE API to open a persistent http connection.
+  - HTTP/1.1: I could open 6 connections in one browser alone (by looping EVENTSOURCE 6 times) or by having 6 tabs open with one EVENTSOURCE I could open 6 new connections with incognito chrome on the same machine.
+  - HTTP/2: more than 20 [in theory they say its 100] i did not try.
+
+- I have read in various forums where people have problems with SSEs when more than x tabs are open (I think 6 in chrome), and this is because browsers limit the number of simultaneous connections to a single ip address.
+  - This, however is not the same for Server Side Events (SSEs or eventsource() )
+
+- ## 💡 [Max parallel HTTP connections in a browser? - Stack Overflow](https://stackoverflow.com/questions/985431/max-parallel-http-connections-in-a-browser)
+- The first value is `ConnectionsPerHostname` and the second value is `MaxConnections` .
+  - `ConnectionsPerHostname` is the maximum number of concurrent HTTP requests that browsers will make to the same domain.
+  - To increase the number of concurrent connections, one can host resources (e.g. images) in different domains. However, you cannot exceed `MaxConnections` , the maximum number of connections a browser will open in total - across all domains.
+- Host and domain are completely different. `ConnectionsPerHostname` means per subdomain. So if there are 2 sub domains it uses additional connections.if no subdomain then it means per domain.
+
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## If you ever do UI debugging in Chromium go and enable this setting right away, it will make your life so much easier. 

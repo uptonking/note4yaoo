@@ -20,6 +20,10 @@ modified: 2023-04-12T08:40:44.109Z
 # discuss-image
 - ## 
 
+- ## 
+
+- ## 
+
 - ## Fully client-side OCR and Content Search + Autocomplete for Mirador 3.
 - https://twitter.com/jbaiter_/status/1686452012009799690
   - Shoutout to the WASM builds of #SQLite (https://github.com/sql-js/sql.js) and #Tesseract (https://github.com/naptha/tesseract.js) that make this possible *and* quite performant.

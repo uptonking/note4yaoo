@@ -68,7 +68,9 @@ modified: 2021-02-27T15:31:23.130Z
 # discuss
 - ## 
 
-- ## 
+- ## ⚖️ Real nice tip from the standard schema launch: Prefixing properties with '~' deprioritizes them in autocomplete. 
+- https://x.com/mattpocockuk/status/1883969881802215561
+  - Much better than '_' for internal properties, which puts them at the FECKING TOP
 
 - ## On-demand JSON: A better way to parse documents?
 - https://twitter.com/lemire/status/1787494558122574019

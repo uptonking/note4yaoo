@@ -10,11 +10,12 @@ modified: 2022-06-13T03:00:51.734Z
 # guide
 
 - [PostgreSQL wiki](https://wiki.postgresql.org/wiki/Main_Page)
+  - [A Brief History of PostgreSQL](https://www.postgresql.org/docs/current/history.html)
 # pg-tips
 - [Don't Do This - PostgreSQL wiki](https://wiki.postgresql.org/wiki/Don%27t_Do_This)
   - only do it if you know what you are doing
 
-- [PostgresqlCO.NF: PostgreSQL configuration for humans](https://postgresqlco.nf/doc/en/param/)
+- [PostgresqlCO. NF: PostgreSQL configuration for humans](https://postgresqlco.nf/doc/en/param/)
   - useful reference for all the PG config options, organized by version
 # docs
 

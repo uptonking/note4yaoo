@@ -30,7 +30,47 @@ modified: 2023-12-10T14:20:42.600Z
 
 - ## 
 
-- ## 
+- ## 📌 7 Cache Eviction(驱逐; 逐出) Strategies You Should Know:
+- https://x.com/ashishps_1/status/1886271044933079354
+1. 𝐋𝐞𝐚𝐬𝐭 𝐑𝐞𝐜𝐞𝐧𝐭𝐥𝐲 𝐔𝐬𝐞𝐝 (𝐋𝐑𝐔)
+- Removes the least recently accessed item first.
+- Works well when older data is less likely to be used again.
+- Example: Browser cache, in-memory caches like Redis.
+
+2. 𝐋𝐞𝐚𝐬𝐭 𝐅𝐫𝐞𝐪𝐮𝐞𝐧𝐭𝐥𝐲 𝐔𝐬𝐞𝐝 (𝐋𝐅𝐔) 
+- Evicts the least accessed items over time.
+- Prioritizes keeping frequently used items in cache.
+- Example: Machine learning inference caches, recommendation systems.
+
+3. 𝐅𝐢𝐫𝐬𝐭 𝐈𝐧, 𝐅𝐢𝐫𝐬𝐭 𝐎𝐮𝐭 (𝐅𝐈𝐅𝐎)
+- Evicts the oldest stored item first, regardless of usage.
+- Simple to implement but may remove still-relevant data.
+- Example: Simple queue-based caching systems.
+
+4. 𝐑𝐚𝐧𝐝𝐨𝐦 𝐑𝐞𝐩𝐥𝐚𝐜𝐞𝐦𝐞𝐧𝐭 (𝐑𝐑)
+- Randomly evicts an item when the cache is full.
+- Low overhead, but less predictable performance.
+- Example: Used in some network routers.
+
+5. 𝐌𝐨𝐬𝐭 𝐑𝐞𝐜𝐞𝐧𝐭𝐥𝐲 𝐔𝐬𝐞𝐝 (𝐌𝐑𝐔)
+- Opposite of LRU – evicts the most recently accessed item first.
+- Useful when recent data becomes obsolete quickly.
+- Example: Video streaming buffers, certain financial applications.
+
+6. 𝐓𝐢𝐦𝐞 𝐭𝐨 𝐋𝐢𝐯𝐞 (𝐓𝐓𝐋)
+- Items are evicted after a set time limit (expiry time).
+- Prevents stale data, useful in distributed systems.
+- Example: DNS caching, API response caching.
+
+7. 𝐓𝐰𝐨-𝐓𝐢𝐞𝐫𝐞𝐝 𝐂𝐚𝐜𝐡𝐢𝐧𝐠
+- Uses a fast in-memory cache (e.g., Redis) & a slower persistent cache (e.g., disk-based).
+- Optimizes speed & storage by balancing hot and cold data.
+- Example: CDN caching, hybrid cloud storage solutions.
+
+- No single strategy is perfect—the right choice depends on:
+  - Data access patterns (frequent reads? high writes?)
+  - System constraints (memory, CPU, disk space)
+  - Performance trade-offs (latency vs accuracy)
 
 - ## Data is cached at many stages, from the client-facing side to backend systems. 
 - https://twitter.com/sahnlam/status/1761638991131259173

@@ -102,6 +102,19 @@ modified: 2023-11-01T14:13:41.390Z
 
 - ## 
 
+- ## 
+
+- ## The big difference between MySQL's thread model and PostgreSQL's process model is how they handle synchronization. 
+- https://x.com/wangbin579/status/1884454988497174716
+  - PostgreSQL's process-based sync is pretty clunky and slow under high contention, while MySQL's thread model gives it a significant performance advantage.
+
+- Any notable benefits that Postgres’s process model offers?
+  - Yeah, for sure, the multi-process model has its perks too—like being less likely to crash completely.
+
+- I wish Postgres had a separate process for connection pooling and transaction routing. Very annoying to have to run things like pgbouncer as well at scale.
+
+- PostgreSQL's process model may be slower, but it's more stable. MySQL's thread model has its perks too. Each has its place!
+
 - ## Comparing the read-only performance of MySQL and PostgreSQL with the same 128 hash partitions.
 - https://x.com/wangbin579/status/1880086759830352341
 - Am ai reading this wrong? PG seems much slower at ~1000 req per sec while mysql is around 17k req per sec

@@ -45,7 +45,31 @@ modified: 2024-09-16T11:11:14.989Z
 # discuss-screenshot-dom
 - ## 
 
-- ## 
+- ## 💡🤔 TIL you can turn HTML elements into screenshots in JavaScript with modern-screenshot
+- https://x.com/aidenybai/status/1883934244390724026
+- idk if you’ve ever looked at the source of one of these, but it is a master class in obscure web hacks. IIRC most of them work by embedding the html in an svg foreign object and inlining stuff like fonts where possible. there are a lot of foot guns that can cause them to break (by tainting the canvas). still incredible none the less
+  - 💡💡 That is sadly the most effective way of doing it, though it definitely does not work reliably. The browser intentionally prevents grabbing node textures, even though they’re obviously in memory, for security reasons. 
+  - It’s more reasonable to have servers running your app, loading client data, and taking/sending back screenshots
+- i literally went through this exact process a few years ago. start with dom2img -> puppeteer on a server
+  - It’s sad but the only way (unless you have an electron app or something where you can access more of the browser APIs)
+
+- How do you render it server side to create the image?
+  - Run a headless chrome browser (via Playwright or Puppeteer) and generate screenshots.
+
+- Pretty sure you can just get capture a video stream of DOM elements nowadays just fine, no hacks needed.
+  - Pretty intrusive UX though
+
+- ya, until it tries loading fonts and icons off the wrong paths.  they need a native HTML API for this that can just read out of the frame buffer like the Screen Capture API does
+
+- I’ve used `html2canvas` previously. I’ll check this out. I need to ship something using this
+  - `modern-screenshot` has better Safari support
+- html2canva does not support all css
+- All of them suck tbh. They all block the main thread during the conversion process and can't run on service worker as they are all required to access the dom. What does it mean? It mean they can't be used in anything serious/complex as it halts the UI.
+  - That's why people still end up using something like puppeteer.js from a separated server/service to do simple screenshots
+
+- https://x.com/_justineo/status/1885272602362732689
+  - domvas ➡️ dom-to-html ➡️ html-to-image ➡️ modern-screenshot，这个事情每隔一段时间就会被 fork 一下，JS 社区接力了十几年了，浏览器到现在还没有实现
+  - 有一个相关的 DOM proposal
 
 - ## [Show HN: Satori – Convert HTML and CSS to SVG | Hacker News _202210](https://news.ycombinator.com/item?id=33156130)
 - You can do something like this via the browser by printing the page to PDF then using Inkscape to convert that to SVG

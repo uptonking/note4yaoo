@@ -386,6 +386,9 @@ modified: 2023-02-08T07:20:48.475Z
   - Free Commercial Use. Starting from April 2024, both V2 and V1 are released under MIT License. 
   - OpenVoice has been powering the instant voice cloning capability of myshell.ai since May 2023. 
   - 即时语音克隆工具，只需从参考资料中截取一段简短的音频即可实现克隆。可详细控制语音风格，包括情感、口音、节奏、停顿和语调。生成多种语言的语音。
+# rag-utils
+- https://github.com/rag-web-ui/rag-web-ui /apache2/202502/python/ts
+  - RAG Web UI is an intelligent dialogue system based on RAG
 # rag-knowledge-base
 - https://github.com/pingcap/autoflow /apache2/202411/python
   - https://tidb.ai/
@@ -447,4 +450,18 @@ modified: 2023-02-08T07:20:48.475Z
 - https://github.com/kangfenmao/cherry-studio /NonCommercial/202409/ts
   - https://cherry-ai.com/
   - a desktop client that supports for multiple LLM providers, available on Windows, Mac and Linux
+# protocols/MCP
+
+## use-computer
+
+## use-browser
+
+- https://github.com/browserbase/stagehand /MIT/202502/ts
+  - https://stagehand.dev/
+  - An AI web browsing framework focused on simplicity and extensibility.
+  - Stagehand is the easiest way to build browser automations. It is fully compatible with Playwright, offering three simple AI APIs on top of the base Playwright `Page` class
+  - It works best when your code is a sequence of atomic actions.
+  - Stagehand allows you to write durable, self-healing, and repeatable web automation workflows that actually work.
+  - https://github.com/browserbase/mcp-server-browserbase
+  - https://github.com/browserbase/sdk-node
 # more

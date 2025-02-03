@@ -224,6 +224,12 @@ modified: 2022-11-03T04:14:11.987Z
 - https://github.com/nire0510/jsoq /GPLv3/202310/ts
   - Query and manipulate JSON arrays easily. 
   - Powered by lodash, inspired by knex and SQL in general.
+
+- https://github.com/microsoft/documentdb /MIT/202502/c
+  - DocumentDB offers a native implementation of document-oriented NoSQL database, enabling seamless CRUD operations on BSON data types within a PostgreSQL framework. 
+  - Powering vCore-based Azure Cosmos DB for MongoDB.
+  - https://x.com/marcoslot/status/1883264982110064952
+    - I helped create the first version of this while at Microsoft and it has a lot of neat tricks. It takes a Mongo query expressed as BSON, and then rewires things in planner/executor hooks to ultimately run an elaborate SQL query with joins and custom operators that use RUM indexes
 # object-storage/s3
 - minio /36.1kStar/AGPLv3/202211/go
   - https://github.com/minio/minio

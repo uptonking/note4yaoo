@@ -32,6 +32,12 @@ modified: 2024-02-12T03:23:17.007Z
 # discuss-news
 - ## 
 
+- ## 
+
+- ## The latest version of our JS Web SDK introduces an OPFS-based virtual filesystems for the SQLite database, with initial implementations of OPFSCoopSyncVFS and AccessHandlePoolVFS. _202501
+- https://x.com/powersync_/status/1884591544461935090
+  - This gives a >2X performance boost over indexedDB and improved Safari capability.
+
 - ## 🎯 v1.0.0 of our Docker image for self-hosted PowerSync _20241128
 - https://x.com/powersync_/status/1862131536293757243
   - This release introduces a major refactor of the PowerSync Service to support modular replication, along with initial alpha support for MongoDB and MySQL source databases.

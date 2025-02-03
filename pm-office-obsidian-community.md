@@ -152,6 +152,16 @@ modified: 2024-01-23T02:52:23.932Z
 
 - Logseq is too complex, and the tasks management is not reliable enough. I switched to Obsidian
   - 🧐 灵活性过高的代价
+# discuss-news-obsdmd
+- ## 
+
+- ## 
+
+- ## 
+
+- ## one fun thing in Obsidian 1.8 is that it lets you browse the web in plain text — the "reader mode" is persistent as you click links
+- https://x.com/kepano/status/1885022352209306085
+
 # discuss
 - ## 
 

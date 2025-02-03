@@ -28,6 +28,10 @@ modified: 2020-07-17T10:54:16.341Z
   - 中文网字计划是收录众多中文字体并通过 Web Font 的形式提供
   - https://github.com/KonghaYao/font-server
     - 用于内网的字体存储和管理服务，支持通过 WebHook 对外通知信息，并允许外部程序通过端口进行内部数据访问。
+
+- https://github.com/laurasinisterra/font-picker /202501/js
+  - https://laurasinisterra.github.io/font-picker/
+  - preview fonts with knobs panel
 # fonts
 - free
   - catalog

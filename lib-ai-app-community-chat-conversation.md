@@ -15,6 +15,19 @@ modified: 2023-04-16T10:02:58.738Z
 - HuggingFace
   - [魔搭社区](https://modelscope.cn/home)
     - 汇聚各领域最先进的机器学习模型，提供模型探索体验、推理、训练、部署和应用的一站式服务
+# pm-chat
+- table内容也能按行打印，如gemini/chatgpt
+
+- 
+- 
+
+## not-yet-chat
+
+- ai返回的内容通常不直接包含可点击的链接或引用
+
+- 
+- 
+
 # discuss-stars
 - ## 
 

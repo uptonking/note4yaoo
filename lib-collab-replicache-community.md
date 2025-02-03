@@ -109,7 +109,8 @@ modified: 2024-01-07T05:09:14.413Z
 
 - ## 
 
-- ## 
+- ## The Zero server was designed from the beginning for horizontal scalability
+- https://x.com/aboodman/status/1885496692293984734
 
 - ## AFAIK Zero is the first sync engine based on IVM, and maybe the first application of IVM in UI?
 - https://x.com/aboodman/status/1869840603753918701

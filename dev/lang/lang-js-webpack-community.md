@@ -12,6 +12,13 @@ modified: 2024-01-02T07:52:13.141Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## This is why you should "build" your javascript. Bundlers do lots of compiler optimizations like constant propagation/folding to make your code faster
+- https://x.com/zack_overflow/status/1884385265927741624
+- wouldn't v8 (and likely any js runtime worth its stuff) already handle constant folding? it is less work to not need a JIT compile optimization, probably, but amortized that seems like it wouldn't matter much.. are there optimizations where bundling provides substantial gains?
+  - yes and in this case constant folded or not it probably wouldn’t matter in this case. it’s mostly minification for smaller bundler size
+
 - ## [ignoring node_modules · webpack/webpack](https://github.com/webpack/webpack/issues/839)
 - Here is my way to prevent node_modules from being bundled:
 

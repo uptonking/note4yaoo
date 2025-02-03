@@ -725,6 +725,12 @@ modified: 2020-12-28T12:24:09.275Z
   - Browserless (for headless chrome, to print PDFs and generate previews)
   - GitHub/Google OAuth (for quickly authenticating users)
   - LinguiJS and Crowdin (for translation management and localization)
+
+- https://github.com/JOYCEQL/magic-resume /apache2/202502/ts
+  - https://magicv.art/
+  - 魔方简历是一款基于现代技术栈构建的免费在线简历编辑器，提供清爽的 UI 和流畅的用户体验。
+  - Built with Next.js and Framer Motion, it supports real-time preview and custom themes.
+  - 集成 DeepSeekV3 和 豆包，提供 AI 驱动的简历润色和诊断功能。
 # more-lowcode
 - corteza /go/vue
   - https://github.com/cortezaproject/corteza

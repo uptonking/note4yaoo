@@ -80,6 +80,20 @@ modified: 2024-11-16T16:58:32.628Z
 - 个人感觉 headscale 完全没有必要，直接用 tailscale + 自建 derp 就行。
 
 - 用过了，因为自建所以稳定性比不上官方，功能缺失挺多不好用，不如官方服务。
+
+- ## 🆚️ Proxy Vs reverse proxy
+- https://x.com/bytebytego/status/1885934707944345892
+  - 正向代理侧重客户端限制，反向代理侧重服务端
+- A forward proxy is a server that sits between user devices and the internet. A forward proxy is commonly used for: 
+  - Protect clients
+  - Block access to certain content
+  - Avoid browsing restrictions
+- A reverse proxy is a server that accepts a request from the client, forwards the request to web servers, and returns the results to the client as if the proxy server had processed the request. A reverse proxy is good for:
+  - Protect servers
+  - Load balancing
+  - Cache static contents
+  - Encrypt and decrypt SSL communications
+
 # discuss
 - ## 
 

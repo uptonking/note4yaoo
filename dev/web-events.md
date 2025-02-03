@@ -486,7 +486,12 @@ function getOffsetX(event) {
 # discuss
 - ## 
 
-- ## 
+- ## Discovered that Safari on iOS has a 32ms delay between the pointerup event and the click event. 
+- https://x.com/devongovett/status/1884274593147543597
+  - But ONLY if the tapped element is not a form control and does not have an aria role
+- What's the positive version of that statement? Form controls and controls with aria roles have no delay?
+  - Correct.
+- It's actually for hover emulation I think. First tap triggers hover, second triggers click. They are attempting to detect if the page is modified on the first tap, and if it is assume a tooltip or something appeared. In that case they don't fire a click. It makes sense but very weird exceptions.
 
 - ## Revisiting some of React Aria's event handling code today and oh man, pointer events are still an absolute mess. _202411
 - https://x.com/devongovett/status/1860038993796301267

@@ -31,3 +31,7 @@ modified: 2021-05-14T14:30:22.685Z
   - A simple JavaScript library to help you quickly identify unseemly images; all in the client's browser. 
   - NSFWJS isn't perfect, but it's pretty accurate (~90% with small and ~93% with midsized model).
   - The library categorizes image probabilities in the following 5 classes: Drawing, Hentai, Neutral, Porn, Sexy
+
+- https://github.com/jason5ng32/MyIP /MIT/202502/js/vue
+  - https://ipcheck.ing/
+  - 轻松检查你的 IP，IP 地理位置，检查DNS泄漏，检查 WebRTC 连接，速度测试，ping 测试，MTR测试，检查网站可用性，查询 Whois 信息等等

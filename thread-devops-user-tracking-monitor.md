@@ -32,7 +32,11 @@ modified: 2023-04-25T17:48:06.146Z
 # discuss
 - ## 
 
-- ## 
+- ## 维护+暴露在公网的服务已经超过 10 个了，需要有一个监控所有服务的服务了，找了一圈后我选中了“Uptime Kuma”。
+- https://x.com/tualatrix/status/1885227384707965173
+  - Uptime 的服务需要部署至少两个，形成相互监控，因为它自己挂掉的时候不会来通知你。
+
+- 我已经全面使用cloud flare的监控服务了
 
 - ## 听俺牛马一句劝，网站上线第一件事情就是接入数据分析（推荐Plausible，Google Analytics虽然免费，但是好复杂我昨晚研究了一下就放弃了
 - https://x.com/leohuntercn/status/1857344630913990872

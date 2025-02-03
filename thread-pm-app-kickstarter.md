@@ -14,7 +14,16 @@ modified: 2021-10-29T15:02:28.882Z
 # ideas-stars
 - ## 
 
-- ## 
+- ## ⌛️ YC创业项目墓地：整理了39期 821个YCombinator投资但是已经关闭掉的项目。
+- https://x.com/0xthefool/status/1883726696421134607
+  - [YC Graveyard](https://ycgraveyard.iamwillwang.com/)
+  - 尽管近些年因为每年batch增加batch size增加很多人说项目质量放低，但是其实YC的成功率还是很可观的：
+  - 39%的项目可以完成A轮融资
+  - 18%的项目估值超过$100M
+  - 4%的项目达到独角兽估值10亿美元
+
+- 这些点子以后会有人再做，这些创始人们值得拥有姓名。YC招的再多，也很难进的，而且alum network 很好
+  - 创业成功与否最大的因素：timing, 什么样的想法都有黄金时期
 
 - ## 🤔 Copilot 体验全面更新，感觉 Cursor 这种体验改进很难有啥壁垒，别的编辑器随便抄一下就有了，而且可能最后抄的比它还好，然后让 Cursor 沦为昙花一现的东西
 - https://x.com/skywind3000/status/1851527010692317538

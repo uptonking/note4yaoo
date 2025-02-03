@@ -109,7 +109,19 @@ modified: 2022-12-19T01:55:03.539Z
 # discuss-comparision 🆚️
 - ## 
 
-- ## 
+- ## Can someone tl; dr the Hono hype? Isnt it just another express/fastify?
+- https://x.com/matteocollina/status/1886119395124035752
+- my xp
+  1. runs very well in cloudflare workers (and its sponsored by them)
+  2. has incorrect benchmarks on the website claiming its fast
+  3. monkeypatches globals in Node.js
+  4. uses browsers APIs on servers, reducing the need to learn Node.
+- Sounds like a critique to Node.js
+  - web standards are slow
+  - knowledge doesn't transfer properly
+
+- 
+- 
 
 - ## [Should I be using Koa over express?](https://www.reddit.com/r/node/comments/8iz642/should_i_be_using_koa_over_express/)
 - The main reason that Koa got any real traction was during a period when Express wasn't receiving regular updates, and there were some ownership issues. 

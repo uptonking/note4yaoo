@@ -115,6 +115,14 @@ modified: 2022-11-25T15:50:48.226Z
     - sync is performed for the entire database at once, not per-collection
     - non-blocking: local database writes (but not reads) are only momentarily locked when writing data but user can safely make new changes throughout the process
 
+- https://github.com/malerba118/xorma /202501/ts
+  - A synchronous, reactive, in-memory database powered by mobx.
+  - https://x.com/austin_malerba/status/1883887696042488189
+    - A reactive in-memory database for building complex frontend apps like video editors, design tools, and games.
+    - I first conceived of it in 2022 while setting out to build diode and I’ve used it in basically every project since.
+  - Why would one use xorma instead of SqlLite in the browser? Because of the reactivity?
+    - They’re nothing alike tbh. It’s not a database like you’d traditionally think of a database. It’s a state management library that feels like an orm.
+
 - warehouse /188Star/MIT/202309/ts/hexo
   - https://github.com/hexojs/warehouse
   - https://hexojs.github.io/warehouse/

@@ -34,7 +34,9 @@ modified: 2020-12-08T13:27:56.600Z
 # discuss-roadmap
 - ## 
 
-- ## 
+- ## Solid 2.0 is gonna look a lot more like React, and at the same time a lot more like Rxjs in all the good ways
+- https://x.com/devagrawal09/status/1885432475729453470
+- Because of the "dependency function" in effects, dealing with stale data in effects, and having pending resources that throw?  Honestly I think we may be taking inspiration from the wrong parts of React
 
 - ## has there been a decision yet whether Solid 2.0 reactivity will microtask batch signal writes/effects, or continue being fully synchronous?
 - https://discord.com/channels/722131463138705510/780502110772658196/1138989102679736380

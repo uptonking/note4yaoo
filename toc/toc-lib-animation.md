@@ -202,6 +202,11 @@ modified: 2020-10-05T06:22:02.107Z
     - Hubble.gl is a JS library for animating data visualizations.
     - Render within the browser without a backend. 
 # css animation
+
+- https://github.com/ingram-projects/animxyz /MIT/202302/js/inactive
+  - The first truly composable CSS animation library. 
+  - Powered by CSS variables to allow a nearly limitless number of unique animations without writing a single keyframe. 
+
 - transition.css /13Star/Apache2/202010/css
   - https://github.com/argyleink/transition.css
   - https://transition.style/
