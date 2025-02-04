@@ -128,6 +128,19 @@ modified: 2023-09-17T17:37:19.913Z
   - I think "per-user" is probably the wrong killer feature for something like this. Much more potential in shared distributed processes that support multiple users (chat, CRDT/coauthoring). Appears that the underlying layer can probably do that.
 
 - This seems similar to an Elixir/Phoenix use case where you have a GenServer per user. At first glance, it seems like that approach would be functionally equivalent.
+  - Yes, the BEAM/OTP/{Erlang/Elixir} stack is unique in that it provides similar primitives as part of the runtime.
+  - My impression of that approach is that it’s good for IO-bound work and stateful business logic, but less so for the CPU/memory-bound applications that we’re targeting. I’d love to know if there are counterexamples to that though. It’s admittedly been over a decade since I touched Erlang and I’m not up to date, only peripherally familiar with Elixir and Phoenix.
+- Yes, for CPU bound processed on the BEAM you'll want to use a NIF (native implemented function) but that leaves you open to taking down the entire VM with bad NIF code (segfaults, infinite loops, etc). 
+
+- I think CouchDB kind of has a db per user kind of model. I was wondering, what's the best way to persist a session. This kind of per-user model I think is super useful for local-first, decentralized apps.
+
+- This is the same concept that Cloudflare has with Durable Objects. 
+  - Yes, DOs have a similar approach. Plane is sort of like DOs but using containers instead of V8 isolates, allowing you to run code that couldn’t run in the browser (either for cpu/memory needs, or because it just won’t compile to JS/wasm).
+- If I remember correctly, CF liked isolates because they have a superb cold start time. How does Plane do there?
+  - On the order of a few seconds, which is certainly slower than isolates, but fast enough to e.g. spin up a Jupyter backend in a reasonable amount of time. We're playing around with some ideas to make it even faster, like snapshotting.
+
+- most messaging apps and almost all bi-directional websocket based apps do something very similiar. mobile apps/webapps become thin clients with a web socket.
+  - that said, it's nice to abstract it away, and with a container - makes it very generic which is nice.
 
 - 
 - 

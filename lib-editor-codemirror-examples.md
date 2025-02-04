@@ -1542,6 +1542,19 @@ modified: 2023-06-23T12:46:53.288Z
   - features: Instant prototyping, Live interaction, collaborative
   - We decided to go with CodeMirror. We considered Monaco, but decided for a more lightweight approach
 
+- https://github.com/google/playground-elements /BSD/202409/ts/客户端执行
+  - https://google.github.io/playground-elements/
+  - Serverless coding environments for the web.
+  - 依赖CodeMirror5
+  - Playground never sends code to a backend server. Instead, Playground uses a Service Worker to create a virtual URL-space that runs 100% within the browser. If you can host static files, you can host a Playground.
+  - Playground is broken up into small components like an editor, file picker, and preview. Mix-and-match components to create any layout you want
+  - Playground uses a Web Worker to perform TypeScript compilation
+  - Playground previews work by using a service worker.
+  - 💡 use two iframes to the untrusted origin. One only loads untrusted code, the other loads a control API that talks to the trusted code. You can then to the loading into the iframe with a service worker. This is how the Playground Elements work
+  - Some browsers such as Chrome are sometimes able to allocate a separate process or thread for iframes. This is highly desirable for Playground, because it improves responsiveness and prevents full lockups (resulting from e.g. an infinite loop accidentally written by a user).
+  - Playground uses the `google_modes` CodeMirror syntax highlighting modes for TS/JS/HTML, because they support highlighting of HTML and CSS within JavaScript tagged template literals.
+  - 🔲 Support for build plugins like JSX, SASS, and CSS modules are on the roadmap, but are not yet available.
+
 - react-runner /382Star/MIT/202406/ts/inactive
   - https://github.com/nihgwu/react-runner
   - https://nihgwu.github.io/react-runner/
@@ -1720,10 +1733,6 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/BaseMax/MarkdownLiveEditor /202411/js
   - Real-time Markdown editor with live preview support, automatic scrolling synchronization and full support for right-to-left (RTL) languages. Built using CodeMirror and Marked.js.
-
-- https://github.com/google/playground-elements /202405/ts
-  - Serverless coding environments for the web.
-  - 依赖CodeMirror5
 
 - https://github.com/sumeetgodse/code-snippet-runner /202411/js
   - https://code-snippet-runner.netlify.app/

@@ -118,6 +118,39 @@ modified: 2024-05-12T17:20:03.132Z
   - service worker 中监听 fetch 事件当然是可以拦截脚本的请求的，不信你可以试试
   - 包括esm加载时的请求都可以被拦截
 
+# discuss-wasm/wasi
+- ## 
+
+- ## 
+
+- ## [Kubernetes reinvented virtual machines in a good sense | Hacker News _202207](https://news.ycombinator.com/item?id=32298058)
+- "Containers" are just a pattern, the real technology behind it is kernel namespaces (plus ordinary process boundaries). (For that matter container security is still half-baked in many ways. The kernel namespacing has been added after-the-fact and it can't really be trusted to make an effective "sandbox" on its own.)
+
+- I know most configurations don't use it, but k8s supports different runtimes and today you can use Kata or firecracker to run each pod in it's own "microvm."
+  - You then get the security benefits of a "real" VM while still distributing your software as an OCI (Docker) container, and can operate it like any other k8s cluster.
+- Launching a container is implementation detail for Kubernetes. I could totally see Kubernetes which runs some pods in containers and some pods in VMs with tiny kernel. May be it even exists, I'm too lazy to google it.
+
+- Did JVM reinvent VM? Is it a VM or a container?
+  - No one (not enough people?) asked (cared?) for this about the JVM for like 25 years till Linux Cgroups came around and Docker capitalized on it. Its not VM v/s container question that we care about. (I am aware this is a very poor comparison but so is comparing a vm to a container, which is my point)
+  - K8S brings complexity yes, and in a consistent, predictable way. The biggest difference between a k8s based shop vs a DIY VM/Container shop is the former can (in theory) hire some people with intermediate K8S experience, and have them sort out the mess that the people without that experience (or more typically the ones who don't have clear requirements) may have created. With k8s it becomes more predictable to find the boundaries and start pulling things apart in production and make incremental changes. Without k8s, making changes to a production setup is a nightmare that folks who have done that sort of thing don't ever want to repeat.
+
+- ## [WASIX, the Superset of WASI Supporting Threads, Processes and Sockets | Hacker News _202305](https://news.ycombinator.com/item?id=36126032)
+- I think server side WASM has the potential to be the next thing after containers.
+- Since I've been web applications and distributed systems, the evolution has been something like this.
+  1. Copy files around, into the web or application servers directory. This was simple but isolation, repeatability and testability was hard. The application dependencies were directly tied to the host, so you had to be very careful about your upgrades breaking applications. The lack of isolation is not suitable for multi-tenant environments for security and capacity planning reasons. It's pretty hard to run multiple-applications
+  2. Things like bundler, and other language specific tools that let you bundle your application dependencies together. Avoids some of the host OS related upgrade issues, but again, no real isolation.
+  3. VMs. The whole cloud industry started on this. You get true isolation of your whole application at the cost of complexity and weight. Scheduling new VMs is not a fast process because you're copying around or at least booting a whole OS. You still have to manage OS images. There is also generally a tax on memory that you have to pay, so you waste some resources with VMs to get the isolation. Amazon invested in Nitro to avoid paying a lot of this tax.
+  4. Containers. Lighter than VMs, good enough isolation in a lot of cases, especially inside of an organization. Lower tax than VMs. More testable. But containers are still fairly heavy, startup time can be slowish. So you have some limitations on how fast you can scale up and down in response to load. Also isolation isn't good enough for some workloads. So we see things like firecracker VMs being used to improve isolation.
+  5. Wasm on the server side. Much lighter than containers. Less memory overhead, way less startup time. Probably faster startup time than even firecracker. So for lambda like workloads you could could have a lot better cold start latency. You probably have good enough isolation that you don't need to resort to things like firecracker to isolate customer workloads. Because of the fast startup time you could probably pack your long tail of workloads even tighter to get better effective utilization out of your server infrastructure.
+
+- Excited for threads, sockets, futexes, but not excited for fork, signals and setjmp. They didn't include POSIX stuff like shared memory, select(2), unix sockets, and had to draw a line somewhere. Why include error-prone cruft?
+- A few points there:
+  - A big goal here is to make existing software compile to Webassembly, with only a relatively small amount of changes.
+  * classical shared memory (mapped into the main address space) is very hard to do in the context of Webassembly, especially in a performant way. Not impossible, but complicated. It would be valuable to add, but there are different approaches as well (like sharing additional Webassembly-level memories between instances, for example)
+  * WASI already has a concept similar to select
+  * unix sockets would be a pretty straight-forward addition
+
+- WASI is not meant for browsers, it's for using WebAssembly as platform-independent bytecode in non-browser environments.
 # discuss-cloud-env
 - ## 
 
@@ -186,7 +219,7 @@ modified: 2024-05-12T17:20:03.132Z
   - if you're just interested in what we've built so far, you can check out the alpha version on GitHub.
 
 - ## 🤼🏻 [hocus: Why We replaced Firecracker with QEMU | Hacker News _202307](https://news.ycombinator.com/item?id=36666782)
-- At CodeSandbox we use Firecracker for hosting development environments, and I agree with the points. Though I don't think that means you should not use Firecracker for running long-lived workloads.
+- 👷🏻 At CodeSandbox we use Firecracker for hosting development environments, and I agree with the points. Though I don't think that means you should not use Firecracker for running long-lived workloads.
   - We reclaim memory with a memory balloon device, for the disk trimming we discard (& compress) the disk, and for i/o speed we use io_uring (which we only use for scratch disks, the project disks are network disks).
   - It's a tradeoff. It's more work and does require custom implementations. For us that made sense, because in return we get a lightweight VMM that we can more easily extend with functionality like memory snapshotting and live VM cloning.
 - Firecracker has a balloon device you can inflate (ie: acquire as much memory inside the VM as possible) and then deflate... returning the memory to the host. You can do this while the VM is running.
@@ -302,7 +335,32 @@ modified: 2024-05-12T17:20:03.132Z
 # discuss-e2b-sandbox
 - ## 
 
-- ## 
+- ## [Notes on the new Claude analysis JavaScript code execution tool | Hacker News _202410](https://news.ycombinator.com/item?id=41943662)
+- That's an interesting idea to generate javascript and execute it client side rather than server side. I'm sure that saves a ton of money for Anthropic not by not having to spin up a server for each execution.
+  - I imagine this is a broader push to be able to have Claude pilot in your browser (and other applications) in the future. This is the right way to go about it versus having a headless agent: users can be in the loop and you can bootstrap and existing environment.
+  - Otoh it’s going to be a security nightmare.
+
+- Google Collab are all individual VMs. It seems Anthropic doesn’t want to be in the “host a VM for every single user” business.
+
+- 🤔 I've been trying to figure out the right pattern for running untrusted JavaScript code in a browser sandbox that's controlled by a page for a while now, looks like Anthropic have figured that out. Hoping someone can reverse engineer exactly how they are doing this - their JavaScript code is too obfuscated for me to dig out the tricks, sadly.
+  - The key is running the untrusted code in a cross-origin iframe so you can rely on the same-origin policies and `sandbox`.
+  - You can control the code in a number of ways - loading a trusted shim that sets up a postMessage handler is pretty common. You can be careful and do that in a way that untructed code can't forge messages to look like their from the trusted code.
+  - 💡 Another way is to use two iframes to the untrusted origin. One only loads untrusted code, the other loads a control API that talks to the trusted code. You can then to the loading into the iframe with a service worker. This is how the Playground Elements work (they're a set of web components that let you safely embed a mini IDE for code samples) https://github.com/google/playground-elements
+- The cross origin iframe method is the same I’ve employed in A few browser extensions I’ve built
+
+- You should check out how Figma plugins work. They have blog posts on all the tradeoffs they considered. What I believe they settled on was a JS interpreter compiled to WASM -- it can run arbitrary JS but with very well-defined and restricted interfaces to the outside world (the browser's JS runtime environment).
+  - > We now use QuickJS, a JavaScript VM written in C and cross-compiled to WebAssembly.
+
+- Much easier in the browser that has V8 isolate, however even with webworkers you still want to control CPU/network hijacking which is not ideal.
+  - If it's only the user's own code it's fine but if they can run code from others it's a massive pain indeed.
+  - On the server it's still not easy in 2024, even with Firecracker (doesn't work on mac), Workerd (is a subset of NodeJS), isolated-vm (only pre-compiled code, no modules).
+
+- What are the attack vectors for a web browser js environment to do malicious things? All browser code is sandboxed via origin controls, and process isolation. It can’t even open an iframe and read the contents of that iframe.
+  - It's a fine place to run code trusted by the server (or code trusted by the client within the scope of the app).
+  - But for code not trusted by either, it's bad -- user data in the app can be compromised/exfiltrated.
+  - Hence for third-party plugins for a web app, the built-in JS runtime doesn't have sufficient trust management capability.
+
+- duckdb-wasm would be a good addition here. We use it in Definite and I can't say enough good things about duckdb in general.
 
 - ## [Show HN: Riza - Safely run untrusted code from your app | Hacker News _202404](https://news.ycombinator.com/item?id=40159630)
   - we’ve been working on Riza (https://riza.io), a project to make WASM sandboxing more approachable. We’re excited to share a developer preview of our code interpreter API with HN.
@@ -366,9 +424,21 @@ modified: 2024-05-12T17:20:03.132Z
 # discuss-firecracker
 - ## 
 
-- ## 
+- ## [Fast CI with MicroVMs | Hacker News _202211](https://news.ycombinator.com/item?id=33656767)
+- Firecracker is nice but still very limited to what it can do.
+  - My gripe with all CI systems is that an an industry standard we've universally sacrificed performance for hermeticity and re-entrancy, even when it doesn't really gives us a practical advantage. Downloading and re-running containers and vms, endlessly checking out code, installing deps over and over is just a waste of time, even with caching, COW, and other optimizations.
+- The perceived practical advantage is the incremental confidence that the thing you built won't blow up in production.
+  - Many CI systems do employ caching. For example, Circle.
 
-- ## 
+- Hermeticity is precisely what allows you to avoid endlessly downloading and building the same dependencies. Without hermeticity you can't rely on caching.
+
+- 
+
+- ## 🤔 [Deno raises $21M | Hacker News _202206](https://news.ycombinator.com/item?id=31827387)
+- Lambda and Fargate use the Firecracker VM
+  - The Lambda service team always emphasizes the level of isolation that Firecracker VMs gives you that containers don’t.
+
+- And Google Cloud Run use gVisor, which is also not a container.
 
 - ## Docker is not the optimal way to run serverless workloads; hence, AWS Lambda or even an online judge like CodeChef, uses Firecracker as its execution environment.
 - https://x.com/arpit_bhayani/status/1852550914638537196
