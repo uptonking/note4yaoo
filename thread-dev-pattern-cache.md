@@ -28,7 +28,49 @@ modified: 2023-12-10T14:20:42.600Z
 # discuss
 - ## 
 
-- ## 
+- ## 📌 Top 5 Caching Strategies Explained:
+- https://x.com/ashishps_1/status/1886633417921425440
+
+1. 𝐑𝐞𝐚𝐝 𝐓𝐡𝐫𝐨𝐮𝐠𝐡: The application always queries the cache first. If the data is not in the cache (cache miss), the cache itself fetches it from the database and stores it for future requests.
+
+Pros: Simplifies application logic, ensures cache always has fresh data.
+Cons: Higher cache complexity, might not suit write-heavy systems.
+
+👉 Best for: Read-heavy apps like CDNs, social media feeds, and user profiles.
+
+2. 𝐂𝐚𝐜𝐡𝐞 𝐀𝐬𝐢𝐝𝐞 (𝐋𝐚𝐳𝐲 𝐋𝐨𝐚𝐝𝐢𝐧𝐠): The application first checks the cache. If the data isn't found (cache miss), it fetches it from the database and stores it in the cache for subsequent requests.
+
+Pros: Keeps cache small, avoids unnecessary data in memory.
+Cons: Cache misses can be expensive, risk of stale data if updates are frequent.
+
+👉 Best for: Systems with a high read-to-write ratio, like e-commerce sites.
+
+3. 𝐖𝐫𝐢𝐭𝐞 𝐓𝐡𝐫𝐨𝐮𝐠𝐡: Every write operation is first stored in the cache, then immediately written to the database.
+
+Pros: Ensures cache and database are always in sync.
+Cons: Higher write latency, unnecessary caching of rarely accessed data.
+
+👉 Best for: Consistency-critical systems, such as financial apps.
+
+4. 𝐖𝐫𝐢𝐭𝐞 𝐀𝐫𝐨𝐮𝐧𝐝: The application directly writes to the database, bypassing the cache. The cache gets updated only when a read request occurs.
+
+Pros: Avoids caching rarely accessed data.
+Cons: Higher cache miss rate, causing frequent database reads.
+
+👉 Best for: Write-heavy systems where data isn’t immediately needed, like logging systems.
+
+5. 𝐖𝐫𝐢𝐭𝐞 𝐁𝐚𝐜𝐤: Data is first written to the cache, and the cache asynchronously updates the database in the background.
+
+Pros: Super-fast writes, reduces database load.
+Cons: Risk of data loss if the cache crashes before syncing with the database.
+
+👉 Best for: High-write throughput systems, such as social media feeds.
+
+- Which Caching Strategy Should You Use?
+  - If reads are more frequent      → Read-Through / Cache-Aside
+  - If writes need to be consistent → Write-Through
+  - If you want to minimize unnecessary caching → Write-Around
+  - If you need ultra-fast writes   → Write-Back
 
 - ## 📌 7 Cache Eviction(驱逐; 逐出) Strategies You Should Know:
 - https://x.com/ashishps_1/status/1886271044933079354
@@ -37,32 +79,32 @@ modified: 2023-12-10T14:20:42.600Z
 - Works well when older data is less likely to be used again.
 - Example: Browser cache, in-memory caches like Redis.
 
-2. 𝐋𝐞𝐚𝐬𝐭 𝐅𝐫𝐞𝐪𝐮𝐞𝐧𝐭𝐥𝐲 𝐔𝐬𝐞𝐝 (𝐋𝐅𝐔) 
+1. 𝐋𝐞𝐚𝐬𝐭 𝐅𝐫𝐞𝐪𝐮𝐞𝐧𝐭𝐥𝐲 𝐔𝐬𝐞𝐝 (𝐋𝐅𝐔) 
 - Evicts the least accessed items over time.
 - Prioritizes keeping frequently used items in cache.
 - Example: Machine learning inference caches, recommendation systems.
 
-3. 𝐅𝐢𝐫𝐬𝐭 𝐈𝐧, 𝐅𝐢𝐫𝐬𝐭 𝐎𝐮𝐭 (𝐅𝐈𝐅𝐎)
+1. 𝐅𝐢𝐫𝐬𝐭 𝐈𝐧, 𝐅𝐢𝐫𝐬𝐭 𝐎𝐮𝐭 (𝐅𝐈𝐅𝐎)
 - Evicts the oldest stored item first, regardless of usage.
 - Simple to implement but may remove still-relevant data.
 - Example: Simple queue-based caching systems.
 
-4. 𝐑𝐚𝐧𝐝𝐨𝐦 𝐑𝐞𝐩𝐥𝐚𝐜𝐞𝐦𝐞𝐧𝐭 (𝐑𝐑)
+1. 𝐑𝐚𝐧𝐝𝐨𝐦 𝐑𝐞𝐩𝐥𝐚𝐜𝐞𝐦𝐞𝐧𝐭 (𝐑𝐑)
 - Randomly evicts an item when the cache is full.
 - Low overhead, but less predictable performance.
 - Example: Used in some network routers.
 
-5. 𝐌𝐨𝐬𝐭 𝐑𝐞𝐜𝐞𝐧𝐭𝐥𝐲 𝐔𝐬𝐞𝐝 (𝐌𝐑𝐔)
+1. 𝐌𝐨𝐬𝐭 𝐑𝐞𝐜𝐞𝐧𝐭𝐥𝐲 𝐔𝐬𝐞𝐝 (𝐌𝐑𝐔)
 - Opposite of LRU – evicts the most recently accessed item first.
 - Useful when recent data becomes obsolete quickly.
 - Example: Video streaming buffers, certain financial applications.
 
-6. 𝐓𝐢𝐦𝐞 𝐭𝐨 𝐋𝐢𝐯𝐞 (𝐓𝐓𝐋)
+1. 𝐓𝐢𝐦𝐞 𝐭𝐨 𝐋𝐢𝐯𝐞 (𝐓𝐓𝐋)
 - Items are evicted after a set time limit (expiry time).
 - Prevents stale data, useful in distributed systems.
 - Example: DNS caching, API response caching.
 
-7. 𝐓𝐰𝐨-𝐓𝐢𝐞𝐫𝐞𝐝 𝐂𝐚𝐜𝐡𝐢𝐧𝐠
+1. 𝐓𝐰𝐨-𝐓𝐢𝐞𝐫𝐞𝐝 𝐂𝐚𝐜𝐡𝐢𝐧𝐠
 - Uses a fast in-memory cache (e.g., Redis) & a slower persistent cache (e.g., disk-based).
 - Optimizes speed & storage by balancing hot and cold data.
 - Example: CDN caching, hybrid cloud storage solutions.

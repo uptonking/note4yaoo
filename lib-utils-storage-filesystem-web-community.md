@@ -82,7 +82,19 @@ modified: 2023-09-16T17:43:09.215Z
 
 - ## 
 
-- ## 
+- ## you can ZIP files in the browser using zip.js???
+- https://x.com/aidenybai/status/1886128705002496207
+- You can even do it natively now with Compression Streams API and DecompressionStream
+  - Baseline 2023.  Such new features are buggy a lot of times in different browsers and not quite consistently implemented.
+- The compression stream api is really nice but mostly just for gzip. Might not be suitable for all use case.
+- Not. Gzip is not zip, so you cannot "do zip files natively now" like zip.js does
+- I tried using this recently, it's was a total pain to work with, so I gave up and used zip.js instead
+  - very little documentation, awkward API and gzip isn't a particularly nice format if you're building anything for the avg (non technical) user
+
+- Can even encode videos
+- you can run full ML models in browser offline at scale. 
+
+- js always can, sometimes it just doesn't think if it should
 
 - ## It seems that file system use cases could be boil down into:
 - https://twitter.com/Horusiath/status/1761345182924968138

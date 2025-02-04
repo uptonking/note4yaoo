@@ -67,7 +67,7 @@ modified: 2021-05-14T15:06:46.615Z
   - No vendor lock-in: Choose whatever cloud provider suits you best, be it the cheapest one or the most powerful, DevPod supports all cloud providers. 
   - Cross IDE support: VSCode and the full JetBrains suite is supported, all others can be connected through simple ssh.
 
-- https://github.com/hocus-dev/hocus /Elastic/202308/ts/inactive
+- https://github.com/hocus-dev/hocus /Elastic > MIT/202308/ts/inactive
   - https://hocus.dev/
   - Hocus is a self-hosted application that spins up ready-to-code, disposable development environments on your own servers in seconds. 
   - It's a self-hosted alternative to Gitpod and GitHub Codespaces.

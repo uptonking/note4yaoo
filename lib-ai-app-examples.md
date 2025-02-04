@@ -30,6 +30,17 @@ modified: 2023-02-08T07:20:48.475Z
   - https://x.com/nicoalbanese10/status/1806680358093541401
     - this is all you need to use chrome's built in ai model with the vercel ai sdk
     - no api keys, no configuration, running locally in the browser
+- https://github.com/langtail/ai-orchestra
+  - a lightweight TypeScript library for orchestrating AI agents
+  - No magic, just simple patterns built around @aisdk 's streamText for managing agent handoffs and state transitions.
+  - A lightweight alternative to LangGraph without the complexity.
+  - State lives outside the library - you control everything.
+- https://github.com/nickscamara/open-deep-research
+  - An open source deep research clone. 
+  - AI Agent that reasons large amounts of web data extracted with Firecrawl
+  - Powered by the @aisdk
+  - https://x.com/nickscamara_/status/1886459999905521912
+    - This is an experimental clone of Open AI's Deep Research. Instead of using a fine-tuned version of o3, this method uses Firecrawl's extract + search with a reasoning model to deep research the web.
 
 - https://github.com/Doriandarko/maestro /202406/python
   - ⛓️ A framework for Claude Opus to intelligently orchestrate subagents.

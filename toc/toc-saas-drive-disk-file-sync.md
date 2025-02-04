@@ -443,6 +443,14 @@ modified: 2024-03-31T17:45:16.789Z
 - https://github.com/Peergos/Peergos /AGPLv3/202402/java
   - https://peergos.org/
   - A p2p, secure file storage, social network and application protocol
+
+## file-ssh
+
+- https://github.com/vitodeploy/vito /AGPL/202502/php
+  - Free and Self-Hosted Server Management Tool
+  - https://x.com/saeed_vz/status/1886166663113949238
+    - Vscode has a plug in for editing files over ssh as well.
+    - Thats what I do usually. But a web interface inside the app sometimes is handy for very quick needs
 # files-preview
 - https://github.com/musama619/react-files-preview /MIT/202311/ts
   - https://react-files-preview.netlify.app/

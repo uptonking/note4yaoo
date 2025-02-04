@@ -10,7 +10,7 @@ modified: 2023-03-24T05:06:08.832Z
 # guide
 - sdk参考
   - countly
-  - 实时类: powersync, e2b-sandbox, codesandbox, replit
+  - 实时类: powersync-js, y-sweet-sdk, e2b-sandbox, codesandbox, replit
 # popular
 - https://github.com/makenotion/notion-sdk-js
   - https://developers.notion.com/docs
@@ -34,6 +34,10 @@ modified: 2023-03-24T05:06:08.832Z
 - https://github.com/seatable/dtable-sdk
   - JavaScript SDK for SeaTable (DTable is an old name).
   - https://github.com/seatable/seatable-api-js
+
+- https://github.com/microsoft/vscode-powerquery-sdk /MIT/202501/ts
+  - Power Query Connector Development SDK for VS Code
+  - Provides functionality related to the development and testing of Custom Connectors for Power Query and Power BI.
 # sdk-utils
 
 # sdk-from-vendors

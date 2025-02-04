@@ -28,6 +28,17 @@ modified: 2024-03-13T14:26:26.220Z
 - how does that translate to disk storage? the key data structures for KV stores are LSM Trees and B+ Trees. What are they for object stores?
   - Why does that matter for users of these services?
 
+# discuss-slatedb-news
+- ## 
+
+- ## 
+
+- ## 
+
+- ## SlateDB now has clones _202502
+- https://x.com/criccomini/status/1886490144049651867
+  - Clone an existing DB's data to a new location. Clones reference the data from the old bucket rather than copying. Writes to the clone update the new location. Compaction merges old data into new directory.
+
 # discuss
 - ## 
 

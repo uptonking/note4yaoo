@@ -385,6 +385,11 @@ modified: 2023-06-07T14:19:18.719Z
   - a free open-source Jamstack directory that lists hundreds of themes, starters, and resources for static sites.
   - 依赖next-mdx-remote、marked、react-infinite-scroll-component
 
+- https://github.com/piotrkulpinski/openalternative /GPLv3/202502/ts
+  - https://openalternative.co/
+  - A community driven list of open source alternatives to proprietary software and applications.
+  - OpenAlternative is currently written in Remix. 
+
 ## more-app-store
 
 - https://github.com/pawelmalak/snippet-box /MIT/202110/ts

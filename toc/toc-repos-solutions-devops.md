@@ -13,6 +13,11 @@ modified: 2020-12-12T19:01:56.749Z
 - https://github.com/xuxueli/xxl-job
   - /15.8kStar/GPLv3/202009
   - 分布式任务调度平台
+# tunnel
+- https://github.com/Rob--W/cors-anywhere /MIT/202109/js/inactive
+  - CORS Anywhere is a NodeJS reverse proxy which adds CORS headers to the proxied request
+  - https://github.com/jefferson-calmon/corsbypass /202307/ts
+    - i've just created a repository with the code for an unrestricted self-hosted solution
 # shortlink
 - https://github.com/dubinc/dub /AGPLv3/202402/ts
   - https://dub.co/

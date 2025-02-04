@@ -119,6 +119,18 @@ modified: 2023-02-07T09:22:03.120Z
 
 - 其实我有点好奇，为啥会有商业化支持的诉求，一线大厂的通用asr能力挺强的。我们之所以自己搞，主要是推理成本低很多和领域下的效果提升
   - 真实测试下来大厂的通用 asr 并没有那么好，比如多语言混合识别，语言自动识别方面。
+# discuss-tools
+- ## 
+
+- ## 
+
+- ## 一个快速将音视频转结构化笔记的开源工具：AudioNotes。
+- https://x.com/GitHub_Daily/status/1886761635307544832
+  - 基于 FunASR 和 Qwen2 构建，可快速提取音视频内容，并利用大模型能力整理成一份结构化的 Markdown 笔记，方便快速阅读。
+  - 工具支持搭配 Ollama 使用本地模型，并提供了 Docker 快速部署方式。
+- https://github.com/harry0703/AudioNotes /MIT/202407/python
+  - 快速提取音视频内容，整理成一份结构化的markdown笔记
+
 # discuss
 - ## 
 

@@ -250,7 +250,18 @@ modified: 2023-02-06T09:14:40.114Z
 # discuss-cors
 - ## 
 
-- ## 
+- ## cors-anywhere​ can bypass CORS errors
+- https://x.com/aidenybai/status/1886446801089081733
+  - it tricks the browser by adding `Access-Control-Allow-Origin: *` headers to the response
+  - yes it's a reverse proxy
+- btw if you are deciding to fork and host it - there are a list of providers that don't allow this (notably vercel!)
+  - I always wondered why vercel is not offering a .vercel.dev domain for localhost like ngrok
+
+- This is cool for personal projects, but for a production-level app, depending on a third-party service to proxy data may not be completely reliable
+
+- I always wonder why all the folks here love to rely on third party tools … You can just add the required headers urself
+
+- Just a reminder that websockets do really well in real time communication where the architecture requires persistent, stateful connection and low latency.  This would be a good use case for this.
 
 - ## [Why does my JavaScript code receive a "No 'Access-Control-Allow-Origin' header is present on the requested resource" error, while Postman does not? - Stack Overflow](https://stackoverflow.com/questions/20035101/why-does-my-javascript-code-receive-a-no-access-control-allow-origin-header-i)
 - Regular web pages can use the XMLHttpRequest object to send and receive data from remote servers, but they're limited by the same origin policy. Extensions aren't so limited. An extension can talk to remote servers outside of its origin, as long as it first requests cross-origin permissions.

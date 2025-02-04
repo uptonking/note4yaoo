@@ -45,7 +45,32 @@ modified: 2021-04-24T08:29:02.272Z
 
  
 
+# discuss-ssr-architecture
+- ## 
+
+- ## 
+
+- ## The Laravel team is officially taking over my Inertia.js project. _202502
+- https://x.com/reinink/status/1886519391367598359
+  - Almost exactly six years ago, I started a project inspired by Turbolinks that let developers using classic server-side frameworks like Laravel and Rails build rich client-side SPAs with libraries like React and Vue. That project became Inertia.js.
+  - The goal was simple—I wanted to build apps using the classic monolith architecture while leveraging modern JavaScript frameworks as the templating layer.
+  - At the time, there was no standard way to do this. Everyone told me the “right” approach was to turn my server-side app into a REST or GraphQL API and build a separate client-side app to consume it.
+  - While that approach makes sense for some projects, it was total overkill for what I was building. I just wanted Laravel, but with React or Vue as my templating layer—yet, that meant adopting an entirely different architecture.
+  - Back then, I used Turbolinks a lot to give my apps an SPA feel, but it didn't work well with React or Vue. That's when it hit me: what if I could create something like Turbolinks, but optimized for modern JavaScript frameworks?
+  - The two key ideas that made Inertia work so well:
+  01. Dynamic components – Modern JavaScript frameworks can dynamically swap one page component for another as you navigate.
+  02. Reactivity – These frameworks automatically re-render when props change. So, simply visiting the same page with different data (props) updates it automatically—no manual handling required.
+  - With the proof of concept in place, I kept building. We ended up with:
+  - ✔️ A core client-side routing library
+  - ✔️ Client-side adapters for React, Vue, and Svelte
+  - ✔️ Server-side adapters for Laravel, Rails, and many other frameworks (thanks to community contributions)
+  - Along this journey I got deeply involved in another project—Tailwind CSS. 
+  - Thankfully, my friend Taylor Otwell stepped in. He dedicated Laravel staff to help with GitHub issues and bug fixes, including having Joe Tannenbaum effectively rewrite the entire library for v2.0. 
+  - Recently, Taylor and I talked and decided that it was in the best interest of the project for Laravel to take it over officially.
+
 # discuss
+- ## 
+
 - ## 
 
 - ## 
@@ -119,12 +144,12 @@ modified: 2021-04-24T08:29:02.272Z
 
 - ## [How single-page application works in SSR (React) - Stack Overflow](https://stackoverflow.com/questions/57243697/how-single-page-application-works-in-ssr-react)
 - When implementing Server Side Rendering (SSR), the server knows how to generate a full page with markup so the user gets a fully rendered page and from that moment, when the js resources get downloaded, the application will be live (event listeners will be enabled, the react lifecycle will be active and so on).
-01.           Get a request for a specific path
-02.           Initiate a new store instance for the request
-03.           In case of using react router (or other router solution), fill the state with the requested route
-04.           Render the app, but instead of rendering and mounting the App, render the App to string (with renderToString)
-05.           Dehydrate the state - take the latest state snapshot and append it to the result (after escaping it and wrapping it with script tag for example)
-06.           Return the markup as a response. The markup can look similar to the following: 
+01.            Get a request for a specific path
+02.            Initiate a new store instance for the request
+03.            In case of using react router (or other router solution), fill the state with the requested route
+04.            Render the app, but instead of rendering and mounting the App, render the App to string (with renderToString)
+05.            Dehydrate the state - take the latest state snapshot and append it to the result (after escaping it and wrapping it with script tag for example)
+06.            Return the markup as a response. The markup can look similar to the following: 
 
 ```HTML
 <html>
