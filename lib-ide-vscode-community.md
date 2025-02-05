@@ -49,6 +49,26 @@ modified: 2024-08-24T16:15:47.613Z
 - there's an extension called "Git Graph"
 
 - To all terminal users, I couldn't recommend lazygit enough. If you prefer not to leave your editor, there's also a plugin that integrates it directly into VS Code
+# discuss-vscode-api
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Why Did Microsoft Build VSCode? Turns Out, GitHub Copilot | Hacker News _202306](https://news.ycombinator.com/item?id=36329370)
+- AI chat API isn't public yet.
+  - "In-editor chat" is mentioned as an example (the only example in the post, as far as I can tell) of a restricted API feature. i am curious as well as to what exactly is a "restricted API" and how MSFT prevents plugins to use it while allowing github copilot to use it.
+
+- ## [Microsoft is introducing hidden APIs to VS Code only enabled for Copilot? | Hacker News _202410](https://news.ycombinator.com/item?id=41907350)
+- I don’t see any problem here. They spend money, effort, time to develop their products. Why do they need to give that products for free to everyone, or even their competitors?
+
+- I discovered that VSCode has a set of APIs for adding SSH tunneling, and under normal circumstances you must launch vscode with special flags to be able to use them. Somehow their built-in JavaScript debugging extension can use these APIs without any issues.
+  - And you can hardly find any public information about these APIs. Well, unless someone asks -- As of 2 years ago, they didn't have any plans to "finalize" these APIs, i.e. make them public. You are advised to find other workarounds (which do work).
+
+- Microsoft has been very clear about their business model of VSCode -- similar to Chromium, the base product is free and you can do whatever you want, but extension marketplace/remote/GitHub Copilot are proprietary.
+
+- they have a number of "inline completion" APIs standardized as both VSCode APIs and LSP protocol (upcoming).
 # discuss
 - ## 
 
