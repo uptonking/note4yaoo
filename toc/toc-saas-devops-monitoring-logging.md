@@ -149,6 +149,24 @@ modified: 2024-02-11T15:11:31.598Z
   - log.io has no persistence layer. File inputs are informed of file changes via inotify, and log messages hop from input to server to web client via TCP and socket.io, respectively.
   - Users can watch adhoc log streams by activating inputs and binding them to multiple screens via the web UI.
   - log.io uses a stateless TCP API to receive log messages.
+
+## utils-logging
+
+- https://github.com/unjs/consola /MIT/202501/ts
+  - Elegant Console Logger for Node.js and Browser
+  - Consistent command line interface (CLI) experience
+  - Fancy output with fallback for minimal environments
+  - Pluggable reporters
+  - Redirect console and stdout/stderr to consola and easily restore redirect.
+  - Pause/Resume support: enqueue all logs when paused and then sends them to the reported when resumed.
+  - Mocking support
+  - Interactive prompt support powered by clack
+  - consola.log({ message: "hello" }); 
+  - logger日志api参考
+  - https://github.com/pinojs/pino/blob/main/docs/api.md
+    - logger.info( ([mergingObject], [message], [...interpolationValues]) )
+  - https://github.com/winstonjs/winston
+    - logger.info('hello', { message: 'world' });
 # cloudflare-like-integration
 - https://github.com/benvinegar/counterscale /MIT/202406/ts
   - https://counterscale.dev/

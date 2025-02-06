@@ -301,7 +301,7 @@ console.log(
   - goAgent触发的时机不太确定，计算资源占用大
   - gitignore的文件不应该显示M
 
-- 📌 🔜
+- 🔲 🔜
   - terminal在执行时需要自动滚到末尾，方便显示最新输出信息
   - terminal在follow时自动打开，在非follow时显示更新的红点
   - terminal放大缩小折叠展开后，光标自动聚焦在terminal
@@ -313,16 +313,55 @@ console.log(
   - ~~webview自动打开, 刷新时保持打开~~
   - cmdk工具条无法触发，快捷键可以
 
+- 异常处理增强
+  - 观测重要log: RESOURCE_NOT_ENOUGH
+
+### 多标签设计与实现-快速方案
+
+- limitations
+  - 不支持超过2个分栏布局
+  - 不支持一个分栏内创建tab-group
+  - 支持将webview标签页自由拖拽到任意标签旁
+
+- 单人多标签的场景，只需要在内存保存多个文件的数据，但要支持多个编辑器显示和编辑同一份数据
+
+- 协同多标签的场景，
+- 跟随模式下会自动切换标签页，
+  - 大多数场景下，切换标签页时先save再切换
+  - 特殊场景如用户处于cmdk或regenerate或search的输入框且修改了提示词但还没有点击send或执行，此时切换会造成用户数据丢失
+    - 在cmdk未accept时切换的场景
+- 更改布局的操作如浮动驾驶舱或split-editor-right是否要支持协同
+  - vscode会将光标自动切换到新tab内容的对应位置
+  - 标签页的其他数据如何协同，如image放大比例
+- 非编辑器的页面如何协同如图片查看页、浏览器页
+  - 在标签页头部显示用户头像？
+  - 最好能同步光标位置，iframe内容上光标的位置难以准确确定
+
+### 删除移动文件的设计与实现-快速方案
+
 - action-删除文件
   - live模式显示弹窗
   - 回放模式显示红色背景的文件快照
 
+## 0206
+
+- 昨天
+  - 优化了机器扩容时的异常提示消息体验，今天会尽快合到正式环境
+  - 将业务侧paas sdk相关的异常接入观测云，后面会将更多的关键日志接入观测云
+- 今天
+  - 继续cde高优先级的issues
+  - 处理删除移动文件相关的问题
+
+```log
+Access to fetch at 'http://datakit.datakit:4317/v1/write/logging?precision=ms' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.
+```
+
 ## 0205
 
-- 上周
-  - 处理体验测试反馈的问题
+- 年前
+  - 根据反馈调整端口转发的交互细节
+  - 在playground状态inactive时，添加自动重试发送激活消息的逻辑
 - 本周
-  - 实现删除移动文件在live和回放模式的表现
   - 修复年前规划的剩余issues
 - 今天
   - 排查文件树在某些场景下未自动更新的问题
