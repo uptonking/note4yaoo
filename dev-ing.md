@@ -352,9 +352,13 @@ console.log(
   - 继续cde高优先级的issues
   - 处理删除移动文件相关的问题
 
-```log
-Access to fetch at 'http://datakit.datakit:4317/v1/write/logging?precision=ms' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.
-```
+- [How to override multiple console function? (console.log, console.info etc) - Stack Overflow](https://stackoverflow.com/questions/73232960/how-to-override-multiple-console-function-console-log-console-info-etc)
+  - for-loop 逐个覆盖
+  - new Proxy(console, { get(console, key){} })
+
+- [Hijack console.log, console.warn, and console.error without breaking the default browser function.](https://gist.github.com/designbyadrian/2eb329c853516cef618a)
+
+- [How to override the console methods in Javascript | Our Code World](https://ourcodeworld.com/articles/read/104/how-to-override-the-console-methods-in-javascript)
 
 ## 0205
 
