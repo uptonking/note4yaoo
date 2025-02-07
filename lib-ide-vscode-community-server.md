@@ -82,6 +82,24 @@ modified: 2024-12-01T09:34:54.164Z
 - ## [Move vendored VScode to separate fork · coder/code-server _202107](https://github.com/coder/code-server/issues/3835)
   - We’ve since migrated a large portion of our code base to a VS Code fork, which I feel better aligns with Microsoft's conventions to code implementation and organization
 
+- ## [VS Code on a Remote Server | Hacker News _201903](https://news.ycombinator.com/item?id=19393972)
+- Not only VSCode is available on mybinder - There is also a RStudio in browser
+
+- Because of the flexibility provided by separating the Node-based logic and processing layer from the web-based presentation layer, VS Code lent itself well to this kind of innovation. 
+- Game Changer? Innovation? This sort of thing has been possible with x-windows for decades.
+  - X forwarding is totally unusable over crowded, throttled, public WiFi or even good internet speeds with hardly any latency at all. The web is designed for those environments.
+
+- Why not just make a remote desktop / VCN connection to the server?
+  - More often than not, working seriously through vnc/remote desktop is miserable and a last resort. Some people don't seem to mind though. I'm curious if their productivity suffers? It works fine for checking on things, but it's a window-in-a-window, copy/paste never consistently works (no matter the server/client software), I haven't seen good solutions for audio, scaling/resolution, and bandwidth/latency vary greatly. It's made me get much better with ssh/terminal/vim and pushed me further away from an IDE. I can see a webapp being a decent compromise. I think most people are fine with Gdocs over Word/Excel.
+- VNC over the internet is not pretty. Plus X Windows has to be installed on what might otherwise be a headless server. Windows is lightyears ahead of Linux on remote desktop, so it would probably be fine on that.
+- Transferring text data to power IDE functionality is a lot smoother and faster than streaming a full desktop over the internet.
+
+- Theia is an independent IDE framework. It used by products like Gitpod, Google Cloud Shell, ARM Mbed Studio and so on. Che is going to replace own old GWT based IDE with Theia.
+
+- I wish there was a way to run VS Code in headless server mode on a remote host and then connect to attach to it from my local machine.
+  - That's exactly what this lets you do.
+
+- SSH and VIM... since 1995. Best feature: no telemetry.
 # discuss-openVscode-server
 - ## 
 
@@ -144,8 +162,6 @@ modified: 2024-12-01T09:34:54.164Z
 
 - ## 
 
-- ## 
-
 - ## [Show HN: Lapdev, a new open-source remote dev environment management software | Hacker News _202403](https://news.ycombinator.com/item?id=39801399)
   - It's installed on a remote server so it provides remote environments. If you use VSCode remote, then you can "open" it through VSCode remote ssh. The environment that Lapdev provides essentially is a container (other format is on the roadmap) with things pre-installed as defined in Devcontainer(https://containers.dev/) format.
 
@@ -163,7 +179,7 @@ modified: 2024-12-01T09:34:54.164Z
 - ## [Ask HN: Other than VS Code, are there any good IDEs for remote development? | Hacker News _202403](https://news.ycombinator.com/item?id=39732329)
 - Emacs + tramp to use local editor. Maybe not quite as good as VS-code's client/server based tools, but I believe tramp does not require any special software to be installed on the server so it pretty much always works.
 
-- ## [Visual Studio Code is designed to fracture(折断；断裂；破裂) (2022) | Hacker News _202409](https://news.ycombinator.com/item?id=41691577)
+- ## 🤼🏻 [Visual Studio Code is designed to fracture(折断；断裂；破裂) (2022) | Hacker News _202409](https://news.ycombinator.com/item?id=41691577)
 - > Extensions are not sandboxed
   - Extensions often rely on third-party binaries (such as Language Servers, kubectl, ssh or even git itself), internet access (SAAS providers, pulling data or definitions, ...) and on your filesystem (SSH Config, Kubernetes config, Config folder in your home, ...). Sandboxing these extensions is not easy unless everything is configured within VSCode which is rarely the case.
   - As far as I know, extensions are not sandboxed either on Emacs, (Neo)vim, Jetbrains IDEs.

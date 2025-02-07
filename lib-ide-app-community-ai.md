@@ -185,12 +185,20 @@ modified: 2024-08-24T16:28:20.515Z
 - how does bolt․new run in a browser tab without virtual machines?
   - The secret sauce is WebContainers, our micro-OS that runs a full web development environment inside your browser tab. 
 
-- ## [Show HN: Void - open source Cursor AI code editor | Hacker News _202409](https://news.ycombinator.com/item?id=41523197)
+- ## 🚀 [Show HN: Void - open source Cursor AI code editor | Hacker News _202409](https://news.ycombinator.com/item?id=41523197)
 - [Show HN: Void, an open-source Cursor/GitHub Copilot alternative | Hacker News _202409](https://news.ycombinator.com/item?id=41563958)
 
-- 
-- 
-- 
+- I'm Andrew, one of the creators of Void. 
+  - we're building Void as a fork of vscode. The repo has great documentation for extensions, but going deeper gets pretty involved. All of the code is OOP-based, and they mount DOM nodes the old-school way (which is what React was supposed to solve..). So adding new UI features isn't exactly trivial. 
+  - Microsoft also made its extension marketplace closed-source 
+
+- As someone who has recently tried to refactor our app atop of VSCode (treating it like a platform), we got burned by the UI design decisions that are not straightforward to overcome, let alone maintain. The closed-source MS marketplace did not help either towards our OSS goals.
+
+- I remember Atom was refactored to use manual DOM updates because the performance penalty of using React wasn't worth it. By the way, isn't OOP by far the most popular paradigm for building desktop UIs? I imagine VS Code is a difficult codebase to work with that has a lot of intricate code 
+  - I have spent a great deal of time wading through the VS Code codebase and it takes OOP to the extreme. There are mile long inheritance chains, everything is a class, and it is a giant bowl of spaghetti. To some extent, I understand why they used that development approach. It doesn't use a UI framework, just DOM APIs, so classes make sense in lieu of components, but it's still bonkers.
+  - My day job is desktop development (with Electron), and I avoid OOP as much as I can and try to use a functional approach. After jumping all over the VS Code codebase to try to understand how some of this stuff works, and seeing how hard it is to navigate, I think heavy OOP is a bad idea.
+
+- Always interesting to hear such claims when graphic editors like Penpot, which have much tighter perf requirements than editors, are so fast while using React.
 
 - ## Introducing Zed AI, in collaboration with @anthropicAI . _20240821
 - https://x.com/zeddotdev/status/1825967812629631034

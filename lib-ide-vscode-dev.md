@@ -15,6 +15,7 @@ modified: 2024-08-24T16:15:11.456Z
   - theia is licensed under EPL, not as friendly as vscode/MIT
 
 - cons
+  - insecure/non-sandboxed，但微软设计就是如此，支持在本地或远程执行代码
   - vscode插件市场归微软所有，第三方不可用
 
 - features

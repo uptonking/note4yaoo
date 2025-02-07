@@ -144,6 +144,19 @@ expect(o3).toEqual({ foo: 2, bar: 'hello'})
 # discuss-functional
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [If Inheritance is so bad, why does everyone use it? | Hacker News _202404](https://news.ycombinator.com/item?id=39999019)
+- The key is "prefer composition to inheritance" and dates back to Gang of Four.
+
+- Nobody calls it this, but cascading styles in CSS is just like inheritance and I think should be avoided for all the same reasons. I feel it's a big part of why CSS at scale becomes unmaintainable. There isn't even a built-in way to compose two classes together if you want to avoid cascading/inheritance.
+
+- 
+- 
+- 
+
 - ## [What is a simple explanation of Decorators in JavaScript and how useful is it in functional programming - Stack Overflow](https://stackoverflow.com/questions/50168239/what-is-a-simple-explanation-of-decorators-in-javascript-and-how-useful-is-it-in)
 - Decorators are specific to classes. As long as you don't mix OOP and FP, they aren't useful. 
 - The other benefit of using functional programming is that, the testing becomes super easy because you have to test individual functions and while coding in react, it saves a lot of your time and energy. I use `recompose` all the time and don't even use the `class` keyword.

@@ -64,6 +64,20 @@ modified: 2023-12-15T19:40:39.912Z
 - https://twitter.com/gunnarmorling/status/1762719948709806338
   - Yes, finally! Being able to use Markdown in #JavaDoc should make live a bit easier. Can't wait!
 
+- ## 🎯 [A Picture of Java in 2020 | Hacker News _202009](https://news.ycombinator.com/item?id=24551390)
+- 
+- 
+- 
+
+- What are "all the limitations" of the Servlet spec?
+- Already back in 2003, Greg Wilkins, the author of the Jetty Web container and contributor to the Servlet specifications, blogged about some issues with Servlets:
+  - No clear separation between the protocol concerns and the application concerns.
+  - Unable to take full advantage of the non-blocking NIO due to blocking IO assumptions.
+  - Full Servlet Web containers are overkill for many applications.
+
+- 
+- 
+
 # discuss
 - ## 
 
