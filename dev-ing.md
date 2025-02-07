@@ -343,6 +343,17 @@ console.log(
   - live模式显示弹窗
   - 回放模式显示红色背景的文件快照
 
+## 0207
+
+- 昨天
+  - 因为有些紧急issue无法复现也没有日志，在clacky前端给pass初始化流程和重要事件添加了日志
+  - 将前端日志从rum迁移到和后端统一的查看位置，并在文档上记录了clacky日志的格式约定
+- 今天
+  - 处理cde高优先级的issues，解决影响近期发版的问题
+
+- [Typescript: No index signature with a parameter of type 'string' was found on type '{ "A": string; } - Stack Overflow](https://stackoverflow.com/questions/56568423/typescript-no-index-signature-with-a-parameter-of-type-string-was-found-on-ty)
+  - (this. DNATranscriber as any)[character]; 
+
 ## 0206
 
 - 昨天
