@@ -115,6 +115,12 @@ modified: 2020-07-17T10:54:16.341Z
   - 2021年在 MIUI 13 中推出全新系统字体 MiSans, 加入了丰富的 OpenType Features
   - 2023年在全新系统 Xiaomi HyperOS 中推出全球语言定制字体项目— MiSans Global。这是一个庞大的字体家族，涵盖 20 多种书写系统，支持 600 多种语言，字符数量累计超过10万个。
 
+- https://github.com/jaywcjlove/free-font /MIT/202502/js
+  - https://wangchujiang.com/free-font/
+  - 收录可商用的免费英文/汉字字体
+  - 收录数量高达 926+ 个，不仅收录了免费可商用汉字字体，还收录一些开源英文字体。
+  - 并且按黑体、宋体、楷体、艺术体以及手绘体等做了字体分类，可在线查找并快速下载字体包。
+
 ## dev-fonts
 
 - [MonoLisa - font follows function](https://www.monolisa.dev/)
@@ -174,6 +180,12 @@ modified: 2020-07-17T10:54:16.341Z
   - 以下是 pinyin-pro、pinyin 及 @napi-rs/pinyin 包对于汉字转换的速度及准确率对比表
   - 应用 AC 自动机 + 贪心算法 + 动态规划等算法，可在 1 秒内完成数百万规模中文拼音的转换
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 🆚 [What is difference between CSS em and ch units? - Stack Overflow](https://stackoverflow.com/questions/48649169/what-is-difference-between-css-em-and-ch-units)

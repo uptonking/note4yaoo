@@ -67,7 +67,19 @@ modified: 2024-08-24T16:28:20.515Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 📌 AI辅助编程的几类产品
+- https://x.com/idoubicc/status/1888042418446139837
+  1. AI代码编辑器，面向职业程序员，辅助写代码，debug，设计技术方案。代表产品：cursor, windsurf, trae
+  2. 一句话生成项目，面向产品经理，输入 idea，快速实现一个 MVP，支持在线发布，快速验证需求，能实现简单的交互功能。代表产品：bolt, lovable, v0
+  3. 指定品牌名生成落地页，面向电商卖家 / 独立创作者，快速为自己的商品或品牌生成一个 landing page , 支持在线编辑，一键发布。代表产品：pagen, wegic
+  4. 输入 URL 或上传截图，快速复刻项目/组件，面向开发者，参考目标网站写页面的场景。代表产品：screenshottocode, copycoder 
+  5. 其他辅助场景：一句话生成桌面/移动 App， 一句话生成管理后台，一句话生成 SQL 语句，一句话生成 API
+
+- 尝试了一下落地页 AI 辅助工具，真心不错。
+
+- 还有一类openhands，devin
+
+- 几乎都在用
 
 - ## 🤔 How Cline works 这两天一直在看 Cline 的源码，探究当前 AI Coding 编辑器背后的神秘技术。 _202501
 - https://x.com/xiaokedada/status/1882697004670992774

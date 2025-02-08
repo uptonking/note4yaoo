@@ -12,20 +12,24 @@ modified: 2021-08-22T07:29:34.045Z
 # discuss-editor-ai 👾
 - ## 
 
-- ## 
+- ## Nice blur transition to expose the CoT without overwhelming the conversation scroll view.
+- https://x.com/Gavmn/status/1887919024589226082
+- what’s your thoughts on the vertical carousel between different thoughts? Some of them are a bit fast that I can’t read it
+  - It's definitely a bit fast in this example. Most of the time I see it it's slow enough that I can read a bit before it changes
+
+- I like how Deepseek has it, I want to see what it's thinking
 
 - ## Did you see my @vercel AI text editor integration? You can select text and ask AI to simplify, add detail, translate, and more.
 - https://x.com/ctnicholasdev/status/1882829374585786732
   - Soon we'll be enabling this with first-party components at @liveblocks .
   - [Building an AI toolbar for text editors | Chris Nicholas | Developer experience at Liveblocks _202407](https://chrisnicholas.dev/blog/building-an-ai-toolbar-for-text-editors)
+
 # discuss
 - ## 
 
 - ## 
 
 - ## 
-
-
 
 - ## ✨ Did you know you can add section headers to the minimap of @code ? 
 - https://x.com/CSSWeekly/status/1806625178878619984

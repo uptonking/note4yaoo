@@ -20,7 +20,9 @@ Symbol('a') === Symbol('a'); //false
 
 - ## 
 
-- ## 
+- ## JavaScript errors have a `stack` property for where it originates
+- https://x.com/aidenybai/status/1887896351922614493
+- The key is that it’s where it _originates_ not where it’s thrown. So defining an Error as a constant or in an outer scope and then throwing it in business logic can make debugging really confusing
 
 - ## how we see strings: v8 vs js
 - https://twitter.com/hd_nvim/status/1749922260478263740

@@ -39,7 +39,9 @@ modified: 2024-02-28T08:22:23.107Z
 
 - ## 
 
-- ## 
+- ## Are Joins over LSM-trees Ready: Take RocksDB as an Example
+- https://x.com/AlexMillerDB/status/1887650072990543969
+  - > We implement all 29 join methods within our configuration space [...] to derive guidelines for join method selection in LSM-based stores.
 
 - ## I am reviewing the literature around LSM based storages as I am planning to write a toy etcd compatible DB.
 - https://twitter.com/tangledbytes/status/1762732282627203233

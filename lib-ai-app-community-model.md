@@ -88,7 +88,15 @@ modified: 2023-10-30T07:34:03.602Z
 # discuss-ai-api/tools
 - ## 
 
-- ## 
+- ## 海外大模型接入使用openrouter 已经是最佳实践了嘛？
+- https://x.com/leeoxiang/status/1887714022327525797
+  1、支持了市面上大部分模型；
+  2、可以设置模型的消耗额度；
+  3、能支持模型的负载均衡；
+  4、支持一套api适配大多数模型；
+  5、支持多个模型的失败重试；
+
+- 太贵了！而且特殊模型还是要添加自己的API Key
 
 - ## We ( @jamesmurdza ) have been building Open Computer Use - 100% open source computer use agent.
 - https://x.com/mlejva/status/1877054558481813799
@@ -135,7 +143,16 @@ modified: 2023-10-30T07:34:03.602Z
 # discuss-llm-architecture
 - ## 
 
-- ## 
+- ## DeepSeek最大的创新，是不需要大量的人工标注，而是直接从其他大模型蒸馏或者使用群体相对策略优化算法（GRPO）、CoT（自我反思）来给大模型反馈，
+- https://x.com/seclink/status/1888011462008005030
+  - 就相当于完全使用RL（或者另一个基础大模型）来替代人工标注了。
+  - 这实际上是抢了Scale AI 这种公司的蛋糕，DeepSeek牛X之处在于，很多老外一开始不信，然后照着论文里的方法快速（局促地）复现，却发现竟然也能复现成功。
+
+- cot和蒸馏之前，就通过grpo进行rl获得了相当不错的推理能力。。你这整理的不清晰。
+
+- 这没有任何创新，GPT1就用了同样的方法，而且现在不使用是有理由的。因为deepseek模型本身不行，一个query需要RL chain才能达到可接受的答案，致使inference 效率低到可怕，虽然training便宜，但是operation cost要多好几倍，得不偿失
+
+- 你这个说的完全不对，CoT是GPT发明的，蒸馏也早就有了，RL也早就有了，deepseek是发明了RL里的GRPO
 
 - ## I read up on DeepSeek’s learning algo, GRPO. GRPO: group relative policy optimization
 - https://x.com/virattt/status/1885102056546910672

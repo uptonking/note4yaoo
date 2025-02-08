@@ -22,7 +22,13 @@ modified: 2020-12-08T13:27:56.600Z
 
 - ## 
 
-- ## 
+- ## One design mistake in Solid 1.0 was supporting multiple ways to write props in JSX types. _202502
+- https://x.com/RyanCarniato/status/1888008017171644777
+  - I thought it good to do both lowercase and camelCase as HTML is case insensitive. 
+  - This is bad for wrapping native elements because Component authors need to check multiple properties.
+  - Solid types are not the same as React as we don't transform attributes. We have `aria-role` not `ariaRole` . Camelcasing is for things like `disableRemotePlayback` . This is important for performance and inlining stuff for templates and SSR. And we will not be adopting Reacts convention completely.
+
+- Mostly camelCase because JS. If Solid have used templates I think otherwise. But JSX makes JS and the “X” blending in a way it’s hard to separate
 
 - ## I often get asked about the difference between different reactive libraries and approaches
 - https://twitter.com/RyanCarniato/status/1624105311425675264

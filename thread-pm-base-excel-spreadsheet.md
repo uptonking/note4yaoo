@@ -20,6 +20,7 @@ modified: 2022-04-23T18:48:32.550Z
 - ## how about version control for spreadsheets? Here's Patchwork added to a @handsontable data grid.
 - https://twitter.com/_adamwiggins_/status/1775523348430069853
   - Here an edit is selected in the history, highlighting the diff on the document.
+
 # discuss
 - ## 
 
@@ -27,7 +28,11 @@ modified: 2022-04-23T18:48:32.550Z
 
 - ## 
 
-- ## 
+- ## What if a spreadsheet cell could hold multiple values at the same time?
+- https://x.com/alexwarth/status/1886915048309973164
+  - That's the idea behind Ambsheets, a project I've been working on w/ @geoffreylitt at @inkandswitch . It's a new spreadsheet that makes it easier for you to explore many possibilities simultaneously.
+  - [Ambsheets: Spreadsheets for exploring scenarios](https://www.inkandswitch.com/ambsheets/)
+- Microsoft Excel array constants?
 
 - ## 👾 who’s working on the spreadsheet for generative ai?
 - https://twitter.com/JungleSilicon/status/1771196431115710496

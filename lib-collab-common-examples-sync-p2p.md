@@ -26,6 +26,8 @@ modified: 2023-01-17T19:13:01.845Z
   - apps/zbugs: The bug tracker app.
   - packages/replicache: The replicache client library.
   - Reflect is no longer under development.
+  - https://github.com/cbnsndwch/zero-sources
+    - A collection of utilities and custom change sources for @rocicorp/zero
 
 - https://github.com/powersync-ja/powersync-service /FSL-1.1-Apache-2.0(2y)/202406/ts
   - https://www.powersync.com/

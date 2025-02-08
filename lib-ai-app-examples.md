@@ -42,6 +42,10 @@ modified: 2023-02-08T07:20:48.475Z
   - https://x.com/nickscamara_/status/1886459999905521912
     - This is an experimental clone of Open AI's Deep Research. Instead of using a fine-tuned version of o3, this method uses Firecrawl's extract + search with a reasoning model to deep research the web.
 
+- https://github.com/nicolasmontone/ai-sdk-agents /202502/ts
+  - https://ai-sdk-agents.vercel.app/
+  - Tools for Vercel AI SDK
+
 - https://github.com/Doriandarko/maestro /202406/python
   - ⛓️ A framework for Claude Opus to intelligently orchestrate subagents.
   - This Python script demonstrates an AI-assisted task breakdown and execution workflow using the Anthropic API. 

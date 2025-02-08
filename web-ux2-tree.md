@@ -27,6 +27,23 @@ modified: 2021-07-31T20:02:07.392Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 大家都是如何缓解这个问题的: 文件树层级过深
+- https://x.com/zhdsuperman/status/1888156379715952864
+- vscode会默认把一堆层级显示成一个文件夹
+- 设置里开一下：减小缩进宽度 + 显示目录定位线
+
+- 不用 nextjs
+  - remix 用 . 而不是 / 符号分割，内部做转换好一点的
+
+- 用next这种基于文件系统的路由自动配置方式就会有这个问题，但是好处也很明显，时时刻刻提醒开发者要注意URL语义化问题
+  - 解决方法就是换一个更宽的带鱼屏
+
 - ## Accordion versus TreeView and the DataGrid in the navigation data in Silverlight.__201207
 - https://www.codeproject.com/Articles/415759/TreeView-vs-Accordion-vs-DataGrid
 - In this application, in my opinion better is to use the Accordion. When we use only a single level hierarchical data.

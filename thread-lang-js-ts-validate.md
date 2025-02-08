@@ -18,6 +18,9 @@ modified: 2023-08-16T15:50:16.335Z
 - https://x.com/colinhacks/status/1883907825384190418
   - It's a specification for a "common interface" to be implemented by all TypeScript schema libraries, written collaboratively by the the creators of Zod, Valibot, and ArkType to promote interoperability.
 
+- https://x.com/gregberge_/status/1887482628347248696
+  - The creators of Zod, Valibot and ArkType have agreed on a common interface for schema validation libraries!
+
 - ## Did you know you can use the built-in browser validation API with JavaScript to control how error messages are rendered? Besides the simplicity, you also get i18n for free.
 - https://twitter.com/diegohaz/status/1526874008049811461
 

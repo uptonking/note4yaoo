@@ -111,12 +111,16 @@ git log --online --graph --decorate
 - ## The next hypermedia platform should be based on Git. Creating a text file in a Git repo should be all you need to participate. 
 - https://x.com/msimoni/status/1884333920080257053
   - In contrast to plain HTTP, Git also solves incremental updates efficiently, so everyone can locally store a complete copy of the sites they follow.
+
 # disccuss
 - ## 
 
 - ## 
 
-- ## 
+- ## what is .gitignore is added in .gitignore file
+- https://x.com/GithubProjects/status/1887402959136260482
+- gitignore ignoring itself like a true recursion pro 
+- This doesn’t work. 
 
 - ## [How to fetch all git history after I clone the repo with `--depth 1` ? - Stack Overflow](https://stackoverflow.com/questions/29270058/how-to-fetch-all-git-history-after-i-clone-the-repo-with-depth-1)
 

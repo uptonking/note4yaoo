@@ -388,6 +388,7 @@ modified: 2023-06-07T14:19:18.719Z
 - https://github.com/piotrkulpinski/openalternative /GPLv3/202502/ts
   - https://openalternative.co/
   - A community driven list of open source alternatives to proprietary software and applications.
+  - item默认展示为卡片，点击item会进入详情页，支持filter
   - OpenAlternative is currently written in Remix. 
 
 ## more-app-store

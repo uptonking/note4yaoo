@@ -67,7 +67,12 @@ modified: 2024-08-24T16:52:53.996Z
 
 - ## 
 
-- ## 
+- ## No more Azure Data Studio - use VS Code  instead! _202502
+- https://x.com/ErikEJ/status/1887583795957895355
+- I never understood ADS- why did they fork VSCode to begin with rather than just making an extension? That and the awful name change from SQL Data Studio doomed it as a standalone product.
+
+- If you are on Windows, just use SSMS
+- Hoping that VS Code has the same capabilities as ADS. Preferred ADS to SSMS for day to day stuff and also because it doesn't freeze up and crash/restart like SSMS tends to do. 
 
 - ## [I can't stand using VSCode so I wrote my own | Hacker News _202404](https://news.ycombinator.com/item?id=40106157)
 - This is the way. Anytime I have had issues with an open source project, creating a PR even if it's not great will often have it taken over, improved and merged.
@@ -78,7 +83,6 @@ modified: 2024-08-24T16:52:53.996Z
 - One of the benefits of Electron is being able to build the same app for multiple operating systems. When writing GUI app using native OS calls, how does one make sure the code is compatible with all three major operating systems?
   - Folks did this plenty prior to Electron, either by using cross-platform GUI toolkits (GTK and Qt both run on Windows, Java's been doing this forever with Swing and JavaFX, etc), or by writing GUIs for multiple toolkits/OSes that work with the same/similar core application logic.
   - Electron makes it easier to build cross-platform apps, and certainly cheaper, but it's not like it's the only way to do it.
-
 
 - ## 🔍 [Visual Studio Code: Secrets of Regular Expression Search | by Nikhilbaxi | Medium _202309](https://medium.com/@nikhilbaxi3/visual-studio-code-secrets-of-regular-expression-search-71723c2ecbd2)
 - (.+) : This is used to find the content between the unknown. For example, we need to find where the API call is defined.

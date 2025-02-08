@@ -9,7 +9,23 @@ modified: 2023-09-25T07:59:51.843Z
 
 # guide
 
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## Recently, we've been experimenting to find more performant patterns to follow for TanStack Virtual. _202502
+- https://x.com/KevinVanCott/status/1886846584320643234
+  - It mostly involves skipping React as much as possible.
+- Isn't React Compiler supposed to solve these kinds of performance bottlenecks?
+  - Kind of, but doing manual dom style or css variable updates will always be faster than going through a virtual dom, no matter how much of everything else is properly memoized.
+  - @SCooperDev has a great talk on this that has been getting to think more about how we can "skip" React rendering for certain DOM updates more often.
+
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## I love this article from @ag_grid talking about their learnings in data grid perf (which is hard) over the years.

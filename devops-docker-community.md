@@ -100,7 +100,20 @@ modified: 2024-06-30T11:17:28.971Z
   - Wine是一款用于在Linux上运行Windows程序的运行时，既不提供虚拟化也不提供容器化（除非你使用包含容器功能的第三方wine发行版）。
 - KVM是Linux的一个内核模块，提供内核级的虚拟化支持。
 - Qemu是一款虚拟机软件。在Linux上通常和KVM配合使用。
+# discuss-virtualized-cloud
+- ## 
+
+- ## 
+
+- ## Cloud virtualization: Red Hat, AWS Firecracker, and Ubicloud internals provides a great conclusion to cloud virtualization in the 2020s.
+- https://x.com/OnlyXuanwo/status/1887015517745242186
+  - [Cloud virtualization in the 2020s](https://xuanwo.io/links/2025/02/cloud-virtualization/)
+
 # discuss-container
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 发现同节点的两个容器之间的吞吐量只有跨节点的 30%，
