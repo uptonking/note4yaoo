@@ -30,6 +30,8 @@ modified: 2022-08-21T10:14:49.838Z
 - 数据管理的难题
 
 - [我攻克的技术难题--在线 Excel 项目到底有多刺激 ](https://cloud.tencent.com/developer/article/2379452)
+- [在线Excel项目到底有多刺激 | 被删的前端游乐场](https://godbasin.github.io/front-end-playground/front-end-basic/deep-learning/why-spreadsheet-app-excited.html)
+  - 一列些office开发相关的文章
 
 ## [精读《高性能表格》_202104](https://zhuanlan.zhihu.com/p/364094849)
 

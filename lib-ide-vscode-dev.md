@@ -10,12 +10,14 @@ modified: 2024-08-24T16:15:11.456Z
 # guide
 
 - pros
-  - 完善的编辑器和ide功能，包括 editor/workbench/files/search/ext/cmd-palette
-  - 支持运行在多种环境，如 web-memory, web-node-server, electron
-  - theia is licensed under EPL, not as friendly as vscode/MIT
+  - reliable, 开源十几年，有商业公司和开源社区持续投入
+  - MIT, theia is licensed under EPL
+  - 完善的编辑器和ide架构，包括 editor/workbench/files/search/ext/cmd-palette
+  - 支持运行在ci多种环境，如 web-memory, web-node-server, electron
+  - 实现了很多git操作的ui和展示的ui，可作为git客户端
 
 - cons
-  - insecure/non-sandboxed，但微软设计就是如此，支持在本地或远程执行代码
+  - insecure/non-sandboxed by design, 但微软设计就是如此，支持在本地或远程执行代码
   - vscode插件市场归微软所有，第三方不可用
 
 - features
@@ -37,15 +39,22 @@ modified: 2024-08-24T16:15:11.456Z
   - 参考设计 capabilities
   - [Visual Studio Code for Education](https://vscodeedu.com/)
 # draft
-- vscode提供了electron和web模式，未提供纯前端模式
+- toys
+  - version-history for prosemirror/codemirror
+  - hocuspocus collab for file-tree/tabs
+  - file-provider
+  - ui-skin
 
-- 删除文件的回收站
+- vscode提供了electron和web模式，未提供纯前端模式
 
 - ide-ai
   - editor-control MCP, 让ai操作编辑器的协议
 
 - 文件操作基于文件实现，如何基于数据库实现
   - 参考markdown-database的实现和数据同步
+- 删除文件的回收站
+
+- 构建工具迁移到respack/vite
 # dev-xp
 
 ## hot-keys

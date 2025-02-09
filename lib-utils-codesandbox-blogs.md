@@ -173,6 +173,29 @@ Function('str', 'console.log(str, aaa)')('aaa:');
   - 易于集成到C/C++项目中：将duktape.c, duktape.h，和duk_config.h添加到的构建项目中，然后使用Duktape API实现 C 代码与 Ecmascript 函数的双向调用。
 # blogs-iframe
 
+## [打破iframe安全限制的3种方案 | 黯羽轻扬](https://www.ayqy.net/blog/%e6%89%93%e7%a0%b4iframe%e5%ae%89%e5%85%a8%e9%99%90%e5%88%b6%e7%9a%843%e7%a7%8d%e6%96%b9%e6%a1%88/)
+
+- 禁止页面被放在iframe里加载主要是为了防止点击劫持（Clickjacking）
+
+- 对于点击劫持，主要有 3 项应对措施：
+  - CSP（Content Security Policy，即内容安全策略）
+  - X-Frame-Options
+  - framekiller
+
+- 如果无法通过iframe嵌入，那么，有办法打破这些限制吗？
+- 既然主要限制来自 HTTP 响应头，那么至少有两种思路：
+  - 篡改响应头，使之满足iframe安全限制
+  - 不直接加载源内容，绕过iframe安全限制
+- 另一种思路很有意思，借助Chrome Headless加载源内容，转换为截图展示到iframe中。例如Browser Preview for VS Code
+  - 全套交互事件都需要适配支持，例如双击、拖拽
+  - 部分功能受限，例如无法拷贝文本，不支持播放音频等
+
+- 客户端拦截
+  - 要拦截篡改 HTTP 响应，最先想到的，自然是 Service Worker
+- 代理服务转发
+  - 基本思路是通过代理服务转发源请求和响应，在转发过程中修改响应头甚至响应体
+  - 客户端iframe不再直接请求源资源，而是通过代理服务去取
+
 ## [初探富文本之React实时预览](https://github.com/WindrunnerMax/EveryDay/blob/master/Plugin/%E5%88%9D%E6%8E%A2%E5%AF%8C%E6%96%87%E6%9C%AC%E4%B9%8BReact%E5%AE%9E%E6%97%B6%E9%A2%84%E8%A7%88.md)
 
 - 在上文中我们一直是使用限制用户访问全局变量或者是隔离当前环境的方式来实现沙箱，

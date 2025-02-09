@@ -10,8 +10,8 @@ modified: 2023-03-24T05:06:08.832Z
 # guide
 - sdk参考
   - countly
-  - 实时类: powersync-js, y-sweet-sdk, e2b-sandbox, codesandbox, replit
-  - 监控类: OpenTelemetry
+  - 实时类: powersync-js, y-sweet-sdk, e2b-sandbox, codesandbox, replit, Chrome DevTools
+  - 监控类: OpenTelemetry, debug
 # popular
 - https://github.com/makenotion/notion-sdk-js
   - https://developers.notion.com/docs

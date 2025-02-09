@@ -43,6 +43,13 @@ modified: 2023-12-26T19:10:48.719Z
   - 本文会先介绍webpack的打包流程，运行原理，然后去实现一个简单的webpack
   - 识别入口文件，逐级递归识别依赖，构建依赖图谱，将代码转化成AST抽象语法树，把AST抽象语法树变成浏览器可以识别的代码， 然后输出
 
+- https://github.com/lzy19926/tiny_webpack_test /202404/js/inactive
+  - 原生JS手写简易webpack+手写React测试项目
+  - [手把手教你手写一个webpack (webpack核心原理)前言 _202207](https://juejin.cn/post/7124958847059361828)
+  - [图解webpack核心源码架构 ](https://juejin.cn/post/7224402365453074490)
+  - 我这个版本省去了webpack中的tapable库和loader, plugin。只保留了最简单的核心原理
+  - [webpack核心库 - tapable的设计思路与核心源码解析 ](https://juejin.cn/post/7216604612404052026)
+
 - https://github.com/romanticu/simple_webpack /201904/js
   - [理解webpack原理，手写一个100行的webpack - 知乎](https://zhuanlan.zhihu.com/p/58151131)
 
