@@ -59,8 +59,8 @@ modified: 2024-08-24T16:15:11.456Z
 
 ## hot-keys
 
-- Navigate back:     Ctrl+Alt+-
-- Navigate forward:  Ctrl+Shift+-
+- Navigate back:     Ctrl-Alt--
+- Navigate forward:  Ctrl-Shift--
 
 - Move line up and down: Alt+Up/Down
 - Copy line up / down: Ctrl+Shift+Alt+Up/Down

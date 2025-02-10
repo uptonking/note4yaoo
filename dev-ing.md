@@ -347,11 +347,27 @@ console.log(
 
 - 上周
   - 调整前端日志接入观测云的方式，补充主要流程节点的日志，方便排查用户反馈
-  - 处理近期反馈的高优先级issues，如扩容提示、cmdL改为cmdShiftL
+  - 处理近期反馈的高优先级issues，如扩容提示消息、cmdL改为cmdShiftL
+- 本周
+  - 继续处理近期反馈的高优先级issues
+  - 开发本次迭代规划的需求
 - 今天
-  - 处理跟随时打开已删除文件时遇到异常大弹窗的问题
+  - 测试跟随时打开已删除文件时遇到异常大弹窗的问题
   - 最近又收到新建文件类型的action执行后在文件树不显示的反馈，找到了稳定复现的方法，今天会解决此问题
   - 处理近期反馈的高优先级issues
+
+- [Feat/fix bugs 0116 time-machine action click enhancement by huisnotacouncillor · Pull Request #491 · clacky-ai/clacky-ai-frontend](https://github.com/clacky-ai/clacky-ai-frontend/pull/491)
+
+- [get the second to last item of an array? - Stack Overflow](https://stackoverflow.com/questions/6499012/get-the-second-to-last-item-of-an-array)
+
+```JS
+array_fragment[array_fragment.length - 2]
+
+path.split('/').slice(-2)[0];
+path.split('/').slice(-2).reverse().pop()
+
+path.split('/').reverse()[1];
+```
 
 ## 0208
 
