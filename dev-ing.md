@@ -284,6 +284,10 @@ console.log(
   agentUserId,
   event,
 );
+
+console.trace(';; loadFile', path, loadType);
+
+// apps/webapp/src/components/pull-request-box/commit/commit-message.tsx
 ```
 
 ```
@@ -342,6 +346,15 @@ console.log(
 - action-删除文件
   - live模式显示弹窗
   - 回放模式显示红色背景的文件快照
+
+## 0211
+
+- 昨天
+  - 测试跟随时打开已删除文件时遇到异常大弹窗的问题，今天会合到staging
+  - 修复与上面类似的问题，执行新建文件夹时编辑器一直loading
+- 今天
+  - 修复执行新建文件夹时编辑器一直loading
+  - ai执行时，ai和用户头像没有定位到文件树对应文件的问题
 
 ## 0210
 
