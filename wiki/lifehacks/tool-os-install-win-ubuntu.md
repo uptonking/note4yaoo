@@ -135,6 +135,7 @@ modified: 2023-04-11T02:24:25.572Z
     - 方法2: flatpak override pkg.id --filesystem=/home/user
 - sudo apt-get install flatpak
   - flatpak remotes -d 显示仓库url
+  - [上海交通大学 软件源镜像服务 flathub](https://mirror.sjtu.edu.cn/docs/flathub)
   - sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
   - sudo flatpak remote-modify flathub --url=https://mirror.sjtu.edu.cn/flathub
   - [给flatpak添加国内镜像源](https://seekstar.github.io/2021/12/30/%E7%BB%99flatpak%E6%B7%BB%E5%8A%A0%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F%E6%BA%90/)

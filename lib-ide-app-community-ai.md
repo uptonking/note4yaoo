@@ -105,7 +105,11 @@ modified: 2024-08-24T16:28:20.515Z
 # discuss-autocomplete/ai
 - ## 
 
-- ## 
+- ## Introducing the next evolution of completions in GitHub Copilot: Next Edit Suggestions (preview). _20250213
+- https://x.com/code/status/1889742273572737247
+  - Also called, "NES" for short.
+
+- GitHub Co-Pilot is the new internet explorer
 
 - ## 💡 [LSP-AI: open-source language server serving as back end for AI code assistance | Hacker News _202406](https://news.ycombinator.com/item?id=40617082)
   - LSP-AI abstracts complex implementation details like maintaining document / context parity and providing different LLM backends.
@@ -133,7 +137,20 @@ modified: 2024-08-24T16:28:20.515Z
 
 - ## 
 
-- ## 
+- ## 🌰 Tiny teams are the future:
+- https://x.com/benln/status/1889388151770325427
+  • Cursor: 0 to $100M ARR in 21 months w/ 20 people
+  • Bolt: 0 to $20M ARR in 2 months w/ 15 people
+  • Lovable: 0 to $10M ARR in 2 months w/ 15 people
+  • Mercor: 0 to $50M ARR in 2 years w/ 30 people
+  • ElevenLabs: 0 to $100M ARR in 2 years w/ 50 people
+
+- Yes! Mobile had this but smaller.
+  • Vine – 0 to 1M users in 3 months w/ <10 people
+  • Instagram – 0 to 30M users in 18 months w/ 12 people 
+  • Snapchat – 0 to 100M users in 3 years w/ 50 people
+  • WhatsApp – 0 to $1B revenue w/ 55 people
+  - Measured in users not ARR
 
 - ## 为啥字节有了 MarsCode 还要推出一个新的叫 Trae 的 IDE？还是资源太丰富了，内卷的厉害
 - https://x.com/_hisriver/status/1881210064083808393

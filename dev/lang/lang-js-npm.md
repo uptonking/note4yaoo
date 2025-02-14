@@ -280,3 +280,19 @@ npm unlink
   - A monorepo for an organization can consist of hundreds of packages, many of them are applications, built by multiple independent team using different tools.
   - Lerna is optimized for the former. Nx is optimized for the latter.
 - [团队工程实践 - 基于lerna打造monorepo工作流](https://juejin.im/post/6894434733355188232)
+# discuss-stars-npm
+- ## 
+
+- ## 
+
+- ##  `npm install` was 2x slow with the progress bar turned on
+- https://x.com/zack_overflow/status/1889055506549047372
+  - Why? Because they were updating the progress bar every tick
+  - And writing to stdout every tick is slow cause IO
+
+# discuss-npm
+- ## 
+
+- ## 
+
+- ## 

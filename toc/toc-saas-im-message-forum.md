@@ -622,6 +622,9 @@ modified: 2021-05-14T15:04:15.333Z
   - Chat with Hacker News using natural language. Built with OpenAI Functions and Vercel AI SDK.
 - https://github.com/rajeshdavidbabu/pdf-chat-ai-sdk /MIT/202403/ts
   - AI powered Next.js app to chat with your PDF files and get a streamed response using Vercel's AI SDK, Langchain and PineconeDB
+- https://github.com/FradSer/next-ai-starter /MIT/202501/ts
+  - This Next.js project, built with create-next-app, integrates the Vercel AI SDK for AI capabilities and shadcn/ui for a customizable interface
+  - App Router实现了基本的页面跳转逻辑
 
 - https://github.com/slackapi/node-slack-sdk /MIT/202406/ts
   - https://slack.dev/node-slack-sdk

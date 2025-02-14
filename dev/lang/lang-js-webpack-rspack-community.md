@@ -14,7 +14,13 @@ modified: 2024-01-03T16:14:53.804Z
 
 - ## 
 
-- ## 
+- ## I just discovered that nearly all bundlers(rspack webpack rollup esbuild) handle module externals incorrectly(or not following spec).
+- https://x.com/hardfist_1/status/1889287024743723053
+  - It seems impossible to do it right unless bring lots of runtime code and bring ugly output result.
+- defer import may help solve this problem
+  - Module declarations could also solve it.
+- keep esm ordering semantics is really hard and will introduce extra cost, it actually not only cause problems for external but also cause problems for advanced chunk optimization like code splitting and bundle splitting
+
 # discuss-internals
 - ## 
 

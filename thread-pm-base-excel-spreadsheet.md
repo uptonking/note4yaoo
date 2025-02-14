@@ -21,12 +21,23 @@ modified: 2022-04-23T18:48:32.550Z
 - https://twitter.com/_adamwiggins_/status/1775523348430069853
   - Here an edit is selected in the history, highlighting the diff on the document.
 
+# discuss-table-ux
+- ## 
+
+- ## 
+
+- ## Here are 6 simple tips to help you design beautiful & usable tables
+- https://x.com/MichaelFilipiuk/status/1888890604392001834
+
 # discuss
 - ## 
 
 - ## 
 
 - ## 
+
+- ## Notion: Type /database to try it with ai
+- https://x.com/NotionHQ/status/1890106240425918827
 
 - ## What if a spreadsheet cell could hold multiple values at the same time?
 - https://x.com/alexwarth/status/1886915048309973164

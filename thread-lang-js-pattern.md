@@ -59,6 +59,14 @@ modified: 2023-11-10T08:05:12.852Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## the cloneable class pattern in TypeScript 
+- https://x.com/colinhacks/status/1889617191231713568
+- Is it more performant than just creating a new one?
+
 - ## JavaScript's most important feature is that "errors" don't crash the program.
 - https://x.com/cpojer/status/1880728065703366840
   - Imagine if your browser crashed for every JS error, or if developers had to handle every error before being able to ship. The web would basically not exist as a platform without this.

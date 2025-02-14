@@ -27,3 +27,11 @@ modified: 2020-12-21T07:47:15.858Z
       - subplot重复操作时如果前后两次的划分方式不一致时，会做必要的历史图形清理
   - 标签区
     - 用来展示图形相关标签的地方，该区域根据图形区进行扩展，与该区域有关联的函数是pyplot.xlabel()、pyplot.ylabel()、pyplot.title()等
+# discuss-graphics-cs
+- ## 
+
+- ## 
+
+- ## 3d坐标系看起来最怪的还是 OpenCV
+- https://x.com/ddvd233/status/1888250836981076258
+- unity居然是左手系

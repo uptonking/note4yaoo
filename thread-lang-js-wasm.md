@@ -18,7 +18,17 @@ modified: 2021-07-07T06:27:10.266Z
 
 - ## 
 
-- ## 
+- ## this is QuickJS running natively vs Porffor compiling to Wasm; 
+- https://x.com/CanadaHonk/status/1888572230277222687
+  - QuickJS running in Wasm would be even slower
+  - this improvement was thanks to tweaking the memory allocator to use smaller pages internally as Wasm pages are pretty huge relatively (Wasm: 64KB, Linux x64: 4KB)
+
+- How does wasm2c perform compared to interpeted version
+  - This has some more complex Wasm so it doesn't fully work yet, I'll work on that soon though
+
+- I found out recently wasm can be slower than JS for simple functions. I was comparing rgb to xyz color space conversion (mat3 * vec3 essentially). And it doesn’t seem due to just js-> wasm tax, it seems wasm has overhead itself
+- Thats because js engines are super optimised for JIT? How about js interpreter vs wasm?
+  - Just having one (JS) function in Wasm generally isn't that useful/helpful; plus JITs have existed for >a decade so I'm not that concerned atm. Node JITless gets ~210 in this same benchmark, and Porffor still has a lot it can do to improve even in just Wasm.
 
 - ## #Google #Chrome 112 Released With WASM Garbage Collection Trial, CSS Nesting_202304
 - https://twitter.com/phoronix/status/1643363243031937025

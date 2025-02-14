@@ -66,3 +66,22 @@ should(); // Modifies `Object.prototype`
 ```
 
 # more
+
+# discuss-jest
+
+- ## 
+
+- ## 
+
+- ## A bit weird how Jest doesn't seem to support parallelizing test execution at the "describe" level other than at the file level 🤔 Maybe I can't find the option for it?
+- https://x.com/fabiospampinato/status/1888601040741937476
+  - It seems kind of a worst of both world situation, enough parallelization to complicate the implementation, not enough parallelization to actually take full advantage of it.
+
+- I see so many tests in the wild are going to break if this change will happen
+  - It would be opt-in presumably, but not having the option at all seems weird for Jest.
+# discuss-mocha
+- ## 
+
+- ## 
+
+- ## 

@@ -225,6 +225,34 @@ modified: 2021-01-06T14:40:03.364Z
   - With React Forget on the horizon, I think we’ll start to see more front end UI compiler driven optimizations that aren’t just Babel plugins.
   - Not to say that Babel plugins weren’t important. They were. It’s just you need a proper compiler pipeline to make larger scale optimizations. It gets even more impressive when you couple the compiler to the bundler/type system.
 
+# discuss-ssr/rsc
+- ## 
+
+- ## 
+
+- ## 
+
+- ## RSC is the most painful new React API in the State of React survey.
+- https://x.com/housecor/status/1889683309707379027
+- Complaints: 
+  - Hard to test.
+  - Hard to debug.
+  - Hard to reason about.
+  - Confusing mental model.
+  - Seems designed to sell Vercel.
+  - Some think only Next.js supports RSC.
+  - More complexity for little benefit.
+- Other pain points I've seen reported:
+  - Confusing caching story
+  - Poorly documented and complex implementation
+  - Unclear over the wire format
+  - Confusing terms like "use client", "use server", "server-only", taint, etc.
+  - Next patched fetch
+  - Uses directives instead of functions
+
+- Yup. Will avoid it as long as I can. This happens when a VC baked company has too much to decide for a library. RSCs should’ve never made it into React itself. The beauty of React was that it was really lightweight itself. But now it’s a bloated garbage.
+
+- You don’t need it. Everyone is trying so hard to be on that 2005 SSR model lol. Just write your SPAs and prosper.
 # discuss
 - ## 
 

@@ -16,9 +16,15 @@ Symbol('a') === Symbol('a'); //false
 # discuss
 - ## 
 
-- ## 
+- ## Introducing Visual Edits: visually edit any styles in Lovable, for faster and more precise edits
+- https://x.com/lovable_dev/status/1890075209748902304
+- This is what I call generative UX! Using Natural Language when needed but ALSO other GUIs for different tasks. Whatever fits the use-case best!!!
+- I don’t know, GUI editing seems so boring, I kinda like to have Claude surprise me with some fancy design
 
-- ## 
+- ## Top-level side effect is such a foot gun that prevents lots of build optimization so modern languages just choose to forbid it
+- https://x.com/hardfist_1/status/1889331890794242268
+  - It's interesting that JavaScript choose push it further, it even supports Top-level await(which mean top level async side effect)
+- It seems like a feature of "scripting languages" or languages without main() function(e.g. Python)
 
 - ## JavaScript errors have a `stack` property for where it originates
 - https://x.com/aidenybai/status/1887896351922614493

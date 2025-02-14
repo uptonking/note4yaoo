@@ -23,7 +23,12 @@ modified: 2021-08-25T05:56:00.431Z
 # discuss-earth-3d
 - ## 
 
-- ## 
+- ## 我去年开始做了一个开源的 github贡献3d球体动效
+- https://x.com/DalinHuang/status/1888827732332622185
+  - https://github.com/dalindev/XNOHub.com
+
+- https://x.com/hypegrids/status/1888253183287271677
+  - GitHub Gitmos is insane
 
 - ## if anyone knows how to make a globe with animations like this, plz dm, willing to pay
 - https://x.com/nick_linck/status/1854658763707629912

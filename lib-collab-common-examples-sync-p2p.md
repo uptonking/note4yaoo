@@ -36,6 +36,15 @@ modified: 2023-01-17T19:13:01.845Z
   - https://github.com/powersync-ja/powersync-js /apache2/202501/ts
     - SDK that enables local-first and real-time reactive apps with embedded SQLite for JavaScript clients, including React Native and Web
 
+- https://github.com/get-convex/convex-backend /2.5kStar/FSL-1.1-Apache-2.0/202502/rust/ts
+  - https://docs.convex.dev/
+  - The open-source reactive database for app developers
+  - The self-hosted product includes most features of the cloud product, including the dashboard and CLI. 
+    - Self-hosted Convex works well with a variety of tools including Neon, Fly.io, Vercel, Netlify, RDS, Sqlite, Postgres, and more.
+  - https://x.com/jamesacowling/status/1890088514806772032
+    - We just launched self-hosted @convex_dev _20250214
+    - When people say they want open source they rarely mean they just want to read the source code. They mean they want unrestricted access, an active community, ease of use, and yes, often something for free.
+
 - verdant/lo-fi /7Star/MIT/202211/ts
   - https://github.com/a-type/verdant
   - https://github.com/a-type/lo-fi

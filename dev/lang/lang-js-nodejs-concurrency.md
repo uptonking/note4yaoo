@@ -43,7 +43,12 @@ modified: 2022-12-19T01:59:01.625Z
 
 - ## 
 
-- ## 
+- ## Profiling a multi process & multi thread & multi language program is painful 
+- https://x.com/hardfist_1/status/1888604776751108234
+- One of good solution is https://ui.perfetto.dev . at least with perfetto you have a good visualization of multi process and multi threads with interaction between each other.
+  - yeah it's good for high overview of analysis but sometime it's not enough to spot hot function
+- How to merge trace across different language like Javascript and Rust
+  - Perfecto has trace of the whole system. So, in general JS and Rust has separate integrations which write profile traces which compibe into 1 profile which you can open.
 
 - ## contrary to popular belief, in Node.js promises (and async/await) would not yield to the event loop. 
 - https://x.com/matteocollina/status/1862180654672171418

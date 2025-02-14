@@ -18,6 +18,21 @@ modified: 2024-01-07T05:09:14.413Z
 # discuss-author(aboodman)
 - ## 
 
+- ## 
+
+- ## 
+
+- ## ⚖️ Zero is 100% open source, and has  been since day one
+- https://x.com/aboodman/status/1890151282880704563
+  - It is 100% open source. I do not know how to say this any other way. There are no parts that are closed-source. All of the bits are open source. 
+  - we open sourced Replicache at the same time
+  - Our loose plan is to make a business by offering a SaaS version of zero-cache, and also white-glove on prem support for larger enterprises. 
+  - But bigger picture, it's clear that the web is moving to sync. 
+  - This is such a big shift and will create so many opportunities, that we're not *that* worried about finding a business model immediately. Just focused on making Zero as good as it can be.
+  - We will run a hosted version of zero-cache as a service. I'm also very interested in trying to copy (what I understand to be) Planetscale's core business model of running instances of the service within customer's VPC.
+
+- Closed source devtools that aren’t “internal” is a recipe for a short lifespan.  All devtools become infra plays or die; glad you’re just starting in the right spot.
+
 - ## I think it is so interesting how many of the people building sync engines came to it through *UI* development.
 - https://x.com/aboodman/status/1871237826333032715
   - You would not naively expect these people to be working on distributed systems. But for all, it was the same thing – we wanted to create better UIs.

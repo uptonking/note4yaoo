@@ -38,7 +38,21 @@ modified: 2023-04-12T08:06:04.859Z
 
 - 游戏，大多都会出现这样一个Entity-Manager系统。
   - 因为游戏本质就是大量实体行为（Entity）以及他们之间的交互（Manager）
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## A game engine is just a reactive database that gets partially visualized every 16 ms or so.
+- https://x.com/penberg/status/1889581408449855974
+- It’s not reactive. It’s usually being polled for a new state
+  - This was not supposed to be a serious claim, but… Many game engines are event-based.
+- And there’s definitely other things I realized, which are time and interpolation functions. I guess this “could” be a stored procedure?
+
+- Not a Joke!! ECS are essentially column based databases.
 # discuss
+- ## 
+
 - ## 
 
 - ## 

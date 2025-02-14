@@ -321,7 +321,18 @@ modified: 2023-10-26T19:04:00.318Z
   - 
 - Consistent hashing is another pattern... Sharding is just preferred because you can shard per account. A single account will (typically) never access another account's data.
   - Okay, okay... You have to split up the data to scale horizontally, of course. I guess ANOTHER scaling pattern would be MemSQL in order to process more/faster on a single instance.
+# discuss-p2p/decentralized
+- ## 
+
+- ## 
+
+- ## It's 2025 and there are people still proposing terrible ideas for using blockchain databases.
+- https://x.com/andy_pavlo/status/1889102383877070877
+  - Why would anyone want to use a P2P BFT database to track disease outbreaks? Just put it in a centralized DBMS. Oh wait, they already do that...
+
 # discuss
+- ## 
+
 - ## 
 
 - ## 

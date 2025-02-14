@@ -47,6 +47,11 @@ modified: 2020-12-09T09:30:24.694Z
   - https://github.com/yangfei4913438/superset-api-client
     - superset默认的ui没办法提供浏览器自适应，个性化图表渲染等功能，但是superset提供了一系列的API。所以我们可以使用这些API来定制适合我们自己需求的前端界面。
 
+- https://github.com/microsoft/data-formulator /MIT/202502/python/ts
+  - Data Formulator is an AI-powered tool for analysts to iteratively create rich visualizations.
+  - Data Formulator is an application from Microsoft Research that uses large language models to transform data, expediting the practice of data visualization.
+  - Unlike most chat-based AI tools where users need to describe everything in natural language, Data Formulator combines user interface interactions (UI) and natural language (NL) inputs for easier interaction. This blended approach makes it easier for users to describe their chart designs while delegating data transformation to AI.
+
 - mprove /270Star/apache2/202302/ts/inactive
   - https://github.com/mprove-io/mprove
   - https://mprove.io/

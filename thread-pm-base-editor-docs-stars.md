@@ -24,6 +24,16 @@ modified: 2021-08-22T07:29:34.045Z
   - Soon we'll be enabling this with first-party components at @liveblocks .
   - [Building an AI toolbar for text editors | Chris Nicholas | Developer experience at Liveblocks _202407](https://chrisnicholas.dev/blog/building-an-ai-toolbar-for-text-editors)
 
+# discuss-builder
+- ## 
+
+- ## 
+
+- ## 公众号文章排版，你们都有什么工具。 
+- https://x.com/mrpanda88888888/status/1889844178303283478
+- 当我思考最重要的事是什么之后，得出结论，轻排版重内容。分享给你
+
+- vscode + markdown preview ext
 # discuss
 - ## 
 

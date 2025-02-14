@@ -63,6 +63,10 @@ modified: 2022-11-06T03:19:28.284Z
 - https://github.com/uktrade/sqlite-s3vfs
   - Python virtual filesystem for SQLite to read from and write to S3.
   - No locking is performed, so client code must ensure that writes do not overlap with other writes or reads.
+- https://github.com/mmomtchev/sqlite-wasm-http /ISC/202407/ts
+  - https://sqlite-wasm-http.momtchev.com/
+  - An experimental HTTP VFS driver for SQLite WASM
+  - This project is inspired by @phiresky/sql.js-httpvfs but uses the new official SQLite WASM distribution.
 
 - https://github.com/ccorcos/tuple-database
   - The local-first, "end-user database" database.

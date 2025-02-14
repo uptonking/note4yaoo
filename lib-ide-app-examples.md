@@ -40,6 +40,12 @@ modified: 2024-08-24T16:30:20.218Z
     - cursor的代码补全/提示太迅速及时了 这个能做到吗 除了ai的修改代码功能 我最喜欢就是cursor这个功能了 已经依赖了
     - 用cursor的时候我就找过其他开源的竞品（例如http://continue.dev），大部分步骤（例如embedding、apply、llm）在本地跑都不得劲。或许是我机器太差了？而这些还是相当重要的，例如apply这个在chat完成后自动填入代码这个直接使用普通的llm完成度都太差了。
 
+- https://github.com/we0-dev/we0 /202402/ts
+  - https://we0.ai/wedev
+  - we0 is an AI code editor for development programmers and product managers. same v0, bolt.new, lovable
+  - Supports browser-based debugging: Built-in WebContainer environment allows you to run a terminal in the browser, install and run npm and tool libraries.
+  - 类似于一个 bolt 的升级版，除了支持生成主流编程语言代码以外，还支持 d2c 模式，上传你的设计稿将1:1为你还原。
+
 - https://github.com/CodeEditorLand/Editor /MIT/202410/ts
   - https://npmjs.org/code-oss-dev
   - We're rewriting VSCode @code with Tauri
