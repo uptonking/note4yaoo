@@ -234,7 +234,63 @@ modified: 2023-12-08T16:02:26.515Z
   - 默认last-write-win
   - 更多是业务逻辑问题，而不是技术问题
   - 在linear llw可以work，但在groupon的交易冲突时会提示用户选区版本
-# discuss
+# discuss-sync-figma-like
+- ## 
+
+- ## 
+
+- ## 👷🏻 I worked on Figma's sync engine LiveGraph and before that Meteor (the open-source sync engine), some thoughts:
+- https://x.com/imslavko/status/1890482196697186309
+  - Real-time engines can simplify the application development but building a generalized sync engine that's performant, scalable and provides the right abstractions (and concurrency guarantees) still remains to be a technical challenge
+- Figma has 2 custom-built sync engines
+  - Both started from different places but they increasingly converge to a DB + event log
+- Figma has 2 engines:
+  1. Multiplayer
+  2. LiveGraph
+- Multiplayer is the OG sync engine of Figma. 
+  - It probably looks nothing like the engines of Linear, or InstantDB, or Notion's. 
+  - It should be thought of the Figma's take on Google Docs tech (diff algo, diff model, but similar purpose)
+- Multiplayer leans heavily into "enable realtime collaboration":
+  - document-based scope for sync
+  - no ACL, if you have access to the doc, you have access to everything
+  - lots of application-specific tuning in logic, resolving cycles, special fields, etc
+- Multiplayer is a big part of why Figma is Figma:
+  - replaces version control
+  - makes collab simple and seemless
+  - It works incredibly well as long as the document fits into the server memory - the codebase is an efficient Rust process that can pack lots of smartness, usually works on small deltas that have complicated effects. That's Multiplayer. The genius of Figma's infra.
+
+- LiveGraph, on the other hand, appeared later.
+  - We built it to replace the mixture of Ruby end-points, Redis queues, web-socket based notifications, refetches of large queries.
+  - LiveGraph is a spiritual successor to Asana's Luna/LunaDB, Meteor, Apollo GraphQL server, Firebase.
+  - It operates on DB rows, adds ACL checks, business logic in server-side TypeScript, GQL queries, generation of types for application layer.
+- Things LiveGraph does well:
+  - Given a GQL query, keep it up to date, by sending minimal tree patches to the client
+  - Process a giant object tree for ACL on the backend
+  - But deliver a smaller subset to the client for viewing
+- LiveGraph relies heavily on querying SQL DB + correlating the WAL of the DB to patch up the tree.
+  - The version I worked on never requeried the DB unless absolutely needed. Lots of patches were just inferences(推论；推理) from WAL.
+  - That's the design of Meteor with MongoDB.
+  - IMO the "key insight" that allowed LiveGraph to follow this approach is a small set of heuristics(启发，探索) that very very quickly determines 
+    - For every update in the WAL: in ~O(1) time determine which of ~100k observed queries are affected patch the queries in O(1)
+  - The heuristics are simple but they do not always work well, so we built a small registry of "hints" specific to application data access and write patterns.
+  - As application evolves, new processing syncs appear.
+  - But one of the hardest limitations on LiveGraph model is probably the broad scope of its queries. A single GQL query can span a bajillion objects due to the complex ACL model in the modern enterprise apps
+  - and the initial version of LiveGraph did not work well with DB sharding model of Figma. Since I left the team, there were a lot of designs on how to make it scale along-side DB shards
+
+- How do Multiplayer and LiveGraph converge? 
+  - They both approach a DB + Log + in-memory realtime sync layers.
+- Multiplayer started from document-scope. 
+  - Documents are persisted to an object storage like S3 after the session closes. But for the most part everything is in memory.
+  - Overtime the Figma eng team built an incremental log (WAL) for recovery and possible tailing.
+- LiveGraph started from being an add-on to the DB. DB already has the persistence, and WAL.
+  - LiveGraph added the in-memory processing, slowly adding the tricks from Multiplayer.
+
+- Super excited for what the modern sync engine companies will do: @instant_db and @convex_dev come to mind! If done right, they will allow a specific flavor of prof tools and complex applications to focus on building a product, instead of getting nerdsniped by sync correctness.
+# discuss-sync-linear-like
+- ## 
+
+- ## 
+
 - ## 
 
 - ## The last part of @linear that wasn’t already fully real-time - our document editor - is now real-time and collaborative._202312
@@ -301,3 +357,24 @@ modified: 2023-12-08T16:02:26.515Z
 - 🤔 when will linear open source the react-query for sync?
   - Haha there are also a lot of other options: replicache, http://convex.dev, http://clientdb.dev, a new one called aphrodite
 - No wonder! Sync is hard, but having it simplifies a lot!
+# discuss-sync
+- ## 
+
+- ## 
+
+- ## It's now becoming obvious that real-time sync engines are the next engineering productivity boost
+- https://x.com/Adam_Nyberg/status/1890119150389035159
+- Sync simplifies so many things. That's why we have it as a first class part of our agent platform.
+
+- the need for an openapi won't go away by using local first. it was free with previous architectures but with subpar ux. 
+  - my current approach is sharing the data access objects where the business logic lives and using a factory to create openapi and replicache endpoints
+
+- Meteor was ahead of its time
+
+- We already had Meteor and others.  Did not work well.
+  - Basically for any non-trivial application you quickly realize that the object models between your front-end and back-end need to diverge.  
+  - Sometimes this is simple like and object having some fields that shouldn't be present on one side or the other.  Sometimes it's more complicated like the actual format of the data needing to change.
+  - So frameworks doing the syncing need to come up with ever more complex systems of annotation for indicating what data should or should not be sent. 
+  - The object model is shared so someone trying to make something on the website work will make a seemingly simple change that will break some backend logic.
+  - They look amazing on toy examples but are a nightmare to make work at meaningful scale.
+- my highly personal opinion is that many web apps are simple and when they get complicated, you almost always have to redesign them anyway

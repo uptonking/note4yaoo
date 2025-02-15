@@ -126,7 +126,7 @@ modified: 2023-01-17T19:13:01.845Z
   - This repository contains the Holochain core libraries, not the runtime intended for end-users of Holochain applications.
 
 - https://github.com/saarw/flushout /201910/ts
-  - a distributed data model based on event sourcing. 
+  - 💡 a distributed data model based on event sourcing. 
   - Collaborative applications use it for clients that need responsive interaction without network delay, or need to function offline.
   - Clients interact with a local proxy of a remote master model without accessing the network. They can then periodically flush changes from the proxy to the master in the background when the network is available.
   - [Building a collaborative React app with Flushout_202003](https://saarw.github.io/dev/2020/03/02/building-a-collaborative-react-app-with-flushout.html)

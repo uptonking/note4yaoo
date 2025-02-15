@@ -42,7 +42,12 @@ modified: 2021-01-03T17:11:47.916Z
 
 - ## 
 
-- ## 
+- ## A ton of confusion amongst Tailwind users comes from not realizing that if you are using CSS modules, or `<style>` blocks in Vue/Svelte/Astro, your CSS pipeline separately for every single one of those blocks.
+- https://x.com/adamwathan/status/1890404835888910467
+  - 50 Vue components using `<style>` means Tailwind runs 50 separate times.
+  - For the best build performance, don't use Tailwind features in CSS modules or Vue/Svelte/Astro `<style>` blocks, just rely on CSS variables.
+  - Or even better, just use the classes in your markup like you're supposed to 
+  - 💡 The same thing happens by the way by just importing multiple CSS files in JS. Don't do that — import them all into one CSS file and load that one file in JS instead.
 
 - ## 🌰 [Using group-hover with a css child selector · tailwindlabs/tailwindcss](https://github.com/tailwindlabs/tailwindcss/discussions/13309)
 

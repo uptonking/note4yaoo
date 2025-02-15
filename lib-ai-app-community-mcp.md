@@ -18,7 +18,10 @@ modified: 2025-02-03T10:17:42.052Z
 # discuss-ai-devtools
 - ## 
 
-- ## 
+- ## You've probably heard of MCP (Model Context Protocol) servers, but if you're not quite sure what they are or why they matter, this thread is for you.
+- https://x.com/cline/status/1890187359024730188
+  - Think of pre-MCP Cline like a computer without internet — powerful but isolated in your IDE. Adding MCP is like not just giving it internet access, but also an app store where each new app gives it new capabilities.
+  - An MCP server is like a menu of tools
 
 - ## Is there a decent chunking algorithm library on NPM?
 - https://x.com/mattpocockuk/status/1885264480344355136

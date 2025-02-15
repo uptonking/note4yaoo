@@ -25,6 +25,22 @@ error: invalid zip file with overlapped components (possible zip bomb)
 ```
 
 - [tracker-store and tracker-miner-fs eating up my CPU on every startup](https://askubuntu.com/questions/346211/tracker-store-and-tracker-miner-fs-eating-up-my-cpu-on-every-startup)
+# hp-omen8plus
+- [Keep getting Performance mode temporarily disabled due to high operation temperature alert in power settings - Ask Ubuntu](https://askubuntu.com/questions/1530597/keep-getting-performance-mode-temporarily-disabled-due-to-high-operation-tempera)
+  - I had a similar issue a while ago, it turned out to be the CPU PROCHOT flag. Still not sure what caused it, but in the end I had to use a script to disable it
+
+- [Ubuntu 20.04 not booting after choosing different NVidia Proprietary driver. Failed to start NVidia Persistence Daemon - Ask Ubuntu](https://askubuntu.com/questions/1263419/ubuntu-20-04-not-booting-after-choosing-different-nvidia-proprietary-driver-fai)
+  - [Unable to boot Ubuntu 24.04 - Failed to start nvidia-persistenced.service - Ask Ubuntu](https://askubuntu.com/questions/1520799/unable-to-boot-ubuntu-24-04-failed-to-start-nvidia-persistenced-service)
+
+```sh
+# Recovery Menu box: Choose the option
+# root  - Drop to root shell prompt. 
+ubuntu-drivers list
+apt-get remove --purge '^nvidia-.*'
+apt-get install ubuntu-desktop
+reboot
+```
+
 # hp-envy-15
 - tracker-miner-fs cpu high
   - 导致触摸板的鼠标指针失效，或者不流畅
@@ -57,8 +73,8 @@ systemd-journald: failed to write entry ( items,  bytes), ignoring: read-only fi
 nvme0 failed to set APST feature blocks
 ```
 
-  - [解决 SYSTEMD-JOURNALD: FAILED TO WRITE ENTRY 问题](http://smilejay.com/2018/02/systemd-journald-failed-to-write-entry/)
-    - 通过 journalctl --verify 命令找到损坏的journal文件，然后删除或者mv移动它，再重启systemd-journald服务即可
+- [解决 SYSTEMD-JOURNALD: FAILED TO WRITE ENTRY 问题](http://smilejay.com/2018/02/systemd-journald-failed-to-write-entry/)
+  - 通过 journalctl --verify 命令找到损坏的journal文件，然后删除或者mv移动它，再重启systemd-journald服务即可
 
 ```
 
@@ -72,7 +88,7 @@ File corruption detected at /var/log/journal/8363b5e4cb2b4b959b362494307725dc/sy
 
 ```
 
-  - [三星M2 NVME每天只能在Linux上输入只读信息，而不能在Windows上输入](https://mlog.club/article/2802971)
-    - 记住发生故障的具体时间，然后查看系统日志
-      - cat /var/log/syslog
-      - 执行命令 dmesg -T，用于打印Linux系统开机启动信息，kernel会将开机信息存储在ring buffer中
+- [三星M2 NVME每天只能在Linux上输入只读信息，而不能在Windows上输入](https://mlog.club/article/2802971)
+  - 记住发生故障的具体时间，然后查看系统日志
+    - cat /var/log/syslog
+    - 执行命令 dmesg -T，用于打印Linux系统开机启动信息，kernel会将开机信息存储在ring buffer中

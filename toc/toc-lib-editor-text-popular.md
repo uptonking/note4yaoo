@@ -181,7 +181,7 @@ modified: 2022-11-08T19:04:00.289Z
   - This means that it can't use a more structured (but limited) internal data model (as most other modern HTML editors do) and the HTML remains the source-of-truth. 
   - In addition to its use at Fastmail, it is also currently used in production at ProtonMail, SnappyMail, StartMail, Tutanota, Zoho Mail, Superhuman and Teamwork Desk, as well as other non-mail apps including Google Earth
 
-- roosterjs /655Star/MIT/202211/ts/email/测试覆盖率高
+- roosterjs /655Star/MIT/202211/ts/email/outlook/测试覆盖率高
   - https://github.com/microsoft/roosterjs
   - https://microsoft.github.io/roosterjs/index.html
   - Rooster is a framework-independent JavaScript rich-text editor neatly nested inside one HTML `<div>` element.

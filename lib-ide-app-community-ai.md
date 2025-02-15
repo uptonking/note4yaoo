@@ -152,6 +152,9 @@ modified: 2024-08-24T16:28:20.515Z
   • WhatsApp – 0 to $1B revenue w/ 55 people
   - Measured in users not ARR
 
+- https://x.com/benln/status/1890413609768956015
+  - I can't wait to see how churn and revenue retention looks like for each of those companies in a few years.
+
 - ## 为啥字节有了 MarsCode 还要推出一个新的叫 Trae 的 IDE？还是资源太丰富了，内卷的厉害
 - https://x.com/_hisriver/status/1881210064083808393
 - MarsCode 的重点和基因是 Cloud IDE + Playground，延续了 LLM 时代之前的 Cloud IDE 项目， 可以对标 Replit

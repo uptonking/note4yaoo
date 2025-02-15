@@ -40,6 +40,14 @@ modified: 2020-12-08T13:27:56.600Z
 # discuss-roadmap
 - ## 
 
+- ## 
+
+- ## [The Road to 2.0 · solidjs/solid _20250215](https://github.com/solidjs/solid/discussions/2425)
+  - I'd like to officially announce the beginning of our journey to Solid 2.0. We've done a lot of prototyping over the last few months
+  - Fine-grained non-nullable async
+  - Derived signals
+  - Automatic batching
+
 - ## Solid 2.0 is gonna look a lot more like React, and at the same time a lot more like Rxjs in all the good ways
 - https://x.com/devagrawal09/status/1885432475729453470
 - Because of the "dependency function" in effects, dealing with stale data in effects, and having pending resources that throw?  Honestly I think we may be taking inspiration from the wrong parts of React

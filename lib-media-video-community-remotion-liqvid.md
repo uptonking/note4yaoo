@@ -22,7 +22,7 @@ modified: 2024-06-21T09:53:44.956Z
 
 - ## Google 正式推出 Gemini AI 驱动的视频演示应用 Vids 
 - https://x.com/imxiaohu/status/1855436961131164004
-  - 通过简单提示即可生成各种类型的视频演示,你只需提供提示或 Google Drive 中的文档，系即可生成一个初始视频故事板，包括推荐的场景、脚本、背景音乐等。
+  - 通过简单提示即可生成各种类型的视频演示, 你只需提供提示或 Google Drive 中的文档，系即可生成一个初始视频故事板，包括推荐的场景、脚本、背景音乐等。
 
 # discuss
 - ## 
@@ -121,6 +121,19 @@ modified: 2024-06-21T09:53:44.956Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 🐛 Embarassing Remotion bug: Instead of creating a new thread for each video we read, we created a new thread for every single frame in the video
+- https://x.com/JNYBGR/status/1890345448986030207
+  - +50% slowdown is very realistic
+  - We probably had this bug because we used a “thread pool” abstraction from a library which was somehow implicit
+  - We rearchitected Remotion's concurrency model in Rust to be even faster! Enjoy up to 50% faster renders in the latest version thanks to the "new architecture"
+
+- What version is the fix on?
+  - 4.0.264 Still pending validation from bigger users, but I’m standing by should any issues arise
 
 - ## From Markdown to Video: animated code walkthroughs with Code Hike and Remotion
 - https://x.com/pomber/status/1805590424716808685

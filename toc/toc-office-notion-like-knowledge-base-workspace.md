@@ -606,6 +606,22 @@ modified: 2022-06-03T21:34:54.893Z
   - open-source clean & customizable RAG UI for chatting with your documents. Built with both end users and developers in mind.
   - This project serves as a functional RAG UI for both end users who want to do QA on their documents and developers who want to build their own RAG pipeline.
 
+- https://github.com/shaheryaryousaf/fastapi-docgpt
+  - 一个PDF文档GPT项目：fastapi-docgpt，可以对PDF文档内容进行对话问答 
+  - 上传PDF，系统自动提取PDF文本内容，并将文档内容转换为向量存储 
+  - 可通过Swagger在 /docs 获取自动API文档
+
+- https://github.com/pingcap/autoflow /apache2/202411/python
+  - https://tidb.ai/
+  - pingcap/autoflow is a Graph RAG based and conversational knowledge base tool built with TiDB Serverless Vector Storage.
+  - An open source GraphRAG (Knowledge Graph) built on top of TiDB Vector and LlamaIndex and DSPy.
+  - UI交互类似chatgpt
+  - https://x.com/9hills/status/1862522244527972625
+    - RAG Demo 到 RAG Application 难度的完美表现，其实功能不算丰富（增加了 Graph RAG和 Agent RAG 的思想），
+    - 代码却不得不做的非常复杂，大部分其实是应用逻辑。 P. S. 代码已经成熟到可以直接抄了，直接复刻就完了
+
+## doc-etl
+
 - https://github.com/PragmaticMachineLearning/docai /MIT/202409/python
   - Extract structured data from unstructured documents using Answer. AI's Byaldi, OpenAI gpt-4o, and Langchain's structured output.
   - 基于Answer. AI的Byaldi、OpenAI的gpt-4o和Langchain 做结构化数据输出
@@ -630,19 +646,12 @@ modified: 2022-06-03T21:34:54.893Z
   - 结构化数据提取工具，它可以以自然语言查询的方式从非结构化文档中提取结构化数据，并以表格或图表的形式展现
   - 文档数据的结构化入库，比如从合同里提取关键交易信息，然后结构化展示
 
-- https://github.com/shaheryaryousaf/fastapi-docgpt
-  - 一个PDF文档GPT项目：fastapi-docgpt，可以对PDF文档内容进行对话问答 
-  - 上传PDF，系统自动提取PDF文本内容，并将文档内容转换为向量存储 
-  - 可通过Swagger在 /docs 获取自动API文档
-
-- https://github.com/pingcap/autoflow /apache2/202411/python
-  - https://tidb.ai/
-  - pingcap/autoflow is a Graph RAG based and conversational knowledge base tool built with TiDB Serverless Vector Storage.
-  - An open source GraphRAG (Knowledge Graph) built on top of TiDB Vector and LlamaIndex and DSPy.
-  - UI交互类似chatgpt
-  - https://x.com/9hills/status/1862522244527972625
-    - RAG Demo 到 RAG Application 难度的完美表现，其实功能不算丰富（增加了 Graph RAG和 Agent RAG 的思想），
-    - 代码却不得不做的非常复杂，大部分其实是应用逻辑。 P. S. 代码已经成熟到可以直接抄了，直接复刻就完了
+- https://github.com/Goldziher/kreuzberg /MIT/202502/python
+  - Kreuzberg is a modern Python library for text extraction from documents, designed for simplicity and efficiency
+  - It provides a unified async interface for extracting text from a wide range of file formats including PDFs, images, office documents, and more.
+  - Local Processing: No external API calls or cloud dependencies required
+  - Modern Python: Built with async/await, type hints, and current best practices
+  - Kreuzberg was created to solve text extraction needs in RAG (Retrieval Augmented Generation) applications, but it's suitable for any text extraction use case. 
 # office
 - https://github.com/paperless-ngx/paperless-ngx /GPLv3/202412/ts/python
   - https://docs.paperless-ngx.com/
