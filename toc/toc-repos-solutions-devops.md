@@ -56,4 +56,7 @@ modified: 2020-12-12T19:01:56.749Z
   - It has a goal of deployment simplicity and minimal dependencies, to reduce friction of systematic troubleshooting. 
   - No need to install kernel modules or heavy monitoring frameworks.
   - 0x.tools allow you to measure individual thread level activity, like executed code, sleep states, system calls and wait locations - by tracking (not tracing) and then sampling the right events at the right time.
+# ci/cd
+- https://github.com/intuit/auto /MIT/202502/ts
+  - Generate releases based on semantic version labels on pull requests.
 # more

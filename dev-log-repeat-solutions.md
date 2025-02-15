@@ -206,10 +206,12 @@ modified: 2021-07-20T13:50:23.433Z
   - kibana for meilisearch
 
 - 视图层的实现可参考: wangeditor/typewriter/autocomplete, 库和应用层不同在于ajax
+
 - 架构参考
-  - immutable: prosemirror, slate, wangeditor, typewriter, ospreadsheet, maxgraph
-  - functional: wangeditor, typewriter, tanstack-table
-  - 数据层: ivm-crsqlite/zero-sync
+- immutable: prosemirror, slate, wangeditor, typewriter, ospreadsheet, maxgraph
+- functional: wangeditor, typewriter, tanstack-table
+  - ?: dexie
+- 数据层: ivm-crsqlite/zero-sync
 
 ### solutions-cases 💡
 

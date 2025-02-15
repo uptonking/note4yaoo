@@ -19,6 +19,7 @@ modified: 2024-08-24T16:15:11.456Z
 - cons
   - insecure/non-sandboxed by design, 但微软设计就是如此，支持在本地或远程执行代码
   - vscode插件市场归微软所有，第三方不可用
+  - ui的定制性差
 
 - features
   - ?
@@ -42,13 +43,16 @@ modified: 2024-08-24T16:15:11.456Z
 - toys
   - version-history for prosemirror/codemirror
   - hocuspocus collab for file-tree/tabs
-  - file-provider
+  - file/data-provider
   - ui-skin
 
 - vscode提供了electron和web模式，未提供纯前端模式
 
 - ide-ai
   - editor-control MCP, 让ai操作编辑器的协议
+- extension
+- integrations
+  - notion database
 
 - 文件操作基于文件实现，如何基于数据库实现
   - 参考markdown-database的实现和数据同步
@@ -79,10 +83,6 @@ modified: 2024-08-24T16:15:11.456Z
 
 - 
 - 
-- 
-
-# docs
-
 - 
 
 # more

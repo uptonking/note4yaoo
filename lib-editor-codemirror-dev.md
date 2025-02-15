@@ -14,15 +14,15 @@ modified: 2021-05-06T09:38:31.520Z
   - 可扩展性很强, ext支持设置优先级
   - collab有官方支持, 基于ot算法变体
   - 支持selective undo
-  - 🌰 diff-view的示例有官方开发，其他编辑器很少提供
+  - 🌰 diff-view的示例有官方开发，其他编辑器很少提供, 支持上下布局/左右双栏布局
   - ✨ v6实现了 virtualized-render, 可结合visible ranges进一步提高性能
   - ❓ incremental syntax highlighting, 可结合visible ranges
-  - 支持mobile
+  - 📱 支持mobile
   - accessible
   - 基于contenteditable(而不是textarea)实现，具备✨富文本的能力
   - 支持nested-editor，可在同一页面渲染多个编辑器，参考split-view示例、公式
-  - 内置支持folded-code
   - 支持multi-cursor, 此时键盘输入字符会在多个光标后同时显示
+  - 内置支持folded-code
   - ~~simpler than prosemirror~~
 
 - cons
@@ -31,6 +31,7 @@ modified: 2021-05-06T09:38:31.520Z
   - ssr默认不支持, 但有方案支持
   - 顶层容器不支持CSS transform 3d，但支持transform2d(用于画板缩放的场景, 但ace/monaco支持3d，有改进)
   - 使用了自定义css-in-js方案(runtime-css会降低性能)，但也支持css覆盖样式
+  - 部分语言不支持语法高亮，如.slim/.erb
 
 - features
   - dispatch高性能，只写不读
@@ -327,8 +328,8 @@ modified: 2021-05-06T09:38:31.520Z
 - cde的优势
   - 协作与同步
   - 易分享
-  - 一致的环境
-  - 快速与可伸缩
+  - 一致的环境, 可快速复制的环境
+  - 易伸缩扩容
   - 容器与监控
 
 - 基于文件系统实现的cde不适合实时协作

@@ -111,6 +111,19 @@ modified: 2024-08-24T16:17:26.715Z
 - https://github.com/sekassel-research/vscode-vnc-plugin /202212/ts/archived
   - This extension adds an embedded vnc viewer to the vs code server instance, which is used by fulib.org projects.
 
+- https://github.com/sap/vscode-logging /apache2/202401/ts/inactive
+  - A Logging Library for VSCode Extension which supports the following features:
+    - Source Location Tracking.
+    - Logging to rolling file logs.
+    - Logging to a VSCode outputChannel.
+    - JSON structure log entries output.
+- https://github.com/pustovitDmytro/winston-vscode
+    - This package aims to help you use the winston logger in your VSCode application. It utilizes the `OutputChannel` API under the hood.
+
+- https://github.com/microsoft/vscode-l10n /MIT/202411/ts
+  - tooling for localizing Visual Studio Code extensions
+  - This API, introduced in VS Code 1.73, is used for translating strings in your extension's code. It is a part of the main VS Code extension API 
+
 ## utils-webview
 
 - https://github.com/microsoft/vscode-webview-ui-toolkit /MIT/202403/ts/archived
@@ -125,6 +138,10 @@ modified: 2024-08-24T16:17:26.715Z
 - https://github.com/liutaigang/vscode-webview-extension-example /MIT/202501/ts
   - Vscode 的 extension webview 开发示例，提供 Vue 和 React 实现，文档详细，举例丰富
   - https://github.com/liutaigang/vite-plugin-vscode-webview-hmr
+
+- https://github.com/tomjs/vscode-extension-webview /MIT/202410/ts
+  - 在 vscode 扩展开发使用 webview.html 时，支持 vue/react 的 HMR
+  - You can implement HMR by adding an `<iframe>` tag to the content that returns html and setting the src to http://localhost:5173. The client sends a message to the parent webview through postMessage to implement the API of acquireVsCodeApi.
 
 - https://github.com/vscode-elements/elements /MIT/202501/ts/lit
   - https://vscode-elements.github.io/guides/getting-started/
@@ -697,12 +714,21 @@ modified: 2024-08-24T16:17:26.715Z
   - A Wardley Maps for Visual Studio Code extension supporting rendering and editing maps-as-code.
 # ext-api
 - https://github.com/CodinGame/monaco-vscode-api /MIT/202412/ts
+  - https://monaco-vscode-api.netlify.app/
   - VSCode public API plugged on the monaco editor
+  - ✨ demo效果类似内存版的vscode，使用纯前端的lsp
   - Most of VSCode functionality implemented as "services"
   - By default, Monaco uses a simplified versions of the VSCode services, called standalone services. 
   - This package allows to 
     - override them with fully-functional alternatives from VSCode
     - add new services that were not included in Monaco
+  - This project was mainly created to make the implementation of monaco-languageclient more robust and maintainable.
+  - VSCode extensions are bundled as vsix files. This library publishes a rollup plugin (vite-compatible) that allows to load a vsix file.
+  - [Getting started guide](https://github.com/CodinGame/monaco-vscode-api/wiki/Getting-started-guide)
+  - https://github.com/CodinGame/monaco-editor-react
+    - This library uses https://github.com/CodinGame/monaco-editor-wrapper
+    - Differences with monaco-react
+      - This library outputs some dynamic import and rely on webpack to handle them
 # ext-more
 
 # sync
@@ -719,4 +745,8 @@ modified: 2024-08-24T16:17:26.715Z
   - [AutoDev for VSCode 预览版：精准 AI 编程提示词与编辑器的完美融合 - 知乎](https://zhuanlan.zhihu.com/p/696080970)
   - 将 AutoDev for Intellij IDEA 平台的非凡开发者体验带到了 VSCode 平台。在 IDEA 版本中通过构建非常精准的提示词，以及与编辑器的完美融合， 以帮助开发者更好地编写代码。
   - 设计理念示例：一键精准测试生成
+# app-toolkit
+- https://github.com/SAP/app-studio-toolkit /apache2/202501/ts
+  - A VSCode extension that provides a simple way to developer to execute common platform tasks for specific scenarios.
+  - This extension allows developers to execute common actions as "Launch Code-Snippet", "Run VS Code command", "Open File", "Execute handler"
 # more

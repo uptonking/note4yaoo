@@ -226,4 +226,26 @@ modified: 2024-08-24T16:15:54.137Z
 # vscode-integrations
 - https://github.com/betatim/vscode-binder /python
   - VS Code on Binder, because sometimes you need a real editor.
+# utils(extracted)
+- https://github.com/webdriverio-community/wdio-vscode-service /MIT/202502/ts
+  - https://webdriverio-community.github.io/wdio-vscode-service/
+  - A service to test VSCode extensions from end to end using WebdriverIO
+  - This project was highly inspired by the vscode-extension-tester project which is based on Selenium. This package takes the idea and adapts it to WebdriverIO.
+
+
+
+
+# LSP
+- https://github.com/TypeFox/monaco-languageclient /MIT/202502/ts
+  - monaco-languageclient: to connect Monaco editor with language servers.
+  - vscode-ws-jsonrpc: which implements communication between a jsonrpc client and server over WebSocket.
+
+- https://github.com/yioneko/vtsls /ts
+  - This is an LSP wrapper around TypeScript extension bundled with VSCode. All features and performance are nearly the same.
+  - Unlike other similar projects, this is implemented by filling VSCode APIs and applying minimal patches onto the extension to make it possible to keep up with the upstream updates and drastically reduce the burden of maintenance.
+
+- https://github.com/hrsh7th/vscode-langservers-extracted /js/zed
+  - HTML/CSS/JSON/ESLint language servers extracted from vscode.
+  - Microsoft provided awesome Language Servers for the community but it didn't update for a long time.
+    - Currently, the latest css-language-server is improved a bit than vscode-css-langserver-bin.
 # more
