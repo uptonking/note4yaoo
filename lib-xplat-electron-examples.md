@@ -9,7 +9,7 @@ modified: 2024-01-31T19:13:11.286Z
 
 # guide
 - tips
-  - 不建议基于electron实现自定义浏览器，要考虑支持各浏览器自带的扩展商店，可在自己的应用层实现
+  - ~~不建议基于electron实现自定义浏览器，要考虑支持各浏览器自带的扩展商店，可在自己的应用层实现~~
   - ? electron-for-android/ios vs apps
 
 - resources
@@ -24,6 +24,8 @@ modified: 2024-01-31T19:13:11.286Z
   - https://electronjs.org/fiddle
   - The easiest way to get started with Electron
   - Try Electron without installing any dependencies: Fiddle includes everything you'll need to explore the platform. 
+  - It also includes examples for every API available in Electron
+  - Fiddle is not an IDE – it is however an excellent starting point.
 
 - https://github.com/electron/apps /MIT/202310/js/无详情页
   - https://www.electronjs.org/apps
@@ -44,11 +46,12 @@ modified: 2024-01-31T19:13:11.286Z
   - Powerful SQLite adapter for web, mobile and desktop. Build reactive UI on top of it
   - It brings transaction support, middlewares for queries, and SQLite adapters for the most popular platforms.
 
-- https://github.com/Icon-Shelf/icon-shelf /MIT/202311/ts
+- https://github.com/Icon-Shelf/icon-shelf /MIT/202311/ts/inactive
   - https://icon-shelf.github.io/
   - SVG icon manager for developers.
   - Link the icons folder of your project to Icon Shelf and see all your icons in an easily previewable manner. 
   - File-based (adding, deleting, modifying icons in app get reflected in file-system as well.)
+  - 依赖codemirror、dexie、react-query
 
 - https://github.com/sprout2000/leafview /MIT/202401/ts
   - Minimalist image viewer based on Leaflet.js and Electron.
@@ -119,7 +122,7 @@ modified: 2024-01-31T19:13:11.286Z
   - A react-electron app that secures user data locally using AES algorithm with the help of nedb and crypto-js ans styled with chakra-ui.
   - https://github.com/codegiik/electron-react-nedb-boilerplate
 
-- https://github.com/wavebox/waveboxapp /1.3kStar/MPLv2/js/open2close
+- https://github.com/wavebox/waveboxapp /1.3kStar/MPLv2/202106/js/open2close
   - https://wavebox.io/
   - Browser for Work
   - Wavebox gives you customizable toolbars, sleeping tabs, cookie containers and multiple profile
@@ -130,7 +133,7 @@ modified: 2024-01-31T19:13:11.286Z
   - 🍴 forks
   - https://github.com/fvulich/electron-chrome-extensions
 
-- https://github.com/Electron-Store/electron-app-store /inactive
+- https://github.com/Electron-Store/electron-app-store /MIT/202112/js/vue/inactive
   - A Cross-Platform App Store for Electron.js Apps
 
 - https://github.com/opensumi/ide-electron /MIT/202401/ts
@@ -156,6 +159,7 @@ modified: 2024-01-31T19:13:11.286Z
 
 - https://github.com/Level/electron-demo /MIT/202206/js/inactive
   - Demo app loading LevelDB into an Electron context.
+  - https://github.com/codegiik/electron-react-nedb-boilerplate
 
 - https://github.com/garrylachman/ElectroCRUD /MIT/202306/ts
   - http://garrylachman.github.io/ElectroCRUD/
@@ -189,10 +193,11 @@ modified: 2024-01-31T19:13:11.286Z
   - https://github.com/ccorcos/electron-boilerplate /202012/ts
     - uses TypeScript and demonstrates using a preload script to interact with the native APIs.
 
-  - https://github.com/codegiik/electron-react-nedb-boilerplate
 - https://github.com/sprout2000/electron-react-ts
   - An Electron boilerplate with hot reloading for React and TypeScript.
-- https://github.com/fantasticit/electron-react-boilerplate
+  - https://github.com/sprout2000/elephicon
+    - a GUI wrapper for png2icons, generates Apple ICNS and Microsoft ICO files from PNG files.
+- https://github.com/fantasticit/electron-react-boilerplate /202012/ts/inactive
   - 各窗口均采用 React 开发，也可根据需要更改为其他框架
   - 支持多窗口：修改 erb.config.js 中 windows 配置
   - 支持 Touchbar、Tray、Dock

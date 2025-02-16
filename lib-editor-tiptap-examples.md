@@ -36,6 +36,8 @@ modified: 2023-02-05T19:03:27.730Z
   - 后端依赖 nestjs、passport、typeorm、mysql、yjs
   - Think 是一款开源知识管理工具。通过独立的知识库空间，结构化地组织在线协作文档，实现知识的积累与沉淀，促进知识的复用与流通。同时支持多人协作文档。
   - https://github.com/fantasticit/magic-editor /202301/ts
+  - https://github.com/fantasticit/sailkit /202407/ts/inactive
+    - A toolkit editor suite based on tiptap and prosemirror.
 
 - notesnook /2.8kStar/GPLv3/202209/js+ts/tiptap
   - https://github.com/streetwriters/notesnook

@@ -13,6 +13,7 @@ modified: 2024-08-24T16:15:11.456Z
   - reliable, 开源十几年，有商业公司和开源社区持续投入
   - MIT, theia is licensed under EPL
   - 完善的编辑器和ide架构，包括 editor/workbench/files/search/ext/cmd-palette
+    - 可提取出丰富的工具库
   - 支持运行在ci多种环境，如 web-memory, web-node-server, electron
   - 实现了很多git操作的ui和展示的ui，可作为git客户端
 
@@ -41,10 +42,11 @@ modified: 2024-08-24T16:15:11.456Z
   - [Visual Studio Code for Education](https://vscodeedu.com/)
 # draft
 - toys
-  - version-history for prosemirror/codemirror
-  - hocuspocus collab for file-tree/tabs
-  - file/data-provider
-  - ui-skin
+  - wiki: prosemirror/tiptap
+  - hocuspocus/typefox collab for file-tree/tabs
+  - version-history for wiki/editor with ai commits messages
+  - file/data-provider, 还可参考社区提供的另一种思路editor+mock-vscode-api
+  - ui-skin as extension
 
 - vscode提供了electron和web模式，未提供纯前端模式
 
@@ -57,6 +59,9 @@ modified: 2024-08-24T16:15:11.456Z
 - 文件操作基于文件实现，如何基于数据库实现
   - 参考markdown-database的实现和数据同步
 - 删除文件的回收站
+
+- markdown diff
+  - preview diff
 
 - 构建工具迁移到respack/vite
 # dev-xp

@@ -92,6 +92,8 @@ modified: 2024-08-24T16:17:26.715Z
   - Front Matter is a CMS running straight in Visual Studio Code. 
   - Can be used with static site generators like Hugo, Jekyll, Hexo, NextJs, Gatsby, and many more
   - Preview your site/content straight in Visual Studio Code
+- https://github.com/dedfaf/Code2Ghost /MIT/js
+  - VScode extension that can post local markdown to Ghost CMS
 # utils
 - https://github.com/Priyanshukeshri/extension-uninstaller-plugin /202308/ts
   - extension that allows you to view and uninstall installed extensions from within the editor. 
@@ -508,6 +510,8 @@ modified: 2024-08-24T16:17:26.715Z
   - View a Git Graph of your repository in Visual Studio Code, and easily perform Git actions from the graph.
   - Compare any two commits by clicking on a commit, and then CTRL/CMD clicking on another commit
   - 可比较任意2个commit(包含当前未提交的最新的)的文件差异，点击一个commitId1作为start，按住ctrl/cmd点击另一个commitId2就是显示diff，注意比较内容包含commitId1而不包含commitId2，想要包含commitId2需要点击commitId2的下/上一个commit
+- https://github.com/phil294/GitLG /MIT/202412/js/vue
+  - A free, interactive Git UI for VSCode
 
 - https://github.com/gitkraken/vscode-gitlens /MIT+Plus/202501/ts
   - http://gitkraken.com/gitlens

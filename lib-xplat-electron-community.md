@@ -25,10 +25,31 @@ modified: 2023-01-02T10:30:19.459Z
 # discuss-bundler/compiler
 - ## 
 
+- ## 
+
+- ## 
+
 - ## [Question: what's the relationship between electron-webpack and electron-forge? _202001](https://github.com/electron-userland/electron-webpack/issues/342)
 - there is no relationship.... 
   - `electron-webpack` is a module for helping you use electron with webpack and provices a streamlined experience for working with `electron-builder` to package and distribute apps. 
   - Electron forge is a different approach, it adds a boilerplate instead of a module and does a lot of the same things.
+
+# discuss-builder/forge
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Forge vs Builder, as new electron dev : r/electronjs _202412](https://www.reddit.com/r/electronjs/comments/1hd70zu/forge_vs_builder_as_new_electron_dev/)
+- I'd suggest to go with electron-builder due to larger community, customisation, easy to adapt and if you need to change autoupdate mechanism in the later part , you can achieve with this.
+
+- I found Forge very easy to start with, but only to get as far as local development. My experience was that for a project which intends to go through with real packaging, signing, and distribution on 2-3 platforms, Forge is insufficiently configurable. You will need to eventually either plan on switching to Builder, or sweep away most of Forge and replace with your own tools.
+
+- Builder because its what the vite template uses: create-electron-vite
+
+- Builder is easier to customize
+  - Forge uses the official ASAR packager (so you can use the asar validation flag, but it looks like builder is also enabling this)
 
 - ## [Electron community reinvented electron-builder/etc. as electron-forge. How to package Quasar w/ electron-forge?_202309](https://github.com/quasarframework/quasar/discussions/16380)
 - electron-forge uses the electron-packager under the hood. It seems to be a convenience/configuration package.
@@ -53,19 +74,12 @@ modified: 2023-01-02T10:30:19.459Z
 
 - You can use appimage, snap, nsis and nsis-web electron-builder targets in the electron-forge("win32": ["nsis"]). But it is not recommended, because electron-forge packaging and publishing is a far away in terms of quality/feature set from electron-builder.
 
-- ## 🤔 [Why Electron Forge - Electron Forge](https://www.electronforge.io/core-concepts/why-electron-forge)
+- ## 🆚️ [Why Electron Forge - Electron Forge](https://www.electronforge.io/core-concepts/why-electron-forge)
 - Electron Forge can be considered an alternative to Electron Builder, which fulfills the same use-case for application building and publishing.
 - The key difference in philosophy between the two projects is that Electron Forge focuses on combining existing first-party tools into a single build pipeline, while Builder rewrites its own in-house logic for most build tasks.
 - two main advantages to using Forge:
   - Forge receives new features for application building as soon as they are supported in Electron. These features are built with first-party Electron tooling in mind, so Forge receives them as soon as they are released.
   - Forge's multi-package architecture makes it easier to understand and extend. Since Forge is made up of many smaller packages with clear responsibilities, it is easier to follow the flow of the code. 
-
-# discuss-builder/forge
-- ## 
-
-- ## 
-
-- ## 
 
 - ## [Flatpak packaging · gristlabs/grist-desktop](https://github.com/gristlabs/grist-desktop/issues/16)
 - 20240615: We use `electron-builder` to build Grist Desktop. 

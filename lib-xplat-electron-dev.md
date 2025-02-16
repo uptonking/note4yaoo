@@ -16,11 +16,12 @@ modified: 2021-05-13T03:08:52.583Z
   - ?
 
 - features
-  - ?
+  - Build cross-platform apps with web tech(js/html/css/chromium)
+  - Compatible with macOS, Windows, and Linux
 
 - who is using #electron
-  - known: qq
   - popular: vscode
+  - known: qq
   - open: drawio, joplin, marktext, tagspaces
   - 经典示例: file-manager, note-taking
 
@@ -54,4 +55,8 @@ modified: 2021-05-13T03:08:52.583Z
   - NW.js application is running as a Chrome App internally. 
   - All chrome.* platform APIs and features can be used in NW application now. 
   - The default protocol is changed from file:// to chrome-extension://
+# changelog
+- ECMAScript modules (i.e. using `import` to load a module) are supported in Electron as of Electron 28(_20231205).
+- From Electron 20 onwards, preload scripts are sandboxed by default and no longer have access to a full Node.js environment. 
+
 # more

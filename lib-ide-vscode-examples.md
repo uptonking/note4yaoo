@@ -227,14 +227,13 @@ modified: 2024-08-24T16:15:54.137Z
 - https://github.com/betatim/vscode-binder /python
   - VS Code on Binder, because sometimes you need a real editor.
 # utils(extracted)
+- https://github.com/lzy19926/lzy-VSCode-Editor /202310/ts/inactive
+  - 模仿VSCode原理与架构实现的简易版桌面端代码编辑器
+
 - https://github.com/webdriverio-community/wdio-vscode-service /MIT/202502/ts
   - https://webdriverio-community.github.io/wdio-vscode-service/
   - A service to test VSCode extensions from end to end using WebdriverIO
   - This project was highly inspired by the vscode-extension-tester project which is based on Selenium. This package takes the idea and adapts it to WebdriverIO.
-
-
-
-
 # LSP
 - https://github.com/TypeFox/monaco-languageclient /MIT/202502/ts
   - monaco-languageclient: to connect Monaco editor with language servers.

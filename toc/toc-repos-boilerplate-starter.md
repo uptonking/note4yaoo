@@ -22,6 +22,11 @@ modified: 2022-11-28T17:41:37.209Z
   - 根据真实客户端 IP 限制访客的有效请求次数
   - https://github.com/youknowznm/mini-express
     - 尝试实现一个极简的 express 风格服务器, 实现路由池, 中间件和对请求及响应的部分增强.
+
+- https://github.com/ccorcos/chet-stack /MIT/202409/ts
+  - A boilerplate, not a framework.
+  - The goal of this repo is to make it easy to start a new full-stack application
+  - This architecture is very similar to the one I built for Notion and is designed so that everything can run in a single process on a single server, while still being easy to scale up by breaking pieces out into separate services.
 # electron-starter
 - https://github.com/hojinahn4234/electron-typescript-react-nedb /202209/ts/nedb
   - work-in-progress scaffold for an Electron app in TypeScript, integrating React and NeDB.
@@ -41,9 +46,9 @@ modified: 2022-11-28T17:41:37.209Z
   - Also, it aims to highlight the ability for the server to have modular controllers that can connect and query data from a variety of databases. 
     - The Server can connect with a variety of database types: mongo, nedb, and sqlite.
 # utils
-
+- https://github.com/ccorcos/typescript-library /ts
+  - TypeScript Library Boilerplate
 # monorepo
-
 - https://github.com/NiGhTTraX/ts-monorepo /MIT/202309/ts
   - Template project for setting up a TypeScript monorepo
   - The main focus of this repo is making the Go to definition feature in IDEs work without any surprises

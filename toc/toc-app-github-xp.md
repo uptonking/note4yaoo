@@ -217,7 +217,7 @@ modified: 2023-02-08T10:46:26.912Z
 
 - https://github.com/IonicaBizau/git-stats
   - Local git statistics including GitHub-like contributions calendars.
-# github-mirrors/proxy
+# github-mirrors/proxy 🪜
 - [Gitee极速下载，每日同步一次](https://gitee.com/mirrors)
   - https://gitee.com/organizations/mirrors/projects
 

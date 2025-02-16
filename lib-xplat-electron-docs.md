@@ -9,6 +9,8 @@ modified: 2024-01-31T19:34:04.442Z
 
 # guide
 
+- resources
+  - [Why Electron](https://www.electronjs.org/docs/latest/why-electron)
 # faq
 
 ## 🆚️ electron vs cef
@@ -92,6 +94,136 @@ modified: 2024-01-31T19:34:04.442Z
 
 - ref
   - https://www.electronjs.org/docs/tutorial/multithreading
+# [Why Electron](https://www.electronjs.org/docs/latest/why-electron)
+- Why choose web technologies
+  - Web technologies include HTML, CSS, JavaScript, and WebAssembly. They’re the storefront of the modern Internet. 
+  - Versatility: all industries
+  - Reliability: Web technologies are the most-used foundation for user interfaces on the planet
+  - ⚖️ Interoperability: Whatever provider or customer data you need to interact with, they will have probably thought of an integration path with the web. 
+  - Ubiquity: ample access to resources and materials
+
+- Why choose Electron
+  - Enterprise-grade: reliable, secure, stable
+  - Mature: an impact project with the OpenJS foundation
+  - performance: for security reasons, apps have to run in their own sandboxes, isolated from each other.
+  - Developer experience: ecosystem, built-in capabilities, Native code when you need it
+    - Thanks to Node.js’ mature native addon system, you can always write native code. 
 # docs
+- Although you need Node.js installed locally to scaffold an Electron project, Electron does not use your system's Node.js installation to run its code. 
+  - Instead, it comes bundled with its own Node.js runtime. This means that your end users do not need to install Node.js themselves as a prerequisite to running your app.
+
+- Many of Electron's core modules are Node.js event emitters that adhere to Node's asynchronous event-driven architecture. The `app` module is one of these emitters.
+- In Electron, BrowserWindows can only be created after the app module's `ready` event is fired.
+
+- Each web page your app displays in a window will run in a separate process called a renderer process (or simply renderer for short). 
+  - Renderer processes have access to the same JavaScript APIs and tooling you use for typical front-end web development
+
+- Preload scripts are injected before a web page loads in the renderer, similar to a Chrome extension's content scripts. 
+  - A preload script contains code that runs before your web page is loaded into the browser window. 
+  - It has access to both DOM APIs and Node.js environment, and is often used to expose privileged APIs to the renderer via the `contextBridge` API.
+- A BrowserWindow's preload script runs in a context that has access to both the HTML DOM and a limited subset of Node.js and Electron APIs.
+  - From Electron 20 onwards, preload scripts are sandboxed by default and no longer have access to a full Node.js environment. Practically, this means that you have a polyfilled `require` function that only has access to a limited set of APIs.
+
+- All built-in modules of Node.js are supported in Web Workers, and asar archives can still be read with Node.js APIs. 
+  - However none of Electron's built-in modules can be used in a multi-threaded environment.
+- Any native Node.js module can be loaded directly in Web Workers, but it is strongly recommended not to do so. 
+  - Most existing native modules have been written assuming single-threaded environment, using them in Web Workers will lead to crashes and memory corruptions.
+- Note that even if a native Node.js module is thread-safe it's still not safe to load it in a Web Worker because the `process.dlopen` function is not thread safe.
+  - The only way to load a native module safely for now, is to make sure the app loads no native modules after the Web Workers get started.
+
+- Navigation history is stored per WebContents instance. 
+
+- If you want to embed (third-party) web content in an Electron BrowserWindow, there are three options available to you: `<iframe>` tags,  `<webview>` tags, and `WebContentsView`
+- Iframes in Electron behave like iframes in regular browsers.
+  - To limit the number of capabilities of a site in an `<iframe>` tag, it is recommended to use the `sandbox` attribute 
+- `WebContentsView`s are not a part of the DOM—instead, they are created, controlled, positioned, and sized by your Main process.
+  - WebContentsViews offer the greatest control over their contents, since they implement the webContents similarly to how BrowserWindow does it. 
+  - However, as WebContentsViews are not elements inside the DOM, positioning them accurately with respect to DOM content requires coordination between the Main and Renderer processes.
+- WebViews are based on Chromium's WebViews and are not explicitly supported by Electron. 
+  - we do not recommend you to use WebViews, as this tag undergoes dramatic architectural changes that may affect stability of your application. 
+  - WebView is a custom element (`<webview>`) that will only work inside Electron. They are implemented as an "out-of-process iframe". This means that all communication with the `<webview>` is done asynchronously using IPC. 
+  - Compared to an `<iframe>`,  `<webview>` tends to be slightly slower but offers much greater control in loading and communicating with the third-party content and handling various events.
+
+- Chromium and Node.js have their own implementations of the ESM specification, and Electron chooses which module loader to use depending on the context.
+- Electron's main process runs in a Node.js context and uses its ESM loader. Usage should follow Node's ESM documentation
+  - ES Modules are loaded asynchronously. This means that only side effects from the main process entry point's imports will execute before the `ready` event.
+  - This is important because certain Electron APIs (e.g. app.setPath) need to be called before the app's `ready` event is emitted.
+  - With top-level await available in Node.js ESM, make sure to `await` every Promise that you need to execute before the `ready` event. Otherwise, your app may be ready before your code executes.
+  - These CommonJS `require` calls load module code synchronously. If you are migrating transpiled CJS code to native ESM, be careful about the timing differences between CJS and ESM.
+- Electron's renderer processes run in a Chromium context and will use Chromium's ESM loader. 
+  - If you wish to load JavaScript packages via npm directly into the renderer process, we recommend using a bundler such as webpack or Vite to compile your code for client-side consumption.
+- A renderer's preload script will use the Node.js ESM loader when available. 
+  - Preload scripts will ignore `"type": "module"` fields, so you must use the `.mjs` file extension in your ESM preload scripts.
+- Sandboxed preload scripts can't use ESM imports
+  - Sandboxed preload scripts are run as plain JavaScript without an ESM context. 
+  - If you need to use external modules, we recommend using a bundler for your preload code. 
+  - Loading the electron API is still done via require('electron').
+
+## process
+
+- Electron inherits its multi-process architecture from Chromium, which makes the framework architecturally very similar to a modern web browser.
+
+- the Chrome team decided that each tab would render in its own process, limiting the harm that buggy or malicious code on a web page could cause to the app as a whole. 
+  - A single browser process then controls these processes, as well as the application lifecycle as a whole. 
+  - Electron applications are structured very similarly. As an app developer, you control two types of processes: main and renderer. These are analogous to Chrome's own browser and renderer processes outlined above.
+
+- Each Electron app has a single main process, which acts as the application's entry point. 
+  - The main process' primary purpose is to create and manage application windows with the `BrowserWindow` module.
+  - Each instance of the BrowserWindow class creates an application window that loads a web page in a separate renderer process. 
+  - A renderer process is also created for web embeds such as the `BrowserView` module. The `webContents` object is also accessible for embedded web content.
+  - When a BrowserWindow instance is destroyed, its corresponding renderer process gets terminated as well.
+
+- the main process also adds custom APIs to interact with the user's operating system. 
+  - Electron exposes various modules that control native desktop functionality, such as menus, dialogs, and tray icons.
+- Each Electron app spawns a separate renderer process for each open BrowserWindow (and each web embed). 
+  - code ran in renderer processes should behave according to web standards (insofar as Chromium does, at least).
+  - An HTML file is your entry point for the renderer process.
+- Renderer processes can be spawned with a full Node.js environment for ease of development. Historically, this used to be the default, but this feature was disabled for security reasons.
+
+- Preload scripts contain code that executes in a renderer process before its web content begins loading. These scripts run within the renderer context, but are granted more privileges by having access to Node.js APIs.
+  - Because the preload script shares a global `Window` interface with the renderers and can access Node.js APIs, it serves to enhance your renderer by exposing arbitrary APIs in the window global that your web contents can then consume.
+
+- Each Electron app can spawn multiple child processes from the main process using the UtilityProcess API.
+  - The utility process can be used to host for example: untrusted services, CPU intensive tasks or crash prone components which would have previously been hosted in the main process or process spawned with Node.js child_process.fork API. 
+  - The primary difference between the utility process and process spawned by Node.js child_process module is that the utility process can establish a communication channel with a renderer process using MessagePorts.
+  - An Electron app can always prefer the `UtilityProcess` API over Node.js `child_process.fork` API when there is need to fork a child process from the main process.
+
+- Context Isolation is a feature that ensures that both your preload scripts and Electron's internal logic run in a separate context to the website you load in a webContents
+  - This means that the window object that your preload script has access to is actually a different object than the website would have access to
+  - Context isolation has been enabled by default since Electron 12, and it is a recommended security setting for all applications.
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
+- Starting from Electron 20, the sandbox is enabled for renderer processes without any further configuration.
+- One key security feature in Chromium is that processes can be executed within a sandbox. 
+  - The sandbox limits the harm that malicious code can cause by limiting access to most system resources — sandboxed processes can only freely use CPU cycles and memory. 
+  - In order to perform operations requiring additional privilege, sandboxed processes use dedicated communication channels to delegate tasks to more privileged processes.
+- In Chromium, sandboxing is applied to most processes other than the main process. 
+  - This includes renderer processes, as well as utility processes such as the audio service, the GPU service and the network service.
+- Sandboxed processes in Electron behave mostly in the same way as Chromium's do, but Electron has a few additional concepts to consider because it interfaces with Node.js.
+  - A sandboxed renderer won't have a Node.js environment initialized.
+  - In order to allow renderer processes to communicate with the main process, preload scripts attached to sandboxed renderers will still have a polyfilled subset of Node.js APIs available. 
+  - Because the `require` function is a polyfill with limited functionality, you will not be able to use CommonJS modules to separate your preload script into multiple files. If you need to split your preload code, use a bundler such as webpack or Parcel.
+
+- For most apps, sandboxing is the best choice. In certain use cases that are incompatible with the sandbox (for instance, when using native node modules in the renderer), it is possible to disable the sandbox for specific processes.
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 
 # more
