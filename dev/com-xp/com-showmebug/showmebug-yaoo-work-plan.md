@@ -2386,6 +2386,22 @@ const playbackInfo = [
 - 
 - 
 - 
+- 
+
+#### not-yet
+
+- ideServer对于文件树的crud操作没有用类似chokidar的方式实现，而是直接使用node.fs操作或依赖外部事件来更新，是什么原因
+  - 20250217: goAgent在移动文件到子文件夹后，git stash导致文件消失，golang的fsnotify无法捕获子文件夹的文件变更，变更事件只包含非移动文件的变更
+  - 思路1: ideServer自身移动文件后，立即touch moved-file.md让其他监听系统能监听到事件
+  - 思路2: ideServer自身移动文件后，手动通知manager/goAgent变化的路径，让监听方自己去更新
+  - NFS自身没有监听文件变更的能力，需要依赖第三方
+
+- 
+- 
+- 
+- 
+- 
+- 
 
 ### docs-sdk
 

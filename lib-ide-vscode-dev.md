@@ -64,6 +64,10 @@ modified: 2024-08-24T16:15:11.456Z
   - preview diff
 
 - 构建工具迁移到respack/vite
+
+## ci/cd
+
+- update-version/changelog这样的pr应该被自动化，人工只需要review，不需要敲繁琐的命令
 # dev-xp
 
 ## hot-keys

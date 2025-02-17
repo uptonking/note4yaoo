@@ -428,7 +428,7 @@ modified: 2021-07-20T13:50:23.433Z
 - ai的能力擅长在翻译 语言 转换
 # marketing
 - 用户留存分析
-  - 总体用户情况4x3x2: 4个场景nodejs/python/ruby/go, 3个规模大/中/小, 2大类别toB/toC
+  - 总体用户情况4x3x2: 4个场景nodejs/python/ruby/go, 3个规模大/中/小, 2大类别toB/toC(实测这种方式效果不好，大规模用户案例一直为空, 按用户使用场景分类更实用)
 # more-work-xp
 - 20240406: 想做的事情有 灵活的cms、协作系统、支持大量数据的编辑器
   - cms需要在架构层支持 配置和存储 表和字段 的元数据, 可参考directus/nocodb

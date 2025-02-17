@@ -161,6 +161,10 @@ const memoize = (func) => {
 - 网络文件系统 NFS/SMB 的文件变化可能有的文件监听库如chokidar监听不到, 有的实现库可以监听到
   - 这会导致代码在本地文件系统运行没问题，但在aws或其他云主机上监听不到文件变化
 
+- 20250217碰到新的相关问题
+  - manager和goAgent运行在2个不同的容器，但都挂载了同一个NFS系统，manager和goAgent都开启了对同一个文件夹的修改监听
+  - manager中的代码修改了文件f1只有manager中的监听器才能收到事件，goAgent的监听器可能收不到，因为文件监听基于linux内核的 `inotify` 实现，但不同容器如果在不同机器或不同内核就会导致只有对应内核的inotify能收到事件
+
 ## clacky在多用户同时clone/fork时出现并发问题
 
 - 通过github api拉取项目，分为 校验阶段+拉取阶段
