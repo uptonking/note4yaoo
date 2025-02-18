@@ -292,6 +292,7 @@ console.trace(';; loadFile', path, loadType);
 
 ```
 ^(?!42\["resourceM).*
+add an action to run npm install and another action to add datetime at top of readme.md
 ```
 
 - lsp支持的语言排查
@@ -346,6 +347,23 @@ console.trace(';; loadFile', path, loadType);
 - action-删除文件
   - live模式显示弹窗
   - 回放模式显示红色背景的文件快照
+
+## 0218
+
+- 昨天
+  - 修复了用户反馈的文件树不显示文件的问题 
+  - 修复过程中发现了文件树里移动操作的实现有很大缺陷，fileChange事件不包含移动的文件，修复完待测试
+- 今天
+  - 优化ports启动白屏时间过长的问题、loading反馈
+
+- [`stat` command in Linux with examples - GeeksforGeeks](https://www.geeksforgeeks.org/stat-command-in-linux-with-examples/)
+  - stat -x aa.md
+  - Birth: The time at which the file was created. 对于NFS系统，属性值为空
+  - Change: The last time the at which file’s attribute or content was changed(the last time the file's metadata or contents were changed. Metadata includes file permissions, ownership, link count, etc.)
+  - Modify: The last time at which file was modified(the last time the contents of the file were modified)
+  - Access: The last time at which the file was accessed.
+  - 在本地ubuntu系统，在vscode中拖拽移动文件时或通过mv移动文件时，只有ctime会变化
+  - 在NFS系统，Birth一直为空, 通过mv移动文件时只有ctime会变化
 
 ## 0217
 
