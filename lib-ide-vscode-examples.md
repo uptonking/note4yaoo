@@ -13,9 +13,20 @@ modified: 2024-08-24T16:15:54.137Z
 - https://github.com/microsoft/vscode /MIT/202501/ts
   - https://code.visualstudio.com/
   - This repository ("Code - OSS") is where we (Microsoft) develop the Visual Studio Code product together with the community.
-  - https://github.com/VSCodium/vscodium
-    - binary releases of VS Code without MS branding/telemetry/licensing
-    - This is not a fork. This is a repository of scripts to automatically build Microsoft's vscode repository into freely-licensed binaries with a community-driven default configuration.
+- https://github.com/VSCodium/vscodium
+  - https://vscodium.com/
+  - binary releases of VS Code without MS branding/telemetry/licensing
+  - This is not a fork. This is a repository of scripts to automatically build Microsoft's vscode repository into freely-licensed binaries with a community-driven default configuration.
+  - the Open VSX Registry is the pre-set extension gallery in VSCodium. Using the extension view in VSCodium will therefore by default use it.
+  - [Run vscodium in browser](https://github.com/VSCodium/vscodium/discussions/1469)
+    - is there a definitive answer for a web version of vscodium?
+    - AFAIK, the code-server seems to be the best option for now
+  - [Switching between marketplaces](https://github.com/VSCodium/vscodium/issues/519)
+    - If it helps anyone, there's a AUR (Archlinux User Repository) that adds the VSCode marketplace to VSCodium. 
+- https://gitlab.com/gitlab-org/gitlab-web-ide-vscode-fork /MIT/202405/ts
+  - GitLab Web IDE - VSCode Fork
+  - An internal fork of the VSCode project, used to power GitLab's Web IDE
+  - This fork is used for building tools-injector for remote development
 
 - https://github.com/opensumi/core /2.7kStar/MIT/202405/ts
   - https://opensumi.com/
@@ -117,21 +128,6 @@ modified: 2024-08-24T16:15:54.137Z
     - https://dtstack.github.io/dt-react-monaco-editor/
     - 基于开源 monaco-editor，根据业务使用场景进行二次封装
     - 支持通过 props 传递的方式自定义自动补全项和需要高亮的关键字
-
-- https://github.com/VSCodium/vscodium
-  - https://vscodium.com/
-  - binary releases of VS Code without MS branding/telemetry/licensing
-  - the Open VSX Registry is the pre-set extension gallery in VSCodium. Using the extension view in VSCodium will therefore by default use it.
-  - [Run vscodium in browser](https://github.com/VSCodium/vscodium/discussions/1469)
-    - is there a definitive answer for a web version of vscodium?
-    - AFAIK, the code-server seems to be the best option for now
-  - [Switching between marketplaces](https://github.com/VSCodium/vscodium/issues/519)
-    - If it helps anyone, there's a AUR (Archlinux User Repository) that adds the VSCode marketplace to VSCodium. 
-
-- https://gitlab.com/gitlab-org/gitlab-web-ide-vscode-fork /MIT/202405/ts
-  - GitLab Web IDE - VSCode Fork
-  - An internal fork of the VSCode project, used to power GitLab's Web IDE
-  - This fork is used for building tools-injector for remote development.
 # apps
 
 # vscode-web/client
@@ -156,7 +152,7 @@ modified: 2024-08-24T16:15:54.137Z
   - 👍🏻 pros: auth, patch-vscode, 通过第三方支持collab, terminal, easy to self-host, production-ready
   - 👎🏻 cons: slow to dev/build
   - code-server --auth none --port 8080
-  - https://github.com/coder/coder /AGPLv3
+  - https://github.com/coder/coder /AGPLv3/go
     - Provision remote development environments via Terraform
   - 🆚 [Difference to OpenVSCode Server _202109](https://github.com/coder/code-server/discussions/4267)
     - code-server isn't a Docker image, although Docker images for code-server exist. 

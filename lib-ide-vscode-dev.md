@@ -14,13 +14,13 @@ modified: 2024-08-24T16:15:11.456Z
   - MIT, theia is licensed under EPL
   - 完善的编辑器和ide架构，包括 editor/workbench/files/search/ext/cmd-palette
     - 可提取出丰富的工具库
-  - 支持运行在ci多种环境，如 web-memory, web-node-server, electron
+  - 支持运行在多种环境，如 web-memory, web-node-server, electron
   - 实现了很多git操作的ui和展示的ui，可作为git客户端
 
 - cons
   - insecure/non-sandboxed by design, 但微软设计就是如此，支持在本地或远程执行代码
   - vscode插件市场归微软所有，第三方不可用
-  - ui的定制性差
+  - ui的可定制性差
 
 - features
   - ?
@@ -58,7 +58,7 @@ modified: 2024-08-24T16:15:11.456Z
 
 - 文件操作基于文件实现，如何基于数据库实现
   - 参考markdown-database的实现和数据同步
-- 删除文件的回收站
+- 删除文件的回收站(基于git的回收站)
 
 - markdown diff
   - preview diff
