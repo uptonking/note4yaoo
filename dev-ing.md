@@ -348,6 +348,17 @@ add an action to run npm install and another action to add datetime at top of re
   - live模式显示弹窗
   - 回放模式显示红色背景的文件快照
 
+## 0219
+
+- 昨天
+  - 测试反馈 git stash 时文件树ui和文件系统不一致的问题经常出现，需要进一步测试和修复fileChange事件和文件树的更新逻辑
+  - 和测试确定语法跳转的需求范围和实现方案
+  - 修复用户反馈的开关AI Diff后编辑器出现loading的问题，待进一步测试
+- 今天
+  - 进一步测试和修复fileChange事件和文件树的更新逻辑
+  - 修复用户反馈的高优先级问题
+  - 优化ports启动白屏时间过长的问题、loading反馈
+
 ## 0218
 
 - 昨天
