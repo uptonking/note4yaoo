@@ -9,6 +9,10 @@ modified: 2023-04-04T03:59:40.928Z
 
 # guide
 
+# pm-ai
+- ai工作使用服务端架构的优点
+  - 方便实现关闭页面或刷新页面后，也能看到ai工作结果的效果
+  - 方便实现多个ai并行执行多个任务的效果，提高效率
 # aigc-products
 - 中国法律AI助手
   - [中国法律AI助手](https://law-cn-ai.vercel.app/)

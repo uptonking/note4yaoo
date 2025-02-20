@@ -348,6 +348,17 @@ add an action to run npm install and another action to add datetime at top of re
   - live模式显示弹窗
   - 回放模式显示红色背景的文件快照
 
+## 0220
+
+- 昨天
+  - 测试用户反馈的开关AI Diff后编辑器出现loading的问题，已合入staging
+  - 排查用户反馈的webview每隔十几秒自动刷新的问题，定位到是旧版本vite的问题，已反馈给用户
+  - 协助排查用户反馈的Run button一直loading的问题，发现主流程上出现异常的不停发送激活事件但manager激活不成功及心跳异常的问题，后面主要由天平在排查
+- 今天
+  - 修复用户反馈的高优先级问题,如文件树数量限制，ide异常loading时任务没有restart按钮，Console 输出 Cannot write file 错误
+  - 优化ports启动白屏时间过长的问题、loading反馈
+  - 进一步测试和修复fileChange事件和文件树的更新逻辑
+
 ## 0219
 
 - 昨天

@@ -167,6 +167,10 @@ modified: 2020-07-17T10:54:16.341Z
   - It is based on Nunito by Vernon Adams, and each character has been re-worked to improve readability and usability within a Markdown context. Originally designed by and for Supernotes.
   - SN Pro is available in .otf, .woff and .woff2 formats, with weights ranging from Thin to Black
   - open source and free for both personal and commercial use.
+
+- https://github.com/fontsource/font-files
+  - https://fontsource.org/
+  - 1800+ open-source fonts bundled into neat packages.
 # fonts-cn
 
 ## utils-cn
