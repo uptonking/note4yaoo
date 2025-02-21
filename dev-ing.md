@@ -292,7 +292,8 @@ console.trace(';; loadFile', path, loadType);
 
 ```
 ^(?!42\["resourceM).*
-add an action to run npm install and another action to add datetime at top of readme.md
+add an action to run "npm install -ddd" and another action to add datetime at top of readme.md
+在wblog增加一个“更新日志”模块，位置放在时间线和关于中间，点击“更新日志”显示该系统的迭代更新日志，并展示几条实例的更新日志数据在里面
 ```
 
 - lsp支持的语言排查
@@ -348,6 +349,16 @@ add an action to run npm install and another action to add datetime at top of re
   - live模式显示弹窗
   - 回放模式显示红色背景的文件快照
 
+## 0221
+
+- 昨天
+  - 排查用户反馈的 Run button 一直 loading 的问题，分为3个子issue，解决了1/3，剩下的需要和 @刘天平 @胡状状 讨论
+  - 修复了偶尔会出现的底部时光机多个 action 进度条同时loading的问题，昨晚合入了staging
+- 今天
+  - 修复用户反馈的高优先级问题, 如文件树数量限制，ide异常loading时任务没有restart按钮，Console 输出 Cannot write file 错误
+  - 测试和修复fileChange事件和文件树的更新逻辑
+  - 测试用户反馈的开关AI Diff后编辑器出现loading的问题，已合入staging
+
 ## 0220
 
 - 昨天
@@ -355,7 +366,7 @@ add an action to run npm install and another action to add datetime at top of re
   - 排查用户反馈的webview每隔十几秒自动刷新的问题，定位到是旧版本vite的问题，已反馈给用户
   - 协助排查用户反馈的Run button一直loading的问题，发现主流程上出现异常的不停发送激活事件但manager激活不成功及心跳异常的问题，后面主要由天平在排查
 - 今天
-  - 修复用户反馈的高优先级问题,如文件树数量限制，ide异常loading时任务没有restart按钮，Console 输出 Cannot write file 错误
+  - 修复用户反馈的高优先级问题, 如文件树数量限制，ide异常loading时任务没有restart按钮，Console 输出 Cannot write file 错误
   - 优化ports启动白屏时间过长的问题、loading反馈
   - 进一步测试和修复fileChange事件和文件树的更新逻辑
 

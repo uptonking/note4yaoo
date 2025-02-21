@@ -204,6 +204,9 @@ modified: 2021-05-06T09:38:31.520Z
 - lang
   - replace lezer with Tree-sitter
 
+- diff-view
+  - 支持隐藏绿色部分或红色部分，隐藏后显示为普通文档且显示行号
+
 - integrations
   - strapi-codemirror
 - web
