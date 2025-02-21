@@ -12,6 +12,14 @@ modified: 2021-08-22T07:29:34.045Z
 # discuss-editor-ai 👾
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Grok3 这套 思维链 展示的 UX 也太酷了: 实时推理, 让用户对进度产生信心
+- https://x.com/tuturetom/status/1892922300451754105
+- Grok前端设计师估计是结合了DeepSeek R1与OpenAI的UI特点，设计了这套介于两者之间的新UI。
+
 - ## Nice blur transition to expose the CoT without overwhelming the conversation scroll view.
 - https://x.com/Gavmn/status/1887919024589226082
 - what’s your thoughts on the vertical carousel between different thoughts? Some of them are a bit fast that I can’t read it

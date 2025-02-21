@@ -173,7 +173,9 @@ modified: 2023-04-04T03:59:40.928Z
 
 - ## 
 
-- ## 
+- ## AI团队 http://mgx.dev ，号称24/7工作，免费
+- https://x.com/gantrols/status/1892207262908682713
+  - 看了下角色有领导、产品经理、架构师、工程师、数据分析五个 
 
 - ## 在 GitHub 上发现一个颇有意义的开源项目「遇见李白」。
 - https://x.com/GitHub_Daily/status/1887486401278529730
@@ -222,6 +224,14 @@ modified: 2023-04-04T03:59:40.928Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## agent use cases
+- https://x.com/anitakirkovska/status/1892950383950983465
+  - killer: coding, support/assistant, deep-research
 
 - ## 🤔 有没有推荐的支持 AI Ask 的 适合阅读 Epub、PDF 电子书的工具？
 - https://x.com/houjoe1/status/1872454515246706715
@@ -318,11 +328,11 @@ modified: 2023-04-04T03:59:40.928Z
 
 - ## 5 new market maps in AI
 - https://x.com/chiefaioffice/status/1799766662746398851
-  01.           AI code generation tools from Greylock
-  02.           AI legal tools from Battery Ventures
-  03.           AI agent infrastructure from Madrona
-  04.           AI marketing tools from a16z
-  05.           Conversational AI from Cobus Greyling
+  01.            AI code generation tools from Greylock
+  02.            AI legal tools from Battery Ventures
+  03.            AI agent infrastructure from Madrona
+  04.            AI marketing tools from a16z
+  05.            Conversational AI from Cobus Greyling
 
 - ## Google 最近新出了两个 Code 相关的 Agent 非常有意思：
 - https://x.com/tuturetom/status/1798350275314581670

@@ -21,10 +21,24 @@ modified: 2022-04-23T18:48:32.550Z
 - https://twitter.com/_adamwiggins_/status/1775523348430069853
   - Here an edit is selected in the history, highlighting the diff on the document.
 
-# discuss-table-ux
+# discuss-excel-ai
 - ## 
 
 - ## 
+
+- ## 
+
+- ## Been building the 'Cursor for Spreadsheets'
+- https://x.com/jc__gr/status/1892705094463844688
+  - With SheetLang, you just type what you need—AI takes care of the rest. Watch how it instantly analyzes the data and generates Python-powered visualizations.
+  - using @e2b_dev sandboxes
+
+# discuss-table-ux
+- ## 
+
+- ## Design for Table of Product 
+- https://x.com/barlydesign/status/1892020212075012402
+  - 表格按行自上而下出现的动画效果
 
 - ## Here are 6 simple tips to help you design beautiful & usable tables
 - https://x.com/MichaelFilipiuk/status/1888890604392001834

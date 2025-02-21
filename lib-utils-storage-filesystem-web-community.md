@@ -77,7 +77,33 @@ modified: 2023-09-16T17:43:09.215Z
 
 - Is there a more security-oriented alternative to SSHFS, where the connecting client won't be given shell access on the server?
   - If the user account is only supposed to have file transfer capabilities/no shell access, add it a to a specific group e.g. `sftponly`, and only allow this group to use the `internal-sftp` command in `/etc/ssh/sshd_config`
+# discuss-file-upload
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 上传文件到对象存储，我觉得的最佳实践: 服务端拿签名给前端，前端通过签名调用对象存储的 sdk 上传
+- https://x.com/TinsFox/status/1891334067011854529
+- 看业务，各有利弊，上传服务端可以直接拿分析结果，做更好的校验。
+
+- 分片上传没法这么做的， 因为分片上传每个分片都要重新计算签名，这样搞相当于每个分片都要先请求服务端在进行上传。从性能和成本考虑本地sts签名的方式最好
+
+- 延迟能降低，但是校验还有 db 同步不好做。
+
+- 不占用服务端带宽的感觉真棒
+
+- 难道有把密钥写到前端去签名上传的吗
+  - 有的，前端的 SDK 支持用秘钥使用，虽然文档说不推荐，但是方便好用
+
+- sdk都可以不需要的，返回签名好的上传url直接上传就可以了
+  - 是的，可以用预签名 URL
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

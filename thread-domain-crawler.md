@@ -20,7 +20,11 @@ modified: 2025-02-03T15:11:10.478Z
 
 - ## 
 
-- ## 
+- ## puppeteer is the single worst library ever written
+- https://x.com/ThePrimeagen/status/1892222755484942492
+- use stagehand!! it's playwright + AI, and playwright is a more robust version of puppeteer.
+- I have some experience with Playwright, which is not that bad. Selenium was a lot harder to get things right, although with LLMs maybe things changed on the field.
+
 # discuss
 - ## 
 

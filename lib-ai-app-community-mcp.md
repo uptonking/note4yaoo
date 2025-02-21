@@ -15,8 +15,28 @@ modified: 2025-02-03T10:17:42.052Z
 - ## 
 
 - ## 
+# discuss-ai-marketplace
+- ## 
+
+- ## 
+
+- ## Cline发布MCP MarketPlace，替代人的AI员工人才市场来了
+- https://x.com/aigclink/status/1892521008386773016
+  - MCP协议基本上可以确定为AI Agent新时代的http协议了，这次的发布开启了Agent互联网协议的第一步，实实在在吊打封闭式的coze
+  - 区别于gpts store、coze的重要的特点是可以完全本地化，可以基于他调用各种ai agent供自己本地化驱使，每个人未来都可以基于cline快速落地自己的AI员工。
+
+- ## The AI world just got its App Store moment with Cline's MCP Marketplace. _20250220
+- https://x.com/cline/status/1892351055108985126
+  - This is how AI tools finally become mainstream -- when regular humans can use them without becoming developers first.
+
 # discuss-ai-devtools
 - ## 
+
+- ## 
+
+- ## 所以我觉得小框架（llama.cpp/ollama）对自己的定位还是准确的，我就主打单机。多机随缘，我本身也不打算做企业级。
+- https://x.com/karminski3/status/1892283333192634630
+- 开源推理框架这边KTransformers虽强，但几乎没有并发能力只能和llama.cpp一起座小孩那桌高性能桌的vllm和sglang虽然用8卡H200或MI300X也能把满血Deepseek-R1跑起来，但用顶级训练卡跑推理服务显然没有经济价值。何况高性能训练卡还是稀缺资源。算法部门还得炼自己的模型呢，凭啥给你拿去跑竞品模型
 
 - ## You've probably heard of MCP (Model Context Protocol) servers, but if you're not quite sure what they are or why they matter, this thread is for you.
 - https://x.com/cline/status/1890187359024730188
@@ -91,4 +111,7 @@ modified: 2025-02-03T10:17:42.052Z
 
 - ## 
 
-- ## 
+- ## Windsurf 出了一个视频教程，介绍了 MCP 的价值与案例
+- https://x.com/op7418/status/1892056272381542405
+
+- https://x.com/windsurf_ai/status/1891664001941037123

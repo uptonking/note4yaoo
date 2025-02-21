@@ -35,7 +35,19 @@ modified: 2023-10-26T18:47:22.664Z
 
 - ## 
 
-- ## 
+- ## those of you with databases inside a vpc what is your migration process like?
+- https://x.com/thdxr/status/1891245539112489344
+  - sst autodeploy can run in a vpc so there's no issue here but otherwise i deploy a lambda in a vpc that does the migration
+  - do people actually setup the custom thing for github actions?
+
+- My coworkers huddle me on Slack. They open GitHub, I open Supabase. We both count down from 3, and then they hit merge and simultaneously I manually run the migration in the Supabase SQL editor. Only way I’ve found to keep everything in sync
+- think our approach is similar to yours but we use ECS so was quicker at the time to spin up a task that does the migration and exits
+
+- One example I’ve built:
+  - CI builds/pushes migration specific docker image
+  - before deploying services, makes new migration ECS task def
+  - ECS task execute migration docker
+  - db migration succeeds? Move on to service deploy.
 
 - ## 太久没做数据迁移都忘了要后建索引。
 - https://twitter.com/forevertjt/status/1719732968636465590

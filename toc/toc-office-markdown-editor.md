@@ -77,6 +77,8 @@ modified: 2022-11-09T11:53:13.093Z
   - MDXEditor is a rich, client-side component that does not benefit from server-side rendering. To use it in your server components, you should use next/dynamic
   - 依赖lexical、codemirror6、radix-ui、hast、mdast、react-diff-view、react-hook-form
 
+
+
 - https://github.com/uiwjs/react-md-editor /MIT/202403/ts
   - https://uiwjs.github.io/react-md-editor
   - A simple markdown editor with preview, implemented with React.js and TypeScript.
@@ -97,6 +99,11 @@ modified: 2022-11-09T11:53:13.093Z
   - 基于markdown-it打造的markdown编辑器，功能包括：同步滚动、目录列表生成、快捷编辑按钮、代码块主题切换、内容状态缓存
   - 依赖antd、highlight.js、md-it
   - [基于markdown-it打造的markdown编辑器](https://songlh.top/2022/10/12/%E5%9F%BA%E4%BA%8Emarkdown-it%E6%89%93%E9%80%A0%E7%9A%84markdown%E7%BC%96%E8%BE%91%E5%99%A8/)
+
+- https://github.com/doocs/md /MIT/202502/ts/vue
+  - https://doocs.github.io/md/
+  - 一款高度简洁的微信 Markdown 编辑器：支持 Markdown 语法、色盘取色、多图上传、一键下载文档、自定义 CSS 样式、一键重置等特性
+  - 依赖codemirror5、vue3、vueuse、pinia、highlight.js
 
 - yfm-editor /3Star/MIT/202211/ts/md-it
   - https://github.com/yandex-cloud/yfm-editor

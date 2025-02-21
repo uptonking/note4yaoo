@@ -35,6 +35,26 @@ modified: 2023-10-26T15:01:36.462Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🌰🔡 I challenged myself to build a real-time document store on @Cloudflare Workers.. I miss firebase-admin module, specifically #firestore
+- https://x.com/acoyfellow/status/1892689619700879466
+  - https://github.com/acoyfellow/blaze /202502/ts/svelte
+  - server.ts: Worker + Durable Object logic.
+  - App.svelte: Demo UI.
+  - Real-time updates via WebSocket
+  - Firestore-like API for familiarity
+
+- Cool concept, but if the client can manipulate the database directly then security (RLS/Security Rules) is a big challenge
+  - Definitely a concept. Has a million problems with it. There is no real "database" here though, it's just using the local state of a DO
+
+- Are you using a worker to provide the WS? if this is the case, wouldn't the bill be super expensive? 
+  - Yeah, a worker provides it. And yes, I kind of assumed that as I was building it
+
 - ## Databases introduce unnecessary layers of complexity. Just use JSON files
 - https://twitter.com/andre_z/status/1766408187802972590
 - The db people make it unnecessarily complex by forcing you to think about concurrent updates and access.

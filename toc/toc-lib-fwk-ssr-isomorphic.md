@@ -138,6 +138,9 @@ modified: 2020-12-19T13:04:40.865Z
 
 ## solutions
 
+- https://github.com/yusukebe/hono-spa-react/tree/cloudfare-vite-plugin
+  - Hono app renders HTML with React SSR and serves API. The React client will be inserted in the HTML. The Plugin emulates Cloudflare environment.
+
 - https://github.com/janishar/react-app-architecture /ts/inactive
   - Learn to build a complete website for a blogging platform like Medium; OpenSource project by AfterAcademy
   - Isomorphic React web app: The server sends the rendered pages to the client, and then the client renders the subsequent pages on its own. This is a very important feature for SEO and it also makes the first paint super fast.

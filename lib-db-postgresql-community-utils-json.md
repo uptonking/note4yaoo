@@ -41,6 +41,20 @@ modified: 2024-03-01T09:19:11.669Z
 
 - If you need indexing capabilities for specific keys within your JSON data, JSONB is better suited for this purpose.
 - If you want to ensure strict data validation and enforcement of data types, JSONB allows you to define JSON schemas to some extent.
+# discuss-jsonb
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Postgres has lots of types, but you really only need 2: id(serial), jsonb
+- https://x.com/tomdoes_tech/status/1892675795828801877
+- Good but not perfect yet - why do we need bother with multiple tables when we can have a single table with id, table_name and data?
+  - At that point, embrace DynamoDB and embrace the single table design pattern using the power of partition and sort key lookups. It can be massively powerful and scalable if done correctly.
+
 # discuss-postgis
 - ## 
 

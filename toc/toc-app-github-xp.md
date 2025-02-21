@@ -217,6 +217,12 @@ modified: 2023-02-08T10:46:26.912Z
 
 - https://github.com/IonicaBizau/git-stats
   - Local git statistics including GitHub-like contributions calendars.
+
+- https://github.com/j178/github-contrib-stats /202502/rust
+  - https://github-contrib-stats.vercel.app/
+  - https://github-contrib-stats.vercel.app/uptonking
+  - Generates a contribution summary for your GitHub profile. 
+  - A Rust implementation of yihong0618/github-readme-stats.
 # github-mirrors/proxy 🪜
 - [Gitee极速下载，每日同步一次](https://gitee.com/mirrors)
   - https://gitee.com/organizations/mirrors/projects
@@ -292,6 +298,14 @@ modified: 2023-02-08T10:46:26.912Z
   - Web, Mobile & Desktop with 99% code sharing between them
 # discuss-xp-github
 - ## 
+
+- ## 
+
+- ## 
+
+- ## Did you know that @github can be used as a time series database?
+- https://x.com/valyala/status/1892604211352723765
+- there are tons of experiments and articles to use github as unlimited cloud storage all over the internet
 
 - ## 分享一个做过的小工具：github star统计（https://stars.yangerxiao.com）。
 - https://x.com/wsygc/status/1797163494170918985

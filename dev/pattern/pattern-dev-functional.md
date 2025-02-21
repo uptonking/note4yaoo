@@ -146,7 +146,10 @@ expect(o3).toEqual({ foo: 2, bar: 'hello'})
 
 - ## 
 
-- ## 
+- ## My take on why Functional Programming is not popular:
+- https://x.com/ChShersh/status/1891412462219432194
+  - When a language is not popular, it leads to cascading effects on the tooling quality. 
+  - Another cascading effect is lack of jobs.
 
 - ## [If Inheritance is so bad, why does everyone use it? | Hacker News _202404](https://news.ycombinator.com/item?id=39999019)
 - The key is "prefer composition to inheritance" and dates back to Gang of Four.

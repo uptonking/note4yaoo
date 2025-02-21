@@ -73,7 +73,9 @@ modified: 2021-04-24T08:29:02.272Z
 
 - ## 
 
-- ## 
+- ## is there any meta framework that is CSR by default and opt-in SSR?
+- https://x.com/hd_nvim/status/1890651898572591314
+- Angular but it's not meta
 
 - ## Technically isn’t server side rendering always gonna be more secure than any other approach, such as a rest API?
 - https://x.com/webdevcody/status/1880724541837857210

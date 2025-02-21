@@ -23,6 +23,7 @@ modified: 2021-05-06T09:38:31.520Z
   - 支持nested-editor，可在同一页面渲染多个编辑器，参考split-view示例、公式
   - 支持multi-cursor, 此时键盘输入字符会在多个光标后同时显示
   - 内置支持folded-code
+  - 第三方实现了minimap
   - ~~simpler than prosemirror~~
 
 - cons
@@ -214,6 +215,9 @@ modified: 2021-05-06T09:38:31.520Z
   - 尝试将prosemirror的使用场景替换为codemirror
 - electron
   - obsidian-plugin
+
+- autocomplete自动补全
+  - 基于视图层decoration的实现更适合协作，不必修改model数据
 
 - later
   - 简化ast的设计和实现

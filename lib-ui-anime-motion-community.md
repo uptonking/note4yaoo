@@ -70,7 +70,10 @@ modified: 2024-11-16T10:35:13.534Z
 
 - ## 
 
-- ## 
+- ## Did you know that Motion interpolates RGB colors differently to browsers?
+- https://x.com/mattgperry/status/1892939449303994791
+  - Because of the way RGB colors are stored, straight interpolation will lead to dips in brightness. Motion instead mixes the square of the color, which avoids this dip.
+  - I once explored achieving hardware accelerated background-color animations with this blending by generating a ton of keyframes, but encountered this unresolved bug in Chrome where that can be 100x slower than a standard two keyframe animation
 
 - ## For years, Figma has been using Motion to drive delightful animations throughout their site, core product, and now FigJam too.
 - https://x.com/mattgperry/status/1869761398223634733

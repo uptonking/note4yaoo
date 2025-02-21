@@ -204,7 +204,14 @@ modified: 2022-11-29T20:41:25.566Z
 
 - ## 
 
-- ## 
+- ## typeonce: How I implemented a Sync Engine for the Web
+- https://x.com/SandroMaglione/status/1892590407315231098
+  - [How to implement a Sync Engine for the Web | Typeonce _202502](https://www.typeonce.dev/article/how-to-implement-a-sync-engine-for-the-web)
+  - Local (reactive) database to simplify re-rendering
+  - Web worker in the background
+  - CRDTs to support all kinds of operations
+  - Web socket for real time updates
+  - Not all components are necessary for all use cases
 
 - ## 🧭💡 [web端如何无感共享屏幕？ - 知乎](https://www.zhihu.com/question/565779619)
 - 如果单纯共享屏幕，那还不涉及协同问题，更加简单。

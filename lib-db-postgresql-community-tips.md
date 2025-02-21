@@ -76,7 +76,25 @@ modified: 2023-10-28T17:52:17.942Z
 - https://twitter.com/FranckPachot/status/1772895989394710668
   - Sharding by HASH is nice to immediately distribute, is the default on first key column
   - RANGE sharding is better for range queries
+# discuss-pg-utils/crud
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 作为个人开发者，效率至上。我现在使用 PostgreSQL + PostgREST，可以省去 99% 的后端编写工作。
+- https://x.com/austinit/status/1892222113366286606
+- 夸大宣传吧。后端又不只是数据库操作。
+- 如果涉及联表查询，多个表数据的同步更新呢？
+
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 
 
 - ## TIL there was an attempt to bring async I/O to PostgreSQL, but unfortunately it didn't pan out

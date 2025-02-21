@@ -94,6 +94,12 @@ modified: 2022-11-06T15:45:36.913Z
 - https://github.com/b-gran/object-editor-react /js
   - https://b-gran.github.io/object-editor-react/githubExample.html
   - Schema-aware editor for structured JSON objects (drop-in React component)
+
+- https://github.com/AykutSarac/jsoncrack.com /37kStar/MIT/202502/ts
+  - https://jsoncrack.com/
+  - a tool for visualizing JSON data in a structured, interactive graphs, making it easier to explore, format, and validate JSON.
+  - Instantly convert JSON, YAML, CSV, XML, and TOML into interactive graphs or trees in dark or light mode.
+  - Seamlessly transform data formats, like JSON to CSV or XML to JSON, for easy sharing
 # examples
 
 # parser-generator

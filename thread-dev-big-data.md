@@ -216,6 +216,45 @@ modified: 2023-04-19T07:30:34.872Z
 
 - ## 
 
+- ## 
+
+- ## Last week, I flew to 🇸🇬 and gave a guest lecture on stream processing at my alma mater, @NUSingapore . 
+- https://x.com/YingjunWu/status/1891928671981809677
+- The field has changed drastically since I studied it a decade ago.
+  - The world is changing fast - so many opportunities for new startups!
+
+Computation
+🕰️ Then: Distributed processing was new.
+🚀 Now: Cloud-based processing is the norm.
+
+Programming
+🕰️ Then: Java/Scala MapReduce-style.
+🚀 Now: SQL-first.
+
+Consistency
+🕰️ Then: Exactly-once was new.
+🚀 Now: Exactly-once is default.
+
+State Management
+🕰️ Then: States stored in external systems.
+🚀 Now: States stored in S3.
+
+Use Cases
+🕰️ Then: Primarily streaming analytics.
+🚀 Now: Data ingestion (e.g., Iceberg) is growing.
+
+Adoption
+🕰️ Then: Mostly tech giants (MSFT, FB, etc).
+🚀 Now: Startups to enterprises.
+
+- ## If you’re building a new startup in the data engineering space in 2025, I strongly suggest you take a look at @ApacheIceberg . Many low-hanging fruits there.
+- https://x.com/YingjunWu/status/1892398874356305997
+  - 👉 Build @datadoghq alternatives on top of Iceberg; 
+  - 👉 Build DevOps tools (think of DBeaver) for Iceberg; 
+  - 👉 Data quality tools for Iceberg (think of Great Expectations); 
+  - 👉 Build AI agents/tools for Iceberg data (e.g., MCP for Iceberg).
+- Iceberg doesn’t have query engine. To make things work with MCP, someone needs to build an “embedded query engine” atop
+
 - ## Uber's Neutrino project uses @ApacheCalcite in combination with @ApachePinot . Nice
 - https://x.com/julianhyde/status/1869168819069124983
 - One clarification: Neutrino itself is a fork of Presto and hence uses PrestoSQL and Presto’s planner; however Pinot’s Multistage Engine leverages Calcite and is pegged to be the next generation query engine for Pinot and platforms that use it.
@@ -269,11 +308,11 @@ modified: 2023-04-19T07:30:34.872Z
 
 - ## In ascending order of importance for Data Engineering:
 - https://twitter.com/Ubunta/status/1718275186074730997
-  01.    Data Format
-  02.    Mutability (Mutable vs. Immutable Data)
-  03.    Logging Mechanisms
-  04.    Infrastructure Management
-  05.    Rapid Data Access with Governance
+  01.      Data Format
+  02.      Mutability (Mutable vs. Immutable Data)
+  03.      Logging Mechanisms
+  04.      Infrastructure Management
+  05.      Rapid Data Access with Governance
   - Each has become an industry in itself now
 
 - ## nice talk about Umbra: A Disk-Based System with In-Memory Performance, 

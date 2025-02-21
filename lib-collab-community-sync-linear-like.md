@@ -12,7 +12,9 @@ modified: 2023-12-08T16:02:26.515Z
 # linear-sync-engine
 
 ## [Tuomas Artman ( @artman ) on building Linear, sync engines, and rethinking the startup MVP _202409](https://t.co/e7rFP9l2jb)
+
   
+
 ## 📝 [Scaling the Linear Sync Engine - Linear Blog__202306](https://linear.app/blog/scaling-the-linear-sync-engine)
 
 ## 🎞️ [cs-repeat: linear sync engine__202306](https://www.youtube.com/watch?v=Wo2m3jaJixU)
@@ -286,6 +288,26 @@ modified: 2023-12-08T16:02:26.515Z
   - LiveGraph added the in-memory processing, slowly adding the tricks from Multiplayer.
 
 - Super excited for what the modern sync engine companies will do: @instant_db and @convex_dev come to mind! If done right, they will allow a specific flavor of prof tools and complex applications to focus on building a product, instead of getting nerdsniped by sync correctness.
+
+- ### Great thread about Figma’s “two sync engines”. We do the same thing at tldraw 
+- https://x.com/steveruizok/status/1890693207119233433
+  - and recommend the same to developers who use it: use our “tldraw sync” for just the canvas alongside a different engine for the app data
+  - You don’t *have* to sync the app layer unless you’re cool or want to be cool, in which case you should use a sync engine. FWIW, we use @replicache ’s zero (sort of) for the new http://tldraw.com’s app layer backend
+  - Would love to hear more from @imslavko about the reasons for the separation. For us, it had to do with handling updates across users
+  - When a change occurs (I rename a file), then we need to make sure that the change reaches users who have access to that data: the user, anyone who has visited the file before and may see it in their recents list, the members of a group if the file belongs to a group, or any other users currently viewing the file.
+  - We can use Postgres triggers to make sure each user gets the data they can access, making sure that they don’t get more than they need (ie because they’re idle, offline, etc)
+  - By contrast, for canvas data we fire hose every change from every users to every other user, with the server in between to validate, resolve conflicts, and enforce an update tick
+  - This optimizes speed for fewer participants (a few dozen) with a minimal amount of compute and messaging between users. The app layer sync is designed to scale to many users—still fast and optimistic but slower than the canvas sync. It’s a different problem
+- Thanks for elaborating! But this illustrates exactly what I mean. The sync solution should stretch from [few users, high intensity] to [many users, lower intensity] and like you show, an app can have both needs in different places.
+  - But you as the app developer shouldn’t have to care! Let alone deploy and use and integrate two solutions.
+
+- ### Counterpoint: any sync engine worth its salt should be able to stretch from “syncing app data” to “syncing highly real-time multiplayer canvas interactions”
+- https://x.com/anselm_io/status/1890698249029185950
+  - Jazz is optimised for syncing lots of transactions. That’s the one path.
+
+- tbh im not convinced this should be the case. 
+  - eg: the data a general purpose sync engine would *typically* operate on, and presence-driven, realtime interaction are sufficiently different that you’d loose optimization opportunities along the way
+  - A modular approach on top of generic primitives would fit best
 # discuss-sync-linear-like
 - ## 
 

@@ -12,6 +12,19 @@ modified: 2023-02-08T06:56:54.945Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 大家有没有发现一个很奇怪的现象 : AI 公司既然都有安卓和客户端那就说明他们内部肯定是有对应的 SDK/Library, 但是他们开源的基本上是 Node 和 Python SDK和 REST API, 为什么呢?
+- https://x.com/ivyliner/status/1892808355183218914
+- ChatGPT的客户端也不是拿着API key请求服务器端的，有中间层
+- sdk 只是简化了接入方式。
+- 对外放出的东西肯定要考虑标准化，保有量最大的也就是基于 Node 和 Python 的 rest api
+  - 内部互相调用不见得用一样的接口，说不定是 rpc
+
+- 为了避免潜在的竞争对手分流吧？毕竟app是主要的订阅盈利渠道。
+
+- 因为都是兼容openai接口。
+
 - ## Is there appetite for learning about the AI architecture we built for @getwebstudio ?
 - https://twitter.com/oleg008/status/1715013865644101992
 - What we solved so far:
@@ -46,7 +59,54 @@ modified: 2023-02-08T06:56:54.945Z
 - ## K-Nearest Neighbours (KNN), implemented from scratch in Python:
 - https://x.com/Sumanth_077/status/1809228777748418809
 
+# discuss-ai-dev-pattern
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 有个习惯是有了 AI 之后我才改过来的。现在在 AI 提示下我会把敏感信息操作和普通信息操作完全隔离开来
+- https://x.com/wwwyesterday/status/1892560418968654100
+  - 哪怕因此表面看起来会产生些许冗余，比如我会在 models 层出现两个甚至更多的 update 方法。
+  - 我现在会尽量从类型/结构定义开始就明确拆分并隔离好操作。
+  - 有趣的是，在我以前的经验中，我从别人那学到很多东西，但就是没学到这一点，敏感操作和非敏感操作的完全隔离——尽管实践中大家会有意识在业务层也做好隔离。
+
+- 现在不知道best practice的时候就会问llm，缩小范围
+# discuss-ai-usage-tips
+- ## 
+
+- ## 
+
+- ## 用 提示词：“summarize your tool in a markdown table with availability” 让 4o 列出它所能使用的工具就能检测出来了。
+- https://x.com/tshenmin/status/1890675456271077584
+- 我分别在网页版和 macOS 客户端上进行了测试，结果却不一样
+  - 降智是和客户端有关联的，一般网页端比较容易被触发
+- 所以我现在用tailscale，直接从家里的电脑出去。
+
+- ## We’ve been working on an “ai module” for the tldraw SDK. It’s meant to help developers:
+- https://x.com/steveruizok/status/1891426822883000335
+  - get data out of the tldraw editor
+  - generate instructions with an LLM
+  - execute instructions in the editor
+  - There’s a lot you can do with this pattern. Autocomplete, prompt-driven design, turn taking games, annotation, ai-guided sessions, or full on collaboration with an AI
+
+- ## Namecheap 提醒我域名快到期了，续费价格 $17.16, 问以下 Grok 3 找一下 Promo Code 给我一个 SPSCOMTR, 最终转入价格是 $8.17, 省好多
+- https://x.com/xinzhi/status/1892464984799527044
+- 只要cloudflare卖的（有些域名它不支持），在cloudflare续费域名基本上是最便宜的
+- 其实Namecheap和Spaceship是一家
+
+- ## DeepResearch/DeepSearch 这类工具对于散户投资者太有用了，原来要啃半天财报研报才能找到的一些数据，现在随便问一句就可以列的清清楚楚。
+- https://x.com/Blankwonder/status/1892598619808673885
+- 是这样的，现在用 @perplexity_ai 做投资分析简直开心到飞起来。但是也需要有些经验和意识去识别错误信息，AI 的幻觉还没有完全解决，刚才我在让 Perplexity 介绍一家公司的管理层的时候就完全搞错成另外一家公司了。
+- 对回答的答案最好在检查一遍。
+- deepseek就是炒股票的人写出来的。
+
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

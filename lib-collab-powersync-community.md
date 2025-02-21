@@ -126,7 +126,13 @@ modified: 2024-02-12T03:23:17.007Z
 
 - ## 
 
-- ## 
+- ## With PowerSync, the client application defines a schema with tables, columns and indexes.
+- https://x.com/powersync_/status/1891864400312795517
+  - These are then usable as if they were actual SQLite tables, while in reality these are created as SQLite views.
+
+- I wonder the reason behind that?
+  - The PowerSync protocol is schemaless: we sync schemaless JSON documents into SQLite and then expose views based off those. The benefit is that it makes adapting to schema changes much simpler, while still allow you to write SQL queries against relational data
+  - There are minor downsides to this approach since SQLite views don't support everything that regular tables support. However, as a future enhancement we are investigating supporting raw tables in SQLite while retaining some of the benefits of the schemaless approach
 
 - ## Instantly reflect backend changes in your app w/ built-in real-time streaming:
 - https://x.com/powersync_/status/1853416575598051522

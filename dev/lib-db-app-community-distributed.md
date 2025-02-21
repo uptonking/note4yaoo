@@ -335,7 +335,9 @@ modified: 2023-10-26T19:04:00.318Z
 
 - ## 
 
-- ## 
+- ## Total order in any system is very difficult to make performant and scale, in a distributed system even more so.
+- https://x.com/sunbains/status/1891555502582034672
+  - Always try and reduce a total order requirement to a partial order first, if possible. Your single most important architectural/design decision in a project.
 
 - ## I see a lot of orgs struggle w/ DB infra costs. Paying for 24/7 hot replicas the same size as the primary is a struggle for some orgs. 
 - https://x.com/kellabyte/status/1854943915138330804

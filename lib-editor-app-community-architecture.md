@@ -20,7 +20,9 @@ modified: 2024-12-28T19:11:01.446Z
 
 - ## 
 
-- ## 
+- ## Got carried away with this minimap. Took me a while to figure out the drag scaling maths.
+- https://x.com/DanHollick/status/1891205758399701319
+- it's where you want element() to have better support. assuming you're doing something fancy and not duping the content in there? 
 
 - ## [NotepadNext: A cross-platform reimplementation of Notepad++ | Hacker News _202204](https://news.ycombinator.com/item?id=30959025)
 - Efficiently handling large text files requires extra special care.

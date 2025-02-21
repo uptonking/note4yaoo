@@ -22,7 +22,25 @@ modified: 2021-08-28T11:49:05.730Z
 
 - 和源码放在一起
   - rust
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Some times you just gotta admit defeat. System tests -- the end-to-end variety that drive a headless browser -- just aren't worth the effort. 
+- https://x.com/dhh/status/1892265453524803859
+  - We'll bring back a minimal set for smoke testing, but rarely been happier to see 5, 000+ lines of code erased!
+  - This was for Basecamp. We had already dropped them for HEY.
+- We dropped our headless tests a while ago at @QuadraticHQ and moved to @QAWolfHQ they are awesome!
+- Maintaining e2e tests was expensive in the pre-LLM era, but new frameworks like @octominddotdev promise to make it very cheap again
+
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

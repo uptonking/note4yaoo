@@ -157,7 +157,25 @@ modified: 2023-10-26T15:02:47.068Z
   - Redis supports various optimized data structures, from linked lists, zip lists, and skip lists to sets, hashes, and sorted sets, among others. Each is carefully designed for specific use cases for quick and efficient data access.
 
 - Threads same as the CPU cores. I believe vertex does something similar.
+# discuss-kv-file
+- ## 
+
+- ## 
+
+- ## 
+
+- ## I want something like a Cloudflare Durable Object, but with a filesystem api rather than a KV store or SQLite.
+- https://x.com/samwillis/status/1891152072575173100
+- what do you want the filesystem for?
+  - If you have a filesystem you can build any datastore on top. Be it Postgres/PGlite, SQLite, DuckDB, a KV store, anything! Thats the advantage of OPFS in the browser, it's the lowest level possible. I think we need that in these edge platforms, and OPFS equivalent.
+  - It could even be the same API as OPFS, but thats not really a nice api. Ideally it's a fully sync api, modelled on the Node FS api. An async api doesn't play nice with WASM, and many things that would want to use it are likely to be built with WASM.
+
+- Building something posix adjacent is more problems than it’s worth.
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

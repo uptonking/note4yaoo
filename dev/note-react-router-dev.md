@@ -42,7 +42,15 @@ modified: 2023-01-09T15:41:17.179Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## TIL the browser treats cached Requests fired via refresh and pressing enter in the URL differently:
+- https://x.com/wesbos/status/1892641489366175832
+  - First Visit: sends cache-control: no-cache
+  - Page Refresh: sends cache-control: max-age=0 - bypasses local cache
+  - Press enter in URL Bar: Loads from Disk Cache
+
+- Enter in URL bar is good (if not the only) way to re-apply the location # hash anchor fucus jump position. (But #:~:text fragment highlight worked differently on re-enter across browsers last time I tested, though.)
+
+- GitHub and YouTube seem to [ab]use this. Enter in the address bar is faster than whatever they are doing for the reload and progress bar sometimes.
 
 - ## [Can we use react-router-dom in next.js app and still achieve server side rendering? : r/nextjs _202306](https://www.reddit.com/r/nextjs/comments/13xct3y/can_we_use_reactrouterdom_in_nextjs_app_and_still/)
 - file based routing is probably the Nextjs' biggest selling point. As you said, use react-router-dom cause every component to be client-side rendered, which mostly defeats the whole purpose of Nextjs. This is dumb.

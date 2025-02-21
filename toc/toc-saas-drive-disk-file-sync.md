@@ -400,6 +400,19 @@ modified: 2024-03-31T17:45:16.789Z
   - Simple, private file sharing
   - A fork of Mozilla's Firefox Send. Mozilla discontinued Send, this fork is a community effort to keep the project up-to-date and alive.
 
+- https://github.com/kern/filepizza /BSD/202502/ts
+  - https://file.pizza/
+  - Peer-to-peer file transfers in your browser
+  - Works on most mobile browsers, including Mobile Safari.
+  - 依赖nextjs、PeerJS for WebRTC、Redis(optional)
+  - Using WebRTC, FilePizza eliminates the initial upload step required by other web-based file sharing services. 
+    - files are sent directly from your browser to the downloader's browser. They never pass through our servers. 
+    - Transfers are now directly from the uploader to the downloader's browser (WebRTC without WebTorrent) with faster handshakes.
+    - Uploaders can monitor the progress of the transfer and stop it if they want.
+  - Support for uploading multiple files at once, which downloaders receive as a zip file.
+  - Streaming downloads with a Service Worker.
+  - Out-of-process storage of server state using Redis.
+
 - ezshare /324Star/MIT/202207/js/inactive
   - https://github.com/mifi/ezshare
   - A simple file server that lets you easily share many big files like photos and videos with friends (or between your devices) over a local network without requiring an internet connection.

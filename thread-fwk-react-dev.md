@@ -12,6 +12,19 @@ modified: 2021-01-06T14:40:03.364Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## Async/Await and components are not friends
+- https://x.com/Enea_Jahollari/status/1891848025850405038
+  - I understand this as: don't fetch inside your components. Fetch outside of them and let your components be completely synchronous. 
+  - Your template/view is just a side effect (an effect that updates DOM). 
+
+- Yeah more or less. Although what I was trying to show is how these things can be layered on top of each other.
+
+- This is why all my data fetching happens in services and are then consumed as state
+
+- It is exactly what Svelte/Sveltekit does
+
 - ## react is so much better when you use it only as a view layer and manage your state externally
 - https://x.com/thekitze/status/1854635151256408299
   - after 2 days of dev I got frustrated enough with context and hooks to move my state logic into mobx-state-tree

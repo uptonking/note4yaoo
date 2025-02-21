@@ -9,7 +9,31 @@ modified: 2024-04-04T06:42:20.344Z
 
 # guide
 
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## Product Hunt 官方发布了 2024 年年度榜单，我整理了下其中跟独立开发者相关的工具，有助开发、营销提效：
+- https://x.com/axichuhai/status/1892417471769899032
+  1⃣ 年度最佳AI编程工具：Cursor
+  2⃣ 最佳后端开发工具：Supabase
+  3⃣ 最佳UI设计工具：Figma Al
+  4⃣ 最佳网站搭建工具：Notion Sites
+  5⃣ 最佳后端开发AI助手：Supabase Al
+  6⃣ 最佳数据库AI产品：http://postgres.new
+  7⃣ 最佳AI语音合成工具：ElevenLabs
+  8⃣ 最佳AI模型：Claude 3
+  9⃣ 最佳视频生成工具：Sora
+
+1. 最佳AI 模型: http://X.AI 
+2. 最佳推理: chatgpt o3-mini-high
+3. 最佳编程AI:  claude3.5
+4. 最佳后端数据库: supabase 
+5. 最佳视频: 字节的 即梦AI   (比Sora 强太多)
 # discuss
+- ## 
+
 - ## 
 
 - ## 

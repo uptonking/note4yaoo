@@ -13,7 +13,24 @@ modified: 2024-03-15T03:25:43.756Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## my hate for virtual scrolling continues to grow
+- https://x.com/thdxr/status/1892231011745911286
+  - it is such a hack and it's very hard to keep things like control+f or selection working
+
+- modern browsers support `content-visibility: auto;` In my experience it can be laggy though, Try scroll fast on https://uses.tech which has 25k elements
+
+- In general, Chrome DevTools has a Performance tab where you can see exactly where time gets spent.  That lets you narrow down if it’s HTML parsing, CSS eval, JS eval, reflow, or repaint.  Lots of rows is likely HTML parsing and reflow (which they call “Layout”)
+
+- `content-visibility` just avoids browser paint; the cost of creating the dom nodes (in latency and memory) doesn't go away unfortunately. still need to virtualize large complicated lists.
+
+- Virtual scrolling is not suitable for the web. It works well in mobile apps, though. Pagination with a URL-persisted state is the way to go on the web.
+
+- Limiting DOM nesting, turning off event handlers (with js or pointer-events none), not using tables (or using fixed layout), removing shadows, blurs and playing with content-visibility might already bring nice effects, it’s just not out of the box. And then there are iframes…
+
+- Limiting DOM nesting, turning off event handlers (with js or pointer-events none), not using tables (or using fixed layout), removing shadows, blurs and playing with content-visibility might already bring nice effects, it’s just not out of the box. And then there are iframes…
+
+- https://x.com/zack_overflow/status/1892293016527757488
+  - why the hell does the browser render shit outside of the screen? It is a basic optimization used in games since the 90s
 
 - ## [sentry: Better Code Rendering Through Virtualization _202412](https://sentry.engineering/blog/better-code-rendering-through-virtualization)
   - TL; DR: we rebuilt Codecov’s code renderer from the ground up utilizing virtual lists and some other nifty tricks to significantly decrease render blocking time, and unblock customers with files containing tens of thousands of lines.

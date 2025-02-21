@@ -153,6 +153,11 @@ modified: 2023-04-04T22:39:45.442Z
   - powerful framework agnostic headless library to zoom images on the web
   - Examples are written with Preact, React, Svelte, Vanilla JS and Vue.
 
+- https://github.com/jimp-dev/jimp /MIT/202409/ts/NoDeps
+  - http://jimp-dev.github.io/jimp/
+  - An image processing library written entirely in JavaScript for Node, with zero external or native dependencies.
+  - 图片格式转换, 图片裁剪/改变大小, 自定义插件  
+
 ## annotation/labelling
 
 - mirador /400Star/Apache2/202105/js
@@ -241,6 +246,10 @@ modified: 2023-04-04T22:39:45.442Z
   - This library provides a simple interface to parse OCR data from a stream, buffer or string. 
   - It does not rely on any DOM APIs and can therefore be used in contexts where there is no built-in support for XML parsing, most notably in Web Workers and Service Workers.
   - Currently the library supports hOCR and ALTO OCR markup.
+
+- https://github.com/microsoft/OmniParser /CCBy4/202502/python
+  - A simple screen parsing tool towards pure vision based GUI agent
+  - 用于把屏幕截图转化成LLM可处理的结构化格式，再结合屏幕操作工具即可让LLM操作屏幕
 
 ## ocr-apps
 

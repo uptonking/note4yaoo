@@ -33,6 +33,20 @@ modified: 2023-04-16T12:52:03.130Z
 - 这个通过拖拽构建系统的框架是什么？
   - comfyUI 关注我回头出教程
 
+# discuss-designer/builder
+- ## 
+
+- ## 
+
+- ## ✨ we're bringing vision to Bolt.new _202502
+- https://x.com/boltdotnew/status/1892620446106886396
+  - Bolt now sees your app exactly like users do, enabling faster, more precise edits pixel by pixel (& fewer tokens!)
+  - The Visual Inspector works across all web frameworks (React, Vue, Svelte, Next & others) and mobile apps (Expo).
+
+- Does this send a screenshot with html2canvas so the app can see any layout issues and you don’t need to take a screenshot? Or does it just send the raw html that you click on.
+  - it's using https://github.com/qq15725/modern-screenshot to send images!
+
+- I built this in 25 minutes using MCP tools
 # discuss
 - ## 
 

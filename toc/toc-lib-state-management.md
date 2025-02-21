@@ -381,7 +381,7 @@ modified: 2020-07-14T11:03:53.196Z
   - https://github.com/dai-shi/valtio-signal
   - https://github.com/react-gx/gx
 # multi-stores/atoms
-- https://github.com/Omnistac/zedux /ts
+- https://github.com/Omnistac/zedux /413Star/MIT/202502/ts
   - A Molecular State Engine for React.
   - Zedux is a multi-paradigm state management tool that features a powerful composable store model wrapped in a DI-driven atomic architecture.
   - Zedux borrows ideas from Redux, Recoil, and React Query. 

@@ -41,6 +41,11 @@ modified: 2023-02-08T07:20:48.475Z
   - Powered by the @aisdk
   - https://x.com/nickscamara_/status/1886459999905521912
     - This is an experimental clone of Open AI's Deep Research. Instead of using a fine-tuned version of o3, this method uses Firecrawl's extract + search with a reasoning model to deep research the web.
+- https://github.com/moeru-ai/xsai /MIT/202502/ts
+  - https://xsai.js.org/
+  - extra-small AI SDK for Browser, Node.js, Deno, Bun or Edge Runtime
+  - xsAI is a series of utils to help you use OpenAI or OpenAI-compatible API.
+  - xsAI doesn't depend on Node.js Built-in Modules, it works well in Browsers, Deno, Bun and even the Edge Runtime.
 
 - https://github.com/nicolasmontone/ai-sdk-agents /202502/ts
   - https://ai-sdk-agents.vercel.app/
@@ -273,9 +278,7 @@ modified: 2023-02-08T07:20:48.475Z
   - OmAgent是一个多模态智能体系统，专注于利用多模态大语言模型能力以及其他多模态算法来做一些有趣的事
   - 包含一个专为解决多模态任务而设计的轻量级智能体框架omagent_core。我们利用这个框架搭建了超长复杂视频理解系统——OmAgent，当然你可以利用它实现你的任何想法。
   - DnCLoop: 受到经典算法思想Divide and Conquer启发，我们设计了一个递归的通用任务处理逻辑，它将复杂的问题不断细化形成任务树，并最终使复杂任务变成一组可解得简单任务。
-# ai-sdk
-- [AI SDK Cookbook](https://sdk.vercel.ai/cookbook)
-  - An open-source collection of recipes and guides for building with the AI SDK.
+
 # open-agent
 - https://github.com/modelcontextprotocol/servers /MIT/202411/python
   - https://modelcontextprotocol.io/
@@ -456,11 +459,6 @@ modified: 2023-02-08T07:20:48.475Z
   - With Zep, you can provide AI assistants with the ability to recall past conversations, no matter how distant, while also reducing hallucinations, latency, and cost.
   - Zep persists and recalls chat histories, and automatically generates summaries and other artifacts from these chat histories. 
   - Zep also provides a simple, easy to use abstraction for document vector search called Document Collections. This is designed to complement Zep's core memory features, but is not designed to be a general purpose vector database.
-# ai-figure/数字人
-- https://github.com/taoofagi/easegen-front
-  - 开源的数字人课程制作项目：easegen，它提供从课程制作、视频管理、智能课件生成到智能出题全套方案
-  - 支持ppt课件批量自动生成、数字人克隆、声音克隆、数字人课程设计、数字人视频渲染等
-  - https://x.com/aigclink/status/1847102226088841648
 # ui-ai
 - https://github.com/kangfenmao/cherry-studio /NonCommercial/202409/ts
   - https://cherry-ai.com/

@@ -38,7 +38,38 @@ Topics may provide the flexibility needed to adapt without significant re-archit
 For more stable, defined workflows, queues offer simplicity and directness.
 
 - Could integrating both queues and topics offer a more versatile messaging solution?
+# discuss-kafka
+- ## 
+
+- ## 
+
+- ## In 4.0, Kafka is becoming a Queue
+- https://x.com/BdKozlovski/status/1891139227599183920
+  - it always fell short trying to address task coordination use-cases which lend themselves more to a queue-like system: • granular per-record acknowledgement
+  - Cases like job distribution, where a consumer gets the message, acts on the job and then archives it - were trickier to implement with Kafka.
+  - Another pain point was that consumers were coupled with the number of partitions.
+
+- KIP-932 addresses this.
+At a high level, it supports:
+  ✅ - the ability for many consumers to read from the SAME partition
+  ✅ - individual records acknowledgments
+  ✅ - still keeps producers and consumers decoupled
+  ✅ - no maximum queue size
+  ✅ - messages are still retained - so you have the ability to replay
+
+- ## Apache Kafka is really just software that copies files across machines and lets you reads those files’ data in real time.
+- https://x.com/BdKozlovski/status/1892223118636364001
+  - The best way to understand distributed systems is to look at them bottoms-up from first principles 
+  - The basic storage unit in the OS is a file. The basic storage unit in Kafka is a replica.
+  - A replica is really just an ordered bunch of files - a linked list where each node is a file.
+
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 
 
 - ## Kafka (somewhat) noob question: how does a client select the listener  when there are multiple advertised listeners? I have Kafka in Docker (via Testcontainers), with two advertised listeners

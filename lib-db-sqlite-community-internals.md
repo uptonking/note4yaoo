@@ -41,7 +41,14 @@ modified: 2023-10-28T13:45:16.973Z
 
 - ## 
 
-- ## 
+- ## 🤔 TIL the hard way that foreign keys in SQLite DO NOT automatically give you indexes
+- https://x.com/stevekrouse/status/1890469849584795824
+- postgres doesnt do this either
+- MySQL auto creates indexes on fkeys. PG doesn't, but frameworks like Django create indexes on fkeys by default for all databases. 
+  - Maybe SQLite inherited that behavior from PG. But default indexing on fkey might hamper write-heavy workflows if there are many of them
+
+- and if you use rowid directly as the foreign key you get a single index lookup (rowid -> page) versus two (primary key -> rowid -> page)
+- the other day I learned about SQLite’s loose-by-default column types too. magical quirky lil database
 
 - ## Some notes on how SQLite implements MVCC using WAL and provides Snapshot Isolation
 - https://x.com/iavins/status/1870464040977256753
