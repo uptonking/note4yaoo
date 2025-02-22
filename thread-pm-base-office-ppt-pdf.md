@@ -48,7 +48,7 @@ modified: 2024-01-11T15:57:32.182Z
 # discuss-pdf
 - ## 
 
-- ## PDF转Markdown 方案选型
+- ## 📌 PDF转Markdown 方案选型
 - https://x.com/dotey/status/1817072212316135776
 01. document-convert（开源）：https://github.com/multimodal-art-projection/MAP-NEO/tree/main/Matrix/document-convert
 02. Ragflow（开源）：https://github.com/infiniflow/ragflow

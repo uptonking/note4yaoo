@@ -142,7 +142,17 @@ modified: 2024-08-24T16:28:20.515Z
 # discuss-ide-ai
 - ## 
 
-- ## 
+- ## 💰 Windsurf revealed today that they have 500k+ active users and ~1M messages sent a day.
+- https://x.com/deedydas/status/1893040524287971437
+  - That’s 2% of the global software developer market of ~30M.
+
+- Did you see Bolt hit 3 million users? I think the number of software developers is going to 10x to ~300 million thanks to vibe coding.
+
+- I'm a PM that uses Windsurf, am I counted in 30M or is the market bigger because of people like me getting into programming?
+- GitHub alone has over 100M MAUs, so the global software developer market is likely much larger than ~30M.
+
+- interesting numbers, keeping in mind their top-down approach compared to the bottom-up growth trajectory of Cursor.
+  - i wonder when they will hit the ceiling -> early adopters are already opinionated on any of these solutions.
 
 - ## 🌰 Tiny teams are the future:
 - https://x.com/benln/status/1889388151770325427

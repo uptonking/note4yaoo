@@ -35,7 +35,26 @@ modified: 2023-09-24T19:05:33.866Z
   - **it's bad practice to write db queries inside your router** alongside all its other responsibilities.
   - Spending a few seconds abstracting away some database queries is negligible compared to the time it takes to debug issues that arise from the few seconds you thought you were saving.
   - Premature optimization and overengineering are indeed a waste of time during the MVP and early stages of a product. However, writing clean, well-structured code isn't either of these.
+# discuss-orm-usage-tips
+- ## 
+
+- ## 
+
+- ## 
+
+- ## prisma 真是被炒作过头了。。。准备迁移到 drizzle
+- https://x.com/rxliuli/status/1893181573769408894
+- drizzle 好用，全都在 ts 内解决，没有 dsl，深度体验写了两个项目，一个接 aws rds 标准 CI/CD 升级，另一个接 supabase 快速开发都很方便。
+- 原生 SQL 永远都是一个选择，迁移起来也挺痛苦的，prisma 把默认值、updatedAt 之类的都放到程序抽象层去实现了
+- 虽然查询上prisma方便一些，但它的问题是好像没办法通过代码来控制迁移，只能用cli来控制迁移
+  - 用docker做web应用时，还可以勉强用http://entrypoint.sh来执行prisma migrate deploy。但用electron做桌面应用时，我已经完全想不到办法了
+  - drizzle就没这个问题，而且打包后docker镜像也会小不少
+
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

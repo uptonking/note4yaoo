@@ -12,11 +12,23 @@ modified: 2023-02-20T19:41:08.506Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## New in @ChromeDevTools : Accurately emulate CPU performance of a low/mid tier phone with Automatic CPU throttling calibration
+- https://x.com/addyosmani/status/1893201558952911200
+  - This feature calculates slow-downs for your specific device. Wanted this for years! We just shipped it.
+
+- I’ve been fiddling around with emulators and more for years to build in scope of multiple browsers and device and bandwidth. Nice update ifykyk
+
+- Cool. Now can you add memory limiting as well? It'd be a very cool feature
+- cool for QA and testing
+
 - ## 推荐一个可自托管的虚拟浏览器，可以直接部署到一个VPS上，然后就可以实现团队间共享一个持久化Session的浏览器。
 - https://x.com/Stephen4171127/status/1883559372204491156
 - 试过了，卡顿很厉害。还不如vpn加windows虚拟机
 - 这种用类似于novnc实现的浏览器项目都不是很好用，带宽和延迟一旦不够就会让整个界面都很卡，甚至是完全不可用的地步
 - aws的remote desktop考虑一下？
+
 # discuss-net
 - ## 
 

@@ -12,7 +12,26 @@ modified: 2025-01-05T15:00:51.509Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## A technical deep-dive into how we built an AI that understands and propagates code changes across entire codebases. 
+- https://x.com/augmentcode/status/1892616601544872212
+  - [The AI research behind Next Edit _202502](https://www.augmentcode.com/blog/the-ai-research-behind-next-edit)
+- Three core challenges we had to solve:
+- Challenge 1: Developer workflows are messy. Copy-paste, multiple rapid edits, frequent file switching. 
+  - How do you infer intent from this chaos?
+- Challenge 2: Finding where to make changes
+  - The problem: How do you efficiently scan tens of thousands of files in a monorepo without killing performance?
+  - Solution: Unlike LLM-heavy approaches, we built a specialized retriever model. Fast, scalable, and focused on relevant code sections.
+- Challenge 3: Making accurate edits
+  - The problem: How do you generate complex edits beyond simple cursor insertions with minimal latency?
+  - Solution: Novel diff decoding scheme + RAG for codebase context. Reduced latency from seconds to hundreds of ms while maintaining accuracy.
+
+- I think using an LSP server in the extension was a good idea. Cody did that.
+  - One of the things that Augment does well is understanding my edits. I’ve noticed that even if I rename a file it understood what I was doing. I really do like the extension. I’m not crazy about having to click twice and having to move my mouse all the way to the top of the window to do it but the options in that bar are useful.
+
+- 
+- 
+- 
+- 
 
 - ## [Why LSP? | Hacker News _202204](https://news.ycombinator.com/item?id=31151048)
 - The existence of multiple LSP clients demonstrates the success of LSP and is a strength, not a weakness as the author suggests.
@@ -46,6 +65,16 @@ modified: 2025-01-05T15:00:51.509Z
 - 
 - 
 
+# discuss-lsp-like
+- ## 
+
+- ## 
+
+- ## 
+
+- ## IntelliJ since the have a BSP (Build Server Protocol) on top of LSP. Having nice web assembly target on top of JVM and native one should be great too.
+- https://x.com/heyyrudyy404/status/1891852722275504340
+
 # discuss
 - ## 
 
@@ -54,6 +83,25 @@ modified: 2025-01-05T15:00:51.509Z
 - ## 
 
 - ## 
+
+- ## In LSP, a position is represented as a line number and a column offset (in Unicode code units)
+- https://x.com/_wilfredh/status/1890901779518206149
+  - This is pretty elegant. You'll get the correct line regardless of encoding bugs, and the editor already knows the line number so it's cheap to compute.
+- Is that true? I thought the column offset was in UTF-16 codepoints. That is the whole premise of this bug between rust-analyzer and Emacs for emoji
+  - In LSP 3.17, the client and server can negotiate the encoding used when calculating offsets. Historically it assumed UTF-16 everywhere I believe.
+- That’s better than mandating UTF-16. Still requires clients and servers to support multiple encodings. Would have been so much better if they had made it Unicode code points from the start.
+
+- ## Ever wondered HOW LSP works under the hood? Meet read_lsp – a lightweight Language Server built for learning GO.
+- https://x.com/boy_atharva_/status/1887112315889447131
+  - Designed for Neovim, but might work elsewhere! Uses stdin/stdout RPC for communication.
+
+- ## Why can't we run LSPs in web containers directly and not on separate backend server? 
+- https://x.com/lokendra__sinh/status/1883145080531509678
+  - Like what are the limitations of running LSP's & other features in browser itself
+  - Browser's memory becoming a bottleneck? 
+  - User's device not capable enough?
+- LSPs rake too much memory ngl
+  - Yup have seen my tsserver acting up every now and then and I had to restart the session. But how is bolt keeping up with this?
 
 - ## [Ask HN: Programmers who don't use autocomplete/LSP, how do you do it? | Hacker News _202412](https://news.ycombinator.com/item?id=42492508)
 - I work almost exclusively in Emacs without the modern LSP-based tools. I believe I do keep more in my head than programmers that use more advanced IDEs.

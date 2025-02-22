@@ -129,7 +129,11 @@ let subscription = commandKeys(inputElement).subscribe({
 
 - ## 
 
-- ## 
+- ## We're finally looking to ship Observables in Chrome v135. It's been a long time coming
+- https://x.com/domfarolino/status/1893052333249958261
+
+- https://x.com/BenLesh/status/1893053275995357608
+  - If you'd like to know why RxJS 8 development halted about a year ago, this is why. Future versions of RxJS will align with and use native observables!
 
 - ## 🆚️ Promises vs Observables.
 - https://twitter.com/BenLesh/status/1758602497898201142

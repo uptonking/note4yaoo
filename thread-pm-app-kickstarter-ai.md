@@ -227,7 +227,15 @@ modified: 2023-04-04T03:59:40.928Z
 
 - ## 
 
-- ## 
+- ## 看到最近字节大模型的一号位换人了。
+- https://x.com/seclink/status/1893123275116683323
+  - 感觉2024年字节的豆包和coze商业化发展得都不错，经过工信部备案里面的第一。不备案不合规的大模型除外。
+  - 但是在学术影响力这种虚荣指标上，确实不如qwen、gemini、openai、deepseek、facebook做得好。人家每个月都有新论文，先不管有没有用，发论文就像发微博一样频繁，照样可以饱和式轰炸。
+
+- 实际应用看，字节确实做的最好，反应又快，能力中等，不过顶尖的战争做得好没用，要做到最好才行，这就是大玩家的宿命
+  - 是的，真正用在生产环境才知道coze是最接地气，最稳定的。其他风格都比较飘，总有些大大小小的问题
+
+- coze我也不是没用过，国内版只能用豆包，模型的指令遵循能力，token吞吐率，工具调用的准确率，都还不行。对普通开发者远不如dify+阿里云qwen。coze可能唯二的优势就是打通了生态且方便卖课割韭菜吧
 
 - ## agent use cases
 - https://x.com/anitakirkovska/status/1892950383950983465
@@ -328,11 +336,11 @@ modified: 2023-04-04T03:59:40.928Z
 
 - ## 5 new market maps in AI
 - https://x.com/chiefaioffice/status/1799766662746398851
-  01.            AI code generation tools from Greylock
-  02.            AI legal tools from Battery Ventures
-  03.            AI agent infrastructure from Madrona
-  04.            AI marketing tools from a16z
-  05.            Conversational AI from Cobus Greyling
+  01.             AI code generation tools from Greylock
+  02.             AI legal tools from Battery Ventures
+  03.             AI agent infrastructure from Madrona
+  04.             AI marketing tools from a16z
+  05.             Conversational AI from Cobus Greyling
 
 - ## Google 最近新出了两个 Code 相关的 Agent 非常有意思：
 - https://x.com/tuturetom/status/1798350275314581670

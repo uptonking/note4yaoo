@@ -49,6 +49,7 @@ modified: 2023-11-28T14:48:45.910Z
     - video templates for tiktok/bilibili
   - table
     - diff
+    - ✨ markdown-table的wysiwyg是一个痛点和卖点
   - markdown support with git-like database
     - widely used, enterprise-loved(易盈利)
     - text files works well with existing tooling
