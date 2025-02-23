@@ -349,6 +349,23 @@ add an action to run "npm install -ddd" and another action to add datetime at to
   - live模式显示弹窗
   - 回放模式显示红色背景的文件快照
 
+## 0224
+
+## 0223
+
+- 掉线提示
+  - terminal光标不要闪了
+- 大白屏异常排查
+- webview关闭按钮
+
+- 昨天
+  - 测试用户反馈的 Run button 一直 loading 的问题，分为3个子issue，解决了2/3，剩下的 @刘天平 进一步排查
+  - 修复影响发版的问题
+- 今天
+  - 修复用户反馈的高优先级问题, 如Console 输出 Cannot write file 错误
+  - git stash后文件系统和文件树数据不同步，需要配合 @刘天平 排查fileChange事件为什么缺失部分路径
+  - 修复完和 @廖伟强 确定下一个任务的优先级，先做 ports优化，还是其他的issue
+
 ## 0221
 
 - 昨天

@@ -20,6 +20,14 @@ modified: 2024-08-24T16:28:20.515Z
 - devin偏服务端方案而偏向创作力工作，cursor偏向工具
 # ide-ai-xp
 - ide的自动补全和多人实时协作似乎是冲突的
+
+- ai生成的代码的缩进有时与原代码不同
+  - 解决方案是在服务端执行 prettier ?
+
+- 
+- 
+- 
+
 # codellama
 - https://github.com/meta-llama/codellama /202401/python
   - Code Llama is a family of large language models for code based on Llama 2 providing state-of-the-art performance among open models, infilling capabilities, support for large input contexts, and zero-shot instruction following ability for programming tasks.

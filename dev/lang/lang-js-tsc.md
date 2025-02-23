@@ -31,6 +31,9 @@ tsc --listFiles
 - [`@ts-ignore` for the block scope and imports](https://github.com/Microsoft/TypeScript/issues/19573)
   - Why not close this and admit it will never be added?
   - People don't like it when we do that either
+# docs
+- Importantly,  `rootDir` does not affect which files become part of the compilation. It has no interaction with the `include, exclude, or files` tsconfig.json settings.
+  - Note that TypeScript will never write an output file to a directory outside of `outDir`, and will never skip emitting a file. For this reason,  `rootDir` also enforces that all files which need to be emitted are underneath the `rootDir` path.
 # faq
 
 # more
@@ -40,7 +43,20 @@ tsc --listFiles
 
 - ## 
 
-- ## 
+- ## [TypeScript error: Cannot write file 'index.d.ts' because it would overwrite input file - Stack Overflow](https://stackoverflow.com/questions/37013665/typescript-error-cannot-write-file-index-d-ts-because-it-would-overwrite-inpu)
+- Adding `include` to my configuration solved the problem for me.
+  - As said in the doc, exclude specifies an array of filenames or patterns that should be skipped when resolving include.
+  - I deduce that exclude can't work if include hasn't been defined.
+
+```JS
+{
+  "compilerOptions": {
+    /* ... */
+  },
+  "include": ["src"],
+  "exclude": ["**/*.test.*"]
+}
+```
 
 - ## [How to compile Typescript project into one file without system/amd overhead? - Stack Overflow](https://stackoverflow.com/questions/72738931/how-to-compile-typescript-project-into-one-file-without-system-amd-overhead)
 - TypeScript is a compiler. So it compiles files to newer files preserving the directory structure.

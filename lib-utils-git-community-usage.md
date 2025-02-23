@@ -115,7 +115,36 @@ git log --online --graph --decorate
 # disccuss
 - ## 
 
-- ## 
+- ## 🆚 [How to retrieve a single file from a specific revision in Git? - Stack Overflow](https://stackoverflow.com/questions/610208/how-to-retrieve-a-single-file-from-a-specific-revision-in-git)
+
+```sh
+# git show REV:PATH ,  SHA1 hash可以只写几位，实测下面4位能work，github的ui一般是7位
+git show 514a:README.md
+# 使用HEAD查看旧文件的顺序: HEAD(最新commit的内容，也许不是最新文件内容), HEAD~(与～1相同), HEAD~2
+git show HEAD^^^:test/test.py
+git show somebranch:from/the/root/myfile.txt
+```
+
+```sh
+# shows a diff, and not the file contents, 显示的是指定commit的git diff输出，只显示一个
+git show a44d7 README.md
+# 显示倒数第一个git diff输出
+git show -1 filename.txt > to compare against the last revision of file
+# 显示倒数两2个commit的git diff输出，显示了2个； git show -3 会显示3个git diff的输出
+git show -2 filename.txt > to compare against the 2nd last revision
+
+# replace/overwrite the content of a file in your current branch with the content of the file from a previous commit or a different branch
+git checkout 086181 path/to/file.txt
+git checkout branchName path/to/file.txt
+```
+
+- It's important to remember that when using "git show", always specify a path from the root of the repository, not your current directory position.
+  - Although Mike Morearty mentions that, at least with git 1.7.5.4, you can specify a relative path by putting "./" at the beginning of the path
+- `git show` essentially dump the content on the stdout (standard output), you could simply redirect that output to any file you want
+  - `git checkout` would override your file by another version, as opposed to `git show`, which allows you to save it under a different name
+- I would like to note that `^^^` can also be written more generally as `~~~` or, better,  `~3` . Using tildes also has the advantage of not triggering the file name matching of some shells (zsh, for instance)
+
+- `git show FileName` produces a diff-like output, but `git show HEAD:FileName` should give the committed file contents
 
 - ## what is .gitignore is added in .gitignore file
 - https://x.com/GithubProjects/status/1887402959136260482
