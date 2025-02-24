@@ -42,6 +42,11 @@ modified: 2023-09-02T09:16:30.412Z
 - 
 - 
 
+## docker/vm
+
+- 采用容器方案的缺点，不方便单个容器升降级配置
+  - 采用vm更方便
+- cde容易被利用进行ddos，特别是被NAT后
 # webcontainer/nodebox
 - pros
   - 让原生程序在浏览器、移动端执行

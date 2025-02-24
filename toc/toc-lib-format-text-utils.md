@@ -111,6 +111,11 @@ modified: 2023-09-01T03:56:10.056Z
   - jsdiff deviates from the published algorithm in a couple of ways that don't affect results but do affect performance:
     - jsdiff keeps track of the diff for each diagonal using a linked list of change objects for each diagonal, rather than the historical array of furthest-reaching D-paths on each diagonal contemplated on page 8 of Myers's paper.
     - jsdiff skips considering diagonals where the furthest-reaching D-path would go off the edge of the edit graph. This dramatically reduces the time cost (from quadratic to linear) in cases where the new text just appends or truncates content at the end of the old text.
+
+- https://github.com/inkling/htmldiff.js /MIT/201803/js/inactive
+  - Diff algorithm that understands HTML, in the browser.
+  - htmldiff.js is a JavaScript port of https://github.com/myobie/htmldiff by Keanu Lee at Inkling.
+  - This is diffing that understands HTML. Best suited for cases when you want to show a diff of user-generated HTML (like from a wysiwyg editor).
 # command-line
 - https://github.com/Textualize/rich /python3.7+
   - https://rich.readthedocs.io/en/latest/

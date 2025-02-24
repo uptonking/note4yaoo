@@ -846,6 +846,9 @@ modified: 2023-02-05T18:50:32.900Z
   - Built on top of React and React Admin for admin panel, and NestJS and Sequelize for API.
   - 依赖nestjs-passport、knex、sequelize
 # testing
+- https://github.com/causalhq/sequelize-interview
+  - Make sure to complete the entire setup process below, and can run the final test command
+
 - https://github.com/omvmike/fake-entity-service /202401/ts
   - Library to simplify database data generation for testing purposes
   - aim is simplify database data generation for integration and end-to-end tests.

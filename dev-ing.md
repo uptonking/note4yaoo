@@ -351,12 +351,22 @@ add an action to run "npm install -ddd" and another action to add datetime at to
 
 ## 0224
 
+- 上周
+  - 集中处理用户反馈的issue
+- 本周
+  - 继续处理cde高优先级的issue
+  - 开始ports端口转发和webview的优化
 - 昨天
   - 排查用户反馈的问题, Console 输出 Cannot write file 错误, 在本地ubuntu系统和clacky-ubuntu系统能复现，在本地mac不能复现
   - 和 @刘天平 排查git stash后文件系统和文件树数据不同步相关的fileChange事件，文件操作的现有实现考虑非常不全面，要花时间继续改
 - 今天
   - 快速开发近期反馈的2个小优化: ide server的断连与恢复提示ui、排查白屏问题
   - 修复完和 @廖伟强 确定下一个任务的优先级，先做 ports优化，还是其他的issue
+
+```sh
+run_command: npx concurrently "cd backend && npm run start:dev" "cd admin-frontend && pnpm dev:arco"
+# 对于concurrently执行的命令如何stop
+```
 
 ## 0223
 
