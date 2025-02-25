@@ -167,6 +167,9 @@ modified: 2023-01-20T00:18:44.282Z
 - https://github.com/lehao190/Dev-Blog-App-Backend-FeathersJS
   - https://github.com/lehao190/Dev-Blog-App-Frontend-Quasar
   - https://agitated-mclean-5f9de9.netlify.app/
+
+- https://github.com/ShinChven/multiple-authentication-services-on-feathers-app
+  - an example to show how to implement multiple authentication services on a FeathersJS app
 # feathers-v4
 - https://github.com/feathersjs-ecosystem/feathers-authentication-management
   - Adds sign up verification, forgotten password reset, and other capabilities to local feathers-authentication

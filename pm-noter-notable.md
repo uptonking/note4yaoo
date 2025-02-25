@@ -74,6 +74,8 @@ modified: 2023-11-28T14:48:45.910Z
   - encryption
     - 只对部分段落或部分文字加密
     - 处理类似`.env`文件时，对secretKey加密或移除，类似上传或同步文档时自动加密或脱敏
+  - interoperable/sharing
+    - MCP/LSP/backlink
   - integrations
     - jupyter-notebook
     - whisper-editor

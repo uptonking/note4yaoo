@@ -118,7 +118,13 @@ sequelize.getQueryInterface().QueryGenerator.getWhereConditions({ a: 1, b: 2, c:
 
 - ## 
 
-- ## 
+- ## [SQLite Array type · Issue · sequelize/sequelize](https://github.com/sequelize/sequelize/issues/9209)
+- 202204: we don't want to implement `DataTypes.ARRAY` for dialects that do not actually support arrays. 
+  - Use `JSON` if you want to use JSON
+
+- [Sequelize : SQLITE_ERROR: near "[]": syntax error - Stack Overflow](https://stackoverflow.com/questions/62752636/sequelize-sqlite-error-near-syntax-error)
+  - DataTypes. ARRAY(DataTypes. DECIMAL). Only available in postgres.
+  - So, you cannot use the ARRAY datatype with SQLite3, only with PostgreSQL as your backend.
 
 - ## 💡 [Sequelize, convert entity to plain object - Stack Overflow](https://stackoverflow.com/questions/21961818/sequelize-convert-entity-to-plain-object)
 - Using `.get()` won't convert included associations, use `.get({ plain: true })` instead.
