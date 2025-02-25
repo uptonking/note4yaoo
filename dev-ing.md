@@ -349,6 +349,15 @@ add an action to run "npm install -ddd" and another action to add datetime at to
   - live模式显示弹窗
   - 回放模式显示红色背景的文件快照
 
+·## 0225
+
+- 昨天
+  - 上午排查通过ssh打开clacky-cde时，ports端口转发列表包含很多端口的问题，上午时间有限没什么结论
+  - 下午排查ai写代码后在编辑器显示重复代码的问题，通过日志大致确定是OT逻辑异常导致代码写入多次，今天会通过回放和mongodb查询ot数据来进一步确认问题的原因
+- 今天
+  - 继续排查编辑器显示重复代码的问题
+  - 开始分析paas现有LSP的实现逻辑和梳理现有问题
+
 ## 0224
 
 - 上周

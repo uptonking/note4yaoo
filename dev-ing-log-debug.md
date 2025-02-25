@@ -20,6 +20,32 @@ modified: 2023-06-14T00:53:15.226Z
   - 可尝试在onClick等event handler的逻辑中间直接设置breakpoint，这样可在source面板看到调用栈及闭包对象，再通过 store as global variable 拿到重要对象
 
 - 前端页面有时无法捕获鼠标事件，可尝试先F12关闭devtools控制台，再重启服务，然后页面可能就能正常交互了，再F12打开控制台调试异常
+# issues-server
+
+## 
+
+## 
+
+## 
+
+## ide-server在cpu爆满时，处理事件会有很高延迟，导致业务侧触发业务侧自己的timeout异常
+
+- ide-server收到followingFocusComponent事件后花了超过7s还没有返回，但server侧逻辑很简单
+  - 排查定位到此时k8s pod的cpu一直都是 90% 左右
+- 在cpu很高时，ide-server会抛出各种问题
+  - 如事件超时、导致进入页面卡在loading、导致打开编辑器卡在loading、文件树空白
+
+- 🤔 ide-server的cpu占用高的原因，是浏览器客户端和agent客户端的连接逻辑有缺陷，若客户端连接ide-server未成功时，会每隔5s无限发送连接请求，如果ide-server本身cpu就很高而连不上，后续大量新的连接请求会继续连不上，反而会导致ide-server崩溃
+# issues/bugs-fixing
+
+## 
+
+## 
+
+## 排查日志时，先确定userId/email和浏览器url
+
+- 注意不能以日志自带的属性如view_path作为事故现场的url(实测日志自动收集的时间及很多属性值不准确)，
+  - 以 api请求的threadId/playgroundId + 请求时间戳 结合判断更准确
 # issues-sketch/figma
 
 ## 
