@@ -288,12 +288,13 @@ console.log(
 console.trace(';; loadFile', path, loadType);
 
 // apps/webapp/src/components/pull-request-box/commit/commit-message.tsx
+[Nest] 44  - 02/25/2025, 9:52:16 PM   ERROR [PlaygroundItem] [mqName:paas-ide-server-54c68844fb-6hhwm][agentUserId:clacky][playgroundId:740285278417498112]Error: ENOENT: no such file or directory, scandir '/app/data/codeZone/2024/1/12-16/@7ae1bce9-0562-4f50-b3e2-73709105f44f/dependency/home/app' +1ms
 ```
 
 ```
 ^(?!42\["resourceM).*
 add an action to run "npm install -ddd" and another action to add datetime at top of readme.md
-在wblog增加一个“更新日志”模块，位置放在时间线和关于中间，点击“更新日志”显示该系统的迭代更新日志，并展示几条实例的更新日志数据在里面
+add action to create quickSort1.mjs and add 200 separate test cases with more than 200 lines of code in it, because i want to do performance test.
 ```
 
 - lsp支持的语言排查
@@ -349,7 +350,40 @@ add an action to run "npm install -ddd" and another action to add datetime at to
   - live模式显示弹窗
   - 回放模式显示红色背景的文件快照
 
-·## 0225
+## 0226
+
+- 昨天
+  - 修复了暂停时只剩下一个action的场景下，无法开始执行的问题
+  - 协助排查agent连接ide-server超时的问题，是ide-server cpu占用高导致的
+  - 下午排查ai写代码后在编辑器显示重复代码的问题，通过回放确定是OT逻辑异常导致代码写入多次，今天会通过mongodb查询ot数据来进一步确认问题的原因
+- 今天
+  - 继续排查编辑器显示重复代码的问题
+  - ide-server的噪音处理
+  - 开始分析paas现有LSP的实现逻辑和梳理现有问题
+
+- [What is the point of finally in a try..catch? - Stack Overflow](https://stackoverflow.com/questions/73813509/what-is-the-point-of-finally-in-a-try-catch#)
+  - `finally` basically runs even if you have an early-return from try-catch or even if you don't handle the error in the try-catch. 
+
+```JS
+function myFunction() {
+  try {
+    console.log('inside "try"');
+    return
+  } finally {
+    console.log('inside "finally"');
+  }
+
+  console.log("after try-finally");
+}
+
+myFunction()
+// inside "try"
+// inside "finally"
+```
+
+- [Error: ENOENT: no such file or directory, scandir '../commands' discord.js - Stack Overflow](https://stackoverflow.com/questions/71982181/error-enoent-no-such-file-or-directory-scandir-commands-discord-js)
+
+## 0225
 
 - 昨天
   - 上午排查通过ssh打开clacky-cde时，ports端口转发列表包含很多端口的问题，上午时间有限没什么结论
