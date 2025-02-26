@@ -12,6 +12,8 @@ modified: 2021-01-03T17:11:47.916Z
 - ref
   - [Theme Configuration](https://tailwindcss.com/docs/theme)
   - [tailwind default theme](https://github.com/tailwindlabs/tailwindcss/blob/master/stubs/defaultConfig.stub.js)
+# dev-xp
+- 标准化的css原子类可方便ai快速设置样式
 
 ## opinions for tailwind
 

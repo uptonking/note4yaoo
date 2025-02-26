@@ -125,6 +125,20 @@ modified: 2024-08-24T16:17:26.715Z
 - https://github.com/microsoft/vscode-l10n /MIT/202411/ts
   - tooling for localizing Visual Studio Code extensions
   - This API, introduced in VS Code 1.73, is used for translating strings in your extension's code. It is a part of the main VS Code extension API 
+- https://github.com/lokalise/i18n-ally /MIT/202405/ts/inactive
+  - All in one i18n extension for VS Code
+
+- https://github.com/reliverse/vscode-extension-framework /MIT/202502/ts
+  - Next-gen framework for developing VSCode extensions.
+  - It's like WXT, but for VSCode Extensions.
+  - Supports both MV2 and MV3
+  - Dev mode with HMR & fast reload
+  - Frontend framework agnostic: works with Vue, React, Svelte, etc
+  - Module system for reusing code between extensions
+  - Download and bundle remote URL imports
+
+- https://github.com/zardoy/vscode-framework /MIT/202111/ts/inactive
+  - Framework for fast VSCode extensions prototyping
 
 ## utils-webview
 
@@ -658,6 +672,12 @@ modified: 2024-08-24T16:17:26.715Z
 - https://github.com/binarynoir/vscode-markdown-tags /202412/ts
   - Enhance your Markdown documents with custom tags. Use predefined or custom labels, customizable colors, and arrow indicators 
 # ext-ui
+- https://github.com/jkearins/vscode-action-buttons
+  - inspired by vscode-action-buttons extension created by Seun Lanlege, maintains compatibility and expands functionality.
+  - adds buttons to status bar. The buttons can be used to execute custom commands in Terminal or to activate any VS Code command just like keyboard shortcuts do. The extension has adaptation for esp-idf framework.
+  - https://github.com/seunlanlege/vscode-action-buttons /202412/ts
+    - Add customizable buttons to the status bar to execute actions or tasks in VS Code.
+
 - https://github.com/DaGhostman/vscode-tree-view /MIT/201907/ts
   - VSCode extension that probvides mail symbol overview of the currently opened file
   - Completely standalone file symbol viewer that does not depend on any other language-specific plugins, making it ideal for cases where the complete language toolset is not available locally.
@@ -733,8 +753,18 @@ modified: 2024-08-24T16:17:26.715Z
     - This library uses https://github.com/CodinGame/monaco-editor-wrapper
     - Differences with monaco-react
       - This library outputs some dynamic import and rely on webpack to handle them
+# ext-engineering
+- https://github.com/redhat-developer/vscode-extension-tester /apache2/202502/ts
+  - [ExTester: UI Testing framework for Visual Studio Code Extensions · microsoft/vscode-discussions · Discussion _202404](https://github.com/microsoft/vscode-discussions/discussions/1156)
+  - ExTester is designed to enable end-to-end (e2e) testing scenarios using Selenium WebDriver API. 
+  - It simulates user interactions with your extension's UI at the VS Code DOM level, providing real UI testing capabilities beyond the VS Code Test CLI.
+- https://github.com/webdriverio-community/wdio-vscode-service /MIT/202502/ts
+  - A service to test VSCode extensions from end to end using WebdriverIO
 # ext-more
-
+- https://github.com/redhat-developer/vscode-didact /apache2/202201/ts/archived
+  - Framework and tools for providing interactive tutorials with active links that call VS Code commands
+  - 多用于教程
+  - The Didact framework is designed to instruct users in a useful way regarding how to complete tasks through a combination of text (Markdown- or AsciiDoc-formatted), images, and active links that show VS Code functionality in action. 
 # sync
 - https://github.com/neilmovva/codemirror /202411/ts
   - VSCode extension to continuously sync the open workspace folder to a remote server.
@@ -754,3 +784,6 @@ modified: 2024-08-24T16:17:26.715Z
   - A VSCode extension that provides a simple way to developer to execute common platform tasks for specific scenarios.
   - This extension allows developers to execute common actions as "Launch Code-Snippet", "Run VS Code command", "Open File", "Execute handler"
 # more
+- https://github.com/zardoy/vscode-extensions-control /MIT/202304/ts/inactive
+  - Extremely powerful extension for VS Code to control (configure) providers of other installed extensions!
+  - Currently, it can only disable specific extension providers for now.

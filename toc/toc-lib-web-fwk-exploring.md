@@ -76,6 +76,8 @@ const CountingComponent = () => {
   - Desktop apps running natively (no Electron!) in less than 10 lines of code.
   - First-class async support with coroutines and suspense
   - Web: Render directly to the DOM using WebAssembly
+  - Desktop: Render using Webview or - experimentally - with WGPU or Freya (Skia)
+  - Mobile: Render using Webview or - experimentally - with WGPU or Skia
 
 - https://github.com/leptos-rs/leptos /MIT/202403/rust
   - https://leptos.dev/
@@ -135,6 +137,16 @@ const CountingComponent = () => {
   - 为了将请求处理逻辑解偶，我们采用了AOP和iOC理念来作为这个架构的基础设计，在代码层面上可以实现几乎类似JAVA注解的模式。
     - 再加上将前端各大框架作为渲染引擎，一个完整的架构设计就出来了。
   - 采用了第三方开源的架构inversify实现ioc
+# web-desktop
+- https://github.com/koculu/Regor /MIT/202309/ts/inactive
+  - A modern UI framework for web and desktop applications, inspired by Vue's concepts and powered by simplicity and flexibility.
+  - With a template syntax that closely follows Vue.js, transitioning from VueJS to Regor is seamless for developers familiar with Vue.
+  - Develop UIs without a Virtual DOM for a more straightforward implementation and easier debugging.
+  - No Build Step Required: Define components in TypeScript using tagged string templates, no build step needed.
+  - Secure Evaluation: Regor's secure JavaScript VM ensures safe runtime compilation. You can enable security policy in your page without removing runtime compilation support.
+  - Reentrance: Regor supports multiple mountings in the previously mounted area using the same or different app contexts. This enables creating and mounting new directives dynamically.
+  - Regor also utilizes `Jsep`, a fast and lightweight JavaScript expression parser. 
+  - we would like to acknowledge the `happy-dom` library, which played a significant role in our testing process.
 # more-web-framework
 - https://github.com/gimenete/ui-state-sync
   - DIY modern JavaScript framework based on Virtual DOM

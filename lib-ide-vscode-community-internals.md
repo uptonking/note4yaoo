@@ -17,6 +17,15 @@ modified: 2025-02-04T17:21:02.875Z
 - ## 
 
 - ## 
+
+- ## [Why VSCode doesn't use any front end framework | Hacker News _202403](https://news.ycombinator.com/item?id=39676050)
+- > what many people don't know is that we decided to not use any UI frameworks from the beginning, and that's still true today because performance is very important to us, and we want to be fully in control of our own destiny. So we don't want to chase a framework or track down performance from in the framework, we want to be directly as close to the DOM as possible.
+
+- [Which UI Framework does VS Code use? · Issue · microsoft/vscode _202006](https://github.com/microsoft/vscode/issues/99845)
+  - I think it might be a performance issue, because we know the markup-based, immutable, declarative ui is slower than a mutable object tree with imperative code style to describe a gui.
+  - JSX/template -> object tree -> v-dom tree + component tree -> dom
+  - nextView = nextState -> new object tree -> patch v-dom tree -> diff -> patch dom.
+  - It's much slower than mutable tree -> dom
 # discuss
 - ## 
 
@@ -27,6 +36,19 @@ modified: 2025-02-04T17:21:02.875Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [What is the framework behind VSCode UI? : r/vscode _202007](https://www.reddit.com/r/vscode/comments/hpafjq/what_is_the_framework_behind_vscode_ui/)
+- No framework, other than the Monaco editor. They are using basic DOM createElement and appendChild for their UI.
+  - Open the developer tool. Use the elements picker to pick an easily recognisable UI element to find its classname. Search VSCode's code to find that classname, and you'll see how it was created.
+
+- I use Monaco pretty heavily and it's very MVC, which is pretty standard for Microsoft things. They have always been the king of interface designs.
+
+- From Erich Gamma, Technical Fellow in charge of the VS Code team:
+  - What many people don't know is that we decided to not use any UI frameworks from the beginning and that is still true today because performance is very important to us and we want to be fully in control of our own destiny. So we don't want to chase a framework or track some performance in the framework. We want to be directly as close to the DOM as possible
 
 - ## 🤼🏻 [Visual Studio Code is designed to fracture(折断；断裂；破裂) (2022) | Hacker News _202409](https://news.ycombinator.com/item?id=41691577)
 - VSCode’s ecosystem is, in many respects, quite weak:

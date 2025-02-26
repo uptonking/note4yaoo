@@ -178,16 +178,17 @@ modified: 2023-02-08T10:24:11.422Z
   - The websites are stored in the browser's Local Storage and they can be exported/imported in JSON format.
   - Developed using vanilla Javascript with the MVC pattern and Custom Elements.
 # browser-extensions-utils
-- https://github.com/PlasmoHQ/plasmo /MIT/202402/ts
+- https://github.com/wxt-dev/wxt /MIT/202502/ts
+  - https://wxt.dev/
+  - Next-gen framework for developing web extensions.
+  - WXT provides a "module system" that let's you run code at different steps in the build process to modify it.
+
+- https://github.com/PlasmoHQ/plasmo /MIT/202502/ts
   - https://www.plasmo.com/
   - a battery-packed browser extension SDK
   - Build your extension and let Plasmo handle browser-specific behaviors and bundling
   - https://github.com/yousefamar/bookmarkdown
     - A browser extension that turns a webpage into a useful markdown note
-
-- https://github.com/wxt-dev/wxt /MIT/202402/ts
-  - https://wxt.dev/
-  - Next-gen framework for developing web extensions.
 # devtools
 - https://github.com/shanebell/JaSON /202104/ts/inactive
   - a Google Chrome extension for testing APIs and making HTTP network requests.

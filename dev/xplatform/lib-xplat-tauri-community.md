@@ -25,7 +25,8 @@ modified: 2023-01-14T17:22:00.810Z
 # discuss
 - ## 
 
-- ## 
+- ## Tauri 2 的权限系统太苛刻了。窗口默认不能拖动，sidecar (vendor binaries) 默认不接受参数，诸如此类
+- https://x.com/_limboy/status/1894673659903852920
 
 - ## 用 Tauri 在小型企业内部做工具会比较合适，大家的系统会比较一致，比如大多是Windows或者macOS之一。
 - https://twitter.com/lencx_/status/1752973276018844061

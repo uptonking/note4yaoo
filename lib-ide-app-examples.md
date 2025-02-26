@@ -68,6 +68,11 @@ modified: 2024-08-24T16:30:20.218Z
   - Open Canvas is an open source web application for collaborating with agents to better write documents. 
   - It is inspired by OpenAI's "Canvas", but with a few key differences.
   - Built in memory: Open Canvas ships out of the box with a reflection agent which stores style rules and user insights in a shared memory store. This allows Open Canvas to remember facts about you across sessions.
+
+- https://github.com/TeamCodeStream/codestream-archive /NALic/202408/ts/archived
+  - https://github.com/TeamCodeStream/codestream-server
+  - they seem to be using the "webview" approach extensively and able to re-use code across IDEs. 
+  - 似乎fork了vscode
 # code-playgrounds
 
 # coding-engineer

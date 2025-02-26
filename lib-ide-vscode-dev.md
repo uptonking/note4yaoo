@@ -27,6 +27,7 @@ modified: 2024-08-24T16:15:11.456Z
 
 - who is using #vscode 💠
   - known: cursorai, codeium-windsurf
+  - more: redhat-java
 
 - who is using #theia
   - eclipse-che
@@ -64,6 +65,9 @@ modified: 2024-08-24T16:15:11.456Z
   - preview diff
 
 - 构建工具迁移到respack/vite
+
+- ecosystem-bridged-to-zed
+  - lsp
 
 ## ci/cd
 

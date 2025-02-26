@@ -652,6 +652,27 @@ modified: 2022-06-03T21:34:54.893Z
   - Local Processing: No external API calls or cloud dependencies required
   - Modern Python: Built with async/await, type hints, and current best practices
   - Kreuzberg was created to solve text extraction needs in RAG (Retrieval Augmented Generation) applications, but it's suitable for any text extraction use case. 
+
+## web-etl
+
+- https://github.com/mendableai/firecrawl /AGPLv3/202502/python/rust/ts
+  - https://firecrawl.dev/
+  - Turn entire websites into LLM-ready markdown or structured data. 
+  - Scrape, crawl and extract with a single API.
+  - The hard stuff: proxies, anti-bot mechanisms, dynamic content (js-rendered), output parsing, orchestration
+  - Batching (New): scrape thousands of URLs at the same time with a new async endpoint.
+  - open-version: scrape, extract, map, formats, sdk
+  - cloud-version: anti-bot, dashboard, actions, browserless, enterprise
+  - This project is primarily licensed under AGPLv3
+    - However, certain components of this project are licensed under the MIT 
+    - The SDKs and some UI components are licensed under the MIT License. 
+- https://github.com/OpenAISpace/ai-trend-publish /MIT/202502/ts
+  - 一个基于 AI 的趋势发现和内容发布系统，支持多源数据采集、智能总结和自动发布到微信公众号
+  - 多源数据采集: Twitter/X, 网站内容抓取 (基于 FireCrawl)
+  - 使用 DeepseekAI 进行内容总结
+  - 定时发布任务
+  - 定时任务: node-cron
+  - 模板引擎: EJS
 # office
 - https://github.com/paperless-ngx/paperless-ngx /GPLv3/202412/ts/python
   - https://docs.paperless-ngx.com/

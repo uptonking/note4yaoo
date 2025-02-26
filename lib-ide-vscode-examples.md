@@ -109,7 +109,7 @@ modified: 2024-08-24T16:15:54.137Z
     - 有没有什么方法可以比较方便的移植vscode的插件，或者考虑后面的版本中增加对vscode插件进行支持
     - 并没有，考虑到大部分的 vscode 的插件增强的是 vscode 所实现的功能。其相关逻辑强依赖于 vscode。所以针对大部分的 vscode 插件无法做到方便的移植。
     - 而针对除此之外的小部分 vscode 插件，诸如 icons，themes 倒是可以参考 文档
-  - [Write a Molecule demo with Electron ](https://github.com/DTStack/molecule/discussions/709)
+  - [Write a Molecule demo with Electron _202203](https://github.com/DTStack/molecule/discussions/709)
     - great idea
   - [我们开源了一个轻量的 Web IDE UI 框架 - 知乎 _202112](https://zhuanlan.zhihu.com/p/446147101)
   - [我们开源了一个轻量的 Web IDE UI 框架 - Molecule - V2EX_202112](https://www.v2ex.com/t/823289)
@@ -243,4 +243,12 @@ modified: 2024-08-24T16:15:54.137Z
   - HTML/CSS/JSON/ESLint language servers extracted from vscode.
   - Microsoft provided awesome Language Servers for the community but it didn't update for a long time.
     - Currently, the latest css-language-server is improved a bit than vscode-css-langserver-bin.
+
+- https://github.com/zardoy/typescript-vscode-plugins /MIT/202410/ts
+  - Use next-Gen TypeScript features in VSCode today
+  - our main goal is to provide most customizable TypeScript experience for IDE features.
 # more
+- https://github.com/noworneverev/react-vscode-portfolio /MIT/202501/ts
+  - https://noworneverev.github.io/
+  - A vscode inspired portfolio website
+  - The project is inspired by Visual Studio Code and caglarturali.github.io. The pages of the portfolio are powered by markdown, which make them easy to modify or add your own contents.

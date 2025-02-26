@@ -43,6 +43,11 @@ modified: 2021-01-09T16:56:35.339Z
   - https://turali.js.org/
   - VS CodeAtom One Dark inspired developer portfolio app.
 
+- https://github.com/noworneverev/react-vscode-portfolio /MIT/202501/ts
+  - https://noworneverev.github.io/
+  - A vscode inspired portfolio website
+  - The project is inspired by Visual Studio Code and caglarturali.github.io. The pages of the portfolio are powered by markdown, which make them easy to modify or add your own contents.
+
 - https://portfolio.zxh.io/
   - https://github.com/Renovamen/playground-macos
   - 依赖 @rooks/use-raf, framer-motion, react-markdown, react-redux, react-rnd

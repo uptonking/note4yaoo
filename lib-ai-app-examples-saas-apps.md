@@ -41,4 +41,10 @@ modified: 2025-02-21T17:17:42.225Z
   - 开源的数字人课程制作项目：easegen，它提供从课程制作、视频管理、智能课件生成到智能出题全套方案
   - 支持ppt课件批量自动生成、数字人克隆、声音克隆、数字人课程设计、数字人视频渲染等
   - https://x.com/aigclink/status/1847102226088841648
+# cv
+- https://github.com/roboflow/supervision /MIT/202502/python
+  - https://supervision.roboflow.com/
+  - We write your reusable computer vision tools. Whether you need to load your dataset from your hard drive, draw detections on an image or video, or count how many detections are in a zone.
+  - Supervision was designed to be model agnostic. Just plug in any classification, detection, or segmentation model.
+    - we have created connectors for the most popular libraries like Ultralytics, Transformers, or MMDetection.
 # more

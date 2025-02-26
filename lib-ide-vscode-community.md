@@ -12,8 +12,23 @@ modified: 2024-08-24T16:15:47.613Z
 # discuss-stars
 - ## 
 
-- ## [Why VSCode doesn't use any front end framework | Hacker News _202403](https://news.ycombinator.com/item?id=39676050)
-- > what many people don't know is that we decided to not use any UI frameworks from the beginning, and that's still true today because performance is very important to us, and we want to be fully in control of our own destiny. So we don't want to chase a framework or track down performance from in the framework, we want to be directly as close to the DOM as possible.
+- ## [Are there apps built on top of VSCode open source base? - Stack Overflow](https://stackoverflow.com/questions/68100375/are-there-apps-built-on-top-of-vscode-open-source-base)
+  - VSCode has a very customizable UI with Activity Bar, Sidebar, Tabs, Status Bar etc
+  - It is well maintained, works in different OSes and has automatic updates.
+  - Even if we remove the code-editor part, there is a lot of work in that.
+  - This makes me wonder if it is possible to write a totally different app (not a code editor) on top of VSCode. For example a Slack-like messaging app, an Obsidian-like knowledge base app, etc.
+
+- One thing that VS Code gives you that Electron doesn't is a distribution model - the marketplace and how new versions of your app can be detected and downloaded automatically etc. This is a big deal.
+
+
+- I think the disadvantages are that a very fancy UX may not be possible directly - but you have to "work around" by putting HTML within a Web View perhaps. 
+
+
+- 
+- 
+- 
+- 
+- 
 
 - ## [Vscode设置选项过多，是否反人类？ - 知乎](https://www.zhihu.com/question/646432493)
 - VSCode 的设置项整体是基于 JSON 的，Ctrl+, 打开的图形化界面只是一层很薄的封装而已。我认为这实际上反而是很容易配置的。我其实是建议大多数时候不要依赖于图形化界面的配置，直接去改 settings.json
