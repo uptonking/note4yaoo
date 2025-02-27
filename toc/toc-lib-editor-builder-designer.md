@@ -306,6 +306,11 @@ modified: 2020-11-17T13:38:19.107Z
   - 依赖：antd4, braft-editor, koa, react-dnd, redux-thunk2, styled-components, swiper 
   - 一个页面构建平台demo，项目以展示思路为主，只有打包和预览部分运用了node，并未使用数据库
   - 当前项目中所包含的页面以及页面中的组件和组件中的状态，均以json格式存在redux store当中
+# ai-builder
+- https://github.com/onlook-dev/onlook /apache2/202502/ts
+  - https://onlook.com/
+  - The open source Cursor for Designers. 
+  - Design directly in your live React app and publish your changes to code.
 # h5-editor
 - h5-dooring /7kStar/GPLv3/202312/ts
   - https://github.com/MrXujiang/h5-Dooring

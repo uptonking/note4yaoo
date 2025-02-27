@@ -224,7 +224,7 @@ modified: 2021-01-04T17:26:43.784Z
 - https://github.com/nikensss/sign_here /js
   - Small electron app to add hand signature image to PDF
 
-- https://github.com/praharshjain/Electron-PDF-Viewer /js
+- https://github.com/praharshjain/Electron-PDF-Viewer /MIT/202302/java/js/inactive
   - PDF viewer created using Electron framework and PDF.js
   - https://github.com/praharshjain/Vudit-Desktop
     - cross-platform desktop file viewer

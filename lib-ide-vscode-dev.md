@@ -16,6 +16,7 @@ modified: 2024-08-24T16:15:11.456Z
     - 可提取出丰富的工具库
   - 支持运行在多种环境，如 web-memory, web-node-server, electron
   - 实现了很多git操作的ui和展示的ui，可作为git客户端
+  - 提供了很多原理深度解析的技术博客
 
 - cons
   - insecure/non-sandboxed by design, 但微软设计就是如此，支持在本地或远程执行代码

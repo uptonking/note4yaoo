@@ -517,7 +517,12 @@ modified: 2024-08-24T16:17:26.715Z
 - https://github.com/lostintangent/gitdoc /MIT/202412/ts
   - VS Code extension that allows you to edit a Git repo, like it's a multi-file, versioned document.
   - GitDoc is a Visual Studio Code extension that allows you to automatically commit/push/pull changes on save
-  - Additionally, just because you're auto-commmiting your changes, doesn't mean you lose control over your version history. When needed, you can easily restore, undo, and/or squash versions, without needing to memorize the magic of git 
+  - Additionally, just because you're auto-commmiting your changes, doesn't mean you lose control over your version history. When needed, you can easily restore, undo, and/or squash versions, without needing to memorize the magic of git
+
+- https://github.com/Silic0nS0ldier/vscode-git-monolithic-extension /MIT/202412/ts
+  - Fork of the built-in VSCode Git extension which includes optimisations for monolithic repositories.
+  - A fork of VSCode's integrated Git support (from 2021-09-08) designed to work better with large repositories that Git is slow to work with.
+  - Timeline view is not supported as the API surface is experimental.
 
 - https://github.com/mhutchie/vscode-git-graph /NonCommercial/202109/ts/inactive
   - https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph

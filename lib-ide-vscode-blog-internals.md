@@ -37,6 +37,70 @@ modified: 2024-08-24T16:57:22.198Z
 - 
 - 
 
+# vscode原理
+
+## 
+
+## 
+
+## 
+
+## 
+
+## [VSCode Architecture Analysis - Electron Project Cross-Platform Best Practices - DEV Community _202310](https://dev.to/ninglo/vscode-architecture-analysis-electron-project-cross-platform-best-practices-g2j)
+
+## [Migrating VS Code to Process Sandboxing _202211](https://code.visualstudio.com/blogs/2022/11/28/vscode-sandbox)
+
+- Enabling the sandbox in Electron renderer processes is a critical requirement for secure and reliable Electron applications such as Visual Studio Code. 
+  - The sandbox reduces the harm that malicious code can cause by limiting access to most system resources.
+- This was a team effort as fundamental architectural changes as well as code modifications were required in almost all VS Code components.
+  -  The VS Code process architecture was overhauled and in the process significantly strengthened. 
+
+- For a long time, Electron has allowed direct use of Node.js APIs in HTML and JavaScript. 
+  - Components in the renderer process that require access to system resources will have to delegate to another process that is not sandboxed.
+  - Blocking Node.js from renderer processes is an encouraged Electron security recommendation. 
+
+- While creating a web version of VS Code, we had learned how to remove Node.js dependencies from the workbench – the main VS Code user interface window.
+  - Removing dependencies to Node.js meant finding alternatives. For example, our dependency on the Node.js Buffer type was replaced with a VSBuffer equivalent that would fall back to Uint8Array in browser environments. We were also able to package some Node.js modules (oniguruma, iconv-lite) to run in web environments.
+
+- When a renderer process cannot use Node.js, work must be delegated to another process where Node.js is available. 
+  - One solution in the web context could be to rely on HTTP methods, where a server accepts the requests. 
+  - However, this did not feel like the best solution for desktop applications, where running a local server on a port could be blocked by a firewall for security reasons.
+  - Electron provides the ability to inject `preload` scripts into the renderer process that execute before the main script executes. 
+
+- Fast inter-process communication via message port
+  - Even before working on sandboxing, we were interested in offloading performance intensive code to a background process, the VS Code shared process. This process is a hidden window that all workbench windows and the main process can communicate with.
+- communication to the shared process was implemented over Node.js sockets. 
+  - This had the advantage that there was zero overhead for the main process because it was not involved in the communication at all. 
+  - The disadvantage is that Node.js socket communication is not possible in sandboxed renderers since you cannot use any Node.js APIs.
+- Message ports provide a powerful way of connecting two processes with each other by establishing an IPC channel between them. 
+  - Even a fully sandboxed renderer process can use a message port because they are provided as a web API in browsers. 
+  - Replacing the Node.js socket communication with message ports allowed us to have a sandbox-compatible IPC solution while still preserving the performance aspect of not having to involve the main process.
+
+- when you open VS Code, a window loads with a pre-configured URL to show the content of the workbench.
+  - For VS Code, this URL had used the local file protocol pointing to an actual file on disk to load (`file://<path to file on disk>`). As part of the sandboxing work, we revisited this approach because it had severe security implications. Chromium makes certain security assumptions for the local file protocol that are less strict compared to the HTTPS protocol. For example, strict origin checks are not applied for local file protocol URLs.
+- With Electron, you can register custom protocols that can be used to load content into the renderer process. 
+  - The custom protocols can be configured so that they behave the same as HTTPS protocols with respect to security. 
+  - We used this approach to avoid having to run a local web server that serves the content.
+  - With the introduction of the custom vscode-file protocol for all our renderer processes, we were able to drop all uses of the file protocol. It is configured to behave like HTTPS and meant we moved closer to how VS Code for the Web actually works.
+
+- Moving processes out of the renderer
+  - The diagram below shows our process architecture in late 2022, once we had enabled the sandbox in the renderer process. All Node.js processes have moved to be either a child of the shared process or a utility process from the main process. 
+  - Message ports are used for efficient direct process-to-process communication without burdening the main process.
+
+- A new Electron API: UtilityProcess
+  - The final and probably most complex task was finding a solution for where to move the extension host. 
+  - Like the shared process, communication was implemented via Node.js sockets. There is one extension host process per window and extensions are free to spawn as many child processes as they require.
+  - We had thought about moving the extension host into our shared process like file watchers and integrated terminals but felt that we should take the opportunity and build something more flexible that does not require a hidden window as a host.
+  - At that time, Electron was not able to provide us with an API that supports these requirements and so we contributed a new utility process API to Electron. 
+
+- Moving off the Electron webview element
+  - While not necessarily required to enable sandbox, we took the opportunity to revisit the use of the Electron `webview` tag in VS Code and replace it with the `iframe` tag to more closely align with how VS Code works in the web. 
+  - Both tags are similar in that they allow the workbench to host untrusted code from extensions while isolating the workbench from the effects of running this code. 
+  - In most cases, we were able to just replace the webview tag with the iframe tag. However one feature was missing from iframes, the ability to perform and highlight textual searches in the content.
+  - While Chromium internally implemented this functionality, it was not exported as a web API to use. We made the necessary changes to expose the API in Electron and were able to drop all usages of webview elements.
+
+- Enabling renderer process reuse
 # 系列博客
 
 -[vscode 定制开发 —— 基础准备 | 匠心博客](https://zhaomenghuan.js.org/blog/vscode-custom-development-basic-preparation.html)

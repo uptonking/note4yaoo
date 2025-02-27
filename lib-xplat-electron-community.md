@@ -89,7 +89,16 @@ modified: 2023-01-02T10:30:19.459Z
 # discuss
 - ## 
 
-- ## 
+- ## [Basic Electron Framework Exploitation | Hacker News _201908](https://news.ycombinator.com/item?id=20636805)
+- > The problem lies in the fact that Electron ASAR files themselves are not encrypted or signed
+  - ASAR files are signed as part of the application bundle. The issue is that folks don't understand how gatekeeper works so let me try explain it here.
+  - When you download an application from the internet, macOS initially considers it "quarantined". When a quarantined application is first opened gatekeeper scans it _completely_ and if it's happy removes the quarantine tag and let's it launch.
+
+- ASAR code-signing is not fool-proof, as we can still do in-memory patching, etc. Game hackers have been patching (signed) OpenGL and DirectX drivers for decades. It's a very common technique.
+
+- If you ship your app as a setup bundle (say, an AppSetup.exe, an App.dmg, or rpm/deb files), you should code-sign the whole thing, which completely sidesteps this issue. The same is true if you use the Mac App Store, Windows Store, or Snapcraft Store.
+
+- 
 
 - ## [java 也是跨平台, 为何没有 gui 框架像electron 那么火? - 知乎](https://www.zhihu.com/question/601426954/answers/updated)
 - Java最初诞生之后，它的GUI也是比较火的，许多Java应用程序都是具有GUI的桌面应用程序。 但现在GUI界面已经普遍地被网页界面取代，Java也不例外，Java Web应用成为主流的应用。所以Java的GUI API就逐渐使用得少了。

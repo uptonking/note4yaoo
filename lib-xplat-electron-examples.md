@@ -11,6 +11,7 @@ modified: 2024-01-31T19:13:11.286Z
 - tips
   - ~~不建议基于electron实现自定义浏览器，要考虑支持各浏览器自带的扩展商店，可在自己的应用层实现~~
   - ? electron-for-android/ios vs apps
+  - web+pc: vscode, jupyter, (rstudio)
 
 - resources
   - https://github.com/sindresorhus/awesome-electron
@@ -30,6 +31,12 @@ modified: 2024-01-31T19:13:11.286Z
 - https://github.com/electron/apps /MIT/202310/js/无详情页
   - https://www.electronjs.org/apps
   - A collection of apps built on Electron
+
+- https://github.com/desktop/desktop /MIT/202502/ts
+  - GitHub Desktop is an open-source Electron-based GitHub app. 
+  - It is written in TypeScript and uses React.
+  - Focus on what matters instead of fighting with Git.
+  - Linux is not officially supported; however, you can find installers created for Linux from a fork of GitHub Desktop in the Community Releases section.
 
 - https://github.com/jupyterlab/jupyterlab-desktop /BSD/202401/ts
   - JupyterLab desktop application, based on Electron.
@@ -185,14 +192,6 @@ modified: 2024-01-31T19:13:11.286Z
   - Electron + Vite + React + Sass boilerplate.
   - https://github.com/diego3g/electron-typescript-react
 
-- https://github.com/ccorcos/electron-architecture /4Star/CC0-1/202108/ts
-  - This project is a boilerplate electron app with a thoughtfully designed architecture
-  - Main and renderer processes manage state using a Redux-like state machine.
-  - Electron BrowserWindows are controlled declaratively through the application state.
-  - Electron IPC uses a Proxy enabling "Rename Symbol" and "Find All References" in VSCode.
-  - https://github.com/ccorcos/electron-boilerplate /202012/ts
-    - uses TypeScript and demonstrates using a preload script to interact with the native APIs.
-
 - https://github.com/sprout2000/electron-react-ts
   - An Electron boilerplate with hot reloading for React and TypeScript.
   - https://github.com/sprout2000/elephicon
@@ -261,6 +260,9 @@ modified: 2024-01-31T19:13:11.286Z
   - 基于 Electron 的多平台直播自动录制软件
   - 普通用户可以直接使用客户端版本来自动录制需要回顾的直播与弹幕
   - 开发者可以基于插件系统来扩展可用的直播平台，或基于 @autorecord/manager 包和已实现的直播平台插件来做一款新的软件
+
+- https://github.com/paulosabayomi/vscode-clone-with-electron-js-react-js-and-monaco-library 
+  - /202410/ts
 # server
 
 # files
@@ -388,6 +390,9 @@ modified: 2024-01-31T19:13:11.286Z
 - https://github.com/weolar/miniblink49 /201911/cpp
   - 一个小巧、轻量的浏览器内核，用来取代wke和libcef
 
+- https://github.com/nathanbuchar/electron-settings /MIT/202404/ts/inactive
+  - A simple persistent user settings framework for Electron.
+
 ## utils-messaging
 
 - https://github.com/linonetwo/electron-ipc-cat /MIT/202307/ts
@@ -398,6 +403,51 @@ modified: 2024-01-31T19:13:11.286Z
   - Only plain objects can be passed between the 2 sides of the proxy, as the data is serialized to JSON, so no functions or prototypes will make it across to the other side.
   - https://github.com/frankwallis/electron-ipc-proxy /MIT/202010/ts
     - Transparent asynchronous electron remoting using IPC.
+# pattern/architecture
+- https://github.com/ccorcos/electron-architecture /4Star/CC0-1/202108/ts/inactive
+  - This project is a boilerplate electron app with a thoughtfully designed architecture
+  - Main and renderer processes manage state using a Redux-like state machine.
+  - Electron BrowserWindows are controlled declaratively through the application state.
+  - Electron IPC uses a Proxy enabling "Rename Symbol" and "Find All References" in VSCode.
+  - https://github.com/ccorcos/electron-boilerplate /202012/ts
+    - uses TypeScript and demonstrates using a preload script to interact with the native APIs.
+
+- https://github.com/HopefulHeart2020/electron-typescript-react-clean-architecture /202309/ts
+  - Boilerplate for projects using Eletron, React and Typescript applying Clean Architecture together with Atomic Design.
+
+- https://github.com/dutchigor/pluggable-electron /MIT/202210/js/inactive
+  - A framework to build Electron apps that can be extended by other parties.
+  - Pluggable Electron allows an Electron app to include extension points in the code. 
+    - Plugin developers can then write extensions - in the form of npm packages - that can be inserted into these extension points.
+  - The framework includes the tools necessary to manage the whole life cycle of plugins, for example writing, installing, uninstalling and updating plugins, and creating and triggering extension points.
+  - The framework uses inversion of control and dependency inversion principles for this.
+  - [Allow dependencies between plugins ](https://github.com/dutchigor/pluggable-electron/issues/13)
+    - Pluggable Electron makes it possible for plugins to add their own extension points that can be registered to by other plugins. Whilst this is useful, this can become confusing if a plugin requires that other plugin to be present but it is not.
+    - But since Pluggable Electron is based on npm packages, the obvious solution here would be to usilise the dependencies these packages.
+  - [How about custom UI plugins? _202110](https://github.com/dutchigor/pluggable-electron/issues/2)
+    - Version 0.2.0 has now been released and this supports importing Pluggable Electron into ES modules on the front end. 
+  - https://github.com/dutchigor/pluggable-electron-demo
+    - Also check out the with-vue branch to see an example with Vite and Vue. 
+
+
+- https://github.com/reZach/secure-electron-template /MIT/202404/js
+  - A current electron app template with the most popular frameworks, designed and built with security in mind
+
+- https://github.com/ArcherGu/einf /MIT/202502/ts
+  - Einf is a simple electron main process framework, which provides some decorators and automatic dependency injection to help you simplify the main process code.
+  - Support dependency injection powered by Typescript decorators.
+
+- https://github.com/web-infra-dev/electron-sprout /MIT/202210/ts/inactive/modernjs
+  - A front-end friendly desktop framework based on Electron.
+  - electron-runtime: modified from vscode.
+  - Unbundled Dev Server: The server implementation is based on the idea and structure of vite and wmr, and is adapted to the Modern.js application.
+
+- https://github.com/dromara/electron-egg /apache2/202502/js
+  - A simple, cross platform, enterprise desktop software development framework
+  - Architecture: Single - business process / modular / multi - task (process, thread, rendering process), which simplifies the development of large - scale projects.
+  - Independent front - end: Theoretically supports any front - end technology, such as Vue, React, HTML, etc.
+  - https://github.com/wallace5303/ee-core /ISC/202502/js
+    - Powerful electron third party module, offering 100+ API
 # tauri
 - https://github.com/12joan/ping-ui
   - A simple GUI for the ping command-line utility built using Tauri.

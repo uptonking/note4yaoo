@@ -16,7 +16,14 @@ modified: 2025-02-04T17:21:02.875Z
 
 - ## 
 
-- ## 
+- ## [Move away from electron · Issue · microsoft/vscode _202103](https://github.com/microsoft/vscode/issues/118308)
+  - Moving away from electron and moving to tauri would be a big performance upgrade, allowing for more low-end devices to use VSC.
+
+- Electron has no native auto updater on Linux, but is offered by electron-packager
+
+- 📣 202212: thanks for your interest in exploring an alternative runtime for VSCode desktop. 
+  - Although Tauri has its advantages over Electron, it is not yet the right alternative for VSCode based on our current desktop integration with the Chromium and Nodejs runtime, you can learn more about our process architecture and some of the customizations made to the runtime for our not too recent Sandbox effort 
+  - We are following alternative desktop framework projects like Tauri, Flutter, Webview2 etc., but we are not at the point of considering a runtime migration
 
 - ## [Why VSCode doesn't use any front end framework | Hacker News _202403](https://news.ycombinator.com/item?id=39676050)
 - > what many people don't know is that we decided to not use any UI frameworks from the beginning, and that's still true today because performance is very important to us, and we want to be fully in control of our own destiny. So we don't want to chase a framework or track down performance from in the framework, we want to be directly as close to the DOM as possible.

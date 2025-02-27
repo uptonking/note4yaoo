@@ -66,6 +66,8 @@ modified: 2024-01-31T19:34:30.248Z
     - 有了 IPC 通道之后，接下来 Browser 进程与 Render 进程就以消息的形式进行通信。
     - 我们将这种消息称为 IPC 消息，以区别于线程消息循环中的消息。
     - 通讯传递数据的过程中，由于不是共享内存（因为 IPC 是基于 Socket 的），导致出现多份数据副本
+# blogs-internals
+
 # blogs-ipc
 
 ## [Electron 进程间通讯详解 _201906](https://www.iguan7u.cn/2019/06/30/Electron-%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E8%AE%AF%E8%AF%A6%E8%A7%A3/)
@@ -118,4 +120,8 @@ modified: 2024-01-31T19:34:30.248Z
   - worker_threads多线程的支持让Electron能更加接近原生应用
   - cluster，可以让多个子进程使用同一个端口，并且为其提供了负载均衡的特性，使得 node.js 能充分利用多核CPU的特性。但主进程并没有闲下来。
   - child_process模块为node.js提供了原始的子进程方式。通过测试我们发现，在子进程中，即使长时间运行 CPU 密集型的操作，渲染进程以及主进程都不会受到应用。经过一系列的重构，我们将绝大部分业务逻辑转移到子进程中，真正彻底地解决了CPU密集型运算导致的渲染进程卡顿的问题。
+# blogs-author/team
+
+## [10 years of Electron 🎉 _202303](https://www.electronjs.org/blog/10-years-of-electron)
+
 # more
