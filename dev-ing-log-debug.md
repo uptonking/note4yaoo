@@ -26,7 +26,10 @@ modified: 2023-06-14T00:53:15.226Z
 
 ## 
 
-## 
+## 当浏览器标签页处于后台且未挂起时，websocket的hearbeat心跳事件有时会自动停止发送
+
+- 在使用vscode通过ssh打开clacky-cde的场景特别容易出现此问题
+  - docker容器的自动停止/回收需要检查更多服务端的状态
 
 ## ide-server在cpu爆满时，处理事件会有很高延迟，导致业务侧触发业务侧自己的timeout异常
 

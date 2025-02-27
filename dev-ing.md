@@ -288,7 +288,7 @@ console.log(
 console.trace(';; loadFile', path, loadType);
 
 // apps/webapp/src/components/pull-request-box/commit/commit-message.tsx
-[Nest] 44  - 02/25/2025, 9:52:16 PM   ERROR [PlaygroundItem] [mqName:paas-ide-server-54c68844fb-6hhwm][agentUserId:clacky][playgroundId:740285278417498112]Error: ENOENT: no such file or directory, scandir '/app/data/codeZone/2024/1/12-16/@7ae1bce9-0562-4f50-b3e2-73709105f44f/dependency/home/app' +1ms
+[Nest] 44 - 02 / 25 / 2025, 9: 52: 16 PM ERROR[PlaygroundItem][mqName: paas - ide - server - 54 c68844fb - 6 hhwm][agentUserId: clacky][playgroundId: 740285278417498112] Error: ENOENT: no such file or directory, scandir '/app/data/codeZone/2024/1/12-16/@7ae1bce9-0562-4f50-b3e2-73709105f44f/dependency/home/app' + 1 ms
 ```
 
 ```
@@ -349,6 +349,34 @@ add action to create quickSort1.mjs and add 200 separate test cases with more th
 - action-删除文件
   - live模式显示弹窗
   - 回放模式显示红色背景的文件快照
+
+## 0228
+
+- 昨天
+  - 开发P0级的需求-导入知识库，与产品设计确定了交互细节，在clacky前端实现了导入知识库的cde tools，在paas实现了placeholder占位符
+- 今天
+  - 完成需求开发，与意如在develop环境核对交互，与 陈旭东 联调导入知识库的完整流程，合入staging
+  - 处理影响发版的问题
+
+## 0227
+
+<!---
+
+# Best Practices
+  - Define Rule Objectives
+  - Define coding Standards & Style
+  - Avoid Rule Conflicts
+  - Provide Examples
+  - Key Conventions
+  - Organize and Tag
+-->
+
+- 昨天
+  - 处理了ide-server的监控告警噪音日志
+  - 优化了cde的体验细节，包括terminal打开文件路径支持显示diff，减少webview和ports出现的频率
+- 今天
+  - 开发P0级的需求，开发导入知识库，与 陈旭东 联调和对接
+  - 处理影响发版的问题
 
 ## 0226
 
