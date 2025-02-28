@@ -353,10 +353,31 @@ add action to create quickSort1.mjs and add 200 separate test cases with more th
 ## 0228
 
 - 昨天
-  - 开发P0级的需求-导入知识库，与产品设计确定了交互细节，在clacky前端实现了导入知识库的cde tools，在paas实现了placeholder占位符
+  - 开发P0级的需求-导入知识库，与产品设计确定了交互细节，在clacky前端实现了导入知识库的cde tools
 - 今天
-  - 完成需求开发，与意如在develop环境核对交互，与 陈旭东 联调导入知识库的完整流程，合入staging
-  - 处理影响发版的问题
+  - 在paas实现了placeholder占位符，完成需求开发，与意如在develop环境核对交互，与 陈旭东 联调导入知识库的完整流程，合入staging
+
+- [Difference between DOM parentNode and parentElement - Stack Overflow](https://stackoverflow.com/questions/8685739/difference-between-dom-parentnode-and-parentelement)
+  - In most cases,  `parentElement` is the same as `parentNode`. The only difference comes when a node's `parentNode` is not an element. If so,  `parentElement` is null.
+
+```JS
+document.body.parentNode; // the <html> element
+document.body.parentElement; // the <html> element
+
+document.documentElement.parentNode; // the document node
+document.documentElement.parentElement; // null 👈
+
+(document.documentElement.parentNode === document); // true
+(document.documentElement.parentElement === document); // false
+```
+
+- [Is there a CSS parent selector? - Stack Overflow](https://stackoverflow.com/questions/1014861/is-there-a-css-parent-selector)
+  - The W3C's Selectors Level 4 Working Draft includes a :has() pseudo-class that provides this capability
+  - The pseudo element `:focus-within` allows a parent to be selected if a descendent has focus.
+
+- [VIM: how to go to exact line on Ubuntu - Stack Overflow](https://stackoverflow.com/questions/6380635/vim-how-to-go-to-exact-line-on-ubuntu)
+  - :1500
+  - try `150G` to get to line 150. which is less key strokes then `:150Enter`
 
 ## 0227
 
