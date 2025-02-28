@@ -20,7 +20,9 @@ modified: 2023-01-22T18:45:58.936Z
 
 - ## 
 
-- ## 
+- ## 💫 Designing for Kanban Page
+- https://x.com/barlydesign/status/1893294672564625461
+  - 卡片内容出现动画
 
 - ## [Nullboard: Kanban board in a single HTML file | Hacker News _202412](https://news.ycombinator.com/item?id=42461688)
 - when developing single HTML file apps, instead of localStorage, one can use the HTML as the source of truth, so the user can just save/save-as to persist.

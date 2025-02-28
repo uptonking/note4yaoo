@@ -278,7 +278,6 @@ modified: 2023-02-08T07:20:48.475Z
   - OmAgent是一个多模态智能体系统，专注于利用多模态大语言模型能力以及其他多模态算法来做一些有趣的事
   - 包含一个专为解决多模态任务而设计的轻量级智能体框架omagent_core。我们利用这个框架搭建了超长复杂视频理解系统——OmAgent，当然你可以利用它实现你的任何想法。
   - DnCLoop: 受到经典算法思想Divide and Conquer启发，我们设计了一个递归的通用任务处理逻辑，它将复杂的问题不断细化形成任务树，并最终使复杂任务变成一组可解得简单任务。
-
 # open-agent
 - https://github.com/modelcontextprotocol/servers /MIT/202411/python
   - https://modelcontextprotocol.io/
@@ -434,6 +433,10 @@ modified: 2023-02-08T07:20:48.475Z
   - https://docs.ragbuilder.io/
   - A toolkit to create optimal Production-readyRetrieval Augmented Generation(RAG) setup for your data
   - By performing hyperparameter tuning on various RAG parameters (Eg: chunking strategy: semantic, character etc., chunk size: 1000, 2000 etc.), RagBuilder evaluates these configurations against a test dataset to identify the best-performing setup for your data.
+
+- https://github.com/infiniflow/ragflow /apache2/202502/python/ts
+  - https://ragflow.io/
+  - open-source RAG (Retrieval-Augmented Generation) engine based on deep document understanding
 # ai-examples
 - https://github.com/Zeyi-Lin/HivisionIDPhotos /apache2/202409/python
   - https://swanhub.co/ZeYiLin/HivisionIDPhotos/demo
@@ -477,4 +480,10 @@ modified: 2023-02-08T07:20:48.475Z
   - Stagehand allows you to write durable, self-healing, and repeatable web automation workflows that actually work.
   - https://github.com/browserbase/mcp-server-browserbase
   - https://github.com/browserbase/sdk-node
+# ai-devops/tooling
+- https://github.com/Tencent/AI-Infra-Guard /MIT/202503/go
+  - 腾讯开源了一个AI基础设施安全评估工具：AI-Infra-Guard，一键检测AI系统的潜在安全风险
+  - 支持包括langchain、ollama、gradio、open-webui以及ComfyUI等在内的30种AI组件
+  - 可以帮助识别，比如像Ollama在其docker中默认以root权限运行且开放到公网上，由于缺乏鉴权，可能会导致模型被删除/窃取/投毒或算力被窃取的风险
+  - 这个工具的特点是轻量级，二进制文件8MB，内存占用低，支持跨平台运行，开箱即用
 # more

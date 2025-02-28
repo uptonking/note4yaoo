@@ -12,7 +12,20 @@ modified: 2024-06-30T11:17:28.971Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 又有人遇到 Docker 网络问题，之前分享的操作方法我又分享一下。这是最稳妥的做法：
+- https://x.com/jaywcjlove/status/1894825834390921678
+  - 1️⃣ 本地下载镜像
+  - 2️⃣ 上传到服务器
+  - 3️⃣ 服务器加载镜像 
+  - 这个方法已经使用很久了，稳如老狗，不折腾，效果稳定可靠。
+
+- mac芯片可以拉取 amd的镜像么
+  - 要看镜像是否支持，如果支持就可以，只需要制定平台就可以了 --platform linux/amd64
+
+- 单机是可以的。记得以前搞k8s，还是要搞个软路由搭梯子。腾讯云香港主机，计时收费，用完就销毁
+
+- https://x.com/ProbiusOfficial/status/1894486674123669989
+  - 上手改 docker config 和 systemd 配置 registry proxy，然后设置 http_proxy 能解决 90% 的问题。
 
 - ## docker 是不能做到不同的用户之前相互隔离的吗？ 比如我有 A 和 B 两个不是 root 的账户，授予 docker.sock 的访问以后他们俩就都可以成为 root 并管理内容了？？？
 - https://x.com/Lakr233/status/1844993521113055437

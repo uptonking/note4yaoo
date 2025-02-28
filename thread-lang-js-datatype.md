@@ -1,8 +1,8 @@
 ---
 title: thread-lang-js-datatype
-tags: [data-type, lang-js]
+tags: [datatype, lang-js]
 created: 2024-03-16T14:11:24.927Z
-modified: 2024-03-16T14:11:57.461Z
+modified: 2025-02-28T16:11:04.650Z
 ---
 
 # thread-lang-js-datatype

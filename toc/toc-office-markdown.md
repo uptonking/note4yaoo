@@ -204,7 +204,12 @@ modified: 2021-01-04T17:26:25.032Z
     - Elog 的使用文档
 
 - https://github.com/kscript/markdown-download /MIT/202401/js
-  - 谷歌浏览器插件: 将掘金、知乎、思否、简书、博客园、微信公众号、开源中国、CSDN的文章转为markdown文档并下载
+  - 谷歌浏览器插件: 将掘金、知乎、思否、简书、博客园、微信公众号、开源中国、CSDN的文章转为markdown文档并下载 
+
+- https://github.com/gcui-art/markdown-to-image /apache2/202412/ts
+  - https://readpo.com/poster
+  - This React component is used to render Markdown into a beautiful poster image, with support for copying as an image
+  - The project also includes a built-in web editor that can be used as an online Markdown-to-poster editor with a simple one-click deployment.
 # more-md
 - https://github.com/mgmeyers/obsidian-kanban /GPLv3/202309/ts
   - https://publish.obsidian.md/kanban/

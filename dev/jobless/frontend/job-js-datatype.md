@@ -1,11 +1,11 @@
 ---
-title: job-js-data-type
-tags: [data-type, frontend, job, js]
+title: job-js-datatype
+tags: [datatype, frontend, job, js]
 created: 2021-10-10T09:06:56.283Z
-modified: 2021-10-10T09:31:00.229Z
+modified: 2025-02-28T16:10:29.641Z
 ---
 
-# job-js-data-type
+# job-js-datatype
 
 # guide
 

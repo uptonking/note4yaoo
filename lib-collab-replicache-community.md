@@ -240,7 +240,21 @@ modified: 2024-01-07T05:09:14.413Z
   - Will this time be different?
 - This time is different. PouchDB + CouchDB was bad for collaboration because you would end up with conflicted documents constantly. Plus there was no support for relational querying and no hosted service . @triplit_dev on the other hand has all of that plus great TS support
   - It's already a success in many companies like Linear, Whatsapp, FB Messenger, Superhuman, Google Maps, etc. This is just the beginning of out-of-the-box solutions being good enough
+# discuss-zerosync-internals
+- ## 
+
+- ## 
+
+- ## We have a streaming query engine called ZQL that uses Incremental View Maintenance to maintain live queries.
+- https://x.com/aboodman/status/1894235341911199866
+  - We use ZQL on both the client and server. 
+
+- We don't even re-sort client-side! A diff comes on the wire that says that an existing row updated its last-modified timestamp (and in this case its `open` status).
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

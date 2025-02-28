@@ -14,7 +14,11 @@ modified: 2023-10-26T18:47:22.664Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## Running your database using a non-UTC time-zone is a mistake. Fight me.
+- https://x.com/GrahamJCampbell/status/1894419202976477664
+- Yes, for all data tasks, everything shall be normalized and standardized and when it comes to dates it is Zulu, aka GMT aka UTC, which is used in science and space as well.
+
+- That's fine as soon as you store the timezone along with the date time. But all SQL based database have a broken date time that uses a legacy string representation. At least postgres as a timestamptz. Guess what, MongoDB only stores UTC date times.
 # discuss-change-schema
 - ## 
 

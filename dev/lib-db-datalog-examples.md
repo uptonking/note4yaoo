@@ -30,11 +30,25 @@ modified: 2023-09-16T17:28:29.873Z
   - https://github.com/dahjelle/dataquery
     - Forked the query language from Datascript, and changed to only utilize external indexes in an asynchronous manner.
 
+- https://github.com/electric-sql/d2ts /apache2/202502/ts
+  - D2TS is a TypeScript implementation of differential dataflow - a powerful data-parallel programming framework that enables incremental computations over changing input data.
+  - You can use D2TS to build data pipelines that can be executed incrementally, meaning you can process data as it comes in, and only recompute the parts that have changed.
+  - D2TS can be used in conjunction with ElectricSQL to build data pipelines on top of ShapeStreams that can be executed incrementally.
+  - For persistence and larger datasets, a number of operators are provided that persist to `SQLite`.
+    - The BetterSQLite3Wrapper is a wrapper around the `better-sqlite3` library that provides a unified interface for the operators. Other SQLite database drivers can be supported by implementing the SQLiteDb interface.
+  - This implementation started out as a TypeScript port of the Materialize blog post, but has diverged quite a bit, adopting a pipeline api pattern, persistence to SQLite, and a few other changes to make the DX better.
+  - https://x.com/samwillis/status/1895458285786190005
+    - Enabling incremental computation on change streams and streaming joins, both on the server and client.
+    - So far, I've implemented most basic operators - map, filter, reduce, join, iterate etc.
+    - It's type-safe, with a pipeline API for composability.
+    - There's two versions of the "index": in-memory, and also SQLite, which lets you persist and resume a pipeline
+
 - https://github.com/vlcn-io/materialite /apache2/202401/ts
   - Differential Dataflow & Incremental View Maintenance for JavaScript
   - You have a pipeline: `data.map(...).filter(...).reduce(...)` which you don't want to re-run from scratch each time something in data changes. 
   - Instead you'd like to only run against the data that changed and have your result incrementally updated. That's what this is for.
   - [Materialite / Matt | Observable](https://observablehq.com/d/3244e97e61ba5bd1)
+  - 
 
 - https://github.com/mozilla/mentat /201809/rust/inactive
   - https://mozilla.github.io/mentat/

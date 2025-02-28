@@ -44,9 +44,12 @@ modified: 2021-03-10T11:38:16.053Z
 # discuss
 - ## 
 
-- ## 
+- ## 卡片手风琴效果
+- https://x.com/brotzky_/status/1894428493993193533
 
-- ## 
+- ## You can create a cool gooey(黏糊糊的) effect by combining a blur and fade animations between icons with a high-contrast parent element
+- https://x.com/k_grajeda/status/1894425200931778976
+  - 模糊效果
 
 - ## 今年我认为最佳的网页设计：https://oxide.computer
 - https://x.com/vikingmute/status/1880854664385827250

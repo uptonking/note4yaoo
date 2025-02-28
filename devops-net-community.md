@@ -60,6 +60,16 @@ modified: 2024-11-16T16:58:32.628Z
 # discuss-tunnel/gateway
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 一款内网穿透工具 Frp 的跨平台桌面客户端：Frpc-Desktop。
+- https://x.com/GitHub_Daily/status/1893616798718685446
+  - 开箱即用，提供简洁可视化配置界面，支持所有 Frp 版本，轻松实现内网穿透。
+  - 还支持开机启动、快速分享 frps、所有配置的导入导出、批量端口等功能。
+  - 兼容 Windows、macOS 和 Linux 系统安装使用。
+
 - ## 内网穿透方案之tailscale+cloudflare tunnel
 - https://x.com/Stv_Lynn/status/1878316656998649969
   - 很多homelab玩家拿到机器遇到的第一个问题就是怎么把服务部署到公网。

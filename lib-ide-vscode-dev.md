@@ -51,6 +51,7 @@ modified: 2024-08-24T16:15:11.456Z
   - ui-skin as extension
 
 - vscode提供了electron和web模式，未提供纯前端模式
+  - vscode mobile
 
 - ide-ai
   - editor-control MCP, 让ai操作编辑器的协议

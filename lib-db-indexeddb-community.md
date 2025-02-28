@@ -37,6 +37,14 @@ modified: 2022-06-13T02:56:51.029Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Web Storage API is easy to use but doesn't work with concurrent writes.
+- https://x.com/kettanaito/status/1893310050053300261
+  - IndexedDB API works with concurrent writes but has to be one of the most complicated APIs I've ever seen.
+
 - ## I really can't wait for IndexedDBv3 to come out. V2 is just so damn slow and file storage API is just not widely support enough to use yet
 - https://twitter.com/matthew_linkous/status/1749521680198705269
 - How will v3 improve performance?

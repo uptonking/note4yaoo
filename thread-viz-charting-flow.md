@@ -23,7 +23,15 @@ modified: 2021-09-10T18:35:00.465Z
 # discuss-workflow-engine
 - ## 
 
-- ## 
+- ## 很后悔几年前没有做我规划好的一个产品 funcify：一个开放的工作流编排软件。现在想做 Agents，面对的第一个问题就是如何编排 action
+- https://x.com/waylybaye/status/1894055873191747727
+- 我实践下来感觉基本是自己实现了一个DSL解析引擎（2k行左右）倒没啥难的。但是如果让用户去写DSL就过分了，怎样把DSL融合到UI使用户操作流畅，通过拖拽实现流程，然后还体验一流反而是最难的。（另外工作流的错误处理想要做好不容易，不能学工程师try-catch, 用户不懂）
+
+- dify这样类似开源的挺多的
+
+- 可以尝试一下开源的n8n，流程编排挺方便的
+
+- [OOMOL Studio：一款全新的工作流 IDE，免费、底层开源 - 小众软件](https://www.appinn.com/oomol-studio/#meta-discussion)
 
 - ## [What are event driven alternatives to Apache Airflow? : r/dataengineering _202209](https://www.reddit.com/r/dataengineering/comments/x9jlqn/what_are_event_driven_alternatives_to_apache/)
 - Exactly how quickly do you need this done? I ask because in my nearly ten years of experience, everyone wants real-time but don't want the costs and batch ends up just fine, even if hourly or even daily.

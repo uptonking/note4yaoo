@@ -14,7 +14,12 @@ modified: 2021-08-22T07:29:34.045Z
 
 - ## 
 
-- ## 
+- ## I need Cursor but for writing. 
+- https://x.com/dannypostmaa/status/1894539881499824495
+  - Cursor works for document editing too apparently.  
+
+- https://x.com/ycombinator/status/1895202244414574725
+  - TamLabs is building Cursor for Microsoft Word.
 
 - ## Grok3 这套 思维链 展示的 UX 也太酷了: 实时推理, 让用户对进度产生信心
 - https://x.com/tuturetom/status/1892922300451754105
@@ -47,7 +52,11 @@ modified: 2021-08-22T07:29:34.045Z
 
 - ## 
 
-- ## 
+- ## Attempting to replace folders with tags is a rite of passage for info-structure designers.
+- https://x.com/msimoni/status/1893260097976975587
+- I think there is a generalization of this chore: migrating a 1-n relation to an n-n relation.
+
+- you can go from tags->folders without losing information but you cannot go folders->tags without losing information because one file can only be at one folder
 
 - ## ✨ Did you know you can add section headers to the minimap of @code ? 
 - https://x.com/CSSWeekly/status/1806625178878619984

@@ -952,9 +952,16 @@ modified: 2022-10-23T14:57:23.473Z
 # discuss-colors
 - ## 
 
-- ## 
+- ## 应该有一个算法，能够根据输入的背景颜色和主题色调来自动计算最合适的文本颜色
+- https://x.com/hhmy27/status/1894229373714403737
+- 你需要 css 的模式定义 mix-blend-mode: difference; 
 
-- ## 
+- ## 世界公认最美颜色
+- https://x.com/not_2b_or_2b/status/1894819126788358296
+  - 克莱因蓝 #002fa7
+  - 蒂芙尼蓝 #81d8d0
+  - 马尔斯绿 #008c8c (#006700)
+  - 申不伦黄 #f7e14d
 
 - ## Neutral background for your next projects: Names and states included.
 - https://twitter.com/heyirfanaziz/status/1723505953696616487

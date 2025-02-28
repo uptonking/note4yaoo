@@ -102,7 +102,16 @@ modified: 2023-11-01T14:13:41.390Z
 
 - ## 
 
-- ## 
+- ## I love Postgres but what are areas where MySQL outperforms?
+- https://x.com/jamesacowling/status/1894828996917101029
+  - I'll start: Battle tested on mega-scale deployments, easier to control query planner with FORCE INDEX, lock fairness, better on read-heavy workloads.
+
+- MySQL really excels when used as a very fancy TreeMap. They both have not great replication which is why every mega-scale deployment I know of does replication on top.
+  - Dropbox does it's own sharding and routing etc but uses MySQL semi-sync underneath. I was under the impression Vitesse (and therefore YouTube originally) did so too.
+  - Obvs Aurora does it's own block level replication. 
+
+- It shines when updating rows repeatedly. The in-place updates are much better compared to the new version with PG that needs to be vacuum-ed after some time.
+  - And even the PG folks admit that its better. Thats why @orioledb is working on a new storage doing it the MySQL way.
 
 - ## The big difference between MySQL's thread model and PostgreSQL's process model is how they handle synchronization. 
 - https://x.com/wangbin579/status/1884454988497174716

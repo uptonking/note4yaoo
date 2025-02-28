@@ -12,7 +12,9 @@ modified: 2022-11-21T15:27:20.974Z
 # examples-loading/progress
 - ## 
 
-- ## 
+- ## animate an element along the border of another and mask it 
+- https://x.com/jh3yy/status/1894787364762812778
+  - `@​keyframes trail { to { offset-distance: 100%; }}`
 
 - ## 🚝 css Marquee 火车移动效果
 - https://x.com/anatudor/status/1832819142061154486

@@ -36,6 +36,11 @@ modified: 2025-02-21T17:17:42.225Z
   - Streaming Built-in: Stream responses with a single prop change, no refactoring needed
   - https://x.com/_Evan_Boyle/status/1892590845485895730
     - GenSX components are reusable by default and are easy to consume and share. 
+
+- https://github.com/Onelevenvy/flock /apache2/202502/python/ts
+  - 一个基于工作流 workflow 的低代码平台：Flock。
+  - 基于 LangChain 和 LangGraph 构建，提供灵活的低代码编排协作代理解决方案，可用于快速构建聊天机器人、RAG 应用和协调多代理团队。
+  - 支持聊天机器人、RAG 应用、代理和多代理系统，并具备离线运行能力。
 # ai-figure/数字人
 - https://github.com/taoofagi/easegen-front
   - 开源的数字人课程制作项目：easegen，它提供从课程制作、视频管理、智能课件生成到智能出题全套方案

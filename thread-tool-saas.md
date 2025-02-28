@@ -53,6 +53,13 @@ modified: 2023-05-07T18:35:50.897Z
 
 - ## 
 
+- ## 
+
+- ## 一款专注于哔哩哔哩直播切片和投稿的工具：BiliBili ShadowReplay。
+- https://x.com/GitHub_Daily/status/1895323043079299561
+  - 支持直播缓存、历史回放、实时切片投稿，提供多直播间管理和多账号支持。
+  - https://github.com/Xinrea/bili-shadowreplay
+
 - ## .io存世量很大，应该不会直接删除，可能会停止新注册。 别怕苏联解体这么多年不见了， .su 也还在呢
 - https://x.com/hixiaoji/status/1845312320525959235
 - spring官网就是

@@ -364,7 +364,9 @@ modified: 2023-12-15T17:04:36.589Z
 # discuss
 - ## 
 
-- ## 
+- ## 🌰 Build an AI Knowledge Base App with @reactnative , @strapijs & Python
+- https://x.com/strapijs/status/1895454310944628944
+  - [Build an AI Knowledge Base App with React Native & Strapi 5 _202502](https://strapi.io/blog/build-an-ai-knowledge-base-app-with-react-native-strapi-and-python)
 
 - ## [Customize Save button in content-manager plugin _202106](https://forum.strapi.io/t/customize-save-button-in-content-manager-plugin/5663)
 - I would not recommend to modify it with extensions. Since you will have conflicts with feature updates. 

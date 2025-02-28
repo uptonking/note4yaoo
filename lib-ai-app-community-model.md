@@ -17,7 +17,11 @@ modified: 2023-10-30T07:34:03.602Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## deepseek 3fs 其实不是很理解这样的意义是啥… 已经脱离 FS 的通用接口了，为啥要硬挂一个 FUSE VFS 层… 直接摒弃 VFS 走个私有的 protocol 不干净多了…
+- https://x.com/silsrc/status/1895390926098571505
+- > Most applications use FUSE client, which has a low adoption barrier. Performance-critical applications are integrated with the native client.
+
+- 我的第一反应是现有框架应该没办法大批量改用私有的 API，比如在 Python 我就是要用 pathlib. Path 对文件做点简单操作，那确实只能是挂 FUSE 上去了
 
 - ## 聊一聊国内大模型的安全机制： 一般是两套，分别作用于train-time和test-time。
 - https://x.com/9hills/status/1840786446153921017
@@ -88,6 +92,42 @@ modified: 2023-10-30T07:34:03.602Z
 # discuss-ai-api/tools
 - ## 
 
+- ## openrouter 是真方便，一个 Key 所有模型都能用。
+- https://x.com/pengchujin/status/1894375539726803201
+- 模型价格一样，充值 5% 的手续费。还有个好处是有一部分免费模型，比如Az的R1啥的
+  - 价格一样的，官方降价他也跟着降
+- Qwen的key，火山的key也是这样的
+
+- ## DeepSeek 开源周的 5 号炸弹来啦！又是集束炸弹！3FS 和 smallpond！
+- https://x.com/karminski3/status/1895280320989274560
+  - 我不敢相信DeepSeek甚至颠覆了存储架构...... 我上次为网络文件系统震惊还是HDFS和CEPH. 但这些都是面向磁盘的分布式文件系统. 现在一个真正意义上面向现代SSD和RDMA网络的文件系统诞生了！
+  - 飞火流星文件系统（3FS）- 一种利用现代 SSD 和 RDMA 网络全带宽的并行文件系统
+  - 这个文件系统可以在 180 节点集群中达到6.6 TiB/s 总读取吞吐量，每个客户端节点 KVCache 查找峰值吞吐量 40+ GiB。
+  - 另一个 smallpond（小池塘）是基于 3FS 的数据处理框架！
+  - 这个框架由 DuckDB 提供的高性能数据处理，可扩展以处理 PB 级数据集！
+  - 我看了下应该还是KV存储的（毕竟面向机器学习），并不是块存储。因此NAS佬还是不太能用得上的。  一致性协议基于CRAQ，毕竟KV存储，基于链式复制的，写操作仍然需要通过整个链，所以写延迟大。但估计其实给训练归档用，写延迟大无所谓。异步归档而已。
+- 是文件系统，元数据放foundationdb里，数据放xfs里
+
+- 另外Intel的DAOS其实我感觉做的更极致，直接用SPDK操作裸盘，还利用NVMe-oF技术充分发挥RDMA零拷贝的特性，只可惜元数据系统依赖于NVM硬件，而NVM硬件已经凉凉，DAOS也卖给Dell了
+
+- ceph有object store呀… 头一次见到真的有人用chain replication的…latency不要啦？rdma硬件这么贵直接靠硬件砸吗？
+- 数据中心，土豪玩法，颠覆不至于吧
+
+- ## 我才知道 工具调用是个单独的 call 一旦调用其他什么事情都干不了 怎么这个 llm 现在这么草台班子。。。
+- https://x.com/Lakr233/status/1894950577416901018
+  - 还有 Agent 这种概念，叫全自动编排检索工具使用不好么搞的这么高大上到头来还是 GPT 3.5 就能干的活。。。
+
+- tools 就是一轮新的对话，告诉 AI 可以调这个，然后把调用结果拼接到上一轮对话后面。
+  - agent 就是 pipeline/orchestration/scheduler。
+  - embedding/RAG 就是 search。
+  - LLM framework 就是 HTTP API calls。
+- 你这样，PPT还怎么编，团队预算怎么批
+
+- 也有一些异步调用 +event 的玩法, 但是整个 Agent 确实就是建立在无限的文本生成上的
+  - Agent = FunctionCall + LLM + LOOP
+
+- 工具调用其他什么事情都干不了指的是？可以并发处理其他问题呀？
+
 - ## 海外大模型接入使用openrouter 已经是最佳实践了嘛？
 - https://x.com/leeoxiang/status/1887714022327525797
   1、支持了市面上大部分模型；
@@ -129,7 +169,98 @@ modified: 2023-10-30T07:34:03.602Z
 # discuss-ai-knowledgebase
 - ## 
 
-- ## 
+- ## 🆚️ 这几天在给公司产品的 AI 助手选择知识库的数据处理工具，重新看了一遍 Marker、MinerU、Docling、Markitdown、Llamaparse 这五个工具
+- https://x.com/shao__meng/status/1893984985998365096
+1. Marker
+技术架构
+· 基于 PyMuPDF 和 Tesseract OCR，支持 GPU 加速（Surya OCR 引擎），开源轻量化
+功能特性
+· 专注 PDF 转 Markdown，支持公式转 LaTeX、图片内嵌保存，OCR 识别扫描版 PDF
+· 多语言文档处理，但表格转换易错位，复杂公式识别精度一般
+适用场景
+· 科研文献、书籍等基础 PDF 转换需求，适合技术背景用户快速部署
+优劣势
+✅ 开源免费、处理速度快（比同类快 4 倍）
+❌ 缺乏复杂布局解析能力，依赖本地 GPU 资源
+
+2. MinerU
+技术架构
+· 集成 LayoutLMv3、YOLOv8 等模型，支持多模态解析（表格/公式/图像），依赖 Docker 和 CUDA 环境
+功能特性
+· 精准提取 PDF 正文（自动过滤页眉/页脚），支持 EPUB/MOBI/DOCX 转 Markdown 或 JSON
+· 多语言 OCR（84 种语言），内置 UniMERNet 模型优化公式识别
+适用场景
+· 学术文献管理、财务报表解析等需高精度结构化的场景
+优劣势
+✅ 企业级安全合规，支持 API 和图形界面
+❌ 依赖 GPU，表格处理速度较慢，配置复杂
+
+3. Docling
+技术架构
+· 模块化设计，集成 Unstructured、LayoutParser 等库，支持本地化处理
+功能特性
+· 解析 PDF/DOCX/PPTX 等格式，保留阅读顺序和表格结构，支持 OCR 和 LangChain 集成。
+· 输出 Markdown 或 JSON，适合构建 RAG 知识库
+适用场景
+· 企业合同解析、报告自动化，需结合 AI 框架的复杂应用
+优劣势
+✅ 与 IBM 生态兼容，支持多格式混合处理
+❌ 需 CUDA 环境，部分功能依赖商业模型
+
+4. Markitdown
+技术架构
+· 微软开源项目，集成 GPT-4 等模型实现 AI 增强处理，支持多格式转换
+功能特性
+· 支持 Word/Excel/PPT、图像（OCR）、音频（语音转录）转 Markdown，批量处理 ZIP 文件
+· 可生成图片描述（需 OpenAI API），但 PDF 格式转换易丢失结构
+适用场景
+· 多格式混合内容创作，如 PPT 图表转文档、音视频转录
+优劣势
+✅ 格式支持最全，开发者友好（Python API/CLI）
+❌ 依赖外部 API，部分功能需付费模型
+
+5. Llamaparse
+技术架构
+· 专为 RAG 设计，结合 Azure OpenAI 和 KDB AI 向量数据库，优化语义检索
+功能特性
+· 解析含表格/图表的复杂 PDF，输出 Markdown/LaTeX/Mermaid 图表
+· 支持生成知识图谱，企业级安全合规
+适用场景
+· 法律文档分析、技术手册问答等需结合 LLM 的智能应用
+优劣势
+✅ 解析精度高，支持半结构化数据语义优化
+❌ 处理速度慢，免费额度有限，需 API 密钥
+
+选型决策树 
+需求优先级：
+速度与轻量 → Marker
+精度与多模态 → MinerU
+企业级集成 → Docling/Llamaparse
+多格式混合 → Markitdown
+
+技术适配：
+需 GPU 加速 → MinerU/Docling
+需 API 扩展 → Markitdown/Llamaparse
+需本地隐私 → Stirling-PDF（补充推荐）
+
+成本考量：
+免费开源 → Marker/MinerU
+商业支持 → Llamaparse
+
+- 我这里10000 页以上的企业级应用的方案可以分享下，我这个是经验累计下来的结果。这 10000 页解析都做过了人工校验，可以说市面上大部分方案都测试过了。最佳实践结论如下：
+- PDF： 
+  1. 离线（复杂）场景：MinerU + VLM识别 + LLM修复
+  2. 离线（简单）场景：Marker 
+  3. 在线（通用）：Llamaparse OR VLM
+  [VLM 离线用 Qwen2.5 / VL 在线 gemini 2.0 flash]
+
+- 根据我之前的调研，感觉目前还没有完美的支持多类型文档多模态的解析库。速度，准确性，成本三角里，最均衡的个人觉得反而是楼上有人说到的大模型多模态解析能力
+  - 速度-准确性-成本三角，确实很重要，看需求中哪个角更看重了。
+  - 多模态解析这种方式挺不错，我们也放在对比中，特别是 gemini 这种成本低多模态能力强的。
+
+- 多模态解析这种方式挺不错，我们也放在对比中，特别是 gemini 这种成本低多模态能力强的。
+
+- Docling也有点慢... 没有GPU加速的其他库也不快... 平均下来都是 1.x page/s , 比如MinerU一个20页的paper, 一个GPU L4, 最快也要十几秒 到生产环境不开多GPU并发, 时间上是个大问题, 
 
 - ## Excited to share Latticework, a text-editing environment aimed to help synthesize freeform, unstructured documents _202408
 - https://x.com/andy_matuschak/status/1828928979656683581 

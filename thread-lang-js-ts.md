@@ -130,7 +130,8 @@ type ObjectArray = { key: string } []
 
 - ## 
 
-- ## 
+- ## derived union types
+- https://x.com/mattpocockuk/status/1894027514852327601
 
 - ## 🆚 [Which style of discriminated unions do you prefer in TypeScript and why? : r/typescript](https://www.reddit.com/r/typescript/comments/16zodeq/which_style_of_discriminated_unions_do_you_prefer/)
 

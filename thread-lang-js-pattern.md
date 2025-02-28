@@ -61,7 +61,11 @@ modified: 2023-11-10T08:05:12.852Z
 
 - ## 
 
-- ## 
+- ## would people use AsyncLocalStorage more if we called it React Context for javascript functions
+- https://x.com/threepointone/status/1894224170570911939
+- AsyncContext is kind of a better name
+
+- I really like AsyncLocalStorage but it can be kind of hard to reason about if you're not in a purely Request/Response domain. Great for APIs though
 
 - ## the cloneable class pattern in TypeScript 
 - https://x.com/colinhacks/status/1889617191231713568
