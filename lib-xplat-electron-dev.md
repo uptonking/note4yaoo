@@ -11,6 +11,7 @@ modified: 2021-05-13T03:08:52.583Z
 
 - pros
   - 相对于qt/zed等原生框架实现ui，electron基于html/dom实现，可以方便集成类似rrweb进行操作回放
+  - 基于electron可将数据保存在本地文件系统，比web浏览器支持更大的缓存
 
 - cons
   - ?
@@ -20,10 +21,12 @@ modified: 2021-05-13T03:08:52.583Z
   - Compatible with macOS, Windows, and Linux
 
 - who is using #electron
-  - popular: vscode
-  - known: qq
-  - open: drawio, joplin, marktext, tagspaces
-  - 经典示例: file-manager, note-taking
+  - popular: vscode, theia, jupyter, postman-like
+  - known: qq, slack, mattermost, zulip
+  - db: mongodb-compass, dbgate, beekeeper, sqlectron
+  - note-app: joplin(AGPLv3), marktext(MIT), siyuan(AGPLv3), trilium(AGPLv3), notable(MIT), notesnook(GPL), Zettlr(GPL), yn(AGPLv3)
+  - open: drawio(apache2), tagspaces, medis
+  - 经典示例: file-manager, reader-epub, note-taking
 
 - tips
   - 不建议基于electron实现自定义浏览器，要考虑支持各浏览器自带的扩展商店，可在自己的应用层实现
@@ -33,6 +36,18 @@ modified: 2021-05-13T03:08:52.583Z
   - [Cross platform software frameworks](https://blog.tomayac.com/2023/02/23/cross-platform-software-frameworks/)
   - [electron alternatives](https://dev.to/urielsouza29/comment/1lb73)
   - [QQ技术团队分享：新QQ NT桌面版/electron内存优化探索之路_202308](https://mp.weixin.qq.com/s/uk_KKk3YuMyY2Auk68SwgA)
+# draft
+- nativefier(archived): webpage wrapper for electron
+  - 可以复用pake的打包逻辑为electron
+
+- clients for popular apps like notion-database
+
+- tips
+  - ~~不建议基于electron实现自定义浏览器，要考虑支持各浏览器自带的扩展商店，可在自己的应用层实现~~
+  - ? electron-for-android/ios vs apps
+  - web+pc: vscode, jupyter, (rstudio)
+# dev-xp
+
 # dev
 - Electron运行package.json中的main脚本中的进程被称为主进程，该进程在应用整个生命周期只会存在唯一一个，负责面窗口的创建、控制、销毁等管理行为，同时也能控制整个应用的生命周期。
   - 主进程本质上是一个 Node.js 进程，该进程充分利用了 Node.js 的跨平台特性，在其 API 的底层，抹掉了不同操作系统中的差异
@@ -58,5 +73,4 @@ modified: 2021-05-13T03:08:52.583Z
 # changelog
 - ECMAScript modules (i.e. using `import` to load a module) are supported in Electron as of Electron 28(_20231205).
 - From Electron 20 onwards, preload scripts are sandboxed by default and no longer have access to a full Node.js environment. 
-
 # more

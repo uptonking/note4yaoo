@@ -174,11 +174,6 @@ modified: 2021-01-08T11:48:16.590Z
 
 - https://github.com/davidjbradshaw/iframe-resizer
   - This library enables the automatic resizing of the height and width of both same and cross domain iFrames to fit their contained content. 
-
-- https://github.com/tamkeen-tms/electron-window-manager
-  - A NodeJs module for Electron (Atom Shell, previously) that will help you create, control, manage and connect your application windows very easily.
-  - Most of the applications created using Electron are one-window applications
-  - if you are to build a multi-window Electron application, then you may want to have a look at this package module.
 # dockable(sidebars)
 - https://github.com/ColorlibHQ/AdminLTE
   - https://adminlte.io/

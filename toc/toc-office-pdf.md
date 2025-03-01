@@ -300,6 +300,9 @@ modified: 2021-01-04T17:26:43.784Z
 
 - https://github.com/hkdb/Densify /python
   - A GTK+ GUI Application written in Python that simplifies compressing PDF files with Ghostscript
+
+- https://github.com/plainlab/plainprinter /GPLv3/202309/ts
+  - Take multiple screenshots and convert them into a PDF file
 # examples
 - https://github.com/AnsellMaximilian/electron-excel-to-pdf-invoice-generator /ts
   - A desktop invoice generator that turns excel files (with a specifically formatted workbook) into pdf invoices for every customer.

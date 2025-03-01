@@ -59,6 +59,12 @@ modified: 2020-10-22T10:22:55.878Z
   - It is not an SVG editing app, the SVG export is designed only for embedding in web pages, not for further editing in other tools.
   - Additional minified JavaScript files and Java libraries are used in this project. All of the licenses are deemed compatible with the Apache 2.0, nothing is GPL or AGPL
   - draw.io is also closed to contributions.
+  - https://github.com/jgraph/drawio-desktop /apache2/202503/js
+    - Official electron build of draw.io
+    - drawio-desktop is a diagramming desktop app based on Electron that wraps the core draw.io editor.
+    - draw.io Desktop is designed to be completely isolated from the Internet, apart from the update process.
+    - draw.io is closed to contributions (unless a maintainer permits it, which is extremely rare).
+    - If we were to receive a PR, we'd have to basically throw it away and write it how we want it to be implemented.
 
 - https://github.com/nicoespeon/gitgraph.js /2.9kStar/MIT/202209/ts/inactive
   - https://www.nicoespeon.com/gitgraph.js

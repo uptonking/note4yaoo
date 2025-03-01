@@ -250,9 +250,9 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
   - 做完tailwind-table就面试
 
 - dev-to 提炼核心`需求+产出`工作流，不能在产品中检验的技术不玩
-# dev-02
+# dev-03
 
-## 02x
+## 030
 
 - dev-log
   - ?
@@ -349,6 +349,29 @@ add action to create quickSort1.mjs and add 200 separate test cases with more th
 - action-删除文件
   - live模式显示弹窗
   - 回放模式显示红色背景的文件快照
+
+## 0303
+
+- 上周
+  - 排查用户反馈的问题，主要包括，排查 Console 输出 Cannot write file 的异常， ai写代码后在编辑器显示重复代码的问题，花了较多时间但没有找到原因
+  - 优化了cde的体验细节，包括terminal打开文件路径支持显示diff，减少webview和ports出现的频率
+  - 处理ide-server在监控告警上的噪音日志
+  - 开发P0级的需求-导入知识库，前端进度80%
+- 本周
+  - 推进需求-导入知识库上线
+  - webview的loading交互及其他优化
+  - LSP语法跳转的修复和增强
+- 今天
+  - 本地测试导入知识库的功能，尽快合入staging
+  - 处理git stash后文件树与文件系统的同步
+  - 确定下一个开发任务
+
+- 迭代需求重点
+  - webview关闭打开逻辑优化
+  - 语法跳转 (LSP跳转)
+  - 编辑器 - TS 项目支持 Lint
+  - Tab代码补全 - 迭代一
+# dev-02-logging-to-guance-&-fix-folder-crud-loading-&-user-issues-fixes-&-ai-rules-cursorrules
 
 ## 0228
 
@@ -652,7 +675,7 @@ path.split('/').reverse()[1];
   - 修复年前规划的剩余issues
 - 今天
   - 排查文件树在某些场景下未自动更新的问题
-# dev-01-forwarded-ports-&-agentWriteFile-timeout-&-alpha-test-fix-&-iframe-url-updates-&-cmdk-ux
+# dev-01-forwarded-ports-&-inner-testing-fixes-agentWriteFile-timeout-&-iframe-url-updates-&-cmdk-ux-close-btn
 
 ## 0124
 
@@ -706,7 +729,9 @@ path.split('/').reverse()[1];
   - 集中处理体验测试反馈的问题，主要是add-to-chat背景色挡住文字、webview宽度优化
   - 修复terminal经常不可用的问题
   - 开始实现当用户点击webview内的链接时自动更新上方的url的功能，访问iframe内的对象碰到跨域问题，需要讨论下解决方案
+
     - 一种思路是用户访问url前向网站注入自定义js脚本逻辑
+
 - 本周
   - 优化webview的体验
   - 实现删除移动文件在live和回放模式的表现

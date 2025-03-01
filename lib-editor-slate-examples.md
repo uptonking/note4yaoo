@@ -380,7 +380,7 @@ modified: 2023-02-05T19:03:12.723Z
       - 示例依赖server api，本地无法运行
 
 - https://github.com/froala/wysiwyg-editor-node-sdk
-  - Node. JS SDK to ease the integration of Froala WYSIWYG Editor on server side.
+  - NodeJS SDK to ease the integration of Froala WYSIWYG Editor on server side.
 
 - https://github.com/payloadcms/payload/tree/main/packages/richtext-slate
   - Slate Rich Text Editor for Payload.
@@ -419,6 +419,11 @@ modified: 2023-02-05T19:03:12.723Z
   - UIMix is a WYSIWYG editor for React components that offers a Figma or Framer-like experience for creating and maintaining React components.
   - 图形基于iframe里面的dom
   - ？ 是否依赖slate，deps有但代码无
+
+- https://github.com/1943time/inkdown /AGPLv3/202501/ts/electron
+  - https://www.inkdown.me/
+  - A WYSIWYG Markdown editor, improve reading and editing experience
+  - 依赖@electron-toolkit/preload、electron-store、dexie3、mobx-react-lite、react-photo-view、slate-react、remark-parse10、rxjs7
 # slate-based-editors
 - https://github.com/raralabs/rara-rte /MIT/202311/ts
   - https://rte.raralabs.live/

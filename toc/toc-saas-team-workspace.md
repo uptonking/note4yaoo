@@ -87,6 +87,7 @@ modified: 2023-02-07T17:38:05.336Z
   - https://github.com/netless-io/flat /MIT/202401/ts
     - https://flat.whiteboard.agora.io/
     - Project flat is the Web, Windows and macOS client of Agora Flat open source classroom.
+    - [Agora Docs classroom](https://docs.agora.io/en/)
   - https://github.com/netless-io/flat-server
     - Node.js server for the Agora Flat open source classroom.
 # microsoft-teams/org
@@ -250,7 +251,6 @@ modified: 2023-02-07T17:38:05.336Z
 - https://github.com/knowankit/trello-clone /ts
   - Built with Nextjs framework with Typescript and Chakra UI library with support from MongoDB
   - Login/Register with JWT token authentication
-
 
 - https://github.com/kaiban-ai/KaibanJS /MIT/202411/js
   - https://www.kaibanjs.com/

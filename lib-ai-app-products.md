@@ -9,6 +9,18 @@ modified: 2024-12-07T09:51:14.779Z
 
 # guide
 
+# ai-dev-xp
+
+## lowcode
+
+## designing
+
+- cursor for design: logo creator
+
+## coding
+
+- 可以使用ai协助将代码库从一种语言转换到另一种语言
+  - 甚至用ai将GPL协议的代码重写成自己的代码
 # ai-office
 
 # ai-coding

@@ -21,6 +21,11 @@ modified: 2023-02-08T10:24:11.422Z
   - 用于浏览器扩展管理的扩展
   - 灵活的规则自定义，自动启用或禁用指定的浏览器扩展。
   - 批量导出/导入与分享扩展
+# browsers-vendors
+- https://github.com/lightpanda-io/browser /AGPLv3/202502/zig
+  - https://lightpanda.io/
+  - the open-source browser made for headless usage
+  - Compatible with Playwright, Puppeteer through CDP (WIP)
 # browser-ext-devtools
 - https://github.com/DaniGuardiola/browser-namespace /ts
   - Cross-browser support for the "browser" namespace in browser extensions. Fully typed.
@@ -183,7 +188,7 @@ modified: 2023-02-08T10:24:11.422Z
   - Next-gen framework for developing web extensions.
   - WXT provides a "module system" that let's you run code at different steps in the build process to modify it.
 
-- https://github.com/PlasmoHQ/plasmo /MIT/202502/ts
+- https://github.com/PlasmoHQ/plasmo /MIT/202502/ts/提交少
   - https://www.plasmo.com/
   - a battery-packed browser extension SDK
   - Build your extension and let Plasmo handle browser-specific behaviors and bundling

@@ -148,6 +148,8 @@ modified: 2022-11-06T11:21:27.612Z
   - Visual Data Editor that enables direct row insertion, update and deletion into tables
   - Management Dashboard supporting customizable widgets with drill-through actionable insights
   - Workspaces with full Git integration and Find In Files support to managing T-SQL script libraries
+  - [What's Happening to Azure Data Studio? | Microsoft _202502](https://learn.microsoft.com/en-us/azure-data-studio/whats-happening-azure-data-studio)
+    - Azure Data Studio officially retires on February 28, 2026. You should migrate to Visual Studio Code
 
 - https://github.com/dbgate/dbgate /MIT/202402/ts/svelte
   - https://dbgate.org/

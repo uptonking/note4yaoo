@@ -94,6 +94,8 @@ modified: 2021-08-30T18:56:14.863Z
   - Visual Data Editor that enables direct row insertion, update and deletion into tables
   - Management Dashboard supporting customizable widgets with drill-through actionable insights
   - Workspaces with full Git integration and Find In Files support to managing T-SQL script libraries
+  - [What's Happening to Azure Data Studio? | Microsoft _202502](https://learn.microsoft.com/en-us/azure-data-studio/whats-happening-azure-data-studio)
+    - Azure Data Studio officially retires on February 28, 2026. You should migrate to Visual Studio Code
 
 - https://github.com/dblens/app /202202/ts
   - database client that helps you to explore database with automatic ER diagrams, visualise and analyse internal DB metrics such as index utilisation sequential scans, slow running queries, storage and many more.
