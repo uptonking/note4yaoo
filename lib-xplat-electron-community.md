@@ -115,6 +115,13 @@ modified: 2023-01-02T10:30:19.459Z
 - For anyone reading don't forget about SQLite. You will need to rebuild it for Electron though. 
 
 - this louischatriot/nedb also seems cool and is 100% JavaScript, no binary dependency
+# discuss-dev-log
+- ## 
+
+- ## 
+
+- ## [Bindings not found error · Issue · vitejs/vite-plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc/issues/74)
+- We have fixed the problem with running this command: `npm i -D @swc/cli @swc/core`
 # discuss
 - ## 
 

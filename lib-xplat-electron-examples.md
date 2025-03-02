@@ -54,7 +54,7 @@ modified: 2024-01-31T19:13:11.286Z
   - Powerful SQLite adapter for web, mobile and desktop. Build reactive UI on top of it
   - It brings transaction support, middlewares for queries, and SQLite adapters for the most popular platforms.
 
-- https://github.com/Icon-Shelf/icon-shelf /MIT/202311/ts/inactive
+- https://github.com/Icon-Shelf/icon-shelf /MIT/202311/ts/inactive/非web仅pc
   - https://icon-shelf.github.io/
   - SVG icon manager for developers.
   - Link the icons folder of your project to Icon Shelf and see all your icons in an easily previewable manner. 
@@ -70,6 +70,8 @@ modified: 2024-01-31T19:13:11.286Z
 - https://github.com/yossTheDev/karbonized /apache2/202312/ts/inactive
   - Awesome Image Generator for Code Snippets & Mockups
   - Our block-based system allows you to customize and arrange code snippets, text, images, QR codes, and more, giving you the freedom to bring your ideas to life.
+  - 依赖vite-plugin-electron、electron-builder、react-daisyui、easy-peasy、prismjs、react-moveable、localforage
+  - `win.loadFile('dist/index.html')`; 能正常打开
   - Export Options: Save your designs as SVG, PNG, or JPG files, making it simple to share or use them in other projects.
   - Extension Support: Karbonized offers support for extensions, allowing you to enhance its functionality and extend its capabilities according to your needs.
   - Multi-Platform Compatibility: Access Karbonized as a Progressive Web App (PWA with Offline Support) via any web browser. We also provide downloadable versions for Windows, Linux, and macOS
@@ -445,11 +447,6 @@ modified: 2024-01-31T19:13:11.286Z
     - Users who want to build and use their own website wrappers should strongly prefer these options as they are protected from security vulnerabilities by the browser's self updating mechanism.
     - Otherwise, if the use case is to build a bespoke app wrapping a website for distribution, consider using Electron directly which offers much more flexibility.
 
-- https://github.com/minbrowser/min /apache2/202502/js
-  - https://minbrowser.org/
-  - A fast, minimal browser that protects your privacy
-  - Min supports installing userscripts to extend its functionality.
-
 - https://github.com/sindresorhus/electron-dl /MIT/202310/js
   - Simplified file downloads for your Electron app
   - Support for `BrowserWindow` and `BrowserView`.
@@ -552,6 +549,11 @@ modified: 2024-01-31T19:13:11.286Z
   - A simple, cross-platform, optionally async, optionally threadsafe, electron-like browser window framework for Rust.
   - Just like Electron.js, you can use it to build a GUI with HTML, CSS & JS
   - There are currently three different underlying browser frameworks that can be selected: CEF, WebkitGTK or Edge WebView2. Each framework has their pros and cons, but CEF will be the most feature complete because it has the best cross-platform support 
+
+- https://github.com/minbrowser/min /apache2/202502/js
+  - https://minbrowser.org/
+  - A fast, minimal browser that protects your privacy
+  - Min supports installing userscripts to extend its functionality.
 
 - https://github.com/hulufei/electron-as-browser /MIT/202401/js/inactive
   - A node module to help build browser like windows in electron.
