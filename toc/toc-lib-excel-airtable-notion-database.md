@@ -156,6 +156,10 @@ modified: 2022-08-21T10:02:05.129Z
   - Eidos 是一个开源的、本地优先的 Web App ，完全运行在浏览器中，无需安装，也不依赖于任何服务器
   - 拥有和 Notion 类似的文档和表格，你可以理解为离线版的 Notion，所有数据都在本地
   - 依赖sqlite-wasm、glide-data-grid、lexical
+  - 🆚️ Web app is deprecated, use desktop app instead.
+    - The web app serves as a technology preview, incorporating several cutting-edge solutions such as OPFS and sqlite-wasm. However, due to browser environment limitations, the web version has some drawbacks and requires more recent browser versions.
+    - The desktop version is built using Electron, primarily adapting the file system and SQLite. It utilizes native SQLite as its computation engine, offering better performance and more stable system permissions compared to the web version
+    - The desktop version has built-in API services, while the web version does not.
   - [Roadmap | Eidos Wiki](https://wiki.eidos.space/roadmap)
     - 在 EA 测试后，主体功能稳定的情况下，会开放源码并且公测。我不是那么喜欢 build in public，预期和实现不一致容易消磨耐心
   - [Show HN: Eidos – Offline alternative to Notion | Hacker News _202406](https://news.ycombinator.com/item?id=40746773)

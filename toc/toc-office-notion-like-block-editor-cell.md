@@ -149,6 +149,14 @@ modified: 2022-08-14T16:26:48.558Z
   - 不支持拖拽block修改顺序，但有上下箭头按钮
   - intuitive block based wysiwyg editor built with React and ProseMirror
 
+- https://github.com/WeiWenda/effect-note /MIT/202412/ts
+  - 一款免费的大纲笔记软件，纯文件存储，Gitee云端同步
+  - 交互较差
+  - 支持插入 vditor/wangeditor/monaco-editor
+  - 依赖electron-store、lunr2、node-git-server、react-redux、react-dnd、vditor
+  - https://github.com/WeiWenda/effect-note-mobile
+  - https://github.com/WeiWenda/effect-note-excalidraw
+
 - https://github.com/pierre-lgb/slashwriter /NALic/202312/ts
   - https://slashwriter.fly.dev/
   - 依赖tiptap.v2、redux-toolkit、supabase、express、yjs、hocuspocus、mui5

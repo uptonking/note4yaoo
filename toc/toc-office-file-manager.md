@@ -164,7 +164,7 @@ modified: 2021-08-23T05:27:08.068Z
   - Plugin-based: local supported for now, ftp in the works
   - 依赖blueprintjs、electron-window-state、mobx-react、react-dnd、react-virtual
 
-- https://github.com/Cocycles/electron-storage /201703
+- https://github.com/Cocycles/electron-storage /201703/js/inactive
   - Simply save/load json files to/from file system in electron applications
 - https://github.com/yan-foto/electron-reload /201908
   - the simplest way to load contents of all active BrowserWindows within electron when the source files are changed.

@@ -8,9 +8,10 @@ modified: 2022-06-03T22:06:16.249Z
 # toc-db-indexeddb
 
 # guide
-- search
+- tips
   - big json store/update > json patch
   - react indexeddb， 编辑器数据频繁的更新可参考编辑器实时协作的更新
+  - 持久化考虑支持web、web-worker、nodejs
 
 - 更适合block-editor的数据结构是否是 mongodb ？
 

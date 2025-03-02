@@ -10,6 +10,7 @@ modified: 2023-11-17T10:12:06.357Z
 # guide
 
 - search: local-first, local first, offline first
+  - 持久化考虑支持web、web-worker、nodejs
 
 - https://github.com/arn4v/offline-first
   - A list of projects in the offline-first storage, sync & realtime collaboration/multiplayer space.
@@ -302,6 +303,10 @@ modified: 2023-11-17T10:12:06.357Z
   - localForage is a fast and simple storage library for JavaScript. 
   - localForage improves the offline experience of your web app by using asynchronous storage (IndexedDB or WebSQL) with a simple `localStorage`-like API.
   - localForage uses `localStorage` in browsers with no IndexedDB or WebSQL support.
+  - [Is this still supported? It has been 3 years? _202401](https://github.com/localForage/localForage/issues/1108)
+    - 202407: "maintainer" of localForage here. localForage is largely feature-complete, and functions well-enough for many use-cases.
+    - I had planned a TypeScript rewrite (and partially completed it) that would focus on IndexedDB and localStorage only
+    - I'm not an active user of localForage these days. 
 
 - https://github.com/hoodiehq/hoodie /apache2/202101/js/inactive
   - A generic backend with a client API for Offline First applications

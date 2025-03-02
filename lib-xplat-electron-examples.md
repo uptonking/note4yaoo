@@ -13,6 +13,7 @@ modified: 2024-01-31T19:13:11.286Z
   - https://github.com/warpdesign/react-explorer
   - https://github.com/sprout2000/leafview
   - https://github.com/edrlab/thorium-reader
+  - https://github.com/yossTheDev/karbonized
 
 - resources
   - https://github.com/sindresorhus/awesome-electron
@@ -65,6 +66,13 @@ modified: 2024-01-31T19:13:11.286Z
   - 示例不是地图，而是普通图片
   - Browse the images in a folder
   - Grid view
+
+- https://github.com/yossTheDev/karbonized /apache2/202312/ts/inactive
+  - Awesome Image Generator for Code Snippets & Mockups
+  - Our block-based system allows you to customize and arrange code snippets, text, images, QR codes, and more, giving you the freedom to bring your ideas to life.
+  - Export Options: Save your designs as SVG, PNG, or JPG files, making it simple to share or use them in other projects.
+  - Extension Support: Karbonized offers support for extensions, allowing you to enhance its functionality and extend its capabilities according to your needs.
+  - Multi-Platform Compatibility: Access Karbonized as a Progressive Web App (PWA with Offline Support) via any web browser. We also provide downloadable versions for Windows, Linux, and macOS
 
 - https://github.com/wulkano/Kap /MIT/202210/ts/inactive
   - open-source screen recorder built with web technology
@@ -164,8 +172,11 @@ modified: 2024-01-31T19:13:11.286Z
   - https://github.com/dutchigor/pluggable-electron-demo
     - Also check out the with-vue branch to see an example with Vite and Vue. 
 
-- https://github.com/reZach/secure-electron-template /MIT/202404/js
+- https://github.com/reZach/secure-electron-template /MIT/202404/js/inactive
   - A current electron app template with the most popular frameworks, designed and built with security in mind
+  - https://github.com/reZach/i18next-electron-fs-backend
+    - This is an i18next library designed to work with secure-electron-template.
+    - The library is a rough copy of i18next-node-fs-backend but using IPC (inter-process-communication) to request a file be read or written from the electron's main process.
 
 - https://github.com/ArcherGu/einf /MIT/202502/ts
   - Einf is a simple electron main process framework, which provides some decorators and automatic dependency injection to help you simplify the main process code.
@@ -297,6 +308,29 @@ modified: 2024-01-31T19:13:11.286Z
   - 基金, 大盘, 股票, 虚拟货币状态栏显示小应用, 基于Electron开发, 支持MacOS, Windows, Linux客户端, 
   - 数据源来自天天基金, 蚂蚁基金, 爱基金, 腾讯证券等
 
+- https://github.com/pure-admin/electron-pure-admin /MIT/202412/ts/vue
+  - pure-admin官方electron版本
+  - 当然平台还提供 tauri 版本的 https://github.com/pure-admin/tauri-pure-admin
+
+- https://github.com/getstation/electron-process-manager /202410/js
+  - This package provides a process manager UI for Electron applications.
+  - It opens a window displaying a table of every processes run by the Electron application with information (type, URL for webContents, memory..).
+  - Kill a process from the UI
+  - Open developer tools for a given process
+  - It can be useful to debug performance of an app with several webview.
+  - It's inspired from Chrome's task manager.
+  - Unfortunately, memory info are no longer available in Electron>=4 (see electron/electron#16179)
+  - https://github.com/quantyle/electron-memory-profiler
+    - a simple memory profiling and visualization tool written entirely in JavaScript. 
+    - The frontend is a ReactJS/Electron desktop app and the backend is a simple NodeJS websocket server.
+
+- https://github.com/oslabs-beta/fflow /MIT/202202/js/inactive
+  - an easy-to-use open-source tool for all developers to create their React application.
+
+- https://github.com/chenfan0/fideo-live-record /AGPLv3/202411/ts
+  - 一款方便的直播录制软件! 支持tiktok, youtube, twitch, 抖音，虎牙，斗鱼，快手，微博，网易cc，bilibili，花椒, 淘宝, 京东
+  - a live recording software based on React, Ffmpeg, Electron, Shadcn, FRP. 
+
 ## notes-apps
 
 - codex /195Star/CC-BY-NC-4.0/202401/ts/electron
@@ -324,6 +358,8 @@ modified: 2024-01-31T19:13:11.286Z
   - You can tag, add notes, organize, categorize, filter, search and quickly find your needed files with an easy-to-use application
   - Filebase does not modify your existing files or directories 
   - uses `PouchDB` to store file and directory structure using a tree type structure, each of these nodes in the tree can have metadata added to it that will be searchable
+- https://github.com/tedb-org/tedb-electron-storage /201801/ts
+  - Storage driver for Electron, based on one file per collection item.
 
 - https://github.com/warpdesign/react-explorer /MIT/202405/ts/inactive
   - File manager written in TypeScript, React, Blueprint and packaged with Electron
@@ -374,12 +410,23 @@ modified: 2024-01-31T19:13:11.286Z
   - Only one client is required, other devices use WEB. (client support macOS, Windows, Linux)
   - Support ngrok, quickly share to the public network
 # storage
+- https://github.com/oguz-yilmaz/localforage-file-system-adapter /202312/ts/inactive
+  - A file system adapter for LocalForage designed specifically for Electron applications, providing simple file-based storage with a familiar LocalForage API.
+  - This adapter implements LocalForage's driver interface to store data in the local file system, making it ideal for Electron apps that need persistent storage without SQLite or other database solutions.
+  - Simple file-based storage
+  - Simple key-value storage only, Basic string-based storage
+  - Not suitable for large datasets
+  - Lightweight alternative to SQLite
+  - No encryption (use Electron's built-in encryption if needed)
+
 - https://github.com/sindresorhus/electron-store /MIT/202305/js
   - Simple data persistence for your Electron app or module
   - Save and load user preferences, app state, cache, etc
   - Electron doesn't have a built-in way to persist user settings and other data. This module handles that for you
   - The data is saved in a JSON file named config.json in `app.getPath('userData')`.
   - You can use this module directly in both the main and renderer process
+  - https://github.com/rt2zz/redux-persist
+  - https://github.com/ryanwillis/reduxjs-toolkit-persist
 
 - https://github.com/alexiusacademia/electron-db /MIT/202011/js/inactive
   - Electron module that acts as database management and uses flat file database (json file) to store tables.

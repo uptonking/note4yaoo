@@ -77,8 +77,6 @@ modified: 2022-11-09T11:53:13.093Z
   - MDXEditor is a rich, client-side component that does not benefit from server-side rendering. To use it in your server components, you should use next/dynamic
   - 依赖lexical、codemirror6、radix-ui、hast、mdast、react-diff-view、react-hook-form
 
-
-
 - https://github.com/uiwjs/react-md-editor /MIT/202403/ts
   - https://uiwjs.github.io/react-md-editor
   - A simple markdown editor with preview, implemented with React.js and TypeScript.
@@ -89,10 +87,14 @@ modified: 2022-11-09T11:53:13.093Z
   - A markdown editor with preview, implemented with React.js and TypeScript.
   - 依赖codemirror6、@uiw/react-markdown-preview、highlight.js
 
-- vditor /1.3kStar/MIT/202009
+- vditor /1.3kStar/MIT/202503
   - https://github.com/Vanessa219/vditor
+  - https://b3log.org/vditor/demo/index.html
   - In-browser Markdown editor, support WYSIWYG (Rich Text), Instant Rendering (Typora-like) and Split View modes.
   - 依赖lute(go语言实现md解析)、hightlight、echarts、katex、mermaid、mathjax，注意依赖文件直接在源码的js/文件夹，不在package.json
+  - https://github.com/nicejade/markdown-online-editor /MIT/202502/js/vue
+    - https://markdown.lovejade.cn
+    - 基于 Vue2、Vditor，所构建的在线 Markdown 编辑器，支持绘制流程图、甘特图、时序图、任务列表、Echarts 图表、五线谱，以及 PPT 预览、视频音频解析、HTML 自动转换为 Markdown 等功能
 
 - https://github.com/LHRUN/md-editor
   - https://songlh.top/md-editor/

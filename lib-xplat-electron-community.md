@@ -86,7 +86,40 @@ modified: 2023-01-02T10:30:19.459Z
   - Unfortunately, it currently doesn't support publishing to Flatpak repositories. 
   - We will consider adding a Flatpak build once electron-builder supports it.
 
+# discuss-storage
+- ## 
+
+- ## ⚖️ [Question: IndexedDB size limit · Issue · electron/electron](https://github.com/electron/electron/issues/4550)
+  - Is there a limit on IndexedDB for electron apps? I know it is somewhat dynamic between browsers link but I would assume it would be hard drive size dependent on electron apps. 
+- We have the same size limitation with Chrome browser, which is "1/3 of the of available disk space".
+
+- It so happens that a new api that can help you determine your quota has been exposed. https://developers.google.com/web/updates/2017/08/estimating-available-storage-space
+  - What I would do is: know the quota and have a way of informing /warning my user when they are about to hit the quota.
+
+- ## 🛢️ [Store a database locally · Issue · electron/electron _201510](https://github.com/electron/electron/issues/3195)
+  - I am developing an app that needs to be run even if there's no internet connection. I am currently getting the data from an online MySQL database. 
+  - What I want to do is to find a way to store the database locally, so if I restart the app and there's no internet connection, it will run with the last known data.
+  - this was posted 2 years ago. Since then, I have been working on many cordova/electron projects. The best approaches I have found are NeDB, IndexedDB, SQLite and LocalStorage. Use them wisely!
+
+- The simplest way would be writing to a file as JSON. When you query your sql in MySQL write the results to a file then work on that file.
+
+- There's a few other solutions to this problem: 
+  - LocalStorage
+  - indexeddb(dexie, localForage)
+  - level.js and the LevelUP bindings. This is probably heavier than what you're looking for.
+
+- If you are looking for a persistent data storage solution, check out electron-json-storage
+  - I have used the jviotti/electron-json-storage and it's not a good solution for production since it doesn't support file locking so if perform several write transaction at the same time, the storage file will break.
+  - I'm going to use IndexedDB.
+
+- For anyone reading don't forget about SQLite. You will need to rebuild it for Electron though. 
+
+- this louischatriot/nedb also seems cool and is 100% JavaScript, no binary dependency
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## [Basic Electron Framework Exploitation | Hacker News _201908](https://news.ycombinator.com/item?id=20636805)
