@@ -293,8 +293,13 @@ console.trace(';; loadFile', path, loadType);
 
 ```
 ^(?!42\["resourceM).*
+update package @dao42/clacky-paas-front to next patch version, and add one-line changelog in changelog.md
+update package @dao42/clacky-paas-front to next patch version, and run pnpm install
+
 add an action to run "npm install -ddd" and another action to add datetime at top of readme.md
 add action to create quickSort1.mjs and add 200 separate test cases with more than 200 lines of code in it, because i want to do performance test.
+add action to create a route /nextjs with nextjs changelog content in it , and show nextjs link in home page, when clicking the link, jump to /nextjs route
+add action to create quickSort.mjs and add 3 test cases for it
 ```
 
 - lsp支持的语言排查
@@ -352,6 +357,9 @@ add action to create quickSort1.mjs and add 200 separate test cases with more th
 
 ## 0303
 
+- [CursorList - .cursorrule files and more for Cursor AI](https://cursorlist.com/)
+- [awesome-cursorrules/rules/react-typescript-nextjs-nodejs-cursorrules-prompt-/.cursorrules at main · PatrickJS/awesome-cursorrules](https://github.com/PatrickJS/awesome-cursorrules/blob/main/rules/react-typescript-nextjs-nodejs-cursorrules-prompt-/.cursorrules)
+
 - 上周
   - 排查用户反馈的问题，主要包括，排查 Console 输出 Cannot write file 的异常， ai写代码后在编辑器显示重复代码的问题，花了较多时间但没有找到原因
   - 优化了cde的体验细节，包括terminal打开文件路径支持显示diff，减少webview和ports出现的频率
@@ -362,7 +370,7 @@ add action to create quickSort1.mjs and add 200 separate test cases with more th
   - webview的loading交互及其他优化
   - LSP语法跳转的修复和增强
 - 今天
-  - 本地测试导入知识库的功能，尽快合入staging
+  - 本地测试导入知识库的需求，尽快合入staging
   - 处理git stash后文件树与文件系统的同步
   - 确定下一个开发任务
 
