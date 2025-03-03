@@ -172,7 +172,19 @@ modified: 2021-08-30T07:01:09.493Z
 
 - ## 
 
-- ## 
+- ## Let's mess around with sync, async
+- https://x.com/antfu7/status/1896474458086596811
+  - [Async, Sync, in Between](https://antfu.me/posts/async-sync-in-between)
+  - in JavaScript: An async function can call both sync and other async functions; A sync function, however, cannot directly call an async function without changing its own color to async.
+  - We often discuss the async inflection problem, where a common solution is to make everything async since async functions can call both sync and async functions
+  - While an async function requires all the callers to be async, a sync function also requires all the dependencies to be sync.
+  - For example, the widely used library find-up provides two main APIs, findUp and findUpSync, to avoid dependents being trapped by the coloring problem
+  - Another case demonstrating the coloring problem is a plugin system with async hooks.
+- Trying to make the situation a bit better, SXZZ and I took inspiration from gensync by LOGANFSMYTH and made a package called quansync.
+  - Generator is where the magic happens. It allows you to create a quansync function by using other quansync functions.
+  - By leveraging generator fn, we can pause execution at each yield point. In an asynchronous context, we can wait for the async operation to complete before resuming execution. In a synchronous context, the next chunk runs immediately. This approach offloads the coloring problem to the caller, allowing them to decide whether the function should run synchronously or asynchronously.
+  - Promise in JavaScript naturally a microtask that delays a tick. yield also introduce certain overhead (around ~120ns on M1 Max). In performance-sensitive scenarios, you might also want to avoid using either asyncor quansync.
+  - Quansync functions still face the coloring problem, as wrapping a function to support both sync and async requires it to be a quansync function (or generator). However, the key advantage is that a quansync function can be "collapsed" to either sync or async as needed. 
 
 - ## 🆚️ Let’s say `f()` returns a promise:
 - https://twitter.com/shuding_/status/1766842504635134271

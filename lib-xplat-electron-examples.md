@@ -253,9 +253,6 @@ modified: 2024-01-31T19:13:11.286Z
 - https://github.com/codesbiome/electron-react-webpack-typescript-2022
   - Electron React Webpack Typescript Boilerplate with Custom Window and Titlebar Menus.
 
-- https://github.com/garrylachman/ElectroCRUD
-  - ElectroCRUD is Open Source Database CRUD (Create, Read, Update, Delete) Software. No Code Needed
-
 - https://github.com/ArcherGu/fast-vite-nestjs-electron
   - build vite + electron + nestjs projects. Build with Doubleshot, crazy fast!
   - https://github.com/Doubleshotjs/doubleshot
@@ -379,8 +376,11 @@ modified: 2024-01-31T19:13:11.286Z
 
 - https://github.com/msihly/Medior /NALic/202412/ts
   - https://github.com/msihly/Media-Viewer
+  - The tag-based local media management system.
   - Electron app for managing media files in a self-contained portable database. 
   - 依赖dnd-kit、mui.v5、@tensorflow/tfjs、trpc、mobx-react-lite、mongoose、mongodb-memory-server、react-window
+  - Portable offline database with support for distributed file storages
+  - Hierarchical (parent / child) tagging system with aliases and regular expressions
   - Features a hierarchical tagging system with comprehensive search and sorting, automated tag creation / parsing and batch processes, collections / albums, AI face recognition, Stable Diffusion integration, and built-in media viewers.
   - A self-hosted, portable Electron app for indexing and viewing media files featuring hierarchical tags as well as several features inspired by cloud storage providers that are missing from Windows File Explorer and most contemporary alternatives. 
   - It has been refined over several iterations with the primary goal of optimizing performance at scale and the UX of batch workflows.
@@ -447,6 +447,9 @@ modified: 2024-01-31T19:13:11.286Z
     - Users who want to build and use their own website wrappers should strongly prefer these options as they are protected from security vulnerabilities by the browser's self updating mechanism.
     - Otherwise, if the use case is to build a bespoke app wrapping a website for distribution, consider using Electron directly which offers much more flexibility.
 
+- https://github.com/alex8088/electron-toolkit /MIT/202502/ts
+  - Toolkit for Electron
+
 - https://github.com/sindresorhus/electron-dl /MIT/202310/js
   - Simplified file downloads for your Electron app
   - Support for `BrowserWindow` and `BrowserView`.
@@ -466,9 +469,6 @@ modified: 2024-01-31T19:13:11.286Z
   - Useful utilities for Electron apps and modules
   - There are three parts of this package, “shared”, “main”, and “node”. The “shared” part works in both the main or rendered process. The “main” part works only in the main process. The “node” part is for Node.js-only APIs (not Electron).
   - To use features from the “main” part in the renderer process, you will need to set up IPC channels.
-
-- https://github.com/alex8088/electron-toolkit /MIT/202401/ts
-  - Toolkit for Electron
 
 - https://github.com/kunalnagar/encrypt0r /MIT/202211/ts
   - App to encrypt and decrypt your files with a passphrase
