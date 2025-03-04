@@ -14,6 +14,9 @@ modified: 2023-09-02T09:16:30.412Z
   - 复杂场景可参考 microsoft-excel-addon script-lab
   - 服务端的设计实现可参考jupyter server
 # csb-draft
+- 快速预览ai生产的代码
+  - codesandbox不够快，npm install的流程本身存在慢的缺点，如何提速
+
 - iframe内的console.log在chrome-devtools可以看到吗
 # csb-dev-xp
 - SandpackClient抽象类有3种实现， Node/Static/Runtime, 前端项目默认使用Runtime

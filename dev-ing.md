@@ -299,7 +299,8 @@ update package @dao42/clacky-paas-front to next patch version, and run pnpm inst
 add an action to run "npm install -ddd" and another action to add datetime at top of readme.md
 add action to create quickSort1.mjs and add 200 separate test cases with more than 200 lines of code in it, because i want to do performance test.
 add action to create a route /nextjs with nextjs changelog content in it , and show nextjs link in home page, when clicking the link, jump to /nextjs route
-add action to create quickSort.mjs and add 3 test cases for it
+
+add action to create quickSort1.mjs and add 3 test cases in it
 ```
 
 - lsp支持的语言排查
@@ -355,10 +356,25 @@ add action to create quickSort.mjs and add 3 test cases for it
   - live模式显示弹窗
   - 回放模式显示红色背景的文件快照
 
+## 0304
+
+- 排查rename时编辑器`view.focus()`触发的原因和位置
+
+- [Find and replace with a newline in Visual Studio Code - Stack Overflow](https://stackoverflow.com/questions/30351529/find-and-replace-with-a-newline-in-visual-studio-code)
+  - when search in file, Check the regular exp icon `.*`
+
+- 昨天
+  - 导入知识库在本地与 @陈旭东 联调完毕，前端已合入develop，agent部分昨天还没合入develop，今天会推进合到staging
+  - 添加一个文件树搜索同步调用形式的api，但不work
+- 今天
+  - 处理git stash后文件树与文件系统的同步
+  - 处理urgent紧急issue，主要是文件树重命名输入框相关问题
+  - webview的loading交互及其他优化
+
 ## 0303
 
 - [CursorList - .cursorrule files and more for Cursor AI](https://cursorlist.com/)
-- [awesome-cursorrules/rules/react-typescript-nextjs-nodejs-cursorrules-prompt-/.cursorrules at main · PatrickJS/awesome-cursorrules](https://github.com/PatrickJS/awesome-cursorrules/blob/main/rules/react-typescript-nextjs-nodejs-cursorrules-prompt-/.cursorrules)
+  - [awesome-cursorrules/rules/react-typescript-nextjs-nodejs-cursorrules-prompt-/.cursorrules at main · PatrickJS/awesome-cursorrules](https://github.com/PatrickJS/awesome-cursorrules/blob/main/rules/react-typescript-nextjs-nodejs-cursorrules-prompt-/.cursorrules)
 
 - 上周
   - 排查用户反馈的问题，主要包括，排查 Console 输出 Cannot write file 的异常， ai写代码后在编辑器显示重复代码的问题，花了较多时间但没有找到原因

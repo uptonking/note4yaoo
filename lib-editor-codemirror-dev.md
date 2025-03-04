@@ -208,6 +208,8 @@ modified: 2021-05-06T09:38:31.520Z
 
 - diff-view
   - 支持隐藏绿色部分或红色部分，隐藏后显示为普通文档且显示行号
+  - 红色部分支持copy和选中
+  - git diff text formatter: 从一行格式化为分段
 
 - integrations
   - strapi-codemirror
@@ -219,6 +221,8 @@ modified: 2021-05-06T09:38:31.520Z
 
 - autocomplete自动补全
   - 基于视图层decoration的实现更适合协作，不必修改model数据
+
+- code-block的实现最好默认可折叠
 
 - later
   - 简化ast的设计和实现
