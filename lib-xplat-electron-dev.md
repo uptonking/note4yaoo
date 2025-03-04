@@ -21,14 +21,15 @@ modified: 2021-05-13T03:08:52.583Z
   - Compatible with macOS, Windows, and Linux
 
 - who is using #electron
-  - popular: vscode, theia, jupyter, postman-like
+  - popular: vscode, theia, jupyter, postman-like(web+pc)
   - known: qq, slack, mattermost, zulip
   - db: mongodb-compass, dbgate, beekeeper, sqlectron
-  - note-app: joplin(AGPLv3), marktext(MIT), siyuan(AGPLv3), trilium(AGPLv3), notable(MIT), notesnook(GPL), Zettlr(GPL), yn(AGPLv3)
+  - notes(web+pc): joplin(AGPLv3), marktext(MIT), siyuan(AGPLv3), trilium(AGPLv3), notable(MIT), notesnook(GPL), Zettlr(GPL), yn(AGPLv3), tinywrite
   - open: drawio(apache2), tagspaces, medis
   - 经典示例: file-manager, reader-epub, note-taking
 
 - tips
+  - 要在侧重web(no-server)和侧重本地(c/s或b/s)的架构上做取舍，主要考虑数据源、数据量、性能
   - 不建议基于electron实现自定义浏览器，要考虑支持各浏览器自带的扩展商店，可在自己的应用层实现
   - ? electron-for-android/ios vs apps
 

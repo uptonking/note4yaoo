@@ -38,11 +38,13 @@ modified: 2023-02-08T10:47:32.359Z
   - Kiwix JS is an official HTML5/Javascript implementation of the Kiwix software, principally targeting browser extensions or add-ons.
   - There is also a version, primarily intended for use within extensions, implemented as an offline-first Progressive Web App (PWA)
   - The Kiwix browser also works with other content in the OpenZIM format, but our main targets are Mediawiki-based content (Wikipedia, Wikivoyage, Wikitionary, etc.), StackExchange, Project Gutenberg and TED Talks.
-- https://github.com/kiwix/kiwix-desktop /js/cpp
-  - a viewer/manager of ZIM files for GNU/Linux and Microsoft Windows OSes.
-  - 依赖qt、libkiwix
-- https://github.com/kiwix/kiwix-js-windows
-  - Kiwix JS Offline Browser for Windows and Linux, packaged as PWA, Electron, NWJS and UWP
+  - https://github.com/kiwix/kiwix-js-pwa /GPL/202503/js
+    - Kiwix JS Offline Browser implemented as a Progressive Web App (PWA), and packaged as Electron, NWJS and UWP apps for Windows and Linux
+  - https://github.com/kiwix/kiwix-desktop /js/cpp
+    - a viewer/manager of ZIM files for GNU/Linux and Microsoft Windows OSes.
+    - 依赖qt、libkiwix
+  - https://github.com/kiwix/kiwix-js-windows
+    - Kiwix JS Offline Browser for Windows and Linux, packaged as PWA, Electron, NWJS and UWP
 
 - https://github.com/openzim/mwoffliner /GPLv3/ts
   - Mediawiki scraper: all your wiki articles in one highly compressed ZIM file

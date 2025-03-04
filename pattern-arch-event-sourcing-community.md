@@ -12,6 +12,27 @@ modified: 2023-09-13T14:28:01.426Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🆚️ Can you explain the difference between Event Sourcing vs. Change Data Capture (CDC)?
+- https://x.com/RaulJuncoV/status/1896911947167060097
+  - Event Sourcing and CDC are related concepts that distributed systems use to propagate data changes to interested consumers and downstream services.
+  - They both deal with events, but they serve different purposes.
+- With Event Sourcing, the event log is the source of truth. 
+  - Instead of storing only the latest state, you persist every state change as an event. 
+  - This enables: • Auditing • Debugging • State reconstruction
+- CDC listens to database-level changes and propagates them to other services. 
+  - It ensures data consistency across systems without requiring them to query the source database directly.
+  - This works at the database level and tracks: • Inserts • Updates • Deletes
+
+- While distinct, these concepts can be complementary:
+  - You can use Event Sourcing to manage internal domain events and preserve history.
+  - And use CDC to capture relevant changes and distribute them to external systems.
+
+- Event sourcing is commonly used in financial systems, a must know pattern.
+
 - ## 🆚️ [Event driven vs Event sourcing _202205](https://tarunjain07.medium.com/event-driven-vs-event-sourcing-a943d223299c)
 - In domain-driven design, domain events are described as something that happens in the domain and is important to domain experts.
 - Event Driven Architecture is about components communicating via publishing events rather than making (e.g.) RPC calls against each other or manipulating shared state. It’s a communication strategy (albeit one which often relies on messages being persisted for fairly long periods).

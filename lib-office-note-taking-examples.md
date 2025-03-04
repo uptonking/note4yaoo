@@ -11,6 +11,7 @@ modified: 2024-01-30T20:56:45.773Z
 
 - web版 vs 桌面版 vs vscode扩展版
   - 现有插件生态、编辑器切换
+  - 要在侧重web(no-server)和侧重本地(c/s或b/s)的架构上做取舍，主要考虑数据源、数据量、性能
 
 - files-first vs database-first
   - 若要实现web版产品，files-first的抽象在数据访问和查询时会很不方便

@@ -67,7 +67,7 @@ modified: 2024-01-31T19:13:11.286Z
   - Browse the images in a folder
   - Grid view
 
-- https://github.com/yossTheDev/karbonized /apache2/202312/ts/inactive
+- https://github.com/yossTheDev/karbonized /apache2/202312/ts/inactive/pwa+pc
   - Awesome Image Generator for Code Snippets & Mockups
   - Our block-based system allows you to customize and arrange code snippets, text, images, QR codes, and more, giving you the freedom to bring your ideas to life.
   - 依赖vite-plugin-electron、electron-builder、react-daisyui、easy-peasy、prismjs、react-moveable、localforage
@@ -76,28 +76,30 @@ modified: 2024-01-31T19:13:11.286Z
   - Extension Support: Karbonized offers support for extensions, allowing you to enhance its functionality and extend its capabilities according to your needs.
   - Multi-Platform Compatibility: Access Karbonized as a Progressive Web App (PWA with Offline Support) via any web browser. We also provide downloadable versions for Windows, Linux, and macOS
 
-- https://github.com/wulkano/Kap /MIT/202210/ts/inactive
+- https://github.com/wulkano/Kap /18.4kStar/MIT/202210/ts/inactive
   - open-source screen recorder built with web technology
 
-- https://github.com/xushengfeng/eSearch /GPLv3/202401/ts
+- https://github.com/xushengfeng/eSearch /5.4kStar/GPLv3/202503/ts
   - https://esearch-app.netlify.app/
   - eSearch 是Information-portal的:electron: 重写版(顺便加了亿些功能)
   - 主要是想在 Linux 上(win 和 mac 上也能用)实现锤子大爆炸或小米传送门这样的屏幕搜索功能，当然也是一款方便的截屏软件。
   - 截屏 离线OCR 搜索翻译 以图搜图 贴图 录屏 滚动截屏 
   - 本地 OCR 由`PaddleOCR`的模型提供支持。
 
-- https://github.com/027xiguapi/pear-rec /1.3kStar/apache2/202407/ts
+- https://github.com/027xiguapi/pear-rec /1.3kStar/apache2/202407/ts/inactive
   - https://027xiguapi.github.io/pear-rec/
   - 跨平台的截图、录屏、录音、录像软件
   - react + electron + vite + viewerjs + plyr + aplayer + react-screenshots.
   - 支持网页版、pc版
+
 - https://github.com/nashaofu/screenshots /414Star/MIT/202502/ts
   - https://nashaofu.github.io/screenshots/
   - 基于electron和react的截图插件，可以快速地实现截图功能，并支持多种截图操作，例如马赛克、文本、画笔、箭头、椭圆和矩形
 
-- https://github.com/likaia/js-screen-shot /MIT/202401/ts
+- https://github.com/likaia/js-screen-shot /MIT/202502/ts
   - https://www.kaisir.cn/js-screen-shot/
   - web端自定义截屏插件(原生JS版)
+  - 由于插件采用原生js编写且不依赖任何第三方库，因此它可以在任意一台支持js的设备上运行。
   - 支持electron环境下使用插件
 
 - https://github.com/rubickCenter/rubick /8.2kStar/MIT/202501/ts/vue
@@ -107,7 +109,7 @@ modified: 2024-01-31T19:13:11.286Z
   - 插件全部托管在 npm 仓库，rubick 插件的安装、使用、删除就是 npm 包的安装、使用、删除
   - 支持基于 webdav 的多端数据同步，支持内网部署。
 
-- https://github.com/httptoolkit/httptoolkit-desktop /AGPLv3/202401/ts
+- https://github.com/httptoolkit/httptoolkit-desktop /AGPLv3/202401/ts/postman-like
   - https://httptoolkit.com/
   - Electron wrapper to build and distribute HTTP Toolkit for the desktop
   - the desktop build setup for HTTP Toolkit, a cross-platform & open-source HTTP(S) debugging proxy, analyzer & client.
@@ -330,6 +332,9 @@ modified: 2024-01-31T19:13:11.286Z
   - 一款方便的直播录制软件! 支持tiktok, youtube, twitch, 抖音，虎牙，斗鱼，快手，微博，网易cc，bilibili，花椒, 淘宝, 京东
   - a live recording software based on React, Ffmpeg, Electron, Shadcn, FRP. 
 
+- https://github.com/kiwix/kiwix-js-pwa /GPL/202503/js
+  - Kiwix JS Offline Browser implemented as a Progressive Web App (PWA), and packaged as Electron, NWJS and UWP apps for Windows and Linux
+
 ## notes-apps
 
 - codex /195Star/CC-BY-NC-4.0/202401/ts/electron
@@ -385,10 +390,10 @@ modified: 2024-01-31T19:13:11.286Z
   - A self-hosted, portable Electron app for indexing and viewing media files featuring hierarchical tags as well as several features inspired by cloud storage providers that are missing from Windows File Explorer and most contemporary alternatives. 
   - It has been refined over several iterations with the primary goal of optimizing performance at scale and the UX of batch workflows.
 
-- https://github.com/suleymanlaarabi/Aurora-Explorer /MIT/202401/ts
+- https://github.com/suleymanlaarabi/Aurora-Explorer /MIT/202401/ts/inactive
   - powerful file management tool, built with Electron, ReactTS, and ChakraUI
 
-- https://github.com/lzldev/shelf-desktop /GPLv3/202312/ts
+- https://github.com/lzldev/shelf-desktop /GPLv3/202312/ts/inactive
   - Electron app for file organization
 
 - https://github.com/SuboptimalEng/orbital /MIT/202110/ts/inactive
@@ -459,12 +464,6 @@ modified: 2024-01-31T19:13:11.286Z
   - Manages the download process and exposes a simple API to listen for events including progress, success, failure, and cancellation. 
   - The module also exposes Electron's DownloadItem methods for pausing, resuming, and canceling the download.
 
-- https://github.com/daltonmenezes/interprocess /MIT/202308/ts
-  - https://daltonmenezes.github.io/interprocess/
-  - A scalable and type-safe Electron IPC management tool with enhanced DX
-  - Electron IPC is good, but difficult to maintain and scale, either because of the numerous channels you have to remember, or because of the inconsistent API between processes and the absence of inferred types of your channels and handlers.
-  - invoke and handle methods in both processes with the same expected behavior
-
 - https://github.com/sindresorhus/electron-util /MIT/202401/ts
   - Useful utilities for Electron apps and modules
   - There are three parts of this package, “shared”, “main”, and “node”. The “shared” part works in both the main or rendered process. The “main” part works only in the main process. The “node” part is for Node.js-only APIs (not Electron).
@@ -522,6 +521,12 @@ modified: 2024-01-31T19:13:11.286Z
   - Only plain objects can be passed between the 2 sides of the proxy, as the data is serialized to JSON, so no functions or prototypes will make it across to the other side.
   - https://github.com/frankwallis/electron-ipc-proxy /MIT/202010/ts
     - Transparent asynchronous electron remoting using IPC.
+
+- https://github.com/daltonmenezes/interprocess /MIT/202308/ts
+  - https://daltonmenezes.github.io/interprocess/
+  - A scalable and type-safe Electron IPC management tool with enhanced DX
+  - Electron IPC is good, but difficult to maintain and scale, either because of the numerous channels you have to remember, or because of the inconsistent API between processes and the absence of inferred types of your channels and handlers.
+  - invoke and handle methods in both processes with the same expected behavior
 
 ## utils-browser
 
