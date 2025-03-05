@@ -74,6 +74,8 @@ modified: 2024-05-06T02:54:40.374Z
 
 - docker in docker 的权限问题
 
+- sdk有些文件代码有3000行，打开有点慢，但能忍受
+
 ### dev-log
 
 - root-thread项目初始化时，cde环境会生成.1024start/.1024nix文件
@@ -2372,6 +2374,8 @@ const playbackInfo = [
   - await layer.updatePlaygroundInfo(playgroundInfo); 
   - this.playgroundItem.consumerLayer(data.dockerId); 
   - this.playgroundItemInfo = cloneDeep(layer.playgroundItemInfo); 
+- 在playground未创建时，通信使用toManager
+  - 在playground创建后，通信使用toPlayground
 
 - Events. ForceRefreshFile
   - const isFileExist = await this.currentPlaygroundItem.checkIfThePathExists(

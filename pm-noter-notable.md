@@ -33,6 +33,7 @@ modified: 2023-11-28T14:48:45.910Z
   - 通用或单一的builder价值不大，但针对业务平台特别是app-store的builder对平台方和开发者的价值都很大
   - ⌛️ version history
     - diff
+    - 快照文件的协同，已删除文件的协同
     - 基于代码的回放能解决视频难以实时更新的问题, video-but-auto-update
     - replay: 
       - 可调倍速

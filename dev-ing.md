@@ -356,6 +356,48 @@ add action to create quickSort1.mjs and add 3 test cases in it
   - live模式显示弹窗
   - 回放模式显示红色背景的文件快照
 
+## 0305
+
+- [Why doesn't the try catch block catch the promise exception? - Stack Overflow](https://stackoverflow.com/questions/66119982/why-doesnt-the-try-catch-block-catch-the-promise-exception)
+
+```JS
+const test = async function() {
+  throw new Error('Just another error')
+}
+
+// ❌ error not caught
+try {
+  test().then()
+} catch (err) {
+  alert('error: ' + err.toString())
+}
+
+// ✅ the following 2 pattern works
+test()
+  .then(result => {
+    // ...use `result` here...
+  })
+  .catch(error => {
+    // ...handle/report error here...
+  });
+
+try {
+  const result = await test();
+  // ...use `result` here...
+} catch (err) {
+  // ...handle/report error here...
+}
+```
+
+- 昨天
+  - 排查ai写的代码包含重复片段的问题，定位到问题是ai生成的代码质量有待提高
+  - 排查导入知识库在develop环境能工作，但在staging环境不工作的问题，可能是提示词不好
+  - 处理urgent紧急issue，主要是文件树重命名输入框相关问题，ai给出修改方案不work，还需要分析代码逻辑
+- 今天
+  - 处理urgent紧急issue，主要是文件树重命名输入框相关问题
+  - terminal打开文件的diff视图选择非revert的action
+  - 处理git stash后文件树与文件系统的同步
+
 ## 0304
 
 - 排查rename时编辑器`view.focus()`触发的原因和位置
