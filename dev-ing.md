@@ -358,9 +358,13 @@ add action to create quickSort1.mjs and add 3 test cases in it
 
 ## 0306
 
-- 文件重命名时光标跳入编辑器的问题
-  - 重命名时 react input的事件触发顺序:  onKeydown(旧值) > onInput(新值) > focus
+- 🐛 文件重命名时光标跳入编辑器的问题
   - contenteditable的事件触发顺序: onblur > onfocusout
+  - 重命名时 react input的事件触发顺序:  onKeydown(旧值) > onInput(新值) > focus
+  - input连续输入字符时正确的时序: onkeydown > oninput > renderTree > ref-cb x2
+- 💡 不算完美的解决方案
+  - ~~对于重命名非当前打开的文件，可以将文件设为editable=false~~(非重命名的打开文件支持edit)
+  - 重写重命名的逻辑
 
 - 昨天
   - 排查ai写的代码与diff展示的代码不一致的问题，定位到是用户特殊的操作流程导致的，不是bug
