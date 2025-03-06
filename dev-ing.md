@@ -356,6 +356,21 @@ add action to create quickSort1.mjs and add 3 test cases in it
   - live模式显示弹窗
   - 回放模式显示红色背景的文件快照
 
+## 0306
+
+- 文件重命名时光标跳入编辑器的问题
+  - 重命名时 react input的事件触发顺序:  onKeydown(旧值) > onInput(新值) > focus
+  - contenteditable的事件触发顺序: onblur > onfocusout
+
+- 昨天
+  - 排查ai写的代码与diff展示的代码不一致的问题，定位到是用户特殊的操作流程导致的，不是bug
+  - 排查ai写文件时打快照超时的问题，根据日志可判断打快照的逻辑并未超时，由于观测云agent日志缺失，再观察看能否复现
+  - 处理urgent紧急issue，文件重命名时光标跳入编辑器的问题，ai给出修改方案不work，还需要分析代码逻辑
+- 今天
+  - 解决文件重命名时光标跳入编辑器的问题
+  - terminal打开文件的diff视图选择非revert的action
+  - 处理git stash后文件树与文件系统的同步
+
 ## 0305
 
 - [Why doesn't the try catch block catch the promise exception? - Stack Overflow](https://stackoverflow.com/questions/66119982/why-doesnt-the-try-catch-block-catch-the-promise-exception)
