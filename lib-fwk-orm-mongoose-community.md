@@ -11,6 +11,19 @@ modified: 2023-02-05T18:48:02.500Z
 
 # discuss-stars
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [Error when using AWS DocumentDB with 4.0.0 engine · Issue · Automattic/mongoose _202311](https://github.com/Automattic/mongoose/issues/14056)
+- The only thing I can say is that the "More than one query match for field" error comes from DocumentDB, not Mongoose or the MongoDB Node driver. 
+  - We don't work with DocumentDB at all and Mongoose doesn't support it, so unfortunately we can't help other than suggest that you use MongoDB Atlas. 
+  - [Amazon DocumentDB compatibility with MongoDB - Amazon DocumentDB](https://docs.aws.amazon.com/documentdb/latest/developerguide/compatibility.html)
+
+- [DocumentDB Compatibility? · Issue · Automattic/mongoose _202011](https://github.com/Automattic/mongoose/issues/9528)
+  - We don't officially support DocumentDB. There have been a few issues reported: #7800, #4596 (comment), #4455. 
+  - We fix DocumentDB issues if we can, but we do not currently test against DocumentDB, nor do we have plans to.
 # discuss
 - ## 
 

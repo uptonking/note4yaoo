@@ -356,6 +356,16 @@ add action to create quickSort1.mjs and add 3 test cases in it
   - live模式显示弹窗
   - 回放模式显示红色背景的文件快照
 
+## 0307
+
+- 昨天
+  - 花了点时间排查群里反馈的激活失败 DOCKER_INFO_LOST的问题
+  - 处理urgent紧急issue，文件重命名时光标跳入编辑器的问题，分析代码逻辑后没有找到快速解决的方法
+- 今天
+  - 换其他方法解决文件重命名时光标跳入编辑器的问题
+  - terminal打开文件的diff视图选择非revert的action
+  - 处理git stash后文件树与文件系统的同步
+
 ## 0306
 
 - 🐛 文件重命名时光标跳入编辑器的问题

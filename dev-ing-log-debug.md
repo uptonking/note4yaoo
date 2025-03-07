@@ -77,6 +77,19 @@ modified: 2023-06-14T00:53:15.226Z
 
 ## 
 
+## 
+
+## When I type in the input, why does the keyboard input Character show in contenteditable div? 
+
+- 很奇怪的问题，input元素的 onkeydown 逻辑能触发，但 onChange 逻辑没触发，因为输入的字符不在input而在contenteditable
+- 排查思路
+  - 尝试其他添加事件的方式 qs('input').addEventListener('input', ()=>{})
+  - 检查focus元素是否正确， document.hasFocus(), document.activeElement
+  - 检查css是否input被其他不可见元素(z-index)挡住了，Unclickable due to pointer-events: none
+- 注意点
+  - 文件树的react组件 和 编辑器的react组件 不在同一颗vdom树
+  - 注视掉切换打开文件时editor的focus逻辑，重命名能正常执行
+
 ## 后端有时数据库中间件起不来或僵尸进程执行慢的问题
 
 - 正常启动后可以创建配置文件，如果启动时检测到配置文件已存在，则可以先删除配置文件走正常启动成功后再创建配置文件
