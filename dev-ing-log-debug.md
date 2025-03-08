@@ -79,16 +79,31 @@ modified: 2023-06-14T00:53:15.226Z
 
 ## 
 
-## When I type in the input, why does the keyboard input Character show in contenteditable div? 
+## ✏️🐛 When I type in the input, why does the keyboard input Character show in contenteditable div? 
+
+- 排查结论 💡
+  - 20250309: 一直以为是前端输入框渲染和更新逻辑有问题，就把rename input输入框用textarea/contenteditable重写，但输入字符仍然没有进入输入框还是意外进入编辑器，
+  - 此时就将排查范围转移到codemirror，先在firefox/safari测试没有这个问题, 就说明编辑器用到了chrome的某个特性导致chrome上的codemirror会意外捕获用户输入，
+  - 根据@codemirror/view依赖包的changelog发现202406月codemirror有个大的渲染层变更用到了仅chrome实现了的EditContext特性，将@codemirror/view降版本到旧版本就能正常工作了
+
+- 相关讨论
+  - [Experimental support for EditContext - discuss. CodeMirror _202404](https://discuss.codemirror.net/t/experimental-support-for-editcontext/8144)
 
 - 很奇怪的问题，input元素的 onkeydown 逻辑能触发，但 onChange 逻辑没触发，因为输入的字符不在input而在contenteditable
 - 排查思路
   - 尝试其他添加事件的方式 qs('input').addEventListener('input', ()=>{})
   - 检查focus元素是否正确， document.hasFocus(), document.activeElement
   - 检查css是否input被其他不可见元素(z-index)挡住了，Unclickable due to pointer-events: none
-- 注意点
-  - 文件树的react组件 和 编辑器的react组件 不在同一颗vdom树
-  - 注视掉切换打开文件时editor的focus逻辑，重命名能正常执行
+
+- tips
+  - 文件树的react组件 和 编辑器的react组件 不在同一颗vdom树，要考虑react的事件委托都在appRoot或document
+  - 注释掉切换打开文件时editor的focus逻辑，重命名能正常执行，说明focus的相关的逻辑导致问题但切换文件时auto-focus光标功能不能去掉
+- 一种思路是，在编辑器外的input输入时，可考虑disable input的keyboard events(设为readonly过于严格)，
+  - 这仅解决编辑器不接受字符的问题(实测没有解决问题，codemirror在readonly还是会被input的keydown字符修改)，
+  - input输入框仍然不能显示输入字符和最新内容
+  - 👉🏻 确定问题的流程是，注释掉CodeEditor组件初始化时自动focus设置光标的逻辑，rename工作正常, 说明确实是编辑器focus相关逻辑导致的
+- 另一种思路，使用contenteditable实现自定义input输入框
+  - 实测用户输入还是意外进入编辑器
 
 ## 后端有时数据库中间件起不来或僵尸进程执行慢的问题
 

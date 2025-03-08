@@ -13,6 +13,13 @@ modified: 2024-05-02T06:51:34.217Z
 
 # changelog
 
+- 2024-06-10 🐛
+  - @codemirror/view@6.28.0
+    - The editor will now, when available (which is only on Chrome for the foreseeable future) use the `EditContext` API to capture text input.
+    - 此版本存在编辑器会意外捕获用户输入的问题，实测用户在编辑器外的input输入字符时，输入的字符会意外进入编辑器
+    - 6.28.1关闭了此特性
+    - 6.28.2又开启了此特性
+
 - 202305
   - merge: [Add support for unified diff interface](https://github.com/codemirror/merge/commit/5916d24de61511fe687d485e45706e897967cf78)
   - The new `unifiedMergeView` extension can be used to display a diff inside a single editor, by **inserting deleted content as widgets** in the document.

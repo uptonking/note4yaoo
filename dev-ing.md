@@ -356,6 +356,10 @@ add action to create quickSort1.mjs and add 3 test cases in it
   - live模式显示弹窗
   - 回放模式显示红色背景的文件快照
 
+## 0308
+
+- [Use Chrome's Developer Tools to Track Element Focus, by John Kavanagh](https://johnkavanagh.co.uk/articles/use-chrome-developer-tools-to-track-element-focus/)
+
 ## 0307
 
 - 昨天

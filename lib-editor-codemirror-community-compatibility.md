@@ -65,7 +65,7 @@ modified: 2024-08-11T06:40:41.476Z
 
 - Text editing in mobile Safari is unfortunately quite a buggy mess. I don’t have an iOS device handy to test right now, but it sounds like it unconditionally makes the default tap behavior go through regardless of preventDefault. It may be possible to work around this by delaying your dispatch until after the native selection change with setTimeout, maybe.
 
-- ## [Experimental support for EditContext - discuss. CodeMirror _202404](https://discuss.codemirror.net/t/experimental-support-for-editcontext/8144)
+- ## ✨🐛 [Experimental support for EditContext - discuss. CodeMirror _202404](https://discuss.codemirror.net/t/experimental-support-for-editcontext/8144)
   - Chrome has started shipping edit context, a feature that allows JavaScript to intercept editing actions, including composition-based ones, in a way that isn’t as problematic as the old ‘just see how the DOM changes and hope for the best’ approach. 
   - Mozilla is considering the proposal but hasn’t put out a position yet. 
   - Apple is responding with deafening silence as usual.

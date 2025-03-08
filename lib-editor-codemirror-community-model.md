@@ -303,9 +303,10 @@ EditorState.transactionFilter.of(tr => {
 - ## [Switch between editor being editable or not - v6 ](https://discuss.codemirror.net/t/switch-between-editor-being-editable-or-not/2745)
 - reuse the Compartment instance to alter the editable state
   - Looking more into Configuration example
-- [Implement some kind of read-only mode ](https://github.com/codemirror/dev/issues/173)
+
+- ## 🆚️ [Implement some kind of read-only mode ](https://github.com/codemirror/dev/issues/173)
   - By default, if the editor isn't focusable, it also won't receive key events, so you can't ctrl-v on it. But I guess if you add a `tabindex` attribute to make it focusable you will have key bindings firing on the editor.
-  - Since @codemirror/state 0.19.2, there's also a `readOnly` facet, on the state, which controls whether the content is supposed to be read-only (and is respected by commands and such). This is separate from the editable facet, which only controls whether the DOM for the content is focusable/editable.
+  - Since @codemirror/state 0.19.2, there's also a `readOnly` facet, on the state, which controls whether the content is supposed to be read-only (and is respected by commands and such). This is separate from the `editable` facet, which only controls whether the DOM for the content is focusable/editable.
 - ## [How to make certain ranges readonly in CodeMirror6 - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/how-to-make-certain-ranges-readonly-in-codemirror6/3400)
   - I just released codemirror-readonly-ranges extension that easy allow to work with read-only ranges on CodeMirror6.
 - The recommended way to do this is to create a transaction filter that stops transactions which affect those ranges.
