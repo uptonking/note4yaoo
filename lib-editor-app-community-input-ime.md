@@ -18,6 +18,9 @@ modified: 2023-03-05T02:27:52.126Z
       - 👉🏻 keydown > compositionstart > beforeinput > compositionupdate > input > keyup
     - keypress强调输入文本字符，按键ctrl/shift/alt都不会触发此事件
     - 👉🏻 按功能键如ctrl/shift/alt/cap时，只触发keydown/up，不触发beforeinput
+  - [Javascript Key Event Tester](https://unixpapa.com/js/testkey.html)
+  - [Keyboard Events](https://dvcs.w3.org/hg/d4e/raw-file/tip/key-event-test.html)
+  - [JavaScript Key Code Event Tool | Toptal®](https://www.toptal.com/developers/keycode)
 
 - 中文输入法输入单个普通字符事件顺序
   - keydown
@@ -34,6 +37,10 @@ modified: 2023-03-05T02:27:52.126Z
     - mousedown ->  onblur(input) -> mouseup -> click
   - 注意
     - ❓ 在mouseup回调中可以拿到selection取位置，但click回调中selection就变为空了
+
+- editor操作相关事件
+  - 光标在editor时鼠标点击editor外的元素，会触发编辑器的 blur > focusout
+  - 仅chrome实现的EditContext也能拦截keyboard input character
 
 - events-deprecated
   - keypress  >  keydown/beforeinput

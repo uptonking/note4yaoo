@@ -356,6 +356,14 @@ add action to create quickSort1.mjs and add 3 test cases in it
   - live模式显示弹窗
   - 回放模式显示红色背景的文件快照
 
+## 0309
+
+- 昨天
+  - 处理urgent紧急issue，文件重命名时光标跳入编辑器的问题，本地修改已完成，今天会合到staging
+- 今天
+  - terminal打开文件的diff视图选择非revert的action
+  - 开始处理p0需求，给webview添加loading反馈
+
 ## 0308
 
 - [Use Chrome's Developer Tools to Track Element Focus, by John Kavanagh](https://johnkavanagh.co.uk/articles/use-chrome-developer-tools-to-track-element-focus/)

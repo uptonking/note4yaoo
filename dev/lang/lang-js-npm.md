@@ -290,6 +290,16 @@ npm unlink
   - Why? Because they were updating the progress bar every tick
   - And writing to stdout every tick is slow cause IO
 
+# discuss-pnpm
+- ## 
+
+- ## 
+
+- ## [pnpm link on macOS broken · Issue · pnpm/pnpm _202502](https://github.com/pnpm/pnpm/issues/9066)
+- `pnpm link --global` links the package from the current working directory to the global package. Then you should be able to do `pnpm link <pkg name>` . Even using it with `--dir` .
+  - Using `--global` together with `-C` won't work. --global changes the location to the global directory.
+  - In general, I would recommend to use `pnpm link <relative path>` and avoid linking to the global directory.
+
 # discuss-npm
 - ## 
 

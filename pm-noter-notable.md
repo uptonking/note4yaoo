@@ -59,6 +59,7 @@ modified: 2023-11-28T14:48:45.910Z
     - text files works well with existing tooling
     - 备选方案参考git，将文本与git工具绑定
     - sync: 本地文件自动生成delta
+    - 标题也支持富文本，特别是最顶层标题支持code/link
   - mdbook/gitbook: text + actions/workflows
   - office editor
     - pagable

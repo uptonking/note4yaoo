@@ -28,7 +28,13 @@ modified: 2024-08-11T03:31:52.955Z
 
 - ## 
 
-- ## 
+- ## .pnpm/@marijn+find-cluster-break@1.0.2/node_modules/@marijn/find-cluster-break/src/index.js:17     SyntaxError: Unexpected token 'export'
+- https://github.com/codemirror/website/issues
+  - `at Object.<anonymous> (../../node_modules/.pnpm/@codemirror+state@6.5.2/node_modules/@codemirror/state/dist/index.cjs:3:26)`
+
+- 实测是由于旧版pnpm.v7安装的依赖state最新版本有问题，导致jest test未通过
+  - 解决方法1: 降级到旧版本 "@codemirror/state": "6.4.1"
+  - 解决方法2: 升级pnpm到最新版v10
 
 - ## [Allow alternate editor components: Monaco editor, ACE · executablebooks/thebe _202402](https://github.com/executablebooks/thebe/issues/730)
 - The current editor component codemirror from jupyter, has issues with CSS transforms.
