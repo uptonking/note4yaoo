@@ -12,7 +12,11 @@ modified: 2023-12-16T17:36:57.942Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## my take on real-time collaboration after 5 years is that, you _really_ don't need CRDTs. 
+- https://x.com/ekzhang1/status/1897458041336778894
+  - practically: just buffer/apply changes locally and flush them to server on a timer. it's super fast and 99% good enough
+  - then if you need text editing, add a centralized OT, call it a day
+- I agree + most apps are fine with last write wins if you're careful with relationship boundaries
 
 - ## 🌰🔀 [How Figma's Multiplayer Technology Works | Hacker News _201910](https://news.ycombinator.com/item?id=21378858)
 - This is incredibly similar to the way we did multi-user simultaneous editing in https://Clara.io back in 2013/2014. It was also a tree-based OT-like system, but there was a few differences.

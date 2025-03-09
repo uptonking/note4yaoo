@@ -122,6 +122,15 @@ modified: 2024-06-30T11:17:28.971Z
 - https://x.com/OnlyXuanwo/status/1887015517745242186
   - [Cloud virtualization in the 2020s](https://xuanwo.io/links/2025/02/cloud-virtualization/)
 
+# discuss-security
+- ## 
+
+- ## 
+
+- ## 生怕大家搞不全云上横向路径，阿里云安全团队也是操碎了心 ，给大家搞了个图 #云攻击路径图
+- https://x.com/tariweet/status/1898195099022201315
+- 这不是最经典的攻击路径吗
+
 # discuss-container
 - ## 
 

@@ -107,6 +107,17 @@ modified: 2024-06-21T09:53:44.956Z
 - ## 
 
 - ## 
+# discuss-flash
+- ## 
+
+- ## 
+
+- ## 大家都知道 FLASH 已经死了，但我发现还可以拯救一下，至少你原先做过的大量的 FLASH 资产还能利用起来赚钱。
+- https://x.com/ezshine/status/1898397496642359556
+  - 具体做法是这样的，利用 https://ruffle.rs 在浏览器里运行 FLASH，然后把网页用 Tauri 2.0 打包成 iOS 或者 Mac 应用。
+- 这个 ruffle 项目挺屌的，用浏览器API 做了个 flash 模拟器。现在以前的 flash 游戏在浏览器里可以直接跑了。
+- flash转H5的工具
+
 # discuss-liqvid
 - ## 
 

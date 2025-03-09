@@ -30,6 +30,19 @@ modified: 2024-01-03T16:14:53.804Z
 - https://x.com/hardfist_1/status/1886376769122652230
   - and don't meet too much problems, what if we interpret more JavaScript syntax as native syntax ?
 
+# discuss-author
+- ## 
+
+- ## 
+
+- ## the @rspack_dev project originated from the @LynxJS_org project.
+- https://x.com/hardfist_1/status/1898512395854811166
+  - We started using Rollup to implement Lynx Build tools (2020.03), which initially only supported MiniApp DSL. However, we quickly encountered performance issues in large projects (2020.11).
+  - Later, we rewrote Build Tools using esbuild to solve the performance issues (which is called speedy and can actually support run on webpack & rollup & esbuild), and added support for SFC and ReactLynx(2021.07). 
+  - The reason we did not use Vite is because Vite not have good support for environments that do not support ESM and Bundleless. Later, we tried to use Speedy on Mobile Web Framework (2021.11), but the lack of good splitting support cause performance regression for users and HMR performance degradation caused by too much JS plugins forced us to reconsider whether Esbuild was a good choice
+  - Therefore, we considered rewriting Esbuild & Rollup in Rust (2022.3). At this time, 3 infrastructure teams merged with various frameworks (libraries, mobile web, pc web, Lynx, microfrontends ..) and thousands of old webpack projects to support. 
+  - we also encountered some limitations in the Rollup API (such as filter support and transform composability), so we decided to unify the build tools and solve the performance issues together with easy migration path, which leads to Rewrite webpack in Rust (2022.8) . And you know the rest of the story.
+
 # discuss
 - ## 
 

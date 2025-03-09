@@ -13,6 +13,19 @@ modified: 2024-03-15T03:25:43.756Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## Why does React Aria have its own Virtualizer? Why not use an existing library? Accessibility.
+- https://x.com/devongovett/status/1897720306716057977
+  - If you combine a virtualizer with most component libraries, you might notice that keyboard navigation breaks. That's because scrolling the focused element out of view removes it from the DOM. Then when you press the arrow keys, nothing happens because the list has lost focus.
+  - React Aria's Virtualizer is deeply integrated with our components, so we can automatically persist the focused item in the DOM even when it scrolls out of view.
+
+- Virtualizer optimizes large collections, rendering only visible items to the DOM. It supports list, grid, waterfall, table, and custom layouts, manages accessibility, keyboard navigation, etc. Integrated via composition.
+
+- Does this work well with a large draggable list tree? Most of them do not work with a draggable context.
+
+- Persisting the focused element is genius 
+
 - ## my hate for virtual scrolling continues to grow
 - https://x.com/thdxr/status/1892231011745911286
   - it is such a hack and it's very hard to keep things like control+f or selection working

@@ -20,6 +20,12 @@ modified: 2023-10-27T19:03:54.530Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 云计算厂商的机器，是怎么挂载云硬盘的呢？用的什么技术呢？难不成是 SMB？
 - https://twitter.com/sci_kobayashi/status/1730097196983570748
 - 公有云不了解，之前做的通信私有云 IaaS 是挂到物理机用专门的网卡，走 iscsi、ceph 或者存储厂商的等价的协议成 block device，再 virtio 给 vm。

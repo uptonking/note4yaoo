@@ -503,7 +503,14 @@ window.document.getElementById("baidu-container").onload = function() {
 
 - ## 
 
-- ## 
+- ## Is there a good client-side-only React playground/sandbox? 
+- https://x.com/adamwathan/status/1896581693538291840
+  - Something that's lightweight and basically instant without all of the complexity of running VMs in the browser like all the other tools seem to be doing these days.
+
+- Basically I’ve found the answer is no. We did our best to do something like this on the http://FormKit.com website, the current version is Vue only but there originally was also a react one. Still it always leaves out huge amounts of ecosystem ability unless you boot all of Vite in the browser (ala stackblitz) but those solutions are so slow they aren’t appropriate for docs sites imo.
+  - On tempo’s site (http://tempo.formkit.com) I did something similar for the docs (also live playgrounds) but just ran the code raw in a web worker with a light handwritten code mod first.
+
+- I use react-live for a few years now. Works for simple use cases, no support for external packages, and code executes in the same context, so keep an eye on security.
 
 - ## I like it when products append `-${id}` to the slugified post titles.
 - https://twitter.com/CompuIves/status/1757726648491798600

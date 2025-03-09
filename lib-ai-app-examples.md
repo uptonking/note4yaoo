@@ -219,6 +219,8 @@ modified: 2023-02-08T07:20:48.475Z
     - 支付：Lemon Squeezy
     - 部署：Vercel
 
+## chat-knowledgebase
+
 ## chat-pdf
 
 - https://github.com/williamcaseylucas/quill-pdf-chat /202401/ts
@@ -415,6 +417,10 @@ modified: 2023-02-08T07:20:48.475Z
   - https://x.com/9hills/status/1862522244527972625
     - RAG Demo 到 RAG Application 难度的完美表现，其实功能不算丰富（增加了 Graph RAG和 Agent RAG 的思想），
     - 代码却不得不做的非常复杂，大部分其实是应用逻辑。 P. S. 代码已经成熟到可以直接抄了，直接复刻就完了
+
+- https://github.com/dontizi/rlama /202503/go
+  - RLAMA is a powerful AI-driven question-answering tool for your documents, seamlessly integrating with your local Ollama models. 
+  - It enables you to create, manage, and interact with Retrieval-Augmented Generation (RAG) systems tailored to your documentation needs.
 # rag-search
 - https://github.com/Cinnamon/kotaemon /apache2/202409/python
   - https://cinnamon.github.io/kotaemon/

@@ -110,7 +110,11 @@ modified: 2025-02-03T10:17:42.052Z
 # discuss
 - ## 
 
-- ## 
+- ## Isn’t MCP literally an API for APIs. Like it’s literally an API standard for AI to talk to other APIs right?
+- https://x.com/bikatr7/status/1898184652038230372
+- It's not revolutionary or earth shattering, but it is an attempt to prevent having a million different ways to integrate LLMs with APIs, databases, file directories, or whatever resources. Then *any* LLM that supports the standard will just work with MCP standards built once
+
+- The difference is that the LLM is deciding which MCPs should be invoked with what arguments. Effectively giving the LLM dynamic logic, breaking it out of its static knowledge set (weights)
 
 - ## Windsurf 出了一个视频教程，介绍了 MCP 的价值与案例
 - https://x.com/op7418/status/1892056272381542405

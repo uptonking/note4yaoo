@@ -70,7 +70,16 @@ At a high level, it supports:
 
 - ## 
 
-- ## 
+- ## 最近看了一圈所谓 MQ 的实现，发现它们确实分成队列和流两种方案。
+- https://x.com/tison1096/status/1898241411004481851
+  - 总的来说，队列强调的是消息实时推送，可以没有消息持久化的能力；流强调的是 Append-Only 日志的读写，必须持久化。两者在消费端的差异也非常明显，队列的用例下，订阅可以是局部的，读到哪算哪；消息流的用例里，订阅通常是全局协调的。
+  - 由于所有 MQ 都强调尾读尾写的效率，因此根据消息订阅模式的不同，具体的实现也会分成两种，即有或没有 Partition 的概念。
+  - 典型的队列，例如 NSQ、NATS 乃至 Google Pub/Sub 等，是不需要 Partition 的，Subscriber 连上哪算哪。Broker 基本等同于一组 Publish Forwarder，消费者同时连上所有发布本主题消息的 Forwarder，Forwarder 本地管理订阅。这种设计下，如果将 Forwarder 设计成无状态的，那么一旦 Forwarder 宕机，那么发布到它上面的数据就无法恢复了。否则它就是有状态的（持久化路径位置，以及对该位置独占的状态）。
+  - 典型的流，例如 Apache Kafka 等，会引入 Partition 的概念。虽然 Kafka 本身有 Broker 侧的 Partition Owner 角色，但是实际上这个角色可以被擦掉，就像 WarpStream 的设计那样。这里的重点是同一个 Partition 只会被一个消费者消费，从而将订阅管理的责任从 Broker 一侧挪到了 Client 一侧，也就引入了 Rebalance 重新分配订阅关系的需求。
+- 这么看下来，由于 MQ 的消费模式是实时拉取或推送，而不是 DB 那样每次都是一个新的查询，所以 MQ 的设计，如果要求持久化，那么就有以下的实现困境：
+  - 1. 如果不要 Partition 以规避 Rebalance 的复杂性和支持任意数量的消费者并发，那么就要走 Publish Forwarder 的路线。此时如果不能接受消息可能丢失，甚至要支持 Seek 重新消费数据，那么 Forwarder 必须是一个 Stateful 的部署。
+  - 2. 如果支持消息堆积，实现消息流的场景，又要实现 Stateless 的 Broker，那么似乎只有引入 Topic Partition 这样的概念，引入额外的订阅协调流程，并限制消费的并发度。
+  - 例如，NSQ 就是第一种，Kafka 是第二种，EMQX 是第一种。NATS 不带 JetStream 是第一种，带了 JetStream 是 Raft Group 做持久化，也是第一种。Google PubSub 是第一种，虽然实现没有披露语焉不详，但是底下看起来也是某种 Quorum-based 的存储方案，这个肯定是 Stateful 的。
 
 - ## Kafka (somewhat) noob question: how does a client select the listener  when there are multiple advertised listeners? I have Kafka in Docker (via Testcontainers), with two advertised listeners
 - https://x.com/gunnarmorling/status/1855205862492475660

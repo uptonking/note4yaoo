@@ -42,7 +42,10 @@ modified: 2024-01-06T13:48:42.969Z
 
 - ## 
 
-- ## 
+- ## 昨天往一个已有镜像中加入了安装ffmpeg，整个镜像size直接翻倍，build镜像速度放了好几倍
+- https://x.com/andrew_rong/status/1898532578212413792
+- 而且大概率跨平台编译会挂
+  - apple M系更容易出问题
 
 - ## netdata 也太强了，不仅能监控电脑硬件情况，还有软件的使用概括：比如 Docker，哪些 image 在运行，哪些退出了。
 - https://x.com/tualatrix/status/1882412419005530122

@@ -128,7 +128,10 @@ type ObjectArray = { key: string } []
 
 - ## 
 
-- ## 
+- ## In TypeScript, do you prefer: import './example' w/wout suffix
+- https://x.com/mattpocockuk/status/1895811046767763751
+- I used to hate the extension but now after using ESM on Node, I have come to embrace the '.js' extension. It just works with or without a bundler for any runtime. It makes absolutely zero assumptions about runtime and no hidden surprises.
+- let's just add the extension please, Imagine tools like Vite and LSPs requiring this as an exception because you can't add a ts or tsx
 
 - ## derived union types
 - https://x.com/mattpocockuk/status/1894027514852327601

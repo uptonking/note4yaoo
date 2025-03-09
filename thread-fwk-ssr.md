@@ -71,6 +71,17 @@ modified: 2021-04-24T08:29:02.272Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 一个经典问题：做 ssr ， js 在服务端怎么判断移动设备
+- https://x.com/YuTengjing/status/1896031013396234611
+- 根据 ua 来吧
+- 怎么高效优雅拿到 UA 才是问题
+  - headers 里面 取就完事了, 但是不同的框架可能做法不一样
+- 确实，第一次可以直接根据 user-agent  大致判断是 xs/lg。用户客户端渲染后再在客户端往 cookie 写入准确的屏幕宽度，这样用户第二次访问的时候服务器端就可以准备的判断出 xs/sm/md/lg/xl 了。同理 ab 测试对用户做分组也可以使用在 middleware 中写 cookie，同时，实现 server 端识别用户分组
+
 - ## Vercel 为了推 RSC 把 renderToString 直接就给禁了，还不给选项绕开。这吃相也太难看了吧
 - https://x.com/unixzii/status/1893966604846674199
   - 用 import() 动态引入绕过了，希望后面别把这个路也堵了
@@ -148,12 +159,12 @@ modified: 2021-04-24T08:29:02.272Z
 
 - ## [How single-page application works in SSR (React) - Stack Overflow](https://stackoverflow.com/questions/57243697/how-single-page-application-works-in-ssr-react)
 - When implementing Server Side Rendering (SSR), the server knows how to generate a full page with markup so the user gets a fully rendered page and from that moment, when the js resources get downloaded, the application will be live (event listeners will be enabled, the react lifecycle will be active and so on).
-01.             Get a request for a specific path
-02.             Initiate a new store instance for the request
-03.             In case of using react router (or other router solution), fill the state with the requested route
-04.             Render the app, but instead of rendering and mounting the App, render the App to string (with renderToString)
-05.             Dehydrate the state - take the latest state snapshot and append it to the result (after escaping it and wrapping it with script tag for example)
-06.             Return the markup as a response. The markup can look similar to the following: 
+01.              Get a request for a specific path
+02.              Initiate a new store instance for the request
+03.              In case of using react router (or other router solution), fill the state with the requested route
+04.              Render the app, but instead of rendering and mounting the App, render the App to string (with renderToString)
+05.              Dehydrate the state - take the latest state snapshot and append it to the result (after escaping it and wrapping it with script tag for example)
+06.              Return the markup as a response. The markup can look similar to the following: 
 
 ```HTML
 <html>

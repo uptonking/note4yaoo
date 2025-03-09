@@ -20,7 +20,13 @@ modified: 2024-01-07T05:09:14.413Z
 
 - ## 
 
-- ## 
+- ## 🤔 JS/TS devs: For the public entrypoints of libraries, should library authors runtime validate inputs (i.e., with zod/valita), or just rely on TS types to enforce valid inputs?
+- https://x.com/aboodman/status/1897003207005802856
+- The correct answer is never validate API inputs:
+  * adding a validator in libraries adds weight and performance for no reason if user is using typescript and obeying types
+  * even if you do it only in dev, it changes the performance profile dramatically from dev to prod, making development difficult to use for performance sensitive libraries
+
+- validate on boundaries between ts and the outside world. after that, types flow through
 
 - ## ⚖️ Zero is 100% open source, and has  been since day one
 - https://x.com/aboodman/status/1890151282880704563

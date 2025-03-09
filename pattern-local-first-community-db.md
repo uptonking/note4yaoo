@@ -56,6 +56,15 @@ modified: 2023-12-01T09:08:18.316Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Exposing database tables directly to client code strikes again. It’s the bad design pattern that never quits.
+- https://x.com/jamesacowling/status/1895970943631327460
+- Tbf, the issue was a vulnerable build pipeline exposing an admin key.  If that was an AWS key, that could have exposed the same issue on a segregated DB
+- i've never liked this paradigm; so many issues around abstraction, auth, split-brain, etc.
+
 - ## I need a reactive local database; what's the frontend tech to use?
 - https://twitter.com/meijer_s/status/1753354109548204495
   - I'll fetch multiple pages (offset based pagination) of data from remote

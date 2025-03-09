@@ -404,6 +404,27 @@ e) 最终评论者(Final Critic)
 
 - ## 
 
+- ## 
+
+- ## 做产品级搜索以后发现 3.7 效果特好但是特别贵，所以必须得做 content cache 降低成本。
+- https://x.com/arvin17x/status/1896922111505285484
+  - 但为了做 context cache ，发现必须得记录 token usage，不然感知不到 cache 的效果。
+
+- 可以分享下 Context Cache 的原理么，我还以为这种东西只能在模型供应商侧做。
+  - 就是在模型供应商侧做。只是 OpenAI 和 DeepSeek 做的是静默方案，而 Anthropic 和 Google 是需要开发者手动开的
+- 应该是 prompt caching 吧
+  - Anthropic家自己的说法是 prompt Caching. 但我感觉行业里感觉还是习惯叫 context caching 的。
+  - 不过 OpenAI 官方和 Anthropic 官方都称之为 prompt caching
+
+- 很奇怪，这玩意为啥不默认开启。
+  - 某些场景下的确不一定适合，因为写入 cache 的成本是原价的 1.25倍
+
+- ## It is common to generate train and validation sets using random splitting.
+- https://x.com/_avichawla/status/1898622288737767785
+  - However, in many situations, it can be fatal for model building.
+  - Consider building a model that generates captions for images.
+  - Group shuffle split solves this.
+
 - ## 由于DeepSeek-R1 爆火，所以为大家带来什么是LLM蒸馏技术的笔记。
 - https://x.com/karminski3/status/1882233538042597423
   - 几个助记词：教师模型，学生模型，软目标，硬目标。

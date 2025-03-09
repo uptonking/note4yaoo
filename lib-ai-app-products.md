@@ -17,6 +17,8 @@ modified: 2024-12-07T09:51:14.779Z
 
 - cursor for design: logo creator
 
+- 使用ai实现高仿设计，是否可以绕过版权限制
+
 ## coding
 
 - 可以使用ai协助将代码库从一种语言转换到另一种语言

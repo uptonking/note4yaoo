@@ -17,7 +17,24 @@ modified: 2021-09-10T14:15:55.903Z
 - ## Fun historical fact: JSI was literally designed by the Hermes team so we could replace JSC with Hermes in Facebook apps without breaking source compatibility (and could go back in case Hermes didn't deliver; fortunately it did).
 - https://twitter.com/tmikov/status/1760552911812399448
 
+# discuss-lynx
+- ## 
+
+- ## 
+
+- ## 
+
+- ## TikTok released ReactLynx, an open-source alternative to React Native or Flutter
+- https://x.com/ammarahm_ed/status/1898457534585081944
+- It does have a bridge btw and similar multi threaded design like RN however it seems to have integrated reanimated like worklets at core level I think to improve rendering performance
+
+- Yet, no navigation solutions, native module examples are only obj-c, no clue if Swift is supported. CSS support is impressive
+  - It seems to be using JSI under the hood (same basis as RN), so it may need object C bindings to call swift, but on principle, it should be possible.
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 
