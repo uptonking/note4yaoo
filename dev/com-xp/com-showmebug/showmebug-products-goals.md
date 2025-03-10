@@ -443,6 +443,10 @@ modified: 2024-05-06T02:52:41.789Z
 - chat
   - 是否支持允许代码片段
 
+## v20250310-onboarding用户引导
+
+- 手动close thread支持在没有pr时执行，后端会自动git reset+checkout, 可能造成数据丢失
+
 ## v20250218-ide的语法跳转
 
 语法跳转的功能设计与实现初步方案 29.5+X

@@ -356,6 +356,23 @@ add action to create quickSort1.mjs and add 3 test cases in it
   - live模式显示弹窗
   - 回放模式显示红色背景的文件快照
 
+## 0310
+
+- 上周
+  - 上线了导入知识库的需求，并修复相关问题
+  - 排查ai写代码相关问题，包括重复片段、打快照超时
+  - 处理文件重命名时光标跳入编辑器的问题，增加重命名时支持ESC快捷键退出
+- 本周
+  - 大概花3天开发P0级的需求, webview减少白屏时间、增加loading反馈
+  - 会开始另一个p0级需求，LSP的优化
+  - 伟强讨论后，有调整为高优先级的需求和issue也会先处理
+- 昨天
+  - 测试文件重命名时光标跳入编辑器的问题，已合到staging
+  - 清理webview react组件的一些已废弃的逻辑，减少rerender的次数，来减少白屏时间
+- 今天
+  - 继续优化webview的渲染逻辑
+  - 开始给webview添加loading反馈
+
 ## 0309
 
 - 昨天

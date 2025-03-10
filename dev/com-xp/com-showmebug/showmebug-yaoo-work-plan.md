@@ -2296,6 +2296,13 @@ const playbackInfo = [
   - 跟随模式ui交互的鼠标和候选人名称渲染在iframe之外，跟随时的浏览器界面和内容不是原本iframe内的真实dom元素，而是渲染在iframe之外的`.replayer-wrapper canvas`元素
   - 小结: 跟随浏览器的feature不依赖浮动在浏览器面板之上的图标反而造成困惑，可以以后再联调rrweb的完整功能
 
+#### browser
+
+- 依赖ide-server的只有 followBrowser 事件
+- 
+- 
+- 
+
 #### fileTree
 
 - 视图组件基于 react-complex-tree 的 ControlledTreeEnvironment 和 Tree 实现

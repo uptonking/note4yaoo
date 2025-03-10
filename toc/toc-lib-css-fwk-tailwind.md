@@ -267,6 +267,9 @@ modified: 2023-02-26T18:25:01.328Z
   - https://tailwind-pre-processor.vercel.app/
   - An implementation of tailwindcss using less/stylus/Sass/SCSS.
 
+- https://github.com/fractaledmind/sasswind /201803/scss/inactive
+  - A SASS port of the Tailwind CSS utility framework
+
 - https://github.com/zvizvi/freewindcss /scss
   - https://codesandbox.io/s/freewindcss-pfq17e
   - Use Tailwind's set values and units in pure CSS variables
@@ -320,6 +323,11 @@ modified: 2023-02-26T18:25:01.328Z
 
 - https://github.com/rahmanda/tailwindscss /201905/inactive
   - SCSS version of Tailwind CSS for people who don't use modern module bundler.
+# tailwind-anime
+- https://github.com/romboHQ/tailwindcss-motion /MIT/202502/ts
+  - https://rombo.co/tailwind/
+  - a Tailwind CSS Plugin made at RomboHQ. 
+  - It’s a simple, yet powerful, animation library with a simple syntax.
 # utils
 - [CSS to Tailwind Converter | Loopple](https://www.loopple.com/tools/css-to-tailwind-converter)
 # more-tailwind

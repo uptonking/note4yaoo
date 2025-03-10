@@ -210,6 +210,9 @@ modified: 2024-01-31T19:13:11.286Z
 - https://github.com/electron-react-boilerplate/electron-react-boilerplate /MIT/202309/ts
   - https://electron-react-boilerplate.js.org/
   - Electron React Boilerplate uses Electron, React, React Router, Webpack and React Fast Refresh.
+  - Hot Reloading: Make changes to your app and preview the changes without having to refresh your app.
+  - Optimization and minification of code with webpack comes out of the box.
+  - Why is webpack a good idea for electron? Webpack helps us reduce the amount of calls made to require by bundling all our code (when possible) into single file. Atom is slow primarily because it makes so many require statements.
 - https://github.com/electron/electron-quick-start /CCO-1.0/202309/js
   - https://electronjs.org/docs/latest/tutorial/quick-start
   - Clone to try a simple Electron app

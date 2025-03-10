@@ -21,8 +21,17 @@ modified: 2024-12-07T09:51:14.779Z
 
 ## coding
 
+- roadmap
+  - 1. human-in-the-loop
+  - 2. self-correction, auto-debug
+  - 3. async-workflow
+  - 4. idea-to-launch, 类似manusAi, 基于类似个人云桌面底层实现的助理
+  - 5. value as a service
+
 - 可以使用ai协助将代码库从一种语言转换到另一种语言
   - 甚至用ai将GPL协议的代码重写成自己的代码
+
+- ai写与第三方sdk集成的代码时，先写注释example，再写代码
 # ai-office
 
 # ai-coding

@@ -30,6 +30,7 @@ modified: 2021-05-13T03:08:52.583Z
 
 - tips
   - 要在侧重web(no-server)和侧重本地(c/s或b/s)的架构上做取舍，主要考虑数据源、数据量、性能
+    - 还要在csr/ssr上做取舍，没有大而全的架构
   - 不建议基于electron实现自定义浏览器，要考虑支持各浏览器自带的扩展商店，可在自己的应用层实现
   - ? electron-for-android/ios vs apps
 
