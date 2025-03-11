@@ -14,7 +14,7 @@ modified: 2021-05-13T03:08:52.583Z
   - 基于electron可将数据保存在本地文件系统，比web浏览器支持更大的缓存
 
 - cons
-  - ?
+  - 基于ipc的通信增加了web端开发的复杂度，但能支持client-server/local多种架构
 
 - features
   - Build cross-platform apps with web tech(js/html/css/chromium)
@@ -24,15 +24,16 @@ modified: 2021-05-13T03:08:52.583Z
   - popular: vscode, theia, jupyter, postman-like(web+pc)
   - known: qq, slack, mattermost, zulip
   - db: mongodb-compass, dbgate, beekeeper, sqlectron
-  - notes(web+pc): joplin(AGPLv3), marktext(MIT), siyuan(AGPLv3), trilium(AGPLv3), notable(MIT), notesnook(GPL), Zettlr(GPL), yn(AGPLv3), tinywrite
+  - notes(web/pc): joplin(AGPLv3), marktext(MIT), siyuan(AGPLv3), trilium(AGPLv3), notable(MIT), notesnook(GPL), Zettlr(GPL), yn(AGPLv3), tinywrite
   - open: drawio(apache2), tagspaces, medis
   - 经典示例: file-manager, reader-epub, note-taking
 
 - tips
   - 要在侧重web(no-server)和侧重本地(c/s或b/s)的架构上做取舍，主要考虑数据源、数据量、性能
-    - 还要在csr/ssr上做取舍，没有大而全的架构
+    - 还要在csr/ssr上做选择，没有大而全的架构
   - 不建议基于electron实现自定义浏览器，要考虑支持各浏览器自带的扩展商店，可在自己的应用层实现
   - ? electron-for-android/ios vs apps
+  - web+pc: vscode, jupyter, (rstudio)
 
 - resources
   - [Cross platform software frameworks](https://blog.tomayac.com/2023/02/23/cross-platform-software-frameworks/)
@@ -40,14 +41,12 @@ modified: 2021-05-13T03:08:52.583Z
   - [QQ技术团队分享：新QQ NT桌面版/electron内存优化探索之路_202308](https://mp.weixin.qq.com/s/uk_KKk3YuMyY2Auk68SwgA)
 # draft
 - nativefier(archived): webpage wrapper for electron
-  - 可以复用pake的打包逻辑为electron
+  - 可以复用pake的打包逻辑但产物为electron
 
 - clients for popular apps like notion-database
 
-- tips
-  - ~~不建议基于electron实现自定义浏览器，要考虑支持各浏览器自带的扩展商店，可在自己的应用层实现~~
-  - ? electron-for-android/ios vs apps
-  - web+pc: vscode, jupyter, (rstudio)
+- maybe
+  - ?
 # dev-xp
 
 # dev
@@ -74,5 +73,6 @@ modified: 2021-05-13T03:08:52.583Z
   - The default protocol is changed from file:// to chrome-extension://
 # changelog
 - ECMAScript modules (i.e. using `import` to load a module) are supported in Electron as of Electron 28(_20231205).
+
 - From Electron 20 onwards, preload scripts are sandboxed by default and no longer have access to a full Node.js environment. 
 # more

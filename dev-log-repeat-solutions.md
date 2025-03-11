@@ -118,6 +118,7 @@ modified: 2021-07-20T13:50:23.433Z
   - 📌 prosemirror/tiptap/rich-md, quill/typewriter, slate/wang, lexical; cms/outline
   - block-editor with slash-menu/backlinks
   - pdf
+  - edit-image: 虽然不是编辑器的核心，但很实用且难做好
 - 💎 excel/data-grid
   - editing, group/pivot, multi-views
   - pivotable; collaborative; formulas

@@ -14,6 +14,7 @@ modified: 2024-01-31T19:13:11.286Z
   - https://github.com/sprout2000/leafview
   - https://github.com/edrlab/thorium-reader
   - https://github.com/yossTheDev/karbonized
+  - https://github.com/dutchigor/pluggable-electron
 
 - resources
   - https://github.com/sindresorhus/awesome-electron
@@ -162,7 +163,7 @@ modified: 2024-01-31T19:13:11.286Z
 - https://github.com/HopefulHeart2020/electron-typescript-react-clean-architecture /202309/ts
   - Boilerplate for projects using Eletron, React and Typescript applying Clean Architecture together with Atomic Design.
 
-- https://github.com/dutchigor/pluggable-electron /MIT/202210/js/inactive
+- https://github.com/dutchigor/pluggable-electron /MIT/202401/js/inactive
   - A framework to build Electron apps that can be extended by other parties.
   - Pluggable Electron allows an Electron app to include extension points in the code. 
     - Plugin developers can then write extensions - in the form of npm packages - that can be inserted into these extension points.

@@ -39,43 +39,45 @@ modified: 2023-11-28T14:48:45.910Z
       - 可调倍速
       - 回放时的表现可以和操作时不同，在回放模式下显示diff-view🆚更直观清晰，最好是流式diff
       - 快速定位到指定位置，快速分享链接和截图
-  - 🔍 search: rag, code-search, ai-chat
-    - 针对代码优化的搜索可作为技术卖点和产品卖点，可参考github-code-search/algolia
-    - 文档和代码同步更新、搜索
-    - repomap/manifest for repo
-  - 🔡 coding  + 🛝 playground
-    - 针对用户问题给出代码参考和可运行可操作的在线交互示例，特别针对css
-  - animation
-    - editor + dom-motion + video-playback + 🛝 playground
-    - 低代码工具吸引用户的方式一定会加入动画，类似 webflow-GSAP/Framer-motion
-  - 🎞️ video: 自动生成视频，方便回放、教学
-    - pdf/ppt > video
-    - video templates for tiktok/bilibili
-  - table
+  - 🪟 table
     - diff
     - ✨ markdown-table的wysiwyg是一个痛点和卖点
-  - markdown support with git-like database
+    - split-table
+  - ⚖️ markdown support with git-like database
     - widely used, enterprise-loved(易盈利)
     - text files works well with existing tooling
     - 备选方案参考git，将文本与git工具绑定
     - sync: 本地文件自动生成delta
     - 标题也支持富文本，特别是最顶层标题支持code/link
+  - 🔍 search: rag, code-search, ai-chat
+    - 针对代码优化的搜索可作为技术卖点和产品卖点，可参考github-code-search/algolia
+    - 文档和代码同步更新、搜索
+    - repomap/manifest for repo
+    - search the web
+  - 🔡 coding  + 🛝 playground
+    - 针对用户问题给出代码参考和可运行可操作的在线交互示例，特别针对css
+    - instant-preview: codesandbox的方案仍然太慢
+  - 💫 animation
+    - editor + dom-motion + video-playback + 🛝 playground
+    - 低代码工具吸引用户的方式一定会加入动画，类似 webflow-GSAP/Framer-motion
+  - 🎞️ video: 自动生成视频，方便回放、教学
+    - pdf/ppt > video
+    - video templates for tiktok/bilibili
+  - 🖼️ image
+    - edit-image: 虽然不是编辑器的核心，但很实用且难做好
   - mdbook/gitbook: text + actions/workflows
   - office editor
     - pagable
-  - encrypted elements: 有权限的用户或有密码的用户才可看到的数据
-    - paid-only paragraphs/sentences
-  - 文章段落查重，也可用于论文查重、评论查重
+  - encryption: 有权限的用户或有密码的用户才可看到的数据
+    - paid-only elements: paragraphs/sentences
+    - 只对部分段落或部分文字加密
+    - 处理类似`.env`文件时，对secretKey加密或移除，类似上传或同步文档时自动加密或脱敏
   - 视频笔记
     - 针对视频的笔记，如历史片/纪录片
     - 针对视频的搜索
   - pdf chat
-  - split-table
-  - ActionText
+  - ActionText for nodejs: hocuspocus
   - cms+crdt
-  - encryption
-    - 只对部分段落或部分文字加密
-    - 处理类似`.env`文件时，对secretKey加密或移除，类似上传或同步文档时自动加密或脱敏
   - interoperable/sharing
     - MCP/LSP/backlink
   - integrations
@@ -94,6 +96,7 @@ modified: 2023-11-28T14:48:45.910Z
     - 类似typora的即时预览，可选择 行内/上下 两种结构
     - 类似observable-notebook的上下结构可减少页面reflow
   - dev-tools, instead of wrapper like react-ag-grid，需要大量时间，可跨平台
+  - 文章段落查重，也可用于论文查重、评论查重
 
 - 难点
   - 对于嵌入到note中的本地媒体资源如图片、视频、音频，如何解析、存储、渲染更好
