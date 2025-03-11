@@ -100,6 +100,33 @@ type ObjectArray = { key: string } []
 # discuss-news
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🎯💥 A 10x Faster TypeScript in go _20250311
+- https://x.com/ahejlsberg/status/1899468706218160591
+- The only thing left is JS/TS being able to run libraries from other programming languages natively
+
+- The next step is to use TypeScript to transpilate directly into GO for the development of intensive CPU applications.
+
+- Why Go instead of Rust or Zig?
+  - they rewrite it in c++ and rust but the memory model not good enough.
+
+- 👥 [A 10x Faster TypeScript : r/javascript](https://www.reddit.com/r/javascript/comments/1j8s441/a_10x_faster_typescript/)
+- We definitely knew when choosing Go that there were going to be people questioning why we didn't choose Rust. 
+  - Portability (i.e. the ability to make a new codebase that is algorithmically similar to the current one) was always a key constraint here as we thought about how to do this. We tried tons of approaches to get to a representation that would have made that port approach tractable in Rust, but all of them either had unacceptable trade-offs (perf, ergonomics, etc.) or devolved in to "write your own GC"-style strategies. Some of them came close, but often required dropping into lots of unsafe code, and there just didn't seem to be many combinations of primitives in Rust that allow for an ergonomic port of JavaScript code (which is pretty unsurprising when phrased that way - most languages don't prioritize making it easy to port from JavaScript/TypeScript!).
+  - In the end we had two options - do a complete from-scrach rewrite in Rust, which could take years and yield an incompatible version of TypeScript that no one could actually use, or just do a port in Go and get something usable in a year or so and have something that's extremely compatible in terms of semantics and extremely competitive in terms of performance.
+  - Go has excellent code generation and excellent data representation, just like Rust. Go has excellent concurrency primitives, just like Rust. Single-core performance is within the margin of error. And while there might be a few performance wins to be had by using unsafe code in Go, we have gotten excellent performance and memory usage without using any unsafe primitives.
+  - In our opinion, Rust succeeds wildly at its design goals, but "is straightforward to port to Rust from this particular JavaScript codebase" is very rationally not one of its design goals. It's not one of Go's either, but in our case given the way we've written the code so far, it does turn out to be pretty good at it.
+  - Regarding contributions, I'm not super concerned. The barrier to learning how to do correct work in the typechecker is way more work than learning Go.
+
+- I have seen people run the ts compiler in the browser, do you have plans to keep that possible?
+
+- 👥 https://x.com/robpalmer2/status/1899469902362112449
+- http://esm.sh are written in @golang as well?
+  - yes, it's powered by esbuild
+
 - ## You'll never need to write a `.js` import again, thanks to this new flag in TS 5.7.
 - https://x.com/mattpocockuk/status/1840747531740844509
   - If it's got an extension, it'll be transformed (YES). 

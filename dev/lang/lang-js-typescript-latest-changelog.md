@@ -55,6 +55,26 @@ File-Watching Now Uses File System Events
 - TypeScript 2.8 introduced conditional types, a powerful tool for statically expressing decisions based on types, and 2.9 generalized keyof and provided easier imports for types.
 # changelog
 
+## v7
+
+### [A 10x Faster TypeScript _20250311](https://devblogs.microsoft.com/typescript/typescript-native-port/)
+
+- in many cases TypeScript has not been able to scale up to the very largest codebases. 
+- we’ve begun work on a native port of the TypeScript compiler and tools. 
+  - The native implementation will drastically improve editor startup, reduce most build times by 10x, and substantially reduce memory usage. 
+  - By porting the current codebase, we expect to be able to preview a native implementation of `tsc` capable of command-line typechecking by mid-2025, with a feature-complete solution for project builds and a language service by the end of the year.
+
+- Modern editors like Visual Studio and Visual Studio Code have excellent performance as long as the underlying language services are also fast. With our native implementation, we’ll be able to provide incredibly fast editor experiences.
+  - Editor responsiveness for all language service operations (including completion lists, quick info, go to definition, and find all references) will also see significant speed gains. 
+  - We’ll also be moving to the Language Server Protocol (LSP), a longstanding infrastructural work item to better align our implementation with other languages.
+
+- The JS-based codebase will continue development into the 6.x series, and TypeScript 6.0 will introduce some deprecations and breaking changes to align with the upcoming native codebase.
+  - When the native codebase has reached sufficient parity with the current TypeScript, we’ll be releasing it as TypeScript 7.0.
+  - You may also see us refer to “Strada” (the original TypeScript codename) and “Corsa” (the codename for this effort) in internal discussions or code comments.
+  - we’ll still be maintaining the JS codebase in the 6.x line until TypeScript 7+ reaches sufficient maturity and adoption.
+
+## v6
+
 ## v5_20230316
 
 - [Announcing TypeScript 5.0 - TypeScript](https://devblogs.microsoft.com/typescript/announcing-typescript-5-0/)
