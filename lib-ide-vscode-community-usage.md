@@ -65,7 +65,8 @@ modified: 2024-08-24T16:52:53.996Z
 
 - ## 
 
-- ## 
+- ## [How do I show reference count in Visual Studio Code? - Stack Overflow](https://stackoverflow.com/questions/45490475/how-do-i-show-reference-count-in-visual-studio-code)
+- This feature is called CodeLens. search settings for codeLens
 
 - ## No more Azure Data Studio - use VS Code  instead! _202502
 - https://x.com/ErikEJ/status/1887583795957895355
