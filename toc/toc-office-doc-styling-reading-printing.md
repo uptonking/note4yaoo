@@ -171,6 +171,16 @@ modified: 2022-10-05T04:57:38.647Z
 
 - https://github.com/readium/ts-toolkit /bsd/ts/NoDeps
   - 💡 Implements the Readium Architecture for Web Apps
+  - https://github.com/readium/playground
+    - https://playground.readium.org/
+    - Play with the capabilities of Readium Web & Readium CSS
+    - a Next.js project bootstrapped with create-next-app.
+  - https://github.com/readium/readium-css /202005/css/inactive
+    - https://readium.org/readium-css/docs/
+    - stylesheets for EPUB Reading Systems, starting with Readium 2.
+    - paged and scrolled views
+    - The primary goal of Readium CSS is to provide Reading System implementers with reliable and modern styles for reflowable EPUB 2 and EPUB 3 files. 
+    - Readium CSS stylesheets were not designed and should not be used for fixed-layout EPUB, nor other file formats like FB2, PRC, Mobi, TEI, etc.
   - https://github.com/readium/architecture
     - Documents the architecture of the Readium project
     - All Readium implementations (mobile, desktop or Web) are split in two main modules, which use the Readium Web Publication Manifest to communicate together.
@@ -179,9 +189,6 @@ modified: 2022-10-05T04:57:38.647Z
   - https://github.com/readium/webpub-manifest
     - a JSON-based document meant to represent and distribute publications over HTTPS.
     - It is the primary exchange format used in the Readium Architecture and serves as the main building block for OPDS 2.0.
-  - https://github.com/readium/readium-css /202005/css/inactive
-    - https://readium.org/readium-css/docs/
-    - stylesheets for EPUB Reading Systems, starting with Readium 2.
 
 - https://github.com/edrlab/thorium-reader /BSD/202402/ts
   - https://www.edrlab.org/software/thorium-reader/
@@ -294,7 +301,6 @@ modified: 2022-10-05T04:57:38.647Z
 - https://github.com/Apostolique/apos-docs
   - https://apostolique.github.io/apos-docs/markdown/
   - 依赖eleventy，右侧toc无法高亮
-
 # discuss
 - ## 
 

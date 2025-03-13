@@ -622,6 +622,10 @@ modified: 2022-06-03T21:34:54.893Z
 
 ## doc-etl
 
+- https://github.com/Unstructured-IO/unstructured /10.5kStar/apache2/202503/python
+  - https://www.unstructured.io/
+  - provides open-source components for ingesting and pre-processing images and text documents, such as PDFs, HTML, Word docs, and many more.
+
 - https://github.com/PragmaticMachineLearning/docai /MIT/202409/python
   - Extract structured data from unstructured documents using Answer. AI's Byaldi, OpenAI gpt-4o, and Langchain's structured output.
   - 基于Answer. AI的Byaldi、OpenAI的gpt-4o和Langchain 做结构化数据输出

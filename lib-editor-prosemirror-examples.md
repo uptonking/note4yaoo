@@ -543,6 +543,7 @@ modified: 2022-08-18T16:57:46.405Z
   - 依赖tiptap、@vercel/kv/blob、nextjs、react-markdown.v8、tailwindcss
 
 - https://github.com/aieditor-team/AiEditor /LGPLv2/202407/ts
+  - https://gitee.com/aieditor-team/aieditor
   - https://aieditor.dev/
   - https://aieditor.dev/versions.html
   - http://aieditor1.jpress.cn 现代风格（类腾讯文档）

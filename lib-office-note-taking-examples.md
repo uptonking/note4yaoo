@@ -12,6 +12,7 @@ modified: 2024-01-30T20:56:45.773Z
 - web版 vs 桌面版 vs vscode扩展版
   - 现有插件生态、编辑器切换
   - 要在侧重web(no-server)和侧重本地(c/s或b/s)的架构上做取舍，主要考虑数据源、数据量、性能
+  - 还要在csr/ssr上做选择，没有大而全的架构
 
 - files-first vs database-first
   - 若要实现web版产品，files-first的抽象在数据访问和查询时会很不方便
@@ -37,6 +38,7 @@ modified: 2024-01-30T20:56:45.773Z
   - view层基于tid文件
   - https://github.com/TiddlyWiki/TiddlyWiki
     - the Classic version (2.x.x) of TiddlyWiki
+  - https://github.com/TiddlyWiki/TiddlyDesktop
 
 - joplin /31.9kStar/MIT > AGPLv3/202212/ts/web需付费+pc+mobile
   - https://github.com/laurent22/joplin
@@ -382,11 +384,11 @@ modified: 2024-01-30T20:56:45.773Z
   - https://github.com/tagspaces/tagspaces-extensions /MIT/202404/js
     - This repository contains the viewer and editor extensions delivered by default with TagSpaces products.
 # notes-browser-extensions
-- note-it /16Star/Apache2/202208/ts/tiptap
+- note-it /16Star/apache2/202412/ts/tiptap
   - https://github.com/MuhametSmaili/note-it
   - https://www.youtube.com/watch?v=jxBAMwxbk78
-  - 支持截图及批注
   - NoteIt is a feature-packed, note-taking extension with OCR support for chrome.
+  - 支持截图及批注
   - 依赖React、Tiptap、tesseract.js、pdfmake、html-to-pdfmake
   - You can take notes, convert images to text, download notes to pdf, and more.
 

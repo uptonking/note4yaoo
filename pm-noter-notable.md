@@ -49,6 +49,7 @@ modified: 2023-11-28T14:48:45.910Z
     - 备选方案参考git，将文本与git工具绑定
     - sync: 本地文件自动生成delta
     - 标题也支持富文本，特别是最顶层标题支持code/link
+    - rust-mdBook
   - 🔍 search: rag, code-search, ai-chat
     - 针对代码优化的搜索可作为技术卖点和产品卖点，可参考github-code-search/algolia
     - 文档和代码同步更新、搜索
@@ -68,6 +69,7 @@ modified: 2023-11-28T14:48:45.910Z
   - mdbook/gitbook: text + actions/workflows
   - office editor
     - pagable
+    - pdf anno
   - encryption: 有权限的用户或有密码的用户才可看到的数据
     - paid-only elements: paragraphs/sentences
     - 只对部分段落或部分文字加密

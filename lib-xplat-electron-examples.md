@@ -11,8 +11,9 @@ modified: 2024-01-31T19:13:11.286Z
 
 - loved-examples
   - https://github.com/warpdesign/react-explorer
-  - https://github.com/sprout2000/leafview
+  - https://github.com/koodo-reader/koodo-reader
   - https://github.com/edrlab/thorium-reader
+  - https://github.com/sprout2000/leafview
   - https://github.com/yossTheDev/karbonized
   - https://github.com/dutchigor/pluggable-electron
 
@@ -33,6 +34,38 @@ modified: 2024-01-31T19:13:11.286Z
 - https://github.com/electron/apps /MIT/202310/js/无详情页
   - https://www.electronjs.org/apps
   - A collection of apps built on Electron
+
+- koodo-reader /21.4kStar/AGPLv3/202503/ts
+  - https://github.com/koodo-reader/koodo-reader
+  - https://github.com/troyeguo/koodo-reader /renamed
+  - https://koodo.960960.xyz/
+  - https://web.koodoreader.com/
+  - A modern ebook manager and reader with sync and backup capacities for Windows, macOS, Linux and Web
+  - 依赖electron-store、fs-extra、howler、react-hot-toast、webdav、marked、jszip、localforage、react-redux
+  - Save your data to Dropbox or Webdav
+  - Single-column, two-column, or continuous scrolling layouts
+  - Add bookmarks, notes, highlights to your books
+  - [希望能够有编辑功能_202401](https://github.com/koodo-reader/koodo-reader/issues/1037)
+    - 个人认为作为一个阅读器，编辑功能有点冗余，如果需要编辑可以用对应的各种强大产品
+
+- https://github.com/edrlab/thorium-reader /2kStar/BSD/202503/ts/epub
+  - https://www.edrlab.org/software/thorium-reader/
+  - A cross platform desktop reading app, based on the Readium Desktop toolkit
+  - an easy to use EPUB reading application for Windows 10/10S, MacOS and Linux
+  - 依赖redux、redux-saga.v1.3、electron、inversify、lunr2、mathjax、radix-ui、pdfjs、r2-streamer-js、react-table7
+  - Thorium-reader is composed of 3 parts: 
+    - One node.js main process (electron back-end) 
+    - One library window (chromium renderer) 
+    - One to N reader window(s) (chromium renderer)
+    - Each part runs a model-controller and a view for the renderer process.
+  - A great care is taken to ensure the accessibility of the application for visual impaired people using NVDA, JAWS or Narrator.
+  - No ads. No private data flowing anywhere.
+  - [Feature proposal: read PDFs as HTML _202502](https://github.com/edrlab/thorium-reader/discussions/2810)
+    - We never intended to have strong PDF support, considering that other reading software already provides a good reading experience.
+    - This seems like a format conversion tool (PDF to EPUB) more than a Thorium feature. Thorium could ultimately integrate this tool transparently like we do with DAISY 2.02 and DAISY 3.0 text / text+audio / audio digital talking books.
+  - [consider to swap to mupdfjs ?](https://github.com/edrlab/thorium-reader/discussions/2742)
+    - PDF.js may be a slower rendering engine, but it is a mature library, with a strong feature set (including text selection + annotations) and a page layout logic that integrates quite well in Thorium.
+  - https://github.com/readium/ts-toolkit
 
 - https://github.com/desktop/desktop /MIT/202502/ts
   - GitHub Desktop is an open-source Electron-based GitHub app. 

@@ -398,6 +398,21 @@ modified: 2023-03-09T13:47:07.317Z
   - 支持私有化部署场景。
   - [开源版和商业版有什么区别？ ](https://gitee.com/software-minister/jvs-knowledge-ui/issues/I839LC)
     - 无回答
+
+- https://github.com/phpk/godoos /AGPL/202502/go
+  - https://gitee.com/godoos/godoos
+  - https://godoos.com/
+  - 一款高效的内网办公操作系统，内含word/excel/ppt/pdf/聊天/白板/思维导图等多个办公系统工具，支持AI创作/知识库和原生文件存储。
+  - 内网聊天: 无需注册流程，只需在同一内网，即可自动发现并列出所有可用的聊天对象
+  - 客户端为开源版，用户所有数据存储到服务端
+  - 服务端支持windows/linux和docker安装，安装端支持web端
+  - 无需联网使用，全开源
+  - 支持多平台，Windows、Linux、MacOS
+  - 允许企业/个人单独使用，但需保留版权信息, 如用于商业活动或二次开发后发售，请购买相关版权
+
+- https://gitee.com/umodoc/editor /MIT/202503/ts
+  - https://editor.umodoc.com/cn/docs
+  - Umo Editor 是一个基于 Vue3 适合于国人使用的本土化开源文档编辑器。
 # protocol/sync/WOPI
 - https://github.com/mikeebowen/node-wopi-server /MIT/202310/ts
   - A WOPI Server written with Node.js

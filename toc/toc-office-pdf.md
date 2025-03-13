@@ -41,30 +41,41 @@ modified: 2021-01-04T17:26:43.784Z
   - unpdf ships with a serverless build/redistribution of Mozilla's PDF.js for serverless environments. 
   - This library is also intended as a modern alternative to the unmaintained but still popular pdf-parse.
 
-- https://github.com/diegomura/react-pdf
+- https://github.com/diegomura/react-pdf /MIT/202503/ts
   - React renderer for creating PDF files on the browser and server
   - This package is used to create PDFs using React. 
     - If you wish to display existing PDFs, you may be looking for https://github.com/wojtekmaj/react-pdf
   - https://github.com/enescang/react-pdf-table
     - Simple table generator for @react-pdf/renderer
 
-- https://github.com/wojtekmaj/react-pdf /MIT/202409/ts
+- https://github.com/wojtekmaj/react-pdf /MIT/202503/ts
   - https://projects.wojtekmaj.pl/react-pdf
   - Display PDFs in your React app as easily as if they were images.
   - For React-PDF to work,  `PDF.js` worker needs to be provided.
 
-- https://github.com/react-pdf-viewer/react-pdf-viewer /ts
+- https://github.com/react-pdf-viewer/react-pdf-viewer /paid/202408/ts
   - https://react-pdf-viewer.dev/
   - React component to view a PDF document
 
-- https://github.com/aexol-studio/react-pdf-editor /ts
+- https://github.com/agentcooper/react-pdf-highlighter /1.2kStar/MIT/202409/ts
+  - https://agentcooper.github.io/react-pdf-highlighter
+  - a React library that provides annotation experience for PDF documents on web.
+  - built on top of PDF.js by Mozilla. 
+  - Text and rectangular highlights are supported. 
+  - Highlight data format is independent of the viewport, making it suitable for saving on the server.
+  - `react-pdf` and react-pdfjs only provide React wrappers for PDF.js and do not have built-in annotation functionality.
+  - `pdfjs-annotate` does not provide text highlights out of the box.
+  - https://github.com/velvetfs/v-pdf-highlighter
+
+- https://github.com/aexol-studio/react-pdf-editor /MIT/202205/ts/inactive
   - Pdf editor react component
+  - 依赖@react-pdf/rendere
   - [Refactor 2022](https://github.com/aexol-studio/react-pdf-editor/issues/69)
-- https://github.com/snamoah/react-pdf-editor /js
+- https://github.com/snamoah/react-pdf-editor /202009/js/inactive
   - PDF Editor built with react
   - This project is a react port of the svelte version here so most of the pdf generation and editing logic was lifted from there.
 
-- https://github.com/neslxzhen/pdf-editor /ts
+- https://github.com/neslxzhen/pdf-editor /202201/ts/inactive
   - No Server, No Install PDF Editor with React
   - https://github.com/oren-l/PdfEditor /js
   - https://github.com/pgarciacamou/pdf-editor /js
@@ -98,16 +109,16 @@ modified: 2021-01-04T17:26:43.784Z
   - Paged.js is a free and open-source library that paginates any HTML content to produce beautiful print-ready PDF. 
   - The library fragments the content, reads your CSS print declarations and presents a paginated preview in your browser that you can save as PDF.
 # pdf-editor
-- https://github.com/luke-browning/pdf-web-edit /ts/c#/ng
+- https://github.com/luke-browning/pdf-web-edit /MIT/202309/ts/c#/ng/inactive
   - a web-based application for manipulating PDF files. 
   - It's main purpose is to pre-process documents before they are imported into a Document Management System (DMS) such as Paperless (-ng and -ngx) or stored in a directory based structure.
 
-- https://github.com/jichang/unionpdf /MIT/202401/ts
+- https://github.com/jichang/unionpdf /MIT/202502/ts
   - https://jichang.github.io/unionpdf/
   - A universal pdf rendering/editing library
   - model, engine, react
 
-- https://github.com/awesome-yasin/PDF-Verse /MIT/202312/js/ejs
+- https://github.com/awesome-yasin/PDF-Verse /MIT/202312/js/ejs/inactive
   - https://pdf-verse.vercel.app/
   - a powerful web based PDF Editor with tools fexamplesor editing, converting, and manipulating PDFs.
   - Merge, compress, add or remove pages, or extract text using OCR technology. 
@@ -116,7 +127,7 @@ modified: 2021-01-04T17:26:43.784Z
   - https://pdf-editor.now.sh/
   - Offline PDF editor. Add images, signatures, text to PDF in your browser
 
-- https://github.com/gr2m/pdf-editor
+- https://github.com/gr2m/pdf-editor /201504/js/inactive/单文件
   - WYSIWYG PDF-Editor, plugin-free, using pdfkit and pdf.js
 
 - https://github.com/xinglie/report-designer
@@ -202,6 +213,7 @@ modified: 2021-01-04T17:26:43.784Z
 - https://github.com/TheWebDevel/electron-pdf-conversion-article-proj /js
   - [Converting an Electron view content to PDF - DEV Community](https://dev.to/sathish/converting-an-electron-view-content-to-pdf-caa)
   - simple electron app to demonstrate the conversion of view into PDF.
+
 - https://github.com/ikuokuo/electron-pdf-viewer
   - Demo for using PDF.js in Electron, with antd
 - https://github.com/ZeroX-DG/EasyPDF /js
@@ -324,22 +336,12 @@ modified: 2021-01-04T17:26:43.784Z
 - https://github.com/surveyjs/survey-pdf
   - Supplementary component to the SurveyJS Form Library to download surveys as PDF files and generate editable PDF forms.
 # office
-- databyss /39Star/AGPLv3/202312/js
+- databyss /39Star/AGPLv3/202409/ts/js/inactive
   - https://github.com/databyss-org/databyss
   - https://databyss.org/
   - Write and cite, research and re-search, and never get lost in Databyss. Welcome to your new word processor.
   - Drag highlighted and/or annotated PDF files into any Page. Databyss will extract all your margin notes and highlighted passages so you can easily edit and search them.
   - 依赖pouchdb
-
-- https://github.com/agentcooper/react-pdf-highlighter /MIT/202307/ts
-  - https://agentcooper.github.io/react-pdf-highlighter
-  - a React library that provides annotation experience for PDF documents on web.
-  - built on top of PDF.js by Mozilla. 
-  - Text and rectangular highlights are supported. 
-  - Highlight data format is independent of the viewport, making it suitable for saving on the server.
-  - `react-pdf` and react-pdfjs only provide React wrappers for PDF.js and do not have built-in annotation functionality.
-  - `pdfjs-annotate` does not provide text highlights out of the box.
-  - https://github.com/velvetfs/v-pdf-highlighter
 
 - https://github.com/SpiderStrategies/pdf-officegen /js
   - A NPM module that accepts one or more PDF files and converts them into pptx/docs
@@ -394,7 +396,7 @@ modified: 2021-01-04T17:26:43.784Z
   - https://github.com/ArtifexSoftware/mupdf
   - https://github.com/muennich/mupdf
   - written in C, providing Java JNI
-- https://github.com/andytango/mupdf-js /AGPLv3/202209/ts/c
+- https://github.com/andytango/mupdf-js /AGPLv3/202406/ts/c/inactive
   - another Webassembly PDF renderer for node and the browser
   - This is a port of MuPDF to javascript and webassembly
 

@@ -22,7 +22,7 @@ modified: 2022-11-11T10:46:41.519Z
   - https://twitter.com/geekbb/status/1739627252701450251
     - Docker 真是方便，刚刚在 NAS 上弄了一个本地 PDF 工具 ：Stirling PDF，并通过 Cloudflare Tunnels 建立连接方便自己外网访问，再也不用担心 PDF 资料泄漏的问题了
 
-- https://github.com/SimplePDF/simplepdf-embed /MIT/ts
+- https://github.com/SimplePDF/simplepdf-embed /280Star/NonOpen/202502/ts
   - https://simplepdf.eu/embed
   - PDF editor in the browser – add text, checkboxes, pictures, signatures to PDF files. 
   - Merge, rotate PDF pages – iframe, script and React component

@@ -14,7 +14,7 @@ modified: 2021-05-13T03:08:52.583Z
   - 基于electron可将数据保存在本地文件系统，比web浏览器支持更大的缓存
 
 - cons
-  - 基于ipc的通信增加了web端开发的复杂度，但能支持client-server/local多种架构
+  - 基于ipc的通信增加了web端开发的复杂度，但能支持client-server/local/idb多种架构
 
 - features
   - Build cross-platform apps with web tech(js/html/css/chromium)
@@ -26,7 +26,7 @@ modified: 2021-05-13T03:08:52.583Z
   - db: mongodb-compass, dbgate, beekeeper, sqlectron
   - notes(web/pc): joplin(AGPLv3), marktext(MIT), siyuan(AGPLv3), trilium(AGPLv3), notable(MIT), notesnook(GPL), Zettlr(GPL), yn(AGPLv3), tinywrite
   - open: drawio(apache2), tagspaces, medis
-  - 经典示例: file-manager, reader-epub, note-taking
+  - 经典示例: file-manager, note-taking, reader-epub
 
 - tips
   - 要在侧重web(no-server)和侧重本地(c/s或b/s)的架构上做取舍，主要考虑数据源、数据量、性能
@@ -46,7 +46,7 @@ modified: 2021-05-13T03:08:52.583Z
 - clients for popular apps like notion-database
 
 - maybe
-  - ?
+  - copy zed xp to vscode
 # dev-xp
 
 # dev

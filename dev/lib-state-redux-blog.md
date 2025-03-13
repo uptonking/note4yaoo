@@ -9,6 +9,23 @@ modified: 2021-05-13T03:19:30.464Z
 
 # guide
 
+# blogs-async
+
+## [手写Redux-Saga源码 - 知乎](https://zhuanlan.zhihu.com/p/266794765)
+
+## [轻松使用Redux-saga - 知乎 _202206](https://zhuanlan.zhihu.com/p/114409848)
+
+- thunk的缺点也是很明显的，thunk仅仅做了执行这个函数，并不在乎函数主体内是什么
+  - 如果需要为每一个异步操作都如此定义一个action，显然action不易维护。
+  - 异步操作太为分散，分散在了各个action中
+
+- redux-saga中提供了一系列的api，且最大特点是提供了声明式的Effect，声明式的Effect使得redux-saga监听原始js对象形式的action，并且可以方便单元测试。
+
+- redux-thunk的大体过程：
+  - action1(side function)—>redux-thunk监听—>执行相应的有副作用的方法—>action2(plain object)
+- redux-saga的大体过程：
+  - action1(plain object)——>redux-saga监听—>执行相应的Effect方法——>返回描述对象—>恢复执行异步和副作用函数—>action2(plain object)
+- 对比redux-thunk我们发现，redux-saga中监听到了原始js对象action，并不会马上执行副作用操作，会先通过Effect方法将其转化成一个描述对象，然后再将描述对象，作为标识，再恢复执行副作用函数。
 # blogs
 
 ## 🆚️ [redux, koa, express 中间件实现对比解析](https://segmentfault.com/a/1190000016386740)

@@ -10,18 +10,30 @@ modified: 2023-09-19T07:26:04.103Z
 # guide
 
 # popular
-- https://github.com/GitbookIO/gitbook /25.8kStar/apache2/201610/js/inactive
+- https://github.com/GitbookIO/gitbook /GPL/202503/ts
   - https://www.gitbook.com/
+  - This repository contains the open source code used to render GitBook's published content.
+  - GitBook's rendering engine is fully open source and built on top of Next.js
+  - To clone in a private repository, acquire a commercial license.
+  - Open a published GitBook space in your web browser: http://localhost:3000/open-source.gitbook.io/midjourney
+  - GitBook Open uses fontawesome. 
+- https://github.com/GitbookIO/gitbook/tree/legacy /25.8kStar/apache2/201610/js/legacy
   - Modern documentation format and toolchain using Git and Markdown
   - As the efforts of the GitBook team are focused on the GitBook.com platform, the CLI is no longer under active development.
-- https://github.com/honkit/honkit /2.7kStar/apache2/202308/ts/gitbook
+- https://github.com/honkit/honkit /2.7kStar/apache2/202410/ts/gitbook
   - building beautiful books using Markdown - Fork of GitBook(legacy)
   - honkit is a command line tool (and Node.js lib) for building beautiful books using GitHub/Git and Markdown (or AsciiDoc).
   - 依赖immutable3.8、nunjucks、chokidar、commander、i18n-t、htmlparser2
+  - model层: The current models class is based on immutable.js.
   - GitBook is only free for open-source and non-profit teams.
+  - [Reduce Immutable.js _202006](https://github.com/honkit/honkit/issues/40)
+    - Immutablity is good, but Immutable.js is hard.
+    - Immutable.js block worker thread support: Need to Serialize/Deserialize between immutable.js and JavaScript
+    - Pure domain object model is better and use helper library is ok.
   - [HonKit: A Fork of GitBook | Hacker News_202006](https://news.ycombinator.com/item?id=23659451)
 
-- https://github.com/executablebooks/jupyter-book /3.6kStar/BSD/202312/python
+- https://github.com/jupyter-book/jupyter-book /3.6kStar/BSD/202312/python
+  - https://github.com/executablebooks/jupyter-book
   - http://jupyterbook.org/
   - open-source tool for building publication-quality books and documents from computational material.
 
@@ -73,21 +85,22 @@ modified: 2023-09-19T07:26:04.103Z
 # extension-superset
 
 # ebook
-- https://github.com/kovidgoyal/calibre /python
+- https://github.com/kovidgoyal/calibre /20.8kStar/GPL/202503/python
   - https://calibre-ebook.com/
   - an e-book manager. It can view, convert, edit and catalog e-books in all of the major e-book formats. 
 - https://github.com/janeczku/calibre-web /GPLv3/202401/python/js
   - a web app that offers a clean and intuitive interface for browsing, reading, and downloading eBooks using a valid Calibre database
   - This software is a fork of calibreserver
 
-- https://github.com/standardebooks/tools /python
+- https://github.com/standardebooks/tools /1.5kStar/GPL/202503/python
   - https://standardebooks.org/
   - A collection of tools Standard Ebooks uses to produce its ebooks, including basic setup of ebooks, text processing, and build tools.
 
-- koodo-reader /12kStar/AGPLv3/202503/ts
+- koodo-reader /21.4kStar/AGPLv3/202503/ts
   - https://github.com/koodo-reader/koodo-reader
   - https://github.com/troyeguo/koodo-reader /renamed
   - https://koodo.960960.xyz/
+  - https://web.koodoreader.com/
   - A modern ebook manager and reader with sync and backup capacities for Windows, macOS, Linux and Web
   - 依赖electron-store、fs-extra、howler、react-hot-toast、webdav、marked、jszip、localforage、react-redux
   - Save your data to Dropbox or Webdav
@@ -96,11 +109,24 @@ modified: 2023-09-19T07:26:04.103Z
   - [希望能够有编辑功能_202401](https://github.com/koodo-reader/koodo-reader/issues/1037)
     - 个人认为作为一个阅读器，编辑功能有点冗余，如果需要编辑可以用对应的各种强大产品
 
-- https://github.com/edrlab/thorium-reader /2kStar/BSD/202503/ts
+- https://github.com/edrlab/thorium-reader /2kStar/BSD/202503/ts/epub
   - https://www.edrlab.org/software/thorium-reader/
   - A cross platform desktop reading app, based on the Readium Desktop toolkit
   - an easy to use EPUB reading application for Windows 10/10S, MacOS and Linux
   - 依赖redux、redux-saga.v1.3、electron、inversify、lunr2、mathjax、radix-ui、pdfjs、r2-streamer-js、react-table7
+  - Thorium-reader is composed of 3 parts: 
+    - One node.js main process (electron back-end) 
+    - One library window (chromium renderer) 
+    - One to N reader window(s) (chromium renderer)
+    - Each part runs a model-controller and a view for the renderer process.
+  - A great care is taken to ensure the accessibility of the application for visual impaired people using NVDA, JAWS or Narrator.
+  - No ads. No private data flowing anywhere.
+  - [Feature proposal: read PDFs as HTML _202502](https://github.com/edrlab/thorium-reader/discussions/2810)
+    - We never intended to have strong PDF support, considering that other reading software already provides a good reading experience.
+    - This seems like a format conversion tool (PDF to EPUB) more than a Thorium feature. Thorium could ultimately integrate this tool transparently like we do with DAISY 2.02 and DAISY 3.0 text / text+audio / audio digital talking books.
+  - [consider to swap to mupdfjs ?](https://github.com/edrlab/thorium-reader/discussions/2742)
+    - PDF.js may be a slower rendering engine, but it is a mature library, with a strong feature set (including text selection + annotations) and a page layout logic that integrates quite well in Thorium.
+  - https://github.com/readium/ts-toolkit
 
 - https://github.com/koreader/koreader /AGPLv3/lua
   - http://koreader.rocks/
@@ -186,13 +212,13 @@ modified: 2023-09-19T07:26:04.103Z
   - based on Markdown-Writer-FX
   - Typesetting to PDF files requires the following: Theme Pack ConTeXt
 
-- https://github.com/retypeapp/retype /927Star/Free100Pages/202401/js
+- https://github.com/retypeapp/retype /927Star/Free100Pages/202502/js
   - https://retype.com/
   - ultra-high-performance static site generator that builds a website based on simple text files.
   - 依赖?
   - 样式模仿gitbook
   - Pages are formatted using Markdown syntax and Retype components. 
-  - Retype generates a basic HTML website that you can host on any web hosting service
+  - Retype generates a basic HTML website that you can host on any web hosting service, or for free using GitHub Pages, Netlify, or Cloudflare. No special server-side software or external dependencies are required. 
   - [Retype: A self-hosted and free alternative to gitbook | Hacker News_202204](https://news.ycombinator.com/item?id=30938501)
   - https://github.com/retypeapp/action-build /shell
 

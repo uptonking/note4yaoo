@@ -12,7 +12,9 @@ modified: 2021-05-13T03:14:10.096Z
 - redux原则
   - 架构设计：single store, read only state, reducer as pure function
   - 要让状态的变化可追踪，可重复，可维护
-# dev
+# dev-xp
+- 状态管理中的异步逻辑，近几年swr/react-query非常流行
+
 - redux-core不依赖immer
   - You do not need to use Immer with Redux. 
   - Plain JavaScript, if written correctly, is perfectly capable of providing immutability without having to use an immutable-focused library.

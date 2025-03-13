@@ -36,6 +36,7 @@ modified: 2020-07-14T11:03:53.196Z
     - constate
     - unstated-next
     - react-redux
+  - 状态管理中的异步逻辑，近几年swr/react-query非常流行
 
 - url as state-management
 
