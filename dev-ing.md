@@ -356,6 +356,37 @@ add action to create quickSort1.mjs and add 3 test cases in it
   - live模式显示弹窗
   - 回放模式显示红色背景的文件快照
 
+## 0313
+
+- [What is the most efficient way to read only the first line of a file in Node JS? - Stack Overflow](https://stackoverflow.com/questions/28747719/what-is-the-most-efficient-way-to-read-only-the-first-line-of-a-file-in-node-js)
+
+```JS
+const fs = require('fs');
+const readline = require('readline');
+
+// 🚨 This won't work with zero length file. The promise will wait for resolve call forever.
+// Seems to work fine with a zero length file, but may be due to an update. I'm running Node v16.2.0.
+async function getFirstLine(pathToFile) {
+  const readable = fs.createReadStream(pathToFile);
+  const reader = readline.createInterface({ input: readable });
+  const line = await new Promise((resolve) => {
+    reader.on('line', (line) => {
+      reader.close();
+      resolve(line);
+    });
+  });
+  readable.close();
+  return line;
+}
+```
+
+- 昨天
+  - 提测了onboarding入职项目流程的5个半子需求，还剩2个半
+  - 排查了用户反馈的 requirements.txt打不开的问题，原因是ide-server读取utf16文件时识别为二进制，昨天改了这一块的逻辑但打开后乱码，今天需要继续改读写文件的逻辑
+- 今天
+  - 继续处理onboarding入职项目流程的剩余2个半需求，手动关闭root thread需要陈越这边更新下后端的逻辑
+  - 继续处理requirements.txt打不开的问题
+
 ## 0312
 
 - 昨天

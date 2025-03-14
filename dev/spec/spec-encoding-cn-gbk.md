@@ -38,6 +38,73 @@ modified: 2021-02-16T05:17:27.642Z
 
 - ## 
 
+- ## 🤔 [Document how to get swap endian for the Buffer class · Issue · nodejs/node _201705](https://github.com/nodejs/node/issues/12813)
+- As the Buffer class currently only supports utf16 in little endian ordering, Buffer cannot be used to read in data from things like OpenType fonts, which by definition are always in big endian ordering, irrespective of the hardware or data reader 
+  - All OpenType fonts use Motorola-style byte ordering (Big Endian).
+  - Can Buffer be given a `utf16be` to match the already present `utf16le` , so that Buffer can be used with all utf16 data, rather than only with data that is in little endian ordering?
+
+- For what it’s worth, buffer.swap16() is there pretty much for this kind of thing. Do you think that would be enough to cover your use case? 
+  - This would need to get called in every single place where buffers need to be turned into strings
+
+- IIRC the only reason `utf16le/ucs2` support exists is because that's (supposedly) how JS strings are stored internally in V8, so that encoding comes free.
+  - I'm not particularly keen on adding more encodings to core. There are third-party modules like `iconv-lite` that are more suitable for converting to/from other encodings.
+
+- To be fair V8 internally stores strings as native-endian, and we swap it internally on creation when the machine is big endian
+
+- ## [node.js doesn't provide `buffer.toString('utf16be')` ](https://stackoverflow.com/questions/61492497/utf-16-hex-decode-nodejs)
+  - While Node.js `Buffer` objects can handle big-endian data through methods like `readUInt16BE` and `writeUInt16BE` , the `Buffer.toString(encoding)` method specifically lacks `utf16be` as a direct `BufferEncoding` option.
+  - [write utf-16 encoded files in node.js (both utf16be and utf16le)](https://gist.github.com/zoellner/4af04a5a8b51f04ad653e26d3b7181ec)
+
+- to "reverse the byte order manually" there's: `buf.swap16()`; 
+  - One convenient use of buf.swap16() is to perform a fast in-place conversion between UTF-16 little-endian and UTF-16 big-endian
+
+- [Javascript string to Base64 UTF-16BE - Stack Overflow](https://stackoverflow.com/questions/61680870/javascript-string-to-base64-utf-16be)
+  - This isn't easy as the encoding UTF16BE has little to no support in javascript.
+  - One way you can do this is by using a library to add support for UTF16BE, like `iconv-lite`.
+
+- ## [字符串在小字节序（little-endian）计算机中是按什么顺序存储的？ - 知乎](https://www.zhihu.com/question/21027106/answer/3131137903)
+
+- 🧩 BigEndian
+  - 从低地址开始
+  - 在高地址结束, 也就是地址数值大的地方结束
+  - 这是目前 RISC 指令集架构 (RISC、MIPS) 用的字节序
+  - JDK NIO ByteBuffer 默认的字节序为大端模式
+- 🧩 LittleEndian
+  - 从高地址开始
+  - 在低地址结束, 也就是地址数值小的地方结束
+  - 这是目前常用的指令集架构 ($x86、x86-64$) 用的字节序, 如CISC
+- 语言层不默认使用le/be的设计
+  - nodejs
+  - Python's `struct` module and `array` module use the system's native endianness by default. 常是le
+    - Libraries like `numpy` also provide tools to control endianness.
+  - Rust uses the system's native endianness for memory representation by default.
+  - Go doesn't impose a single default endianness.
+
+- Node.js does not enforce a specific endianness for storage; it depends on the system architecture.
+  - Node.js provides tools to explicitly work with both little-endian and big-endian data when dealing with binary data (e.g., buffers).
+  - Most modern systems (x86/x64 architectures) are little-endian by default.
+
+- 大小端是多个字节数据的排列顺序
+  - 地址空间都是按字节编码的，比如说一个32bit的int 数据0xaa 00 00 01的地址是addr，那这个数据占据的字节单元就是addr、addr+1、addr+2、addr+3，但是addr这个位置到底存01还是aa就会涉及到字节序。因此所谓的字节序是指一个基本数据类型内部的字节顺序。
+  - 对于ascii的字符串，它的基本数据类型是char，占据一个字节，压根就不存在内部这个东西，所以对他来说就是按字符从低到高排列。
+  - 如果字符编码是unicode这种多字节的，可能会有大小端的区分
+
+- 我们在网络传输二进制数据的时候也有分歧：我们是从二进制的高位开始传输呢（图中绿色区域）？还是从二进制的低位开始传输呢（图中黄色区域）？ 
+  - 如果我们从二进制数据的高位（类比鸡蛋的大端）开始传输我们就叫大端字节序，如果我们从二进制的低位（类比鸡蛋的小端）开始传输就叫小端字节序。
+  - 网络协议采用的是大端字节序传输
+  - 当网络字节按照大端字节序传输到对端计算机时，对端会在操作系统的堆中开辟一块内存用来接收网络字节。而在操作系统的虚拟内存布局中，堆空间的地址增长方向是从低地址向高地址增长，而栈空间的地址是从高地址向低地址增长。
+  - 在小端字节序下，int 型变量 5674 它的字节高位被存储在了字节数组中的高地址中，字节的低位被存储在字节数组的低地址中。这就是小端字节序，正好和正常人类直观感受是相反的
+
+- 字节序 用来 明确 整型数字存储的 顺序
+  - 如果 读写数字出了错, 可以 考虑一下 是否 字节序出了问题
+- 数字41 和 字符串"41" 的不同
+  - 字符串"41" 两个字符, 字符存储依据是 ascii序号 b"\x34\x31"
+  - 数字 41 数字存储依据是 数字的二进制值, 转化为 二进制 0b101001, 字节前面补零 得到 b"\x00\x29", 这就两个字节
+  - 但是 这两个字节 在存储的时候 有先后次序吗？
+
+- 
+- 
+
 - ## [GB2312、GBK、GB18030 这几种字符集的主要区别是什么？](https://www.zhihu.com/question/19677619)
 - 首先应当指出，目前的提问是有问题的，因为将三者定性为「字符集」是明显错误的，更妥当的提法是「几份文件」, 而非「几种字符集」。
   - GB/T 2312—1980《信息交换用汉字编码字符集　基本集》；

@@ -157,6 +157,9 @@ modified: 2021-05-06T09:38:31.520Z
   - 正向触发流程: originalDoc > newDoc > showDiff > hideDiff
   - undo更好的实现方式是手动控制tr的合并，更简单的这种方式是手动触发undo的逻辑
 
+- ❓ 同事实现编辑器内嵌入卡片在滚动时固定在顶部或底部的功能碰到困难
+  - 原因是嵌入卡片在滚动到可视区外时卡片的锚点anchor消失了，导致卡片也消失了
+
 - 基于transactionExtender的ext，
   - 🤔 后注册的会先执行
   - ~~只能返回单个effect，不能返回数组~~, 看清楚.of的返回值类型时StateEffect或Anno，而不是Transaction
