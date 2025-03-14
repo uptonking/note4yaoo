@@ -178,9 +178,24 @@ modified: 2023-04-04T03:59:40.928Z
 # discuss-ai-product-hunt
 - ## 
 
-- ## 
+- ## 我突然发现，飞书其实是一种 iOS
+- https://x.com/skywt2003/status/1899615581500002580
+- 飞书太乱套了，功能太多懒得用
+- 一开始欣赏它能把所有的东西都做到一个app里面，文档云端存储不用担心丢失和版本问题，现在觉得超级臃肿
 
-- ## 
+- emacs 以文本编辑为核心的 OS
+  - Lotus Notes 以邮件为核心的 OS
+  - 企业微信 以即时通讯为核心的 OS
+
+- ## 谷歌这几天太猛了, 模型更新之后 Gemini 应用也发布大量更新：
+- https://x.com/op7418/status/1900456305032085709
+  - 🎞️ 视频效果很好
+  - Deep Research 已向所有用户免费开放，这个很强
+  - Deep Research 由 2.0 Flash Thinking提供支持
+  - 支持链接你的搜索记录对 Gemini 进行个性化设置
+  - Gemini 可以控制更多应用日历、照片、笔记
+
+- Gemini Advanced 用户将可以使用 2.0 Flash Thinking Experimental 的 100 万 token 上下文窗口
 
 - ## AI团队 http://mgx.dev ，号称24/7工作，免费
 - https://x.com/gantrols/status/1892207262908682713
@@ -232,9 +247,26 @@ modified: 2023-04-04T03:59:40.928Z
 # discuss
 - ## 
 
-- ## 
+- ## 👷🏻 I'm Peak from Manus AI. Actually, it's not that complicated - the sandbox is directly accessible to each user
+- https://x.com/peakji/status/1898994802194346408
+  * Each session has its own sandbox, completely isolated from other sessions. Users can enter the sandbox directly through Manus's interface.
+  * The code in the sandbox is only used to receive commands from agents, so it's only lightly obfuscated.
+  * The tools design isn't a secret - Manus agent's action space design isn't significantly different from common academic approaches. And due to the RAG mechanism, the tools descriptions you get through jailbreaking will vary across different tasks.
+  * Multi-agent implementation is one of Manus's key features. When messaging with Manus, you only communicate with the executor agent, which itself doesn't know the details of knowledge, planner
+  * We did use @browser_use 's open-source code
 
-- ## 
+- What are you folks using for the Sandbox env, the Ubuntu machine that can have ffmpeg on demand?
+
+- ## 🚀 Turns out… Manus is just another Browser Use wrapper _20250310
+- https://x.com/browser_use/status/1898904239059149166
+- browser use, That is a weird statement from a Playwright wrapper
+- Everything is just a wrapper if you want to distill it down.
+
+- ## AI内容监管要求来了
+- https://x.com/imxiaohu/status/1900477117084901506
+- 这不算内容监管吧，没规定什么内容。不是我挺支持啊，我早就觉得ai内容尤其是图片视频音频应该有标识。
+
+- 感觉没影响，还是用国外的 ai 多一些
 
 - ## 看到最近字节大模型的一号位换人了。
 - https://x.com/seclink/status/1893123275116683323
@@ -345,11 +377,11 @@ modified: 2023-04-04T03:59:40.928Z
 
 - ## 5 new market maps in AI
 - https://x.com/chiefaioffice/status/1799766662746398851
-  01.             AI code generation tools from Greylock
-  02.             AI legal tools from Battery Ventures
-  03.             AI agent infrastructure from Madrona
-  04.             AI marketing tools from a16z
-  05.             Conversational AI from Cobus Greyling
+  01.                 AI code generation tools from Greylock
+  02.                 AI legal tools from Battery Ventures
+  03.                 AI agent infrastructure from Madrona
+  04.                 AI marketing tools from a16z
+  05.                 Conversational AI from Cobus Greyling
 
 - ## Google 最近新出了两个 Code 相关的 Agent 非常有意思：
 - https://x.com/tuturetom/status/1798350275314581670

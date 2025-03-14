@@ -195,6 +195,11 @@ modified: 2021-06-02T16:49:11.370Z
   - https://remark-mdc.nuxt.space/
   - Remark plugin to parse Markdown Components syntax
   - 用于nuxt cms
+# utils
+- https://github.com/hackertalk/remark-gfm-emoji
+  - 在重构编辑器，魔改 Markdown 的 AST，其中一部分是自定义 emoji 渲染，支持换成 google/twitter/facebook 的 emoji，这部份比较通用，写一个 remark 库发布出来。
+  - 有 react-markdown 的例子，可以自定义 emoji 组件
+  - 不同 provider 的 emoji 图片可以在这里下载（注意版权问题）
 # more-remark
 - https://github.com/djm/remark-shortcodes
   - A custom Markdown syntax parser for remark that adds support for shortcodes.

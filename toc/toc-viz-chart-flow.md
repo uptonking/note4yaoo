@@ -323,6 +323,13 @@ modified: 2020-10-22T10:22:55.878Z
   - Since version v2,  `sigma.js` focuses on the management of graph display: rendering, interaction... 
   - The graph model is managed in a separate library called `graphology`.
   - Sigma.js uses WebGL to render graphs. It is also possible to customize rendering, but it is harder than it would be with SVG or Canvas based solutions.
+
+- https://github.com/emilwidlund/nodl
+  - A framework for computational node graphs.
+  - https://x.com/emilwidlund/status/1900181498135011398
+    - In 2022, I created Alma — An interactive playground for generative graphics, by combining nodes & logic into WebGL shaders. All through an intuitive no-code interface.
+    - what the flow diagram library you used?
+      - I made it myself
 # dataflow
 - jerosoler/Drawflow /3.2kStar/MIT/202206/js/inactive
   - https://github.com/jerosoler/Drawflow

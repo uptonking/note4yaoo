@@ -107,7 +107,64 @@ modified: 2025-02-03T10:17:42.052Z
   - Like LSP did for IDEs, we're building MCP as an open standard for LLM integrations. Build your own servers, contribute to the protocol, and help shape the future of AI integrations
 
 - Making it an open protocol like LSP leapfrogged ChatGPT's "Work with Apps".
+# discuss-mcp-dev-impl 🚧
+- ## 
+
+- ## Did you know that when you're running MCP severs locally, you can't console.log?
+- https://x.com/mattpocockuk/status/1899049658883645798
+  - Your MCP server connects via the same channel console.log uses (stdio). So the logs get swallowed.
+  - To stay sane, I use a mcp-server.log instead
+
+- Should be possible with the Server Sent Events (SSE) transport which is offered as alternative to Stdio, but I haven't tried it yet. Maybe something for your nest tutorial?
+  - Yeah I've tried it and it works out of the box
+
+- Why not something like pino with a file-transport and pino-pretty?
+Don’t want/can’t have external dependencies?
+  - Yep, could totally work - but a bit healthier to not have a dep
+
+- Function Calling is enough… this MCP proposal is not a flexible standard nor low level.
+
+- ## 🔡 浏览了2个MCP server的源码，对MCP server的构建有了基本的了解：
+- https://x.com/jasonzhouu/status/1900220494697423202
+- mcp-playwright 这个比较简单，很适合入门了解MCP server的构建，创建的server提供了这么几种情况：
+  - list resource
+  - read resource
+  - list tools
+  - call tool
+  - resource用于提供资源，比如截图、浏览器控制台的日志；
+  - tools提供各种功能，比如导航、点击、填写表单之类的；
+  - MCP server需要给LLM提供它的功能的列表，类似于API文档，对每一个功能和参数都需要做文字介绍；
+  - 以及通过调用外部资源去实现这些功能，这里就是调用playwright进行一些浏览器操作。
+- browser-tools-mcp
+  - 这个项目也是进行浏览器操作，但是提供了更多功能，除了可以操作浏览器进行导航、截图等功能之外，还可以可以进行对网页进行debug、性能审计，
+  - 他操作浏览器的方法和上面mcp-playwright不一样，他是通过浏览器插件操作的，从而可以让LLM直接在我们日常使用的浏览器里，而不是由playwright另外开一个浏览器。
+  - 为了实现这个功能，它需要建立MCP服务器和浏览器插件之间的通信，以及给浏览器插件开了很多权限。
+  - MCP服务器：负责提供MCP的接口，以及调用Node服务器的功能
+  - Node服务器：作为中间层，响应MCP 服务器的请求，通过websocket通信方式向chrome扩展发送请求，以调用chrome内的功能。以及调用puppeteer和lighthouse，对网页进行审计（性能、SEO等）。
+  - Chrome扩展：响应websocket通信的请求，调用chrome的功能，其中包括debug功能。
+
+- ## ⚖️ 围绕 MCP 生态可以做的一套基建方案
+- https://x.com/idoubicc/status/1899666072107880839
+  - mcprouter 网关，暴露统一的 http 接口给到上游调用，转发请求到 omcp 启动的下游服务，通过 apikey 鉴权，计费，类似 openrouter。
+
+- https://x.com/idoubicc/status/1900469666402976234
+  - MCP Server 使用 SSE Transport 实现消息传输，用的是双通道响应机制。
+  - 按照这个交互流程可以实现一个 MCP Server Proxy, 对上游暴露 HTTP 接口，下游调用任意的后台服务
+  - mcprouter 未来可期。
+
+- 我觉得 还是 agent router 这个路线更靠谱
+
+- 不想打击, 几十年前就有web service的概念和实际规范了, 所以大部分web service的问题也会是mcp的问题, 甚至其实走http的mcp就是一种web service。更很点就是wcf的一种 
+  - 做出来不会没意义的, 并且显然会推动一些东西, 不过上限是看得见的
+
+- 两个多月前我的开源项目就实现了http的中转机制，可以参考一下。楼上那个mcp-proxy项目是实现sse与stdio的转换，原理不同。
+
+- smithery.ai 上 host 的 mcp server 差不多是类似的实现。给每个 mcp server 添加一个 Dockerfile 和一个配置文件，然后就可以在上面 host了。暴露给上游的是websocket，然后上游通过统一的 smithery mcp server 通信。
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## Isn’t MCP literally an API for APIs. Like it’s literally an API standard for AI to talk to other APIs right?

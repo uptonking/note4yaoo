@@ -101,4 +101,12 @@ modified: 2023-12-26T19:10:48.719Z
   - Unified plugin system for Vite, Rollup, Webpack, esbuild, and more
   - very high level to adapt plugins to bundlers
   - parsing/transforming is still babel
+# proj-build-flow
+- https://github.com/jakebailey/hereby /MIT/202503/ts
+  - A simple Node.js task runner
+  - ts-go里用了, 又看到了make，ant，rake的影子
+  - https://x.com/i5ting/status/1900030725573009488
+    - Google zx 也是类似把。不过话说回来，task 这种库是不是已经太多了，而且项目编译应该采用依赖分析，缓存管理，用这个简单任务后面要换掉，大项目基本不行。
+    - 这种没前途。 just+zx 这种跨平台，才是未来。
+    - 还有 Gulp 这个古董
 # more

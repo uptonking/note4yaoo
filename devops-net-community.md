@@ -104,7 +104,26 @@ modified: 2024-11-16T16:58:32.628Z
   - Cache static contents
   - Encrypt and decrypt SSL communications
 
+# discuss-ssh
+- ## 
+
+- ## 
+
+- ## 服务器 ssh 被扫了 16w 次，就离谱。
+- https://x.com/hubingkang/status/1900362862767595638
+  - `sudo lastb | wc -l`
+
+- 紧查了查，我的几台国外服务器，20多万次。国内的反而少一点，不到两万次。但是我内网穿透的家里主机，竟然也有将近2万次，家里的电脑密码很简单，也不知被攻破了没
+  - 家里内网得注意，一被破解了不是盗取资料就是要勒索了。
+
+- 慌什么，用密钥登录他又无法攻破
+  - 有些用密钥，有些用的密码
+
+- 用fail2ban拦截
+  - 还可以自动报 http://blocklist.de，顺便做个 crontab 每天拉那个网站的 ip 黑名单
 # discuss
+- ## 
+
 - ## 
 
 - ## 

@@ -45,6 +45,9 @@ modified: 2021-05-13T03:08:52.583Z
 
 - clients for popular apps like notion-database
 
+- integrations
+  - vercel-aisdk
+
 - maybe
   - copy zed xp to vscode
 # dev-xp

@@ -56,7 +56,11 @@ modified: 2022-12-24T07:31:48.493Z
 
 - ## 
 
-- ## 
+- ## 在 AI 方面，JS 还真别和 Python 比，JS 调用 C/C++ 的跨语言开销非常大，以至于 vscode 在集成众多 C 模块的时候都改为使用 wasm 来集成，而 wasm 性能只有 native 的一半；
+- https://x.com/skywind3000/status/1899712083521913321
+  - 所以 js+cpp 真别和 python+cpp 比速度，何况还有 cuda，你 wasm 里也跑不了
+- 会出现脚本语言（js，python）调用编译语言（c/c++）这种需求，通常都是需要一个客户端工具吧。js的优势主要在这里的。
+- AI 领域目前 Python 无可撼动，众所周知倒不是因为性能问题，乱入调侃现学现用“性能差即不合适”的观点。。。提及 WASM 个人感觉多余，Node native addon 性能显然更好。据我所知 vs code 桌面版仍是直接原生调用 c++，wasm 的引入主要是跨 web 平台需求
 
 - ## I really wanted to know which libraries are bloating my WebAssembly binaries, so I wrote a visualizer.
 - https://twitter.com/DasSurma/status/1788580767410299142

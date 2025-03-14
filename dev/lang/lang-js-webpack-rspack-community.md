@@ -33,7 +33,26 @@ modified: 2024-01-03T16:14:53.804Z
 # discuss-author
 - ## 
 
-- ## 
+- ## 🦀 @rspack_dev pick Rust just because @rspack_dev needs super complex js binding which is not easy for Go( binding between two gc language is hard)
+- https://x.com/hardfist_1/status/1899502014935290162
+  - reason 2: @rspack_dev needs minifier & transformer
+  - if not limited by these, we would also choose Go to port Rspack(maybe called gopack).
+- There're so many good parts of Go for porting existing Javascript code
+  * much faster compile time(no need to release for an hour)
+  * good support for cross compile(no need to get every machine or every docker image)
+  * GC is much easy to use and debug than Rust Arena
+- forgot to mention SWC
+
+- https://x.com/hardfist_1/status/1899493638436245782
+  - A key reason @rspack_dev chose the webpack architecture is the composability of loaders.
+  - This architecture decouples filtering and transformation logic while enabling flexible configuration through module.rules, allowing developers to easily replace transformation logic for specific files without affecting other parts which seems not easy in Rollup or esbuld(try to replace the transform logic of vite-svgr-plugin without modify its code). 
+  - If a faster TypeScript loader (e.g., ts-loader) with type-checking capabilities emerges in the future, users could seamlessly replace the builtin:swc-loader with the new faster ts-loader to meet their type-check needs.
+
+- However such flexibility does come with a higher difficulty to configure TS properly to provide correct type for each import.
+  - that's why we build rsbuild
+
+- https://x.com/hardfist_1/status/1899578913472549138
+  - If a rust parser is still much faster than ts-go parser, I think it's still useful. A faster rust transformer is not that appealing like before
 
 - ## the @rspack_dev project originated from the @LynxJS_org project.
 - https://x.com/hardfist_1/status/1898512395854811166

@@ -100,9 +100,42 @@ type ObjectArray = { key: string } []
 # discuss-news
 - ## 
 
-- ## 
+- ## While I agree Go is the the pragmatic choice for a 1:1 port, my biggest concern is Go's relatively subpar WASM performance.
+- https://x.com/youyuxi/status/1899642075425153385
+  - As a data point, esbuild's WASM build performs quite poorly in web containers, even slower than js bundlers like Rollup.
+  - There are many legitimate use cases where we may need to run tsc in the browser - in-browser IDEs and playgrounds in particular. If tsgo WASM ends up performing poorly, or even worse than current tsc, does it mean we will have to stick to tsc-in-js for such use cases?
 
-- ## 
+- Engines are implementing WASM GC and afaik that + stringrefs are expected to help substantially
+
+- ## > "Half of [typescript-go's performance gain] comes from shared-memory concurrency"
+- https://x.com/jarredsumner/status/1899660193019113978
+  - JavaScript needs threads. Worker isn't good enough.
+
+- Yup, hopefully the Structs & Shared Structs effort at TC39 can help
+
+- No one needs threads, give us BEAM processes or Go coroutines
+
+- I think in most cases, JS benefits from the single-threaded event loop. It's easier to reason about this way. However, being able to easily offload tasks to green threads would be nice. Maybe on the language level. I like how it is done with go routines.
+
+- ## Why TS-Go can achieve nearly 5x faster performance than TS-JS? Megapolymorphism is a big reason.
+- https://x.com/hd_nvim/status/1900038018280329372
+  - AST nodes have different fields and each node kind is different "class" to V8 engine. This is called polymorphism and slows down func call.
+  - Disjoint union is slow due to this. This is called megamorphic function in v8 and gets deopt.
+  - Similar code in Go lang is done by interface and type cast. So the calling function is monomorphic and optimizable, type cast is only done only when needed
+
+- Wondered recently, do classes or prototypes save Y% or Yx when it comes to JS. Let's say thousands of objects in a list. Have not been pushy to use raw proto hacks, but in one app it allowed us to render four times the rows in the virtualizer.
+
+- ## TypeScript's three main competitors: Flow, Haxe, and ReScript--are all implemented in OCaml. TypeScript is kind of the odd one out by using Go...
+- https://x.com/yawaramin/status/1900059706577604773
+- . Net AOT compilation is not mature enough for a project like TypeScript
+
+- ## porting tsc to go
+- https://x.com/justjs14/status/1900315727678066776
+  - tsc depends on shared mutability and has a cyclical mutable reference. 
+  - Rust is designed to prevent this behavior. Having two references to the same data (shared mutability) is undefined behavior in Rust
+
+- You can do it in Rust using reference counting with Arc, Rc, and runtime borrow checks RefCell, but runtime checks add overhead, similar to garbage collection. 
+  - Go offers similar performance with more convenience and faster development.
 
 - ## 🎯💥 A 10x Faster TypeScript in go _20250311
 - https://x.com/ahejlsberg/status/1899468706218160591

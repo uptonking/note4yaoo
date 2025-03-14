@@ -350,6 +350,20 @@ modified: 2024-08-24T16:28:20.515Z
 
 - ## 
 
+- ## 
+
+- ## ai辅助编程， 经历过几乎所有的工具之后， 我最终确认的顶级配置：
+- https://x.com/BadUncleX/status/1900394535408304207
+  - aider architect (r1 + sonnet 3.5)
+  - warp console (enable ai) 
+  - 辅助:  cline (plan/act模式, r1 + sonnet 3.5) 
+  - 结论： 单模型， 即使是sonnet 3.7也没法和组合模型打。上面方案接近完美，性价比几乎最高。 agent华而不实.
+
+- 还有一个包月的方案， 还没有验证， 先记录一下，就是不使用api, 改用claude 订阅。 
+  - 1. 使用claude desktop，集成mcp， 访问本地项目代码。 
+  - 2. 使用ClaudeSync将本地文件同步到claude projects. 
+  - MCP现阶段使用似乎是比较容易超出上下文长度， 但仍然值得关注。
+
 - ## 发布 Devv Playground：智能代码生成的利器
 - https://x.com/forrestzh_/status/1846451160678650338
   • 实时预览：Devv 理解您的需求，即时生成并展示代码。

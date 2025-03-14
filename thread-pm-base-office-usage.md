@@ -36,7 +36,9 @@ modified: 2023-03-01T14:10:06.993Z
 
 - ## 
 
-- ## 
+- ## 中国留学生常见英语问题：把“PPT”当成“slides”用，相似地可能把“Excel”当成“spreadsheets”用。
+- https://x.com/_Nikisade/status/1899916795714191868
+- 英语区的吸尘器不说vacuum cleaner 直接说hoover的，然后中文喜欢说band aid但是他们只会说plaster
 
 - ## 用 OminiDocBench 对 gemini-2.0-flash-exp 模型进行评测（采用默认Prompt），结果如图： 全部项：英文第三，中文第一
 - https://x.com/9hills/status/1867551009457025465

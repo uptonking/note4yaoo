@@ -17,9 +17,19 @@ modified: 2023-10-27T19:03:54.530Z
 - ## 
 
 - ## 
-# discuss
+# discuss-db-saas
 - ## 
 
+- ## 
+
+- ## 
+
+- ## What's up with managed Postgres providers starting to offer Auth?
+- https://x.com/ImSh4yy/status/1899244975780479263
+- Front end frameworks are missing loads of backend features and the DB providers think they can lock customers in with them faster than the front end frameworks can.
+
+- Easier to setup row level security based api, if auth is built in.
+# discuss
 - ## 
 
 - ## 

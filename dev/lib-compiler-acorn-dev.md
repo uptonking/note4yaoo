@@ -26,7 +26,9 @@ modified: 2021-06-04T05:24:21.182Z
 
 - ## 
 
-- ## 
+- ## "Nowadays, implementing sophisticated compiler optimizations is only worth the effort if the processor is not able by itself to accelerate the code. This result applies to AoT compilers as well as JIT compilers" 
+- https://x.com/justjs14/status/1900345901857550395
+- I used to hand-optimize DSP in assembly.  When Core2Duo came out with 2.5 lanes & could reorder opcodes within its buffer, half of my optimizations became unneeded.
 
 - ## 编译原理的基本流程: tokenizer > parser > transformer > generator
 - https://x.com/i5ting/status/1891715640316023060

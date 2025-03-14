@@ -335,6 +335,14 @@ modified: 2024-05-12T17:20:03.132Z
 # discuss-e2b-sandbox
 - ## 
 
+- ## 
+
+- ## 
+
+- ## We run close to 1 million sandboxes a day _20250314
+- https://x.com/mlejva/status/1900275519943282781
+  - It's not so long ago that running this many sandboxes took us a month
+
 - ## [Notes on the new Claude analysis JavaScript code execution tool | Hacker News _202410](https://news.ycombinator.com/item?id=41943662)
 - That's an interesting idea to generate javascript and execute it client side rather than server side. I'm sure that saves a ton of money for Anthropic not by not having to spin up a server for each execution.
   - I imagine this is a broader push to be able to have Claude pilot in your browser (and other applications) in the future. This is the right way to go about it versus having a headless agent: users can be in the loop and you can bootstrap and existing environment.

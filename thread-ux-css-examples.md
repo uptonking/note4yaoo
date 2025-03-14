@@ -14,7 +14,13 @@ modified: 2021-02-05T14:00:02.922Z
 
 - ## 
 
-- ## 
+- ## 放烟花效果
+- https://x.com/meetqy/status/1900530649817100702
+  - https://codepen.io/MillerTime/details/XgpNwb
+
+- https://x.com/hellokaton/status/1900367727879221686
+  - 烟花特效，它是 2D Canvas 实现的。
+  - 不同于我们常见的 npm 上的 confetti 库和 AI 写出来的效果（它们不够迷人，没有惊喜）
 
 - ## Create sidebar using HTML and CSS 
 - https://twitter.com/davidm_ml/status/1772248123575771620
